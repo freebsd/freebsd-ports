@@ -1,189 +1,44 @@
 --- PATCHES Dec 2002 17:44:54 -0000	3.6
 +++ PATCHES Feb 2004 13:19:42 -0000
 @@ -0,0 +1 @@
-+patch-1.5.7.ust.maildir-mtime.1
---- browser.c.orig	Sat Feb  5 23:45:00 2005
-+++ browser.c	Sat Feb  5 23:47:50 2005
-@@ -30,6 +30,7 @@
- #ifdef USE_NNTP
++patch-1.5.7.ust.maildir-mtime.2
+--- browser.c.orig	Tue Feb  8 10:29:57 2005
++++ browser.c	Tue Feb  8 10:29:58 2005
+@@ -31,4 +31,5 @@
  #include "nntp.h"
  #endif
 +#include "mx.h"
  
  #include <stdlib.h>
- #include <dirent.h>
-@@ -423,9 +424,11 @@
- #endif /* USE_NNTP */
+@@ -473,4 +474,19 @@
+ }
  
- static void add_folder (MUTTMENU *m, struct browser_state *state,
--			const char *name, const struct stat *s,
--			void *data, int new)
-+			const char *name, struct stat *s,
-+			void *data, BUFFY *mbuf)
- {
-+  int new = (mbuf) ? mbuf->new : 0;
++static void check_maildir_times (BUFFY *buf, struct stat *st)
++{
++  char buffer[_POSIX_PATH_MAX + SHORT_STRING];
++  struct stat s;
 +
-   if (state->entrylen == state->entrymax)
-   {
-     /* need to allocate more space */
-@@ -437,6 +440,9 @@
-       m->data = state->entry;
-   }
- 
-+  if (mbuf && mbuf->magic == M_MAILDIR && mbuf->mtime)
-+    s->st_mtime = mbuf->mtime;
++  if(!buf || buf->magic != M_MAILDIR)
++    return;
 +
-   if (s != NULL)
-   {
-     (state->entry)[state->entrylen].mode = s->st_mode;
-@@ -495,7 +501,7 @@
- 	continue;
-       if (!((regexec (Mask.rx, data->group, 0, NULL, 0) == 0) ^ Mask.not))
- 	continue;
--      add_folder (menu, state, data->group, NULL, data, data->new);
-+      add_folder (menu, state, data->group, NULL, data, tmp);
-     }
-   }
-   else
-@@ -561,7 +567,7 @@
-     tmp = Incoming;
++  snprintf (buffer, sizeof (buffer), "%s/tmp", buf->path);
++  if (lstat (buffer, &s) != 0)
++    return;
++
++  st->st_mtime = s.st_mtime;
++}
++
+ /* get list of all files/newsgroups with mask */
+ static int examine_directory (MUTTMENU *menu, struct browser_state *state,
+@@ -562,4 +578,5 @@
      while (tmp && mutt_strcmp (buffer, tmp->path))
        tmp = tmp->next;
--    add_folder (menu, state, de->d_name, &s, NULL, (tmp) ? tmp->new : 0);
-+    add_folder (menu, state, de->d_name, &s, NULL, tmp);
++    check_maildir_times (tmp, &s);
+     add_folder (menu, state, de->d_name, &s, NULL, (tmp) ? tmp->new : 0);
    }
-   closedir (dp);
-   }
-@@ -589,7 +595,7 @@
-     {
-       if ((data = (NNTP_DATA *) tmp->data) != NULL && (data->new ||
- 	  (data->subscribed && (!option (OPTSHOWONLYUNREAD) || data->unread))))
--        add_folder (menu, state, data->group, NULL, data, data->new);
-+        add_folder (menu, state, data->group, NULL, data, tmp);
-     }
-   }
-   else
-@@ -608,21 +614,21 @@
- #ifdef USE_IMAP
-     if (mx_is_imap (tmp->path))
-     {
--      add_folder (menu, state, tmp->path, NULL, NULL, tmp->new);
-+      add_folder (menu, state, tmp->path, NULL, NULL, tmp);
-       continue;
-     }
- #endif
- #ifdef USE_POP
-     if (mx_is_pop (tmp->path))
-     {
--      add_folder (menu, state, tmp->path, NULL, NULL, tmp->new);
-+      add_folder (menu, state, tmp->path, NULL, NULL, tmp);
-       continue;
-     }
- #endif
- #ifdef USE_NNTP
-     if (mx_is_nntp (tmp->path))
-     {
--      add_folder (menu, state, tmp->path, NULL, NULL, tmp->new);
-+      add_folder (menu, state, tmp->path, NULL, NULL, tmp);
-       continue;
-     }
- #endif
-@@ -636,7 +642,7 @@
-     strfcpy (buffer, NONULL(tmp->path), sizeof (buffer));
+@@ -637,4 +654,5 @@
      mutt_pretty_mailbox (buffer);
  
--    add_folder (menu, state, buffer, &s, NULL, tmp->new);
-+    add_folder (menu, state, buffer, &s, NULL, tmp);
++    check_maildir_times (tmp, &s);
+     add_folder (menu, state, buffer, &s, NULL, tmp->new);
    }
-   while ((tmp = tmp->next));
-   }
-@@ -1555,7 +1561,7 @@
- 		if (regexec (rx, nd->group, 0, NULL, 0) == 0)
- 		{
- 		  mutt_newsgroup_subscribe (news, nd->group);
--		  add_folder (menu, &state, nd->group, NULL, nd, nd->new);
-+		  add_folder (menu, &state, nd->group, NULL, nd, nd);
- 		}
- 	      }
- 	    }
---- buffy.c.orig	Sat Oct 30 23:40:07 2004
-+++ buffy.c	Sat Feb  5 13:57:07 2005
-@@ -227,6 +227,7 @@
-     (*tmp)->new = 0;
-     (*tmp)->notified = 1;
-     (*tmp)->newly_created = 0;
-+    (*tmp)->mtime = 0;
- 
- #ifdef BUFFY_SIZE
-     /* for buffy_size, it is important that if the folder is new (tested by
-@@ -258,6 +259,7 @@
- {
-   BUFFY *tmp;
-   struct stat sb;
-+  struct stat smd;
-   struct dirent *de;
-   DIR *dirp;
-   char path[_POSIX_PATH_MAX];
-@@ -297,6 +299,7 @@
-   for (tmp = Incoming; tmp; tmp = tmp->next)
-   {
-     tmp->new = 0;
-+    tmp->mtime = 0;
- 
- #ifdef USE_IMAP
-     if (mx_is_imap (tmp->path))
-@@ -370,21 +373,31 @@
-       case M_MAILDIR:
- 
- 	snprintf (path, sizeof (path), "%s/new", tmp->path);
-+        stat (path, &smd);
-+	tmp->mtime = smd.st_mtime;
- 	if ((dirp = opendir (path)) == NULL)
- 	{
- 	  tmp->magic = 0;
- 	  break;
- 	}
-+
- 	while ((de = readdir (dirp)) != NULL)
- 	{
- 	  char *p;
- 	  if (*de->d_name != '.' && 
- 	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
- 	  {
--	    /* one new and undeleted message is enough */
--	    BuffyCount++;
--	    tmp->new = 1;
--	    break;
-+	    if (!tmp->new)
-+	    {
-+	      /* one new and undeleted message is enough */
-+	      BuffyCount++;
-+	      tmp->new = 1;
-+	    }
-+	    snprintf (path, sizeof (path), "%s/new/%s", tmp->path, de->d_name);
-+	    if (!stat (path, &smd) && smd.st_mtime > tmp->mtime)
-+	    {
-+	      tmp->mtime = smd.st_mtime;
-+	    }
- 	  }
- 	}
- 	closedir (dirp);
-@@ -414,6 +427,12 @@
- #ifdef BUFFY_SIZE
-     else if (Context && Context->path)
-       tmp->size = (long) sb.st_size;	/* update the size */
-+#else
-+    else if(tmp->magic == M_MAILDIR) {
-+	snprintf (path, sizeof (path), "%s/new", tmp->path);
-+        stat (path, &smd);
-+	tmp->mtime = smd.st_mtime;
-+    }
- #endif
- 
-     if (!tmp->new)
---- buffy.h Dec 2002 11:19:39 -0000	3.2
-+++ buffy.h Feb 2004 13:19:42 -0000
-@@ -29,2 +29,3 @@ typedef struct buffy_t
-   struct buffy_t *next;
-+  time_t mtime;			/* for maildirs...time of newest entry */
-   short new;			/* mailbox has new mail */

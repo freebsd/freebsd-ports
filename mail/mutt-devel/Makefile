@@ -93,7 +93,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -367,7 +367,7 @@ PATCHFILES+=	patch-1.5.7i.sidebar.20050203.txt:thomer
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-MAN1=		mutt.1 mutt_dotlock.1
+MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1
 MAN5=		muttrc.5 mbox.5 mmdf.5
 
 post-patch::
