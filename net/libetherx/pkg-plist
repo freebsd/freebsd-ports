@@ -1,5 +1,0 @@
-bin/etherx-config
-include/etherx.h
-lib/libetherx.a
-lib/libetherx.so
-lib/libetherx.so.1
