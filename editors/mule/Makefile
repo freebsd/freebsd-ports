@@ -1,23 +1,24 @@
 # New ports collection makefile for:	mule
-# Version required:	2.1
+# Version required:	2.2
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.4 1994/11/27 03:40:09 asami Exp $
+# $Id: Makefile,v 1.5 1994/12/23 06:56:00 asami Exp $
 #
 
-DISTNAME=	mule-2.1
-DISTFILES=	emacs-19.27.tar.gz
+DISTNAME=	mule-2.2
+DISTFILES=	emacs-19.28.tar.gz
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		  --wnn --wnn-libraries=/usr/X11R6/lib \
 		  --wnn-includes=/usr/X11R6/include/wnn --terminal-face
-WRKSRC=		${WRKDIR}/emacs-19.27
-PATCHFILES=	diff-19.27-2.1.gz
+WRKSRC=		${WRKDIR}/emacs-19.28
+PATCHFILES=	diff-19.28-2.2.gz
 .if !defined(MASTER_SITE_OVERRIDE)
-PATCHSITE=	sh.wide.ad.jp:/JAPAN/mule/
+# PATCHSITE=	sh.wide.ad.jp:/JAPAN/mule/
+PATCHSITE=	ftp.cs.buffalo.edu:/pub/mule/
 .else
 PATCHSITE=	${MASTER_SITE_OVERRIDE}
 .endif
@@ -38,10 +39,6 @@ pre-fetch:
 pre-patch:	${PREPATCH_COOKIE}
 
 ${PREPATCH_COOKIE}:
-	/bin/rm -f ${WRKSRC}/src/unexsunos4.c ${WRKSRC}/src/s/freebsd.h
-# I took these two files from emacs-19.28 and added -lcrypt
-	cp ${FILESDIR}/unexsunos4.c ${WRKSRC}/src
-	cp ${FILESDIR}/freebsd.h ${WRKSRC}/src/s
 	@echo "===>  Applying emacs -> mule patch"
 	@for file in ${PATCHFILES}; do \
 		gzip -c -d ${DISTDIR}/$$file | patch -d ${WRKSRC} -p1 -s; \

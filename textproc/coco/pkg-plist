@@ -2,13 +2,17 @@
 @exec mkdir -p %D/lib/mule/site-lisp
 @exec mkdir -p %D/lib/mule/lock
 @exec chmod 777 %D/lib/mule/lock
-bin/mule-19.27
+bin/mule-19.28
 @exec ln -s %D/%F %B/mule
 @unexec rm %B/mule
 bin/m2ps
-lib/mule/19.27
+bin/any2ps
+bin/b2m
+bin/coco
+lib/mule/19.28
 man/man1/mule.1
 man/man1/m2ps.1
+man/man1/coco.1
 info/CCL
 info/ISO2022
 info/R2L
