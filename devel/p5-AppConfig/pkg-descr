@@ -10,5 +10,7 @@ From the README file for AppConfig:
     a list or hash. The number of arguments a variable expects is determined
     by its configuration when defined.
 
+WWW: http://search.cpan.org/dist/AppConfig/
+
 -- Igor
 igor@zynaps.ru

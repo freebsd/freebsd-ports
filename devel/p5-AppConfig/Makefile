@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AppConfig
-PORTVERSION=	1.52
+PORTVERSION=	1.55
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	App/ABW
@@ -17,13 +17,16 @@ COMMENT=	A Perl module for reading configuration files
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
 MAN3=		AppConfig.3 \
-		AppConfig::Sys.3 \
+		AppConfig::Args.3 \
+		AppConfig::CGI.3 \
 		AppConfig::File.3 \
-		AppConfig::State.3 \
 		AppConfig::Getopt.3 \
-		AppConfig::Args.3
+		AppConfig::State.3 \
+		AppConfig::Sys.3
+
+post-patch:
+	${PERL} -pi -e '$$_="" if /use warnings/;' \
+		${WRKSRC}/t/*.t
 
 .include <bsd.port.mk>
