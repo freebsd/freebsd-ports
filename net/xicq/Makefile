@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xicq
-PORTVERSION=	19980712	
+PORTVERSION=	19980712
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://projekt.pinknet.cz/ftp/ICQ/linux/Xicq/
@@ -16,21 +16,18 @@ MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Xtropy's ICQ Client
 
 WRKSRC=		${WRKDIR}/xicq-071298
-
+USE_GCC=	2.95
 USE_GMAKE=	yes
 MAKE_ENV=	OPT="${CFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+PLIST_FILES=	bin/xicq ${EXAMPLESDIR:S,^${PREFIX}/,,g}/contact ${EXAMPLESDIR:S,^${PREFIX}/,,g}/config
+PLIST_DIRS=	${EXAMPLESDIR:S,^${PREFIX}/,,g}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/xicq/main ${PREFIX}/bin/xicq
-		${MKDIR} ${PREFIX}/share/examples/xicq
+		${MKDIR} ${EXAMPLESDIR}
 .for file in contact config
-		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/xicq
+		${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
