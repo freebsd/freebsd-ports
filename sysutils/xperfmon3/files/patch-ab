@@ -1,793 +1,236 @@
-diff -c -N ../xperfmon++/StripCharP.h ./StripCharP.h
-*** ../xperfmon++/StripCharP.h	Wed Jul 27 22:29:30 1994
---- ./StripCharP.h	Fri Dec 15 11:00:03 1995
+diff -cd ../xperfmon++/Imakefile ./Imakefile
+*** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
+--- ./Imakefile	Mon May  6 18:19:34 1996
 ***************
-*** 62,71 ****
-  #define HIGHLIGHT  1 << 1
-  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
+*** 17,31 ****
+  SYS_MODULE=	sgi_system
+  #endif
   
-  /* New fields for the PerfChart widget instance record */
+! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS)
   
-  typedef struct {
-!     double valuedata[2048];	/* record of data points */
-      Pixel	fgpixel;	/* color index for graph */
-      Pixel	hipixel;	/* color index for lines */
-      Pixel       warnColor;
---- 62,73 ----
-  #define HIGHLIGHT  1 << 1
-  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
+     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
+! LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XMULIB) $(XLIB)
+         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
+! #       INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11 -I/usr/include/bsd
+!      CDEBUGFLAGS = -O
+!            SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
+!            OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
   
-+ #define NUM_VALUES 2048
-+ 
-  /* New fields for the PerfChart widget instance record */
+  ComplexProgramTarget(xperfmon++)
   
-  typedef struct {
-!     double valuedata[NUM_VALUES]; /* record of data points */
-      Pixel	fgpixel;	/* color index for graph */
-      Pixel	hipixel;	/* color index for lines */
-      Pixel       warnColor;
-diff -c -N ../xperfmon++/StripChart.c ./StripChart.c
-*** ../xperfmon++/StripChart.c	Wed Jul 27 22:29:30 1994
---- ./StripChart.c	Fri Dec 15 11:00:03 1995
-***************
-*** 53,58 ****
---- 53,64 ----
-  #include <X11/StringDefs.h>
-  #include <X11/Xaw/XawInit.h>
-  #include "StripCharP.h"
-+ #ifdef __FreeBSD__
-+ #include <osreldate.h>
-+ # if __FreeBSD_version >= 199504
-+ # include "system.h"
-+ # endif
-+ #endif
-  #include <X11/Xfuncs.h>
+--- 17,37 ----
+  SYS_MODULE=	sgi_system
+  #endif
   
-  #define MS_PER_SEC 100
-***************
-*** 108,114 ****
-  };
-  
-  #undef offset
-! #define LABEL_ROOM 100
-  static void Initialize(), Destroy(), Redisplay(), MoveChart(), SetPoints();
-  static Boolean SetValues();
-  static int repaint_window();
---- 114,124 ----
-  };
-  
-  #undef offset
-! #if __FreeBSD_version >= 199504
-! # define LABEL_ROOM 80
-! #else
-! # define LABEL_ROOM 100
+! #if defined (FreeBSDArchitecture)
+! FreeBSDFLAGS=	-lkvm
+! SYS_MODULE=     freebsd_system
+! CC=		gcc -D_HAVE_PARAM_H
 ! #endif
-  static void Initialize(), Destroy(), Redisplay(), MoveChart(), SetPoints();
-  static Boolean SetValues();
-  static int repaint_window();
-***************
-*** 215,222 ****
---- 225,247 ----
-  static void Initialize (greq, gnew)
-      Widget greq, gnew;
-  {
-+     int i;
-+ 
-      PerfChartWidget w = (PerfChartWidget)gnew;
-  
-+     /*
-+      * XXX The missing initializations have been made obvious by FreeBSD 2.2's
-+      * new (`phk') malloc that doesn't initialize the malloc'ed areas to 0.
-+      * Perhaps more bogons will lurk around, but the floating arithmetic ones
-+      * have been the most annoying ones since they most likely cause a trap
-+      * at startup time.
-+      *
-+      * Strange that people in the 90's still rely on malloc()
-+      * returning an initialized region.
-+      */
-+     for ( i = 0; i < NUM_VALUES; i++ )
-+         w->strip_chart.valuedata[i] = 0.0;
-+ 
-  /* if we are working with a mono screen then turn off all warnings and alarms */
-  
-      if ( mono_screen ) {
-***************
-*** 323,330 ****
-  	   w->strip_chart.interval = repaint_window(w, 0, (int) w->core.width);
-         }
-     }
-!    if (value < w->strip_chart.min_value) 
-!        w->strip_chart.min_value = value;
-  
-     w->strip_chart.valuedata[w->strip_chart.interval] = value;
-     if (XtIsRealized((Widget)w)) {
---- 348,355 ----
-  	   w->strip_chart.interval = repaint_window(w, 0, (int) w->core.width);
-         }
-     }
-!    if (value < w->strip_chart.min_value)
-!      w->strip_chart.min_value = value;
-  
-     w->strip_chart.valuedata[w->strip_chart.interval] = value;
-     if (XtIsRealized((Widget)w)) {
-***************
-*** 343,361 ****
-  
-  	   if ( checkValue >= w->strip_chart.highAlarm ) { /* check for high alarm */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.alarmColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
-  	       }
-  	   }
-  	   else if ( checkValue >= w->strip_chart.highWarn ) { /* check for high warning */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.warnColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
-  	       }
-  	   }
-  	   else {
-  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.okColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.okColor;
-  	       }
-  	   }
---- 368,386 ----
-  
-  	   if ( checkValue >= w->strip_chart.highAlarm ) { /* check for high alarm */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.alarmColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
-  	       }
-  	   }
-  	   else if ( checkValue >= w->strip_chart.highWarn ) { /* check for high warning */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
-  	       }
-  	   }
-  	   else {
-  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.okColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.okColor;
-  	       }
-  	   }
-***************
-*** 373,391 ****
-  
-  	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.alarmColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
-  	       }
-  	   }
-  	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.warnColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
-  	       }
-  	   }
-  	   else {
-  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.okColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.okColor;
-  	       }
-  	   }
---- 398,416 ----
-  
-  	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.alarmColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
-  	       }
-  	   }
-  	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
-  	       }
-  	   }
-  	   else {
-  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.okColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.okColor;
-  	       }
-  	   }
-***************
-*** 448,455 ****
-  
-      /* Compute the minimum scale required to graph the data, but don't go
-         lower than min_scale. */
-!     if (w->strip_chart.interval != 0 || scale <= (int)w->strip_chart.max_value)
-!       scale = ((int) (w->strip_chart.max_value)) + 1;
-      if (scale < w->strip_chart.min_scale)
-        scale = w->strip_chart.min_scale;
-  
---- 473,487 ----
-  
-      /* Compute the minimum scale required to graph the data, but don't go
-         lower than min_scale. */
 ! 
-!     if (w->strip_chart.interval != 0 || scale <= (int)w->strip_chart.max_value) {
-! #if __FreeBSD_version >= 199504
-!       if (strcmp(w->strip_chart.botLabel, botNames[FREE_MEM]) != 0 || w->strip_chart.max_value == 100)
-! 	scale = ((int) (w->strip_chart.max_value)) + 1;
-! #else
-!       scale = ((int) (w->strip_chart.max_value)) + 1;      
-! #endif
-!     }
-      if (scale < w->strip_chart.min_scale)
-        scale = w->strip_chart.min_scale;
+! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS) $(FreeBSDFLAGS)
   
+     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
+! LOCAL_LIBRARIES = -lXaw -lXt -lXmu -lX11
+         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
+! #      SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
+! #      OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
+!        SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c
+!        OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o
+  
+  ComplexProgramTarget(xperfmon++)
+  
+Only in ../xperfmon++: Imakefile.old
+Only in ../xperfmon++: Makefile
+Only in ./: RCS
+diff -cd ../xperfmon++/README ./README
+*** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
+--- ./README	Sat May  4 10:46:36 1996
 ***************
-*** 479,490 ****
-  /* draw titles */
+*** 18,20 ****
+--- 18,52 ----
+  		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
+  		O/S if x11r5 is fully installed in all the right places.
   
-  	if ( w->strip_chart.topLabel ) {
-! 	    y = w->core.height/2;
-  	    x = 4;
-  	    XDS(w->strip_chart.topLabel);
-  	}
-  	if ( w->strip_chart.botLabel ) {
-! 	    y = (w->core.height/2) + w->strip_chart.font_height;
-  	    x = 4;
-  	    XDS(w->strip_chart.botLabel);
-  	}
---- 511,522 ----
-  /* draw titles */
-  
-  	if ( w->strip_chart.topLabel ) {
-! 	    y = w->core.height/2 - 2;
-  	    x = 4;
-  	    XDS(w->strip_chart.topLabel);
-  	}
-  	if ( w->strip_chart.botLabel ) {
-! 	    y = (w->core.height/2 - 2) + w->strip_chart.font_height;
-  	    x = 4;
-  	    XDS(w->strip_chart.botLabel);
-  	}
-diff -c -N ../xperfmon++/TimeChart.h ./TimeChart.h
-*** ../xperfmon++/TimeChart.h	Wed Jul 27 22:29:31 1994
---- ./TimeChart.h	Fri Dec 15 11:00:03 1995
-***************
-*** 88,99 ****
-  #define XtCFillRect "FillRect"
-  
-  #define XtNgetValue "getValue"
-! #define XtNhighlight "highlight"
-  #define XtNjumpScroll "jumpScroll"
-  #define XtNminScale "minScale"
-  #define XtNscale "scale"
-  #define XtNfillRect "fillRect"
-! #define XtNupdate "update"
-  #define XtNvmunix "vmunix"
-   
-  typedef struct _TimeChartRec *TimeChartWidget;
---- 88,99 ----
-  #define XtCFillRect "FillRect"
-  
-  #define XtNgetValue "getValue"
-! /* #define XtNhighlight "highlight" */
-  #define XtNjumpScroll "jumpScroll"
-  #define XtNminScale "minScale"
-  #define XtNscale "scale"
-  #define XtNfillRect "fillRect"
-! /* #define XtNupdate "update" */
-  #define XtNvmunix "vmunix"
-   
-  typedef struct _TimeChartRec *TimeChartWidget;
-diff -c -N ../xperfmon++/misc.c ./misc.c
-*** ../xperfmon++/misc.c	Wed Jul 27 22:29:33 1994
---- ./misc.c	Fri Dec 15 11:00:04 1995
-***************
-*** 58,64 ****
-      int i, keycode, length = 0;
-  /*    PerfmonWidget pw = (PerfmonWidget) w;*/
-  
-!     length = XLookupString(event, strbuf, STRBUFSIZE, &keycode, NULL);
-      switch (keycode) {
-      case 'Q':
-      case 'q':
---- 58,64 ----
-      int i, keycode, length = 0;
-  /*    PerfmonWidget pw = (PerfmonWidget) w;*/
-  
-!     length = XLookupString((XKeyEvent *)event, strbuf, STRBUFSIZE, (KeySym *)&keycode, NULL);
-      switch (keycode) {
-      case 'Q':
-      case 'q':
-diff -c -N ../xperfmon++/system.h ./system.h
-*** ../xperfmon++/system.h	Wed Jul 27 22:29:34 1994
---- ./system.h	Fri Dec 15 11:00:03 1995
-***************
-*** 151,168 ****
---- 151,182 ----
-      "Idle",
-      "Free",
-      "Disk",
-+ #ifdef __FreeBSD__
-+     "Inter-",
-+ #else
-      "Interrupts",
-+ #endif
-      "Input",
-      "Output",
-+ #ifdef __FreeBSD__
-+     "Collis",
-+     "NFS Clt",
-+     "NFS Srv",
-+ #else
-      "Collision",
-      "NFS Client",
-      "NFS Server",
-+ #endif
-  };
-  static char *widgetLabels[] = {
-      "User",
-      "System",
-      "Idle",
-+ #ifdef __FreeBSD__
-+     "Swap",
-+ #else
-      "Free",
-+ #endif
-      "Disk",
-      "Intrpts",
-      "Input",
-***************
-*** 171,177 ****
---- 185,205 ----
-      "NFSClient",
-      "NFSServer",
-  };
 + 
-  static char *botNames[] = {
-+ #ifdef __FreeBSD__
-+     "CPU (%)",
-+     "CPU (%)",
-+     "CPU (%)",
-+     "Swap (%)",
-+     "Trsf/s",
-+     "rupts/s",
-+     "Pkts/s",
-+     "Pkts/s",
-+     "Pkts/s",
-+     "Calls/s",
-+     "Calls/s",
-+ #else
-      "CPU",
-      "CPU",
-      "CPU",
-***************
-*** 183,186 ****
---- 211,215 ----
-      "Packets",
-      "Calls",
-      "Calls",
-+ #endif
-  };
-diff -c -N ../xperfmon++/xperfmon.c ./xperfmon.c
-*** ../xperfmon++/xperfmon.c	Wed Jul 27 22:29:39 1994
---- ./xperfmon.c	Fri Dec 15 11:00:04 1995
-***************
-*** 58,63 ****
---- 58,67 ----
-   *
-   */
-  
-+ #ifdef __FreeBSD__
-+ #include <osreldate.h>
-+ #endif
++ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
 + 
-  #include <stdio.h>
-  #include <X11/IntrinsicP.h>
-  #include <X11/StringDefs.h>
-***************
-*** 94,99 ****
---- 98,108 ----
-       { NULL,           NULL      },
-  };
-  
-+ /* LK!!! */
-+ int  MIN_HEIGHT=420;
-+ #define MIN_WIDTH 185
-+ #define GRAPH_MIN_HEIGHT 28
++ 8-16-95		Quick and dirty workaround of -geometry option bug.
++ 		But there are still some side effects when changing the geometry. 
++ 		Fix memory leak in bsd_system.c
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
 + 
-  #define XtNinterval "interval"
-  #define XtNcount "count"
-  #define XtCCount "Count"
++ 30-10-95	Change 'Free Mem' graph to 'Free Swap' cause the FreeBSD memory system
++ 		tries to minimize the free unused amount of memory.
++ 		Include basic support for FreeBSD > 2.1.
++ 		Number of interrupts now independent from 'Update Intervall'
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 11-12-95        Fix -geometry bug! Now there is only a MIN_WIDTH of 185 pixels, and the
++ 		MIN_HEIGTH is calculates dynamically depending on the number of active
++ 		graphs.	FreeBSD-2.X only:
++ 		Change 'Free  Swap' graph from absolut into percent values.
++ 		All graphs shoud be independent of the 'Update Intervall'.
++ 		Modify graph labels and add unit of each graph.
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 5-4-96		Fix some event problems that consumes a lot of cpu power after resizing
++ 		(mwm) or restart of an window manager. Make xperfmon compile with
++ 		FreeBSD-current (2.2, changes in get_swapspace)
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
+diff -cd ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
+*** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
+--- ./XPerfmon++.ad	Tue Dec  5 09:32:54 1995
 ***************
-*** 101,110 ****
-  #define XtCFill "Fill"
-  #define XtNfast "fast"
-  #define XtCFast "Fast"
-- #define XtNstufAdd "stufAdd"
-- #define XtCStufAdd "StufAdd"
-- #define XtNstufSub "stufSub"
-- #define XtCStufSub "StufSub"
-  #define XtNdebug "debug"
-  #define XtCDebug "Debug"
-  #define XtNusercpuAdd "usercpuAdd"
---- 110,115 ----
-***************
-*** 171,181 ****
-  static XrmOptionDescRec optionDescList[] = {
-      { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
-      { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
+*** 4,27 ****
+  ! commented out, the "NFS Server" graph background will be the application
+  ! default color, unless some other resource file has specified it.
+  ! *PerfChart.highAlarm:		99998
+  *perfChartIdle.lowWarn:		10
+  *perfChartIdle.lowAlarm:	5
+! *perfChartUser.highAlarm:	90
+! *perfChartUser.highWarn:	75
+! *perfChartSystem.highAlarm:	90
+! *perfChartSystem.highWarn:	75
+! *perfChartFree.lowWarn:		2000
+! *perfChartFree.lowAlarm:	1000
+! *perfChartDisk.highWarn:	25
+! *perfChartDisk.highAlarm:	50
+! *perfChartIntrpts.highWarn:	500
+! *perfChartIntrpts.highAlarm:	750
+! *perfChartInput.highWarn:	300
+! *perfChartInput.highAlarm:	500
+! *perfChartOutput.highWarn:	300
+! *perfChartOutput.highAlarm:	500
+  *perfChartCollision.highWarn:	20
+  *perfChartCollision.highAlarm:	50
+! *perfChartNFSClient.highWarn:	200
+! *perfChartNFSClient.highAlarm:	400
+  *font:				6x13
+--- 4,40 ----
+  ! commented out, the "NFS Server" graph background will be the application
+  ! default color, unless some other resource file has specified it.
+  ! *PerfChart.highAlarm:		99998
++ *perfChartUser.highAlarm:	95
++ *perfChartUser.highWarn:	75
++ 
++ *perfChartSystem.highAlarm:	40
++ *perfChartSystem.highWarn:	25
++ 
+  *perfChartIdle.lowWarn:		10
+  *perfChartIdle.lowAlarm:	5
 ! 
-      { "-lowmemAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowmemWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
-      { "-highmemAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
-      { "-highmemWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
-  
-      { "-lowuserAlarm", "*perfChartUser.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowuserWarn", "*perfChartUser.lowWarn", XrmoptionSepArg, NULL },
---- 176,192 ----
-  static XrmOptionDescRec optionDescList[] = {
-      { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
-      { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
-! #if __FreeBSD_version >= 199504
-!     { "-lowswapAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
-!     { "-lowswapWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
-!     { "-highswapAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
-!     { "-highswapWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
-! #else
-      { "-lowmemAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowmemWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
-      { "-highmemAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
-      { "-highmemWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
-+ #endif
-  
-      { "-lowuserAlarm", "*perfChartUser.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowuserWarn", "*perfChartUser.lowWarn", XrmoptionSepArg, NULL },
-***************
-*** 237,244 ****
---- 248,260 ----
-      { "+systemcpu", XtNsystemcpuAdd,     XrmoptionNoArg,     "TRUE" },
-      { "-idlecpu",   XtNidlecpuSub,     XrmoptionNoArg,     "True" },
-      { "+idlecpu",   XtNidlecpuAdd,     XrmoptionNoArg,     "TRUE" },
-+ #if __FreeBSD_version >= 199504
-+     { "-freeswap",  XtNfreememSub,     XrmoptionNoArg,     "True" },
-+     { "+freeswap",  XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
-+ #else
-      { "-freemem",   XtNfreememSub,     XrmoptionNoArg,     "True" },
-      { "+freemem",   XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
-+ #endif
-      { "-diskxfr",   XtNdiskxfrSub,     XrmoptionNoArg,     "True" },
-      { "+diskxfr",   XtNdiskxfrAdd,     XrmoptionNoArg,     "TRUE" },
-      { "-interrupts",  XtNinterruptsSub ,     XrmoptionNoArg,     "True" },
-***************
-*** 253,269 ****
-      { "+nfsclient",   XtNnfsclientAdd,     XrmoptionNoArg,     "TRUE" },
-      { "-nfsserver",   XtNnfsserverSub,     XrmoptionNoArg,     "True" },
-      { "+nfsserver",   XtNnfsserverAdd,     XrmoptionNoArg,     "TRUE" },
--     { "-stuf",      XtNstufAdd,        XrmoptionNoArg,     (XtPointer)"True" },
--     { "+stuf",      XtNstufSub,        XrmoptionNoArg,     (XtPointer)"True" },
-  };
-  
-  /* Application Resource List - no particular widget */
-  
-  static XtResource resources[] = {
--     { XtNstufAdd, XtCStufAdd, XtRBool, sizeof(Bool),
-- 	  XtOffsetOf(AppData, addG[1]), XtRImmediate, (XtPointer) NULL },
--     { XtNstufSub, XtCStufSub, XtRBool, sizeof(Bool),
-- 	  XtOffsetOf(AppData, subG[0]), XtRImmediate, (XtPointer) NULL },
-      { XtNinterval, XtCInterval, XtRInt, sizeof(int),
-  	  XtOffsetOf(AppData, interval), XtRImmediate, (caddr_t) DEF_INTERVAL },
-      { XtNcount, XtCCount, XtRInt, sizeof(int),
---- 269,279 ----
-***************
-*** 324,329 ****
---- 334,342 ----
-  void
-  usage()
-  {
-+ #if __FreeBSD_version >= 199504
-+     fprintf(stderr, "\nxperfmon++ V1.3 for FreeBSD-2.X\n");
-+ #endif
-      fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
-      fprintf(stderr, "options:\n");
-      fprintf(stderr, "    [-display [{host}]:[{vs}]]\n");
-***************
-*** 344,350 ****
---- 357,367 ----
-      fprintf(stderr, "    [{-+}usercpu]          ({remove|add} usercpu to list of graphs\n");
-      fprintf(stderr, "    [{-+}systemcpu]        ({remove|add} systemcpu to list of graphs\n");
-      fprintf(stderr, "    [{-+}idlecpu]          ({remove|add} idlecpu to list of graphs\n");
-+ #if __FreeBSD_version >= 199504
-+     fprintf(stderr, "    [{-+}freeswap]         ({remove|add} freeswap to list of graphs\n");
-+ #else
-      fprintf(stderr, "    [{-+}freemem]          ({remove|add} freemem to list of graphs\n");
-+ #endif
-      fprintf(stderr, "    [{-+}diskxfr]          ({remove|add} disk transfers to list of graphs\n");
-      fprintf(stderr, "    [{-+}interrupts]       ({remove|add} interrupts to list of graphs\n");
-      fprintf(stderr, "    [{-+}inputpkts]        ({remove|add} input packets to list of graphs\n");
-***************
-*** 361,370 ****
---- 378,395 ----
-      fprintf(stderr, "    [-high*Alarm {value}]     ( Set High Alarm value for *)\n");
-      fprintf(stderr, "    [-high*Warn {value}]      ( Set High Warning value for *)\n");
-      fprintf(stderr, "  Where \"*\" is one of the following:\n");
-+ #if __FreeBSD_version >= 199504
-+     fprintf(stderr, "    [swap | user | sys | idle | disk | intrpts |\n");
-+ #else
-      fprintf(stderr, "    [mem | user | sys | idle | disk | intrpts |\n");
-+ #endif
-      fprintf(stderr, "     input | output | collision | nfsclient | nfsserver]\n");
-      fprintf(stderr, "  For Example:\n");
-+ #if __FreeBSD_version >= 199504
-+     fprintf(stderr, "    [-lowswapAlarm {value}]   ( Set low Free Swap Alarm Value)\n");
-+ #else
-      fprintf(stderr, "    [-lowmemAlarm {value}]    ( Set low Free Memory Alarm Value)\n");
-+ #endif
-      fprintf(stderr, "WARNING: It is an error condition to set both a high, and a low, limit warning or alarm.\n");
-      exit(1);
-  }
-***************
-*** 386,391 ****
---- 411,417 ----
-      time(&timeStamp);
-      return;
-  }
-+ 
-  /*ARGSUSED*/
-  void handleResize( w, unused, event, contin2disp )
-  Widget w;
-***************
-*** 394,399 ****
---- 420,426 ----
-  Boolean *contin2disp;
-  {
-      Dimension neww, newh;
-+     Dimension hOverHead, boxH, timeH, newWidgetH;
-      int i;
-      char eventString[60];
-      switch (event->type) {
-***************
-*** 417,429 ****
-  	newh=event->xconfigure.height;
-  	strcpy(eventString,"configure");
-  	break;
-  
-      }
-!     if ( neww < 250 + 10 ) {
-! 	neww = 250 + 10;
-! 	w->core.width = 250 + 10;
-! 	XtResizeWindow(w);
-      }
-      if ( appData.debug )
-  	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
-  	       (int)event->type, eventString,
---- 444,474 ----
-  	newh=event->xconfigure.height;
-  	strcpy(eventString,"configure");
-  	break;
-+     }
-  
-+     if ( neww < MIN_WIDTH ) {
-+ 	neww = MIN_WIDTH;
-+ 	w->core.width = MIN_WIDTH;
-+     } else {
-+         w->core.width = neww;
-      }
+! *perfChartSwap.lowWarn:		10
+! *perfChartSwap.lowAlarm:	3
 ! 
-!     if ( newh < MIN_HEIGHT ) {
-! 	newh = MIN_HEIGHT;
-! 	w->core.height = MIN_HEIGHT;
-!     }
+! *perfChartDisk.highWarn:	50
+! *perfChartDisk.highAlarm:	100
 ! 
-!     /* Now the graphs fit perfect into the window! */
-!     hOverHead = (5.6 * appData.numGraphsOn) - (6 / appData.numGraphsOn);
-!     boxH = labelBox->core.height;
-!     timeH = timechart->core.height;
-!     newWidgetH = (newh - (boxH+7) - (timeH+10) - hOverHead) / appData.numGraphsOn;
-!     w->core.height = newWidgetH * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+10);
-!     if(w->core.height != newh) {
-!       newh = w->core.height;
-      }
-+     XtResizeWindow(w);
-+ 
-      if ( appData.debug )
-  	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
-  	       (int)event->type, eventString,
-***************
-*** 431,448 ****
-  	       neww, newh);
-  
-      if ( event->type == ConfigureNotify ) {
-! /*	Dimension h = perfmon[0]->core.height;*/
-! 	Dimension hOverHead = 5 * appData.numGraphsOn;
-! 	Dimension boxH = labelBox->core.height;
-! 	Dimension timeH = timechart->core.height;
-! 	Dimension newWidgetH = (newh - (boxH+8) - (timeH+10) - hOverHead) / appData.numGraphsOn;
-  	if ( oldWidth == neww && oldHeight == newh ) return;
-  
-  	if ( appData.debug )
-  	    printf("BoxH=%hu, timeH=%hu, numGraphOn=%hu, newWidgetH=%hu\n",
-  		   boxH, timeH, appData.numGraphsOn, newWidgetH);
-  
-! 	neww -= 10;			/* allow for spacing and borders */
-  
-  	for ( i=0; i<NUM_GRAPHS; i++ ) {
-  	    if ( appData.graphOn[i] ) {
---- 476,489 ----
-  	       neww, newh);
-  
-      if ( event->type == ConfigureNotify ) {
+! *perfChartIntrpts.highWarn:	400
+! *perfChartIntrpts.highAlarm:	600
 ! 
-  	if ( oldWidth == neww && oldHeight == newh ) return;
-  
-  	if ( appData.debug )
-  	    printf("BoxH=%hu, timeH=%hu, numGraphOn=%hu, newWidgetH=%hu\n",
-  		   boxH, timeH, appData.numGraphsOn, newWidgetH);
-  
-! 	neww -= 10;			/* allow for spacing and borders */ 
-  
-  	for ( i=0; i<NUM_GRAPHS; i++ ) {
-  	    if ( appData.graphOn[i] ) {
+! *perfChartInput.highWarn:	500
+! *perfChartInput.highAlarm:	1000
+! 
+! *perfChartOutput.highWarn:	500
+! *perfChartOutput.highAlarm:	1000
+! 
+  *perfChartCollision.highWarn:	20
+  *perfChartCollision.highAlarm:	50
+! 
+! *perfChartNFSClient.highWarn:	100
+! *perfChartNFSClient.highAlarm:	200
+! 
+! *perfChartNFSServer.highWarn:	100
+! *perfChartNFSServer.highAlarm:	200
+  *font:				6x13
++ 
+Only in ./: freebsd_system.c
+diff -cd ../xperfmon++/xperfmon++.man ./xperfmon++.man
+*** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
+--- ./xperfmon++.man	Sat May  4 12:00:28 1996
 ***************
-*** 464,472 ****
-      int argc;
-      char **argv;
-  {
-      Arg arg;
-      Pixmap icon_pixmap = None;
-!     Widget  loadParent, pappaBox;
-  
-      char *progname = argv[0];
-      Bool foundAnAdd = FALSE;
---- 505,517 ----
-      int argc;
-      char **argv;
-  {
-+     /* LK!!! */
-+     Dimension timeH, newWidgetW, newWidgetH, hOverHead, boxH;
-+     unsigned int w, h;
-+ 
-      Arg arg;
-      Pixmap icon_pixmap = None;
-!     Widget pappaBox;
-  
-      char *progname = argv[0];
-      Bool foundAnAdd = FALSE;
+*** 94,101 ****
+  .B \-idlecpu | \+idlecpu
+  Graph \fIIdle\fP CPU Percentage.
+  .TP 26
+! .B \-freemem | \+freemem
+! Graph \fIFree Memory\fP.
+  .TP 26
+  .B \-diskxfr | \+diskxfr
+  Graph \fIDisk Transfers\fP per interval period.
+--- 94,101 ----
+  .B \-idlecpu | \+idlecpu
+  Graph \fIIdle\fP CPU Percentage.
+  .TP 26
+! .B \-free{mem/swap} | \+free{mem/swap}
+! Graph \fIFree Memory/Swap (Operating system dependent, swap for FreeBSD in %)\fP.
+  .TP 26
+  .B \-diskxfr | \+diskxfr
+  Graph \fIDisk Transfers\fP per interval period.
 ***************
-*** 540,561 ****
-  		xperfmon_width, xperfmon_height));
-  	XtSetValues(appData.toplevel, &arg, 1);
-      }
-- 
-  /* create windows */
-  
-      pappaBox = XtVaCreateManagedWidget("PappaBox", boxWidgetClass, appData.toplevel, 
-  				       XtNborderWidth, 0,
-  				       NULL);
-- 
-      XtOverrideTranslations(pappaBox, XtParseTranslationTable(defaultTranslations));
-  
-      (void)gethostname(hostname, sizeof(hostname));
-      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
-      sprintf(c, "\nUpdate Interval = %5.1f secs", (float)(appData.interval*appData.ms_per_sec)/1000.0);
-  
-      labelBox = XtVaCreateManagedWidget("LabelBox", labelWidgetClass, pappaBox,
-! 					 XtNwidth, 250,
-! /*					 XtNheight, 16,*/
-  				         XtNjustify, XtJustifyLeft,
-  				         XtNinternalHeight, 0,
-  					 XtNtop, XtChainTop,
---- 585,636 ----
-  		xperfmon_width, xperfmon_height));
-  	XtSetValues(appData.toplevel, &arg, 1);
-      }
-  /* create windows */
-  
-      pappaBox = XtVaCreateManagedWidget("PappaBox", boxWidgetClass, appData.toplevel, 
-  				       XtNborderWidth, 0,
-  				       NULL);
-      XtOverrideTranslations(pappaBox, XtParseTranslationTable(defaultTranslations));
-  
-      (void)gethostname(hostname, sizeof(hostname));
-      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
-      sprintf(c, "\nUpdate Interval = %5.1f secs", (float)(appData.interval*appData.ms_per_sec)/1000.0);
-  
-+     { /* LK!!! handle -geometry option correct, also small changes in handleResize */
-+       Window rwin;
-+       int x,y,px,py;
-+       unsigned int pw,ph,bw,d;
-+ 
-+       XtRealizeWidget(appData.toplevel);
-+ 
-+       XGetGeometry(XtDisplay(appData.toplevel),XtWindow(appData.toplevel),
-+ 		   &rwin,&x,&y,&w,&h,&bw,&d);
-+ 
-+       if ( w > MIN_WIDTH) {
-+ 	newWidgetW = w - 10;
-+ 	appData.toplevel->core.width = w;
-+       } else {
-+ 	appData.toplevel->core.width = MIN_WIDTH;
-+ 	newWidgetW = MIN_WIDTH - 10;
-+       }
-+ 
-+       hOverHead = (5.6 * appData.numGraphsOn) - (6 / appData.numGraphsOn);
-+       boxH = 22;
-+       timeH = 12;
-+       if (h > GRAPH_MIN_HEIGHT * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+10))
-+ 	newWidgetH = (h - hOverHead - (boxH+7) - (timeH+10)) / appData.numGraphsOn;
-+       else
-+ 	newWidgetH = GRAPH_MIN_HEIGHT;
-+ 
-+       MIN_HEIGHT = newWidgetH * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+10);
-+       appData.toplevel->core.height = MIN_HEIGHT;
-+ 
-+       XtResizeWindow(appData.toplevel);
-+     }
-+ 
-      labelBox = XtVaCreateManagedWidget("LabelBox", labelWidgetClass, pappaBox,
-! 					 XtNwidth, newWidgetW,
-! 					 XtNheight, boxH,
-  				         XtNjustify, XtJustifyLeft,
-  				         XtNinternalHeight, 0,
-  					 XtNtop, XtChainTop,
+*** 176,183 ****
+  .B idle
+  Set \fIlimit\fP value for Idle CPU Percentage.
+  .TP 12
+! .B mem
+! Set \fIlimit\fP value for Free Memory.
+  .TP 12
+  .B disk
+  Set \fIlimit\fP value for Disk Transfers.
+--- 176,183 ----
+  .B idle
+  Set \fIlimit\fP value for Idle CPU Percentage.
+  .TP 12
+! .B mem/swap
+! Set \fIlimit\fP value for Free Memory/Swap (OS dependent, swap for FreeBSD).
+  .TP 12
+  .B disk
+  Set \fIlimit\fP value for Disk Transfers.
 ***************
-*** 570,577 ****
-  	    perfmon[i] = XtVaCreateManagedWidget(hostname, perfChartWidgetClass, pappaBox, 
-  						 XtNtopLabel, topNames[i],
-  						 XtNbotLabel, botNames[i],
-! 						 XtNwidth, 250,
-! 						 XtNheight, 36,
-  						 XtNupdate, appData.interval*appData.ms_per_sec,
-  						 XtNfillRect, (int)appData.fill,
-  						 XtNjumpScroll, 1,
---- 645,652 ----
-  	    perfmon[i] = XtVaCreateManagedWidget(hostname, perfChartWidgetClass, pappaBox, 
-  						 XtNtopLabel, topNames[i],
-  						 XtNbotLabel, botNames[i],
-! 						 XtNwidth, newWidgetW,
-! 						 XtNheight, newWidgetH,
-  						 XtNupdate, appData.interval*appData.ms_per_sec,
-  						 XtNfillRect, (int)appData.fill,
-  						 XtNjumpScroll, 1,
+*** 313,320 ****
+  .B System
+  Set System CPU Percentage resource.
+  .TP 16
+! .B Free
+! Set Free Memory resource.
+  .TP 16
+  .B Disk
+  Set Disk Transfer count resource.
+--- 313,320 ----
+  .B System
+  Set System CPU Percentage resource.
+  .TP 16
+! .B Free/Swap
+! Set Free Memory/Swap resource.
+  .TP 16
+  .B Disk
+  Set Disk Transfer count resource.
 ***************
-*** 580,600 ****
-      }
-      timechart = XtVaCreateManagedWidget("timeChart", timeChartWidgetClass, pappaBox, 
-  					 XtNfromVert, perfmon[1], 
-! 					 XtNwidth, 250,
-! 					 XtNheight, 18,
-  					 XtNupdate, appData.interval*appData.ms_per_sec,
-  					 XtNjumpScroll, 1,
-  					 NULL);
-      sys_setup();
-      XtAddCallback(timechart, XtNgetValue, update_time_stat, NULL);
-  
-      for ( i=0; i<NUM_GRAPHS; i++ ) 
-  	if ( appData.graphOn[i] ) 
-! 	    XtAddCallback(perfmon[i], XtNgetValue, update_stat, i);
-  
-      appData.interval_id = XtAppAddTimeOut(appData.app_context,
-  		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
-  
--     XtRealizeWidget(appData.toplevel);
-      XtAppMainLoop(appData.app_context);
-  }
---- 655,676 ----
-      }
-      timechart = XtVaCreateManagedWidget("timeChart", timeChartWidgetClass, pappaBox, 
-  					 XtNfromVert, perfmon[1], 
-! 					 XtNwidth, newWidgetW,
-! 					 XtNheight, timeH,
-  					 XtNupdate, appData.interval*appData.ms_per_sec,
-  					 XtNjumpScroll, 1,
-  					 NULL);
+*** 395,398 ****
+--- 395,413 ----
+  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
+  above address.
+  .PP
++ .I xperfmon++ V1.2 for FreeBSD
++ was written by Lars Koeller with a lot of helpful notes by Joerg Wunsch.
++ .PP
++ .I xperfmon++ V1.31 for FreeBSD
++ close some memory leaks, fix geometry (resize) bug, display free swap
++ without resizing of graph in percent.
++ .PP
++ .I xperfmon++ V1.33 for FreeBSD
++ contains some fixes due to event problems and compiles fine under
++ FreeBSD 2.2 (changes in get_swapspace).
++ Please E-Mail any bugs or comments with the subject
++ "xperfmon++: ..." to Lars_Koeller@odie.physik2.uni-rostock.de.
++ .PP
+  Enjoy!
 + 
-      sys_setup();
-      XtAddCallback(timechart, XtNgetValue, update_time_stat, NULL);
-  
-      for ( i=0; i<NUM_GRAPHS; i++ ) 
-  	if ( appData.graphOn[i] ) 
-! 	    XtAddCallback(perfmon[i], XtNgetValue, update_stat, (XtPointer)i);
-  
-      appData.interval_id = XtAppAddTimeOut(appData.app_context,
-  		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
-  
-      XtAppMainLoop(appData.app_context);
-  }
 + 

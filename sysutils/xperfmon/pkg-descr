@@ -1,11 +1,11 @@
-This package contains the binary release of xperfmon++ V1.3 a X based
+This package contains the binary release of xperfmon++ V1.33 a X based
 system performance meter for several systems, ported to FreeBSD 2.X.
 
 The program monitors user-, system-, idle-cputime, free swap, disk io,
 number of interrupts, network-input, -output, -collision packets and
 NFS client and server activity.
 
-Please send BUGS and annotations to: lars.koeller@odie.physik2.uni-rostock.de
+Please send BUGS and annotations to: Lars_Koeller@odie.physik2.uni-rostock.de
 
 Major changes in xperfmon++ V1.3 due to xperfmon++ V1.1:
 
@@ -15,3 +15,9 @@ Major changes in xperfmon++ V1.3 due to xperfmon++ V1.1:
 	- Display 'Free Swap' in percent without resizing of the graph
 	- Close some memory leaks
 	- Display unit of graph in label field.
+
+Changes from xperfmon++ V1.3 to xperfmon++ V1.33:
+
+	- Fix event bug when resizing or moving the window.
+	  (High cpu consumption when running xperfmon++ with mwm)
+	- Changes in get_swapspace to compile with FreeBSD 2.2 (-current)
