@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	php-
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP modules to access to SQL Relay
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch

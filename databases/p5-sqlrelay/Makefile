@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	p5-
 DISTFILES=	# none
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 modules to access to SQL Relay, including a DBD interface
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
