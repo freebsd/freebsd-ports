@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Aug 24 00:54:16 1998
++++ Makefile.in	Mon Jan 24 11:00:31 2000
+@@ -29,7 +29,7 @@
+ PROG = trafshow
+ CC = @CC@
+ CCOPT = @V_CCOPT@
+-INCLS = -I. @V_INCLS@
++INCLS = -I. -I/usr/local/include @V_INCLS@
+ DEFS = @DEFS@
+ 
+ CFLAGS = $(CCOPT) $(DEFS) $(INCLS)

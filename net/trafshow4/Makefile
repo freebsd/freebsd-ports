@@ -1,18 +1,32 @@
 # New ports collection makefile for:	trafshow
-# Version required:     2.0
+# Version required:     3.1
 # Date created:         25 September 1996
 # Whom:                 igor@zynaps.ru
 #
 # $FreeBSD$
 #
 
-DISTNAME=	trafshow-2.0
+DISTNAME=	trafshow-3.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/tcpip/netmaint/
+MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     jseger@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 400010
+LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
+.endif
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS=-L/usr/local/lib
+ALL_TARGET=	trafshow
+
 MAN1=		trafshow.1
 
-.include <bsd.port.mk>
+do-install:
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
+	@ ${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
+	@ ${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/etc/trafshow
+
+.include <bsd.port.post.mk>
