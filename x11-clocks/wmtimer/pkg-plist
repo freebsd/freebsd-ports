@@ -1,4 +1,3 @@
 bin/wmtimer
 %%PORTDOCS%%share/doc/wmtimer/README
 %%PORTDOCS%%@dirrm share/doc/wmtimer
-%%PORTDOCS%%@unexec rmdir %D/share/doc 2>/dev/null || true
