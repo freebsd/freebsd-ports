@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdnsd
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11a
 CATEGORIES=	dns
 MASTER_SITES=	http://www.phys.uu.nl/~rombouts/pdnsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-par
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--with-cachedir=${PDNSDB} \
 		--enable-ipv6
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN8=		pdnsd-ctl.8
+MAN8=		pdnsd.8 pdnsd-ctl.8
 
 PDNSDB=		/var/db/pdnsd
 DOCSRCDIR=	${WRKSRC}/doc
