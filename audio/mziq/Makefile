@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mziq
-PORTVERSION=	0.2.44
+PORTVERSION=	0.2.49
 CATEGORIES=	audio
-MASTER_SITES=	http://cseg.lucidx.com/mziq/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
