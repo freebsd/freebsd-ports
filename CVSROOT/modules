@@ -10679,6 +10679,7 @@ xv		ports/graphics/xv
 xv-m17n		ports/graphics/xv-m17n
 xvattr		ports/x11/xvattr
 xvid		ports/multimedia/xvid
+xvidcap		ports/sysutils/xvidcap
 xvier		ports/games/xvier
 xview		ports/x11-toolkits/xview
 xview-clients	ports/x11-toolkits/xview-clients
