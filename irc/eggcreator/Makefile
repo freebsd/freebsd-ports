@@ -17,6 +17,7 @@ COMMENT=	Eggdrop.conf creator
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 WRKSRC=		${WRKDIR}/eggconfcreator
+USE_QT_VER=	3
 MAKE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		QTDIR=${X11BASE}
 QMAKE=		${LOCALBASE}/bin/qmake
