@@ -3,7 +3,7 @@
 # Date created:         16 May 1998
 # Whom:                 chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.6 1998/05/15 02:48:21 chuckr Exp $
+# $Id: Makefile,v 1.7 1998/05/16 16:06:49 chuckr Exp $
 #
 
 DISTNAME=       objc-1.8.18
@@ -12,6 +12,8 @@ MASTER_SITES=   http://www.can.nl/~stes/Software/
 DISTFILES=	objc-1.8.18.tar.gz bootstrap-1.8.17.tar.gz
 
 MAINTAINER=     chuckr@freebsd.org
+
+BROKEN_ELF=	yes
 
 HAS_CONFIGURE=	yes
 MAN1=		cvtimport.1 objc.1 postlink.1
