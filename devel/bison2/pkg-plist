@@ -1,0 +1,6 @@
+bin/bison
+share/bison.hairy
+share/bison.simple
+@unexec install-info --delete %D/info/bison.info %D/info/dir
+info/bison.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
