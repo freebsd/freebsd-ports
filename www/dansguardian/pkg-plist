@@ -5,6 +5,7 @@
 @exec mkdir -p etc/dansguardian/phraselists/dutchbadwords
 @exec mkdir -p etc/dansguardian/phraselists/frenchbadwords
 @exec mkdir -p etc/dansguardian/phraselists/gambling
+@exec mkdir -p etc/dansguardian/phraselists/germanpornography
 @exec mkdir -p etc/dansguardian/phraselists/goodphrases
 @exec mkdir -p etc/dansguardian/phraselists/gore
 @exec mkdir -p etc/dansguardian/phraselists/illegaldrugs
@@ -28,9 +29,9 @@ etc/dansguardian/contentregexplist
 etc/dansguardian/dansguardian.conf
 etc/dansguardian/exceptioniplist
 etc/dansguardian/exceptionphraselist
+etc/dansguardian/exceptionsitelist
 etc/dansguardian/exceptionurllist
 etc/dansguardian/exceptionuserlist
-etc/dansguardian/exceptionsitelist
 etc/dansguardian/messages
 etc/dansguardian/phraselists/chat/weighted
 etc/dansguardian/phraselists/drugadvocacy/weighted
@@ -38,6 +39,7 @@ etc/dansguardian/phraselists/dutchbadwords/weighted
 etc/dansguardian/phraselists/frenchbadwords/weighted
 etc/dansguardian/phraselists/gambling/banned
 etc/dansguardian/phraselists/gambling/weighted
+etc/dansguardian/phraselists/germanpornography/weighted
 etc/dansguardian/phraselists/goodphrases/exception
 etc/dansguardian/phraselists/goodphrases/weighted
 etc/dansguardian/phraselists/gore/weighted
@@ -64,6 +66,7 @@ www/cgi-bin/dansguardian.pl
 @dirrm etc/dansguardian/phraselists/dutchbadwords
 @dirrm etc/dansguardian/phraselists/frenchbadwords
 @dirrm etc/dansguardian/phraselists/gambling
+@dirrm etc/dansguardian/phraselists/germanpornography
 @dirrm etc/dansguardian/phraselists/goodphrases
 @dirrm etc/dansguardian/phraselists/gore
 @dirrm etc/dansguardian/phraselists/illegaldrugs
@@ -78,4 +81,3 @@ www/cgi-bin/dansguardian.pl
 @dirrm etc/dansguardian/phraselists
 @dirrm etc/dansguardian
 @unexec echo If permanently deleting this package, /var/log/dansguardian.log must be removed manually
-
