@@ -1,0 +1,13 @@
+--- Makefile.in	2000/12/18 17:14:56	1.1
++++ Makefile.in	2000/12/18 17:15:24
+@@ -374,8 +374,8 @@
+ 	if test -n "$(GNOME_PREFIX)"; then \
+ 		$(mkinstalldirs) $(DESTDIR)$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
+ 		$(INSTALL_DATA) $(srcdir)/chbg.desktop $(DESTDIR)$(GNOME_PREFIX)/share/gnome/apps/Graphics; \
+-		$(mkinstalldirs) $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps; \
+-		$(INSTALL_DATA) $(srcdir)/chbg_64x64.xpm $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps; \
++		$(mkinstalldirs) $(DESTDIR)$(GNOME_PREFIX)/share/gnome/pixmaps; \
++		$(INSTALL_DATA) $(srcdir)/chbg_64x64.xpm $(DESTDIR)$(GNOME_PREFIX)/share/gnome/pixmaps; \
+ 	fi
+ 
+ uninstall-local:

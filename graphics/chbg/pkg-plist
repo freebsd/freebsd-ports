@@ -1,4 +1,6 @@
 bin/chbg
+share/gnome/apps/Graphics/chbg.desktop
+share/gnome/pixmaps/chbg_64x64.xpm
 share/locale/fr/LC_MESSAGES/chbg.mo
 share/locale/sk/LC_MESSAGES/chbg.mo
 share/locale/ja/LC_MESSAGES/chbg.mo
