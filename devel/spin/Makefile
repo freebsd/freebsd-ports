@@ -16,6 +16,8 @@ DISTFILES=	spin${PORTVERSION:S/.//g}.tar.gz html.tar.gz
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
+BROKEN=		Checksum mismatch
+
 DIST_SUBDIR=	spin
 WRKSRC=		${WRKDIR}/Src${PORTVERSION}
 MAKEFILE=	make_unix
