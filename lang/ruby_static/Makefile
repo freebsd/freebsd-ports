@@ -39,7 +39,7 @@ EXT_PORTS+=	converters/ruby-iconv
 .endif
 
 .for p in ${EXT_PORTS}
-BUILD_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
+EXTRACT_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
 .endfor
 
 GNU_CONFIGURE=	yes
