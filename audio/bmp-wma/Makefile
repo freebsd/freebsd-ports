@@ -16,6 +16,8 @@ COMMENT=	WMA input plugin for beep-media-player
 
 LIB_DEPENDS=	beep.1:${PORTSDIR}/multimedia/beep-media-player
 
+BROKEN=		Broken dependency
+
 PLIST_FILES=	lib/bmp/Input/libwma.so
 
 GNU_CONFIGURE=	yes
