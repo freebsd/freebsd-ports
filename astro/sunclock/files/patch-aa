@@ -1,19 +1,31 @@
---- Imakefile.orig      Wed Jul  8 08:16:59 1998
-+++ Imakefile   Wed Jul  8 08:17:11 1998
-@@ -11,14 +11,14 @@
- CCOPTIONS = -Ae -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\"
- #else
- # gcc
--CCOPTIONS = -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -Wall
-+CCOPTIONS = -DBIGFONT=\"9x15\" -DSMALLFONT=\"6x10\" -Wall -DNEW_CTIME
+--- Imakefile.orig	Sat Dec 30 15:24:02 2000
++++ Imakefile	Sat Dec 30 15:38:55 2000
+@@ -8,7 +8,7 @@
+ XCOMM Pick -O or -g
+ XCOMM
+ 
+-SHAREDIR=/usr/share/sunclock
++SHAREDIR=%%X11BASE%%/share/sunclock
+ 
+ #ifdef HPArchitecture
+ CCOPTIONS = -Ae -DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
+@@ -16,16 +16,16 @@
+ # SunOS
+ #CCOPTIONS=-DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -O -DNEW_CTIME -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
+ # Solaris, Linux
+-CCOPTIONS=-DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -O -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
++CCOPTIONS=-DBIGFONT=\"6x13\" -DSMALLFONT=\"6x10\" -O -DAPPDEF=\"$(DESTDIR)$(XAPPLOADDIR)\" -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME
  #endif
  
- SRCS=sunclock.c bitmaps.c astro.c tildepath.c
- OBJS=sunclock.o bitmaps.o astro.o tildepath.o
+ SRCS=sunclock.c astro.c tildepath.c mapdata.c dirlist.c
+ OBJS=sunclock.o astro.o tildepath.o mapdata.o dirlist.o
+-LOCAL_LIBRARIES=$(XLIB) -lXpm -lm
++LOCAL_LIBRARIES=$(XLIB) -lXpm -lm -lcompat
+ DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
- # may have to replace XONLYLIB with XLIB for old imake
--LOCAL_LIBRARIES=$(XONLYLIB) -lm
-+LOCAL_LIBRARIES=$(XONLYLIB) -lm -lcompat
+ genmap:: mapdata.o
+-	gcc -c mapgen.c -o mapgen.o 
++	gcc -I%%X11BASE%%/include -c mapgen.c -o mapgen.o 
+ 	gcc -o mapgen -O mapgen.o mapdata.o -lm
  
- #DEPLIBS=              # I don't know what I'm doing, and I hate imake!
- 
+ maps:: genmap
