@@ -1,0 +1,13 @@
+--- main.c.orig	Wed Sep 20 10:06:29 2000
++++ main.c	Wed Oct 11 16:16:56 2000
+@@ -150,10 +150,6 @@
+     }
+ }
+ 
+-void psignal(int sig, char *str)
+-{
+-    fprintf(stderr, "%s: %s\n", str, sig2str(sig));
+-}
+ #endif
+ 
+ static void signal_handler(int sig)

@@ -1,0 +1,86 @@
+--- Makefile.orig	Wed Sep 20 09:29:02 2000
++++ Makefile	Wed Oct 11 18:17:37 2000
+@@ -1,17 +1,17 @@
+ #								Csound Makefile
+ # edit the following definitions according to need:
+ 
+-INCLUDE	= /usr/local/include
+-LIB	= /usr/local/lib
+-DEST	= /usr/local/bin
+-MAN	= /usr/local/man
++INCLUDE	= $(PREFIX)/include
++LIB	= $(PREFIX)/lib
++DEST	= $(PREFIX)/bin
++MAN	= $(PREFIX)/man
+ MAN1	= $(MAN)/man1
+ CAT1	= $(MAN)/cat1
+ # these directories must exist for stages beyond 'make csound'
+ 
+ CDEP =
+ COBS =	$(COBJS)
+-CC = cc
++CC ?= cc
+ # choose either -
+ #	CDEP =			for UNIX
+ #	COBS = $(COBJS)
+@@ -23,7 +23,7 @@
+ #	.c.o:
+ #		$(CC) $(CFLAGS) -c $*.c -o $@
+ 
+-DEFINES = -DWINDOWS -DRTAUDIO -DSFIRCAM -DSYS5 -DSGI -DPIPES -DMACROS
++DEFINES = -DWINDOWS -DRTAUDIO -DSFIRCAM -DSYS5 -DPIPES -DMACROS -DLINUX -DFREE_BSD
+ # choose any of -
+ #	-DSYS5	    invoke System 5 headers (e.g. 'string.h' for 'strings.h')
+ #	-DWINDOWS   include window system calls (X11, SGI, or FG graphics)
+@@ -53,7 +53,7 @@
+ # Be sure to include 'LINUXaudio.o' under 'AUDOBJ' below as well.
+ #                                  --  Jonathan Mohr  1995 Oct 17
+ 
+-CFLAGS = -O2 $(DEFINES)
++CFLAGS += $(CPPFLAGS) $(DEFINES) $(LDFLAGS)
+ #	-O		Simple optimisation
+ #	-O2		to be more specific about the optimization level
+ #	-f		compile single-precision floats (4.3,VAX,DEC-RISC)
+@@ -74,7 +74,7 @@
+ #	-I/usr/openwin/include		Solaris openwin interface
+ #	-I/usr/demo/SOUND/include	Solaris sound interface
+ 
+-LIBS =	-lX11 -laudio -lm 
++LIBS =	-lX11 -lXt -laudio -lm -ltcl83 -ltk83
+ #	-lefence
+ #	-lm		    		required
+ #	-lX11				for X window calls
+@@ -99,8 +99,9 @@
+ #	winfg.o 	for PC  Flash Graphics
+ 
+ 
+-AUDSRC = rtSGI.c SGIplay.c
+-AUDOBJ = rtSGI.o SGIplay.o
++AUDSRC = rtlinux.c LINUXaudio.c
++AUDOBJ = rtlinux.o LINUXaudio.o
++
+ # ;if RTAUDIO enabled in DEFINES, include one of
+ #	rtaudio.o		general interface to audio handlers & libraries
+ #	rtDEC.c		rtSGI.c		rtHP.c		rtSUN.c
+@@ -235,7 +236,7 @@
+ all:		$(PROGS) $(SUBDIRS)            	#must be run in this order
+ 
+ csound:		$(COBJS) $(CSUM) $(CDEP) csound.txt
+-		$(CC) $(CFLAGS) -o csound $(COBJS) $(LIBS)
++		$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o csound $(COBJS) $(LIBS)
+ 
+ TAGS:	$(CSRCS) $(HDRS)
+ 		etags $(CSRCS) $(HDRS)
+@@ -261,10 +262,10 @@
+ 	$(CC) -o makedb makedb.c
+ 
+ entry.o:
+-	$(CC) -Wf,-XNp8000 $(CFLAGS) -c entry.c
++	$(CC) $(CFLAGS) $(CPPFLAGS) -c entry.c
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c $*.c
++	$(CC) $(CFLAGS) $(CPPFLAGS) -c $*.c
+ 
+ ADSYNS = hetro 						#targets in anal/adsyn
+ LPCS = lpanal						#targets in anal/lpc

@@ -1,0 +1,24 @@
+from Martin Dupras' FAQ:
+	Csound is a software synthesis package in the tradition of so-called
+music-N languages, among which the best-known is Music V.  It consists of an
+orchestra- and score-driven executable, written in C for portability.  Since
+Csound is a computational language, it is highly flexible and efficient;
+complexity is gained only at the expense of computation time.  Basically Csound
+reads some files and creates the result as a file on disk or, on faster
+machines, through a DAC in real time.
+	Csound needs at least two files to read from:  the score, which is a
+kind of event list for scheduling events, and an orchestra which defines how
+Csound will synthesize those events.  An orchestra is composed of instruments,
+which are basically processes triggered by the notes (events) in the score.
+
+WWW:  http://mitpress.mit.edu/e-books/csound/frontpage.html
+      http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html
+      http://music.dartmouth.edu/~dupras/wCsound/Csound.faq.html
+      http://music.dartmouth.edu/~dupras/wCsound/csoundpage.html
+      http://csounds.com/faq/index.html
+      http://csounds.com/ezine/
+      http://arcana.dartmouth.edu/~eric/
+      http://www.werewolf.net/~hljmm/csound/articles/intro.html
+      ftp://ftp.maths.bath.ac.uk/pub/dream/documentation/
+
+Trevor Johnson <trevor@FreeBSD.org>

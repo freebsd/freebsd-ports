@@ -18,6 +18,7 @@
     SUBDIR += cdplayer.app
     SUBDIR += cdrdao
     SUBDIR += cmp3
+    SUBDIR += csound
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += esound

@@ -1,0 +1,49 @@
+--- getstring.c.orig	Sat May 13 15:52:27 2000
++++ getstring.c	Wed Oct 11 18:21:07 2000
+@@ -75,37 +75,37 @@
+ #endif
+     if (db==NULL) 
+       {
+-	strcpy(name, "csound.txt");
+-	db = fopen("csound.txt", "rb");
++	strcpy(name, "csound.dat");
++	db = fopen("csound.dat", "rb");
+       }
+     if (db == NULL && argv[0] != NULL) {
+       strcpy(name, argv[0]);
+       if ((path = strrchr(name, '/')) != NULL
+           || (path = strrchr(name, '\\')) != NULL) {
+-        strcpy(path+1, "csound.txt");
++        strcpy(path+1, "csound.dat");
+         db = fopen(name, "rb");
+       }
+     }
+     if (db == NULL && (path=getenv("SSDIR")) != NULL) {
+-      sprintf(name, "%s/csound.txt", path);
++      sprintf(name, "%s/csound.dat", path);
+       db = fopen(name, "rb");
+     }
+     if (db == NULL && (path=getenv("SFDIR")) != NULL) {
+-      sprintf(name, "%s/csound.txt", path);
++      sprintf(name, "%s/csound.dat", path);
+       db = fopen(name, "rb");
+     }
+     if (db == NULL && (path=getenv("SADIR")) != NULL) {
+-      sprintf(name, "%s/csound.txt", path);
++      sprintf(name, "%s/csound.dat", path);
+       db = fopen(name, "rb");
+     }
+     if (db == NULL) {
+-      strcpy(name, "/usr/local/lib/csound.txt");
+-      db = fopen("/usr/local/lib/csound.txt", "rb");
++      strcpy(name, "PREFIX/share/csound/csound.dat");
++      db = fopen("PREFIX/share/csound/csound.dat", "rb");
+     }
+     if (db == NULL) {
+       fprintf(stderr, "failed to find Strings DataBase file.\n"
+               "Use the CSSTRNGS environment variable or you must put the \n"
+-              "file \"csound.txt\" in your local, SFDIR, SADIR, SSDIR or \n"
++              "file \"csound.dat\" in your local, SFDIR, SADIR, SSDIR or \n"
+               "system directories for csound to work\n");
+       exit(1);
+     }
