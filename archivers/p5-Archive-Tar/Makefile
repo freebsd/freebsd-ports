@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roman@xpert.com
+COMMENT=	Perl module for creation and manipulation of tar files
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS} \

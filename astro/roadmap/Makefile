@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_0_6_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nick@netdot.net
+COMMENT=	RoadMap is a displays US maps provided by the US Census Bureau
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

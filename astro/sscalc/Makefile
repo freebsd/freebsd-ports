@@ -11,6 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.icehouse.net/kew/
 
 MAINTAINER=	kew@icehouse.net
+COMMENT=	A sunrise/sunset time calculator
 
 pre-fetch:
 .if !defined(LAT)

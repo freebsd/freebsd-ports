@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	pcasidy@casidy.com
+COMMENT=	A Unix reader for the Microsoft Tape Format used by NT Backup
 
 ALL_TARGET=	# empty
 

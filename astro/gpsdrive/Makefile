@@ -17,6 +17,7 @@ MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/pre/}
 
 MAINTAINER=	molter@gufi.org
+COMMENT=	A GPS navigation system
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

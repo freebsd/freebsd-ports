@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/M/MH/MHAMILTON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eric@talesfromthereal.com
+COMMENT=	Perl module for local/remote access to SETI@home stats
 
 PERL_CONFIGURE=	yes
 MAN3=		SETI::Stats.3

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 # EXTRACT_SUFX=	.tar
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	A compression utility designed to be a replacement for compress
 
 MASTER_SITES=	ftp://ftp.digex.net/pub/linux/slackware/slackware-8.1/source/a/gzip/ \
 		ftp://sunfreeware.risq.qc.ca/SOURCES/ \

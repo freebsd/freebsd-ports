@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	perl-GPS-${PORTVERSION}
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	Perl interface to GPS receivers
 
 PERL_CONFIGURE=	YES
 
