@@ -6,24 +6,24 @@ libexec/gnupg/gpgkeys_mailto
 @dirrm libexec/gnupg
 info/gpg.info
 info/gpgv.info
-share/gnupg/FAQ
-share/gnupg/faq.html
-share/gnupg/options.skel
-%%PORTDOCS%%share/doc/gnupg/README
-%%PORTDOCS%%share/doc/gnupg/DETAILS
-%%PORTDOCS%%share/doc/gnupg/FAQ
-%%PORTDOCS%%share/doc/gnupg/HACKING
-%%PORTDOCS%%share/doc/gnupg/OpenPGP
-%%PORTDOCS%%share/doc/gnupg/ABOUT-NLS
-%%PORTDOCS%%share/doc/gnupg/AUTHORS
-%%PORTDOCS%%share/doc/gnupg/BUGS
-%%PORTDOCS%%share/doc/gnupg/COPYING
-%%PORTDOCS%%share/doc/gnupg/INSTALL
-%%PORTDOCS%%share/doc/gnupg/NEWS
-%%PORTDOCS%%share/doc/gnupg/PROJECTS
-%%PORTDOCS%%share/doc/gnupg/THANKS
-%%PORTDOCS%%share/doc/gnupg/TODO
-%%PORTDOCS%%share/doc/gnupg/VERSION
+%%DATADIR%%/FAQ
+%%DATADIR%%/faq.html
+%%DATADIR%%/options.skel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/DETAILS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/OpenPGP
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PROJECTS
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
 %%NLS%%share/locale/be/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg.mo
@@ -51,7 +51,7 @@ share/gnupg/options.skel
 %%NLS%%share/locale/tr/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
-@dirrm share/gnupg
+@dirrm %%DATADIR%%
 @unexec rmdir %D/share/locale/be/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/be 2>/dev/null || true
 @unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
@@ -89,4 +89,4 @@ share/gnupg/options.skel
 @unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
-@dirrm share/doc/gnupg
+@dirrm %%DOCSDIR%%
