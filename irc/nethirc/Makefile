@@ -17,6 +17,10 @@ COMMENT=	Perl-based irc client that uses Net::IRC
 .include <bsd.port.pre.mk>
 RUN_DEPENDS=	${SITE_PERL}/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build"
+.endif
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 MAN1=		nethirc.1 nhirc.1
