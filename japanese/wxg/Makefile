@@ -28,7 +28,7 @@ SBINS=		wxgserver
 .include <bsd.port.pre.mk>
 
 .if !exists(${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='You must visit http://www.ekotoba.com/download/dldata.asp?kind=1&data=3 and agree with the licence terms to fetch "${DISTFILE}".  After the download is done, place it in ${_DISTDIR} and run make again.'
+IGNORE='You must visit http://www.ekotoba.com/download/dldata.asp?kind=1&data=1 and agree with the licence terms to fetch "${DISTFILE}".  After the download is done, place it in ${_DISTDIR} and run make again.'
 .endif
 
 do-fetch:
