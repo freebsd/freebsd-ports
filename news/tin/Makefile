@@ -1,16 +1,16 @@
 # ex:ts=8
 # New ports collection makefile for:	tin
-# Version required:	tin1.3-unoff-BETA
+# Version required:     tinpre-1.4
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.52 1998/01/10 22:45:15 obrien Exp $
+# $Id: Makefile,v 1.53 1998/01/19 09:08:03 obrien Exp $
 #
 
 DISTNAME=       tinpre-1.4-980117
 CATEGORIES=	news
-MASTER_SITES=   ftp://nuxi.ucdavis.edu/pub/tin/ \
-		ftp://ftp.akk.uni-karlsruhe.de/pub/tin/ \
+MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
+		ftp://nuxi.ucdavis.edu/pub/tin/ \
 		ftp://ftp.nuxi.com/pub/tin/
 EXTRACT_SUFX=	.tgz
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-pgp=${PREFIX}/bin/pgp \
 		 --with-ispell=${PREFIX}/bin/ispell \
 		 --with-metamail=${PREFIX}/bin/metamail
-MAKEFILE=	makefile
+MAKEFILE=       makefile
 ALL_TARGET=     build
 MAN1=		tin.1
 
