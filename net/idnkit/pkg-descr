@@ -1,0 +1,17 @@
+The 'idnkit' is an open source, BSD-like licensed software that
+provides functionalities about Internationalized Domain Name
+processing standardized at IETF.  Major features that idnkit provides
+are as follows.
+
+    * libidnkit
+      Core library for IDN processing.
+    * libidnkitlite
+      Light Weight library for IDN processing. (UTF-8 only)
+    * idnconv
+      DNS zone / configuration file encoding converter.
+    * runidn / idn wrapper
+      Dynamic link resolver library for UNIX / Windows.
+    * BIND 9 patch
+      IDN enhancements for BIND 9 DNS lookup tools.
+
+WWW:	http://www.nic.ad.jp/ja/idn/idnkit/download/

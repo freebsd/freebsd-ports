@@ -213,6 +213,7 @@
     SUBDIR += icqlib0
     SUBDIR += icqnix
     SUBDIR += icukrell
+    SUBDIR += idnkit
     SUBDIR += imcom
     SUBDIR += ip6_int
     SUBDIR += ipcad
