@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		6.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/en/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -19,8 +19,6 @@ PATCH_SITE_SUBDIR=	updates/6.2/en/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
-
-FORBIDDEN=		"multiple security bugs--see <URL:http://rhn.redhat.com/errata/RHSA-2001-071.html>"
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
@@ -38,14 +36,14 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 RPM_GLIBC=		glibc-2.1.3-26.${MACHINE_ARCH}.rpm
 UPDATES=		${RPM_GLIBC} \
-			zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm
+			zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm \
+			XFree86-libs-3.3.6-29.${MACHINE_ARCH}.rpm
 .if (${MACHINE_ARCH} == "i386")
 LIBC5_COMPAT=		ld.so-1.9.5-11.i386.rpm libc-5.3.12-31.i386.rpm
 RPM_BINUTILS=		binutils-2.9.1.0.23-6.i386.rpm
 RPM_GLIB=
 RPM_LDCONFIG=		ldconfig-1.9.5-15.i386.rpm
 RPM_RPM=		rpm-3.0.3-2.i386.rpm
-RPM_X_LIBS=		XFree86-libs-3.3.5-3.i386.rpm
 UPDATES+=		glib-1.2.6-2.i386.rpm
 .else
 LIBC5_COMPAT=
@@ -53,7 +51,6 @@ RPM_BINUTILS=		binutils-2.9.1.0.23-7.alpha.rpm
 RPM_GLIB=		glib-1.2.6-2.alpha.rpm
 RPM_LDCONFIG=		ldconfig-1.9.5-16.alpha.rpm
 RPM_RPM=		rpm-3.0.3-6.alpha.rpm
-RPM_X_LIBS=		XFree86-libs-3.3.5-17.alpha.rpm
 UPDATES+=
 .endif
 
@@ -84,7 +81,6 @@ RPM_SET3=		setserial-2.15-2.${MACHINE_ARCH}.rpm \
 			slang-1.2.2-4.${MACHINE_ARCH}.rpm \
 			stat-1.5-11.${MACHINE_ARCH}.rpm \
 			tcsh-6.08.00-6.${MACHINE_ARCH}.rpm \
-			${RPM_X_LIBS} \
 			xpm-3.4k-1.${MACHINE_ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
