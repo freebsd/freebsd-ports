@@ -1,0 +1,10 @@
+--- configure.orig	Wed Feb 16 22:54:59 2005
++++ configure	Thu Feb 17 09:38:17 2005
+@@ -25899,6 +25899,7 @@
+ 	CPPFLAGS="$save_CPPFLAGS"
+ fi
+ 
++compile_scrobbler="no"
+ 
+ if test x$compile_scrobbler = xyes; then
+   SCROBBLER_TRUE=
