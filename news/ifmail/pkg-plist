@@ -1,0 +1,130 @@
+libexec/ifmail/ifcico
+libexec/ifmail/ifindex
+libexec/ifmail/ifmail
+libexec/ifmail/ifnews
+libexec/ifmail/ifpack
+libexec/ifmail/ifroute
+libexec/ifmail/ifstat
+libexec/ifmail/iftoss
+libexec/ifmail/ifunpack
+libexec/ifmail/nlpatch
+@dirrm libexec/ifmail
+man/man3/parsedate.3.gz
+man/man8/ifmail.8.gz
+man/man8/iftoss.8.gz
+share/doc/ifmail/README
+share/doc/ifmail/README.ifcico
+share/doc/ifmail/README.ifgate
+share/doc/ifmail/README.iflib
+@dirrm share/doc/ifmail
+share/examples/ifmail/Areas
+share/examples/ifmail/DEBUG
+share/examples/ifmail/FAQ
+share/examples/ifmail/FILES
+share/examples/ifmail/README
+share/examples/ifmail/TODO
+share/examples/ifmail/cnews/batchparms
+share/examples/ifmail/cnews/sys
+share/examples/ifmail/config
+share/examples/ifmail/contrib/README
+share/examples/ifmail/contrib/a2dbm
+share/examples/ifmail/contrib/areafix-0.5.04/HISTORY
+share/examples/ifmail/contrib/areafix-0.5.04/README
+share/examples/ifmail/contrib/areafix-0.5.04/areafix.pl
+share/examples/ifmail/contrib/areafix-0.5.04/areaqueue.c
+share/examples/ifmail/contrib/areafix-0.5.04/config
+share/examples/ifmail/contrib/areafix-0.5.04/help
+share/examples/ifmail/contrib/areafix-0.5.04/passwords
+share/examples/ifmail/contrib/areafix-0.5.04/restricted
+share/examples/ifmail/contrib/cnews-msgids
+share/examples/ifmail/contrib/edalias
+share/examples/ifmail/contrib/fdpass/NOTICE
+share/examples/ifmail/contrib/fdpass/fdpass.c
+share/examples/ifmail/contrib/fdpass/session.h
+share/examples/ifmail/contrib/fido.daily
+share/examples/ifmail/contrib/ifinfo
+share/examples/ifmail/contrib/ifman
+share/examples/ifmail/contrib/ifpoll
+share/examples/ifmail/contrib/ifreq
+share/examples/ifmail/contrib/iftelnetd/Makefile
+share/examples/ifmail/contrib/iftelnetd/README
+share/examples/ifmail/contrib/iftelnetd/iftelnetd.c
+share/examples/ifmail/contrib/iftelnetd/inetd.conf
+share/examples/ifmail/contrib/iftelnetd/services
+share/examples/ifmail/contrib/ldbm
+share/examples/ifmail/contrib/lmsgid
+share/examples/ifmail/contrib/mmdf/Makefile
+share/examples/ifmail/contrib/mmdf/README
+share/examples/ifmail/contrib/mmdf/config.h
+share/examples/ifmail/contrib/mmdf/fidonet.c
+share/examples/ifmail/contrib/mmdf/fidonet.h
+share/examples/ifmail/contrib/mmdf/route.c
+share/examples/ifmail/contrib/mmdf/route.cfg
+share/examples/ifmail/contrib/mmdf/version.h
+share/examples/ifmail/contrib/mmdf/xxx
+share/examples/ifmail/contrib/news_via_mail/README
+share/examples/ifmail/contrib/news_via_mail/mail2news.sh
+share/examples/ifmail/contrib/news_via_mail/news2mail.awk
+share/examples/ifmail/contrib/sumlog
+share/examples/ifmail/contrib/tic/Changelog
+share/examples/ifmail/contrib/tic/README
+share/examples/ifmail/contrib/tic/checker.pl
+share/examples/ifmail/contrib/tic/config.pli
+share/examples/ifmail/contrib/tic/config/Areas
+share/examples/ifmail/contrib/tic/config/Config
+share/examples/ifmail/contrib/tic/config/Nodes
+share/examples/ifmail/contrib/tic/config/Postings
+share/examples/ifmail/contrib/tic/config/Processor
+share/examples/ifmail/contrib/tic/config/TRICBBS.frm
+share/examples/ifmail/contrib/tic/config/Trigger
+share/examples/ifmail/contrib/tic/config/global.hdr
+share/examples/ifmail/contrib/tic/config/group_L.hdr
+share/examples/ifmail/contrib/tic/crc32.c
+share/examples/ifmail/contrib/tic/getdate.pli
+share/examples/ifmail/contrib/tic/lister.pl
+share/examples/ifmail/contrib/tic/makeconfig.pl
+share/examples/ifmail/contrib/tic/poster.pl
+share/examples/ifmail/contrib/tic/process_tics.pl
+share/examples/ifmail/contrib/tic/purge_history.pl
+share/examples/ifmail/contrib/tic/readtick.pli
+share/examples/ifmail/contrib/tic/sequencer.pli
+share/examples/ifmail/getnodelist
+share/examples/ifmail/ifmail.gif
+share/examples/ifmail/inn/newsfeeds
+share/examples/ifmail/inn/send-ifmail
+share/examples/ifmail/inouttabs/fidom2iso
+share/examples/ifmail/inouttabs/fidomazovia
+share/examples/ifmail/inouttabs/ibmpc-latin1
+share/examples/ifmail/inouttabs/iso2fidom
+share/examples/ifmail/inouttabs/latin1-ibmpc
+share/examples/ifmail/inouttabs/outaltkoi8
+share/examples/ifmail/inouttabs/outkoi8alt
+share/examples/ifmail/sendmail/ifmail.m4-bosman
+share/examples/ifmail/sendmail/ifmail.m4-butler
+share/examples/ifmail/sendmail/ifmail.m4-selig
+share/examples/ifmail/sendmail/sendmail.cf-1
+share/examples/ifmail/sendmail/sendmail.cf-2
+share/examples/ifmail/smail/ftnpaths
+share/examples/ifmail/smail/routers
+share/examples/ifmail/smail/transports
+share/examples/ifmail/tcp/inetd.conf
+share/examples/ifmail/tcp/services
+share/examples/ifmail/zmailer/routes
+share/examples/ifmail/zmailer/scheduler.conf
+share/examples/ifmail/zmailer/sm.conf
+@dirrm share/examples/ifmail/inn
+@dirrm share/examples/ifmail/tcp
+@dirrm share/examples/ifmail/smail
+@dirrm share/examples/ifmail/sendmail
+@dirrm share/examples/ifmail/zmailer
+@dirrm share/examples/ifmail/cnews
+@dirrm share/examples/ifmail/contrib/mmdf
+@dirrm share/examples/ifmail/contrib/tic/config
+@dirrm share/examples/ifmail/contrib/tic
+@dirrm share/examples/ifmail/contrib/news_via_mail
+@dirrm share/examples/ifmail/contrib/fdpass
+@dirrm share/examples/ifmail/contrib/iftelnetd
+@dirrm share/examples/ifmail/contrib/areafix-0.5.04
+@dirrm share/examples/ifmail/contrib
+@dirrm share/examples/ifmail/inouttabs
+@dirrm share/examples/ifmail
