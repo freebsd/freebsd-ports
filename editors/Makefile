@@ -127,6 +127,7 @@
     SUBDIR += openoffice-1.0-tr
     SUBDIR += openoffice-1.1
     SUBDIR += openoffice-1.1-dk
+    SUBDIR += openoffice-1.1-es
     SUBDIR += openoffice-1.1-it
     SUBDIR += pico
     SUBDIR += poedit
