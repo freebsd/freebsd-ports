@@ -5879,6 +5879,7 @@ p5-Date-Leapyear	ports/devel/p5-Date-Leapyear
 p5-Date-Manip	ports/devel/p5-Date-Manip
 p5-Date-Pcalc	ports/devel/p5-Date-Pcalc
 p5-Date-Roman	ports/devel/p5-Date-Roman
+p5-Date-Set	ports/devel/p5-Date-Set
 p5-Date-Simple	ports/devel/p5-Date-Simple
 p5-DateConvert	ports/devel/p5-DateConvert
 p5-DateTime	ports/devel/p5-DateTime
