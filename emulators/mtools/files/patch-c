@@ -1,0 +1,11 @@
+--- ./mtools.texi.org	Sun Apr 13 00:59:18 1997
++++ ./mtools.texi	Sun Jun  8 05:33:03 1997
+@@ -26,7 +26,7 @@
+ @ifinfo
+ @format
+ START-INFO-DIR-ENTRY
+-* Mtools: (mtools).        Mtools: utilities to access DOS disks in Unix.
++* Mtools: (mtools).		Mtools: utilities to access DOS disks in Unix.
+ END-INFO-DIR-ENTRY
+ @end format
+ @end ifinfo

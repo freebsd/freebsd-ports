@@ -3,7 +3,7 @@
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 06:32:22 asami Exp $
 #
 
 DISTNAME=       jed0.98-4
@@ -51,7 +51,7 @@ post-install:
 	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	install-info --section="Miscellaneous" \
-		--entry="* JED: (jed).		JED editor documentation." \
+		--entry="* JED: (jed).			JED editor documentation." \
 		${PREFIX}/info/jed.info ${PREFIX}/info/dir
 .endif
 
