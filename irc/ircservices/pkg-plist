@@ -62,22 +62,22 @@ lib/services/modules/protocol/unreal.so
 lib/services/modules/statserv/main.so
 sbin/ircservices
 sbin/ircservices-chk
-%%PORTDOCS%%share/doc/ircservices/0.html
-%%PORTDOCS%%share/doc/ircservices/1.html
-%%PORTDOCS%%share/doc/ircservices/2.html
-%%PORTDOCS%%share/doc/ircservices/3.html
-%%PORTDOCS%%share/doc/ircservices/4.html
-%%PORTDOCS%%share/doc/ircservices/5.html
-%%PORTDOCS%%share/doc/ircservices/6.html
-%%PORTDOCS%%share/doc/ircservices/7.html
-%%PORTDOCS%%share/doc/ircservices/COPYING.html
-%%PORTDOCS%%share/doc/ircservices/a.html
-%%PORTDOCS%%share/doc/ircservices/b.html
-%%PORTDOCS%%share/doc/ircservices/c.html
-%%PORTDOCS%%share/doc/ircservices/copyright.html
-%%PORTDOCS%%share/doc/ircservices/faq.html
-%%PORTDOCS%%share/doc/ircservices/index.html
-%%PORTDOCS%%share/doc/ircservices/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/0.html
+%%PORTDOCS%%%%DOCSDIR%%/1.html
+%%PORTDOCS%%%%DOCSDIR%%/2.html
+%%PORTDOCS%%%%DOCSDIR%%/3.html
+%%PORTDOCS%%%%DOCSDIR%%/4.html
+%%PORTDOCS%%%%DOCSDIR%%/5.html
+%%PORTDOCS%%%%DOCSDIR%%/6.html
+%%PORTDOCS%%%%DOCSDIR%%/7.html
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/a.html
+%%PORTDOCS%%%%DOCSDIR%%/b.html
+%%PORTDOCS%%%%DOCSDIR%%/c.html
+%%PORTDOCS%%%%DOCSDIR%%/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/upgrade.html
 @dirrm lib/services/helpfiles
 @dirrm lib/services/languages
 @dirrm lib/services/modules/chanserv
@@ -93,4 +93,4 @@ sbin/ircservices-chk
 @dirrm lib/services/modules/statserv
 @dirrm lib/services/modules
 @dirrm lib/services
-%%PORTDOCS%%@dirrm share/doc/ircservices
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
