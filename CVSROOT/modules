@@ -1611,6 +1611,7 @@ durep		ports/sysutils/durep
 dv2jpg		ports/multimedia/dv2jpg
 dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvdauthor	ports/multimedia/dvdauthor
+dvdbackup	ports/sysutils/dvdbackup
 dvdrip		ports/multimedia/dvdrip
 dvdstyler	ports/multimedia/dvdstyler
 dvdtape		ports/sysutils/dvdtape
