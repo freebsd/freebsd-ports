@@ -3,6 +3,7 @@
 
     SUBDIR += X.language
     SUBDIR += apache13
+    SUBDIR += apache13-modssl
     SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += elm.language
