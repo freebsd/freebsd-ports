@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drm-kmod
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://gladstone.uoregon.edu/~eanholt/dri/
 
@@ -29,7 +29,7 @@ CFLAGS+=	-DSMP -DAPIC_IO
 pre-extract:
 .if ${OSVERSION} < 500000
 .if !defined(WITH_SMP)
-	@${ECHO_MSG} "If you are using modules on an SMP system, define WITH_SMP to get SMP locking"
+	@${ECHO_MSG} "If you are using modules on an SMP system, use "make -DWITH_SMP" to get SMP locking"
 	@${ECHO_MSG}
 .endif
 .endif
