@@ -15,5 +15,6 @@ MAINTAINER=	bsd@FreeBSD.org
 
 MAN1=		dbregc.1
 MANCOMPRESSED=	no
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>

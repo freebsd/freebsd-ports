@@ -15,5 +15,6 @@ MAINTAINER=	cosine@ellipse.mcs.drexel.edu
 GNU_CONFIGURE=	yes
 
 MAN8=		ald.8
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>
