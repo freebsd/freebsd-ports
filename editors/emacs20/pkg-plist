@@ -153,6 +153,7 @@ share/emacs/%%EMACS_VER%%/etc/ulimit.hack
 share/emacs/%%EMACS_VER%%/etc/vipcard.tex
 share/emacs/%%EMACS_VER%%/etc/viperCard.tex
 share/emacs/%%EMACS_VER%%/etc/yow.lines
+@mkdir -p %D/share/emacs/%%EMACS_VER%%/leim
 share/emacs/%%EMACS_VER%%/lisp/COPYING
 share/emacs/%%EMACS_VER%%/lisp/README
 share/emacs/%%EMACS_VER%%/lisp/abbrev.el
