@@ -2100,6 +2100,7 @@ gnomemeeting	ports/net/gnomemeeting
 gnomemeeting2	ports/net/gnomemeeting2
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
+gnomemm		ports/x11-toolkits/gnomemm
 gnomepanel	ports/x11/gnomepanel
 gnomepilot	ports/palm/gnomepilot
 gnomepilot-conduits	ports/palm/gnomepilot-conduits
