@@ -1,9 +1,9 @@
---- Makefile.in.orig	Thu Oct 12 18:55:53 2000
-+++ Makefile.in	Thu Oct 12 18:56:31 2000
-@@ -3,7 +3,7 @@
- #
+--- Makefile.in.orig	Tue Dec 18 00:00:00 2001
++++ Makefile.in	Wed Dec 19 13:02:55 2001
+@@ -4,7 +4,7 @@
  
  TITLE	= FD-
+ VERSION	= __VERSION__
 -PREFIX	= /usr/local
 +PREFIX	?= /usr/local
  MANSEC	= 1
