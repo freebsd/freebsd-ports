@@ -1,0 +1,7 @@
+bin/httperf
+share/httperf/COPYRIGHT
+share/httperf/ChangeLog
+share/httperf/NEWS
+share/httperf/README
+share/httperf/TODO
+@dirrm share/httperf
