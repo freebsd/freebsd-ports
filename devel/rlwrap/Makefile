@@ -8,6 +8,7 @@
 
 PORTNAME=	rlwrap
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
@@ -26,7 +27,7 @@ MAN1=	rlwrap.1
 .if ${OSVERSION} < 500018
 # This port requires readline 4.2 or newer, which is only available
 # in the base system in FreeBSD 5.x.
-BUILD_DEPENDS+=		${PREFIX}/lib/libreadline.so.4:${PORTSDIR}/devel/readline
+BUILD_DEPENDS+=		${PREFIX}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
 RUN_DEPENDS+=		${BUILD_DEPENDS}
 # Make sure the dynamic linker does not pick up
 # the older libreadline library from the base system.
