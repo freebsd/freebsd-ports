@@ -12,6 +12,8 @@ DISTFILES=	# empty
 
 MAINTAINER=	asami@FreeBSD.org
 
+FORBIDDEN=	something wrong with shared library
+
 .include <bsd.port.pre.mk>
 
 .if !defined(PACKAGE_BUILDING)
