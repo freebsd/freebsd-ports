@@ -491,6 +491,7 @@
     SUBDIR += smb2www
     SUBDIR += smb_auth
     SUBDIR += snarf
+    SUBDIR += snownews
     SUBDIR += squid
     SUBDIR += squid24
     SUBDIR += squidclients
