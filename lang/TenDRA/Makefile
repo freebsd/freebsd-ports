@@ -27,6 +27,14 @@ MAKE_ARGS=	BIN_CC="${CC}"
 
 TENDRA_ARCH=	${ARCH:S/i386/80x86/}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+PLIST_SUB+=	ONLY_FOR_I386=""
+.else
+PLIST_SUB+=	ONLY_FOR_I386="@comment "
+.endif
+
 MAN1=		calculus.1 disp.1 lexi.1 pl.1 sid.1 tcc.1 tchk.1 \
 		tcpplus.1 tdfc2.1 tld.1 tnc.1 tspec.1 \
 		#${TENDRA_ARCH}.freebsd.trans.1
@@ -46,4 +54,4 @@ do-configure:
 post-install:
 	${RMDIR} ${PREFIX}/lib/TenDRA/lib/machines/tokens
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

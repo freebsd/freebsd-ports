@@ -27,11 +27,11 @@ lib/TenDRA/bin/tspec
 lib/TenDRA/env/16bit
 lib/TenDRA/env/32bit
 lib/TenDRA/env/Goption
-lib/TenDRA/env/K-P5
+%%ONLY_FOR_I386%%lib/TenDRA/env/K-P5
 lib/TenDRA/env/K-PIC
 lib/TenDRA/env/K-frame
-lib/TenDRA/env/K-i386
-lib/TenDRA/env/K-i486
+%%ONLY_FOR_I386%%lib/TenDRA/env/K-i386
+%%ONLY_FOR_I386%%lib/TenDRA/env/K-i486
 lib/TenDRA/env/K-ieee
 lib/TenDRA/env/K-noframe
 lib/TenDRA/env/K-noieee
