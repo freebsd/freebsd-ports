@@ -11,7 +11,6 @@
 ^CVSROOT/rcstemplate
 
 ^distrib/
-^src/etc/
 ^src/release/
 ^www/
 
@@ -24,6 +23,7 @@
 
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
+^src/etc/minfree
 ^src/etc/motd
 ^src/lib/libc_r/test/.*\.exp
 ^src/share/examples/cvsup/refuse
