@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/Archive/Tar.php:${PORTSDIR}/archivers/pear-Archive_Tar
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 MANIFEST=	OS PEAR PEAR.php System.php package.dtd scripts template.spec
 

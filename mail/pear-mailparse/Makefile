@@ -20,8 +20,8 @@ IS_INTERACTIVE=	'need to build php4 with mbstring support.'
 USE_PHPIZE=	yes
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/lang/php4/bsd.php.mk"
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 .if exists(${LOCALBASE}/bin/php-config)
 EXT_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e \

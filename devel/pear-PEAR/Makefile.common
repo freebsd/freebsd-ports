@@ -21,8 +21,8 @@ PEARDIR=	${PHP_BASE}/${LPEARDIR}
 LPKGREGDIR=	${LPEARDIR}/packages/${PKGNAME}
 PKGREGDIR=	${PHP_BASE}/${LPKGREGDIR}
 PLIST_SUB=	PEARDIR=${LPEARDIR} PKGREGDIR=${LPKGREGDIR}
-PKGINSTALL=	${.CURDIR}/../../devel/pear-PEAR/pkg-install
-PKGDEINSTALL=	${.CURDIR}/../../devel/pear-PEAR/pkg-deinstall
+PKGINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-install
+PKGDEINSTALL=	${PORTSDIR}/devel/pear-PEAR/pkg-deinstall
 
 DOCSDIR=	${PEARDIR}/docs/${PORTNAME}
 
