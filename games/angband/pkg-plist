@@ -92,6 +92,7 @@ lib/X11/angband/xtra/sound/sound.cfg
 @dirrm lib/X11/angband/file
 @dirrm lib/X11/angband/help
 @dirrm lib/X11/angband/info
+@dirrm lib/X11/angband/pref
 @dirrm lib/X11/angband/save
 @dirrm lib/X11/angband/user
 @dirrm lib/X11/angband/xtra/font
@@ -99,3 +100,4 @@ lib/X11/angband/xtra/sound/sound.cfg
 @dirrm lib/X11/angband/xtra/music
 @dirrm lib/X11/angband/xtra/sound
 @dirrm lib/X11/angband/xtra
+@dirrm lib/X11/angband
