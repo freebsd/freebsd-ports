@@ -7,6 +7,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.2.0
+PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	http://alioth.debian.org/download.php/419/
 
