@@ -11,7 +11,7 @@ CATEGORIES=		databases python
 MASTER_SITES=		http://dustman.net/andy/python/SQLDict/1.0.0/
 PKGNAMEPREFIX=		py-
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 USE_PYTHON=		yes
 NO_WRKSUBDIR=		yes

@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	security
 #MASTER_SITES=  None available anymore, so this is stored locally
 
-MAINTAINER=	nectar@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 
