@@ -1,23 +1,23 @@
 bin/nikto
 etc/nikto/config.txt
-share/nikto/nikto_mutate.plugin
-share/nikto/nikto_outdated.plugin
-share/nikto/nikto_apacheusers.plugin
-share/nikto/nikto_passfiles.plugin
-share/nikto/nikto_httpoptions.plugin
-share/nikto/nikto_msgs.plugin
-share/nikto/server_msgs.db
-share/nikto/outdated.db
-share/nikto/scan_database.db
-share/nikto/nikto_core.plugin
-share/nikto/nikto_headers.plugin
-share/nikto/nikto_plugin_order.txt
-share/nikto/nikto_realms.plugin
-share/nikto/nikto_robots.plugin
-share/nikto/nikto_user_enum_apache.plugin
-share/nikto/nikto_user_enum_cgiwrap.plugin
-share/nikto/realms.db
-share/nikto/servers.db
-share/nikto/LW.pm
-@dirrm share/nikto
+%%DATADIR%%/nikto_mutate.plugin
+%%DATADIR%%/nikto_outdated.plugin
+%%DATADIR%%/nikto_apacheusers.plugin
+%%DATADIR%%/nikto_passfiles.plugin
+%%DATADIR%%/nikto_httpoptions.plugin
+%%DATADIR%%/nikto_msgs.plugin
+%%DATADIR%%/server_msgs.db
+%%DATADIR%%/outdated.db
+%%DATADIR%%/scan_database.db
+%%DATADIR%%/nikto_core.plugin
+%%DATADIR%%/nikto_headers.plugin
+%%DATADIR%%/nikto_plugin_order.txt
+%%DATADIR%%/nikto_realms.plugin
+%%DATADIR%%/nikto_robots.plugin
+%%DATADIR%%/nikto_user_enum_apache.plugin
+%%DATADIR%%/nikto_user_enum_cgiwrap.plugin
+%%DATADIR%%/realms.db
+%%DATADIR%%/servers.db
+%%DATADIR%%/LW.pm
+@dirrm %%DATADIR%%
 @dirrm etc/nikto
