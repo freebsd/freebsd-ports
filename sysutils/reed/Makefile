@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	reed
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.sacredchao.net/software/reed/
 
