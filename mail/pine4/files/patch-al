@@ -1,7 +1,7 @@
-*** build.orig	Tue Nov  5 18:17:56 2002
---- build	Tue Nov 26 03:16:11 2002
+*** build.orig	Mon Dec  9 09:54:38 2002
+--- build	Mon Dec 16 02:16:44 2002
 ***************
-*** 350,411 ****
+*** 362,424 ****
   	  echo "Including SSL functionality"
   	fi
   
@@ -48,7 +48,8 @@
 - 	fi
 -         eval echo eval make "$makeargs" "SSLTYPE=$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
 -         eval make "$makeargs" "SSLTYPE=$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
-- 	if [ $? != "0" ]
+- 	rc=$?
+- 	if [ $rc != "0" ]
 - 	then
 - 	    echo "+---------------------------------------------+"
 - 	    echo "| Problems building c-client                  |"
@@ -57,16 +58,16 @@
 - 	    echo "| possible explanation for this failure       |"
 - 	    echo "+---------------------------------------------+"
 - 	    echo ""
-- 	    exit $?
+- 	    exit $rc
 - 	fi
 -         echo ''
 - 
           echo "Making Pico and Pilot"
           cd "$PHOME/pico"
           eval echo make "$makeargs" -f makefile.$picotarg
---- 350,355 ----
+--- 362,367 ----
 ***************
-*** 435,441 ****
+*** 450,456 ****
           cd "$PHOME"
           echo ''
           echo "Links to executables are in bin directory:"
@@ -74,7 +75,7 @@
   	case $maketarg in
   	    mnt)    echo "Fixing stacksizes ..."
   		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
---- 379,385 ----
+--- 393,399 ----
           cd "$PHOME"
           echo ''
           echo "Links to executables are in bin directory:"
@@ -83,7 +84,7 @@
   	    mnt)    echo "Fixing stacksizes ..."
   		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
 ***************
-*** 469,478 ****
+*** 484,493 ****
   	rm -f sslnopwd sslunix.nopwd sslsco.nopwd sslunix sslsco sslnone
           echo "Cleaning Pine"
           cd "$PHOME/pine"
@@ -94,7 +95,7 @@
           echo "Done"
           cd "$PHOME"
           ;;
---- 413,422 ----
+--- 427,436 ----
   	rm -f sslnopwd sslunix.nopwd sslsco.nopwd sslunix sslsco sslnone
           echo "Cleaning Pine"
           cd "$PHOME/pine"
