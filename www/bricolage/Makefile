@@ -115,10 +115,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}/graphics/p5-Imag
 BUILD_DEPENDS+=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
 .endif
 
-.if exists(libexec/apache/libperl.so)
-IGNORE=		Port requires apache with static mod_perl (www/apache13-modperl)
-.endif
-
 MAN1=		bric_queued.1 bric_dbprof.1 bric_republish.1 bric_dev_sync.1 \
 		bric_pgimport.1 bric_ftpd.1 bric_clean_tmp.1 bric_dist_mon.1 \
 		bric_apachectl.1 bric_soap.1
@@ -208,6 +204,7 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Util::Language::it_it.3 Bric::Util::Language::km.3 \
 		Bric::Util::Language::ko_ko.3 Bric::Util::Language::lo.3 \
 		Bric::Util::Language::my.3 Bric::Util::Language::pt_pt.3 \
+		Bric::Util::Language::ru_ru.3 \
 		Bric::Util::Language::ug.3 Bric::Util::Language::vi_vn.3 \
 		Bric::Util::Language::zh_cn.3 Bric::Util::Language::zh_hk.3 \
 		Bric::Util::Language::zh_tw.3 Bric::Util::MediaType.3 \
