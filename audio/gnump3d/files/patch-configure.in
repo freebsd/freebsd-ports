@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- configure.in.orig	Wed Aug 14 14:45:44 2002
++++ configure.in	Wed Aug 14 14:46:10 2002
+@@ -97,7 +97,8 @@
+ 
+ dnl check for Unix98 socklen_t
+ AC_MSG_CHECKING(for socklen_t)
+-AC_TRY_COMPILE([#include <sys/socket.h>
++AC_TRY_COMPILE([#include <sys/types.h>
++#include <sys/socket.h>
+ socklen_t x;
+ ],[],[AC_MSG_RESULT(yes)],[
+ AC_TRY_COMPILE([#include <sys/socket.h>

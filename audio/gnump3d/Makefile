@@ -8,7 +8,7 @@
 
 PORTNAME=	gnump3d
 PORTVERSION=	0.9.9.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,11 +23,12 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/gnump3d
 
-MAN1=	gnump3d.1 gnump3d.conf.1 gnump3d-config.1 gnump3d-top.1
+MAN1=	gnump3d.1 gnump3d.conf.1 gnump3d-top.1
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
@@ -45,8 +46,9 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e \
-		's|#undef socklen_t||g' ${WRKSRC}/src/config.h.in
+# Avoid triggering automake
+	@${TOUCH} -r ${WRKSRC}/aclocal.m4.bak ${WRKSRC}/aclocal.m4
+	@${TOUCH} -r ${WRKSRC}/configure.in.orig ${WRKSRC}/configure.in
 
 pre-configure:
 .for dir in . mplib libltdl

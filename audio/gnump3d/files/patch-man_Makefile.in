@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- man/Makefile.in.orig	Wed Aug 14 02:19:33 2002
++++ man/Makefile.in	Wed Aug 14 02:19:52 2002
+@@ -85,7 +85,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-man_MANS = gnump3d.1 gnump3d-top.1 gnump3d.conf.1 gnump3d-config.1
++man_MANS = gnump3d.1 gnump3d-top.1 gnump3d.conf.1
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../src/config.h
+ CONFIG_CLEAN_FILES = 
