@@ -19,10 +19,11 @@ IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-dres \
-			-Dperlpath='${PERL5}' \
+			-Dperlpath='${PERL}' \
+			-Dccflags='${CFLAGS}' \
+			-Dd_flockonly='define' \
 			-Dutmp='/var/run/utmp' \
-			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1' \
-			-Dnotifypatches='false'
+			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1'
 MAKE_ENV=	PATH=`dirname ${PERL5}`:${PATH}
 INSTALL_TARGET=	install install.man
 
@@ -51,7 +52,6 @@ post-patch:
 	    misc/news/newsgate)
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/mailagent
 	@${MKDIR} ${PREFIX}/share/examples/mailagent/misc
 	${CP} -pR ${WRKSRC}/misc/* ${PREFIX}/share/examples/mailagent/misc
 	@${LN} -fs ${PREFIX}/lib/mailagent/examples ${PREFIX}/share/examples/mailagent/agent
