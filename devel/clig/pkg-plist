@@ -1,0 +1,35 @@
+bin/clig
+man/man1/clig.1.gz
+share/clig-1.0.2/bin/clig
+share/clig-1.0.2/tcl/genCheckMandatory.tcl
+share/clig-1.0.2/tcl/genStruct.tcl
+share/clig-1.0.2/tcl/genShowOptionValues.tcl
+share/clig-1.0.2/tcl/genParse.tcl
+share/clig-1.0.2/tcl/genMan.tcl
+share/clig-1.0.2/tcl/genDotH.tcl
+share/clig-1.0.2/tcl/genDotC.tcl
+share/clig-1.0.2/tcl/genDefault.tcl
+share/clig-1.0.2/tcl/genUsage.tcl
+share/clig-1.0.2/c/catArgv.c
+share/clig-1.0.2/c/missingErr.c
+share/clig-1.0.2/c/getStringOpts.c
+share/clig-1.0.2/c/getStringOpt.c
+share/clig-1.0.2/c/getIntOpts.c
+share/clig-1.0.2/c/getIntOpt.c
+share/clig-1.0.2/c/getFloatOpts.c
+share/clig-1.0.2/c/getFloatOpt.c
+share/clig-1.0.2/c/checkIntLower.c
+share/clig-1.0.2/c/checkIntHigher.c
+share/clig-1.0.2/c/checkFloatLower.c
+share/clig-1.0.2/c/checkFloatHigher.c
+share/clig-1.0.2/c/template.man
+share/doc/clig/makefile
+share/doc/clig/cmdline.cli
+share/doc/clig/main.c
+share/doc/clig/CHANGES
+share/doc/clig/WISHLIST
+@dirrm share/clig-1.0.2/bin
+@dirrm share/doc/clig
+@dirrm share/clig-1.0.2/c
+@dirrm share/clig-1.0.2/tcl
+@dirrm share/clig-1.0.2
