@@ -8,6 +8,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.22.1
+PORTREVISION=	1
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
