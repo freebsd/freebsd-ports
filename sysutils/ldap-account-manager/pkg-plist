@@ -93,7 +93,6 @@
 %%WWWROOT%%/templates/profedit/profilemain.php
 %%WWWROOT%%/templates/profedit/profileuser.php
 %%WWWROOT%%/tmp/.htaccess
-@dirrm %%WWWROOT%%/config/pdf
 @dirrm %%WWWROOT%%/config/profiles/groups
 @dirrm %%WWWROOT%%/config/profiles/hosts
 @dirrm %%WWWROOT%%/config/profiles/users
@@ -101,7 +100,6 @@
 @dirrm %%WWWROOT%%/graphics
 @dirrm %%WWWROOT%%/config
 @dirrm %%WWWROOT%%/help
-@dirrm %%WWWROOT%%/lib/font/makefont
 @dirrm %%WWWROOT%%/lib/font
 @dirrm %%WWWROOT%%/lib
 @dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
