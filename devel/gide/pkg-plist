@@ -26,3 +26,4 @@ share/gnome/gIDE/extra/patterns
 share/gnome/gIDE/extra/patterns.scm
 @dirrm share/gnome/gIDE/extra
 @dirrm share/gnome/gIDE
+@dirrm include/gtkeditor
