@@ -1,0 +1,117 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FILES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/doc/beameruserguide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/beameruserguide.tex
+%%PORTDOCS%%%%DOCSDIR%%/doc/themebars.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themebars2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeboxes.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeboxes2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeclassic.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeclassic2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themelined.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themelined2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeplain.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themeplain2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebar.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebar2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebardark.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebardark2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebardarktab.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebardarktab2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebartab.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesidebartab2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesplit.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesplit2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesplitcondensed.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themesplitcondensed2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themetree.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themetree2.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themetreebars.pdf
+%%PORTDOCS%%%%DOCSDIR%%/doc/themetreebars2.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/art/beamericonarticle.eps
+%%CLASSDIR%%/art/beamericonarticle.pdf
+%%CLASSDIR%%/art/beamericonarticle.tex
+%%CLASSDIR%%/art/beamericonarticle.20.eps
+%%CLASSDIR%%/art/beamericonarticle.20.pdf
+%%CLASSDIR%%/art/beamericonbook.eps
+%%CLASSDIR%%/art/beamericonbook.pdf
+%%CLASSDIR%%/art/beamericonbook.tex
+%%CLASSDIR%%/art/beamericonbook.20.pdf
+%%CLASSDIR%%/art/beamericonbook.20.eps
+@dirrm %%CLASSDIR%%/art
+%%CLASSDIR%%/base/beamer.cls
+%%CLASSDIR%%/base/beamerbasearticle.sty
+%%CLASSDIR%%/base/beamerbaseboxes.sty
+%%CLASSDIR%%/base/beamerbasecolor.sty
+%%CLASSDIR%%/base/beamerbasecompatibility.sty
+%%CLASSDIR%%/base/beamerbasefont.sty
+%%CLASSDIR%%/base/beamerbaseframe.sty
+%%CLASSDIR%%/base/beamerbaseframecomponents.sty
+%%CLASSDIR%%/base/beamerbaselocalstructure.sty
+%%CLASSDIR%%/base/beamerbasemisc.sty
+%%CLASSDIR%%/base/beamerbasenavigation.sty
+%%CLASSDIR%%/base/beamerbaseoverlay.sty
+%%CLASSDIR%%/base/beamerbasesection.sty
+%%CLASSDIR%%/base/beamerbasetemplates.sty
+%%CLASSDIR%%/base/beamerbasetitle.sty
+%%CLASSDIR%%/base/beamerbasetoc.sty
+@dirrm %%CLASSDIR%%/base
+%%CLASSDIR%%/themes/beamerthemebars.sty
+%%CLASSDIR%%/themes/beamerthemeboxes.sty
+%%CLASSDIR%%/themes/beamerthemeclassic.sty
+%%CLASSDIR%%/themes/beamerthemelined.sty
+%%CLASSDIR%%/themes/beamerthemeplain.sty
+%%CLASSDIR%%/themes/beamerthemeshadow.sty
+%%CLASSDIR%%/themes/beamerthemesidebardark.sty
+%%CLASSDIR%%/themes/beamerthemesidebardarktab.sty
+%%CLASSDIR%%/themes/beamerthemesidebar.sty
+%%CLASSDIR%%/themes/beamerthemesidebartab.sty
+%%CLASSDIR%%/themes/beamerthemesplit.sty
+%%CLASSDIR%%/themes/beamerthemetreebars.sty
+%%CLASSDIR%%/themes/beamerthemetree.sty
+@dirrm %%CLASSDIR%%/themes
+%%CLASSDIR%%/examples/beamerexample1.pdf
+%%CLASSDIR%%/examples/beamerexample1.tex
+%%CLASSDIR%%/examples/beamerexample2.article.pdf
+%%CLASSDIR%%/examples/beamerexample2.article.tex
+%%CLASSDIR%%/examples/beamerexample2.beamer.pdf
+%%CLASSDIR%%/examples/beamerexample2.beamer.tex
+%%CLASSDIR%%/examples/beamerexample3.pdf
+%%CLASSDIR%%/examples/beamerexample3.tex
+%%CLASSDIR%%/examples/beamerexample4.pdf
+%%CLASSDIR%%/examples/beamerexample4.tex
+%%CLASSDIR%%/examples/beamerexample5.pdf
+%%CLASSDIR%%/examples/beamerexample5.tex
+%%CLASSDIR%%/examples/beamerexample6.pdf
+%%CLASSDIR%%/examples/beamerexample6.tex
+%%CLASSDIR%%/examples/computer.jpg
+%%CLASSDIR%%/examples/computerred.jpg
+%%CLASSDIR%%/examples/computer.mask.jpg
+%%CLASSDIR%%/examples/g4.jpg
+%%CLASSDIR%%/examples/g4red.jpg
+%%CLASSDIR%%/examples/g4.mask.jpg
+%%CLASSDIR%%/examples/ram.jpg
+%%CLASSDIR%%/examples/ram.mask.jpg
+%%CLASSDIR%%/examples/tu-logo.jpg
+%%CLASSDIR%%/examples/ur-logo.jpg
+%%CLASSDIR%%/examples/tu-logo.mask.jpg
+%%CLASSDIR%%/examples/ur-logo.mask.jpg
+@dirrm %%CLASSDIR%%/examples
+%%CLASSDIR%%/lyx/doc/beamerlyxguide.lyx
+%%CLASSDIR%%/lyx/doc/beamerlyxguide.pdf
+@dirrm %%CLASSDIR%%/lyx/doc
+%%CLASSDIR%%/lyx/layouts/beamer.layout
+@dirrm %%CLASSDIR%%/lyx/layouts
+%%CLASSDIR%%/lyx/templates/beamerpresentation.lyx
+@dirrm %%CLASSDIR%%/lyx/templates
+@dirrm %%CLASSDIR%%/lyx
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
