@@ -1,6 +1,6 @@
---- configure.orig	Fri Jun  2 15:13:10 2000
-+++ configure	Wed Jun 28 17:39:26 2000
-@@ -4079,7 +4079,7 @@
+--- configure.orig	Mon Jul 10 20:48:19 2000
++++ configure	Tue Jul 11 19:15:28 2000
+@@ -4116,7 +4116,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,18 +9,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -5621,8 +5621,8 @@
- fi
- 
- if $have_pthread; then 
-- 	THREADS_LIBS="$PTHREAD_LIB `glib-config --libs gthread`"
--	THREADS_CFLAGS="`glib-config --cflags gthread`"
-+ 	THREADS_LIBS="$PTHREAD_LIB `$GLIB_CONFIG --libs gthread`"
-+	THREADS_CFLAGS="`$GLIB_CONFIG --cflags gthread`"
- else
- 	THREADS_LIBS=""
- 	THREADS_CFLAGS=""
-@@ -5697,8 +5697,8 @@
+@@ -5795,8 +5795,8 @@
      { echo "configure: error: Did not find gdkpixbuf installed" 1>&2; exit 1; }
  fi
  
@@ -31,7 +20,7 @@
  
  
  
-@@ -6771,10 +6771,10 @@
+@@ -7583,10 +7583,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac

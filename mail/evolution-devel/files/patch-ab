@@ -19,51 +19,51 @@
 -INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-DG_LOG_DOMAIN=\"wombat-pas\"				-I$(top_srcdir) 					-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend		        $(BONOBO_GNOME_CFLAGS)
 +INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-DG_LOG_DOMAIN=\"wombat-pas\"				-I$(top_srcdir) 					-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend		        $(BONOBO_GNOME_CFLAGS)
  
---- addressbook/gui/component/Makefile.in.orig	Fri Jun  2 15:49:05 2000
-+++ addressbook/gui/component/Makefile.in	Wed Jun 28 18:22:43 2000
-@@ -152,3 +152,3 @@
+--- addressbook/gui/component/Makefile.in.orig	Mon Jul 10 21:34:24 2000
++++ addressbook/gui/component/Makefile.in	Tue Jul 11 19:32:26 2000
+@@ -168,3 +168,3 @@
+ 
+-INCLUDES =  	-DG_LOG_DOMAIN=\"evolution-addressbook\"		$(EXTRA_GNOME_CFLAGS)					$(GNOME_INCLUDEDIR)					-I$(top_srcdir)						-I$(top_builddir)					-I$(top_srcdir)/shell					-I$(top_builddir)/shell					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)/widgets/e-table				-I$(top_srcdir)/widgets/misc				-I$(top_srcdir)/addressbook/gui/minicard		-I$(top_srcdir)/addressbook/contact-editor		-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			$(BONOBO_HTML_GNOME_CFLAGS)				-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"		-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"
++INCLUDES =  	-DG_LOG_DOMAIN=\"evolution-addressbook\"		$(EXTRA_GNOME_CFLAGS)					$(GNOME_INCLUDEDIR)					-I$(top_srcdir)						-I$(top_builddir)					-I$(top_srcdir)/shell					-I$(top_builddir)/shell					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)/widgets/e-table				-I$(top_srcdir)/widgets/misc				-I$(top_srcdir)/addressbook/gui/minicard		-I$(top_srcdir)/addressbook/contact-editor		-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			$(BONOBO_HTML_GNOME_CFLAGS)				-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"		-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"
+
+--- addressbook/gui/component/select-names/Makefile.in.orig	Mon Jul 10 21:34:25 2000
++++ addressbook/gui/component/select-names/Makefile.in	Tue Jul 11 22:42:25 2000
+@@ -179,3 +179,3 @@
  
 -INCLUDES =  	-DG_LOG_DOMAIN=\"evolution-addressbook\"		$(EXTRA_GNOME_CFLAGS)					$(GNOME_INCLUDEDIR)					-I$(top_srcdir)						-I$(top_builddir)					-I$(top_srcdir)/shell					-I$(top_builddir)/shell					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)/widgets/e-table				-I$(top_srcdir)/addressbook/gui/minicard		-I$(top_srcdir)/addressbook/contact-editor		-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			$(BONOBO_HTML_GNOME_CFLAGS)				-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"		-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"
 +INCLUDES =  	-DG_LOG_DOMAIN=\"evolution-addressbook\"		$(EXTRA_GNOME_CFLAGS)					$(GNOME_INCLUDEDIR)					-I$(top_srcdir)						-I$(top_builddir)					-I$(top_srcdir)/shell					-I$(top_builddir)/shell					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)/widgets/e-table				-I$(top_srcdir)/addressbook/gui/minicard		-I$(top_srcdir)/addressbook/contact-editor		-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			$(BONOBO_HTML_GNOME_CFLAGS)				-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"		-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"
  
---- calendar/cal-client/Makefile.in.orig	Fri Jun  2 15:49:10 2000
-+++ calendar/cal-client/Makefile.in	Wed Jun 28 17:58:32 2000
-@@ -161,3 +161,3 @@
+--- calendar/cal-client/Makefile.in.orig	Mon Jul 10 21:34:30 2000
++++ calendar/cal-client/Makefile.in	Tue Jul 11 19:33:16 2000
+@@ -175,3 +175,3 @@
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-DG_LOG_DOMAIN=\"cal-client\"				-I$(top_srcdir)/calendar				-I$(srcdir) -I$(top_srcdir) 				-I. 							-I.. 							-I$(top_builddir)				        -I$(includedir)                                 	$(BONOBO_GNOME_CFLAGS)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-DG_LOG_DOMAIN=\"cal-client\"				-I$(top_srcdir)/calendar				-I$(srcdir) -I$(top_srcdir) 				-I. 							-I.. 							-I$(top_builddir)				        -I$(includedir)                                 	$(BONOBO_GNOME_CFLAGS)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"        	-DG_LOG_DOMAIN=\"cal-client\"				-I$(top_srcdir)/calendar				-I$(srcdir) -I$(top_srcdir) 				-I. 							-I.. 							-I$(top_builddir)					-I$(top_builddir)/libical/src/libical			-I$(top_srcdir)/libical/src/libical			$(BONOBO_GNOME_CFLAGS)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        	-DG_LOG_DOMAIN=\"cal-client\"				-I$(top_srcdir)/calendar				-I$(srcdir) -I$(top_srcdir) 				-I. 							-I.. 							-I$(top_builddir)					-I$(top_builddir)/libical/src/libical			-I$(top_srcdir)/libical/src/libical			$(BONOBO_GNOME_CFLAGS)
  
---- calendar/cal-util/Makefile.in.orig	Fri Jun  2 15:49:08 2000
-+++ calendar/cal-util/Makefile.in	Wed Jun 28 17:41:18 2000
-@@ -151,3 +151,3 @@
+--- calendar/cal-util/Makefile.in.orig	Mon Jul 10 21:34:29 2000
++++ calendar/cal-util/Makefile.in	Tue Jul 11 19:34:04 2000
+@@ -165,3 +165,3 @@
  
--INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-DG_LOG_DOMAIN=\"cal-util\"				-I$(top_srcdir) 					-I$(top_srcdir)/calendar				-I. 							-I.. 							-I$(top_builddir)				        $(GNOME_INCLUDEDIR)
-+INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-DG_LOG_DOMAIN=\"cal-util\"				-I$(top_srcdir) 					-I$(top_srcdir)/calendar				-I. 							-I.. 							-I$(top_builddir)				        $(GNOME_INCLUDEDIR)
+-INCLUDES =          -DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-DG_LOG_DOMAIN=\"cal-util\"				-I$(top_srcdir) 					-I$(top_srcdir)/calendar				-I. 							-I.. 							-I$(top_builddir)					-I$(top_srcdir)/libical/src/libical			-I$(top_builddir)/libical/src/libical		        $(GNOME_INCLUDEDIR)
++INCLUDES =          -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-DG_LOG_DOMAIN=\"cal-util\"				-I$(top_srcdir) 					-I$(top_srcdir)/calendar				-I. 							-I.. 							-I$(top_builddir)					-I$(top_srcdir)/libical/src/libical			-I$(top_builddir)/libical/src/libical		        $(GNOME_INCLUDEDIR)
  
---- calendar/gui/Makefile.in.orig	Fri Jun  2 15:49:11 2000
-+++ calendar/gui/Makefile.in	Wed Jun 28 19:39:03 2000
-@@ -151,3 +151,3 @@
+--- calendar/gui/Makefile.in.orig	Mon Jul 10 21:34:31 2000
++++ calendar/gui/Makefile.in	Tue Jul 11 22:41:10 2000
+@@ -165,3 +165,3 @@
  
 -help_base = $(datadir)/gnome/help/cal
 +help_base = $(datadir)/help/cal
  
-@@ -156,3 +156,3 @@
+@@ -172,3 +172,3 @@
  
--INCLUDES =  	-DG_LOG_DOMAIN=\"calendar-gui\"				-I$(top_builddir)/shell					-I$(top_srcdir)/shell					-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(includedir)						$(BONOBO_VFS_GNOME_CFLAGS)				$(GNOME_CONDUIT_INCLUDEDIR)				$(PISOCK_INCLUDEDIR)                  			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"		        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
-+INCLUDES =  	-DG_LOG_DOMAIN=\"calendar-gui\"				-I$(top_builddir)/shell					-I$(top_srcdir)/shell					-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(includedir)						$(BONOBO_VFS_GNOME_CFLAGS)				$(GNOME_CONDUIT_INCLUDEDIR)				$(PISOCK_INCLUDEDIR)                  			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"		        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
+-INCLUDES =  	-DG_LOG_DOMAIN=\"calendar-gui\"				-I$(top_builddir)/shell					-I$(top_srcdir)/shell					-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(top_srcdir)/widgets					-I$(includedir)						$(BONOBO_VFS_GNOME_CFLAGS)				-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"		        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
++INCLUDES =  	-DG_LOG_DOMAIN=\"calendar-gui\"				-I$(top_builddir)/shell					-I$(top_srcdir)/shell					-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(top_srcdir)/widgets					-I$(includedir)						$(BONOBO_VFS_GNOME_CFLAGS)				-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"		        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
  
-@@ -766,3 +766,3 @@
+@@ -593,3 +593,3 @@
  install-data-local:
 -	$(mkinstalldirs) $(DESTDIR)$(help_base)/C
 +#	$(mkinstalldirs) $(DESTDIR)$(help_base)/C
- 
---- calendar/pcs/Makefile.in.orig	Fri Jun  2 15:49:09 2000
-+++ calendar/pcs/Makefile.in	Wed Jun 28 17:42:02 2000
-@@ -149,3 +149,3 @@
- 
--INCLUDES =  	-DG_LOG_DOMAIN=\"wombat-pcs\"				-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(top_builddir)/libical/src/libical			$(BONOBO_GNOME_CFLAGS)				        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
-+INCLUDES =  	-DG_LOG_DOMAIN=\"wombat-pcs\"				-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(top_builddir)/libical/src/libical			$(BONOBO_GNOME_CFLAGS)				        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
- 
+ 	$(mkinstalldirs) $(Conduitsdir)
 --- calendar/gui/dialogs/Makefile.in.orig	Fri Jun  2 15:49:12 2000
 +++ calendar/gui/dialogs/Makefile.in	Wed Jun 28 18:24:00 2000
 @@ -151,3 +151,3 @@
@@ -71,24 +71,31 @@
 -INCLUDES =  	-DG_LOG_DOMAIN=\"calendar-gui\"				-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(includedir)						-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			$(BONOBO_VFS_GNOME_CFLAGS)			        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
 +INCLUDES =  	-DG_LOG_DOMAIN=\"calendar-gui\"				-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(includedir)						-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			$(BONOBO_VFS_GNOME_CFLAGS)			        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
  
---- mail/Makefile.in.orig	Fri Jun  2 15:48:53 2000
-+++ mail/Makefile.in	Wed Jun 28 17:44:12 2000
-@@ -157,3 +157,3 @@
+--- calendar/pcs/Makefile.in.orig	Mon Jul 10 21:34:30 2000
++++ calendar/pcs/Makefile.in	Tue Jul 11 19:35:14 2000
+@@ -163,3 +163,3 @@
  
--INCLUDES =  	-I$(top_srcdir)/widgets					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)						-I$(top_srcdir)/camel					-I$(top_builddir)/shell					-I$(top_srcdir)/shell					$(BONOBO_HTML_GNOME_CFLAGS)				-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"		-DEVOLUTION_DATADIR=\""$(datadir)"\"            	-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"		-DG_LOG_DOMAIN=\"evolution-mail\"
-+INCLUDES =  	-I$(top_srcdir)/widgets					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)						-I$(top_srcdir)/camel					-I$(top_builddir)/shell					-I$(top_srcdir)/shell					$(BONOBO_HTML_GNOME_CFLAGS)				-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"		-DEVOLUTION_DATADIR=\""$(datadir)"\"            	-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"		-DG_LOG_DOMAIN=\"evolution-mail\"
+-INCLUDES =  	-DG_LOG_DOMAIN=\"wombat-pcs\"				-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(top_builddir)/libical/src/libical			$(BONOBO_VFS_GNOME_CFLAGS)			        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
++INCLUDES =  	-DG_LOG_DOMAIN=\"wombat-pcs\"				-I$(top_srcdir)						-I$(top_srcdir)/calendar				-I$(top_srcdir)/libical/src/libical			-I$(top_builddir)/libical/src/libical			$(BONOBO_VFS_GNOME_CFLAGS)			        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
  
---- shell/Makefile.in.orig	Fri Jun  2 15:48:43 2000
-+++ shell/Makefile.in	Wed Jun 28 17:44:32 2000
-@@ -153,3 +153,3 @@
+--- mail/Makefile.in.orig	Mon Jul 10 21:34:09 2000
++++ mail/Makefile.in	Tue Jul 11 19:36:13 2000
+@@ -169,3 +169,3 @@
  
--INCLUDES =  	-I$(top_srcdir)/widgets					-I$(top_srcdir)/widgets/misc				-I$(top_srcdir)						$(BONOBO_GNOME_CFLAGS)					-DEVOLUTION_IMAGES=\""$(imagesdir)"\"			-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"   	-DEVOLUTION_DATADIR=\""$(datadir)"\"            	-DG_LOG_DOMAIN=\"evolution-shell\"
-+INCLUDES =  	-I$(top_srcdir)/widgets					-I$(top_srcdir)/widgets/misc				-I$(top_srcdir)						$(BONOBO_GNOME_CFLAGS)					-DEVOLUTION_IMAGES=\""$(imagesdir)"\"			-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"   	-DEVOLUTION_DATADIR=\""$(datadir)"\"            	-DG_LOG_DOMAIN=\"evolution-shell\"
+-INCLUDES =  	-I$(top_srcdir)/widgets					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)						-I$(top_srcdir)/camel					-I$(top_builddir)/shell					-I$(top_srcdir)/shell					$(BONOBO_HTML_GNOME_CFLAGS)				$(GNOME_VFS_CFLAGS)					$(GCONF_CFLAGS)						-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"		-DEVOLUTION_DATADIR=\""$(datadir)"\"            	-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"		-DG_LOG_DOMAIN=\"evolution-mail\"			$(THREADS_CFLAGS)
++INCLUDES =  	-I$(top_srcdir)/widgets					-I$(top_srcdir)/widgets/e-text				-I$(top_srcdir)						-I$(top_srcdir)/camel					-I$(top_builddir)/shell					-I$(top_srcdir)/shell					$(BONOBO_HTML_GNOME_CFLAGS)				$(GNOME_VFS_CFLAGS)					$(GCONF_CFLAGS)						-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_GLADEDIR=\""$(gladedir)"\"			-DEVOLUTION_ICONSDIR=\""$(iconsdir)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"		-DEVOLUTION_DATADIR=\""$(datadir)"\"            	-DCAMEL_PROVIDERDIR=\""$(providerdir)"\"		-DG_LOG_DOMAIN=\"evolution-mail\"			$(THREADS_CFLAGS)
  
---- wombat/Makefile.in.orig	Fri Jun  2 15:49:13 2000
-+++ wombat/Makefile.in	Wed Jun 28 17:45:11 2000
-@@ -149,3 +149,3 @@
+--- shell/Makefile.in.orig	Mon Jul 10 21:33:55 2000
++++ shell/Makefile.in	Tue Jul 11 19:36:47 2000
+@@ -165,3 +165,3 @@
  
--INCLUDES =  	-DG_LOG_DOMAIN=\"wombat\"				-I$(top_srcdir)/e-util					-I$(top_srcdir)						-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			-I$(top_srcdir)/calendar				-I$(top_srcdir)/calendar/pcs				$(EXTRA_GNOME_CFLAGS)					$(GNOME_INCLUDEDIR)					-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"
-+INCLUDES =  	-DG_LOG_DOMAIN=\"wombat\"				-I$(top_srcdir)/e-util					-I$(top_srcdir)						-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			-I$(top_srcdir)/calendar				-I$(top_srcdir)/calendar/pcs				$(EXTRA_GNOME_CFLAGS)					$(GNOME_INCLUDEDIR)					-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"
+-INCLUDES =  	-I$(top_srcdir)/widgets							-I$(top_srcdir)/widgets/misc						-I$(top_srcdir)								$(BONOBO_GNOME_CFLAGS)							$(GCONF_CFLAGS)								-DEVOLUTION_IMAGES=\""$(datadir)/images/evolution"\"			-DEVOLUTION_VERSION=\""$(VERSION)"\"					-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"   			-DEVOLUTION_DATADIR=\""$(datadir)"\"            			-DEVOLUTION_GLADEDIR=\"$(datadir)/evolution/glade\"			-DG_LOG_DOMAIN=\"evolution-shell\"
++INCLUDES =  	-I$(top_srcdir)/widgets							-I$(top_srcdir)/widgets/misc						-I$(top_srcdir)								$(BONOBO_GNOME_CFLAGS)							$(GCONF_CFLAGS)								-DEVOLUTION_IMAGES=\""$(datadir)/images/evolution"\"			-DEVOLUTION_VERSION=\""$(VERSION)"\"					-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"   			-DEVOLUTION_DATADIR=\""$(datadir)"\"            			-DEVOLUTION_GLADEDIR=\"$(datadir)/evolution/glade\"			-DG_LOG_DOMAIN=\"evolution-shell\"
+
+--- wombat/Makefile.in.orig	Mon Jul 10 21:34:33 2000
++++ wombat/Makefile.in	Tue Jul 11 19:37:30 2000
+@@ -163,3 +163,3 @@
+ 
+-INCLUDES =  	-DG_LOG_DOMAIN=\"wombat\"				-I$(top_srcdir)/e-util					-I$(top_srcdir)						-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			-I$(top_srcdir)/calendar				-I$(top_srcdir)/calendar/pcs				$(GNOME_INCLUDEDIR)					$(BONOBO_VFS_GNOME_CFLAGS)					-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_LOCALEDIR=\""$(datadir)/locale"\"
++INCLUDES =  	-DG_LOG_DOMAIN=\"wombat\"				-I$(top_srcdir)/e-util					-I$(top_srcdir)						-I$(top_srcdir)/addressbook/backend			-I$(top_builddir)/addressbook/backend			-I$(top_srcdir)/calendar				-I$(top_srcdir)/calendar/pcs				$(GNOME_INCLUDEDIR)					$(BONOBO_VFS_GNOME_CFLAGS)					-DEVOLUTION_VERSION=\""$(VERSION)"\"			-DEVOLUTION_LOCALEDIR=\""$(prefix)/share/locale"\"
  

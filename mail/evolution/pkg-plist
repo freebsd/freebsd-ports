@@ -3,8 +3,8 @@ bin/evolution-addressbook
 bin/evolution-calendar
 bin/evolution-mail
 bin/killev
-bin/test-mail
 bin/wombat
+include/camel/broken-date-parser.h
 include/camel/camel-address.h
 include/camel/camel-data-wrapper.h
 include/camel/camel-exception-list.def
@@ -12,6 +12,9 @@ include/camel/camel-exception.h
 include/camel/camel-folder-search.h
 include/camel/camel-folder-summary.h
 include/camel/camel-folder.h
+include/camel/camel-imap-folder.h
+include/camel/camel-imap-store.h
+include/camel/camel-imap-stream.h
 include/camel/camel-internet-address.h
 include/camel/camel-mbox-folder.h
 include/camel/camel-mbox-store.h
@@ -19,10 +22,10 @@ include/camel/camel-mbox-summary.h
 include/camel/camel-medium.h
 include/camel/camel-mime-filter-basic.h
 include/camel/camel-mime-filter-charset.h
+include/camel/camel-mime-filter-crlf.h
 include/camel/camel-mime-filter-from.h
 include/camel/camel-mime-filter-index.h
 include/camel/camel-mime-filter-save.h
-include/camel/camel-mime-filter-smtp.h
 include/camel/camel-mime-filter.h
 include/camel/camel-mime-message.h
 include/camel/camel-mime-parser.h
@@ -58,15 +61,10 @@ include/camel/gstring-util.h
 include/camel/hash-table-utils.h
 include/camel/md5-utils.h
 include/camel/string-utils.h
-include/composer/e-msg-composer-address-dialog.h
-include/composer/e-msg-composer-address-entry.h
-include/composer/e-msg-composer-attachment-bar.h
-include/composer/e-msg-composer-attachment.h
-include/composer/e-msg-composer-hdrs.h
-include/composer/e-msg-composer.h
 include/ename/e-name-western-tables.h
 include/ename/e-name-western.h
 include/evolution/cal-client/cal-client.h
+include/evolution/cal-util/cal-component.h
 include/evolution/cal-util/cal-recur.h
 include/evolution/cal-util/cal-util.h
 include/evolution/cal-util/calobj.h
@@ -77,9 +75,6 @@ include/evolution/ebook/e-book-view-listener.h
 include/evolution/ebook/e-book-view.h
 include/evolution/ebook/e-book.h
 include/evolution/ebook/e-card-cursor.h
-include/evolution/ebook/e-card-iterator.h
-include/evolution/ebook/e-card-list-iterator.h
-include/evolution/ebook/e-card-list.h
 include/evolution/ebook/e-card-pairs.h
 include/evolution/ebook/e-card-simple.h
 include/evolution/ebook/e-card-types.h
@@ -101,6 +96,8 @@ include/icalvalue.h
 include/icalvcal.h
 include/icalversion.h
 include/pvl.h
+lib/evolution/camel-providers/%%VERSION%%/libcamelimap.so
+lib/evolution/camel-providers/%%VERSION%%/libcamelimap.urls
 lib/evolution/camel-providers/%%VERSION%%/libcamelmbox.so
 lib/evolution/camel-providers/%%VERSION%%/libcamelmbox.urls
 lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.so
@@ -126,22 +123,18 @@ lib/libebook.so.0
 lib/libename.a
 lib/libename.so
 lib/libename.so.0
+lib/libeselectnames.a
+lib/libeselectnames.so
+lib/libeselectnames.so.0
 lib/libical.a
-lib/libical.so
-lib/libical.so.0
 lib/libicalss.a
-lib/libicalss.so
-lib/libicalss.so.0
+share/evolution/default_user/ldapservers.xml
 share/evolution/default_user/shortcuts.xml
 share/evolution/filtertypes.xml
 share/evolution/vfoldertypes.xml
+share/gnome/apps/Applications/evolution.desktop
 share/gnome/evolution/default_user/local/Calendar/folder-metadata.xml
 share/gnome/evolution/default_user/local/Contacts/folder-metadata.xml
-share/gnome/evolution/default_user/local/Directories/folder-metadata.xml
-share/gnome/evolution/default_user/local/Directories/subfolders/Bigfoot/folder-metadata.xml
-share/gnome/evolution/default_user/local/Directories/subfolders/Bigfoot/uri
-share/gnome/evolution/default_user/local/Directories/subfolders/Netcenter/folder-metadata.xml
-share/gnome/evolution/default_user/local/Directories/subfolders/Netcenter/uri
 share/gnome/evolution/default_user/local/Drafts/folder-metadata.xml
 share/gnome/evolution/default_user/local/Inbox/folder-metadata.xml
 share/gnome/evolution/default_user/local/Inbox/mbox
@@ -160,14 +153,19 @@ share/gnome/evolution/glade/e-msg-composer-address-dialog.glade
 share/gnome/evolution/glade/e-msg-composer-address-dialog.glade.h
 share/gnome/evolution/glade/e-msg-composer-attachment.glade
 share/gnome/evolution/glade/e-msg-composer-attachment.glade.h
+share/gnome/evolution/glade/e-shell-folder-creation-dialog.glade
 share/gnome/evolution/glade/e-table-config.glade
+share/gnome/evolution/glade/e-table-field-chooser.glade
 share/gnome/evolution/glade/e-table-group.glade
 share/gnome/evolution/glade/event-editor-dialog.glade
 share/gnome/evolution/glade/fullname.glade
 share/gnome/evolution/glade/ldap-server-dialog.glade
 share/gnome/evolution/glade/ldap-server-dialog.glade.h
+share/gnome/evolution/glade/mail-config.glade
+share/gnome/evolution/glade/select-names.glade
 share/gnome/help/evolution/C/fig/calendar.png
-share/gnome/help/evolution/C/fig/config-camel.png
+share/gnome/help/evolution/C/fig/config-cal.png
+share/gnome/help/evolution/C/fig/config-mail.png
 share/gnome/help/evolution/C/fig/contact.png
 share/gnome/help/evolution/C/fig/filter-new-fig.png
 share/gnome/help/evolution/C/fig/mail-druid-pic.png
@@ -194,21 +192,26 @@ share/gnome/images/evolution/house.png
 share/gnome/images/evolution/malehead.png
 share/gnome/oaf/addressbook.oafinfo
 share/gnome/oaf/calendar-control.oafinfo
+share/gnome/oaf/evolution-addressbook-select-names.oafinfo
 share/gnome/oaf/evolution-calendar.oafinfo
 share/gnome/oaf/evolution-mail.oafinfo
 share/gnome/oaf/wombat.oafinfo
+share/gnome/pixmaps/evolution.png
 share/locale/da/LC_MESSAGES/evolution.mo
+share/locale/de/LC_MESSAGES/evolution.mo
 share/locale/el/LC_MESSAGES/evolution.mo
 share/locale/es/LC_MESSAGES/evolution.mo
 share/locale/fr/LC_MESSAGES/evolution.mo
 share/locale/gl/LC_MESSAGES/evolution.mo
 share/locale/hu/LC_MESSAGES/evolution.mo
+share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo
 share/locale/nl/LC_MESSAGES/evolution.mo
 share/locale/no/LC_MESSAGES/evolution.mo
-share/locale/pt/LC_MESSAGES/evolution.mo
 share/locale/ru/LC_MESSAGES/evolution.mo
+share/locale/pl/LC_MESSAGES/evolution.mo
+share/locale/sl/LC_MESSAGES/evolution.mo
 share/locale/sv/LC_MESSAGES/evolution.mo
 share/locale/tr/LC_MESSAGES/evolution.mo
 share/locale/uk/LC_MESSAGES/evolution.mo
@@ -223,10 +226,6 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/evolution/default_user/local/Outbox
 @dirrm share/gnome/evolution/default_user/local/Inbox
 @dirrm share/gnome/evolution/default_user/local/Drafts
-@dirrm share/gnome/evolution/default_user/local/Directories/subfolders/Netcenter
-@dirrm share/gnome/evolution/default_user/local/Directories/subfolders/Bigfoot
-@dirrm share/gnome/evolution/default_user/local/Directories/subfolders
-@dirrm share/gnome/evolution/default_user/local/Directories
 @dirrm share/gnome/evolution/default_user/local/Contacts
 @dirrm share/gnome/evolution/default_user/local/Calendar
 @dirrm share/gnome/evolution/default_user/local
@@ -240,6 +239,6 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm include/evolution/ebook
 @dirrm include/evolution/cal-util
 @dirrm include/evolution/cal-client
+@dirrm include/evolution
 @dirrm include/ename
-@dirrm include/composer
 @dirrm include/camel
