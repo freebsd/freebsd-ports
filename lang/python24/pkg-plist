@@ -500,6 +500,27 @@ lib/%%PYTHON_VERSION%%/distutils/spawn.pyo
 lib/%%PYTHON_VERSION%%/distutils/sysconfig.py
 lib/%%PYTHON_VERSION%%/distutils/sysconfig.pyc
 lib/%%PYTHON_VERSION%%/distutils/sysconfig.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/__init__.py
+lib/%%PYTHON_VERSION%%/distutils/tests/__init__.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/__init__.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/support.py
+lib/%%PYTHON_VERSION%%/distutils/tests/support.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/support.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_py.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_py.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_py.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_scripts.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_scripts.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_build_scripts.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_dist.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_dist.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_dist.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install.pyo
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.py
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.pyc
+lib/%%PYTHON_VERSION%%/distutils/tests/test_install_scripts.pyo
 lib/%%PYTHON_VERSION%%/distutils/text_file.py
 lib/%%PYTHON_VERSION%%/distutils/text_file.pyc
 lib/%%PYTHON_VERSION%%/distutils/text_file.pyo
@@ -635,6 +656,7 @@ lib/%%PYTHON_VERSION%%/email/test/data/msg_39.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_40.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_41.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_42.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_43.txt
 lib/%%PYTHON_VERSION%%/email/test/test_email.py
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyc
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyo
@@ -3360,6 +3382,7 @@ share/emacs/site-lisp/python-mode.el
 @dirrm lib/%%PYTHON_VERSION%%/email/test/data
 @dirrm lib/%%PYTHON_VERSION%%/email/test
 @dirrm lib/%%PYTHON_VERSION%%/email
+@dirrm lib/%%PYTHON_VERSION%%/distutils/tests
 @dirrm lib/%%PYTHON_VERSION%%/distutils/command
 @dirrm lib/%%PYTHON_VERSION%%/distutils
 @dirrm lib/%%PYTHON_VERSION%%/curses
