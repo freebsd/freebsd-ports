@@ -2,6 +2,9 @@
 # Version required:		1.6.9
 # Date released:		10 Oct 96
 # Whom:				Peter Wemm <peter@freebsd.org>
+#
+# $Id$
+#
 
 DISTNAME=	exmh-1.6.9
 CATEGORIES+=	mail
