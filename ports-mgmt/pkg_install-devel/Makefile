@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20040216
+PORTVERSION=		20040412
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	eik
@@ -32,15 +32,6 @@ BACKUPDIR?=		/var/backups
 
 .if !defined(NOCRYPT) && !defined(NO_OPENSSL)
 USE_OPENSSL=		yes
-.if exists(/usr/lib/libcrypto.so)
-USE_OPENSSL_BASE=	yes
-.else
-.if ${PREFIX} = "/usr"
-.error
-.else
-USE_OPENSSL_PORT=	yes
-.endif
-.endif
 MAN1+=			pkg_check.1 pkg_sign.1
 PLIST_SUB+=		OPENSSL=""
 .else
