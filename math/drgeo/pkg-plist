@@ -205,6 +205,10 @@ share/locale/sv/LC_MESSAGES/drgeo.mo
 share/locale/uk/LC_MESSAGES/drgeo.mo
 share/locale/zh_CN/LC_MESSAGES/drgeo.mo
 share/locale/zh_TW/LC_MESSAGES/drgeo.mo
+@unexec rmdir %D/share/locale/no_NO/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no_NO 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
 @unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins/drgeo/progs 2>/dev/null || true
 @unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins/drgeo 2>/dev/null || true
 @unexec rmdir %D/share/gnome/texmacs/TeXmacs/plugins 2>/dev/null || true
