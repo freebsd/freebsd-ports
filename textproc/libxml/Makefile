@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/libxml
 
 MAINTAINER=	ade@FreeBSD.org
 
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
