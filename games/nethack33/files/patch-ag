@@ -1,0 +1,21 @@
+--- sys/unix/Makefile.utl.orig	Mon Apr 17 22:36:44 2000
++++ sys/unix/Makefile.utl	Wed Oct 10 19:48:36 2001
+@@ -89,7 +89,17 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
++CFLAGS += -I../include
++ifeq ("$(GRAPHICS)","X11_GRAPHICS")
++CFLAGS += -DX11_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","QT_GRAPHICS")
++CFLAGS += -DQT_GRAPHICS
++endif
++ifeq ("$(GRAPHICS)","GNOME_GRAPHICS")
++CFLAGS += -DGNOME_GRAPHICS
++endif
++
+ LFLAGS =
+ 
+ LIBS =
