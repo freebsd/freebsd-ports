@@ -156,6 +156,7 @@
     SUBDIR += kde3-i18n-eo
     SUBDIR += kde3-i18n-es
     SUBDIR += kde3-i18n-et
+    SUBDIR += kde3-i18n-eu
     SUBDIR += kde3-i18n-fa
     SUBDIR += kde3-i18n-fi
     SUBDIR += kde3-i18n-hr
