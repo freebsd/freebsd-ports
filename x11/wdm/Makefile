@@ -22,9 +22,11 @@ DIST_SUBDIR=	wdm
 USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	--include-deps
+DEF_SERVER?=	${X11BASE}/bin/X
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-DCSRG_BASED -DHAS_SETUSERCONTEXT" \
-		LIBS="-L${LOCALBASE}/lib ${LIBPAM}"
+		LIBS="-L${LOCALBASE}/lib ${LIBPAM}" \
+		DEF_SERVER="${DEF_SERVER}"
 CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-runlockdir=/var/run \
 		--with-wdmdir=${PREFIX}/lib/X11/wdm \
