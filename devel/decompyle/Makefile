@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python byte-code decompiler
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.3
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=  yes
 USE_ZIP=	yes
