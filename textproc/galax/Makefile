@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galax
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://db.bell-labs.com/galax/Downloads/
 
@@ -23,7 +23,7 @@ MAKE_ENV=	PREFIX=${PREFIX} JAVA_HOME=${JAVE_HOME}
 PLIST_SUB=	GALAX=Galax-${PORTVERSION}
 
 pre-patch:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/config
+	${SED} s,%%GALAXHOME%%,'$(PREFIX)/Galax-${PORTVERSION}', ${FILESDIR}/Makefile >${WRKSRC}/config/Makefile
 
 post-install:
 	@${SED} 's,PREFIX,${PREFIX},; s,GALAX,Galax-${PORTVERSION},' ${PKGMESSAGE}
