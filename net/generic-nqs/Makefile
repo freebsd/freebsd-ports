@@ -117,7 +117,7 @@ pre-configure:
 #
 
 post-install:
-	@ strip ${PREFIX}/sbin/loaddaemon	${PREFIX}/sbin/finish_autoinst \
+	@ ${STRIP_CMD} ${PREFIX}/sbin/loaddaemon	${PREFIX}/sbin/finish_autoinst \
 			${PREFIX}/sbin/lpserver		${PREFIX}/sbin/netclient \
 			${PREFIX}/sbin/netdaemon	${PREFIX}/sbin/netserver \
 			${PREFIX}/sbin/nqsdaemon	${PREFIX}/sbin/nqsexejob \
