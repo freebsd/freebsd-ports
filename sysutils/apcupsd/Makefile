@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.10.9
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,7 +50,7 @@ PLIST_SUB+=	POWERFL="@comment "
 
 MAN8=		"apcupsd.8"
 
-PORTDOCS=	apcupsd.pdf manual.html \
+PORTDOCS=	apcupsd.pdf manual.html manual.css \
 		apcupsd.png back.png charging.png home.png main_configs.png \
 		multimon.png next.png onbatt.png online.png status.png thanks.png \
 		wininstall1.png wininstall2.png	wininstall3.png wininstall4.png \
