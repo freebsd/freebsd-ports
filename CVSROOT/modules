@@ -1156,6 +1156,7 @@ decompyle	ports/devel/decompyle
 decss		ports/www/decss
 decurs		ports/x11/decurs
 dedit		ports/editors/dedit
+deep_zoom	ports/graphics/deep_zoom
 deepforest	ports/archivers/deepforest
 defendguin	ports/games/defendguin
 deft		ports/biology/deft
