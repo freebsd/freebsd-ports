@@ -7,6 +7,7 @@
 
 PORTNAME=	mapedit
 PORTVERSION= 	2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
