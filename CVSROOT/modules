@@ -4238,6 +4238,7 @@ makekey		src/libexec/makekey
 makepatch	ports/textproc/makepatch
 makeplus	ports/devel/makeplus
 makeself	ports/archivers/makeself
+maketeidtd	ports/textproc/maketeidtd
 makewhatis	src/gnu/usr.bin/man/makewhatis
 makeztxt	ports/palm/makeztxt
 malbolge	ports/lang/malbolge
