@@ -17,9 +17,11 @@ WRKSRC=		${WRKDIR}/AutoZen-${PORTVERSION}
 
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
-USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_GNOMENG=	yes
+USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 
 DOC_FILES=	CHANGES COPYING
 DATA_FILES=	deep-relax.seq deep_delta_slide.seq delta_slide.seq \
@@ -28,10 +30,10 @@ PLIST=		${WRKDIR}/pkg-plist
 
 post-patch:
 	@if [ -f /usr/include/sys/soundcard.h ]; then \
-		${PERL} -pi -e "s=machine/soundcard.h=sys/soundcard.h=g" \
+		${REINPLACE_CMD} "s=machine/soundcard.h=sys/soundcard.h=g" \
 			${WRKSRC}/autozen.c; \
 	fi
-	@${PERL} -pi -e "s=X11BASE=${X11BASE}=g" ${WRKSRC}/autozen.c
+	${REINPLACE_CMD} "s=X11BASE=${X11BASE}=g" ${WRKSRC}/autozen.c
 	cd ${WRKSRC} && ${RM} autozen seq2wav
 
 pre-install:
