@@ -33,6 +33,16 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
+.if defined(WITH_JAPANESE_FONTS)
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/fonts.dir.kochi:${PORTSDIR}/japanese/kochi-ttfonts
+.endif
+.if defined(WITH_RUSSIAN_FONTS)
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/webfonts/fonts.dir:${PORTSDIR}/x11-fonts/webfonts
+.endif
+.if defined(WITH_CHINESE_FONTS)
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/arphic:${PORTSDIR}/chinese/arphicttf
+.endif
+
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
