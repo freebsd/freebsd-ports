@@ -324,6 +324,7 @@
     SUBDIR += libgii
     SUBDIR += libglade
     SUBDIR += libglade2
+    SUBDIR += libglademm
     SUBDIR += libgnugetopt
     SUBDIR += libgsf
     SUBDIR += libgtop
