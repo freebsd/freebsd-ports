@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu May 24 22:06:27 2001
++++ Makefile	Thu May 24 22:06:42 2001
+@@ -12,8 +12,8 @@
+ 	$(JAVAC) $(JAVAC_FLAGS) com/marcuscom/confregdecode/ConfregDecode.java
+ 
+ jar: all
+-	jar -cvf cd.jar com/marcuscom/confregdecode/*.class
++	jar -cvf confregdecode.jar com/marcuscom/confregdecode/*.class
+ 
+ clean:
+ 	$(RM) -f com/marcuscom/confregdecode/*.class
+-	$(RM) -f cd.jar
++	$(RM) -f cconfregdecode.jar

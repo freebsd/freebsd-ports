@@ -49,6 +49,7 @@
     SUBDIR += coda_intro
     SUBDIR += coda_server
     SUBDIR += conference
+    SUBDIR += confregdecode
     SUBDIR += corkscrew
     SUBDIR += crescendo
     SUBDIR += cricket
