@@ -36,7 +36,7 @@ USE_GCC=	3.4
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 503000
-IGNORE=		Versions of FreeBSD before 5.3 lack sufficient threading support
+IGNORE=		fails to work on versions of FreeBSD before 5.3 (due to problems with threading support)
 .endif
 
 .if defined(DEBUG)
