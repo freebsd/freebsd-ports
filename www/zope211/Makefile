@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
@@ -38,7 +38,8 @@ ZOPE_HTTP_PORT?=	8080
 ZOPE_FTP_PORT?=		8021
 ZOPE_MONITOR_PORT?=	''
 
-ZOPE_USER=	www
+ZOPE_USER?=	www
+SUPER_USER?=	root
 
 # Don't change these.
 ZOPEBASEDIR=	${PREFIX}/${SZOPEBASEDIR}
@@ -104,7 +105,7 @@ do-install:
 	@#
 	@${ECHO} "===>   Fixing permissions of Zope's own var directory..."
 	@${CHMOD} ugo+rwt ${ZOPEBASEDIR}/var
-	@${CHOWN} root ${ZOPEBASEDIR}/var
+	@${CHOWN} ${SUPER_USER} ${ZOPEBASEDIR}/var
 	@${CHOWN} ${ZOPE_USER} ${ZOPEBASEDIR}/var/*
 	@${RM} ${ZOPEBASEDIR}/var/.cvsignore
 	@if [ -e ${ZOPEBASEDIR}/var/Data.fs.preserve ] ; then \
