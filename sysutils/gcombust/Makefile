@@ -10,7 +10,7 @@ PORTVERSION=	0.1.33
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
-MAINTAINER=	nox@jelal.kn-bremen.de
+MAINTAINER=	bsdx@looksharp.net
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrecord \
