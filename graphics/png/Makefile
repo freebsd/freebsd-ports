@@ -3,7 +3,7 @@
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/02/20 05:35:35 asami Exp $
+# $Id: Makefile,v 1.6 1996/07/17 20:07:25 ache Exp $
 #
 
 DISTNAME=       libpng-0.89c
@@ -12,8 +12,6 @@ CATEGORIES+=    graphics
 MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 
 MAINTAINER=     ache@FreeBSD.org
-
-LIB_DEPENDS=    z\\.1\\.:${PORTSDIR}/devel/libz
 
 MAKEFILE=       makefile
 
