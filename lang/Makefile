@@ -35,6 +35,7 @@
     SUBDIR += emacs-lisp-intro
     SUBDIR += eperl
     SUBDIR += erlang
+    SUBDIR += erlang-doc
     SUBDIR += expect
     SUBDIR += ezm3
     SUBDIR += f2c
