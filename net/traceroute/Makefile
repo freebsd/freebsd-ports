@@ -3,18 +3,18 @@
 # Date created:		20 February 1997
 # Whom:			chris@vader.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/17 16:21:11 max Exp $
+# $Id: Makefile,v 1.2 1998/12/04 21:53:42 billf Exp $
 #
 
 DISTNAME=	traceroute_${RELEASEDATE}
-PKGNAME=	traceroute-${RELEASEDATE}
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/
+MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/	\
+	  	http://www.chg.ru/~dima/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	chris@vader.org
+MAINTAINER=	dima@Chg.RU
 
-RELEASEDATE=	980831
+RELEASEDATE=	990207
 NO_WRKSUBDIR=	yes
 MAN8=		traceroute.8
 
