@@ -1,5 +1,5 @@
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Sat Jul 19 22:50:35 2003
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Jul 19 23:46:56 2003
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Sun Jul 20 18:16:25 2003
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Jul 20 11:58:05 2003
 @@ -59,13 +59,11 @@
  CPPSRCS		:= xptcinvoke_gcc_x86_unix.cpp xptcstubs_gcc_x86_unix.cpp
  endif
@@ -15,7 +15,24 @@
  #
  # BeOS/Intel (uses the same unixish_x86 code)
  #
-@@ -298,6 +296,15 @@
+@@ -106,9 +104,15 @@
+ ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
+ endif
+ #
++# FreeBSD/Alpha
++#
++ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDalpha)
++CPPSRCS		:= xptcinvoke_freebsd_alpha.cpp xptcstubs_freebsd_alpha.cpp
++endif
++#
+ # Linux/Alpha
+ #
+-ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
++ifneq (,$(filter Linuxalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
+ CPPSRCS		:= xptcinvoke_linux_alpha.cpp xptcstubs_linux_alpha.cpp
+ endif
+ #
+@@ -292,6 +296,15 @@
  ifeq ($(OS_ARCH)$(OS_TEST),NetBSDsparc)
  CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
  ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
