@@ -49,8 +49,7 @@ $LAST_FILE     = "/tmp/#cvs.files.lastdir";
 $ENTRIES       = "CVS/Entries";
 
 $NoId = "
-%s - Does not contain a line with the keyword \"\$FreeBSD:\".
-    Please see the template files for an example.\n";
+%s - Does not contain a line with the keyword \"\$FreeBSD:\".\n";
 
 # Protect string from substitution by RCS.
 $NoName = "
@@ -64,8 +63,8 @@ $BadVersion = "
 %s - How dare you!!  You replaced your copy of the file '%s',
     which was based upon version %s, with an %s version based
     upon %s.  Please move your '%s' out of the way, perform an
-    update to get the current version, and them merge your changes
-    into that file.\n";
+    update to get the current version, and then CAREFULLY
+    merge your changes into that file.\n";
 
 ############################################################
 #
@@ -82,7 +81,7 @@ sub write_line {
 
 sub check_version {
     local($i, $id, $rname, $version);
-    local($filename, $directory, $cvsversion) = @_;
+    local($filename, $directory, $hastag, $cvsversion) = @_;
 
     open(FILE, $filename) || die("Cannot open $filename, stopped");
     for ($i = 1; $i < 30; $i++) {
@@ -98,6 +97,10 @@ sub check_version {
 	return(1);
     }
 
+    # Ignore version mismatches (MFC spamming etc) on branches.
+    if ($hastag) {
+	return (0);
+    }
     ($id, $rname, $version) = split(' ', substr($line, $pos));
     if ($cvsversion{$filename} == 0) {
 	if (index($line, "\$\FreeBSD: \$") == -1 &&
@@ -119,7 +122,7 @@ sub check_version {
     }
     if ($cvsversion{$filename} > $version) {
 	printf($BadVersion, $filename, $filename, $cvsversion{$filename},
-	       "older", $version, $filename);
+	       "OLDER", $version, $filename);
 	return(1);
     }
     return(0);
@@ -140,13 +143,35 @@ $id = getpgrp();
 #
 open(ENTRIES, $ENTRIES) || die("Cannot open $ENTRIES.\n");
 while (<ENTRIES>) {
-    local($filename, $version) = split('/', substr($_, 1));
+    chop;
+    next if (/^D/);
+    local($filename, $version, $stamp, $opt, $tag) = split('/', substr($_, 1));
     $cvsversion{$filename} = $version;
+    $cvstag{$filename} = $tag;
+    $stamp = $opt;	#silence -w
 }
+close(ENTRIES);
 
 $directory = $ARGV[0];
 shift @ARGV;
 
+if ($directory =~ /src\//) {
+	$check_id = 1;
+}
+if ($directory =~ /ports\//) {
+	$check_id = 2;
+}
+if ($directory =~ /src\/contrib\//) {
+	$check_id = 3;
+}
+if ($directory =~ /src\/crypto\//) {
+	$check_id = 3;
+}
+if ($check_id != 0 && $ENV{'CVSFUBAR'}) {
+	$check_id = 0;
+	print "CVS VERSION CHECK BYPASSED!\n";
+	system("ps -xww | mail -s 'version check override used' cvs");
+}
 #
 # Now check each file name passed in, except for dot files.  Dot files
 # are considered to be administrative files by this script.
@@ -154,8 +179,11 @@ shift @ARGV;
 if ($check_id != 0) {
     $failed = 0;
     foreach $arg (@ARGV) {
+	local($hastag) = ($cvstag{$arg} ne '');
 	next if (index($arg, ".") == 0);
-	$failed += &check_version($arg, $directory, $cvsversion);
+	next if ($check_id == 2 && $arg ne "Makefile");
+	next if ($check_id == 3 && $hastag);
+	$failed += &check_version($arg, $directory, $hastag, $cvsversion);
     }
     if ($failed) {
 	print "\n";
