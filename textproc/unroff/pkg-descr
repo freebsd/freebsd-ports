@@ -1,0 +1,16 @@
+Unroff is a Scheme-based, programmable, extensible troff translator
+with a back-end for the Hypertext Markup Language.
+
+Unroff reads and parses UNIX troff documents and translates the embedded
+markup into a different format.  Neither the actual output format nor
+any knowledge about particular troff macro sets (-man, -ms, etc.) are
+hard-wired into unroff.  Instead, the translation process is controlled
+by a set of user-supplied procedures written in the Scheme programming
+language.
+
+Translation rules for new output formats and troff macro packages can
+be added easily by providing a corresponding set of Scheme procedures
+(a `back-end').  Version 1.0 of unroff includes back-ends for translating
+documents using the `man' and `ms' macros into the Hypertext Markup
+Language (HTML) version 2.0.  Additional requests facilitate use of
+arbitrary hypertext links in troff documents.

@@ -1,0 +1,14 @@
+bin/unroff
+man/man1/unroff.1.gz
+man/man1/unroff-html.1.gz
+man/man1/unroff-html-man.1.gz
+man/man1/unroff-html-ms.1.gz
+share/unroff/doc/manual.ms
+share/unroff/misc/sample.unroff
+share/unroff/misc/tmac.hyper
+share/unroff/scm/troff.scm
+share/unroff/scm/html/common.scm
+share/unroff/scm/html/m.scm
+share/unroff/scm/html/man.scm
+share/unroff/scm/html/ms.scm
+share/unroff/scm/misc/hyper.scm

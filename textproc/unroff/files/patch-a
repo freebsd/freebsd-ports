@@ -1,0 +1,68 @@
+diff -cr unroff-1.0.orig/src/Makefile unroff-1.0/src/Makefile
+*** unroff-1.0.orig/src/Makefile	Wed Aug 23 14:12:48 1995
+--- unroff-1.0/src/Makefile	Mon Feb 12 18:51:08 1996
+***************
+*** 1,14 ****
+  # $Revision: 1.12 $
+  
+  ###  You need a C compiler that compiles ANSI C code.
+! CC      = gcc
+! CFLAGS  = -Wall -pedantic -O
+  
+  ###  If you need additional linker flags add them here.
+! LDFLAGS =
+  
+  ###  The directory where the Elk installation resides on your system.
+! ELKDIR  = /usr/elk
+  
+  ###  Additional libraries.  You may want to insert the output of the
+  ###  shell-script $(ELKDIR)/lib/ldflags here.
+--- 1,14 ----
+  # $Revision: 1.12 $
+  
+  ###  You need a C compiler that compiles ANSI C code.
+! #CC      = gcc
+! #CFLAGS  = -Wall -pedantic -O
+  
+  ###  If you need additional linker flags add them here.
+! LDFLAGS = -s
+  
+  ###  The directory where the Elk installation resides on your system.
+! ELKDIR  = ${PREFIX}/share/elk
+  
+  ###  Additional libraries.  You may want to insert the output of the
+  ###  shell-script $(ELKDIR)/lib/ldflags here.
+***************
+*** 18,24 ****
+  MAKEDEP = makedepend
+  
+  ###  The directory under which you will install the Scheme files.
+! DIR = /usr/local/lib/unroff
+  
+  ###  The default output format.
+  FORMAT = html
+--- 18,24 ----
+  MAKEDEP = makedepend
+  
+  ###  The directory under which you will install the Scheme files.
+! DIR = ${PREFIX}/share/unroff
+  
+  ###  The default output format.
+  FORMAT = html
+***************
+*** 30,36 ****
+  ###  ------------------------------------------------------------------------- 
+  
+  SHELL   = /bin/sh
+! INCLUDE = -I$(ELKDIR)/include
+  ELK     = $(ELKDIR)/lib/module.o
+  DEFS    = -DDEFAULT_DIR=\"$(DIR)\" -DDEFAULT_FORMAT=\"$(FORMAT)\"
+  CTAGS   = ctags -t -w
+--- 30,36 ----
+  ###  ------------------------------------------------------------------------- 
+  
+  SHELL   = /bin/sh
+! INCLUDE = -I${PREFIX}/include/elk
+  ELK     = $(ELKDIR)/lib/module.o
+  DEFS    = -DDEFAULT_DIR=\"$(DIR)\" -DDEFAULT_FORMAT=\"$(FORMAT)\"
+  CTAGS   = ctags -t -w
