@@ -1,0 +1,6 @@
+The ID3v1Tag routines are useful for setting and reading ID3 MP3 Audio Tags.
+
+WWW: http://search.cpan.org/search?module=MP3::ID3v1Tag
+
+- Leo Kim
+leo@florida.sarang.net
