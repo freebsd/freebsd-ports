@@ -28,6 +28,7 @@ lib/nessus/plugins/DDI_AirConnect_Default_Password.nasl
 lib/nessus/plugins/DDI_Cabletron_Web_View.nasl
 lib/nessus/plugins/DDI_Compaq_Mgmt_Proxy.nasl
 lib/nessus/plugins/DDI_Directory_Scanner.nasl
+lib/nessus/plugins/DDI_Enhydra_Default.nasl
 lib/nessus/plugins/DDI_F5_Default_Support.nasl
 lib/nessus/plugins/DDI_FTP_Any_User_Login.nasl
 lib/nessus/plugins/DDI_GlobalASA_Retrieval.nasl
@@ -41,11 +42,17 @@ lib/nessus/plugins/DDI_LanRover_Blank_Password.nasl
 lib/nessus/plugins/DDI_Linksys_Router_Default_Password.nasl
 lib/nessus/plugins/DDI_MPEiX_FTP_Accounts.nasl
 lib/nessus/plugins/DDI_MRTG_File_Read.nasl
+lib/nessus/plugins/DDI_Netscape_Enterprise_Default_Administrative_Password.nasl
 lib/nessus/plugins/DDI_Netware_Management_Portal.nasl
 lib/nessus/plugins/DDI_PIX_Firewall_Manager.nasl
 lib/nessus/plugins/DDI_Unprotected_PCanywhere.nasl
 lib/nessus/plugins/DDI_Unprotected_SiteScope.nasl
 lib/nessus/plugins/DDI_WhatsUp_Default.nasl
+lib/nessus/plugins/DDI_motorola_vanguard_no_pass.nasl
+lib/nessus/plugins/DDI_tomcat_default_accounts.nasl
+lib/nessus/plugins/DDI_warftpd_cwd_overflow.nasl
+lib/nessus/plugins/DDI_warftpd_dir_traversal.nasl
+lib/nessus/plugins/DDI_warftpd_user_overflow.nasl
 lib/nessus/plugins/DDI_ws_ftp-server-cpwd-bo.nasl
 lib/nessus/plugins/ExAir_dos_advsearch.nasl
 lib/nessus/plugins/ExAir_dos_query.nasl
@@ -118,7 +125,9 @@ lib/nessus/plugins/apache_slash.nasl
 lib/nessus/plugins/apache_source_asp.nasl
 lib/nessus/plugins/apache_ssl_overflow.nasl
 lib/nessus/plugins/apache_username.nasl
+lib/nessus/plugins/apache_win32_devname.nasl
 lib/nessus/plugins/apache_win32_dir_trav.nasl
+lib/nessus/plugins/apache_win32_read_files.nasl
 lib/nessus/plugins/appsocket_DoS.nasl
 lib/nessus/plugins/arcserve_hidden_share.nasl
 lib/nessus/plugins/arkeia.nasl
@@ -344,6 +353,7 @@ lib/nessus/plugins/ftpgate.nasl
 lib/nessus/plugins/ftpglob.nasl
 lib/nessus/plugins/ftpserver_detect_type_nd_version.nasl
 lib/nessus/plugins/gallery_injection.nasl
+lib/nessus/plugins/gamespy_detect.nasl
 lib/nessus/plugins/gatecrasher.nasl
 lib/nessus/plugins/gauntlet_overflow.nasl
 lib/nessus/plugins/generic_WEB-INF.nasl
@@ -538,7 +548,10 @@ lib/nessus/plugins/mssmtp_dos.nasl
 lib/nessus/plugins/mssql_blank_password.nasl
 lib/nessus/plugins/mssql_brute_force.nasl
 lib/nessus/plugins/mssql_hello_overflow.nasl
+lib/nessus/plugins/mssql_litchfield_overflows.nasl
 lib/nessus/plugins/mssql_ping.nasl
+lib/nessus/plugins/mssql_saphire_worm.nasl
+lib/nessus/plugins/mssql_version.nasl
 lib/nessus/plugins/mssqlserver_detect.nasl
 lib/nessus/plugins/mssqlserver_dos.nasl
 lib/nessus/plugins/mstream_agent.nasl
@@ -932,8 +945,10 @@ lib/nessus/plugins/smb_nt_ms02-052.nasl
 lib/nessus/plugins/smb_nt_ms02-054.nasl
 lib/nessus/plugins/smb_nt_ms02-055.nasl
 lib/nessus/plugins/smb_nt_ms02-063.nasl
+lib/nessus/plugins/smb_nt_ms02-070.nasl
 lib/nessus/plugins/smb_nt_ms02-071.nasl
 lib/nessus/plugins/smb_nt_ms02-072.nasl
+lib/nessus/plugins/smb_nt_ms03-001.nasl
 lib/nessus/plugins/smb_null_params_dos.nasl
 lib/nessus/plugins/smb_reg_autologon.nasl
 lib/nessus/plugins/smb_reg_hklm.nasl
@@ -1161,6 +1176,7 @@ lib/nessus/plugins/xdmcp.nasl
 lib/nessus/plugins/xfs_overflow.nasl
 lib/nessus/plugins/xitami_overflow.nasl
 lib/nessus/plugins/xmail_overflow.nasl
+lib/nessus/plugins/xst_http_trace.nasl
 lib/nessus/plugins/xtel_detect.nasl
 lib/nessus/plugins/xtelw_detect.nasl
 lib/nessus/plugins/xtramail_control.nasl
