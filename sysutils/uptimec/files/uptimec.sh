@@ -7,10 +7,11 @@
 # REQUIRE: LOGIN
 # KEYWORD: FreeBSD shutdown
 
+# Uptimec is enabled by default, if you have configuration file
 #
-# Add the following line to /etc/rc.conf to enable uptimec:
+# Add the following line to /etc/rc.conf to disable uptimec:
 #
-#uptimec_enable="YES"
+#uptimec_enable="NO"
 #
 
 . /etc/rc.subr
@@ -33,11 +34,15 @@ if [ -z "$uptimec_flags" -a -r $required_files ]; then
     hostid=`awk -F '( |\t)*=( |\t)*' '/^HOSTID/ { print $2;exit 0;}' $required_files`
     password=`awk -F '( |\t)*=( |\t)*' '/^PASSWORD/ { print $2;exit 0;}' $required_files`
     server=`awk -F '( |\t)*=( |\t)*' '/^SERVER/ { print $2;exit 0;}' $required_files`
+    port=`awk -F '( |\t)*=( |\t)*' '/^PORT/ { print $2;exit 0;}' $required_files`
     if [ -z "$hostid" -o -z "$password" ]; then
 	exit 0;
     fi
     if [ -n "$server" ]; then
 	uptimec_flags="-s $server"
+    fi
+    if [ -n "$port" ]; then
+	uptimec_flags="$uptimec_flags -P $port"
     fi	
     uptimec_flags="$uptimec_flags -i $hostid -p $password" 	
 else

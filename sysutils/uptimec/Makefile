@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	uptimec
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.mrEriksson.net/downloads/
+MASTER_SITES=	http://www.mrEriksson.net/downloads/ \
+		ftp://ftp.mrEriksson.net/pub/uptimec/
 
 MAINTAINER=	hsn@netmag.cz
 COMMENT=	Client for Uptime Project
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	257
-USE_REINPLACE=	yes
 
 PLIST_FILES=	sbin/uptimec etc/uptimecrc.sample etc/rc.d/uptimec.sh
 PORTDOCS=	README COPYING ChangeLog INSTALL protocol.txt
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|CC =|CC ?=|g' ${WRKSRC}/Makefile
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/uptimec ${PREFIX}/sbin
@@ -37,6 +34,5 @@ do-install:
 
 post-install:
 	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${PKGMESSAGE}
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
