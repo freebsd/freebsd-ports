@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	Data-JavaScript
-PORTVERSION=	1.06
+PORTVERSION=	1.08
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Data::JavaScript - Dump perl structures to JavaScript code
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Data::JavaScript.3
 
 .include <bsd.port.mk>
