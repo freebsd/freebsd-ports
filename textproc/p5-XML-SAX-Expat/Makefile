@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-SAX-Expat
-PORTVERSION=	0.05
+PORTVERSION=	0.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -22,7 +22,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::SAX::Expat.3
-
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+		@${PERL} -pi -e "s/(?<=XML::SAX::Base          => ')1\.00(?=')/0.25/;" ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
