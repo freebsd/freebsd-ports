@@ -2279,7 +2279,6 @@ share/locale/fr/relecture_gui
 @dirrm share/doc/HTML/fr/ark
 @dirrm share/doc/HTML/fr/amor
 @dirrm share/doc/HTML/fr/KRegExpEditor
-@dirrm share/doc/HTML/fr
 @dirrm share/apps/ktuberling/sounds/fr
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling

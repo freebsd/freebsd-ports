@@ -608,7 +608,6 @@ share/locale/sr/entry.desktop
 share/locale/sr/flag.png
 @dirrm share/doc/HTML/sr/khelpcenter
 @dirrm share/doc/HTML/sr/common
-@dirrm share/doc/HTML/sr
 @dirrm share/apps/khangman/data/sr
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman

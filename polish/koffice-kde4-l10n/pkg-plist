@@ -67,4 +67,3 @@ share/locale/pl/LC_MESSAGES/thesaurus_tool.mo
 share/locale/pl/LC_MESSAGES/xsltexportfilter.mo
 share/locale/pl/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/pl/koffice
-@dirrm share/doc/HTML/pl

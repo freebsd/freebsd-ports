@@ -334,6 +334,5 @@ share/locale/fr/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/fr/kivio
 @dirrm share/doc/HTML/fr/kformula
 @dirrm share/doc/HTML/fr/kchart
-@dirrm share/doc/HTML/fr
 @dirrm share/apps/koffice/autocorrect
 @dirrm share/apps/koffice

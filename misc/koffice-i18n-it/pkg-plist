@@ -120,6 +120,5 @@ share/locale/it/LC_MESSAGES/xsltimportfilter.mo
 @dirrm share/doc/HTML/it/kivio
 @dirrm share/doc/HTML/it/kformula
 @dirrm share/doc/HTML/it/kchart
-@dirrm share/doc/HTML/it
 @dirrm share/apps/koffice/autocorrect
 @dirrm share/apps/koffice

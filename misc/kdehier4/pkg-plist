@@ -88,8 +88,38 @@ share/apps/kwin/icewm-themes/.keep_me
 share/apps/kwin/pics/.keep_me
 share/config.kcfg/.keep_me
 share/doc/HTML/.keep_me
+share/doc/HTML/cs/.keep_me
+share/doc/HTML/da/.keep_me
+share/doc/HTML/de/.keep_me
 share/doc/HTML/en/.keep_me
 share/doc/HTML/en/kcontrol/.keep_me
+share/doc/HTML/en_GB/.keep_me
+share/doc/HTML/es/.keep_me
+share/doc/HTML/et/.keep_me
+share/doc/HTML/eu/.keep_me
+share/doc/HTML/fi/.keep_me
+share/doc/HTML/fr/.keep_me
+share/doc/HTML/he/.keep_me
+share/doc/HTML/hr/.keep_me
+share/doc/HTML/hu/.keep_me
+share/doc/HTML/it/.keep_me
+share/doc/HTML/ja/.keep_me
+share/doc/HTML/ko/.keep_me
+share/doc/HTML/nl/.keep_me
+share/doc/HTML/pl/.keep_me
+share/doc/HTML/pt/.keep_me
+share/doc/HTML/pt_BR/.keep_me
+share/doc/HTML/ro/.keep_me
+share/doc/HTML/ru/.keep_me
+share/doc/HTML/sk/.keep_me
+share/doc/HTML/sl/.keep_me
+share/doc/HTML/sr/.keep_me
+share/doc/HTML/sv/.keep_me
+share/doc/HTML/tr/.keep_me
+share/doc/HTML/uk/.keep_me
+share/doc/HTML/xh/.keep_me
+share/doc/HTML/zh_CN/.keep_me
+share/doc/HTML/zh_TW/.keep_me
 share/fonts/.keep_me
 share/fonts/override/.keep_me
 share/icons/.keep_me
@@ -368,8 +398,38 @@ share/wallpapers/.keep_me
 @dirrm share/icons
 @dirrm share/fonts/override
 @dirrm share/fonts
+@dirrm share/doc/HTML/zh_TW
+@dirrm share/doc/HTML/zh_CN
+@dirrm share/doc/HTML/xh
+@dirrm share/doc/HTML/uk
+@dirrm share/doc/HTML/tr
+@dirrm share/doc/HTML/sv
+@dirrm share/doc/HTML/sr
+@dirrm share/doc/HTML/sl
+@dirrm share/doc/HTML/sk
+@dirrm share/doc/HTML/ru
+@dirrm share/doc/HTML/ro
+@dirrm share/doc/HTML/pt_BR
+@dirrm share/doc/HTML/pt
+@dirrm share/doc/HTML/pl
+@dirrm share/doc/HTML/nl
+@dirrm share/doc/HTML/ko
+@dirrm share/doc/HTML/ja
+@dirrm share/doc/HTML/it
+@dirrm share/doc/HTML/hu
+@dirrm share/doc/HTML/hr
+@dirrm share/doc/HTML/he
+@dirrm share/doc/HTML/fr
+@dirrm share/doc/HTML/fi
+@dirrm share/doc/HTML/eu
+@dirrm share/doc/HTML/et
+@dirrm share/doc/HTML/es
+@dirrm share/doc/HTML/en_GB
 @dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en
+@dirrm share/doc/HTML/de
+@dirrm share/doc/HTML/da
+@dirrm share/doc/HTML/cs
 @dirrm share/doc/HTML
 @dirrm share/config.kcfg
 @dirrm share/apps/kwin/pics
