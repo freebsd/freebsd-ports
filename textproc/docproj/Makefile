@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	nik@freebsd.org
+MAINTAINER=	doceng@freebsd.org
 COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 
 # This dependency list should be kept in sync with the list of
@@ -30,7 +30,9 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/bin/links:${PORTSDIR}/www/links1 \
 		${PREFIX}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${PREFIX}/bin/scr2png:${PORTSDIR}/graphics/scr2png \
-		${PREFIX}/bin/scr2txt:${PORTSDIR}/textproc/scr2txt
+		${PREFIX}/bin/scr2txt:${PORTSDIR}/textproc/scr2txt \
+		${PREFIX}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${PREFIX}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
 .if defined(WITH_OPENJADE) || ${MACHINE_ARCH} != "i386"
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
