@@ -7,7 +7,7 @@
 
 PORTNAME=	dtdinst
 PORTVERSION=	2003.06.19
-CATEGORIES=	textproc
+CATEGORIES=	textproc java
 MASTER_SITES=	http://www.thaiopensource.com/download/
 DISTNAME=	${PORTNAME}-20030619
 EXTRACT_SUFX=	.zip
@@ -16,11 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts DTDs to XML instance, in a specific or RELAX NG format
 
 USE_ZIP=	YES
-USE_JAVA=	1.1+
+USE_JAVA=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
-
-NO_BUILD_DEPENDS_JAVA=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.jar ${JAVAJARDIR}
