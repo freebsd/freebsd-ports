@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.60
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -40,8 +40,13 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8
 
+CLAMD_SOCKET?=	/var/run/clamav/clamd
+
+CONFLICTS=	clamav-devel-*
+
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|g'
+		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%CLAMD_SOCKET%%|${CLAMD_SOCKET}|g'
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(LogFile) .*$$|\1 /var/log/clamav/clamd.log|' \
@@ -69,6 +74,7 @@ LDFLAGS+=	-lcipher
 .endif
 
 .if defined(WITH_MILTER)
+USE_GETOPT_LONG=	yes
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
 .else
