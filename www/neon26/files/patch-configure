@@ -1,0 +1,23 @@
+--- configure.orig	Fri Apr 26 17:15:20 2002
++++ configure	Fri Apr 26 17:15:51 2002
+@@ -10792,7 +10792,7 @@
+ _ACEOF
+ 
+ fi
+-if test -r "$neon_expat_dir/expat.h"; then
++if test -r "$neon_expat_dir/include/expat.h"; then
+        ne_found_hdr=yes
+ 
+ cat >>confdefs.h <<\_ACEOF
+@@ -10806,9 +10806,9 @@
+ #define HAVE_EXPAT 1
+ _ACEOF
+ 
+-	CFLAGS="$CFLAGS -I$neon_expat_dir"
++	CFLAGS="$CFLAGS -I$neon_expat_dir/include"
+ 		if test -z "$neon_using_libtool_expat"; then
+-		NEON_LIBS="$NEON_LIBS -L$neon_expat_dir -lexpat"
++		NEON_LIBS="$NEON_LIBS -L$neon_expat_dir/lib -lexpat"
+ 	fi
+ 	neon_xml_parser_message="expat in $neon_expat_dir"
+ 	neon_found_parser="yes"
