@@ -72,6 +72,7 @@
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++
+    SUBDIR += dotconf
     SUBDIR += doxygen
     SUBDIR += dryad
     SUBDIR += elftoaout
