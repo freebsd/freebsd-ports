@@ -1,5 +1,5 @@
---- configure.orig	Sun Aug  2 23:48:40 1998
-+++ configure	Thu Nov 21 21:20:23 2002
+--- /o/mnt/mat/lang/p5-ePerl/work/eperl-2.2.14/configure.orig	Sun Aug  2 15:48:40 1998
++++ /o/mnt/mat/lang/p5-ePerl/work/eperl-2.2.14/configure	Wed Feb 25 12:10:13 2004
 @@ -571,7 +571,7 @@
  if test "${with_perl+set}" = set; then
    withval="$with_perl"
@@ -9,6 +9,15 @@
  
  else
    TMPFILE=/tmp/x.$$
+@@ -600,7 +600,7 @@
+ PATH_PERL=$perlprog
+ echo "$ac_t""$perlprog v$perlvers" 1>&6
+ case $perlvers in
+-    5.003* | 5.004* | 5.005* | 5.006* )
++    5.003* | 5.004* | 5.005* | 5.006* | 5.008* )
+         ;;
+     * ) echo ""
+         echo "Latest Perl found on your system is $perlvers,"
 @@ -901,7 +901,6 @@
    GCC=yes
    ac_test_CFLAGS="${CFLAGS+set}"
