@@ -1,11 +1,11 @@
---- configure.orig	Mon Apr 26 12:37:04 1999
-+++ configure	Mon Apr 26 12:37:17 1999
-@@ -2192,7 +2192,7 @@
+--- configure.orig	Thu Jan  6 21:27:09 2000
++++ configure	Sun Jul 16 13:35:32 2000
+@@ -2598,7 +2598,7 @@
  # $d/unix works if $d is the 8.0 distribution
  # $d/bin is for the ns-allinone distribution (kind of hacky, isn't it?)
- PATH=$PATH:$d/unix:$d/bin
--for ac_prog in tclsh$TCL_VERS tclsh tclsh$TCL_OLD_VERS
-+for ac_prog in tclsh$TCL_VERS tclsh8.2 tclsh$TCL_OLD_VERS
+ PATH=$d/unix:$d/bin:$PATH
+-for ac_prog in tclsh$TCL_VERS tclsh$TCL_HI_VERS tclsh tclsh$TCL_OLD_VERS
++for ac_prog in tclsh$TCL_VERS tclsh$TCL_HI_VERS tclsh8.2 tclsh$TCL_OLD_VERS
  do
  # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
