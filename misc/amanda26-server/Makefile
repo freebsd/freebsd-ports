@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.2p1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
@@ -44,14 +44,16 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
-BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
+RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client \
+		gtar:${PORTSDIR}/archivers/gtar
+BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client \
+		gtar:${PORTSDIR}/archivers/gtar
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--with-user=operator --with-group=operator \
-		--without-client
+		--without-client --with-gnutar=${PREFIX}/bin/gtar
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdump.8 \
 		amflush.8 amgetconf.8 amlabel.8 amoverview.8 amreport.8 \
@@ -66,7 +68,7 @@ PLIST_SUB+=	PLOT=''
 PLIST_SUB+=	PLOT='@comment '
 .endif
 
-.if defined (WITH_SMBCLIENT)
+.if defined (WITH_SAMBA)
 BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 CONFIGURE_ARGS+=	--with-smbclient=${PREFIX}/bin/smbclient
@@ -106,11 +108,14 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
+BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
+
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--with-user=operator --with-group=operator \
-		--without-server
+		--without-server --with-gnutar=${PREFIX}/bin/gtar
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
