@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Thu Mar  7 07:56:55 2002
-+++ configure	Tue Mar 12 17:15:06 2002
-@@ -6279,6 +6279,9 @@
+--- configure.orig	Fri May 10 17:05:47 2002
++++ configure	Fri May 10 17:06:17 2002
+@@ -6256,6 +6256,9 @@
  # for stuff like -lXshm
      CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
      ;;
@@ -13,7 +10,7 @@ $FreeBSD$
  esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
  do
-@@ -7512,7 +7515,7 @@
+@@ -7489,7 +7492,7 @@
  EOF
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
@@ -22,7 +19,7 @@ $FreeBSD$
  			else
  				_PTHREAD_LDFLAGS="-lc_r"
  			fi
-@@ -9954,7 +9957,7 @@
+@@ -9927,7 +9930,7 @@
      fi
      MOC=$HOST_MOC
  
@@ -31,3 +28,21 @@ $FreeBSD$
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
+@@ -10796,7 +10799,7 @@
+ 
+ 
+ 
+-MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector irc"
++MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector"
+ 
+ case "$target_os" in
+ msvc*|mksnt*|mingw*|cygwin*)
+@@ -10808,7 +10811,7 @@
+   MOZ_EXTENSIONS_DEFAULT="$MOZ_EXTENSIONS_DEFAULT ctl"
+ fi
+ 
+-MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm access-builtin ctl p3p interfaceinfo" 
++MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm access-builtin ctl p3p interfaceinfo" 
+ 
+ # Check whether --enable-extensions or --disable-extensions was given.
+ if test "${enable_extensions+set}" = set; then
