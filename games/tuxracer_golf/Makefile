@@ -10,13 +10,13 @@ PORTVERSION=	1.00
 CATEGORIES=	games
 MASTER_SITES=	http://www.joeysmith.com/~milo/tuxracer/
 DISTNAME=	golf
+EXTRACT_SUFX=	.gz
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A golf theme for Tux Racer
 
 BUILD_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer
 
-USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	"MV=${MV}"
