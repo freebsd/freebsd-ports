@@ -17,6 +17,8 @@ DISTNAME=	ups-3.35-beta13
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

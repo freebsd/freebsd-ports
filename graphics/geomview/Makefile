@@ -14,6 +14,8 @@ DISTFILES=	geomview-1.6.1-src.tar.gz
 
 MAINTAINER=	fenner@freebsd.org
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/
 
 MAINTAINER=	bms@spc.org
 
+BROKEN=		"Does not build"
+
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_XPM=	yes

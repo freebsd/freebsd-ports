@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}+cid-${PORTVERSION}
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
+BROKEN=		"Does not build"
+
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 MAKE_ENV+=	MAKE=${GMAKE}

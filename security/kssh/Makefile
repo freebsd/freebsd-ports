@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.geocities.com/bilibao/
 
 MAINTAINER=	kevlo@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=2

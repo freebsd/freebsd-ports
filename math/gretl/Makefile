@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	gtkextra:${PORTSDIR}/x11-toolkits/gtkextra \
 		xml:${PORTSDIR}/textproc/libxml

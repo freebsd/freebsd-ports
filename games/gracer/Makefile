@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
