@@ -7,17 +7,17 @@
 
 PORTNAME=	wmcyrx
 PORTVERSION=	2.1
-CATEGORIES=     russian windowmaker
-MASTER_SITES=   http://yard.hitech.mipt.ru/~mini/distrib/ \
+CATEGORIES=	russian windowmaker
+MASTER_SITES=	http://yard.hitech.mipt.ru/~mini/distrib/ \
 		ftp://ftp.ssau.ru/pub/software/Linux/Cyrillic/ \
 		ftp://ftp.uven.ru/pub/cyrillic/X11/keyboard/
 
 DISTNAME=	cyrx-${PORTVERSION}
 
-MAINTAINER=     ozz@FreeBSD.org.ru
+MAINTAINER=	ozz@FreeBSD.org.ru
 
 USE_XPM=	yes
-NO_INSTALL_MANPAGES= yes
+NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.pre.mk>
 

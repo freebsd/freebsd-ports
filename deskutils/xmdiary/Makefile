@@ -10,7 +10,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
-DISTFILES=      ${DISTNAME}.tar.gz xmdfix.gz
+DISTFILES=	${DISTNAME}.tar.gz xmdfix.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 

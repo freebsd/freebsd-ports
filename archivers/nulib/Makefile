@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	jseger
 DISTNAME=	nulib325
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     jseger@FreeBSD.org
+MAINTAINER=	jseger@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/nulib
 MAN1=		nulib.1

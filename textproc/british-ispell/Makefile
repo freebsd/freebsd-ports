@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-MAINTAINER=     alex@FreeBSD.org
+MAINTAINER=	alex@FreeBSD.org
 
 ISPELL_BRITISH=	yes
 PORTNAME=	british-ispell
-PORTVERSION= 	3.1
-MASTERDIR=      ${.CURDIR}/../ispell
+PORTVERSION=	3.1
+MASTERDIR=	${.CURDIR}/../ispell
 
 SCRIPTS_ENV=	ISPELL_BRITISH=yes
 

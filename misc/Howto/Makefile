@@ -16,7 +16,7 @@ DISTFILES=	Linux+FreeBSD.sgml.gz  \
 		NIS-HOWTO.sgml.gz  \
 		Security-HOWTO.sgml.gz
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 

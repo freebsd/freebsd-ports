@@ -18,7 +18,7 @@ RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 
-NO_BUILD=       Yes
+NO_BUILD=	Yes
 NO_PACKAGE=	Shareware
 
 STRIP=

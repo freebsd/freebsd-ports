@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	osh
-PORTVERSION=		001127
-CATEGORIES=     	shells
-MASTER_SITES=   	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
+PORTNAME=	osh
+PORTVERSION=	001127
+CATEGORIES=	shells
+MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-MAKEFILE=		makefile
+MAKEFILE=	makefile
 
-MAN1=			osh.1
+MAN1=		osh.1
 
 post-install:
 	@${ECHO} "updating /etc/shells"

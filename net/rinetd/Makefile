@@ -7,15 +7,15 @@
 
 PORTNAME=	rinetd
 PORTVERSION=	0.61
-CATEGORIES=     net
-MASTER_SITES=   ftp://ftp.boutell.com/pub/boutell/rinetd/
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/rinetd/
 DISTNAME=	rinetd
 
-MAINTAINER=     veers@disturbed.net
+MAINTAINER=	veers@disturbed.net
 
 WRKSRC=		${WRKDIR}/rinetd/
 
-MAN8=           rinetd.8
+MAN8=		rinetd.8
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/rinetd

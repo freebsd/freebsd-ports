@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail-contrib
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qmail.org/pub/software/ \
 		ftp://rucus.ru.ac.za/pub/mail/qmail/src/
@@ -17,7 +17,7 @@ MAINTAINER=	nbm@FreeBSD.org
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
-NO_PACKAGE=     Unsure of djb\'s license
+NO_PACKAGE=	Unsure of djb\'s license
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
@@ -25,7 +25,7 @@ INSTALL_TARGET=	setup
 MAN1=		dot-forward.1 fastforward.1 printforward.1 setforward.1
 MAN1+=		newaliases.1 printmaillist.1 setmaillist.1 newinclude.1
 
-PLIST_SUB=      DOCDIR=${DOCDIR}
+PLIST_SUB=	DOCDIR=${DOCDIR}
 
 .if exists(${PREFIX}/qmail/bin/qmail-send)
 QMAIL_DIR?=	${PREFIX}/qmail
@@ -36,9 +36,9 @@ PREFIX?=	/var/qmail
 .endif
 
 .if (${PREFIX} == "/usr/local")
-DOCDIR= share/doc/qmail
+DOCDIR=		share/doc/qmail
 .else
-DOCDIR= doc
+DOCDIR=		doc
 .endif
 
 FF_VER=		0.51

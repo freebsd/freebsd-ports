@@ -22,7 +22,7 @@ MAKE_ENV+=	HAVE_G2C=yes
 .endif
 
 DIST_SUBDIR=	kaskade
-WRKSRC=         ${WRKDIR}/3.1
+WRKSRC=		${WRKDIR}/3.1
 MAKEFILE=	makefile
 ALL_TARGET=	k6
 

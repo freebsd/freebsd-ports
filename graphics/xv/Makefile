@@ -20,12 +20,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
 
-PATCH_SITES=    ftp://ftp.cis.upenn.edu/pub/xv/
-PATCHFILES=     ${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch
+PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
+PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch
 
 MAINTAINER?=	shige@FreeBSD.org
 
-LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.4:${PORTSDIR}/graphics/png
 

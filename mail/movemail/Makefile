@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	movemail
-PORTVERSION= 	1.0
-CATEGORIES=    mail
-MASTER_SITES=  http://www.de.freebsd.org/~wosch/src/
+PORTVERSION=	1.0
+CATEGORIES=	mail
+MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
-MAINTAINER=    wosch@FreeBSD.org
+MAINTAINER=	wosch@FreeBSD.org
 
 MAN1=		movemail.1
 MANCOMPRESSED=	maybe

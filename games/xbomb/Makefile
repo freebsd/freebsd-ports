@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xbomb
+PORTNAME=	xbomb
 PORTVERSION=	2.1a
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-xbomb/

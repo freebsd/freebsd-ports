@@ -8,11 +8,11 @@
 PORTNAME=	arc
 PORTVERSION=	5.21e.8
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
-DISTNAME=       arc521e.pl8
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+DISTNAME=	arc521e.pl8
+EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAN1=		arc.1

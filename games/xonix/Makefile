@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 
 MAINTAINER=	joerg@FreeBSD.org
 
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xonix.1
 

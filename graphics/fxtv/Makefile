@@ -27,7 +27,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 MAKE_FLAGS=	-e
 MAN1=		fxtv.1
 

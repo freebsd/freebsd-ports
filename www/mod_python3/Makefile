@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION= 	2.7.1
+PORTVERSION=	2.7.1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.modpython.org/dist/ \
 		http://www.python.org/ftp/python/2.0/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
-DISTFILES=      mod_python-${PORTVERSION}.tgz ${PYTHON_DISTFILE}
+DISTFILES=	mod_python-${PORTVERSION}.tgz ${PYTHON_DISTFILE}
 DIST_SUBDIR=	python
 
 MAINTAINER=	perky@python.or.kr

@@ -7,7 +7,7 @@
 
 PORTNAME=	tintin
 PORTVERSION=	1.8.3
-CATEGORIES=     net games
+CATEGORIES=	net games
 MASTER_SITES=	http://mail.newclear.net/tintin/download/ \
 		http://freebsd.hanirc.org/~jhp/tintin++/ 
 DISTNAME=	tintin++v1.83
@@ -15,7 +15,7 @@ DISTNAME=	tintin++v1.83
 MAINTAINER=	jhp@cocoja.holywar.net
 
 NO_LATEST_LINK=	yes
-WRKSRC=         ${WRKDIR}/tintin++/src
+WRKSRC=		${WRKDIR}/tintin++/src
 GNU_CONFIGURE=	yes
 
 do-install:

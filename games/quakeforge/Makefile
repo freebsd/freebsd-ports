@@ -22,23 +22,23 @@ BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
 		${GL_DEPENDS}
 
-WADFILE=        quakesw-1.0.6.tar.gz
+WADFILE=	quakesw-1.0.6.tar.gz
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 USE_XLIB=	yes
 PLIST=		${WRKDIR}/PLIST
-AUTOCONF=       ${WRKSRC}/bootstrap
+AUTOCONF=	${WRKSRC}/bootstrap
 
-BINARIES=       quake-x11 quake-sdl qw-client-x11 qw-client-sdl qw-server
+BINARIES=	quake-x11 quake-sdl qw-client-x11 qw-client-sdl qw-server
 
-CONFIGURE_ARGS= "--with-sdl=${LOCALBASE}"
+CONFIGURE_ARGS=	"--with-sdl=${LOCALBASE}"
 CONFIGURE_ENV=	"SDL_LIBS=`sdl-config --libs`" \
 		"SDL_CFLAGS=`sdl-config --cflags`"
 
 .if defined(WITH_GLX)
 GL_DEPENDS=	GL.1:${PORTSDIR}/graphics/utah-glx
-BINARIES+=      quake-gl qw-client-gl
+BINARIES+=	quake-gl qw-client-gl
 .else
 GL_DEPENDS=
 CONFIGURE_ARGS+=--without-opengl

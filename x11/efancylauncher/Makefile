@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	E-FancyLauncher
-PORTVERSION= 	0.7
+PORTVERSION=	0.7
 CATEGORIES=	x11
-MASTER_SITES= 	http://www.docs.uu.se/~adavid/Epplets/
+MASTER_SITES=	http://www.docs.uu.se/~adavid/Epplets/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhb@FreeBSD.org
 
-LIB_DEPENDS=    epplet.1:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
 
 WRKSRC=		${WRKDIR}/E-FancyLauncher
 

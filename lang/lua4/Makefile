@@ -19,7 +19,7 @@ DISTNAME=	lua-4.0
 MAINTAINER=	richard@homemail.com
 
 MAN1=		luac.1
-WRKSRC=         ${WRKDIR}/lua
+WRKSRC=		${WRKDIR}/lua
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/lua

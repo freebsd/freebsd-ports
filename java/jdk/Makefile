@@ -22,7 +22,7 @@ JDK_VERSION=	1.1.8
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
-NO_BUILD=       yes
+NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 

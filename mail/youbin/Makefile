@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youbin
-PORTVERSION= 	2.13
+PORTVERSION=	2.13
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuie.nagoya-u.ac.jp/pub/nagoya-u/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/net/
@@ -15,7 +15,7 @@ MAINTAINER=	max@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-#PREFIX?=         ${LOCALBASE}
+#PREFIX?=	${LOCALBASE}
 #MTREE_FILE?=	/etc/mtree/BSD.local.dist
 
 MAN1=		youbin.1

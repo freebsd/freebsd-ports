@@ -14,7 +14,7 @@ MAINTAINER=	jesse@cylant.com
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-PREFIX=         ${LOCALBASE}
+PREFIX=		${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-tcl=no \

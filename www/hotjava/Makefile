@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hotjava
-PORTVERSION= 	3.0
+PORTVERSION=	3.0
 CATEGORIES=	www java
 MASTER_SITES=
 DISTNAME=	hjb3_0-linux.sfx
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
 EXTRACT_ONLY=
 
 NO_WRKSUBDIR=	yes
-JDK_VERSION=    1.1.8
+JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 NO_CDROM=	"See the licence"
 RESTRICTED=	"Licenced for individual non-commercial use only"

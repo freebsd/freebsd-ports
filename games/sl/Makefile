@@ -12,13 +12,13 @@ MASTER_SITES=	http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/sl/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=    th@cis.ibaraki.ac.jp
+MAINTAINER=	th@cis.ibaraki.ac.jp
 
-BUILD_DEPENDS= nkf:${PORTSDIR}/japanese/nkf
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
-ALL_TARGET=    sl
-MAN1=          sl.1
-MANLANG=       ja
+ALL_TARGET=	sl
+MAN1=		sl.1
+MANLANG=	ja
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sl ${PREFIX}/bin

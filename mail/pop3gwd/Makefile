@@ -8,8 +8,8 @@
 
 PORTNAME=	pop3gwd
 PORTVERSION=	1.2
-CATEGORIES=    	mail net
-MASTER_SITES=   http://www.go.dlr.de/linux/src/			\
+CATEGORIES=	mail net
+MASTER_SITES=	http://www.go.dlr.de/linux/src/			\
 		ftp://ftp.eos.hokudai.ac.jp/pub/mail/pop/	\
 		ftp://ftp.win.ne.jp/pub/network/mail/pop/
 

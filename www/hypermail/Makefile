@@ -13,9 +13,9 @@ MASTER_SITES=	ftp://ftp.landfield.com/hypermail/ \
 
 MAINTAINER=	veers@disturbed.net
 
-HAS_CONFIGURE=  yes
+HAS_CONFIGURE=	yes
 
 MAN1=		hypermail.1
-MAN4=           hmrc.4
+MAN4=		hmrc.4
 
 .include <bsd.port.mk>

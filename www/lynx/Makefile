@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.3.1
+PORTVERSION=	2.8.3.1
 CATEGORIES=	www
-MASTER_SITES=   http://lynx.isc.org/current/
+MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.3rel.1
 
 MAINTAINER=	jseger@FreeBSD.org
 
-USE_BZIP2=      YES
-WRKSRC=         ${WRKDIR}/lynx2-8-3
-GNU_CONFIGURE=  YES
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/lynx2-8-3
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies
-MAKE_FLAGS=     helpdir=${L_HELP} docdir=${L_DOC} -f
-MAKEFILE=       makefile
-INSTALL_TARGET= install-full
+MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
+MAKEFILE=	makefile
+INSTALL_TARGET=	install-full
 MAN1=		lynx.1
 
-L_LIB=          ${PREFIX}/etc
-L_DOC=          ${PREFIX}/share/doc/lynx
-L_HELP=         ${PREFIX}/share/lynx_help
+L_LIB=		${PREFIX}/etc
+L_DOC=		${PREFIX}/share/doc/lynx
+L_HELP=		${PREFIX}/share/lynx_help
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_DOC}

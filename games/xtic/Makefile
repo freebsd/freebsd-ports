@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xtic.1
 

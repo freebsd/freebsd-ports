@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	wwwcount
-PORTVERSION= 	2.5
-CATEGORIES=     www
-MASTER_SITES=   http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
+PORTVERSION=	2.5
+CATEGORIES=	www
+MASTER_SITES=	http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=     dervish@ikhala.tcimet.net
+MAINTAINER=	dervish@ikhala.tcimet.net
 
-GNU_CONFIGURE=  yes
-IS_INTERACTIVE= yes
-USE_GMAKE=      yes
+GNU_CONFIGURE=	yes
+IS_INTERACTIVE=	yes
+USE_GMAKE=	yes
 MAN1=		mkstrip.1
 
 pre-configure:

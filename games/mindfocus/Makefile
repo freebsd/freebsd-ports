@@ -15,7 +15,7 @@ MAINTAINER=	ixtl@utmc.or.jp
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-RESTRICTED=    'contains commercial character data'
+RESTRICTED=	'contains commercial character data'
 
 post-install:
 .for i in mayu.mfc mio.mfc misaki2.mfc mizuka.mfc myu.mfc ryoko.mfc

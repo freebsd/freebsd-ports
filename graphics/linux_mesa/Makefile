@@ -8,9 +8,9 @@
 PORTNAME=	mesa
 PORTVERSION=	2.6
 CATEGORIES=	graphics linux
-MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/old-versions/
+MASTER_SITES=	ftp://iris.ssec.wisc.edu/pub/Mesa/old-versions/
 PKGNAMEPREFIX=	linux_
-DISTNAME=       MesaLib-${PORTVERSION}
+DISTNAME=	MesaLib-${PORTVERSION}
 
 MAINTAINER=	cracauer@cons.org
 

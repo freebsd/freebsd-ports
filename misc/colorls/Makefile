@@ -16,7 +16,7 @@ MAINTAINER=	asami@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500004 || ${OSVERSION} < 500000 && ${OSVERSION} >= 400020
-FORBIDDEN=      "colour support is already in the base system"
+FORBIDDEN=	"colour support is already in the base system"
 .endif
 
 MAN1=		colorls.1

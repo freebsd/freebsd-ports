@@ -14,11 +14,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-ALL_TARGET=    	# empty
+ALL_TARGET=	# empty
 MAN6=		omega.6
 
-PORTDOCS=      	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
+PORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
 		docs/readme3 docs/readme4
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/omega ${PREFIX}/bin
 	@${CHOWN} root:games ${PREFIX}/bin/omega

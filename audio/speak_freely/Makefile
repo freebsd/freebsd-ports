@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=       speak_freely
+PORTNAME=	speak_freely
 PORTVERSION=	7.1
-CATEGORIES=     mbone audio security
-MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/
+CATEGORIES=	mbone audio security
+MASTER_SITES=	http://www.fourmilab.ch/speakfree/unix/
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
-UTILS=   sfspeaker sfmike sflwl sflaunch
-DEMNS=   sfecho sflwld sfreflect
-DDEMNS=  sfvod
-SFLIB=   ${PREFIX}/lib/speak_freely
-MAN1=	 ${UTILS:S/$/.1/} ${DEMNS:S/$/.1/} ${DDEMNS:S/$/.1/}
+UTILS=		sfspeaker sfmike sflwl sflaunch
+DEMNS=		sfecho sflwld sfreflect
+DDEMNS=		sfvod
+SFLIB=		${PREFIX}/lib/speak_freely
+MAN1=		${UTILS:S/$/.1/} ${DEMNS:S/$/.1/} ${DDEMNS:S/$/.1/}
 
-MAKE_ENV="OPTFLAGS=${CFLAGS}"
+MAKE_ENV=	"OPTFLAGS=${CFLAGS}"
 
 do-install:
 	if [ ! -d ${SFLIB} ]; then \

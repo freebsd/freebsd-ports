@@ -8,7 +8,7 @@
 PORTNAME=	pgp
 PORTVERSION=	6.5.1i
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.no.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+MASTER_SITES=	ftp://ftp.no.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
 		ftp://ftp.fi.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
 		ftp://ftp.se.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
 		ftp://ftp.de.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
@@ -16,14 +16,14 @@ MASTER_SITES=   ftp://ftp.no.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
 		ftp://ftp.nl.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
 		ftp://ftp.ch.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
 		ftp://ftp.ru.pgpi.org/pub/pgp/6.5/6.5.1i/unix/
-EXTRACT_SUFX=   -beta2.tar.gz
+EXTRACT_SUFX=	-beta2.tar.gz
 
 MAINTAINER=	mike@fate.com
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=      YES
+USE_GMAKE=	yes
 
-RESTRICTED=     "Crypto"
+RESTRICTED=	"Crypto"
 
 MAN1=		pgp.1
 

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	trojka
-PORTVERSION=    1.0
-CATEGORIES=     games
-MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/games/
+PORTVERSION=	1.0
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/games/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=     e@ik.nu
+MAINTAINER=	e@ik.nu
 
-MAN6=          	trojka.6
+MAN6=		trojka.6
 
 post-install:
 	${SED} "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}

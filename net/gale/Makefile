@@ -8,10 +8,10 @@
 PORTNAME=	gale
 PORTVERSION=	0.99a
 PORTREVISION=	1
-CATEGORIES=     net
-MASTER_SITES=   http://download.gale.org/
+CATEGORIES=	net
+MASTER_SITES=	http://download.gale.org/
 
-MAINTAINER=     peterh@sapros.com
+MAINTAINER=	peterh@sapros.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \

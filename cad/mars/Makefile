@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  MaRS
 # Date created:			  Mon Nov 18, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
@@ -23,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAKEFILE=	Makefile.NoX
 .else
 USE_MOTIF=	yes
-MAKEFILE=       Makefile.XMotif
+MAKEFILE=	Makefile.XMotif
 .endif
 ALL_TARGET=	depend mars
 MAN1=		mars.1

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mgdiff
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	andreas@marvin.robin.de
 
 USE_MOTIF=	yes
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 MAN1=		mgdiff.1
 
 post-install:

@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	docbook
-PORTVERSION= 	3.1
+PORTVERSION=	3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/sgml/3.1/
 DISTNAME=	docbk31
@@ -19,9 +19,9 @@ RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 USE_ZIP=	yes
-NO_MTREE=       yes
+NO_MTREE=	yes
 EXTRACT_ONLY=	# empty
-NO_BUILD=       yes
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_NAME=${PORTNAME} DTD_VERSION=${PORTVERSION} \
 		MKCATALOG=${MKCATALOG}

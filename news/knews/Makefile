@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 #		compface:${PORTSDIR}/mail/faces
-RUN_DEPENDS=    newsp:${PORTSDIR}/print/mp-letter
+RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
 
 USE_IMAKE=	yes
 USE_XPM=	yes

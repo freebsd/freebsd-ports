@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=       rio500
+PORTNAME=	rio500
 PORTVERSION=	0.7
-CATEGORIES=     audio
-MASTER_SITES=   http://download.sourceforge.net/rio500/
+CATEGORIES=	audio
+MASTER_SITES=	http://download.sourceforge.net/rio500/
 
 MAINTAINER=	k_nishizawa@anet.ne.jp
 

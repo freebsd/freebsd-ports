@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  mutt w/pgp hooks
 # Date created:			  Thur July 25, 1996
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION= 	1.2.5
+PORTVERSION=	1.2.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.uib.no/pub/mutt/ \
@@ -43,7 +42,7 @@ WITH_DOCS=	yes
 .endif
 .endif
 
-LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
@@ -51,7 +50,7 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
 .if defined(WITH_SSL)
-USE_OPENSSL=    YES
+USE_OPENSSL=	yes
 .endif
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
@@ -60,8 +59,8 @@ BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=  CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl \
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
 		--enable-compressed

@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	spambnc
-PORTVERSION=		111500
-CATEGORIES=     	mail
-MASTER_SITES=   	http://www.spambouncer.org/
-DISTFILES=		spambnc.tar.Z index.shtml
-EXTRACT_ONLY=		spambnc.tar.Z
+PORTNAME=	spambnc
+PORTVERSION=	111500
+CATEGORIES=	mail
+MASTER_SITES=	http://www.spambouncer.org/
+DISTFILES=	spambnc.tar.Z index.shtml
+EXTRACT_ONLY=	spambnc.tar.Z
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-IGNOREFILES=		index.shtml
-NO_WRKSUBDIR=		yes
-NO_BUILD=		yes
+IGNOREFILES=	index.shtml
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
 
-SBFILES=		freemail legitlists notify procmail.rc sb-new.rc \
-			sb-old.rc sb.rc spam
+SBFILES=	freemail legitlists notify procmail.rc sb-new.rc \
+		sb-old.rc sb.rc spam
 
 do-install:
 	${MKDIR} ${PREFIX}/share/spambnc/

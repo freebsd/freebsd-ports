@@ -5,20 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=       uk-postcodes
+PORTNAME=	uk-postcodes
 PORTVERSION=	2.0
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
+MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
 		http://people.FreeBSD.org/~brian/uk-postcodes/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=     brian@FreeBSD.org
+MAINTAINER=	brian@FreeBSD.org
 
-NO_WRKSUBDIR=	YES
+NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/uk.postcodes
-NO_BUILD=	YES
+NO_BUILD=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/uk.postcodes ${PREFIX}/share/misc

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	prom-wl
-PORTVERSION= 	1.0.2
+PORTVERSION=	1.0.2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
 
-MAINTAINER=     kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 # This port requires Wanderlust. But we can't decide which Wanderlust to depends,
 # there is NO RUN_DEPNDS mail/wanderlust-*.

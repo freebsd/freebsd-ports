@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=       gd
+PORTNAME=	gd
 PORTVERSION=	1.8.3
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.boutell.com/gd/http/ \
+MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
 MAINTAINER=	billf@FreeBSD.org

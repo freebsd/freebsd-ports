@@ -9,7 +9,7 @@ PORTNAME=	icon
 PORTVERSION=	9.3.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/icon/packages/unix/
-DISTNAME=       unix
+DISTNAME=	unix
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

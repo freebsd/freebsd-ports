@@ -8,11 +8,11 @@
 PORTNAME=	rboot
 PORTVERSION=	3.0.1
 CATEGORIES=	net
-MASTER_SITES=   http://www.bs.ni.schule.de/support/rboot/download/
+MASTER_SITES=	http://www.bs.ni.schule.de/support/rboot/download/
 
 MAINTAINER=	m.butkus@tu-bs.de
 
-NO_PACKAGE=     "this port creates devices"
+NO_PACKAGE=	"this port creates devices"
 
 post-install:
 	@${ECHO} ""

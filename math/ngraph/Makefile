@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=       ngraph
+PORTNAME=	ngraph
 PORTVERSION=	6.3.11
 CATEGORIES=	math
-MASTER_SITES=   http://www2e.biglobe.ne.jp/~isizaka/bin/ \
+MASTER_SITES=	http://www2e.biglobe.ne.jp/~isizaka/bin/ \
 		${MASTER_SITE_PORTS_JP}
-DISTNAME=       Ngraph-${PORTVERSION}-src
+DISTNAME=	Ngraph-${PORTVERSION}-src
 
-MAINTAINER=     sanpei@FreeBSD.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 USE_MOTIF=	yes
 USE_GMAKE=	yes

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailanalog
-PORTVERSION= 	0.70
+PORTVERSION=	0.70
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qmail.org/pub/software/
 
@@ -38,7 +38,7 @@ MYSUBDIR?=
 
 QMPREFIX?=	${PREFIX}/${MYSUBDIR}
 
-NO_MTREE=       yes
+NO_MTREE=	yes
 
 post-patch:
 	@perl -pi.bak -e "s|.usr.local.qmailanalog|${QMPREFIX}|" ${WRKSRC}/conf-home

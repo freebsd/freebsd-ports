@@ -18,6 +18,6 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=           xdelta.1
+MAN1=		xdelta.1
 
 .include <bsd.port.mk>

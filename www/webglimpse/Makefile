@@ -7,21 +7,21 @@
 #
 
 PORTNAME=	webglimpse
-PORTVERSION= 	1.6
-CATEGORIES=     www textproc
-MASTER_SITES=   ftp://ftp.deva.net/pub/sources/ir/glimpse/
+PORTVERSION=	1.6
+CATEGORIES=	www textproc
+MASTER_SITES=	ftp://ftp.deva.net/pub/sources/ir/glimpse/
 DISTNAME=	${PKGNAME}.src
 
-MAINTAINER=     ache@freebsd.org
+MAINTAINER=	ache@freebsd.org
 
-RUN_DEPENDS+=   ${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
-RUN_DEPENDS+=   glimpse:${PORTSDIR}/textproc/glimpse
+RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
+RUN_DEPENDS+=	glimpse:${PORTSDIR}/textproc/glimpse
 
-WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
+WRKSRC=		${WRKDIR}/webglimpse-1.6.edu
 
 NO_CDROM=	depends on glimpse
-USE_PERL5=      YES
-NO_BUILD=       YES
+USE_PERL5=	yes
+NO_BUILD=	yes
 
 pre-configure:
 .for i in wginstall wginstall.pl

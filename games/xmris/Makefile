@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_GMAKE=	yes
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris
 MAN6=		xmred.6 xmris.6 xmsit.6

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=    4.11
+PORTVERSION=	4.11
 CATEGORIES=	www
-MASTER_SITES=   http://www.analog.cx/ \
+MASTER_SITES=	http://www.analog.cx/ \
 		http://brendanr.simplenet.com/analog/ \
 		http://www.magma.ca/~brendanr/analog/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -18,10 +18,10 @@ MASTER_SITES=   http://www.analog.cx/ \
 		ftp://download.netvision.net.il/pub/mirrors/analog/ \
 		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
 
-MAINTAINER=     ports@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
-MAKE_FLAGS=     -DPREFIX=${PREFIX} -f
-ALL_TARGET=     analog
+MAKE_FLAGS=	-DPREFIX=${PREFIX} -f
+ALL_TARGET=	analog
 
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/analog

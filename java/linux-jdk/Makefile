@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	YES
 WRKSRC=		${WRKDIR}/jdk1.2.2
-NO_BUILD=       yes
+NO_BUILD=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/linux-jdk1.2.2

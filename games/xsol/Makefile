@@ -11,11 +11,11 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
 		http://ftp.tu-clausthal.de/pub/unix.new/games/ \
 		ftp://ftp.tu-clausthal.de/pub/unix.new/games/
-DISTNAME=       xsol-new
+DISTNAME=	xsol-new
 
 MAINTAINER=	swallace@FreeBSD.org
 
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 MAN6=		xsol.6
 
 .include <bsd.port.mk>

@@ -18,9 +18,9 @@ MAINTAINER=	ache@FreeBSD.org
 CAT1=		rar.1
 
 ONLY_FOR_ARCHS=	i386
-NO_PACKAGE=     Only unmodified original package can be distributed
-NO_BUILD=       yes
-NO_WRKSUBDIR=   yes
+NO_PACKAGE=	Only unmodified original package can be distributed
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty

@@ -12,9 +12,9 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	ftp://muir.yi.org/pub/wmhm/ \
 		http://www.es.co.nz/~mmuir/
 
-MAINTAINER=    mmuir@cwnet.com
+MAINTAINER=	mmuir@cwnet.com
 
-LIB_DEPENDS=   Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 WRKSRC=		${WRKDIR}/wmhm/wmhm
 

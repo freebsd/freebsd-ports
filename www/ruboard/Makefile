@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ruboard
-PORTVERSION= 	1.2.1
+PORTVERSION=	1.2.1
 CATEGORIES=	www russian
 MASTER_SITES=	ftp://ftp.amsoft.ru/software/ruboard/
 
-MAINTAINER=    am@amsoft.ru
+MAINTAINER=	am@amsoft.ru
 
 .include <bsd.port.mk>

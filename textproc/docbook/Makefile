@@ -8,12 +8,12 @@
 #
 
 PORTNAME=	docbook
-PORTVERSION= 	1.2
-CATEGORIES=     textproc
-MASTER_SITES=   # empty
+PORTVERSION=	1.2
+CATEGORIES=	textproc
+MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=     nik@freebsd.org
+MAINTAINER=	nik@freebsd.org
 
 RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/share/sgml/docbook/2.4.1:${PORTSDIR}/textproc/docbook-241 \
@@ -22,8 +22,8 @@ RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/share/sgml/docbook/4.0:${PORTSDIR}/textproc/docbook-400 \
 		${PREFIX}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
 
-EXTRACT_ONLY=   # empty
-NO_BUILD=       yes
+EXTRACT_ONLY=	# empty
+NO_BUILD=	yes
 
 do-install:	#empty
 

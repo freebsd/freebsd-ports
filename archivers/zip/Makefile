@@ -9,18 +9,18 @@
 PORTNAME=	zip
 PORTVERSION=	2.3
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.freesoftware.com/pub/infozip/src/
-ZCRYPT_SRC=     zcrypt29-exportable.zip
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/
+ZCRYPT_SRC=	zcrypt29-exportable.zip
 DISTFILES=	zip23${EXTRACT_SUFX} ${ZCRYPT_SRC}
 
 MAINTAINER=	ache@FreeBSD.org
 
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=   zip23${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+EXTRACT_ONLY=	zip23${EXTRACT_SUFX}
 MAKEFILE=	unix/Makefile
-MAKE_FLAGS=     LOCAL_ZIP="-DUSE_CRYPT" -f
+MAKE_FLAGS=	LOCAL_ZIP="-DUSE_CRYPT" -f
 ALL_TARGET=	generic
 MAN1=		zip.1
 

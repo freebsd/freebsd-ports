@@ -17,7 +17,7 @@ MAINTAINER=	morishim@cig.mot.com
 LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XPM=	yes
-WRKSRC=         ${WRKDIR}/xisp-2.6
+WRKSRC=		${WRKDIR}/xisp-2.6
 MAN1=		xisp.1
 HAS_CONFIGURE=	yes
 .if defined(WITH_DES)

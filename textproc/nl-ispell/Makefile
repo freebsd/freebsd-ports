@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-MAINTAINER=     alex@FreeBSD.org
+MAINTAINER=	alex@FreeBSD.org
 
 ISPELL_NO=	yes
 PORTNAME=	nl-ispell
-PORTVERSION= 	1.0.0
-MASTERDIR=      ${.CURDIR}/../ispell
+PORTVERSION=	1.0.0
+MASTERDIR=	${.CURDIR}/../ispell
 
 .include        "${MASTERDIR}/Makefile"

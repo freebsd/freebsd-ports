@@ -8,12 +8,12 @@
 PORTNAME=	fli2gif
 PORTVERSION=	1.1
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.sco.com/skunkware/src/misc/ \
+MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/misc/ \
 		ftp://ftp.doc.ic.ac.uk/Mirrors/ftp.sco.com/skunkware/src/misc/ \
 		ftp://ftp.vse.cz/pub/.ccd0c/SCO/ftp.sco.com/skunkware/src/misc/
-DISTNAME=       ${PORTNAME}
+DISTNAME=	${PORTNAME}
 
-MAINTAINER=     giffunip@asme.org
+MAINTAINER=	giffunip@asme.org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fli2gif ${PREFIX}/bin

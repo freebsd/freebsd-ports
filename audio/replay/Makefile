@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_I18N)
-CONFIGURE_ARGS+=       --enable-i18n=JAPANESE
+CONFIGURE_ARGS+=	--enable-i18n=JAPANESE
 .endif
 
 pre-configure:

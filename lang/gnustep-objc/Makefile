@@ -10,7 +10,7 @@ PORTVERSION=	0.6.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		ftp://ftp.peanuts.org/Mirrors/GNUstep/gnustep/core/
-DISTNAME=       gstep-core-${PORTVERSION}
+DISTNAME=	gstep-core-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

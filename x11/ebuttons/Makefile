@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	E-buttons
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	x11
-MASTER_SITES= 	http://www.moodfarm.demon.co.uk/download/
+MASTER_SITES=	http://www.moodfarm.demon.co.uk/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhb@FreeBSD.org
 
-LIB_DEPENDS=    epplet.1:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	epplet.1:${PORTSDIR}/x11-wm/epplets
 
 WRKSRC=		${WRKDIR}/E-buttons
 

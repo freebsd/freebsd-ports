@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  compaq-cc
 # Date created:			  Thur Dec 07, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -20,7 +19,7 @@ DISTFILES+=	cpml_ev5-5.1.0-2.alpha.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
 
-RESTRICTED=     "Distribution not allowed"
+RESTRICTED=	"Distribution not allowed"
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=       battstat-applet
-PORTVERSION=    2.0.4
+PORTNAME=	battstat-applet
+PORTVERSION=	2.0.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://spektr.eu.org/~jp/battstat/
 DISTNAME=	battstat_applet-${PORTVERSION}

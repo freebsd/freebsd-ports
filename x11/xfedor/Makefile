@@ -9,18 +9,18 @@
 #
 
 PORTNAME=	xfedor
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/x11/util/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-USE_IMAKE=      yes
+USE_IMAKE=	yes
 USE_XPM=	yes
 
-XFHELP= ${X11BASE}/lib/X11/xfedor # See patches too
-XCAT1= ${X11BASE}/man/cat1
+XFHELP=		${X11BASE}/lib/X11/xfedor # See patches too
+XCAT1=		${X11BASE}/man/cat1
 
 do-install:
 	cd ${WRKSRC}; \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xforms
-PORTVERSION= 	0.89
+PORTVERSION=	0.89
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/${MASTER_SITE_SUBDIR}/
 EXTRACT_SUFX=	.tgz
@@ -31,7 +31,7 @@ PATCHDIR=	${MASTERDIR}/patches.alpha
 .else
 DISTNAME=	bxform-${PORTVERSION:S/.//}-elf
 MASTER_SITE_SUBDIR=	freeBSD
-PATCHDIR=       ${MASTERDIR}/patches.i386
+PATCHDIR=	${MASTERDIR}/patches.i386
 MAN1+=		iconvert.1
 .endif
 

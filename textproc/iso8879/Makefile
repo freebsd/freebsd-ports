@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso8879
-PORTVERSION= 	1986
+PORTVERSION=	1986
 CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 DISTNAME=	isoENTS
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 EXTRACT_ONLY=	# empty
-NO_BUILD=       yes
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	DTD_NAME=${PORTNAME} MKCATALOG=${MKCATALOG}
 

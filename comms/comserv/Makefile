@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=           comserv
-PORTVERSION=        1.0.1
-CATEGORIES=         comms net
-MASTER_SITES=       ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR= bsd
+PORTNAME=	comserv
+PORTVERSION=	1.0.1
+CATEGORIES=	comms net
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	bsd
 
-MAINTAINER=    bsd@FreeBSD.org
+MAINTAINER=	bsd@FreeBSD.org
 
-MAN8=          comservd.8
-MANCOMPRESSED= yes
+MAN8=		comservd.8
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

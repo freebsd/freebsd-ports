@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	swish-e
-PORTVERSION= 	1.3.2
-CATEGORIES=     www textproc
-MASTER_SITES=   ftp://sunsite.berkeley.edu/pub/swish-e/
+PORTVERSION=	1.3.2
+CATEGORIES=	www textproc
+MASTER_SITES=	ftp://sunsite.berkeley.edu/pub/swish-e/
 DISTNAME=	swish-efiles.1.3.2
 
 MAINTAINER=	doconnor@gsoft.com.au

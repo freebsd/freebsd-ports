@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	smtpd
-PORTVERSION= 	2.0
-CATEGORIES=    mail security
-MASTER_SITES=  ftp://ftp.obtuse.com/pub/smtpd/
+PORTVERSION=	2.0
+CATEGORIES=	mail security
+MASTER_SITES=	ftp://ftp.obtuse.com/pub/smtpd/
 
-PATCH_SITES=   ${MASTER_SITES}
-PATCHFILES=    patch-smtpd-2.0-RBL.gz
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
-MAINTAINER=    jonny@jonny.eng.br
+MAINTAINER=	jonny@jonny.eng.br
 
 #  Directory where smtpd will chroot to, and put the received mail
 #  If you change it here, change also patches/patch-aa

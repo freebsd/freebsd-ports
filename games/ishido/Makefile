@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:    ishido
 # Date created:         Wed June 24, 1998
 # Whom:                 Steven H. Samorodin (samorodi@NUXI.com)
@@ -12,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/ \
 		ftp://ftp.nuxi.com/pub/misc/
 
-MAINTAINER=     samorodi@NUXI.com
+MAINTAINER=	samorodi@NUXI.com
 
 USE_XLIB=	yes
 MAN6=		ishido.6

@@ -13,12 +13,12 @@ MASTER_SITE_SUBDIR=	jwhois
 
 MAINTAINER=	matusita@jp.FreeBSD.org
 
-LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --localstatedir=${PREFIX}/var/jwhois
+CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/var/jwhois
 USE_GMAKE=	yes
-CONFIGURE_ENV=  CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 
 INSTALL_TARGET=	install-strip
 

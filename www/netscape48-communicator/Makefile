@@ -36,7 +36,7 @@ NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
 BINDIR=		${PREFIX}/bin
 INFILE_HEAD?=	'Communicator,4.08.0.98306'
-WRAPPER_TEMPLATE= ${MASTERDIR}/files/netscape.sh
+WRAPPER_TEMPLATE=	${MASTERDIR}/files/netscape.sh
 MAILCAP?=	${MASTERDIR}/files/mailcap
 
 PLIST_SUB=	BROWSER=${BROWSER_ARC} BROWSER_VER=${BROWSER_VER} \
@@ -50,7 +50,7 @@ DISTFILES+=	${AUTOADMIN}
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
 DISTFILES+=	${FORTIFY}.tar.gz
-RESTRICTED=     "Contains strong cryptography"
+RESTRICTED=	"Contains strong cryptography"
 .endif
 
 .if !defined(_PREMKINCLUDED)

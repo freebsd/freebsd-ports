@@ -15,7 +15,7 @@ DISTNAME=	emacs-${PORTVERSION}
 PATCH_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
 		http://www.etl.go.jp/~tomo/comp/emacsen/
 PATCHFILES=	emacs-20.4-dl3.diff.gz
-PATCH_DIST_STRIP= -p1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shige@FreeBSD.org
 
@@ -29,10 +29,10 @@ MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 EMACS_VER=	20.7
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if !defined(WITHOUT_X11)
-CONFIGURE_ARGS= --with-x-toolkit --with-pop
-USE_XLIB=       yes
+CONFIGURE_ARGS=	--with-x-toolkit --with-pop
+USE_XLIB=	yes
 .else
-CONFIGURE_ARGS= --with-x=no --with-pop
+CONFIGURE_ARGS=	--with-x=no --with-pop
 .endif
 
 DOC_FILE=	DOC-DL-${EMACS_VER}.1

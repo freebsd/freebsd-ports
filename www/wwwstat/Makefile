@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wwwstat
-PORTVERSION= 	2.01
+PORTVERSION=	2.01
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.ics.uci.edu/pub/websoft/wwwstat/ \
 		ftp://ftp.gwdg.de/pub/misc/www-stat/websoft/wwwstat/
@@ -17,7 +17,7 @@ PATCHFILES=	patch-2.01.txt
 
 MAINTAINER=	demon@FreeBSD.org
 
-RUN_DEPENDS=    ${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
 USE_PERL5=	yes
 MAKE_ENV+=	PERL5=${PERL5}

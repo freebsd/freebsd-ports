@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	getbdf
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=   ftp://ftp.ipa.fhg.de/pub/X/
+MASTER_SITES=	ftp://ftp.ipa.fhg.de/pub/X/
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=   .tar.Z
+EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-USE_X_PREFIX=   yes
-NO_WRKSUBDIR=   yes
-ALL_TARGET=     getbdf
+USE_X_PREFIX=	yes
+NO_WRKSUBDIR=	yes
+ALL_TARGET=	getbdf
 
 do-install:
 	cd ${WRKSRC}; \

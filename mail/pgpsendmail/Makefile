@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	pgpsendmail
-PORTVERSION= 	1.4
+PORTVERSION=	1.4
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
+MASTER_SITES=	ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 DISTNAME=	PGPsendmail-v${PORTVERSION}
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-BUILD_DEPENDS += pgp:${PORTSDIR}/security/pgp
+BUILD_DEPENDS+=	pgp:${PORTSDIR}/security/pgp
 
-WRKSRC=         ${WRKDIR}/pgpsendmail
-INSTALL_TARGET= all_install
+WRKSRC=		${WRKDIR}/pgpsendmail
+INSTALL_TARGET=	all_install
 MAN1=		pgppipe.1 sendpgppass.1
 MAN8=		pgpsendmail.8 pgpdaemon.8
 

@@ -8,9 +8,9 @@
 PORTNAME=	manck
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
 
-MAINTAINER=     wosch@FreeBSD.org
+MAINTAINER=	wosch@FreeBSD.org
 
 MAN1=		manck.1
 MANCOMPRESSED=	yes

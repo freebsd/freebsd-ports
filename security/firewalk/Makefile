@@ -16,11 +16,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 MAN1=		firewalk.1
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
 CONFIGURE_ARGS=	--with-gtk=no
 
-WRKSRC=         ${WRKDIR}/Firewalk-${PORTVERSION}
+WRKSRC=		${WRKDIR}/Firewalk-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 

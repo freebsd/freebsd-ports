@@ -14,7 +14,7 @@ MAINTAINER=	jesse@cs.uni-magdeburg.de
 
 USE_PERL5=	yes
 USE_QT2=	yes
-NO_BUILD=       yes
+NO_BUILD=	yes
 TMAKE_BIN=	progen tmake
 
 do-install:

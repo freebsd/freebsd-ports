@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfmail
-PORTVERSION= 	1.4.0
-CATEGORIES=     mail
+PORTVERSION=	1.4.0
+CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/1.4.0/
 
 MAINTAINER=	gena@NetVision.net.il

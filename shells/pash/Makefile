@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	pash
-PORTVERSION=		2.2
-CATEGORIES=     	shells
-MASTER_SITES=   	http://www.chez-pierre.com/pash/Archives/
-DISTNAME=		pash.sources
+PORTNAME=	pash
+PORTVERSION=	2.2
+CATEGORIES=	shells
+MASTER_SITES=	http://www.chez-pierre.com/pash/Archives/
+DISTNAME=	pash.sources
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-NO_WRKSUBDIR=		yes
+NO_WRKSUBDIR=	yes
 
-MAKEFILE=		makefile
+MAKEFILE=	makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pash ${PREFIX}/bin/pash

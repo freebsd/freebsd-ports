@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
 DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
-MAINTAINER=    jasone@freebsd.org
+MAINTAINER=	jasone@freebsd.org
 
 .include <bsd.port.pre.mk>
 

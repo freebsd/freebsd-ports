@@ -8,9 +8,9 @@
 PORTNAME=	bonnie
 PORTVERSION=	1.0
 CATEGORIES=	benchmarks
-MASTER_SITES=   ftp://ftp.sunet.se/pub/benchmark/Bonnie/
-DISTNAME=       Bonnie
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=	ftp://ftp.sunet.se/pub/benchmark/Bonnie/
+DISTNAME=	Bonnie
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	se@FreeBSD.org
 

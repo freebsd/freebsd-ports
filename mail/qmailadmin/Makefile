@@ -47,9 +47,9 @@ WEBDATASUBDIR?=
 #
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-send)
-QMAIL_DIR?=     ${LOCALBASE}/qmail
+QMAIL_DIR?=	${LOCALBASE}/qmail
 .else
-QMAIL_DIR?=     /var/qmail
+QMAIL_DIR?=	/var/qmail
 .endif
 
 # End of user-configurable variables

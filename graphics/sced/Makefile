@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       sced
+PORTNAME=	sced
 PORTVERSION=	1.02
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.berkeley.edu/~schenney/sced/src/ \

@@ -54,7 +54,7 @@ INSTALL_TARGET=	install-package-ja
 .endif
 .elif (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule")
 ALL_TARGET=	all info info-ja
-INSTALL_TARGET= install
+INSTALL_TARGET=	install
 INFODIR=	${LOCALBASE}/info
 INFOFILES=	emacs-mime.info gnus.info gnus-ja.info message.info message-ja.info
 STARTUPDIR=	${EMACS_SITE_LISPDIR}
@@ -110,7 +110,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "mule")
-MAKE_ARGS+=    EMACS="${WRKDIR}/mule-apel"  XEMACS="${WRKDIR}/mule-apel"
+MAKE_ARGS+=	EMACS="${WRKDIR}/mule-apel"  XEMACS="${WRKDIR}/mule-apel"
 .endif
 
 .include <bsd.port.post.mk>

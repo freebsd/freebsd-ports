@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=       muuz
-PORTVERSION=    0.27.2
-CATEGORIES=     misc
+PORTNAME=	muuz
+PORTVERSION=	0.27.2
+CATEGORIES=	misc
 MASTER_SITES=	ftp://toxic.magnesium.net/pub/FreeBSD/muuz/
 
 MAINTAINER=	kline@thought.org

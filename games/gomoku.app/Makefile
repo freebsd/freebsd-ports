@@ -9,7 +9,7 @@ PORTNAME=	gomoku.app
 PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
-DISTNAME=       Gomoku-${PORTVERSION}
+DISTNAME=	Gomoku-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

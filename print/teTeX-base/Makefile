@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
 		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=     systems/unix/teTeX/1.0/distrib/sources/
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/1.0/distrib/sources/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
 MAINTAINER=	br@netland.inka.de
@@ -24,8 +24,8 @@ DIST_SUBDIR=	teTeX
 WRKSRC=		${WRKDIR}/teTeX-1.0
 EXTRACT_ONLY=	${TETEX_SRC}
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --disable-multiplatform \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-multiplatform \
 		--without-texinfo --without-dialog \
 		--with-system-ncurses --with-system-zlib \
 		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \

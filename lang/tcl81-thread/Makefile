@@ -20,8 +20,8 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-threads
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
-PKGINSTALL=     ${PORTSDIR}/lang/tcl82/pkg/pkg-install.tclsh
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
+PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg/pkg-install.tclsh
 PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg/pkg-deinstall.tclsh
 
 MAN1=	tclsh.1

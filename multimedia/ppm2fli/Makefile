@@ -9,12 +9,13 @@ PORTNAME=	ppm2fli
 PORTVERSION=	b1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://crusty.er.usgs.gov/pub/animation/fli/
-DISTNAME=       ppm2fli_b1.92
+DISTNAME=	ppm2fli_b1.92
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     giffunip@asme.org
+MAINTAINER=	giffunip@asme.org
 
 MAN1=	ppm2fli.1 unflick.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ppm2fli ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/unflick ${PREFIX}/bin

@@ -8,13 +8,13 @@
 PORTNAME=	dnetc
 PORTVERSION=	2.8010.463
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8010/ \
+MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/v2.8010/ \
 		http://http.distributed.net/pub/dcti/v2.8010/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTFILES=      dnetc463-freebsd-x86-elf.tar.gz
+DISTFILES=	dnetc463-freebsd-x86-elf.tar.gz
 .elif ${ARCH} == "alpha"
-BROKEN=         "Not immediately available.  Please try again tomorrow."
+BROKEN=		"Not immediately available.  Please try again tomorrow."
 .endif
 
 ONLY_FOR_ARCHS=	i386
@@ -29,7 +29,7 @@ BROKEN=		"No version is currently available for your system.  Please try again l
 BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
 .endif
 
-MAINTAINER=     dbaker@distributed.net
+MAINTAINER=	dbaker@distributed.net
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -12,7 +12,8 @@ DISTNAME=	cidr-current
 
 MAINTAINER=	midom@dammit.lt
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 ALL_TARGET=	cidr
 
 do-install:

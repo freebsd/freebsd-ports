@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	JBD01226@niftyserve.ne.jp
 
-RUN_DEPENDS=    mf:${PORTSDIR}/print/tex
+RUN_DEPENDS=	mf:${PORTSDIR}/print/tex
 
 USE_XLIB=	yes
 GNU_CONFIGURE=YES

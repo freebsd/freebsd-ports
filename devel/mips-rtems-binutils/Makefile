@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=       binutils
+PORTNAME=	binutils
 
-MAINTAINER=     jeh@FreeBSD.org
+MAINTAINER=	jeh@FreeBSD.org
 
-LCLTARGET=      mips-rtems
+LCLTARGET=	mips-rtems
 .include "${.CURDIR}/../i386-rtems-binutils/Makefile"

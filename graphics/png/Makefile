@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	png
-PORTVERSION=    1.0.8
+PORTVERSION=	1.0.8
 PORTREVISION=	1
-CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.libpng.org/pub/png/src/ \
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
 DISTFILES=	lib${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-PATCH_SITES=    ftp://ftp.libpng.org/pub/png/src/
+PATCH_SITES=	ftp://ftp.libpng.org/pub/png/src/
 #PATCHFILES=
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
@@ -27,8 +27,8 @@ SHLIB_VER=	4
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-MAN3=           libpng.3 libpngpf.3
-MAN5=           png.5
+MAN3=		libpng.3 libpngpf.3
+MAN5=		png.5
 
 .include <bsd.port.pre.mk>
 

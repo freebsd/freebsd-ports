@@ -7,26 +7,26 @@
 
 PORTNAME=	p5-libwww
 PORTVERSION=	5.48
-CATEGORIES=     www perl5 devel
+CATEGORIES=	www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=     LWP
+MASTER_SITE_SUBDIR=	LWP
 DISTNAME=	libwww-perl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
-MAN1=           lwp-download.1 \
+MAN1=		lwp-download.1 \
 		lwp-mirror.1 \
 		lwp-request.1 \
 		lwp-rget.1
-MAN3=           Bundle::LWP.3 \
+MAN3=		Bundle::LWP.3 \
 		File::Listing.3 \
 		HTML::Form.3 \
 		HTTP::Cookies.3 \
@@ -55,9 +55,9 @@ MAN3=           Bundle::LWP.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \
-				     INSTALLMAN1DIR=${PREFIX}/man/man1 \
-				     INSTALLSCRIPT=${PREFIX}/bin
+	@cd ${WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${PERL} Makefile.PL PREFIX=${PREFIX} \
+		INSTALLMAN1DIR=${PREFIX}/man/man1 \
+		INSTALLSCRIPT=${PREFIX}/bin
 
 .include <bsd.port.mk>

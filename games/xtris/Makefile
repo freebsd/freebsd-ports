@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xtris
+PORTNAME=	xtris
 PORTVERSION=	1.15
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://www.iagora.com/~espel/xtris/

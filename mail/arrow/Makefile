@@ -43,8 +43,8 @@ INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
 # program files
 PROGRAMFILES=		arrow/arrow
 # documents
-DOCFILES=       LICENSE README.binary
-DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME}
+DOCFILES=	LICENSE README.binary
+DOCDIR_PREFIX=	${PREFIX}/share/doc/${PORTNAME}
 # additional configuration and header files
 EXTRALIB_PREFIX=	${X11BASE}/lib/jx
 EXTRALIBFILES_MAKE_WRKSRC=	include/make

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asWedit
-PORTVERSION= 	4.0.1
+PORTVERSION=	4.0.1
 CATEGORIES=	www editors linux
 MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/www/asWedit/ \
@@ -16,13 +16,13 @@ DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	brett@peloton.runet.edu
 
-RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
-RESTRICTED=     "Commercial software"
+RESTRICTED=	"Commercial software"
 NO_BUILD=	yes
 NO_PACKAGE=	${RESTRICTED}
-WRKSRC=         ${WRKDIR}/asWedit-4.0.1
+WRKSRC=		${WRKDIR}/asWedit-4.0.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/asWedit ${PREFIX}/bin

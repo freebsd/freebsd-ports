@@ -5,23 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		vnc
-PORTVERSION=		3.3.3.2
-CATEGORIES=		net
-MASTER_SITES=   	http://www.uk.research.att.com/vnc/dist/ \
-			ftp://ftp.uk.research.att.com/pub/vnc/dist/
-DISTFILES=		vnc-3.3.3r2_unixsrc.tgz \
-			vnc-latest_doc.tgz
-EXTRACT_ONLY=		vnc-3.3.3r2_unixsrc.tgz
+PORTNAME=	vnc
+PORTVERSION=	3.3.3.2
+CATEGORIES=	net
+MASTER_SITES=	http://www.uk.research.att.com/vnc/dist/ \
+		ftp://ftp.uk.research.att.com/pub/vnc/dist/
+DISTFILES=	vnc-3.3.3r2_unixsrc.tgz \
+		vnc-latest_doc.tgz
+EXTRACT_ONLY=	vnc-3.3.3r2_unixsrc.tgz
 
-MAINTAINER=	 	bmah@freebsd.org
+MAINTAINER=	bmah@freebsd.org
 
-USE_PERL5=		YES
-IGNOREFILES=		vnc-latest_doc.tgz
-WRKSRC=			${WRKDIR}/vnc_unixsrc
-USE_IMAKE=		YES
-NO_INSTALL_MANPAGES=	YES
-ALL_TARGET=    		World
+USE_PERL5=	yes
+IGNOREFILES=	vnc-latest_doc.tgz
+WRKSRC=		${WRKDIR}/vnc_unixsrc
+USE_IMAKE=	yes
+NO_INSTALL_MANPAGES=	yes
+ALL_TARGET=	World
 
 # We have to frob a few things, and we want our own permissions, so it's easier
 # to do the install ourselves.

@@ -8,11 +8,11 @@ PORTNAME=	pdmenu
 PORTVERSION=	1.2.65
 CATEGORIES=	misc
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
-DISTNAME=       pdmenu_${PORTVERSION}
+DISTNAME=	pdmenu_${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 
-LIB_DEPENDS=    slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/pdmenu
 MAN1=		pdmenu.1
 MAN5=		pdmenurc.5
 
-CONFIGURE_ENV=  SLANG_LIB_LOC='${PREFIX}/lib' \
+CONFIGURE_ENV=	SLANG_LIB_LOC='${PREFIX}/lib' \
 		SLANG_H_LOC='${PREFIX}/include/slang.h'
 
 pre-install:

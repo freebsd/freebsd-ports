@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	comline
-PORTVERSION= 	4.0D
+PORTVERSION=	4.0D
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.w3.org/pub/old/comline/ \
+MASTER_SITES=	ftp://ftp.w3.org/pub/old/comline/ \
 		ftp://ftp.w3.org/pub/libwww/old/ \
 		ftp://ftp-eu.w3.org/pub/old/comline/ \
 		ftp://ftp-eu.w3.org/pub/libwww/old/
-DISTFILES=      w3c-libwww-4.0D.tar.gz \
+DISTFILES=	w3c-libwww-4.0D.tar.gz \
 		w3c_4.0D_src.tar.gz
 
-MAINTAINER=     ache@freebsd.org
+MAINTAINER=	ache@freebsd.org
 
 WRKSRC=		${WRKDIR}/WWW
 

@@ -7,15 +7,15 @@
 
 PORTNAME=	ispell
 PORTVERSION=	1.0
-CATEGORIES=     russian textproc
-MASTER_SITES=   http://www.ispras.ru/~knizhnik/
+CATEGORIES=	russian textproc
+MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 DISTNAME=	rispell
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-BUILD_DEPENDS=  ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-WRKSRC=         ${WRKDIR}/russian-ispell
+WRKSRC=		${WRKDIR}/russian-ispell
 
 do-install:
 	cd ${WRKSRC} && \

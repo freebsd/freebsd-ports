@@ -13,11 +13,11 @@ MASTER_SITES=	http://www.exploits.org/nut/release/
 MAINTAINER=	bp@butya.kz
 
 .if defined(CGI)
-LIB_DEPENDS=    gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 .endif
 
-GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc/nut \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-cgipath=${PREFIX}/share/nut/cgi \
 		--with-modelpath=${PREFIX}/libexec/nut \
 		--with-statepath=/var/db

@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	lynx-ssl
-PORTVERSION= 	2.8.3.1
+PORTVERSION=	2.8.3.1
 CATEGORIES=	www
-MASTER_SITES=   ftp://lynx.isc.org/current/
+MASTER_SITES=	ftp://lynx.isc.org/current/
 DISTNAME=	lynx2.8.3rel.1
 
-USE_OPENSSL=	YES
-USE_BZIP2=	YES
+USE_OPENSSL=	yes
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
 PATCH_SITES=	http://www.moxienet.com/lynx/
 PATCHFILES=	lynx-283-ssl.patch.gz
-PATCH_DIST_STRIP= -p1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sec@42.org
 
-GNU_CONFIGURE=  YES
+GNU_CONFIGURE=	yes
 CFLAGS+=	-I${OPENSSLINC}/openssl
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc" \
+CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc" \
 		--enable-nsl-fork
-MAKEFILE=       makefile
-INSTALL_TARGET= install-full
+MAKEFILE=	makefile
+INSTALL_TARGET=	install-full
 MAN1=		lynx.1
 
 WRKSRC=		${WRKDIR}/lynx2-8-3

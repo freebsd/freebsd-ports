@@ -9,7 +9,7 @@ PORTNAME=	acron
 PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/others/
-DISTNAME=       ${PORTNAME}
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

@@ -14,10 +14,10 @@ DISTNAME=	libnet-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 
-USE_PERL5=	YES
+USE_PERL5=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=           \
+MAN3=		\
 		Net::Cmd.3 \
 		Net::Domain.3 \
 		Net::DummyInetd.3 \
@@ -32,6 +32,6 @@ MAN3=           \
 		Net::libnetFAQ.3
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
 .include <bsd.port.mk>

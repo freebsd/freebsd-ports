@@ -20,9 +20,9 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_PERL5=	yes
 
-WRKSRC=         ${WRKDIR}/${DISTNAME}/ext/GDBM_File
+WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 
-MAN3=           GDBM_File.3
+MAN3=		GDBM_File.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:

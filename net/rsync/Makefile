@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  rsync
 # Date created:			  Sat Aug 3, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
@@ -8,7 +7,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.4.6
-CATEGORIES=     net ipv6
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
@@ -26,9 +25,9 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-CONFIGURE_ARGS= --enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6
 .else
-CONFIGURE_ARGS= --disable-ipv6
+CONFIGURE_ARGS=	--disable-ipv6
 .endif
 MAN1=		rsync.1
 MAN5=		rsyncd.conf.5
