@@ -25,6 +25,7 @@
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
     SUBDIR += kacst_fonts
+    SUBDIR += khotot
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += mkbold
