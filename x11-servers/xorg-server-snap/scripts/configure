@@ -1,0 +1,31 @@
+#!/bin/sh
+
+LOCALDEF=$WRKDIR/.config
+
+rm -f $LOCALDEF
+echo "#define InstallXserverSetUID NO"		>> $LOCALDEF
+echo "#define JoystickSupport NO"		>> $LOCALDEF
+echo "#define BuildLBX NO"			>> $LOCALDEF
+echo "#define XnestServer NO"			>> $LOCALDEF
+echo "#define BuildFontServer NO"		>> $LOCALDEF
+echo "#define XVirtualFramebufferServer NO"	>> $LOCALDEF
+echo "#define XprtServer NO"			>> $LOCALDEF
+echo "#define LibInstall NO"			>> $LOCALDEF
+echo "#define ForceNormalLib NO"		>> $LOCALDEF
+echo "#define XTrueTypeInstallCConvHeaders NO"	>> $LOCALDEF
+echo "#define BuildServer YES"			>> $LOCALDEF
+echo "#define LibInstallBuild YES"		>> $LOCALDEF
+echo "#define ModInstall YES"			>> $LOCALDEF
+echo "#define XF86Server NO"			>> $LOCALDEF
+echo "#define BuildServersOnly YES"		>> $LOCALDEF
+echo "#define BuildGLXLibrary YES"		>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
+echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
+#XXX echo "#define BuildXFree86ConfigTools YES"	>> $LOCALDEF
+
+if [ X$WITH_DEBUG != X ]; then
+	export CFLAGS="-g $CFLAGS"
+	echo "#define InstPgmFlags"		>> $LOCALDEF
+fi
+
+sh $PORTSDIR/x11-servers/xorg-server/scripts/configure.gen

@@ -1,0 +1,6 @@
+This package contains the X.Org X server and some associated programs.
+
+WWW: http://www.freedesktop.org/Software/xorg
+
+- Eric Anholt
+anholt@FreeBSD.org

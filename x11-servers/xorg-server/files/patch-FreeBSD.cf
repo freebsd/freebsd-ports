@@ -1,0 +1,89 @@
+--- config/cf/FreeBSD.cf.orig	Fri Apr  2 13:47:10 2004
++++ config/cf/FreeBSD.cf	Fri May  7 17:32:47 2004
+@@ -109,7 +109,7 @@
+ # endif
+ # define HasPosixThreads	YES
+ # define ThreadedX		YES
+-# define SystemMTDefines	-D_REENTRANT -D_THREAD_SAFE
++# define SystemMTDefines	FreeBSDPTHREAD_CFLAGS
+ /*
+  * FreeBSD has tread-safe api but no getpwnam_r yet.
+  */
+@@ -119,9 +119,8 @@
+ # else
+ #  define MTSafeAPIDefines	-DXUSE_MTSAFE_API
+ # endif
+-# if HasLibPthread
+-#  define ThreadsLibraries	-lpthread
+-# else
++# define ThreadsLibraries	FreeBSDPTHREAD_LIBS
++# if !HasLibPthread
+ #  if OSRelVersion >= 500043
+ #   define BuildThreadStubLibrary  NO
+ #   define NeedUIThrStubs          NO
+@@ -130,10 +129,7 @@
+ #   define NeedUIThrStubs          YES
+ #  endif
+ #  if (OSRelVersion >= 500016)
+-#   define ThreadsLibraries	-lc_r
+ #   define SharedGLReqs		$(LDPRELIBS) $(XLIB) -lc
+-#  else
+-#   define ThreadsLibraries	-pthread
+ #  endif
+ #  define SharedX11Reqs		$(LDPRELIB) $(XTHRSTUBLIB)
+ #  define SharedXtReqs		$(LDPRELIB) $(XONLYLIB) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
+@@ -192,11 +188,11 @@
+  *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
+  */
+ #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
+-# define CcCmd			$(CLIENTENVSETUP) cc
+-# define CplusplusCmd		$(CLIENTENVSETUP) c++
++# define CcCmd			$(CLIENTENVSETUP) FreeBSDCC
++# define CplusplusCmd		$(CLIENTENVSETUP) FreeBSDCXX
+ #else
+-# define CcCmd			cc
+-# define CplusplusCmd		c++
++# define CcCmd			FreeBSDCC
++# define CplusplusCmd		FreeBSDCXX
+ #endif
+ 
+ #define CppCmd			/usr/bin/cpp
+@@ -359,7 +355,7 @@
+ #ifndef LibraryRpathLoadFlags
+ # if UseRpath
+ #  if UseElfFormat
+-#   define LibraryRpathLoadFlags	-rpath $(USRLIBDIRPATH)
++#   define LibraryRpathLoadFlags	-Wl,-rpath $(USRLIBDIRPATH)
+ #  else
+ #   define LibraryRpathLoadFlags	-R $(USRLIBDIRPATH)
+ #  endif
+@@ -426,6 +422,8 @@
+ #if defined(AlphaArchitecture) || defined(Sparc64Architecture) || \
+ 	defined(ia64Architecture) || defined(AMD64Architecture)
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#define AsVISOption            -Av9a
++#define AsOutputArchSize      64
+ #endif
+ #ifdef Sparc64Architecture
+ #define AsVISOption		-Av9a
+@@ -452,18 +450,8 @@
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
+ #endif
+ 
+-/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+-#ifndef DefaultGcc2i386Opt
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2 GccAliasingArgs
+-#endif
+-#endif
+-
+-#ifdef i386Architecture
+-# define OptimizedCDebugFlags DefaultGcc2i386Opt
+-#else
+-# define OptimizedCDebugFlags -O
+-#endif
++#define DefaultGcc2i386Opt
++#define OptimizedCDebugFlags FreeBSDCFLAGS
+ 
+ #ifndef PreIncDir
+ # define PreIncDir	/usr/include

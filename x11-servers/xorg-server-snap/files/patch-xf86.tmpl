@@ -1,0 +1,12 @@
+--- config/cf/xf86.tmpl.orig	Tue Dec 17 04:21:38 2002
++++ config/cf/xf86.tmpl	Thu Jan  2 14:10:44 2003
+@@ -19,6 +19,9 @@
+ #ifdef UseInstalled
+        IMAKE_CMD = $(IMAKE) -DUseInstalled -I$(TOP) -I$(IRULESRC) \
+ 		   $(IMAKE_DEFINES) $(IMAKE_WARNINGS)
++#elif UseInstalledPrograms
++       IMAKE_CMD = $(IMAKE) -I$(TOP) -I$(IRULESRC) \
++		   $(IMAKE_DEFINES) $(IMAKE_WARNINGS)
+ #else
+        IMAKE_CMD = $(IMAKE) -I$(TOP) -I$(IRULESRC) \
+ 		   $(IMAKE_DEFINES) $(IMAKE_WARNINGS)
