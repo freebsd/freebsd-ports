@@ -57,7 +57,7 @@ PKGNAMESUFFIX?=	-sasl
 .endif
 .if defined(SENDMAIL_WITH_SASL2)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
-RUN_DEPENDS+=	saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 PKGNAMESUFFIX?=	-sasl2
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
