@@ -118,6 +118,7 @@
     SUBDIR += gcompris
     SUBDIR += gcompris2
     SUBDIR += gemdropx
+    SUBDIR += ggz-client-libs
     SUBDIR += gl-117
     SUBDIR += glasteroids
     SUBDIR += glchess

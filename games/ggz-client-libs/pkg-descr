@@ -1,0 +1,6 @@
+GGZ Gaming Zone core client libraries provides the common procedures
+and utilities required to run the GGZ client and games.  The routines
+are shared by other modules in order to ease coding and promote
+compatibility and stability.
+
+WWW: http://www.ggzgamingzone.org/
