@@ -27,6 +27,8 @@ COMMENT=	OpenGL hardware acceleration drivers for XFree86
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 
+ONLY_FOR_ARCHS=		i386 alpha
+
 XBUILD_DIRS=		lib/GL
 XINSTALL_DIRS=		lib/GL/mesa/src/drv
 
