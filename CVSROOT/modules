@@ -6303,6 +6303,7 @@ p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
 p5-Data-UUID	ports/devel/p5-Data-UUID
 p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
+p5-Date-Easter	ports/devel/p5-Date-Easter
 p5-Date-Handler	ports/math/p5-Date-Handler
 p5-Date-ICal	ports/devel/p5-Date-ICal
 p5-Date-ISO	ports/devel/p5-Date-ISO
