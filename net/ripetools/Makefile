@@ -14,6 +14,8 @@ DISTNAME=	ripe-whois-tools-2.4
 MAINTAINER=	joe@uk.freebsd.org
 COMMENT=	RIPE's own version of whois, and a RIPE database tool
 
+DEPRECATED=	"Please use net/ripe-whois!"
+
 NO_WRKSUBDIR=	yes
 
 MAN1=		ripewhois.1
