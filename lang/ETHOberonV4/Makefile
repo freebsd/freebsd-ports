@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhicks@glenatl.glenayre.com
 
+BROKEN=		"Does not run"
 NO_CDROM=	licensing
 NO_PACKAGE=	no version number on distfile
 
@@ -38,7 +39,7 @@ do-install:
 	@${MV} ${WRKSRC} ${PREFIX}/lib/ETHOberonV4
 	@${SCRIPTDIR}/MakeStartV4 ${PREFIX}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " '${PREFIX}/bin/StartV4' will launch ETH Oberon V4
+	@${ECHO_MSG} " '${PREFIX}/bin/StartV4' will launch ETH Oberon V4"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
