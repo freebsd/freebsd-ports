@@ -24,6 +24,7 @@
     SUBDIR += claraocr
     SUBDIR += cqcam
     SUBDIR += cthumb
+    SUBDIR += cybervrml97
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dc3play

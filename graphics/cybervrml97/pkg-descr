@@ -1,0 +1,5 @@
+CyberVRML97 for C++ is a development library of VRML97/2.0 applications.
+Using the library, you can read and write the VRML files, set and get the
+scene graph information, draw the geometries, run the behaviors easily.
+
+WWW: http://www.cyber.koganei.tokyo.jp/vrml/cv97/cv97cc/
