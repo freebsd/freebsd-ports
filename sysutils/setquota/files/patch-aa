@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Mar 12 09:32:55 1997
++++ Makefile	Sat Sep 27 18:34:27 1997
+@@ -1,10 +1,11 @@
+-# $Id: Makefile,v 1.9 1997/03/12 08:32:55 winter Exp $
++# From: $Id: Makefile,v 1.9 1997/03/12 08:32:55 winter Exp $
+ 
+ PROG=		setquota
+ SRCS=		printquota.c setquota.c quotatool.c
+-CFLAGS+=	-g -DDEBUG # -Wall -static
++#CFLAGS+=	-g -DDEBUG # -Wall -static
+ MAN8=		getquota.8 setquota.8
+-LINKS=		/usr/sbin/setquota /usr/sbin/getquota
+-BINDIR=		/usr/sbin
++MANDIR=		${PREFIX}/man/man
++LINKS=		${PREFIX}/sbin/setquota ${PREFIX}/sbin/getquota
++BINDIR=		${PREFIX}/sbin
+ 
+ .include <bsd.prog.mk>
