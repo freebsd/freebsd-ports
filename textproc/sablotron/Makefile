@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	0.96
-PORTREVISION=	2
+PORTVERSION=	0.97
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-0.81${EXTRACT_SUFX}
-
-PATCH_SITES=	$(MASTER_SITES)
-PATCHFILES=	$(DISTNAME).1.patch
-PATCH_DIST_STRIP=	-p2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sablot-docs-02.10.01${EXTRACT_SUFX}
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.4:${PORTSDIR}/textproc/expat2
@@ -30,11 +26,11 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 
 INSTALLS_SHLIB=	yes
 
-SHLIB_MAJOR=	69	# API changes counter
-PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}" DOCSDIR="share/doc/${PORTNAME}"
+SHLIB_MAJOR=	70	# API changes counter
+PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
-		LIBTOOL=${LIBTOOL}
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LIBTOOL=${LIBTOOL} \
+		LDFLAGS="-L${LOCALBASE}/lib -lstdc++"
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	-a
@@ -70,23 +66,26 @@ CONFIGURE_ARGS+=	--enable-debugger
 
 WRKSRCDOC=	${WRKDIR}/sablot-docs
 DOCSLIST=	README README_JS RELEASE
+DOCSDIRLIST=	jsdom-ref sablot sxp
 
 pre-patch:
 	@${PERL} -pi -e \
 	's!(?<=libsablot_la_LDFLAGS = -version-info )(\d+):(\d+):\1!${SHLIB_MAJOR}:$$1:${SHLIB_MAJOR}!;' \
 		${WRKSRC}/src/engine/Makefile.am
+	@${ECHO} "SUBDIRS = man" > ${WRKSRC}/doc/Makefile.am
 
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}/jsdom-ref/apidocs
-	@${MKDIR} ${DOCSDIR}/sxp/apidocs
+	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!}	${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRCDOC}/*.html		${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRCDOC}/jsdom-ref/*.html	${DOCSDIR}/jsdom-ref
-	@${INSTALL_DATA} ${WRKSRCDOC}/jsdom-ref/apidocs/* ${DOCSDIR}/jsdom-ref/apidocs
-	@${INSTALL_DATA} ${WRKSRCDOC}/sxp/*.html	${DOCSDIR}/sxp
-	@${INSTALL_DATA} ${WRKSRCDOC}/sxp/apidocs/*	${DOCSDIR}/sxp/apidocs
+.for _DOCSDIR in ${DOCSDIRLIST}
+	@${MKDIR} ${DOCSDIR}/${_DOCSDIR}/apidocs
+	@${INSTALL_DATA} ${WRKSRCDOC}/${_DOCSDIR}/*.html ${DOCSDIR}/${_DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRCDOC}/${_DOCSDIR}/apidocs/*.css \
+		${WRKSRCDOC}/${_DOCSDIR}/apidocs/*.html \
+		${DOCSDIR}/${_DOCSDIR}/apidocs/
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
