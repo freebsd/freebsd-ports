@@ -14,6 +14,7 @@
     SUBDIR += aim
     SUBDIR += airport
     SUBDIR += amcl
+    SUBDIR += amsn
     SUBDIR += angst
     SUBDIR += ap-utils
     SUBDIR += apinger

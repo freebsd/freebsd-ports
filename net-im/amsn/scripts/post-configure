@@ -1,0 +1,14 @@
+#! /bin/sh
+
+cd $WRKSRC
+
+for i in alarm.tcl amsn
+do
+	mv $i $i.orig
+	sed -e "s=/usr/bin/wish=$PREFIX/bin/wish8.4=" < $i.orig > $i
+	rm $i.orig
+done
+
+mv dkffont.tcl dkffont.tcl.orig
+sed -e "s=wish8.0=wish8.4=" < dkffont.tcl.orig > dkffont.tcl
+rm dkffont.tcl.orig
