@@ -21,6 +21,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-da.po
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-de.po
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-es.po
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-ja.po
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-nl.po
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto-sv.po
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPhoto/i18n/cmfphoto.pot
