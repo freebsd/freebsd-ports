@@ -25,7 +25,7 @@ MAN1=	idraw.1 iclass.1 drawtool.1 comterp.1 comdraw.1 flipbook.1 graphdraw.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == alpha || ${ARCH} == sparc64
+.if ${ARCH} != "i386"
 BROKEN=		"fails to configure on ${ARCH}"
 .endif
 .if ${ARCH} == i386 && ${OSVERSION} > 500000
