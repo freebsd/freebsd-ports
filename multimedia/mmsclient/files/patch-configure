@@ -1,0 +1,9 @@
+--- configure.orig	Mon Mar  4 21:23:59 2002
++++ configure	Mon Mar  4 21:24:40 2002
+@@ -1649,7 +1649,6 @@
+    fi
+ 
+ 
+-dbl
+ 
+ CFLAGS="$CFLAGS -Wall" 

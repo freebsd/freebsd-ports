@@ -1,0 +1,48 @@
+.\"
+.\"man-page for mmsclient
+.\"
+.\"Derived from the man-page for axel download manager, which was originally
+.\"based on example in the wonderful book called Beginning Linux Programming,
+.\"written by Richard Stone and Neil Matthew.
+.\"
+.TH MMSCLIENT 1
+
+.SH NAME
+\fBmmsclient\fP \- download Microsoft Media streams
+
+.SH SYNOPSIS
+.B mmsclient
+\fIurl1\fP
+
+.SH DESCRIPTION
+mmsclient is a simple utility that allows you to download Internet streams
+using Microsoft's MMS protocol, e.g. CNN video and similar.  Downloaded
+stream can be watched/listened with any software that understands Microsoft
+Media format, like xine with mms-plugin.
+
+.SH OPTIONS
+.PP
+Only one argument is required, the URL to the stream you want to download.
+Don't let to confuse yourself by verbose output, once it's finished, you'll
+find the stream .asf file in the current directory.
+
+.SH CREDITS
+This software would never have been possible without the help from
+http://get.to/sdp.
+
+.SH EXAMPLES
+.nf
+mmsclient mms://netshow.msn.com/msnbc8
+.fi
+
+This will attempt to download Microsoft Media stream and save it as
+`msnbc8' file in the current directory.
+
+.SH BUGS
+.PP
+Lacks some useful command line options, not to mention probable bugs.
+
+.SH AUTHORS
+mmsclient was written by "Major MMS" (http://www.geocities.com/majormms/).
+
+The manual page was written by Alexey Dokuchaev (danfe@regency.nsu.ru).

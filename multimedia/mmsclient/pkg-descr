@@ -1,0 +1,6 @@
+mmsclient allows you to download Internet streams using Microsoft's
+MMS protocol, e.g. CNN video and similar.  Downloaded stream can
+be watched/listened with any software that understands Microsoft
+Media format, like xine with mms-plugin.
+
+WWW: http://www.geocities.com/majormms/
