@@ -963,3 +963,9 @@ sysutils/linux-e2fsprogs|sysutils/e2fsprogs|2004-03-01|Native version available
 sysutils/fsck_ext2fs|sysutils/e2fsprogs|2004-03-01|Better utility
 graphics/gqview-devel|graphics/gqview|2004-03-02|merged
 audio/audacity-devel|audio/audacity|2004-03-03|removed (obsolete)
+japanese/vfxdvi118||2004-03-04|removed (obsolate)
+japanese/vfxdvi240||2004-03-04|removed (obsolate)
+japanese/vfxdvi300||2004-03-04|removed (obsolate)
+japanese/vfxdvi360||2004-03-04|removed (obsolate)
+japanese/vfxdvi400||2004-03-04|removed (obsolate)
+japanese/vfxdvi600||2004-03-04|removed (obsolate)
