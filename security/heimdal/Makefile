@@ -82,6 +82,8 @@ pre-install:
 	@${ECHO} include/ifaddrs.h >> ${PLIST}
 .endif
 
+.include "Makefile.man"
+
 # awful hack to avoid running automake after patching configure
 pre-configure:
 	@find ${WRKSRC} -name Makefile.in -exec ${TOUCH} {} \;
