@@ -3,7 +3,7 @@
 # Date created:		29 July 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/08 08:58:45 asami Exp $
+# $Id: Makefile,v 1.2 1995/10/04 10:18:39 asami Exp $
 #
 
 DISTNAME=	noweb-2.7a
@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
-RUN_DEPENDS=	icont:${PORTSDIR}/lang/icon
+BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
+RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
 
 WRKSRC=		${WRKDIR}/src
 
