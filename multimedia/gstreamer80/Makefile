@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,7 @@ IGNORE=		Needs help fixing scheduling code under FreeBSD
 
 USE_BISON=	yes
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -30,18 +31,16 @@ CONFIGURE_ARGS= --disable-tests \
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_TARGET=
 INSTALLS_SHLIB=	yes
 
 MAN1=	gst-complete.1 gst-compprep.1 gst-inspect.1 gst-launch.1 \
+	gst-feedback.1 gst-md5sum.1 \
 	gst-register.1 gst-xmllaunch.1
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 
 post-patch:
-# do not prefix binary names with anything
-	@${REINPLACE_CMD} -E -e \
-		's|(@program_transform_name@),[^,]+,|\1,s/$$$$//,|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # use proper dir
 	@${REINPLACE_CMD} -E -e \
 		's|^(pkgconfigdir).*$$|\1=${PREFIX}/libdata/pkgconfig|' \
@@ -64,5 +63,9 @@ post-configure:
 # remove version number postfix from library names
 	@${REINPLACE_CMD} -E -e 's|-release ${PORTVERSION}||' \
 		${WRKSRC}/gst/Makefile
+
+post-install:
+# register plugins
+	@${PREFIX}/bin/gst-register 2>/dev/null
 
 .include <bsd.port.mk>

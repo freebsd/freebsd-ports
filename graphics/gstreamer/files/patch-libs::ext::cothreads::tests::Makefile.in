@@ -1,6 +1,6 @@
---- libs/ext/cothreads/tests/Makefile.in.orig	Wed Jul 10 15:44:45 2002
-+++ libs/ext/cothreads/tests/Makefile.in	Wed Jul 10 15:45:06 2002
-@@ -76,7 +76,7 @@
+--- libs/ext/cothreads/tests/Makefile.in.orig	Sat Sep 28 23:05:55 2002
++++ libs/ext/cothreads/tests/Makefile.in	Sat Sep 28 23:06:23 2002
+@@ -83,7 +83,7 @@
  GLIB_CFLAGS = @GLIB_CFLAGS@
  GLIB_LIBS = @GLIB_LIBS@
  GTHREAD_CFLAGS = @GTHREAD_CFLAGS@

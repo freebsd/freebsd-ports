@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,6 +27,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-alsa \
+		--disable-cdrom \
 		--disable-mjpegtools \
 		--disable-qcam \
 		--disable-v4l
@@ -37,6 +37,7 @@ CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_TARGET=
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	LOCALBASE="${LOCALBASE}"
 
@@ -54,8 +55,7 @@ post-patch:
 # as of this writing, FreeBSD does not support lrint* C99 math functions
 # do not prefix binary names with anything
 	@${REINPLACE_CMD} -E -e \
-		's|^#define.*LRINT.*$$||; \
-		s|(@program_transform_name@),[^,]+,|\1,s/$$$$//,|' \
+		's|^#define.*LRINT.*$$||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # use proper dir
 	@${REINPLACE_CMD} -E -e \
@@ -66,9 +66,12 @@ post-patch:
 		's|-@VERSION@||' \
 		${WRKSRC}/gstreamer-libs.pc.in
 # remove version number from include dir name
+# respect CFLAGS
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
-		's|^(lib[[:alpha:]]+includedir.+)-@VERSION@|\1|'
+		's|^(lib[[:alpha:]]+includedir.+)-@VERSION@|\1|; \
+		s,-O(2|3),,; \
+		s|-mcpu=i486||'
 # gconf is not working in this release
 	@${REINPLACE_CMD} -E -e \
 		's,^((DIST_SUBDIRS|SUBDIRS).+)gconf,\1,' \
@@ -88,6 +91,10 @@ post-patch:
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|; \
 		s|stdint.h|inttypes.h|'
+
+post-install:
+# register plugins
+	@${LOCALBASE}/bin/gst-register 2>/dev/null
 
 .include <bsd.port.pre.mk>
 
@@ -138,9 +145,8 @@ WITH_AVIFILE=yes
 .endif
 
 # esound
-.if exists(${LOCALBASE}/lib/libesd.a)
-USE_GNOME+=	esound
-PKGNAMESUFFIX=	-esound
+.if (${HAVE_GNOME:Mesound}!="")
+WITH_ESOUND=yes
 .endif
 
 # flac
@@ -265,13 +271,12 @@ PLIST_SUB+=	AVIFILE=""
 .endif
 
 # esound
-.if !(${HAVE_GNOME:Mesound}!="" || defined(WITH_ESOUND))
+.ifndef(WITH_ESOUND)
 CONFIGURE_ARGS+=	--disable-esd \
 			--disable-esdtest
 PLIST_SUB+=	ESOUND="@comment "
 .else
 USE_GNOME+=	esound
-PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}  \
 			--with-esd-exec-prefix=${LOCALBASE}
 PLIST_SUB+=	ESOUND=""
@@ -468,7 +473,7 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_AVIFILE to enable avifile Video plugin'
 .endif
-.if !(${HAVE_GNOME:Mesound}!="" || defined(WITH_ESOUND))
+.ifndef(WITH_ESOUND)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_ESOUND to enable esound Audio plugin'
 .endif

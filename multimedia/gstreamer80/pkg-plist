@@ -4,6 +4,7 @@ bin/gst-compprep
 bin/gst-feedback
 bin/gst-inspect
 bin/gst-launch
+bin/gst-md5sum
 bin/gst-register
 bin/gst-xmllaunch
 include/gstreamer/gst/bytestream/bytestream.h
@@ -16,10 +17,11 @@ include/gstreamer/gst/control/dplinearinterp.h
 include/gstreamer/gst/control/unitconvert.h
 include/gstreamer/gst/getbits/getbits.h
 include/gstreamer/gst/gst.h
+include/gstreamer/gst/gstatomic.h
 include/gstreamer/gst/gstautoplug.h
 include/gstreamer/gst/gstbin.h
 include/gstreamer/gst/gstbuffer.h
-include/gstreamer/gst/gstbufferpool.h
+include/gstreamer/gst/gstbufferpool-default.h
 include/gstreamer/gst/gstcaps.h
 include/gstreamer/gst/gstclock.h
 include/gstreamer/gst/gstconfig.h
@@ -33,6 +35,7 @@ include/gstreamer/gst/gstformat.h
 include/gstreamer/gst/gstinfo.h
 include/gstreamer/gst/gstlog.h
 include/gstreamer/gst/gstmarshal.h
+include/gstreamer/gst/gstmemchunk.h
 include/gstreamer/gst/gstobject.h
 include/gstreamer/gst/gstpad.h
 include/gstreamer/gst/gstparse.h
@@ -56,23 +59,25 @@ include/gstreamer/gst/gstxml.h
 include/gstreamer/gst/putbits/putbits.h
 lib/gst/libgstautoplugcache.so
 lib/gst/libgstautoplugger.so
-lib/gst/libgstbasicscheduler.so
+lib/gst/libgstbasicomegascheduler.so
+lib/gst/libgstbasicwingoscheduler.so
 lib/gst/libgstbytestream.so
-lib/gst/libgstcontrol.so
 lib/gst/libgstelements.so
-lib/gst/libgstfastbasicscheduler.so
-lib/gst/libgstfaststandardscheduler.so
+lib/gst/libgstfastomegascheduler.so
+lib/gst/libgstfastwingoscheduler.so
 lib/gst/libgstgetbits.so
+lib/gst/libgstoptomegascheduler.so
 lib/gst/libgstputbits.so
 lib/gst/libgstspider.so
-lib/gst/libgststandardscheduler.so
 lib/gst/libgststaticautoplug.so
 lib/gst/libgststaticautoplugrender.so
 lib/gst/libgsttypes.so
+lib/libgstcontrol.so
 lib/libgstreamer.a
 lib/libgstreamer.so
 lib/libgstreamer.so.0
 libdata/pkgconfig/gstreamer.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm lib/gst
 @dirrm include/gstreamer/gst/putbits
 @dirrm include/gstreamer/gst/getbits
