@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader/Simple/.packlist
+%%SITE_PERL%%/ConfigReader/Simple.pm
+@unexec rmdir %D/%%SITE_PERL%%/ConfigReader 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ConfigReader 2>/dev/null || true
