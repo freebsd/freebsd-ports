@@ -1,0 +1,21 @@
+--- configure.orig	Mon Aug  4 21:43:10 2003
++++ configure	Mon Aug  4 21:44:17 2003
+@@ -19318,7 +19318,8 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool13/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -19612,7 +19613,7 @@
+ 
+     echo "$as_me:$LINENO: checking where to install panel plugins" >&5
+ echo $ECHO_N "checking where to install panel plugins... $ECHO_C" >&6
+-  XFCE4_PANEL_PLUGINSDIR=`$PKG_CONFIG --variable=pluginsdir xfce4-panel-1.0`
++  XFCE4_PANEL_PLUGINSDIR=${prefix}/lib/xfce4/panel-plugins
+ 
+   echo "$as_me:$LINENO: result: $XFCE4_PANEL_PLUGINSDIR" >&5
+ echo "${ECHO_T}$XFCE4_PANEL_PLUGINSDIR" >&6
