@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -16,24 +16,23 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickFo
 		${PEARDIR}/DB/DataObject.php:${PORTSDIR}/databases/pear-DB_DataObject
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LATEST_LINK=	pear-DB_DataObject_FormBuilder
+OPTIONS=	PEAR_DATE "PEAR::Date support" off \
+		PEAR_HTML_TABLE "PEAR::HTML_Table support" off
+
 USE_PHP=	yes
 
 CATEGORY=	DB/DataObject
 FILES=		FormBuilder.php FormBuilder/QuickForm.php FormBuilder/QuickForm/ElementTable.php
 
-LATEST_LINK=	pear-DB_DataObject_FormBuilder
-OPTIONS=	PEAR_DATE "PEAR::Date support" off \
-		PEAR_HTML_TABLE "PEAR::HTML_Table support" off
-
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_PEAR_DATE)
-BUILD_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
+RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
 .endif
 
 .if defined(WITH_PEAR_HTML_TABLE)
-BUILD_DEPENDS+=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table
+RUN_DEPENDS+=	${PEARDIR}/HTML/Table.php:${PORTSDIR}/devel/pear-HTML_Table
 .endif
 
+.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
