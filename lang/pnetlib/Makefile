@@ -7,6 +7,7 @@
 
 PORTNAME=	pnetlib
 PORTVERSION=	${PNET_VERSION}
+PORTREVISION=	${PNET_REVISION}
 CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 
@@ -16,14 +17,29 @@ COMMENT=	C\# system library for pnet
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
 		treecc:${PORTSDIR}/lang/treecc
 
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+.endif
+
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 STRIP=		# Nothing to be stripped.
 
+PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
+	JScript-embed.txt JScript-internals.txt csunit_howto.html \
+	pcf-font-format.txt translating-pnetlib.txt
+
+.include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/cscc/lib/libXsharpSupport.so.0
 	${STRIP_CMD} ${PREFIX}/lib/cscc/lib/libXsharpSupport.a
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for docfile in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
+.endfor
+.endif
 
-.include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.post.mk>
