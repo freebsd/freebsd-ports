@@ -9,7 +9,7 @@
 PORTNAME=	vcheck
 PORTVERSION=	1.2.1
 CATEGORIES=	ftp
-MASTER_SITES= 	http://www.tu-ilmenau.de/~gomar/stuff/vcheck/
+MASTER_SITES= 	http://www.stud.tu-ilmenau.de/~gomar/stuff/vcheck/
 
 MAINTAINER=	svenasse@polaris.ca
 
