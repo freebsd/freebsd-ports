@@ -1,6 +1,6 @@
 bin/powerpc-rtems-g77
-lib/gcc-lib/powerpc-rtems/3.2.1/f771
-lib/gcc-lib/powerpc-rtems/3.2.1/include/g2c.h
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/f771
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/include/g2c.h
 powerpc-rtems/lib/m403/roe/libg2c.la
 powerpc-rtems/lib/m403/roe/libg2c.a
 powerpc-rtems/lib/m403/roe/libfrtbegin.a

@@ -6,26 +6,34 @@
 #
 
 PORTNAME=	g77
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		${MASTER_SITE_SOURCEWARE:S/$/:gcc/}
 MASTER_SITE_SUBDIR=	newlib \
-			gcc/releases/${G77NAME}/:gcc
+			releases/${G77NAME}/:gcc
 DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${G77NAME}.tar.gz:gcc
-PATCHFILES=	${G77NAME}-rtems-20021209.diff \
-		${NEWLIBNAME}-rtems-20030120.diff
+PATCHFILES=	${G77NAME}-rtems-20030507a.diff \
+		${NEWLIBNAME}-rtems-20030605.diff
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
-COMMENT=	FSF F77-gcc-3.2.1 base-port for RTEMS development
+COMMENT=	FSF F77-gcc-3.2.3 base-port for RTEMS development
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
 
 LCLTARGET?=	i386-rtems
 
-G77NAME=	gcc-3.2.1
+GCCVERSION=	3.2.3
+G77NAME=	gcc-${GCCVERSION}
+PLIST_SUB+=	"GCCVERSION=${GCCVERSION}"
 NEWLIBNAME=	newlib-1.11.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-g77
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
@@ -37,12 +45,14 @@ RUN_DEPENDS=	${LCLTARGET}-gcc:${PORTSDIR}/devel/${LCLTARGET}-gcc
 PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all
+ALL_TARGET=	all info
 NO_CPUCFLAGS=	yes
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
-			--enable-languages="f77"
+			--enable-languages="f77" \
+			--with-libiconv-prefix=${LOCALBASE} \
+			--without-included-gettext
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${G77NAME}/configure
 
@@ -65,4 +75,4 @@ do-install:
 	@(cd ${WRKDIR}/build-${LCLTARGET} && \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
