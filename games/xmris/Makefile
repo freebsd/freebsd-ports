@@ -3,12 +3,13 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1995/04/11 00:20:50 asami Exp $
+# $Id: Makefile,v 1.11 1996/11/18 11:26:15 asami Exp $
 
-DISTNAME=	xmris.4.02
-PKGNAME=	xmris-4.02
+DISTNAME=	xmris.4.04
+PKGNAME=	xmris-4.04
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/contrib/games
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
