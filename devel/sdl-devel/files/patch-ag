@@ -1,0 +1,24 @@
+--- src/Makefile.in.orig	Fri Mar 31 08:31:12 2000
++++ src/Makefile.in	Sun Apr 23 23:45:07 2000
+@@ -118,10 +118,10 @@
+ DIST_SUBDIRS = $(CORE_SUBDIRS) $(EXTRA_SUBDIRS)
+ 
+ # The SDL library target
+-lib_LTLIBRARIES = libSDL.la
++lib_LTLIBRARIES = libSDL-1.1.la
+ 
+ libSDL_la_SOURCES = $(GENERAL_SRCS)
+-libSDL_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libSDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_la_LIBADD =  	main/libarch.la			@SDL_EXTRALIBS@			@SYSTEM_LIBS@
+ 
+@@ -239,7 +239,7 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libSDL.la: $(libSDL_la_OBJECTS) $(libSDL_la_DEPENDENCIES)
++libSDL-1.1.la: $(libSDL_la_OBJECTS) $(libSDL_la_DEPENDENCIES)
+ 	$(LINK) -rpath $(libdir) $(libSDL_la_LDFLAGS) $(libSDL_la_OBJECTS) $(libSDL_la_LIBADD) $(LIBS)
+ 
+ # This directory's subdirectories are mostly independent; you can cd
