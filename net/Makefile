@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1998/02/16 15:29:02 steve Exp $
+# $Id: Makefile,v 1.142 1998/02/24 20:29:42 steve Exp $
 #
 
     SUBDIR += archie
@@ -18,6 +18,7 @@
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
+    SUBDIR += dict
     SUBDIR += dip
     SUBDIR += echoping
     SUBDIR += fping
