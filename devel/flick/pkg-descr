@@ -1,0 +1,31 @@
+Flick is an interface definition language (IDL) compiler ("stub generator")
+supporting remote procedure call (RPC) and remote method invocation (RMI) for
+client/server or distributed object systems.  What sets it apart from other IDL
+compilers is that it is highly optimizing while also supporting several IDLs,
+message formats, and transport mechanisms.  Flick currently has front ends for
+the CORBA, Sun ONC RPC, and Mach MIG IDLs, and middle and back ends that support
+CORBA IIOP, ONC/TCP, MIG-style Mach messages, and Fluke IPC (see below).  Flick
+produces stubs in the C language.  A substantial user's manual is provided.
+
+Flick is designed to be a "kit": the user picks the IDL, language mapping, and
+transport components that are required for any particular system.  Our goal is
+to make it straightforward to add new components to the kit to process new
+IDLs, language mappings, and transports.  (Collaborators welcome!)  Flick's
+framework can also be used to support interface annotation.  Full source for
+the Flick compiler is distributed under the terms of the GNU General Public
+License; source for the Flick runtime is distributed under a BSD-style license.
+
+Flick-generated marshal and unmarshal code generally runs between 2 and 17
+times as fast as code produced by other IDL compilers, commercial and free.  On
+stock hardware and operating systems, Flick-generated stubs can increase
+end-to-end client/server throughput by factors between 1.2 and 3.7 or more.
+
+Our paper describing these results was presented at PLDI'97, the major compiler
+conference, in June (see http://www.cs.bu.edu/pub/pldi97/).  The paper is
+included as part of the Flick distribution, and is separately available at
+ftp://mancos.cs.utah.edu/papers/flick-pldi-97-abs.html.
+
+    URL: http://www.cs.utah.edu/projects/flux/flick/
+
+Jay Lepreau, lepreau@cs.utah.edu
+University of Utah Computer Science Dept.
