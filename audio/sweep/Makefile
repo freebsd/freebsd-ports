@@ -16,7 +16,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A sound editor for the GNOME/GTK 1.2 desktop
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		samplerate.0:${PORTSDIR}/audio/libsamplerate \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		speex.2:${PORTSDIR}/audio/speex \
 		mad.2:${PORTSDIR}/audio/mad \
