@@ -1,0 +1,1246 @@
+share/doc/postnuke/README-FIRST.txt
+share/doc/postnuke/THEME_UPGRADES.txt
+share/doc/postnuke/UPGRADE.txt
+share/doc/postnuke/pnAPI.pdf
+share/doc/postnuke/pnMDG.pdf
+%%NUKEDIR%%/html/language/eng/admin.php
+%%NUKEDIR%%/html/language/eng/banners.php
+%%NUKEDIR%%/html/language/eng/error.php
+%%NUKEDIR%%/html/language/eng/global.php
+%%NUKEDIR%%/html/language/eng/user.php
+%%NUKEDIR%%/html/language/index.html
+%%NUKEDIR%%/html/docs/COPYING.txt
+%%NUKEDIR%%/html/docs/CREDITS.txt
+%%NUKEDIR%%/html/docs/manual.txt
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-vfp.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-ado.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-ado_access.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-ado_mssql.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-borland_ibase.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-csv.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-db2.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-fbsql.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-firebird.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-ibase.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-informix.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-mssql.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-mysql.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-mysqlt.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-oci8.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-oci8po.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-odbc.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-odbc_mssql.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-odbc_oracle.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-oracle.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-postgres.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-postgres7.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-proxy.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-sqlanywhere.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-sybase.inc.php
+%%NUKEDIR%%/html/pnadodb/drivers/adodb-access.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb-cryptsession.php
+%%NUKEDIR%%/html/pnadodb/adodb-csvlib.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb-errorhandler.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb-errorpear.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb-lib.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb-pear.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb-session.php
+%%NUKEDIR%%/html/pnadodb/adodb.gif
+%%NUKEDIR%%/html/pnadodb/adodb.inc.php
+%%NUKEDIR%%/html/pnadodb/adodb.png
+%%NUKEDIR%%/html/pnadodb/adodb2.gif
+%%NUKEDIR%%/html/pnadodb/adodb2.png
+%%NUKEDIR%%/html/pnadodb/crypt.inc.php
+%%NUKEDIR%%/html/pnadodb/index.html
+%%NUKEDIR%%/html/pnadodb/license.txt
+%%NUKEDIR%%/html/pnadodb/readme.htm
+%%NUKEDIR%%/html/pnadodb/readme.txt
+%%NUKEDIR%%/html/pnadodb/tohtml.inc.php
+%%NUKEDIR%%/html/pnadodb/tute.htm
+%%NUKEDIR%%/html/modules/NS-Past_Nuke/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Past_Nuke/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Past_Nuke/Version.php
+%%NUKEDIR%%/html/modules/NS-Past_Nuke/admin.php
+%%NUKEDIR%%/html/modules/NS-Past_Nuke/index.html
+%%NUKEDIR%%/html/modules/xmlrpc/api/blogger.php
+%%NUKEDIR%%/html/modules/xmlrpc/lib/xmlrpc.inc
+%%NUKEDIR%%/html/modules/xmlrpc/lib/xmlrpcs.inc
+%%NUKEDIR%%/html/modules/xmlrpc/pnuserapi.php
+%%NUKEDIR%%/html/modules/xmlrpc/pnversion.php
+%%NUKEDIR%%/html/modules/AvantGo/docs/changelog.txt
+%%NUKEDIR%%/html/modules/AvantGo/docs/credits.txt
+%%NUKEDIR%%/html/modules/AvantGo/docs/install.txt
+%%NUKEDIR%%/html/modules/AvantGo/docs/license.txt
+%%NUKEDIR%%/html/modules/AvantGo/lang/eng/global.php
+%%NUKEDIR%%/html/modules/AvantGo/Version.php
+%%NUKEDIR%%/html/modules/AvantGo/index.html
+%%NUKEDIR%%/html/modules/AvantGo/index.php
+%%NUKEDIR%%/html/modules/Blocks/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Blocks/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Blocks/index.php
+%%NUKEDIR%%/html/modules/Blocks/pnadmin.php
+%%NUKEDIR%%/html/modules/Blocks/pnadminapi.php
+%%NUKEDIR%%/html/modules/Blocks/pnversion.php
+%%NUKEDIR%%/html/modules/Comments/docs/credits.txt
+%%NUKEDIR%%/html/modules/Comments/docs/pncomments.php
+%%NUKEDIR%%/html/modules/Comments/pnlang/eng/user.php
+%%NUKEDIR%%/html/modules/Comments/pnlang/eng/userapi.php
+%%NUKEDIR%%/html/modules/Downloads/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Downloads/docs/credits.txt
+%%NUKEDIR%%/html/modules/Downloads/docs/license.txt
+%%NUKEDIR%%/html/modules/Downloads/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Downloads/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/Downloads/images/popular.gif
+%%NUKEDIR%%/html/modules/Downloads/images/blackpixel.gif
+%%NUKEDIR%%/html/modules/Downloads/images/cool.gif
+%%NUKEDIR%%/html/modules/Downloads/images/editicon.gif
+%%NUKEDIR%%/html/modules/Downloads/images/icon_folder.gif
+%%NUKEDIR%%/html/modules/Downloads/images/lwin.gif
+%%NUKEDIR%%/html/modules/Downloads/images/new_1.gif
+%%NUKEDIR%%/html/modules/Downloads/images/new_3.gif
+%%NUKEDIR%%/html/modules/Downloads/images/new_7.gif
+%%NUKEDIR%%/html/modules/Downloads/images/admin.gif
+%%NUKEDIR%%/html/modules/Downloads/Version.php
+%%NUKEDIR%%/html/modules/Downloads/dl-adddownload.php
+%%NUKEDIR%%/html/modules/Downloads/dl-categories.php
+%%NUKEDIR%%/html/modules/Downloads/dl-downloaddetails.php
+%%NUKEDIR%%/html/modules/Downloads/dl-downloadeditorial.php
+%%NUKEDIR%%/html/modules/Downloads/dl-mostpopular.php
+%%NUKEDIR%%/html/modules/Downloads/dl-navigation.php
+%%NUKEDIR%%/html/modules/Downloads/dl-newdownloads.php
+%%NUKEDIR%%/html/modules/Downloads/dl-randomdownload.php
+%%NUKEDIR%%/html/modules/Downloads/dl-rating.php
+%%NUKEDIR%%/html/modules/Downloads/dl-search.php
+%%NUKEDIR%%/html/modules/Downloads/dl-toprated.php
+%%NUKEDIR%%/html/modules/Downloads/dl-util.php
+%%NUKEDIR%%/html/modules/Downloads/dl-viewdownload.php
+%%NUKEDIR%%/html/modules/Downloads/index.html
+%%NUKEDIR%%/html/modules/Downloads/index.php
+%%NUKEDIR%%/html/modules/Downloads/admin.php
+%%NUKEDIR%%/html/modules/FAQ/docs/changelog.txt
+%%NUKEDIR%%/html/modules/FAQ/docs/credits.txt
+%%NUKEDIR%%/html/modules/FAQ/docs/install.txt
+%%NUKEDIR%%/html/modules/FAQ/docs/license.txt
+%%NUKEDIR%%/html/modules/FAQ/lang/eng/global.php
+%%NUKEDIR%%/html/modules/FAQ/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/FAQ/images/admin.gif
+%%NUKEDIR%%/html/modules/FAQ/admin.php
+%%NUKEDIR%%/html/modules/FAQ/faq-categories.php
+%%NUKEDIR%%/html/modules/FAQ/index.html
+%%NUKEDIR%%/html/modules/FAQ/index.php
+%%NUKEDIR%%/html/modules/FAQ/Version.php
+%%NUKEDIR%%/html/modules/Members_List/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Members_List/docs/credits.txt
+%%NUKEDIR%%/html/modules/Members_List/docs/install.txt
+%%NUKEDIR%%/html/modules/Members_List/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Members_List/images/left.gif
+%%NUKEDIR%%/html/modules/Members_List/images/right.gif
+%%NUKEDIR%%/html/modules/Members_List/Version.php
+%%NUKEDIR%%/html/modules/Members_List/index.html
+%%NUKEDIR%%/html/modules/Members_List/index.php
+%%NUKEDIR%%/html/modules/Messages/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Messages/Version.php
+%%NUKEDIR%%/html/modules/Messages/bb_smilies.php
+%%NUKEDIR%%/html/modules/Messages/bbcode.lib.php
+%%NUKEDIR%%/html/modules/Messages/bbcode_ref.php
+%%NUKEDIR%%/html/modules/Messages/functions.php
+%%NUKEDIR%%/html/modules/Messages/index.html
+%%NUKEDIR%%/html/modules/Messages/index.php
+%%NUKEDIR%%/html/modules/Messages/readpmsg.php
+%%NUKEDIR%%/html/modules/Messages/replypmsg.php
+%%NUKEDIR%%/html/modules/Modules/pnimages/upgrade.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/credits.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/delete.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/find.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/help.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/install.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/license.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/official.gif
+%%NUKEDIR%%/html/modules/Modules/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Modules/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Modules/pnlang/eng/adminapi.php
+%%NUKEDIR%%/html/modules/Modules/pnlang/eng/manual.html
+%%NUKEDIR%%/html/modules/Modules/modreg.php
+%%NUKEDIR%%/html/modules/Modules/pnadminapi.php
+%%NUKEDIR%%/html/modules/Modules/pnversion.php
+%%NUKEDIR%%/html/modules/Modules/pnadmin.php
+%%NUKEDIR%%/html/modules/Modules/index.html
+%%NUKEDIR%%/html/modules/NS-AddStory/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-AddStory/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-AddStory/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-AddStory/addstory_categories.php
+%%NUKEDIR%%/html/modules/NS-AddStory/admin.php
+%%NUKEDIR%%/html/modules/NS-AddStory/index.html
+%%NUKEDIR%%/html/modules/NS-AddStory/addstory_functions.php
+%%NUKEDIR%%/html/modules/NS-AddStory/Version.php
+%%NUKEDIR%%/html/modules/NS-Admin/docs/changelog.txt
+%%NUKEDIR%%/html/modules/NS-Admin/docs/credits.txt
+%%NUKEDIR%%/html/modules/NS-Admin/docs/install.txt
+%%NUKEDIR%%/html/modules/NS-Admin/admin/database.php
+%%NUKEDIR%%/html/modules/NS-Admin/admin/index.html
+%%NUKEDIR%%/html/modules/NS-Admin/admin/menu.php
+%%NUKEDIR%%/html/modules/NS-Admin/images/default.gif
+%%NUKEDIR%%/html/modules/NS-Admin/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Admin/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Admin/lang/eng/menu.php
+%%NUKEDIR%%/html/modules/NS-Admin/tools.php
+%%NUKEDIR%%/html/modules/NS-Admin/index.html
+%%NUKEDIR%%/html/modules/NS-Admin/admin.php
+%%NUKEDIR%%/html/modules/NS-Admin/Version.php
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/pnblocks/messages.php
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/Version.php
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/admin.php
+%%NUKEDIR%%/html/modules/NS-Admin_Messages/index.html
+%%NUKEDIR%%/html/modules/NS-Banners/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Banners/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Banners/Version.php
+%%NUKEDIR%%/html/modules/NS-Banners/admin.php
+%%NUKEDIR%%/html/modules/NS-Banners/index.html
+%%NUKEDIR%%/html/modules/NS-Comments/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Comments/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Comments/user/case/case.modifycomments.php
+%%NUKEDIR%%/html/modules/NS-Comments/user/links/links.modifycomments.php
+%%NUKEDIR%%/html/modules/NS-Comments/user/modules/modifycomments.php
+%%NUKEDIR%%/html/modules/NS-Comments/index.php
+%%NUKEDIR%%/html/modules/NS-Comments/index.html
+%%NUKEDIR%%/html/modules/NS-Comments/Version.php
+%%NUKEDIR%%/html/modules/NS-Comments/admin.php
+%%NUKEDIR%%/html/modules/NS-Ephemerids/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Ephemerids/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Ephemerids/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Ephemerids/Version.php
+%%NUKEDIR%%/html/modules/NS-Ephemerids/admin.php
+%%NUKEDIR%%/html/modules/NS-Ephemerids/index.html
+%%NUKEDIR%%/html/modules/NS-Groups/docs/changelog.txt
+%%NUKEDIR%%/html/modules/NS-Groups/docs/credits.txt
+%%NUKEDIR%%/html/modules/NS-Groups/docs/help.txt
+%%NUKEDIR%%/html/modules/NS-Groups/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Groups/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Groups/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Groups/Version.php
+%%NUKEDIR%%/html/modules/NS-Groups/admin.php
+%%NUKEDIR%%/html/modules/NS-Groups/index.html
+%%NUKEDIR%%/html/modules/NS-Languages/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Languages/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Languages/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Languages/Version.php
+%%NUKEDIR%%/html/modules/NS-Languages/admin.php
+%%NUKEDIR%%/html/modules/NS-Languages/api.php
+%%NUKEDIR%%/html/modules/NS-Languages/index.html
+%%NUKEDIR%%/html/modules/NS-LostPassword/Version.php
+%%NUKEDIR%%/html/modules/NS-LostPassword/index.html
+%%NUKEDIR%%/html/modules/NS-LostPassword/user.php
+%%NUKEDIR%%/html/modules/NS-MailUsers/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-MailUsers/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-MailUsers/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-MailUsers/Version.php
+%%NUKEDIR%%/html/modules/NS-MailUsers/admin.php
+%%NUKEDIR%%/html/modules/NS-MailUsers/index.html
+%%NUKEDIR%%/html/modules/NS-Multisites/docs/readme.html
+%%NUKEDIR%%/html/modules/NS-Multisites/installation/config.php
+%%NUKEDIR%%/html/modules/NS-Multisites/installation/whoisit.inc.php
+%%NUKEDIR%%/html/modules/NS-Multisites/chgtheme.inc.php
+%%NUKEDIR%%/html/modules/NS-Multisites/head.inc.php
+%%NUKEDIR%%/html/modules/NS-Multisites/index.html
+%%NUKEDIR%%/html/modules/NS-Multisites/print.inc.php
+%%NUKEDIR%%/html/modules/NS-NewUser/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-NewUser/Version.php
+%%NUKEDIR%%/html/modules/NS-NewUser/index.html
+%%NUKEDIR%%/html/modules/NS-NewUser/user.php
+%%NUKEDIR%%/html/modules/topx/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/topx/pnlang/eng/user.php
+%%NUKEDIR%%/html/modules/topx/pnadminapi.php
+%%NUKEDIR%%/html/modules/topx/pntables.php
+%%NUKEDIR%%/html/modules/topx/pnuser.php
+%%NUKEDIR%%/html/modules/topx/pnuserapi.php
+%%NUKEDIR%%/html/modules/topx/pnversion.php
+%%NUKEDIR%%/html/modules/topx/pnadmin.php
+%%NUKEDIR%%/html/modules/Autolinks/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Autolinks/pndocs/changelog.txt
+%%NUKEDIR%%/html/modules/Autolinks/pndocs/credits.txt
+%%NUKEDIR%%/html/modules/Autolinks/pndocs/help.txt
+%%NUKEDIR%%/html/modules/Autolinks/pndocs/license.txt
+%%NUKEDIR%%/html/modules/Autolinks/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Autolinks/pnlang/eng/adminapi.php
+%%NUKEDIR%%/html/modules/Autolinks/pnlang/eng/init.php
+%%NUKEDIR%%/html/modules/Autolinks/pninit.php
+%%NUKEDIR%%/html/modules/Autolinks/pntables.php
+%%NUKEDIR%%/html/modules/Autolinks/pnuserapi.php
+%%NUKEDIR%%/html/modules/Autolinks/pnversion.php
+%%NUKEDIR%%/html/modules/Autolinks/pnadminapi.php
+%%NUKEDIR%%/html/modules/Autolinks/pnadmin.php
+%%NUKEDIR%%/html/modules/NS-Referers/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Referers/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Referers/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Referers/Version.php
+%%NUKEDIR%%/html/modules/NS-Referers/admin.php
+%%NUKEDIR%%/html/modules/NS-Referers/index.html
+%%NUKEDIR%%/html/modules/NS-Settings/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Settings/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Settings/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Settings/Version.php
+%%NUKEDIR%%/html/modules/NS-Settings/admin.php
+%%NUKEDIR%%/html/modules/NS-Settings/index.html
+%%NUKEDIR%%/html/modules/NS-User/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-User/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-User/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-User/doc/changelog.txt
+%%NUKEDIR%%/html/modules/NS-User/doc/credits.txt
+%%NUKEDIR%%/html/modules/NS-User/doc/install.txt
+%%NUKEDIR%%/html/modules/NS-User/user/access.php
+%%NUKEDIR%%/html/modules/NS-User/user/menu.php
+%%NUKEDIR%%/html/modules/NS-User/index.html
+%%NUKEDIR%%/html/modules/NS-User/password.php
+%%NUKEDIR%%/html/modules/NS-User/tools.php
+%%NUKEDIR%%/html/modules/NS-User/user.php
+%%NUKEDIR%%/html/modules/NS-User/admin.php
+%%NUKEDIR%%/html/modules/NS-User/Version.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/images/exit.gif
+%%NUKEDIR%%/html/modules/NS-Your_Account/images/home.gif
+%%NUKEDIR%%/html/modules/NS-Your_Account/images/themes.gif
+%%NUKEDIR%%/html/modules/NS-Your_Account/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/case/case.changehome.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/case/case.changeinfo.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/case/case.changetheme.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/links/links.changehome.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/links/links.changeinfo.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/links/links.changetheme.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/modules/changehome.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/modules/changeinfo.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/user/modules/changetheme.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/Version.php
+%%NUKEDIR%%/html/modules/NS-Your_Account/index.html
+%%NUKEDIR%%/html/modules/News/docs/changelog.txt
+%%NUKEDIR%%/html/modules/News/docs/credits.txt
+%%NUKEDIR%%/html/modules/News/docs/install.txt
+%%NUKEDIR%%/html/modules/News/lang/eng/global.php
+%%NUKEDIR%%/html/modules/News/funcs.php
+%%NUKEDIR%%/html/modules/News/index.html
+%%NUKEDIR%%/html/modules/News/index.php
+%%NUKEDIR%%/html/modules/News/article.php
+%%NUKEDIR%%/html/modules/News/Version.php
+%%NUKEDIR%%/html/modules/Permissions/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Permissions/pnimages/perms01.png
+%%NUKEDIR%%/html/modules/Permissions/pnimages/perms02.png
+%%NUKEDIR%%/html/modules/Permissions/pnimages/perms03.png
+%%NUKEDIR%%/html/modules/Permissions/pnimages/perms04.png
+%%NUKEDIR%%/html/modules/Permissions/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Permissions/pnlang/eng/manual.html
+%%NUKEDIR%%/html/modules/Permissions/pnadmin.php
+%%NUKEDIR%%/html/modules/Permissions/pnadminapi.php
+%%NUKEDIR%%/html/modules/Permissions/pnversion.php
+%%NUKEDIR%%/html/modules/Quotes/pnblocks/quote.php
+%%NUKEDIR%%/html/modules/Quotes/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Quotes/pnlang/eng/adminapi.php
+%%NUKEDIR%%/html/modules/Quotes/pnadmin.php
+%%NUKEDIR%%/html/modules/Quotes/pnadminapi.php
+%%NUKEDIR%%/html/modules/Quotes/pninit.php
+%%NUKEDIR%%/html/modules/Quotes/pntables.php
+%%NUKEDIR%%/html/modules/Quotes/pnversion.php
+%%NUKEDIR%%/html/modules/Quotes/index.html
+%%NUKEDIR%%/html/modules/Ratings/pndocs/changelog.txt
+%%NUKEDIR%%/html/modules/Ratings/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Ratings/pnimages/halfstar.gif
+%%NUKEDIR%%/html/modules/Ratings/pnimages/star.gif
+%%NUKEDIR%%/html/modules/Ratings/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Ratings/pnlang/eng/adminapi.php
+%%NUKEDIR%%/html/modules/Ratings/pnlang/eng/init.php
+%%NUKEDIR%%/html/modules/Ratings/pnlang/eng/manual.html
+%%NUKEDIR%%/html/modules/Ratings/pnlang/eng/user.php
+%%NUKEDIR%%/html/modules/Ratings/pnlang/eng/userapi.php
+%%NUKEDIR%%/html/modules/Ratings/pnversion.php
+%%NUKEDIR%%/html/modules/Ratings/pnuser.php
+%%NUKEDIR%%/html/modules/Ratings/pnuserapi.php
+%%NUKEDIR%%/html/modules/Ratings/pntables.php
+%%NUKEDIR%%/html/modules/Ratings/pninit.php
+%%NUKEDIR%%/html/modules/Ratings/pnadminapi.php
+%%NUKEDIR%%/html/modules/Ratings/pnadmin.php
+%%NUKEDIR%%/html/modules/Recommend_Us/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Recommend_Us/docs/credits.txt
+%%NUKEDIR%%/html/modules/Recommend_Us/docs/install.txt
+%%NUKEDIR%%/html/modules/Recommend_Us/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Recommend_Us/Version.php
+%%NUKEDIR%%/html/modules/Recommend_Us/index.html
+%%NUKEDIR%%/html/modules/Recommend_Us/index.php
+%%NUKEDIR%%/html/modules/Reviews/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Reviews/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/Reviews/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Reviews/docs/credits.txt
+%%NUKEDIR%%/html/modules/Reviews/docs/install.txt
+%%NUKEDIR%%/html/modules/Reviews/images/up.gif
+%%NUKEDIR%%/html/modules/Reviews/images/blackpixel.gif
+%%NUKEDIR%%/html/modules/Reviews/images/blue.gif
+%%NUKEDIR%%/html/modules/Reviews/images/bluehalf.gif
+%%NUKEDIR%%/html/modules/Reviews/images/down.gif
+%%NUKEDIR%%/html/modules/Reviews/images/left.gif
+%%NUKEDIR%%/html/modules/Reviews/images/right.gif
+%%NUKEDIR%%/html/modules/Reviews/images/star.gif
+%%NUKEDIR%%/html/modules/Reviews/images/admin.gif
+%%NUKEDIR%%/html/modules/Reviews/index.php
+%%NUKEDIR%%/html/modules/Reviews/admin.php
+%%NUKEDIR%%/html/modules/Reviews/Version.php
+%%NUKEDIR%%/html/modules/Reviews/index.html
+%%NUKEDIR%%/html/modules/Search/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Search/docs/credits.txt
+%%NUKEDIR%%/html/modules/Search/docs/install.txt
+%%NUKEDIR%%/html/modules/Search/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Search/Version.php
+%%NUKEDIR%%/html/modules/Search/index.html
+%%NUKEDIR%%/html/modules/Search/index.php
+%%NUKEDIR%%/html/modules/Sections/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Sections/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/Sections/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Sections/docs/credits.txt
+%%NUKEDIR%%/html/modules/Sections/docs/install.txt
+%%NUKEDIR%%/html/modules/Sections/images/admin.gif
+%%NUKEDIR%%/html/modules/Sections/images/blackpixel.gif
+%%NUKEDIR%%/html/modules/Sections/images/left.gif
+%%NUKEDIR%%/html/modules/Sections/images/print.gif
+%%NUKEDIR%%/html/modules/Sections/images/right.gif
+%%NUKEDIR%%/html/modules/Sections/index.php
+%%NUKEDIR%%/html/modules/Sections/admin.php
+%%NUKEDIR%%/html/modules/Sections/Version.php
+%%NUKEDIR%%/html/modules/Sections/index.html
+%%NUKEDIR%%/html/modules/Stats/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Stats/docs/credits.txt
+%%NUKEDIR%%/html/modules/Stats/docs/install.txt
+%%NUKEDIR%%/html/modules/Stats/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Stats/images/windows.gif
+%%NUKEDIR%%/html/modules/Stats/images/aix.gif
+%%NUKEDIR%%/html/modules/Stats/images/altavista.gif
+%%NUKEDIR%%/html/modules/Stats/images/authors.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar1.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar10.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar2.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar3.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar4.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar5.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar6.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar7.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar8.gif
+%%NUKEDIR%%/html/modules/Stats/images/bar9.gif
+%%NUKEDIR%%/html/modules/Stats/images/be.gif
+%%NUKEDIR%%/html/modules/Stats/images/bsd.gif
+%%NUKEDIR%%/html/modules/Stats/images/comments.gif
+%%NUKEDIR%%/html/modules/Stats/images/explorer.gif
+%%NUKEDIR%%/html/modules/Stats/images/index.html
+%%NUKEDIR%%/html/modules/Stats/images/irix.gif
+%%NUKEDIR%%/html/modules/Stats/images/konqueror.gif
+%%NUKEDIR%%/html/modules/Stats/images/leftbar.gif
+%%NUKEDIR%%/html/modules/Stats/images/linux.gif
+%%NUKEDIR%%/html/modules/Stats/images/lynx.gif
+%%NUKEDIR%%/html/modules/Stats/images/mac.gif
+%%NUKEDIR%%/html/modules/Stats/images/mainbar.gif
+%%NUKEDIR%%/html/modules/Stats/images/netscape.gif
+%%NUKEDIR%%/html/modules/Stats/images/news.gif
+%%NUKEDIR%%/html/modules/Stats/images/opera.gif
+%%NUKEDIR%%/html/modules/Stats/images/os2.gif
+%%NUKEDIR%%/html/modules/Stats/images/question.gif
+%%NUKEDIR%%/html/modules/Stats/images/rightbar.gif
+%%NUKEDIR%%/html/modules/Stats/images/sections.gif
+%%NUKEDIR%%/html/modules/Stats/images/sun.gif
+%%NUKEDIR%%/html/modules/Stats/images/topics.gif
+%%NUKEDIR%%/html/modules/Stats/images/users.gif
+%%NUKEDIR%%/html/modules/Stats/images/waiting.gif
+%%NUKEDIR%%/html/modules/Stats/images/articles.gif
+%%NUKEDIR%%/html/modules/Stats/Version.php
+%%NUKEDIR%%/html/modules/Stats/index.html
+%%NUKEDIR%%/html/modules/Stats/index.php
+%%NUKEDIR%%/html/modules/Submit_News/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Submit_News/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/Submit_News/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Submit_News/docs/credits.txt
+%%NUKEDIR%%/html/modules/Submit_News/docs/install.txt
+%%NUKEDIR%%/html/modules/Submit_News/images/admin.gif
+%%NUKEDIR%%/html/modules/Submit_News/index.php
+%%NUKEDIR%%/html/modules/Submit_News/admin.php
+%%NUKEDIR%%/html/modules/Submit_News/Version.php
+%%NUKEDIR%%/html/modules/Submit_News/index.html
+%%NUKEDIR%%/html/modules/Template/pnblocks/first.php
+%%NUKEDIR%%/html/modules/Template/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Template/pnlang/eng/admin.php
+%%NUKEDIR%%/html/modules/Template/pnlang/eng/first.php
+%%NUKEDIR%%/html/modules/Template/pnlang/eng/init.php
+%%NUKEDIR%%/html/modules/Template/pnlang/eng/user.php
+%%NUKEDIR%%/html/modules/Template/pnlang/eng/userapi.php
+%%NUKEDIR%%/html/modules/Template/pnversion.php
+%%NUKEDIR%%/html/modules/Template/pnuser.php
+%%NUKEDIR%%/html/modules/Template/pnuserapi.php
+%%NUKEDIR%%/html/modules/Template/pntables.php
+%%NUKEDIR%%/html/modules/Template/pninit.php
+%%NUKEDIR%%/html/modules/Template/pnadminapi.php
+%%NUKEDIR%%/html/modules/Template/pnadmin.php
+%%NUKEDIR%%/html/modules/Top_List/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Top_List/docs/credits.txt
+%%NUKEDIR%%/html/modules/Top_List/docs/install.txt
+%%NUKEDIR%%/html/modules/Top_List/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Top_List/Version.php
+%%NUKEDIR%%/html/modules/Top_List/admin.php
+%%NUKEDIR%%/html/modules/Top_List/index.html
+%%NUKEDIR%%/html/modules/Top_List/index.php
+%%NUKEDIR%%/html/modules/Topics/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Topics/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/Topics/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Topics/docs/credits.txt
+%%NUKEDIR%%/html/modules/Topics/docs/install.txt
+%%NUKEDIR%%/html/modules/Topics/images/admin.gif
+%%NUKEDIR%%/html/modules/Topics/index.php
+%%NUKEDIR%%/html/modules/Topics/admin.php
+%%NUKEDIR%%/html/modules/Topics/Version.php
+%%NUKEDIR%%/html/modules/Topics/index.html
+%%NUKEDIR%%/html/modules/Web_Links/docs/changelog.txt
+%%NUKEDIR%%/html/modules/Web_Links/docs/credits.txt
+%%NUKEDIR%%/html/modules/Web_Links/docs/install.txt
+%%NUKEDIR%%/html/modules/Web_Links/lang/eng/global.php
+%%NUKEDIR%%/html/modules/Web_Links/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/Web_Links/images/rate_none.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/blackpixel.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/editicon.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/newblue.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/newgreen.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/newred.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/pop.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/rate_full.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/rate_half.gif
+%%NUKEDIR%%/html/modules/Web_Links/images/admin.gif
+%%NUKEDIR%%/html/modules/Web_Links/Version.php
+%%NUKEDIR%%/html/modules/Web_Links/index.html
+%%NUKEDIR%%/html/modules/Web_Links/index.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-addlink.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-categories.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-linkdetails.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-linkeditorial.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-mostpopular.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-navigation.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-newlinks.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-randomlink.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-rating.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-search.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-toprated.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-util.php
+%%NUKEDIR%%/html/modules/Web_Links/wl-viewlink.php
+%%NUKEDIR%%/html/modules/Web_Links/admin.php
+%%NUKEDIR%%/html/modules/Wiki/pnlang/eng/init.php
+%%NUKEDIR%%/html/modules/Wiki/pnimages/admin.gif
+%%NUKEDIR%%/html/modules/Wiki/pndocs/changelog.txt
+%%NUKEDIR%%/html/modules/Wiki/pndocs/credits.txt
+%%NUKEDIR%%/html/modules/Wiki/pndocs/help.txt
+%%NUKEDIR%%/html/modules/Wiki/pndocs/license.txt
+%%NUKEDIR%%/html/modules/Wiki/pnblocks/wiki.php
+%%NUKEDIR%%/html/modules/Wiki/pnversion.php
+%%NUKEDIR%%/html/modules/Wiki/pnuserapi.php
+%%NUKEDIR%%/html/modules/Wiki/pninit.php
+%%NUKEDIR%%/html/modules/legal/docs/changelog.txt
+%%NUKEDIR%%/html/modules/legal/docs/credits.txt
+%%NUKEDIR%%/html/modules/legal/docs/install.txt
+%%NUKEDIR%%/html/modules/legal/lang/eng/global.php
+%%NUKEDIR%%/html/modules/legal/Version.php
+%%NUKEDIR%%/html/modules/legal/index.php
+%%NUKEDIR%%/html/modules/legal/privacy.php
+%%NUKEDIR%%/html/modules/NS-Polls/docs/changelog.txt
+%%NUKEDIR%%/html/modules/NS-Polls/docs/credits.txt
+%%NUKEDIR%%/html/modules/NS-Polls/docs/install.txt
+%%NUKEDIR%%/html/modules/NS-Polls/lang/eng/global.php
+%%NUKEDIR%%/html/modules/NS-Polls/lang/eng/manual.html
+%%NUKEDIR%%/html/modules/NS-Polls/images/admin.gif
+%%NUKEDIR%%/html/modules/NS-Polls/admin.php
+%%NUKEDIR%%/html/modules/NS-Polls/comments.php
+%%NUKEDIR%%/html/modules/NS-Polls/index.html
+%%NUKEDIR%%/html/modules/NS-Polls/index.php
+%%NUKEDIR%%/html/modules/NS-Polls/Version.php
+%%NUKEDIR%%/html/modules/index.html
+%%NUKEDIR%%/html/images/global/yim.gif
+%%NUKEDIR%%/html/images/global/aim.gif
+%%NUKEDIR%%/html/images/global/b_code.gif
+%%NUKEDIR%%/html/images/global/b_email.gif
+%%NUKEDIR%%/html/images/global/b_image.gif
+%%NUKEDIR%%/html/images/global/b_italic.gif
+%%NUKEDIR%%/html/images/global/b_listclose.gif
+%%NUKEDIR%%/html/images/global/b_listitem.gif
+%%NUKEDIR%%/html/images/global/b_listopen.gif
+%%NUKEDIR%%/html/images/global/b_quote.gif
+%%NUKEDIR%%/html/images/global/b_url.gif
+%%NUKEDIR%%/html/images/global/blackpixel.gif
+%%NUKEDIR%%/html/images/global/blue.gif
+%%NUKEDIR%%/html/images/global/bluehalf.gif
+%%NUKEDIR%%/html/images/global/center.gif
+%%NUKEDIR%%/html/images/global/delete.gif
+%%NUKEDIR%%/html/images/global/dot.gif
+%%NUKEDIR%%/html/images/global/down.gif
+%%NUKEDIR%%/html/images/global/down_thin.gif
+%%NUKEDIR%%/html/images/global/downb.gif
+%%NUKEDIR%%/html/images/global/download.gif
+%%NUKEDIR%%/html/images/global/edit.gif
+%%NUKEDIR%%/html/images/global/edit2.gif
+%%NUKEDIR%%/html/images/global/email.gif
+%%NUKEDIR%%/html/images/global/eyes.gif
+%%NUKEDIR%%/html/images/global/friend.gif
+%%NUKEDIR%%/html/images/global/green_dot.gif
+%%NUKEDIR%%/html/images/global/left.gif
+%%NUKEDIR%%/html/images/global/manual.jpg
+%%NUKEDIR%%/html/images/global/msnm.gif
+%%NUKEDIR%%/html/images/global/new_3day.gif
+%%NUKEDIR%%/html/images/global/new_day.gif
+%%NUKEDIR%%/html/images/global/new_week.gif
+%%NUKEDIR%%/html/images/global/pix.gif
+%%NUKEDIR%%/html/images/global/print.gif
+%%NUKEDIR%%/html/images/global/profile.gif
+%%NUKEDIR%%/html/images/global/read.gif
+%%NUKEDIR%%/html/images/global/red_dot.gif
+%%NUKEDIR%%/html/images/global/reply.gif
+%%NUKEDIR%%/html/images/global/right.gif
+%%NUKEDIR%%/html/images/global/send.gif
+%%NUKEDIR%%/html/images/global/star.gif
+%%NUKEDIR%%/html/images/global/up.gif
+%%NUKEDIR%%/html/images/global/up_thin.gif
+%%NUKEDIR%%/html/images/global/upb.gif
+%%NUKEDIR%%/html/images/global/urlgo.gif
+%%NUKEDIR%%/html/images/global/www_icon.gif
+%%NUKEDIR%%/html/images/global/b_bold.gif
+%%NUKEDIR%%/html/images/topics/AllTopics.gif
+%%NUKEDIR%%/html/images/topics/PostNuke.gif
+%%NUKEDIR%%/html/images/topics/linux.gif
+%%NUKEDIR%%/html/images/banners/index.html
+%%NUKEDIR%%/html/images/flags/flag-zho.png
+%%NUKEDIR%%/html/images/flags/flag-armenia.png
+%%NUKEDIR%%/html/images/flags/flag-austrian.png
+%%NUKEDIR%%/html/images/flags/flag-bul.png
+%%NUKEDIR%%/html/images/flags/flag-catala.png
+%%NUKEDIR%%/html/images/flags/flag-ces.png
+%%NUKEDIR%%/html/images/flags/flag-chinese.png
+%%NUKEDIR%%/html/images/flags/flag-cro.png
+%%NUKEDIR%%/html/images/flags/flag-dan.png
+%%NUKEDIR%%/html/images/flags/flag-deu.png
+%%NUKEDIR%%/html/images/flags/flag-eire.png
+%%NUKEDIR%%/html/images/flags/flag-ell.png
+%%NUKEDIR%%/html/images/flags/flag-eng.png
+%%NUKEDIR%%/html/images/flags/flag-est.png
+%%NUKEDIR%%/html/images/flags/flag-fin.png
+%%NUKEDIR%%/html/images/flags/flag-fra.png
+%%NUKEDIR%%/html/images/flags/flag-heb.png
+%%NUKEDIR%%/html/images/flags/flag-hun.png
+%%NUKEDIR%%/html/images/flags/flag-ind.png
+%%NUKEDIR%%/html/images/flags/flag-isl.png
+%%NUKEDIR%%/html/images/flags/flag-ita.png
+%%NUKEDIR%%/html/images/flags/flag-jpn.png
+%%NUKEDIR%%/html/images/flags/flag-kasakhstan.png
+%%NUKEDIR%%/html/images/flags/flag-kor.png
+%%NUKEDIR%%/html/images/flags/flag-lav.png
+%%NUKEDIR%%/html/images/flags/flag-lit.png
+%%NUKEDIR%%/html/images/flags/flag-mas.png
+%%NUKEDIR%%/html/images/flags/flag-nld.png
+%%NUKEDIR%%/html/images/flags/flag-nor.png
+%%NUKEDIR%%/html/images/flags/flag-pol.png
+%%NUKEDIR%%/html/images/flags/flag-por.png
+%%NUKEDIR%%/html/images/flags/flag-ron.png
+%%NUKEDIR%%/html/images/flags/flag-rumanstch.png
+%%NUKEDIR%%/html/images/flags/flag-rumanstch2.png
+%%NUKEDIR%%/html/images/flags/flag-rus.png
+%%NUKEDIR%%/html/images/flags/flag-slv.png
+%%NUKEDIR%%/html/images/flags/flag-spa.png
+%%NUKEDIR%%/html/images/flags/flag-swe.png
+%%NUKEDIR%%/html/images/flags/flag-tha.png
+%%NUKEDIR%%/html/images/flags/flag-tur.png
+%%NUKEDIR%%/html/images/flags/flag-ukr.png
+%%NUKEDIR%%/html/images/flags/flag-uzbekistan.png
+%%NUKEDIR%%/html/images/flags/flag-x_brazilian_portuguese.png
+%%NUKEDIR%%/html/images/flags/flag-x_rus_koi8r.png
+%%NUKEDIR%%/html/images/flags/flag-ara.png
+%%NUKEDIR%%/html/images/smilies/icon_wink.gif
+%%NUKEDIR%%/html/images/smilies/icon11.gif
+%%NUKEDIR%%/html/images/smilies/icon12.gif
+%%NUKEDIR%%/html/images/smilies/icon13.gif
+%%NUKEDIR%%/html/images/smilies/icon14.gif
+%%NUKEDIR%%/html/images/smilies/icon15.gif
+%%NUKEDIR%%/html/images/smilies/icon16.gif
+%%NUKEDIR%%/html/images/smilies/icon17.gif
+%%NUKEDIR%%/html/images/smilies/icon18.gif
+%%NUKEDIR%%/html/images/smilies/icon19.gif
+%%NUKEDIR%%/html/images/smilies/icon2.gif
+%%NUKEDIR%%/html/images/smilies/icon20.gif
+%%NUKEDIR%%/html/images/smilies/icon21.gif
+%%NUKEDIR%%/html/images/smilies/icon22.gif
+%%NUKEDIR%%/html/images/smilies/icon23.gif
+%%NUKEDIR%%/html/images/smilies/icon24.gif
+%%NUKEDIR%%/html/images/smilies/icon25.gif
+%%NUKEDIR%%/html/images/smilies/icon26.gif
+%%NUKEDIR%%/html/images/smilies/icon27.gif
+%%NUKEDIR%%/html/images/smilies/icon29.gif
+%%NUKEDIR%%/html/images/smilies/icon3.gif
+%%NUKEDIR%%/html/images/smilies/icon30.gif
+%%NUKEDIR%%/html/images/smilies/icon31.gif
+%%NUKEDIR%%/html/images/smilies/icon32.gif
+%%NUKEDIR%%/html/images/smilies/icon33.gif
+%%NUKEDIR%%/html/images/smilies/icon34.gif
+%%NUKEDIR%%/html/images/smilies/icon35.gif
+%%NUKEDIR%%/html/images/smilies/icon36.gif
+%%NUKEDIR%%/html/images/smilies/icon37.gif
+%%NUKEDIR%%/html/images/smilies/icon38.gif
+%%NUKEDIR%%/html/images/smilies/icon39.gif
+%%NUKEDIR%%/html/images/smilies/icon4.gif
+%%NUKEDIR%%/html/images/smilies/icon40.gif
+%%NUKEDIR%%/html/images/smilies/icon41.gif
+%%NUKEDIR%%/html/images/smilies/icon5.gif
+%%NUKEDIR%%/html/images/smilies/icon6.gif
+%%NUKEDIR%%/html/images/smilies/icon7.gif
+%%NUKEDIR%%/html/images/smilies/icon8.gif
+%%NUKEDIR%%/html/images/smilies/icon9.gif
+%%NUKEDIR%%/html/images/smilies/icon_biggrin.gif
+%%NUKEDIR%%/html/images/smilies/icon_confused.gif
+%%NUKEDIR%%/html/images/smilies/icon_cool.gif
+%%NUKEDIR%%/html/images/smilies/icon_eek.gif
+%%NUKEDIR%%/html/images/smilies/icon_frown.gif
+%%NUKEDIR%%/html/images/smilies/icon_lol.gif
+%%NUKEDIR%%/html/images/smilies/icon_mad.gif
+%%NUKEDIR%%/html/images/smilies/icon_razz.gif
+%%NUKEDIR%%/html/images/smilies/icon_redface.gif
+%%NUKEDIR%%/html/images/smilies/icon_rolleyes.gif
+%%NUKEDIR%%/html/images/smilies/icon_smile.gif
+%%NUKEDIR%%/html/images/smilies/icon1.gif
+%%NUKEDIR%%/html/images/avatar/019.gif
+%%NUKEDIR%%/html/images/avatar/000.gif
+%%NUKEDIR%%/html/images/avatar/001.gif
+%%NUKEDIR%%/html/images/avatar/002.gif
+%%NUKEDIR%%/html/images/avatar/003.gif
+%%NUKEDIR%%/html/images/avatar/004.gif
+%%NUKEDIR%%/html/images/avatar/005.gif
+%%NUKEDIR%%/html/images/avatar/006.gif
+%%NUKEDIR%%/html/images/avatar/007.gif
+%%NUKEDIR%%/html/images/avatar/008.gif
+%%NUKEDIR%%/html/images/avatar/009.gif
+%%NUKEDIR%%/html/images/avatar/010.gif
+%%NUKEDIR%%/html/images/avatar/011.gif
+%%NUKEDIR%%/html/images/avatar/012.gif
+%%NUKEDIR%%/html/images/avatar/013.gif
+%%NUKEDIR%%/html/images/avatar/014.gif
+%%NUKEDIR%%/html/images/avatar/015.gif
+%%NUKEDIR%%/html/images/avatar/016.gif
+%%NUKEDIR%%/html/images/avatar/017.gif
+%%NUKEDIR%%/html/images/avatar/018.gif
+%%NUKEDIR%%/html/images/avatar/blank.gif
+%%NUKEDIR%%/html/images/powered/postnuke.butn.gif
+%%NUKEDIR%%/html/images/powered/adodb2.gif
+%%NUKEDIR%%/html/images/powered/apache.gif
+%%NUKEDIR%%/html/images/powered/css.gif
+%%NUKEDIR%%/html/images/powered/html401.gif
+%%NUKEDIR%%/html/images/powered/index.html
+%%NUKEDIR%%/html/images/powered/php2.gif
+%%NUKEDIR%%/html/images/powered/php3.gif
+%%NUKEDIR%%/html/images/powered/phplive.gif
+%%NUKEDIR%%/html/images/powered/adodb.gif
+%%NUKEDIR%%/html/images/reviews/index.html
+%%NUKEDIR%%/html/images/sections/index.html
+%%NUKEDIR%%/html/images/sections/template.gif
+%%NUKEDIR%%/html/images/sections/transparent.gif
+%%NUKEDIR%%/html/images/menu/comments.gif
+%%NUKEDIR%%/html/images/menu/exit.gif
+%%NUKEDIR%%/html/images/menu/home.gif
+%%NUKEDIR%%/html/images/menu/index.html
+%%NUKEDIR%%/html/images/menu/info.gif
+%%NUKEDIR%%/html/images/menu/themes.gif
+%%NUKEDIR%%/html/images/logo.gif
+%%NUKEDIR%%/html/javascript/bbcode.php
+%%NUKEDIR%%/html/javascript/index.html
+%%NUKEDIR%%/html/javascript/openwindow.php
+%%NUKEDIR%%/html/javascript/phplive.php
+%%NUKEDIR%%/html/javascript/showimages.php
+%%NUKEDIR%%/html/install/lang/eng/global.php
+%%NUKEDIR%%/html/install/style/style.css
+%%NUKEDIR%%/html/install/style/styleNN.css
+%%NUKEDIR%%/html/install/check.php
+%%NUKEDIR%%/html/install/gui.php
+%%NUKEDIR%%/html/install/index.html
+%%NUKEDIR%%/html/install/language.php
+%%NUKEDIR%%/html/install/language_update.php
+%%NUKEDIR%%/html/install/modify_config.php
+%%NUKEDIR%%/html/install/mpn187.php
+%%NUKEDIR%%/html/install/mpn188.php
+%%NUKEDIR%%/html/install/newdata.php
+%%NUKEDIR%%/html/install/newinstall.php
+%%NUKEDIR%%/html/install/newtables.php
+%%NUKEDIR%%/html/install/phpnuke52.php
+%%NUKEDIR%%/html/install/phpnuke53.php
+%%NUKEDIR%%/html/install/phpnuke531.php
+%%NUKEDIR%%/html/install/phpnuke54.php
+%%NUKEDIR%%/html/install/pn4.php
+%%NUKEDIR%%/html/install/pn5.php
+%%NUKEDIR%%/html/install/pn6.php
+%%NUKEDIR%%/html/install/pn62.php
+%%NUKEDIR%%/html/install/pn63.php
+%%NUKEDIR%%/html/install/pn64.php
+%%NUKEDIR%%/html/install/pn7.php
+%%NUKEDIR%%/html/install/pn7db.php
+%%NUKEDIR%%/html/install/pntables64.php
+%%NUKEDIR%%/html/install/pntables71.php
+%%NUKEDIR%%/html/install/tables_update.php
+%%NUKEDIR%%/html/install/update_functions.php
+%%NUKEDIR%%/html/install/upgrade.php
+%%NUKEDIR%%/html/install/db.php
+%%NUKEDIR%%/html/includes/classes/README
+%%NUKEDIR%%/html/includes/classes/http_get.class
+%%NUKEDIR%%/html/includes/blocks/weblinks.php
+%%NUKEDIR%%/html/includes/blocks/big.php
+%%NUKEDIR%%/html/includes/blocks/category.php
+%%NUKEDIR%%/html/includes/blocks/ephem.php
+%%NUKEDIR%%/html/includes/blocks/finclude.php
+%%NUKEDIR%%/html/includes/blocks/fxp.php
+%%NUKEDIR%%/html/includes/blocks/html.php
+%%NUKEDIR%%/html/includes/blocks/index.html
+%%NUKEDIR%%/html/includes/blocks/login.php
+%%NUKEDIR%%/html/includes/blocks/menu.php
+%%NUKEDIR%%/html/includes/blocks/online.php
+%%NUKEDIR%%/html/includes/blocks/past.php
+%%NUKEDIR%%/html/includes/blocks/php.php
+%%NUKEDIR%%/html/includes/blocks/phplive.php
+%%NUKEDIR%%/html/includes/blocks/poll.php
+%%NUKEDIR%%/html/includes/blocks/related.php
+%%NUKEDIR%%/html/includes/blocks/rss.php
+%%NUKEDIR%%/html/includes/blocks/rss2.php
+%%NUKEDIR%%/html/includes/blocks/search.php
+%%NUKEDIR%%/html/includes/blocks/sms.php
+%%NUKEDIR%%/html/includes/blocks/stories.php
+%%NUKEDIR%%/html/includes/blocks/text.php
+%%NUKEDIR%%/html/includes/blocks/thelang.php
+%%NUKEDIR%%/html/includes/blocks/topic.php
+%%NUKEDIR%%/html/includes/blocks/user.php
+%%NUKEDIR%%/html/includes/blocks/button.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/user.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/big.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/ephem.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/fxp.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/linklist.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/login.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/menu.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/online.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/past.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/phplive.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/poll.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/rss.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/rss2.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/stories.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/thelang.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/topic.php
+%%NUKEDIR%%/html/includes/language/blocks/eng/category.php
+%%NUKEDIR%%/html/includes/search/users.php
+%%NUKEDIR%%/html/includes/search/downloads.php
+%%NUKEDIR%%/html/includes/search/faq.php
+%%NUKEDIR%%/html/includes/search/index.html
+%%NUKEDIR%%/html/includes/search/links.php
+%%NUKEDIR%%/html/includes/search/reviews.php
+%%NUKEDIR%%/html/includes/search/sections.php
+%%NUKEDIR%%/html/includes/search/stories.php
+%%NUKEDIR%%/html/includes/search/comments.php
+%%NUKEDIR%%/html/includes/advblocks.php
+%%NUKEDIR%%/html/includes/legacy.php
+%%NUKEDIR%%/html/includes/lensdebug.inc.php
+%%NUKEDIR%%/html/includes/oldfuncs.php
+%%NUKEDIR%%/html/includes/pnAPI.php
+%%NUKEDIR%%/html/includes/pnBanners.php
+%%NUKEDIR%%/html/includes/pnHTML.php
+%%NUKEDIR%%/html/includes/pnMod.php
+%%NUKEDIR%%/html/includes/pnSession.php
+%%NUKEDIR%%/html/includes/pnUser.php
+%%NUKEDIR%%/html/includes/queryutil.php
+%%NUKEDIR%%/html/includes/security.php
+%%NUKEDIR%%/html/includes/textsanitizer.php
+%%NUKEDIR%%/html/includes/xhtml.php
+%%NUKEDIR%%/html/includes/debug.php
+%%NUKEDIR%%/html/includes/counter.php
+%%NUKEDIR%%/html/includes/index.html
+%%NUKEDIR%%/html/themes/ExtraLite/images/leftbar.gif
+%%NUKEDIR%%/html/themes/ExtraLite/images/logo.gif
+%%NUKEDIR%%/html/themes/ExtraLite/images/mainbar.gif
+%%NUKEDIR%%/html/themes/ExtraLite/images/rightbar.gif
+%%NUKEDIR%%/html/themes/ExtraLite/style/style.css
+%%NUKEDIR%%/html/themes/ExtraLite/style/styleNN.css
+%%NUKEDIR%%/html/themes/ExtraLite/index.html
+%%NUKEDIR%%/html/themes/ExtraLite/theme.php
+%%NUKEDIR%%/html/themes/PostNuke/lang/eng/global.php
+%%NUKEDIR%%/html/themes/PostNuke/images/rightbar.gif
+%%NUKEDIR%%/html/themes/PostNuke/images/index.html
+%%NUKEDIR%%/html/themes/PostNuke/images/leftbar.gif
+%%NUKEDIR%%/html/themes/PostNuke/images/leftc.gif
+%%NUKEDIR%%/html/themes/PostNuke/images/logo.gif
+%%NUKEDIR%%/html/themes/PostNuke/images/mainbar.gif
+%%NUKEDIR%%/html/themes/PostNuke/images/pix-t.gif
+%%NUKEDIR%%/html/themes/PostNuke/images/black_dot.gif
+%%NUKEDIR%%/html/themes/PostNuke/style/index.html
+%%NUKEDIR%%/html/themes/PostNuke/style/style.css
+%%NUKEDIR%%/html/themes/PostNuke/style/styleNN.css
+%%NUKEDIR%%/html/themes/PostNuke/theme.php
+%%NUKEDIR%%/html/themes/PostNuke/bottom_links.php
+%%NUKEDIR%%/html/themes/PostNuke/index.html
+%%NUKEDIR%%/html/themes/PostNuke/README.xhtml
+%%NUKEDIR%%/html/themes/PostNuke/top_links.php
+%%NUKEDIR%%/html/themes/PostNuke/README
+%%NUKEDIR%%/html/themes/PostNuke/Info.php
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/spacer.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BannerContentBG.jpg
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BannerLeft.jpg
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BannerRight.jpg
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BannerTop.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BlockRBott.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BlockRContent.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BlockRTop.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/Footerdot.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/HeaderBottbg.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/HeaderEye.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/HeaderLeft.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/HeaderTop1.jpg
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/HeaderTop2.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/HeaderTop3.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/boxtitle.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/index.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/left.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/leftbar.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/mainbar.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/pixel.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/rightbar.gif
+%%NUKEDIR%%/html/themes/PostNukeBlue/images/BannerBott.jpg
+%%NUKEDIR%%/html/themes/PostNukeBlue/style/index.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/style/style.css
+%%NUKEDIR%%/html/themes/PostNukeBlue/style/styleNN.css
+%%NUKEDIR%%/html/themes/PostNukeBlue/articlebox.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/header.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/index.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/leftblock.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/righblock.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/storybox.html
+%%NUKEDIR%%/html/themes/PostNukeBlue/theme.php
+%%NUKEDIR%%/html/themes/PostNukeBlue/footnav.html
+%%NUKEDIR%%/html/themes/PostNukeSilver/lang/eng/global.php
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer_top_right.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bar_bottom_middle.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bar_bottom_right.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bar_top_left.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bar_top_middle.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bar_top_right.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bkground.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/leftbar.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/logo.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/mainbar.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/menu_middle_left.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/menu_middle_right.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/rightbar.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/samplebanner.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer_bottom_left.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer_bottom_middle.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer_bottom_right.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer_top_left.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/spacer_top_middle.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/images/bar_bottom_left.gif
+%%NUKEDIR%%/html/themes/PostNukeSilver/style/index.html
+%%NUKEDIR%%/html/themes/PostNukeSilver/style/style.css
+%%NUKEDIR%%/html/themes/PostNukeSilver/style/styleNN.css
+%%NUKEDIR%%/html/themes/PostNukeSilver/index.html
+%%NUKEDIR%%/html/themes/PostNukeSilver/theme.php
+%%NUKEDIR%%/html/themes/PostNukeSilver/top_links.php
+%%NUKEDIR%%/html/themes/PostNukeSilver/bottom_links.php
+%%NUKEDIR%%/html/themes/PostNukeSilver/Info.php
+%%NUKEDIR%%/html/themes/SeaBreeze/images/rightbar.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/corner_bottom_right.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/corner_top_right.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/go.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/hbkg.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/leftbar.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/lefttop.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/logoshort.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/mainbar.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/note_icon.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/orange.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/right_bkg.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/images/blank.gif
+%%NUKEDIR%%/html/themes/SeaBreeze/lang/eng/global.php
+%%NUKEDIR%%/html/themes/SeaBreeze/style/index.html
+%%NUKEDIR%%/html/themes/SeaBreeze/style/style.css
+%%NUKEDIR%%/html/themes/SeaBreeze/style/styleNN.css
+%%NUKEDIR%%/html/themes/SeaBreeze/top_links.php
+%%NUKEDIR%%/html/themes/SeaBreeze/bottom_links.php
+%%NUKEDIR%%/html/themes/SeaBreeze/README
+%%NUKEDIR%%/html/themes/SeaBreeze/theme.php
+%%NUKEDIR%%/html/themes/index.html
+%%NUKEDIR%%/html/admin.php
+%%NUKEDIR%%/html/install.php
+%%NUKEDIR%%/html/mainfile.php
+%%NUKEDIR%%/html/modules.php
+%%NUKEDIR%%/html/pntables.php
+%%NUKEDIR%%/html/print.php
+%%NUKEDIR%%/html/referer.php
+%%NUKEDIR%%/html/robots.txt
+%%NUKEDIR%%/html/user.php
+%%NUKEDIR%%/html/xmlrpc.php
+%%NUKEDIR%%/html/header.php
+%%NUKEDIR%%/html/footer.php
+%%NUKEDIR%%/html/error.php
+%%NUKEDIR%%/html/config.php
+%%NUKEDIR%%/html/config-old.php
+%%NUKEDIR%%/html/banners.php
+%%NUKEDIR%%/html/backend.php
+%%NUKEDIR%%/html/index.php
+%%NUKEDIR%%/sql/rogue.sql
+@dirrm share/doc/postnuke
+@dirrm %%NUKEDIR%%/html/language/eng
+@dirrm %%NUKEDIR%%/html/language
+@dirrm %%NUKEDIR%%/html/docs
+@dirrm %%NUKEDIR%%/html/pnadodb/drivers
+@dirrm %%NUKEDIR%%/html/pnadodb
+@dirrm %%NUKEDIR%%/html/modules/NS-Past_Nuke/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Past_Nuke/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Past_Nuke/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Past_Nuke
+@dirrm %%NUKEDIR%%/html/modules/xmlrpc/api
+@dirrm %%NUKEDIR%%/html/modules/xmlrpc/lib
+@dirrm %%NUKEDIR%%/html/modules/xmlrpc
+@dirrm %%NUKEDIR%%/html/modules/AvantGo/docs
+@dirrm %%NUKEDIR%%/html/modules/AvantGo/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/AvantGo/lang
+@dirrm %%NUKEDIR%%/html/modules/AvantGo
+@dirrm %%NUKEDIR%%/html/modules/Blocks/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Blocks/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Blocks/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Blocks
+@dirrm %%NUKEDIR%%/html/modules/Comments/docs
+@dirrm %%NUKEDIR%%/html/modules/Comments/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Comments/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Comments
+@dirrm %%NUKEDIR%%/html/modules/Downloads/docs
+@dirrm %%NUKEDIR%%/html/modules/Downloads/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Downloads/lang
+@dirrm %%NUKEDIR%%/html/modules/Downloads/images
+@dirrm %%NUKEDIR%%/html/modules/Downloads
+@dirrm %%NUKEDIR%%/html/modules/FAQ/docs
+@dirrm %%NUKEDIR%%/html/modules/FAQ/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/FAQ/lang
+@dirrm %%NUKEDIR%%/html/modules/FAQ/images
+@dirrm %%NUKEDIR%%/html/modules/FAQ
+@dirrm %%NUKEDIR%%/html/modules/Members_List/docs
+@dirrm %%NUKEDIR%%/html/modules/Members_List/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Members_List/lang
+@dirrm %%NUKEDIR%%/html/modules/Members_List/images
+@dirrm %%NUKEDIR%%/html/modules/Members_List
+@dirrm %%NUKEDIR%%/html/modules/Messages/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Messages/lang
+@dirrm %%NUKEDIR%%/html/modules/Messages
+@dirrm %%NUKEDIR%%/html/modules/Modules/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Modules/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Modules/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Modules
+@dirrm %%NUKEDIR%%/html/modules/NS-AddStory/images
+@dirrm %%NUKEDIR%%/html/modules/NS-AddStory/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-AddStory/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-AddStory
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin/docs
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin/admin
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin_Messages/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin_Messages/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin_Messages/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin_Messages/pnblocks
+@dirrm %%NUKEDIR%%/html/modules/NS-Admin_Messages
+@dirrm %%NUKEDIR%%/html/modules/NS-Banners/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Banners/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Banners
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/user/case
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/user/links
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/user/modules
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments/user
+@dirrm %%NUKEDIR%%/html/modules/NS-Comments
+@dirrm %%NUKEDIR%%/html/modules/NS-Ephemerids/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Ephemerids/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Ephemerids/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Ephemerids
+@dirrm %%NUKEDIR%%/html/modules/NS-Groups/docs
+@dirrm %%NUKEDIR%%/html/modules/NS-Groups/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Groups/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Groups/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Groups
+@dirrm %%NUKEDIR%%/html/modules/NS-Languages/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Languages/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Languages/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Languages
+@dirrm %%NUKEDIR%%/html/modules/NS-LostPassword/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-LostPassword
+@dirrm %%NUKEDIR%%/html/modules/NS-MailUsers/images
+@dirrm %%NUKEDIR%%/html/modules/NS-MailUsers/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-MailUsers/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-MailUsers
+@dirrm %%NUKEDIR%%/html/modules/NS-Multisites/docs
+@dirrm %%NUKEDIR%%/html/modules/NS-Multisites/installation
+@dirrm %%NUKEDIR%%/html/modules/NS-Multisites
+@dirrm %%NUKEDIR%%/html/modules/NS-NewUser/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-NewUser/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-NewUser
+@dirrm %%NUKEDIR%%/html/modules/topx/lang
+@dirrm %%NUKEDIR%%/html/modules/topx/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/topx/pnlang
+@dirrm %%NUKEDIR%%/html/modules/topx
+@dirrm %%NUKEDIR%%/html/modules/Autolinks/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Autolinks/pndocs
+@dirrm %%NUKEDIR%%/html/modules/Autolinks/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Autolinks/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Autolinks
+@dirrm %%NUKEDIR%%/html/modules/NS-Quotes/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Quotes
+@dirrm %%NUKEDIR%%/html/modules/NS-Referers/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Referers/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Referers/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Referers
+@dirrm %%NUKEDIR%%/html/modules/NS-Settings/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Settings/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Settings/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Settings
+@dirrm %%NUKEDIR%%/html/modules/NS-User/images
+@dirrm %%NUKEDIR%%/html/modules/NS-User/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-User/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-User/doc
+@dirrm %%NUKEDIR%%/html/modules/NS-User/user
+@dirrm %%NUKEDIR%%/html/modules/NS-User
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/user/case
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/user/links
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/user/modules
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account/user
+@dirrm %%NUKEDIR%%/html/modules/NS-Your_Account
+@dirrm %%NUKEDIR%%/html/modules/News/docs
+@dirrm %%NUKEDIR%%/html/modules/News/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/News/lang
+@dirrm %%NUKEDIR%%/html/modules/News
+@dirrm %%NUKEDIR%%/html/modules/Permissions/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Permissions/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Permissions/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Permissions
+@dirrm %%NUKEDIR%%/html/modules/Quotes/pnblocks
+@dirrm %%NUKEDIR%%/html/modules/Quotes/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Quotes/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Quotes
+@dirrm %%NUKEDIR%%/html/modules/Ratings/pndocs
+@dirrm %%NUKEDIR%%/html/modules/Ratings/lang
+@dirrm %%NUKEDIR%%/html/modules/Ratings/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Ratings/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Ratings/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Ratings
+@dirrm %%NUKEDIR%%/html/modules/Recommend_Us/docs
+@dirrm %%NUKEDIR%%/html/modules/Recommend_Us/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Recommend_Us/lang
+@dirrm %%NUKEDIR%%/html/modules/Recommend_Us
+@dirrm %%NUKEDIR%%/html/modules/Reviews/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Reviews/lang
+@dirrm %%NUKEDIR%%/html/modules/Reviews/docs
+@dirrm %%NUKEDIR%%/html/modules/Reviews/images
+@dirrm %%NUKEDIR%%/html/modules/Reviews
+@dirrm %%NUKEDIR%%/html/modules/Search/docs
+@dirrm %%NUKEDIR%%/html/modules/Search/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Search/lang
+@dirrm %%NUKEDIR%%/html/modules/Search
+@dirrm %%NUKEDIR%%/html/modules/Sections/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Sections/lang
+@dirrm %%NUKEDIR%%/html/modules/Sections/docs
+@dirrm %%NUKEDIR%%/html/modules/Sections/images
+@dirrm %%NUKEDIR%%/html/modules/Sections
+@dirrm %%NUKEDIR%%/html/modules/Stats/docs
+@dirrm %%NUKEDIR%%/html/modules/Stats/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Stats/lang
+@dirrm %%NUKEDIR%%/html/modules/Stats/images
+@dirrm %%NUKEDIR%%/html/modules/Stats
+@dirrm %%NUKEDIR%%/html/modules/Submit_News/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Submit_News/lang
+@dirrm %%NUKEDIR%%/html/modules/Submit_News/docs
+@dirrm %%NUKEDIR%%/html/modules/Submit_News/images
+@dirrm %%NUKEDIR%%/html/modules/Submit_News
+@dirrm %%NUKEDIR%%/html/modules/Template/pnblocks
+@dirrm %%NUKEDIR%%/html/modules/Template/lang
+@dirrm %%NUKEDIR%%/html/modules/Template/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Template/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Template/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Template
+@dirrm %%NUKEDIR%%/html/modules/Top_List/docs
+@dirrm %%NUKEDIR%%/html/modules/Top_List/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Top_List/lang
+@dirrm %%NUKEDIR%%/html/modules/Top_List
+@dirrm %%NUKEDIR%%/html/modules/Topics/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Topics/lang
+@dirrm %%NUKEDIR%%/html/modules/Topics/docs
+@dirrm %%NUKEDIR%%/html/modules/Topics/images
+@dirrm %%NUKEDIR%%/html/modules/Topics
+@dirrm %%NUKEDIR%%/html/modules/Web_Links/docs
+@dirrm %%NUKEDIR%%/html/modules/Web_Links/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/Web_Links/lang
+@dirrm %%NUKEDIR%%/html/modules/Web_Links/images
+@dirrm %%NUKEDIR%%/html/modules/Web_Links
+@dirrm %%NUKEDIR%%/html/modules/Wiki/lang
+@dirrm %%NUKEDIR%%/html/modules/Wiki/pnlang/eng
+@dirrm %%NUKEDIR%%/html/modules/Wiki/pnlang
+@dirrm %%NUKEDIR%%/html/modules/Wiki/pnimages
+@dirrm %%NUKEDIR%%/html/modules/Wiki/pndocs
+@dirrm %%NUKEDIR%%/html/modules/Wiki/pnblocks
+@dirrm %%NUKEDIR%%/html/modules/Wiki
+@dirrm %%NUKEDIR%%/html/modules/legal/docs
+@dirrm %%NUKEDIR%%/html/modules/legal/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/legal/lang
+@dirrm %%NUKEDIR%%/html/modules/legal
+@dirrm %%NUKEDIR%%/html/modules/NS-Polls/docs
+@dirrm %%NUKEDIR%%/html/modules/NS-Polls/lang/eng
+@dirrm %%NUKEDIR%%/html/modules/NS-Polls/lang
+@dirrm %%NUKEDIR%%/html/modules/NS-Polls/images
+@dirrm %%NUKEDIR%%/html/modules/NS-Polls
+@dirrm %%NUKEDIR%%/html/modules
+@dirrm %%NUKEDIR%%/html/images/global
+@dirrm %%NUKEDIR%%/html/images/topics
+@dirrm %%NUKEDIR%%/html/images/banners
+@dirrm %%NUKEDIR%%/html/images/flags
+@dirrm %%NUKEDIR%%/html/images/smilies
+@dirrm %%NUKEDIR%%/html/images/avatar
+@dirrm %%NUKEDIR%%/html/images/powered
+@dirrm %%NUKEDIR%%/html/images/reviews
+@dirrm %%NUKEDIR%%/html/images/sections
+@dirrm %%NUKEDIR%%/html/images/menu
+@dirrm %%NUKEDIR%%/html/images
+@dirrm %%NUKEDIR%%/html/javascript
+@dirrm %%NUKEDIR%%/html/install/lang/eng
+@dirrm %%NUKEDIR%%/html/install/lang
+@dirrm %%NUKEDIR%%/html/install/style
+@dirrm %%NUKEDIR%%/html/install
+@dirrm %%NUKEDIR%%/html/includes/classes
+@dirrm %%NUKEDIR%%/html/includes/blocks
+@dirrm %%NUKEDIR%%/html/includes/language/blocks/eng
+@dirrm %%NUKEDIR%%/html/includes/language/blocks
+@dirrm %%NUKEDIR%%/html/includes/language
+@dirrm %%NUKEDIR%%/html/includes/search
+@dirrm %%NUKEDIR%%/html/includes
+@dirrm %%NUKEDIR%%/html/themes/ExtraLite/images
+@dirrm %%NUKEDIR%%/html/themes/ExtraLite/style
+@dirrm %%NUKEDIR%%/html/themes/ExtraLite
+@dirrm %%NUKEDIR%%/html/themes/PostNuke/lang/eng
+@dirrm %%NUKEDIR%%/html/themes/PostNuke/lang
+@dirrm %%NUKEDIR%%/html/themes/PostNuke/images
+@dirrm %%NUKEDIR%%/html/themes/PostNuke/style
+@dirrm %%NUKEDIR%%/html/themes/PostNuke
+@dirrm %%NUKEDIR%%/html/themes/PostNukeBlue/images
+@dirrm %%NUKEDIR%%/html/themes/PostNukeBlue/style
+@dirrm %%NUKEDIR%%/html/themes/PostNukeBlue
+@dirrm %%NUKEDIR%%/html/themes/PostNukeSilver/lang/eng
+@dirrm %%NUKEDIR%%/html/themes/PostNukeSilver/lang
+@dirrm %%NUKEDIR%%/html/themes/PostNukeSilver/images
+@dirrm %%NUKEDIR%%/html/themes/PostNukeSilver/style
+@dirrm %%NUKEDIR%%/html/themes/PostNukeSilver
+@dirrm %%NUKEDIR%%/html/themes/SeaBreeze/images
+@dirrm %%NUKEDIR%%/html/themes/SeaBreeze/lang/eng
+@dirrm %%NUKEDIR%%/html/themes/SeaBreeze/lang
+@dirrm %%NUKEDIR%%/html/themes/SeaBreeze/style
+@dirrm %%NUKEDIR%%/html/themes/SeaBreeze
+@dirrm %%NUKEDIR%%/html/themes
+@dirrm %%NUKEDIR%%/html
+@dirrm %%NUKEDIR%%/sql
+@dirrm %%NUKEDIR%%

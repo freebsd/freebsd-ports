@@ -353,6 +353,7 @@
     SUBDIR += phpbb
     SUBDIR += phpnuke
     SUBDIR += plugger
+    SUBDIR += postnuke
     SUBDIR += pound
     SUBDIR += privoxy
     SUBDIR += publicfile
