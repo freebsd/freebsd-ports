@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.0.5
+PORTVERSION=	4.0.6
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/
 
@@ -16,8 +16,6 @@ COMMENT=	The Shmoo client/server host integrity checker
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
-
-DOCS=		docs/OsirisUserGuide.pdf docs/OsirisUserGuide.rtf
 
 .if defined(WITH_OSIRISMD)
 PLIST_SUB+=	OSIRISMD=""
@@ -57,10 +55,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/osirismd/osirismd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/install/freebsd/osirismd.sh.sample \
 		${PREFIX}/etc/rc.d
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
