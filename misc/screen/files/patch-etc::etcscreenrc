@@ -1,0 +1,14 @@
+--- etc/etcscreenrc.orig	Sun Oct 12 20:19:58 2003
++++ etc/etcscreenrc	Sun Oct 12 20:20:07 2003
+@@ -82,9 +82,9 @@
+ terminfo wy75-42 nx:xo:Z0=\E[?3h\E[31h:Z1=\E[?3l\E[31h
+ 
+ #remove some stupid / dangerous key bindings
+-bind '^k'
++bind ^k
+ #bind 'L'
+-bind '^\'
++bind ^\
+ #make them better
+ bind '\\' quit
+ bind 'K' kill
