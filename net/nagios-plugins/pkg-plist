@@ -18,12 +18,12 @@ libexec/nagios/check_ircd
 %%SUB_LDAP%%libexec/nagios/check_ldap
 libexec/nagios/check_load
 libexec/nagios/check_log
+libexec/nagios/check_mailq
 libexec/nagios/check_mrtg
 libexec/nagios/check_mrtgtraf
 %%SUB_MYSQL%%libexec/nagios/check_mysql
 libexec/nagios/check_nagios
 libexec/nagios/check_nntp
-libexec/nagios/check_nt
 libexec/nagios/check_ntp
 libexec/nagios/check_nwstat
 libexec/nagios/check_oracle
@@ -47,6 +47,7 @@ libexec/nagios/check_ups
 libexec/nagios/check_users
 libexec/nagios/check_vsz
 libexec/nagios/check_wave
+libexec/nagios/negate
 libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh

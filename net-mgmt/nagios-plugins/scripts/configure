@@ -79,7 +79,7 @@ while [ "$1" ]; do
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
-			echo "CONFIGURE_ARGS+=	--with-mysqllibdir=\${LOCALBASE}/lib/mysql"
+			echo "CONFIGURE_ARGS+=	--with-mysql=\${LOCALBASE}"
 			SUB_MYSQL=""
 			;;
 		\"PostgreSQL\")
