@@ -1,0 +1,11 @@
+--- configure.orig	Wed Apr 24 22:37:56 2002
++++ configure	Wed Apr 24 22:40:48 2002
+@@ -9299,7 +9299,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lXinerama $PANEL_LIBS $LIBS"
++LIBS="-lXinerama -lXext $PANEL_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 9305 "configure"
+ #include "confdefs.h"
