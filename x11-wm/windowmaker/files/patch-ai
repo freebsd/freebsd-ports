@@ -1,0 +1,13 @@
+--- WINGs/wevent.c.orig	Wed Oct 21 14:43:55 1998
++++ WINGs/wevent.c	Mon Oct 26 00:05:25 1998
+@@ -387,6 +387,10 @@
+     } else {
+ 	delay->tv_sec = timerHandler->when.tv_sec - now.tv_sec;
+ 	delay->tv_usec = timerHandler->when.tv_usec - now.tv_usec;
++	if (delay->tv_usec < 0) {
++	    delay->tv_usec += 1000000;
++	    delay->tv_sec--;
++	}
+     }
+ }
+
