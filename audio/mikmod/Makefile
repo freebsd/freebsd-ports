@@ -1,37 +1,28 @@
 # ports collection makefile for:   mikmod304
-# Version required:    3.0.4
+# Version required:    3.1.1
 # Date created:        16 November 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.7 1998/11/25 00:34:11 asami Exp $
+# $Id: Makefile,v 1.8 1998/11/25 01:39:11 flathill Exp $
 #
 
-DISTNAME=	mikmod-3.0.4
+DISTNAME=	mikmod-3.1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-pre-patch:
-	@(cd ${WRKSRC} ;\
-	 ${CP} ${FILESDIR}/config.sh ${WRKSRC}; \
-	 ${PATCH} ${PATCH_ARGS} -p1  < ${FILESDIR}/patch-s3mvolslides.diff )
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		mikmod.1
 
 pre-build:
-	(cd ${WRKSRC}; ${SH} config.sh )
+	${RM} -rf ${WRKSRC}/docs/mikmod.info*
 
-do-install:
-	( cd ${WRKSRC}; ${INSTALL_PROGRAM} mikmod ${PREFIX}/bin )
-	( cd ${WRKSRC}/playercode ; ${INSTALL_DATA} libmikmod.a ${PREFIX}/lib )
-	( cd ${WRKSRC}/mmio ; ${INSTALL_DATA} libmmio.a ${PREFIX}/lib )
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mikmod
-.for f in  AUTHORS COPYING.LIB ChangeLog README*
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/$f ${PREFIX}/share/doc/mikmod
-.endfor
-.endif
-
-post-install:
-	@strip ${PREFIX}/bin/mikmod
+pre-install:
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 
 .include <bsd.port.mk>

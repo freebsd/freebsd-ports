@@ -1,11 +1,11 @@
 bin/mikmod
+include/mikmod.h
 lib/libmikmod.a
-lib/libmmio.a
-share/doc/mikmod/AUTHORS
-share/doc/mikmod/COPYING.LIB
-share/doc/mikmod/ChangeLog
-share/doc/mikmod/README
-share/doc/mikmod/README.EsounD
-share/doc/mikmod/README.SGI
-share/doc/mikmod/README.SUN
-@dirrm share/doc/mikmod
+lib/libmikmod.la
+lib/libmikmod.so
+lib/libmikmod.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec install-info --delete %D/info/mikmod.info %D/info/dir
+info/mikmod.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
