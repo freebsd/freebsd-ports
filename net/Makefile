@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.160 1998/05/27 16:54:41 mph Exp $
+# $Id: Makefile,v 1.161 1998/05/31 09:27:20 andreas Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -93,6 +93,7 @@
     SUBDIR += sic
     SUBDIR += sirc
     SUBDIR += slirp
+    SUBDIR += smbtcpdump
     SUBDIR += sniffit
     SUBDIR += socks5
     SUBDIR += spegla
