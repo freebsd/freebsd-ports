@@ -7,6 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	${WMMVERSION:S/-/./}
+PORTREVISION=	1
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/FreeWnn/alpha/
 PKGNAMESUFFIX?=	-lib
