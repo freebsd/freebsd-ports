@@ -54,7 +54,7 @@ CONFIGURE_ARGS=		--enable-cd --disable-mini-stl --enable-threads
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-.if defined(WITH_SERVICES)
+.if !defined(WITHOUT_SERVICES)
 CONFIGURE_ARGS+=	--enable-ccm --enable-life --enable-externalize
 .else
 CONFIGURE_ARGS+=	--disable-coss
