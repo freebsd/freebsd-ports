@@ -10,26 +10,3 @@
  	TH_SAFE="-thread-safe"
  	AC_DEFINE(CL_THREAD_SAFE,1,[thread safe])
  	AC_DEFINE(_REENTRANT,1,[thread safe])
-@@ -510,6 +507,8 @@
- 
- dnl Check for gethostbyname_r and number of its arguments
- dnl Code from libwww/configure.in
-+AC_CHECK_FUNC(gethostbyname_r)
-+if test $ac_cv_func_gethostbyname_r = 'yes'; then
- AC_MSG_CHECKING(for gethostbyname_r)
- if test -z "$ac_cv_gethostbyname_args"; then
- AC_TRY_COMPILE(
-@@ -565,6 +564,13 @@
- 	AC_DEFINE(HAVE_GETHOSTBYNAME_R_6,1,[gethostbyname_r takes 6 arguments])
-     fi
-     AC_MSG_RESULT([yes, and it takes $ac_cv_gethostbyname_args arguments])
-+fi
-+else
-+dnl Check for gethostbyname()
-+AC_CHECK_FUNC(gethostbyname)
-+if test $ac_cv_func_gethostbyname = 'no'; then
-+    AC_MSG_ERROR(***** fail on check gethostbyname())
-+fi
- fi
- 
- dnl Check for clamav in /etc/passwd

@@ -1,50 +1,71 @@
 #!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/security/clamav-devel/Attic/pkg-install,v 1.17 2004-11-04 22:49:52 pav Exp $
+
+PREFIX=${PKG_PREFIX:-%%PREFIX%%}
+DESTDIR=${PKG_DESTDIR:-}
+
+CLAMAVUSER=%%CLAMAVUSER%%
+CLAMAVGROUP=%%CLAMAVGROUP%%
+UID=106
+GID=$UID
+
+CLAMRUN=$DESTDIR/var/run/clamav
+CLAMLOG=$DESTDIR/var/log/clamav
+DATADIR=$DESTDIR%%DATADIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
-if [ -z "${CLAMAVUSER}" ]; then
-	CLAMAVUSER=clamav
-fi
-
-if [ -z "${CLAMAVGROUP}" ]; then
-	CLAMAVGROUP=clamav
-fi
-
-UID=106
-GID=${UID}
-
-CLAMRUN=/var/run/clamav
-CLAMLOG=/var/log/clamav
-
-echo "===> Adding user \"${CLAMAVUSER}\" if necessary."
-if ! pw groupshow "${CLAMAVGROUP}" 2>/dev/null 1>&2; then
-	if pw groupadd ${CLAMAVGROUP} -g ${GID}; then
-		echo "===> Added group \"${CLAMAVGROUP}\"."
-	else
-                echo "===> Adding group \"${CLAMAVGROUP}\" failed..."
-                exit 1
+	if ! pw groupshow "$CLAMAVGROUP" 2>/dev/null 1>&2; then
+		if pw groupadd $CLAMAVGROUP -g $GID; then
+			echo "=> Added group \"$CLAMAVGROUP\"."
+		else
+			echo "=> Adding group \"$CLAMAVGROUP\" failed..."
+			exit 1
+		fi
 	fi
-fi
 
-if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
-	if pw useradd ${CLAMAVUSER} -u ${UID} -g ${CLAMAVGROUP} -h - \
-		-s "/usr/sbin/nologin" -d "/nonexistent" \
-		-c "Clam Antivirus"; \
-        then
-                echo "===> Added user \"${CLAMAVUSER}\"."
-		pw groupmod mail -m ${CLAMAVUSER}
-        else
-                echo "===> Adding user \"${CLAMAVUSER}\" failed..."
-                exit 1
-        fi
-fi
+	if ! pw usershow "$CLAMAVUSER" 2>/dev/null 1>&2; then
+		if pw useradd $CLAMAVUSER -u $UID -g $CLAMAVGROUP -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "Clam Antivirus"; \
+		then
+			pw groupmod mail -m $CLAMAVUSER
+			echo "=> Added user \"$CLAMAVUSER\"."
+		else
+			echo "=> Adding user \"$CLAMAVUSER\" failed..."
+			exit 1
+		fi
+	fi
 
-echo "===> Setting permissions..."
-mkdir -p "${CLAMRUN}"
-chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMRUN}"
+elif [ "$2" = "POST-INSTALL" ]; then
 
-mkdir -p "${CLAMLOG}"
-chown "${CLAMAVUSER}:${CLAMAVGROUP}" "${CLAMLOG}"
+	if [ ! -d "$CLAMRUN" ]; then
+		mkdir -p "$CLAMRUN" || exit 1
+		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMRUN" || exit 1
+	fi
+
+	if [ ! -d "$CLAMLOG" ]; then
+		mkdir -p "$CLAMLOG" || exit 1
+		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMLOG" || exit 1
+	fi
+
+	if [ ! -d "$DATADIR" ]; then
+		mkdir -p "$DATADIR" || exit 1
+		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DATADIR" || exit 1
+	fi
+
+	if [ -f "$DESTDIR$PREFIX/etc/clamav.conf" ]; then
+		echo
+		echo "**************** WARNING ****************"
+		echo "*                                       *"
+		echo "*  The configuration file has changed:  *"
+		echo "* Please edit $PREFIX/etc/clamd.conf *"
+		echo "* and remove $PREFIX/etc/clamav.conf *"
+		echo "*                                       *"
+		echo "**************** WARNING ****************"
+		echo
+	fi
+
 fi
 
 exit 0

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 @unexec [ ! -f /var/run/clamav/clamd.pid ] || %%RC_DIR%%/clamav-clamd%%RC_SUFX%% stop || true
 @unexec [ ! -f /var/run/clamav/freshclam.pid ] || %%RC_DIR%%/clamav-freshclam%%RC_SUFX%% stop || true
 bin/clamav-config
@@ -15,21 +16,14 @@ lib/libclamav.so.1
 lib/libclamav.so
 lib/libclamav.a
 libdata/pkgconfig/libclamav.pc
-%%PORTDOCS%%%%DOCSDIR%%/clamav-mirror-howto.pdf
-%%PORTDOCS%%%%DOCSDIR%%/clamdoc.pdf
-%%PORTDOCS%%%%DOCSDIR%%/signatures.pdf
-@unexec if cmp -s %D/etc/clamav.conf %D/etc/clamav.conf.default; then rm -f %D/etc/clamav.conf; fi
-etc/clamav.conf.default
-@exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
+@unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
+etc/clamd.conf.default
+@exec [ -f %B/clamd.conf ] || cp %B/%f %B/clamd.conf
 @unexec if cmp -s %D/etc/freshclam.conf %D/etc/freshclam.conf.default; then rm -f %D/etc/freshclam.conf; fi
 etc/freshclam.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
-@owner %%CLAMAVUSER%%
-@group %%CLAMAVGROUP%%
-@exec chown %%CLAMAVUSER%%:%%CLAMAVGROUP%% %B
-@unexec [ -s %D/%%DATADIR%%/main.cvd ] || rm -f %D/%%DATADIR%%/main.cvd
-@unexec [ -s %D/%%DATADIR%%/daily.cvd ] || rm -f %D/%%DATADIR%%/daily.cvd
+@unexec [ -s %D/%%DATADIR%%/daily.cvd ] || rm -f %D/%%DATADIR%%/daily.cvd || true
+@unexec [ -s %D/%%DATADIR%%/main.cvd ] || rm -f %D/%%DATADIR%%/main.cvd || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @unexec rmdir /var/run/clamav 2>/dev/null || true
 @unexec rmdir /var/log/clamav 2>/dev/null || true
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

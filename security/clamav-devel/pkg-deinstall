@@ -1,7 +1,13 @@
-if [ ! "$2" = "POST-DEINSTALL" ]; then
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
 	exit 0
 fi
-echo "----------------------------------------------------------"
-echo "  If you really want to remove this package, please remove"
-echo " the clamav-user and clean out log files and database"
-echo "----------------------------------------------------------"
+
+CLAMAVUSER=%%CLAMAVUSER%%
+
+if pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
+	echo "To delete ${CLAMAVUSER} user permanently, use 'pw userdel \"${CLAMAVUSER}\"'"
+fi
+exit 0
