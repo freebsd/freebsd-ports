@@ -8,6 +8,10 @@ Here is a list of some useful hints on using VMware on FreeBSD.
 when running a DOS prompt on MS Windows.  Hitting Alt+Enter will crash
 VMware before you can say "Chuck!"
 
+- Running VMware as root is NOT the right way to do it.  Edit
+/etc/fbtab to obtain the proper permission for the device files that
+you are going to access, then run VMware as a normal user.
+
 - Raw disk may not work.  Use virtual or plain disk instead.
 
 - The vmware-mount.pl utility does not work. If you want to mount
