@@ -7,7 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -50,5 +50,8 @@ post-install:
 .endfor
 	@install-info ${DESTDIR}${PREFIX}/info/automake14.info \
 		${DESTDIR}${PREFIX}/info/dir
+	# temporary
+	${LN} -s . ${PREFIX}/share/automake14/automake
+	${LN} -s ../aclocal14 ${PREFIX}/share/automake14/aclocal
 
 .include <bsd.port.mk>
