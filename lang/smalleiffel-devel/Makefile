@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/SmallEiffel
 SEDIR=		${PREFIX}/${PKGNAME}
 
 # We alias a directory to the installation directory
-# That we we can easily switch between different builds
+# so it is possible to easily switch between different builds
 ALIASDIR=	${PREFIX}/SmallEiffel
 
 # SmallEiffel needs this to find system.se
@@ -45,7 +45,14 @@ do-install:
 	${LN} -fs ${SEDIR} ${ALIASDIR})
 	@(if test -e ${SEDIR} ; then ${RM} -rf ${SEDIR}; fi; \
 	    ${MKDIR} ${SEDIR}; \
-	    ${CP} -pR ${WRKSRC}/* ${SEDIR})
+	    ${CP} -pR ${WRKSRC}/* ${SEDIR}; \
+	    ${ECHO} ./ > ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO} ${SEDIR}/lib_std/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO} ${SEDIR}/lib_iterator/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO} ${SEDIR}/lib_random/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO} ${SEDIR}/lib_number/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO} ${SEDIR}/lib_show/ >> ${SEDIR}/sys/loadpath.UNIX; \
+	    ${ECHO} ${SEDIR}/lib_se/ >> ${SEDIR}/sys/loadpath.UNIX)
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/MESSAGE \
 		> ${PKGMESSAGE}
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${PKGDIR}/INSTALL \
