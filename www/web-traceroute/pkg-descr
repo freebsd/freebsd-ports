@@ -1,0 +1,24 @@
+This is a modified BSD traceroute command which outputs customized HTML 
+and can be used as a cgi program directly.
+
+The advantage of using a compiled C program directly instead of a shell, 
+tcl or perl scipt: 
+
+More Secure (tastes better) - There is no possibility that strange 
+characters or environment passed to the CGI program can be used to break 
+into the server, etc. 
+
+Less Overhead (less filling) - The whole CGI program runs as one very 
+small process instead of multiple script processes and/or a large perl 
+program which must be interpreted each time it is run. 
+
+You can customise the HTML presented, by creating the template file 
+"template.html", and entering it's full path when prompted. Insert the 
+text "TRACEROUTE-OUTPUT" into your template file at the point where you 
+require the traceroute results displayed. This makes web-traceroute 
+integrate seamlessly with existing website layouts.
+
+WWW: http://www.carpe.net/src/index.html
+
+- Dean
+dean@odyssey.apana.org.au

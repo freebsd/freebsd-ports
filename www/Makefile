@@ -550,6 +550,7 @@
     SUBDIR += waccess
     SUBDIR += wb0
     SUBDIR += wcol
+    SUBDIR += web-traceroute
     SUBDIR += web2ldap
     SUBDIR += web500gw
     SUBDIR += webalizer
