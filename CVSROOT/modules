@@ -6806,6 +6806,7 @@ rshd		src/libexec/rshd
 rshell		ports/net/rshell
 rsync		ports/net/rsync
 rsynth		ports/audio/rsynth
+rt2		ports/www/rt2
 rt2-demo	ports/games/rt2-demo
 rtadvd		src/usr.sbin/rtadvd
 rtb		ports/games/rtb
