@@ -12,12 +12,14 @@ CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.libpng.org/pub/png/src/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
-DISTNAME=       lib${PKGNAME}
+DISTFILES=       lib${PKGNAME}${EXTRACT_SUFX} pnggccrd-1.0.9pre2${EXTRACT_SUFX}
 
 PATCH_SITES=    ftp://ftp.libpng.org/pub/png/src/
 #PATCHFILES=
 
 MAINTAINER=     ache@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/lib${PKGNAME}
 
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	4
@@ -38,6 +40,8 @@ post-extract:
 # Please don't delete the following line - this link used by ghostscript* ports
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libpng
 #
+	@${CP} ${WRKDIR}/pnggccrd.c ${WRKSRC}/pnggccrd.c
+
 .if !defined(WITH_MMX) && (${ARCH} == "i386")
 	@${ECHO_MSG}
 	@${ECHO_MSG} " If you have a CPU with MMX instruction set (Pentium/P55C and higher) you can"
