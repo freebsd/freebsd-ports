@@ -3,7 +3,7 @@
 # Date created:		December 3, 1997
 # Whom:			Oliver Breuninger <ob@seicom.NET>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/12 12:08:08 tg Exp $
 
 DISTNAME=	o2c-1.16
 CATEGORIES=	lang
@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
 		ftp://cognac.informatik.uni-kl.de/pub/ooc/misc/
 
 MAINTAINER=	ob@seicom.NET
+
+BROKEN=		attempts to install file to home directory
 
 MAKE_ENV= 	MAKEOBJDIR=.
 
