@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	ari-yahoo
-PORTVERSION=	1.4.1
+PORTVERSION=	1.9
 CATEGORIES=	misc
-MASTER_SITES=	http://lusis.org/~ari/yahoo/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
