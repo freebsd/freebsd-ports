@@ -1,0 +1,21 @@
+--- configure.orig	Fri Sep 26 16:14:11 2003
++++ configure	Tue Nov  4 03:24:50 2003
+@@ -5033,13 +5033,17 @@
+                 LIBS="$LIBS -lwx_gtk_stc-${WX_VERSION} -lwx_gtk_xrc-${WX_VERSION}"
+                 LIBS="$LIBS $WX_NEW_LDFLAGS"
+                 ;;
++            *wx_gtk*)
++                LIBS="$LIBS -lwx_gtk_stc -lwx_gtk_xrc"
++                LIBS="$LIBS $WX_NEW_LDFLAGS $PTHREAD_LIBS"
++                ;;
+             *)
+                 ;;
+         esac
+     fi
+ 
+     WX_NEW_CPPFLAGS=`${WX_CONFIG} --cxxflags`
+-    CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS -I${WX_HOME}/include"
++    CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS -I${WX_HOME}/include ${PTHREAD_CFLAGS}"
+     case "${host}" in
+         *-apple-darwin*)
+             CPPFLAGS="$CPPFLAGS -no-cpp-precomp -fno-rtti"
