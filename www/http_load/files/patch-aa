@@ -1,0 +1,16 @@
+--- Makefile.orig	Thu Sep  9 21:13:21 1999
++++ Makefile	Sat Jul 29 15:36:30 2000
+@@ -16,9 +16,10 @@
+ 
+ BINDIR =	/usr/local/bin
+ MANDIR =	/usr/local/man/man1
+-CC =		gcc
+-#CFLAGS =	-O $(SSL_DEFS) $(SSL_INC)
+-CFLAGS =	-g $(SSL_DEFS) $(SSL_INC)
++CC ?=		gcc
++CFLAGS ?=	-O
++CFLAGS +=	$(SSL_DEFS) $(SSL_INC)
++#CFLAGS =	-g $(SSL_DEFS) $(SSL_INC)
+ #LDFLAGS =	-s $(SSL_LIBS) $(SYSV_LIBS)
+ LDFLAGS =	-g $(SSL_LIBS) $(SYSV_LIBS)
+ 
