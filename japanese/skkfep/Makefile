@@ -11,6 +11,8 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/skkfep/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
+MAINTAINER=	ports@FreeBSD.org
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
