@@ -1,0 +1,12 @@
+--- unix/runargv.c.orig	Wed Jul 16 01:02:34 1997
++++ unix/runargv.c	Mon Sep  8 03:01:42 1997
+@@ -68,7 +68,9 @@
+ char	*cmd;
+ {
+    extern  int  errno;
++#ifndef __FreeBSD__
+    extern  char *sys_errlist[];
++#endif
+    int          pid;
+    char         **argv;
+ 

@@ -1,0 +1,10 @@
+--- unix/dcache.c.orig	Wed Jul 16 01:02:34 1997
++++ unix/dcache.c	Mon Sep  8 03:20:56 1997
+@@ -35,6 +35,7 @@
+ #undef __WIN32__
+ #endif
+ 
++#include <sys/types.h>
+ #include <dirent.h>
+ #include "extern.h"
+ #include "sysintf.h"
