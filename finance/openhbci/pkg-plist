@@ -1,4 +1,3 @@
-include/openhbci.h
 include/openhbci/abstracttrans.h
 include/openhbci/account.h
 include/openhbci/accountparams.h
@@ -8,7 +7,6 @@ include/openhbci/balance.h
 include/openhbci/bank.h
 include/openhbci/bankparams.h
 include/openhbci/bpdjob.h
-include/openhbci/connection.h
 include/openhbci/cryptkey.h
 include/openhbci/customer.h
 include/openhbci/date.h
@@ -25,10 +23,12 @@ include/openhbci/interactor.h
 include/openhbci/job.h
 include/openhbci/interactorcb.h
 include/openhbci/listwrappers.h
+include/openhbci/limit.h
 include/openhbci/medium.h
 include/openhbci/mediumddv.h
 include/openhbci/mediumkeyfile.h
 include/openhbci/mediumrdhbase.h
+include/openhbci/mediumrsacard.h
 include/openhbci/messagequeue.h
 include/openhbci/pointer.h
 include/openhbci/rsakey.h
@@ -56,10 +56,9 @@ include/openhbci/parser.h
 include/openhbci/stream.h
 include/openhbci/progressmonitor.h
 include/openhbci/progressmonitorcb.h
-bin/cmoney
 bin/rdhconverter
 bin/openhbci-config
-lib/libopenhbci.so.4
+lib/libopenhbci.so.7
 lib/libopenhbci.so
 lib/libopenhbci.la
 lib/libopenhbci.a
