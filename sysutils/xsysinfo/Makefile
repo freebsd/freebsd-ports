@@ -3,7 +3,7 @@
 # Date created:		4 April 1996
 # Whom:			jdli
 #
-# $Id: Makefile,v 1.3 1996/10/30 14:05:20 jfitz Exp $
+# $Id: Makefile,v 1.4 1996/11/17 08:06:44 obrien Exp $
 #
 
 DISTNAME=	xsysinfo-1.3
@@ -13,10 +13,7 @@ MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/jdli/source/
 MAINTAINER=	jdli@csie.nctu.edu.tw
 
 USE_IMAKE=	yes
-
-post-install:
-.if defined(NOMANCOMPRESS)
-		gunzip ${PREFIX}/man/man1/xsysinfo.1.gz
-.endif
+MANCOMPRESSED=	yes
+MAN1=		xsysinfo.1
 
 .include <bsd.port.mk>
