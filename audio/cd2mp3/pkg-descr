@@ -1,14 +1,11 @@
-This port makes mp3 creation easy, by ripping tracks from
-CD to WAV files and Encoding them to mp3 automatically.
+cd2mp3 will help you create MP3s from your favourite CD collections.
 
-It is basically a front-end (but VERY easy to use) to
-dagrab and bladeenc, which must be installed in your
-path.
+It features single track encoding, entire CD encoding, ripping of tracks
+to .WAV files, and encoding .WAV files to MP3 Format.
 
-These programs and further documentation are available
-from the website.
+Further documentation is available at our website.
 
-WWW: http://ukug.uk.freebsd.org/~kandy/
+WWW: http://www.jamiesdomain.org.uk/
 
 - Jamie Heckford
-jamie@jamiesdomain.co.uk
+jamie@jamiesdomain.org.uk

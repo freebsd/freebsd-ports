@@ -6,9 +6,10 @@
 #
 
 PORTNAME=		cd2mp3
-PORTVERSION=		1.1
+PORTVERSION=		0.5
+PORTEPOCH=		1
 CATEGORIES=		audio
-MASTER_SITES=		ftp://ukug.uk.freebsd.org/pub/kandy/cd2mp3/${PORTVERSION}/
+MASTER_SITES=		http://download.cd2mp3.org.uk/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=		jamie@jamiesdomain.co.uk
