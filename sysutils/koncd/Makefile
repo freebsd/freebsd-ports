@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.koncd.de/download/ \
 
 MAINTAINER=	demon@FreeBSD.org
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrecord \
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_KDELIBS_VER=2

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 MAINTAINER=	bsdx@looksharp.net
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrecord \
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		cdlabelgen:${PORTSDIR}/print/cdlabelgen
 

@@ -17,7 +17,7 @@ RUN_DEPENDS=	bladeenc:${PORTSDIR}/audio/bladeenc \
 		lame:${PORTSDIR}/audio/lame \
 		gogo:${PORTSDIR}/audio/gogo \
 		tosha:${PORTSDIR}/audio/tosha \
-		cdda2wav:${PORTSDIR}/sysutils/cdrecord \
+		cdda2wav:${PORTSDIR}/sysutils/cdrtools \
 		cda:${PORTSDIR}/audio/xmcd
 
 NO_BUILD=	yes
