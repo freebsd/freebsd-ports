@@ -17,7 +17,7 @@ MAINTAINER=	sam@brj.pp.ru
 COMMENT=	A GPL standalone Flash (TM) plugin for FireFox web browser
 
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
-RUN_DEPENDS?=   firefox:${PORTSDIR}/www/firefox
+RUN_DEPENDS?=	firefox:${PORTSDIR}/www/firefox
 
 USE_X_PREFIX=	yes
 
