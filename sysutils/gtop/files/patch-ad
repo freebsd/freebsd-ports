@@ -1,0 +1,40 @@
+--- main.c.orig	Sun Sep 27 22:47:58 1998
++++ main.c	Wed Oct 14 02:36:27 1998
+@@ -2,7 +2,7 @@
+ 
+ /*
+  *   gtop - gnome system monitor
+  *   Copyright (C) 1997,98 Radek Doulík
+  *
+  *   This program is free software; you can redistribute it and/or modify
+  *   it under the terms of the GNU General Public License as published by
+@@ -31,6 +31,8 @@
+ 
+ #include <gnome.h>
+ 
++#include <floatingpoint.h>
++
+ GtkWidget *window;
+ GtkWidget *notebook;
+ GtkNotebookPage *offPage;
+@@ -273,8 +275,11 @@
+ int
+ main (int argc, char *argv[])
+ {
++
+         GnomeClient *client;
+ 
++        fpsetmask(fpgetmask() & ~(FP_X_DZ|FP_X_INV));
++
+ 	argp_program_version = VERSION;
+ 
+ 	bindtextdomain (PACKAGE, GNOMELOCALEDIR);
+@@ -363,5 +368,8 @@
+ 	/* enter gtk main */
+         gtk_main ();
+         
++        fpresetsticky(FP_X_DZ|FP_X_INV);
++        fpsetmask(FP_X_DZ|FP_X_INV);
++
+         return 0;
+ }
