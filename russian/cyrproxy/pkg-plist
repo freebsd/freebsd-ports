@@ -17,11 +17,11 @@ share/cyrproxy/mac-koi8
 share/cyrproxy/win-alt
 share/cyrproxy/win-iso
 share/cyrproxy/win-koi8
-%%PORTDOCS%%share/doc/cyrproxy/History
-%%PORTDOCS%%share/doc/cyrproxy/README
-%%PORTDOCS%%share/doc/cyrproxy/README.http
+%%PORTDOCS%%%%DOCSDIR%%/History
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.http
 www/cgi-bin/cyrwww
 @dirrm share/cyrproxy
-%%PORTDOCS%%@dirrm share/doc/cyrproxy
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/www/cgi-bin 2> /dev/null || true
 @unexec rmdir %D/www 2> /dev/null || true
