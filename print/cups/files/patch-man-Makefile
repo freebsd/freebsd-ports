@@ -1,0 +1,53 @@
+--- man/Makefile.orig	Fri Jun  7 20:23:59 2002
++++ man/Makefile	Fri Jun  7 20:59:42 2002
+@@ -37,7 +37,7 @@
+ # Make everything...
+ #
+ 
+-all:	$(CAT1) $(CAT3) $(CAT5) $(CAT8)
++all:	#$(CAT1) $(CAT3) $(CAT5) $(CAT8)
+ 	for dir in $(LANGDIRS); do \
+ 		echo "Making all in man/$$dir..."; \
+ 		(cd $$dir; make all); \
+@@ -72,8 +72,6 @@
+ 	for file in $(MAN1); do \
+ 		$(INSTALL_MAN) $$file $(MANDIR)/man1/`basename $$file man`1; \
+ 	done
+-	$(RM) $(MANDIR)/man1/cancel.1
+-	$(LN) lp.1 $(MANDIR)/man1/cancel.1
+ 	$(INSTALL_DIR) $(PMANDIR)/man3
+ 	for file in $(MAN3); do \
+ 		$(INSTALL_MAN) $$file $(PMANDIR)/man3/`basename $$file man`3; \
+@@ -86,32 +84,6 @@
+ 	for file in $(MAN8); do \
+ 		$(INSTALL_MAN) $$file $(AMANDIR)/man$(MAN8EXT)/`basename $$file man`$(MAN8EXT); \
+ 	done
+-	$(RM) $(AMANDIR)/man$(MAN8EXT)/reject.$(MAN8EXT)
+-	$(LN) accept.$(MAN8EXT) $(AMANDIR)/man$(MAN8EXT)/reject.$(MAN8EXT)
+-	$(RM) $(AMANDIR)/man$(MAN8EXT)/disable.$(MAN8EXT)
+-	$(LN) enable.$(MAN8EXT) $(AMANDIR)/man$(MAN8EXT)/disable.$(MAN8EXT)
+-	$(INSTALL_DIR) $(MANDIR)/cat1
+-	for file in $(CAT1); do \
+-		$(INSTALL_MAN) $$file $(MANDIR)/cat1; \
+-	done
+-	$(RM) $(MANDIR)/cat1/cancel.$(CAT1EXT)
+-	$(LN) lp.$(CAT1EXT) $(MANDIR)/cat1/cancel.$(CAT1EXT)
+-	$(INSTALL_DIR) $(PMANDIR)/cat3
+-	for file in $(CAT3); do \
+-		$(INSTALL_MAN) $$file $(PMANDIR)/cat3; \
+-	done
+-	$(INSTALL_DIR) $(MANDIR)/cat5
+-	for file in $(CAT5); do \
+-		$(INSTALL_MAN) $$file $(MANDIR)/cat5; \
+-	done
+-	$(INSTALL_DIR) $(AMANDIR)/cat$(MAN8EXT)
+-	for file in $(CAT8); do \
+-		$(INSTALL_MAN) $$file $(AMANDIR)/cat$(MAN8EXT); \
+-	done
+-	$(RM) $(AMANDIR)/cat$(MAN8EXT)/reject.$(CAT8EXT)
+-	$(LN) accept.$(CAT8EXT) $(AMANDIR)/cat$(MAN8EXT)/reject.$(CAT8EXT)
+-	$(RM) $(AMANDIR)/cat$(MAN8EXT)/disable.$(CAT8EXT)
+-	$(LN) enable.$(CAT8EXT) $(AMANDIR)/cat$(MAN8EXT)/disable.$(CAT8EXT)
+ 	for dir in $(LANGDIRS); do \
+ 		echo "Installing all in man/$$dir..."; \
+ 		(cd $$dir; make install); \
