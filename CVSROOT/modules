@@ -3625,6 +3625,7 @@ linux-png	ports/graphics/linux-png
 linux-q3ademo	ports/games/linux-q3ademo
 linux-realplayer	ports/audio/linux-realplayer
 linux-sdl12	ports/devel/linux-sdl12
+linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-tiff	ports/graphics/linux-tiff
 linux-vmware-toolbox ports/emulators/linux-vmware-toolbox
 linux-xalf	ports/x11/linux-xalf
