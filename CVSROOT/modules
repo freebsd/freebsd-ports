@@ -3050,6 +3050,7 @@ ja-sjxa		ports/japanese/sjxa
 ja-skk		ports/japanese/skk
 ja-skk-elisp	ports/japanese/skk-elisp
 ja-skk-jisyo	ports/japanese/skk-jisyo
+ja-skk-jisyo-cdb	ports/japanese/skk-jisyo-cdb
 ja-skk-tools	ports/japanese/skk-tools
 ja-skk10-elisp-emacs20	ports/japanese/skk10-elisp-emacs20
 ja-skkfep	ports/japanese/skkfep
