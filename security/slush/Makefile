@@ -13,23 +13,13 @@ MASTER_SITES=	http://violet.ibs.com.au/slush/files/ \
 
 MAINTAINER=	shipley@dis.org
 
-BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
-
-#MAN=		slush.1
-
 GNU_CONFIGURE=	yes
 
-#NOPROFILE=	true
+USE_OPENSSL=	RSA
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} <= 300000
 BROKEN=		does not build
-.endif
-
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
 .endif
 
 do-install:

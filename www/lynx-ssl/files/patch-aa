@@ -1,5 +1,5 @@
---- makefile.in.orig	Wed Jun  9 23:24:37 1999
-+++ makefile.in	Wed Jun  9 23:26:39 1999
+--- makefile.in.orig	Sat Jan 29 23:43:49 2000
++++ makefile.in	Sun Jan 30 00:04:17 2000
 @@ -54,7 +54,7 @@
  DOCDIR= $(DESTDIR)$(docdir)
  
@@ -15,7 +15,7 @@
  # ability to make SSL connections.
 -SSL_DIR= /usr/local/ssl
 -SSL_LIBS= -L$(SSL_DIR)/lib -lssl -lcrypto
-+SSL_DIR= $(prefix)
++SSL_DIR= $(OPENSSLBASE)
 +SSL_LIBS= -L$(SSL_DIR)/lib -lssl -lcrypto ${EXTRA_SSL_LIBS}
  SSL_DEFINES= -I$(SSL_DIR)/include -DUSE_SSL
  
