@@ -1,0 +1,833 @@
+diff -bruN --exclude=HTML ./AUTHORS ../../0.2.9_3/portmanager/AUTHORS
+--- ./AUTHORS	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/AUTHORS	Sun Mar 13 10:26:54 2005
+@@ -1 +1,2 @@
+ Michael C. Shultz	ringworm01@gmail.com
++Alistair Sutton		<alistair.sutton@gmail.com>
+diff -bruN --exclude=HTML ./NEWS ../../0.2.9_3/portmanager/NEWS
+--- ./NEWS	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/NEWS	Sun Mar 13 21:27:57 2005
+@@ -1,6 +1,19 @@
+ change log
+ 
+-NOTE to self: Monitor from 0.2.1 to 0.2.2 item 3.
++
++from 0.2.9_2 to 0.2.9_3	(March 2005)
++
++1) Added check for really old ports in PMGRrAddDependencies that
++aborts portmanager and provides suggestion on how to update manually.
++This is to fix a seg fault when @comment DEPORIGIN: is missing in
++a port's +CONTENTS file
++
++2) Incorporated  Alistair Sutton's <alistair.sutton@gmail.com>
++code that adds interactive update option "portmanager -ui".
++
++3) Slowly switching license from GNU to BSD.
++
++from 0.2.9 to 0.2.9_2	(March 2005)
+ 
+ from 0.2.9 to 0.2.9_1	(March 2005)
+ 
+diff -bruN --exclude=HTML ./libMG/src/libMG.h ../../0.2.9_3/portmanager/libMG/src/libMG.h
+--- ./libMG/src/libMG.h	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libMG/src/libMG.h	Fri Mar 11 02:34:09 2005
+@@ -67,6 +67,7 @@
+ #define	KEY_N		78
+ #define	KEY_SPACE	32
+ #define	KEY_X		88
++#define	KEY_Y		89
+ #define	KEY_n		110
+ #define	KEY_x		120
+ #define	LINEFEED	10
+@@ -74,6 +75,7 @@
+ #define	MAXPARAMETERS	256
+ #define	SPACE		32
+ #define	TAB		9
++#define KEY_y		121
+ 
+ #define	SINGLE_LINES	"------------------------------------------------------------------------"
+ #define	DOUBLE_LINES	"========================================================================"
+diff -bruN --exclude=HTML ./libPMGR/src/PMGRrAddDependencies.c ../../0.2.9_3/portmanager/libPMGR/src/PMGRrAddDependencies.c
+--- ./libPMGR/src/PMGRrAddDependencies.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/PMGRrAddDependencies.c	Mon Mar 14 10:56:06 2005
+@@ -1,25 +1,31 @@
+-/************************************************************************/
+-/*	Copyright (C) 2005  Michael C. Shultz				*/
+-/*									*/
+-/* This program is free software; you can redistribute it and/or modify */
+-/* it under the terms of the GNU General Public License as published by */
+-/* the Free Software Foundation; either version 2 of the License, or (at*/
+-/* your option) any later version.					*/
+-/*									*/
+-/* This program is distributed in the hope that it will be useful,	*/
+-/* but WITHOUT ANY WARRANTY; without even the implied warranty of	*/
+-/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the	*/
+-/* GNU General Public License for more details. 			*/
+-/*									*/
+-/* You should have received a copy of the GNU General Public License	*/
+-/* along with this program; if not, write to the Free Software		*/
+-/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA		*/
+-/*  02111-1307, USA.							*/
+-/* 									*/
+-/* Michael C. Shultz							*/
+-/* ringworm01@gmail.com							*/
+-/* Box 3238 Landers, CA 92285						*/
+-/************************************************************************/
++/*
++	Copyright (C) 2005  Michael C. Shultz
++
++	Redistribution and use in source and binary forms, with or without
++	modification, are permitted provided that the following conditions
++	are met:
++
++	1. Redistributions of source code must retain the above copyright
++	   notice, this list of conditions and the following disclaimer.
++	2. Redistributions in binary form must reproduce the above copyright
++	   notice, this list of conditions and the following disclaimer in the
++	   documentation and/or other materials provided with the distribution.
++
++	THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++	IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++	IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++	NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++	DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++	THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++	THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++
++	Michael C. Shultz
++	ringworm01@gmail.com
++	Box 3238 Landers, CA 92285
++*/
+ #include	<libPMGR.h>
+ 
+ int	PMGRrAddDependencies( structProperty* property, char* portName )
+@@ -89,6 +95,7 @@
+ 		assert(0);
+ 	}
+ 	buffer[0]	= 0;
++	buffer[bufferSize-1]	= 0;
+ 	fread(buffer, 1, bufferSize, contentsFileStream );
+ 	buffPtr	= buffer;
+ 	portDependency	= buffer;
+@@ -108,6 +115,17 @@
+ 		portDependencyDir		+= strlen( "@comment DEPORIGIN:" );
+ 		stringSize			= strstr( portDependencyDir, "\n" ) - portDependencyDir;
+ 		portDependencyDir[stringSize]	= 0;
++
++
++		if( strncmp( buffPtr, "@comment DEPORIGIN:",  strlen( "@comment DEPORIGIN:" ) ) )
++		{
++			fprintf( stdout, 
++				"%s %s error: %s/%s \"@comment DEPORIGIN:\" is missing from +CONTENTS file, recommend you manually remove this port:\n",
++				id, VERSION, PKGDBDIR, portName );
++			fprintf( stdout, "pkg_delete -f %s/%s then find it in /usr/ports/{category}/{portname} and reinstall\n", PKGDBDIR, portName );
++			exit(0);
++		}
++
+ 
+ 		buffPtr 			= portDependencyDir + stringSize + 1;
+ 
+diff -bruN --exclude=HTML ./libPMGR/src/PMGRrDoUpgrade.c ../../0.2.9_3/portmanager/libPMGR/src/PMGRrDoUpgrade.c
+--- ./libPMGR/src/PMGRrDoUpgrade.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/PMGRrDoUpgrade.c	Fri Mar 11 13:08:35 2005
+@@ -1,39 +1,33 @@
+-/************************************************************************/
+-/*	Copyright (C) 2004  Michael C. Shultz				*/
+-/*									*/
+-/* This program is free software; you can redistribute it and/or modify */
+-/* it under the terms of the GNU General Public License as published by */
+-/* the Free Software Foundation; either version 2 of the License, or (at*/
+-/* your option) any later version.					*/
+-/*									*/
+-/* This program is distributed in the hope that it will be useful,	*/
+-/* but WITHOUT ANY WARRANTY; without even the implied warranty of	*/
+-/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the	*/
+-/* GNU General Public License for more details. 			*/
+-/*									*/
+-/* You should have received a copy of the GNU General Public License	*/
+-/* along with this program; if not, write to the Free Software		*/
+-/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA		*/
+-/*  02111-1307, USA.							*/
+-/* 									*/
+-/* Michael C. Shultz							*/
+-/* ringworm01@gmail.com							*/
+-/* Box 3238 Landers, CA 92285						*/
+-/************************************************************************/
+-#include	<libPMGR.h>
+-
+ /*
+- *	$Author: mike $
+- *	$Revision: 1.2 $
+- *	$Date: 2005/02/21 17:35:40 $
+- *	$Id: PMGRrDoUpgrade.c,v 1.2 2005/02/21 17:35:40 mike Exp $
+- *	$Log: PMGRrDoUpgrade.c,v $
+- *	Revision 1.2  2005/02/21 17:35:40  mike
+- *	PMGRrDoUpgrade:  Added make check-conflicts so we no longer waste
+- *	time trying to build a port that is going to fail at installation
+- *	time. If there is a conflict port is pkg_delete -f'ed.
+- *	
+- */
++	Copyright (C) 2005  Michael C. Shultz
++
++	Redistribution and use in source and binary forms, with or without
++	modification, are permitted provided that the following conditions
++	are met:
++
++	1. Redistributions of source code must retain the above copyright
++	   notice, this list of conditions and the following disclaimer.
++	2. Redistributions in binary form must reproduce the above copyright
++	   notice, this list of conditions and the following disclaimer in the
++	   documentation and/or other materials provided with the distribution.
++
++	THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++	IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++	IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++	NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++	DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++	THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++	THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++
++	Michael C. Shultz
++	ringworm01@gmail.com
++	Box 3238 Landers, CA 92285
++*/
++
++#include	<libPMGR.h>
+ 
+ int	PMGRrDoUpgrade( structProperty* property, char* oldPortName )
+ {
+@@ -54,9 +48,18 @@
+ 	int	mallocIdx	= 0;
+ 	int	qty		= 0;
+ 	int	stringSize	= 0;
++	int 	kkey		= 1;
++	int	proceed		= 0;
++
++	/*
++	 * gdb shows kkey == 0 here, weird!!!
++	 */
++
+ 
+-	/* this is so we can signal that the entire portmanager program needs to
+-	terminate after updating this port*/
++	/*
++	 * this is so we can signal that the entire portmanager program needs to
++	 * terminate after updating this port
++	 */
+ 	if( strstr( oldPortName, "portmanager" ) )
+ 	{
+ 		property->portManagerUpdated	= 1;
+@@ -65,12 +68,10 @@
+ 	while( fflush( stdout ) );
+ 
+ 	MGdbGoTop( property->outOfDatePortsDb );
+-	oldPortDir	= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortName, oldPortName,
+-				property->fieldOldPortDir );
++	oldPortDir	= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortName, oldPortName, property->fieldOldPortDir );
+ 	if( !oldPortDir )
+ 	{
+-		fprintf( stderr, "%s %s error(52): oldPortName %s not found in outOfDatePortsDb\n",
+-			id, VERSION, oldPortName );
++		fprintf( stderr, "%s %s error(52): oldPortName %s not found in outOfDatePortsDb\n", id, VERSION, oldPortName );
+ 			while( fflush( stderr ) );
+ 		return(9);
+ 	}
+@@ -79,14 +80,69 @@
+ 	options	= MGdbSeek( property->configDb, property->fieldKey, oldPortDir, property->fieldValue );
+ 
+ 	MGdbGoTop( property->outOfDatePortsDb );
+-	reason		= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortDir, oldPortDir,
+-				property->fieldReason );
++	reason		= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortDir, oldPortDir, property->fieldReason );
+ 
+ 	MGdbGoTop( property->outOfDatePortsDb );
+-	reasonPortName	= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortDir, oldPortDir,
+-				property->fieldNewPortName );		
++	reasonPortName	= MGdbSeek( property->outOfDatePortsDb, property->fieldOldPortDir, oldPortDir, property->fieldNewPortName );		
++
++	/*
++	 * if interactive option was chosen, present prompt and get response
++	 */
++	if( property->interactive == 1 )
++	{
++		while (!proceed)
++		{
++			fprintf( stdout, "Upgrade port %s reason: %s: Y/N [Y]? ", oldPortName, reasonPortName );
++
++			kkey	= getc(stdin);
++
++			switch(kkey)
++			{
++				case KEY_ENTER:
++				{
++					proceed = 1;
++					break;
++				}
++				case KEY_Y:
++				{
++					proceed = 1;
++					kkey	= getc(stdin);
++					break;
++				}
++				case KEY_y:
++				{
++					proceed = 1;
++					kkey	= getc(stdin);
++					break;
++				}
++				case KEY_N:
++				{
++					proceed = 1;
++					fprintf( stdout, "\nSkipping port: %s\n", oldPortName );
++					MGdbAdd( property->ignoreDb, oldPortDir, "interactively skipped", NULL );
++					kkey	= getc(stdin);
++					return(0);
++				}
++				case KEY_n:
++				{
++					proceed = 1;
++					fprintf( stdout, "\nSkipping port: %s\n", oldPortName );
++					MGdbAdd( property->ignoreDb, oldPortDir, "interactively skipped", NULL );
++					kkey	= getc(stdin);
++					return(0);
++				}
++				default:
++				{
++					fprintf( stdout, "Invalid option. Please enter either Y to upgrade or N to skip\n");
++					kkey	= getc(stdin);
++				}
++			}
++					
++		}
++	}
+ 
+ 	fprintf( stdout, "UPGRADING %s reason %s %s\n", oldPortName, reason, reasonPortName  );
++
+ 	fprintf( stdout, "%s\n", SINGLE_LINES );
+ 	while( fflush( stdout ) );
+ 	/************************************************************************/
+@@ -248,8 +304,6 @@
+ 	/************************************************************************/
+ 	/*			Command "2" " make clean "			*/
+ 	/************************************************************************/
+-
+-
+ 	if( options )
+ 	{
+ 		stringSize	= strlen( "cd " )
+diff -bruN --exclude=HTML ./libPMGR/src/PMGRrMissingDependencies.c ../../0.2.9_3/portmanager/libPMGR/src/PMGRrMissingDependencies.c
+--- ./libPMGR/src/PMGRrMissingDependencies.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/PMGRrMissingDependencies.c	Mon Mar 14 06:58:27 2005
+@@ -151,7 +151,7 @@
+ 			strcat( command, "make " );
+ 			strcat( command, " all-depends-list" );
+ 		}
+-		fprintf( stdout, "verifing dependency status of %s (may take awhile) by executing command:\n%s\n",
++		fprintf( stdout, "verifying dependency status of %s (may take awhile) by executing command:\n%s\n",
+ 					dependencyPortName, command );
+ 		while( fflush( stdout ) );
+ 		/*zzzzzzzzzzzzzz*/
+diff -bruN --exclude=HTML ./libPMGR/src/PMGRrShowLeavesDelete.c ../../0.2.9_3/portmanager/libPMGR/src/PMGRrShowLeavesDelete.c
+--- ./libPMGR/src/PMGRrShowLeavesDelete.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/PMGRrShowLeavesDelete.c	Fri Mar 11 01:42:38 2005
+@@ -54,32 +54,26 @@
+ 	while( idx )
+ 	{
+ 		leafPortName	= MGdbGet( property->installedPortsDb, idx, property->fieldInstalledPortName );		
+-
+-
+-
+-		leafPortDirShort	= MGdbGet( property->installedPortsDb, idx,
+-						property->fieldInstalledPortDir );
++		leafPortDirShort	= MGdbGet( property->installedPortsDb, idx, property->fieldInstalledPortDir );
+ 
+ 		/*
+ 		 * Make sure port isn't in ignore.db
+ 		 */
+ 		MGdbGoTop( property->ignoreDb );
+-		if( MGdbSeek( property->ignoreDb, property->fieldIgnorePortDir, leafPortDirShort,
+-			property->fieldIgnorePortDir ) )
++		if( MGdbSeek( property->ignoreDb, property->fieldIgnorePortDir, leafPortDirShort, property->fieldIgnorePortDir ) )
+ 		{
+-printf( " ignoring %s\n", leafPortDirShort );
++			fprintf( stdout, " ignoring %s\n", leafPortDirShort );
+ 			idx--;
+ 			continue;
+ 		}
+ 
+ 		stringSize	= strlen( PORTSDIR )
+-				+ strlen( MGdbGet( property->installedPortsDb, idx, property->fieldInstalledPortDir ) )
+-				+ 1;				
++				+ strlen( MGdbGet( property->installedPortsDb, idx, property->fieldInstalledPortDir ) )	+ 1;				
+ 		leafPortDir	= (char*)malloc(stringSize);
+ 		leafPortDir[0]	= 0;
+-		strcpy( leafPortDir, PORTSDIR );
+-
++		strcat( leafPortDir, PORTSDIR );
+ 		strcat( leafPortDir, MGdbGet( property->installedPortsDb, idx, property->fieldInstalledPortDir ) );
++
+ 		MGdbGoTop( property->dependencyPortsDb );
+ 		if( !MGdbSeek( property->dependencyPortsDb, property->fieldDependencyPortDir, 
+ 			MGdbGet( property->installedPortsDb, idx, property->fieldInstalledPortDir ),
+@@ -96,8 +90,7 @@
+ 				fprintf( stdout, "%s %s\n\n", leafPortName, leafPortDir );
+ 
+ 				stringSize	= strlen( leafPortDir )
+-						+ strlen( "/pkg-descr" )
+-						+ 1;
++						+ strlen( "/pkg-descr" ) + 1;
+ 				pkgDescFile	= (char*)malloc( stringSize );
+ 				pkgDescFile[0]	= 0;
+ 				strcat( pkgDescFile, leafPortDir );
+@@ -106,8 +99,7 @@
+ 				if( MGrIfFileExist( pkgDescFile ) )
+ 				{
+ 					stringSize	= strlen( "cat " )
+-							+ strlen( pkgDescFile )
+-							+ 1;
++							+ strlen( pkgDescFile ) + 1;
+ 					command		= (char*)malloc( stringSize );
+ 					command[0]	= 0;
+ 					strcat( command, "cat " );
+@@ -121,8 +113,7 @@
+ 				{
+ 					stringSize	= strlen( "grep COMMENT " )
+ 							+ strlen( leafPortDir )
+-							+ strlen( "/Makefile" )
+-							+ 1;
++							+ strlen( "/Makefile" )	+ 1;
+ 					command		= (char*)malloc( stringSize );
+ 					command[0]	= 0;
+ 					strcat( command, "grep COMMENT " );
+@@ -210,8 +201,7 @@
+ 	int	stringSize	= 0;
+ 
+ 	stringSize	= strlen( "pkg_delete -f " )
+-			+ strlen( leafPortName )
+-			+ 1;
++			+ strlen( leafPortName ) + 1;
+ 	command		= (char*)malloc( stringSize );
+ 	command[0]	= 0;
+ 	strcat( command, "pkg_delete -f " );
+@@ -231,8 +221,7 @@
+ 
+ 	stringSize	= strlen( "cd " )
+ 			+ strlen( leafPortDir )
+-			+ strlen( ";make distclean" )
+-			+ 1;
++			+ strlen( ";make distclean" ) + 1;
+ 	command		= (char*)malloc( stringSize );
+ 	command[0]	= 0;
+ 	strcat( command, "cd " );
+diff -bruN --exclude=HTML ./libPMGR/src/PMGRrStatus.c ../../0.2.9_3/portmanager/libPMGR/src/PMGRrStatus.c
+--- ./libPMGR/src/PMGRrStatus.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/PMGRrStatus.c	Fri Mar 11 07:40:17 2005
+@@ -1,26 +1,31 @@
+-/************************************************************************/
+-/*	Copyright (C) 2005  Michael C. Shultz				*/
+-/*									*/
+-/* This program is free software; you can redistribute it and/or modify */
+-/* it under the terms of the GNU General Public License as published by */
+-/* the Free Software Foundation; either version 2 of the License, or (at*/
+-/* your option) any later version.					*/
+-/*									*/
+-/* This program is distributed in the hope that it will be useful,	*/
+-/* but WITHOUT ANY WARRANTY; without even the implied warranty of	*/
+-/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the	*/
+-/* GNU General Public License for more details. 			*/
+-/*									*/
+-/* You should have received a copy of the GNU General Public License	*/
+-/* along with this program; if not, write to the Free Software		*/
+-/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA		*/
+-/*  02111-1307, USA.							*/
+-/* 									*/
+-/* Michael C. Shultz							*/
+-/* ringworm01@gmail.com							*/
+-/* Box 3238 Landers, CA 92285						*/
+-/************************************************************************/
++/*
++	Copyright (C) 2005  Michael C. Shultz
+ 
++	Redistribution and use in source and binary forms, with or without
++	modification, are permitted provided that the following conditions
++	are met:
++
++	1. Redistributions of source code must retain the above copyright
++	   notice, this list of conditions and the following disclaimer.
++	2. Redistributions in binary form must reproduce the above copyright
++	   notice, this list of conditions and the following disclaimer in the
++	   documentation and/or other materials provided with the distribution.
++
++	THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++	IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++	IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++	NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++	DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++	THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++	THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++
++	Michael C. Shultz
++	ringworm01@gmail.com
++	Box 3238 Landers, CA 92285
++*/
+ #include	<libPMGR.h>
+ int	PMGRrStatus(structProperty* property)
+ {
+@@ -115,7 +120,7 @@
+ 				fprintf( stdout, "portmanager shutting down\n" );
+ 				exit(0);
+ 			}
+-			ungetc(answer, stdin);
++			answer	= getc(stdin);
+ 
+ 			fprintf( stdout, "removing: %s\n", installedPortName );
+ 			stringSize	= strlen("pkg_delete -f ") + strlen(installedPortName) + 1;
+diff -bruN --exclude=HTML ./libPMGR/src/PMGRrUpgrade.c ../../0.2.9_3/portmanager/libPMGR/src/PMGRrUpgrade.c
+--- ./libPMGR/src/PMGRrUpgrade.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/PMGRrUpgrade.c	Fri Mar 11 07:39:07 2005
+@@ -1,25 +1,31 @@
+-/************************************************************************/
+-/*	Copyright (C) 2004  Michael C. Shultz				*/
+-/*									*/
+-/* This program is free software; you can redistribute it and/or modify */
+-/* it under the terms of the GNU General Public License as published by */
+-/* the Free Software Foundation; either version 2 of the License, or (at*/
+-/* your option) any later version.					*/
+-/*									*/
+-/* This program is distributed in the hope that it will be useful,	*/
+-/* but WITHOUT ANY WARRANTY; without even the implied warranty of	*/
+-/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the	*/
+-/* GNU General Public License for more details. 			*/
+-/*									*/
+-/* You should have received a copy of the GNU General Public License	*/
+-/* along with this program; if not, write to the Free Software		*/
+-/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA		*/
+-/*  02111-1307, USA.							*/
+-/* 									*/
+-/* Michael C. Shultz							*/
+-/* ringworm01@gmail.com							*/
+-/* Box 3238 Landers, CA 92285						*/
+-/************************************************************************/
++/*
++	Copyright (C) 2005  Michael C. Shultz
++
++	Redistribution and use in source and binary forms, with or without
++	modification, are permitted provided that the following conditions
++	are met:
++
++	1. Redistributions of source code must retain the above copyright
++	   notice, this list of conditions and the following disclaimer.
++	2. Redistributions in binary form must reproduce the above copyright
++	   notice, this list of conditions and the following disclaimer in the
++	   documentation and/or other materials provided with the distribution.
++
++	THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++	IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++	IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++	NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++	DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++	THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++	THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++
++	Michael C. Shultz
++	ringworm01@gmail.com
++	Box 3238 Landers, CA 92285
++*/
+ #include	"libPMGR.h"
+ 
+ int	checkForOldDepencies( structProperty* property, char* oldPortName);
+@@ -68,7 +74,6 @@
+ 		property->cacheDb		= MGdbOpen( property->cacheDbFileName );
+ 		/*zzzzzzzzzzzzzzzzz*/
+ 
+-
+ 		/*
+ 		 *  Set xterm title bar indicator
+ 		 */
+@@ -78,9 +83,10 @@
+ 			TOTAL_outOfDatePortsDb = QTY_outOfDatePortsDb - 1;
+ 		}
+ 		percentDone	= 100 - ( 100 * ( ( (float)QTY_outOfDatePortsDb - 1 ) / (float)TOTAL_outOfDatePortsDb ) );
+-fprintf( stdout, "percentDone-=>%d = 100 - ( 100 * ( QTY_outOfDatePortsDb-=>%d / TOTAL_outOfDatePortsDb-=>%d ) ) \n",
++		fprintf( stdout, "percentDone-=>%d = 100 - ( 100 * ( QTY_outOfDatePortsDb-=>%d / TOTAL_outOfDatePortsDb-=>%d ) ) \n",
+ 	(int)percentDone, QTY_outOfDatePortsDb-1, TOTAL_outOfDatePortsDb );
+-while( fflush( stdout ) );
++		while( fflush( stdout ) );
++
+ 		if( !strncmp( getenv("TERM"), "xterm", 5 ) )
+ 		{
+ 			stringSize	= strlen( id )
+diff -bruN --exclude=HTML ./libPMGR/src/libPMGR.h ../../0.2.9_3/portmanager/libPMGR/src/libPMGR.h
+--- ./libPMGR/src/libPMGR.h	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/libPMGR/src/libPMGR.h	Fri Mar 11 00:46:10 2005
+@@ -136,6 +136,9 @@
+ 	int		objIdx;
+ 	int		portManagerUpdated;		/* 0=not updated 1=updated*/
+ 	int		verbose;
++
++	int		interactive;			/* 0 = non, 1 = interactive */
++
+ } structProperty;
+ 
+ typedef	struct
+diff -bruN --exclude=HTML ./portmanager/help.txt ../../0.2.9_3/portmanager/portmanager/help.txt
+--- ./portmanager/help.txt	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/portmanager/help.txt	Fri Mar 11 00:41:39 2005
+@@ -20,6 +20,9 @@
+         -u or --upgrade
+                 upgrade installed ports
+ 
++	-ui or --upgrade-interactive
++		upgrade installed ports interactively
++
+         -v or --version
+                 portmanager VERSION information
+ 
+diff -bruN --exclude=HTML ./portmanager/portmanager.1 ../../0.2.9_3/portmanager/portmanager/portmanager.1
+--- ./portmanager/portmanager.1	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/portmanager/portmanager.1	Fri Mar 11 00:56:46 2005
+@@ -1,10 +1,8 @@
+-.\" $ 0.2.6_3 $
+-.\"
+ .\" Process this file with
+ .\" groff -man -Tascii portmanager.1 | less
+ .\" 
+ .\"=======================================================================
+-.Dd FEBRUARY 2005
++.Dd MARCH 2005
+ .Os FreeBSD
+ .Dt PORTMANAGER 1 URM
+ .\"=======================================================================
+@@ -59,6 +57,8 @@
+ .It
+ \fB\&-u\fR update installed ports
+ .It
++\fB\&-ui\fR upgrade installed ports interactively
++.It
+ \fB\&-v\fR portmanager version 
+ .El
+ .sp
+@@ -199,6 +199,17 @@
+ .sp
+ Simply add a "local" directory to /usr/ports and install your local ports under that directory. Where a normal FreeBSD
+ port may be in "sysutils/{portname} the example above would reside in "local/sysutils/{portname}".
++.sp
++\fBSwitching from XFree86-4 to xorg\fR
++.sp
++ 1) change /etc/make.conf from X_WINDOW_SYSTEM=xfree86-4
++ to X_WINDOW_SYSTEM=xorg
++.sp
++ 2) pkg_delete -f /var/db/pkg/XFree86*
++.sp
++ 3) pkg_delete -f /var/db/pkg/wrapper*
++.sp
++ 4) run portmanager -u
+ .sp
+ \fBalternative configuration\fR
+ .sp
+diff -bruN --exclude=HTML ./portmanager/portmanager.c ../../0.2.9_3/portmanager/portmanager/portmanager.c
+--- ./portmanager/portmanager.c	Thu Mar  3 18:54:33 2005
++++ ../../0.2.9_3/portmanager/portmanager/portmanager.c	Sun Mar 13 10:49:37 2005
+@@ -1,25 +1,31 @@
+-/************************************************************************/
+-/*	Copyright (C) 2004  Michael C. Shultz				*/
+-/*									*/
+-/* This program is free software; you can redistribute it and/or modify */
+-/* it under the terms of the GNU General Public License as published by */
+-/* the Free Software Foundation; either VER 2 of the License, or (at    */
+-/* your option) any later VER.					        */
+-/*									*/
+-/* This program is distributed in the hope that it will be useful,	*/
+-/* but WITHOUT ANY WARRANTY; without even the implied warranty of	*/
+-/* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the	*/
+-/* GNU General Public License for more details. 			*/
+-/*									*/
+-/* You should have received a copy of the GNU General Public License	*/
+-/* along with this program; if not, write to the Free Software		*/
+-/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA		*/
+-/*  02111-1307, USA.							*/
+-/* 									*/
+-/* Michael C. Shultz							*/
+-/* ringworm01@gmail.com							*/
+-/* Box 3238 Landers, CA 92285						*/
+-/************************************************************************/
++/*
++	Copyright (C) 2005  Michael C. Shultz
++
++	Redistribution and use in source and binary forms, with or without
++	modification, are permitted provided that the following conditions
++	are met:
++
++	1. Redistributions of source code must retain the above copyright
++	   notice, this list of conditions and the following disclaimer.
++	2. Redistributions in binary form must reproduce the above copyright
++	   notice, this list of conditions and the following disclaimer in the
++	   documentation and/or other materials provided with the distribution.
++
++	THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
++	IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
++	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
++	IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
++	INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
++	NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++	DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++	THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++	(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
++	THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++
++	Michael C. Shultz
++	ringworm01@gmail.com
++	Box 3238 Landers, CA 92285
++*/
+ #include	<libPMGR.h>
+ 
+ #define OFF			-2
+@@ -55,6 +61,8 @@
+ 	char	status[]	= "--status";
+ 	char	u[]		= "-u";
+ 	char	upgrade[]	= "--upgrade";
++	char	ui[]		= "-ui";
++	char	upgradeInteractive[] = "--upgrade-interactive";
+ 	char	v[]		= "-v";
+ 	char	version[]	= "--version";
+ 	char*	buffer		= NULL;
+@@ -67,74 +75,6 @@
+ 	int	stringSize	= 0;
+ 	structProperty	property;
+ 	char*	bufferIdx	= NULL;
+-/*
+-Here is a code snipit from sendmail's alias.c about db locking:
+-
+-rebuildaliases(map, automatic)
+-        register MAP *map;
+-        bool automatic;
+-{
+-        SM_FILE_T *af;
+-        bool nolock = false;
+-        bool success = false;
+-        long sff = SFF_OPENASROOT|SFF_REGONLY|SFF_NOLOCK;
+-        sigfunc_t oldsigint, oldsigquit;
+-#ifdef SIGTSTP
+-        sigfunc_t oldsigtstp;
+-#endif // SIGTSTP
+-                                    
+-
+-       // try to lock the source file
+-        if ((af = safefopen(map->map_file, O_RDWR, 0, sff)) == NULL)
+-        {
+-                struct stat stb;
+-
+-                if ((errno != EACCES && errno != EROFS) || automatic ||
+-                    (af = safefopen(map->map_file, O_RDONLY, 0, sff)) == NULL)
+-                {
+-                        int saveerr = errno;
+-
+-                        if (tTd(27, 1))
+-                                sm_dprintf("Can't open %s: %s\n",
+-                                        map->map_file, sm_errstring(saveerr));
+-                        if (!automatic && !bitset(MF_OPTIONAL, map->map_mflags))
+-                                message("newaliases: cannot open %s: %s",
+-                                        map->map_file, sm_errstring(saveerr));
+-                        errno = 0;
+-                        return false;
+-                }
+-                nolock = true;
+-                if (tTd(27, 1) ||
+-                    fstat(sm_io_getinfo(af, SM_IO_WHAT_FD, NULL), &stb) < 0 ||
+-                    bitset(S_IWUSR|S_IWGRP|S_IWOTH, stb.st_mode))
+-                        message("warning: cannot lock %s: %s",
+-                                map->map_file, sm_errstring(errno));
+-        }
+-
+-
+-       // see if someone else is rebuilding the alias file
+-        if (!nolock &&
+-            !lockfile(sm_io_getinfo(af, SM_IO_WHAT_FD, NULL), map->map_file,
+-                      NULL, LOCK_EX|LOCK_NB))
+-        {
+-                // yes, they are -- wait until done
+-                message("Alias file %s is locked (maybe being rebuilt)",
+-                        map->map_file);
+-                if (OpMode != MD_INITALIAS)
+-                {
+-                        // wait for other rebuild to complete
+-                        (void) lockfile(sm_io_getinfo(af, SM_IO_WHAT_FD, NULL),
+-                                        map->map_file, NULL, LOCK_EX);
+-                }
+-                (void) sm_io_close(af, SM_TIME_DEFAULT);
+-                errno = 0;
+-                return false;
+-        }
+-
+-
+-
+-*/
+-
+ 
+ 	/*
+ 	 * Insure only one instance of portmanager is running as there is no locking of
+@@ -236,11 +176,9 @@
+ 		exit( 0 );
+ 	}
+ 
+-	property.ignoreDb	= MGdbCreate( property.ignoreDbFileName, property.fieldIgnorePortDir, property.fieldIgnoreReason,
+-					NULL ); 
++	property.ignoreDb	= MGdbCreate( property.ignoreDbFileName, property.fieldIgnorePortDir, property.fieldIgnoreReason, NULL ); 
++	property.strikesDb	= MGdbCreate( property.strikesDbFileName, property.field3strikesPortDir, property.fieldStrikes,	NULL );
+ 
+-	property.strikesDb	= MGdbCreate( property.strikesDbFileName, property.field3strikesPortDir, property.fieldStrikes,
+-					NULL );
+ 	/*
+ 	 * convert pm-020.conf to config.db
+ 	 */
+@@ -303,8 +241,26 @@
+ 		if( !strcmp( argv[idx], upgrade ) || !strcmp( argv[idx], u ) )
+ 		{
+ 			stringSize	= strlen( "rm -f " )
+-					+ strlen( property.cacheDbFileName )
+-					+ 1;
++					+ strlen( property.cacheDbFileName ) + 1;
++			command		= malloc( stringSize );
++			command[0]	= 0;
++			strcat( command, "rm -f " );
++			strcat( command, property.cacheDbFileName );
++			fprintf( stdout, "%s %s info: executing %s\n", id, VERSION, command );
++			system( command );
++			free( command ); 
++
++			property.interactive = 0;
++
++			selection	= PMUPGRADE;
++			break;
++		}
++
++		if( !strcmp( argv[idx], upgradeInteractive ) || !strcmp( argv[idx], ui ) )
++		{
++			
++			stringSize	= strlen( "rm -f " )
++					+ strlen( property.cacheDbFileName ) + 1;
+ 			command		= malloc( stringSize );
+ 			command[0]	= 0;
+ 			strcat( command, "rm -f " );
+@@ -312,6 +268,9 @@
+ 			fprintf( stdout, "%s %s info: executing %s\n", id, VERSION, command );
+ 			system( command );
+ 			free( command ); 
++
++			property.interactive = 1;
++
+ 			selection	= PMUPGRADE;
+ 			break;
+ 		}

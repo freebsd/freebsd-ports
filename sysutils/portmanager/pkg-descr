@@ -5,9 +5,9 @@ dependency ports are built.
 **New options**
 
 1)  Leaf port report: Shows ports with no other ports depending on
-them, these are ports that may be safely deinstalled.
+them, these are ports that may be safely de-installed.
 
-2)  Remove leaf ports safley: Interactivly delete leaf ports.
+2)  Remove leaf ports safely: Interactively delete leaf ports.
 
 portmanager-questions archive may be found at:
 http://www.mail-archive.com/portmanager-questions%40sunsite.dk/

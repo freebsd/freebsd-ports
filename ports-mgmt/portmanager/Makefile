@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.9
-PORTREVISION=	2
+PORTREVISION=	3
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -19,7 +19,7 @@ MASTER_SITES=		http://portmanager.sunsite.dk/distfiles/	\
 MASTER_SITE_SUBDIR=	portmanager
 
 MAINTAINER=		ringworm01@gmail.com
-COMMENT=		FreeBSD usr/ports status and safe usr/ports update
+COMMENT=		FreeBSD installed ports status and safe update utility
 
 MAN1=			portmanager.1
 MAN3=			libMG.3 		\
@@ -63,7 +63,7 @@ pre-fetch:
 	@${ECHO}	"* portmanager                                                         *"
 	@${ECHO}	"***********************************************************************"
 	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warninings     *"
+	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warnings       *"
 	@${ECHO}	"*                                                                     *"
 	@${ECHO}	"***********************************************************************"
 .endif
