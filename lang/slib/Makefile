@@ -14,6 +14,8 @@ DISTNAME=	slib2d1
 
 MAINTAINER=	nakai@FreeBSD.org
 
+RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
+
 WRKSRC=		${WRKDIR}/slib
 
 USE_ZIP=	yes
