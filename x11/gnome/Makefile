@@ -15,7 +15,9 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 
-RUN_DEPENDS=	another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
+		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \
+		another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
 		gtcd:${PORTSDIR}/audio/gnomemedia \
 		${X11BASE}/share/gnome/help/glossary/C/index.html:${PORTSDIR}/misc/gnomeuserdocs \
 	 	gcalc:${PORTSDIR}/misc/gnomeutils \
@@ -38,7 +40,6 @@ RUN_DEPENDS=	another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
 
 NO_BUILD=	yes
 
-USE_GNOME=	yes
 USE_PYTHON=	yes
 
 do-install:	# empty
