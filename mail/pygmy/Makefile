@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	pygmy
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 CATEGORIES=	mail python gnome
 MASTER_SITES=	http://pygmy.sourceforge.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
+		gpg:${PORTSDIR}/security/gnupg
 
 USE_PYTHON=	yes
 
