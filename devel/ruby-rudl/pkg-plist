@@ -3,8 +3,11 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/bounce.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/bounceme.bmp
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/caribean.mod
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/joystick.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/mousecursor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/pixelaccess.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/schoenie.jpg
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/test.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rudl
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/Readme
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rudl
