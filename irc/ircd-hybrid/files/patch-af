@@ -1,0 +1,35 @@
+--- tools/Makefile.in.orig	Thu Jul 11 17:40:27 2002
++++ tools/Makefile.in	Wed Jan  7 03:41:07 2004
+@@ -29,8 +29,8 @@
+ sysconfdir	= @sysconfdir@
+ localstatedir	= @localstatedir@
+ # Change this later! -- adrian
+-moduledir	= @prefix@/modules
+-automoduledir	= @prefix@/modules/autoload
++moduledir	= @moduledir@
++automoduledir	= @automoduledir@
+ 
+ PROGS		= viconf mkpasswd convertconf convertilines convertklines encspeed
+ 
+@@ -99,8 +99,6 @@
+ sysconfdir	= @sysconfdir@
+ localstatedir	= @localstatedir@
+ # Change this later! -- adrian
+-moduledir	= @prefix@/modules
+-automoduledir	= @prefix@/modules/autoload
+ 
+ 
+  
+@@ -129,9 +127,9 @@
+ 		echo "mkdir $(sysconfdir)"; \
+ 		mkdir $(sysconfdir); \
+ 	fi
+-	-@if test ! -d $(localstatedir)/logs; then \
+-		echo "mkdir $(localstatedir)/logs"; \
+-		mkdir $(localstatedir)/logs; \
++	-@if test ! -d $(logsdir); then \
++		echo "mkdir $(logsdir)"; \
++		mkdir $(logsdir); \
+ 	fi
+ 
+ install: install-mkdirs build

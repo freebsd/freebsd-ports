@@ -1,5 +1,10 @@
 ircd-hybrid has now been installed.
 
+*** IMPORTANT: ***
+- The old config format WILL NOT WORK
+- The old kline format WILL NOT WORK
+Please read the INSTALL file for more information.
+
 You should now copy /usr/local/etc/ircd/*.sample to
 /usr/local/etc/ircd/*, and them to suit your needs.
 
@@ -10,4 +15,4 @@ to start.
 
 You may then start the server by running:
 
-	/usr/local/etc/rc.d/ircd.sh start
+	/usr/local/etc/rc.d/ircd-hybrid.sh start
