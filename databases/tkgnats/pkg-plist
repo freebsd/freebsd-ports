@@ -16,6 +16,7 @@ share/tkgnats/tkgnats.config
 share/tkgnats/tkgnats.doc
 share/tkgnats/tkgnats.xbm
 share/tkgnats/tkpr_library.tcl
+share/tkgnats/tkprdatesel.tcl
 share/tkgnats/tkprfolder.tcl
 share/tkgnats/tkprfont.tcl
 share/tkgnats/tkprhelp.tcl

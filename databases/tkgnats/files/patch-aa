@@ -18,3 +18,14 @@
  
  ########## tkgnats executable location
  BINDIR		= $(prefix)/bin
+--- tkgnats.config	Mon Oct 26 08:57:03 1998
++++ tkgnats.config	Wed Oct 28 13:51:39 1998
+@@ -95,7 +95,7 @@
+ set TkGnats(psPreviewer)	"ghostview %s"
+ 				# PostScript previewer for printed reports
+ 
+-set TkGnats(Mailer)		"/usr/lib/sendmail -em -oi -t"
++set TkGnats(Mailer)		"/usr/sbin/sendmail -em -oi -t"
+ 				# Mailer to use for send prs, etc..
+                                 # Like GNATS, it must read headers from file.
+ 
