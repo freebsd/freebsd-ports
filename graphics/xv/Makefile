@@ -7,7 +7,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		${MASTER_SITE_LOCAL} \
@@ -24,8 +24,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		xv-png-1.2d.patch xvpng-1.2d-fix3.patch
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
-
-FORBIDDEN=	http://vuxml.freebsd.org/fffacc93-16cb-11d9-bc4a-000c41e2cdad.html
 
 PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.trilon.com/pub/xv/patches/

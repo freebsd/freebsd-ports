@@ -1,0 +1,675 @@
+--- xv.c
++++ xv.c	2003-01-27 00:03:36.000000000 +0100
+@@ -146,9 +146,7 @@
+      rmodeset, gamset, cgamset, perfect, owncmap, rwcolor, stdcmap;
+ int  nodecor;
+ double gamval, rgamval, ggamval, bgamval;
+-
+-
+-
++winRepositionningInfoST winRepositionningInfo = { 0, 0};
+ 
+ /*******************************************/
+ int main(argc, argv)
+@@ -2125,6 +2145,7 @@
+     /* if the file is STDIN, write it out to a temp file */
+ 
+     if (strcmp(filename,STDINSTR)==0) {
++      int tmpfd;
+       FILE *fp;
+ 
+ #ifndef VMS      
+@@ -2135,11 +2156,15 @@
+       mktemp(filename);
+ 
+       clearerr(stdin);
+-      fp = fopen(filename,"w");
++      tmpfd = open(filename,O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR);
++      if (tmpfd < 0) FatalError("openPic(): can't create temporary file");
++      fp = fdopen(tmpfd,"w");
+       if (!fp) FatalError("openPic(): can't write temporary file");
+     
+       while ( (i=getchar()) != EOF) putc(i,fp);
++      fflush(fp);
+       fclose(fp);
++      close(tmpfd);
+ 
+       /* and remove it from list, since we can never reload from stdin */
+       if (strcmp(namelist[0], STDINSTR)==0) deleteFromList(0);
+@@ -2672,7 +2697,11 @@
+      to generate the correct exposes (particularly with 'BitGravity' turned
+      on */
+ 
+-  if (mainW && !useroot) GenExpose(mainW, 0, 0, (u_int) eWIDE, (u_int) eHIGH);
++  /*Brian T. Schellenberger: fix for X 4.2 refresh problem*/
++  if (mainW && !useroot) {
++    XSync(theDisp, False);
++    GenExpose(mainW, 0, 0, (u_int) eWIDE, (u_int) eHIGH);
++  }
+ 
+   return 1;
+ 
+@@ -2812,7 +2846,8 @@
+ 
+ #ifdef GS_PATH
+   else if (strncmp((char *) magicno, "%!",     (size_t) 2)==0 ||
+-	   strncmp((char *) magicno, "\004%!", (size_t) 3)==0)   rv = RFT_PS;
++	   strncmp((char *) magicno, "\004%!", (size_t) 3)==0 ||
++	   strncmp((char *) magicno, "%PDF",   (size_t) 4)==0)   rv = RFT_PS;
+ #endif
+ 
+ #ifdef HAVE_MAG
+@@ -2959,6 +2998,7 @@
+      returns '0' on failure */
+ 
+   char namez[128], *fname, buf[512];
++  int tmpfd;
+ 
+   fname = name;
+   namez[0] = '\0';
+@@ -3047,15 +3090,18 @@
+      char *src, *dst;
+ {
+   char tmpname[128], buffer[8192]; /* XXX */
+-  int n, eof;
++  int n, eof, tmpfd;
+   FILE *sfp, *dfp;
+ 
+   sprintf(dst, "%s/xvmXXXXXX", tmpdir);
+   mktemp(dst);
++  tmpfd = open(dst,O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR);
++  if (tmpfd < 0) FatalError("RemoveMacbinary(): can't create temporary file");
++
+   SetISTR(ISTR_INFO, "Removing MacBinary...");
+ 
+   sfp = xv_fopen(src, "r"); 
+-  dfp = xv_fopen(dst, "w"); 
++  dfp = fdopen(tmpfd, "w"); 
+   if (!sfp || !dfp) {
+     SetISTR(ISTR_INFO, "Unable to remove a InfoFile header form '%s'.", src);
+     Warning();
+@@ -3067,7 +3113,9 @@
+   if (eof = feof(sfp))
+     fwrite(buffer, 1, n, dfp);
+   fclose(sfp);
++  fflush(dfp);
+   fclose(dfp);
++  close(tmpfd);
+   if (!eof) {
+     SetISTR(ISTR_INFO, "Unable to remove a InfoFile header form '%s'.", src);
+     Warning();
+@@ -3199,7 +3247,7 @@
+    */
+ 
+   char fullcmd[512], tmpname[64], str[512];
+-  int i;
++  int i, tmpfd;
+ 
+   if (!cmd || (strlen(cmd) < (size_t) 2)) return 1;
+ 
+@@ -3210,6 +3258,9 @@
+     ErrPopUp(str, "\nHow unlikely!");
+     return 1;
+   }
++  tmpfd = open(tmpname,O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR);
++  if (tmpfd < 0) FatalError("openPic(): can't create temporary file");
++  close(tmpfd);
+ 
+   /* build command */
+   strcpy(fullcmd, cmd+1);  /* skip the leading '!' character in cmd */
+--- xv.h
++++ xv.h	2003-01-27 00:03:36.000000000 +0100
+@@ -310,7 +294,9 @@
+ #  endif
+ #endif
+ 
+-
++#ifndef		S_IRWUSR
++#  define	S_IRWUSR	(S_IRUSR|S_IWRITE)
++#endif
+ 
+ #ifndef MAXPATHLEN
+ #  define MAXPATHLEN 256
+@@ -813,6 +811,13 @@
+ #define WHERE
+ #endif
+ 
++/* Needed for repositionning with negative geometries */
++typedef struct {
++  int negativeX;
++  int negativeY;
++} winRepositionningInfoST;
++extern winRepositionningInfoST winRepositionningInfo;
++
+ typedef unsigned char byte;
+ 
+ typedef struct scrl { 
+--- xvdir.c
++++ xvdir.c	2003-01-27 00:03:36.000000000 +0100
+@@ -80,7 +83,7 @@
+ 			       "PIC",
+ #endif /* HAVE_PIC */
+ #ifdef HAVE_MAKI
+-			       "MAKI",
++			       "MAKI (640x400 only)",
+ #endif /* HAVE_MAKI */
+ #ifdef HAVE_PI
+ 			       "PI",
+--- xvevent.c
++++ xvevent.c	2003-01-27 00:03:36.000000000 +0100
+@@ -64,6 +64,8 @@
+ 
+ static void   annotatePic      PARM((void));
+ 
++static int    debkludge_offx;
++static int    debkludge_offy;
+ 
+ /****************/
+ int EventLoop()
+@@ -676,6 +694,29 @@
+ 	p_offy = xwa.y;
+       }
+ 
++      /* Gather info to keep right border inside */
++      {
++	Window current;
++	Window root_r;
++	Window parent_r;
++	Window *children_r;
++	int nchildren_r;
++	XWindowAttributes xwa;
++
++	parent_r=mainW;
++	current=mainW;
++	do {
++	  current=parent_r;
++	  XQueryTree(theDisp, current, &root_r, &parent_r,
++		     &children_r, &nchildren_r);
++	  if (children_r!=NULL) {
++	    XFree(children_r);
++	  }
++	} while(parent_r!=root_r);
++	XGetWindowAttributes(theDisp, current, &xwa);
++	debkludge_offx=eWIDE-xwa.width+p_offx;
++	debkludge_offy=eHIGH-xwa.height+p_offy;
++      }
+       
+       /* move window around a bit... */
+       {
+@@ -2078,6 +2127,26 @@
+   if (xwa->width  < dispWIDE && xwc.x < p_offx) xwc.x = p_offx;
+   if (xwa->height < dispHIGH && xwc.y < p_offy) xwc.y = p_offy;
+ 
++  /* Try to keep bottom right decorations inside */
++  if (xwc.x+eWIDE-debkludge_offx>dispWIDE) {
++    xwc.x=dispWIDE-eWIDE+debkludge_offx;
++    if (xwc.x<0) xwc.x=0;
++  }
++  if (xwc.y+eHIGH-debkludge_offy>dispHIGH) {
++    xwc.y=dispHIGH-eHIGH+debkludge_offy;
++    if (xwc.y<0) xwc.y=0;
++  }
++
++  /* In case of negative offset for first image */
++  if (winRepositionningInfo.negativeX) {
++    xwc.x+=winRepositionningInfo.negativeX;
++    winRepositionningInfo.negativeX=0;
++  }
++  if (winRepositionningInfo.negativeY) {
++    xwc.y+=winRepositionningInfo.negativeY;
++    winRepositionningInfo.negativeY=0;
++  }
++
+   xwc.width  = xwa->width;
+   xwc.height = xwa->height;
+ 
+--- xvfits.c
++++ xvfits.c	2003-01-27 00:03:36.000000000 +0100
+@@ -14,7 +14,7 @@
+  * provided "as is" without express or implied warranty.
+  */
+ 
+-
++#define  NEEDSDIR /* for S_IRUSR|S_IWUSR */
+ #include "xv.h"
+ 
+ #define NCARDS    (36)
+@@ -223,7 +223,7 @@
+    * If there was a problem writing files, then a error message will be set.
+    */
+   
+-  int   i, np=nx * ny, ioerror, nwrt;
++  int   i, np=nx * ny, ioerror, nwrt, tmpfd;
+   FILE *fp;
+   char *error;
+   byte *work;
+@@ -246,7 +246,12 @@
+ 
+   for (i=0; i < nz && !error; i++) {
+     sprintf(filename, "%s%d", basename, i+1);
+-    fp = xv_fopen(filename, "w");
++    tmpfd = open(filename,O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR);
++    if (tmpfd < 0) {
++      error = "Unable to open temporary file";
++      break;
++    }
++    fp = fdopen(tmpfd, "w");
+     if (!fp) {
+       error = "Unable to open temporary file";
+       break;
+@@ -254,13 +259,17 @@
+     
+     if (wrheader(fp, nx, ny, comment)) {
+       error = "I/O error writing temporary file";
++      fflush(fp);
+       fclose(fp);
++      close(tmpfd);
+       unlink(filename);
+       break;
+     }
+ 
+     nwrt = fwrite(image+i*np, sizeof(byte), (size_t) np, fp);
++    fflush(fp);
+     fclose(fp);
++    close(tmpfd);
+ 
+     if (nwrt == 0) {  /* failed to write any data */
+       error = "I/O error writing temporary file";
+--- xvimage.c
++++ xvimage.c	2003-01-27 00:03:36.000000000 +0100
+@@ -21,6 +21,7 @@
+  *            int  LoadPad(pinfo, fname);
+  */
+ 
++#define  NEEDSDIR             /* for S_IRUSR|S_IWUSR */
+ #include "copyright.h"
+ 
+ #include "xv.h"
+@@ -2927,7 +2930,7 @@
+      char *str;
+      int   wide, high, opaque,omode;
+ {
+-  int i;
++  int i, tmpfd;
+   byte *bgpic24;
+   char syscmd[512], fname[128], errstr[512];
+   PICINFO pinfo;
+@@ -2949,6 +2952,13 @@
+   strcpy(fname, "Sys$Disk:[]xvuXXXXXX");
+ #endif
+   mktemp(fname);
++  tmpfd = open(fname, O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR);
++  if (tmpfd < 0) {
++    sprintf(errstr, "Error: can't create temporary file %s", fname);
++    ErrPopUp(errstr, "\nDoh!");
++    return 0;
++  }
++  close(tmpfd);
+ 
+   /* run bggen to generate the background */
+   sprintf(syscmd, "bggen -g %dx%d %s > %s", wide, high, str, fname);
+--- xvmaki.c
++++ xvmaki.c	2003-01-27 00:03:36.000000000 +0100
+@@ -355,8 +355,12 @@
+ 	return -1;
+     }
+     
+-    if(w != 640 || h != 400)
++    if(w != 640 || h != 400) {
++        char  str[512];
++        sprintf(str,"MAKI: %s Should be 640x400", maki_msgs[MAKI_SIZE]);
++	ErrPopUp(str, "\nBummer!");
+ 	maki_error(mi, MAKI_SIZE);
++    }
+     
+     maki.fp = fp;
+     maki.width = w;
+@@ -669,6 +673,7 @@
+ static void maki_init_info(mi)
+     struct maki_info *mi;
+ {
++    xvbzero((char *)mi, sizeof(struct maki_info));
+     mi->fp = NULL;
+     mi->fsize = 0;
+     mi->x0 = mi->y0 = mi->x1 = mi->y1 = 0;
+--- xvpds.c
++++ xvpds.c	2003-01-27 00:03:36.000000000 +0100
+@@ -102,7 +102,7 @@
+  * This software is provided "as is" without any express or implied warranty.
+  */
+ 
+-
++#define  NEEDSDIR       /* for S_IRUSR|S_IWUSR */
+ #include "xv.h"
+ 
+ #ifdef HAVE_PDS
+@@ -250,7 +250,7 @@
+ {
+   /* returns '1' on success, '0' on failure */
+ 
+-  int tempnum;
++  int tempnum, tmpfd;
+   FILE	*zf;
+   static int isfixed,teco,i,j,itype,vaxbyte,
+              recsize,hrecsize,irecsize,isimage,labelrecs,labelsofar,
+@@ -690,6 +690,12 @@
+ #ifndef VMS
+     sprintf(pdsuncompfname,"%s/xvhuffXXXXXX", tmpdir);
+     mktemp(pdsuncompfname);
++    tmpfd = open(pdsuncompfname,O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR);
++    if (tmpfd < 0) {
++	SetISTR(ISTR_WARNING,"Unable to create temporarly file.");
++	return 0;
++    }
++    close(tmpfd);
+     sprintf(scanbuff,"%s %s - 4 >%s",PDSUNCOMP,fname,pdsuncompfname);
+ #else
+     strcpy(pdsuncompfname,"sys$disk:[]xvhuffXXXXXX");
+--- xvps.c
++++ xvps.c	2003-01-27 00:03:36.000000000 +0100
+@@ -1564,7 +1564,7 @@
+   /* build command string */
+ 
+ #ifndef VMS  /* VMS needs quotes around mixed case command lines */
+-  sprintf(tmp, "%s -sDEVICE=%s -r%d -q -dNOPAUSE -sOutputFile=%s%%d ",
++  sprintf(tmp, "%s -sDEVICE=%s -r%d -q -dSAFER -dNOPAUSE -sOutputFile=%s%%d ",
+ 	  GS_PATH, gsDev, gsRes, tmpname);
+ #else
+   sprintf(tmp, 
+--- xvtiff.c
++++ xvtiff.c	2003-01-27 00:03:36.000000000 +0100
+@@ -5,6 +5,7 @@
+  * LoadTIFF(fname, numcols, quick)  -  load a TIFF file
+  */
+ 
++#define  NEEDSDIR       /* for S_IRUSR|S_IWUSR */
+ #ifndef va_start
+ # define NEEDSARGS
+ #endif
+@@ -56,7 +89,7 @@
+     return 0;
+   }
+ 
+-  fseek(fp, 0L, 2);
++  fseek(fp, 0L, SEEK_END);
+   filesize = ftell(fp);
+   fclose(fp);
+ 
+@@ -1065,7 +1308,7 @@
+      int fromskew, toskew;
+ {
+   while (h-- > 0) {
+-    UNROLL8(w,0, *cp++ = PALmap[*pp++][0]);
++    UNROLL8(w,, *cp++ = PALmap[*pp++][0]);
+     cp += toskew;
+     pp += fromskew;
+   }
+@@ -1262,7 +1504,7 @@
+     }
+   } else {
+     while (h-- > 0) {
+-      UNROLL8(w,0,
++      UNROLL8(w,,
+ 	      *cp++ = pp[0];
+ 	      *cp++ = pp[1];
+ 	      *cp++ = pp[2];
+@@ -1335,7 +1577,7 @@
+     }
+   } else {
+     while (h-- > 0) {
+-      UNROLL8(w,0,
++      UNROLL8(w,,
+ 	      *cp++ = *r++;
+ 	      *cp++ = *g++;
+ 	      *cp++ = *b++;
+--- xvtiffwr.c
++++ xvtiffwr.c	2003-01-27 00:03:36.000000000 +0100
+@@ -78,6 +78,9 @@
+       TIFFSetField(tif, TIFFTAG_GROUP3OPTIONS,
+ 	  GROUP3OPT_2DENCODING+GROUP3OPT_FILLBITS);
+ 
++  if (comp == COMPRESSION_LZW)
++      TIFFSetField(tif, TIFFTAG_PREDICTOR, 2);
++
+   TIFFSetField(tif, TIFFTAG_PLANARCONFIG, PLANARCONFIG_CONTIG);
+   TIFFSetField(tif, TIFFTAG_SAMPLESPERPIXEL, 1);
+   TIFFSetField(tif, TIFFTAG_ORIENTATION, ORIENTATION_TOPLEFT);
+--- xvvd.c
++++ xvvd.c	2003-01-27 00:03:36.000000000 +0100
+@@ -793,7 +794,7 @@
+        returns '0' on failure */
+ 
+     char namez[128], *fname, buf[512], tmp[HEADERSIZE];
+-    int n;
++    int n, tmpfd;
+     FILE *pfp, *tfp;
+   
+     fname = name;
+@@ -834,10 +835,17 @@
+ 	Warning();
+ 	return 0;
+     }
+-    if ((tfp = fopen(uncompname, "w")) == NULL) {
++    if ((tmpfd = open(uncompname,O_WRONLY|O_CREAT|O_EXCL,S_IRWUSR)) < 0) {
++	SetISTR(ISTR_INFO, "Unable to create temporarly file.",
++		BaseName(uncompname));
++	Warning();
++	pclose(pfp);
++    }
++    if ((tfp = fdopen(tmpfd, "w")) == NULL) {
+ 	SetISTR(ISTR_INFO, "Unable to create temporarly file.",
+ 		BaseName(uncompname));
+ 	Warning();
++	close(tmpfd);
+ 	pclose(pfp);
+ 	return 0;
+     }
+@@ -846,11 +854,15 @@
+ 		BaseName(fname));
+ 	Warning();
+ 	pclose(pfp);
++	fflush(tfp);
+ 	fclose(tfp);
++	close(tmpfd);
+ 	return 0;
+     }
+     fwrite(tmp, 1, n, tfp);
++    fflush(tfp);
+     fclose(tfp);
++    close(tmpfd);
+     pclose(pfp);
+     
+     /* if we renamed the file to end with a .Z for the sake of 'uncompress', 
+--- xvxpm.c
++++ xvxpm.c	2003-01-27 00:03:36.000000000 +0100
+@@ -77,96 +77,104 @@
+   hentry  *clmp;		/* colormap hash-table */
+   hentry  *c_sptr;		/* cmap hash-table search pointer*/
+   XColor   col;
+-  
++
+   bname = BaseName(fname);
+   fp = fopen(fname, "r");
+   if (!fp)
+     return (XpmLoadError(bname, "couldn't open file"));
+-  
++
+   if (DEBUG)
+     printf("LoadXPM(): Loading xpm from %s\n", fname);
+-  
++
+   fseek(fp, 0L, 2);
+   filesize = ftell(fp);
+   fseek(fp, 0L, 0);
+-  
++
+   bufchar = -2;
+   in_quote = FALSE;
+-  
++
+   /* Read in the values line.  It is the first string in the
+    * xpm, and contains four numbers.  w, h, num_colors, and
+    * chars_per_pixel. */
+-  
++
+   /* First, get to the first string */
+   while (((c = XpmGetc(fp))!=EOF) && (c != '"')) ;
+   line_pos = 0;
+-  
++
+   /* Now, read in the string */
+   while (((c = XpmGetc(fp))!=EOF) && (line_pos < VALUES_LEN) && (c != '"')) {
+     values[line_pos++] = c;
+   }
+   if (c != '"')
+     return (XpmLoadError(bname, "error parsing values line"));
+-  
++
+   values[line_pos] = '\0';
+   sscanf(values, "%d%d%d%d", &w, &h, &nc, &cpp);
+   if (nc <= 0 || cpp <= 0)
+     return (XpmLoadError(bname, "No colours in Xpm?"));
+-  
++
+   if (nc > 256)
+     pinfo->type = PIC24;
+   else
+     pinfo->type = PIC8;
+-  
++
+   if (DEBUG)
+     printf("LoadXPM(): reading a %dx%d image (%d colors)\n", w, h, nc);
+-  
++
+   /* We got this far... */
+   WaitCursor();
+-  
++
+   if (!hash_init(nc))
+     return (XpmLoadError(bname, "Not enough memory to hash colormap"));
+-  
++
+   clmp = (hentry *) malloc(nc * sizeof(hentry)); /* Holds the colormap */
+   if (pinfo->type == PIC8) pic = (byte *) malloc((size_t) (w*h));
+                       else pic = (byte *) malloc((size_t) (w*h*3));
+-  
++
+   if (!clmp || !pic)
+     return (XpmLoadError(bname, "Not enough memory to load pixmap"));
+-  
++
+   c_sptr = clmp;
+   i_sptr = pic;
+-  
++
+   /* initialize the 'hex' array for zippy ASCII-hex -> int conversion */
+-  
++
+   for (i = 0 ; i < 256 ; i++)   hex[i] = 0;
+   for (i = '0'; i <= '9' ; i++) hex[i] = i - '0';
+   for (i = 'a'; i <= 'f' ; i++) hex[i] = i - 'a' + 10;
+   for (i = 'A'; i <= 'F' ; i++) hex[i] = i - 'A' + 10;
+-  
++
+   /* Again, we've made progress. */
+   WaitCursor();
+-  
++
+   /* Now, we need to read the colormap. */
+   pinfo->colType = F_BWDITHER;
+   for (i = 0 ; i < nc ; i++) {
+     while (((c = XpmGetc(fp))!=EOF) && (c != '"')) ;
+     if (c != '"')
+       return (XpmLoadError(bname, "Error reading colormap"));
+-    
++
+     for (j = 0 ; j < cpp ; j++)
+       c_sptr->token[j] = XpmGetc(fp);
+     c_sptr->token[j] = '\0';
+-    
++
+     while (((c = XpmGetc(fp))!=EOF) && ((c == ' ') || (c == '\t'))) ;
+     if (c == EOF)		/* The failure condition of getc() */
+       return (XpmLoadError(bname, "Error parsing colormap line"));
+-    
++
+     do {
+       char  key[3];
+-      char  color[40];	/* Need to figure a good size for this... */
++      char  color[80];	/* Need to figure a good size for this... */
+       short hd;		/* Hex digits per R, G, or B */
+-      
++
++/*
++ *  Problem with spaces in color names
++ *
++ *    X s Color Name m Other Name c Last Name
++ *
++ *  ... this parser doesn't find `Any Name'
++ */
++
+       for (j=0; j<2 && (c != ' ') && (c != '\t') && (c != EOF); j++) {
+ 	key[j] = c;
+ 	c = XpmGetc(fp);
+@@ -177,7 +185,7 @@
+       if (c == EOF)	/* The failure condition of getc() */
+ 	return (XpmLoadError(bname, "Error parsing colormap line"));
+ 
+-      for (j=0; j<39 && (c!=' ') && (c!='\t') && (c!='"') && c!=EOF; j++) {
++      for (j=0; j<79 && (c!=' ') && (c!='\t') && (c!='"') && c!=EOF; j++) {
+ 	color[j] = c;
+ 	c = XpmGetc(fp);
+       }
+@@ -236,13 +244,13 @@
+       else {      /* 'None' or unrecognized color spec */
+ 	int rgb;
+ 
+-	if (strcmp(color, "None") == 0) rgb = 0xb2c0dc;  /* infobg */
++	if (strcasecmp(color, "None") == 0) rgb = 0xb2c0dc;  /* infobg */
+ 	else {
+ 	  SetISTR(ISTR_INFO, "%s:  unknown color spec '%s'", bname, color);
+ 	  Timer(1000);
+ 	  rgb = 0x808080;
+ 	}
+-	
++
+ 	if (pinfo->type == PIC8) {
+ 	  pinfo->r[i] = (rgb>>16) & 0xff;
+ 	  pinfo->g[i] = (rgb>> 8) & 0xff;
+@@ -309,28 +317,29 @@
+ 	*i_sptr++ = mapentry->cv_rgb[2];
+       }
+     }  /* for ( j < w ) */
+-    (void)XpmGetc(fp);		/* Throw away the close " */
+-  
++    while (((c = XpmGetc(fp))!=EOF) &&	/* Throw away the close " and */
++	   (c != '"')) ;		/* erase all remaining pixels */
++
+     if (!(i%7)) WaitCursor();
+   }  /* for ( i < h ) */
+-  
++
+   pinfo->pic = pic;
+   pinfo->normw = pinfo->w = w;
+   pinfo->normh = pinfo->h = h;
+   pinfo->frmType = F_XPM;
+ 
+   if (DEBUG) printf("LoadXPM(): pinfo->colType is %d\n", pinfo->colType);
+-  
++
+   sprintf(pinfo->fullInfo, "Xpm v3 Pixmap (%ld bytes)", filesize);
+   sprintf(pinfo->shrtInfo, "%dx%d Xpm.", w, h);
+   pinfo->comment = (char *)NULL;
+-  
++
+   hash_destroy();
+   free(clmp);
+-  
++
+   if (fp != stdin)
+     fclose(fp);
+-  
++
+   return(1);
+ }
+ 

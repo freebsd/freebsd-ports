@@ -1,0 +1,138 @@
+--- xvbmp.c
++++ xvbmp.c	Tue Aug 24 12:42:52 2004
+@@ -129,7 +129,9 @@
+   /* error checking */
+   if ((biBitCount!=1 && biBitCount!=4 && biBitCount!=8 && 
+        biBitCount!=24 && biBitCount!=32) || 
+-      biPlanes!=1 || biCompression>BI_RLE4) {
++       biPlanes!=1 || biCompression>BI_RLE4 ||
++       biWidth<= 0 || biHeight <= 0 ||
++       (biClrUsed && biClrUsed > (1 << biBitCount))) {
+ 
+     sprintf(buf,"Bogus BMP File!  (bitCount=%d, Planes=%d, Compression=%d)",
+ 	    biBitCount, biPlanes, biCompression);
+@@ -159,6 +161,9 @@
+     
+     bPad = bfOffBits - (biSize + 14);
+   }
++
++  if (biClrUsed > (1 << biBitCount))
++    biClrUsed = (1 << biBitCount);
+ 
+   /* load up colormap, if any */
+   if (biBitCount!=24 && biBitCount!=32) {
+--- xviris.c
++++ xviris.c	Tue Aug 24 13:01:42 2004
+@@ -267,6 +267,12 @@
+ 
+     rlebuflen = 2 * xsize + 10;
+     tablen    = ysize * zsize;
++
++    if (rlebuflen <= 0 || tablen <= 0 || (tablen * sizeof(long)) < 0) {
++      loaderr = "Bogus IRIS File!";
++      return (byte *)NULL;
++    }
++
+     starttab  = (u_long *) malloc((size_t) tablen * sizeof(long));
+     lengthtab = (u_long *) malloc((size_t) tablen * sizeof(long));
+     rledat    = (byte *)   malloc((size_t) rlebuflen);
+--- xvpcx.c
++++ xvpcx.c	Tue Aug 24 13:12:15 2004
+@@ -222,7 +222,14 @@
+   byte *image;
+   
+   /* note:  overallocation to make life easier... */
+-  image = (byte *) malloc((size_t) (pinfo->h + 1) * pinfo->w + 16);
++  int count = (pinfo->h + 1) * pinfo->w + 16;
++
++  if (count <= 0 || pinfo->h <= 0 || pinfo->w <= 0) {
++    pcxError(fname, "Bogus PCX file!!");
++    return (0);
++  }
++
++  image = (byte *) malloc((size_t) count);
+   if (!image) FatalError("Can't alloc 'image' in pcxLoadImage8()");
+   
+   xvbzero((char *) image, (size_t) ((pinfo->h+1) * pinfo->w + 16));
+@@ -250,17 +257,25 @@
+ {
+   byte *pix, *pic24, scale[256];
+   int   c, i, j, w, h, maxv, cnt, planes, bperlin, nbytes;
++  int count;
+   
+   w = pinfo->w;  h = pinfo->h;
+   
+   planes = (int) hdr[PCX_PLANES];
+   bperlin = hdr[PCX_BPRL] + ((int) hdr[PCX_BPRH]<<8);
+   
++  count = w*h*planes;
++
++  if (count <= 0 || planes <= 0 || w <= 0 || h <= 0) {
++    pcxError(fname, "Bogus PCX file!!");
++    return (0);
++  }
++
+   /* allocate 24-bit image */
+-  pic24 = (byte *) malloc((size_t) w*h*planes);
++  pic24 = (byte *) malloc((size_t) count);
+   if (!pic24) FatalError("couldn't malloc 'pic24'");
+   
+-  xvbzero((char *) pic24, (size_t) w*h*planes);
++  xvbzero((char *) pic24, (size_t) count);
+   
+   maxv = 0;
+   pix = pinfo->pic = pic24;
+@@ -268,6 +283,12 @@
+   j = 0;      /* bytes per line, in this while loop */
+   nbytes = bperlin*h*planes;
+  
++  if (nbytes < 0) {
++    pcxError(fname, "Bogus PCX file!!");
++    free(pic24);
++    return (0);
++  }
++
+   while (nbytes > 0 && (c = getc(fp)) != EOF) {
+     if ((c & 0xC0) == 0xC0) {   /* have a rep. count */
+       cnt = c & 0x3F;
+--- xvpm.c
++++ xvpm.c	Tue Aug 24 13:16:43 2004
+@@ -119,6 +119,9 @@
+ 
+   isize = pm_isize(&thePic);
+ 
++  if (isize <= 0)
++    return pmError(bname, "Bogus PM file!!");
++
+   if (DEBUG) 
+     fprintf(stderr,"%s: LoadPM() - loading a %dx%d %s pic, %d planes\n",
+ 	    cmd, w, h, (thePic.pm_form==PM_I) ? "PM_I" : "PM_C", 
+@@ -135,6 +138,8 @@
+     return( pmError(bname, "file read error") );
+   }
+ 
++  if (thePic.pm_cmtsize+1 <= 0)
++    return pmError(bname, "Bogus PM file!!");
+ 
+   /* alloc and read in comment, if any */
+   if (thePic.pm_cmtsize>0) {
+@@ -155,6 +160,9 @@
+     int  *intptr;
+     byte *pic24, *picptr;
+ 
++    if (w <= 0 || h <= 0 || w*h*3 <= 0)
++      return pmError(bname, "Bogus PM file!!");
++
+     if ((pic24 = (byte *) malloc((size_t) w*h*3))==NULL) {
+       if (thePic.pm_cmt) free(thePic.pm_cmt);
+       return( pmError(bname, "unable to malloc 24-bit picture") );
+@@ -189,6 +197,9 @@
+ 
+   else if (thePic.pm_form == PM_C && thePic.pm_np>1) {
+     byte *pic24, *picptr, *rptr, *gptr, *bptr;
++
++    if (w <= 0 || h <= 0 || w*h*3 <= 0)
++      return pmError(bname, "Bogus PM file!!");
+ 
+     if ((pic24 = (byte *) malloc((size_t) w*h*3))==NULL) {
+       if (thePic.pm_cmt) free(thePic.pm_cmt);
