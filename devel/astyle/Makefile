@@ -20,12 +20,6 @@ EXTRACT_AFTER_ARGS=	-d ${DISTNAME}
 
 ALL_TARGET=	astyle
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/astyle ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -33,4 +27,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
