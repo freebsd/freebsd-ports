@@ -7,18 +7,18 @@
 
 PORTNAME=	auth_ldap
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	www 
 MASTER_SITES=	http://www.rudedog.org/auth_ldap/
 
 MAINTAINER=	nik@FreeBSD.org
-
-BROKEN=		"Looks like a missing dependency"
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	lber.2:${PORTSDIR}/net/openldap2
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LIBS="-llber"
 CONFIGURE_ARGS= --with-sdk-headers=${LOCALBASE}/include \
 		--with-sdk-libs=${LOCALBASE}/lib \
 		--with-ldap-sdk=openldap
