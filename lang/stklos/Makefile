@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.58
+PORTVERSION=	0.60
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,26 +19,23 @@ LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
 
 ONLY_FOR_ARCHS=	i386
 
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-gtk --disable-gnome
-PLIST_SUB=	VERSION="${PORTVERSION}" \
-		INFOSECTION="${INFOSECTION}" \
-		INFOENTRY="${INFOENTRY}"
+PLIST_SUB=	VERSION="${PORTVERSION}"
 
 MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1
 
-INFOSECTION=	The Algorithmic Language Scheme
-INFOENTRY=	* STklos: (stklos).	The successor of the STk Scheme interpreter
-
 post-patch:
-	${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} -e 's|^function ||' ${WRKSRC}/utils/stklos-config.in
-
-post-install:
-	install-info --section="${INFOSECTION}" --entry="${INFOENTRY}" \
-		${PREFIX}/info/stklos.info ${PREFIX}/info/dir
+	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|-@VERSION@||' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's|^function ||' ${WRKSRC}/utils/stklos-config.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -E -e 's/^(install-data-am:).*/\1 install-man install-schemeDATA/' \
+		-e '/install-docpdfDATA install-man install-schemeDATA/d' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 .include <bsd.port.mk>

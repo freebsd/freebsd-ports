@@ -6,25 +6,8 @@ bin/stklos-script
 include/stklos/extraconf.h
 include/stklos/stklos.h
 include/stklos/stklosconf.h
-@dirrm include/stklos
-@unexec install-info --delete --section="%%INFOSECTION%%" --entry="%%INFOENTRY%%" %D/info/stklos.info %D/info/dir
-info/stklos.info
-@unexec rm -f info/stklos.info-1
-@unexec rm -f info/stklos.info-2
-@unexec rm -f info/stklos.info-3
-@unexec rm -f info/stklos.info-4
-@unexec rm -f info/stklos.info-5
-@unexec rm -f info/stklos.info-6
-@exec install-info --section="%%INFOSECTION%%" --entry="%%INFOENTRY%%" %D/info/stklos.info %D/info/dir
 lib/stklos/%%VERSION%%/ldap.so
-@dirrm lib/stklos/%%VERSION%%
-@dirrm lib/stklos
 %%DATADIR%%/%%VERSION%%/DOCDB
-%%DATADIR%%/%%VERSION%%/Match/compiler.scm
-%%DATADIR%%/%%VERSION%%/Match/descr.scm
-%%DATADIR%%/%%VERSION%%/Match/mexpand.scm
-%%DATADIR%%/%%VERSION%%/Match/normalize.scm
-%%DATADIR%%/%%VERSION%%/Match/s2cfun.scm
 %%DATADIR%%/%%VERSION%%/STklos.init
 %%DATADIR%%/%%VERSION%%/assembler.stk
 %%DATADIR%%/%%VERSION%%/bb.stk
@@ -48,6 +31,8 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/full-syntax.stk
 %%DATADIR%%/%%VERSION%%/getopt.ostk
 %%DATADIR%%/%%VERSION%%/getopt.stk
+%%DATADIR%%/%%VERSION%%/lalr.ostk
+%%DATADIR%%/%%VERSION%%/lalr.stk
 %%DATADIR%%/%%VERSION%%/ldap.ostk
 %%DATADIR%%/%%VERSION%%/ldap.stk
 %%DATADIR%%/%%VERSION%%/lex-rt.ostk
@@ -63,6 +48,7 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/peephole.stk
 %%DATADIR%%/%%VERSION%%/pp.ostk
 %%DATADIR%%/%%VERSION%%/pp.stk
+%%DATADIR%%/%%VERSION%%/pragma.stk
 %%DATADIR%%/%%VERSION%%/process.stk
 %%DATADIR%%/%%VERSION%%/r5rs.stk
 %%DATADIR%%/%%VERSION%%/regexp.stk
@@ -106,6 +92,35 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/struct.stk
 %%DATADIR%%/%%VERSION%%/trace.ostk
 %%DATADIR%%/%%VERSION%%/trace.stk
-@dirrm %%DATADIR%%/%%VERSION%%/Match
+%%DATADIR%%/%%VERSION%%/Match.d/compiler.scm
+%%DATADIR%%/%%VERSION%%/Match.d/descr.scm
+%%DATADIR%%/%%VERSION%%/Match.d/mexpand.scm
+%%DATADIR%%/%%VERSION%%/Match.d/normalize.scm
+%%DATADIR%%/%%VERSION%%/Match.d/s2cfun.scm
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref-9.html
+%%PORTDOCS%%%%DOCSDIR%%/html/stklos-ref.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doc-style.css
+%%PORTDOCS%%%%DOCSDIR%%/html/images/hierarchy.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pdf/stklos-ref.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/%%VERSION%%/Match.d
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrm %%DATADIR%%
+@dirrm include/stklos
+@dirrm lib/stklos/%%VERSION%%
+@dirrm lib/stklos
