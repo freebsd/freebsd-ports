@@ -1,0 +1,26 @@
+bin/bombermaze
+share/gnome/apps/Games/bombermaze.desktop
+share/gnome/bombermaze/11x11.map
+share/gnome/bombermaze/11x11random.map
+share/gnome/bombermaze/15x13.map
+share/gnome/bombermaze/15x13random.map
+share/gnome/bombermaze/15x15.map
+share/gnome/bombermaze/15x15random.map
+share/gnome/help/bombermaze/C/index.html
+share/gnome/help/bombermaze/C/topic.dat
+share/gnome/pixmaps/bombermaze.png
+share/gnome/pixmaps/bombermaze/bomb.png
+share/gnome/pixmaps/bombermaze/brick.png
+share/gnome/pixmaps/bombermaze/fire.png
+share/gnome/pixmaps/bombermaze/floor.png
+share/gnome/pixmaps/bombermaze/player1.png
+share/gnome/pixmaps/bombermaze/player2.png
+share/gnome/pixmaps/bombermaze/player3.png
+share/gnome/pixmaps/bombermaze/player4.png
+share/gnome/pixmaps/bombermaze/powerup.png
+share/gnome/pixmaps/bombermaze/title.png
+share/gnome/pixmaps/bombermaze/wall.png
+@dirrm share/gnome/pixmaps/bombermaze
+@dirrm share/gnome/help/bombermaze/C
+@dirrm share/gnome/help/bombermaze
+@dirrm share/gnome/bombermaze
