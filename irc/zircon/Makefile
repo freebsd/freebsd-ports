@@ -9,7 +9,7 @@
 DISTNAME=	zircon-1.18.227
 CATEGORIES=	irc tk82
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/ \
-		ftp://ftp.dinoex.sub.org/pub/approved/
+		ftp://ftp.lan-ks.de/pub/approved/
 
 MAINTAINER=	jseger@FreeBSD.org
 
