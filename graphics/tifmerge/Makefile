@@ -3,7 +3,7 @@
 # Date created:		29 April 1999
 # Whom:			G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:27:41 steve Exp $
 #
 
 DISTNAME=	tiff
@@ -24,7 +24,8 @@ post-extract:
 	@tuc ${WRKDIR}/TIFMERGE.H ${WRKSRC}/tifmerge.h
 	@tuc ${WRKDIR}/TIFMERGE.C ${WRKSRC}/tifmerge.c
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	@${CP} ${FILESDIR}/tifmerge.3 ${WRKSRC}
+	@${SED} -e 's|@PREFIX@|${PREFIX}|g' ${FILESDIR}/tifmerge.3 > \
+		${WRKSRC}/tifmerge.3
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtifmerge.so.1 ${PREFIX}/lib
