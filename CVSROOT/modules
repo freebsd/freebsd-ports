@@ -2323,7 +2323,6 @@ gnustep-gui	ports/x11-toolkits/gnustep-gui
 gnustep-guile	ports/lang/gnustep-guile
 gnustep-make	ports/devel/gnustep-make
 gnustep-objc	ports/lang/gnustep-objc
-gnustep-xgps	ports/x11-toolkits/gnustep-xgps
 gnut		ports/net/gnut
 gnutls		ports/security/gnutls
 gob		ports/x11-toolkits/gob
