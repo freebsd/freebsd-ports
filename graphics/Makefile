@@ -365,6 +365,7 @@
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
     SUBDIR += py-magick
+    SUBDIR += py-matplotlib
     SUBDIR += py-ming
     SUBDIR += py-opengl
     SUBDIR += py-paint
