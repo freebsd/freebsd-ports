@@ -1,0 +1,10 @@
+Oniguruma is a BSDL Regular Expression library written for ruby-m17n,
+which implements all of Perl extensions plus more.  It has multiple
+APIs; GNU regex, POSIX regex and its own interface.
+
+This library is fundamentally multilingualized and can have one
+encoding for each object.  Currently supported character encodings
+are ASCII, UTF-8, EUC-JP and Shift_JIS.
+
+Author:	K.Kosako <kosako@sofnec.co.jp>
+WWW:	http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/oniguruma/

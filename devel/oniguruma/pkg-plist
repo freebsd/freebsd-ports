@@ -1,0 +1,10 @@
+include/onig/onigposix.h
+include/onig/regex.h
+@dirrm include/onig
+lib/libonig.a
+lib/libonig.so
+lib/libonig.so.0
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

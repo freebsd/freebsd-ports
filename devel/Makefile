@@ -406,6 +406,7 @@
     SUBDIR += ocaml-pcre
     SUBDIR += ocamlweb
     SUBDIR += omniORB
+    SUBDIR += oniguruma
     SUBDIR += openzz
     SUBDIR += orbitcpp
     SUBDIR += p4.el
