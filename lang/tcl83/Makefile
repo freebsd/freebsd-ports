@@ -1,15 +1,15 @@
-# New ports collection makefile for:	tcl8.2.3
-# Version required:	8.2.3
+# New ports collection makefile for:	tcl8.3.b1
+# Version required:	8.3.b1
 # Date created:		19 August 1997
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcl8.2.3
-PKGNAME=	tcl-8.2.3
-CATEGORIES=	lang tcl82
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
+DISTNAME=	tcl8.3b1
+PKGNAME=	tcl-8.3.b1
+CATEGORIES=	lang #tcl83
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_3/
 
 MAINTAINER=	jseger@FreeBSD.org
 
@@ -19,10 +19,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
-MAKE_ENV=	SHORT_TCL_VER=82
+MAKE_ENV=	SHORT_TCL_VER=83
 PKGINSTALL=     ${PKGDIR}/INSTALL.tclsh
 
-PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
+PLIST_SUB=	TCL_VER=8.3 SHORT_TCL_VER=83
 
 MAN1=	tclsh.1
 
@@ -33,13 +33,13 @@ MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	CrtObjCmd.3 CrtSlave.3 CrtTimerHdlr.3 CrtTrace.3 DString.3 \
 	DetachPids.3 DoOneEvent.3 DoWhenIdle.3 DoubleObj.3 Encoding.3 Eval.3 \
 	Exit.3 ExprLong.3 ExprLongObj.3 FindExec.3 GetCwd.3 GetIndex.3 \
-	GetInt.3 GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 IntObj.3 \
-	Interp.3 LinkVar.3 ListObj.3 Notifier.3 Object.3 ObjectType.3 \
+	GetInt.3 GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 InitStubs.3 \
+	IntObj.3 Interp.3 LinkVar.3 ListObj.3 Notifier.3 Object.3 ObjectType.3 \
 	OpenFileChnl.3 OpenTcp.3 ParseCmd.3 PkgRequire.3 Preserve.3 \
 	PrintDbl.3 RecEvalObj.3 RecordEval.3 RegExp.3 SaveResult.3 SetErrno.3 \
 	SetRecLmt.3 SetResult.3 SetVar.3 Sleep.3 SplitList.3 SplitPath.3 \
-	StaticPkg.3 StrMatch.3 StringObj.3 Tcl_InitStubs.3 Tcl_Main.3 \
-	TclInitStubs.3 Thread.3 ToUpper.3 TraceVar.3 Translate.3 UpVar.3 \
+	StaticPkg.3 StrMatch.3 StringObj.3 Tcl_Main.3 \
+	Thread.3 ToUpper.3 TraceVar.3 Translate.3 UpVar.3 \
 	Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
@@ -61,6 +61,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	AddErrInfo.3 Tcl_AddObjErrorInfo.3 \
 	AddErrInfo.3 Tcl_AddErrorInfo.3 \
 	AddErrInfo.3 Tcl_SetErrorCode.3 \
+	AddErrInfo.3 Tcl_SetErrorCodeVA.3 \
 	AddErrInfo.3 Tcl_PosixError.3 \
 	Alloc.3 Tcl_Alloc.3 \
 	Alloc.3 Tcl_Free.3 \
@@ -74,6 +75,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Async.3 Tcl_AsyncMark.3 \
 	Async.3 Tcl_AsyncInvoke.3 \
 	Async.3 Tcl_AsyncDelete.3 \
+	Async.3 Tcl_AsyncReady.3 \
 	BackgdErr.3 Tcl_BackgroundError.3 \
 	Backslash.3 Tcl_Backslash.3 \
 	BoolObj.3 Tcl_NewBooleanObj.3 \
@@ -85,6 +87,8 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	ByteArrObj.3 Tcl_SetByteArrayLength.3 \
 	CallDel.3 Tcl_CallWhenDeleted.3 \
 	CallDel.3 Tcl_DontCallWhenDeleted.3 \
+	ChnlStack.3 Tcl_StackChannel.3 \
+	ChnlStack.3 Tcl_UnstackChannel.3 \
 	CmdCmplt.3 Tcl_CommandComplete.3 \
 	Concat.3 Tcl_Concat.3 \
 	CrtChannel.3 Tcl_CreateChannel.3 \
@@ -94,7 +98,6 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	CrtChannel.3 Tcl_GetChannelHandle.3 \
 	CrtChannel.3 Tcl_GetChannelMode.3 \
 	CrtChannel.3 Tcl_GetChannelBufferSize.3 \
-	CrtChannel.3 Tcl_SetDefaultTranslation.3 \
 	CrtChannel.3 Tcl_SetChannelBufferSize.3 \
 	CrtChannel.3 Tcl_NotifyChannel.3 \
 	CrtChannel.3 Tcl_BadChannelOption.3 \
@@ -156,17 +159,23 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Encoding.3 Tcl_ExternalToUtf.3 \
 	Encoding.3 Tcl_UtfToExternalDString.3 \
 	Encoding.3 Tcl_UtfToExternal.3 \
+	Encoding.3 Tcl_WinTCharToUtf.3 \
+	Encoding.3 Tcl_WinUtfToTChar.3 \
 	Encoding.3 Tcl_GetEncodingName.3 \
 	Encoding.3 Tcl_SetSystemEncoding.3 \
 	Encoding.3 Tcl_GetEncodingNames.3 \
 	Encoding.3 Tcl_CreateEncoding.3 \
-	Eval.3 Tcl_EvalObj.3 \
+	Encoding.3 Tcl_GetDefaultEncodingDir.3 \
+	Encoding.3 Tcl_SetDefaultEncodingDir.3 \
+	Eval.3 Tcl_EvalObjEx.3 \
 	Eval.3 Tcl_EvalFile.3 \
 	Eval.3 Tcl_EvalObjv.3 \
 	Eval.3 Tcl_Eval.3 \
-	Eval.3 Tcl_Eval2.3 \
+	Eval.3 Tcl_EvalEx.3 \
 	Eval.3 Tcl_GlobalEval.3 \
+	Eval.3 Tcl_GlobalEvalObj.3 \
 	Eval.3 Tcl_VarEval.3 \
+	Eval.3 Tcl_VarEvalVA.3 \
 	Exit.3 Tcl_Exit.3 \
 	Exit.3 Tcl_Finalize.3 \
 	Exit.3 Tcl_FinalizeThread.3 \
@@ -205,6 +214,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Hash.3 Tcl_FirstHashEntry.3 \
 	Hash.3 Tcl_NextHashEntry.3 \
 	Hash.3 Tcl_HashStats.3 \
+	InitStubs.3 Tcl_InitStubs.3 \
 	IntObj.3 Tcl_NewIntObj.3 \
 	IntObj.3 Tcl_NewLongObj.3 \
 	IntObj.3 Tcl_SetIntObj.3 \
@@ -227,8 +237,14 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Notifier.3 Tcl_DeleteEventSource.3 \
 	Notifier.3 Tcl_SetMaxBlockTime.3 \
 	Notifier.3 Tcl_QueueEvent.3 \
+	Notifier.3 Tcl_ThreadQueueEvent.3 \
+	Notifier.3 Tcl_ThreadAlert.3 \
+	Notifier.3 Tcl_GetCurrentThread.3 \
 	Notifier.3 Tcl_DeleteEvents.3 \
+	Notifier.3 Tcl_InitNotifier.3 \
+	Notifier.3 Tcl_FinalizeNotifier.3 \
 	Notifier.3 Tcl_WaitForEvent.3 \
+	Notifier.3 Tcl_AlertNotifier.3 \
 	Notifier.3 Tcl_SetTimer.3 \
 	Notifier.3 Tcl_ServiceAll.3 \
 	Notifier.3 Tcl_ServiceEvent.3 \
@@ -247,6 +263,8 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	OpenFileChnl.3 Tcl_OpenCommandChannel.3 \
 	OpenFileChnl.3 Tcl_MakeFileChannel.3 \
 	OpenFileChnl.3 Tcl_GetChannel.3 \
+	OpenFileChnl.3 Tcl_GetChannelNames.3 \
+	OpenFileChnl.3 Tcl_GetChannelNamesEx.3 \
 	OpenFileChnl.3 Tcl_RegisterChannel.3 \
 	OpenFileChnl.3 Tcl_UnregisterChannel.3 \
 	OpenFileChnl.3 Tcl_Close.3 \
@@ -276,7 +294,11 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	ParseCmd.3 Tcl_FreeParse.3 \
 	ParseCmd.3 Tcl_EvalTokens.3 \
 	PkgRequire.3 Tcl_PkgRequire.3 \
+	PkgRequire.3 Tcl_PkgRequireEx.3 \
+	PkgRequire.3 Tcl_PkgPresent.3 \
+	PkgRequire.3 Tcl_PkgPresentEx.3 \
 	PkgRequire.3 Tcl_PkgProvide.3 \
+	PkgRequire.3 Tcl_PkgProvideEx.3 \
 	Preserve.3 Tcl_Preserve.3 \
 	Preserve.3 Tcl_Release.3 \
 	Preserve.3 Tcl_EventuallyFree.3 \
@@ -287,6 +309,9 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	RegExp.3 Tcl_RegExpCompile.3 \
 	RegExp.3 Tcl_RegExpExec.3 \
 	RegExp.3 Tcl_RegExpRange.3 \
+	RegExp.3 Tcl_GetRegExpFromObj.3 \
+	RegExp.3 Tcl_RegExpMatchObj.3 \
+	RegExp.3 Tcl_GetRegExpInfo.3 \
 	SaveResult.3 Tcl_SaveResult.3 \
 	SaveResult.3 Tcl_RestoreResult.3 \
 	SaveResult.3 Tcl_DiscardResult.3 \
@@ -298,14 +323,17 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	SetResult.3 Tcl_SetResult.3 \
 	SetResult.3 Tcl_GetStringResult.3 \
 	SetResult.3 Tcl_AppendResult.3 \
+	SetResult.3 Tcl_AppendResultVA.3 \
 	SetResult.3 Tcl_AppendElement.3 \
 	SetResult.3 Tcl_ResetResult.3 \
-	SetVar.3 Tcl_SetObjVar2.3 \
+	SetVar.3 Tcl_SetVar2Ex.3 \
 	SetVar.3 Tcl_SetVar.3 \
 	SetVar.3 Tcl_SetVar2.3 \
-	SetVar.3 Tcl_GetObjVar2.3 \
+	SetVar.3 Tcl_ObjSetVar2.3 \
+	SetVar.3 Tcl_GetVar2Ex.3 \
 	SetVar.3 Tcl_GetVar.3 \
 	SetVar.3 Tcl_GetVar2.3 \
+	SetVar.3 Tcl_ObjGetVar2.3 \
 	SetVar.3 Tcl_UnsetVar.3 \
 	SetVar.3 Tcl_UnsetVar2.3 \
 	Sleep.3 Tcl_Sleep.3 \
@@ -318,12 +346,21 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	SplitPath.3 Tcl_GetPathType.3 \
 	StaticPkg.3 Tcl_StaticPackage.3 \
 	StrMatch.3 Tcl_StringMatch.3 \
+	StrMatch.3 Tcl_StringCaseMatch.3 \
 	StringObj.3 Tcl_NewStringObj.3 \
+	StringObj.3 Tcl_NewUnicodeObj.3 \
 	StringObj.3 Tcl_SetStringObj.3 \
+	StringObj.3 Tcl_SetUnicodeObj.3 \
 	StringObj.3 Tcl_GetStringFromObj.3 \
 	StringObj.3 Tcl_GetString.3 \
+	StringObj.3 Tcl_GetUnicode.3 \
+	StringObj.3 Tcl_GetUniChar.3 \
+	StringObj.3 Tcl_GetCharLength.3 \
+	StringObj.3 Tcl_GetRange.3 \
 	StringObj.3 Tcl_AppendToObj.3 \
+	StringObj.3 Tcl_AppendUnicodeToObj.3 \
 	StringObj.3 Tcl_AppendStringsToObj.3 \
+	StringObj.3 Tcl_AppendStringsToObjVA.3 \
 	StringObj.3 Tcl_AppendObjToObj.3 \
 	StringObj.3 Tcl_SetObjLength.3 \
 	StringObj.3 Tcl_ConcatObj.3 \
@@ -350,6 +387,10 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Utf.3 Tcl_UniChar.3 \
 	Utf.3 Tcl_UniCharToUtf.3 \
 	Utf.3 Tcl_UtfToUniChar.3 \
+	Utf.3 Tcl_UniCharToUtfDString.3 \
+	Utf.3 Tcl_UtfToUniCharDString.3 \
+	Utf.3 Tcl_UniCharLen.3 \
+	Utf.3 Tcl_UniCharNcmp.3 \
 	Utf.3 Tcl_UtfCharComplete.3 \
 	Utf.3 Tcl_NumUtfChars.3 \
 	Utf.3 Tcl_UtfFindFirst.3 \
@@ -362,13 +403,11 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	WrongNumArgs.3 Tcl_WrongNumArgs.3 \
 	http.n Http.n \
 	pkgMkIndex.n pkg_mkIndex.n \
-	safe.n Safe\Base.n
+	safe.n Safe\Base.n \
+	tcltest.n Tcltest.n \
 
 .include <bsd.port.pre.mk>
 
-post-extract:
-	${MV} ${WRKDIR}/${DISTNAME}/doc/InitStubs.3 \
-	      ${WRKDIR}/${DISTNAME}/doc/Tcl_InitStubs.3
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
