@@ -19,6 +19,8 @@ COMMENT=	TeX macro package
 
 DIST_SUBDIR=    tex
 
+CONFLICTS=	teTeX*
+
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
