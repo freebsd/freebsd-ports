@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.iteration.net/pub/patch_chinese/
-DISTNAME=	zh-tw-skel
+DISTNAME=	zh-tw-skel-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	keichii@iteration.net
