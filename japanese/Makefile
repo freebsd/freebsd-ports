@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1996/08/20 10:35:08 asami Exp $
+# $Id: Makefile,v 1.35 1996/09/24 17:18:26 max Exp $
 #
 
     SUBDIR += Canna
@@ -49,6 +49,7 @@
     SUBDIR += tgif
     SUBDIR += tk
     SUBDIR += tk41
+    SUBDIR += today
     SUBDIR += xdvi
 
 .include <bsd.port.subdir.mk>
