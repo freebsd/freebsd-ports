@@ -19,12 +19,14 @@ COMMENT=	GNU Standards-compliant Makefile generator (version 1.5)
 DEPRECATED=	Please use devel/automake18 instead
 EXPIRATION_DATE=31st December 2004
 
+WANT_AUTOCONF_VER=253
+WANT_AUTOCONF_RUN=253
 BUILD_VERSION=	15
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL=${PERL5}
+CONFIGURE_ENV=	AUTOCONF=autoconf253 AUTOHEADER=autoheader253 MAKEINFO=makeinfo
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
@@ -44,7 +46,9 @@ post-patch:
 		${RM} -f *.info && \
 		${MV} automake.texi automake${BUILD_VERSION}.texi && \
 		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \
-		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in \
+		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in  && \
+		${REINPLACE_CMD} -e 's,%%BUILD_VERSION%%,${BUILD_VERSION},g; \
+				     s,%%X11BASE%%,${X11BASE},g' aclocal.in \
 	)
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+--- aclocal.in.orig	Tue Jul 17 05:36:23 2001
++++ aclocal.in	Tue Jul  6 21:30:44 2004
+@@ -35,2 +35,4 @@
+ $acdir = "@datadir@/aclocal";
++$acdir_ver = "@datadir@/aclocal%%BUILD_VERSION%%";
++$acdir_x11 = '%%X11BASE%%/share/aclocal';
+ 
+@@ -210,2 +212,4 @@
+     push (@dirlist, $acdir);
++    push (@dirlist, $acdir_ver) if (-d "$acdir_ver/.");
++    push (@dirlist, $acdir_x11) if (-d "$acdir_x11/.");
+ 
