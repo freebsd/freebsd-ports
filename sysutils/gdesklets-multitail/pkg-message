@@ -1,4 +1,10 @@
 ##
+To add your own custom intro message:
+
+    cp ${PREFIX}/share/examples/gdesklets-MultiTail/sample.multitail ~/.gdesklets/multitail
+  
+    edit the file to change the intro message and color 
+
 To view the README:
 
 	cat ${PREFIX}/share/gnome/gdesklets/Displays/MultiTail/README
