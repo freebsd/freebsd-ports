@@ -1,0 +1,6 @@
+include/divx/decore.h
+lib/libdivxdecore.a
+lib/libdivxdecore.so
+lib/libdivxdecore.so.%%LIB_VERSION%%
+lib/libdivxdecore_p.a
+@unexec rmdir %D/include/divx 2>/dev/null || true
