@@ -7,6 +7,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 DISTNAME=	mm${PORTVERSION}
