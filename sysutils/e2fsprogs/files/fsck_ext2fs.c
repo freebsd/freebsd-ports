@@ -6,7 +6,7 @@
  *
  * $FreeBSD$
  *
- * Upstream: $Id: fsck_ext2fs.c,v 1.2 2004/02/24 20:57:02 emma Exp $
+ * Upstream: $Id: fsck_ext2fs.c,v 1.3 2004/03/09 01:10:22 emma Exp $
  *
  * format: gindent -kr
  */
@@ -29,14 +29,14 @@ static int die(const char *tag)
 
 int main(int argc, char **argv)
 {
-	int ch, i = 1, force = 0, status;
+	int ch, i = 1, force = 0, status, verbose = 0, t;
 	long block = 0;
 	enum { normal, preen, yes, no } mode = normal;
 	char *cmd[256];
 	pid_t pid;
 
 	cmd[0] = "/sbin/e2fsck";
-	while ((ch = getopt(argc, argv, "BFpfnyb:")) != -1) {
+	while ((ch = getopt(argc, argv, "BFpfnyb:v")) != -1) {
 		switch (ch) {
 		case 'p':
 			mode = preen;
@@ -53,6 +53,9 @@ int main(int argc, char **argv)
 		case 'b':
 			block = atol(optarg);
 			break;
+		case 'v':
+			verbose++;
+			break;
 		case 'B':
 		case 'F':
 		default:
@@ -67,6 +70,11 @@ int main(int argc, char **argv)
 
 	switch (mode) {
 	case normal:
+		/* FreeBSD needs -f to force a check only in context
+		 * with -p -- so map normal to force to match
+		 * expectations */
+		if (!force)
+		    cmd[i++] = "-f";
 		break;
 	case yes:
 		cmd[i++] = "-y";
@@ -86,10 +94,20 @@ int main(int argc, char **argv)
 		cmd[i++] = b;
 	}
 
+	for (t = verbose; t > 1; t--)
+	    cmd[i++] = "-v";
+
 	while (optind < argc)
 		cmd[i++] = argv[optind++];
 
 	cmd[i++] = 0;
+
+	if (verbose) {
+		for (i=0; cmd[i]; i++)
+			fputs(cmd[i], stderr),
+			fputc(' ', stderr);
+		fputc('\n', stderr);
+	}
 
 	pid = fork();
 	switch (pid) {
