@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Mar 30 17:32:37 2000
++++ configure.in	Thu Mar 30 17:32:45 2000
+@@ -335,7 +335,7 @@
+ dnl Make sure -lpthread works (for SDL)
+ if test "x$HAS_SDL" = xyes; then
+    AC_CHECK_LIB(pthread, pthread_exit ,SDL_LIBS="$SDL_LIBS -lpthread"
+-     HAS_SDL=yes, HAS_SDL=no, [$SDL_LIBS])
++     HAS_SDL=yes, HAS_SDL=yes, [$SDL_LIBS])
+ fi
+ if test "x$HAS_SDL" != xyes; then
+    SDL_CFLAGS="" SDL_LIBS=""

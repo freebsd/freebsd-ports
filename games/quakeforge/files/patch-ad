@@ -1,0 +1,42 @@
+--- qw_client/Makefile.in.orig	Wed Jan 19 03:24:41 2000
++++ qw_client/Makefile.in	Wed Apr 19 12:14:39 2000
+@@ -277,10 +277,13 @@
+ $(COMMON_DIR)/@X11_VID_SRC@
+ 	$(CC) $(CFLAGS) $(X11_CFLAGS) -o $@ -c $<
+ 
++$(BUILD_DIR)/soft/snd_oss.@OBJEXT@: $(COMMON_DIR)/snd_oss.c
++	$(CC) $(CFLAGS) $(SDL_CFLAGS) -o $@ -c $<
++
+ $(X11QUAKE): soft_DIR $(BUILD_DIR)/../$(X11QUAKE)
+ 
+ $(BUILD_DIR)/../$(X11QUAKE): $(ALL_X11_OBJS)
+-	$(CC) $(CFLAGS) $(ALL_X11_OBJS) $(X11_LDFLAGS) $(LDFLAGS) $(LIBS) \
++	$(CC) $(CFLAGS) $(ALL_X11_OBJS) $(X11_LDFLAGS) $(SDL_LDFLAGS) $(LDFLAGS) $(LIBS) \
+ 	-o $(BUILD_DIR)/../$(X11QUAKE)
+ 
+ endif
+@@ -353,6 +356,9 @@
+ $(BUILD_DIR)/soft/cd_sdl.@OBJEXT@: $(COMMON_DIR)/cd_sdl.c
+ 	$(CC) $(CFLAGS) $(SDL_CFLAGS) -o $@ -c $<
+ 
++$(BUILD_DIR)/soft/snd_oss.@OBJEXT@: $(COMMON_DIR)/snd_oss.c
++	$(CC) $(CFLAGS) $(SDL_CFLAGS) -o $@ -c $<
++
+ $(SDLQUAKE): soft_DIR $(BUILD_DIR)/../$(SDLQUAKE)
+ 
+ $(BUILD_DIR)/../$(SDLQUAKE): $(ALL_SDL_OBJS)
+@@ -402,10 +408,13 @@
+ $(BUILD_DIR)/gl/dga_check.@OBJEXT@: $(COMMON_DIR)/dga_check.c
+ 	$(CC) $(CFLAGS) $(X11_CFLAGS) -o $@ -c $<
+ 
++$(BUILD_DIR)/soft/snd_oss.@OBJEXT@: $(COMMON_DIR)/snd_oss.c
++	$(CC) $(CFLAGS) $(SDL_CFLAGS) -o $@ -c $<
++
+ $(GLQUAKE): gl_DIR $(BUILD_DIR)/../$(GLQUAKE)
+ 
+ $(BUILD_DIR)/../$(GLQUAKE): $(ALL_GL_OBJS)
+-	$(CC) $(CFLAGS) $(ALL_GL_OBJS) $(GL_LDFLAGS) $(LDFLAGS) $(LIBS) \
++	$(CC) $(CFLAGS) $(ALL_GL_OBJS) $(GL_LDFLAGS) $(SDL_LDFLAGS) $(LDFLAGS) $(LIBS) \
+ 	-o $(BUILD_DIR)/../$(GLQUAKE)
+ 
+ endif
