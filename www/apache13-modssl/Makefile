@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.modssl.org/source/ \
