@@ -1,0 +1,50 @@
+--- Makefile.orig	Thu Aug  9 12:55:44 2001
++++ Makefile	Thu Aug  9 13:04:50 2001
+@@ -1,19 +1,12 @@
+-PLATFORM = LINUX
++#PLATFORM = LINUX
+ #PLATFORM = SOLARIS
+-#PLATFORM = FreeBSD
+-CC = gcc
++PLATFORM = FreeBSD
++#CC = gcc
+ #DEBUG = yes
+ #CFLAGS = -g
+ #CFLAGS = -O6
+ LIBS = -lm
+-
+-ifeq ($(PLATFORM),SOLARIS)
+-	LIBS += -lsocket -lnsl -lresolv
+-endif
+-
+-ifeq ($(DEBUG),yes)
+-	CFLAGS += -g
+-endif
++CFLAGS+= -DASNCDIR=\"${PREFIX}/share/ehnt\"
+ 
+ 
+ all: ehntserv ehnt asnc.txt
+@@ -37,11 +30,6 @@
+ 
+ ehnt : ehnt_client.o ehnt_lookup.o ehnt_display.o ehnt_processflow.o ehnt_main.o
+ 	$(CC) -o ehnt ehnt_client.o ehnt_lookup.o ehnt_display.o ehnt_processflow.o ehnt_main.o $(LIBS) $(CFLAGS)
+-ifeq ($(DEBUG),yes)
+-	@echo Debug mode - ehnt not stripped
+-else
+-	strip ehnt
+-endif
+ 
+ 
+ ehntserv.o : ehntserv.c ehnt.h netflowv5.h config.h
+@@ -49,11 +37,6 @@
+ 
+ ehntserv : ehntserv.o
+ 	$(CC) $(CFLAGS) -o ehntserv ehntserv.o  $(LIBS) $(CFLAGS)
+-ifeq ($(DEBUG),yes)
+-	@echo Debug mode - ehnt not stripped
+-else
+-	strip ehntserv
+-endif
+ 
+ asnc.txt :
+ 	perl ./ProcessASN.pl

@@ -1,0 +1,111 @@
+.\" Copyright (c) 2000-2001 Nik Weidenbacher nikw@martnet.com
+.\" Portions Copyright (c) 2001 Dmitry Morozovsky marck@rinet.ru
+.\"
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\" 3. All advertising materials mentioning features or use of this software
+.\"    must display the following acknowledgement:
+.\"	This product includes software developed by the University of
+.\"	California, Berkeley and its contributors.
+.\" 4. Neither the name of the University nor the names of its contributors
+.\"    may be used to endorse or promote products derived from this software
+.\"    without specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $Id$
+.\"
+.Dd Aug 04, 2001
+.Dt EHNT 1
+.\" .Os BSD 4.4
+.Sh NAME
+.Nm ehnt
+.Nd Extreme Happy Netflow Tool. Client part
+.Sh SYNOPSIS
+.Nm
+.Op Fl 0 Ar ASN
+.Op Fl a Ar ASN
+.Op Fl b
+.Op Fl c Ar count
+.Op Fl i Ar mins
+.Op Fl m Ar mode
+.Op Fl n Ar intidx
+.Op Fl p Ar port
+.Op Fl P Ar proto
+.Op Fl r Ar addr
+.Op Fl s Ar server:port
+.Op Fl x Ar prefix
+.Sh DESCRIPTION
+The
+.Nm
+command starts
+.Xr ehnt 1
+client which connects to
+.Xr ehntserv 8
+server and converts raw flow of NetFlow version 5 packets into
+somewhat human-readable (or machine-readable) form.
+.Pp
+The options are as follows:
+.Bl -tag -width ".Fl n Ar intidx"
+.It Fl 0 Ar ASN
+Replace AS number 0 occurences with this AS number
+.It Fl a Ar ASN
+Only display flows to/from this AS number
+.It Fl b
+Display big flows (only shows flows with the most bytes
+or packets received so far)
+.It Fl c Ar count
+Exit after <count> flows are received
+.It Fl i Ar mins
+How long to wait between report generations (in minutes)
+.It Fl m Ar mode
+The name of the mode of operation to use: 
+.Cm dump 
+displays flow detail;
+.Cm shortdump
+shows flow details in a more compact fashion;
+.Cm top
+generates reports of top average utilization
+.It Fl n Ar intidx
+Specify the interface by SNMP ifIndex number
+.It Fl p Ar port
+Only display flows to/from this tcp or udp port number
+.It Fl P Ar proto
+Only display flows using this IP protocol number
+.It Fl r Ar addr
+Only display flows reported by this router IP address
+.It Fl s Ar server:port
+The hostname or IP address and port number of the 
+.Xr ehntserv 8
+.It Fl x Ar prefix
+Only display flows to/from this IP prefix. The format for <prefix>
+is 'address/length', for example 1.2.3.4/30 or 127.0.0.0/8.
+.El
+.Sh FILES
+.Bl -tag -width /usr/local/share/ehnt/asnc.txt -compact
+.It Pa /usr/local/share/ehnt/asnc.txt
+Autonomous Systems Number-to-Name Convertion table
+.El
+.Sh SEE ALSO
+.Xr ehntserv 8
+.Sh AUTHORS
+.An Nik Weidenbacher Aq nikw@martnet.com
+.An Dmitry Morozovsky Aq marck@rinet.ru
+

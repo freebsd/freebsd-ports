@@ -1,0 +1,11 @@
+--- ehnt_lookup.c.orig	Wed Jul 18 00:47:37 2001
++++ ehnt_lookup.c	Fri Aug  3 19:54:34 2001
+@@ -36,7 +36,7 @@
+ 
+   memset(ASNs,0,sizeof(ASNs));
+ 
+-  if ( ! (f=fopen ("asnc.txt","r")) ) {
++  if ( ! (f=fopen (ASNCDIR "/asnc.txt","r")) ) {
+     perror("fopen");
+   } else {
+     for ( ; ; ) {
