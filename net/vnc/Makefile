@@ -3,13 +3,13 @@
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id: Makefile,v 1.8 1998/12/23 01:43:12 steve Exp $
+# $Id: Makefile,v 1.9 1999/01/07 06:35:14 steve Exp $
 #
 
 DISTNAME=       	vnc-3.3.2r3_unixsrc
 PKGNAME=        	vnc-3.3.2r3
 CATEGORIES=		net
-MASTER_SITES=   	http://www.orl.co.uk/vnc/dist/
+MASTER_SITES=   	http://www.uk.research.att.com/vnc/dist/
 DISTFILES=		vnc-3.3.2r3_unixsrc.tgz \
 			vnc-3.3.2_doc.tgz
 
