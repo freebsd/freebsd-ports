@@ -1,0 +1,12 @@
+# $FreeBSD$
+
+PROG=xtattr
+MAN=xtattr.1
+BINDIR=${PREFIX}/bin
+MANDIR=${PREFIX}/man/man
+
+# I'd love to see a more elegant way to do this :(
+xtattr.1:: xtattr.man
+	ln -s xtattr.man xtattr.1
+
+.include <bsd.prog.mk>
