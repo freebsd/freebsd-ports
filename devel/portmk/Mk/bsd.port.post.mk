@@ -16,7 +16,7 @@ OPTIONS_DBDIR?=	/var/db/options
 OPTIONS_FILE?=	${OPTIONS_DBDIR}/${UNIQUENAME}
 
 .if defined(_OPTIONSNG_READ) && exists(${OPTIONS_FILE})
-.if ${_OPTIONSNG_READ} == "default"
+.if ${_OPTIONSNG_READ} == default
 _ONG_REEXEC=	yes
 check-makefile::
 	@${ECHO_MSG} "===>  Configuration error, \`make rmconfig' to remove custom options."
@@ -55,6 +55,9 @@ DESTDIR=		${WRKINST}
 .endif
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}  \
+			DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR}
+
 
 .if defined(WITHOUT_CPU_CFLAGS)
 .if defined(_CPUCFLAGS)
@@ -126,11 +129,11 @@ GCCVERSION=		030100
 .if ${OSVERSION} >= 500039 && ${OSVERSION} < 501103
 GCCVERSION=		030200
 .endif
-.if ${OSVERSION} >= 501103
+.if ${OSVERSION} >= 501103 && ${OSVERSION} < 502126
 GCCVERSION=		030301
 .endif
-.if ${OSVERSION} >= 599999
-GCCVERSION=		030400
+.if ${OSVERSION} >= 502126
+GCCVERSION=		030402
 .endif
 .endif
 
@@ -148,26 +151,26 @@ F77=			g77-31
 BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
 GCCVERSION=		030100
 .endif
-.if ${USE_GCC} == 3.2 && ${OSVERSION} < 500039
+.if ${USE_GCC} == 3.2 && ( ${OSVERSION} < 500039 || ${OSVERSION} > 501102 )
 CC=				gcc32
 CXX=			g++32
 F77=			g77-32
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 GCCVERSION=		030200
 .endif
-.if ${USE_GCC} == 3.3 && ${OSVERSION} < 501103
+.if ${USE_GCC} == 3.3 && ( ${OSVERSION} < 501103 || ${OSVERSION} > 502125 )
 CC=				gcc33
 CXX=			g++33
 F77=			g77-33
 BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
 GCCVERSION=		030301
 .endif
-.if ${USE_GCC} == 3.4 # Not yet available in any OSVERSION
+.if ${USE_GCC} == 3.4 && ${OSVERSION} < 502126
 CC=				gcc34
 CXX=			g++34
 F77=			g77-34
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-GCCVERSION=		030400
+GCCVERSION=		030402
 .endif
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
 .endif
@@ -183,7 +186,9 @@ _OPENLDAP_FLAVOUR=	-sasl
 .else
 _OPENLDAP_FLAVOUR=
 .endif
-.if ${WANT_OPENLDAP_VER} == 22
+.if ${WANT_OPENLDAP_VER} == 23
+LIB_DEPENDS+=		ldap-2.3.0:${PORTSDIR}/net/openldap23${_OPENLDAP_FLAVOUR}-client
+.elif ${WANT_OPENLDAP_VER} == 22
 LIB_DEPENDS+=		ldap-2.2.7:${PORTSDIR}/net/openldap22${_OPENLDAP_FLAVOUR}-client
 .elif ${WANT_OPENLDAP_VER} == 21
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21${_OPENLDAP_FLAVOUR}-client
@@ -215,7 +220,7 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 .if defined(USE_GETTEXT)
-.	if ${USE_GETTEXT:L} == "yes"
+.	if ${USE_GETTEXT:L} == yes
 LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext
 .	else
 LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
@@ -223,7 +228,15 @@ LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
 .endif
 
 .if defined(USE_LINUX)
-RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+.	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
+RUN_DEPENDS+=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
+.	else
+.		if ${USE_LINUX} == 7
+RUN_DEPENDS+= ${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+.		else
+RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-8
+.		endif
+.	endif
 .endif
 
 .if defined(USE_MOTIF)
@@ -314,14 +327,15 @@ PKG_IGNORE_DEPENDS?=		'^XFree86-3\.'
 
 .else
 
-.if defined(USE_IMAKE)
-RUN_DEPENDS+=			mkhtmlindex:${X_IMAKE_PORT}
-.endif
 .if defined(USE_XPM) || defined(USE_GL)
 USE_XLIB=			yes
 .endif
 
+.if ${X_WINDOW_SYSTEM:L} == xorg
+XAWVER=				8
+.else
 XAWVER=				7
+.endif
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
 .endif
@@ -385,21 +399,36 @@ MYSQL41_LIBVER=		14
 MYSQL50_LIBVER=		14
 
 # Setting/finding MySQL version we want.
+.if exists(${LOCALBASE}/bin/mysql)
+_MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.endif
+
 .if defined(WANT_MYSQL_VER)
+.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER} != ${WANT_MYSQL_VER}
+BROKEN=		The port wants mysql${WANT_MYSQL_VER}-client and you try to install mysql${WITH_MYSQL_VER}-client.
+.endif
 MYSQL_VER=	${WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
 MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/bin/mysql)
-MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.else
+.if defined(_MYSQL_VER)
+MYSQL_VER=	${_MYSQL_VER}
 .else
 MYSQL_VER=	${DEFAULT_MYSQL_VER}
+.endif
 .endif # WANT_MYSQL_VER
+
+.if defined(_MYSQL_VER)
+.if ${_MYSQL_VER} != ${MYSQL_VER}
+BROKEN=	MySQL versions mismatch: mysql${_MYSQL_VER}-client is installed and wanted version is mysql${MYSQL_VER}-client
+.endif
+.endif
 
 # And now we are checking if we can use it
 .if exists(${PORTSDIR}/databases/mysql${MYSQL_VER}-client)
 .if defined(BROKEN_WITH_MYSQL)
 .	for VER in ${BROKEN_WITH_MYSQL}
-.		if (${MYSQL_VER} == "${VER}")
+.		if (${MYSQL_VER} == ${VER})
 IGNORE=		Doesn't work with MySQL version : ${MYSQL_VER} (Doesn't support MySQL ${BROKEN_WITH_MYSQL})
 .		endif
 .	endfor
@@ -409,6 +438,36 @@ LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysq
 BROKEN=		"unknown MySQL version: ${MYSQL_VER}"
 .endif # Check for correct libs
 .endif # USE_MYSQL
+
+.if defined(USE_PGSQL)
+DEFAULT_PGSQL_VER?=	74
+
+# Setting/finding PostgreSQL version we want.
+.if defined(WANT_PGSQL_VER)
+PGSQL_VER=	${WANT_PGSQL_VER}
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif # WANT_PGSQL_VER
+
+# And now we are checking if we can use it
+.if exists(${PORTSDIR}/databases/postgresql${PGSQL_VER}-client)
+.if defined(BROKEN_WITH_PGSQL)
+.	for VER in ${BROKEN_WITH_PGSQL}
+.		if (${PGSQL_VER} == ${VER})
+BROKEN=		"Doesn't work with PostgreSQL version : ${PGSQL_VER} (Doesn't support PostgresSQL ${BROKEN_WITH_PGSQL})"
+.		endif
+.	endfor
+.endif # BROKEN_WITH_PGSQL
+LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
+.else
+BROKEN=		"unknown PostgreSQL version: ${PGSQL_VER}"
+.endif # Check for correct version
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif # USE_PGSQL
 
 .if defined(USE_XLIB)
 LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
@@ -439,11 +498,19 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 USE_SUBMAKE=	yes
 .endif
 
+.if defined(USE_XLIB)
+LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
+# Add explicit X options to avoid problems with false positives in configure
+.if defined(GNU_CONFIGURE)
+CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+.endif
+.endif
+
 # Set the default for the installation of Postscript(TM)-
 # compatible functionality.
 .if !defined(WITHOUT_X11)
 .if defined(WITH_GHOSTSCRIPT_AFPL)
-.if ${WITH_GHOSTSCRIPT_AFPL} == yes
+.if ${WITH_GHOSTSCRIPT_AFPL:L} == yes
 GHOSTSCRIPT_PORT?=	print/ghostscript-afpl
 .else
 GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
@@ -453,7 +520,7 @@ GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
 .endif
 .else
 .if defined(WITH_GHOSTSCRIPT_AFPL)
-.if ${WITH_GHOSTSCRIPT_AFPL} == yes
+.if ${WITH_GHOSTSCRIPT_AFPL:L} == yes
 GHOSTSCRIPT_PORT?=	print/ghostscript-afpl-nox11
 .else
 GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
@@ -497,7 +564,6 @@ NONEXISTENT?=	/nonexistent
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 XMKMF?=			xmkmf -a
-MKHTMLINDEX?=		${X11BASE}/bin/mkhtmlindex
 .if exists(/sbin/md5)
 MD5?=			/sbin/md5
 .elif exists(/bin/md5)
@@ -521,7 +587,7 @@ PTHREAD_CFLAGS?=	-D_THREAD_SAFE
 PTHREAD_LIBS?=		-lc_r
 .else
 PTHREAD_CFLAGS?=
-PTHREAD_LIBS?=		-lpthread
+PTHREAD_LIBS?=		-pthread
 .endif
 
 .if defined(FETCH_USE_CURL) && exists(${LOCALBASE}/bin/curl)
@@ -542,11 +608,11 @@ PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DEBUG_TMP=	no
 PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-b ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS?=	--suffix ${DISTORIG} -d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
@@ -561,9 +627,9 @@ PATCH_ARGS+=	-C
 PATCH_DIST_ARGS+=	-C
 .endif
 
-.if ${PATCH} == "/usr/bin/patch"
-PATCH_ARGS+=	-b .orig
-PATCH_DIST_ARGS+=	-b .orig
+.if ${PATCH} == /usr/bin/patch
+PATCH_ARGS+=	--suffix .orig
+PATCH_DIST_ARGS+=	--suffix .orig
 .endif
 
 .if exists(/bin/tar)
@@ -589,24 +655,27 @@ EXTRACT_CMD?=			${GZIP_CMD}
 
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE) && !defined(NO_MTREE)
-.if defined(USE_X_PREFIX)
+.if ${PREFIX} == ${X11BASE} || defined(USE_X_PREFIX)
+# User may have specified non-standard PREFIX for installing a port that
+# uses X
 .if ${X_WINDOW_SYSTEM:L} == xfree86-3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
-.else
-.if ${PREFIX} == /usr
+.elif ${PREFIX} == /usr
 MTREE_FILE=	/etc/mtree/BSD.usr.dist
 .else
 MTREE_FILE=	/etc/mtree/BSD.local.dist
-.endif
 .endif
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
 # Determine whether or not we can use rootly owner/group functions.
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
 .if ${UID} == 0
 _BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
 _SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
@@ -650,12 +719,14 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
+.if ${OSVERSION} >= 400000
 .for _CATEGORY in ${CATEGORIES}
 PKGCATEGORY?=	${_CATEGORY}
 .endfor
 _PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
+.endif
 
 .if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
@@ -798,8 +869,6 @@ MASTER_SORT_ENV+=	CC_HOME=${CC_HOME}
 EXTRACT_ONLY?=	${_DISTFILES}
 
 # Documentation
-MAINTAINER?=	ports@FreeBSD.org
-
 .EXEC: maintainer
 .if !target(maintainer)
 maintainer:
@@ -828,8 +897,8 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	offix palm parallel pear perl5 picobsd plan9 polish portuguese print \
 	python ruby russian \
 	scheme science security shells sysutils \
-	tcl76 tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
-	tk42 tk80 tk82 tk83 tk84 tkstep80 \
+	tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
+	tk80 tk82 tk83 tk84 tkstep80 \
 	ukrainian vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-themes x11-toolkits \
 	x11-wm xfce zope
@@ -942,7 +1011,7 @@ __pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
 			{ print "broken"; exit; } \
 	} \
   }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
-.if ${__pmlinks:Mbroken} == "broken"
+.if ${__pmlinks:Mbroken} == broken
 check-makevars::
 	@${ECHO_CMD} "${PKGNAME}: Makefile error: unable to parse MLINKS."
 	@${FALSE}
@@ -963,7 +1032,7 @@ _MLINKS+=	${___pmlinks:S// /g}
 .endif
 _COUNT=0
 .for ___tpmlinks in ${_MLINKS}
-.if ${_COUNT} == "1"
+.if ${_COUNT} == 1
 _TMLINKS+=	${___tpmlinks}
 _COUNT=0
 .else
@@ -998,7 +1067,7 @@ __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
 __MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
 .endif
 
-.if ${MANCOMPRESSED} == "yes"
+.if ${MANCOMPRESSED:L} == yes
 _MANPAGES:=	${_MANPAGES:S%$%.gz%}
 .endif
 
@@ -1008,16 +1077,6 @@ _MANPAGES:=	${_MANPAGES:S%$%.gz%}
 INFO_PATH?=	share/info
 .else
 INFO_PATH?=	info
-.endif
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-XFREE86_HTML_MAN=	no
-.else
-.if defined(USE_IMAKE)
-XFREE86_HTML_MAN?=	yes
-.else
-XFREE86_HTML_MAN?=	no
-.endif
 .endif
 
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
@@ -1287,7 +1346,7 @@ options-message:
 	@${DO_NADA}
 .endif
 .if defined(_OPTIONSNG_READ)
-.if ${_OPTIONSNG_READ} == "default"
+.if ${_OPTIONSNG_READ} == default
 	@${ECHO_MSG} "===>  Building with default configuration, \`make config' to customize."
 .else
 	@${ECHO_MSG} "===>  Building with saved configuration for ${_OPTIONSNG_READ}, \`make config' to change."
@@ -1298,6 +1357,7 @@ options-message:
 	@${ECHO_MSG} "===>  *** CAUTION *** Using wrong configuration file ${_OPTIONSFILE}"
 .endif
 .endif
+
 
 # Warn user about deprecated packages.  Advisory only.
 
@@ -1880,9 +1940,6 @@ do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
-.if ${XFREE86_HTML_MAN:L} == yes
-	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
-.endif
 .endif
 .else # !defined(USE_GMAKE)
 .if defined(PERL_MODBUILD)
@@ -1891,9 +1948,6 @@ do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
-.if ${XFREE86_HTML_MAN:L} == yes
-	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
-.endif
 .endif
 .endif
 .endif
@@ -1913,7 +1967,7 @@ do-package: ${TMPPLIST}
 	@if [ -d ${PACKAGES} ]; then \
 		if [ ! -d ${PKGREPOSITORY} ]; then \
 			if ! ${MKDIR} ${PKGREPOSITORY}; then \
-				${ECHO_MSG} ">> Can't create directory ${PKGREPOSITORY}."; \
+				${ECHO_MSG} "=> Can't create directory ${PKGREPOSITORY}."; \
 				exit 1; \
 			fi; \
 		fi; \
@@ -1950,7 +2004,7 @@ package-links: delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
-				${ECHO_MSG} ">> Can't create directory ${PACKAGES}/$$cat."; \
+				${ECHO_MSG} "=> Can't create directory ${PACKAGES}/$$cat."; \
 				exit 1; \
 			fi; \
 		fi; \
@@ -1959,7 +2013,7 @@ package-links: delete-package-links
 .if !defined(NO_LATEST_LINK)
 	@if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
 		if ! ${MKDIR} ${PKGLATESTREPOSITORY}; then \
-			${ECHO_MSG} ">> Can't create directory ${PKGLATESTREPOSITORY}."; \
+			${ECHO_MSG} "=> Can't create directory ${PKGLATESTREPOSITORY}."; \
 			exit 1; \
 		fi; \
 	fi
@@ -3002,7 +3056,8 @@ package-recursive: package
 # a large index.  Format is:
 #
 # distribution-name|port-path|installation-prefix|comment| \
-#  description-file|maintainer|categories|build deps|run deps|www site
+#  description-file|maintainer|categories|extract-depends| \
+#  patch-depends|fetch-depends|build-depends|run-depends|www site
 
 .EXEC: describe
 .if !target(describe)
@@ -3143,6 +3198,26 @@ pretty-print-run-depends-list:
 .endif
 .endif
 
+.EXEC: apply-slist
+.if !target(apply-slist)
+_SUB_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
+apply-slist:
+.if defined(SUB_FILES)
+.for file in ${SUB_FILES}
+.if !exists(${FILESDIR}/${file}.in)
+	@${ECHO_CMD} "** Missing ${FILESDIR}/${file}.in for ${PKGNAME}."; exit 1
+.else
+	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${FILESDIR}/${file}.in > ${WRKDIR}/${file}
+.endif
+.endfor
+.for i in pkg-message pkg-install pkg-deinstall pkg-req
+.if ${SUB_FILES:M${i}*}!=""
+${i:S/-//:U}=	${WRKDIR}/${SUB_FILES:M${i}*}
+.endif
+.endfor
+.endif
+.endif
+
 # Generate packing list.  Also tests to make sure all required package
 # files exist.
 
@@ -3175,21 +3250,6 @@ generate-plist:
 	@for i in $$(${ECHO_CMD} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||} ' ' | ${SED} -E -e 's|man([1-9ln])/([^/ ]+) |cat\1/\2 |g'); do \
 		${ECHO_CMD} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
 	done
-.if ${XFREE86_HTML_MAN:L} == "yes"
-.for mansect in 1 2 3 4 5 6 7 8 9 L N
-.for man in ${MAN${mansect}}
-	@${ECHO_CMD} lib/X11/doc/html/${man}.html >> ${TMPPLIST}
-.endfor
-.endfor
-	@${ECHO_CMD} "@unexec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
-.if defined(MLINKS)
-	@${ECHO_CMD} ${MLINKS} | ${AWK} \
-	'{ for (i=1; i<=NF; i++) { \
-		if (i % 2 == 0) { printf "lib/X11/doc/html/%s.html\n", $$i } \
-	} }' >> ${TMPPLIST}
-.endif
-.endif
 .endfor
 	@if [ -f ${PLIST} ]; then \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
@@ -3205,7 +3265,7 @@ generate-plist:
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .if !defined(NO_FILTER_SHLIBS)
-.if (${PORTOBJFORMAT} == "aout")
+.if (${PORTOBJFORMAT} == aout)
 	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)$$,\1.0,' ${TMPPLIST} > ${TMPPLIST}.tmp
 .else
 	@${SED} -e 's,\(/lib.*\.so\.[0-9]*\)\.[0-9]*$$,\1,' ${TMPPLIST} > ${TMPPLIST}.tmp
@@ -3249,7 +3309,22 @@ add-plist-info:
 		>> ${TMPPLIST}
 .endfor
 .if !defined(NO_MTREE) && defined(INFO)
+.if ${PREFIX} != /usr
 	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
+.if ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE}
+	@${ECHO_CMD} "@unexec rmdir %D/info 2> /dev/null || true" >> ${TMPPLIST}
+.endif
+.endif
+.endif
+.endif
+
+# If we're installing into a non-standard PREFIX, we need to remove that directory at
+# deinstall-time
+.EXEC: add-plist-post
+.if !target(add-plist-post)
+add-plist-post:
+.if ${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${X11BASE} && ${PREFIX} != ${LINUXBASE} && ${PREFIX} != /usr
+	@${ECHO_CMD} "@unexec rmdir %D 2> /dev/null || true" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
 .endif
@@ -3260,10 +3335,10 @@ add-plist-info:
 .if !target(compress-man)
 compress-man:
 .if defined(_MANPAGES) || defined(_MLINKS)
-.if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
+.if ${MANCOMPRESSED:L} == yes && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/^/${DESTDIR}/:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
-.elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
+.elif ${MANCOMPRESSED:L} == no && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
 	@_manpages='${_MANPAGES:S/^/${DESTDIR}/:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
 .endif
@@ -3346,23 +3421,24 @@ fake-pkg:
 # one they can override this.  This is just to catch people who've gotten into
 # the habit of typing `make depend all install' as a matter of course.
 #
-.EXEC: depend
 .if !target(depend)
 depend:
 .endif
 
 # Same goes for tags
-.EXEC: tags
 .if !target(tags)
 tags:
 .endif
 
-.if !defined(NOPRECIOUSMAKEVARS)
+.if !defined(NOPRECIOUSSOFTMAKEVARS)
 .for softvar in CKSUMFILES _MLINKS
 .if defined(${softvar})
 __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 .endif
 .endfor
+.endif
+
+.if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
 .MAKEFLAGS: \
 	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
