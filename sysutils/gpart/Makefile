@@ -18,7 +18,7 @@ USE_GMAKE=	yes
 MAN8=		gpart.8
 
 .if defined(WANT_STATIC)
-LDFLAGS=	-static
+MAKE_ARGS+= LDFLAGS=-static
 .endif
 
 .include <bsd.port.mk>
