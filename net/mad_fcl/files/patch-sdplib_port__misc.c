@@ -1,5 +1,8 @@
---- sdplib/port_misc.c.orig	Fri Feb 13 15:58:54 2004
-+++ sdplib/port_misc.c	Fri Feb 13 15:58:54 2004
+
+$FreeBSD$
+
+--- sdplib/port_misc.c.orig	Fri Jun 25 13:29:37 2004
++++ sdplib/port_misc.c	Fri Jun 25 13:31:13 2004
 @@ -47,6 +47,7 @@
  #  include <sys/unistd.h>
  #endif
