@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-avi
 PORTVERSION=	1.2.2
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xmms.org/files/plugins/avi-xmms/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/plugins/avi-xmms/ \
 		ftp://ftp.fu-berlin.de/unix/sound/xmms/plugins/avi-xmms/

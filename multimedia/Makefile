@@ -2,6 +2,6 @@
 #
     SUBDIR += gtksubtitler
     SUBDIR += ksubeditor
-    SUBDIR += 
+    SUBDIR += xmms-avi
 
 .include <bsd.port.subdir.mk>
