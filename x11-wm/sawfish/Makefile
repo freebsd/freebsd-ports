@@ -45,9 +45,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
 
 post-install:
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
 	install-info --section="X11 window manager" \
 	--entry="* sawfish: (sawfish).           sawfish programming manual" \
 	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
