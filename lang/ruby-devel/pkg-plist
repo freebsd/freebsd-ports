@@ -27,9 +27,11 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/etc.so
 %%RUBY_ARCHLIBDIR%%/fcntl.so
 %%RUBY_ARCHLIBDIR%%/intern.h
+%%RUBY_ARCHLIBDIR%%/io/wait.so
 %%RUBY_ARCHLIBDIR%%/missing.h
 %%RUBY_ARCHLIBDIR%%/nkf.so
 %%RUBY_ARCHLIBDIR%%/node.h
+%%RUBY_ARCHLIBDIR%%/openssl.so
 %%RUBY_ARCHLIBDIR%%/pty.so
 %%RUBY_ARCHLIBDIR%%/racc/cparse.so
 %%RUBY_ARCHLIBDIR%%/rbconfig.rb
@@ -51,15 +53,21 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/version.h
 %%RUBY_ARCHLIBDIR%%/zlib.so
 @dirrm %%RUBY_ARCHLIBDIR%%/digest
+@dirrm %%RUBY_ARCHLIBDIR%%/io
 @dirrm %%RUBY_ARCHLIBDIR%%/racc
 %%RUBYLIB%%%%RUBY_LIBDIR%%/English.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/Env.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/base64.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/benchmark.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal-rational.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/jacobian.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/ludcmp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/newton.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/nlsolve.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/util.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi-lib.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session/pstore.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/complex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/csv.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/date.rb
@@ -92,7 +100,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ftools.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/getoptlong.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/getopts.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/gserver.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/importenv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/io/nonblock.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ipaddr.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/cmd/chws.rb
@@ -128,10 +138,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/workspace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ws-for-case-2.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/xmp.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/jacobian.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/jcode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/kconv.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/ludcmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mailread.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mathn.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/matrix.rb
@@ -140,16 +148,26 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/monitor.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mutex_m.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/ftp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/ftptls.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/http.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/https.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/imap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/pop.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/protocol.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/protocols.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/smtp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/net/telnet.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/newton.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/telnets.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/observer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open-uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open3.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/bn.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/buffering.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/cipher.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/digest.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/ssl.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/openssl/x509.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/date.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/shellwords.rb
@@ -158,6 +176,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ostruct.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsearg.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsedate.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/pathname.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ping.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/pp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/prettyprint.rb
@@ -187,9 +206,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/EUC-JP_decl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/ISO-8859-1_decl.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift-JIS.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/SHIFT-JIS.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/SHIFT_JIS.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift-JIS_decl.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/Shift_JIS.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UNILE.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/UNILE_decl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rexml/encodings/US-ASCII.rb
@@ -230,6 +249,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/testresult.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/testsuite.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/runit/topublic.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/scanf.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/set.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/sha1.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell.rb
@@ -263,8 +283,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/thwait.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/time.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/timeout.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/tmpdir.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tracer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tsort.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/un.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/common.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ftp.rb
@@ -274,7 +296,51 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/ldap.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri/mailto.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/accesslog.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/compat.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/config.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cookie.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/htmlutils.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/authenticator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/basicauth.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/digestauth.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/htdigest.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/htgroup.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/htpasswd.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpauth/userdb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpproxy.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httprequest.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpresponse.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/https.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpserver.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/abstract.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/cgi_runner.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/cgihandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/erbhandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/filehandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpservlet/prochandler.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpstatus.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httputils.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpversion.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/log.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/server.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/utils.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/base64.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/client.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/config.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/create.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/datetime.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/httpserver.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/marshal.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/parser.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/server.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/utils.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/baseemitter.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/basenode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/constants.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/yaml/dbm.rb
@@ -296,6 +362,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/yaml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/xmlrpc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpservlet
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick/httpauth
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/webrick
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/uri
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/util
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/test/unit/ui/gtk
@@ -314,16 +384,20 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/racc
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/optparse
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/openssl
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/net
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/ext
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/cmd
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/io
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/drb
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/dl
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/date
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi/session
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/bigdecimal
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
 %%RUBY_ELISPDIR%%/.keep_me.%%RUBY_NAME%%

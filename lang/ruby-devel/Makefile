@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
@@ -93,6 +92,7 @@ OBSOLETED_MODULES=	bigfloat \
 			drb \
 			erb \
 			fileutils \
+			openssl \
 			optparse \
 			racc-runtime \
 			rexml \
@@ -104,6 +104,8 @@ OBSOLETED_MODULES=	bigfloat \
 			timex \
 			urb \
 			uri \
+			webrick \
+			xmlrpc \
 			yaml \
 			zlib
 
