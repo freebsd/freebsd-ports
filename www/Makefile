@@ -328,6 +328,7 @@
     SUBDIR += sidplug
     SUBDIR += sitecopy
     SUBDIR += skipstone
+    SUBDIR += slash
     SUBDIR += smb2www
     SUBDIR += smb_auth
     SUBDIR += snarf
