@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	omi
-PORTVERSION=	pl9
+PORTVERSION=	a9
 CATEGORIES=	ftp
 MASTER_SITES=	http://dorifer.heim3.tu-clausthal.de/~olli/omi/
 DISTNAME=	omi-alpha-9
