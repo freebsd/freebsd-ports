@@ -123,7 +123,6 @@
     SUBDIR += openoffice-gr
     SUBDIR += openoffice-it
     SUBDIR += openoffice-nl
-    SUBDIR += openoffice-pl
     SUBDIR += openoffice-se
     SUBDIR += openoffice-tr
     SUBDIR += pico
