@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-silc-includes=${LOCALBASE}/include/silc \
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
 CFLAGS+=	${PTHREAD_CFLAGS}
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libglade2
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
