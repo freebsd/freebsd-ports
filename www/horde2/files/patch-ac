@@ -1,5 +1,5 @@
---- config/registry.php.dist.orig	Mon Dec 30 02:26:06 2002
-+++ config/registry.php.dist	Thu Jan 16 23:02:48 2003
+--- config/registry.php.dist.orig	Tue May  6 14:28:01 2003
++++ config/registry.php.dist	Sat Aug  9 15:09:34 2003
 @@ -20,8 +20,8 @@
   *   IMP handle the authentication for Horde. This avoids the
   *   "double login" while accessing IMP.
@@ -11,37 +11,24 @@
  
  /* mail: Handler for sending mail. */
  $this->registry['mail']['compose'] = 'imp';
-@@ -45,12 +45,29 @@
- $this->registry['memos']['show'] = 'mnemo';
- $this->registry['memos']['add'] = 'mnemo';
+@@ -33,11 +33,11 @@
+ $this->registry['contacts']['sources'] = 'turba';
+ $this->registry['contacts']['fields'] = 'turba';
+ /* These handlers are available with Turba 1.2 */
+-// $this->registry['contacts']['add_field'] = 'turba';
+-// $this->registry['contacts']['delete_field'] = 'turba';
+-// $this->registry['contacts']['get_field'] = 'turba';
+-// $this->registry['contacts']['list_field'] = 'turba';
+-// $this->registry['contacts']['import_vcard'] = 'turba';
++//UNCOMMENTWHENINSTTURBA $this->registry['contacts']['add_field'] = 'turba';
++//UNCOMMENTWHENINSTTURBA $this->registry['contacts']['delete_field'] = 'turba';
++//UNCOMMENTWHENINSTTURBA $this->registry['contacts']['get_field'] = 'turba';
++//UNCOMMENTWHENINSTTURBA $this->registry['contacts']['list_field'] = 'turba';
++//UNCOMMENTWHENINSTTURBA $this->registry['contacts']['import_vcard'] = 'turba';
  
-+//$this->registry['publickey']['add'] = 'turba';
-+//$this->registry['publickey']['delete'] = 'turba';
-+//$this->registry['publickey']['get'] = 'turba';
-+//$this->registry['publickey']['list'] = 'turba';
-+
-+/* memos: Handler for memos/notepad. */
-+$this->registry['memos']['search'] = 'mnemo';
-+$this->registry['memos']['list'] = 'mnemo';
-+$this->registry['memos']['show'] = 'mnemo';
-+$this->registry['memos']['add'] = 'mnemo';
-+
-+/* nic: network utilities */
-+$this->registry['net']['finger'] = 'nic';
-+
- /* tasks: Handler for todo lists. */
- $this->registry['tasks']['search'] = 'nag';
- $this->registry['tasks']['list'] = 'nag';
- $this->registry['tasks']['show'] = 'nag';
- $this->registry['tasks']['add'] = 'nag';
- 
-+/* whups: bugs reports */
-+$this->registry['projects']['list'] = 'whups';
-+$this->registry['projects']['add'] = 'whups';
- 
- /**
-  * Application registry
-@@ -100,68 +117,122 @@
+ /* events: Handler for events. */
+ $this->registry['events']['show'] = 'kronolith';
+@@ -111,78 +111,95 @@
      'status' => 'notoolbar'
  );
  
@@ -50,6 +37,15 @@
 -    'webroot' => $this->applications['horde']['webroot'] . '/imp',
 -    'icon' => $this->applications['horde']['webroot'] . '/imp/graphics/imp.gif',
 -    'name' => _("Mail"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
+-
+-$this->applications['ingo'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../ingo',
+-    'webroot' => $this->applications['horde']['webroot'] . '/ingo',
+-    'icon' => $this->applications['horde']['webroot'] . '/ingo/graphics/ingo.gif',
+-    'name' => _("Filters"),
 -    'allow_guests' => false,
 -    'status' => 'inactive'
 -);
@@ -107,6 +103,7 @@
 -    'allow_guests' => false,
 -    'status' => 'inactive'
 -);
+-
 +//UNCOMMENTWHENINSTIMP$this->applications['imp'] = array(
 +//UNCOMMENTWHENINSTIMP    'fileroot' => dirname(__FILE__) . '/../imp',
 +//UNCOMMENTWHENINSTIMP    'webroot' => $this->applications['horde']['webroot'] . '/imp',
@@ -115,6 +112,15 @@
 +//UNCOMMENTWHENINSTIMP    'allow_guests' => false,
 +//UNCOMMENTWHENINSTIMP    'status' => 'active'
 +//UNCOMMENTWHENINSTIMP);
++
++//UNCOMMENTWHENINSTINGO$this->applications['ingo'] = array(
++//UNCOMMENTWHENINSTINGO    'fileroot' => dirname(__FILE__) . '/../ingo',
++//UNCOMMENTWHENINSTINGO    'webroot' => $this->applications['horde']['webroot'] . '/ingo',
++//UNCOMMENTWHENINSTINGO    'icon' => $this->applications['horde']['webroot'] . '/ingo/graphics/ingo.gif',
++//UNCOMMENTWHENINSTINGO    'name' => _("Filters"),
++//UNCOMMENTWHENINSTINGO    'allow_guests' => false,
++//UNCOMMENTWHENINSTINGO    'status' => 'active'
++//UNCOMMENTWHENINSTINGO);
 +
 +//UNCOMMENTWHENINSTTURBA$this->applications['turba'] = array(
 +//UNCOMMENTWHENINSTTURBA    'fileroot' => dirname(__FILE__) . '/../turba',
@@ -170,15 +176,6 @@
 +//UNCOMMENTWHENINSTKLUTZ    'status' => 'active'
 +//UNCOMMENTWHENINSTKLUTZ);
 +
-+//UNCOMMENTWHENINSTGOLLEM$this->applications['gollem'] = array(
-+//UNCOMMENTWHENINSTGOLLEM    'fileroot' => dirname(__FILE__) . '/../gollem',
-+//UNCOMMENTWHENINSTGOLLEM    'webroot' => '/horde/gollem',
-+//UNCOMMENTWHENINSTGOLLEM    'icon' => '/horde/gollem/graphics/gollem.gif',
-+//UNCOMMENTWHENINSTGOLLEM    'name' => _("FTP"),
-+//UNCOMMENTWHENINSTGOLLEM    'allow_guests' => false,
-+//UNCOMMENTWHENINSTGOLLEM    'status' => 'active'
-+//UNCOMMENTWHENINSTGOLLEM);
-+
 +//UNCOMMENTWHENINSTNIC$this->applications['nic'] = array(
 +//UNCOMMENTWHENINSTNIC    'fileroot' => dirname(__FILE__) . '/../nic',
 +//UNCOMMENTWHENINSTNIC    'webroot' => '/horde/nic',
@@ -196,37 +193,10 @@
 +//UNCOMMENTWHENINSTJONAH    'allow_guests' => true,
 +//UNCOMMENTWHENINSTJONAH    'status' => 'active'
 +//UNCOMMENTWHENINSTJONAH);
-+
-+//UNCOMMENTWHENINSTTROLL$this->applications['troll'] = array(
-+//UNCOMMENTWHENINSTTROLL    'fileroot' => dirname(__FILE__) . '/../troll',
-+//UNCOMMENTWHENINSTTROLL    'webroot' => '/horde/troll',
-+//UNCOMMENTWHENINSTTROLL    'icon' => '/horde/troll/graphics/troll.gif',
-+//UNCOMMENTWHENINSTTROLL    'name' => _("News"),
-+//UNCOMMENTWHENINSTTROLL    'allow_guests' => false,
-+//UNCOMMENTWHENINSTTROLL    'status' => 'active'
-+//UNCOMMENTWHENINSTTROLL);
-+
-+//UNCOMMENTWHENINSTBABEL$this->applications['babel'] = array(
-+//UNCOMMENTWHENINSTBABEL    'fileroot' => dirname(__FILE__) . '/../babel',
-+//UNCOMMENTWHENINSTBABEL    'webroot' => $this->applications['horde']['webroot'] . '/babel',
-+//UNCOMMENTWHENINSTBABEL    'icon' => $this->applications['horde']['webroot'] . '/babel/graphics/babel.gif',
-+//UNCOMMENTWHENINSTBABEL    'name' => _("i18n"),
-+//UNCOMMENTWHENINSTBABEL    'allow_guests' => false,
-+//UNCOMMENTWHENINSTBABEL    'status' => 'active'
-+//UNCOMMENTWHENINSTBABEL);
-+
-+//UNCOMMENTWHENINSTWHUPS$this->applications['whups'] = array(
-+//UNCOMMENTWHENINSTWHUPS    'fileroot' => dirname(__FILE__) . '/../whups',
-+//UNCOMMENTWHENINSTWHUPS    'webroot' => '/horde/whups',
-+//UNCOMMENTWHENINSTWHUPS    'icon' => '/horde/whups/graphics/whups.gif',
-+//UNCOMMENTWHENINSTWHUPS    'name' => _("Bugs"),
-+//UNCOMMENTWHENINSTWHUPS    'allow_guests' => false,
-+//UNCOMMENTWHENINSTWHUPS    'status' => 'active'
-+//UNCOMMENTWHENINSTWHUPS);
- 
  
  /**
-@@ -303,6 +374,29 @@
+  * Service registry
+@@ -326,6 +343,29 @@
  $this->services['nag']['horde']['summary'] = array(
      'file' => '%application%/lib/api.php',
      'function' => 'nagSummary',

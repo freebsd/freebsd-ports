@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTVERSION=	2.2.4
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\
@@ -15,12 +15,15 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/horde/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A common code-base used by Horde applications, written in PHP
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 #-----------------------------------------------------------------------
-# You may define these options:
+# You may define this option:
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
 #
@@ -123,7 +126,6 @@ pre-install:
 
 post-patch:
 	@${RM} ${WRKSRC}/po/translation.php.orig
-	@${RM} ${WRKSRC}/lib/Horde.php.orig
 	@${RM} ${WRKSRC}/scripts/db/README.orig
 	@${RM} ${WRKSRC}/scripts/set_perms.sh.orig
 	@${RM} ${WRKSRC}/config/horde.php.dist.orig
