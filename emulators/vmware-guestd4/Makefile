@@ -7,7 +7,7 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware itself
 PKGNAMESUFFIX?=	-guestd
@@ -114,7 +114,7 @@ post-extract:
 post-patch:
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${REINPLACE_CMD} -e 's|vmmemctl1.o||' ${WRKDIR}/vmmemctl-only/Makefile
-	${ECHO_CMD} "OBJS=vmmemctl1.o" >> ${WRKDIR}/vmmemctl-only/Makefile
+	${ECHO_CMD} "OBJS+=vmmemctl1.o" >> ${WRKDIR}/vmmemctl-only/Makefile
 .endif
 
 .if defined(VMWARE_X_PORTS)
