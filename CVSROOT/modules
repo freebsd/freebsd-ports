@@ -2254,6 +2254,7 @@ ipcs		src/usr.bin/ipcs
 ipdf		ports/textproc/ipdf
 ipe		ports/graphics/ipe
 iperf		ports/net/iperf
+ipex		ports/net/ipex
 ipf		src/sbin/ipf
 ipfm		ports/net/ipfm
 ipfmeta		ports/security/ipfmeta
