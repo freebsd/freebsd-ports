@@ -37,4 +37,8 @@ MAN8=		cvsbug.8
 #USE_AUTOMAKE_VER=	14
 #USE_AUTOCONF_VER=	213
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 500030
+BROKEN=		conflicts with /usr/include/unistd.h
+.endif
+.include <bsd.port.post.mk>
