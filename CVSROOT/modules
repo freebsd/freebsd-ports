@@ -4427,9 +4427,12 @@ mowitz		ports/x11-toolkits/mowitz
 moxftp		ports/ftp/moxftp
 mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
+mozilla-devel	ports/www/mozilla-devel
 mozilla-embedded ports/www/mozilla-embedded
+mozilla-embedded-devel ports/www/mozilla-embedded-devel
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-headers	ports/www/mozilla-headers
+mozilla-headers-devel	ports/www/mozilla-headers-devel
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
