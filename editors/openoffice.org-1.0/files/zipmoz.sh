@@ -17,10 +17,11 @@ if [ $# -lt 2 -o $# -gt 3 ] ; then
 	echo 
 	echo usage: $0 mozilla_dist target [target_dir]
 	echo
-	echo where
-	echo "\tmozilla_dist\tpoints to the mozilla distribution"
-	echo "\ttarget\t\tconcatenates  OS, compiler and CPU (e.g. WNTMSCI, IRIXGCCM etc)"
-	echo "\ttarget_dir\tis the directory to place the zips"
+	echo where:
+	echo
+	echo "mozilla_dist points to the mozilla distribution"
+	echo "target concatenates  OS, compiler and CPU (e.g. FREEBSDGCCI etc)"
+	echo "target_dir is the directory to place the zips"
 	exit 1
 fi
 
@@ -51,6 +52,7 @@ echo --- creating zips for $TARGET, using mozilla distribution in $MOZ_DIST
 [ ! -d $TARGET_DIR/$TARGET/lib ] && mkdir -p $TARGET_DIR/$TARGET/lib
 [ ! -d $TARGET_DIR/$TARGET/inc ] && mkdir -p $TARGET_DIR/$TARGET/inc
 [ ! -d $TARGET_DIR/$TARGET/inc/nspr ] && mkdir -p $TARGET_DIR/$TARGET/inc/nspr
+[ ! -d $TARGET_DIR/$TARGET/inc/obsolete ] && mkdir -p $TARGET_DIR/$TARGET/inc/obsolete
 
 # Copy the files
 echo
@@ -73,25 +75,31 @@ for i in $LIB_FILES; do
 	if [ ! -f $MOZ_DIST/$i ]; then
 		echo $MOZ_DIST/$i does not exist, check your distribution
 	else
-		cp $MOZ_DIST/$i $TARGET_DIR/$TARGET/lib/
+		cp -R -L $MOZ_DIST/$i $TARGET_DIR/$TARGET/lib/
 	fi
 done
 
 for i in `ls -1 $MOZ_DIST/$INC_FILES`; do
 	if [ ! -d $i ]; then 
-		cp -r $MOZ_DIST/include/$i $TARGET_DIR/$TARGET/inc/
+		cp -R -L $MOZ_DIST/include/$i $TARGET_DIR/$TARGET/inc/
 	fi
 done
 
 for i in `ls -1 $MOZ_DIST/$INC_FILES2`; do
         if [ ! -d $i ]; then
-		cp -R $MOZ_DIST/public/$i $TARGET_DIR/$TARGET/inc
+		cp -R -L $MOZ_DIST/public/$i $TARGET_DIR/$TARGET/inc
 	fi
 done
 
 for i in `ls -1 $MOZ_DIST/$INC_FILES/nspr`; do
         if [ ! -d $i ]; then
-		cp -R $MOZ_DIST/include/nspr/$i $TARGET_DIR/$TARGET/inc/nspr
+		cp -R -L $MOZ_DIST/include/nspr/$i $TARGET_DIR/$TARGET/inc/nspr
+	fi
+done
+
+for i in `ls -1 $MOZ_DIST/$INC_FILES/nspr/obsolete`; do
+        if [ ! -d $i ]; then
+		cp -R -L $MOZ_DIST/include/nspr/obsolete/$i $TARGET_DIR/$TARGET/inc/obsolete
 	fi
 done
 
