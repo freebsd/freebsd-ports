@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.33
-PORTREVISION=	1
+PORTVERSION=	0.34
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -17,7 +16,7 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dymanic updates
 
 # Warnings during build are harmless, the port does not need these to build
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
+RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
 
@@ -43,7 +42,7 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
