@@ -3,7 +3,7 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/01/03 09:37:51 obrien Exp $
+# $Id: Makefile,v 1.5 1997/03/06 04:05:01 asami Exp $
 #
 
 DISTNAME=       xshisen-1.35
@@ -15,6 +15,8 @@ MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
+# runs fine on ssh connection
+#IS_INTERACTIVE=	YES	# Has to create an app-defaults file
 USE_X11=	YES
 GNU_CONFIGURE=	YES
 #CONFIGURE_ARGS=--enable-japanese=euc	#Japanese char set euc, jis sjis
