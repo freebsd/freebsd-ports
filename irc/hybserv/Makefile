@@ -23,6 +23,12 @@ WRKSRC=		${WRKDIR}/hybserv
 IS_INTERACTIVE= yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not install"
+.endif
+
 pre-install:
 .if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -35,4 +41,4 @@ post-install:
 	${CHOWN} -R hybserv:hybserv ${PREFIX}/hybserv
 	${CHMOD} 700 ${PREFIX}/hybserv
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
