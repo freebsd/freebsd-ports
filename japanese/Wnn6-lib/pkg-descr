@@ -1,10 +1,14 @@
-This has include files (e.g. wnn/commonhd.h) and a library file
-(libwnn.a) to build Wnn6 clients. The files are included in
+This port has include files (e.g. wnn/commonhd.h) and a library file
+(e.g. libwnn.a) to build Wnn6 clients. The files are compiled from
+sources Wnn6-SDK-sources.tar.gz which you can get in
 
-ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk/FreeBSD-2.2R.tar.gz.
+http://www.omronsoft.co.jp
 
-It is treated as a free software, so this package is, too. But a
-server of Wnn6, whose name is jserver, is not, and you must buy it
+The license of the sources is in
+
+/usr/local/share/doc/ja-Wnn6-lib/README
+
+By the way, you must buy the server of Wnn6, whose name is jserver,
 from Omron Software Co., Ltd.
 
 +------------------------------------------+
@@ -17,7 +21,6 @@ from Omron Software Co., Ltd.
 Wnn6 is one of Japanese input methods. 'Wnn6 for Linux/FreeBSD' is
 supported an only Japanese method. However, Wnn4.2 which is free is
 supported Chinese and Korean ones, too.
-
 
 - S. Taoka
 taoka@infonets.hiroshima-u.ac.jp

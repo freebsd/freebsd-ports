@@ -1,30 +1,39 @@
 # New ports collection makefile for:	head files and libraries of Wnn6
-# Version required:	97.6.6
+# Version required:	99.10.28
 # Date created:		11 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.19 1997/09/19 09:30:10 asami Exp $
+# $Id: Makefile,v 1.20 1998/06/27 05:18:58 asami Exp $
 #
 
-DISTNAME=	FreeBSD-2.2R
-PKGNAME=	ja-Wnn6-lib-97.6.6
+DISTNAME=	Wnn6-SDK-sources
+PKGNAME=	ja-Wnn6-lib-98.10.28
 CATEGORIES=	japanese
-MASTER_SITES=	file://localhost${PREFIX}/OMRONWnn6/wnnsdk/sdk/ \
-		ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk/
+MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
-WRKSRC=		${WRKDIR}
-DIST_SUBDIR=	Wnn6-lib
-DOCDIR=		${PREFIX}/share/doc/Wnn6-lib
+BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
-NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
+DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
 
-do-install:
+# Warning: we cannot use USE_IMAKE.
+do-build:
+	( cd $(WRKSRC) ; make World -f Makefile.ini )
+
+.include <bsd.port.pre.mk>
+
+post-install:
+.if ${PORTOBJFORMAT} == "aout"
+	${LN} -sf libwnn6.so.1.0 ${PREFIX}/lib/libwnn6.so
+.endif
+	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn.a
+	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn6.a
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/wnn
-	@${INSTALL_DATA} ${WRKSRC}/include/wnn/* ${PREFIX}/include/wnn
-	@${INSTALL_DATA} ${WRKSRC}/lib/libwnn.a ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn
 	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${FILESDIR}/copyright.jp ${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
