@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Mon Feb 23 20:02:50 1998
-+++ Makefile.in	Sun Aug 23 13:16:18 1998
++++ Makefile.in	Sat Oct  3 15:49:29 1998
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -29,7 +29,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -334,7 +336,7 @@
+@@ -334,15 +336,21 @@
  
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
@@ -38,8 +38,10 @@
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
-@@ -343,6 +345,11 @@
+ ${TCL_LIB_FILE}: ${OBJS}
+ 	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
++	ln -sf ${TCL_LIB_FILE} libtcl81.so
  	$(RANLIB) ${TCL_LIB_FILE}
  
 +libtcl81.a: ${OBJS}
@@ -50,7 +52,7 @@
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -434,7 +441,7 @@
+@@ -434,7 +442,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -59,8 +61,11 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -448,18 +455,23 @@
+@@ -446,20 +454,26 @@
+ 	    done;
+ 	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
++	@ln -sf $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/libtcl81.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
 +	@echo "Installing libtcl81.a"
@@ -87,7 +92,7 @@
  		chmod 755 $$i; \
  		else true; \
  		fi; \
-@@ -473,8 +485,15 @@
+@@ -473,8 +487,15 @@
  		else true; \
  		fi; \
  	    done;
@@ -105,7 +110,7 @@
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -506,30 +525,37 @@
+@@ -506,30 +527,37 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \

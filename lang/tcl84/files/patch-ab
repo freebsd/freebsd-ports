@@ -1,13 +1,22 @@
---- configure.orig	Tue Feb 24 02:02:51 1998
-+++ configure	Tue Sep 15 02:45:28 1998
-@@ -4535,7 +4535,11 @@
+--- configure.orig	Mon Feb 23 20:02:51 1998
++++ configure	Sat Oct  3 15:46:42 1998
+@@ -4528,14 +4528,19 @@
+   echo "$ac_t""yes" 1>&6
+   
+ 	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_LD="ld -Bshareable -x"
+ 	    SHLIB_LD_LIBS=""
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
  	    LD_FLAGS=""
  	    LD_SEARCH_FLAGS=""
 +  if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
 +	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
-+    else
++	    SHLIB_LD="ld -shared -x -soname \$@"
++  else
  	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++	    SHLIB_LD="ld -Bshareable -x"
 +  fi
  	
  else
