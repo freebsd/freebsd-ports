@@ -7247,6 +7247,7 @@ pear-Log	ports/sysutils/pear-Log
 pear-Mail	ports/mail/pear-Mail
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
 pear-Net_Cyrus	ports/mail/pear-Net_Cyrus
+pear-Net_DIME	ports/net/pear-Net_DIME
 pear-Net_IMAP	ports/mail/pear-Net_IMAP
 pear-Net_NNTP	ports/net/pear-Net_NNTP
 pear-Net_SMTP	ports/net/pear-Net_SMTP
