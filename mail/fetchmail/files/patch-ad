@@ -1,6 +1,5 @@
-diff -ru ../fetchmail-5.3.8.old/configure ./configure
---- ../fetchmail-5.3.8.old/configure	Fri Apr 14 09:32:49 2000
-+++ ./configure	Tue May  9 02:19:31 2000
+--- ../fetchmail-5.5.6/configure	Sun Nov  5 01:49:32 2000
++++ ./configure	Sun Nov 12 18:58:13 2000
 @@ -1637,7 +1637,7 @@
  if test `uname` = "FreeBSD" 
  then
@@ -10,16 +9,16 @@ diff -ru ../fetchmail-5.3.8.old/configure ./configure
  fi
   
  # Check for Rhapsody special case: it doesn't like -s
-@@ -5693,7 +5693,7 @@
+@@ -5690,7 +5690,7 @@
  then
    echo "Configuring kerberosIV for `uname`"
    CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I/usr/include/kerberosIV"
 -  LIBS="$LIBS -lkrb -ldes"
 +  LIBS="$LIBS -lkrb -ldes -lcom_err"
- elif test -n "$with_kerberos" -a -n "$with_kerberos5" -a "$with_kerberos" != "no"
+ elif test -n "$with_kerberos" -a -n "$with_kerberos5" -a "$with_kerberos" != "no" -a "$with_kerberos5" != "no"
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
-@@ -5724,7 +5724,7 @@
+@@ -5721,7 +5721,7 @@
  then
      CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
      LDEFLAGS="$LDEFLAGS -L$with_kerberos/lib"
@@ -28,7 +27,7 @@ diff -ru ../fetchmail-5.3.8.old/configure ./configure
  else
    if test "$with_kerberos" != "no"
    then
-@@ -5734,7 +5734,7 @@
+@@ -5731,7 +5731,7 @@
        then
          CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
          LDEFLAGS="$LDEFLAGS -L$dir/lib"
