@@ -6,11 +6,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dcgui
-PORTVERSION=	0.3.2
+PORTNAME=	valknut
+PORTVERSION=	0.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
-DISTNAME=	dcgui-qt-${PORTVERSION}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
@@ -30,8 +29,5 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
