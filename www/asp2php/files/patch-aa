@@ -1,24 +1,62 @@
---- Makefile.orig	Sat Dec 16 00:56:20 2000
-+++ Makefile	Sat Dec 16 00:56:25 2000
-@@ -1,5 +1,5 @@
- 
+--- Makefile	Mon Nov 27 07:43:28 2000
++++ Makefile.new	Thu Dec 21 17:51:49 2000
+@@ -1,46 +1,21 @@
+-
 -CC=gcc
-+CC=cc
+-
+-default:
+-	$(CC) -c general.c -Wall
+-	$(CC) -c conditionals.c -Wall
+-	$(CC) -c database.c -Wall
+-	$(CC) -c mysql.c -Wall
+-	$(CC) -c sybase.c -Wall
+-	$(CC) -c odbc.c -Wall
+-	$(CC) -c oracle.c -Wall
+-	$(CC) -c postgres.c -Wall
+-	$(CC) -c evalelement.c -Wall
+-	$(CC) -c gettoken.c -Wall
+-	$(CC) -c html.c -Wall
+-	$(CC) -c loops.c -Wall
+-	$(CC) -c session.c -Wall
+-	$(CC) -o asp2php asp2php.c general.o conditionals.o database.o \
+-		evalelement.o gettoken.o html.o loops.o mysql.o\
+-		sybase.o odbc.o oracle.o postgres.o session.o -Wall
+-	@echo ""
+-#	@echo "Done!  You may type: make gtkasp2php for the optional GUI now"
+-
+-clean:
+-	@if [ -e database.o ]; then rm *.o; fi;
+-	@if [ -e asp2php ]; then rm asp2php; fi;
+-	@if [ -e gtkasp2php ]; then rm gtkasp2php; fi;
+-	@if [ -e unipiss ]; then rm unipiss; fi;
+-	@echo "Clean!"
++PROG=	asp2php
++NOMAN=	true
++CC?=	cc
++CFLAGS?=-O -pipe
++CFLAGS+=-Wall
++SRCS=	general.c conditionals.c database.c mysql.c sybase.c odbc.c oracle.c \
++	postgres.c evalelement.c gettoken.c html.c loops.c session.c asp2php.c
++CLEANFILES+=	gtkasp2php.o gtkasp2php
  
- default:
- 	$(CC) -c general.c -Wall
-@@ -35,10 +35,10 @@
- 	$(CC) -o unipiss unipiss.c html.o general.o -Wall
+ gtkasp2php: gtkasp2php.c
+ 	$(CC) -o gtkasp2php gtkasp2php.c `gtk-config --cflags` `gtk-config --libs`
  
+-unipiss:
+-	$(CC) -o unipiss unipiss.c html.o general.o -Wall
+-
  install:
 -	@if [ -e asp2php ]; then cp asp2php /usr/local/bin; fi;
 -	@if [ -e unipiss ]; then cp unipiss /usr/local/bin; fi;
 -	@if [ -e gtkasp2php ]; then cp gtkasp2php /usr/local/bin; fi;
 -	@echo "Compiled programs have been installed in /usr/local/bin"
-+	@if [ -e asp2php ]; then $(BSD_INSTALL_PROGRAM) asp2php ${PREFIX}/bin; fi;
-+	@if [ -e unipiss ]; then $(BSD_INSTALL_PROGRAM) unipiss ${PREFIX}/bin; fi;
-+	@if [ -e gtkasp2php ]; then $(BSD_INSTALL_PROGRAM) gtkasp2php ${PREFIX}/bin; fi;
-+	@echo "Compiled programs have been installed in ${PREFIX}/bin"
++	@if [ -e asp2php ]; then $(BSD_INSTALL_PROGRAM) asp2php $(PREFIX)/bin; fi;
++	@echo "Compiled programs have been installed in $(PREFIX)/bin"
  	@echo ""
  
- all: default
+-all: default
+-
++install-gtk:
++	@if [ -e gtkasp2php ]; then $(BSD_INSTALL_PROGRAM) gtkasp2php $(PREFIX)/bin; fi;
+ 
++.include <bsd.prog.mk>
