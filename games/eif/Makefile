@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	eif
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.stack.nl/~marcolz/empire/
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Empire text client
+
+MAN1=		eif.1
 
 GNU_CONFIGURE=	yes
 
