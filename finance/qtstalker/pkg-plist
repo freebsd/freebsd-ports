@@ -1,0 +1,71 @@
+bin/qtstalker
+lib/libqtstalker.so
+lib/libqtstalker.so.0
+lib/libqtstalker.so.%%VERSION_PLUGIN%%
+lib/libqtstalker.so.%%VERSION_PLUGIN%%.0
+lib/qtstalker/chart/libBar.%%VERSION_PLUGIN%%.so
+lib/qtstalker/chart/libCandle.%%VERSION_PLUGIN%%.so
+lib/qtstalker/chart/libEP.%%VERSION_PLUGIN%%.so
+lib/qtstalker/chart/libLine.%%VERSION_PLUGIN%%.so
+lib/qtstalker/chart/libPF.%%VERSION_PLUGIN%%.so
+lib/qtstalker/chart/libSwing.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libBuyArrow.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libFiboLine.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libHorizontalLine.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libSellArrow.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libText.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libTrendLine.%%VERSION_PLUGIN%%.so
+lib/qtstalker/co/libVerticalLine.%%VERSION_PLUGIN%%.so
+lib/qtstalker/db/libCC.%%VERSION_PLUGIN%%.so
+lib/qtstalker/db/libFutures.%%VERSION_PLUGIN%%.so
+lib/qtstalker/db/libIndex.%%VERSION_PLUGIN%%.so
+lib/qtstalker/db/libSpread.%%VERSION_PLUGIN%%.so
+lib/qtstalker/db/libStocks.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libAD.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libATR.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libBB.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libCCI.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libCOMP.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libCOUNTER.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libCUS.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libDMI.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libDPO.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libENV.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libFI.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libMA.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libMACD.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libMAOSC.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libMATH.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libMF.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libMOM.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libOVRLY.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libPC.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libPER.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libPP.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libREF.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libROC.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libRSI.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libSAR.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libSD.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libSTOCH.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libSZ.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libTHERM.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libTRIX.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libUO.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libVFI.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libVOL.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libVOLR.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libVT.%%VERSION_PLUGIN%%.so
+lib/qtstalker/indicator/libWILLR.%%VERSION_PLUGIN%%.so
+lib/qtstalker/quote/libCME.%%VERSION_PLUGIN%%.so
+lib/qtstalker/quote/libCOT.%%VERSION_PLUGIN%%.so
+lib/qtstalker/quote/libCSV.%%VERSION_PLUGIN%%.so
+lib/qtstalker/quote/libNYBOT.%%VERSION_PLUGIN%%.so
+lib/qtstalker/quote/libQtstalkerFormat.%%VERSION_PLUGIN%%.so
+lib/qtstalker/quote/libYahoo.%%VERSION_PLUGIN%%.so
+@dirrm lib/qtstalker/quote
+@dirrm lib/qtstalker/indicator
+@dirrm lib/qtstalker/db
+@dirrm lib/qtstalker/co
+@dirrm lib/qtstalker/chart
+@dirrm lib/qtstalker

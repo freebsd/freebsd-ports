@@ -48,6 +48,7 @@
     SUBDIR += p5-Finance-QuoteHist
     SUBDIR += p5-Math-Financial
     SUBDIR += qhacc
+    SUBDIR += qtstalker
     SUBDIR += quantlib
     SUBDIR += wmstock
     SUBDIR += xinvest
