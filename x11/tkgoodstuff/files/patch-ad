@@ -1,0 +1,20 @@
+--- tcl/Dialer.tcl.orig	Sat Dec 14 01:31:43 1996
++++ tcl/Dialer.tcl	Sat Jun 21 13:57:07 1997
+@@ -48,7 +48,7 @@
+     { myloginname@umich.edu "Password: " 5}
+     {mypassword "" "" }
+ }
+-set outcommand "/usr/lib/ppp/pppd $port $speed asyncmap 0 defaultroute crtscts modem noipdefault"
++set outcommand "/usr/sbin/pppd $port $speed asyncmap 0 defaultroute crtscts modem noipdefault"
+ set exitsucc 0
+ 
+ option add *Listbox*font \
+@@ -678,7 +678,7 @@
+ the server (through the login script, as described below).  Here you\
+ can start, for instance, ppp or term.  The author, for his dynamic ppp\
+ connection from home, uses:
+-\ \ \ \"/usr/lib/ppp/pppd /dev/modem 38400 asyncmap 0 defaultroute crtscts\
++\ \ \ \"/usr/sbin/pppd /dev/modem 38400 asyncmap 0 defaultroute crtscts\
+ modem noipdefault\"
+ 
+ There is a checkbox which enables using the login script (on which more\
