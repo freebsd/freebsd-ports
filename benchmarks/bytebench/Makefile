@@ -1,9 +1,9 @@
 # New ports collection makefile for:    bytebench
-# Version required:     
+# Version required:    	3.1
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.6 1996/11/20 01:59:19 obrien Exp $
+# $Id: Makefile,v 1.7 1998/09/26 23:46:08 steve Exp $
 #
 
 DISTNAME=       bytebench-3.1
@@ -14,24 +14,24 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	se@FreeBSD.org
 
 do-install:
-		-${MKDIR} $(PREFIX)/lib/bytebench
-		for f in Makefile README Run doc pgms results testdir; \
-			do ${CP} -R $(WRKSRC)/$$f $(PREFIX)/lib/bytebench; done
-		echo "#!/bin/sh"		   >  $(PREFIX)/bin/bytebench
-		echo "TMPDIR=\$${TMPDIR-/var/tmp}" >> $(PREFIX)/bin/bytebench
-		echo "RESULTDIR=/tmp"		   >> $(PREFIX)/bin/bytebench
-		echo "export TMPDIR RESULTDIR"	   >> $(PREFIX)/bin/bytebench
-		echo "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
-		echo "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
-		chmod 755 $(PREFIX)/bin/bytebench
-		chmod 644 $(PREFIX)/lib/bytebench/Makefile
-		chmod 644 $(PREFIX)/lib/bytebench/README
-		chmod 755 $(PREFIX)/lib/bytebench/Run
-		chmod 755 $(PREFIX)/lib/bytebench/doc
-		chmod 755 $(PREFIX)/lib/bytebench/pgms
-		chmod 755 $(PREFIX)/lib/bytebench/pgms/*
-		chmod 755 $(PREFIX)/lib/bytebench/results
-		chmod 755 $(PREFIX)/lib/bytebench/testdir
-		@rm -f ${PREFIX}/lib/bytebench/pgms/*.orig
+	-${MKDIR} $(PREFIX)/lib/bytebench
+	for f in Makefile README Run doc pgms results testdir; \
+		do ${CP} -R $(WRKSRC)/$$f $(PREFIX)/lib/bytebench; done
+	${ECHO} "#!/bin/sh"		   >  $(PREFIX)/bin/bytebench
+	${ECHO} "TMPDIR=\$${TMPDIR-/var/tmp}" >> $(PREFIX)/bin/bytebench
+	${ECHO} "RESULTDIR=/tmp"		   >> $(PREFIX)/bin/bytebench
+	${ECHO} "export TMPDIR RESULTDIR"	   >> $(PREFIX)/bin/bytebench
+	${ECHO} "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
+	${ECHO} "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
+	chmod 755 $(PREFIX)/bin/bytebench
+	chmod 644 $(PREFIX)/lib/bytebench/Makefile
+	chmod 644 $(PREFIX)/lib/bytebench/README
+	chmod 755 $(PREFIX)/lib/bytebench/Run
+	chmod 755 $(PREFIX)/lib/bytebench/doc
+	chmod 755 $(PREFIX)/lib/bytebench/pgms
+	chmod 755 $(PREFIX)/lib/bytebench/pgms/*
+	chmod 755 $(PREFIX)/lib/bytebench/results
+	chmod 755 $(PREFIX)/lib/bytebench/testdir
+	@rm -f ${PREFIX}/lib/bytebench/pgms/*.orig
 
 .include <bsd.port.mk>
