@@ -10,6 +10,7 @@ bin/folders
 bin/forw
 bin/inc
 bin/mark
+bin/mhbuild
 bin/mhmail
 bin/mhn
 bin/mhparam
@@ -46,8 +47,10 @@ etc/nmh/mhn.defaults
 etc/nmh/mts.conf
 etc/nmh/rcvdistcomps
 etc/nmh/replcomps
+etc/nmh/replgroupcomps
 etc/nmh/scan.default
 etc/nmh/scan.mailx
+etc/nmh/scan.nomime
 etc/nmh/scan.size
 etc/nmh/scan.time
 etc/nmh/scan.timely
@@ -78,6 +81,7 @@ man/man1/forw.1.gz
 man/man1/inc.1.gz
 man/man1/mark.1.gz
 man/man1/mh-chart.1.gz
+man/man1/mhbuild.1.gz
 man/man1/mhl.1.gz
 man/man1/mhmail.1.gz
 man/man1/mhn.1.gz
