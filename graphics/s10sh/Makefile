@@ -9,7 +9,9 @@ PORTNAME=	s10sh
 PORTVERSION=	0.2.0
 PORTREVISION=   2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.kyuzz.org/antirez/s10sh-src/
+MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
+		http://www.edwinh.org/s10sh/ \
+		http://www.kyuzz.org/antirez/s10sh-src/
 
 MAINTAINER=	johnjen@reynoldsnet.org
 
