@@ -1,10 +1,12 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/lib/Makefile	Tue Nov 16 17:49:29 1999
-+++ ./lib/Makefile	Tue Nov 23 19:21:19 1999
-@@ -5,6 +5,7 @@
+--- lib/Makefile.orig	Tue Dec  7 22:50:49 1999
++++ lib/Makefile	Tue Dec  7 22:53:22 1999
+@@ -4,7 +4,8 @@
+ SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
  	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
  	hostfile.c log.c match.c mpaux.c nchan.c packet.c readpass.c \
- 	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c
-+SRCS+=	strlcat.c strlcpy.c
+-	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c
++	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
++	strlcat.c strlcpy.c
  
  NOPROFILE= yes
  NOPIC=	yes
@@ -16,5 +18,3 @@
  
  .if (${KERBEROS} == "yes")
  CFLAGS+= -DKRB4 -I/usr/include/kerberosIV
-Only in ./lib: strlcat.c
-Only in ./lib: strlcpy.c

@@ -23,9 +23,9 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Sun Nov 28 16:31:22 EST 1999
+CVS_DATE=	Tue Dec  7 22:46:23 EST 1999
 SED?=		/usr/bin/sed
-CVS_DATE_!=	${ECHO} -n ${CVS_DATE} | ${SED} 's/[ \t:]/_/g'
+CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
@@ -62,7 +62,7 @@ do-fetch:
 			cd ${DISTDIR}; \
 			${TAR} xfz ${PKGNAME}.${CVS_DATE_}.tar.gz \
 			    ${DISTFILES}; \
-			${ECHO} -n ${CVS_DATE} > ${STAMPFILE}; \
+			${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
 			exit; \
 		fi; \
 		unset CVS_RSH CVS_SERVER || ${TRUE}; \
