@@ -23,6 +23,7 @@ RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/Epplets-0.5
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -31,5 +32,8 @@ CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \
 		EBIN=${X11BASE}/bin \
 		LIBS="-L${LOCALBASE}/lib -lintl" \
 		X_LIBS="-lxpg4"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|" ${WRKSRC}/epplets/mbox.c
 
 .include <bsd.port.mk>
