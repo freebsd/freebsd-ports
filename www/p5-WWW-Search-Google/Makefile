@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/WWW/Search.pm:${PORTSDIR}/www/p5-WWW-Search
 
+BROKEN=		'Port no longer returns search results from Google'
+
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
