@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bind9
-PORTVERSION=	9.2.2
-PORTREVISION=	1
+PORTVERSION=	9.2.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -26,7 +25,7 @@ COMMENT=	BIND DNS 9 server which supports a MySQL backend
 CONFLICTS=	bind-8.3.* bind84-8.4.* bind9-9.2.* bind9-dlz-9.2.* host-* skalibs-0.*
 
 # ISC releases things like 9.2.2rc1, which our versioning doesn't like
-ISCVERSION=	9.2.2-P3
+ISCVERSION=	9.2.3
 
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
