@@ -126,6 +126,8 @@ System/Headers/AppKit/NSTextField.h
 System/Headers/AppKit/NSTextFieldCell.h
 System/Headers/AppKit/NSTextStorage.h
 System/Headers/AppKit/NSTextView.h
+System/Headers/AppKit/NSToolbar.h
+System/Headers/AppKit/NSToolbarItem.h
 System/Headers/AppKit/NSUserInterfaceValidation.h
 System/Headers/AppKit/NSView.h
 System/Headers/AppKit/NSWindow.h
@@ -548,6 +550,26 @@ System/Library/Bundles/libgmodel.bundle/Contents/Info.plist
 System/Library/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgmodel.bundle/Resources/Info.plist
 System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel
+System/Library/ColorPickers/StandardPicker.bundle/Contents/Info.plist
+@exec ln -sf ../Resources %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
+@unexec rm -f %D/System/Library/ColorPickers/StandardPicker.bundle/Contents/Resources
+System/Library/ColorPickers/StandardPicker.bundle/Resources/GSCMYKColorPicker.tiff
+System/Library/ColorPickers/StandardPicker.bundle/Resources/GSGrayColorPicker.tiff
+System/Library/ColorPickers/StandardPicker.bundle/Resources/GSHSBColorPicker.tiff
+System/Library/ColorPickers/StandardPicker.bundle/Resources/GSRGBColorPicker.tiff
+System/Library/ColorPickers/StandardPicker.bundle/Resources/Info-gnustep.plist
+System/Library/ColorPickers/StandardPicker.bundle/Resources/Info.plist
+System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj/StandardPicker.strings
+System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj/StandardPicker.strings
+System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
+System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StandardPicker
+System/Library/ColorPickers/WheelPicker.bundle/Contents/Info.plist
+@exec ln -sf ../Resources %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
+@unexec rm -f %D/System/Library/ColorPickers/WheelPicker.bundle/Contents/Resources
+System/Library/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
+System/Library/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
+System/Library/ColorPickers/WheelPicker.bundle/Resources/Info.plist
+System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/WheelPicker
 System/Library/Model/ColorPanel.gmodel
 System/Library/Model/SavePanel.gmodel
 System/Library/Model/SpellPanel.gmodel
@@ -571,6 +593,22 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/set_show_service
 @dirrm System/Library/Services/GSspell.service
 @dirrm System/Library/Services
 @dirrm System/Library/Model
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/%%GNU_ARCH%%
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/English.lproj
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/French.lproj
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/Resources
+@dirrm System/Library/ColorPickers/StandardPicker.bundle/Contents
+@dirrm System/Library/ColorPickers/StandardPicker.bundle
+@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/ColorPickers/WheelPicker.bundle/%%GNU_ARCH%%
+@dirrm System/Library/ColorPickers/WheelPicker.bundle/Resources
+@dirrm System/Library/ColorPickers/WheelPicker.bundle/Contents
+@dirrm System/Library/ColorPickers/WheelPicker.bundle
+@dirrm System/Library/ColorPickers
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/libgmodel.bundle/%%GNU_ARCH%%

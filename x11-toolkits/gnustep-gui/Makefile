@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-PORTVERSION=	0.7.7
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://archive.progeny.com/gnustep/ \
