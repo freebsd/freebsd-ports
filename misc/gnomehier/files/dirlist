@@ -144,6 +144,7 @@ share/gnome/omf/gnome-media
 share/gnome/omf/gnome-utils
 share/gnome/panel
 share/gnome/pixmaps
+share/gnome/pixmaps/document-icons
 share/gnome/pixmaps/eog
 share/gnome/pixmaps/fish
 share/gnome/pixmaps/gkb

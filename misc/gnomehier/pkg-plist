@@ -146,6 +146,7 @@ share/gnome/omf/gnome-media/.keep_me
 share/gnome/omf/gnome-utils/.keep_me
 share/gnome/panel/.keep_me
 share/gnome/pixmaps/.keep_me
+share/gnome/pixmaps/document-icons/.keep_me
 share/gnome/pixmaps/eog/.keep_me
 share/gnome/pixmaps/fish/.keep_me
 share/gnome/pixmaps/gkb/.keep_me
@@ -239,6 +240,7 @@ share/sawfish/themes/.keep_me
 @dirrm share/gnome/pixmaps/gataxx
 @dirrm share/gnome/pixmaps/fish
 @dirrm share/gnome/pixmaps/eog
+@dirrm share/gnome/pixmaps/document-icons
 @dirrm share/gnome/pixmaps/cards/suits_small
 @dirrm share/gnome/pixmaps/cards/suits_medium
 @dirrm share/gnome/pixmaps/cards/suits_large
