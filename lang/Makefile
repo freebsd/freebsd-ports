@@ -22,6 +22,7 @@
     SUBDIR += cu-prolog
     SUBDIR += dis
     SUBDIR += diveintopython
+    SUBDIR += drscheme
     SUBDIR += dylan
     SUBDIR += egcs
     SUBDIR += eiffel
