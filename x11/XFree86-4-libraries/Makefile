@@ -29,7 +29,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_X_PREFIX=		no
-USE_REINPLACE=		yes
 PREFIX?=		${X11BASE}
 MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
@@ -82,9 +81,6 @@ post-extract:
 
 post-patch:
 	${CP} ${MASTERDIR}/files/nls::Compose::microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
-	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/config/cf/FreeBSD.cf
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \

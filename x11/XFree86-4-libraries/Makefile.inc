@@ -15,6 +15,7 @@
 DIST_SUBDIR=	xc
 WRKSRC?=	${WRKDIR}/xc
 USE_IMAKE=	YES
+USE_REINPLACE=	yes
 XFREE86_HTML_MAN=	yes
 PATCHDIR?=	${.CURDIR}/../../x11/XFree86-4-libraries/files
 SCRIPTS_ENV+=	CC="${CC}" \
@@ -31,6 +32,13 @@ pre-everything::
 		${ECHO_MSG} "set in your /etc/make.conf."; \
 		${FALSE}; \
 	fi;
+
+.if !target(pre-configure)
+pre-configure:
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/config/cf/FreeBSD.cf
+.endif
 
 .if !target(do-configure)
 do-configure:
