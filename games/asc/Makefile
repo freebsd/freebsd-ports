@@ -25,6 +25,8 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
+BROKEN=		"Configure fails"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
