@@ -15,6 +15,7 @@ delete_modules () {
 	dl
 	fileutils
 	fnmatch
+	optparse
 	racc-runtime
 	strscan
     "
