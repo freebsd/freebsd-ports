@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2004.02.22
-PORTREVISION=	1
+PORTVERSION=	2004.03.07
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
@@ -26,8 +25,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 
 MAN1=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 yaps.1
 
-DOCS=	demo.abc doc/abc2midi.txt doc/abcguide.txt doc/coding.txt doc/midi2abc.txt \
-	doc/readme.txt doc/yaps.txt
+DOCS=		demo.abc doc/abc2midi.txt doc/abcguide.txt doc/coding.txt \
+		doc/midi2abc.txt doc/readme.txt doc/yaps.txt
 
 do-install:
 .for FILE in abc2abc abc2midi mftext midi2abc yaps
