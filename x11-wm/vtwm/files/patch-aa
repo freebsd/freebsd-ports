@@ -1,0 +1,25 @@
+*** gram.y.orig	Mon Sep 21 22:42:49 1998
+--- gram.y	Mon Sep 21 22:43:08 1998
+***************
+*** 89,101 ****
+  extern int do_color_keyword();
+  extern void do_string_savecolor(), do_var_savecolor(), do_squeeze_entry();
+  
+! /*
+!  * this used to be the definition - now making the assumption it's
+!  * defined in lex's skeleton file (submitted by Nelson H. F. Beebe)
+!  *
+!  * djhjr - 1/16/98
+!  */
+! extern int yylineno;
+  
+  %}
+  
+--- 89,95 ----
+  extern int do_color_keyword();
+  extern void do_string_savecolor(), do_var_savecolor(), do_squeeze_entry();
+  
+! int yylineno;
+  
+  %}
+  
