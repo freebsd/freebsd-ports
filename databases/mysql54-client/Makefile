@@ -1,12 +1,12 @@
 # ports collection makefile for:	MySQL
-# Version required:			v3.22.22
+# Version required:			v3.22.23b
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.52 1999/06/05 19:00:17 mharo Exp $
+# $Id: Makefile,v 1.53 1999/06/05 22:28:27 mharo Exp $
 #
 
-DISTNAME=	mysql-3.22.22
+DISTNAME=	mysql-3.22.23b
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \

@@ -1,5 +1,5 @@
---- scripts/safe_mysqld.sh.orig	Fri Nov 27 00:37:54 1998
-+++ scripts/safe_mysqld.sh	Wed Dec 23 23:45:24 1998
+--- scripts/safe_mysqld.sh.orig	Fri May 14 11:11:46 1999
++++ scripts/safe_mysqld.sh	Tue Jun  8 11:14:02 1999
 @@ -12,33 +12,9 @@
  
  trap '' 1 2 3 15			# we shouldn't let anyone kill us
@@ -8,25 +8,25 @@
 -if test -d ./data/mysql -a -f ./share/mysql/english/errmsg.sys -a \
 - -x ./bin/mysqld
 -then
--  MY_BASEDIR_VERSION=`pwd`		# Where bin, share and data is
+-  MY_BASEDIR_VERSION=`pwd`		# Where bin, share and data are
 -  DATADIR=$MY_BASEDIR_VERSION/data	# Where the databases are
--  ledir=$MY_BASEDIR_VERSION/bin		# Where mysqld are
+-  ledir=$MY_BASEDIR_VERSION/bin		# Where mysqld is
 -# Check if this is a 'moved install directory'
 -elif test -f ./var/mysql/db.frm -a -f ./share/mysql/english/errmsg.sys -a \
 - -x ./libexec/mysqld
 -then
--  MY_BASEDIR_VERSION=`pwd`		# Where libexec, share and var is
+-  MY_BASEDIR_VERSION=`pwd`		# Where libexec, share and var are
 -  DATADIR=$MY_BASEDIR_VERSION/var	# Where the databases are
--  ledir=$MY_BASEDIR_VERSION/libexec	# Where mysqld are
+-  ledir=$MY_BASEDIR_VERSION/libexec	# Where mysqld is
 -else
 -  MY_BASEDIR_VERSION=@prefix@
 -  DATADIR=@localstatedir@
 -  ledir=@libexecdir@
 -  if test ! -x $ledir/mysqld
 -  then
--    echo "The file $ledir/mysqld doesn't exists or is not executable"
+-    echo "The file $ledir/mysqld doesn't exist or is not executable"
 -    echo "Please do a cd to the mysql installation directory and restart"
--    echo "this scrift from there as follows:"
+-    echo "this script from there as follows:"
 -    echo "./bin/safe_mysqld".
 -    exit 1;
 -  fi
@@ -44,11 +44,11 @@
 -  fi
 -  if @IS_LINUX@
 -  then
--    # Test if one proces was hanging.
+-    # Test if one process was hanging.
 -    # This is only a fix for Linux (running as base 3 mysqld processes)
 -    # but should work for the rest of the servers.
 -    # The only thing is ps x => redhat 5 gives warnings when using ps -x.
--    # kill -9 is used or the proces won't react on the kill.
+-    # kill -9 is used or the process won't react on the kill.
 -    numofproces=`ps x | grep -v "grep" | grep -c $ledir/mysqld`
 -    echo -e "\nNumber of processes running now: $numofproces" | tee -a $err_log
 -    I=1
@@ -62,7 +62,7 @@
 -	#    echo "TEST $I - $T **"
 -	if kill -9 $T
 -	then
--	  echo "mysqld proces hanging, pid $T - killed" | tee -a $err_log
+-	  echo "mysqld process hanging, pid $T - killed" | tee -a $err_log
 -	else 
 -	  break
 -	fi
