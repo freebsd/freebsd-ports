@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmeter
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	jakarta-jmeter/release/v${PORTVERSION:C/([1-9]\.[0-9][0-9]*).*/\1/}
@@ -52,7 +52,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${FIND} ${APP_HOME} -print0 -type d | ${XARGS} -0 ${CHMOD} 755
 	@${CHMOD} 755 ${APP_HOME}/bin/jmeter
 	@${ECHO_CMD} " [ DONE ]"
 
