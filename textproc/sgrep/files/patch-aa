@@ -1,0 +1,30 @@
+--- Makefile--	Wed Apr 29 12:08:55 1998
++++ Makefile	Wed Apr 29 12:20:29 1998
+@@ -10,11 +10,11 @@
+ #
+ 
+ # This is where the executable goes
+-BINDIR = /usr/local/bin/
++BINDIR = ${PREFIX}/bin
+ # Where sgrep library files are placed (sgreprc)
+-LIBDIR = /usr/local/lib
++LIBDIR = ${PREFIX}/share
+ # Where the manual page goes
+-MANFILE = /usr/local/man/man1/sgrep.1
++MANFILE = ${PREFIX}/man/man1/sgrep.1
+ # Where the sample rc file goes
+ RCFILE = $(LIBDIR)/sgreprc
+ # If you can't install as root you might wan't to use this as rc file
+@@ -45,11 +45,7 @@
+ clean:
+ 	-rm -f $(OBJECTS)
+ 
+-install: sgrep
+-	cp sgrep $(BINDIR)/sgrep
+-	chmod 755 $(BINDIR)/sgrep
+-	cp sgrep.1 $(MANFILE)
+-	chmod 644 $(MANFILE)
++install:
+ 
+ install.rc: sample.sgreprc
+ 	cp sample.sgreprc $(RCFILE)

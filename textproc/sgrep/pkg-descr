@@ -1,0 +1,11 @@
+`sgrep' (structured grep) is a tool for searching text files and
+filtering text streams using structural criteria.  Complex criteria
+can be specified as macros using M4.
+
+Sgrep was created by:
+
+	Jani Jaakkola, email:Jani.Jaakkola@helsinki.fi
+	Pekka Kilpelainen, email: Pekka.Kilpelainen@helsinki.fi 
+
+- Koshy
+  <jkoshy@acm.org>

@@ -1,0 +1,23 @@
+# New ports collection makefile for: 	sgrep
+# Version required: 			0.99
+# Date created:    			Apr 29 1998
+# Whom: 				<koshy@india.hp.com>
+#
+# $Id$
+#
+
+DISTNAME=	sgrep-0.99
+CATEGORIES=	textproc
+MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
+
+MAINTAINER=	koshy@india.hp.com
+
+MAN1=		sgrep.1
+
+# Override the install target in the supplied makefile
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sgrep ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sgrep.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/sample.sgreprc ${PREFIX}/share/sgreprc
+
+.include <bsd.port.mk>
