@@ -1,45 +1,22 @@
 %%SITE_PERL%%/MIME/Body.pm
+%%SITE_PERL%%/MIME/Entity.pm
 %%SITE_PERL%%/MIME/Decoder.pm
+%%SITE_PERL%%/MIME/Decoder/QuotedPrint.pm
 %%SITE_PERL%%/MIME/Decoder/Base64.pm
 %%SITE_PERL%%/MIME/Decoder/Binary.pm
 %%SITE_PERL%%/MIME/Decoder/Gzip64.pm
 %%SITE_PERL%%/MIME/Decoder/NBit.pm
-%%SITE_PERL%%/MIME/Decoder/QuotedPrint.pm
 %%SITE_PERL%%/MIME/Decoder/UU.pm
-%%SITE_PERL%%/MIME/Entity.pm
 %%SITE_PERL%%/MIME/Field/ConTraEnc.pm
 %%SITE_PERL%%/MIME/Field/ContDisp.pm
 %%SITE_PERL%%/MIME/Field/ContType.pm
 %%SITE_PERL%%/MIME/Field/ParamVal.pm
 %%SITE_PERL%%/MIME/Head.pm
 %%SITE_PERL%%/MIME/Parser.pm
-%%SITE_PERL%%/MIME/Parser/AbstractFiler.pm
 %%SITE_PERL%%/MIME/Parser/Filer.pm
-%%SITE_PERL%%/MIME/Parser/FlatFiler.pm
 %%SITE_PERL%%/MIME/Parser/Reader.pm
-%%SITE_PERL%%/MIME/Parser/Redoer.pm
 %%SITE_PERL%%/MIME/Parser/Results.pm
-%%SITE_PERL%%/MIME/Parser/TreeFiler.pm
-%%SITE_PERL%%/MIME/Parser/UURedoer.pm
 %%SITE_PERL%%/MIME/Tools.pm
-%%SITE_PERL%%/MIME/Tools/IndentingLogger.pm
-%%SITE_PERL%%/MIME/Tools/Logger.pm
-%%SITE_PERL%%/MIME/Tools/MailFieldParserForRFC2045.pm
-%%SITE_PERL%%/MIME/Tools/MailFieldTokenizerForRFC2045.pm
-%%SITE_PERL%%/MIME/Tools/MailFieldTokenizerForRFC822.pm
-%%SITE_PERL%%/MIME/Tools/NullLogger.pm
-%%SITE_PERL%%/MIME/Tools/PrefixingLogger.pm
-%%SITE_PERL%%/MIME/Tools/ToolkitLogger.pm
-%%SITE_PERL%%/MIME/Tools/Utils.pm
-%%SITE_PERL%%/MIME/Tools/changes.pod
-%%SITE_PERL%%/MIME/Tools/config.pod
-%%SITE_PERL%%/MIME/Tools/diag.pod
-%%SITE_PERL%%/MIME/Tools/faq.pod
-%%SITE_PERL%%/MIME/Tools/overview.pod
-%%SITE_PERL%%/MIME/Tools/primer.pod
-%%SITE_PERL%%/MIME/Tools/tips.pod
-%%SITE_PERL%%/MIME/Tools/traps.pod
-%%SITE_PERL%%/MIME/Tools/tricks.pod
 %%SITE_PERL%%/MIME/WordDecoder.pm
 %%SITE_PERL%%/MIME/Words.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
@@ -47,5 +24,4 @@
 @dirrm %%SITE_PERL%%/MIME/Field
 @dirrm %%SITE_PERL%%/MIME/Decoder
 @dirrm %%SITE_PERL%%/MIME/Parser
-@dirrm %%SITE_PERL%%/MIME/Tools
 @unexec rmdir %D/%%SITE_PERL%%/MIME 2>/dev/null || true
