@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.275 1999/06/19 22:43:59 jdp Exp $
+# $Id: Makefile,v 1.276 1999/06/21 01:20:35 cpiazza Exp $
 #
 
     SUBDIR += IglooFTP
@@ -89,6 +89,7 @@
     SUBDIR += ivs
     SUBDIR += jmirror
     SUBDIR += kdenetwork11
+    SUBDIR += kdenetwork11-i18n
     SUBDIR += kdetelnet
     SUBDIR += kicq
     SUBDIR += kvirc

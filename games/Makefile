@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.210 1999/06/06 17:45:17 steve Exp $
+# $Id: Makefile,v 1.211 1999/06/22 03:07:11 foxfair Exp $
 #
 
     SUBDIR += 3dc
@@ -61,6 +61,7 @@
     SUBDIR += jetpack
     SUBDIR += jzip
     SUBDIR += kdegames11
+    SUBDIR += kdegames11-i18n
     SUBDIR += klondike
     SUBDIR += ktamaga
     SUBDIR += ladder
