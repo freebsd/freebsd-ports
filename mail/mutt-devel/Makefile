@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.23
+PORTVERSION=	1.3.23.1
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -48,6 +48,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 PATCH_VERSION=	${PORTVERSION}
 .endif
 
+BUILD_DEPENDS+=	automake:${PORTSDIR}/devel/automake \
+		autoconf:${PORTSDIR}/devel/autoconf
 .if defined(PACKAGE_BUILDING)
 WITH_MUTT_SLANG=	yes
 WITH_MUTT_IMAP=		yes
