@@ -1,12 +1,5 @@
 --- configure.orig	Tue Oct 10 10:27:58 2000
 +++ configure	Wed Oct 11 12:15:15 2000
-@@ -6136,4 +6136,4 @@
- echo "configure:6137: checking for GTK >= 1.2.7" >&5
--if gtk-config --version > /dev/null 2>&1; then 
--        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
-+if $GTK_CONFIG --version > /dev/null 2>&1; then 
-+        vers=`$GTK_CONFIG --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
-     if test "$vers" -ge 1002007; then
 @@ -6677,6 +6677,6 @@
  
 -  case "$ac_given_INSTALL" in
