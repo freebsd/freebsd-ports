@@ -5,18 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	render
+PORTNAME=	renderext
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://fontconfig.org/release/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+DISTNAME=	render-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Header files and documentation for the X render extension
 
-USE_X_PREFIX=	yes
-CONFIGURE_ARGS=	--prefix=${X11BASE}
-
-pre-build:
-	@(cd ${WRKSRC}; ./configure ${CONFIGURE_ARGS})
+PREFIX?=	${X11BASE}
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
