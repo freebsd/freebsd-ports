@@ -197,7 +197,7 @@ LIB_DEPENDS+=	ming.2:\${PORTSDIR}/graphics/ming
 POSTEXTRACT+=	post-extract-ming
 
 post-extract-ming:
-	[ -d \${PORTSDIR}/graphics/ming/work ] && \\
+	[ -d \`cd \${PORTSDIR}/graphics/ming && \${MAKE} -V WRKSRC\`/../php_ext ] && \\
 	(cd \${WRKSRC}; \\
 	 \${MKDIR} \${WRKSRC}/ext/ming; \\
 	 \${CP} \`cd \${PORTSDIR}/graphics/ming && \${MAKE} -V WRKSRC\`/../php_ext/* \${WRKSRC}/ext/ming; \\
