@@ -12,6 +12,7 @@ MASTER_SITES=	http://cgi.tu-chemnitz.de/ftp-home/pub/Local/urz/ding/ \
 				ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
 MAINTAINER=		nectar@FreeBSD.ORG
+COMMENT=		A German-English dictionary program for X windows/Unix
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 				agrep:${PORTSDIR}/textproc/agrep

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 DISTNAME=		heimdal-${PORTVERSION}
 
 MAINTAINER=		nectar@FreeBSD.ORG
+COMMENT=		A re-implementation of Kerberos V
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
@@ -67,7 +68,7 @@ pre-configure:
 
 post-build:
 .if defined(WITH_CRACKLIB)
-	sed -e "s;%%LOCALBASE%%;${LOCALBASE};g" \
+	${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" \
 	${FILESDIR}/kpasswdd-cracklib.c.in > ${WRKSRC}/kpasswdd-cracklib.c
 	(cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -fPIC -shared -I${LOCALBASE}/include -I./include \
