@@ -1,0 +1,2 @@
+In order to use twin you need to build and install a new kernel
+with options USER_LDT, SYSVSHM, SYSVSEM, and SYSVMSG.

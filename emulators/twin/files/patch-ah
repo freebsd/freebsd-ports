@@ -1,0 +1,10 @@
+--- dlls/winsock/WinSockIF.c.orig	Sat Jan 13 18:26:12 2001
++++ dlls/winsock/WinSockIF.c	Fri Jul 20 02:25:35 2001
+@@ -28,6 +28,7 @@
+ 
+  */
+ 
++#include <sys/types.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>

@@ -6,35 +6,45 @@
 #
 
 PORTNAME=	twin
-PORTVERSION=	1999.12.30
+PORTVERSION=	3.1.14
+PORTEPOCH=	1
 CATEGORIES=	emulators devel
-MASTER_SITES=	ftp://ftp.willows.com/pub/development/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+MASTER_SITES=	ftp://ftp.willows.com/pub/twin/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		$(WRKDIR)/twin
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-debugger
 ALL_TARGET=	depend world
-CONFIGURE_ARGS=
+PLIST_SUB=	LIBVER="${LIBVER}"
+INSTALLS_SHLIB=	yes
 
-# This hack is in order to avoid a build error with optimizations on,
-# a real bugfix will surely come soon.
-pre-patch:
-	${CP} $(WRKSRC)/windows/if32.s $(WRKSRC)/windows/if32.S
+FMT?=	/usr/bin/fmt
 
-pre-configure:
-	${ECHO} "configure_args = ${CONFIGURE_ARGS}"
-	${ECHO} "configure_env = ${CONFIGURE_ENV}"
+LIBRARIES=	libadvapi32.so libcomctl32.so libcomm.so \
+	libcommdlg.so libddeml.so libkeyboard.so \
+	liblzexpand.so libmmsystem.so libmsvcrt.so \
+	libolecli.so libolesvr.so libpe32.so \
+	libshell.so libsound.so libsystem.so \
+	libtoolhelp.so libtwin32.so libversion.so \
+	libw32sys.so libwin87em.so libwinsock.so \
+	libwinspool.so
+LIBVER=	0
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/twin
-	${INSTALL_DATA} ${WRKSRC}/documentation/* ${PREFIX}/share/doc/twin
-	${GZIP_CMD} ${PREFIX}/share/doc/twin/*
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/documentation/* ${DOCSDIR}
 .endif
+# version these libraries to make ldconfig happy
+.for lib in ${LIBRARIES}
+	@${LN} -sf ${lib} ${PREFIX}/lib/${lib}.${LIBVER}
+.endfor
+	@${FMT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
