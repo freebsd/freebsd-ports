@@ -1,5 +1,4 @@
-Ted is a text editor running under X Windows on Unix/Linux systems. Ted was
-developed as an operating system accessory like Wordpad on MS-Windows.
+Ted is a text editor running under X Windows on Unix/Linux systems.
 
 Features 
 --------   
@@ -11,11 +10,9 @@ Features
     Portuguese, French and Spanish.)
   * Directly mailing documents from Ted.
   * Cut/Copy/Paste, also with other applications.
-  * Find/Replace.
+  * Find/Replace using regular expressions.
   * Ruler: Paragraph indentation, Indentation of first line, Tabs.
-  * Copy/Paste 
-    Ruler.
-  * Page breaks.
+  * Footnotes and endnotes.
   * Tables: Insert Table, Row, Column. Changing the column width of tables 
     with their ruler.
   * Symbols and accented characters are fully supported.
