@@ -1,9 +1,18 @@
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++                         XAERO README       				 ++
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+AERO is a simulation program based on rigid body systems. With the
+built-in 3D editor you can create a virtual scene consisting of
+spheres, boxes (cuboids), cylinders and plains. These objects may be
+connected with links like spring, damper, rod and joint.
 
-To render the written raytracer files, POVRAY1.0 or newer should be
-used. The included script files for automatic generation of readable
-picture files out of the raytracer files need the "tgatoppm" command
-out of the PBM+ distribution. A special text file called
-README.raytracer explains how to use AERO's raytracing feature.
+Now the simulation can be started and all objects obey to the laws of
+physics. That means gravitation, air resistance, friction and all
+additonal user defined forces are taken into account and set the scene
+into motion. You can watch this sequence similar to watching a video
+tape: play the scene or step back to memory positions and replay or
+you can "wind" back to the beginning or forward to the end of the
+scene.
+
+In addition AERO is capable of creating scene files for the raytracing
+program POV-Ray out of these sequences. This means you can create
+fully rendered animation sequences, e.g. MPEG videos.
+
+WWW: http://www.aero-simulation.de/
