@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	clustalw
-PORTVERSION=	1.81
+PORTVERSION=	1.82
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp-igbmc.u-strasbg.fr/pub/ClustalW/
 DISTNAME=	${PORTNAME}${PORTVERSION}.UNIX
 
 MAINTAINER=	dbader@eece.unm.edu
 
-PORTREVISION=	1
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 MAKEFILE=	makefile
