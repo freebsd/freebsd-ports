@@ -25,4 +25,3 @@
 -  DL_LIBS=-ldl 
  else
    echo "$ac_t""no" 1>&6
- 
