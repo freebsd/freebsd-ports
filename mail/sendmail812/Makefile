@@ -216,14 +216,6 @@ do-configure:
 	 'APPENDDEF(`confENVDEF'\'', `-DSM_CONF_SHM=0'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
-.if defined(PARALLEL_APACKAGE_BUILD) || defined(BATCH)
-	${ECHO_CMD} \
-	 'define(`confNO_HELPFILE_INSTALL'\'',`True'\'')' \
-		>> ${WCONF}/site.config.m4
-	${ECHO_CMD} \
-	 'define(`confNO_STATISTICS_INSTALL'\'', `True'\'')' \
-		>> ${WCONF}/site.config.m4
-.endif
 
 post-build:
 	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
