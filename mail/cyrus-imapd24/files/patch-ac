@@ -1,7 +1,7 @@
 Index: configure
 diff -u configure.orig configure
 --- configure.orig	Thu Jan 15 23:36:50 2004
-+++ configure	Fri Jan 16 04:03:09 2004
++++ configure	Sat Jan 17 21:11:14 2004
 @@ -6565,7 +6565,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -11,6 +11,20 @@ diff -u configure.orig configure
            do
              as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
+@@ -6589,11 +6589,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char db_create ();
++#include <db.h>
+ int
+ main ()
+ {
+-db_create ();
++db_create (0, 0, 0);
+   ;
+   return 0;
+ }
 @@ -13854,7 +13854,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF

@@ -1,7 +1,7 @@
 Index: saslauthd/configure
 diff -u saslauthd/configure.orig saslauthd/configure
 --- saslauthd/configure.orig	Tue Dec  2 01:35:11 2003
-+++ saslauthd/configure	Tue Dec  2 14:02:53 2003
++++ saslauthd/configure	Sat Jan 17 23:23:56 2004
 @@ -1523,6 +1523,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
@@ -37,6 +37,20 @@ diff -u saslauthd/configure.orig saslauthd/configure
            do
              as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
+@@ -7508,11 +7509,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char db_create ();
++#include <db.h>
+ int
+ main ()
+ {
+-db_create ();
++db_create (0, 0, 0);
+   ;
+   return 0;
+ }
 @@ -8287,7 +8288,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -46,3 +60,17 @@ diff -u saslauthd/configure.orig saslauthd/configure
            do
              as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
+@@ -8311,11 +8312,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char db_create ();
++#include <db.h>
+ int
+ main ()
+ {
+-db_create ();
++db_create (0, 0, 0);
+   ;
+   return 0;
+ }
