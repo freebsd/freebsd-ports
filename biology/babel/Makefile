@@ -29,8 +29,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/babel
 	${INSTALL_DATA} ${WRKSRC}/*.lis ${PREFIX}/share/babel
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/babel
-	${INSTALL_DATA} ${WRKSRC}/README.1ST ${PREFIX}/share/doc/babel
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.1ST ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
