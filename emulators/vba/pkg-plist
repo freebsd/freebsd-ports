@@ -1,4 +1,5 @@
 bin/VisualBoyAdvance
+bin/VisualBoyAdvance.cfg-default
 bin/TestEmu
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
