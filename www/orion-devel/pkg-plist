@@ -286,6 +286,7 @@ bin/orionctl
 %%T%%/demo/rmi/RMIApp.java
 %%T%%/demo/ssl/ssl-user-registration.jsp
 %%T%%/demo/messagelogger.ear
+%%T%%/persistence/transaction.state
 %%T%%/lib/hsql.jar
 %%T%%/log/stdout.log
 %%T%%/log/stderr.log
