@@ -212,5 +212,11 @@ if ($hostname =~ /^(freefall|internat)\.freebsd\.org$/i) {
 }
 
 
-#end
+# Load the local configuration file, that allows the entries in this
+# file to be overridden.
+eval { require "$ENV{CVSROOT}/CVSROOT/cfg_local.pm" }
+    if -e "$ENV{CVSROOT}/CVSROOT/cfg_local.pm";
+warn $@ if $@;
+
 1; # Perl requires all modules to return true.  Don't delete!!!!
+#end

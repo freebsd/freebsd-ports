@@ -18,6 +18,7 @@
 access
 avail
 cfg.pm
+cfg_local.pm
 commit_prep.pl
 commitcheck
 cvs_acls.pl
