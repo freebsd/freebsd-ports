@@ -16,6 +16,10 @@ DISTNAME=	${PORTNAME}-source-v${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}:dat \
 		pak0.pak:pak
+
+MAINTAINER=	danfe@regency.nsu.ru
+COMMENT=	An excellent QuakeWorld client
+
 .if defined(WITH_SHAREWARE_DATA)
 DISTFILES+=	q1-shareware-pak0.pak:pak
 PLIST_SUB+=	SHAREWARE=""
@@ -25,9 +29,6 @@ PLIST_SUB+=	SHAREWARE="@comment "
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-linux-v${PORTVERSION}${EXTRACT_SUFX}
-
-MAINTAINER=	danfe@regency.nsu.ru
-COMMENT=	An excellent QuakeWorld client
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
 WITH_SVGA=	yes
@@ -91,7 +92,7 @@ pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to enable extra optimization options"
 .endif
-.if !defined(WITHOUT_X86_ASM)
+.if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 	@${ECHO_MSG} "Define WITHOUT_X86_ASM to disable x86 assembly code"
 .endif
 
@@ -106,6 +107,12 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%%%BASEDIR%%%%|${DATADIR}|' ${WRKSRC}/common.c
+.for file in cmd.h common.h render.h console.h quakedef.h cvar.h cvar_groups.h \
+	fmod.h config_manager.h auth.h logging.h ignore.h fchecks.h rulesets.h \
+	modules.h mp3_player.h r_local.h movie.c logging.c quotes.h zone.c \
+	gl_local.h gl_image.h gl_warp_sin.h
+	@${ECHO_CMD} "" >> ${WRKSRC}/${file}
+.endfor
 
 do-build:
 .if !defined(WITHOUT_X11)
@@ -143,6 +150,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' ${PKGMESSAGE}
+	@${SED} -e 's|$${DATADIR}|${DATADIR}|g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
