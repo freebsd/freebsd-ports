@@ -87,22 +87,6 @@ bin/FreeDoko
 %%DATADIR%%/cardsets/Altenburg/french/icons/swines.diamond.png
 %%DATADIR%%/cardsets/Altenburg/french/icons/swines.heart.png
 %%DATADIR%%/cardsets/Altenburg/french/icons/swines.spade.png
-%%DATADIR%%/help.icons/galeon/browser.xpm
-%%DATADIR%%/help.icons/galeon/credits.xpm
-%%DATADIR%%/help.icons/galeon/hide.xpm
-%%DATADIR%%/help.icons/galeon/index.xpm
-%%DATADIR%%/help.icons/galeon/next_page.xpm
-%%DATADIR%%/help.icons/galeon/origin
-%%DATADIR%%/help.icons/galeon/previous_page.xpm
-%%DATADIR%%/help.icons/galeon/toc.xpm
-%%DATADIR%%/help.icons/stock/browser.xpm
-%%DATADIR%%/help.icons/stock/credits.xpm
-%%DATADIR%%/help.icons/stock/hide.xpm
-%%DATADIR%%/help.icons/stock/index.xpm
-%%DATADIR%%/help.icons/stock/next_page.xpm
-%%DATADIR%%/help.icons/stock/origin
-%%DATADIR%%/help.icons/stock/previous_page.xpm
-%%DATADIR%%/help.icons/stock/toc.xpm
 %%DATADIR%%/rules/beginner
 %%DATADIR%%/rules/last
 %%DATADIR%%/rules/standard
@@ -154,6 +138,9 @@ bin/FreeDoko
 %%DOCSDIR%%/de/Kurzregeln.pdf
 %%DOCSDIR%%/de/Kurzregeln.tex
 %%DOCSDIR%%/de/Kurzregeln.txt
+%%DOCSDIR%%/de/LIESMICH.SuSE
+%%DOCSDIR%%/de/LIESMICH.Windows
+%%DOCSDIR%%/de/LIESMICH.gtkmm_2.4
 %%DOCSDIR%%/de/LIESMICH.html
 %%DOCSDIR%%/de/LIESMICH.txt
 %%DOCSDIR%%/de/MinGW32.txt
@@ -161,13 +148,11 @@ bin/FreeDoko
 %%DOCSDIR%%/de/Planung.txt
 %%DOCSDIR%%/de/Regeln.pdf
 %%DOCSDIR%%/de/Regeln.txt
-%%DOCSDIR%%/de/SuSE
-%%DOCSDIR%%/de/Windows
 %%DOCSDIR%%/en/FAQ.pdf
 %%DOCSDIR%%/en/FAQ.txt
+%%DOCSDIR%%/en/README.Windows
 %%DOCSDIR%%/en/README.html
 %%DOCSDIR%%/en/README.txt
-%%DOCSDIR%%/en/Windows
 %%DOCSDIR%%/en/configuration.pdf
 %%DOCSDIR%%/en/configuration.txt
 %%DOCSDIR%%/en/introduction.pdf
@@ -242,9 +227,6 @@ bin/FreeDoko
 @dirrm %%DATADIR%%/translations/de
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/rules
-@dirrm %%DATADIR%%/help.icons/stock
-@dirrm %%DATADIR%%/help.icons/galeon
-@dirrm %%DATADIR%%/help.icons
 @dirrm %%DATADIR%%/cardsets/Altenburg/french/icons
 @dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/spade
 @dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/heart
