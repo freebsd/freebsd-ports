@@ -1,0 +1,10 @@
+--- iminitel/iminitel.orig	Fri Jan  4 21:59:14 2002
++++ iminitel/iminitel	Fri Jan  4 23:06:29 2002
+@@ -1,5 +1,5 @@
+-ttyS0 115200 crtscts usepeerdns noipdefault nodefaultroute
+-connect '/usr/sbin/chat -v -f /etc/ppp/chat-iminitel'
++cuaa0 115200 crtscts noipdefault nodefaultroute
++connect '/usr/bin/chat -v -f /etc/ppp/chat-iminitel'
+ noauth
+ lock
+ idle 120

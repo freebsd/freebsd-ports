@@ -7,13 +7,11 @@
 
 PORTNAME=	xtel
 PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
 MAINTAINER=	thierry@pompo.net
-
-FORBIDDEN=	"Lots of buffer overflows yielding setuid root"
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
