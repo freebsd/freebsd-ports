@@ -25,8 +25,7 @@ pre-configure:
 .if $(MACHINE_ARCH) == "i386"
 .if !defined(OPT_ARCH) || (($(OPT_ARCH) != "i486") && ($(OPT_ARCH) != "i586"))
 	@echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-	@echo "Please considering setting OPT_ARCH to match your hardware to build mpg123"
-	@echo "optimised for your hardware (e.g: make OPT_ARCH=i486)"
+	@echo "Note: you can set OPT_ARCH to optimize for your hardware. (Eg:- make OPT_ARCH=i486)"
 .if $(PORTOBJFORMAT) == "elf"
 	@echo "Valid values are: i486, i586"
 .else
@@ -34,6 +33,19 @@ pre-configure:
 .endif
 	@echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 .endif
+.endif
+
+.if $(PORTOBJFORMAT) == "elf"
+OPT_ARCH?=	i586
+.else
+OPT_ARCH?=	i486
+.endif
+
+# Uncomment this line below to optimise for i486 family CPUs on ELF boxes
+# OPT_ARCH=	i486
+
+.if defined(OPT_ARCH)
+MAKE_ARGS+=	OPT_ARCH=$(OPT_ARCH)
 .endif
 
 .include <bsd.port.post.mk>
