@@ -4,10 +4,10 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.9 1998/12/01 11:36:13 obrien Exp $
+# $Id: Makefile,v 1.10 1998/12/03 19:03:30 obrien Exp $
 #
 
-DISTNAME=	ddd-3.1
+DISTNAME=	ddd-3.1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
