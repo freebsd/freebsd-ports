@@ -1,3 +1,4 @@
+bin/realplay
 lib/RealPlayer8/Codecs/14_4.so.6.0
 lib/RealPlayer8/Codecs/28_8.so.6.0
 lib/RealPlayer8/Codecs/atrc.so.6.0
@@ -18,6 +19,9 @@ lib/RealPlayer8/Common/pnrscmgr.so.6.0
 lib/RealPlayer8/Common/rcacore.so.6.0
 lib/RealPlayer8/Common/rcaembed.so.6.0
 lib/RealPlayer8/Common/rmacore.so.6.0
+lib/RealPlayer8/LICENSE
+lib/RealPlayer8/Mailcap
+lib/RealPlayer8/Mime.types
 lib/RealPlayer8/Plugins/ExtResources/coreres60.xrs
 lib/RealPlayer8/Plugins/audplin.so.6.0
 lib/RealPlayer8/Plugins/authmgr.so.6.0
@@ -59,25 +63,62 @@ lib/RealPlayer8/Plugins/swfrend.so.6.0
 lib/RealPlayer8/Plugins/vidplin.so.6.0
 lib/RealPlayer8/Plugins/vsrcplin.so.6.0
 lib/RealPlayer8/Plugins/xlibsite.so.6.0
-lib/RealPlayer8/mimeinstall.sh
-lib/RealPlayer8/pluginstall.sh
-lib/RealPlayer8/postinstall.sh
-lib/RealPlayer8/realplay
-lib/RealPlayer8/rpnp.so
-lib/RealPlayer8/LICENSE
-lib/RealPlayer8/Mailcap
-lib/RealPlayer8/Mime.types
 lib/RealPlayer8/README
 lib/RealPlayer8/app.kdelnk
 lib/RealPlayer8/audiosig.rm
 lib/RealPlayer8/firstrun.rm
 lib/RealPlayer8/mime.kdelnk
+lib/RealPlayer8/mimeinstall.sh
+lib/RealPlayer8/pluginstall.sh
+lib/RealPlayer8/postinstall.sh
 lib/RealPlayer8/raclass.zip
+lib/RealPlayer8/realplay
 lib/RealPlayer8/realplay.desktop
 lib/RealPlayer8/rp7.xpm
 lib/RealPlayer8/rp7doc.png
 lib/RealPlayer8/rp7doc.xpm
 lib/RealPlayer8/rp7mini.xpm
+lib/RealPlayer8/rpnp.so
+share/doc/RealPlayer8/readme
+share/doc/RealPlayer8/realplay.htm
+share/doc/RealPlayer8/realplay/aud_play.htm
+share/doc/RealPlayer8/realplay/buffered.htm
+share/doc/RealPlayer8/realplay/cinfobar.htm
+share/doc/RealPlayer8/realplay/clip_bar.htm
+share/doc/RealPlayer8/realplay/clipinfo.htm
+share/doc/RealPlayer8/realplay/clipwork.htm
+share/doc/RealPlayer8/realplay/compact.htm
+share/doc/RealPlayer8/realplay/con_pref.htm
+share/doc/RealPlayer8/realplay/configur.htm
+share/doc/RealPlayer8/realplay/cont_menu.htm
+share/doc/RealPlayer8/realplay/disp_hlp.htm
+share/doc/RealPlayer8/realplay/display.htm
+share/doc/RealPlayer8/realplay/distort.htm
+share/doc/RealPlayer8/realplay/error690.htm
+share/doc/RealPlayer8/realplay/error693.htm
+share/doc/RealPlayer8/realplay/error698.htm
+share/doc/RealPlayer8/realplay/file_menu.htm
+share/doc/RealPlayer8/realplay/filetype.htm
+share/doc/RealPlayer8/realplay/gen_pref.htm
+share/doc/RealPlayer8/realplay/glossary.htm
+share/doc/RealPlayer8/realplay/gotoreal.htm
+share/doc/RealPlayer8/realplay/help_menu.htm
+share/doc/RealPlayer8/realplay/how_to.htm
+share/doc/RealPlayer8/realplay/index.htm
+share/doc/RealPlayer8/realplay/inner.htm
+share/doc/RealPlayer8/realplay/intrface.htm
+share/doc/RealPlayer8/realplay/introduction.htm
+share/doc/RealPlayer8/realplay/jump_to.htm
+share/doc/RealPlayer8/realplay/keyshort.htm
+share/doc/RealPlayer8/realplay/loadclip.htm
+share/doc/RealPlayer8/realplay/manually.htm
+share/doc/RealPlayer8/realplay/menubar.htm
+share/doc/RealPlayer8/realplay/menus.htm
+share/doc/RealPlayer8/realplay/mute.htm
+share/doc/RealPlayer8/realplay/notice.htm
+share/doc/RealPlayer8/realplay/panels.htm
+share/doc/RealPlayer8/realplay/pause.htm
+share/doc/RealPlayer8/realplay/per_pref.htm
 share/doc/RealPlayer8/realplay/pics/DOCUMENTB.gif
 share/doc/RealPlayer8/realplay/pics/RealLogo.gif
 share/doc/RealPlayer8/realplay/pics/RealNetx.gif
@@ -124,7 +165,6 @@ share/doc/RealPlayer8/realplay/pics/creditroll.gif
 share/doc/RealPlayer8/realplay/pics/cursor_hand.gif
 share/doc/RealPlayer8/realplay/pics/delete3.gif
 share/doc/RealPlayer8/realplay/pics/do-it.gif
-share/doc/RealPlayer8/realplay/pics/favicon.gif
 share/doc/RealPlayer8/realplay/pics/dropdwnarrow.gif
 share/doc/RealPlayer8/realplay/pics/eq-autogainadj.gif
 share/doc/RealPlayer8/realplay/pics/eq-on-off.gif
@@ -133,6 +173,7 @@ share/doc/RealPlayer8/realplay/pics/eq-restoredefault.gif
 share/doc/RealPlayer8/realplay/pics/eq-slider3.gif
 share/doc/RealPlayer8/realplay/pics/eq-smarteq.gif
 share/doc/RealPlayer8/realplay/pics/equalizer3.gif
+share/doc/RealPlayer8/realplay/pics/favicon.gif
 share/doc/RealPlayer8/realplay/pics/favoritestab.gif
 share/doc/RealPlayer8/realplay/pics/forward.gif
 share/doc/RealPlayer8/realplay/pics/forwardbutt.gif
@@ -225,53 +266,15 @@ share/doc/RealPlayer8/realplay/pics/videocontrols3.gif
 share/doc/RealPlayer8/realplay/pics/volslider.gif
 share/doc/RealPlayer8/realplay/pics/zoom.gif
 share/doc/RealPlayer8/realplay/pics/zoomtest
-share/doc/RealPlayer8/realplay/aud_play.htm
-share/doc/RealPlayer8/realplay/buffered.htm
-share/doc/RealPlayer8/realplay/cinfobar.htm
-share/doc/RealPlayer8/realplay/clip_bar.htm
-share/doc/RealPlayer8/realplay/clipinfo.htm
-share/doc/RealPlayer8/realplay/clipwork.htm
-share/doc/RealPlayer8/realplay/compact.htm
-share/doc/RealPlayer8/realplay/con_pref.htm
-share/doc/RealPlayer8/realplay/configur.htm
-share/doc/RealPlayer8/realplay/cont_menu.htm
-share/doc/RealPlayer8/realplay/disp_hlp.htm
-share/doc/RealPlayer8/realplay/display.htm
-share/doc/RealPlayer8/realplay/distort.htm
-share/doc/RealPlayer8/realplay/error690.htm
-share/doc/RealPlayer8/realplay/error693.htm
-share/doc/RealPlayer8/realplay/error698.htm
-share/doc/RealPlayer8/realplay/file_menu.htm
-share/doc/RealPlayer8/realplay/filetype.htm
-share/doc/RealPlayer8/realplay/gen_pref.htm
-share/doc/RealPlayer8/realplay/glossary.htm
-share/doc/RealPlayer8/realplay/how_to.htm
-share/doc/RealPlayer8/realplay/gotoreal.htm
-share/doc/RealPlayer8/realplay/help_menu.htm
-share/doc/RealPlayer8/realplay/index.htm
-share/doc/RealPlayer8/realplay/inner.htm
-share/doc/RealPlayer8/realplay/intrface.htm
-share/doc/RealPlayer8/realplay/introduction.htm
-share/doc/RealPlayer8/realplay/jump_to.htm
-share/doc/RealPlayer8/realplay/keyshort.htm
-share/doc/RealPlayer8/realplay/loadclip.htm
-share/doc/RealPlayer8/realplay/manually.htm
-share/doc/RealPlayer8/realplay/menubar.htm
-share/doc/RealPlayer8/realplay/menus.htm
-share/doc/RealPlayer8/realplay/mute.htm
-share/doc/RealPlayer8/realplay/notice.htm
-share/doc/RealPlayer8/realplay/panels.htm
-share/doc/RealPlayer8/realplay/pause.htm
-share/doc/RealPlayer8/realplay/per_pref.htm
 share/doc/RealPlayer8/realplay/play.htm
 share/doc/RealPlayer8/realplay/play_menu.htm
 share/doc/RealPlayer8/realplay/playclip.htm
 share/doc/RealPlayer8/realplay/position.htm
 share/doc/RealPlayer8/realplay/prx_pref.htm
-share/doc/RealPlayer8/realplay/size.htm
 share/doc/RealPlayer8/realplay/real_wrk.htm
 share/doc/RealPlayer8/realplay/rollcred.htm
 share/doc/RealPlayer8/realplay/set_pref.htm
+share/doc/RealPlayer8/realplay/size.htm
 share/doc/RealPlayer8/realplay/slider.htm
 share/doc/RealPlayer8/realplay/snd_set.htm
 share/doc/RealPlayer8/realplay/stat_bar.htm
@@ -300,14 +303,11 @@ share/doc/RealPlayer8/realplay/volume.htm
 share/doc/RealPlayer8/realplay/win_ctrl.htm
 share/doc/RealPlayer8/realplay/zoom.htm
 share/doc/RealPlayer8/realplay/zoomhelp.htm
-share/doc/RealPlayer8/readme
-share/doc/RealPlayer8/realplay.htm
-bin/realplay
-@unexec rm -f lib/netscape-linux/plugins/raclass.zip lib/netscape-linux/plugins/rpnp.so
-@dirrm lib/RealPlayer8/Codecs
-@dirrm lib/RealPlayer8/Common
+@unexec rm -f %D/lib/netscape-linux/plugins/raclass.zip %D/lib/netscape-linux/plugins/rpnp.so
 @dirrm lib/RealPlayer8/Plugins/ExtResources
 @dirrm lib/RealPlayer8/Plugins
+@dirrm lib/RealPlayer8/Common
+@dirrm lib/RealPlayer8/Codecs
 @dirrm lib/RealPlayer8
 @dirrm share/doc/RealPlayer8/realplay/pics
 @dirrm share/doc/RealPlayer8/realplay
