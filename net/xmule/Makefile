@@ -52,8 +52,12 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if exists(${WX_CONFIG})
 # detect if wxgtk was linked against gtk1 or gtk2
 DECISION_GTK_1_OR_2!= ${WX_CONFIG} --cppflags
+.else
+DECISION_GTK_1_OR_2=	""
+.endif
 
 .if (${DECISION_GTK_1_OR_2:Mgtk2} != "")
 USE_GNOME+=	gtk20
