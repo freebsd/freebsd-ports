@@ -46,6 +46,7 @@ libdata/pkgconfig/gdkglext-1.0.pc
 libdata/pkgconfig/gdkglext-x11-1.0.pc
 libdata/pkgconfig/gtkglext-1.0.pc
 libdata/pkgconfig/gtkglext-x11-1.0.pc
+share/aclocal/gtkglext-1.0.m4
 %%DOCSDIR%%/GdkGLExt-API.html
 %%DOCSDIR%%/GtkGLExt-API.html
 %%DOCSDIR%%/Overview.html

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkglext
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,16 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	An OpenGL extension to GTK
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
-USE_X_PREFIX=	yes
-USE_MESA=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
 USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-#CONFIGURE_ARGS=	--enable-mesa-ext
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 3
+USE_MESA=	yes
+.endif
+
+.include <bsd.port.post.mk>
