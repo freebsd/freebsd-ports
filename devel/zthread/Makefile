@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zthread
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.buffalo.edu/%7Ecrahen/projects/zthread/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,5 +19,6 @@ HAS_CONFIGURE=	yes
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

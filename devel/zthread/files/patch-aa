@@ -1,0 +1,19 @@
+*** Makefile.in.old	Mon Jul  2 16:27:25 2001
+--- Makefile.in	Mon Jul  2 16:27:58 2001
+***************
+*** 378,384 ****
+  
+  install-exec-hook:
+  	$(mkinstalldirs) $(bindir)
+! 	$(INSTALL_PROGRAM) share/zthread-config $(bindir)
+  
+  install-data-hook:
+  	$(mkinstalldirs) $(datadir)/aclocal
+--- 378,384 ----
+  
+  install-exec-hook:
+  	$(mkinstalldirs) $(bindir)
+! 	$(INSTALL_SCRIPT) share/zthread-config $(bindir)
+  
+  install-data-hook:
+  	$(mkinstalldirs) $(datadir)/aclocal
