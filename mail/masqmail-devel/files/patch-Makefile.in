@@ -1,0 +1,17 @@
+--- Makefile.in.old	Sun Apr  4 23:36:26 2004
++++ Makefile.in	Sun Apr  4 23:38:38 2004
+@@ -377,9 +377,12 @@
+ $(DESTDIR)@datadir@/tpl: conf_dir
+ 	install -d $(DESTDIR)@datadir@/masqmail/tpl
+ 	install -m 644 tpl/failmsg.tpl $(DESTDIR)@datadir@/masqmail/tpl
+-	install -m 644 tpl/failmsg.tpl.{de,fr,it} $(DESTDIR)@datadir@/masqmail/tpl
++	install -m 644 tpl/failmsg.tpl.de $(DESTDIR)@datadir@/masqmail/tpl
++	install -m 644 tpl/failmsg.tpl.fr $(DESTDIR)@datadir@/masqmail/tpl
++	install -m 644 tpl/failmsg.tpl.it $(DESTDIR)@datadir@/masqmail/tpl
+ 	install -m 644 tpl/warnmsg.tpl $(DESTDIR)@datadir@/masqmail/tpl
+-	install -m 644 tpl/warnmsg.tpl.{de,fr} $(DESTDIR)@datadir@/masqmail/tpl
++	install -m 644 tpl/warnmsg.tpl.de $(DESTDIR)@datadir@/masqmail/tpl
++	install -m 644 tpl/warnmsg.tpl.fr $(DESTDIR)@datadir@/masqmail/tpl
+ 
+ log_dir: $(DESTDIR)@with_logdir@
+ 
