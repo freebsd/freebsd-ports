@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--enable-pspell
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
 LIB_DEPENDS+=		pisock.4:${PORTSDIR}/palm/pilot-link
-RUN_DEPENDS+=		${LOCALBASE}/pilot/bin/jpilot:${PORTSDIR}/palm/jpilot
+RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
 .endif
 .if defined(WITH_LDAP) || defined(WITH_ALL)
