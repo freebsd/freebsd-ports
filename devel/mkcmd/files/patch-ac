@@ -1,0 +1,11 @@
+--- lib/mkcmd/Make.host.orig	Wed Nov 17 12:28:06 1999
++++ lib/mkcmd/Make.host	Wed Nov 17 12:28:22 1999
+@@ -2,7 +2,7 @@
+ # 	Makefile for mkcmd
+ #			Kevin S Braunsdorf, PUCC
+ 
+-LIB=	${DESTDIR}/usr/local/lib/mkcmd
++LIB=	${DESTDIR}/usr/local/share/mkcmd
+ 
+ TEMPL=	Template.m bytes.m client.m \
+ client.mi cmd.m cmd.mc cmd.mi cmd_add.m cmd_add.mc cmd_cd.m cmd_cd.mc \
