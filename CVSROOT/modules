@@ -2022,6 +2022,7 @@ gdesklets	ports/deskutils/gdesklets
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
+gdesklets-seti	ports/astro/gdesklets-seti
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-sysinfo	ports/sysutils/gdesklets-sysinfo
 gdict		ports/textproc/gdict
