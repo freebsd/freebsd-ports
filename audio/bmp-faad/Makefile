@@ -58,6 +58,7 @@ post-patch:
 		${XARGS} -n 5 -x \
 			${REINPLACE_CMD} -e \
 				's|-O2|${CFLAGS}|'
+	@${REINPLACE_CMD} -e 's|<xmms|<bmp|' ${WRKSRC}/plugins/xmms/src/libmp4.c
 
 do-build:
 	@cd ${WRKSRC}/libfaad && ${MAKE}
