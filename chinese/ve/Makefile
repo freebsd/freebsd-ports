@@ -18,7 +18,7 @@ COMMENT=	NTHU-CS Maple BBS 2.36 BBS-like editor
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (need to replace varargs.h with stdarg.h)"
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-screen.c
 .endif
 
 .include <bsd.port.post.mk>

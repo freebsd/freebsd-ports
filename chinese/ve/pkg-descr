@@ -1,7 +1,5 @@
 NTHU-CS Maple BBS 2.36 BBS-like editor
 
-ftp://wj.o3.net/freebsd/woju/source/ve.txt
-
 Besides normal functions, it has some great features for programmers --
 goto line (ESC-G)
 cut & paste cross files (Ctrl-G to see ve.hlp)
@@ -18,15 +16,3 @@ ve is a tiny editor, about 60K. It's woju's favorite UNIX editor.
 The most obvious weakness of ve is changing TABs into Spaces. So
 please don't use ve to edit TAB-important files, such as Makefile,
 sendmail.cf, syslog.conf... etc.
-
-Manual --
-ve.hlp: less -r ve.hlp
-
-About TAB/SPACE
-diff -b f.orig f.new
-or "-durb"
-
-man expand/unexpand
-
-See Also --
-ports/chinese/big5con
