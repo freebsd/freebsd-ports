@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.1.9.2
+PORTVERSION=	6.1.9.4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
@@ -105,8 +105,7 @@ CONFIGURE_ARGS+=	--without-bzlib
 # FPX (FlashPIX) images
 .if !defined(WITHOUT_IMAGEMAGICK_FPX)
 LIB_DEPENDS+=		fpx.1:${PORTSDIR}/graphics/libfpx
-.else
-CONFIGURE_ARGS+=	--without-fpx
+CONFIGURE_ARGS+=	--with-fpx
 .endif
 
 # JBIG images (lossless compression for bi-level images)
