@@ -1,0 +1,94 @@
+*** Makefile.old	Wed Apr 15 02:57:58 1992
+--- Makefile	Sat Dec 31 20:36:07 1994
+***************
+*** 32,45 ****
+  OPT = -O
+  # For MWC 3.0 on the Atari ST, use:
+  #CFLAGS = -VCOMPAC -VPEEP
+! CFLAGS = $(OPT) $(SYSTEM)
+  
+  # GNU's gcc is very nice, if you've got it. Otherwise just cc.
+  #CC = cgcc -mshort
+! CC = cc
+  
+  # tmclock is only needed on Unix systems...
+! TMCLOCK = tmclock.o
+  
+  # Files needed for System V 
+  #SYSVOBJ =	getwd.o rename.o scandir.o utimes.o
+--- 32,46 ----
+  OPT = -O
+  # For MWC 3.0 on the Atari ST, use:
+  #CFLAGS = -VCOMPAC -VPEEP
+! #CFLAGS = $(OPT) $(SYSTEM)
+! CFLAGS+=$(SYSTEM)
+  
+  # GNU's gcc is very nice, if you've got it. Otherwise just cc.
+  #CC = cgcc -mshort
+! #CC = cc
+  
+  # tmclock is only needed on Unix systems...
+! TMCLOCK = #tmclock.o
+  
+  # Files needed for System V 
+  #SYSVOBJ =	getwd.o rename.o scandir.o utimes.o
+***************
+*** 61,66 ****
+--- 62,71 ----
+  
+  clean:
+  	-rm *.o arc$(PROG) marc$(PROG)
++ 
++ install:
++ 	install -cs -o bin -g bin arc marc ${PREFIX}/bin
++ 	install -c -o bin -g bin arc.1 ${PREFIX}/man/man1
+  
+  arc.o:	$(SRCDIR)arc.c	$(HEADER)
+  	$(CC) $(CFLAGS) -c $(SRCDIR)arc.c
+*** arcdos.c.old	Wed Apr 15 02:58:21 1992
+--- arcdos.c	Sat Dec 31 20:32:25 1994
+***************
+*** 173,186 ****
+--- 173,192 ----
+  	struct tm	tm;
+  	struct timeval  tvp[2];
+  	int	utimes();
++ #ifndef __FreeBSD__
+  	long	tmclock();
++ #endif
+  	tm.tm_sec = (time & 31) * 2;
+  	tm.tm_min = (time >> 5) & 63;
+  	tm.tm_hour = (time >> 11);
+  	tm.tm_mday = date & 31;
+  	tm.tm_mon = ((date >> 5) & 15) - 1;
+  	tm.tm_year = (date >> 9) + 80;
++ #ifndef __FreeBSD__
+  	tvp[0].tv_sec = tmclock(&tm);
++ #else
++ 	tvp[0].tv_sec = timelocal(&tm);
++ #endif
+  	tvp[1].tv_sec = tvp[0].tv_sec;
+  	tvp[0].tv_usec = tvp[1].tv_usec = 0;
+  	utimes(f, tvp);
+*** marc.c.old	Wed Apr 15 02:59:21 1992
+--- marc.c	Sat Dec 31 20:40:30 1994
+***************
+*** 35,40 ****
+--- 35,41 ----
+  #endif
+  VOID	arcdie();
+  static VOID expandlst(), merge();
++ char *makefnam();                  /* filename fixup routine */
+  
+  FILE *src;			       /* source archive */
+  char srcname[STRLEN];		       /* source archive name */
+***************
+*** 47,53 ****
+  int nargs;			       /* number of arguments */
+  char *arg[];			       /* pointers to arguments */
+  {
+-     char *makefnam();		       /* filename fixup routine */
+      char *envfind();
+  #if	!_MTS
+      char *arctemp2, *mktemp();		/* temp file stuff */
+--- 48,53 ----
