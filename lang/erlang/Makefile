@@ -6,21 +6,16 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r9c1
-PORTEPOCH=	1
+PORTVERSION=	r9c2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R9C-1
+DISTNAME=	otp_src_R9C-2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	http://www.erlang.org/download/patches/
-PATCHFILES=
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
@@ -33,9 +28,9 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 JAVABINDIR?=	${LOCALBASE}/jdk1.4.2/bin
 JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
-ERLANG_MAN=     otp_man_R9C-1.tar.gz
+ERLANG_MAN=     otp_man_R9C-2.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_html_R9C-1.tar.gz
+ERLANG_DOCS=	otp_html_R9C-2.tar.gz
 .endif
 
 USE_GMAKE=	yes

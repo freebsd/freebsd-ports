@@ -20,10 +20,10 @@ OTP_LIBS=	appmon-2.1.2 \
 		ic-4.2.6 \
 		inets-3.0.7 \
 		jinterface-1.2.1.2 \
-		kernel-2.9.6.3 \
-		megaco-2.1.1 \
+		kernel-2.9.6.6 \
+		megaco-2.1.3 \
 		mnemosyne-1.2.5 \
-		mnesia-4.1.11 \
+		mnesia-4.1.12 \
 		mnesia_session-1.1.5 \
 		observer-0.9.5 \
 		odbc-2.0 \
@@ -34,9 +34,9 @@ OTP_LIBS=	appmon-2.1.2 \
 		pman-2.4.1 \
 		runtime_tools-1.4 \
 		sasl-1.10 \
-		snmp-3.4.7 \
+		snmp-3.4.8 \
 		ssl-3.0.2 \
-		stdlib-1.12.7 \
+		stdlib-1.12.8 \
 		toolbar-1.1.0 \
 		tools-2.3 \
 		tv-2.0.5 \
