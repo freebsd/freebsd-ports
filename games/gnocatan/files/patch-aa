@@ -1,0 +1,23 @@
+--- client/Makefile.in.orig	Sun Jun 18 19:05:24 2000
++++ client/Makefile.in	Thu Jun 22 13:49:47 2000
+@@ -101,9 +101,9 @@
+ 
+ pixmapdir = $(datadir)/pixmaps/gnocatan
+ appicondir = $(datadir)/pixmaps
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ 
+-SUBDIRS = help
++SUBDIRS = # help
+ 
+ bin_PROGRAMS = gnocatan
+ 
+@@ -115,7 +115,7 @@
+ @ADMIN_GTK_SUPPORT_TRUE@ADMIN_GTK_FILES_INACTIVE = 
+ @ADMIN_GTK_SUPPORT_FALSE@ADMIN_GTK_FILES_INACTIVE = admin-gtk.c
+ 
+-INCLUDES =  	-I$(srcdir)/../common -I. 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	$(ADMIN_GTK)         -I$(includedir) $(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(srcdir)/../common -I. 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	$(ADMIN_GTK)         -I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ 
+ EXTRA_gnocatan_SOURCES = $(ADMIN_GTK_FILES_INACTIVE)

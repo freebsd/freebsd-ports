@@ -1,0 +1,33 @@
+bin/gnocatan
+bin/gnocatan-meta-server
+bin/gnocatan-server-console
+bin/gnocatan-server-gtk
+share/gnome/apps/Games/gnocatan.desktop
+share/gnome/gnocatan/5-6-player.game
+share/gnome/gnocatan/default.game
+share/gnome/gnocatan/four-islands.game
+share/gnome/gnocatan/seafarers.game
+share/gnome/gnocatan/small.game
+share/gnome/pixmaps/gnocatan/board.png
+share/gnome/pixmaps/gnocatan/bridge.png
+share/gnome/pixmaps/gnocatan/city.png
+share/gnome/pixmaps/gnocatan/cross.png
+share/gnome/pixmaps/gnocatan/desert.png
+share/gnome/pixmaps/gnocatan/develop.png
+share/gnome/pixmaps/gnocatan/dice.png
+share/gnome/pixmaps/gnocatan/field.png
+share/gnome/pixmaps/gnocatan/finish.png
+share/gnome/pixmaps/gnocatan/forest.png
+share/gnome/pixmaps/gnocatan/hill.png
+share/gnome/pixmaps/gnocatan/mountain.png
+share/gnome/pixmaps/gnocatan/pasture.png
+share/gnome/pixmaps/gnocatan/plain.png
+share/gnome/pixmaps/gnocatan/road.png
+share/gnome/pixmaps/gnocatan/sea.png
+share/gnome/pixmaps/gnocatan/settlement.png
+share/gnome/pixmaps/gnocatan/ship.png
+share/gnome/pixmaps/gnocatan/tick.png
+share/gnome/pixmaps/gnocatan/trade.png
+share/gnome/pixmaps/gnome-gnocatan.png
+@dirrm share/gnome/pixmaps/gnocatan
+@dirrm share/gnome/gnocatan
