@@ -1,0 +1,28 @@
+diff -urN functions/mime.php functions/mime.php
+--- functions/mime.php	2004-05-23 19:14:11.000000000 +0300
++++ functions/mime.php	2004-11-03 19:16:50.000000000 +0200
+@@ -602,13 +602,22 @@
+             }
+             $iLastMatch = $i;
+             $j = $i;
+-            $ret .= $res[1];
++            if ($htmlsave) {
++                $ret .= htmlspecialchars($res[1]);
++            } else {
++                $ret .= $res[1];
++            }
+             $encoding = ucfirst($res[3]);
+             switch ($encoding)
+             {
+             case 'B':
+                 $replace = base64_decode($res[4]);
+-                $ret .= charset_decode($res[2],$replace);
++                if ($utfencode) {
++                    $replace = charset_decode($res[2],$replace);
++                } elseif ($htmlsave) {
++                    $replace = htmlspecialchars($replace);
++                }
++                $ret .= $replace;
+                 break;
+             case 'Q':
+                 $replace = str_replace('_', ' ', $res[4]);
