@@ -45,7 +45,7 @@ etc/cyrus.conf.dist
 @unexec if cmp -s %D/etc/imapd.conf %D/etc/imapd.conf.dist; then rm -f %D/etc/imapd.conf; fi
 etc/imapd.conf.dist
 @exec [ -f %B/imapd.conf ] || cp %B/%f %B/imapd.conf
-etc/rc.d/imapd.sh.sample
+etc/rc.d/imapd.sh
 include/cyrus/acl.h
 include/cyrus/assert.h
 include/cyrus/auth.h

@@ -21,7 +21,7 @@ prefix=%%PREFIX%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE 
 #
-cyrus_imapd_enable="YES"				# Enable imapd
+cyrus_imapd_enable="NO"				# Enable imapd
 #cyrus_imapd_program="${prefix}/cyrus/bin/master"	# Location of imapd
 cyrus_imapd_flags="-d"				# Flags to imapd program
 
