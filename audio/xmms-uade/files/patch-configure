@@ -1,0 +1,17 @@
+--- configure	Wed Jun  5 14:46:28 2002
++++ configure	Sun Oct 27 22:36:31 2002
+@@ -139,10 +139,10 @@
+     -e "s|{UADEVERSION}|$VERSION|" \
+     osdep/uadeconfig-unix.h.in > osdep/uadeconfig.h
+ 
+-GLIBFLAGS=`glib-config --cflags`
+-GLIBLIBS=`glib-config --libs`
+-GTKFLAGS=`gtk-config --cflags`
+-GTKLIBS=`gtk-config --libs`
++GLIBFLAGS=`glib12-config --cflags`
++GLIBLIBS=`glib12-config --libs`
++GTKFLAGS=`gtk12-config --cflags`
++GTKLIBS=`gtk12-config --libs`
+ XMMSFLAGS=`xmms-config --cflags`
+ XMMSLIBS=`xmms-config --libs`
+ INCLUDEFLAG="-I$includedir"

@@ -305,6 +305,7 @@
     SUBDIR += xmms-sndstretch
     SUBDIR += xmms-speex
     SUBDIR += xmms-tfmx
+    SUBDIR += xmms-uade
     SUBDIR += xmms-volnorm
     SUBDIR += xmp
     SUBDIR += xmpeg3
