@@ -1,0 +1,156 @@
+# The following is a security patch for rxvt, it (hopefully) avoids problems
+# with unauthorized users obtaining root.
+#
+# Based upon code provided by Marc Ewing (marc@redhat.com) for a previous
+# version of rxvt.
+
+*** rxvt.h	Sat Feb 19 09:41:52 1994
+--- rxvt.h	Wed Jan 10 23:42:09 1996
+***************
+*** 21,23 ****
+--- 21,27 ----
+  extern void clean_exit(int);
+  extern void cleanutent(void);
+  extern void makeutent(char *);
++ 
++ void save_privs(void);
++ void get_privs(void);
++ void release_privs(void);
+*** rxvt.c	Fri Aug  5 08:52:07 1994
+--- rxvt.c	Wed Jan 10 23:45:04 1996
+***************
+*** 45,50 ****
+--- 45,54 ----
+    int i;
+    char *shell;
+    char **com_argv;
++ 
++   /* Save and give up setuid/setgid privileges */
++   save_privs();
++   release_privs();
+    
+    for (i = 0; i < argc; i++)
+      if (strcmp(argv[i],"-e") == 0)
+*** command.c	Thu Oct 20 07:35:44 1994
+--- command.c	Wed Jan 10 23:46:04 1996
+***************
+*** 222,227 ****
+--- 222,247 ----
+  }
+  #endif
+  
++ static uid_t saved_uid;
++ static gid_t saved_gid;
++ 
++ void save_privs()
++ {
++     saved_uid = geteuid();
++     saved_gid = getegid();
++ }
++ 
++ void get_privs()
++ {
++     seteuid(saved_uid);
++     seteuid(saved_gid);
++ }
++ 
++ void release_privs()
++ {
++     seteuid(getuid());
++     setegid(getgid());
++ }
+  
+  /*  Catch a SIGCHLD signal and exit if the direct child has died.
+   */
+***************
+*** 337,344 ****
+--- 357,366 ----
+  	gid = gr->gr_gid;
+        else
+  	gid = -1;
++       get_privs();
+        fchown(ttyfd,uid,gid);
+        fchmod(ttyfd,0600);
++       release_privs();
+  #endif
+  #ifdef TIOCCONS
+       if (console) 
+*** utmp.c	Mon Oct  3 17:47:56 1994
+--- utmp.c	Wed Jan 10 23:48:56 1996
+***************
+*** 71,79 ****
+--- 71,81 ----
+    extern char ttynam[];
+    extern struct stat ttyfd_stat;
+  
++   get_privs();
+    chmod(ttynam,ttyfd_stat.st_mode);
+  
+    chown(ttynam,ttyfd_stat.st_uid,ttyfd_stat.st_gid);
++   release_privs();
+  #endif
+    if(madeutent)
+      cleanutent();
+***************
+*** 166,171 ****
+--- 168,174 ----
+  {
+    FILE *utmp;
+  
++   get_privs();
+    if((utmp = fopen(UTMP,"r+")) == NULL)
+      return -1;
+    utmp_pos = get_tslot(ttyname) * sizeof(struct utmp);
+***************
+*** 174,179 ****
+--- 177,183 ----
+    fseek(utmp,utmp_pos,0);
+    fwrite((char *)u, sizeof(struct utmp),1,utmp);
+    fclose(utmp);
++   release_privs();
+    madeutent = 1;
+    return(utmp_pos);
+  }
+***************
+*** 250,259 ****
+--- 254,265 ----
+  int write_utmp(struct utmp * u) 
+  {
+    int pos;
++   get_privs();
+    utmpname(UTMP);
+    setutent();
+    pututline(u);
+    endutent();
++   release_privs();
+    pos = (int)NULL;
+    madeutent = 1;
+    return(pos);
+***************
+*** 305,311 ****
+  {
+    int pid;
+    struct utmp *u;
+!   
+    utmpname(UTMP);
+    setutent();
+    pid = getpid();
+--- 311,318 ----
+  {
+    int pid;
+    struct utmp *u;
+! 
+!   get_privs();
+    utmpname(UTMP);
+    setutent();
+    pid = getpid();
+***************
+*** 333,338 ****
+--- 340,346 ----
+  	  endutent();
+  	}
+      }
++   release_privs();
+  }
+  
+  #endif /* BSD */
