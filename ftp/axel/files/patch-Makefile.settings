@@ -1,0 +1,32 @@
+--- Makefile.settings.orig	Mon Jun 18 01:18:20 2001
++++ Makefile.settings	Sun Aug  5 23:40:00 2001
+@@ -7,10 +7,9 @@
+ 
+ # File locations
+ #
+-PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+-ETCDIR=/etc
+-MANDIR=$(PREFIX)/share/man
++ETCDIR=$(PREFIX)/etc
++MANDIR=$(PREFIX)/man
+ LOCALE=$(PREFIX)/share/locale
+ 
+ # NOTE: Disabling an option means commenting out the specific line. Changing
+@@ -26,7 +25,7 @@
+ # will make the binary 4KB larger. You also have to tell where the
+ # translations should be installed.
+ #
+-I18N=1
++#I18N=1
+ 
+ # Disabling this converts axel to a simple downloader like wget, without
+ # support for multiple connections. Do it if you like small programs. ;)
+@@ -42,3 +41,7 @@
+ # Necessary for package creation
+ #
+ DESTDIR=
++
++#
++# Some OS'es don't have getopt_long
++#GETOPTLONG=1
