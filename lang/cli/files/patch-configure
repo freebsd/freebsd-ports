@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure	2003/04/25 08:43:30	1.1
++++ configure	2003/04/25 08:44:09
+@@ -2041,7 +2041,7 @@
+ 
+ PTHREAD_OPTIONS=
+ 
+-CFLAGS="-g -O2 -Wall -fPIC -DPIC"
++CFLAGS="$CFLAGS -Wall -fPIC -DPIC"
+ 
+ if test "$FEATURE_CASE_SENSITIVE_FS" = "1"; then
+     CFLAGS="$CFLAGS -DFEATURE_CASE_SENSITIVE_FILESYSTEM"
