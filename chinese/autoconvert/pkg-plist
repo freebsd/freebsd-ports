@@ -6,7 +6,6 @@ lib/libhz.a
 lib/libhz.so
 lib/libhz.so.0
 share/autoconvert/ChangeLog
-share/autoconvert/GPL
 share/autoconvert/LICENSE
 share/autoconvert/Readme
 share/autoconvert/TODO

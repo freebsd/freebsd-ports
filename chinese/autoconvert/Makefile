@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	autoconvert
-PORTVERSION=	0.3.8
+PORTVERSION=	0.3.12
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/ \
-		http://www.csie.nctu.edu.tw/~yinjieh/
+MASTER_SITES=	http://www.csie.nctu.edu.tw/~yinjieh/ \
+		ftp://banyan.dlut.edu.cn/pub/PEOPLE/saka/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
@@ -24,7 +24,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libhz.so.0.0 ${PREFIX}/lib/libhz.so.0
 	cd ${PREFIX}/lib; ${LN} -sf libhz.so.0 libhz.so
 	${MKDIR} ${PREFIX}/share/autoconvert
-.for i in ChangeLog GPL LICENSE Readme TODO Thanks Version hz.txt procmailrc.example shed.big5 shed.gb shed.uni shed.utf7 shed.utf8
+.for i in ChangeLog LICENSE Readme TODO Thanks Version hz.txt procmailrc.example shed.big5 shed.gb shed.uni shed.utf7 shed.utf8
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/autoconvert
 .endfor
 
