@@ -3,31 +3,21 @@
 # Date created:				8 June 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/06/16 16:47:36 billf Exp $
 #
 
-DISTNAME=	rtsp_proxy
-PKGNAME=	${DISTNAME}-1.0
+DISTNAME=	SS1.0.1
+PKGNAME=	rtsp_proxy-1.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.apple.com/Quicktime/developers/
-EXTRACT_SUFX=	.src.sh
+MASTER_SITES=	http://www.streamingserver.org/priss/
+EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	richard@homemail.com
 
-NO_CDROM=       "Apple has a complex license for this software."
-WRKSRC=		${WRKDIR}/${DISTNAME}/proxy_unix
+WRKSRC=		${WRKDIR}/${DISTNAME}/QTProxy/proxy_unix
 ALL_TARGET=
 
 proxyunix =     ${WRKSRC}/proxy_unix.c
-
-post-patch:
-	@ ${MV} ${proxyunix} ${proxyunix}.bak
-	@ ${SED} -e 's#/etc#${PREFIX}/etc#' < ${proxyunix}.bak > ${proxyunix}
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && yes "I AGREE" | ${SH} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/rtsp_proxy ${PREFIX}/sbin
@@ -35,6 +25,6 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/../qts_proxy.conf ${PREFIX}/etc/
 
 post-install:
-	@ ${CAT} ${PKGMESSAGE}
+	@ ${CAT} ${PKGMESSAGE} | sed -e 's,@PREFIX@,${PREFIX},g'
 
 .include <bsd.port.mk>
