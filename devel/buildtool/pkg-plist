@@ -1,34 +1,33 @@
 @comment $FreeBSD$
 bin/buildtool
-bin/buildtool-0
-libexec/buildtool-0/bt_config
-libexec/buildtool-0/bt_dist
-libexec/buildtool-0/bt_doc
-libexec/buildtool-0/bt_lint
-libexec/buildtool-0/bt_logic
-libexec/buildtool-0/bt_pkgflags
-libexec/buildtool-0/bt_sh
-libexec/buildtool-0/bt_swcgen
-libexec/buildtool-0/bt_wizard
-libexec/buildtool-0/depconv
-libexec/buildtool-0/oodate
-share/buildtool-0/bt_config/base.subr
-share/buildtool-0/bt_config/pkgconfig.subr
-share/buildtool-0/bt_config/pthread.subr
-share/buildtool-0/bt_config/x11.subr
-share/buildtool-0/bt_logic/archive.subr
-share/buildtool-0/bt_logic/convert.subr
-share/buildtool-0/bt_logic/depend.subr
-share/buildtool-0/bt_logic/library.subr
-share/buildtool-0/bt_logic/null.subr
-share/buildtool-0/bt_logic/output.subr
-share/buildtool-0/bt_logic/program.subr
-share/buildtool-0/bt_logic/qt_program.subr
-share/buildtool-0/bt_logic/shlib.subr
-share/buildtool-0/bt_logic/texinfo.subr
-share/buildtool-0/templates/README.bt
-share/buildtool-0/templates/bt_config.conf.in
-share/buildtool-0/templates/pkgflags
+libexec/buildtool/bt_config
+libexec/buildtool/bt_dist
+libexec/buildtool/bt_doc
+libexec/buildtool/bt_lint
+libexec/buildtool/bt_logic
+libexec/buildtool/bt_pkgflags
+libexec/buildtool/bt_sh
+libexec/buildtool/bt_swcgen
+libexec/buildtool/bt_wizard
+libexec/buildtool/depconv
+share/buildtool/bt_config/base.subr
+share/buildtool/bt_config/pkgconfig.subr
+share/buildtool/bt_config/pthread.subr
+share/buildtool/bt_config/x11.subr
+share/buildtool/bt_logic/archive.subr
+share/buildtool/bt_logic/convert.subr
+share/buildtool/bt_logic/depend.subr
+share/buildtool/bt_logic/library.subr
+share/buildtool/bt_logic/null.subr
+share/buildtool/bt_logic/output.subr
+share/buildtool/bt_logic/program.subr
+share/buildtool/bt_logic/qt_program.subr
+share/buildtool/bt_logic/runscript.subr
+share/buildtool/bt_logic/shlib.subr
+share/buildtool/bt_logic/texinfo.subr
+share/buildtool/templates/README.bt
+share/buildtool/templates/bt_config.conf.in
+share/buildtool/templates/pkgflags
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/DIFFS.bt_sh
@@ -36,8 +35,8 @@ share/buildtool-0/templates/pkgflags
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
 @dirrm %%DOCSDIR%%
-@dirrm libexec/buildtool-0
-@dirrm share/buildtool-0/bt_config
-@dirrm share/buildtool-0/bt_logic
-@dirrm share/buildtool-0/templates
-@dirrm share/buildtool-0
+@dirrm libexec/buildtool
+@dirrm share/buildtool/bt_config
+@dirrm share/buildtool/bt_logic
+@dirrm share/buildtool/templates
+@dirrm share/buildtool
