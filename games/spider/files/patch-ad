@@ -1,0 +1,11 @@
+--- globals.h.orig	Sun Sep 29 02:26:08 2002
++++ globals.h	Sun Sep 29 02:26:23 2002
+@@ -96,6 +96,8 @@
+ Bool	can_get_help_files();
+ #endif
+ 
++#ifndef __FreeBSD__
+ extern char	*malloc();
+ extern char	*calloc();
+ extern char	*realloc();
++#endif
