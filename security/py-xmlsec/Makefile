@@ -18,7 +18,6 @@ COMMENT=	A set of Python bindings for XML Security Library
 
 LIB_DEPENDS=	xmlsec1.3:${PORTSDIR}/security/xmlsec1
 
-USE_REINPLACE=	yes
 USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
