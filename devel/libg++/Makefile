@@ -27,6 +27,8 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
 USE_NEWGCC=	yes
 
+BROKEN=		"Does not build - compiler error"
+
 pre-configure:
 	@${CP} -p ${FILESDIR}/Makefile.libg++ ${WRKSRC}/Makefile
 
