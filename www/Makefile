@@ -122,7 +122,6 @@
     SUBDIR += libgtkhtml
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
-    SUBDIR += linbot
     SUBDIR += links
     SUBDIR += linux-flashplugin
     SUBDIR += linux-lesstif-ns
