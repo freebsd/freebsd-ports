@@ -36,9 +36,14 @@ SCRIPTS = benchclock crystalclock f_crystalclock f_glclock		\
 
 TEXTURES = marble.ppm sky.ppm wood.ppm
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CXXFLAGS+=	-O3 -fexpensive-optimizations -ffast-math \
+CXXFLAGS+=	-O3 -fexpensive-optimizations \
 		-fomit-frame-pointer -fforce-mem -fforce-addr
+.if (${ARCH} != "alpha")
+CXXFLAGS+=	-ffast-math
+.endif
 .endif
 
 do-install:
@@ -51,4 +56,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/X11/glclock
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
