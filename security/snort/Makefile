@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -25,7 +25,7 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .endif
 
@@ -58,7 +58,7 @@ pre-configure:
 
 DOCS=	AUTHORS NEWS README.csv BUGS README README.database \
 	CREDITS README.FLEXRESP RULES.todo FAQ \
-	SnortUsersManual.pdf README.PLUGINS USAGE
+	SnortUsersManual.pdf README.PLUGINS USAGE README.thresholding
 
 post-install:
 	${MKDIR} ${DATADIR}
