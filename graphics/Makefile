@@ -33,6 +33,7 @@
     SUBDIR += bmeps
     SUBDIR += bugle
     SUBDIR += cadubi
+    SUBDIR += cairo
     SUBDIR += cal3d
     SUBDIR += camediaplay
     SUBDIR += cbrpager
