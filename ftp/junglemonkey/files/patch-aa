@@ -1,0 +1,29 @@
+--- configure.orig	Thu May 11 14:13:48 2000
++++ configure	Thu May 18 10:47:51 2000
+@@ -4706,7 +4706,7 @@
+ 		    JM_GLADE_FILE="jm-gnome.glade"
+ 		    JM_GNOME_PIXMAP_FILE="jm-logo.png"
+ 		    JM_GNOME_DESKTOP_FILE="jm.desktop"
+-		    JM_HELPDIR="/gnome/help/jm/C"
++		    JM_HELPDIR="/help/jm/C"
+ 		  
+         	else
+ 	    		if test "x$withval" = xno; then
+@@ -4930,7 +4930,7 @@
+ 		    JM_GLADE_FILE="jm-gnome.glade"
+ 		    JM_GNOME_PIXMAP_FILE="jm-logo.png"
+ 		    JM_GNOME_DESKTOP_FILE="jm.desktop"
+-		    JM_HELPDIR="/gnome/help/jm/C"
++		    JM_HELPDIR="/help/jm/C"
+ 		  
+ 	      else
+ 	        echo "$ac_t""no" 1>&6
+@@ -4962,7 +4962,7 @@
+ 		    JM_GLADE_FILE="jm-gnome.glade"
+ 		    JM_GNOME_PIXMAP_FILE="jm-logo.png"
+ 		    JM_GNOME_DESKTOP_FILE="jm.desktop"
+-		    JM_HELPDIR="/gnome/help/jm/C"
++		    JM_HELPDIR="/help/jm/C"
+ 		  
+ 	      else
+ 	        echo "$ac_t""not found" 1>&6

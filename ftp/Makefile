@@ -14,6 +14,7 @@
     SUBDIR += greed
     SUBDIR += gtm
     SUBDIR += jmirror
+    SUBDIR += junglemonkey
     SUBDIR += lftp
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
