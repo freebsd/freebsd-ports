@@ -1,7 +1,7 @@
-*** Makefile.WAS	Tue Oct 28 16:40:56 1997
---- Makefile	Tue Oct 28 16:40:59 1997
+*** Makefile.orig	Thu Feb 25 23:17:38 1999
+--- Makefile	Sat Sep 25 17:37:29 1999
 ***************
-*** 1,19 ****
+*** 1,32 ****
   #  Makefile for LinCity   (c)  I J Peters 1995,1996.
   
   #       This is where the binaries for LinCity will be placed.
@@ -21,7 +21,20 @@
   LC_MANSUF = 6
   #          for solaris you might choose...
   #          LC_LIBDIR = /opt/lcity/man/man6
---- 1,19 ----
+  
+  
+  # CC = egcs
+! CC = gcc
+  
+! # EXTRA_OPTS = -fomit-frame-pointer -fstrength-reduce -ffast-math
+  # EXTRA_OPTS = -fstrength-reduce -ffast-math
+  WARN_OPTS  = -Wall -Wpointer-arith -Wcast-align -Winline
+  # DEBUG_OPTS =-g
+! CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\"
+  # -fno-strength-reduce
+  # PROFF = -pg
+  # PROFL = -lc
+--- 1,32 ----
   #  Makefile for LinCity   (c)  I J Peters 1995,1996.
   
   #       This is where the binaries for LinCity will be placed.
@@ -41,20 +54,16 @@
   LC_MANSUF = 6
   #          for solaris you might choose...
   #          LC_LIBDIR = /opt/lcity/man/man6
-***************
-*** 23,29 ****
-  EXTRA_OPTS = -fstrength-reduce -ffast-math
+  
+  
+  # CC = egcs
+! # CC = gcc
+  
+! EXTRA_OPTS = -fomit-frame-pointer -fstrength-reduce -ffast-math
+  # EXTRA_OPTS = -fstrength-reduce -ffast-math
   WARN_OPTS  = -Wall -Wpointer-arith -Wcast-align -Winline
   # DEBUG_OPTS =-g
-! CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\"
-  # -fno-strength-reduce
-  # PROFF = -pg
-  # PROFL = -lc
---- 23,29 ----
-  EXTRA_OPTS = -fstrength-reduce -ffast-math
-  WARN_OPTS  = -Wall -Wpointer-arith -Wcast-align -Winline
-  # DEBUG_OPTS =-g
-! CFLAGS = -O2 $(DEBUG_OPTS) $(EXTRA_OPTS) $(WARN_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\" -I${X11BASE}/include
+! CFLAGS += $(EXTRA_OPTS) -DLIBDIR=\"$(LC_LIBDIR)\" -I${X11BASE}/include
   # -fno-strength-reduce
   # PROFF = -pg
   # PROFL = -lc

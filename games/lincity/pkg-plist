@@ -368,6 +368,7 @@ lib/lincity/icons/tover1-on.csi
 lib/lincity/icons/tover2-off.csi
 lib/lincity/icons/tover2-on.csi
 lib/lincity/icons/green.csi
+lib/lincity/help/ask-dir.hlp
 lib/lincity/help/msb-power.hlp
 lib/lincity/help/index.hlp
 lib/lincity/help/pause.hlp
@@ -503,6 +504,8 @@ lib/lincity/messages/windmillup.mes
 lib/lincity/opening/bad_times.scn
 lib/lincity/opening/text2
 lib/lincity/opening/alt-8x8
+lib/lincity/opening/winfont_16x16.fnt
+lib/lincity/opening/winfont_8x8.fnt
 lib/lincity/opening/text1
 lib/lincity/opening/do_image
 lib/lincity/opening/8x8thin
