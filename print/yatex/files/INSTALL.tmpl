@@ -49,17 +49,16 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 	for file in `${ECHO}  ${infofiles} | ${SED} "s,:, ,g"`; do
 		install-info ${infodir}/${file} ${infodir}/dir
 	done
-	if [ X'%ADDSITESTART%' != X ]; then
-	if  [ "`${GREP} \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
-		${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
-		  ${sitestartdir}/site-start.el > ${sitestartdir}/site-start.el.bak
-		${CP} ${sitestartdir}/site-start.el.bak ${sitestartdir}/site-start.el
-	fi
-	${ECHO} "Adding entry for \"${pkgname}\" to ${sitestartdir}/site-start.el"
-	${ECHO} "${OptionStart}" >> ${sitestartdir}/site-start.el
-	/usr/bin/printf "%ADDSITESTART%" | \
-	    ${SED} "s/^ //" >> ${sitestartdir}/site-start.el
-	${ECHO} "${OptionEnd}" >> ${sitestartdir}/site-start.el
+	if [ X"${sitestartdir}" != X ] && \
+	    [ "`${GREP} \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
+	    ${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
+	    ${sitestartdir}/site-start.el > ${sitestartdir}/site-start.el.bak
+	    ${CP} ${sitestartdir}/site-start.el.bak ${sitestartdir}/site-start.el
+	    ${ECHO} "Adding entry for \"${pkgname}\" to ${sitestartdir}/site-start.el"
+	    ${ECHO} "${OptionStart}" >> ${sitestartdir}/site-start.el
+	    /usr/bin/printf "%ADDSITESTART%" | \
+		${SED} "s/^ //" >> ${sitestartdir}/site-start.el
+	    ${ECHO} "${OptionEnd}" >> ${sitestartdir}/site-start.el
 	fi
 	exit 0
 else
