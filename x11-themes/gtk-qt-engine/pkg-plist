@@ -1,5 +1,6 @@
 lib/gtk-2.0/%%GTK_VER%%/engines/libqtengine.a
 lib/gtk-2.0/%%GTK_VER%%/engines/libqtengine.so
+share/gtk-qt-engine/kde-index.theme
 share/themes/Qt/gtk-2.0/gtkrc
 @cwd %%LOCALBASE%%
 lib/kde3/kcm_kcmgtk.la
@@ -9,3 +10,4 @@ share/applications/kde/kcmgtk-xdg.desktop
 @cwd %%X11BASE%%
 @dirrm share/themes/Qt/gtk-2.0
 @dirrm share/themes/Qt
+@dirrm share/gtk-qt-engine
