@@ -12,15 +12,28 @@ if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
 fi
 
 cd $dir || exit 1
-echo -n "maintained by: "
-make maintainer
-echo -n "build started at "
-date
+echo "maintained by: $(make maintainer)"
+echo "build started at $(date)"
 echo "================================================================"
+
+xvfb=0
+if which -s Xvfb; then
+  xvfb=1
+  pid=$$
+  X11BASE=$(which Xvfb | sed -e 's./bin/Xvfb..')
+  Xvfb :${pid} -fp ${X11BASE}/lib/X11/fonts/misc &
+  DISPLAY=:${pid}
+  export DISPLAY
+fi
+
 if make package; then
   echo "0" > /tmp/status
 else
   echo "1" > /tmp/status
+fi
+
+if [ ${xvfb} = 1 ]; then
+  kill $(jobid %1)
 fi
 
 echo "================================================================"
