@@ -7,6 +7,7 @@
 
 PORTNAME=	XML_RPC
 DISTVERSION=	1.2.0RC6
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -22,6 +23,14 @@ TESTS=		protoport.php test_Dump.php
 post-extract:
 	@${MKDIR} ${WRKSRC}/RPC
 	@${MV} ${WRKSRC}/Server.php ${WRKSRC}/Dump.php ${WRKSRC}/RPC
+
+post-patch:
+.for file in ${FILES}
+	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/${file}
+.endfor
+.for file in ${TESTS}
+	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/tests/${file}
+.endfor
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
