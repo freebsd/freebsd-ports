@@ -1,7 +1,3 @@
-GCC 2.8.1 is the latest release of the GNU compiler suite.
-It is a port for now, until its stableness and ability to produce
-a working kernel and "make world" is proven.
-
 C++ support, and in particular template support, is vastly improved over
 gcc-2.7.  G++ 2.8.1 also compiles SGI's offical reference implimentation
 of the STL.
