@@ -1,0 +1,6 @@
+include/X11/Xcursor/Xcursor.h
+lib/libXcursor.a
+lib/libXcursor.la
+lib/libXcursor.so
+lib/libXcursor.so.1
+libdata/pkgconfig/xcursor.pc

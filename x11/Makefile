@@ -77,6 +77,7 @@
     SUBDIR += libSM
     SUBDIR += libX11
     SUBDIR += libXau
+    SUBDIR += libXcursor
     SUBDIR += libXdmcp
     SUBDIR += libXext
     SUBDIR += libXfont
