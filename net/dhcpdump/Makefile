@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dhcpdump
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
