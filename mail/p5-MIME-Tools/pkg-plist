@@ -17,6 +17,7 @@ lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser/Filer.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser/Reader.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser/Results.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/Tools.pm
+lib/perl5/site_perl/%%PERL_VER%%/MIME/WordDecoder.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/Words.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools
