@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- anal/pvoc/makef.orig	Sun Jul 14 16:02:49 2002
++++ anal/pvoc/makef	Sun Jul 14 16:02:49 2002
+@@ -7,8 +7,10 @@ T = ../..
+ OBJS =  main.o $T/pvanal.o $T/pvxanal.o $T/pvfileio.o $T/filopen.o \
+         $T/sfheader.o $T/mxfft.o \
+ 	$T/soundin.o $T/ulaw.o $T/aiff.o $T/wave.o $T/ieee80.o $T/memalloc.o \
+-	$T/pvoc.o $T/fft.o $T/dsputil.o $T/window.o $T/winX11.o $T/winascii.o \
++	$T/pvoc.o $T/fft.o $T/dsputil.o $T/window.o $T/winascii.o \
+ 	$T/winEPS.o $T/aifc.o $T/getstring.o
++
++#	$T/pvoc.o $T/fft.o $T/dsputil.o $T/window.o $T/winX11.o $T/winascii.o \
+ 
+ pvocs:	pvanal
+ 

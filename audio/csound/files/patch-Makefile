@@ -1,17 +1,18 @@
---- Makefile.orig	Sat Dec  8 08:00:11 2001
-+++ Makefile	Tue Jan 22 16:15:27 2002
-@@ -1,18 +1,18 @@
+$FreeBSD$
+
+--- Makefile.orig	Sun Jul 14 16:03:01 2002
++++ Makefile	Sun Jul 14 16:49:45 2002
+@@ -1,17 +1,17 @@
  #								Csound Makefile
  # edit the following definitions according to need:
  
 -INCLUDE	= /usr/local/include
 -LIB	= /usr/local/lib
 -DEST	= /usr/local/bin
+-MAN	= /usr/local/man
 +INCLUDE	= $(PREFIX)/include
 +LIB	= $(PREFIX)/lib
 +DEST	= $(PREFIX)/bin
- SHARE	= /usr/share/csound
--MAN	= /usr/local/man
 +MAN	= $(PREFIX)/man
  MAN1	= $(MAN)/man1
  CAT1	= $(MAN)/cat1
@@ -24,36 +25,34 @@
  # choose either -
  #	CDEP =			for UNIX
  #	COBS = $(COBJS)
-@@ -24,7 +24,8 @@
+@@ -23,7 +23,7 @@
  #	.c.o:
  #		$(CC) $(CFLAGS) -c $*.c -o $@
  
--DEFINES = -DWINDOWS -DRTAUDIO -DSFIRCAM -DSYS5 -DLINUX -DPIPES -DMACROS -DTCLTK
-+DEFINES = -DWINDOWS -DRTAUDIO -DSFIRCAM -DSYS5 -DPIPES -DMACROS -DLINUX -DFREE_BSD -DTCLTK
-+
+-DEFINES = -DWINDOWS -DRTAUDIO -DSFIRCAM -DSYS5 -DLINUX -DPIPES -DMACROS -DTCLTK -DIV_SCHED -DRWD_DBFS
++DEFINES = -DRTAUDIO -DSFIRCAM -DSYS5 -DLINUX -DPIPES -DMACROS -DTCLTK -DIV_SCHED -DRWD_DBFS -DFREE_BSD
  # choose any of -
  #	-DSYS5	    invoke System 5 headers (e.g. 'string.h' for 'strings.h')
  #	-DWINDOWS   include window system calls (X11, SGI, or FG graphics)
-@@ -52,7 +53,8 @@
- # Be sure to include 'LINUXaudio.o' under 'AUDOBJ' below as well.
- #                                  --  Jonathan Mohr  1995 Oct 17
+@@ -49,7 +49,7 @@
+ # (e.g., Linux on SPARC [not tested]), you should also define -
+ #       -DLINUX_BE      Linux audio device handler for big-endian samples
  
--CFLAGS = -O2 -march=i686 -malign-loops=4 -malign-jumps=4 -DWITHx87 $(RPM_OPT_FLAGS) $(DEFINES)
+-CFLAGS = -O2 -malign-loops=4 -malign-jumps=4 -ffast-math -fomit-frame-pointer -finline-functions -funroll-loops -DWITHx87 $(RPM_OPT_FLAGS) $(DEFINES)
 +CFLAGS = $(CPPFLAGS) $(LDFLAGS) $(DEFINES)
-+
  #	-O		Simple optimisation
  #	-O2		to be more specific about the optimization level
  #	-f		compile single-precision floats (4.3,VAX,DEC-RISC)
-@@ -76,7 +78,7 @@
+@@ -84,7 +84,7 @@
  #	-I/usr/openwin/include		Solaris openwin interface
  #	-I/usr/demo/SOUND/include	Solaris sound interface
- 
+ #       -I/usr/X11R6/include            non-RedHat distributions of Linux
 -LIBS =	-L /usr/X11R6/lib -lX11 -ltcl -ltk -lm 
 +LIBS =	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -ltcl83 -ltk83 -lm
  #	-lefence
  #	-lm		    		required
  #	-lX11				for X window calls
-@@ -242,7 +244,7 @@
+@@ -255,7 +255,7 @@
  all:		$(PROGS) $(SUBDIRS)            	#must be run in this order
  
  csound:		$(COBJS) $(CSUM) $(CDEP) csound.xmg
@@ -62,24 +61,3 @@
  
  TAGS:	$(CSRCS) $(HDRS)
  		etags $(CSRCS) $(HDRS)
-@@ -341,13 +343,13 @@
- 		cd midifils; rm -f *.bak *~
- 		cd cscofils; rm -f *.bak *~
- 
--CSLinux.bin.tgz: /usr/local/bin/csound /usr/local/bin/hetro \
--	/usr/local/bin/lpanal /usr/local/bin/pvanal /usr/local/bin/scot \
--	/usr/local/bin/scsort /usr/local/bin/extract /usr/local/bin/sndinfo \
--	/usr/local/bin/scale /usr/local/bin/mixer /usr/local/bin/extractor \
--	/usr/local/bin/envext /usr/local/bin/pvlook /usr/local/bin/sdif2ad \
--	/usr/local/bin/dnoise /usr/local/bin/srconv
--	(cd /usr/local/bin; tar cvzf ~/csound/CSLinux.bin.tgz csound \
-+CSLinux.bin.tgz: ${PREFIX}/bin/csound ${PREFIX}/bin/hetro \
-+	${PREFIX}/bin/lpanal ${PREFIX}/bin/pvanal ${PREFIX}/bin/scot \
-+	${PREFIX}/bin/scsort ${PREFIX}/bin/extract ${PREFIX}/bin/sndinfo \
-+	${PREFIX}/bin/scale ${PREFIX}/bin/mixer ${PREFIX}/bin/extractor \
-+	${PREFIX}/bin/envext ${PREFIX}/bin/pvlook ${PREFIX}/bin/sdif2ad \
-+	${PREFIX}/bin/dnoise ${PREFIX}/bin/srconv
-+	(cd ${PREFIX}/bin; tar cvzf ~/csound/CSLinux.bin.tgz csound \
- 	hetro lpanal pvanal scot scsort extract sndinfo scale mixer \
- 	extractor envext pvlook sdif2ad dnoise srconv)
- 

@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- anal/lpc/makef.orig	Sun Jul 14 16:02:49 2002
++++ anal/lpc/makef	Sun Jul 14 16:02:48 2002
+@@ -6,8 +6,10 @@ T = ../..
+ 
+ OBJS =   main.o $T/lpanal.o $T/lptrkfns.o $T/filopen.o $T/sfheader.o \
+ 	$T/soundin.o $T/ulaw.o $T/aiff.o $T/wave.o $T/ieee80.o \
+-        $T/memalloc.o $T/window.o $T/winX11.o $T/winascii.o $T/winEPS.o \
++        $T/memalloc.o $T/window.o $T/winascii.o $T/winEPS.o \
+         $T/aifc.o $T/getstring.o
++
++#	$T/memalloc.o $T/window.o $T/winX11.o $T/winascii.o $T/winEPS.o \
+ 
+ lpcs:		lpanal
+ 

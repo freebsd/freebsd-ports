@@ -1,11 +1,13 @@
---- aops.c.orig	Thu Jan  4 03:48:26 2001
-+++ aops.c	Thu Mar 15 06:26:31 2001
+$FreeBSD$
+
+--- aops.c.orig	Sun Jul 14 16:03:01 2002
++++ aops.c	Sun Jul 14 16:02:49 2002
 @@ -1,3 +1,4 @@
 +#include <sys/time.h>
- #include "cs.h"		/*					AOPS.C	*/
+ #include "cs.h"         /*                                      AOPS.C  */
  #include "aops.h"
  #include <math.h>
-@@ -421,8 +422,6 @@
+@@ -442,8 +443,6 @@ void ftsr(EVAL *p)              /**** ft
  #ifdef LINUX
  void rtclock(EVAL *p)
  {
