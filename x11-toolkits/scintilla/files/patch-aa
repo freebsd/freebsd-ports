@@ -1,15 +1,15 @@
 
 $FreeBSD$
 
---- makefile.orig	Thu Feb  1 10:12:22 2001
-+++ makefile	Fri Mar  2 11:12:31 2001
-@@ -5,38 +5,42 @@
+--- makefile.orig	Sun Apr 15 10:24:36 2001
++++ makefile	Tue Apr 17 14:04:58 2001
+@@ -5,10 +5,11 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
  .SUFFIXES: .cxx .o .h .a
 -CC = g++
 -AR = ar
-+CC ?= c++
++CC ?= g++
 +AR = $(CC) -shared
  
 -COMPLIB=../bin/scintilla.a
@@ -18,10 +18,8 @@ $FreeBSD$
  
  vpath %.h ../src ../include
  vpath %.cxx ../src
- 
- INCLUDEDIRS=-I ../include -I ../src
--CXXBASEFLAGS= -DGTK -DSCI_LEXER -W -Wall
-+CXXBASEFLAGS= -DGTK -DSCI_LEXER -W -Wall $(shell $(GTK_CONFIG) --cflags)
+@@ -17,20 +18,20 @@
+ CXXBASEFLAGS=-W -Wall -DGTK -DSCI_LEXER $(INCLUDEDIRS)
  
  ifdef DEBUG
 -CXXFLAGS=-DDEBUG $(CXXBASEFLAGS)
@@ -32,26 +30,28 @@ $FreeBSD$
  endif
  
  .cxx.o:
--	$(CC) `gtk-config --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
-+	$(CC) -DPIC -fPIC -fpic $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
+-	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $<
++	$(CC) -DPIC -fPIC -fpic $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $<
  
- LEXOBJS	=  LexAVE.o LexConf.o LexCPP.o LexHTML.o LexLua.o LexOthers.o \
- 	LexPascal.o LexPerl.o LexPython.o LexSQL.o LexVB.o
+ LEXOBJS	= LexAda.o LexAVE.o LexConf.o LexCPP.o LexHTML.o LexLua.o \
+ 	LexOthers.o LexPascal.o LexPerl.o LexPython.o LexSQL.o LexVB.o
  
  # The LEXOBJS have to be treated specially as the functions in them are not called from external code
  
 -all: $(COMPLIB) $(LEXOBJS)
 +all: $(COMPLIB) $(LEXRLIB)
  
- $(COMPLIB): DocumentAccessor.o WindowAccessor.o KeyWords.o Document.o CallTip.o \
+ clean:
+ 	rm -f *.o $(COMPLIB)
+@@ -42,7 +43,10 @@
  	ScintillaBase.o ContractionState.o Editor.o PropSet.o PlatGTK.o \
  	KeyMap.o LineMarker.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
- 	Style.o Indicator.o AutoComplete.o
+ 	RESearch.o Style.o Indicator.o AutoComplete.o
 -	$(AR) rc $@ $^
 +	$(AR) -o $@ $^
 +
 +$(LEXRLIB): $(LEXOBJS)
 +	$(AR) -o $@ $^
  
- AutoComplete.o: AutoComplete.cxx Platform.h AutoComplete.h
- CallTip.o: CallTip.cxx Platform.h CallTip.h
+ # Automatically generate header dependencies with "make deps"
+ include deps.mak

@@ -1,7 +1,6 @@
 include/scintilla/Accessor.h
 include/scintilla/KeyWords.h
 include/scintilla/Platform.h
-include/scintilla/PosRegExp.h
 include/scintilla/PropSet.h
 include/scintilla/SString.h
 include/scintilla/SciLexer.h
