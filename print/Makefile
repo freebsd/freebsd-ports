@@ -73,6 +73,10 @@
     SUBDIR += pdflib
     SUBDIR += pdq
     SUBDIR += perlftlib
+    SUBDIR += pips760
+    SUBDIR += pips770
+    SUBDIR += pips800
+    SUBDIR += pips820_3300
     SUBDIR += pkfonts118
     SUBDIR += pkfonts240
     SUBDIR += pkfonts300
