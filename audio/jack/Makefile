@@ -6,12 +6,13 @@
 
 PORTNAME=		jackit
 PORTVERSION=		0.94.0
+PORTREVISION=		1
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jackit
 DISTNAME=		jack-audio-connection-kit-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		arved@FreeBSD.org
 COMMENT=		JACK is a low-latency audio server
 
 LIB_DEPENDS=		portaudio.0:${PORTSDIR}/audio/portaudio \
@@ -36,5 +37,6 @@ post-patch:
 		${WRKSRC}/example-clients/Makefile.in
 	${REINPLACE_CMD} -e "s,-ldl,," ${WRKSRC}/jackd/Makefile.in \
 		${WRKSRC}/example-clients/Makefile.in
+	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/drivers/oss
 
 .include <bsd.port.mk>
