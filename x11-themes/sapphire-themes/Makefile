@@ -7,6 +7,7 @@
 
 PORTNAME=	sapphire-themes
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://jpj.net/~trevor/${PORTNAME}/
 EXTRACT_SUFX=	.tar
@@ -21,6 +22,12 @@ USE_X_PREFIX=	yes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+
+do-patch:
+	${PERL} -pi -e 's:~/\.:${X11BASE}/share/:g' \
+		${WRKDIR}/menu/default \
+		${WRKDIR}/themes/*.theme
+	${PERL} -pi -e 's:-15-:-12-:g' ${WRKDIR}/themes/*.theme
 
 do-install:
 	${MKDIR} ${X11BASE}/share/sapphire/themes/backgrounds/
