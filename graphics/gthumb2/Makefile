@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gthumb2
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.3
@@ -19,7 +19,7 @@ COMMENT=	An image viewer and browser for the GNOME 2 environment
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack libgnomeui libgnomeprintui
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui libgnomeprintui
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
