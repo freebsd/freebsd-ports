@@ -3,12 +3,12 @@
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.18 1998/10/10 01:11:18 vanilla Exp $
+# $Id: Makefile,v 1.19 1998/11/11 13:24:53 vanilla Exp $
 #
 
 DISTNAME=	icewm-0.9.16
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://berta.fri.uni-lj.si/~markom/icewm/devel/
+MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	Nakai@technologist.com
