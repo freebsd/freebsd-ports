@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.08.0
+PORTVERSION=	3.08.1
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:S/.0$//}/ \
-		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:S/.0$//}/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:S/.0$//}/
+MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:S/.1$//}/ \
+		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:S/.1$//}/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:S/.1$//}/
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER?=	eugos@gmx.net

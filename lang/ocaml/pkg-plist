@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/camlp4
 bin/camlp4o
 bin/camlp4o.opt
@@ -47,17 +46,22 @@ lib/ocaml/camlp4/camlp4_top.cma
 lib/ocaml/camlp4/camlp4o.cma
 lib/ocaml/camlp4/camlp4r.cma
 lib/ocaml/camlp4/extfold.cmi
+lib/ocaml/camlp4/extfold.cmx
 lib/ocaml/camlp4/extfold.mli
 lib/ocaml/camlp4/extfun.cmi
+lib/ocaml/camlp4/extfun.cmx
 lib/ocaml/camlp4/extfun.mli
 lib/ocaml/camlp4/fstream.cmi
+lib/ocaml/camlp4/fstream.cmx
 lib/ocaml/camlp4/fstream.mli
 lib/ocaml/camlp4/gramext.cmi
+lib/ocaml/camlp4/gramext.cmx
 lib/ocaml/camlp4/gramext.mli
 lib/ocaml/camlp4/gramlib.a
 lib/ocaml/camlp4/gramlib.cma
 lib/ocaml/camlp4/gramlib.cmxa
 lib/ocaml/camlp4/grammar.cmi
+lib/ocaml/camlp4/grammar.cmx
 lib/ocaml/camlp4/grammar.mli
 lib/ocaml/camlp4/mLast.cmi
 lib/ocaml/camlp4/mLast.mli
@@ -116,6 +120,7 @@ lib/ocaml/camlp4/pa_ru.o
 lib/ocaml/camlp4/pcaml.cmi
 lib/ocaml/camlp4/pcaml.mli
 lib/ocaml/camlp4/plexer.cmi
+lib/ocaml/camlp4/plexer.cmx
 lib/ocaml/camlp4/plexer.mli
 lib/ocaml/camlp4/pr_depend.cmo
 lib/ocaml/camlp4/pr_depend.cmx
@@ -155,8 +160,10 @@ lib/ocaml/camlp4/quotation.mli
 lib/ocaml/camlp4/spretty.cmi
 lib/ocaml/camlp4/spretty.mli
 lib/ocaml/camlp4/stdpp.cmi
+lib/ocaml/camlp4/stdpp.cmx
 lib/ocaml/camlp4/stdpp.mli
 lib/ocaml/camlp4/token.cmi
+lib/ocaml/camlp4/token.cmx
 lib/ocaml/camlp4/token.mli
 %%TK%%lib/ocaml/labltk/balloon.cmi
 %%TK%%lib/ocaml/labltk/balloon.cmx
