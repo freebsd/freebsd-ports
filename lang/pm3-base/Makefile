@@ -55,7 +55,7 @@ BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .else
 TARGET=		FreeBSD4
 TARGETDIR=	freebsd-4
-BOOTSTRAP=	pm3-${PORTVERSION}a-${TARGET}-boot.tar.bz2
+BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .endif
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
