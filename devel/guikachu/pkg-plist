@@ -1,0 +1,91 @@
+bin/guikachu
+bin/guikachu2rcp
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/guikachu-form-editor.schemas > /dev/null || /usr/bin/true
+etc/gconf/schemas/guikachu-form-editor.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/guikachu-form-editor.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/guikachu-interface.schemas > /dev/null || /usr/bin/true
+etc/gconf/schemas/guikachu-interface.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/guikachu-interface.schemas > /dev/null || /usr/bin/true
+share/gnome/application-registry/guikachu.applications
+share/gnome/apps/Development/guikachu.desktop
+share/gnome/guikachu/fonts/bigbold.txt
+share/gnome/guikachu/fonts/bigfont.txt
+share/gnome/guikachu/fonts/boldfont.txt
+share/gnome/guikachu/fonts/ledfont.txt
+share/gnome/guikachu/fonts/stdfont.txt
+share/gnome/guikachu/fonts/symbol.txt
+share/gnome/guikachu/fonts/symbol11.txt
+share/gnome/guikachu/fonts/symbol7.txt
+share/gnome/guikachu/glade/guikachu.glade
+share/gnome/guikachu/target-defs/ebook-l.guikachu-target
+share/gnome/guikachu/target-defs/ebook-p.guikachu-target
+share/gnome/guikachu/target-defs/palm-color.guikachu-target
+share/gnome/guikachu/target-defs/palm.guikachu-target
+share/gnome/help/guikachu/C/bitmaps.html
+share/gnome/help/guikachu/C/form-editor.html
+share/gnome/help/guikachu/C/guikachu-doc-html.css
+share/gnome/help/guikachu/C/guikachu.docbook
+share/gnome/help/guikachu/C/index.html
+share/gnome/help/guikachu/C/menu-editor.html
+share/gnome/help/guikachu/C/pictures/add-res.png
+share/gnome/help/guikachu/C/pictures/bitmap-window.png
+share/gnome/help/guikachu/C/pictures/bitmapgroup-window.png
+share/gnome/help/guikachu/C/pictures/form-editor-preview-greyscale.png
+share/gnome/help/guikachu/C/pictures/form-editor-preview.png
+share/gnome/help/guikachu/C/pictures/form-editor-resize.png
+share/gnome/help/guikachu/C/pictures/form-editor-selection.png
+share/gnome/help/guikachu/C/pictures/form-editor-tree.png
+share/gnome/help/guikachu/C/pictures/main-window-app-res.png
+share/gnome/help/guikachu/C/pictures/main-window.png
+share/gnome/help/guikachu/C/pictures/menu-editor.png
+share/gnome/help/guikachu/C/pictures/palette.png
+share/gnome/help/guikachu/C/pictures/preferences.png
+share/gnome/help/guikachu/C/pictures/prop-dropdown.png
+share/gnome/help/guikachu/C/pictures/prop-id.png
+share/gnome/help/guikachu/C/pictures/prop-ref.png
+share/gnome/help/guikachu/C/pictures/prop-size.png
+share/gnome/help/guikachu/C/pictures/prop-spin.png
+share/gnome/help/guikachu/C/pictures/prop-string.png
+share/gnome/help/guikachu/C/pictures/prop-stringlist.png
+share/gnome/help/guikachu/C/pictures/prop-text.png
+share/gnome/help/guikachu/C/pictures/prop-toggle.png
+share/gnome/help/guikachu/C/resource-win.html
+share/gnome/help/guikachu/C/resources.html
+share/gnome/help/guikachu/C/using.html
+share/gnome/help/guikachu/C/widgets.html
+share/gnome/mime-info/guikachu.keys
+share/gnome/mime-info/guikachu.mime
+share/gnome/pixmaps/guikachu-96.png
+share/gnome/pixmaps/guikachu-application-x-guikachu-96.png
+share/gnome/pixmaps/guikachu.png
+share/locale/az/LC_MESSAGES/guikachu.mo
+share/locale/ca/LC_MESSAGES/guikachu.mo
+share/locale/cs/LC_MESSAGES/guikachu.mo
+share/locale/de/LC_MESSAGES/guikachu.mo
+share/locale/en_GB/LC_MESSAGES/guikachu.mo
+share/locale/es/LC_MESSAGES/guikachu.mo
+share/locale/hu/LC_MESSAGES/guikachu.mo
+share/locale/ja/LC_MESSAGES/guikachu.mo
+share/locale/nl/LC_MESSAGES/guikachu.mo
+share/locale/pl/LC_MESSAGES/guikachu.mo
+share/locale/pt/LC_MESSAGES/guikachu.mo
+share/locale/pt_BR/LC_MESSAGES/guikachu.mo
+share/locale/ru/LC_MESSAGES/guikachu.mo
+share/locale/sr/LC_MESSAGES/guikachu.mo
+share/locale/sr@Latn/LC_MESSAGES/guikachu.mo
+share/locale/sv/LC_MESSAGES/guikachu.mo
+share/locale/tr/LC_MESSAGES/guikachu.mo
+share/locale/uk/LC_MESSAGES/guikachu.mo
+share/locale/wa/LC_MESSAGES/guikachu.mo
+share/mime/application/x-guikachu.xml
+share/mime/packages/guikachu.mime.xml
+share/mime/text/x-rcp.xml
+@dirrm share/gnome/help/guikachu/C/pictures
+@dirrm share/gnome/help/guikachu/C
+@dirrm share/gnome/help/guikachu
+@dirrm share/gnome/guikachu/target-defs
+@dirrm share/gnome/guikachu/glade
+@dirrm share/gnome/guikachu/fonts
+@dirrm share/gnome/guikachu
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
