@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	prboom
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	2.2.6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	fracture@allusion.net
+MAINTAINER=	robin.schoonover@gmail.com
 COMMENT=	A multiplayer-capable and modified version of ID's classic doom game
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
@@ -22,15 +21,17 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--disable-cpu-opt
 
 MAN5=		boom.cfg.5
 MAN6=		prboom.6 prboom-game-server.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.if defined(WITH_GL)
+CONFIGURE_ARGS+=--enable-gl
+USE_GL= 	yes
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-install:
 .if !defined(NOPORTDOCS)

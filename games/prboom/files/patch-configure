@@ -21,35 +21,3 @@
  # Check whether --enable-debug or --disable-debug was given.
  if test "${enable_debug+set}" = set; then
    enableval="$enable_debug"
-@@ -1250,30 +1250,8 @@
- 
- 
- 
--# Check whether --enable-cpu-opt or --disable-cpu-opt was given.
--if test "${enable_cpu_opt+set}" = set; then
--  enableval="$enable_cpu_opt"
--  
--CPU_CFLAGS=""
--
--else
--  
--case "$target" in
--        # marginal gains from aligning code
--i386-*) CPU_CFLAGS="-m386" ;;
--i486-*) CPU_CFLAGS="-m486" ;;
--        # nothing special for pentium  
--        # CMOV op on ppro/II/686 can help us
--i686-*) CPU_CFLAGS="-mcpu=i686 -march=i686" ;;
--esac
--
--fi
--
--
--
--
- NEW_CFLAGS="$CFLAGS"
--for ac_flag in -Wall -Winline -Wwrite-strings -ffast-math $CFLAGS_OPT $CPU_CFLAGS
-+for ac_flag in -Wall -Winline -Wwrite-strings -ffast-math $CFLAGS_OPT
- do
-  echo $ac_n "checking whether compiler supports $ac_flag""... $ac_c" 1>&6
- echo "configure:1280: checking whether compiler supports $ac_flag" >&5
