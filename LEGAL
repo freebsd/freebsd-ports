@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.70 1997/05/20 06:49:18 asami Exp $
+# $Id: LEGAL,v 1.71 1997/05/21 07:42:01 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -29,6 +29,8 @@ contool-*		ports/sysutils/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
 crack-5.0		ports/security/crack	Crypto; export-controlled
+cs-0.3			ports/devel/cs		License required for
+						redistribution on CDROM.
 dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
