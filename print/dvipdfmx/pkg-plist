@@ -12,3 +12,5 @@ share/texmf/dvipdfm/config/dvipdfmx.cfg
 @dirrm share/texmf/dvipdfm/config
 @dirrm share/texmf/dvipdfm
 @unexec mv %D/share/texmf/dvipdfm-orig %D/share/texmf/dvipdfm
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
