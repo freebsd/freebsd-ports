@@ -1,0 +1,29 @@
+bin/class_map
+bin/jcc
+bin/jfdesign
+bin/jxlayout
+bin/makecheck
+bin/makemake
+bin/maketouch
+bin/need_font_list
+bin/option_map
+bin/medic
+lib/libACE-4_6.so
+lib/libACE-4_6.so.%%LIBACE%%
+lib/libjcore-1_5_2.a
+lib/libjcore-1_5_2.so
+lib/libjcore-1_5_2.so.%%LIBJX%%
+lib/libjtoolbar-0_5_3.a
+lib/libjtoolbar-0_5_3.so
+lib/libjtoolbar-0_5_3.so.%%LIBJTOOL%%
+lib/libjtree-1_1_5.a
+lib/libjtree-1_1_5.so
+lib/libjtree-1_1_5.so.%%LIBJTREE%%
+lib/libjx-1_5_2.a
+lib/libjx-1_5_2.so
+lib/libjx-1_5_2.so.%%LIBJX%%
+lib/libjsearch-0_5_6.a
+lib/libjsearch-0_5_6.so
+lib/libjsearch-0_5_6.so.%%LIBJSEARCH%%
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
