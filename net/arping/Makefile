@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arping
-PORTVERSION=	1.00
+PORTVERSION=	1.04
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/netutils/arping/
