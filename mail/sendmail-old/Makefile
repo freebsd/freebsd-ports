@@ -120,6 +120,11 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH)
+	${ECHO_CMD} \
+	 'define(`confNO_HELPFILE_INSTALL'\'',`True'\'')' \
+		>> ${WCONF}/site.config.m4
+.endif
 
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
 post-build:
