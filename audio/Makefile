@@ -379,6 +379,7 @@
     SUBDIR += tracker
     SUBDIR += trm
     SUBDIR += trommler
+    SUBDIR += tse3
     SUBDIR += tuneradio
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
