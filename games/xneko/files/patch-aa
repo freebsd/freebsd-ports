@@ -1,0 +1,37 @@
+diff -udr ../xneko.BSD/Makefile ./Makefile
+--- ../xneko.BSD/Makefile	Tue Jun  1 03:46:11 1993
++++ ./Makefile	Fri Dec 22 19:16:13 1995
+@@ -1,8 +1,17 @@
+ #	@(#)Makefile	8.1 (Berkeley) 5/31/93
+ 
+ PROG=	xneko
+-MAN6=	xneko.0
+-DPADD=	${LIBX} ${LIBM}
+-LDADD=	-lX11/X11 -lm
++MAN6=	xneko.6
++
++DPADD+=		${X11BASE}/lib/libX11.a ${LIBM}
++CFLAGS+=	-I${X11BASE}/include
++LDDESTDIR+=	-L${X11BASE}/lib
++LDADD+=		-lX11 -lm
++
++MANDIR=        ${X11BASE}/man/man
++
++BINOWN=        bin
++BINDIR=        ${X11BASE}/bin
++BINMODE=       755
+ 
+ .include <bsd.prog.mk>
+diff -udr ../xneko.BSD/xneko.c ./xneko.c
+--- ../xneko.BSD/xneko.c	Tue Jun  1 03:46:10 1993
++++ ./xneko.c	Fri Dec 22 19:10:44 1995
+@@ -139,6 +139,9 @@
+ 
+ #include <stdio.h>
+ 
++#include <stdlib.h>
++#include <string.h>
++
+ #include <signal.h>
+ #include <math.h>
+ #include <sys/time.h>
