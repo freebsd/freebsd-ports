@@ -8,7 +8,7 @@
 PORTNAME=	motoya-ttfonts
 PORTVERSION=	0.20040116
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	#http://www.motoyafont.jp/dl/win/
+MASTER_SITES=	#
 #		You must accept following MOTOYA freefont LICENSE[1], and regist
 #		free member for download.  You can get a Japanese mail which
 #		contains download URL.
@@ -52,7 +52,7 @@ do-extract:
 
 do-install:
 .if !exists(${PREFIX}/${FONTSDIR})
-	@${ECHO} "***************************************************
+	@${ECHO} "***************************************************"
 	@${ECHO} "Please add ${PREFIX}/${FONTSDIR} to your font path"
 	@${ECHO} "and load 'xtt' module in /etc/XF86Config."
 	@${ECHO} "***************************************************"
