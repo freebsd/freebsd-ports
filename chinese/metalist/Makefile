@@ -14,6 +14,8 @@ DISTNAME=	metalist-${PORTVERSION}
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	A Chinese port of Slash-Like Automatic Storytelling Homepage system
 
+BROKEN=		"Does not compile/install"
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash \
 		${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness \
