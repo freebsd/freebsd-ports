@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	libsigc
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
 USE_GMAKE=	yes
 NO_LATEST_LINK=	yes
 INSTALLS_SHLIB=	yes
