@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.217 1999/06/27 16:32:04 cpiazza Exp $
+# $Id: Makefile,v 1.218 1999/06/28 07:02:03 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -18,6 +18,7 @@
     SUBDIR += bbjd
     SUBDIR += buffer
     SUBDIR += chord
+    SUBDIR += cls
     SUBDIR += cmatrix
     SUBDIR += colorls
     SUBDIR += colortail
