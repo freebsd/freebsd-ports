@@ -36,4 +36,4 @@ The options -debug and -bboxes are mostly of use for the maintainers of
 pstotext.  -debug shows Ghostscript output and error messages.  -bboxes outputs
 one word per line with bounding box information. 
 
-WWW: http://www.research.digital.com/SRC/virtualpaper/manpages/pstotext.1.html
+WWW: http://www.research.digital.com/SRC/virtualpaper/pstotext.html
