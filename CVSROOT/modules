@@ -8064,6 +8064,7 @@ xemacs21-sumo	ports/editors/xemacs21-sumo
 xemeraldia	ports/games/xemeraldia
 xengine		ports/benchmarks/xengine
 xenmenu		ports/misc/xenmenu
+xenomorph	ports/graphics/xenomorph
 xenon		ports/editors/xenon
 xenophilia	ports/x11-toolkits/xenophilia
 xenostep	ports/x11-toolkits/xenostep
