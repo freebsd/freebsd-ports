@@ -9,7 +9,7 @@ CATEGORIES=		lang
 PKGNAMESUFFIX=		-objc
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.2.2 with threads and shared libs
+COMMENT=	GNU Compiler Collection 3.2.3 with threads and shared libs
 
 WANT_SHAREDLIBS=	yes
 WANT_THREADS_SUPPORT=	yes
