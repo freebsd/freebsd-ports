@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions
@@ -29,7 +28,6 @@ PATCHFILES+=	samba-2.2.9-browsing-hacks.diff
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
-FORBIDDEN=	"Potential buffer overruns"
 CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 
 USE_SUBMAKE=	YES
@@ -131,6 +129,8 @@ WITH_CUPS=	yes
 .if defined(WITH_WINBIND)
 CONFIGURE_ARGS+=	--with-winbind
 WINBIND=	""
+.else
+CONFIGURE_ARGS+=	--without-winbind
 .endif
 
 .if defined(WITH_WINBIND_NSS)
