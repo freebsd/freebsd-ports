@@ -1,8 +1,10 @@
-# $Id: Makefile,v 1.32 1999/05/06 08:55:17 asami Exp $
+# $Id: Makefile,v 1.33 1999/05/09 17:45:27 steve Exp $
 #
 
     SUBDIR += CJK
     SUBDIR += Wnn
+    SUBDIR += acroread-chsfont
+    SUBDIR += acroread-chtfont
     SUBDIR += aterm
     SUBDIR += bg5ps
     SUBDIR += big5con
