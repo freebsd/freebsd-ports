@@ -3,10 +3,11 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.6 1995/04/01 13:48:45 joerg Exp $
+# $Id: Makefile,v 1.7 1995/04/11 00:20:43 asami Exp $
 #
 
 DISTNAME=	xmine-1.0.3-Xaw
+MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 PKGNAME=	xmine-1.0.3
 CATEGORIES+=	games
 
