@@ -17,6 +17,8 @@ COMMENT=	An X11 window manager designed for maximum efficiency
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		cairo.1:${PORTSDIR}/graphics/cairo
 
+BROKEN=		Does not compile
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
