@@ -7,6 +7,7 @@
 #
 
 DISTNAME=	kdesupport-1.1.2
+PKGNAME=	kdesupport-1.1.2.1
 CATEGORIES=	converters kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
