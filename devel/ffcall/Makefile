@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffcall
-PORTVERSION=	1.8d
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	devel
 #MASTER_SITES=  ftp://ftp.santafe.edu/pub/gnu/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
