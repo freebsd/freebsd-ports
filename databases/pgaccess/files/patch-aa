@@ -1,17 +1,8 @@
---- pgaccess.tcl.orig	Sun Oct  5 00:47:27 1997
-+++ pgaccess.tcl	Sun Oct  5 01:15:05 1997
+--- pgaccess.tcl.orig	Sun Oct 12 14:45:16 1997
++++ pgaccess.tcl	Sun Oct 12 14:45:25 1997
 @@ -1,4 +1,4 @@
 -#!/usr/bin/wish
 +#! /usr/local/bin/wish8.0
  #############################################################################
  # Visual Tcl v1.10 Project
  #
-@@ -1465,7 +1465,7 @@
- 
- proc main {argc argv} {
- global pref newdbname newpport newhost
--load libpgtcl.so
-+load /usr/local/pgsql/lib/libpgtcl.so
- catch {draw_tabs}
- load_pref
- if {$pref(autoload) && ($pref(lastdb)!="")} {
