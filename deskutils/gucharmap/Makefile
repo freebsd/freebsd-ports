@@ -15,6 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
+BROKEN=		"Does not configure"
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
