@@ -8598,6 +8598,7 @@ xfce4-fm-icons	ports/x11-fm/xfce4-fm-icons
 xfce4-iconbox	ports/misc/xfce4-iconbox
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
+xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
 xfce4-panel	ports/x11-wm/xfce4-panel
 xfce4-panel-themes	ports/misc/xfce4-panel-themes
