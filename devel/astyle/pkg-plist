@@ -1,1 +1,3 @@
 bin/astyle
+share/doc/astyle/astyle.html
+@dirrm share/doc/astyle
