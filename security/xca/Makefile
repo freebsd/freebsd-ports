@@ -25,12 +25,8 @@ USE_QT_VER=	3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Fails to patch"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,(if[\ \t]+test[\ \t]+.+)[\ \t]+==,\1 =,' \
-		${WRKDIR}/${PKGNAME}/configure
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
