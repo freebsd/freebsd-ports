@@ -3,16 +3,9 @@
 # wait 5 hours maximum
 timeout=18000
 
-command=$1
-shift
-
-if pwd | grep -qF 2.2; then
-  branch=2.2
-elif pwd | grep -qF 3; then
-  branch=3
-else
-  branch=4
-fi
+branch=$1
+command=$2
+shift 2
 
 # ssh -x doesn't work on some machines
 unset DISPLAY
@@ -30,10 +23,18 @@ mach=$(cat ${buildroot}/ulist)
 num=$(echo $(echo $mach | wc -w))
 set $mach
 shift $(echo "$$ $num" | awk '{srand($1); print(int(rand()*$2))}')
+flags=""
 if [ "x$NOCLEAN" != "x" ]; then
-  echo "dispatching: ssh -a $1 ${command} ${branch} -noclean $args"
-  ${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} -noclean $args
-else
-  echo "dispatching: ssh -a $1 ${command} ${branch} $args"
-  ${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} $args
+  flags="${flags} -noclean"
 fi
+if [ "x$NO_RESTRICTED" != "x" ]; then
+  flags="${flags} -norestr"
+fi
+if [ "x$NOPLISTCHECK" != "x" ]; then
+  flags="${flags} -noplistcheck"
+fi
+if [ "x$NODUMMY" != "x" ]; then
+  flags="${flags} -nodummy"
+fi
+echo "dispatching: ssh -a $1 ${command} ${branch} $flags $args"
+${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} ${flags} $args
