@@ -17,6 +17,7 @@ MAINTAINER=	trevor@FreeBSD.org
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83
 
+BROKEN=		"files are missing from master FTP site"
 RESTRICTED=	"no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)"
 NO_CDROM=	${RESTRICTED}
 NO_FTP=		${RESTRICTED}
