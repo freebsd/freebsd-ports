@@ -46,12 +46,10 @@ if [ "$2" = "POST-INSTALL" ]; then
 			echo "============================================================"
 		fi
 	fi
+	if ! grep -qs "^exim_enable" /etc/rc.conf
+	    then
+		echo
+		echo "Don't forget to add 'exim_enable=\"YES\"' to rc.conf(5)"
+		echo
+	fi
 fi
-
-# This is naughty, since the directory we create won't be removed along
-# with Exim.  However, logfiles should probably stick around after Exim
-# is removed, until the administrator is sure he doesn't want them
-# any more.
-#
-mkdir -p /var/log/exim
-chown ${user}:${group} /var/log/exim

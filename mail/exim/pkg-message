@@ -2,6 +2,6 @@
 IMPORTANT NOTE:
 ===============
 
-Please read ${PREFIX}/share/doc/exim/POST-INSTALL-NOTES for important
+Please read %%DOCSDIR%%/POST-INSTALL-NOTES for important
 information regarding your Exim installation.
 

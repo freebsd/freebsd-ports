@@ -1,5 +1,5 @@
-etc/exim/configure.default
-etc/rc.d/exim.sh
+@comment $FreeBSD$
+@unexec [ ! -f /var/run/exim.pid ] || %%RC_DIR%%/exim%%RC_SUFX%% stop || true
 sbin/exim
 sbin/exim-%%EXIM_VERSION%%-1
 sbin/exim_checkaccess
@@ -15,18 +15,33 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqgrep
 sbin/exiqsumm
-%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Exim3.upgrade
 %%PORTDOCS%%%%DOCSDIR%%/Exim4.upgrade
+%%PORTDOCS%%%%DOCSDIR%%/NewStuff
 %%PORTDOCS%%%%DOCSDIR%%/OptionLists.txt
+%%PORTDOCS%%%%DOCSDIR%%/POST-INSTALL-NOTES
+%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.SIEVE
 %%PORTDOCS%%%%DOCSDIR%%/dbm.discuss.txt
+%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-examples.txt
+%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/filter.txt
 %%PORTDOCS%%%%DOCSDIR%%/pcrepattern.txt
 %%PORTDOCS%%%%DOCSDIR%%/pcretest.txt
 %%PORTDOCS%%%%DOCSDIR%%/spec.txt
-%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
-%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-examples.txt
-%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-spec.txt
-@dirrm etc/exim
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/periodic/daily/150.exim-tidydb
+etc/periodic/daily/460.exim-mail-rejects
+@unexec rmdir %D/etc/periodic/daily 2>/dev/null || true
+@unexec rmdir %D/etc/periodic 2>/dev/null || true
+@unexec if cmp -s %D/etc/exim/configure %D/etc/exim/configure.default; then rm -f %D/etc/exim/configure; fi
+etc/exim/configure.default
+@exec [ -f %B/configure ] || cp %B/%f %B/configure
+@unexec rmdir %B 2>/dev/null || true
+@cwd %%RC_DIR%%
+exim%%RC_SUFX%%
+@exec mkdir -p /var/log/exim
+@exec chown mailnull:mail /var/log/exim
+@unexec rmdir /var/log/exim 2>/dev/null || true

@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	4.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -29,12 +29,20 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN8=		exim.8
 
+PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
+		OptionLists.txt README README.SIEVE dbm.discuss.txt \
+		filter.txt pcrepattern.txt pcretest.txt spec.txt
+
+DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
+
 EXISCAN_ACL_VERSION=	${PORTVERSION}-12
 
 PLIST_SUB+=	EXIM_VERSION="${PORTVERSION}"
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
+.else
+PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
@@ -135,9 +143,25 @@ EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 
 .include <bsd.port.pre.mk>
 
-PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
-		dbm.discuss.txt filter.txt pcrepattern.txt pcretest.txt \
-		spec.txt
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	${DESTDIR}/etc/rc.subr
+RC_DIR=		${DESTDIR}/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
+
 .if !defined(WITHOUT_EXISCAN)
 PORTDOC_FILES+=	exiscan-acl-examples.txt exiscan-acl-spec.txt
 PLIST_SUB+=	EXISCAN_ACL=""
@@ -326,28 +350,39 @@ pre-everything::
 	@${ECHO} ''
 .endif
 
-post-patch:
-.if !defined(WITHOUT_EXISCAN)
-	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
-	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
-.else
-	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
-.endif
-
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
-	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
+	${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
+
+post-build:
+.for script in exim ${DAILY_SCRIPTS}
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script}.sh > ${WRKDIR}/${script}.sh
+.endfor
+.if !defined(WITHOUT_EXISCAN)
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
+	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES.clamd > ${WRKDIR}/POST-INSTALL-NOTES.clamd
+.else
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
+.endif
+	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-message > ${WRKDIR}/pkg-message
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${WRKDIR}/exim.sh ${RC_DIR}/exim${RC_SUFX}
+	@${MKDIR} ${PREFIX}/etc/periodic/daily
+.for script in ${DAILY_SCRIPTS}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${PREFIX}/etc/periodic/daily/${script}
+.endfor
+	@[ -f ${PREFIX}/etc/exim/configure ] || \
+		${CP} ${PREFIX}/etc/exim/configure.default ${PREFIX}/etc/exim/configure
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
 .if !defined(WITHOUT_EXISCAN)
-	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
 .endif
 .for docfile in ${PORTDOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
