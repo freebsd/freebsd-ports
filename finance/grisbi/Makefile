@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	finance
 MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
 		http://cedricauger.free.fr/download/packages/${PORTVERSION}/sources/	\
