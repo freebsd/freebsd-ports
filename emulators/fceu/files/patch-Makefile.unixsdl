@@ -1,9 +1,9 @@
 --- Makefile.unixsdl.orig	Fri Jun 20 12:50:03 2003
-+++ Makefile.unixsdl	Sun Jul 20 20:43:22 2003
++++ Makefile.unixsdl	Mon Jul 21 07:53:48 2003
 @@ -1,5 +1,5 @@
  CC	= gcc 
 -TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `sdl-config --cflags` -mcpu=i686 -O2 -Izlib -fomit-frame-pointer -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB
-+TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `%%LOCALBASE%%/bin/sdl11-config --cflags` -Izlib -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB %%CFLAGS%%
++TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `%%LOCALBASE%%/bin/sdl11-config --cflags` -Izlib -fomit-frame-pointer -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB
  
  RM	= rm -f
  B	= drivers/cli/
