@@ -1,0 +1,6 @@
+libexec/kavmilter
+etc/kavmilter.conf.sample
+etc/rc.d/kavmilter.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

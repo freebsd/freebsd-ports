@@ -100,6 +100,7 @@
     SUBDIR += isync
     SUBDIR += jamlib
     SUBDIR += junkfilter
+    SUBDIR += kavmilter
     SUBDIR += kbiff
     SUBDIR += kiltdown
     SUBDIR += lbdb

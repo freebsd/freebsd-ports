@@ -1,0 +1,16 @@
+This is a sendmail filter, based on Milter API, intedned to do
+antiviral check through Kaspersky Antivirus. It doesn't checks mail
+itself, but passes it to preliminary setuped Kaspersky Antivirus
+to check, reads result, and, depending it, discards/rejects or
+passes mail. This check issued 'in-place' delivery processing, so,
+nor extracting, nor extra reinjecting in/out mail queue doesn't
+issued. But this program is NOT mail transfer agent and NOT
+antivirus itself. At first glance it is a set of hooks, which
+executed when sendmail takes some appropriate actions - connecting
+remote server, receiving MAIL FROM or RCPT TO,
+transferring header or body of message, etc.
+
+WWW: http://granch.ru/~shelton/
+
+- Rashid N. Achilov
+shelton@granch.ru
