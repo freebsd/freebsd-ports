@@ -23,13 +23,10 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	dirk@FreeBSD.org
 
 .if !defined(STANDALONE)
+BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 .if defined(WITH_APACHE2)
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
 LIB_DEPENDS=	pth.14:${PORTSDIR}/devel/pth
-.else
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 .endif
 .endif
 
@@ -40,6 +37,12 @@ SLAVEDIRS=	lang/php4
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 USE_AUTOCONF_VER=213
+.if defined(WITH_APACHE2)
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+.else
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+.endif
+APXS?=		${LOCALBASE}/sbin/apxs
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
