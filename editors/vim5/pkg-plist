@@ -22,7 +22,6 @@ share/vim/doc/digraph.txt
 share/vim/doc/editing.txt
 share/vim/doc/errors.txt
 share/vim/doc/eval.txt
-share/vim/doc/farsi.txt
 share/vim/doc/gui.txt
 share/vim/doc/gui_w32.txt
 share/vim/doc/gui_x11.txt
@@ -39,6 +38,7 @@ share/vim/doc/options.txt
 share/vim/doc/os_amiga.txt
 share/vim/doc/os_archi.txt
 share/vim/doc/os_beos.txt
+share/vim/doc/os_dos.txt
 share/vim/doc/os_mac.txt
 share/vim/doc/os_mint.txt
 share/vim/doc/os_msdos.txt
@@ -66,7 +66,9 @@ share/vim/doc/visual.txt
 share/vim/doc/windows.txt
 share/vim/doc/tags
 share/vim/syntax/ada.vim
+share/vim/syntax/amiga.vim
 share/vim/syntax/asm.vim
+share/vim/syntax/asn.vim
 share/vim/syntax/asmh8300.vim
 share/vim/syntax/awk.vim
 share/vim/syntax/c.vim
@@ -76,12 +78,16 @@ share/vim/syntax/cterm.vim
 share/vim/syntax/diff.vim
 share/vim/syntax/dosbatch.vim
 share/vim/syntax/dosini.vim
+share/vim/syntax/dracula.vim
 share/vim/syntax/expect.vim
+share/vim/syntax/esqlc.vim
 share/vim/syntax/fortran.vim
 share/vim/syntax/help.vim
 share/vim/syntax/html.vim
+share/vim/syntax/inform.vim
 share/vim/syntax/java.vim
 share/vim/syntax/javacc.vim
+share/vim/syntax/javascript.vim
 share/vim/syntax/lex.vim
 share/vim/syntax/lisp.vim
 share/vim/syntax/mail.vim
