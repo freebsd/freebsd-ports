@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.39 1998/03/19 14:57:10 markm Exp $
+# $Id: Makefile,v 1.40 1998/04/03 22:59:40 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -16,6 +16,13 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.2/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.2/source/
 DISTFILES=	X332src-1.tgz X332src-2.tgz
 
+PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.2/fixes/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.3.2/fixes/ \
+		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3.2/fixes/ \
+		ftp://ftp.uni-stuttgart.de/pub/X11/Xfree86/3.3.2/fixes/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.2/fixes/
+PATCHFILES=	3.3.2-patch1
+
 MAINTAINER=	jmz@FreeBSD.ORG
 
 IS_INTERACTIVE=	yes	# configure script asks questions
@@ -24,6 +31,7 @@ USE_X11=	yes
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
+PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
 
 .if defined(XDM_DES) && (${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO)
 pre-fetch:
