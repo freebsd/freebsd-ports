@@ -7,8 +7,9 @@
 
 PORTNAME=	epic4
 PORTVERSION=	1.0.1
-# Make CATEGORIES overridable for slave ports
-CATEGORIES?=	irc
+# Make these variables overridable for slave ports
+PORTREVISION?=	1
+CATEGORIES?=	irc ipv6
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/%SUBDIR%/ \
 		ftp://ftp.magenet.com/pub/epic/%SUBDIR%/ \
 		ftp://ftp.icm.edu.pl/vol/rzm0/irc/EPIC/%SUBDIR%/ \
@@ -22,14 +23,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTFILE_HELP}
 DIST_SUBDIR=	epic4
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-#PATCH_SITES=	${MASTER_SITES}
-#PATCHFILES=	${DISTNAME}-patch1
-#PATCH_DIST_STRIP=	-d ${WRKSRC}/source
+PATCH_SITES=    http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/
+PATCHFILES=     ${DISTNAME}-ipv6-20010418.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	anders@hack.org
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
 DISTFILE_HELP=	${PORTNAME}pre2-help.tar.gz
 
