@@ -1,0 +1,97 @@
+%%PEARDIR%%/DB.php
+%%PEARDIR%%/DB/common.php
+%%PEARDIR%%/DB/dbase.php
+%%PEARDIR%%/DB/fbsql.php
+%%PEARDIR%%/DB/ibase.php
+%%PEARDIR%%/DB/ifx.php
+%%PEARDIR%%/DB/msql.php
+%%PEARDIR%%/DB/mssql.php
+%%PEARDIR%%/DB/mysql.php
+%%PEARDIR%%/DB/oci8.php
+%%PEARDIR%%/DB/odbc.php
+%%PEARDIR%%/DB/pgsql.php
+%%PEARDIR%%/DB/storage.php
+%%PEARDIR%%/DB/sybase.php
+%%PEARDIR%%/tests/db_error.phpt
+%%PEARDIR%%/tests/db_error2.phpt
+%%PEARDIR%%/tests/db_factory.phpt
+%%PEARDIR%%/tests/db_ismanip.phpt
+%%PEARDIR%%/tests/db_parsedsn.phpt
+%%PEARDIR%%/tests/driver/01connect.phpt
+%%PEARDIR%%/tests/driver/02fetch.phpt
+%%PEARDIR%%/tests/driver/03simplequery.phpt
+%%PEARDIR%%/tests/driver/04numcols.phpt
+%%PEARDIR%%/tests/driver/05sequences.phpt
+%%PEARDIR%%/tests/driver/06prepexec.phpt
+%%PEARDIR%%/tests/driver/08affectedrows.phpt
+%%PEARDIR%%/tests/driver/09numrows.phpt
+%%PEARDIR%%/tests/driver/10errormap.phpt
+%%PEARDIR%%/tests/driver/13limit.phpt
+%%PEARDIR%%/tests/driver/14fetchmode_object.phpt
+%%PEARDIR%%/tests/driver/15quote.phpt
+%%PEARDIR%%/tests/ibase/01connect.phpt
+%%PEARDIR%%/tests/ibase/02fetch.phpt
+%%PEARDIR%%/tests/ibase/03simplequery.phpt
+%%PEARDIR%%/tests/ibase/04numcols.phpt
+%%PEARDIR%%/tests/ibase/05sequences.phpt
+%%PEARDIR%%/tests/ibase/06prepexec.phpt
+%%PEARDIR%%/tests/ibase/10errormap.phpt
+%%PEARDIR%%/tests/mysql/01connect.phpt
+%%PEARDIR%%/tests/mysql/02fetch.phpt
+%%PEARDIR%%/tests/mysql/03simplequery.phpt
+%%PEARDIR%%/tests/mysql/04numcols.phpt
+%%PEARDIR%%/tests/mysql/05sequences.phpt
+%%PEARDIR%%/tests/mysql/06prepexec.phpt
+%%PEARDIR%%/tests/mysql/07errornative.phpt
+%%PEARDIR%%/tests/mysql/08affectedrows.phpt
+%%PEARDIR%%/tests/mysql/09numrows.phpt
+%%PEARDIR%%/tests/mysql/10errormap.phpt
+%%PEARDIR%%/tests/mysql/12tableinfo.phpt
+%%PEARDIR%%/tests/mysql/13limit.phpt
+%%PEARDIR%%/tests/mysql/14fetchmode_object.phpt
+%%PEARDIR%%/tests/oci8/01connect.phpt
+%%PEARDIR%%/tests/oci8/02fetch.phpt
+%%PEARDIR%%/tests/oci8/03simplequery.phpt
+%%PEARDIR%%/tests/oci8/04numcols.phpt
+%%PEARDIR%%/tests/oci8/05sequences.phpt
+%%PEARDIR%%/tests/oci8/06prepexec.phpt
+%%PEARDIR%%/tests/oci8/07errornative.phpt
+%%PEARDIR%%/tests/oci8/08affectedrows.phpt
+%%PEARDIR%%/tests/oci8/09numrows.phpt
+%%PEARDIR%%/tests/oci8/10errormap.phpt
+%%PEARDIR%%/tests/oci8/13limit.phpt
+%%PEARDIR%%/tests/odbc/01connect.phpt
+%%PEARDIR%%/tests/odbc/02fetch.phpt
+%%PEARDIR%%/tests/odbc/03simplequery.phpt
+%%PEARDIR%%/tests/odbc/04numcols.phpt
+%%PEARDIR%%/tests/odbc/06prepexec.phpt
+%%PEARDIR%%/tests/odbc/07errornative.phpt
+%%PEARDIR%%/tests/odbc/09numrows.phpt
+%%PEARDIR%%/tests/odbc/10errormap.phpt
+%%PEARDIR%%/tests/pgsql/01connect.phpt
+%%PEARDIR%%/tests/pgsql/02fetch.phpt
+%%PEARDIR%%/tests/pgsql/03simplequery.phpt
+%%PEARDIR%%/tests/pgsql/04numcols.phpt
+%%PEARDIR%%/tests/pgsql/05sequences.phpt
+%%PEARDIR%%/tests/pgsql/06prepexec.phpt
+%%PEARDIR%%/tests/pgsql/07errornative.phpt
+%%PEARDIR%%/tests/pgsql/08affectedrows.phpt
+%%PEARDIR%%/tests/pgsql/09numrows.phpt
+%%PEARDIR%%/tests/pgsql/10errormap.phpt
+%%PEARDIR%%/tests/pgsql/11transact.phpt
+%%PEARDIR%%/tests/pgsql/13limit.phpt
+%%PEARDIR%%/tests/pgsql/14fetchmode_object.phpt
+%%PORTDOCS%%%%DOCSDIR%%/IDEAS
+%%PORTDOCS%%%%DOCSDIR%%/MAINTAINERS
+%%PORTDOCS%%%%DOCSDIR%%/STATUS
+%%PORTDOCS%%%%DOCSDIR%%/TESTERS
+%%PKGREGDIR%%/package.xml
+@dirrm %%PEARDIR%%/DB
+@dirrm %%PEARDIR%%/tests/driver
+@dirrm %%PEARDIR%%/tests/ibase
+@dirrm %%PEARDIR%%/tests/mysql
+@dirrm %%PEARDIR%%/tests/oci8
+@dirrm %%PEARDIR%%/tests/odbc
+@dirrm %%PEARDIR%%/tests/pgsql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/pear/tests 2> /dev/null || true
