@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 28 02:10:49 2001
-+++ Makefile	Sat Dec 22 11:59:22 2001
+--- Makefile.orig	Mon Nov 17 04:50:31 2003
++++ Makefile	Mon Nov 17 04:52:25 2003
 @@ -1,15 +1,15 @@
 -CC = gcc
 -LD = gcc
@@ -7,9 +7,9 @@
 +LD = ${CC}
  RM = rm -f
  MKDIR = mkdir -p
- INSTALL = install
--CFLAGS = -c -Wall -O2 -fomit-frame-pointer
-+CFLAGS += -c -Wall -O2 -fomit-frame-pointer
+ INSTALL = install -c
+-CFLAGS = -Wall -O2 -fomit-frame-pointer
++CFLAGS += -Wall -O2 -fomit-frame-pointer
  # You may use OpenSSL's MD5 routines instead of the ones supplied here
  #CFLAGS += -DHAVE_OPENSSL
  LDFLAGS = -s
