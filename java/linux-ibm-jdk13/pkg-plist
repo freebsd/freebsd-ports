@@ -119,6 +119,7 @@
 %%TARGET_PREFIX%%/jre/lib/i18n.jar
 %%TARGET_PREFIX%%/jre/lib/fonts/fonts.scale
 %%TARGET_PREFIX%%/jre/lib/fonts/fonts.dir
+@unexec rm %B/*.orig
 %%TARGET_PREFIX%%/jre/lib/fonts/Thoni___.ttf
 %%TARGET_PREFIX%%/jre/lib/fonts/Thonburi.ttf
 %%TARGET_PREFIX%%/jre/lib/fonts/Thonbi__.ttf
@@ -139,6 +140,8 @@
 %%TARGET_PREFIX%%/jre/lib/fonts/Courtbi_.ttf
 %%TARGET_PREFIX%%/jre/lib/fonts/Courtb__.ttf
 %%TARGET_PREFIX%%/jre/lib/fonts/Court___.ttf
+@unexec rm %B/wa*ttf
+@exec ln -sf %%X11BASE%%/lib/X11/fonts/TrueType/wa*ttf %B/
 %%TARGET_PREFIX%%/jre/lib/font.properties.zh_TW.2.2.18-2
 %%TARGET_PREFIX%%/jre/lib/font.properties.zh_TW
 %%TARGET_PREFIX%%/jre/lib/font.properties.zh.2.2.18-2
