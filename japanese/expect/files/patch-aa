@@ -149,12 +149,15 @@
  
  # Build Expectk with TestCenter
  expectk.tc: exp_main_tk.o $(OFILES) 
-@@ -392,24 +398,20 @@
+@@ -392,24 +398,24 @@
  # rule out for each file, sigh).
  $(EXP_SHARED_LIB_FILE): $(OFILES)
  	-rm -f $(EXP_SHARED_LIB_FILE)
--	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
++.if ${PORTOBJFORMAT} == "aout"
+ 	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
++.else
 +	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) -Wl,-soname,$(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
++.endif
 +	ln -sf $(EXP_SHARED_LIB_FILE) `echo $(EXP_SHARED_LIB_FILE) | sed 's/\.so.*$$/.so/'`
  
  .PHONY: install-info install info
