@@ -33,7 +33,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tdetect.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${ECHO} "ETHERNETDEV=ed0" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect \$ETHERNETDEV && ${ECHO} -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect $$ETHERNETDEV && ${ECHO} -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${CHMOD} 750 ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${ECHO} ''; \
 		${ECHO} 'IMPORTANT edit ${PREFIX}/etc/rc.d/tdetect.sh and set "ETHERNETDEV" to'; \
