@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus
-PORTVERSION=	1.2.7
+PORTVERSION=	2.0.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -19,7 +19,7 @@ DISTNAME=	nessus-core-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
-LIB_DEPENDS=	nasl.3:${PORTSDIR}/security/nessus-libnasl
+LIB_DEPENDS=	nasl.2:${PORTSDIR}/security/nessus-libnasl
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
@@ -44,10 +44,12 @@ MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
 post-install:
-.if ! defined(BATCH)
 .if ! exists(${PREFIX}/etc/nessus/var/CA/serverkey.pem)
+.if ! defined(BATCH)
 	${PREFIX}/sbin/nessus-mkcert
+.else
+	${PREFIX}/sbin/nessus-mkcert -q
 .endif
-.endif
+.endif 
 
 .include <bsd.port.post.mk>
