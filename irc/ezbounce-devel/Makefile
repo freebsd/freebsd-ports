@@ -7,11 +7,16 @@
 
 PORTNAME=	ezbounce
 PORTVERSION=	1.04.a
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://druglord.freelsd.org/ezbounce/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	http://druglord.freelsd.org/ezbounce/
+PATCHFILES=	ezb-1.04a-crash-fix-patch
+PATCH_DIST_STRIP= -p1
+
+MAINTAINER=	ab@astralblue.com
 COMMENT=	A highly configurable IRC Proxy
 
 GNU_CONFIGURE=	yes
