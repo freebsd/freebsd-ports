@@ -1,17 +1,17 @@
---- configure.orig	Sun Aug 25 04:31:08 2002
-+++ configure	Fri Sep 13 18:29:58 2002
-@@ -3758,7 +3758,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+--- configure.orig	Thu Oct 31 18:14:43 2002
++++ configure	Thu Oct 31 18:15:52 2002
+@@ -6157,7 +6157,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpng ${png_LIBS} -lz -lm $LIBS"
 +LIBS="-L%%LOCALBASE%%/lib -lpng ${png_LIBS} -lz -lm $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3764 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
  #include "confdefs.h"
-@@ -3921,7 +3921,7 @@
+@@ -6429,7 +6429,7 @@
  #define HAVE_PNG 1
- EOF
+ _ACEOF
  
 -  png_LIBS="-lpng -lz"
 +  png_LIBS="-L%%LOCALBASE%%/lib -lpng -lz"
