@@ -1,0 +1,20 @@
+--- dict.1.orig	Mon Feb 16 12:00:30 1998
++++ dict.1	Fri Feb 20 04:01:25 1998
+@@ -23,7 +23,7 @@
+ .\" Formatted or processed versions of this manual, if unaccompanied by
+ .\" the source, must acknowledge the copyright and authors of this work.
+ .\" 
+-.TH DICT 1 "15 February 1998" "" "Linux Programmer's Manual"
++.TH DICT 1 "15 February 1998" "" ""
+ .SH NAME
+ dict \- DICT Protocol Client
+ .SH SYNOPSIS
+@@ -237,7 +237,7 @@
+ .SH FILES
+ .I ~/.dictrc
+ .br
+-.I /etc/dict.conf
++.I /usr/local/etc/dict.conf
+ .SH "SEE ALSO"
+ .BR dictd (8),
+ .BR dictzip (1),

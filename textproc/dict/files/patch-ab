@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Mon Feb 16 12:00:09 1998
++++ Makefile.in	Fri Feb 20 03:53:10 1998
+@@ -141,8 +141,8 @@
+ 	$(CC) -c $(XTRACFLAGS) $(CFLAGS) -Wno-implicit $<
+ 
+ install.dict: dict
+-	install dict $(bindir)
+-	install -m 644 dict.1 $(man1_prefix)
++	$(INSTALL) -m 755 -o bin -g bin dict $(bindir)
++	$(INSTALL) -m 644 -o bin -g bin dict.1 $(man1_prefix)
+ 
+ install.dictzip: dictzip
+ 	install dictzip $(bindir)
