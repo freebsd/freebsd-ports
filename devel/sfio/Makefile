@@ -16,8 +16,6 @@ EXTRACT_CMD=	cpio
 EXTRACT_BEFORE_ARGS=	-idF
 EXTRACT_AFTER_ARGS=	# empty
 
-MAINTAINER=	jraynard@freebsd.org
-
 NO_WRKSUBDIR=	yes
 IS_INTERACTIVE=	yes
 MAN3=		cdt.3 sfio.3 vmalloc.3

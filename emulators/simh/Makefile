@@ -12,8 +12,6 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.update1.tar.gz
 
-MAINTAINER=	jraynard@FreeBSD.org
-
 RESTRICTED=	"Non-commercial use only"
 
 NO_WRKSUBDIR=	yes
