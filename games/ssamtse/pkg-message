@@ -1,0 +1,11 @@
+Serious Sam - The Second Encounter linux binaries are now
+installed. But it's up to you to copy SSam data files
+to %SSAMDIR%.
+
+Also, you need to edit ssamtse executable (this is a shell
+script) to set correct CPU frequency in SERIOUS_MHZ variable.
+This variable can also be passed to make at port build time.
+
+I hope, this will be fixed someday...
+(especially if someone mails me file list
+of original game CD)
