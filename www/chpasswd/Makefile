@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	chpasswd
-PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTVERSION=	2.2.2
 CATEGORIES=	www
-MASTER_SITES=	http://web.onda.com.br/orso/ \
-		http://fresh.t-systems-sfr.com/unix/src/privat2/
+MASTER_SITES=	http://sarg.sourceforge.net/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Allow users to change their Squid or Web password using the browser
