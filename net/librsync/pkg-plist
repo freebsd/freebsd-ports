@@ -1,5 +1,5 @@
-bin/rdiff
-include/rsync.h
+include/librsync.h
+include/librsync-config.h
 lib/librsync.a
 lib/librsync.so
 lib/librsync.so.1

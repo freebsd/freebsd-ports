@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	librsync
-PORTVERSION=	0.9.5.1
+PORTVERSION=	0.9.6
 CATEGORIES=	net
-MASTER_SITES=	http://rdiff-backup.stanford.edu/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for delta compression of streams
@@ -19,14 +20,18 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--enable-shared --disable-trace
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-shared --disable-trace
 INSTALLS_SHLIB=	yes
 
-MAN1=	rdiff.1
 MAN3=	librsync.3
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|= rdiff.1|=|g' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>

@@ -1,33 +1,6 @@
---- ltmain.sh.orig	Fri Sep  7 03:45:46 2001
-+++ ltmain.sh	Sat Mar  2 15:45:11 2002
-@@ -1040,7 +1040,7 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
-@@ -1048,7 +1048,7 @@
- 	 fi
- 	 if test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
-@@ -2439,7 +2439,7 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    ;;
- 	  *)
-@@ -4208,10 +4208,12 @@
+--- ltmain.sh.orig	Sat Jun 14 11:42:11 2003
++++ ltmain.sh	Mon Aug 11 13:59:20 2003
+@@ -4330,10 +4330,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
