@@ -1,0 +1,19 @@
+This is port devel/portmk, an alternate bsd.port.mk.
+
+Targets of this project are:
+
+- Modularization on bsd.port.mk, to make refactoring possible.
+
+- Better awareness of upcoming features for ports developers,
+  including giving them the ability to review changes and give
+  feedback early.
+
+- Faster turnaround times for development patches.
+
+- Widespread testing of new features.
+
+- Faster adoption of advanced features without endangering the
+  stability of the ports tree.
+
+This has been created as a follow-up to a proposal I sent to
+portmgr@ May 13th.

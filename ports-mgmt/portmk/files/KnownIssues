@@ -1,0 +1,3 @@
+* List of ports that fail to fetch/build with portmk, but build with a `stck' bsd.port.mk:
+
+* `make NO_CHECKSUM=yes checkdistsites' failes when FETCH_USE_WGET or FETCH_USE_CURL is set

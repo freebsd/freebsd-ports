@@ -1,0 +1,23 @@
+Prereq: 1.303.2.2
+Index: bsd.port.mk
+--- bsd.port.mk	19 Apr 2002 07:43:50 -0000
++++ bsd.port.mk	2 Jul 2004 20:47:18 -0000
+@@ -2,5 +2,6 @@
+ 
+ PORTSDIR?=	/usr/ports
++BSDPORTMK?=	${PORTSDIR}/Mk/bsd.port.mk
+ 
+ .include <bsd.own.mk>
+-.include "${PORTSDIR}/Mk/bsd.port.mk"
++.include "${BSDPORTMK}"
+Prereq: 1.28.2.2
+Index: bsd.port.subdir.mk
+--- bsd.port.subdir.mk	19 Apr 2002 07:43:50 -0000
++++ bsd.port.subdir.mk	2 Jul 2004 20:47:18 -0000
+@@ -2,4 +2,5 @@
+ 
+ PORTSDIR?=	/usr/ports
++BSDPORTSUBDIRMK?=	${PORTSDIR}/Mk/bsd.port.subdir.mk
+ 
+-.include "${PORTSDIR}/Mk/bsd.port.subdir.mk"
++.include "${BSDPORTSUBDIRMK}"
