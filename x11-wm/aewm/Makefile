@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aewm
-PORTVERSION=	0.9.19
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 
