@@ -1,0 +1,8 @@
+xmms-mad is an input plugin for xmms (http://www.xmms.org/) that
+uses libmad (http://mad.sourceforge.net/) to decode MPEG layer 1/2/3
+files and streams.
+
+WWW: http://xmms-mad.sourceforge.net/
+
+- David
+dyeske@yahoo.com
