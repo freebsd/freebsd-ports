@@ -8,7 +8,10 @@ info/sawfish.info
 info/sawfish.info-1
 info/sawfish.info-2
 info/sawfish.info-3
+info/sawfish.info-4
+info/sawfish.info-5
 @exec install-info --section="X11 window manager" --entry="* sawfish: (sawfish).
+libexec/sawfish/%%VERSION%%/%%GNUHOST%%/DOC
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/flippers.la
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/flippers.so
 libexec/sawfish/%%VERSION%%/%%GNUHOST%%/gradient.la
@@ -25,6 +28,7 @@ share/locale/da/LC_MESSAGES/sawfish.mo
 share/locale/de/LC_MESSAGES/sawfish.mo
 share/locale/en_GB/LC_MESSAGES/sawfish.mo
 share/locale/es/LC_MESSAGES/sawfish.mo
+share/locale/fi/LC_MESSAGES/sawfish.mo
 share/locale/fr/LC_MESSAGES/sawfish.mo
 share/locale/gl/LC_MESSAGES/sawfish.mo
 share/locale/ja/LC_MESSAGES/sawfish.mo
@@ -69,7 +73,6 @@ share/pixmaps/sawfish-placement.png
 share/pixmaps/sawfish-shortcuts.png
 share/pixmaps/sawfish-tooltips.png
 share/pixmaps/sawfish-workspaces.png
-share/sawfish/%%VERSION%%/DOC
 share/sawfish/%%VERSION%%/lisp/3d-hack.jl
 share/sawfish/%%VERSION%%/lisp/3d-hack.jlc
 share/sawfish/%%VERSION%%/lisp/anim-outline.jl
@@ -79,6 +82,8 @@ share/sawfish/%%VERSION%%/lisp/audio-events.jlc
 share/sawfish/%%VERSION%%/lisp/auto-raise.jl
 share/sawfish/%%VERSION%%/lisp/auto-raise.jlc
 share/sawfish/%%VERSION%%/lisp/autoload.jl
+share/sawfish/%%VERSION%%/lisp/beos-window-menu.jl
+share/sawfish/%%VERSION%%/lisp/beos-window-menu.jlc
 share/sawfish/%%VERSION%%/lisp/compat.jl
 share/sawfish/%%VERSION%%/lisp/compat.jlc
 share/sawfish/%%VERSION%%/lisp/configure.jl
@@ -95,6 +100,8 @@ share/sawfish/%%VERSION%%/lisp/cycle.jl
 share/sawfish/%%VERSION%%/lisp/cycle.jlc
 share/sawfish/%%VERSION%%/lisp/decode-events.jl
 share/sawfish/%%VERSION%%/lisp/decode-events.jlc
+share/sawfish/%%VERSION%%/lisp/describe.jl
+share/sawfish/%%VERSION%%/lisp/describe.jlc
 share/sawfish/%%VERSION%%/lisp/edge-flip.jl
 share/sawfish/%%VERSION%%/lisp/edge-flip.jlc
 share/sawfish/%%VERSION%%/lisp/edges.jl
@@ -125,6 +132,8 @@ share/sawfish/%%VERSION%%/lisp/grow-pack.jl
 share/sawfish/%%VERSION%%/lisp/grow-pack.jlc
 share/sawfish/%%VERSION%%/lisp/gtkrc.jl
 share/sawfish/%%VERSION%%/lisp/gtkrc.jlc
+share/sawfish/%%VERSION%%/lisp/help.jl
+share/sawfish/%%VERSION%%/lisp/help.jlc
 share/sawfish/%%VERSION%%/lisp/iconify.jl
 share/sawfish/%%VERSION%%/lisp/iconify.jlc
 share/sawfish/%%VERSION%%/lisp/ignore-window.jl
@@ -205,6 +214,8 @@ share/sawfish/%%VERSION%%/lisp/viewport.jl
 share/sawfish/%%VERSION%%/lisp/viewport.jlc
 share/sawfish/%%VERSION%%/lisp/window-anim.jl
 share/sawfish/%%VERSION%%/lisp/window-anim.jlc
+share/sawfish/%%VERSION%%/lisp/window-history.jl
+share/sawfish/%%VERSION%%/lisp/window-history.jlc
 share/sawfish/%%VERSION%%/lisp/window-order.jl
 share/sawfish/%%VERSION%%/lisp/window-order.jlc
 share/sawfish/%%VERSION%%/lisp/window-outline.jl
@@ -370,6 +381,8 @@ share/sawfish/%%VERSION%%/themes/smaker/min.png
 share/sawfish/%%VERSION%%/themes/smaker/min_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
+@dirrm libexec/sawfish/%%VERSION%%
+@dirrm libexec/sawfish
 @dirrm share/control-center/Sawfish
 @dirrm share/gnome/apps/Settings/Sawfish
 @dirrm share/sawfish/%%VERSION%%/lisp

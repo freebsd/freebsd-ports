@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION= 	0.27.2
+PORTVERSION= 	0.28
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/
 
