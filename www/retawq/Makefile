@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	retawq
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +25,11 @@ CONFIGURE_ARGS=	--path-archprefix=${PREFIX} --path-prefix=${PREFIX} \
 		--enable-i18n --enable-local-cgi --enable-ipv6
 
 MAN1=		retawq.1
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.8:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--enable-tls
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|_IN_H 0|_IN_H 1|g ; \
