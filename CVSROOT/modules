@@ -4904,6 +4904,7 @@ memcached-net	ports/net/memcached
 memcheck	ports/devel/memcheck
 memgrep		ports/sysutils/memgrep
 memtest		ports/sysutils/memtest
+memtest86	ports/sysutils/memtest86
 mencal		ports/deskutils/mencal
 menushki	ports/misc/menushki
 mergeant	ports/databases/mergeant
