@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.10.5
+PORTVERSION=	0.10.6
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
@@ -37,12 +37,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			  -D_REENTRANT ${PTHREAD_CFLAGS} -fno-rtti" \
-		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} ${PTHREAD_LIBS} ${GCC_R_LIB}"
-
-.if exists(/usr/lib/libgcc_r.a)
-GCC_R_LIB=	-lgcc_r
-.endif
+			  -D_REENTRANT ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} ${PTHREAD_LIBS}"
 
 post-extract:
 .if !defined(WITH_FULL_MOZILLA)
