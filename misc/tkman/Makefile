@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.21 1996/12/07 09:28:45 max Exp $
+# $Id: Makefile,v 1.22 1997/04/20 13:19:36 wosch Exp $
 #
 
 DISTNAME=	tkman-1.8
@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	tg@freebsd.org
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
-RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman \
-		glimpse:${PORTSDIR}/misc/glimpse
+RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
+		glimpse:${PORTSDIR}/textproc/glimpse
 
 NO_CDROM=	"Don't sell for profit"
 MAN1=		tkman.1
