@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-Palm
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	palm perl5
 MASTER_SITES=	http://www.ooblick.com/software/coldsync/
 
