@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	webalizer
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.5
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/ \
 		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-2.01-03-src
+DISTNAME=	${PORTNAME}-2.01-05-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
@@ -24,6 +24,7 @@ WEBALIZER_LANG?=	german
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--enable-dns \
+			--with-etcdir=${PREFIX}/etc \
 			--with-gdlib=${PREFIX}/lib \
 			--with-gd=${PREFIX}/include/gd \
 			--with-language=${WEBALIZER_LANG}
@@ -36,7 +37,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 
 pre-configure:
-	@${PERL5} -pi -e "s=/etc=${PREFIX}/etc=" ${WRKSRC}/webalizer.c
 	@${PERL5} -pi -e "s=webalizer.conf=${PKGNAMEPREFIX}webalizer.conf=" \
 		${WRKSRC}/webalizer.c
 
