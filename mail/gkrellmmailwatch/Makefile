@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmmailwatch
-PORTVERSION=	0.5
+PORTVERSION=	0.6b
 CATEGORIES=	mail
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	mailwatch-${PORTVERSION}
