@@ -33,7 +33,8 @@ DRIVER_MANAGER?=	iodbc
 
 .if ${DRIVER_MANAGER} == "unixodbc"
 CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/odbc.ini \
-			--with-unixODBC=${LOCALBASE}
+			--with-unixODBC=${LOCALBASE} \
+			--without-samples
 LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .else	# assume we're using iodbc
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
