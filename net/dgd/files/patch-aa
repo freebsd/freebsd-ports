@@ -1,0 +1,61 @@
+*** Makefile.old	Sat Jul 16 13:28:40 1994
+--- Makefile	Thu Aug 25 10:20:32 1994
+***************
+*** 1,13 ****
+  #
+  # Makefile for DGD, Dworkin's Game Driver
+  #
+! HOST=	SUNOS4
+  DEFINES=-D$(HOST)
+! DEBUG=	-g -DDEBUG
+  CCFLAGS=$(DEFINES) $(DEBUG)
+  CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
+! LDFLAGS=
+! LIBS=
+  CC=	gcc
+  LD=	$(CC)
+  DMAKE=	make
+--- 1,15 ----
+  #
+  # Makefile for DGD, Dworkin's Game Driver
+  #
+! HOST=	BSD386
+  DEFINES=-D$(HOST)
+! DEBUG=
+! #DEBUG=	-g -DDEBUG
+  CCFLAGS=$(DEFINES) $(DEBUG)
+  CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
+! LDFLAGS= -s
+! #LDFLAGS=
+! LIBS= -lcrypt
+  CC=	gcc
+  LD=	$(CC)
+  DMAKE=	make
+***************
+*** 20,25 ****
+--- 22,29 ----
+  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+  	interpret.o config.o
+  
++ all: a.out
++ 
+  a.out:	$(OBJ)
+  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+  	cd lex; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+***************
+*** 50,56 ****
+  
+  comp/a.out:
+  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+! 			  'LIBS=$(LIBS)' a.out
+  
+  clean:
+  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
+--- 54,60 ----
+  
+  comp/a.out:
+  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+! 			'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
+  
+  clean:
+  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
