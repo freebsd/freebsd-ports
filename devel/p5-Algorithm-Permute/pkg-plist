@@ -4,3 +4,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/Permute.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/Permute.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm/Permute
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Algorithm 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Algorithm 2>/dev/null || true
