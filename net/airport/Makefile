@@ -10,6 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
 DISTFILES=	configurator_${PORTVERSION:S/.//g}${EXTRACT_SUFX} \
+		configurator_${OLDAPCVERSION:S/.//g}${EXTRACT_SUFX} \
 		link_monitor_${LINKMONVERSION:S/.//}${EXTRACT_SUFX} \
 		host_monitor_${HOSTMONVERSION:S/.//}${EXTRACT_SUFX} \
 		airportmodemutility_${MODEMVERSION:S/.//}${EXTRACT_SUFX}
@@ -26,6 +27,7 @@ USE_JAVA=	1.2+
 NO_WRKSUBDIR=	YES
 NO_BUILD=	yes
 
+OLDAPCVERSION=	1.5.2
 LINKMONVERSION=	1.1
 HOSTMONVERSION=	1.0
 MODEMVERSION=	2.0
@@ -38,6 +40,7 @@ do-install:
 		${MKDIR} ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/*jar ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/configurator_${PORTVERSION:S/.//g}/*jar ${PREFIX}/share/java; \
+		${INSTALL_DATA} ${WRKSRC}/configurator_${OLDAPCVERSION:S/.//g}/*jar ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/airportmodemutility_${PORTVERSION:S/.//g}/*jar ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/airport; \
 		${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/airport; \
@@ -46,6 +49,7 @@ do-install:
 			-e s,%%PREFIX%%,${PREFIX},g \
 			< ${FILESDIR}/airport > ${PREFIX}/bin/airport; \
 		${CHMOD} a+x ${PREFIX}/bin/airport
+		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/airport2
 		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/hostmon
 		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/linkmon
 		${LN} ${PREFIX}/bin/airport ${PREFIX}/bin/airmodem
