@@ -1,0 +1,37 @@
+apps/Memo/.DirIcon
+apps/Memo/Alarm.py
+apps/Memo/Alarm.pyc
+apps/Memo/Alarm.pyo
+apps/Memo/AppInfo.xml
+apps/Memo/AppRun
+apps/Memo/Arrow.py
+apps/Memo/Arrow.pyc
+apps/Memo/Arrow.pyo
+apps/Memo/EditBox.py
+apps/Memo/EditBox.pyc
+apps/Memo/EditBox.pyo
+apps/Memo/Help/COPYING
+apps/Memo/Help/Changes
+apps/Memo/Help/README
+apps/Memo/Memo.py
+apps/Memo/Memo.pyc
+apps/Memo/Memo.pyo
+apps/Memo/Options.xml
+apps/Memo/ShowAll.py
+apps/Memo/ShowAll.pyc
+apps/Memo/ShowAll.pyo
+apps/Memo/Window.py
+apps/Memo/Window.pyc
+apps/Memo/Window.pyo
+apps/Memo/findrox.py
+apps/Memo/findrox.pyc
+apps/Memo/findrox.pyo
+apps/Memo/memos.py
+apps/Memo/memos.pyc
+apps/Memo/memos.pyo
+apps/Memo/pretty_time.py
+apps/Memo/pretty_time.pyc
+apps/Memo/pretty_time.pyo
+@dirrm apps/Memo/Help
+@dirrm apps/Memo
+@unexec rmdir %D/apps 2>/dev/null || true
