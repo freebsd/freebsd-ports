@@ -1,0 +1,12 @@
+diff -urN vte-0.11.11.orig/src/vtefc.c vte-0.11.11/src/vtefc.c
+--- src/vtefc.c	2004-05-11 09:03:59.000000000 +0000
++++ src/vtefc.c	2004-05-11 09:05:48.000000000 +0000
+@@ -465,7 +465,7 @@
+ 			tmp = FcFontRenderPrepare(NULL,
+ 						  pattern,
+ 						  fontset->fonts[i]);
+-			_vte_fc_defaults_from_gtk(widget, tmp, antialias);
++			FcConfigSubstitute (NULL, tmp, FcMatchPattern);
+ 			_vte_fc_set_antialias(tmp, antialias);
+ 			save = FcPatternDuplicate(tmp);
+ 			FcPatternDestroy(tmp);

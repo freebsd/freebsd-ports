@@ -1,0 +1,466 @@
+diff -r -u src.orig/iso2022.c src/iso2022.c
+--- src.orig/iso2022.c	2003-09-15 11:57:33 -0700
++++ src/iso2022.c	2004-12-19 18:22:10 -0800
+@@ -298,24 +298,29 @@
+ {
+ 	int i;
+ 	gpointer p;
+-	static GTree *ambiguous = NULL;
++	static GHashTable *ambiguous = NULL;
+ 	for (i = 0; i < G_N_ELEMENTS(_vte_iso2022_ambiguous_ranges); i++) {
+ 		if ((c >= _vte_iso2022_ambiguous_ranges[i].start) &&
+ 		    (c <= _vte_iso2022_ambiguous_ranges[i].end)) {
+ 			return TRUE;
+ 		}
+ 	}
+-	if (ambiguous == NULL) {
+-		ambiguous = g_tree_new(_vte_direct_compare);
+-		for (i = 0;
+-		     i < G_N_ELEMENTS(_vte_iso2022_ambiguous_chars);
+-		     i++) {
++	for (i = 0; i < G_N_ELEMENTS(_vte_iso2022_unambiguous_ranges); i++) {
++		if ((c >= _vte_iso2022_unambiguous_ranges[i].start) &&
++		    (c <= _vte_iso2022_unambiguous_ranges[i].end)) {
++			return FALSE;
++		}
++	}
++	if (!ambiguous) {
++		ambiguous = g_hash_table_new (g_direct_hash, g_direct_equal);
++
++		for (i = 0; i < G_N_ELEMENTS(_vte_iso2022_ambiguous_chars); i++) {
+ 			p = GINT_TO_POINTER(_vte_iso2022_ambiguous_chars[i]);
+-			g_tree_insert(ambiguous, p, p);
++			g_hash_table_insert(ambiguous, p, p);
+ 		}
+ 	}
+-	p = GINT_TO_POINTER(c);
+-	return g_tree_lookup(ambiguous, p) == p;
++
++	return g_hash_table_lookup(ambiguous, GINT_TO_POINTER(c)) != NULL;
+ }
+ 
+ /* If we only have a codepoint, guess what the ambiguous width should be based
+@@ -862,35 +867,34 @@
+ }
+ 
+ static char *
+-_vte_iso2022_better(char *p, char *q)
+-{
+-	if (p == NULL) {
+-		return q;
+-	}
+-	if (q == NULL) {
+-		return p;
+-	}
+-	return MIN(p, q);
+-}
+-
+-static char *
+ _vte_iso2022_find_nextctl(const char *p, size_t length)
+ {
+ 	char *ret;
++	int i;
++
+ 	if (length == 0) {
+ 		return NULL;
+ 	}
+-	ret = memchr(p, '\033', length);
+-	ret = _vte_iso2022_better(ret, memchr(p, '\n', length));
+-	ret = _vte_iso2022_better(ret, memchr(p, '\r', length));
+-	ret = _vte_iso2022_better(ret, memchr(p, '\016', length));
+-	ret = _vte_iso2022_better(ret, memchr(p, '\017', length));
++
++	for (i = 0; i < length; ++i) {
++		if (p[i] == '\033' ||
++		    p[i] == '\n' ||
++		    p[i] == '\r' ||
++		    p[i] == '\016' ||
++		    p[i] == '\017'
+ #ifdef VTE_ISO2022_8_BIT_CONTROLS
+-	/* This breaks UTF-8 and other encodings which use the high bits. */
+-	ret = _vte_iso2022_better(ret, memchr(p, 0x8e, length));
+-	ret = _vte_iso2022_better(ret, memchr(p, 0x8f, length));
++		    /* This breaks UTF-8 and other encodings which
++		     * use the high bits.
++		     */
++  		                 ||
++		    p[i] == 0x8e ||
++		    p[i] == 0x8f
+ #endif
+-	return ret;
++			) {
++			return (char *)p + i;
++		}
++	}
++	return NULL;
+ }
+ 
+ static long
+diff -r -u src.orig/uniwidths src/uniwidths
+--- src.orig/uniwidths	2003-02-11 12:21:43 -0800
++++ src/uniwidths	2004-12-19 18:22:10 -0800
+@@ -5,6 +5,13 @@
+ 	{0xf0000, 0xffffd},
+ 	{0x100000, 0x10fffd},
+ };
++static const struct {
++	gunichar start, end;
++} _vte_iso2022_unambiguous_ranges[] = {
++	{0x01, 0xa0},
++	{0x452, 0x200f},
++};
++
+ static const gunichar _vte_iso2022_ambiguous_chars[] = {
+ 	0xa1,
+ 	0xa4,
+diff -r -u src.orig/vte.c src/vte.c
+--- src.orig/vte.c	2004-05-01 23:43:01 -0700
++++ src/vte.c	2004-12-19 18:22:10 -0800
+@@ -112,7 +112,8 @@
+ #define VTE_REGEXEC_FLAGS		0
+ #define VTE_INPUT_CHUNK_SIZE		0x1000
+ #define VTE_INVALID_BYTE		'?'
+-#define VTE_COALESCE_TIMEOUT		2
++#define VTE_COALESCE_TIMEOUT		10
++#define VTE_DISPLAY_TIMEOUT		15
+ 
+ /* The structure we use to hold characters we're supposed to display -- this
+  * includes any supported visible attributes. */
+@@ -204,8 +205,8 @@
+ 	struct _vte_iso2022_state *iso2022;
+ 	struct _vte_buffer *incoming;	/* pending bytestream */
+ 	GArray *pending;		/* pending characters */
+-	gboolean processing;
+-	gint processing_tag;
++	gint coalesce_timeout;
++	gint display_timeout;
+ 
+ 	/* Output data queue. */
+ 	struct _vte_buffer *outgoing;	/* pending input characters */
+@@ -462,7 +463,7 @@
+ static gboolean vte_terminal_background_update(gpointer data);
+ static void vte_terminal_queue_background_update(VteTerminal *terminal);
+ static void vte_terminal_queue_adjustment_changed(VteTerminal *terminal);
+-static gboolean vte_terminal_process_incoming(gpointer data);
++static gboolean vte_terminal_process_incoming(VteTerminal *terminal);
+ static gboolean vte_cell_is_selected(VteTerminal *terminal,
+ 				     glong col, glong row, gpointer data);
+ static char *vte_terminal_get_text_range_maybe_wrapped(VteTerminal *terminal,
+@@ -489,6 +490,9 @@
+ 						 gboolean include_trailing_spaces);
+ static void _vte_terminal_disconnect_pty_read(VteTerminal *terminal);
+ static void _vte_terminal_disconnect_pty_write(VteTerminal *terminal);
++static void vte_terminal_stop_processing (VteTerminal *terminal);
++static void vte_terminal_start_processing (VteTerminal *terminal);
++static gboolean vte_terminal_is_processing (VteTerminal *terminal);
+ 
+ /* Free a no-longer-used row data array. */
+ static void
+@@ -6989,11 +6993,7 @@
+ 		/* Take one last shot at processing whatever data is pending,
+ 		 * then flush the buffers in case we're about to run a new
+ 		 * command, disconnecting the timeout. */
+-		if (terminal->pvt->processing) {
+-			g_source_remove(terminal->pvt->processing_tag);
+-			terminal->pvt->processing = FALSE;
+-			terminal->pvt->processing_tag = VTE_INVALID_SOURCE;
+-		}
++		vte_terminal_stop_processing (terminal);
+ 		if (_vte_buffer_length(terminal->pvt->incoming) > 0) {
+ 			vte_terminal_process_incoming(terminal);
+ 		}
+@@ -7277,11 +7277,7 @@
+ 	/* Take one last shot at processing whatever data is pending, then
+ 	 * flush the buffers in case we're about to run a new command,
+ 	 * disconnecting the timeout. */
+-	if (terminal->pvt->processing) {
+-		g_source_remove(terminal->pvt->processing_tag);
+-		terminal->pvt->processing = FALSE;
+-		terminal->pvt->processing_tag = VTE_INVALID_SOURCE;
+-	}
++	vte_terminal_stop_processing (terminal);
+ 	if (_vte_buffer_length(terminal->pvt->incoming) > 0) {
+ 		vte_terminal_process_incoming(terminal);
+ 	}
+@@ -7379,10 +7375,9 @@
+ /* Process incoming data, first converting it to unicode characters, and then
+  * processing control sequences. */
+ static gboolean
+-vte_terminal_process_incoming(gpointer data)
++vte_terminal_process_incoming(VteTerminal *terminal)
+ {
+ 	GValueArray *params = NULL;
+-	VteTerminal *terminal;
+ 	VteScreen *screen;
+ 	struct vte_cursor_position cursor;
+ 	GtkWidget *widget;
+@@ -7396,10 +7391,9 @@
+ 	gboolean leftovers, modified, bottom, inserted, again;
+ 	GArray *unichars;
+ 
+-	g_return_val_if_fail(GTK_IS_WIDGET(data), FALSE);
+-	g_return_val_if_fail(VTE_IS_TERMINAL(data), FALSE);
+-	widget = GTK_WIDGET(data);
+-	terminal = VTE_TERMINAL(data);
++	g_return_val_if_fail(GTK_IS_WIDGET(terminal), FALSE);
++	g_return_val_if_fail(VTE_IS_TERMINAL(terminal), FALSE);
++	widget = GTK_WIDGET(terminal);
+ 
+ 	bottom = (terminal->pvt->screen->insert_delta ==
+ 		  terminal->pvt->screen->scroll_delta);
+@@ -7410,7 +7404,6 @@
+ 			_vte_buffer_length(terminal->pvt->incoming));
+ 	}
+ #endif
+-
+ 	/* Save the current cursor position. */
+ 	screen = terminal->pvt->screen;
+ 	cursor = screen->cursor_current;
+@@ -7705,14 +7698,6 @@
+ 			(long) _vte_buffer_length(terminal->pvt->incoming));
+ 	}
+ #endif
+-	/* Disconnect this function from the main loop. */
+-	if (!again) {
+-		terminal->pvt->processing = FALSE;
+-		if (terminal->pvt->processing_tag != VTE_INVALID_SOURCE) {
+-			g_source_remove(terminal->pvt->processing_tag);
+-		}
+-		terminal->pvt->processing_tag = VTE_INVALID_SOURCE;
+-	}
+ 
+ #ifdef VTE_DEBUG
+ 	if (_vte_debug_on(VTE_DEBUG_IO)) {
+@@ -7724,7 +7709,7 @@
+ 	}
+ #endif
+ 
+-	return terminal->pvt->processing;
++	return again;
+ }
+ 
+ /* Read and handle data from the child. */
+@@ -7832,41 +7817,7 @@
+ 		_vte_buffer_append(terminal->pvt->incoming, data, length);
+ 	}
+ 
+-	/* If we have sufficient data, just process it now. */
+-	if (_vte_buffer_length(terminal->pvt->incoming) >
+-	    VTE_INPUT_CHUNK_SIZE) {
+-		/* Disconnect the timeout if one is pending. */
+-		if (terminal->pvt->processing) {
+-			g_source_remove(terminal->pvt->processing_tag);
+-			terminal->pvt->processing = FALSE;
+-			terminal->pvt->processing_tag = VTE_INVALID_SOURCE;
+-		}
+-		vte_terminal_process_incoming(terminal);
+-	}
+-
+-	/* Wait no more than N milliseconds for more data.  We don't
+-	 * touch the timeout if we're already slated to call it again
+-	 * because if the output were carefully timed, we could
+-	 * conceivably put it off forever. */
+-	if (!terminal->pvt->processing &&
+-	    (_vte_buffer_length(terminal->pvt->incoming) > 0)) {
+-#ifdef VTE_DEBUG
+-		if (_vte_debug_on(VTE_DEBUG_IO)) {
+-			fprintf(stderr, "Adding timed handler.\n");
+-		}
+-#endif
+-		terminal->pvt->processing = TRUE;
+-		terminal->pvt->processing_tag = g_timeout_add(VTE_COALESCE_TIMEOUT,
+-							      vte_terminal_process_incoming,
+-							      terminal);
+-	} else {
+-#ifdef VTE_DEBUG
+-		if (_vte_debug_on(VTE_DEBUG_IO)) {
+-			fprintf(stderr, "Not touching timed handler, "
+-				"or no data.\n");
+-		}
+-#endif
+-	}
++	vte_terminal_start_processing (terminal);
+ }
+ 
+ /* Send locally-encoded characters to the child. */
+@@ -11313,8 +11264,8 @@
+ 					      (gpointer)terminal);
+ 	pvt->incoming = _vte_buffer_new();
+ 	pvt->pending = g_array_new(TRUE, TRUE, sizeof(gunichar));
+-	pvt->processing = FALSE;
+-	pvt->processing_tag = VTE_INVALID_SOURCE;
++	pvt->coalesce_timeout = VTE_INVALID_SOURCE;
++	pvt->display_timeout = VTE_INVALID_SOURCE;
+ 	pvt->outgoing = _vte_buffer_new();
+ 	pvt->outgoing_conv = (VteConv) -1;
+ 	pvt->conv_buffer = _vte_buffer_new();
+@@ -11892,10 +11843,7 @@
+ 	terminal->pvt->pty_reaper = NULL;
+ 
+ 	/* Stop processing input. */
+-	if (terminal->pvt->processing_tag != VTE_INVALID_SOURCE) {
+-		g_source_remove(terminal->pvt->processing_tag);
+-		terminal->pvt->processing_tag = VTE_INVALID_SOURCE;
+-	}
++	vte_terminal_stop_processing (terminal);
+ 
+ 	/* Discard any pending data. */
+ 	if (terminal->pvt->incoming != NULL) {
+@@ -15421,11 +15369,8 @@
+ {
+ 	g_return_if_fail(VTE_IS_TERMINAL(terminal));
+ 	/* Stop processing any of the data we've got backed up. */
+-	if (terminal->pvt->processing) {
+-		g_source_remove(terminal->pvt->processing_tag);
+-		terminal->pvt->processing_tag = VTE_INVALID_SOURCE;
+-		terminal->pvt->processing = FALSE;
+-	}
++	vte_terminal_stop_processing (terminal);
++
+ 	/* Clear the input and output buffers. */
+ 	if (terminal->pvt->incoming != NULL) {
+ 		_vte_buffer_clear(terminal->pvt->incoming);
+@@ -15758,3 +15703,114 @@
+ 	g_return_if_fail(VTE_IS_TERMINAL(terminal));
+ 	terminal->pvt->accessible_emit = TRUE;
+ }
++
++static gboolean display_timeout (gpointer data);
++static gboolean coalesce_timeout (gpointer data);
++
++static void
++add_display_timeout (VteTerminal *terminal)
++{
++	terminal->pvt->display_timeout =
++		g_timeout_add (VTE_DISPLAY_TIMEOUT, display_timeout, terminal);
++}
++
++static void
++add_coalesce_timeout (VteTerminal *terminal)
++{
++	terminal->pvt->coalesce_timeout =
++		g_timeout_add (VTE_COALESCE_TIMEOUT, coalesce_timeout, terminal);
++}
++
++static void
++remove_display_timeout (VteTerminal *terminal)
++{
++	g_source_remove (terminal->pvt->display_timeout);
++	terminal->pvt->display_timeout = VTE_DISPLAY_TIMEOUT;
++}
++
++static void
++remove_coalesce_timeout (VteTerminal *terminal)
++{
++	g_source_remove (terminal->pvt->coalesce_timeout);
++	terminal->pvt->coalesce_timeout = VTE_INVALID_SOURCE;
++}
++
++static void
++vte_terminal_stop_processing (VteTerminal *terminal)
++{
++	remove_display_timeout (terminal);
++	remove_coalesce_timeout (terminal);
++}
++
++static void
++vte_terminal_start_processing (VteTerminal *terminal)
++{
++	if (vte_terminal_is_processing (terminal)) {
++		remove_coalesce_timeout (terminal);
++		add_coalesce_timeout (terminal);
++	}
++	else {
++		add_coalesce_timeout (terminal);
++		add_display_timeout (terminal);
++	}
++}
++
++static gboolean
++vte_terminal_is_processing (VteTerminal *terminal)
++{
++	return terminal->pvt->coalesce_timeout != VTE_INVALID_SOURCE;
++}
++
++
++/* This function is called every DISPLAY_TIMEOUT ms.
++ * It makes sure output is never delayed by more than DISPLAY_TIMEOUT
++ */
++static gboolean
++display_timeout (gpointer data)
++{
++	gboolean cont;
++	VteTerminal *terminal = data;
++
++	cont = vte_terminal_process_incoming (terminal);
++
++	if (!cont) {
++		remove_coalesce_timeout (terminal);
++		
++		terminal->pvt->display_timeout = VTE_INVALID_SOURCE;
++
++		return FALSE;
++	}
++	else {
++		remove_coalesce_timeout (terminal);
++		add_coalesce_timeout (terminal);
++	}
++
++	return TRUE;
++}
++
++/* This function is called whenever data haven't arrived for
++ * COALESCE_TIMEOUT ms
++ */
++static gboolean
++coalesce_timeout (gpointer data)
++{
++	gboolean cont;
++	VteTerminal *terminal = data;
++
++	cont = vte_terminal_process_incoming (terminal);
++
++	if (!cont) {
++		remove_display_timeout (terminal);
++
++		terminal->pvt->coalesce_timeout = VTE_INVALID_SOURCE;
++
++		return FALSE;
++	}
++	else {
++		/* reset display timeout since we just displayed */
++		remove_display_timeout (terminal);
++		add_display_timeout (terminal);
++	}
++
++	return TRUE;
++ }
+diff -r -u src.orig/vtexft.c src/vtexft.c
+--- src.orig/vtexft.c	2004-04-19 22:16:56 -0700
++++ src/vtexft.c	2004-12-19 18:22:10 -0800
+@@ -661,6 +661,7 @@
+ 			  XftCharFontSpec *specs, int n)
+ {
+ 	int i, j;
++
+ 	i = j = 0;
+ 	while (i < n) {
+ 		for (j = i + 1; j < n; j++) {
+@@ -695,7 +696,7 @@
+ 	for (i = j = 0; i < n_requests; i++) {
+ 		specs[j].font = _vte_xft_font_for_char(data->font,
+ 						       requests[i].c);
+-		if (specs[j].font != NULL) {
++		if (specs[j].font != NULL && requests[i].c != 32) {
+ 			specs[j].x = requests[i].x - data->x_offs;
+ 			width = _vte_xft_char_width(data->font,
+ 						    specs[j].font,
+@@ -708,7 +709,7 @@
+ 			specs[j].y = requests[i].y - data->y_offs + draw->ascent;
+ 			specs[j].ucs4 = requests[i].c;
+ 			j++;
+-		} else {
++		} else if (requests[i].c != 32) {
+ 			g_warning(_("Can not draw character U+%04x.\n"),
+ 				  requests[i].c);
+		}

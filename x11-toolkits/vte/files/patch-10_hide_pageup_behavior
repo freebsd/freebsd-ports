@@ -1,0 +1,11 @@
+--- src/vte.c.orig	2004-12-20 00:01:33 -0800
++++ src/vte.c	2004-12-20 00:22:28 -0800
+@@ -696,7 +696,7 @@
+ 	    !terminal->pvt->bg_transparent &&
+ 	    (terminal->pvt->bg_pixbuf == NULL) &&
+ 	    (terminal->pvt->bg_file == NULL) &&
+-	    (row == terminal->pvt->screen->scroll_delta) &&
++	    (row == 0) &&
+ 	    (count == terminal->row_count) &&
+ 	    (terminal->pvt->scroll_lock_count == 0)) {
+ 		height = terminal->char_height;

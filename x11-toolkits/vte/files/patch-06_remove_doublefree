@@ -1,0 +1,38 @@
+diff -r -u src.orig/table.c src/table.c
+--- src.orig/table.c	2003-05-28 21:50:47 -0700
++++ src/table.c	2004-12-19 18:52:35 -0800
+@@ -709,7 +709,6 @@
+ 			if (G_VALUE_HOLDS_POINTER(value)) {
+ 				printf("\"%ls\"",
+ 				       (wchar_t*) g_value_get_pointer(value));
+-				g_free(g_value_get_pointer(value));
+ 			}
+ 		}
+ 		printf(")");
+diff -r -u src.orig/trie.c src/trie.c
+--- src.orig/trie.c	2003-09-11 13:45:03 -0700
++++ src/trie.c	2004-12-19 18:52:35 -0800
+@@ -648,9 +648,12 @@
+ 	/* We're done searching.  Copy out any parameters we picked up. */
+ 	if (bestarray != NULL) {
+ 		for (i = 0; i < bestarray->n_values; i++) {
+-			g_value_array_append(array,
+-					     g_value_array_get_nth(bestarray,
+-								   i));
++			GValue *value = g_value_array_get_nth(bestarray, i);
++			g_value_array_append(array, value);
++			
++			if (G_VALUE_HOLDS_POINTER(value)) {
++				g_value_set_pointer(value, NULL);
++			}
+ 		}
+ 		_vte_matcher_free_params_array(bestarray);
+ 	}
+@@ -704,6 +707,7 @@
+ 					if (ptr != NULL) {
+ 						g_free(ptr);
+ 					}
++					g_value_set_pointer(value, NULL);
+ 				}
+ 			}
+ 			_vte_matcher_free_params_array(valuearray);
