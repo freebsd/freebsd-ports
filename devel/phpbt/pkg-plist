@@ -1,0 +1,239 @@
+%%PHPBT%%/docs/html/images/callouts/9.gif
+%%PHPBT%%/docs/html/images/callouts/10.gif
+%%PHPBT%%/docs/html/images/callouts/2.gif
+%%PHPBT%%/docs/html/images/callouts/3.gif
+%%PHPBT%%/docs/html/images/callouts/4.gif
+%%PHPBT%%/docs/html/images/callouts/5.gif
+%%PHPBT%%/docs/html/images/callouts/6.gif
+%%PHPBT%%/docs/html/images/callouts/7.gif
+%%PHPBT%%/docs/html/images/callouts/8.gif
+%%PHPBT%%/docs/html/images/callouts/1.gif
+%%PHPBT%%/docs/html/images/shots/user/bugdetail.jpg
+%%PHPBT%%/docs/html/images/shots/user/enterbug-chooseproject.jpg
+%%PHPBT%%/docs/html/images/shots/user/enterbug-detail.jpg
+%%PHPBT%%/docs/html/images/shots/user/query.jpg
+%%PHPBT%%/docs/html/images/caution.gif
+%%PHPBT%%/docs/html/images/important.gif
+%%PHPBT%%/docs/html/images/logo.jpg
+%%PHPBT%%/docs/html/images/next.gif
+%%PHPBT%%/docs/html/images/note.gif
+%%PHPBT%%/docs/html/images/prev.gif
+%%PHPBT%%/docs/html/images/tip.gif
+%%PHPBT%%/docs/html/images/toc-blank.gif
+%%PHPBT%%/docs/html/images/toc-minus.gif
+%%PHPBT%%/docs/html/images/toc-plus.gif
+%%PHPBT%%/docs/html/images/up.gif
+%%PHPBT%%/docs/html/images/warning.gif
+%%PHPBT%%/docs/html/images/home.gif
+%%PHPBT%%/docs/html/adminguide.html
+%%PHPBT%%/docs/html/bugdetail.html
+%%PHPBT%%/docs/html/bugsearch.html
+%%PHPBT%%/docs/html/configuration.html
+%%PHPBT%%/docs/html/dependencies.html
+%%PHPBT%%/docs/html/devguide.html
+%%PHPBT%%/docs/html/devstandards.html
+%%PHPBT%%/docs/html/docs.css
+%%PHPBT%%/docs/html/index.html
+%%PHPBT%%/docs/html/installation.html
+%%PHPBT%%/docs/html/schema.html
+%%PHPBT%%/docs/html/userguide.html
+%%PHPBT%%/docs/sgml/template.sgml
+%%PHPBT%%/docs/sgml/bugsearch.sgml
+%%PHPBT%%/docs/sgml/configuration.sgml
+%%PHPBT%%/docs/sgml/devstandards.sgml
+%%PHPBT%%/docs/sgml/docs.dsl
+%%PHPBT%%/docs/sgml/installation.sgml
+%%PHPBT%%/docs/sgml/manifest.sgml
+%%PHPBT%%/docs/sgml/phpbt.sgml
+%%PHPBT%%/docs/sgml/primer.sgml
+%%PHPBT%%/docs/sgml/requirements.sgml
+%%PHPBT%%/docs/sgml/schema.sgml
+%%PHPBT%%/docs/sgml/bugdetail.sgml
+%%PHPBT%%/admin/user.php
+%%PHPBT%%/admin/database.php
+%%PHPBT%%/admin/group.php
+%%PHPBT%%/admin/os.php
+%%PHPBT%%/admin/project.php
+%%PHPBT%%/admin/removetemplates.php
+%%PHPBT%%/admin/resolution.php
+%%PHPBT%%/admin/severity.php
+%%PHPBT%%/admin/site.php
+%%PHPBT%%/admin/status.php
+%%PHPBT%%/admin/configure.php
+%%PHPBT%%/schemas/old/perms.sql
+%%PHPBT%%/schemas/old/table_rename.sql
+%%PHPBT%%/schemas/mysql.in
+%%PHPBT%%/schemas/oci8.in
+%%PHPBT%%/schemas/pgsql.in
+%%PHPBT%%/inc/db/mysql.php
+%%PHPBT%%/inc/db/oci8.php
+%%PHPBT%%/inc/db/pgsql.php
+%%PHPBT%%/inc/pear/DB/sybase.php
+%%PHPBT%%/inc/pear/DB/dbase.php
+%%PHPBT%%/inc/pear/DB/fbsql.php
+%%PHPBT%%/inc/pear/DB/ibase.php
+%%PHPBT%%/inc/pear/DB/ifx.php
+%%PHPBT%%/inc/pear/DB/msql.php
+%%PHPBT%%/inc/pear/DB/mssql.php
+%%PHPBT%%/inc/pear/DB/mysql.php
+%%PHPBT%%/inc/pear/DB/oci8.php
+%%PHPBT%%/inc/pear/DB/odbc.php
+%%PHPBT%%/inc/pear/DB/pgsql.php
+%%PHPBT%%/inc/pear/DB/storage.php
+%%PHPBT%%/inc/pear/DB/common.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer/BIFFwriter.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer/Format.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer/Parser.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer/Validator.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer/Workbook.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer/Worksheet.php
+%%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer.php
+%%PHPBT%%/inc/pear/PEAR.php
+%%PHPBT%%/inc/pear/DB.php
+%%PHPBT%%/inc/htmlMimeMail/RFC822.php
+%%PHPBT%%/inc/htmlMimeMail/htmlMimeMail.php
+%%PHPBT%%/inc/htmlMimeMail/mimePart.php
+%%PHPBT%%/inc/htmlMimeMail/smtp.php
+%%PHPBT%%/inc/auth.php
+%%PHPBT%%/inc/functions.php
+%%PHPBT%%/inc/is_a.php
+%%PHPBT%%/styles/black.css
+%%PHPBT%%/styles/default.css
+%%PHPBT%%/styles/print.css
+%%PHPBT%%/languages/old/sl.php
+%%PHPBT%%/languages/old/README
+%%PHPBT%%/languages/old/es.php
+%%PHPBT%%/languages/old/et.php
+%%PHPBT%%/languages/old/it.php
+%%PHPBT%%/languages/old/no.php
+%%PHPBT%%/languages/old/se.php
+%%PHPBT%%/languages/old/pl_iso-8859-2.php
+%%PHPBT%%/languages/old/ru_koi8-r.php
+%%PHPBT%%/languages/old/ru_windows-1251.php
+%%PHPBT%%/languages/old/gb2312.php
+%%PHPBT%%/languages/cz.php
+%%PHPBT%%/languages/da.php
+%%PHPBT%%/languages/cz_iso-8859-2.php
+%%PHPBT%%/languages/de.php
+%%PHPBT%%/languages/du.php
+%%PHPBT%%/languages/pt-br.php
+%%PHPBT%%/languages/es.php
+%%PHPBT%%/languages/fr.php
+%%PHPBT%%/languages/ja.php
+%%PHPBT%%/languages/nl.php
+%%PHPBT%%/languages/no.php
+%%PHPBT%%/languages/en.php
+%%PHPBT%%/templates/default/base/removetemplates.html
+%%PHPBT%%/templates/default/base/smartymissing.html
+%%PHPBT%%/templates/default/base/templatesperm.html
+%%PHPBT%%/templates/default/admin/wrap.html
+%%PHPBT%%/templates/default/admin/component-edit.html
+%%PHPBT%%/templates/default/admin/configure.html
+%%PHPBT%%/templates/default/admin/database-edit.html
+%%PHPBT%%/templates/default/admin/databaselist.html
+%%PHPBT%%/templates/default/admin/edit-submit.html
+%%PHPBT%%/templates/default/admin/group-edit.html
+%%PHPBT%%/templates/default/admin/grouplist.html
+%%PHPBT%%/templates/default/admin/os-edit.html
+%%PHPBT%%/templates/default/admin/oslist.html
+%%PHPBT%%/templates/default/admin/pagination.html
+%%PHPBT%%/templates/default/admin/project-add.html
+%%PHPBT%%/templates/default/admin/project-edit.html
+%%PHPBT%%/templates/default/admin/projectlist.html
+%%PHPBT%%/templates/default/admin/resolution-edit.html
+%%PHPBT%%/templates/default/admin/resolutionlist.html
+%%PHPBT%%/templates/default/admin/severity-edit.html
+%%PHPBT%%/templates/default/admin/severitylist.html
+%%PHPBT%%/templates/default/admin/site-edit.html
+%%PHPBT%%/templates/default/admin/sitelist.html
+%%PHPBT%%/templates/default/admin/status-edit.html
+%%PHPBT%%/templates/default/admin/statuslist.html
+%%PHPBT%%/templates/default/admin/user-edit.html
+%%PHPBT%%/templates/default/admin/userlist.html
+%%PHPBT%%/templates/default/admin/version-edit.html
+%%PHPBT%%/templates/default/admin/wrap-popup.html
+%%PHPBT%%/templates/default/admin/badperm.html
+%%PHPBT%%/templates/default/images/spacer.gif
+%%PHPBT%%/templates/default/images/title.gif
+%%PHPBT%%/templates/default/badgroup.html
+%%PHPBT%%/templates/default/bugdisplay-printable.html
+%%PHPBT%%/templates/default/bugdisplay.html
+%%PHPBT%%/templates/default/bugemail-newbug.txt
+%%PHPBT%%/templates/default/bugemail.txt
+%%PHPBT%%/templates/default/bugform.html
+%%PHPBT%%/templates/default/bughistory.html
+%%PHPBT%%/templates/default/buglist.html
+%%PHPBT%%/templates/default/bugvotes.html
+%%PHPBT%%/templates/default/changessaved.html
+%%PHPBT%%/templates/default/error.html
+%%PHPBT%%/templates/default/index.html
+%%PHPBT%%/templates/default/install-complete.html
+%%PHPBT%%/templates/default/install-dbfailure.html
+%%PHPBT%%/templates/default/install-dbsuccess.html
+%%PHPBT%%/templates/default/login.html
+%%PHPBT%%/templates/default/install.html
+%%PHPBT%%/templates/default/logout.html
+%%PHPBT%%/templates/default/newaccount-disabled.html
+%%PHPBT%%/templates/default/newaccount.html
+%%PHPBT%%/templates/default/newaccountsuccess.html
+%%PHPBT%%/templates/default/newbugform.html
+%%PHPBT%%/templates/default/projectlist.html
+%%PHPBT%%/templates/default/queryform-simple.html
+%%PHPBT%%/templates/default/queryform.html
+%%PHPBT%%/templates/default/report.html
+%%PHPBT%%/templates/default/upgrade-finished.html
+%%PHPBT%%/templates/default/upgrade.html
+%%PHPBT%%/templates/default/user.html
+%%PHPBT%%/templates/default/wrap-popup.html
+%%PHPBT%%/templates/default/wrap.html
+%%PHPBT%%/templates/default/badperm.html
+%%PHPBT%%/templates/default/bugattachmentform.html
+%%PHPBT%%/install.php
+%%PHPBT%%/index.php
+%%PHPBT%%/include.php
+%%PHPBT%%/config.php
+%%PHPBT%%/config-dist.php
+%%PHPBT%%/bug.php
+%%PHPBT%%/attachment.php
+%%PHPBT%%/UPGRADING
+%%PHPBT%%/TODO
+%%PHPBT%%/README
+%%PHPBT%%/INSTALL
+%%PHPBT%%/COPYING
+%%PHPBT%%/user.php
+%%PHPBT%%/CHANGELOG
+%%PHPBT%%/upgrade.php
+%%PHPBT%%/report.php
+%%PHPBT%%/query.php
+%%PHPBT%%/newaccount.php
+%%PHPBT%%/messages.po
+%%PHPBT%%/logout.php
+%%PHPBT%%/logo.jpg
+@dirrm %%PHPBT%%/admin
+@dirrm %%PHPBT%%/docs/html/images/callouts
+@dirrm %%PHPBT%%/docs/html/images/shots/user
+@dirrm %%PHPBT%%/docs/html/images/shots
+@dirrm %%PHPBT%%/docs/html/images
+@dirrm %%PHPBT%%/docs/html
+@dirrm %%PHPBT%%/docs/sgml
+@dirrm %%PHPBT%%/docs
+@dirrm %%PHPBT%%/inc/db
+@dirrm %%PHPBT%%/inc/pear/DB
+@dirrm %%PHPBT%%/inc/pear/Spreadsheet/Excel/Writer
+@dirrm %%PHPBT%%/inc/pear/Spreadsheet/Excel
+@dirrm %%PHPBT%%/inc/pear/Spreadsheet
+@dirrm %%PHPBT%%/inc/pear
+@dirrm %%PHPBT%%/inc/htmlMimeMail
+@dirrm %%PHPBT%%/inc
+@dirrm %%PHPBT%%/schemas/old
+@dirrm %%PHPBT%%/schemas
+@dirrm %%PHPBT%%/styles
+@dirrm %%PHPBT%%/languages/old
+@dirrm %%PHPBT%%/languages
+@dirrm %%PHPBT%%/jpgimages
+@dirrm %%PHPBT%%/templates/default/base
+@dirrm %%PHPBT%%/templates/default/admin
+@dirrm %%PHPBT%%/templates/default/images
+@dirrm %%PHPBT%%/templates/default
+@dirrm %%PHPBT%%/templates
+@dirrm %%PHPBT%%
