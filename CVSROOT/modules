@@ -4508,7 +4508,6 @@ ns		ports/net/ns
 nsc		ports/net/nsc
 nscache		ports/www/nscache
 nsf		ports/misc/nsf
-nsl		ports/lang/nsl
 nslint		ports/net/nslint
 nslookup	src/usr.sbin/nslookup
 nsping		ports/net/nsping
@@ -7167,6 +7166,7 @@ telserv		ports/net/telserv
 temperature.app	ports/x11/temperature.app
 tempest_for_eliza	ports/audio/tempest_for_eliza
 templ		ports/devel/templ
+tensile		ports/lang/tensile
 termcap		src/share/termcap
 terminality	ports/devel/terminality
 terminatorx	ports/audio/terminatorx
