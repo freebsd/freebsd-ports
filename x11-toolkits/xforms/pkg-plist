@@ -2,11 +2,11 @@
 @mode 755
 bin/fdesign
 @mode 644
-lib/libforms.a
-lib/libforms.so.0.7
-@exec /sbin/ldconfig -m %B
-@exec ranlib %D/lib/libforms.a
+lib/libxforms.a
+lib/libxforms.so.0.7
+@exec ldconfig -m %B
+@exec ranlib %D/lib/libxforms.a
 @mode 444
-include/Xf/forms.h
+include/X11/forms.h
 man/man1/fdesign.1
 man/man5/xforms.5
