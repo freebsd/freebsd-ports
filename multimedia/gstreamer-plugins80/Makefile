@@ -608,7 +608,7 @@ PLIST_SUB+=	LIBMUSICBRAINZ=""
 CONFIGURE_ARGS+=	--disable-shout
 PLIST_SUB+=	LIBSHOUT="@comment "
 .else
-LIB_DEPENDS+=	shout.3:${PORTSDIR}/audio/libshout
+LIB_DEPENDS+=	shout.2:${PORTSDIR}/audio/libshout
 
 PLIST_SUB+=	LIBSHOUT=""
 .endif
