@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.synflood.at/akpop3d/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 daemon aimed to be small and secure
 
 MAN8=		akpop3d.8

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kyra is a simple Sprite engine written in C++
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
