@@ -769,6 +769,7 @@ chipmunk	ports/cad/chipmunk
 chipvault	ports/cad/chipvault
 chk4mail	ports/mail/chk4mail
 chkrootkit	ports/security/chkrootkit
+chmlib		ports/misc/chmlib
 choparp		ports/net/choparp
 chora		ports/devel/chora
 chord		ports/misc/chord
