@@ -6,12 +6,15 @@
 #
 
 PORTNAME?=	cs
-PORTVERSION?=	1.1b
+PORTVERSION?=	1.1c
 CATEGORIES=	games linux
-MASTER_SITES?=	ftp://ftp.icrontic.com/pub/ \
+MASTER_SITES?=	http://www.databits.net/~pat/ \
+		ftp://ftp.icrontic.com/pub/ \
 		http://flf.playnet.com/
 PKGNAMEPREFIX=	hlserver-
-DISTNAME?=	cs_11b_full
+.ifndef(DISTNAME)
+DISTFILES?=	cs_11b_full.tar.gz cs_11c_up.tar.gz
+.endif
 
 MAINTAINER?=	pat@databits.net
 
@@ -22,7 +25,7 @@ USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 WRKSRC?=		${WRKDIR}/cstrike
-PLIST_SUB=	${PLIST_SUB_MASTER}
+PLIST_SUB+=	${PLIST_SUB_MASTER}
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 SORT?=		/usr/bin/sort
@@ -30,7 +33,7 @@ SORT?=		/usr/bin/sort
 HALFLIFESERVER_PORT=	${.CURDIR}/../halflifeserver
 HLDSDIR!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HLDSDIR
 HL_PROGRAM!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V HL_PROGRAM
-PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB
+PLIST_SUB_MASTER!=	cd ${HALFLIFESERVER_PORT} && ${MAKE} -V PLIST_SUB_FOR_THIS_PORT
 
 pre-patch:
 # remove trailing ^M
@@ -50,22 +53,21 @@ do-install: install-parse-plist install-run-scripts
 
 # kaboom, ashes to ashes, .... The problem is dead :)
 # Contributed by <lioux@FreeBSD.org>
-install-parse-plist:
-	@${PERL} -e 'open(FHANDLER,"${PLIST}");' \
+install-parse-plist: generate-plist
+	@${PERL} -e 'open(FHANDLER,"${TMPPLIST}");' \
 		-e 'open(FDIR,">${WRKDIR}/dirs.sh.tmp");' \
 		-e 'open(FFILES,">${WRKDIR}/files.sh");' \
 		-e 'while (!eof(FHANDLER)) {' \
 			-e 'chop($$file = <FHANDLER>);' \
-			-e '$$file =~ s!%%HLDSDIR%%!!;' \
-			-e '$$dir = $$file;' \
-			-e '$$file =~ s!^\@.+!!;' \
+			-e '$$dir = $$file_partial = $$file;' \
+			-e '$$file_partial =~ s!^${HLDSDIR:S!^/!!}!!;' \
 			-e 'print FDIR "${INSTALL_DIR}", \
-				" ", "\"${PREFIX}/${HLDSDIR}/$$dir\"", \
+				" ", "\"${PREFIX}/$$dir\"", \
 				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
 			-e 'print FFILES "${INSTALL_DATA}", \
-				" ", "\"${WRKDIR}/$$file\"", \
-				" ", "\"${PREFIX}/${HLDSDIR}/$$file\"", \
-				"\n" if (length($$file) > 0);' \
+				" ", "\"${WRKDIR}/$$file_partial\"", \
+				" ", "\"${PREFIX}/$$file\"", \
+				"\n" if ($$file !~ m!^\@!);' \
 		-e '}' \
 		-e 'close(FFILES);' \
 		-e 'close(FDIR);' \
