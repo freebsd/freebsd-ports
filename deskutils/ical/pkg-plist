@@ -61,7 +61,7 @@ lib/ical/v2.2/tcllib/textwin.tcl
 lib/ical/v2.2/timerange.tcl
 lib/ical/v2.2/trigger.tcl
 man/man1/ical.1.gz
-@unexec rmdir %D/lib/ical/v2.2/contrib
-@unexec rmdir %D/lib/ical/v2.2/tcllib
-@unexec rmdir %D/lib/ical/v2.2
-@unexec rmdir %D/lib/ical
+@dirrm lib/ical/v2.2/contrib
+@dirrm lib/ical/v2.2/tcllib
+@dirrm lib/ical/v2.2
+@dirrm lib/ical
