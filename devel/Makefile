@@ -432,6 +432,7 @@
     SUBDIR += st
     SUBDIR += stlport
     SUBDIR += str
+    SUBDIR += styx
     SUBDIR += swarm
     SUBDIR += swigruby
     SUBDIR += t1lib
