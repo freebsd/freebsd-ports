@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- plugins/class-gen/Makefile.in	2002/02/19 08:11:57	1.1
-+++ plugins/class-gen/Makefile.in	2002/02/19 08:12:25
-@@ -192,7 +192,7 @@
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
--libanjuta_clsGen_la_LDFLAGS = 
+--- plugins/class-gen/Makefile.in.orig	Tue Nov  5 15:19:38 2002
++++ plugins/class-gen/Makefile.in	Tue Nov  5 15:20:28 2002
+@@ -210,7 +210,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ 
+-libanjuta_clsGen_la_LDFLAGS =
 +libanjuta_clsGen_la_LDFLAGS = -module -avoid-version
- libanjuta_clsGen_la_LIBADD = 
- libanjuta_clsGen_la_OBJECTS =  clsGen.lo
- CFLAGS = @CFLAGS@
+ libanjuta_clsGen_la_LIBADD =
+ am_libanjuta_clsGen_la_OBJECTS = clsGen.lo
+ libanjuta_clsGen_la_OBJECTS = $(am_libanjuta_clsGen_la_OBJECTS)

@@ -1,21 +1,20 @@
---- configure.orig	Thu Feb 14 22:13:15 2002
-+++ configure	Thu Feb 14 22:15:54 2002
-@@ -8,6 +8,7 @@
- # gives unlimited permission to copy, distribute and modify it.
+--- configure.orig	Mon Nov  4 03:12:17 2002
++++ configure	Tue Nov  5 15:17:37 2002
+@@ -16186,6 +16186,7 @@
  
- # Defaults:
+ 
+ packagesrcdir=`cd $srcdir && pwd`
 +GLIB_CONFIG="$GLIB_CONFIG"
- ac_help=
- ac_default_prefix=/usr/local
- # Any additions from configure.in:
-@@ -10328,11 +10329,11 @@
+ 
+ if test "x${prefix}" = "xNONE"; then
+   packageprefix=${ac_default_prefix}
+@@ -16193,11 +16194,11 @@
    packageprefix=${prefix}
  fi
  
 -packagedatadir=share/${PACKAGE}
--packagedocdir=doc/${PACKAGE}
 +packagedatadir=share/gnome/${PACKAGE}
-+packagedocdir=share/doc/${PACKAGE}
+ packagedocdir=share/doc/${PACKAGE}
  packageplugindir=lib/${PACKAGE}/plugins/${VERSION}
  
 -packagepixmapsdir=share/pixmaps/${PACKAGE}
@@ -23,35 +22,33 @@
  packagehelpdir=share/gnome/help/${PACKAGE}
  packagemenudir=share/gnome/apps
  packageplugindir=lib/${PACKAGE}
-@@ -10505,11 +10506,9 @@
- tagmanager/Makefile
- tagmanager/include/Makefile
- global-tags/Makefile
--scintilla/Makefile
- widgets/Makefile
- manuals/Makefile
- omf-install/Makefile
--scintilla/include/Makefile
- manuals/C/Makefile
- manuals/C/anjuta-manual/Makefile
- manuals/C/anjuta-faqs/Makefile
-@@ -10625,6 +10624,7 @@
- s%@GNOME_DOCKLETS_LIBS@%$GNOME_DOCKLETS_LIBS%g
- s%@GNOME_CAPPLET_LIBS@%$GNOME_CAPPLET_LIBS%g
- s%@cflags_set@%$cflags_set%g
-+s%@GLIB_CONFIG@%$GLIB_CONFIG%g
- s%@GTK_CONFIG@%$GTK_CONFIG%g
- s%@GTK_CFLAGS@%$GTK_CFLAGS%g
- s%@GTK_LIBS@%$GTK_LIBS%g
-@@ -10730,11 +10730,9 @@
- tagmanager/Makefile
- tagmanager/include/Makefile
- global-tags/Makefile
--scintilla/Makefile
- widgets/Makefile
- manuals/Makefile
- omf-install/Makefile
--scintilla/include/Makefile
- manuals/C/Makefile
- manuals/C/anjuta-manual/Makefile
- manuals/C/anjuta-faqs/Makefile
+@@ -16261,7 +16262,7 @@
+ _ACEOF
+ 
+ 
+-ac_config_files="$ac_config_files Makefile intl/Makefile po/Makefile.in macros/Makefile macros2/Makefile tagmanager/Makefile tagmanager/include/Makefile global-tags/Makefile scintilla/Makefile widgets/Makefile printing/Makefile manuals/Makefile omf-install/Makefile scintilla/include/Makefile manuals/C/Makefile manuals/C/anjuta-tutorial/Makefile manuals/C/anjuta-manual/Makefile manuals/C/anjuta-faqs/Makefile manuals/ja/Makefile manuals/ja/anjuta-manual/Makefile manuals/ja/anjuta-faqs/Makefile anjuta.spec src/Makefile pixmaps/Makefile data/Makefile data/welcome.txt data/properties/Makefile doc/anjuta.1 doc/anjuta_launcher.1 doc/Makefile scripts/Makefile scripts/anjuta_import.sh launcher/Makefile plugins/Makefile plugins/sample1/Makefile plugins/class-gen/Makefile plugins/patch/Makefile anjuta.desktop.in"
++ac_config_files="$ac_config_files Makefile intl/Makefile po/Makefile.in macros/Makefile macros2/Makefile tagmanager/Makefile tagmanager/include/Makefile global-tags/Makefile widgets/Makefile printing/Makefile manuals/Makefile omf-install/Makefile manuals/C/Makefile manuals/C/anjuta-tutorial/Makefile manuals/C/anjuta-manual/Makefile manuals/C/anjuta-faqs/Makefile manuals/ja/Makefile manuals/ja/anjuta-manual/Makefile manuals/ja/anjuta-faqs/Makefile anjuta.spec src/Makefile pixmaps/Makefile data/Makefile data/welcome.txt data/properties/Makefile doc/anjuta.1 doc/anjuta_launcher.1 doc/Makefile scripts/Makefile scripts/anjuta_import.sh launcher/Makefile plugins/Makefile plugins/sample1/Makefile plugins/class-gen/Makefile plugins/patch/Makefile anjuta.desktop.in"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -16801,12 +16802,10 @@
+   "tagmanager/Makefile" ) CONFIG_FILES="$CONFIG_FILES tagmanager/Makefile" ;;
+   "tagmanager/include/Makefile" ) CONFIG_FILES="$CONFIG_FILES tagmanager/include/Makefile" ;;
+   "global-tags/Makefile" ) CONFIG_FILES="$CONFIG_FILES global-tags/Makefile" ;;
+-  "scintilla/Makefile" ) CONFIG_FILES="$CONFIG_FILES scintilla/Makefile" ;;
+   "widgets/Makefile" ) CONFIG_FILES="$CONFIG_FILES widgets/Makefile" ;;
+   "printing/Makefile" ) CONFIG_FILES="$CONFIG_FILES printing/Makefile" ;;
+   "manuals/Makefile" ) CONFIG_FILES="$CONFIG_FILES manuals/Makefile" ;;
+   "omf-install/Makefile" ) CONFIG_FILES="$CONFIG_FILES omf-install/Makefile" ;;
+-  "scintilla/include/Makefile" ) CONFIG_FILES="$CONFIG_FILES scintilla/include/Makefile" ;;
+   "manuals/C/Makefile" ) CONFIG_FILES="$CONFIG_FILES manuals/C/Makefile" ;;
+   "manuals/C/anjuta-tutorial/Makefile" ) CONFIG_FILES="$CONFIG_FILES manuals/C/anjuta-tutorial/Makefile" ;;
+   "manuals/C/anjuta-manual/Makefile" ) CONFIG_FILES="$CONFIG_FILES manuals/C/anjuta-manual/Makefile" ;;
+@@ -17002,6 +17001,7 @@
+ s,@GNOME_APPLETS_LIBS@,$GNOME_APPLETS_LIBS,;t t
+ s,@GNOME_DOCKLETS_LIBS@,$GNOME_DOCKLETS_LIBS,;t t
+ s,@GNOME_CAPPLET_LIBS@,$GNOME_CAPPLET_LIBS,;t t
++s,@GLIB_CONFIG@,$GLIB_CONFIG,;t t
+ s,@GTK_CONFIG@,$GTK_CONFIG,;t t
+ s,@GTK_CFLAGS@,$GTK_CFLAGS,;t t
+ s,@GTK_LIBS@,$GTK_LIBS,;t t

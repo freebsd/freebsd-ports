@@ -1,28 +1,28 @@
---- Makefile.in.orig	Fri Feb 15 17:25:54 2002
-+++ Makefile.in	Fri Feb 15 17:33:47 2002
-@@ -150,13 +150,13 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
+--- Makefile.in.orig	Tue Nov  5 15:12:07 2002
++++ Makefile.in	Tue Nov  5 15:13:29 2002
+@@ -171,13 +171,13 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
  
 -SUBDIRS = intl po macros tagmanager global-tags scintilla \
 +SUBDIRS = intl po macros tagmanager global-tags \
- 	widgets manuals omf-install src pixmaps data \
--	doc launcher plugins scripts
-+	launcher plugins scripts
+ 	widgets printing manuals omf-install pixmaps scripts data \
+-	doc launcher plugins src macros2
++	launcher plugins src macros2
  
  
- anjutadocdir = ${prefix}/doc/anjuta
+ anjutadocdir = ${prefix}/@NO_PREFIX_PACKAGE_DOC_DIR@
 -anjutadoc_DATA = \
 +anjutadoc_DATA = # \
  	README\
  	COPYING\
  	AUTHORS\
-@@ -448,7 +448,7 @@
- install-exec-am:
- install-exec: install-exec-recursive
+@@ -563,7 +563,7 @@
+ 
+ info-am:
  
 -install-data-am: install-anjutadocDATA install-gnomemenuDATA
 +install-data-am: install-gnomemenuDATA
- install-data: install-data-recursive
  
- install-am: all-am
+ install-exec-am:
+ 
