@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	thttpd-2.13
-CATEGORIES=	www
+CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://www.freenix.no/~anders/
 
