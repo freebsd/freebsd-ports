@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.8 1997/11/16 10:02:55 fenner Exp $
+# $Id: Makefile,v 1.9 1997/11/26 22:43:35 vanilla Exp $
 #
 
 DISTNAME=	enl_BETA-0.13
@@ -18,6 +18,7 @@ MAINTAINER=	vanilla@MinJe.com.TW
 
 LIB_DEPENDS=	Im\\.4\\.:${PORTSDIR}/graphics/imlib
 
+BROKEN=		checksum and patch
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
