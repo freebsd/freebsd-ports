@@ -1,0 +1,27 @@
+bin/tvmet-config
+include/tvmet/BinaryFunctionals.h
+include/tvmet/CommaInitializer.h
+include/tvmet/CompileTimeError.h
+include/tvmet/Extremum.h
+include/tvmet/Functional.h
+include/tvmet/Matrix.h
+include/tvmet/MatrixEval.h
+include/tvmet/MatrixFunctions.h
+include/tvmet/MatrixImpl.h
+include/tvmet/MatrixOperators.h
+include/tvmet/NumericTraits.h
+include/tvmet/RunTimeError.h
+include/tvmet/TypePromotion.h
+include/tvmet/UnaryFunctionals.h
+include/tvmet/Vector.h
+include/tvmet/VectorEval.h
+include/tvmet/VectorFunctions.h
+include/tvmet/VectorImpl.h
+include/tvmet/VectorOperators.h
+include/tvmet/Xpr.h
+include/tvmet/XprFunctions.h
+include/tvmet/XprOperators.h
+include/tvmet/config.h
+include/tvmet/tvmet.h
+@dirrm include/tvmet
+share/aclocal/tvmet.m4
