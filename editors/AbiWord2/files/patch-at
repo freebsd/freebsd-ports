@@ -1,33 +1,11 @@
---- config/require/unix/Makefile.orig	Tue Jan  2 16:21:42 2001
-+++ config/require/unix/Makefile	Tue Jan  2 16:23:08 2001
-@@ -164,22 +164,6 @@
+--- config/require/unix/Makefile.orig	Sun Jan  7 01:24:20 2001
++++ config/require/unix/Makefile	Sun Jan  7 01:24:39 2001
+@@ -22,7 +22,7 @@
  
- _LIBICONV_:
+ include $(ABI_ROOT)/src/config/abi_defs.mk
  
--ifdef __FreeBSD__
--		@if [ -d $(ABI_ROOT)/../libiconv ]; then                        	\
--			echo Found libiconv in peer directory;                  \
--			if [ ! -r $(ABI_ROOT)/../libiconv/src/config.h ]; then  \
--				cd $(ABI_ROOT)/../libiconv;                     \
--				./configure;                                    \
--			fi;                                                     \
--			$(MAKE) -f Makefile.abi -C $(ABI_ROOT)/../libiconv;     \
--		else                                                            \
--			echo libiconv not found;                                \
--			echo TODO provide a nicer error message;                \
--			echo TODO with instructions for obtaining it;           \
--			exit 1;                                                 \
--		fi								
--
--else
- 	@if [ ! -r /usr/include/iconv.h -a ! -r /usr/local/include/iconv.h ]; then	\
- 		if [ -d $(ABI_ROOT)/../libiconv ]; then                        	\
- 			echo Found libiconv in peer directory;                  \
-@@ -200,7 +184,6 @@
- 		echo "*** are the versions of the libraries we should link against.";			\
- 		echo ;								\
- 	fi
--endif
- 
- #################################################################
- 
+-REQUIRE=		_GCC_ _GLIB_ _GTK_ _ZLIB_ _LIBPNG_ _LIBWV_ _UNIXFONTS_ _ABIDISTFILES_ _GNOME_ _LIBICONV_
++REQUIRE=		_GCC_ _GLIB_ _GTK_ _ZLIB_ _LIBPNG_ _LIBICONV_ _LIBWV_ _UNIXFONTS_ _ABIDISTFILES_ _GNOME_
+ REQUIREABICLEAN=	
+ REQUIRECLEAN=		clean_ZLIB_ clean_LIBPNG_ clean_LIBWV_ clean_LIBICONV_
+ REQUIREREALCLEAN=	$(REQUIRECLEAN) 
