@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.051
+PORTVERSION=	1.070
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +24,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-USERMIN_MODULES=
+USERMIN_MODULES=changepass-1.070-2.wbm.gz \
+		mailbox-1.070-1.wbm.gz
 
 USERMIN_THEMES=
 
@@ -35,13 +36,11 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${usermin_module} -C ${WRKSRC}; \
 		done; \
 	fi
-	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name "*.orig" -or -name "*.bak" | ${XARGS} ${RM}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/usermin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/usermin
-	@cd ${PREFIX}/lib/usermin && ${FIND} . -name "*.orig" -print \
-		| ${XARGS} ${RM}
 # we may have 2 levels of empty directories which cause the plist generation
 # system to fail
 	@cd ${PREFIX}/lib/usermin && ${FIND} . -type d -empty -print \
