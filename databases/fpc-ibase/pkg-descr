@@ -1,0 +1,8 @@
+Ibase is part of the base packages of Free Pascal, a 32-bit
+Turbo Pascal/Delphi compatible compiler.  Ibase provides an
+interface to Interbase databases.
+
+WWW: http://www.freepascal.org/
+
+--
+John Merryweather Cooper <coop9211@uidaho.edu>
