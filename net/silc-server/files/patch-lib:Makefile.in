@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Fri Nov  9 00:36:48 2001
-+++ lib/Makefile.in	Fri Nov  9 00:37:05 2001
-@@ -116,13 +116,12 @@
+--- lib/Makefile.in.orig	Fri Dec 21 02:12:11 2001
++++ lib/Makefile.in	Fri Dec 21 02:13:06 2001
+@@ -123,13 +123,12 @@
  	silcutil \
  	silcclient \
  	silcsftp \
@@ -16,7 +16,7 @@
  
  # SILC Library dirs
  SILCLIB_DIRS = \
-@@ -134,8 +133,7 @@
+@@ -141,8 +140,7 @@
  	silcske \
  	silcutil \
  	silcsftp \
