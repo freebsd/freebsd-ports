@@ -9,15 +9,6 @@
  
           /* get year/month/day/hour/min/sec values    */
           for (i=0;i<12;i++)
-@@ -820,7 +820,7 @@
- 		cp1=strstr(str,"Opera");  /* Netscape flavor      */
- 		if (cp1!=NULL)
- 		{
--		    while (*cp1!=' '&&*cp1!=' '&&*cp1!='\0') *cp2++=*cp1++;
-+		    while (*cp1!='/'&&*cp1!=' '&&*cp1!='\0') *cp2++=*cp1++;
- 		    while (*cp1!='.'&&*cp1!='\0') *cp2++=*cp1++;
- 		    if (mangle_agent<5)
- 		    {
 @@ -1460,19 +1460,19 @@
     while ( (fgets(buffer,BUFSIZE,fp)) != NULL)
     {

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	webalizer
-PORTVERSION=	2.1.6
-PORTREVISION=	4
+PORTVERSION=	2.1.9
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-2.01-06-src
+DISTNAME=	${PORTNAME}-2.01-09-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 
