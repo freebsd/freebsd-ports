@@ -387,6 +387,7 @@ aspell		ports/textproc/aspell
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
 asr-manpages	ports/misc/asr-manpages
+asr-utils	ports/sysutils/asr-utils
 astime		ports/x11-clocks/astime
 astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
