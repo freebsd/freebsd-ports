@@ -35,7 +35,7 @@ MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
-NO_LATEST_LINK=	yes
+LATEST_LINK=	postfix20
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 
