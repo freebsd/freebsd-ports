@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	csound-manual
-PORTVERSION=	4.07
+PORTVERSION=	4.10
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.csounds.com/manual/current/
 DISTFILES=	ascii.zip \
@@ -17,9 +17,7 @@ DISTFILES=	ascii.zip \
 		spplmnt1.zip \
 		spplmnt2.zip \
 		spplmtxt.zip \
-		toots.zip \
-		update1.zip \
-		update2.zip
+		toots.zip
 DIST_SUBDIR=	csound
 
 MAINTAINER=	trevor@FreeBSD.org
