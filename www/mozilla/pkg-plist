@@ -91,7 +91,7 @@ lib/mozilla/chrome/overlayinfo/navigator/content/overlays.rdf
 lib/mozilla/chrome/pipnss.jar
 lib/mozilla/chrome/pippki.jar
 lib/mozilla/chrome/toolkit.jar
-lib/mozilla/chrome/user-locales.rdf
+@unexec rm -f %D/lib/mozilla/chrome/user-locales.rdf
 lib/mozilla/chrome/user-skins.rdf
 lib/mozilla/component.reg
 lib/mozilla/components/absync.xpt
