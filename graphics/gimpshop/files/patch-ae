@@ -1,0 +1,11 @@
+--- plug-ins/plugindetails/plugindetails.c.orig	Sat Feb 20 18:47:03 1999
++++ plug-ins/plugindetails/plugindetails.c	Sat Feb 20 18:47:11 1999
+@@ -25,7 +25,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <time.h>
+-#include <regex.h>
++#include <gnuregex.h>
+ #include "gtk/gtk.h"
+ #include "libgimp/gimp.h"
+ 
