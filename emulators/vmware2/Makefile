@@ -9,8 +9,7 @@
 PORTNAME=	vmware2
 PORTVERSION=	2.0.4.1142
 CATEGORIES=	emulators linux
-MASTER_SITES=	http://www4.vmware.com/software/ \
-		${FREEBSD_MODULE_SITES} \
+MASTER_SITES=	${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
 DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
 		vmmon-freebsd-0.98${EXTRACT_SUFX}:patch \
@@ -26,15 +25,17 @@ RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 RESTRICTED=	"Not sure if we can redistribute it"
 
 VMWARE_MIRROR_SITES=	\
-		http://vmware-svca.www.conxion.com/software/:vmware \
-		http://vmware-chil.www.conxion.com/software/:vmware \
-		http://vmware-heva.www.conxion.com/software/:vmware \
-		http://vmware.wespe.de/software/:vmware \
-		ftp://vmware.wespe.de/pub/software:vmware
+		http://www.vmware.com/download1/software/:vmware \
+		ftp://download1.vmware.com/pub/software/:vmware
+#		http://vmware-svca.www.conxion.com/software/:vmware \
+#		http://vmware-chil.www.conxion.com/software/:vmware \
+#		http://vmware-heva.www.conxion.com/software/:vmware \
+#		http://vmware.wespe.de/software/:vmware \
+#		ftp://vmware.wespe.de/pub/software:vmware
 FREEBSD_MODULE_SITES=	\
-		http://www.mindspring.com/~vsilyaev/vmware/files/:patch \
-		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/:patch \
-		http://mirror.aarnet.edu.au/pub/vmware/freebsd/:patch
+		http://www.mindspring.com/~vsilyaev/vmware/files/:patch
+#		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/:patch \
+#		http://mirror.aarnet.edu.au/pub/vmware/freebsd/:patch
 
 USE_SUBMAKE=	yes
 USE_LINUX=	yes
