@@ -150,6 +150,7 @@
     SUBDIR += pharmacy
     SUBDIR += picprog
     SUBDIR += pmake
+    SUBDIR += popt
     SUBDIR += portcheckout
     SUBDIR += portlint
     SUBDIR += prcs

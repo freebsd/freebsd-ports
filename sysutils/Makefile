@@ -40,6 +40,7 @@
     SUBDIR += lavaps
     SUBDIR += libretto-config
     SUBDIR += lmmon
+    SUBDIR += logrotate
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
