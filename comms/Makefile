@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.34 1999/01/09 08:52:04 asami Exp $
+# $Id: Makefile,v 1.35 1999/03/19 22:20:14 asami Exp $
 #
 
     SUBDIR += asmodem
     SUBDIR += bpl+
     SUBDIR += conserver
     SUBDIR += ecu
+    SUBDIR += gnokii
     SUBDIR += hylafax
     SUBDIR += kermit
     SUBDIR += lrzsz
