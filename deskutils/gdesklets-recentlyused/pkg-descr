@@ -1,0 +1,11 @@
+The Recently Used Toolbar displays icons for the most recently used items
+according to your GNOME ~/.recently-used file. The Desklet displays a
+configurable number of icons in the last used order. As you scroll over the
+icons in the toolbar they expand similar to the starter bar desklet. If the
+file has a thumbnail already created, then the thumbnail will be shown
+instead of the MIME icon. 
+
+If you click on one of the icons in the toolbar it will launch the application
+that GNOME has associated with that specific MIME type.
+
+WWW: http://www.clarkson.edu/~clarkbw/desklets/
