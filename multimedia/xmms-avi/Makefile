@@ -16,29 +16,22 @@ DISTNAME=	avi-xmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An avifile based .avi and .asf file playback plugin for XMMS
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
+USE_SDL=	yes
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 pre-patch:
 	@${REINPLACE_CMD} -e "s|SDL/SDL.h|SDL11/SDL.h|g" ${WRKSRC}/src/ctrackbar.cpp
-	@${REINPLACE_CMD} -e "s|lc_r|pthread|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 # This is to avoid libtool running ldconfig -m ${X11BASE}/lib/xmms/Input
 do-install:
