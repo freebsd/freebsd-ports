@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	smail-3.2.0.110
+DISTNAME=	smail-3.2.0.111
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 		ftp://ftp.planix.com/pub/Smail/ \

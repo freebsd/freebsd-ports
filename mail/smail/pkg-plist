@@ -10,8 +10,7 @@ bin/smailbug
 bin/smtpd
 bin/uupath
 bin/uuwho
-sbin/sendmail
-etc/COPYING
+etc/smail/COPYING
 etc/smail/forcepaths
 etc/smail/forcesmtp
 etc/smail/paths
@@ -24,6 +23,7 @@ libexec/smail/gleem
 libexec/smail/logsumm
 libexec/smail/makedb
 libexec/smail/mkaliases
+libexec/smail/mkaliases.O
 libexec/smail/mkdbm
 libexec/smail/mkhpath
 libexec/smail/mkline
@@ -36,4 +36,10 @@ libexec/smail/pathalias
 libexec/smail/pathmerge
 libexec/smail/savelog
 libexec/smail/smailbug
+libexec/smail/smailbug.O
 libexec/smail/unsharmap
+sbin/sendmail
+@dirrm libexec/smail
+@dirrm etc/smail/maps
+@dirrm etc/smail/methods
+@dirrm etc/smail
