@@ -4,6 +4,13 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit/List.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit/MAPS.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit/PGP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
+%%PORTDOCS%%share/doc/Mail-Audit/Changes
+%%PORTDOCS%%share/doc/Mail-Audit/FAQ
+%%PORTDOCS%%share/doc/Mail-Audit/README
+share/examples/Mail-Audit/popread
+share/examples/Mail-Audit/proc2ma
+@dirrm share/examples/Mail-Audit
+%%PORTDOCS%%@dirrm share/doc/Mail-Audit
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Audit
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Audit
