@@ -1,8 +1,7 @@
 # New ports collection makefile for:  connect4 
 # Version required:	3.2
 # Date created:		Thu May  8 16:41:01 EST 1997
-# Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
-# FreeBSD Version:	2.1.5-RELEASE
+# Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #
 # $FreeBSD$
 #
@@ -14,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gu.kiev.ua/pub/cdrom5/games/volume6/ \
 		ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
 EXTRACT_SUFX=	""
 
-MAINTAINER=	sutton@aardvark.apana.org.au
+MAINTAINER=	jsutton@bbcon.com.au
 
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
