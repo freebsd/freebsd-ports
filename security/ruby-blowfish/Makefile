@@ -8,7 +8,9 @@
 PORTNAME=	blowfish
 PORTVERSION=	0.2
 CATEGORIES=	security ruby
-MASTER_SITES=	http://www.rubylinks.de/download/
+MASTER_SITES=	http://www.rubylinks.de/download/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
