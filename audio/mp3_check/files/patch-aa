@@ -1,24 +1,22 @@
---- Makefile.orig	Tue May 23 03:17:09 2000
-+++ Makefile	Sun Aug  6 21:52:07 2000
-@@ -1,8 +1,9 @@
- # Makefile for mp3_check
+--- Makefile.orig	Tue Oct 24 10:51:53 2000
++++ Makefile	Tue Oct 24 11:06:47 2000
+@@ -2,8 +2,8 @@
  
--CC = gcc
--CFLAGS = -Wall -Werror
--OPT_FLAGS = -O3 
-+CC ?= gcc
-+LOCALBASE ?= /usr/local
+ CC ?= gcc
+ LOCALBASE ?= /usr/local
+-CFLAGS += -Wall -Werror
+-OPT_FLAGS = -L${LOCALBASE}/lib 
 +CFLAGS += -Wall -I${LOCALBASE}/include
-+OPT_FLAGS = -L${LOCALBASE}/lib -lgnugetopt
++OPT_FLAGS = -L${LOCALBASE}/lib -lgnugetopt 
  OBJS = 	mp3_check.o \
  	mp3_check_misc.o
  
-@@ -19,7 +20,7 @@
- 	strip mp3_check
+@@ -21,7 +21,7 @@
+ 	cat MILESTONE.INTRO
  
  install: all
--	install -m 755 -o root -g root mp3_check /usr/local/bin
+-	install -m 755 -o root -g root mp3_check ${LOCALBASE}/bin
 +	install -m 755 -o root -g wheel mp3_check ${LOCALBASE}/bin
  
- mp3_check.o:		mp3_check.c mp3_check.h
- mp3_check_misc.o: 	mp3_check_misc.c mp3_check.h
+ # The FreeBSD Makefile options need a little work, but this will work for now.
+ freebsd:	mp3_check.c mp3_check.h mp3_check_misc.c	
