@@ -31,9 +31,7 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 
 .include <bsd.port.pre.mk>
 
-USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE=	automake
+USE_AUTOCONF=	yes
 AUTOCONF=	autoconf
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
