@@ -4,7 +4,7 @@
  mandir = @mandir@
  srcdir = @srcdir@
  docdir = @docdir@
-+samplesdir = @prefix@/share/examples/mutt
++samplesdir = @samplesdir@
  top_srcdir = @top_srcdir@
  top_builddir = ..
  INSTALL = @INSTALL@
