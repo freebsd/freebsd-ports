@@ -1,6 +1,6 @@
---- epplets/net.c.orig	Tue Jul 31 23:50:29 2001
-+++ epplets/net.c	Fri Aug 10 14:54:32 2001
-@@ -35,6 +35,22 @@
+--- epplets/net.c.orig	Wed Dec 22 02:52:54 1999
++++ epplets/net.c	Tue Nov 18 22:57:45 2003
+@@ -35,6 +35,23 @@
  # include <kstat.h>
  # include <sys/sysinfo.h>
  #endif
@@ -9,6 +9,7 @@
 +
 +#include <sys/types.h>
 +#include <sys/socket.h>
++#include <sys/param.h>
 +
 +#include <net/if.h>
 +#include <net/if_var.h>
@@ -23,7 +24,7 @@
  #include "epplet.h"
  #include "net.h"
  
-@@ -51,6 +67,18 @@
+@@ -51,6 +68,18 @@
    char buff[256], **names = NULL, *s;
    unsigned long i;
  
@@ -42,7 +43,7 @@
    names = (char **) malloc(sizeof(char *));
    memset(names, 0, sizeof(char *));
  
-@@ -80,6 +108,66 @@
+@@ -80,6 +109,70 @@
    return (names);
  #elif defined(__sun__)
    return ((char **) NULL);
@@ -80,6 +81,7 @@
 +	num = 0;
 +	while(ifnetaddr)
 +	{
++#if __FreeBSD_version < 501113
 +		if(kvm_read(kd, ifnetaddr, &ifnet, sizeof(ifnet)) == -1 ||  
 +			kvm_read(kd, (long)ifnet.if_name, type, 16) == -1)
 +		{
@@ -90,6 +92,9 @@
 +		ifnetaddr = (unsigned long)TAILQ_NEXT(&ifnet, if_link);
 +		
 +		snprintf(name, 32, "%s%d", type, ifnet.if_unit);
++#else
++		strlcpy(name, ifnet.if_xname, sizeof(name));
++#endif
 +
 +		if((names = (char **)realloc(names, (++num + 1)*sizeof(char *))) == NULL)
 +			return NULL;
@@ -109,7 +114,7 @@
  #else
    return ((char **) NULL);
  #endif
-@@ -97,6 +185,21 @@
+@@ -97,6 +190,21 @@
    unsigned char match = 0;
    FILE *fp;
    char buff[256], *colon = NULL, dev[64], in_str[64], out_str[64];
@@ -131,7 +136,7 @@
  #endif
  
    if (device == NULL) {
-@@ -151,6 +254,104 @@
+@@ -151,6 +259,108 @@
    }
    fclose(fp);
    return ((match) ? (0) : (ENODEV));
@@ -172,6 +177,7 @@
 +		if(ifaddraddr == 0)
 +		{
 +			ifnetfound = ifnetaddr;
++#if __FreeBSD_version < 501113
 +			if(kvm_read(kd, ifnetaddr, &ifnet, sizeof(ifnet)) == -1 ||  
 +				kvm_read(kd, (long)ifnet.if_name, tname, 16) == -1)
 +			{
@@ -181,8 +187,11 @@
 +			}
 +	
 +			tname[15] = '\0';
-+			ifnetaddr = (unsigned long)TAILQ_NEXT(&ifnet, if_link);
 +			snprintf(name, 32, "%s%d", tname, ifnet.if_unit);
++#else
++			strlcpy(name, ifnet.if_xname, sizeof(name));
++#endif
++			ifnetaddr = (unsigned long)TAILQ_NEXT(&ifnet, if_link);
 +
 +			if(strncasecmp(name, device, 16) != 0)
 +				continue;
