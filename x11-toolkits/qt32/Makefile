@@ -3,14 +3,14 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.30 1999/01/07 10:58:31 asami Exp $
+# $Id: Makefile,v 1.31 1999/02/25 08:25:17 andreas Exp $
 #
 
 DISTNAME=	qt-1.42
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-MAINTAINER=	andreas@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
