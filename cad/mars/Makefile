@@ -32,7 +32,7 @@ MAN1=		mars.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+BROKEN=		"Does not compile with recent gcc: needs stdarg.h, not varargs.h"
 .endif
 
 do-install:
