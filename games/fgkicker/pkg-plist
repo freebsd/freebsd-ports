@@ -1,1 +1,4 @@
 bin/fgkicker
+share/fgkicker/aircraft.dat
+share/fgkicker/airports.dat
+@dirrm share/fgkicker
