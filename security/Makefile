@@ -31,6 +31,7 @@
     SUBDIR += nessus
     SUBDIR += nmap
     SUBDIR += nmapfe
+    SUBDIR += openssh
     SUBDIR += openssl
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Crypt-DES
