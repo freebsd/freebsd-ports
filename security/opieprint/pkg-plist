@@ -1,4 +1,1 @@
-bin/keyprint
-share/keyprint/README
-share/keyprint/keyblank.ps
-@dirrm share/keyprint
+bin/opieprint

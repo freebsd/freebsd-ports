@@ -218,6 +218,7 @@
     SUBDIR += openssl
     SUBDIR += openssl-beta
     SUBDIR += openvpn
+    SUBDIR += opieprint
     SUBDIR += osiris
     SUBDIR += outguess
     SUBDIR += p5-Authen-Captcha
