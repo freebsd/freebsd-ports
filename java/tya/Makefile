@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
 
-JAVADIR=	${LOCALBASE}/jdk1.1.8
+JAVADIR?=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/tya
 
 post-configure:
