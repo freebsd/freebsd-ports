@@ -3,12 +3,12 @@
 # Date created:        1997/06/09
 # Whom:                wosch
 #
-# $Id: Makefile,v 1.4 1997/07/02 07:14:03 asami Exp $
+# $Id: Makefile,v 1.5 1997/07/19 11:08:50 wosch Exp $
 #
 
 DISTNAME=      rshell-1.0
 CATEGORIES=    net
-MASTER_SITES=  ${MASTER_SITE_LOCAL}
+MASTER_SITES=  http://www.freebsd.org/~wosch/src/
 
 MAINTAINER=    wosch@FreeBSD.ORG
 
