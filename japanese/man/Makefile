@@ -30,6 +30,15 @@ MAN1=		jman.1 jmanpath.1 japropos.1 \
 MAN8=		jmakewhatis.local.8 jcatman.local.8
 MANCOMPRESSED=	yes
 
+post-patch:
+.for file in	apropos/apropos.sh catman/catman.perl \
+		makewhatis/jmakewhatis.local.man \
+		makewhatis/jmakewhatis.local.man.eng \
+		makewhatis/makewhatis.local.sh \
+		man/locale.c manpath/manpath.config
+	${PERL} -pi -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/${file}
+.endfor
+
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
