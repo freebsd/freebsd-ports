@@ -2490,6 +2490,7 @@ hpijs		ports/print/hpijs
 hping		ports/security/hping
 hpoj		ports/graphics/hpoj
 hppsmtools	ports/graphics/hppsmtools
+hptools		ports/devel/hptools
 hr-ooodict-HR	ports/editors/ooodict-hr_HR
 hs-HOpenGL	ports/graphics/hs-HOpenGL
 hs-alex		ports/devel/hs-alex
