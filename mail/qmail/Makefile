@@ -31,7 +31,6 @@ PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,tls/}
 PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,tls
 
 MASTER_SITE_QMAIL+= \
-	http://qmail.deliver3.com/%SUBDIR%/ \
 	http://qmail.geto.net/%SUBDIR%/ \
 	http://qmail.palomine.net/%SUBDIR%/ \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
@@ -47,7 +46,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
 	http://www9.jp.qmail.org/%SUBDIR%/ \
-	http://qmail.kita-q.com/www.qmail.org/%SUBDIR%/ \
 	http://qmailorg.data-hotel.net/%SUBDIR%/ \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
