@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.stack.nl/~dimitri/doxygen/dl/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.src.tar.gz
