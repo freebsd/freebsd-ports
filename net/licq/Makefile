@@ -53,9 +53,4 @@ post-install:
 
 .include <bsd.port.pre.mk>
 .include "${LICQ_PORT}/Makefile.inc"
-
-.if ${OSVERSION} > 501109
-BROKEN=		don't link with -lc_r
-.endif
-
 .include <bsd.port.post.mk>
