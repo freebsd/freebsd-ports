@@ -4,7 +4,7 @@
  *
  * Daemon control program.
  *
- * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat/files/Attic/daemonctl.c,v 1.4 2002-04-08 19:19:31 znerd Exp $
+ * $FreeBSD: /tmp/pcvs/ports/www/jakarta-tomcat/files/Attic/daemonctl.c,v 1.5 2002-04-08 21:50:22 znerd Exp $
  */
 
 #include <assert.h>
@@ -21,7 +21,12 @@
 #include <sys/types.h>
 #include <sys/uio.h>
 
+/* The maximum size of the PID file, in bytes */
 #define MAX_FILE_SIZE			32
+
+/* The interval in seconds between the checks to make sure the process
+   died after a kill */
+#define STOP_TIME_INTERVAL		1
 
 #define ERR_ILLEGAL_ARGUMENT				1
 #define ERR_PID_FILE_NOT_FOUND				2
@@ -196,11 +201,39 @@ void writePID(int file, int pid) {
 
 	printf(">> Writing PID file...");
 
-	lseek(file, 0, SEEK_SET);
-	ftruncate(file, 0);
+	lseek(file, (off_t) 0, SEEK_SET);
+	ftruncate(file, (off_t) 0);
 	nbytes = asprintf(&buffer, "%d\n", pid);
 	write(file, buffer, nbytes);
 	printf(" [ DONE ]\n");
+}
+
+
+/**
+ * Checks if the specified process is running.
+ *
+ * @param pid
+ *    the process id, greater than 0.
+ *
+ * @return
+ *    0 if the specified process is not running, a different value otherwise.
+ */
+int existsProcess(int pid) {
+
+	int result;
+
+	/* Check preconditions */
+	assert(pid > 0);
+
+	/* See if the process exists */
+   	result = kill(pid, 0);
+
+	/* If the result is 0, then the process exists */
+	if (result == 0) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 
@@ -213,10 +246,15 @@ void writePID(int file, int pid) {
 void killProcess(int pid) {
 
 	int result;
+	unsigned int waited;
+	unsigned int forced;
+	unsigned int interval = STOP_TIME_INTERVAL;
+	unsigned int timeout  = %%STOP_TIMEOUT%%;
 
+	/* Check preconditions */
 	assert(pid > 0);
 
-	printf(">> Killing process %d...", pid);
+	printf(">> Terminating process %d...", pid);
 	result = kill(pid, SIGTERM);
 	if (result < 0) {
 		printf(" [ FAILED ]\n");
@@ -225,7 +263,37 @@ void killProcess(int pid) {
 		exit(ERR_KILL_FAILED);
 	}
 
-	printf(" [ DONE ]\n");
+	/* Wait until the process is actually killed */
+    result = existsProcess(pid);
+	for (waited=0; result == 1 && waited < timeout; waited += interval)
+	{
+		printf(".");
+		fflush(NULL);
+		sleep(interval);
+    	result = existsProcess(pid);
+	}
+
+	/* If the process still exists, then have no mercy and kill it */
+	forced = 0;
+	if (result == 1) {
+
+		/* Force the process to die */
+		result = kill(pid, SIGKILL);
+		if (result == 0) {
+			forced = 1;
+			printf(" [ DONE ]\n");
+			fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Process %d did not terminate within %%STOP_TIMEOUT%% sec. Killed.\n", pid);
+		} else if (result != ESRCH) {
+			printf(" [ FAILED ]\n");
+			fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to kill process %d: ", pid);
+			perror(NULL);
+			exit(ERR_KILL_FAILED);
+		}
+	}
+
+	if (forced == 0) {
+		printf(" [ DONE ]\n");
+	}
 }
 
 
@@ -246,14 +314,14 @@ void start(void) {
 	file = openPIDFile();
 	pid = readPID(file);
 
-	printf(">> Starting %%APP_TITLE%%...");
+	printf(">> Starting %%APP_TITLE%% %%PORTVERSION%%...");
 	if (pid != -1) {
 
 		/* Check if the process actually exists */
-		result = kill(pid, 0);
-		if (result == 0 || errno != ESRCH) {
+		result = existsProcess(pid);
+		if (result == 1) {
 			printf(" [ FAILED ]\n");
-			fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% is already running, PID is %d.\n", pid);
+			fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% %%PORTREVISION%% is already running, PID is %d.\n", pid);
 			exit(ERR_ALREADY_RUNNING);
 		}
 	}
@@ -310,7 +378,7 @@ void start(void) {
 		perror(NULL);
 		exit(ERR_STDOUT_LOGFILE_OPEN);
 	}
-	lseek(stdoutLogFile, 0, SEEK_END);
+	lseek(stdoutLogFile, (off_t) 0, SEEK_END);
 
 	/* Open the stderr log file */
 	stderrLogFile = open("%%STDERR_LOG%%", O_WRONLY);
@@ -320,7 +388,7 @@ void start(void) {
 		perror(NULL);
 		exit(ERR_STDERR_LOGFILE_OPEN);
 	}
-	lseek(stderrLogFile, 0, SEEK_END);
+	lseek(stderrLogFile, (off_t) 0, SEEK_END);
 
 	/* Split this process in two */
 	pid = fork();
@@ -345,7 +413,7 @@ void start(void) {
 		/* Execute the command */
 		execl("%%JAVA_HOME%%/%%JAVA_CMD%%", "%%JAVA_HOME%%/%%JAVA_CMD%%", "-jar", %%JAVA_ARGS%% "%%JAR_FILE%%", %%JAR_ARGS%% NULL);
 
-		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to start %%APP_TITLE%% as '%%JAVA_HOME%%/%%JAVA_CMD%% -jar %%JAR_FILE%%' in %%APP_HOME%%: ");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to start %%APP_TITLE%% %%PORTVERSION%% since '%%JAVA_HOME%%/%%JAVA_CMD%% -jar %%JAR_FILE%%' in %%APP_HOME%%: ");
 		perror(NULL);
 	} else {
 		printf(" [ DONE ]\n");
@@ -362,17 +430,17 @@ void stop(void) {
 	int pid;
 
 	/* Open and read the PID file */
-	printf(">> Opening PID file (%%PID_FILE%%)...");
+	printf(">> Reading PID file (%%PID_FILE%%)...");
 	file = openPIDFile();
 	pid = readPID(file);
 
-	printf(">> Checking that %%APP_TITLE%% is running...");
+	printf(">> Checking if %%APP_TITLE%% %%PORTVERSION%% is running...");
 
 	/* If there is a PID, see if the process still exists */
 	if (pid != -1) {
 		int result = kill(pid, 0);
 		if (result != 0 && errno == ESRCH) {
-			ftruncate(file, 0);
+			ftruncate(file, (off_t) 0);
 			pid = -1;
 		}
 	}
@@ -380,20 +448,22 @@ void stop(void) {
 	/* If there is no running process, produce an error */
 	if (pid == -1) {
 		printf(" [ FAILED ]\n");
-		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% is currently not running.\n");
+		fprintf(stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% %%PORTVERSION%% is currently not running.\n");
 		exit(ERR_NOT_RUNNING);
 	}
-
 	printf(" [ DONE ]\n");
 
+	/* Terminate the process */
 	killProcess(pid);
 
-	printf(">> Clearing PID file...");
-	ftruncate(file, 0);
-	printf(" [ DONE ]\n");
+	/* Clear the PID file */
+	ftruncate(file, (off_t) 0);
 }
 
 
+/**
+ * Restarts the process. If it not currently running, then it will fail.
+ */
 void restart(void) {
 	stop();
 	start();

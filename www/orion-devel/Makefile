@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -41,6 +41,7 @@ RMI_PORT?=	23791
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
+STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat/files/daemonctl.c \
 		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
@@ -66,6 +67,7 @@ pre-install:
 	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
 	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
+	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
@@ -95,6 +97,7 @@ do-install:
 	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
 	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
+	-e "/%%STOP_TIMEOUT%%/s//${STOP_TIMEOUT}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
 	$f > ${WRKDIR}/`basename $f`
 	@${ECHO_CMD} " [ DONE ]"
