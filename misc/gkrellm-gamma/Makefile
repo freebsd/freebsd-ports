@@ -1,0 +1,23 @@
+# New ports collection makefile for:	gkrellm-gamma
+# Date Created:				Jun 26 2003
+# Whom:					Pav Lucistnik <pav@oook.cz>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gkrellm-gamma
+PORTVERSION=	2.01
+CATEGORIES=	misc
+MASTER_SITES=	http://www.sweb.cz/tripie/gkrellm/gamma/dist/
+
+MAINTAINER=	pav@oook.cz
+COMMENT=	XFree86 gamma correction plugin for GKrellM
+
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
+
+USE_X_PREFIX=	yes
+MAKE_ENV=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
+ALL_TARGET=	gamma.so
+
+.include <bsd.port.mk>
