@@ -1,15 +1,15 @@
 # New ports collection makefile for:	neXtaw
-# Version required:	0.5
+# Version required:	0.5.1
 # Date created:		16 January 1997
-# Whom:			Thomas Gellekum <tg@freebsd.org>
+# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1997/07/17 15:13:01 max Exp $
+# $Id: Makefile,v 1.5 1997/08/13 09:09:21 asami Exp $
 #
 
-DISTNAME=	neXtaw-0.5
+DISTNAME=	neXtaw-0.5.1
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs/X
+MASTER_SITES=	http://www.inf.ufrgs.br/~kojima/nextaw/
+EXTRACT_SUFX=	.tar.gz.bin
 
 MAINTAINER=	tg@FreeBSD.ORG
 
@@ -25,6 +25,10 @@ post-configure:
 	@cd ${WRKSRC}/exports/include/X11/neXtaw; ln -sf ../../../../*.h .
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/neXtaw
+	${INSTALL_DATA} ${WRKSRC}/README.neXtaw ${PREFIX}/share/doc/neXtaw
+.endif
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
