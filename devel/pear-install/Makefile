@@ -28,6 +28,7 @@ PHP_VERSION!=	${LOCALBASE}/bin/php-config --version
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 .else
 PHP_VERSION=	4.3.0
+PHP_BASE=	${LOCALBASE}
 .endif
 LPHP_LIB=	lib/php
 
