@@ -1,0 +1,11 @@
+--- support/Makefile.in.orig	Mon Aug 16 05:38:53 2004
++++ support/Makefile.in	Mon Aug 16 05:39:09 2004
+@@ -44,7 +44,7 @@
+ LIBS = @LIBS@
+ MATHLIBS = @MATHLIBS@
+ # zlib, eventually
+-ZLIBS = @IRC_ZLIB_LIBRARY@
++ZLIBS = @IRC_ZLIB_LIBRARY@ -lm
+ # for DSM support (dlopen(), dlsym(), dlclose())
+ DLIBS = @IRC_DLIB@
+ # curses library
