@@ -6,23 +6,30 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+PATCH_SITES=	http://sarg.sourceforge.net/
+PATCHFILES=	sarg-2.0.4-segmentation-fault.patch
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
 
-.if !defined(WITHOUT_GD)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-.endif
-
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CC=gcc --enable-bindir="${PREFIX}/bin" --enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" --enable-htmldir=${PREFIX}/www/${PORTNAME}
+CONFIGURE_ENV=	CC=gcc
+CONFIGURE_ARGS=	--enable-bindir="${PREFIX}/bin" \
+		--enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" \
+		--enable-htmldir=${PREFIX}/www/${PORTNAME}
 
 .if !defined(WITHOUT_GD)
-CFLAGS+=	-I ${LOCALBASE}/include -L ${LOCALBASE}/lib
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 MAN1=		sarg.1
@@ -30,9 +37,7 @@ MAN1=		sarg.1
 post-extract:
 	@${CHMOD} +x ${WRKSRC}/sarg-php/locale
 
-post-configure:
-.if !defined(WITHOUT_GD)
-	@${SED} -i .orig 's|^\(LDFLAGS.*\)|\1 -I ${LOCALBASE}/include -L ${LOCALBASE}/lib|g' ${WRKSRC}/Makefile
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/^LDFLAGS/d' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
