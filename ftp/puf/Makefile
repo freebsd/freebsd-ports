@@ -7,18 +7,20 @@
 #
 
 PORTNAME=	puf
-PORTVERSION=	0.93.1
+PORTVERSION=	0.93.2
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/share/automake/depcomp:${PORTSDIR}/devel/automake
+
 GNU_CONFIGURE=	yes
 
-GMAKE=		yes
-
 MAN1=		puf.1
+
+post-extract:
+	@${CP} -f ${LOCALBASE}/share/automake/depcomp ${WRKSRC}
 
 .include <bsd.port.mk>
