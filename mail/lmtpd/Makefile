@@ -19,29 +19,11 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 BUILD_DEPENDS=	${LOCALBASE}/lib/libhome.a:${PORTSDIR}/misc/libhome
 
 OPTIONS=	PCRE "Support for PCRE" on
+OPTIONS+=	MYSQL "Support for MySQL Queries and Logs" on
+OPTIONS+=	DB3 "Support for DB3" on
+OPTIONS+=	DB4 "Support for DB4" off
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so)
-WITH_MYSQL=	yes
-OPTIONS+=	MYSQL "Support for MySQL Queries and Logs" on
-.else
-OPTIONS+=	MYSQL "Support for MySQL Queries and Logs" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libdb3.so)
-WITH_DB3=	yes
-OPTIONS+=	DB3 "Support for DB3" on
-.else
-OPTIONS+=	DB3 "Support for DB3" off
-.endif
-
-.if exists(${LOCALBASE}/lib/libdb4.so)
-WITH_DB4=	yes
-OPTIONS+=	DB4 "Support for DB4" on
-.else
-OPTIONS+=	DB4 "Support for DB4" off
-.endif
 
 .if defined(WITH_DB3) && defined(WITH_DB4)
 .error You cannot use DB3 and DB4 in the same time.
