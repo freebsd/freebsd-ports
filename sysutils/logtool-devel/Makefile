@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
+
+CONFLICTS=	logtool-1.2*
 
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/${PORTNAME}
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/${PORTNAME} --without-resolver
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		logtool.1
-DOCS=		CHANGES CREDITS README TODO doc/logtool.txt
+DOCS=		CHANGES CREDITS Changes README TODO doc/logtool.txt
 
 do-build:
 	cd ${WRKSRC}/src && ${GMAKE} INCLUDES="${CPPFLAGS}"
