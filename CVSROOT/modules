@@ -2212,6 +2212,7 @@ gputils		ports/devel/gputils
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
 gqmpeg		ports/audio/gqmpeg
+gqradio		ports/audio/gqradio
 gqview		ports/graphics/gqview
 gr-openoffice	ports/editors/openoffice-gr
 grace		ports/math/grace
