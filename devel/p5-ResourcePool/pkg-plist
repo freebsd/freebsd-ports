@@ -1,20 +1,29 @@
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/BigPicture.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Exception.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Execute.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/Execute.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/NoFailoverException.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command/NoFailoverException.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/ExtensionGuide.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pod
-lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/LeastUsage.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FallBack.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/LeastUsage.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/RoundRobin.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/UML.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Command
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool
