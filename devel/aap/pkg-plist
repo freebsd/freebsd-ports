@@ -8,6 +8,8 @@ lib/aap/Exec-%%PORTVERSION%%/Cache.py
 lib/aap/Exec-%%PORTVERSION%%/Cache.pyc
 lib/aap/Exec-%%PORTVERSION%%/Commands.py
 lib/aap/Exec-%%PORTVERSION%%/Commands.pyc
+lib/aap/Exec-%%PORTVERSION%%/Conftest.py
+lib/aap/Exec-%%PORTVERSION%%/Conftest.pyc
 lib/aap/Exec-%%PORTVERSION%%/CopyMove.py
 lib/aap/Exec-%%PORTVERSION%%/CopyMove.pyc
 lib/aap/Exec-%%PORTVERSION%%/Depend.py
@@ -20,6 +22,8 @@ lib/aap/Exec-%%PORTVERSION%%/DoArgs.py
 lib/aap/Exec-%%PORTVERSION%%/DoArgs.pyc
 lib/aap/Exec-%%PORTVERSION%%/DoBuild.py
 lib/aap/Exec-%%PORTVERSION%%/DoBuild.pyc
+lib/aap/Exec-%%PORTVERSION%%/DoConf.py
+lib/aap/Exec-%%PORTVERSION%%/DoConf.pyc
 lib/aap/Exec-%%PORTVERSION%%/DoInstall.py
 lib/aap/Exec-%%PORTVERSION%%/DoInstall.pyc
 lib/aap/Exec-%%PORTVERSION%%/DoRead.py
@@ -84,10 +88,10 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/index.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/license.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ln12.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p2801.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p6786.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p2962.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p7033.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p30.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p836.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p881.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-arguments.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-assign.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-attributes.html
@@ -111,6 +115,7 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-autoconf.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-autodep.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-basics.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-configure.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-cvs.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-debug.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/user-depend.html

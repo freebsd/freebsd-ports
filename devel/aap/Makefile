@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	aap
-PORTVERSION=	1.010
+PORTVERSION=	1.019
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
 
-MAINTAINER=	bram@a-a-p.org
+MAINTAINER=	rui@ruilopes.com
 COMMENT=	A build tool alternative to make with internet access and CVS support
 
 MAN1=		aap.1
