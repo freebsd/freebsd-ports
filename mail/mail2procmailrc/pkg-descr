@@ -11,4 +11,4 @@ exec generateproc.pl to generate a file called ~/.procmail/m2proc.rc.
 in your .procmailrc you should have something like
 "INCLUDERC=~/.procmail/m2proc.rc" and everything should work.
 
-WWW: http://www.ghettohack.net/timball/
+WWW: http://www.tux.org/~timball/

@@ -9,7 +9,7 @@
 PORTNAME=	mail2procmailrc
 PORTVERSION=	0.9
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ghettohack.net/timball/
+MASTER_SITES=	http://www.tux.org/~timball/download/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
