@@ -7,6 +7,7 @@
 
 PORTNAME=	LDAP-Account-Manager
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -18,9 +19,8 @@ COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
-USE_PHP=	yes
+USE_PHP=	domxml gettext session mcrypt mysql ldap imap mcal ftp
 WANT_PHP_WEB=	yes
-PHP_PORT=	${PORTSDIR}/lang/php${PHP_VER}-horde
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
