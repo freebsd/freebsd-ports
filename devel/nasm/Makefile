@@ -16,7 +16,6 @@ MASTER_SITE_SUBDIR=	nasm
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 assembler
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -17,7 +17,6 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
