@@ -211,6 +211,7 @@ share/locale/tr/LC_MESSAGES/gedit.mo
 share/locale/uk/LC_MESSAGES/gedit.mo
 share/locale/vi/LC_MESSAGES/gedit.mo
 share/locale/wa/LC_MESSAGES/gedit.mo
+share/locale/xh/LC_MESSAGES/gedit.mo
 share/locale/zh_CN/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/omf/gedit
