@@ -10424,3 +10424,4 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
+pgcluster	ports/databases/pgcluster
