@@ -99,10 +99,10 @@ MASTER_SITES+=	http://www.engelschall.com/sw/mod_ssl/distrib/ \\
 		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
 DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
 
-BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl \\
+BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libssl.a:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
-RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl
+RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
 VERSION_MODSSL=	2.2.5
 
