@@ -15,3 +15,5 @@ etc/minicom/demos/unixlogin
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @dirrm etc/minicom/demos
 @dirrm etc/minicom/tables
+@comment deal with bogus Bento errorlogs, user has config files in etc/minicom
+@unexec rmdir %D/etc/minicom 2>/dev/null || true
