@@ -6,6 +6,7 @@
 
 PORTNAME=	dvipsk-tetex
 PORTVERSION=	5.92b
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -16,13 +17,23 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert a TeX DVI file to PostScript
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
+PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
+
+BUILD_WRKSRC_A=	${WRKDIR}/${DISTNAME}/texk/dvipsk
+INSTALL_WRKSRC_A=	${WRKDIR}/${DISTNAME}/texk/dvipsk
+BUILD_WRKSRC_B=	${WRKDIR}/${DISTNAME}/texk/odvipsk
+INSTALL_WRKSRC_B=	${WRKDIR}/${DISTNAME}/texk/odvipsk
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-multiplatform \
@@ -34,27 +45,42 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-pnglib-include=${LIBPNG_PREFIX}/include \
 		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 		--with-t1lib-include=${LIBT1_PREFIX}/include
-CONFLICTS=	ja-ptex-base* ja-*dvips* *dvips-*
+CONFLICTS=	*-teTeX* ja-ptex-base* *-*dvips* *dvips-*
 
 MAN1=		dvips.1 afm2tfm.1
 INFO=		dvips
 
 TETEX_VER=	2.0.2
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
-TEXMFDIR?=	share/texmf
+TEXMF?=		share/texmf
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
+PKGINSTALL=	${WRKDIR}/pkg-install.sh
+PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
+TETEX_MODESW=	${PREFIX}/bin/tetex-modesw
+PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
+		MKTEXLSR=${MKTEXLSR}
+
+pre-build:
+	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${CHMOD} 0755 ${PKGINSTALL}
+
 do-build:
-	cd ${WRKSRC}/texk/dvipsk &&\
-		${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
+.for W in A B
+	@(cd ${BUILD_WRKSRC_${W}} &&\
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.endfor
 
 do-install:
-	cd ${WRKSRC}/texk/dvipsk &&\
-		${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+.for W in A B
+	@(cd ${INSTALL_WRKSRC_${W}} &&\
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+.endfor
 
 post-install:
-	${MKTEXLSR}
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
