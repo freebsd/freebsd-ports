@@ -16,6 +16,10 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/terms
 
+PATCH_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
+PATCHFILES=	rxvt-2.7.3.patch1.gz
+PATCH_DIST_STRIP+=      -p1
+
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
