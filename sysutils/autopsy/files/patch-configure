@@ -1,0 +1,11 @@
+--- configure.orig	Mon Sep  8 04:13:10 2003
++++ configure	Mon Sep  8 04:15:15 2003
+@@ -39,7 +39,7 @@
+ 
+ 
+ # Directories to search in
+-dirs='/usr/local/bin/ /usr/bin/ /usr/ccs/bin/ /bin/ /usr/ucb/bin/ /sbin/ /usr/sbin/ /usr/local/sbin/'
++dirs="${LOCALBASE}/bin/ /usr/bin/ /usr/ccs/bin/ /bin/ /usr/ucb/bin/ /sbin/ /usr/sbin/ ${LOCALBASE}/sbin/"
+ 
+ 
+ echo ""

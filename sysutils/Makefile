@@ -20,6 +20,7 @@
     SUBDIR += asmem
     SUBDIR += asmon
     SUBDIR += asr-utils
+    SUBDIR += autopsy
     SUBDIR += bacula
     SUBDIR += barry
     SUBDIR += bbapm
