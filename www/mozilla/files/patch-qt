@@ -1,18 +1,15 @@
-
-$FreeBSD$
-
---- configure.orig	Tue Apr 24 01:59:58 2001
-+++ configure	Mon May 14 21:48:26 2001
-@@ -6596,7 +6596,7 @@
- fi
+--- configure.orig	Sat Sep 30 23:16:14 2000
++++ configure	Thu Dec 21 00:49:23 2000
+@@ -6020,7 +6020,7 @@
+ 	echo $ac_n "checking for Qt insanity""... $ac_c" 1>&6
+ echo "configure:6022: checking for Qt insanity" >&5
  
- 
--    QT_CFLAGS="-I${QTDIR}/include -DQT_GENUINE_STR"
-+    QT_CFLAGS="-I${QTDIR}/include/X11/qt -DQT_GENUINE_STR"
+-    QT_CFLAGS="-I${QTDIR}/include/qt"
++    QT_CFLAGS="-I${QTDIR}/include/X11/qt"
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -8703,6 +8703,9 @@
+@@ -8052,6 +8052,9 @@
  os2*)
      LIBS=
      ;;
@@ -22,7 +19,7 @@ $FreeBSD$
  esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
  do
-@@ -9392,8 +9395,6 @@
+@@ -8702,8 +8705,6 @@
  	if test $? -eq 0; then
  		if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
  			ac_cv_have_dash_pthread=yes
@@ -31,7 +28,7 @@ $FreeBSD$
  		fi
  	fi
  	rm -f conftest*
-@@ -9427,7 +9428,7 @@
+@@ -8737,7 +8738,7 @@
  EOF
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
@@ -40,11 +37,3 @@ $FreeBSD$
  			else
  				_PTHREAD_LDFLAGS="-lc_r"
  			fi
-@@ -13902,6 +13903,7 @@
-         ;;
-     *)
-         NSPR_LIBS=`./nsprpub/config/nspr-config --prefix=$MOZ_BUILD_ROOT/dist --exec-prefix=$MOZ_BUILD_ROOT/dist --libs`
-+	NSPR_LIBS="$NSPR_LIBS $BSD_PTHREAD_LIBS"
-         $PERL -pi.bak -e "s {^NSPR_LIBS\s*=.*} {NSPR_LIBS = $NSPR_LIBS }" config/autoconf.mk
-         ;;
-     esac
