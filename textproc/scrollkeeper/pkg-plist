@@ -105,6 +105,8 @@ share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
 @dirrm share/gnome/scrollkeeper
 @dirrm share/gnome/omf/scrollkeeper
 @unexec xmlcatalog --noout --del "%D/share/gnome/xml/scrollkeeper/dtds/scrollkeeper-omf.dtd" %%LOCALBASE%%/share/xml/catalog 2>/dev/null || true
+@unexec cp -f %%LOCALBASE%%/share/xml/catalog.bak %%LOCALBASE%%/share/xml/catalog 2>/dev/null || true
+@unexec cp -f %%LOCALBASE%%/share/xml/docbook/catalog.bak %%LOCALBASE%%/share/xml/docbook/catalog 2>/dev/null || true
 @unexec rm -f /var/log/scrollkeeper.log 2>/dev/null || true
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
 @exec touch -f /var/log/scrollkeeper.log
