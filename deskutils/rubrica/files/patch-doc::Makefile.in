@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Thu Feb  5 03:10:13 2004
++++ doc/Makefile.in	Thu Feb  5 17:24:42 2004
+@@ -245,7 +245,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-extradocDATA
++install-data-am:
+ 
+ install-exec-am:
+ 
