@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.4 1997/08/15 13:36:01 jmz Exp $
+# $Id: Makefile,v 1.5 1998/10/05 03:01:29 steve Exp $
 #
 
 DISTNAME=       pgplot5.2
@@ -14,6 +14,11 @@ MASTER_SITES=   ftp://astro.caltech.edu/pub/pgplot/
 MAINTAINER=	jmz@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/pgplot
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         makehtml not found
+.endif
 
 post-install:
 .for f in libcpgplot.so libpgplot.so
