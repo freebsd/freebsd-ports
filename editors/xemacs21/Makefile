@@ -97,6 +97,12 @@ WITH_OFFIX?=	--with-offix=no
 # the next .endif belongs to !MULE_PORT
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+CONFIGURE_ARGS+=       --ldflags=-Wl,-znocombreloc
+.endif
+
 # fix .so references in a few man pages
 pre-configure::
 .for file in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
@@ -125,4 +131,4 @@ post-install::
 	${INSTALL_SCRIPT} ${FILESDIR}/xemacs21.sh ${PREFIX}/etc/rc.d
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
