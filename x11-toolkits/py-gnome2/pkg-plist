@@ -3,6 +3,7 @@ lib/%%PYTHON_VERSION%%/site-packages/_cappletmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gladegnomemodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gnomemodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gnomeuimodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_gtkhtmlmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gtkxmhtmlmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_zvtmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/gettext.py
@@ -62,6 +63,9 @@ lib/%%PYTHON_VERSION%%/site-packages/gnome/xmhtml.pyo
 lib/%%PYTHON_VERSION%%/site-packages/gnome/zvt.py
 lib/%%PYTHON_VERSION%%/site-packages/gnome/zvt.pyc
 lib/%%PYTHON_VERSION%%/site-packages/gnome/zvt.pyo
+lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.py
+lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.pyc
+lib/%%PYTHON_VERSION%%/site-packages/gtkhtml.pyo
 share/examples/py-gnome/about.py
 share/examples/py-gnome/bookmarks-applet.py
 share/examples/py-gnome/calculator.py
@@ -77,5 +81,5 @@ share/examples/py-gnome/stock_demo.py
 share/examples/py-gnome/ted_demo.py
 share/examples/py-gnome/uiinfo_demo.py
 share/examples/py-gnome/zterm.py
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/gnome
 @dirrm share/examples/py-gnome
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/gnome
