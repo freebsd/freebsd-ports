@@ -1,0 +1,15 @@
+Class::Default provides a mechanism to allow your class to take static
+method calls and apply it to a default instantiation of an object.  It
+provides a flexibility to an API that allows it to be used more
+confortably in different situations.
+
+This technique appears to be especially usefull when writing modules
+that you want to be used in either a single use or a persistant
+environment.  In a CGI like environment, you want the simplicity of a
+static interface.  You can call Class-method> directly, without having
+to pass an instantiation around constantly.
+
+WWW: http://search.cpan.org/search?dist=Class-Default
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
