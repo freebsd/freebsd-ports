@@ -9,7 +9,7 @@
 PORTNAME=	stan
 PORTVERSION=	0.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.r0q.cx/stan/
+MASTER_SITES=	http://www.roqe.org/stan/
 
 MAINTAINER=	ports@FreeBSD.org
 
