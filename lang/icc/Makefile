@@ -111,7 +111,7 @@ post-patch:
 .for i in icc.cfg icpc.cfg
 	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Qwr1125\n-Qwe140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .if ${OSVERSION} >= 500039
 	@${ECHO} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endif
