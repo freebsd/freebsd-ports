@@ -97,6 +97,7 @@
     SUBDIR += xballoon
     SUBDIR += xbanner
     SUBDIR += xbindkeys
+    SUBDIR += xbindkeys_config
     SUBDIR += xcb
     SUBDIR += xclip
     SUBDIR += xcmd
