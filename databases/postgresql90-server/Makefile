@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.2
-PORTREVISION=	1
+PORTVERSION?=	7.3.3
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 		ftp://ftp5.us.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
@@ -47,6 +46,7 @@ INSTALLS_SHLIB=	YES
 
 CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_GNUGETOPT)
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
@@ -98,17 +98,20 @@ LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 WITH_KRB5=	yes
 .endif
 
+.include <bsd.port.pre.mk>
 .if defined(WITH_KRB5)
 CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
 LDFLAGS+=	`${KRB5CONF} --libs krb5`
-.endif
-
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+= -O3 -funroll-loops
+CONFIGURE_ENV=  LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(WITH_TESTS)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
+.endif
+
+.if defined(WITH_LIBC_R)
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1 dropdb.1 \
@@ -140,7 +143,7 @@ MAN7=		abort.7 alter_database.7 alter_group.7 alter_table.7 \
 		truncate.7 unlisten.7 update.7 vacuum.7
 
 pre-everything::
-	@${SH} ${PKGDIR}/pkg-install ${PORTNAME} BACKUPWARNING
+	@${SH} ${PKGINSTALL} ${PORTNAME} BACKUPWARNING
 	@${ECHO} ""
 	@${ECHO} "${PORTNAME} has several tunables that can be used to configure PostgreSQL:"
 	@${ECHO} ""
@@ -157,6 +160,8 @@ pre-everything::
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
 	@${ECHO} "	WITH_TESTS		Allows the use of a \"check\" target"
 	@${ECHO} "				building the module"
+	@${ECHO} "	WITH_LIBC_R		Link the binaries with libc_r."
+	@${ECHO} "				Needed to run plpython"
 	@${ECHO} ""
 .if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
 	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
@@ -185,7 +190,7 @@ do-install:
 .else
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 post-install:
@@ -225,5 +230,5 @@ check:
 	 fi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 .endif
