@@ -248,6 +248,7 @@
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
+    SUBDIR += xnap
     SUBDIR += xsidplay
     SUBDIR += xtuner
     SUBDIR += xwave

@@ -1,0 +1,13 @@
+bin/xnap
+%%PORTDOCS%%share/doc/XNap/AUTHORS
+%%PORTDOCS%%share/doc/XNap/CHANGES
+%%PORTDOCS%%share/doc/XNap/COMMANDS
+%%PORTDOCS%%share/doc/XNap/COPYING
+%%PORTDOCS%%share/doc/XNap/COPYING.LIB
+%%PORTDOCS%%share/doc/XNap/README
+%%PORTDOCS%%share/doc/XNap/TODO
+%%JAR_DIR%%/xnap.jar
+@dirrm %%JAR_DIR%%
+%%PORTDOCS%%@dirrm share/doc/XNap
+@unexec rmdir %D/share/java/jar 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
