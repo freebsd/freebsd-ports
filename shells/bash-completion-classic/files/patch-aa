@@ -1,0 +1,21 @@
+--- bash_completion.orig	Mon May 26 22:22:44 2003
++++ bash_completion	Wed Jun  4 18:02:33 2003
+@@ -27,14 +27,14 @@
+ if [ -n "$FUNCNAME" ]; then
+ 	# we're being sourced from within a function, so we can't use
+ 	# 'declare', as this will create local variables within a function
+-	BASH_COMPLETION=${BASH_COMPLETION:-/etc/bash_completion} 2>/dev/null
+-	BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/etc/bash_completion.d} \
++	BASH_COMPLETION=${BASH_COMPLETION:-/usr/local/etc/bash_completion} 2>/dev/null
++	BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/usr/local/etc/bash_completion.d} \
+ 	  2>/dev/null
+ else
+-	declare -r BASH_COMPLETION=${BASH_COMPLETION:-/etc/bash_completion} \
++	declare -r BASH_COMPLETION=${BASH_COMPLETION:-/usr/local/etc/bash_completion} \
+ 	  2>/dev/null
+ 	declare -r \
+-	  BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/etc/bash_completion.d} \
++	  BASH_COMPLETION_DIR=${BASH_COMPLETION_DIR:=/usr/local/etc/bash_completion.d} \
+ 	  2>/dev/null
+ fi
+ 

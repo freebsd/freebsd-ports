@@ -2,6 +2,7 @@
 #
 
     SUBDIR += 44bsd-csh
+    SUBDIR += bash-completion
     SUBDIR += bash1
     SUBDIR += bash2
     SUBDIR += es
