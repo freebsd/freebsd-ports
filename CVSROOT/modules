@@ -3723,6 +3723,7 @@ ksetisaver	ports/astro/ksetisaver
 ksetispy	ports/astro/ksetispy
 ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
+kshowmail	ports/mail/kshowmail
 ksig		ports/mail/ksig
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
