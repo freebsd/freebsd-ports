@@ -30,4 +30,11 @@ bin/ezmlm-weed
 etc/ezmlm/ezmlmglrc.sample
 etc/ezmlm/ezmlmrc.sample
 etc/ezmlm/ezmlmsubrc.sample
+%%PORTDOCS%%share/doc/ezmlm-idx/CHANGES.idx
+%%PORTDOCS%%share/doc/ezmlm-idx/DOWNGRADE.idx
+%%PORTDOCS%%share/doc/ezmlm-idx/FAQ.idx
+%%PORTDOCS%%share/doc/ezmlm-idx/INSTALL.idx
+%%PORTDOCS%%share/doc/ezmlm-idx/README.idx
+%%PORTDOCS%%share/doc/ezmlm-idx/UPGRADE.idx
+%%PORTDOCS%%@dirrm share/doc/ezmlm-idx
 @dirrm etc/ezmlm

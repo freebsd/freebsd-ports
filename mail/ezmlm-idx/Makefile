@@ -7,22 +7,17 @@
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
-		ftp://ftp.rivertown.net/pub/ezmlm/ \
-		ftp://ftp.crc.ca/ftp/packages/mail/ezmlm-patches-fred/ \
-		http://ftp.crc.ca/ftp/ftp/packages/mail/ezmlm-patches-fred/ \
-		ftp://ftp.win.or.jp/pub/network/mail/qmail/ezmlm-idx/ \
-		ftp://jp.ezmlm.org/ezmlm/ \
-		ftp://de.ezmlm.org/pub/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
 		http://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
-		ftp://pl.ezmlm.org/ \
-		ftp://uk.ezmlm.org/pub/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/mail/qmail/ezmlm-idx/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		ezmlm-${EZMLM_VERSION}${EXTRACT_SUFX}
+
+PATCHFILES=	ezmlm-cgi.patch
+PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	tom@FreeBSD.org
 
@@ -76,11 +71,9 @@ MY_CONFIG=	ezmlmglrc ezmlmrc ezmlmsubrc
 
 EZMLM_VERSION=	0.53
 
-PLIST=		${WRKDIR}/pkg-plist
-
 pre-patch:
 	@${MV} -f ${WRKDIR}/ezmlm-idx-${PORTVERSION}/* ${WRKSRC}
-	@cd ${WRKSRC} && ${PATCH} < idx.patch
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} < idx.patch
 
 post-patch:
 	@${ECHO_CMD} ${PREFIX}/bin > ${WRKSRC}/conf-bin
@@ -101,10 +94,6 @@ post-patch:
 	@${MV} ${WRKSRC}/idx.h ${WRKSRC}/idx.h.orig
 	@${SED} -e 's#/etc/ezmlm/#'${PREFIX}'/etc/ezmlm/#' \
 		< ${WRKSRC}/idx.h.orig > ${WRKSRC}/idx.h
-	@${CP} ${PKGDIR}/pkg-plist ${WRKDIR}
-.if !defined(NOPORTDOCS)
-	@${CAT} ${PKGDIR}/pkg-plist.docs >> ${WRKDIR}/pkg-plist
-.endif
 
 pre-install:
 	@${ECHO_CMD} ${PREFIX} > ${WRKDIR}/.IPREFIX
