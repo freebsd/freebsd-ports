@@ -1,9 +1,9 @@
 bin/ja-communicator-4
 @exec ln -sf %f %B/netscape
+%%NSUBDIR%%/netscape.cfg
 %%NSUBDIR%%/%%LANG%%/Netscape
 %%NSUBDIR%%/%%LANG%%/about
 %%NSUBDIR%%/%%LANG%%/mail.msg
-%%NSUBDIR%%/%%LANG%%/netscape.cfg
 %%NSUBDIR%%/%%LANG%%/plugins
 %%NSUBDIR%%/%%LANG%%/splash
 @exec mkdir -p %D/%%NSUBDIR%%/locale
