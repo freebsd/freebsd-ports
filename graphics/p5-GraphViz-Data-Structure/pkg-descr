@@ -1,0 +1,16 @@
+This module makes it easy to visualise data structures, even recursive or
+circular ones.
+
+It is provided as an alternative to GraphViz::Data::Grapher. Differences:
+   - GraphViz::Data::Structure handles structures of arbitrary depth and
+     complexity, automatically following links using a standard graph
+     traversal algorithm.
+   - GraphViz::Data::Grapher creates graphics of indiividual substructures
+     (arrays, scalars, hashes) which keep the substructure type and data
+     together; GraphViz::Data::Structure does this by shape alone.
+   - GraphViz::Data::Structure encapsulates object info (if any) directly
+     into the node being used to represent the class.
+   - GraphViz::Data::Grapher colors its graphs; GraphViz::Data::Structure
+     doesn't by default.
+   - GraphViz::Data:Structure can parse out globs and CODE references (almost
+     as well as the debugger does).
