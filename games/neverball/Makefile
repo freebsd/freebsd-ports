@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
@@ -24,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_SDL=	image mixer ttf sdl
 
-DIRS=		back bgm map mtrl png shot snd sol ttf
+DIRS=		bgm map-rlk mtrl png shot-rlk snd sol-rlk ttf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g' \

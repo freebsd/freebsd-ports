@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Oct 30 01:24:20 2003
-+++ Makefile	Thu Oct 30 01:25:30 2003
-@@ -3,18 +3,18 @@
+--- Makefile.orig	Tue Feb  3 16:40:40 2004
++++ Makefile	Fri Feb  6 02:45:24 2004
+@@ -3,8 +3,8 @@
  
  # Maybe you need one of these.  Maybe you don't.
  
@@ -11,11 +11,13 @@
  
  OGL_LIBS= -lGLU -lGL -lm
  #OGL_LIBS= -lm                                                # Think Different
- 
+@@ -12,11 +12,11 @@
  #------------------------------------------------------------------------------
  
--CFLAGS= -Wall -g -ansi $(shell sdl-config --cflags)
-+CFLAGS+= -Wall -g -ansi $(shell ${SDL_CONFIG} --cflags) ${X11_PATHI}
+ #CFLAGS= -Wall -pg -ansi $(shell sdl-config --cflags)
+-CFLAGS= -Wall -O3 -ansi $(shell sdl-config --cflags)
++CFLAGS+= -Wall -ansi $(shell ${SDL_CONFIG} --cflags) ${X11_PATHI}
+ #CFLAGS= -Wall -g -ansi $(shell sdl-config --cflags)
  
 -SDL_LIBS= $(shell sdl-config --libs)
 -FT2_LIBS= $(shell freetype-config --libs)
@@ -24,14 +26,14 @@
  
  MAPC_TARG= mapc
  GAME_TARG= neverball
-@@ -42,8 +42,8 @@
+@@ -45,8 +45,8 @@
  	glext.o  \
  	main.o
  
--MAPC_DEPS= $(GAME_SRCS:.c=.d)
 -GAME_DEPS= $(GAME_OBJS:.o=.d)
-+MAPC_DEPS= $(GAME_SRCS:.c)
+-MAPC_DEPS= $(MAPC_OBJS:.o=.d)
 +GAME_DEPS= $(GAME_OBJS:.o)
++MAPC_DEPS= $(MAPC_OBJS:.o)
  
  MAPC_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image $(OGL_LIBS)
  GAME_LIBS= $(X11_PATH) $(SDL_LIBS) -lSDL_image -lSDL_ttf -lSDL_mixer $(FT2_LIBS) $(OGL_LIBS)
