@@ -93,6 +93,10 @@ CONFIGURE_ENV+=	CXX="${CC}"
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
+.if !defined(NOPORTDOCS)
+INFO=		mysql
+.endif
+
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client \
 		${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 

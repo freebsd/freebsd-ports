@@ -25,9 +25,6 @@ bin/resolve_stack_dump
 bin/resolveip
 bin/safe_mysqld
 etc/rc.d/mysql-server.sh
-%%PORTDOCS%%@unexec install-info --delete %D/info/mysql.info %D/info/dir
-%%PORTDOCS%%info/mysql.info
-%%PORTDOCS%%@exec install-info %D/info/mysql.info %D/info/dir
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
