@@ -156,6 +156,7 @@
     SUBDIR += temperature.app
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
+    SUBDIR += user-selector-applet
     SUBDIR += vdesk
     SUBDIR += wdm
     SUBDIR += wmappl

@@ -1,0 +1,6 @@
+etc/gconf/schemas/user-selector-applet.schemas
+libdata/bonobo/servers/GNOME_UserSelectorApplet.server
+libexec/user-selector-applet
+share/icons/hicolor/16x16/apps/gdm-xnest.png
+share/icons/hicolor/32x32/apps/gdm-xnest.png
+share/icons/hicolor/48x48/apps/gdm-xnest.png
