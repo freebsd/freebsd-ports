@@ -25,6 +25,10 @@ MAN1=	camlc.1 camllex.1 camllibr.1 camllight.1 camlmktop.1 camlrun.1 camlyacc.1 
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-build:
 	cd ${WRKSRC}/src; ${MAKE} ${ALL_TARGET} PREFIX=${PREFIX} \
 	X11BASE=${X11BASE}
