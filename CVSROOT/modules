@@ -5101,6 +5101,7 @@ mkisofs		ports/sysutils/mkisofs
 mkisofs-devel	ports/sysutils/mkisofs-devel
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
+mknmz-wwwoffle	ports/www/mknmz-wwwoffle
 mkptools	ports/Tools/scripts/mkptools
 mksunbootcd	ports/sysutils/mksunbootcd
 mktool		ports/sysutils/mktool
