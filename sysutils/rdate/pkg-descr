@@ -1,4 +1,3 @@
-rdate sets the clock of the local host to the time another host.
+rdate(8) sets the clock of the local host to the time of another host.
 
 It is simpler than xntp and friends.
-

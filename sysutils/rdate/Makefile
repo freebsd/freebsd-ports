@@ -3,12 +3,13 @@
 # Date created:         19980128
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.7 1997/10/01 06:50:02 cracauer Exp $
+# $Id: Makefile,v 1.1.1.1 1998/01/28 11:33:17 cracauer Exp $
 #
 
 DISTNAME=	rdate-1.0
 CATEGORIES=     sysutils
-MASTER_SITES=   http://www2.cons.org:8000/freebsd-distfiles/
+MASTER_SITES=   http://www2.cons.org:8000/freebsd-distfiles/ \
+		http://www.freebsd.org/~cracauer/freebsd-distfiles/
 
 MAINTAINER=	cracauer@cons.org
 
