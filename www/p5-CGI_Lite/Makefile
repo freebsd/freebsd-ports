@@ -3,13 +3,14 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/06/24 18:43:07 jfitz Exp $
+#   $Id: Makefile,v 1.7 1997/07/02 12:26:41 jfitz Exp $
 #
 
 DISTNAME=	CGI_Lite-1.7
 PKGNAME=	p5-CGI_Lite-1.7
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	CGI_Lite
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
