@@ -1,5 +1,5 @@
 bin/gpgme-config
-include/gpgme.h
+include/gpgme/gpgme.h
 %%WITH_PTH%%lib/libgpgme-pth.a
 %%WITH_PTH%%lib/libgpgme-pth.so
 %%WITH_PTH%%lib/libgpgme-pth.so.14
@@ -10,3 +10,4 @@ lib/libgpgme.a
 lib/libgpgme.so
 lib/libgpgme.so.14
 share/aclocal/gpgme.m4
+@dirrm include/gpgme
