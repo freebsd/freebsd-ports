@@ -55,6 +55,7 @@
     SUBDIR += matchbox
     SUBDIR += metacity
     SUBDIR += metacity-setup
+    SUBDIR += mkultra
     SUBDIR += mlvwm
     SUBDIR += mosfet-liquid
     SUBDIR += novawm
