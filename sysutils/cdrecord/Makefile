@@ -3,10 +3,10 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1999/04/07 08:10:00 obrien Exp $
+# $Id: Makefile,v 1.14 1999/05/11 02:29:25 obrien Exp $
 #
 
-DISTNAME=	cdrecord-1.8a21
+DISTNAME=	cdrecord-1.8a22
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
 
