@@ -34,7 +34,7 @@ PLIST_FILES=	lib/xmms/Input/libaac-XMMS.so
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|gcc|${CC} ${CFLAGS}|; \
+		's|gcc|${CC} ${CFLAGS} -fPIC|; \
 		s|-I/usr/include/glib-1.2/||; \
 		s|-lfaad2|-lfaad -lstdc++|; \
 		s|-I/usr/lib/glib/include|-L${LOCALBASE}/lib|; \
