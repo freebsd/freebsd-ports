@@ -30,7 +30,6 @@
     SUBDIR += gdl
     SUBDIR += gevas
     SUBDIR += gnocl
-    SUBDIR += gnome--
     SUBDIR += gnomemm
     SUBDIR += gnustep-art
     SUBDIR += gnustep-back
