@@ -1,6 +1,8 @@
 %%MOZDIR%%/chrome/FR.jar
 %%MOZDIR%%/chrome/fr-FR.jar
 %%MOZDIR%%/chrome/fr-unix.jar
+%%MOZDIR%%/chrome/user-locales.rdf
+%%MOZDIR%%/chrome/user-skins.rdf
 %%MOZDIR%%/components/myspell/fr-FR.aff
 %%MOZDIR%%/components/myspell/fr-FR.dic
 %%MOZDIR%%/defaults/isp/FR/movemail.rdf
