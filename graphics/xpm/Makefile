@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1998/09/21 21:28:17 steve Exp $
+# $Id: Makefile,v 1.19 1998/10/04 20:45:48 jkh Exp $
 #
 
 DISTNAME=       xpm-3.4k
@@ -17,8 +17,8 @@ USE_IMAKE=	yes
 MAN1=		cxpm.1 sxpm.1
 
 post-install:
-	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
-		${LN} -sf libXpm.so.4.11 ${PREFIX}/lib/libXpm.so.4; \
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libXpm.so.4.11 ${PREFIX}/lib/libXpm.so; \
 	fi
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
