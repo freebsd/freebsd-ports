@@ -1,0 +1,11 @@
+PyXMPP is a Python XMPP (RFC 3920,3921) and Jabber
+implementation. It is based on libxml2 -- fast and
+fully-featured XML parser.
+
+PyXMPP provides most core features of the XMPP protocol and
+several JSF-defined extensions. PyXMPP provides building
+blocks for creating Jabber clients and components. Developer
+uses them to setup XMPP streams, handle incoming events and
+create outgoing stanzas (XMPP "packets").
+
+WWW: http://pyxmpp.jabberstudio.org/

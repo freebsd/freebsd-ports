@@ -619,6 +619,7 @@
     SUBDIR += py-mp-random
     SUBDIR += py-msnp
     SUBDIR += py-pcap
+    SUBDIR += py-pyxmpp
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-rt
