@@ -17,15 +17,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	GTK2 binding for Gauche
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_GNOME=	gtk20 # this alters CONFIGURE_TARGET!
 GNU_CONFIGURE=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/gauche/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/gauche/${PORTNAME}
 PLIST_SUB=	VERSION="`gauche-config -V`" \
-		TARGET="${CONFIGURE_TARGET}"
+		TARGET="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
 .if defined(WITH_GTKGLEXT)
 LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
