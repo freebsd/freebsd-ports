@@ -65,6 +65,7 @@
     SUBDIR += linux-mozillafirebird-zh_TW
     SUBDIR += lunar
     SUBDIR += metalist
+    SUBDIR += mingunittf
     SUBDIR += miniChinput
     SUBDIR += mkisofs
     SUBDIR += moefonts-cid
