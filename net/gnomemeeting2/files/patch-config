@@ -1,0 +1,21 @@
+*** src/config.cpp.orig	Sun Aug 31 13:00:00 2003
+--- src/config.cpp	Sun Aug 31 13:00:31 2003
+*************** audio_mixer_changed_nt (GConfClient *cli
+*** 928,935 ****
+    int vol = 0;
+    char *mixer = NULL;
+    GmWindow *gw = NULL;
+- #ifdef HAS_IXJ
+    GMH323EndPoint *endpoint = MyApp->Endpoint ();
+    GMLid *lid = NULL;
+  #endif
+    
+--- 928,935 ----
+    int vol = 0;
+    char *mixer = NULL;
+    GmWindow *gw = NULL;
+    GMH323EndPoint *endpoint = MyApp->Endpoint ();
++ #ifdef HAS_IXJ
+    GMLid *lid = NULL;
+  #endif
+    
