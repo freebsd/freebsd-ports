@@ -32,6 +32,7 @@
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += bonobo
+    SUBDIR += bonobo-conf
     SUBDIR += bugbuddy
     SUBDIR += c_c++_reference
     SUBDIR += camlp4
