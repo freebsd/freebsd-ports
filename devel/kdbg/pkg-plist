@@ -28,6 +28,7 @@ share/apps/kdbg/types/kdecore.kdbgtt
 share/apps/kdbg/types/kdecore3.kdbgtt
 share/apps/kdbg/types/qt.kdbgtt
 share/apps/kdbg/types/qt2.kdbgtt
+share/apps/kdbg/types/stdc++.kdbgtt
 share/doc/HTML/de/kdbg/argspwdenv.html
 share/doc/HTML/de/kdbg/breakptlist.html
 share/doc/HTML/de/kdbg/globaloptions.html
@@ -100,6 +101,10 @@ share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
+@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
+@dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/no_NY/LC_MESSAGES
+@dirrm share/locale/no_NY
 @dirrm share/doc/HTML/ru/kdbg
 @dirrm share/doc/HTML/en/kdbg
 @dirrm share/doc/HTML/de/kdbg
