@@ -9,9 +9,7 @@ PORTNAME=	pango
 PORTVERSION=	1.2.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
-		http://www.ameth.org/gimp/gtk/v1.3/
+		ftp://ftp.gtk.org/pub/gtk/v2.2/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
