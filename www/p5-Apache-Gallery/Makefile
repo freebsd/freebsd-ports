@@ -14,7 +14,7 @@ MASTER_SITES=	http://apachegallery.dk/download/ \
 MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
