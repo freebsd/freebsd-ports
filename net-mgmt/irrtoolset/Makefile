@@ -32,10 +32,6 @@ MAN3=		librpsl.3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 post-patch:
 	@${SED} -i.orig -e 's|#include <malloc.h>|/* #include <malloc.h> */|' \
 		${WRKSRC}/src/irr/birdwhoisc.cc
