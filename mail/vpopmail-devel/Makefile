@@ -7,10 +7,9 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.3.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
-
-FORBIDDEN=	'Checksum mismatch, new features investigated'
 
 MAINTAINER=	roam@FreeBSD.org
 
@@ -28,7 +27,7 @@ VCFGFILES?=	inc_deps lib_deps tcp.smtp
 
 CONFIGURE_ENV+=	VCFGDIR="${VCFGDIR}"
 CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
-		--enable-tcprules-bin=${LOCALBASE}/bin/tcprules \
+		--enable-tcprules-prog=${LOCALBASE}/bin/tcprules \
 		--enable-tcpserver-file=${PREFIX}/vpopmail/etc/tcp.smtp
 
 #
@@ -82,6 +81,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_MYSQL_READ_SERVER, WITH_MYSQL_READ_USER, WITH_MYSQL_READ_PASSWD
 # WITH_MYSQL_UPDATE_SERVER, WITH_MYSQL_UPDATE_USER, WITH_MYSQL_UPDATE_PASSWD
 # Those variables, if defined, override WITH_MYSQL_{SERVER,USER,PASSWD}
+# WITH_MYSQL_LIMITS - enable vpopmail handling of .qmailadmin-limits (BROKEN)
 #
 # Oracle database configuration options
 #
@@ -176,6 +176,10 @@ CONFIGURE_ARGS+=	--enable-mysql-replication=y
 .endif
 .if defined(WITH_MYSQL_LOG)
 CONFIGURE_ARGS+=	--enable-mysql-logging=y
+.endif
+.if defined(WITH_MYSQL_LIMITS)
+BROKEN=		"the MySQL limits code is not usable yet; please unset WITH_MYSQL_LIMITS"
+CONFIGURE_ARGS+=	--enable-mysql-limits=y
 .endif
 
 .if defined(WITH_MYSQL_SERVER)
