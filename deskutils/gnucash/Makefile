@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.gnucash.org/pub/gnucash/gnucash/sources/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnucash
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=     ade@FreeBSD.org
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
 		g-wrap:${PORTSDIR}/devel/g-wrap \
