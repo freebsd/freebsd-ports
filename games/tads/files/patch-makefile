@@ -1,5 +1,5 @@
---- makefile.orig	Fri Jan 17 00:30:32 2003
-+++ makefile	Fri Jan 17 00:30:49 2003
+--- Makefile.orig	Fri Jan 17 00:30:32 2003
++++ Makefile	Fri Jan 17 00:30:49 2003
 @@ -238,16 +238,16 @@
  # compatibility libraries installed.  It has not been tested with a bare
  # FreeBSD system without the Linux libraries.

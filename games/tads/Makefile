@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tads
-PORTVERSION=	2.5.7
+PORTVERSION=	2.5.8
 CATEGORIES=	games lang
 MASTER_SITES=	http://www.ifarchive.org/if-archive/programming/tads2/source/
 DISTNAME=	tads23-unix
@@ -14,7 +14,6 @@ DISTNAME=	tads23-unix
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	TADS compiler/interpreter for interactive fiction
 
-WRKSRC=		${WRKDIR}/tads/tads2
-MAKEFILE=	makefile
+WRKSRC=		${WRKDIR}/tads-3.0.7/tads2
 
 .include <bsd.port.mk>
