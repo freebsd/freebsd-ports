@@ -48,7 +48,7 @@ Y2K=		http://www.php.net/y2k.php3
 PHP_DISTDIR=	distributions
 
 VERSION_APACHE=	1.3.12
-VERSION_PHP=	3.0.14
+VERSION_PHP=	3.0.15
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
