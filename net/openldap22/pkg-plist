@@ -18,11 +18,9 @@ include/ldap.h
 include/ldap_cdefs.h
 include/srchpref.h
 lib/liblber.a
-lib/liblber.la
 lib/liblber.so
 lib/liblber.so.1
 lib/libldap.a
-lib/libldap.la
 lib/libldap.so
 lib/libldap.so.1
 libexec/fax500
