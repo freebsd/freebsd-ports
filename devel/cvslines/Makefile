@@ -11,7 +11,7 @@ CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		trevor@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wrapper to ease merging of changes between CVS branches
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
