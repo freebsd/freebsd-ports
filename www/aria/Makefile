@@ -45,8 +45,10 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|"getopt.h"|<getopt.h>|g' \
 		${WRKSRC}/src/main.cc
+
+pre-build:
 .for file in src/AppOption.cc src/HistoryWindow.cc src/RetrieveHTTP.cc \
-	src/RetrieveHTTP2.cc src/gui_file_open_and_save.cc 
+	src/RetrieveHTTP2.cc src/gui_file_open_and_save.cc
 	@cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
