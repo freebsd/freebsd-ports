@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
 PLIST_SUB+=	ARCH=${ARCH}-freebsd
 
+BROKEN=		"Broken pkg-plist"
+
 CAT1=	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1
 
 MAN1=	wmd.1 wmd_missing.1 wmk.1 wml.1 wmb.1 wmu.1 \
