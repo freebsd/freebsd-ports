@@ -2141,6 +2141,7 @@ gtkstep		ports/x11-toolkits/gtkstep
 gtkstep-pastel	ports/x11-toolkits/gtkstep-pastel
 gtktalog	ports/misc/gtktalog
 gtktetcolor	ports/games/gtktetcolor
+gtkwave		ports/cad/gtkwave
 gtkyahoo	ports/net/gtkyahoo
 gtl		ports/misc/gtl
 gtm		ports/ftp/gtm
