@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.cs.washington.edu/research/constraints/cassowary/
 
 MAINTAINER=	nakai@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	GTL.3:${PORTSDIR}/misc/gtl
 

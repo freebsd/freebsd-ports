@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	simonmar@microsoft.com
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
