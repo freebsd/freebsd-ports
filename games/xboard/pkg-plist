@@ -2,7 +2,10 @@ bin/xboard
 bin/cmail
 bin/pxboard
 bin/zic2xpm
+@unexec install-info --delete %D/info/xboard.info %D/info/dir
+info/xboard.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/xboard.info %D/info/dir
 man/man6/xboard.6.gz
 man/man6/cmail.6.gz
 man/man6/zic2xpm.6.gz
-info/xboard.info
