@@ -7,8 +7,8 @@
 
 PORTNAME=	excessive
 PORTVERSION=	003
-MASTER_SITES=	ftp://ftp.gigabell.net/pub/exp/q3/mod/excessive/ \
-		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/q3/mod/excessive/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pat
 DISTNAME=	${PORTNAME}_q3_server_${PORTVERSION}
 
 COMMENT=	Quake III Arena Excessive Mod for Linux
