@@ -18,7 +18,7 @@ MAINTAINER=	ache@FreeBSD.org
 IS_INTERACTIVE=	YES
 RESTRICTED=     "Crypto"
 MAKEFILE=       makefile
-ALL_TARGET=     freebsd
+ALL_TARGET=     freebsd-${MACHINE_ARCH}
 PGPLIB=         ${PREFIX}/lib/pgp
 MAN1=		pgp.1
 
