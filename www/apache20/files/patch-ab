@@ -1,0 +1,125 @@
+*** conf/access.conf-dist	Fri Sep 29 09:50:58 1995
+--- conf/access.conf-dist	Fri Sep 29 09:51:50 1995
+***************
+*** 10,23 ****
+  
+  # Originally by Rob McCool
+  
+! # /usr/local/etc/httpd/ should be changed to whatever you set ServerRoot to.
+! <Directory /usr/local/etc/httpd/cgi-bin>
+  Options Indexes FollowSymLinks
+  </Directory>
+  
+  # This should be changed to whatever you set DocumentRoot to.
+  
+! <Directory /usr/local/etc/httpd/htdocs>
+  
+  # This may also be "None", "All", or any combination of "Indexes",
+  # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
+--- 10,23 ----
+  
+  # Originally by Rob McCool
+  
+! # /usr/local/www/ should be changed to whatever you set ServerRoot to.
+! <Directory /usr/local/www/cgi-bin>
+  Options Indexes FollowSymLinks
+  </Directory>
+  
+  # This should be changed to whatever you set DocumentRoot to.
+  
+! <Directory /usr/local/www/data>
+  
+  # This may also be "None", "All", or any combination of "Indexes",
+  # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
+*** conf/httpd.conf-dist.orig	Tue Aug  1 04:45:22 1995
+--- conf/httpd.conf-dist	Fri Sep 29 09:52:42 1995
+***************
+*** 29,40 ****
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+  
+! ServerAdmin you@your.address
+  
+  # ServerRoot: The directory the server's config, error, and log files
+  # are kept in
+  
+! ServerRoot /usr/local/etc/httpd
+  
+  # BindAddress: You can support virtual hosts with this option. This option
+  # is used to tell the server which IP address to listen to. It can either
+--- 29,40 ----
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+  
+! ServerAdmin you@your.address.domain
+  
+  # ServerRoot: The directory the server's config, error, and log files
+  # are kept in
+  
+! ServerRoot /usr/local/www/server
+  
+  # BindAddress: You can support virtual hosts with this option. This option
+  # is used to tell the server which IP address to listen to. It can either
+***************
+*** 124,130 ****
+   
+  #<VirtualHost host.foo.com>
+  #ServerAdmin webmaster@host.foo.com
+! #DocumentRoot /www/docs/host.foo.com
+  #ServerName host.foo.com
+  #ErrorLog logs/host.foo.com-error_log
+  #TransferLog logs/host.foo.com-access_log
+--- 124,130 ----
+   
+  #<VirtualHost host.foo.com>
+  #ServerAdmin webmaster@host.foo.com
+! #DocumentRoot /usr/local/www/host.foo.com/data
+  #ServerName host.foo.com
+  #ErrorLog logs/host.foo.com-error_log
+  #TransferLog logs/host.foo.com-access_log
+*** conf/srm.conf-dist	Sun Aug 20 18:23:53 1995
+--- conf/srm.conf-dist	Fri Sep 29 09:50:45 1995
+***************
+*** 12,18 ****
+  # documents. By default, all requests are taken from this directory, but
+  # symbolic links and aliases may be used to point to other locations.
+  
+! DocumentRoot /usr/local/etc/httpd/htdocs
+  
+  # UserDir: The name of the directory which is appended onto a user's home
+  # directory if a ~user request is recieved.
+--- 12,18 ----
+  # documents. By default, all requests are taken from this directory, but
+  # symbolic links and aliases may be used to point to other locations.
+  
+! DocumentRoot /usr/local/www/data
+  
+  # UserDir: The name of the directory which is appended onto a user's home
+  # directory if a ~user request is recieved.
+***************
+*** 118,129 ****
+  # Aliases: Add here as many aliases as you need (with no limit). The format is 
+  # Alias fakename realname
+  
+! Alias /icons/ /usr/local/etc/httpd/icons/
+  
+  # ScriptAlias: This controls which directories contain server scripts.
+  # Format: ScriptAlias fakename realname
+  
+! ScriptAlias /cgi-bin/ /usr/local/etc/httpd/cgi-bin/
+  
+  # If you want to use server side includes, or CGI outside
+  # ScriptAliased directories, uncomment the following lines.
+--- 118,129 ----
+  # Aliases: Add here as many aliases as you need (with no limit). The format is 
+  # Alias fakename realname
+  
+! Alias /icons/ /usr/local/www/icons/
+  
+  # ScriptAlias: This controls which directories contain server scripts.
+  # Format: ScriptAlias fakename realname
+  
+! ScriptAlias /cgi-bin/ /usr/local/www/cgi-bin/
+  
+  # If you want to use server side includes, or CGI outside
+  # ScriptAliased directories, uncomment the following lines.
