@@ -3,7 +3,9 @@
 %%TEXT%%bin/textFileSharingMUTE
 %%TEXT%%bin/textFileSharingMUTE-real
 %%DATADIR%%/settings/broadcastProbability.ini
+%%DATADIR%%/settings/downloadTimeoutMilliseconds.ini
 %%DATADIR%%/settings/inboundMessageLimit.ini
+%%DATADIR%%/settings/logConnectionContents.ini
 %%DATADIR%%/settings/logConnections.ini
 %%DATADIR%%/settings/logLevel.ini
 %%DATADIR%%/settings/logMessageHistory.ini
