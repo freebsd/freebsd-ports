@@ -3,14 +3,13 @@
 # Date created:				22 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/23 19:08:50 vanilla Exp $
 #
 
 DISTNAME=	libaudiofile-0.1.5
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/ \
-		ftp://ftp.68k.org/pub/michael/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	libaudiofile
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

@@ -3,16 +3,14 @@
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/14 20:57:30 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/01/17 12:49:47 vanilla Exp $
 #
 
 DISTNAME=	control-center-0.99.1
 PKGNAME=	gnomecontrolcenter-0.99.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	control-center
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

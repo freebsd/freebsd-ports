@@ -3,14 +3,14 @@
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/30 23:18:11 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/05 12:37:45 vanilla Exp $
 #
 
 DISTNAME=	gnome-audio-0.1
 PKGNAME=	gnomeaudio-0.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	gnome-audio
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

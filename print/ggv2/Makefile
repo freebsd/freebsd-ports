@@ -3,15 +3,13 @@
 # Date created:				21 August 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1999/01/12 16:50:28 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/01/17 19:58:37 vanilla Exp $
 #
 
 DISTNAME=	ggv-0.26
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	ggv
 
 MAINTAINER=	nacai@iname.com
 
