@@ -32,6 +32,7 @@ include/sylpheed-claws/common/log.h
 include/sylpheed-claws/common/md5.h
 include/sylpheed-claws/common/mgutils.h
 include/sylpheed-claws/common/nntp.h
+include/sylpheed-claws/common/partial_download.h
 include/sylpheed-claws/common/passcrypt.h
 include/sylpheed-claws/common/plugin.h
 include/sylpheed-claws/common/prefs.h
@@ -133,7 +134,6 @@ include/sylpheed-claws/news.h
 include/sylpheed-claws/news_gtk.h
 include/sylpheed-claws/noticeview.h
 include/sylpheed-claws/passphrase.h
-include/sylpheed-claws/pgpmime.h
 include/sylpheed-claws/pine.h
 include/sylpheed-claws/pop.h
 include/sylpheed-claws/prefs_account.h
@@ -148,11 +148,13 @@ include/sylpheed-claws/prefs_folder_item.h
 include/sylpheed-claws/prefs_fonts.h
 include/sylpheed-claws/prefs_gtk.h
 include/sylpheed-claws/prefs_matcher.h
+include/sylpheed-claws/prefs_msg_colors.h
 include/sylpheed-claws/prefs_spelling.h
 include/sylpheed-claws/prefs_summary_column.h
 include/sylpheed-claws/prefs_template.h
 include/sylpheed-claws/prefs_themes.h
 include/sylpheed-claws/prefs_toolbar.h
+include/sylpheed-claws/prefs_wrapping.h
 include/sylpheed-claws/privacy.h
 include/sylpheed-claws/procheader.h
 include/sylpheed-claws/procmime.h
@@ -166,7 +168,6 @@ include/sylpheed-claws/rfc2015.h
 include/sylpheed-claws/select-keys.h
 include/sylpheed-claws/send_message.h
 include/sylpheed-claws/setup.h
-include/sylpheed-claws/sgpgme.h
 include/sylpheed-claws/sourcewindow.h
 include/sylpheed-claws/ssl_manager.h
 include/sylpheed-claws/statusbar.h
@@ -187,6 +188,7 @@ lib/sylpheed-claws/plugins/trayicon.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.so
 %%IMAGE%%lib/sylpheed-claws/plugins/image_viewer.so
+%%GPGME%%lib/sylpheed-claws/plugins/pgpmime.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

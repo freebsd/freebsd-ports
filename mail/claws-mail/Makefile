@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.12a
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -27,7 +27,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack pkgconfig gtk12
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
@@ -76,10 +76,12 @@ USE_GNOME+=		imlib
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
+PLIST_SUB+=		GPGME=""
 LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
 .else
+PLIST_SUB+=		GPGME="@comment "
 CONFIGURE_ARGS+=	--disable-gpgme
 .endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
