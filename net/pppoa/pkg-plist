@@ -1,10 +1,11 @@
-libdata/mgmt.o
 bin/modem_run
 bin/pppoa2
 bin/pppoa3
 etc/rc.d/adsl.sh.sample
-share/speedtouch/ppp.conf.sample
+libdata/mgmt.o
+share/speedtouch/FAQ
 share/speedtouch/INSTALL
+share/speedtouch/ppp.conf.sample
 share/speedtouch/quick-install
 @exec cat %D/share/speedtouch/quick-install
 @dirrm share/speedtouch

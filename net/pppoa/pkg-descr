@@ -7,8 +7,8 @@ http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm.
 Thanks to
 
   Benoit Papillault, who made the linux driver.
+  Francois Rogler and Richard Tobin who ported the driver to *BSD
   Jorgen Lundman and Jon Barlow for their help and their time
-  porting the driver to *BSD.
-  And also all the contributors i forget. 
+  porting the driver to NetBSD.
 
 WWW:	http://www.xsproject.org/speedtouch/

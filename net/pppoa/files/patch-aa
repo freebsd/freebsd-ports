@@ -1,11 +1,11 @@
---- doc-bsd/adsl.sh.sample.orig	Sun Oct  7 19:46:13 2001
-+++ doc-bsd/adsl.sh.sample	Fri Oct 12 21:04:04 2001
-@@ -13,7 +13,7 @@
- case $1 in
-   start)
- 	modem_run -f $PREFIX/libdata/mgmt.o \
--	 && ppp -quiet -($MODE) $ISP \
-+	 && ppp -quiet -$MODE $ISP \
- 	 && echo -n ' ppp'
-         ;;
-   stop)
+--- doc-bsd/adsl.sh.sample.orig	Tue Dec 11 16:25:52 2001
++++ doc-bsd/adsl.sh.sample	Sat Jan  5 18:00:31 2002
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ 
+ ISP=adsl
+-MODE=background
++MODE=ddial
+ 
+ if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+     echo "$0: Cannot determine the PREFIX" >&2
