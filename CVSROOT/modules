@@ -1731,6 +1731,7 @@ gcore		src/usr.bin/gcore
 gctpc		ports/misc/gctpc
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
+gd2		ports/graphics/gd2
 gdal		ports/graphics/gdal
 gdb		src/gnu/usr.bin/gdb
 gdb52		ports/devel/gdb52
