@@ -1,85 +1,83 @@
---- gcc/config/i386/freebsd.h.orig	Mon Mar  1 14:47:32 1999
-+++ gcc/config/i386/freebsd.h	Sun Mar 21 16:58:39 1999
-@@ -21,19 +21,13 @@
- the Free Software Foundation, 59 Temple Place - Suite 330,
- Boston, MA 02111-1307, USA.  */
- 
-+
-+/* Get generic FreeBSD definitions.  */
-+#include <freebsd.h>
-+
- #undef TARGET_VERSION
- #define TARGET_VERSION fprintf (stderr, " (i386 FreeBSD/ELF)");
- 
--/* The svr4 ABI for the i386 says that records and unions are returned
--   in memory.  */
--/* On FreeBSD, we do not. */
--#undef DEFAULT_PCC_STRUCT_RETURN
--#define DEFAULT_PCC_STRUCT_RETURN 0
--
--/* This gets defined in tm.h->linux.h->svr4.h, and keeps us from using
--   libraries compiled with the native cc, so undef it. */
--#undef NO_DOLLAR_IN_LABEL
--
- /* This is how to output an element of a case-vector that is relative.
-    This is only used for PIC code.  See comments by the `casesi' insn in
-    i386.md for an explanation of the expression this outputs. */
-@@ -113,22 +107,19 @@
+--- gcc/config/i386/freebsd.h.orig	Thu Jun 17 05:33:32 1999
++++ gcc/config/i386/freebsd.h	Sat Jul 24 17:59:06 1999
+@@ -135,6 +135,10 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
  
--/* Output assembler code to FILE to increment profiler label # LABELNO
--   for profiling a function entry.  */
-+/* Tell final.c that we don't need a label passed to mcount.  */
++/* Don't use EGCS's normal profiling code -- we have our own fine-grained
++   basic block profiling.  */
 +#define NO_PROFILE_DATA
++
+ /* Tell final.c that we don't need a label passed to mcount.  */
  
  #undef FUNCTION_PROFILER
- #define FUNCTION_PROFILER(FILE, LABELNO)  \
- {									\
-   if (flag_pic)								\
-     {									\
--      fprintf (FILE, "\tleal %sP%d@GOTOFF(%%ebx),%%edx\n",		\
--	       LPREFIX, (LABELNO));					\
--      fprintf (FILE, "\tcall *mcount@GOT(%%ebx)\n");			\
-+      fprintf (FILE, "\tcall *.mcount@GOT(%%ebx)\n");			\
-     }									\
-   else									\
-     {									\
--      fprintf (FILE, "\tmovl $%sP%d,%%edx\n", LPREFIX, (LABELNO));	\
--      fprintf (FILE, "\tcall mcount\n");				\
-+      fprintf (FILE, "\tcall .mcount\n");				\
-     }									\
- }
- 
-@@ -145,26 +136,16 @@
+@@ -162,22 +166,30 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
 -#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
-+#define CPP_PREDEFINES "-Di386 -D__ELF__ -Acpu(i386) -Amachine(i386)" CPP_FBSD_PREDEFINES
++#define CPP_PREDEFINES "-Di386 -Acpu(i386) -Amachine(i386)" CPP_FBSD_PREDEFINES
  
  #undef CPP_SPEC
 -#define CPP_SPEC "%(cpp_cpu) %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
-+#define CPP_SPEC \
-+  "%(cpp_cpu) %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE} %{m486:-D__i486__}"
-+  /* %{pthread:-D_REENTRANT} */
++#if TARGET_CPU_DEFAULT == 2
++#define CPP_SPEC "\
++  %{!maout: -D__ELF__} \
++  %{munderscores: -D__UNDERSCORES__} \
++  %{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
++  %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{!m386:-D__i486__}"
++#else
++#define CPP_SPEC "\
++  %{!maout: -D__ELF__} \
++  %{munderscores: -D__UNDERSCORES__} \
++  %{maout: %{!mno-underscores: -D__UNDERSCORES__}} \
++  %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{m486:-D__i486__}"
++#endif
++
++#undef CC1_SPEC
++#define CC1_SPEC "\
++  %{gline:%{!g:%{!g0:%{!g1:%{!g2: -g1}}}}} \
++  %{maout: %{!mno-underscores: %{!munderscores: -munderscores }}}"
  
- #undef	LIB_SPEC
--#if 1
--/* We no longer link with libc_p.a or libg.a by default. If you
-- * want to profile or debug the C library, please add
-- * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
-- */
--#define LIB_SPEC \
--  "%{!shared: %{mieee-fp:-lieee} %{p:-lgmon} %{pg:-lgmon} \
--     %{!ggdb:-lc} %{ggdb:-lg}}"
--#else
- #define LIB_SPEC \
+-/* This defines which switch letters take arguments.  On FreeBSD, most of
+-   the normal cases (defined in gcc.c) apply, and we also have -h* and
+-   -z* options (for the linker) (comming from svr4).
+-   We also have -R (alias --rpath), no -z, --soname (-h), --assert etc. */
+-
+-#undef SWITCH_TAKES_ARG
+-#define SWITCH_TAKES_ARG(CHAR) \
+-  (DEFAULT_SWITCH_TAKES_ARG (CHAR) \
+-   || (CHAR) == 'h' \
+-   || (CHAR) == 'z' \
+-   || (CHAR) == 'R')
++#undef  ASM_SPEC
++#define ASM_SPEC	"%{v*: -v} %{maout: %{fpic:-k} %{fPIC:-k}}"
+ 
+ /* Provide a STARTFILE_SPEC appropriate for FreeBSD.  Here we add
+    the magical crtbegin.o file (see crtstuff.c) which provides part 
+@@ -186,11 +198,11 @@
+    
+ #undef	STARTFILE_SPEC
+ #define STARTFILE_SPEC \
 -  "%{!shared: \
--     %{mieee-fp:-lieee} %{p:-lgmon -lc_p} %{pg:-lgmon -lc_p} \
--       %{!p:%{!pg:%{!g*:-lc} %{g*:-lg}}}}"
--#endif
-+  "%{!shared:%{!pg:%{!pthread:%{!kthread:-lc}%{kthread:-lpthread -lc}}%{pthread:-lc_r}}%{pg:%{!pthread:%{!kthread:-lc_p}%{kthread:-lpthread_p -lc_p}}%{pthread:-lc_r_p}}}"
+-     %{pg:gcrt1.o%s} %{!pg:%{p:gcrt1.o%s} \
+-		       %{!p:%{profile:gcrt1.o%s} \
+-			 %{!profile:crt1.o%s}}}} \
+-   crti.o%s %{!shared:crtbegin.o%s} %{shared:crtbeginS.o%s}"
++  "%{maout: %{shared:c++rt0.o%s} \
++    %{!shared:%{pg:gcrt0.o%s}%{!pg:%{static:scrt0.o%s}%{!static:crt0.o%s}}}} \
++  %{!maout:  %{!shared: \
++    %{pg:gcrt1.o%s} %{!pg:%{p:gcrt1.o%s} %{!p:crt1.o%s}}} \
++    crti.o%s %{!shared:crtbegin.o%s} %{shared:crtbeginS.o%s}}"
  
- /* Provide a LINK_SPEC appropriate for FreeBSD.  Here we provide support
-    for the special GCC options -static and -shared, which allow us to
+ /* Provide a ENDFILE_SPEC appropriate for FreeBSD.  Here we tack on
+    the magical crtend.o file (see crtstuff.c) which provides part of 
+@@ -200,7 +212,7 @@
+ 
+ #undef	ENDFILE_SPEC
+ #define ENDFILE_SPEC \
+-  "%{!shared:crtend.o%s} %{shared:crtendS.o%s} crtn.o%s"
++  "%{!maout: %{!shared:crtend.o%s} %{shared:crtendS.o%s} crtn.o%s}"
+ 
+ /* Provide a LIB_SPEC appropriate for FreeBSD.  Just select the appropriate
+    libc, depending on whether we're doing profiling or need threads support.
