@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f826757-26be-11d9-ad2d-0050fc56d258">
+    <topic>rssh -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>rssh</name>
+	<range><le>2.2.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a format string bug in rssh that enables an attacker
+	  to execute arbitrary code from an account configured to use
+	  rssh.  On FreeBSD it is only possible to compromise the rssh
+	  running account, not root.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.pizzashack.org/rssh/security.shtml</url>
+      <mlist msgid="20041023084829.GA16819@sophic.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109855982425122</mlist>
+    </references>
+      <dates>
+	<discovery>2004-10-23</discovery>
+	<entry>2004-10-25</entry>
+      </dates>
+  </vuln>
+
   <vuln vid="ed1d404d-2784-11d9-b954-000bdb1444a4">
     <topic>horde -- cross-site scripting vulnerability in help
       window</topic>
