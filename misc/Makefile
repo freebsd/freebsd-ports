@@ -81,6 +81,7 @@
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
     SUBDIR += freedialog
+    SUBDIR += ftdi-eeprom
     SUBDIR += ftree
     SUBDIR += gctpc
     SUBDIR += geekcode
