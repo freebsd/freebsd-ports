@@ -30,13 +30,7 @@ ONLY_FOR_ARCHS=		i386
 # Glide DOES NOT work with CFLAGS greater than -O2
 CFLAGS+=	-O
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-configure:
 	cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
