@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
@@ -33,7 +33,7 @@ MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	fm@code.org.ua
+MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
 
 USE_BZIP2=	yes
