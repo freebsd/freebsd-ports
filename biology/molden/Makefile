@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	3.9
+PORTVERSION=	4.3
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 
-MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 USE_XLIB=	yes
 
