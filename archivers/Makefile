@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1998/12/01 23:11:59 billf Exp $
+# $Id: Makefile,v 1.21 1999/04/02 04:19:42 steve Exp $
 #
 
     SUBDIR += arc
@@ -9,9 +9,11 @@
     SUBDIR += ha
     SUBDIR += hpack.non-usa.only
     SUBDIR += lha
+    SUBDIR += linux_rar
     SUBDIR += lzo
     SUBDIR += nulib
     SUBDIR += p5-Compress-Zlib
+    SUBDIR += pkzip
     SUBDIR += rar
     SUBDIR += unace
     SUBDIR += unarj
