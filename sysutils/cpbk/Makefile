@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://pep.netnation.com/cpbk/ \
 		ftp://mocha.mkintraweb.com/pub/linux/cpbk/
 
-MAINTAINER=	ozz@FreeBSD.org.ru
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		cpbk.1
 MANCOMPRESSED=	yes

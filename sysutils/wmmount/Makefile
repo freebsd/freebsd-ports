@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 DISTNAME=	${PORTNAME}-1.0-beta2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ozz@FreeBSD.org.ru
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -12,7 +12,7 @@ MASTER_SITES=	http://freebsd.org.ru/~osa/distfiles/ \
 		ftp://ftp.ssau.ru/pub/linux_soft/Cyrillic/ \
 		ftp://ftp.uven.ru/pub/cyrillic/X11/keyboard/
 
-DISTNAME=	cyrx-${PORTVERSION}
+DISTNAME=	ports@FreeBSD.org
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
