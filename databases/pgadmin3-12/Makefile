@@ -7,7 +7,7 @@
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR= pgadmin3/release/v${PORTVERSION}/src
@@ -21,9 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx=${X11BASE}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +38,9 @@ LIB_DEPENDS+=	wx_gtk2u_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-contrib
 CONFIGURE_ARGS+=--with-wx-config=wxgtk2u-2.5-config
 PKGNAMESUFFIX=	-unicode
 PKGMESSAGE=	${PKGDIR}/pkg-message-unicode
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 .else
 LIB_DEPENDS+=	wx_gtk2_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-devel
 CONFIGURE_ARGS+=--with-wx-config=wxgtk2-2.5-config
