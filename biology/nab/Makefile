@@ -1,12 +1,15 @@
 # New ports collection Makefile for: nab
 # Date created:         Sept. 10, 2000
 # Whom:                 M. L. Dodson <bdodson@scms.utmb.edu>
+#
 # $FreeBSD$
+#
 
 PORTNAME=	nab
 PORTVERSION=	4.4
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/
+MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
+		http://www.scripps.edu/case/
 
 MAINTAINER=	bdodson@scms.utmb.edu
 
