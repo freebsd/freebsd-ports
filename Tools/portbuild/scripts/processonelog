@@ -9,17 +9,20 @@
 
 filename=$1
 indexdir=.
+errordir=.
 if [ "$2" != "" ]; then indexdir=$2; fi
+if [ "$3" != "" ]; then errordir=$3; fi
 indexdir=$(realpath $indexdir)
+errordir=$(realpath $errordir)
 indexfilename=$indexdir/INDEX
 
 portname=$(basename $filename .log)
 affected=$(($(grep -cF $portname < $indexfilename) -1))
-logsize=$(/bin/ls -sk $filename | awk '{print $1}')
-dir=$(sed -n -e '3p' $filename | grep '^with arguments' | awk '{print $4}' | \
+logsize=$(/bin/ls -sk $errordir/$filename | awk '{print $1}')
+dir=$(sed -n -e '3p' $errordir/$filename | grep '^with arguments' | awk '{print $4}' | \
 		sed -e 's,^/[^/]*/[^/]*/,,')
-maintainer=$(sed -n -e '4p' $filename | grep '^maintained by' | awk '{print $3}')
-datetime=$(sed -n -e '5p' $filename | grep '^build started at' | \
+maintainer=$(sed -n -e '4p' $errordir/$filename | grep '^maintained by' | awk '{print $3}')
+datetime=$(sed -n -e '5p' $errordir/$filename | grep '^build started at' | \
 		sed -e 's/build started at ...//' | tr ' ' '_' )
 
 # now try to classify the type of error found in the file.
@@ -48,7 +51,10 @@ elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' 
   reason="distinfo_update"; tag="distinfo"
 elif grep -q "checking whether apxs works.*apxs: not found" $1; then
   reason="apxs"; tag="apxs"
-elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
+# note: must run before the configure_error check
+elif grep -qE "Configuration .* not supported" $1; then
+  reason="arch"; tag="arch"
+elif grep -qE '(configure: error:|Script.*configure.*failed unexpectedly|script.*failed: here are the contents of)' $1; then
   if grep -qE "configure: error: cpu .* not supported" $1; then
     reason="arch"; tag="arch"
   elif grep -qE "configure: error: (This program requires STL to compile|One or more.*STL headers are missing)" $1; then
@@ -102,8 +108,6 @@ elif grep -q "USER   PID  PPID  PGID JOBC STAT  TT       TIME COMMAND" $1; then
   reason="runaway_process"; tag="runaway"
 elif grep -q "pnohang: killing make package" $1; then
   reason="runaway_process"; tag="runaway"
-elif grep -q "cd: can't cd to" $1; then
-  reason="NFS"; tag="nfs"
 elif grep -qE "pkg_add: (can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
   reason="disk_full"; tag="df"
 elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized)' $1; then
@@ -114,7 +118,7 @@ elif grep -qE '(syntax error before|ISO C\+\+ forbids|friend declaration|no matc
   reason="bad_C++_code"; tag="badc++"
 elif grep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
   reason="linker_error"; tag="ld"
-elif grep -qE 'chown:.*invalid argument' $1; then
+elif grep -qE 'chown:.*[Ii]nvalid argument' $1; then
   reason="chown"; tag="chown"
 #elif grep -qE 'cp:.*Invalid argument' $1; then
 #  reason="munmap"; tag="munmap"
@@ -126,11 +130,11 @@ elif grep -q 'install: .*: No such file' $1; then
   fi
 elif grep -q "/usr/.*/man/.*: No such file or directory" $1; then
   reason="manpage"; tag="manpage"
-elif grep -q "pkg_create: make_dist: tar command failed with code" $1; then
-  reason="PLIST"; tag="plist"
 elif grep -qE "(Can't|unable to) open display" $1; then
   reason="DISPLAY"; tag="display"
 elif grep -q " is already installed - perhaps an older version" $1; then
+  reason="depend_object"; tag="dependobj"
+elif grep -q "You may wish to ..make deinstall.. and install this port again" $1; then
   reason="depend_object"; tag="dependobj"
 elif grep -q "error in dependency .*, exiting" $1; then
   reason="depend_package"; tag="dependpkg"
@@ -161,8 +165,6 @@ elif grep -q "cast from pointer to integer of different size" $1; then
 elif grep -qE "^cc1: bad value.*for -mcpu.*switch" $1; then
   reason="arch"; tag="arch"
 elif grep -qE "^cc1: invalid option " $1; then
-  reason="arch"; tag="arch"
-elif grep -qE "Configuration .* not supported" $1; then
   reason="arch"; tag="arch"
 elif grep -q "could not read symbols: File in wrong format" $1; then
   reason="arch"; tag="arch"
@@ -222,14 +224,6 @@ elif grep -q "usage: yacc" $1; then
   reason="bison"; tag="bison"
 elif grep -q "/usr/local/www/cgi-bin does not exist" $1; then
   reason="cgi-bin"; tag="cgi-bin"
-elif grep -qE "chown: .*\..*: Invalid argument" $1; then
-  reason="chown"; tag="chown"
-#elif grep -qE "cp: .*: Invalid argument" $1; then
-#  reason="munmap"; tag="munmap"
-elif grep -q "Cannot stat: " $1; then
-  reason="configure_error"; tag="configure"
-elif grep -qE "Script.*configure.*failed unexpectedly" $1; then
-  reason="configure_error"; tag="configure"
 elif grep -q "Cannot open /dev/tty for read" $1; then
   reason="DISPLAY"; tag="display"
 elif grep -q "RuntimeError: cannot open display" $1; then
@@ -284,8 +278,6 @@ elif grep -q "Bus error" $1; then
   reason="process_failed"; tag="process"
 elif grep -q "Signal 11" $1; then
   reason="process_failed"; tag="process"
-elif grep -q "USER   PID  PPID  PGID JOBC STAT  TT       TIME COMMAND" $1; then
-  reason="process_failed"; tag="process"
 elif grep -q "python: not found" $1; then
   reason="python"; tag="python"
 elif grep -qE "sed: illegal option" $1; then
@@ -308,6 +300,18 @@ elif grep -q "/usr/bin/ld: cannot find -lXThrStub" $1; then
   reason="threads"; tag="threads"
 elif grep -q "<varargs.h> is obsolete with this version of GCC" $1; then
   reason="varargs"; tag="varargs"
+
+# Although these can be fairly common, and thus in one sense ought to be
+# earlier in the evaluation, in practice they are most often secondary
+# types of errors, and thus need to be evaluated after all the specific
+# cases.
+
+elif grep -q "Cannot stat: " $1; then
+  reason="configure_error"; tag="configure"
+elif grep -q "cd: can't cd to" $1; then
+  reason="NFS"; tag="nfs"
+elif grep -q "pkg_create: make_dist: tar command failed with code" $1; then
+  reason="PLIST"; tag="plist"
 
 else
   reason="???"; tag="unknown"
