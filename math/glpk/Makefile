@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	glpk
 
 MAINTAINER=	demon@FreeBSD.org
 
+BROKEN=		"Does not install"
+
 GNU_CONFIGURE=	yes
 
 DOCFILES=	lang refman
