@@ -32,6 +32,12 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 AYAM_PLUGINS=	csphere mfio
 PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not build on alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
 	@${REINPLACE_CMD} -e 's|^MF3DCFLAGS =|MF3DCFLAGS = -fPIC|g' \
@@ -88,4 +94,4 @@ do-install:
 		${DOCSDIR}/html/pics
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
