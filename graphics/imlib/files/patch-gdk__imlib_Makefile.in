@@ -1,0 +1,13 @@
+--- gdk_imlib/Makefile.in.orig	Thu Feb 15 12:46:34 2001
++++ gdk_imlib/Makefile.in	Thu Mar 22 14:58:49 2001
+@@ -151,8 +151,8 @@
+ libgdk_imlib_la_SOURCES =  	cache.c      			colors.c     			globals.c    			load.c       			misc.c       			rend.c       			utils.c      			save.c				modules.c
+ 
+ 
+-libgdk_imlib_la_LDFLAGS = -version-info 10:9:9
+-libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
++libgdk_imlib_la_LDFLAGS = -export-dynamic -version-info 5:0:0
++libgdk_imlib_la_LIBADD = $(GTK_LIBS) $(SUPPORT_LIBS)
+ 
+ include_HEADERS = gdk_imlib.h gdk_imlib_private.h gdk_imlib_types.h
+ 

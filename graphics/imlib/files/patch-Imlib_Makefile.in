@@ -1,0 +1,11 @@
+--- Imlib/Makefile.in.orig	Thu Feb 15 12:46:40 2001
++++ Imlib/Makefile.in	Thu Mar 22 14:57:27 2001
+@@ -124,7 +124,7 @@
+ libImlib_la_SOURCES =  	cache.c			colors.c		load.c			misc.c			rend.c			utils.c			save.c			snprintf.c
+ 
+ 
+-libImlib_la_LDFLAGS = -version-info 10:9:9
++libImlib_la_LDFLAGS = -version-info 5:0:0
+ #libImlib_la_LDDADD     = $(SUPPORT_LIBS)
+ libImlib_la_LIBADD = $(SUPPORT_LIBS)
+ 

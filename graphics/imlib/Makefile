@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imlib
-PORTVERSION=	1.9.8.1
+PORTVERSION=	1.9.9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/imlib
@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
