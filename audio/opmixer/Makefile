@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	opmixer
-PORTVERSION=	0.55
+PORTVERSION=	0.60
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://optronic.linuxave.net/wizborn/projects/opmixer/
-MASTER_SITE_SUBDIR=	trevor
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	optronic
 
 MAINTAINER=	trevor@FreeBSD.org
 
