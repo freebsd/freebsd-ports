@@ -1,0 +1,19 @@
+Muggy.app is the simple text editor for the X.
+It is able to run under the Macintosh [and|or] Windows9?,too.
+But it's not supported.
+
+	Muggy has two modes called "View" and "Edit".
+	So you don't have to choose editor or viewer.
+	I think it's unique.
+
+	She will be editable if you run her with no parameters.
+	And if you run her with a name of file,she will run in the
+	"View" mode.
+	
+	You can change the modes if you want.
+
+Note that both editors/muggy and japanese/muggy are mutually exclusive and 
+SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>
