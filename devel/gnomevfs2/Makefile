@@ -27,7 +27,6 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier gnomemimedata
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIB=${PTHREAD_LIBS}
