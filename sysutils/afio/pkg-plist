@@ -1,2 +1,11 @@
 bin/afio
 man/man1/afio.1.gz
+share/doc/afio/README
+share/doc/afio/SCRIPTS
+share/example/afio/afiodump.example
+share/example/afio/DONTDUMP
+share/example/afio/README
+share/example/afio/backup
+share/example/afio/restore
+share/example/afio/x.dot
+share/example/afio/x.home
