@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vcheck
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	ftp
 MASTER_SITES= 	http://www.tu-ilmenau.de/~gomar/stuff/vcheck/
 
