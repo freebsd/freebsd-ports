@@ -1,5 +1,5 @@
-*** src/Makefile.orig	Sat May 25 04:04:15 1991
---- src/Makefile	Thu Nov 12 11:20:18 1998
+*** src/Makefile.orig  Fri May 24 21:04:15 1991
+--- src/Makefile       Mon Jun 14 23:41:50 1999
 ***************
 *** 27,37 ****
   # level and when it is working, increase the optimization level.  So far
@@ -32,7 +32,7 @@
   # SUN Sparc series flags version 1.3 or later compiler
   #
 ***************
-*** 60,66 ****
+*** 60,71 ****
   #  Place your G88/G90 util library definition here if you wish to 
   #  compile chk2psi
   #
@@ -40,7 +40,12 @@
   #
   # define the directory where the executables will reside
   # usually /usr/local/bin or ~/bin to put it in your own directory
---- 66,72 ----
+  #
+! BIN = /usr/local/bin
+  #  
+  #**** Add PSI2 to this and the install lists if you have a user defined
+  #     Plotting library to plot to the screen, also remove any which you 
+--- 66,77 ----
   #  Place your G88/G90 util library definition here if you wish to 
   #  compile chk2psi
   #
@@ -48,6 +53,11 @@
   #
   # define the directory where the executables will reside
   # usually /usr/local/bin or ~/bin to put it in your own directory
+  #
+! BIN = $(PREFIX)/bin
+  #  
+  #**** Add PSI2 to this and the install lists if you have a user defined
+  #     Plotting library to plot to the screen, also remove any which you 
 ***************
 *** 84,96 ****
   #######################################################################
