@@ -9,7 +9,7 @@ lib/libospgrove.so.0
 lib/libostyle.a
 lib/libostyle.so
 lib/libostyle.so.0
-@unexec %%MKCATALOG%% -q deinstall openjade
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove openjade/catalog
 share/sgml/openjade/README.jadetex
 share/sgml/openjade/builtins.dsl
 share/sgml/openjade/catalog
@@ -19,4 +19,4 @@ share/sgml/openjade/dsssl.dtd
 share/sgml/openjade/extensions.dsl
 share/sgml/openjade/fot.dtd
 share/sgml/openjade/style-sheet.dtd
-@exec %%MKCATALOG%% -q install openjade
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add openjade/catalog

@@ -1,4 +1,4 @@
-@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%/%%DTD_VERSION%%
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
 share/sgml/tei/p4/dummy.dtd
 share/sgml/tei/p4/teicatalog.xml
 share/sgml/tei/p4/tei2.dtd
@@ -53,6 +53,6 @@ share/sgml/tei/p4/teilitex.dtd
 share/sgml/tei/p4/teilite.dec
 share/sgml/tei/p4/teilitex.dec
 share/sgml/tei/p4/catalog
-@exec %%MKCATALOG%% -q install %%DTD_NAME%%/%%DTD_VERSION%%
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
 @dirrm share/sgml/tei/p4/
 @unexec rmdir %D/share/sgml/tei 2>/dev/null || true

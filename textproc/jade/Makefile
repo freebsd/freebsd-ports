@@ -7,7 +7,7 @@
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
@@ -18,10 +18,17 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An object-oriented SGML/XML parser toolkit and DSSSL engine
 
+RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
+PLIST_SUB=	XMLCATMGR=${XMLCATMGR}
+PLIST_SUB+=	CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}
+
+CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
+XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure
@@ -45,10 +52,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/jade
 	${MKDIR} ${PREFIX}/share/sgml/jade
 	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
-	@if [ ! -f ${PREFIX}/share/sgml/catalog ]; then \
-		${ECHO_CMD} "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"" > ${PREFIX}/share/sgml/catalog; \
-	else \
-		${SETENV} LANG=C ${PERL} -ni -e 'print if !m|${PREFIX}/share/sgml/jade/catalog|;print "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"\n" if eof;' ${PREFIX}/share/sgml/catalog; \
-	fi
+	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
 
 .include <bsd.port.post.mk>

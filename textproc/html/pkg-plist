@@ -21,9 +21,9 @@ share/sgml/html/4.01/HTMLsymbol.ent
 share/sgml/html/4.01/frameset.dtd
 share/sgml/html/4.01/loose.dtd
 share/sgml/html/4.01/strict.dtd
-@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
 share/sgml/html/catalog
-@exec %%MKCATALOG%% -q install %%DTD_NAME%%
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add %%DTD_NAME%%/catalog
 @dirrm share/sgml/html/2.0
 @dirrm share/sgml/html/3.2
 @dirrm share/sgml/html/4.0

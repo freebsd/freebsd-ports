@@ -1,15 +1,17 @@
 share/xml/docbook/%%DTD_VERSION%%/ChangeLog
 share/xml/docbook/%%DTD_VERSION%%/README
 share/xml/docbook/%%DTD_VERSION%%/calstblx.dtd
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%DOCBOOKDIR%%/catalog.xml
 share/xml/docbook/%%DTD_VERSION%%/catalog.xml
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%DOCBOOKDIR%%/catalog.xml
 share/xml/docbook/%%DTD_VERSION%%/dbcentx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
 share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbnotnx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbpoolx.mod
-@unexec %%MKCATALOG%% -q -c%%CATALOG%% deinstall docbook/%%DTD_VERSION%% docbook.cat
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DOCBOOKDIR%%/docbook.cat
 share/xml/docbook/%%DTD_VERSION%%/docbook.cat
-@exec %%MKCATALOG%% -q -c%%CATALOG%% install docbook/%%DTD_VERSION%% docbook.cat
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DOCBOOKDIR%%/docbook.cat
 share/xml/docbook/%%DTD_VERSION%%/docbookx.dtd
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsa.ent
 share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsb.ent

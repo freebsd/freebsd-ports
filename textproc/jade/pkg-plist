@@ -169,10 +169,9 @@ share/doc/jade/sysid.htm
 share/doc/jade/xml.htm
 share/sgml/jade/FOT.tex
 share/sgml/jade/Makefile.jadetex
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove jade/catalog
 share/sgml/jade/catalog
-@unexec env LANG=C perl -ni -e 'print if !m|%D/%F|;' %D/share/sgml/catalog
-@unexec if [ -f %D/share/sgml/catalog -a ! -s %D/share/sgml/catalog ]; then rm -f %D/share/sgml/catalog; fi
-@exec if [ ! -f %D/share/sgml/catalog ]; then echo "CATALOG \"%D/%F\"" > %D/share/sgml/catalog; else env LANG=C perl -ni -e 'print if !m|%D/%F|;print "CATALOG \"%D/%F\"\n" if eof;' %D/share/sgml/catalog; fi
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add jade/catalog
 share/sgml/jade/demo.dsl
 share/sgml/jade/demo.sgm
 share/sgml/jade/demoMaster.tex

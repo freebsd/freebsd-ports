@@ -1,7 +1,7 @@
 share/sgml/linuxdoc/README
-@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%
+@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/catalog
 share/sgml/linuxdoc/catalog
-@exec %%MKCATALOG%% -q install %%DTD_NAME%%
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add %%DTD_NAME%%/catalog
 share/sgml/linuxdoc/freebsd-1.0.dtd
 share/sgml/linuxdoc/freebsd-1.1.dtd
 share/sgml/linuxdoc/linuxdoc.dec
