@@ -10893,6 +10893,7 @@ sylpheed	ports/mail/sylpheed
 sylpheed2	ports/mail/sylpheed2
 sylpheed-claws	ports/mail/sylpheed-claws
 symlinks	ports/sysutils/symlinks
+symon		ports/sysutils/symon
 sympa		ports/mail/sympa
 sympa-elixus	ports/mail/sympa-elixus
 synaesthesia	ports/graphics/synaesthesia
