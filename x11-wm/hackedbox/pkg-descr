@@ -3,5 +3,4 @@ out of the curiosity of the authors.  It's small, fast, has built-in
 rendering code, does image dithering at 8, 15 and 16 bits per pixel
 and colour icon support.  Blackbox is [mostly] ICCCM compliant.
 
-WWW: http://blackbox.wiw.org/
-Author:	   Brad Hughes <bhughes@tcac.net>
+WWW: http://blackbox.alug.org/
