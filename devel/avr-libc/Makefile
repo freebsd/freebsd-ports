@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	2002.10.02
+PORTVERSION=	2002.11.24
 CATEGORIES=	devel
 # There are currently no official master sites for it.  Everything is
 # in savannah.gnu.org's CVS only.
@@ -30,11 +30,9 @@ USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
-CONFIGURE_ARGS=	--disable-versioned-doc
-# get rid of that silly -mcpu=pentiumpro -current is so fond of. :-(
-MAKE_ENV=	MACHINE_ARCH=avr
-
-PDFDOC=		avr-tools.pdf
+CONFIGURE_ARGS=	--enable-doc --disable-versioned-doc
+# Work around the braind*** introduced by <bsd.cpu.mk> in freebsd-current.
+MAKE_ENV=	NO_CPU_CFLAGS=true
 
 do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
@@ -43,10 +41,10 @@ do-install:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE} install)
 		${MKDIR} ${PREFIX}/share/doc/avr-libc
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
+		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples/demo
 		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/LICENSE \
 			${WRKDIR}/${DISTNAME}/AUTHORS \
-			${WRKDIR}/${DISTNAME}/doc/register-usage.txt \
 			${WRKDIR}/${DISTNAME}/doc/avr-libc-reference.html \
 			${PREFIX}/share/doc/avr-libc
 		@for f in avr-recv.c io.c prg printf.h progmem.c \
@@ -54,6 +52,12 @@ do-install:
 		do \
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/$$f \
 				${PREFIX}/share/doc/avr-libc/examples; \
+		done
+		@for f in Makefile demo.bin demo.c demo.hex demo.pdf \
+			demo.srec;\
+		do \
+			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/demo/$$f \
+				${PREFIX}/share/doc/avr-libc/examples/demo; \
 		done
 
 .include <bsd.port.mk>

@@ -36,6 +36,7 @@ avr/include/avr/parity.h
 avr/include/avr/pgmspace.h
 avr/include/avr/sfr_defs.h
 avr/include/avr/signal.h
+avr/include/avr/sleep.h
 avr/include/avr/timer.h
 avr/include/avr/twi.h
 avr/include/avr/wdt.h
@@ -51,6 +52,7 @@ avr/include/pgmspace.h
 avr/include/progmem.h
 avr/include/setjmp.h
 avr/include/sig-avr.h
+avr/include/stdio.h
 avr/include/stdlib.h
 avr/include/string.h
 avr/include/timer.h
@@ -59,9 +61,13 @@ avr/include/wdt.h
 avr/lib/avr3/crtm103.o
 avr/lib/avr3/libc.a
 avr/lib/avr3/libm.a
+avr/lib/avr3/libprintf_flt.a
+avr/lib/avr3/libprintf_min.a
 avr/lib/avr4/crtm8.o
 avr/lib/avr4/libc.a
 avr/lib/avr4/libm.a
+avr/lib/avr4/libprintf_flt.a
+avr/lib/avr4/libprintf_min.a
 avr/lib/avr5/crtat94k.o
 avr/lib/avr5/crtm128.o
 avr/lib/avr5/crtm16.o
@@ -72,6 +78,8 @@ avr/lib/avr5/crtm169.o
 avr/lib/avr5/crtm323.o
 avr/lib/avr5/libc.a
 avr/lib/avr5/libm.a
+avr/lib/avr5/libprintf_flt.a
+avr/lib/avr5/libprintf_min.a
 avr/lib/crtc8534.o
 avr/lib/crts1200.o
 avr/lib/crts2313.o
@@ -91,6 +99,8 @@ avr/lib/crttn26.o
 avr/lib/crttn28.o
 avr/lib/libc.a
 avr/lib/libm.a
+avr/lib/libprintf_flt.a
+avr/lib/libprintf_min.a
 share/doc/avr-libc/AUTHORS
 share/doc/avr-libc/LICENSE
 share/doc/avr-libc/avr-libc-reference.html
@@ -102,9 +112,9 @@ share/doc/avr-libc/avr-libc-user-manual/annotated.html
 share/doc/avr-libc/avr-libc-user-manual/classes.html
 share/doc/avr-libc/avr-libc-user-manual/demo.png
 share/doc/avr-libc/avr-libc-user-manual/demo_project.html
+share/doc/avr-libc/avr-libc-user-manual/deprecated.html
 share/doc/avr-libc/avr-libc-user-manual/dox.css
 share/doc/avr-libc/avr-libc-user-manual/doxygen.png
-share/doc/avr-libc/avr-libc-user-manual/form_0.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2blank.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2doc.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2folderclosed.png
@@ -118,19 +128,27 @@ share/doc/avr-libc/avr-libc-user-manual/ftv2plastnode.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2pnode.png
 share/doc/avr-libc/avr-libc-user-manual/ftv2vertline.png
 share/doc/avr-libc/avr-libc-user-manual/group__avr__eeprom.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__errno.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__interrupts.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__inttypes.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__io.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__pgmspace.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__sfr.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__sfr__notes.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__sleep.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__stdio.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__stdlib.html
 share/doc/avr-libc/avr-libc-user-manual/group__avr__string.html
+share/doc/avr-libc/avr-libc-user-manual/group__ctype.html
 share/doc/avr-libc/avr-libc-user-manual/group__setjmp.html
 share/doc/avr-libc/avr-libc-user-manual/index.html
 share/doc/avr-libc/avr-libc-user-manual/inline_asm.html
 share/doc/avr-libc/avr-libc-user-manual/install_tools.html
 share/doc/avr-libc/avr-libc-user-manual/main.html
+share/doc/avr-libc/avr-libc-user-manual/malloc-std.png
+share/doc/avr-libc/avr-libc-user-manual/malloc-x1.png
+share/doc/avr-libc/avr-libc-user-manual/malloc-x2.png
+share/doc/avr-libc/avr-libc-user-manual/malloc.html
 share/doc/avr-libc/avr-libc-user-manual/mem_sections.html
 share/doc/avr-libc/avr-libc-user-manual/modules.html
 share/doc/avr-libc/avr-libc-user-manual/pages.html
@@ -140,18 +158,25 @@ share/doc/avr-libc/avr-libc-user-manual/tree.html
 share/doc/avr-libc/avr-libc-user-manual/tree.js
 share/doc/avr-libc/avr-libc-user-manual/treeview.js
 share/doc/avr-libc/avr-libc-user-manual/using_avrprog.html
+share/doc/avr-libc/avr-libc-user-manual/using_tools.html
 share/doc/avr-libc/examples/avr-recv.c
+share/doc/avr-libc/examples/demo/Makefile
+share/doc/avr-libc/examples/demo/demo.bin
+share/doc/avr-libc/examples/demo/demo.c
+share/doc/avr-libc/examples/demo/demo.hex
+share/doc/avr-libc/examples/demo/demo.pdf
+share/doc/avr-libc/examples/demo/demo.srec
 share/doc/avr-libc/examples/io.c
 share/doc/avr-libc/examples/prg
 share/doc/avr-libc/examples/printf.h
 share/doc/avr-libc/examples/progmem.c
 share/doc/avr-libc/examples/send_byte.s
 share/doc/avr-libc/examples/signal.c
-share/doc/avr-libc/register-usage.txt
 @dirrm avr/include/avr
 @dirrm avr/lib/avr3
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5
 @dirrm share/doc/avr-libc/avr-libc-user-manual
+@dirrm share/doc/avr-libc/examples/demo
 @dirrm share/doc/avr-libc/examples
 @dirrm share/doc/avr-libc
