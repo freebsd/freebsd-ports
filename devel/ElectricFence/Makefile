@@ -17,13 +17,11 @@ DISTNAME=	ElectricFence-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debugging malloc() that uses the VM hardware to detect buffer overruns
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64" || ${MACHINE_ARCH} == "sparc64"
-BROKEN=		"Does not compile on ${MACHINE_ARCH}"
-.endif
-
 INSTALLS_SHLIB=	yes
 CFLAGS+=	-D__USE_BSD
 MAN3=		efence.3
+
+MAKE_ARGS=	CC="${CC}"
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libefence.a ${PREFIX}/lib
