@@ -7,6 +7,8 @@
 
 MASTERDIR=      ${.CURDIR}/../ruby_static
 
+PORTREVISION=	1
+
 RUBY_VER=	1.7
 
 LATEST_LINK=	ruby_static-devel
