@@ -3,7 +3,7 @@
 @@ -1,7 +1,7 @@
  
 -     SCORE_FILE = -DSCORE_FILE=\"/usr/games/lib/xpipescores\"
-+     SCORE_FILE = -DSCORE_FILE=\"/usr/X11R6/lib/X11/xpipescores\"
++     SCORE_FILE = -DSCORE_FILE=\"$(LIBDIR)/xpipescores\"
        MAXSCORES = -DMAXSCORES=20
 -        DEFINES = $(SCORE_FILE) $(MAXSCORES) -DSYSV
 +        DEFINES = $(SCORE_FILE) $(MAXSCORES)
