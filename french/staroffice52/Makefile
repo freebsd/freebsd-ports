@@ -94,7 +94,7 @@ pre-fetch:
 	@${ECHO}
 .endif
 .if defined(WITH_CDROM)
-.if !exists(${CD_MOUNTPT}/linux/office52/setup)
+.if !exists(/cdrom/linux/office52/setup)
 	@${ECHO}
 	@${ECHO} "Montez le CDrom de Staroffice 5.2 dans le répertoire"
 	@${ECHO} "${CD_MOUNTPT} et relancez l\'installation"
@@ -172,12 +172,10 @@ do-install:
 		${ECHO} ; \
 		${FALSE} ; \
 	fi
-.if ! defined(WITH_CDROM)
 	@${ECHO_MSG} "===>   Application des correctifs sunsolve pour ${PKGNAME}"
 	@for file in ${SUNSOLVE}/* ; do \
 		${CP} -Rv $$file ${PREFIX}/office52/ ; \
 	done
-.endif
 .endif
 
 post-install:
