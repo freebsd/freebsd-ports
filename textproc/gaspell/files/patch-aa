@@ -1,6 +1,6 @@
 --- Makefile.orig	Sun Feb  6 00:26:12 2000
-+++ Makefile	Thu Feb 17 15:30:12 2000
-@@ -1,14 +1,14 @@
++++ Makefile	Tue Jun 13 16:56:02 2000
+@@ -1,21 +1,21 @@
  
  # You will need to specify the absolute path if gnome-config is not in 
  # your path or if the one in your path is not the correct one
@@ -19,3 +19,12 @@
  
  # You should not need to modify anything below this comment
  
+-VERSION = .29
++VERSION = .30
+ 
+ INCLUDES = -I$(ASPELL_PREFIX)/include `$(GNOME_CONFIG) --cflags gnomeui` \
+-  -D VERSION=\"$(VERSION)\"
++  -DVERSION=\"$(VERSION)\"
+ LIBS = -L$(ASPELL_PREFIX)/lib -laspell `$(GNOME_CONFIG) --libs gnomeui`
+ 
+ gaspell: gaspell.o DICTClient.o

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gaspell
-PORTVERSION= 	0.29.1
+PORTVERSION= 	0.30
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://aspell.sourceforge.net/old/
-DISTNAME=	${PORTNAME}-.29.1
+MASTER_SITES=	http://aspell.sourceforge.net/
+DISTNAME=	${PORTNAME}-.30
 
 MAINTAINER=	ade@FreeBSD.org
 
