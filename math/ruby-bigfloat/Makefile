@@ -16,6 +16,8 @@ MAINTAINER=	knu@FreeBSD.org
 BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
+INSTALL_TARGET=	site-install
+
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
