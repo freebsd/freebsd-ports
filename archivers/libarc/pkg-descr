@@ -1,0 +1,10 @@
+A tiny C library and sample program to extract data compressed using dozen
+popular archivers. Currently following formats are supported:
+
+- tar (*.tar) 
+- tar + gzip'ed (*.tar.gz, *.tgz) (deflate) 
+- zip (*.zip) (implode, deflate) 
+- lzh (*.lzh) (lh0, lh1, lh2, lh3, lh4, lh5, lh6, lzs, lz5, lz4) 
+- MIME multipart
+
+WWW: http://raiden.goice.co.jp/member/mo/release/#libarc

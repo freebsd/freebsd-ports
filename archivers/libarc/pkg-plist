@@ -1,0 +1,9 @@
+bin/arccat
+include/libarc/arc.h
+include/libarc/mblock.h
+include/libarc/memb.h
+include/libarc/url.h
+lib/libarc.a
+lib/libarc.so
+lib/libarc.so.1
+@dirrm include/libarc
