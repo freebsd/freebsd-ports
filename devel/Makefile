@@ -141,6 +141,7 @@
     SUBDIR += gengetopt
     SUBDIR += gettext
     SUBDIR += gettext-devel
+    SUBDIR += getxml
     SUBDIR += gide
     SUBDIR += gindent
     SUBDIR += glade

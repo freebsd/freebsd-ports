@@ -1,0 +1,24 @@
+# ex:ts=8
+# New ports collection makefile for:	getxml
+# Date created:			Jul 30, 2001
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	getxml
+PORTVERSION=	1.0.3
+CATEGORIES=	devel
+MASTER_SITES=	ftp://toutdoux.sourceforge.net/pub/toutdoux/
+
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	xml:${PORTSDIR}/textproc/libxml
+
+USE_GLIB=	yes
+GNU_CONFIGURE=	yes
+
+post-patch:
+	@${PERL} -pi -e "s,glib-config,${GLIB_CONFIG},g" ${WRKSRC}/configure
+
+.include <bsd.port.mk>
