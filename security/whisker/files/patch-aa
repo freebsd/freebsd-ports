@@ -1,0 +1,11 @@
+--- whisker.pl.orig	Tue Dec 26 11:26:37 2000
++++ whisker.pl	Tue Dec 26 11:39:54 2000
+@@ -3,7 +3,7 @@
+ 
+ $whisker_version="1.4.0";
+ $WHEREIS_WHISKER=$0;
+-$WHEREIS_WHISKER=~s/[^\/\\]+$//; 
++$WHEREIS_WHISKER=~s|\w+/[^\/\\]+$|share/whisker/|;
+ $GLOBAL_HTMLOUTPUT=0;
+ 
+ use Socket; use Getopt::Std;
