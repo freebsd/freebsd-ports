@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libpci
 # Date created:				June 14, 2003
-# Whom:					Samy Al Bahra <samy@kerneled.com>
+# Whom:					Samy Al Bahra <samy@kerneled.org>
 #
 # $FreeBSD$
 #
@@ -9,12 +9,12 @@ PORTNAME=	libpci
 PORTVERSION=	2.1.11
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.kerneled.com/freebsd/ports/ \
+MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		ftp://ftp.kernel.org/pub/software/utils/pciutils/
 DISTNAME=	pciutils-${PORTVERSION}
 
-MAINTAINER=	samy@kerneled.com
+MAINTAINER=	samy@kerneled.org
 COMMENT=	PCI configuration space I/O made easy
 
 USE_BZIP2=	yes
