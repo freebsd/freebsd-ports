@@ -1,18 +1,23 @@
 omniORBpy is an object request broker (ORB) for Python which implements
-specification 2.3 of the Common Object Request Broker Arhitecture (CORBA).
+specification 2.6 of the Common Object Request Broker Arhitecture (CORBA).
 omniORBpy is implemented as a Python extension module (written in C++) to
-provide bindings for omniORB3, a high performance C++ ORB.
+provide bindings for omniORB4, a high performance C++ ORB.
 
-Some features of omniORB3:
-- Support for the Portable Object Adapter (POA)
-- Support for the Interoperable Naming Service (INS)
-- The Internet Inter-ORB Protocol (IIOP 1.0) is used as the native protocol. 
-- The omniORB3 runtime is fully multithreaded. It uses native platform thread
-  support encapsulated with a small class library, omnithread, to abstract
-  away from differences in native thread APIs. 
-- TypeCode and type Any are supported. 
-- DynAny is supported (CORBA 2.2) 
-- The Dynamic Invocation and Dynamic Skeleton interfaces are supported 
-- A COS Naming Service, omniNames, is provided. 
+Some features of omniORB4:
+- Support for GIOP and IIOP 1.0, 1.1 and 1.2.
+- Fully multithreaded runtime.
+- TypeCode and type Any.
+- CORBA 2.6 DynAny interfaces.
+- Dynamic Invocation and Dynamic Skeleton interfaces.
+- Complete Naming Service, omniNames.
+- Support for wchar, wstring and code set negotiation.
+- Full long long, long double, fixed point support.
+- PortableServer::Current.
+- Unix domain socket transport.
+- Bidirectional GIOP.
+- Interoperable Secure Socket Layer transport.
+- Flexible thread management.
+- Interceptors.
+- Fully interoperable with other CORBA ORBs.
 
-WWW: http://www.uk.research.att.com/omniORB/omniORBpy/
+WWW: http://omniorb.sourceforge.net

@@ -24,10 +24,20 @@
 %%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_nsclt.py
 %%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_nssrv.py
 %%PORTDOCS%%share/examples/omniORBpy/echo/example_echo_srv.py
+%%PORTDOCS%%share/examples/omniORBpy/embed/GNUmakefile
+%%PORTDOCS%%share/examples/omniORBpy/embed/GNUmakefile.in
+%%PORTDOCS%%share/examples/omniORBpy/embed/dir.mk
+%%PORTDOCS%%share/examples/omniORBpy/embed/echo.idl
+%%PORTDOCS%%share/examples/omniORBpy/embed/embed.cc
+%%PORTDOCS%%share/examples/omniORBpy/embed/embed.py
+%%PORTDOCS%%share/examples/omniORBpy/fortune/fortune.idl
+%%PORTDOCS%%share/examples/omniORBpy/fortune/fortune_server.py
 %%PORTDOCS%%share/examples/omniORBpy/poa/README
 %%PORTDOCS%%share/examples/omniORBpy/poa/echo.idl
+%%PORTDOCS%%share/examples/omniORBpy/poa/mainthread.py
 %%PORTDOCS%%share/examples/omniORBpy/poa/servantactivator.py
 %%PORTDOCS%%share/examples/omniORBpy/poa/servantlocator.py
+%%PORTDOCS%%share/examples/omniORBpy/poa/singlethread.py
 %%PORTDOCS%%share/examples/omniORBpy/random/README
 %%PORTDOCS%%share/examples/omniORBpy/random/random.idl
 %%PORTDOCS%%share/examples/omniORBpy/random/random_clt.py
@@ -37,20 +47,38 @@
 %%PORTDOCS%%share/examples/omniORBpy/tests/pserver.py
 %%PORTDOCS%%share/examples/omniORBpy/tests/tclient.py
 %%PORTDOCS%%share/examples/omniORBpy/tests/tserver.py
+%%PORTDOCS%%share/examples/omniORBpy/tictactoe/README
+%%PORTDOCS%%share/examples/omniORBpy/tictactoe/gameClient.py
+%%PORTDOCS%%share/examples/omniORBpy/tictactoe/gameServer.py
+%%PORTDOCS%%share/examples/omniORBpy/tictactoe/tictactoe.idl
 %%PORTDOCS%%share/examples/omniORBpy/weather/README
 %%PORTDOCS%%share/examples/omniORBpy/weather/gauge.py
 %%PORTDOCS%%share/examples/omniORBpy/weather/weather.py
 %%PORTDOCS%%share/examples/omniORBpy/weather/weatherInfo.idl
 %%PORTDOCS%%share/examples/omniORBpy/weather/wserver.py
+include/omniORB4/pydistdate.hh
+include/omniORBpy.h
+lib/%%PYTHON_VERSION%%/site-packages/CORBA.py
+lib/%%PYTHON_VERSION%%/site-packages/CORBA.pyc
 lib/%%PYTHON_VERSION%%/site-packages/CosNaming/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/CosNaming/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/CosNaming__POA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/CosNaming__POA/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Naming_idl.py
 lib/%%PYTHON_VERSION%%/site-packages/Naming_idl.pyc
+lib/%%PYTHON_VERSION%%/site-packages/PortableServer.py
+lib/%%PYTHON_VERSION%%/site-packages/PortableServer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/PortableServer__POA.py
+lib/%%PYTHON_VERSION%%/site-packages/PortableServer__POA.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_omnicodesetsmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_omnicodesetsmodule.so.2
+lib/%%PYTHON_VERSION%%/site-packages/_omnicodesetsmodule.so.2.0
 lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so
-lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so.0
-lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so.0.5
+lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so.2
+lib/%%PYTHON_VERSION%%/site-packages/_omnipymodule.so.2.0
+lib/%%PYTHON_VERSION%%/site-packages/_omnisslTPmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_omnisslTPmodule.so.2
+lib/%%PYTHON_VERSION%%/site-packages/_omnisslTPmodule.so.2.0
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/CORBA.py
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/CORBA.pyc
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/PortableServer.py
@@ -61,8 +89,14 @@ lib/%%PYTHON_VERSION%%/site-packages/omniORB/URI.py
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/URI.pyc
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/any.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/any.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/codesets.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/codesets.pyc
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/ir_idl.py
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/ir_idl.pyc
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/sslTP.py
+lib/%%PYTHON_VERSION%%/site-packages/omniORB/sslTP.pyc
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/tcInternal.py
 lib/%%PYTHON_VERSION%%/site-packages/omniORB/tcInternal.pyc
 lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/python.py
@@ -71,12 +105,16 @@ lib/%%PYTHON_VERSION%%/site-packages/omniidl_be/python.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/CosNaming__POA
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/CosNaming
 %%PORTDOCS%%@dirrm share/examples/omniORBpy/weather
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/tictactoe
 %%PORTDOCS%%@dirrm share/examples/omniORBpy/tests
 %%PORTDOCS%%@dirrm share/examples/omniORBpy/random
 %%PORTDOCS%%@dirrm share/examples/omniORBpy/poa
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/fortune
+%%PORTDOCS%%@dirrm share/examples/omniORBpy/embed
 %%PORTDOCS%%@dirrm share/examples/omniORBpy/echo
 %%PORTDOCS%%@dirrm share/examples/omniORBpy
 %%PORTDOCS%%@dirrm share/doc/omniORBpy/tex
 %%PORTDOCS%%@dirrm share/doc/omniORBpy/html
 %%PORTDOCS%%@dirrm share/doc/omniORBpy
 @unexec rmdir %D/lib/%%PYTHON_VERSION%%/site-packages/omniidl_be 2>/dev/null || true
+@unexec rmdir %D/include/omniORB4 2>/dev/null || true

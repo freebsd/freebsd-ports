@@ -6,61 +6,56 @@
 #
 
 PORTNAME=	omniorb
-PORTVERSION=	1.5
+PORTVERSION=	2.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/omniorb/ \
-		http://telia.dl.sourceforge.net/sourceforge/omniorb/ \
-		http://unc.dl.sourceforge.net/sourceforge/omniorb/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	omniORBpy_${PORTVERSION:S/./_/g}
+DISTNAME=	omniORBpy-${PORTVERSION}
 
 MAINTAINER=	ak03@gte.com
 
-LIB_DEPENDS=	omniORB3.0:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS=	omniORB4.0:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
-# A pre-built omniORB3 source tree is required to build omniORBpy;
+# parts of omniORB4 source tree is required to build omniORBpy;
 # see also the "post-extract" target below.
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:patch
+
+CONFIGURE_WRKSRC=	${WRKSRC}/build
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
+OMNIORB_WRKSRC!=	cd $(.CURDIR)/../omniORB && ${MAKE} -V WRKSRC
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	export
-INSTALLS_SHLIB=	yes
-WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
-BUILD_WRKSRC=	${WRKSRC}/src/lib/omniORBpy
-MAKE_ENV+=	CDEBUGFLAGS="${CFLAGS}" CXXDEBUGFLAGS="${CXXFLAGS}" \
-		BSD_INSTALL="${INSTALL}" PYTHON_CMD="${PYTHON_CMD}" \
-		MKDIR="${MKDIR}"
-ONLY_FOR_ARCHS=	i386
-CONFIG_TARGET=	x86_freebsd_4.0
-CPIO=		cpio --quiet -pdum -R
+
+CONFIGURE_SCRIPT=	../configure
+CONFIGURE_ENV+= CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
+		CPP=${CPP} PYTHON=${PYTHON_CMD}
+CONFIGURE_ARGS=	--with-openssl=/usr --with-omniorb=$(LOCALBASE)
+
+CPIO=		cpio --quiet -pdum
 
 MODULEDIRS=	CosNaming CosNaming__POA omniORB
 DOCDIR=		${PREFIX}/share/doc/omniORBpy
 EGDIR=		${PREFIX}/share/examples/omniORBpy
 
 post-extract:
-	@ ${MV} -f ${WRKDIR}/omniORBpy ${WRKSRC}/src/lib/
+	@ ${MKDIR} ${CONFIGURE_WRKSRC}
+	@ cd ${OMNIORB_WRKSRC} && find idl | ${CPIO} ${WRKSRC}
 
-do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/python/omniidl_be/python.py* \
-	  ${PYTHON_SITELIBDIR}/omniidl_be
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/python/Naming_idl.py* \
-	  ${PYTHON_SITELIBDIR}
-	@ cd ${WRKSRC}/lib/python && find ${MODULEDIRS} \
-	  | ${CPIO} ${BINOWN}:${BINGRP} ${PYTHON_SITELIBDIR}
-	@ cd ${WRKSRC}/lib/${CONFIG_TARGET} && find _omnipymodule.so* \
-	  | ${CPIO} ${BINOWN}:${BINGRP} ${PYTHON_SITELIBDIR}
+pre-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCDIR}/html
 	@ ${MKDIR} ${DOCDIR}/tex
-	@ ${INSTALL_DATA} ${BUILD_WRKSRC}/doc/omniORBpy.* ${DOCDIR}
-	@ ${INSTALL_DATA} ${BUILD_WRKSRC}/doc/omniORBpy/* ${DOCDIR}/html
-	@ ${INSTALL_DATA} ${BUILD_WRKSRC}/doc/tex/* ${DOCDIR}/tex
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy.* ${DOCDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/omniORBpy/* ${DOCDIR}/html
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/tex/* ${DOCDIR}/tex
 	@ ${MKDIR} ${EGDIR}
-	@ cd ${BUILD_WRKSRC}/examples && find . \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EGDIR}
+	@ cd ${WRKSRC}/examples && find . \
+	  | ${CPIO} -R ${SHAREOWN}:${SHAREGRP} ${EGDIR}
 .endif
 
 .include <bsd.port.mk>
