@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	heroes
-PORTVERSION=	0.11
+PORTVERSION=	0.21
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,9 +20,10 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
-DATAVERSION=	1.1
+DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DATADISTNAME=	${PORTNAME}-data-${DATAVERSION}
@@ -40,11 +41,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE}
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS} -lsmpeg" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS} -lsmpeg" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN6=		heroes.6
+MAN6=		heroes.6 heroeslvl.6
 
 pre-patch:
 	@for dir in ${DATASRC} ${SOUNDSRC} ${MUSICSRC}; do \
