@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.6 1997/12/27 02:53:16 asami Exp $
+# $Id: Makefile,v 1.7 1998/01/01 21:06:35 gj Exp $
 #
 
 DISTNAME=	xemacs-20.3
@@ -34,6 +34,7 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
 		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
+		--with-xface=no \
 		${WITH_MULE} ${WITH_DIALOGS}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
