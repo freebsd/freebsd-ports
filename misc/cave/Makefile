@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cave
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	misc
 MASTER_SITES=	http://cyclic.sourceforge.net/cave/
 
@@ -17,9 +17,6 @@ MAN1=	cave.1
 
 post-patch:
 	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
-
-pre-install:
-	@${GZIP_CMD} -d ${WRKSRC}/${MAN1}.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
