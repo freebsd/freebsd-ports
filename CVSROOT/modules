@@ -4020,6 +4020,7 @@ netsed		ports/net/netsed
 netshow		ports/graphics/netshow
 netstat		src/usr.bin/netstat
 nettest		ports/net/nettest
+nettle		ports/security/nettle
 nettoe		ports/games/nettoe
 newfs		src/sbin/newfs
 newfs_msdos	src/sbin/newfs_msdos
