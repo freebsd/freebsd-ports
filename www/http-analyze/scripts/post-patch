@@ -1,0 +1,95 @@
+#!/bin/sh
+gifdir="${WRKSRC}/files/btn"
+gif2png=`which gif2png`
+
+if [ -x $gif2png ]; then 
+    patch --quiet ${WRKSRC}/images.c << EOP
+*** images.c.orig	Fri Nov 17 00:52:02 2000
+--- images.c	Fri Nov 17 00:52:48 2000
+***************
+*** 996,1032 ****
+  }
+   
+  ICON_TAB icon_tab[] = {
+! 	{ "btn/sq_green.gif",     0, 204,   0 },
+! 	{ "btn/sq_blue.gif",      0,   0, 255 },
+! 	{ "btn/sq_red.gif",     255,   0,   0 },
+! 	{ "btn/sq_orange.gif",  222, 102,   0 },
+! 	{ "btn/sq_yellow.gif",  242, 242,   0 },
+! 	{ "btn/sq_magenta.gif", 153,   0, 255 },
+! 	{ "btn/sq_grey.gif",    204, 204, 204 }
+  };
+  
+  BTN_TAB buttons[] = {		/* various images */
+! 	{ "btn/netstore_sw.gif", "Netstore", 0, 0 },
+! 	{ "btn/netstore_sb.gif", "Netstore", 0, 0 },
+! 	{ "btn/RAG_sw.gif",	NULL,		0, 0 },
+! 	{ "btn/RAG_sb.gif",	NULL,		0, 0 },
+! 	{ "btn/year_off.gif",	"summary",	0, 0 },
+! 	{ "btn/totals_off.gif",	"totals",	0, 0 },
+! 	{ "btn/days_off.gif",	"days",		0, 0 },
+  	{ NULL,			NULL,		0, 0 },
+  	{ NULL,			NULL,		0, 0 },
+! 	{ "btn/avload_off.gif",	"avload",	0, 0 },
+! 	{ "btn/topurl_off.gif",	"topurl",	0, 0 },
+! 	{ "btn/topdom_off.gif",	"topdom",	0, 0 },
+! 	{ "btn/topuag_off.gif",	"topuag",	0, 0 },
+! 	{ "btn/topref_off.gif",	"topref",	0, 0 },
+! 	{ "btn/cntry_off.gif",	"country",	0, 0 },
+! 	{ "btn/files_off.gif",	"files",	0, 0 },
+! 	{ "btn/rfiles_off.gif",	"rfiles",	0, 0 },
+! 	{ "btn/sites_off.gif",	"sites",	0, 0 },
+! 	{ "btn/rsites_off.gif",	"rsites",	0, 0 },
+! 	{ "btn/agents_off.gif",	"agents",	0, 0 },
+! 	{ "btn/refers_off.gif",	"refers",	0, 0 }
+  };
+  
+  static void mkIcon(char * const fname, ICON_TAB * const tp) {
+--- 996,1032 ----
+  }
+   
+  ICON_TAB icon_tab[] = {
+! 	{ "btn/sq_green.png",     0, 204,   0 },
+! 	{ "btn/sq_blue.png",      0,   0, 255 },
+! 	{ "btn/sq_red.png",     255,   0,   0 },
+! 	{ "btn/sq_orange.png",  222, 102,   0 },
+! 	{ "btn/sq_yellow.png",  242, 242,   0 },
+! 	{ "btn/sq_magenta.png", 153,   0, 255 },
+! 	{ "btn/sq_grey.png",    204, 204, 204 }
+  };
+  
+  BTN_TAB buttons[] = {		/* various images */
+! 	{ "btn/netstore_sw.png", "Netstore", 0, 0 },
+! 	{ "btn/netstore_sb.png", "Netstore", 0, 0 },
+! 	{ "btn/RAG_sw.png",	NULL,		0, 0 },
+! 	{ "btn/RAG_sb.png",	NULL,		0, 0 },
+! 	{ "btn/year_off.png",	"summary",	0, 0 },
+! 	{ "btn/totals_off.png",	"totals",	0, 0 },
+! 	{ "btn/days_off.png",	"days",		0, 0 },
+  	{ NULL,			NULL,		0, 0 },
+  	{ NULL,			NULL,		0, 0 },
+! 	{ "btn/avload_off.png",	"avload",	0, 0 },
+! 	{ "btn/topurl_off.png",	"topurl",	0, 0 },
+! 	{ "btn/topdom_off.png",	"topdom",	0, 0 },
+! 	{ "btn/topuag_off.png",	"topuag",	0, 0 },
+! 	{ "btn/topref_off.png",	"topref",	0, 0 },
+! 	{ "btn/cntry_off.png",	"country",	0, 0 },
+! 	{ "btn/files_off.png",	"files",	0, 0 },
+! 	{ "btn/rfiles_off.png",	"rfiles",	0, 0 },
+! 	{ "btn/sites_off.png",	"sites",	0, 0 },
+! 	{ "btn/rsites_off.png",	"rsites",	0, 0 },
+! 	{ "btn/agents_off.png",	"agents",	0, 0 },
+! 	{ "btn/refers_off.png",	"refers",	0, 0 }
+  };
+  
+  static void mkIcon(char * const fname, ICON_TAB * const tp) {
+EOP
+    echo "===>  Converting gifs to png format" 
+    find $gifdir -name "*gif" -type f -exec $gif2png -d -O {} \;
+elif [ ! -x $gif2png ]; then
+    echo "***  Convertion of gifs failed."
+    echo "***  Running http-analyze with the -f option may cause segmentation faults."
+    echo "***  It is recommended to install gif2png and reinstall this port."
+fi
+
+exit 0
