@@ -1,0 +1,8 @@
+%%PEARDIR%%/Mail/RFC822.php
+%%PEARDIR%%/Mail/mail.php
+%%PEARDIR%%/Mail/sendmail.php
+%%PEARDIR%%/Mail/smtp.php
+%%PEARDIR%%/Mail.php
+%%PKGREGDIR%%/package.xml
+@dirrm %%PEARDIR%%/Mail
+@dirrm %%PKGREGDIR%%

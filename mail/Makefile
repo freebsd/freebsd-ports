@@ -208,6 +208,7 @@
     SUBDIR += pantomime
     SUBDIR += pantomime-ssl
     SUBDIR += pathalias
+    SUBDIR += pear-Mail
     SUBDIR += pear-Mail_Mime
     SUBDIR += pear-mailparse
     SUBDIR += perdition
