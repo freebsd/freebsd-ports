@@ -7,7 +7,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 .if ${MACHINE_ARCH} == "alpha"
-CFLAGS=		-O0 ${KDE_CFLAGS}
+CFLAGS=		-O0 ${KDE_CFLAGS} -D__PATH_SU=/usr/bin/su
 .endif
 
 USE_GMAKE=	yes
