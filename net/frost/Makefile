@@ -7,6 +7,7 @@
 
 PORTNAME=	frost
 PORTVERSION=	1.2.0.20040225
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,19 +17,20 @@ DISTNAME=	${PORTNAME}-25-Feb-2004
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 USE_ZIP=	yes
 NO_BUILD=	yes
-NO_BUILD_DEPENDS_JAVA=	yes
 #WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
 VERSION_DATE=	090603
 
 JAVAVM=		${LOCALBASE}/bin/java
-SHARE_DIR=	share/${PORTNAME}
-JAR_DIR=	share/java/jar/${PORTNAME}
+JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 JAR_FILE=	frost.jar
 JAR_FILES=	frost.jar lib/fecImpl.jar \
 		lib/BCastle.jar \
@@ -41,17 +43,32 @@ JAR_FILES=	frost.jar lib/fecImpl.jar \
 DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
 		doc/SkinLFLicense.txt \
 		help/faq.txt help/history.txt
+PORTDOCS=	${DOC_FILES:C,^.*/,,}
 
-SHARE_FILES=	config/boards.xml.default \
+DATA_FILES=	config/boards.xml.default \
 		themes/themepack.zip
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.for jar in ${JAR_FILES:C,^.*/,,}
+PLIST_FILES+=	%%JAR_DIR%%/${jar}
+.endfor
+
+.for file in ${DATA_FILES:C,^.*/,,}
+PLIST_FILES+=	%%DATADIR%%/${file}
+.endfor
+
+PLIST_DIR+=	\
+		%%JAR_DIR%% \
+		%%DATADIR%%
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
-		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
+		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \
 		s|%%JAR_DIR%%|${JAR_DIR}|; \
 		s|%%JAR_FILE%%|${JAR_FILE}|; \
-		s|%%SHARE_DIR%%|${SHARE_DIR}|" \
+		s|%%DATADIR%%|${DATADIR:S,^${PREFIX}/,,}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
 do-install:
@@ -68,9 +85,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKDIR}/${jar} ${PREFIX}/${JAR_DIR}
 .endfor
 # default boards
-	@${MKDIR} ${PREFIX}/${SHARE_DIR}
-.for file in ${SHARE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${SHARE_DIR}
+	@${MKDIR} ${DATADIR}
+.for file in ${DATA_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}

@@ -1,7 +1,0 @@
-bin/freenet
-share/freenet/seednodes.ref
-share/java/jar/freenet/freenet-ext.jar
-share/java/jar/freenet/freenet.jar
-@dirrm share/java/jar/freenet
-@unexec rmdir %D/share/java/jar 2>/dev/null || true
-@dirrm share/freenet

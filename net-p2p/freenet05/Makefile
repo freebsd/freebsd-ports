@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet
 PORTVERSION=	0.5.2.1.5100
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
 DISTNAME=	${PORTNAME}-20041209
@@ -16,14 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
-NO_BUILD_DEPENDS_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
 JAVAVM=		${LOCALBASE}/bin/java
-JAR_DIR=	share/java/jar/${PORTNAME}
 #
 DATA_FILES=	seednodes.ref
 DOC_FILES=	README
@@ -35,12 +33,19 @@ SEED_FILE=	seednodes.ref
 
 PORTDOCS=	${DOC_FILES}
 
+PLIST_FILES=	\
+		bin/${PORTNAME:L} \
+		%%DATADIR%%/seednodes.ref \
+		%%JAVAJARDIR%%/freenet-ext.jar \
+		%%JAVAJARDIR%%/freenet.jar
+PLIST_DIRS=	%%DATADIR%%
+
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
 		s|%%DATA_DIR%%|${DATADIR:S,^${PREFIX}/,,}|; \
-		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
+		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \
-		s|%%JAR_DIR%%|${JAR_DIR}|; \
+		s|%%JAVAJARDIR%%|${JAVAJARDIR:S,^${PREFIX}/,,}|; \
 		s|%%JAR_FILES%%|${JAR_FILES}|; \
 		s|%%JAR_START%%|${JAR_START}|; \
 		s|%%SEED_FILE%%|${SEED_FILE}|" \
@@ -60,9 +65,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
 # jar
-	@${MKDIR} ${PREFIX}/${JAR_DIR}
 .for jar in ${JAR_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${jar} ${PREFIX}/${JAR_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/${jar} ${JAVAJARDIR}
 .endfor
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}

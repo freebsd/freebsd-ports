@@ -7,6 +7,7 @@
 
 PORTNAME=	phex
 PORTVERSION=	2.0.0.76
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +16,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Java multi platform and spyware free gnutella client
 
-USE_JAVA=	1.4+
-USE_PERL5_BUILD=yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
-NO_BUILD_DEPENDS_JAVA=	yes
-PLIST_SUB=	JAR_DIR=${JAR_DIR} \
-		JAR_FILE=${JAR_FILE}
+PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
 JAVAVM=		${LOCALBASE}/bin/java
-JAR_DIR=	share/java/jar/${PORTNAME}/
-JAR_MANIFEST=	${FILESDIR}/manifest
+JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 
 DOC_FILES=	Phex_other.htm Phex_win.htm
 JAR_FILES=	crimson-rt.jar jaxb-api.jar jaxb-libs-rt.jar \
@@ -33,11 +32,21 @@ JAR_FILES=	crimson-rt.jar jaxb-api.jar jaxb-libs-rt.jar \
 		looks-1.2.2.jar \
 		jaxb-ri-rt.jar jaxp.jar phex.jar
 
+PORTDOCS=	${DOC_FILES}
+
+PLIST_FILES+=	bin/${PORTNAME}
+
+.for jar in ${JAR_FILES}
+PLIST_FILES+=	%%JAR_DIR%%/${jar}
+.endfor
+
 post-patch:
 # remove trailing ^M
-	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/docs/readme/*
-	@${SED} -e "s|%%JAR_DIR%%|${JAR_DIR}|;s|%%JAR_FILE%%|${JAR_FILE}|; \
-		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
+	@${REINPLACE_CMD} -E \
+		-e 's!!!' ${WRKSRC}/docs/readme/*
+	@${SED} -e  "s|%%JAR_DIR%%|${JAR_DIR}|; \
+		s|%%JAR_FILE%%|${JAR_FILE}|; \
+		s|%%JAVA_VERSION%%|${JAVA_VERSION}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
