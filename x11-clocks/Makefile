@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.8 1999/04/19 12:04:14 flathill Exp $
+# $Id: Makefile,v 1.9 1999/04/25 00:39:03 kuriyama Exp $
 #
 
     SUBDIR += asclock
@@ -22,5 +22,6 @@
     SUBDIR += xalarm
     SUBDIR += xdaliclock
     SUBDIR += xtimer
+    SUBDIR += xtu
 
 .include <bsd.port.subdir.mk>
