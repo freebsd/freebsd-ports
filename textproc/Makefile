@@ -81,7 +81,6 @@
     SUBDIR += libxml2
     SUBDIR += libxode
     SUBDIR += libxslt
-    SUBDIR += linux-gnomelibs
     SUBDIR += linux-libxml
     SUBDIR += linuxdoc
     SUBDIR += lotusxsl
