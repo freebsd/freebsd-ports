@@ -5,7 +5,7 @@
  
  VisualBoyAdvance_LDADD = gb/libgb.a @VBA_PROF@ @VBA_MMX@
 -VisualBoyAdvance_LDFLAGS = `sdl-config --libs`
-+// VisualBoyAdvance_LDFLAGS = ${SDL_CONFIG}
++VisualBoyAdvance_LDFLAGS = `${SDL_CONFIG} --libs`
  
  TestEmu_SOURCES = \
  	TestEmu.cpp 2xSaI.cpp pixel.cpp motionblur.cpp admame.cpp \
