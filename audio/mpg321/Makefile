@@ -7,7 +7,7 @@
 
 PORTNAME=	mpg321
 PORTVERSION=	0.2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpg321
@@ -16,7 +16,8 @@ MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	A free command-line mp3 player, compatible with mpg123
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
-		mad.2:${PORTSDIR}/audio/mad
+		id3tag.2:${PORTSDIR}/audio/libid3tag \
+		mad.2:${PORTSDIR}/audio/libmad
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mpg123-symlink
