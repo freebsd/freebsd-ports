@@ -7894,6 +7894,7 @@ tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
 tnt		ports/devel/tnt
+tochnog		ports/cad/tochnog
 togl		ports/graphics/togl
 tome		ports/games/tome
 toolame		ports/audio/toolame
