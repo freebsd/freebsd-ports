@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mp3check
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/mp3check/
-DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 
 MAINTAINER=	markp@FreeBSD.org
@@ -25,9 +24,9 @@ EXTRACT_AFTER_ARGS=	${WRKSRC}
 NO_BUILD=	yes
 
 pre-patch:
-	@${PERL} -pi -e "s|^#!.+|#!${PERL}|" ${WRKSRC}/mp3check
+	@${PERL} -pi -e "s|^#!.+|#!${PERL}|" ${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mp3check ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/mp3check
 
 .include <bsd.port.mk>
