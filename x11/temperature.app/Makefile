@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	temperature.app
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.fukt.bth.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}
@@ -22,9 +22,8 @@ USE_X_PREFIX=	yes
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/Temperature.app ${PREFIX}/bin
 .ifndef(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
