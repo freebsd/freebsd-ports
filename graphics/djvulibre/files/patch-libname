@@ -1,0 +1,35 @@
+Make sure the installed shared library is named like
+libdjvulibre3.so.5.4 instead of libdjvulibre-3.5.4.so
+
+	-mi
+
+--- libdjvu/Makefile.in	Mon Nov  5 21:12:24 2001
++++ libdjvu/Makefile.in	Thu Feb  7 14:48:14 2002
+@@ -46,3 +46,6 @@
+ LIBDJVU_A = libdjvulibre.a
+-LIBDJVU_SO = libdjvulibre-${PACKAGE_VERSION}.so
++LIBDJVU_SO:= libdjvulibre${PACKAGE_VERSION:R:R}.so.${PACKAGE_VERSION:R:E}
++.if defined(OBJFORMAT) && ${OBJFORMAT} == "aout"
++LIBDJVU_SO:= ${LIBDJVU_SO}.${PACKAGE_VERSION:E}
++.endif
+ 
+--- gui/djview/Makefile.in	Thu Feb  7 14:53:32 2002
++++ gui/djview/Makefile.in	Thu Feb  7 14:56:22 2002
+@@ -52,3 +52,6 @@
+ LIBDJVU_A = ${top_builddir}/libdjvu/libdjvulibre.a
+-LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre-${PACKAGE_VERSION}.so
++LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre${PACKAGE_VERSION:R:R}.so.${PACKAGE_VERSION:R:E}
++.if defined(OBJFORMAT) && ${OBJFORMAT} == "aout"
++LIBDJVU_SO:= ${LIBDJVU_SO}.${PACKAGE_VERSION:E}
++.endif
+ @SHARED_YES@LIBDJVU = -Wl,-rpath,${libdir} ${LIBDJVU_SO}
+--- tools/Makefile.in	Wed Jan 23 20:52:56 2002
++++ tools/Makefile.in	Thu Feb  7 14:57:48 2002
+@@ -46,3 +46,6 @@
+ LIBDJVU_A = ${top_builddir}/libdjvu/libdjvulibre.a
+-LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre-${PACKAGE_VERSION}.so
++LIBDJVU_SO = ${top_builddir}/libdjvu/libdjvulibre${PACKAGE_VERSION:R:R}.so.${PACKAGE_VERSION:R:E}
++.if defined(OBJFORMAT) && ${OBJFORMAT} == "aout"
++LIBDJVU_SO:= ${LIBDJVU_SO}.${PACKAGE_VERSION:E}
++.endif
+ 
