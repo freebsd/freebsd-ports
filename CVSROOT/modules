@@ -4842,6 +4842,7 @@ pips-sc580	ports/print/pips-sc580
 pips-sc680_777	ports/print/pips-sc680_777
 pips-sc880	ports/print/pips-sc880
 pips-sc980	ports/print/pips-sc980
+pips-sp810_820	ports/print/pips-sp810_820
 pips2200	ports/print/pips2200
 pips3000	ports/print/pips3000
 pips3300	ports/print/pips3300
