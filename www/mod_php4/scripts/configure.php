@@ -359,7 +359,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--enable-trans-sid"
 			;;
 		\"yaz\")
-			echo "LIB_DEPENDS+=	yaz.1:\${PORTSDIR}/net/yaz"
+			echo "LIB_DEPENDS+=	yaz.2:\${PORTSDIR}/net/yaz"
 			echo "CONFIGURE_ARGS+=--with-yaz=\${LOCALBASE}/bin"
 			;;
 		*)
