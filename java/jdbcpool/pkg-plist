@@ -1,53 +1,49 @@
 share/java/classes/jdbcpool.jar
-share/java/jdbcpool/CHANGES
-share/java/jdbcpool/LICENSE
-share/java/jdbcpool/README
-share/java/jdbcpool/examples/PoolTest.class
-share/java/jdbcpool/examples/PoolTest.java
-share/java/jdbcpool/examples/gsp/JDBCApplication.class
-share/java/jdbcpool/examples/gsp/JDBCApplication.java
-share/java/jdbcpool/examples/gsp/README
-share/java/jdbcpool/examples/gsp/monitor_pool.gsp
-share/java/jdbcpool/examples/gsp/query.gsp
-share/java/jdbcpool/javadoc/AllNames.html
-share/java/jdbcpool/javadoc/Package-com.bitmechanic.sql.html
-share/java/jdbcpool/javadoc/Package-com.bitmechanic.util.html
-share/java/jdbcpool/javadoc/com.bitmechanic.sql.ConnectionPool.html
-share/java/jdbcpool/javadoc/com.bitmechanic.sql.ConnectionPoolManager.html
-share/java/jdbcpool/javadoc/com.bitmechanic.sql.SQLUtil.html
-share/java/jdbcpool/javadoc/com.bitmechanic.util.JavaAlarm.html
-share/java/jdbcpool/javadoc/com.bitmechanic.util.Queue.html
-share/java/jdbcpool/javadoc/com.bitmechanic.util.TimeoutException.html
-share/java/jdbcpool/javadoc/images/OpenBookIcon.gif
-share/java/jdbcpool/javadoc/images/blue-ball-small.gif
-share/java/jdbcpool/javadoc/images/blue-ball.gif
-share/java/jdbcpool/javadoc/images/class-index.gif
-share/java/jdbcpool/javadoc/images/constructor-index.gif
-share/java/jdbcpool/javadoc/images/constructors.gif
-share/java/jdbcpool/javadoc/images/cyan-ball-small.gif
-share/java/jdbcpool/javadoc/images/cyan-ball.gif
-share/java/jdbcpool/javadoc/images/error-index.gif
-share/java/jdbcpool/javadoc/images/exception-index.gif
-share/java/jdbcpool/javadoc/images/green-ball-small.gif
-share/java/jdbcpool/javadoc/images/green-ball.gif
-share/java/jdbcpool/javadoc/images/interface-index.gif
-share/java/jdbcpool/javadoc/images/magenta-ball-small.gif
-share/java/jdbcpool/javadoc/images/magenta-ball.gif
-share/java/jdbcpool/javadoc/images/method-index.gif
-share/java/jdbcpool/javadoc/images/methods.gif
-share/java/jdbcpool/javadoc/images/package-index.gif
-share/java/jdbcpool/javadoc/images/red-ball-small.gif
-share/java/jdbcpool/javadoc/images/red-ball.gif
-share/java/jdbcpool/javadoc/images/variable-index.gif
-share/java/jdbcpool/javadoc/images/variables.gif
-share/java/jdbcpool/javadoc/images/yellow-ball-small.gif
-share/java/jdbcpool/javadoc/images/yellow-ball.gif
-share/java/jdbcpool/javadoc/packages.html
-share/java/jdbcpool/javadoc/tree.html
-@dirrm share/java/jdbcpool/examples/gsp
-@dirrm share/java/jdbcpool/examples
-@dirrm share/java/jdbcpool/javadoc/images
-@dirrm share/java/jdbcpool/javadoc
-@dirrm share/java/jdbcpool
-@unexec rmdir %D/share/java/classes || true
-@unexec rmdir %D/share/java || true
+%%T%%/CHANGES
+%%T%%/LICENSE
+%%T%%/README
+%%T%%/examples/PoolTest.class
+%%T%%/examples/PoolTest.java
+%%T%%/examples/gsp/JDBCApplication.class
+%%T%%/examples/gsp/JDBCApplication.java
+%%T%%/examples/gsp/README
+%%T%%/examples/gsp/monitor_pool.gsp
+%%T%%/examples/gsp/query.gsp
+%%T%%/javadoc/allclasses-frame.html
+%%T%%/javadoc/com/bitmechanic/sql/ConnectionPool.html
+%%T%%/javadoc/com/bitmechanic/sql/ConnectionPoolManager.html
+%%T%%/javadoc/com/bitmechanic/sql/PooledCallableStatement.html
+%%T%%/javadoc/com/bitmechanic/sql/PooledConnection.html
+%%T%%/javadoc/com/bitmechanic/sql/PooledPreparedStatement.html
+%%T%%/javadoc/com/bitmechanic/sql/PooledStatement.html
+%%T%%/javadoc/com/bitmechanic/sql/SQLUtil.html
+%%T%%/javadoc/com/bitmechanic/sql/package-frame.html
+%%T%%/javadoc/com/bitmechanic/sql/package-summary.html
+%%T%%/javadoc/com/bitmechanic/sql/package-tree.html
+%%T%%/javadoc/com/bitmechanic/util/JavaAlarm.html
+%%T%%/javadoc/com/bitmechanic/util/Queue.html
+%%T%%/javadoc/com/bitmechanic/util/TimeoutException.html
+%%T%%/javadoc/com/bitmechanic/util/package-frame.html
+%%T%%/javadoc/com/bitmechanic/util/package-summary.html
+%%T%%/javadoc/com/bitmechanic/util/package-tree.html
+%%T%%/javadoc/deprecated-list.html
+%%T%%/javadoc/help-doc.html
+%%T%%/javadoc/index-all.html
+%%T%%/javadoc/index.html
+%%T%%/javadoc/overview-frame.html
+%%T%%/javadoc/overview-summary.html
+%%T%%/javadoc/overview-tree.html
+%%T%%/javadoc/package-list
+%%T%%/javadoc/packages.html
+%%T%%/javadoc/serialized-form.html
+%%T%%/javadoc/stylesheet.css
+@dirrm %%T%%/examples/gsp
+@dirrm %%T%%/examples
+@dirrm %%T%%/javadoc/com/bitmechanic/sql
+@dirrm %%T%%/javadoc/com/bitmechanic/util
+@dirrm %%T%%/javadoc/com/bitmechanic
+@dirrm %%T%%/javadoc/com
+@dirrm %%T%%/javadoc
+@dirrm %%T%%
+@unexec rmdir %D/share/java/classes 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
