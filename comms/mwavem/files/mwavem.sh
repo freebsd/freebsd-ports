@@ -21,7 +21,7 @@ case "$1" in
             ;;
     start )
             echo -n ' modem'
-            kldstat -n mwavedd 2>/dev/null >/dev/null || kldload /usr/local/modules/mwavedd
+            kldstat -n mwavedd 2>/dev/null >/dev/null || kldload /usr/local/share/mwave/mwavedd
             ${MWAVE_PATH}${MWAVE_NAME} > /dev/null &
             ;;
 esac
