@@ -91,6 +91,7 @@
     SUBDIR += mcatalog
     SUBDIR += mdh
     SUBDIR += mencal
+    SUBDIR += menueditor
     SUBDIR += metabar
     SUBDIR += mhc
     SUBDIR += mhc-emacs20

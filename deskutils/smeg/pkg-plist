@@ -1,0 +1,8 @@
+bin/menu-editor
+share/doc/menu-editor/AUTHORS
+share/gnome/applications/menueditor.desktop
+share/gnome/menu-editor/menu_handler.py
+share/gnome/menu-editor/menu_handler.pyc
+share/gnome/pixmaps/menu-editor.png
+@dirrm share/gnome/menu-editor
+@dirrm share/doc/menu-editor
