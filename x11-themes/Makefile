@@ -43,6 +43,9 @@
     SUBDIR += gtk-smooth-engine
     SUBDIR += gtk-xfce-engine
     SUBDIR += gtk-zenith-theme
+    SUBDIR += gtkbe
+    SUBDIR += gtkstep
+    SUBDIR += gtkstep-pastel
     SUBDIR += icegradient
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
