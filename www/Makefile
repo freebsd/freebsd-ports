@@ -133,7 +133,6 @@
     SUBDIR += libghttp
     SUBDIR += libgtkhtml
     SUBDIR += libwww
-    SUBDIR += libxpg4-ns
     SUBDIR += links
     SUBDIR += links1
     SUBDIR += linux-beonex

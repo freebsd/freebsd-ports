@@ -1,6 +1,0 @@
-lib/aout/libxpg4-ns.a
-lib/aout/libxpg4-ns.so.2.0
-lib/aout/libxpg4-ns_p.a
-@exec env OBJFORMAT=aout ldconfig -m %B
-@unexec env OBJFORMAT=aout ldconfig -R %B
-@unexec rmdir %B 2>/dev/null || true
