@@ -96,4 +96,9 @@ do-install:
 post-install:
 	${CAT} ${PKGDIR}/DESCR
 
+# hack to allow slave ports to include bsd.port.pre.mk and then this file
+.if defined(PRE_MK_INCLUDED)
+.include <bsd.port.post.mk>
+.else
 .include <bsd.port.mk>
+.endif
