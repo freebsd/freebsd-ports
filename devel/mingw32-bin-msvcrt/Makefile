@@ -18,7 +18,9 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 
-RUNTIMEVERSION=	3.1
+CONFLICTS=	mingw-bin-msvcrt-*
+
+RUNTIMEVERSION=	3.2
 APIVERSION=	2.4
 
 NO_MTREE=	yes
