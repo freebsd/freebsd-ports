@@ -13,7 +13,7 @@
       }
     }
     if (hfile_path.isNull())
-!     hfile_path = "/usr/X11R6/share/harmonics";
+!     hfile_path = "/usr/local/share/xtide/harmonics";
     harmonicsPath = new HarmonicsPath (hfile_path);
   
     homedir = getenv ("HOME");

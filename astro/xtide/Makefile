@@ -9,7 +9,7 @@ PORTNAME=	xtide
 PORTVERSION=	2.2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} harmonics.world.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	patseal@hyperhost.net
@@ -17,17 +17,14 @@ MAINTAINER=	patseal@hyperhost.net
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.3:${PORTSDIR}/graphics/png
 
-# www.universe.digex.net is broken
-FETCH_BEFORE_ARGS=	-t
-
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 MAN1=	xtide.1 tide.1
 MAN8=	xttpd.8
 MANCOMPRESSED=	no
 
 post-extract:
-	@${GZCAT} ${DISTDIR}/harmonics.gz > ${WRKSRC}/harmonics
+	@${GZCAT} ${DISTDIR}/harmonics.world.gz > ${WRKSRC}/harmonics
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xtide ${PREFIX}/bin
