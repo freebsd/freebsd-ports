@@ -8,6 +8,7 @@
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
+    SUBDIR += engradient
     SUBDIR += fltk
     SUBDIR += fox
     SUBDIR += gnome--
