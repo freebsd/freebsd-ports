@@ -1,0 +1,67 @@
+diff -cdNr expect-5.18.ORG/Makefile.in expect-5.18/Makefile.in
+*** expect-5.18.ORG/Makefile.in	Tue Nov 21 23:15:13 1995
+--- Makefile.in	Thu Dec  7 23:33:58 1995
+***************
+*** 174,181 ****
+--- 174,183 ----
+  
+  INSTALL = @INSTALL@
+  #INSTALL_PROGRAM = $(INSTALL)
++ #INSTALL_SCRIPT = $(INSTALL)
+  #INSTALL_DATA = $(INSTALL)
+  INSTALL_PROGRAM = @INSTALL_PROGRAM@
++ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+  INSTALL_DATA = @INSTALL_DATA@
+  
+  AR = ar
+***************
+*** 190,195 ****
+--- 192,198 ----
+  	"HDEFS=$(HDEFS)" \
+  	"INSTALL=$(INSTALL)" \
+  	"INSTALL_DATA=$(INSTALL_DATA)" \
++ 	"INSTALL_SCRIPT=$(INSTALL_SCRIPT)" \
+  	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
+  	"LDFLAGS=$(LDFLAGS)" \
+  	"RUNTEST=$(RUNTEST)" \
+***************
+*** 377,383 ****
+  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
+  	-for i in $(SCRIPT_LIST) ; do \
+  	  if [ -f $$i ] ; then \
+! 	    $(INSTALL_PROGRAM) $$i $(bindir_arch_indep)/$$i ; \
+  	    rm -f $$i ; \
+  	  else true; fi ; \
+  	done
+--- 380,386 ----
+  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
+  	-for i in $(SCRIPT_LIST) ; do \
+  	  if [ -f $$i ] ; then \
+! 	    $(INSTALL_SCRIPT) $$i $(bindir_arch_indep)/$$i ; \
+  	    rm -f $$i ; \
+  	  else true; fi ; \
+  	done
+diff -cdNr expect-5.18.ORG/configure expect-5.18/configure
+*** expect-5.18.ORG/configure	Tue Nov 21 23:38:23 1995
+--- configure	Thu Dec  7 23:35:09 1995
+***************
+*** 704,709 ****
+--- 704,711 ----
+  # It thinks the first close brace ends the variable substitution.
+  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+  
++ test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL}'
++ 
+  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+  
+  
+***************
+*** 4601,4606 ****
+--- 4603,4609 ----
+  s%@CPP@%$CPP%g
+  s%@RANLIB@%$RANLIB%g
+  s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
++ s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+  s%@INSTALL_DATA@%$INSTALL_DATA%g
+  s%@subdirs@%$subdirs%g
+  s%@TCLHDIR@%$TCLHDIR%g
