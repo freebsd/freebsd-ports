@@ -5,4 +5,4 @@ Note that both x11-fm/binder and japanese/binder are mutually exclusive and
 SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
 
 -KIRIYAMA Kazuhiko
-<kiri@pis.toba-cmt.ac.jp>
+<kiri@FreeBSD.org>
