@@ -1,7 +1,7 @@
 #!/bin/sh
 # -*-shell-script-*-
 #
-# mkdistfile -- maintainer's utility to make a firebird distfile
+# mkdistfile -- maintainer's utility to make a firefox distfile
 #
 # Copyright (c) 2002, Alan Eldridge
 # All rights reserved.
@@ -165,7 +165,7 @@ EOF
 test -d mozilla || die "No mozilla dir here."
 find mozilla 2>/dev/null | egrep -f $exfile | xargs rm -fr
 rm -f $exfile
-status "making firebird-$REV.tar.bz2 ..."
-tar -cjpf firebird-$REV.tar.bz2 mozilla
+status "making firefox-$REV.tar.bz2 ..."
+tar -cjpf firefox-$REV.tar.bz2 mozilla
 status "done."
 #EOF

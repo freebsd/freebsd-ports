@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- nsprpub/pr/src/md/unix/unix.c.orig	Sat May 31 18:06:04 2003
 +++ nsprpub/pr/src/md/unix/unix.c	Sat May 31 18:04:43 2003
 @@ -65,7 +65,8 @@

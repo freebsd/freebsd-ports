@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- config/rules.mk.orig	Tue Aug 26 13:28:47 2003
 +++ config/rules.mk	Sun Feb  1 15:11:41 2004
 @@ -444,7 +444,11 @@

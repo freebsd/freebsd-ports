@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- security/coreconf/FreeBSD.mk	Thu Oct 16 23:03:47 2003
 +++ security/coreconf/FreeBSD.mk	Thu Oct 16 22:53:11 2003
 @@ -44,5 +44,9 @@

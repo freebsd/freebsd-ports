@@ -1,18 +1,16 @@
-# New ports collection makefile for:	mozilla-firebird
-# Date created:			May 31, 2003
-# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
+# New ports collection makefile for:	phoenix
+# Date created:			2002/10/21
+# Whom:				Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	firebird
-PORTVERSION=	0.7
-PORTREVISION=	3
+PORTNAME=	firefox
+PORTVERSION=	0.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
-PKGNAMEPREFIX=	mozilla-
-DISTNAME=	MozillaFirebird-source-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
+DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -25,32 +23,33 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
-CONFIGURE_ENV=	WITH_GTK2=yes
-USE_X_PREFIX=	yes
-
 ALL_TARGET=	default
-USE_ICONV=	yes
+CONFIGURE_ENV=	WITH_GTK2=yes
+FAKEDIR=	${WRKDIR}/fake
+FAKESUBDIR=	${FAKEDIR}/lib/${PORTNAME}
+HAS_CONFIGURE=	yes
+JREDIR=		${LOCALBASE}/jdk1.3.1/jre
+ESD_LIB=	libesd.so.2
+LOCAL_PREFIX=	${PREFIX}/lib/${PORTNAME}
+NO_MTREE=	yes
+PLIST=		${WRKDIR}/plist
+PLUGINSDIR=	${PREFIX}lib/browser_plugins
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libidl
+USE_ICONV=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
+USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/mozilla
 
-NO_MTREE=		yes
-WRKSRC=			${WRKDIR}/mozilla
-LOCAL_SUBDIR=		lib/${PORTNAME}
-LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
-JREDIR=			${LOCALBASE}/jdk1.3.1/jre
-PLUGINSDIR=		${PREFIX}/lib/browser_plugins
+OPTIONS=	DEBUG "Build a debugging image" off \
+		HEADERS "Install headers and IDL files" off \
+		LOGGING "Enable additional log messages" off \
+		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
+		XFT "Enable support for anti-aliased fonts" on
 
 .include <bsd.port.pre.mk>
-
-#.if ${PERL_LEVEL} < 500601
-#.undef NO_IGNORE
-#BROKEN=	Mozilla Firebird only supports the ports versions of Perl.
-#BROKEN+=If you have installed a Perl port, and are getting this message,
-#BROKEN+=please make sure you have given the command \'use.perl port\'.
-#.endif # ${PERL_LEVEL} < 500601
 
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
@@ -76,7 +75,7 @@ CFLAGS+=		${PTHREAD_CFLAGS}
 LDFLAGS+=		-L${X11BASE}/lib
 LIBS+=			${PTHREAD_LIBS}
 
-EXTRA_SCRIPTS=		firebird.rb
+EXTRA_SCRIPTS=		${PORTNAME}.rb
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	"core dumps on alpha during post-build"
@@ -94,67 +93,64 @@ post-extract::
 		-e 's|@LIBS@|${LIBS}|'			\
 		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
-		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
+		-e 's|@PREFIX@|${FAKEDIR}/lib/firefox|'	\
 		-e 's|@PERL@|${PERL5}|'			\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
+	@${PERL} -pi -e 's|-lc_r|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/nsprpub/config/FreeBSD.mk \
+	@${PERL} -pi -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/nsprpub/config/config.mk \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+	@${PERL} -pi -e 's|libesd\.so\.0|${ESD_LIB}|g' \
+		${WRKSRC}/widget/src/gtk2/nsSound.cpp
+	@${REINPLACE_CMD}  -e \
+		'/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/modules/libpref/src/init/all.js \
 		${WRKSRC}/browser/app/profile/all.js \
 		${WRKSRC}/calendar/sunbird/app/profile/all.js
 
 pre-install:
-	${RM} -fr ${LOCAL_PREFIX}
-	-${MKDIR} ${PLUGINSDIR}
+	@${RM} -rf ${FAKEDIR} ${PLIST}
+	@${MKDIR} ${FAKEDIR} ${FAKEDIR}/lib/browser_plugins
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} install
+.if !defined (WITH_HEADERS)
+	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
+.endif
+.for ii in firefox Firefox firefox-config ${EXTRA_SCRIPTS}
+	@${ECHO_CMD} bin/${ii} >> ${PLIST}
+.endfor
+	@cd ${FAKEDIR}; ${FIND} * ! -type d | ${SORT} >>${PLIST}; \
+	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
+		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
+	${FIND} * -type d -empty | ${SORT} -r | ${SED} -e \
+		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
+	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
+		${GREP} / >> ${PLIST}
+
+do-install:
+	cd ${FAKEDIR} && ${FIND} * | ${CPIO} -dmp --quiet ${PREFIX}
 
 post-install:
 .for i in ${EXTRA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
-.endfor # i in ${EXTRA_SCRIPTS}
-	${RM} -f ${PREFIX}/bin/firebird
-	${LN} -s ${LOCAL_PREFIX}/bin/MozillaFirebird \
-		${PREFIX}/bin/firebird
-	${RM} -f ${PREFIX}/bin/MozillaFirebird
-	${LN} -s ${LOCAL_PREFIX}/bin/MozillaFirebird \
-		${PREFIX}/bin/MozillaFirebird
-	${RM} -f ${PREFIX}/bin/firebird-config
-	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
-		${PREFIX}/bin/firebird-config
-	-${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
+.endfor
+.for ii in f F
+	${RM} -f ${PREFIX}/bin/${ii}irefox
+	${LN} -sf ${LOCAL_PREFIX}/bin/firefox ${PREFIX}/bin/${ii}irefox
+.endfor
+	${RM} -f ${PREFIX}/bin/firefox-config
+	${LN} -sf ${LOCAL_PREFIX}/bin/mozilla-config \
+		${PREFIX}/bin/firefox-config
+	${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
 	-${LN} -sf \
 		${JREDIR}/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 		${PLUGINSDIR}/libjavaplugin_oji.so
-	${RM} -fr ${LOCAL_PREFIX}/share/idl
-	${RM} -fr ${LOCAL_PREFIX}/include
-
-cons-plist:
-	-${RM} -f ${PLIST}
-	${TOUCH} ${PLIST}
-	${ECHO_CMD} bin/firebird >>${PLIST}
-	${ECHO_CMD} bin/MozillaFirebird >>${PLIST}
-	${ECHO_CMD} bin/firebird-config >>${PLIST}
-.for i in ${EXTRA_SCRIPTS}
-	${ECHO_CMD} bin/${i} >>${PLIST}
-.endfor # i in ${EXTRA_SCRIPTS}
-	cd ${PREFIX}; \
-	${FIND} ${LOCAL_SUBDIR} ! -type d | ${SORT} >>${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} \
-	  | ${SED} -e "s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" \
-	  >> ${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} -r \
-	  | ${SED} -e "s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" \
-	  >> ${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
-		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
 
 .include <bsd.port.post.mk>

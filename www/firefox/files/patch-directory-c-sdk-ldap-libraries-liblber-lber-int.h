@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- directory/c-sdk/ldap/libraries/liblber/lber-int.h	Tue Mar 26 13:53:23 2002
 +++ directory/c-sdk/ldap/libraries/liblber/lber-int.h	Sat Dec 13 13:02:49 2003
 @@ -236,15 +236,15 @@
