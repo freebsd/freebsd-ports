@@ -3704,6 +3704,7 @@ kbilliards	ports/games/kbilliards
 kbirthday	ports/deskutils/kbirthday
 kcd		ports/misc/kcd
 kcdlabel	ports/print/kcdlabel
+kcheckers	ports/games/kcheckers
 kcpuload	ports/sysutils/kcpuload
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
