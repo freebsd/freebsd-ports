@@ -35,9 +35,7 @@ CFLAGS+=	-DRL_NO_COMPAT -DKGDB
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-USE_GCC?=	3.4
-LIB_DEPENDS=	readline.4:${PORTSDIR}/devel/readline
-CFLAGS+=	-Wl,--rpath -Wl,${PREFIX}/lib
+CFLAGS+=	-include ${FILESDIR}/fbsd4.h
 .endif
 
 .if ${ARCH} == "amd64"
