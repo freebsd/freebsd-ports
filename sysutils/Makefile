@@ -139,6 +139,7 @@
     SUBDIR += truncate
     SUBDIR += tua
     SUBDIR += ucspi-tcp
+    SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
     SUBDIR += uwatch
