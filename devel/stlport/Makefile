@@ -7,20 +7,17 @@
 #
 
 PORTNAME=	stlport
-PORTVERSION=	3.01
+PORTVERSION=	4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://corp.metabyte.com/~fbp/stl/ \
-		ftp://maroon.webmaster.com/pub/STLport/
+MASTER_SITES=	http://www.stlport.com/archive/
 DISTNAME=	STLport-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-NO_WRKSUBDIR=	yes
-GNU_CONFIGURE=	yes
-NO_BUILD=	yes
-
-pre-configure:
-	${CHMOD} +x ${WRKSRC}/configure
+WRKSRC=		${WRKDIR}/STLport-${PORTVERSION}/src
+MAKEFILE=	gcc.mak
+ALL_TARGET=	clean all
+USE_GMAKE=	yes
 
 do-install:
 	${MKDIR} ${PREFIX}/include/stlport
