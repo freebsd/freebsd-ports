@@ -13,7 +13,7 @@ CATEGORIES=	textproc linux
 MAINTAINER=	freebsd-emulation@FreeBSD.org
 COMMENT=	Linux/i386 binary port of Expat XML-parsing library
 
-RUN_DEPENDS=
+RUN_DEPENDS=	${LINUXBASE}/sbin/ldconfig:${PORTSDIR}/emulators/linux_base-8
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386 amd64
