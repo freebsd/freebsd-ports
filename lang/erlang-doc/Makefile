@@ -7,10 +7,11 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.org/doc/r9b/pdf/ \
-		http://erlang.org/download/
+		http://erlang.org/download/ \
+		http://www.erlang.se/doc/
 DISTFILES=      appmon-2.1.1.pdf \
 		asn1-1.4.pdf \
 		compiler-4.1.pdf \
@@ -62,7 +63,8 @@ DISTFILES=      appmon-2.1.1.pdf \
 		tv-2.0.4.pdf \
 		webtool-0.7.1.pdf \
 		course.pdf \
-		erlang-book-part1.pdf
+		erlang-book-part1.pdf \
+		programming_rules.pdf
 
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=
