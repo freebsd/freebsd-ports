@@ -1,5 +1,9 @@
 #!/bin/sh
 # usage: $0 branch
+
+# -j# to make duds
+DUDSJOBS=4
+
 usage () {
   echo "usage: makeduds branch"
   exit 1
@@ -32,6 +36,7 @@ case "x$1" in
 esac
 
 export PORTSDIR=$(pwd)
+duds=../../${branch}/duds
 
 unset DISPLAY
 export BATCH=t
@@ -40,4 +45,6 @@ export PACKAGE_BUILDING=t
 export PARALLEL_PACKAGE_BUILD=t
 export NO_RESTRICTED=t
 #export FOR_CDROM=t
-make ignorelist ECHO_MSG=true > ../../${branch}/duds
+make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
+sort ${duds} > ${duds}.tmp
+mv -f ${duds}.tmp ${duds}
