@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Sun Apr 18 16:19:21 2004
++++ Makefile.in	Sun Apr 18 16:19:38 2004
+@@ -212,8 +212,7 @@
+ 
+ @BUILD_WITH_GNOME_TRUE@GNOME_DIRECTORY = control-center components monikers
+ 
+-@ENABLE_GTK_DOC_TRUE@DOC_DIRECTORY = doc
+-@ENABLE_GTK_DOC_FALSE@DOC_DIRECTORY = 
++DOC_DIRECTORY = doc
+ 
+ SUBDIRS = \
+ 	po \

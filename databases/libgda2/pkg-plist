@@ -199,13 +199,17 @@ share/locale/cs/LC_MESSAGES/libgda-2.mo
 share/locale/da/LC_MESSAGES/libgda-2.mo
 share/locale/de/LC_MESSAGES/libgda-2.mo
 share/locale/el/LC_MESSAGES/libgda-2.mo
+share/locale/en_CA/LC_MESSAGES/libgda-2.mo
+share/locale/en_GB/LC_MESSAGES/libgda-2.mo
 share/locale/es/LC_MESSAGES/libgda-2.mo
 share/locale/fa/LC_MESSAGES/libgda-2.mo
 share/locale/fi/LC_MESSAGES/libgda-2.mo
 share/locale/fr/LC_MESSAGES/libgda-2.mo
 share/locale/ga/LC_MESSAGES/libgda-2.mo
 share/locale/gl/LC_MESSAGES/libgda-2.mo
+share/locale/hr/LC_MESSAGES/libgda-2.mo
 share/locale/hu/LC_MESSAGES/libgda-2.mo
+share/locale/id/LC_MESSAGES/libgda-2.mo
 share/locale/it/LC_MESSAGES/libgda-2.mo
 share/locale/ja/LC_MESSAGES/libgda-2.mo
 share/locale/ko/LC_MESSAGES/libgda-2.mo
