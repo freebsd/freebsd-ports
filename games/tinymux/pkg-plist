@@ -1,40 +1,37 @@
-games/tinymux/Startmux
-games/tinymux/alias.conf
-games/tinymux/bin/dbconvert
-games/tinymux/bin/mkindx
-games/tinymux/bin/netmux
-games/tinymux/bin/slave
-games/tinymux/compat.conf
-games/tinymux/data/db_check
-games/tinymux/data/db_load
-games/tinymux/data/db_unload
-games/tinymux/mtrace.awk
-games/tinymux/mux.config
-games/tinymux/netmux.conf
-games/tinymux/text/badsite.txt
-games/tinymux/text/connect.txt
-games/tinymux/text/create_reg.txt
-games/tinymux/text/down.txt
-games/tinymux/text/full.txt
-games/tinymux/text/guest.txt
-games/tinymux/text/help.txt
-games/tinymux/text/motd.txt
-games/tinymux/text/news.txt
-games/tinymux/text/newuser.txt
-games/tinymux/text/plushelp.txt
-games/tinymux/text/quit.txt
-games/tinymux/text/register.txt
-games/tinymux/text/wizhelp.txt
-games/tinymux/text/wizmotd.txt
-games/tinymux/text/wiznews.txt
-%%PORTDOCS%%share/doc/tinymux/README
-%%PORTDOCS%%share/doc/tinymux/README.COMPRESSION
-%%PORTDOCS%%share/doc/tinymux/README.GUESTS
-%%PORTDOCS%%share/doc/tinymux/README.MEMORY
-%%PORTDOCS%%share/doc/tinymux/README.TOOLS
-%%PORTDOCS%%@dirrm share/doc/tinymux
-@dirrm games/tinymux/text
-@dirrm games/tinymux/data
-@dirrm games/tinymux/bin
-@dirrm games/tinymux
-@unexec rmdir %D/games 2>/dev/null || true
+bin/dbconvert
+etc/tinymux/alias.conf.sample
+etc/tinymux/compat.conf.sample
+etc/tinymux/mux.config.sample
+etc/tinymux/netmux.conf.sample
+sbin/netmux
+sbin/slave
+%%DATADIR%%/game/netmux/Backup
+%%DATADIR%%/game/netmux/Startmux
+%%DATADIR%%/game/netmux/_backupflat.sh
+%%DATADIR%%/game/netmux/data/db_check
+%%DATADIR%%/game/netmux/data/db_load
+%%DATADIR%%/game/netmux/data/db_unload
+%%DATADIR%%/game/netmux/data/netmux.db
+%%DATADIR%%/game/netmux/text/badsite.txt
+%%DATADIR%%/game/netmux/text/connect.txt
+%%DATADIR%%/game/netmux/text/create_reg.txt
+%%DATADIR%%/game/netmux/text/down.txt
+%%DATADIR%%/game/netmux/text/full.txt
+%%DATADIR%%/game/netmux/text/guest.txt
+%%DATADIR%%/game/netmux/text/help.txt
+%%DATADIR%%/game/netmux/text/motd.txt
+%%DATADIR%%/game/netmux/text/news.txt
+%%DATADIR%%/game/netmux/text/newuser.txt
+%%DATADIR%%/game/netmux/text/plushelp.txt
+%%DATADIR%%/game/netmux/text/quit.txt
+%%DATADIR%%/game/netmux/text/register.txt
+%%DATADIR%%/game/netmux/text/staffhelp.txt
+%%DATADIR%%/game/netmux/text/wizhelp.txt
+%%DATADIR%%/game/netmux/text/wizmotd.txt
+%%DATADIR%%/game/netmux/text/wiznews.txt
+@dirrm %%DATADIR%%/game/netmux/text
+@dirrm %%DATADIR%%/game/netmux/data
+@dirrm %%DATADIR%%/game/netmux
+@dirrm %%DATADIR%%/game
+@dirrm %%DATADIR%%
+@dirrm etc/tinymux
