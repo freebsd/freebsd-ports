@@ -162,6 +162,7 @@
     SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
+    SUBDIR += middleman
     SUBDIR += mini_httpd
     SUBDIR += mmosaic
     SUBDIR += mnogosearch

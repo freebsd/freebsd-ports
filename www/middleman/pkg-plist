@@ -1,0 +1,6 @@
+bin/mman
+etc/rc.d/mman.sh.sample
+etc/mman.xml
+%%PORTDOCS%%share/doc/middleman/README.html
+%%PORTDOCS%%share/doc/middleman/filter.pl
+@dirrm %%PORTDOCS%%share/doc/middleman
