@@ -23,6 +23,8 @@ RUN_DEPENDS=	\
 
 DEPRECATED=	"Development ceased"
 
+BROKEN=		Broken by python 2.4 update
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
