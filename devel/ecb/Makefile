@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecb
-PORTVERSION=	1.60
+PORTVERSION=	1.70
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecb
@@ -27,10 +27,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-
-# Purge the stray source file from Makefile
-pre-build:
-	${PERL} -pi -e 's/ecb-speedbar.el//' ${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${LISPDIR}

@@ -1,5 +1,11 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-compilation.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cycle.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-cycle.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-eshell.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-eshell.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-face.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.el
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.el
