@@ -1,6 +1,18 @@
---- src/Makefile.in.orig	Wed Jan 24 19:08:48 2001
-+++ src/Makefile.in	Sat Jan 27 19:43:13 2001
-@@ -261,8 +261,8 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Thu Jun 27 13:20:28 2002
++++ src/Makefile.in	Tue Jul  9 11:20:40 2002
+@@ -131,7 +131,7 @@
+ libudmsearch_la_SOURCES = indexer.c parseurl.c charset.c parser.c sql.c spell.c log.c proto.c udmutils.c robots.c hrefs.c mutex.c conf.c files.c crc32.c parsedate.c ftp.c socket.c host.c udmxmalloc.c http.c id3.c cache.c boolean.c searchtool.c server.c alias.c filter.c env.c mimetype.c agent.c word.c parsehtml.c stopwords.c execget.c crossword.c
+ 
+ 
+-libudmsearch_la_LDFLAGS = -release 3.1
++libudmsearch_la_LDFLAGS = -version-info 1:0:0
+ 
+ include_HEADERS =  ../include/udm_charset.h ../include/udm_common.h ../include/udm_conf.h ../include/udm_config.h ../include/udm_db.h ../include/udm_hrefs.h ../include/udm_indexer.h ../include/udm_log.h ../include/udm_parseurl.h ../include/udm_spell.h ../include/udm_mutex.h ../include/udm_utils.h ../include/udmsearch.h ../include/udm_search_tl.h ../include/udm_ftp.h ../include/udm_socket.h ../include/udm_host.h ../include/udm_xmalloc.h ../include/udm_id3.h ../include/udm_http.h ../include/udm_crc32.h ../include/udm_http.h ../include/udm_cache.h ../include/udm_boolean.h ../include/udm_server.h ../include/udm_searchtool.h ../include/udm_alias.h ../include/udm_filter.h ../include/udm_env.h ../include/udm_mimetype.h ../include/udm_agent.h ../include/udm_word.h ../include/udm_parsehtml.h ../include/udm_stopwords.h ../include/udm_parser.h ../include/udm_proto.h ../include/udm_robots.h ../include/udm_signals.h ../include/udm_execget.h ../include/udm_services.h
+ 
+@@ -275,8 +275,8 @@
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@list='$(bin_PROGRAMS)'; for p in $$list; do \
  	  if test -f $$p; then \
