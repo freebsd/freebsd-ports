@@ -135,7 +135,7 @@ post-install:
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${RUBY_ELISPDIR}
-	${TOUCH} ${RUBY_ELISPDIR}/.keep_me
+	${TOUCH} ${RUBY_ELISPDIR}/.keep_me.${RUBY_NAME}
 	${MKDIR} ${RUBY_EXAMPLESDIR}
 	${TOUCH} ${RUBY_EXAMPLESDIR}/.keep_me
 	${MKDIR} ${RUBY_DOCDIR}
