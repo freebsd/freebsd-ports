@@ -7,5 +7,5 @@ gdbm		databases/py-gdbm
 mpz		math/py-mpz
 tkinter		x11-toolkits/py-tkinter
 
-Install them as occasion demands.
+Install them as needed.
 ====
