@@ -1,0 +1,7 @@
+This program uses error correcting protocols to send/receive
+files over a dial-in serial port from a variety of programs
+running under PC-DOS, CP/M, Unix, and other operating systems.
+
+lrzsz is derived from the last unrestricted verison of Chuck Forsberg's
+rzsz package.  lrzsz is covered under the GNU copyleft.  See lrzsz's
+home page at http://www.csl-gmbh.net/~uwe/lrzsz.html.

@@ -1,0 +1,9 @@
+bin/lrz
+bin/lrx
+bin/lrb
+bin/lsz
+bin/lsx
+bin/lsb
+man/man1/lrz.1.gz
+man/man1/lsz.1.gz
+share/locale/de/LC_MESSAGES/lrzsz.mo
