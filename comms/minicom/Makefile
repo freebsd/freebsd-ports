@@ -36,8 +36,10 @@ post-patch:
 		s@/sb@/lsb@g;s@/sx@/lsx@g;s@/rz@/lrz@g;s@/rb@/lrb@g; \
 		s@/rx@/lrx@g" ${WRKSRC}/src/rwconf.c
 
-.if !defined(BATCH)
 pre-configure:
+	${PERL} -pi -e "s@autoheader@${AUTOHEADER}@;s@autoconf@${AUTOCONF}@" \
+		${WRKSRC}/aclocal.m4
+.if !defined(BATCH)
 	# this script creates a link from your comm port to /dev/modem
 	${SH} ${SCRIPTDIR}/create-dev-link
 .endif
