@@ -1,0 +1,34 @@
+%%RUBY_SITELIBDIR%%/Text/Format.rb
+@dirrm %%RUBY_SITELIBDIR%%/Text
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes/Text/Format.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/files/Text/Format_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files/Text
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Text/Format.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes/Text
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
