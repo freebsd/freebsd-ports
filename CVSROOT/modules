@@ -3377,6 +3377,7 @@ ko-linuxdoc-sgml	ports/korean/linuxdoc-sgml
 ko-man-doc	ports/korean/man-doc
 ko-mizifont	ports/korean/mizifont
 ko-mkisofs	ports/korean/mkisofs
+ko-mod_url	ports/korean/mod_url
 ko-mozilla-klp	ports/korean/mozilla-klp
 ko-mplayer-fonts	ports/korean/mplayer-fonts
 ko-msdosfs	ports/korean/msdosfs
