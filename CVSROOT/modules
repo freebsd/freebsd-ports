@@ -7160,7 +7160,6 @@ ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
 ruby-drb	ports/net/ruby-drb
 ruby-dump.rb	ports/converters/ruby-dump.rb
-ruby-erb	ports/textproc/ruby-erb
 ruby-esound	ports/audio/ruby-esound
 ruby-evas	ports/graphics/ruby-evas
 ruby-fam	ports/devel/ruby-fam
