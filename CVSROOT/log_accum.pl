@@ -237,6 +237,7 @@ sub change_summary_changed {
 		$rcsfile = $revline[3];
 		$rcsfile =~ s,^$CVSROOT[/]+,,;
 		$rcsfile =~ s/,v$//;
+		last;
 	    }
 	}
 	close(RCS);
@@ -249,6 +250,7 @@ sub change_summary_changed {
 		    $delta = $_;
 		    $delta =~ s/^.*;//;
 		    $delta =~ s/^[\s]+lines://;
+		    last;
 		}
 	    }
 	    close(RCS);
