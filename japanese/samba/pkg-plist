@@ -23,7 +23,6 @@ share/examples/samba/add-delete-user-script/README
 share/examples/samba/add-delete-user-script/smb-useradd
 share/examples/samba/add-delete-user-script/smb-userdel
 share/examples/samba/autofs/README
-share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
 share/examples/samba/misc/extra_smbstatus

@@ -23,8 +23,8 @@ BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
 
-SAMBA_VERSION=		2.0.7
-SAMBA_JA_VERSION=	2.2
+SAMBA_VERSION=		2.0.9
+SAMBA_JA_VERSION=	1.0
 
 # directories
 VARDIR=		/var
