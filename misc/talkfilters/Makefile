@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	misc
 MASTER_SITES=	http://www2.dystance.net/software/talkfilters/
 
@@ -15,7 +15,7 @@ COMMENT=	Set of filters to convert English text to various stereotyped dialects
 
 CONFLICTS=	jive* chef*
 
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
