@@ -33,6 +33,7 @@
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
+    SUBDIR += beacon
     SUBDIR += beacon-server
     SUBDIR += bfilter
     SUBDIR += bing

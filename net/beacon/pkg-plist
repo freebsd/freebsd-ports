@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/RTP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/time.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/rtpdemo.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP/RTP.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP/RTP.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RTP
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+www/beacon-%%VERSION%%/beacon.pl
+etc/beacon.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
