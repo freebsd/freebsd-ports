@@ -500,6 +500,7 @@ bcpp		ports/devel/bcpp
 bcwipe		ports/security/bcwipe
 bdfresize	ports/x11-fonts/bdfresize
 beav		ports/editors/beav
+beaver		ports/editors/beaver
 bedic-data	ports/textproc/bedic-data
 beecrypt	ports/security/beecrypt
 beep		ports/audio/beep
