@@ -1,4 +1,5 @@
 bin/ayttm
+bin/ayttm_streamer_wrapper.sh
 etc/ayttmrc
 lib/ayttm/aim-toc.la
 lib/ayttm/aim-toc.so
@@ -8,6 +9,8 @@ lib/ayttm/aycryption.la
 lib/ayttm/aycryption.so
 lib/ayttm/icq-toc.la
 lib/ayttm/icq-toc.so
+lib/ayttm/img2jpc.la
+lib/ayttm/img2jpc.so
 lib/ayttm/import_everybuddy.la
 lib/ayttm/import_everybuddy.so
 lib/ayttm/import_gaim.la
@@ -32,45 +35,49 @@ lib/ayttm/rainbow.la
 lib/ayttm/rainbow.so
 lib/ayttm/smiley-themer.la
 lib/ayttm/smiley-themer.so
+lib/ayttm/smtp.la
+lib/ayttm/smtp.so
+lib/ayttm/video_capture.la
+lib/ayttm/video_capture.so
 lib/ayttm/yahoo2.la
 lib/ayttm/yahoo2.so
-share/ayttm/smileys/Console Smileys/aysmile.rc
-share/ayttm/smileys/Console Smileys/blank.xpm
-share/ayttm/smileys/Console Smileys/blush.xpm
-share/ayttm/smileys/Console Smileys/confused.xpm
-share/ayttm/smileys/Console Smileys/cooldude.xpm
-share/ayttm/smileys/Console Smileys/grin.xpm
-share/ayttm/smileys/Console Smileys/heyy.xpm
-share/ayttm/smileys/Console Smileys/kiss.xpm
-share/ayttm/smileys/Console Smileys/laugh.xpm
-share/ayttm/smileys/Console Smileys/oh.xpm
-share/ayttm/smileys/Console Smileys/sad.xpm
-share/ayttm/smileys/Console Smileys/smile.xpm
-share/ayttm/smileys/Console Smileys/sob.xpm
-share/ayttm/smileys/Console Smileys/tongue.xpm
-share/ayttm/smileys/Console Smileys/wink.xpm
-share/ayttm/smileys/Console Smileys/worried.xpm
-share/ayttm/smileys/Giles Smileys/aysmile.rc
-share/ayttm/smileys/Giles Smileys/dead.xpm
-share/ayttm/smileys/Giles Smileys/embarrased.xpm
-share/ayttm/smileys/Giles Smileys/grin.xpm
-share/ayttm/smileys/Giles Smileys/indifferent.xpm
-share/ayttm/smileys/Giles Smileys/kiss.xpm
-share/ayttm/smileys/Giles Smileys/quiet.xpm
-share/ayttm/smileys/Giles Smileys/sad.xpm
-share/ayttm/smileys/Giles Smileys/shades.xpm
-share/ayttm/smileys/Giles Smileys/shocked.xpm
-share/ayttm/smileys/Giles Smileys/smile.xpm
-share/ayttm/smileys/Giles Smileys/tears.xpm
-share/ayttm/smileys/Giles Smileys/tongue.xpm
-share/ayttm/smileys/Giles Smileys/wink.xpm
-share/ayttm/sounds/BuddyArrive.au
-share/ayttm/sounds/BuddyLeave.au
-share/ayttm/sounds/Receive.au
-share/ayttm/sounds/Send.au
-@dirrm share/ayttm/sounds
-@dirrm share/ayttm/smileys/Giles Smileys
-@dirrm share/ayttm/smileys/Console Smileys
-@dirrm share/ayttm/smileys
-@dirrm share/ayttm
+%%DATADIR%%/smileys/Console Smileys/aysmile.rc
+%%DATADIR%%/smileys/Console Smileys/blank.xpm
+%%DATADIR%%/smileys/Console Smileys/blush.xpm
+%%DATADIR%%/smileys/Console Smileys/confused.xpm
+%%DATADIR%%/smileys/Console Smileys/cooldude.xpm
+%%DATADIR%%/smileys/Console Smileys/grin.xpm
+%%DATADIR%%/smileys/Console Smileys/heyy.xpm
+%%DATADIR%%/smileys/Console Smileys/kiss.xpm
+%%DATADIR%%/smileys/Console Smileys/laugh.xpm
+%%DATADIR%%/smileys/Console Smileys/oh.xpm
+%%DATADIR%%/smileys/Console Smileys/sad.xpm
+%%DATADIR%%/smileys/Console Smileys/smile.xpm
+%%DATADIR%%/smileys/Console Smileys/sob.xpm
+%%DATADIR%%/smileys/Console Smileys/tongue.xpm
+%%DATADIR%%/smileys/Console Smileys/wink.xpm
+%%DATADIR%%/smileys/Console Smileys/worried.xpm
+%%DATADIR%%/smileys/Giles Smileys/aysmile.rc
+%%DATADIR%%/smileys/Giles Smileys/dead.xpm
+%%DATADIR%%/smileys/Giles Smileys/embarrased.xpm
+%%DATADIR%%/smileys/Giles Smileys/grin.xpm
+%%DATADIR%%/smileys/Giles Smileys/indifferent.xpm
+%%DATADIR%%/smileys/Giles Smileys/kiss.xpm
+%%DATADIR%%/smileys/Giles Smileys/quiet.xpm
+%%DATADIR%%/smileys/Giles Smileys/sad.xpm
+%%DATADIR%%/smileys/Giles Smileys/shades.xpm
+%%DATADIR%%/smileys/Giles Smileys/shocked.xpm
+%%DATADIR%%/smileys/Giles Smileys/smile.xpm
+%%DATADIR%%/smileys/Giles Smileys/tears.xpm
+%%DATADIR%%/smileys/Giles Smileys/tongue.xpm
+%%DATADIR%%/smileys/Giles Smileys/wink.xpm
+%%DATADIR%%/sounds/BuddyArrive.au
+%%DATADIR%%/sounds/BuddyLeave.au
+%%DATADIR%%/sounds/Receive.au
+%%DATADIR%%/sounds/Send.au
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/smileys/Giles Smileys
+@dirrm %%DATADIR%%/smileys/Console Smileys
+@dirrm %%DATADIR%%/smileys
+@dirrm %%DATADIR%%
 @dirrm lib/ayttm
