@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	latex2e
-PORTVERSION=	99.12
+PORTVERSION=	2000.06
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/tex/package/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jmz
 DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \
 		latex_base-${PORTVERSION}.tar.gz latex_tools-${PORTVERSION}.tar.gz \
 		latex_graphics-${PORTVERSION}.tar.gz latex_psnfss-${PORTVERSION}.tar.gz
@@ -23,6 +24,7 @@ NO_WRKSUBDIR=	yes
 MANUAL_PACKAGE_BUILD=	has to be built with tex port
 
 do-build:
+	@${RM} ${WRKSRC}/tfm/dummy.tfm  ${WRKSRC}/mf/cmex9.mf 
 	@(cd ${WRKSRC}/base; tex --ini unpack.ins)
 	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
 		tex --ini latex.ltx </dev/null)
@@ -34,10 +36,7 @@ do-build:
 		 ${LN} -sf ${PREFIX}/bin/tex latex; ./latex graphics.ins)
 	@(cd ${WRKSRC}/psnfss; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
-		${CHMOD} u+w mh2scr.enc;\
-		 ${LN} -sf ${PREFIX}/bin/tex latex; for f in adobe charter\
-		 mathtime psfonts alucida lucidabr nimbus utopia; do \
-		./latex $$f.ins; done)
+		 ${LN} -sf ${PREFIX}/bin/tex latex; ./latex psfonts.ins)
 
 do-install:
 	@(${INSTALL_DATA} ${WRKSRC}/base/latex.fmt ${PREFIX}/share/texmf/web2c/)
@@ -57,7 +56,8 @@ do-install:
 	    ${ECHO} '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/graphics.cfg;\
 	    ${ECHO} '\ExecuteOptions{dvips}' >${PREFIX}/share/texmf/tex/latex/color.cfg)
 	@(cd ${WRKSRC}/psnfss; for f in *.sty *.tex; do \
-	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
+	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done;\
+	 tar cf - tex fonts | tar -C ${PREFIX}/share/texmf/ -xf -)
 	@(cd ${PREFIX}/bin; ${RM} -f latex; ${LN} -s tex latex)
 	@(${MKDIR} ${PREFIX}/share/texmf/documentation)
 	@(cd ${WRKSRC}/base; for f in *.dtx ltx3info.tex source2e.tex *.fdd ltnews*.tex *guide.tex; do \
@@ -66,7 +66,7 @@ do-install:
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
 	@(cd ${WRKSRC}/graphics; for f in *.dtx; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
-	@(cd ${WRKSRC}/psnfss; for f in *.dtx; do \
+	@(cd ${WRKSRC}/psnfss; for f in *.dtx *pfd; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
 	@(cd ${PREFIX}/bin; ${RM} -f latex; ${LN} -s tex latex)
 
