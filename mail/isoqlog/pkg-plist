@@ -22,7 +22,6 @@ etc/isoqlog.domains-dist
 %%PORTDOCS%%%%DOCSDIR%%/tr/KURULUM
 %%PORTDOCS%%%%DOCSDIR%%/tr/YAZARLAR
 share/isoqlog/htmltemp/daily.html
-share/isoqlog/htmltemp/days.html
 share/isoqlog/htmltemp/domain.html
 share/isoqlog/htmltemp/index.html
 share/isoqlog/htmltemp/generaldaily.html
@@ -30,6 +29,7 @@ share/isoqlog/htmltemp/generaldomain.html
 share/isoqlog/htmltemp/generalmonthly.html
 share/isoqlog/htmltemp/generalyearly.html
 share/isoqlog/htmltemp/monthly.html
+share/isoqlog/htmltemp/yearly.html
 share/isoqlog/htmltemp/images/dot.gif
 share/isoqlog/htmltemp/images/home.gif
 share/isoqlog/htmltemp/images/isoqlog.gif
