@@ -1,29 +1,24 @@
 # New ports collection makefile for:	xisp
 # Date created:		June 24, 1999
-# Whom:			morishim@cig.mot.com
+# Whom:			tm@onepost.net
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xisp
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.ml-search.com/xisp/distfiles/
-DISTFILES=	xisp-2.6-noufc.tar.gz \
-		xisp-2.6-freebsd-patch.tar.gz
+MASTER_SITES=	http://xisp.hellug.gr/release/
 
-MAINTAINER=	morishim@cig.mot.com
+PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
+PATCHFILES=	xisp-2.7-freebsd-patch-20030126.gz
+
+MAINTAINER=	tm@onepost.net
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XPM=	yes
-WRKSRC=		${WRKDIR}/xisp-2.6
+
 MAN1=		xisp.1
-HAS_CONFIGURE=	yes
-.if defined(WITH_DES)
-CONFIGURE_ENV=	USE_DESLIB="yes"
-.else
-CONFIGURE_ENV=	USE_DESLIB="no"
-.endif
 
 .include <bsd.port.mk>

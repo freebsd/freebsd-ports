@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Feb  3 04:59:04 2003
++++ Makefile	Mon Feb  3 04:59:28 2003
+@@ -13,8 +13,8 @@
+ #=====================================================================
+ #
+ CC         = gcc
+-PREFIX     = /usr/local
+-X11PREFIX  = /usr/X11R6
++PREFIX     = ${LOCALBASE}
++X11PREFIX  = ${X11BASE}
+ INCX11     = $(X11PREFIX)/include
+ LIBX11     = $(X11PREFIX)/lib
+ INCFORMS   = $(X11PREFIX)/include/X11
