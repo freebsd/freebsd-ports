@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.22 1997/09/07 17:24:44 adam Exp $
+# $Id: Makefile,v 1.23 1997/09/17 04:51:19 adam Exp $
 #
 
 DISTNAME=       wn-1.18.3
@@ -28,15 +28,18 @@ post-install:
 	@install -c -o bin -g bin  ${WRKSRC}/bin/mkwnpasswd ${PREFIX}/wn/bin
 	@install -c -o bin -g bin  ${WRKSRC}/bin/authwn ${PREFIX}/wn/bin
 	@if [ -s ${PREFIX}/etc/wn_mime.types ]; then \
-	    cmp -s ${PREFIX}/etc/wn_mime.types ${WRKSRC}/lib/mime.types || \
-		echo Warning: new ${PREFIX}/etc/wn_mime.types not installed; \
+	    cmp -s ${PREFIX}/etc/wn_mime.types ${WRKSRC}/lib/mime.types || { \
+		echo Warning: new mime.types installed as ${PREFIX}/etc/wn_mime.types-dist; \
+		install -c -o bin -g bin -m 644 ${WRKSRC}/lib/mime.types \
+					${PREFIX}/etc/wn_mime.types-dist; } \
 	else \
 	    install -c -o bin -g bin -m 644 ${WRKSRC}/lib/mime.types \
 	                                     ${PREFIX}/etc/wn_mime.types; \
 	fi
 	@if [ -s ${PREFIX}/wn/index ]; then \
-	    cmp -s ${PREFIX}/wn/index ${WRKDIR}/index || \
-		echo Warning: new ${PREFIX}/wn/index not installed; \
+	    cmp -s ${PREFIX}/wn/index ${WRKDIR}/index || { \
+		echo Warning: new index installed as ${PREFIX}/wn/index-dist; \
+		install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn/index-dist; } \
 	else \
 	    install -c -o bin -g bin -m 644 ${WRKDIR}/index ${PREFIX}/wn; \
 	fi
