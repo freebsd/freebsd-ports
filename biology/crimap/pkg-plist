@@ -1,0 +1,6 @@
+bin/crimap
+%%PORTDOCS%%share/doc/crimap/progdoc_v2.4
+%%PORTDOCS%%share/examples/crimap/chr7a.gen
+%%PORTDOCS%%share/examples/crimap/demo.dat
+%%PORTDOCS%%@dirrm share/doc/crimap
+%%PORTDOCS%%@dirrm share/examples/crimap

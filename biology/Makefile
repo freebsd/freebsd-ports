@@ -7,6 +7,7 @@
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += coalesce
+    SUBDIR += crimap
     SUBDIR += deft
     SUBDIR += dna-qc
     SUBDIR += emboss
