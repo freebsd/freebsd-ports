@@ -16,8 +16,6 @@ COMMENT=	Simplified Wrapper and Interface Generator
 
 BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 
-BROKEN=		"Does not install"
-
 VER=		${PORTVERSION:R}
 
 # Supported languages: guile perl php4 python ruby tcl ocaml pike java
@@ -107,7 +105,7 @@ PLIST_SUB+=	VER="${VER}"
 
 post-install:
 # A separate swig13-runtime port might be nice
-	@(cd ${INSTALL_WRKSRC}/Runtime && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC}/Runtime && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
