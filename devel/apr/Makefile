@@ -44,6 +44,10 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Configure fails on 4.x"
+.endif
+
 .if defined(APR_UTIL_WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
 APR_UTIL_CONF_ARGS+=	--disable-threads
