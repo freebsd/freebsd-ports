@@ -10,10 +10,12 @@ include/freetype2/freetype/config/ftconfig.h
 include/freetype2/freetype/config/ftheader.h
 include/freetype2/freetype/config/ftmodule.h
 include/freetype2/freetype/config/ftoption.h
+include/freetype2/freetype/config/ftstdlib.h
 include/freetype2/freetype/freetype.h
 include/freetype2/freetype/ftbbox.h
 include/freetype2/freetype/ftcache.h
 include/freetype2/freetype/ftchapters.h
+include/freetype2/freetype/fterrdef.h
 include/freetype2/freetype/fterrors.h
 include/freetype2/freetype/ftglyph.h
 include/freetype2/freetype/ftimage.h
@@ -37,9 +39,11 @@ include/freetype2/freetype/internal/ftcalc.h
 include/freetype2/freetype/internal/ftdebug.h
 include/freetype2/freetype/internal/ftdriver.h
 include/freetype2/freetype/internal/ftextend.h
+include/freetype2/freetype/internal/ftgloadr.h
 include/freetype2/freetype/internal/ftmemory.h
 include/freetype2/freetype/internal/ftobjs.h
 include/freetype2/freetype/internal/ftstream.h
+include/freetype2/freetype/internal/fttrace.h
 include/freetype2/freetype/internal/internal.h
 include/freetype2/freetype/internal/pcftypes.h
 include/freetype2/freetype/internal/psaux.h

@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- builds/unix/configure.orig	Fri Mar 29 09:43:03 2002
++++ builds/unix/configure	Thu May 30 11:13:41 2002
+@@ -1131,7 +1131,7 @@
+ 
+ ac_config_headers="$ac_config_headers ftconfig.h:ftconfig.in"
+ 
+-version_info='8:0:2'
++version_info='9:0:2'
+ 
+ ft_version=`echo $version_info | tr : .`
+ 
+@@ -7732,6 +7732,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
