@@ -1,5 +1,6 @@
 sbin/apinger
 etc/apinger.conf.sample
+etc/rc.d/apinger.sh.sample
 %%PORTDOCS%%share/doc/apinger/README
 %%PORTDOCS%%share/doc/apinger/NEWS
 %%PORTDOCS%%share/doc/apinger/AUTHORS
