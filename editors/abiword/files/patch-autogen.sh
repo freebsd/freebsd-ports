@@ -1,5 +1,5 @@
---- autogen.sh.orig	Mon Oct  6 04:00:53 2003
-+++ autogen.sh	Fri Oct 31 16:07:18 2003
+--- autogen.sh.orig	Fri Feb 20 08:29:23 2004
++++ autogen.sh	Sat Mar  6 03:36:00 2004
 @@ -10,7 +10,7 @@
  
  rm -f autogen.err
@@ -9,7 +9,7 @@
  
  if [ $? -ne 0 ]; then
      echo "Error: you need automake 1.4 or later.  Please upgrade."
-@@ -19,17 +19,17 @@
+@@ -19,9 +19,9 @@
  
  # Produce aclocal.m4, so autoconf gets the automake macros it needs
  # 
@@ -19,9 +19,11 @@
 -aclocal -I ac-helpers $ACLOCAL_FLAGS 2>> autogen.err
 +%%ACLOCAL%% -I ac-helpers $ACLOCAL_FLAGS 2>> autogen.err
  
- echo "Checking for PKG_CHECK_MODULES..."
+ if test -f autom4te.cache/requests; then
+     echo "Checking for PKG_CHECK_MODULES in autom4te.cache/requests ..."
+@@ -32,9 +32,9 @@
+ fi
  
- pkgcheckdef=`grep PKG_CHECK_MODULES aclocal.m4 | grep AC_DEFUN`
  if test "x$pkgcheckdef" = "x"; then
 -  echo "Running aclocal -I ac-helpers -I ac-helpers/pkg-config $ACLOCAL_FLAGS"
 -  (aclocal -I ac-helpers -I ac-helpers/pkg-config $ACLOCAL_FLAGS 2>> autogen.err) || {
@@ -31,8 +33,8 @@
 +    echo "%%ACLOCAL%% failed! Unable to continue."
      exit 1
    }
-   pkgcheckdef=`grep PKG_CHECK_MODULES aclocal.m4 | grep AC_DEFUN`
-@@ -51,9 +51,9 @@
+   if test -f autom4te.cache/requests; then
+@@ -62,9 +62,9 @@
  # Produce all the `GNUmakefile.in's and create neat missing things
  # like `install-sh', etc.
  # 
@@ -44,7 +46,7 @@
      echo ""
      echo "* * * warning: possible errors while running automake - check autogen.err"
      echo ""
-@@ -69,7 +69,7 @@
+@@ -80,7 +80,7 @@
  # 
  echo "Creating configure..."
  
