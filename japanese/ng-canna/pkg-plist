@@ -1,0 +1,5 @@
+bin/ng
+share/doc/ja/ng/Ng.doc.euc-jp
+share/doc/ja/ng/Ng.ref.euc-jp
+share/doc/ja/ng/Ng.tut.euc-jp
+@dirrm share/doc/ja/ng
