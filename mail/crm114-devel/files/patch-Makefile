@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Feb 12 03:42:43 2004
-+++ Makefile	Tue Feb 24 14:58:58 2004
++++ Makefile	Thu Feb 26 12:02:12 2004
 @@ -4,7 +4,7 @@
  #   If you want to install the executables somewhere else, change
  #    BINDIR here.  Default is /usr/bin 
@@ -9,7 +9,17 @@
  BINDIR=${prefix}/bin
  
  # VER_SUFFIX defines a version suffix for our installed executables, 
-@@ -65,15 +65,7 @@
+@@ -56,24 +56,14 @@
+ experimental: crm114_tre
+ 	install -m 755 crm114_tre $(BINDIR)/crma
+ 
+-crm114: crm114.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
+-	$(MAKE) crm114_tre
+-	#  ./crm114 is used locally; make sure it's there too.
++crm114: crm114_tre
+ 	ln -f -s crm114_tre crm114
+ 
+ crm114_gnu: crm114.o crmregex_gnu.o crm_mathexec.o
  	$(CC) $(LDFLAGS) crm114.o crmregex_gnu.o crm_mathexec.o -lm -o crm114_gnu $(LIBS)
  
  crm114_tre: crm114.o crmregex_tre.o crm_mathexec.o
@@ -26,7 +36,7 @@
  
  crm114.o: crm114.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
  	$(CC)  $(CFLAGS) -DVERSION='"$(VERSION)"' -c crm114.c -o crm114.o
-@@ -89,14 +81,14 @@
+@@ -89,14 +79,14 @@
  
  cssutil: cssutil.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
  	$(CC)  $(CFLAGS) -c cssutil.c -o cssutil.o  
@@ -44,10 +54,37 @@
  
  clean:
  	-rm -f crm114
-@@ -254,4 +246,4 @@
+@@ -108,22 +98,14 @@
+ 	-rm -f crm114_tre
+ 	-rm -f *.o
+ 
+-install_crm114: crm114
+-	#
+-	#   NOTE - the default CRM114 now uses the TRE regex lib, not GNU
+-	#          If you want the GNU one (not recommended) you should
+-	#          use 'install_gnu' as the make target.
+-	#    
+-	$(MAKE) install_tre
++install_crm114: crm114 install_tre
+ 
+-install_utils:
+-	$(MAKE) cssmerge cssutil cssdiff
++install_utils: cssmerge cssutil cssdiff
+ 	install -m 755 -s cssdiff $(BINDIR)/cssdiff$(VER_SUFFIX)
+ 	install -m 755 -s cssmerge $(BINDIR)/cssmerge$(VER_SUFFIX)
+ 	install -m 755 -s cssutil $(BINDIR)/cssutil$(VER_SUFFIX)
+ 
+-install: FORCE
+-	$(MAKE) install_crm114 install_utils
++install: install_crm114 install_utils
+ 
+ install_tre: crm114_tre
+ 	install -m 755 -s crm114_tre $(BINDIR)/crm$(VER_SUFFIX)
+@@ -254,4 +236,5 @@
  distribution: install src_gzip i386_gzip css_gzip
  	md5sum crm114-$(VERSION).*.tar.gz
  
 -FORCE:
 \ No newline at end of file
 +FORCE:
++
