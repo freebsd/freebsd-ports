@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1995/07/13 00:57:24 asami Exp $
+# $Id: Makefile,v 1.21 1995/08/14 04:08:46 asami Exp $
 #
 
 SUBDIR += archivers
@@ -16,6 +16,7 @@ SUBDIR += japanese
 SUBDIR += lang
 SUBDIR += mail
 SUBDIR += math
+SUBDIR += misc
 SUBDIR += net
 SUBDIR += news
 SUBDIR += plan9
@@ -24,7 +25,7 @@ SUBDIR += russian
 SUBDIR += shells
 SUBDIR += security
 SUBDIR += sysutils
-SUBDIR += utils
+SUBDIR += www
 SUBDIR += x11
 
 .include <bsd.port.subdir.mk>
