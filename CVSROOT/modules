@@ -5395,6 +5395,7 @@ p5-Convert-TNEF	ports/converters/p5-Convert-TNEF
 p5-Convert-UU	ports/converters/p5-Convert-UU
 p5-Convert-UUlib	ports/converters/p5-Convert-UUlib
 p5-Coro	ports/devel/p5-Coro
+p5-Crypt-Anubis	ports/security/p5-Crypt-Anubis
 p5-Crypt-Blowfish	ports/security/p5-Crypt-Blowfish
 p5-Crypt-Blowfish_PP	ports/security/p5-Crypt-Blowfish_PP
 p5-Crypt-CAST5_PP	ports/security/p5-Crypt-CAST5_PP
