@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Aug 23 08:37:53 2002
-+++ doc/Makefile.in	Sat Aug 24 02:44:18 2002
-@@ -123,7 +123,7 @@
+--- doc/Makefile.in.orig	Tue Nov  4 13:00:21 2003
++++ doc/Makefile.in	Tue Nov  4 13:04:43 2003
+@@ -139,7 +139,7 @@
  
  
  # The name of the module.
@@ -8,4 +8,18 @@
 +DOC_MODULE = libxslt
  
  # The top-level SGML file.
- DOC_MAIN_SGML_FILE = libxslt.sgml
+ DOC_MAIN_XML_FILE = libxslt.xml
+@@ -418,10 +418,9 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(TARGET_DIR)
+ 	-@INSTALL@ -m 0644 $(srcdir)/*.html $(DESTDIR)$(TARGET_DIR)
+ 	-@INSTALL@ -m 0644 $(srcdir)/*.gif $(DESTDIR)$(TARGET_DIR)
+-	$(mkinstalldirs) $(DESTDIR)$(TARGET_DIR)/html
+-	-@INSTALL@ -m 0644 $(srcdir)/html/*.html $(DESTDIR)$(TARGET_DIR)/html
+-	-@INSTALL@ -m 0644 $(srcdir)/html/*.png $(DESTDIR)$(TARGET_DIR)/html
+-	-@INSTALL@ -m 0644 $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR)/html
++	-@INSTALL@ -m 0644 $(srcdir)/html/*.html $(DESTDIR)$(TARGET_DIR)
++	-@INSTALL@ -m 0644 $(srcdir)/html/*.png $(DESTDIR)$(TARGET_DIR)
++	-@INSTALL@ -m 0644 $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR)
+ 	$(mkinstalldirs) $(DESTDIR)$(TARGET_DIR)/tutorial
+ 	-@INSTALL@ -m 0644 $(srcdir)/tutorial/* $(DESTDIR)$(TARGET_DIR)/tutorial
+ 	-(cd $(DESTDIR); gtkdoc-fixxref --module=libxslt --html-dir=$(HTML_DIR))
