@@ -1,0 +1,11 @@
+--- gtkextra--/Makefile.in	2000/08/29 08:00:52	1.1
++++ gtkextra--/Makefile.in	2000/08/29 08:01:10
+@@ -132,7 +132,7 @@
+ lib_LTLIBRARIES = libgtkextramm.la
+ libgtkextramm_la_SOURCES = $(cc_sources) $(cc_extra)
+ libgtkextramm_la_LIBADD = $(lo_sources)
+-libgtkextramm_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE)
++libgtkextramm_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/scripts/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
