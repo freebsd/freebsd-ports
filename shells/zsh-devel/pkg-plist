@@ -5,6 +5,7 @@ bin/zsh-%%ZSH_VER%%
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
 @exec install-info %D/info/zsh.info %D/info/dir
+%%LIBZSH%%
 lib/zsh/%%ZSH_VER%%/cap.so
 lib/zsh/%%ZSH_VER%%/clone.so
 lib/zsh/%%ZSH_VER%%/compctl.so
@@ -53,8 +54,8 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_apt
 %%ZSHFUNC_SUBDIR%%/_archie
 %%ZSHFUNC_SUBDIR%%/_arg_compile
-%%ZSHFUNC_SUBDIR%%/_arguments
 %%ZSHFUNC_SUBDIR%%/_argument_sets
+%%ZSHFUNC_SUBDIR%%/_arguments
 %%ZSHFUNC_SUBDIR%%/_arrays
 %%ZSHFUNC_SUBDIR%%/_autoload
 %%ZSHFUNC_SUBDIR%%/_bash_completions
@@ -65,7 +66,6 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_bsd_pkg
 %%ZSHFUNC_SUBDIR%%/_bug
 %%ZSHFUNC_SUBDIR%%/_builtin
-%%ZSHFUNC_SUBDIR%%/_bunzip2
 %%ZSHFUNC_SUBDIR%%/_bzip2
 %%ZSHFUNC_SUBDIR%%/_call
 %%ZSHFUNC_SUBDIR%%/_cd
@@ -117,6 +117,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_finger
 %%ZSHFUNC_SUBDIR%%/_first
 %%ZSHFUNC_SUBDIR%%/_flex
+%%ZSHFUNC_SUBDIR%%/_floppy
 %%ZSHFUNC_SUBDIR%%/_funcall
 %%ZSHFUNC_SUBDIR%%/_functions
 %%ZSHFUNC_SUBDIR%%/_gcc
@@ -133,6 +134,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_hosts
 %%ZSHFUNC_SUBDIR%%/_ignored
 %%ZSHFUNC_SUBDIR%%/_imagemagick
+%%ZSHFUNC_SUBDIR%%/_in_vared
 %%ZSHFUNC_SUBDIR%%/_ispell
 %%ZSHFUNC_SUBDIR%%/_jobs
 %%ZSHFUNC_SUBDIR%%/_joe
@@ -141,8 +143,14 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_kld
 %%ZSHFUNC_SUBDIR%%/_limits
 %%ZSHFUNC_SUBDIR%%/_list
+%%ZSHFUNC_SUBDIR%%/_look
 %%ZSHFUNC_SUBDIR%%/_lp
+%%ZSHFUNC_SUBDIR%%/_lsdev
+%%ZSHFUNC_SUBDIR%%/_lslv
+%%ZSHFUNC_SUBDIR%%/_lspv
+%%ZSHFUNC_SUBDIR%%/_lsvg
 %%ZSHFUNC_SUBDIR%%/_lynx
+%%ZSHFUNC_SUBDIR%%/_lzop
 %%ZSHFUNC_SUBDIR%%/_mailboxes
 %%ZSHFUNC_SUBDIR%%/_main_complete
 %%ZSHFUNC_SUBDIR%%/_make
@@ -180,6 +188,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_perl_builtin_funcs
 %%ZSHFUNC_SUBDIR%%/_perl_modules
 %%ZSHFUNC_SUBDIR%%/_perldoc
+%%ZSHFUNC_SUBDIR%%/_physical_volumes
 %%ZSHFUNC_SUBDIR%%/_pids
 %%ZSHFUNC_SUBDIR%%/_popd
 %%ZSHFUNC_SUBDIR%%/_ports
@@ -207,6 +216,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_setup
 %%ZSHFUNC_SUBDIR%%/_sh
 %%ZSHFUNC_SUBDIR%%/_signals
+%%ZSHFUNC_SUBDIR%%/_smit
 %%ZSHFUNC_SUBDIR%%/_socket
 %%ZSHFUNC_SUBDIR%%/_sort_tags
 %%ZSHFUNC_SUBDIR%%/_source
@@ -228,9 +238,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_tilde_files
 %%ZSHFUNC_SUBDIR%%/_trap
 %%ZSHFUNC_SUBDIR%%/_umount
-%%ZSHFUNC_SUBDIR%%/_uncompress
 %%ZSHFUNC_SUBDIR%%/_unhash
-%%ZSHFUNC_SUBDIR%%/_unpack
 %%ZSHFUNC_SUBDIR%%/_unset_options
 %%ZSHFUNC_SUBDIR%%/_unsetopt
 %%ZSHFUNC_SUBDIR%%/_urls
@@ -242,6 +250,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_values
 %%ZSHFUNC_SUBDIR%%/_vars
 %%ZSHFUNC_SUBDIR%%/_vars_eq
+%%ZSHFUNC_SUBDIR%%/_volume_groups
 %%ZSHFUNC_SUBDIR%%/_wait
 %%ZSHFUNC_SUBDIR%%/_wanted
 %%ZSHFUNC_SUBDIR%%/_webbrowser
@@ -267,6 +276,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/_x_title
 %%ZSHFUNC_SUBDIR%%/_x_window
 %%ZSHFUNC_SUBDIR%%/_xargs
+%%ZSHFUNC_SUBDIR%%/_xauth
 %%ZSHFUNC_SUBDIR%%/_xdvi
 %%ZSHFUNC_SUBDIR%%/_xfig
 %%ZSHFUNC_SUBDIR%%/_xmodmap
@@ -299,6 +309,7 @@ lib/zsh/%%ZSH_VER%%/zsh/zutil.so
 %%ZSHFUNC_SUBDIR%%/compinit
 %%ZSHFUNC_SUBDIR%%/compinstall
 %%ZSHFUNC_SUBDIR%%/cx
+%%ZSHFUNC_SUBDIR%%/edit-command-line
 %%ZSHFUNC_SUBDIR%%/harden
 %%ZSHFUNC_SUBDIR%%/history-search-end
 %%ZSHFUNC_SUBDIR%%/incarg
