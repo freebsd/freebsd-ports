@@ -1,4 +1,4 @@
-# New ports collection makefile for: pdcurses
+# New ports collection makefile for:	pdcurses
 # Version required:	2.2
 # Date created:		Sun Jun 22 16:57:39 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au)
@@ -9,13 +9,13 @@
 DISTNAME=	pdc22
 PKGNAME=	crossgo32-djgpp2-pdcurses-2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.tas.gov.au/pc/simtelnet/gnu/djgpp/v2tk/ \
+MASTER_SITES=	ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2tk/ \
 		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2tk/
 
-RUN_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
+MAINTAINER=	ports@FreeBSD.org
+
 RUN_DEPENDS=	i386-go32-stubify:${PORTSDIR}/devel/crossgo32-djgpp2
 
-BROKEN=		DEPENDS on crossgo32-djgpp2
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qLa
 
@@ -52,7 +52,7 @@ do-install:
 	${INSTALL_DATA} ${PDDOC}/basics/intro.man ${DOCDIR}/intro.txt
 	${INSTALL_DATA} ${PDDOC}/basics/overview.man ${DOCDIR}/overview.txt
 	${INSTALL_DATA} ${PDDOC}/basics/xwindows.man ${DOCDIR}/xwindows.txt
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/Readme.FreeBSD
+	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/README.FreeBSD
 .endif
 
 .include <bsd.port.mk>
