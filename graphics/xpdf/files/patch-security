@@ -28,8 +28,8 @@
  	pages = (Page **)grealloc(pages, pagesSize * sizeof(Page *));
  	pageRefs = (Ref *)grealloc(pageRefs, pagesSize * sizeof(Ref));
  	for (j = pagesSize - 32; j < pagesSize; ++j) {
---- xpdf/XRef.cc.orig	2004-10-11 15:51:14.000000000 +0200
-+++ xpdf/XRef.cc	2004-10-11 15:56:48.000000000 +0200
+--- xpdf/XRef.cc.orig	Thu Jan 22 10:26:45 2004
++++ xpdf/XRef.cc	Mon Jan 24 08:49:49 2005
 @@ -96,7 +96,7 @@
    }
    nObjects = obj1.getInt();
@@ -294,7 +294,16 @@
  	streamEnds = (Guint *)grealloc(streamEnds,
  				       streamEndsSize * sizeof(int));
        }
-
+@@ -756,6 +818,9 @@
+ 	  keyLength = lengthObj.getInt() / 8;
+ 	} else {
+ 	  keyLength = 5;
++	}
++	if (keyLength > 16) {
++	  keyLength = 16;
+ 	}
+ 	permFlags = permissions.getInt();
+ 	if (encVersion >= 1 && encVersion <= 2 &&
 --- xpdf/Gfx.cc.orig	Thu Jan 22 10:26:45 2004
 +++ xpdf/Gfx.cc	Thu Dec 23 09:48:17 2004
 @@ -2654,7 +2654,9 @@
