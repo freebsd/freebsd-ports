@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.mozilla.org/pub/${MASTER_SITE_SUBDIR}/ \
 		${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools
 
-MAINTAINER=	phantom@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 RUN_DEPENDS=	${PERL_SITEDIR}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
