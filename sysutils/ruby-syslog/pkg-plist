@@ -1,6 +1,0 @@
-%%RUBY_SITEARCHLIBDIR%%/syslog.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/syslog/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/syslog/syslog.txt
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syslog
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/syslog/test.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/syslog

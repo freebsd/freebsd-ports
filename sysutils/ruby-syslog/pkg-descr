@@ -1,4 +1,0 @@
-This is a Ruby module to access syslog(3) interface.
-
-Author:	Amos Gouaux <amos+ruby@utdallas.edu>
-WWW:	http://www.utdallas.edu/~amos/ruby.html
