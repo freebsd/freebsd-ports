@@ -123,25 +123,15 @@ include/mediatool.h
 include/sections.h
 include/stl_headers.h
 include/xview.h
-lib/libjscript.la
 lib/libjscript.so.%%LIBVER%%
-lib/libkab.la
 lib/libkab.so.%%LIBVER%%
-lib/libkdecore.la
 lib/libkdecore.so.%%LIBVER%%
-lib/libkdeui.la
 lib/libkdeui.so.%%LIBVER%%
-lib/libkfile.la
 lib/libkfile.so.%%LIBVER%%
-lib/libkfm.la
 lib/libkfm.so.%%LIBVER%%
-lib/libkhtmlw.la
 lib/libkhtmlw.so.%%LIBVER%%
-lib/libkimgio.la
 lib/libkimgio.so.%%LIBVER%%
-lib/libkspell.la
 lib/libkspell.so.%%LIBVER%%
-lib/libmediatool.la
 lib/libmediatool.so.%%LIBVER%%
 share/apps/kab/pics/background_1.jpg
 share/apps/kab/pics/dialog_background.jpg
@@ -314,99 +304,99 @@ share/toolbar/viewzoom.xpm
 @exec ln -sf libmediatool.so.%%LIBVER%% %D/lib/libmediatool.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm share/toolbar
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/tr
-@dirrm share/locale/th/LC_MESSAGES
-@dirrm share/locale/th
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk
-@dirrm share/locale/ko/LC_MESSAGES
-@dirrm share/locale/ko
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/ja
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/is/LC_MESSAGES
-@dirrm share/locale/is
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hs/LC_MESSAGES
-@dirrm share/locale/hs
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/he/LC_MESSAGES
-@dirrm share/locale/he
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/et
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/eo/LC_MESSAGES
-@dirrm share/locale/eo
-@dirrm share/locale/en_UK/LC_MESSAGES
-@dirrm share/locale/en_UK
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/br/LC_MESSAGES
-@dirrm share/locale/br
-@dirrm share/locale
+@unexec rmdir %D/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_TW.Big5 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN.GB2312/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN.GB2312 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/th/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/th 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/mk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/mk 2>/dev/null || true
+@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ko 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/is/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/is 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/hs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hs 2>/dev/null || true
+@unexec rmdir %D/share/locale/hr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hr 2>/dev/null || true
+@unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/he 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/et 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/eo/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/eo 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_UK/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_UK 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@unexec rmdir %D/share/locale/br/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/br 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
 @dirrm share/doc/HTML/en/kdelibs
-@unexec rmdir %D/share/doc/HTML/it || true
-@unexec rmdir %D/share/doc/HTML/fr || true
-@unexec rmdir %D/share/doc/HTML/fi || true
-@unexec rmdir %D/share/doc/HTML/es || true
-@unexec rmdir %D/share/doc/HTML/en || true
-@unexec rmdir %D/share/doc/HTML/el || true
-@unexec rmdir %D/share/doc/HTML/de || true
-@unexec rmdir %D/share/doc/HTML/da || true
-@unexec rmdir %D/share/doc/HTML/cs || true
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/fi 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/el 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
 @unexec rm -f %D/share/doc/HTML/default
-@dirrm share/doc/HTML
-@dirrm share/config
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true
 @dirrm share/apps/khtmlw/pics
 @dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
 @dirrm share/apps/kde
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
-@dirrm share/apps
+@unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rm -f %D/lib/libjscript.so
 @unexec rm -f %D/lib/libkab.so
 @unexec rm -f %D/lib/libkdecore.so

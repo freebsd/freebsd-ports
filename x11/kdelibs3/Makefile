@@ -1,5 +1,5 @@
 # New ports collection makefile for:   kdelibs
-# Version required:    1.0
+# Version required:    1.1.2
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
@@ -12,17 +12,17 @@ CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
-MAINTAINER=	se@freebsd.org
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_LIBTOOL=	yes
 USE_BZIP2=	yes
 USE_QT=		yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
-		"--with-extra-includes=${PREFIX}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+="--with-extra-includes=${PREFIX}/include" \
 		"--x-inc=$(X11BASE)/include" \
 		"--x-lib=$(X11BASE)/lib" \
 		--enable-shared
