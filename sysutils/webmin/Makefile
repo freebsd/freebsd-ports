@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -21,7 +22,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	servers-0.90-1.wbm.gz
 WEBMIN_THEMES=
 		
 post-extract:
