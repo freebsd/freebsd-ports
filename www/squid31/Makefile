@@ -73,8 +73,7 @@
 #     about how to do transparent proxying with ipfw)
 
 PORTNAME=	squid
-PORTVERSION=	2.5.6
-PORTREVISION=	12
+PORTVERSION=	2.5.7
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -83,35 +82,10 @@ MASTER_SITES=	\
 		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE6
+DISTNAME=	squid-2.5.STABLE7
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE6-ufs_no_valid_dir.patch \
-		squid-2.5.STABLE6-ldap_helpers.patch \
-		squid-2.5.STABLE6-concurrent_dns_lookups.patch \
-		squid-2.5.STABLE6-request_header_max_size.patch \
-		squid-2.5.STABLE6-partial_hit_is_miss.patch \
-		squid-2.5.STABLE6-HEAD.patch \
-		squid-2.5.STABLE6-ufs_create_error.patch \
-		squid-2.5.STABLE6-basic_auth_caseinsensitive.patch \
-		squid-2.5.STABLE6-active_requests_delaypool.patch \
-		squid-2.5.STABLE6-client_db_gc.patch \
-		squid-2.5.STABLE6-ntlmtruncated.patch \
-		squid-2.5.STABLE6-grammar.patch \
-		squid-2.5.STABLE6-errorpage_quote.patch \
-		squid-2.5.STABLE6-heap_segfault.patch \
-		squid-2.5.STABLE6-initgroups.patch \
-		squid-2.5.STABLE6-external_acl_newlines.patch \
-		squid-2.5.STABLE6-ntlm_fetch_string.patch \
-		squid-2.5.STABLE6-ntlm_noreuse_leak.patch \
-		squid-2.5.STABLE6-ntlm_challengereuse_leak.patch \
-		squid-2.5.STABLE6-rotate_error.patch \
-		squid-2.5.STABLE6-digest_crash.patch \
-		squid-2.5.STABLE6-acl_times.patch \
-		squid-2.5.STABLE6-http_header_range.patch \
-		squid-2.5.STABLE6-Content-Disposition.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
 COMMENT=	The successful WWW proxy cache and accelerator
@@ -302,6 +276,7 @@ CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .endif
 .if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
+STRIP=			""
 .endif
 .if !defined(WITHOUT_SQUID_RCNG)
 USE_RC_SUBR=	yes
