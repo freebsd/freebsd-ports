@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs651/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/
 MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
-PKGNAMESUFFIX=	-gnu
 
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${PCL3_SRC} \
