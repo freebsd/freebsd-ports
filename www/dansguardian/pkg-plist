@@ -29,9 +29,9 @@ etc/dansguardian/contentregexplist.dist
 etc/dansguardian/dansguardian.conf.dist
 etc/dansguardian/exceptioniplist.dist
 etc/dansguardian/exceptionphraselist.dist
+etc/dansguardian/exceptionsitelist.dist
 etc/dansguardian/exceptionurllist.dist
 etc/dansguardian/exceptionuserlist.dist
-etc/dansguardian/exceptionsitelist.dist
 etc/dansguardian/messages.dist
 etc/dansguardian/phraselists/chat/weighted.dist
 etc/dansguardian/phraselists/drugadvocacy/weighted.dist
@@ -57,7 +57,7 @@ etc/dansguardian/phraselists/weapons/weighted.dist
 etc/dansguardian/pics.dist
 etc/dansguardian/template.html.dist
 etc/dansguardian/weightedphraselist.dist
-etc/rc.d/start-dg.sh
+etc/rc.d/start-dg.sh.dist
 sbin/dansguardian
 www/cgi-bin/dansguardian.pl.dist
 @dirrm etc/dansguardian/phraselists/chat

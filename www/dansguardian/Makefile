@@ -7,6 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.6.1.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
