@@ -8118,6 +8118,7 @@ pear-Pager	ports/devel/pear-Pager
 pear-SOAP	ports/net/pear-SOAP
 pear-Services_Weather	ports/misc/pear-Services_Weather
 pear-Spreadsheet_Excel_Writer ports/textproc/pear-Spreadsheet_Excel_Writer
+pear-Text_Figlet	ports/misc/pear-Text_Figlet
 pear-Text_Password	ports/security/pear-Text_Password
 pear-VFS	ports/devel/pear-VFS
 pear-Validate	ports/devel/pear-Validate
