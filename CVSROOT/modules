@@ -1779,6 +1779,7 @@ fb		ports/editors/fb
 fbbi		ports/lang/fbbi
 fbdesk		ports/x11-wm/fbdesk
 fbm		ports/graphics/fbm
+fbpager		ports/x11-wm/fbpager
 fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
 fceu		ports/emulators/fceu
