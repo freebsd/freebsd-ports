@@ -5,44 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iiimf-server
-PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
-PORTREVISION=	1
+PORTNAME=	server
+PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
+MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
+PKGNAMEPREFIX=	iiimf-
 DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Server Framework
 
 LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib
-BUILD_DEPENDS=	${LOCALBASE}/include/iiimf/iml/SunIM.h:${PORTSDIR}/textproc/iiimf-headers
 
-IIIMF_VER=	r11_4-1467
+IIIMF_VER=	r12_0_1-svn1891
 WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/iiimsf
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}-${IIIMF_VER}
+USE_OPENSSL=	yes
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=	${WRKSRC}/aclocal.m4
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
-		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
-		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
-		-e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		-e "s,-I\$$(IM_INCLUDEDIR),-I${LOCALBASE}/include/iiimf,g" \
-		${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+		${WRKSRC}/../acfiles/im_common.m4 \
+		${WRKSRC}/configure.ac \
 		${WRKSRC}/src/IMSvrCfg.cpp \
 		${WRKSRC}/src/watchdog.c
 
-.include <bsd.port.post.mk>
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../acfiles
+	${TOUCH} ${WRKSRC}/config.h.in
+
+.include <bsd.port.mk>
