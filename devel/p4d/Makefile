@@ -43,6 +43,7 @@ BIN_FILES=	p4
 SBIN_FILES=	p4d
 REL_NOTES=	http://www.perforce.com/perforce/doc.991/user/relnotes.txt
 .else
+VERSION=	0
 IGNORE=		"Unsupported platform, sorry."
 .endif
 
