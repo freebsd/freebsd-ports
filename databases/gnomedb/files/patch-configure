@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Jan 14 20:31:37 2002
++++ configure	Mon Jan 14 20:51:03 2002
+@@ -8877,7 +8877,7 @@
+ 		PERL_CC=`perl -MConfig -e 'print $Config{cc},"\n";'`
+ 		PERL_LD=`perl -MConfig -e 'print $Config{ld},"\n";'`
+ 		PERL_CCOPTS=`perl -MExtUtils::Embed -e ccopts`
+-		PERL_LDOPTS=`perl -MExtUtils::Embed -e ldopts`
++		PERL_LDOPTS=`perl -MExtUtils::Embed -e '$_ = ldopts(1); s/-lc //g; print $_ . "\n"'`
+ 		
+ 		
+ 		
