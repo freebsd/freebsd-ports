@@ -557,6 +557,7 @@ base64		ports/converters/base64
 bash-completion	ports/shells/bash-completion
 bash1		ports/shells/bash1
 bash2		ports/shells/bash2
+bash3		ports/shells/bash3
 basiliskII	ports/emulators/basiliskII
 basket		ports/deskutils/basket
 bass		ports/games/bass

@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+DEINSTALL)
+  if [ `id -u` -eq 0 ]; then
+    TMPSHELLS=`mktemp -t shells`
+    grep -v "^${PKG_PREFIX-/usr/local}/bin/bash\$" /etc/shells > "$TMPSHELLS"
+    cat "$TMPSHELLS" > /etc/shells
+    rm "$TMPSHELLS"
+  elif grep -qs "^${PKG_PREFIX-/usr/local}/bin/bash\$" /etc/shells; then
+    echo "Not root, please remove ${PKG_PREFIX-/usr/local}/bin/bash from /etc/shells manually"
+  fi
+  ;;
+esac

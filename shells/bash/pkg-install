@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+case $2 in
+POST-INSTALL)
+  if ! grep -qs "^${PKG_PREFIX-/usr/local}/bin/bash\$" /etc/shells; then
+    if [ `id -u` -eq 0 ]; then
+      echo "${PKG_PREFIX-/usr/local}/bin/bash" >> /etc/shells
+    else
+      echo "Not root, please add ${PKG_PREFIX-/usr/local}/bin/bash to /etc/shells manually"
+    fi
+  fi
+  ;;
+esac
