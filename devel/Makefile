@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.151 1998/12/26 05:01:42 steve Exp $
+# $Id: Makefile,v 1.152 1998/12/26 05:04:03 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -115,7 +115,6 @@
     SUBDIR += pmake
     SUBDIR += portcheckout
     SUBDIR += portlint
-    SUBDIR += prc-tools
     SUBDIR += prcs
     SUBDIR += qtarch
     SUBDIR += qtez

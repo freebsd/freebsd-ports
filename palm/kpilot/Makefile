@@ -3,11 +3,11 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.19 1998/11/06 04:20:59 asami Exp $
+# $Id: Makefile,v 1.20 1998/11/06 21:17:17 nectar Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
-CATEGORIES=	comms pilot kde
+CATEGORIES=	palm comms kde
 MASTER_SITES=	http://www.slac.com/pilone/kpilot_home/download/
 
 MAINTAINER=	dima@freebsd.org

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.32 1998/08/07 21:59:52 asami Exp $
+# $Id: Makefile,v 1.33 1998/10/09 04:49:29 kuriyama Exp $
 #
 
     SUBDIR += bpl+
@@ -6,11 +6,9 @@
     SUBDIR += ecu
     SUBDIR += hylafax
     SUBDIR += kermit
-    SUBDIR += kpilot
     SUBDIR += lrzsz
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
-    SUBDIR += pilot-link
     SUBDIR += qpage
     SUBDIR += rzsz
     SUBDIR += seyon
