@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pdftk
-PORTVERSION=	0.94
+PORTVERSION=	0.94.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.accesspdf.com/pdftk/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	patrick_dkt@yahoo.com.hk
 COMMENT=	A simple tool for doing everyday things with PDF documents
@@ -24,7 +25,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 MAKEFILE=	Makefile.Generic
 MAKE_ENV=	CXX=g++33 GCJ=gcj33 GCJH=gcjh33
@@ -33,7 +34,7 @@ MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/pdftk
 
 post-extract:
-	@${REINPLACE_CMD} -e "s|CC_OPTS \+\=|CC_OPTS \+\= ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz|g" ${WRKSRC}/Makefile.Base
+	@${REINPLACE_CMD} -e "s|CXXFLAGS \+\=|CXXFLAGS \+\= ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz|g" ${WRKSRC}/Makefile.Base
 	@${REINPLACE_CMD} -e "s|g\+\+|g\+\+33|g" ${WRKSRC}/Makefile.Generic
 	@${REINPLACE_CMD} -e "s|MAKE)|MAKE) GXX=g++33 GCJ=gcj33 GCJH=gcjh33| " ${WRKSRC}/Makefile.Base
 
