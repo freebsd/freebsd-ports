@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	CipherSaber
-PORTVERSION=	0.60
+PORTNAME=	Crypt-CipherSaber
+PORTVERSION=	0.61
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Crypt
+MASTER_SITE_SUBDIR=	../../authors/id/C/CH/CHROMATIC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@corebsd.or.id
 
 PORTCOMMENT=	Perl module providing an OO interface to CipherSaber encryption
 
