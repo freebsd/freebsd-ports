@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	teTeX
-PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTVERSION=	2.99.13.20050204
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -17,9 +17,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A meta port for teTeX suite
 
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/share/texmf/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		latex:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/share/texmf-local/tex/latex/base/latex.ltx:${PORTSDIR}/print/teTeX-latex2e \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		xdvi:${PORTSDIR}/print/xdvik
 
@@ -41,6 +40,7 @@ PAPERSIZE=	letter
 PAPERSIZE=	a4
 .endif
 
+TEXMFDISTDIR=	share/texmf-dist
 TEXMFLOCAL_LSR=	${LOCALBASE}/share/texmf-local/ls-R
 
 # XXX: this does not work
