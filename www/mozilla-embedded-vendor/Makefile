@@ -31,13 +31,12 @@ LIB_DEPENDS!=	${LIB_DEPENDS}
 WRKSRC=		${WRKDIRPREFIX}${MAINDIR}/work/mozilla
 
 do-build:
-#	${PERL} -pi -e 's|\\|/|g' ${WRKSRC}/embedding/config/Makefile
-	cd ${WRKSRC}/embedding/config && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+	@cd ${WRKSRC}/embedding/config && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-	(cd ${WRKSRC}/dist/bin && \
-	  ${SETENV} LD_LIBRARY_PATH=${WRKSRC}/dist/Embed \
-		MOZILLA_FIVE_HOME=${WRKSRC}/dist/Embed ./regxpcom)
-	find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
+	@(cd ${WRKSRC}/dist/Embed; \
+	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regxpcom; \
+	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ../bin/regchrome)
+	@find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla-embedded
