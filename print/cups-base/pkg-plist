@@ -3,15 +3,15 @@
 @exec /bin/rm -fr %D/etc/cups/certs/* 2>/dev/null || true
 bin/cups-config
 etc/cups/classes.conf.N
-@exec if ! /bin/test -f %D/etc/cups/classes.conf; then /bin/cp %D/etc/cups/classes.conf.N %D/etc/cups/classes.conf; else true; fi
+@exec if ! /bin/test -f %D/etc/cups/classes.conf; then /bin/cp -p %D/etc/cups/classes.conf.N %D/etc/cups/classes.conf; else true; fi
 etc/cups/client.conf.N
-@exec if ! /bin/test -f %D/etc/cups/client.conf; then /bin/cp %D/etc/cups/client.conf.N %D/etc/cups/client.conf; else true; fi
+@exec if ! /bin/test -f %D/etc/cups/client.conf; then /bin/cp -p %D/etc/cups/client.conf.N %D/etc/cups/client.conf; else true; fi
 etc/cups/cupsd.conf.N
-@exec if ! /bin/test -f %D/etc/cups/cupsd.conf; then /bin/cp %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; else true; fi
+@exec if ! /bin/test -f %D/etc/cups/cupsd.conf; then /bin/cp -p %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; else true; fi
 etc/cups/mime.convs
 etc/cups/mime.types
 etc/cups/printers.conf.N
-@exec if ! /bin/test -f %D/etc/cups/printers.conf; then /bin/cp %D/etc/cups/printers.conf.N %D/etc/cups/printers.conf; else true; fi
+@exec if ! /bin/test -f %D/etc/cups/printers.conf; then /bin/cp -p %D/etc/cups/printers.conf.N %D/etc/cups/printers.conf; else true; fi
 etc/rc.d/cups.sh.sample
 include/cups/cups.h
 include/cups/http.h
