@@ -15,7 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME application for creating GNU gettext translation files
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 libgnomeui
+USE_GNOME=	gnomehack intlhack gnomeprefix gnometarget gnomevfs2 libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
