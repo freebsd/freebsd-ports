@@ -14,9 +14,8 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	GNOME 2 visual diff and merge tool
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
-
 USE_BZIP2=	yes
+USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
