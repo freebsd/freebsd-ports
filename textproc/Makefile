@@ -670,6 +670,7 @@
     SUBDIR += xmlstarlet
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
+    SUBDIR += xom
     SUBDIR += xp
     SUBDIR += xpp3
     SUBDIR += xslide.el
