@@ -1,0 +1,4 @@
+include/libmilter/mfapi.h
+lib/libmilter.a
+lib/libsmutil.a
+@dirrm include/libmilter
