@@ -13,7 +13,7 @@ PORTVERSION=	1.2.27
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.org
 
 USE_AUTOCONF=	YES	# unfortunately... see comments in patch-xa for details
 
