@@ -46,7 +46,7 @@ MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 
 .if !defined(LITE)
-MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  
+MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 MAKE_FLAGS:=	CONF_OPT_MAX="--enable-max-features" ${MAKE_FLAGS}
 
