@@ -1,0 +1,4 @@
+Obliterate overwrites the named file[s] with a pattern designed to
+securely remove the data from the surface of most modern disk drives.
+
+Author: Wes Peters <wes@softweyr.com>
