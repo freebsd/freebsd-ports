@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Apr  5 14:56:29 2003
++++ configure.in	Sat Apr  5 14:56:36 2003
+@@ -3,7 +3,7 @@
+ 
+ dnl If the user didn't specify the $sysconfdir on the command line, let it
+ dnl be /etc, not /usr/local/etc or /usr/etc
+-if [[ x$sysconfdir == 'x${prefix}/etc' ]]; then
++if [[ x$sysconfdir = 'x${prefix}/etc' ]]; then
+   sysconfdir=/etc
+ fi
+ 
