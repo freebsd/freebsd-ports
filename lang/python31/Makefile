@@ -68,6 +68,14 @@ PLIST_GMP=	${PKGDIR}/pkg-plist.gmp
 PLIST_TOOLS=	${PKGDIR}/pkg-plist.Tools
 .endif
 
+#
+# Install Demo/ by default.
+#
+.if !defined(WITHOUT_DEMO)
+PLIST_DEMO=	${PKGDIR}/pkg-plist.Demo
+DEMODIR=	${PREFIX}/share/examples/python
+.endif
+
 post-configure:
 	${CP} ${FILESDIR}/${SETUP_FILE} ${WRKSRC}/Modules/Setup
 .for file in ${SETUP_LOCAL}
@@ -107,16 +115,21 @@ pre-install:
 		${PREFIX}/lib/${PYTHON_VERSION}/${platform}/
 .endfor
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
+	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_DEMO} ${PKGDIR}/pkg-plist
 
 post-install:
 	strip ${PREFIX}/bin/python
 	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
-	@${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
+	@${MKDIR} ${PYTHON_SITELIBDIR}
 .if !defined(WITHOUT_TOOLS)
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${PREFIX}/lib/${PYTHON_VERSION}; tar xf -)
+		(cd ${PYTHON_LIBDIR}; tar xf -)
+.endif
+.if !defined(WITHOUT_DEMO)
+	@${MKDIR} ${DEMODIR}
+	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
+		(cd ${DEMODIR}; tar xf -)
 .endif
 
 .include <bsd.port.post.mk>
