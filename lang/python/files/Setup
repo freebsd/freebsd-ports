@@ -1,3 +1,4 @@
+# -*- makefile -*-
 # The file Setup is used by the makesetup script to construct the files
 # Makefile and config.c, from Makefile.pre and config.c.in,
 # respectively.  The file Setup itself is initially copied from
@@ -40,6 +41,9 @@
 # used to build modules as shared libraries.  (They must be installed
 # using "make sharedinstall".)  (For compatibility, *noconfig* has the
 # same effect as *shared*.)
+#
+# In addition, *static* reverses this effect (negating a previous
+# *shared* line).
 
 # NOTE: As a standard policy, as many modules as can be supported by a
 # platform should be present.  The distribution comes with all modules
@@ -87,6 +91,7 @@ regex regexmodule.c regexpr.c	# Regular expressions, GNU Emacs style
 pcre pcremodule.c pypcre.c	# Regular expressions, Perl style (for re.py)
 posix posixmodule.c		# posix (UNIX) system calls
 signal signalmodule.c		# signal(2)
+_sre _sre.c			# Fredrik Lundh's new regular expressions
 
 # The SGI specific GL module:
 
@@ -104,10 +109,9 @@ GLHACK=-Dclear=__GLclear
 
 # Uncommenting the following line tells makesetup that all following
 # modules are to be built as shared libraries (see above for more
-# detail):
+# detail; also note that *static* reverses this effect):
 
 #*shared*
-
 
 # GNU readline.  Unlike previous Python incarnations, GNU readline is
 # now incorporated in an optional module, configured in the Setup file
@@ -129,6 +133,10 @@ strop stropmodule.c	# fast string operations implemented in C
 struct structmodule.c	# binary structure packing/unpacking
 time timemodule.c # -lm	# time operations and variables
 operator operator.c	# operator.add() and similar goodies
+_codecs _codecsmodule.c	# access to the builtin codecs and codec registry
+
+unicodedata unicodedata.c unicodedatabase.c
+                        # static Unicode character database
 
 _locale _localemodule.c  # access to ISO C locale support
 
@@ -140,9 +148,15 @@ _locale _localemodule.c  # access to ISO C locale support
 fcntl fcntlmodule.c	# fcntl(2) and ioctl(2)
 pwd pwdmodule.c		# pwd(3) 
 grp grpmodule.c		# grp(3)
+errno errnomodule.c	# posix (UNIX) errno values
+mmap mmapmodule.c       # Memory-mapped files (also works on Win32)
 select selectmodule.c	# select(2); not on ancient System V
 socket socketmodule.c	# socket(2); not on ancient System V
 errno errnomodule.c	# posix (UNIX) errno values
+
+# Socket module compiled with SSL support; you must edit the SSL variable:
+#SSL=/usr
+#socket socketmodule.c -DUSE_SSL -I$(SSL)/include/openssl -lssl -lcrypto
 
 # The crypt module is now disabled by default because it breaks builds
 # on many systems (where -lcrypt is needed), e.g. Linux (I believe).
@@ -253,6 +267,11 @@ sha shamodule.c
 #sunaudiodev sunaudiodev.c
 
 
+# Linux specific modules -- off by default:
+
+#linuxaudiodev linuxaudiodev.c
+
+
 # George Neville-Neil's timing module:
 
 timing timingmodule.c
@@ -313,13 +332,13 @@ syslog syslogmodule.c		# syslog daemon interface
 # -lncurses instead of -lcurses; on SunOS 4.1.3, insert -I/usr/5include
 # -L/usr/5lib before -lcurses).
 
-curses cursesmodule.c -lmytinfo -lncurses -ltermcap
+_curses _cursesmodule.c -lmytinfo -lncurses -ltermcap
 
 
 
 # Tommy Burnette's 'new' module (creates new empty objects of certain kinds):
 
-#new newmodule.c
+new newmodule.c
 
 
 # Generic (SunOS / SVR4) dynamic loading module.
@@ -340,8 +359,7 @@ dl dlmodule.c
 
 dbm dbmmodule.c 	# dbm(3) may require -lndbm or similar
 
-# Anthony Baxter's gdbm module (derived from Jack's dbm module)
-# GNU dbm(3) will require -lgdbm:
+# Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
 
 #gdbm gdbmmodule.c -I/usr/local/include -L/usr/local/lib -lgdbm
 
@@ -361,7 +379,7 @@ bsddb bsddbmodule.o
 
 
 
-# David Wayne Williams' soundex module
+# David Wayne Williams' soundex module (obsolete -- this will disappear!)
 #soundex soundex.c
 
 # Helper module for various ascii-encoders
@@ -393,8 +411,26 @@ fpectl fpectlmodule.c
 fpetest fpetestmodule.c
 
 # Andrew Kuchling's zlib module.
-# This require zlib 1.0.4 (or later).  See http://quest.jpl.nasa.gov/zlib/
+# This require zlib 1.1.3 (or later).
+# See http://www.cdrom.com/pub/infozip/zlib/
 zlib zlibmodule.c -lz
+
+
+# Interface to the Expat XML parser
+#
+# Expat is written by James Clark and must be downloaded separately
+# (see below).  The pyexpat module was written by Paul Prescod after a
+# prototype by Jack Jansen.
+#
+# The Expat dist includes Windows .lib and .dll files.  Home page is at
+# http://www.jclark.com/xml/expat.html, the current production release is
+# always ftp://ftp.jclark.com/pub/xml/expat.zip.
+#
+# (Note: the expat build process doesn't yet build a libexpat.a; you can
+# do this manually while we try convince the author to add it.)
+#
+#EXPAT_DIR=/usr/local/src/expat/
+#pyexpat pyexpat.c -I$(EXPAT_DIR)/xmlparse -L$(EXPAT_DIR) -lexpat
 
 
 # Example -- included for reference only:

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Feb 23 10:43:15 1999
-+++ Makefile.in	Sun Aug 13 21:28:59 2000
-@@ -125,14 +125,14 @@
+--- Makefile.in.orig	Thu Aug  3 19:00:01 2000
++++ Makefile.in	Wed Aug 16 17:38:14 2000
+@@ -95,14 +95,14 @@
  # Modes for directories, executables and data files created by the
  # install process.  Default to group-writable directories but
  # user-only-writable for executables and data files.
@@ -18,3 +18,20 @@
  
  # Use this to make a link between python$(VERSION) and python in $(BINDIR)
  LN=@LN@
+@@ -259,7 +259,7 @@
+ # Install the library
+ PLATDIR=	plat-$(MACHDEP)
+ MACHDEPS=	$(PLATDIR)
+-LIBSUBDIRS=	lib-old lib-tk site-packages test test/output encodings \
++LIBSUBDIRS=	lib-old lib-tk site-packages test test/output curses encodings \
+ 		distutils distutils/command $(MACHDEPS)
+ libinstall:	python $(srcdir)/Lib/$(PLATDIR)
+ 		@for i in $(SCRIPTDIR) $(LIBDEST); \
+@@ -303,6 +303,7 @@
+ 				case $$i in \
+ 				*CVS) ;; \
+ 				*.py[co]) ;; \
++				*.orig) ;; \
+ 				*~) ;; \
+ 				*) \
+ 					if test -d $$i; then continue; fi; \
