@@ -17,7 +17,7 @@ EOF
 my $port_perl = '%%PREFIX%%/bin/perl';
 $port_perl =~ tr|/|/|s;
 
-my $ident = `/usr/bin/ident -q /usr/bin/perl5`;
+my $ident = `[ -r /usr/bin/perl5 ] && /usr/bin/ident -q /usr/bin/perl5`;
 
 @ARGV == 1 or usage();
 if ($ARGV[0] eq 'port') {
