@@ -1,0 +1,3 @@
+sbin/checkvm
+sbin/vmware-guestd
+etc/rc.d/vmware-guestd.sh
