@@ -5,7 +5,7 @@
  #else
  #	define DEFSHELL	"/bin/sh"
 -#	define HELPFILE UC "/opt/schily/man/help/ved.help"
-+#	define HELPFILE UC "%%PREFIX%%/share/ved.help"
++#	define HELPFILE UC "%%DATADIR%%/ved.help"
  #endif
  
  /*

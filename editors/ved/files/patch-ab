@@ -13,8 +13,8 @@
 -.SH "SEE ALSO"
 -.BR change "(1),"
 -.BR match "(1)."
-+.B %%PREFIX%%/share/ved.help
-+The on-line help file is installed in %%PREFIX%%/share
++.B %%DATADIR%%/ved.help
++The on-line help file is installed in %%DATADIR%%
  .SH NOTES
  To edit files greater than 2 GB, you need to compile
  .B ved

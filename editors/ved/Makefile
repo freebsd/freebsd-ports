@@ -6,34 +6,28 @@
 #
 
 PORTNAME=	ved
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/ved/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/ved/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small and fast screen-oriented editor.
+COMMENT=	A small and fast screen-oriented editor
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 MAN1=		ved.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 post-patch:
-.for F in ved.h ved.1
-	${SED} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/ved/$F \
-		> ${WRKSRC}/ved/foo
-	${MV} ${WRKSRC}/ved/foo ${WRKSRC}/ved/$F
+.for file in ved.h ved.1
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/ved/${file}
 .endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ved/OBJ/${ARCH}-freebsd-cc/ved \
 		${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ved/ved.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/ved/ved.help ${PREFIX}/share
+	${INSTALL_MAN} ${WRKSRC}/ved/ved.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ved/ved.help ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,2 +1,3 @@
 bin/ved
-share/ved.help
+%%DATADIR%%/ved.help
+@dirrm %%DATADIR%%
