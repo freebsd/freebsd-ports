@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	robodoc
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,6 +29,8 @@ do-install:
 .for file in AUTHORS ChangeLog NEWS README Docs/manual.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/Examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
