@@ -1,5 +1,8 @@
---- configure.orig	Mon Jan 22 10:48:18 2001
-+++ configure	Wed Jan 24 07:24:23 2001
+
+$FreeBSD$
+
+--- configure.orig	Thu Jul 26 21:13:35 2001
++++ configure	Mon Aug 13 19:09:01 2001
 @@ -574,7 +574,7 @@
  GIMP_VERSION=$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION.$GIMP_MICRO_VERSION
  
@@ -9,19 +12,7 @@
  LT_REVISION=$GIMP_INTERFACE_AGE
  LT_AGE=`expr $GIMP_BINARY_AGE - $GIMP_INTERFACE_AGE`
  
-@@ -3470,7 +3470,10 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
-+		   INTLDEPS='-lintl'
-+		   INTLLIBS=$INTLDEPS
-+		   LIBS=`echo $LIBS | sed -e 's/-lintl//'`
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
-@@ -7147,8 +7150,8 @@
+@@ -7116,8 +7116,8 @@
  
  fi
  
@@ -32,7 +23,7 @@
  gimpsysconfdir=$sysconfdir/$PACKAGE/$GIMP_MAJOR_VERSION.$GIMP_MINOR_VERSION
  
  localedir='${prefix}/${DATADIRNAME}/locale'
-@@ -8263,11 +8266,6 @@
+@@ -8234,11 +8234,6 @@
    *) # Relative path.
      srcdir="$ac_dots$ac_given_srcdir$ac_dir_suffix"
      top_srcdir="$ac_dots$ac_given_srcdir" ;;
