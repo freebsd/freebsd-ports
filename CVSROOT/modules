@@ -6891,6 +6891,7 @@ p5-MP3-Info	ports/audio/p5-MP3-Info
 p5-MPEG-ID3v2Tag	ports/audio/p5-MPEG-ID3v2Tag
 p5-Mac-FileSpec-Unixish	ports/devel/p5-Mac-FileSpec-Unixish
 p5-Mac-Macbinary	ports/archivers/p5-Mac-Macbinary
+p5-Mail-Address-MobileJp	ports/mail/p5-Mail-Address-MobileJp
 p5-Mail-Alias	ports/mail/p5-Mail-Alias
 p5-Mail-Audit	ports/mail/p5-Mail-Audit
 p5-Mail-Box	ports/mail/p5-Mail-Box
