@@ -6,5 +6,9 @@ share/gnome/goobox/glade/goo_cover_chooser.glade
 share/gnome/goobox/glade/goobox.glade
 share/gnome/pixmaps/goobox.png
 share/locale/ar/LC_MESSAGES/goobox.mo
+share/locale/en_CA/LC_MESSAGES/goobox.mo
+share/locale/ja/LC_MESSAGES/goobox.mo
+share/locale/zh_CN/LC_MESSAGES/goobox.mo
+@unexec rmdir %D/share/locale/ar 2> /dev/null || true
 @dirrm share/gnome/goobox/glade
 @dirrm share/gnome/goobox
