@@ -1,0 +1,17 @@
+--- gw/wml_compiler.c.orig	Sat Mar 30 22:08:15 2002
++++ gw/wml_compiler.c	Sat Mar 30 22:08:44 2002
+@@ -21,10 +21,10 @@
+ #include <string.h>
+ #include <math.h>
+ 
+-#include <xmlmemory.h>
+-#include <parser.h>
+-#include <tree.h>
+-#include <debugXML.h>
++#include <libxml/xmlmemory.h>
++#include <libxml/parser.h>
++#include <libxml/tree.h>
++#include <libxml/debugXML.h>
+ 
+ #include "gwlib/gwlib.h"
+ #include "wml_compiler.h"
