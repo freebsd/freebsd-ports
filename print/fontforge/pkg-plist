@@ -27,6 +27,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/Constrain2_1.png
 %%PORTDOCS%%share/doc/pfaedit/Constrain2_2.png
 %%PORTDOCS%%share/doc/pfaedit/CyrilItalicComp.png
+%%PORTDOCS%%share/doc/pfaedit/DisplayFonts.png
 %%PORTDOCS%%share/doc/pfaedit/Eback.png
 %%PORTDOCS%%share/doc/pfaedit/EbackTtf.png
 %%PORTDOCS%%share/doc/pfaedit/Efore.png
@@ -52,6 +53,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/LICENSE
 %%PORTDOCS%%share/doc/pfaedit/MetaFont.html
 %%PORTDOCS%%share/doc/pfaedit/MetricsView.png
+%%PORTDOCS%%share/doc/pfaedit/MultiPrint.png
 %%PORTDOCS%%share/doc/pfaedit/NoPointHint.png
 %%PORTDOCS%%share/doc/pfaedit/PageSetup.png
 %%PORTDOCS%%share/doc/pfaedit/PfaEdits.gif
@@ -63,6 +65,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/Shades4.png
 %%PORTDOCS%%share/doc/pfaedit/Spacem_1.png
 %%PORTDOCS%%share/doc/pfaedit/Spacem_2.png
+%%PORTDOCS%%share/doc/pfaedit/TilePath.png
 %%PORTDOCS%%share/doc/pfaedit/aacutebase.png
 %%PORTDOCS%%share/doc/pfaedit/aacutemid.png
 %%PORTDOCS%%share/doc/pfaedit/accented.html
@@ -83,12 +86,14 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/charview-vert.png
 %%PORTDOCS%%share/doc/pfaedit/charview.html
 %%PORTDOCS%%share/doc/pfaedit/charview2.png
+%%PORTDOCS%%share/doc/pfaedit/changelog.html
 %%PORTDOCS%%share/doc/pfaedit/cidmenu.html
 %%PORTDOCS%%share/doc/pfaedit/cliargs.html
 %%PORTDOCS%%share/doc/pfaedit/corpchar.html
 %%PORTDOCS%%share/doc/pfaedit/corpchar.txt
 %%PORTDOCS%%share/doc/pfaedit/cpodd.png
 %%PORTDOCS%%share/doc/pfaedit/diffs.html
+%%PORTDOCS%%share/doc/pfaedit/display.html
 %%PORTDOCS%%share/doc/pfaedit/document.nvd
 %%PORTDOCS%%share/doc/pfaedit/editexample.html
 %%PORTDOCS%%share/doc/pfaedit/editmenu.html
@@ -102,6 +107,10 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/faqFrame.html
 %%PORTDOCS%%share/doc/pfaedit/filemenu.html
 %%PORTDOCS%%share/doc/pfaedit/findprobs.png
+%%PORTDOCS%%share/doc/pfaedit/findprobs-cid.png
+%%PORTDOCS%%share/doc/pfaedit/findprobs-hint.png
+%%PORTDOCS%%share/doc/pfaedit/findprobs-paths.png
+%%PORTDOCS%%share/doc/pfaedit/findprobs-random.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-cid.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-comment.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-encoding.png
@@ -118,6 +127,8 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/fontview.ru.png
 %%PORTDOCS%%share/doc/pfaedit/future.html
 %%PORTDOCS%%share/doc/pfaedit/getinfo.html
+%%PORTDOCS%%share/doc/pfaedit/generate.html
+%%PORTDOCS%%share/doc/pfaedit/generate.png
 %%PORTDOCS%%share/doc/pfaedit/greymapedit.png
 %%PORTDOCS%%share/doc/pfaedit/greymapsavail.png
 %%PORTDOCS%%share/doc/pfaedit/helpmenu.html
@@ -133,6 +144,7 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/locale.html
 %%PORTDOCS%%share/doc/pfaedit/logo3.gif
 %%PORTDOCS%%share/doc/pfaedit/macformats.html
+%%PORTDOCS%%share/doc/pfaedit/mad.html
 %%PORTDOCS%%share/doc/pfaedit/metricsmenu.html
 %%PORTDOCS%%share/doc/pfaedit/metricsview.html
 %%PORTDOCS%%share/doc/pfaedit/newfont.png
@@ -149,6 +161,11 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/pnts.gif
 %%PORTDOCS%%share/doc/pfaedit/pointinfo.png
 %%PORTDOCS%%share/doc/pfaedit/pointmenu.html
+%%PORTDOCS%%share/doc/pfaedit/prefs-apps.png
+%%PORTDOCS%%share/doc/pfaedit/prefs-font.png
+%%PORTDOCS%%share/doc/pfaedit/prefs-generic.png
+%%PORTDOCS%%share/doc/pfaedit/prefs-script.png
+%%PORTDOCS%%share/doc/pfaedit/prefs.html
 %%PORTDOCS%%share/doc/pfaedit/print.html
 %%PORTDOCS%%share/doc/pfaedit/privatekey.png
 %%PORTDOCS%%share/doc/pfaedit/privatekeymenu.png
@@ -170,6 +187,16 @@ bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/splines.gif
 %%PORTDOCS%%share/doc/pfaedit/src.html
 %%PORTDOCS%%share/doc/pfaedit/strokechar.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-center.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-final.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-left.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-orig.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-right.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-scale.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-selection.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-tile.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath-ts.png
+%%PORTDOCS%%share/doc/pfaedit/tilepath.html
 %%PORTDOCS%%share/doc/pfaedit/tools.png
 %%PORTDOCS%%share/doc/pfaedit/transform.html
 %%PORTDOCS%%share/doc/pfaedit/transform.png
@@ -187,6 +214,7 @@ share/pfaedit/Adobe-Japan2-0.cidmap
 share/pfaedit/Adobe-Korea1-2.cidmap
 share/pfaedit/pfaedit-de.ui
 share/pfaedit/pfaedit-en.ui
+share/pfaedit/pfaedit-es.ui
 share/pfaedit/pfaedit-fr.ui
 share/pfaedit/pfaedit-ja.ui
 share/pfaedit/pfaedit-ru.ui
