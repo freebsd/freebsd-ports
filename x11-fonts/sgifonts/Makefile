@@ -8,7 +8,8 @@
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://oss.sgi.com/projects/sgilinux-combined/download/sgipropack1.4/MNT-INSTALL/SGI/SRPMS/
+MASTER_SITES=	ftp://patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/ \
+   ftp://ftp.rediris.es/sites/patches-europe.sgi.com/pub/linux/ProPack1.4/SRPMS/
 DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 
