@@ -1,16 +1,16 @@
---- src/Makefile.common.orig	Fri Oct 18 09:01:34 2002
-+++ src/Makefile.common	Tue Oct 22 07:31:47 2002
-@@ -18,17 +18,17 @@
+--- src/Makefile.common.orig	Wed Jan  8 03:12:14 2003
++++ src/Makefile.common	Wed Jan  8 03:13:59 2003
+@@ -20,17 +20,17 @@
  
- AR		= ar
+ RANLIB		= ranlib
  
 -CXXDEFS         = -DDEBUG
-+CXXDEFS         = 
++CXXDEFS         =
  
  INCDIR		= ../include
  
--CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall -O2
-+CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall $(CFLAGS)
+-CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -fPIC -Wall -O2
++CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -fPIC -Wall $(CFLAGS)
  
  LIBNAME		= libptypes.a
  LIBDEST		= ../lib
@@ -21,7 +21,7 @@
  SOREALNAME	= $(SONAME).$(SOVER)
  SODEST		= ../so
  
-@@ -72,7 +72,7 @@
+@@ -74,7 +74,7 @@
  	cp $@ $(LIBDEST)/
  
  $(SOREALNAME): $(LIBOBJS)
@@ -30,7 +30,7 @@
  	rm -f $(SONAME) ; ln -s $@ $(SONAME)
  	cp $@ $(SODEST)/
  	cd $(SODEST) ; rm -f $(SONAME) ; ln -s $@ $(SONAME) ; $(SOSTRIP) $@
-@@ -184,7 +184,8 @@
+@@ -190,7 +190,8 @@
  ptypes_test.o: ptypes_test.cxx $(HALL)
  
  ptypes_test: ptypes_test.o $(LIBNAME)

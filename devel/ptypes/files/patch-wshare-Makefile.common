@@ -13,14 +13,3 @@
 +CXXFLAGS    = $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall $(CFLAGS)
  
  BINDEST     = ../bin
- 
-@@ -36,7 +36,8 @@
- 
- 
- wshare: $(OBJS) ../lib/libptypes.a
--	$(CXX) $(CXXFLAGS) $(OBJS) $(LDLIBS) ../lib/libptypes.a -o $@
-+	$(CXX) $(CXXFLAGS) $(OBJS) $(LDLIBS) ../lib/libptypes.a -o $@ \
-+		${PTHREAD_LIBS} -lc_r
- 	cp $@ $(BINDEST)/
- 	strip $(BINDEST)/$@
- 
