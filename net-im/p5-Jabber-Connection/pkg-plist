@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Jabber/Connection.pm
+%%SITE_PERL%%/Jabber/NS.pm
+%%SITE_PERL%%/Jabber/NodeFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/Connection/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/Connection
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber
+@dirrm %%SITE_PERL%%/Jabber

@@ -1,0 +1,7 @@
+Jabber::Connection
+
+Jabber::Connection is a new Perl library for Jabber that provides
+the basic features for client and component connectivity, plus an
+xmlnode-like library for flexibly manipulating Jabber elements. 
+
+WWW: http://www.pipetree.com/jabber/jabberconnection/
