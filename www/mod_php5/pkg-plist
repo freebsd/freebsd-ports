@@ -270,7 +270,8 @@ lib/php/build/shtool
 @dirrm lib/php/Schedule
 @dirrm lib/php/XML
 @dirrm lib/php/build
-@dirrm lib/php/extensions/no-debug-%%NON%%zts-20010901
+@dirrm lib/php/extensions/no-debug-%%NON%%zts-20020429
 @dirrm lib/php/extensions
 @dirrm lib/php
-@exec mkdir -p %D/lib/php/extensions/no-debug-%%NON%%zts-20010901
+@exec mkdir -p %D/lib/php/extensions/no-debug-%%NON%%zts-20020429
+@exec mkdir -p %D/lib/php/Image
