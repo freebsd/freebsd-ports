@@ -1,0 +1,9 @@
+%%PYTHON_SITELIBDIR%%/io.py
+%%PYTHON_SITELIBDIR%%/io.pyc
+%%PYTHON_SITELIBDIR%%/io.pyo
+%%PYTHON_SITELIBDIR%%/rpy.py
+%%PYTHON_SITELIBDIR%%/rpy.pyc
+%%PYTHON_SITELIBDIR%%/rpy.pyo
+%%PYTHON_SITELIBDIR%%/rpy_version.py
+%%PYTHON_SITELIBDIR%%/rpy_version.pyc
+%%PYTHON_SITELIBDIR%%/rpy_version.pyo

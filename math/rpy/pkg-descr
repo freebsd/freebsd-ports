@@ -1,0 +1,8 @@
+RPy is a very simple, yet robust, Python interface to the R Programming
+Language. It can manage all kinds of R objects and can execute arbitrary
+R functions (including the graphic functions). All the errors from the
+R language are converted to Python exceptions. Any module that later were
+installed on the R system, can easily be used from within Python, without
+introducing any changes.
+
+WWW: http://rpy.sourceforge.net/
