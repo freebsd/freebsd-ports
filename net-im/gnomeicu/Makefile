@@ -3,10 +3,10 @@
 # Date created:				03/16/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1999/03/19 22:29:54 asami Exp $
+# $Id: Makefile,v 1.9 1999/04/07 16:23:52 nectar Exp $
 #
 
-DISTNAME=		gnomeicu-0.62a
+DISTNAME=		gnomeicu-0.64
 CATEGORIES=		net gnome
 MASTER_SITES=		ftp://gnomeicu.gdev.net/pub/gnomeicu/          \
 			http://www.nectar.com/distfiles/
