@@ -1,0 +1,21 @@
+--- camlburg/mkfile.orig	Tue Dec  2 14:16:57 2003
++++ camlburg/mkfile	Tue Dec  2 14:17:33 2003
+@@ -63,13 +63,13 @@
+ 	cp ocamlburgfix.1   $MANDIR/man1
+ 
+ install:V: all
+-	install        -D    ocamlburg      $install_bin/ocamlburg
+-	install        -D    ocamlburgfix   $install_bin/camlburgfix
+-	install -m 644 -D    ocamlburg.1    $install_man1/camlburg.1
+-	install -m 644 -D    ocamlburgfix.1 $install_man1/camlburgfix.1
++	install            ocamlburg      $install_bin/ocamlburg
++	install            ocamlburgfix   $install_bin/camlburgfix
++	install -m 644     ocamlburg.1    $install_man1/camlburg.1
++	install -m 644     ocamlburgfix.1 $install_man1/camlburgfix.1
+ 
+ install.opt:V: install all.opt
+-	install        -D -s ocamlburg.opt  $install_bin/ocamlburg.opt
++	install         -s ocamlburg.opt  $install_bin/ocamlburg.opt
+ 
+ dvi:V:          $DVI
+ html:V:         $HTML

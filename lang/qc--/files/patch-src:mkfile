@@ -1,0 +1,15 @@
+--- src/mkfile.orig	Tue Dec  2 14:27:06 2003
++++ src/mkfile	Tue Dec  2 14:27:22 2003
+@@ -61,10 +61,10 @@
+ update.opt:V:   $BINDIR/$NAME.opt
+ 
+ install:V: all
+-	install -D    $NAME     $install_bin/$NAME
++	install     $NAME     $install_bin/$NAME
+ 
+ install.opt:V: install all.opt
+-	install -D -s $NAME.opt $install_bin/$NAME.opt
++	install  -s $NAME.opt $install_bin/$NAME.opt
+ 
+ depend:V:   $DEPEND
+ 
