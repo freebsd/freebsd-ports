@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Apr  5 10:15:28 2001
++++ Makefile	Wed Dec 17 23:56:36 2003
+@@ -5,7 +5,7 @@
+ 
+ all: bamg cvmsh2 $(FLAGFILE)
+ 
+-INSTALLDIR=/usr/local/bin
++INSTALLDIR=$(PREFIX)/bin
+ FLAGFILE=FLAG.$(HOSTTYPE)
+ 
+ include $(FLAGFILE)

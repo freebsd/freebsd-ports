@@ -13,6 +13,7 @@
     SUBDIR += asir2000
     SUBDIR += atlas
     SUBDIR += atlas-devel
+    SUBDIR += bamg
     SUBDIR += biggles
     SUBDIR += blacs
     SUBDIR += blas
