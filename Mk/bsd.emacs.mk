@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.15 2001-10-23 17:14:25 shige Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.16 2001-12-01 17:54:54 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -59,9 +59,10 @@ Emacs_Include_MAINTAINER=	shige@FreeBSD.org
 #		run-depend on EMACS_PORT_NAME's emacsen.
 #
 
+EMACS_MASTERDIR_PKGFILES?=	NO
 
 # Emacs-19.x
-.if (${EMACS_PORT_NAME} == "emacs")
+.if (${EMACS_PORT_NAME} == "emacs") || (${EMACS_PORT_NAME} == "emacs19")
 EMACS_NAME=		emacs
 EMACS_VER=		19.34
 EMACS_MAJOR_VER=	19
@@ -70,6 +71,12 @@ EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		NO
+EMACS_NO_SUBDIRSEL=	YES
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.emacs19
+DESCR?=                 ${PKGDIR}/pkg-descr.emacs19
+PLIST?=                 ${PKGDIR}/pkg-plist.emacs19
+.endif
 
 # Emacs-20.x
 .elif (${EMACS_PORT_NAME} == "emacs20")
@@ -81,6 +88,12 @@ EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs20
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
 
 # Emacs-21.x
 .elif (${EMACS_PORT_NAME} == "emacs21")
@@ -92,6 +105,12 @@ EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/emacs21
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
 
 # Mule-19.x
 .elif (${EMACS_PORT_NAME} == "mule")
@@ -103,6 +122,12 @@ EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/mule
 EMACS_COMMON_PORT=	YES
 EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	YES
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
 
 # XEmacs-21.x
 .elif (${EMACS_PORT_NAME} == "xemacs21")
@@ -114,6 +139,12 @@ EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		NO
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
 
 # XEmacs-21.x with Mule
 .elif (${EMACS_PORT_NAME} == "xemacs21-mule")
@@ -125,6 +156,12 @@ EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
 EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21-mule
 EMACS_COMMON_PORT=	YES
 EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
 
 .else
 .BEGIN:
@@ -168,8 +205,12 @@ RUN_DEPENDS+=	${EMACS_CMD}:${EMACS_PORTSDIR}
 MAKE_ARGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
 SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} \
 		EMACS_VER=${EMACS_VER} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER}
+		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
+		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR} \
+		EMACS_VERSION_SITE_LISPDIR=${EMACS_VERSION_SITE_LISPDIR}
 # pkg/PLIST substrings
 PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} \
 		EMACS_VER=${EMACS_VER} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER}
+		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
+		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR} \
+		EMACS_VERSION_SITE_LISPDIR=${EMACS_VERSION_SITE_LISPDIR}
