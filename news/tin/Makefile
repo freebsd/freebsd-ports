@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.56 1998/02/27 10:46:57 obrien Exp $
+# $Id: Makefile,v 1.57 1998/04/05 15:07:22 ache Exp $
 #
 
 DISTNAME=       tinpre-1.4-980226
@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
 		 --with-libdir=${PREFIX}/news/lib \
-		 --with-mime-default-charset=US-ASCII \
+		 --with-mime-default-charset=ISO-8859-1 \
 		 --enable-forgery \
 		 --enable-break-long-lines \
 		 --with-pgp=${PREFIX}/bin/pgp \
