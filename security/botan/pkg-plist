@@ -6,6 +6,7 @@ include/botan/base.h
 include/botan/base64.h
 include/botan/bigint.h
 include/botan/blowfish.h
+include/botan/botan
 include/botan/botan.h
 include/botan/buf_filt.h
 include/botan/cast128.h
@@ -126,8 +127,8 @@ include/botan/xtea.h
 @dirrm include/botan
 lib/libbotan.a
 lib/libbotan-%%PORTVERSION%%.so
-lib/libbotan-0.9.so
-lib/libbotan-0.so
+lib/libbotan-1.0.so
+lib/libbotan-1.so
 lib/libbotan.so
 share/doc/botan-%%PORTVERSION%%/api.ps
 share/doc/botan-%%PORTVERSION%%/api.tex
