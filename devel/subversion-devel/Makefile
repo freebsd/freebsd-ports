@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.31.0
+PORTVERSION=	0.32.1
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.collab.net/tarballs/
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-ssl \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
 		--with-swig=no
 
-MAN1=		svn.1 svnadmin.1 svnlook.1
+MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnserve.1 svnversion.1
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
@@ -170,8 +170,8 @@ post-install:
 . endif
 	@${MKDIR} ${SVNREPOS}
 	@${PREFIX}/bin/svnadmin create ${SVNREPOS}
-	@${CHGRP} ${SVNGROUP} ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock
-	@${CHMOD} g+w ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock
+	@${CHGRP} ${SVNGROUP} ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock ${SVNREPOS}/dav
+	@${CHMOD} g+w ${SVNREPOS}/db ${SVNREPOS}/locks/db.lock ${SVNREPOS}/dav
 	@for i in ${SVNREPOS}/db/* ; do \
 	    i=$${i##*/}; \
 	    case $$i in \
