@@ -3,7 +3,7 @@
 # Date created:		01 January 1995
 # Whom:			thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.6 1996/03/06 08:19:49 asami Exp $
+# $Id: Makefile,v 1.7 1996/04/18 08:47:07 tg Exp $
 #
 
 DISTNAME=	acs021
@@ -14,6 +14,6 @@ MASTER_SITES=	ftp://mammoth.lle.rochester.edu/pub/local/acs/ \
 		ftp://ee.rochester.edu/pub/acs/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
+MAINTAINER=	tg@freebsd.org
 
 .include <bsd.port.mk>
