@@ -26,10 +26,10 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/perltidy
-.for file in perltidy perl2web tutorial
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog perl2web perltidy tutorial
 .for ext in html txt
-	${CP} ${WRKSRC}/docs/${file}.${ext} ${PREFIX}/share/doc/perltidy/
+	${INSTALL_DATA} ${WRKSRC}/docs/${file}.${ext} ${DOCSDIR}
 .endfor
 .endfor
 .endif
