@@ -7,6 +7,7 @@
 
 PORTNAME=	libvorbis
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
@@ -20,7 +21,7 @@ MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 

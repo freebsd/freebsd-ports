@@ -1,7 +1,17 @@
+
 $FreeBSD$
---- configure.orig	Mon Jun 18 18:08:30 2001
-+++ configure	Tue Jul 17 03:07:30 2001
-@@ -1492,7 +1492,7 @@ if test -z "$GCC"; then
+
+--- configure.orig	Fri Jul 19 16:13:10 2002
++++ configure	Sat Oct  5 17:51:53 2002
+@@ -5363,6 +5363,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5388,7 +5389,7 @@
  		;;
          *)
                  DEBUG="-g"
@@ -10,7 +20,7 @@ $FreeBSD$
                  PROFILE="-g -p" 
  		;;
          esac
-@@ -1514,9 +1514,9 @@ else
+@@ -5410,9 +5411,9 @@
  		PROFILE="-fno-common -O4 -Wall -pg -g -fsigned-char -ffast-math"
  		;;
          *)

@@ -7,6 +7,7 @@
 
 PORTNAME=	libogg
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
@@ -18,7 +19,7 @@ MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
 
 MAINTAINER=	naddy@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)

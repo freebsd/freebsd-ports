@@ -3,15 +3,12 @@ include/vorbis/codec.h
 include/vorbis/vorbisenc.h
 include/vorbis/vorbisfile.h
 lib/libvorbis.a
-lib/libvorbis.la
 lib/libvorbis.so
 lib/libvorbis.so.2
 lib/libvorbisenc.a
-lib/libvorbisenc.la
 lib/libvorbisenc.so
 lib/libvorbisenc.so.2
 lib/libvorbisfile.a
-lib/libvorbisfile.la
 lib/libvorbisfile.so
 lib/libvorbisfile.so.3
 share/aclocal/vorbis.m4
