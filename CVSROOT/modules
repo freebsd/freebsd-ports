@@ -1243,6 +1243,7 @@ docbook-tdg	ports/textproc/docbook-tdg
 docbook-to-man	ports/textproc/docbook-to-man
 docbook-xml	ports/textproc/docbook-xml
 docbook-xsl	ports/textproc/docbook-xsl
+docbookide.el	ports/textproc/docbookide.el
 doconfig	ports/sysutils/doconfig
 docproj		ports/textproc/docproj
 dog		ports/misc/dog
