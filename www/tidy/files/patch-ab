@@ -1,8 +1,13 @@
---- platform.h.orig	Mon Jun 28 07:22:09 1999
-+++ platform.h	Wed Jun 30 23:17:07 1999
-@@ -4,13 +4,13 @@
-   See tidy.c for the copyright notice.
- */
+--- platform.h.orig	Sat Nov 13 23:41:32 1999
++++ platform.h	Sat Nov 13 23:42:40 1999
+@@ -17,17 +17,17 @@
+   It enables tidy to find config files named ~/.tidyrc
+   and ~your/.tidyrc etc if the HTML_TIDY environment
+   variable is not set. Contributed by Todd Lewis.
++*/
+ 
+ #define SUPPORT_GETPWNAM
+-*/
  
 +#include <sys/types.h>
  #include <ctype.h>
@@ -14,4 +19,4 @@
 -#include <malloc.h>
  #include <assert.h>
  
- #define ACCESS_URL  "http://www.w3.org/WAI/GL"
+ #ifdef SUPPORT_GETPWNAM
