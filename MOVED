@@ -1064,3 +1064,5 @@ japanese/gd1|japanese/gd|2004-05-01|removed (obsolete)
 russian/gd|ukrainian/gd|2004-05-01|removed (obsolete)
 graphics/gd1|graphics/gd|2004-05-01|removed (obsolete)
 lang/pike75|lang/pike76|2004-05-06|finished repocopy
+net/coda_doc||2004-05-07|finished removing coda 4.x
+net/coda_intro||2004-05-07|finished removing coda 4.x
