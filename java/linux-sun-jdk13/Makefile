@@ -38,7 +38,7 @@ JDK_VERSION=	1.3.1
 JDK_REVISION=	03
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
-DOWNLOAD_URL?=	http://java.sun.com/j2se/1.3/download-linux.html
+DOWNLOAD_URL?=	http://java.sun.com/Download5?config-file=j2sdk-1_3_1_03.config&platform=linux-i386
 
 .include <bsd.port.pre.mk>
 
