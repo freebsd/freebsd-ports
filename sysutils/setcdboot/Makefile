@@ -9,23 +9,21 @@
 PORTNAME=	setcdboot
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	# part of port
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
-DISTDIR=	${FILESDIR}
+
+do-fetch:
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+	${MKDIR} ${WRKDIR}
+	${CP} ${FILESDIR}/setcdboot.c ${WRKDIR}
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${DISTNAME} ${DISTNAME}.c)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o setcdboot setcdboot.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/setcdboot ${PREFIX}/bin
 
 .include <bsd.port.mk>
