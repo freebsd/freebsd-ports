@@ -12,7 +12,7 @@ CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	hmendes@brturbo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitors the progress of the SETI@home client
 
 USE_BZIP2=	yes

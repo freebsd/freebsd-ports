@@ -13,7 +13,7 @@ MASTER_SITES=	http://xavier.serpaggi.free.fr/seti/
 PKGNAMEPREFIX=	gkrellm
 DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
-MAINTAINER=	hmendes@brturbo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SETI@home plugin for GKrellM
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
