@@ -3710,4 +3710,36 @@ misc.c:
       <entry>2004-07-02</entry>
     </dates>
   </vuln>
+
+  <vuln vid="4d837296-cc28-11d8-a54c-02e0185c0b53">
+    <topic>GNATS local privilege elevation</topic>
+    <affects>
+      <package>
+        <name>gnats</name>
+        <range><le>3.113.1_7</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>GNATS 3.113.1 contains multiple buffer overflows, through which a
+          local attacker could gain elevated privileges on the system.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/56006</freebsdpr>
+      <mlist msgid="20040625164231.7437.qmail@www.securityfocus.com">http://www.securityfocus.com/archive/1/326337</mlist>
+      <url>http://www.securiteam.com/unixfocus/5CP0N0UAAA.html</url>
+      <url>http://secunia.com/advisories/9096</url>
+      <url>http://x82.inetcop.org/h0me/adv1sor1es/INCSA.2003-0x82-018-GNATS-bt.txt</url>
+      <url>http://www.gnu.org/software/gnats/gnats.html</url>
+      <url>http://www.osvdb.org/2190</url>
+      <url>http://www.osvdb.org/4600</url>
+      <url>http://www.osvdb.org/4601</url>
+      <url>http://www.osvdb.org/4607</url>
+    </references>
+    <dates>
+      <discovery>2003-06-21</discovery>
+      <entry>2004-07-02</entry>
+    </dates>
+  </vuln>
 </vuxml>
