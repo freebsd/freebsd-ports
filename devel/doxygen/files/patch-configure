@@ -1,0 +1,8 @@
+--- configure.orig	Tue Feb  8 21:07:17 2005
++++ configure	Tue Feb  8 21:07:22 2005
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ #
+ # $Id: configure,v 1.9 2001/03/19 19:27:34 root Exp $
+ #
