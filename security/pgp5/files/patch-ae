@@ -1,0 +1,19 @@
+--- lib/pgp/random/pgpRndPool.c.orig	Sat Aug  9 14:45:13 1997
++++ lib/pgp/random/pgpRndPool.c	Sun Jan  9 12:23:07 2000
+@@ -292,13 +292,14 @@
+ * safely underestimated if desired, if a 64-bit product is difficult to
+ * compute.
+ *
+-* The simplest snd safest definition is
++* The simplest and safest definition is
+ * #define UMULH_32(r,a,b) (r) = 0
+ */
+ #ifndef UMULH_32
+ #if defined(__GNUC__) && defined(__i386__)
+ /* Inline asm goodies */
+-#define UMULH_32(r,a,b) __asm__("mull %2" : "=d"(r) : "%a"(a), "mr"(b) : "ax")
++/* WAS: #define UMULH_32(r,a,b) __asm__("mull %2" : "=d"(r) : "%a"(a), "mr"(b) : "ax") */
++#define UMULH_32(r,a,b) __asm__("mull %2" : "=d"(r), "=a"(a)/*unused, but needed due to new clobberlist restrictions*/ : "%1"(a), "mr"(b))
+ #elif HAVE64
+ #define UMULH_32(r,a,b) ((r) = (word32)((word64)(a) * (b) >> 32))
+ #else
