@@ -1,0 +1,21 @@
+--- src/callbacks.c.orig	Tue Nov  5 08:44:15 2002
++++ src/callbacks.c	Tue Nov  5 11:00:58 2002
+@@ -74,6 +74,9 @@
+ 	extern RIG *myrig;
+ #endif
+ 
++/* qsort/bsearch callback functions */
++typedef int (*compar_callback_fn) (const void *, const void *);
++
+ /* ABOUT DIALOG */
+ void on_aboutbutton_clicked (GtkButton *button, gpointer user_data)
+ {
+@@ -1627,7 +1630,7 @@
+ 		if (fields[i] != logw->logfields[i]) break;
+ 
+ 	/* copy and re-order the array */
+-	qsort(fields, QSO_FIELDS, sizeof(gint), (__compar_fn_t)compare_fields);
++	qsort(fields, QSO_FIELDS, sizeof(gint), (compar_callback_fn)compare_fields);
+ 	if (i < QSO_FIELDS)
+ 	{
+ 		for (i = 0; i < QSO_FIELDS; i++)

@@ -50,6 +50,7 @@
     SUBDIR += vrflash
     SUBDIR += wy60
     SUBDIR += xcept
+    SUBDIR += xlog
     SUBDIR += yaps
     SUBDIR += yawmppp
     SUBDIR += zmtx-zmrx
