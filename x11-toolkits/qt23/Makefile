@@ -24,6 +24,7 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 
 CONFLICTS=	qt-3.*
 
+NO_LATEST_LINK=	yes
 WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
 USE_GMAKE=	yes
@@ -38,7 +39,7 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-L${LOCALBASE}/lib
 
 .if defined(QT_DEBUG)
-CONFIGURE_ARGS+= -debug
+CONFIGURE_ARGS+=	-debug
 .endif
 
 CONFIGURE_ENV=	${ECHO_CMD} yes | QTDIR=${WRKSRC}
