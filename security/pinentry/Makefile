@@ -28,6 +28,8 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 INFO=		pinentry
 
+CONFIGURE_ARGS+=--with-libiconv-prefix=${LOCALBASE}
+
 .if defined(PINENTRY_QT) || defined(PINENTRY_GTK) || defined(PINENTRY_CURSES)
 .if defined(PINENTRY_QT)
 USE_QT_VER=	3
@@ -39,7 +41,6 @@ PLIST_SUB+=	WITH_QT="@comment "
 
 .if defined(PINENTRY_GTK)
 USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib --with-extra-includes=${LOCALBASE}/include
 PLIST_SUB+=	WITH_GTK=""
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk
@@ -47,7 +48,6 @@ PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
 .if defined(PINENTRY_CURSES)
-CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib --with-extra-includes=${LOCALBASE}/include
 PLIST_SUB+=	WITH_CURSES=""
 .else
 CONFIGURE_ARGS+=--disable-pinentry-curses
