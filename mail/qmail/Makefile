@@ -38,7 +38,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.fidnet.com/%SUBDIR%/ \
 	http://qmail.mscnetworks.com/%SUBDIR%/ \
-	http://www.qmail.org/%SUBDIR%/ \
 	http://qmail.teleglobe.net/%SUBDIR%/ \
 	http://qmail.homegrownhost.net/%SUBDIR%/ \
 	http://qmail.webmast.com/%SUBDIR%/ \
