@@ -21,7 +21,8 @@ LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 WRKSRC=		${WRKDIR}/gtk-xfce-engine-${PORTVERSION}
 
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 
