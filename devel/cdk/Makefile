@@ -8,6 +8,7 @@
 
 PORTNAME=		cdk
 PORTVERSION=		4.9.10
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=	http://www.vexus.ca/release/
 DISTNAME=	cdk
