@@ -1,4 +1,3 @@
-@name ecasound-1.8.5d15
 bin/ecaconvert
 bin/ecafixdc
 bin/ecanormalize
@@ -7,19 +6,19 @@ bin/ecasignalview
 bin/ecasound
 bin/ecasound-config
 bin/ecasoundc-config
+include/ecasound/audio-stamp.h
 include/ecasound/audiofx.h
 include/ecasound/audiofx_amplitude.h
 include/ecasound/audiofx_analysis.h
 include/ecasound/audiofx_compressor.h
 include/ecasound/audiofx_envelope_modulation.h
 include/ecasound/audiofx_filter.h
-include/ecasound/audiofx_impl.h
 include/ecasound/audiofx_ladspa.h
+include/ecasound/audiofx_misc.h
 include/ecasound/audiofx_mixing.h
 include/ecasound/audiofx_rcfilter.h
 include/ecasound/audiofx_reverb.h
 include/ecasound/audiofx_timebased.h
-include/ecasound/audiofx_vst.h
 include/ecasound/audiogate.h
 include/ecasound/audioio-buffered-proxy.h
 include/ecasound/audioio-cdr.h
@@ -47,12 +46,10 @@ include/ecasound/ctrl-source.h
 include/ecasound/dynamic-object.h
 include/ecasound/dynamic-parameters.h
 include/ecasound/eca-audio-format.h
-include/ecasound/eca-audio-object-map.h
 include/ecasound/eca-audio-objects.h
 include/ecasound/eca-audio-position.h
 include/ecasound/eca-audio-time.h
 include/ecasound/eca-chain.h
-include/ecasound/eca-chainop-map.h
 include/ecasound/eca-chainop.h
 include/ecasound/eca-chainsetup-position.h
 include/ecasound/eca-chainsetup.h
@@ -62,16 +59,13 @@ include/ecasound/eca-control-dump.h
 include/ecasound/eca-control-interface.h
 include/ecasound/eca-control-objects.h
 include/ecasound/eca-control.h
-include/ecasound/eca-controller-map.h
 include/ecasound/eca-debug.h
 include/ecasound/eca-error.h
 include/ecasound/eca-fileio-mmap.h
 include/ecasound/eca-fileio-stream.h
 include/ecasound/eca-fileio.h
 include/ecasound/eca-iamode-parser.h
-include/ecasound/eca-ladspa-plugin-map.h
 include/ecasound/eca-main.h
-include/ecasound/eca-midi.h
 include/ecasound/eca-object-factory.h
 include/ecasound/eca-object-map.h
 include/ecasound/eca-object.h
@@ -81,7 +75,6 @@ include/ecasound/eca-resources.h
 include/ecasound/eca-session.h
 include/ecasound/eca-static-object-maps.h
 include/ecasound/eca-version.h
-include/ecasound/eca-vst-plugin-map.h
 include/ecasound/ecasoundc.h
 include/ecasound/file-preset.h
 include/ecasound/finite-envelope.h
@@ -91,6 +84,12 @@ include/ecasound/ladspa.h
 include/ecasound/layer.h
 include/ecasound/linear-envelope.h
 include/ecasound/midi-cc.h
+include/ecasound/midi-client.h
+include/ecasound/midi-parser.h
+include/ecasound/midi-server.h
+include/ecasound/midiio-raw.h
+include/ecasound/midiio.h
+include/ecasound/osc-gen-file.h
 include/ecasound/osc-gen.h
 include/ecasound/osc-sine.h
 include/ecasound/oscillator.h
@@ -102,6 +101,7 @@ include/ecasound/samplebuffer.h
 include/ecasound/samplebuffer_functions.h
 include/ecasound/samplebuffer_impl.h
 include/ecasound/samplebuffer_iterators.h
+include/ecasound/stamp-ctrl.h
 include/ecasound/two-stage-linear-envelope.h
 include/kvutils/com_line.h
 include/kvutils/definition_by_contract.h
@@ -111,38 +111,30 @@ include/kvutils/locks.h
 include/kvutils/message_item.h
 include/kvutils/object_queue.h
 include/kvutils/procedure_timer.h
+include/kvutils/temporary_file_directory.h
 include/kvutils/value_queue.h
+lib/ecasound-plugins/libaudioio_af.so
+lib/ecasound-plugins/libaudioio_alsa.so
+lib/ecasound-plugins/libaudioio_alsa2.so
+lib/ecasound-plugins/libaudioio_alsa2_plugin.so
+lib/ecasound-plugins/libaudioio_alsa3.so
+lib/ecasound-plugins/libaudioio_alsa3_pcm.so
+lib/ecasound-plugins/libaudioio_alsalb.so
+lib/ecasound-plugins/libaudioio_arts.so
 lib/libecasound.a
-lib/libecasound.la
 lib/libecasound.so
 lib/libecasound.so.7
 lib/libecasoundc.a
-lib/libecasoundc.la
 lib/libecasoundc.so
 lib/libecasoundc.so.0
 lib/libkvutils.a
-lib/libkvutils.la
 lib/libkvutils.so
 lib/libkvutils.so.2
-lib/ecasound-plugins/libaudioio_af.la
-lib/ecasound-plugins/libaudioio_af.so
-lib/ecasound-plugins/libaudioio_alsa.la
-lib/ecasound-plugins/libaudioio_alsa.so
-lib/ecasound-plugins/libaudioio_alsa2.la
-lib/ecasound-plugins/libaudioio_alsa2.so
-lib/ecasound-plugins/libaudioio_alsa2_plugin.la
-lib/ecasound-plugins/libaudioio_alsa2_plugin.so
-lib/ecasound-plugins/libaudioio_alsa3.la
-lib/ecasound-plugins/libaudioio_alsa3.so
-lib/ecasound-plugins/libaudioio_alsalb.la
-lib/ecasound-plugins/libaudioio_alsalb.so
-lib/ecasound-plugins/libaudioio_arts.la
-lib/ecasound-plugins/libaudioio_arts.so
 share/ecasound/effect_presets
 share/ecasound/generic_oscillators
+%%WITH_PYECASOUND%%lib/%%PYTHON_VERSION%%/site-packages/libpyecasound.so
+%%WITH_PYECASOUND%%lib/%%PYTHON_VERSION%%/site-packages/pyeca.py
 @dirrm share/ecasound
-@dirrm include/ecasound
 @dirrm lib/ecasound-plugins
-@unexec rmdir %D/lib/python1.5/site-packages 2>/dev/null || true
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@dirrm include/ecasound
+@dirrm include/kvutils
