@@ -7,18 +7,11 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	0.30d
-PORTREVISION=	1
+PORTVERSION=	0.31
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	easytag-${PORTVERSION:S/d$//}
-
-PATCHFILES=	patch_easytag_030_030a.diff patch_easytag_030a_030b.diff \
-		patch_easytag_030b_030c.diff patch_easytag_030c_030d.diff
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	${PORTNAME}
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	roddie@krweb.net
 COMMENT=	Tag editor for MP3 and OGG files
