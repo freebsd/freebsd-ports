@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.chiark.greenend.org.uk/users/ian/adns/
 MASTER_SITE_SUBDIR=	adns
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use, asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes

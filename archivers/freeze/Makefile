@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/compression/
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compression program - often used in QNX
 
 GNU_CONFIGURE=	yes
