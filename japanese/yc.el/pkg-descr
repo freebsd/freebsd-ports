@@ -1,7 +1,7 @@
 Yet another Canna client
 
 YC is a Japanese input method on Emacs/XEmacs. YC is written in
-emacs lisp and access to Canna server directly. YC works well even if
-your Emacs does not support Canna.
+emacs lisp and can access to Canna server directly.
+YC works well even if your Emacs does not support Canna.
 
 WWW: http://www.ceres.dti.ne.jp/~knak/yc.html
