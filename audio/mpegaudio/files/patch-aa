@@ -4,7 +4,7 @@
  ALL : musicin musicout
  
 -CFLAGS =  -O2
-+CFLAGS += -DTABLES_PATH=\"${PREFIX}/share/mepgaudio/tables\"
++CFLAGS += -DTABLES_PATH=\"${PREFIX}/share/mpegaudio/tables\"
  LDFLAGS= 
  
 +all: musicin musicout
