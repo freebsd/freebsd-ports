@@ -1,9 +1,1 @@
 This package offers UTF-8 locales for several languages.
-
-Currently supported locales are:
- o en_US.UTF-8
- o ko_KR.UTF-8
- o ja_JP.UTF-8
- o ru_RU.UTF-8
- o zh_CN.UTF-8
- o zh_TW.UTF-8

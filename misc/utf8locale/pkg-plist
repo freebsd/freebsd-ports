@@ -1,45 +1,6 @@
-share/locale/en_US.UTF-8/LC_COLLATE
-share/locale/en_US.UTF-8/LC_CTYPE
-share/locale/en_US.UTF-8/LC_MESSAGES
-share/locale/en_US.UTF-8/LC_MONETARY
-share/locale/en_US.UTF-8/LC_NUMERIC
-share/locale/en_US.UTF-8/LC_TIME
-share/locale/ja_JP.UTF-8/LC_COLLATE
-share/locale/ja_JP.UTF-8/LC_CTYPE
-share/locale/ja_JP.UTF-8/LC_MESSAGES
-share/locale/ja_JP.UTF-8/LC_MONETARY
-share/locale/ja_JP.UTF-8/LC_NUMERIC
-share/locale/ja_JP.UTF-8/LC_TIME
-share/locale/ko_KR.UTF-8/LC_COLLATE
-share/locale/ko_KR.UTF-8/LC_CTYPE
-share/locale/ko_KR.UTF-8/LC_MESSAGES
-share/locale/ko_KR.UTF-8/LC_MONETARY
-share/locale/ko_KR.UTF-8/LC_NUMERIC
-share/locale/ko_KR.UTF-8/LC_TIME
-share/locale/ru_RU.UTF-8/LC_COLLATE
-share/locale/ru_RU.UTF-8/LC_CTYPE
-share/locale/ru_RU.UTF-8/LC_MONETARY
-share/locale/ru_RU.UTF-8/LC_MESSAGES
-share/locale/ru_RU.UTF-8/LC_TIME
-share/locale/zh_CN.UTF-8/LC_COLLATE
-share/locale/zh_CN.UTF-8/LC_CTYPE
-share/locale/zh_CN.UTF-8/LC_MONETARY
-share/locale/zh_CN.UTF-8/LC_MESSAGES
-share/locale/zh_CN.UTF-8/LC_TIME
-share/locale/zh_TW.UTF-8/LC_COLLATE
-share/locale/zh_TW.UTF-8/LC_CTYPE
-share/locale/zh_TW.UTF-8/LC_MONETARY
-share/locale/zh_TW.UTF-8/LC_MESSAGES
-share/locale/zh_TW.UTF-8/LC_TIME
 share/locale/la_LN.UTF-8/LC_COLLATE
 share/locale/la_LN.UTF-8/LC_CTYPE
 @dirrm share/locale/la_LN.UTF-8
-@dirrm share/locale/zh_TW.UTF-8
-@dirrm share/locale/zh_CN.UTF-8
-@dirrm share/locale/ru_RU.UTF-8
-@dirrm share/locale/ko_KR.UTF-8
-@dirrm share/locale/ja_JP.UTF-8
-@dirrm share/locale/en_US.UTF-8
 @unexec rmdir %D/share/locale 2>/dev/null || true
 @exec for lang in %%LANGS%%; do ln -sf %D/share/locale/$lang.UTF-8 %%BASELOCALEDIR%%/; done
 @unexec for lang in %%LANGS%%; do rm -f %%BASELOCALEDIR%%/$lang.UTF-8; done
