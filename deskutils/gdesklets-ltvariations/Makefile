@@ -7,7 +7,7 @@
 
 PORTNAME=	ltvariations
 PORTVERSION=	0.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
