@@ -47,6 +47,7 @@
     SUBDIR += gimp1
     SUBDIR += gimp1-i18n
     SUBDIR += giram
+    SUBDIR += glx
     SUBDIR += gphoto
     SUBDIR += gplot
     SUBDIR += gqview
