@@ -1,0 +1,16 @@
+--- GNUmakefile.old	Mon Aug 23 21:10:15 2004
++++ GNUmakefile	Mon Aug 23 21:10:38 2004
+@@ -1,11 +1,11 @@
+ 
+ DESTDIR	:=
+-prefix	:= /usr/local
++prefix	:= $(PREFIX)
+ 
+ incdir	:= $(DESTDIR)$(prefix)/include
+ libdir	:= $(DESTDIR)$(prefix)/lib
+ 
+-CC	:= gcc
++CC	?= gcc
+ WARN	:= -Wall -Wmissing-prototypes -Wstrict-prototypes -Wpointer-arith
+ CFLAGS	?= -g -O2
+ CFLAGS	+= $(WARN)
