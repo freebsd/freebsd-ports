@@ -348,6 +348,7 @@
     SUBDIR += proxytunnel
     SUBDIR += pscan
     SUBDIR += putty
+    SUBDIR += pwauth
     SUBDIR += pwman
     SUBDIR += pxytest
     SUBDIR += py-cryptkit

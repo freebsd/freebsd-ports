@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Oct 14 10:01:13 2004
++++ Makefile	Thu Oct 14 10:09:38 2004
+@@ -6,9 +6,7 @@
+ #   LOCALFLAGS=   compiler flags.  Usually -g, -O, and stuff like that.
+ 
+ # Settings for author's system (Redhat 6.1)
+-CC=gcc
+-LIB= -lcrypt
+-LOCALFLAGS= -g 
++LIB= -lcrypt -lpam
+ 
+ # For PAM on Redhat Linux
+ # LIB=-lpam -ldl
+@@ -18,7 +16,7 @@
+ 
+ # -------------------- No User Servicable Parts Below -----------------------
+ 
+-CFLAGS= $(LOCALFLAGS)
++all: pwauth
+ 
+ pwauth: pwauth.o
+ 	$(CC) -o pwauth $(CFLAGS) pwauth.o $(LIB)
