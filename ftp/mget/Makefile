@@ -19,8 +19,10 @@ CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS:S/"//g}
 LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS:S/"//g}
 
+USE_REINPLACE=	yes
+
 pre-patch:
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
 		's|#include <malloc.h>||g'
 
 do-build:
