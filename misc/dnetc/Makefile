@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.8018.472
+PORTVERSION=	2.9001.478
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -33,7 +33,7 @@ BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages firs
 
 MAINTAINER=	dbaker@FreeBSD.org
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/dnetc-freebsd-x86-elf
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net

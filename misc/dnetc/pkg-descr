@@ -1,6 +1,7 @@
-This is the distributed.net's rc5 and ogr brute force
-cracking client.  DES and CSC cores are no longer
-included in the client.
+This is the distributed.net's distributed computing
+client.  This client contains the modules for OGR
+and RC5-72.  DES, CSC, and RC5-64 are no longer
+included in this client.
 
 As a "loosely knit" group of computer users from all
 over the world, we take up challenges which require
@@ -17,8 +18,5 @@ For general help with the client or distributed.net, mail:
 
 For specific information regarding this port/package, mail:
 	dbaker@distributed.net or dbaker@cuckoo.com
-
-
-http://www.distributed.net/cgi-bin/dnet-finger.cgi?user=dbaker
 
 WWW: http://www.distributed.net/
