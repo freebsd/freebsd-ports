@@ -42,6 +42,10 @@ bin/testlight
 bin/testrot
 bin/timer
 bin/timerot
+%%WITH_VIEWER%%bin/tview
+%%WITH_VIEWER%%bin/tview-8
+%%WITH_VIEWER%%bin/tview-16
+%%WITH_VIEWER%%bin/tview-32
 bin/vibrate
 bin/vibrot
 bin/xtalfit
@@ -52,23 +56,17 @@ bin/xyzpdb
 bin/xyzsybyl
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/guide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/guide.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/guide.txt
 %%PORTDOCS%%%%DOCSDIR%%/license.pdf
-%%PORTDOCS%%%%DOCSDIR%%/license.ps
 %%PORTDOCS%%%%DOCSDIR%%/license.txt
-%%PORTDOCS%%%%DOCSDIR%%/logo-bind.pdf
-%%PORTDOCS%%%%DOCSDIR%%/logo-bind.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/logo.pdf
-%%PORTDOCS%%%%DOCSDIR%%/logo.ps.gz
 %%PORTDOCS%%%%DOCSDIR%%/release-3.2
 %%PORTDOCS%%%%DOCSDIR%%/release-3.6
 %%PORTDOCS%%%%DOCSDIR%%/release-3.7
 %%PORTDOCS%%%%DOCSDIR%%/release-3.8
 %%PORTDOCS%%%%DOCSDIR%%/release-3.9
 %%PORTDOCS%%%%DOCSDIR%%/release-4.0
+%%PORTDOCS%%%%DOCSDIR%%/release-4.1
 %%PORTDOCS%%%%DOCSDIR%%/summary.pdf
-%%PORTDOCS%%%%DOCSDIR%%/summary.ps
 %%PORTDOCS%%%%DOCSDIR%%/summary.txt
 %%PORTDOCS%%share/examples/tinker/README
 %%PORTDOCS%%share/examples/tinker/anion.dat
@@ -96,6 +94,10 @@ bin/xyzsybyl
 %%PORTDOCS%%share/examples/tinker/cyclohex.key
 %%PORTDOCS%%share/examples/tinker/cyclohex.log
 %%PORTDOCS%%share/examples/tinker/cyclohex.run
+%%PORTDOCS%%share/examples/tinker/dialanine.key
+%%PORTDOCS%%share/examples/tinker/dialanine.log
+%%PORTDOCS%%share/examples/tinker/dialanine.run
+%%PORTDOCS%%share/examples/tinker/dialanine.xyz
 %%PORTDOCS%%share/examples/tinker/enkephalin.dat
 %%PORTDOCS%%share/examples/tinker/enkephalin.key
 %%PORTDOCS%%share/examples/tinker/enkephalin.log
@@ -144,10 +146,12 @@ bin/xyzsybyl
 %%PORTDOCS%%share/tinker/bench/results-3.8
 %%PORTDOCS%%share/tinker/bench/results-3.9
 %%PORTDOCS%%share/tinker/bench/results-4.0
+%%PORTDOCS%%share/tinker/bench/results-4.1
 share/tinker/params/README
 share/tinker/params/amber94.prm
 share/tinker/params/amber96.prm
 share/tinker/params/amber98.prm
+share/tinker/params/amber99.prm
 share/tinker/params/amoeba.prm
 share/tinker/params/charmm19.prm
 share/tinker/params/charmm27.prm
@@ -157,13 +161,13 @@ share/tinker/params/mm2.prm
 share/tinker/params/mm3.prm
 share/tinker/params/mm3pro.prm
 share/tinker/params/oplsaa.prm
+share/tinker/params/oplsaal.prm
 share/tinker/params/oplsua.prm
 share/tinker/params/smooth.prm
 share/tinker/params/smoothaa.prm
 share/tinker/params/water.prm
+%%WITH_VIEWER%%share/tinker/rasmol/rasmol.hlp
 %%PORTDOCS%%share/tinker/test/README
-%%PORTDOCS%%share/tinker/test/ala20.key
-%%PORTDOCS%%share/tinker/test/ala20.xyz
 %%PORTDOCS%%share/tinker/test/alkane.key
 %%PORTDOCS%%share/tinker/test/alkane.xyz
 %%PORTDOCS%%share/tinker/test/amoeba.key
@@ -330,8 +334,12 @@ share/tinker/params/water.prm
 %%PORTDOCS%%share/tinker/test/methane.xyz
 %%PORTDOCS%%share/tinker/test/methanol.key
 %%PORTDOCS%%share/tinker/test/methanol.xyz
+%%PORTDOCS%%share/tinker/test/mm3.key
+%%PORTDOCS%%share/tinker/test/mm3.xyz
 %%PORTDOCS%%share/tinker/test/nacl.key
 %%PORTDOCS%%share/tinker/test/nacl.xyz
+%%PORTDOCS%%share/tinker/test/nada.key
+%%PORTDOCS%%share/tinker/test/nada.xyz
 %%PORTDOCS%%share/tinker/test/naphthalene.int
 %%PORTDOCS%%share/tinker/test/naphthalene.key
 %%PORTDOCS%%share/tinker/test/naphthalene.xyz
@@ -372,6 +380,8 @@ share/tinker/params/water.prm
 %%PORTDOCS%%share/tinker/test/photo.xyz
 %%PORTDOCS%%share/tinker/test/pol3.key
 %%PORTDOCS%%share/tinker/test/pol3.xyz
+%%PORTDOCS%%share/tinker/test/polyala.key
+%%PORTDOCS%%share/tinker/test/polyala.xyz
 %%PORTDOCS%%share/tinker/test/propane.key
 %%PORTDOCS%%share/tinker/test/propane.ray
 %%PORTDOCS%%share/tinker/test/propane.xyz
@@ -390,11 +400,15 @@ share/tinker/params/water.prm
 %%PORTDOCS%%share/tinker/test/retinoic.xyz
 %%PORTDOCS%%share/tinker/test/skunk.key
 %%PORTDOCS%%share/tinker/test/skunk.xyz
+%%PORTDOCS%%share/tinker/test/spc.key
+%%PORTDOCS%%share/tinker/test/spc.xyz
 %%PORTDOCS%%share/tinker/test/sterol.key
 %%PORTDOCS%%share/tinker/test/sterol.xyz
 %%PORTDOCS%%share/tinker/test/styrene.int
 %%PORTDOCS%%share/tinker/test/styrene.key
 %%PORTDOCS%%share/tinker/test/styrene.xyz
+%%PORTDOCS%%share/tinker/test/terphenyl.key
+%%PORTDOCS%%share/tinker/test/terphenyl.xyz
 %%PORTDOCS%%share/tinker/test/thiadiene.int
 %%PORTDOCS%%share/tinker/test/thiadiene.key
 %%PORTDOCS%%share/tinker/test/thiadiene.xyz
@@ -404,8 +418,12 @@ share/tinker/params/water.prm
 %%PORTDOCS%%share/tinker/test/thr.int
 %%PORTDOCS%%share/tinker/test/thr.key
 %%PORTDOCS%%share/tinker/test/thr.xyz
+%%PORTDOCS%%share/tinker/test/tip3f.key
+%%PORTDOCS%%share/tinker/test/tip3f.xyz
 %%PORTDOCS%%share/tinker/test/tip3p.key
 %%PORTDOCS%%share/tinker/test/tip3p.xyz
+%%PORTDOCS%%share/tinker/test/tip4f.key
+%%PORTDOCS%%share/tinker/test/tip4f.xyz
 %%PORTDOCS%%share/tinker/test/tip4p.key
 %%PORTDOCS%%share/tinker/test/tip4p.xyz
 %%PORTDOCS%%share/tinker/test/tip5p.key
@@ -441,5 +459,6 @@ share/tinker/tinker.txt
 %%PORTDOCS%%@dirrm share/examples/tinker
 %%PORTDOCS%%@dirrm share/tinker/bench
 @dirrm share/tinker/params
+%%WITH_VIEWER%%@dirrm share/tinker/rasmol
 %%PORTDOCS%%@dirrm share/tinker/test
 @dirrm share/tinker
