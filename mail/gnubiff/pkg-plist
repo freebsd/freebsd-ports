@@ -28,8 +28,13 @@ share/locale/sv/LC_MESSAGES/gnubiff.mo
 %%SHAREDIR%%/gnubiff/tux-sleep(64x64).png
 %%SHAREDIR%%/gnubiff/tux-sleep.png
 %%SHAREDIR%%/pixmaps/gnubiff.png
-%%WITH_GNOME%%libdata/bonobo/servers/GNOME_gnubiffApplet.server
+%%WITH_GNOME%%%%BONOBODIR%%/servers/GNOME_gnubiffApplet.server
 %%WITH_GNOME%%%%SHAREDIR%%/gnome-2.0/ui/GNOME_gnubiffApplet.xml
 @unexec rmdir %D/share/locale/fr_CA/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/fr_CA 2> /dev/null || true@
+@unexec rmdir %D/share/locale/fr_CA 2> /dev/null || true
+@unexec rmdir %D/%%BONOBODIR%%/servers 2> /dev/null || true
+@unexec rmdir %D/%%BONOBODIR%% 2> /dev/null || true
+@unexec rmdir %D/%%SHAREDIR%%/gnome-2.0/ui 2> /dev/null || true
+@unexec rmdir %D/%%SHAREDIR%%/gnome-2.0 2> /dev/null || true
+@unexec rmdir %D/%%SHAREDIR%%/pixmaps 2> /dev/null || true
 @dirrm %%SHAREDIR%%/gnubiff

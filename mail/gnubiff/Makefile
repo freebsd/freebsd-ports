@@ -40,10 +40,12 @@ WANT_GNOME=	yes
 USE_GNOME+=		gnomepanel gconf2 gnomeprefix gnomehack
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		SHAREDIR="share/gnome"
+PLIST_SUB+=		BONOBODIR="libdata/bonobo"
 PLIST_SUB+=		WITH_GNOME=""
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 PLIST_SUB+=		SHAREDIR="share"
+PLIST_SUB+=		BONOBODIR="lib/bonobo"
 PLIST_SUB+=		WITH_GNOME="@comment "
 .endif
 
