@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-libraries-devel
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.14
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
@@ -15,12 +15,12 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/sr
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/unstable/nessus-${PORTVERSION}/src/
+DISTNAME=	nessus-libraries-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-libraries
-DISTNAME=	nessus-libraries-${PORTVERSION}
 
 USE_LIBTOOL=	YES
 CONFIGURE_ARGS=	--enable-cipher

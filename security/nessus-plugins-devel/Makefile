@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-plugins-devel
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.14
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
@@ -15,17 +15,17 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/sr
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.chg.ru/pub/security/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/unstable/nessus-${PORTVERSION}/src/
+DISTNAME=	nessus-plugins-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
-BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel \
-		${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
-RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel
+RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel \
+		nmap:${PORTSDIR}/security/nmap \
+		wget:${PORTSDIR}/ftp/wget
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-plugins
-DISTNAME=	nessus-plugins-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fetchcmd=wget --sharedstatedir=${PREFIX}/etc/nessus/com \

@@ -4,7 +4,7 @@
 #
 
 PORTNAME=	nessus-devel
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.14
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=--disable-gtk
 .endif
 
 CONFIGURE_ARGS+=	--sharedstatedir=${PREFIX}/etc/nessus/com \
-			--localstatedir=${PREFIX}/etc/nessus/var 
+			--localstatedir=${PREFIX}/etc/nessus/var
 
 MAN1=		nessus.1 nessus-mkrand.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
@@ -46,7 +46,6 @@ post-patch::
 		${WRKSRC}/nessus/html_graph_output.c
 	@${PERL} -pi.fbsd -e 's,strcasestr,ne_strcasestr,g' \
 		${WRKSRC}/nessus/xml_output_ng.c
-
 
 post-install:
 .if ! defined(BATCH)
