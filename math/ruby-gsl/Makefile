@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	0.4.6
+PORTVERSION=	0.9.1
 CATEGORIES=	math ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/887/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/966/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rb-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
