@@ -1,0 +1,6 @@
+This module was created to avoid the compile time of big scripts that runs a
+lot of times. It works forking your script into MAX_CHILDS childs, and using
+Unix Sockets to run your code. Just like CGI::Fast.
+
+-Anton
+<tobez@tobez.org>

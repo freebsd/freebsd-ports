@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Server/FastPL/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Server/FastPL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Server/FastPL/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Server/FastPL/Server.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Server/FastPL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Server/FastPL
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Server 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Server 2>/dev/null || true
