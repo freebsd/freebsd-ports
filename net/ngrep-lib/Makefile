@@ -16,14 +16,8 @@ COMMENT=	Easy packet filtering library based on ngrep
 MAN3=		ngrep-lib.3
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ARGS+=--prefix=${PREFIX}
+CONFIGURE_ARGS+=--prefix=${PREFIX} -without-restart
 
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
