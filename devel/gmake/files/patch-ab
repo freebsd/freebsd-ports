@@ -1,11 +1,14 @@
---- make.texinfo.orig	Tue Sep 16 23:17:33 1997
-+++ make.texinfo	Thu Oct 16 00:56:23 1997
-@@ -25,7 +25,7 @@
+--- make.texinfo.orig	Thu Sep 23 13:40:19 1999
++++ make.texinfo	Wed Dec  1 09:03:16 1999
+@@ -24,9 +24,9 @@
+ @c Combine the program and concept indices:
  @syncodeindex pg cp
  
- @ifinfo
--@dircategory The GNU make utility
+-@dircategory GNU Packages
 +@dircategory Programming & development tools
  @direntry
-      * GNU make: (make.info).           The GNU make utility.
+-* Make: (make).            Remake files automatically.
++* GNU make: (make).            Remake files automatically.
  @end direntry
+ 
+ @ifinfo

@@ -1,18 +1,18 @@
 # New ports collection makefile for:	GNU make
-# Version required:     3.77.7
+# Version required:     3.78.1
 # Date created:		11 September 1994
 # Whom:			jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=       make-3.77
-PKGNAME=        gmake-3.77
+DISTNAME=       make-3.78.1
+PKGNAME=        g${DISTNAME}
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	make
 
-MAINTAINER=	jseger@freebsd.org
+MAINTAINER=	jseger@FreeBSD.org
 
 Y2K=		http://www.gnu.org/software/year2000.html
 
