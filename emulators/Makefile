@@ -14,6 +14,7 @@
     SUBDIR += fmsx
     SUBDIR += freesci
     SUBDIR += frodo
+    SUBDIR += gnuboy
     SUBDIR += gsnes9x
     SUBDIR += hfs
     SUBDIR += hfsutils
