@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	Locale-Maketext
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mns@shepard.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A framework for software localization and inheritance-based lexicons
 
 BUILD_DEPENDS=	${SITE_PERL}/I18N/LangTags.pm:${PORTSDIR}/misc/p5-I18N-LangTags
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
+CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		Locale::Maketext.3 Locale::Maketext::TPJ13.3
-
-pre-patch:
-	@${PERL} -pi -e 's/INSTALLDIRS/bebe/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
