@@ -4283,6 +4283,7 @@ latex-pict2e	ports/print/latex-pict2e
 latex-subfig	ports/print/latex-subfig
 latex-subfloat	ports/print/latex-subfloat
 latex-timing	ports/print/latex-timing
+latex-ucs	ports/print/latex-ucs
 latex-xcolor	ports/print/latex-xcolor
 latex2html	ports/textproc/latex2html
 latex2rtf	ports/print/latex2rtf
