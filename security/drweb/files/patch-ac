@@ -18,7 +18,7 @@
 +	kill `cat %INSTALL%/run/drwebd.pid | head -1`
  	sleep 1
 -	/usr/local/drweb/drwebd
-+	%INSTALL%/drwebd
++	%INSTALL%/drwebd -ini=%INSTALL%/drweb32.ini
      ;;
      *)
  	echo -n "Starting Dr. Web daemon..."
