@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.15.2
+PORTVERSION=	1.15.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	v115_2_src
+DISTNAME=	v115_${PORTVERSION:E}_src
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
@@ -47,7 +47,7 @@ pre-everything::
 .endif
 
 post-patch:
-	cd ${WRKSRC} && ${SH} ${WRKSRC}/fixunix.sh
+	cd ${WRKSRC} && ${TR} -d '\r' <${WRKSRC}/fixunix.sh | ${SH}
 	@${REINPLACE_CMD} -e 's|SDL\/||g' ${WRKSRC}/source/*.cpp
 
 do-install:

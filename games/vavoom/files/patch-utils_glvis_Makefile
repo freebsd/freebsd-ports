@@ -1,0 +1,31 @@
+--- utils/glvis/Makefile.orig
++++ utils/glvis/Makefile
+@@ -6,7 +6,7 @@
+ LIBS=-lstdc++
+ endif
+ 
+-CFLAGS = -Wall -O3 -ffast-math -fomit-frame-pointer -march=pentiumpro
++CFLAGS += -Wall -O3 -ffast-math -fomit-frame-pointer
+ LIB_OBJS = cmdlib.o wadlib.o level.o flow.o
+ OBJS = glvis.o
+ LIBS += -lm
+@@ -14,15 +14,15 @@
+ all: ../bin/glvis$(EXE)
+ 
+ ../bin/glvis$(EXE): $(OBJS) libglvis.a
+-	gcc -s -o $@ $^ $(LIBS)
++	${CC} -s -o $@ $^ $(LIBS)
+ 
+ libglvis.a: $(LIB_OBJS)
+-	ar rc $@ $^
++	${AR} rc $@ $^
+ 	ranlib $@
+ 
+ %.o: %.cpp *.h ../common/*.h
+-	gcc $(CFLAGS) -I../common -c -o $@ $<
++	${CC} $(CFLAGS) -I../common -c -o $@ $<
+ 
+ %.o: ../common/%.cpp ../common/*.h
+-	gcc $(CFLAGS) -c -o $@ $<
++	${CC} $(CFLAGS) -c -o $@ $<
+ 

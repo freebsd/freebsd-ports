@@ -1,0 +1,24 @@
+--- utils/vlumpy/Makefile.orig
++++ utils/vlumpy/Makefile
+@@ -6,17 +6,17 @@
+ LIBS=-lm -lstdc++
+ endif
+ 
+-CFLAGS = -Wall -O3 -ffast-math -fomit-frame-pointer -march=pentiumpro
++CFLAGS += -Wall -O3 -ffast-math -fomit-frame-pointer
+ OBJS = cmdlib.o imglib.o scrlib.o wadlib.o vlumpy.o
+ 
+ all: ../bin/vlumpy$(EXE)
+ 
+ ../bin/vlumpy$(EXE): $(OBJS)
+-	gcc -s -o $@ $(OBJS) $(LIBS)
++	${CC} -s -o $@ $(OBJS) $(LIBS)
+ 
+ %.o: %.cpp ../common/*.h
+-	gcc $(CFLAGS) -I../common -c -o $@ $<
++	${CC} $(CFLAGS) -I../common -c -o $@ $<
+ 
+ %.o: ../common/%.cpp ../common/*.h
+-	gcc $(CFLAGS) -c -o $@ $<
++	${CC} $(CFLAGS) -c -o $@ $<
+ 
