@@ -19,7 +19,7 @@ USE_PERL5=	yes
 
 # This version of cvsweb is Zeller's version + knu's enhancements.
 REV_ZELLER=	1.104
-REV_KNU=	1.52
+REV_KNU=	1.54
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
@@ -39,22 +39,34 @@ CGIDIR?=	www/cgi-bin
 ICONSDIR?=	www/icons
 .endif
 
+CONFFILES=	cvsweb.conf \
+		cvsweb.conf-freebsd \
+		cvsweb.conf-openbsd \
+		cvsweb.conf-netbsd \
+		cvsweb.conf-ruby
+
 PLIST_SUB=	CGIDIR="${CGIDIR}" ICONSDIR="${ICONSDIR}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-do-configure:
-	cd ${WRKSRC} && ${PERL} -i -pe "\
-		s;/usr/bin/perl5;${PERL};g; \
-		s;/usr/local;${PREFIX};g; \
-		s;/home/cvs;${CVSROOT};g; \
-		s;'Local Repository';'${TITLE}';g; \
-		" cvsweb.cgi cvsweb.conf
+post-patch:
+	${PERL} -i -pe "\
+		s;!!PERL!!;${PERL};g; \
+		s;!!PREFIX!!;${PREFIX};g;" \
+		${WRKSRC}/cvsweb.cgi
+	${PERL} -i -pe "\
+		s;!!PREFIX!!;${PREFIX};g; \
+		s;!!CVSROOT!!;${CVSROOT};g; \
+		s;!!TITLE!!;${TITLE};g;" \
+		${WRKSRC}/cvsweb.conf
 
 do-install:
 	${MKDIR} ${PREFIX}/${CGIDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cvsweb.cgi ${PREFIX}/${CGIDIR}/
-	${INSTALL_DATA} ${WRKSRC}/cvsweb.conf ${PREFIX}/etc/cvsweb.conf.sample
+	${MKDIR} ${PREFIX}/etc/cvsweb
+.for f in ${CONFFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/etc/cvsweb/${f}.dist
+.endfor
 	${MKDIR} ${PREFIX}/${ICONSDIR}/cvsweb
 	cd ${WRKSRC}/icons && ${INSTALL_DATA} * ${PREFIX}/${ICONSDIR}/cvsweb/
 .if !defined(NOPORTDOCS)
