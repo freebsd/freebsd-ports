@@ -3,13 +3,13 @@
 # Date created:		16 August 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1998/10/12 12:33:23 jseger Exp $
+# $Id: Makefile,v 1.4 1998/10/13 02:48:49 jseger Exp $
 #
 
 DISTNAME=	asprint
 PKGNAME=	asprint-1.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/apps/asprint/
+MASTER_SITES=	ftp://ftp.afterstep.org/apps/asprint/
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
