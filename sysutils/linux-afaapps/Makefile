@@ -19,6 +19,8 @@ COMMENT=		DELL PowerEdge Raid Controller 2 (apps)
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		${LINUXBASE}/usr/lib/libartsc.so.0:${PORTSDIR}/audio/linux-arts
 
+BROKEN=			Incomplete pkg-plist
+
 RESTRICTED=		"binary redistribution license needs clarification"
 
 NO_BUILD=		yes

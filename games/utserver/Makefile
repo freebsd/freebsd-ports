@@ -19,6 +19,8 @@ COMMENT=	Unreal Tournament Dedicated Server for Linux
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 USE_PERL5=	yes
