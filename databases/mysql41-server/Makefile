@@ -6,20 +6,11 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.7
+PORTVERSION=	4.1.8a
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
-		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.1/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.1/ \
-		http://mysql.mediatraffic.fi/Downloads/MySQL-4.1/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-4.1/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-4.1/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.1/ \
-		http://www.mysql.cz/Downloads/MySQL-4.1/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.1/ \
-		http://mysql.proserve.nl/Downloads/MySQL-4.1/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.1/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	MySQL-4.1
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ale@FreeBSD.org
@@ -30,7 +21,6 @@ PKGINSTALL?=	${WRKDIR}/pkg-install
 DB_DIR?=	/var/db/mysql
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-USE_GMAKE=	yes
 USE_RC_SUBR=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -44,7 +34,6 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-mysqlfs \
 		--with-vio \
 		--with-low-memory \
-		--with-ndbcluster \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
 
@@ -64,6 +53,12 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
+.endif
+.if defined(WITHOUT_INNODB)
+CONFIGURE_ARGS+=--without-innodb
+.endif
+.if defined(WITH_NDB)
+CONFIGURE_ARGS+=--with-ndbcluster
 .endif
 
 .include <bsd.port.pre.mk>
@@ -113,6 +108,12 @@ CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
 PLIST_SUB=	DB_DIR=${DB_DIR} \
 		VER=${PORTVERSION}
+.if defined(WITH_NDB)
+PLIST_SUB+=	NDB=""
+.else
+PLIST_SUB+=	NDB="@comment "
+.endif
+
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
@@ -140,6 +141,8 @@ pre-fetch:
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
+	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
+	@${ECHO} "	WITH_NDB=yes		Disable support for NDB Cluster."
 	@${ECHO} ""
 
 post-patch:
@@ -197,7 +200,8 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 CONFIGURE_ARGS+=--without-server
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include strings regex @sql_client_dirs@ scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
@@ -240,5 +244,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 .endif
 .endif
+# Common part
+post-extract:
+	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
 
 .include <bsd.port.post.mk>
