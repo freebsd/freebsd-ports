@@ -9,8 +9,7 @@ PORTNAME=	scim-tables
 PORTVERSION=	0.4.3
 PORTREVISION=	1
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://freedesktop.org/~suzhe/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
 MAINTAINER=	ports@freebsd.org
