@@ -1,11 +1,10 @@
---- include/cddb/cddb.h.orig	Mon Mar  1 04:22:27 2004
-+++ include/cddb/cddb.h	Mon Mar  1 04:22:47 2004
-@@ -26,7 +26,7 @@
-     extern "C" {
+--- include/cddb/cddb.h.orig	Wed Jul 21 15:34:48 2004
++++ include/cddb/cddb.h	Wed Jul 21 15:35:03 2004
+@@ -27,6 +27,7 @@
  #endif
-
--
+ 
+ 
 +#include <sys/types.h>
+ #include <cddb/cddb_config.h>
  #include <cddb/cddb_error.h>
  #include <cddb/cddb_track.h>
- #include <cddb/cddb_disc.h>

@@ -1,10 +1,10 @@
---- include/cddb/cddb_ni.h.orig	Mon Mar  1 04:28:02 2004
-+++ include/cddb/cddb_ni.h	Mon Mar  1 04:28:16 2004
-@@ -18,6 +18,7 @@
-     Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-     Boston, MA  02111-1307, USA.
- */
+--- include/cddb/cddb_ni.h.orig	Wed Jul 21 15:35:13 2004
++++ include/cddb/cddb_ni.h	Wed Jul 21 15:35:32 2004
+@@ -31,6 +31,7 @@
+ #  include <config.h>
+ #endif
+ 
 +#include <sys/types.h>
-
- #ifndef CDDB_NI_H
- #define CDDB_NI_H 1
+ #include "cddb/cddb_regex.h"
+ #include "cddb/cddb.h"
+ #include "cddb/cddb_conn_ni.h"
