@@ -1,6 +1,9 @@
-This module is a minimal interface to the Gnome libxml2 library.
+This module is an interface to the gnome libxml2 DOM parser (no SAX
+parser support yet), and the DOM tree.  It also provides an
+XML::XPath-like findnodes() interface, providing access to the XPath API
+in libxml2.
 
-WWW: http://www.xmlsoft.org/
+WWW: http://search.cpan.org/search?dist=XML-LibXML
 
 -- Sergey Skvortsov
-skv@protey.ru
+skv@FreeBSD.org
