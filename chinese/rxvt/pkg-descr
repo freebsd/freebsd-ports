@@ -2,4 +2,11 @@ Rxvt is an xterm replacement which uses a little less memory, and is
 suitable for use on machines with small memories.
 The KANJI support was added to rxvt since 2.17, from 2.4.4(3?) the support
 for Chinese BIG5 encoding is also added. 
-This port is patched for XCIN, a Chinese Input Server.
+Since 2.6PRE2, rxvt supports XIM. This port no longer patches for XCIN,
+a Chinese input server. Instead, the user must install an input server which
+support the XIM protocol. The user has to either patch XCIN (2.1, 2.3) or use
+XCIN 2.5, which support XIM and only XIM protocol. 
+The info on rxvt could be found on 
+http://www.rxvt.org/
+The info regarding Chinese XIM server could be found at 
+http://xcin.linux.org.tw/
