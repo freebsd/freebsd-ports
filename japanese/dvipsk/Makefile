@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-jpatch-p1.4d.tar.gz
 
-MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
 
 RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-base

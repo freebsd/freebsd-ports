@@ -12,7 +12,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	ASCII Japanese pLaTeX 2.09 with Shift-JIS code support
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex \

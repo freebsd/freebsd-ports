@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dvipsk-jpatch-p1.4d.tar.gz \
 		${PORTNAME}${PKGNAMESUFFIX}-1.1alpha.patch.tgz
 
-MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch + vflib patch
 
 RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-base
