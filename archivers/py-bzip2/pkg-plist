@@ -1,1 +1,1 @@
-lib/%%PYTHON_VERSION%%/site-packages/bz2.so
+%%PYTHON_SITELIBDIR%%/bz2.so
