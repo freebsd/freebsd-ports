@@ -295,8 +295,8 @@ void get_load_average(double v[3]) {
 }
 
 double get_acpi_temperature(int fd) {
-	double temp;
-	
+	int temp;
+		
 	if (GETSYSCTL("hw.acpi.thermal.tz0.temperature", temp)) {
 		 (void)fprintf(stderr, "Cannot read sysctl \"hw.acpi.thermal.tz0.temperature\"\n");
 		 temp = -1.0;
