@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	bitchx-kr-75p1
+DISTNAME=	bitchx-ko
 PKGNAME=        ko-bitchx-75p1
 CATEGORIES=	korean net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
