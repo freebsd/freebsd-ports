@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
+PORTCOMMENT=	Multiplayer graphical arcade and adventure game made for X11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-client
 DISTFILES=	${PORTNAME}-client-${PORTVERSION}.tar.gz \
 		${PORTNAME}-client-images-${PORTVERSION}.tar.gz \
-		${PORTNAME}-client-sounds-1.1.0.tar.gz
+		${PORTNAME}-client-sounds-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -34,10 +35,11 @@ USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-CONFIGURE_ARGS=	--with-includes=-I${LOCALBASE}/include \
-		--with-ldflags=-L${LOCALBASE}/lib \
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--with-sound-dir=${DATADIR}/sounds \
 		--disable-gnome # Gnome client currently broken
 
 MAN1=		cfclient.1 gcfclient.1
