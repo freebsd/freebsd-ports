@@ -8,10 +8,7 @@
 PORTNAME=	jad
 PORTVERSION=	1.5.8c
 CATEGORIES=	java
-MASTER_SITES=	http://www.metaverse.nl/~ernst/ \
-		http://www.pensioenconsult.com/ \
-		http://www.schraven.nl/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jadfb158
 
