@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
 RUN_DEPENDS=	kjumpingcube:${PORTSDIR}/games/kdegames2 \
 		kdessh:${PORTSDIR}/misc/kdeutils2 \

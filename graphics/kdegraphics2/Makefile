@@ -11,7 +11,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	dvips:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	dvips:${PORTSDIR}/print/teTeX

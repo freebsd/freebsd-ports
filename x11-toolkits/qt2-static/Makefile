@@ -8,7 +8,7 @@
 PORTNAME=	qt
 PKGNAMESUFFIX=	-static
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 
 WANT_STATIC=	yes
 

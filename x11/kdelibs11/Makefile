@@ -17,7 +17,7 @@ PATCH_SITES=	ftp://ftp.kde.gr.jp/pub/kde/stable/latest/distribution/tar/generic/
 PATCHFILES=	kdelibs-ja.19990903.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
@@ -43,5 +43,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 # generate KDE style mtree
 MTREE_CMD=	${CAT} ${MTREE_FILE} ${FILESDIR}/kde.dist | /usr/sbin/mtree
 MTREE_ARGS=	-U -d -e -p
+
+pre-fetch:
+.if exists(${LOCALBASE}/include/kwin.h)
+	@${ECHO}
+	@${ECHO} "                      NOTICE"
+	@${ECHO}
+	@${ECHO} "You have KDE2 headers installed!  Installing this port"
+	@${ECHO} "will result in conflicts between KDE2 and KDE1!"
+	@${ECHO}
+	@${FALSE}
+.endif
 
 .include <bsd.port.mk>
