@@ -17,10 +17,14 @@ COMMENT=	Utility to test for faulty memory subsystem
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/memtest
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
