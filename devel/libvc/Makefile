@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libvc
-PORTVERSION=	001
+PORTVERSION=	002
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rolo
@@ -19,5 +19,13 @@ USE_BISON=	yes
 GNU_CONFIGURE=	yes
 
 MAN3=		vc.3
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for DOC in AUTHORS ChangeLog NEWS README THANKS doc/rfc2426.txt
+	@${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
