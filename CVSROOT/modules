@@ -5888,6 +5888,7 @@ p5-Term-ReadKey	ports/devel/p5-Term-ReadKey
 p5-Term-Screen	ports/devel/p5-Term-Screen
 p5-Term-Size	ports/devel/p5-Term-Size
 p5-Test-Builder-Tester	ports/devel/p5-Test-Builder-Tester
+p5-Test-Class	ports/devel/p5-Test-Class
 p5-Test-Differences	ports/devel/p5-Test-Differences
 p5-Test-Exception	ports/devel/p5-Test-Exception
 p5-Test-Harness	ports/devel/p5-Test-Harness
