@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.29.2
+PORTVERSION=    4.29.5
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/
+MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/${PORTVERSION}/
 DISTFILES=      ${MAIN_NAME}.tar.gz
 
 MAINTAINER=	anton@chelcom.ru
@@ -19,6 +19,7 @@ NO_BUILD=       yes
 
 WRKSRC=         ${WRKDIR}/${MAIN_NAME}/install
 
+LIB_DEPENDS+=   c.4:${PORTSDIR}/misc/compat4x
 # Needed for update.pl
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
@@ -30,7 +31,9 @@ do-install:
 	@cd ${DRWEB_PREFIX}; ${RM} -f drweb drwebd bases/* updates/*
 	${TAR} -cf - -C ${WRKSRC}/opt/drweb . | \
 		${TAR} -xf - -C ${DRWEB_PREFIX} \
-		--exclude "*.key" --exclude "update/update.pl*"
+		--exclude "*.key" \
+		--exclude "*.static" \
+		--exclude "update/update.pl*"
 	${TAR} -cf - -C ${WRKSRC}/var/drweb bases | \
 		${TAR} -xf - -C ${DRWEB_PREFIX}
 	chmod 755 ${DRWEB_PREFIX}/bases ${DRWEB_PREFIX}/doc \
