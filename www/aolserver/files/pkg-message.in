@@ -1,5 +1,5 @@
 
-Assuming you have changed to /usr/local, please copy
+Assuming you have changed to %%PREFIX%%, please copy
 aolserver/sample-config.tcl to aolserver/nsd.tcl and season to taste.
 An example server is in at aolserver/servers/server1, and you should
 similarly copy the contents of this directory to, e.g.,
