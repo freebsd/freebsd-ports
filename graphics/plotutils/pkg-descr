@@ -1,0 +1,4 @@
+This is release 2.1.1 of the GNU plotutils (plotting utilities) package,
+including release 1.1 of GNU libplot: a function library for
+two-dimensional device-independent vector graphics.  The package now has
+its own Web page: http://www.gnu.org/software/plotutils/plotutils.html .
