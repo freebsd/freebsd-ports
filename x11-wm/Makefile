@@ -32,6 +32,7 @@
     SUBDIR += gnome2wmaker
     SUBDIR += golem
     SUBDIR += gwm
+    SUBDIR += icemc
     SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += ion
