@@ -26,7 +26,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lmd -lutil" \
+CONFIGURE_ENV=	LIBS="-lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"
 CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/qpopper/pop.auth \
 		--enable-nonauth-file=${POPUSERS_FILE} \
@@ -68,6 +68,8 @@ pre-everything::
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "WITH_APOP_ONLY=yes	builds with APOP authentication only"
+	@${ECHO_MSG} "WITH_DRAC=yes		builds with Dynamic Relay Authorization"
+	@${ECHO_MSG} "				Control support"
 	@${ECHO_MSG} "WITH_FULL_POPD_DEBUG=yes	buils with more verbose debugging"
 	@${ECHO_MSG} "WITH_POPPASSD=yes		builds the poppassd daemon"
 	@${ECHO_MSG} "WITH_SAMPLE_POPUSERS_FILE=yes	builds a default (otherwise,"
@@ -77,6 +79,13 @@ pre-everything::
 # with APOP authentication only.
 .if defined(APOP_ONLY) || defined(WITH_APOP_ONLY)
 OS_DEFS+=	-DAPOP_ONLY
+.endif
+
+# If WITH_DRAC variable present in the environment, qpopper builds
+# with Dynamic Relay Authorization Control support
+.if defined(WITH_DRAC)
+CONFIGURE_ARGS+=	--with-drac
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 # If WITH_FULL_POPD_DEBUG variable present in the environment, qpopper builds
