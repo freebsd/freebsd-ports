@@ -19,6 +19,7 @@ USE_PERL5=	yes
 NO_BUILD=	# defined
 
 MAN1=		cowsay.1
+MLINKS=		cowsay.1 cowthink.1
 
 do-install:
 	cd ${WRKSRC}; ${SH} install.sh ${PREFIX}

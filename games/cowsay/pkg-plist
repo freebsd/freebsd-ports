@@ -1,6 +1,5 @@
 bin/cowsay
 bin/cowthink
-man/man1/cowthink.1
 share/cows/beavis.zen.cow
 share/cows/bong.cow
 share/cows/box.cow
