@@ -192,12 +192,10 @@ include/gtk--sigslot.h
 lib/Gtk--/include/gdk--config.h
 lib/Gtk--/include/gtk--config.h
 lib/libgdkmm.a
-lib/libgdkmm.la
 lib/libgdkmm-1.0.so.1
 lib/libgdkmm.so
 lib/libgtkmm.a
-lib/libgtkmm.la
-lib/libgtkmm-1.0.so.5
+lib/libgtkmm-1.0.so.7
 lib/libgtkmm.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
