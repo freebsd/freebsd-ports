@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.05.06
+PORTVERSION=	2003.07.07
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -33,8 +33,10 @@ INSTALL_DATADIR=	${INSTALL} -d ${_SHROWNGRP} -m 755
 BasicUsageEnvironment=	\
 		BasicUsageEnvironment/include/BasicHashTable.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment.hh \
+		BasicUsageEnvironment/include/BasicUsageEnvironment0.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment_version.hh \
-		BasicUsageEnvironment/include/DelayQueue.hh
+		BasicUsageEnvironment/include/DelayQueue.hh \
+		BasicUsageEnvironment/include/HandlerSet.hh
 
 UsageEnvironment=	\
 		UsageEnvironment/include/Boolean.hh \
@@ -58,6 +60,7 @@ liveMedia=		\
 		liveMedia/include/AC3AudioRTPSink.hh \
 		liveMedia/include/AC3AudioRTPSource.hh \
 		liveMedia/include/AC3AudioStreamFramer.hh \
+		liveMedia/include/AudioInputDevice.hh \
 		liveMedia/include/BasicUDPSource.hh \
 		liveMedia/include/ByteStreamFileSource.hh \
 		liveMedia/include/ByteStreamMultiFileSource.hh \
@@ -81,6 +84,7 @@ liveMedia=		\
 		liveMedia/include/MP3HTTPSource.hh \
 		liveMedia/include/MP3Transcoder.hh \
 		liveMedia/include/MPEG4ESVideoRTPSource.hh \
+		liveMedia/include/MPEG4GenericRTPSink.hh \
 		liveMedia/include/MPEG4GenericRTPSource.hh \
 		liveMedia/include/MPEG4LATMAudioRTPSource.hh \
 		liveMedia/include/MPEGAudioRTPSink.hh \
@@ -119,6 +123,28 @@ liveMedia=		\
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
 
+post-build:
+	@${ECHO_CMD} bin/playSIP  >> ${PLIST}
+	@${ECHO_CMD} bin/openRTSP >> ${PLIST}
+	@${ECHO_CMD} bin/sapWatch >> ${PLIST}
+	@${ECHO_CMD} live/BasicUsageEnvironment/libBasicUsageEnvironment.a >> ${PLIST}
+	@${ECHO_CMD} live/UsageEnvironment/libUsageEnvironment.a           >> ${PLIST}
+	@${ECHO_CMD} live/groupsock/libgroupsock.a                         >> ${PLIST}
+	@${ECHO_CMD} live/liveMedia/libliveMedia.a                         >> ${PLIST}
+.for file in ${BasicUsageEnvironment}
+	@${ECHO_CMD} live/BasicUsageEnvironment/include/${file:T} >> ${PLIST}
+.endfor
+.for file in ${UsageEnvironment}
+	@${ECHO_CMD} live/UsageEnvironment/include/${file:T}      >> ${PLIST}
+.endfor
+.for file in ${groupsock}
+	@${ECHO_CMD} live/groupsock/include/${file:T}             >> ${PLIST}
+.endfor
+.for file in ${liveMedia}
+	@${ECHO_CMD} live/liveMedia/include/${file:T}             >> ${PLIST}
+.endfor
+	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
+
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
@@ -132,43 +158,25 @@ pre-install:
 	@${INSTALL_DATADIR} ${PREFIX}/live/UsageEnvironment/include
 	@${INSTALL_DATADIR} ${PREFIX}/live/BasicUsageEnvironment/include
 
-do-install::
-	@${ECHO_CMD} bin/playSIP  >> ${PLIST}
-	@${ECHO_CMD} bin/openRTSP >> ${PLIST}
-	@${ECHO_CMD} bin/sapWatch >> ${PLIST}
+do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/playSIP  ${PREFIX}/bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/openRTSP ${PREFIX}/bin/
 	@${INSTALL_PROGRAM} ${WRKSRC}/testProgs/sapWatch ${PREFIX}/bin/
-
-do-install::
-	@${ECHO_CMD} live/BasicUsageEnvironment/libBasicUsageEnvironment.a >> ${PLIST}
-	@${ECHO_CMD} live/UsageEnvironment/libUsageEnvironment.a           >> ${PLIST}
-	@${ECHO_CMD} live/groupsock/libgroupsock.a                         >> ${PLIST}
-	@${ECHO_CMD} live/liveMedia/libliveMedia.a                         >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/BasicUsageEnvironment/libBasicUsageEnvironment.a ${PREFIX}/live/BasicUsageEnvironment/
 	@${INSTALL_DATA} ${WRKSRC}/UsageEnvironment/libUsageEnvironment.a           ${PREFIX}/live/UsageEnvironment/
 	@${INSTALL_DATA} ${WRKSRC}/groupsock/libgroupsock.a                         ${PREFIX}/live/groupsock/
 	@${INSTALL_DATA} ${WRKSRC}/liveMedia/libliveMedia.a                         ${PREFIX}/live/liveMedia/
-
-do-install::
 .for file in ${BasicUsageEnvironment}
-	@${ECHO_CMD} live/BasicUsageEnvironment/include/${file:T} >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/BasicUsageEnvironment/include/
 .endfor
 .for file in ${UsageEnvironment}
-	@${ECHO_CMD} live/UsageEnvironment/include/${file:T}      >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/UsageEnvironment/include/
 .endfor
 .for file in ${groupsock}
-	@${ECHO_CMD} live/groupsock/include/${file:T}             >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/groupsock/include/
 .endfor
 .for file in ${liveMedia}
-	@${ECHO_CMD} live/liveMedia/include/${file:T}             >> ${PLIST}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/live/liveMedia/include/
 .endfor
-
-do-install::
-	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 .include <bsd.port.mk>
