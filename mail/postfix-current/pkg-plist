@@ -25,6 +25,7 @@ etc/postfix/dist-virtual
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
+libexec/postfix/discard
 libexec/postfix/error
 libexec/postfix/flush
 libexec/postfix/lmtp
@@ -157,6 +158,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/cidr_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/cleanup.8.html
 %%PORTDOCS%%%%DOCSDIR%%/defer.8.html
+%%PORTDOCS%%%%DOCSDIR%%/discard.8.html
 %%PORTDOCS%%%%DOCSDIR%%/error.8.html
 %%PORTDOCS%%%%DOCSDIR%%/flush.8.html
 %%PORTDOCS%%%%DOCSDIR%%/header_checks.5.html
