@@ -623,7 +623,6 @@ bibcursed	ports/print/bibcursed
 bibelot		ports/palm/bibelot
 biblereader	ports/misc/biblereader
 bibletime	ports/misc/bibletime
-bibletime-doc	ports/misc/bibletime-doc
 bibtex2html	ports/textproc/bibtex2html
 bibview		ports/print/bibview
 bicom		ports/archivers/bicom
