@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Apr  7 19:42:23 2002
++++ Makefile.in	Sun Apr  7 19:42:35 2002
+@@ -120,7 +120,7 @@
+ YACC = @YACC@
+ cxxflags_set = @cxxflags_set@
+ 
+-SUBDIRS = libgnomeui glade images demos test-gnome doc po #tests
++SUBDIRS = libgnomeui glade images demos doc po #tests
+ 
+ EXTRA_DIST = message-of-doom
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
