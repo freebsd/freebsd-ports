@@ -351,6 +351,7 @@
     SUBDIR += xmps-win32-plugin
     SUBDIR += xmrm
     SUBDIR += xpaint
+    SUBDIR += xpcd
     SUBDIR += xpdf
     SUBDIR += xpm
     SUBDIR += xpx
