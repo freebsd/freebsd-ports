@@ -3,10 +3,10 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/06/19 11:26:04 asami Exp $
+# $Id: Makefile,v 1.4 1997/09/10 06:51:44 asami Exp $
 #
 
-PKGNAME=	cn-Wnn-4.2
+PKGNAME=	zh-Wnn-4.2
 CATEGORIES=	chinese
 
 ## COMMENT, DESCR, PLIST is used in a local 'pkg' directory

@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.17 1997/09/10 06:51:52 asami Exp $
+# $Id: Makefile,v 1.18 1997/09/19 09:34:31 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -24,8 +24,8 @@ WRKSRC=		${WRKDIR}/Xsi
 .if (${PKGNAME} == ja-Wnn-4.2)
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-Wnn
 DOC_FROM=	${WRKSRC}/Wnn
-.elif (${PKGNAME} == cn-Wnn-4.2)
-PORT_DOCDIR=	${PREFIX}/share/doc/cn-Wnn
+.elif (${PKGNAME} == zh-Wnn-4.2)
+PORT_DOCDIR=	${PREFIX}/share/doc/zh-Wnn
 DOC_FROM=	${WRKSRC}/cWnn
 .endif  # kWnn has no manual.
 
@@ -42,9 +42,9 @@ post-patch:
 	case ${PKGNAME} in \
 	  ja-Wnn-4.2) \
 		LANG_PATCH=${FILESDIR}/patch-for-japanese;; \
-	  cn-Wnn-4.2) \
+	  zh-Wnn-4.2) \
 		LANG_PATCH=${FILESDIR}/patch-for-chinese;; \
-	  kr-Wnn-4.2) \
+	  ko-Wnn-4.2) \
 		LANG_PATCH=${FILESDIR}/patch-for-korean;; \
 	esac; \
 	(cd ${_DISTDIR}; \
