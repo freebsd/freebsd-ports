@@ -9,13 +9,14 @@ PORTNAME=	kdetoys
 PORTVERSION=	1.1.2
 CATEGORIES=	x11-clocks kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR=	Attic/old/1.1.2/distribution/tar/generic/source/bz2
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
+NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
