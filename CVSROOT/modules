@@ -2312,6 +2312,7 @@ freeze		ports/archivers/freeze
 freshmeat-submit	ports/misc/freshmeat-submit
 fressh		ports/security/fressh
 fribidi		ports/converters/fribidi
+frikqcc		ports/games/frikqcc
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
 frontline	ports/graphics/frontline
