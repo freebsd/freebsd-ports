@@ -1,6 +1,6 @@
---- src/video_out/video_out_xv.c.orig   Sun Dec 14 23:13:26 2003
-+++ src/video_out/video_out_xv.c        Thu Feb  5 14:27:10 2004
-@@ -47,13 +47,17 @@
+--- src/video_out/video_out_xv.c.orig	Wed Apr 28 01:56:34 2004
++++ src/video_out/video_out_xv.c	Sun May  9 21:51:48 2004
+@@ -47,7 +47,11 @@
  #if defined (__SVR4) && defined (__sun)
  # include <sys/int_types.h>
  #else
@@ -12,11 +12,4 @@
 +# endif
  #endif
  
-+#include <sys/types.h>
- #if defined(__FreeBSD__)
- #include <machine/param.h>
- #endif
--#include <sys/types.h>
- #include <sys/ipc.h>
- #include <sys/shm.h>
- #include <sys/time.h>
+ #include <sys/types.h>
