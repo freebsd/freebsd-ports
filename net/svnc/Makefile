@@ -21,6 +21,7 @@ DOCFILES=	README
 DOCDIR=		share/doc/${PORTNAME}/
 
 PLIST=		${WRKDIR}/pkg-plist
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/svncviewer
 
 do-patch:
