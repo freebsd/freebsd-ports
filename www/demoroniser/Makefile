@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demoroniser
-PORTVERSION=	1.0
+PORTVERSION=	1.0.20030916
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
 		${MASTER_SITE_LOCAL}
@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Correct moronic and gratuitously incompatible HTML from MS applications
-
-BROKEN=		"Checksum mismatch"
 
 USE_ZIP=	yes
 NO_BUILD=	yes
