@@ -1,28 +1,14 @@
 bin/gedit
-lib/gedit/plugins/libasciitable.a
 lib/gedit/plugins/libasciitable.so
-lib/gedit/plugins/libasciitable.so.0
-lib/gedit/plugins/libbrowse.a
 lib/gedit/plugins/libbrowse.so
-lib/gedit/plugins/libconvert.a
 lib/gedit/plugins/libconvert.so
-lib/gedit/plugins/libdiff.a
 lib/gedit/plugins/libdiff.so
-lib/gedit/plugins/libdocinfo.a
 lib/gedit/plugins/libdocinfo.so
-lib/gedit/plugins/libdocinfo.so.0
-lib/gedit/plugins/libemail.a
 lib/gedit/plugins/libemail.so
-lib/gedit/plugins/libreverse.a
 lib/gedit/plugins/libreverse.so
-lib/gedit/plugins/libsample.a
 lib/gedit/plugins/libsample.so
-lib/gedit/plugins/libshell_output.a
 lib/gedit/plugins/libshell_output.so
-lib/gedit/plugins/libsort.a
 lib/gedit/plugins/libsort.so
-lib/gedit/plugins/libsort.so.0
-lib/gedit/plugins/libtime.a
 lib/gedit/plugins/libtime.so
 share/gnome/apps/Applications/gedit.desktop
 share/gnome/gedit/glade/about.glade
@@ -122,8 +108,6 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit/ja
 @dirrm share/gnome/help/gedit/C/stylesheet-images
 @dirrm share/gnome/help/gedit/C/images
-@dirrm share/gnome/help/gedit/C
-@dirrm share/gnome/help/gedit
 @dirrm share/gnome/gedit/glade
 @dirrm share/gnome/gedit
 @dirrm lib/gedit/plugins

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/shell_output/Makefile.in.orig	Sat Jul 20 13:59:48 2002
++++ plugins/shell_output/Makefile.in	Sat Jul 20 14:10:26 2002
+@@ -150,7 +150,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libshell_output_la_LDFLAGS = 
++libshell_output_la_LDFLAGS = -avoid-version -module
+ libshell_output_la_LIBADD = 
+ libshell_output_la_OBJECTS =  shell_output.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/diff/Makefile.in.orig	Sat Jul 20 13:59:48 2002
++++ plugins/diff/Makefile.in	Sat Jul 20 14:10:00 2002
+@@ -147,7 +147,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libdiff_la_LDFLAGS = 
++libdiff_la_LDFLAGS = -avoid-version -module
+ libdiff_la_LIBADD = 
+ libdiff_la_OBJECTS =  diff.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
