@@ -13,6 +13,8 @@ MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/libmemcache/
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The C library for accessing a memcache cluster
 
+BROKEN=		"Does not build"
+
 NO_FILTER_SHLIBS=	yes
 BUILD_DEPENDS+=	pmk:${PORTSDIR}/devel/pmk
 
