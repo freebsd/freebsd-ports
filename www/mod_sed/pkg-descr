@@ -1,0 +1,5 @@
+mod_sed is an apache module that embeds a copy of the sed(1) command. This
+means that you can automatically filter data without having to spawn a CGI
+process.
+
+WWW: http://www.happygiraffe.net/mod_sed.html
