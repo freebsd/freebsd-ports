@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.109 1998/12/27 03:28:13 billf Exp $
+# $Id: Makefile,v 1.110 1999/01/07 12:05:26 asami Exp $
 #
 
     SUBDIR += 4va
     SUBDIR += Cgraph
     SUBDIR += EZWGL
+    SUBDIR += GIFgraph
     SUBDIR += ImageMagick
     SUBDIR += Mesa3
     SUBDIR += aalib
