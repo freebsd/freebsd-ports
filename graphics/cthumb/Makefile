@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	cthumb
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	graphics www
-MASTER_SITES=	http://puchol.com/cpg/software/cthumb/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cthumb
 
 MAINTAINER=	dom@happygiraffe.net
-COMMENT=	cthumb - a themable web picture album generator
+COMMENT=	A themable web picture album generator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/djpeg:${PORTSDIR}/graphics/jpeg \
-		${SITE_PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 
-SITE_PERL_ARCH=	${SITE_PERL}/${PERL_ARCH}
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-themedir=${PREFIX}/share/${PORTNAME}
+CONFIGURE_ARGS=	--with-themedir=${DATADIR}
 
 MAN1=		cthumb.1
+
+PORTDOCS=	ChangeLog INSTALL README TO-DO VERSION cthumbrc.sample
 
 THEMES=		blue-steel.theme \
 		classic-clips.theme \
@@ -50,11 +51,6 @@ THEMES=		blue-steel.theme \
 		tv-large.theme \
 		tv.theme
 
-post-configure:
-	@${PERL} -pi \
-		-e 's|cp -r|cp -Rf|g;' \
-		${WRKSRC}/cthumb
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cthumb ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/cthumb.1 ${PREFIX}/man/man1
@@ -63,9 +59,9 @@ do-install:
 	${MKDIR} ${DATADIR}/${theme}
 	${INSTALL_DATA} ${WRKSRC}/themes/${theme}/* ${DATADIR}/${theme}
 .endfor
-.if !defined(NOPRTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for doc in ChangeLog INSTALL README TO-DO VERSION cthumbrc.sample
+.for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif

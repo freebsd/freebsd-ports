@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Aug 13 21:24:05 2002
++++ configure.in	Tue Jan 27 18:41:42 2004
+@@ -8,7 +8,7 @@
+ dnl Checks for programs.
+ AC_PATH_PROGS(perl_path, perl5 perl, no)
+ AC_PROG_INSTALL
+-AC_CHECK_PROG(CPR, rsync, rsync -avqC, cp -r)
++AC_CHECK_PROG(CPR, cp, cp -Rf)
+ AC_SUBST(CPR)
+ 
+ dnl Checks for libraries.
