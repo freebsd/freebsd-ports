@@ -1,1 +1,4 @@
-bin/swfplayer
+include/flash.h
+lib/libflash.a
+lib/libflash.so
+lib/libflash.so.0

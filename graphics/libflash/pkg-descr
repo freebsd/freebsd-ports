@@ -1,20 +1,8 @@
-This is an implementation of Macromedia Flash standalone player.
-Note that this is an unofficial implementation, not done by Macromedia itself.
+GPL Flash (TM) Library is a set of source codes that allow to play
+Flash (TM) movies.
 
-Usage:	swfplayer <file.swf>
+The core of the library is a graphic renderer that is portable is to
+be reused in applications that need to play Flash (TM) movies.
 
-WWW:	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash.html
-	http://perso.club-internet.fr/odebon/flash.html (mirror)
-
-Author: Olivier Debon <odebon@club-internet.fr>
-
-Porting to FreeBSD was done by <yamagata@nwgpc.kek.jp>, whose works are
-available at:
-
-	http://leed.t.u-tokyo.ac.jp/~yamagata/flash/
-
-
-The Netscape plugin is also available as a separate port.
-
--- 
-Akinori MUSHA aka knu <knu@idaemons.org>
+Author:	Olivier Debon <odebon@club-internet.fr>
+WWW:	http://www.swift-tools.com/Flash/
