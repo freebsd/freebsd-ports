@@ -4,18 +4,14 @@ bin/Gatherer
 bin/Harvest
 bin/broker
 bin/curl
-bin/curl-config
 bin/gather
-bin/yaz-client
-bin/yaz-comp
-bin/yaz-config
-bin/yaz-ztest
 bin/zebraidx
 bin/zebrash
 bin/zebrasrv
 bin/zoomsh
 brokers/Attributes.html
 brokers/adminhelp.html
+brokers/images/dutch.gif
 brokers/images/english.gif
 brokers/images/french.gif
 brokers/images/german.gif
@@ -48,11 +44,13 @@ brokers/skeleton/query-glimpse-modern.html.es.in
 brokers/skeleton/query-glimpse-modern.html.fr.in
 brokers/skeleton/query-glimpse-modern.html.in
 brokers/skeleton/query-glimpse-modern.html.it.in
+brokers/skeleton/query-glimpse-modern.html.nl.in
 brokers/skeleton/query-glimpse-modern.html.ru.in
 brokers/skeleton/query-glimpse-modern.html.se.in
 brokers/skeleton/query-glimpse.html.de.in
 brokers/skeleton/query-glimpse.html.in
 brokers/skeleton/query-glimpse.html.it.in
+brokers/skeleton/query-glimpse.html.nl.in
 brokers/skeleton/query-glimpse.html.se.in
 brokers/skeleton/query-swish-modern.html.in
 brokers/skeleton/query-swish.html.in
@@ -70,10 +68,12 @@ cgi-bin/BrokerAdmin.pl.cgi
 cgi-bin/displaySOIF.cgi
 cgi-bin/lib/Sample.cf
 cgi-bin/lib/classic.cf
+cgi-bin/lib/dutch.cf
 cgi-bin/lib/french.cf
 cgi-bin/lib/german.cf
 cgi-bin/lib/italiano.cf
 cgi-bin/lib/modern.cf
+cgi-bin/lib/rediris.cf
 cgi-bin/lib/russian.cf
 cgi-bin/lib/search.cf
 cgi-bin/lib/spanish.cf
@@ -112,79 +112,6 @@ gatherers/example-5/RunGatherer
 gatherers/example-5/example-5.cf
 gatherers/example-5/mydomain-host-filter
 gatherers/example-5/mydomain-url-filter
-include/curl/curl.h
-include/curl/easy.h
-include/curl/mprintf.h
-include/curl/multi.h
-include/curl/stdcheaders.h
-include/curl/types.h
-include/yaz/backend.h
-include/yaz/ccl.h
-include/yaz/charneg.h
-include/yaz/comstack.h
-include/yaz/cql.h
-include/yaz/diagbib1.h
-include/yaz/ill-core.h
-include/yaz/ill.h
-include/yaz/item-req.h
-include/yaz/log.h
-include/yaz/logrpn.h
-include/yaz/marcdisp.h
-include/yaz/nmem.h
-include/yaz/odr.h
-include/yaz/oid.h
-include/yaz/options.h
-include/yaz/otherinfo.h
-include/yaz/pquery.h
-include/yaz/proto.h
-include/yaz/prt-ext.h
-include/yaz/readconf.h
-include/yaz/soap.h
-include/yaz/sortspec.h
-include/yaz/srw.h
-include/yaz/statserv.h
-include/yaz/tcpip.h
-include/yaz/tpath.h
-include/yaz/unix.h
-include/yaz/wrbuf.h
-include/yaz/xmalloc.h
-include/yaz/yaz-ccl.h
-include/yaz/yaz-iconv.h
-include/yaz/yaz-util.h
-include/yaz/yaz-version.h
-include/yaz/yconfig.h
-include/yaz/z-accdes1.h
-include/yaz/z-accform1.h
-include/yaz/z-acckrb1.h
-include/yaz/z-charneg.h
-include/yaz/z-core.h
-include/yaz/z-date.h
-include/yaz/z-diag1.h
-include/yaz/z-espec1.h
-include/yaz/z-estask.h
-include/yaz/z-exp.h
-include/yaz/z-grs.h
-include/yaz/z-mterm2.h
-include/yaz/z-opac.h
-include/yaz/z-rrf1.h
-include/yaz/z-rrf2.h
-include/yaz/z-sum.h
-include/yaz/z-sutrs.h
-include/yaz/z-uifr1.h
-include/yaz/z-univ.h
-include/yaz/zes-admin.h
-include/yaz/zes-expi.h
-include/yaz/zes-exps.h
-include/yaz/zes-order.h
-include/yaz/zes-pquery.h
-include/yaz/zes-psched.h
-include/yaz/zes-pset.h
-include/yaz/zes-update.h
-include/yaz/zes-update0.h
-include/yaz/zgdu.h
-include/yaz/zoom.h
-include/zebraapi.h
-include/zebraver.h
 lib/broker/BrokerRestart
 lib/broker/agrep
 lib/broker/brkclient
@@ -195,8 +122,7 @@ lib/broker/glimpseindex.bin
 lib/broker/glimpseserver
 lib/broker/info-to-html.pl
 lib/broker/mkbrokerstats.pl
-lib/broker/soif2gils.pl
-lib/broker/swish
+lib/broker/soif2xml.pl
 lib/chat2.pl
 lib/dateconv.pl
 lib/ftp.pl
@@ -412,12 +338,6 @@ lib/libcurl.a
 lib/libcurl.la
 lib/libcurl.so
 lib/libcurl.so.2
-lib/libyaz.a
-lib/libyaz.la
-lib/libyazmalloc.a
-lib/libyazmalloc.la
-lib/libyazthread.a
-lib/libyazthread.la
 lib/lsparse.pl
 lib/md5
 lib/newsget.pl
@@ -427,93 +347,7 @@ lib/soif.pl
 lib/timelocal.pl
 lib/urlget
 lib/urlpurge
-share/aclocal/yaz.m4
 share/curl/curl-ca-bundle.crt
-share/doc/idzebra/administration.html
-share/doc/idzebra/apps.html
-share/doc/idzebra/configuration-file.html
-share/doc/idzebra/data-model.html
-share/doc/idzebra/example1.html
-share/doc/idzebra/example2.html
-share/doc/idzebra/examples.html
-share/doc/idzebra/features.html
-share/doc/idzebra/file-ids.html
-share/doc/idzebra/formats.html
-share/doc/idzebra/future.html
-share/doc/idzebra/generic-ids.html
-share/doc/idzebra/indexdata.html
-share/doc/idzebra/installation.html
-share/doc/idzebra/installation.win32.html
-share/doc/idzebra/internal-representation.html
-share/doc/idzebra/introduction.html
-share/doc/idzebra/license.html
-share/doc/idzebra/locating-records.html
-share/doc/idzebra/protocol-support.html
-share/doc/idzebra/quick-start.html
-share/doc/idzebra/record-model.html
-share/doc/idzebra/register-location.html
-share/doc/idzebra/server.html
-share/doc/idzebra/shadow-registers.html
-share/doc/idzebra/simple-indexing.html
-share/doc/idzebra/support.html
-share/doc/idzebra/zebra.html
-share/doc/idzebra/zebra.pdf
-share/doc/idzebra/zebraidx.html
-share/doc/yaz/apilayer.png
-share/doc/yaz/asn.external.html
-share/doc/yaz/asn.html
-share/doc/yaz/asn.oid.html
-share/doc/yaz/asn.pdu.html
-share/doc/yaz/asn.preparing.html
-share/doc/yaz/client.commands.html
-share/doc/yaz/client.html
-share/doc/yaz/client.invoking.html
-share/doc/yaz/client.searching.html
-share/doc/yaz/comstack.addresses.html
-share/doc/yaz/comstack.client.html
-share/doc/yaz/comstack.common.html
-share/doc/yaz/comstack.diagnostics.html
-share/doc/yaz/comstack.html
-share/doc/yaz/comstack.introduction.html
-share/doc/yaz/comstack.server.html
-share/doc/yaz/comstack.summary.html
-share/doc/yaz/credits.html
-share/doc/yaz/future.html
-share/doc/yaz/id.png
-share/doc/yaz/indexdata.html
-share/doc/yaz/installation.html
-share/doc/yaz/installation.unix.html
-share/doc/yaz/installation.win32.html
-share/doc/yaz/introduction.api.html
-share/doc/yaz/introduction.html
-share/doc/yaz/license.html
-share/doc/yaz/license.other.html
-share/doc/yaz/odr.debugging.html
-share/doc/yaz/odr.html
-share/doc/yaz/odr.programming.html
-share/doc/yaz/odr.use.html
-share/doc/yaz/server.backend.html
-share/doc/yaz/server.backendfunctions.html
-share/doc/yaz/server.frontend.html
-share/doc/yaz/server.html
-share/doc/yaz/server.invocation.html
-share/doc/yaz/server.main.html
-share/doc/yaz/soap.html
-share/doc/yaz/soap.http.html
-share/doc/yaz/soap.srw.html
-share/doc/yaz/soap.xml.html
-share/doc/yaz/tools.html
-share/doc/yaz/tools.nmem.html
-share/doc/yaz/tools.oid.html
-share/doc/yaz/yaz.html
-share/doc/yaz/yaz.pdf
-share/doc/yaz/zoom.events.html
-share/doc/yaz/zoom.html
-share/doc/yaz/zoom.options.html
-share/doc/yaz/zoom.query.html
-share/doc/yaz/zoom.records.html
-share/doc/yaz/zoom.resultsets.html
-share/doc/yaz/zoom.scan.html
 share/idzebra/tab/bib1.att
 share/idzebra/tab/dan1.att
 share/idzebra/tab/danmarc.abs
@@ -545,7 +379,6 @@ share/idzebra/tab/nwi.flt
 share/idzebra/tab/refer.flt
 share/idzebra/tab/scan.chr
 share/idzebra/tab/sgml.flt
-share/idzebra/tab/soif-harvest.flt
 share/idzebra/tab/soif.flt
 share/idzebra/tab/string.chr
 share/idzebra/tab/summary.abs
@@ -562,17 +395,6 @@ share/idzebra/tab/var1.var
 share/idzebra/tab/wais-b.est
 share/idzebra/tab/wais-variant.est
 share/idzebra/tab/wais.abs
-share/yaz/ill/ill.tcl
-share/yaz/ill/ill9702.asn
-share/yaz/ill/item-req.asn
-share/yaz/z39.50/charneg-3.asn
-share/yaz/z39.50/datetime.asn
-share/yaz/z39.50/esadmin.asn
-share/yaz/z39.50/esupdate.asn
-share/yaz/z39.50/mterm2.asn
-share/yaz/z39.50/univres.asn
-share/yaz/z39.50/z.tcl
-share/yaz/z39.50/z3950v3.asn
 @dirrm bin
 @dirrm lib/gatherer/sgmls-lib/html-4.0
 @dirrm lib/gatherer/sgmls-lib/html-4.01
@@ -604,23 +426,8 @@ share/yaz/z39.50/z3950v3.asn
 @dirrm gatherers/example-4
 @dirrm gatherers/example-5
 @dirrm gatherers
-@dirrm man/man3
-@dirrm man/man1
-@dirrm man/man7
-@dirrm man/man8
-@dirrm man
 @dirrm share/curl
-@dirrm share/yaz/z39.50
-@dirrm share/yaz/ill
-@dirrm share/yaz
-@dirrm share/doc/yaz
-@dirrm share/doc/idzebra
-@dirrm share/doc
-@dirrm share/aclocal
 @dirrm share/idzebra/tab
 @dirrm share/idzebra
 @dirrm share
-@dirrm include/curl
-@dirrm include/yaz
-@dirrm include
 @unexec rmdir %D

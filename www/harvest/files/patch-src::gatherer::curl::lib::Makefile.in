@@ -1,0 +1,11 @@
+--- src/gatherer/curl/lib/Makefile.in.orig	Mon Nov 10 10:40:40 2003
++++ src/gatherer/curl/lib/Makefile.in	Mon Nov 10 10:40:58 2003
+@@ -27,7 +27,7 @@
+ top_builddir = ..
+ 
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+-INSTALL = @INSTALL@
++INSTALL = $(install_sh)
+ install_sh_DATA = $(install_sh) -c -m 644
+ install_sh_PROGRAM = $(install_sh) -c
+ install_sh_SCRIPT = $(install_sh) -c
