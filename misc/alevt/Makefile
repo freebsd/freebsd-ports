@@ -9,7 +9,7 @@ PORTNAME=	alevt
 PORTVERSION=	1.6.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://user.exit.de/froese/alevt/
+		http://user.exit.mytoday.de/froese/alevt/
 MASTER_SITE_SUBDIR=	apps/video
 
 MAINTAINER=	roger@freebsd.org
