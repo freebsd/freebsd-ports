@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--with-dlz-mysql
 .endif
 
 .if defined(WITH_LDAP)
-LDAP_PORT?=	net/openldap20-client
+LDAP_PORT?=	net/openldap21-client
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 CONFIGURE_ARGS+=	--with-dlz-ldap
