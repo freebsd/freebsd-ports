@@ -31,6 +31,7 @@
     SUBDIR += libarchive
     SUBDIR += libcabinet
     SUBDIR += libcomprex
+    SUBDIR += libmspack
     SUBDIR += lzo
     SUBDIR += lzop
     SUBDIR += macutils
