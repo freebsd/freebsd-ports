@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
@@ -18,6 +18,7 @@ COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
 
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -30,16 +31,11 @@ MAN1=		speexdec.1 speexenc.1
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=	-lgnugetopt
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|doc win32|win32|g ; \
 		 s|^mandir =.*$$|mandir = @mandir@|g' 
+	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
+		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

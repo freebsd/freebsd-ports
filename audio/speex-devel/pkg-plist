@@ -8,4 +8,4 @@ include/speex_header.h
 include/speex_stereo.h
 lib/libspeex.a
 lib/libspeex.so
-lib/libspeex.so.1
+lib/libspeex.so.2
