@@ -1,5 +1,7 @@
+bin/5250keys
 bin/lp5250d
 bin/scs2ascii
+bin/scs2ps
 bin/tn3270d
 bin/tn5250
 bin/tn5250-config
@@ -33,9 +35,10 @@ lib/lib5250.a
 lib/lib5250.so
 lib/lib5250.so.0
 share/aclocal/tn5250.m4
+share/tn5250/README
 share/tn5250/XTerm
 share/tn5250/dialogrc
-share/tn5250/uk5250.map
-share/tn5250/us5250.map
+share/tn5250/sample.termcap
+share/tn5250/us.5250.kbd
 @dirrm share/tn5250
 @dirrm include/tn5250
