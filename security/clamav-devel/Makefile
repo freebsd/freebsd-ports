@@ -39,7 +39,8 @@ MAN8=		clamd.8
 
 .include <bsd.port.pre.mk>
 
-.if exists(/usr/include/libmilter/mfapi.h)
+.if defined(WITH_MILTER)
+USE_GCC=	3.2
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER:=""
 .else
