@@ -1,5 +1,5 @@
 --- configure.orig	Fri Aug 24 15:05:06 2001
-+++ configure	Tue Aug  6 16:45:45 2002
++++ configure	Mon Aug 26 22:26:15 2002
 @@ -2552,6 +2552,8 @@
    echo "$as_me:2552: result: no" >&5
  echo "${ECHO_T}no" >&6
@@ -9,6 +9,15 @@
  rm -f conftest*
  
  echo "$as_me:2557: checking for minix/config.h" >&5
+@@ -11904,7 +11906,7 @@
+ if test $use_vfs = yes
+ then
+ 	LIBVFS="libvfs-mc.a"
+-	LVFS="-lvfs-mc"
++	LVFS="../vfs/libvfs-mc.a"
+ 	MCCPPFLAGS="$MCCPPFLAGS -I\$(vfsdir)"
+ 	echo "$as_me:11909: result: Using the VFS switch code" >&5
+ echo "${ECHO_T}Using the VFS switch code" >&6
 @@ -12971,7 +12973,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -27,6 +36,24 @@
  	    screen_manager="SLang (system-installed library)"
  	    echo "$as_me:13256: result: Using system installed SLang library" >&5
  echo "${ECHO_T}Using system installed SLang library" >&6
+@@ -13489,7 +13491,7 @@
+ 
+ 	LIBEDIT_A="libedit.a"
+ 	MCEDIT="mcedit"
+-	LEDIT="-ledit"
++	LEDIT="../edit/libedit.a"
+ 	EDIT_msg="yes"
+ 	echo "$as_me:13494: result: will call internal editor" >&5
+ echo "${ECHO_T}will call internal editor" >&6
+@@ -13505,7 +13507,7 @@
+ 
+ 	LIBEDIT_A="libedit.a"
+ 	MCEDIT="mcedit"
+-	LEDIT="-ledit"
++	LEDIT="../edit/libedit.a"
+ 	EDIT_msg="yes"
+ 	echo "$as_me:13510: result: will call internal editor" >&5
+ echo "${ECHO_T}will call internal editor" >&6
 @@ -14223,7 +14225,7 @@
  #define HAVE_SYSTEM_SLANG 1
  EOF

@@ -54,7 +54,8 @@ CONFIGURE_ARGS+=--without-gnome
 CONFIGURE_ARGS+=--without-edit
 .endif
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+		LOCALBASE=${LOCALBASE}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if ${PORTNAME} == "mc"
 PLIST_SUB+=	GNOMEMC="@comment " MC="" SHARE_PATH="share"
