@@ -1,13 +1,13 @@
 # New ports collection makefile for:  	mixer.app
-# Version required:	1.3.3
+# Version required:	1.4.0
 # Date created:		16 April 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.3 1999/04/23 04:49:47 mharo Exp $
+# $Id: Makefile,v 1.4 1999/05/05 13:50:15 flathill Exp $
 #
 
-DISTNAME=	Mixer.app-1.3.3
-PKGNAME=	mixer.app-1.3.3
+DISTNAME=	Mixer.app-1.4.0
+PKGNAME=	mixer.app-1.4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.student.hk-r.se/~pt96pli/mixer/
 
