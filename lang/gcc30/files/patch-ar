@@ -1,7 +1,7 @@
---- gcc/config/freebsd.h.orig	Wed May 30 16:05:30 2001
-+++ gcc/config/freebsd.h	Mon Jun 18 18:46:50 2001
-@@ -50,29 +50,32 @@
- #undef WORD_SWITCH_TAKES_ARG
+--- gcc/config/freebsd.h.orig	Sat Nov  3 12:28:24 2001
++++ gcc/config/freebsd.h	Sun Jan 27 02:22:51 2002
+@@ -55,29 +55,32 @@
+ #undef  WORD_SWITCH_TAKES_ARG
  #define WORD_SWITCH_TAKES_ARG(STR) (FBSD_WORD_SWITCH_TAKES_ARG(STR))
  
 +/* Place spaces around this string.  We depend on string splicing to produce
@@ -9,52 +9,44 @@
 +
  #if FBSD_MAJOR == 6
  #define FBSD_CPP_PREDEFINES \
--  "-D__FreeBSD__=6 -Dunix -D__ELF__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
-+  " -D__FreeBSD__=6 -Dunix -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+-  "-D__FreeBSD__=6 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=6 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
  #endif
  
  #if FBSD_MAJOR == 5
  #define FBSD_CPP_PREDEFINES \
--  "-D__FreeBSD__=5 -Dunix -D__ELF__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
-+  " -D__FreeBSD__=5 -Dunix -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+-  "-D__FreeBSD__=5 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=5 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
  #endif
  
  #if FBSD_MAJOR == 4
  #define FBSD_CPP_PREDEFINES \
--  "-D__FreeBSD__=4 -Dunix -D__ELF__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
-+  " -D__FreeBSD__=4 -Dunix -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+-  "-D__FreeBSD__=4 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=4 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
  #endif
  
  #if FBSD_MAJOR == 3
  #define FBSD_CPP_PREDEFINES \
--  "-D__FreeBSD__=3 -Dunix -D__ELF__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
-+  " -D__FreeBSD__=3 -Dunix -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+-  "-D__FreeBSD__=3 -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__=3 -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
  #endif
  
  #ifndef FBSD_CPP_PREDEFINES
  #define FBSD_CPP_PREDEFINES \
--  "-D__FreeBSD__   -Dunix -D__ELF__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
-+  " -D__FreeBSD__   -Dunix -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
+-  "-D__FreeBSD__   -Dunix -D__ELF__ -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD"
++  " -D__FreeBSD__   -Dunix -D__KPRINTF_ATTRIBUTE__ -Asystem=unix -Asystem=bsd -Asystem=FreeBSD "
  #endif
  
  #undef  CPP_PREDEFINES
-@@ -81,10 +84,16 @@
- /* Provide a CPP_SPEC appropriate for FreeBSD.  We just deal with the GCC 
-    option `-posix', and PIC issues.  */
- 
--#undef CPP_SPEC
--#define CPP_SPEC "%(cpp_cpu)						\
-+#define FBSD_CPP_SPEC "							\
-+  %(cpp_cpu)								\
+@@ -89,7 +92,10 @@
+ #define FBSD_CPP_SPEC "							\
+   %(cpp_cpu)								\
    %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__}		\
 -  %{posix:-D_POSIX_SOURCE}"
 +  %{posix:-D_POSIX_SOURCE}						\
 +  %{!maout: -D__ELF__}							\
 +  %{munderscores: -D__UNDERSCORES__}					\
 +  %{maout: %{!mno-underscores: -D__UNDERSCORES__}}"
-+
-+#undef CPP_SPEC
-+#define CPP_SPEC FBSD_CPP_SPEC
  
- /* Provide a LIB_SPEC appropriate for FreeBSD as configured and as
-    required by the user-land thread model.  Before __FreeBSD_version
+ #undef  CPP_SPEC
+ #define CPP_SPEC FBSD_CPP_SPEC
