@@ -19,7 +19,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 IGNOREFILES=	Wraphelp.c
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 RUN_DEPENDS=	${FONT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 
@@ -40,5 +40,6 @@ HasXdmAuth?=		YES
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
 
 .include <bsd.port.mk>

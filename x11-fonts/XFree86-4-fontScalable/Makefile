@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings

@@ -25,7 +25,7 @@ configure () {
     # It's good for FreeBSD ports/packages system.
     echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
 
-    # Now, We can use this configuration.
+    # Now, we can use this configuration.
     # Thanks, Trevor Johnson <trevor@jpj.net>
     echo "#define InstallXserverSetUID NO" >> $LOCALDEF
 
@@ -79,25 +79,28 @@ configure () {
     echo "#define XF86Server YES" >> $LOCALDEF
     echo "#define BuildServersOnly YES" >> $LOCALDEF
     echo "#define BuildXFree86ConfigTools YES" >> $LOCALDEF
+    
+    # More of the i386 drivers could probably move to XF86CardDrivers.
+    # Is fbdev driver useful to us?
+    # GlideDriver was left out because we have no Glide2 package.
     cat >> $LOCALDEF <<END
 #ifndef XF86CardDrivers
 #ifdef i386Architecture
-#define XF86CardDrivers         mga glint nv tga s3 s3virge sis rendition \
-                                neomagic i740 tdfx savage \
-                                cirrus vmware tseng trident chips apm \
-                                GlideDriver fbdev i128 \
-                                ati AgpGartDrivers DevelDrivers ark cyrix \
-				siliconmotion \
-				vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
-#else
-#ifdef AlphaArchitecture
-#define XF86CardDrivers         mga tdfx glint s3 s3virge rendition tga \
-				savage nv DevelDrivers siliconmotion vga \
+#define ArchSpecificDrivers	apm ark chips cirrus cyrix fbdev i740 \
+				i128 i810 neomagic sis trident tseng \
+				vesa vmware
+#define DriDrivers		gamma tdfx mga i810 i830 r128 radeon sis
+#elif defined(AlphaArchitecture)
+#define ArchSpecificDrivers
+#define DriDrivers		gamma tdfx mga r128 radeon
+#endif
+#define XF86CardDrivers		ati glint mga nv rendition s3 s3virge \
+				savage siliconmotion tdfx tga vga \
+				ArchSpecificDrivers DevelDrivers \
 				XF86OSCardDrivers XF86ExtraCardDrivers
 #endif
-#endif
-#endif
 END
+
     echo "#define BuildThreadStubLibrary YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXxserv YES" >> $LOCALDEF
 

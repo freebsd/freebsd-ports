@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
@@ -27,5 +27,6 @@ MAN1=			Xserver.1 xfs.1
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
 
 .include <bsd.port.mk>

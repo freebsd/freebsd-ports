@@ -18,7 +18,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 IGNOREFILES=	Wraphelp.c
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
@@ -36,5 +36,6 @@ HasXdmAuth?=		YES
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz X${PORTVERSION:S/.//g}src-2.tgz X${PORTVERSION:S/.//g}src-3.tgz
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-2.tgz X${PORTVERSION:S/.//g}src-3.tgz
 
-MAINTAINER=	taguchi@tohoku.iij.ad.jp
+MAINTAINER=	anholt@freebsd.org
 
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
