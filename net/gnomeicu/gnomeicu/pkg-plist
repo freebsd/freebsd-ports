@@ -1,16 +1,139 @@
 bin/gnomeicu
 bin/gnomeicu-client
-etc/CORBA/servers/GnomeICU.gnorba
 etc/sound/events/GnomeICU.soundlist
-share/gnome/applets/Network/GnomeICU.desktop
-share/gnome/apps/Internet/GnomeICU.desktop
+libdata/bonobo/servers/GNOME_GnomeICUApplet.server
+libexec/gnomeicu-applet
+share/gnome/applications/GnomeICU.desktop
+share/gnome/gnome-2.0/ui/GNOME_GnomeICUApplet.xml
+share/gnome/gnomeicu/emoticons/AIM/angel.xpm
+share/gnome/gnomeicu/emoticons/AIM/bigsmile.xpm
+share/gnome/gnomeicu/emoticons/AIM/crossedlips.xpm
+share/gnome/gnomeicu/emoticons/AIM/cry.xpm
+share/gnome/gnomeicu/emoticons/AIM/embarrassed.xpm
+share/gnome/gnomeicu/emoticons/AIM/emoticon-data
+share/gnome/gnomeicu/emoticons/AIM/kiss.xpm
+share/gnome/gnomeicu/emoticons/AIM/sad.xpm
+share/gnome/gnomeicu/emoticons/AIM/scream.xpm
+share/gnome/gnomeicu/emoticons/AIM/smile.xpm
+share/gnome/gnomeicu/emoticons/AIM/smile8.xpm
+share/gnome/gnomeicu/emoticons/AIM/think.xpm
+share/gnome/gnomeicu/emoticons/AIM/tongue.xpm
+share/gnome/gnomeicu/emoticons/AIM/wink.xpm
+share/gnome/gnomeicu/emoticons/Always/Annoyed.bmp
+share/gnome/gnomeicu/emoticons/Always/Disgusted.bmp
+share/gnome/gnomeicu/emoticons/Always/Drooling.bmp
+share/gnome/gnomeicu/emoticons/Always/Giggling.bmp
+share/gnome/gnomeicu/emoticons/Always/Jokingly.bmp
+share/gnome/gnomeicu/emoticons/Always/Shocked.bmp
+share/gnome/gnomeicu/emoticons/Always/Surprised-F.bmp
+share/gnome/gnomeicu/emoticons/Always/Surprised-M.bmp
+share/gnome/gnomeicu/emoticons/Always/Whining.bmp
+share/gnome/gnomeicu/emoticons/Always/asl.gif
+share/gnome/gnomeicu/emoticons/Always/bat.gif
+share/gnome/gnomeicu/emoticons/Always/beer.gif
+share/gnome/gnomeicu/emoticons/Always/boy.gif
+share/gnome/gnomeicu/emoticons/Always/broken_heart.gif
+share/gnome/gnomeicu/emoticons/Always/cake.gif
+share/gnome/gnomeicu/emoticons/Always/camera.gif
+share/gnome/gnomeicu/emoticons/Always/cat.gif
+share/gnome/gnomeicu/emoticons/Always/clock.gif
+share/gnome/gnomeicu/emoticons/Always/coffee.gif
+share/gnome/gnomeicu/emoticons/Always/cuffs.gif
+share/gnome/gnomeicu/emoticons/Always/dog.gif
+share/gnome/gnomeicu/emoticons/Always/dude_hug.gif
+share/gnome/gnomeicu/emoticons/Always/emoticon-data
+share/gnome/gnomeicu/emoticons/Always/envelope.gif
+share/gnome/gnomeicu/emoticons/Always/film.gif
+share/gnome/gnomeicu/emoticons/Always/girl.gif
+share/gnome/gnomeicu/emoticons/Always/girl_hug.gif
+share/gnome/gnomeicu/emoticons/Always/heart.gif
+share/gnome/gnomeicu/emoticons/Always/martini.gif
+share/gnome/gnomeicu/emoticons/Always/messenger.gif
+share/gnome/gnomeicu/emoticons/Always/moon.gif
+share/gnome/gnomeicu/emoticons/Always/musical_note.gif
+share/gnome/gnomeicu/emoticons/Always/phone.gif
+share/gnome/gnomeicu/emoticons/Always/present.gif
+share/gnome/gnomeicu/emoticons/Always/rainbow.gif
+share/gnome/gnomeicu/emoticons/Always/rose.gif
+share/gnome/gnomeicu/emoticons/Always/star.gif
+share/gnome/gnomeicu/emoticons/Always/sun.gif
+share/gnome/gnomeicu/emoticons/Always/thumbs_down.gif
+share/gnome/gnomeicu/emoticons/Always/thumbs_up.gif
+share/gnome/gnomeicu/emoticons/Always/wilted_rose.gif
+share/gnome/gnomeicu/emoticons/Default/bigsmile.png
+share/gnome/gnomeicu/emoticons/Default/cry.png
+share/gnome/gnomeicu/emoticons/Default/emoticon-data
+share/gnome/gnomeicu/emoticons/Default/sad.png
+share/gnome/gnomeicu/emoticons/Default/scream.png
+share/gnome/gnomeicu/emoticons/Default/smile.png
+share/gnome/gnomeicu/emoticons/Default/smile2.png
+share/gnome/gnomeicu/emoticons/Default/unsure.png
+share/gnome/gnomeicu/emoticons/Default/wink.png
+share/gnome/gnomeicu/emoticons/MSN/angel.gif
+share/gnome/gnomeicu/emoticons/MSN/angry.gif
+share/gnome/gnomeicu/emoticons/MSN/bigsmile.gif
+share/gnome/gnomeicu/emoticons/MSN/confused.gif
+share/gnome/gnomeicu/emoticons/MSN/cry.gif
+share/gnome/gnomeicu/emoticons/MSN/devil.gif
+share/gnome/gnomeicu/emoticons/MSN/embaressed.gif
+share/gnome/gnomeicu/emoticons/MSN/emoticon-data
+share/gnome/gnomeicu/emoticons/MSN/kiss.gif
+share/gnome/gnomeicu/emoticons/MSN/light.gif
+share/gnome/gnomeicu/emoticons/MSN/sad.gif
+share/gnome/gnomeicu/emoticons/MSN/shocked.gif
+share/gnome/gnomeicu/emoticons/MSN/smile.gif
+share/gnome/gnomeicu/emoticons/MSN/smile8.gif
+share/gnome/gnomeicu/emoticons/MSN/straight.gif
+share/gnome/gnomeicu/emoticons/MSN/tongue.gif
+share/gnome/gnomeicu/emoticons/MSN/wink.gif
+share/gnome/gnomeicu/emoticons/Yahoo/alien.gif
+share/gnome/gnomeicu/emoticons/Yahoo/angel.gif
+share/gnome/gnomeicu/emoticons/Yahoo/angry.gif
+share/gnome/gnomeicu/emoticons/Yahoo/bigsmile.gif
+share/gnome/gnomeicu/emoticons/Yahoo/blush.gif
+share/gnome/gnomeicu/emoticons/Yahoo/clown.gif
+share/gnome/gnomeicu/emoticons/Yahoo/cow.gif
+share/gnome/gnomeicu/emoticons/Yahoo/cowboy.gif
+share/gnome/gnomeicu/emoticons/Yahoo/devil.gif
+share/gnome/gnomeicu/emoticons/Yahoo/emoticon-data
+share/gnome/gnomeicu/emoticons/Yahoo/flag.gif
+share/gnome/gnomeicu/emoticons/Yahoo/green.gif
+share/gnome/gnomeicu/emoticons/Yahoo/hrmph.gif
+share/gnome/gnomeicu/emoticons/Yahoo/ignore.gif
+share/gnome/gnomeicu/emoticons/Yahoo/kiss.gif
+share/gnome/gnomeicu/emoticons/Yahoo/light.gif
+share/gnome/gnomeicu/emoticons/Yahoo/monkey.gif
+share/gnome/gnomeicu/emoticons/Yahoo/nerd.gif
+share/gnome/gnomeicu/emoticons/Yahoo/pig.gif
+share/gnome/gnomeicu/emoticons/Yahoo/pumpkin.gif
+share/gnome/gnomeicu/emoticons/Yahoo/quiet.gif
+share/gnome/gnomeicu/emoticons/Yahoo/rofl.gif
+share/gnome/gnomeicu/emoticons/Yahoo/rose.gif
+share/gnome/gnomeicu/emoticons/Yahoo/sad.gif
+share/gnome/gnomeicu/emoticons/Yahoo/shocked.gif
+share/gnome/gnomeicu/emoticons/Yahoo/skull.gif
+share/gnome/gnomeicu/emoticons/Yahoo/sleep.gif
+share/gnome/gnomeicu/emoticons/Yahoo/smile.gif
+share/gnome/gnomeicu/emoticons/Yahoo/smile8.gif
+share/gnome/gnomeicu/emoticons/Yahoo/stop.gif
+share/gnome/gnomeicu/emoticons/Yahoo/straight.gif
+share/gnome/gnomeicu/emoticons/Yahoo/tongue.gif
+share/gnome/gnomeicu/emoticons/Yahoo/wail.gif
+share/gnome/gnomeicu/emoticons/Yahoo/wink.gif
+share/gnome/gnomeicu/emoticons/Yahoo/wonder.gif
 share/gnome/gnomeicu/glade/addcontact.glade
 share/gnome/gnomeicu/glade/auth.glade
+share/gnome/gnomeicu/glade/grpmgr.glade
 share/gnome/gnomeicu/glade/history.glade
 share/gnome/gnomeicu/glade/main.glade
 share/gnome/gnomeicu/glade/message.glade
+share/gnome/gnomeicu/glade/pref.glade
 share/gnome/gnomeicu/glade/user_info.glade
-share/gnome/gnomeicu/icons/Default/gnomeicu-animation.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-animation001.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-animation002.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-animation003.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-animation004.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-animation005.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-away.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-blank.png
@@ -20,6 +143,7 @@ share/gnome/gnomeicu/icons/Default/gnomeicu-contact.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-dnd.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-ffc.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-file.png
+share/gnome/gnomeicu/icons/Default/gnomeicu-group.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-hist.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-info
 share/gnome/gnomeicu/icons/Default/gnomeicu-info.png
@@ -89,8 +213,6 @@ share/gnome/gnomeicu/icons/reDubbed/gnomeicu-online.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-rename.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-still.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-url.png
-share/gnome/help/gnomeicu/C/gnomeicu.sgml
-share/gnome/help/gnomeicu/C/topic.dat
 share/gnome/pixmaps/gnome-gnomeicu.xpm
 share/gnome/sounds/gnomeicu/message.wav
 share/locale/ca/LC_MESSAGES/gnomeicu.mo
@@ -124,17 +246,20 @@ share/locale/sl/LC_MESSAGES/gnomeicu.mo
 share/locale/sv/LC_MESSAGES/gnomeicu.mo
 share/locale/tr/LC_MESSAGES/gnomeicu.mo
 share/locale/uk/LC_MESSAGES/gnomeicu.mo
+share/locale/vi/LC_MESSAGES/gnomeicu.mo
 share/locale/zh_CN/LC_MESSAGES/gnomeicu.mo
 share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
-@dirrm share/gnome/gnomeicu/glade
-@dirrm share/gnome/gnomeicu/icons/Default
-@dirrm share/gnome/gnomeicu/icons/Eyeballs
-@dirrm share/gnome/gnomeicu/icons/Gradients
-@dirrm share/gnome/gnomeicu/icons/reDubbed
-@dirrm share/gnome/gnomeicu/icons
-@dirrm share/gnome/gnomeicu
-@dirrm share/gnome/help/gnomeicu/C/figures
-@dirrm share/gnome/help/gnomeicu/C/stylesheet-images
-@dirrm share/gnome/help/gnomeicu/C
-@dirrm share/gnome/help/gnomeicu
 @dirrm share/gnome/sounds/gnomeicu
+@dirrm share/gnome/gnomeicu/icons/reDubbed
+@dirrm share/gnome/gnomeicu/icons/Gradients
+@dirrm share/gnome/gnomeicu/icons/Eyeballs
+@dirrm share/gnome/gnomeicu/icons/Default
+@dirrm share/gnome/gnomeicu/icons
+@dirrm share/gnome/gnomeicu/glade
+@dirrm share/gnome/gnomeicu/emoticons/Yahoo
+@dirrm share/gnome/gnomeicu/emoticons/MSN
+@dirrm share/gnome/gnomeicu/emoticons/Default
+@dirrm share/gnome/gnomeicu/emoticons/Always
+@dirrm share/gnome/gnomeicu/emoticons/AIM
+@dirrm share/gnome/gnomeicu/emoticons
+@dirrm share/gnome/gnomeicu

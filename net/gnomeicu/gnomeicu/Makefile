@@ -5,22 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomeicu
-PORTVERSION=	0.98.3
+PORTNAME=	gnomeicu2
+PORTVERSION=	0.98.111
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomeicu
+DISTNAME=	gnomeicu-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet
+LIB_DEPENDS+=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gnet.1:${PORTSDIR}/net/gnet \
+		gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade libpanel gdkpixbuf
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix gnomehack
 USE_GMAKE=		yes
+USE_LIBTOOL=	yes
 .if defined(WITH_DANTE)
 LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
 SOCKSFLAGS=	-Dconnect=Rconnect -Dbind=Rbind -Dgetsockname=Rgetsockname \
@@ -40,7 +45,7 @@ SOCKSLIBS=	-lsocks5
 
 CONFIGURE_ARGS=	--with-statusmenu
 CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS}" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS} -lintl" \
 		CFLAGS="${CFLAGS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
