@@ -1,0 +1,29 @@
+bin/xyagamo
+lib/X11/xyagamo/images/back_0.xpm
+lib/X11/xyagamo/images/back_1.xpm
+lib/X11/xyagamo/images/face_0.xpm
+lib/X11/xyagamo/images/face_1.xpm
+lib/X11/xyagamo/images/face_2.xpm
+lib/X11/xyagamo/images/face_3.xpm
+lib/X11/xyagamo/images/hand_0.xpm
+lib/X11/xyagamo/images/hand_1.xpm
+lib/X11/xyagamo/images/hand_2.xpm
+lib/X11/xyagamo/images/hand_3.xpm
+lib/X11/xyagamo/images/hstk_0.xpm
+lib/X11/xyagamo/images/hstk_1.xpm
+lib/X11/xyagamo/images/hstk_2.xpm
+lib/X11/xyagamo/images/hstk_3.xpm
+lib/X11/xyagamo/images/icon.xpm
+lib/X11/xyagamo/images/vstk_0.xpm
+lib/X11/xyagamo/images/vstk_1.xpm
+lib/X11/xyagamo/images/vstk_2.xpm
+lib/X11/xyagamo/images/vstk_3.xpm
+lib/X11/xyagamo/images/yagamo1.xpm
+lib/X11/xyagamo/images/yagamo2.xpm
+share/doc/xyagamo/00copyright
+share/doc/xyagamo/00readme.jp
+share/doc/xyagamo/hands.jp
+share/doc/xyagamo/rules.jp
+@dirrm lib/X11/xyagamo/images
+@dirrm lib/X11/xyagamo
+@dirrm share/doc/xyagamo
