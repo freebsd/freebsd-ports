@@ -1,0 +1,19 @@
+--- Makefile.settings.orig	Wed Dec 12 13:47:06 2001
++++ Makefile.settings	Wed Dec 12 13:48:46 2001
+@@ -13,7 +13,7 @@
+ 
+ # PREFIX: This is the prefix for installing Rotix. Default is /usr/local.
+ # Alternative could be /usr.
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ 
+ # DESTDIR: Used when creating packages.
+ DESTDIR=
+@@ -27,5 +27,5 @@
+ PACKAGE=rotix
+ 
+ # LOCALEDIR: If your LOCALEDIR is somewhere else, change the path.
+-LOCALEDIR=/usr/share/locale
+-        
++LOCALEDIR=${PREFIX}/share/locale
++        
