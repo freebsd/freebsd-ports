@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/27 16:00:05 rse Exp $
+# $Id: Makefile,v 1.2 1998/08/29 21:24:13 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -12,8 +12,10 @@ CATEGORIES=	www security
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://www.engelschall.com/sw/mod_ssl/distrib/ \
 		ftp://ftp.engelschall.com/sw/mod_ssl/ \
-		ftp://ftp.ulpgc.es/pub/mod_ssl/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
+		ftp://ftp.ulpgc.es/pub/mod_ssl/ \
+		ftp://glock.missouri.edu/pub/mod_ssl/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 
 MAINTAINER=	rse@engelschall.com
 
@@ -23,7 +25,7 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 
 VERSION_APACHE=	1.3.1
-VERSION_MODSSL=	2.0.6
+VERSION_MODSSL=	2.0.7
 
 RESTRICTED=	"Contains cryptography"
 
@@ -61,6 +63,10 @@ INSTALL_TARGET=	install-quiet
 MAN1=	ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=	apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
+TYPE=	test
+CRT=
+KEY=
+
 pre-patch:
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
@@ -69,7 +75,7 @@ pre-patch:
 certificate:
 	@cd ${WRKSRC} \
 	&& ${ECHO_MSG} "===>  Creating Test Certificate for Server" \
-	&& ${MAKE} certificate
+	&& ${MAKE} certificate TYPE=$(TYPE) CRT=$(CRT) KEY=$(KEY)
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \

@@ -6,8 +6,16 @@ etc/apache/httpd.conf.default
 etc/apache/magic.default
 etc/apache/mime.types.default
 etc/apache/srm.conf.default
-etc/apache/sslcerts/Makefile
-etc/apache/sslcerts/server.pem
+etc/apache/ssl.crt/README.CRT
+etc/apache/ssl.crt/Makefile
+etc/apache/ssl.crt/ca-bundle.crt
+etc/apache/ssl.crt/snakeoil.crt
+etc/apache/ssl.crt/server.crt
+etc/apache/ssl.csr/README.CSR
+etc/apache/ssl.csr/server.csr
+etc/apache/ssl.key/README.KEY
+etc/apache/ssl.key/server.key
+etc/apache/ssl.key/snakeoil.key
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -264,11 +272,17 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
+@exec mkdir -p %D/www
 @exec mkdir -p %D/www/proxy
+@dirrm www/proxy
+@dirrm www
 @exec ln -fs %B %D/www/data.default
-@exec cd %D/etc/apache/sslcerts/ && make >/dev/null 2>&1
-@exec mkdir -p %D/etc/apache/sslkeys
 @unexec rm -f %D/www/data.default
-@unexec rm -f %D/etc/apache/sslcerts/*.0
-@dirrm %D/etc/apache/sslcerts
-@dirrm %D/etc/apache/sslkeys
+@exec mkdir -p %D/etc/apache/ssl.crt
+@exec mkdir -p %D/etc/apache/ssl.csr
+@exec mkdir -p %D/etc/apache/ssl.key
+@exec cd %D/etc/apache/ssl.crt/ && make >/dev/null 2>&1
+@unexec rm -f %D/etc/apache/ssl.crt/*.0
+@dirrm etc/apache/ssl.crt
+@dirrm etc/apache/ssl.csr
+@dirrm etc/apache/ssl.key
