@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jun  9 02:32:28 2002
++++ Makefile.in	Sun Jun  9 02:32:32 2002
+@@ -86,7 +86,7 @@
+ RS_LTLIB_TARGET = @RS_LTLIB_TARGET@
+ RS_SCRIPT = @RS_SCRIPT@
+ VERSION = @VERSION@
+-SUBDIRS = doc rpm bin libruntime-guile libruntime-rscheme g-wrap g-wrapped example stale test
++SUBDIRS = doc rpm bin libruntime-guile libruntime-rscheme g-wrap g-wrapped example stale
+ 
+ guilemoduledir = @GUILEMODDIR@
+ guilemodule_DATA = @GUILEMOD_TARGET@
