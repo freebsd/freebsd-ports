@@ -1,11 +1,11 @@
---- configure.orig	Sun Nov 26 01:19:21 2000
-+++ configure	Sun Nov 26 01:19:54 2000
-@@ -3789,7 +3789,7 @@
+--- configure.orig	Mon Dec 18 16:37:06 2000
++++ configure	Mon Dec 18 16:38:13 2000
+@@ -3855,7 +3855,7 @@
+ 
+ 
+ NDEBUG_CFLAGS="-fomit-frame-pointer"
+-COMMON_CFLAGS="-Wall -O3 -static -funroll-loops -finline-functions -funroll-all-loops -D_FILE_OFFSET_BITS=64"
++COMMON_CFLAGS="-Wall $CFLAGS -static -funroll-loops -finline-functions -funroll-all-loops -D_FILE_OFFSET_BITS=64"
  
  case $host in
    i386-*-freebsd*)
--    GLOBAL_CFLAGS="$GLOBAL_CFLAGS $CFLAGS $ALSA_CFLAGS -Wall -static -fomit-frame-pointer -funroll-loops -finline-functions -O3 -D_REENTRANT -malign-double -funroll-all-loops"
-+    GLOBAL_CFLAGS="$GLOBAL_CFLAGS $CFLAGS -Wall -static -fomit-frame-pointer -funroll-loops -finline-functions -D_REENTRANT -malign-double -funroll-all-loops"
-     cat >> confdefs.h <<\EOF
- #define __i386__ 1
- EOF

@@ -6,16 +6,20 @@
 #
 
 PORTNAME=		xine
-PORTVERSION=		0.3.1
+PORTVERSION=		0.3.2
 CATEGORIES=		graphics
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=		http://xine.sourceforge.net/files/
+DISTNAME=		${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=		roman@xpert.com
 
 USE_LIBTOOL=		yes
 USE_X_PREFIX=		yes
 USE_IMLIB=		yes
+
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+MAN1=			xine.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
