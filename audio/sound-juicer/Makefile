@@ -19,7 +19,7 @@ LIB_DEPENDS=	musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui gstreamerplugins
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui gstreamerplugins
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-ignore-missing-cd
 
