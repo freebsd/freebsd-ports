@@ -18,4 +18,4 @@ supported extensions are: dbase, fbsql, interbase, informix, msql, mssql,
 mysql, oci8, odbc, pgsql and sybase (DB style interfaces to LDAP servers and
 MS ADO (using COM) are also avaible from a separate package).
 
-WWW: http://pear.php.net/package-info.php?package=DB
+WWW: http://pear.php.net/package/DB
