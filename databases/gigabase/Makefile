@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	2.65
+PORTVERSION=	2.73
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-INSTALLS_SHLIB=	yes
+
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -13,17 +13,16 @@ include/gigabase/gigabase.h
 include/gigabase/hashtab.h
 include/gigabase/pagepool.h
 include/gigabase/query.h
-include/gigabase/reference.h
 include/gigabase/rectangle.h
+include/gigabase/reference.h
+include/gigabase/selection.h
 include/gigabase/stdtp.h
 include/gigabase/sync.h
 include/gigabase/wwwapi.h
 lib/libcli_r.a
-lib/libcli_r.la
 lib/libcli_r.so
 lib/libcli_r.so.2
 lib/libgigabase_r.a
-lib/libgigabase_r.la
 lib/libgigabase_r.so
 lib/libgigabase_r.so.2
 @dirrm include/gigabase
