@@ -7,25 +7,23 @@
 #
 
 PORTNAME=	hypersrc
-PORTVERSION=	4.4.8
+PORTVERSION=	4.4.15
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/latest/
+MASTER_SITES=	ftp://ftp.jimbrooks.org/hypersrc/%SUBDIR%/
+MASTER_SITE_SUBDIR=	latest old
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
-USE_BISON=	yes
-USE_GTK=	yes
-USE_GNOME=	yes
-
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_BISON=	yes
+USE_GNOME=	yes
+USE_GMAKE=	yes
+
 post-patch:
-	@${PERL} -pi -e "s,/usr/local,${PREFIX},g ;\
-		s,gtk-config,${GTK_CONFIG},g ; \
-		s,gnome-config,${GNOME_CONFIG},g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s,/usr/bin/ctags,${LOCALBASE}/bin/exctags,g" ${WRKSRC}/Hypersrc.pl
+	@${PERL} -pi -e 's|/usr/bin/ctags|${LOCALBASE}/bin/exctags|g' ${WRKSRC}/Hypersrc.pl
+	@${PERL} -pi -e 's|"-i +m -x -u"|"-x"|g' ${WRKSRC}/ctags.pl
 
 .include <bsd.port.mk>
