@@ -30,6 +30,6 @@ USE_GMAKE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Imager.3 Imager::Color.3 Imager::Expr.3 Imager::Expr::Assem.3 \
-	Imager::Font.3 Imager::Regops.3 Imager::regmach.3
+	Imager::Font.3 Imager::Regops.3 Imager::Transform.3 Imager::regmach.3
 
 .include <bsd.port.mk>
