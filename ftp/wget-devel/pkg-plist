@@ -19,10 +19,12 @@ etc/wgetrc
 %%NLS%%share/locale/no/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wget.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/wget.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wget.mo
