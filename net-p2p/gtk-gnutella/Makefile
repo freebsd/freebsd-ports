@@ -8,7 +8,7 @@
 #
 # A quick note on configurable make symbols:
 #
-# RUN_INTERACTIVE: Launches Configure in it's default mode, which is *very*
+# WITH_INTERACTIVE: Launches Configure in it's default mode, which is *very*
 #	interactive. Disabled here by default to conform to FreeBSD guidelines,
 #	this mode is useful if you have problems with the default Configure.
 #
@@ -18,7 +18,7 @@
 #	at a cost in performance. Useful if you intend to move the executable
 #	to multiple machines.
 #
-# DEBUG: Compile with debugging symbols. Useful if you intend to make a bug
+# WITH_DEBUG: Compile with debugging symbols. Useful if you intend to make a bug
 #	report.
 #
 # Note that unicode support is currently unavailable for this platform. This
@@ -27,7 +27,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.93.2
+PORTVERSION=	0.93.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtk-gnutella.sourceforge.net/download/ \
@@ -53,11 +53,14 @@ CONFIGURE_ARGS+=	-Dbindir=${PREFIX}/bin -Dprivlib=${PREFIX}/share/gtk-gnutella
 CONFIGURE_ARGS+=	-Dsysman=${PREFIX}/man/man1 -Dlocale=${PREFIX}/share/locale
 CONFIGURE_ARGS+=	-Dccflags='${CFLAGS} -I${LOCALBASE}/include/'
 
-.if exists(/bin/sleep)
-SLEEP=		/bin/sleep 3
-.endif
+OPTIONS=	DEBUG "Build with debugging symbols" off\
+		GTK2 "Build with gtk2 frontend" off \
+		INTERACTIVE "Use Configure in interactive mode" off \
+		PORTABILITY "Use the PATH variable at run-time" off
 
-.if !defined(RUN_INTERACTIVE)
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_INTERACTIVE)
 CONFIGURE_ARGS+=-d -e
 .endif
 
@@ -65,7 +68,6 @@ CONFIGURE_ARGS+=-d -e
 CONFIGURE_ARGS+=	-Dgtkversion=2
 USE_GNOME+=		gtk20
 .else
-BROKEN=	"GTK1 version of 0.93.2 is broken. Fix coming 18/01/04"
 CONFIGURE_ARGS+=	-Dgtkversion=1
 USE_GNOME+=		gtk12
 .endif
@@ -74,28 +76,8 @@ USE_GNOME+=		gtk12
 CONFIGURE_ARGS+=	-Dd_portable=true
 .endif
 
-.if defined(DEBUG)
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	-Doptimize=-g  -Uofficial=
-.endif
-
-pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${ECHO} ''
-	@${ECHO} '        ===> NOTICE <==='
-	@${ECHO} ''
-	@${ECHO} 'You may use the following make options.'
-	@${ECHO} 'See the Makefile for complete descriptions.'
-	@${ECHO} ''
-	@${ECHO} 'RUN_INTERACTIVE:		Use Configure in interactive mode.'
-	@${ECHO} ''
-	@${ECHO} 'WITH_GTK2:			Build with gtk2 frontend.'
-	@${ECHO} ''
-	@${ECHO} 'DEBUG:				Build with debugging symbols.'
-	@${ECHO}
-	@${ECHO} 'WITH_PORTABILITY:		Configure code to use the PATH variable at'
-	@${ECHO} ' 				run-time, at a cost in performance.'
-	@${ECHO}
-	@${SLEEP}
 .endif
 
 post-patch:
@@ -106,4 +88,4 @@ post-install:
 	@${CP} ${WRKSRC}/src/gtk-gnutella.man ${WRKSRC}/src/gtk-gnutella.1
 	@${INSTALL_MAN} ${WRKSRC}/src/gtk-gnutella.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
