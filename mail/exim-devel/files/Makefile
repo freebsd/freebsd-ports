@@ -311,12 +311,6 @@ LOOKUP_LSEARCH=yes
 # then whichever of the two options it does have is added to the file name,
 # whether obtained from PID_FILE_PATH or by default.
 
-# If you set PID_FILE_PATH, then it is your responsibility to ensure that
-# Exim is capable of writing to the relevant files. If you have defined
-# EXIM_UID and EXIM_GID above, then that uid/gid combination must be able to
-# create and write to the files. If the attempt to open the file fails, Exim
-# just refrains from trying to write the data.
-
 # The pid file path does not have to be set here; it can be also be set by an
 # option in the runtime configuration file, which takes precedence over any
 # setting here.
