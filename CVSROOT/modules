@@ -4420,6 +4420,7 @@ mutt_vc_query	ports/mail/mutt_vc_query
 muttprint	ports/print/muttprint
 muttzilla	ports/mail/muttzilla
 muuz		ports/misc/muuz
+mvdsv		ports/games/mvdsv
 mwavem		ports/comms/mwavem
 mydns		ports/net/mydns
 mymoon		ports/astro/mymoon
