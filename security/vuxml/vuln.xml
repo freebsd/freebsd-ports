@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="3b7c7f6c-7102-11d8-873f-0020ed76ef5a">
+    <topic>wu-ftpd ftpaccess `restricted-uid'/`restricted-gid' directive
+      may be bypassed</topic>
+    <affects>
+      <package>
+	<name>wu-ftpd</name>
+	<range><le>2.6.2_3</le></range>
+      </package>
+      <package>
+	<name>wu-ftpd+ipv6</name>
+	<range><le>2.6.2_5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Glenn Stewart reports a bug in wu-ftpd's ftpaccess
+	  `restricted-uid'/`restricted-gid' directives:</p>
+	<blockquote>
+          <p>Users can get around the restriction to their home
+            directory by issuing a simple chmod command on their home
+            directory. On the next ftp log in, the user will have '/'
+            as their root directory.</p>
+	</blockquote>
+	<p>Matt Zimmerman discovered that the cause of the bug was a
+	  missing check for a restricted user within a code path that
+	  is executed only when a certain error is encountered.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0148</cvename>
+    </references>
+    <dates>
+      <discovery>2004-02-17</discovery>
+      <entry>2004-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="09d418db-70fd-11d8-873f-0020ed76ef5a">
     <topic>Apache 1.3 IP address access control failure on some 64-bit
       platforms</topic>
