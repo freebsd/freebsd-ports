@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
@@ -24,10 +24,12 @@ NO_LATEST_LINK=	"Unstable, development version."
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		glib-config-2.0.1 glib-genmarshal.1
+MAN1=		glib-config-2.0.1 glib-genmarshal.1 \
+		glib-mkenums.1
 
 pre-patch:
 	@find ${WRKSRC} -type f | xargs ${GREP} -l iconv.h | \
