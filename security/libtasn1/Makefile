@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtasn1
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/ \
@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS NEWS README THANKS doc/asn1.ps doc/asn1.tex doc/fdl.tex
 

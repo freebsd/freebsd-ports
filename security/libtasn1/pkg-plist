@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 include/libtasn1.h
-lib/libtasn1.so.1
+lib/libtasn1.so.2
 lib/libtasn1.so
 lib/libtasn1.a
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
