@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	5.03
+PORTVERSION=	5.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.monash.edu.au/mirror/analog/ \
