@@ -1,3 +1,4 @@
 @comment $FreeBSD$
 bin/dict
+bin/dictl
 etc/dict.conf
