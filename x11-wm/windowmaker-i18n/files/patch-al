@@ -1,6 +1,6 @@
---- WPrefs.app/po/Makefile.in.orig	Fri Oct 23 22:03:53 1998
-+++ WPrefs.app/po/Makefile.in	Sun Nov 22 22:05:50 1998
-@@ -205,6 +205,11 @@
+--- WPrefs.app/po/Makefile.in.orig	Sat Dec  5 21:56:20 1998
++++ WPrefs.app/po/Makefile.in	Sat Dec  5 21:56:36 1998
+@@ -206,12 +206,17 @@
  clean-generic maintainer-clean-generic clean mostlyclean distclean \
  maintainer-clean
  
@@ -11,4 +11,12 @@
 +	nkf -e ja.po > ja_JP.SJIS.po
  
  .po.mo: 
- 	msgfmt -o $@ $<
+-	msgfmt -o $@ $<
++	${LOCALBASE}/bin/msgfmt -o $@ $<
+ 
+ WPrefs.pot: $(POTFILES)
+-	xgettext --default-domain=WPrefs \
++	${LOCALBASE}/bin/xgettext --default-domain=WPrefs \
+ 	--add-comments --keyword=_ $(POTFILES)
+ 	if cmp -s WPrefs.po WPrefs.pot; then \
+ 	    rm -f WPrefs.po; \
