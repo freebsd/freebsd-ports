@@ -210,6 +210,7 @@
     SUBDIR += xquote
     SUBDIR += xtail
     SUBDIR += xtar
+    SUBDIR += yaucg
     SUBDIR += yaunc
     SUBDIR += ytree
 

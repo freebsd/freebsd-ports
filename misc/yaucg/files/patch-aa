@@ -1,0 +1,14 @@
+--- grepper/userfriendly.sh.orig	Sun Aug 26 13:05:42 2001
++++ grepper/userfriendly.sh	Sun Aug 26 13:05:49 2001
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ 
+ # YAUCG - Yes, another userfriendly comic grepper
+ # Read README first before writing me emails with your problem(s). Comments
+@@ -133,4 +133,4 @@
+  echo -e "\033[0;32mDONE!\033[m" 
+ }
+ 
+-main
++main

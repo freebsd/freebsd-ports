@@ -1,0 +1,6 @@
+bin/userfriendly.sh
+%%PORTDOCS%%share/doc/yaucg/changelog
+%%PORTDOCS%%share/doc/yaucg/license
+%%PORTDOCS%%share/doc/yaucg/readme
+%%PORTDOCS%%share/doc/yaucg/todo
+%%PORTDOCS%%@dirrm share/doc/yaucg
