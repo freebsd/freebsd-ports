@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
+BROKEN=		Leaves behind lib/charset.alias instead of correctly using gettext
+
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=15
