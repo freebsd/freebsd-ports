@@ -4999,6 +4999,7 @@ openoffice	ports/editors/openoffice
 openquicktime	ports/multimedia/openquicktime
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
+opensp		ports/textproc/opensp
 openssh		src/crypto/openssh
 openssh-askpass	ports/security/openssh-askpass
 openssh-portable	ports/security/openssh-portable
