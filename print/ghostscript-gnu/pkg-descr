@@ -6,6 +6,9 @@ Versions entitled "GNU Ghostscript" are distributed with the GNU General
 Public License, which allows free use, and free copying and redistribution
 under certain conditions (including, in some cases, commercial distribution).
 
+This is the older version 7, for those that can't (or don't want to) use
+the newer GhostScript version 8.
+
 This port includes add-on packages (not part of the official gs release)
 	o HP2200 driver for HP DeskJet 8xx and Business Inkjet 2200
 	  - http://hp.sourceforge.net/gs-hp2200.php
