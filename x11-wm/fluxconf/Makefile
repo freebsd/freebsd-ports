@@ -13,6 +13,8 @@ MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	Fluxconf is a configuration program for the fluxbox window manager
 
+BROKEN=		"Does not link"
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=  yes
