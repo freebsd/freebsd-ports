@@ -1,0 +1,4 @@
+
+You will need to edit some files like lazarus or coroner.cf and change the path for
+$TCT_HOME to /usr/local/share/doc/tct. It is recommended to install sysutils/lsof too.
+
