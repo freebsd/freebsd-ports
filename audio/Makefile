@@ -284,6 +284,7 @@
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snowstar
+    SUBDIR += solfege
     SUBDIR += songprint
     SUBDIR += sonice
     SUBDIR += soundgrab
