@@ -1,4 +1,4 @@
-dvi to PostScript converter.
+DVI to PostScript converter.
 
 A sample font description file `/usr/local/lib/dvi2ps/fontdesc' is installed.
 Those who want to print out English fonts by pkfont and Japanese by 
