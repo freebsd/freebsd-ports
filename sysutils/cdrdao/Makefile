@@ -63,6 +63,12 @@ pre-fetch:
 	@${ECHO_MSG} "Building with xcdrdao"
 .endif
 
+.if ${MACHINE_ARCH} == "alpha"
+post-extract:
+	@(cd ${WRKSRC}/scsilib/RULES; \
+	  ln -sf i386-freebsd-cc.rul alpha-freebsd-cc.rul)
+.endif
+
 post-install:
 	strip $(PREFIX)/bin/cdrdao
 .if defined(XCDRDAO)
