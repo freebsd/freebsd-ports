@@ -8,7 +8,11 @@
 PORTNAME=       mp3chew
 PORTVERSION=	0.51.0
 CATEGORIES=     audio
-MASTER_SITES=   http://owl.yi.org/mp3chew/download/tar/
+MASTER_SITES=	# none left
+# http://owl.yi.org/ is never available
+# http://froek.yi.org/ (a replacement) is never available
+# the project isn't available on freshmeat.net anymore.
+# informed maintainer - edwin 20021226
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
