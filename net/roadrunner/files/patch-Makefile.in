@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jun 24 17:09:28 2004
++++ Makefile.in	Thu Jun 24 17:09:54 2004
+@@ -101,7 +101,7 @@
+ EXTRA_DIST = roadrunner.pc.in LICENSE README.announce 	README.win32 API_CHANGES makefile.msc
+ 
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = roadrunner.pc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

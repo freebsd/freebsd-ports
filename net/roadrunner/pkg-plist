@@ -1,0 +1,82 @@
+bin/rr-client
+bin/rr-server
+include/roadrunner-1.0/librr/message/rr-greeting.h
+include/roadrunner-1.0/librr/message/rr-message-close.h
+include/roadrunner-1.0/librr/message/rr-message-error.h
+include/roadrunner-1.0/librr/message/rr-message-start.h
+include/roadrunner-1.0/librr/message/rr-message-startrpy.h
+include/roadrunner-1.0/librr/message/rr-message-static.h
+include/roadrunner-1.0/librr/message/rr-message.h
+include/roadrunner-1.0/librr/rr-beeperror.h
+include/roadrunner-1.0/librr/rr-callbacklist.h
+include/roadrunner-1.0/librr/rr-channel.h
+include/roadrunner-1.0/librr/rr-connection.h
+include/roadrunner-1.0/librr/rr-debug.h
+include/roadrunner-1.0/librr/rr-filter.h
+include/roadrunner-1.0/librr/rr-filterstack.h
+include/roadrunner-1.0/librr/rr-frame.h
+include/roadrunner-1.0/librr/rr-framefactory.h
+include/roadrunner-1.0/librr/rr-listener.h
+include/roadrunner-1.0/librr/rr-manager.h
+include/roadrunner-1.0/librr/rr-mime.h
+include/roadrunner-1.0/librr/rr-profileregistry.h
+include/roadrunner-1.0/librr/rr-workpool.h
+include/roadrunner-1.0/librr/rr.h
+include/roadrunner-1.0/librr/tcp/rr-frame-seq.h
+include/roadrunner-1.0/librr/tcp/rr-tcpconnection.h
+include/roadrunner-1.0/librr/tcp/rr-tcpfilter.h
+include/roadrunner-1.0/librr/tcp/rr-tcplistener.h
+lib/librr-0.9.a
+lib/librr-0.9.so
+lib/librr-0.9.so.0
+libdata/pkgconfig/roadrunner.pc
+%%PORTDOCS%%%%DOCSDIR%%/API_CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.announce
+%%PORTDOCS%%%%DOCSDIR%%/dataflow.dia
+%%PORTDOCS%%%%DOCSDIR%%/design.dia
+share/gtk-doc/html/roadrunner/c33.html
+share/gtk-doc/html/roadrunner/c4.html
+share/gtk-doc/html/roadrunner/index.html
+share/gtk-doc/html/roadrunner/index.sgml
+share/gtk-doc/html/roadrunner/roadrunner-rr-beeperror.html
+share/gtk-doc/html/roadrunner/roadrunner-rr-filterstack.html
+share/gtk-doc/html/roadrunner/roadrunner-rr-framefactory.html
+share/gtk-doc/html/roadrunner/roadrunner-rr-mime.html
+share/gtk-doc/html/roadrunner/roadrunner-rr-workpool.html
+share/gtk-doc/html/roadrunner/roadrunner-rr.html
+share/gtk-doc/html/roadrunner/rrchannel.html
+share/gtk-doc/html/roadrunner/rrconnection.html
+share/gtk-doc/html/roadrunner/rrfilter.html
+share/gtk-doc/html/roadrunner/rrframe.html
+share/gtk-doc/html/roadrunner/rrframeseq.html
+share/gtk-doc/html/roadrunner/rrgreeting.html
+share/gtk-doc/html/roadrunner/rrlistener.html
+share/gtk-doc/html/roadrunner/rrmanager.html
+share/gtk-doc/html/roadrunner/rrmessage.html
+share/gtk-doc/html/roadrunner/rrmessageclose.html
+share/gtk-doc/html/roadrunner/rrmessageerror.html
+share/gtk-doc/html/roadrunner/rrmessagestart.html
+share/gtk-doc/html/roadrunner/rrmessagestartrpy.html
+share/gtk-doc/html/roadrunner/rrmessagestatic.html
+share/gtk-doc/html/roadrunner/rrprofileregistry.html
+share/gtk-doc/html/roadrunner/rrtcpconnection.html
+share/gtk-doc/html/roadrunner/rrtcpfilter.html
+share/gtk-doc/html/roadrunner/rrtcplistener.html
+share/gtk-doc/html/roadrunner/x4660.html
+share/gtk-doc/html/roadrunner/x5388.html
+share/gtk-doc/html/roadrunner/x58.html
+share/gtk-doc/html/roadrunner/x9.html
+@dirrm share/gtk-doc/html/roadrunner
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/roadrunner-1.0/librr/tcp
+@dirrm include/roadrunner-1.0/librr/message
+@dirrm include/roadrunner-1.0/librr
+@dirrm include/roadrunner-1.0
+@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
