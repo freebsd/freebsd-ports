@@ -1,6 +1,9 @@
 # This makefile is inspired by those in /usr/src/lib/libpam/modules :-)
 
-SRCS=	pam_pgsql.c pam_get_pass.c pam_std_option.c pam_get_service.c
+.PATH:	${FILESDIR}
+
+SRCS=	pam_pgsql.c pam_get_pass.c pam_std_option.c pam_get_service.c \
+	pqescape.c
 LIB=	pam_pgsql
 SHLIB_NAME=${LIB}.so
 
