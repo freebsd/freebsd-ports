@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sun Jun 11 02:09:26 2000
++++ Makefile.in	Tue Jun 13 13:49:49 2000
+@@ -81,7 +81,11 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = modules @libltdl_dir@ interface manual examples scripts data 
++ifndef NOPORTDOCS
++MANUALSUBDIR = manual
++endif
++
++SUBDIRS = modules @libltdl_dir@ interface $(MANUALSUBDIR) examples scripts data 
+ 
+ EXTRA_DIST = README-CVS autoconf-exeext.patch
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

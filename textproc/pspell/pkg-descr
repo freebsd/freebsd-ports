@@ -1,0 +1,4 @@
+The goal of the pspell library is to provide a generic interface
+to spell checker libraries installed on the system.
+
+WWW: http://pspell.sourceforge.net/
