@@ -13,7 +13,7 @@ MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/Contrib/ \
 		http://mysql.netvisao.pt/Downloads/Contrib/
 DISTNAME=	MySQLmodule-${PORTVERSION}
 
-MAINTAINER=	dr@domix.de
+MAINTAINER=	nc-rotherdo@netcologne.de
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
