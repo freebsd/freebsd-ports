@@ -17,8 +17,6 @@ COMMENT=	Digital camera downloading tool for Ricoh DC-3
 
 RESTRICTED=	"Beta test period, redistribution prohibited"
 
-BROKEN=		"Unfetchable"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
 USE_REINPLACE=	yes
