@@ -1,11 +1,19 @@
---- Makefile.orig	Fri Feb 14 05:10:37 1997
-+++ Makefile	Wed Jul  9 13:33:09 1997
-@@ -21,7 +21,7 @@
- 
- # C++ compiler flags (except -c, -I, -L, -l)
- # Add -g here if you want debugger symbols included
--CXXFLAGS = -DDW_EOL_LF
-+CXXFLAGS = -DDW_EOL_LF ${CFLAGS}
- 
- # The search path for include files. Change only if necessary.
- INC_PATH = -I.
+*** makefile.unx	Tue Sep  2 19:28:33 1997
+--- /home/andy/tmp/wrk/makefile.unx	Tue Sep 23 07:48:55 1997
+***************
+*** 26,32 ****
+  # C++ compiler flags (except -c, -I, -L, -l)
+  #
+  # Add -g here if you want debugger symbols included
+! CXXFLAGS =
+  
+  # The search path for include files. Change only if necessary.
+  INC_PATH = -I.
+--- 26,32 ----
+  # C++ compiler flags (except -c, -I, -L, -l)
+  #
+  # Add -g here if you want debugger symbols included
+! CXXFLAGS = ${CFLAGS}
+  
+  # The search path for include files. Change only if necessary.
+  INC_PATH = -I.

@@ -1,11 +1,16 @@
-# makefile for MIME++ example programs
+# UNIX makefile for MIME++ example programs
+
+# $Revision: 3.0 $
+# $Date: 1997-07-28 06:59:15-05 $
 
 # C++ compiler driver
+# CXX = CC
 CXX = g++
 
 # C++ compiler flags (except -c, -I, -L, -l)
+#
 # Add -g here if you want debugger symbols included
-CXXFLAGS = -DDW_EOL_LF
+CXXFLAGS = -O
 
 # The search path for include files. Change only if necessary.
 INC_PATH = -I/usr/local/include
@@ -23,29 +28,27 @@ LIB_DIR = /usr/local/lib
 # The include files will actually be copied to $(INC_DIR)/mimepp/.
 INC_DIR = /usr/local/include
 
-LIB_OBJ = $(LIB_CC:.cc=.o)
-
 all: exampl01 exampl02 exampl03 exampl04 exampl05
 
-exampl01 : exampl01.o basicmsg.o libmimepp.a
-	$(CXX) -o exampl01 exampl01.o basicmsg.o $(LIB_PATH) -lmimepp
+exampl01 : libmimepp.a exampl01.o basicmsg.o
+	$(CXX) -o exampl01 exampl01.o basicmsg.o $(LIB_PATH) -lmimepp $(LIBS)
 
-exampl02 : exampl02.o basicmsg.o libmimepp.a
-	$(CXX) -o exampl02 exampl02.o basicmsg.o $(LIB_PATH) -lmimepp
+exampl02 : libmimepp.a exampl02.o basicmsg.o
+	$(CXX) -o exampl02 exampl02.o basicmsg.o $(LIB_PATH) -lmimepp $(LIBS)
 
-exampl03 : exampl03.o multipar.o basicmsg.o libmimepp.a
-	$(CXX) -o exampl03 exampl03.o multipar.o basicmsg.o $(LIB_PATH) -lmimepp
+exampl03 : libmimepp.a exampl03.o multipar.o basicmsg.o
+	$(CXX) -o exampl03 exampl03.o multipar.o basicmsg.o $(LIB_PATH) -lmimepp $(LIBS)
 
-exampl04 : exampl04.o multipar.o basicmsg.o libmimepp.a
-	$(CXX) -o exampl04 exampl04.o multipar.o basicmsg.o $(LIB_PATH) -lmimepp
+exampl04 : libmimepp.a exampl04.o multipar.o basicmsg.o
+	$(CXX) -o exampl04 exampl04.o multipar.o basicmsg.o $(LIB_PATH) -lmimepp $(LIBS)
 
-exampl05 : exampl05.o attach.o multipar.o basicmsg.o libmimepp.a
-	$(CXX) -o exampl05 exampl05.o attach.o multipar.o basicmsg.o $(LIB_PATH) -lmimepp
+exampl05 : libmimepp.a exampl05.o attach.o multipar.o basicmsg.o
+	$(CXX) -o exampl05 exampl05.o attach.o multipar.o basicmsg.o $(LIB_PATH) -lmimepp $(LIBS)
 
 clean:
 	-rm *.o exampl0? *.out
 
-.SUFFIXES: .cc
+.SUFFIXES: .cpp
 
-.cc.o:
+.cpp.o:
 	$(CXX) -c $(CXXFLAGS) $< $(INC_PATH)
