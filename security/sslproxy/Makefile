@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/sslproxy/
 MAINTAINER=	alexlh@funk.org
 
 BUILD_DEPENDS=	${PREFIX}/include/openssl/ssl.h:${PORTSDIR}/security/openssl
-RUN_DEPENDS=	${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref

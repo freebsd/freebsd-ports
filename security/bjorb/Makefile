@@ -25,6 +25,8 @@ LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
 .endif
 .endif
 BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 RESTRICTED=	"Cryptography"

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.enst.fr/~beyssac/pipsec/ \
 
 MAINTAINER=	patrick@mindstep.com
 
-BUILD_DEPENDS=	${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl:install
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
 
 ALL_TARGET=	pipsecd
 

@@ -23,6 +23,8 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	sec@42.org
 
 BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 
 RESTRICTED=     "Contains cryptography"
 

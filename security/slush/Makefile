@@ -14,6 +14,8 @@ MASTER_SITES=	http://violet.ibs.com.au/slush/files/ \
 MAINTAINER=	shipley@dis.org
 
 BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 
 #MAN=		slush.1
 

@@ -39,8 +39,8 @@ MAINTAINER=     adam@algroup.co.uk
 
 BUILD_DEPENDS=  openssl:${PORTSDIR}/security/openssl
 
-BUILD_DEPENDS=	${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
-		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl
+LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
+		ssl.1:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 HAS_CONFIGURE=	yes
