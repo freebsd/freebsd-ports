@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1996/11/18 14:06:37 asami Exp $
+# $Id: Makefile,v 1.16 1997/02/03 16:22:44 roberto Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -14,16 +14,23 @@ DISTFILES=	ispell-3.1.20.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-# French
-#EXTRA_DICT=	   francais-IREQ-1.4.tar.gz
-#MASTER_SITES+=    ftp://ftp.robot.ireq.ca/pub/ispell/
-
-DISTFILES+=	   ${EXTRA_DICT}
-
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
 MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
 		sq.1 tryaffix.1 unsq.1
 MAN4=		ispell.4 english.4
+
+pre-fetch:
+pre-install:
+.if !defined(ISPELL_FR)
+	@echo '******************************************************' 
+	@echo '* Note that you can build a french/english version   *' 
+	@echo '* by typing "make french"                            *'
+	@echo '******************************************************' 
+.else
+EXTRA_DICT=	francais-IREQ-1.4.tar.gz
+MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
+DISTFILES+=	${EXTRA_DICT}
+.endif	
 
 pre-extract:
 .if !defined(LANG) 
@@ -32,6 +39,7 @@ pre-extract:
 	@echo '* typing "make british" following a "make clean"     *' 
 	@echo '******************************************************' 
 .endif	
+
 
 pre-configure:
 .if defined(EXTRA_DICT)
@@ -46,6 +54,10 @@ post-configure:
 british:
 	@echo "Okay, making a british version of ispell...."
 	@${MAKE} ${.MAKEFLAGS} LANG=british all 
+
+french:
+	@echo "Okay, making a french/english version of ispell...."
+	@${MAKE} ${.MAKEFLAGS} ISPELL_FR=yes
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin
