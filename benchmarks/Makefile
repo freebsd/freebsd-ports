@@ -17,6 +17,7 @@
     SUBDIR += netpipe
     SUBDIR += nttcp
     SUBDIR += pipebench
+    SUBDIR += pnetmark
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
