@@ -12,6 +12,7 @@ lib/libospgrove.so
 lib/libospgrove.so.0
 lib/libostyle.so
 lib/libostyle.so.0
+@unexec %%MKCATALOG%% -q deinstall openjade
 share/sgml/openjade/ChangeLog
 share/sgml/openjade/Makefile.jadetex
 share/sgml/openjade/builtins.dsl
@@ -29,3 +30,4 @@ share/sgml/openjade/style-sheet.dtd
 share/sgml/openjade/unicode.sty
 @dirrm share/sgml/openjade
 @unexec rmdir %D/share/sgml 2>/dev/null || true
+@exec %%MKCATALOG%% -q install openjade

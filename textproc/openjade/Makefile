@@ -7,12 +7,14 @@
 
 PORTNAME=	openjade
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kuriyama@FreeBSD.org
+
+RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
@@ -20,6 +22,9 @@ CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade
 INSTALLS_SHLIB=	yes
+PLIST_SUB=	MKCATALOG=${MKCATALOG}
+
+MKCATALOG=	${PREFIX}/sbin/mkcatalog
 
 pre-install:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
@@ -27,6 +32,7 @@ pre-install:
 post-install:
 	@${MKDIR} ${PREFIX}/share/sgml/openjade
 	@${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/openjade
+	@${MKCATALOG} -q install openjade
 
 .include <bsd.port.pre.mk>
 
