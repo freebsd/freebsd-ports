@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	Tk
-PORTVERSION=	800.025
-CATEGORIES=	x11-toolkits tk80 perl5
+PORTVERSION=	804.025.b5
+CATEGORIES=	x11-toolkits tk84 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}_beta5
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A re-port of a perl5 interface to Tk8.0p2
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
+COMMENT=	A re-port of a perl5 interface to Tk8.4
 
 USE_XLIB=	yes
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-//}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN1=		ptked.1 \
 		ptksh.1 \
@@ -128,10 +128,16 @@ MAN3=		Tie::Watch.3 \
 		Tk::widgets.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		"This port needs Perl 5.8.0 or greater, please upgrade your Perl!"
+.endif
+
 post-configure:
 	@${PERL} -i -p \
 		-e 's|^(CC = ).*|$$1 ${CC}|;' \
 		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|' \
 		`${FIND} ${WRKSRC} -name Makefile`
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
