@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby_static
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -24,10 +23,13 @@ USE_AUTOCONF=	yes
 # which means you can't link such modules as ruby-gdbm within.
 EXT_PORTS=	archivers/ruby-zlib \
 		devel/ruby-strscan \
-		devel/ruby-fnmatch \
 		sysutils/ruby-syslog
 _PORTSDIR=	${.CURDIR}/../..
 _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
+
+.if !defined(HAVE_FNMATCH)
+EXT_PORTS+=	devel/ruby-fnmatch
+.endif
 
 .for p in ${EXT_PORTS}
 BUILD_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
