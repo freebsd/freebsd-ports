@@ -25,4 +25,16 @@ post-install:
 	${TOUCH} ${PREFIX}/bin/gnome-libs-jp
 	${CHMOD} 755 ${PREFIX}/bin/gnome-libs-jp
 
+# The following hackery is only necessary so that we can mark this
+# slave port, but not the master port, as broken on 5.x.  Once that
+# is fixed, everything past this point except the line '.include
+# "${MASTERDIR}/Makefile' should be removed.
+BEFOREPORTMK=	yes
 .include "${MASTERDIR}/Makefile"
+.undef BEFOREPORTMK
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
