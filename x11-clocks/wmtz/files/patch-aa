@@ -1,0 +1,47 @@
+--- Makefile.orig	Sat Apr 24 09:24:32 1999
++++ Makefile	Sat Apr 24 09:26:34 1999
+@@ -1,7 +1,7 @@
+ CC = gcc
+ LIBDIR = -L/usr/X11R6/lib
+ LIBS   = -lXpm -lXext -lX11 -lm
+-FLAGS = -O2 
++CFLAGS = -Wall -O2 
+ OBJS =	wmtz.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+@@ -9,10 +9,10 @@
+ 
+ 
+ .c.o:
+-	$(CC) -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
++	$(CC) -I/usr/X11R6/include $(CFLAGS) -c $< -o $*.o
+ 
+ wmtz: $(OBJS)
+-	$(CC) $(FLAGS) -o wmtz $^ -lXext $(LIBDIR) $(LIBS)
++	$(CC) $(CFLAGS) -o wmtz $^ -lXext $(LIBDIR) $(LIBS)
+ 
+ all:: wmtz
+ 
+@@ -24,18 +24,11 @@
+ 	rm -f *~
+ 
+ install:: wmtz
+-	cp -f wmtz /usr/local/bin/
+-	chmod 755 /usr/local/bin/wmtz
+-	chown root:root /usr/local/bin/wmtz
+-	cp wmtzrc $(HOME)/.wmtzrc
+-	chmod 600 $(HOME)/.wmtzrc
+-	cp wmtzrc /etc/wmtzrc
+-	chmod 644 /etc/wmtzrc
++	cp -f wmtz /usr/X11R6/bin/
++	chmod 755 /usr/X11R6/bin/wmtz
++	chown root.wheel /usr/X11R6/bin/wmtz
+ 	@echo "wmtz: Installation finished..."
+ 
+ uninstall:: 
+-	rm -i /usr/local/bin/wmtz
+-	rm -i /etc/wmtzrc
+-	chmod 666 $(HOME)/.wmtzrc
+-	rm -i $(HOME)/.wmtzrc
++	rm -i /usr/X11R6/bin/wmtz
+ 	@echo "wmtz: Uninstall completed..."
