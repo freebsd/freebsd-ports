@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
 
-MAINTAINER=	mchopra@engmail.uwaterloo.ca
+MAINTAINER=	james@now.ie
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
