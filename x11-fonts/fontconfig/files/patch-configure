@@ -8,12 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -6402,7 +6403,7 @@
- # Check whether --with-default_fonts or --without-default_fonts was given.
- if test "${with_default_fonts+set}" = set; then
-   withval="$with_default_fonts"
--  defaultfonts="$withval"
-+  default_fonts="$withval"
- else
-   default_fonts=yes
- fi

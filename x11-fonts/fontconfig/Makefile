@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.1.92
+PORTVERSION=	2.1.93
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://nexp.cs.pdx.edu/fontconfig/release/
 
@@ -25,9 +25,9 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
-		--with-expat_includes=${LOCALBASE}/include \
-		--with-expat_lib=${LOCALBASE}/lib \
-		--with-default_fonts=${X11BASE}/lib/X11/fonts
+		--with-expat-includes=${LOCALBASE}/include \
+		--with-expat-lib=${LOCALBASE}/lib \
+		--with-default-fonts=${X11BASE}/lib/X11/fonts
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 
