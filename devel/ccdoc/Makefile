@@ -6,48 +6,45 @@
 #
 
 PORTNAME=	ccdoc
-PORTVERSION=	0.7a
+PORTVERSION=	0.8r40
 CATEGORIES=	devel textproc
-MASTER_SITES=	http://www.joelinoff.com/ccdoc/ \
-		http://www.flame.org/~lonewolf/distfiles/ \
-		http://www.earthmagic.org/FreeBSD/distfiles/
-DISTNAME=	ccdoc_v07a_src_taz
-EXTRACT_SUFX=	.exe
+MASTER_SITES=	http://www.joelinoff.com/ccdoc/downloads/
+DISTNAME=	src
+DIST_SUBDIR=	ccdoc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
 
-WRKSRC=		${WRKDIR}/ccdoc_v07a
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
-DOCDIR=${PREFIX}/share/doc/ccdoc
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION} (gcc3.3 string continuation)"
+WRKSRC=		${WRKDIR}/ccdocv08r40/src
+MAKEFILE=	mkopt_gcc.mk
+ALL_TARGET=	bld
+MAN1=		ccdoc.1
+PLIST_FILES=	bin/ccdoc
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
-pre-patch:
-	@${ECHO} "Stripping ^M from all the files..."
-	@${FIND} ${WRKSRC} -type f | ${XARGS} perl -pi -e 's/\r//'
-
-do-build:
-	(cd ${WRKSRC}/ccdoc_dev/libjdl/src; ${PERL} mk.pl opt)
-	(cd ${WRKSRC}/ccdoc_dev/ccdoc/src; ${PERL} mk.pl opt)
+do-configure:
+	${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
+		-e "s:%%CXX%%:${CXX}:" \
+		-e "s:%%CXXFLAGS%%:${CXXFLAGS}:" \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ccdoc_dev/ccdoc/bin_freebsd_opt/ccdoc.exe ${PREFIX}/bin/ccdoc
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/ccdoc
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin_opt_gcc_/ccdoc.exe \
+		${PREFIX}/bin/ccdoc
+	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man ${MAN1PREFIX}/man/man1/${MAN1}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${WRKSRC}/doc/*.txt ${WRKSRC}/doc/*.gif ${DOCDIR}
-	${MKDIR} ${DOCDIR}/images
-	${INSTALL_MAN} ${WRKSRC}/doc/images/*.gif ${DOCDIR}/images
-	${MKDIR} ${DOCDIR}/autodoc
-	${INSTALL_MAN} ${WRKSRC}/doc/autodoc/* ${DOCDIR}/autodoc
+	${MKDIR} ${DOCSDIR}
+	${FIND} ${WRKSRC}/../doc \( -name '*.html' -o \
+		-name '*.htm' -o \
+		-name '*.gif' -o \
+		-name '*.txt' -o \
+		-name '*.jpg' \) -print | \
+		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
