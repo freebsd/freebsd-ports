@@ -70,6 +70,7 @@
     SUBDIR += gtksheet
     SUBDIR += id-utils
     SUBDIR += ilu
+    SUBDIR += imake
     SUBDIR += insight
     SUBDIR += jam
     SUBDIR += kdbg
