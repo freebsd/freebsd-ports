@@ -1,0 +1,18 @@
+--- configure	Sat Sep 14 18:11:40 2002
++++ configure	Sat Sep 21 20:39:57 2002
+@@ -5498,6 +5498,7 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
++#include <sys/types.h>
+ #include <sys/socket.h>
+ 
+ #ifdef F77_DUMMY_MAIN
+@@ -5557,6 +5558,7 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
++#include <sys/types.h>
+ #include <sys/socket.h>
+ 
+ #ifdef F77_DUMMY_MAIN

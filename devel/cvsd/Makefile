@@ -25,8 +25,10 @@ MAN5=	cvsd.conf.5
 MAN8=	cvsd.8 cvsd-buildroot.8 cvsd-passwd.8
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|init.d/cvsd|rc.d/cvsd.sh.sample|g ; \
-		 s|init.d|rc.d|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E -e 's|init.d/cvsd|rc.d/cvsd.sh.sample|g ; \
+		 s|init.d|rc.d|g ; \
+		s,@(ACLOCAL|AUTO(CONF|MAKE|HEADER))@,/usr/bin/true,' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
