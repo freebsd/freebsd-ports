@@ -1,0 +1,16 @@
+This class facilitates building frameworks of several classes that
+inter-operate. It was first designed and built for "HTML::Mason", in
+which the Compiler, Lexer, Interpreter, Resolver, Component, Buffer,
+and several other objects must create each other transparently,
+passing the appropriate parameters to the right class, possibly
+substituting their own subclass for any of these objects.
+
+The main features of "Class::Container" are:
+
+ * Declaration of parameters used by each member in a class framework
+
+ * Transparent passing of constructor parameters to the class that
+   needs them
+
+ * Ability to create one (automatic) or many (manual) contained
+   objects automatically and transparently
