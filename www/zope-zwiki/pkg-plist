@@ -40,6 +40,8 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/Permissions.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Permissions.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/README.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/RSS.py
+%%ZOPEPRODUCTDIR%%/ZWiki/RSS.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Regexps.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Regexps.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/TextFormatter.py
@@ -157,6 +159,7 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tests/testTracker.py
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tests/testTracker.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/FilterIssues.stxdtml
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/IssueBrowser.stxdtml
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker/IssueTracker.stxdtml
 %%ZOPEPRODUCTDIR%%/ZWiki/refresh.txt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/README
@@ -167,6 +170,8 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/editform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/filterissues.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/filterissuesdtml.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/issuebrowser.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/issuebrowserdtml.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/issuepropertiesformdtml.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/issuetracker.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/standard/issuetrackerdtml.dtml
@@ -191,6 +196,8 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/editform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/filterissues.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/filterissuesdtml.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/issuebrowser.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/issuebrowserdtml.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/issuetracker.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/issuetrackerdtml.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki_plone/recentchanges.pt
