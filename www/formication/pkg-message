@@ -1,0 +1,12 @@
+*****************************************************************************
+
+You have installed the formication package.
+
+Edit %%LOCALBASE%%/etc/apache/httpd.conf and add:
+
+    Action formication /cgi-bin/formication.pl
+    AddHandler formication .fcn
+
+Read %%DOCSDIR%%/formication.txt to learn how to use
+
+*****************************************************************************

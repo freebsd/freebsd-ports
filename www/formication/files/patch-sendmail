@@ -1,0 +1,19 @@
+*** formication.pl.orig	Fri Jan 30 23:24:27 2004
+--- formication.pl	Fri Jan 30 23:24:45 2004
+***************
+*** 234,240 ****
+   # thereby saving us from having to parse the headers ourselves.
+   if($child_id == 0) {
+    # without the if, perl warns that the exit is unlikely to be reached.
+!   if(1) { exec("/usr/lib/sendmail -t"); }
+    exit(1);
+   }
+  
+--- 234,240 ----
+   # thereby saving us from having to parse the headers ourselves.
+   if($child_id == 0) {
+    # without the if, perl warns that the exit is unlikely to be reached.
+!   if(1) { exec("/usr/sbin/sendmail -t"); }
+    exit(1);
+   }
+  

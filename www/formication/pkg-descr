@@ -1,0 +1,9 @@
+Formication is a form processor which can send custom-formatted email,
+save form data to custom-formatted files, and reply to the user with
+a custom-formatted response.  Formication is also able to require that
+certain fields be filled in.  All configuration is done with simple
+templates, all of the templates for a given form being within the same
+file.
+
+Author:	Andru Luvisi <luvisi@villainy.com>
+WWW:    http://www.villainy.com/developers.html
