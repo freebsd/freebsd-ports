@@ -1,5 +1,4 @@
+@comment $Id$
 bin/vnless
 bin/vnlesskey
 share/misc/vnless.help
-man/man1/vnless.1.gz
-man/man1/vnlesskey.1.gz
