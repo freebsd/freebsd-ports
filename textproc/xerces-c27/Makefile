@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xerces-c2
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.5.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/source
@@ -24,7 +23,7 @@ PLIST_SUB+=		TRANSICU="@comment "
 .else
 .if (${TRANSCODER} == "icu")
 PKGNAMESUFFIX+=		-icu2
-LIB_DEPENDS+=		icuuc.26:${PORTSDIR}/devel/icu2
+LIB_DEPENDS+=		icuuc.28:${PORTSDIR}/devel/icu2
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
@@ -61,20 +60,26 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
 
 CONFIGURE_ARGS+=	-t ${TRANSCODER}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=		"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
-
 .if defined(DEBUG)
-PKGNAMESUFFIX+=		-debug
 CONFIGURE_ARGS+=	-d
 STRIP=
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if defined(ARCH) && \
+	(${ARCH} == "alpha" || ${ARCH} == "sparc64" || \
+	${ARCH} == "amd64" || ${ARCH} == "ia64")
+# set bitsToBuild to 64
+CONFIGURE_ARGS+=	-b 64
+SAMPLES_CONFIG_ARGS+=	-b 64
+.endif
+
 .if defined(NO_THREADS)
 CONFIGURE_ARGS+=	-r none
+.else
+CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+			PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
 
 XERCESC_LIB_VERSION=	${PORTVERSION:S/.//:R}
@@ -92,6 +97,8 @@ SAMPLES_CONFIG_ARGS+=	-p freebsd -c ${CC} -x ${CXX}
 SAMPLES_CONFIG_ARGS+=	-r none
 .else
 SAMPLES_CONFIG_ARGS+=	-r pthread
+SAMPLES_CONFIG_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+			PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
 .else
 PLIST_SUB+=	NO_SAMPLES="@comment "
@@ -99,8 +106,6 @@ PLIST_SUB+=	NO_SAMPLES="@comment "
 
 pre-everything::
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-message 15 75 || \
-		${TRUE})
 	@${ECHO} ''
 	@${ECHO} 'You may use the following build options by defining'
 	@${ECHO} 'them on the command line with -D'
@@ -132,13 +137,17 @@ post-configure:
 .if !defined(NO_SAMPLES)
 .if defined(TRANSCODER) && (${TRANSCODER} == "icu")
 	@(cd ${WRKSRC}/samples && \
-		export XERCESCROOT=${WRKSRC} && \
-		export ICUROOT=${ICUROOT} && \
-		export LDFLAGS="-L${LOCALBASE}/lib" && \
+		${SETENV} \
+		XERCESCROOT=${WRKSRC} \
+		ICUROOT=${ICUROOT} \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		${SAMPLES_CONFIG_ENV} \
 		${SH} runConfigure ${SAMPLES_CONFIG_ARGS})
 .else
 	@(cd ${WRKSRC}/samples && \
-		export XERCESCROOT=${WRKSRC} && \
+		${SETENV} \
+		XERCESCROOT=${WRKSRC} \
+		${SAMPLES_CONFIG_ENV} \
 		${SH} runConfigure ${SAMPLES_CONFIG_ARGS})
 .endif
 .endif
@@ -148,13 +157,13 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_LIB}
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xerces-c
-	@${CP} -r ${WRKSRC}/doc/ ${PREFIX}/share/doc/xerces-c/
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 .if !defined(NO_SAMPLES)
-	@${MKDIR} ${PREFIX}/share/xerces-c
+	@${MKDIR} ${EXAMPLESDIR}
 .for i in ${XERCES_BINS} data
-	@${CP} -r ${WRKSRC}/samples/$i ${PREFIX}/share/xerces-c/
+	@${CP} -r ${WRKSRC}/samples/$i ${EXAMPLESDIR}
 .endfor
 .for i in ${XERCES_BINS}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
