@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsdb
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 		http://siag.nu/pub/libsdb/
@@ -16,11 +16,15 @@ DISTNAME=	sdb-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple database library
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget lthack
+USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 MAN3=		sdb.3 sdb_init.3 sdb_open.3 sdb_close.3 sdb_query.3
 MAN8=		sdbd.8
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|= -lsdb|= $$(top_builddir)/libsdb.la|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
