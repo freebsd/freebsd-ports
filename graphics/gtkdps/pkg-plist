@@ -1,0 +1,15 @@
+include/gtkDPS/fonts.h
+include/gtkDPS/gdkDPS.h
+include/gtkDPS/gdkDPS_gdkutils.h
+include/gtkDPS/gtkDPS.h
+include/gtkDPS/gtkDPSarea.h
+include/gtkDPS/gtkDPScontext.h
+include/gtkDPS/gtkDPSfontpanel.h
+include/gtkDPS/gtkDPSwidget.h
+lib/libgtkDPS.a
+lib/libgtkDPS.la
+lib/libgtkDPS.so
+lib/libgtkDPS.so.1.0
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+@dirrm include/gtkDPS
