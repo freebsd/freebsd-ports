@@ -7684,6 +7684,7 @@ php4		ports/lang/php4
 php4-cgi	ports/www/php4-cgi
 php4-cli	ports/lang/php4-cli
 php4-dtc	ports/lang/php4-dtc
+php4-gd		ports/graphics/php4-gd
 php4-horde	ports/lang/php4-horde
 php4-nms	ports/lang/php4-nms
 php4-pcre	ports/devel/php4-pcre
