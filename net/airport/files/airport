@@ -1,0 +1,7 @@
+#! /bin/sh
+
+cd %%PREFIX%%/share/airport
+
+exec %%PREFIX%%/jre%%JDK_VERSION%%/bin/jre -cp "AirportBaseStationConfig.jar:swingall.jar" AirportBaseStationConfigurator
+
+exit 1
