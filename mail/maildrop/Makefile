@@ -44,7 +44,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdb
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
 .else
 CONFIGURE_ARGS+=	--without-db
