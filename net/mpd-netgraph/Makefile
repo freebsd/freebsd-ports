@@ -8,7 +8,7 @@
 PORTNAME=	mpd
 PORTVERSION=	3.0.b7
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/mpd/
+MASTER_SITES=	http://people.FreeBSD.org/~archie/distfiles/
 DISTNAME=	mpd-3.0b7
 
 MAINTAINER=	archie@freebsd.org
