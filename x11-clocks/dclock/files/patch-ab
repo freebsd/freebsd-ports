@@ -1,0 +1,11 @@
+--- Dclock.h.orig	Mon Jun  6 08:00:00 1994
++++ Dclock.h	Sun Dec 19 15:59:17 1999
+@@ -58,7 +58,7 @@
+ #define XtNfadeRate	"fadeRate"
+ #define XtNtails	"tails"
+ #define XtNdate		"date"
+-#define XtNmilitaryTime	"militaryTime"
++#define XtNmilitaryTime	"miltime"
+ #define XtNlanguage     "language"
+ #define XtNhours_snd    "hours_snd"
+ #define XtNhalf_hours_snd    "half_hours_snd"
