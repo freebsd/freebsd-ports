@@ -1,0 +1,5 @@
+SimpleBlog is an easy to use Plone based weblog application. It has no
+fancy blogger-api/backlink stuff etc. but it does supports
+categories. Writing entries is done from inside Plone.
+
+WWW:	http://sourceforge.net/projects/collective

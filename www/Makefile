@@ -747,6 +747,7 @@
     SUBDIR += zope-proxyindex
     SUBDIR += zope-silva
     SUBDIR += zope-silvaviews
+    SUBDIR += zope-simpleblog
     SUBDIR += zope-soapmethod
     SUBDIR += zope-ttwtype
     SUBDIR += zope-validation
