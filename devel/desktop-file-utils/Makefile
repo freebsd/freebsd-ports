@@ -7,6 +7,7 @@
 
 PORTNAME=		desktop-file-utils
 PORTVERSION=		0.10
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -23,25 +24,31 @@ CONFIGURE_ARGS=		--with-lispdir=${PREFIX}/share/emacs/site-lisp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
-MIMEDIRS=		${X11BASE}/share/applications \
+PORT_MIMEDIRS=		${X11BASE}/share/applications \
 			${LOCALBASE}/share/applications \
-			/usr/share/applications \
 			${X11BASE}/share/gnome/applications \
-			${LOCALBASE}/share/gnome/applications \
+			${LOCALBASE}/share/gnome/applications
+
+MIMEDIRS=		${PORT_MIMEDIRS} \
+			/usr/share/applications \
 			/usr/share/gnome/applications
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/src/eggdirfuncs.c
-	@${SED} -e 's|%%MIMEDIRS%%|${MIMEDIRS}|' \
+	@${SED} -e 's|%%MIMEDIRS%%|${MIMEDIRS}| ;\
+		s|%%PORT_MIMEDIRS%%|${PORT_MIMEDIRS}|' \
 		< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${SED} -e 's|%%PORT_MIMEDIRS%%|${PORT_MIMEDIRS}|' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-	-@${PREFIX}/bin/update-desktop-database -q
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.mk>
