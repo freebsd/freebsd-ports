@@ -12,7 +12,7 @@ package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS
-	    $LAST_FILE $PID $IDHEADER);
+	    $LAST_FILE $PID $IDHEADER $UNEXPAND_RCSID);
 
 
 ######################
@@ -68,6 +68,11 @@ $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 # Additionally you'll need to tweak CVSROOT/options if you wish to use your
 # own ident header.
 $IDHEADER = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
+
+# Contract any instances of $IDHEADER in the source file before committing.
+# This is useful because it means that expanded headers aren't stored in
+# the repository as part of the delta.
+$UNEXPAND_RCSID = 0;
 
 
 ####################

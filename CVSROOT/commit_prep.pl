@@ -158,6 +158,11 @@ sub check_version {
 	$rcsid_info = $2 || "";
 	($rname, $version) = split /\s/, $rcsid_info;
 
+	# Now that we're definitely sure that the file was supposed
+	# to have rcsid's in it, unexpand them in the file that's
+	# being checked in.
+	fix_up_file($filename) if $cfg::UNEXPAND_RCSID;
+
 	# Ignore version mismatches (MFC spamming etc) on branches.
 	if ($hastag) {
 		return (0);
@@ -204,6 +209,29 @@ sub check_version {
 		return(1);
 	}
 	return(0);
+}
+
+
+# Do file fixups, i.e. replacing $ Id: .* $ with $ Id $.
+sub fix_up_file {
+	my $filename = shift;
+
+	open F, "< $filename" or die "Can't open $filename!\n";
+	my @file = <F>;
+	close F;
+
+	open F, "> $filename.tmp" or die "Can't create $filename tmpfile!\n";
+	while (@file) {
+		my $line = shift @file;
+
+		$line =~ s/\$$HEADER:.*?\$/\$$HEADER\$/g;
+		print F $line or die "Out of disk space?\n";
+	}
+	close F;
+
+	# overwrite the original file......
+	system("/bin/mv", "$filename.tmp", $filename);
+	die "Can't recreate $filename!\n" if $? >> 8;
 }
 
 #############################################################
