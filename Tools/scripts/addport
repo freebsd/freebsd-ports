@@ -143,7 +143,7 @@ if ($addlchk && -f $portlint) {
 	$passenv = $passenv . " PORTSDIR=\"$tmpdir\"" if !$nomkdir;
 	push(@commands, "$make $passenv clean check-categories");
 	push(@commands, "$portlint $plint_args");
-	push(@commands, "$make $passenv FETCH_BEFORE_ARGS='-btA' checksum") if !$nofetch;
+	push(@commands, "$make $passenv FETCH_BEFORE_ARGS='-A' checksum") if !$nofetch;
 	if ($more_testing) {
 		push(@commands, "$make $passenv distclean");
 		push(@commands, "$make $passenv build");
