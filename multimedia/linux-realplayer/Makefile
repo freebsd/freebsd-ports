@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	8.cs2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	http://docs.real.com/docs/playerpatch/unix/:update
 DISTFILES=	${MAINDIST} ${UPDATEDIST:S/$/:update/}
@@ -17,7 +17,8 @@ MAINTAINER=	vns@delta.odessa.ua
 COMMENT=	Linux RealPlayer 8.0 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
+		${LINUXBASE}/usr/lib/libesd.so.0:${PORTSDIR}/audio/linux-esound
 
 MAINDIST=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}_rpm
 UPDATEDIST=	rv9_libc6_i386_cs2.tgz
