@@ -1,5 +1,6 @@
 bin/cpp2html
 bin/java2html
+bin/source-highlight
 %%PORTDOCS%%share/doc/source-highlight/COPYING
 %%PORTDOCS%%share/doc/source-highlight/ChangeLog
 %%PORTDOCS%%share/doc/source-highlight/Hello.css
@@ -24,8 +25,11 @@ bin/java2html
 %%PORTDOCS%%share/doc/source-highlight/cpp2html.css
 %%PORTDOCS%%share/doc/source-highlight/mono-alt.css
 %%PORTDOCS%%share/doc/source-highlight/mono.css
+%%PORTDOCS%%share/doc/source-highlight/old_changes.html
 %%PORTDOCS%%share/doc/source-highlight/source-highlight.html
 %%PORTDOCS%%share/doc/source-highlight/startapp.cc.html
+%%PORTDOCS%%share/doc/source-highlight/test.pl.html
+%%PORTDOCS%%share/doc/source-highlight/test.pm.html
 share/source-highlight/tags.j2h 
 share/source-highlight/tags2.j2h 
 @dirrm share/source-highlight
