@@ -95,6 +95,7 @@
     SUBDIR += libesmtp
     SUBDIR += libetpan
     SUBDIR += liboe
+    SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp

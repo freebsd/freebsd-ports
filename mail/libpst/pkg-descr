@@ -1,0 +1,9 @@
+readpst: A tool for converting Outlook .pst files to Unix mbox format
+
+The aim of this project is to provide libraries and applications for the
+conversion of Outlook and Outlook Express data files to Linux MBOX format.
+
+WWW: http://sourceforge.net/projects/ol2mbox
+
+- Natey
+natey@natey.com
