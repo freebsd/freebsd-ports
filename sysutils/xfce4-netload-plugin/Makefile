@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	0.2.0.p5
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
-DISTNAME=	${PORTNAME}-0.2.0pre5
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	demon@FreeBSD.org
