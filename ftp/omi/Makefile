@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	omi
-PORTVERSION=	alpha-9
+PORTVERSION=	pl9
 CATEGORIES=	ftp
 MASTER_SITES=	http://dorifer.heim3.tu-clausthal.de/~olli/omi/
+DISTNAME=	omi-alpha-9
 
 MAINTAINER=	ache@FreeBSD.org
 
