@@ -89,13 +89,6 @@ include/gimp-1.3/libgimpmath/gimpvector.h
 include/gimp-1.3/libgimpmodule/gimpmodule.h
 include/gimp-1.3/libgimpmodule/gimpmoduledb.h
 include/gimp-1.3/libgimpmodule/gimpmoduletypes.h
-include/gimp-1.3/libgimpproxy/gimpchannel.h
-include/gimp-1.3/libgimpproxy/gimpobject.h
-include/gimp-1.3/libgimpproxy/gimpproxytypes.h
-include/gimp-1.3/libgimptool/gimptool.h
-include/gimp-1.3/libgimptool/gimptoolenums.h
-include/gimp-1.3/libgimptool/gimptoolmodule.h
-include/gimp-1.3/libgimptool/gimptooltypes.h
 include/gimp-1.3/libgimpwidgets/gimpbutton.h
 include/gimp-1.3/libgimpwidgets/gimpchainbutton.h
 include/gimp-1.3/libgimpwidgets/gimpcolorarea.h
@@ -141,12 +134,6 @@ lib/libgimpmodule-1.3.so.%%SHLIBVER%%
 lib/libgimpui-1.3.a
 lib/libgimpui-1.3.so
 lib/libgimpui-1.3.so.%%SHLIBVER%%
-lib/libgimpproxy-1.3.a
-lib/libgimpproxy-1.3.so
-lib/libgimpproxy-1.3.so.%%SHLIBVER%%
-lib/libgimptool-1.3.a
-lib/libgimptool-1.3.so
-lib/libgimptool-1.3.so.%%SHLIBVER%%
 lib/libgimpwidgets-1.3.a
 lib/libgimpwidgets-1.3.so
 lib/libgimpwidgets-1.3.so.%%SHLIBVER%%
@@ -234,6 +221,7 @@ libexec/gimp/1.3/plug-ins/gtm
 libexec/gimp/1.3/plug-ins/guillotine
 libexec/gimp/1.3/plug-ins/gz
 libexec/gimp/1.3/plug-ins/header
+%%HELPBROWSER:%%libexec/gimp/1.3/plug-ins/helpbrowser
 libexec/gimp/1.3/plug-ins/hot
 libexec/gimp/1.3/plug-ins/hrz
 libexec/gimp/1.3/plug-ins/ifscompose
@@ -304,7 +292,6 @@ libexec/gimp/1.3/plug-ins/tiff
 libexec/gimp/1.3/plug-ins/tile
 libexec/gimp/1.3/plug-ins/tileit
 libexec/gimp/1.3/plug-ins/tiler
-libexec/gimp/1.3/plug-ins/tool-safe-mode
 libexec/gimp/1.3/plug-ins/uniteditor
 libexec/gimp/1.3/plug-ins/unsharp
 libexec/gimp/1.3/plug-ins/url
@@ -460,6 +447,7 @@ share/doc/gimp/libgimpwidgets/index.sgml
 share/doc/gimp/libgimpwidgets/left.png
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpColorArea.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpHelpUI.html
+share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpOffsetArea.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpQueryBox.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpStock.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-GimpWidgets.html
@@ -513,6 +501,8 @@ share/doc/gimp/libgimpwidgets/stock-edit-16.png
 share/doc/gimp/libgimpwidgets/stock-error-64.png
 share/doc/gimp/libgimpwidgets/stock-eye-12.png
 share/doc/gimp/libgimpwidgets/stock-eye-20.png
+share/doc/gimp/libgimpwidgets/stock-flip-horizontal-16.png
+share/doc/gimp/libgimpwidgets/stock-flip-vertical-16.png
 share/doc/gimp/libgimpwidgets/stock-gradient-bilinear-16.png
 share/doc/gimp/libgimpwidgets/stock-gradient-conical-asymmetric-16.png
 share/doc/gimp/libgimpwidgets/stock-gradient-conical-symmetric-16.png
@@ -563,6 +553,8 @@ share/doc/gimp/libgimpwidgets/stock-navigation-16.png
 share/doc/gimp/libgimpwidgets/stock-paste-as-new-16.png
 share/doc/gimp/libgimpwidgets/stock-paste-into-16.png
 share/doc/gimp/libgimpwidgets/stock-path-stroke-16.png
+share/doc/gimp/libgimpwidgets/stock-path-16.png
+share/doc/gimp/libgimpwidgets/stock-path-22.png
 share/doc/gimp/libgimpwidgets/stock-paths-16.png
 share/doc/gimp/libgimpwidgets/stock-paths-22.png
 share/doc/gimp/libgimpwidgets/stock-plugin-16.png
@@ -577,6 +569,7 @@ share/doc/gimp/libgimpwidgets/stock-rotate-180-16.png
 share/doc/gimp/libgimpwidgets/stock-rotate-270-16.png
 share/doc/gimp/libgimpwidgets/stock-rotate-90-16.png
 share/doc/gimp/libgimpwidgets/stock-scale-16.png
+share/doc/gimp/libgimpwidgets/stock-selection-16.png
 share/doc/gimp/libgimpwidgets/stock-selection-add-16.png
 share/doc/gimp/libgimpwidgets/stock-selection-all-16.png
 share/doc/gimp/libgimpwidgets/stock-selection-grow-16.png
@@ -620,6 +613,8 @@ share/doc/gimp/libgimpwidgets/stock-tool-color-balance-16.png
 share/doc/gimp/libgimpwidgets/stock-tool-color-balance-22.png
 share/doc/gimp/libgimpwidgets/stock-tool-color-picker-16.png
 share/doc/gimp/libgimpwidgets/stock-tool-color-picker-22.png
+share/doc/gimp/libgimpwidgets/stock-tool-colorize-16.png
+share/doc/gimp/libgimpwidgets/stock-tool-colorize-22.png
 share/doc/gimp/libgimpwidgets/stock-tool-crop-16.png
 share/doc/gimp/libgimpwidgets/stock-tool-crop-22.png
 share/doc/gimp/libgimpwidgets/stock-tool-curves-16.png
@@ -1231,6 +1226,8 @@ share/gimp/themes/Default/images/stock-edit-16.png
 share/gimp/themes/Default/images/stock-error-64.png
 share/gimp/themes/Default/images/stock-eye-12.png
 share/gimp/themes/Default/images/stock-eye-20.png
+share/gimp/themes/Default/images/stock-flip-horizontal-16.png
+share/gimp/themes/Default/images/stock-flip-vertical-16.png
 share/gimp/themes/Default/images/stock-gradient-bilinear-16.png
 share/gimp/themes/Default/images/stock-gradient-conical-asymmetric-16.png
 share/gimp/themes/Default/images/stock-gradient-conical-symmetric-16.png
@@ -1281,6 +1278,8 @@ share/gimp/themes/Default/images/stock-navigation-16.png
 share/gimp/themes/Default/images/stock-paste-as-new-16.png
 share/gimp/themes/Default/images/stock-paste-into-16.png
 share/gimp/themes/Default/images/stock-path-stroke-16.png
+share/gimp/themes/Default/images/stock-path-16.png
+share/gimp/themes/Default/images/stock-path-22.png
 share/gimp/themes/Default/images/stock-paths-16.png
 share/gimp/themes/Default/images/stock-paths-22.png
 share/gimp/themes/Default/images/stock-plugin-16.png
@@ -1295,6 +1294,7 @@ share/gimp/themes/Default/images/stock-rotate-180-16.png
 share/gimp/themes/Default/images/stock-rotate-270-16.png
 share/gimp/themes/Default/images/stock-rotate-90-16.png
 share/gimp/themes/Default/images/stock-scale-16.png
+share/gimp/themes/Default/images/stock-selection-16.png
 share/gimp/themes/Default/images/stock-selection-add-16.png
 share/gimp/themes/Default/images/stock-selection-all-16.png
 share/gimp/themes/Default/images/stock-selection-grow-16.png
@@ -1338,6 +1338,8 @@ share/gimp/themes/Default/images/stock-tool-color-balance-16.png
 share/gimp/themes/Default/images/stock-tool-color-balance-22.png
 share/gimp/themes/Default/images/stock-tool-color-picker-16.png
 share/gimp/themes/Default/images/stock-tool-color-picker-22.png
+share/gimp/themes/Default/images/stock-tool-colorize-16.png
+share/gimp/themes/Default/images/stock-tool-colorize-22.png
 share/gimp/themes/Default/images/stock-tool-crop-16.png
 share/gimp/themes/Default/images/stock-tool-crop-22.png
 share/gimp/themes/Default/images/stock-tool-curves-16.png
@@ -1568,8 +1570,6 @@ share/locale/zh_TW/LC_MESSAGES/gimp14.mo
 @dirrm libexec/gimp/1.3
 @dirrm libexec/gimp
 @dirrm include/gimp-1.3/libgimpwidgets
-@dirrm include/gimp-1.3/libgimptool
-@dirrm include/gimp-1.3/libgimpproxy
 @dirrm include/gimp-1.3/libgimpmodule
 @dirrm include/gimp-1.3/libgimpmath
 @dirrm include/gimp-1.3/libgimpcolor

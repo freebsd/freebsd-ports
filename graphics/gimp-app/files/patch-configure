@@ -9,14 +9,6 @@
  LT_REVISION=$GIMP_INTERFACE_AGE
  LT_AGE=`expr $GIMP_BINARY_AGE - $GIMP_INTERFACE_AGE`
  LT_CURRENT_MINUS_AGE=`expr $LT_CURRENT - $LT_AGE`
-@@ -7224,6 +7224,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 @@ -17657,8 +17658,8 @@
  fi
  fi;

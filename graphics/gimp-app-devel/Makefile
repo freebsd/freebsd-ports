@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.14
-PORTREVISION=	1
+PORTVERSION=	1.3.15
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -32,7 +31,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtk20 libartlgpl2
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
@@ -43,7 +42,7 @@ CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -69,21 +68,30 @@ LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
 
 .include <bsd.port.pre.mk>
 
+.if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc)
+WITH_HTML_HELP_BROWSER=	yes
+.endif
+
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel
 CONFIGURE_ARGS+=	--with-gnome-datadir=${X11BASE}/share/gnome
+PKGNAMESUFFIX=		-gnome
 .endif
 
-#.if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc) || defined(WITH_HTML_HELP_BROWSER)
-#LIB_DEPENDS+=	gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml
-#.endif
+.if defined(WITH_HTML_HELP_BROWSER)
+USE_GNOME+=		libgtkhtml
+PLIST_SUB+=		HELPBROWSER:=""	
+.else
+PLIST_SUB+=		HELPBROWSER:="@comment "
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gimp-devel has the following tunable option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "		WITH_PYTHON=yes		Turns on Python-Fu support"
-	@${ECHO_MSG} "		WITHOUT_PRINT=yes	Turns off GIMP printing"
+	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python-Fu support"
+	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"
+	@${ECHO_MSG} "	WITH_HTML_HELP_BROWSER=yes	Turns on the GIMP help browser"
 	@${ECHO_MSG} ""
 
 .include <bsd.port.post.mk>
