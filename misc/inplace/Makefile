@@ -18,8 +18,10 @@ COMMENT=	A tool to edit files in-place through given filter commands
 USE_BZIP2=	yes
 USE_RUBY=	yes
 
-MAKE_ARGS=	PREFIX="${PREFIX}"
+MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"
 MAKEFILE=	BSDmakefile
+
+RUBY_SHEBANG_FILES=	inplace.rb
 
 MAN1=		inplace.1
 MANCOMPRESSED=	maybe
