@@ -1,0 +1,5 @@
+GTK+extra is a useful widget set complementary to GTK+ for creating graphical
+interfaces for the X Windows System. It is written in C and requires GTK+
+version 1.2.x.
+
+WWW: http://magnet.fsu.edu/~feiguin/gtk/
