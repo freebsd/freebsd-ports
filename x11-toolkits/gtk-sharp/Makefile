@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-sharp
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS+=	mono:${PORTSDIR}/lang/mono \
