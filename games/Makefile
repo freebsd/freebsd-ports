@@ -332,6 +332,7 @@
     SUBDIR += oonsoo
     SUBDIR += openglad
     SUBDIR += openmortal
+    SUBDIR += openttd
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += p5-Games-Bingo
     SUBDIR += p5-Games-Bingo-Bot

@@ -1,0 +1,16 @@
+==========================================================================
+
+    OpenTTD requires the original Windows version of "Transport Tycoon
+    Deluxe" data files in order to function.  Copy the following files
+    to ${DATADIR}/data/ directory:
+
+	sample.cat
+	trg1r.grf
+	trgcr.grf
+	trghr.grf
+	trgir.grf
+	trgtr.grf
+
+    Enjoy!!
+
+==========================================================================
