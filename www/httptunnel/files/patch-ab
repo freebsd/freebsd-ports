@@ -1,0 +1,11 @@
+--- common.h.orig	Thu Mar 16 00:41:09 2000
++++ common.h	Thu Mar 16 00:42:56 2000
+@@ -58,7 +58,7 @@
+ static inline void log_annoying () {}
+ #endif
+ 
+-extern int server_socket (int port, int backlog);
++extern int server_socket (struct in_addr addr, int port, int backlog);
+ extern int set_address (struct sockaddr_in *address,
+ 			const char *host, int port);
+ extern int open_device (char *device);

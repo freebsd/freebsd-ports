@@ -1,0 +1,14 @@
+--- htc.c.orig	Thu Mar 16 00:27:51 2000
++++ htc.c	Thu Mar 16 00:43:21 2000
+@@ -408,7 +408,10 @@
+ 
+   if (arg.forward_port != -1)
+     {
+-      s = server_socket (arg.forward_port, 0);
++      struct in_addr addr;
++
++      addr.s_addr = INADDR_ANY;
++      s = server_socket (addr, arg.forward_port, 0);
+       log_debug ("server_socket (%d) = %d", arg.forward_port, s);
+       if (s == -1)
+ 	{

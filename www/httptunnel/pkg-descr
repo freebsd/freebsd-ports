@@ -1,0 +1,22 @@
+Maintained under FreeBSD by: brian@awfulhak.org
+
+httptunnel creates a bidirectional virtual data path tunnelled in HTTP
+requests.  The requests can be sent via an HTTP proxy if so desired.
+
+This can be useful for users behind restrictive firewalls.  If WWW
+access is allowed through an HTTP proxy, it's possible to use
+httptunnel and, say, telnet or PPP to connect to a computer outside
+the firewall.
+
+If you still don't understand what this is all about, maybe you
+can find some useful information in the FAQ file.
+
+This program is mostly intended for technically oriented users.
+They should know what to do.
+
+httptunnel is free software.  See COPYING for terms and conditions.
+If you like it, I would appreciate if you sent a post card to:
+        Lars Brinkhoff
+        Kopmansgatan 2
+        411 13  Goteborg
+        Sweden
