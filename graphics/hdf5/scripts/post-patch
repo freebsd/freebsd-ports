@@ -51,7 +51,7 @@ patch -p << END_OF_PATCH
 @@ -72,2 +72,2 @@
 -ZLIBLIB=\$(srcdir)/../zlib
 -ZLIBINC=\$(srcdir)/../zlib
-+ZLIBLIB=-lz \$(pwrkdir)
++ZLIBLIB=-lz
 +ZLIBINC=/usr/include
 END_OF_PATCH
 done

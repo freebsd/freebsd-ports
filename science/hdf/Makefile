@@ -3,7 +3,7 @@
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.7 1998/08/22 16:20:24 hoek Exp $
+# $Id: Makefile,v 1.8 1998/09/15 11:45:52 asami Exp $
 #
 
 DISTNAME=	HDF4.1r2
@@ -61,7 +61,6 @@ pre-build:
 
 post-install:
 	@for binary in `grep ^bin/ ${PLIST}` ; do strip ${PREFIX}/$$binary; done
-	${LDCONFIG} -m ${PREFIX}/lib
 
 test:
 	cd ${WRKSRC}; make ${MAKE_FLAGS} ${MAKEFILE} test
