@@ -6763,6 +6763,7 @@ p5-Data-Properties	ports/devel/p5-Data-Properties
 p5-Data-Random	ports/devel/p5-Data-Random
 p5-Data-Serializer	ports/devel/p5-Data-Serializer
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
+p5-Data-Stag	ports/devel/p5-Data-Stag
 p5-Data-Table	ports/devel/p5-Data-Table
 p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
 p5-Data-TreeDumper	ports/devel/p5-Data-TreeDumper
