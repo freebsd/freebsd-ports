@@ -3,12 +3,12 @@
 # Date created:         17 Nov 1995
 # Whom:                 markm
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/11/17 19:03:47 markm Exp $
 #
 
 DISTNAME=       buffer-1.17
 CATEGORIES+=	utilities
-MASTER_SITES=   ftp://ftp.sun.ac.za/pub/unix/
+MASTER_SITES=   ftp://ftp.sun.ac.za/pub/unix/misc/
 NO_WRKSUBDIR=	yes
 
 post-install:
