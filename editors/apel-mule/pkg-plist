@@ -40,7 +40,7 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/broken.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/static.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/static.elc
-%%EMACS_LIBDIR%%/site-lisp/apel-setup.el
+%%EMACS_LIBDIR%%/site-lisp/%%APEL_SETUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/apel
 @dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu
 %%APELDOCDIR%%/ChangeLog
