@@ -1,0 +1,27 @@
+Index: tools/makedep.c
+===================================================================
+RCS file: /home/wine/wine/tools/makedep.c,v
+retrieving revision 1.17
+diff -u -3 -p -r1.17 makedep.c
+--- makedep.c	20 Jun 2003 21:31:13 -0000	1.17
++++ makedep.c	23 Feb 2004 22:36:23 -0000
+@@ -67,7 +67,8 @@ static const char Usage[] =
+     "   -Idir   Search for include files in directory 'dir'\n"
+     "   -Cdir   Search for source files in directory 'dir'\n"
+     "   -fxxx   Store output in file 'xxx' (default: Makefile)\n"
+-    "   -sxxx   Use 'xxx' as separator (default: \"### Dependencies\")\n";
++    "   -sxxx   Use 'xxx' as separator (default: \"### Dependencies\")\n"
++    "   -Dxxx   This is a no-op, to work around bugs in other tools\n";
+ 
+ 
+ /*******************************************************************
+@@ -503,6 +504,9 @@ static void parse_option( const char *op
+     case 'C':
+         if (opt[2]) SrcDir = opt + 2;
+         else SrcDir = NULL;
++        break;
++    case 'D':
++        /* Simply ignore -D... options. */
+         break;
+     case 'f':
+         if (opt[2]) OutputFileName = opt + 2;
