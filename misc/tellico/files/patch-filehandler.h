@@ -1,11 +1,10 @@
---- src/filehandler.h.orig	Tue Feb 17 21:05:58 2004
-+++ src/filehandler.h	Tue Feb 17 21:05:06 2004
-@@ -131,6 +131,8 @@
-   static bool writeDataFile(KSaveFile& file, const QByteArray& data);
+--- src/filehandler.h.orig	Tue Feb 24 01:11:58 2004
++++ src/filehandler.h	Tue Feb 24 01:08:37 2004
+@@ -39,6 +39,7 @@
  
-   static MainWindow* s_mainWindow;
-+
-+  friend class FileRef;
- };
+ friend class MainWindow;
+ friend const Data::Image& addImage(const KURL& url);
++class FileRef;
+ friend class FileRef;
  
- } // end namespace
+ public:
