@@ -4,6 +4,7 @@ share/doc/opera/help
 share/opera/bin/m2.so
 share/opera/bin/missingsyms.so
 share/opera/bin/opera
+share/opera/bin/works
 share/opera/chartables.bin
 share/opera/config/opera6rc
 share/opera/config/opera6rc.fixed
@@ -76,7 +77,6 @@ share/opera/plugins/libnpp.so
 share/opera/plugins/operamotifwrapper
 share/opera/plugins/operaplugincleaner
 share/opera/search.ini
-share/opera/skin/foreground.png
 share/opera/skin/standard_skin.zip
 share/opera/skin/windows_skin.zip
 share/opera/styles/OPF.css
