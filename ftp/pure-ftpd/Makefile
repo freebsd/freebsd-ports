@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.98.7
+PORTVERSION=	0.99
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -20,7 +20,8 @@ LIB_DEPENDS+=	dmalloc.1:${PORTSDIR}/devel/dmalloc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pam --with-cookie --with-throttling \
 			--with-ratios --with-ftpwho --with-largefile \
-			--with-uploadscript --with-virtualhosts
+			--with-uploadscript --with-virtualhosts \
+			--with-altlog --with-paranoidmsg
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
@@ -58,7 +59,7 @@ pre-fetch:
 	@${ECHO} "You can use the following additional options:"
 	@${ECHO} "WITH_DMALLOC	- enable use of the dmalloc library;"
 	@${ECHO} "WITH_LANG=lang	- enable compilation of language support, lang is one of"
-	@${ECHO} "		  english, german, romanian, french, polish or spanish."
+	@${ECHO} "		  english, german, romanian, french, polish, spanish or danish."
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
