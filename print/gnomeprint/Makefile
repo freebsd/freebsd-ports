@@ -1,21 +1,22 @@
 # New ports collection makefile for:	gnomeprint
-# Version required:			0.4
+# Version required:			0.9
 # Date created:				15 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-print-0.4
-PKGNAME=	gnomeprint-0.4
+DISTNAME=	gnome-print-0.9
+PKGNAME=	gnomeprint-0.9
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-print
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs \
-		xml.4:${PORTSDIR}/textproc/libxml \
+BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
