@@ -1,0 +1,3 @@
+lib/pam_pop3.so
+%%PORTDOCS%%share/doc/pam_pop3/README
+%%PORTDOCS%%@dirrm share/doc/pam_pop3

@@ -1,0 +1,6 @@
+pam_pop3 by Schlomo Schapiro (schapiro@huji.ac.il)
+
+This module authenticates a user against a POP3 server.
+It supplies only the AUTH functions.
+
+WWW: http://shum.huji.ac.il/~schapiro/linux/
