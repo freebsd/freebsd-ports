@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.62 1998/06/14 22:00:24 kuriyama Exp $
+# $Id: Makefile,v 1.63 1998/07/20 02:31:50 steve Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -54,5 +54,6 @@
     SUBDIR += xdvik
     SUBDIR += xmbibtex
     SUBDIR += xtem
+    SUBDIR += yatex
 
 .include <bsd.port.subdir.mk>
