@@ -6,9 +6,11 @@
 # $Id: Makefile,v 1.1.1.1 1998/12/09 05:44:06 vanilla Exp $
 #
 
-DISTNAME=       wmcdplay-0.8
+DISTNAME=	wmcdplay
+PKGNAME=	wmcdplay-1.0b1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clkao@CirX.ORG
 
