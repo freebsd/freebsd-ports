@@ -15,6 +15,10 @@ bin/gsdj
 bin/gsdj500
 bin/gs
 man/man1/gs.1.gz
+man/man1/pdf2ps.1.gz
+man/man1/ps2ascii.1.gz
+man/man1/ps2epsi.1.gz
+man/man1/ps2pdf.1.gz
 share/ghostscript/4.03vflib/Fontmap
 share/ghostscript/4.03vflib/acctest.ps
 share/ghostscript/4.03vflib/align.ps
@@ -108,6 +112,7 @@ share/ghostscript/4.03vflib/doc/current.txt
 share/ghostscript/4.03vflib/doc/devices.txt
 share/ghostscript/4.03vflib/doc/drivers.txt
 share/ghostscript/4.03vflib/doc/fonts.txt
+share/ghostscript/4.03vflib/doc/gdev10v.jis
 share/ghostscript/4.03vflib/doc/gdevep82.jis
 share/ghostscript/4.03vflib/doc/gdevlips4.euc
 share/ghostscript/4.03vflib/doc/gdevmjc.jis
