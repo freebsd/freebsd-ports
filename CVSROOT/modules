@@ -612,6 +612,7 @@ boxes		ports/misc/boxes
 bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
 bpl+		ports/comms/bpl+
+br-aspell	ports/textproc/br-aspell
 br-ispell	ports/textproc/br-ispell
 brandelf	src/usr.bin/brandelf
 bricons		ports/x11/bricons
