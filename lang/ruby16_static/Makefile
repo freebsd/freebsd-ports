@@ -46,7 +46,8 @@ WRKSRC=		${RUBY_WRKSRC}
 DESCR=		${_RUBY_PORTDIR}/pkg-descr
 
 # You can build a totally statically linked binary by defining STATIC,
-# although it is not capable of loading dynamic modules.
+# although the resulted interpreter is not capable of loading dynamic
+# modules.
 
 CONFIGURE_ENV=	XLDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS!=	cd ${_RUBY_PORTDIR} && ${MAKE} -V CONFIGURE_ARGS
@@ -59,7 +60,11 @@ CONFIGURE_ARGS:=	${CONFIGURE_ARGS:M-*} \
 			--with-opt-dir="${LOCALBASE}"
 .endif
 
-MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
+.if defined(DEBUG)
+CFLAGS+=	-g
+STRIP=		# none
+.endif
+
 MAKE_ARGS=	-j3
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
