@@ -1,11 +1,17 @@
---- Makefile.orig	Sun Jul 30 12:17:21 2000
-+++ Makefile	Sun Jul 30 12:18:34 2000
-@@ -1,6 +1,6 @@
- CFLAGS=-Wall
--CFLAGS+=`gtk-config --cflags`
--LIBS=`gtk-config --libs gtk`
-+CFLAGS+=`${GTK_CONFIG} --cflags`
-+LIBS=`${GTK_CONFIG} --libs gtk`
- OBJS=biblereader.o books.o regex.o font.o gui/gladesig.o gui/gladesrc.o prefs.o format.o
- PREFIX?=/usr/local
- 
+*** Makefile.orig	Thu Jul 27 05:07:53 2000
+--- Makefile	Mon Jul 31 10:54:11 2000
+***************
+*** 1,6 ****
+  CFLAGS=-Wall -g
+! CFLAGS+=`gtk-config --cflags`
+! LIBS=`gtk-config --libs gtk`
+  OBJS=biblereader.o books.o dictionary.o font.o history.o notes.o gui/dict_dialog.o gui/gtktextbible.o gui/gladesig.o gui/gladesrc.o gui/prefs_dialog.o prefs.o format.o
+  PREFIX?=/usr/local
+  TRANSLATION?=kjv
+--- 1,6 ----
+  CFLAGS=-Wall -g
+! CFLAGS+=`${GTK_CONFIG} --cflags`
+! LIBS=`${GTK_CONFIG} --libs gtk`
+  OBJS=biblereader.o books.o dictionary.o font.o history.o notes.o gui/dict_dialog.o gui/gtktextbible.o gui/gladesig.o gui/gladesrc.o gui/prefs_dialog.o prefs.o format.o
+  PREFIX?=/usr/local
+  TRANSLATION?=kjv
