@@ -3,10 +3,10 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.41 1999/06/22 17:16:42 steve Exp $
+# $Id: Makefile,v 1.42 1999/06/26 20:59:57 obrien Exp $
 #
 
-DISTNAME=	postgresql-6.4.2
+DISTNAME=	postgresql-6.5
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
@@ -17,8 +17,6 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-BROKEN='unfetchable, version 6.5 is the latest'
-
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		doesn\'t build on the alpha yet
 .endif
@@ -28,11 +26,21 @@ Y2K=		http://www.postgresql.org/y2k.html
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
 # postgresql with tcl support by typing: make USE_TCL=yes
 .if defined(USE_TCL)
-TCL_INCDIR=	${PREFIX}/include/tcl8.0
-TK_INCDIR=	${PREFIX}/include/tk8.0
+TCL_INCDIR=	${LOCALBASE}/include/tcl8.0
+TK_INCDIR=	${LOCALBASE}/include/tk8.0
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${TCL_INCDIR}
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 tk80.1:${PORTSDIR}/x11-toolkits/tk80
-WITH_TCL=	--with-tcl --with-tclconfig="${PREFIX}/lib/tcl8.0 ${PREFIX}/lib/tk8.0"
+WITH_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
+.endif
+
+# if you want jdbc, type make USE_JDBC=yes
+# Honors JAVA_HOME if you have it set, and don't want the dependency.
+.if defined(USE_JDBC)
+JAVA_HOME?=	${LOCALBASE}/jdk1.1.8
+BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
+#MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
+#CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
+SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
 .endif
 
 NO_PACKAGE=	"Requires pgsql uid"
@@ -80,22 +88,50 @@ pre-fetch:
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
 
+.if !defined(USE_JDBC)
+	@ ${ECHO_MSG} "To build Java (JDBC) support, type:"
+	@ ${ECHO_MSG} "   make USE_JDBC=yes"
+.else
+	@ ${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
+.endif
+
 post-patch:
 
 	@ ${MV} ${WRKSRC}/template/freebsd ${WRKSRC}/template/freebsd.orig
 	@ ${SED} -e 's#CFLAGS:-O2 -m486 -pipe#CFLAGS:${CFLAGS}#' \
 		-e 's#USE_LOCALE:no#USE_LOCALE:yes#' \
 	${WRKSRC}/template/freebsd.orig >> ${WRKSRC}/template/freebsd
+	@ ${MV} ${WRKSRC}/Makefile.global.in ${WRKSRC}/Makefile.global.in.old
+	@ ${SED} -e 's=!!PREFIX!!=${PREFIX}=g' \
+		${WRKSRC}/Makefile.global.in.old \
+		>> ${WRKSRC}/Makefile.global.in
+
+.if defined(USE_TCL)
+	@ ${MV} ${WRKSRC}/bin/pgaccess/pgaccess.tcl \
+		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig
+	@ ${SED} -e "s=/usr/bin/wish=`/usr/bin/which wish8.0`=" \
+		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig \
+		>> ${WRKSRC}/bin/pgaccess/pgaccess.tcl
+.endif
 
 post-build:
+
+.if defined(USE_JDBC)
+	@ cd ${WRKSRC}/interfaces/jdbc && ${GMAKE}
+.if !defined(NOPORTDOCS)
+	@ cd ${WRKSRC}/interfaces/jdbc && ${GMAKE} examples
+.endif
+.endif
+
 	@ ${ECHO} "------------------------------------------------------------"
 	@ ${ECHO} "Dump existing databases, before installing new db version !!"
-	@ ${ECHO} "Detailed instructions, see INSTALL file under ${WRKDIR}...  "
+	@ ${ECHO} "Detailed instructions, see"
+	@ ${ECHO} "${WRKDIR}/${DISTNAME}/INSTALL"
 	@ ${ECHO} "------------------------------------------------------------"
 
 pre-install:
 .if defined(PACKAGE_BUILDING)
-	/bin/rm -rf ${PREFIX}/pgsql
+	${RM} -rf ${PREFIX}/pgsql
 .endif
 	@ ${MKDIR} ${PREFIX}/pgsql
 	@ ${SETENV} ${MAKE_ENV} perl ${SCRIPTDIR}/createuser
@@ -132,12 +168,47 @@ post-install:
 	@ chmod 554 ${PREFIX}/etc/rc.d/pgsql.sh
 	@ chown root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/pgsql
+
+.if defined(USE_TCL)
+	${CP} ${TMPPLIST} ${TMPPLIST}.notcl
+	${CAT} ${PKGDIR}/PLIST.tcl ${TMPPLIST}.notcl > ${TMPPLIST}
+	${RM} ${TMPPLIST}.notcl
+.endif
+
+.if defined(USE_JDBC)
+	@ ${MKDIR} -m 0555 ${PREFIX}/share/java
+	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/postgresql.jar \
+			  ${PREFIX}/share/java/postgresql.jar
+	@ ${ECHO_MSG} "---------------------------------------------------------"
+	@ ${ECHO_MSG} "Putting postgresql.jar in ${PREFIX}/share/java"
+	@ ${ECHO_MSG} "Add this to your CLASSPATH!"
+	@ ${ECHO_MSG} "---------------------------------------------------------"
+	${CAT} ${PKGDIR}/PLIST.jdbc >> ${TMPPLIST}
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} -m 0555 ${PREFIX}/share/examples/pgsql/jdbc
+	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/example/*java \
+			  ${PREFIX}/share/examples/pgsql/jdbc
+	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/README* \
+			  ${PREFIX}/share/examples/pgsql/jdbc
+	@ ${ECHO_MSG} "---------------------------------------------------------"
+	@ ${ECHO_MSG} "Putting jdbc examples into ${PREFIX}/share/examples/pgsql"
+	@ ${ECHO_MSG} "---------------------------------------------------------"
+.endif
+.endif
+
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pgsql
-	${CP} -r ${WRKDIR}/${DISTNAME}/doc/* ${PREFIX}/share/doc/pgsql
+	@ ${GMAKE} -C ${WRKDIR}/${DISTNAME}/doc install
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/FAQ* ${PREFIX}/share/doc/pgsql
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/README* ${PREFIX}/share/doc/pgsql
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO* ${PREFIX}/share/doc/pgsql
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
 .endif
 .if !defined(BATCH)
 	@ more -e ${FILESDIR}/post-install-notes
 .endif
+.for file in ecpg pg_dump pg_id pg_passwd pg_version postgres psql
+	@ strip ${PREFIX}/pgsql/bin/${file}
+.endfor
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+#! /bin/sh
+
+# $Id$
+
+cd $WRKSRC || exit 1
+
+perl -pi -e "s=!!JAVA_HOME!!=${JAVA_HOME}=" ${WRKSRC}/interfaces/jdbc/Makefile
