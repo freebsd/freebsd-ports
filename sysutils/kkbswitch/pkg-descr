@@ -1,4 +1,4 @@
-KKBSwitch is a keyboard layout indicator for KDE 2. It is useful
+KKBSwitch is a keyboard layout indicator for KDE. It is useful
 when you have configured the XKeyboard extension of your X Server
 to have more than one keyboard group, for example US/ASCII and
 Russian. KKBSwitch displays an icon in the system tray that
@@ -13,7 +13,8 @@ KKBSwitch features:
 - you can switch keyboard groups by clicking the icon or selecting the
   desired group from the icon's menu
 - icons corresponding to different groups are configurable (chosen
-  from country flag pixmaps that ship with KDE)
+  from country flag pixmaps that ship with KDE). Also you can set
+  your own icon or set "Windows-like" mode with locale letters.
 - "Toggle mode" (keyboard layout memorized for each window separately).
 
 WWW: http://kkbswitch.sourceforge.net
