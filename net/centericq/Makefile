@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.9.12
+PORTVERSION=	4.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
 
@@ -44,6 +44,7 @@ CONFIGURE_ARGS+=	--with-fribidi
 .endif
 
 .if !defined(WITH_MSN)
+LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--disable-msn
 .endif
 
