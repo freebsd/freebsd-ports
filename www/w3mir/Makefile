@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.math.uio.no/~janl/w3mir/
 
 MAINTAINER=     ache@freebsd.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	Yes
 
