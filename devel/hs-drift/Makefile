@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/
 DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 .if !defined(WITH_GHC)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
