@@ -1,0 +1,36 @@
+*** libs/pgpcdk/priv/networklib/keyserver/CHTTPPGPKeyServer.cpp	2000/01/26 03:10:44	1.1.1.1
+--- libs/pgpcdk/priv/networklib/keyserver/CHTTPPGPKeyServer.cpp	2000/01/26 03:13:48	1.1.1.2
+***************
+*** 92,98 ****
+  		path = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													strlen(kQueryPrefix) + strlen(query) + 1,
+  													kPGPMemoryMgrFlags_None));
+! 		if (path == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		sprintf(path, "%s%s", kQueryPrefix, static_cast<char *>(query));
+--- 92,98 ----
+  		path = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													strlen(kQueryPrefix) + strlen(query) + 1,
+  													kPGPMemoryMgrFlags_None));
+! 		if (path == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		sprintf(path, "%s%s", kQueryPrefix, static_cast<char *>(query));
+***************
+*** 188,194 ****
+  				PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  							GetMaxURLEncodedBufferSize(bufSize) + postPrefixSize,
+  							kPGPMemoryMgrFlags_None));
+! 			if (urlEncodedBuffer == 0) {
+  				ThrowPGPError_(kPGPError_OutOfMemory);
+  			}
+  			strcpy(urlEncodedBuffer, kPostPrefix);
+--- 188,194 ----
+  				PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  							GetMaxURLEncodedBufferSize(bufSize) + postPrefixSize,
+  							kPGPMemoryMgrFlags_None));
+! 			if (urlEncodedBuffer == (StPGPDataRef) 0) {
+  				ThrowPGPError_(kPGPError_OutOfMemory);
+  			}
+  			strcpy(urlEncodedBuffer, kPostPrefix);

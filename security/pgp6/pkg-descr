@@ -1,20 +1,12 @@
-This is PGP 5.0, a significant step forward from 2.6.*
+This version of PGP combines many of the new features of PGP 5.0 with
+the command line interface of PGP 2.6.x.
 
-CHANGES:
+I ported this in an effort to get the newer code working under FreeBSD.  
+The port is fairly straightforward, but my main focus was being able to build
+a functioning executable.  Also, this is a port of beta code.  It seems to
+work just fine, but keep in mind that it is a beta.
 
-There are a number of large changes from the 2.6.2 distribution.  Most
-notable is that the command line has changed substantially.  See
-the pgp(1) man page for a discussion of how to use the new command
-line.
+More information on this port can be found at:
+http://www.fate.com/projects/pgpport/
 
-Also, to allow easy interoperation with older versions on the same
-system, a number of filename changes have been made.
-
-NEW FEATURES:
-
-PGP 5.0 contains support for new encryption methods (most notably
-DSS/Diffie-Hellman), and built-in keyserver support.  Also, the
-command line has been redesigned to be more Unix and scripting
-friendly.
-
-WWW: http://www.pgpi.com
+WWW: http://www.pgpi.org

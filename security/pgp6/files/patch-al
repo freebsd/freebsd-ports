@@ -1,0 +1,31 @@
+*** libs/pgpcdk/priv/networklib/keyserver/CHTTPKeyServer.cpp	2000/01/26 03:10:44	1.1.1.1
+--- libs/pgpcdk/priv/networklib/keyserver/CHTTPKeyServer.cpp	2000/01/26 03:13:48	1.1.1.2
+***************
+*** 341,353 ****
+  	tempStorage = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  														kTempStorageSize,
+  														kPGPMemoryMgrFlags_None));
+! 	if (tempStorage == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	buffer = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												result + 1,
+  												kPGPMemoryMgrFlags_None));
+! 	if (buffer == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	socketResult = PGPReceive(	mSocket,
+--- 341,353 ----
+  	tempStorage = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  														kTempStorageSize,
+  														kPGPMemoryMgrFlags_None));
+! 	if (tempStorage == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	buffer = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												result + 1,
+  												kPGPMemoryMgrFlags_None));
+! 	if (buffer == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	socketResult = PGPReceive(	mSocket,

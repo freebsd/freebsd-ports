@@ -1,0 +1,220 @@
+*** libs/pgpcdk/priv/networklib/keyserver/CHTTPXcertServer.cpp	2000/01/26 03:10:44	1.1.1.1
+--- libs/pgpcdk/priv/networklib/keyserver/CHTTPXcertServer.cpp	2000/01/26 03:13:49	1.1.1.2
+***************
+*** 89,95 ****
+  		digest = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													GetMaxDigestedKeyBufferSize(),
+  													kPGPMemoryMgrFlags_None));
+! 		if (digest == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		digestSize = DigestKey(inCAKey, digest);
+--- 89,95 ----
+  		digest = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													GetMaxDigestedKeyBufferSize(),
+  													kPGPMemoryMgrFlags_None));
+! 		if (digest == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		digestSize = DigestKey(inCAKey, digest);
+***************
+*** 98,104 ****
+  			PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  						GetMaxBase64EncodedBufferSize(inBufferSize),
+  						kPGPMemoryMgrFlags_None));
+! 		if (encodedBuffer == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		bufSize = Base64Encode(	static_cast<const PGPByte *>(inBuffer),
+--- 98,104 ----
+  			PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  						GetMaxBase64EncodedBufferSize(inBufferSize),
+  						kPGPMemoryMgrFlags_None));
+! 		if (encodedBuffer == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		bufSize = Base64Encode(	static_cast<const PGPByte *>(inBuffer),
+***************
+*** 109,115 ****
+  		cnk = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													cnkSize,
+  													kPGPMemoryMgrFlags_None));
+! 		if (cnk == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		pgpErr = PGPGetKeyPropertyBuffer(	inRequestKey,
+--- 109,115 ----
+  		cnk = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													cnkSize,
+  													kPGPMemoryMgrFlags_None));
+! 		if (cnk == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		pgpErr = PGPGetKeyPropertyBuffer(	inRequestKey,
+***************
+*** 121,127 ****
+  		encodedCNK = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  														GetMaxHexEncodedBufferSize(cnkSize),
+  														kPGPMemoryMgrFlags_None));
+! 		if (encodedCNK == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		cnkSize = HexEncode(cnk, cnkSize, encodedCNK);
+--- 121,127 ----
+  		encodedCNK = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  														GetMaxHexEncodedBufferSize(cnkSize),
+  														kPGPMemoryMgrFlags_None));
+! 		if (encodedCNK == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		cnkSize = HexEncode(cnk, cnkSize, encodedCNK);
+***************
+*** 131,137 ****
+  						strlen(kCA) + digestSize + strlen(kCNK) + cnkSize
+  							+ strlen(kPKCS10_input) + GetMaxURLEncodedBufferSize(bufSize),
+  						kPGPMemoryMgrFlags_None));
+! 		if (post == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		postSize = sprintf(post, "%s%s%s%s%s", kCA, static_cast<char *>(digest), kCNK,
+--- 131,137 ----
+  						strlen(kCA) + digestSize + strlen(kCNK) + cnkSize
+  							+ strlen(kPKCS10_input) + GetMaxURLEncodedBufferSize(bufSize),
+  						kPGPMemoryMgrFlags_None));
+! 		if (post == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		postSize = sprintf(post, "%s%s%s%s%s", kCA, static_cast<char *>(digest), kCNK,
+***************
+*** 196,202 ****
+  		path = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													strlen(prefix) + strlen(query) + 1,
+  													kPGPMemoryMgrFlags_None));
+! 		if (path == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		sprintf(path, "%s%s", prefix, static_cast<char *>(query));
+--- 196,202 ----
+  		path = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													strlen(prefix) + strlen(query) + 1,
+  													kPGPMemoryMgrFlags_None));
+! 		if (path == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		sprintf(path, "%s%s", prefix, static_cast<char *>(query));
+***************
+*** 258,271 ****
+  		digest = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													GetMaxDigestedKeyBufferSize(),
+  													kPGPMemoryMgrFlags_None));
+! 		if (digest == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		digestSize = DigestKey(inCAKey, digest);
+  		path = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													strlen(prefix) + digestSize + 1,
+  													kPGPMemoryMgrFlags_None));
+! 		if (path == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		sprintf(path, "%s%s", prefix, static_cast<char *>(digest));
+--- 258,271 ----
+  		digest = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													GetMaxDigestedKeyBufferSize(),
+  													kPGPMemoryMgrFlags_None));
+! 		if (digest == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		};
+  		digestSize = DigestKey(inCAKey, digest);
+  		path = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  													strlen(prefix) + digestSize + 1,
+  													kPGPMemoryMgrFlags_None));
+! 		if (path == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		sprintf(path, "%s%s", prefix, static_cast<char *>(digest));
+***************
+*** 323,329 ****
+  		PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  					GetMaxBase64EncodedBufferSize(bufSize),
+  					kPGPMemoryMgrFlags_None));
+! 	if (encodedBuffer == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	bufSize = Base64Encode(	static_cast<const PGPByte *>(buffer),
+--- 323,329 ----
+  		PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  					GetMaxBase64EncodedBufferSize(bufSize),
+  					kPGPMemoryMgrFlags_None));
+! 	if (encodedBuffer == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	bufSize = Base64Encode(	static_cast<const PGPByte *>(buffer),
+***************
+*** 351,357 ****
+  	buffer = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												bufSize,
+  												kPGPMemoryMgrFlags_None));
+! 	if (buffer == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	pgpErr = PGPFinalizeHash(hashContext, static_cast<char *>(buffer));
+--- 351,357 ----
+  	buffer = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												bufSize,
+  												kPGPMemoryMgrFlags_None));
+! 	if (buffer == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	pgpErr = PGPFinalizeHash(hashContext, static_cast<char *>(buffer));
+***************
+*** 400,406 ****
+  	result = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												resultSize + 1,
+  												kPGPMemoryMgrFlags_None));
+! 	if (result == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	pgpCopyMemory(inResult, static_cast<char *>(result), resultSize + 1);
+--- 400,406 ----
+  	result = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												resultSize + 1,
+  												kPGPMemoryMgrFlags_None));
+! 	if (result == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	pgpCopyMemory(inResult, static_cast<char *>(result), resultSize + 1);
+***************
+*** 426,432 ****
+  	decodedResult = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  														GetMaxBase64DecodedBufferSize(end - found),
+  														kPGPMemoryMgrFlags_None));
+! 	if (decodedResult == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	
+--- 426,432 ----
+  	decodedResult = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  														GetMaxBase64DecodedBufferSize(end - found),
+  														kPGPMemoryMgrFlags_None));
+! 	if (decodedResult == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	
+***************
+*** 470,476 ****
+  	result = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												GetMaxBase64DecodedBufferSize(end - found),
+  												kPGPMemoryMgrFlags_None));
+! 	if (result == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	
+--- 470,476 ----
+  	result = static_cast<PGPByte *>(PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  												GetMaxBase64DecodedBufferSize(end - found),
+  												kPGPMemoryMgrFlags_None));
+! 	if (result == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	};
+  	

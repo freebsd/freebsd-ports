@@ -1,0 +1,25 @@
+*** libs/pfl/common/pgpRMWOLock.c	2000/01/25 23:30:04	1.1.1.1
+--- libs/pfl/common/pgpRMWOLock.c	2000/01/25 23:32:31	1.1.1.2
+***************
+*** 8,15 ****
+  ____________________________________________________________________________*/
+  
+  #include "pgpBase.h"
+  
+  #include "pgpRMWOLock.h"
+  
+  #if PGP_UNIX_SOLARIS
+  /*
+--- 8,19 ----
+  ____________________________________________________________________________*/
+  
+  #include "pgpBase.h"
+  
+  #include "pgpRMWOLock.h"
++ 
++ #ifdef __FreeBSD__
++ #define	NULL	0 /* undefined for some reason */
++ #endif
+  
+  #if PGP_UNIX_SOLARIS
+  /*
