@@ -18,6 +18,8 @@ RUN_DEPENDS=	xpdf:${PORTSDIR}/graphics/xpdf\
 		${LOCALBASE}/share/ghostscript/Resource/CMap/Adobe-Japan1-0:${PORTSDIR}/print/adobe-cmaps\
 		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
+BROKEN=		"Checksum mismatch"
+
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 INSTALL_FILES=	Adobe-Japan1.cidToUnicode ISO-2022-JP.unicodeMap \

@@ -26,6 +26,8 @@ COMMENT=	Skins for gdeskcal
 
 RUN_DEPENDS=	${X11BASE}/bin/gdeskcal:${PORTSDIR}/deskutils/gdeskcal
 
+BROKEN=		"Checksum mismatch"
+
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix
