@@ -3,7 +3,7 @@
 # Date created:         3 Nov 1995
 # Whom:                 markm@FreeBSD.org
 #
-# $Id: Makefile,v 1.23 1999/01/06 04:27:54 simokawa Exp $
+# $Id: Makefile,v 1.24 1999/02/26 13:37:33 obrien Exp $
 #
 
 DISTNAME=	linux_lib-2.6.1
@@ -31,6 +31,14 @@ do-install:
 post-install:
 	-/compat/linux/sbin/ldconfig
 	${MKDIR} ${PREFIX}/usr/lib/zoneinfo
-	ln -sf /etc/localtime /${PREFIX}/usr/lib/zoneinfo/localtime
+	${LN} -sf /etc/localtime /${PREFIX}/usr/lib/zoneinfo/localtime
+	${MKDIR} ${PREFIX}/dev
+	${LN} -sf /dev/console ${PREFIX}/dev/tty0
+	${LN} -sf /dev/ttyv0 ${PREFIX}/dev/tty1
+	${LN} -sf /dev/ttyv1 ${PREFIX}/dev/tty2
+	${LN} -sf /dev/ttyv2 ${PREFIX}/dev/tty3
+	${LN} -sf /dev/ttyv3 ${PREFIX}/dev/tty4
+	${LN} -sf /dev/sysmouse ${PREFIX}/dev/mouse
+	${LN} -sf /dev/psm0 ${PREFIX}/dev/psaux
 
 .include <bsd.port.mk>
