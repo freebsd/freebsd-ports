@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../deploy/make/common/Defs-bsd.gmk.orig	Wed Nov 12 16:52:55 2003
++++ ../../deploy/make/common/Defs-bsd.gmk	Wed Nov 12 16:53:08 2003
+@@ -10,7 +10,7 @@
+ # XXXBSD: this issue need to be rehashed (/usr/local/ should be defined
+ #         in other place
+ ifeq ($(TRUE_PLATFORM), FreeBSD)
+-USR_LOCAL_PATH = /usr/local/
++USR_LOCAL_PATH = ${LOCALBASE}/
+ endif
+ 
+ BUNDLE_SUFFIX  = .zip

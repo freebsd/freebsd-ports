@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../control/make/common/Defs-bsd.gmk.orig	Wed Nov 12 16:52:22 2003
++++ ../../control/make/common/Defs-bsd.gmk	Wed Nov 12 16:51:41 2003
+@@ -212,7 +212,7 @@
+ ifeq ($(TRUE_PLATFORM), NetBSD)
+ DEVTOOLS_PATH = /usr/pkg/bin/
+ else
+-DEVTOOLS_PATH = /usr/local/bin/
++DEVTOOLS_PATH = ${LOCALBASE}/bin/
+ endif
+ # Allow the user to override the default value...
+ ifdef ALT_DEVTOOLS_PATH

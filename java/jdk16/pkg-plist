@@ -2,8 +2,6 @@ jdk%%JDK_VERSION%%/COPYRIGHT
 jdk%%JDK_VERSION%%/LICENSE
 jdk%%JDK_VERSION%%/README
 jdk%%JDK_VERSION%%/README.html
-jdk%%JDK_VERSION%%/src.zip
-jdk%%JDK_VERSION%%/bin/ControlPanel
 jdk%%JDK_VERSION%%/bin/HtmlConverter
 jdk%%JDK_VERSION%%/bin/appletviewer
 jdk%%JDK_VERSION%%/bin/extcheck
@@ -169,6 +167,7 @@ jdk%%JDK_VERSION%%/demo/applets/JumpingBox/JumpingBox.java
 jdk%%JDK_VERSION%%/demo/applets/JumpingBox/example1.html
 jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/adapt-or-die.au
 jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
+jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/danger.au
 jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/ip.au
 jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/that.hurts.au
 jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/thin.bell.au
@@ -213,11 +212,6 @@ jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.class
 jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.java
 jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheetInput.class
 jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/example1.html
-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolCanvas.class
-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolTest$MyAdapter.class
-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolTest.class
-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolTest.java
-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/example1.html
 jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.class
 jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.java
 jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/beep.au
@@ -458,6 +452,7 @@ jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample4.java
 jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableMap.java
 jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableSorter.java
 jdk%%JDK_VERSION%%/demo/jpda/examples.jar
+jdk%%JDK_VERSION%%/demo/plugin/applets.html
 jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animation.class
 jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/AnimationFrame.class
 jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/Animator.class
@@ -597,6 +592,7 @@ jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/JumpingBox.java
 jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/example1.html
 jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/adapt-or-die.au
 jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/cannot.be.completed.au
+jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/danger.au
 jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/ip.au
 jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/that.hurts.au
 jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds/thin.bell.au
@@ -641,11 +637,6 @@ jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheet.class
 jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheet.java
 jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/SpreadSheetInput.class
 jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet/example1.html
-jdk%%JDK_VERSION%%/demo/plugin/applets/SymbolTest/SymbolCanvas.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SymbolTest/SymbolTest$MyAdapter.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SymbolTest/SymbolTest.class
-jdk%%JDK_VERSION%%/demo/plugin/applets/SymbolTest/SymbolTest.java
-jdk%%JDK_VERSION%%/demo/plugin/applets/SymbolTest/example1.html
 jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/TicTacToe.class
 jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/TicTacToe.java
 jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio/beep.au
@@ -912,6 +903,37 @@ jdk%%JDK_VERSION%%/jre/bin/rmid
 jdk%%JDK_VERSION%%/jre/bin/rmiregistry
 jdk%%JDK_VERSION%%/jre/bin/servertool
 jdk%%JDK_VERSION%%/jre/bin/tnameserv
+jdk%%JDK_VERSION%%/jre/javaws/cacerts
+jdk%%JDK_VERSION%%/jre/javaws/javalogo52x88.gif
+jdk%%JDK_VERSION%%/jre/javaws/javaws
+jdk%%JDK_VERSION%%/jre/javaws/javaws-l10n.jar
+jdk%%JDK_VERSION%%/jre/javaws/javaws.jar
+jdk%%JDK_VERSION%%/jre/javaws/javaws.policy
+jdk%%JDK_VERSION%%/jre/javaws/javawsbin
+jdk%%JDK_VERSION%%/jre/javaws/readme.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_de.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_es.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_fr.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_it.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_ja.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_ko.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_sv.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_zh_CN.html
+jdk%%JDK_VERSION%%/jre/javaws/readme_zh_TW.html
+jdk%%JDK_VERSION%%/jre/javaws/resources/copyright.jpg
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_de.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_es.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_fr.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_it.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_ja.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_ko.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_sv.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_zh_CN.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/messages_zh_TW.properties
+jdk%%JDK_VERSION%%/jre/javaws/resources/miniSplash.jpg
+jdk%%JDK_VERSION%%/jre/javaws/resources/splash.jpg
+jdk%%JDK_VERSION%%/jre/javaws/sunlogo64x30.gif
 jdk%%JDK_VERSION%%/jre/lib/audio/soundbank.gm
 jdk%%JDK_VERSION%%/jre/lib/charsets.jar
 jdk%%JDK_VERSION%%/jre/lib/cmm/CIEXYZ.pf
@@ -940,8 +962,8 @@ jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
 jdk%%JDK_VERSION%%/jre/lib/fonts/fonts.dir
 jdk%%JDK_VERSION%%/jre/lib/i386/awt_robot
 jdk%%JDK_VERSION%%/jre/lib/i386/client/Xusage.txt
-jdk%%JDK_VERSION%%/jre/lib/i386/client/libjsig.so
 jdk%%JDK_VERSION%%/jre/lib/i386/client/libjvm.so
+jdk%%JDK_VERSION%%/jre/lib/i386/client/libjsig.so
 jdk%%JDK_VERSION%%/jre/lib/i386/jvm.cfg
 jdk%%JDK_VERSION%%/jre/lib/i386/libJdbcOdbc.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libawt.so
@@ -968,9 +990,10 @@ jdk%%JDK_VERSION%%/jre/lib/i386/libverify.so
 jdk%%JDK_VERSION%%/jre/lib/i386/libzip.so
 jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi.so
 jdk%%JDK_VERSION%%/jre/lib/i386/server/Xusage.txt
-jdk%%JDK_VERSION%%/jre/lib/i386/server/libjsig.so
 jdk%%JDK_VERSION%%/jre/lib/i386/server/libjvm.so
+jdk%%JDK_VERSION%%/jre/lib/i386/server/libjsig.so
 jdk%%JDK_VERSION%%/jre/lib/im/indicim.jar
+jdk%%JDK_VERSION%%/jre/lib/im/thaiim.jar
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/cursors.properties
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/invalid32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -979,7 +1002,6 @@ jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
 jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
-jdk%%JDK_VERSION%%/jre/lib/javaplugin.jar
 jdk%%JDK_VERSION%%/jre/lib/jce.jar
 jdk%%JDK_VERSION%%/jre/lib/jsse.jar
 jdk%%JDK_VERSION%%/jre/lib/jvm.hprof.txt
@@ -997,6 +1019,7 @@ jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
 jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
 jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
 jdk%%JDK_VERSION%%/jre/lib/logging.properties
+jdk%%JDK_VERSION%%/jre/lib/plugin.jar
 jdk%%JDK_VERSION%%/jre/lib/psfont.properties.ja
 jdk%%JDK_VERSION%%/jre/lib/psfontj2d.properties
 jdk%%JDK_VERSION%%/jre/lib/rt.jar
@@ -1179,6 +1202,7 @@ jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/DumontDUrville
 jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Mawson
 jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/McMurdo
 jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Palmer
+jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Rothera
 jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Syowa
 jdk%%JDK_VERSION%%/jre/lib/zi/Antarctica/Vostok
 jdk%%JDK_VERSION%%/jre/lib/zi/Asia/Aden
@@ -1407,8 +1431,9 @@ jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Wallis
 jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Yap
 jdk%%JDK_VERSION%%/jre/lib/zi/WET
 jdk%%JDK_VERSION%%/jre/lib/zi/ZoneInfoMappings
-jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin.so
-jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
+jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.desktop
+jdk%%JDK_VERSION%%/jre/plugin/desktop/sun_java.png
+jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/libjavaplugin.so
 jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji.so
 jdk%%JDK_VERSION%%/lib/dt.jar
 jdk%%JDK_VERSION%%/lib/htmlconverter.jar
@@ -1425,8 +1450,12 @@ jdk%%JDK_VERSION%%/man/man1/javac.1
 jdk%%JDK_VERSION%%/man/man1/javadoc.1
 jdk%%JDK_VERSION%%/man/man1/javah.1
 jdk%%JDK_VERSION%%/man/man1/javap.1
+jdk%%JDK_VERSION%%/man/man1/javaws.1
 jdk%%JDK_VERSION%%/man/man1/jdb.1
 jdk%%JDK_VERSION%%/man/man1/keytool.1
+jdk%%JDK_VERSION%%/man/man1/kinit.1
+jdk%%JDK_VERSION%%/man/man1/klist.1
+jdk%%JDK_VERSION%%/man/man1/ktab.1
 jdk%%JDK_VERSION%%/man/man1/native2ascii.1
 jdk%%JDK_VERSION%%/man/man1/orbd.1
 jdk%%JDK_VERSION%%/man/man1/policytool.1
@@ -1436,6 +1465,7 @@ jdk%%JDK_VERSION%%/man/man1/rmiregistry.1
 jdk%%JDK_VERSION%%/man/man1/serialver.1
 jdk%%JDK_VERSION%%/man/man1/servertool.1
 jdk%%JDK_VERSION%%/man/man1/tnameserv.1
+jdk%%JDK_VERSION%%/src.zip
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/appletviewer_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/extcheck_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/idlj_g
@@ -1461,7 +1491,6 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/servertool_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/bin/tnameserv_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/java_g
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/java_vm_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/keytool_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/kinit_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/klist_g
@@ -1472,8 +1501,9 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/rmiregistry_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/servertool_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/bin/tnameserv_g
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/client/libjsig_g.so
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/awt_robot_g
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/client/libjvm_g.so
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/client/libjsig_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libJdbcOdbc_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libawt_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libcmm_g.so
@@ -1484,7 +1514,6 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libioser12_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjaas_unix_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjava_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjawt_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjcov_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libjdwp_g.so
@@ -1498,20 +1527,16 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libverify_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/libzip_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/native_threads/libhpi_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjsig_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjvm_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/javaplugin_g.jar
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4_g/javaplugin_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns600_g/libjavaplugin_oji_g.so
-%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns610_g/libjavaplugin_oji_g.so
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/i386/server/libjsig_g.so
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/lib/plugin_g.jar
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/libjavaplugin_g.so
+%%DEBUG:%%jdk%%JDK_VERSION%%/jre/plugin/i386/ns610/libjavaplugin_oji_g.so
 %%DEBUG:%%jdk%%JDK_VERSION%%/lib/htmlconverter_g.jar
-@exec   mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec   %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
-@unexec %D/bin/unregistervm FREEBSD-JDK%%JDK_VERSION%%
-%%DEBUG:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns610_g
-%%DEBUG:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns600_g
-%%DEBUG:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns4_g
+@exec	mkdir -p %D/share/doc/java
+@unexec	rmdir %D/share/doc/java 2>/dev/null || true
+@exec	%D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
+@unexec	%D/bin/unregistervm FREEBSD-JDK%%JDK_VERSION%%
 @dirrm jdk%%JDK_VERSION%%/bin
 @dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/audio
 @dirrm jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans
@@ -1540,7 +1565,6 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 @dirrm jdk%%JDK_VERSION%%/demo/applets/SimpleGraph
 @dirrm jdk%%JDK_VERSION%%/demo/applets/SortDemo
 @dirrm jdk%%JDK_VERSION%%/demo/applets/SpreadSheet
-@dirrm jdk%%JDK_VERSION%%/demo/applets/SymbolTest
 @dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio
 @dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images
 @dirrm jdk%%JDK_VERSION%%/demo/applets/TicTacToe
@@ -1588,87 +1612,89 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 @dirrm jdk%%JDK_VERSION%%/demo/jfc/TableExample
 @dirrm jdk%%JDK_VERSION%%/demo/jfc
 @dirrm jdk%%JDK_VERSION%%/demo/jpda
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Blink
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Clock
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest
 @dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Arcs_Curves
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Clipping
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Colors
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Composite
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Fonts
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Lines
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Mix
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paint
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Paths
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos/Transforms
 @dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d/demos
 @dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src/java2d
 @dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D/src
 @dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Java2D
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Font2DTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/src
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/FileChooserDemo
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/HelpFiles
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Metalworks
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/resources
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Notepad
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/images
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SampleTree
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/resources
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/Stylepad
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingApplet
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/SwingSet2
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample/src
+@dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc/TableExample
 @dirrm jdk%%JDK_VERSION%%/demo/plugin/jfc
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame/models
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/WireFrame
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/TicTacToe
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SymbolTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SpreadSheet
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SortDemo
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/SimpleGraph
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/NervousText
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer/models
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/MoleculeViewer
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox/sounds
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/JumpingBox
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ImageMap
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphicsTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/GraphLayout
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Fractal
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DrawTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/DitherTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Clock
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/CardTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Blink
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/BarChart
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/ArcTest
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/SimpleAnimation
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images/Beans
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/images
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator/audio
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets/Animator
-@dirrm jdk%%JDK_VERSION%%/demo/plugin/applets
 @dirrm jdk%%JDK_VERSION%%/demo/plugin
 @dirrm jdk%%JDK_VERSION%%/demo
 @dirrm jdk%%JDK_VERSION%%/include/freebsd
 @dirrm jdk%%JDK_VERSION%%/include
+@dirrm jdk%%JDK_VERSION%%/jre/.systemPrefs
 @dirrm jdk%%JDK_VERSION%%/jre/bin
-@dirrm jdk%%JDK_VERSION%%/jre/lib/audio
+@dirrm jdk%%JDK_VERSION%%/jre/javaws/resources
+@dirrm jdk%%JDK_VERSION%%/jre/javaws
 @dirrm jdk%%JDK_VERSION%%/jre/lib/applet
+@dirrm jdk%%JDK_VERSION%%/jre/lib/audio
 @dirrm jdk%%JDK_VERSION%%/jre/lib/cmm
 @dirrm jdk%%JDK_VERSION%%/jre/lib/ext
 @dirrm jdk%%JDK_VERSION%%/jre/lib/fonts
@@ -1679,30 +1705,30 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 @dirrm jdk%%JDK_VERSION%%/jre/lib/im
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images/cursors
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
 @dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
 @dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
+@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
 @dirrm jdk%%JDK_VERSION%%/jre/lib/locale
 @dirrm jdk%%JDK_VERSION%%/jre/lib/security
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi/Africa
@@ -1720,12 +1746,11 @@ jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi/Pacific
 @dirrm jdk%%JDK_VERSION%%/jre/lib/zi
 @dirrm jdk%%JDK_VERSION%%/jre/lib
-@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns610
-@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns600
+@dirrm jdk%%JDK_VERSION%%/jre/plugin/desktop
 @dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns4
+@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns610
 @dirrm jdk%%JDK_VERSION%%/jre/plugin/i386
 @dirrm jdk%%JDK_VERSION%%/jre/plugin
-@dirrm jdk%%JDK_VERSION%%/jre/.systemPrefs
 @dirrm jdk%%JDK_VERSION%%/jre
 @dirrm jdk%%JDK_VERSION%%/lib
 @dirrm jdk%%JDK_VERSION%%/man/man1
