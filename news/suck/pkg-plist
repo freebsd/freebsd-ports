@@ -2,8 +2,8 @@ bin/lmove
 bin/rpost
 bin/suck
 bin/testhost
-share/examples/suck/get.news.innxmit
-share/examples/suck/get.news.rnews
+share/examples/suck/get.news.generic
+share/examples/suck/get.news.inn
 share/examples/suck/put.news
 share/examples/suck/suckkillfile.sample
 share/examples/suck/sucknewsrc.sample
