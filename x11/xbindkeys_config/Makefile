@@ -9,7 +9,8 @@
 PORTNAME=	xbindkeys_config
 PORTVERSION=	0.1.3
 CATEGORIES=	x11
-MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy to use gtk program for configuring Xbindkeys
