@@ -139,6 +139,11 @@ lib/rlm_files-0.8.1.so
 lib/rlm_files.a
 lib/rlm_files.la
 lib/rlm_files.so
+%%LDAP%%lib/rlm_ldap-0.8.1.la
+%%LDAP%%lib/rlm_ldap-0.8.1.so
+%%LDAP%%lib/rlm_ldap.a
+%%LDAP%%lib/rlm_ldap.la
+%%LDAP%%lib/rlm_ldap.so
 lib/rlm_mschap-0.8.1.la
 lib/rlm_mschap-0.8.1.so
 lib/rlm_mschap.a
@@ -179,23 +184,28 @@ lib/rlm_sql-0.8.1.so
 lib/rlm_sql.a
 lib/rlm_sql.la
 lib/rlm_sql.so
-lib/rlm_sql_mysql.a
-lib/rlm_sql_mysql.la
-lib/rlm_sql_mysql.so
-lib/rlm_sql_mysql.so.0
+%%MYSQL%%lib/rlm_sql_mysql.a
+%%MYSQL%%lib/rlm_sql_mysql.la
+%%MYSQL%%lib/rlm_sql_mysql.so
+%%MYSQL%%lib/rlm_sql_mysql.so.0
 lib/rlm_unix-0.8.1.la
 lib/rlm_unix-0.8.1.so
 lib/rlm_unix.a
 lib/rlm_unix.la
 lib/rlm_unix.so
-lib/rlm_x99_token-0.8.1.la
-lib/rlm_x99_token-0.8.1.so
-lib/rlm_x99_token.a
-lib/rlm_x99_token.la
-lib/rlm_x99_token.so
+%%TOKEN%%lib/rlm_x99_token-0.8.1.la
+%%TOKEN%%lib/rlm_x99_token-0.8.1.so
+%%TOKEN%%lib/rlm_x99_token.a
+%%TOKEN%%lib/rlm_x99_token.la
+%%TOKEN%%lib/rlm_x99_token.so
 sbin/check-radiusd-config
 sbin/checkrad
 sbin/radiusd
 sbin/radwatch
 sbin/rc.radiusd
 @dirrm etc/raddb
+@exec mkdir -p /var/log/raddb
+@exec chmod -R og= /var/log/raddb
+@unexec rm -fr /var/log/raddb
+@exec mkdir -p /var/run/radiusd
+@unexec rm -fr /var/run/radiusd
