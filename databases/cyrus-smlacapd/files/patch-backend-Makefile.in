@@ -1,0 +1,12 @@
+--- backend/Makefile.in.orig	Wed Mar  8 22:51:42 2000
++++ backend/Makefile.in	Tue May 11 03:54:34 2004
+@@ -48,7 +48,8 @@
+ INSTALL = @INSTALL@
+ 
+ SML=@SMLNJ@
+-cyrus_prefix = /usr/cyrus
++prefix = /usr/local
++cyrus_prefix = ${prefix}/cyrus
+ 
+ PROGS = backend
+ 

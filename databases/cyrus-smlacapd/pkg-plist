@@ -1,0 +1,42 @@
+etc/rc.d/cyrus_smlacapd_backend.sample
+cyrus/bin/frontend
+cyrus/bin/backend-acapd
+cyrus/bin/backend.x86-bsd
+cyrus/bin/actest
+cyrus/bin/run.x86-freebsd
+include/cyrus/acl.h
+include/cyrus/assert.h
+include/cyrus/auth.h
+include/cyrus/bsearch.h
+include/cyrus/charset.h
+include/cyrus/glob.h
+include/cyrus/gmtoff.h
+include/cyrus/imclient.h
+include/cyrus/imparse.h
+include/cyrus/lock.h
+include/cyrus/map.h
+include/cyrus/mkgmtime.h
+include/cyrus/nonblock.h
+include/cyrus/parseaddr.h
+include/cyrus/prot.h
+include/cyrus/retry.h
+include/cyrus/sysexits.h
+include/cyrus/lsort.h
+include/cyrus/stristr.h
+include/cyrus/hash.h
+include/cyrus/util.h
+include/cyrus/xmalloc.h
+include/cyrus/imapurl.h
+include/cyrus/acap.h
+lib/libacap.a
+lib/libcyrus.a
+@dirrm cyrus/bin
+@dirrm cyrus
+@dirrm include/cyrus
+%%PORTDOCS%%share/doc/acapd/draft-ietf-acap-book-03.txt
+%%PORTDOCS%%share/doc/acapd/draft-ietf-acap-email-03.txt
+%%PORTDOCS%%share/doc/acapd/draft-ietf-acap-pers-03.txt
+%%PORTDOCS%%share/doc/acapd/install.html
+%%PORTDOCS%%share/doc/acapd/rfc2244.txt
+share/doc/acapd/acapd.conf-sample
+@dirrm share/doc/acapd

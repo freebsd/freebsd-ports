@@ -11,6 +11,7 @@
     SUBDIR += cdb
     SUBDIR += clip
     SUBDIR += cyrus-imspd
+    SUBDIR += cyrus-smlacapd
     SUBDIR += db
     SUBDIR += db2
     SUBDIR += db3
