@@ -6859,6 +6859,7 @@ p5-Ioctl	ports/devel/p5-Ioctl
 p5-Jabber-Connection	ports/net/p5-Jabber-Connection
 p5-Kwiki	ports/www/p5-Kwiki
 p5-Kwiki-Archive-Rcs	ports/www/p5-Kwiki-Archive-Rcs
+p5-Kwiki-Archive-SVK	ports/www/p5-Kwiki-Archive-SVK
 p5-Kwiki-RecentChanges	ports/www/p5-Kwiki-RecentChanges
 p5-Kwiki-RecentChangesRSS	ports/www/p5-Kwiki-RecentChangesRSS
 p5-Kwiki-Revisions	ports/www/p5-Kwiki-Revisions
