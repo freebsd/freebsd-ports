@@ -7,6 +7,7 @@ AWK=${AWK:-/usr/bin/awk}
 BASENAME=${BASENAME:-/usr/bin/basename}
 CAT=${CAT:-/bin/cat}
 WC=${WC:-/usr/bin/wc}
+MKDIR=${MKDIR:-/bin/mkdir -p}
 
 dialog_main() {
 	tmpfile=`${MKTEMP} -t menulistM`
@@ -131,7 +132,7 @@ if [ ! "${BATCH}" ]; then
 fi
 
 if [ ! -d ${SETDIR} ]; then
-	mkdir ${SETDIR}
+	${MKDIR} ${SETDIR}
 fi
 
 echo "# Automatically generated file - manual changes may be lost" >${MODFILE}
