@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.18.20021107
-PORTREVISION=	1
+PORTVERSION=	0.7.22.20021129
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://avifile.sourceforge.net/
@@ -34,6 +33,8 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib `${ECHO_CMD} ${PTHREAD_LIBS}`"
 CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
+		--disable-v4l \
+		--disable-vidix \
 		--disable-divx4
 CONFIGURE_TARGET=
 
@@ -186,13 +187,17 @@ packet 'pth' is installed.";\
 
 post-extract:
 # grab does not work outside Linux for now
-	@${RM} -f ${WRKSRC}/ffmpeg/libav/grab.c
-	@${TOUCH} ${WRKSRC}/ffmpeg/libav/grab.c
+	@${RM} -f ${WRKSRC}/ffmpeg/libavformat/grab.c
+	@${TOUCH} ${WRKSRC}/ffmpeg/libavformat/grab.c
 
 post-patch:
 # linux/ioctl.h -> sys/ioctl.h
 	@${REINPLACE_CMD} -e 's|linux/ioctl.h|sys/ioctl.h|' \
 		${WRKSRC}/drivers/libdha/kernelhelper/dhahelper.h
+# FreeBSD does not support Video4Linux or equivalent
+# therefore, do not build qtvidcap
+	@${REINPLACE_CMD} -E -e 's|^(SUBDIRS.+)qtvidcap|\1|' \
+		${WRKSRC}/samples/Makefile.in
 .if !defined(WITHOUT_MAD)
 	@${REINPLACE_CMD} -e 's|MAD_LDADD = \@MAD_LDADD\@|MAD_LDADD = -L${LOCALBASE}/lib \@MAD_LDADD\@|' \
 		${WRKSRC}/plugins/libmad/Makefile.in
@@ -272,6 +277,8 @@ LIBA52_DEP_LIBS=
 # if we have LAME
 .if exists(${LOCALBASE}/lib/libmp3lame.so)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+
+CONFIGURE_ARGS+=	--enable-lame-bin
 
 PLIST_SUB+=	NOLAME="@comment " LAME=""
 .else
