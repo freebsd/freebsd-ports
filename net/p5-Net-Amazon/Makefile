@@ -50,7 +50,7 @@ MAN3=		Net::Amazon.3 Net::Amazon::Attribute::Review.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500805
-BUILD_DEPENDS+=	${SITE_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 .endif
 .if ${PERL_LEVEL} < 500601
 IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
