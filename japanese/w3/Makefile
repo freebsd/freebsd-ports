@@ -3,14 +3,14 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/01/04 00:39:53 max Exp $
+# $Id: Makefile,v 1.2 1997/01/04 13:19:40 max Exp $
 #
 
 DISTNAME=	w3-2.2.26
 PKGNAME=	jp-w3-2.2.26
 CATEGORIES=	www japanese
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
-		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
+MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/elisp/w3/ \
+		ftp://ftp.iij.ad.jp/pub/network/WWW/w3/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
