@@ -54,7 +54,6 @@
     SUBDIR += cheetah
     SUBDIR += cherokee
     SUBDIR += chimera
-    SUBDIR += chimera2
     SUBDIR += chtml
     SUBDIR += cl-lml
     SUBDIR += cl-lml-clisp
