@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/lib/
 DISTNAME=	${PORTNAME}-39-src
 
-MAINTAINER=	gehicks@cisco.com
+MAINTAINER=	ports@FreeBSD.Org
 
 MAN3=		getline.3
 
