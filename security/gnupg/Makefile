@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
 		ftp://pgp.iijlab.net/pub/gnupg/ \
 		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
-DISTFILES=	${DISTNAME}.tar.gz gpg.1.gz
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -28,9 +26,6 @@ MLINKS=		gpg.1 gpgm.1
 USE_GMAKE=	YES
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
-
-post-extract:
-	${GZIP_CMD} -c -d ${DISTDIR}/gpg.1.gz > ${WRKSRC}/doc/gpg.1
 
 post-install:
 .if !defined(NOPORTDOCS)
