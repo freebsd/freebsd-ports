@@ -1,4 +1,5 @@
 bin/geoipexport
+bin/geoipexportlocations
 bin/geoiplookup
 bin/geoipupdate
 etc/GeoIP.conf.default
