@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Nov 25 15:30:12 2004
++++ Makefile	Thu Nov 25 15:31:32 2004
+@@ -7,8 +7,8 @@
+ #
+ 
+ FILE   = memfetch
+-CFLAGS = -Wall -O9
+-CC     = gcc
++CFLAGS?= -Wall -O9
++CC    ?= gcc
+ 
+ all: $(FILE)
+ 

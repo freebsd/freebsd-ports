@@ -1,0 +1,16 @@
+Memfetch is a very simple utility that can be used to dump process memory of 
+any userspace process running on the system without affecting its execution.
+Why bother? Well, quite often it is desirable to see what code and what data
+actually resides in memory under some pid (/proc entries are not always
+accurate). Debuggers like gdb are pretty good for examining small sections
+of code or memory, but are pretty much useless for massive comparison, 
+sophisticated searches and such. It's good to be able to retrieve full
+memory image to run it thru grep, strings, your favorite viewer or any other
+tool. Quite obviously, I developed this code not because it's extremely
+difficult to do it on your own, but because it is a valuable shell utility
+for all kinds of deep hacking activities that simply saves you time.
+
+Memfetch is a convenient screenshot grabber for ssh or screen sessions, by 
+the way ;-)
+
+WWW: http://lcamtuf.coredump.cx/
