@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/02/19 06:55:19 asami Exp $
+# $Id: Makefile,v 1.8 1998/05/27 00:17:45 dburr Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -17,6 +17,8 @@ MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
+
+BROKEN_ELF=	stubgen
 
 MAINTAINER=     ports@freebsd.org
 
