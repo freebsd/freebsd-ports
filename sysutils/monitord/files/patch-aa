@@ -1,0 +1,17 @@
+--- Makefile	Mon Jun  5 01:37:50 2000
++++ Makefile.new	Fri Jun  9 17:48:47 2000
+@@ -1,4 +1,4 @@
+-CC      =	gcc
++CC      ?=	gcc
+ INSTALL	=	install
+ 
+ SOURCES =	monitord.c 
+@@ -13,7 +13,7 @@
+ 
+ .c.o:
+ 
+-	$(CC) -O3 -c -pipe -Wall $<
++	$(CC) $(CFLAGS) -c -pipe -Wall $<
+ 
+ $(TARGET): $(OBJECTS)
+ 	$(CC) $(OBJECTS) -o $(TARGET)
