@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellkam
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 MAN5=		gkrellkam-list.5
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gkrellkam.so \
+	@${INSTALL_DATA} ${WRKSRC}/gkrellkam.so \
 		${PREFIX}/libexec/gkrellm/plugins
 	@${INSTALL_MAN} ${WRKSRC}/gkrellkam-list.5 ${MANPREFIX}/man/man5
 
