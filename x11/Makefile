@@ -57,6 +57,7 @@
     SUBDIR += gvid
     SUBDIR += gxset
     SUBDIR += gyroscope
+    SUBDIR += idesk
     SUBDIR += imwheel
     SUBDIR += kb2mb2
     SUBDIR += kde3
