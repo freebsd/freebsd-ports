@@ -16,6 +16,7 @@ lib/pcemu/C/vga50.com
 lib/pcemu/C/config.sys
 lib/pcemu/C/dumpdisk.exe
 lib/pcemu/C/lredir.exe
+lib/pcemu/C/emufs.sys
 @mode 666
 lib/pcemu/DriveA
 @unexec rm -rf %D/lib/pcemu
