@@ -63,6 +63,7 @@
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += qe
+    SUBDIR += qterm
     SUBDIR += rxvt
     SUBDIR += rxvt-big5
     SUBDIR += rxvt-gb
