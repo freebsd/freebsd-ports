@@ -185,3 +185,4 @@ share/licq/qt-gui/skin.shale/status.png
 @dirrm share/licq/qt-gui/skin.bheart
 @dirrm share/licq/qt-gui/skin.basic-ncb
 @dirrm share/licq/qt-gui/skin.basic
+@dirrm share/licq/qt-gui
