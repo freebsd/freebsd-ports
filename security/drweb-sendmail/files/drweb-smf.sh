@@ -9,8 +9,9 @@ start)
 	if [ -x $drwebfilter ] ; then
 	    echo -n ' drweb-smf'
 	    $drwebfilter -u/var/run/drwebd -m/var/run/drweb-smf.sock \
-		-a!!PREFIX!!/drweb/infected.!!! -f/tmp -r -x -h -l -ba \
-		-gpostmaster -epostmaster@your.domain.name
+		-a!!PREFIX!!/drweb/infected.!!! -f/tmp -r -x -h -l \
+		-t 160000 -bt -yt -ka -jr -zd \
+		-gpostmaster -epostmaster@!!HOSTNAME!!
 	fi
 	;;
 stop)

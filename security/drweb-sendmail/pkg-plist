@@ -3,4 +3,6 @@ etc/rc.d/drwebsmf.sh-dist
 sbin/drweb-smf
 share/doc/drweb-sendmail/readme.sendmail
 share/doc/drweb-sendmail/readme.sendmail.rus
+share/doc/drweb-sendmail/sendmail.cf.addon
+share/doc/drweb-sendmail/sendmail.mc.addon
 @dirrm share/doc/drweb-sendmail
