@@ -1,0 +1,13 @@
+--- plug-ins/common/url.c.orig	Thu Jun 26 15:45:03 2003
++++ plug-ins/common/url.c	Sat Jun 28 18:17:59 2003
+@@ -187,8 +187,8 @@
+       putenv ("LANG=C");
+ #endif
+ 
+-      execlp ("wget", "wget", "-T", TIMEOUT, filename, "-O", tmpname, NULL);
+-      g_message ("exec() failed: wget: %s", g_strerror (errno));
++      execlp ("fetch", "fetch", "-T", TIMEOUT, filename, "-p", "-o", tmpname, NULL);
++      g_message ("exec() failed: fetch: %s", g_strerror (errno));
+       g_free (tmpname);
+       _exit (127);
+     }

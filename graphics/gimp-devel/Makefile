@@ -1,0 +1,114 @@
+# New ports collection makefile for:    The GIMP
+# Date created:         Mon Nov 18 21:28:43 CST 1996
+# Whom:                 erich@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gimp
+PORTVERSION=	2.2.p1
+PORTEPOCH=	1
+CATEGORIES=	graphics gnome
+MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
+		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
+		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
+		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
+MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/testing
+DISTNAME=	${PORTNAME}-${PORTVERSION:S,.p1,-pre1,}
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GNU Image Manipulation Program
+
+LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
+		exif.10:${PORTSDIR}/graphics/libexif \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		mng.1:${PORTSDIR}/graphics/libmng \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		wmf.2:${PORTSDIR}/graphics/libwmf
+
+CONFLICTS=	gimp-1.*
+
+SHLIBVER?=	200
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 librsvg2 libgtkhtml
+WANT_GNOME=	yes
+INSTALLS_SHLIB=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+PLIST_SUB=	SHLIBVER="${SHLIBVER}"
+CONFIGURE_ARGS=	--disable-perl \
+		--with-html-dir=${DOCSDIR} \
+		--disable-gtk-doc \
+		--enable-static
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+
+MAN1=		gimp-2.2.1 gimptool-2.0.1 gimp-remote-2.2.1
+MAN5=		gimprc-2.2.5
+MLINKS=		gimp-2.2.1 gimp.1 gimp-remote-2.2.1 gimp-remote.1 \
+		gimprc-2.2.5 gimprc.5
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=		yes
+USE_GNOME+=		pygtk2
+CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=		PYTHON:=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		PYTHON:="@comment "
+.endif
+
+.if defined(WITHOUT_PRINT)
+CONFIGURE_ARGS+=	--disable-print
+PLIST_SUB+=		PRINT="@comment "
+.else
+LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
+PLIST_SUB+=		PRINT=""
+.endif
+
+.if defined(WITH_MP)
+CONFIGURE_ARGS+=	--enable-mp
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgnomepanel}!=""
+USE_GNOME+=		gnomepanel
+CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
+PKGNAMESUFFIX=		-gnome
+PLIST_SUB+=		GNOMEPANEL:=""
+.else
+PLIST_SUB+=		GNOMEPANEL:="@comment "
+.endif
+
+.if ${HAVE_GNOME:Mlibgtkhtml}!="" || defined(WITH_HTML_HELP_BROWSER)
+USE_GNOME+=		libgtkhtml
+PLIST_SUB+=		HELPBROWSER:=""
+.else
+PLIST_SUB+=		HELPBROWSER:="@comment "
+.endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "gimp has the following tunable option(s):"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITH_DEBUG=yes		Turns on debugging"
+	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python-Fu support"
+	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"
+	@${ECHO_MSG} "	WITH_HTML_HELP_BROWSER=yes	Turns on the GIMP help browser"
+	@${ECHO_MSG} "	WITH_MP=yes 		Turns on multiple-processor support"
+	@${ECHO_MSG} ""
+
+.include <bsd.port.post.mk>

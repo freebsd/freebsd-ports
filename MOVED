@@ -995,7 +995,6 @@ editors/openoffice-1.1-sl-SL|editors/openoffice-1.1-sl_SI|2004-03-25|correct ISO
 www/webcpp|textproc/webcpp|2004-03-25|moved to textproc category
 x11-toolkits/eel||2004-03-25|removed obsolete port
 editors/xemacs21|editors/xemacs|2004-03-27|removed old version of xemacs 21.x
-graphics/gimp-devel|graphics/gimp|2004-03-27|gimp 2.0 is now stable release
 mail/mew-xemacs21|mail/mew|2004-03-28|removed old version of xemacs 21.x
 mail/mew2-xemacs21|mail/mew2|2004-03-28|removed old version of xemacs 21.x
 mail/mew3-xemacs21|mail/mew3|2004-03-28|removed old version of xemacs 21.x

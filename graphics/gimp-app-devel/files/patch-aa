@@ -1,0 +1,20 @@
+--- app/main.c.orig	Sun Oct  5 09:16:02 2003
++++ app/main.c	Mon Oct  6 12:14:34 2003
+@@ -23,6 +23,7 @@
+ #include <signal.h>
+ #include <string.h>
+ #include <sys/types.h>
++#include <floatingpoint.h>
+ 
+ #ifdef HAVE_SYS_WAIT_H
+ #include <sys/wait.h>
+@@ -113,6 +114,9 @@
+   /* Initialize variables */
+ 
+   full_prog_name = argv[0];
++
++  /* Ignore floating point exceptions */
++  fpsetmask(0);
+ 
+   /* Initialize i18n support */
+ 
