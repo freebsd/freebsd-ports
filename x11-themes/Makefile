@@ -35,6 +35,7 @@
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
     SUBDIR += gtk-Mac2-theme
+    SUBDIR += gtk-aluminumalloy-volcanic-theme
     SUBDIR += gtk-aqualightblue-theme
     SUBDIR += gtk-bluecurve-theme
     SUBDIR += gtk-cleanice-engine
