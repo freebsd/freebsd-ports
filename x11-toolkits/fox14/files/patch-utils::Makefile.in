@@ -1,0 +1,11 @@
+--- utils/Makefile.in.orig	Sun Aug 15 11:30:45 2004
++++ utils/Makefile.in	Sun Aug 15 11:30:55 2004
+@@ -106,7 +106,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) 
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lX11 -lXext
+ X_CFLAGS = @X_CFLAGS@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
