@@ -6,11 +6,11 @@ etc/nginx/mime.types-dist
 etc/nginx/nginx.conf-dist
 @exec [ -f %B/nginx.conf ] || cp %B/%f %B/nginx.conf
 @unexec rmdir $D/etc/nginx 2>/dev/null || true
-@exec mkdir -p -m 755 www/nginx-dist
+%%WWWDATA%%@exec mkdir -p -m 755 www/nginx-dist
 @comment @unexec chmod u+w www/nginx-dist
-www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-@exec [ -d %D/www/nginx/ ] || ln -fs %B %D/www/nginx
-www/nginx-dist/index.html
-@exec chmod a-w www/nginx-dist
-@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
-@dirrm www/nginx-dist
+%%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+%%WWWDATA%%@exec [ -d %D/www/nginx/ ] || ln -fs %B %D/www/nginx
+%%WWWDATA%%www/nginx-dist/index.html
+%%WWWDATA%%@exec chmod a-w www/nginx-dist
+%%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
+%%WWWDATA%%@dirrm www/nginx-dist
