@@ -1,0 +1,114 @@
+diff -urN variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.src variants/slashem-0.0.6E4F8/sys/unix/Makefile.src
+--- variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.src	Sat Nov 20 21:50:19 2004
++++ variants/slashem-0.0.6E4F8/sys/unix/Makefile.src	Sat Nov 20 21:53:09 2004
+@@ -31,7 +31,7 @@
+ # For Systos users compiling on the ST, you'll either need a bourne shell
+ # clone or you'll need to do make depend, etc. by hand. In either case,
+ # the line below probably needs changing
+-SHELL=/bin/sh
++# SHELL=/bin/sh
+ # for Atari
+ # SHELL=E:/GEMINI2/MUPFEL.TTP
+ 
+@@ -58,7 +58,7 @@
+ #	if you get setcgtty() warnings during execution, you are feeding gcc
+ #		a non-ANSI <sys/ioctl.h> -- either run fixincludes on it or use
+ #		-traditional in CFLAGS
+-CC = gcc
++# CC = gcc
+ #
+ #	For Bull DPX/2 systems at B.O.S. 2.0 or higher use the following:
+ #
+@@ -118,12 +118,12 @@
+ # flags for Linux
+ #   compile normally
+ 
+-COMMON_CFLAGS = -DSLASHEM_0_0_6E4F8 -fomit-frame-pointer -I../include `sdl-config --cflags`
++COMMON_CFLAGS = -DSLASHEM_0_0_6E4F8 -fomit-frame-pointer -I../include -I/usr/include/gnu `${SDL_CONFIG} --cflags` -I/usr/X11R6/include
+ 
+ STD_CFLAGS = -O2 -ffast-math $(COMMON_CFLAGS)
+ DBG_CFLAGS = -g -Wall -DNOEGNUDDEBUG $(COMMON_CFLAGS)
+ 
+-CFLAGS = $(STD_CFLAGS)
++CFLAGS += $(STD_CFLAGS)
+ 
+ LFLAGS = -L/usr/X11R6/lib
+ #   OR compile backwards compatible a.out format
+@@ -176,9 +176,9 @@
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LD line here to get
+ # the C++ libraries linked in.
+-CXXFLAGS = $(CFLAGS) -I. -I$(QTINCDIR)
++CXXFLAGS += $(CFLAGS) -I. -I$(QTINCDIR)
+ # Qt is C++, so define the compiler and linker thus required:
+-CXX=g++
++#CXX=g++
+ #LD=g++
+ 
+ # GTK windowing system
+@@ -243,7 +243,10 @@
+ # Files for Entro-P's OpenGL 3D interface :: slashem-noegnud
+ 
+ WINNOEGNUDCFLAGS = 
+-WINNOEGNUDLIB = `sdl-config --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
++WINNOEGNUDLIB = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -lgnuregex
++
++.c.o:
++	${CC} ${CFLAGS} -c $< -o $@
+ 
+ NOEGNUD = ../win/noegnud/noegnud
+ 
+diff -urN variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.top variants/slashem-0.0.6E4F8/sys/unix/Makefile.top
+--- variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.top	Sat Nov 20 21:50:19 2004
++++ variants/slashem-0.0.6E4F8/sys/unix/Makefile.top	Sat Nov 20 21:53:30 2004
+@@ -14,7 +14,7 @@
+ # MAKE = make
+ 
+ # make NetHack
+-PREFIX   = /usr/local/
++# PREFIX   = /usr/local/
+ GAMEUI   	= noegnud-0.8.0
+ GAMEVARIANT	= slashem-0.0.6E4F8
+ GAMESHORT	= noegnud-$(GAMEVARIANT)
+@@ -41,7 +41,7 @@
+ # These must agree with the definitions in unixconf.h
+ 
+ # Defs. for non file areas support.
+-GAMEDIR	= $(PREFIX)/lib/$(GAMEUI)/$(GAMEVARIANT)
++GAMEDIR	= $(PREFIX)/share/$(GAMEUI)/$(GAMEVARIANT)
+ VARDIR = $(GAMEDIR)
+ FILE_AREA_VAR = $(VARDIR)
+ FILE_AREA_SAVE = $(VARDIR)/save
+diff -urN variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.utl variants/slashem-0.0.6E4F8/sys/unix/Makefile.utl
+--- variants/slashem-0.0.6E4F8.orig/sys/unix/Makefile.utl	Sat Nov 20 21:50:19 2004
++++ variants/slashem-0.0.6E4F8/sys/unix/Makefile.utl	Sat Nov 20 21:54:19 2004
+@@ -15,7 +15,7 @@
+ 
+ # if you are using gcc as your compiler,
+ #	uncomment the CC definition below if it's not in your environment
+-CC = gcc
++# CC = gcc
+ #
+ #	For Bull DPX/2 systems at B.O.S. 2.0 or higher use the following:
+ #
+@@ -72,7 +72,7 @@
+ 
+ # flags for Linux
+ #   compile normally
+-CFLAGS = -O2 -fomit-frame-pointer -I../include -I/usr/X11R6/include
++CFLAGS += -O2 -fomit-frame-pointer -I../include -I/usr/X11R6/include
+ LFLAGS = -L/usr/X11R6/lib
+ #   OR compile backwards compatible a.out format
+ # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include -I/usr/X11/include
+diff -urN variants/slashem-0.0.6E4F8.orig/win/tty/termcap.c variants/slashem-0.0.6E4F8/win/tty/termcap.c
+--- variants/slashem-0.0.6E4F8.orig/win/tty/termcap.c	Sat Nov 20 23:11:00 2004
++++ variants/slashem-0.0.6E4F8/win/tty/termcap.c	Sat Nov 20 23:11:19 2004
+@@ -835,7 +835,7 @@
+ 
+ #include <curses.h>
+ 
+-#ifndef LINUX
++#if 0
+ extern char *tparm();
+ #endif
+ 

@@ -1,0 +1,10 @@
+noeGNUd is an alternate ascii/2D/3D User-Interface for the roguelike
+RPG "Nethack" and its Variants. Its difference to many other Interfaces
+lies in the utilisation of OpenGL to display the whole game. You can
+rotate the scenery as much as you like. It provides dynamic lightning
+and an outstanding 3D-Mode.
+
+This port installs noeGNUd for NetHack with DeeT's hack font patch.
+
+Author: Clive Crous
+WWW: http://noegnud.sourceforge.net/
