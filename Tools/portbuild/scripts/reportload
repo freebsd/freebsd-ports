@@ -1,8 +1,6 @@
 #!/bin/sh
 #
 # This is run on the clients to report their loads to the server.
-# Every 5 seconds we concatenate the number of currently building ports with
-# the machine uptime and push it to the server.
 
 # configurable variables
 pb=/var/portbuild
@@ -10,14 +8,6 @@ arch=$1
 
 . ${pb}/${arch}/portbuild.conf
 
-me=$(hostname -s)
-tmpfile=${scratchdir}/${me}
-
-while true; do
-  num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
-  echo -n "$num " > ${tmpfile}
-  uptime >> ${tmpfile}
-  scp -q ${tmpfile} ${user}@${master}:${pb}/${arch}/loads/
-  rm -f ${tmpfile}
-  sleep 5
-done
+num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
+echo -n "$num "
+uptime
