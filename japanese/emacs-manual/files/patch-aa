@@ -1,6 +1,6 @@
---- emacs.texi~	Mon Dec 13 16:50:47 1999
-+++ emacs.texi	Sat Jan  8 01:55:18 2000
-@@ -12,7 +12,8 @@
+--- emacs.texi.~1~	Thu Mar 23 12:16:23 2000
++++ emacs.texi	Mon Apr  3 22:38:11 2000
+@@ -14,7 +14,8 @@
  @setchapternewpage odd
  @c @settitle GNU Emacs Manual
  @settitle GNU Emacsマニュアル
@@ -10,8 +10,8 @@
  @synindex pg cp
  
  @ifinfo
-@@ -22,9 +23,9 @@
- Emacs 20.5版対応に改訂した@cite{GNU Emacs Manual} 13版です。
+@@ -24,9 +25,9 @@
+ Emacs 20.6版対応に改訂した@cite{GNU Emacs Manual} 13版です。
  @c Please REMEMBER to update edition number in *three* places in this file.
  
 -@dircategory Editors

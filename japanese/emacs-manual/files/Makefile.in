@@ -5,7 +5,7 @@ EMACS?=	emacs
 
 EMACS_ARGS= -batch -nw --multibyte -no-init-file -no-site-file
 EMACS_LOADLIBS= --load=texinfmt.el --load=PORT_TEXIFMT.MK
-EMACS_FUNCALLS= --eval "(defconst PORT-TEXI \"${TEXIFILE}\")" -f port-texinfo-format
+EMACS_FUNCALLS= --eval "(port-texinfo-format \"${TEXIFILE}\" 'junet)"
 
 all: ${INFOFILE}
 

@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	emacs-manual
-PORTVERSION=	13.2000.01.13
+PORTVERSION=	13.20000303
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/emacs-20.x/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
-DISTNAME=	emacs-20.5-man-jp
+DISTNAME=	emacs-20.6-man-jp
 DISTFILES=	${DISTNAME}.tgz ${EMACS_ARC}
 
 MAINTAINER=	okazaki@be.to
 
 BUILD_DEPENDS=	${EMACS}:${PORTSDIR}/editors/emacs20
 
-ERRATA_FILE=	Errata-2000-01-13
+ERRATA_FILE=
 
 EXTRACT_ONLY=	${DISTNAME}.tgz
 EMACS_DISTNAME= emacs-20.6
@@ -42,12 +42,16 @@ EMACS=		emacs-20.6
 MAKE_ENV=	EMACS="${EMACS}"
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
+	${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
 	@(cd ${WRKDIR} && \
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${EMACS_ARC} ${EXTRACT_AFTER_ARGS} ${EXTRACT_FILES} ; \
 	${CP} ${EXTRACT_FILES} ${WRKSRC})
-	@${MKDIR} ${WRKDIR}/info
+	${MKDIR} ${WRKDIR}/info
+
+post-patch:
+	cd ${WRKSRC} && \
+	${PERL} -pi -e 's/(@[^@]*ref{.*,.*,.*, *elisp),/$$1-ja,/;' *.texi
 
 pre-build:
 	@${ECHO_MSG} "===>   Now start formatting texinfo. Please wait."
