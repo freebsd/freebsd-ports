@@ -7,22 +7,22 @@ lib/%%PYTHON_VERSION%%/site-packages/optik/option.pyc
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.py
 lib/%%PYTHON_VERSION%%/site-packages/optik/option_parser.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/optik
-%%PORTDOCS%%share/doc/py-optik/CHANGES.txt
-%%PORTDOCS%%share/doc/py-optik/README.txt
-%%PORTDOCS%%share/doc/py-optik/advanced.txt
-%%PORTDOCS%%share/doc/py-optik/basic.txt
-%%PORTDOCS%%share/doc/py-optik/callbacks.txt
-%%PORTDOCS%%share/doc/py-optik/extending.txt
-%%PORTDOCS%%share/doc/py-optik/test/runall
-%%PORTDOCS%%share/doc/py-optik/test/test_basics.py
-%%PORTDOCS%%share/doc/py-optik/test/test_bool.py
-%%PORTDOCS%%share/doc/py-optik/test/test_callback.py
-%%PORTDOCS%%share/doc/py-optik/test/test_conflict.py
-%%PORTDOCS%%share/doc/py-optik/test/test_count.py
-%%PORTDOCS%%share/doc/py-optik/test/test_extend.py
-%%PORTDOCS%%share/doc/py-optik/test/test_help.py
-%%PORTDOCS%%share/doc/py-optik/test/test_manipulate.py
-%%PORTDOCS%%share/doc/py-optik/test/test_misc.py
-%%PORTDOCS%%share/doc/py-optik/test/test_nargs.py
-%%PORTDOCS%%@dirrm share/doc/py-optik/test
-%%PORTDOCS%%@dirrm share/doc/py-optik
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/advanced.txt
+%%PORTDOCS%%%%DOCSDIR%%/basic.txt
+%%PORTDOCS%%%%DOCSDIR%%/callbacks.txt
+%%PORTDOCS%%%%DOCSDIR%%/extending.txt
+%%PORTDOCS%%%%DOCSDIR%%/test/runall
+%%PORTDOCS%%%%DOCSDIR%%/test/test_basics.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_bool.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_callback.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_conflict.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_count.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_extend.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_help.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_manipulate.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_misc.py
+%%PORTDOCS%%%%DOCSDIR%%/test/test_nargs.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/test
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
