@@ -1,33 +1,3 @@
-*** Makefile	Tue Mar 15 19:30:00 1994
---- Makefile	Fri Sep 16 21:56:22 1994
-***************
-*** 118,124 ****
-  # Use this version of CFLAGS for Linux with gcc
-  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
-  
-! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB
-  
-  # Solaris should use
-  #LIB = -ltcpip -lsocket -lnsl
---- 118,124 ----
-  # Use this version of CFLAGS for Linux with gcc
-  # CFLAGS = -O2 -ansi -m486 -fwritable-strings -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -DLINUX
-  
-! CFLAGS = -ansi -I$(SUPDIR) -DTELL_USER -DUSG -DSECURE_SERVER -DRELEVANCE_FEEDBACK -DBOOLEANS -DPARTIALWORD -DLITERAL -DSOUND -DBIBDB -D__bsdi__
-  
-  # Solaris should use
-  #LIB = -ltcpip -lsocket -lnsl
-***************
-*** 135,140 ****
---- 135,142 ----
-  
-  MAKE = make $(MFLAGS) 
-  
-+ all: default
-+ 
-  #default: config.h lib ir ui bin doc x tags
-  default: config.h lib ir ui bin x check
-  	@echo "Welcome to WAIS"
 *** ir/irtfiles.c	Wed Jan 19 16:10:32 1994
 --- ir/irtfiles.c	Fri Sep 16 23:14:03 1994
 ***************
@@ -40,3 +10,40 @@
   #include "panic.h"  
   #include "irdirent.h"
   #include "irhash.h"
+*** ir/sockets.c.ORIG	Sat Jan 29 00:06:01 1994
+--- ir/sockets.c	Sat Mar 18 23:34:57 1995
+***************
+*** 77,84 ****
+  extern int errno;
+  #endif /* ultrix BSD or Mach */
+  
+- extern char *sys_errlist[];
+- 
+  
+  /* XXX
+  still need:
+--- 77,82 ----
+*** ir/waisserver.c.ORIG	Thu Mar  3 04:04:51 1994
+--- ir/waisserver.c	Sat Mar 18 23:35:49 1995
+***************
+*** 447,453 ****
+    struct dirent **list;
+    int naptime = 0;
+    extern int errno;
+-   extern char *sys_errlist[];
+    extern void filename_finish_header_function();
+    dataopsrec	dataops;  
+    
+--- 447,452 ----
+*** x/myAsciiSrc.c.ORIG	Sun Jan  9 06:01:37 1994
+--- x/myAsciiSrc.c	Sat Mar 18 23:45:03 1995
+***************
+*** 116,122 ****
+  static String MyStrncpy(), StorePiecesInString();
+  static Boolean SetValues(), WriteToFile();
+  extern int errno, sys_nerr;
+- extern char* sys_errlist[];
+  
+  #define superclass		(&textSrcClassRec)
+  MyAsciiSrcClassRec myasciiSrcClassRec = {
+--- 116,121 ----
