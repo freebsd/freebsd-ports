@@ -1,0 +1,11 @@
+--- docs/flow-print.1	Sun Dec 23 06:06:02 2001
++++ docs/flow-print.1	Sat Jan 12 07:43:42 2002
+@@ -102,7 +102,7 @@
+ None known\&.
+ .SH "FILES"
+ .PP
+-Symbols are located in \fB/var/ft/sym/*\fP
++Symbols are located in \fB/usr/local/share/flow-tools/*\fP
+ .SH "AUTHOR"
+ .PP
+ Mark Fullmer maf@splintered\&.net

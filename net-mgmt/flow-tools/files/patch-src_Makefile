@@ -1,0 +1,22 @@
+--- src/Makefile.am	Sat Dec 29 01:23:03 2001
++++ src/Makefile.am	Sat Jan 12 09:42:38 2002
+@@ -12,7 +12,7 @@
+ 
+ force_build:
+ 
+-ftbuild.h: ftbuild.sh force_build
++ftbuild.h: ftbuild.sh
+ 	./ftbuild.sh
+ 
+ flow_import_SOURCES = flow-import.c ftbuild.h
+--- src/Makefile.in	Sat Dec 29 01:27:29 2001
++++ src/Makefile.in	Sat Jan 12 09:43:42 2002
+@@ -531,7 +531,7 @@
+ 
+ force_build:
+ 
+-ftbuild.h: ftbuild.sh force_build
++ftbuild.h: ftbuild.sh
+ 	./ftbuild.sh
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -1,0 +1,22 @@
+--- configure.in	Sat Dec 29 01:02:24 2001
++++ configure.in	Sat Jan 12 08:43:07 2002
+@@ -8,7 +8,7 @@
+ 
+ CFLAGS="-g -Wall"
+ 
+-localstatedir="/var/ft"
++localstatedir="${prefix}"
+ 
+ dnl Checks for programs.
+ AC_PROG_CC
+--- configure	Sat Dec 29 01:05:33 2001
++++ configure	Sat Jan 12 08:42:27 2002
+@@ -783,7 +783,7 @@
+ 
+ CFLAGS="-g -Wall"
+ 
+-localstatedir="/var/ft"
++localstatedir="${prefix}"
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2

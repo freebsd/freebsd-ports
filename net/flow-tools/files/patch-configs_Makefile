@@ -1,0 +1,26 @@
+--- configs/Makefile.am	Fri Jul  6 06:28:57 2001
++++ configs/Makefile.am	Sat Jan 12 06:20:07 2002
+@@ -1,6 +1,6 @@
+-ftsymdir=$(localstatedir)/sym
++ftsymdir=$(localstatedir)/share/flow-tools
+ ftsym_DATA = asn ip-prot tcp-port
+ 
+-ftcfgdir=$(localstatedir)/cfg
++ftcfgdir=$(localstatedir)/etc/flow-tools
+ ftcfg_DATA = map filter-acl
+ 
+--- configs/Makefile.in	Sat Dec 29 01:05:48 2001
++++ configs/Makefile.in	Sat Jan 12 08:04:39 2002
+@@ -66,10 +66,10 @@
+ YACC = @YACC@
+ YLIB = @YLIB@
+ 
+-ftsymdir = $(localstatedir)/sym
++ftsymdir = $(localstatedir)/share/flow-tools
+ ftsym_DATA = asn ip-prot tcp-port
+ 
+-ftcfgdir = $(localstatedir)/cfg
++ftcfgdir = $(localstatedir)/etc/flow-tools
+ ftcfg_DATA = map filter-acl
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
