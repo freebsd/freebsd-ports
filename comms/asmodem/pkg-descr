@@ -1,0 +1,6 @@
+Asmodem displays the modem status in an Afterstep type window.  It was
+adapted from asmail.  It indicates the status of your modem with 3
+blinking lights that indicate when the modem is connected, transmitting, 
+and receiving.  It is especially useful for internal modems.
+It can execute programs to dial, re-dial, and hang-up when clicked on.
+It only works on device ppp0.
