@@ -70,10 +70,10 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PYTHON_LIBDIR}/${platform}
+	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in FCNTL.py IN.py regen
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
-		${PYTHON_LIBDIR}/${platform}/
+		${PYTHONPREFIX_LIBDIR}/${platform}/
 .endfor
 .endfor
 
@@ -81,10 +81,10 @@ post-install:
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
-	@${MKDIR} ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
-		(cd ${PYTHON_LIBDIR}; tar xf -)
+		(cd ${PYTHONPREFIX_LIBDIR}; tar xf -)
 	@${MKDIR} ${DEMODIR}
 	@cd ${WRKSRC}/Demo; tar -c --exclude='*CVS*' -f - * | \
 		(cd ${DEMODIR}; tar xf -)

@@ -93,9 +93,9 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 pre-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PYTHON_LIBDIR}/${platform}
+	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
-		${PYTHON_LIBDIR}/${platform}
+		${PYTHONPREFIX_LIBDIR}/${platform}
 .endfor
 	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
 
@@ -105,9 +105,9 @@ post-install:
 		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 	@${MKDIR} ${PREFIX}/share/doc/${PYTHON_VERSION}
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/${PYTHON_VERSION}
-	@${MKDIR} ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(WITHOUT_TOOLS)
-	@cd ${WRKSRC}; tar cf - Tools | (cd ${PYTHON_LIBDIR}; tar xf -)
+	@cd ${WRKSRC}; tar cf - Tools | (cd ${PYTHONPREFIX_LIBDIR}; tar xf -)
 .endif
 
 .include <bsd.port.post.mk>
