@@ -19,7 +19,7 @@ threads_files=	_atomic_lock.S  libc_spinlock.h   uthread_rwlock.c \
 		README.FreeBSD getgr_r.c syscalls.c libc_thread.c pthread_stack.h \
 		stack.c stack_attr.c pthread_rw.h pthread_private.h
 
-WRKSRC=		${WRKDIR}/linuxthreads-0.71
+WRKSRC=		${WRKDIR}/${PKGNAME}
 
 SRC_BASE=	/usr/src
 LIBSRC_BASE=	${SRC_BASE}/lib
