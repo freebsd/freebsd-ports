@@ -2,13 +2,23 @@
 
 PATH=${PATH}:/usr/bin:/usr/local/bin
 
+while [ "$1" != "-h" ] && [ "$1" != "" ]; do
+  shift
+done
+
 hostname=localhost
+if [ "$2" != "" ]; then
+  hostname=$2
+fi
+
 resolution=600
 papersize=a4
 printer=BJF%%PRTYPE%%
 
 GS="gs -q -r$resolution -dNOPROMPT -dSAFER \
       -sPAPERSIZE=$papersize -sDEVICE=bmp16m -sOutputFile=- -"
-BJFILTER="bjfilter --model $printer --imageres $resolution --fit"
+BJFILTER="bjfilter --display $hostname:0.0 \
+--gui --model $printer --imageres $resolution --fit"
+# --lgmon
 
 psselect -r | bjcmd "${GS} | ${BJFILTER}"
