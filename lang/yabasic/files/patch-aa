@@ -1,0 +1,23 @@
+--- Makefile.in.orig	Sun Nov  7 15:22:19 1999
++++ Makefile.in	Fri Dec 24 13:50:02 1999
+@@ -6,7 +6,7 @@
+ # including flex and yacc translations.
+ 
+ # define location where yabasic will search for libraries
+-library_path = /usr/lib/yabasic
++library_path = $(PREFIX)/lib/yabasic
+ 
+ # flags for cc or gcc  (-g for debugging)
+ ccflags = -DUNIX -DLIBRARY_PATH=\"$(library_path)\"
+@@ -63,8 +63,8 @@
+ 
+ # install yabasic on a linux system, need to be root
+ install:
+-	install -s -m 755 -o 0 -g 0 yabasic /usr/bin/yabasic
+-	install -m 644 -d -o 0 -g 0 /usr/doc/yabasic
+-	install -m 644 -o 0 -g 0 yabasic.htm /usr/doc/yabasic
++	install -c -s -m 755 -o 0 -g 0 yabasic $(PREFIX)/bin/yabasic
++	install -m 644 -d -o 0 -g 0 $(PREFIX)/doc/yabasic
++	install -c -m 644 -o 0 -g 0 yabasic.htm $(PREFIX)/doc/yabasic
+ 
+ 
