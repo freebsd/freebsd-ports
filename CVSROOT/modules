@@ -3201,6 +3201,7 @@ krio		ports/audio/krio
 krn		ports/news/krn
 krogue		ports/games/krogue
 kronolith	ports/deskutils/kronolith
+krss		ports/deskutils/krss
 krubik		ports/games/krubik
 ksamba		ports/net/ksamba
 kseg		ports/math/kseg
