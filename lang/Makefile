@@ -87,6 +87,7 @@
     SUBDIR += guile
     SUBDIR += helium
     SUBDIR += hope
+    SUBDIR += huc
     SUBDIR += hugs
     SUBDIR += icc
     SUBDIR += ici

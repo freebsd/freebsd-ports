@@ -1,0 +1,66 @@
+bin/huc
+bin/isolink
+bin/nesasm
+bin/pceas
+bin/pcxtool
+include/huc/pce/cdrom.asm
+include/huc/pce/cdrom.inc
+include/huc/pce/equ.inc
+include/huc/pce/font.inc
+include/huc/pce/func.inc
+include/huc/pce/huc.asm
+include/huc/pce/huc.h
+include/huc/pce/huc.inc
+include/huc/pce/huc_bram.asm
+include/huc/pce/huc_gfx.asm
+include/huc/pce/huc_math.asm
+include/huc/pce/huc_misc.asm
+include/huc/pce/huc_opt.inc
+include/huc/pce/ipl.bin
+include/huc/pce/joypad.asm
+include/huc/pce/library.asm
+include/huc/pce/library.inc
+include/huc/pce/macro.inc
+include/huc/pce/math.asm
+include/huc/pce/mouse.asm
+include/huc/pce/scroll.asm
+include/huc/pce/sound.asm
+include/huc/pce/sound.inc
+include/huc/pce/sprites.inc
+include/huc/pce/standard.inc
+include/huc/pce/startup.asm
+include/huc/pce/startup.inc
+include/huc/pce/system.inc
+include/huc/pce/vdc.inc
+include/huc/overlay.h
+@dirrm include/huc/pce
+@dirrm include/huc
+%%DOCSDIR%%/huc/random.txt
+%%DOCSDIR%%/huc/clibref.txt
+%%DOCSDIR%%/huc/clibref_fr.htm
+%%DOCSDIR%%/huc/clibref_fr.txt
+%%DOCSDIR%%/huc/huc_doc.htm
+%%DOCSDIR%%/huc/mmldoc.txt
+%%DOCSDIR%%/huc/overlays.txt
+%%DOCSDIR%%/huc/clibref.htm
+%%DOCSDIR%%/nes/cpu_inst.txt
+%%DOCSDIR%%/nes/history.txt
+%%DOCSDIR%%/nes/index.txt
+%%DOCSDIR%%/nes/neshdr20.txt
+%%DOCSDIR%%/nes/usage.txt
+%%DOCSDIR%%/pce/vdc.txt
+%%DOCSDIR%%/pce/cpu.txt
+%%DOCSDIR%%/pce/cpu_inst.txt
+%%DOCSDIR%%/pce/history.txt
+%%DOCSDIR%%/pce/index.txt
+%%DOCSDIR%%/pce/library.txt
+%%DOCSDIR%%/pce/psg.txt
+%%DOCSDIR%%/pce/sprites.txt
+%%DOCSDIR%%/pce/techdoc.txt
+%%DOCSDIR%%/pce/usage.txt
+%%DOCSDIR%%/pce/vce.txt
+%%DOCSDIR%%/pce/concepts.txt
+@dirrm %%DOCSDIR%%/huc
+@dirrm %%DOCSDIR%%/pce
+@dirrm %%DOCSDIR%%/nes
+@dirrm %%DOCSDIR%%
