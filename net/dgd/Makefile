@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.2p2
+PORTVERSION=	1.2p3
 CATEGORIES=	net lang
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
 		ftp://ftp.dworkin.nl/pub/dgd/ \
 		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/
-
-PATCH_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd/patches|} \
-		ftp://ftp.dworkin.nl/pub/dgd/patches \
-		ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin's Generic Driver (network server)
