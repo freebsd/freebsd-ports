@@ -61,7 +61,7 @@
     SUBDIR += gicq
     SUBDIR += gn-gnspool
     SUBDIR += gn-mnews
-    SUBDIR += gnome-icu
+    SUBDIR += gnomeicu
     SUBDIR += gp
     SUBDIR += grep
     SUBDIR += groff
