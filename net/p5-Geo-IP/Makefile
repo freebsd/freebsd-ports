@@ -10,7 +10,7 @@ PORTVERSION=	0.26
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
-		http://maxmind.com/download/geoip/api/perl/
+		http://www.maxmind.com/download/geoip/api/perl/
 MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
