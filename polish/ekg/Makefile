@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=		ekg
-PORTVERSION=		1.4
-PORTREVISION=	1
+PORTVERSION=		1.4.20040208
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://dev.null.pl/ekg/archive/
-DISTNAME=		${PORTNAME}-${PORTVERSION}
+DISTNAME=		${PORTNAME}-20040208
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		Text-mode Gadu-Gadu client
