@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Tree
-PORTVERSION=	0.91
+PORTVERSION=	1.9
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -15,12 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	philip@p6m7g8.com
 COMMENT=	Perl module for generating a tree from a self-referential table
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
-IS_INTERACTIVE=	yes
 
 MAN3=		DBIx::Tree.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
