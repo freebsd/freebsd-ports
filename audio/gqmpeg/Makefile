@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gqmpeg
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.11.0
 CATEGORIES+=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,12 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
+USE_AUTOCONF=	yes
 WANT_GNOME=	yes
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		USE_GNOME="${USE_GNOME}"
 
 MAN1=		gqmpeg.1
 
@@ -29,5 +33,9 @@ MAN1=		gqmpeg.1
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 .endif
+
+post-patch:
+	@find ${WRKSRC} -name 'Makefile.in*' | xargs ${PERL} -pi.orig -e \
+		's|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.post.mk>
