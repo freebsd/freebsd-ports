@@ -1,8 +1,10 @@
 include/mimepp/address.h
 include/mimepp/addrlist.h
+include/mimepp/applfile.h
 include/mimepp/binhex.h
 include/mimepp/body.h
 include/mimepp/bodypart.h
+include/mimepp/bounds.h
 include/mimepp/boyermor.h
 include/mimepp/config.h
 include/mimepp/datetime.h
@@ -10,6 +12,7 @@ include/mimepp/debug.h
 include/mimepp/disptype.h
 include/mimepp/entity.h
 include/mimepp/enum.h
+include/mimepp/except.h
 include/mimepp/field.h
 include/mimepp/fieldbdy.h
 include/mimepp/group.h
@@ -25,20 +28,23 @@ include/mimepp/msgid.h
 include/mimepp/nntp.h
 include/mimepp/param.h
 include/mimepp/pop.h
+include/mimepp/proto_nt.h
+include/mimepp/proto_un.h
 include/mimepp/protocol.h
 include/mimepp/smtp.h
+include/mimepp/stamp.h
 include/mimepp/string.h
+include/mimepp/system.h
 include/mimepp/text.h
 include/mimepp/token.h
 include/mimepp/utility.h
 include/mimepp/uuencode.h
-lib/libmimepp.a
-share/doc/mimepp/CPYRIGHT
-share/doc/mimepp/LICENSE
-share/doc/mimepp/README
-share/doc/mimepp/Tutorial
+lib/libmimepp_core.a
+lib/libmimepp_net.a
+lib/libmimepp_util.a
 share/doc/mimepp/address.html
 share/doc/mimepp/addrlist.html
+share/doc/mimepp/applfile.html
 share/doc/mimepp/binhex.html
 share/doc/mimepp/body.html
 share/doc/mimepp/bodypart.html
@@ -63,11 +69,11 @@ share/doc/mimepp/param.html
 share/doc/mimepp/pop.html
 share/doc/mimepp/protocol.html
 share/doc/mimepp/smtp.html
+share/doc/mimepp/stamp.html
 share/doc/mimepp/string.html
 share/doc/mimepp/text.html
 share/doc/mimepp/util.html
 share/doc/mimepp/uuencode.html
-share/examples/mimepp/Makefile
 share/examples/mimepp/attach.cpp
 share/examples/mimepp/attach.h
 share/examples/mimepp/basicmsg.cpp
@@ -82,8 +88,9 @@ share/examples/mimepp/exampl04.cpp
 share/examples/mimepp/exampl04.txt
 share/examples/mimepp/exampl05.cpp
 share/examples/mimepp/exampl05.txt
+share/examples/mimepp/makefile-unix
 share/examples/mimepp/multipar.cpp
 share/examples/mimepp/multipar.h
-@dirrm include/mimepp
-@dirrm share/doc/mimepp
 @dirrm share/examples/mimepp
+@dirrm share/doc/mimepp
+@dirrm include/mimepp

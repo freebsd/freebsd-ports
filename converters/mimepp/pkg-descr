@@ -6,3 +6,5 @@ who are familiar with the MIME standard.  MIME++ supports
 quoted-printable and base64 encoding/decoding, and all
 header fields specified in RFC-822, RFC-1036, and RFC-2045.
 MIME++ is extensible through inheritance and polymorphism.
+
+WWW: http://www.hunnysoft.com/mimepp/
