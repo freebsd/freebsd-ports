@@ -1,0 +1,22 @@
+Cube is a 3D First Person Shooter that uses OpenGL and SDL.
+
+Features:
+- Allows in-engine editing of geometry in full 3D (you fly around the map, 
+point / drag stuff to select it / modify it), which can even be done with 
+multiple people at once (a first!). 
+- Has simplistic but effective fine grain vertex lighting that looks like 
+lightmapping and can do dynamic lights & shadows. 
+- Doesn't need any kind of map precompilation, even lighting is done on the 
+fly. 
+- Has very simplistic quad-tree world structure that can do slopes (heightfields
+with caps) and slants, water. 
+- Does decent collision detection & physics.
+- Has client/server networking that goes a long way in giving a lag-free game 
+experience. 
+- Features a Doom/Quake-style singleplayer and multiplayer game with some 
+uncompromising brutal oldskool gameplay.
+
+WWW: http://wouter.fov120.com/cube/
+
+- Arjan
+avleeuwen@piwebs.com
