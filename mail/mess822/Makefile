@@ -9,7 +9,9 @@ PORTNAME=	mess822
 PORTVERSION=	0.58
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
-		ftp://ftp.qmail.org/pub/software/
+		ftp://ftp.jp.qmail.org/qmail/ \
+		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
+		ftp://mirror.pipex.net/pub/unix/mail/qmail/
 
 MAINTAINER=	drs@rucus.ru.ac.za
 
