@@ -17,12 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A (C)SLIP/PPP emulator for users with shell accounts
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 # serious LP64 issues
 ONLY_FOR_ARCHS=	i386
 
@@ -37,4 +31,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slirp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/slirp.man ${PREFIX}/man/man1/slirp.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
