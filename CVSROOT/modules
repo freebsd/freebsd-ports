@@ -7025,6 +7025,7 @@ smtpclient	ports/mail/smtpclient
 smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
 smtpproxy	ports/mail/smtpproxy
+smtprc		ports/mail/smtprc
 smunge		ports/mail/smunge
 smurflog	ports/security/smurflog
 snack		ports/audio/snack
