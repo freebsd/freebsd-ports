@@ -1,0 +1,7 @@
+share/dict/fumeikai-fpw/fumeikai/data/honmon
+share/dict/fumeikai-fpw/catalogs
+@dirrm share/dict/fumeikai-fpw/fumeikai/data
+@dirrm share/dict/fumeikai-fpw/fumeikai
+@dirrm share/dict/fumeikai-fpw
+share/doc/fumeikai-fpw/readme
+@dirrm share/doc/fumeikai-fpw
