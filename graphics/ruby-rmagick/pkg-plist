@@ -218,11 +218,11 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/Violin.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/model.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/notimplemented.gif
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/rmagick.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/rmagick.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/roses.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/small.tif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/images/smile.miff
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/implode.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/implode.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/implode.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/level.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/level.rb
@@ -295,6 +295,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rotate.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rotate_f.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rotate_f.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rotated_text.miff
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rotated_text.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/roundrect.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/roundrect.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/ex/rubyname.gif
@@ -412,6 +414,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/roll.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rotate.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rotate_f.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rotated_text.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/roundrect.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rubymgen.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/RMagick/rubyname.rb.html
