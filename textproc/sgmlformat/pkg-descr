@@ -1,0 +1,11 @@
+This package contains SGML formatting tools that were once a part
+of the base FreeBSD distribution.  This port should be regarded
+as a temporary solution to formatting SGML files until the
+wrinkles in jade, a DSSSL processor, get ironed out.
+
+If you are running FreeBSD 2.1.x, you should fetch the groff mm
+macros from FreeBSD 2.2 or later because the macros in 2.1.x are
+seriously broken.
+
+July 16, 1997
+jfieber@FreeBSD.org
