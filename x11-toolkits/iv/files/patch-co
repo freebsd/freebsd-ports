@@ -1,0 +1,11 @@
+--- src/bin/scripts/mkdirhier.sh.orig	Wed Aug 16 03:15:19 2000
++++ src/bin/scripts/mkdirhier.sh	Wed Aug 16 03:15:56 2000
+@@ -52,7 +52,7 @@
+ 			done
+ 
+ 			mkdir $paths || status=$?
+-			chmod g+w $paths
++			chmod g-w $paths
+ 
+ 			break
+ 		}
