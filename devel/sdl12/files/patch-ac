@@ -1,6 +1,9 @@
---- configure.orig	Sat Aug 30 21:13:23 2003
-+++ configure	Mon Sep 29 22:20:16 2003
-@@ -676,9 +676,9 @@
+
+$FreeBSD$
+
+--- configure.orig	Sun Oct  6 23:35:02 2002
++++ configure	Fri Jun 27 22:19:43 2003
+@@ -674,9 +674,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -12,7 +15,7 @@
  
  
  
-@@ -2832,7 +2832,7 @@
+@@ -2794,7 +2794,7 @@
  
  
  SDL_CFLAGS=""
@@ -21,7 +24,7 @@
  
  
  case "$target" in
-@@ -5966,8 +5966,8 @@
+@@ -5840,8 +5840,8 @@
  #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
              ;;
          *-*-freebsd*)
@@ -32,11 +35,11 @@
              ;;
          *-*-netbsd*)
              pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
-@@ -7231,7 +7231,9 @@
+@@ -6946,7 +6946,9 @@
              CFLAGS="$CFLAGS -DHAVE_USBHID_H"
          fi
          if test x$have_libusb_h = xyes; then
-+	    if test x$have_libusbhid_h = xno; then
++	    if x$have_libusbhid_h = xno; then
              CFLAGS="$CFLAGS -DHAVE_LIBUSB_H"
 +	    fi
          fi
