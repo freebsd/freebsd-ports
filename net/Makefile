@@ -143,6 +143,7 @@
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
+    SUBDIR += gnu-radius
     SUBDIR += gnugadu
     SUBDIR += gnut
     SUBDIR += googolplex

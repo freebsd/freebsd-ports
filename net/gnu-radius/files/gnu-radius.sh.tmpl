@@ -1,0 +1,11 @@
+#!/bin/sh
+case "$1" in
+stop)
+	killall radiusd
+	;;
+*)
+	if [ -x !!PREFIX!!/sbin/radiusd ]; then
+		!!PREFIX!!/sbin/radiusd -y && echo -n ' radiusd'
+	fi
+	;;
+esac
