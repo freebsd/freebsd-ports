@@ -1418,6 +1418,7 @@ egoboo		ports/games/egoboo
 ehnt		ports/net/ehnt
 eieio		ports/devel/eieio
 eieio-emacs20	ports/devel/eieio-emacs20
+eif		ports/games/eif
 eiffel		ports/lang/eiffel
 eights		ports/games/eights
 eispack		ports/math/eispack
