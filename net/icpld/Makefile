@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	icpld
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
 USE_BZIP2=	yes
