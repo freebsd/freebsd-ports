@@ -24,7 +24,10 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-GETOPTDIR!=	cd ${PORTSDIR}/devel/libgnugetopt; make -V WRKSRC
+
+.include <bsd.port.pre.mk>
+
+GETOPTDIR!=	cd ${PORTSDIR}/devel/libgnugetopt; ${MAKE} -V WRKSRC
 
 MAN1=	xstroke.1
 
@@ -33,4 +36,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,etc/,${PREFIX}/etc/,g" ${WRKSRC}/args.h
 	${CP} ${GETOPTDIR}/getopt* ${WRKSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
