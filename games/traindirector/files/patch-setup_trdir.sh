@@ -55,6 +55,6 @@
  echo "Installation complete"
 -echo "You can run ~/traindir.sh from a X console"
 \ No newline at end of file
-+echo "a script file 'start-traindir' has been created in the current"
++echo "a script file 'traindir.sh' has been created in the current"
 +echo "directory. You can launch it to start the simulation, or move it"
 +echo "to your user's bin directory if you want."
