@@ -1,0 +1,32 @@
+This is a package containing only the executables for development
+version(gamma) of XEmacs with Mule(version 21.4.6), the next
+generation of Emacs.
+
+You need to install a full package, xemacs-devel-mule-21.4.6, containing emacs
+executables, lisp files, info pages, and so on for XEmacs with Mule
+(version 21.4.6).
+
+This package is built with Japanese support by using SKK, SJ3, Canna,
+FreeWnn or Wnn6 as an external input engine. Each input method would be
+supported in following ports respectively:
+
+    japanese/xemacs-devel-canna ........... SKK, SJ3, Canna
+    japanese/xemacs-devel-canna+freewnn ... SKK, SJ3, Canna, FreeWnn
+    japanese/xemacs-devel-canna+wnn6 ...... SKK, SJ3, Canna, Wnn6
+    japanese/xemacs-devel-freewnn ......... SKK, SJ3, FreeWnn
+    japanese/xemacs-devel-wnn6 ............ SKK, SJ3, Wnn6
+
+If you use with SJ3 or SKK, you should be installed sj3serv or skkserv
+in advance. SKK is supported as already builtin. Also it will
+support several input methods under leim. 
+
+This package and the package xemacs-devel-mule-21.4.6, might clobber any
+existing emacs installation.  In particular, the executables and man
+pages of etags/ctags are installed, and the info pages that come with
+the original emacs will be overwritten too.
+
+Although this shouldn't cause any problems to run both mule and emacs,
+it may cause some confusion when one of them is pkg_delete'd.  If
+someone has a solution to this, please tell me.
+Or to avoid this problem, you could select prefix for top install
+directory. By default it is pointed to the usual place, /usr/local.

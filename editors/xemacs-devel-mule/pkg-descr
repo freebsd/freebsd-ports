@@ -1,0 +1,14 @@
+This is a package containing only the executables for development
+version(gamma) of XEmacs with Mule(version 21.4.6), the next
+generation of Emacs.
+
+This package is not built with any particular language support except for
+already built-in Imput Method - SKK and SJ3.  If you want other built-in
+input method, look into the xemacs ports in language- specific directories.
+Currently only Japanese (Canna, FreeWnn and Wnn6) is available.
+
+This package is designed *not* to clobber any existing emacs installation.
+In particular, the executables and man pages of etags/ctags are not
+installed, and the info pages that come with the original emacs don't get
+installed too. The Japanese version is build to install everything, by the
+way. 
