@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cursor.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/func.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/join.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/lock.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/log.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/queue.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/recno.rb
