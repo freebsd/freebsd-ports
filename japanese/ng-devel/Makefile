@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	ng
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	japanese editors
-MASTER_SITES=	http://tt.sakura.ne.jp/~amura/archives/ng/
+MASTER_SITES=	http://tomato.sakura.ne.jp/~amura/archives/ng/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER?=	ginga@athena.club.ne.jp
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ng-1.4.4-replace_bug.patch
+
+MAINTAINER?=	ginga-freebsd@ginganet.org
 COMMENT?=	A very light Emacs-clone with Japanese support
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-ltermcap"
 ALL_TARGET=	ng
 
-PORTDOCS=	CHANGES.doc CHANGES.new Ng.FAQ Ng.doc Ng.ref Ng.tut \
+PORTDOCS=	CHANGES.1_3 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
 		README.Ng README.SKG
 
 post-patch:
