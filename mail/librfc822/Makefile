@@ -15,20 +15,21 @@ MASTER_SITES=	http://cryp.to/librfc822/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete parser for RFC822 addresses
 
-DOCS=		readme.html readme.txt user-manual.html user-manual.pdf
+USE_GCC=	2.95
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	readme.html readme.txt user-manual.html user-manual.pdf
+PLIST_FILES=	include/rfc822.hh lib/librfc822.a
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -E -e 's/^(CXX.*)=(.*)/\1\?=\2/' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/rfc822.hh ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/librfc822.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/documentation && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@cd ${WRKSRC}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
