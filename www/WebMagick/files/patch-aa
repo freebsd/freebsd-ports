@@ -2,19 +2,37 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.127
-diff -u -r1.117 -r1.127
+retrieving revision 1.128
+diff -u -r1.117 -r1.128
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	19 Oct 2003 09:06:14 -0000	1.127
++++ webmagick.in	19 Jan 2004 22:12:20 -0000	1.128
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.127 2003/10/19 09:06:14 ache Exp $
++# $Id: webmagick.in,v 1.128 2004/01/19 22:12:20 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
-@@ -237,6 +237,8 @@
+@@ -167,6 +167,7 @@
+     %opt_icons,
+     $opt_ignore,
+     $opt_ignorefp,
++    $opt_indexinfo,
+     $opt_imgindexname,
+     $opt_indexname,
+     $opt_javascript,
+@@ -212,6 +213,9 @@
+     $opt_srcdir,
+     $opt_stylesheet, 	# URL to a CSS to use
+     $opt_tables,
++    $opt_tables_bottom,
++    $opt_tables_params,
++    $opt_tables_top,
+     $opt_thumbbackground,
+     $opt_thumbbordercolor,
+     $opt_thumbborderwidth,
+@@ -237,8 +241,11 @@
      $opt_webmagickrc,	# Per-directory WebMagick rc file name
      $opt_zoomfilter,
      $opt_pichtml,
@@ -22,8 +40,27 @@ diff -u -r1.117 -r1.127
 +    $opt_pichtmlaltstart,
      $opt_pichtmlbottom,
      $opt_pichtmlext,
++    $opt_pichtmllink,
      $opt_pichtmlnav,
-@@ -391,6 +393,8 @@
+     $opt_pichtmlputtitle,
+     $opt_pichtmltarget,
+@@ -368,6 +375,7 @@
+ $opt_ignore		= 0;	# Do not webmagick this directory
+ 				#    but still recurse into sub-directories
+ $opt_ignorefp		= 1;	# ignore _* special FrontPage directories (on)
++$opt_indexinfo          = 1;    # Put "Index of files"
+ $opt_srcdir		= '.';	# Source directory path (current directory)
+ $opt_verbose		= 0;	# Verbose flag (default off)
+ $opt_forcecache		= 0;	# Force update of cached thumbnails
+@@ -386,13 +394,19 @@
+ $opt_readmevisible	= 0;	# Make README.html be first page.
+ $opt_title		= '';	# Page title (blank provides default title)
+ $opt_tables		= 0;	# disable tables
++$opt_tables_bottom      = '';   # HTML after table contents
++$opt_tables_params      = 'WIDTH="90%"';   # table HTML parameters
++$opt_tables_top         = '';   # HTML before table contents
+ $opt_address		= '';	# Additonal address info for bottom of
+                                 #    imagemap page
  $opt_date               = 1;    # Output updates date
  
  $opt_pichtml            = 0;    # Write separate HTML for each picture
@@ -31,8 +68,11 @@ diff -u -r1.117 -r1.127
 +$opt_pichtmlaltstart    = '';   # Some words to prepend to ALT
  $opt_pichtmlbottom      = '</CENTER>';
  $opt_pichtmlext         = '.html'; # Use .shtml for SSI
++$opt_pichtmllink        = '';   # Where to link pic
  $opt_pichtmlnav         = 0;    # Write navigation into pic's HTML
-@@ -492,7 +496,7 @@
+ $opt_pichtmlputtitle    = 1;    # Write picture title above it
+ $opt_pichtmltarget      = '';
+@@ -492,7 +506,7 @@
  $opt_framemarginwidth	= 1;		# Pixels allocated to frame margin in horizontal direction
  $opt_framemarginheight	= 1;		# Pixels allocated to frame margin in vertical direction
  $opt_framebordersize	= 3 ;		# Pixels allocated to frame border
@@ -41,7 +81,7 @@ diff -u -r1.117 -r1.127
  $opt_framestyle		= 1;		# Frame style to use (out of those available)
  
  #
-@@ -596,12 +600,11 @@
+@@ -596,12 +610,11 @@
  # |  |          |
  #  -------------
  $opt_framefmt{1}=
@@ -56,7 +96,7 @@ diff -u -r1.117 -r1.127
  $opt_framefmt_frames{1}=2;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in top-left frame,
-@@ -616,16 +619,15 @@
+@@ -616,16 +629,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{2}=
@@ -76,7 +116,7 @@ diff -u -r1.117 -r1.127
  $opt_framefmt_frames{2}=3;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in left frame,
-@@ -640,16 +642,15 @@
+@@ -640,16 +652,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{3}=
@@ -96,7 +136,7 @@ diff -u -r1.117 -r1.127
  $opt_framefmt_frames{3}=3;	# Number of frames expressed by this frame format
  
  # Three frame screen with directories listed in lower-left frame,
-@@ -664,16 +665,15 @@
+@@ -664,16 +675,15 @@
  # |  |          |
  #  -------------
  $opt_framefmt{4}=
@@ -116,7 +156,7 @@ diff -u -r1.117 -r1.127
  $opt_framefmt_frames{4}=3;	# Number of frames expressed by this frame format
  
  #
-@@ -793,7 +793,7 @@
+@@ -793,7 +803,7 @@
  		'framemarginwidth=i'	=> \$opt_framemarginwidth,
  		'framemarginheight=i'	=> \$opt_framemarginheight,
  		'framebordersize=i'	=> \$opt_framebordersize,
@@ -125,7 +165,15 @@ diff -u -r1.117 -r1.127
  		'frames!'               => \$opt_frames,
  		'framestyle=i'		=> \$opt_framestyle,
  		'header=s'		=> \$opt_header,
-@@ -828,6 +828,8 @@
+@@ -803,6 +813,7 @@
+ 		'iconbase=s'            => \$opt_iconbase,
+ 		'iconpath=s'		=> \$opt_iconpath,
+ 		'ignorefp!'             => \$opt_ignorefp,
++		'indexinfo!'            => \$opt_indexinfo,
+ 		'imgindexname=s'	=> \$opt_imgindexname,
+ 		'indexname=s'		=> \$opt_indexname,
+ 		'javascript!'		=> \$opt_javascript,
+@@ -828,8 +839,11 @@
  		'msg_up=s'              => \$opt_msg_up,
  		'pageindexname=s'	=> \$opt_pageindexname,
  		'pichtml!'              => \$opt_pichtml,
@@ -133,8 +181,30 @@ diff -u -r1.117 -r1.127
 +		'pichtmlaltstart=s'     => \$opt_pichtmlaltstart,
  		'pichtmlbottom=s'       => \$opt_pichtmlbottom,
  		'pichtmlext=s'          => \$opt_pichtmlext,
++		'pichtmllink=s'         => \$opt_pichtmllink,
  		'pichtmlnav!'           => \$opt_pichtmlnav,
-@@ -1619,7 +1621,7 @@
+ 		'pichtmlputtitle!'      => \$opt_pichtmlputtitle,
+ 		'pichtmltarget=s'       => \$opt_pichtmltarget,
+@@ -846,6 +860,9 @@
+ 		'srcdir=s'		=> \$opt_srcdir,
+ 		'stylesheet=s'		=> \$opt_stylesheet,
+ 		'tables!'		=> \$opt_tables,
++		'tables_bottom=s'       => \$opt_tables_bottom,
++		'tables_params=s'       => \$opt_tables_params,
++		'tables_top=s'          => \$opt_tables_top,
+ 		'thumbtexture=s'	=> \$opt_thumbtexture,
+ 		'thumbbackground=s'	=> \$opt_thumbbackground,
+ 		'thumbborderwidth=i'	=> \$opt_thumbborderwidth,
+@@ -1576,7 +1593,7 @@
+ 	$tmp_montageParameters .= "mattecolor=>\'$opt_thumbframecolor\',\n "
+ 	    if $opt_thumbframecolor ne 'false';
+ 	$tmp_montageParameters .= "label=>\'$opt_thumblabel\',\n "
+-	    if $opt_thumblabel ne 'false';
++	    if ($opt_thumblabel && $opt_thumblabel ne 'false');
+ 	$tmp_montageParameters .= "labelwidth=>\'$opt_thumblabelwidth\',\n ";
+ 	$tmp_montageParameters .= "\Lzoomfilter=>\'$opt_zoomfilter\'";
+ 	if( !defined($montageParameters) || ($tmp_montageParameters ne $montageParameters)) {
+@@ -1619,7 +1636,7 @@
  	 'framemarginwidth'     => !$opt_frames ? 0 : $opt_framemarginwidth,
  	 'framemarginheight'    => !$opt_frames ? 0 : $opt_framemarginheight,
  	 'framebordersize'      => !$opt_frames ? 0 : $opt_framebordersize,
@@ -143,7 +213,26 @@ diff -u -r1.117 -r1.127
  	 'frames'               => $opt_frames,
  	 'framestyle'           => !$opt_frames ? 1 : $opt_framestyle,
  	 'header'		=> $opt_header,
-@@ -1659,6 +1661,8 @@
+@@ -1627,6 +1644,7 @@
+ 	 'htmlext'              => !$opt_frames ? "" : $opt_htmlext,
+ 	 'iconbase'             => $opt_iconbase,
+ 	 'imgindexname'		=> $opt_imgindexname,
++	 'indexinfo'            => $opt_indexinfo,
+ 	 'indexname'            => $opt_indexname,
+ 	 'javascript'           => $opt_javascript,
+ 	 'jsdirindex'           => !$opt_javascript ? "" : $fileNames{'jsDirIndex'},
+@@ -1647,8 +1665,8 @@
+ 	 'msg_directory_navigator' => !$opt_frames ? "" : $opt_msg_directory_navigator,
+ 	 'msg_images'           => !$opt_frames ? "" : $opt_msg_images,
+ 	 'msg_index_of_directory' => $opt_msg_index_of_directory,
+-	 'msg_index_of_files'   => $opt_msg_index_of_files,
+-	 'msg_index_through'    => $opt_msg_index_through,
++	 'msg_index_of_files'   => !$opt_indexinfo ? "" : $opt_msg_index_of_files,
++	 'msg_index_through'    => !$opt_indexinfo ? "" : $opt_msg_index_through,
+ 	 'msg_next'             => $opt_msg_next,
+ 	 'msg_pause'             => $opt_msg_pause,
+ 	 'msg_page_navigator'   => !$opt_frames ? "" : $opt_msg_page_navigator,
+@@ -1659,8 +1677,11 @@
  	 'numpages'		=> $numPages,
  	 'pageindexname'        => $opt_pageindexname,
  	 'pichtml'              => $opt_pichtml,
@@ -151,8 +240,21 @@ diff -u -r1.117 -r1.127
 +	 'pichtmlaltstart'      => !$opt_pichtml ? "" : $opt_pichtmlaltstart,
  	 'pichtmlbottom'        => !$opt_pichtml ? "" : $opt_pichtmlbottom,
  	 'pichtmlext'           => !$opt_pichtml ? "" : $opt_pichtmlext,
++	 'pichtmllink'          => !$opt_pichtml ? '' : $opt_pichtmllink,
  	 'pichtmlnav'           => !$opt_pichtml ? 0 : $opt_pichtmlnav,
-@@ -2135,7 +2139,8 @@
+ 	 'pichtmlputtitle'      => !$opt_pichtml ? 0 : $opt_pichtmlputtitle,
+ 	 'pichtmltarget'        => (!$opt_pichtml || !$opt_frames) ? "" : $opt_pichtmltarget,
+@@ -1676,6 +1697,9 @@
+ 	 'stylesheet'		=> $opt_stylesheet,
+ 	 'subdirectories'       => !$opt_frames ? "" : join(' ',@dirNames),
+ 	 'tables'		=> $opt_tables,
++	 'tables_bottom'        => !$opt_tables ? "" : $opt_tables_bottom,
++	 'tables_params'        => !$opt_tables ? "" : $opt_tables_params,
++	 'tables_top'           => !$opt_tables ? "" : $opt_tables_top,
+ 	 'title'		=> $pageTitle,
+ 	 'version'              => $opt_anonymous ? "" : $webmagickInfo{'version'},
+ 	 );
+@@ -2135,7 +2159,8 @@
      print( INDEX "  <TITLE>${pageTitle}</TITLE>\n" );
  
      # Meta tags
@@ -162,7 +264,7 @@ diff -u -r1.117 -r1.127
      print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  	if( "$opt_metaauthor" ne '' );
      print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2173,20 +2178,17 @@
+@@ -2173,20 +2198,17 @@
      print( INDEX $framespechtml );
      print( INDEX "<NOFRAMES>\n" );
      print( INDEX "<BODY\n" );
@@ -192,7 +294,7 @@ diff -u -r1.117 -r1.127
      close( INDEX );
  
  
-@@ -2224,7 +2226,8 @@
+@@ -2224,7 +2246,8 @@
      print( INDEX "  <BASE TARGET=\"$opt_frame_name_top\">\n" );
  
      # Meta tags
@@ -202,7 +304,7 @@ diff -u -r1.117 -r1.127
      print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  	if( "$opt_metaauthor" ne '' );
      print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2242,17 +2245,14 @@
+@@ -2242,17 +2265,14 @@
      
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
@@ -228,7 +330,7 @@ diff -u -r1.117 -r1.127
      print( INDEX ">\n");
      print( INDEX $pagedirhtml );
      print( INDEX "</BODY></HTML>\n" );
-@@ -2361,7 +2361,8 @@
+@@ -2361,7 +2381,8 @@
  	if ($opt_frames);
  
      # Meta tags
@@ -238,7 +340,7 @@ diff -u -r1.117 -r1.127
      print( INDEX "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  	if( "$opt_metaauthor" ne '' );
      print( INDEX "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2379,16 +2380,13 @@
+@@ -2379,16 +2400,13 @@
  
      print( INDEX "</HEAD>\n" );
      print( INDEX "<BODY\n" );
@@ -262,7 +364,7 @@ diff -u -r1.117 -r1.127
      print( INDEX ">\n");
  
      print( INDEX "${opt_header}\n" ) if ("$opt_header" ne '');
-@@ -2397,8 +2395,12 @@
+@@ -2397,14 +2415,21 @@
      if( $numimages > 0 ) {
  	# Total HACK!!!
  	if( !$opt_frames || $opt_framestyle == 1 ) {
@@ -273,11 +375,21 @@ diff -u -r1.117 -r1.127
 +		  "\" ${opt_msg_index_through}",
 +		  " \"",
 +		  escapehtml($imageNames[$pageNumber - 1][$numimages-1]),
-+		  "\"</FONT></p>\n" );
++		  "\"</FONT></p>\n" )
++			if ($opt_indexinfo);
  	}
  	print( INDEX "$indexbar<BR>\n" );
  
-@@ -2433,25 +2435,34 @@
+ 	if ($opt_tables)
+ 	{
+-		print INDEX "<TABLE WIDTH=\"90%\">";
++		print INDEX "<TABLE ${opt_tables_params}>";
++		print INDEX "${opt_tables_top}"
++			if ($opt_tables_top ne '');
+ 	}
+ 	else
+ 	{
+@@ -2433,25 +2458,34 @@
  	
  	    my $pic = $imageNames[$pageNumber - 1][$imageNum];
  	    my $pichtml;
@@ -315,7 +427,7 @@ diff -u -r1.117 -r1.127
  			print( PICHTML "  <META NAME=\"Author\" CONTENT=\"${opt_metaauthor}\">\n" )
  			    if( "$opt_metaauthor" ne '' );
  			print( PICHTML "  <META NAME=\"Description\" CONTENT=\"${opt_metadescription}\">\n" )
-@@ -2469,28 +2480,19 @@
+@@ -2469,28 +2503,19 @@
  
  			print( PICHTML "</HEAD>\n" );
  			print( PICHTML "<BODY\n" );
@@ -352,7 +464,7 @@ diff -u -r1.117 -r1.127
  			}
  
  			if ($opt_pichtmlnav) {
-@@ -2526,9 +2528,9 @@
+@@ -2526,9 +2551,9 @@
  				} else {
  					print ( PICHTML "<A${target} HREF=\"");
  					if ($imageNum == 0 && $pageNumber != 1) {
@@ -364,7 +476,7 @@ diff -u -r1.117 -r1.127
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'prev'}\"",
-@@ -2543,9 +2545,9 @@
+@@ -2543,9 +2568,9 @@
  				} else {
  					print ( PICHTML "<A${target} HREF=\"");
  					if (($imageNum == $#{$imageNames[$pageNumber - 1]}) && $pageNumber != $numPages) {
@@ -376,21 +488,25 @@ diff -u -r1.117 -r1.127
  					}
  					print ( PICHTML $opt_pichtmlext);
  					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'next'}\"",
-@@ -2556,10 +2558,10 @@
+@@ -2556,10 +2581,14 @@
  				print ( PICHTML "</NOBR><BR>");
  			}
  
 -			if ( $pic =~ /\.(jpg|jpeg?|gif|xbm|png)$/i ) {
 -			    print( PICHTML "<IMG SRC=\"$pic\" ALT=\"\">" );
 +			if ($pic =~ /\.(jpg|jpeg?|gif|xbm|png)$/i) {
-+			    print( PICHTML "<IMG SRC=\"", escapeurl($pic), "\" ALT=\"${altlabel}\">" );
++			    print( PICHTML "<A HREF=\"$opt_pichtmllink\">")
++				if ($opt_pichtmllink ne '');
++			    print( PICHTML "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0 ALT=\"${altlabel}\">" );
++			    print( PICHTML "</A>")
++				if ($opt_pichtmllink ne '');
  			} else {
 -			    print( PICHTML "<A HREF=\"", escapeurl($pic), "\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>" );
 +			    print( PICHTML "<A HREF=\"", escapeurl($pic), "\"><BIG><B>", escapehtml($pic), "</B></A> ", fsize($pic), "</BIG>" );
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -2601,12 +2603,16 @@
+@@ -2601,12 +2630,19 @@
  			# TODO: make sure the thumbnails are created, and get some image sizes
  			# TODO: save the labels in a new array, maybe same with sizes
  			if ( $thumbImageSizes{$pic}) {
@@ -404,18 +520,59 @@ diff -u -r1.117 -r1.127
  			}
  			
 -			print (INDEX "</A><BR><FONT SIZE=\"-1\">" . $tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]} . "</FONT></TD>\n");
-+			print (INDEX "</A><BR><FONT SIZE=\"-1\">",
-+				escapehtml($tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]}),
-+				"</FONT></TD>\n");
++			print (INDEX "</A>");
++			print (INDEX "<BR><FONT SIZE=\"-1\">",
++				$tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]},
++				"</FONT>")
++				if ($opt_thumblabel && $opt_thumblabel ne 'false');
++			print (INDEX "</TD>\n");
  						
  			if ($imageNum%$opt_columns == ($opt_columns - 1))
  			{
-@@ -4156,25 +4162,29 @@
+@@ -2622,6 +2658,8 @@
+ 		{
+ 			print INDEX "</TR>";
+ 		}
++		print INDEX "${opt_tables_bottom}"
++			if ($opt_tables_bottom ne '');
+ 		print (INDEX "</TABLE>\n")
+ 	} else {print( INDEX "</MAP>\n" );}
+     }
+@@ -3868,7 +3906,7 @@
+ 	# Set image label
+ 	#
+ 	my $label = '';
+-	if( $opt_thumblabel ne 'false' ) {
++	if( $opt_thumblabel && $opt_thumblabel ne 'false' ) {
+ 	    if( defined( $imageLabels{$imagename} ) ) {
+ 		# Set image specific label
+ 		$label = $imageLabels{$imagename};
+@@ -3922,7 +3960,7 @@
+ 
+ 	    # put our label into the table image hash
+ 
+-	    $tableImageLabels{$imagename} = $label;
++	    $tableImageLabels{$imagename} = escapehtml($label);
+ 	    $tableImageLabels{$imagename} =~ s/\n/<BR>/g;
+ 
+ 	    print( STDERR "Applying image label: \"${label}\"\n" )
+@@ -4073,6 +4111,7 @@
+   --[no]forcehtml    Force HTML files to be generated (default off)
+   --[no]forcemontage Force montage (default off)
+   --[no]ignorefp     Ignore directories with names like _vti (FrontPage directories) (default on)
++  --[no]indexinfo    Put "Index of files" (default on)
+   --[no]help         Display usage message (default off)
+   --[no]recurse      Recurse directory tree (default off)
+   --srcdir	     Image directory to process
+@@ -4156,25 +4195,33 @@
    --footer           Page footer (imagemap frame) (default to </CENTER>)
    --header           Page header (imagemap frame) (default to <CENTER>)
    --[no]javascript   Enable JavaScript output (default off)
 +  --[no]readmevisible Show README.html on first page rather than just linking (default off)
 +  --[no]tables       Use HTML tables instead of imagemaps for thumbnails (default off)
++  --tables_params    Table HTML parameters
++  --tables_top       HTML before table contents
++  --tables_bottom    HTML after table contents
 +  --title            Page title
 +
 +Per-image HTML options:
@@ -426,6 +583,7 @@ diff -u -r1.117 -r1.127
    --pichtmlbottom    Per-image HTML, extra HTML to display below image (default to </CENTER>)
 +  --pichtmlext       Per-image HTML file extension (default .html)
    --[no]pichtmlnav   Per-image HTML, show navigation buttons (default off)
++  --pichtmllink      Per-image HTML link (default "")
    --[no]pichtmlputtitle Put per-image HTML picture title (default on)
    --pichtmltarget    Per-image HTML default frame target
    --pichtmltitleend  End tags for per-image HTML picture title (default </P>)
@@ -445,7 +603,7 @@ diff -u -r1.117 -r1.127
    --framestyle       Frame style to use (out of those available)
    --[no]allowconfig  Allow user to configure framestyle, columns and rows (requires javascript and tables) (default off)
  
-@@ -4296,6 +4306,7 @@
+@@ -4296,6 +4343,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -453,7 +611,7 @@ diff -u -r1.117 -r1.127
      return( $_ );
  }
  
-@@ -4324,22 +4335,10 @@
+@@ -4324,22 +4372,10 @@
  # Escape unsafe characters in URLs
  #		
  sub escapeurl {
