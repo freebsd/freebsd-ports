@@ -1,0 +1,10 @@
+--- lib/pvmgetarch.orig	Sun Feb  6 18:18:29 2000
++++ lib/pvmgetarch	Sun Feb  6 18:18:48 2000
+@@ -73,6 +73,7 @@
+ 	Linux,ppc )             ARCH=LINUXPPC ;;
+ 	BSD/OS,i[3456]86 )      ARCH=BSD386 ;;
+ 	FreeBSD,i386 )          ARCH=FREEBSD ;;
++	FreeBSD,alpha )         ARCH=FREEBSD ;;
+ 	SUPER-UX,SX-3 )         ARCH=SX3 ;;
+ 	uts,* )                 ARCH=UTS2 ;;
+ 	realix,M88* )           ARCH=M88K ;;
