@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION= 	0.3.1
+PORTVERSION=	0.3.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/devel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clive@FreeBSD.org
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
