@@ -1,20 +1,28 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Fri May 18 16:16:44 2001
-+++ Makefile.in	Fri May 18 16:20:28 2001
-@@ -111,11 +111,11 @@
+--- Makefile.in.orig	Sat Oct  5 01:19:24 2002
++++ Makefile.in	Sat Oct  5 01:20:58 2002
+@@ -115,22 +115,10 @@
  
  bin_SCRIPTS = gdk-pixbuf-config
  
 -confexecdir = $(libdir)
--confexec_DATA =  	gdk_pixbufConf.sh			gdk_pixbuf_xlibConf.sh			gnomecanvaspixbufConf.sh
+-confexec_DATA = \
+-	gdk_pixbufConf.sh		\
+-	gdk_pixbuf_xlibConf.sh		\
+-	gnomecanvaspixbufConf.sh
+-
+-
+-EXTRA_DIST = \
+-	gdk_pixbufConf.sh.in		\
+-	gdk_pixbuf_xlibConf.sh.in	\
+-	gnomecanvaspixbufConf.sh.in	\
+-	gdk-pixbuf-config.in		\
+-	gdk-pixbuf.m4			\
+-	gdk-pixbuf.spec			\
+-	gdk-pixbuf.spec.in
 +confexecdir = $(sysconfdir)
-+confexec_DATA =  	gdk_pixbufConf.sh			gdk_pixbuf_xlibConf.sh			@BUILD_CANVAS_ITEM_TRUE@gnomecanvaspixbufConf.sh
++confexec_DATA =        gdk_pixbufConf.sh                       gdk_pixbuf_xlibConf.sh                  @BUILD_CANVAS_ITEM_TRUE@gnomecanvaspixbufConf.sh
  
- 
--EXTRA_DIST =  	gdk_pixbufConf.sh.in			gdk_pixbuf_xlibConf.sh.in		gnomecanvaspixbufConf.sh.in		gdk-pixbuf-config.in			gdk-pixbuf.m4				gdk-pixbuf.spec				gdk-pixbuf.spec.in
-+EXTRA_DIST =  	gdk_pixbufConf.sh.in			gdk_pixbuf_xlibConf.sh.in			gdk-pixbuf-config.in			gdk-pixbuf.m4				gdk-pixbuf.spec				gdk-pixbuf.spec.in	@BUILD_CANVAS_ITEM_TRUE@gnomecanvaspixbufConf.sh.in
- 
++EXTRA_DIST =   gdk_pixbufConf.sh.in                    gdk_pixbuf_xlibConf.sh.in                       gdk-pixbuf-config.in                    gdk-pixbuf.m4                           gdk-pixbuf.spec                         gdk-pixbuf.spec.in      @BUILD_CANVAS_ITEM_TRUE@gnomecanvaspixbufConf.sh.in
  
  m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = gdk-pixbuf.m4
