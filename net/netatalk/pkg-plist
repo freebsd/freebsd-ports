@@ -13,8 +13,8 @@ bin/single2bin
 bin/unbin
 bin/unhex
 bin/unsingle
-etc/AppleVolumes.default
-etc/AppleVolumes.system
+etc/AppleVolumes.default.dist
+etc/AppleVolumes.system.dist
 etc/rc.d/netatalk.sh
 include/atalk/adouble.h
 include/atalk/aep.h

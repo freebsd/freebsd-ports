@@ -3,7 +3,7 @@
 # Date created:         23 Jul 1997
 # Whom:                 stb
 #
-# $Id: Makefile,v 1.3 1998/01/21 15:00:55 jfieber Exp $
+# $Id: Makefile,v 1.4 1998/01/22 11:06:40 asami Exp $
 #
 
 DISTNAME=       netatalk-1.4b2
@@ -11,7 +11,7 @@ CATEGORIES=	net print
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/
 
 PATCH_SITES=	http://www.umich.edu/~rsug/netatalk/patches/1.4b2/
-PATCHFILES=	afpd-macos8.diff
+PATCHFILES=	afpd-macos8.diff afpd-bfree.diff
 
 MAINTAINER=	stb@freebsd.org
 
