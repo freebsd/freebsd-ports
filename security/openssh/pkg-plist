@@ -16,6 +16,7 @@ etc/sshd_config-dist
 @exec [ ! -f %D/etc/sshd_config ] && cp %D/etc/sshd_config-dist %D/etc/sshd_config
 sbin/sshd
 libexec/sftp-server
+libexec/ssh-keysign
 libdata/ssh/Ssh.bin
 @dirrm libdata/ssh
 @exec if [ ! -f %D/etc/ssh_host_key ]; then echo ">> Generating a secret RSA1 host key."; %D/bin/ssh-keygen -t rsa1 -N "" -f %D/etc/ssh_host_key; fi

@@ -1,18 +1,19 @@
---- sshd/Makefile.orig	Thu May 23 13:33:56 2002
-+++ sshd/Makefile	Thu May 23 13:36:15 2002
-@@ -5,8 +5,8 @@
+--- sshd/Makefile.orig	Fri Jun 21 23:06:22 2002
++++ sshd/Makefile	Fri Jun 21 23:06:56 2002
+@@ -5,8 +5,9 @@
  PROG=	sshd
  BINOWN=	root
  BINMODE=555
 -BINDIR=	/usr/sbin
--MAN=	sshd.8
+-MAN=	sshd.8 sshd_config.5
 +BINDIR=	/sbin
 +MAN8=	sshd.8
++MAN5=	sshd_config.5
+ #CFLAGS+=-DHAVE_LOGIN_CAP -DBSD_AUTH
  CFLAGS+=-DHAVE_LOGIN_CAP
- #CFLAGS+=-DBSD_AUTH
  
-@@ -17,9 +17,10 @@
- 	auth-skey.c auth-bsdauth.c monitor_mm.c monitor.c
+@@ -19,9 +20,10 @@
+ 	auth2-hostbased.c auth2-kbdint.c
  
  .include <bsd.own.mk> # for KERBEROS and AFS
 +.include "../Makefile.inc"
@@ -23,7 +24,7 @@
  SRCS+=  auth-krb5.c
  LDADD+= -lkrb5 -lkafs -lasn1 -lcom_err
  DPADD+= ${LIBKRB5} ${LIBKAFS} ${LIBASN1} ${LIBCOM_ERR}
-@@ -31,15 +32,15 @@
+@@ -33,15 +35,15 @@
  LDADD+=  -lkafs
  DPADD+=  ${LIBKAFS}
  .endif # AFS

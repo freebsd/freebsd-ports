@@ -1,0 +1,19 @@
+--- ssh-keysign/Makefile.orig	Fri May 31 12:30:33 2002
++++ ssh-keysign/Makefile	Sat Jun 22 12:38:35 2002
+@@ -7,12 +7,12 @@
+ 
+ BINMODE?=4555
+ 
+-BINDIR=	/usr/libexec
+-MAN=	ssh-keysign.8
++BINDIR=	/libexec
++MAN8=	ssh-keysign.8
+ 
+ SRCS=	ssh-keysign.c
+ 
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto -lz
+-DPADD+=	${LIBCRYPTO} ${LIBZ}
++LDADD+= ${CRYPTOLIBS} -lcrypt -lz
++DPADD+= ${LIBCRYPTO} ${LIBZ}

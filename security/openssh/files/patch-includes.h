@@ -1,5 +1,5 @@
 --- includes.h.orig	Sat Jan 26 17:44:22 2002
-+++ includes.h	Fri May 24 08:21:58 2002
++++ includes.h	Sat Jun 22 12:17:34 2002
 @@ -24,12 +24,12 @@
  #include <sys/select.h>
  #include <sys/param.h>
@@ -22,7 +22,7 @@
  #include <stdio.h>
  #include <ctype.h>
  #include <errno.h>
-@@ -62,5 +61,64 @@
+@@ -62,5 +61,68 @@
   * client program.  Socketpairs do not seem to work on all systems.
   */
  #define USE_PIPES 1
@@ -82,6 +82,10 @@
 +/* Length of the space taken up by a padded control message of length len */
 +#ifndef CMSG_SPACE
 +#define CMSG_SPACE(len) (__CMSG_ALIGN(sizeof(struct cmsghdr)) + __CMSG_ALIGN(len))
++#endif
++
++#ifndef __func__
++#define	__func__	__FUNCTION__
 +#endif
 +
 +#endif

@@ -1,5 +1,5 @@
---- sshd_config.orig	Thu May 23 13:37:04 2002
-+++ sshd_config	Thu May 23 13:38:05 2002
+--- sshd_config.orig	Fri Jun 21 23:07:45 2002
++++ sshd_config	Fri Jun 21 23:08:26 2002
 @@ -30,8 +30,10 @@
  
  # Authentication:
@@ -18,6 +18,6 @@
  #KeepAlive yes
  #UseLogin no
 +UseLogin yes
- #UsePrivilegeSeparation no
+ #UsePrivilegeSeparation yes
+ #Compression yes
  
- #MaxStartups 10
