@@ -21,6 +21,8 @@ DISTNAME=	caudium-${PORTVERSION:S/.20/-20/}-cvs
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base (development branch)
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike74/
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron/ \
 		pcre.0:${PORTSDIR}/devel/pcre/ \
@@ -39,12 +41,6 @@ USE_GMAKE=	yes
 
 PLIST_SUB+=	PIKEVERSION=${PIKEVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 pre-configure:
 	@${ECHO} ${CONFIGURE_ENV}
 	@${ECHO} ${CONFIGURE_ARGS}
@@ -58,4 +54,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/caudium.sh ${PREFIX}/etc/rc.d/caudium.sh.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
