@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/
 
