@@ -1,6 +1,10 @@
 bin/corewars
 share/corewars/abez.cw
 share/corewars/backwalker.cw
+share/corewars/backspawner.cw
+share/corewars/bb1.cw
+share/corewars/bb2.cw
+share/corewars/betterback.cw
 share/corewars/bomb.cw
 share/corewars/bomberbomber.cw
 share/corewars/capture.cw
@@ -8,6 +12,8 @@ share/corewars/cascade.cw
 share/corewars/clone.cw
 share/corewars/copy.cw
 share/corewars/death_angles.cw
+share/corewars/devil.cw
+share/corewars/devilhook.cw
 share/corewars/dwarf.cw
 share/corewars/erase.cw
 share/corewars/erase2.cw
@@ -19,7 +25,9 @@ share/corewars/forker.cw
 share/corewars/gemini.cw
 share/corewars/giant_imp.cw
 share/corewars/harmless.cw
+share/corewars/helper.cw
 share/corewars/hidebomb.cw
+share/corewars/hitchhiker.cw
 share/corewars/imp-killer-cascade.cw
 share/corewars/imp_commander.cw
 share/corewars/impgrabber.cw
@@ -31,6 +39,8 @@ share/corewars/impkiller5.cw
 share/corewars/jumpup.cw
 share/corewars/killmover.cw
 share/corewars/killmover2.cw
+share/corewars/lhwMultiHopper.cw
+share/corewars/lhwShootingMother2.cw
 share/corewars/mod4_dwarf.cw
 share/corewars/monkeys.cw
 share/corewars/mover.cw
@@ -42,14 +52,23 @@ share/corewars/parasito4.cw
 share/corewars/quadwalker.cw
 share/corewars/random.cw
 share/corewars/runaway.cw
+share/corewars/runningcopy.cw
 share/corewars/searchanddestroy.cw
+share/corewars/searchanddestroy2.cw
 share/corewars/suicidal.cw
 share/corewars/survival.cw
+share/corewars/takeover.cw
 share/corewars/teleporter.cw
 share/corewars/teleporter2.cw
 share/corewars/trine.cw
 share/corewars/walker.cw
 share/corewars/xcopy.cw
+share/corewars/baselineplus.red
+share/corewars/impspiral.red
+share/corewars/incendiarybomb.red
+share/corewars/safetyinnumbers.red
+share/corewars/silk.red
+share/corewars/wintermute.red
 share/doc/corewars/README
 @dirrm share/corewars
 @dirrm share/doc/corewars

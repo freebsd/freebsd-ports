@@ -1,20 +1,11 @@
---- src/Makefile.in.orig	Wed Mar  8 23:12:00 2000
-+++ src/Makefile.in	Wed Mar  8 23:12:48 2000
-@@ -95,7 +95,7 @@
- 
- AM_YFLAGS = -d -t
- AM_LFLAGS = -i
--AM_CFLAGS = -O3 -DDATADIR="\"${pkgdatadir}\""
-+AM_CFLAGS = -DDATADIR="\"${pkgdatadir}\""
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h
- CONFIG_CLEAN_FILES = 
-@@ -115,7 +115,7 @@
- LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+--- src/Makefile.in.orig	Tue Mar 21 12:36:18 2000
++++ src/Makefile.in	Tue Mar 21 12:37:19 2000
+@@ -116,7 +116,7 @@
  LEXLIB = @LEXLIB@
+ YLWRAP = $(srcdir)/ylwrap
  CFLAGS = @CFLAGS@
 -COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 +COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) $(FREEBSD_CFLAGS)
  CCLD = $(CC)
  LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
- DIST_COMMON =  ./stamp-h.in Makefile.am Makefile.in config.h.in lex.c \
+ DIST_COMMON =  ./stamp-h.in Makefile.am Makefile.in config.h.in lex-cw.c \
