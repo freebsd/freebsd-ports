@@ -9,6 +9,42 @@ share/qemu/linux_boot.bin
 share/qemu/vgabios.bin
 share/qemu/vgabios-cirrus.bin
 share/qemu/ppc_rom.bin
-share/qemu/proll.bin
+share/qemu/proll.elf
+share/qemu/keymaps/ar
+share/qemu/keymaps/common
+share/qemu/keymaps/da
+share/qemu/keymaps/de
+share/qemu/keymaps/de-ch
+share/qemu/keymaps/en-gb
+share/qemu/keymaps/en-us
+share/qemu/keymaps/es
+share/qemu/keymaps/et
+share/qemu/keymaps/fi
+share/qemu/keymaps/fo
+share/qemu/keymaps/fr
+share/qemu/keymaps/fr-be
+share/qemu/keymaps/fr-ca
+share/qemu/keymaps/fr-ch
+share/qemu/keymaps/hr
+share/qemu/keymaps/hu
+share/qemu/keymaps/is
+share/qemu/keymaps/it
+share/qemu/keymaps/ja
+share/qemu/keymaps/lt
+share/qemu/keymaps/lv
+share/qemu/keymaps/mk
+share/qemu/keymaps/modifiers
+share/qemu/keymaps/nl
+share/qemu/keymaps/nl-be
+share/qemu/keymaps/no
+share/qemu/keymaps/pl
+share/qemu/keymaps/pt
+share/qemu/keymaps/pt-br
+share/qemu/keymaps/ru
+share/qemu/keymaps/sl
+share/qemu/keymaps/sv
+share/qemu/keymaps/th
+share/qemu/keymaps/tr
+@dirrm share/qemu/keymaps
 @dirrm share/qemu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
