@@ -28,6 +28,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Xlib/error.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/shape.py
+lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/shape.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/shape.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/xtest.py
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/xtest.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Xlib/ext/xtest.pyo
