@@ -1,6 +1,8 @@
 include/libmilter/mfapi.h
 include/libmilter/mfdef.h
 lib/libmilter.a
+%%MILTER_SHARED%%lib/libmilter.so.%%MILTER_SOVER%%
+%%MILTER_SHARED%%lib/libmilter.so
 @dirrm include/libmilter
 %%PORTDOCS%%share/doc/sendmail/MILTER
 %%PORTDOCS%%share/doc/sendmail/libmilter/api.html

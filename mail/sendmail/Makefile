@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.13.1
+PORTVERSION=	8.13.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -34,6 +34,7 @@ SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 PKGMESSAGE=	${WRKSRC}/pkg-message
+MILTER_SOVER?=	3
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
@@ -52,6 +53,7 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 # SENDMAIL_WITH_SOCKETMAP=yes
 # SENDMAIL_WITH_CYRUSLOOKUP=yes
 # SENDMAIL_WITH_PICKY_HELO_CHECK=yes
+# SENDMAIL_WITH_SHARED_MILTER=yes
 
 .if defined(SENDMAIL_WITH_SMTPS) && !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
 SENDMAIL_WITH_TLS=yes
@@ -204,7 +206,7 @@ CONFLICTS+=	sendmail*+tls*-8.*
 # Build site.config.m4
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 SITE+=	${FILESDIR}/site.config.m4
-.if ! defined(SENDMAIL_WITHOUT_IPV6)
+.if !defined(SENDMAIL_WITHOUT_IPV6)
 SITE+=	${FILESDIR}/site.config.m4.ipv6
 .endif
 .endif
@@ -217,7 +219,7 @@ SITE+=	${FILESDIR}/site.config.m4.sasl2
 .if defined(SENDMAIL_WITH_LDAP)
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
-.if ! defined(SENDMAIL_WITHOUT_MILTER)
+.if !defined(SENDMAIL_WITHOUT_MILTER)
 SITE+=	${FILESDIR}/site.config.m4.milter
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
@@ -233,6 +235,15 @@ PLIST_SUB+=	ETCPORT="@comment "
 PLIST_SUB+=	ETCPORT=""
 .endif
 
+.if !defined(SENDMAIL_WITHOUT_MILTER)
+.if defined(SENDMAIL_WITH_SHARED_MILTER)
+PLIST_SUB+=	MILTER_SHARED=""
+PLIST_SUB+=	MILTER_SOVER=${MILTER_SOVER}
+.else
+PLIST_SUB+=	MILTER_SHARED="@comment "
+.endif
+.endif
+
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
 		> ${WRKSRC}/sm-client.sh
@@ -242,6 +253,16 @@ post-extract:
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		-e "s=%%PORTSDIR%%=${PORTSDIR}=g" \
 		${PKGDIR}/pkg-message > ${WRKSRC}/pkg-message
+.if !defined(SENDMAIL_WITHOUT_MILTER) && defined(SENDMAIL_WITH_SHARED_MILTER)
+	@${CP} -pR ${WRKSRC}/libmilter ${WRKSRC}/libsharedmilter
+	${CP} ${FILESDIR}/sharedlibrary.m4 \
+		${WRKSRC}/devtools/M4/UNIX/sharedlibrary.m4 
+	@${MV} ${WRKSRC}/libsharedmilter/Makefile.m4 \
+		${WRKSRC}/libsharedmilter/Makefile.m4.sed
+	@${SED} -e 's=`library=`sharedlibrary=' \
+		${WRKSRC}/libsharedmilter/Makefile.m4.sed \
+		> ${WRKSRC}/libsharedmilter/Makefile.m4
+.endif
 
 pre-configure:
 .if defined(AUTO_ENABLED_TLS)
@@ -304,13 +325,16 @@ do-configure:
 
 post-build:
 	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
-.if ! defined(SENDMAIL_WITHOUT_MILTER)
+.if !defined(SENDMAIL_WITHOUT_MILTER)
 	( cd ${WRKSRC}/libmilter && ${MAKE} )
+.if defined(SENDMAIL_WITH_SHARED_MILTER)
+	( cd ${WRKSRC}/libsharedmilter && ${MAKE} )
+.endif
 .endif
 
 pre-install:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
-.if ! defined(SENDMAIL_WITHOUT_MILTER)
+.if !defined(SENDMAIL_WITHOUT_MILTER)
 	@${CAT} ${FILESDIR}/pkg-milter >>${PLIST}
 .endif
 	if ! pw groupshow smmsp; then pw groupadd smmsp -g 25; fi
@@ -337,7 +361,7 @@ pre-install:
 post-install:
 	( cd ${WRKSRC}/mail.local && ${MAKE} force-install )
 	( cd ${WRKSRC}/rmail && ${MAKE} force-install )
-.if ! defined(SENDMAIL_WITHOUT_MILTER)
+.if !defined(SENDMAIL_WITHOUT_MILTER)
 	${MKDIR} ${PREFIX}/include/libmilter
 	${INSTALL_DATA} ${WRKSRC}/include/libmilter/mfapi.h \
 		${WRKSRC}/include/libmilter/mfdef.h \
@@ -345,6 +369,12 @@ post-install:
 	${INSTALL_DATA} \
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libmilter/libmilter.a \
 	 ${PREFIX}/lib/
+.if defined(SENDMAIL_WITH_SHARED_MILTER)
+	${INSTALL_SCRIPT} \
+	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsharedmilter/libmilter.so \
+	 ${PREFIX}/lib/libmilter.so.${MILTER_SOVER}
+	${LN} -s libmilter.so.${MILTER_SOVER} ${PREFIX}/lib/libmilter.so
+.endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 	${INSTALL_SCRIPT} ${WRKSRC}/sm-client.sh \
@@ -378,7 +408,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sendmail/README ${DOCSDIR}/SENDMAIL
 	${INSTALL_DATA} ${WRKSRC}/mail.local/README ${DOCSDIR}/MAIL.LOCAL
 	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${DOCSDIR}/SMRSH
-.if ! defined(SENDMAIL_WITHOUT_MILTER)
+.if !defined(SENDMAIL_WITHOUT_MILTER)
 	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${DOCSDIR}/MILTER
 	${MKDIR} ${DOCSDIR}/libmilter
 	@${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
@@ -450,7 +480,7 @@ tls-install:
 .include <bsd.port.pre.mk>
 
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.if ! defined(WITH_OPENSSL_BASE)
+.if !defined(WITH_OPENSSL_BASE)
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .endif
 SITE+=	${FILESDIR}/site.config.m4.tls
