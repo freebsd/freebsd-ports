@@ -9,18 +9,27 @@
  
  
  EXTRA_DIST = server_config.h.in server_config.pl
---- Makefile.in.orig	Wed Feb 17 18:34:29 1999
-+++ Makefile.in	Fri Feb 19 01:58:32 1999
+--- Makefile.in.orig	Mon May 31 08:47:42 1999
++++ Makefile.in	Mon Jul 12 12:54:34 1999
 @@ -182,7 +182,7 @@
- EXTRA_DIST = autogen.sh libgtop.spec.in copyright.txt libgtopConf.sh.in 	LIBGTOP-VERSION features.def libgtop-config.in RELNOTES-0.25 	RELNOTES-1.0 libgtop-sysdeps.m4 ANNOUNCE-0.25 ANNOUNCE-1.0 	README NEWS.old libgtop-mirror.sh
  
+ 
+ include_HEADERS = glibtop.h
+-configincludedir = $(pkglibdir)/include
++configincludedir = $(includedir)
+ 
+ EXTRA_DIST = autogen.sh libgtop.spec.in copyright.txt libgtopConf.sh.in 	LIBGTOP-VERSION features.def libgtop-config.in RELNOTES-0.25 	RELNOTES-1.0 libgtop-sysdeps.m4 README NEWS.old libgtop-mirror.sh
+ 
+@@ -192,7 +192,7 @@
+ 
+ BUILT_SOURCES = stamp-gc-h #note: not glibtop-config.h
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = $(top_builddir)/libgtopConf.sh 		  $(top_builddir)/libgtop-features.def
  
  
-@@ -550,7 +550,7 @@
+@@ -587,7 +587,7 @@
  $(top_srcdir)/aclocal.m4: libgtop-sysdeps.m4
  
  libgtopConf.sh: libgtopConf.sh.in Makefile
@@ -29,7 +38,7 @@
  	  -e 's#\@LIBGTOP_INCLUDEDIR\@#$(includedir)#g' \
  	  -e 's#\@LIBGTOP_DATADIR\@#$(datadir)#g' \
  	  -e 's#\@LIBGTOP_EXTRA_LIBS\@#$(LIBGTOP_EXTRA_LIBS)#g' \
-@@ -579,7 +579,7 @@
+@@ -616,7 +616,7 @@
  	  && mv libgtopConf.tmp libgtopConf.sh
  
  libgtop-config: libgtop-config.in Makefile

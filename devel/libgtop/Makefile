@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libgtop
-# Version required:		1.0.1
+# Version required:		1.1.0
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.18 1999/04/08 18:08:32 steve Exp $
+# $Id: Makefile,v 1.19 1999/05/30 03:45:34 steve Exp $
 #
 
-DISTNAME=	libgtop-1.0.1
+DISTNAME=	libgtop-1.1.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libgtop

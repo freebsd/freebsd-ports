@@ -4,6 +4,7 @@ bin/libgtop-config
 etc/libgtopConf.sh
 etc/libgtop-features.def
 include/glibtop.h
+include/glibtop-config.h
 include/glibtop_machine.h
 include/glibtop_server.h
 include/glibtop_suid.h
@@ -15,6 +16,7 @@ include/glibtop/fsusage.h
 include/glibtop/global.h
 include/glibtop/gnuserv.h
 include/glibtop/inodedb.h
+include/glibtop/limits.h
 include/glibtop/loadavg.h
 include/glibtop/mem.h
 include/glibtop/mountlist.h
@@ -47,6 +49,9 @@ include/glibtop/uptime.h
 include/glibtop/version.h
 include/glibtop/write.h
 include/glibtop/xmalloc.h
+@unexec install-info --delete %D/info/libgtop.info %D/info/dir
+info/libgtop.info
+@exec install-info %D/info/libgtop.info %D/info/dir
 lib/libgtop.a
 lib/libgtop.so
 lib/libgtop.so.1
@@ -74,6 +79,7 @@ lib/libgtop_sysdeps_suid.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/locale/de/LC_MESSAGES/libgtop.mo
+share/locale/fi/LC_MESSAGES/libgtop.mo
 share/locale/fr/LC_MESSAGES/libgtop.mo
 share/locale/ja/LC_MESSAGES/libgtop.mo
 share/locale/no/LC_MESSAGES/libgtop.mo
