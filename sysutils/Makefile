@@ -85,6 +85,7 @@
     SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
     SUBDIR += fvcool
+    SUBDIR += ganglia-monitor-core
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gfslicer
