@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmarking tool for Common Language Runtime (CLR)
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \
@@ -27,7 +27,7 @@ PNET_STRAP_BIN=	pnetmark \
 		linpack \
 		scimark2
 
-.include "../../lang/pnet/Makefile.pnet"
+.include "${PORTSDIR}/lang/pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 
 do-install:
