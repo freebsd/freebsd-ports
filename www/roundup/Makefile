@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	0.7.9
+PORTVERSION=	0.8.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,9 @@ COMMENT=	An Issue-Tracking System for Knowledge Workers
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_GETTEXT=	yes
 
-MAN1=		roundup-admin.1 roundup-mailgw.1 roundup-server.1
+MAN1=		roundup-admin.1 roundup-demo.1 roundup-mailgw.1 \
+		roundup-server.1
 
 .include <bsd.port.mk>
