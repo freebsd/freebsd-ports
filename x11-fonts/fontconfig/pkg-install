@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -n "${PACKAGE_BUILDING}" ]; then
+    exit 0
+fi
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/X11R6/bin:${PATH}
+export PATH
+
+if [ "$2" = "POST-INSTALL" ]; then
+    fc-cache >/dev/null 2>&1
+fi
