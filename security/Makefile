@@ -56,6 +56,7 @@
     SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssl
+    SUBDIR += p
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Crypt-CBC
