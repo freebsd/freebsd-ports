@@ -17,14 +17,19 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}:ssl
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
+PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
+PATCHFILES=		no_zombies.patch 
+
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
 CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
+
 APACHE_VERSION=		1.3.28
-APACHE_SSL_VERSION=	1.49
+APACHE_SSL_VERSION=	1.51
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes
@@ -46,7 +51,7 @@ APACHE_SUEXEC_UIDMIN?=	1000
 APACHE_SUEXEC_GIDMIN?=	1000
 APACHE_SUEXEC_CALLER?=	www
 
-SUEXEC_CONF= \
+SUEXEC_CONF=\
 	--enable-suexec \
 	--suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
 	--suexec-caller=${APACHE_SUEXEC_CALLER} \
@@ -80,7 +85,7 @@ CONFIGURE_ARGS=	\
 		--server-uid=www \
 		--server-gid=www \
 		--with-perl=${PERL} \
-		--with-layout=GNU \
+		--with-layout=FreeBSD \
 		--without-confadjust \
 		--enable-shared=remain \
 		--enable-module=most \
@@ -98,6 +103,8 @@ OPTIM=		-DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT} \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
+DOCSDIR=	${PREFIX}/share/doc/apache
+
 .if defined(APACHE_PERF_TUNING)
 OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O6 -fomit-frame-pointer
@@ -113,18 +120,18 @@ MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8 \
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
+	@cd ${WRKSRC} && tar xzf ${DISTDIR}/${DIST_SUBDIR}/apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
 
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/post-patch-conf:httpd.conf-dist.orig
 
 post-install:
 	@${ECHO_CMD} ""
-	@${ECHO_CMD} "                       !!!! WARNING !!!!"
-	@${ECHO_CMD} " Next PORTREVISION will be a complete resync with apache13 ports layout"
-	@${ECHO_CMD} " Will change:"
-	@${ECHO_CMD} "      - Default log file names"
-	@${ECHO_CMD} "      - Default DocumentRoot (${PREFIX}/www/htdocs => ${PREFIX}/www/data)"
+	@${ECHO_CMD} "SSL is disabled by default"
+	@${ECHO_CMD} "Please read:"
+	@${ECHO_CMD} "  http://www.apache-ssl.org/docs.html"
+	@${ECHO_CMD} " to know how to configure correctly apache-ssl"
 	@${ECHO_CMD} ""
 
 certificate:
