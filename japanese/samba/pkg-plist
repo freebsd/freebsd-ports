@@ -778,6 +778,7 @@ sbin/swat
 %%PORTDOCS%%@dirrm share/doc/samba/textdocs/outdated
 %%PORTDOCS%%@dirrm share/doc/samba/textdocs
 %%PORTDOCS%%@dirrm share/doc/samba/yodldocs
+%%PORTDOCS%%@dirrm share/doc/samba
 share/examples/samba/LDAP/README
 share/examples/samba/LDAP/export_smbpasswd.pl
 share/examples/samba/LDAP/import_smbpasswd.pl
@@ -1534,6 +1535,7 @@ share/swat/using_samba/this_edition.html
 @dirrm share/swat/using_samba/ja/gifs
 @dirrm share/swat/using_samba/ja
 @dirrm share/swat/using_samba
+@dirrm share/swat
 @exec /bin/cat %D/share/doc/samba/README.FreeBSD
 @unexec /bin/rmdir /var/db/samba 2>/dev/null || true
 %%LIBSAMBA%%@dirrm lib/samba
