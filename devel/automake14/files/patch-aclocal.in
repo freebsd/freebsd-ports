@@ -1,5 +1,5 @@
 --- aclocal.in.orig	Sun Jul 15 06:52:18 2001
-+++ aclocal.in	Sun Oct 13 19:58:58 2002
++++ aclocal.in	Sat Oct 19 12:28:09 2002
 @@ -32,7 +32,9 @@
  $PACKAGE = "@PACKAGE@";
  $prefix = "@prefix@";
@@ -7,7 +7,7 @@
 -$acdir = "@datadir@/aclocal";
 +$acdir = "@datadir@/aclocal14";
 +
-+$acdir_x11 = '%%X11BASE%%/share/aclocal14';
++$acdir_x11 = '%%X11BASE%%/share/aclocal';
  
  # Some globals.
  
