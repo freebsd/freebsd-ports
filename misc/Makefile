@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.190 1999/03/11 13:58:27 kris Exp $
+# $Id: Makefile,v 1.191 1999/03/30 02:28:02 steve Exp $
 #
 
     SUBDIR += 221upgrade
@@ -79,6 +79,7 @@
     SUBDIR += unclutter
     SUBDIR += us-zipcodes
     SUBDIR += viz
+    SUBDIR += wmcp
     SUBDIR += wmweather
     SUBDIR += xd
     SUBDIR += xdelta
