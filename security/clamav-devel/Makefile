@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20031211
+PORTVERSION=	20031222
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -91,6 +91,7 @@ PLIST_SUB+=	CLAMAV-MILTER:="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
+		-e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
 
 pre-configure:
