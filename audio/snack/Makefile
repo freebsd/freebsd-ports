@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	snack
-PORTVERSION=	2.1.6
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	audio tcl83 tk83
 MASTER_SITES=	http://www.speech.kth.se/~kare/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.3 \
 		--with-tk=${LOCALBASE}/lib/tk8.3 \
 		--prefix=${PREFIX}
 
-PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
+PLIST_SUB=	SNACK_VER=${PORTVERSION}
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
