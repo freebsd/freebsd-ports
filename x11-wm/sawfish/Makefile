@@ -30,7 +30,7 @@ CONFIGURE_ARGS=	--with-readline \
 		--datadir=${PREFIX}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	${ARCH}-freebsd${OSREL:C/\..*//}
+CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 
