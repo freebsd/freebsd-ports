@@ -92,8 +92,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.8
-PORTREVISION=	1
+PORTVERSION=	1.5.9
+PORTREVISION=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -282,10 +282,11 @@ pre-configure::
 
 .if defined(WITH_MUTT_EDIT_THREADS)
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-edit-threads
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-edit-threads
 .endif
 
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
+.error The WITH_MUTT_SIDEBAR_PATCH is not available at the moment
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sidebar
 .endif
@@ -323,11 +324,11 @@ CONFIGURE_ARGS+=	--without-idn
 PATCH_DIST_STRIP=	-p1
 
 .if ! defined (WITHOUT_MUTT_COMPRESSED_FOLDERS)
-DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.1.gz:rr
+DISTFILES+=	patch-${RR_PATCH_VERSION}.rr.compressed.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
 SGML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.1.gz > ${WRKDIR}/patch-compressed
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${RR_PATCH_VERSION}.rr.compressed.gz > ${WRKDIR}/patch-compressed
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		 ${WRKDIR}/patch-compressed
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-compressed

@@ -2,10 +2,10 @@ diff -Nru a/PATCHES b/PATCHES
 --- a/PATCHES
 +++ b/PATCHES
 @@ -0,0 +1 @@
-+mutt-cvs-header-cache.28
++mutt-cvs-header-cache.29
 diff -Nru a/init.h b/init.h
---- a/init.h	2005-01-27 20:54:24 +01:00
-+++ b/init.h	2005-01-28 15:12:41 +01:00
+--- a/init.h	2005-02-12 22:08:19 +01:00
++++ b/init.h	2005-02-13 00:51:10 +01:00
 @@ -1032,6 +1032,13 @@
    ** global header cache for all folders is used. Per default it is unset and so
    ** no header caching will be used.
@@ -21,9 +21,9 @@ diff -Nru a/init.h b/init.h
    /*
    ** .pp
 diff -Nru a/mh.c b/mh.c
---- a/mh.c	2005-01-27 20:45:37 +01:00
-+++ b/mh.c	2005-02-03 09:09:50 +01:00
-@@ -787,6 +787,14 @@
+--- a/mh.c	2005-02-03 19:01:43 +01:00
++++ b/mh.c	2005-02-05 12:25:16 +01:00
+@@ -791,6 +791,14 @@
    return r;
  }
  
@@ -38,7 +38,7 @@ diff -Nru a/mh.c b/mh.c
  #ifdef USE_INODESORT
  /*
   * Merge two maildir lists according to the inode numbers.
-@@ -882,27 +890,67 @@
+@@ -886,27 +894,67 @@
   * This function does the second parsing pass for a maildir-style
   * folder.
   */
@@ -118,7 +118,7 @@ diff -Nru a/mh.c b/mh.c
  
  /* Read a MH/maildir style mailbox.
   *
-@@ -1399,6 +1447,9 @@
+@@ -1403,6 +1451,9 @@
  {
    char path[_POSIX_PATH_MAX], tmp[_POSIX_PATH_MAX];
    int i, j;
@@ -128,7 +128,7 @@ diff -Nru a/mh.c b/mh.c
  
    if (ctx->magic == M_MH)
      i = mh_check_mailbox (ctx, index_hint);
-@@ -1408,6 +1459,11 @@
+@@ -1412,6 +1463,11 @@
    if (i != 0)
      return i;
  
@@ -140,7 +140,7 @@ diff -Nru a/mh.c b/mh.c
    for (i = 0; i < ctx->msgcount; i++)
    {
      if (ctx->hdrs[i]->deleted
-@@ -1416,7 +1472,13 @@
+@@ -1420,7 +1476,13 @@
        snprintf (path, sizeof (path), "%s/%s", ctx->path, ctx->hdrs[i]->path);
        if (ctx->magic == M_MAILDIR
  	  || (option (OPTMHPURGE) && ctx->magic == M_MH))
@@ -154,7 +154,7 @@ diff -Nru a/mh.c b/mh.c
        else if (ctx->magic == M_MH)
        {
  	/* MH just moves files out of the way when you delete them */
-@@ -1438,16 +1500,21 @@
+@@ -1442,16 +1504,21 @@
        if (ctx->magic == M_MAILDIR)
        {
  	if (maildir_sync_message (ctx, i) == -1)
@@ -178,7 +178,7 @@ diff -Nru a/mh.c b/mh.c
    if (ctx->magic == M_MH)
      mh_update_sequences (ctx);
  
-@@ -1468,6 +1535,13 @@
+@@ -1472,6 +1539,13 @@
    }
  
    return 0;
@@ -193,9 +193,9 @@ diff -Nru a/mh.c b/mh.c
  
  static char *maildir_canon_filename (char *dest, const char *src, size_t l)
 diff -Nru a/mutt.h b/mutt.h
---- a/mutt.h	2005-01-27 20:54:24 +01:00
-+++ b/mutt.h	2005-01-28 15:12:54 +01:00
-@@ -353,6 +353,9 @@
+--- a/mutt.h	2005-02-12 21:19:25 +01:00
++++ b/mutt.h	2005-02-13 00:51:10 +01:00
+@@ -351,6 +351,9 @@
    OPTFORCENAME,
    OPTFORWDECODE,
    OPTFORWQUOTE,
