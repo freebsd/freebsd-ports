@@ -9,6 +9,7 @@
 
 PORTNAME=	docbook
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -26,6 +27,7 @@ RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
 
-do-install:	#empty
+do-install:
+	@${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/share/sgml/docbook/catalog
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+-- $FreeBSD$ --
+
+CATALOG	"2.4.1/catalog"
+CATALOG	"3.0/catalog"
+CATALOG	"3.1/catalog"
+CATALOG	"4.0/catalog"
+CATALOG	"4.1/catalog"
