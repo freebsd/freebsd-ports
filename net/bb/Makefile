@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1997/01/20 09:59:33 andreas Exp $
+# $Id: Makefile,v 1.10 1997/01/20 11:46:00 andreas Exp $
 #
 
 DISTNAME=	bb
@@ -33,6 +33,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/${DISTNAME}/www/gifs
 	@${MKDIR} ${PREFIX}/${DISTNAME}/www/logs
 	@${MKDIR} ${PREFIX}/${DISTNAME}/www/notes
+	@${MKDIR} ${PREFIX}/${DISTNAME}/tmp
+	@/usr/bin/touch ${PREFIX}/${DISTNAME}/tmp/.keep_me
 	${INSTALL_DATA} ${WRKSRC}/README \
 				${PREFIX}/${DISTNAME}/README
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bb \
@@ -126,6 +128,7 @@ do-install:
 	@${RM} -f ${PREFIX}/www/data/bb
 	@ln -s ${PREFIX}/${DISTNAME}/www ${PREFIX}/www/data/bb
 	@ln -s bb.html ${PREFIX}/${DISTNAME}/www/index.html
+	@ln -s ${PREFIX}/${DISTNAME}/bin/bb-page.sh ${PREFIX}/www/cgi-bin
 	@echo ""
 	@echo "================================================================"
 	@echo "==== Configuration Notes:                                    ==="
