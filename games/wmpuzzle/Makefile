@@ -6,20 +6,14 @@
 #
 
 PORTNAME=	wmpuzzle
-PORTVERSION=	0.2.0
+PORTVERSION=	0.4.0
 CATEGORIES=	games windowmaker afterstep
-MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/ \
-		${MASTER_SITE_LOCAL:S/$/:bsdpics/}
-MASTER_SITE_SUBDIR=	petef/:bsdpics
-DISTFILES=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX} \
-		daemon.xpm:bsdpics
-DIST_SUBDIR=	wmpuzzle
-EXTRACT_ONLY=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX}
+MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable puzzle game for WindowMaker and AfterStep
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -31,14 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		wmpuzzle.6
 
-BSDIMAGES=	daemon.xpm
-
-CPPFLAGS=	-I${X11BASE}/include 
+CPPFLAGS=	-I${X11BASE}/include -DBSD
 LDFLAGS=	-L${X11BASE}/lib
-
-post-extract:
-.for i in ${BSDIMAGES}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${i} ${WRKSRC}/
-.endfor
 
 .include <bsd.port.mk>
