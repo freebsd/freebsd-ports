@@ -7,13 +7,13 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.25.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	MailScanner-${PORTVERSION:C/\.([0-9]+)$/-\1/}
 
 MAINTAINER=	j.koopmann@seceidos.de
-COMMENT=	Powerful virus/spam scanning framework for Sendmail/Exim
+COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 BUILD_DEPENDS=	\
 	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR 
+	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
@@ -54,6 +54,12 @@ DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf
+USRLOCAL_FILES_LIB=	\
+		bitdefender-autoupdate f-prot-autoupdate \
+		f-secure-wrapper inoculan-autoupdate \
+		kavdaemonclient-wrapper mcafee-autoupdate \
+		nod32-autoupdate rav-autoupdate \
+		rav-wrapper sophos-autoupdate
 
 do-build:
 	${PERL} -pi -e \
@@ -92,6 +98,11 @@ do-build:
 	${PERL} -pi -e \
 		's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g;' \
 		${WRKSRC}/lib/sophos-autoupdate
+.for FILE in ${USRLOCAL_FILES_LIB}
+	${PERL} -pi -e \
+		's,/usr/local,${LOCALBASE},g;' \
+		${WRKSRC}/lib/${FILE}
+.endfor
 
 do-install:
 	# 
@@ -161,6 +172,10 @@ do-install:
 		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 	# Sophos install script
 	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
+	${PERL} -pi -e \
+		's,%%LOCALBASE%%,${LOCALBASE},g; \
+		s,%%PREFIX%%,${PREFIX},g;' \
+		${DOCSDIR}/Sophos.install.freebsd
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
 	@${WRKSRC}/bin/upgrade_MailScanner_conf \
