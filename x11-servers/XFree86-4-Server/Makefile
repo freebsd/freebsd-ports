@@ -83,7 +83,6 @@ MAN4=			citron.4 \
 			microtouch.4 \
 			mouse.4 \
 			mutouch.4 \
-			nsc.4 \
 			nv.4 \
 			r128.4 \
 			radeon.4 \
@@ -121,7 +120,7 @@ PLIST_SUB+=	ALPHA_NA=""
 MAN1+=		scanpci.1
 .endif
 
-.if ${ARCH} == alpha
+.if ${ARCH} == ia64
 PLIST_SUB+=	IA64_NA="@comment "
 .else
 PLIST_SUB+=	IA64_NA=""
@@ -143,6 +142,7 @@ MAN4+=		apm.4 \
 		i740.4 \
 		i810.4 \
 		neomagic.4 \
+		nsc.4 \
 		sis.4 \
 		trident.4 \
 		tseng.4 \
