@@ -8,28 +8,6 @@
  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
  echo "configure:566: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
---- ./gdk/Makefile.in.orig	Sun Oct 12 15:48:17 1997
-+++ ./gdk/Makefile.in	Sun Oct 12 15:47:48 1997
-@@ -153,7 +153,7 @@
- gxid_OBJECTS =  gxid.o
- gxid_DEPENDENCIES = 
- gxid_LDFLAGS = 
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ -DX_LOCALE
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
- LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
---- ./gdk/gdk.c.orig	Sun Oct 12 15:49:46 1997
-+++ ./gdk/gdk.c	Sun Oct 12 15:49:54 1997
-@@ -18,7 +18,7 @@
- #include "../config.h"
- 
- #include <ctype.h>
--#include <locale.h>
-+#include <X11/Xlocale.h>
- #include <signal.h>
- #include <stdio.h>
- #include <stdlib.h>
 --- ./docs/Makefile.in.orig	Sun Oct 12 15:50:23 1997
 +++ ./docs/Makefile.in	Sun Oct 12 15:50:50 1997
 @@ -116,7 +116,7 @@
