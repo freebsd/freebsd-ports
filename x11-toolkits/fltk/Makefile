@@ -3,7 +3,7 @@
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: Makefile,v 1.5 1999/04/26 23:29:05 mharo Exp $
+# $Id: Makefile,v 1.6 1999/05/01 02:03:09 steve Exp $
 #
 
 DISTNAME=	fltk-1.0.2-source
@@ -29,6 +29,11 @@ USE_X_PREFIX=	yes
 MAN1=		fluid.1
 VERSION=	1.0.2
 
+.include <bsd.port.pre.mk>
+.if (${OBJFORMAT} == "aout")
+BROKEN=	requires ELF library format
+.endif
+
 post-install:
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
@@ -43,4 +48,4 @@ post-install:
 		${PREFIX}/share/doc/fltk
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
