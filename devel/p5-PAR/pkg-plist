@@ -3,7 +3,7 @@ bin/parldyn
 bin/pp
 bin/par.pl
 bin/tkpp
-%%SITE_PERL%%/App/Packer/Backend/PAR.pm
+%%SITE_PERL%%/App/Packer/PAR.pm
 %%SITE_PERL%%/PAR.pm
 %%SITE_PERL%%/PAR/FAQ.pod
 %%SITE_PERL%%/PAR/Filter.pm
@@ -13,9 +13,9 @@ bin/tkpp
 %%SITE_PERL%%/PAR/Filter/PatchContent.pm
 %%SITE_PERL%%/PAR/Filter/PodStrip.pm
 %%SITE_PERL%%/PAR/Heavy.pm
+%%SITE_PERL%%/PAR/Packer.pm
 %%SITE_PERL%%/PAR/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PAR/.packlist
-@unexec rmdir %D/%%SITE_PERL%%/App/Packer/Backend 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/App/Packer 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/App 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/PAR/Filter 2>/dev/null || true
