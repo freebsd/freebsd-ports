@@ -1554,6 +1554,7 @@ erlgtk		ports/x11-toolkits/erlgtk
 erlslang	ports/devel/erlslang
 ermixer		ports/audio/ermixer
 error		ports/devel/error
+erserver	ports/databases/erserver
 eruby		ports/textproc/eruby
 erun		ports/x11/erun
 erwn		ports/www/erwn
@@ -5131,6 +5132,7 @@ opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
 opendx-samples	ports/graphics/opendx-samples
+openfts		ports/textproc/openfts
 opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
 openglad	ports/games/openglad
@@ -5382,6 +5384,7 @@ p5-CSS-SAC	ports/textproc/p5-CSS-SAC
 p5-CSS-Tiny	ports/textproc/p5-CSS-Tiny
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
+p5-Calendar-Simple	ports/devel/p5-Calendar-Simple
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Cdk		ports/devel/p5-Cdk
@@ -5424,6 +5427,7 @@ p5-Class-Inspector	ports/devel/p5-Class-Inspector
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
+p5-Class-MethodMapper	ports/devel/p5-Class-MethodMapper
 p5-Class-NamedParms	ports/devel/p5-Class-NamedParms
 p5-Class-ObjectTemplate	ports/devel/p5-Class-ObjectTemplate
 p5-Class-ObjectTemplate-DB	ports/devel/p5-Class-ObjectTemplate-DB
@@ -6204,6 +6208,8 @@ p5-Test-Differences	ports/devel/p5-Test-Differences
 p5-Test-Exception	ports/devel/p5-Test-Exception
 p5-Test-Harness	ports/devel/p5-Test-Harness
 p5-Test-Inline	ports/devel/p5-Test-Inline
+p5-Test-Manifest	ports/devel/p5-Test-Manifest
+p5-Test-MockObject	ports/devel/p5-Test-MockObject
 p5-Test-Pod	ports/devel/p5-Test-Pod
 p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Unit	ports/devel/p5-Test-Unit
@@ -6290,6 +6296,7 @@ p5-URI		ports/net/p5-URI
 p5-URI-Find	ports/textproc/p5-URI-Find
 p5-URI-Sequin	ports/www/p5-URI-Sequin
 p5-Unicode-IMAPUtf7	ports/converters/p5-Unicode-IMAPUtf7
+p5-Unicode-Lite	ports/converters/p5-Unicode-Lite
 p5-Unicode-Map	ports/converters/p5-Unicode-Map
 p5-Unicode-Map8	ports/converters/p5-Unicode-Map8
 p5-Unicode-MapUTF8	ports/converters/p5-Unicode-MapUTF8
@@ -7367,6 +7374,7 @@ rbldnsd		ports/dns/rbldnsd
 rboot		ports/net/rboot
 rbot		ports/irc/rbot
 rc		ports/shells/rc
+rc_subr		ports/sysutils/rc_subr
 rc5pipe		ports/security/rc5pipe
 rcalc		ports/math/rcalc
 rclean		ports/sysutils/rclean
@@ -8714,6 +8722,8 @@ useracc		ports/databases/useracc
 userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist
 usermin		ports/sysutils/usermin
+userneu		ports/sysutils/userneu
+usogres		ports/databases/usogres
 utah-glx	ports/graphics/utah-glx
 utcount		ports/sysutils/utcount
 utf8conv	ports/converters/utf8conv
@@ -9825,13 +9835,3 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
-p5-Unicode-Lite	ports/converters/p5-Unicode-Lite
-p5-Test-Manifest	ports/devel/p5-Test-Manifest
-p5-Test-MockObject	ports/devel/p5-Test-MockObject
-rc_subr		ports/sysutils/rc_subr
-openfts		ports/textproc/openfts
-userneu		ports/sysutils/userneu
-usogres		ports/databases/usogres
-erserver	ports/databases/erserver
-p5-Calendar-Simple	ports/devel/p5-Calendar-Simple
-p5-Class-MethodMapper	ports/devel/p5-Class-MethodMapper
