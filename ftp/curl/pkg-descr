@@ -6,4 +6,4 @@ curl offers a busload of useful tricks like proxy support, user
 authentication, ftp upload, HTTP post, SSL (https:) connections, file
 transfer resume and more.
 
-WWW: http://www.fts.frontec.se/~dast/curl/
+WWW: http://curl.haxx.nu/
