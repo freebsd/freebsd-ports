@@ -1810,6 +1810,7 @@ gimageview	ports/graphics/gimageview
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
 gimp-manual-ps		ports/graphics/gimp-manual-ps
+gimp-print	ports/print/gimp-print
 gimp1		ports/graphics/gimp1
 gindent		ports/devel/gindent
 giram		ports/graphics/giram
