@@ -1,5 +1,5 @@
---- Makefile.orig	Sat May 22 01:19:06 1999
-+++ Makefile	Thu Jun 17 11:41:07 1999
+--- Makefile.orig	Wed Jul  7 13:24:27 1999
++++ Makefile	Thu Jul  8 23:19:14 1999
 @@ -7,16 +7,22 @@
  # DO NOT put blanks before and after "=", this is parsed and rewritten by the
  # configure script.
@@ -7,7 +7,7 @@
 +DOCBASE = $(PREFIX)/share/doc/plan
 +#
  #				# user-callable executable (plan)
--DIR=/usr/local/lib
+-DIR=/usr/local/bin
 +DIR=$(PREFIX)/bin
  #				# auxiliary programs (pland, notifier, netplan)
 -LIB=/usr/local/lib
@@ -23,7 +23,7 @@
 -NETPLANDIR=/usr/local/lib
 +NETPLANDIR=$(LIB)
  #				# unformatted nroff manpage (plan.[14])
--MAN=/usr/man/local/man
+-MAN=/usr/local/man
 +MAN=$(PREFIX)/man/man
  #				# formatted manpage (plan.[14])
  CATMAN=/usr/catman/local/cat
@@ -39,8 +39,8 @@
 +NOB_GID=65534
  # 				# used by plan to pre-process holiday files,
  #				# plan will check if this file really exists
- CPP_PATH="/lib/cpp -P -I$(HELP)"
-@@ -45,6 +51,10 @@
+ CPP_PATH='/lib/cpp -P -I$(HELP)'
+@@ -47,11 +53,15 @@
  #				# uncomment this for Japanese version of plan
  #				# JAPAN requires X11R5 and a Japanese env.
  JAPANDEFS="-DJAPAN -DESCTOASCII=$(ESCTOJISLATIN) -DLENTOASCII=3 -DLOCALE_SJIS='ja_JP.SJIS' -DLOCALE_EUC='ja_JP.EUC'"
@@ -51,7 +51,13 @@
  JAPAN=
  #				# default holiday locale
  HOLIDAY=german
-@@ -218,8 +228,10 @@
+ #				# do NOT define -O2 on DEC OSF/1 machines!
+-DEBUG=-O2
++DEBUG=${CFLAGS}
+ #				# what to do without make arguments
+ DEFTARGET=linux
+ #------------------------- end of configuration section ----------------------
+@@ -222,8 +232,10 @@
  BSDIG_L2= -L/usr/X11/lib -lc
  NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
  NBSD_L2	= -L/usr/X11R6/lib -lc
@@ -64,7 +70,7 @@
  LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
  LINUX_L2= -lc
  SLINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM /usr/X11R6/lib/libXm.a -lXt -lX11 /usr/X11R6/lib/libXpm.a -lc -lXext -lSM -lICE -lX11
-@@ -285,7 +297,8 @@
+@@ -291,7 +303,8 @@
  	@echo "  make bsdi      BSDI/386"
  	@echo "  make bsdig     BSDI/386 with gcc"
  	@echo "  make netbsd    NetBSD/i386 1.0A (maybe others too)"
@@ -74,7 +80,7 @@
  	@echo "  make svr4      SVR4 Using gcc"
  	@echo "  make news4     Sony NEWS-OS4.x"
  	@echo "  make news4g    Sony NEWS-OS4.x with gcc"
-@@ -414,6 +427,9 @@
+@@ -421,6 +434,9 @@
  freebsd:
  	env CF="$(FBSD_C)" L1F="$(FBSD_L1)" L2F="$(FBSD_L2)" MYCC=${CC} make all
  
@@ -84,7 +90,7 @@
  svr4:
  	env CF="$(SVR4_C)" L1F="$(SVR4_L1)" L2F="$(SVR4_L2)" MYCC=gcc make all
  
-@@ -522,7 +538,7 @@
+@@ -533,7 +549,7 @@
  	$(MYCC) $(OPT) $(CF) $(JAPAN) $(INCDIR) -c -DLIB=\"$(LIB)\" $<
  
  holiday.o: holiday.c $(MAKEFILE)
@@ -93,7 +99,7 @@
  
  util.o: util.c $(MAKEFILE)
  	$(MYCC) $(OPT) $(CF) $(JAPAN) $(INCDIR) -c -DPATH=\"$(LIB):$(DIR):$(HELP)\" $<
-@@ -553,31 +569,25 @@
+@@ -564,31 +580,25 @@
  
  #---------------------------------------------------------------
  install:
@@ -108,7 +114,7 @@
 -	-(test x'$(JAPAN)' != x && chmod 644 $(LIB)/plan_calSJ.ps) || exit 0
 +	${INSTALL} -d $(DOCBASE)
 +	${INSTALL} -d $(EXAMPLES)
-+	${BSD_INSTALL_PROGRAM} pland $(DIR)
++	${BSD_INSTALL_PROGRAM} pland $(DIR) 
 +	${BSD_INSTALL_PROGRAM} notifier netplan plan $(DIR)
 +	${BSD_INSTALL_SCRIPT} ../misc/Killpland $(DIR)
 +	${BSD_INSTALL_MAN} ../language/plan.help ../misc/plan_cal.ps \
@@ -121,17 +127,20 @@
 -	-(test -x `which nroff` && nroff -man ../misc/plan.1 >../misc/plan.1cat) || exit 0
 -	-(test -x `which nroff` && nroff -man ../misc/plan.4 >../misc/plan.4cat) || exit 0
 -	-(test -x `which nroff` && nroff -man ../misc/netplan.1 >../misc/netplan.1cat) || exit 0
- 	-(test -d $(MAN)1 && cp ../misc/plan.1 $(MAN)1/plan.1) || exit 0
- 	-(test -d $(MAN)4 && cp ../misc/plan.4 $(MAN)4/plan.4) || exit 0
- 	-(test -d $(MAN)1 && cp ../misc/netplan.1 $(MAN)1/netplan.1) || exit 0
--	-(test -d $(CATMAN)1 && cp ../misc/plan.1cat $(CATMAN)1/plan.1) || exit 0
--	-(test -d $(CATMAN)4 && cp ../misc/plan.4cat $(CATMAN)4/plan.4) || exit 0
--	-(test -d $(CATMAN)1 && cp ../misc/netplan.1cat $(CATMAN)1/netplan.1) || exit 0
+-	-(test -d $(MAN)1 && cp ../misc/plan.1 $(MAN)1/plan) || exit 0
+-	-(test -d $(MAN)4 && cp ../misc/plan.4 $(MAN)4/plan) || exit 0
+-	-(test -d $(MAN)1 && cp ../misc/netplan.1 $(MAN)1/netplan) || exit 0
+-	-(test -d $(CATMAN)1 && cp ../misc/plan.1cat $(CATMAN)1/plan) || exit 0
+-	-(test -d $(CATMAN)4 && cp ../misc/plan.4cat $(CATMAN)4/plan) || exit 0
+-	-(test -d $(CATMAN)1 && cp ../misc/netplan.1cat $(CATMAN)1/netplan) || exit 0
 -	-(test -f ${HOME}/.holiday || cp ../holiday/holiday_$(HOLIDAY) ${HOME}/.holiday) || exit 0
 -	-(test `uname` = IRIX -o `uname` = IRIX64 && mkdir $$HOME/.icons) || exit 0
 -	-(test `uname` = IRIX -o `uname` = IRIX64 && cp ../misc/Plan.icon $$HOME/.icons/Plan.icon) || exit 0
 -	@echo ""
 -	@echo "use ../holiday/* as templates for your ~/.holiday file"
++	-(test -d $(MAN)1 && cp ../misc/plan.1 $(MAN)1/) || exit 0
++	-(test -d $(MAN)4 && cp ../misc/plan.4 $(MAN)4/) || exit 0
++	-(test -d $(MAN)1 && cp ../misc/netplan.1 $(MAN)1/) || exit 0
 +	${BSD_INSTALL_MAN} ../README $(DOCBASE)
 +	${BSD_INSTALL_DATA} ../holiday/holiday_* $(EXAMPLES)
 +	${ECHO} ""
