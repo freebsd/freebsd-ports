@@ -16,6 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		xwatchwin.1
 
-USE_X_PREFIX=	yes
+USE_IMAKE=	yes
 
 .include <bsd.port.mk>
