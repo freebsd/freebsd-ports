@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.vorbis.com/files/beta4/unix/ \
 		http://home.student.utwente.nl/t.vanklaveren/distfiles/
 
-MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
+MAINTAINER=	naddy@mips.inka.de
 
 WANT_ESOUND=	yes
 

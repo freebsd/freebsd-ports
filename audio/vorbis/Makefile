@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
+MAINTAINER=	naddy@mips.inka.de
 
 LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao \
 		ogg.1:${PORTSDIR}/audio/libogg \

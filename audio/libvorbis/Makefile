@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.vorbis.com/files/beta4/unix/ \
 		http://home.student.utwente.nl/t.vanklaveren/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
-MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
+MAINTAINER=	naddy@mips.inka.de
 
 LIB_DEPENDS=	ogg.1:${PORTSDIR}/audio/libogg
 
