@@ -9730,3 +9730,4 @@ userneu		ports/sysutils/userneu
 usogres		ports/databases/usogres
 erserver	ports/databases/erserver
 p5-Calendar-Simple	ports/devel/p5-Calendar-Simple
+p5-Class-MethodMapper	ports/devel/p5-Class-MethodMapper
