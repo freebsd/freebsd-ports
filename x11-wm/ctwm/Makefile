@@ -3,11 +3,11 @@
 # Date created:		13 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.11 1996/11/18 09:55:18 asami Exp $
+# $Id: Makefile,v 1.12 1997/04/27 18:28:07 torstenb Exp $
 #
 
-DISTNAME=	ctwm-3.5beta1
-PKGNAME=	ctwm-3.5b1
+DISTNAME=	ctwm-3.5beta3
+PKGNAME=	ctwm-3.5b3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://slhp1.epfl.ch/pub/ \
 
