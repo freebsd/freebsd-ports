@@ -14,11 +14,10 @@ MASTER_SITES=	http://snaught.com/glabels/source/
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A programm to create labels and business cards
 
-LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
 
 USE_GETOPT_LONG=yes
-USE_GNOME=	gnomehack gnomeprefix gnomelibs
+USE_GNOME=	gnomehack gnomeprefix gnomelibs libgnomeui
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

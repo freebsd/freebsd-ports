@@ -15,15 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	osip.9:${PORTSDIR}/net/libosip \
-		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		ogg.4:${PORTSDIR}/audio/libogg
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure oRTP/configure speex/configure osipua/configure
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix libgnomeui gnomepanel
 CONFIGURE_ARGS=	--disable-ipv6
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
