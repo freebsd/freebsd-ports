@@ -208,6 +208,7 @@
     SUBDIR += migemo
     SUBDIR += migemo-emacs20
     SUBDIR += migemo-emacs21
+    SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += migemo-xemacs21-mule
     SUBDIR += mimekit
     SUBDIR += ming
