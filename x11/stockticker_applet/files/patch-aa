@@ -1,0 +1,10 @@
+--- stockticker_applet.desktop.orig	Tue Aug  1 14:47:41 2000
++++ stockticker_applet.desktop	Tue Aug  1 14:49:07 2000
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Name=Stock Ticker
+ Comment=Stock Ticker Applet
+-Exec=stockticker_applet
++Exec=stockticker_applet --activate-goad-server=stockticker_applet
+ Icon=stockticker.png
+ Type=Application

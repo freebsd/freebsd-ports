@@ -1,0 +1,23 @@
+StockTicker Applet
+==================
+
+This applet displays stock quotes in the Gnome panel.
+
+
+Requirements
+============
+
+To use StockTicker, you must have:
+
+ o Gnome (including libghttp and pixbuf support)
+ o A net connection
+
+
+Running StockTicker
+===================
+
+Once installed, the ticker can be added to the panel by running it
+(stockticker_applet). You may want to add it to your applet menu by running
+gmenu.
+
+WWW: http://sourceforge.net/projects/stockticker/
