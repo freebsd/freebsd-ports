@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udmsearch
-PORTVERSION= 	3.0.20
+PORTVERSION= 	3.0.21
 CATEGORIES=	www databases
 MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
@@ -20,6 +20,7 @@ MAN5=		indexer.conf.5
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-charset-guesser \
+		--enable-freebsd-pthreads \
 		--sysconfdir=${PREFIX}/etc/udmsearch \
 		--localstatedir=/var/udmsearch
 
