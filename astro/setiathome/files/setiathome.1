@@ -1,5 +1,5 @@
 .\" Copyright status unkown
-.\" $Id$
+.\" $Id: setiathome.1,v 1.6 1999/05/18 22:40:33 stb Exp $
 .Dd May 19, 1999
 .Dt setiathome 1 LOCAL
 .Os FreeBSD
@@ -76,7 +76,7 @@ The
 .Xr nice 1
 value to run
 .Nm 
-as.
+at.
 .It Pa seti_maxprocs= Ns Va Number of CPUs
 The number of
 .Nm 
@@ -170,26 +170,29 @@ of a HTTP proxy server to download work units and upload results via.
 .Sh FILES
 .Pp
 .Bl -tag -width /var/db -compact
+.It Pa /usr/local/etc/setiathome.conf
+Optional configuration file for the start-up script.
+.It Pa /usr/local/etc/rc.d/setiathome.sh
+Start-up script.
 .It Pa /var/db/setiathome/
 Primary working directory.
 .It Pa /var/db/setiathome/user_info.txt
 Registration data.
-.It Pa /var/db/setiathome/ Ns Va n Ns /
+.It Pa /var/db/setiathome/ Ns Va n Ns Pa /
 Working directories for additional process
 .Va n
 (when running more than one instance).
 .It Pa /var/db/setiathome/ Ns Xo
-.Op Ns Va n Ns Li / Ns 
+.Op Ns Va n Ns Pa / Ns 
 .Pa lock.txt
 .Xc
 Lock file to prevent multiple instances to work on the same data.
 .It Pa /var/db/setiathome/ Ns Xo
-.Op Ns Va n Ns Li / Ns 
+.Op Ns Va n Ns Pa / Ns 
 .Pa *.txt
 .Xc
 Working files.
-.It Pa /usr/local/etc/rc.d/setiathome.sh
-Startup script.
+.El
 .Sh BUGS
 As of version 1.1, the proxy setting ignores the
 .Va port
@@ -207,6 +210,4 @@ David Gedye, Kyle Granger, Eric Korpela, Matt Lebofsky, Peter Leiser, Brad
 Silen, Woody Sullivan, and Dan Werthimer.
 .Pp
 .An Stefan Bethke <stb@freebsd.org>
-amended the original manual page for this
-.Fx
-port.
+amended the original manual page for this FreeBSD port.
