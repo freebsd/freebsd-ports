@@ -85,6 +85,7 @@
     SUBDIR += sls
     SUBDIR += sma
     SUBDIR += splitvt
+    SUBDIR += sshbuddy
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += tet
