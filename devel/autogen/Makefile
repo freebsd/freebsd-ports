@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.2.11
+PORTVERSION=	5.2.12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,18 +18,17 @@ BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure snprintfv/configure
-CONFIGURE_TARGET=	# none
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 MAN1=	autogen.1 columns.1 getdefs.1
 
 pre-patch:
+	@${PERL} -pi -e 's|regcomp=no|regcomp=yes|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|values.h ||g' ${WRKSRC}/snprintfv/configure
-
-pre-build:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/snprintfv/libtool
+	@${PERL} -pi -e 's|#include "proto.h"||g' ${WRKSRC}/getdefs/getdefs.h
 
 .include <bsd.port.mk>
