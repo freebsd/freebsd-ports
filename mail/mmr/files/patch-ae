@@ -1,20 +1,40 @@
---- mailmsg.cpp.orig	Sat Jan 29 19:09:17 2000
-+++ mailmsg.cpp	Fri Mar 31 03:37:43 2000
-@@ -142,7 +142,7 @@
- 					continue;
- 				}
- 				schar = 
--				  ((*status == ' ') ? "R" : status);
-+				  ((*status == ' ') ? (char *)"R" : status);
- 				*sptr = *schar;
- 				NewField("Status", schar);
- 				status_written = 1;
-@@ -157,7 +157,7 @@
- 			char *schar;
- 			sptr = new char[strlen("Status: ")+2+1];
- 			strcpy(sptr, "Status: ");
--			schar = ((*status == ' ') ? "R" : status);
-+			schar = ((*status == ' ') ? (char *)"R" : status);
- 			strcat(sptr, schar); strcat(sptr, "\n");
- 			QueueRing(ringbuf, sptr, strlen(sptr));
- 			delete[] sptr;
+--- mailmsg.cpp.orig	Tue May 30 01:59:06 2000
++++ mailmsg.cpp	Fri Oct 25 13:54:39 2002
+@@ -18,7 +18,7 @@
+ mailmsg::boundary[] = { "From", NULL };
+ 
+ /* This is called by a program to create a new list of messages */
+-mailmsg:: mailmsg(IObottle *mailfile, void (*oncreate)(mailmsg *ptr) = NULL)
++mailmsg:: mailmsg(IObottle *mailfile, void (*oncreate)(mailmsg *ptr))
+ {
+ 	struct mbox_data *MBox;
+ 
+@@ -173,7 +173,7 @@
+ 			/* Simple corruption check -- early end? */
+ 			if ( strncmp(newdata, "From ",
+ 					strlen("From ")) == 0 ) {
+-				cerr << "Warning: Corrupt mailfile?" << endl;
++				std::cerr << "Warning: Corrupt mailfile?" << std::cerr;
+ 				break;
+ 			}
+ 
+@@ -338,7 +338,7 @@
+ 
+ /* See/Set the status of the message */
+ const char *
+-mailmsg:: Status(int in_listing = 0)
++mailmsg:: Status(int in_listing)
+ {
+ 	/* Thread aware. :) */
+ 	if ( in_listing && (mbox->showthreads == HIDE_THREADS) ) {
+@@ -664,8 +664,8 @@
+ 
+ 		/* Sanity check */
+ 		if ( i != (strlen(newsubject)-RElen) ) {
+-			cerr << "Warning: RE stripping: possible corruption!"
+-								<< endl;
++			std::cerr << "Warning: RE stripping: possible corruption!"
++								<< std::cerr;
+ 		}
+ 
+ 		/* Make it the new subject */
