@@ -1,0 +1,32 @@
+******************************
+**      About YaTeX         **
+******************************
+YaTeX automates typesetting and previewing of LaTeX and enables
+completing input of LaTeX mark-up command such as `\begin{}'..`\end{}'.
+
+YaTeX also supports Demacs which runs on MS-DOS(386), Mule (Multi
+Language Enhancement to GNU Emacs), and latex on DOS.
+
+You need to adjust your init file, ~/.emacs.  This port has a setup
+script 'user-install'. Please execute it as the following:
+
+sh /usr/local/share/doc/yatex/user-install
+
+and check ~/.emacs. To get more setup information, see the info file
+of YaTeX,
+
+Installation::
+Customizations => Lisp variables::
+
+******************************
+**      About yahtml        **
+******************************
+Yahtml is a brand new package for writing HTML files with Emacs. It is
+very far from html-mode, html-helper-mode or other existing HTML modes.
+It is a good successor of YaTeX in HTML world.
+
+To install yahtml, see the guidance in the beginning of
+site-lisp/yatex/yahtml.el.
+
+- S. Taoka
+taoka@infonets.hiroshima-u.ac.jp
