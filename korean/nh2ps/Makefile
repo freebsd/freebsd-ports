@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 08:46:49 asami Exp $
 #
 
 DISTNAME=	nh2ps-1.0p1
@@ -13,9 +13,8 @@ MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nh2ps/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-# it depends on HLaTeX-0.95(ps) fonts and perl-5.004
-RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:${PORTSDIR}/korean/hlatexpsfonts \
-		perl5.004:${PORTSDIR}/lang/perl5
+# it depends on HLaTeX-0.95(ps) fonts
+RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:${PORTSDIR}/korean/hlatexpsfonts
 
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 MAN1=		nh2ps.1
