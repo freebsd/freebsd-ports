@@ -1,4 +1,4 @@
-This is the CU version of sudo, release 1.5.4.
+This is the CU version of sudo.
 
 Sudo is a program designed to allow a sysadmin to give limited root privileges
 to users and log root activity.  The basic philosophy is to give as few
@@ -12,3 +12,5 @@ version of sudo is released.  You can subscribe to it by sending a
 message to "majordomo@courtesan.com" that includes the line
 "subscribe sudo-announce".  There is also a list for people working
 on sudo.  The command to add yourself is "subscribe sudo-workers".
+
+WWW: http://www.courtesan.com/sudo/
