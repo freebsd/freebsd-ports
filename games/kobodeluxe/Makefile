@@ -9,8 +9,7 @@ PORTNAME=	kobodeluxe
 PORTVERSION=	0.4.p8
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://olofson.net/skobo/download/ \
-		http://olofson.net/download/
+MASTER_SITES=	http://olofson.net/kobodl/download/
 DISTNAME=	KoboDeluxe-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
