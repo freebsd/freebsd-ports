@@ -133,6 +133,7 @@ include/fxt/comb/comblex.h
 include/fxt/comb/combminchange.h
 include/fxt/comb/compositionlex.h
 include/fxt/comb/debruijn.h
+include/fxt/comb/equivclasses.h
 include/fxt/comb/gray.h
 include/fxt/comb/lyndongray.h
 include/fxt/comb/mixedradix.h
@@ -153,7 +154,10 @@ include/fxt/complextype.h
 include/fxt/convolution-all.h
 include/fxt/convolution/convolution.h
 include/fxt/convolution/slowcnvl.h
+include/fxt/convolution/slowcnvla.h
+include/fxt/convolution/slowcnvlhalf.h
 include/fxt/convolution/slowtwodimcnvl.h
+include/fxt/convolution/slowweightedcnvl.h
 include/fxt/correlation-all.h
 include/fxt/correlation/correlation.h
 include/fxt/correlation/slowcorr.h
@@ -290,10 +294,12 @@ include/fxt/sort/minmaxptr.h
 include/fxt/sort/minmaxptrfunc.h
 include/fxt/sort/monotone.h
 include/fxt/sort/quantize.h
+include/fxt/sort/radixsort.h
 include/fxt/sort/searchdown.h
 include/fxt/sort/sort.h
 include/fxt/sort/sort23.h
 include/fxt/sort/sort23func.h
+include/fxt/sort/sortbykey.h
 include/fxt/sort/sortcomplex.h
 include/fxt/sort/sortfunc.h
 include/fxt/sort/sortidx.h
