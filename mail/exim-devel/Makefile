@@ -1,15 +1,15 @@
 # New ports collection makefile for:	exim
-# Version required:	2.05
+# Version required:	2.053
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.17 1998/10/12 18:48:52 jseger Exp $
+# $Id: Makefile,v 1.18 1998/10/13 04:16:21 jseger Exp $
 #
 
-DISTNAME=	exim-2.05
+DISTNAME=	exim-2.053
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/
-DISTFILES=	exim-2.05.tar.gz exim-texinfo-2.00.tar.gz
+MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/Testing/
+DISTFILES=	exim-testing-2.053.tar.gz exim-texinfo-2.00.tar.gz
 
 MAINTAINER=	axl@iafrica.com
 
@@ -17,13 +17,14 @@ USE_PERL5=	YES
 
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
-	if [ ! -d ${X11BASE} ] ; then \
+	if [ -d ${X11BASE} ] ; then \
 		${SED} -e "s#XX_PREFIX_XX#${PREFIX}#" \
-		    < ${FILESDIR}/Makefile.no_eximon \
+		    < ${FILESDIR}/Makefile \
 		    > ${WRKSRC}/Local/Makefile ; \
 	else \
 		${SED} -e "s#XX_PREFIX_XX#${PREFIX}#" \
 		    < ${FILESDIR}/Makefile \
+		    | ${SED} -e "s/^EXIM_MONITOR/#EXIM_MONITOR/" \
 		    > ${WRKSRC}/Local/Makefile ; \
 	fi
 	${CP} ${FILESDIR}/eximon.conf ${WRKSRC}/Local
@@ -34,13 +35,10 @@ do-configure:
 	done
 
 post-build:
-	if [ ! -d ${X11BASE} ] ; then \
-		${INSTALL_SCRIPT} ${FILESDIR}/eximon ${FILESDIR}/eximon.bin \
-		    ${WRKSRC}/build-FreeBSD-i386 ; \
-	fi
+	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${WRKSRC}/build-FreeBSD-i386
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${PERL5} ${PKGDIR}/INSTALL \
-	    exim-2.02 POST-INSTALL
+	    exim-2.053 POST-INSTALL
 
 .include <bsd.port.mk>

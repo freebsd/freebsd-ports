@@ -1,112 +1,137 @@
---- scripts/exim_install.orig	Mon Aug  3 12:27:33 1998
-+++ scripts/exim_install	Wed Oct  7 11:49:23 1998
-@@ -8,6 +8,8 @@
- # This script also installs a default configuration file in CONFIGURE_FILE
- # if there is no configuration file there.
- 
-+# This script also installs a .info file in INFO_DIRECTORY if required.
-+
- # The script can be made to output what it would do, without actually doing
- # anything, by giving it the option "-n" (cf make). Arguments are the names
- # of things to install. No arguments installs everything.
-@@ -65,10 +67,12 @@
+--- scripts/exim_install.orig	Mon Nov  9 19:01:40 1998
++++ scripts/exim_install	Thu Nov 12 15:26:57 1998
+@@ -121,18 +121,4 @@
  fi
  
- BIN_DIRECTORY=`grep "^ *BIN_DIRECTORY=" $files | tail -1 | cut -f2-99 -d: | cut -c15-99`
-+INFO_DIRECTORY=`grep "^ *INFO_DIRECTORY=" $files | tail -1 | cut -f2-99 -d: | cut -c16-99`
- CONFIGURE_FILE=`grep "^ *CONFIGURE_FILE=" $files | tail -1 | cut -f2-99 -d: | cut -c16-99`
+-# If info directory is needed and doesn't exist, try to create it
+-
+-if [ "${INFO_DIRECTORY}" != "" -a ! -d "${INFO_DIRECTORY}" ]; then
+-  echo mkdir -p ${INFO_DIRECTORY}
+-  ${real} mkdir -p ${INFO_DIRECTORY}
+-  if [ $? -ne 0 ]; then
+-    echo $com ""
+-    echo $com "**** Exim installation ${ver}failed ****"
+-    exit 1
+-  else
+-    echo $com ${INFO_DIRECTORY} created
+-  fi
+-fi
+-
+ # If no arguments, install everything
  
- # Allow INST_xx to over-ride xx
- case "$INST_BIN_DIRECTORY" in ?*) BIN_DIRECTORY="$INST_BIN_DIRECTORY";; esac
-+case "$INST_INFO_DIRECTORY" in ?*) INFO_DIRECTORY="$INST_INFO_DIRECTORY";; esac
- case "$INST_CONFIGURE_FILE" in ?*) CONFIGURE_FILE="$INST_CONFIGURE_FILE";; esac
- case "$INST_UID"   in '') INST_UID=root;; *) INST_UID="$INST_UID";; esac
- case "$INST_CP"    in '') CP=cp;;         *) CP="$INST_CP";; esac
-@@ -79,6 +83,7 @@
- # Allow the user to over-ride xx
- case "$inst_dest"  in ?*) BIN_DIRECTORY="$inst_dest";; esac
- case "$inst_conf"  in ?*) CONFIGURE_FILE="$inst_conf";; esac
-+case "$inst_info"  in ?*) INFO_DIRECTORY="$inst_info";; esac
- case "$inst_uid"   in ?*) INST_UID="$inst_uid";; esac
- case "$inst_cp"    in ?*) CP="$inst_cp";; esac
- case "$inst_mv"    in ?*) MV="$inst_mv";; esac
-@@ -113,6 +118,20 @@
-   fi
- fi
+@@ -202,4 +188,24 @@
  
-+# If info directory doesn't exist, try to create it
+ 
++# Install exim.sh startup script in FreeBSD's ${PREFIX}/etc/rc.d so that
++# exim will start up on boot once sendmail is disabled and
++# ${PREFIX}/etc/exim/configure is in place.
 +
-+if [ ! -d ${INFO_DIRECTORY} ]; then
-+  echo mkdir -p ${INFO_DIRECTORY}
-+  ${real} mkdir -p ${INFO_DIRECTORY}
++echo $com ""
++
++if [ -f ${PREFIX}/etc/rc.d/exim.sh ]; then
++  echo $com "${PREFIX}/etc/rc.d/exim.sh exists, not overwritten"
++else
++  echo $com "Installing exim.sh startup script in $PREFIX/etc/rc.d"
++  ${real} mkdir -p ${PREFIX}/etc/rc.d
++  echo ${CP} -p exim.sh ${PREFIX}/etc/rc.d/
++  ${real} ${CP} -p exim.sh ${PREFIX}/etc/rc.d/
 +  if [ $? -ne 0 ]; then
 +    echo $com ""
 +    echo $com "**** Exim installation ${ver}failed ****"
 +    exit 1
-+  else
-+    echo $com ${INFO_DIRECTORY} created
 +  fi
-+fi              
-+
- # If no arguments, install everything
- 
- if [ $# -gt 0 ]; then
-@@ -179,23 +198,44 @@
-   fi
- done
- 
--# If there is no configuration file, install the default,
--# building the lib directory if necessary.
-+echo $com ""
-+echo $com Installation directory is ${INFO_DIRECTORY}
-+echo $com ""
-+
-+if [ -f ../doc/spec.texinfo ]; then
-+    makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
-+    echo ${CP} exim_overview.info ${INFO_DIRECTORY}
-+    ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
-+    install-info --section="Exim" \
-+        --entry "* Overview: (exim_overview).    Overview of the Exim system" \
-+        ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
-+    makeinfo --no-split --output exim.info ../doc/spec.texinfo
-+    echo ${CP} exim.info ${INFO_DIRECTORY}
-+    ${real} ${CP} exim.info ${INFO_DIRECTORY}
-+    install-info --section="Exim" \
-+        --entry "* User guide: (exim).           Exim manual" \
-+        ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
-+    makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
-+    echo ${CP} exim_filter.info ${INFO_DIRECTORY}
-+    ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
-+    install-info --section="Exim" \
-+        --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
-+        ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
 +fi
 +
-+# Install a sample configuration file
  
+ # If there is no configuration file, install the default,
+@@ -208,7 +214,6 @@
  echo $com ""
  
 -if [ ! -f ${CONFIGURE_FILE} ]; then
 -  echo $com Installing default configuration in ${CONFIGURE_FILE}
 -  echo $com because there is no existing configuration file.
--  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
--  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
--  if [ $? -ne 0 ]; then
--    echo $com ""
--    echo $com "**** Exim installation ${ver}failed ****"
--    exit 1
--  fi
++  echo $com Installing sample configuration file
++  ${real} mkdir -p ${CONFIGURE_FILE%/*}
+   echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
+   ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
+@@ -218,44 +223,44 @@
+     exit 1
+   fi
 -else
 -  echo $com Configuration file ${CONFIGURE_FILE} already exists
-+echo mkdir -p `dirname ${CONFIGURE_FILE}`
-+${real} mkdir -p `dirname ${CONFIGURE_FILE}`
-+echo $com Installing a sample configuration in ${CONFIGURE_FILE}.sample
-+echo ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
-+${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
-+if [ $? -ne 0 ]; then
-+  echo $com ""
-+  echo $com "**** Exim installation ${ver}failed ****"
-+  exit 1
- fi
+-fi
  
- echo $com ""
+-# Install info files if required; the existence of the directory is
+-# tested above.
++# Install info files if the directory is defined and the Texinfo
++# source documentation is present.
+ 
+-##### This enhancement is awaiting a shell equivalent of FreeBSD's
+-##### 'install-info' command.
++if [ "${INFO_DIRECTORY}" != "" -a -f ../doc/spec.texinfo ] ; then
++  echo $com ""
++  if [ ! -d "${INFO_DIRECTORY}" ] ; then
++    echo mkdir -p ${INFO_DIRECTORY}
++    ${real} mkdir -p ${INFO_DIRECTORY}
++    if [ $? -ne 0 ]; then
++      echo $com ""
++      echo $com "**** Exim installation ${ver}failed ****"
++      exit 1
++    else
++      echo $com ${INFO_DIRECTORY} created
++    fi
++  fi
+ 
++  echo $com Info installation directory is ${INFO_DIRECTORY}
++  echo $com ""
+ 
+-# if [ "${INFO_DIRECTORY}" != "" ] ; then
+-#   echo $com ""
+-#   echo $com Info installation directory is ${INFO_DIRECTORY}
+-#   echo $com ""
+-#
+-#   if [ -f ../doc/spec.texinfo ]; then
+-#     makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
+-#     echo ${CP} exim_overview.info ${INFO_DIRECTORY}
+-#     ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
+-#     install-info --section="Exim" \
+-#         --entry "* Overview: (exim_overview).    Overview of the Exim system" \
+-#         ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
+-#     makeinfo --no-split --output exim.info ../doc/spec.texinfo
+-#     echo ${CP} exim.info ${INFO_DIRECTORY}
+-#     ${real} ${CP} exim.info ${INFO_DIRECTORY}
+-#     install-info --section="Exim" \
+-#         --entry "* User guide: (exim).           Exim manual" \
+-#         ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
+-#     makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
+-#     echo ${CP} exim_filter.info ${INFO_DIRECTORY}
+-#     ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
+-#     install-info --section="Exim" \
+-#         --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
+-#         ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
+-#   else
+-#     echo $com "**** Texinfo documentation not found in doc directory ****"
+-#     exit 1
+-#   fi
+-# fi
++  makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
++  echo ${CP} exim_overview.info ${INFO_DIRECTORY}
++  ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
++  install-info --section="Exim" \
++      --entry "* Overview: (exim_overview).    Overview of the Exim system" \
++      ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
++  makeinfo --no-split --output exim.info ../doc/spec.texinfo
++  echo ${CP} exim.info ${INFO_DIRECTORY}
++  ${real} ${CP} exim.info ${INFO_DIRECTORY}
++  install-info --section="Exim" \
++      --entry "* User guide: (exim).           Exim manual" \
++      ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
++  makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
++  echo ${CP} exim_filter.info ${INFO_DIRECTORY}
++  ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
++  install-info --section="Exim" \
++      --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
++      ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
++fi
+ 
+ # Everything OK
