@@ -23,7 +23,9 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
-BROKEN=		Conflicting dependencies (linux-base 7.x and 8.x)
+BROKEN=		"Conflicting dependencies (linux-base 7.x and 8.x)"
+DEPRECATED=	supplanted by native version in emulators/mupen64
+EXPIRATION_DATE=2004-12-06
 
 USE_BZIP2=	yes
 
