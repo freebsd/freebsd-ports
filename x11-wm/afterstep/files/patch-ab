@@ -1,0 +1,77 @@
+*** sample.steprc.orig	Thu May 30 20:59:02 1996
+--- sample.steprc	Wed Jul 17 12:44:02 1996
+***************
+*** 71,79 ****
+  ##########################################################################
+  # Module path
+  # ModulePath is a colon-separated list, just like regular unix PATH
+! ModulePath          /usr/X11R6/lib/X11/fvwm:/usr/X11R6/lib/X11/afterstep
+! PixmapPath          /usr/include/X11/pixmaps/
+! IconPath            /usr/include/X11/bitmaps/
+  NoBoundaryWidth 0
+  BoundaryWidth 8
+  Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
+--- 71,79 ----
+  ##########################################################################
+  # Module path
+  # ModulePath is a colon-separated list, just like regular unix PATH
+! ModulePath          /usr/X11R6/lib/X11/afterstep:/usr/X11R6/lib/X11/fvwm
+! PixmapPath          /usr/X11R6/include/X11/pixmaps/
+! IconPath            /usr/X11R6/include/X11/bitmaps/
+  NoBoundaryWidth 0
+  BoundaryWidth 8
+  Style "oclock" Sticky, NoTitle, StaysOnTop, WindowListSkip
+***************
+*** 94,109 ****
+  *Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
+  *Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
+  *Wharf xterm monitor.xpm   Exec "-" xterm -e tcsh -l &
+! *Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
+! *Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
+  #*Wharf tkdate nil Swallow "tkdate" tkdate -geometry -1-1 &
+  *Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
+  *Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
+! *Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
+  *Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
+! *Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
+! *Wharf Recycler  recycler.xpm  Restart " " afterstep
+! *Wharf Shutdown	 shutdown.xpm  Quit 
+  ##########################################################################
+  
+  
+--- 94,109 ----
+  *Wharf xbiff   nil   Swallow "xbiff" xbiff -bg "#8e8a9e" -fg "#00003f" -geometry 45x45-1-1 &
+  *Wharf xload  nil   Swallow "xload" xload -nolabel -hl black -bg "#8e8a9e" -geometry 45x45-1-1 &
+  *Wharf xterm monitor.xpm   Exec "-" xterm -e tcsh -l &
+! #*Wharf lyx text.xpm Exec "-" /home/frank/bin/lyx &>/dev/null &
+! #*Wharf gimp 3dpaint.xpm Exec "-" gimp -geometry +15+373 &
+  #*Wharf tkdate nil Swallow "tkdate" tkdate -geometry -1-1 &
+  *Wharf pine writeletter.xpm Exec "-" xterm -T "pine" -e pine &
+  *Wharf Netscape netscape3.xpm Exec "-" netscape -geometry 680x565+400+2 &
+! #*Wharf moxfm FilingCabinet.xpm Exec "-" moxfm >& /dev/null &
+  *Wharf pager nil SwallowModule "FvwmPager" FvwmPager 0 0
+! #*Wharf config interface.xpm Exec "-" xterm -T "vi(.steprc)" -e vim -n ~/.steprc &
+! *Wharf Recycler recycler.xpm  Restart " " afterstep
+! *Wharf Shutdown	shutdown.xpm  Quit 
+  ##########################################################################
+  
+  
+***************
+*** 218,225 ****
+  Popup "HotList"
+  	Title 	"HotList"
+          Exec    "Xterm"         exec xterm -e tcsh -l &
+!         Exec    "Netscape 1.12" exec netscape.12 -geometry 585x565 &
+!         Exec    "Netscape 3.0"  exec netscape -geometry 680x565 &
+          Nop     ""
+          Popup   "Applications"  Applications
+          Nop     ""
+--- 218,225 ----
+  Popup "HotList"
+  	Title 	"HotList"
+          Exec    "Xterm"         exec xterm -e tcsh -l &
+!         Exec    "Rxvt"                exec rxvt -fat&
+!         Exec    "Netscape"  exec netscape -geometry 680x565 &
+          Nop     ""
+          Popup   "Applications"  Applications
+          Nop     ""

@@ -1,0 +1,59 @@
+*** configure.h.orig	Wed Jul 17 10:35:47 1996
+--- configure.h	Wed Jul 17 10:36:27 1996
+***************
+*** 1,10 ****
+! #define AFTERDIR     "/usr/lib/X11/afterstep"
+! #define AFTER_ICONDIR   "/usr/include/X11/bitmaps:/usr/include/X11/pixmaps"
+! #define STEPRC         "/usr/lib/X11/afterstep/system.steprc"
+  
+  /* Imake command needed to put modules in desired target location */
+  /* Use the second version if it causes grief */
+! #define TARGET_DIR BINDIR=AFTERDIR 
+  /* #define TARGET_DIR*/
+  
+  
+--- 1,10 ----
+! #define AFTERDIR     "@@PREFIX@@/lib/X11/afterstep"
+! #define AFTER_ICONDIR   "@@PREFIX@@/include/X11/bitmaps:@@PREFIX@@/include/X11/pixmaps"
+! #define STEPRC         "@@PREFIX@@/lib/X11/afterstep/system.steprc"
+  
+  /* Imake command needed to put modules in desired target location */
+  /* Use the second version if it causes grief */
+! #define TARGET_DIR BINDIR=AFTERDIR
+  /* #define TARGET_DIR*/
+  
+  
+***************
+*** 12,18 ****
+   * Imake wants to leave binaries, then choose the second line here.
+   * If you want to install it in a different directory, uncomment and
+   * edit the first line */
+! #define AFTER_BIN_DIR BINDIR=/usr/bin/X11
+  
+  /* Compiler over-ride for Imakefiles */
+  /* Leave it as shown to get your default compiler */
+--- 12,18 ----
+   * Imake wants to leave binaries, then choose the second line here.
+   * If you want to install it in a different directory, uncomment and
+   * edit the first line */
+! #define AFTER_BIN_DIR BINDIR=@@PREFIX@@/bin
+  
+  /* Compiler over-ride for Imakefiles */
+  /* Leave it as shown to get your default compiler */
+***************
+*** 54,60 ****
+   ***************************************************************************/
+  #define XPM                      
+  /*  linker flags needed to locate and link in the Xpm library, if you use it */
+! #define XPMLIBRARY -L/usr/lib/X11 -lXpm 
+  
+  /***************************************************************************
+   *#define M4
+--- 54,60 ----
+   ***************************************************************************/
+  #define XPM                      
+  /*  linker flags needed to locate and link in the Xpm library, if you use it */
+! #define XPMLIBRARY -L@@PREFIX@@/lib -lXpm 
+  
+  /***************************************************************************
+   *#define M4
