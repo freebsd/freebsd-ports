@@ -8,7 +8,9 @@ bin/dctc
 %%PORTDOCS%%share/doc/dctc/Documentation/DCextensions/search_by_content
 %%PORTDOCS%%share/doc/dctc/Documentation/GDL
 %%PORTDOCS%%share/doc/dctc/Documentation/GDL.nl
+%%PORTDOCS%%share/doc/dctc/Documentation/UNODE
 %%PORTDOCS%%share/doc/dctc/Documentation/VAR
+%%PORTDOCS%%share/doc/dctc/Documentation/Vshare
 %%PORTDOCS%%share/doc/dctc/Documentation/commands
 %%PORTDOCS%%share/doc/dctc/Documentation/output
 %%PORTDOCS%%share/doc/dctc/Documentation/programs
