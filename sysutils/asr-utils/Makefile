@@ -9,7 +9,8 @@
 PORTNAME=	asr-utils
 PORTVERSION=	3.04
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.adaptec.com/raid/u160raid/unix/
+MASTER_SITES=	http://download.adaptec.com/raid/u160raid/unix/ \
+		ftp://ftp.adaptec.com/raid/u160raid/unix/
 DISTNAME=	u160raid_sm_v304_fbsd411
 EXTRACT_SUFX=	.tgz
 
