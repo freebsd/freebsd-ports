@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	http://gBackGround.sourceforge.net/
 DISTNAME=	gBackGround-1.0.0-beta2
 
-MAINTAINER=	smoberly@xavier.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GNOME=	gnomelibs libpanel
 USE_GNOMENG=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.idiap.ch/~gobry/bulb/
 
-MAINTAINER=	smoberly@xavier.dyndns.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
