@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gurlchecker
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	www gnome
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
+		http://labs.libre-entreprise.org/download.php/57/
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable/0.6
 
 MAINTAINER=	einekoai@chello.nl

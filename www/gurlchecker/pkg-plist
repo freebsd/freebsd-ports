@@ -1,23 +1,4 @@
 bin/gurlchecker
-share/gnome/gurlchecker/pixmaps/gURLChecker.png
-share/gnome/gurlchecker/pixmaps/gURLChecker_icon.png
-share/gnome/gurlchecker/pixmaps/link_status_bad.png
-share/gnome/gurlchecker/pixmaps/link_status_file_error.png
-share/gnome/gurlchecker/pixmaps/link_status_good.png
-share/gnome/gurlchecker/pixmaps/link_status_ignored.png
-share/gnome/gurlchecker/pixmaps/link_status_mail_bad.png
-share/gnome/gurlchecker/pixmaps/link_status_mail_good.png
-share/gnome/gurlchecker/pixmaps/link_status_malformed.png
-share/gnome/gurlchecker/pixmaps/link_status_nodata.png
-share/gnome/gurlchecker/pixmaps/link_status_restricted.png
-share/gnome/gurlchecker/pixmaps/link_status_timeout.png
-share/gnome/gurlchecker/pixmaps/link_type_frame.png
-share/gnome/gurlchecker/pixmaps/link_type_href.png
-share/gnome/gurlchecker/pixmaps/link_type_href_local.png
-share/gnome/gurlchecker/pixmaps/link_type_image.png
-share/gnome/gurlchecker/pixmaps/link_type_image_local.png
-share/gnome/gurlchecker/pixmaps/link_type_mail.png
-share/gnome/gurlchecker/pixmaps/link_type_unknown.png
 share/gnome/gurlchecker/ui/gURLChecker.png
 share/gnome/gurlchecker/ui/gURLChecker_icon.png
 share/gnome/gurlchecker/ui/gurlchecker.glade
@@ -31,6 +12,7 @@ share/gnome/gurlchecker/ui/link_status_malformed.png
 share/gnome/gurlchecker/ui/link_status_nodata.png
 share/gnome/gurlchecker/ui/link_status_restricted.png
 share/gnome/gurlchecker/ui/link_status_timeout.png
+share/gnome/gurlchecker/ui/link_type_folder.png
 share/gnome/gurlchecker/ui/link_type_frame.png
 share/gnome/gurlchecker/ui/link_type_href.png
 share/gnome/gurlchecker/ui/link_type_href_local.png
@@ -38,6 +20,9 @@ share/gnome/gurlchecker/ui/link_type_image.png
 share/gnome/gurlchecker/ui/link_type_image_local.png
 share/gnome/gurlchecker/ui/link_type_mail.png
 share/gnome/gurlchecker/ui/link_type_unknown.png
+share/gnome/gurlchecker/ui/menu_new_bookmarks_file.png
+share/gnome/gurlchecker/ui/menu_new_local_file.png
+share/gnome/gurlchecker/ui/menu_new_web_site.png
 share/locale/da/LC_MESSAGES/gurlchecker.mo
 share/locale/de/LC_MESSAGES/gurlchecker.mo
 share/locale/eo/LC_MESSAGES/gurlchecker.mo
@@ -55,5 +40,4 @@ share/locale/ja/LC_MESSAGES/gurlchecker.mo
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
 @dirrm share/gnome/gurlchecker/ui
-@dirrm share/gnome/gurlchecker/pixmaps
 @dirrm share/gnome/gurlchecker
