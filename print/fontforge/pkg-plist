@@ -1,5 +1,6 @@
 bin/pfaedit
 bin/sfddiff
+bin/acorn2sfd
 %%PORTDOCS%%share/doc/pfaedit/AA-Comparison.html
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV-bm.png
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV.png
