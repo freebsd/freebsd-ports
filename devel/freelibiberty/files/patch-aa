@@ -1,0 +1,9 @@
+--- Makefile.orig	Fri Nov 26 02:08:36 1999
++++ Makefile	Fri Nov 26 02:08:49 1999
+@@ -17,5 +17,6 @@
+ 
+ SHLIB_MAJOR=    1
+ SHLIB_MINOR=	0
++NOPROFILE=	yes
+ 
+ .include <bsd.lib.mk>
