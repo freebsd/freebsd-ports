@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun Jan 28 03:45:52 2001
++++ Makefile	Tue Nov 12 13:29:56 2002
+@@ -14,18 +14,15 @@
+ 
+ # DO NOT ADD OR MODIFY ANY LINES ABOVE THIS -- make source creates them
+ 
+-CC=gcc
+-CFLAGS=-O3 -pipe		# FreeBSD
+ #CC=c89 +O3			# HP
+ #CFLAGS= -D_HPUX_SOURCE -DSYSV
+ #CFLAGS=-O4 -DSVR4		# Sun
+ #CFLAGS=-O -qchars=signed	# RS/6000
+ #DEFINES=-DAUTOCONF -DPOSIX -DUSG	# Linux
+ #DEFINES=-DAUTOCONF
+-DEFINES=-I/usr/include		# FreeBSD
+ #LIBS=-ltermcap			# BSD
+ #LIBS=-lcurses			# SYSV
+-LIBS=-ltermlib -lcompat
++LIBS+=-ltermlib -lcompat
+ #LIBS=-L/usr/lib/termcap -ltermcap
+ LFLAGS=-hbx
+ BINDIR=/usr/local/bin		# Linux & FreeBSD

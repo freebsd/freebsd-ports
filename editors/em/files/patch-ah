@@ -1,0 +1,11 @@
+--- readme.orig	Sat Jan 27 05:10:56 2001
++++ readme	Mon Dec 31 19:08:46 2001
+@@ -191,6 +191,8 @@
+ 
+ January 27, 2001
+ 
++4.0.17. Added check for file access permission. (automatic VIEW mode select)
++
+ Tadashi Yumoto
+ Forks Inc.
+ 

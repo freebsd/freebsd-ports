@@ -1,0 +1,27 @@
+--- emacs.rc.orig	Sat May 21 19:40:58 1994
++++ emacs.rc	Mon Dec 31 19:08:46 2001
+@@ -205,6 +205,15 @@
+ 	set %rctmp &mid $cfname &add %rctmp 1 5
+ 	!if &or &seq %rctmp "c" &seq %rctmp "h"
+ 		add-mode "cmode"
++		set $tab 4
++	!endif
++	!if &or &seq %rctmp "pm" &seq %rctmp "cgi"
++		add-mode "cmode"
++		set $tab 4
++	!endif
++	!if &or &seq %rctmp "pl" &seq %rctmp "cpp"
++		add-mode "cmode"
++		set $tab 4
+ 	!endif
+ 	!if &or &seq %rctmp "txt" &or &seq %rctmp "doc" &or &seq %rctmp "tmp" &seq %rctmp "tex"
+ 		add-mode "wrap"
+@@ -281,5 +290,8 @@
+ 		!force execute-file ".emrc"
+ 	!endif
+ !endif
++
++add-global-mode "EXACT"
++bind-to-key execute-macro	^X^E
+ 
+ set $discmd "TRUE"
