@@ -3,7 +3,7 @@
 # Date created:				2 April 1997
 # Whom:	Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
-# $Id: Makefile,v 1.5 1997/05/12 06:33:23 max Exp $
+# $Id: Makefile,v 1.6 1998/08/07 22:17:51 asami Exp $
 #
 
 DISTNAME=		cal-3.5
@@ -11,7 +11,7 @@ CATEGORIES=		deskutils
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/shell
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	sanpei@sanpei.org
 
 WRKSRC=		${WRKDIR}/cal-3.5/source
 MAKEFILE=	makefile.unx
@@ -20,6 +20,8 @@ MAN1=		cal.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cal ${PREFIX}/bin/cal
+	${MV} ${WRKSRC}/cal.1 ${WRKSRC}/cal.1.orig
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/cal.1.orig > ${WRKSRC}/cal.1
 	${INSTALL_MAN}  ${WRKSRC}/cal.1 ${PREFIX}/man/man1/cal.1
 	@${MKDIR} ${PREFIX}/etc/cal
 	@chmod 0755  ${PREFIX}/etc/cal

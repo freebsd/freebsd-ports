@@ -1,0 +1,17 @@
+--- cal.1.orig	Sat Jul  6 02:55:52 1996
++++ cal.1	Mon Mar 29 16:02:33 1999
+@@ -375,12 +375,12 @@
+ .TP
+ .B caldat
+ .TP
+-.B /usr/lib/caldat
++.B %%PREFIX%%/etc/cal/caldat
+ Unix global date files
+ .TP
+ .B calcol
+ .TP
+-.B /usr/lib/calcol
++.B %%PREFIX%%/etc/cal/calcol
+ Unix global color files
+ .TP
+ .B ~/.dates
