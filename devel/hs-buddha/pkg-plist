@@ -47,6 +47,7 @@ lib/buddha-%%BUDDHA_VERSION%%/PartialByName.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/PartialByVal.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Prelude.i
 lib/buddha-%%BUDDHA_VERSION%%/Prelude_B.p_hi
+lib/buddha-%%BUDDHA_VERSION%%/PrettyCycle.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/PrettyGraph.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/Prims_B.p_hi
 lib/buddha-%%BUDDHA_VERSION%%/PrintMetaHs.p_hi
