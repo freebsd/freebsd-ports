@@ -31,6 +31,7 @@
     SUBDIR += ines
     SUBDIR += libvm68k
     SUBDIR += linux-peops-softgpu
+    SUBDIR += linux-peops-spu
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux-winetools
     SUBDIR += linux_base

@@ -1,0 +1,12 @@
+lib/linux-psemupro/plugins/libspuPeopsOSS.so.1.0.3
+libexec/linux-psemupro/cfg/cfgPeopsOSS
+share/linux-psemupro/cfg/spuPeopsOSS.cfg
+@dirrm lib/linux-psemupro/plugins
+@dirrm lib/linux-psemupro
+@dirrm libexec/linux-psemupro/cfg
+@dirrm libexec/linux-psemupro
+@dirrm share/linux-psemupro/cfg
+@dirrm share/linux-psemupro
+%%PORTDOCS%%share/doc/linux-peops-spu/readme_1_3.txt
+%%PORTDOCS%%share/doc/linux-peops-spu/version_1_3.txt
+%%PORTDOCS%%@dirrm share/doc/linux-peops-spu
