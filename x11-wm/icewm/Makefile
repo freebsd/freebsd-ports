@@ -65,6 +65,10 @@ CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif
 
+.if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XINERAMA)
+CONFIGURE_ARGS+=	--disable-xinerama
+.endif
+
 .if ${ARCH} != "i386" || defined(WITHOUT_X86_ASM)
 CONFIGURE_ARGS+=	--disable-x86-asm
 .endif
