@@ -20,12 +20,14 @@ RUN_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
+USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail
 OWDATADIR=	${PREFIX}/www/data/openwebmail
 PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
+PLIST=		${WRKDIR}/.PLIST.openwebmail
 
 .if defined(WITH_SPEEDYCGI)
 BUILD_DEPENDS+=	${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI
@@ -78,13 +80,18 @@ post-patch:
 .endif
 
 do-install:
-	@${CP} -R ${WRKSRC}/cgi-bin/openwebmail/ ${OWCGIDIR}
-	@${CP} -R ${WRKSRC}/data/openwebmail/ ${OWDATADIR}
+	@${MKDIR} ${OWCGIDIR:S,${PORTNAME},,}
+	@cd ${WRKSRC}/cgi-bin && ${TAR} cf - ${PORTNAME} | (cd ${OWCGIDIR:S,${PORTNAME},,}; ${TAR} xf -)
+	@${MKDIR} ${OWDATADIR:S,${PORTNAME},,}
+	@cd ${WRKSRC}/data && ${TAR} cf - ${PORTNAME} | (cd ${OWDATADIR:S,${PORTNAME},,}; ${TAR} xf -)
 	@${CHOWN} -R root:mail ${OWCGIDIR}
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/sessions ${OWCGIDIR}/etc/users
 	@${CHMOD} 4755 ${OWCGIDIR}/openwebmail*pl
 	@${PERL} ${OWCGIDIR}/uty/wrapsuid.pl ${OWCGIDIR}
 	@${OWCGIDIR}/openwebmail-tool.pl --init --no
 	@${FIND} ${OWCGIDIR} \( -name "*.bak" -or -name "*.orig" \) -delete
+	@${RM} -f ${PLIST}
+	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type f -or -type l | sort -u > ${PLIST}
+	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type d | sort -ur | ${SED} -e 's,^,@dirrm ,g' >> ${PLIST}
 
 .include <bsd.port.mk>
