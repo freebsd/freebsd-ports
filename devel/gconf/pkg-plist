@@ -9,11 +9,11 @@ etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/standard/%gconf.xml
 etc/gconf/schemas/desktop.schemas
-include/gconf/1/gconf/gconf-backend.h
 include/gconf/1/gconf/gconf-changeset.h
 include/gconf/1/gconf/gconf-client.h
 include/gconf/1/gconf/gconf-engine.h
 include/gconf/1/gconf/gconf-error.h
+include/gconf/1/gconf/gconf-glib-public.h
 include/gconf/1/gconf/gconf-listeners.h
 include/gconf/1/gconf/gconf-schema.h
 include/gconf/1/gconf/gconf-value.h
@@ -21,10 +21,10 @@ include/gconf/1/gconf/gconf.h
 lib/GConf/1/libgconfbackend-xml.so
 lib/libgconf-1.a
 lib/libgconf-1.so
-lib/libgconf-1.so.0
+lib/libgconf-1.so.1
 lib/libgconf-gtk-1.a
 lib/libgconf-gtk-1.so
-lib/libgconf-gtk-1.so.0
+lib/libgconf-gtk-1.so.1
 share/aclocal/gconf-1.m4
 share/gnome/oaf/gconfd-1.oafinfo
 share/locale/ca/LC_MESSAGES/GConf.mo
@@ -36,6 +36,7 @@ share/locale/fi/LC_MESSAGES/GConf.mo
 share/locale/fr/LC_MESSAGES/GConf.mo
 share/locale/ga/LC_MESSAGES/GConf.mo
 share/locale/ja/LC_MESSAGES/GConf.mo
+share/locale/ko/LC_MESSAGES/GConf.mo
 share/locale/no/LC_MESSAGES/GConf.mo
 share/locale/pt_BR/LC_MESSAGES/GConf.mo
 share/locale/ru/LC_MESSAGES/GConf.mo
