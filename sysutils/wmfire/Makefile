@@ -8,10 +8,11 @@
 PORTNAME=	wmfire
 PORTVERSION=	0.0.3.9
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.zebra.net/~dm/wmfire/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= jedgar
 DISTNAME=	wmfire-0.0.3.9pre4
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
