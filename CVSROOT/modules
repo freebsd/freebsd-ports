@@ -3427,6 +3427,7 @@ linux-realplayer	ports/audio/linux-realplayer
 linux-sdl12	ports/devel/linux-sdl12
 linux-tiff	ports/graphics/linux-tiff
 linux-vmware-toolbox ports/emulators/linux-vmware-toolbox
+linux-xalf	ports/x11/linux-xalf
 linux_base	ports/emulators/linux_base
 linux_base-62	ports/emulators/linux_base-62
 linux_base-7	ports/emulators/linux_base-7
