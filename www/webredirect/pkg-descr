@@ -1,0 +1,9 @@
+The webredirect program is an extremely small web server that gives the
+"301 Moved Permanently" response to all "GET", "HEAD" and "POST" respons-
+es.  At the moment, all other requests are unsupported and result in a
+"501 Not Supported" response.
+
+WWW: http://Raditex.se/opensrc/
+
+- Rasmus Kaj
+kaj@Raditex.se

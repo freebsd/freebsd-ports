@@ -193,6 +193,7 @@
     SUBDIR += webfs
     SUBDIR += webglimpse
     SUBDIR += weblint
+    SUBDIR += webredirect
     SUBDIR += webstone
     SUBDIR += wml
     SUBDIR += wmnetselect
