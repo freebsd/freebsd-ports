@@ -34,7 +34,7 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} >= 503000)
+.if ${OSVERSION} >= 503000
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
