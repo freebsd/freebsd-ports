@@ -6,33 +6,40 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	0.0.15
+PORTVERSION=	1.0.1
 CATEGORIES=	ftp
-MASTER_SITES= 	ftp://ferret.lmh.ox.ac.uk/pub/linux/
+MASTER_SITES=	ftp://ferret.lmh.ox.ac.uk/pub/linux/
 
 MAINTAINER=	nbm@FreeBSD.org
 
 ALL_TARGET=	vsftpd
 
+MAN5=		vsftpd.conf.5
+
+MAN8=		vsftpd.8
+
 post-patch:
-	@${PERL} -i -p -e \
-		's@^(#define VSFTP_DEFAULT_CONFIG    )"[/]etc/vsftpd.conf"@\1"${PREFIX}/etc/vsftpd.conf"@' \
+	@${PERL} -pi -e 's@/etc/vsftpd.conf@${PREFIX}/etc/vsftpd.conf@' \
 		${WRKSRC}/defs.h
-	@${PERL} -i -p \
-		-e 's@ -ldl@@;' \
-		-e 's@^CFLAGS.*$$@@' \
-		${WRKSRC}/Makefile
-	@${ECHO} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> ${WRKSRC}/vsftpd.conf
+	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@@' ${WRKSRC}/Makefile
+	@${ECHO} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
+		${WRKSRC}/vsftpd.conf
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${PREFIX}/libexec/
 	@${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${PREFIX}/etc/vsftpd.conf.dist
-	@#
 	@${INSTALL} -d ${PREFIX}/share/vsftpd/empty
 	@if [ ! -e ${PREFIX}/etc/vsftpd.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${PREFIX}/etc/ ; \
 	fi
-	@#
+	@${MKDIR} ${PREFIX}/share/vsftpd/empty
+	@for i in ${MAN8} ; do \
+		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man8/ ; \
+		done
+	@for i in ${MAN5} ; do \
+		${INSTALL_MAN} -m 644 ${WRKSRC}/$${i} ${MANPREFIX}/man/man5/ ; \
+		done
 	@${PERL5} ${PKGINSTALL}
+	@${MKDIR} /var/ftp
 
 .include <bsd.port.mk>
