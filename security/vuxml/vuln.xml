@@ -205,7 +205,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2004-10-13</entry>
     </dates>
   </vuln>
-      
+
   <vuln vid="20dfd134-1d39-11d9-9be9-000c6e8f12e">
     <topic>freeradius -- denial-of-service vulnerability</topic>
     <affects>
@@ -223,12 +223,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0938</cvename>
+      <cvename>CAN-2004-0960</cvename>
+      <cvename>CAN-2004-0961</cvename>
       <url>http://www.securitytracker.com/alerts/2004/Sep/1011364.html</url>
       <certvu>541574</certvu>
+      <bid>11222</bid>
     </references>
     <dates>
       <discovery>2004-09-20</discovery>
       <entry>2004-10-13</entry>
+      <modified>2004-10-19</modified>
     </dates>
   </vuln>
 
