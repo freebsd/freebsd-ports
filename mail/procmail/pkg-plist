@@ -1,0 +1,11 @@
+@cwd /usr/local
+bin/procmail
+bin/formail
+bin/lockfile
+bin/mailstat
+man/man1/procmail.1
+man/man1/formail.1
+man/man1/lockfile.1
+man/man5/procmailex.5
+man/man5/procmailrc.5
+man/man5/procmailsc.5

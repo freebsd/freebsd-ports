@@ -1,0 +1,9 @@
+This is ProcMail, the ultimate incoming mail processor.
+If you want it to replace the functionality of /usr/libexec/mail.local
+then it must be suid root and needs the following lines in your
+hostname.mc file for sendmail:
+
+define(`LOCAL_MAILER_PATH', /usr/local/bin/procmail)dnl
+define(`LOCAL_MAILER_FLAGS', ShPfn)dnl
+define(`LOCAL_MAILER_ARGS', procmail -a $h -d $u)dnl
+mailer(local)dnl
