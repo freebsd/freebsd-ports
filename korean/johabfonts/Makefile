@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	johabfonts
-PORTVERSION=	3.04
+PORTVERSION=	3.1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/terminal/hanterm/hanterm304beta/fonts/ \
-		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/terminal/hanterm/hanterm304beta/fonts/
-DISTNAME=	hanterm304fonts
+MASTER_SITES=	http://hanterm.org/download/font/
+DISTNAME=	hanterm-font
 
 MAINTAINER=	cjh@FreeBSD.org
 
