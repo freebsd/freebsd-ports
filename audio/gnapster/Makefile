@@ -16,7 +16,6 @@ COMMENT=	GNOME client for the online mp3 community called napster
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes

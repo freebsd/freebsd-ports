@@ -17,7 +17,6 @@ COMMENT=	Audio mixer (gtk and Xlib) for X11R6
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_AUTOCONF=	yes
 

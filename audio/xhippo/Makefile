@@ -17,7 +17,6 @@ COMMENT=	A Generic music player for UNIX systems
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GNOME=	esound gdkpixbuf
 USE_REINPLACE=	yes

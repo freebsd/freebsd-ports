@@ -16,7 +16,6 @@ COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

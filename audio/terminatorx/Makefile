@@ -16,7 +16,6 @@ COMMENT=	Realtime audio synthesizer that allows you to "scratch" on audio data
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
-USE_GNOMENG=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomelibs
 CONFIGURE_ARGS+=	--disable-gtk2

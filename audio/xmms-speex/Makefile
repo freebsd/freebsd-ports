@@ -22,7 +22,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 WRKSRC=		${WRKDIR}/speex-xmms
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

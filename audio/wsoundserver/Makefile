@@ -21,7 +21,6 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

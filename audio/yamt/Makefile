@@ -17,7 +17,6 @@ COMMENT=	Yet Another Mp3 Tool which helps you to organize your mp3s
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gnomehack gnomeprefix
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -20,7 +20,6 @@ LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehier gdkpixbuf
 WANT_GNOME=	yes
 USE_PERL5=	yes

@@ -26,7 +26,6 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-xmms-prefix=${X11BASE}
 USE_GNOME=	gtk12
-USE_GNOMENG=	yes
 
 post-install:
 	${LN} -sf ${LOCALBASE}/share/doc/HTML/en/common \

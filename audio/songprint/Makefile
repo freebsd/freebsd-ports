@@ -16,7 +16,6 @@ COMMENT=	Library for acoustic fingerprinting of music from Freetantrum (TM)
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -16,7 +16,6 @@ MAINTAINER=	dburr@FreeBSD.org
 COMMENT=	X11-based MP3 player with nice graphical interface
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 esound
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libx11amp/configure

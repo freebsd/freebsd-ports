@@ -25,7 +25,6 @@ SLAVEDIRS+=	audio/timidity++-gtk audio/timidity++-motif \
 		audio/timidity++-xaw audio/timidity++-xskin \
 		japanese/timidity++-slang japanese/timidity++-tcltk
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)

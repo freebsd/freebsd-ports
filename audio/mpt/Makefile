@@ -17,7 +17,6 @@ COMMENT=	Mike's Playlist Thingie is a fingerprinting based playlist generator
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		songprint.1:${PORTSDIR}/audio/songprint
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

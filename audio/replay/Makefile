@@ -16,7 +16,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Another GTK-based mp3 player
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 esound
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

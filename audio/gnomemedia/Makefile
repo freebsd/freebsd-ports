@@ -20,7 +20,6 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-ncurses

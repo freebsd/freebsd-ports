@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MikMod Sound Library
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
