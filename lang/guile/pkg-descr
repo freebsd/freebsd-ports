@@ -1,0 +1,43 @@
+This is Guile iii.
+
+Guile iii is a first pass at boiling Guile down to the bare bones.
+Functionality that was previously included in the Guile kitchen sink
+releases, such as Tcl/Tk support, has been moved to add on packages,
+available separately.
+
+The purpose of splitting the sources up this way is to allow different
+packages to be maintained more or less independantly and to enable
+people with very specific needs to build up an instance of Guile
+containing exactly (and only) what they need.
+
+The Guile iii is a sort of software backplane.  There are (as yet
+undocumented) conventions for structuring a release that "plugs into"
+this backplane and is built automaticly.  For example, the "gtcl"
+distribution plugs into the backplane to provide various kinds of Tcl
+integration with Guile.  That means that if you unpack "gtcl" into a
+Guile source tree and rebuild, Tcl support will be in the newly built
+version.
+
+A kitchen-sink (aka "suggested configuration") distribution of Guile,
+which includes many add-ons in the same tar file, may once again be
+made available in the near future, once the bugs are worked out of the
+backplane components.
+
+Here is how the back-plane works.  First, unpack a guile-iii distribution:
+	
+
+	% tar -zxvf guile-iii.tar.gz 	
+	[....]
+
+That will create a subdirectory called "guile-src".
+
+Then, *in the same place*, unpack a gtcltk distribution:
+
+
+	% tar -zxvf gtcltk-0.tar.gz
+
+That will unpack more files into "guile-src".
+
+From there, use the usual configure-then-make procedure, as documented
+in the file INSTALL.
+
