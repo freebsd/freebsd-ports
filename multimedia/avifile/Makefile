@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.34.20030319
+PORTVERSION=	0.7.38
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-0.7-${PORTVERSION}
 
 MAINTAINER=	holger@e-gitt.net
 COMMENT=	AVI player/converter with numerous codecs, including MPEG-4(DivX ;-))
@@ -26,8 +25,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:C/^(.{3}).*/\1/}-${PORTVERSION:C/^(.{6}).+$/\1/}
 
 LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
@@ -250,6 +247,7 @@ post-patch:
 # CFLAGS safeness
 # do not version library names
 # fix incorrect behavior of configure script
+# make doc follow our hier
 	@${FIND} ${WRKSRC} \( -name Makefile.in -o -name configure \) | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
 		's|INSTALL = \@INSTALL\@|INSTALL = ${INSTALL}|; \
@@ -258,7 +256,8 @@ post-patch:
 		s!ACLOCAL =!ACLOCAL = ${TRUE} || !; \
 		s!AUTOCONF =!AUTOCONF = ${TRUE} || !; \
 		s!AUTOHEADER =!AUTOHEADER = ${TRUE} || !; \
-		s!AUTOMAKE =!AUTOMAKE = ${TRUE} || !'
+		s!AUTOMAKE =!AUTOMAKE = ${TRUE} || !; \
+		s|[(]datadir[)]/[$$][(]PACKAGE[)]/doc|(prefix)/share/doc/$$(PACKAGE)|'
 # fix location of pkgconfig dir
 	@${REINPLACE_CMD} -E \
 		-e 's|^(pkgconfigdir).*|\1=${PREFIX}/libdata/pkgconfig|' \
@@ -276,10 +275,6 @@ post-configure:
 	@${LN} -sf ${LIBTOOL} ${WRKSRC}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README
-.endif
 	@${FMT} < ${PKGMESSAGE}
 
 .if ${ARCH} == "i386"
