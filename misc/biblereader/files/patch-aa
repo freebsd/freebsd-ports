@@ -9,7 +9,7 @@
   PREFIX?=/usr/local
   TRANSLATION?=kjv
 --- 1,6 ----
-! CFLAGS?=-Wall
+! CFLAGS=-Wall
 ! CFLAGS+=`${GTK_CONFIG} --cflags`
 ! LIBS=`${GTK_CONFIG} --libs gtk`
   OBJS=biblereader.o books.o dictionary.o font.o history.o notes.o markup.o gui/dict_dialog.o gui/gtktextbible.o gui/gladesig.o gui/gladesrc.o gui/prefs_dialog.o prefs.o format.o

@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	biblereader
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.whitevine.com/biblereader/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} kjv.tar.gz
 .if defined(WITH_TRANSLATIONS)
 DISTFILES+=	asv.tar.gz darby.tar.gz
 .endif
-.if defined(WITH_SUPPLEMENTS)
-DISTFILES+=	easton.tar.gz mhc.tar.gz
+.if defined(WITH_NOTES)
+DISTFILES+=	mhc.tar.gz
+.endif
+.if defined(WITH_DICTIONARIES)
+DISTFILES+=	easton.tar.gz strongs.tar.gz torrey.tar.gz
 .endif
 
 MAINTAINER=	patseal@hyperhost.net
@@ -24,34 +27,45 @@ USE_GTK=	yes
 PLIST=		${WRKDIR}/PLIST
 
 DATAFILES=	${WRKDIR}/kjv/kjv
-PLISTS=		${PKGDIR}/pkg-plist
 .if defined(WITH_TRANSLATIONS)
-DATAFILES+=	${WRKDIR}/asv/asv ${WRKDIR}/darby/darby
 PLISTS+=	${PKGDIR}/pkg-plist.translations
+DATAFILES+=	${WRKDIR}/asv/asv ${WRKDIR}/darby/darby
 .endif
-.if defined(WITH_SUPPLEMENTS)
-DATAFILES+=	${WRKDIR}/easton/easton.dict ${WRKDIR}/mhc/mhc
-PLISTS+=	${PKGDIR}/pkg-plist.supplements
+.if defined(WITH_NOTES)
+PLISTS+=	${PKGDIR}/pkg-plist.notes
+DATAFILES+=	${WRKDIR}/mhc/mhc
 .endif
+.if defined(WITH_DICTIONARIES)
+PLISTS+=	${PKGDIR}/pkg-plist.dictionaries
+DATAFILES+=	${WRKDIR}/easton/eastons.dict ${WRKDIR}/torrey/torrey.dict
+DATAFILES+=	${WRKDIR}/strongs/kjv-strongs ${WRKDIR}/strongs/strongs-greek.dict ${WRKDIR}/strongs/strongs-hebrew.dict
+.endif
+PLISTS+=	${PKGDIR}/pkg-plist
 
-.if !defined(WITH_TRANSLATIONS)
 pre-fetch:
+.if !defined(WITH_TRANSLATIONS)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to download/install additional tranlations use"
-	@${ECHO_MSG} "\"make -DWITH_TRANSLATIONS\""
+	@${ECHO_MSG} "To download/install additional translations use"
+	@${ECHO_MSG} "\"make install -DWITH_TRANSLATIONS\""
 	@${ECHO_MSG}
 .endif
-.if !defined(WITH_SUPPLEMENTS)
+.if !defined(WITH_NOTES)
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want download/install commentary and dictionary files please use"
-	@${ECHO_MSG} "\"make -DWITH_SUPPLEMENTS\""
+	@${ECHO_MSG} "To download/install commentary and notes use"
+	@${ECHO_MSG} "\"make install -DWITH_NOTES\""
+	@${ECHO_MSG}
+.endif
+.if !defined(WITH_DICTIONARIES)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To download/install dictionaries and notes use"
+	@${ECHO_MSG} "\"make install -DWITH_DICTONARIES\""
 	@${ECHO_MSG}
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biblereader ${PREFIX}/bin/biblereader
 	${MKDIR} ${PREFIX}/share/biblereader
-	@for file in ${DATAFILES}; do \
+	for file in ${DATAFILES}; do \
 		${INSTALL_DATA} $${file} ${PREFIX}/share/biblereader; \
 	done
 	@${CAT} ${PLISTS} > ${PLIST}
