@@ -7,16 +7,18 @@
 #
 
 PORTNAME=	make++
-PORTVERSION=	1.10
-CATEGORIES=	devel
-MASTER_SITES=	http://lnc.usc.edu/~holt/makepp/
+PORTVERSION=	1.18
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/+/p/g}
 DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 USE_PERL5=	yes
+DATADIR=	${PREFIX}/share/makepp
 
 do-build:
 	@${PERL} -pi -e "s|\@htmldir\@|${PREFIX}/share/makepp/html|g ; \
@@ -24,21 +26,15 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makepp ${PREFIX}/bin
-
-	@${MKDIR} ${PREFIX}/share/makepp
-	@${MKDIR} ${PREFIX}/share/makepp/Signature
-
-	${INSTALL_SCRIPT} ${WRKSRC}/recursive_makepp ${PREFIX}/share/makepp
-
-.for module in FileInfo FileInfo_makepp MakeEvent Glob Makefile Makesubs Rule Signature TextSubs Signature/exact_match Signature/target_newer Signature/c_compilation_md5 Signature/md5
-	${INSTALL_SCRIPT} ${WRKSRC}/${module}.pm ${PREFIX}/share/makepp/${module}.pm
-.endfor
-
-.for include in c_compilation_md5 infer_objects makepp_builtin_rules makepp_default_makefile
-	${INSTALL_DATA} ${WRKSRC}/${include}.mk ${PREFIX}/share/makepp
-.endfor
-
-	@${MKDIR} ${PREFIX}/share/makepp/html
-	${CP} ${WRKSRC}/doc/*.html ${PREFIX}/share/makepp/html
+	@${MKDIR} ${DATADIR}/Signature
+	${INSTALL_SCRIPT} ${WRKSRC}/recursive_makepp ${DATADIR}
+	@(cd ${WRKSRC} ; \
+	  find . -name "*.pm" -maxdepth 1 -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
+	@(cd ${WRKSRC}/Signature ; \
+	  find . -name "*.pm" -exec ${INSTALL_SCRIPT} {} ${DATADIR}/Signature \;)
+	@(cd ${WRKSRC} ; \
+	  find . -name "*.mk" -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
+	@${MKDIR} ${DATADIR}/html
+	${CP} ${WRKSRC}/doc/* ${DATADIR}/html
 
 .include <bsd.port.mk>
