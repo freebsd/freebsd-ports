@@ -1,33 +1,6 @@
---- configure.orig	Mon Jun 19 16:19:25 2000
-+++ configure	Wed Jun 21 10:34:30 2000
-@@ -3290,14 +3290,14 @@
- 
- fi
- if test "x$PTHREAD_LIBS" = xerror; then
--        echo $ac_n "checking for pthread_attr_init in -lc_r""... $ac_c" 1>&6
--echo "configure:3295: checking for pthread_attr_init in -lc_r" >&5
-+        echo $ac_n "checking for pthread_attr_init in -pthread""... $ac_c" 1>&6
-+echo "configure:3295: checking for pthread_attr_init in -pthread" >&5
- ac_lib_var=`echo c_r'_'pthread_attr_init | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lc_r  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3303 "configure"
- #include "confdefs.h"
-@@ -3325,7 +3325,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  PTHREAD_LIBS="-lc_r"
-+  PTHREAD_LIBS="-pthread"
- else
-   echo "$ac_t""no" 1>&6
- fi
-@@ -3927,7 +3927,9 @@
+--- configure.orig	Thu Sep 21 19:06:59 2000
++++ configure	Thu Sep 21 19:10:00 2000
+@@ -4024,7 +4024,9 @@
    echo "$ac_t""no" 1>&6
  fi
  
@@ -38,7 +11,7 @@
  
  if test "x$have_esd" = xyes; then
    HAVE_ESD_TRUE=
-@@ -4208,7 +4210,9 @@
+@@ -4305,7 +4307,9 @@
    
    rm -f conf.mikmodtest
  
@@ -49,7 +22,7 @@
  
  if test "x$have_mikmod" = xyes; then
    HAVE_MIKMOD_TRUE=
-@@ -5475,7 +5479,7 @@
+@@ -5551,7 +5555,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -58,15 +31,7 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7113,14 +7117,14 @@
- 
- if test -n "$GCC"
- then
--	CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math"
-+	CFLAGS="$CFLAGS -fomit-frame-pointer -finline-functions -ffast-math"
- fi
- 
- arch_type=other
+@@ -7205,7 +7209,7 @@
  ARCH_DEFINES=""
  case "$host" in 
  	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
