@@ -380,6 +380,7 @@ share/locale/en_AU/LC_MESSAGES/gaim.mo
 share/locale/en_CA/LC_MESSAGES/gaim.mo
 share/locale/en_GB/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
+share/locale/et/LC_MESSAGES/gaim.mo
 share/locale/fi/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/he/LC_MESSAGES/gaim.mo
@@ -391,8 +392,8 @@ share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/lt/LC_MESSAGES/gaim.mo
 share/locale/mk/LC_MESSAGES/gaim.mo
 share/locale/my_MM/LC_MESSAGES/gaim.mo
+share/locale/nb/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
-share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
 share/locale/pt/LC_MESSAGES/gaim.mo
 share/locale/pt_BR/LC_MESSAGES/gaim.mo
