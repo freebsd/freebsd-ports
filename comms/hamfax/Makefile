@@ -21,15 +21,9 @@ USE_QT_VER=	3
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-Qt-dir=${X11BASE} CXX="g++ ${PTHREAD_CFLAGS}" \
-		LIBS="-lcipher ${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=		"Configure fails"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
