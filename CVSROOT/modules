@@ -5089,7 +5089,6 @@ py-distutils	ports/misc/py-distutils
 py-expat	ports/textproc/py-expat
 py-fchksum	ports/security/py-fchksum
 py-freetype	ports/print/py-freetype
-py-functional	ports/devel/py-functional
 py-game		ports/devel/py-game
 py-gato		ports/math/py-gato
 py-gdbm		ports/databases/py-gdbm
@@ -5136,6 +5135,7 @@ py-wxPython	ports/x11-toolkits/py-wxPython
 py-xml		ports/textproc/py-xml
 py-xmlrpc	ports/net/py-xmlrpc
 py-xmlrpclib	ports/net/py-xmlrpclib
+py-xoltar-toolkit	ports/devel/py-xoltar-toolkit
 py-zsi		ports/net/py-zsi
 py2html		ports/textproc/py2html
 pybench		ports/benchmarks/pybench
