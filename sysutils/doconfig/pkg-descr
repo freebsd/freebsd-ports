@@ -1,0 +1,12 @@
+The author wrote:
+
+    This is a kernel 'config' wrapper for the simple people, based off the
+    'doconfig' command in Digital Unix.  It is actually composed of two
+    commands written in perl4: doconfig and autokernconf.  doconfig calls
+    autokernconf if no config file is specified--in the future it is intended
+    that autokernconf can be crufted up to chew on the output of dmesg and
+    other sources to give a somewhat intelligently defaulted kernel config
+    template, based off the GENERIC template.  For now it just copies GENERIC
+    and changes ident as appropriate.
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
