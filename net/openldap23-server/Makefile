@@ -15,7 +15,7 @@
 #
 
 PORTNAME=	openldap21
-PORTVERSION=	2.1.16
+PORTVERSION=	2.1.17
 PORTREVISION=	0
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
@@ -31,8 +31,15 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
 		ftp://ftp.si.uniovi.es/mirror/OpenLDAP/%SUBDIR%/	\
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/	\
 		ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
+.if defined(OPENLDAP_STABLE)
+MASTER_SITE_SUBDIR=	openldap-stable
+DISTNAME=	openldap-stable-20030410
+PKGNAMESUFFIX=	-stable
+WRKSRC=		${WRKDIR}/openldap-${PORTVERSION}
+.else
 MASTER_SITE_SUBDIR=	openldap-release
 DISTNAME=	openldap-${PORTVERSION}
+.endif
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ck@cksoft.de
@@ -79,7 +86,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 #
 BUILD_CLIENTS=	yes
 INSTALLS_SHLIB=	yes
-PKGNAMESUFFIX=	-client
+PKGNAMESUFFIX=	${PKGNAMESUFFIX}-client
 COMMENT=	Open source LDAP client software
 CONFIGURE_ARGS+=			\
 	--disable-slapd			\
@@ -92,7 +99,7 @@ CONFIGURE_ARGS+=			\
 # slapd only
 #
 BUILD_SLAPD=	yes
-PKGNAMESUFFIX=	-slapd
+PKGNAMESUFFIX=	${PKGNAMESUFFIX}-slapd
 COMMENT=	Open source LDAP server software (slapd only)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
 CONFIGURE_ARGS+=			\
@@ -112,7 +119,7 @@ CONFIGURE_ARGS+=			\
 # and some backend we just don't install them later on
 #
 BUILD_SLURPD=	yes
-PKGNAMESUFFIX=	-slurpd
+PKGNAMESUFFIX=	${PKGNAMESUFFIX}-slurpd
 COMMENT=	Open source LDAP server software (slurpd only)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
 RUN_DEPENDS+=	${LOCALBASE}/libexec/slapd:${PORTSDIR}/net/openldap-slapd2.1
@@ -132,7 +139,7 @@ CONFIGURE_ARGS+=			\
 #
 BUILD_SLAPD=	yes
 BUILD_SLURPD=	yes
-PKGNAMESUFFIX=	-server
+PKGNAMESUFFIX=	${PKGNAMESUFFIX}-server
 COMMENT=	Open source LDAP server software (slapd and slurpd)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
 CONFIGURE_ARGS+=			\
@@ -154,7 +161,6 @@ INSTALLS_SHLIB=	yes
 BUILD_CLIENTS=	yes
 BUILD_SLAPD=	yes
 BUILD_SLURPD=	yes
-PKGNAMESUFFIX=
 CONFIGURE_ARGS+=			\
 	--with-threads          	\
 	--enable-slapd			\
@@ -247,14 +253,6 @@ MLINKS+=	ldap_bind.3 ldap_unbind_s.3
 MLINKS+=	ldap_bind.3 ldap_unbind_ext.3
 MLINKS+=	ldap_bind.3 ldap_unbind_ext_s.3
 MLINKS+=	ldap_bind.3 ldap_set_rebind_proc.3
-MAN3+=	ldap_cache.3
-MLINKS+=	ldap_cache.3 ldap_enable_cache.3
-MLINKS+=	ldap_cache.3 ldap_disable_cache.3
-MLINKS+=	ldap_cache.3 ldap_destroy_cache.3
-MLINKS+=	ldap_cache.3 ldap_flush_cache.3
-MLINKS+=	ldap_cache.3 ldap_uncache_entry.3
-MLINKS+=	ldap_cache.3 ldap_uncache_request.3
-MLINKS+=	ldap_cache.3 ldap_set_cache_options.3
 MAN3+=	ldap_compare.3
 MLINKS+=	ldap_compare.3 ldap_compare_s.3
 MLINKS+=	ldap_compare.3 ldap_compare_ext.3

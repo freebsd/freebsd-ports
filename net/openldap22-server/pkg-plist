@@ -65,6 +65,7 @@
 %%NO_SLAPD%%etc/openldap/slapd.conf.default
 %%NO_SLAPD%%@exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
 %%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/corba.schema %D/etc/openldap/schema/corba.schema.default; then rm -f %D/etc/openldap/schema/corba.schema; fi
+%%NO_SLAPD%%etc/openldap/schema/README
 %%NO_SLAPD%%etc/openldap/schema/corba.schema.default
 %%NO_SLAPD%%@exec [ -f %B/corba.schema ] || cp %B/%f %B/corba.schema
 %%NO_SLAPD%%@unexec if cmp -s %D/etc/openldap/schema/core.schema %D/etc/openldap/schema/core.schema.default; then rm -f %D/etc/openldap/schema/core.schema; fi
