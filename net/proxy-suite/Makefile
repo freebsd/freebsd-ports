@@ -59,6 +59,10 @@ MAN5=		ftp-proxy.conf.5
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD >= 6.x"
+.endif
+
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy
 
