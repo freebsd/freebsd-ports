@@ -1,35 +1,25 @@
---- Makefile.PL.orig	Tue Sep 11 10:23:45 2001
-+++ Makefile.PL	Tue Sep 11 10:25:39 2001
-@@ -49,9 +49,9 @@
- MSG
- my $i = 1;
- for my $ciph (@cryptmod) {
--    printf "    [%d] %s\n", $i++, $ciph->[0];
-+    #printf "    [%d] %s\n", $i++, $ciph->[0];
- }
--my $c = prompt("\nEnter your choices, separated by spaces:", 1);
-+my $c = "1 2 5";
- print "\n";
+--- Makefile.PL.orig	Mon Mar 31 17:57:10 2003
++++ Makefile.PL	Mon Mar 31 17:58:26 2003
+@@ -43,22 +43,6 @@
+         'Crypt::RIPEMD160' => 0,
+     ],
  
- for my $id (split /\s+/, $c) {
-@@ -70,9 +70,9 @@
- MSG
- my $i = 1;
- for my $ciph (@dgstmod) {
--    printf "    [%d] %s\n", $i++, $ciph->[0];
-+    #printf "    [%d] %s\n", $i++, $ciph->[0];
- }
--my $c = prompt("\nEnter your choices, separated by spaces:", 2);
-+my $c = "1 2";
- print "\n";
+-    'Support for all ciphers' => [
+-        -default           => $is_sdk,
+-        'Crypt::IDEA'      => 0,
+-        'Crypt::DES_EDE3'  => 0,
+-        'Crypt::CAST5_PP'  => 0,
+-        'Crypt::Blowfish'  => 0,
+-        'Crypt::Twofish'   => '2.00',
+-        'Crypt::Rijndael'  => 0,
+-    ],
+-
+-    'Support for all digests' => [
+-        -default           => $is_sdk,
+-        'Digest::MD5'      => 0,
+-        'Digest::SHA1'     => 0,
+-        'Crypt::RIPEMD160' => 0,
+-    ],
+ );
  
- for my $id (split /\s+/, $c) {
-@@ -98,7 +98,7 @@
- for my $pk (@pkmod) {
-     printf "    [%d] %s\n", $i++, $pk->[0];
- }
--my $c = prompt("\nEnter your choices, separated by spaces:", '1 2');
-+my $c = "1 2";
- print "\n";
- 
- for my $id (split /\s+/, $c) {
+ WriteMakefile(
