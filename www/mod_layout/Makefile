@@ -16,10 +16,11 @@ COMMENT=	Apache module to wrap served pages with a header and/or footer
 USE_APACHE=	yes
 USE_REINPLACE=	yes
 
+CFLAGS+=	-fPIC
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!apxs!${LOCALBASE}/sbin/apxs!g; \
-		s!-DDEBUG!!g' ${WRKSRC}/Makefile
-	
+		s!-DDEBUG!$$(CFLAGS)!g' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)

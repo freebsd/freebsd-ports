@@ -1,40 +1,41 @@
+@comment $FreeBSD$
 libexec/apache/mod_layout.so
 @exec %D/sbin/apxs -e -a -n layout %D/%f
 @unexec echo "===>  If you do not plan on reinstalling mod_layout, you must manually remove"; echo "===>  references to it in httpd.conf."
-%%PORTDOCS%%share/doc/mod_layout/faq.html
-%%PORTDOCS%%share/doc/mod_layout/directives/Layout.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutCache.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutCacheNeeded.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutComment.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutDefaultHandlers.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutDisplayOriginal.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooter.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooterFile.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooterOff.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooterTXT.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPHeader.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPHeaderOff.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPOverrideHandler.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPOverrideURI.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHandler.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHandlerGlob.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeader.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeaderFile.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeaderOff.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeaderTXT.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreFooterURI.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreHeaderURI.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreTag.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreTagFooter.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreTagHeader.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreURI.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMerge.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMergeBeginTag.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMergeEndTag.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMergeErrorIgnore.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutPostAsync.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutProxy.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutReplaceTags.html
-%%PORTDOCS%%share/doc/mod_layout/directives/LayoutTimeFormat.html
-%%PORTDOCS%%@dirrm share/doc/mod_layout/directives
-%%PORTDOCS%%@dirrm share/doc/mod_layout
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/Layout.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutCache.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutCacheNeeded.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutComment.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutDefaultHandlers.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutDisplayOriginal.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutFooter.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutFooterFile.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutFooterOff.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutFooterTXT.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHTTPHeader.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHTTPHeaderOff.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHTTPOverrideHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHTTPOverrideURI.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHandler.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHandlerGlob.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHeader.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHeaderFile.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHeaderOff.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutHeaderTXT.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutIgnoreFooterURI.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutIgnoreHeaderURI.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutIgnoreTag.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutIgnoreTagFooter.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutIgnoreTagHeader.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutIgnoreURI.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutMerge.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutMergeBeginTag.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutMergeEndTag.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutMergeErrorIgnore.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutPostAsync.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutProxy.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutReplaceTags.html
+%%PORTDOCS%%%%DOCSDIR%%/directives/LayoutTimeFormat.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/directives
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
