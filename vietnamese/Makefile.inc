@@ -1,8 +1,4 @@
 # $FreeBSD$
 #
 
-.if defined(PKGNAMEPREFIX)
-PKGNAMEPREFIX:=	vi-${PKGNAMEPREFIX}
-.else
-PKGNAMEPREFIX=	vi-
-.endif
+PKGNAMEPREFIX?=	vi-

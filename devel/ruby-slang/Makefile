@@ -9,7 +9,6 @@ PORTNAME=	slang
 PORTVERSION=	0.33.a
 CATEGORIES+=	devel ruby
 MASTER_SITES=	http://kondara.sdri.co.jp/~kikutani/
-PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PORTNAME}lib
 DIST_SUBDIR=	ruby
 
@@ -39,6 +38,12 @@ DOCS_EN=	README		changes.txt
 DOCS_JA=	README.euc
 
 .include <bsd.port.pre.mk>
+
+.if defined(PKGNAMEPREFIX)
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
+.else
+PKGNAMEPREFIX=	ruby-
+.endif
 
 do-configure:
 	@cd ${WRKSRC}; \

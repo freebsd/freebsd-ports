@@ -1,8 +1,4 @@
 # $FreeBSD$
 #
 
-.if defined(PKGNAMEPREFIX)
-PKGNAMEPREFIX:=	iw-${PKGNAMEPREFIX}
-.else
-PKGNAMEPREFIX=	iw-
-.endif
+PKGNAMEPREFIX?=	iw-
