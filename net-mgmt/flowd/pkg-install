@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+# Based on cyrus-sasl2 port
+#
+# create 'flowd' user 
+#
+
+create_user() {
+	USER=${FLOWD_USER}
+	GROUP=nobody
+	PW=/usr/sbin/pw
+
+	if [ -x /usr/sbin/nologin ]; then
+		shell=/usr/sbin/nologin
+	elif [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
+	uhome="/nonexistent"
+
+	if ! ${PW} show user ${USER} -q >/dev/null; then
+		if ! ${PW} add user ${USER} -g ${gid} -d "${uhome}" \
+				-c "flowd privilege separation user" -s "${shell}" -p "*" \
+				; then
+			e=$?
+			echo "*** Failed to add user \`${USER}'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added user \`${USER}' (id ${uid})"
+	else
+		echo "*** You already have user \`${USER}'."
+	fi
+}
+
+case $2 in
+	POST-INSTALL)
+		create_user
+		;;
+esac

@@ -7,6 +7,7 @@
 
 PORTNAME=	flowd
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
@@ -16,9 +17,11 @@ COMMENT=	The flowd is a small, fast and secure NetFlow collector
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAN8=		flowd.8 flowd-reader.8
 MAN5=		flowd.conf.5
 PORTDOCS=	README INSTALL
+FLOWD_USER?=	_flowd
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
@@ -50,6 +53,12 @@ pre-extract:
 	@${ECHO_MSG} "You can enable Python bindings by defining WITH_PYTHON."
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
+		${PKGDEINSTALL}
+	@${REINPLACE_CMD} -e "s;%%FLOWD_USER%%;${FLOWD_USER};g" \
+		${WRKSRC}/flowd.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -68,5 +77,7 @@ post-install:
 	${PYTHON_CMD} setup.py build && \
 	${PYTHON_CMD} setup.py install
 .endif
+
+@FLOWD_USER=${FLOWD_USER} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
