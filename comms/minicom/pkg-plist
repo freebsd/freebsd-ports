@@ -10,3 +10,6 @@ etc/minicom/unixlogin
 man/man1/minicom.1.gz
 man/man1/runscript.1.gz
 man/man1/ascii-xfr.1.gz
+@exec /usr/sbin/chown uucp %D/etc/minicom
+@unexec /bin/rm -rf %D/etc/minicom/*
+@dirrm etc/minicom

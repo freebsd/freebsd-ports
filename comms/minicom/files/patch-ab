@@ -1,6 +1,14 @@
 --- install.sh.orig	Sat Sep 27 10:21:12 1997
-+++ install.sh	Sat Jan  3 02:48:51 1998
-@@ -47,8 +47,8 @@
++++ install.sh	Sat Jan 10 01:16:04 1998
+@@ -29,6 +29,7 @@
+ 		exit 1
+ 	fi
+ fi
++chown uucp $1
+ 
+ if test ! -d $2
+ then
+@@ -47,8 +48,8 @@
  	echo "Installing minicom in $2"
  	cp minicom $2/minicom
  	chmod 755 $2/minicom
@@ -11,7 +19,7 @@
  fi
  
  for i in runscript xminicom ascii-xfr
-@@ -59,7 +59,7 @@
+@@ -59,7 +60,7 @@
  	cp $i $2/$i
  	chmod 755 $2/$i
  	chown root $2/$i
@@ -20,7 +28,7 @@
    fi
  done
  
-@@ -69,7 +69,7 @@
+@@ -69,7 +70,7 @@
  	cp keyserv $1/keyserv
  	chmod 755 $1/keyserv
  	chown root $1/keyserv
@@ -29,7 +37,7 @@
  fi
  
  echo "Installing manpages in $3"
-@@ -78,7 +78,7 @@
+@@ -78,7 +79,7 @@
  	cp ../man/$i $3
  	chmod 644 $3/$i
  	chown root $3/$i
@@ -38,7 +46,7 @@
  done
  
  if [ ! -f $1/minicom.users ]
-@@ -86,7 +86,7 @@
+@@ -86,7 +87,7 @@
  	echo "Installing sample config file minicom.users in $1"
  	cp minicom.users $1
  	chown root $1/minicom.users
@@ -47,7 +55,7 @@
  	chmod 644 $1/minicom.users
  fi
  
-@@ -98,7 +98,7 @@
+@@ -98,7 +99,7 @@
  		cp ../demos/$i $4/$i
  		chmod 644 $4/$i
  		chown root $4/$i
@@ -56,7 +64,7 @@
  	done
  else
  	echo "You don't have a $4 directory - script examples not installed."
-@@ -109,9 +109,10 @@
+@@ -109,9 +110,10 @@
      rm minicom.o
  fi
  	
