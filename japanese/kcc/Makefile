@@ -8,7 +8,7 @@
 PORTNAME=	kcc
 PORTVERSION=	1.0
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	taoka@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	dserver
 PORTVERSION=	2.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.pu-toyama.ac.jp/pub/misc/ \
-		ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
+		${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.sra.co.jp/pub/net/ndtp/misc/
 DISTNAME=	${PORTNAME}2.2betapl2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

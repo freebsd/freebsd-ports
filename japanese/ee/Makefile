@@ -9,7 +9,7 @@ PORTNAME=	jee
 PORTVERSION=	1.0
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.mogami-wire.co.jp/pub/beta/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+		${MASTER_SITE_PORTS_JP}
 DISTFILES=	${PORTNAME}.tar.gz \
 		ee-3.0.tar.gz \
 		libncurses-3.0.tar.gz
