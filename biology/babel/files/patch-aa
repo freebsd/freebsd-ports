@@ -1,0 +1,24 @@
+--- Makefile.orig	Tue Jan 21 23:53:05 1997
++++ Makefile	Sat Dec 20 05:12:51 1997
+@@ -1,6 +1,6 @@
+-CFLAGS        = -O 
++DEST          = /usr/local/share/babel
+ 
+-LIBFLAGS      = -O -DLIBRARY 
++LIBFLAGS      = -DLIBRARY 
+ 
+ CC	      = cc
+ 
+@@ -334,7 +334,11 @@
+ index:;		ctags -wx $(HDRS) $(SRCS)
+ 
+ install:	$(PROGRAM)
+-		install -s $(PROGRAM) $(DEST)
++		install -s $(PROGRAM) /usr/local/bin/$(PROGRAM)
++		install -d -o bin -g bin $(DEST)
++		install -c -o bin -g bin README.1ST $(DEST)
++		install -c -o bin -g bin element.lis new.lis $(DEST)
++		install -c -o bin -g bin quanta.lis types.lis $(DEST)
+ 
+ print:;		$(PRINT) $(HDRS) $(SRCS)
+ 

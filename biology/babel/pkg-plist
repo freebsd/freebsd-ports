@@ -1,0 +1,7 @@
+bin/babel
+share/babel/README.1ST
+share/babel/element.lis
+share/babel/new.lis
+share/babel/quanta.lis
+share/babel/types.lis
+@dirrm share/babel
