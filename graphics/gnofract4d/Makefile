@@ -16,18 +16,17 @@ MAINTAINER=	ports@FreeBSD.org
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-compile-warnings=no
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-g -O2 -Wall -D_REENTRANT|\@CXXFLAGS\@|g ; \
-		 s|datadir)/gnome|datadir)|g ; \
-		 s|datadir)/locale|prefix)/share/locale|g ; \
 		 s|gnofract4d_helpdir)/images|gnofract4d_helpdir)|g'
 
 .include <bsd.port.mk>
