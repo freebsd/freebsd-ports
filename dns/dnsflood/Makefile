@@ -9,13 +9,12 @@ PORTNAME=	dnsflood
 PORTVERSION=	1.10
 CATEGORIES=	dns
 MASTER_SITES=	http://www.adotout.com/ \
-		http://voodoo.oberon.net/
+		http://voodoo.oberon.net/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	DNS flood detector
 
-USE_SIZE=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 
