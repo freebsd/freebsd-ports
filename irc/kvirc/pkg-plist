@@ -2,10 +2,6 @@ bin/kvirc
 bin/kvi_run_netscape.sh
 bin/kvi_make_scriptdist.sh
 bin/kvi_search_help.sh
-lib/libkvicore.la
-lib/libkvicore.a
-lib/libkvilib.la
-lib/libkvilib.a
 share/kvirc/config/kvi.mime.conf
 share/kvirc/config/kvi.tip_en.conf
 share/kvirc/config/kvi.popup.conf
