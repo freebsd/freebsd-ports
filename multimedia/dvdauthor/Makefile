@@ -43,7 +43,7 @@ WITH_IMAGEMAGICK=	yes
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 .endif
 .if defined(WITH_FRIBIDI)
-LIB_DEPENDS+=	libfribidi.0:${PORTSDIR}/converters/fribidi
+LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .endif
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
