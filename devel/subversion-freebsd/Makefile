@@ -8,8 +8,6 @@ PORTNAME=	subversion
 PORTVERSION=	0.31.0
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.collab.net/tarballs/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=		bmah
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
