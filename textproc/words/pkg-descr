@@ -1,0 +1,15 @@
+WORDS is a free Latin-English dictionary program which takes keyboard
+input or a file of Latin text lines and provides an analysis/morphology
+(declension, conjugation, case, tense, etc.) of each word individually,
+the dictionary form, and the translation (meaning).
+
+The dictionary contains over 30000 entries and, through additional word
+construction with hundreds of prefixes and suffixes, may generate more,
+leading to many hundreds of thousands of 'words' that can be formed by
+declension and conjugation. Present emphisis is on classical Latin and
+late Latin, but medieval Latin entries are increasing. WORDS provides a
+tool to help in translations for the Latin student and a memory jog for
+researchers.
+
+Author: William Whitaker <whitaker@erols.com>
+WWW: http://users.erols.com/whitaker/words.htm
