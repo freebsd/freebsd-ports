@@ -1,0 +1,24 @@
+diff -upr work/etherboot-5.2.4/src/Makefile.main Makefile.main
+--- work/etherboot-5.2.4/src/Makefile.main	Sun Feb 22 17:26:09 2004
++++ Makefile.main	Wed Oct 27 09:03:18 2004
+@@ -96,7 +96,7 @@
+ #	-DINCLUDE_NATSEMI - Include NATSEMI support
+ #
+ 
+-all:		$(UTILS) $(BUILD_LIBS) allimgs
++all:		$(UTILS) $(BUILD_LIBS) allroms
+ 
+ SRCS:=
+ BOBJS:=
+diff -upr work/etherboot-5.2.4/src/arch/i386/Makefile arch/i386/Makefile
+--- work/etherboot-5.2.4/src/arch/i386/Makefile	Wed Oct 27 09:04:03 2004
++++ arch/i386/Makefile	Wed Oct 27 09:02:05 2004
+@@ -84,7 +84,7 @@ ROMLIMIT:=$(shell perl -e 'printf("%d\n"
+ 
+ include		$(BIN)/Roms
+ 
+-allroms:	$(BUILD_ROMS) $(DISKLOADER)
++allroms:	$(BUILD_ROMS) $(DISKLOADER) bin/boot1a.bin
+ allelfs:	$(BUILD_ELFS)
+ allpxes:	$(BUILD_PXES)
+ allcoms:	$(BUILD_COMS)
