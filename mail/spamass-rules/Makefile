@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20041205
+PORTVERSION=	20050104
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
 		http://web.inforum.at/downloads/
@@ -112,7 +112,7 @@ SPAMASS_FILES+=	random.cf
 .for i in 70_sare_adult.cf 70_sare_bayes_poison_nxm.cf 70_sare_header0.cf \
 	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_random.cf \
 	70_sare_specific.cf 70_sare_spoof.cf 70_sare_unsub.cf 70_sare_uri.cf \
-	71_sare_redirect_pre3.0.0.cf 72_sare_bml_post25x.cf \
+	72_sare_redirect_post3.0.0.cf 72_sare_bml_post25x.cf \
 	99_sare_fraud_post25x.cf
 SPAMASS_FILES+=	$i
 .endfor
