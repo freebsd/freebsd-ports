@@ -6,19 +6,17 @@
 
 PORTNAME=		kmyirc
 PORTVERSION=		0.2.9
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		irc kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		laszlof@vonostingroup.com
-COMMENT=		"Good and easy IRC client for KDE."
+COMMENT=		Easy to use IRC client for KDE
 
 GNU_CONFIGURE=		yes
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=		yes
 
 post-patch:
