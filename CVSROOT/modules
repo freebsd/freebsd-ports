@@ -5679,6 +5679,7 @@ p5-HTML-Navigation	ports/www/p5-HTML-Navigation
 p5-HTML-Pager	ports/www/p5-HTML-Pager
 p5-HTML-Parser	ports/www/p5-HTML-Parser
 p5-HTML-QuickCheck	ports/www/p5-HTML-QuickCheck
+p5-HTML-Scrubber	ports/www/p5-HTML-Scrubber
 p5-HTML-SimpleParse	ports/www/p5-HTML-SimpleParse
 p5-HTML-StickyQuery	ports/www/p5-HTML-StickyQuery
 p5-HTML-Stream	ports/www/p5-HTML-Stream
