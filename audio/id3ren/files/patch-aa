@@ -1,9 +1,9 @@
 --- Makefile.old	Wed Mar 18 04:28:44 1998
 +++ Makefile	Sun Feb 28 16:04:16 1999
-@@ -1,16 +1,18 @@
+@@ -1,16 +1,17 @@
 -CFLAGS = -O2 -s -Wall
-+CFLAGS += -O2 -s -Wall
- CC = gcc
++CFLAGS += -s -Wall
+-CC = gcc
  RM = rm -f
 -INSTALL = install -s -m 755
 -INSTALL_DIR = ..
