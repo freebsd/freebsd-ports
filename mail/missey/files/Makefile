@@ -8,20 +8,17 @@ OBJS_B	=	${SRCS_B:N*.h:R:S/$/.o/}
 
 LDFLAGS	+=	-lcrypt
 
-MISSEY	?=	missey
-BENT	?=	bent
+MISSEY	=	missey
+BENT	=	bent
 
 all:		$(MISSEY) $(BENT)
 $(MISSEY):	$(OBJS_M)
-	$(CC) $(CFLAGS) -o $(MISSEY) $(OBJS_M) $(LDFLAGS)
+	$(CC) ${CFLAGS} -o $(MISSEY) $(OBJS_M) $(LDFLAGS)
 $(BENT):	$(OBJS_B)
-	$(CC) $(CFLAGS) ${PTHREAD_CFLAGS} -o $(BENT) $(SRCS_B) ${PTHREAD_LIBS}
+	$(CC) ${CFLAGS} ${PTHREAD_CFLAGS} -o $(BENT) $(SRCS_B) ${PTHREAD_LIBS}
 install:
 	@${MKDIR} -p $(PREFIX)/etc/missey/
 	${INSTALL_DATA} $(WRKSRC)/pop3d.conf $(PREFIX)/etc/missey/pop3d.conf-dist
 	${INSTALL_PROGRAM} $(WRKSRC)/$(MISSEY) $(PREFIX)/sbin/$(MISSEY)
 	${INSTALL_PROGRAM} $(WRKSRC)/$(BENT) $(PREFIX)/sbin/$(BENT)
-
-clean :
-	rm -f *.o *.core core.* *~ *.s missey bent
 
