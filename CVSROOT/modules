@@ -5177,6 +5177,7 @@ mit-scheme	ports/lang/mit-scheme
 mixal		ports/lang/mixal
 mixer.app	ports/audio/mixer.app
 mixer_port	ports/sysutils/mixer
+mixminion	ports/mail/mixminion
 mjpegtools	ports/multimedia/mjpegtools
 mkbold		ports/x11-fonts/mkbold
 mkcatalog	ports/textproc/mkcatalog
