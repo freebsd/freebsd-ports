@@ -1,10 +1,13 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Multibyte/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Bytes.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC_JP.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/ShiftJIS.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Unicode.pm
 lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UTF8.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UTF16LE.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UTF16BE.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/ShiftJIS.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC_JP.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Bytes.pm
+lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Multibyte/.packlist
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/String 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Multibyte 2>/dev/null || true
