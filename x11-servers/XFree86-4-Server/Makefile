@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.24 1996/12/07 12:51:19 asami Exp $
+# $Id: Makefile,v 1.25 1996/12/25 05:56:07 ache Exp $
 #
 
 DISTNAME=	xc
@@ -24,8 +24,14 @@ ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL \
+		${PKGNAME} PRE-INSTALL
+
 post-install:
-	chmod u-s ${PREFIX}/bin/SuperProbe
+	if [ -e ${PREFIX}/bin/SuperProbe ]; then \
+		chmod u-s ${PREFIX}/bin/SuperProbe; \
+	fi
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
