@@ -194,6 +194,7 @@
     SUBDIR += q3server-osp
     SUBDIR += q3server-ra3
     SUBDIR += q3server-ut
+    SUBDIR += q3server-wfa
     SUBDIR += qcc
     SUBDIR += qix
     SUBDIR += qkmj
