@@ -2068,6 +2068,7 @@ gabber		ports/net/gabber
 gaddr		ports/deskutils/gaddr
 gadfly		ports/databases/gadfly
 gag		ports/security/gag
+gai		ports/x11-toolkits/gai
 gail		ports/accessibility/gail
 gaim		ports/net/gaim
 gal		ports/x11-toolkits/gal
