@@ -3,7 +3,7 @@ include/lrdf_types.h
 lib/liblrdf.a
 lib/liblrdf.so
 lib/liblrdf.so.2
-share/ladspa/rdf/ladspa.rdfs
 libdata/pkgconfig/lrdf.pc
-@dirrm share/ladspa/rdf
+share/ladspa/rdf/ladspa.rdfs
+@unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
 @unexec rmdir %D/share/ladspa 2>/dev/null || true
