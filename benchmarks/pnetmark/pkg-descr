@@ -1,0 +1,5 @@
+PNetMark is a benchmarking tool for Common Language Runtime (CLR)
+environments.  It is loosely based on the techniques used by the
+CaffeineMark to benchmark Java.
+
+WWW:	http://www.southern-storm.com.au/portable_net.html
