@@ -19,14 +19,15 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps \
 		kpsepath:${PORTSDIR}/print/teTeX
 
-MAN1=		dvipdfm.1
-
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
+post-patch:
+	@${RM} ${WRKSRC}/data/config/dvipdfmx.cfg.orig
+
 pre-install:
-	${CP} ${LOCALBASE}/bin/dvipdfm ${LOCALBASE}/bin/dvipdfm-orig || ${TRUE}
-	${MV} ${LOCALBASE}/share/texmf/dvipdfm ${LOCALBASE}/share/texmf/dvipdfm-orig || ${TRUE}
+	${CP} ${LOCALBASE}/bin/dvipdfm ${LOCALBASE}/bin/dvipdfm-orig > /dev/null 2>&1 || ${TRUE}
+	${MV} ${LOCALBASE}/share/texmf/dvipdfm ${LOCALBASE}/share/texmf/dvipdfm-orig > /dev/null 2>&1 || ${TRUE}
 
 post-install:
 	@${LN} -fs ${LOCALBASE}/share/ghostscript/Resource ${PREFIX}/share/texmf/dvipdfm/

@@ -1,6 +1,7 @@
 bin/dvipdfmx
-@unexec cp %D/bin/dvipdfm-orig %D/bin/dvipdfm
-bin/dvipdfm-orig
+@unexec if [ -f %D/bin/dvipdfm-orig ]; then mv %D/bin/dvipdfm-orig %D/bin/dvipdfm ; fi
+@exec if [ -f %D/bin/dvipdfm ]; then cp %D/bin/dvpdfm %D/bin/dvipdfm-orig ; fi
+@exec if [ -e %D/share/texmf/dvipdfm ]; then mv %D/share/texmf/dvipdfm %D/share/texmf/dvipdfm-orig ; fi
 share/texmf/dvipdfm/Resource
 share/texmf/dvipdfm/CMap/Adobe-Identity-UCS2
 share/texmf/dvipdfm/CMap/EUC-UCS2
