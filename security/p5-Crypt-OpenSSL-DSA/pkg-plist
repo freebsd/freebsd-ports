@@ -1,5 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL/DSA.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL/DSA/Signature.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL/DSA/Signature.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA/DSA.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA/DSA.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/DSA/.packlist
