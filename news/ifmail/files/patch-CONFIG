@@ -1,5 +1,5 @@
-*** CONFIG.orig	Sat Apr 26 01:44:17 1997
---- CONFIG	Sat Nov 15 20:28:40 1997
+*** CONFIG	Sat Sep 13 15:41:44 1997
+--- CONFIG.neu	Fri Dec  5 11:01:29 1997
 ***************
 *** 8,21 ****
   # Debug messages turned on by -x key are written here.
@@ -61,55 +61,59 @@
   # News spool directory (to check space only)
   #NEWSSPOOL   = "/usr/spool/news"
 ***************
-*** 138,155 ****
-  # (see below).
+*** 152,171 ****
+  # system, usually "-DINT32=long -DINT16=short"
   
-  # Linux:
+  # Linux/x86:  (add -DHAS_BSD_SIGNALS if you have glibc2 aka libc6.x)
 ! OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
 ! 		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
 ! 		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
 ! 		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
-! 		-DREGEX_NEED_CARET -DSLAVE_SENDS_NAK_TOO -DNEED_FORK
-! 
-! # 386BSD:
+! 		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK \
+! 		-DINT32=long -DINT16=short
+  
+  # 386BSD:
 ! #OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
 ! #		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
 ! #		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
 ! #		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
-! #		-DREGEX_NEED_CARET -DHAS_SYS_ERRLIST
+! #		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
+! #		-DINT32=long -DINT16=short
   
   # SVR4:
   #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
---- 138,155 ----
-  # (see below).
+--- 152,171 ----
+  # system, usually "-DINT32=long -DINT16=short"
   
-  # Linux:
+  # Linux/x86:  (add -DHAS_BSD_SIGNALS if you have glibc2 aka libc6.x)
 ! #OPTS        = -DHAS_STATFS -DSTATFS_IN_VFS_H -DHAS_SETSID -DHAS_NDBM_H \
 ! #		-DDONT_HAVE_TM_GMTOFF -DHAS_TERMIOS_H -DASCII_LOCKFILES \
 ! #		-DHAS_FSYNC -DHAS_IOCTL_H -DHAS_REGEX_H -DHAS_TCP \
 ! #		-DFORCEINTL -DHAS_SYSLOG -DNEED_UUCPFROM -DNEED_BSY \
-! #		-DREGEX_NEED_CARET -DSLAVE_SENDS_NAK_TOO -DNEED_FORK
-! 
-! # 386BSD,FreeBSD:
+! #		-DSLAVE_SENDS_NAK_TOO -DNEED_FORK \
+! #		-DINT32=long -DINT16=short
+  
+  # 386BSD:
 ! OPTS        = -DHAS_STATFS -DSTATFS_IN_MOUNT_H -DHAS_SETSID -DHAS_NDBM_H \
 ! 		-DHAS_TERMIOS_H -DASCII_LOCKFILES -DHAS_FSYNC -DHAS_IOCTL_H \
 ! 		-DHAS_REGEX_H -DHAS_TCP -DHAS_SYSLOG -DNEED_UUCPFROM \
 ! 		-DNEED_BSY -DNEED_FORK -DNEGATIVE_SEEK_BUG \
-! 		-DREGEX_NEED_CARET -DHAS_SYS_ERRLIST
+! 		-DHAS_SYS_ERRLIST -DHAS_BSD_SIGNALS \
+! 		-DINT32=long -DINT16=short
   
   # SVR4:
   #OPTS        = -DHAS_STATVFS -DDONT_HAVE_TM_GMTOFF -DHAS_SETSID -DHAS_NDBM_H \
 ***************
-*** 193,199 ****
-  #		-DREGEX_NEED_CARET -DDONT_HAVE_GETOPT
+*** 217,223 ****
+  #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
   
   # for make install, where to put binaries and what owner to set
 ! BINDIR = /usr/lib/ifmail
   OWNER = ifmail
   GROUP = uucp
   MODE = 0711
---- 193,199 ----
-  #		-DREGEX_NEED_CARET -DDONT_HAVE_GETOPT
+--- 217,223 ----
+  #		-DNEED_BSY -DSLAVE_SENDS_NAK_TOO -DINT32=int -DINT16=short
   
   # for make install, where to put binaries and what owner to set
 ! BINDIR = ${PREFIX}/libexec/ifmail
@@ -117,7 +121,7 @@
   GROUP = uucp
   MODE = 0711
 ***************
-*** 213,219 ****
+*** 237,243 ****
   TAR = tar
   
   #CFLAGS = -g -Wall
@@ -125,7 +129,7 @@
   CFLAGS = -O2 -Wall
   # SVR4:
   #CFLAGS = -O -Xa
---- 213,219 ----
+--- 237,243 ----
   TAR = tar
   
   #CFLAGS = -g -Wall
@@ -134,7 +138,7 @@
   # SVR4:
   #CFLAGS = -O -Xa
 ***************
-*** 227,237 ****
+*** 254,264 ****
   # If you need TERM also add e.g. "/usr/src/term112/client.a"
   
   # Linux
@@ -146,7 +150,7 @@
   # SVR4
   #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
   # SCO
---- 227,239 ----
+--- 254,266 ----
   # If you need TERM also add e.g. "/usr/src/term112/client.a"
   
   # Linux
@@ -161,7 +165,7 @@
   #LIBS = -ldbm -lform -lnsl -lsocket -lc -L/usr/ucblib -lucb
   # SCO
 ***************
-*** 248,254 ****
+*** 275,281 ****
   # What programs are absent at your system?
   #NEEDED = strcasestr.o strncasecmp.o strcasecmp.o rename.o mkdir.o usleep.o \
   #		regexpr.o
@@ -169,7 +173,7 @@
   NEEDED =
   # SVR4
   #NEEDED = regexpr.o
---- 250,256 ----
+--- 277,283 ----
   # What programs are absent at your system?
   #NEEDED = strcasestr.o strncasecmp.o strcasecmp.o rename.o mkdir.o usleep.o \
   #		regexpr.o
