@@ -5,6 +5,7 @@
     SUBDIR += acid
     SUBDIR += aescrypt
     SUBDIR += aide
+    SUBDIR += altivore
     SUBDIR += amavis-perl
     SUBDIR += apg
     SUBDIR += arirang
