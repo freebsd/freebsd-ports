@@ -5322,6 +5322,7 @@ py-iconv	ports/converters/py-iconv
 py-imaging	ports/graphics/py-imaging
 py-imaging-handbook	ports/graphics/py-imaging-handbook
 py-irclib	ports/irc/py-irclib
+py-jabber	ports/net/py-jabber
 py-kde		ports/x11-toolkits/py-kde
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
