@@ -7,7 +7,7 @@
 
 PORTNAME=	uconv
 PORTVERSION=	0.4.4
-CATEGORIES=	japanese converters	# ruby
+CATEGORIES=	japanese converters ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.bekkoame.ne.jp/~yoshidam/
 MASTER_SITE_SUBDIR=	knu

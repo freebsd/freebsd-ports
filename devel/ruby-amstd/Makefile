@@ -7,7 +7,7 @@
 
 PORTNAME=	amstd
 PORTVERSION=	1.9.3
-CATEGORIES=	devel	# ruby
+CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby

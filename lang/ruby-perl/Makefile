@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	0.2.5
-CATEGORIES=	lang perl5	# ruby
+CATEGORIES=	lang ruby perl5
 MASTER_SITES=	http://www.bekkoame.ne.jp/~yoshidam/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby

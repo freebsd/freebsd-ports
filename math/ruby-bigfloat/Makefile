@@ -7,7 +7,7 @@
 
 PORTNAME=	bigfloat
 PORTVERSION= 	1.1.3
-CATEGORIES=	math	# ruby
+CATEGORIES=	math ruby
 MASTER_SITES=	http://www.tinyforest.gr.jp/ruby/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby

@@ -7,7 +7,7 @@
 
 PORTNAME=	optparse
 PORTVERSION=	0.7.5
-CATEGORIES=	devel	# ruby
+CATEGORIES=	devel ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby

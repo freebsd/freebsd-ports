@@ -7,7 +7,7 @@
 
 PORTNAME=	irb
 PORTVERSION=	0.6.1
-CATEGORIES=	lang
+CATEGORIES=	lang ruby
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/contrib/ \
 		ftp://ftp.iij.ad.jp/pub/lang/ruby/contrib/ \

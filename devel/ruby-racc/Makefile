@@ -7,7 +7,7 @@
 
 PORTNAME=	racc
 PORTVERSION=	1.2.2
-CATEGORIES=	devel	# ruby
+CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby
