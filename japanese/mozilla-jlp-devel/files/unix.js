@@ -26,9 +26,10 @@ pref("mail.empty_trash", false);
 pref("network.hosts.smtp_server", "localhost");
 pref("network.hosts.pop_server", "pop");
 pref("mail.check_new_mail", true);
+pref("browser.display.screen_resolution", 0); // System setting
 pref("browser.startup.license_accepted", "");
-pref("browser.cache.memory_cache_size", 3000);
-pref("browser.cache.disk_cache_size", 5000);
+pref("browser.cache.memory_cache_size", 4096);
+pref("browser.cache.disk_cache_size", 50000);
 pref("browser.ncols", 0);
 pref("browser.installcmap", false);
 pref("browser.drag_out_of_frame_style", 1);
@@ -49,6 +50,9 @@ pref("middlemouse.scrollbarPosition", true);
 
 // Clipboard behavior
 pref("clipboard.autocopy", true);
+
+// keyboard Mode_switch workaround
+pref("keyboard.mode_switch.enable_workaround", true);
 
 // Most Unix people think modal pref windows are stupid:
 pref("browser.prefWindowModal", false);
@@ -140,8 +144,8 @@ pref("font.name.monospace.zh-CN", "isas-song ti-gb2312.1980-0");
 pref("font.min-size.variable.ja", 8);
 pref("font.min-size.fixed.ja", 8);
 
-pref("font.min-size.variable.ko", 16);
-pref("font.min-size.fixed.ko", 16);
+pref("font.min-size.variable.ko", 10);
+pref("font.min-size.fixed.ko", 10);
 
 pref("font.min-size.variable.zh-CN", 16);
 pref("font.min-size.fixed.zh-CN", 16);

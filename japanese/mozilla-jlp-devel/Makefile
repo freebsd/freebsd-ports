@@ -5,18 +5,15 @@
 # $FreeBSD$
 #
 
-BROKEN=		"out of sync with mozilla(0.9.1)"
 PORTNAME=	mozilla
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www.mozilla.gr.jp/tools/search/ \
-		http://www.mozilla.gr.jp/jlp/
+MASTER_SITES=	http://www.mozilla.gr.jp/jlp/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	GoogleJapan.png GoogleJapan.src \
-		moz0.9-langfix.xpi ${JLP_SRC}
+DISTNAME=	${JLP_SRC}
 EXTRACT_SUFX=	# none
-EXTRACT_ONLY=	moz0.9-langfix.xpi ${JLP_SRC}
+EXTRACT_ONLY=	${JLP_SRC}
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
@@ -59,12 +56,6 @@ post-extract:
 	${MKDIR} ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/all.js ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.png ${WRKDIR}/sp
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.src ${WRKDIR}/sp
-	${MKDIR} ${WRKSRC}/chrome/comm; cd ${WRKSRC}/chrome/comm; \
-	${EXTRACT_CMD} ${WRKDIR}/comm.jar content/communicator/profile/selectLang.js
-	${MKDIR} ${WRKSRC}/chrome/toolkit; cd ${WRKSRC}/chrome/toolkit; \
-	${EXTRACT_CMD} ${WRKDIR}/toolkit.jar content/global/strres.js
 
 post-patch:
 	find ${WRKSRC} -name '*.orig' | xargs ${RM}
@@ -80,11 +71,15 @@ do-install:
 	${MV} -f all-skins.rdf all-skins.rdf.orig; \
 	${MV} -f user-locales.rdf user-locales.rdf.orig; \
 	${MV} -f user-skins.rdf user-skins.rdf.orig; \
-	${MV} -f comm/content/communicator/profile/selectLang.js comm/content/communicator/profile/selectLang.js.orig; \
-	${MV} -f toolkit/content/global/strres.js toolkit/content/global/strres.js.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
 	${MV} -f all.js all.js.orig; ${MV} -f unix.js unix.js.orig)
+	(cd ${PREFIX}/lib/mozilla/defaults/profile; \
+	${MV} -f bookmarks.html bookmarks.html.orig; \
+	${MV} -f localstore.rdf localstore.rdf.orig; \
+	${MV} -f mimeTypes.rdf mimeTypes.rdf.orig; \
+	${MV} -f panels.rdf panels.rdf.orig; \
+	${MV} -f search.rdf search.rdf.orig)
 	(cd ${PREFIX}/lib/mozilla/searchplugins; \
 	${MV} -f google.gif google.gif.orig; \
 	${MV} -f google.src google.src.orig)
@@ -96,6 +91,12 @@ do-install:
 	${TAR} -xf - -C ${PREFIX}/lib/mozilla/searchplugins
 	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults) | \
 	${TAR} -xf - -C ${PREFIX}/lib/mozilla
+	(cd ${PREFIX}/lib/mozilla/defaults/profile; \
+	${CP} -p JP/bookmarks.html bookmarks.html; \
+	${CP} -p JP/localstore.rdf localstore.rdf; \
+	${CP} -p JP/mimeTypes.rdf mimeTypes.rdf; \
+	${CP} -p JP/panels.rdf panels.rdf; \
+	${CP} -p JP/search.rdf search.rdf)
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
 	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)

@@ -28,7 +28,7 @@ pref("network.search.url","http://cgi.netscape.com/cgi-bin/url_search.cgi?search
 pref("keyword.URL", "http://keyword.netscape.com/keyword/");
 pref("keyword.enabled", true);
 pref("general.useragent.locale", "chrome://navigator/locale/navigator.properties");
-pref("general.useragent.misc", "rv:0.9");
+pref("general.useragent.misc", "rv:0.9.1");
 
 pref("general.startup.browser",             true);
 pref("general.startup.mail",                false);
@@ -47,10 +47,10 @@ pref("browser.startup.homepage",	   "chrome://navigator-region/locale/region.pro
 pref("browser.startup.homepage_override.1", true);
 pref("browser.startup.autoload_homepage",   true);
 
-pref("browser.cache.disk_cache_size",       7680);
+pref("browser.cache.disk_cache_size",       50000);
 pref("browser.cache.enable",                true);
 pref("browser.cache.disk.enable",           true);
-pref("browser.cache.memory_cache_size",     1024);
+pref("browser.cache.memory_cache_size",     4096);
 pref("browser.cache.disk_cache_ssl",        false);
 pref("browser.cache.check_doc_frequency",   0);
 
@@ -83,6 +83,7 @@ pref("browser.toolbars.showbutton.search",  true);
 pref("accessibility.browsewithcaret", false);
 pref("accessibility.usetexttospeech", "");
 pref("accessibility.usebrailledisplay", "");
+pref("accessibility.accesskeycausesactivation", true);
 
 // Dialog modality issues
 pref("browser.prefWindowModal", true);
@@ -103,6 +104,11 @@ pref("browser.history.last_page_visited", "");
 pref("browser.history_expire_days", 9);
 pref("browser.sessionhistory.max_entries", 50);
 
+// Translation service
+pref("browser.translation.service", "http://cgi.netscape.com/cgi-bin/translate.cgi?AlisUI=simple_frames/ns_home&AlisTargetURI=");
+pref("browser.translation.serviceDomain", "teletranslator.com");
+  
+// Platform for Internet Content Selection
 pref("browser.PICS.ratings_enabled", false);
 pref("browser.PICS.pages_must_be_rated", false);
 pref("browser.PICS.disable_for_this_session", false);
@@ -143,78 +149,83 @@ pref("browser.search.defaultenginename", "chrome://navigator/locale/navigator.pr
 
 // Default Capability Preferences: Security-Critical! 
 // Editing these may create a security risk - be sure you know what you're doing
-pref("capability.policy.default.barprop.visible.write", "UniversalBrowserWrite");
+//pref("capability.policy.default.barprop.visible.set", "UniversalBrowserWrite");
 
-pref("capability.policy.default.domexception.code", "allAccess");
-pref("capability.policy.default.domexception.message", "allAccess");
-pref("capability.policy.default.domexception.name", "allAccess");
-pref("capability.policy.default.domexception.result", "allAccess");
-pref("capability.policy.default.domexception.tostring", "allAccess");
+pref("capability.policy.default.DOMException.code", "allAccess");
+pref("capability.policy.default.DOMException.message", "allAccess");
+pref("capability.policy.default.DOMException.name", "allAccess");
+pref("capability.policy.default.DOMException.result", "allAccess");
+pref("capability.policy.default.DOMException.toString", "allAccess");
 
-pref("capability.policy.default.history.current.read", "UniversalBrowserRead");
-pref("capability.policy.default.history.next.read", "UniversalBrowserRead");
-pref("capability.policy.default.history.previous.read", "UniversalBrowserRead");
-pref("capability.policy.default.history.item.read", "UniversalBrowserRead");
+pref("capability.policy.default.History.back", "allAccess");
+pref("capability.policy.default.History.current", "UniversalBrowserRead");
+pref("capability.policy.default.History.forward", "allAccess");
+pref("capability.policy.default.History.go", "allAccess");
+pref("capability.policy.default.History.item", "UniversalBrowserRead");
+pref("capability.policy.default.History.length", "UniversalBrowserRead");
+pref("capability.policy.default.History.next", "UniversalBrowserRead");
+pref("capability.policy.default.History.previous", "UniversalBrowserRead");
+pref("capability.policy.default.History.toString", "UniversalBrowserRead");
 
-pref("capability.policy.default.location.hash.write", "allAccess");
-pref("capability.policy.default.location.host.write", "allAccess");
-pref("capability.policy.default.location.hostname.write", "allAccess");
-pref("capability.policy.default.location.href.write", "allAccess");
-pref("capability.policy.default.location.pathname.write", "allAccess");
-pref("capability.policy.default.location.port.write", "allAccess");
-pref("capability.policy.default.location.protocol.write", "allAccess");
-pref("capability.policy.default.location.search.write", "allAccess");
+pref("capability.policy.default.HTMLDocument.close", "allAccess");
+pref("capability.policy.default.HTMLDocument.open", "allAccess");
+pref("capability.policy.default.HTMLDocument.write", "allAccess");
+pref("capability.policy.default.HTMLDocument.writeln", "allAccess");
 
-pref("capability.policy.default.navigator.preference.read", "UniversalPreferencesRead");
-pref("capability.policy.default.navigator.preference.write", "UniversalPreferencesWrite");
+pref("capability.policy.default.Location.hash.set", "allAccess");
+pref("capability.policy.default.Location.host.set", "allAccess");
+pref("capability.policy.default.Location.hostname.set", "allAccess");
+pref("capability.policy.default.Location.href.set", "allAccess");
+pref("capability.policy.default.Location.pathname.set", "allAccess");
+pref("capability.policy.default.Location.port.set", "allAccess");
+pref("capability.policy.default.Location.protocol.set", "allAccess");
+pref("capability.policy.default.Location.reload", "allAccess");
+pref("capability.policy.default.Location.replace", "allAccess");
+pref("capability.policy.default.Location.search.set", "allAccess");
 
-pref("capability.policy.default.windowinternal.blur", "allAccess");
-pref("capability.policy.default.windowinternal.close", "allAccess");
-pref("capability.policy.default.windowinternal.focus", "allAccess");
-pref("capability.policy.default.windowinternal.location.write", "allAccess");
+pref("capability.policy.default.Navigator.preference", "allAccess");
+pref("capability.policy.default.Navigator.preferenceinternal.get", "UniversalPreferencesRead");
+pref("capability.policy.default.Navigator.preferenceinternal.set", "UniversalPreferencesWrite");
 
+pref("capability.policy.default.Window.blur", "allAccess");
+pref("capability.policy.default.Window.close", "allAccess");
+pref("capability.policy.default.Window.closed", "allAccess");
+pref("capability.policy.default.Window.Components", "allAccess");
+pref("capability.policy.default.Window.document", "allAccess");
+pref("capability.policy.default.Window.focus", "allAccess");
+pref("capability.policy.default.Window.history", "allAccess");
+pref("capability.policy.default.Window.location", "allAccess");
 // window.openDialog is insecure and must be made inaccessible from web scripts - see bug 56009
-pref("capability.policy.default.windowinternal.opendialog", "noAccess");
+pref("capability.policy.default.Window.openDialog", "noAccess");
+pref("capability.policy.default.Window.self", "allAccess");
+pref("capability.policy.default.Window.window", "allAccess");
 
-// Mailnews DOM restrictions - see bug 66938
-pref("capability.policy.mailnews.characterdata.data", "noAccess");
-pref("capability.policy.mailnews.characterdata.substringdata", "noAccess");
-pref("capability.policy.mailnews.element.getattribute", "noAccess");
-pref("capability.policy.mailnews.element.getattributenode", "noAccess");
-pref("capability.policy.mailnews.element.getattributenodens", "noAccess");
-pref("capability.policy.mailnews.element.getattributens", "noAccess");
-pref("capability.policy.mailnews.htmlanchorelement.href", "noAccess");
-pref("capability.policy.mailnews.htmlareaelement.href", "noAccess");
-pref("capability.policy.mailnews.htmlbaseelement.href", "noAccess");
-pref("capability.policy.mailnews.htmlblockquoteelement.cite", "noAccess");
-pref("capability.policy.mailnews.domexception.tostring", "noAccess");
-pref("capability.policy.mailnews.htmldocument.domain", "noAccess");
-pref("capability.policy.mailnews.htmldocument.url", "noAccess");
-pref("capability.policy.mailnews.htmlelement.innerhtml", "noAccess");
-pref("capability.policy.mailnews.htmlimageelement.src", "noAccess");
-pref("capability.policy.mailnews.image.lowsrc", "noAccess");
-pref("capability.policy.mailnews.node.attributes", "noAccess");
-pref("capability.policy.mailnews.node.nodevalue", "noAccess");
-pref("capability.policy.mailnews.nsdocument.location", "noAccess");
-pref("capability.policy.mailnews.window.name.write", "noAccess");
-pref("capability.policy.mailnews.windowinternal.location", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.hash", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.host", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.hostname", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.pathname", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.port", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.protocol", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.search", "noAccess");
-pref("capability.policy.mailnews.nshtmlanchorelement.text", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.hash", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.host", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.hostname", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.pathname", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.port", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.protocol", "noAccess");
-pref("capability.policy.mailnews.nshtmlareaelement.search", "noAccess");
-pref("capability.policy.mailnews.range.tostring", "noAccess");
-pref("capability.policy.mailnews.sites", "mailbox: imap: news: pop: pop3:");
+// Restrictions on the DOM for mail/news - see bug 66938
+pref("capability.policy.mailnews.DOMException.toString", "noAccess");;
+pref("capability.policy.mailnews.HTMLAnchorElement.hash", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.host", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.hostname", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.href", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.pathname", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.port", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.protocol", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.search", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.text", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.getAttribute", "noAccess");
+pref("capability.policy.mailnews.HTMLAnchorElement.attributes", "noAccess");
+pref("capability.policy.mailnews.HTMLDocument.location", "noAccess");
+pref("capability.policy.mailnews.HTMLDocument.domain", "noAccess");
+pref("capability.policy.mailnews.HTMLDocument.URL", "noAccess");
+pref("capability.policy.mailnews.Text.nodeValue", "noAccess");
+pref("capability.policy.mailnews.Text.data", "noAccess");
+pref("capability.policy.mailnews.Text.substringData", "noAccess");
+pref("capability.policy.mailnews.CDATASection.nodeValue", "noAccess");
+pref("capability.policy.mailnews.CDATASection.data", "noAccess");
+pref("capability.policy.mailnews.CDATASection.substringData", "noAccess");
+pref("capability.policy.mailnews.Range.toString", "noAccess");
+pref("capability.policy.mailnews.sites", "mailbox: imap: news:");
+pref("capability.policy.mailnews.Window.name.set", "noAccess");
+pref("capability.policy.mailnews.Window.location", "noAccess");
 
 pref("javascript.enabled",                  true);
 pref("javascript.allow.mailnews",           false);
@@ -229,8 +240,17 @@ pref("image.animation_mode",                "normal");
 
 pref("offline.startup_state",            0);
 pref("offline.send.unsent_messages",            0);
+pref("offline.download.download_messages",  0);
 pref("offline.prompt_synch_on_exit",            true);
 pref("offline.news.download.use_days",          0);
+
+// If there is ever a security firedrill that requires
+// us to block certian ports global, this is the pref 
+// to use.  Is is a comma delimited list of port numbers
+// for example:
+//   pref("network.security.ports.banned", "1,2,3,4,5");
+// prevents necko connecting to ports 1-5 unless the protocol
+// overrides.
 
 pref("network.hosts.smtp_server",           "mail");
 pref("network.hosts.pop_server",            "mail");
@@ -247,12 +267,16 @@ pref("network.http.keep-alive", true); // set it to false in case of problems
 pref("network.http.proxy.keep-alive", true );
 pref("network.http.keep-alive.timeout", 300);
 
-pref("network.http.max-connections",  8);
+pref("network.http.max-connections", 16);
+pref("network.http.max-connections-per-server", 8);
 pref("network.http.keep-alive.max-connections", 20); // max connections to be kept alive
 pref("network.http.keep-alive.max-connections-per-server", 8);
 
 pref("network.http.connect.timeout",  30);	// in seconds
 pref("network.http.request.timeout", 120);	// in seconds
+
+// Accept header
+pref("network.http.accept.default", "text/xml, application/xml, application/xhtml+xml, text/html;q=0.9, image/png, image/jpeg, image/gif;q=0.2, text/plain;q=0.8, text/css, */*;q=0.1");
 
 // Enable http compression: comment this out in case of problems with 1.1
 pref("network.http.accept-encoding" ,"gzip,deflate,compress,identity");
@@ -272,6 +296,10 @@ pref("network.http.pipelining.maxrequests" , 4);
 
 pref("network.http.proxy.ssl.connect",true);
 // </ruslan>
+
+// until the directory view has an owner
+// necko will produce html -- dougt
+pref("network.dir.generate_html", true);
 
 // sspitzer:  change this back to "news" when we get to beta.
 // for now, set this to news.mozilla.org because you can only
