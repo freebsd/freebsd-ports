@@ -30,7 +30,7 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include<bsd.port.pre.mk>
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on 4.x"
