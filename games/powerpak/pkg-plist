@@ -12,10 +12,6 @@ lib/libPP.a
 lib/libPP.so
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
-share/doc/PowerPak/ASCII-Logo
-share/doc/PowerPak/CHANGELOG
-share/doc/PowerPak/LICENSE
-share/doc/PowerPak/README.IMG.h
 share/examples/PowerPak/PowerDraw/Makefile
 share/examples/PowerPak/PowerDraw/crackman.ttf
 share/examples/PowerPak/PowerDraw/crackman.txt
@@ -35,7 +31,6 @@ share/examples/PowerPak/PowerInput/ex2.c
 share/examples/PowerPak/PowerInput/ex3.c
 share/examples/PowerPak/PowerInput/ex4.c
 @dirrm include/PowerPak
-@dirrm share/doc/PowerPak
 @dirrm share/examples/PowerPak/PowerDraw
 @dirrm share/examples/PowerPak/PowerInput
 @dirrm share/examples/PowerPak
