@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
-MAKE_ENV+=	BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE}
 
 post-extract:
 	${CP} ${DISTDIR}/nedit.app-defaults ${WRKSRC}/NEdit.ad

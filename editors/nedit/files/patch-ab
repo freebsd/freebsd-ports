@@ -5,8 +5,8 @@
  	$(CC) $(CFLAGS) nc.o ../util/libNUtil.a $(LIBS) -o $@
  	
 +install: nedit nc
-+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nedit ${PREFIX}/bin
-+	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nc ${PREFIX}/bin/nclient
++	${INSTALL_PROGRAM} nedit ${PREFIX}/bin
++	${INSTALL_PROGRAM} nc ${PREFIX}/bin/nclient
 +
  help.o: help.c
  	$(CC) $(CFLAGS) $(BIGGER_STRINGS) -c help.c -o $@
