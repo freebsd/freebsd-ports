@@ -21,7 +21,7 @@ touch .newfailure.stamp
 touch .failure.html.lock
 
 newfailure=${pb}/${arch}/${branch}/newfailure
-num=$(wc -l ${newfailure})
+num=$(wc -l ${newfailure} | awk '{print $1}')
 
 header() {
   echo "<html><head><title>New package building errors</title>" >$of
@@ -44,25 +44,28 @@ footer() {
 #
 # Create "default" output, sorted on portname
 #
-header "<th>Port</th><th>Package</th><th>Date broken</th>"
+header "<th>Port</th><th>Package</th><th>Broken</th><th>Last</th><th>Count</th>"
 
-for i in `cat ${newfailure}`; do
-    set $(echo $i | tr ' ' '_' | tr \| " ")
-
+sort -r -n -k 4 -t \| failure > newfailure
+IFS='|'
+while read dir name ver date last count; do
     echo "<tr>" >> $of
-    echo "<td><a href=\"http://cvsweb.freebsd.org/ports/$1\">$1</a></td>" >> $of
-    echo "<td><a href=\"${arch}-${branch}-latest/$3.log\">$3</a></td>" >> $of
+    echo "<td><a href=\"http://cvsweb.freebsd.org/ports/$dir\">$dir</a></td>" >> $of
+    echo "<td><a href=\"${arch}-${branch}-latest/$ver.log\">$ver</a></td>" >> $of
 
 #    echo "<td align=\"right\">$affby</td><td align=\"right\">$4 Kb</td>" >> $of
 #    echo "<td><a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$5\">$5</a></td>" >> $of
 #    echo "<td><a href=\"mailto:$6\">$6</a></td>" >> $of
 #    echo "<td>" >> $of
 
-    date=$(echo $4 | tr '_' ' ')
-    echo "<td>${date}</td>" >> $of
+    alphadate=$(date -jf %s ${date})
+    alphalast=$(date -jf %s ${last})
+    echo "<td>${alphadate}</td>" >> $of
+    echo "<td>${alphalast}</td>" >> $of
+    echo "<td>$count</td>" >> $of
 
     echo "</tr>" >> $of
-done
+done < newfailure
 footer ""
 rm .failure.html.lock
 mv -f $of /usr/local/www/data/errorlogs/${arch}-${branch}-failure.html
