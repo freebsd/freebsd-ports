@@ -1,0 +1,11 @@
+BEAV (Binary Editor And Viewer), is a full featured binary file 
+editor.	  Just about any operation that you could want to do to a binary 
+file is possible with BEAV.   You can insert or delete in the middle of 
+a file thereby changing it's size.   You can edit multiple files in 
+multiple windows and cut and paste between them.   You can display and 
+edit data in hex, octal, decimal, binary, ascii, or ebcdic formats.   You 
+can display data in byte, word, or long word formats in either Intel or 
+Motorola byte ordering.   You can send the formatted display mode to a 
+file or printer.
+
+This is version 1.40.3.
