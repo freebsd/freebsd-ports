@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/glade/Makefile.in	2001/08/15 08:53:08	1.1
++++ src/glade/Makefile.in	2001/08/15 08:53:38
+@@ -7,7 +7,7 @@
+ 
+ include ../Makefile.common
+ 
+-SONAME        = libgtkada_glade-$(MAJOR).$(MINOR)$(SO_EXT).$(MICRO)
++SONAME        = libgtkada_glade$(SO_EXT).$(MICRO)
+ LIBNAME       = libgtkada_glade$(SO_EXT)
+ ARCHIVENAME   = libgtkada_glade.a
+ INSTALL       = @INSTALL@

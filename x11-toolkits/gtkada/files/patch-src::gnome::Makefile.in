@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/gnome/Makefile.in	2001/08/15 08:53:08	1.1
++++ src/gnome/Makefile.in	2001/08/15 08:53:44
+@@ -1,7 +1,7 @@
+ include ../Makefile.common
+ 
+ LIBNAME       = libgnomeada$(SO_EXT)
+-SONAME        = libgnomeada-$(MAJOR).$(MINOR)$(SO_EXT).$(MICRO)
++SONAME        = libgnomeada$(SO_EXT).$(MICRO)
+ ARCHIVENAME   = libgnomeada.a
+ GNOME_LIBS    = @GNOME_LIBS@
+ HAVE_GNOME    = @HAVE_GNOME@

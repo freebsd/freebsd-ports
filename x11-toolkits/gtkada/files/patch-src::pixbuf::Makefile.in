@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/pixbuf/Makefile.in	2001/08/15 08:53:08	1.1
++++ src/pixbuf/Makefile.in	2001/08/15 08:53:50
+@@ -9,7 +9,7 @@
+ 
+ CFLAGS = @CFLAGS@ -Wall @PIXBUF_CFLAGS@ -I. $(FPIC)
+  
+-SONAME        = libgtkada_art-$(MAJOR).$(MINOR)$(SO_EXT).$(MICRO)
++SONAME        = libgtkada_art$(SO_EXT).$(MICRO)
+ LIBNAME       = libgtkada_art$(SO_EXT)
+ ARCHIVENAME   = libgtkada_art.a
+ INSTALL       = @INSTALL@

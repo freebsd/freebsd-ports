@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- testgtk/Makefile.in	2001/08/15 08:56:29	1.1
++++ testgtk/Makefile.in	2001/08/15 08:57:20
+@@ -15,8 +15,8 @@
+ 
+ CC = @CC@
+ GTKADA_CONFIG=gtkada-config
+-GNATFLAGS = @CFLAGS@ -gnata
+-GNATFLAGS_DEVEL = @CFLAGS@ -g -gnatawu
++GNATFLAGS = -O2 -gnata
++GNATFLAGS_DEVEL = -O2 -g -gnatawu
+ TARGET_LFLAGS = @TARGET_LFLAGS@
+ 
+ GNATMAKE = gnatmake
