@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Wed Nov 14 01:16:27 2001
-+++ ../make/Makefile	Sat Jul 19 12:22:51 2003
+--- ../make/Makefile.orig	Sat Apr 19 03:32:36 2003
++++ ../make/Makefile	Fri Jul 25 11:33:40 2003
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -24,26 +24,26 @@
  
  ####################################################################
  ##  Known Machine Types; Uncomment One of the Following Sections  ##
-@@ -87,12 +87,12 @@
- ##  Compiler: GNU g77
+@@ -101,12 +101,12 @@
+ ##  Compiler: Intel Fortran
  ##
  
--F77 = /usr/bin/g77
+-F77 = /usr/intel/compiler70/ia32/bin/ifc
 -LIBS =
 -F77FLAGS = -c
--OPTFLAGS = -O3 -ffast-math
+-OPTFLAGS = -O2 -cm -w
 -LIBFLAGS = -crusv
--LINKFLAGS =
-+#F77 = /usr/bin/g77
+-LINKFLAGS = -Vaxlib
++#F77 = /usr/intel/compiler70/ia32/bin/ifc
 +#LIBS =
 +#F77FLAGS = -c
-+#OPTFLAGS = -O3 -ffast-math
++#OPTFLAGS = -O2 -cm -w
 +#LIBFLAGS = -crusv
-+#LINKFLAGS =
++#LINKFLAGS = -Vaxlib
  
  ##
  ##  Machine:  IntelPC / Linux
-@@ -108,6 +108,24 @@
+@@ -122,6 +122,20 @@
  #LIBFLAGS = -crusv
  #LINKFLAGS =
  
@@ -58,17 +58,13 @@
 +LIBS =
 +F77FLAGS = -Wno-globals -fno-globals -c -w
 +LINKFLAGS =
-+
-+OPTFLAGS = ${FFLAGS} -ffast-math
-+.if ${MACHINE_ARCH} == "i386"
-+OPTFLAGS += -malign-double
-+.endif
++OPTFLAGS = ${FFLAGS}
 +LIBFLAGS = -rcuv
 +
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -497,11 +515,13 @@
+@@ -522,11 +536,13 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -84,7 +80,7 @@
  
  all:	${EXEFILES}
  
-@@ -512,58 +532,58 @@
+@@ -537,58 +553,58 @@
  	cat *.i *.f > tinker.txt
  
  rename:

@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	gjohnson@srrc.ars.usda.gov
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
 
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
@@ -23,6 +23,8 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 
 RESTRICTED=	author requests no distribution except from his FTP site
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
 
 .include <bsd.port.pre.mk>
 
@@ -34,6 +36,19 @@ BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 .endif
 PLIST=		${PKGDIR}/pkg-plist.viewer
 USE_XLIB=	yes
+
+.if defined(WITH_OPTIMIZED_FLAGS)
+CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+.if (${MACHINE_ARCH} == "i386")
+CFLAGS+=        -mfancy-math-387 -malign-double
+.endif # i386
+.endif
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_FLAGS)
+	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+.endif
+
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 .else
