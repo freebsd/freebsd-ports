@@ -30,7 +30,7 @@ install snd_pcm by doing:
 
 # cd /sys/modules/sound/pcm/ && make all install
 
-Report problems to Alexander Matey <lx@matey.org>.
+Report problems to Alexander Matey <ports@matey.org>.
 
 Thanks and enjoy!
 

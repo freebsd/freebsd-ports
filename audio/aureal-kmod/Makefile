@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://home.columbus.rr.com/amatey/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
 
-MAINTAINER=	lx@matey.org
+MAINTAINER=	ports@matey.org
 COMMENT=	A FreeBSD Driver for Aureal Vortex based soundcards
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
@@ -68,7 +68,7 @@ PORTREVISION=	3
 MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .elif ${OSVERSION} < 500000
-# FreeBSD 4.5+
+# FreeBSD 4.5+, 4.6, 4.7, 4.8-
 .if ${VERSION_SOUND_C_STABLE} < 12
 BROKEN=		"Base system is outdated. This port needs -STABLE after 2002-04-22."
 .endif
@@ -82,6 +82,11 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 .if ${VERSION_SOUND_C_CURRENT} < 70
 BROKEN=		"Base system is outdated. This port needs -CURRENT after 2002-04-04."
 .endif
+.endif
+
+# Make sure kernel sources are present before going any further
+.if ! exists(${SRCPREFIX}/sys/dev/sound/pcm/sound.c)
+BROKEN=	"You need to extract kernel source tree before building this package"
 .endif
 
 pre-fetch:
@@ -100,13 +105,6 @@ pre-fetch:
 	@${FALSE}
 .endif
 .endfor
-	@if [ ! -d /sys -a ! -d ${SRCPREFIX}/sys ]; then \
-		${ECHO} "****************************************" ; \
-		${ECHO} " You need to extract kernel source tree" ; \
-		${ECHO} " before you build this package..." ; \
-		${ECHO} "****************************************" ; \
-		${FALSE} ; \
-	fi
 
 pre-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
