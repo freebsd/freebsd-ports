@@ -3,7 +3,7 @@
 # Date created:         20 Sept 1998
 # Whom:                 brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.32 1999/01/05 20:53:24 sada Exp $
+# $Id: Makefile,v 1.33 1999/01/06 04:18:20 simokawa Exp $
 #
 
 DISTNAME=       netscape-navigator-4.5
@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.5/english/unix/unsuppo
 DISTFILES=      navigator-v45-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ports@FreeBSD.ORG
+
+Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 ONLY_FOR_ARCHS=	i386
 

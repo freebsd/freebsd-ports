@@ -3,7 +3,7 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.11 1998/04/09 12:49:01 ache Exp $
+# $Id: Makefile,v 1.12 1998/08/18 21:12:12 stb Exp $
 #
 
 DISTNAME=       analog3.0
@@ -18,6 +18,8 @@ MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
 
 MAINTAINER=     ache@freebsd.org
+
+Y2K=		http://www.statslab.cam.ac.uk/~sret1/analog/
 
 MAKE_FLAGS=     -DPREFIX=${PREFIX} -f
 

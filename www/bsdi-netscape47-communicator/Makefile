@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.35 1998/12/27 08:31:13 asami Exp $
+# $Id: Makefile,v 1.36 1999/01/06 04:18:16 simokawa Exp $
 #
 
 DISTNAME=	communicator-v45-export.x86-unknown-freebsd
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.5/english/unix/unsupport
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	thepish@FreeBSD.ORG
+
+Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 ONLY_FOR_ARCHS=	i386
 

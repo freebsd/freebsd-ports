@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.6 1998/12/11 08:04:22 obrien Exp $
+# $Id: Makefile,v 1.7 1999/01/06 04:18:12 simokawa Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -12,6 +12,8 @@ PKGNAME=	netscape-communicator-4.07.us
 CATEGORIES=	www
 
 MAINTAINER=	obrien@FreeBSD.ORG
+
+Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_lib
 
