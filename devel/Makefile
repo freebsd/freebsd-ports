@@ -120,6 +120,7 @@
     SUBDIR += m4
     SUBDIR += makedepend
     SUBDIR += mico
+    SUBDIR += mime
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
