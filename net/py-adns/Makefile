@@ -15,7 +15,7 @@ DISTNAME=	adns-python-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A Python Interface to adns, the asynchronous DNS library
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns
+LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

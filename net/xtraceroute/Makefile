@@ -14,9 +14,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D graphical version of the traceroute program
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
+BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/dns/host
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-RUN_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
+RUN_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/dns/host
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

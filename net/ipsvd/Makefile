@@ -13,7 +13,7 @@ MASTER_SITES=	http://smarden.org/ipsvd/
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Internet protocol service daemons
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbdns.a:${PORTSDIR}/devel/libdjbdns
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbdns.a:${PORTSDIR}/dns/libdjbdns
 
 WRKSRC=		${WRKDIR}/net/${DISTNAME}
 ALL_TARGET=	default

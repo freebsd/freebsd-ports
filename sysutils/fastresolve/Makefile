@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs that process web logs to get DNS and domain ownership info
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
-		adns.1:${PORTSDIR}/net/adns
+		adns.1:${PORTSDIR}/dns/adns
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

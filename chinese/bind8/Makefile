@@ -7,7 +7,7 @@
 
 CATEGORIES=	chinese net
 
-MASTERDIR=	${.CURDIR}/../../net/bind8
+MASTERDIR=	${.CURDIR}/../../dns/bind8
 
 PATCH_SITES=	http://www.sinica.edu.tw/~jihuang/
 

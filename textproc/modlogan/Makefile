@@ -15,7 +15,7 @@ MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
+LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gd.4:${PORTSDIR}/graphics/gd \
 		intl.5:${PORTSDIR}/devel/gettext \
 		pcre.0:${PORTSDIR}/devel/pcre \
