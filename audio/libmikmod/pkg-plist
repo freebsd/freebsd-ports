@@ -1,0 +1,16 @@
+bin/libmikmod-config
+include/mikmod.h
+lib/libmikmod.a
+lib/libmikmod.la
+lib/libmikmod.so
+lib/libmikmod.so.1.1
+@unexec install-info --delete %D/info/mikmod.info %D/info/dir
+info/mikmod.info
+info/mikmod.info-1
+info/mikmod.info-2
+info/mikmod.info-3
+share/aclocal/libmikmod.m4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@dirrm share/aclocal
