@@ -21,8 +21,9 @@ LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-pthread -L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+	       	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming \
+		${PTHREAD_CFLAGS}"
 USE_GMAKE=		yes
 USE_XLIB=	yes
 
