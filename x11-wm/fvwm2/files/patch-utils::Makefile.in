@@ -1,0 +1,13 @@
+--- utils/Makefile.in.orig	Sun Aug 11 08:10:50 2002
++++ utils/Makefile.in	Mon Sep  9 06:46:39 2002
+@@ -478,8 +478,8 @@
+ 		echo "Warning: $(bindir)/fvwm-root symlink was not created"
+ 
+ install-data-local:
+-	@$(NEW_NAME_SYMLINKS) rm -f $(DESTDIR)$(mandir)/man1/fvwm-root.1 || true
+-	@$(NEW_NAME_SYMLINKS) $(LN_S) xpmroot.1 $(DESTDIR)$(mandir)/man1/fvwm-root.1 || \
++	@$(NEW_NAME_SYMLINKS) rm -f $(DESTDIR)$(mandir)/man1/fvwm-root.1.gz || true
++	@$(NEW_NAME_SYMLINKS) $(LN_S) xpmroot.1.gz $(DESTDIR)$(mandir)/man1/fvwm-root.1.gz || \
+ 		echo "Warning: $(mandir)/man1/fvwm-root.1 symlink was not created"
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

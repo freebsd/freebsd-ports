@@ -48,6 +48,10 @@ libexec/fvwm/%%FVWM_VERSION%%/FvwmTheme
 libexec/fvwm/%%FVWM_VERSION%%/FvwmTile
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWharf
 libexec/fvwm/%%FVWM_VERSION%%/FvwmWinList
+@comment The following are here because they are symlinks
+man/man1/fvwm.1.gz
+man/man1/fvwm-root.1.gz
+@comment End of symlink list
 share/fvwm2/pixmaps/Jlock.xpm
 share/fvwm2/pixmaps/Jnews.xpm
 share/fvwm2/pixmaps/Jrecycle.xpm
