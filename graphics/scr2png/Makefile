@@ -7,7 +7,7 @@
 
 PORTNAME=	scr2png
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -17,7 +17,13 @@ NO_WRKSUBDIR=	yes
 MAINTAINER=	nik@freebsd.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
+.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+.else
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd-nox11
+.else
+.endif
 
 USE_REINPLACE=	yes
 
@@ -31,4 +37,4 @@ post-extract:
 do-install:	
 	@cd ${WRKSRC}; ${MAKE} BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
