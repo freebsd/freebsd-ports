@@ -15,7 +15,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	ports@FreeBSD.org
 
 USE_KDEBASE_VER=2
-LIB_DEPENDS=	noatun.0:${PORTSDIR}/audio/kdemultimedia2
+LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
