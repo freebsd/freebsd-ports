@@ -1,8 +1,8 @@
 bin/exjdxgen
 bin/xjdic
-bin/xjdic22sa
-bin/xjdic22cl
-bin/xjdserver22
+bin/xjdic_sa
+bin/xjdic_cl
+bin/xjdserver
 bin/xjdxgen
 share/dict/edict/4jwords
 share/dict/edict/4jwords.xjdx
@@ -55,5 +55,5 @@ share/doc/xjdic/kanjidic.doc
 share/doc/xjdic/lawgldoc.new
 share/doc/xjdic/lifscdic.doc
 share/doc/xjdic/mktdic.doc
-share/doc/xjdic/xjdic22.doc
+share/doc/xjdic/xjdic23.inf
 @dirrm share/doc/xjdic
