@@ -18,7 +18,8 @@ EXTRACT_ONLY=	basedebs.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Debian base set for the Linux mode
 
-CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-gentoo*
+CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-gentoo* \
+		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=	i386 amd64
 
 BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
