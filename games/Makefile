@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.111 1998/03/15 17:31:23 jseger Exp $
+# $Id: Makefile,v 1.112 1998/03/15 20:33:21 steve Exp $
 #
 
     SUBDIR += acm
@@ -81,6 +81,7 @@
     SUBDIR += xmj
     SUBDIR += xmris
     SUBDIR += xneko
+    SUBDIR += xnibbles
     SUBDIR += xonix
     SUBDIR += xpacman
     SUBDIR += xpat2
