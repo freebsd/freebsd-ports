@@ -50,7 +50,7 @@
 
 # this tells Samba to use a separate log file for each machine
 # that connects
-   log file = /usr/local/samba/var/log.%m
+   log file = __LOGDIR__/log.%m
 
 # Put a capping on the size of the log files (in Kb).
    max log size = 50
@@ -227,7 +227,7 @@
 # specifically define each individual printer
 [printers]
    comment = All Printers
-   path = /usr/spool/samba
+   path = __SAMBA_SPOOL__
    browseable = no
 # Set public = yes to allow user 'guest account' to print
    guest ok = no
