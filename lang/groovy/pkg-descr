@@ -1,0 +1,24 @@
+Groovy is an agile dynamic language for the Java 2 Platform that has many of
+the features that people like so much in languages like Python, Ruby and
+Smalltalk, making them available to Java developers using a Java-like syntax.
+
+Groovy is designed to help you get things done on the Java 2 Platform in a
+quick, concise and fun way. Groovy brings the power of a scripting language
+directly into the Java 2 Platform. For example:
+
+- Shell scripting using Groovy allows the full power of the Java Platform to be
+  brought to bear to the task at hand.
+- Groovy can be used (and indeed is already being used) as a replacement for
+  Java for small and medium sized applications to execute on the Java 2
+  Platform.
+- Groovy can be used as an embedded language for dynamic business rules or
+  extension points utilizing the agility of Groovy and saving the cost of
+  redeploying applications for each change of rule (especially when the rules
+  are stored in a database).
+- Groovy makes writing test cases for unit tests very easy.
+
+As well as being a powerful language for scripting Java objects, Groovy can be
+used as an alternative compiler to javac to generate standard Java bytecode to
+be used by any Java project.
+
+WWW:	http://groovy.codehaus.org/
