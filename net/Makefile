@@ -470,6 +470,7 @@
     SUBDIR += tcpshow
     SUBDIR += tcpstat
     SUBDIR += tcptrace
+    SUBDIR += tcptraceroute
     SUBDIR += tcpview
     SUBDIR += tdetect
     SUBDIR += telnetx
