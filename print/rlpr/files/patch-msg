@@ -1,0 +1,39 @@
+Don't allow the network obtained strings to be interpreted
+as sprintf() format directives. See http://www.osvdb.org/7194
+
+This fix is different from Debian's. It is better, because it
+requires no extra work, when errno is zero, and saves syslog(3)
+the hassle of handling %m, when it is.
+
+	-mi
+
+--- src/msg.c	Thu Sep 16 01:10:23 1999
++++ src/msg.c	Thu Jun 24 17:14:13 2004
+@@ -160,20 +160,14 @@
+ 
+     } else if (rlpr_msg->use_syslog) {
+-
+-	/*
+-	 * sigh.  this really sucks, but what can we do: vsnprintf()
+-	 * isn't yet standard enough to rely on.  maybe if i can find
+-	 * a portable implementation lying around somewhere i can make
+-	 * a ../lib/vsnprintf.c
+-	 */
+-
+ 	char	buf[BUFSIZ];
++	const char *_format;
+ 
+-	vsprintf(buf, _(format), ap);
+-
+-	if (errno != 0)
+-	    strcat(buf, ": %m");
++	if (errno != 0) {
++	    snprintf(buf, sizeof buf, "%s: %s", _(format), strerror(errno));
++	    _format = buf;
++	} else
++	    _format = _(format);
+ 
+-	syslog(rlpr_msg->syslog_prio[level], buf);
++	vsyslog(rlpr_msg->syslog_prio[level], _format, ap);
+ 
+     } else {
