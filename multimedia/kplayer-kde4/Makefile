@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	kplayer
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	kplayer-0.2.0-src
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Movie player based on mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-WRKSRC=		${WRKDIR}/kplayer-0.2/
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
