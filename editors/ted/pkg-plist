@@ -1,0 +1,21 @@
+bin/Ted
+lib/X11/app-defaults/Ted
+share/Ted/afm/Courier-Bold.afm
+share/Ted/afm/Courier-BoldOblique.afm
+share/Ted/afm/Courier-Oblique.afm
+share/Ted/afm/Courier.afm
+share/Ted/afm/Helvetica-Bold.afm
+share/Ted/afm/Helvetica-BoldOblique.afm
+share/Ted/afm/Helvetica-Oblique.afm
+share/Ted/afm/Helvetica.afm
+share/Ted/afm/Symbol.afm
+share/Ted/afm/Times-Bold.afm
+share/Ted/afm/Times-BoldItalic.afm
+share/Ted/afm/Times-Italic.afm
+share/Ted/afm/Times-Roman.afm
+share/doc/Ted/TedDocument.rtf
+@dirrm share/doc/Ted
+@exec mkdir -p %D/share/Ted/ind
+@dirrm share/Ted/ind
+@dirrm share/Ted/afm
+@dirrm share/Ted

@@ -112,6 +112,7 @@
     SUBDIR += staroffice52
     SUBDIR += sted
     SUBDIR += tamago
+    SUBDIR += ted
     SUBDIR += textedit
     SUBDIR += the
     SUBDIR += thoteditor
