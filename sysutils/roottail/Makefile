@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roottail
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/ \
 		ftp://ftp.goof.com/pub/pcg/marc/
@@ -17,9 +17,5 @@ MAINTAINER=	jedgar@FreeBSD.org
 MAN1=		root-tail.1
 USE_IMAKE=	yes
 MANCOMPRESSED=	no
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/root-tail ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/root-tail.man ${PREFIX}/man/man1/root-tail.1
 
 .include <bsd.port.mk>
