@@ -1,5 +1,5 @@
---- configure.orig	Wed Feb 23 12:19:12 2000
-+++ configure	Thu Feb 24 15:01:29 2000
+--- configure.orig	Thu Sep 28 10:55:22 2000
++++ configure	Mon Oct  2 06:32:36 2000
 @@ -18,7 +18,7 @@
  DATADIR=
  MANDIR=
@@ -9,11 +9,3 @@
  QUIET=
  CC=
  INSTALLPROG=
-@@ -192,6 +192,7 @@
- ###### Check for snprintf()
- printf %s "Checking for snprintf()... " 1>&5
- cat >tmp.c <<EOF
-+#include <stdio.h>
- #include <string.h>
- int main()
- {
