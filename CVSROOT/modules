@@ -3721,9 +3721,7 @@ ja-phpgroupware	ports/japanese/phpgroupware
 ja-plain2	ports/japanese/plain2
 ja-plan		ports/japanese/plan
 ja-platex-jsclasses	ports/japanese/platex-jsclasses
-ja-platex209-euc	ports/japanese/platex209-euc
-ja-platex209-jis	ports/japanese/platex209-jis
-ja-platex209-sjis	ports/japanese/platex209-sjis
+ja-platex209	ports/japanese/platex209
 ja-port_man	ports/japanese/man
 ja-postgresql	ports/japanese/postgresql
 ja-postgresql-tcltk	ports/japanese/postgresql-tcltk
@@ -3821,7 +3819,7 @@ ja-wnn7egg	ports/japanese/wnn7egg
 ja-wordnet-fpw	ports/japanese/wordnet-fpw
 ja-wwasw-fpw	ports/japanese/wwasw-fpw
 ja-xchat	ports/japanese/xchat
-ja-xdvik-vflib	ports/japanese/xdvik-vflib
+ja-xdvik	ports/japanese/xdvik
 ja-xemacs-canna	ports/japanese/xemacs21-canna
 ja-xemacs-canna+freewnn	ports/japanese/xemacs21-canna+freewnn
 ja-xemacs-canna+wnn6	ports/japanese/xemacs21-canna+wnn6
