@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Dec 14 14:40:37 2000
++++ Makefile	Tue Dec 19 10:49:35 2000
+@@ -1 +1 @@
+-CC = gcc
++#CC = gcc
+@@ -5,2 +5,2 @@
+-MD5SUM = md5sum
+-CFLAGS = -O3 -Wall
++MD5SUM ?= /sbin/md5 -r
++CFLAGS += -Wall

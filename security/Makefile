@@ -121,6 +121,7 @@
     SUBDIR += super
     SUBDIR += swatch
     SUBDIR += tcp_wrapper
+    SUBDIR += tea-total
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
