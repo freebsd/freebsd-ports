@@ -16,9 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
-# Global variables
-#
-
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -96,31 +93,23 @@ pre-patch::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_GUI_TERM=yes\""
 	@${ECHO_MSG}
 .endif
-.if !defined(WITH_BOCHS_VESA)
-	@${ECHO_MSG} "If you want to enable the VESA BIOS video extensions of bochs,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_VESA=yes\""
-	@${ECHO_MSG}
-.else
-	@${ECHO_MSG} "Remember that with the VESA option you must also use VGABIOS-lgpl-latest"
-	@${ECHO_MSG}
-.endif
 .if !defined(WITH_BOCHS_PROCESSORS)
-	@${ECHO_MSG} "If you want to compile with SMP support (implies WITH_BOCHS_CPU_LEVEL=6)."
+	@${ECHO_MSG} "If you want to compile with SMP support (implies WITH_BOCHS_CPU_LEVEL=6),"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_PROCESSORS=<number of processors>\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_BOCHS_DEBUGGER)
-	@${ECHO_MSG} "If you want to compile with builtin debugger and disassembler support."
+	@${ECHO_MSG} "If you want to compile with builtin debugger and disassembler support,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_DEBUGGER=yes\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_BOCHS_X86_DEBUGGER)
-	@${ECHO_MSG} "If you want to compile with x86 hardware debugger support."
+	@${ECHO_MSG} "If you want to compile with x86 hardware debugger support,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_X86_DEBUGGER=yes\""
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_BOCHS_AMD64)
-	@${ECHO_MSG} "If you want to compile with AMD x86-64 support."
+	@${ECHO_MSG} "If you want to compile with AMD x86-64 support,"
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_AMD64=yes\""
 	@${ECHO_MSG}
 .endif
