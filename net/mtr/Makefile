@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	mtr-0.41
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.giovannelli.it/~gmarco/files/
 

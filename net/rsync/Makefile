@@ -8,7 +8,7 @@
 #
 
 DISTNAME=	rsync-2.3.2
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \

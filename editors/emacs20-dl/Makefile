@@ -8,7 +8,7 @@
 
 DISTNAME=	emacs-20.5a
 PKGNAME=	emacs-dl-20.5a
-CATEGORIES=	editors
+CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 

@@ -8,7 +8,7 @@
 #
 
 DISTNAME=	pchar-1.0
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
 
 MAINTAINER=     obrien@FreeBSD.org

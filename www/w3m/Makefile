@@ -10,7 +10,7 @@ DISTNAME=	w3m-${W3M_DIST_VER}
 PKGNAME?=	w3m-${W3M_VER}
 W3M_DIST_VER=	991203
 W3M_VER=	${W3M_DIST_VER}
-CATEGORIES?=	www
+CATEGORIES?=	www ipv6
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
 		ftp://ftp.firedrake.org/w3m/ \
 		http://www.instinct.org/~pgl/w3m/ \

@@ -8,7 +8,7 @@
 
 DISTNAME=	mnews122
 PKGNAME?=	ja-mnews-1.22
-CATEGORIES=	japanese news
+CATEGORIES=	japanese news ipv6
 MASTER_SITES=	ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
 
 MAINTAINER=	seiken@ARGV.AC

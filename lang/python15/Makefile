@@ -8,7 +8,7 @@
 
 DISTNAME=       py152
 PKGNAME=        python-1.5.2
-CATEGORIES=	lang python tk82
+CATEGORIES=	lang python tk82 ipv6
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz

@@ -8,7 +8,7 @@
 
 DISTNAME=	mrt-${VERBASE}-src
 PKGNAME=	mrt-${VERBASE}
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/
 
 MAINTAINER=	itojun@itojun.org
