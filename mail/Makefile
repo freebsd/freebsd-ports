@@ -20,7 +20,6 @@
     SUBDIR += emil
     SUBDIR += evolution
     SUBDIR += exim
-    SUBDIR += exmh
     SUBDIR += exmh2
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
