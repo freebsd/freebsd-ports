@@ -15,7 +15,7 @@ MAINTAINER=	klammer@webonaut.com
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack libpanel gnomevfs gnomecanvas
+USE_GNOME=	gnomeprefix gnomehack libpanel gnomevfs libglade
 GNU_CONFIGURE=	yes
 
 pre-everything::
