@@ -1,19 +1,17 @@
 # New ports collection makefile for:    mathopd HTTPD
-# Version required:     1.3
+# Version required:     1.3pl4
 # Date created:         Sun Oct 31 1999
 # Whom:                 tobez@plab.ku.dk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mathopd-1.3pl2
+DISTNAME=	mathopd-1.3pl4
 CATEGORIES=	www
 MASTER_SITES=	http://mathop.diva.nl/dist/ \
 		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/
 
 MAINTAINER=	tobez@plab.ku.dk
-
-WRKSRC=		${WRKDIR}/mathopd
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/mathopd.conf.sample ${PREFIX}/etc
