@@ -28,15 +28,6 @@
      echo
      echo -n "Daemon pidfile not defined in ini-file ..."
      POS=`$GREP -i SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
-@@ -191,7 +179,7 @@
- 
- # Read transport
- 
--TMP=`$GREP -i Address $FILTER_CFG | $GREP -v "#"`
-+TMP=`$GREP -i Address[^a-z] $FILTER_CFG | $GREP -v "#"`
- DADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, match( $0, /^Address=/ ), match( substr( $0, 2 ), /MilterAddress=/ ) ); print str; }'`
- FADR=`echo $TMP | $AWK '{ gsub( /["[:blank:]]/, "", $0 ); str = substr( $0, 1+match( substr( $0, 2 ), /MilterAddress=/ ) ); print str; }'`
- DMODE=`echo $DADR | $AWK '{ str = substr( $0, 1+index( $0, "=" ), index( $0, ":" ) - index( $0, "=" ) - 1 ); print str; }'`
 @@ -297,8 +285,13 @@
              echo "Edit one of configuration files and try again."
              exit 1
