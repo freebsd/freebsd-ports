@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.81
+PORTVERSION=	4.82
 CATEGORIES=	games
-MASTER_SITES=	http://pysol2.sourceforge.net/download/ \
-		http://www.oberhumer.com/opensource/pysol/download/
+MASTER_SITES=	http://www.pysol.org/download/pysol/
 
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Solitaire game, written in Python
