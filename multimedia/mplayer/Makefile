@@ -58,7 +58,7 @@ DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
 WITH_ARTS=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libdv.so.2)
+.if exists(${LOCALBASE}/lib/libdv.so.3)
 WITH_LIBDV=	yes
 .endif
 
@@ -152,7 +152,7 @@ CONFIGURE_ARGS+=	--disable-css
 .endif
 
 .if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--enable-libdv
 .else

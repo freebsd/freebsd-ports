@@ -380,7 +380,7 @@ PLIST_SUB+=	LIBAUDIOFILE=""
 CONFIGURE_ARGS+=	--disable-libdv
 PLIST_SUB+=	LIBDV="@comment "
 .else
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
 
 PLIST_SUB+=	LIBDV=""
 .endif

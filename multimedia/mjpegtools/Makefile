@@ -61,7 +61,7 @@ PLIST_SUB+=	DIVX=''
 
 # pre-detection
 # LIBDV
-.if exists(${LOCALBASE}/lib/libdv.so.2)
+.if exists(${LOCALBASE}/lib/libdv.so.3)
 WITH_LIBDV=	yes
 .endif
 # LIBGNUGETOPT
@@ -91,7 +91,7 @@ USE_GNOME+=	gtk12
 .endif
 #
 .ifdef(WITH_LIBDV)
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
 .endif
