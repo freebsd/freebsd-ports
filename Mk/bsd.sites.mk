@@ -153,7 +153,6 @@ MASTER_SITE_COMP_SOURCES+=	\
 
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
 	ftp://rpmfind.net/linux/gnome.org/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://slave.opensource.captech.com/gnome/%SUBDIR%/ \
@@ -164,7 +163,8 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp2.sinica.edu.tw/pub5/gnome/%SUBDIR%/ \
 	ftp://gnomeftp.blue-labs.org/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/os/unix/gnome/%SUBDIR%/ \
-	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/
+	ftp://ftp.tas.gov.au/gnome/%SUBDIR%/ \
+	ftp://download.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
