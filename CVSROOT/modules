@@ -461,6 +461,7 @@ atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
 atitd		ports/games/atitd
 atk		ports/accessibility/atk
+atlantikdesigner	ports/games/atlantikdesigner
 atlas		ports/devel/atlas
 atlas-devel	ports/math/atlas-devel
 atlast		ports/lang/atlast
