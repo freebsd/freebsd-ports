@@ -4,8 +4,8 @@ Copyright (c) 1994-1999 Ralf S. Engelschall, All rights reserved.
 This is a compilation of small but very stable and portable shell scripts
 into a single shell tool. All ingredients were in successful use over many
 years in various Open Source projects. The compiled shtool program is
-intended to be used inside the source tree of Open Source packages.  There
-it can overtake various non-portable tasks related to the building and
+intended to be used inside the source tree of Open Source packages.  There it
+can overtake various (usually non-portable) tasks related to the building and
 installation of an Open Source package.
 
 The homepage with the latest release can be found on
