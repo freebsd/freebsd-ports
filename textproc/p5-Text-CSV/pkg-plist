@@ -10,8 +10,8 @@
 %%SITE_PERL%%/auto/Text/CSV/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/.packlist
 %%SITE_PERL%%/Text/CSV.pm
-@dirrm lib/perl5/site_perl/5.6.0/mach/auto/Text/CSV
-@dirrm lib/perl5/site_perl/5.6.0/mach/auto/Text
-@dirrm lib/perl5/site_perl/5.6.0/auto/Text/CSV
-@dirrm lib/perl5/site_perl/5.6.0/auto/Text
-@dirrm lib/perl5/site_perl/5.6.0/Text
+@dirrm %%SITE_PERL%%/auto/Text/CSV
+@unexec rmdir %D/%%SITE_PERL%%/auto/Text 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
