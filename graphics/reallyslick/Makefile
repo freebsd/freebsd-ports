@@ -15,6 +15,8 @@ DISTNAME=	rss_glx-${PORTVERSION}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	OpenGL screensaver collection
 
+BROKEN=		"Broken pkg-plist"
+
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_MESA=	yes
