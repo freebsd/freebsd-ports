@@ -3,12 +3,13 @@
 # Date created:		10 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/18 22:03:07 vanilla Exp $
 #
 
 DISTNAME=	leim-20.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 

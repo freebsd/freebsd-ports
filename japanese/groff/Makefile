@@ -3,13 +3,14 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.13 1997/09/14 21:34:39 max Exp $
+# $Id: Makefile,v 1.14 1997/10/27 11:03:21 max Exp $
 #
 
 DISTNAME=	groff-1.10
 PKGNAME=	ja-groff-0.99
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	groff
 
 PATCH_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
 		ftp://ftp.tohoku.ac.jp/pub/GNU/japanese/

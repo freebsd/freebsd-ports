@@ -3,13 +3,14 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.5 1998/11/21 17:55:46 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/24 03:36:49 steve Exp $
 #
 
 DISTNAME=	gcc-2.8.1
 PKGNAME=	m68kgcc-2.8.1
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gcc
 
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 

@@ -3,13 +3,14 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.8 1997/12/25 22:29:34 asami Exp $
+# $Id: Makefile,v 1.9 1998/10/09 01:41:11 asami Exp $
 #
 
 DISTNAME=	groff-1.09
 PKGNAME=	ja-gxditview-0.98
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	groff
 
 MAINTAINER=	ports@FreeBSD.ORG
 

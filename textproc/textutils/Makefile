@@ -3,12 +3,13 @@
 # Date created:		14 May 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/16 19:16:16 mph Exp $
 #
 
 DISTNAME=	textutils-1.22
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	textutils
 
 MAINTAINER=	aw1@stade.co.uk
 

@@ -3,13 +3,14 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.3 1999/01/16 22:58:59 asami Exp $
+# $Id: Makefile,v 1.4 1999/01/23 14:28:24 simokawa Exp $
 #
 
 DISTNAME=	emacs-20.3
 PKGNAME=	emacs-dl-20.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	emacs
 
 PATCH_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
 PATCHFILES=	emacs-20.3-dl.diff

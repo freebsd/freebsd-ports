@@ -3,13 +3,14 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.8 1998/10/06 07:35:03 asami Exp $
+# $Id: Makefile,v 1.9 1999/01/26 02:49:33 steve Exp $
 #
 
 DISTNAME=		ncurses-4.2
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.clark.net/pub/dickey/ncurses/
+MASTER_SITE_SUBDIR=	ncurses
 
 MAINTAINER=		andy@icc.surw.chel.su
 

@@ -3,12 +3,13 @@
 # Date created:		12 October 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.6 1997/04/20 13:19:29 wosch Exp $
+# $Id: Makefile,v 1.7 1997/11/22 19:49:58 jseger Exp $
 #
 
 DISTNAME=	dejagnu-1.3
 CATEGORIES=	misc tk80
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	dejagnu
 
 MAINTAINER=	markm@FreeBSD.ORG
 

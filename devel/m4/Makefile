@@ -3,12 +3,13 @@
 # Date created:		25 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.7 1997/06/16 08:22:35 max Exp $
+# $Id: Makefile,v 1.8 1998/07/02 10:50:50 vanilla Exp $
 #
 
 DISTNAME=       m4-1.4
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	m4
 
 MAINTAINER=	ports@FreeBSD.ORG
 

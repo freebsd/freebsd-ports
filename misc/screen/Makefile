@@ -3,13 +3,14 @@
 # Date created:         25 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1997/09/15 20:09:01 ache Exp $
+# $Id: Makefile,v 1.19 1998/12/30 00:16:37 ache Exp $
 #
 
 DISTNAME=       screen-3.7.6
 CATEGORIES=	misc
 MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	screen
 
 MAINTAINER=	ache@FreeBSD.ORG
 

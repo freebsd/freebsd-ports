@@ -3,12 +3,13 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1997/06/09 07:12:44 fenner Exp $
+# $Id: Makefile,v 1.12 1998/01/23 00:43:26 jseger Exp $
 #
 
 DISTNAME=       sharutils-4.2
 CATEGORIES=	archivers
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	sharutils
 
 MAINTAINER=	ports@FreeBSD.org
 

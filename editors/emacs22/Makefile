@@ -3,12 +3,13 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.34 1999/01/16 22:58:57 asami Exp $
+# $Id: Makefile,v 1.35 1999/01/23 14:28:19 simokawa Exp $
 #
 
 DISTNAME=	emacs-19.34b
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	ports@FreeBSD.ORG
 

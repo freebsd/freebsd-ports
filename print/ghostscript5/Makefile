@@ -3,7 +3,7 @@
 # Date created:		11 December 1998
 # Whom:			giffunip
 #
-# $Id: Makefile,v 1.29 1999/01/21 18:07:30 vanilla Exp $
+# $Id: Makefile,v 1.30 1999/01/23 07:05:21 vanilla Exp $
 #
 
 DISTNAME=	ghostscript-5.10
@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.pdb.sni.de/pub/utilities/misc/	\
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/	\
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/	\
 		$(MASTER_SITE_GNU)
+MASTER_SITE_SUBDIR=	ghostscript
 DISTFILES=	${PCL3_DRV} ${DECRYPT_PDF} ghostscript-5.10.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

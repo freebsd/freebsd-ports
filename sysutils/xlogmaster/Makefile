@@ -3,7 +3,7 @@
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.7 1998/09/19 10:55:11 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/09/22 22:55:55 asami Exp $
 #
 
 DISTNAME=	xlogmaster-1.4.4
@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 		${MASTER_SITE_GNU}\
 		http://www.fusebox.hanse.de/xlogmaster/development/\
 		http://porter.desy.de/~greve/xlogmaster/development/
+MASTER_SITE_SUBDIR=	xlogmaster
 
 MAINTAINER=	aw1@stade.co.uk
 

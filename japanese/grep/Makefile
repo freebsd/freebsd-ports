@@ -3,13 +3,14 @@
 # Date created:		2 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.8 1998/04/30 18:40:03 max Exp $
+# $Id: Makefile,v 1.9 1998/08/31 15:37:35 max Exp $
 #
 
 DISTNAME=	grep-2.0
 PKGNAME=	ja-grep-2.0
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	grep
 
 MAINTAINER=	ports@FreeBSD.ORG
 

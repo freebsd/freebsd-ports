@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.19 1998/09/17 00:32:33 asami Exp $
+# $Id: Makefile,v 1.20 1998/11/10 18:56:21 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.troll.no/warwick/nethack/ \
 		http://trolls.troll.no/warwick/nethack/ \
 		ftp://ftp.troll.no/contrib/ \
 		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	nethack
 QT_PATCH=	qnethack-3.2.2.1.0.1.src.tar.gz
 QT_SOUND=	nhs.tar.gz
 DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}

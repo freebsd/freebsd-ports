@@ -3,12 +3,13 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.10 1999/01/12 16:50:23 vanilla Exp $
+# $Id: Makefile,v 1.11 1999/01/23 07:05:21 vanilla Exp $
 #
 
 DISTNAME=	dgs-0.5.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	dgs
 
 MAINTAINER=	nacai@iname.com
 

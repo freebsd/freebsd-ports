@@ -3,13 +3,14 @@
 # Date created:		11 September 1997
 # Whom:			giffunip
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 12:13:20 jseger Exp $
 #
 
 DISTNAME=	gsfonts-5.10
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/	\
 		$(MASTER_SITE_GNU)
+MASTER_SITE_SUBDIR=	ghostscript
 DISTFILES=	${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	ports@FreeBSD.org
