@@ -2118,6 +2118,7 @@ htmldoc		ports/textproc/htmldoc
 htmlobject	ports/www/htmlobject
 htmlpp		ports/www/htmlpp
 htmlsection	ports/textproc/htmlsection
+htmltolatex	ports/textproc/htmltolatex
 http-analyze	ports/www/http-analyze
 http_load	ports/www/http_load
 http_ping	ports/net/http_ping
