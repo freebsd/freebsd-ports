@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	yaws
-PORTVERSION=	1.41
+PORTVERSION=	1.45
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	erlyaws
+MASTER_SITES=	http://yaws.hyber.org/download/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A webserver for dynamic content written in Erlang
@@ -37,7 +36,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|!!PREFIX!!|${PREFIX}|g' \
 		${WRKSRC}/man/yaws_api.5 ${WRKSRC}/man/yaws.conf.5 \
-		${WRKSRC}/src/yaws_config.erl ${WRKSRC}/scripts/yaws.ss
+		${WRKSRC}/src/yaws_config.erl
 	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak | ${XARGS} ${RM}
 
 do-install:

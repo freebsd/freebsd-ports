@@ -14,6 +14,7 @@ lib/yaws/ebin/yaws_ctl.beam
 lib/yaws/ebin/yaws_debug.beam
 lib/yaws/ebin/yaws_html.beam
 lib/yaws/ebin/yaws_log.beam
+lib/yaws/ebin/yaws_log_file_h.beam
 lib/yaws/ebin/yaws_ls.beam
 lib/yaws/ebin/yaws_revproxy.beam
 lib/yaws/ebin/yaws_server.beam
@@ -22,10 +23,11 @@ lib/yaws/ebin/yaws_ssl.beam
 lib/yaws/ebin/yaws_sup.beam
 lib/yaws/ebin/yaws_ticker.beam
 lib/yaws/ebin/yaws_vsn.beam
+lib/yaws/ebin/yaws_zlib.beam
 lib/yaws/include/yaws.hrl
 lib/yaws/include/yaws_api.hrl
-lib/yaws/priv/setuid_drv.so
 lib/yaws/priv/mime.types
+lib/yaws/priv/setuid_drv.so
 www/yaws/END
 www/yaws/EXHEAD
 www/yaws/HEAD
@@ -42,6 +44,7 @@ www/yaws/doc.yaws
 www/yaws/dynamic.yaws
 www/yaws/embed.yaws
 www/yaws/examples.yaws
+www/yaws/favicon.ico
 www/yaws/form.yaws
 www/yaws/history.yaws
 www/yaws/icons/PythonPowered.png
@@ -216,9 +219,9 @@ www/yaws/ybed.erl
 @dirrm www/yaws/icons/small
 @dirrm www/yaws/icons
 @dirrm www/yaws
+@dirrm lib/yaws/priv
 @dirrm lib/yaws/include
 @dirrm lib/yaws/ebin
-@dirrm lib/yaws/priv
 @dirrm lib/yaws
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p /var/log/yaws
