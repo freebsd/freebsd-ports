@@ -1297,6 +1297,7 @@ enlightenment	ports/x11-wm/enlightenment
 enscript-a4	ports/print/enscript-a4
 enscript-letter	ports/print/enscript-letter
 enscriptfonts	ports/print/enscriptfonts
+enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
 env		src/usr.bin/env
