@@ -1,0 +1,19 @@
+*** Makefile	Thu Dec  7 23:05:56 1995
+--- /home/andy/tmp/wrk/Makefile	Mon May 26 17:58:13 1997
+***************
+*** 6,12 ****
+  V=2.1
+  
+  # Flags for use with the Linux ncurses package (recommended)
+! TERMLIB = -lncurses
+  CC = gcc
+  
+  # Flags for use with stock curses
+--- 6,12 ----
+  V=2.1
+  
+  # Flags for use with the Linux ncurses package (recommended)
+! TERMLIB = -lncurses -lmytinfo
+  CC = gcc
+  
+  # Flags for use with stock curses

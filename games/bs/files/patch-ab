@@ -1,0 +1,19 @@
+*** bs.c	Thu May  9 02:14:05 1996
+--- /home/andy/tmp/wrk/bs.c	Mon May 26 17:57:07 1997
+***************
+*** 9,15 ****
+   */
+  #define _POSIX_SOURCE
+  
+! #include <curses.h>
+  #include <signal.h>
+  #include <ctype.h>
+  #include <stdlib.h>
+--- 9,15 ----
+   */
+  #define _POSIX_SOURCE
+  
+! #include <ncurses.h>
+  #include <signal.h>
+  #include <ctype.h>
+  #include <stdlib.h>
