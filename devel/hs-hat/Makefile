@@ -10,7 +10,15 @@ PORTVERSION=	2.00
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
+
+.if defined(WITHOUT_NHC98)
+FORBIDDEN=	does not build with ghc-5.04 for the time being
+.endif
+
+.if defined(WITH_GHC)
+.undef WITH_GHC
+.endif
 
 .if !defined(WITHOUT_NHC98)
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
@@ -63,8 +71,9 @@ pre-everything::
 	@${ECHO_CMD} " HAT will be built and installed for ghc only."
 .else
 	@${ECHO_CMD} " HAT will be built and installed for nhc98 only."
-	@${ECHO_CMD} " Define WITH_GHC      to install for ghc, too."
-	@${ECHO_CMD} " Define WITHOUT_NHC98 to install for ghc only."
+#	@${ECHO_CMD} " Define WITH_GHC      to install for ghc, too."
+#	@${ECHO_CMD} " Define WITHOUT_NHC98 to install for ghc only."
+	@${ECHO_CMD} " HAT does not build with ghc-5.04 for the time being."
 .endif
 	@${ECHO_CMD} ""
 
