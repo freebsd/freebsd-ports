@@ -4760,6 +4760,7 @@ p5-Business-CreditCard	ports/misc/p5-Business-CreditCard
 p5-Business-ISBN	ports/misc/p5-Business-ISBN
 p5-Business-ISIN	ports/misc/p5-Business-ISIN
 p5-Business-ISSN	ports/misc/p5-Business-ISSN
+p5-Business-UPS	ports/misc/p5-Business-UPS
 p5-C-Scan	ports/devel/p5-C-Scan
 p5-CDB_File	ports/databases/p5-CDB_File
 p5-CDB_File-Generator	ports/databases/p5-CDB_File-Generator
