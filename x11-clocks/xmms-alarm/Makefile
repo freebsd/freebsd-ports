@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-alarm
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/ \
 		http://unixpages.org/distfiles/

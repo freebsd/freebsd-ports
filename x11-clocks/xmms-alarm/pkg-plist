@@ -1,2 +1,2 @@
-lib/xmms/General/libalarm.la
+@comment $FreeBSD$
 lib/xmms/General/libalarm.so
