@@ -6,6 +6,7 @@ include/libpng/pngconf.h
 @unexec rm -f %D/include/%f
 lib/libpng.a
 lib/libpng.so.%%SHLIB_VER%%
+libdata/pkgconfig/libpng12.pc
 @exec ln -sf %f %B/libpng.so
 @unexec rm -f %B/libpng.so
 @dirrm include/libpng
