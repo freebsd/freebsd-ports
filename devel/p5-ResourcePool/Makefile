@@ -7,14 +7,18 @@
 #
 
 PORTNAME=	ResourcePool
-PORTVERSION=	0.9909
+PORTVERSION=	1.0000
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.fatalmind.com/projects/ResourcePool/
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
+COMMENT=	A generic way to use connection caching for any kind of resources
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
@@ -23,13 +27,12 @@ MAN3=	ResourcePool.3 \
 	ResourcePool::BigPicture.3 \
 	ResourcePool::ExtensionGuide.3 \
 	ResourcePool::Factory.3 \
-	ResourcePool::Factory::DBI.3 \
-	ResourcePool::Factory::Net::LDAP.3 \
 	ResourcePool::LoadBalancer.3 \
 	ResourcePool::Resource.3 \
-	ResourcePool::Resource::DBI.3 \
-	ResourcePool::Resource::Net::LDAP.3 \
 	ResourcePool::Singleton.3 \
 	ResourcePool::UML.3
+
+post-install:
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>
