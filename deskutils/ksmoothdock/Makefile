@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	ksmoothdock
-PORTVERSION=	3.4
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A dock program for KDE with smooth zooming
-
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
