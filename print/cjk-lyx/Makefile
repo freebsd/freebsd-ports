@@ -6,43 +6,63 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.1.6.4
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-
-DISTNAME=	${DIST_VER}-src
+DISTNAME=	CJK-LyX-${PORTVERSION}-src
 
 MAINTAINER=	cjh@FreeBSD.org
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-.if defined(WITH_ISPELL)
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-.endif
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
-		intl.2:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		latex:${PORTSDIR}/print/teTeX
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
+		forms.1:${PORTSDIR}/x11-toolkits/xforms
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		latex:${PORTSDIR}/print/teTeX
 
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/CJK-LyX-${PORTVERSION}
+
 USE_XPM=	yes
-USE_NEWGCC=	yes
+USE_REINPLACE=	yes
 USE_PERL5=	yes
-USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+USE_AUTOMAKE_VER=	15
+USE_XPM=	yes
+AUTOMAKE=	${WRKSRC}/autogen.sh
+AUTOCONF=	${TRUE}
+CONFIGURE_ENV=	CPPFLAGS="-DI18N"
 CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include"
-MAKE_ENV+=	INTLLIBS="-L${LOCALBASE}/lib -lintl"
 MAN1=		lyx.1 reLyX.1
 
-DIST_VER=	CJK-LyX-1.1.6fix4
-WRKSRC=		${WRKDIR}/${DIST_VER}
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=	aspell.11:${PORTSDIR}/textproc/aspell
+CONFIGURE_ARGS+=	--with-pspell
+.endif
+
+.if defined(WITH_ISPELL)
+RUN_DEPENDS+=   ispell:${PORTSDIR}/textproc/ispell
+.endif
+
+pre-everything::
+.if !defined(WITH_ASPELL)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Aspell/Pspell support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ASPELL=yes\""
+	@${ECHO_MSG}
+.endif
 
 .if !defined(WITH_ISPELL)
-pre-fetch:
-	@${ECHO_MSG} "If you want this port built with spell checker support, use"
-	@${ECHO_MSG} "make WITH_ISPELL=yes"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Ispell support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_ISPELL=yes\""
+	@${ECHO_MSG}
 .endif
 
 post-patch:
-	(cd ${WRKSRC}; ${TOUCH} Makefile.in */Makefile.in src/config.h.in)
+	@${FIND} ${WRKSRC} -name "configure.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|AC_CHECK_LIB(c,|AC_CHECK_FUNC(|g ; \
+		 s|^INSTALL_SCRIPT=|#INSTALL_SCRIPT=|g'
 
 .include <bsd.port.mk>
