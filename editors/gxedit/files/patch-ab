@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Aug 30 07:43:50 1998
-+++ Makefile	Thu Sep 17 07:18:51 1998
+--- Makefile.orig	Fri Oct 30 20:02:16 1998
++++ Makefile	Sun Nov  1 17:45:10 1998
 @@ -1,13 +1,12 @@
  BIN_DIR =
  INSTALL_DIR = /usr/X11R6/bin/
@@ -31,6 +31,6 @@
  	cp $(BIN_DIR)gxedit $(INSTALL_DIR)gxedit
 -	cp $(BIN_DIR)xproc $(INSTALL_DIR)xproc
 +#	cp $(BIN_DIR)xproc $(INSTALL_DIR)xproc
+ 	cp ftp.sh $(INSTALL_DIR)ftp.sh
+ 	cp ftp-ls.sh $(INSTALL_DIR)ftp-ls.sh
  
- distro:
- 	rm -f *.o $(BIN_DIR)gxedit $(BIN_DIR)say $(BIN_DIR)xproc *.log *.enc
