@@ -281,6 +281,7 @@
     SUBDIR += mod_log_sql
     SUBDIR += mod_log_sql2
     SUBDIR += mod_macro
+    SUBDIR += mod_macro2
     SUBDIR += mod_mp3
     SUBDIR += mod_musicindex
     SUBDIR += mod_mya

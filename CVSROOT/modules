@@ -5410,6 +5410,7 @@ mod_log_mysql	ports/www/mod_log_mysql
 mod_log_sql	ports/www/mod_log_sql
 mod_log_sql2	ports/www/mod_log_sql2
 mod_macro	ports/www/mod_macro
+mod_macro2	ports/www/mod_macro2
 mod_mp3		ports/www/mod_mp3
 mod_musicindex	ports/www/mod_musicindex
 mod_mya		ports/www/mod_mya
