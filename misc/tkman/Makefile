@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkman
-# Version required:     2.0.3
+# Version required:     2.0.4
 # Date created:         27 Dec 1994
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.26 1997/09/18 06:56:03 tg Exp $
+# $Id: Makefile,v 1.27 1997/11/06 08:01:54 tg Exp $
 #
 
-DISTNAME=	tkman-2.0.3
+DISTNAME=	tkman-2.0.4
 CATEGORIES=	misc tk80
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
@@ -16,6 +16,8 @@ MAINTAINER=	tg@freebsd.org
 LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
 RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 		glimpse:${PORTSDIR}/textproc/glimpse
+
+NO_CDROM=	"License required"
 
 .if !defined(NOPORTDOCS)
 post-install:
