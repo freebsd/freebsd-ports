@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 INSTALLS_SHLIB=	yes
 
+NOT_FOR_ARCHS=	alpha
+
 MAN1=	gretl.1 gretl-config.1
 
 .include <bsd.port.pre.mk>
