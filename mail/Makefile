@@ -213,9 +213,8 @@
     SUBDIR += vpopmail
     SUBDIR += vqadmin
     SUBDIR += vrfy
-    SUBDIR += wanderlust-emacs
+    SUBDIR += wanderlust
     SUBDIR += wanderlust-emacs20
-    SUBDIR += wanderlust-mule
     SUBDIR += wanderlust-xemacs21-mule
     SUBDIR += wmbiff
     SUBDIR += wmmail
