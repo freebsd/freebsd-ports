@@ -147,12 +147,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	et_viewer.3 \
 	etop.3 \
 	ets.3 \
-	eva.3 \
-	eva_log.3 \
-	eva_log_snmp.3 \
-	eva_server.3 \
-	eva_snmp_adaptation.3 \
-	eva_sup.3 \
 	file.3 \
 	file_sorter.3 \
 	filelib.3 \
@@ -171,6 +165,8 @@ MAN3=	CosEventChannelAdmin.3 \
 	global_group.3 \
 	gs.3 \
 	heart.3 \
+	http.3 \
+	http_base_64.3 \
 	httpd.3 \
 	httpd_conf.3 \
 	httpd_core.3 \
@@ -191,11 +187,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	lists.3 \
 	lname.3 \
 	lname_component.3 \
-	log.3 \
 	log_mf_h.3 \
-	log_server.3 \
-	log_snmp.3 \
-	log_snmpea.3 \
 	make.3 \
 	math.3 \
 	megaco.3 \
@@ -243,15 +235,18 @@ MAN3=	CosEventChannelAdmin.3 \
 	ordsets.3 \
 	os.3 \
 	os_mon.3 \
+	os_mon_mib.3 \
 	os_sup.3 \
 	otp_mib.3 \
 	overload.3 \
+	packages.3 \
 	pg.3 \
 	pg2.3 \
 	pman.3 \
 	pool.3 \
 	proc_lib.3 \
 	proplists.3 \
+	qlc.3 \
 	queue.3 \
 	random.3 \
 	rb.3 \
@@ -266,22 +261,30 @@ MAN3=	CosEventChannelAdmin.3 \
 	slave.3 \
 	snmp.3 \
 	snmp_community_mib.3 \
-	snmp_error.3 \
-	snmp_error_io.3 \
-	snmp_error_report.3 \
 	snmp_framework_mib.3 \
 	snmp_generic.3 \
 	snmp_index.3 \
-	snmp_local_db.3 \
-	snmp_mgr.3 \
-	snmp_mpd.3 \
 	snmp_notification_mib.3 \
 	snmp_pdus.3 \
 	snmp_standard_mib.3 \
-	snmp_supervisor.3 \
 	snmp_target_mib.3 \
 	snmp_user_based_sm_mib.3 \
 	snmp_view_based_acm_mib.3 \
+	snmpa.3 \
+	snmpa_error.3 \
+	snmpa_error_io.3 \
+	snmpa_error_logger.3 \
+	snmpa_error_report.3 \
+	snmpa_local_db.3 \
+	snmpa_mpd.3 \
+	snmpa_network_interface.3 \
+	snmpa_notification_filter.3 \
+	snmpa_supervisor.3 \
+	snmpc.3 \
+	snmpm.3 \
+	snmpm_mpd.3 \
+	snmpm_network_interface.3 \
+	snmpm_user.3 \
 	sofs.3 \
 	ssl.3 \
 	ssl_pkix.3 \
@@ -299,9 +302,14 @@ MAN3=	CosEventChannelAdmin.3 \
 	webtool.3 \
 	win32reg.3 \
 	wrap_log_reader.3 \
+	xmerl.3 \
+	xmerl_eventp.3 \
+	xmerl_scan.3 \
+	xmerl_xpath.3 \
+	xmerl_xs.3 \
 	xref.3 \
 	yecc.3
-
+	
 MAN4=	app.4 \
 	appup.4 \
 	config.4 \
@@ -310,11 +318,10 @@ MAN4=	app.4 \
 	script.4
 
 MAN6=	crypto.6 \
-	eva.6 \
-	inets.6 \
 	kernel.6 \
 	observer.6 \
 	runtime_tools.6 \
 	sasl.6 \
 	snmp.6 \
 	ssl.6
+
