@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Nov 15 03:01:35 1998
-+++ configure.in	Sun Nov 15 02:52:12 1998
+--- configure.in.orig	Wed Oct 21 10:29:16 1998
++++ configure.in	Sun Nov 15 03:40:45 1998
 @@ -102,7 +102,7 @@
  # extra dirs
  #
@@ -9,15 +9,17 @@
  
  #
  # misc
-@@ -234,7 +234,10 @@
+@@ -234,7 +234,12 @@
      CONF_OBJ_SIZE_LIMIT=yes
      ;;
    *bsd*)
 -    CONF_SOEXT=so.1.0
 +    if [ "$PORTOBJFORMAT" = "elf" ]; then
++      CONF_SHARED_CC="$CXX -shared -Wl,-soname,\$@"
 +      CONF_SOEXE=so.1
 +    else
 +      CONF_SOEXT=so.1.0
 +    fi
      ;;
    *cygwin32*)
+     have_cdk=yes;
