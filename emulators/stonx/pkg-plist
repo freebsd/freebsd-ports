@@ -1,0 +1,20 @@
+bin/stonx
+bin/stonx.bin
+lib/STonX/FLOPPY-4MB
+lib/STonX/Keysyms
+lib/STonX/Keysyms.G
+lib/STonX/bench1.pas
+lib/STonX/bench1.prg
+lib/STonX/cartridge.img
+lib/STonX/final.tos
+lib/STonX/tos.img
+lib/STonX/docs/COPYING
+lib/STonX/docs/DEBUGGING
+lib/STonX/docs/FONTS
+lib/STonX/docs/INSTALL
+lib/STonX/docs/PROGRAMS
+lib/STonX/docs/README
+lib/STonX/docs/RELEASE_NOTES
+lib/STonX/docs/TOS-VERSIONS
+@dirrm lib/STonX/docs
+@dirrm lib/STonX
