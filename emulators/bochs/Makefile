@@ -7,10 +7,10 @@
 #
 
 VGABIOS=	VGABIOS-elpin-2.20
-BIOS=		BIOS-bochs-990623a
-DATE= 		990708
+BIOS=		BIOS-bochs-990907a
+DATE= 		990907
 
-DISTNAME=	bochs-${DATE}a
+DISTNAME=	bochs-${DATE}b
 CATEGORIES= 	emulators
 MASTER_SITES= 	ftp://ftp.bochs.com/pub/
 
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-cpu-level=4 --enable-vga \
 		--with-x11 --prefix=${PREFIX}
 
-WRKSRC=		${WRKDIR}/bochs-${DATE}
+WRKSRC=		${WRKDIR}/bochs-${DATE}b
 
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}
