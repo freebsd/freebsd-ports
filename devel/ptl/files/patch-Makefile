@@ -1,0 +1,27 @@
+--- Makefile.orig	Sat Sep 23 07:05:15 2000
++++ Makefile	Sun Apr  8 02:47:24 2001
+@@ -7,13 +7,13 @@
+ #
+ 
+ # Install directory 
+-prefix = /usr/local
++prefix ?= /usr/local
+ exec_prefix = $(prefix)
+ 
+ # Directory to install ptlgcc
+ dest_bindir = $(exec_prefix)/bin
+ # Directory to install libPTL.a and libPTL.so
+-dest_libdir = $(exec_prefix)/PTL/lib
++dest_libdir = $(exec_prefix)/lib
+ # Directory to install include files
+ # This directory must NOT be /usr/local/include
+ dest_includedir = $(exec_prefix)/PTL/include
+@@ -27,7 +27,7 @@
+ #	make distclean			Cleanup PTL (A.*)
+ #
+ 
+-AUTOCONFBINDIR = /usr/local/bin
++AUTOCONFBINDIR = $(exec_prefix)/bin
+ ARCHPROG = ./Util/config.guess
+ SHELL = /bin/sh
+ # Exported variable CC will confuse configure script ...

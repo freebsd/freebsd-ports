@@ -1,0 +1,18 @@
+PTL -- Portable Thread Library
+
+PTL is an implementation of a user level multi-thread library based on
+POSIX 1003.1c API.  You can create and control multiple threads
+(control flow) in one UNIX process using PTL.
+
+For example, PTL can be used for following purposes.
+
+	- Network server/client program
+	- Concurrent processing
+	- Simulating distributed or parallel algorithms
+	- Study of multi thread programming
+
+This library is based on the standard "POSIX 1003.1c" and works on BSD
+UNIX (architecture-independent!)
+
+WWW:	http://www.media.osaka-cu.ac.jp/~k-abe/PTL/
+Author:	Kota ABE <k-abe@media.osaka-cu.ac.jp>

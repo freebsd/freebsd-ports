@@ -1,0 +1,24 @@
+bin/ptlgcc
+bin/ptlg++
+lib/libPTL.a
+lib/libPTL.so
+lib/libPTL.so.2
+%%PORTDOCS%%@unexec install-info --delete %D/info/PTL.info %D/info/dir
+%%PORTDOCS%%info/PTL.info
+%%PORTDOCS%%info/PTL.info-1
+%%PORTDOCS%%info/PTL.info-2
+%%PORTDOCS%%info/PTL.info-3
+%%PORTDOCS%%info/PTL.info-4
+%%PORTDOCS%%@exec install-info %D/info/PTL.info %D/info/dir
+%%PORTDOCS%%share/doc/ptl/COPYING
+%%PORTDOCS%%share/doc/ptl/ChangeLog
+%%PORTDOCS%%share/doc/ptl/FAQ
+%%PORTDOCS%%share/doc/ptl/NEWS
+%%PORTDOCS%%share/doc/ptl/PROBLEMS
+%%PORTDOCS%%share/doc/ptl/README
+%%PORTDOCS%%share/doc/ptl/README.PDB
+%%PORTDOCS%%share/doc/ptl/README.jp
+%%PORTDOCS%%share/doc/ptl/WISHLIST
+%%PORTDOCS%%share/doc/ptl/manual.ps.gz
+%%PORTDOCS%%@dirrm share/doc/ptl
+@comment PTL/* is environment dependent and thus added dynamically hereinafter:

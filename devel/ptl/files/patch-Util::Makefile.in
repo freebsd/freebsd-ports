@@ -1,0 +1,11 @@
+--- Util/Makefile.in.orig	Sun Apr  8 03:00:36 2001
++++ Util/Makefile.in	Sun Apr  8 03:21:21 2001
+@@ -117,7 +117,7 @@
+ STATIC_LIBRARY = libPTL.a
+ PROFLIBRARY = libPTL_p.a
+ SHARED_LIBRARY = libPTL.so
+-SLIBVER = 2.0
++SLIBVER = 2
+ 
+ ALTSYS_LINK = -L$(altsysdir) -laltsys `cat $(altsysdir)/linker_opt`
+ 
