@@ -24,6 +24,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		ttf.4:${PORTSDIR}/print/freetype
+
 # bzip2 for bzlib
 BUILD_DEPENDS=  bzip2:${PORTSDIR}/archivers/bzip2 \
 		fig2dev:${PORTSDIR}/print/transfig \
@@ -31,19 +32,22 @@ BUILD_DEPENDS=  bzip2:${PORTSDIR}/archivers/bzip2 \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		gs:${PORTSDIR}/print/ghostscript55
 
-MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 \
-	import.1 mogrify.1 montage.1
-MAN3=	Image::Magick.3
-MAN4=	miff.4
-MAN5=	quantize.5
+MAN1=		ImageMagick.1 animate.1 combine.1 convert.1 display.1 \
+		identify.1 import.1 mogrify.1 montage.1
+MAN3=		Image::Magick.3
+MAN4=		miff.4
+MAN5=		quantize.5
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-HAS_CONFIGURE=	YES
+USE_AUTOCONF=	YES
+
 CONFIGURE_ARGS= --prefix=${PREFIX} --enable-shared --with-perl=${PERL5} \
 		--enable-16bit-pixel
+
 .if defined(HAVE_UNISYS_LICENSE)
 CONFIGURE_ARGS+= --enable-lzw
 .endif
+
 USE_PERL5=	YES
 USE_XLIB=	YES
 CONFIGURE_ENV=	LDFLAGS="$(LDFLAGS) -L${WRKSRC}/magick/.libs"
