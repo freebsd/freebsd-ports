@@ -1,0 +1,33 @@
+
+$FreeBSD$
+
+--- agi/Makefile.orig	Tue Aug 19 19:42:30 2003
++++ agi/Makefile	Fri Oct 17 14:13:14 2003
+@@ -11,20 +11,23 @@
+ # the GNU General Public License
+ #
+ 
+-AGIS=agi-test.agi eagi-test eagi-sphinx-test
++AGIS_BIN=eagi-test eagi-sphinx-test
++AGIS_SCR=agi-test.agi
++AGIS=$(AGIS_SCR) $(AGIS_BIN)
+ 
+ CFLAGS+=
+ 
+ all: depend $(AGIS)
+ 
+ install: all
+-	for x in $(AGIS); do $(INSTALL) -m 755 $$x $(AGI_DIR) ; done
++	for x in $(AGIS_BIN); do $(BSD_INSTALL_PROGRAM) $$x $(AGI_DIR) ; done
++	for x in $(AGIS_SCR); do $(BSD_INSTALL_SCRIPT) $$x $(AGI_DIR) ; done
+ 
+ eagi-test: eagi-test.o
+-	$(CC) -o eagi-test eagi-test.o
++	$(CC) $(CFLAGS) -o eagi-test eagi-test.o
+ 	
+ eagi-sphinx-test: eagi-sphinx-test.o
+-	$(CC) -o eagi-sphinx-test eagi-sphinx-test.o
++	$(CC) $(CFLAGS) -o eagi-sphinx-test eagi-sphinx-test.o
+ 
+ clean:
+ 	rm -f *.so *.o look .depend

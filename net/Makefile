@@ -33,6 +33,7 @@
     SUBDIR += asfrecorder
     SUBDIR += aslookup
     SUBDIR += aspathtree
+    SUBDIR += asterisk
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bbsnet
