@@ -1,0 +1,6 @@
+=============================================================
+
+You will have to run "dialyzer" as root for the first time to
+initialize the PLT table.
+
+=============================================================
