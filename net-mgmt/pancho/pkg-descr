@@ -9,8 +9,8 @@ configurations on remote routers, pancho is also capable
 of archiving router configurations manually or through
 automated runs.
 
-Support is provided for Cisco, Foundry or Nortel/Alteon
-devices.
+Support is provided for Cisco, Foundry, Nortel/Alteon,
+Avaya, or Dell PowerConnect devices.
 
 WWW: http://www.panchoproject.org/
 

@@ -1,14 +1,18 @@
+@comment $FreeBSD$
 bin/pancho
 etc/pancho.conf.sample
 %%SITE_PERL%%/Pancho/Util.pm
 %%SITE_PERL%%/Pancho/Snmp.pm
 %%SITE_PERL%%/Pancho/Log.pm
-%%SITE_PERL%%/Pancho/Plugins/Nortel.pm
 %%SITE_PERL%%/Pancho/Plugins/Foundry.pm
 %%SITE_PERL%%/Pancho/Plugins/Arrowpoint.pm
 %%SITE_PERL%%/Pancho/Plugins/Cisco.pm
 %%SITE_PERL%%/Pancho/Plugins/Avaya.pm
 %%SITE_PERL%%/Pancho/Plugins/DellPowerConnect.pm
+%%SITE_PERL%%/Pancho/Plugins/Accelar.pm
+%%SITE_PERL%%/Pancho/Plugins/Alteon.pm
+%%SITE_PERL%%/Pancho/Plugins/Baystack.pm
+%%SITE_PERL%%/Pancho/Plugins/Passport.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pancho/.packlist
 @unexec rmdir %D/%%SITE_PERL%%/Pancho/Plugins 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Pancho 2>/dev/null || true
