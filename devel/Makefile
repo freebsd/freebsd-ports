@@ -1107,6 +1107,7 @@
     SUBDIR += pear-HTML_Select
     SUBDIR += pear-HTML_Select_Common
     SUBDIR += pear-HTML_Table
+    SUBDIR += pear-HTML_Template_Flexy
     SUBDIR += pear-HTML_Template_IT
     SUBDIR += pear-HTML_Template_PHPLIB
     SUBDIR += pear-HTML_TreeMenu
