@@ -1,0 +1,23 @@
+*** Makefile.unx.orig	Mon Jul 26 21:58:00 1993
+--- Makefile.unx	Thu Oct 20 23:00:41 1994
+***************
+*** 122,128 ****
+--- 122,139 ----
+  # AR		= ar r
+  # RANLIB	= ranlib
+  
++ 
++ # FreeBSD 1.x / 2.x
++ CFLAGS		= -O -DLINUXSOUND -Dbsd
++ CC		= cc
++ AR		= ar r
++ RANLIB		= ranlib
++ 
+  all: sox
++ 
++ install:
++ 	cp sox ${PREFIX}/bin/sox
++ 	cp sox.man ${PREFIX}/man/man1/sox.1
+  
+  sox: sox.o $(SOUNDLIB)
+  	$(CC) $(CFLAGS) -o sox sox.o $(SOUNDLIB) -lm
