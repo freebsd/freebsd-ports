@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ "$2" != "INSTALL" ]; then
+  exit 0
+fi
+if [ ! -c /dev/bpf1 ]; then \
+	echo "**********************************************************";\
+	echo "*                      W a r n i n g                     *";\
+	echo "* This DHCP program need Berkeley packet filter(bpf).    *";\
+	echo "* To use DHCP, your kernel must be rebuilt with bpf, and *";\
+	echo "* make bpf devices on /dev directory.                    *";\
+	echo "* Please read some info file with \`pkg_info dhcp-1.3b'.  *";\
+	echo "**********************************************************";\
+fi

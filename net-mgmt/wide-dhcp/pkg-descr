@@ -1,0 +1,48 @@
+		<< DHCP WIDE-Implementation, version 1.3 >>
+
+							October, 1995.
+
+   This package is a distribution kit of DHCP WIDE-Implementation
+   version 1.3.  DHCP (Dynamic Host Configuration Protocol) is a
+   protocol which provides informations to computer when it boots.
+   This release includes DHCP server, relay agent, and client.
+
+
+<License>
+
+   See "Copyright" included in this directory.
+
+   Also, portions of this software may fall under the copyrights which
+   are included the end of this file.  These are included corresponded
+   source code files.
+
+
+<Package>
+
+   You can get the latest version from;
+	ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
+
+------------------------------
+
+**Attention for this ports file>**
+
+   To use DHCP, your kernel  must  be rebuilt  with the following line
+   added to your kernel config file (/sys/i386/conf/<YourMachine>):
+
+pseudo-device	bpfilter	4	#Berkeley packet filter
+
+   and make bpf devices in your /dev directory: /dev/bpf[0-3].
+
+cd /dev
+./MAKEDEV bpf0
+./MAKEDEV bpf1
+./MAKEDEV bpf2
+./MAKEDEV bpf3
+
+**Acknowledgements to this ports file**
+	Special thanks to:
+		Hirotaka TAKETA<taketa@csk.co.jp>
+		Hajimu UMEMOTO<ume@calm.imasy.or.jp>
+
+- Yoshiro MIHIRA
+(sanpei@yy.cs.keio.ac.jp)

@@ -1,0 +1,25 @@
+--- relay/Makefile.FreeBSD.org	Sat Jan 20 20:44:01 1996
++++ relay/Makefile.FreeBSD	Sat Jan 20 20:49:14 1996
+@@ -3,10 +3,20 @@
+-CFLAGS = -g -Wall -I. -I../server
++CFLAGS += -Wall -I. -I../server
+ #CC = cc
+ #CFLAGS = -g -I. -I../server
+-LDFLAGS =
++LDFLAGS = -lkvm
++SBIN=		${PREFIX}/sbin
++LIBEXEC=	${PREFIX}/libexec
++MAN=		${PREFIX}/man
+ 
+ relay: ${OBJ}
+ 	${CC} ${CFLAGS} -o relay ${OBJ} ${LDFLAGS}
++
++install: relay
++	${INSTALL} -m 755 -s relay ${SBIN}/relay
++	cp relay.8 ${MAN}/man8/relay.8
++	gzip ${MAN}/man8/relay.8
++	cp dhcpdb.server.5 ${MAN}/man5/dhcpdb.server.5
++	gzip ${MAN}/man5/dhcpdb.server.5
+ 
+ relay.o:	relay.c common.h ../server/dhcp.h ../server/common_subr.h
+ common_subr.o:	../server/common_subr.c ../server/dhcp.h common.h ../server/common_subr.h

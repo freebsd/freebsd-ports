@@ -1,0 +1,21 @@
+--- tools/Makefile.FreeBSD.org	Sat Jan 20 21:44:16 1996
++++ tools/Makefile.FreeBSD	Sat Jan 20 21:48:39 1996
+@@ -2,9 +2,17 @@
+-CFLAGS = -g -Wall -I. -I../server
++CFLAGS += -Wall -I. -I../server
+ #CC = cc
+ #CFLAGS = -g -I. -I../server
++SBIN=		${PREFIX}/sbin
++LIBEXEC=	${PREFIX}/libexec
++MAN=		${PREFIX}/man
+ 
+ dhcpm: dhcpm.c ../server/dhcp.h
+ 	$(CC) $(CFLAGS) dhcpm.c -o dhcpm
++
++install: dhcpm
++	${INSTALL} -m 755 -s dhcpm ${SBIN}/dhcpm
++	cp dhcpm.8 ${MAN}/man8/dhcpm.8
++	gzip ${MAN}/man8/dhcpm.8
+ 
+ clean:
+ 	rm -rf *~ *.o *core* dhcpm
