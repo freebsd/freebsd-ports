@@ -32,7 +32,9 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS= --disable-mencoder
+CONFIGURE_ARGS= --disable-mencoder \
+		--with-extralibdir=${LOCALBASE}/lib \
+		--with-extraincdir=${LOCALBASE}/include
 
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
@@ -47,6 +49,10 @@ DOCFILES=       DVB bugreports.html cd-dvd.html codecs-in.html \
 
 .if exists(${LOCALBASE}/lib/libdvdread.so.2)
 WITH_DVD=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libvga.so.1)
+WITH_SVGALIB=	yes
 .endif
 
 .if exists(${X11BASE}/bin/xanim)
@@ -64,8 +70,8 @@ RUN_DEPENDS+=	${SKIN_DETECTION_FILE}:${SKIN_PORT}
 
 CONFIGURE_ARGS+=	--enable-gui
 
-#SKIN_PORT=     ${PORTSDIR}/graphics/mplayer-skins
-SKIN_PORT=     ${.CURDIR}/../mplayer-skins
+SKIN_PORT=     ${PORTSDIR}/graphics/mplayer-skins
+#SKIN_PORT=     ${.CURDIR}/../mplayer-skins
 SKIN_DETECTION_FILE!=  ${MAKE} -f ${SKIN_PORT}/Makefile -V SKIN_DETECTION_FILE
 .endif
 
@@ -115,8 +121,8 @@ RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
 
-#CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
-CODEC_PORT=	${.CURDIR}/../win32-codecs
+CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
+#CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 .endif # ARCH == i386
