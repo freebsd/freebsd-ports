@@ -5866,6 +5866,7 @@ pear-Auth	ports/security/pear-Auth
 pear-Auth_SASL	ports/security/pear-Auth_SASL
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
+pear-DB		ports/databases/pear-DB
 pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
 pear-HTML_Common	ports/devel/pear-HTML_Common
