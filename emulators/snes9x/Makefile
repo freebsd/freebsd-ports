@@ -7,6 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 DISTNAME=	s9xs132
