@@ -7,12 +7,17 @@
 
 PORTNAME=	vnc
 PORTVERSION=	3.3.3.2
-CATEGORIES=	net
+PORTREVISION=	1
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.uk.research.att.com/vnc/dist/ \
 		ftp://ftp.uk.research.att.com/pub/vnc/dist/
 DISTFILES=	vnc-3.3.3r2_unixsrc.tgz \
 		vnc-latest_doc.tgz
 EXTRACT_ONLY=	vnc-3.3.3r2_unixsrc.tgz
+
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	vnc-3.3.3r2-v6-20010421.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	bmah@freebsd.org
 
