@@ -15,14 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module implementing a persistent object store
 
+PERL_CONFIGURE=	yes
+
+MAN3=		File::Cache.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
+.endif
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-PERL_CONFIGURE=	yes
-
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		File::Cache.3
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
