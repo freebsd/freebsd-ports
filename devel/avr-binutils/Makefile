@@ -1,0 +1,41 @@
+# New ports collection makefile for:	avr-gcc
+# Date created:		30 Nov 2000
+# Whom:			Joerg Wunsch <joerg@freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	binutils
+PORTVERSION=	2.10.1
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/binutils/releases/ \
+		ftp://sourceware.cygnus.com/pub/binutils/releases/
+PKGNAMEPREFIX=	avr-
+DISTNAME=	binutils-${PORTVERSION}
+
+MAINTAINER=	joerg@freebsd.org
+
+WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--target=avr
+
+MAN1=	\
+		avr-addr2line.1 \
+		avr-ar.1 \
+		avr-as.1 \
+		avr-c++filt.1 \
+		avr-ld.1 \
+		avr-nlmconv.1 \
+		avr-nm.1 \
+		avr-objcopy.1 \
+		avr-objdump.1 \
+		avr-ranlib.1 \
+		avr-size.1 \
+		avr-strings.1 \
+		avr-strip.1
+
+.include <bsd.port.mk>
