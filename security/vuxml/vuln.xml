@@ -2159,6 +2159,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>ethereal</name>
+	<name>tethereal</name>
 	<range><lt>0.10.3</lt></range>
       </package>
     </affects>
@@ -2192,12 +2193,29 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0176</cvename>
       <cvename>CAN-2004-0365</cvename>
       <cvename>CAN-2004-0367</cvename>
+      <certvu>119876</certvu>
+      <certvu>124454</certvu>
+      <certvu>125156</certvu>
+      <certvu>433596</certvu>
+      <certvu>591820</certvu>
+      <certvu>644886</certvu>
+      <certvu>659140</certvu>
+      <certvu>695486</certvu>
+      <certvu>740188</certvu>
+      <certvu>792286</certvu>
+      <certvu>864884</certvu>
+      <certvu>931588</certvu>
+      <url>http://security.e-matters.de/advisories/032004.html</url>
+      <url>http://secunia.com/advisories/11185</url>
       <bid>9952</bid>
+      <url>http://www.osvdb.org/4462</url>
+      <url>http://www.osvdb.org/4463</url>
+      <url>http://www.osvdb.org/4464</url>
     </references>
     <dates>
       <discovery>2004-03-23</discovery>
       <entry>2004-03-26</entry>
-      <modified>2004-03-29</modified>
+      <modified>2004-07-11</modified>
     </dates>
   </vuln>
 
@@ -3885,6 +3903,74 @@ misc.c:
     <dates>
       <discovery>2004-07-01</discovery>
       <entry>2004-07-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="74d06b67-d2cf-11d8-b479-02e0185c0b53">
+    <topic>multiple vulnerabilities in ethereal</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><lt>0.10.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Issues have been discovered in multiple protocol dissectors.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00014.html</url>
+      <cvename>CAN-2004-0504</cvename>
+      <cvename>CAN-2004-0505</cvename>
+      <cvename>CAN-2004-0506</cvename>
+      <cvename>CAN-2004-0507</cvename>
+      <url>http://secunia.com/advisories/11608</url>
+      <bid>10347</bid>
+      <url>http://www.osvdb.org/6131</url>
+      <url>http://www.osvdb.org/6132</url>
+      <url>http://www.osvdb.org/6133</url>
+      <url>http://www.osvdb.org/6134</url>
+    </references>
+    <dates>
+      <discovery>2004-05-13</discovery>
+      <entry>2004-07-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="265c8b00-d2d0-11d8-b479-02e0185c0b53">
+    <topic>multiple vulnerabilities in ethereal</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><lt>0.10.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Issues have been discovered in multiple protocol dissectors.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00015.html</url>
+      <cvename>CAN-2004-0633</cvename>
+      <cvename>CAN-2004-0634</cvename>
+      <cvename>CAN-2004-0635</cvename>
+      <url>http://secunia.com/advisories/12024</url>
+      <bid>10672</bid>
+      <url>http://www.osvdb.org/7536</url>
+      <url>http://www.osvdb.org/7537</url>
+      <url>http://www.osvdb.org/7538</url>
+    </references>
+    <dates>
+      <discovery>2004-07-06</discovery>
+      <entry>2004-07-11</entry>
     </dates>
   </vuln>
 </vuxml>
