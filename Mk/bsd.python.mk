@@ -7,7 +7,7 @@
 .if !defined(_POSTMKINCLUDED) && !defined(Python_Pre_Include)
 
 Python_Pre_Include=			bsd.python.mk
-Python_Include_MAINTAINER=	tg@FreeBSD.org
+Python_Include_MAINTAINER=	alane@FreeBSD.org
 
 # This file contains some variable definitions that are supposed to
 # make your life easier when dealing with ports related to the Python
