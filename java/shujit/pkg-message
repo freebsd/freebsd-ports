@@ -1,7 +1,11 @@
-*************************************************************************
-*
-*	This port requires the elf jdk.
-*	A binary aout release is available at
-*	http://www.shudo.net/jit/dist/
-* 
-*************************************************************************
+To use shujit, set JAVA_COMPILER to 'shujit':
+
+ - if you are using csh or tcsh, add the following line to ~/.cshrc:
+
+setenv JAVA_COMPILER shujit
+
+ - if you are using sh, bash, zsh or some other Bourne or Korn shell
+   derivative, add the following line to ~/.profile:
+
+JAVA_COMPILER=shujit; export JAVA_COMPILER
+

@@ -1,4 +1,3 @@
-lib/shujit/libshujit.so
-share/shujit/README
-@dirrm share/shujit
-@dirrm lib/shujit
+lib/libshujit.so
+share/doc/shujit/README
+@dirrm share/doc/shujit

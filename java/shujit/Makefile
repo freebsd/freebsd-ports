@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	shujit
-PORTVERSION=	0.7.12
+PORTVERSION=	0.7.14
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk11
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	i386
@@ -26,23 +25,20 @@ MAKEFILE=	GNUmakefile
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-JAVADIR?=	${LOCALBASE}/jdk1.1.8
-JAVALIBDIR=	${PREFIX}/lib/${PORTNAME}
-CONFIGURE_ARGS+=	--with-jdk="${JAVADIR}"
-MAKE_ENV=	JAVADIR="${JAVADIR}"
+USE_JAVA=	1.1+
+CONFIGURE_ARGS=	--with-jdk="${JAVA_HOME}"
+MAKE_ENV=	JAVADIR="${JAVA_HOME}"
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
 
 do-install:
-	@${MKDIR} ${JAVALIBDIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/libshujit.so ${JAVALIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libshujit.so ${PREFIX}/lib
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/shujit
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/shujit
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${PREFIX}/share/shujit/README for usage instructions."
-	@${ECHO_MSG} ""
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
