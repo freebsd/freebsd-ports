@@ -82,6 +82,7 @@
     SUBDIR += libXext
     SUBDIR += libXfont
     SUBDIR += libXi
+    SUBDIR += libXrandr
     SUBDIR += libXres
     SUBDIR += libXtrans
     SUBDIR += libXv
