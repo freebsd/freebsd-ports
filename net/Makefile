@@ -128,6 +128,7 @@
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += easysoap
+    SUBDIR += echat
     SUBDIR += echolot
     SUBDIR += echoping
     SUBDIR += edonkey-gui-gtk
