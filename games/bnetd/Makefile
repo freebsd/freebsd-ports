@@ -3,16 +3,16 @@
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1999/05/01 16:59:31 mharo Exp $
+# $Id: Makefile,v 1.3 1999/05/13 09:18:13 asami Exp $
 #
 
-DISTNAME=	bnetd-0.4.7
+DISTNAME=	bnetd-0.4.9
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
-MAN1=		bnclient.1 bnetd.1 bnpass.1
+MAN1=		bnchat.1 bnetd.1 bnftp.1 bnpass.1
 MAN4=		bnetd.conf.4 bntext.4
 MLINKS=		bntext.4 bnmotd.txt.4 bntext.4 bnnews.txt.4
 
@@ -20,7 +20,7 @@ do-build:
 	@(cd ${WRKSRC}/src; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
 
 do-install:
-	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} bnclient bnpass ${PREFIX}/bin
+	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} bnchat bnftp bnpass ${PREFIX}/bin
 	cd ${WRKSRC}/sbin; ${INSTALL_PROGRAM} bnetd ${PREFIX}/sbin
 	cd ${WRKSRC}/man; ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1; ${INSTALL_MAN} ${MAN4} ${MAN4PREFIX}/man/man4
 	${MKDIR} ${PREFIX}/bnetd; ${CP} -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${PREFIX}/bnetd
