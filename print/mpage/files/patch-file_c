@@ -1,0 +1,49 @@
+$OpenBSD: patch-file_c,v 1.2 2002/11/13 17:15:49 naddy Exp $
+--- file.c.orig	Sun Jun 16 02:56:44 2002
++++ file.c	Mon Nov 11 06:54:23 2002
+@@ -18,6 +18,7 @@
+  */
+ 
+ 
++#include <string.h>
+ #include "mpage.h"
+ 
+ 
+@@ -101,10 +102,10 @@ do_pr_file(fname, asheet, outfd)
+      * header or not
+      */
+     if (opt_header != NULL)
+-        (void)sprintf(command, "%s -l%d -w%d -h \"%s\" %s", prprog,
++        (void)snprintf(command, sizeof(command), "%s -l%d -w%d -h \"%s\" %s", prprog,
+                   asheet->sh_plength, asheet->sh_cwidth, opt_header, fname);
+     else
+-        (void)sprintf(command, "%s -l%d -w%d %s", prprog,
++        (void)snprintf(command, sizeof(command), "%s -l%d -w%d %s", prprog,
+                   asheet->sh_plength, asheet->sh_cwidth, fname);
+     /*
+      * open a pipe to the proper pr(1) command, and pr provides
+@@ -148,7 +149,7 @@ do_stdin(asheet, outfd)
+          * a temporary file; this temporary file will then
+          * be used as input to the do_doc routine
+          */
+-        (void)strcpy(tmpfile, "/usr/tmp/mpageXXXXXX");
++        (void)strlcpy(tmpfile, "/tmp/mpageXXXXXX", sizeof(tmpfile));
+         if ( (tmpfd = mkstemp(tmpfile)) == -1) {
+             fprintf(stderr, "%s: cannot create temporary file", MPAGE);
+             perror(MPAGE);
+@@ -156,11 +157,13 @@ do_stdin(asheet, outfd)
+ 	}
+         close(tmpfd);
+         if (opt_header != NULL)
+-            (void)sprintf(command, "%s -l%d -w%d -h \"%s\"> %s", prprog,
++            (void)snprintf(command, sizeof(command), 
++		    "%s -l%d -w%d -h \"%s\"> %s", prprog,
+                       asheet->sh_plength, asheet->sh_cwidth,
+                       opt_header, tmpfile);
+         else
+-            (void)sprintf(command, "%s -l%d -w%d > %s", prprog,
++            (void)snprintf(command, sizeof(command),
++		    "%s -l%d -w%d > %s", prprog,
+                       asheet->sh_plength, asheet->sh_cwidth, tmpfile);
+         /*
+          * open a pipe to the pr(1) command which will create a
