@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 MAINTAINER=	richard@homemail.com
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
+LATEST_LINK=	lua4
 MAN1=		luac.1
 WRKSRC=		${WRKDIR}/lua
 
