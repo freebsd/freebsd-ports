@@ -10,13 +10,14 @@ PORTVERSION=	4.1.b3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 DISTNAME=	${PORTNAME}-4.1beta3
-WRKSRC=		${WRKDIR}/${PORTNAME}-4.1beta2
 
 PATCH_SITES=	http://www.hylafax.org/patches/
 PATCHFILES=	tiff-3.5-interfaces.patch cvtDateTime.patch
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	ports@FreeBSD.org
+
+BROKEN=		"Oops, botched upgrade"
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
