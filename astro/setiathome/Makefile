@@ -18,6 +18,10 @@ COMMENT?=	Donate idle cycles to the search for space aliens
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 # Global variables
 #
 
