@@ -1,6 +1,4 @@
 lib/gauche/site/%%VERSION%%/%%TARGET%%/kakasi.so
+share/gauche/site/lib/.packages/Gauche-kakasi.gpd
 share/gauche/site/lib/text/kakasi.scm
 @unexec rmdir %D/share/gauche/site/lib/text 2>/dev/null || true
-%%PORTDOCS%%%%DOCSDIR%%/README.eucjp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@unexec rmdir %D/share/doc/gauche 2>/dev/null || true
