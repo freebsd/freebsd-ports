@@ -18,6 +18,6 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 post-install:
-	@strip ${PREFIX}/lib/libecore.so.0
+	@${STRIP_CMD} ${PREFIX}/lib/libecore.so.0
 
 .include <bsd.port.mk>

@@ -20,6 +20,6 @@ USE_XLIB=	yes
 MAN1=		wscan.1
 
 post-install:
-	strip ${PREFIX}/bin/wscan
+	${STRIP_CMD} ${PREFIX}/bin/wscan
 
 .include <bsd.port.mk>
