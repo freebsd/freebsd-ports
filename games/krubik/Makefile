@@ -12,8 +12,10 @@ MASTER_SITES=	http://www.phys.uu.nl/~eendebak/kde/
 
 MAINTAINER=	jedgar@fxp.org
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
 
 GNU_CONFIGURE=	yes
+USE_QT=		yes
 
 .include <bsd.port.mk>
