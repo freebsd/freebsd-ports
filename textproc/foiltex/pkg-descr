@@ -1,0 +1,7 @@
+The FoilTeX is a collection of LaTeX files for making foils.  A number
+of features are built-in including large sans serif font as normal font,
+options for setting normalsize at 20pt (default), 17pt, 25pt or 30pt,
+new macros for starting new foils, for special environments like Theorem
+and Proof, simple macros to control the headline and footline.
+
+WWW: http://www.ctan.org/tex-archive/nonfree/macros/latex/contrib/foiltex/
