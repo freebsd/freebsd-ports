@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.3.27
+PORTVERSION=	0.4.0
 CATEGORIES=	mail
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
@@ -21,11 +21,13 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS= --datadir=${PREFIX}/share/${PORTNAME} \
+		--disable-glibtest --disable-gtktest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		DATADIRNAME=share \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --disable-glibtest --disable-gtktest
 
 DOCS=		ABOUT-NLS COPYING ChangeLog ChangeLog.jp INSTALL INSTALL.jp \
 		README README.jp TODO.jp
