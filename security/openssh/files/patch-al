@@ -1,27 +1,20 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh.h	Tue Nov 23 18:58:02 1999
-+++ ./ssh.h	Tue Nov 23 19:31:00 1999
-@@ -51,7 +51,7 @@
-    port if present. */
+--- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/ssh.h	Sun Nov 28 16:47:46 1999
++++ ssh.h	Sun Nov 28 17:00:07 1999
+@@ -61,7 +61,7 @@
+  */
  #define SSH_SERVICE_NAME	"ssh"
  
 -#define ETCDIR			"/etc"
 +#define ETCDIR			"__PREFIX__/etc"
  #define PIDDIR			"/var/run"
  
- /* System-wide file containing host keys of known hosts.  This file should be
-@@ -64,11 +64,11 @@
- are all defined in Makefile.in.  Of these, ssh_host_key should be readable
- only by root, whereas ssh_config should be world-readable. */
- 
--#define HOST_KEY_FILE		"/etc/ssh_host_key"
--#define SERVER_CONFIG_FILE	"/etc/sshd_config"
--#define HOST_CONFIG_FILE	"/etc/ssh_config"
-+#define HOST_KEY_FILE		"__PREFIX__/etc/ssh_host_key"
-+#define SERVER_CONFIG_FILE	"__PREFIX__/etc/sshd_config"
-+#define HOST_CONFIG_FILE	"__PREFIX__/etc/ssh_config"
+ /*
+@@ -78,7 +78,7 @@
+ #define SERVER_CONFIG_FILE	ETCDIR "/sshd_config"
+ #define HOST_CONFIG_FILE	ETCDIR "/ssh_config"
  
 -#define SSH_PROGRAM		"/usr/bin/ssh"
 +#define SSH_PROGRAM		"__PREFIX__/bin/ssh"
  
- /* The process id of the daemon listening for connections is saved
-    here to make it easier to kill the correct daemon when necessary. */
+ /*
+  * The process id of the daemon listening for connections is saved here to
