@@ -724,6 +724,7 @@
     SUBDIR += p5-Devel-Cover
     SUBDIR += p5-Devel-Cycle
     SUBDIR += p5-Devel-DProf
+    SUBDIR += p5-Devel-DProfPP
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-LeakTrace
