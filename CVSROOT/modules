@@ -8702,6 +8702,7 @@ tex2im		ports/textproc/tex2im
 texi2db		ports/textproc/texi2db
 texi2html	ports/textproc/texi2html
 texmacs		ports/editors/texmacs
+texmaker	ports/editors/texmaker
 textedit	ports/editors/textedit
 textmaze	ports/games/textmaze
 textutils	ports/textproc/textutils
