@@ -1,33 +1,19 @@
-*** src/socket.d.orig	Fri Jan 14 10:06:05 2000
---- src/socket.d	Tue Aug 22 23:42:49 2000
-***************
-*** 299,312 ****
-    {
-      #ifdef HAVE_INET_PTON
-      #ifdef HAVE_IPV6
-!     { var struct sockaddr_in6 inaddr;
-        if (inet_pton(AF_INET6,host,&inaddr.sin6_addr) > 0)
-          { inaddr.sin6_family = AF_INET6;
-            inaddr.sin6_port = htons(port);
-            return connector((struct sockaddr *) &inaddr, sizeof(struct sockaddr_in6));
-      }   }
-      #endif
-!     { var struct sockaddr_in inaddr;
-        if (inet_pton(AF_INET,host,&inaddr.sin_addr) > 0)
-          { inaddr.sin_family = AF_INET;
-            inaddr.sin_port = htons(port);
---- 299,312 ----
-    {
-      #ifdef HAVE_INET_PTON
-      #ifdef HAVE_IPV6
-!     { var struct sockaddr_in6 inaddr = {0};
-        if (inet_pton(AF_INET6,host,&inaddr.sin6_addr) > 0)
-          { inaddr.sin6_family = AF_INET6;
-            inaddr.sin6_port = htons(port);
-            return connector((struct sockaddr *) &inaddr, sizeof(struct sockaddr_in6));
-      }   }
-      #endif
-!     { var struct sockaddr_in inaddr = {0};
-        if (inet_pton(AF_INET,host,&inaddr.sin_addr) > 0)
-          { inaddr.sin_family = AF_INET;
-            inaddr.sin_port = htons(port);
+--- src/socket.d.orig	Fri Jan 14 07:06:05 2000
++++ src/socket.d	Tue Apr  3 03:07:32 2001
+@@ -299,14 +299,14 @@
+   {
+     #ifdef HAVE_INET_PTON
+     #ifdef HAVE_IPV6
+-    { var struct sockaddr_in6 inaddr;
++    { var struct sockaddr_in6 inaddr = {0};
+       if (inet_pton(AF_INET6,host,&inaddr.sin6_addr) > 0)
+         { inaddr.sin6_family = AF_INET6;
+           inaddr.sin6_port = htons(port);
+           return connector((struct sockaddr *) &inaddr, sizeof(struct sockaddr_in6));
+     }   }
+     #endif
+-    { var struct sockaddr_in inaddr;
++    { var struct sockaddr_in inaddr = {0};
+       if (inet_pton(AF_INET,host,&inaddr.sin_addr) > 0)
+         { inaddr.sin_family = AF_INET;
+           inaddr.sin_port = htons(port);
