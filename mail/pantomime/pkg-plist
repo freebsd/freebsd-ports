@@ -65,4 +65,6 @@
 @dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%
+@dirrm %%LOCALLIBRARY%%/Libraries
 @dirrm %%LOCALLIBRARY%%/Headers/Pantomime
+@dirrm %%LOCALLIBRARY%%/Headers
