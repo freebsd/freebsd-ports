@@ -5059,6 +5059,7 @@ ports_irc	ports/irc
 ports_japanese	ports/japanese
 ports_java	ports/java
 ports_korean	ports/korean
+ports_lam	ports/net/lam
 ports_lang	ports/lang
 ports_mail	ports/mail
 ports_math	ports/math
