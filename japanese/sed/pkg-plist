@@ -1,1 +1,3 @@
 bin/sed
+@unexec install-info --delete %D/info/sed.info %D/info/dir
+info/sed.info
