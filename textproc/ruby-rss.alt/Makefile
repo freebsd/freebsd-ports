@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://cozmixng.sgk.iwate-u.ac.jp/~kou/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -31,7 +31,7 @@ DOCS_JA=	README.ja Tutorial.ja
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
