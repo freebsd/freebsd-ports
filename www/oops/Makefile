@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
 
-MAINTAINER=	osa@FreeBSD.org
+MAINTAINER=	marck@FreeBSD.org
 COMMENT=	A caching web proxy server
 
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
