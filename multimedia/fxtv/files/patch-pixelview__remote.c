@@ -1,14 +1,10 @@
 
 $FreeBSD$
 
---- tvcapture.c.orig
-+++ tvcapture.c
-@@ -34,11 +34,18 @@
- #include <stdlib.h>
- #include <fcntl.h>
- #include <errno.h>
-+#include <sys/types.h>
- #include <sys/mman.h>
+--- pixelview_remote.c.orig
++++ pixelview_remote.c
+@@ -39,9 +39,16 @@
+ #include <sys/fcntl.h>
  #ifdef __NetBSD__
  # include <dev/ic/bt8xx.h>
 +#endif
@@ -16,10 +12,13 @@ $FreeBSD$
 +#include <osreldate.h>
 +#if __FreeBSD_version > 500000
 +#include <dev/bktr/ioctl_bt848.h>
++#include <dev/bktr/ioctl_meteor.h>
  #else
+-# include <machine/ioctl_meteor.h>
 -# include <machine/ioctl_bt848.h>
++#include <machine/ioctl_meteor.h>
 +#include <machine/ioctl_bt848.h>
 +#endif
  #endif
- #include <signal.h>
- #include <sys/ioctl.h>
+ #include "pixelview_remote.h"
+ 
