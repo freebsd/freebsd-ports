@@ -3,6 +3,8 @@
 # Date created:		14 January 1995
 # Whom:			mr (original)
 #
+# $Id$
+#
 
 DISTNAME=	msql-1.0.16
 CATEGORIES+=	databases
