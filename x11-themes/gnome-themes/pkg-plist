@@ -990,6 +990,7 @@ share/locale/fa/LC_MESSAGES/gnome-themes.mo
 share/locale/fi/LC_MESSAGES/gnome-themes.mo
 share/locale/fr/LC_MESSAGES/gnome-themes.mo
 share/locale/ga/LC_MESSAGES/gnome-themes.mo
+share/locale/gu/LC_MESSAGES/gnome-themes.mo
 share/locale/he/LC_MESSAGES/gnome-themes.mo
 share/locale/hi/LC_MESSAGES/gnome-themes.mo
 share/locale/hr/LC_MESSAGES/gnome-themes.mo
@@ -1007,7 +1008,9 @@ share/locale/ml/LC_MESSAGES/gnome-themes.mo
 share/locale/mn/LC_MESSAGES/gnome-themes.mo
 share/locale/ms/LC_MESSAGES/gnome-themes.mo
 share/locale/nl/LC_MESSAGES/gnome-themes.mo
+share/locale/nn/LC_MESSAGES/gnome-themes.mo
 share/locale/no/LC_MESSAGES/gnome-themes.mo
+share/locale/pa/LC_MESSAGES/gnome-themes.mo
 share/locale/pl/LC_MESSAGES/gnome-themes.mo
 share/locale/pt/LC_MESSAGES/gnome-themes.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-themes.mo
