@@ -1,5 +1,5 @@
---- pnm/Makefile.orig	Sat Mar 25 02:27:50 2000
-+++ pnm/Makefile	Sat Apr  1 12:00:00 2000
+--- pnm/Makefile.orig	Tue Apr  4 04:38:37 2000
++++ pnm/Makefile	Sat Apr  8 12:00:00 2000
 @@ -32,6 +32,8 @@
  
  NETPBMLIBS = $(LIBPNM) \
@@ -17,7 +17,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -104,44 +107,48 @@
+@@ -104,44 +107,47 @@
  merge:    $(MERGENAME) $(NOMERGEBINARIES)
  
  tifftopnm pnmtotiff:  %: %.o $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.so 
@@ -47,8 +47,7 @@
  
  jpegtopnm: %: %.o $(NETPBMLIBS)
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(JPEGLD) -lm $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(JPEGLD) -lm \
-+	  $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(JPEGLD) -lm $(CDEBUG)
  
  # Rule for objects.
  $(OBJECTS) $(LIBOBJECTS): %.o: %.c

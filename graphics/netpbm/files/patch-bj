@@ -1,0 +1,14 @@
+--- ppm/eyuvtoppm.c.orig	Fri Mar 31 07:09:32 2000
++++ ppm/eyuvtoppm.c	Sat Apr  8 12:00:00 2000
+@@ -40,8 +40,11 @@
+  * HEADER FILES *
+  *==============*/
+ #include <stdio.h>
++#ifdef __STDC__
+ #include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ typedef unsigned char uint8;
+ 

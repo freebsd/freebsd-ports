@@ -1,14 +1,22 @@
---- ppm/Makefile.orig	Fri Mar 24 17:04:20 2000
-+++ ppm/Makefile	Sat Apr  1 12:00:00 2000
-@@ -19,6 +19,7 @@
+--- ppm/Makefile.orig	Tue Apr  4 04:53:40 2000
++++ ppm/Makefile	Sat Apr  8 12:00:00 2000
+@@ -19,8 +19,15 @@
  endif
  
  NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
 +NETPBMLD = -L. -lppm -L$(PBMDIR) -lpbm -L$(PGMDIR) -lpgm
  LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  
++ifeq ($(JPEGLIB_DIR),NONE)
++  JPEGLD =
++else
++  JPEGLD = -L$(JPEGLIB_DIR) -ljpeg
++endif     
++
  PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
-@@ -40,6 +41,7 @@
+ 		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
+ 		pjtoppm \
+@@ -40,6 +47,7 @@
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.
  
@@ -16,7 +24,7 @@
  ifneq ($(JPEGLIB_DIR), NONE)
    ifneq ($(JPEGHDR_DIR), NONE)
        NOMERGEBINARIES += ppmtojpeg
-@@ -55,6 +57,7 @@
+@@ -55,6 +63,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(PORTBINARIES) $(MATHBINARIES))
  
  LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
@@ -24,7 +32,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -62,7 +65,7 @@
+@@ -62,7 +71,7 @@
  
  MERGENAME= ppmmerge
  
@@ -33,13 +41,13 @@
  
  .PHONY: all
  all:        $(BINARIES)
-@@ -72,29 +75,32 @@
+@@ -72,29 +81,31 @@
  
  # Rules for plain programs.
  $(PORTBINARIES): %: %.o $(NETPBMLIBS)
 -	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
- 	  $(CDEBUG)
+-	  $(CDEBUG)
++	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
  
  # Rule for math-dependent programs.
  $(MATHBINARIES): %: %.o $(NETPBMLIBS)

@@ -1,5 +1,14 @@
---- Makefile.common.orig	Sat Mar 25 02:46:12 2000
-+++ Makefile.common	Sat Apr  1 12:00:00 2000
+--- Makefile.common.orig	Tue Apr  4 04:54:35 2000
++++ Makefile.common	Sat Apr  8 12:00:00 2000
+@@ -47,7 +47,7 @@
+ 	$(CC) $(CFLAGS) -Wno-implicit -c -o $@ $<
+ 
+ $(MERGENAME): $(MERGENAME).o $(MERGE_OBJECTS) $(NETPBMLIBS) 
+-	$(LD) $(LDFLAGS) -o $@ $< $(MERGE_OBJECTS) -lm $(NETPBMLIBS)
++	$(LD) $(LDFLAGS) -o $@ $< $(MERGE_OBJECTS) -lm $(NETPBMLD)
+ 
+ # Before Netpbm 8.4, we did hard links instead of symbolic.  A user
+ # requested symbolic, and I couldn't see a reason for hard (original reason
 @@ -56,31 +56,27 @@
  install.merge: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES)
@@ -37,7 +46,7 @@
  endif
  
  .PHONY: install.man
-@@ -111,13 +107,13 @@
+@@ -111,13 +107,12 @@
  # prefer not to "install" them, but just to access the Netpbm source
  # directory when you compile your programs.
  	cd $(INSTALLHDRS) ; rm -f $(INTERFACE_HEADERS)
@@ -47,16 +56,16 @@
 -lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ).$(MIN)
 -	ln -sf lib$(LIBROOT).so.$(MAJ).$(MIN) $@
 -lib$(LIBROOT).so.$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBLIBS)
-+lib$(LIBROOT).so: lib$(LIBROOT).a lib$(LIBROOT).so.$(MAJ)
-+	ln -sf lib$(LIBROOT).so.$(MAJ) $@
-+lib$(LIBROOT).so.$(MAJ): $(LIBSOBJECTS) $(LIBLIBS)
- 	$(LD) $(LDSHLIB) -Wl,-soname,lib$(LIBROOT).so.$(MAJ) -o $@ \
+-	$(LD) $(LDSHLIB) -Wl,-soname,lib$(LIBROOT).so.$(MAJ) -o $@ \
 -          $(LIBOBJECTS) $(LIBLIBS) -lc
-+          $(LIBSOBJECTS) $(LIBLIBS)
++lib$(LIBROOT).so: lib$(LIBROOT).so.$(MAJ)
++	ln -sf lib$(LIBROOT).so.$(MAJ) $@
++lib$(LIBROOT).so.$(MAJ): lib$(LIBROOT).a $(LIBSOBJECTS) $(LIBLIBS)
++	$(LD) $(LDSHLIB) -Wl,-soname,$@ -o $@ $(LIBSOBJECTS) $(LIBLIBS)
  
  lib$(LIBROOT).a: $(LIBOBJECTS)
  	-rm -f $@
-@@ -126,11 +122,11 @@
+@@ -126,11 +121,11 @@
  
  
  .PHONY: install.lib.common
