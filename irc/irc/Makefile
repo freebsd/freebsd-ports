@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.16 1997/07/08 23:02:16 torstenb Exp $
+# $Id: Makefile,v 1.17 1998/01/25 20:37:03 torstenb Exp $
 #
 
 DISTNAME=	irc2.9.4
@@ -23,7 +23,8 @@ SYSLOG_FACILITY=LOG_LOCAL5
 EXTRACT_SUFX=	.tgz
 SCRIPTS_ENV=	SYSLOG_FACILITY="${SYSLOG_FACILITY}"
 
-MAN8=		ircd.8 irc.1
+MAN1=		irc.1
+MAN8=		ircd.8
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--without-ncurses
