@@ -3,7 +3,7 @@
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/15 16:53:43 erich Exp $
 #
 
 DISTNAME=	NES
@@ -21,8 +21,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin/ines
 	${INSTALL_PROGRAM} ${WRKSRC}/dasm ${PREFIX}/bin/dasm
-	@mkdir ${PREFIX}/share/ines
-	@cp ${WRKSRC}/iNES.doc ${PREFIX}/share/ines
+	@${MKDIR} ${PREFIX}/share/ines
+	@${INSTALL_DATA} ${WRKSRC}/iNES.doc ${PREFIX}/share/ines
 
 .include <bsd.port.mk>
 
