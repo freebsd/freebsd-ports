@@ -1,6 +1,7 @@
 lib/libMagick.so.3.7.7
 @exec ldconfig -m %D/lib
 lib/libMagick.a
+@exec ranlib %D/%F
 man/man5/quantize.5.gz
 man/man5/miff.5.gz
 man/man1/display.1.gz
