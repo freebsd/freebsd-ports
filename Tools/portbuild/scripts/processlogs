@@ -26,7 +26,7 @@ else
     echo -n "$size KB" >>$of
     echo -n "</td><td>" >>$of
     dir=$(sed -n -e '3p' $1 | awk '{print $4}' | sed -e 's,^/[^/]*/[^/]*/,,')
-    echo -n "<a href=\"http://www.freebsd.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
+    echo -n "<a href=\"http://www.FreeBSD.org/cgi/cvsweb.cgi/ports/$dir\">$dir</a>" >>$of
     echo -n "</td><td>" >>$of
     maint=$(sed -n -e '4p' $1 | awk '{print $3}')
     maints="$maints $maint"
