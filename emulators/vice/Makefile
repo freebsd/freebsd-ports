@@ -6,18 +6,33 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
+.if defined(VICE_WITH_GNOME)
+PKGNAMESUFFIX=	-gnome
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
+
+.if !defined(VICE_WITH_GNOME)
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
 
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
 USE_XPM=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+
+.if defined(VICE_WITH_GNOME)
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
+CONFIGURE_ARGS=	--enable-gnomeui
+.else
+CONFIGURE_ARGS=	--with-xaw3d
+.endif
 
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \
@@ -28,14 +43,6 @@ MLINKS=		vice.1 x64.1 \
 		vice.1 xcbm2.1
 
 .include <bsd.port.pre.mk>
-
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-CONFIGURE_ARGS=	--enable-gnomeui
-.else
-LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-CONFIGURE_ARGS=	--with-xaw3d
-.endif
 
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
