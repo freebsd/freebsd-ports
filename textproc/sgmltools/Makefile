@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.us.sgmltools.org/pub/SGMLtools/v2.0/source/ \
 		ftp://ftp.nllgg.nl/pub/SGMLtools/v2.0/source/
 DISTFILES=	${DISTNAME}.base.tar.bz2
 
-MAINTAINER=	benno@netizen.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
