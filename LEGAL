@@ -80,6 +80,7 @@ dnews3			ports/news/dnews	Only free for schools and
 						free trial for everybody.
 						We currently ask for permission
 						to put a package on the CD-ROM.
+eijiro*.txt		ports/japanes/eijiro-fpw The original dictionary is not free
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 fnorb-*			ports/devel/fnorb	Cannot use commercially
