@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Mon Jun  7 19:21:36 2004
+--- Makefile.in	Thu Jul  1 00:18:18 2004
+***************
+*** 626,632 ****
+  		-e 's!%PIDFILE%!$(PIDFILE)!g' \
+  		quickml-ctl.in > quickml-ctl
+  	chmod +x quickml-ctl
+! 	chmod -w quickml-analog
+  
+  quickmlrc.sample: quickmlrc.sample.in Makefile
+  	rm -f quickmlrc.sample
+--- 626,632 ----
+  		-e 's!%PIDFILE%!$(PIDFILE)!g' \
+  		quickml-ctl.in > quickml-ctl
+  	chmod +x quickml-ctl
+! 	chmod -w quickml-ctl
+  
+  quickmlrc.sample: quickmlrc.sample.in Makefile
+  	rm -f quickmlrc.sample

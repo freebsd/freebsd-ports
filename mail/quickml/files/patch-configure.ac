@@ -1,0 +1,32 @@
+*** configure.ac.orig	Mon Jun  7 17:50:58 2004
+--- configure.ac	Sat Jul  3 01:16:54 2004
+***************
+*** 5,14 ****
+  AC_PROG_LN_S
+  AC_PROG_MAKE_SET
+  
+! AC_PATH_PROG(RUBY, ruby, no)
+! if test "$RUBY" = "no"; then
+!     AC_MSG_ERROR(ruby not found)
+! fi
+  
+  AC_ARG_WITH(
+      user,
+--- 5,21 ----
+  AC_PROG_LN_S
+  AC_PROG_MAKE_SET
+  
+! AC_ARG_WITH(
+!     ruby,
+!     [  --with-ruby=RUBY        quickml runs with RUBY [[ruby]]],
+!     [RUBY=${withval}],
+!     [AC_PATH_PROG(RUBY, ruby, no)
+!         if test "$RUBY" = "no"; then
+!             AC_MSG_ERROR(ruby not found)
+!         fi
+!     ]
+! )
+! AC_SUBST(RUBY)
+  
+  AC_ARG_WITH(
+      user,
