@@ -10,9 +10,6 @@ printing different document format, even if compressed:
   it through ghostscript, if you don't have a PS printer.
 - Printer Setup is done with the SETUP program.
 
-See my homepage for more informations:
-	http://www.FreeBSD.org/~andreas/apsfilter
-
 *** Please note: COPYRIGHT CHANGED ***
   GPL + Postcard license. I'd like to get a postcard from you, to
   see who is using apsfilter and where. That would be very kind !
@@ -20,4 +17,4 @@ See my homepage for more informations:
 If you are a satisfied apsfilter customer, then send mail to
 apsfilter-promo@klemm.gtn.com and tell me, how apsfilter made your life easier.
 
-	-Andreas (August 1999)
+WWW: http://www.FreeBSD.org/~andreas/apsfilter/index.html
