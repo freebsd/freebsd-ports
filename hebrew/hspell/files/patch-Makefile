@@ -1,0 +1,22 @@
+--- Makefile.orig	Sat Mar  8 15:17:03 2003
++++ Makefile	Wed Apr  2 03:07:35 2003
+@@ -14,7 +14,7 @@
+ 
+ # build and installation paths
+ DESTDIR =
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ BIN = $(PREFIX)/bin
+ SHARE = $(PREFIX)/share/hspell
+ LIBEXEC = $(PREFIX)/lib/hspell
+@@ -42,8 +42,8 @@
+ 	sed 's+^my @dictionaries=.*$$+my @dictionaries=("zcat $(SHARE)/wordlist.wgz|$(LIBEXEC)/wunzip|");+; s+my @likelyerror.*$$+my @likelyerror_dictionaries=("$(SHARE)/likelyerrors");+; s+@spellinghints_dictionaries=("spellinghints")+@spellinghints_dictionaries=("$(SHARE)/spellinghints")+' < hspell.pl > $@
+ 	chmod 755 $@
+ 
+-CFLAGS=-O
+-LDFLAGS=-s
++CFLAGS?=-O
++LDFLAGS?=-s
+ wunzip:
+ 
+ # experimental, not currently in use:

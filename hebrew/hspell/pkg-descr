@@ -1,0 +1,10 @@
+Hspell is a fully working Hebrew spellchecker. On typical documents
+it should recognize the majority of correct words. 
+Hspell was designed to be 100% and strictly compliant with the
+official niqqud-less spelling rules ("Ha-ktiv Khasar Ha-niqqud",
+colloquially known as "Ktiv Male") published by the Academy of
+the Hebrew Language.
+
+Hspell was written by Nadav Har'El and Dan Kenigsberg.
+
+WWW: http://www.ivrix.org.il/projects/spell-checker/
