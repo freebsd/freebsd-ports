@@ -1,0 +1,10 @@
+--- plugins/Makefile.plugin.in.orig	Fri Mar 19 15:00:46 2004
++++ plugins/Makefile.plugin.in	Fri Mar 19 15:00:57 2004
+@@ -1,6 +1,6 @@
+ # plugin makefiles include this
+ CC=		@CC@
+-CFLAGS=		@CFLAGS@ -I../../src/ -I../include/ @X_CFLAGS@
++CFLAGS=		@CFLAGS@ -I../../src/ -I../include/ -fPIC @X_CFLAGS@
+ CFLAGS+=	@DEFS@
+ LDFLAGS=	@SHARED_FLAG@
+ 
