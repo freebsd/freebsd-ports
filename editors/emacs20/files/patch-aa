@@ -1,46 +1,60 @@
---- ./man/vip.texi.org	Fri Jun 16 15:31:11 1995
-+++ ./man/vip.texi	Tue May 20 01:28:33 1997
-@@ -2,6 +2,10 @@
+--- man/vip.texi.orig	Sun May 17 02:48:50 1998
++++ man/vip.texi	Sat Sep 19 10:53:58 1998
+@@ -2,10 +2,9 @@
  
  @setfilename ../info/vip
  @settitle VIP
+-
+-@dircategory Editors
 +@dircategory The Emacs editor and associated tools
-+@direntry
+ @direntry
+-* VIP: (vip).		An older VI-emulation for Emacs.
 +* VIP: (vip).			A VI-emulation for Emacs.
-+@end direntry
+ @end direntry
  
  @iftex
- @finalout
---- man/emacs.texi.orig	Tue Jul 22 17:03:07 1997
-+++ man/emacs.texi	Mon Oct 13 14:57:48 1997
-@@ -1,6 +1,11 @@
- \input texinfo
+--- man/emacs.texi.orig	Tue Aug 18 16:45:18 1998
++++ man/emacs.texi	Sat Sep 19 10:54:30 1998
+@@ -6,15 +6,14 @@
+ @synindex pg cp
  
-+@setfilename ../info/emacs
  @ifinfo
 +@dircategory The Emacs editor and associated tools
 +@direntry
 +* Emacs: (emacs).              The extensible self-documenting text editor.
 +@end direntry
  @c The edition number appears in several places in this file
- This corresponds to the thirteenth edition of the @cite{GNU Emacs Manual},
- for Emacs version 20.1
---- ./man/viper.texi.org	Wed Aug  7 10:59:45 1996
-+++ ./man/viper.texi	Tue May 20 01:29:17 1997
-@@ -4,6 +4,10 @@
- \input texinfo
+ This is the thirteenth edition of the @cite{GNU Emacs Manual},
+ updated for Emacs version 20.3
+ @c Please REMEMBER to update edition number in *three* places in this file.
+-
+-@dircategory Editors
+-@direntry
+-* Emacs: (emacs).	The extensible self-documenting text editor.
+-@end direntry
  
+ Published by the Free Software Foundation
+ 59 Temple Place, Suite 330
+--- man/viper.texi.orig	Tue Jun  9 11:19:18 1998
++++ man/viper.texi	Sat Sep 19 10:55:07 1998
+@@ -5,12 +5,9 @@
+ @comment @setfilename viper
+ @comment @setfilename viper.info
  @setfilename ../info/viper
+-
+-@dircategory Editors
 +@dircategory The Emacs editor and associated tools
-+@direntry
+ @direntry
+-* VIPER: (viper).       The newest Emacs VI-emulation mode.
+-                          (also, A VI Plan for Emacs Rescue
+-                           or the VI PERil.)
 +* VIPER: (viper).		The new VI-emulation mode in Emacs-19.29.
-+@end direntry
+ @end direntry
  
  @iftex
- @finalout
---- ./man/forms.texi.org	Sat Mar 23 06:42:27 1996
-+++ ./man/forms.texi	Tue May 20 01:22:37 1997
-@@ -9,6 +9,11 @@
+--- man/forms.texi.orig	Sun May 17 02:49:28 1998
++++ man/forms.texi	Sat Sep 19 10:55:26 1998
+@@ -8,18 +8,17 @@
  @syncodeindex vr cp
  @syncodeindex fn cp
  @syncodeindex ky cp
@@ -52,9 +66,21 @@
  @iftex
  @finalout
  @setchapternewpage odd
---- ./man/gnus.texi.org	Wed Jun 26 14:49:29 1996
-+++ ./man/gnus.texi	Tue May 20 01:23:15 1997
-@@ -5,6 +5,11 @@
+ @end iftex
+ @c      @smallbook
+ @comment %**end of header (This is for running Texinfo on a region.)
+-
+-@dircategory Editors
+-@direntry
+-* Forms: (forms).	Emacs package for editing data bases
+-			  by filling in forms.
+-@end direntry
+ 
+ @ifinfo
+ This file documents Forms mode, a form-editing major mode for GNU Emacs.
+--- man/gnus.texi.orig	Sun May 17 02:50:27 1998
++++ man/gnus.texi	Sat Sep 19 10:55:40 1998
+@@ -5,15 +5,15 @@
  @synindex fn cp
  @synindex vr cp
  @synindex pg cp
@@ -66,37 +92,52 @@
  @iftex
  @finalout
  @end iftex
---- ./man/mh-e.texi.org	Sun Aug  4 00:00:29 1996
-+++ ./man/mh-e.texi	Tue May 20 01:23:49 1997
-@@ -4,6 +4,10 @@
+ @setchapternewpage odd
+-
+-@dircategory Editors
+-@direntry
+-* Gnus: (gnus).		The news reader Gnus.
+-@end direntry
+ 
+ @ifinfo
+ 
+--- man/mh-e.texi.orig	Sun May 17 02:51:15 1998
++++ man/mh-e.texi	Sat Sep 19 10:55:53 1998
+@@ -4,13 +4,12 @@
  @setfilename ../info/mh-e
  @settitle mh-e
  @c %**end of header
+-
+-@setchapternewpage odd
+-
+-@dircategory Editors
 +@dircategory The Emacs editor and associated tools
-+@direntry
+ @direntry
+-* MH-E: (mh-e).		Emacs interface to the MH mail system.
 +* MH-E: (mh-e).			Emacs interface to the MH mail system.
-+@end direntry
+ @end direntry
++
++@setchapternewpage odd
  
- @setchapternewpage odd
- 
---- ./man/cl.texi.org	Mon Apr 15 21:36:53 1996
-+++ ./man/cl.texi	Tue May 20 01:24:18 1997
-@@ -2,6 +2,12 @@
+ @c Version variables.
+ @set EDITION 1.2
+--- man/cl.texi.orig	Sun May 17 02:51:46 1998
++++ man/cl.texi	Sat Sep 19 10:56:14 1998
+@@ -2,9 +2,9 @@
  @setfilename ../info/cl
  @settitle Common Lisp Extensions
  
+-@dircategory Editors
 +@dircategory The Emacs editor and associated tools
-+@direntry
+ @direntry
+-* CL: (cl).		Partial Common Lisp support for Emacs Lisp.
 +* CL: (cl).			Partial Common Lisp support for Emacs Lisp.
-+@end direntry
-+
-+
+ @end direntry
+ 
  @iftex
- @finalout
- @end iftex
---- ./man/sc.texi.org	Thu Jan  4 12:55:23 1996
-+++ ./man/sc.texi	Tue May 20 01:25:13 1997
-@@ -3,6 +3,12 @@
+--- man/sc.texi.orig	Fri Jul  3 02:48:27 1998
++++ man/sc.texi	Sat Sep 19 10:56:49 1998
+@@ -3,15 +3,15 @@
  @comment %**start of header (This is for running Texinfo on a region.)
  @setfilename ../info/sc
  @settitle Supercite Version 3.1 User's Manual
@@ -109,24 +150,35 @@
  @iftex
  @finalout
  @end iftex
---- ./man/cc-mode.texi.org	Sun Aug  4 21:56:21 1996
-+++ ./man/cc-mode.texi	Tue May 20 01:27:18 1997
-@@ -9,6 +9,12 @@
- @settitle     CC-MODE Version 4 Documentation
+-
+-@dircategory Editors
+-@direntry
+-* SC: (sc).		Supercite lets you cite parts of messages you're 
+-			  replying to, in flexible ways.
+-@end direntry
+ 
+ @c @setchapternewpage odd		% For book style double sided manual.
+ @comment %**end of header (This is for running Texinfo on a region.)
+--- man/cc-mode.texi.orig	Sun May 17 02:55:23 1998
++++ man/cc-mode.texi	Sat Sep 19 10:57:01 1998
+@@ -8,10 +8,10 @@
+ @settitle     CC MODE Version 5 Documentation
  @footnotestyle end
  
+-@dircategory Editors
+-@direntry
+-* CC mode: (ccmode).	The GNU Emacs mode for editing C, C++, Objective-C
+-			  and Java code.
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
 +* CC mode: (ccmode).		The GNU Emacs mode for editing C, C++,
 +				Objective-C and Java code.
-+@end direntry
-+
+ @end direntry
+ 
  @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- @comment @setchapternewpage odd !! we don't want blank pages !!
- @comment %**end of header (This is for running Texinfo on a region)
---- Makefile.in.orig	Tue Sep 16 16:23:57 1997
-+++ Makefile.in	Sun Oct 12 23:51:25 1997
-@@ -185,7 +185,7 @@
+--- Makefile.in.orig	Sun Aug  2 08:21:22 1998
++++ Makefile.in	Sat Sep 19 10:53:17 1998
+@@ -188,7 +188,7 @@
  # Subdirectories to make recursively.  `lisp' is not included
  # because the compiled lisp files are part of the distribution
  # and you cannot remake them without installing Emacs first.
