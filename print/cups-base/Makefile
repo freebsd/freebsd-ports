@@ -1,37 +1,32 @@
-# New ports collection makefile for:	cups-base
-# Date created:				29 November 2001
-# Whom:					James Halstead <jah4007@cs.rit.edu>
+# ex:ts=8	-*-mode: makefile-*-
+#
+# New ports collection makefile for:	cups
+# Date created:		2003-01-22
+# Whom:			Alan Eldridge <alane@geeksrus.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cups-base
 PORTVERSION=	${CUPS_PORTVER}
-PORTREVISION=	4
-CATEGORIES?=	print
+PORTREVISION=	0
+PORTEPOCH=	${CUPS_PORTEPOCH}
+CATEGORIES=	print
+MASTER_SITES=	${CUPS_MASTER_SITES}
 
 MAINTAINER=	alane@FreeBSD.org
 
-INSTALLS_SHLIB=	yes
-
-MAN1=		backend.1 filter.1
-MAN3=		cups-config.3
-MAN5=		classes.conf.5 cupsd.conf.5 mime.convs.5 mime.types.5 \
-		printers.conf.5
-MAN8=		cups-lpd.8 cups-polld.8 cupsd.8
-
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/conf/classes.conf \
-		${PREFIX}/etc/cups/classes.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/client.conf \
-		${PREFIX}/etc/cups/client.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/cupsd.conf \
-		${PREFIX}/etc/cups/cupsd.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/printers.conf \
-		${PREFIX}/etc/cups/printers.conf.sample
-	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/cups.sh \
-		${PREFIX}/etc/rc.d/cupsd.sh.sample
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+	${MKDIR} ${PREFIX}/etc/cups/certs/0
+	cd ${PREFIX}/etc/rc.d; ${MV} cups cups.sh.sample
+	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
+	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
+	${MKDIR} ${CUPS_SPOOLDIR}
+	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}
 
-.include "${.CURDIR}/../../print/cups/Makefile.inc"
-.include <bsd.port.mk>
+.include "${.CURDIR}/../../print/cups/Makefile.common"
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages.mk"
+.include <bsd.port.post.mk>
+
+#EOF

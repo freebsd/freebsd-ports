@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Apr 23 13:49:34 2002
-+++ Makefile	Sat Jun  8 01:20:35 2002
+--- Makefile.orig	Tue Dec 17 13:56:25 2002
++++ Makefile	Wed Jan 22 08:02:38 2003
 @@ -28,8 +28,7 @@
  # Directories to make...
  #
@@ -19,25 +19,7 @@
  		echo Making all in $$dir... ;\
  		(cd $$dir ; $(MAKE) $(MFLAGS)) || exit 1;\
  	done
-@@ -47,7 +46,7 @@
- #
- 
- clean:
--	for dir in $(DIRS); do\
-+	for dir in cups $(DIRS); do\
- 		echo Cleaning in $$dir... ;\
- 		(cd $$dir; $(MAKE) $(MFLAGS) clean) || exit 1;\
- 	done
-@@ -57,7 +56,7 @@
- #
- 
- depend:
--	for dir in $(DIRS); do\
-+	for dir in cups $(DIRS); do\
- 		echo Making dependencies in $$dir... ;\
- 		(cd $$dir; $(MAKE) $(MFLAGS) depend) || exit 1;\
- 	done
-@@ -67,52 +66,52 @@
+@@ -67,104 +66,11 @@
  # Install object and target files...
  #
  
@@ -88,47 +70,58 @@
 -			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
 -		fi \
 -	fi
-+#	echo Installing in conf...
-+#	(cd conf; $(MAKE) $(MFLAGS) install)
-+#	echo Installing in data...
-+#	(cd data; $(MAKE) $(MFLAGS) install)
-+#	echo Installing in doc...
-+#	(cd doc; $(MAKE) $(MFLAGS) install)
-+#	echo Installing in fonts...
-+#	(cd fonts; $(MAKE) $(MFLAGS) install)
-+#	echo Installing in locale...
-+#	(cd locale; $(MAKE) $(MFLAGS) install)
-+#	echo Installing in ppd...
-+#	(cd ppd; $(MAKE) $(MFLAGS) install)
-+#	echo Installing in templates...
-+#	(cd templates; $(MAKE) $(MFLAGS) install)
-+#	echo Installing cups-config script...
-+#	$(INSTALL_DIR) $(BINDIR)
-+#	$(INSTALL_SCRIPT) cups-config $(BINDIR)/cups-config
-+#	echo Installing startup script...
-+#	if test "x$(INITDIR)" != "x"; then \
-+#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/init.d; \
-+#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/init.d/cups; \
-+#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc0.d; \
-+#		$(INSTALL_SCRIPT) cups.sh  $(BUILDROOT)$(INITDIR)/rc0.d/K00cups; \
-+#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc2.d; \
-+#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc2.d/S99cups; \
-+#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc3.d; \
-+#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc3.d/S99cups; \
-+#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc5.d; \
-+#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc5.d/S99cups; \
-+#	fi
-+#	if test "x$(INITDIR)" = "x" -a "x$(INITDDIR)" != "x"; then \
-+#		$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR); \
-+#		if test "$(INITDDIR)" = "/System/Library/StartupItems/PrintingServices"; then \
-+#			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/PrintingServices; \
-+#			$(INSTALL_DATA) cups.plist $(BUILDROOT)$(INITDDIR)/StartupParameters.plist; \
-+#			$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR)/Resources/English.lproj; \
-+#			$(INSTALL_DATA) cups.strings $(BUILDROOT)$(INITDDIR)/Resources/English.lproj/Localizable.strings; \
-+#		else \
-+#			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
-+#		fi \
-+#	fi
- 
+-
+-#
+-# Install source and header files...
+-#
+-
+-installsrc:
+-	gnutar --dereference --exclude=CVS -cf - . | gnutar -C $(SRCROOT) -xf -
+-
+-installhdrs:
+-	(cd cups ; $(MAKE) $(MFLAGS) installhdrs) || exit 1;\
+-	(cd filter ; $(MAKE) $(MFLAGS) installhdrs) || exit 1;
+-
+-
+-#
+-# Run the test suite...
+-#
+-
+-check test:	all
+-	echo Running CUPS test suite...
+-	cd test; ./run-stp-tests.sh
+-
+-
+-#
+-# Make software distributions using EPM (http://www.easysw.com/epm)...
+-#
+-
+-EPMFLAGS	=	-v
+-
+-aix:
+-	epm $(EPMFLAGS) -f aix cups
+-
+-bsd:
+-	epm $(EPMFLAGS) -f bsd cups
+-
+-epm:
+-	epm $(EPMFLAGS) cups
+-
+-rpm:
+-	epm $(EPMFLAGS) -f rpm cups
+-
+-deb:
+-	epm $(EPMFLAGS) -f deb cups
+-
+-depot:
+-	epm $(EPMFLAGS) -f depot cups
+-
+-pkg:
+-	epm $(EPMFLAGS) -f pkg cups
+-
+-tardist:
+-	epm $(EPMFLAGS) -f tardist cups
+-
  #
- # Install source and header files...
+ # End of "$Id: Makefile,v 1.47 2002/12/17 18:56:25 swdev Exp $".
+ #
