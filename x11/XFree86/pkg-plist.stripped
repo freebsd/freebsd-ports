@@ -581,20 +581,20 @@ lib/libXmu.so
 lib/libXmu.so.6
 lib/libXp.a
 lib/libXp.so
-lib/libXp.so.6 	
+lib/libXp.so.6
 lib/libXss.a
 lib/libXt.a
 lib/libXt.so
-lib/libXt.so.6 	
+lib/libXt.so.6
 lib/libXtst.a
 lib/libXtst.so
-lib/libXtst.so.6  
+lib/libXtst.so.6
 lib/libXxf86dga.a
 lib/libXxf86misc.a
 lib/libXxf86vm.a
 lib/liboldX.a
 lib/liboldX.so
-lib/liboldX.so.6  
+lib/liboldX.so.6
 lib/libxkbfile.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
