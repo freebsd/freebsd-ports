@@ -9,7 +9,7 @@ PORTNAME=	samba
 PORTVERSION=	3.0.0.b2
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
+MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/archives/
 MASTER_SITE_SUBDIR=	beta alpha old
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
