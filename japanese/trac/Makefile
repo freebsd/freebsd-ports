@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -23,7 +23,13 @@ USE_PYDISTUTILS=	yes
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
-	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|sed -E 's,.*share/nls/.+$$,,g;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g'|tr -s '\n') > temp-pkg-plist
+	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
+	| ${SED} -E \
+		's,.*share/nls/.+$$,,g \
+		;s,@dirrm share/man(/.*)?$$,,g \
+		;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g \
+		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
+		' | ${TR} -s '\n') > temp-pkg-plist
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -1,21 +1,11 @@
 
 *******************************************************************************
-Trac 0.7 has a new database format, requiring manual upgrade.
-The following steps are needed to upgrade:
 
-1) convert the old-style trac databases to new-style trac environments:
+The Trac database schema was changed between versions 0.7.x and 0.8.  Existing
+environments must be upgraded before they can be used with Trac 0.8.
 
-  # tracdb2env /path/to/old/project.db /path/to/new/projectenv
+Consult the upgrade instructions at:
+	http://projects.edgewall.com/trac/wiki/TracUpgrade
 
-
-2) update your httpd.conf. change the line
-      SetEnv TRAC_DB "/path/to/old/project.db"
-   to
-      SetEnv TRAC_ENV "/path/to/new/projectenv"
-
-
-3) once you verified everything works fine, delete your old database:
-
-  # rm /path/to/old/project.db
 *******************************************************************************
 
