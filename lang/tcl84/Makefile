@@ -47,8 +47,8 @@ MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	RecordEval.3 RegExp.3 SaveResult.3 SetErrno.3 SetRecLmt.3 SetResult.3 \
 	SetVar.3 Signal.3 Sleep.3 SourceRCFile.3 SplitList.3 SplitPath.3 \
 	StdChannels.3 StaticPkg.3 StrMatch.3 StringObj.3 SubstObj.3 \
-	TCL_MEM_DEBUG.3 Tcl_Main.3 Thread.3 ToUpper.3 TraceVar.3 Translate.3 \
-	UniCharIsAlpha.3 UpVar.3 Utf.3 WrongNumArgs.3
+	TCL_MEM_DEBUG.3 Tcl_Main.3 Thread.3 ToUpper.3 TraceCmd.3 TraceVar.3 \
+	Translate.3 UniCharIsAlpha.3 UpVar.3 Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	catch.n cd.n clock.n close.n concat.n continue.n dde.n encoding.n \
