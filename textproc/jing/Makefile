@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A RELAX NG validator in Java
 
+BROKEN=		"Distfiles not listed in distinfo"
+
 RUN_DEPENDS=	${JAVAJARDIR}/crimson.jar:${PORTSDIR}/textproc/crimson
 
 USE_ZIP=	yes
