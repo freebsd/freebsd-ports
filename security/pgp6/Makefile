@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.no.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/ \
 		ftp://ftp.ru.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/
 DISTNAME=	pgpsrc658unix
 
-MAINTAINER=	mike@fate.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Public-Key encryption for the masses
 
 WRKSRC=		${WRKDIR}/pgpsrc
@@ -31,9 +31,10 @@ LATEST_LINK=	pgp6
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+#.if ${OSVERSION} >= 500113
+#BROKEN=	"Does not compile"
+#.endif
+FORBIDDEN=	"documented exploits exist; port will be removed if not fixed in early 2004"
 
 # the distfile is actually a tar of three compressed tars and their
 # signatures
