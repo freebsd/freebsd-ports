@@ -8214,6 +8214,7 @@ spruce		ports/mail/spruce
 sqlite		ports/databases/sqlite
 sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
+squash		ports/audio/squash
 squeak2		ports/lang/squeak2
 squeak3		ports/lang/squeak3
 squeuer		ports/astro/squeuer
