@@ -16,10 +16,17 @@ usr/shlib/LICENSE
 etc/svc.conf
 etc/sia/OSFC2_matrix.conf
 etc/sia/bsd_matrix.conf
+etc/sia/matrix.conf
 etc/sia/siainitgood
 sbin/loader
+@comment needed symlinks:
+usr/lib/X11
+usr/shlib/libc_r.so
+usr/shlib/libpthread.so
+usr/shlib/libpthreads.so
 @dirrm sbin
 @dirrm etc/sia
 @dirrm etc
+@dirrm usr/lib
 @dirrm usr/shlib
 @dirrm usr
