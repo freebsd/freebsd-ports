@@ -7,17 +7,23 @@
 #
 
 PORTNAME=	ro
-PORTVERSION=	2.5
+PORTVERSION=	2.7
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyro
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyro-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+DOCSDIR=	${PREFIX}/share/doc/py-ro
+EXAMPLESDIR=	${PREFIX}/share/examples/py-ro
+
+post-patch:
+	${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/setup.cfg
 
 .if !defined(NOPORTDOCS)
 post-install:
