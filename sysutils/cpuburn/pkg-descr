@@ -1,0 +1,8 @@
+CPUburn contains several utilities for stress testing various x86
+CPUs. To get the most of out of these utilities read the documentation
+under share/doc/cpuburn.
+
+WWW: http://users.ev1.net/~redelm/
+
+- Mark Pulford
+mark@kyne.com.au
