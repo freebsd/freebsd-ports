@@ -1,7 +1,10 @@
 bin/xdelta
+include/fakeglib.h
 include/xdelta.h
 include/xdeltaconfig.h
-include/fakeglib.h
-lib/libxdelta.so.0.22.0
-lib/libxdelta.la
 lib/libxdelta.a
+lib/libxdelta.la
+lib/libxdelta.so
+lib/libxdelta.so.0.22
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
