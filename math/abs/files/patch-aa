@@ -1,25 +1,32 @@
---- Makefile.orig	Sun Dec 20 11:56:29 1998
-+++ Makefile	Mon Mar 22 20:05:40 1999
-@@ -1,10 +1,11 @@
- CURRENT_DIR = 	.
+--- Makefile.orig	Mon Apr  5 02:43:35 1999
++++ Makefile	Sun Apr 18 16:35:49 1999
+@@ -5,7 +5,7 @@
+ ### C Compiler
+ CC		= cc -c 
+ /*CC		= cc -c -Aa -D_HPUX_SOURCE*/
+-CFLAGS		= -I./pixmaps -I./Xpm -I./TextField-1.0 -I/usr/contrib/X11R6/include
++CFLAGS		= -I./pixmaps -I./TextField-1.0 -I$(X11BASE)/include
  
--SUBDIRS =	Xpm TextField-1.0
-+SUBDIRS =	TextField-1.0
+ ### Fortran Compiler
+ FC		= xlf 
+@@ -199,17 +199,17 @@
+ ### Program Libraries #
+ #######################
  
- MAKE =	make
+-LIBS		= -L /usr/lib  -L /lib/X11 -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext -L./Xpm -lxpm ./TextField-1.0/*.o
++LIBS		= -L /usr/lib -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext -lXpm ./TextField-1.0/*.o
  
--LIBS = -L /lib/X11 -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext 
-+CFLAGS+=-I$(X11BASE)/include
-+LIBS = -L /lib/X11 -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext -lXpm
  
- SRCS 	=	\
- 	applic.c \
-@@ -105,7 +106,7 @@
- 	$(MAKE) all); \
- 	fi \
- 	done
--	cc -o abs ./TextField-1.0/*.o $(OBJS) ./Xpm/libxpm.a $(LIBS) 
-+	$(CC) $(CFLAGS) -o abs ./TextField-1.0/*.o $(OBJS) $(LIBS) 
+-SUBDIRS		= 	cd Xpm; make; cd ../TextField-1.0; make; cd ..
++SUBDIRS		= 	cd ./TextField-1.0; make; cd ..
  
- clean::
- 	rm -f *.o */*.o */*.a
+ ########################
+ ### Additional Targets #
+ ########################
+ 
+ all:		$(OBJS) 
+-		cd Xpm; make; cd ../TextField-1.0; make; cd ..
++		cd ./TextField-1.0; make; cd ..
+ 		@echo "Linking $(PROGRAM) ..."
+ 		@$(LD) $(LDFLAGS) $(OBJS) $(LIBS) -o $(PROGRAM)
+ 		@echo "done"
