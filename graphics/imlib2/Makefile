@@ -1,12 +1,12 @@
 # New ports collection makefile for:	imlib
-# Version required:	1.9.2
+# Version required:	1.9.3
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.42 1999/01/21 20:00:49 vanilla Exp $
+# $Id: Makefile,v 1.43 1999/01/23 07:05:26 vanilla Exp $
 #
 
-DISTNAME=	imlib-1.9.2
+DISTNAME=	imlib-1.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	imlib
