@@ -17,8 +17,10 @@ include/stlport/config/stl_as400.h
 include/stlport/config/stl_bc.h
 include/stlport/config/stl_como.h
 include/stlport/config/stl_confix.h
+include/stlport/config/stl_cray.h
 include/stlport/config/stl_dec.h
 include/stlport/config/stl_dec_vms.h
+include/stlport/config/stl_dm.h
 include/stlport/config/stl_fujitsu.h
 include/stlport/config/stl_gcc.h
 include/stlport/config/stl_hpacc.h
@@ -159,6 +161,7 @@ include/stlport/stl/_exception.h
 include/stlport/stl/_fstream.c
 include/stlport/stl/_fstream.h
 include/stlport/stl/_function.h
+include/stlport/stl/_function_adaptors.h
 include/stlport/stl/_function_base.h
 include/stlport/stl/_hash_fun.h
 include/stlport/stl/_hash_map.h
@@ -186,6 +189,7 @@ include/stlport/stl/_map.h
 include/stlport/stl/_messages_facets.h
 include/stlport/stl/_monetary.c
 include/stlport/stl/_monetary.h
+include/stlport/stl/_new.h
 include/stlport/stl/_null_stream.h
 include/stlport/stl/_num_get.c
 include/stlport/stl/_num_get.h
@@ -207,11 +211,11 @@ include/stlport/stl/_range_errors.h
 include/stlport/stl/_raw_storage_iter.h
 include/stlport/stl/_relops.h
 include/stlport/stl/_relops_cont.h
+include/stlport/stl/_relops_hash_cont.h
 include/stlport/stl/_relops_template.h
 include/stlport/stl/_rope.c
 include/stlport/stl/_rope.h
 include/stlport/stl/_set.h
-include/stlport/stl/_set_operators.h
 include/stlport/stl/_site_config.h
 include/stlport/stl/_slist.c
 include/stlport/stl/_slist.h
@@ -256,6 +260,8 @@ include/stlport/stl/debug/_deque.h
 include/stlport/stl/debug/_hashtable.h
 include/stlport/stl/debug/_iterator.h
 include/stlport/stl/debug/_list.h
+include/stlport/stl/debug/_relops_cont.h
+include/stlport/stl/debug/_relops_hash_cont.h
 include/stlport/stl/debug/_slist.h
 include/stlport/stl/debug/_string.h
 include/stlport/stl/debug/_tree.h
@@ -323,10 +329,10 @@ include/stlport/wrap_std/streambuf
 include/stlport/wrap_std/strstream
 lib/libstlport_%%COMPILER%%.a
 lib/libstlport_%%COMPILER%%.so
-lib/libstlport_%%COMPILER%%.so_4_5
+lib/libstlport_%%COMPILER%%.so_4_6
 lib/libstlport_%%COMPILER%%_stldebug.a
 lib/libstlport_%%COMPILER%%_stldebug.so
-lib/libstlport_%%COMPILER%%_stldebug.so_4_5
+lib/libstlport_%%COMPILER%%_stldebug.so_4_6
 %%PORTDOCS%%share/doc/stlport/README.BC.html
 %%PORTDOCS%%share/doc/stlport/README.CW.html
 %%PORTDOCS%%share/doc/stlport/README.DEC.html

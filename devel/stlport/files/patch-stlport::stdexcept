@@ -1,8 +1,8 @@
---- stlport/stdexcept.orig	Thu Jun  6 23:31:29 2002
-+++ stlport/stdexcept	Thu Jun  6 23:31:57 2002
-@@ -49,6 +49,11 @@
- 
- _STLP_BEGIN_NAMESPACE
+--- stlport/stdexcept.orig	Sun Nov  2 16:59:01 2003
++++ stlport/stdexcept	Sun Oct 31 17:05:34 2004
+@@ -60,6 +60,11 @@
+ # endif
+ #  define _STLP_EXCEPTION_BASE exception
  
 +/* maybe limit to gcc 3.x */
 +#if defined( __GNUC__)

@@ -1,5 +1,5 @@
---- src/common_macros.mak.orig	Thu Nov 15 17:08:56 2001
-+++ src/common_macros.mak	Mon Dec 24 10:37:02 2001
+--- src/common_macros.mak.orig	Sun Nov  2 16:58:51 2003
++++ src/common_macros.mak	Sun Oct 31 17:02:57 2004
 @@ -10,7 +10,7 @@
  # We do not assume any binary compatibility for betas.
  BETA_SUFFIX=
