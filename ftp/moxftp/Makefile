@@ -3,9 +3,14 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
+# $Id$
+#
 
 DISTNAME=	moxftp-2.2
+CATEGORIES+=	networking
+MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
+
 HAS_CONFIGURE=	yes
 PREFIX=	/usr/X11R6
 
@@ -18,9 +23,6 @@ PREFIX=	/usr/X11R6
 CONFIGURE_ARGS=	athena
 
 #DEPENDS=	${PORTSDIR}/x11/Xaw3d
-
-MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
-CATEGORIES+=	networking
 
 .include <bsd.port.mk>
 

@@ -3,16 +3,18 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.5 1994/11/09 23:08:51 jkh Exp $
+# $Id: Makefile,v 1.6 1995/04/01 12:47:59 jkh Exp $
 #
 
 DISTNAME=       gn-2.17
-MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 CATEGORIES+=	networking
-INETD_CONF=	/etc/inetd.conf
-CONF=	'	stream	tcp	nowait	nobody	/usr/local/etc/gn	gn'
+MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
+
 DEPENDS=	${PORTSDIR}/net/wais
 IS_INTERACTIVE=	yes
+
+INETD_CONF=	/etc/inetd.conf
+CONF=	'	stream	tcp	nowait	nobody	/usr/local/etc/gn	gn'
 
 pre-build:
 	@ln -s ../../../../wais/work/freeWAIS-0.3/ir work/${DISTNAME}/waisgn

@@ -1,5 +1,5 @@
 # New ports collection makefile for:	dgd
-# Version required:	1.0.8
+# Version required:	1.0.9
 # Date created:		23 August 1994
 # Whom:			adam
 #
