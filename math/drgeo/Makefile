@@ -5,20 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	drgeo
-PORTVERSION=	0.9.9
+PORTNAME=	drgenius
+PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ofset
+MASTER_SITES=	http://www.ofset.org/drgenius/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GTK interactive geometry sofware
+COMMENT=	The Gnome Interactive Geometry Sofware
 
+BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libglade2
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libglade
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
