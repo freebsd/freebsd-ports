@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	flasm
-PORTVERSION=	1.32
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nowrap.de/
-DISTNAME=	flasm13src
+DISTNAME=	flasm14src
 
 MAINTAINER=	kuriyama@FreeBSD.org
-
-BROKEN=		"Checksum fails"
 
 USE_ZIP=	YES
 USE_GMAKE=	YES
