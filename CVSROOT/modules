@@ -1463,6 +1463,7 @@ emacs-lisp-intro	ports/lang/emacs-lisp-intro
 emacs-w3m		ports/www/emacs-w3m
 emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
+emacs-wget	ports/ftp/emacs-wget
 emacs20		ports/editors/emacs20
 emacs20-dl	ports/editors/emacs20-dl
 emacs20-mule-devel	ports/editors/emacs20-mule-devel
