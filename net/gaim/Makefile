@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.59
+PORTVERSION=	0.59.1
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -29,6 +29,8 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		gaim.1
 
+GNOME_PANEL2=	${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
+
 .if !defined(WITHOUT_GDK_PIXBUF)
 # Note, gdk-pixbuf is needed for buddy icon support.
 USE_GNOME+=	gdkpixbuf
@@ -36,7 +38,7 @@ USE_GNOME+=	gdkpixbuf
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibpanel}!= ""
+.if ${HAVE_GNOME:Mlibpanel}!= "" && !exists(${GNOME_PANEL2})
 USE_GNOME+=	libpanel
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--enable-panel

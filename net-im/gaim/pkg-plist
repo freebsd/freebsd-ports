@@ -16,7 +16,7 @@ lib/gaim/notify.so
 lib/gaim/spellchk.so
 %%GNOME:%%share/gnome/applets/Network/gaim_applet.desktop
 %%GNOME:%%share/gnome/apps/Internet/gaim.desktop
-%%GNOME:%%share/gnome/pixmaps/gaim.xpm
+share/gnome/pixmaps/gaim.xpm
 %%GNOME:%%share/gnome/pixmaps/gaim/away.png
 %%GNOME:%%share/gnome/pixmaps/gaim/connect.png
 %%GNOME:%%share/gnome/pixmaps/gaim/msgpend.png
