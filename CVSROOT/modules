@@ -2535,6 +2535,7 @@ gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
 geolizer	ports/www/geolizer
 geomview	ports/graphics/geomview
+geonext		ports/math/geonext
 geos		ports/graphics/geos
 geotrace	ports/net/geotrace
 geramik		ports/x11-themes/geramik
