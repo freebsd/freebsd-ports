@@ -1,72 +1,75 @@
-This patch accomplishes the following:
+This patch mainly ensures that the (optional) documentation is installed to
+the "correct" location:
 
-- Force 4Suite NOT to install the included PyXML.  (Instead, the port has a
-  dependency on the PyXML port, textproc/py-xml.)
+- It removes the hard-coded installation path for documentation.  This allows
+  the installation path to be specified at install time with the
+  "--install-data" parameter to "setup.py install".
 
-- Eliminate the possibly conflicting installation of 4DOM.  Since PyXML
-  0.6.4, 4DOM is maintained as part of that package instead.  (However,
-  retain the installation of some of the L10n extensions to 4DOM - the ones
-  which are not installed by PyXML.)
+- It removes some redundant documentation.
 
-- Install (optional) documentation to a path that conforms to FreeBSD's
-  hier(7) (but still obey ${PREFIX}).
+- It splits data_files into two parts, one which contains only documentation,
+  and one which contains all other files (currently, juse one!)
+
+Note that setup.py is processed further in the port Makefile's post-patch
+target.
 
 -- Johann Visagie <johann@egenetics.com>
 
 
---- setup.py.orig	Sun Feb 18 23:35:50 2001
-+++ setup.py	Tue Mar 20 13:08:39 2001
-@@ -53,12 +53,12 @@
+--- setup.py.orig	Tue May  1 00:38:56 2001
++++ setup.py	Fri May  4 17:23:15 2001
+@@ -304,21 +304,7 @@
  #
  ############################################################
  
--pyxml_install_attempted = 0
--pyxml_install_completed = 0
-+pyxml_install_attempted = 1
-+pyxml_install_completed = 1
- pyxml_expat = 0
+-data_files = [Data_Files(copy_to='.',
+-                         files=['docs/text/COPYRIGHT',
+-                                'docs/text/CREDITS',
+-                                'docs/text/PACKAGES',
+-                                'docs/text/README',
+-                                'docs/text/REBUILDING',
+-                                'docs/text/TODO',
+-                                'docs/ChangeLog',
+-                                'docs/README.cDomlette',
+-                                'docs/README.Cyclops',
+-                                ]),
+-              Data_Files(copy_to='docs',
+-                         files=['docs/ChangeLog',
+-                                ]),
+-              Data_Files(copy_to='docs/text',
++data_files = [Data_Files(copy_to='docs/text',
+                          files=['docs/text/COPYRIGHT',
+                                 'docs/text/CREDITS',
+                                 'docs/text/PACKAGES',
+@@ -435,9 +421,6 @@
+               Data_Files(copy_to='test_suite/4ODS/Tools',
+                          files=glob.glob('Ods/Tools/test_suite/*.*')),
  
--if os.access('PyXML', os.F_OK):
--#if 0:
-+#if os.access('PyXML', os.F_OK):
-+if 0:
-     pyxml_install_attempted = 1
- 
-     # Rename xml to _xmlplus for Python 2.0
-@@ -326,7 +326,6 @@
-     # Not really .py files, but go to the same place
-     l10n.extend([('Ft.Lib', 'Lib', glob.glob('Lib/*.po'), ['Lib/MessageSource.py']),
-                  ('Ft.Rdf', 'Rdf', glob.glob('Rdf/*.po'), ['Rdf/MessageSource.py']),
--                 (xml('dom'), 'Dom', glob.glob('Dom/*.po'), ['Dom/MessageSource.py']),
-                  (xml('xpath'), 'XPath', glob.glob('XPath/*.po'), ['XPath/XPathParserBase.py']),
-                  ('Ft.XPointer', 'XPointer', glob.glob('XPointer/*.po'), ['XPointer/XPointerParserBase.py']),
-                  (xml('xslt'), 'Xslt', glob.glob('Xslt/*.po'), ['Xslt/MessageSource.py', 'Xslt/XPatternParserBase.py']),
-@@ -334,6 +333,7 @@
-                  ('Ft.Ods.Parsers.Oif', 'Ods/Parsers/Oif', glob.glob('Ods/Parsers/Oif/*.po'), ['Ods/Parsers/Oif/OifParserBase.py']),
-                  ('Ft.Ods.Parsers.Oql', 'Ods/Parsers/Oql', glob.glob('Ods/Parsers/Oql/*.po'), ['Ods/Parsers/Oql/OqlParserBase.py']),
-                  ])
-+    py_files.extend([(xml('dom'), glob.glob('Dom/*.po'))])
- else:
-     py_files.extend([('Ft.Lib', ['admin/DistExt.py', 'admin/install_data.py'])
-                      ])
-@@ -343,11 +343,6 @@
-               'Ft.Lib',
-               'Ft.Tools',
- 
--              xml('dom'),
--              xml('dom.html'),
--              xml('dom.ext'),
--              xml('dom.ext.reader'),
--
-               xml('xpath'),
- 
-               xml('xslt'),
-@@ -574,7 +569,7 @@
-                             files=glob.glob('Ods/demo/book_mark_manager/*.*')),
-                  ]
- for df in ft_data_files:
+-              Data_Files(use_install_cmd='install_lib',
+-                         copy_to='Ft/DbDom',
+-                         files=['DbDom/dom.odl']),
+               Data_Files(copy_to='test_suite/DbDom',
+                          files=['Lib/TestSuite.py']),
+               Data_Files(copy_to='test_suite/DbDom',
+@@ -457,8 +440,10 @@
+               Data_Files(copy_to='demo/4ODS/book_mark_manager',
+                          files=glob.glob('Ods/demo/book_mark_manager/*.*')),
+               ]
+-for df in data_files:
 -    df.base_dir = '$base/doc/$dist_name-$dist_version'
-+    df.base_dir = '$base/share/doc/$dist_name'
- data_files.extend(ft_data_files)
++data_files2 = [Data_Files(use_install_cmd='install_lib',
++                         copy_to='Ft/DbDom',
++                         files=['DbDom/dom.odl'])
++              ]
  
- v = version.StrictVersion(__version__)
+ ############################################################
+ #
+@@ -545,7 +530,7 @@
+     py_files=py_files,
+     l10n=l10n,
+     
+-    data_files=data_files,
++    data_files=data_files + data_files2,
+     ext_modules=ext_modules,
+     scripts=DistExt.EnsureScripts('Xslt/bin/4xslt',
+                                   'Rdf/exec/4rdf',
