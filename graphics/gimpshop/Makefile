@@ -20,7 +20,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config

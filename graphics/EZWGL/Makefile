@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes

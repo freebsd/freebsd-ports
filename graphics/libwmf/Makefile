@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/libwmf/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		ttf.4:${PORTSDIR}/print/freetype
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

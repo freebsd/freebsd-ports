@@ -22,7 +22,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		wraster.3:${PORTSDIR}/x11-wm/windowmaker \
 		wmfun.0:${PORTSDIR}/x11-wm/windowmaker
 BUILD_DEPENDS=	bunzip2:${PORTSDIR}/archivers/bzip2 \

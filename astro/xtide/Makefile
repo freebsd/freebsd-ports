@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	patseal@hyperhost.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

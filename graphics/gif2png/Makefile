@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.tuxedo.org/~esr/gif2png/
 
 MAINTAINER=     saper@system.pl
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 GNU_CONFIGURE=	yes

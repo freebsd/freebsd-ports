@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.tug.org/applications/jadetex/
 MAINTAINER=		kelly@ad1440.net
 
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=		png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=		png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${PREFIX}/share/texmf/web2c

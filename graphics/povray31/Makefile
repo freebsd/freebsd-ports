@@ -17,7 +17,7 @@ DISTFILES=	povuni_s.tgz povuni_d.tgz
 MAINTAINER=	olli@fromme.com
 
 #BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 DIST_SUBDIR=	povray31
 

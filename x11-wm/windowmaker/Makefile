@@ -19,7 +19,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		PropList.2:${PORTSDIR}/devel/libPropList
 

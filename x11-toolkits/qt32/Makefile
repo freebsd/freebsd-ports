@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-x11-${PORTVERSION}
 
 MAINTAINER=	imura@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		GL.14:${PORTSDIR}/graphics/Mesa3
 

@@ -14,7 +14,7 @@ MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		glut.3:${PORTSDIR}/graphics/Mesa3 \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 .if defined(NO_SOUND)
 SOUND=""

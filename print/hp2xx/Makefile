@@ -14,7 +14,7 @@ DISTNAME=	hp2xx-3.20-png
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=    png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/sources
 USE_XLIB=	yes

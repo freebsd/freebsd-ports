@@ -14,7 +14,7 @@ DISTNAME=	img${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

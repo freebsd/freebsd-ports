@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/video
 
 MAINTAINER=	roger@freebsd.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

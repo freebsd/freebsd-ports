@@ -15,7 +15,7 @@ MAINTAINER=	dirk@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
+		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		bzip2:${PORTSDIR}/archivers/bzip2

@@ -1,5 +1,5 @@
---- scripts/makefile.std.orig	Fri Jul 31 23:15:22 1998
-+++ scripts/makefile.std	Sat Jan 23 14:08:51 1999
+--- scripts/makefile.std.orig	Thu Dec  9 01:44:40 1999
++++ scripts/makefile.std	Tue Jul  4 09:16:46 2000
 @@ -2,18 +2,30 @@
  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
  # For conditions of distribution and use, see copyright notice in png.h
@@ -8,7 +8,7 @@
 +# have to change it.
 +# I bump PNGMAJ to 3, because imlib can't work with png 1.0.2.
 +# I should bump PNGMAJ for ports depend.
-+PNGMAJ = 3
++PNGMAJ = $(SHLIB_VER)
 +.if (${PORTOBJFORMAT} == "elf")
 +PNGVER = $(PNGMAJ)
 +.else

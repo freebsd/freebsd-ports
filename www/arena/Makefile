@@ -14,7 +14,7 @@ DISTNAME=	arena-CJK-beta3a
 MAINTAINER=     ports@FreeBSD.org
 
 LIB_DEPENDS+=   jpeg.9:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=   png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=   png.4:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
 WRKSRC=         ${WRKDIR}/WWW

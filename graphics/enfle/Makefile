@@ -14,7 +14,7 @@ MASTER_SITES=	http://enfle.fennel.org/ \
 
 MAINTAINER=	samy@goldmoon.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		bz2.1:${PORTSDIR}/archivers/bzip2 \
 		arc.1:${PORTSDIR}/archivers/libarc
