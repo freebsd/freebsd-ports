@@ -27,8 +27,7 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--without-perl \
 		--without-debug \
 		--without-readline \
-		--without-bench \
-		--with-unix-socket-path=/var/run/mysql.sock
+		--without-bench
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
