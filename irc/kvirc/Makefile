@@ -6,25 +6,40 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	1.0.0
+PORTVERSION=	2.0.0
 CATEGORIES=	irc
-MASTER_SITES=	http://www.kvirc.org/ \
-		ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/ \
-		ftp://kvirc.firenze.linux.it/pub/kvirc/
+MASTER_SITES=	ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/2.0.0/source/ \
+		ftp://kvirc.firenze.linux.it/pub/kvirc/2.0.0/source/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	trevor@jpj.net
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
-USE_QT2=	yes
+ALL_TARGET=	kvirc
+MAN1=		kvirc.1
+USE_LIBTOOL=	yes
+USE_AUTOMAKE=	yes
+USE_AUTOCONF=	yes
 USE_NEWGCC=	yes
+USE_QT2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include --x-libraries=$(X11BASE)/lib \
-		--datadir=$(PREFIX)/share --with-qt-moc=${X11BASE}/bin/moc2 \
+CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
+		--x-libraries=$(X11BASE)/lib \
+		--datadir=$(PREFIX)/share \
+		--with-qt-moc=${X11BASE}/bin/moc2 \
 		--with-qt-include-dir=${X11BASE}/include/qt2 \
-		--with-qt-library-dir=${X11BASE}/lib
+		--with-qt-library-dir=${X11BASE}/lib \
+		--without-kde-check \
+		--without-pthread-check \
+		--without-qt-check \
+		--without-plugin-support
 CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
-USE_LIBTOOL=	yes
+
+pre-build:
+	for i in `find ${WRKSRC} -name Makefile` ; do \
+		${PERL} -pi -e "s@lqt @lqt2 @g" $$i ; \
+		${PERL} -pi -e "s@lpthread@pthread@g" $$i ; \
+	done
 
 .include <bsd.port.mk>
