@@ -1,0 +1,20 @@
+fluxter is a newer incarnation of bbpager, which is like the name suggests a
+pager tool for Blackbox.
+The major changes to bbpager are:
+- Accesses fluxbox configuration files, e.g. in ~/.fluxbox, rather than in
+  blackbox directories.
+- Default styles come from the fluxbox configuration.  Without
+  customization it will track the look of the current theme.
+- The configuration files have been renamed to fluxter.bb (used in a
+  fluxbox environment) and fluxter.nobb (used in a non-fluxbox
+  environment).  These files should go in fluxbox configuration
+  directories, such as ~/.fluxbox.
+- The X resource entries in the configuration files use fluxter as a label,
+  rather than bbpager.
+- Per-workspace wallpaper changing is supported by the addition of
+  per-workspace rootCommand configuration entries.  For example:
+    fluxter.workspace0.rootCommand: Esetroot /usr/share/pixmaps/bg1.png
+    fluxter.workspace1.rootCommand: Esetroot /usr/share/pixmaps/bg2.png
+    fluxter.workspace2.rootCommand: Esetroot /usr/share/pixmaps/bg3.png
+
+WWW: http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html
