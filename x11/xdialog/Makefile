@@ -13,7 +13,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://xdialog.free.fr/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ports@geeksrus.org
+MAINTAINER=	ports@FreeBSD.Org
 
 USE_BZIP2=	yes
 USE_GTK=	yes
