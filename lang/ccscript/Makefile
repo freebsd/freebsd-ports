@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ccscript
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.5
 CATEGORIES=	lang
 MASTER_SITES=	ftp://www.voxilla.org/pub/ccscript/
 
 MAINTAINER=	dyfet@gnu.org
 
-LIB_DEPENDS=	ccio.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccstd.0:${PORTSDIR}/devel/commoncpp
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
