@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	understand_c
-PORTVERSION=	1.4.196
+PORTVERSION=	1.4.204
 PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/%SUBDIR%/
@@ -28,12 +28,42 @@ FMT?=		/usr/bin/fmt
 
 CONF_DIRS=	compilers configs fonts license
 CONF_FILES=	compilers/aix.cfg compilers/alpha.cfg \
+		compilers/arm.cfg \
 		compilers/borlandc.cfg compilers/hpux.cfg \
+		compilers/codevision_avr.cfg \
+		compilers/franklin_8051.cfg compilers/iar_78k0.cfg \
+		compilers/iar_a90.cfg compilers/iar_avr.cfg \
+		compilers/keil166.cfg compilers/keil251.cfg \
+		compilers/keil51.cfg \
 		compilers/linux.cfg compilers/msvc.cfg \
+		compilers/nec_78k0.cfg compilers/neuron.cfg \
 		compilers/msvc16.cfg compilers/sgi.cfg \
+		compilers/raisonance_8051.cfg \
 		compilers/solaris.cfg compilers/sunos.cfg \
 		configs/c.cfg fonts/cetus.ttf
-DOCS_DIRS=	understand_c/wwhgifs understand_c/images \
+DOCS_DIRS=	understand_c/wwhelp/wwhimpl/js/scripts \
+		understand_c/wwhelp/wwhimpl/js/private \
+		understand_c/wwhelp/wwhimpl/js/images \
+		understand_c/wwhelp/wwhimpl/js/html \
+		understand_c/wwhelp/wwhimpl/js \
+		understand_c/wwhelp/wwhimpl/java/scripts \
+		understand_c/wwhelp/wwhimpl/java/private \
+		understand_c/wwhelp/wwhimpl/java/html \
+		understand_c/wwhelp/wwhimpl/java \
+		understand_c/wwhelp/wwhimpl/common/scripts \
+		understand_c/wwhelp/wwhimpl/common/private \
+		understand_c/wwhelp/wwhimpl/common/images \
+		understand_c/wwhelp/wwhimpl/common/html \
+		understand_c/wwhelp/wwhimpl/common \
+		understand_c/wwhelp/wwhimpl \
+		understand_c/wwhelp/images \
+		understand_c/wwhelp \
+		understand_c/wwhdata/js/search \
+		understand_c/wwhdata/js \
+		understand_c/wwhdata/java \
+		understand_c/wwhdata/common \
+		understand_c/wwhdata \
+		understand_c/images \
 		understand_c understand_api/wwhgifs \
 		understand_api
 BIN_FILES=	almd almhostid almstatus almtest \

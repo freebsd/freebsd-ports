@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	understand_ada
-PORTVERSION=	1.4.196
+PORTVERSION=	1.4.204
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/${PORTNAME}/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest pastbuilds
@@ -29,9 +29,32 @@ INSTALL_DATA_DIR?=	${INSTALL} -d -o ${SHAREOWN} \
 
 CONF_DIRS=	ada/ada83 ada/ada95 ada \
 		configs fonts
-DOCS_DIRS=	understand_ada/wwhgifs understand_ada/images \
-		understand_ada understand_api/wwhgifs \
-		understand_api
+DOCS_DIRS=	understand_api/wwhgifs \
+		understand_api \
+		understand_ada/wwhelp/wwhimpl/js/scripts \
+		understand_ada/wwhelp/wwhimpl/js/private \
+		understand_ada/wwhelp/wwhimpl/js/images \
+		understand_ada/wwhelp/wwhimpl/js/html \
+		understand_ada/wwhelp/wwhimpl/js \
+		understand_ada/wwhelp/wwhimpl/java/scripts \
+		understand_ada/wwhelp/wwhimpl/java/private \
+		understand_ada/wwhelp/wwhimpl/java/html \
+		understand_ada/wwhelp/wwhimpl/java \
+		understand_ada/wwhelp/wwhimpl/common/scripts \
+		understand_ada/wwhelp/wwhimpl/common/private \
+		understand_ada/wwhelp/wwhimpl/common/images \
+		understand_ada/wwhelp/wwhimpl/common/html \
+		understand_ada/wwhelp/wwhimpl/common \
+		understand_ada/wwhelp/wwhimpl \
+		understand_ada/wwhelp/images \
+		understand_ada/wwhelp \
+		understand_ada/wwhdata/js/search \
+		understand_ada/wwhdata/js \
+		understand_ada/wwhdata/java \
+		understand_ada/wwhdata/common \
+		understand_ada/wwhdata \
+		understand_ada/images \
+		understand_ada
 BIN_FILES=	almd almhostid almstatus almtest \
 		repada understand_ada undada
 LIB_FILES=	libudb_api.a libudb_api.so
