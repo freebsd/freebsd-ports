@@ -14,10 +14,11 @@ MASTER_SITES=	http://www.epkowa3.on.arena.ne.jp/pips/data/%SUBDIR%/
 PIPS_MAJOR=	${PORTVERSION:C|^([0-9]+).([0-9]+).([0-9]+)$|\1|}
 PIPS_MINOR=	${PORTVERSION:C|^([0-9]+).([0-9]+).([0-9]+)$|\2|}
 #PIPS_PATCH=	${PORTVERSION:C|^([0-9]+).([0-9]+).([0-9]+)$|\3|}
-PIPS_LEVEL!=	printf "%02d%02d" ${PIPS_MAJOR} ${PIPS_MINOR}
-#PIPS_VERSION!=	printf "%02d%02d%02d" ${PIPS_MAJOR} ${PIPS_MINOR} ${PIPS_PATCH}
+PIPS_LEVEL!=	/usr/bin/printf "%d%02d" ${PIPS_MAJOR} ${PIPS_MINOR}
+#PIPS_VERSION!=	/usr/bin/printf "%d%02d%02d" ${PIPS_MAJOR} ${PIPS_MINOR} \
+#		${PIPS_PATCH}
 
-.if ${PIPS_LEVEL} < 0206
+.if ${PIPS_LEVEL} < 206
 DIST_TYPE=	lpr
 .endif
 DIST_TYPE?=	lpr_and_caps
@@ -45,7 +46,7 @@ MASTER_SITE_SUBDIR=	px${PRTYPE}cups
 .else
 MASTER_SITE_SUBDIR=	px${PRTYPE}lpr
 .endif
-.elif ${PIPS_LEVEL} == 0201
+.elif ${PIPS_LEVEL} == 201
 MASTER_SITE_SUBDIR=	${PRTYPE}_21
 .elif ${DIST_TYPE} == cups
 MASTER_SITE_SUBDIR=	${PRTYPE}Ccups
@@ -100,7 +101,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 CONFLICTS=	pips*-2.*
 USE_RC_SUBR=	yes
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-2.6.2
-.if ${PIPS_LEVEL} != 0201 && ${DIST_TYPE} != cups
+.if ${PIPS_LEVEL} != 201 && ${DIST_TYPE} != cups
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-dtrfilter
 .endif
 .if ${DIST_TYPE} == lpr
@@ -170,7 +171,7 @@ PRT_MODEL=	PM${PRTYPE}C
 .endif
 .endif
 
-.if ${PIPS_LEVEL} == 0201 || (${PIPS_LEVEL} >= 0205 && ${DIST_TYPE} == lpr)
+.if ${PIPS_LEVEL} == 201 || (${PIPS_LEVEL} >= 205 && ${DIST_TYPE} == lpr)
 EKPNAVI_VER=	1.1.2
 .endif
 .if defined(EKPNAVI_VER) || ${DIST_TYPE} == cups
@@ -199,7 +200,7 @@ FILTER_SRC=	filter.org
 PLIST=		${MASTERDIR}/pkg-plist132
 .else
 FILTER_SRC=	filter.tmp
-.if ${PIPS_LEVEL} == 0201
+.if ${PIPS_LEVEL} == 201
 INCLIST=	PIPS EKPNAVI EKPNAVI_MO EKPSTM_MO GSCONFIG
 .elif ${DIST_TYPE} == lpr
 INCLIST=	PIPS EKPNAVI EKPNAVI_MO EKPSTM_MO DTRFILTER PAPER_LIST
@@ -269,7 +270,7 @@ post-patch:
 		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
 		${WRKSRC}/setup/inst-post.sh
 .endif
-.if ${PIPS_LEVEL} >= 0205 && ${DIST_TYPE} != cups
+.if ${PIPS_LEVEL} >= 205 && ${DIST_TYPE} != cups
 	${REINPLACE_CMD} -e 's,dtrfilter_LDADD = -ldl,dtrfilter_LDADD =,' \
 		${WRKSRC}/dtrfilter/Makefile.in
 	${REINPLACE_CMD} -e 's,/etc/pipsrc,${PREFIX}&,' \
@@ -285,7 +286,7 @@ post-patch:
 .if ${DIST_TYPE} != cups
 	${REINPLACE_CMD} -e 's,/etc/ekpdrc,${PREFIX}&,' ${WRKSRC}/src/setup.c
 .endif
-.if ${PIPS_LEVEL} >= 0206 || ${DIST_TYPE} == lpr
+.if ${PIPS_LEVEL} >= 206 || ${DIST_TYPE} == lpr
 	${REINPLACE_CMD} -e 's,@CUPS_LIBS@,& -lintl,' \
 		-e 's,^INCLUDES =  @GTK_CFLAGS@ $$,&$$(INCLTDL),' \
 		${WRKSRC}/src/Makefile.in
@@ -293,7 +294,7 @@ post-patch:
 .endif
 
 pre-configure:
-.if ${PIPS_LEVEL} >= 0206 && ${DIST_TYPE} != lpr && ${DIST_TYPE} != cups
+.if ${PIPS_LEVEL} >= 206 && ${DIST_TYPE} != lpr && ${DIST_TYPE} != cups
 	cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf253
 .endif
 
