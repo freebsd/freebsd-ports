@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.24
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -79,5 +80,6 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
