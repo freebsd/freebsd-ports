@@ -7,9 +7,11 @@
 #
 
 PORTNAME=	xosview
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/ \
+MASTER_SITES=	\
+		ftp://ftp.openbsd.ru/pub/OpenBSD/distfiles/ \
+		http://lore.ece.utexas.edu/~bgrayson/xosview/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/status/xstatus
 

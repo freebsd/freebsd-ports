@@ -1,23 +1,6 @@
---- Xdefaults.orig	Tue Nov 16 21:53:01 1999
-+++ Xdefaults	Wed Nov 17 00:41:59 1999
-@@ -34,6 +34,7 @@
- xosview*loadDecay:          False
- xosview*loadGraph:          False
- xosview*loadUsedFormat:	    float
-+xosview*loadAlarmThreshold:	2
- 
- ! CPU Meter Resources
- 
-@@ -93,7 +94,7 @@
- 
- ! Network Meter Resources
- 
--xosview*net:		    False
-+xosview*net:		    True
- xosview*netBandwidth:       7500  ! for 64kbps ISDN
- !xosview*netBandwidth:       5000  ! for up to 57.6kbps modems
- !xosview*netBandwidth:       2000  ! for 28.8kbps modems (no compression)
-@@ -144,7 +145,7 @@
+--- Xdefaults.in.orig	Wed Jul  5 21:44:36 2000
++++ Xdefaults.in	Tue Aug 21 12:15:19 2001
+@@ -175,7 +175,7 @@
  ! Interrupt Rate Meter Resources
  xosview*irqrate:	True
  xosview*irqrateUsedColor:	red
