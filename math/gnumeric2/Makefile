@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnumeric
-# Version required:			0.18
+# Version required:			0.25
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/03/26 04:48:08 nectar Exp $
+# $Id: Makefile,v 1.10 1999/04/08 18:08:34 steve Exp $
 #
 
-DISTNAME=	gnumeric-0.18
+DISTNAME=	gnumeric-0.25
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnumeric

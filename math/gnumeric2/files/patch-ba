@@ -4,8 +4,8 @@
  perl_val = @perl_val@
  python_val = @python_val@
  
--SUBDIRS = intl po macros plugins src doc
-+SUBDIRS = intl po macros plugins src
+-SUBDIRS = intl po macros libglade plugins src doc
++SUBDIRS = intl po macros libglade plugins src
  
  EXTRA_DIST =  	gnumeric.desktop README HACKING gnumeric.spec.in 	gnumeric.keys.in gnumeric.mime $(appicon_DATA)
  

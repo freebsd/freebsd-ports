@@ -1,15 +1,15 @@
---- configure.orig	Wed Feb 24 03:49:18 1999
-+++ configure	Wed Feb 24 18:46:00 1999
-@@ -3309,7 +3309,7 @@
+--- configure.orig	Tue Apr 27 14:23:58 1999
++++ configure	Thu May  6 10:48:39 1999
+@@ -3335,7 +3335,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lxml `gnome-config --libs xml` $LIBS"
 +LIBS="`xml-config --libs` $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3315 "configure"
+ #line 3341 "configure"
  #include "confdefs.h"
-@@ -3340,7 +3340,7 @@
+@@ -3366,7 +3366,7 @@
    
  		
  		
@@ -18,7 +18,7 @@
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -5557,15 +5557,15 @@
+@@ -5583,15 +5583,15 @@
  fi
  
          
@@ -40,3 +40,23 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
+@@ -6174,7 +6174,7 @@
+ test -n "$AWK" && break
+ done
+ 
+-GDK_KEYSYMS="`$GTK_CONFIG --prefix`/include/gdk/gdkkeysyms.h"
++GDK_KEYSYMS="`$GTK_CONFIG --prefix`/include/gtk12/gdk/gdkkeysyms.h"
+ 
+ cat >> confdefs.h <<\EOF
+ #define ENABLE_GNOME 1
+@@ -6198,8 +6198,8 @@
+   LIBGLADE_FULLDIST_TRUE='#'
+   LIBGLADE_FULLDIST_FALSE=
+ fi
+-XML_LIBS=`gnome-config --libs xml`
+-XML_CFLAGS=`gnome-config --cflags xml`/gnome-xml
++XML_LIBS=`xml-config --libs`
++XML_CFLAGS=`xml-config --cflags`
+ 
+ 
+ 
