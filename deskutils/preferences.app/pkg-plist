@@ -20,16 +20,16 @@ System/Applications/Preferences.app/Resources/PrefsApp.prefs/stamp.make
 System/Applications/Preferences.app/library_paths.openapp
 System/Applications/Preferences.app/stamp.make
 System/Library/Libraries/libPrefsModule.so
-System/Library/Libraries/libPrefsModule.so.1
-System/Library/Libraries/libPrefsModule.so.1.0.0
+System/Library/Libraries/libPrefsModule.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libPrefsModule.so.%%LIBVERSION%%
 System/Library/Frameworks/PrefsModule.framework/Resources
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Headers/PrefsModule.h
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info-gnustep.plist
 %%GNUSTEP_STABLE%%System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info.plist
 System/Library/Frameworks/PrefsModule.framework/Versions/A/PrefsModule
 System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so
-System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.1
-System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.1.0.0
+System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.%%MAJORLIBVERSION%%
+System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.%%LIBVERSION%%
 @exec ln -fs Versions/Current/Headers %D/System/Library/Frameworks/PrefsModule.framework/Headers
 @exec ln -fs Versions/Current/Resources %D/System/Library/Frameworks/PrefsModule.framework/Resources
 @exec ln -fs A %D/System/Library/Frameworks/PrefsModule.framework/Versions/Current

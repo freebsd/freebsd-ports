@@ -96,8 +96,8 @@ Local/Applications/GNUMail.app/Resources/up_15.tiff
 Local/Applications/GNUMail.app/library_paths.openapp
 Local/Applications/GNUMail.app/stamp.make
 Local/Library/Libraries/libGNUMail.so
-Local/Library/Libraries/libGNUMail.so.1
-Local/Library/Libraries/libGNUMail.so.1.0.0
+Local/Library/Libraries/libGNUMail.so.%%MAJORLIBVERSION%%
+Local/Library/Libraries/libGNUMail.so.%%LIBVERSION%%
 Local/Library/GNUMail/Account.prefs/Account
 Local/Library/GNUMail/Account.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Account.prefs/Resources/account.tiff

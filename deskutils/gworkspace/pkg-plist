@@ -896,8 +896,8 @@ System/Library/Headers/GWorkspace/InspectorsProtocol.h
 System/Library/Headers/GWorkspace/PreferencesProtocol.h
 System/Library/Headers/GWorkspace/ViewersProtocol.h
 System/Library/Libraries/libGWorkspace.so
-System/Library/Libraries/libGWorkspace.so.1
-System/Library/Libraries/libGWorkspace.so.1.0.0
+System/Library/Libraries/libGWorkspace.so.%%MAJORLIBVERSION%%
+System/Library/Libraries/libGWorkspace.so.%%LIBVERSION%%
 System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/ImageThumbnailer
 System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
 System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/stamp.make
