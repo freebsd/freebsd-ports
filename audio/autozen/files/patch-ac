@@ -1,5 +1,16 @@
---- autozen.c.orig	Sun Mar  4 16:56:21 2001
-+++ autozen.c	Mon Apr  9 23:49:01 2001
+$FreeBSD$
+
+--- autozen.c.orig	Mon Mar  5 00:56:21 2001
++++ autozen.c	Tue Nov 25 18:17:00 2003
+@@ -92,7 +92,7 @@
+ //
+ /////////////////////////////////
+ 
+-#define SAMPLE_RATE 8000
++#define SAMPLE_RATE 11025
+ 
+ #define MAX_HARMONICS 3
+ 
 @@ -223,7 +223,7 @@
  	/* Lets set the filename, as if this were a save dialog, and we are giving
  	a default filename */
