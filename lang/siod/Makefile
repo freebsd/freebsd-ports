@@ -10,7 +10,8 @@ DISTNAME=	siod
 PKGNAME=	siod-3.4
 CATEGORIES=	lang
 MASTER_SITES=	http://people.delphi.com/gjc/\
-		ftp://ftp.std.com/pub/gjc/
+		ftp://ftp.std.com/pub/gjc/ \
+		http://freefall.freebsd.org/~jkoshy/PORTS/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org
