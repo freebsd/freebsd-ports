@@ -1,0 +1,42 @@
+--- configure.orig	Tue Dec 14 01:33:42 1999
++++ configure	Sat Jan  8 23:23:37 2000
+@@ -3030,7 +3030,7 @@
+      echo "$ac_t""yes" 1>&6
+      
+             CFLAGS="$CFLAGS -DESD_SUPPORT $ESD_CFLAGS"
+-            SYSTEM_LIBS="$SYSTEM_LIBS -lesd"
++            SYSTEM_LIBS="$SYSTEM_LIBS $ESD_LIBS"
+              
+   else
+      echo "$ac_t""no" 1>&6
+@@ -4333,11 +4333,11 @@
+ 
+     ac_save_libs="$LIBS"
+     case "$target" in
+-        *-*-freebsd*)
++        *-*-frebsd*)
+             pthread_lib="-lc_r"
+             ;;
+         *)
+-            pthread_lib="-lpthread"
++            pthread_lib="-L""$LOCALBASE""/lib -llthread"
+             ;;
+     esac
+     LIBS="$LIBS $pthread_lib"
+@@ -4371,7 +4371,7 @@
+         echo "$ac_t""$use_pthreads" 1>&6
+         if test x$use_pthreads = xyes; then
+             CFLAGS="$CFLAGS -D_REENTRANT -DSDL_USE_PTHREADS"
+-            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT"
++            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT -I""$LOCALBASE""/include/pthread/linuxthreads"
+             SDL_LIBS="$SDL_LIBS $pthread_lib"
+         fi
+     fi
+@@ -4851,6 +4851,7 @@
+         ;;
+     *-*-freebsd*)
+         ARCH=freebsd
++	CheckNASM
+         CheckESD
+         CheckX11
+         CheckPTHREAD
