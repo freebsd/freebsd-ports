@@ -28,7 +28,6 @@ bin/weave
 bin/pooltype
 @mode 644
 lib/texmf/fonts/texfonts.map
-lib/texmf/fonts/tfm
 lib/texmf/fonts/tfm/cmb10.tfm
 lib/texmf/fonts/tfm/cmbsy10.tfm
 lib/texmf/fonts/tfm/cmbx10.tfm
@@ -252,7 +251,6 @@ lib/texmf/tex/plain.tex
 lib/texmf/tex/story.tex
 lib/texmf/tex/testfont.tex
 lib/texmf/tex/webmac.tex
-lib/texmf/ini
 lib/texmf/ini/tex.fmt
 lib/texmf/ini/plain.fmt
 lib/texmf/ini/mf.base

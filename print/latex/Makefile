@@ -55,13 +55,15 @@ build: configure
 install:
 	@echo "===>  Installing for ${DISTNAME}"
 	@(/usr/bin/install -c -m 644 ${WRKSRC}/base/latex.fmt \
-				/usr/local/lib/texmf/ini/)
-	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm /usr/local/lib/texmf/fonts/tfm)
-	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf /usr/local/lib/texmf/mf)
-	@(cd ${WRKSRC}/base; install -c -m 644 latexbug.tex testpage.tex \
+				${PREFIX}/lib/texmf/ini/)
+	@(cd ${WRKSRC}/tfm; install -c -m 644 *.tfm ${PREFIX}/lib/texmf/fonts/tfm)
+	@(cd ${WRKSRC}/mf; install -c -m 644 *.mf ${PREFIX}/lib/texmf/mf)
+	@(cd ${WRKSRC}/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
-	   *.cls *.clo *.sty *.fd *.def *.cfg /usr/local/lib/texmf/tex)
-	@(cd ${WRKSRC}/base; install -c -m 644 *.ist /usr/local/lib/texmf/tex)
+	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
+	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
+	@mkdir -p ${PREFIX}/lib/texmf/makeindx;
+	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/lib/texmf/makeindx)
 	
 
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ EXTRACT_ONLY=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 
 FTPGET=		${WRKDIR}/ftpget
-TEXDIR=		${.CURDIR}
+CURDIR=		${.CURDIR}
 
 
 DISTNAME=	web2c-6.1
@@ -27,7 +27,6 @@ BASES=		mf.base cmmf.base
 FORMATS=	tex.fmt 
 
 CFLAGS=		-O2
-PREFIX=		/usr/local
 
 pre-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
@@ -50,102 +49,71 @@ fetch-file:
 	
 web2c.tar.gz: 
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
 		ftp_dir=/tex-archive/systems/web2c file_in=web2c.tar.gz file_out=$@; \
 	 fi;)
 web.tar.gz: 
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/systems/web2c file_in=web.tar.gz file_out=$@; \
 	 fi;)
 cm_mf.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/fonts file_in=cm/mf.tar.gz file_out=$@; \
 	 fi;)
 cm_tfm.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/fonts file_in=cm/tfm.tar.gz file_out=$@; \
 	 fi;)
 mf_lib.tar.gz: 
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/systems/knuth file_in=lib.tar.gz file_out=$@; \
 	 fi;)
 modes.mf:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/systems/web2c file_in=modes.mf file_out=$@; \
 	 fi;)
 tex_base.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
 	        ftp_dir=/tex-archive/macros file_in=plain/base.tar.gz file_out=$@; \
 	 fi;)
 latex_base.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
 	        ftp_dir=/tex-archive/macros file_in=latex/base.tar.gz file_out=$@; \
 	fi;)
 latex_mf.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/fonts file_in=latex/mf.tar.gz file_out=$@; \
 	 fi;)
 latex_tfm.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
-	  make -f ${TEXDIR}/Makefile fetch-file FTPGET=${FTPGET} \
+	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
  		ftp_dir=/tex-archive/fonts file_in=latex/tfm.tar.gz file_out=$@; \
 	 fi;)
 
-
-CONFIGURE_COOKIE=	${.CURDIR}/.configure_done
-
-configure: extract ${CONFIGURE_COOKIE}
-
-${CONFIGURE_COOKIE}:
-	@echo "===>  Configuring for ${DISTNAME}"
-	@if [ -f ${SCRIPTDIR}/configure ]; then \
-		sh ${SCRIPTDIR}/configure ${PORTSDIR} ${.CURDIR} ${WRKSRC}; \
-	fi
-	@(cd ${WRKSRC}; LEX=lex; YACC=yacc; export LEX YACC; \
-	  ./configure --prefix=${PREFIX})
-	@(cd ${WRKDIR}; rm -rf mf; mkdir mf; cd mf; \
-	  for f in `find ../cm -name \*.mf -print`; do \
-	    if [ ! -f `basename $$f` ]; then \
-		ln -s $$f; \
-	    fi; \
-	  done;\
-	  for f in `find ../lib -name \*.mf -print`; do \
-	    if [ ! -f `basename $$f` ]; then \
-		ln -s $$f; \
-	    fi; \
-	  done;\
-	  cp ${DISTDIR}/modes.mf .; )
-.if defined (MAKE_LATEX)
-	@(cd ${WRKDIR}/mf; \
-	  for f in `find ../latex -name \*.mf -print`; do \
-	    if [ ! -f `basename $$f` ]; then \
-		ln -s $$f; \
-	    fi; \
-	  done;)
-.endif
-	@touch -f ${CONFIGURE_COOKIE}
 
 build: configure
 	@echo "===>  Building for ${DISTNAME}"
 	@(cd ${WRKSRC}/web2c; make triptrap)
 	@(cd ${WRKSRC}/web2c; make run-triptrap)
 	@(cd ${WRKSRC}/web2c; make clean-triptrap)
+
 	@(cd ${WRKSRC}; make CFLAGS="${CFLAGS}" programs)
 	@(cd ${WRKSRC}; MFINPUTS=${WRKDIR}/mf; export MFINPUTS;\
 		make bases="${BASES}" bases)
 .if defined (MAKE_LATEX)
 	@(cd ${WRKDIR}/latex/base; TEXPOOL=${WRKSRC}/web2c/tex; export TEXPOOL; \
 		${WRKSRC}/web2c/tex/initex unpack.ins)
-	@(cd ${WRKDIR}/latex/base; TEXFONTS=${WRKSRC}/cm/tfm:${WRKSRC}/latex/tfm; \
-	  export TEXFONTS; TEXINPUTS={WRKDIR}/lib:.; export TEXINPUTS; \
+	@(cd ${WRKDIR}/latex/base; TEXFONTS=${WRKDIR}/cm/tfm:${WRKDIR}/latex/tfm; \
+	  export TEXFONTS; TEXINPUTS=${WRKDIR}/lib:.; export TEXINPUTS; \
+	  TEXPOOL=${WRKSRC}/web2c/tex; export TEXPOOL;\
 	  	${WRKSRC}/web2c/tex/initex latex.ltx)
 .endif
 	@(cd ${WRKSRC}/web2c; TEXINPUTS=${WRKDIR}/lib:${WRKSRC}; export TEXINPUTS;\
@@ -172,11 +140,11 @@ install:
 	@(cd ${WRKDIR}/lib; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
 	@(cd ${WRKDIR}/plain/base; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
 .if defined(MAKE_LATEX)
-	@(cd ${WRKDIR}/latex/base; install -c -m 644 latexbug.tex testpage.tex \
+	@(cd ${WRKSRC}/latex/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
-	   *.cls *.clo *.sty *.fd *.def *.cfg ${PREFIX}/lib/texmf/tex)
-	@mkdir -p ${PREFIX}/lib/texmf/MakeIndex
-	@(cd ${WRKDIR}/latex/base; install -c -m 644 *.ist ${PREFIX}/lib/texmf/tex)	
+	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
+	    if [ -f $f ]; then install -c -m 644  $f ${PREFIX}/lib/texmf/tex; fi; done)
+	@(cd ${WRKDIR}/latex/base; install -c -m 644 *.ist ${PREFIX}/lib/makeindex)	
 .endif
 
 .include <bsd.port.mk>
