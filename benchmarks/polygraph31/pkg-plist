@@ -20,6 +20,19 @@ bin/reporter
 bin/rng_test
 bin/tcp2xmld
 bin/udp2tcpd
+%%DATADIR%%/ReportGen/label_results
+%%DATADIR%%/ReportGen/make_report
+%%DATADIR%%/ReportGen/make_card
+%%DATADIR%%/ReportGen/plot_traces
+%%DATADIR%%/ReportGen/plot_table
+%%DATADIR%%/ReportGen/Globs.pm
+%%DATADIR%%/ReportGen/Line.pm
+%%DATADIR%%/ReportGen/ObjDbase.pm
+%%DATADIR%%/ReportGen/ObjManip.pm
+%%DATADIR%%/ReportGen/Opts.pm
+%%DATADIR%%/ReportGen/Plot.pm
+%%DATADIR%%/ReportGen/RepFormat.pm
+%%DATADIR%%/ReportGen/reportgen.cfg
 %%DATADIR%%/workloads/datacomm-1.pg
 %%DATADIR%%/workloads/downtime-2.pg
 %%DATADIR%%/workloads/include/benches.pg
@@ -44,6 +57,7 @@ bin/udp2tcpd
 %%DATADIR%%/workloads/webaxe-1.pg
 %%DATADIR%%/workloads/webaxe-3.pg
 %%DATADIR%%/workloads/webaxe-4.pg
+@dirrm %%DATADIR%%/ReportGen
 @dirrm %%DATADIR%%/workloads/include
 @dirrm %%DATADIR%%/workloads
 @dirrm %%DATADIR%%
