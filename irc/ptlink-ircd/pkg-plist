@@ -1,0 +1,30 @@
+bin/ircd
+bin/mkpasswd
+bin/sendbug
+etc/codepage/cp1251.cp
+etc/codepage/cp1253.cp
+etc/codepage/cp850.cp
+etc/codepage/cp860.cp
+etc/codepage/cp866.cp
+etc/codepage/iso8859-1.cp
+etc/codepage/iso8859-5.cp
+etc/codepage/iso8859-9.cp
+etc/codepage/koi8r.cp
+etc/codepage/koi8u.cp
+etc/codepage/mac.cp
+etc/codepage/translit.cp
+etc/help.admin
+etc/help.oper
+etc/help.user
+etc/ircd.conf.sample
+etc/ircd.motd.sample
+etc/kline.conf.sample
+etc/main.dconf.sample
+etc/network.dconf.sample
+etc/opers.motd.sample
+etc/version.info
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@unexec rmdir %D/var/log 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
+@dirrm etc/codepage
