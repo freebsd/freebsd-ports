@@ -8,11 +8,11 @@
 #
 
 PORTNAME=		phoenix
-PORTVERSION=		0.5.20021209
-PORTREVISION=		0
+PORTVERSION=		0.4
+PORTREVISION=		10
 CATEGORIES=		www # pita
-MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
-MASTER_SITE_SUBDIR=	alane
+MASTER_SITES=		${MASTER_SITE_LOCAL} # ${BSD_WEBDIR}
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=		phoenix@freebsd.org # alane@fbsd and trevor@fbsd
 
@@ -49,7 +49,8 @@ WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 JREDIR=			${LOCALBASE}/jdk1.3.1/jre
-MOZVER=			1.3a
+MOZVER=			1.2b
+#MOZVER=		1.3a
 PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-${MOZVER}/plugins/
 
 .include <bsd.port.pre.mk>
