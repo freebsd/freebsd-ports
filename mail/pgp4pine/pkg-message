@@ -1,2 +1,4 @@
 You got to manually set up Pine to use pgp4pine!
 Read ${PREFIX}/share/doc/pgp4pine/INSTALL.TXT to know how !
+You can use the ${PORTSDIR}/mail/pgp4pine/insert_entries.pl 
+and remove_entries.pl scripts for this purpose.
