@@ -22,7 +22,7 @@ LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 NO_LATEST_LINK=	yes
 
 CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
-		 --with-gnu-ld --with-libwrap --with-libs="-ldevstat"
+		 --with-gnu-ld --with-libwrap --with-libs="-lkvm -ldevstat"
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
