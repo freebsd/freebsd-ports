@@ -79,10 +79,10 @@ pre-everything::
 	@${ECHO_MSG} "WITH_STANDALONE_MODE=yes  builds qpopper to be run without inetd"
 	@${ECHO_MSG} "WITHOUT_U_OPTION=yes      forbids daemon command line option"
 	@${ECHO_MSG} "                 -u which allows, after a user authenticates,"
-	@${ECHO_MSG} "                 process options from a file called"
+	@${ECHO_MSG} "                 process options to be read from a file called"
 	@${ECHO_MSG} "                 .qpopper-options in the user's home directory"
 	@${ECHO_MSG} "                 This file can be owned by and writable by the"
-	@${ECHO_MSG} "                 If improperly written, may cause a buffer"
+	@${ECHO_MSG} "                 user. If improperly written, may cause a buffer"
 	@${ECHO_MSG} "                 overflow which may remove such user's mail box"
 
 
