@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnat-doc
-PORTVERSION=	3.13p
+PORTVERSION=	3.14p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/%SUBDIR%/ \
 		ftp://ftp.cdrom.com/pub/languages/ada/compiler/gnat/%SUBDIR%/ \
@@ -23,7 +23,7 @@ DISTNAME=	gnat-${PORTVERSION}-docs
 
 MAINTAINER=	jmcoopr@webmail.bmi.net
 
-WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-unx-docs
+WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-docs
 NO_BUILD=	yes
 PLIST=		${MASTERDIR}/pkg-plist_${DOCFORMAT}
 PKGMESSAGE=	${MASTERDIR}/pkg-message_${DOCFORMAT}
@@ -37,6 +37,10 @@ ARM_LABEL=	"* ARM95: (arm95).                  Ada 95 Annotated Reference Manual
 GCC_LABEL=	"* Adagcc: (gcc).                   GNAT gcc 2.8.1 compiler reference."
 RM_LABEL=	"* Gnat_rm: (gnat_rm).              GNAT Reference Manual."
 UG_LABEL=	"* Gnat_ug: (gnat_ug).              GNAT User Guide."
+
+PLIST_SUB=	SEC_LABEL=${SEC_LABEL} ARM_LABEL=${ARM_LABEL} \
+		GCC_LABEL=${GCC_LABEL} RM_LABEL=${RM_LABEL} \
+		UG_LABEL=${UG_LABEL}
 
 .if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "info" && ${DOCFORMAT} != "ps" && ${DOCFORMAT} != "texi" && ${DOCFORMAT} != "txt"
 .BEGIN:

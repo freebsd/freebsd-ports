@@ -18,7 +18,6 @@ info/arm95.info-23
 info/arm95.info-24
 info/arm95.info-25
 info/arm95.info-26
-info/dir
 info/arm95.info-27
 info/arm95.info-28
 info/arm95.info-29
@@ -68,7 +67,6 @@ info/gdb.info-6
 info/gdb.info-7
 info/gdb.info-8
 info/gdb.info-9
-info/gdbtk.info
 info/gnat_rm.info
 info/gnat_rm.info-1
 info/gnat_rm.info-2
@@ -89,3 +87,12 @@ info/gnat_ug.info-6
 info/gnat_ug.info-7
 info/gnat_ug.info-8
 info/gnat_ug.info-9
+info/gvd.info
+@unexec install-info --delete %D/info/arm95.info %D/info/dir
+@exec install-info --section="%%SEC_LABEL%%" --entry="%%ARM_LABEL%%" %D/info/arm95.info %D/info/dir
+@unexec install-info --delete %D/info/gcc.info %D/info/dir
+@exec install-info --section="%%SEC_LABEL%%" --entry="%%GCC_LABEL%%" %D/info/gcc.info %D/info/dir
+@unexec install-info --delete %D/info/gnat_rm.info %D/info/dir
+@exec install-info --section="%%SEC_LABEL%%" --entry="%%RM_LABEL%%" %D/info/gnat_rm.info %D/info/dir
+@unexec install-info --delete %D/info/gnat_ug.info %D/info/dir
+@exec install-info --section="%%SEC_LABEL%%" --entry="%%UG_LABEL%%" %D/info/gnat_ug.info %D/info/dir
