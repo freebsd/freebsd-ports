@@ -1,0 +1,54 @@
+%%SITE_PERL%%/Alzabo/GUI/Mason.pm
+%%SITE_PERL%%/Alzabo/GUI/Mason/Config.pm
+%%DATADIR%%/add_column.mhtml
+%%DATADIR%%/add_index_1.mhtml
+%%DATADIR%%/add_index_2.mhtml
+%%DATADIR%%/add_relationship.mhtml
+%%DATADIR%%/add_relationship_2.mhtml
+%%DATADIR%%/add_table.mhtml
+%%DATADIR%%/alzabo.css
+%%DATADIR%%/autohandler
+%%DATADIR%%/change_column.mhtml
+%%DATADIR%%/change_column_name.mhtml
+%%DATADIR%%/change_schema_instantiation.mhtml
+%%DATADIR%%/change_schema_name.mhtml
+%%DATADIR%%/change_table_attributes.mhtml
+%%DATADIR%%/change_table_comment.mhtml
+%%DATADIR%%/change_table_name.mhtml
+%%DATADIR%%/cube_logo.jpg
+%%DATADIR%%/delete_column.mhtml
+%%DATADIR%%/delete_foreign_key.mhtml
+%%DATADIR%%/delete_index.mhtml
+%%DATADIR%%/delete_schema.mhtml
+%%DATADIR%%/delete_schema_confirm.mhtml
+%%DATADIR%%/delete_table.mhtml
+%%DATADIR%%/draw_graph.mhtml
+%%DATADIR%%/exception
+%%DATADIR%%/execute_sql.mhtml
+%%DATADIR%%/execute_sync_sql.mhtml
+%%DATADIR%%/handle_rules_exception
+%%DATADIR%%/href
+%%DATADIR%%/hyena.jpg
+%%DATADIR%%/index.mhtml
+%%DATADIR%%/login_form.mas
+%%DATADIR%%/make_url
+%%DATADIR%%/move_column.mhtml
+%%DATADIR%%/move_table.mhtml
+%%DATADIR%%/new_schema.mhtml
+%%DATADIR%%/redirect
+%%DATADIR%%/reverse_engineer.mhtml
+%%DATADIR%%/schema_menubar
+%%DATADIR%%/syshandler
+%%DATADIR%%/table_menubar
+%%DATADIR%%/url
+%%DATADIR%%/view_column.mhtml
+%%DATADIR%%/view_graph.mhtml
+%%DATADIR%%/view_schema.mhtml
+%%DATADIR%%/view_schema_sql.mhtml
+%%DATADIR%%/view_sync_sql.mhtml
+%%DATADIR%%/view_table.mhtml
+%%DATADIR%%/view_table_other.mhtml
+@dirrm %%DATADIR%%
+@dirrm %%SITE_PERL%%/Alzabo/GUI/Mason
+@unexec rmdir %D/%%SITE_PERL%%/Alzabo/GUI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Alzabo 2>/dev/null || true
