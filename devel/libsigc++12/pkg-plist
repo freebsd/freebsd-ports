@@ -20,7 +20,6 @@ include/sigc++/slot.h
 include/sigc++/thread.h
 include/sigc++/type.h
 lib/libsigc.a
-lib/libsigc.la
 lib/libsigc.so
 lib/libsigc.so.1
 share/aclocal/sigc++.m4
@@ -43,6 +42,7 @@ share/libsigc++/class_slot.h.m4
 share/libsigc++/convert.h.m4
 share/libsigc++/func_slot.h.m4
 share/libsigc++/object_slot.h.m4
+share/libsigc++/retbind.h.m4
 share/libsigc++/rettype.h.m4
 share/libsigc++/slot.h.m4
 share/libsigc++/template.macros.m4
