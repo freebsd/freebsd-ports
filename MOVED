@@ -1346,4 +1346,4 @@ mail/milter-sender||2004-12-02|removed on author's request
 editors/AbiWord2|editors/abiword|2004-12-04|renamed to abiword
 multimedia/avidemux||2004-12-09|no longer maintained by the author
 devel/arch|devel/tla|2004-12-09|removed obsolete version of arch
-japanese/estraier|textproc/japanese|2004-12-11|accurate category
+japanese/estraier|textproc/estraier|2004-12-11|accurate category
