@@ -15,6 +15,8 @@ DISTNAME=	ntop-1.1-src
 
 MAINTAINER=	billf@FreeBSD.org
 
+FORBIDDEN=	"Shocking lack of security leading to multiple local and remote root exploits"
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install install-man
