@@ -21,3 +21,5 @@ share/icons/locolor/32x32/apps/six.png
 share/mimelnk/application/vnd.kde.six.desktop
 @dirrm share/doc/HTML/en/six
 @dirrm share/apps/six
+@unexec rmdir %D/share/applnk/Games/Board 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
