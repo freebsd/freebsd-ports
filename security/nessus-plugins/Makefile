@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nessus-plugins
-PORTVERSION=	2.0.10a
-PORTREVISION=	2
+PORTVERSION=	2.0.12
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -35,15 +34,6 @@ MAN1=		nessus-build.1
 MAN8=		nessus-update-plugins.8
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-PLIST_SUB+=	AMD="@comment "
-pre-configure:
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-3com-hub-amd64
-.else
-PLIST_SUB+=	AMD=""
-BUILD_DEPENDS+=	libnet-config:${PORTSDIR}/net/libnet
-.endif
 
 post-install:
 	@${ECHO} "================================================================================"

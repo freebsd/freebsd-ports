@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nessus
-PORTVERSION=	2.0.10a
-PORTREVISION=	2
+PORTVERSION=	2.0.12
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -31,7 +30,10 @@ USE_REINPLACE=	YES
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${HAVE_GNOME:Mgtk20}!=""
+USE_GNOME+=	gtk20
+PKGNAMESUFFIX=	-gtk2
+.elif ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 PKGNAMESUFFIX=	-gtk
 .else
