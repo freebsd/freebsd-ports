@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	lirc
 MAINTAINER=	mikeh@FreeBSD.org
 COMMENT=	Linux Infared Remote Control
 
-BROKEN=		"Broken pkg-plist"
-
 USE_XLIB=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
