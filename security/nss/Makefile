@@ -30,6 +30,8 @@ CFLAGS+=	-I${LOCALBASE}/include/nspr
 
 DIST=		${WRKSRC}/../../dist
 
+CONFLICTS=	btoa-5.* digest-* emboss-2.4.* oases-2.* p5-PAR-0.*
+
 do-install:
 	${MKDIR} ${PREFIX}/include/nss
 	${TAR} -C ${DIST}/public --dereference -cf - . | \
