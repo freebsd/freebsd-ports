@@ -1,10 +1,15 @@
 bin/cim
 bin/cim2latex
 bin/cim2ps
-bin/cimetags
-bin/simindent
-lib/cim/libcim.a
+bin/cimindent
+lib/libcim-atr.a
+lib/libcim.a
+lib/libcim.la
+lib/libcim.so.1.0
+@exec /sbin/ldconfig -m %B
 include/cim.h
-man/man1/cim.1.gz
+@unexec install-info --delete %D/info/cim.info %D/info/dir
 info/cim.info
-share/doc/cim/cim.ps
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/cim.info %D/info/dir
+man/man1/cim.1.gz
