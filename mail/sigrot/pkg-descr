@@ -1,0 +1,7 @@
+Sigrot is a small program for signature rotation. It keeps a file with your
+favorite signatures and puts a random one in your signature each time you
+run it. You can also specify a standard part of your signature which will
+not change, ie. your name or PGP key.
+
+- Marijn
+marijn@stack.nl
