@@ -1,8 +1,6 @@
 bin/ami
-%%GNOME:%%bin/ami_applet
 bin/hanja_hwp2ami
 bin/wmami
-%%GNOME:%%etc/CORBA/servers/ami.gnorba
 lib/charset.alias
 share/doc/ami/AUTHORS
 share/doc/ami/ChangeLog
@@ -58,7 +56,6 @@ share/hangul_keyboard/dvorak.map
 %%DATADIR%%/ami/pix/woody/ami-d.xpm
 %%DATADIR%%/ami/pix/woody/ami-e.xpm
 %%DATADIR%%/ami/pix/woody/ami-h.xpm
-%%GNOME:%%share/gnome/applets/Utility/ami.desktop
 @dirrm share/doc/ami
 @dirrm share/hangul_keyboard
 @dirrm %%DATADIR%%/ami/pix/Aqua

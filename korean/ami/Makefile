@@ -30,22 +30,6 @@ DATADIR=	share
 
 .include <bsd.port.pre.mk>
 
-# gnome support
-.if ${HAVE_GNOME:Mlibpanel}!=""
-USE_GNOME+=	gnomeprefix gnomehack libpanel
-CONFIGURE_ARGS+=--enable-gnome-applet
-DATADIR=	share/gnome
-CATEGORIES+=	gnome
-.endif
-
-pre-everything::
-.if ${HAVE_GNOME:Mlibpanel}==""
-	@${ECHO} Define WITH_GNOME=yes if you want to enable GNOME applet support.
-.else
-	@${ECHO} Define WITHOUT_GNOME=yes if you want to build without GNOME
-	@${ECHO} applet support and with minimal dependencies.
-.endif
-
 post-build:
 	@cd ${WRKSRC}/hanjadic; \
 	${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
