@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au)
 # FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/13 09:41:02 tg Exp $
+# $Id: Makefile,v 1.2 1997/08/22 11:14:50 asami Exp $
 #
 
 DISTNAME=	pdc22
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
-FETCH_DEPENDS=	unzip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
 RUN_DEPENDS=	i386-go32-stubify:${PORTSDIR}/devel/crossgo32-djgpp2
 
