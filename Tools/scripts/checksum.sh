@@ -49,9 +49,10 @@ while [ ! -z $1 ]; do
 
 	if file $broken | grep "gzip compressed data" >/dev/null; then
 		cd orig
-		tar -zxf ../$broken
+		tar -zxf ../$broken || gunzip -c ../$broken > ${broken%.gz}
 		cd ../new
-		tar -zxf $PORTSDIR/distfiles/$broken
+		tar -zxf $PORTSDIR/distfiles/$broken || \
+			gunzip -c $PORTSDIR/distfiles/$broken > ${broken%.gz}
 		cd ..
 	elif file $broken | grep "compress'd data 16 bits" >/dev/null; then
 		cd orig
