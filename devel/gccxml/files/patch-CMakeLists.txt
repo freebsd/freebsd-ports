@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	Wed Mar  5 14:52:19 2003
++++ CMakeLists.txt	Fri Aug  1 21:36:40 2003
+@@ -51,11 +51,11 @@
+   # Installation rules for UNIX.
+   SET(GCCXML_ROOT ${GCCXML_SOURCE_DIR})
+   SET(GCCXML_SHARE "/share/gccxml-${GCCXML_VERSION_STRING}")
+-  SET(GCCXML_DOC "/share/doc/gccxml-${GCCXML_VERSION_STRING}")
++#  SET(GCCXML_DOC "/share/doc/gccxml-${GCCXML_VERSION_STRING}")
+   INSTALL_TARGETS(/bin gccxml)
+   INSTALL_PROGRAMS(${GCCXML_SHARE} gccxml_find_flags)
+   INSTALL_FILES(/man/man1 .1 gccxml)
+-  INSTALL_FILES(${GCCXML_DOC} .txt Copyright)
++#  INSTALL_FILES(${GCCXML_DOC} .txt Copyright)
+   SUBDIRS (GccInclude MproInclude)
+ ELSE(UNIX)
+   # Include file patch program for Windows.

@@ -1,0 +1,24 @@
+bin/gccxml_cc1plus
+bin/gccxml
+share/gccxml-%%PORTVERSION%%/GccInclude/2_95/std/complext.h
+@dirrm share/gccxml-%%PORTVERSION%%/GccInclude/2_95/std
+@dirrm share/gccxml-%%PORTVERSION%%/GccInclude/2_95
+share/gccxml-%%PORTVERSION%%/GccInclude/find_gcc_options
+@dirrm share/gccxml-%%PORTVERSION%%/GccInclude
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stl_config.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stl_numeric_facets.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/exception
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stl_monetary.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stl_locale.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stl_threads.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/gccxml_mpro_internals.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/string
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/stddef.h
+share/gccxml-%%PORTVERSION%%/MproInclude/7_3/ostream
+share/gccxml-%%PORTVERSION%%/MproInclude/find_mpro_options
+share/gccxml-%%PORTVERSION%%/gccxml_find_flags
+%%NOPORTSDOCS%%%%DOCSDIR%%Copyright.txt
+%%NOPORTSDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/gccxml-%%PORTVERSION%%/MproInclude/7_3
+@dirrm share/gccxml-%%PORTVERSION%%/MproInclude
+@dirrm share/gccxml-%%PORTVERSION%%/
