@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Feb 17 23:47:21 2002
-+++ Makefile	Sun Feb 17 23:51:49 2002
-@@ -7,26 +7,26 @@
+--- Makefile.orig	Tue Sep 10 20:01:54 2002
++++ Makefile	Wed Sep 11 23:06:32 2002
+@@ -7,27 +7,27 @@
  
  # Change this for local installation, 
  # e. g. /home/user or /usr/local
@@ -28,20 +28,15 @@
 -sharedir = $(prefix)/share
 -libdir = $(prefix)/lib
 -bindir = $(prefix)/bin
+-sysconfdir = /etc
 +sharedir = ${PREFIX}/share
 +libdir = ${PREFIX}/lib
 +bindir = ${PREFIX}/bin
++sysconfdir = ${PREFIX}/etc
  
  #####################################################
  #####################################################
-@@ -35,23 +35,25 @@
- INSTALLBIN = $(install) -m 0755 
- INSTALL = $(install) -m 0644 
- 
-+all:
- 
- nothing:
- 	@echo "Nothing to do. Run \"make install\" to install Muttprint."
+@@ -42,17 +42,18 @@
  
  
  install: 
