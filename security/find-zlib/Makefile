@@ -13,7 +13,7 @@ DISTNAME=	find-zlib
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scans files for statically linked zlib (libz) code
 
 PLIST_FILES=	bin/find-zlib
