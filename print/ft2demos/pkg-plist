@@ -4,4 +4,4 @@ bin/ftmulti
 bin/ftstring
 bin/fttimer
 bin/ftview
-bin/ftmemtest
+bin/ftmemchk
