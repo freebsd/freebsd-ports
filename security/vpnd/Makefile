@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://sunsite.dk/vpnd/archive/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
@@ -31,7 +31,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/vpnd.conf ${PREFIX}/etc/vpnd.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/vpnd.chat ${PREFIX}/etc/vpnd.chat.sample
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL} -d -m 0755 ${DOCSDIR}
 .for i in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
