@@ -1,0 +1,11 @@
+--- navi2ch-list.el.orig	Fri Jul 27 21:48:28 2001
++++ navi2ch-list.el	Thu Aug 30 14:51:14 2001
+@@ -399,7 +399,7 @@
+ 			      (when (and start
+ 					 (not ignore))
+ 				(when (string-match
+-				       "href=\\(.+/\\([^/]+\\)/\\)index2.html"
++				       "href=\\(.+/\\([^/]+\\)/\\)index2.html?"
+ 				       href)
+ 				  (concat cont "\n"
+ 					  (match-string 1 href) "\n"

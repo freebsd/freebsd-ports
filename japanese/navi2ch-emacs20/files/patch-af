@@ -1,0 +1,11 @@
+--- navi2ch-vars.el.orig	Tue Jul 24 01:15:20 2001
++++ navi2ch-vars.el	Thu Aug 30 14:52:33 2001
+@@ -97,7 +97,7 @@
+   :type 'boolean
+   :group 'navi2ch-list)
+ 
+-(defcustom navi2ch-list-bbstable-url "http://www.2ch.net/bbstable.html"
++(defcustom navi2ch-list-bbstable-url "http://www.2ch.net/bbstable2.html"
+   "*bbstable の url"
+   :type 'string
+   :group 'navi2ch-list)
