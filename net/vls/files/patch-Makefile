@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Nov 28 22:54:25 2003
++++ Makefile	Sat Dec 27 18:11:03 2003
+@@ -10,6 +10,8 @@
+     include Makefile.opts
+ endif
+ 
++CCFLAGS += ${CFLAGS}
++
+ 
+ ################################################################################
+ # Common options
+@@ -176,7 +178,7 @@
+ 	$(INSTALL) -m 644 $(PLUGINS:%=bin/%.so) $(DESTDIR)$(libdir)/videolan/vls
+ endif
+ 	mkdir -p $(DESTDIR)$(sysconfdir)/videolan/vls
+-	test -r $(DESTDIR)$(sysconfdir)/videolan/vls/vls.cfg || $(INSTALL) -m 644 vls.cfg $(DESTDIR)$(sysconfdir)/videolan/vls
++	test -r $(DESTDIR)$(sysconfdir)/videolan/vls/vls.cfg-dist || $(INSTALL) -m 644 vls.cfg $(DESTDIR)$(sysconfdir)/videolan/vls/vls.cfg-dist
+ 	@echo "Installation succeeded."
+ 
+ uninstall:
