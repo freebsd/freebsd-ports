@@ -1,10 +1,10 @@
+bin/expectjp
+bin/expectkjp
 bin/autoexpect-jp
 bin/autopasswd-jp
 bin/cryptdir-jp
 bin/decryptdir-jp
 bin/dislocate-jp
-bin/expectjp
-bin/expectkjp
 bin/ftp-rfc-jp
 bin/kibitz-jp
 bin/lpunlock-jp
@@ -20,13 +20,13 @@ bin/unbuffer-jp
 bin/weather-jp
 bin/xkibitz-jp
 bin/xpstat-jp
-include/expect5.25jp/Dbg.h
-include/expect5.25jp/tclRegexp.h
-include/expect5.25jp/expect.h
-include/expect5.25jp/expect_comm.h
-include/expect5.25jp/expect_tcl.h
-@dirrm include/expect5.25jp
-lib/expect5.25jp/pkgIndex.tcl
-@dirrm lib/expect5.25jp
-lib/libexpect525jp.a
-lib/libexpect525jp.so.1.0
+include/expect5.26jp/Dbg.h
+include/expect5.26jp/tclRegexp.h
+include/expect5.26jp/expect.h
+include/expect5.26jp/expect_comm.h
+include/expect5.26jp/expect_tcl.h
+@dirrm include/expect5.26jp
+lib/expect5.26jp/pkgIndex.tcl
+@dirrm lib/expect5.26jp
+lib/libexpect526jp.a
+lib/libexpect526jp.so.1.2
