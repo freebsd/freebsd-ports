@@ -425,6 +425,7 @@
     SUBDIR += libsigc++
     SUBDIR += libsigc++12
     SUBDIR += libsigcx
+    SUBDIR += libsigsegv
     SUBDIR += libslang
     SUBDIR += libsoup
     SUBDIR += libstatgrab
