@@ -34,7 +34,7 @@ MAINTAINER=		chris@chrisburkert.de
 COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows.
 
 ##################################################
-ONLY_FOR_ARCHS= 	i386 sparc64
+ONLY_FOR_ARCHS= 	i386
 MAN1=			inisqueak.1 squeak.1
 USE_GMAKE=		yes
 USE_REINPLACE=		yes
