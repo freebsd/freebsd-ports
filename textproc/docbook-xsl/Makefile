@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.62.4
+PORTVERSION=	1.63.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
@@ -22,8 +22,8 @@ INSTDIR=	share/xsl/docbook
 PINSTDIR=	${PREFIX}/${INSTDIR}
 COPYDIRS=	common fo extensions html htmlhelp images \
 		javahelp lib manpages params template xhtml
-PKGINSTALL=	${WRKSRC}/pkg-install
-PKGDEINSTALL=	${WRKSRC}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 NO_BUILD=	yes
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
@@ -32,6 +32,14 @@ CATALOG_PORTS=	${XMLDIR}/catalog.ports
 post-extract:
 	${FIND} ${WRKSRC} -name '.#*' -delete
 
+post-configure:
+	@${SED} -e 's,@INSTDIR@,${INSTDIR},g ; \
+		s,@XMLCATMGR@,${XMLCATMGR},g ; \
+		s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's,@XMLCATMGR@,${XMLCATMGR},g ; \
+		s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
+		< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 do-install:
 .ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
@@ -43,14 +51,7 @@ do-install:
 		${TAR} -xf - -C${PINSTDIR})
 
 post-install:
-	@${SED} -e 's,@INSTDIR@,${INSTDIR},g ; \
-			s,@XMLCATMGR@,${XMLCATMGR},g ; \
-			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
-			< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	@${SED} -e 's,@XMLCATMGR@,${XMLCATMGR},g ; \
-			s,@CATALOG_PORTS_XML@,${CATALOG_PORTS},g' \
-			< ${FILESDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-			${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
