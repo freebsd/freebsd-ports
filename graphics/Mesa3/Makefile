@@ -19,6 +19,7 @@ DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 .if defined(WANT_GGI)
 LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
@@ -53,10 +54,10 @@ MAKE_ENV+=	SUB_GL="${SUB_GL}"		\
 		INCLUDE_GL=${INCLUDE_GL}
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-configure:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/config.c
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/config.c
 
 post-install:
 .for lib in GL GLU

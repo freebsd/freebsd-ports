@@ -27,6 +27,7 @@ LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 
 LATEST_LINK=	openldap2
 
@@ -84,8 +85,8 @@ BINS=		bin/ldapadd \
 .include "${FILESDIR}/manpages"
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's@pidfile\t\t%LOCALSTATEDIR%/slapd.pid@pidfile\t\t/var/run/slapd.pid@g; \
-		s@argsfile\t%LOCALSTATEDIR%/slapd.args@argsfile\t/var/run/slapd.args@g' ${WRKSRC}/servers/slapd/slapd.conf
+	@${REINPLACE_CMD} -e 's@%LOCALSTATEDIR%/slapd[.]pid@/var/run/slapd.pid@g; \
+		s@%LOCALSTATEDIR%/slapd[.]args@/var/run/slapd.args@g' ${WRKSRC}/servers/slapd/slapd.conf
 
 post-configure:
 	@cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/libtool.diff

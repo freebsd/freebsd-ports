@@ -22,6 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
+USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
 USE_LIBTOOL=		yes
 CONFIGURE_SCRIPT=	../dist/configure
@@ -34,10 +35,10 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--target=${ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/../dist/configure
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/../dist/configure
 
 .include <bsd.port.mk>
