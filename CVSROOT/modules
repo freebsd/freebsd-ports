@@ -853,6 +853,7 @@ clri		src/sbin/clri
 clustalw	ports/biology/clustalw
 clusterit	ports/net/clusterit
 cmail		ports/mail/cmail
+cmake		ports/devel/cmake
 cmatrix		ports/misc/cmatrix
 cmp		src/usr.bin/cmp
 cmp3		ports/audio/cmp3
@@ -1348,6 +1349,7 @@ dte		ports/editors/dte
 dtv		ports/graphics/dtv
 du		src/usr.bin/du
 du2ps		ports/sysutils/du2ps
+duhdraw		ports/graphics/duhdraw
 dump		src/sbin/dump
 dumpasn1	ports/converters/dumpasn1
 dumpfs		src/sbin/dumpfs
