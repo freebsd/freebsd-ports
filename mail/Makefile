@@ -10,6 +10,7 @@
     SUBDIR += autorespond
     SUBDIR += autosig
     SUBDIR += balsa
+    SUBDIR += balsa2
     SUBDIR += bbmail
     SUBDIR += biabam
     SUBDIR += biffer
