@@ -1,0 +1,11 @@
+%%RUBY_SITELIBDIR%%/ArrayMixin.rb
+%%RUBY_SITELIBDIR%%/HashMixin.rb
+%%RUBY_SITELIBDIR%%/ListMixin.rb
+%%RUBY_SITELIBDIR%%/StringMixin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/BitArray.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/ProcAsArray.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/metaruby
+%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/Overview
+%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/metaruby
