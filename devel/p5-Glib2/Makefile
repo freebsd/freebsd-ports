@@ -27,6 +27,7 @@ USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	disable-threadsafe
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
 MAN3=		Glib.3 \
 		Glib::Boxed.3 \
