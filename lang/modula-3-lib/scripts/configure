@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: configure,v 1.1.1.1 1996/10/29 23:01:55 jdp Exp $
+# $Id: configure,v 1.2 1998/05/29 17:58:09 jdp Exp $
 
 umask 022
 
@@ -17,10 +17,20 @@ else
     exit 1
 fi
 
+if [ -f /usr/lib/libgcc.a ]; then
+    libgcc=/usr/lib/libgcc.a
+elif [ -f /usr/lib/aout/libgcc.a ]; then
+    libgcc=/usr/lib/aout/libgcc.a
+else
+    echo "Cannot find a \"libgcc.a\" file" >&2
+    exit 1
+fi
+
 for i in ${files_to_patch}; do
     test -f ${i}.bak || cp -p ${i} ${i}.bak
     rm -f ${i}
     sed -e "s|/usr/local/|${temp_prefix}/|g" \
 	-e "s|/usr/lib/crt0\.o|${crt}|g" \
+	-e "s|/usr/lib/libgcc\.a|${libgcc}|g" \
 	${i}.bak >${i}
 done
