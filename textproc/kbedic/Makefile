@@ -16,6 +16,12 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	todorov@freebsd-bg.org
 COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 
 DICT_CHECK?=	buleng.dat
@@ -46,4 +52,4 @@ pre-fetch:
 		@${ECHO_MSG} "to the names of the dictionaries that the textproc/bedic-data port"
 		@${ECHO_MSG} "will install; refer to that port for more information."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
