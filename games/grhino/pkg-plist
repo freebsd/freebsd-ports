@@ -24,6 +24,8 @@ share/gnome/help/grhino/C/preferences-0.html
 share/gnome/help/grhino/C/preferences-1.html
 share/gnome/help/grhino/C/preferences-2.html
 share/gnome/help/grhino/C/grhino-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/help/grhino/C/grhino.xml
 @dirrm share/gnome/help/grhino/C
 @dirrm share/gnome/help/grhino
