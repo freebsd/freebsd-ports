@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	pnet
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
 MAINTAINER=	ahze@rgv.net
 
-BUILD_DEPENDS=	treecc-0.1.2:${PORTSDIR}/lang/treecc
+BUILD_DEPENDS=	treecc-0.1.4:${PORTSDIR}/lang/treecc
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--program-prefix=""
 STRIP=		#
 
 MAN1=		ilrun.1 ilasm.1 ildasm.1 ilsize.1 ilnative.1 ilfind.1	\
