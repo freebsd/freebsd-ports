@@ -6,33 +6,28 @@
 #
 
 PORTNAME=	gadfly
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	databases
-MASTER_SITES=	http://www.chordate.com/kwParsing/
-DISTNAME=	kwP
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gadfly
 
 MAINTAINER=	ports@FreeBSD.org
 
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/kjbuckets.so:${PORTSDIR}/devel/py-kjbuckets
+
 USE_PYTHON=	yes
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
+USE_PYDISTUTILS=yes
 
-GADFLYDIR=	${PYTHON_SITELIBDIR}/gadfly
-
-do-install:
-	${MKDIR} ${GADFLYDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.py ${GADFLYDIR}
-	${INSTALL_DATA} ${WRKSRC}/sql.mar ${GADFLYDIR}
-	${ECHO_CMD} 'gadfly' > ${PYTHON_SITELIBDIR}/gadfly.pth
-	(cd ${GADFLYDIR}; ${PYTHON_CMD} gfinstall.py)
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${GADFLYDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${GADFLYDIR}
+post-install:
 .if !defined(${NOPORTDOCS})
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/gadfly.JPG ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/build_html.py ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}/kjParsing
+	@${INSTALL_DATA} ${WRKSRC}/doc/demo/kjParsing/*.py \
+		${EXAMPLESDIR}/kjParsing
 .endif
 
 .include <bsd.port.mk>
