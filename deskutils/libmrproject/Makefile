@@ -7,7 +7,7 @@
 
 PORTNAME=	libmrproject
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget libgsf
+USE_GNOME=	gnomeprefix gnomehack gnometarget libgsf libxslt
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
