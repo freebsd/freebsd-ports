@@ -1,4 +1,4 @@
-bin/pymetar
+bin/pymet
 %%PYTHON_SITELIBDIR%%/pymetar.py
 %%PYTHON_SITELIBDIR%%/pymetar.pyc
 %%PYTHON_SITELIBDIR%%/pymetar.pyo
