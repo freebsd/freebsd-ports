@@ -1,5 +1,6 @@
 bin/gfontsampler
 share/gnome/applications/gfontsampler.desktop
+share/gnome/gfontsampler/glade/gfontsampler-icon.png
 share/gnome/gfontsampler/glade/gfontsampler.glade
 share/gnome/pixmaps/gfontsampler-icon.png
 @dirrm share/gnome/gfontsampler/glade
