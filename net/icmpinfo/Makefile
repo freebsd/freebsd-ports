@@ -4,13 +4,12 @@
 # Date created:			  Mon June 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/24 08:09:18 obrien Exp $
 #
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutil
-MASTER_SITES=	ftp://hplyot.obspm.fr/net/  \
-		ftp.leo.org:/pub/comp/networking/net-tools/icmpinfo/
+MASTER_SITES=	ftp://hplyot.obspm.fr/net/
 
 MAINTAINER=     obrien@NUXI.com
 
