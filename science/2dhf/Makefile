@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Numerical Hartree-Fock Program for Diatomic Molecules
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
