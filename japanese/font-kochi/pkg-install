@@ -12,7 +12,7 @@ echo ${numfonts} > fonts.dir
 sed -e 1d fonts.dir.tmp >> fonts.dir
 sed -e 1d fonts.dir.kochi >> fonts.dir
 touch fonts.alias
-sed -e '/^-kochi-/d' fonts.alias > fonts.alias.tmp
+sed -e '/^-kochi-/d' -e '/^-aliastt-/d' fonts.alias > fonts.alias.tmp
 mv -f fonts.alias.tmp fonts.alias
 cat fonts.alias.kochi >> fonts.alias
 rm -f fonts.dir.tmp fonts.alias.tmp

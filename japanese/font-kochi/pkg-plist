@@ -2,3 +2,8 @@
 %%FONTSDIR%%/fonts.dir.kochi
 %%FONTSDIR%%/kochi-mincho.ttf
 %%FONTSDIR%%/kochi-gothic.ttf
+%%PORTDOCS%%share/doc/ja/kochi-ttfonts/mincho/README
+@dirrm share/doc/ja/kochi-ttfonts/mincho
+%%PORTDOCS%%share/doc/ja/kochi-ttfonts/gothic/README
+@dirrm share/doc/ja/kochi-ttfonts/gothic
+@dirrm share/doc/ja/kochi-ttfonts
