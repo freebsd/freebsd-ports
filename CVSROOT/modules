@@ -1983,6 +1983,7 @@ gdm2		ports/x11/gdm2
 gdome2		ports/textproc/gdome2
 gdrdao		ports/audio/gdrdao
 gdtclft		ports/graphics/gdtclft
+gecc		ports/devel/gecc
 geda		ports/cad/geda
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
