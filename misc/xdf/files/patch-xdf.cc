@@ -1,5 +1,5 @@
---- xdf.cc.orig	Wed Nov 13 05:06:28 2002
-+++ xdf.cc	Thu Jan 16 05:40:43 2003
+--- xdf.cc.orig	Thu Nov 14 00:06:28 2002
++++ xdf.cc	Fri Jan 17 00:56:31 2003
 @@ -18,18 +18,18 @@
  #include <stdio.h>
  #include <iostream.h>
@@ -64,7 +64,7 @@
  
  /*{{{  Title strings  */
  
-@@ -230,13 +236,14 @@
+@@ -230,13 +236,13 @@
      par_table[i]->status = TRUE;
    }
    
