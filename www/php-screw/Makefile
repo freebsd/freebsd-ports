@@ -16,20 +16,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A PHP script encryption tool
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
-		autoconf:${PORTSDIR}/devel/autoconf \
-		phpize:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CRYPTKEY?=	11152, 368, 192, 1281, 62
 
-USE_LIBTOOL=	yes
+USE_PHPIZE=	yes
 
-CONFIGURE_ARGS+=--enable-php_screw=shared \
-		--with-php-config=${PREFIX}/bin/php-config
+CONFIGURE_ARGS+=--enable-php_screw=shared
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 pre-everything::
 	@${ECHO} ""
@@ -38,10 +34,6 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "make CRYPTKEY=\"234, 84, 39664, 771, 9853\""
 	@${ECHO} ""
-
-post-extract:
-	@${ECHO_MSG} "===>  PHPizing for ${PORTNAME}-${PORTVERSION}"
-	@(cd ${WRKSRC}; ${LOCALBASE}/bin/phpize)
 
 post-patch:
 	@${ECHO} "short pm9screw_mycryptkey[] = { ${CRYPTKEY} };" > \
@@ -54,15 +46,15 @@ do-build:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 post-build:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g" \
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/extensions
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/php_screw.so \
-		${PREFIX}/lib/php/extensions
+		${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/tools/screw ${PREFIX}/bin
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,2 +1,3 @@
 bin/screw
-lib/php/extensions/php_screw.so
+lib/php/%%PHP_EXT_DIR%%/php_screw.so
+@unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2>/dev/null || true
