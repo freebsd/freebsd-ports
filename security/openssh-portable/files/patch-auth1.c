@@ -1,6 +1,6 @@
---- auth1.c.orig	Tue Sep  2 23:32:46 2003
-+++ auth1.c	Tue Sep 16 20:05:44 2003
-@@ -26,6 +26,7 @@
+--- auth1.c.orig	Thu Aug 12 14:40:25 2004
++++ auth1.c	Tue Aug 17 05:40:29 2004
+@@ -25,6 +25,7 @@
  #include "session.h"
  #include "uidswap.h"
  #include "monitor_wrap.h"
@@ -8,10 +8,10 @@
  
  /* import */
  extern ServerOptions options;
-@@ -71,6 +72,18 @@
+@@ -69,6 +70,18 @@
+ 	u_int dlen;
  	u_int ulen;
  	int prev, type = 0;
- 	struct passwd *pw = authctxt->pw;
 +#ifdef HAVE_LOGIN_CAP
 +	login_cap_t *lc;
 +#endif
@@ -26,25 +26,25 @@
 +#endif /* HAVE_LOGIN_CAP || LOGIN_ACCESS */
  
  	debug("Attempting authentication for %s%.100s.",
- 	    authctxt->valid ? "" : "illegal user ", authctxt->user);
-@@ -214,6 +227,34 @@
+ 	    authctxt->valid ? "" : "invalid user ", authctxt->user);
+@@ -217,6 +230,34 @@
  			logit("Unknown message during authentication: type %d", type);
  			break;
  		}
 +
 +#ifdef HAVE_LOGIN_CAP
-+		if (pw != NULL) {
-+		  lc = login_getpwclass(pw);
++		if (authctxt->pw != NULL) {
++		  lc = login_getpwclass(authctxt->pw);
 +		  if (lc == NULL)
-+			lc = login_getclassbyname(NULL, pw);
++			lc = login_getclassbyname(NULL, authctxt->pw);
 +		  if (!auth_hostok(lc, from_host, from_ip)) {
 +			logit("Denied connection for %.200s from %.200s [%.200s].",
-+		      pw->pw_name, from_host, from_ip);
++		      authctxt->pw->pw_name, from_host, from_ip);
 +			packet_disconnect("Sorry, you are not allowed to connect.");
 +		  }
 +		  if (!auth_timeok(lc, time(NULL))) {
 +			logit("LOGIN %.200s REFUSED (TIME) FROM %.200s",
-+		      pw->pw_name, from_host);
++		      authctxt->pw->pw_name, from_host);
 +			packet_disconnect("Logins not available right now.");
 +		  }
 +		  login_close(lc);
@@ -52,9 +52,9 @@
 +		}
 +#endif  /* HAVE_LOGIN_CAP */
 +#ifdef LOGIN_ACCESS
-+		if (pw != NULL && !login_access(pw->pw_name, from_host)) {
++		if (authctxt->pw != NULL && !login_access(authctxt->pw->pw_name, from_host)) {
 +		  logit("Denied connection for %.200s from %.200s [%.200s].",
-+		      pw->pw_name, from_host, from_ip);
++		      authctxt->pw->pw_name, from_host, from_ip);
 +		  packet_disconnect("Sorry, you are not allowed to connect.");
 +		}
 +#endif /* LOGIN_ACCESS */

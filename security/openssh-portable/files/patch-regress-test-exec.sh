@@ -1,11 +1,11 @@
---- regress/test-exec.sh.orig	Fri Sep 12 07:32:17 2003
-+++ regress/test-exec.sh	Tue Sep 16 19:56:13 2003
-@@ -163,6 +163,8 @@
- 	AuthorizedKeysFile	$OBJ/authorized_keys_%u
- 	LogLevel		QUIET
- 	StrictModes		no
+--- regress/test-exec.sh.orig	Fri Jun 25 05:46:09 2004
++++ regress/test-exec.sh	Tue Aug 17 05:27:49 2004
+@@ -178,6 +178,8 @@
+ 	AcceptEnv		_XXX_TEST_*
+ 	AcceptEnv		_XXX_TEST
+ 	Subsystem	sftp	$SFTPSERVER
 +	PermitRootLogin		yes
 +	UsePrivilegeSeparation	no
  EOF
  
- # server config for proxy connects
+ if [ ! -z "$TEST_SSH_SSHD_CONFOPTS" ]; then
