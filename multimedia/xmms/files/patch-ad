@@ -1,5 +1,5 @@
 --- configure.orig	Mon Jun 12 17:06:00 2000
-+++ configure	Fri Jun 16 07:01:32 2000
++++ configure	Fri Jun 16 16:44:02 2000
 @@ -3287,14 +3287,14 @@
  
  fi
@@ -36,7 +36,15 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7117,7 +7117,7 @@
+@@ -7110,14 +7110,14 @@
+ 
+ if test -n "$GCC"
+ then
+-	CFLAGS="$CFLAGS -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math"
++	CFLAGS="$CFLAGS -fomit-frame-pointer -finline-functions -ffast-math"
+ fi
+ 
+ arch_type=other
  ARCH_DEFINES=""
  case "$host" in 
  	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
