@@ -1,0 +1,11 @@
+--- bin/Makefile.orig	Thu May  8 18:40:57 1997
++++ bin/Makefile	Sat Jul 26 22:01:27 1997
+@@ -160,7 +160,7 @@
+ # can also build other versions of the Amulet library: optimized/static/combo
+ #
+ 
+-AS_DEVELOP = OP="$(AM_DEVELOP)" LIB_MODIFIER=""
++AS_DEVELOP = OP="$(AM_NODEBUGSYM)" LIB_MODIFIER=""
+ AS_RELEASE = OP="$(AM_RELEASE)" LIB_MODIFIER=-release
+ AS_INHOUSE = OP="$(AM_INHOUSE)" LIB_MODIFIER=-inhouse
+ AS_STATIC =  LIB_MAKE="$(AM_STATIC_LIB_MAKE)"

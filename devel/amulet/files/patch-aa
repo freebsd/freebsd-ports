@@ -1,0 +1,61 @@
+--- bin/Makefile.lib.gcc.shared.orig	Mon Jun 23 07:37:02 1997
++++ bin/Makefile.lib.gcc.shared	Tue Oct 13 19:59:34 1998
+@@ -15,8 +15,11 @@
+ ORE_LIB=$(LIB_DIR)/$(ORE_lib).so
+ AMULET_LIB=$(LIB_DIR)/$(AMULET_lib).so
+ 
++.if $(PORTOBJFORMAT) == "elf"
++V=$(AM_MAJOR_VERSION)
++.else
+ V=$(AM_MAJOR_VERSION).$(AM_MINOR_VERSION)
+-
++.endif
+ 
+ BAD_VERSION=gcc version 2\.[56]\.[0-9]
+ 
+@@ -27,6 +30,7 @@
+ echo "*** or upgrade to gcc 2.7.0 or later." ; \
+ echo "" ; false ; \
+ } fi
++	@touch check_gcc_version
+ 
+ FULL_AMULET_DEPENDENCIES = \
+     $(OPAL_MODULE) $(INTER_MODULE) $(DEBUG_MODULE)   \
+@@ -49,26 +53,23 @@
+ $(AMULET_LIB):: $(AMULET_LIB_DEPENDENCIES)
+ 	$(SHARED_CC) $(AM_CFLAGS) $(FULL_AMULET_DEPENDENCIES) \
+ 	  -o $(LIB_DIR)/$(AMULET_lib).so.$(V)
+-	cd $(LIB_DIR); for p in $(AMULET_lib).sl $(AMULET_lib).so ; \
+-		do rm -f $$p ; ln -s $(AMULET_lib).so.$(V) $$p ; done
++	ln -sf $(AMULET_lib).so.$(V) $(AMULET_LIB)
++	touch $(AMULET_LIB)
+ 
+ $(GEM_LIB): $(GEM_LIB_DEPENDENCIES)
+ 	$(SHARED_CC) $(AM_CFLAGS) $(FULL_GEM_DEPENDENCIES) \
+ 	  -o $(LIB_DIR)/$(GEM_lib).so.$(V)
+-	cd $(LIB_DIR); for p in $(GEM_lib).sl $(GEM_lib).so ; \
+-		do rm -f $$p ; ln -s $(GEM_lib).so.$(V) $$p ; done
++	touch $(GEM_LIB)
+ 
+ $(ORE_LIB): $(ORE_LIB_DEPENDENCIES)
+ 	$(SHARED_CC) $(AM_CFLAGS) $(FULL_ORE_DEPENDENCIES) \
+ 	  -o $(LIB_DIR)/$(ORE_lib).so.$(V)
+-	cd $(LIB_DIR); for p in $(ORE_lib).sl $(ORE_lib).so ; \
+-		do rm -f $$p ; ln -s $(ORE_lib).so.$(V) $$p ; done
++	touch $(ORE_LIB)
+ 
+ $(UTILS_LIB): $(UTILS_LIB_DEPENDENCIES)
+ 	$(SHARED_CC) $(AM_CFLAGS) $(FULL_UTILS_DEPENDENCIES) \
+ 	  -o $(LIB_DIR)/$(UTILS_lib).so.$(V)
+-	cd $(LIB_DIR); for p in $(UTILS_lib).sl $(UTILS_lib).so ; \
+-		do rm -f $$p ; ln -s $(UTILS_lib).so.$(V) $$p ; done
++	touch $(UTILS_LIB)
+ 
+ 
+ # Use these declarations to compile tests against monolithic shared libs.
+@@ -91,4 +92,4 @@
+ # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+ 
+ .cc.o:
+-	$(CC) $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) -fpic -c $< -o $@
