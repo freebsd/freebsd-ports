@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-25
+SNAPDATE=	2002-04-02
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb
@@ -16,7 +16,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 #MASTER_SITE_SUBDIR=	gdb/releases
 MASTER_SITE_SUBDIR=	gdb/snapshots/branch
-DISTNAME=	gdb+dejagnu-5.1.90_${SNAPVER} # gdb+dejagnu-weekly-5.1.90_${SNAPVER}
+DISTNAME=	gdb+dejagnu-weekly-5.1.90_${SNAPVER}
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=52
+WRKSRC=		${WRKDIR}/gdb+dejagnu-5.1.90_${SNAPVER}
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect sim tcl texinfo
