@@ -7,42 +7,41 @@
 #
 
 PORTNAME=	bobot++
-PORTVERSION=	1.97
+PORTVERSION=	1.99.2
 CATEGORIES=	irc
-MASTER_SITES=	http://pltplp.net/bobot++/archive/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://savannah.nongnu.org/download/bobotpp/stable.pkg/${PORTVERSION}/
+DISTNAME=	Bobot++-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC bot written in C++
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(WITH_GUILE)
+.if defined(WITHOUT_GUILE)
+CONFIGURE_ARGS+=	--disable-script
+.else
 LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
-GUILE_CONFIG=	${LOCALBASE}/bin/guile-config
 CONFIGURE_ARGS+=	--enable-script
 .endif
 
 .if defined(WITH_TELNET)
 CONFIGURE_ARGS+=	--enable-telnetserver
+.else
+CONFIGURE_ARGS+=	--disable-telnetserver
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%GUILE_CONFIG%%,${GUILE_CONFIG},g ; \
-		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},g ; \
-		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" ${WRKSRC}/configure
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bobot++ ${PREFIX}/bin
+post-extract:
+	@${FIND} ${WRKSRC}/scripts -name "*~" -delete
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
 	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/examples ${DATADIR}
 	${CP} -R ${WRKSRC}/scripts ${DATADIR}
 .endif
 
