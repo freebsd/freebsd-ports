@@ -25,298 +25,7 @@ share/apps/kabalone/toolbar/ab-stop.xpm
 share/apps/kabalone/toolbar/help.xpm
 share/apps/kabalone/toolbar/hint.xpm
 share/apps/kabalone/toolbar/undo.xpm
-share/apps/kasteroids/sprites/.pbm
 share/apps/kasteroids/sprites/bg.ppm
-share/apps/kasteroids/sprites/bits/bits0.pbm
-share/apps/kasteroids/sprites/bits/bits0.ppm
-share/apps/kasteroids/sprites/bits/bits1.pbm
-share/apps/kasteroids/sprites/bits/bits1.ppm
-share/apps/kasteroids/sprites/bits/bits10.pbm
-share/apps/kasteroids/sprites/bits/bits10.ppm
-share/apps/kasteroids/sprites/bits/bits11.pbm
-share/apps/kasteroids/sprites/bits/bits11.ppm
-share/apps/kasteroids/sprites/bits/bits12.pbm
-share/apps/kasteroids/sprites/bits/bits12.ppm
-share/apps/kasteroids/sprites/bits/bits13.pbm
-share/apps/kasteroids/sprites/bits/bits13.ppm
-share/apps/kasteroids/sprites/bits/bits14.pbm
-share/apps/kasteroids/sprites/bits/bits14.ppm
-share/apps/kasteroids/sprites/bits/bits15.pbm
-share/apps/kasteroids/sprites/bits/bits15.ppm
-share/apps/kasteroids/sprites/bits/bits2.pbm
-share/apps/kasteroids/sprites/bits/bits2.ppm
-share/apps/kasteroids/sprites/bits/bits3.pbm
-share/apps/kasteroids/sprites/bits/bits3.ppm
-share/apps/kasteroids/sprites/bits/bits4.pbm
-share/apps/kasteroids/sprites/bits/bits4.ppm
-share/apps/kasteroids/sprites/bits/bits5.pbm
-share/apps/kasteroids/sprites/bits/bits5.ppm
-share/apps/kasteroids/sprites/bits/bits6.pbm
-share/apps/kasteroids/sprites/bits/bits6.ppm
-share/apps/kasteroids/sprites/bits/bits7.pbm
-share/apps/kasteroids/sprites/bits/bits7.ppm
-share/apps/kasteroids/sprites/bits/bits8.pbm
-share/apps/kasteroids/sprites/bits/bits8.ppm
-share/apps/kasteroids/sprites/bits/bits9.pbm
-share/apps/kasteroids/sprites/bits/bits9.ppm
-share/apps/kasteroids/sprites/missile/missile0.pbm
-share/apps/kasteroids/sprites/missile/missile0.ppm
-share/apps/kasteroids/sprites/rock1/rock1-0.pbm
-share/apps/kasteroids/sprites/rock1/rock1-0.ppm
-share/apps/kasteroids/sprites/rock1/rock1-1.pbm
-share/apps/kasteroids/sprites/rock1/rock1-1.ppm
-share/apps/kasteroids/sprites/rock1/rock1-10.pbm
-share/apps/kasteroids/sprites/rock1/rock1-10.ppm
-share/apps/kasteroids/sprites/rock1/rock1-11.pbm
-share/apps/kasteroids/sprites/rock1/rock1-11.ppm
-share/apps/kasteroids/sprites/rock1/rock1-12.pbm
-share/apps/kasteroids/sprites/rock1/rock1-12.ppm
-share/apps/kasteroids/sprites/rock1/rock1-13.pbm
-share/apps/kasteroids/sprites/rock1/rock1-13.ppm
-share/apps/kasteroids/sprites/rock1/rock1-14.pbm
-share/apps/kasteroids/sprites/rock1/rock1-14.ppm
-share/apps/kasteroids/sprites/rock1/rock1-15.pbm
-share/apps/kasteroids/sprites/rock1/rock1-15.ppm
-share/apps/kasteroids/sprites/rock1/rock1-16.pbm
-share/apps/kasteroids/sprites/rock1/rock1-16.ppm
-share/apps/kasteroids/sprites/rock1/rock1-17.pbm
-share/apps/kasteroids/sprites/rock1/rock1-17.ppm
-share/apps/kasteroids/sprites/rock1/rock1-18.pbm
-share/apps/kasteroids/sprites/rock1/rock1-18.ppm
-share/apps/kasteroids/sprites/rock1/rock1-19.pbm
-share/apps/kasteroids/sprites/rock1/rock1-19.ppm
-share/apps/kasteroids/sprites/rock1/rock1-2.pbm
-share/apps/kasteroids/sprites/rock1/rock1-2.ppm
-share/apps/kasteroids/sprites/rock1/rock1-20.pbm
-share/apps/kasteroids/sprites/rock1/rock1-20.ppm
-share/apps/kasteroids/sprites/rock1/rock1-21.pbm
-share/apps/kasteroids/sprites/rock1/rock1-21.ppm
-share/apps/kasteroids/sprites/rock1/rock1-22.pbm
-share/apps/kasteroids/sprites/rock1/rock1-22.ppm
-share/apps/kasteroids/sprites/rock1/rock1-23.pbm
-share/apps/kasteroids/sprites/rock1/rock1-23.ppm
-share/apps/kasteroids/sprites/rock1/rock1-24.pbm
-share/apps/kasteroids/sprites/rock1/rock1-24.ppm
-share/apps/kasteroids/sprites/rock1/rock1-25.pbm
-share/apps/kasteroids/sprites/rock1/rock1-25.ppm
-share/apps/kasteroids/sprites/rock1/rock1-26.pbm
-share/apps/kasteroids/sprites/rock1/rock1-26.ppm
-share/apps/kasteroids/sprites/rock1/rock1-27.pbm
-share/apps/kasteroids/sprites/rock1/rock1-27.ppm
-share/apps/kasteroids/sprites/rock1/rock1-28.pbm
-share/apps/kasteroids/sprites/rock1/rock1-28.ppm
-share/apps/kasteroids/sprites/rock1/rock1-29.pbm
-share/apps/kasteroids/sprites/rock1/rock1-29.ppm
-share/apps/kasteroids/sprites/rock1/rock1-3.pbm
-share/apps/kasteroids/sprites/rock1/rock1-3.ppm
-share/apps/kasteroids/sprites/rock1/rock1-30.pbm
-share/apps/kasteroids/sprites/rock1/rock1-30.ppm
-share/apps/kasteroids/sprites/rock1/rock1-31.pbm
-share/apps/kasteroids/sprites/rock1/rock1-31.ppm
-share/apps/kasteroids/sprites/rock1/rock1-4.pbm
-share/apps/kasteroids/sprites/rock1/rock1-4.ppm
-share/apps/kasteroids/sprites/rock1/rock1-5.pbm
-share/apps/kasteroids/sprites/rock1/rock1-5.ppm
-share/apps/kasteroids/sprites/rock1/rock1-6.pbm
-share/apps/kasteroids/sprites/rock1/rock1-6.ppm
-share/apps/kasteroids/sprites/rock1/rock1-7.pbm
-share/apps/kasteroids/sprites/rock1/rock1-7.ppm
-share/apps/kasteroids/sprites/rock1/rock1-8.pbm
-share/apps/kasteroids/sprites/rock1/rock1-8.ppm
-share/apps/kasteroids/sprites/rock1/rock1-9.pbm
-share/apps/kasteroids/sprites/rock1/rock1-9.ppm
-share/apps/kasteroids/sprites/rock2/rock2-0.pbm
-share/apps/kasteroids/sprites/rock2/rock2-0.ppm
-share/apps/kasteroids/sprites/rock2/rock2-1.pbm
-share/apps/kasteroids/sprites/rock2/rock2-1.ppm
-share/apps/kasteroids/sprites/rock2/rock2-10.pbm
-share/apps/kasteroids/sprites/rock2/rock2-10.ppm
-share/apps/kasteroids/sprites/rock2/rock2-11.pbm
-share/apps/kasteroids/sprites/rock2/rock2-11.ppm
-share/apps/kasteroids/sprites/rock2/rock2-12.pbm
-share/apps/kasteroids/sprites/rock2/rock2-12.ppm
-share/apps/kasteroids/sprites/rock2/rock2-13.pbm
-share/apps/kasteroids/sprites/rock2/rock2-13.ppm
-share/apps/kasteroids/sprites/rock2/rock2-14.pbm
-share/apps/kasteroids/sprites/rock2/rock2-14.ppm
-share/apps/kasteroids/sprites/rock2/rock2-15.pbm
-share/apps/kasteroids/sprites/rock2/rock2-15.ppm
-share/apps/kasteroids/sprites/rock2/rock2-16.pbm
-share/apps/kasteroids/sprites/rock2/rock2-16.ppm
-share/apps/kasteroids/sprites/rock2/rock2-17.pbm
-share/apps/kasteroids/sprites/rock2/rock2-17.ppm
-share/apps/kasteroids/sprites/rock2/rock2-18.pbm
-share/apps/kasteroids/sprites/rock2/rock2-18.ppm
-share/apps/kasteroids/sprites/rock2/rock2-19.pbm
-share/apps/kasteroids/sprites/rock2/rock2-19.ppm
-share/apps/kasteroids/sprites/rock2/rock2-2.pbm
-share/apps/kasteroids/sprites/rock2/rock2-2.ppm
-share/apps/kasteroids/sprites/rock2/rock2-20.pbm
-share/apps/kasteroids/sprites/rock2/rock2-20.ppm
-share/apps/kasteroids/sprites/rock2/rock2-21.pbm
-share/apps/kasteroids/sprites/rock2/rock2-21.ppm
-share/apps/kasteroids/sprites/rock2/rock2-22.pbm
-share/apps/kasteroids/sprites/rock2/rock2-22.ppm
-share/apps/kasteroids/sprites/rock2/rock2-23.pbm
-share/apps/kasteroids/sprites/rock2/rock2-23.ppm
-share/apps/kasteroids/sprites/rock2/rock2-24.pbm
-share/apps/kasteroids/sprites/rock2/rock2-24.ppm
-share/apps/kasteroids/sprites/rock2/rock2-25.pbm
-share/apps/kasteroids/sprites/rock2/rock2-25.ppm
-share/apps/kasteroids/sprites/rock2/rock2-26.pbm
-share/apps/kasteroids/sprites/rock2/rock2-26.ppm
-share/apps/kasteroids/sprites/rock2/rock2-27.pbm
-share/apps/kasteroids/sprites/rock2/rock2-27.ppm
-share/apps/kasteroids/sprites/rock2/rock2-28.pbm
-share/apps/kasteroids/sprites/rock2/rock2-28.ppm
-share/apps/kasteroids/sprites/rock2/rock2-29.pbm
-share/apps/kasteroids/sprites/rock2/rock2-29.ppm
-share/apps/kasteroids/sprites/rock2/rock2-3.pbm
-share/apps/kasteroids/sprites/rock2/rock2-3.ppm
-share/apps/kasteroids/sprites/rock2/rock2-30.pbm
-share/apps/kasteroids/sprites/rock2/rock2-30.ppm
-share/apps/kasteroids/sprites/rock2/rock2-31.pbm
-share/apps/kasteroids/sprites/rock2/rock2-31.ppm
-share/apps/kasteroids/sprites/rock2/rock2-4.pbm
-share/apps/kasteroids/sprites/rock2/rock2-4.ppm
-share/apps/kasteroids/sprites/rock2/rock2-5.pbm
-share/apps/kasteroids/sprites/rock2/rock2-5.ppm
-share/apps/kasteroids/sprites/rock2/rock2-6.pbm
-share/apps/kasteroids/sprites/rock2/rock2-6.ppm
-share/apps/kasteroids/sprites/rock2/rock2-7.pbm
-share/apps/kasteroids/sprites/rock2/rock2-7.ppm
-share/apps/kasteroids/sprites/rock2/rock2-8.pbm
-share/apps/kasteroids/sprites/rock2/rock2-8.ppm
-share/apps/kasteroids/sprites/rock2/rock2-9.pbm
-share/apps/kasteroids/sprites/rock2/rock2-9.ppm
-share/apps/kasteroids/sprites/rock3/rock3-0.pbm
-share/apps/kasteroids/sprites/rock3/rock3-0.ppm
-share/apps/kasteroids/sprites/rock3/rock3-1.pbm
-share/apps/kasteroids/sprites/rock3/rock3-1.ppm
-share/apps/kasteroids/sprites/rock3/rock3-10.pbm
-share/apps/kasteroids/sprites/rock3/rock3-10.ppm
-share/apps/kasteroids/sprites/rock3/rock3-11.pbm
-share/apps/kasteroids/sprites/rock3/rock3-11.ppm
-share/apps/kasteroids/sprites/rock3/rock3-12.pbm
-share/apps/kasteroids/sprites/rock3/rock3-12.ppm
-share/apps/kasteroids/sprites/rock3/rock3-13.pbm
-share/apps/kasteroids/sprites/rock3/rock3-13.ppm
-share/apps/kasteroids/sprites/rock3/rock3-14.pbm
-share/apps/kasteroids/sprites/rock3/rock3-14.ppm
-share/apps/kasteroids/sprites/rock3/rock3-15.pbm
-share/apps/kasteroids/sprites/rock3/rock3-15.ppm
-share/apps/kasteroids/sprites/rock3/rock3-16.pbm
-share/apps/kasteroids/sprites/rock3/rock3-16.ppm
-share/apps/kasteroids/sprites/rock3/rock3-17.pbm
-share/apps/kasteroids/sprites/rock3/rock3-17.ppm
-share/apps/kasteroids/sprites/rock3/rock3-18.pbm
-share/apps/kasteroids/sprites/rock3/rock3-18.ppm
-share/apps/kasteroids/sprites/rock3/rock3-19.pbm
-share/apps/kasteroids/sprites/rock3/rock3-19.ppm
-share/apps/kasteroids/sprites/rock3/rock3-2.pbm
-share/apps/kasteroids/sprites/rock3/rock3-2.ppm
-share/apps/kasteroids/sprites/rock3/rock3-20.pbm
-share/apps/kasteroids/sprites/rock3/rock3-20.ppm
-share/apps/kasteroids/sprites/rock3/rock3-21.pbm
-share/apps/kasteroids/sprites/rock3/rock3-21.ppm
-share/apps/kasteroids/sprites/rock3/rock3-22.pbm
-share/apps/kasteroids/sprites/rock3/rock3-22.ppm
-share/apps/kasteroids/sprites/rock3/rock3-23.pbm
-share/apps/kasteroids/sprites/rock3/rock3-23.ppm
-share/apps/kasteroids/sprites/rock3/rock3-24.pbm
-share/apps/kasteroids/sprites/rock3/rock3-24.ppm
-share/apps/kasteroids/sprites/rock3/rock3-25.pbm
-share/apps/kasteroids/sprites/rock3/rock3-25.ppm
-share/apps/kasteroids/sprites/rock3/rock3-26.pbm
-share/apps/kasteroids/sprites/rock3/rock3-26.ppm
-share/apps/kasteroids/sprites/rock3/rock3-27.pbm
-share/apps/kasteroids/sprites/rock3/rock3-27.ppm
-share/apps/kasteroids/sprites/rock3/rock3-28.pbm
-share/apps/kasteroids/sprites/rock3/rock3-28.ppm
-share/apps/kasteroids/sprites/rock3/rock3-29.pbm
-share/apps/kasteroids/sprites/rock3/rock3-29.ppm
-share/apps/kasteroids/sprites/rock3/rock3-3.pbm
-share/apps/kasteroids/sprites/rock3/rock3-3.ppm
-share/apps/kasteroids/sprites/rock3/rock3-30.pbm
-share/apps/kasteroids/sprites/rock3/rock3-30.ppm
-share/apps/kasteroids/sprites/rock3/rock3-31.pbm
-share/apps/kasteroids/sprites/rock3/rock3-31.ppm
-share/apps/kasteroids/sprites/rock3/rock3-4.pbm
-share/apps/kasteroids/sprites/rock3/rock3-4.ppm
-share/apps/kasteroids/sprites/rock3/rock3-5.pbm
-share/apps/kasteroids/sprites/rock3/rock3-5.ppm
-share/apps/kasteroids/sprites/rock3/rock3-6.pbm
-share/apps/kasteroids/sprites/rock3/rock3-6.ppm
-share/apps/kasteroids/sprites/rock3/rock3-7.pbm
-share/apps/kasteroids/sprites/rock3/rock3-7.ppm
-share/apps/kasteroids/sprites/rock3/rock3-8.pbm
-share/apps/kasteroids/sprites/rock3/rock3-8.ppm
-share/apps/kasteroids/sprites/rock3/rock3-9.pbm
-share/apps/kasteroids/sprites/rock3/rock3-9.ppm
-share/apps/kasteroids/sprites/ship/ship0.pbm
-share/apps/kasteroids/sprites/ship/ship0.ppm
-share/apps/kasteroids/sprites/ship/ship1.pbm
-share/apps/kasteroids/sprites/ship/ship1.ppm
-share/apps/kasteroids/sprites/ship/ship10.pbm
-share/apps/kasteroids/sprites/ship/ship10.ppm
-share/apps/kasteroids/sprites/ship/ship11.pbm
-share/apps/kasteroids/sprites/ship/ship11.ppm
-share/apps/kasteroids/sprites/ship/ship12.pbm
-share/apps/kasteroids/sprites/ship/ship12.ppm
-share/apps/kasteroids/sprites/ship/ship13.pbm
-share/apps/kasteroids/sprites/ship/ship13.ppm
-share/apps/kasteroids/sprites/ship/ship14.pbm
-share/apps/kasteroids/sprites/ship/ship14.ppm
-share/apps/kasteroids/sprites/ship/ship15.pbm
-share/apps/kasteroids/sprites/ship/ship15.ppm
-share/apps/kasteroids/sprites/ship/ship16.pbm
-share/apps/kasteroids/sprites/ship/ship16.ppm
-share/apps/kasteroids/sprites/ship/ship17.pbm
-share/apps/kasteroids/sprites/ship/ship17.ppm
-share/apps/kasteroids/sprites/ship/ship18.pbm
-share/apps/kasteroids/sprites/ship/ship18.ppm
-share/apps/kasteroids/sprites/ship/ship19.pbm
-share/apps/kasteroids/sprites/ship/ship19.ppm
-share/apps/kasteroids/sprites/ship/ship2.pbm
-share/apps/kasteroids/sprites/ship/ship2.ppm
-share/apps/kasteroids/sprites/ship/ship20.pbm
-share/apps/kasteroids/sprites/ship/ship20.ppm
-share/apps/kasteroids/sprites/ship/ship21.pbm
-share/apps/kasteroids/sprites/ship/ship21.ppm
-share/apps/kasteroids/sprites/ship/ship22.pbm
-share/apps/kasteroids/sprites/ship/ship22.ppm
-share/apps/kasteroids/sprites/ship/ship23.pbm
-share/apps/kasteroids/sprites/ship/ship23.ppm
-share/apps/kasteroids/sprites/ship/ship24.pbm
-share/apps/kasteroids/sprites/ship/ship24.ppm
-share/apps/kasteroids/sprites/ship/ship25.pbm
-share/apps/kasteroids/sprites/ship/ship25.ppm
-share/apps/kasteroids/sprites/ship/ship26.pbm
-share/apps/kasteroids/sprites/ship/ship26.ppm
-share/apps/kasteroids/sprites/ship/ship27.pbm
-share/apps/kasteroids/sprites/ship/ship27.ppm
-share/apps/kasteroids/sprites/ship/ship28.pbm
-share/apps/kasteroids/sprites/ship/ship28.ppm
-share/apps/kasteroids/sprites/ship/ship29.pbm
-share/apps/kasteroids/sprites/ship/ship29.ppm
-share/apps/kasteroids/sprites/ship/ship3.pbm
-share/apps/kasteroids/sprites/ship/ship3.ppm
-share/apps/kasteroids/sprites/ship/ship30.pbm
-share/apps/kasteroids/sprites/ship/ship30.ppm
-share/apps/kasteroids/sprites/ship/ship31.pbm
-share/apps/kasteroids/sprites/ship/ship31.ppm
-share/apps/kasteroids/sprites/ship/ship4.pbm
-share/apps/kasteroids/sprites/ship/ship4.ppm
-share/apps/kasteroids/sprites/ship/ship5.pbm
-share/apps/kasteroids/sprites/ship/ship5.ppm
-share/apps/kasteroids/sprites/ship/ship6.pbm
-share/apps/kasteroids/sprites/ship/ship6.ppm
-share/apps/kasteroids/sprites/ship/ship7.pbm
-share/apps/kasteroids/sprites/ship/ship7.ppm
-share/apps/kasteroids/sprites/ship/ship8.pbm
-share/apps/kasteroids/sprites/ship/ship8.ppm
-share/apps/kasteroids/sprites/ship/ship9.pbm
-share/apps/kasteroids/sprites/ship/ship9.ppm
 share/apps/kmahjongg/pics/kmahjongg.bmp
 share/apps/kmahjongg/pics/kmahjongg_bgnd.bmp
 share/apps/kpat/pics/1.bmp
@@ -456,10 +165,8 @@ share/apps/kreversi/pics/zoomout.xpm
 share/apps/kreversi/sounds/click.wav
 share/apps/kreversi/sounds/lost.wav
 share/apps/kreversi/sounds/won.wav
-share/apps/ksame/pics/stones.bmp
-share/apps/ksame/pics/stones2000.bmp
-share/apps/ksame/pics/stones2000_mask.bmp
-share/apps/ksame/pics/stones_mask.bmp
+share/apps/ksame/pics/stones.gif
+share/apps/ksame/pics/stones_mask.gif
 share/apps/kshisen/pics/kshisen.xpm
 share/apps/kshisen/pics/kshisen_bgnd.xpm
 share/apps/ksnake/backgrounds/Bark.xpm
@@ -525,6 +232,7 @@ share/doc/HTML/en/kmahjongg/index.html
 share/doc/HTML/en/kmahjongg/logotp3.gif
 share/doc/HTML/en/kmines/index-1.html
 share/doc/HTML/en/kmines/index-2.html
+share/doc/HTML/en/kmines/index-3.html
 share/doc/HTML/en/kmines/index.html
 share/doc/HTML/en/kmines/logotp3.gif
 share/doc/HTML/en/kpat/index-1.html
@@ -561,6 +269,8 @@ share/doc/HTML/en/ksnake/index.html
 share/doc/HTML/en/ksnake/logotp3.gif
 share/doc/HTML/en/ktetris/index-1.html
 share/doc/HTML/en/ktetris/index-2.html
+share/doc/HTML/en/ktetris/index-3.html
+share/doc/HTML/en/ktetris/index-4.html
 share/doc/HTML/en/ktetris/index.html
 share/doc/HTML/en/ktetris/logotp3.gif
 share/icons/kabalone.xpm
@@ -593,7 +303,9 @@ share/locale/cs/LC_MESSAGES/kmines.mo
 share/locale/cs/LC_MESSAGES/kpat.mo
 share/locale/cs/LC_MESSAGES/kpoker.mo
 share/locale/cs/LC_MESSAGES/kreversi.mo
+share/locale/cs/LC_MESSAGES/ksame.mo
 share/locale/cs/LC_MESSAGES/kshisen.mo
+share/locale/cs/LC_MESSAGES/ksnake.mo
 share/locale/cs/LC_MESSAGES/ktetris.mo
 share/locale/de/LC_MESSAGES/kabalone.mo
 share/locale/de/LC_MESSAGES/kasteroids.mo
@@ -602,7 +314,12 @@ share/locale/de/LC_MESSAGES/kmines.mo
 share/locale/de/LC_MESSAGES/kpat.mo
 share/locale/de/LC_MESSAGES/kpoker.mo
 share/locale/de/LC_MESSAGES/kreversi.mo
+share/locale/de/LC_MESSAGES/ksame.mo
 share/locale/de/LC_MESSAGES/kshisen.mo
+share/locale/de/LC_MESSAGES/ktetris.mo
+share/locale/el/LC_MESSAGES/kmahjongg.mo
+share/locale/el/LC_MESSAGES/kpat.mo
+share/locale/el/LC_MESSAGES/kreversi.mo
 share/locale/es/LC_MESSAGES/kabalone.mo
 share/locale/es/LC_MESSAGES/kasteroids.mo
 share/locale/es/LC_MESSAGES/kmines.mo
@@ -618,7 +335,9 @@ share/locale/fi/LC_MESSAGES/kmines.mo
 share/locale/fi/LC_MESSAGES/kpat.mo
 share/locale/fi/LC_MESSAGES/kpoker.mo
 share/locale/fi/LC_MESSAGES/kreversi.mo
+share/locale/fi/LC_MESSAGES/ksame.mo
 share/locale/fi/LC_MESSAGES/kshisen.mo
+share/locale/fi/LC_MESSAGES/ksnake.mo
 share/locale/fi/LC_MESSAGES/ktetris.mo
 share/locale/fr/LC_MESSAGES/kabalone.mo
 share/locale/fr/LC_MESSAGES/kasteroids.mo
@@ -640,6 +359,8 @@ share/locale/hu/LC_MESSAGES/kasteroids.mo
 share/locale/hu/LC_MESSAGES/kmines.mo
 share/locale/hu/LC_MESSAGES/kpat.mo
 share/locale/hu/LC_MESSAGES/kpoker.mo
+share/locale/hu/LC_MESSAGES/kreversi.mo
+share/locale/hu/LC_MESSAGES/kshisen.mo
 share/locale/it/LC_MESSAGES/kabalone.mo
 share/locale/it/LC_MESSAGES/kasteroids.mo
 share/locale/it/LC_MESSAGES/kmahjongg.mo
@@ -648,6 +369,8 @@ share/locale/it/LC_MESSAGES/kpat.mo
 share/locale/it/LC_MESSAGES/kreversi.mo
 share/locale/it/LC_MESSAGES/kshisen.mo
 share/locale/it/LC_MESSAGES/ktetris.mo
+share/locale/mk/LC_MESSAGES/kabalone.mo
+share/locale/mk/LC_MESSAGES/kasteroids.mo
 share/locale/nl/LC_MESSAGES/kabalone.mo
 share/locale/nl/LC_MESSAGES/kasteroids.mo
 share/locale/nl/LC_MESSAGES/kmahjongg.mo
@@ -660,10 +383,13 @@ share/locale/nl/LC_MESSAGES/ktetris.mo
 share/locale/no/LC_MESSAGES/kabalone.mo
 share/locale/no/LC_MESSAGES/kasteroids.mo
 share/locale/no/LC_MESSAGES/kmahjongg.mo
+share/locale/no/LC_MESSAGES/kmines.mo
 share/locale/no/LC_MESSAGES/kpat.mo
 share/locale/no/LC_MESSAGES/kpoker.mo
 share/locale/no/LC_MESSAGES/kreversi.mo
+share/locale/no/LC_MESSAGES/ksame.mo
 share/locale/no/LC_MESSAGES/kshisen.mo
+share/locale/no/LC_MESSAGES/ksnake.mo
 share/locale/no/LC_MESSAGES/ktetris.mo
 share/locale/pl/LC_MESSAGES/kabalone.mo
 share/locale/pl/LC_MESSAGES/kasteroids.mo
@@ -680,15 +406,26 @@ share/locale/pt/LC_MESSAGES/kmines.mo
 share/locale/pt/LC_MESSAGES/kpat.mo
 share/locale/pt/LC_MESSAGES/kpoker.mo
 share/locale/pt/LC_MESSAGES/kreversi.mo
+share/locale/pt/LC_MESSAGES/ksame.mo
 share/locale/pt/LC_MESSAGES/kshisen.mo
+share/locale/pt/LC_MESSAGES/ksnake.mo
 share/locale/pt/LC_MESSAGES/ktetris.mo
+share/locale/pt_BR/LC_MESSAGES/kabalone.mo
+share/locale/pt_BR/LC_MESSAGES/kasteroids.mo
+share/locale/pt_BR/LC_MESSAGES/kmahjongg.mo
+share/locale/pt_BR/LC_MESSAGES/kmines.mo
+share/locale/pt_BR/LC_MESSAGES/kpat.mo
+share/locale/pt_BR/LC_MESSAGES/kpoker.mo
+share/locale/pt_BR/LC_MESSAGES/kreversi.mo
+share/locale/pt_BR/LC_MESSAGES/kshisen.mo
+share/locale/pt_BR/LC_MESSAGES/ktetris.mo
 share/locale/ro/LC_MESSAGES/kabalone.mo
 share/locale/ro/LC_MESSAGES/kasteroids.mo
 share/locale/ro/LC_MESSAGES/kmines.mo
 share/locale/ro/LC_MESSAGES/kpat.mo
 share/locale/ro/LC_MESSAGES/kpoker.mo
 share/locale/ro/LC_MESSAGES/kreversi.mo
-share/locale/ro/LC_MESSAGES/ktetris.po
+share/locale/ro/LC_MESSAGES/ktetris.mo
 share/locale/ru/LC_MESSAGES/kabalone.mo
 share/locale/ru/LC_MESSAGES/kasteroids.mo
 share/locale/sk/LC_MESSAGES/kabalone.mo
@@ -698,47 +435,30 @@ share/locale/sk/LC_MESSAGES/kmines.mo
 share/locale/sk/LC_MESSAGES/kpat.mo
 share/locale/sk/LC_MESSAGES/kpoker.mo
 share/locale/sk/LC_MESSAGES/kreversi.mo
+share/locale/sk/LC_MESSAGES/ksame.mo
 share/locale/sk/LC_MESSAGES/kshisen.mo
-share/locale/zh/LC_MESSAGES/kabalone.mo
-share/locale/zh/LC_MESSAGES/kasteroids.mo
-share/locale/zh/LC_MESSAGES/kmahjongg.mo
-share/locale/zh/LC_MESSAGES/kmines.mo
-share/locale/zh/LC_MESSAGES/kpat.mo
-share/locale/zh/LC_MESSAGES/kreversi.mo
-share/locale/zh/LC_MESSAGES/kshisen.mo
-share/locale/zh/LC_MESSAGES/ktetris.mo
-@dirrm share/locale/zh/LC_MESSAGES
-@dirrm share/locale/zh
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
+share/locale/sk/LC_MESSAGES/ksnake.mo
+share/locale/sk/LC_MESSAGES/ktetris.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kabalone.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kasteroids.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kmahjongg.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kmines.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kpat.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kpoker.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kreversi.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ksame.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kshisen.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ksnake.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ktetris.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kabalone.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kasteroids.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kmahjongg.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kmines.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kpat.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kpoker.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kreversi.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/kshisen.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/ktetris.mo
 @dirrm share/doc/HTML/en/ktetris
 @dirrm share/doc/HTML/en/ksnake
 @dirrm share/doc/HTML/en/kshisen
@@ -750,10 +470,7 @@ share/locale/zh/LC_MESSAGES/ktetris.mo
 @dirrm share/doc/HTML/en/kmahjongg
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/kabalone
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/kabalone
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
 @dirrm share/apps/ksnake/pics
 @dirrm share/apps/ksnake/levels
 @dirrm share/apps/ksnake/backgrounds
