@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c418d472-6bd1-11d9-93ca-000a95bc6fae">
+    <topic>perl -- File::Path insecure file/directory permissions</topic>
+    <affects>
+      <package>
+	<name>perl</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jeroen van Wolffelaar reports that the Perl module File::Path
+	  contains a race condition wherein traversed directories and files
+	  are temporarily made world-readable/writable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0452</cvename>
+      <url>http://www.debian.org/security/2004/dsa-620</url>
+      <url>http://xforce.iss.net/xforce/xfdb/18650</url>
+    </references>
+    <dates>
+      <discovery>2004-12-30</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e8c6ade2-6bcc-11d9-8e6f-000a95bc6fae">
     <topic>phpbb -- multiple vulnerabilities include XSS and SQL injection</topic>
     <affects>
