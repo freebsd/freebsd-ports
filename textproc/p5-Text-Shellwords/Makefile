@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Shellwords
-PORTVERSION=	1.02
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hartzell@fruitfly.org
 COMMENT=	This is a thin wrapper around the shellwords.pl package
-
-BROKEN=		Incomplete pkg-plist
 
 PERL_CONFIGURE=	yes
 
