@@ -56,12 +56,9 @@ while [ "$1" ]; do
 			echo "APACHE_PERF_TUNING=	YES"
 			;;
 		\"GD\")
-			echo "GD is DISABLED for now. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
 			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
 			echo "LIB_DEPENDS+=	ttf.4:\${PORTSDIR}/print/freetype"
-			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
+			echo "PHP_CONF_ARGS+=	--with-gd=shared,\${PREFIX}"
 			echo "PHP_CONF_ARGS+=	--with-ttf=\${PREFIX}"
 			;;
 		\"zlib\")
@@ -69,6 +66,9 @@ while [ "$1" ]; do
 			ZLIB=1
 			;;
 		\"mcrypt\")
+			echo "mhash is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "LIB_DEPENDS+=	mcrypt.2:\${PORTSDIR}/security/libmcrypt"
 			echo "PHP_CONF_ARGS+=	--with-mcrypt=\${PREFIX}"
 			;;
@@ -100,7 +100,7 @@ while [ "$1" ]; do
 			;;
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.6:\${PORTSDIR}/databases/mysql322-client"
-			echo "PHP_CONF_ARGS+=	--with-mysql=\${PREFIX}"
+			echo "PHP_CONF_ARGS+=	--with-mysql=shared,\${PREFIX}"
 			;;
 		\"PostgreSQL\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/pgsql/bin/psql:\${PORTSDIR}/databases/postgresql"
@@ -123,7 +123,7 @@ while [ "$1" ]; do
 			;;
 		\"SNMP\")
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
-			echo "PHP_CONF_ARGS+=	--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
+			echo "PHP_CONF_ARGS+=	--with-snmp=shared,\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
