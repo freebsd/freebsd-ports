@@ -27,6 +27,9 @@ lib/pstoedit/libp2edrvstd.so.0
 lib/pstoedit/libp2edrvswf.a
 lib/pstoedit/libp2edrvswf.so
 lib/pstoedit/libp2edrvswf.so.0
+lib/pstoedit/libp2edrvwmf.a
+lib/pstoedit/libp2edrvwmf.so
+lib/pstoedit/libp2edrvwmf.so.0
 libdata/pkgconfig/pstoedit.pc
 share/aclocal/pstoedit.m4
 %%PORTDOCS%%%%DOCSDIR%%/changelog.htm
