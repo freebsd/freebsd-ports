@@ -20,6 +20,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-autogen.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-compat.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-compat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-edebug.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-edebug.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-load.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-load.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/cedet-loaddefs.el
@@ -205,10 +207,14 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-grammar-wy.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-grammar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-grammar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-html.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-html.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ia-sb.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ia-sb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ia.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ia.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-idle.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-idle.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-imenu.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-imenu.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-lex.el
@@ -254,10 +260,10 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/senator.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/bison-wisent.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/bison-wisent.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/semantic-wisent.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/semantic-wisent.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-awk-wy.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-awk-wy.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-bovine.el
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-bovine.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-calc-wy.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-calc-wy.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-calc.el
@@ -274,8 +280,6 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-grammar-macros.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-grammar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-grammar.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-java-lex.el
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-java-lex.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-java-tags-wy.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-java-tags-wy.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent/wisent-java-tags.el

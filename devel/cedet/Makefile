@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cedet
-PORTVERSION=	1.0.b1.c
+PORTVERSION=	1.0.b2.b
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cedet
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/:S/.c/c/}
+DISTNAME=	${PORTNAME}-1.0beta2b
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Collection of Emacs Development Environment Tools
@@ -23,6 +23,7 @@ INFO=		cogre ede eieio semantic speedbar
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
 
 USE_GMAKE=	yes
+CONFLICTS=	eieio* semantic* speedbar*
 
 do-install:
 	${MKDIR} ${CEDET_LISPDIR}
