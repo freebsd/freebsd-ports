@@ -3,10 +3,10 @@
 # Date created:		15 January 1999
 # Whom:			nik
 #
-# $Id: Makefile,v 1.4 1999/02/28 21:46:11 asami Exp $
+# $Id: Makefile,v 1.5 1999/03/12 10:08:31 ache Exp $
 #
 
-DISTNAME=       sitecopy-0.4.5
+DISTNAME=       sitecopy-0.4.8
 CATEGORIES=	www
 MASTER_SITES=   http://www.lyra.org/sitecopy/
 
