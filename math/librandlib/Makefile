@@ -13,6 +13,7 @@ DISTNAME=	ranlib.c
 
 MAINTAINER=	tg@FreeBSD.org
 
+MAKE_ENV=	NOPROFILE=true
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .include <bsd.port.pre.mk>
