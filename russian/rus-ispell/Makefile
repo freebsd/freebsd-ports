@@ -7,7 +7,7 @@
 
 PORTNAME=	rus-ispell
 PORTVERSION=    0.99d9
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	russian textproc
 MASTER_SITES=   ftp://mch5.chem.msu.su/pub/russian/ispell/
 
@@ -16,7 +16,7 @@ MAINTAINER=	ache@FreeBSD.org
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 USE_GMAKE=      yes
-.if defined(RUS_ISPELL_WITH_YO)
+.if defined(RUS_ISPELL_WITH_YO_ONLY)
 MAKE_ARGS+=     YO=1
 .endif
 .if defined(RUS_ISPELL_LOCAL_DICT)
