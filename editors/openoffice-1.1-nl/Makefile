@@ -1,0 +1,15 @@
+# New ports collection makefile for:	OpenOffice 1.1 for Dutch language
+# Date created:		Sun Nov 9 09:02:27 JST 2003
+# Whom:		Martin Blapp <mbr@FreeBSD.org>, Mario Ferreira <lioux@FreeBSD.org> and NAKATA Maho <maho@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+CATEGORIES=	editors
+
+LANG_PKGNAME=	nl
+LANG_EXT=	31
+LANG_CONFIGURE_ARG=	DTCH
+MASTERDIR=	${.CURDIR}/../openoffice-1.1
+
+.include "${MASTERDIR}/Makefile"
