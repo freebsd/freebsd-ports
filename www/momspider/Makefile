@@ -12,7 +12,7 @@ MASTER_SITES=   http://wolfram.schneider.org/src/
 DISTNAME=	MOMspider-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 
-MAINTAINER=	wosch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW Spider for multi-owner maintenance
 
 NO_BUILD=	yes
