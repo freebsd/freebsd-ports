@@ -5617,6 +5617,7 @@ p5-Search-Namazu	ports/databases/p5-Search-Namazu
 p5-Search-Saryer	ports/textproc/p5-Search-Saryer
 p5-Server-FastPL	ports/devel/p5-Server-FastPL
 p5-Sendmail-Milter	ports/mail/p5-Sendmail-Milter
+p5-Set-Crontab	ports/devel/p5-Set-Crontab
 p5-Set-Infinite	ports/devel/p5-Set-Infinite
 p5-Set-IntSpan	ports/math/p5-Set-IntSpan
 p5-Set-NestedGroups	ports/devel/p5-Set-NestedGroups
