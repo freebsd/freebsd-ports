@@ -7,7 +7,7 @@
 
 PORTNAME=	gtranslator
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -23,8 +23,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"
 CONFIGURE_ARGS=	--disable-debug
+USE_REINPLACE=	yes
 
 MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|/usr/share/gtranslator|${DATADIR}|g; \
+		s|/usr/share/pixmaps|${PREFIX}/share/gnome/pixmaps|g" \
+		${WRKSRC}/src/defines.h
 
 .include <bsd.port.mk>
