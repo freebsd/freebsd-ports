@@ -1154,6 +1154,7 @@ csound		ports/audio/csound
 csound-manual	ports/audio/csound-manual
 css-mode.el	ports/www/css-mode.el
 cssc		ports/devel/cssc
+cssed		ports/www/cssed
 cstream		ports/misc/cstream
 cstringbuffer	ports/devel/cstringbuffer
 csv2latex	ports/textproc/csv2latex
