@@ -27,6 +27,8 @@ lib/libgnutls.a
 lib/libgnutls.la
 lib/libgnutls.so
 lib/libgnutls.so.12
+libdata/pkgconfig/gnutls-extra.pc
+libdata/pkgconfig/gnutls.pc
 share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
