@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	mwm@mired.org
 
+BROKEN=		"Does not fetch"
+
 USE_PYTHON=	YES
 
 do-install:
