@@ -314,6 +314,7 @@
     SUBDIR += setquota
     SUBDIR += sformat
     SUBDIR += sge
+    SUBDIR += sgeee
     SUBDIR += shlock
     SUBDIR += sjog
     SUBDIR += skill
