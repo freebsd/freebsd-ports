@@ -15,6 +15,7 @@
     SUBDIR += tkdesk
     SUBDIR += workplace
     SUBDIR += x-files
+    SUBDIR += xcruise
     SUBDIR += xfm
     SUBDIR += xnc
 
