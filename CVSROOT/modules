@@ -5220,6 +5220,7 @@ linux-runrev	ports/devel/linux-runrev
 linux-sdl12	ports/devel/linux-sdl12
 linux-sdl_image	ports/graphics/linux-sdl_image
 linux-setiathome	ports/astro/linux-setiathome
+linux-spheresofchaos-demo	ports/games/linux-spheresofchaos-demo
 linux-steam	ports/games/linux-steam
 linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-sun-jdk13	ports/java/linux-sun-jdk13
