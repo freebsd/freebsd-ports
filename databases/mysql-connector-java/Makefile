@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.worldserver.com/mm.mysql/dist/
 
 MAINTAINER=	dglo@SSEC.WISC.EDU
 
+BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 ALL_TARGET=	jar
