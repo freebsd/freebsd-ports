@@ -33,6 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
+CONFLICTS=	py*-gnome-1*
+
 .if !defined(PACKAGE_BUILDING)
 pre-build:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
