@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.7
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins/ \
 		${MASTER_SITE_GNOME}
@@ -142,10 +141,6 @@ post-patch:
 		${WRKSRC}/sys/vcd/vcdsrc.c \
 		${WRKSRC}/sys/vcd/vcdsrc.h
 
-# tell configure where the musepack includes live
-	@${REINPLACE_CMD} -e 's|/usr/include/musepack|${LOCALBASE}/include/musepack|g' \
-		${WRKSRC}/configure
-
 # hermes is required for gstreamer-player to work
 # since it is currently the only colorspace plugin available
 # XXX However, it currently does not work on sparc64.
@@ -169,6 +164,11 @@ WITH_AALIB=yes
 # arts
 .if exists(${LOCALBASE}/lib/libartsc.so.0) && !defined(WITHOUT_ARTS)
 WITH_ARTS=yes
+.endif
+
+# cairo
+.if exists(${LOCALBASE}/lib/libcairo.a)
+WITH_CAIRO=yes
 .endif
 
 # cdparanoia
@@ -234,6 +234,11 @@ WITH_LIBCACA=yes
 # libmng
 .if exists(${LOCALBASE}/lib/libmng.a)
 WITH_MNG=yes
+.endif
+
+# libmms
+.if exists(${LOCALBASE}/lib/libmms.a)
+WITH_MMS=yes
 .endif
 
 # gsm
@@ -367,7 +372,7 @@ WITH_PNG=yes
 .endif
 
 # polypaudio
-.if exists(${LOCALBASE}/lib/libpolyp-0.6.a)
+.if exists(${LOCALBASE}/lib/libpolyp-0.7.a)
 WITH_POLYPAUDIO=yes
 .endif
 
@@ -441,6 +446,16 @@ LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=	--with-arts-prefix=${LOCALBASE} \
 			--with-arts-exec-prefix=${LOCALBASE}
 PLIST_SUB+=	ARTS=""
+.endif
+
+# cairo
+.ifndef(WITH_CAIRO)
+CONFIGURE_ARGS+=	--disable-cairo
+PLIST_SUB+=	CAIRO="@comment "
+.else
+LIB_DEPENDS+=	cairo.1:${PORTSDIR}/graphics/cairo
+
+PLIST_SUB+=	CAIRO=""
 .endif
 
 # cdparanoia
@@ -858,6 +873,15 @@ LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
 PLIST_SUB+=	MNG=""
 .endif
 
+# mms
+.ifndef(WITH_MMS)
+CONFIGURE_ARGS+=	--disable-libmms
+PLIST_SUB+=	MMS="@comment "
+.else
+LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
+PLIST_SUB+=	MMS=""
+.endif
+
 # png
 .ifndef(WITH_PNG)
 CONFIGURE_ARGS+=	--disable-libpng
@@ -873,7 +897,7 @@ PLIST_SUB+=	PNG=""
 CONFIGURE_ARGS+=	--disable-polyp
 PLIST_SUB+=	POLYPAUDIO="@comment "
 .else
-LIB_DEPENDS+=	polyp-0.6.0:${PORTSDIR}/audio/polypaudio
+LIB_DEPENDS+=	polyp-0.7.0:${PORTSDIR}/audio/polypaudio
 
 PLIST_SUB+=	POLYPAUDIO=""
 .endif
@@ -902,14 +926,13 @@ PLIST_SUB+=	SMOOTHWAVE=""
 .endif
 
 # speex
-# !!!BROKEN RIGHT NOW!!! - need -devel speex
-#.ifndef(WITH_SPEEX)
+.ifndef(WITH_SPEEX)
 CONFIGURE_ARGS+=	--disable-speex
 PLIST_SUB+=	SPEEX="@comment "
-#.else
-#LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
-#PLIST_SUB+=	SPEEX=""
-#.endif
+.else
+LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+PLIST_SUB+=	SPEEX=""
+.endif
 
 # swfdec
 .ifndef(WITH_SWFDEC)
@@ -1003,6 +1026,10 @@ pre-everything::
 .else
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_ARTS to enable aRts Audio plugin'
+.endif
+.ifndef(WITH_CAIRO)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_CDPARANOIA to enable cairo textoverlay plugin'
 .endif
 .ifndef(WITH_CDPARANOIA)
 	@${ECHO_MSG} '===>'
@@ -1147,6 +1174,10 @@ pre-everything::
 .ifndef(WITH_MNG)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_MNG to enable libmng plugin'
+.endif
+.ifndef(WITH_MMS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_MMS to enable libmms network plugin'
 .endif
 .ifndef(WITH_MUSEPACK)
 	@${ECHO_MSG} '===>'
