@@ -213,6 +213,7 @@
     SUBDIR += mikachan-ttfonts
     SUBDIR += mimekit
     SUBDIR += ming
+    SUBDIR += mobileimap
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
     SUBDIR += motoya-ttfonts
