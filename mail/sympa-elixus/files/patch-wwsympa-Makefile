@@ -1,0 +1,24 @@
+--- wwsympa/Makefile	Sat Oct 23 20:37:35 2004
++++ wwsympa/Makefile	Sat Oct 23 20:39:51 2004
+@@ -21,7 +21,7 @@
+ 
+ sbin_SUBST	=	bounced.pl archived.pl
+ 
+-cgi_SUBST	=	wwsympa.fcgi
++cgi_SUBST	=	wwsympa.fcgi wwsympa-wrapper
+ 
+ lib_SUBST	=	wwslib.pm cookielib.pm bounce-lib.pl Marc.pm Auth.pm
+ 
+@@ -50,9 +50,9 @@
+ 	chown $(USER) $(DESTDIR)$(CGIDIR)/$$i; \
+ 	chgrp $(GROUP) $(DESTDIR)$(CGIDIR)/$$i; \
+ 	done
+-	@echo "Setting SetUID bit on wwsympa.fcgi..."
+-	chmod u+s $(DESTDIR)$(CGIDIR)/wwsympa.fcgi
+-	chmod g+s $(DESTDIR)$(CGIDIR)/wwsympa.fcgi
++	@echo "Setting SetUID bit on wwsympa-wrapper..."
++	chmod u+s $(DESTDIR)$(CGIDIR)/wwsympa-wrapper
++	chmod g+s $(DESTDIR)$(CGIDIR)/wwsympa-wrapper
+ 	chmod 755 $(DESTDIR)$(ETCBINDIR)/wws.tt2
+ 	chmod 755 $(DESTDIR)$(ICONSDIR)
+ 	chmod 755 $(DESTDIR)$(LIBDIR)/Marc
