@@ -3839,6 +3839,7 @@ nadar		ports/games/nadar
 nail		ports/mail/nail
 naim		ports/net/naim
 nam		ports/net/nam
+namazu2		ports/databases/namazu2
 named		src/usr.sbin/named
 named-xfer	src/libexec/named-xfer
 named.reload	src/usr.sbin/named.reload
