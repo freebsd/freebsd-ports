@@ -1534,7 +1534,7 @@ MYSQL41_LIBVER=		14
 MYSQL_VER=	${WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
 MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL_323_LIBVER})
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL323_LIBVER})
 MYSQL_VER=	323
 .elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
 MYSQL_VER=	40
