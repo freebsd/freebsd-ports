@@ -8,7 +8,7 @@
 PORTNAME=	enscriptfonts
 PORTVERSION=	0.75
 CATEGORIES=	print
-MASTER_SITES=	ftp://magnesium.net/pub/FreeBSD/xenscript/
+MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/xenscript/
 DISTNAME=	enscript_fonts-0.75
 EXTRACT_SUFX=	.tgz
 
