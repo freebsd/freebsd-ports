@@ -6568,6 +6568,7 @@ ports_traceroute	ports/net/traceroute
 ports_ukrainian	ports/ukrainian
 ports_units	ports/math/units
 ports_vietnamese	ports/vietnamese
+ports_whois		ports/net/whois
 ports_www	ports/www
 ports_x11	ports/x11
 ports_x11_clocks	ports/x11-clocks
@@ -8596,7 +8597,6 @@ whisker		ports/security/whisker
 whistlerk	ports/x11-toolkits/whistlerk
 white_dune	ports/graphics/white_dune
 whitespace.el	ports/textproc/whitespace.el
-whois		ports/net/whois
 whowatch	ports/sysutils/whowatch
 whups		ports/devel/whups
 wide-dhcp	ports/net/wide-dhcp
