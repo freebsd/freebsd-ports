@@ -1,0 +1,11 @@
+This module is a layer between the perl-internals-examining parts of
+Malcolm Beattie's perl compiler (the B::* classes) and your favorite
+graph layout tool (currently Dot and VGC are supported, but adding
+others would be easy). It examines the internal structures that perl
+builds to represent your code (OPs and SVs), and generates
+specifications for multicolored boxes and arrows to represent them.
+
+WWW: http://search.cpan.org/search?module=B::Graph
+
+- Leo Kim
+leo@florida.sarang.net
