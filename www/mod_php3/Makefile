@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.63 1999/01/03 12:26:47 dirk Exp $
+# $Id: Makefile,v 1.64 1999/01/08 17:22:06 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -19,6 +19,8 @@ MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP3}.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.ORG
+
+Y2K=		http://www.php.net/y2k.php3
 
 VERSION_APACHE=	1.3.3
 VERSION_PHP3=	3.0.6

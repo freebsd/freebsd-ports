@@ -1,0 +1,13 @@
+ports/databases/db             http://www.sleepycat.com/faq.html#A8
+ports/databases/postgresql     http://www.postgresql.org/y2k.html
+ports/mail/cyrus               http://andrew2.andrew.cmu.edu/cyrus/imapd/y2k.html
+ports/mail/imap-uw             http://www.washington.edu/imap/IMAP-FAQs/FAQ-00002.html
+ports/mail/pine3               http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
+ports/mail/pine4               http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
+ports/net/rsync                http://rsync.samba.org/rsync/y2k.html
+ports/net/samba                http://us1.samba.org/samba/docs/sambay2k.html
+ports/textproc/htdig           http://www.htdig.org/FAQ.html#q1.7
+ports/www/apache12             http://www.apache.org/docs/misc/FAQ.html#year2000
+ports/www/apache12-php3        http://www.php.net/y2k.php3
+ports/www/apache13             http://www.apache.org/docs/misc/FAQ.html#year2000
+ports/www/apache13-php3        http://www.php.net/y2k.php3

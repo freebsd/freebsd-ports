@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.23 1998/11/21 20:01:51 steve Exp $
+# $Id: Makefile,v 1.24 1998/12/24 18:26:21 jseger Exp $
 #
 
 DISTNAME=	imap-4.4
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
+
+Y2K=		http://www.washington.edu/imap/IMAP-FAQs/FAQ-00002.html
 
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
