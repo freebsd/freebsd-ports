@@ -31,7 +31,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--enable-shared --with-ccopts="${CFLAGS}"
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc
 MAKE_ARGS=		INSTALL="${INSTALL}"
-KRB5_KRB4_COMPAT?=	YES
+KRB5_KRB4_COMPAT?=	NO
 
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
 CONFIGURE_ARGS+=	--without-krb4
