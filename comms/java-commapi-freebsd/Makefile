@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	java-commapi-freebsd
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	comms java
 MASTER_SITES=	http://www.syncrontech.org/freebsd/
 DISTNAME=	freebsd-commapi-${PORTVERSION}
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/comm.jar:${PORTSDIR}/comms/java-commapi
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
+JAVA_OS=	native
 JAVA_BUILD=	yes
 
 JDKDIR=		${JAVA_HOME}
