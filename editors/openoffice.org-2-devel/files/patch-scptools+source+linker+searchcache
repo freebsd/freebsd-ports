@@ -21,7 +21,7 @@
  }
  
 -void ScanFileList( const ByteString& rPath, FileList& rLst )
-+void ScanFileList( const ByteString& rPath, ScanFileList& rLst )
++void ScanFileList( const ByteString& rPath, SCacheFileList& rLst )
  {
  	Dir aFiles( rPath, FSYS_KIND_FILE );
  	for( USHORT i = 0; i < aFiles.Count(); ++i )
