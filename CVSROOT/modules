@@ -641,6 +641,7 @@ cap_mkdb	src/usr.bin/cap_mkdb
 cassowary	ports/misc/cassowary
 cat		src/bin/cat
 catdoc		ports/textproc/catdoc
+catdvi		ports/print/catdvi
 catman		src/gnu/usr.bin/man/catman
 cave		ports/misc/cave
 cbb		ports/deskutils/cbb
