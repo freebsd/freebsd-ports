@@ -1,0 +1,6 @@
+bin/hydra
+bin/boa_indexer
+bin/webindex.pl
+etc/hydra/hydra.conf
+etc/hydra/mime.types
+@dirrm etc/hydra
