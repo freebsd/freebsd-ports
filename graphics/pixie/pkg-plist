@@ -2,7 +2,9 @@ bin/precomp
 bin/rndr
 bin/sdrc
 bin/sdrinfo
+bin/show
 bin/texmake
+include/pixie/dlo.h
 include/pixie/dsply.h
 include/pixie/implicit.h
 include/pixie/ri.h

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pixie
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tiamat@comset.net
 COMMENT=	A photorealistic renderer with Pixar's RenderMan-like interface
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		fltk_gl.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_REINPLACE=	yes
 USE_GL=		yes
@@ -31,20 +31,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LIBS="${PTHREAD_LIBS} -lstdc++"
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
-
 WRKSRC=		${WRKDIR}/Pixie
-PIXIE_EXES=	precomp rndr sdrc sdrinfo texmake
+
+PIXIE_EXES=	precomp rndr sdrc sdrinfo show texmake
 PIXIE_SHLIBS=	file framebuffer rgbe
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
-	@${WRKSRC}/makeunix
-	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
+	@${REINPLACE_CMD} -i "" -e 's|malloc\.h|stdlib\.h|g' \
 		`${FIND} -E ${WRKSRC} -iregex '.*\.(cpp|h)'`
 
 do-install:
@@ -81,7 +80,7 @@ do-install:
 # includes
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/sdr/sdr.h ${PREFIX}/include/${PORTNAME}
-.for i in dsply implicit ri shadeop
+.for i in dlo dsply implicit ri shadeop
 	${INSTALL_DATA} ${WRKSRC}/src/ri/${i}.h ${PREFIX}/include/${PORTNAME}
 .endfor
 
