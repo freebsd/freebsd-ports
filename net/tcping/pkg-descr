@@ -8,4 +8,4 @@ With tcping it is possible to check first if the desired port
 is reachable and then start connection establishment.
 
 Author:	Marc Kirchner <mail(at)marc(dash)kirchner(dot)de>
-WWW:	http://stud.fh-heilbronn.de/~kirchner/tcping/tcping.html
+WWW:	http://www.linuxco.de/tcping/tcping.html
