@@ -1,12 +1,12 @@
 # New ports collection makefile for:	KSnes9x
-# Version required:	1.1
+# Version required:	1.2
 # Date created:		12 Nov 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ksnes9x-1.1
+DISTNAME=	ksnes9x-1.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.esquadro.com.br/~ismore/
 
