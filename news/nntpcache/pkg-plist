@@ -1,9 +1,9 @@
-etc/nntpcache/config
 etc/nntpcache/access
+etc/nntpcache/config
 etc/nntpcache/servers
 etc/nntpcache/spam.filter
-etc/nntpcache/spam.filter.bak
+etc/rc.d/nntpcached.sh
 sbin/nntpcached
 man/man8/nntpcache.8.gz
-@unexec rm -rf %D/newscache
-@dirrm etc/nntpcache
+@dirrm %D/etc/nntpcache
+@unexec rm -rf /var/spool/nntpcache

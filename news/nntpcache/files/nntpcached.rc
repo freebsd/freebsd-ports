@@ -1,0 +1,4 @@
+#!/bin/sh
+
+PATH=%%PREFIX%%/sbin:/bin:/usr/bin
+[ -x %%PREFIX%%/sbin/nntpcached ] && nntpcached && echo -n ' nntpcached'
