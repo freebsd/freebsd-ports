@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2000.10.02
+PORTVERSION=	2000.10.26
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -67,21 +67,18 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
 		|| ${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 	-@${MKDIR} ${PREFIX}/lib/wine/documentation ${PREFIX}/lib/wine/reg 2>/dev/null
-	${INSTALL_DATA} \
-		${WRKSRC}/README \
-		${WRKSRC}/ANNOUNCE \
-		${WRKSRC}/AUTHORS \
-		${WRKSRC}/LICENSE \
-		${WRKSRC}/WARRANTY \
-		${WRKSRC}/documentation/psdrv.reg \
-		${PREFIX}/lib/wine/documentation
+.for i in README ANNOUNCE AUTHORS LICENSE WARRANTY documentation/psdrv.reg
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib/wine/documentation
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/debugger/README \
 		${PREFIX}/lib/wine/documentation/README.debugger
 	${INSTALL_DATA} ${WRKSRC}/programs/regapi/README \
 		${PREFIX}/lib/wine/documentation/README.regapi
+.endif
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl \
 		${PREFIX}/lib/wine
 	${INSTALL_SCRIPT} \

@@ -34,6 +34,7 @@ include/wine/instance.h
 include/wine/lmcons.h
 include/wine/lzexpand.h
 include/wine/mapidefs.h
+include/wine/mcx.h
 include/wine/mmreg.h
 include/wine/mmsystem.h
 include/wine/msacm.h
