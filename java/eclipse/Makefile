@@ -8,9 +8,9 @@
 PORTNAME=	eclipse
 PORTVERSION=	2.1.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download2.eclipse.org/downloads/drops/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-2.1.1-200306271545
-DISTNAME=	eclipse-sourceBuild-srcIncluded-2.1.1
+DISTNAME=	eclipse-sourceBuild-srcIncluded-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	java@FreeBSD.ORG
