@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1998/11/14 17:50:16 jseger Exp $
+# $Id: Makefile,v 1.23 1998/11/15 07:08:20 scrappy Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -38,7 +38,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/mico
 
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl \
-		--disable-optimize --disable-shared --disable-mini-stl
+		--disable-optimize --disable-mini-stl
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
@@ -48,6 +48,6 @@ pre-configure:
 	cd ${WRKSRC}; autoconf
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m 
 
 .include <bsd.port.post.mk>
