@@ -23,6 +23,7 @@ share/bacula/make_bacula_tables
 share/bacula/make_%%DBTYPE%%_tables
 share/bacula/make_catalog_backup
 %%PORTDOCS%%share/doc/bacula/bacula.pdf
+%%PORTDOCS%%share/doc/bacula/html-manual/1
 %%PORTDOCS%%share/doc/bacula/html-manual/.cvsignore
 %%PORTDOCS%%share/doc/bacula/html-manual/Bacula.apf
 %%PORTDOCS%%share/doc/bacula/html-manual/add-nav.list
