@@ -1,0 +1,10 @@
+Index: ut.c
+@@ -35,7 +35,7 @@
+ 
+ 
+ 	strncpy (p+3, "JanFebMarAprMayJunJulAugSepOctNovDec"+t->tm_mon*3, 3);
+-	STOREINT (p+9, t->tm_year);
++	STOREINT (p+9, t->tm_year % 100);
+ 	if (t->tm_year < 100) {
+ 		p[7] = '1';
+ 		p[8] = '9';
