@@ -1,0 +1,22 @@
+IP Messenger is a popup style message communication software for
+multi platforms.  It is based on TCP/IP(UDP).  xipmsg is the X11
+version of it.
+
+Japanese Locale is also supported.
+Type as follows for Japanese:
+% setenv LANG ja_JP.EUC
+% xipmsg
+KANJI character input is also supported with kinput2.
+
+NOTE:
+- Xipmsg may freeze in ja_JP.EUC environment because of a bug of 
+kinput2.  Please read README file for details.
+- Xipmsg cannot display Japanese characters under FreeBSD 2.2.X
+because of broken locale database of the OS.  Please read README 
+file for details.
+
+XIP MEssenger home page:
+http://spock.vector.co.jp/authors/VA004959/xipmsg/
+
+IP Messenger home page:
+http://www.asahi-net.or.jp/~VZ4H-SRUZ/ipmsg.html
