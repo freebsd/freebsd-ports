@@ -27,6 +27,8 @@ NO_BUILD=	yes
 
 MAN1=		f-prot.1
 
+ONLY_FOR_ARCHS=	i386
+
 do-install:
 	cd ${WRKDIR} && ${TAR} -cf - f-prot | ${TAR} -xf - -C ${PREFIX}
 	${INSTALL_SCRIPT} ${WRKSRC}/f-prot.sh ${PREFIX}/bin/f-prot
