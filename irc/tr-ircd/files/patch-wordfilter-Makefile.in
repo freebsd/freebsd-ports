@@ -1,0 +1,11 @@
+--- contrib/wordfilter/Makefile.in.orig	Sat Aug 21 13:34:23 2004
++++ contrib/wordfilter/Makefile.in	Sat Aug 21 13:34:39 2004
+@@ -16,7 +16,7 @@
+ RANLIB          = @RANLIB@
+ MD5SUMS         = @MD5SUMS@
+ LEXLIB          = @LEXLIB@
+-CFLAGS          = @IRC_CFLAGS@ -DBASENAME=\"$(BN1)$(BN2)$(BN3)\" -DIRCD_PREFIX=\"@prefix@\"
++CFLAGS          = @IRC_CFLAGS@ -DBASENAME=\"$(BN1)$(BN2)$(BN3)\" -DIRCD_PREFIX=\"@prefix@\" -fPIC
+ LDFLAGS         = @LDFLAGS@
+ MKDEP           = @MKDEP@ -DBASENAME=\"$(BN1)$(BN2)$(BN3)\" -DIRCD_PREFIX=\"@prefix@\"
+ MV              = @MV@
