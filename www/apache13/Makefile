@@ -46,9 +46,17 @@ CONFIGURE_ARGS+=	\
 		--disable-module=auth_dbm \
 		--enable-shared=max
 
-OPTIM=		-DHARD_SERVER_LIMIT=512 \
-		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+OPTIM=          -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+
+#
+# Set APACHE_HARD_SERVER_LIMIT env. variable to desired value
+#
+.if defined(APACHE_HARD_SERVER_LIMIT)
+OPTIM+=         -DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
+.else
+OPTIM+=         -DHARD_SERVER_LIMIT=512
+.endif
 
 #
 # Set WITH_APACHE_PERF_TUNING env. variable to YES to get maximum performance
