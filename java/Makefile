@@ -43,6 +43,7 @@
     SUBDIR += jdk12-doc
     SUBDIR += jdk13
     SUBDIR += jdk13-doc
+    SUBDIR += jdk14
     SUBDIR += jdk14-doc
     SUBDIR += jdom
     SUBDIR += jfc

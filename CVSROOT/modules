@@ -3089,6 +3089,7 @@ jdk12		ports/java/jdk12
 jdk12-doc	ports/java/jdk12-doc
 jdk13		ports/java/jdk13
 jdk13-doc	ports/java/jdk13-doc
+jdk14		ports/java/jdk14
 jdk14-doc	ports/java/jdk14-doc
 jdom		ports/java/jdom
 jdresolve	ports/www/jdresolve
