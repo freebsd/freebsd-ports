@@ -1,12 +1,10 @@
---- configure.orig	Thu Mar  4 02:47:53 2004
-+++ configure	Tue Mar  9 18:33:21 2004
-@@ -4897,8 +4897,8 @@
-         echo "*******************************************************************"
+--- configure.orig	Sun Mar 21 23:45:17 2004
++++ configure	Tue Mar 23 14:37:28 2004
+@@ -4898,7 +4898,7 @@
          exit 1
          ;;
--    *1\.3\.4\-freebsd\-ports*)
+     *1\.3\.[45]\-freebsd\-ports*)
 -        echo "* FreeBSD ports 1.3.4 seems to work, so we will let it slide..."
-+    *1\.3\.5\-freebsd\-ports*)
 +        echo "* FreeBSD ports 1.3.5 seems to work, so we will let it slide..."
          echo "*"
          echo "* Fasten your seat belt and good luck!  If you are injured, the"
@@ -74,7 +72,7 @@
  
  fi
  
-@@ -24985,7 +24985,7 @@
+@@ -24989,7 +24989,7 @@
     test ".${ac_cv_header_glibconfig_h}" = ".yes"      &&
     test ".${ac_cv_header_xmlversion_h}" = ".yes"      &&
     test ".${ac_cv_header_gdome_h}" = ".yes"           &&
@@ -83,7 +81,7 @@
     test ".${ac_cv_lib_xml2_xmlCheckVersion}" = ".yes" &&
     test ".${ac_cv_lib_gdome_gdome_di_saveDocToFile}" = ".yes"; then
      echo "$as_me:$LINENO: result: ok" >&5
-@@ -25004,7 +25004,7 @@
+@@ -25008,7 +25008,7 @@
      echo "*                  gdome.h...${ac_cv_header_gdome_h}"
      echo "*                  libgdome.so or libgdome.a...${ac_cv_lib_gdome_gdome_di_saveDocToFile}"
      echo "*                  glib.h...${ac_cv_header_glib_h}"
