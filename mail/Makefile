@@ -79,6 +79,7 @@
     SUBDIR += filtermail
     SUBDIR += ftrack
     SUBDIR += gbuffy
+    SUBDIR += gdesklets-imapmail
     SUBDIR += gensig
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch
