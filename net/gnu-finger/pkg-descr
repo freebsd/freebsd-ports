@@ -27,4 +27,4 @@ finger		stream	tcp	nowait	nobody	/usr/local/libexec/in.fingerd	in.fingerd
    And exec fingerd.sh.
 
 - Yoshiro MIHIRA
-(sanpei@yy.cs.keio.ac.jp)
+(sanpei@FreeBSD.org)

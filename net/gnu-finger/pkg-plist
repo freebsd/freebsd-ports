@@ -9,3 +9,4 @@ etc/fingerdir/mailhost.sample
 etc/fingerdir/serverhost.sample
 etc/fingerdir/targets/x-.help
 etc/fingerdir/targets/x-.site
+@dirrm etc/fingerdir
