@@ -1,0 +1,18 @@
+--- scan-types.sh.orig	Tue Jul  7 19:36:58 1998
++++ scan-types.sh	Tue Jul  7 19:38:39 1998
+@@ -14,6 +14,7 @@
+ # using sed to search for typedefs in the output.
+ 
+ cat >st-dummy.c <<!EOF!
++#if 0  /* WE DON'T HAVE THESE UNTIL NEWLIB HAS BEEN INSTALLED!!! */
+ #include <sys/types.h>
+ #include <stddef.h>
+ #include <stdarg.h>
+@@ -27,6 +28,7 @@
+ #endif
+ #ifdef va_list
+ typedef va_list XXXva_list;
++#endif
+ #endif
+ !EOF!
+ 
