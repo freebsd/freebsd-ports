@@ -31,6 +31,7 @@
     SUBDIR += ines
     SUBDIR += libvm68k
     SUBDIR += linux-vmware-toolbox
+    SUBDIR += linux-winetools
     SUBDIR += linux_base
     SUBDIR += linux_base-6
     SUBDIR += mastergear
