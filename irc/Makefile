@@ -19,6 +19,7 @@
     SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs-devel-mule
     SUBDIR += irchat-pj-xemacs21-mule
+    SUBDIR += ircservices
     SUBDIR += iroffer
     SUBDIR += irssi
     SUBDIR += kvirc
