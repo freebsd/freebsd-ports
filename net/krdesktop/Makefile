@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	krdesktop
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	net kde
 MASTER_SITES=	http://hallon.fruitsalad.org/people/mdouhan/krdesktop/
 DISTNAME=	${PORTNAME:S/kr/KR/}-${PORTVERSION}
