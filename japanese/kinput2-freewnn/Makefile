@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 PATCHDIR=	${.CURDIR}/../kinput2-freewnn/patches
 FILESDIR=	${.CURDIR}/../kinput2-freewnn/files
 USE_IMAKE=	yes
+MAN1=		kinput2.1
 
 .if !defined(CANNA) && !defined(SJ3) && !defined(FREEWNN) && !defined(WNN6)
 # For this port
@@ -48,7 +49,7 @@ KINPUT2_DEF+=		-DUseWnn -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn \
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
 LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
-KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn \
+KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn6/wnn \
 			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
 .endif
 #

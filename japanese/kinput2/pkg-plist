@@ -14,4 +14,3 @@ lib/X11/ccdef/rule.hiragana.egg
 lib/X11/ccdef/rule.katakana.egg
 lib/X11/ccdef/rule.kigou.egg
 @dirrm lib/X11/ccdef
-man/man1/kinput2.1.gz
