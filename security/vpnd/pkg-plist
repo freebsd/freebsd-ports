@@ -1,0 +1,8 @@
+sbin/vpnd
+etc/vpnd.conf.sample
+etc/vpnd.chat.sample
+share/doc/vpnd/README
+share/doc/vpnd/FAQ.TXT
+share/doc/vpnd/SPEED.TXT
+share/doc/vpnd/VERSIONS
+@dirrm share/doc/vpnd

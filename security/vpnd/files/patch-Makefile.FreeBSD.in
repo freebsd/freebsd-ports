@@ -1,0 +1,13 @@
+--- Makefile.FreeBSD.in.orig	Fri Nov 19 17:50:24 1999
++++ Makefile.FreeBSD.in	Sun Mar 25 01:39:56 2001
+@@ -5,7 +5,9 @@
+ CRYPTOFLG=
+ .endif
+ 
+-CFLAGS=-c $(CBASE) $(DEBUG) $(CRYPTOFLG) -DMD5_HMAC_FAST -DSHA1_HMAC_FAST -DRMD160_HMAC_FAST
++ETC_DIR=
++
++CFLAGS=-c $(CBASE) $(DEBUG) $(CRYPTOFLG) -DMD5_HMAC_FAST -DSHA1_HMAC_FAST -DRMD160_HMAC_FAST -DETC_DIR=\"$(ETC_DIR)\"
+ 
+ OBJS1=vpnd.o globals.o parse.o slip.o route.o chatter.o serial.o die.o \
+       signal.o tcp.o external.o syslog.o sequencer.o icmp.o rxtx.o crypto.o \
