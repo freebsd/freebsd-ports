@@ -289,6 +289,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>mplayer-gtk2-esound</name>
 	<range><lt>0.99.5_5</lt></range>
       </package>
+      <package>
+	<name>libxine</name>
+	<range><le>1.0.r5_3</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -302,10 +306,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	  <li>Potential buffer overflow in mp3lib</li>
 	</ul>
 	<p>These vulnerabilities could allow a remote attacker to
-	  execute arbitrary code as the user running MPlayer.</p>
+	  execute arbitrary code as the user running MPlayer. The
+	  problem in the pnm streaming code also affects xine.</p>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1187</cvename>
+      <cvename>CAN-2004-1188</cvename>
       <url>http://mplayerhq.hu/homepage/design7/news.html#mplayer10pre5try2</url>
       <mlist msgid="IDSERV04yz5b6KZmcK80000000c@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322526210300</mlist>
       <mlist msgid="IDSERV04FVjCRGryWtI0000000f@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322829807443</mlist>
