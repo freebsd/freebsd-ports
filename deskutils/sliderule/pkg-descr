@@ -1,0 +1,7 @@
+This is the part of X11R3's xcalc(1) utility that features a historic
+Slide Rule.  This is not taken to be too serious, it's merely a little
+fun project for those people who have learned their basics of mathemat-
+ics and logarithms by using such a nice ``pocket calculator''.
+
+The original xcalc is from John Bradley, and Mark Rosenstein.  A number
+of bugs and inaccuracies fixed by Joerg Wunsch.
