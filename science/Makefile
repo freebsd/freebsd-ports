@@ -53,6 +53,7 @@
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
     SUBDIR += simlib
+    SUBDIR += szip
     SUBDIR += udunits
     SUBDIR += vis5d+
     SUBDIR += vmd
