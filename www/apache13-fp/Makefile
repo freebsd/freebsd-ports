@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.4 1998/11/19 22:48:42 billf Exp $
+# $Id: Makefile,v 1.5 1998/11/25 20:49:01 billf Exp $
 #
 
 DISTNAME=       apache_1.3.3
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+= --enable-suexec \
 MAN8+=	suexec.8
 .endif
 
-pre-fetch:
+pre-extract:
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
 	   ${ECHO} ; \
 	   ${ECHO} "WARNING: MS FrontPage Extentions require the DES Library"; \
