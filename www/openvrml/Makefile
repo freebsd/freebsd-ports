@@ -7,7 +7,7 @@
 
 PORTNAME=	openvrml
 PORTVERSION=	0.14.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VRML97 runtime and browser ("lookat")
 
-BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-js.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-js.pc:${PORTSDIR}/www/firefox
 
 USE_REINPLACE=	yes
 USE_GL=		yes
