@@ -1,0 +1,40 @@
+--- sftp.1.orig	Tue Dec 28 11:44:39 1999
++++ sftp.1	Tue Jan 11 11:14:23 2000
+@@ -1,11 +1,19 @@
+ .Dd November 26, 1999
+-.Dt sftp 1
++.Dt secftp 1
+ .Os POSIX
+ .Sh NAME
++.Nm secftp
+ .Nm sftp
+ .Nd
+ ftp replacement over ssh/rsh
+ .Sh SYNOPSIS
++.Nm secftp
++.Op Ar -P remotepath
++.Op Ar -l user
++.Op Ar -p port
++.Op Ar -C
++.Op Ar -s sshargs
++.Op Ar hostname
+ .Nm sftp
+ .Op Ar -P remotepath
+ .Op Ar -l user
+@@ -18,6 +26,7 @@
+ .Op Ar -l user
+ .Op Ar hostname
+ .Sh DESCRIPTION
++.Nm secftp,
+ .Nm sftp
+ and
+ .Nm rsftp
+@@ -25,7 +34,7 @@
+ programs allows files to be transferred to and from remote servers.
+ Authentication is provided by the underlying ssh/rsh connection.
+ .Pp
+-When sftp or rsftp is run, the server
++When secftp, sftp or rsftp is run, the server
+ .Nm (sftpserv)
+ is automatically run on the remote end.
+ .Pp
