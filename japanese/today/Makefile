@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/18 15:04:49 asami Exp $
 #
 
 DISTNAME=	td210bs
