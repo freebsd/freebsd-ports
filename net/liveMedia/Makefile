@@ -86,15 +86,15 @@ liveMedia=		\
 		liveMedia/include/MP3FileSource.hh \
 		liveMedia/include/MP3HTTPSource.hh \
 		liveMedia/include/MP3Transcoder.hh \
-		liveMedia/include/MPEG1or2AudioRTPSink.hh
-		liveMedia/include/MPEG1or2AudioRTPSource.hh
-		liveMedia/include/MPEG1or2AudioStreamFramer.hh
-		liveMedia/include/MPEG1or2Demux.hh
-		liveMedia/include/MPEG1or2DemuxedElementaryStream.hh
-		liveMedia/include/MPEG1or2VideoHTTPSink.hh
-		liveMedia/include/MPEG1or2VideoRTPSink.hh
-		liveMedia/include/MPEG1or2VideoRTPSource.hh
-		liveMedia/include/MPEG1or2VideoStreamFramer.hh
+		liveMedia/include/MPEG1or2AudioRTPSink.hh \
+		liveMedia/include/MPEG1or2AudioRTPSource.hh \
+		liveMedia/include/MPEG1or2AudioStreamFramer.hh \
+		liveMedia/include/MPEG1or2Demux.hh \
+		liveMedia/include/MPEG1or2DemuxedElementaryStream.hh \
+		liveMedia/include/MPEG1or2VideoHTTPSink.hh \
+		liveMedia/include/MPEG1or2VideoRTPSink.hh \
+		liveMedia/include/MPEG1or2VideoRTPSource.hh \
+		liveMedia/include/MPEG1or2VideoStreamFramer.hh \
 		liveMedia/include/MPEG4ESVideoRTPSource.hh \
 		liveMedia/include/MPEG4GenericRTPSink.hh \
 		liveMedia/include/MPEG4GenericRTPSource.hh \
