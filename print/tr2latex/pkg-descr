@@ -1,0 +1,4 @@
+Tr2latex converts a document typeset in troff to a LaTeX format.
+It is intended to do the first pass of the conversion. The user
+should then finish up the rest of the conversion and customize the
+converted manuscript to his/her liking.
