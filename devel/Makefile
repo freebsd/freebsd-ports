@@ -333,6 +333,7 @@
     SUBDIR += libhash
     SUBDIR += libhoard
     SUBDIR += libical
+    SUBDIR += libidn
     SUBDIR += libltdl
     SUBDIR += libmba
     SUBDIR += libmcve
