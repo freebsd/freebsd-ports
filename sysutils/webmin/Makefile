@@ -7,10 +7,10 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.990
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
-		http://www.webmin.com/webmin/download/
+MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/webadmin/ \
+		http://www.webmin.com/webmin/updates/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES} ${WEBMIN_THEMES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -24,7 +24,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	apache-0.990-2.wbm.gz postgresql-0.990-3.wbm.gz
+WEBMIN_MODULES=	apache-0.990-2.wbm.gz postgresql-0.990-3.wbm.gz \
+		cron-0.990-2.wbm.gz acl-0.990-2.wbm.gz
 
 WEBMIN_THEMES=
 
