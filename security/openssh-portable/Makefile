@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.1p1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -55,6 +55,7 @@ DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi-20020321.diff
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 PATCH_SITES=	http://www.sxw.org.uk/computing/patches/
 PATCHFILES=	${PORTNAME}-mit-krb5-20020319.diff
+EXTRA_PATCHES+=		${FILESDIR}/servconf.c.patch
 BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
