@@ -1,0 +1,10 @@
+PDP-8, PDP-11, PDP-1, other 18b PDP, Nova, and IBM 1401 simulators.
+
+The simulators have been tested on VAX VMS, Alpha VMS, Alpha UNIX, Intel
+FreeBSD and Intel LINUX; a port to Windows 95 and Windows NT is in progress
+but lacks terminal emulation code.  Porting to other environments will
+require changes to the operating system dependent code in scp_tty.c.
+
+These simulators are capable of running the Unix V5, V6 and V7 binaries
+licenced for non-commercial use by SCO.  See ${WRKDIR}/simh_doc.txt for
+further details.
