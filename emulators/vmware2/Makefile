@@ -18,7 +18,7 @@ DISTFILES=	VMware-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX} \
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
-MAINTAINER=	vns@delta.odessa.ua
+MAINTAINER=	vsilyaev@mindspring.com
 
 RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
