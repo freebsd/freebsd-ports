@@ -21,6 +21,7 @@ EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 MAN1=		iffe.1
 MAN3=		sfio.3
+PLIST=		${WRKDIR}/pkg-plist
 
 # Remove a test that's too clever for its own good
 post-extract:
@@ -29,6 +30,16 @@ post-extract:
 
 do-build:
 	@cd ${WRKDIR}/src/lib/sfio && ${MAKE} all -f makefile
+
+pre-install:
+	${RM} -f ${PLIST}
+.for ii in ast_common sfio sfio_t stdio
+	${ECHO_CMD} include/sfio/${ii}.h >> ${PLIST}
+.endfor
+.for ii in sfio stdio
+	${ECHO_CMD} lib/lib${ii}.a >> ${PLIST}
+.endfor
+	${ECHO_CMD} @dirrm include/sfio >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/include/sfio
