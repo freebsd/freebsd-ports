@@ -1,5 +1,5 @@
---- eject.c.orig	Tue Jan  4 06:42:12 2000
-+++ eject.c	Mon Sep 29 07:16:58 2003
+--- eject.c.orig	Tue Jan  4 09:42:12 2000
++++ eject.c	Wed Dec 24 01:11:34 2003
 @@ -43,8 +43,8 @@
  extern int optind;
  
@@ -22,7 +22,7 @@
      char *defdev;
  
      fflag = nflag = vflag = 0;
-@@ -95,18 +95,27 @@
+@@ -95,18 +95,28 @@
  	if (argc == 0) {
  	    usage();
  	}
@@ -41,8 +41,9 @@
 +    } else {
 +         int c;
 +         char *dev_bak = malloc(MAXPATHLEN);
-+         if (c = readlink(device, dev_bak, MAXPATHLEN)) {
++         if ((c = readlink(device, dev_bak, MAXPATHLEN-1)) != -1) {
 +              dev_bak[c] = '\0';
++              free(name);
 +              name = dev_bak;
 +         } else {
 +              free(dev_bak);
@@ -54,7 +55,7 @@
      if (sts < 0) {
  	perror(err);
  	exit(1);
-@@ -128,16 +137,26 @@
+@@ -128,16 +138,26 @@
  int
  check_device(name, device)
      char *name;
@@ -62,15 +63,15 @@
 +    char **device;
  {
 -    int sts;
-+    int sts, i;
++    int sts = 0, i;
      struct stat sb;
  
 -    sprintf(device, "/dev/r%sc", name);
 -    if (vflag || nflag) {
 -	printf("%s: using device %s\n", program, device);
-+    const char* dev_list[] = { "/dev/%sc", "/dev/%s", "%s" };
-+    for (i = 0; i < 2; i++) {
-+         if (asprintf(device, dev_list[i], name) == -1)
++    const char* dev_list[] = { "/dev/%sc", "/dev/%s", "%s", NULL };
++    for (i = 0; dev_list[i]; i++) {
++         if ((sts = asprintf(device, dev_list[i], name)) == -1)
 +              return sts;
 +         if (vflag || nflag) {
 +              printf("%s: trying device %s\n", program, *device);
@@ -87,7 +88,7 @@
  
      return sts;
  }
-@@ -155,7 +174,7 @@
+@@ -155,7 +175,7 @@
  int
  unmount_fs(name, err)
      char *name;
@@ -96,7 +97,7 @@
  {
      int mnts;
      struct statfs *mntbuf;
-@@ -221,7 +240,7 @@
+@@ -221,7 +241,7 @@
  	    sts = 0;
  	}
  	if (sts < 0 && fflag == 0) {

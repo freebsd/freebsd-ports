@@ -7,13 +7,13 @@
 
 PORTNAME=	eject
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/OD/
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for ejecting media from CD or optical disk drive
 
 DOCDIR=		share/doc/eject
