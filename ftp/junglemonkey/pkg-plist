@@ -24,9 +24,9 @@ share/gnome/jm/glade/jm.glade
 share/gnome/jm/glade/master_popup.glade
 share/gnome/jm/glade/preferences_dialog.glade
 share/gnome/jm/glade/properties_dialog.glade
-share/gnome/locale/fr/LC_MESSAGES/jm.mo
-share/gnome/locale/de/LC_MESSAGES/jm.mo
 share/gnome/pixmaps/jm-logo.png
+share/locale/de/LC_MESSAGES/jm.mo
+share/locale/fr/LC_MESSAGES/jm.mo
 @dirrm share/gnome/help/jm/C/images
 @dirrm share/gnome/help/jm/C
 @dirrm share/gnome/help/jm

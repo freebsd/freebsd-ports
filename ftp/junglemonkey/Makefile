@@ -7,7 +7,7 @@
 
 PORTNAME=	junglemonkey
 PORTVERSION=	0.1.11
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
@@ -16,24 +16,22 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnet.0:${PORTSDIR}/net/gnet
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gnome
+CONFIGURE_ARGS=	--enable-gnome=yes --enable-debug=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		jm.1 jmlite.1 mtprendezvous.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|/gnome/help/|/help/|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-
-post-install:
-	@${RMDIR} ${X11BASE}/share/gnome/help/jm/C/stylesheet-images
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
