@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.3b
+PORTVERSION=	1.4a
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		marcus/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
-		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
+		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -30,15 +30,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MOZILLA?=	mozilla-devel
 
-BROKEN=		"Requires update to 1.4a"
-
-WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
-
 .if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		ORBit-2.0:${PORTSDIR}/devel/ORBit2
+USE_GNOME=	gtk20 orbit2
 .else
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 orbit
 .endif
 
@@ -52,7 +46,7 @@ BROKEN=		Mozilla-devel and Xft2 render the mozilla-fonts \
 
 .if defined(WITH_CALENDAR) && (defined(WITHOUT_MAILNEWS) || \
 	defined(WITHOUT_COMPOSER))
-BROKEN=	Calendar requires Composer and Mailnews support.
+BROKEN=	"Calendar requires Composer and Mailnews support."
 .endif
 
 .if defined(WITH_CALENDAR)
@@ -82,12 +76,14 @@ CONFIGURE_ARGS=					\
 		--enable-mathml			\
 		--disable-md			\
 		--disable-pedantic		\
+		--disable-bidi			\
 		--disable-plaintext-editor-only	\
 		--enable-strip			\
 		--enable-svg			\
 		--disable-tests			\
 		--disable-xterm-updates		\
 		--enable-xinerama		\
+		--with-system-zlib		\
 		--with-system-jpeg=${LOCALBASE}	\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
@@ -116,6 +112,9 @@ CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 .if defined(WITH_JAVASCRIPT_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-jsd \
 			--enable-dtd-debug
+.else
+CONFIGURE_ARGS+=	--disable-jsd \
+			--disable-dtd-debug
 .endif
 
 .if defined(WITH_CALENDAR)
@@ -131,6 +130,7 @@ CONFIGURE_ARGS+=	--disable-composer
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 PKGCONFIG_FILES=	mozilla-gtkmozembed.pc mozilla-js.pc mozilla-xpcom.pc \
 			mozilla-nspr.pc mozilla-nss.pc
+EXTRA_PATCHES=		${FILESDIR}/xim_dekita2.patch
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 .endif
@@ -149,6 +149,10 @@ ALL_TARGET=	default
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
+.if !defined(WITHOUT_OPTIMIZE) && ${ARCH} != "alpha"
+CFLAGS+=	-O2
+.endif
+
 .if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 BROKEN=	"core dumps on alpha during post-build"
@@ -159,6 +163,17 @@ BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installi
 .endif
 
 pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Mozilla has the following tunable option(s):"
+	@${ECHO_MSG} "	WITHOUT_XFT=yes		Disables Xft anti-aliasing support"
+	@${ECHO_MSG} "	WITH_CALENDAR=yes	Enables the Calendar module (requires Mailnews and Composer modules)"
+	@${ECHO_MSG} "	WITHOUT_MAILNEWS=yes	Disables the Mail and News modules"
+	@${ECHO_MSG} "	WITHOUT_COMPOSER=yes	Disables the HTML Composer module"
+	@${ECHO_MSG} "	WITHOUT_LDAP=yes	Disables LDAP support within the Mailnews module"
+	@${ECHO_MSG} "	WITHOUT_CHATZILLA=yes	Disable the Chatzilla IRC module"
+	@${ECHO_MSG} "	WITH_JAVASCRIPT_DEBUGGER=yes		Enable the DTD and JavaScript debuggers"
+	@${ECHO_MSG} "	WITHOUT_OPTIMIZE=yes	Disable -O2 optimization"
+	@${ECHO_MSG} ""
 .if defined(WITH_CALENDAR)
 	@${ECHO_MSG} "Calendar is still beta software."
 	@${ECHO_MSG} "Use at your own risk."
