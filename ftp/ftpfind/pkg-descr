@@ -1,11 +1,12 @@
 ftpfind - find directory&file on a ftp server
 
-usage: ftpfind URL [-login login_name] [-password password] \
-             [-regexp pattern] [-type d|f|l] [-ls] [-print] \
-             [-delete|-get [directory] [-new] [-resume] [-cpmod] \
-                     |-put [directory] [-new] [-cpmod] \
-                     |-chmod 0???]
+usage: /usr/local/bin/ftpfind URL [-proxy proxy_server] \
+		[-login login_name] [-password password] \
+		[-regexp pattern] [-type d|f|l] [-ls] [-print] \
+		[-delete|-get [directory] [-new] [-resume] \
+			|-put [directory] [-new] \
+			|-chmod 0???]
 
 --
 Tomokazu ISHII
-wub@green.an.egg.or.jp
+t-ishii@tryplanet.com
