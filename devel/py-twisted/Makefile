@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/unittest.py:${PORTSDIR}/devel/py-unit \
 
 USE_PYTHON=	yes
 PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-EXAMPLESDIR=	${PREFIX}/share/examples/twisted
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 MAN1=		faucet.1 gnusto.1 im.1 manhole.1 mktap.1 twistd.1
 
 post-patch:
