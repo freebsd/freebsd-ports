@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sat Jul  3 19:33:57 1999
++++ Makefile.in	Mon Jul  5 10:28:35 1999
+@@ -108,8 +108,8 @@
+ lpe_LDADD = @INTLLIBS@ @INTLOBJS@ @DL_LIB@ @SLANG_LIB@
+ lpe_LDFLAGS = @lpe_LDFLAGS@
+ lpe_DEPENDENCIES = @lpe_DEPS@ @INTLDEPS@
+-@USE_INCLUDED_LIBINTL_TRUE@CPPFLAGS =  -DLOCALEDIR=\"$(datadir)/@DATADIRNAME@\" -I$(top_srcdir)/intl
+-@USE_INCLUDED_LIBINTL_FALSE@CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\"
++@USE_INCLUDED_LIBINTL_TRUE@CPPFLAGS =  -DLOCALEDIR=\"$(datadir)/@DATADIRNAME@\" -I$(top_srcdir)/intl -I@includedir@
++@USE_INCLUDED_LIBINTL_FALSE@CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" -I@includedir@
+ 
+ liblpedir = $(libdir)/lpe
+ 

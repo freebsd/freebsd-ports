@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lpe
-# Version required:	1.2.1
+# Version required:	1.2.2
 # Date created:		12 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/04/22 23:11:08 mharo Exp $
+# $Id: Makefile,v 1.4 1999/06/19 05:26:23 cpiazza Exp $
 #
 
-DISTNAME=     	lpe-1.2.1
+DISTNAME=     	lpe-1.2.2
 CATEGORIES=	editors
 MASTER_SITES=	http://cdsmith.twu.net/lpe/
 
@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-ltermcap"
+CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include
 
 MAN1=	lpe.1
 
