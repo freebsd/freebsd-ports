@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	0.11.0
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/libxslt
+MASTER_SITE_SUBDIR=	stable/sources/libxslt
 
 MAINTAINER=	gnome@FreeBSD.org
 
