@@ -1,0 +1,3 @@
+sbin/chrootuid
+share/doc/chrootuid/README
+@dirrm share/doc/chrootuid

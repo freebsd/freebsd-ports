@@ -1,0 +1,1 @@
+A simple wrapper that combines chroot(8) and su(1) into  one  program
