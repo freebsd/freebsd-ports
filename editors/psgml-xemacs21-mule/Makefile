@@ -17,7 +17,7 @@ MASTERDIR=	${.CURDIR}/../psgml-emacs
 EMACS_NAME=	xemacs
 EMACS_PORT=	xemacs21-mule
 EMACS_CMD=	${PREFIX}/bin/${EMACS_PORT}
-EMACS_VER=	21.1.8
+EMACS_VER=	21.1.9
 EMACS_LIBDIR=	lib/xemacs
 
 # pkg/* files are used in ${.CURDIR}
