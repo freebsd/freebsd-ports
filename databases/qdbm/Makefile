@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.7.26
+PORTVERSION=	1.7.28
 CATEGORIES=	databases
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITES=	http://qdbm.sourceforge.net/
+MASTER_SITES=	http://qdbm.sourceforge.net/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fuyuki@nigredo.org
