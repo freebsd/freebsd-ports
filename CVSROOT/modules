@@ -4700,6 +4700,7 @@ moleskine	ports/editors/moleskine
 momspider	ports/www/momspider
 moneydance	ports/deskutils/moneydance
 monitord	ports/sysutils/monitord
+monkey		ports/www/monkey
 monkeybubble	ports/games/monkeybubble
 mono		ports/lang/mono
 monster-masher	ports/games/monster-masher
