@@ -1,21 +1,12 @@
-# New ports collection makefile for:	kinput2.canna
-# Version required:	2.0p1
-# Date created:		1 May 1995
-# Whom:			NIIMI Satoshi <sa2c@and.or.jp>
+# New ports collection makefile for:	kinput2-canna
+# Version required:	2.0p4
+# Date created:		19 Dec 1997
+# Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/09/14 21:34:44 max Exp $
+# $Id: Makefile,v 1.5 1997/12/25 22:29:37 asami Exp $
 #
 
-DISTNAME=	kinput2-v2-fix1
-PKGNAME=	ja-ckinput2-2.0.1
-CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
+PKGNAME=	ja-kinput2-canna-2.0.4
+CANNA=		yes
 
-MAINTAINER=	ports@FreeBSD.ORG
-
-LIB_DEPENDS=	canna16\\.1\\.:${PORTSDIR}/japanese/Canna
-
-NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
-
-.include <bsd.port.mk>
+.include "${.CURDIR}/../kinput2-wnn4/Makefile"

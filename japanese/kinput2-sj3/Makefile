@@ -1,21 +1,12 @@
-# New ports collection makefile for:	kinput2.sj3
-# Version required:	2.0p1
-# Date created:		10 Aug 1996
-# Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
+# New ports collection makefile for:	kinput2-sj3
+# Version required:	2.0p4
+# Date created:		19 Dec 1997
+# Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/11 10:12:11 max Exp $
+# $Id: Makefile,v 1.3 1997/09/14 21:34:48 max Exp $
 #
 
-DISTNAME=	kinput2-v2-fix1
-PKGNAME=	ja-skinput2-2.0.1
-CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
+PKGNAME=	ja-kinput2-sj3-2.0.4
+SJ3=		yes
 
-MAINTAINER=	hidekazu@cs.titech.ac.jp
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsj3lib.a:${PORTSDIR}/japanese/sj3
-
-NO_WRKSUBDIR=	yes
-USE_IMAKE=	yes
-
-.include <bsd.port.mk>
+.include "${.CURDIR}/../kinput2-wnn4/Makefile"
