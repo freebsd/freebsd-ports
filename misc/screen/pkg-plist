@@ -20,3 +20,4 @@ share/screen/utf8encodings/cd
 share/screen/utf8encodings/d6
 @dirrm share/screen/utf8encodings
 @dirrm share/screen
+@unexec echo If permanently deleting this package, %%PREFIX%%/etc/screenrc must be removed manually
