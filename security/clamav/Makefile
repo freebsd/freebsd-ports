@@ -7,7 +7,6 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:C/([a-z])[a-z]*/.\1/g:S/-/./g}
-PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -24,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.80
+DISTVERSION=	0.81
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
@@ -45,6 +44,8 @@ RUNDIR=		/var/run/clamav
 PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
+		--with-zlib=/usr \
+		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
@@ -169,9 +170,6 @@ post-install:
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
 		${DESTDIR}${DOCSDIR}
-	@${MKDIR} ${DESTDIR}${DOCSDIR}/html
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
-		${DESTDIR}${DOCSDIR}/html
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
