@@ -1,22 +1,18 @@
 # New ports collection makefile for:	xskat
-# Version required:	xskat-1.6
+# Version required:	xskat-2.2
 # Date created:		27 Apr 1996
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
+# Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/01/06 08:28:38 tg Exp $
+# $Id: Makefile,v 1.5 1998/01/21 08:48:24 tg Exp $
 #
 
-DISTNAME=	xskat-1.6
+DISTNAME=	xskat-2.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.germany.eu.net/pub/X11/misc/
+MASTER_SITES=	http://www.draeger.com/~gerhardt/
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	tg@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/xskat
 USE_IMAKE=	yes
-
-pre-configure:
-	cp ${FILESDIR}/Imakefile ${WRKSRC}
-	mv ${WRKSRC}/makefile ${WRKSRC}/makefile.dist
 
 .include <bsd.port.mk>
