@@ -3455,6 +3455,7 @@ ko-elm		ports/korean/elm
 ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
 ko-gau		ports/korean/gau
+ko-gdick	ports/korean/gdick
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
 ko-gtkcomm	ports/korean/gtkcomm
 ko-h2ps		ports/korean/h2ps
