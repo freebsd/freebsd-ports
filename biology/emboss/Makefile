@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	2.2.0
+PORTVERSION=	2.4.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
@@ -18,8 +18,6 @@ EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	wjv@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
-
-BROKEN=		"Incorrect checksums"
 
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
@@ -63,6 +61,17 @@ PLIST_${app}=	"@comment "
 PLIST_SUB+=	PLIST_${app}=${PLIST_${app}}
 .endfor
 
+# Jemboss support is a work in progress.
+#
+#.if defined(WITH_JEMBOSS)
+#USE_JAVA=	1.3+
+#CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}/include \
+#			--with-javaos=${JAVA_HOME}/include/${JAVA_OS:L}
+#CONFIGURE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
+#MAKE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
+#JEMBOSS_WRKSRC=	${WRKSRC}/jemboss
+#.endif
+
 pre-fetch:
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
 
@@ -86,28 +95,33 @@ post-patch:
 
 post-configure:
 .for app in ${APPLIST}
-	@ (cd ${${app}_WRKSRC} && \
+	@ cd ${${app}_WRKSRC} && \
 	  ${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 	  CXXFLAGS="${CXXFLAGS}" \
 	  INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 	  INSTALL_DATA="${INSTALL_DATA}" \
 	  INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	  INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	  ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+	  ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .endfor
 
 post-build:
 .for app in ${APPLIST}
-	@ (cd ${${app}_WRKSRC} && \
+	@ cd ${${app}_WRKSRC} && \
 	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-	  ${MAKE_ARGS})
+	  ${MAKE_ARGS}
 .endfor
+#.if defined(WITH_JEMBOSS)
+#	@ cd ${JEMBOSS_WRKSRC} && \
+#	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+#	  ${MAKE_ARGS}
+#.endif
 
 post-install:
 .for app in ${APPLIST}
-	@ (cd ${${app}_WRKSRC} && \
+	@ cd ${${app}_WRKSRC} && \
 	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
-	  ${MAKE_ARGS} ${INSTALL_TARGET})
+	  ${MAKE_ARGS} ${INSTALL_TARGET}
 .endfor
 	@ ${PERL} -pe 's#%%PREFIX%%#${PREFIX}#' \
 	  ${CONFIG_FILE} > ${PREFIX}/etc/emboss.default.sample && \
