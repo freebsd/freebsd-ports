@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.65 1996/03/25 10:13:47 asami Exp $
+# $Id: Makefile,v 1.66 1996/04/12 08:42:56 asami Exp $
 #
 
     SUBDIR += archie
@@ -25,6 +25,7 @@
     SUBDIR += samba
     SUBDIR += scotty
     SUBDIR += slirp
+    SUBDIR += speak_freely
     SUBDIR += sup
     SUBDIR += tclDP
     SUBDIR += tintin++
