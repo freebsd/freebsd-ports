@@ -8,7 +8,7 @@
 PORTNAME=	korelib
 PORTVERSION=	1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.smga3000.com/thekompany/Korelib/
+MASTER_SITES=	http://host33.ipowerweb.com/~smga3000/thekompany/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform C++ library for developing modular applications
