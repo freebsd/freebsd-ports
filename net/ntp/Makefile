@@ -3,7 +3,7 @@
 # Date created:		Di   5 Mai 1998 21:31:03 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.3 1999/01/07 19:51:11 andreas Exp $
+# $Id: Makefile,v 1.4 1999/01/27 04:58:09 andreas Exp $
 #
 
 DISTNAME=	ntp-4.0.91
@@ -11,6 +11,8 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/testing/
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+BROKEN=		"structure has no member named \`tv_usec'"
 
 GNU_CONFIGURE=	yes
 
