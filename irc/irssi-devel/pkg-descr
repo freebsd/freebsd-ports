@@ -1,8 +1,6 @@
 Irssi is an IRC client made with the GTK+ toolkit and (optional) GNOME 
-libraries.  A small text mode version is also somewhat working, and a
-really simple daemon version which can be used as bot will most likely
+libraries.  A small text mode version also works somewhat, and a
+really simple daemon version that can be used as bot will most likely
 be available soon.
 
-WWW: http://www.sicom.fi/~ikioma/irssi/home.htm
-
-- Jim <jim@FreeBSD.org>
+WWW: http://xlife.dhs.org/irssi/
