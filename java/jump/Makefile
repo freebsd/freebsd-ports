@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 
 USE_JAVA=	1.2+
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
 ANT_TARGET=	jar
