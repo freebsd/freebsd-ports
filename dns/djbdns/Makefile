@@ -50,7 +50,8 @@ DJBDNS_V6_VER=	test11
 
 MAINTAINER=	roam@FreeBSD.org
 
-RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
+RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
+		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
