@@ -16,6 +16,8 @@ COMMENT=	Persistent CGI module for Apache and Zope
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 
+BROKEN=		Does not install
+
 .if defined(WITH_APACHE13)
 BUILD_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/include/apache/httpd.h:${PORTSDIR}/${APACHE_PORT}
