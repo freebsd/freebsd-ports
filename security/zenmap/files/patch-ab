@@ -1,5 +1,5 @@
---- nmapfe/Makefile.in.orig	Fri May  7 04:51:52 1999
-+++ nmapfe/Makefile.in	Fri Jul 23 10:46:08 1999
+--- Makefile.in.orig	Fri May  7 04:51:52 1999
++++ Makefile.in	Fri Jul 23 10:46:08 1999
 @@ -71,7 +71,7 @@
  PROGRAMS =  $(bin_PROGRAMS)
  
