@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.12 1996/12/06 08:18:34 swallace Exp $
+# $Id: Makefile,v 1.13 1996/12/06 23:27:03 asami Exp $
 #
 
 DISTNAME=       magic-6.5
@@ -13,6 +13,7 @@ DISTFILES=	magic-6_5_tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 
 BINS=	magic ext2sim magicusage net2ir extcheck X11Helper ext2spice

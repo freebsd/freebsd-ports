@@ -3,7 +3,7 @@
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
-# $Id: Makefile,v 1.6 1998/10/13 01:25:32 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/14 04:13:40 jseger Exp $
 #
 
 DISTNAME=       jed0.98-7
@@ -18,6 +18,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=     eric@cybernut.com
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+
+USE_XLIB=	yes
 
 # comment out the next line if you don't want the X version of JED.
 XJED=	xjed

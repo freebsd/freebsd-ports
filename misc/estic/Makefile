@@ -3,7 +3,7 @@
 # Date created:					21 Sep 1996
 # Whom:						Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/29 04:44:13 obrien Exp $
+# $Id: Makefile,v 1.2 1997/07/21 19:28:43 max Exp $
 #
 
 DISTNAME=		estic-1.40-sources
@@ -18,6 +18,7 @@ MAINTAINER=		jhs@FreeBSD.org
 
 BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
 
+USE_XLIB=		yes
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=#	-q
 NO_WRKSUBDIR=		yes
