@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	7.2.0
+PORTVERSION=	7.3.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R7B-2
+DISTNAME=	otp_src_R7B-3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -140,10 +140,22 @@ post-install:
 .endif
 	sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
-	@${CP} ${PLIST} ${TMPPLIST}
-	@find ${PREFIX}/lib/erlang -type f | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
-	@find ${PREFIX}/lib/erlang -type l | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
-	@find ${PREFIX}/lib/erlang -type d | ${SED} -e "s@${PREFIX}/@@" | ${PERL} -e 'print (join ("\n", reverse map ("\@dirrm " . substr ($$_, 0, -1), <STDIN>)) . "\n");' >> ${TMPPLIST}
+	@cd ${PREFIX} ; find lib/erlang/* -type f -o -type l \
+		| grep -v "^lib/erlang/man" \
+		| sort \
+		> ${WRKDIR}/PLIST.lib-erlang
+	@cd ${PREFIX} ; find lib/erlang/* -type d | sort -r \
+		| grep -v "^lib/erlang/man" \
+	    	| ${SED} -e 's/^/@dirrm /g' \
+		>> ${WRKDIR}/PLIST.lib-erlang
+
+	@${ECHO} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
+	@${ECHO} "/Insert PLIST.lib-erlang"	>> ${WRKDIR}/ex.script
+	@${ECHO} "d"				>> ${WRKDIR}/ex.script
+	@${ECHO} "r ${WRKDIR}/PLIST.lib-erlang"	>> ${WRKDIR}/ex.script
+	@${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-erlang
+	@cd ${WRKDIR} ; ex < ex.script
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a
 # private subdir. This is to avoid cluttering up the man page name
