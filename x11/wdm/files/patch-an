@@ -1,0 +1,21 @@
+--- ./src/config/Makefile.in.orig	Sun Oct  6 00:26:45 2002
++++ ./src/config/Makefile.in	Sun Oct  6 00:25:36 2002
+@@ -138,7 +138,6 @@
+ CLEANFILES = wdm-config Xsetup_0 Xservers Xservers.ws Xsession Xclients
+ 
+ EXTRA_DIST = \
+-	wdm.pamd \
+ 	$(configfiles_DATA) \
+ 	$(bin_SCRIPTS)
+ 
+@@ -382,10 +381,6 @@
+ 	$(INSTALL) -m 600 $(srcdir)/wdm-config $(DESTDIR)$(configfilesdir)
+ 	$(INSTALL) -m 644 $(srcdir)/Xsession.in $(DESTDIR)$(configfilesdir)
+ 	$(INSTALL) -m 644 $(srcdir)/Xclients.in $(DESTDIR)$(configfilesdir)
+-
+-install-data-local:
+-@INSTALLPAM_TRUE@	$(INSTALL) -d $(DESTDIR)$(PAMDIR)
+-@INSTALLPAM_TRUE@	$(INSTALL) -m 644 $(srcdir)/wdm.pamd $(DESTDIR)$(PAMDIR)/wdm
+ 
+ uninstall-hook:
+ 	rm -fr $(DESTDIR)$(configfilesdir)/authdir

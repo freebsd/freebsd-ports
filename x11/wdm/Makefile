@@ -7,7 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	tg
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPICS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList
@@ -52,13 +52,18 @@ MAN1=	wdm.1 wdmLogin.1
 
 DAEMONPICS=	beastie.xpm daemon1-HQ-1280x960.jpg
 
+.if ( ${OSVERSION} >= 500028 ) && !defined(WITHOUT_PAM)
+WITH_PAM=	yes
+.endif
+
 .if defined(WITH_PAM)
 CONFIGURE_ARGS+=	--enable-pam
 LIBPAM=		-lpam
-.endif
+PLIST_SUB+=	PAM=""
+.else
+PLIST_SUB+=	PAM="@comment "
 
 pre-everything::
-.if !defined(WITH_PAM)
 	@${ECHO_MSG} "To build this port with PAM support, define \"WITH_PAM\"."
 .endif
 
@@ -91,5 +96,12 @@ post-install:
 .for file in ${DAEMONPICS}
 	@${INSTALL_DATA} ${_DISTDIR}/${file} ${PREFIX}/lib/X11/wdm/pixmaps
 .endfor
+.if defined(WITH_PAM)
+.if ( ${OSVERSION} >= 500028 )
+	${INSTALL_DATA} ${FILESDIR}/wdm.pam ${LOCALBASE}/etc/pam.d/wdm
+.else
+	@${ECHO_CMD} "To finish installing this port, append the contents of ${FILESDIR}/wdm.pam to your /etc/pam.conf file"
+.endif
+.endif
 
 .include <bsd.port.post.mk>
