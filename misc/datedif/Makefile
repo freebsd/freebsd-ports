@@ -9,7 +9,7 @@
 PORTNAME=	datedif
 PORTVERSION=	0.9.1.4
 CATEGORIES=	misc
-MASTER_SITES=	# none
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 DISTNAME=	${PORTNAME}-0.9.1-4
 
 MAINTAINER=	ports@FreeBSD.org
