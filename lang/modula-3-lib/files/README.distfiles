@@ -1,0 +1,52 @@
+This port uses distfiles that I prepared specially for FreeBSD.  The DEC
+SRC release of Modula-3 comes in the form of 3 compressed tar files
+totaling about 16 MB.  A small fraction of that is actually needed.
+
+The FreeBSD distfiles are as follows.
+
+    m3-fbsd-src-3.6.tar.gz (required)
+
+	Sources for selected portions of the SRC release.  These
+	files are unmodified; however, only a subset is included.
+	Files relating to platforms other than FreeBSD have been
+	omitted.  Also, several large but rarely-used packages have
+	been left out.
+
+    m3-fbsd-m3cc-3.6.tar.gz (required)
+
+	Sources for the Modula-3 specific files making up the code
+	generator.  As released by SRC, the code generator is a
+	slightly modified version of gcc-2.6.3.  I have updated
+	the modifications to work with the newer gcc-2.7.2.1.  Only
+	the files which differ from those in the FreeBSD gcc-2.7.2.1
+	sources are included in this distfile.
+
+    m3-fbsd-gcc-3.6.tar.gz (optional)
+
+	Sources for the needed portions of gcc-2.7.2.1 which are
+	identical to those included in the FreeBSD system sources.
+	Many systems have these files online in "/usr/src/contrib/gcc".
+	The Makefile looks for them there first, and uses the online
+	files if they are present.  Only if the necessary files
+	are missing is this distfile fetched and used.
+
+    m3-fbsd-boot-3.6.tar.gz (optional)
+
+	A statically-linked FreeBSD executable for the Modula-3
+	compiler.  A working compiler is needed, because the compiler
+	is itself written in Modula-3.  The Makefile looks for this
+	executable on the system; it may already be present from
+	an earlier version of the port.  If found, the version
+	already on the system is used.  Otherwise, this distfile
+	is fetched and used.
+
+Also in the current directory are files named "T.*" and "X.*".  These
+contain lists of files and wildcards specifying the files to be included
+and excluded from each distfile.  For example, "m3-fbsd-src-3.6.tar.gz"
+can be reconstructed using the following commands:
+
+    make extract
+    cd work
+    tar -czvf m3-fbsd-src-3.6.tar.gz -T ../files/T.src -X ../files/X.src
+
+John Polstra <jdp@polstra.com>

@@ -1,0 +1,16 @@
+#! /bin/sh
+#
+# copy_files listfile m3dir sysdir wrkdir
+
+if [ $# -ne 4 ]; then
+    echo "Usage: $0 listfile m3dir sysdir wrkdir" >&2
+    exit 1
+fi
+
+listfile=$1
+m3dir=$2
+sysdir=$3
+wrkdir=$4
+
+sed "s,^${m3dir}/,," ${listfile} |\
+    (cd ${sysdir}; cpio -pdmu ${wrkdir}/${m3dir})
