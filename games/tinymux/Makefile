@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.digex.net/pub/mud/tinymux/
 
 MAINTAINER=	cjohnson@camelot.com
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/src
 #GNU_CONFIGURE=	YES
