@@ -20,7 +20,7 @@ PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
 PLIST_DIRS=	share/games/fortune share/games
 
 do-build:
-	@cd ${WRKSRC} && strfile futurama
+	@cd ${WRKSRC} && /usr/games/strfile futurama
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/games
