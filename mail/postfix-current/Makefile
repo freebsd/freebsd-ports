@@ -15,10 +15,9 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSIONRAW=	2.0.19-20040312
+PORTVERSIONRAW=	2.2-20040422
 PORTVERSION=	${PORTVERSIONRAW:S/-/./}
 PORTEPOCH=	2
-NO_LATEST_LINK=	yes
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -33,7 +32,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.0.* postfix-2.1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 
@@ -41,7 +41,8 @@ MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
 	postsuper.1 sendmail.1
 
-MAN5=	access.5 aliases.5 canonical.5 cidr_table.5 pcre_table.5 \
+MAN5=	access.5 aliases.5 canonical.5 cidr_table.5 ldap_table.5 \
+	mysql_table.5 pgsql_table.5 postconf.5 pcre_table.5 \
 	regexp_table.5 relocated.5 tcp_table.5 transport.5 virtual.5 \
 	header_checks.5 body_checks.5
 
@@ -55,6 +56,19 @@ MAN8base=$(MAN8:S/tlsmgr.8//)
 
 CONF1=	main.cf master.cf access aliases canonical header_checks relocated \
 	transport virtual
+
+README=	ADDRESS_CLASS_README ADDRESS_REWRITING_README \
+	ADDRESS_VERIFICATION_README BACKSCATTER_README \
+	BASIC_CONFIGURATION_README BUILTIN_FILTER_README \
+	CONTENT_INSPECTION_README CYRUS_README DATABASE_README DB_README \
+	DEBUG_README ETRN_README FILTER_README INSTALL LDAP_README \
+	LINUX_README LMTP_README LOCAL_RECIPIENT_README MAILDROP_README \
+	MYSQL_README NFS_README OVERVIEW PACKAGE_README PCRE_README \
+	PGSQL_README QMQP_README QSHAPE_README RESTRICTION_CLASS_README \
+	SASL_README SCHEDULER_README SMTPD_ACCESS_README SMTPD_POLICY_README \
+	SMTPD_PROXY_README STANDARD_CONFIGURATION_README TUNING_README \
+	ULTRIX_README UUCP_README VERP_README VIRTUAL_README \
+	XCLIENT_README XFORWARD_README
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -101,9 +115,11 @@ pre-patch:
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
 		${WRKSRC}/man/man8/${file} ${WRKSRC}/html/${file}.html
 .endfor
-.for file in faq rate rewrite uce
+.for file in ${README}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
 		${WRKSRC}/html/${file}.html
+	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
+		${WRKSRC}/README_FILES/${file}
 .endfor
 .for file in ${CONF1}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" ${WRKSRC}/conf/${file}
@@ -135,7 +151,7 @@ do-install:
 
 .for file in ${CONF1}
 	${INSTALL_DATA} ${WRKSRC}/conf/${file} \
-		${PREFIX}/etc/postfix/sample-${file}
+		${PREFIX}/etc/postfix/dist-${file}
 .endfor
 
 	@${INSTALL_SCRIPT} \
@@ -144,14 +160,12 @@ do-install:
 
 # optional TEST binaries
 .for file in ${BIN1}
-	@${INSTALL_PROGRAM} \
-		${WRKSRC}/src/smtpstone/${file} \
-		${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/sbin
 .endfor
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.gif ${DOCSDIR} && \
+	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
 		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
 .endif
 
