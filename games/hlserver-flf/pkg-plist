@@ -162,6 +162,18 @@
 %%HLDSDIR%%/frontline/gfx/env/flfsky5rt.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky5up.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky5up.tga
+%%HLDSDIR%%/frontline/gfx/env/flfsky7bk.bmp
+%%HLDSDIR%%/frontline/gfx/env/flfsky7bk.tga
+%%HLDSDIR%%/frontline/gfx/env/flfsky7dn.bmp
+%%HLDSDIR%%/frontline/gfx/env/flfsky7dn.tga
+%%HLDSDIR%%/frontline/gfx/env/flfsky7ft.bmp
+%%HLDSDIR%%/frontline/gfx/env/flfsky7ft.tga
+%%HLDSDIR%%/frontline/gfx/env/flfsky7lf.bmp
+%%HLDSDIR%%/frontline/gfx/env/flfsky7lf.tga
+%%HLDSDIR%%/frontline/gfx/env/flfsky7rt.bmp
+%%HLDSDIR%%/frontline/gfx/env/flfsky7rt.tga
+%%HLDSDIR%%/frontline/gfx/env/flfsky7up.bmp
+%%HLDSDIR%%/frontline/gfx/env/flfsky7up.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky9bk.bmp
 %%HLDSDIR%%/frontline/gfx/env/flfsky9bk.tga
 %%HLDSDIR%%/frontline/gfx/env/flfsky9dn.bmp
@@ -414,6 +426,10 @@
 %%HLDSDIR%%/frontline/maps/flf_cky.bsp
 %%HLDSDIR%%/frontline/maps/flf_cky.loc
 %%HLDSDIR%%/frontline/maps/flf_cky.txt
+%%HLDSDIR%%/frontline/maps/flf_cyprus.bsp
+%%HLDSDIR%%/frontline/maps/flf_cyprus.loc
+%%HLDSDIR%%/frontline/maps/flf_cyprus.txt
+%%HLDSDIR%%/frontline/maps/flf_cyprusREADME.txt
 %%HLDSDIR%%/frontline/maps/flf_ebonysword.bsp
 %%HLDSDIR%%/frontline/maps/flf_ebonysword.loc
 %%HLDSDIR%%/frontline/maps/flf_ebonysword.txt
@@ -444,6 +460,9 @@
 %%HLDSDIR%%/frontline/maps/flf_risu.bsp
 %%HLDSDIR%%/frontline/maps/flf_risu.loc
 %%HLDSDIR%%/frontline/maps/flf_risu.txt
+%%HLDSDIR%%/frontline/maps/flf_rmego.bsp
+%%HLDSDIR%%/frontline/maps/flf_rmego.loc
+%%HLDSDIR%%/frontline/maps/flf_rmego.txt
 %%HLDSDIR%%/frontline/maps/flf_sogem.bsp
 %%HLDSDIR%%/frontline/maps/flf_sogem.loc
 %%HLDSDIR%%/frontline/maps/flf_sogem.txt
@@ -470,6 +489,7 @@
 %%HLDSDIR%%/frontline/models/Facehugger.mdl
 %%HLDSDIR%%/frontline/models/antena.mdl
 %%HLDSDIR%%/frontline/models/antena2.mdl
+%%HLDSDIR%%/frontline/models/armor.mdl
 %%HLDSDIR%%/frontline/models/astro.mdl
 %%HLDSDIR%%/frontline/models/astroT.mdl
 %%HLDSDIR%%/frontline/models/cactus_medium.mdl
@@ -511,6 +531,9 @@
 %%HLDSDIR%%/frontline/models/map/palmita.mdl
 %%HLDSDIR%%/frontline/models/map/posteluz.mdl
 %%HLDSDIR%%/frontline/models/map/posteluzbi.mdl
+%%HLDSDIR%%/frontline/models/mego_chand.mdl
+%%HLDSDIR%%/frontline/models/mego_chand2.mdl
+%%HLDSDIR%%/frontline/models/mego_chand3.mdl
 %%HLDSDIR%%/frontline/models/megotreeA.mdl
 %%HLDSDIR%%/frontline/models/megotreeB.mdl
 %%HLDSDIR%%/frontline/models/p_9mmAR.mdl
