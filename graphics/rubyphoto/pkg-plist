@@ -33,6 +33,8 @@
 %%DATADIR%%/xml-generators/make-album
 %%DATADIR%%/template.rb
 %%DATADIR%%/urlencode.rb
+%%RUBY_SITELIBDIR%%/abspath.rb
+%%RUBY_SITELIBDIR%%/findbin.rb
 @dirrm %%DATADIR%%/sample_input
 @dirrm %%DATADIR%%/templates/alternate
 @dirrm %%DATADIR%%/templates
