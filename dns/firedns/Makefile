@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	firedns
-PORTVERSION=	0.1.28
-PORTREVISION=	2
+PORTVERSION=	0.1.29
 CATEGORIES=	net
 MASTER_SITES=	http://ares.penguinhosting.net/~ian/projects/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
-DISTNAME=	firedns-${PORTVERSION}
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	-${PORTVERSION}.tar.gz
 
 MAINTAINER=	dean@odyssey.apana.org.au
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		firedns_aton4.3 firedns_aton6.3 firedns_dnsbl_lookup.3 \
 		firedns_getip4.3 firedns_getip6.3 firedns_getmx.3 \
@@ -30,5 +29,9 @@ MAN3=		firedns_aton4.3 firedns_aton6.3 firedns_dnsbl_lookup.3 \
 		firedns_resolveip6.3 firedns_resolvemx.3 \
 		firedns_resolvename4.3 firedns_resolvename6.3 \
 		firedns_resolvetxt.3 libfiredns.3
+
+post-install:
+	@cd ${PREFIX}/lib; ${MV} libfiredns.so libfiredns.so.0; \
+	${LN} -s libfiredns.so.0 libfiredns.so
 
 .include <bsd.port.mk>

@@ -1,3 +1,5 @@
+@comment $FreeBSD$
 include/firedns.h
 lib/libfiredns.so
+lib/libfiredns.so.0
 lib/libfiredns.a
