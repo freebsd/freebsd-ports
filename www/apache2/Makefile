@@ -48,6 +48,7 @@ USE_AUTOCONF_VER?=	253
 USE_LIBTOOL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
+LIBTOOLFILES=	configure
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
