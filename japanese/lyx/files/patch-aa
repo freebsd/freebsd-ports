@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jun  1 19:07:35 1999
++++ configure	Mon Apr 24 21:02:48 2000
+@@ -5777,7 +5777,7 @@
+ #ifdef HAVE_SYS_SOCKET_H
+ #include <sys/socket.h>
+ #endif
+-extern select ($ac_cv_func_select_arg1,$ac_cv_func_select_arg234,$ac_cv_func_select_arg234,$ac_cv_func_select_arg234,$ac_cv_func_select_arg5);
++extern int select ($ac_cv_func_select_arg1,$ac_cv_func_select_arg234,$ac_cv_func_select_arg234,$ac_cv_func_select_arg234,$ac_cv_func_select_arg5);
+ int main() {
+ 
+ ; return 0; }

@@ -18,10 +18,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc
-.if defined(WITH_ISPELL)
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-.endif
+#RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc
+#.if defined(WITH_ISPELL)
+#RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+#.endif
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -38,7 +38,7 @@ pre-fetch:
 	@${ECHO_MSG} "make WITH_ISPELL=yes"
 .endif
 
-do-patch:
+post-patch:
 	@cd ${WRKSRC}; ${PATCH} -p1 < ../lyx-jp-patch
 
 post-install:
