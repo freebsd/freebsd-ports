@@ -12,7 +12,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	knights
 
-MAINTAINER=	stefan.jahn@nemesis-sektor.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE chess interface (gnuchess/crafty)
 
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
