@@ -1,0 +1,13 @@
+--- Makefile.orig	Tue Oct 26 16:56:41 1999
++++ Makefile	Wed Feb  2 15:00:38 2000
+@@ -3,8 +3,8 @@
+ CC = gcc
+ LD = $(CC)
+ CFLAGS = -O2 -Wall
+-LIBS = -L/usr/X11/lib -L/usr/local/lib -lX11 -lforms -lm
+-INCS = -I/usr/X11R6/include
++LIBS = -L${X11BASE}/lib -L${PREFIX}/lib -lX11 -lxforms -lm
++INCS = -I${X11BASE}/include
+ 
+ OBJS = globals.o pointer.o popen2.o parse.o updates.o buttons.o structures.o main.o
+ PROG = bfe

@@ -1,0 +1,4 @@
+bin/bfe
+share/bfe/bferc.sample
+share/bfe/README.bferc
+@dirrm share/bfe
