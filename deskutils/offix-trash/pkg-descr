@@ -1,0 +1,9 @@
+This is Trash from OffiX, for use with applications which support the
+OffiX DND protocol.
+
+Trash is a black-hole intended to be used with "files". Every file dropped
+on trash will be moved to a temporary hidden directory. If you want, the
+"delete all" button will remove the files in trash from your disk forever.
+The good things is that the files in trash can be recovered (undeleted).
+
+Suggestion: call it iconic ("trash -ic")
