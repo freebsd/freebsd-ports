@@ -1,0 +1,16 @@
+Chora is the Horde CVS viewer; it provides an advanced web-based view of
+any local CVS repository. It now includes annotation support, visual
+branch viewing capability, and human-readable diffs.
+
+Other features are:
+
+- Support for multiple CVS repositories
+- MIME-awareness, to pretty-print code or convert PDFs to text
+- Visual branch histories, to view the flow of code through a project
+- Internationalisation, with several languages supported
+- Annotation (or 'blame') support
+
+... as well as all the usual CVS functions you are familiar with from
+other similar applications.
+
+WWW: http://horde.org/chora/
