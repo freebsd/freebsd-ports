@@ -30,6 +30,12 @@ USE_PERL5=	yes
 CFLAGS+=	-fPIC
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Install fails on sparc64"
+.endif
+
 post-patch:
 .for P in ${PRFXFILES}
 	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' $P > foo && \
@@ -52,4 +58,4 @@ do-install:
 	${WRKSRC}/cftc ${WRKSRC}/scriba.conf.unix.lsp \
 		${PREFIX}/etc/scriba/basic.conf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
