@@ -143,6 +143,7 @@
     SUBDIR += xskyroot
     SUBDIR += xsnow
     SUBDIR += xstarroll
+    SUBDIR += xstroke
     SUBDIR += xtacy
     SUBDIR += xtattr
     SUBDIR += xtermset
