@@ -10,6 +10,7 @@
     SUBDIR += ack
     SUBDIR += acroread-jpnfont
     SUBDIR += addttfont
+    SUBDIR += balsa
     SUBDIR += binder
     SUBDIR += bookview
     SUBDIR += canuum
