@@ -7,7 +7,7 @@
 
 PORTNAME=	tar
 PORTVERSION=	1.13.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
