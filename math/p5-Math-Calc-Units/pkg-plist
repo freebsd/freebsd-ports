@@ -1,0 +1,24 @@
+bin/ucalc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Calc/Units/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Compute.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Base2Metric.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Byte.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Combo.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Distance.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Metric.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Multi.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert/Time.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Grammar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Grammar.y
+lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Rank.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units/Convert 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math/Calc/Units 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math/Calc 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Calc/Units 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Calc 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
