@@ -3,14 +3,14 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/15 20:49:26 andreas Exp $
 #
 
 DISTNAME=	lyx-0.10.6
 CATEGORIES+=	print
-MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
-
 MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/
+
+MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
@@ -19,7 +19,7 @@ LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms \
 		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-extra-lib=/usr/X11R6/lib --with-extra-inc="/usr/X11R6/include /usr/X11R6/include/X11"
+CONFIGURE_ARGS+=--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
 
 post-install:   
 .if !defined(NOMANCOMPRESS)
