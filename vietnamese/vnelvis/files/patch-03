@@ -1,5 +1,5 @@
 --- config.h.orig	Wed Dec  5 08:50:51 1990
-+++ config.h	Wed Dec  4 23:34:15 1996
++++ config.h	Thu Apr  5 03:06:15 2001
 @@ -18,7 +18,9 @@
  
  /* BSD UNIX? */
@@ -11,16 +11,34 @@
  #endif
  
  /* Microsoft C: sorry, Watcom does the same thing */
-@@ -127,6 +129,12 @@
- 
- #if COHERENT
+@@ -129,6 +131,12 @@
  # define CREDIT	"Ported to Coherent by Esa Ahola"
-+#endif
-+
+ #endif
+ 
 +#if BSD 
 +# if (BSD >= 199306)
 +#  define CREDIT	"Ported to 4.4BSD by David O'Brien"
 +# endif
- #endif
- 
++#endif
++
  /*************************** functions depending on OS *********************/
+ 
+ /* Only MSDOS, TOS, and OS9 need a special function for reading from the
+@@ -203,7 +211,7 @@
+ # define TMPNAME	"%s/elv%x%04x%03x" /* temp file */
+ # define CUTNAME	"%s/elv_%04x%03x" /* cut buffer's temp file */
+ # ifndef EXRC
+-#  define EXRC		".exrc"		/* init file in current directory */
++#  define EXRC		".vnelvisrc"		/* init file in current directory */
+ # endif
+ # define SCRATCHOUT	"%s/soXXXXXX"	/* temp file used as input to filter */
+ # ifndef EXINIT
+@@ -263,7 +271,7 @@
+ #  define CC_COMMAND	"cc -r"		   /* name of the compiler */
+ # endif
+ # ifndef EXRC
+-#  define EXRC		".exrc"		   /* init file in current directory */
++#  define EXRC		".vnelvisrc"		   /* init file in current directory */
+ # endif
+ # define SCRATCHOUT	"%s/soXXXXXX"	   /* temp file used as input to filter */
+ # ifndef SHELL
