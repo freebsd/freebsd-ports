@@ -643,6 +643,7 @@ bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
+bsp		ports/games/bsp
 bsvc		ports/emulators/bsvc
 btc		ports/audio/btc
 btoa		ports/converters/btoa
