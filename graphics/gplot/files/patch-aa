@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Oct 27 16:07:42 1992
-+++ Makefile	Fri Oct 25 16:57:05 2002
+--- Makefile.orig	Tue Oct 27 07:07:42 1992
++++ Makefile	Sun Oct 19 02:41:01 2003
 @@ -55,9 +55,9 @@
  #               lvr.o lvr_io.o  sony laser video disk recorder controller
  #               dq.o            diaquest controller          
@@ -174,7 +174,7 @@
  # /usr/staff/andrews/pk/1000/cmr10.pk
  pkras.o: pkras.c defs.h
 -	cc -c -DUNIXFONTS=\"/usr/staff/andrews/pk\" pkras.c
-+	$(CC) -c -DUNIXFONTS=\"/usr/local/share/texmf/fonts/pk\" pkras.c
++	$(CC) $(CFLAGS) -c -DUNIXFONTS=\"/usr/local/share/texmf/fonts/pk\" pkras.c
  
  #TTY controller
  tty.o: tty.c defs.h
