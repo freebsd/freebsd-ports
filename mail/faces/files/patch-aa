@@ -19,7 +19,7 @@ diff -c -N ../faces/Makefile ./Makefile
 --- ./Makefile	Wed Dec 11 09:33:04 1996
 ***************
 *** 0 ****
---- 1,476 ----
+--- 1,478 ----
 + #
 + #  Makefile for faces, an icon face server, plus associated software.
 + #
@@ -44,6 +44,9 @@ diff -c -N ../faces/Makefile ./Makefile
 + #  uncommented and set accordingly, if needed.
 + #
 + #========================================================================
++ # Installation prefix.
++ PREFIX           ?=/usr/local
++ #------------------------------------------------------------------------
 + #  If you want audio support, then the following line should be uncommented.
 + #
 + AUDIO_SUPPORT     = -DAUDIO_SUPPORT
@@ -99,7 +102,7 @@ diff -c -N ../faces/Makefile ./Makefile
 + #  be uncommented and set appropriately. Note that the value must be
 + #  a single directory name, not a colon separated list of paths.
 + #               
-+ FACEDIR           = /usr/local/share/faces
++ FACEDIR           = $(PREFIX)/share/faces
 + CFACEDIR	= -DFACEDIR=\"$(FACEDIR)\"
 + #------------------------------------------------------------------------
 + #  It is possible to determine what type of monitoring faces does at
@@ -294,16 +297,17 @@ diff -c -N ../faces/Makefile ./Makefile
 + #  Default locations where faces files will be installed.
 + #  You might wish to alter these values.
 + #
-+ BINDIR		= /usr/local/bin
-+ LIBDIR		= /usr/local/lib
-+ MANDIR		= /usr/local/man
++ BINDIR		= $(PREFIX)/bin
++ LIBDIR		= $(PREFIX)/lib
++ INCDIR		= $(PREFIX)/include
++ MANDIR		= $(PREFIX)/man
 + MANSECT		= 1
 + 
 + #
 + #  Options for submakes
 + #
 + MAKEOPTS	= $(MFLAGS) BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) \
-+ 			    MANDIR=$(MANDIR) CC=$(CC) \
++ 			    INCDIR=$(INCDIR) MANDIR=$(MANDIR) CC=$(CC) \
 + 			    NOINDEX=$(NOINDEX) SYSV=$(SYSV)
 + 
 + #
@@ -442,10 +446,8 @@ diff -c -N ../faces/Makefile ./Makefile
 + 		install -c -m 755 faces.sendmail $(BINDIR)
 + 		install -c -m 644 faces.man \
 + 				$(MANDIR)/man$(MANSECT)/faces.$(MANSECT)
-+ 		gzip -f $(MANDIR)/man$(MANSECT)/faces.$(MANSECT) 
 + 		install -c -m 444 face_update.1 \
 + 				$(MANDIR)/man$(MANSECT)/face_update.$(MANSECT)
-+ 		gzip -f $(MANDIR)/man$(MANSECT)/face_update.$(MANSECT)
 + 		install -c -m 444 -o bin Faces.ad /usr/X11R6/lib/X11/app-defaults/Faces
 + 
 + clean:
@@ -496,7 +498,6 @@ diff -c -N ../faces/Makefile ./Makefile
 + sunview.o:	sunview.c faces.h extern.h
 + x11.o:		x11.c faces.h extern.h
 + xview.o:	xview.c faces.h extern.h
-Common subdirectories: ../faces/compface and ./compface
 diff -c -N ../faces/extern.h ./extern.h
 *** ../faces/extern.h	Tue Nov 19 05:00:48 1991
 --- ./extern.h	Tue Dec 10 10:49:37 1996
