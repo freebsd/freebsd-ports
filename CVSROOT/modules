@@ -7336,7 +7336,6 @@ perltidy	ports/devel/perltidy
 personality	ports/sysutils/personality
 pexts		ports/lang/pexts
 pf		ports/security/pf
-pfaedit		ports/print/pfaedit
 pfbtopfa	ports/print/pfbtopfa
 pfe-devel	ports/lang/pfe-devel
 pfflowd		ports/net/pfflowd

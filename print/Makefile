@@ -158,7 +158,6 @@
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += perlftlib
-    SUBDIR += pfaedit
     SUBDIR += pfbtopfa
     SUBDIR += phppdflib
     SUBDIR += pic2fig
