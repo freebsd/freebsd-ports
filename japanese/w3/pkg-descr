@@ -3,7 +3,7 @@ w3-2.2.26 package is WWW browser package for emacs.
 Info path and elisp load path would be set as follows :
 
     Info path - /usr/local/info
-    load path - /usr/local/lib/mule/site-lisp/mew
+    load path - /usr/local/lib/mule/site-lisp/w3
 
 You may be happy by adding following lines to your .emacs file:
 
@@ -16,7 +16,7 @@ and copying .mosaic-hotlist-default file from /usr/local/share/examples/w3
 directory to your home directory.
 
 Setting above user environment would be only executed by
-/usr/local/share/examples/mew/user-install on your home directory. 
+/usr/local/share/examples/w3/user-install on your home directory. 
 
 If you want to get an typesetting manual, copy Makefile and w3.texi from
 /usr/local/share/doc/w3 and 'make w3.dvi'.
