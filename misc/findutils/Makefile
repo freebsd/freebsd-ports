@@ -14,21 +14,20 @@ MASTER_SITE_SUBDIR= findutils
 
 MAINTAINER=	clefevre@citeweb.net
 
-GNU_CONFIGURE=	yes
-
-#
 # Global variables
 #
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g # --localstatedir=${LOCALSTATEDIR}
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 USE_GMAKE=	yes
+# PREFIX isn't honored. force it w/ prefix.
+MAKE_ARGS+=	prefix=${PREFIX}
 
 MAN1=		gfind.1 gxargs.1 glocate.1 gupdatedb.1
 MAN5=		glocatedb.5
 
-#
 # Local variables
 #
 
@@ -36,14 +35,12 @@ LOCALSTATEDIR?=	/var/db
 
 INSTALL_INFO?=	install-info
 
-#
 # Post-extract
 #
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/${PORTNAME:S/utils//}.info*
 
-#
 # Post-patch
 #
 
@@ -51,7 +48,6 @@ post-patch:
 	@${PERL} -pi.fbsd -e 's|makeinfo|makeinfo --no-split|g' \
 		${WRKSRC}/doc/Makefile.in
 
-#
 # Post-configure
 #
 
@@ -60,7 +56,6 @@ post-configure:
 	@${PERL} -pi.fbsd -e 's|\$$\(prefix\)/var|${LOCALSTATEDIR}|g' \
 		${WRKSRC}/Makefile ${WRKSRC}/locate/Makefile
 
-#
 # Post-install
 #
 
