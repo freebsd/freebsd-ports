@@ -21,6 +21,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 
 MAN1=	xtel.1 xteld.1
 
@@ -37,10 +38,9 @@ PATCH_FILES=	Imakefile
 
 post-patch:
 .for FILE in ${PATCH_FILES}
-	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/${FILE}
+	${CHMOD} u+w ${WRKSRC}/${FILE}
+	${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/${FILE}
 .endfor
-	find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
-		"s@#include.*<malloc.h>@#include <stdlib.h>@g"
 
 pre-configure:
 .if !exists(${PREFIX}/lib/X11/config/host.def)

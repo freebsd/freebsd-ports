@@ -18,16 +18,16 @@ MAINTAINER=	thierry@pompo.net
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
+.if defined(NOPORTDOCS)
+USE_REINPLACE=	yes
+.endif
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared
 
 MAN1=	js.1 jsdas.1
 
 post-extract:
-	${RM} ${WRKSRC}/docs/js.info*
-
-post-patch:
-	${PERL} -pi -e 's:=makeinfo:="makeinfo --no-split":g' ${WRKSRC}/configure
+	@${RM} ${WRKSRC}/docs/js.info*
 
 pre-configure:
 	@if [ -f ${LOCALBASE}/include/js.h ]; then \
@@ -39,7 +39,7 @@ pre-configure:
 
 pre-install:
 .if defined(NOPORTDOCS)
-	${PERL} -pi -e "s:docs micros examples:micros:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s:docs micros examples:micros:g" ${WRKSRC}/Makefile
 .endif
 
 post-install:

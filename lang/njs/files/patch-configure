@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jan 15 08:39:56 1999
++++ configure	Sun Jul  7 14:04:03 2002
+@@ -791,7 +791,7 @@
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+ if (makeinfo --version) < /dev/null > /dev/null 2>&1; then
+-   MAKEINFO=makeinfo
++   MAKEINFO="makeinfo --no-split"
+    echo "$ac_t""found" 1>&6
+ else
+    MAKEINFO="$missing_dir/missing makeinfo"

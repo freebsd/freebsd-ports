@@ -32,6 +32,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
+REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/DATABASE \
 		docs/HELP docs/INSTALL docs/SECURITY
 
@@ -89,23 +92,24 @@ do-install:
 	${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${HORDEDIR}
 	${CP} -p  ${WRKSRC}/phplib/* ${PHPLIBDIR}
 	${CP} -p  ${WRKSRC}/*.php3 ${HORDEDIR}
-	${CP} -p  ${WRKSRC}/install.sh ${HORDESBIN}/horde_setup.sh
-	${CP} -p  ${WRKSRC}/secure.sh  ${HORDESBIN}/horde_secure.sh
-	${PERL} -pi -e "s:chmod 444 :chmod 444 ${HORDEDIR}/:g" ${HORDESBIN}/horde_secure.sh
-	${PERL} -pi -e "s:chmod 000 :chmod 000 ${HORDEDIR}/:g" ${HORDESBIN}/horde_secure.sh
-	${PERL} -pi -e "s:-d imp:-d ${HORDEDIR}/imp:g" ${HORDESBIN}/horde_setup.sh
-	${PERL} -pi -e "s:config/horde:${HORDEDIR}/config/horde:g" ${HORDESBIN}/horde_setup.sh
-	${PERL} -pi -e "s:imp/config:${HORDEDIR}/imp/config:g" ${HORDESBIN}/horde_setup.sh
-	${PERL} -pi -e "s:chmod 444 :chmod 444 ${HORDEDIR}/:g" ${HORDESBIN}/horde_setup.sh
+	${REINPLACE_CMD} -e "s:-d imp:-d ${HORDEDIR}/imp:g	; \
+		s:config/horde:${HORDEDIR}/config/horde:g	; \
+		s:imp/config:${HORDEDIR}/imp/config:g		; \
+		s:chmod 444 :chmod 444 ${HORDEDIR}/:g" ${WRKSRC}/install.sh
+	${CP} ${WRKSRC}/install.sh ${HORDESBIN}/horde_setup.sh
+	${REINPLACE_CMD} -e "s:%%HORDEDIR%%:${HORDEDIR}:g" ${WRKSRC}/secure.sh
+	${CP} ${WRKSRC}/secure.sh  ${HORDESBIN}/horde_secure.sh
 	${CHMOD} u+x ${HORDESBIN}/horde_secure.sh
 	${CHMOD} u+x ${HORDESBIN}/horde_setup.sh
-	${PERL} -pi -e "s:go to the top level directory for your installation and run:run:g"	\
-		${HORDEDIR}/setup.php3
-	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" ${HORDEDIR}/setup.php3
-	${PERL} -pi -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g"	\
+	${REINPLACE_CMD} -e "s:go to the top level directory for your installation and run:run:g ; \
+		s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g" ${HORDEDIR}/setup.php3
+	@${RM} ${HORDEDIR}/setup.php3.beforeHorde
+	${REINPLACE_CMD} -e "s:sh ./install.sh:${HORDESBIN}/horde_setup.sh:g"	\
 		${HORDEDIR}/templates/index/horde_notconfigured.inc
-	${PERL} -pi -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g"	\
+	@${RM} ${HORDEDIR}/templates/index/horde_notconfigured.inc.beforeHorde
+	${REINPLACE_CMD} -e "s:sh ./secure.sh:${HORDESBIN}/horde_secure.sh:g"	\
 		${HORDEDIR}/templates/setup/imp/write_file.inc
+	@${RM} ${HORDEDIR}/templates/setup/imp/write_file.inc.beforeHorde
 	${CP}     ${HORDEDIR}/config/horde.php3.dist ${HORDEDIR}/config/horde.php3
 	${CHMOD}  444 ${HORDEDIR}/config/horde.php3
 	${CHMOD}  444 ${HORDEDIR}/setup.php3
@@ -129,8 +133,8 @@ do-install:
 	    (if [ ! -f ${APACHE_CONF}.beforeHorde ] ; then \
 		${ECHO} "===> Updating httpd.conf..." ; \
 		${CP} -p ${MASTERDIR}/httpd.conf.phplib ${WRKDIR}/httpd.conf.phplib ; \
-		${PERL} -pi -e "s:/home/httpd/html/horde:${HORDEDIR}:g" ${WRKDIR}/httpd.conf.phplib ; \
-		${PERL} -pi -e "s:/home/httpd/phplib:${PHPLIBDIR}:g" ${WRKDIR}/httpd.conf.phplib ; \
+		${REINPLACE_CMD} -e "s:/home/httpd/html/horde:${HORDEDIR}:g ; \
+			s:/home/httpd/phplib:${PHPLIBDIR}:g" ${WRKDIR}/httpd.conf.phplib ; \
 		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeHorde ; \
 		${GREP} -qw 'phplib' ${APACHE_CONF} || ${CAT} ${WRKDIR}/httpd.conf.phplib >> ${APACHE_CONF} ; \
 	    fi) ; \
@@ -141,8 +145,9 @@ do-install:
 	fi
 	@if ! ${GREP} -q -e '^upload_tmp_dir' ${PHP_INI} ; then \
 		${ECHO_MSG} "===> Configuring ${PHP_INI} for imp" ; \
-		${CP} -p ${PHP_INI} ${PHP_INI}.beforeHorde1 ; \
-		${PERL} -pi -e 's!;upload_tmp_dir =!upload_tmp_dir = /tmp!' ${PHP_INI} ; \
+		${REINPLACE_CMD} -e 's!;upload_tmp_dir =!upload_tmp_dir = /tmp!' \
+			${PHP_INI} ; \
+		${MV} ${PHP_INI}.beforeHorde ${PHP_INI}.beforeHorde1 ; \
 	fi
 	${CHOWN} -R www:www ${HORDEDIR}
 .if !defined(NOPORTDOCS)
