@@ -5,16 +5,16 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.14 1996/01/18 22:48:25 ache Exp $
+# $Id: Makefile,v 1.15 1996/05/27 00:53:55 ache Exp $
 #
-
-CATEGORIES+=	security
 
 # Pick an initial default, else it doesn't get set in the INDEX.
 DISTNAME=	pgp262s
+CATEGORIES+=	security
 
 MAINTAINER=	ache@FreeBSD.ORG
-NO_PACKAGE=     YES
+
+RESTRICTED=     YES
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd
 PGPLIB=         ${PREFIX}/lib/pgp
