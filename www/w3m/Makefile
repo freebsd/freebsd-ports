@@ -30,7 +30,7 @@ DOCS=		FAQ.html HISTORY MANUAL.html README \
 		README.dict README.func STORY.html keymap.default \
 		keymap.lynx menu.default menu.submenu
 
-.if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
+.if !defined(WITHOUT_SSL) && (exists(/usr/lib/libcrypto.so) || exists(${LOCALBASE}/lib/libcrypto.so))
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--without-ssl
