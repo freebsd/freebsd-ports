@@ -8,7 +8,8 @@
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
 CATEGORIES+=	japanese x11
-MASTER_SITES=	http://download.sourceforge.net/aterm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://wakaba.com/~tsann/aterm/
 PATCHFILES=	${DISTNAME}-ja.patch

@@ -7,8 +7,8 @@
 PORTNAME=       aterm
 PORTVERSION=    0.4.2
 CATEGORIES=     chinese x11
-MASTER_SITES=   http://download.sourceforge.net/aterm/
-DISTNAME=       aterm-${PORTVERSION}
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=     gugod@gugod.org
 

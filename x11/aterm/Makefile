@@ -8,7 +8,8 @@
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
 CATEGORIES+=	x11	# `+=' is for slave ports
-MASTER_SITES=	http://download.sourceforge.net/aterm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jim@FreeBSD.org
 
