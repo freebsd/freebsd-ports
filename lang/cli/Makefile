@@ -18,10 +18,10 @@ COMMENT=	An implementation of the ECMA CLI and the ECMA C\# language
 WRKSRC=		${WRKDIR}/sscli
 
 RESTRICTED=	"license terms need to be reviewed"
+IGNORE=		"license terms need to be agreed prior install"
 ONLY_FOR_ARCHS=	i386
 
-BROKEN=		"Does not compile"
-
+USE_PERL5=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${BUILD_TYPE}
@@ -29,7 +29,6 @@ CONFIGURE_SCRIPT=	portconfigure
 MAKEFILE=	makefile
 MAKE_ENV=	CC_NAME="${CC}" SHELL="${SH}"
 BUILD_TYPE=	free
-CFLAGS+=	-fpermissive
 PLIST_SUB=	CLI_VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
@@ -37,6 +36,7 @@ PLIST_SUB=	CLI_VERSION="${PORTVERSION}"
 .if ${OSVERSION} >= 500000
 GCC_LIB=	-lstdc++ -lgcc -lc_r -lc
 .else
+CFLAGS+=	-fpermissive
 GCC_LIB=	-lstdc++ -lgcc -lc_r
 .endif
 
@@ -44,9 +44,16 @@ post-extract:
 	@${CP} ${SCRIPTDIR}/portconfigure ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%GCC_LIB%%|${GCC_LIB}|g' \
+	@${REINPLACE_CMD} -e 's|%%GCC_LIB%%|${GCC_LIB}|g; \
+		s|-fno-rtti ||g; \
+		s|-fcheck-new ||g;' \
 		${WRKSRC}/makefile.common.in \
 		${WRKSRC}/rotorenv/bin/rotor_x86mk.inc
+	@${FIND} ${WRKSRC}/rotorenv/bin -type f | ${XARGS} \
+		${REINPLACE_CMD} -e 's|-Wno-non-virtual-dtor||g; \
+		s|-Wno-non-template-friend||g;'
+	@${FIND} ${WRKSRC}/clr/src -type f | ${XARGS} \
+		${REINPLACE_CMD} -e 's|-Wno-ctor-dtor-privacy||g'
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./buildall ${BUILD_TYPE})
