@@ -1,0 +1,5 @@
+This is set of improved artwiz fonts.
+They are compatible with the latest fontconfig/Xft-2.0.
+Thus the artwiz fonts work in gtk2/kde3 applications.
+
+WWW: http://artwizaleczapka.sourceforge.net/
