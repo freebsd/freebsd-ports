@@ -190,6 +190,7 @@
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snowstar
+    SUBDIR += songprint
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += sphinx

@@ -1,0 +1,15 @@
+include/songprint.h
+include/songprintfile.h
+lib/libsongprint.a
+lib/libsongprint.la
+lib/libsongprint.so
+lib/libsongprint.so.1
+lib/libsongprintfile.a
+lib/libsongprintfile.la
+lib/libsongprintfile.so
+lib/libsongprintfile.so.0
+%%PORTDOCS%%share/doc/songprint/AUTHORS
+%%PORTDOCS%%share/doc/songprint/COPYING
+%%PORTDOCS%%share/doc/songprint/NEWS
+%%PORTDOCS%%share/doc/songprint/README
+%%PORTDOCS%%@dirrm share/doc/songprint
