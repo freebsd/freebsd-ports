@@ -17,6 +17,7 @@ share/motor/templates/library/static/configure.in.tmpl
 share/motor/templates/terminal program/C++/Debug
 share/motor/templates/terminal program/C++/Folders
 share/motor/templates/terminal program/C++/Makefile.func
+share/motor/templates/terminal program/C++/Makefile.func.bak
 share/motor/templates/terminal program/C++/Parserules
 share/motor/templates/terminal program/C++/Settings
 share/motor/templates/terminal program/C++/[value name].cc.tmpl
