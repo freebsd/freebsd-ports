@@ -8,7 +8,7 @@
 PORTNAME=	pcre
 PORTVERSION=	4.33.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
+MASTER_SITES=	http://www.henrik-motakef.de/freebsd-distfiles/
 MASTER_SITE_SUBDIR=	pcre-ocaml
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
@@ -23,5 +23,8 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 USE_GMAKE=	yes
 MAKE_ENV=	OCAML_LIB_INSTALL="${PREFIX}/lib/ocaml/site-lib/pcre" \
 		INCDIRS="${LOCALBASE}/include" LIBDIRS="${LOCALBASE}/lib"
+.if !defined(WITH_CUSTOM)
+MAKE_ENV+=	NO_CUSTOM=y
+.endif
 
 .include <bsd.port.mk>
