@@ -1,22 +1,35 @@
 This is a Perl-based make replacement, but does not provide make
-compatibility. It has a number of powerful capabilities not found in other
-software construction systems, including make.
-
-You will need Perl 5.002 or better and the Perl MD5 Extension
-(MD5-1.6.tar.gz or greater), available from CPAN.
-
-This program is known to work on a variety of platforms: it's in production
-use on versions of FreeBSD, Linux, SunOS, Solaris, HPUX, AIX, IRIX and NT.
-
-Documentation is supplied in POD format (thanks to Ulrich Pfiefer).
-
-A cons discussion group, cons-discuss@eng.fore.com, has been created.  If
-you wish to subscribe, send mail to cons-discuss-request@eng.fore.com with
-the word "subscribe" in the BODY of the message. Please send all comments,
-requests, complaints, etc. to the mailing list.
-
-Cons is maintained by members of the cons-discuss mailing list.
+compatibility. It has a number of powerful capabilities not found
+in other software construction systems, including make.
 
 The official cons web site is http://www.dsmit.com/cons/
 
-An article about Cons appeared in The Perl Journal, issue #9, Spring 1998.
+Cons is a system for constructing, primarily, software, but is
+quite different from previous software construction systems. Cons
+was designed from the ground up to deal easily with the construction
+of software spread over multiple source directories. Cons makes it
+easy to create build scripts that are simple, understandable and
+maintainable. Cons ensures that complex software is easily and
+accurately reproducible.
+
+`Cons' uses a number of techniques to accomplish all of this.
+Construction scripts are just Perl scripts, making them both easy
+to comprehend and very flexible. Global scoping of variables is
+replaced with an import/export mechanism for sharing information
+between scripts, significantly improving the readability and
+maintainability of each script. `Construction environments' are
+introduced: these are Perl objects that capture the information
+required for controlling the build process. Multiple environments
+are used when different semantics are required for generating
+products in the build tree. Cons implements automatic dependency
+analysis and uses this to globally sequence the entire build.
+Variant builds are easily produced from a single source tree.
+Intelligent build subsetting is possible, when working on localized
+changes. Overrides can be setup to easily override build instructions
+without modifying any scripts. MD5 cryptographic `signatures' are
+associated with derived files, and are used to accurately determine
+whether a given file needs to be rebuilt.
+
+While offering all of the above, and more, Cons remains simple and
+easy to use. This will, hopefully, become clear as you read the
+remainder of the man page.
