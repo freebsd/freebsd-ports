@@ -9,7 +9,8 @@ PORTNAME=	pmail
 PORTVERSION=	0.5.3
 PORTREVISION=	2
 CATEGORIES=	mail python gnome
-MASTER_SITES=	http://www.toad.net/~sbender/pmail/
+MASTER_SITES=	http://www.toad.net/~sbender/pmail/ \
+		http://www.harmony-ds.com/download/pmail/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
