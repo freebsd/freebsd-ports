@@ -13,7 +13,7 @@ The features of Wanderlust are as follows:
  * Draft editing of mail and news as a same interface.
  * Icon based interface for the list of Folder (XEmacs).
  * Non-fetched operations for a big message part of MIME (IMAP4).
- * Server side search (IMAP4), also Japanese support.
+ * Server side search (IMAP4), also various charset support.
  * Virtual Folder.
  * Compression Folder.
  * Automatic expiration of old messages.
