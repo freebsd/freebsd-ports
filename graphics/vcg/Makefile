@@ -3,7 +3,7 @@
 # Date created: 19 February 1995
 # Whom: hsu
 #
-# $Id$
+# $Id: Makefile,v 1.3 1995/04/09 07:09:43 asami Exp $
 #
 
 DISTNAME=	vcg.1.30
@@ -11,6 +11,8 @@ PKGNAME=	vcg-1.30
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTFILES=	vcg.1.30.r3.17.tgz
+
+USE_X11=	yes
 
 pre-patch:
 	@mkdir -p ${WRKSRC}/preconf/X11ccFreeBSD
