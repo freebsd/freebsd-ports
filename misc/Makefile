@@ -328,6 +328,7 @@
     SUBDIR += pdfmap
     SUBDIR += pdmenu
     SUBDIR += pear-Services_Weather
+    SUBDIR += pear-Text_Figlet
     SUBDIR += peq
     SUBDIR += pg
     SUBDIR += php4-calendar
