@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += wbd
 
     SUBDIR += imm
     SUBDIR += nte

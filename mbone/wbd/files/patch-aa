@@ -1,0 +1,61 @@
+--- makefile.orig	Thu Jan 29 12:46:41 1998
++++ makefile	Fri May 11 19:42:18 2001
+@@ -3,12 +3,12 @@
+ 
+ YFLAGS		= -dv
+ CFLAGS		= -g $(LIBFLAGS) $(IFLAGS) -DSTAND_ALONE
+-LIBDIR		= /cs/research/mice/starship/common/solaris/lib
+-INCDIR		= /cs/research/mice/starship/common/solaris/include
++LIBDIR		= $(PREFIX)/lib
++INCDIR		= $(PREFIX)/include
+ 
+ # The files needed from the tcl/tk library directories...
+-LIBRARY_TK	= $(LIBDIR)/tk4.2
+-LIBRARY_TCL	= $(LIBDIR)/tcl7.6
++LIBRARY_TK	= $(LIBDIR)/tk8.0
++LIBRARY_TCL	= $(LIBDIR)/tcl8.0
+ 
+ 
+ # Uncomment these lines for SGI (IRIX 5.3).
+@@ -32,10 +32,10 @@
+ #LIBS		= -ll -ltk4.2 -ltcl7.6 -lm -lX11
+ 
+ # Uncomment these lines for Sun (SunOS 5.5.1).
+-CC		= gcc -DFNDELAY=O_NDELAY -DBYTE_ORDER=4321 -ansi
+-LIBFLAGS	= -L$(LIBDIR) -L/usr/openwin/lib
+-IFLAGS		= -I$(INCDIR) -I/usr/openwin/include
+-LIBS		= -ll -ltk4.2 -ltcl7.6 -lm -lX11 -lsocket -lnsl -ldl
++#CC		= gcc -DFNDELAY=O_NDELAY -DBYTE_ORDER=4321 -ansi
++#LIBFLAGS	= -L$(LIBDIR) -L/usr/openwin/lib
++#IFLAGS		= -I$(INCDIR) -I/usr/openwin/include
++#LIBS		= -ll -ltk4.2 -ltcl7.6 -lm -lX11 -lsocket -lnsl -ldl
+ 
+ # Uncomment these lines for NetBSD 1.2.
+ #CC              = cc -ansi
+@@ -43,6 +43,12 @@
+ #IFLAGS          = -I$(INCDIR)
+ #LIBS            = -ll -ltk4.2 -ltcl7.6 -lm -lX11
+ 
++# Uncomment these lines for FreeBSD
++CC		 = cc
++LIBFLAGS         = -L$(LIBDIR) -L/usr/X11R6/lib
++IFLAGS           = -I$(INCDIR)/tk8.0 -I$(INCDIR)/tcl8.0 -I/usr/X11R6/include
++LIBS             = -ll -ltk80 -ltcl80 -lm -lX11
++
+ # Tcl initialisation files to be compiled into a C string.
+ TCL_FILES = \
+ 	$(LIBRARY_TCL)/init.tcl \
+@@ -74,8 +80,13 @@
+ SRC	= main.c comms.c db.c wbd.tcl
+ OBJ	= main.o comms.o db.o tcllibs.o
+ 
++all	:	wbd
++
+ wbd	:	$(OBJ) $(INC)
+ 	$(CC) $(CFLAGS) $(OBJ) $(LIBS) -o wbd
++
++install :	wbd
++	install -c wbd $(PREFIX)/bin/wbd
+ 
+ clean	:
+ 	rm -f *.o tcl2c wbd core
