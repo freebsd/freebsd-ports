@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rascal, the Advanced Scientific CALculator
 
+BROKEN=		Does not compile
+
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 USE_BISON=	yes

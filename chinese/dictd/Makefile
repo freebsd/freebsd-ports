@@ -9,6 +9,8 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		Does not compile
+
 MASTERDIR=	${.CURDIR}/../../net/dictd
 EXTRA_PATCHES=	${.CURDIR}/files/patch-index.c \
 		${.CURDIR}/files/patch-libmaa::arg.c \
