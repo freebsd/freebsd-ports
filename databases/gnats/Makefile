@@ -23,6 +23,7 @@ CONFIGURE_ARGS= --with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-release-based
 
 USE_GMAKE=	yes
+USE_BISON=	yes
 MAN1=		edit-pr.1 query-pr.1 send-pr.1
 MAN7=		gnats.7
 MAN8=		mkcat.8 rmcat.8 mkdist.8 queue-pr.8 file-pr.8 gen-index.8
