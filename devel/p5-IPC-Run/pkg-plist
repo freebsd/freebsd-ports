@@ -2,6 +2,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Run/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/IPC/Run.pm
 lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/Timer.pm
 lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/IO.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/Debug.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/Win32IO.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/Win32Helper.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Run/Win32Pump.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Run
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/IPC/Run
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
