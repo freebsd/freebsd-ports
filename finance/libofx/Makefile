@@ -6,19 +6,33 @@
 #
 
 PORTNAME=	libofx
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libofx
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 
-INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-opensp-includes=${LOCALBASE}/include/OpenSP \
-		--with-opensp-libs=${LOCALBASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_SHLIB=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -lintl
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog INSTALL NEWS README totest.txt
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	${TAR} -C ${WRKSRC}/doc -cf - html | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
