@@ -87,6 +87,7 @@
     SUBDIR += lila-xfwm4
     SUBDIR += metacity-aluminumalloy-cryogenic-theme
     SUBDIR += metacity-aluminumalloy-smog-theme
+    SUBDIR += metacity-aluminumalloy-toxic-theme
     SUBDIR += metacity-aluminumalloy-volcanic-theme
     SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-theme-aero
