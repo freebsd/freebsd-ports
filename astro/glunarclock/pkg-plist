@@ -1,9 +1,19 @@
 bin/glunarclock
 etc/CORBA/servers/glunarclock.gnorba
 share/gnome/applets/Clocks/glunarclock.desktop
+share/gnome/help/glunarclock_applet/C/docbook.css
+share/gnome/help/glunarclock_applet/C/glunarclock_applet.png
+share/gnome/help/glunarclock_applet/C/glunarclock_prefs_image.png
+share/gnome/help/glunarclock_applet/C/glunarclock_prefs_location.png
+share/gnome/help/glunarclock_applet/C/index.html
+share/gnome/help/glunarclock_applet/C/ln7.html
+share/gnome/help/glunarclock_applet/C/topic.dat
 share/gnome/pixmaps/glunarclock-logo.png
 share/gnome/pixmaps/glunarclock/cartoonmoon_12frames.png
 share/gnome/pixmaps/glunarclock/moon_60frames.png
 share/locale/de/LC_MESSAGES/glunarclock.mo
 share/locale/fr/LC_MESSAGES/glunarclock.mo
 @dirrm share/gnome/pixmaps/glunarclock
+@dirrm share/gnome/help/glunarclock_applet/C/stylesheet-images
+@dirrm share/gnome/help/glunarclock_applet/C
+@dirrm share/gnome/help/glunarclock_applet

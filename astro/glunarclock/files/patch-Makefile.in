@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Mon Jan 29 10:48:08 2001
++++ Makefile.in	Mon Jan 29 10:50:21 2001
+@@ -110,7 +110,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-SUBDIRS = intl po macros src docs debian 
++SUBDIRS = intl po macros src docs
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+@@ -126,7 +126,7 @@
+ GZIP_ENV = --best
+ all: all-redirect
+ .SUFFIXES:
+-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) $(srcdir)/macros/macros.dep
++$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
+ 	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
+ 
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
