@@ -1,5 +1,5 @@
 --- src/fe-text/gui-readline.c.orig	Thu Nov 27 01:30:03 2003
-+++ src/fe-text/gui-readline.c	Wed Apr  7 11:02:59 2004
++++ src/fe-text/gui-readline.c	Thu Apr 29 14:33:01 2004
 @@ -187,7 +187,12 @@
  			out[utf16_char_to_utf8(arr[i], out)] = '\0';
  			g_string_append(str, out);
@@ -14,7 +14,7 @@
  		}
  	}
  
-@@ -620,9 +625,7 @@
+@@ -620,15 +625,13 @@
  	char *text, *line;
  	int pos;
  
@@ -25,7 +25,14 @@
  	line = word_complete(active_win, text, &pos, erase);
  	g_free(text);
  
-@@ -648,9 +651,7 @@
+ 	if (line != NULL) {
+ 		gui_entry_set_text(active_entry, line);
+-		gui_entry_set_pos(active_entry, pos);
++		gui_entry_set_linepos(active_entry, pos);
+ 		g_free(line);
+ 	}
+ }
+@@ -648,15 +651,13 @@
  	char *text, *line;
  	int pos;
  
@@ -36,3 +43,10 @@
  	line = auto_word_complete(text, &pos);
  	g_free(text);
  
+ 	if (line != NULL) {
+ 		gui_entry_set_text(active_entry, line);
+-		gui_entry_set_pos(active_entry, pos);
++		gui_entry_set_linepos(active_entry, pos);
+ 		g_free(line);
+ 	}
+ }
