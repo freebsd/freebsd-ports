@@ -22,11 +22,9 @@ WRKSRC=		${WRKDIR}/cd-write
 BROKEN=		CAM
 .endif
 
-BROKEN=		"Missing TK header - see http://bento.freebsd.org/errorlogs/3-full/cd-write-1.4.1.log"
-
 pre-build:
 	@cd ${WRKSRC}; ${MV} Makefile Makefile~; \
-		${SED} -e s:/usr/local:${PREFIX}:g <Makefile~ >Makefile;\
+		${SED} -e s:/usr/local:${PREFIX}:g -e s/CFL/CXXFL/ <Makefile~ >Makefile;\
 		${ECHO} all: cd-write >> Makefile
 	@cd ${WRKSRC}/c++tk; ${MV} Makefile Makefile~; \
 		${SED} -e s:/usr/local:${PREFIX}:g <Makefile~ >Makefile
