@@ -9,7 +9,7 @@
 
 PORTNAME=	ex
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/ex/
 PKGNAMEPREFIX=	ossp-
@@ -26,6 +26,10 @@ INSTALLS_SHLIB=	yes
 
 .if ${ARCH} == "alpha"
 BROKEN=		"Does not compile on alpha"
+.endif
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ts.c
 .endif
 
 .include "${FILESDIR}/manpages.mk"
