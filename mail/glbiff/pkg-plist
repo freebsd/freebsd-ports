@@ -1,0 +1,7 @@
+bin/glbiff
+share/doc/glbiff/ChangeLog
+share/doc/glbiff/README
+share/doc/glbiff/TODO
+share/examples/glbiff/dot.glbiffrc.sample
+@dirrm share/doc/glbiff
+@dirrm share/examples/glbiff
