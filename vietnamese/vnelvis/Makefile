@@ -16,12 +16,15 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 
-CFLAGS+=	-I../../include
+BUILD_DEPENDS=  ${LOCALBASE}/lib/libviqr.a:${PORTSDIR}/vietnamese/libviet
+
+CFLAGS+=	-I${PREFIX}/include/viet
 MAN1=		vnelvis.1 vnvi.1
 
 post-extract:
 	@ cd ${WRKSRC} ; make clean
-	@ cd ${WRKSRC}/../lib ; make clean
+	@ ${MV} ${WRKDIR}/lib ${WRKDIR}/DONT.lib
+	@ ${MV} ${WRKDIR}/include ${WRKDIR}/DONT.include
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/vnelvis.1V ${PREFIX}/man/man1/vnelvis.1
