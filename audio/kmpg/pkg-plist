@@ -1,8 +1,6 @@
 bin/kmpg
-bin/kmpgMixer
 bin/splay-yaf
 share/applnk/Multimedia/kmpg.kdelnk
-share/applnk/Multimedia/kmpgMixer.kdelnk
 share/apps/kmpg/pics/kmpg_next.xpm
 share/apps/kmpg/pics/kmpg_pause_off.xpm
 share/apps/kmpg/pics/kmpg_play_off.xpm
@@ -23,12 +21,11 @@ share/doc/HTML/en/kmpg/prefs-1.gif
 share/doc/HTML/en/kmpg/prefs-2.gif
 share/doc/HTML/en/kmpg/prefs-3.gif
 share/icons/kmpg.xpm
-share/icons/kmpgMixer.xpm
 share/icons/mini/kmpg.xpm
-share/icons/mini/kmpgMixer.xpm
+share/mimelnk/audio/x-m3u.kdelnk
 share/mimelnk/audio/x-mp1.kdelnk
 share/mimelnk/audio/x-mp2.kdelnk
 share/mimelnk/audio/x-mp3.kdelnk
-@dirrm share/apps/kmpg
-@dirrm share/apps/kmpg/pics
 @dirrm share/doc/HTML/en/kmpg
+@dirrm share/apps/kmpg/pics
+@dirrm share/apps/kmpg
