@@ -3,12 +3,12 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.8 1997/04/01 18:03:58 obrien Exp $
+# $Id: Makefile,v 1.9 1997/04/01 18:53:30 obrien Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
 PKGNAME=        uulib-0.5.13
-CATEGORIES=	devel
+CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
 		http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
 		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/         

@@ -2,12 +2,12 @@
 # Version required:	2.99
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-# $Id: Makefile,v 1.2 1996/11/12 02:17:54 obrien Exp $
+# $Id: Makefile,v 1.3 1996/12/06 22:46:32 asami Exp $
 #
 
 DISTNAME=	uudx_299
 PKGNAME=	uudx-2.99
-CATEGORIES=	archivers
+CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.ae.keio.ac.jp/pub/msdos/archivers/uu/
 
 MAINTAINER=	pcs51674@asciinet.or.jp

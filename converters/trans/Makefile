@@ -3,12 +3,12 @@
 # Date created:         6 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1996/11/27 10:58:51 ache Exp $
+# $Id: Makefile,v 1.4 1996/11/30 08:58:45 asami Exp $
 #
 
 DISTNAME=       trans111
 PKGNAME=        trans-1.11
-CATEGORIES=     misc russian
+CATEGORIES=     converters russian
 MASTER_SITES=   ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/charsets/
 
 MAINTAINER=     ache@FreeBSD.org
