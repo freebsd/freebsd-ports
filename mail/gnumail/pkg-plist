@@ -17,7 +17,9 @@ Local/Applications/GNUMail.app/Resources/MailIcon_attach.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_bcc.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_bcc_remove.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_box_add.tiff
+Local/Applications/GNUMail.app/Resources/MailIcon_box_copy.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_box_delete.tiff
+Local/Applications/GNUMail.app/Resources/MailIcon_box_move.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_box_open.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_box_rename.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_box_transfer.tiff
@@ -33,6 +35,7 @@ Local/Applications/GNUMail.app/Resources/MailIcon_send.tiff
 Local/Applications/GNUMail.app/Resources/MailIcon_stop.tiff
 Local/Applications/GNUMail.app/Resources/Spanish.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/Swedish.lproj/Localizable.strings
+Local/Applications/GNUMail.app/Resources/Welcome
 Local/Applications/GNUMail.app/Resources/anim-logo-1.tiff
 Local/Applications/GNUMail.app/Resources/anim-logo-2.tiff
 Local/Applications/GNUMail.app/Resources/anim-logo-3.tiff
@@ -44,23 +47,18 @@ Local/Applications/GNUMail.app/Resources/anim-logo-8.tiff
 Local/Applications/GNUMail.app/Resources/answered-flag.tiff
 Local/Applications/GNUMail.app/Resources/common_Unknown.tiff
 Local/Applications/GNUMail.app/Resources/down.tiff
+Local/Applications/GNUMail.app/Resources/drag_mail.tiff
+Local/Applications/GNUMail.app/Resources/drag_mails.tiff
 Local/Applications/GNUMail.app/Resources/mime-flag.tiff
 Local/Applications/GNUMail.app/Resources/new-flag.tiff
 Local/Applications/GNUMail.app/Resources/pgp-mail.tiff
+Local/Applications/GNUMail.app/Resources/pgp-mail-small.tiff
 Local/Applications/GNUMail.app/Resources/up.tiff
 Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GNUMail
 Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
 Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
-Local/Library/Frameworks/GNUMail.framework/Versions/A/Headers/GNUMailBundle.h
-Local/Library/Frameworks/GNUMail.framework/Versions/A/Headers/PreferencesModule.h
-Local/Library/Frameworks/GNUMail.framework/Versions/A/Resources/Info-gnustep.plist
-Local/Library/Frameworks/GNUMail.framework/Versions/A/Resources/Info.plist
-Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GNUMail
-Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
-Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
-Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
 @exec ln -sf A %D/Local/Library/Frameworks/GNUMail.framework/Versions/Current
 @unexec rm -f %D/Local/Library/Frameworks/GNUMail.framework/Versions/Current
 @exec ln -sf Versions/Current/Headers %D/Local/Library/Frameworks/GNUMail.framework/Headers
@@ -88,6 +86,13 @@ Local/Library/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Fonts.prefs/Resources/Info.plist
 Local/Library/GNUMail/Fonts.prefs/Resources/fonts.tiff
 Local/Library/GNUMail/Fonts.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Fonts
+Local/Library/GNUMail/Mailboxes.prefs/Contents/Info.plist
+@exec ln -sf ../Resources %D/Local/Library/GNUMail/Mailboxes.prefs/Contents/Resources
+@unexec rm -f %D/Local/Library/GNUMail/Mailboxes.prefs/Contents/Resources
+Local/Library/GNUMail/Mailboxes.prefs/Resources/Info-gnustep.plist
+Local/Library/GNUMail/Mailboxes.prefs/Resources/Info.plist
+Local/Library/GNUMail/Mailboxes.prefs/Resources/MailIcon_mailboxes.tiff
+Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Mailboxes
 Local/Library/GNUMail/MIME.prefs/Contents/Info.plist
 @exec ln -sf ../Resources %D/Local/Library/GNUMail/MIME.prefs/Contents/Resources
 @unexec rm -f %D/Local/Library/GNUMail/MIME.prefs/Contents/Resources
@@ -147,6 +152,12 @@ Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Viewing
 @dirrm Local/Library/GNUMail/Personal.prefs/Resources
 @dirrm Local/Library/GNUMail/Personal.prefs/Contents
 @dirrm Local/Library/GNUMail/Personal.prefs
+@dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Library/GNUMail/Mailboxes.prefs/%%GNU_ARCH%%/
+@dirrm Local/Library/GNUMail/Mailboxes.prefs/Resources
+@dirrm Local/Library/GNUMail/Mailboxes.prefs/Contents
+@dirrm Local/Library/GNUMail/Mailboxes.prefs
 @dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/GNUMail/MIME.prefs/%%GNU_ARCH%%
@@ -172,14 +183,6 @@ Local/Library/GNUMail/Viewing.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Viewing
 @dirrm Local/Library/GNUMail/Compose.prefs/Contents
 @dirrm Local/Library/GNUMail/Compose.prefs
 @dirrm Local/Library/GNUMail
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/%%GNU_ARCH%%
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/Resources
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/Headers
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions
-@dirrm Local/Library/Frameworks/GNUMail.framework
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%
