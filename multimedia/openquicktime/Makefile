@@ -34,8 +34,8 @@ OPTIONS=	DEBUG "Turn on debugging" on
 CONFIGURE_ARGS+=	--enable-debug=no
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not build on sparc64"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not build on !i386"
 .endif
 
 post-patch:
