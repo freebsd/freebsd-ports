@@ -7,6 +7,7 @@
 
 PORTNAME=	mars_nwe
 PORTVERSION=	0.99.b19
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.compu-art.de/download/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/ncpfs/mars_nwe/ \
