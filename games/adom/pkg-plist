@@ -1,5 +1,5 @@
 bin/adom
-share/doc/adom/readme.1st
-share/doc/adom/adomfaq.txt
-share/doc/adom/manual.doc
-@dirrm share/doc/adom
+%%PORTDOCS%%share/doc/adom/adomfaq.txt
+%%PORTDOCS%%share/doc/adom/manual.doc
+%%PORTDOCS%%share/doc/adom/readme.1st
+%%PORTDOCS%%@dirrm share/doc/adom
