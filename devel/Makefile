@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.97 1998/04/17 21:13:59 mph Exp $
+# $Id: Makefile,v 1.98 1998/04/19 20:46:10 mph Exp $
 #
 
     SUBDIR += ElectricFence
@@ -72,6 +72,7 @@
     SUBDIR += p5-Include
     SUBDIR += p5-IniConf
     SUBDIR += p5-Ioctl
+    SUBDIR += p5-IO-stringy
     SUBDIR += p5-PV
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
