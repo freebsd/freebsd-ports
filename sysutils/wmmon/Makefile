@@ -3,7 +3,7 @@
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.5 1999/01/26 19:53:01 fenner Exp $
+# $Id: Makefile,v 1.6 1999/02/23 11:20:48 kris Exp $
 #
 
 DISTNAME=	wmmon-1.0b2
@@ -24,6 +24,10 @@ USE_X_PREFIX=   yes
 WRKSRC=		${WRKDIR}/wmmon.app/wmmon
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
+BROKEN=	"kvm_nlist: Symbol '_swaplist' not found"
+.endif
 
 pre-patch:
 	@cd ${WRKDIR}/wmmon.app && ${PATCH} -p < ${WRKDIR}/wmmon-freebsd.patch
