@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Mon Jun 14 10:23:04 1999
-+++ ../make/Makefile	Thu Jun 24 22:48:51 1999
+--- ../make/Makefile.orig	Mon Jul 12 10:56:36 1999
++++ ../make/Makefile	Sun Aug 29 15:07:57 1999
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -86,7 +86,7 @@
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -765,6 +799,7 @@
+@@ -775,6 +809,7 @@
          volume2.o \
          writeout.o \
          xyzatm.o
@@ -94,7 +94,7 @@
  
  alchemy.x:
  	${F77} ${LINKFLAGS} -o alchemy.x alchemy.o libtinker.a ${LIBS}
-@@ -858,51 +893,51 @@
+@@ -868,51 +903,51 @@
  	${F77} ${LINKFLAGS} -o xyzsybyl.x xyzsybyl.o libtinker.a ${LIBS}
  
  rename:
