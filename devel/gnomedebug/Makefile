@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomedebug
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-debug
@@ -18,8 +18,6 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		oaf.0:${PORTSDIR}/devel/oaf \
 		bonobo.2:${PORTSDIR}/devel/bonobo
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
-
-BROKEN=		"Uses internals from devel/bonobo that are no longer present"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

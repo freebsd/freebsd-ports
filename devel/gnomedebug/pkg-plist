@@ -25,10 +25,14 @@ lib/libgdf-widgets.so.0
 lib/libgdf.a
 lib/libgdf.so
 lib/libgdf.so.0
+share/gnome/gnome-debug/glade/gdf-dialogs.glade
 share/gnome/idl/desktop-editor.idl
 share/gnome/idl/gdf-commander.idl
 share/gnome/idl/gdf-symbolset.idl
 share/gnome/idl/gnome-debug.idl
 share/gnome/oaf/gdf.oafinfo
 share/gnome/oaf/libdryad-debugger.oafinfo
+share/locale/tr/LC_MESSAGES/gnome-debug.mo
+@dirrm share/gnome/gnome-debug/glade
+@dirrm share/gnome/gnome-debug
 @dirrm include/gdf

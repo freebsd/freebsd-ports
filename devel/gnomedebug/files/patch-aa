@@ -1,11 +1,10 @@
---- Makefile.in.orig	Wed Jun 21 20:08:41 2000
-+++ Makefile.in	Wed Jun 28 11:24:00 2000
-@@ -125,7 +125,7 @@
+--- Makefile.in.orig	Tue Aug 29 16:53:32 2000
++++ Makefile.in	Fri Sep  1 13:06:48 2000
+@@ -128,5 +128,5 @@
  
- SUBDIRS = macros po intl src doc idl pixmaps
+-SUBDIRS = po intl src idl pixmaps doc
++SUBDIRS = po intl src idl pixmaps # doc
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = gdfConf.sh
- 
- oafdir = $(datadir)/oaf
