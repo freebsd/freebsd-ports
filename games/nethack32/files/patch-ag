@@ -1,6 +1,7 @@
-diff -ruN ./sys/unix/Makefile.top ../nethack-3.2.2/sys/unix/Makefile.top
---- ./sys/unix/Makefile.top	Wed Dec 11 05:20:10 1996
-+++ ../nethack-3.2.2/sys/unix/Makefile.top	Sun Mar 21 17:29:27 1999
+$FreeBSD$
+
+--- sys/unix/Makefile.top.orig	Tue Dec 10 13:20:10 1996
++++ sys/unix/Makefile.top	Thu Apr  8 16:57:27 2004
 @@ -16,14 +16,14 @@
  # make NetHack
  GAME     = nethack
@@ -38,3 +39,63 @@ diff -ruN ./sys/unix/Makefile.top ../nethack-3.2.2/sys/unix/Makefile.top
  
  VARDATD = data oracles options quest.dat rumors
  VARDAT = $(VARDATD) $(VARDATND)
+@@ -74,7 +74,7 @@
+ $(GAME):
+ 	( cd src ; $(MAKE) )
+ 
+-all:	$(GAME) Guidebook $(VARDAT) dungeon spec_levs check-dlb
++all:	$(GAME) recover Guidebook $(VARDAT) dungeon spec_levs check-dlb
+ 	@echo "Done."
+ 
+ Guidebook:
+@@ -126,6 +126,8 @@
+ 	( cd util ; $(MAKE) dlb )
+ 	( cd dat ; ../util/dlb cf nhdat $(DATDLB) )
+ 
++recover:
++	( cd util ; $(MAKE) recover )
+ 
+ dofiles:
+ 	target=`sed -n					\
+@@ -136,15 +138,17 @@
+ 	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
+ 	$(MAKE) dofiles-$${target-nodlb}
+ 	cp src/$(GAME) $(GAMEDIR)
++	cp util/recover $(GAMEDIR)
+ 	-rm -f $(SHELLDIR)/$(GAME)
+ 	sed -e 's;/usr/games/lib/nethackdir;$(GAMEDIR);' \
+ 		-e 's;HACKDIR/nethack;HACKDIR/$(GAME);' \
+ 		< sys/unix/nethack.sh \
+ 		> $(SHELLDIR)/$(GAME)
+ # set up their permissions
+-	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(GAME) ; \
+-			$(CHGRP) $(GAMEGRP) $(GAME) )
++	-( cd $(GAMEDIR) ; $(CHOWN) $(GAMEUID) $(GAME) recover ; \
++			$(CHGRP) $(GAMEGRP) $(GAME) recover )
+ 	chmod $(GAMEPERM) $(GAMEDIR)/$(GAME)
++	chmod $(GAMEPERM) $(GAMEDIR)/recover
+ 	-$(CHOWN) $(GAMEUID) $(SHELLDIR)/$(GAME)
+ 	$(CHGRP) $(GAMEGRP) $(SHELLDIR)/$(GAME)
+ 	chmod $(EXEPERM) $(SHELLDIR)/$(GAME)
+@@ -164,7 +168,7 @@
+ 			$(CHGRP) $(GAMEGRP) $(DAT) ; \
+ 			chmod $(FILEPERM) $(DAT) )
+ 
+-update: $(GAME) $(VARDAT) dungeon spec_levs
++update: $(GAME) recover $(VARDAT) dungeon spec_levs
+ #	(don't yank the old version out from under people who're playing it)
+ 	-mv $(GAMEDIR)/$(GAME) $(GAMEDIR)/$(GAME).old
+ #	quest.dat is also kept open and has the same problems over NFS
+@@ -180,10 +184,10 @@
+ # and a reminder
+ 	@echo You may also want to install the man pages via the doc Makefile.
+ 
+-install: $(GAME) $(VARDAT) dungeon spec_levs
++install: $(GAME) recover $(VARDAT) dungeon spec_levs
+ # set up the directories
+ 	-mkdir $(SHELLDIR)
+-	-rm -rf $(GAMEDIR)
++	-rmdir $(GAMEDIR)
+ 	-mkdir $(GAMEDIR) $(GAMEDIR)/save
+ 	-$(CHOWN) $(GAMEUID) $(GAMEDIR) $(GAMEDIR)/save
+ 	$(CHGRP) $(GAMEGRP) $(GAMEDIR) $(GAMEDIR)/save
