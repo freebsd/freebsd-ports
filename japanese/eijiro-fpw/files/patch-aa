@@ -1,0 +1,12 @@
+--- ../orig/eijiro-fpw1.0b/Makefile	Sun Oct  8 23:40:55 2000
++++ Makefile	Thu Dec 21 12:03:11 2000
+@@ -17,7 +17,8 @@
+ #
+ EIJIROVER = 37
+ SRCDIR = .
+-SRCFILE := $(wildcard ${SRCDIR}/EIJI${EIJIROVER}??.TXT)
++#SRCFILE := $(wildcard ${SRCDIR}/EIJI${EIJIROVER}??.TXT)
++SRCFILE=${PORT_SRCFILE}
+ #SRCFILE = test.txt
+ 
+ #
