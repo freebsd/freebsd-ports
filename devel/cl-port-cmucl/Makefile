@@ -27,11 +27,7 @@ RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/port/port.asd:${PORTSDIR}/devel/cl-po
 			${LOCALBASE}/lib/common-lisp/asdf/cmuclfasl/asdf.fasl:${PORTSDIR}/devel/cl-asdf-cmucl \
 			lisp:${PORTSDIR}/lang/cmucl
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
 BROKEN=			"Broken pkg-plist"
-.endif
 
 do-build:
 	WRKSRC=${WRKSRC}/ FBSD_ASDF_COMPILE_PORT=t\
@@ -44,4 +40,4 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/common-lisp/port/cmuclfasl
 	${INSTALL_DATA} ${WRKSRC}/*.fasl ${PREFIX}/lib/common-lisp/port/cmuclfasl/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
