@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1999
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1999/08/04 13:52:58 billf Exp $
+# $Id: Makefile,v 1.4 1999/08/22 18:59:00 mharo Exp $
 #
 
 DISTNAME=	postfix-19990601
@@ -52,7 +52,7 @@ do-install:
 	done
 	@${INSTALL} -C -o root -g wheel -m 755 ${WRKSRC}/conf/postfix-script-sgid \
 		${PREFIX}/etc/postfix/postfix-script
-	@mkdir -p -m 0755 ${PREFIX}/libexec/postfix
+	@${MKDIR} -m 0755 ${PREFIX}/libexec/postfix
 	@for f in bounce cleanup error fsstone local master pickup pipe qmgr \
 		 showq smtp smtpd trivial-rewrite ; do \
 		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/libexec/$$f \
@@ -76,7 +76,7 @@ do-install:
 		${INSTALL} -C -o root -g wheel -m 0755 ${WRKSRC}/man/man8/$$f \
 			${PREFIX}/man/man8/$$f ;\
 	done
-	@mkdir -p -m 0755 /var/spool/postfix
+	@${MKDIR} -m 0755 /var/spool/postfix
 	@if [ ! -e ${PREFIX}/etc/postfix/main.cf ]; then \
 		${CP} -p ${PREFIX}/etc/postfix/sample-main.cf \
 			${PREFIX}/etc/postfix/main.cf; \

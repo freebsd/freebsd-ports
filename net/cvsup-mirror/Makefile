@@ -3,7 +3,7 @@
 # Date created:		01 February 1997
 # Whom:			jdp
 #
-# $Id: Makefile,v 1.3 1997/07/13 18:49:27 max Exp $
+# $Id: Makefile,v 1.4 1998/06/27 05:19:58 asami Exp $
 #
 
 DISTNAME=	cvsup-mirror-1.0
@@ -29,8 +29,8 @@ do-extract:
 
 do-install:
 	@echo "Installing files"
-	@test -d ${base} || mkdir -p ${base}
-	@test -d ${rc} || mkdir -p ${rc}
+	@test -d ${base} || ${MKDIR} ${base}
+	@test -d ${rc} || ${MKDIR} ${rc}
 	@${INSTALL_DATA} ${WRKSRC}/config.sh ${base}
 	@${INSTALL_SCRIPT} ${FILESDIR}/update.sh ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile ${base}

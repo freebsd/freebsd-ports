@@ -4,7 +4,7 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1998/09/28 01:53:45 steve Exp $
+# $Id: Makefile,v 1.10 1999/01/04 15:04:31 ache Exp $
 #
 
 DISTNAME=       timidity-0.2i
@@ -25,7 +25,7 @@ MAN1=           timidity.1
 post-install:
 	cd ${PREFIX}/lib/timidity && \
 	tar zxf ${DISTDIR}/${TIINS} && \
-	cp goemon.cfg goemon.cfg.bak && \
+	${CP} goemon.cfg goemon.cfg.bak && \
 	sed 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
 	   < goemon.cfg.bak > goemon.cfg && \
 	rm goemon.cfg.bak

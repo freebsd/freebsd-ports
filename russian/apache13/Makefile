@@ -3,7 +3,7 @@
 # Date created:         Sat Apr 10 22:30:36 EEST 1999
 # Whom:                 vns@delta.odessa.ua
 #
-# $Id: Makefile,v 1.2 1999/08/01 02:31:02 steve Exp $
+# $Id: Makefile,v 1.3 1999/08/22 18:59:51 mharo Exp $
 #
 
 DISTNAME=	apache_1.3.6
@@ -36,7 +36,7 @@ RA_VERSION=	28.16
 #
 # Small hack for alternate processing patchfiles
 #
-GZCAT=sh -c 'tar -zxf $$0 -C ${WRKSRC};cat ${WRKSRC}/RA-1.3rusPL${RA_VERSION}.patch'
+GZCAT=sh -c 'tar -zxf $$0 -C ${WRKSRC};${CAT} ${WRKSRC}/RA-1.3rusPL${RA_VERSION}.patch'
 
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance

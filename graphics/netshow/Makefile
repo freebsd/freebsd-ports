@@ -3,7 +3,7 @@
 # Date created:         Thu Jun 11 22:38:52 PDT 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1999/01/07 02:31:42 simokawa Exp $
+# $Id: Makefile,v 1.5 1999/07/21 14:55:32 marcel Exp $
 #
 
 DISTNAME=	netshow_linux
@@ -38,6 +38,6 @@ do-install:
 	${INSTALL} -c -o bin -g bin -m 555 ${WRKDIR}/netshow ${PREFIX}/bin/netshow
 
 post-install:
-	@cat ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:        5 June 1997
 # Whom:                Ruslan Shevchenko <rssh@cki.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.4 1998/11/14 09:43:25 asami Exp $
+# $Id: Makefile,v 1.5 1998/11/28 05:39:00 asami Exp $
 #
 
 DISTNAME=	simpack-3.0
@@ -92,7 +92,7 @@ create-lib-sim++:
 	@(cd ${WRKDIR}/temp;                                   \
 	for i in `${CAT} ${FILESDIR}/FILES-SRC-SIMPP` ; do        \
 	  gcc -fpic -DPIC -I${WRKSRC}/func/event/include -c -O \
-		 -o `basename $$i cpp`.so                      \
+		 -o `${BASENAME} $$i cpp`.so                      \
                  ${WRKSRC}/func/event/src/$$i ;                \
 	done;                                   \
 	if [ "${PORTOBJFORMAT}" = "elf" ]; then \

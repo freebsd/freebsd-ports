@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.21 1999/02/03 11:11:56 asami Exp $
+# $Id: Makefile,v 1.22 1999/05/07 03:24:08 jseger Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -25,11 +25,11 @@ PGPLIB=         ${PREFIX}/lib/pgp
 OBJS=           language.txt ru.hlp
 
 do-install:
-	[ -d ${PGPLIB} ] || mkdir -p ${PGPLIB}
+	[ -d ${PGPLIB} ] || ${MKDIR} ${PGPLIB}
 	cd ${WRKSRC}; install -c -o bin -g bin -m 444 ${OBJS} ${PGPLIB}
 	cd ${WRKSRC}; tr -d '\015' < NOTES.ru > ${PGPLIB}/NOTES.ru
 	cd ${PGPLIB}; grep -l -q '^Language.*=.*ru' config.txt || { \
-		cp config.txt config.txt.bak; \
+		${CP} config.txt config.txt.bak; \
 		sed 's/^Language.*=.*$$/Language = ru/' < config.txt.bak > config.txt; }
 	-pgp > /dev/null  2>&1  # update .idx file
 

@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1995/05/03 02:21:59 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 14:05:04 asami Exp $
 #
 
 DISTNAME=	Fudgit_2.41
@@ -18,9 +18,9 @@ USE_GMAKE=	yes
 MAN1=		fudgit.1
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib/fudgit
-	@mkdir -p ${PREFIX}/man/man1
-	@(cd ${WRKSRC}/examples; cp * ${PREFIX}/lib/fudgit)
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/fudgit
+	@${MKDIR} ${PREFIX}/man/man1
+	@(cd ${WRKSRC}/examples; ${CP} * ${PREFIX}/lib/fudgit)
 
 .include <bsd.port.mk>

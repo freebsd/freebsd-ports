@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.8 1999/03/15 01:27:19 steve Exp $
+# $Id: Makefile,v 1.9 1999/06/09 00:13:13 steve Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.2.11
@@ -27,10 +27,10 @@ MAN3=	ftw.3 scandir.3
 pre-configure:
 	sed "s,PREFIX,${PREFIX},g" \
 	${FILESDIR}/configure.ans.skel > ${WRKDIR}/configure.ans
-	mkdir -p ${PREFIX}
-	mkdir -p ${PREFIX}/bin
-	mkdir -p ${PREFIX}/lib
-	mkdir -p ${PREFIX}/man/man1
+	${MKDIR} ${PREFIX}
+	${MKDIR} ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/man/man1
 
 pre-install:
 	${MKDIR} ${PREFIX}/lib/freeWAIS-sf

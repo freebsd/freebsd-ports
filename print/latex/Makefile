@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.36 1999/06/08 23:10:37 jmz Exp $
+# $Id: Makefile,v 1.37 1999/08/22 18:59:45 mharo Exp $
 #
 
 VERSION=	99.06
@@ -45,12 +45,12 @@ do-install:
 	@(${INSTALL_DATA} ${WRKSRC}/base/latex.fmt ${PREFIX}/share/texmf/web2c/)
 	@(cd ${WRKSRC}/tfm; ${INSTALL_DATA} *.tfm ${PREFIX}/share/texmf/fonts/tfm)
 	@(cd ${WRKSRC}/mf; ${INSTALL_DATA} *.mf ${PREFIX}/share/texmf/metafont)
-	@mkdir -p ${PREFIX}/share/texmf/tex/latex
+	@${MKDIR} ${PREFIX}/share/texmf/tex/latex
 	@(cd ${WRKSRC}/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
 	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
-	@mkdir -p ${PREFIX}/share/texmf/makeindx;
+	@${MKDIR} ${PREFIX}/share/texmf/makeindx;
 	@(cd ${WRKSRC}/base; ${INSTALL_DATA} *.ist ${PREFIX}/share/texmf/makeindx)
 	@(cd ${WRKSRC}/tools; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
@@ -59,7 +59,7 @@ do-install:
 	@(cd ${WRKSRC}/psnfss; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
 	@(cd ${PREFIX}/bin; ${RM} -f latex; ${LN} -s tex latex)
-	@(mkdir -p ${PREFIX}/share/texmf/documentation)
+	@(${MKDIR} ${PREFIX}/share/texmf/documentation)
 	@(cd ${WRKSRC}/base; for f in *.dtx ltx3info.tex source2e.tex *.fdd ltnews*.tex *guide.tex; do \
 	    if [ -f $$f ]; then ${INSTALL_DATA} $$f ${PREFIX}/share/texmf/documentation; fi; done)
 	@(cd ${WRKSRC}/tools; for f in *.dtx; do \

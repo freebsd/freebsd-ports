@@ -3,7 +3,7 @@
 # Date created:		12 May 1995
 # Whom:			me
 #
-# $Id: Makefile,v 1.26 1998/09/17 00:32:56 asami Exp $
+# $Id: Makefile,v 1.27 1998/10/04 04:03:15 steve Exp $
 #
 
 DISTNAME=	fvwm-1.24r
@@ -25,7 +25,7 @@ MAN1=		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmClean.1 \
 		xpmroot.1
 
 post-install:
-	@mkdir -p ${PREFIX}/include/X11/pixmaps
+	@${MKDIR} ${PREFIX}/include/X11/pixmaps
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m 444 \
 	${WRKSRC}/fvwm_icons/*.xpm ${PREFIX}/include/X11/pixmaps
 

@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.5 1998/10/21 00:57:27 steve Exp $
+# $Id: Makefile,v 1.6 1999/08/22 19:00:01 mharo Exp $
 #
 
 DISTNAME=	LPRng-3.5.1
@@ -29,16 +29,16 @@ MANCOMPRESSED=	yes
 
 post-install:
 	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} default)
-	@cat ${FILESDIR}/lprng.sh | \
+	@${CAT} ${FILESDIR}/lprng.sh | \
 		${SED} -e "s|@@PREFIX@@|${PREFIX}|g" > ${PREFIX}/etc/rc.d/lprng.sh
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/lprng.sh
 	${INSTALL} -d -g bin -o bin -m 0555 ${PREFIX}/share/doc/LPRng
 	@for file in ${EXTRA_FILES}; do \
-		cp ${DISTDIR}/$$file ${PREFIX}/share/doc/LPRng; \
+		${CP} ${DISTDIR}/$$file ${PREFIX}/share/doc/LPRng; \
 		cd ${PREFIX}/share/doc/LPRng; \
 		tar xvfz $$file; \
 		rm ${PREFIX}/share/doc/LPRng/$$file; \
 	done
-	@cat ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

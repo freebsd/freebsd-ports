@@ -3,7 +3,7 @@
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.7 1998/10/04 10:25:51 kuriyama Exp $
+# $Id: Makefile,v 1.8 1998/11/17 04:14:01 asami Exp $
 #
 
 DISTNAME=       pinetree.precomposed-1.01-bdf
@@ -30,7 +30,7 @@ do-build:
 	mkfontdir .
 
 do-install:
-	-mkdir -p ${PREFIX}/lib/X11/fonts/local
+	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
 	@cd ${WRKSRC}; \
 	for file in ${FONTS}; do \
 		${INSTALL_DATA} "$$file".pcf.gz ${PREFIX}/lib/X11/fonts/local; \

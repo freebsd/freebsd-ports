@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.27 1999/02/03 23:44:25 steve Exp $
+# $Id: Makefile,v 1.28 1999/08/22 18:57:45 mharo Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -79,7 +79,7 @@ post-install:
 	${CHMOD} 755 ${PREFIX}/share/emacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
 # install xemacs20.sh into ${PREFIX}/etc/rc.d
-	@if [ ! -d ${PREFIX}/etc/rc.d ]; then mkdir -p ${PREFIX}/etc/rc.d; fi
+	@if [ ! -d ${PREFIX}/etc/rc.d ]; then ${MKDIR} ${PREFIX}/etc/rc.d; fi
 	${INSTALL_SCRIPT} ${FILESDIR}/xemacs20.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

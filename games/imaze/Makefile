@@ -3,7 +3,7 @@
 # Date created:         27. April 1996
 # Whom:                 Ronald Kuehn <kuehn@rz.tu-clausthal.de>
 #
-# $Id: Makefile,v 1.13 1999/02/22 04:00:32 steve Exp $
+# $Id: Makefile,v 1.14 1999/05/04 23:18:09 steve Exp $
 #
 
 DISTNAME=       imaze
@@ -53,10 +53,10 @@ do-install:
 	@(cd ${WRKSRC}/man6 && for f in *.6;\
 		do ${INSTALL_MAN} $$f ${PREFIX}/man/man6;\
 		${compresscommand} ${PREFIX}/man/man6/$$f; done)
-	@mkdir -p ${PREFIX}/share/imaze/labs
+	@${MKDIR} ${PREFIX}/share/imaze/labs
 	@(cd ${WRKSRC}/labs && for f in *.lab;\
 		do ${INSTALL_DATA} $$f ${PREFIX}/share/imaze/labs; done)
-	@mkdir -p ${SOUNDDIR}
+	@${MKDIR} ${SOUNDDIR}
 	@(cd ${WRKSRC}/sounds && for f in *.au;\
 		do ${INSTALL_DATA} $$f ${SOUNDDIR}; done)
 	@(cd ${WRKSRC} && for f in Xdefaults.Motif Xdefaults.OpenWindows;\

@@ -5,7 +5,7 @@
 #			japanese/man-doc
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/03/31 16:41:29 sada Exp $
+# $Id: Makefile,v 1.4 1999/05/09 16:49:38 sada Exp $
 #
 
 DISTNAME=	xjman-0.3
@@ -28,7 +28,7 @@ post-extract:
 .endfor
 .for i in ${MANSECS}
 	@cd ${WRKSRC}/man$i; \
-	ls *.$ix|awk 'BEGIN{printf"MAN$i ="}{printf"\\\n\t%s",$$0}' >Makefile; \
+	ls *.$ix|${AWK} 'BEGIN{printf"MAN$i ="}{printf"\\\n\t%s",$$0}' >Makefile; \
 	${ECHO} >>Makefile; \
 	${ECHO} pages-list: >>${WRKSRC}/man$i/Makefile; \
 	${ECHO} "	@\$${ECHO} \$${MAN$i}" >>${WRKSRC}/man$i/Makefile; \

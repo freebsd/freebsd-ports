@@ -3,7 +3,7 @@
 # Date created:			09 Nov 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/06/10 16:28:36 max Exp $
+# $Id: Makefile,v 1.3 1997/07/13 18:49:26 max Exp $
 #
 
 DISTNAME=	cap60.pl100
@@ -64,11 +64,11 @@ pre-install:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/cap
 .for f in ${ETC_SAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/etc/cap/`basename $f`.sample
+	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/etc/cap/`${BASENAME} $f`.sample
 .endfor
 	@${MKDIR} ${PREFIX}/lib/cap
 .for f in ${LIB_SAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/lib/cap/`basename $f`.sample
+	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/lib/cap/`${BASENAME} $f`.sample
 .endfor
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>  Installing relevant documentation into ${DOCDIR}."
@@ -80,7 +80,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCDIR}
 .endfor
 .for f in ${READMES}
-	@${INSTALL_DATA} ${WRKSRC}/$f/README ${DOCDIR}/`basename $f`.README
+	@${INSTALL_DATA} ${WRKSRC}/$f/README ${DOCDIR}/`${BASENAME} $f`.README
 .endfor
 .endif
 	@${ECHO_MSG} "===>  Installing manual pages."

@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.8 1998/12/10 15:46:40 kuriyama Exp $
+# $Id: Makefile,v 1.9 1999/07/22 04:39:55 cpiazza Exp $
 #
 
 DISTNAME=	xfntmizi-1.1-2.noarch
@@ -42,13 +42,13 @@ do-build:
 	done
 
 do-install:
-	@mkdir -p ${PREFIX}/lib/X11/fonts/local
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/local
 	for i in ${WRKDIR}/*.gz; do \
 		${INSTALL_DATA} $$i ${PREFIX}/lib/X11/fonts/local/; \
 	done
 	cd ${PREFIX}/lib/X11/fonts/local/ ; mkfontdir
 
 post-install:
-	@cat ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

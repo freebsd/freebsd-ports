@@ -6,7 +6,7 @@
 # ATTENTION: It not work in > 256 colors modes, please fix it
 # if you can.
 #
-# $Id: Makefile,v 1.7 1998/09/17 00:33:01 asami Exp $
+# $Id: Makefile,v 1.8 1999/08/22 19:01:06 mharo Exp $
 #
 
 DISTNAME=       xfedor
@@ -26,7 +26,7 @@ XCAT1= ${X11BASE}/man/cat1
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_PROGRAM} xfedor ${PREFIX}/bin
-	-mkdir -p ${XFHELP}
+	-${MKDIR} ${XFHELP}
 	${CHOWN} ${SHAREOWN}.${SHAREGRP} ${XFHELP}
 	${CHMOD} 755 ${XFHELP}
 	cd ${WRKSRC}/help; \

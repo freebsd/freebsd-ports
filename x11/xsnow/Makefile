@@ -3,7 +3,7 @@
 # Date created:         12 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/11/18 09:56:45 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/05 05:18:03 steve Exp $
 #
 
 DISTNAME=	xsnow-1.40
@@ -18,8 +18,8 @@ USE_IMAKE=	yes
 MAN6=		xsnow.6
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/man/man6
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/man/man6
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
 
 .include <bsd.port.mk>

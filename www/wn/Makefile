@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.27 1998/12/01 11:21:33 obrien Exp $
+# $Id: Makefile,v 1.28 1998/12/02 09:48:36 obrien Exp $
 #
 
 DISTNAME=       wn-1.18.6
@@ -22,7 +22,7 @@ pre-patch:
 	@${CP} ${WRKSRC}/config.h.dist ${WRKSRC}/config.h
 
 post-install:
-	@mkdir -p ${PREFIX}/wn/wnlogs ${PREFIX}/wn/bin
+	@${MKDIR} ${PREFIX}/wn/wnlogs ${PREFIX}/wn/bin
 	@${CP} -PR ${WRKSRC}/docs ${PREFIX}/wn
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
 	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin

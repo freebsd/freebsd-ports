@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.15 1998/12/01 08:53:53 asami Exp $
+# $Id: Makefile,v 1.16 1999/08/22 18:58:00 mharo Exp $
 #
 
 PKGNAME=	quakeserver-1.0
@@ -26,7 +26,7 @@ do-extract:
 		@ ${RM} -rf ${WRKDIR}
 		@ ${MKDIR} ${WRKDIR}
 		@ unzip -q -o ${DISTDIR}/quake106.zip -d ${WRKDIR} resource.*
-		@ cat ${WRKDIR}/resource.dat ${WRKDIR}/resource.1 > ${WRKDIR}/resource.exe
+		@ ${CAT} ${WRKDIR}/resource.dat ${WRKDIR}/resource.1 > ${WRKDIR}/resource.exe
 		@ cd ${WRKDIR}; lha xfq resource.exe id1/pak0.pak
 		@ cd ${WRKDIR}; tar zxf ${DISTDIR}/unixded-1.0-i386-unknown-bsdi3.0.tar.gz
 

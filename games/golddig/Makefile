@@ -3,7 +3,7 @@
 # Date created:         20 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1997/01/03 09:36:40 obrien Exp $
+# $Id: Makefile,v 1.8 1998/11/28 00:44:33 asami Exp $
 #
 
 DISTNAME=	golddig2
@@ -19,7 +19,7 @@ MAN6=		golddig.6
 
 pre-patch:
 	@(cd ${WRKSRC}; for i in 245 244 246 247; do \
-	    awk '{if (/^#!/) x++} {if(x) print $$0'} $$i| /bin/sh; \
+	    ${AWK} '{if (/^#!/) x++} {if(x) print $$0'} $$i| /bin/sh; \
 	  done; mv golddig2/* .)
 
 pre-install:

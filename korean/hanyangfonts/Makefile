@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/08/07 22:43:10 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/18 11:38:57 asami Exp $
 #
 
 DISTNAME=       hanyang-font-pcf
@@ -28,7 +28,7 @@ do-build:
 	done; \
 
 do-install:
-	-mkdir -p ${PREFIX}/lib/X11/fonts/local
+	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
 	@cd ${WRKSRC}; \
 	for file in ${FONTS}; do \
 		${INSTALL_DATA} "$$file".pcf.gz ${PREFIX}/lib/X11/fonts/local; \

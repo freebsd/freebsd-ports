@@ -3,7 +3,7 @@
 # Date created:		29 April 1999
 # Whom:			G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id: Makefile,v 1.2 1999/05/04 04:20:36 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/19 13:12:27 taoka Exp $
 #
 
 DISTNAME=	tiff
@@ -20,7 +20,7 @@ DIST_SUBDIR=	tifmerge
 MAN3=		tifmerge.3
 
 post-extract:
-	@mkdir -p ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
 	@tuc ${WRKDIR}/TIFMERGE.H ${WRKSRC}/tifmerge.h
 	@tuc ${WRKDIR}/TIFMERGE.C ${WRKSRC}/tifmerge.c
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
