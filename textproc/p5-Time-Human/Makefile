@@ -7,6 +7,7 @@
 
 PORTNAME=	Time-Human
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
@@ -22,7 +23,7 @@ MAN3=		Time::Human.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=		Does not build with Perl 5.005.
+EXTRA_PATCHES+=	${PATCHDIR}/Human.pm-5005.patch
 .endif
 
 .include <bsd.port.post.mk>
