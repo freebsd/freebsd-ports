@@ -338,6 +338,7 @@
     SUBDIR += p5-Imager-Plot
     SUBDIR += p5-Imlib2
     SUBDIR += p5-OpenGL
+    SUBDIR += p5-SVG-Graph
     SUBDIR += p5-SWF-Builder
     SUBDIR += p5-SWF-File
     SUBDIR += p5-Tk-JPEG-Lite
