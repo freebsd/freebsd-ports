@@ -50,6 +50,7 @@
     SUBDIR += kdelibs2
     SUBDIR += kvidtune
     SUBDIR += kworldwatch
+    SUBDIR += launch.app
     SUBDIR += libdnd
     SUBDIR += libhelp
     SUBDIR += libsx
