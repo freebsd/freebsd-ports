@@ -9,15 +9,11 @@ PORTNAME?=	mod_php3
 PORTVERSION=	3.0.18
 PORTREVISION?=	3
 CATEGORIES?=	www
-MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
-		http://us.php.net/${PHP_DISTDIR}/ \
-		http://php.he.net/${PHP_DISTDIR}/ \
+MASTER_SITES=	http://php.he.net/${PHP_DISTDIR}/ \
 		http://www.php3.de/${PHP_DISTDIR}/ \
 		http://au.php.net/${PHP_DISTDIR}/ \
 		http://at.php.net/${PHP_DISTDIR}/ \
 		http://br.php.net/${PHP_DISTDIR}/ \
-		http://php.easydns.com/${PHP_DISTDIR}/ \
-		http://www.php.cz/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 DISTNAME=	php-${PORTVERSION}
 
