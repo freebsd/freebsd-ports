@@ -1,35 +1,45 @@
---- Makefile.orig	Wed Aug  6 22:00:14 2003
-+++ Makefile	Wed Aug  6 22:03:56 2003
-@@ -1,10 +1,9 @@
--CC = cc
--CFLAGS = -O
--LDFLAGS =
--
--DESTDIR = /usr/local
--BINDIR = /usr/local/bin
--MANDIR = /usr/local/man
-+DESTDIR = $(PREFIX)
-+BINDIR = $(PREFIX)/bin
-+MANDIR = $(PREFIX)/man
-+
-+INST_BIN = $(BSD_INSTALL_PROGRAM)
-+INST_DOC = $(BSD_INSTALL_MAN)
+--- configure.orig	Sun May 23 15:03:23 2004
++++ configure	Sun May 23 15:08:27 2004
+@@ -143,16 +143,16 @@
+ SHAREDIR = $sharedir
+ MANDIR = $mandir
  
- MAN_BIN = imapfilter.1
- MAN_RC = imapfilterrc.5
-@@ -32,12 +31,9 @@
++INST_BIN = \$(BSD_INSTALL_PROGRAM)
++INST_DOC = \$(BSD_INSTALL_MAN)
++
+ INCDIRS = $incdirs
+ LIBDIRS = $libdirs
+ 
+-MYCFLAGS = $mycflags
+-MYLDFLAGS = $myldflags
+-
+ DEFS = $defs
+ 
+-CFLAGS = \$(MYCFLAGS) \$(DEFS) \$(INCDIRS)
+-LDFLAGS = \$(MYLDFLAGS) \$(LIBDIRS)
++CFLAGS += \$(DEFS) \$(INCDIRS)
++LDFLAGS += \$(LIBDIRS)
+ 
+ LIBS = $libs
+ 
+@@ -181,17 +181,9 @@
  imapfilter.o: version.h
  
- install: imapfilter
--	if test ! -d $(BINDIR); then mkdir -p $(BINDIR); fi
--	cp -f $(BIN) $(BINDIR) && chmod 0755 $(BINDIR)/$(BIN)
--	if test ! -d $(MANDIR)/man1; then mkdir -p $(MANDIR)/man1; fi
--	cp -f $(MAN_BIN) $(MANDIR)/man1 && chmod 0644 $(MANDIR)/man1/$(MAN_BIN)
--	if test ! -d $(MANDIR)/man5; then mkdir -p $(MANDIR)/man5; fi
--	cp -f $(MAN_RC) $(MANDIR)/man5 && chmod 0644 $(MANDIR)/man5/$(MAN_RC)
-+	$(INST_BIN) $(BIN) $(BINDIR)
-+	$(INST_DOC) $(MAN_BIN) $(MANDIR)/man1
-+	$(INST_DOC) $(MAN_RC) $(MANDIR)/man5
+ install: \$(BIN)
+-	if test ! -d \$(BINDIR); then mkdir -p \$(BINDIR); fi
+-	cp -f \$(BIN) \$(BINDIR) && chmod 0755 \$(BINDIR)/\$(BIN)
+-	if test ! -d \$(SHAREDIR); then mkdir -p \$(SHAREDIR); fi
+-	cp -f \$(INTERFACE_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(INTERFACE_LUA)
+-	cp -f \$(AUXILIARY_LUA) \$(SHAREDIR) && \\
+-		chmod 0644 \$(SHAREDIR)/\$(AUXILIARY_LUA)
+-	if test ! -d \$(MANDIR)/man1; then mkdir -p \$(MANDIR)/man1; fi
+-	cp -f \$(MAN_BIN) \$(MANDIR)/man1 && chmod 0644 \$(MANDIR)/man1/\$(MAN_BIN)
+-	if test ! -d \$(MANDIR)/man5; then mkdir -p \$(MANDIR)/man5; fi
+-	cp -f \$(MAN_CONFIG) \$(MANDIR)/man5 && chmod 0644 \$(MANDIR)/man5/\$(MAN_CONFIG)
++	\$(INST_BIN) \$(BIN) \$(BINDIR)
++	\$(INST_DOC) \$(MAN_BIN) \$(MANDIR)/man1
++	\$(INST_DOC) \$(MAN_CONFIG) \$(MANDIR)/man5
  
  deinstall:
- 	rm -f $(BINDIR)/$(BIN) $(MANDIR)/man1/$(MAN_BIN) $(MANDIR)/man5/$(MAN_RC)
+ 	rm -f \$(BINDIR)/\$(BIN) \$(SHAREDIR)/\$(INTERFACE_LUA) \\
