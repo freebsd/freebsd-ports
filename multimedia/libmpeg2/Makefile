@@ -10,11 +10,11 @@ PORTVERSION=	0.4.0b
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
-WRKSRC=		${WRKDIR}/mpeg2dec-0.4.0
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
+USE_GNOME=	lthack
 USE_XLIB=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
@@ -22,6 +22,8 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--enable-shared \
 		--with-x
+
+WRKSRC=		${WRKDIR}/mpeg2dec-0.4.0
 
 MAN1=	extract_mpeg2.1 mpeg2dec.1
 
