@@ -278,7 +278,7 @@
 + 
 + #ifdef HELPFILE
 + #undef HELPFILE
-+ #define HELPFILE        "@PREFIX@/pine/lib/pine.hlp"
++ #define HELPFILE        "@PREFIX@/lib/pine/pine.hlp"
 + #define HELPINDEX       "@PREFIX@/lib/pine/pine.ndx"
 + #endif
 + 
