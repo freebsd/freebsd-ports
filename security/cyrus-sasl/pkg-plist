@@ -1,4 +1,4 @@
-@unexec %D/etc/rc.d/pwcheck.sh stop ; echo " stopped."
+@unexec %D/etc/rc.d/pwcheck.sh stop ; echo "pwcheck stopped."
 etc/rc.d/pwcheck.sh
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -9,7 +9,7 @@ include/sasl/saslutil.h
 @dirrm include/sasl
 lib/libsasl.a
 lib/libsasl.so
-lib/libsasl.so.7
+lib/libsasl.so.8
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/sasl/libanonymous.a
@@ -21,12 +21,12 @@ lib/sasl/libcrammd5.so.1
 lib/sasl/libdigestmd5.a
 lib/sasl/libdigestmd5.so
 lib/sasl/libdigestmd5.so.0
-lib/sasl/libgssapiv2.a
-lib/sasl/libgssapiv2.so
-lib/sasl/libgssapiv2.so.1
-lib/sasl/libkerberos4.a
-lib/sasl/libkerberos4.so
-lib/sasl/libkerberos4.so.1
+%%GSSAPI%%lib/sasl/libgssapiv2.a
+%%GSSAPI%%lib/sasl/libgssapiv2.so
+%%GSSAPI%%lib/sasl/libgssapiv2.so.1
+%%EBONES%%lib/sasl/libkerberos4.a
+%%EBONES%%lib/sasl/libkerberos4.so
+%%EBONES%%lib/sasl/libkerberos4.so.1
 lib/sasl/liblogin.a
 lib/sasl/liblogin.so
 lib/sasl/liblogin.so.0
@@ -34,12 +34,35 @@ lib/sasl/libplain.a
 lib/sasl/libplain.so
 lib/sasl/libplain.so.1
 @dirrm lib/sasl
+sbin/sasldblistusers
 sbin/saslpasswd
 sbin/pwcheck
+%%NOPORTDOCS%%share/doc/SASL/AUTHORS
+%%NOPORTDOCS%%share/doc/SASL/COPYING
+%%NOPORTDOCS%%share/doc/SASL/ChangeLog
+%%NOPORTDOCS%%share/doc/SASL/INSTALL
+%%NOPORTDOCS%%share/doc/SASL/NEWS
+%%NOPORTDOCS%%share/doc/SASL/README
+%%NOPORTDOCS%%share/doc/SASL/TODO
+%%NOPORTDOCS%%share/doc/SASL/draft-leach-digest-sasl-05.txt
+%%NOPORTDOCS%%share/doc/SASL/draft-newman-auth-scram-03.txt
+%%NOPORTDOCS%%share/doc/SASL/rfc1321.txt
+%%NOPORTDOCS%%share/doc/SASL/rfc2095.txt
+%%NOPORTDOCS%%share/doc/SASL/rfc2104.txt
+%%NOPORTDOCS%%share/doc/SASL/rfc2222.txt
+%%NOPORTDOCS%%share/doc/SASL/rfc2245.txt
+%%NOPORTDOCS%%share/doc/SASL/html/gssapi.html
+%%NOPORTDOCS%%share/doc/SASL/html/index.html
+%%NOPORTDOCS%%share/doc/SASL/html/programming.html
+%%NOPORTDOCS%%share/doc/SASL/html/sysadmin.html
+%%NOPORTDOCS%%@dirrm share/doc/SASL/html
+%%NOPORTDOCS%%@dirrm share/doc/SASL
 @mode u=rwx,go=
-@exec mkdir /var/pwcheck
-@exec chown cyrus:cyrus /var/pwcheck
-@exec chmod go= /var/pwcheck
+@cwd /var
+@exec mkdir pwcheck
+@exec chown cyrus:cyrus pwcheck
+@exec chmod go= pwcheck
 @comment This file gets create by the pwcheck program
-@unexec rm -f /var/pwcheck/pwcheck
-@dirrm /var/pwcheck
+@unexec rm -f pwcheck/pwcheck
+@dirrm pwcheck
+@cwd %%PREFIX%%
