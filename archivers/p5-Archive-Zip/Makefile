@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
