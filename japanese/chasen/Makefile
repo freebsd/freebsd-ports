@@ -27,11 +27,11 @@ post-patch:
 
 post-build:
 	@${ECHO_MSG} "Making dictionaries"
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} dic
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} dic
 
 post-install:
 	${MKDIR} ${PREFIX}/include/chasen
-	@cd ${WRKSRC}/lib; ${SETENV} ${MAKE_ENV} ${MAKE} install
+	@cd ${WRKSRC}/lib; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} install
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/chasen/ja
 .for f in ${DOCS_EN}
