@@ -13,11 +13,10 @@ MASTER_SITE_SUBDIR=	websieve
 PKGNAMEPREFIX=	p5-
 DISTNAME=	websieve-063a
 
-MAINTAINER=	eik@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module to edit Sieve scripts on an Cyrus IMAP server
 
-RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 
 WRKSRC=		${WRKDIR}/${PERLSIEVENAME}
 
@@ -32,4 +31,10 @@ post-extract:
 			${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
 	@${RM} ${WRKSRC}/testssl.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500600
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO
+.endif
+
+.include <bsd.port.post.mk>
