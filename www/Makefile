@@ -108,8 +108,8 @@
     SUBDIR += httrack
     SUBDIR += hypermail
     SUBDIR += indexme
-    SUBDIR += jakarta-tomcat
     SUBDIR += jakarta-tomcat3
+    SUBDIR += jakarta-tomcat4
     SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetty
