@@ -291,7 +291,7 @@ JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
 # The default value for NEED_JAVAC is temporarily (!) YES
 # This will change as soon as the affecting ports have NEED_JAVAC=YES
 .		if !defined(NEED_JAVAC)
-NEED_JAVAC=	YES
+NEED_JAVAC=	NO
 .		endif
 
 .		if (${NEED_JAVAC} == "YES") || (${NEED_JAVAC} == "yes")
@@ -344,7 +344,7 @@ JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
 # Stage 6: Add any dependencies if necessary
 
 # Possibly add Jikes to the dependencies
-.		if ${JAVAC} == ${_JIKES_PATH}
+.		if defined(JAVAC) && (${JAVAC} == ${_JIKES_PATH})
 .			if !defined(NO_BUILD_DEPENDS_JAVA)
 BUILD_DEPENDS+=		${_DEPEND_JIKES}
 .			endif
