@@ -1,15 +1,15 @@
 # New ports collection makefile for:	hanterm-xf86
-# Version required:     hanterm-xf331-p13
+# Version required:     hanterm-xf-p14
 # Date created:		22 Mar 1997
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/07/27 00:38:56 steve Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:31:21 asami Exp $
 #
 
-DISTNAME=	hanterm-xf331-p13
-PKGNAME=	ko-hanterm-xf-3.3.1.13
+DISTNAME=	hanterm-xf-p14
+PKGNAME=	ko-hanterm-xf14
 CATEGORIES=	korean x11
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/incoming/
+MASTER_SITES=	http://pseudo.snu.ac.kr/~hwang/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
