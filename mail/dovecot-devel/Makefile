@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.10.4
-PORTREVISION=	2
+PORTVERSION=	0.99.10.5
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/
 
@@ -17,6 +16,8 @@ COMMENT=	Secure and compact IMAP and POP3 servers
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-shadow --enable-ipv6 \
@@ -33,10 +34,14 @@ DOCS=		auth.txt configuration.txt design.txt \
 		nfs.txt dovecot-ldap.conf dovecot-pgsql.conf \
 		dovecot-openssl.cnf securecoding.txt
 
+OPTIONS=	SASL2		"SASL2 support"		off \
+		VPOPMAIL	"VPopMail support"	off \
+		LDAP		"OpenLDAP support"	off \
+		PGSQL		"PostgreSQL support"	off
+
 .include <bsd.port.pre.mk>
 
 ## SASL2 support
-OPTIONS+=	SASL2 "SASL2 support" off
 #
 # SASL provides authentication support to
 # session-based protocols. This is can be
@@ -48,7 +53,6 @@ CONFIGURE_ARGS+=	--with-cyrus-sasl2
 .endif
 
 ## VPopMail Support
-OPTIONS+=	VPOPMAIL  "VPopMail support" off
 #
 # vpopmail provides easy authentication and
 # multi-domain features. It was originally
@@ -61,7 +65,6 @@ CONFIGURE_ARGS+=	--with-vpopmail
 .endif
 
 ## OpenLDAP Support
-OPTIONS+=	LDAP  "OpenLDAP support" off
 #
 # LDAP is the light-weight directory access
 # protocol and can be used by Dovecot for its
@@ -73,7 +76,6 @@ CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 ## PostgreSQL Support
-OPTIONS+=	PGSQL  "PostgreSQL support" off
 #
 # PostgreSQL is a powerful SQL database that
 # can be used to store user tables.
@@ -81,12 +83,6 @@ OPTIONS+=	PGSQL  "PostgreSQL support" off
 .if defined(WITH_PGSQL)
 LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
-.endif
-
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	/etc/rc.subr
-.else
-USE_RC_SUBR=	yes
 .endif
 
 pre-build:
