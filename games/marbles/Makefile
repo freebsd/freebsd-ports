@@ -7,6 +7,7 @@
 
 PORTNAME=	marbles
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
@@ -20,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config
 USE_REINPLACE=	yes
+
+MAN6=	marbles.6
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/SDL\///' ${WRKSRC}/src/*.[ch]
