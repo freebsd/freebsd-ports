@@ -6,5 +6,6 @@ share/doc/qemu/qemu-tech.html
 share/qemu/bios.bin
 share/qemu/linux_boot.bin
 share/qemu/vgabios.bin
+share/qemu/vgabios-cirrus.bin
 @dirrm share/qemu
 @dirrm share/doc/qemu

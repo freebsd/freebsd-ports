@@ -1,127 +1,186 @@
-Revert this, breaks the right alt key (which is important if you use a
-german keymap, seems to send scroll-lock instead...)
-
-Index: qemu/sdl.c
-@@ -63,24 +63,25 @@
-     ds->depth = screen->format->BitsPerPixel;
- }
+Index: qemu/slirp/bootp.c
+===================================================================
+RCS file: /cvsroot/qemu/qemu/slirp/bootp.c,v
+retrieving revision 1.3
+diff -u -r1.3 bootp.c
+--- slirp/bootp.c	4 Jun 2004 15:30:48 -0000	1.3
++++ slirp/bootp.c	5 Jun 2004 19:34:22 -0000
+@@ -29,11 +29,12 @@
  
--static const uint8_t x_keycode_to_pc_keycode[61] = {
--   0xc7,      /*  97  Home   */
--   0xc8,      /*  98  Up     */
--   0xc9,      /*  99  PgUp   */
--   0xcb,      /* 100  Left   */
-+static const uint32_t x_keycode_to_pc_keycode[61] = {
-+   0x47e0,      /*  97  Home   */
-+   0x48e0,      /*  98  Up     */
-+   0x49e0,      /*  99  PgUp   */
-+   0x4be0,      /* 100  Left   */
-    0x4c,        /* 101  KP-5   */
--   0xcd,      /* 102  Right  */
--   0xcf,      /* 103  End    */
--   0xd0,      /* 104  Down   */
--   0xd1,      /* 105  PgDn   */
--   0xd2,      /* 106  Ins    */
--   0xd3,      /* 107  Del    */
--   0x9c,      /* 108  Enter  */
--   0x9d,      /* 109  Ctrl-R */
--   0xb7,      /* 111  Print  */
--   0xb5,      /* 112  Divide */
--   0xb8,      /* 113  Alt-R  */
--   0xc6,      /* 114  Break  */   
-+   0x4de0,      /* 102  Right  */
-+   0x4fe0,      /* 103  End    */
-+   0x50e0,      /* 104  Down   */
-+   0x51e0,      /* 105  PgDn   */
-+   0x52e0,      /* 106  Ins    */
-+   0x53e0,      /* 107  Del    */
-+   0x1ce0,      /* 108  Enter  */
-+   0x1de0,      /* 109  Ctrl-R */
-+   0x451de1,    /* 110  Pause  */
-+   0x37e0,      /* 111  Print  */
-+   0x35e0,      /* 112  Divide */
-+   0x38e0,      /* 113  Alt-R  */
-+   0x46e0,      /* 114  Break  */   
-    0x0,         /* 115 */
-    0x0,         /* 116 */
-    0x0,         /* 117 */
-@@ -128,25 +129,11 @@
+ #define START_ADDR 15
  
- static void sdl_process_key(SDL_KeyboardEvent *ev)
+-#define LEASE_TIME (24 * 3600)
++#define LEASE_TIME (120)
+ 
+ typedef struct {
+     uint8_t allocated;
+     uint8_t macaddr[6];
++    int time;
+ } BOOTPClient;
+ 
+ BOOTPClient bootp_clients[NB_ADDR];
+@@ -68,26 +69,54 @@
  {
--    int keycode, v, i;
--    static uint8_t modifiers_state[256];
--
--    if (ev->keysym.sym == SDLK_PAUSE) {
--        /* specific case */
--        v = 0;
--        if (ev->type == SDL_KEYUP)
--            v |= 0x80;
--        kbd_put_keycode(0xe1);
--        kbd_put_keycode(0x1d | v);
--        kbd_put_keycode(0x45 | v);
--        return;
--    }
--
-+    int keycode, v;
-+    
-     /* XXX: not portable, but avoids complicated mappings */
-     keycode = ev->keysym.scancode;
+     BOOTPClient *bc;
+     int i;
++    int now=time(NULL);
  
--    /* XXX: windows version may not work: 0xe0/0xe1 should be trapped
--       ? */
- #ifndef _WIN32
-     if (keycode < 9) {
-         keycode = 0;
-@@ -159,44 +146,15 @@
-         keycode = 0;
+     for(i = 0; i < NB_ADDR; i++) {
+         if (!memcmp(macaddr, bootp_clients[i].macaddr, 6))
+             goto found;
      }
- #endif
--
--    switch(keycode) {
--    case 0x00:
--        /* sent when leaving window: reset the modifiers state */
--        for(i = 0; i < 256; i++) {
--            if (modifiers_state[i]) {
--                if (i & 0x80)
--                    kbd_put_keycode(0xe0);
--                kbd_put_keycode(i | 0x80);
--            }
--        }
--        return;
--    case 0x2a:                          /* Left Shift */
--    case 0x36:                          /* Right Shift */
--    case 0x1d:                          /* Left CTRL */
--    case 0x9d:                          /* Right CTRL */
--    case 0x38:                          /* Left ALT */
--    case 0xb8:                         /* Right ALT */
-+    
-+    /* now send the key code */
-+    while (keycode != 0) {
-+        v = keycode & 0xff;
-         if (ev->type == SDL_KEYUP)
--            modifiers_state[keycode] = 0;
--        else
--            modifiers_state[keycode] = 1;
--        break;
--    case 0x45: /* num lock */
--    case 0x3a: /* caps lock */
--        /* SDL does not send the key up event, so we generate it */
--        kbd_put_keycode(keycode);
--        kbd_put_keycode(keycode | 0x80);
--        return;
-+            v |= 0x80;
-+        kbd_put_keycode(v);
-+        keycode >>= 8;
-     }
--
--    /* now send the key code */
--    if (keycode & 0x80)
--        kbd_put_keycode(0xe0);
--    if (ev->type == SDL_KEYUP)
--        kbd_put_keycode(keycode | 0x80);
--    else
--        kbd_put_keycode(keycode & 0x7f);
++    for(i = 0; i < NB_ADDR; i++) {
++	if (now-bootp_clients[i].time > 3*LEASE_TIME)
++	    goto found;
++    }
+     return NULL;
+  found:
+     bc = &bootp_clients[i];
+-    bc->allocated = 1;
+     paddr->s_addr = htonl(ntohl(special_addr.s_addr) | (i + START_ADDR));
+     return bc;
  }
  
- static void sdl_update_caption(void)
++static BOOTPClient *find_reqaddr(struct in_addr *paddr, struct in_addr *reqaddr, const uint8_t *macaddr)
++{
++    BOOTPClient *bc=NULL;
++    int i;
++    /*check the net prefix*/
++    if ((ntohl(reqaddr->s_addr) & 0xffffff00) ==
++		    (ntohl(special_addr.s_addr) & 0xffffff00)) {
++	    i=(ntohl(reqaddr->s_addr) & 0xff) - START_ADDR;
++	    if (i>=0 && i< NB_ADDR) {
++		    bc = &bootp_clients[i];
++		    if (bc->allocated &&
++				    (memcmp(macaddr, bootp_clients[i].macaddr, 6)==0)) {
++			    paddr->s_addr = reqaddr->s_addr;
++			    return bc;
++		    }
++		    else
++			    bc=NULL;
++	    }
++    }
++    return bc;
++}
++
++
+ static void dhcp_decode(const uint8_t *buf, int size,
+-                        int *pmsg_type)
++                        int *pmsg_type, struct sockaddr_in *preqaddr)
+ {
+     const uint8_t *p, *p_end;
+     int len, tag;
+ 
+     *pmsg_type = 0;    
++    preqaddr->sin_addr.s_addr=htonl(0L);
+ 
+     p = buf;
+     p_end = buf + size;
+@@ -114,6 +143,10 @@
+                 if (len >= 1)
+                     *pmsg_type = p[0];
+                 break;
++            case RFC2132_REQ_ADDR:
++		if (len == 4) {
++			memcpy(&(preqaddr->sin_addr),p,4);
++		}
+             default:
+                 break;
+             }
+@@ -127,14 +160,14 @@
+     BOOTPClient *bc;
+     struct mbuf *m;
+     struct bootp_t *rbp;
+-    struct sockaddr_in saddr, daddr;
++    struct sockaddr_in saddr, daddr, reqaddr;
+     struct in_addr dns_addr;
+     int dhcp_msg_type, val;
+-    uint8_t *q;
++    uint8_t *q,replytype;
+ 
+     /* extract exact DHCP msg type */
+-    dhcp_decode(bp->bp_vend, DHCP_OPT_LEN, &dhcp_msg_type);
+-    dprintf("bootp packet op=%d msgtype=%d\n", bp->bp_op, dhcp_msg_type);
++    dhcp_decode(bp->bp_vend, DHCP_OPT_LEN, &dhcp_msg_type,&reqaddr);
++    dprintf("bootp packet op=%d msgtype=%d reqaddr=%x\n", bp->bp_op, dhcp_msg_type,ntohl(reqaddr.sin_addr.s_addr));
+     
+     if (dhcp_msg_type != DHCPDISCOVER && 
+         dhcp_msg_type != DHCPREQUEST)
+@@ -149,19 +182,18 @@
+     m->m_data += sizeof(struct udpiphdr);
+     memset(rbp, 0, sizeof(struct bootp_t));
+ 
+-    if (dhcp_msg_type == DHCPDISCOVER) {
+-        bc = get_new_addr(&daddr.sin_addr);
+-        if (!bc) {
+-            dprintf("no address left\n");
+-            return;
+-        }
+-        memcpy(bc->macaddr, client_ethaddr, 6);
+-    } else {
+-        bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
+-        if (!bc) {
+-            dprintf("no address assigned\n");
+-            return;
+-        }
++    bc=NULL;
++    daddr.sin_addr.s_addr=htonl(0L);
++    if (dhcp_msg_type == DHCPREQUEST) {
++ 	   if (reqaddr.sin_addr.s_addr != htonl(0L))
++ 		   bc = find_reqaddr(&daddr.sin_addr, &reqaddr.sin_addr, bp->bp_hwaddr);
++ 	   else 
++ 		   bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
++    }
++    else if (dhcp_msg_type == DHCPDISCOVER) {
++ 	   bc = find_addr(&daddr.sin_addr, bp->bp_hwaddr);
++ 	   if (!bc)
++	       bc = get_new_addr(&daddr.sin_addr);
+     }
+     dprintf("offered addr=%08x\n", ntohl(daddr.sin_addr.s_addr));
+ 
+@@ -182,18 +214,21 @@
+     memcpy(q, rfc1533_cookie, 4);
+     q += 4;
+ 
+-    if (dhcp_msg_type == DHCPDISCOVER) {
+-        *q++ = RFC2132_MSG_TYPE;
+-        *q++ = 1;
+-        *q++ = DHCPOFFER;
+-    } else if (dhcp_msg_type == DHCPREQUEST) {
++    if (bc != NULL) {
++        memcpy(bc->macaddr, client_ethaddr, 6);
++    	bc->allocated = 1;
++	bc->time = time(NULL);
++    	replytype=(dhcp_msg_type == DHCPDISCOVER)?DHCPOFFER:DHCPACK;
++    }
++    else
++	replytype=DHCPNACK;
++
+         *q++ = RFC2132_MSG_TYPE;
+         *q++ = 1;
+-        *q++ = DHCPACK;
+-    }
++    *q++ = replytype;
+         
+-    if (dhcp_msg_type == DHCPDISCOVER ||
+-        dhcp_msg_type == DHCPREQUEST) {
++    if ((dhcp_msg_type == DHCPDISCOVER ||
++        dhcp_msg_type == DHCPREQUEST) && replytype!=DHCPNACK) {
+         *q++ = RFC2132_SRV_ID;
+         *q++ = 4;
+         memcpy(q, &saddr.sin_addr, 4);
+Index: qemu/slirp/bootp.h
+===================================================================
+RCS file: /cvsroot/qemu/qemu/slirp/bootp.h,v
+retrieving revision 1.1
+diff -u -r1.1 bootp.h
+--- slirp/bootp.h	22 Apr 2004 00:10:47 -0000	1.1
++++ slirp/bootp.h	5 Jun 2004 19:34:22 -0000
+@@ -71,6 +71,7 @@
+ #define DHCPOFFER		2
+ #define DHCPREQUEST		3
+ #define DHCPACK			5
++#define DHCPNACK		6
+ 
+ #define RFC1533_VENDOR_MAJOR	0
+ #define RFC1533_VENDOR_MINOR	0
