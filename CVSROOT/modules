@@ -1279,6 +1279,7 @@ drweb-sendmail	ports/security/drweb-sendmail
 drwebd		ports/security/drwebd
 dsbl-testers	ports/mail/dsbl-testers
 dsniff		ports/security/dsniff
+dspam		ports/mail/dspam
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dtcp		ports/net/dtcp
