@@ -1,11 +1,12 @@
 --- Makefile.orig	Sun Aug 20 02:54:45 1989
-+++ Makefile	Tue Dec 16 01:18:34 1997
++++ Makefile	Tue Dec 15 02:29:50 1998
 @@ -1,7 +1,8 @@
 -BIN= /usr/local/bin
 -MAN= /usr/local/man/man1
+-CFLAGS= -O
 +BIN= ${PREFIX}/bin
 +MAN= ${PREFIX}/man/man1
- CFLAGS= -O
++#CFLAGS= -O
  
 +all: sls
  sls:	sls.o
