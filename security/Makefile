@@ -100,6 +100,7 @@
     SUBDIR += keyprint
     SUBDIR += kgpg
     SUBDIR += knocker
+    SUBDIR += krb4
     SUBDIR += krb5
     SUBDIR += krb5-beta
     SUBDIR += kssh

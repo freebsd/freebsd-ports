@@ -1,0 +1,66 @@
+*** kadmin/Makefile.in.orig	Tue Oct 22 23:39:40 2002
+--- kadmin/Makefile.in	Thu Feb 27 20:06:35 2003
+***************
+*** 210,216 ****
+  	$(top_builddir)/lib/kadm/libkadm.la	\
+  	$(top_builddir)/lib/krb/libkrb.la	\
+  	$(LIB_des)	\
+- 	$(top_builddir)/lib/com_err/libcom_err.la	\
+  	$(LIB_roken)
+  
+  
+--- 210,215 ----
+***************
+*** 256,262 ****
+  kadmin_OBJECTS = $(am_kadmin_OBJECTS)
+  kadmin_DEPENDENCIES = $(top_builddir)/lib/kadm/libkadm.la \
+  	$(top_builddir)/lib/krb/libkrb.la \
+- 	$(top_builddir)/lib/com_err/libcom_err.la \
+  	$(top_builddir)/lib/sl/libsl.la
+  kadmin_LDFLAGS =
+  am_kadmind_OBJECTS = kadm_server.$(OBJEXT) kadm_funcs.$(OBJEXT) \
+--- 255,260 ----
+***************
+*** 266,287 ****
+  kadmind_DEPENDENCIES = $(top_builddir)/lib/kdb/libkdb.la \
+  	$(top_builddir)/lib/acl/libacl.la \
+  	$(top_builddir)/lib/kadm/libkadm.la \
+! 	$(top_builddir)/lib/krb/libkrb.la \
+! 	$(top_builddir)/lib/com_err/libcom_err.la
+  kadmind_LDFLAGS =
+  am_kpasswd_OBJECTS = kpasswd.$(OBJEXT) new_pwd.$(OBJEXT)
+  kpasswd_OBJECTS = $(am_kpasswd_OBJECTS)
+  kpasswd_LDADD = $(LDADD)
+  kpasswd_DEPENDENCIES = $(top_builddir)/lib/kadm/libkadm.la \
+! 	$(top_builddir)/lib/krb/libkrb.la \
+! 	$(top_builddir)/lib/com_err/libcom_err.la
+  kpasswd_LDFLAGS =
+  am_ksrvutil_OBJECTS = ksrvutil.$(OBJEXT) ksrvutil_get.$(OBJEXT)
+  ksrvutil_OBJECTS = $(am_ksrvutil_OBJECTS)
+  ksrvutil_LDADD = $(LDADD)
+  ksrvutil_DEPENDENCIES = $(top_builddir)/lib/kadm/libkadm.la \
+! 	$(top_builddir)/lib/krb/libkrb.la \
+! 	$(top_builddir)/lib/com_err/libcom_err.la
+  ksrvutil_LDFLAGS =
+  
+  DEFS = @DEFS@
+--- 264,282 ----
+  kadmind_DEPENDENCIES = $(top_builddir)/lib/kdb/libkdb.la \
+  	$(top_builddir)/lib/acl/libacl.la \
+  	$(top_builddir)/lib/kadm/libkadm.la \
+! 	$(top_builddir)/lib/krb/libkrb.la
+  kadmind_LDFLAGS =
+  am_kpasswd_OBJECTS = kpasswd.$(OBJEXT) new_pwd.$(OBJEXT)
+  kpasswd_OBJECTS = $(am_kpasswd_OBJECTS)
+  kpasswd_LDADD = $(LDADD)
+  kpasswd_DEPENDENCIES = $(top_builddir)/lib/kadm/libkadm.la \
+! 	$(top_builddir)/lib/krb/libkrb.la
+  kpasswd_LDFLAGS =
+  am_ksrvutil_OBJECTS = ksrvutil.$(OBJEXT) ksrvutil_get.$(OBJEXT)
+  ksrvutil_OBJECTS = $(am_ksrvutil_OBJECTS)
+  ksrvutil_LDADD = $(LDADD)
+  ksrvutil_DEPENDENCIES = $(top_builddir)/lib/kadm/libkadm.la \
+! 	$(top_builddir)/lib/krb/libkrb.la
+  ksrvutil_LDFLAGS =
+  
+  DEFS = @DEFS@

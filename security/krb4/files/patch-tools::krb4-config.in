@@ -1,0 +1,19 @@
+*** tools/krb4-config.in.orig	Tue Mar  4 19:08:01 2003
+--- tools/krb4-config.in	Tue Mar  4 19:08:15 2003
+***************
+*** 88,94 ****
+  fi
+  
+  if test "$do_libs" = "yes"; then
+!     lib_flags="-L${libdir}"
+      case $library in
+      kadm-client)
+  	lib_flags="$lib_flags -lkadm"
+--- 88,94 ----
+  fi
+  
+  if test "$do_libs" = "yes"; then
+!     lib_flags="-L${libdir} -Wl,-rpath,${libdir}"
+      case $library in
+      kadm-client)
+  	lib_flags="$lib_flags -lkadm"

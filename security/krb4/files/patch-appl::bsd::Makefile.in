@@ -1,0 +1,12 @@
+*** appl/bsd/Makefile.in.orig	Tue Mar  4 19:16:14 2003
+--- appl/bsd/Makefile.in	Tue Mar  4 19:16:34 2003
+***************
+*** 203,209 ****
+  @DCE_TRUE@LIB_kdfs = $(top_builddir)/lib/kdfs/libkdfs.la
+  
+  bin_PROGRAMS = rsh rcp rlogin su login
+- bin_SUIDS = rsh rcp rlogin su
+  libexec_PROGRAMS = rshd rlogind
+  
+  man_MANS = login.1 login.access.5 rcp.1 rlogin.1 rlogind.8 rsh.1 \
+--- 203,208 ----
