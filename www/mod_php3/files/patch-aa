@@ -1,0 +1,10 @@
+--- functions/imap.c.orig	Sat Sep 30 19:32:44 2000
++++ functions/imap.c	Sun Oct 22 14:22:54 2000
+@@ -61,7 +61,6 @@
+ #include "imap.h"
+ #include "mail.h"
+ #include "rfc822.h"
+-#include "utf8.h"
+ #include "modules.h"
+ #if (WIN32|WINNT)
+ #include "winsock.h"
