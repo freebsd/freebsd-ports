@@ -1,0 +1,11 @@
+--- Makefile.old	Sat Mar  9 12:20:02 2002
++++ Makefile	Sat Mar  9 12:19:37 2002
+@@ -9,7 +9,7 @@
+ 
+ beforeinstall:
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
+-	    ${.CURDIR}/dict.sh ${DESTDIR}${BINDIR}/dict
++	    ${.CURDIR}/dict.sh ${DESTDIR}${BINDIR}/de-dict
+ 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
+ 	    ${.CURDIR}/${dict} ${DESTDIR}${PREFIX}/share
+ 
