@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.9.b3
+PORTVERSION=	0.10
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/sobomax/}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		libmpfilelocprovider_s.a-1.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} #\
+#		libmpfilelocprovider_s.a-1.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
+LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
+		gconf-1.1:${PORTSDIR}/devel/gconf \
+		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
+		oaf.0:${PORTSDIR}/devel/oaf
+		
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 WITH_FULL_MOZILLA=	"I donno why, but it doesn't work with 0.7-embedded"
@@ -41,11 +45,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -D_REENTRANT -D_THREAD_SAFE -fno-rtti" \
 		LIBS="-L${LOCALBASE}/lib -L${WRKSRC} -pthread -lgcc_r"
 
-#CFLAGS+=	-D_REENTRANT -D_THREAD_SAFE -fno-rtti
-
-
 post-extract:
-	@${GZCAT} ${DISTDIR}/libmpfilelocprovider_s.a-1.gz > ${WRKSRC}/libmpfilelocprovider_s.a
+#	@${GZCAT} ${DISTDIR}/libmpfilelocprovider_s.a-1.gz > ${WRKSRC}/libmpfilelocprovider_s.a
 .if !defined(WITH_FULL_MOZILLA)
 	@${ECHO_MSG}
 	@${ECHO_MSG} " By default the port uses mozilla-embedded for html rendering, but if you are"
