@@ -3,7 +3,7 @@
 # Date created:         9 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 23:20:22 dburr Exp $
+# $Id: Makefile,v 1.2 1998/09/15 21:31:55 asami Exp $
 #
 
 DISTNAME=	htmlpp
@@ -30,6 +30,7 @@ do-build:
 	${MV} ${WRKDIR}/htmlpp.temp ${WRKDIR}/htmlpp
 
 do-install:
+	${MKDIR} ${PREFIX}/lib/perl5/site_perl
 	${INSTALL_SCRIPT} ${WRKDIR}/htmlpp ${PREFIX}/bin/htmlpp
 	${INSTALL_DATA} ${WRKDIR}/htmlpp.d ${PREFIX}/lib/perl5/site_perl/htmlpp.d
 	(cd ${WRKDIR}; for FILE in *.pl; do ${INSTALL_DATA} $${FILE} ${PREFIX}/lib/perl5/site_perl/$${FILE}; done)
