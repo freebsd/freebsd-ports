@@ -7,7 +7,7 @@
 
 PORTNAME=	flowscan
 PORTVERSION=    1.006
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
@@ -24,10 +24,36 @@ BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 
 CFLOWD_FLOWSCAN_PATCH=	yes
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}/var/flows
+CONFIGURE_ARGS+=	--prefix=${PREFIX}/var/db/flows
 WRKSRC=			${WRKDIR}/FlowScan-${PORTVERSION}
 
 pre-install:
-	${MKDIR} -p ${PREFIX}/var/flows/bin
+	@ ${MKDIR} -p ${PREFIX}/var/db/flows/bin
+	@ ${MKDIR} -p ${PREFIX}/var/db/flows/graphs
+	@ ${TOUCH} ${PREFIX}/var/db/flows/graphs/.keep_me
+
+post-install:
+	@ ${INSTALL_SCRIPT} ${FILESDIR}/flowscan.sh \
+		 /usr/local/etc/rc.d/flowscan.sh.sample
+.for i in	CampusIO.cf Napster_subnets.boulder SubNetIO.cf flowscan.cf \
+		local_nets.boulder our_subnets.boulder
+	@ ${INSTALL_DATA} ${WRKSRC}/cf/${i} \
+		${PREFIX}/var/db/flows/bin/${i}.sample
+.endfor
+	@ ${MKDIR} -p ${PREFIX}/share/doc/flowscan
+	@ ${INSTALL_DATA} ${WRKSRC}/example/crontab \
+		${PREFIX}/share/doc/flowscan/crontab.sample
+	@ ${INSTALL_DATA} ${WRKSRC}/rc/linux/cflowd \
+		${PREFIX}/share/doc/flowscan/cflowd.sample
+	@ ${INSTALL_DATA} ${WRKSRC}/rc/linux/flowscan \
+		${PREFIX}/share/doc/flowscan/flowscan.sample
+	@ ${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/flowscan
+.if !defined(NOPORTDOCS)
+	@ ${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
+.for i in	README README.html INSTALL.html TODO
+	@ ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/flowscan
+.endfor
+.endif
+	@ cat ${.CURDIR}/pkg-message
 
 .include <bsd.port.mk>
