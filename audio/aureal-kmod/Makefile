@@ -7,7 +7,7 @@
 
 PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://home.columbus.rr.com/amatey/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
