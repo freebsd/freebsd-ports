@@ -1,0 +1,21 @@
+Elite: The New Kind - a remake of 1984's 8-bit classic space combat and
+trading game "Elite" by Ian Bell and David Braben.
+
+There remains a large contingent of veteran gamers who maintain that the Bell
+and Braben classic Elite was the greatest computer game of all time.  This
+remake - Elite: The New Kind - was produced by reverse engineering the
+original disk-based version of Elite on the BBC Microcomputer.  However, it
+was updated with shaded polygon graphics and most of the enhanced gameplay
+elements which characterised later versions of Elite.
+
+Snapshots of the original Elite for various emulators (including some which
+will run on FreeBSD) may be downloaded from co-author Ian Bell's Elite site:
+http://www.iancgbell.clara.net/elite/
+
+Shareware versions of the later Elite sequels (for MS-DOS) may be downloaded
+from David Braben's Elite Club:  http://www.eliteclub.co.uk/download/
+
+Author: Christian Pinder <christian@newkind.co.uk>
+WWW:    http://www.newkind.co.uk/
+
+-- Johann Visagie <wjv@FreeBSD.org>
