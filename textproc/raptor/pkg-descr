@@ -1,0 +1,6 @@
+Raptor is the RDF Parser Toolkit for Redland and currently consists of two
+parsers: RDF/XML and N-Triples. Raptor is designed to integrate closely
+with Redland and also work entirely standalone, in which case it will use
+simple internal routines to perform the functions.
+
+WWW: http://www.redland.opensource.ac.uk/raptor/
