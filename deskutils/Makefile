@@ -26,6 +26,7 @@
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += moneydance
+    SUBDIR += mrproject
     SUBDIR += notebook
     SUBDIR += offix-trash
     SUBDIR += phpgroupware
