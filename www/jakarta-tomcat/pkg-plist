@@ -69,7 +69,7 @@ etc/rc.d/020.jakarta-tomcat.sh
 %%T%%/lib/ant.jar
 %%T%%/lib/jasper.jar
 %%T%%/lib/jaxp.jar
-%%T%%/lib/parser.jar
+%%T%%/lib/crimson.jar
 %%T%%/lib/servlet.jar
 %%T%%/lib/webserver.jar
 %%T%%/lib/test/Golden/Err.txt
