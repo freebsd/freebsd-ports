@@ -29,20 +29,11 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libmp4v2.so)
-.if exists(${LOCALBASE}/include/mpeg4ip_config.h)
 WITH_AAC=	YES
-.else
-WITH_FAAD=	YES
 .endif
-.endif
-.if defined(WITH_AAC) && defined(WITH_FAAD)
-BROKEN=		"WITH_AAC and WITH_FAAD are exclusive."
-.endif
+
 .if defined(WITH_AAC)
 LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip
-.endif
-.if defined(WITH_FAAD)
-LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/audio/faad
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
@@ -52,7 +43,6 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To enable AAC support with mpeg4ip define the WITH_AAC knob."
-	@${ECHO_MSG} "To enable AAC support with faad2 define the WITH_FAAD knob."
 	@${ECHO_MSG}
 .endif
 
