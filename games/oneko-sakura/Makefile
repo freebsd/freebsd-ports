@@ -8,19 +8,19 @@
 PORTNAME=	oneko
 PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cin.nihon-u.ac.jp/pub/Linux/PJE/PJE-0.1.2/sources/xclt/ \
+MASTER_SITES=	http://riksun.riken.go.jp/archives/Linux/pje/PJE-0.1.5/sources/xclt/oneko/ \
 		http://hp.vector.co.jp/authors/VA004959/oneko/
-PKGNAMESUFFIX=	-sakura3
+PKGNAMESUFFIX=	-sakura5
 
-PATCH_SITES=	ftp://aptiva.mp.es.osaka-u.ac.jp/pub/oneko-sakura/
-PATCHFILES=	oneko-1.2.sakura.3.diff.gz
+PATCH_SITES=	http://www.daidouji.com/oneko/distfiles/
+PATCHFILES=	oneko-1.2.sakura.5.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	hotaru@tail.net
 
 USE_IMAKE=	yes
 MAN6=		oneko.6
-NO_CDROM=	"Including a derivative from CARDCAPTOR SAKURA. See http://www.clamp.f-2.co.jp/"
+NO_CDROM=	"Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp.f-2.co.jp/"
 RESTRICTED_FILES=	${PATCHFILES}
 
 pre-configure:
