@@ -1,2 +1,3 @@
 bin/cfm
 share/examples/cfm/dot.cfmrc
+@dirrm share/examples/cfm
