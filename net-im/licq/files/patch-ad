@@ -1,0 +1,48 @@
+--- src/socket.cpp.orig	Tue Jul  4 20:51:50 2000
++++ src/socket.cpp	Mon Jul 24 03:32:56 2000
+@@ -12,6 +12,7 @@
+ #include <netdb.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#include <osreldate.h>
+ 
+ #ifndef MSG_DONTWAIT
+ #define MSG_DONTWAIT 0
+@@ -288,7 +289,12 @@
+ bool INetSocket::SetLocalAddress(bool bIp)
+ {
+   // Setup the local structure
++
++#if __FreeBSD_version < 400013
++  int sizeofSockaddr = sizeof(struct sockaddr_in);
++#else
+   socklen_t sizeofSockaddr = sizeof(struct sockaddr_in);
++#endif
+   if (getsockname(m_nDescriptor, (struct sockaddr *)&m_sLocalAddr, &sizeofSockaddr) < 0)
+   {
+     m_nErrorType = SOCK_ERROR_errno;
+@@ -372,7 +378,11 @@
+   m_sRemoteAddr.sin_family = AF_INET;
+ 
+   // if connect fails then call CloseConnection to clean up before returning
++#if __FreeBSD_version < 400013
++  int sizeofSockaddr = sizeof(struct sockaddr);
++#else
+   socklen_t sizeofSockaddr = sizeof(struct sockaddr);
++#endif
+   if (connect(m_nDescriptor, (struct sockaddr *)&m_sRemoteAddr, sizeofSockaddr) < 0)
+   {
+     // errno has been set
+@@ -504,7 +514,11 @@
+  *---------------------------------------------------------------------------*/
+ void TCPSocket::RecvConnection(TCPSocket &newSocket)
+ {
+-  socklen_t sizeofSockaddr = sizeof(struct sockaddr_in);
++#if __FreeBSD_version < 400013
++    int sizeofSockaddr = sizeof(struct sockaddr_in);
++#else
++    socklen_t sizeofSockaddr = sizeof(struct sockaddr_in);
++#endif
+   newSocket.m_nDescriptor = accept(m_nDescriptor, (struct sockaddr *)&newSocket.m_sRemoteAddr, &sizeofSockaddr);
+   newSocket.SetLocalAddress();
+ }
