@@ -1,0 +1,130 @@
+#!/bin/sh
+# $FreeBSD$
+
+if test -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ; then
+	exit
+fi
+
+if test ! -d ${WRKDIRPREFIX}${REALCURDIR} ; then
+	${MKDIR} -p ${WRKDIRPREFIX}${REALCURDIR}
+fi
+exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+
+##
+## XERCESCROOT
+##
+
+XERCESC_VER=`${PKG_INFO} -v 'xerces-c2*' | ${GREP} 'Package name: xerces-c2-' 2>/dev/null`
+
+if test $? -ne 0 ; then
+	# no xerces-c2 port installed
+
+	if test "x${XALAN_USE_ICU}" = "x" ; then
+		# use default: libiconv
+		#			iconv.3:${PORTSDIR}/converters/libiconv
+		${ECHO} "LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv"
+		${ECHO} "CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib -liconv'"
+		${ECHO} "MAKE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib -liconv'"
+		${ECHO} "PLIST_SUB+=	ICUDEP=\"@comment \""
+		
+	else
+		# we want ICU
+		#			licuuc.22:${PORTSDIR}/devel/icu2
+		#${ECHO} "LIB_DEPENDS+=	licuuc:${PORTSDIR}/devel/icu2"
+		#${ECHO} "CONFIGURE_ENV+=	TRANSCODER=icu XALAN_USE_ICU=1"
+		#${ECHO} "MAKE_ENV+=	TRANSCODER=icu XALAN_USE_ICU=1"
+
+		${ECHO} ""
+		${ECHO} "We cannot build xerces-c2 port with ICU." >&2
+		${ECHO} "If you want to use ICU please build and install" >&2
+		${ECHO} "  xerces-c2 port first by running" >&2
+		${ECHO} "    make TRANSCODER=icu && make install" >&2
+		${ECHO} "  in ${PORTSDIR}/textproc/xerces-c2." >&2
+		${ECHO} "Then we can detect this and will automatically " >&2
+		${ECHO} "  build xalan-c with ICU support too." >&2
+		${ECHO} ""
+
+		exit 1;
+	fi
+
+	${ECHO} "LIB_DEPENDS+=	xerces-c:${PORTSDIR}/textproc/xerces-c2"
+
+	exit 0;
+fi
+
+XERCESC_PORTVER=`${ECHO} ${XERCESC_VER} | ${SED} -e 's#.*Package name: xerces-c2-\(.*\)#\1#' -e 's#\.#_#g'`
+${ECHO} '# we need the _extracted_ xerces-c2 port sources to build this one'
+${ECHO} "XERCESCROOT?=	${LOCALBASE}"
+
+# get xerces-c2 major version
+LIBVER=`${LDCONFIG} -r | ${SED} -ne 's/.*[1-9]*[0-9]*:-lxerces-c.\([1-9]*[0-9]*\) => .*/\1/p'`
+${ECHO} "LIB_DEPENDS+=	xerces-c.${LIBVER}:${PORTSDIR}/textproc/xerces-c2"
+${ECHO} ""
+
+##
+## dynamic dependencies
+##
+USE_ICU=0
+
+XERCESC_DEPS=`${PKG_INFO} -v 'xerces-c2*' | ${GREP} -1 '^Dependency: '`
+if test $? -eq 0 ; then
+	# check if xerces-c2 depends on libiconv port
+	X=`${ECHO} ${XERCESC_DEPS} | ${SED} -ne 's#.*Dependency: libiconv-[^ ]* dependency origin: \(.*\)#\1#gp'`
+	rc=$?
+	t=`${ECHO} ${XERCESC_DEPS} | grep libiconv`
+	rci=$?
+	if test $rc -eq 0 -a $rci -eq 0 -a "x${X}" = "x"; then
+		X="converters/libiconv"
+	fi
+	if test $rc -eq 0 -a "x${X}" != "x"; then
+		LIBVER=`${LDCONFIG} -r | ${SED} -ne 's/.*[1-9]*[0-9]*:-l\(iconv[^\ ]*\) => .*/\1/p'`
+		if test $? -eq 0 -a "x${LIBVER}" != "x"; then
+			${ECHO} "LIB_DEPENDS+=	${LIBVER}:${PORTSDIR}/${X}"
+			${ECHO} "CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib -liconv'"
+			${ECHO} "MAKE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib -liconv'"
+		fi
+		${ECHO} ""
+	fi
+
+	# check if xerces-c2 depends on icu2 port
+	X=`${ECHO} ${XERCESC_DEPS} | ${SED} -ne 's#.*Dependency: icu-[^ ]* dependency origin: \(.*\)#\1#gp'`
+	rc=$?
+	t=`${ECHO} ${XERCESC_DEPS} | grep icu`
+	rci=$?
+	if test $rc -eq 0 -a $rci -eq 0 -a "x${X}" = "x"; then
+		X="devel/icu2"
+	fi
+	if test $rc -eq 0 -a "x${X}" != "x"; then
+		LIBVER=`${LDCONFIG} -r | ${SED} -ne 's/.*[1-9]*[0-9]*:-l\(icuuc[^\ ]*\) => .*/\1/p'`
+		if test $? -eq 0 -a "x${LIBVER}" != "x"; then
+			${ECHO} "LIB_DEPENDS+=	${LIBVER}:${PORTSDIR}/${X}"
+			${ECHO} "CONFIGURE_ENV+=	XALAN_USE_ICU=1"
+			${ECHO} "MAKE_ENV+=	XALAN_USE_ICU=1"
+			${ECHO} "CONFIGURE_ARGS+=	-t icu"
+			USE_ICU=1
+		fi
+		${ECHO} ""
+	fi
+
+	if test $USE_ICU -eq 0; then
+		if test "x${XALAN_USE_ICU}" != "x" ; then
+			${ECHO} "ERROR: XALAN_USE_ICU set but xerces-c2 compiled w/o icu support ?" >&2
+			${ECHO} "       please unset XALAN_USE_ICU or compile xerces-c2 with icu support." >&2
+			exit 1
+		fi
+		${ECHO} "PLIST_SUB+=		ICUDEP=\"@comment \""
+	else
+		${ECHO} "ICUROOT?=		${LOCALBASE}"
+		${ECHO} "CONFIGURE_ENV+=	ICUROOT=\${ICUROOT}"
+		${ECHO} "MAKE_ENV+=		ICUROOT=\${ICUROOT}"
+		${ECHO} "PLIST_SUB+=		ICUDEP=\"\""
+		${ECHO} "PKGNAMESUFFIX+=	-icu"
+#		if test "x${XALAN_USE_ICU}" = "x" ; then
+#			${ECHO} "ERROR: xerces-c2 compiled with icu support." >&2
+#			${ECHO} "       please set XALAN_USE_ICU and start make again." >&2
+#			exit 2
+#		fi
+	fi
+fi
+
+# End;
