@@ -1,91 +1,41 @@
 #!/bin/sh
 
-# This script is a slightly modified copy of the pkg-install script from the 
-# original ircd-hybrid port, by desmo@bandwidth.org.
-
 if [ "x$2" != "xPRE-INSTALL" ]; then
-	exit 0;
+       exit 0;
 fi
 
-ask() {
-	local question default answer
-
-	question=$1
-	default=$2
-	if [ -z "${PACKAGE_BUILDING}" ]; then
-		read -p "${question} [${default}]? " answer
-	fi
-	if [ x${answer} = x ]; then
-		answer=${default}
-	fi
-	echo ${answer}
-}
-
-yesno() {
-	local dflt question answer
-
-	question=$1
-	dflt=$2
-	while :; do
-		answer=$(ask "${question}" "${dflt}")
-		case "${answer}" in
-		[Yy]*)          return 0;;
-		[Nn]*)          return 1;;
-		esac
-		echo "Please answer yes or no."
-	done
-}
-
-if which -s pw ; then
-	:
-else
-	cat <<EOF
-Your system does not include the "pw" utility.  You should upgrade
-to a newer version of FreeBSD.  Without "pw" this script will not
-run.
-EOF
-	exit 1
-fi
-
-echo ""
-if pw groupshow hybserv 2> /dev/null ; then
-	echo "You already have a group \"hybserv\", so I will use it."
-else
-	if pw groupshow 73 2> /dev/null ; then
-		echo "You already have a gid \"73\".  Please create a user \"hybserv\""
-		echo "with a default group of \"hybserv\"."
-		exit 1
-	fi
-	echo "You need a group \"hybserv\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-		pw groupadd hybserv -g 73 || exit
-		echo "Done."
+	USER=hybserv
+	GROUP=${USER}
+	UID=73
+	GID=${UID}
+	HOME_DIR="/nonexist"
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
 	else
-		echo "Please create it, and try again."
-		if ! pw usershow hybserv 2> /dev/null ; then
-			echo "While you're at it, please create a user \"hybserv\""
-			echo 'too, with a default group of "hybserv".'
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
 		fi
-		exit 1
 	fi
-fi
 
-if pw usershow hybserv 2> /dev/null ; then
-	echo "You already have a user \"hybserv\", so I will use it."
-else
-        if pw usershow 73 2> /dev/null ; then
-                echo "You already have a uid \"73\".  Please create a user \"irc
-d\""
-                echo "with a default group of \"hybserv\"."
-                exit 1
-        fi
-	echo "You need a user \"hybserv\"."
-	if which -s pw && yesno "Would you like me to create it" y; then
-		pw useradd hybserv -g hybserv -u 73 -h - -d /nonexistent \
-			-s /nonexistent -c "IRC Daemon" || exit
-		echo "Done."
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+		if pw usermod ${USER} -d ${HOME_DIR}
+		then
+			echo "Changed home directory of \"${USER}\" to \"${HOME_DIR}\""
+		else
+			echo "Changing home directory of \"${USER}\" to \"${HOME_DIR}\" failed..."
+			exit 1
+		fi
 	else
-		echo "Please create it, and try again."
-		exit 1
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d ${HOME_DIR} -s /sbin/nologin -c "HybServ Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
 	fi
-fi
