@@ -14,8 +14,6 @@ MASTER_SITES=	http://untroubled.org/bglibs/
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	One stop library package by Bruce Guenter
 
-BGLIBS_ROOT?=	${PREFIX}
-
 NOT_FOR_ARCHS=	alpha ia64
 
 DOCS=		NEWS README TODO
