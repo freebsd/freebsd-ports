@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldap
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -52,7 +52,7 @@ CONFIGURE_ARGS?=	--with-netscape \
 #WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	CHANGES		README		README.html	TODO
+DOCS_EN=	ChangeLog	README		README.html	TODO
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|/usr/local/openldap|, "${PREFIX}"' \

@@ -27,7 +27,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/openldap1
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap/cgi
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/ldap
-%%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/CHANGES
+%%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/README.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ldap/TODO
