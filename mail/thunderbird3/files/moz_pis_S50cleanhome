@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+
+# S50cleanhome
+# a script to polite ${HOME}/${MOZ_PIS_USER_DIR}
+
+# We run in our own subshell
+
+# First, verify protocol
+[ "$1" != "start" ] && exit 1
+[ -z "${MOZ_PIS_API}" -o ${MOZ_PIS_API} -ne 2 ] && exit 1
+[ -z "${MOZ_PIS_MOZBINDIR}" -o ! -d "${MOZ_PIS_MOZBINDIR}" ] && exit 1
+[ -z "${HOME}" -o ! -d "${HOME}" ] && exit 1
+[ -z "${MOZ_PIS_USER_DIR}" -o ! -d "${HOME}/${MOZ_PIS_USER_DIR}" ] && exit 1
+
+# Try to polite ${HOME}/${MOZ_PIS_USER_DIR}
+
+# This must be really needed?
+# rm -f "${$HOME}/${MOZ_PIS_USER_DIR}/pluginreg.dat"
+
+# Try to polite profile dirs
+if [ -f "${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" ]; then
+    sed -e '/Path=/! d' -e "s,Path=,${HOME}/${MOZ_PIS_USER_DIR}/," \
+	"${HOME}/${MOZ_PIS_USER_DIR}/profiles.ini" \
+	| while read dir
+    do
+	[ ! -d "${dir}" ] && continue
+	# at last, debian do this, we do for new builds
+	# rm -f "${dir}/XUL.mfasl"
+	# make reclaculate compreg.dat, xpti.dat for new builds
+	[ "${dir}/compreg.dat" -ot "${MOZ_PIS_MOZBINDIR}/components.ini" ] &&
+	    rm -f "${dir}/compatibility.ini" "${dir}/XUL.mfasl"
+    done
+fi

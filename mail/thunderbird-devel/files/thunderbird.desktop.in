@@ -1,9 +1,11 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=Thunderbird
+GenericName=Mail Client
 Comment=Mail client and News Reader
-Exec=thunderbird
+Exec=thunderbird %U
 Icon=@THUNDERBIRD_ICON@
+StartupNotify=false
 Terminal=false
 Type=Application
 Categories=Application;Network;
-Encoding=UTF-8

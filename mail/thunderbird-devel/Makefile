@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/source
@@ -18,8 +18,7 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		mng.1:${PORTSDIR}/graphics/libmng \
-		nspr4.1:${PORTSDIR}/devel/nspr
+		mng.1:${PORTSDIR}/graphics/libmng
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_X_PREFIX=	yes
@@ -45,8 +44,12 @@ LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 ESD_LIB=		libesd.so.2
 
+THUNDERBIRD=		${PORTNAME}
 THUNDERBIRD_ICON=	thunderbird.xpm
 THUNDERBIRD_ICON_SRC=	${WRKSRC}/other-licenses/branding/thunderbird/default.xpm
+MOZ_PIS_SCRIPTS=	S50cleanhome
+SCRIPTS_DIR=		${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION}
+MOZ_PIS_DIR=		${SCRIPTS_DIR}/init.d
 
 OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
@@ -69,9 +72,9 @@ CONFIGURE_ENV+=		WITH_DEBUG=yes
 .endif # defined(WITH_DEBUG)
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=		-O2
-CONFIGURE_ENV+=		WITH_OPTIMIZE=-O2
+CFLAGS:=		-O2 -fno-strict-aliasing ${CFLAGS:N-O*}
 .else
+CFLAGS:=		-O ${CFLAGS:N-O*:N-m*}
 CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif # defined(WITH_OPTIMIZED_CFLAGS)
 
@@ -140,6 +143,12 @@ post-patch:
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 	@${SED} -e 's|@THUNDERBIRD_ICON@|${THUNDERBIRD_ICON}|' \
 		< ${FILESDIR}/thunderbird.desktop.in > ${WRKDIR}/thunderbird.desktop
+.for ii in ${MOZ_PIS_SCRIPTS}
+	@${SED} -e 's|%%MOZILLA%%|${THUNDERBIRD}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		< ${FILESDIR}/moz_pis_${ii} > ${WRKDIR}/moz_pis_${ii}
+.endfor
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -159,6 +168,8 @@ pre-install:
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
+	@${MKDIR} ${SCRIPTS_DIR}
+	@${MKDIR} ${MOZ_PIS_DIR}
 .for ii in mac win
 .for jj in / .jar
 	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
@@ -167,6 +178,9 @@ pre-install:
 	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
 .for ii in thunderbird thunderbird-config
 	@${ECHO_CMD} bin/${ii} >> ${PLIST}
+.endfor
+.for ii in ${MOZ_PIS_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKDIR}/moz_pis_${ii} ${MOZ_PIS_DIR}/${ii}
 .endfor
 	@${MKDIR} ${FAKEDIR}/${LOCAL_SUBDIR}/lib/${PORTNAME}-${PORTVERSION}/defaults
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
@@ -178,7 +192,6 @@ pre-install:
 		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
 	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
 		${GREP} / >> ${PLIST}
-	${ECHO_CMD} '@dirrm ${LOCAL_SUBDIR}/defaults/isp' >> ${PLIST}
 	${ECHO_CMD} 'share/gnome/pixmaps/${THUNDERBIRD_ICON}' >> ${PLIST}
 	${ECHO_CMD} 'share/gnome/applications/thunderbird.desktop' >> ${PLIST}
 
