@@ -156,7 +156,6 @@
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += tex
-    SUBDIR += texinfo
     SUBDIR += tgif2tex
     SUBDIR += tr2latex
     SUBDIR += transfig
