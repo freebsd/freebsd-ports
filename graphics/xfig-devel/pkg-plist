@@ -722,4 +722,4 @@ lib/X11/xfig/xfig.html
 @dirrm lib/X11/xfig/Libraries/Computers
 @dirrm lib/X11/xfig/Libraries/Buildings
 @dirrm lib/X11/xfig/Libraries
-@dirrm lib/X11/xfig
+@unexec rmdir %D/lib/X11/xfig 2>/dev/null || true
