@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	uudeview
-PORTVERSION=	0.5.19
+PORTVERSION=	0.5.20
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
 MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
-
-FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/6c7661ff-7912-11d8-9645-0020ed76ef5a.html
 
 LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
