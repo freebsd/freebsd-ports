@@ -11,7 +11,6 @@
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += cclient
-    SUBDIR += cclient-maildir
     SUBDIR += cmail
     SUBDIR += coolmail
     SUBDIR += courier-imap
