@@ -1,0 +1,47 @@
+http://www.ooc.com/
+
+OmniBroker is an Object Request Broker (ORB) that is compliant to the
+Common Object Request Broker Architecture (CORBA) specification as
+defined in:
+
+  The Common Object Request Broker: Architecture and Specification
+  Revision 2.0, OMG Document 96-03-04
+
+OmniBroker is free for non-commercial use. See the file LICENSE for
+details.
+
+Some highlights of the OmniBroker Preview Release are:
+
+- Full CORBA IDL support
+
+- Complete CORBA IDL-to-C++ mapping
+
+- Uses IIOP as native protocol
+
+- Dynamic Invocation Interface
+
+- Dynamic Skeleton Interface
+
+- Interface Repository
+
+- Peer-to-Peer communication with nested method invocations
+
+- Support for non-blocking method invocations
+
+- Support for timeouts
+
+- Seamless integration with X11 and Windows
+
+- A COS compliant Naming Service
+
+The current beta version has the following limitations:
+
+- Only persistent servers are currently supported
+
+- No multi-threaded applications
+
+Support for the GNU C++ compiler (version 2.7.2) is currently only
+experimental. The GNU C++ isn't fully supported yet due to the lack of
+a stable exception handling mechanism. On some platforms GNU C++
+doesn't support exception handling at all (e.g. MIPS), while on other
+platforms the exception handling is still very buggy (SPARC, Intel).
