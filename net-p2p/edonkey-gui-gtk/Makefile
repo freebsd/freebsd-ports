@@ -6,31 +6,33 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-gtk-gui
 PKGNAMESUFFIX=	-gui-gtk
-DISTNAME=	ed2k-gtk-gui_${PORTVERSION}
+DISTNAME=	ed2k-gtk-gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 
-LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
+LIB_DEPENDS=	gnet-2.0:${PORTSDIR}/net/gnet2
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
+DOCSDIR=	${PREFIX}/share/doc/ed2k_gui
+.ifndef(NOPORTDOCS)
+MAN1=		ed2k-gtk-gui.1 ed2k_gui.1
+.endif
+
 post-patch:
-# CFLAGS safeness
-	@${REINPLACE_CMD} -E -e 's|-O2||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's|^(SUBDIRS.*)docs|\1|' \
-		${WRKSRC}/ed2k_gui/Makefile.in
+		${WRKSRC}/Makefile.in
 .endif
 
 post-install:

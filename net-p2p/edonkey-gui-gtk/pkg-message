@@ -7,7 +7,7 @@ It might not work at all. As always, there are no implied guarantees.
 You try this at your own risk. Be warned. :-)
 
 If it does not work for you, you can always try the Linux version
-of this port available at /usr/ports/net/linux-edonkey-gui-gtk. It
+of this port available at ${PORTSDIR}/net/linux-edonkey-gui-gtk. It
 might work.
 
 However, before trying the Linux version, try removing old configuration
