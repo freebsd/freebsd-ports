@@ -17,6 +17,8 @@ DISTFILES+=	${MOZART_DOCS}
 
 MAINTAINER=	mathiasp@virtual-earth.de
 
+BROKEN=		"Does not detect bison correctly"
+
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83
