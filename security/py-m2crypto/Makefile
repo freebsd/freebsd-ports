@@ -7,14 +7,15 @@
 
 PORTNAME=	m2crypto
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://www.post1.com/home/ngps/m2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-snap6
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	peterh@sapros.com
+MAINTAINER=	ngps@post1.com
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel \
 		pinstall:${PORTSDIR}/devel/pinstall
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig
@@ -23,10 +24,6 @@ USE_ZIP=	yes
 USE_OPENSSL=	yes
 
 PINSTALL_PLIST=	${WRKDIR}/pinstall-plist
-PLIST_SUB+=	PYTHON_VERSION=${PYTHON_VERSION}
-
-pre-build:
-	${TOUCH} ${WRKSRC}/_m2crypto_wrap.doc
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/../M2Crypto
@@ -36,6 +33,6 @@ do-install:
 	cd ${WRKDIR}/lib/${PYTHON_VERSION}/site-packages && ${LN} -sf ../../../${DISTNAME}/M2Crypto
 
 post-install:
-	pinstall -v -f ${TMPPLIST} -d ${WRKDIR}
+	${LOCALBASE}/bin/pinstall -v -f ${TMPPLIST} -d ${WRKDIR}
 
 .include <bsd.port.mk>

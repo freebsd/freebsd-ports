@@ -64,6 +64,8 @@ lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/util.py
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/util.pyc
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/X509.py
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/X509.pyc
+lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/m2xmlrpclib.py
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/m2xmlrpclib.pyc
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/__init__.py
@@ -71,8 +73,8 @@ lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/_m2cryptoc.so
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/_m2crypto.py
 lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/_m2crypto.pyc
-lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/_m2crypto_wrap.doc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/PGP
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/SSL
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML/dsig
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto/XML
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/M2Crypto
-
