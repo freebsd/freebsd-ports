@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	App/ABW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	igor@zynaps.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl module for reading configuration files
 
 PERL_CONFIGURE=	YES
