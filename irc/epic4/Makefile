@@ -23,8 +23,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTFILE_HELP}
 DIST_SUBDIR=	epic4
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=    http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/
-PATCHFILES=     ${DISTNAME}-ipv6-20010418.patch.gz
+PATCH_SITES=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/
+PATCHFILES=	${DISTNAME}-ipv6-20010418.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	anders@andersa.net
