@@ -9,7 +9,7 @@ PORTVERSION=	0.2
 CATEGORIES=	misc
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple telephone book
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
