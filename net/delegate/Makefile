@@ -1,13 +1,13 @@
 # New ports collection makefile for:	DeleGate
-# Version required:		4.0.7
+# Version required:		4.1.2
 # Date created:			26 Jan 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/12 15:49:28 max Exp $
+# $Id: Makefile,v 1.2 1997/04/04 13:14:56 max Exp $
 #
 
-DISTNAME=	delegate4.0.7
-PKGNAME=	delegate-4.0.7
+DISTNAME=	delegate4.1.2
+PKGNAME=	delegate-4.1.2
 CATEGORIES=	net www japanese
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/DeleGate/
 
