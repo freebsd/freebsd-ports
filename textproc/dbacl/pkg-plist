@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+bin/bayesol
+bin/dbacl
+bin/mailcross
+bin/mailinspect
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dbacl.ps
+%%PORTDOCS%%%%DOCSDIR%%/email.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/example1.risk
+%%EXAMPLESDIR%%/example2.risk
+%%EXAMPLESDIR%%/example3.risk
+%%EXAMPLESDIR%%/japanese.txt
+%%EXAMPLESDIR%%/prop.pl
+%%EXAMPLESDIR%%/sample1.txt
+%%EXAMPLESDIR%%/sample2.txt
+%%EXAMPLESDIR%%/sample3.txt
+%%EXAMPLESDIR%%/sample4.txt
+%%EXAMPLESDIR%%/sample5.txt
+%%EXAMPLESDIR%%/sample6.txt
+%%EXAMPLESDIR%%/toy.risk
+@dirrm %%EXAMPLESDIR%%
