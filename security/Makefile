@@ -85,6 +85,7 @@
     SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += ifd-devkit
+    SUBDIR += ifd-gpr400
     SUBDIR += inflex
     SUBDIR += integrit
     SUBDIR += ipfmeta

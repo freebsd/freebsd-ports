@@ -1,0 +1,75 @@
+--- Makefile.orig	Thu Aug  9 06:14:42 2001
++++ Makefile	Sun Sep  8 18:11:11 2002
+@@ -1,36 +1,41 @@
+-# GPR400 IFD Handler Makefile
+-# 
+-# Author: Joe Phillips <joe.phillips@innovationsw.com>
+-# Based on the IFD Devkit Makefile by David Corcoran and MUSCLE
+ #
+-# $Id: Makefile,v 1.2 2001/08/09 05:14:42 jaiger Exp $
++# BSD makefile for ifd-gpr400
+ #
+ 
+-CC       = cc
+-CFLAGS   = -g -fpic -w
+-LD       = ld
+-LEX      = flex
+-OBJ     := $(filter-out test.o, $(patsubst %.c,%.o,$(wildcard *.c)))
+-INCLUDE  = -I.
++#XXX
++PREFIX?=	/usr/local
++DESTDIR?=	${PREFIX}
++
++# XXX
++LIBDIR=		/lib
++#LIBDIR=		/pcsc
++INCSDIR=	/include
++
++SHLIB_NAME=	libgpr400_ifd.so
++SHLIB_MAJOR=	0
++SHLIB_MINOR=	3
++
++NOMAN=		1
++NOPROFILE=	1
++
++.if !defined(NO_DEBUG)
++CFLAGS+=	-g -Wall
++.endif
++
++GPRDEVNAME?=	/dev/gprsc0
++
++CFLAGS+=	-I. -I${DESTDIR}${INCSDIR} -DGPRDEVNAME=\"${GPRDEVNAME}\"
++LDFLAGS+=	-L${DESTDIR}/lib
++LDADD+=		-lpcsclite
++
++.if !defined(NO_PCSC_DEBUG)
++CFLAGS+=	-DPCSC_DEBUG=1
++.if defined(PCSC_ATR_DEBUG)
++CFLAGS+=	-DATR_DEBUG=1
++.endif
++.endif
+ 
+-MAKEXE   = make
+-LIBNAME  = libgpr400_ifd.so
+-PREFIX   = /usr/local/pcsc
++SRCS=	gpr400_ifd.c
++INCS=	gpr400.h
+ 
+-DEFS     = -DPCSC_DEBUG=1 #-DATR_DEBUG=1
+-
+-all: unix
+-
+-clean:
+-	rm -f *.o $(LIBNAME) core
+-
+-osx: $(OBJ)
+-	$(CC) -dynamiclib $(OBJ) -o $(LIBNAME)
+-
+-unix: $(OBJ)
+-	$(LD) -shared $(OBJ) -o $(LIBNAME)
+-
+-$(patsubst %.c,%.o,$(wildcard *.c)) : %.o : %.c
+-	$(CC) $(CFLAGS) -c $< $(INCLUDE) $(DEFS)
+-
+-##
++.include <bsd.lib.mk>
