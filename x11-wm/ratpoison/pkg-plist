@@ -7,3 +7,4 @@ bin/ratpoison
 %%PORTDOCS%%share/doc/ratpoison/ChangeLog
 %%PORTDOCS%%share/doc/ratpoison/NEWS
 %%PORTDOCS%%share/doc/ratpoison/README
+%%PORTDOCS%%@dirrm share/doc/ratpoison
