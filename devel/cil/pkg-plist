@@ -1,11 +1,6 @@
 bin/cilly
 bin/patcher
 bin/teetwo
-lib/perl5/site_perl/5.6.1/CIL/Cilly.pm
-lib/perl5/site_perl/5.6.1/CIL/KeptFile.pm
-lib/perl5/site_perl/5.6.1/CIL/OutputFile.pm
-lib/perl5/site_perl/5.6.1/CIL/TempFile.pm
-lib/perl5/site_perl/5.6.1/CilConfig.pm
 libexec/cil/cilly.byte.exe
 libexec/cil/machdep.exe
 %%DOCSDIR%%/CIL-API.pdf
@@ -120,4 +115,10 @@ libexec/cil/machdep.exe
 @dirrm %%DOCSDIR%%/api
 @dirrm %%DOCSDIR%%
 @dirrm libexec/cil
-@dirrm lib/perl5/site_perl/5.6.1/CIL
+@cwd %%LOCALBASE%%
+%%SITE_PERL%%/CIL/Cilly.pm
+%%SITE_PERL%%/CIL/KeptFile.pm
+%%SITE_PERL%%/CIL/OutputFile.pm
+%%SITE_PERL%%/CIL/TempFile.pm
+%%SITE_PERL%%/CilConfig.pm
+@dirrm %%SITE_PERL%%/CIL
