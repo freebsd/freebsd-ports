@@ -16,7 +16,6 @@ lib/postilionlib/folder.tcl
 lib/postilionlib/font.tcl
 lib/postilionlib/help.tcl
 lib/postilionlib/hierwin.tcl
-lib/postilionlib/html_library.tcl
 lib/postilionlib/info.tcl
 lib/postilionlib/ispell.tcl
 lib/postilionlib/keydef.tcl
@@ -28,7 +27,6 @@ lib/postilionlib/pgp.tcl
 lib/postilionlib/postcomp.tcl
 lib/postilionlib/postfold.tcl
 lib/postilionlib/postilion
-lib/postilionlib/postilion.tcl
 lib/postilionlib/preferences.tcl
 lib/postilionlib/print.tcl
 lib/postilionlib/show.tcl
