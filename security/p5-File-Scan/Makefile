@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Scan
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File/HDIAS
@@ -25,16 +25,16 @@ post-install:
 .for file in Changes FAQ README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-.for file in docs/write_sign_bin.txt
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/docs
+.for f in docs/write_sign_bin.txt
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/docs
 .endfor
 .endif
 	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/procmail
-.for file in latest.pl scan.pl
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
+.for f in latest.pl scan.pl
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
 .endfor
-.for file in procmail/.procmailrc procmail/README procmail/scanvirus.pl
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}/procmail
+.for f in procmail/.procmailrc procmail/README procmail/scanvirus.pl
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}/procmail
 .endfor
 
 .include <bsd.port.mk>
