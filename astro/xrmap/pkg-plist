@@ -1,9 +1,9 @@
 bin/emx
 bin/xrmap
-share/editkit/rc.common
+share/editkit/MANUAL.emacs
 share/editkit/README
 share/editkit/emxrc
-share/editkit/MANUAL.emacs
+share/editkit/rc.common
 share/rmap/CIA_WDB2.jpd
 share/rmap/Locations
 share/rmap/Xrmaprc
@@ -203,8 +203,8 @@ share/rmap/anthems/zm.ant
 share/rmap/anthems/zw.ant
 share/rmap/doc/Asia.rc
 share/rmap/doc/CHANGES
-share/rmap/doc/Europe.rc
 share/rmap/doc/EXAMPLE.rc
+share/rmap/doc/Europe.rc
 share/rmap/doc/INSTALL
 share/rmap/doc/LICENSE
 share/rmap/doc/MAPEDIT
@@ -212,6 +212,7 @@ share/rmap/doc/README
 share/rmap/doc/README.midi
 share/rmap/doc/TODO
 share/rmap/doc/USA.rc
+share/rmap/doc/VECTORMAP
 share/rmap/doc/WARNING
 share/rmap/factbook/countrylisting.html
 share/rmap/factbook/extra/Ashmore_and_Cartier_Islands
@@ -2596,25 +2597,26 @@ share/rmap/themes/optional/coffee.xpm.gz
 share/rmap/themes/optional/landscape.xpm.gz
 share/rmap/themes/optional/sea.xpm.gz
 share/rmap/themes/sea
-@dirrm share/editkit
-@dirrm share/rmap/anthems
-@dirrm share/rmap/doc
-@dirrm share/rmap/factbook/extra
-@dirrm share/rmap/factbook/flags
-@dirrm share/rmap/factbook/geos
+@dirrm share/rmap/themes/optional
+@dirrm share/rmap/themes/buttons
+@dirrm share/rmap/themes
+@dirrm share/rmap/postscript
+@dirrm share/rmap/picons
+@dirrm share/rmap/pdfmaps
+@dirrm share/rmap/i18n
+@dirrm share/rmap/hymns
+@dirrm share/rmap/flags/small
+@dirrm share/rmap/flags/big
+@dirrm share/rmap/flags
+@dirrm share/rmap/factbook/text
+@dirrm share/rmap/factbook/maps
 @dirrm share/rmap/factbook/graphics/flaginterface
 @dirrm share/rmap/factbook/graphics
-@dirrm share/rmap/factbook/maps
-@dirrm share/rmap/factbook/text
+@dirrm share/rmap/factbook/geos
+@dirrm share/rmap/factbook/flags
+@dirrm share/rmap/factbook/extra
 @dirrm share/rmap/factbook
-@dirrm share/rmap/flags/big
-@dirrm share/rmap/flags/small
-@dirrm share/rmap/flags
-@dirrm share/rmap/hymns
-@dirrm share/rmap/i18n
-@dirrm share/rmap/pdfmaps
-@dirrm share/rmap/picons
-@dirrm share/rmap/postscript
-@dirrm share/rmap/themes/buttons
-@dirrm share/rmap/themes/optional
-@dirrm share/rmap/themes
+@dirrm share/rmap/doc
+@dirrm share/rmap/anthems
+@dirrm share/rmap
+@dirrm share/editkit

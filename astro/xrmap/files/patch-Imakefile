@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Apr 30 09:09:43 2003
-+++ Imakefile	Wed Apr 30 09:20:21 2003
+--- Imakefile.orig	Sat May 10 09:02:50 2003
++++ Imakefile	Sat May 10 22:00:54 2003
 @@ -1,14 +1,15 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -24,25 +24,25 @@
  XCOMM HP-UX
  
  ZLIBDIR=
--CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
-+CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
+-CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
++CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
  
  #else
  
  XCOMM SunOS
  ZLIBDIR=-L/usr/lib
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
  
  XCOMM Solaris, Linux
  
  ZLIBDIR=-L/usr/lib
--CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
-+CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMUSICPLAYER=\"$(MUSICPLAYER)\"
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\" -DPS_VIEWER=\"$(PS_VIEWER)\" -DIM_VIEWER=\"$(IM_VIEWER)\" -DHTML_VIEWER=\"$(HTML_VIEWER)\" -DPRINT_CMD=\"$(PRINT_CMD)\" -DEDITOR=\"$(EDITOR)\" -DMIDIPLAYER=\"$(MIDIPLAYER)\"
  
  #endif
  
-@@ -62,27 +63,32 @@
+@@ -62,28 +63,35 @@
  ComplexProgramTarget(xrmap)
  
  install.man::
@@ -52,6 +52,7 @@
 +	   then gzip -f $(MANDIR)/xrmap.1x ; fi
  
  all::
+ 	strip xrmap ; ls -al xrmap
  	cd editkit ; make emx
  
  install:: install.man
@@ -59,6 +60,7 @@
 -	cp -f Xrmaprc Locations $(DESTDIR)$(SHAREDIR)
 +	$(MKDIRHIER) $(SHAREDIR)
 +	cp -f Xrmaprc Locations CIA_WDB2.jpd $(SHAREDIR)
++	cp -f Xrmaprc Locations $(SHAREDIR)
  	cd postscript ; rm -f *~
 -	cp -fR postscript  $(DESTDIR)$(SHAREDIR)
 +	cp -fR postscript  $(SHAREDIR)
@@ -78,12 +80,12 @@
 +	if [ -d picons ] ; then cp -fR picons $(SHAREDIR) ; fi
 +	if [ -d pdfmaps ] ; then cp -fR pdfmaps $(SHAREDIR) ; fi
 +	if [ -d factbook ] ; then cp -fR factbook $(SHAREDIR) ; fi
++	if [ -d picons ] ; then cp -fR picons $(SHAREDIR) ; fi
 +	$(MKDIRHIER) $(SHAREDIR)/doc
- 	cp -f CHANGES INSTALL LICENSE MAPEDIT README TODO WARNING \
+ 	cp -f CHANGES INSTALL LICENSE MAPEDIT README TODO VECTORMAP WARNING \
 -		midi_cfg/README.midi $(DESTDIR)$(SHAREDIR)/doc
 -	cd examples ; cp -f * $(DESTDIR)$(SHAREDIR)/doc
 +		midi_cfg/README.midi $(SHAREDIR)/doc
 +	cd examples ; cp -f * $(SHAREDIR)/doc
  	cd editkit ; make install
  	cat WARNING
- 
