@@ -11,16 +11,17 @@ if [ "x$1" = "x-nocopy" ]; then
   shift
 fi
 
-if [ $# != 5 ]; then
+if [ $# != 6 ]; then
   echo "usage: $0 [-nocopy] master portbuilddir branch tmpdir md5"
   exit 1
 fi
 
 master=$1
 pb=$2
-branch=$3
-tmpdir=$4
-md5master=$5
+arch=$3
+branch=$4
+tmpdir=$5
+md5master=$6
 
 if [ $(echo $(/sbin/mount | grep "${pb}/.*read-only" | awk '{print $3}' | wc -c)) != 0 ]; then
   /sbin/umount -f $(/sbin/mount | grep "${pb}/.*read-only" | awk '{print $3}')
@@ -53,7 +54,7 @@ if [ "$nocopy" = 0 ]; then
     echo "not copying bindist to $(hostname -s) since it is already up to date"
   else
     echo "copying bindist to $(hostname -s)"
-    cp -p ${pb}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
+    cp -p ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
   fi
 fi
 
