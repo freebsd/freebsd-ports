@@ -22,7 +22,6 @@ COMMENT=	Linux Netscape suite
 
 FORBIDDEN=	"security bug--see <URL:http://wp.netscape.com/eng/mozilla/ns7/relnotes/7.html\#psm> and <URL:http://www.xwt.org/sop.txt>"
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 LATEST_LINK=	linux-${MAJ}
@@ -35,6 +34,7 @@ RESTRICTED=	"License for Java plugin allows internal use only.  Also see license
 NO_CDROM=	${RESTRICTED}
 USE_LINUX=	yes
 USE_XLIB=	yes
+USE_ZIP=	yes
 VER?=		${PORTVERSION}
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
 INSTALL_DIR=	lib/linux-${MAJ}-${NETSCAPE_LANG}
