@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	gindent
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.8a
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://home.hccnet.nl/d.ingamells/
+MASTER_SITES=	http://home.hccnet.nl/d.ingamells/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
 DISTNAME=	indent-${PORTVERSION}
 
