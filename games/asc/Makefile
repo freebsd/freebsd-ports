@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.3.13
+PORTVERSION=	1.3.16
 CATEGORIES=	games
 MASTER_SITES=	ftp://asc-hq.sourceforge.net/pub/asc-hq/develop/ \
 		ftp://asc-hq.sourceforge.net/pub/asc-hq/ \
 		http://www.asc-hq.org/develop/ \
 		http://www.asc-hq.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta.src
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILE}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		bz2.1:${PORTSDIR}/archivers/bzip2
+		bz2.1:${PORTSDIR}/archivers/bzip2 \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-beta
 
@@ -30,9 +29,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LIBS="`${SDL_CONFIG} --libs` -lm"
-
-DATAFILE=	main.con
+		LIBS="`${SDL_CONFIG} --libs` -lgnugetopt -lm"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -41,9 +38,5 @@ pre-patch:
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
-
-post-install:
-	${MKDIR} ${PREFIX}/share/asc
-	${INSTALL_DATA} ${DISTDIR}/${DATAFILE} ${PREFIX}/share/asc
 
 .include <bsd.port.mk>

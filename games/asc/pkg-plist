@@ -2,10 +2,10 @@ bin/asc
 bin/asc_demount
 bin/asc_gfx2pcx
 bin/asc_makegfx
+bin/asc_map2pcx
+bin/asc_mapedit
 bin/asc_mntgraph
 bin/asc_mount
 bin/asc_viewid
-bin/ascmap2pcx
-bin/ascmapedit
 share/asc/main.con
 @dirrm share/asc
