@@ -11,7 +11,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	matt@gsicomp.on.ca
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
