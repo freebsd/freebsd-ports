@@ -1,6 +1,8 @@
 bin/AutoSearch
 bin/WebSearch
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/SearchResult.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AOL/Classifieds/Employment.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedNews.pm
@@ -60,3 +62,4 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/ZDNet.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Yahoo/Classifieds
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Yahoo
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
