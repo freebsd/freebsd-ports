@@ -65,7 +65,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/README
 %%PORTDOCS%%share/doc/samba/README.FreeBSD
 %%PORTDOCS%%share/doc/samba/README.swat
-%%PORTDOCS%%share/doc/samba/Read-Manifest-Now
 %%PORTDOCS%%share/doc/samba/Registry/NT4-Locking.reg
 %%PORTDOCS%%share/doc/samba/Registry/NT4_PlainPassword.reg
 %%PORTDOCS%%share/doc/samba/Registry/Win2000_PlainPassword.reg
@@ -193,7 +192,6 @@ share/examples/samba/LDAP/samba.schema
 share/examples/samba/LDAP/samba-schema-netscapeds4.x
 share/examples/samba/LDAP/samba-schema-netscapeds5.x
 share/examples/samba/LDAP/samba-schema.IBMSecureWay
-share/examples/samba/LDAP/smbldap-tools/AUTHORS
 share/examples/samba/LDAP/smbldap-tools/CONTRIBUTORS
 share/examples/samba/LDAP/smbldap-tools/COPYING
 share/examples/samba/LDAP/smbldap-tools/ChangeLog
@@ -201,7 +199,6 @@ share/examples/samba/LDAP/smbldap-tools/FILES
 share/examples/samba/LDAP/smbldap-tools/INFRASTRUCTURE
 share/examples/samba/LDAP/smbldap-tools/INSTALL
 share/examples/samba/LDAP/smbldap-tools/Makefile
-share/examples/samba/LDAP/smbldap-tools/NEWS
 share/examples/samba/LDAP/smbldap-tools/README
 share/examples/samba/LDAP/smbldap-tools/TODO
 share/examples/samba/LDAP/smbldap-tools/cgi/README
