@@ -1,0 +1,54 @@
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-gl.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-glut.so
+lib/gauche/%%VERSION%%/%%TARGET%%/gauche-math3d.so
+lib/gauche/%%VERSION%%/include/gauche/math3d.h
+share/gauche/%%VERSION%%/lib/gl.scm
+share/gauche/%%VERSION%%/lib/gl/glut.scm
+share/gauche/%%VERSION%%/lib/gl/math3d.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example13-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example2-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example2-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example2-9.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example3-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example4-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-6.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example5-9.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example6-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example7-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example7-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example7-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-2.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example8-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-1.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-3.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-4.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-5.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-7.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-8.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/glbook/run
+%%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.scm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/glbook
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@unexec rmdir %D/share/doc/gauche 2>/dev/null || true

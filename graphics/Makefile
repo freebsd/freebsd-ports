@@ -73,6 +73,7 @@
     SUBDIR += fxtv
     SUBDIR += g2
     SUBDIR += g3dviewer
+    SUBDIR += gauche-gl
     SUBDIR += gcolor
     SUBDIR += gd
     SUBDIR += gd2
