@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.13 1999/01/23 07:05:29 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/06/07 12:03:44 kris Exp $
 #
 
 DISTNAME=	povray3
@@ -18,6 +18,8 @@ DISTFILES=	povuni_s.tgz povuni_d.tgz
 MAINTAINER=	kris@FreeBSD.ORG
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+
+DIST_SUBDIR=	povray30
 
 USE_XLIB=	yes
 MAN1=		povray.1
