@@ -10,7 +10,7 @@ PORTNAME=	tosvcd
 PORTVERSION=	0.9
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://muse.seh.de/tosvcd/
+MASTER_SITES=	http://linvdr.org/download/tosvcd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SVCD transcoder
