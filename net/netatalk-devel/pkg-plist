@@ -61,17 +61,11 @@ etc/rc.d/netatalk.sh
 etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.so
-%%NETATALKPAM%%etc/uams/uams_dhx_pam.a
 etc/uams/uams_dhx_passwd.so
-etc/uams/uams_dhx_passwd.a
 etc/uams/uams_guest.so
-etc/uams/uams_guest.a
 %%NETATALKPAM%%etc/uams/uams_pam.so
-%%NETATALKPAM%%etc/uams/uams_pam.a
 etc/uams/uams_passwd.so
-etc/uams/uams_passwd.a
 etc/uams/uams_randnum.so
-etc/uams/uams_randnum.a
 include/atalk/adouble.h
 include/atalk/aep.h
 include/atalk/afp.h
