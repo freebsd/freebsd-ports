@@ -1,1 +1,3 @@
 bin/xtermset
+share/xtermset/terms
+@dirrm share/xtermset
