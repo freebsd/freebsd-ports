@@ -1,0 +1,37 @@
+%%RUBY_SITELIBDIR%%/SOAP.rb
+%%RUBY_SITELIBDIR%%/SOAPData.rb
+%%RUBY_SITELIBDIR%%/SOAPElement.rb
+%%RUBY_SITELIBDIR%%/SOAPProcessor.rb
+%%RUBY_SITELIBDIR%%/SOAPProxy.rb
+%%RUBY_SITELIBDIR%%/SOAPStreamHandler.rb
+%%RUBY_SITELIBDIR%%/SOAPStreamHandler_without_http-access.rb
+%%RUBY_SITELIBDIR%%/XMLSchemaDatatypes.rb
+%%RUBY_SITELIBDIR%%/application.rb
+%%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes.rb
+%%RUBY_SITELIBDIR%%/soap/baseData.rb
+%%RUBY_SITELIBDIR%%/soap/cgistub.rb
+%%RUBY_SITELIBDIR%%/soap/driver.rb
+%%RUBY_SITELIBDIR%%/soap/element.rb
+%%RUBY_SITELIBDIR%%/soap/processor.rb
+%%RUBY_SITELIBDIR%%/soap/proxy.rb
+%%RUBY_SITELIBDIR%%/soap/rpcRouter.rb
+%%RUBY_SITELIBDIR%%/soap/rpcUtils.rb
+%%RUBY_SITELIBDIR%%/soap/soap.rb
+%%RUBY_SITELIBDIR%%/soap/streamHandler.rb
+%%RUBY_SITELIBDIR%%/soap/streamHandler_wo_http-access.rb
+@dirrm %%RUBY_SITELIBDIR%%/soap
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheServer.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/SOAP::Lite.pl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/pocketSOAP.js
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4r.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/soap4rApp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/xmlrpc4r.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RAA
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
+%%PORTDOCS%%%%RUBY_DOCDIR%%/soap/RELEASE_en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/soap/rubyStyle.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/soap/ja/RELEASE_ja.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/soap/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/soap
