@@ -24,7 +24,7 @@ USE_LIBTOOL=	yes
 USE_PYTHON=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-explicit-python-linking
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/libglade-1.0" \
 		LIBS="-L${LOCALBASE}/lib -pthread"
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
