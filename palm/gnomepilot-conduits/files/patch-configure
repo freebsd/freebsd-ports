@@ -35,21 +35,3 @@
  else
    echo "$ac_t""no" 1>&6
   { echo "configure: error: "Unable to find libpisock. Try ftp://ryeham.ee.ryerson.ca/pub/PalmOS/."" 1>&2; exit 1; } 
-@@ -8031,7 +8032,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
-@@ -8201,7 +8202,7 @@
- #		 USE_INCLUDED_LIBINTL=yes
- #		 CATOBJEXT=.cat
- #		 INSTOBJEXT=.cat
--#		 DATADIRNAME=lib
-+#		 DATADIRNAME=share
- #		 INTLDEPS='$(top_builddir)/intl/libintl.a'
- #		 INTLLIBS=$INTLDEPS
- #		 LIBS=`echo $LIBS | sed -e 's/-lintl//'`
