@@ -1,0 +1,12 @@
+--- sql-mysql.cc	Wed Jan 12 20:50:03 2000
++++ sql-mysql.cc	Wed Nov 10 18:49:18 2004
+@@ -2,4 +2,9 @@
+ #include "sql-mysql.h"
+ 
++#ifdef HAVE_MYSQL_REAL_CONNECT
++#	define mysql_connect(h, ho, us, pa)	\
++	    mysql_real_connect(h, ho, us, pa, NULL, 0, NULL, 0)
++#endif
++
+ // -------------------------------------------------------------
+ Sql_mysql::Sql_mysql() {
