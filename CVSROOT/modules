@@ -2485,6 +2485,7 @@ ja-mypaedia-fpw-package	ports/japanese/mypaedia-fpw-package
 ja-namazu	ports/japanese/namazu
 ja-namazu2	ports/japanese/namazu2
 ja-navi2ch-emacs20	ports/japanese/navi2ch-emacs20
+ja-navi2ch-emacs21	ports/japanese/navi2ch-emacs21
 ja-navi2ch-xemacs21-mule	ports/japanese/navi2ch-xemacs21-mule
 ja-ndtpd	ports/japanese/ndtpd
 ja-ne		ports/japanese/ne
