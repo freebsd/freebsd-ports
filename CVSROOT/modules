@@ -4729,6 +4729,7 @@ nil		ports/games/nil
 ninja		ports/irc/ninja
 njs		ports/lang/njs
 nl		src/usr.bin/nl
+nl-aspell	ports/textproc/nl-aspell
 nl-ispell	ports/textproc/nl-ispell
 nl-ooodict-NL	ports/editors/ooodict-nl_NL
 nl-openoffice	ports/editors/openoffice-nl
