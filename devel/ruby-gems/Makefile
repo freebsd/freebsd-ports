@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	gems
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.4
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1399/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2412/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	chero7@telus.net
 COMMENT=	Package management framework for the Ruby language
 
 USE_RUBY=	yes
-RUBY_SETUP=	install.rb
+RUBY_SETUP=	setup.rb
+RUBY_VER=	1.8
 
 NO_BUILD=	yes
 
-BROKEN=		Incorrect pkg-plist
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
