@@ -1,0 +1,11 @@
+This is the Microsoft NetShow video stream player for Linux.
+It will run under FreeBSD's linux emulation libraries, provided
+that you have built and installed the linux_lib port.  (If you
+haven't, this port will do it for you automatically.)
+
+For additional documentation, please see Microsoft's NetShow 
+web page at:
+
+http://microsoft.com/netshow/download/unix.htm
+
+Donald Burr <dburr@FreeBSD.ORG>
