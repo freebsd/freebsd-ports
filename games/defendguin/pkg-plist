@@ -1,6 +1,4 @@
 bin/defendguin
-doc/defendguin/COPYING.txt
-doc/defendguin/README.txt
 share/defendguin/images/baiter/baiter0.bmp
 share/defendguin/images/baiter/baiter1.bmp
 share/defendguin/images/baiter/baiter2.bmp
@@ -170,6 +168,9 @@ share/defendguin/sounds/swarmers.wav
 share/defendguin/sounds/title/confirm.wav
 share/defendguin/sounds/title/impatience.wav
 share/defendguin/sounds/title/select.wav
+share/doc/defendguin/COPYING.txt
+share/doc/defendguin/README.txt
+@dirrm share/doc/defendguin
 @dirrm share/defendguin/sounds/title
 @dirrm share/defendguin/sounds/ship
 @dirrm share/defendguin/sounds/peng
@@ -194,4 +195,3 @@ share/defendguin/sounds/title/select.wav
 @dirrm share/defendguin/images/baiter
 @dirrm share/defendguin/images
 @dirrm share/defendguin
-@dirrm doc/defendguin

@@ -41,11 +41,11 @@ $FreeBSD$
 -	cp defendguin $(PREFIX)/bin/
 -	chmod a+rx,g-w,o-w $(PREFIX)/bin/defendguin
 +	$(MKDIR) $(DATA_PREFIX)
-+	$(MKDIR) $(PREFIX)/doc/defendguin
++	$(MKDIR) $(PREFIX)/share/doc/defendguin
 +	cd data; tar --exclude .xvpics -cf - . | \
 +		(cd $(DATA_PREFIX); ${TAR} --unlink -xf - )
 +	$(BSD_INSTALL_PROGRAM) defendguin $(PREFIX)/bin
-+	$(BSD_INSTALL_MAN) COPYING.txt README.txt $(PREFIX)/doc/defendguin
++	$(BSD_INSTALL_MAN) COPYING.txt README.txt $(PREFIX)/share/doc/defendguin
  
  uninstall:
  	-rm -r $(DATA_PREFIX)
