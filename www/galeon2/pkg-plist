@@ -30,7 +30,6 @@ etc/gconf/gconf.xml.defaults/apps/galeon/UI/Windows/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Filtering/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Netword/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Network/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security/%gconf.xml
@@ -82,6 +81,7 @@ share/gnome/galeon/galeon-separator.png
 share/gnome/galeon/galeon-viewsource.png
 share/gnome/galeon/galeon.glade
 share/gnome/galeon/galeon.png
+share/gnome/galeon/gnu.png
 share/gnome/galeon/google.png
 share/gnome/galeon/google_groups.png
 share/gnome/galeon/google_images.png
@@ -224,6 +224,7 @@ share/locale/sl/LC_MESSAGES/galeon-2.0.mo
 share/locale/sv/LC_MESSAGES/galeon-2.0.mo
 share/locale/ta/LC_MESSAGES/galeon-2.0.mo
 share/locale/tr/LC_MESSAGES/galeon-2.0.mo
+share/locale/vi/LC_MESSAGES/galeon-2.0.mo
 share/locale/uk/LC_MESSAGES/galeon-2.0.mo
 share/locale/wa/LC_MESSAGES/galeon-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/galeon-2.0.mo
@@ -263,7 +264,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Security
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Persistent
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Network
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Netword
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced/Filtering
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Advanced
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon
