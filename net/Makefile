@@ -256,6 +256,7 @@
     SUBDIR += jabber-jud
     SUBDIR += jabber-msn
     SUBDIR += jabber-yahoo
+    SUBDIR += jabberd
     SUBDIR += jags
     SUBDIR += jarl
     SUBDIR += java-beepcore
