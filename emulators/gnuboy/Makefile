@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	gnuboy
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.12
 CATEGORIES=	emulators games
-MASTER_SITES=	http://www.starfox.org/gnuboy/distrib/
+MASTER_SITES=	http://brightrain.aerifal.cx/~laguna/src/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
