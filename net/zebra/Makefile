@@ -1,28 +1,31 @@
 # New ports collection makefile for:	zebra
-# Version required:	SNAP 981222
+# Version required:	0.84b
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zebra-0.84
-CATEGORIES=	net
+DISTNAME=	zebra-0.84b
+CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g
 
 MAINTAINER=	andreas@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/zebra-0.84a
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 
-.if defined(USE_INET6)
-PLIST=		${PKGDIR}/PLIST.v6
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+PLIST:=         ${WRKDIR}/PLIST
+pre-install:
+	@${CAT} ${PKGDIR}/PLIST.v6 > ${PLIST}
+	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
 .else
 CONFIGURE_ARGS+=--disable-ospf6d --disable-ripngd
-PLIST=		${PKGDIR}/PLIST
 .endif
 
 post-install:
@@ -38,4 +41,4 @@ post-install:
 	@${ECHO} "router_flags=\"start\""
 	@${ECHO} "done."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
