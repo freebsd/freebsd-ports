@@ -3,11 +3,10 @@
 # Date created:		15 September 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1998/07/08 12:08:46 scrappy Exp $
+# $Id: Makefile,v 1.7 1998/09/16 02:24:40 steve Exp $
 #
 
 DISTNAME=	sunclock-1.4
-PKGNAME=	sunclock-1.4
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
