@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scmxx
-PORTVERSION=	0.6.3.7
+PORTVERSION=	0.6.3.8
 CATEGORIES=	comms
 MASTER_SITES=	http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/ \
 		http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/old/
@@ -14,10 +14,10 @@ MASTER_SITES=	http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
