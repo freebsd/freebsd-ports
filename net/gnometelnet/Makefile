@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gnometelnet
-PORTVERSION= 	2.0
+PORTVERSION= 	2.2
 CATEGORIES=	net gnome
-MASTER_SITES=	http://cyest.hypermart.net/downloads/
+MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+
+BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -28,11 +30,19 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
+pre-configure:
+.for file in install-sh mkinstalldirs
+	${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
+.endfor
+	${RM} -f ${WRKSRC}/config.cache
+
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome/apps/Internet
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps/gtelnet
+	${MKDIR} ${PREFIX}/share/gnome/pixmaps/gnome-telnet
 	cd ${WRKSRC}/share && \
 		${INSTALL_DATA} GTelnet.desktop ${PREFIX}/share/gnome/apps/Internet && \
-		${INSTALL_DATA} *.jpg *.png ${PREFIX}/share/gnome/pixmaps/gtelnet
+		${INSTALL_DATA} *.jpg *.png ${PREFIX}/share/gnome/pixmaps/gnome-telnet
+	${LN} -sf ${PREFIX}/share/gnome/pixmaps/gnome-telnet/gnome-telnet.png \
+		${PREFIX}/share/gnome/pixmaps/gnome-telnet.png
 
 .include <bsd.port.mk>
