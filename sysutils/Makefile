@@ -168,6 +168,7 @@
     SUBDIR += gupsc
     SUBDIR += hammerhead
     SUBDIR += healthd
+    SUBDIR += heirloom
     SUBDIR += hourglass
     SUBDIR += httplog
     SUBDIR += idled

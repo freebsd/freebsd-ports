@@ -1,0 +1,293 @@
+@comment $FreeBSD$
+%%DATADIR%%/etc/default/man
+%%DATADIR%%/etc/default/ps
+%%DATADIR%%/etc/default/su
+%%DATADIR%%/etc/default/tar
+%%DATADIR%%/usr/5bin/STTY
+%%DATADIR%%/usr/5bin/apropos
+%%DATADIR%%/usr/5bin/awk
+%%DATADIR%%/usr/5bin/banner
+%%DATADIR%%/usr/5bin/basename
+%%DATADIR%%/usr/5bin/bc
+%%DATADIR%%/usr/5bin/cal
+%%DATADIR%%/usr/5bin/calendar
+%%DATADIR%%/usr/5bin/cat
+%%DATADIR%%/usr/5bin/catman
+%%DATADIR%%/usr/5bin/chgrp
+%%DATADIR%%/usr/5bin/chmod
+%%DATADIR%%/usr/5bin/chown
+%%DATADIR%%/usr/5bin/cksum
+%%DATADIR%%/usr/5bin/cmp
+%%DATADIR%%/usr/5bin/col
+%%DATADIR%%/usr/5bin/comm
+%%DATADIR%%/usr/5bin/copy
+%%DATADIR%%/usr/5bin/cp
+%%DATADIR%%/usr/5bin/cpio
+%%DATADIR%%/usr/5bin/csplit
+%%DATADIR%%/usr/5bin/cut
+%%DATADIR%%/usr/5bin/date
+%%DATADIR%%/usr/5bin/dc
+%%DATADIR%%/usr/5bin/dd
+%%DATADIR%%/usr/5bin/deroff
+%%DATADIR%%/usr/5bin/df
+%%DATADIR%%/usr/5bin/dfspace
+%%DATADIR%%/usr/5bin/diff
+%%DATADIR%%/usr/5bin/diff3
+%%DATADIR%%/usr/5bin/dirname
+%%DATADIR%%/usr/5bin/du
+%%DATADIR%%/usr/5bin/ed
+%%DATADIR%%/usr/5bin/egrep
+%%DATADIR%%/usr/5bin/env
+%%DATADIR%%/usr/5bin/expand
+%%DATADIR%%/usr/5bin/expr
+%%DATADIR%%/usr/5bin/factor
+%%DATADIR%%/usr/5bin/fgrep
+%%DATADIR%%/usr/5bin/file
+%%DATADIR%%/usr/5bin/find
+%%DATADIR%%/usr/5bin/fmt
+%%DATADIR%%/usr/5bin/fold
+%%DATADIR%%/usr/5bin/grep
+%%DATADIR%%/usr/5bin/groups
+%%DATADIR%%/usr/5bin/hd
+%%DATADIR%%/usr/5bin/head
+%%DATADIR%%/usr/5bin/hostname
+%%DATADIR%%/usr/5bin/id
+%%DATADIR%%/usr/5bin/install
+%%DATADIR%%/usr/5bin/join
+%%DATADIR%%/usr/5bin/lc
+%%DATADIR%%/usr/5bin/line
+%%DATADIR%%/usr/5bin/listusers
+%%DATADIR%%/usr/5bin/ln
+%%DATADIR%%/usr/5bin/logins
+%%DATADIR%%/usr/5bin/logname
+%%DATADIR%%/usr/5bin/ls
+%%DATADIR%%/usr/5bin/mail
+%%DATADIR%%/usr/5bin/man
+%%DATADIR%%/usr/5bin/mkdir
+%%DATADIR%%/usr/5bin/mkfifo
+%%DATADIR%%/usr/5bin/mknod
+%%DATADIR%%/usr/5bin/more
+%%DATADIR%%/usr/5bin/mt
+%%DATADIR%%/usr/5bin/mv
+%%DATADIR%%/usr/5bin/nawk
+%%DATADIR%%/usr/5bin/newform
+%%DATADIR%%/usr/5bin/news
+%%DATADIR%%/usr/5bin/nice
+%%DATADIR%%/usr/5bin/nl
+%%DATADIR%%/usr/5bin/nohup
+%%DATADIR%%/usr/5bin/oawk
+%%DATADIR%%/usr/5bin/od
+%%DATADIR%%/usr/5bin/page
+%%DATADIR%%/usr/5bin/paste
+%%DATADIR%%/usr/5bin/pax
+%%DATADIR%%/usr/5bin/pg
+%%DATADIR%%/usr/5bin/pgrep
+%%DATADIR%%/usr/5bin/pkill
+%%DATADIR%%/usr/5bin/posix/awk
+%%DATADIR%%/usr/5bin/posix/basename
+%%DATADIR%%/usr/5bin/posix/chmod
+%%DATADIR%%/usr/5bin/posix/cp
+%%DATADIR%%/usr/5bin/posix/csplit
+%%DATADIR%%/usr/5bin/posix/date
+%%DATADIR%%/usr/5bin/posix/du
+%%DATADIR%%/usr/5bin/posix/ed
+%%DATADIR%%/usr/5bin/posix/egrep
+%%DATADIR%%/usr/5bin/posix/expr
+%%DATADIR%%/usr/5bin/posix/fgrep
+%%DATADIR%%/usr/5bin/posix/find
+%%DATADIR%%/usr/5bin/posix/grep
+%%DATADIR%%/usr/5bin/posix/id
+%%DATADIR%%/usr/5bin/posix/ln
+%%DATADIR%%/usr/5bin/posix/ls
+%%DATADIR%%/usr/5bin/posix/mkdir
+%%DATADIR%%/usr/5bin/posix/mv
+%%DATADIR%%/usr/5bin/posix/nawk
+%%DATADIR%%/usr/5bin/posix/nl
+%%DATADIR%%/usr/5bin/posix/nohup
+%%DATADIR%%/usr/5bin/posix/pg
+%%DATADIR%%/usr/5bin/posix/pr
+%%DATADIR%%/usr/5bin/posix/ps
+%%DATADIR%%/usr/5bin/posix/rm
+%%DATADIR%%/usr/5bin/posix/rmdir
+%%DATADIR%%/usr/5bin/posix/sed
+%%DATADIR%%/usr/5bin/posix/sort
+%%DATADIR%%/usr/5bin/posix/touch
+%%DATADIR%%/usr/5bin/posix/tr
+%%DATADIR%%/usr/5bin/posix/wc
+%%DATADIR%%/usr/5bin/posix/who
+%%DATADIR%%/usr/5bin/pr
+%%DATADIR%%/usr/5bin/printenv
+%%DATADIR%%/usr/5bin/priocntl
+%%DATADIR%%/usr/5bin/ps
+%%DATADIR%%/usr/5bin/random
+%%DATADIR%%/usr/5bin/renice
+%%DATADIR%%/usr/5bin/rm
+%%DATADIR%%/usr/5bin/rmdir
+%%DATADIR%%/usr/5bin/s42/awk
+%%DATADIR%%/usr/5bin/s42/basename
+%%DATADIR%%/usr/5bin/s42/chmod
+%%DATADIR%%/usr/5bin/s42/cp
+%%DATADIR%%/usr/5bin/s42/csplit
+%%DATADIR%%/usr/5bin/s42/date
+%%DATADIR%%/usr/5bin/s42/du
+%%DATADIR%%/usr/5bin/s42/ed
+%%DATADIR%%/usr/5bin/s42/egrep
+%%DATADIR%%/usr/5bin/s42/expr
+%%DATADIR%%/usr/5bin/s42/fgrep
+%%DATADIR%%/usr/5bin/s42/find
+%%DATADIR%%/usr/5bin/s42/grep
+%%DATADIR%%/usr/5bin/s42/id
+%%DATADIR%%/usr/5bin/s42/lc
+%%DATADIR%%/usr/5bin/s42/ln
+%%DATADIR%%/usr/5bin/s42/ls
+%%DATADIR%%/usr/5bin/s42/mkdir
+%%DATADIR%%/usr/5bin/s42/more
+%%DATADIR%%/usr/5bin/s42/mv
+%%DATADIR%%/usr/5bin/s42/nawk
+%%DATADIR%%/usr/5bin/s42/nl
+%%DATADIR%%/usr/5bin/s42/nohup
+%%DATADIR%%/usr/5bin/s42/page
+%%DATADIR%%/usr/5bin/s42/pg
+%%DATADIR%%/usr/5bin/s42/pr
+%%DATADIR%%/usr/5bin/s42/priocntl
+%%DATADIR%%/usr/5bin/s42/ps
+%%DATADIR%%/usr/5bin/s42/rm
+%%DATADIR%%/usr/5bin/s42/rmdir
+%%DATADIR%%/usr/5bin/s42/sed
+%%DATADIR%%/usr/5bin/s42/sort
+%%DATADIR%%/usr/5bin/s42/touch
+%%DATADIR%%/usr/5bin/s42/tr
+%%DATADIR%%/usr/5bin/s42/wc
+%%DATADIR%%/usr/5bin/s42/who
+%%DATADIR%%/usr/5bin/sdiff
+%%DATADIR%%/usr/5bin/sed
+%%DATADIR%%/usr/5bin/setpgrp
+%%DATADIR%%/usr/5bin/settime
+%%DATADIR%%/usr/5bin/sleep
+%%DATADIR%%/usr/5bin/sort
+%%DATADIR%%/usr/5bin/spell
+%%DATADIR%%/usr/5bin/split
+%%DATADIR%%/usr/5bin/stty
+%%DATADIR%%/usr/5bin/su
+%%DATADIR%%/usr/5bin/sum
+%%DATADIR%%/usr/5bin/sync
+%%DATADIR%%/usr/5bin/tabs
+%%DATADIR%%/usr/5bin/tail
+%%DATADIR%%/usr/5bin/tape
+%%DATADIR%%/usr/5bin/tapecntl
+%%DATADIR%%/usr/5bin/tar
+%%DATADIR%%/usr/5bin/tcopy
+%%DATADIR%%/usr/5bin/tee
+%%DATADIR%%/usr/5bin/time
+%%DATADIR%%/usr/5bin/touch
+%%DATADIR%%/usr/5bin/tr
+%%DATADIR%%/usr/5bin/tsort
+%%DATADIR%%/usr/5bin/tty
+%%DATADIR%%/usr/5bin/ul
+%%DATADIR%%/usr/5bin/uname
+%%DATADIR%%/usr/5bin/unexpand
+%%DATADIR%%/usr/5bin/uniq
+%%DATADIR%%/usr/5bin/units
+%%DATADIR%%/usr/5bin/uptime
+%%DATADIR%%/usr/5bin/users
+%%DATADIR%%/usr/5bin/w
+%%DATADIR%%/usr/5bin/wc
+%%DATADIR%%/usr/5bin/what
+%%DATADIR%%/usr/5bin/whatis
+%%DATADIR%%/usr/5bin/who
+%%DATADIR%%/usr/5bin/whoami
+%%DATADIR%%/usr/5bin/whodo
+%%DATADIR%%/usr/5bin/xargs
+%%DATADIR%%/usr/5bin/yes
+%%DATADIR%%/usr/5lib/calprog
+%%DATADIR%%/usr/5lib/diff3prog
+%%DATADIR%%/usr/5lib/diffh
+%%DATADIR%%/usr/5lib/lib.b
+%%DATADIR%%/usr/5lib/magic
+%%DATADIR%%/usr/5lib/spell/hlista
+%%DATADIR%%/usr/5lib/spell/hlistb
+%%DATADIR%%/usr/5lib/spell/hstop
+%%DATADIR%%/usr/5lib/spell/spellin
+%%DATADIR%%/usr/5lib/spell/spellout
+%%DATADIR%%/usr/5lib/spell/spellprog
+%%DATADIR%%/usr/5lib/tmac/an-old.tmac
+%%DATADIR%%/usr/5lib/tmac/tmac.an
+%%DATADIR%%/usr/5lib/unittab
+%%DATADIR%%/usr/ucb/apropos
+%%DATADIR%%/usr/ucb/basename
+%%DATADIR%%/usr/ucb/catman
+%%DATADIR%%/usr/ucb/chown
+%%DATADIR%%/usr/ucb/deroff
+%%DATADIR%%/usr/ucb/df
+%%DATADIR%%/usr/ucb/du
+%%DATADIR%%/usr/ucb/expand
+%%DATADIR%%/usr/ucb/groups
+%%DATADIR%%/usr/ucb/hostname
+%%DATADIR%%/usr/ucb/install
+%%DATADIR%%/usr/ucb/ln
+%%DATADIR%%/usr/ucb/ls
+%%DATADIR%%/usr/ucb/man
+%%DATADIR%%/usr/ucb/more
+%%DATADIR%%/usr/ucb/printenv
+%%DATADIR%%/usr/ucb/ps
+%%DATADIR%%/usr/ucb/renice
+%%DATADIR%%/usr/ucb/stty
+%%DATADIR%%/usr/ucb/sum
+%%DATADIR%%/usr/ucb/tcopy
+%%DATADIR%%/usr/ucb/tr
+%%DATADIR%%/usr/ucb/ul
+%%DATADIR%%/usr/ucb/unexpand
+%%DATADIR%%/usr/ucb/uptime
+%%DATADIR%%/usr/ucb/users
+%%DATADIR%%/usr/ucb/w
+%%DATADIR%%/usr/ucb/whatis
+%%DATADIR%%/usr/ucb/whoami
+@exec umask 000; touch /var/db/spellhist
+@exec umask 066; touch /var/log/sulog
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/EXPLAIN.oawk
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE/COPYING.LGPL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE/LUCENT
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE/README
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.cp
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.dd
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.grep
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.libuxre
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.more
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.nawk
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.oawk
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.ps
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.shl
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.tar
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.oawk
+%%PORTDOCS%%%%DOCSDIR%%/TODO.cpio
+%%PORTDOCS%%%%DOCSDIR%%/intro.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/LICENSE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/usr/ucb
+@dirrm %%DATADIR%%/usr/share/man/5man/man8
+@dirrm %%DATADIR%%/usr/share/man/5man/man7
+@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man6 2>/dev/null || true
+@dirrm %%DATADIR%%/usr/share/man/5man/man5
+@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man4 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man3 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%%/usr/share/man/5man/man2 2>/dev/null || true
+@dirrm %%DATADIR%%/usr/share/man/5man/man1m
+@dirrm %%DATADIR%%/usr/share/man/5man/man1b
+@dirrm %%DATADIR%%/usr/share/man/5man/man1
+@dirrm %%DATADIR%%/usr/share/man/5man
+@dirrm %%DATADIR%%/usr/share/man
+@dirrm %%DATADIR%%/usr/share
+@dirrm %%DATADIR%%/usr/5lib/tmac
+@dirrm %%DATADIR%%/usr/5lib/spell
+@dirrm %%DATADIR%%/usr/5lib
+@dirrm %%DATADIR%%/usr/5bin/s42
+@dirrm %%DATADIR%%/usr/5bin/posix
+@dirrm %%DATADIR%%/usr/5bin
+@dirrm %%DATADIR%%/usr
+@dirrm %%DATADIR%%/etc/default
+@dirrm %%DATADIR%%/etc
+@dirrm %%DATADIR%%

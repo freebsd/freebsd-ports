@@ -1,0 +1,11 @@
+--- man/man.dfl.in.orig	Sat Nov  8 19:50:41 2003
++++ man/man.dfl.in	Thu Jun  3 16:59:29 2004
+@@ -1,7 +1,7 @@
+ # Sccsid @(#)man.dfl.in	1.20 (gritter) 11/8/03
+ 
+ # Manual search path. Default is /usr/local/share/man:/usr/share/man
+-MANPATH=@MANDIR@:/usr/node/share/man:/usr/local/share/man:/usr/ccs/share/man:/usr/old/share/man:/usr/contrib/share/man:/usr/share/man:/usr/share/man/en:/usr/X11R6/man
++MANPATH=@MANDIR@:/usr/share/man:/usr/local/man:/usr/X11R6/man
+ 
+ # Command for nroff. Default is nroff -Tlp
+ NROFF=GROFF_NO_SGR= GROFF_TMAC_PATH=@DEFLIB@/tmac${GROFF_TMAC_PATH+:$GROFF_TMAC_PATH} TROFFMACS=@DEFLIB@/tmac/tmac. nroff -Tlp
