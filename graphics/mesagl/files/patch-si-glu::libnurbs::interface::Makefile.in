@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- si-glu/libnurbs/interface/Makefile.in	2003/05/01 18:57:58	1.1
++++ si-glu/libnurbs/interface/Makefile.in	2003/05/01 18:58:36
+@@ -114,7 +114,7 @@
+ 
+ # Choose one of STANDALONE, LIBRARYBUILD, and GLBUILD. They are debugging
+ # switches. grep LIBRARYBUILD `find .. -name '*.h'` for details.
+-CXXFLAGS =  -DLIBRARYBUILD -DNDEBUG
++CXXFLAGS =  -DLIBRARYBUILD -DNDEBUG @CXXFLAGS@
+ 
+ libNIFac_la_SOURCES =  	bezierEval.cc 	bezierEval.h 	bezierPatch.cc 	bezierPatch.h 	bezierPatchMesh.cc 	bezierPatchMesh.h 	glcurveval.cc 	glcurveval.h 	glinterface.cc 	glrenderer.cc 	glrenderer.h 	glsurfeval.cc 	glsurfeval.h 	incurveeval.cc 	insurfeval.cc 	glimports.h 	mystdio.h 	mystdlib.h
+ 
