@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	4.2.2
+PORTVERSION=	4.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}
@@ -14,9 +14,14 @@ DISTNAME=	spin${PORTVERSION:S/.//g}
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
+OPTIONS=	XSPIN "Install xspin and TCL/Tk dependency" on
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_XSPIN)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
+XSPIN_TCL	= ${WRKDIR}/Xspin4.2/xspin423.tcl
 .else
 PLIST_SUB+=	XSPIN="@comment "
 .endif
@@ -25,37 +30,34 @@ DIST_SUBDIR=	spin
 WRKSRC=		${WRKDIR}/Src${PORTVERSION}
 MAKEFILE=	makefile
 ALL_TARGET=	spin
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNXT"
 USE_REINPLACE=	yes
 
 MANPAGE_WRKSRC=	${WRKDIR}/Man
 MAN1=		spin.1
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Use WITHOUT_XSPIN=yes to suppress xspin (and TCL/Tk dependency)."
-	@${ECHO_MSG} ""
-
 post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
 
+.if !defined(WITHOUT_XSPIN)
 pre-patch:
-	${TR} -d '\015' < ${WRKDIR}/Xspin4.2/xspin422.tcl \
-		> ${WRKDIR}/Xspin4.2/xspin422.tcl.tmp
-	${MV} -f ${WRKDIR}/Xspin4.2/xspin422.tcl.tmp \
-		${WRKDIR}/Xspin4.2/xspin422.tcl
+	${TR} -d '\015' < ${XSPIN_TCL} > ${XSPIN_TCL}.tmp
+	${MV} -f ${XSPIN_TCL}.tmp ${XSPIN_TCL}
+.endif
 
+.if !defined(WITHOUT_XSPIN)
 post-patch:
 	@WISH=`(cd ${LOCALBASE}/bin ; ${LS} wish8* ) | tail -1` ; \
 	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
 	${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin4.2/xspin422.tcl
+		-e "s|%%WISH%%|$$WISH|g" ${XSPIN_TCL}
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
 .if !defined(WITHOUT_XSPIN)
-	${RM} -f ${PREFIX}/bin/xspin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin4.2/xspin422.tcl ${PREFIX}/bin/xspin
+	${INSTALL_SCRIPT} ${XSPIN_TCL} ${PREFIX}/bin/xspin
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/Doc
@@ -71,4 +73,4 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/Man/spin.1 ${PREFIX}/man/man1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
