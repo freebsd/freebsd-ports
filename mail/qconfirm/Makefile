@@ -6,28 +6,34 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.2
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
 MAINTAINER=	sergei@kolobov.com
-COMMENT=	Request delivery confirmation for mail message under qmail
+COMMENT=	Filter spam by requesting confirmation from sender
 
-WRKSRC=		${WRKDIR}/mail/${DISTNAME}/src
+WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 ALL_TARGET=	default
 
-MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 qconfirm-conf.1 \
+MAN1=		qconfirm.1 qconfirm-accept.1 qconfirm-check.1 \
+		qconfirm-check-mid.1 qconfirm-conf.1 \
 		qconfirm-cdb-check.1 qconfirm-cdb-update.1 \
 		qconfirm-control.1 qconfirm-return.1
+DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
+do-configure:
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+
+do-build:
+	cd ${WRKSRC} && package/compile
+	
 do-install:
-.for file in ${MAN1}
-	${INSTALL_PROGRAM} ${WRKSRC}/${file:S/.1//} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/../man/${file} ${PREFIX}/man/man1
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
