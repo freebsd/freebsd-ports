@@ -8488,6 +8488,7 @@ pl_ispell	ports/polish/ispell
 plan		ports/deskutils/plan
 planets		ports/astro/planets
 planner		ports/deskutils/planner
+plans		ports/deskutils/plans
 plasma-kmod	ports/graphics/plasma-kmod
 platon		ports/biology/platon
 play		ports/audio/play
