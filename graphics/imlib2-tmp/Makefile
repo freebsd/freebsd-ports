@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.22 1998/06/23 06:43:12 vanilla Exp $
+# $Id: Makefile,v 1.23 1998/07/18 18:42:21 vanilla Exp $
 #
 
 DISTNAME=	imlib-1.7
@@ -18,7 +18,7 @@ LIB_DEPENDS=    png\\.2\\.:${PORTSDIR}/graphics/png \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
-		gtk\\.1\\.4:${PORTSDIR}/x11/gtk
+		gtk\\.1\\.5:${PORTSDIR}/x11/gtk
 
 USE_GMAKE=	yes
 USE_X11=	yes
