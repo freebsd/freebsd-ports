@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,8 @@ COMMENT=	A CD/DVD recording GUI for KDE
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
+LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
+		ogg:$(PORTSDIR)/audio/libogg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
