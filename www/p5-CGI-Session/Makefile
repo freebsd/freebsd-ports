@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Session
-PORTVERSION=	3.92
+PORTVERSION=	3.94
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -23,6 +23,7 @@ MAN3=		CGI::Session::DB_File.3 \
 		CGI::Session::File.3 \
 		CGI::Session.3 \
 		CGI::Session::ID::Incr.3 \
+		CGI::Session::ID::SHA1.3 \
 		CGI::Session::Serialize::FreezeThaw.3 \
 		CGI::Session::Serialize::Default.3 \
 		CGI::Session::BluePrint.3 \
