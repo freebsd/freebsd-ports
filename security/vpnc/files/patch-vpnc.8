@@ -1,0 +1,169 @@
+--- vpnc.8.orig	Fri May 14 00:27:57 2004
++++ vpnc.8	Fri May 14 00:53:08 2004
+@@ -1,4 +1,5 @@
+-.TH "VPNC" "8" "13 Mai 2004" "Debian" "vpnc"
++.\" groff -man -Tascii vpnc.8
++.TH "VPNC" "8" "Mai 2004" "FreeBSD" "vpnc"
+ 
+ .SH NAME
+ vpnc \- client for cisco3000 VPN Concentrator
+@@ -36,10 +37,6 @@
+ 
+ .SH "DESCRIPTION"
+ .PP
+-This manual page documents briefly the
+-\fBvpnc\fR, \fBvpnc\-connect\fR and
+-\fBvpnc\-disconnect\fR commands.
+-.PP
+ \fBvpnc\fR is a 
+ VPN client for the Cisco 3000 VPN  Concentrator,  creating  a IPSec-like
+ connection as a tunneling network device for the local system. It uses
+@@ -57,26 +54,17 @@
+ command (see \-\-script) to configure the interface and care about the
+ route setup. By default, only a simple ifconfig command is executed.
+ .PP
+-The command \fBvpnc\-connect\fR is a helper script that will assist on
+-connection invocation and routing configuration. It can also be used to manage configuration files
+-for multiple VPN connections. The script can be started by the user or
+-from the daemon (see \-\-script) when the connection is established. In
+-the first case, it will simply run the daemon after some environment
+-checks. When executed by the daemon later, it will create a minimalistic
+-host route to the gateway and configures the default gateway
+-configuration of Linux to run over the VPN tunnel.
+-.PP
+-The \fBvpnc\-disconnect\fR command is used to terminate
+-the connection previously created by \fBvpnc\-connect\fR
+-and restore the previous routing configuration.
++The script installed at \fB%%PREFIX%%/etc/rc.d/vpnc.sh.sample\fR contains an example
++of how to set up a tunnel. The \fBvpnc.sh.sample-fulltunnel\fR is are more intelligent
++script to set up a full tunnel.
+ 
+ .SH CONFIGURATION
+ The daemon reads configuration data from the following places:
+ .PD 0
+ .IP "- command line options"
+ .IP "- config file(s) specified on the command line"
+-.IP "- /etc/vpnc/default.conf"
+-.IP "- /etc/vpnc.conf"
++.IP "- %%PREFIX%%/etc/vpnc/default.conf"
++.IP "- %%PREFIX%%/etc/vpnc.conf"
+ .IP "- prompting the user if not found above"
+ 
+ .PP
+@@ -104,66 +92,66 @@
+ IP or host name of your IPSec gateway
+ 
+ .IP "\-\-id <ASCII string>"
+- Your group name in <ASCII string>
++Your group name in <ASCII string>
+       
+ .IP "\-\-username <ASCII string>"
+-  Your username
++Your username
+ 
+ .IP "\-\-script <command>"
+-  The <command> specified here is executed when the connection has been
+-  established, in order to configure the interface, routing and so on.
+-  Device name, IP, etc. are passed using enviroment variables, see
+-  README. This script is executed right after ISAKMP is done, but befor
+-  tunneling is enabled. Some environment variables are set and can be
+-  used for the detail configuration. Default command: ifconfig $TUNDEV
+-  inet $INTERNAL_IP4_ADDRESS pointopoint $INTERNAL_IP4_ADDRESS netmask
+-  255.255.255.255 mtu 1412 up
++The <command> specified here is executed when the connection has been
++established, in order to configure the interface, routing and so on.
++Device name, IP, etc. are passed using enviroment variables, see
++README. This script is executed right after ISAKMP is done, but befor
++tunneling is enabled. Some environment variables (namely TUNDEV and VPNGATEWAY)
++are set and can be used for the detail configuration. Default command: ifconfig
++$TUNDEV inet $INTERNAL_IP4_ADDRESS pointopoint $INTERNAL_IP4_ADDRESS netmask
++255.255.255.255 mtu 1412 up.
+ 
+ .IP "\-\-domain <ASCII string>"
+-  Domain name for authentication, sometimes needed for authentification
+-  against Windows NT domains.
++Domain name for authentication, sometimes needed for authentification
++against Windows NT domains.
+ 
+ .IP "\-\-dh <dh1/dh2/dh5>"
+-  Name of the IKE DH Group (default: dh2)
++Name of the IKE DH Group (default: dh2).
+ 
+ .IP "\-\-pfs <nopfs/dh1/dh2/dh5/server>"
+-  Diffie-Hellman group to use for PFS, one of nopfs, dh1, dh2, dh5 or
+-  server (default: server).
++Diffie-Hellman group to use for PFS, one of nopfs, dh1, dh2, dh5 or
++server (default: server).
+ 
+ .IP "\-\-enable\-1des"
+- Enables weak Single DES encryption
++Enables weak Single DES encryption.
+ 
+ .IP "\-\-application\-version <ASCII string>"
+- Application Version to report to the server when identifying ourself
+- (default: Cisco Systems VPN Client <vpnc-version>)
++Application Version to report to the server when identifying ourself
++(default: Cisco Systems VPN Client <vpnc-version>).
+ 
+ .IP "\-\-ifname <ASCII string>"
+- The virtual name of the Linux network interface assigned to the tunnel
+- endpoint
++The virtual name of the network interface assigned to the tunnel
++endpoint (default: first available tunX).
+ 
+ .IP "\-\-debug <0/1/2/3/99>"
+-  Show verbose debug messages with different verbosity levels
++Show verbose debug messages with different verbosity levels.
+ 
+ .IP "\-\-no\-detach"
+- Don't detach from the console (go to background) after login
++Don't detach from the console (go to background) after login.
+ 
+ .IP "\-\-pid\-file <filename>"
+- Store the pid of background process in a file
++Store the pid of background process in a file.
+ 
+ .IP "\-\-local-port <0-65535>"
+-  Local ISAKMP port number to use (0 == use random port, 500 is default)
++Local ISAKMP port number to use (0 == use random port, 500 is default).
+ 
+ .IP "\-\-non-inter"
+- Don't ask anything, exit on missing options
++Don't ask anything, exit on missing options.
+ 
+ .IP "\-\-print\-config"
+- Prints your configuration; output can be used as vpnc.conf
++Prints your configuration; output can be used as vpnc.conf.
+ 
+ .SH FILES
+-.I /etc/vpnc.conf
++.I %%PREFIX%%/etc/vpnc.conf
+ .RS
+ The default configuration file. You can specify the same config
+-directives as with command line options and additionaly
++directives as with command line options and additionaly.
+ .B IPSec secret
+ and
+ .B Xauth password
+@@ -175,7 +163,7 @@
+ for further details.
+ .RE
+ 
+-.I /etc/vpnc/*.conf
++.I %%PREFIX%%/etc/vpnc/*.conf
+ .RS
+ The vpnc\-connect will read configuration files in this directory when
+ the config script name (without .conf) is specified on the command line.
+@@ -234,8 +222,8 @@
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common\-licenses/GPL.
+ .SH "SEE ALSO"
+-.BR ip (8),
+-.BR ifconfig (8),
+-.BR route (1),
++.BR tun(4),
++.BR ifconfig(8),
++.BR route(8),
+ .BR http://www.unix\-ag.uni\-kl.de/~massar/vpnc/
+-
++.BR %%PREFIX%%/etc/rc.d/vpnc.sh.sample-fulltunnel
