@@ -65,6 +65,7 @@
     SUBDIR += dopewars
     SUBDIR += drm
     SUBDIR += dungeon
+    SUBDIR += eboard
     SUBDIR += empire
     SUBDIR += fkiss
     SUBDIR += flightgear

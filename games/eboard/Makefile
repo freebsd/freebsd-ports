@@ -1,0 +1,35 @@
+# New ports collection makefile for:	eboard
+# Date created:				22 June 2001
+# Whom:					petef@databits.net
+#
+# $FreeBSD$
+#
+
+PORTNAME=	eboard
+PORTVERSION=	0.2.5
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	petef@databits.net
+
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
+GNU_CONFIGURE=	yes
+USE_GTK=	yes
+USE_IMLIB=	yes
+USE_X_PREFIX=	yes
+
+MAN6=	eboard.6
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/eboard
+.for file in Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
+	Scripts.txt Sjeng.txt Themes.txt
+	${INSTALL_DATA} ${WRKSRC}/Documentation/${file} \
+		${PREFIX}/share/doc/eboard
+.endfor
+.endif
+
+.include <bsd.port.mk>
