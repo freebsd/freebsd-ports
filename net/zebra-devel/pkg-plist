@@ -1,8 +1,11 @@
 sbin/bgpd
+sbin/client
+sbin/ospfd
 sbin/ripd
 sbin/zebra
 etc/zebra/bgpd.conf.sample
 etc/zebra/ripd.conf.sample
 etc/zebra/zebra.conf.sample
+etc/zebra/ospfd.conf.sample
 info/zebra.info
 @unexec rmdir %D/etc/zebra 2>/dev/null
