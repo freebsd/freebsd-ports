@@ -1,5 +1,14 @@
---- configure.orig	Sat Oct 21 18:09:50 2000
-+++ configure	Sat Oct 21 18:11:01 2000
+--- configure.orig	Fri Nov 15 00:03:54 2002
++++ configure	Fri Nov 15 00:04:22 2002
+@@ -2764,7 +2764,7 @@
+ then
+ 	if test -f $vp_pyconfigdir/Makefile
+ 	then
+-		with_extra_libs=`grep '^LIBS.*=' $vp_pyconfigdir/Makefile | sed 's/.*=//'`
++		with_extra_libs=`grep '^LIBS*=' $vp_pyconfigdir/Makefile | sed 's/.*=//'`
+ 	fi
+ fi
+ 
 @@ -2777,7 +2777,7 @@
  VP_GDLDFLAGS="-L$vp_gd_libdir"
  VP_PYMODDIR=$vp_python_moddir

@@ -14,8 +14,6 @@ DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_GNOMENG=	yes
@@ -23,6 +21,7 @@ USE_GNOME=	gnomelibs
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} ${PYTHON_LIBS}"
 CONFIGURE_ARGS=	--with-gd-includes=${LOCALBASE}/include/gd \
 		--disable-kde
@@ -31,11 +30,12 @@ PYTHON_LIBS+=	-lssl -lcrypto
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+	@${REINPLACE_CMD} -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 		${WRKSRC}/libtool
 
 post-install:
