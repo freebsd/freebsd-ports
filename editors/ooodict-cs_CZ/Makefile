@@ -13,7 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	cs 
 LANGSUFFIX=	CZ
 LANGDIST+=	cs_CZ.zip
-HYPHDIST+=	hyph_cs.zip
+HYPHDIST+=	hyph_cs_CZ.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice
 
