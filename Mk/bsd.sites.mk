@@ -538,9 +538,7 @@ MASTER_SITE_NETSCAPE+= \
 
 MASTER_SITE_PACKETSTORM+= \
 	http://packetstormsecurity.nl/%SUBDIR%/ \
-	http://packetstorm.blackroute.net/%SUBDIR%/ \
 	http://packetstorm.troop218.org/%SUBDIR%/ \
-	http://packetstormsecurity.packetstorm.org/%SUBDIR%/ \
 	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
 	http://packetstorm.touchpointmedia.com/%SUBDIR%/ \
 	http://packetstorm.digital-network.net/%SUBDIR%/ \
