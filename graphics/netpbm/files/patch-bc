@@ -1,21 +1,21 @@
 --- Makefile.config.orig	Sat Mar 25 02:39:40 2000
 +++ Makefile.config	Sat Apr  1 12:00:00 2000
-@@ -30,12 +30,12 @@
+@@ -29,12 +29,12 @@
+ # The C compiler (including macro preprocessor)
  #CC =		cc
  #CC =		gcc
- #CC =		gcc -fpcc-struct-return
--CC =		gcc -pedantic -fpcc-struct-return
-+CC ?=		gcc -pedantic -fpcc-struct-return
+-CC =		gcc -fpcc-struct-return
++CC ?=		gcc -fpcc-struct-return
  
  # The linker
  #LD = ld
  #LD = cc
 -LD = gcc 
-+LD = ${CC}
++LD = ${CC} 
  
  # Normally the man pages are installed using "cp".  But via this
  # variable, you can use something else, for example a script that
-@@ -43,11 +43,11 @@
+@@ -42,11 +42,11 @@
  # systems which use man pages in the "cat" format.
  
  #MANCP = $(SRCDIR)/mantocat
@@ -30,16 +30,16 @@
  AR= ar
  RANLIB=	ranlib
  
-@@ -55,7 +55,7 @@
+@@ -54,7 +54,7 @@
  # C compiler options
  
  #CFLAGS = -O2 -std1 $(CDEBUG)
--CFLAGS = -O2 -Wall -Wno-uninitialized $(CDEBUG)
-+CFLAGS ?= -O2 -Wall -Wno-uninitialized $(CDEBUG)
+-CFLAGS = -pedantic -O2 -Wall -Wno-uninitialized $(CDEBUG)
++CFLAGS ?= -pedantic -O2 -Wall -Wno-uninitialized $(CDEBUG)
    
  # linker options.  Eunice users may want to use -noshare so that
  # the executables can run standalone.
-@@ -78,8 +78,10 @@
+@@ -81,8 +81,10 @@
  
  #TIFFINC_DIR = /usr/local1/DEC/include
  #TIFFLIB_DIR = /usr/local1/DEC/lib
@@ -52,7 +52,7 @@
  
  # Put the location of your JPEG library here.
  # If you want to build the jpeg converters or tiff
-@@ -101,16 +103,16 @@
+@@ -104,16 +106,16 @@
  #JPEGHDR_DIR = /usr/local1/DEC/include
  #JPEGLIB_DIR = NONE
  #JPEGHDR_DIR = NONE
@@ -73,7 +73,7 @@
  
  
  # The following variables are used only by 'make install' (and the
-@@ -121,7 +123,7 @@
+@@ -124,7 +126,7 @@
  # you're spreading Netpbm across your system, use "/".
  
  #INSTALL_PREFIX = /usr/local1/DEC/packages/netpbm

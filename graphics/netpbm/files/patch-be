@@ -1,14 +1,18 @@
 --- pgm/Makefile.orig	Fri Mar 24 07:43:44 2000
 +++ pgm/Makefile	Sat Apr  1 12:00:00 2000
-@@ -13,6 +13,7 @@
- INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
+@@ -10,9 +10,10 @@
+ INCLUDEPBM = -I$(PBMDIR)
+ LIBPBM = libpbm.so
+ 
+-INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
++INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt 
  
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
 +NETPBMLD = -L. -lpgm -L$(PBMDIR) -lpbm
+ LIBLIBS = $(PBMDIR)/$(LIBPBM)
  
  PORTBINARIES =	asciitopgm bioradtopgm fstopgm hipstopgm \
- 		lispmtopgm pbmtopgm pgmbentley pgmenhance pgmhist \
-@@ -25,6 +26,7 @@
+@@ -26,6 +27,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(BINARIES))
  
  LIBOBJECTS = libpgm1.o libpgm2.o
@@ -16,7 +20,7 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm
-@@ -41,22 +43,25 @@
+@@ -42,22 +44,25 @@
  
  # Rules for plain programs.
  $(PORTBINARIES): %: %.o $(NETPBMLIBS)
@@ -39,7 +43,7 @@
  	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
  
  # And libraries.
- $(PBMDIR)/$(LIBPBM):
+ $(PBMDIR)/$(LIBPBM): FORCE
 -	cd $(PBMDIR) ; make $(LIBPBM)
 +	cd $(PBMDIR) ; $(MAKE) $(LIBPBM)
  

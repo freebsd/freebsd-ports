@@ -1,12 +1,12 @@
 # New ports collection makefile for:	netpbm
-# Version required:	8.3
+# Version required:	8.4
 # Date created:		?
 # Whom:			jmz (original)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netpbm-8.3
+DISTNAME=	netpbm-8.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/convert
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
@@ -52,12 +53,14 @@ MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	pstopnm.1 qrttoppm.1 rasttopnm.1 rawtopgm.1 rawtoppm.1 rgb3toppm.1 \
 	sgitopnm.1 sirtopnm.1 sldtoppm.1 spctoppm.1 spottopgm.1 sputoppm.1 \
 	tgatoppm.1 tifftopnm.1 xbmtopbm.1 ximtoppm.1 xpmtoppm.1 xvminitoppm.1 \
-	xwdtopnm.1 ybmtopbm.1 yuvsplittoppm.1 yuvtoppm.1 zeisstopnm.1
+	xwdtopnm.1 ybmtopbm.1 yuvsplittoppm.1 yuvtoppm.1 zeisstopnm.1 \
+	sbigtopgm.1 eyuvtoppm.1 ppmtoeyuv.1 ppmlabel.1 ppmfade.1
 MAN3=	libpbm.3 libpgm.3 libpnm.3 libppm.3
 MAN5=	pbm.5 pgm.5 pnm.5 ppm.5
 
 post-patch:
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/pbmplus.h
+	@cd ${WRKSRC}; find * -name "Makefile.depend" -delete
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib

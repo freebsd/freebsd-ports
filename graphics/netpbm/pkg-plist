@@ -5,6 +5,7 @@ bin/bioradtopgm
 bin/bmptoppm
 bin/brushtopbm
 bin/cmuwmtopbm
+bin/eyuvtoppm
 bin/fitstopnm
 bin/fstopgm
 bin/g3topbm
@@ -98,6 +99,7 @@ bin/pnminvert
 bin/pnmmargin
 bin/pnmmerge
 bin/pnmnlfilt
+bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
 bin/pnmrotate
@@ -123,6 +125,7 @@ bin/ppmcie
 bin/ppmdim
 bin/ppmdist
 bin/ppmdither
+bin/ppmfade
 bin/ppmflash
 bin/ppmforge
 bin/ppmhist
@@ -142,6 +145,7 @@ bin/ppmshift
 bin/ppmspread
 bin/ppmtoacad
 bin/ppmtobmp
+bin/ppmtoeyuv
 bin/ppmtogif
 bin/ppmtoicr
 bin/ppmtoilbm
