@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scintilla
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -21,9 +21,23 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
-INSTALLS_SHLIB=	yes
 MAKEFILE=	makefile
+INSTALLS_SHLIB=	yes
+
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
+PKGNAMESUFFIX=	-gtk2
+.else
+USE_GNOME=	gtk12
+MAKE_ARGS=	GTK1=yes
+.endif
+
+post-extract:
+.for i in PlatGTK.cxx ScintillaGTK.cxx
+	@cd ${WRKSRC} \
+		&& ${MV} ${i} ${i}.pre_tr \
+		&& ${TR} -d '\r' < ${i}.pre_tr > ${i}
+.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
