@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cwtexttf
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://ftp1.sinica.edu.tw/pub2/tex/cwTeX/cwTeX-TTF/ \
-		ftp://cle.linux.org.tw/pub/fonts/ttf/unicode/cwTeX-TTF/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/cwTeX-TTF/
 DISTNAME=	cwtex-ttf
 
