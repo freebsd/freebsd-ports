@@ -10,7 +10,7 @@
     SUBDIR += gd
     SUBDIR += koi8r-ps
     SUBDIR += messarge
-    SUBDIR += netscape3.language
+    SUBDIR += netscape4.language
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += rispell
