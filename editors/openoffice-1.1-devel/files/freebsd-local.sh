@@ -2,11 +2,6 @@
 #
 # $FreeBSD $
 
-if [ -e $HOME/.sversionrc ]; then
-	OOHOME=`grep %%FRELEASE_NR%% $HOME/.sversionrc \
-		| sed -e 's/.*file:\/\///'`
-fi
-
 save_common_xcu() {
 sed 's/^X//' > $OOHOME/tmp/Common.xcu << 'END-of-Common.xcu'
 X<?xml version="1.0" encoding="UTF-8"?>

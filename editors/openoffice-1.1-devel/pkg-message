@@ -1,4 +1,4 @@
-OpenOffice.org Build 1.1.1 Personal Install How-To
+OpenOffice.org Build 1.1.2 Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 
@@ -9,7 +9,7 @@ Just type "openoffice" after you have successfully
 installed the package. If there is no installed
 OO.org dir in hour homedir, you'll be prompted to
 install some files and choose a installed JDK.
-The setup installs a "OpenOffice.org1.1.0" folder
+The setup installs a "OpenOffice.org1.1.2" folder
 in your homedir.
 
 If the setup tells you there is already an installed
@@ -26,16 +26,16 @@ There are some wrappers installed for fast startup.
 Add "${PREFIX}/bin/" to your PATH and you will be able
 to use them.
 
-${PREFIX}/bin/openoffice-1.1
-${PREFIX}/bin/openoffice-1.1-sagenda
-${PREFIX}/bin/openoffice-1.1-scalc
-${PREFIX}/bin/openoffice-1.1-sdraw
-${PREFIX}/bin/openoffice-1.1-setup
-${PREFIX}/bin/openoffice-1.1-sfax
-${PREFIX}/bin/openoffice-1.1-simpress
-${PREFIX}/bin/openoffice-1.1-spadmin
-${PREFIX}/bin/openoffice-1.1-sweb
-${PREFIX}/bin/openoffice-1.1-swriter
+${PREFIX}/bin/openoffice-1.1.2
+${PREFIX}/bin/openoffice-1.1.2-sagenda
+${PREFIX}/bin/openoffice-1.1.2-scalc
+${PREFIX}/bin/openoffice-1.1.2-sdraw
+${PREFIX}/bin/openoffice-1.1.2-setup
+${PREFIX}/bin/openoffice-1.1.2-sfax
+${PREFIX}/bin/openoffice-1.1.2-simpress
+${PREFIX}/bin/openoffice-1.1.2-spadmin
+${PREFIX}/bin/openoffice-1.1.2-sweb
+${PREFIX}/bin/openoffice-1.1.2-swriter
 
 OO.org does need $LANG to be set to a suitable value.
 If it is not already set, a default value is chosen.

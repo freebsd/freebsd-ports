@@ -1,0 +1,89 @@
+OpenOffice.org Version 1.1.2 Installationsanleitung
+
+Geschrieben von:	Martin Blapp <mbr@freebsd.org>
+
+OpenOffice.org ist bald im Verzeichnis
+${PREFIX}/OpenOffice.org1.1.2/ installiert.
+
+1 Benutzerinstallation
+----------------------
+
+Nachdem der Port oder das Package installiert ist
+kann OO.org mit "openoffice" gestartet werden. Beim
+ersten Mal wird das OO.org Setup aufgerufen und in
+Ihrem Benutzerverzeichnis das Verzeichnis
+"OpenOffice.org1.1.2" angelegt. Ebenfalls werden
+Sie während des Setups nach einem installierten
+Java JDK gefragt.
+
+Falls das Setup mit der Fehlermeldung abbricht, dass
+schon eine Version installiert sei (von einem vorherigen
+Installationsversuch), kann ein Blick in die Datei
+".sversionrc" helfen. In dieser Datei speichern Openoffice
+wie auch alle Staroffice Versionen Informationen ’…r die
+Installation ab. Lšáhen Sie die problematische Zeile
+und die Installation wird nun funktionieren.
+
+2 Start von OO.org
+------------------
+
+Die FreeBSD-Version von OO.org installiert nun ein Skript
+zum schnellen Aufruf. Bitte f”ãn Sie "${PREFIX}/bin/" 
+zu Ihrer ENV-Variable PATH hinzu und sie werden OO.org
+einfacher aufrufen k˜Žen:
+
+${PREFIX}/bin/openoffice
+${PREFIX}/bin/openoffice-sagenda
+${PREFIX}/bin/openoffice-scalc
+${PREFIX}/bin/openoffice-sdraw
+${PREFIX}/bin/openoffice-setup
+${PREFIX}/bin/openoffice-sfax
+${PREFIX}/bin/openoffice-simpress
+${PREFIX}/bin/openoffice-spadmin
+${PREFIX}/bin/openoffice-sweb
+${PREFIX}/bin/openoffice-swriter
+
+OO.org verlangt dass die ENV-Variable LANG auf einen
+brauchbaren Wert gesetzt ist. Wenn LANG nicht definiert
+ist, so verwendet das Startup-Skript eine Standard-Einstellung,
+Momentan wird "de_DE.ISO_8859-15" verwendet. Sie k˜Žen diese
+Einstellung auch im Startup-Skript ändern.
+
+Wenn Sie einen älteren X-Server vor der XFree86 Version 4.2
+verwenden, k˜Žen Warnungen auftreten. Ignorieren Sie diese
+oder verwenden Sie eine neuere Version.
+
+Falls US-ASCII verwendet wird, k˜Žen Sie Dokumente mit
+Umlauten und Sonderzeichen im Dateinamen nicht mehr speichern
+und laden, und natšŒich werden Sie auch im OO.org keine
+dieser Zeichen mehr tippen k˜Žen.
+
+3 Setup Probleme (nur FreeBSD < 4.7-RELEASE)
+--------------------------------------------
+
+Falls sich das Setup ’…r eine fehlende Datei mit Namen
+"setup.ins" beklagt, so ist es an der Zeit Ihr System auf
+die neueste FreeBSD-Version zu aktualisieren. FreeBSD
+4.7-RELEASE und neuer hat dieses Problem nicht.
+
+4 Abstšše bei der URL-Leiste (nur FreeBSD < 4.7-RELEASE)
+---------------------------------------------------------
+
+Bei älteren FreeBSD-Version als 4.7-RELEASE kann OO.org
+bei Eingaben in der URL-Leiste abstššen, falls ein nicht
+existierender Dateiname eingegeben wird. Der folgende
+Systempatch schafft Abhilfe:
+
+http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff
+
+5 Absturz nach dem Wechseln zu einer anderen Sprachversion
+----------------------------------------------------------
+
+Falls Sie zuerst die englische Version von OO.org installiert
+haben und nachträglich auf eine andere Sprachversion gewechselt
+haben, so kann dies OO.org zum Absturz bringen.
+
+Abhilfe schafft in diesem Fall nur das Lšáhen des bestehenden
+OpenOffice.org1.1.2 Verzeichnisses und des entsprechenden
+Eintrags aus der Datei ".sversionrc" mit anschliessender neuer
+Benutzer-Installation.
