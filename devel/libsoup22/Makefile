@@ -22,7 +22,9 @@ USE_GNOME=	gnomehack glib20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	13
 USE_OPENSSL=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--with-gnutls-includes=${FALSE} \
+		--with-gnutls-libs=${FALSE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
