@@ -2,39 +2,45 @@ bin/gtranslator
 bin/pozilla.sh
 etc/gconf/gconf.xml.defaults/apps/gtranslator/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gtranslator/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtranslator/informations/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtranslator/language/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtranslator/translator/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/history/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/informations/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/language/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/translator/%gconf.xml
 etc/gconf/schemas/gtranslator.schemas
+lib/gtranslator/backends/docbook.xml
+lib/gtranslator/backends/docbook/docbook.so
+lib/gtranslator/backends/text.xml
+lib/gtranslator/backends/text/text.so
 share/gnome/apps/Development/gtranslator.desktop
+share/gnome/gtranslator/colorschemes/arek.xml
 share/gnome/gtranslator/colorschemes/boom-boom.xml
+share/gnome/gtranslator/colorschemes/clean.xml
 share/gnome/gtranslator/colorschemes/default.xml
 share/gnome/gtranslator/colorschemes/extremely-kabalak.xml
 share/gnome/gtranslator/colorschemes/kabalak.xml
 share/gnome/gtranslator/colorschemes/kbabel.xml
 share/gnome/gtranslator/colorschemes/menesis.xml
+share/gnome/gtranslator/colorschemes/mmc.xml
 share/gnome/gtranslator/colorschemes/nizuu.xml
+share/gnome/gtranslator/colorschemes/sepia.xml
+share/gnome/gtranslator/colorschemes/spiffE.xml
 share/gnome/gtranslator/colorschemes/tuey.xml
 share/gnome/gtranslator/colorschemes/vim.xml
 share/gnome/gtranslator/colorschemes/waliays.xml
 share/gnome/gtranslator/colorschemes/zuper.xml
+share/gnome/gtranslator/etspecs/messages-table.etspec
+share/gnome/gtranslator/scripts/cleanup-gtranslator-settings.sh
 share/gnome/gtranslator/scripts/my-update.sh
-share/gnome/help/gtranslator/C/aa.html
 share/gnome/help/gtranslator/C/authors.html
-share/gnome/help/gtranslator/C/colorschemes.html
-share/gnome/help/gtranslator/C/commandlinearguments.html
-share/gnome/help/gtranslator/C/docbook.css
-share/gnome/help/gtranslator/C/features.html
+share/gnome/help/gtranslator/C/bugs.html
+share/gnome/help/gtranslator/C/figures/mainwindow.png
+share/gnome/help/gtranslator/C/figures/prefs.png
+share/gnome/help/gtranslator/C/figures/toolbar.png
+share/gnome/help/gtranslator/C/glossary.html
 share/gnome/help/gtranslator/C/gtranslator.sgml
 share/gnome/help/gtranslator/C/index.html
-share/gnome/help/gtranslator/C/resources.html
-share/gnome/help/gtranslator/C/thanks.html
+share/gnome/help/gtranslator/C/license.html
+share/gnome/help/gtranslator/C/prefs.html
 share/gnome/help/gtranslator/C/topic.dat
+share/gnome/help/gtranslator/C/usage.html
 share/gnome/help/gtranslator/ja/authors.html
 share/gnome/help/gtranslator/ja/commandlinearguments.html
 share/gnome/help/gtranslator/ja/docbook.css
@@ -45,15 +51,21 @@ share/gnome/help/gtranslator/ja/topic.dat
 share/gnome/help/gtranslator/ja/use-of-gtranslator.html
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
+share/gnome/omf/gtranslator/gtranslator-C.omf
 share/gnome/pixmaps/gnome-application-x-gmo.png
 share/gnome/pixmaps/gnome-application-x-po.png
 share/gnome/pixmaps/gtranslator.png
+share/gnome/pixmaps/gtranslator/fuzzy.png
+share/gnome/pixmaps/gtranslator/fuzzy_small.png
+share/gnome/pixmaps/gtranslator/untranslated.png
+share/gnome/pixmaps/gtranslator/untranslated_small.png
 share/locale/az/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
 share/locale/de/LC_MESSAGES/gtranslator.mo
 share/locale/el/LC_MESSAGES/gtranslator.mo
 share/locale/en_GB/LC_MESSAGES/gtranslator.mo
 share/locale/es/LC_MESSAGES/gtranslator.mo
+share/locale/eu/LC_MESSAGES/gtranslator.mo
 share/locale/fi/LC_MESSAGES/gtranslator.mo
 share/locale/fr/LC_MESSAGES/gtranslator.mo
 share/locale/gl/LC_MESSAGES/gtranslator.mo
@@ -71,19 +83,23 @@ share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
 share/locale/uk/LC_MESSAGES/gtranslator.mo
 share/locale/wa/LC_MESSAGES/gtranslator.mo
+share/locale/zh_CN/LC_MESSAGES/gtranslator.mo
+share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
+@dirrm share/gnome/pixmaps/gtranslator
+@dirrm share/gnome/omf/gtranslator
 @dirrm share/gnome/help/gtranslator/ja
+@dirrm share/gnome/help/gtranslator/C/figures
 @dirrm share/gnome/help/gtranslator/C
 @dirrm share/gnome/help/gtranslator
 @dirrm share/gnome/gtranslator/scripts
+@dirrm share/gnome/gtranslator/etspecs
 @dirrm share/gnome/gtranslator/colorschemes
 @dirrm share/gnome/gtranslator
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/translator
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/language
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/informations
+@dirrm lib/gtranslator/backends/text
+@dirrm lib/gtranslator/backends/docbook
+@dirrm lib/gtranslator/backends
+@dirrm lib/gtranslator
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/history
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator/translator
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator/language
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator/informations
 @dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator/history
 @dirrm etc/gconf/gconf.xml.defaults/apps/gtranslator

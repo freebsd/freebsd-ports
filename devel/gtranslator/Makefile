@@ -6,35 +6,33 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	0.38
-PORTREVISION=	2
+PORTVERSION=	0.39
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgiconv" \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new
 
-MAN1=		gtranslator.1 nautilus-gtranslator-view.1 pozilla.sh.1
+MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-
-.if defined(PARALLEL_PACKAGE_BUILD)
-FORBIDDEN=	hang
-.endif
 
 .include <bsd.port.mk>
