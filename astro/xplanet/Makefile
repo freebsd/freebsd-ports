@@ -10,7 +10,7 @@ PORTVERSION=	0.60
 CATEGORIES=	astro x11
 MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/xplanet/ \
 		http://www.radcyberzine.com/xglobe/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} photo_1600.jpg
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} depths_800.jpg
 
 MAINTAINER=	will@FreeBSD.org
 
