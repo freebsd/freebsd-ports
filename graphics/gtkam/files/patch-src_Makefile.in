@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Feb 22 17:57:10 2003
++++ src/Makefile.in	Sat Feb 22 17:57:28 2003
+@@ -169,7 +169,7 @@
+ 	$(GNOME_LIBS)
+ 
+ 
+-@HAVE_GIMP_TRUE@gtkam_gimp_libexecdir = $(libdir)/gimp/1.3/plug-ins
++@HAVE_GIMP_TRUE@gtkam_gimp_libexecdir = $(libexecdir)/gimp/1.3/plug-ins
+ @HAVE_GIMP_TRUE@gtkam_gimp_libexec_PROGRAMS = gtkam-gimp
+ @HAVE_GIMP_TRUE@gtkam_gimp_SOURCES = gtkam-gimp.c
+ @HAVE_GIMP_TRUE@gtkam_gimp_LDADD = \
