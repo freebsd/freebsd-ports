@@ -3,10 +3,10 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.12 1998/11/19 04:46:45 itojun Exp $
+# $Id: Makefile,v 1.13 1998/12/01 03:06:27 asami Exp $
 #
 
-PKGNAME=	ko-nvi-euckr-1.79.19981119
+PKGNAME=	ko-nvi-euckr-1.79.19990331
 
 MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 COMMENT=	${.CURDIR}/pkg/COMMENT
