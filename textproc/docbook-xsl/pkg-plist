@@ -1,11 +1,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/book.xsl
+%%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s03.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01s04.html
+%%PORTDOCS%%%%DOCSDIR%%/ch02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch03.html
 %%PORTDOCS%%%%DOCSDIR%%/ch04.html
 %%PORTDOCS%%%%DOCSDIR%%/ch05.html
+%%PORTDOCS%%%%DOCSDIR%%/ch06.html
 %%PORTDOCS%%%%DOCSDIR%%/ch06s02.html
 %%PORTDOCS%%%%DOCSDIR%%/ch06s03.html
 %%PORTDOCS%%%%DOCSDIR%%/common/ChangeLog
@@ -48,6 +51,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/callout.unicode.start.character.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/callouts.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/chapter.autolabel.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/collect.xref.targets.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.back.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.body.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.count.front.html
@@ -61,6 +65,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.gap.lot.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/column.gap.titlepage.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/compact.list.item.spacing.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/component.label.includes.part.label.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/component.title.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/current.docid.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/default.float.class.html
@@ -84,6 +89,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/footnote.font.size.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/footnote.number.format.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/footnote.number.symbols.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/footnote.sep.leader.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/fop.extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/formal.object.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/formal.procedures.html
@@ -110,13 +116,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/hyphenate.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/ignore.image.scaling.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/index.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/index.on.role.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/index.on.type.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/index.preferred.page.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/informal.object.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/informalequation.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/informalexample.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/informalfigure.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/informaltable.properties.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/insert.olink.page.number.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/insert.olink.pdf.frag.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/insert.xref.page.number.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.default.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/l10n.gentext.use.xref.language.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/label.from.part.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3924.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e3985.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/ld-d0e4044.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/line-height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.everyNth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/linenumbering.extension.html
@@ -135,7 +152,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/monospace.verbatim.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/nominal.table.width.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/normal.para.spacing.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/olink.base.uri.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/olink.debug.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/olink.doctitle.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/olink.lang.fallback.sequence.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/olink.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.height.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.height.portrait.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/page.margin.bottom.html
@@ -151,6 +172,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/passivetex.extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/preface.autolabel.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/prefer.internal.olink.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/preferred.mediaobject.role.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/procedure.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/process.empty.source.toc.html
@@ -217,6 +239,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/runinhead.title.end.punct.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/sans.font.family.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/section.autolabel.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/section.autolabel.max.depth.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/section.label.includes.component.label.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/section.level1.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/section.level2.properties.html
@@ -254,8 +277,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/fo/table.table.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/tablecolumns.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/target.database.document.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/targets.filename.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/tex.math.delims.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/tex.math.in.alt.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/textdata.default.encoding.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/textinsert.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/title.font.family.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/title.margin.left.html
@@ -311,6 +336,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.first.sections.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.quietly.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.section.depth.html
+%%PORTDOCS%%%%DOCSDIR%%/html/chunk.separate.lots.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunk.tocs.and.lots.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chunker.output.cdata-section-elements.html
@@ -324,6 +350,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/chunker.output.standalone.html
 %%PORTDOCS%%%%DOCSDIR%%/html/citerefentry.link.html
 %%PORTDOCS%%%%DOCSDIR%%/html/collect.xref.targets.html
+%%PORTDOCS%%%%DOCSDIR%%/html/component.label.includes.part.label.html
 %%PORTDOCS%%%%DOCSDIR%%/html/css.decoration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/current.docid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.float.class.html
@@ -412,18 +439,25 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.tail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.window.html
+%%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.hhp.windows.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.map.file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.only.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.remember.window.position.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.advanced.search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.favorities.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.menu.html
+%%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.show.toolbar.text.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.title.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.use.hhk.html
 %%PORTDOCS%%%%DOCSDIR%%/html/htmlhelp.window.geometry.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ignore.image.scaling.html
+%%PORTDOCS%%%%DOCSDIR%%/html/img.src.path.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.on.role.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.on.type.html
 %%PORTDOCS%%%%DOCSDIR%%/html/inherit.keywords.html
+%%PORTDOCS%%%%DOCSDIR%%/html/insert.olink.page.number.html
+%%PORTDOCS%%%%DOCSDIR%%/html/insert.olink.pdf.frag.html
 %%PORTDOCS%%%%DOCSDIR%%/html/insert.xref.page.number.html
 %%PORTDOCS%%%%DOCSDIR%%/html/l10n.gentext.default.language.html
 %%PORTDOCS%%%%DOCSDIR%%/html/l10n.gentext.language.html
@@ -451,9 +485,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/nominal.image.width.html
 %%PORTDOCS%%%%DOCSDIR%%/html/nominal.table.width.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.base.uri.html
+%%PORTDOCS%%%%DOCSDIR%%/html/olink.debug.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.doctitle.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.fragid.html
+%%PORTDOCS%%%%DOCSDIR%%/html/olink.lang.fallback.sequence.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.outline.ext.html
+%%PORTDOCS%%%%DOCSDIR%%/html/olink.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.pubid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.resolver.html
 %%PORTDOCS%%%%DOCSDIR%%/html/olink.sysid.html
@@ -464,6 +501,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/points.per.em.html
 %%PORTDOCS%%%%DOCSDIR%%/html/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preface.autolabel.html
+%%PORTDOCS%%%%DOCSDIR%%/html/prefer.internal.olink.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preferred.mediaobject.role.html
 %%PORTDOCS%%%%DOCSDIR%%/html/process.empty.source.toc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/process.source.toc.html
@@ -517,6 +555,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/runinhead.title.end.punct.html
 %%PORTDOCS%%%%DOCSDIR%%/html/saxon.character.representation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/section.autolabel.html
+%%PORTDOCS%%%%DOCSDIR%%/html/section.autolabel.max.depth.html
 %%PORTDOCS%%%%DOCSDIR%%/html/section.label.includes.component.label.html
 %%PORTDOCS%%%%DOCSDIR%%/html/segmentedlist.as.table.html
 %%PORTDOCS%%%%DOCSDIR%%/html/shade.verbatim.html
@@ -542,6 +581,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/tex.math.delims.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tex.math.file.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tex.math.in.alt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/textdata.default.encoding.html
 %%PORTDOCS%%%%DOCSDIR%%/html/textinsert.extension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/toc.list.type.html
 %%PORTDOCS%%%%DOCSDIR%%/html/toc.max.depth.html
@@ -622,6 +662,7 @@ share/xsl/docbook/common/lt.xml
 share/xsl/docbook/common/nl.xml
 share/xsl/docbook/common/nn.xml
 share/xsl/docbook/common/no.xml
+share/xsl/docbook/common/olink.xsl
 share/xsl/docbook/common/pi.xsl
 share/xsl/docbook/common/pl.xml
 share/xsl/docbook/common/pt.xml
@@ -927,6 +968,7 @@ share/xsl/docbook/params/chunk.first.sections.xml
 share/xsl/docbook/params/chunk.quietly.xml
 share/xsl/docbook/params/chunk.section.depth.xml
 share/xsl/docbook/params/chunk.sections.xml
+share/xsl/docbook/params/chunk.separate.lots.xml
 share/xsl/docbook/params/chunk.toc.xml
 share/xsl/docbook/params/chunk.tocs.and.lots.xml
 share/xsl/docbook/params/chunker.output.cdata-section-elements.xml
@@ -953,6 +995,8 @@ share/xsl/docbook/params/column.gap.index.xml
 share/xsl/docbook/params/column.gap.lot.xml
 share/xsl/docbook/params/column.gap.titlepage.xml
 share/xsl/docbook/params/compact.list.item.spacing.xml
+share/xsl/docbook/params/component.label.includes.part.label.xml
+share/xsl/docbook/params/component.title.properties.xml
 share/xsl/docbook/params/css.decoration.xml
 share/xsl/docbook/params/current.docid.xml
 share/xsl/docbook/params/default.float.class.xml
@@ -984,6 +1028,7 @@ share/xsl/docbook/params/footers.on.blank.pages.xml
 share/xsl/docbook/params/footnote.font.size.xml
 share/xsl/docbook/params/footnote.number.format.xml
 share/xsl/docbook/params/footnote.number.symbols.xml
+share/xsl/docbook/params/footnote.sep.leader.properties.xml
 share/xsl/docbook/params/fop.extensions.xml
 share/xsl/docbook/params/formal.object.properties.xml
 share/xsl/docbook/params/formal.procedures.xml
@@ -1074,9 +1119,18 @@ share/xsl/docbook/params/htmlhelp.use.hhk.xml
 share/xsl/docbook/params/htmlhelp.window.geometry.xml
 share/xsl/docbook/params/hyphenate.xml
 share/xsl/docbook/params/ignore.image.scaling.xml
+share/xsl/docbook/params/img.src.path.xml
+share/xsl/docbook/params/index.on.role.xml
+share/xsl/docbook/params/index.on.type.xml
 share/xsl/docbook/params/index.preferred.page.properties.xml
 share/xsl/docbook/params/informal.object.properties.xml
+share/xsl/docbook/params/informalequation.properties.xml
+share/xsl/docbook/params/informalexample.properties.xml
+share/xsl/docbook/params/informalfigure.properties.xml
+share/xsl/docbook/params/informaltable.properties.xml
 share/xsl/docbook/params/inherit.keywords.xml
+share/xsl/docbook/params/insert.olink.page.number.xml
+share/xsl/docbook/params/insert.olink.pdf.frag.xml
 share/xsl/docbook/params/insert.xref.page.number.xml
 share/xsl/docbook/params/l10n.gentext.default.language.xml
 share/xsl/docbook/params/l10n.gentext.language.xml
@@ -1113,9 +1167,12 @@ share/xsl/docbook/params/nominal.image.width.xml
 share/xsl/docbook/params/nominal.table.width.xml
 share/xsl/docbook/params/normal.para.spacing.xml
 share/xsl/docbook/params/olink.base.uri.xml
+share/xsl/docbook/params/olink.debug.xml
 share/xsl/docbook/params/olink.doctitle.xml
 share/xsl/docbook/params/olink.fragid.xml
+share/xsl/docbook/params/olink.lang.fallback.sequence.xml
 share/xsl/docbook/params/olink.outline.ext.xml
+share/xsl/docbook/params/olink.properties.xml
 share/xsl/docbook/params/olink.pubid.xml
 share/xsl/docbook/params/olink.resolver.xml
 share/xsl/docbook/params/olink.sysid.xml
@@ -1136,6 +1193,7 @@ share/xsl/docbook/params/phrase.propagates.style.xml
 share/xsl/docbook/params/pixels.per.inch.xml
 share/xsl/docbook/params/points.per.em.xml
 share/xsl/docbook/params/preface.autolabel.xml
+share/xsl/docbook/params/prefer.internal.olink.xml
 share/xsl/docbook/params/preferred.mediaobject.role.xml
 share/xsl/docbook/params/procedure.properties.xml
 share/xsl/docbook/params/process.empty.source.toc.xml
@@ -1183,6 +1241,7 @@ share/xsl/docbook/params/saxon.callouts.xml
 share/xsl/docbook/params/saxon.character.representation.xml
 share/xsl/docbook/params/saxon.linenumbering.xml
 share/xsl/docbook/params/saxon.tablecolumns.xml
+share/xsl/docbook/params/section.autolabel.max.depth.xml
 share/xsl/docbook/params/section.autolabel.xml
 share/xsl/docbook/params/section.label.includes.component.label.xml
 share/xsl/docbook/params/section.level1.properties.xml
@@ -1232,6 +1291,7 @@ share/xsl/docbook/params/template.xml
 share/xsl/docbook/params/tex.math.delims.xml
 share/xsl/docbook/params/tex.math.file.xml
 share/xsl/docbook/params/tex.math.in.alt.xml
+share/xsl/docbook/params/textdata.default.encoding.xml
 share/xsl/docbook/params/textinsert.extension.xml
 share/xsl/docbook/params/title.font.family.xml
 share/xsl/docbook/params/title.margin.left.xml
@@ -1327,6 +1387,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @unexec rm -f %D/share/xsl/docbook/catalog 2>&1 >/dev/null || true
 @dirrm share/xsl/docbook/xhtml
 @dirrm share/xsl/docbook/template
+@dirrm share/xsl/docbook/params
 @dirrm share/xsl/docbook/manpages
 @dirrm share/xsl/docbook/lib
 @dirrm share/xsl/docbook/javahelp
