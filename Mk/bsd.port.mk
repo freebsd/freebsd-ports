@@ -43,8 +43,11 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # PORTNAME		- Name of software.
 # PORTVERSION	- Version of software.
-# PKGNAME		- Always defined as ${PORTNAME}-${PORTVERSION}.  Do not
-#				  define this in your Makefile.
+# PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
+# PKGNAMESUFFIX	- Suffix to specify compilation options.
+# PKGNAME		- Always defined as
+#				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.
+#				  Do not define this in your Makefile.
 # DISTNAME		- Name of port or distribution used in generating
 #				  WRKSRC and DISTFILES below (default:
 #				  ${PORTNAME}-${PORTVERSION}).
@@ -1113,8 +1116,8 @@ FETCH_BEFORE_ARGS+=	-l
 	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
 	@${FALSE}
 .endif
-PKGNAME=	${PORTNAME}-${PORTVERSION}
-DISTNAME?=	${PKGNAME}
+PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+DISTNAME?=	${PORTNAME}-${PORTVERSION}
 .else
 # old style
 PKGNAME?=		${DISTNAME}
