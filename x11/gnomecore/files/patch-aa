@@ -1,14 +1,14 @@
---- configure.orig	Thu Dec 31 00:59:18 1998
-+++ configure	Fri Jan  1 11:32:51 1999
-@@ -1098,13 +1098,13 @@
+--- configure.orig	Wed Jan 13 10:36:02 1999
++++ configure	Thu Jan 14 21:55:14 1999
+@@ -1100,13 +1100,13 @@
  	    fi
  	
  	    if test "$no_gnome_config" = "yes"; then
 -              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1103: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-echo "configure:1105: checking for gnomeConf.sh file in $gnome_prefix" >&5
 -	      if test -f $gnome_prefix/gnomeConf.sh; then
 +              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1103: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++echo "configure:1105: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
 +	      if test -f $prefix/share/gnome/gnomeConf.sh; then
  	        echo "$ac_t""found" 1>&6
  	        echo "loading gnome configuration from" \
