@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 		ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/${PORTVERSION}/source/ \
@@ -22,6 +22,7 @@ MAN1=		kvirc.1
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
 USE_AUTOCONF=	yes
+USE_BZIP2=	yes
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
