@@ -1,0 +1,16 @@
+A couple of notes on this package/port...
+
+* I have included two scripts of my own design, postbin and mailbin.
+  They allow you to easily mail and post stuff using a fairly generic
+  (i.e. probably useful for most people) set of options.
+
+* Documentation and sample configuration files are located in
+  /usr/local/lib/xmitBin/.
+
+* A script, autoSend, has been included.  This script is intended to be
+  run automatically (e.g. by cron(8)).  It will allow you to periodically
+  post stuff on a regular basis.  See the "autoSend.txt" documentation
+  file for more information.  The script is located at
+  /usr/local/lib/xmitBin/autoSend.  Each user who wishes to use it
+  should copy it to a directory where scripts are kept (e.g. $HOME/bin),
+  and then modify it to suit him/her according to the directions.

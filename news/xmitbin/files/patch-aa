@@ -1,0 +1,60 @@
+--- Makefile.old	Fri May 15 19:21:24 1998
++++ Makefile	Fri May 15 19:22:47 1998
+@@ -1,5 +1,5 @@
+ # Installation directory...
+-INSTDIR	= /mnt3/deej
++INSTDIR	= ${PREFIX}
+ # Where to install the program itself...
+ BINDIR 	= ${INSTDIR}/bin
+ # Where to put the man page...
+@@ -14,7 +14,7 @@
+ # (NOTE!  This also applies to "sendmail" and "ELM" usage!)
+ # This option when used with "sendmail" provides the greatest amount of
+ # xmitBin functionality, so it's the default...
+-CCOPTS 	= -DSysVMail
++# CCOPTS 	= -DSysVMail
+ # ...BSD mailing on a BSD system...
+ # CCOPTS	=
+ # ...you might also want to define "SYSV" if you're on a System V machine
+@@ -24,11 +24,13 @@
+ # ...of course, you could do both, too!
+ # CCOPTS 	= -DSYSV -DSysVMail
+ # ...options for gcc on a Linux 386/486 system...
+-# CCOPTS	= -06 -Wall -DSYSV -DSysVMail
++# CCOPTS	= -06 -m486 -Wall -DSYSV -DSysVMail
+ # ...options for SCO UNIX...
+ # CCOPTS	= -DSCO -DSYSV
+ # ...options for Apollo...
+ # CCOPTS	= -DAPOLLO -DSysVMail
++# ...options for FreeBSD...
++CCOPTS		= -O6 -m486 -Wall -DSysVMail
+ 
+ #
+ # END OF USER-CONFIGURABLE ITEMS - NO MODIFICATIONS BEYOND THIS POINT SHOULD
+@@ -44,13 +46,23 @@
+ clean:
+ 	rm -f ${TARGET} ${OBJS}
+ 
+-install: ${BINDIR}/${TARGET} ${MANDIR}/man1/${TARGET}.1
++install: ${BINDIR}/${TARGET} ${MANDIR}/man1/${TARGET}.1 extras
+ 
+ ${BINDIR}/${TARGET}: ${TARGET}
+-	cp ${TARGET} ${BINDIR}
++	install -c -s -o root -g wheel -m 111 ${TARGET} ${BINDIR}/${TARGET}
+ 
+ ${MANDIR}/man1/${TARGET}.1: ${TARGET}.1
+-	cp ${TARGET}.1 ${MANDIR}/man1
++	install -c -m 644 -o bin -g bin ${TARGET}.1 ${MANDIR}/man1/${TARGET}.1
++
++extras:	mailbin postbin
++	install -c -o root -g wheel -m 755 mailbin ${BINDIR}/mailbin
++	install -c -o root -g wheel -m 755 postbin ${BINDIR}/postbin
++	install -c -d -o bin -g bin -m 755 ${INSTDIR}/lib/xmitBin
++	install -c -o root -g wheel -m 755 autoSend ${INSTDIR}/lib/xmitBin/autoSend
++	install -c -o root -g wheel -m 644 doList.awk ${BINDIR}/doList.awk
++	install -c -o root -g wheel -m 644 mkList.awk ${BINDIR}/mkList.awk
++	install -c -o bin -g bin -m 644 autoSend.txt ${INSTDIR}/lib/xmitBin/autoSend.txt
++	install -c -o bin -g bin -m 644 anonymous.anondat ${INSTDIR}/lib/xmitBin/anonymous.anondat
+ 
+ ${TARGET}: ${OBJS}
+ 	${CC} -o ${TARGET} ${OBJS}

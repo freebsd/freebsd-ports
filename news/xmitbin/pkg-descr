@@ -1,0 +1,14 @@
+xmitBin allows you to post large binary postings (well, any large posting)
+to usenet newsgroups, to someone via e-mail, or both.  It will post
+intelligently, meaning uuencoding binaries, splitting large files across
+multiple postings, and generally making it easier for those reading your
+posts to find and decode all pieces of your post, and not getting usenet
+site admins mad at you for posting large binaries in one chunk.  If you've
+ever wanted to post to any of the alt.binaries.* groups, this is the tool
+for you!
+
+I have included two shell scripts of my own, "mailbin" and "postbin".
+These scripts make it easy to mail and post (respectively) stuff using
+a good default set of command line switches.
+
+[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG>. ]

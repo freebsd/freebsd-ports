@@ -1,0 +1,13 @@
+diff -ruN autoSend.old autoSend
+--- autoSend.old	Wed Sep 15 03:14:16 1993
++++ autoSend	Sat Nov 29 04:15:37 1997
+@@ -1,7 +1,7 @@
+ #!/bin/csh -f
+ # These next two definitions need to be configured for each user!
+-set datDir = /mnt3/deej/gif/autoSend
+-set binDir = /mnt3/deej/bin
++set datDir = /tmp/autoSend
++set binDir = /usr/local/bin
+ # OK, all standard stuff now...
+ echo ""
+ echo "AutoSend run started `date`"
