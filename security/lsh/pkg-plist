@@ -1,9 +1,11 @@
 bin/lsh
 bin/lsh_keygen
 bin/lsh_writekey
-bin/sexp_conv
+bin/sexp-conv
 bin/lsh-authorize
 bin/srp-gen
+bin/lsh-decode-key
+bin/ssh-conv
 sbin/lshd
 sbin/lsh_proxy
 @unexec install-info --delete %D/info/lsh.info %D/info/dir
