@@ -158,6 +158,7 @@
     SUBDIR += hlserver-snow
     SUBDIR += hlserver-svencoop
     SUBDIR += hlserver-trainhunters
+    SUBDIR += hlserver-ts
     SUBDIR += hlserver-tsc
     SUBDIR += hlserver-vs
     SUBDIR += hlserver-wasteland
