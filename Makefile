@@ -1,11 +1,13 @@
-# $Id: Makefile,v 1.15 1995/03/23 21:03:32 gpalmer Exp $
+# $Id: Makefile,v 1.16 1995/04/01 13:05:35 jkh Exp $
 #
 SUBDIR= archivers audio cad comms databases devel editors games graphics \
 	japanese lang mail math net news print shells utils x11
 
 .include <bsd.port.subdir.mk>
 
-index:	${.CURDIR}/INDEX
+index:
+	@rm -f ${.CURDIR}/INDEX
+	@make ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
 	@echo -n "Generating INDEX - please wait.."
