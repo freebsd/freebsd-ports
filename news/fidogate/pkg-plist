@@ -1,6 +1,5 @@
-@comment $FreeBSD: /tmp/pcvs/ports/news/fidogate/pkg-plist,v 1.5 2000-11-30 14:19:27 kevlo Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/news/fidogate/pkg-plist,v 1.6 2001-03-10 06:20:44 dinoex Exp $
 libexec/fidogate/areafix.help
-libexec/fidogate/areasbbssync
 libexec/fidogate/charset.bin
 libexec/fidogate/charset.map
 libexec/fidogate/ffx
@@ -33,7 +32,6 @@ libexec/fidogate/ftnseq
 libexec/fidogate/ftntick
 libexec/fidogate/ftntickpost
 libexec/fidogate/ftntoss
-libexec/fidogate/hosts2dns
 libexec/fidogate/latest
 libexec/fidogate/logcheck
 libexec/fidogate/logdaily
@@ -44,14 +42,17 @@ libexec/fidogate/nl-autoupd
 libexec/fidogate/nl-check
 libexec/fidogate/nl-del
 libexec/fidogate/nl-diff
+libexec/fidogate/out-freq
 libexec/fidogate/out-ls
 libexec/fidogate/out-manip
 libexec/fidogate/out-rm0
 libexec/fidogate/out-rmbsy
+libexec/fidogate/outb
+libexec/fidogate/outb-kill
 libexec/fidogate/pktdebug
 libexec/fidogate/pktmore
-libexec/fidogate/recvuu
 libexec/fidogate/rfc2ftn
+libexec/fidogate/runafutil
 libexec/fidogate/runchklock
 libexec/fidogate/runffx
 libexec/fidogate/rungate
@@ -66,8 +67,6 @@ libexec/fidogate/runtoss
 libexec/fidogate/rununpack
 libexec/fidogate/send-ffx
 libexec/fidogate/send-fidogate
-libexec/fidogate/senduu
-libexec/fidogate/senduumail
 libexec/fidogate/sumcrc
 @dirrm libexec/fidogate
 share/doc/fidogate/dirs.html
