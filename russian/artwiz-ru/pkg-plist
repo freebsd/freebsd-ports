@@ -1,0 +1,24 @@
+lib/X11/fonts/artwiz-ru/anorexia-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/anorexia-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/anorexia.pcf
+lib/X11/fonts/artwiz-ru/cure-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/cure-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/cure.pcf
+lib/X11/fonts/artwiz-ru/fonts.alias
+lib/X11/fonts/artwiz-ru/fonts.dir
+lib/X11/fonts/artwiz-ru/gelly-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/gelly-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/gelly.pcf
+lib/X11/fonts/artwiz-ru/glisp-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/glisp-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/glisp.pcf
+lib/X11/fonts/artwiz-ru/mints-mild-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/mints-mild-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/mints-mild.pcf
+lib/X11/fonts/artwiz-ru/nu-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/nu-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/nu.pcf
+lib/X11/fonts/artwiz-ru/snap-koi8-r.pcf
+lib/X11/fonts/artwiz-ru/snap-microsoft-cp1251.pcf
+lib/X11/fonts/artwiz-ru/snap.pcf
+@dirrm lib/X11/fonts/artwiz-ru
