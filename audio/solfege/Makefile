@@ -8,7 +8,7 @@
 
 PORTNAME=	solfege
 PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +20,10 @@ COMMENT=	Free eartraining software
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		swig:${PORTSDIR}/devel/swig13 \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
+		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix libgtkhtml
+USE_GNOME=	gnomehack gnomeprefix pygnomeextras
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
