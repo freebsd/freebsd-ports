@@ -1,0 +1,9 @@
+This is a port of ZClock, a simple but highly customizable clock applet for
+the GNOME desktop environment. It allows you to display the time using a
+POSIX strftime() format, and has many other useful options such as borders
+and an uptime display in the tooltip. It is meant as a power-user replacement
+for the standard GNOME clock applet.
+
+WWW: http://www.malfunktion.net/code/zclock.html
+
+-zack <zack@malfunktion.net>
