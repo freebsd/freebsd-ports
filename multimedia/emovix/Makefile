@@ -21,11 +21,6 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Configure fails"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
