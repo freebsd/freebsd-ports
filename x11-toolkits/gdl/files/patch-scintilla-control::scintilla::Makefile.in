@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- scintilla-control/scintilla/Makefile.in	2001/07/24 10:59:04	1.1
++++ scintilla-control/scintilla/Makefile.in	2001/07/24 10:59:42
+@@ -144,7 +144,7 @@
+ gnomelocaledir = @gnomelocaledir@
+ l = @l@
+ 
+-INCLUDES = `gtk-config --cflags` -DGTK -DSCI_LEXER -W -Wall -I .
++INCLUDES = ${GTK_CFLAGS} -DGTK -DSCI_LEXER -W -Wall -I .
+ 
+ noinst_LIBRARIES = libscintilla-widget.a libthrowaway.a
+ 

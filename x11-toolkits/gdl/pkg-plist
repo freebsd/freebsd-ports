@@ -1,0 +1,16 @@
+bin/scintilla-control
+etc/gdlConf.sh
+include/gdl/GDL.h
+include/gdl/gdl-server-manager.h
+include/gdl/gdl-tools.h
+include/gdl/gdl.h
+lib/libgdl.a
+lib/libgdl.so
+lib/libgdl.so.0
+share/aclocal/gdl.m4
+share/gnome/idl/GDL.idl
+share/gnome/idl/editor-buffer.idl
+share/gnome/idl/editor-gutter.idl
+share/gnome/oaf/Bonobo_Control_Scintilla.oaf
+share/gnome/ui/scintilla-ui.xml
+@dirrm include/gdl
