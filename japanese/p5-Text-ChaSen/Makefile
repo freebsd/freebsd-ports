@@ -17,7 +17,7 @@ LIB_DEPENDS=	chasen.0:${PORTSDIR}/japanese/chasen-base
 
 MD5_FILE=	${.CURDIR}/../chasen-base/distinfo
 
-CHASEN_VERSION=	2.2.7
+CHASEN_VERSION=	2.2.9
 
 WRKSRC=		${WRKDIR}/chasen-${CHASEN_VERSION}/perl
 PERL_CONFIGURE=	yes
