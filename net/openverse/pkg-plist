@@ -1,0 +1,99 @@
+bin/OpenVerse
+lib/OpenVerse/anims/default.av
+lib/OpenVerse/anims/SexyTux.av
+lib/OpenVerse/anims/Bob.av
+lib/OpenVerse/anims/BSDdevil.av
+lib/OpenVerse/icons/bulb.gif
+lib/OpenVerse/icons/wink.gif
+lib/OpenVerse/icons/vhandle.xbm
+lib/OpenVerse/icons/vhandle.mask
+lib/OpenVerse/icons/unlocked.gif
+lib/OpenVerse/icons/unknown.gif
+lib/OpenVerse/icons/steam.gif
+lib/OpenVerse/icons/smile.gif
+lib/OpenVerse/icons/rubber.gif
+lib/OpenVerse/icons/rateit.gif
+lib/OpenVerse/icons/pinfo.gif
+lib/OpenVerse/icons/ov2.ico
+lib/OpenVerse/icons/notes.gif
+lib/OpenVerse/icons/mvi.xbm
+lib/OpenVerse/icons/mv2.xpm
+lib/OpenVerse/icons/mv2.xbm
+lib/OpenVerse/icons/mv2.gif
+lib/OpenVerse/icons/minimv.ico
+lib/OpenVerse/icons/minimv.gif
+lib/OpenVerse/icons/log.gif
+lib/OpenVerse/icons/locked.gif
+lib/OpenVerse/icons/loading.gif
+lib/OpenVerse/icons/hhandle.xbm
+lib/OpenVerse/icons/hhandle.mask
+lib/OpenVerse/icons/hearts.gif
+lib/OpenVerse/icons/ftpurl.gif
+lib/OpenVerse/icons/frown.gif
+lib/OpenVerse/icons/emailurl.gif
+lib/OpenVerse/icons/default.gif
+lib/OpenVerse/icons/dccfile.gif
+lib/OpenVerse/icons/wwwurl.gif
+lib/OpenVerse/images/ov_tram_logo.gif
+lib/OpenVerse/images/devil.gif
+lib/OpenVerse/images/default.gif
+lib/OpenVerse/images/bob.gif
+lib/OpenVerse/language/Arabic
+lib/OpenVerse/language/ValSpeak
+lib/OpenVerse/language/PigLatin
+lib/OpenVerse/language/Jive
+lib/OpenVerse/language/Italiano
+lib/OpenVerse/language/Francais
+lib/OpenVerse/language/Finnish
+lib/OpenVerse/language/Españoles
+lib/OpenVerse/language/English
+lib/OpenVerse/language/Convert.tcl
+lib/OpenVerse/language/Chef
+lib/OpenVerse/language/h4x0r
+lib/OpenVerse/lib/AvEd.tcl
+lib/OpenVerse/lib/header.mv
+lib/OpenVerse/lib/URL.tcl
+lib/OpenVerse/lib/SetFuncs.tcl
+lib/OpenVerse/lib/ServGUI.tcl
+lib/OpenVerse/lib/Plugin.tcl
+lib/OpenVerse/lib/Passage.tcl
+lib/OpenVerse/lib/Objects.tcl
+lib/OpenVerse/lib/InitMain.tcl
+lib/OpenVerse/lib/IOFuncs.tcl
+lib/OpenVerse/lib/Globals.tcl
+lib/OpenVerse/lib/GifHeader.tcl
+lib/OpenVerse/lib/Debug.tcl
+lib/OpenVerse/lib/ChtFuncs.tcl
+lib/OpenVerse/lib/BugRpt.tcl
+lib/OpenVerse/lib/Bubble.tcl
+lib/OpenVerse/lib/BaseFunc.tcl
+lib/OpenVerse/lib/Avatars.tcl
+lib/OpenVerse/lib/tkohlp.tcl
+lib/OpenVerse/panels/NotFun
+lib/OpenVerse/panels/KDE
+lib/OpenVerse/panels/Fun
+lib/OpenVerse/plugins/Query/PlugInit.tcl
+lib/OpenVerse/rooms/room.gif
+lib/OpenVerse/OpenVerse.tcl
+lib/OpenVerse/server.cfg
+lib/OpenVerse/server.tcl
+lib/OpenVerse/passageways.txt
+share/doc/OpenVerse/help/server.vars
+share/doc/OpenVerse/help/jive_About.ohlp
+share/doc/OpenVerse/help/Technical.ohlp
+share/doc/OpenVerse/help/PServ.ohlp
+share/doc/OpenVerse/help/OpenVerse.ohlp
+share/doc/OpenVerse/help/About.ohlp
+share/doc/OpenVerse/README
+@dirrm lib/OpenVerse/anims
+@dirrm lib/OpenVerse/icons
+@dirrm lib/OpenVerse/images
+@dirrm lib/OpenVerse/language
+@dirrm lib/OpenVerse/lib
+@dirrm lib/OpenVerse/panels
+@dirrm lib/OpenVerse/plugins/Query
+@dirrm lib/OpenVerse/plugins
+@dirrm lib/OpenVerse/rooms
+@dirrm share/doc/OpenVerse/help
+@dirrm lib/OpenVerse/
+@dirrm share/doc/OpenVerse/

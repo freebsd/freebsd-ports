@@ -199,6 +199,7 @@
     SUBDIR += openldap
     SUBDIR += openldap2
     SUBDIR += openmcu
+    SUBDIR += openverse
     SUBDIR += oproute
     SUBDIR += p0f
     SUBDIR += p5-Archie
