@@ -1,0 +1,10 @@
+--- configure.old	Mon Jan 17 09:53:40 2000
++++ configure	Mon Jan 17 09:52:44 2000
+@@ -1874,6 +1874,7 @@
+ 	case $TARGET in
+ 	# XXX fill in for busted systems
+ 	*-univel-*)	CONFIG_SOCKARGLENTYPE=size_t;;
++        *-freebsd4*)	CONFIG_SOCKARGLENTYPE=u_int32_t;;
+ 	*)		CONFIG_SOCKARGLENTYPE=int;;
+ 	esac
+     }
