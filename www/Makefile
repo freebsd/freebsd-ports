@@ -453,6 +453,7 @@
     SUBDIR += znavigator
     SUBDIR += zope
     SUBDIR += zope-cmf
+    SUBDIR += zope-cmfforum
     SUBDIR += zope-guf
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt

@@ -1,0 +1,57 @@
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/.cvsignore
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/CREDITS.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/DiscussionTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/DiscussionTool.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Extensions/Install.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Extensions/Install.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Forum.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Forum.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/ForumPermissions.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/ForumPermissions.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/HISTORY.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/INSTALL.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Post.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Post.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/TODO.txt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces/Forum.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces/Forum.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces/Post.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces/Post.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/discussion/viewThreadsAtBottom.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/email_button.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_icon.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_listing.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_macros.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_post_macros.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_post_message.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_post_toForum.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_post_toForum.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_post_toSearch.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_post_toSearch.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_search.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/forum_search_form.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/getObjSize.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/icon_folder.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/icon_post.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/nt.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/post_add.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/post_post_message.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/post_preview.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/post_view.pt
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/queryCatalog.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/viewMessagesTree.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/tool.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFForum/version.txt
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum/discussion
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins/zpt_forum
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFForum/skins
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFForum/interfaces
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFForum/Extensions
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFForum

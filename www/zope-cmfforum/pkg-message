@@ -1,0 +1,23 @@
+CMFForum
+
+	To complete the installation of CMFForum:
+
+	- Restart Zope.  This may be done from the Zope Control Panel.
+
+	- Add an External Method with the following settings in your
+	  CMF/Plone root using the Zope Management Interface (ZMI):
+
+		id: install_forum
+		title: Install Forum (optional)
+		module: CMFForum.Install
+		function: install
+
+	If you want to replace CMF's DiscussionTool with CMFForum's one:
+
+	- Go to your ZMI and add an External Method with these settings:
+
+		id: install_forum_discussions
+		title: Install CMFForum DiscussionTool (optional)
+		module: CMFForum.Install
+		function: install_discussions
+
