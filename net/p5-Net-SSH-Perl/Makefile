@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jesper@FreeBSD.org
 COMMENT=	Perl5 module implements both the SSH1 and SSH2 protocols
 
+MANUAL_PACKAGE_BUILD=infinite loop prompting for input
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
