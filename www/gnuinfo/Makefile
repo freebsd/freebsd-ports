@@ -1,0 +1,27 @@
+# New ports collection makefile for:	gnuinfo
+# Version required:	1.3
+# Date created:		Tue Oct 12 00:02:04 MET DST 1999
+# Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	gnuinfo-1.3
+CATEGORIES=	www
+MASTER_SITES=	http://user.cs.tu-berlin.de/~kraxel/info2html/
+
+MAINTAINER=	nox@jelal.kn-bremen.de
+
+NO_WRKSUBDIR=	yes
+
+###
+# Use these options for Apache:
+###
+CGIDIR=		${PREFIX}/share/apache/cgi-bin
+
+do-install:
+	${MKDIR} ${CGIDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/gnuinfo ${CGIDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/gnuinfo.local ${FILESDIR}/gnuinfo.X11R6 ${CGIDIR}
+
+.include <bsd.port.mk>
