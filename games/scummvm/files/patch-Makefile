@@ -1,0 +1,32 @@
+--- Makefile.orig	Tue Jan 15 08:06:24 2002
++++ Makefile	Tue Mar 26 13:17:48 2002
+@@ -1,12 +1,10 @@
+ # $Header: /cvsroot/scummvm/scummvm/Makefile,v 1.19 2002/01/13 19:48:30 strigeus Exp $
+ 
+-CC      = gcc
+-CFLAGS  = -g -Wno-multichar
+ DEFINES = -DUNIX -DUSE_ADLIB
+ LDFLAGS :=
+-INCLUDES:= `sdl-config --cflags` -I./ -I./sound
+-CPPFLAGS= $(DEFINES) $(INCLUDES)
+-LIBS	= `sdl-config --libs` -lreadline -lncurses -lhistory -lm
++INCLUDES:= `sdl11-config --cflags` -I./ -I./sound
++CPPFLAGS+= $(DEFINES) $(INCLUDES)
++LIBS	= `sdl11-config --libs` -lreadline -lncurses -lhistory -lm
+ ZIPFILE := scummvm-`date '+%Y-%m-%d'`.zip
+ 
+ INCS	= scumm.h scummsys.h stdafx.h
+@@ -22,12 +20,12 @@
+ 	scummvm.dsp scummvm.dsw sound/fmopl.h gui.h sound.h
+ 
+ .cpp.o:
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
++	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
+ 
+ all: scummvm
+ 
+ scummvm: $(OBJS)
+-	$(CC) $(LDFLAGS) -o $(@) $(OBJS) $(LIBS)
++	$(CXX) $(LDFLAGS) -o $(@) $(OBJS) $(LIBS)
+ 
+ $(OBJS): Makefile 
