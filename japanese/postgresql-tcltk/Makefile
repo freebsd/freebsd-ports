@@ -1,4 +1,4 @@
-# New ports collection makefile for:	PostgreSQL
+# New ports collection makefile for:	PostgreSQL tcltk
 # Date created:		7 Jun 2000
 # Whom:			Tomokatsu Saito <saito@a2z.co.jp>
 #
@@ -11,11 +11,14 @@ CATEGORIES=	japanese databases
 MAINTAINER=	saito@a2z.co.jp
 COMMENT=	An TCL interface to the database PostgreSQL, including a tk GUI
 
+POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES
 .include <${.CURDIR}/../../databases/postgresql7/Makefile>
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
-		pq:${PORTSDIR}/databases/postgresql7
+		pq:${PORTSDIR}/databases/postgresql7 \
+		tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
+		tk80jp.1:${PORTSDIR}/japanese/tk80
 
 TCLVERSION?=	8.0jp
 PLIST_SUB+=	TCLVERSION=${TCLVERSION}
@@ -26,15 +29,16 @@ CONFIGURE_ARGS=	--with-tcl \
 TCL_INCDIR=	${LOCALBASE}/include/tcl${TCLVERSION}
 TCLCONFIG=	${LOCALBASE}/lib/tcl${TCLVERSION}
 MAKE_ENV+=	TCL_INCDIR=${TCL_INCDIR}
-
+CONFIGURE_ENV+=	LIBS="-lm -L${LOCALBASE}/lib -ltcl${TCLVERSION:S/.//}" \
+	               CFLAGS=-DPGTCL_USE_TCLOBJ
 CONFIGURE_ARGS+= --with-tkconfig="${TKCONFIG}"
 TK_INCDIR=	${LOCALBASE}/include/tk${TCLVERSION}
-CONFIGURE_ENV+=	WISH=${LOCALBASE}/bin/wish${TCLVERSION}
-LIB_DEPENDS+=	tcl80jp:${PORTSDIR}/japanese/tcl80 \
-		tk80jp:${PORTSDIR}/japanese/tk80
 TKCONFIG=	${LOCALBASE}/lib/tk${TCLVERSION}
 INCDIRS=	${TCL_INCDIR}:${TK_INCDIR}
 PLIST_SUB+=	TK=""
+
+pre-build:
+	cd ${WRKSRC}/src/port; ${GMAKE}
 
 do-build:
 	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh
