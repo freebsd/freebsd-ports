@@ -1,41 +1,25 @@
---- src/Makefile.in.orig	Tue Oct 24 02:24:41 2000
-+++ src/Makefile.in	Mon Nov 20 18:54:10 2000
-@@ -49,10 +49,10 @@
+--- src/Makefile.in.orig	Fri Dec  8 08:49:16 2000
++++ src/Makefile.in	Thu Feb  8 22:58:33 2001
+@@ -40,8 +40,8 @@
  
- PLUG_SOURCES =
+-iconv : $(srcdir)/iconv.c ../lib/libiconv.la
+-	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -I../lib $(srcdir)/iconv.c ../lib/libiconv.la -o $@
++iconv : $(srcdir)/iconv.c ../lib/libgiconv.la
++	$(LIBTOOL_LINK) $(CC) $(CFLAGS) $(INCLUDES) -I../lib $(srcdir)/iconv.c ../lib/libgiconv.la -o $@
  
--all : libiconv.la @PLUGLIB@
-+all : libgiconv.la @PLUGLIB@
+ # The following rule is necessary to avoid a toplevel "make -n check" failure.
+-../lib/libiconv.la :
+-	cd ../lib && $(MAKE) libiconv.la
++../lib/libgiconv.la :
++	cd ../lib && $(MAKE) libgiconv.la
  
--libiconv.la : $(OBJECTS)
--	$(LIBTOOL_LINK) $(CC) -o libiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) $(OBJECTS)
-+libgiconv.la : $(OBJECTS)
-+	$(LIBTOOL_LINK) $(CC) -o libgiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) $(OBJECTS)
+@@ -51,3 +51,3 @@
+ 	if [ ! -d $(DESTDIR)$(bindir) ] ; then mkdir $(DESTDIR)$(bindir) ; fi
+-	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/iconv
++	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/giconv
  
- libiconv_plug.so : libiconv_plug_@OS@.so
- 	$(RM) libiconv_plug.so
-@@ -79,13 +79,13 @@
- # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
- install-lib : all force
- 	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
--	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(libdir)/libiconv.la
-+	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(libdir)/libgiconv.la
- 
- install : all force
- 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
- 	if [ ! -d $(DESTDIR)$(exec_prefix) ] ; then mkdir $(DESTDIR)$(exec_prefix) ; fi
- 	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
--	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(DESTDIR)$(libdir)/libiconv.la
-+	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(DESTDIR)$(libdir)/libgiconv.la
- 	if test -n "@PLUGLIB@"; then $(INSTALL_DATA) @PLUGLIB@ $(DESTDIR)$(libdir)/@PLUGLIB@.new && mv $(DESTDIR)$(libdir)/@PLUGLIB@.new $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
- 
- installdirs : force
-@@ -94,7 +94,7 @@
- 	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
- 
+@@ -59,3 +59,3 @@
  uninstall : force
--	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libiconv.la
-+	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libgiconv.la
- 	if test -n "@PLUGLIB@"; then $(RM) $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
+-	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(bindir)/iconv
++	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(bindir)/giconv
  
- check : all

@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION=	1.4
+PORTVERSION=	1.5.1
 CATEGORIES=	converters devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libcharset/configure
+CONFIGURE_ARGS=	--enable-static
 INSTALLS_SHLIB=	yes
 
+MAN1=		giconv.1
 MAN3=		giconv.3 giconv_open.3 giconv_close.3
 
 .include <bsd.port.mk>
