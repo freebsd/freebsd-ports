@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.98 1998/02/20 08:07:48 tg Exp $
+# $Id: LEGAL,v 1.99 1998/02/22 00:24:06 steve Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -100,7 +100,6 @@ taipei16.bdf.gz		ports/chinese/big5con	font is transformed from
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 tkman-2.*		ports/misc/tkman	Don't sell for profit.
-tth-*			ports/textproc/tth	No commercial use.
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
