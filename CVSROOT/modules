@@ -1137,6 +1137,7 @@ cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
 cvsmonitor	ports/devel/cvsmonitor
+cvsnt		ports/devel/cvsnt
 cvspadm		ports/devel/cvspadm
 cvsplot		ports/devel/cvsplot
 cvsps		ports/devel/cvsps
