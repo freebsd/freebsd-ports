@@ -1,6 +1,6 @@
---- browser/app/mozilla.in.orig	Sat Oct  2 02:05:53 2004
-+++ browser/app/mozilla.in	Sat Oct  2 02:06:15 2004
-@@ -110,6 +110,7 @@
+--- browser/app/mozilla.in.orig	Sat Nov 13 00:54:51 2004
++++ browser/app/mozilla.in	Sat Nov 13 00:57:22 2004
+@ -110,6 +110,7 @@
    # Check default compile-time libdir
    if [ -x "$moz_libdir/run-mozilla.sh" ]; then
      dist_bin="$moz_libdir"
@@ -8,3 +8,35 @@
    else 
      echo "Cannot find mozilla runtime directory. Exiting."
      exit 1
+@@ -207,12 +207,31 @@
+       script_args="$script_args -d $2"
+       shift 2
+       ;;
++    -UILocale)
++      moreargs="$moreargs -UILocale $2"
++      _done_locale="YES"
++      shift 2
++      ;;
++    -UIRegion)
++      if [ -n "${_done_locale}" ]; then
++        moreargs="$moreargs -UIRegion $2"
++      fi
++      shift 2
++      ;;
+     *)
+       moreargs="$moreargs \"$1\""
+       shift 1
+       ;;
+   esac
+ done
++
++if [ ! -n "${_done_locale}" -a -n "${MOZILLA_UILOCALE}" ]; then
++    if [ -n "${MOZILLA_UIREGION}" ]; then
++      moreargs="-UIRegion ${MOZILLA_UIREGION} $moreargs"
++    fi
++    moreargs="-UILocale ${MOZILLA_UILOCALE} $moreargs"
++fi
++unset _done_locale
+ 
+ export MRE_HOME
+ eval "set -- $moreargs"
