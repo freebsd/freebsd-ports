@@ -11,6 +11,6 @@ System/Headers/objc/encoding.h
 System/Headers/objc/typedstream.h
 System/Headers/objc/thr.h
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/libobjc.so
+System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/libobjc.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/libobjc.so.%%VERSION%%
 @dirrm System/Headers/objc
-
