@@ -1,0 +1,8 @@
+ntalk is a chat console app written with ncurses.  It's designed to work in
+all kinds of networks  (LAN/WAN) and to be much more friendly and functional
+than Unix talk.
+
+WWW: http://kab.w.interia.pl/
+
+- Gea-Suan Lin
+  gslin@ccca.nctu.edu.tw
