@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	. old-versions old
 MAINTAINER=	dwcjr@FreeBSD.org
 
 .if defined(WITH_RECYCLE)
-PATCH_SITES+=	http://www.amherst.edu/~bbstone/recycle_bin/2.2.2/
+PATCH_SITES+=	http://www.amherst.edu/~bbstone/recycle_bin/2.2.3/
 PATCHFILES+=	proto.h.patch loadparm.c.patch reply.c.patch
 .endif
 
