@@ -1,0 +1,10 @@
+--- vfs/ftpfs.c.orig	Sat Mar 18 07:43:43 2000
++++ vfs/ftpfs.c	Mon Mar 20 10:32:18 2000
+@@ -57,6 +57,7 @@
+ /* Namespace pollution: horrible */
+ 
+ #include <netdb.h>		/* struct hostent */
++#include <sys/types.h>
+ #include <sys/socket.h>		/* AF_INET */
+ #include <netinet/in.h>		/* struct in_addr */
+ #ifdef HAVE_SETSOCKOPT

@@ -61,8 +61,8 @@
  	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(man1dir)/$(manprefix)mcedit.$(manext)
  	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
  
---- lib/Makefile.in.orig	Thu Sep 30 04:39:38 1999
-+++ lib/Makefile.in	Sat Oct  9 15:03:45 1999
+--- lib/Makefile.in.orig	Sat Mar 18 07:43:44 2000
++++ lib/Makefile.in	Mon Mar 20 10:46:31 2000
 @@ -12,8 +12,8 @@
  # Distribution variables
  #
@@ -71,7 +71,7 @@
 -LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
 +LIBFILES_IN = mc.ext.in
 +LIBFILES_OUT = mc.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.lib mc.menu
+ LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu
  SUPPBIN_IN = mc.csh.in mc.sh.in
  SUPPBIN_OUT =  mc.csh mc.sh
 @@ -62,7 +62,7 @@
