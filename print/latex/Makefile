@@ -45,6 +45,7 @@ install:
 	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/lib/texmf/makeindx)
 	@(cd ${WRKSRC}/packages/tools; for f in *.sty *.tex; do \
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/tex; fi; done)
+	@(cd ${PREFIX}/bin; ln -s virtex latex)
 
 .include "Makefile.inc"
 
