@@ -6857,6 +6857,7 @@ xeji		ports/games/xeji
 xemacs-additional-packages	ports/editors/xemacs-additional-packages
 xemacs-basic-mule-packages	ports/editors/xemacs-basic-mule-packages
 xemacs-comm-packages	ports/editors/xemacs-comm-packages
+xemacs-devel	ports/editors/xemacs-devel
 xemacs-games-packages	ports/editors/xemacs-games-packages
 xemacs-libs-packages	ports/editors/xemacs-libs-packages
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
