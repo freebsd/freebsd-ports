@@ -18,6 +18,8 @@ DISTNAME=	clara-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optical character recognition (OCR) utility
 
+RUN_DEPENDS=	pnmenlarge:${PORTSDIR}/graphics/netpbm
+
 USE_XLIB=	yes
 USE_PERL5=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
