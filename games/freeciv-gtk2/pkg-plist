@@ -4,4 +4,5 @@ share/freeciv/Freeciv
 share/freeciv/intro.xpm
 share/freeciv/radar.xpm
 share/freeciv/tiles.xpm
+share/freeciv/units.xpm
 @dirrm share/freeciv
