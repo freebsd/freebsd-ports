@@ -4,9 +4,10 @@ execute the same way, but in some erroneous cases the error messages may
 be slightly different. The  patch gets rid of a lot  of sprintf and will
 make your scripts faster, especially  when fetching multiple rows of the
 same queries.
+
 --- sql.cc	Fri Aug 13 15:28:56 1999
-+++ sql.cc	Thu Jul 13 16:26:30 2000
-@@ -12,24 +12,7 @@
++++ sql.cc	Thu Apr  1 17:04:56 2004
+@@ -12,24 +12,11 @@
  
 -const char* HANDLE_PREFIX = "sql";
 -const char* RESULT_PREFIX = "res";
@@ -24,7 +25,10 @@ same queries.
 -	}
 -	return (atoi(txt+prefixLen));
 -}
--
++#ifndef CONST84
++#	define CONST84
++#endif
+ 
  // -------------------------------------------------------------
 -int selectdbCmd(Tcl_Interp *interp, Sql_interface *conn, char *dbname) {
 +int selectdbCmd(Tcl_Interp *interp, Sql_interface *conn, Tcl_Obj *const dbname) {
@@ -34,17 +38,17 @@ same queries.
 +	if (conn->selectdb(Tcl_GetString(dbname))) {
 +		Tcl_SetObjResult(interp, dbname);
  		return TCL_OK;
-@@ -38,3 +21,3 @@
+@@ -38,3 +25,3 @@
  	// An error occured.
 -	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_VOLATILE);
 +	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_STATIC);
  	return TCL_ERROR;
-@@ -47,3 +30,3 @@
+@@ -47,3 +34,3 @@
  	// An error occured.
 -	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_VOLATILE);
 +	Tcl_SetResult(interp, conn->getErrorMsg(), TCL_STATIC);
  	return TCL_ERROR;
-@@ -60,9 +43,9 @@
+@@ -60,9 +47,9 @@
  int queryCmd(Tcl_Interp *interp, Sql_interface *conn, char *cmd) {
 -	int handle = -1;
 +	int handle;
@@ -57,7 +61,7 @@ same queries.
 -	sprintf(interp->result, "%s%d", RESULT_PREFIX, handle);
 +	Tcl_SetObjResult(interp, Tcl_NewIntObj(handle));
  	return TCL_OK;
-@@ -71,7 +54,3 @@
+@@ -71,7 +58,3 @@
  // -------------------------------------------------------------
 -int endqueryCmd(Tcl_Interp *interp, Sql_interface *conn, char *handle) {
 -	int resHandle = 0;
@@ -66,7 +70,7 @@ same queries.
 -	}
 +int endqueryCmd(Tcl_Interp *interp, Sql_interface *conn, int resHandle) {
  	conn->endquery(resHandle);
-@@ -81,14 +60,4 @@
+@@ -81,14 +64,4 @@
  // -------------------------------------------------------------
 -int numrowsCmd(Tcl_Interp *interp, Sql_interface *conn, char *handle) {
 -	int resHandle = 0;
@@ -83,7 +87,7 @@ same queries.
 +int numrowsCmd(Tcl_Interp *interp, Sql_interface *conn, int resHandle) {
 +	Tcl_SetObjResult(interp, Tcl_NewIntObj(conn->numRows(resHandle)));
  	return TCL_OK;
-@@ -97,13 +66,3 @@
+@@ -97,13 +70,3 @@
  // -------------------------------------------------------------
 -int fetchrowCmd(Tcl_Interp *interp, Sql_interface *conn, char *handle) {
 -
@@ -98,7 +102,7 @@ same queries.
 -
 +int fetchrowCmd(Tcl_Interp *interp, Sql_interface *conn, int resHandle) {
  	Sql_row *row;
-@@ -124,6 +83,7 @@
+@@ -124,6 +87,7 @@
  //
 -int SqlCmd(ClientData clientData, Tcl_Interp *interp, int argc, char **argv) 
 +int SqlCmd(ClientData clientData, Tcl_Interp *interp,
@@ -109,7 +113,7 @@ same queries.
 +	if (objc == 1) {
 +		Tcl_WrongNumArgs(interp, 1, objv, "command ?handle?");
  		return TCL_ERROR;
-@@ -133,58 +93,58 @@
+@@ -133,58 +97,58 @@
  	Manager_sql *mgr = (Manager_sql *)clientData;
 -	int res = TCL_OK;
 +	int res;
@@ -127,7 +131,7 @@ same queries.
 -			strcpy(msg, basemsg);
 -			strcat(msg, errmsg);
 -			Tcl_SetResult(interp, msg, TCL_DYNAMIC);
-+	static char *subCmds[] = {
++	static CONST84 char * subCmds[] = {
 +		"exec", "query", "endquery", "fetchrow",
 +		"numrows", "disconnect", "selectdb", "connect",
 +		(char *)NULL
@@ -217,7 +221,7 @@ same queries.
 +			Tcl_AppendResult(interp, ": invalid result"
 +				" handle", NULL);
  			return TCL_ERROR;
-@@ -192,16 +152,26 @@
+@@ -192,16 +156,26 @@
  	}
 -	
 -	return res;
@@ -256,7 +260,13 @@ same queries.
 +	}
 +	return TCL_ERROR; /* not reachable */
  }
-@@ -226,7 +196,7 @@
+@@ -222,3 +196,4 @@
+ //
+-int Sql_Init(Tcl_Interp *interp) {
++int
++Sql_Init(Tcl_Interp *interp) {
+ 
+@@ -226,7 +201,7 @@
  
 -	Tcl_CreateCommand (interp, "sql", SqlCmd ,(ClientData) s,
 -										 (Tcl_CmdDeleteProc*) NULL);
