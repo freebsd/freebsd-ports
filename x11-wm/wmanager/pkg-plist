@@ -1,0 +1,10 @@
+bin/wmanager
+share/wmanager/wmanagerrc_sample
+share/wmanager/xinitrc_sample
+share/wmanager/FAQ
+share/wmanager/HISTORY
+share/wmanager/INSTALL
+share/wmanager/NEWS
+share/wmanager/README
+share/wmanager/TODO
+@dirrm share/wmanager
