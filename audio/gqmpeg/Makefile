@@ -10,7 +10,7 @@ DISTNAME=	gqmpeg-0.6.3
 CATEGORIES=	audio
 MASTER_SITES=	http://gqview.netpedia.net/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/
-EXTRACT_SUFX=	.src.tgz
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nacai@iname.com
 
