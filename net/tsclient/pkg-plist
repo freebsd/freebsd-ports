@@ -1,8 +1,13 @@
 bin/tsclient
 libdata/bonobo/servers/GNOME_TSClientApplet.server
 libexec/tsclient-applet
+share/gnome/application-registry/tsclient.applications
 share/gnome/apps/Internet/tsclient.desktop
+share/gnome/mime-info/tsclient.keys
+share/gnome/mime-info/tsclient.mime
 share/gnome/pixmaps/tsclient.png
+share/gnome/pixmaps/tsclient/banner-ar.png
+share/gnome/pixmaps/tsclient/banner-nl.png
 share/gnome/pixmaps/tsclient/banner.png
 share/gnome/pixmaps/tsclient/colors-hi.png
 share/gnome/pixmaps/tsclient/colors-lo.png
@@ -17,10 +22,14 @@ share/gnome/pixmaps/tsclient/program.png
 share/gnome/pixmaps/tsclient/size.png
 share/gnome/pixmaps/tsclient/sound.png
 share/gnome/pixmaps/tsclient/tsclient.png
+share/locale/ar/LC_MESSAGES/tsclient.mo
 share/locale/da_DK/LC_MESSAGES/tsclient.mo
 share/locale/es/LC_MESSAGES/tsclient.mo
 share/locale/fi/LC_MESSAGES/tsclient.mo
 share/locale/fr/LC_MESSAGES/tsclient.mo
 share/locale/gr/LC_MESSAGES/tsclient.mo
+share/locale/hu/LC_MESSAGES/tsclient.mo
+share/locale/nl_NL/LC_MESSAGES/tsclient.mo
+share/locale/pl/LC_MESSAGES/tsclient.mo
 share/locale/zh_CN/LC_MESSAGES/tsclient.mo
 @dirrm share/gnome/pixmaps/tsclient/

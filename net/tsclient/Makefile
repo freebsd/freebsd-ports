@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	tsclient
-PORTVERSION=	0.104
-PORTREVISION=	1
+PORTVERSION=	0.106
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomepro.com/tsclient/
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	A GNOME 2 frontend for rdesktop
 
-LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack gnomepanel
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g;' \
-		${WRKSRC}/applet/GNOME_TSClientApplet.server
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 post-install:
 	@${LN} -sf ${PREFIX}/share/gnome/pixmaps/tsclient/tsclient.png \
 		${PREFIX}/share/gnome/pixmaps/tsclient.png
+
 .include <bsd.port.mk>
