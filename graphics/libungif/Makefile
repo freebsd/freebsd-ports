@@ -1,19 +1,16 @@
 # New ports collection makefile for:	giflib
-# Version required:	2.3
+# Version required:	3.0
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/05 12:33:44 tg Exp $
 #
 
-DISTNAME=	giflib-2.3
+DISTNAME=	giflib-3.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ccil.org/~esr/
+MASTER_SITES=	http://www.ccil.org/~esr/giflib/
 
 MAINTAINER=	tg@FreeBSD.ORG
-
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
