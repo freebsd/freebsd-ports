@@ -221,6 +221,7 @@
     SUBDIR += pmail
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
+    SUBDIR += pop3vscan
     SUBDIR += popa3d
     SUBDIR += popa3d-before-sendmail
     SUBDIR += popd
