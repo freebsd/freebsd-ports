@@ -8,7 +8,7 @@
 PORTNAME=	boxes
 PORTVERSION=	1.0.1
 CATEGORIES=	misc
-MASTER_SITES=	http://www6.informatik.uni-erlangen.de/~tsjensen/software/boxes/download/ \
+MASTER_SITES=	http://boxes.thomasjensen.com/download/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/text
 EXTRACT_SUFX=	.src.tar.gz
