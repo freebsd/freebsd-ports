@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.146
-diff -u -r1.117 -r1.146
+retrieving revision 1.147
+diff -u -r1.117 -r1.147
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	27 May 2004 23:42:17 -0000	1.146
++++ webmagick.in	30 May 2004 18:54:37 -0000	1.147
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.146 2004/05/27 23:42:17 ache Exp $
++# $Id: webmagick.in,v 1.147 2004/05/30 18:54:37 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -697,7 +697,7 @@ diff -u -r1.117 -r1.146
 -    print( INDEX "<SCRIPT LANGUAGE=\"JavaScript\">\n" );
 +    print( INDEX q/<SCRIPT TYPE="text\/javascript" SRC="/ . $fileNames{'jsVariables'} . q!"></SCRIPT>! . "\n" );
 +    print( INDEX q/<SCRIPT TYPE="text\/javascript" SRC="/ . $fileNames{'jsFunctions'} . q!"></SCRIPT>! . "\n" );
-+    print( INDEX '<SCRIPT TYPE="text/javascript">\n' );
++    print( INDEX "<SCRIPT TYPE=\"text/javascript\">\n");
      print( INDEX q/document.write(returnFrameHTML());/ . "\n" );
      print( INDEX q/document.close();/ . "\n" );
      print( INDEX "</SCRIPT>\n" );
@@ -1183,7 +1183,7 @@ diff -u -r1.117 -r1.146
      print( JSINDEX "</HEAD>\n");
      print( JSINDEX "<BODY>\n");
 -    print( JSINDEX "<SCRIPT LANGUAGE=\"JavaScript\">\n");
-+    print( JSINDEX '<SCRIPT TYPE="text/javascript">\n');
++    print( JSINDEX "<SCRIPT TYPE=\"text/javascript\">\n");
      print( JSINDEX "  top.drawWindows();\n");
      print( JSINDEX "</SCRIPT>\n");
      print( JSINDEX "</BODY>\n");
