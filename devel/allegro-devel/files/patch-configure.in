@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Jul  4 05:17:59 2002
-+++ configure.in	Wed Nov  6 02:19:16 2002
-@@ -169,12 +169,12 @@
+--- configure.in.orig	Wed Oct 23 08:08:26 2002
++++ configure.in	Sun Nov 10 00:24:54 2002
+@@ -183,12 +183,12 @@
      TARGET_ARCH=
    fi
    if test "X$allegro_cv_support_fomit_frame_pointer" = "Xyes"; then
@@ -13,10 +13,10 @@
    ALLEGRO_DEBUG_CFLAGS="-g $WFLAGS -DDEBUGMODE"
 -  ALLEGRO_PROFILE_CFLAGS="-pg $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
 +  ALLEGRO_PROFILE_CFLAGS="-pg $TARGET_ARCH $CFLAGS -funroll-loops -ffast-math $WFLAGS"
-   if test "$allegro_cv_support_asm" != i386; then
-     CFLAGS="$CFLAGS -DALLEGRO_USE_C"
-     ALLEGRO_DEBUG_CFLAGS="$ALLEGRO_DEBUG_CFLAGS -DALLEGRO_USE_C"
-@@ -226,8 +226,8 @@
+   if test "X$allegro_cv_can_use_pipe" = "Xyes"; then
+     CFLAGS="-pipe $CFLAGS"
+     ALLEGRO_DEBUG_CFLAGS="-pipe $ALLEGRO_DEBUG_CFLAGS"
+@@ -245,8 +245,8 @@
    LINK_WITH_STATIC_LIBS=yes
    allegro_static_libraries=yes
  else
@@ -27,7 +27,7 @@
    LINK_WITH_STATIC_LIBS=no
    allegro_shared_libraries=yes
  fi
-@@ -254,13 +254,13 @@
+@@ -273,13 +273,13 @@
  fi
  if test "X$allegro_shared_libraries" = "Xyes"; then
    if test "X$allegro_build_normal_library" = "Xyes"; then
@@ -44,7 +44,7 @@
    fi
  fi
  AC_SUBST(ALLEGRO_LIB_TARGETS)
-@@ -504,7 +504,7 @@
+@@ -550,7 +550,7 @@
      ${MAKE-make} depend
    else
      AC_MSG_WARN([Non-GNU make detected, trying gmake to build dependencies.])

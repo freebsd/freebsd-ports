@@ -1,11 +1,39 @@
 MAN3=	\
 	ASSERT.3 \
+	AUDIOSTREAM.3 \
+	BITMAP.3 \
+	COLOR_MAP.3 \
+	COMPILED_SPRITE.3 \
+	DATAFILE.3 \
+	DIALOG.3 \
+	DIALOG_PLAYER.3 \
+	FONT.3 \
+	GFX_MODE.3 \
+	GFX_MODE_LIST.3 \
+	JOYSTICK_BUTTON_INFO.3 \
+	JOYSTICK_INFO.3 \
+	JOYSTICK_STICK_INFO.3 \
+	JOYSTIC_AXIS_INFO.3 \
 	MASK_COLOR_15.3 \
 	MASK_COLOR_16.3 \
 	MASK_COLOR_24.3 \
 	MASK_COLOR_32.3 \
 	MASK_COLOR_8.3 \
+	MATRIX.3 \
+	MATRIX_f.3 \
+	MENU.3 \
+	MIDI.3 \
+	PACKFILE.3 \
+	PALETTE.3 \
+	QUAT.3 \
+	RGB.3 \
+	RGB_MAP.3 \
+	RLE_SPRITE.3 \
+	SAMPLE.3 \
 	TRACE.3 \
+	V3D.3 \
+	V3D_f.3 \
+	ZBUFFER.3 \
 	_getpixel.3 \
 	_getpixel15.3 \
 	_getpixel16.3 \
@@ -24,6 +52,7 @@ MAN3=	\
 	active_menu.3 \
 	adjust_sample.3 \
 	al_assert.3 \
+	al_ffblk.3 \
 	al_findclose.3 \
 	al_findfirst.3 \
 	al_findnext.3 \
@@ -136,6 +165,7 @@ MAN3=	\
 	dot_product.3 \
 	dot_product_f.3 \
 	draw_character.3 \
+	draw_character_ex.3 \
 	draw_compiled_sprite.3 \
 	draw_gouraud_sprite.3 \
 	draw_lit_rle_sprite.3 \
@@ -179,6 +209,7 @@ MAN3=	\
 	fixceil.3 \
 	fixcos.3 \
 	fixdiv.3 \
+	fixed.3 \
 	fixfloor.3 \
 	fixhypot.3 \
 	fixmul.3 \
@@ -188,6 +219,7 @@ MAN3=	\
 	fixtan.3 \
 	fixtof.3 \
 	fixtoi.3 \
+	fixtorad_r.3 \
 	fixup_datafile.3 \
 	fli_bitmap.3 \
 	fli_bmp_dirty_from.3 \
@@ -305,6 +337,7 @@ MAN3=	\
 	gui_strlen.3 \
 	gui_text_list_proc.3 \
 	gui_textout.3 \
+	gui_textout_ex.3 \
 	hline.3 \
 	hook_config_section.3 \
 	hsv_to_rgb.3 \
@@ -478,6 +511,7 @@ MAN3=	\
 	quat_mul.3 \
 	quat_slerp.3 \
 	quat_to_matrix.3 \
+	radtofix_r.3 \
 	read_sound_input.3 \
 	readkey.3 \
 	reallocate_voice.3 \
@@ -486,6 +520,7 @@ MAN3=	\
 	register_assert_handler.3 \
 	register_bitmap_file_type.3 \
 	register_datafile_object.3 \
+	register_sample_file_type.3 \
 	register_trace_handler.3 \
 	register_uformat.3 \
 	release_bitmap.3 \
@@ -523,6 +558,7 @@ MAN3=	\
 	save_bmp.3 \
 	save_joystick_data.3 \
 	save_pcx.3 \
+	save_sample.3 \
 	save_tga.3 \
 	scancode_to_ascii.3 \
 	scare_mouse.3 \
@@ -602,12 +638,20 @@ MAN3=	\
 	text_mode.3 \
 	textout.3 \
 	textout_centre.3 \
+	textout_centre_ex.3 \
+	textout_ex.3 \
 	textout_justify.3 \
+	textout_justify_ex.3 \
 	textout_right.3 \
+	textout_right_ex.3 \
 	textprintf.3 \
 	textprintf_centre.3 \
+	textprintf_centre_ex.3 \
+	textprintf_ex.3 \
 	textprintf_justify.3 \
+	textprintf_justify_ex.3 \
 	textprintf_right.3 \
+	textprintf_right_ex.3 \
 	three_finger_flag.3 \
 	timer_can_simulate_retrace.3 \
 	timer_is_using_retrace.3 \
@@ -652,6 +696,7 @@ MAN3=	\
 	ustrncat.3 \
 	ustrncmp.3 \
 	ustrncpy.3 \
+	ustrnicmp.3 \
 	ustrpbrk.3 \
 	ustrrchr.3 \
 	ustrsize.3 \
@@ -700,4 +745,5 @@ MAN3=	\
 	voice_sweep_pan.3 \
 	vsync.3 \
 	xor_mode.3 \
+	xwin_set_window_name.3 \
 	yield_timeslice.3

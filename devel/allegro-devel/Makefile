@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	allegro
-PORTVERSION=	4.0.2
-PORTREVISION=	2
+PORTVERSION=	4.1.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
@@ -27,8 +26,9 @@ CONFIGURE_ARGS=	--enable-vga=no
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 
-SHLIB_VER=	4
+SHLIB_VER=	41
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
+DEMO=		demo.c demo.dat demo.h music.txt ../readme.txt
 
 .include <bsd.port.pre.mk>
 
@@ -49,6 +49,10 @@ INSTALL_TARGET=	full-install install-man install-info
 PLIST_SUB+=	FULL=""
 .endif
 
+.if !defined(NOPORTDOCS)
+PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|${PORTVERSION}|${SHLIB_VER}|g' ${WRKSRC}/makefile.ver
@@ -59,6 +63,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/html/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/html/*.css  ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/demo/demo ${EXAMPLESDIR}
+.for FILE in ${DEMO}
+	${INSTALL_DATA} ${WRKSRC}/demo/${FILE} ${EXAMPLESDIR}
+.endfor
 .endif
 
 .include "Makefile.man"
