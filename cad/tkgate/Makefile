@@ -6,17 +6,18 @@
 #
 
 PORTNAME=		tkgate
-PORTVERSION=		1.6e
+PORTVERSION=		1.6i
 CATEGORIES=		cad
 MASTER_SITES=		ftp://gadoid.ices.cmu.edu/pub/tkgate/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		hansen@cmu.edu
 
-LIB_DEPENDS=		tk83.1:${PORTSDIR}/x11-toolkits/tk83
-RUN_DEPENDS=		tclsh8.3:${PORTSDIR}/lang/tcl83
+#LIB_DEPENDS=		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+#RUN_DEPENDS=		tclsh8.3:${PORTSDIR}/lang/tcl83
 
-USE_IMAKE=		yes
-MAN1=			gmac.1 tkgate.1
+GNU_CONFIGURE=		yes
+USE_BISON=		yes
+USE_X_PREFIX=   	yes
 
 .include <bsd.port.mk>
