@@ -7,6 +7,7 @@
 
 PORTNAME=	psi
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +24,7 @@ MAKE_ARGS=	QTDIR=${X11BASE}
 EXTRA_PATCHES=	${WRKDIR}/patch-common.cpp
 
 pre-patch:
-	${SED} s,%%PREFIX%%,${PREFIX}, ${PATCHDIR}/template.patch-common.cpp > \
+	${SED} s,%%DATADIR%%,${DATADIR}, ${PATCHDIR}/template.patch-common.cpp > \
 		${WRKDIR}/patch-common.cpp
 
 pre-build:

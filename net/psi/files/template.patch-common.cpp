@@ -7,7 +7,7 @@ $FreeBSD$
  QString getResourcesDir()
  {
 -	return "/usr/local/psi";
-+	return "%%PREFIX%%/share/psi";
++	return "%%DATADIR%%";
  }
  
  QString getHomeDir()
