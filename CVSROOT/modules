@@ -8932,6 +8932,7 @@ slib-gauche	ports/lang/slib-gauche
 slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
 slideshow	ports/multimedia/slideshow
+slimserver	ports/audio/slimserver
 slingshot	ports/x11-toolkits/slingshot
 slirc		ports/irc/slirc
 slirp		ports/net/slirp
