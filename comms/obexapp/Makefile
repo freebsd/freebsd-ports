@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
