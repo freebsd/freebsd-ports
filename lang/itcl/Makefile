@@ -3,17 +3,17 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.12 1996/08/24 17:12:05 chuckr Exp $
+# $Id: Makefile,v 1.13 1996/08/25 23:47:09 chuckr Exp $
 #
 
 DISTNAME=	itcl2.1
 PKGNAME=	itcl-2.1
-GNU_CONFIGURE=	yes
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 
 MAINTAINER=	chuckr@freebsd.org
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 
 post-extract:
