@@ -58,6 +58,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/icons/unlock.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/inversion.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/inversion.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/mode-local.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/mode-local.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/pprint.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/pprint.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/common/sformat.el
@@ -189,6 +191,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-ctxt.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-debug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-debug.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate-mode.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-decorate.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-doc.el

@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	cedet
-PORTVERSION=	1.0.b2.b
-PORTREVISION=	2
+PORTVERSION=	1.0.b3.b
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-1.0beta2b
+DISTNAME=	${PORTNAME}-1.0beta3b
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Collection of Emacs Development Environment Tools
@@ -26,6 +25,9 @@ INFO=		bovine cogre ede eieio grammar-fw semantic \
 		semantic-appdev semantic-langdev semantic-user \
 		wisent speedbar
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
+SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
+		semantic-langdev.info semantic-user.info semantic.info \
+		wisent.info
 
 USE_GMAKE=	yes
 CONFLICTS=	eieio* semantic* speedbar*
@@ -85,8 +87,9 @@ do-install:
 .for i in *.info*
 	${INSTALL_DATA} ${WRKSRC}/semantic/doc/${i} ${PREFIX}/info
 .endfor
-	install-info ${PREFIX}/info/semantic.info ${PREFIX}/info/dir
-
+.for i in ${SEMANTIC_INFOS}
+	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
+.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/semantic/semanticdb.sh ${PREFIX}/bin
 
 # speedbar
