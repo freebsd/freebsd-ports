@@ -19,6 +19,7 @@
 %%NROFF:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiNroff.so
 %%OPENWRITER:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiOpenWriter.so
 %%PDB:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiPalmDoc.so
+%%PSION:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiPsion.so
 %%SVG:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiRSVG.so
 %%SDW:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiSDW.so
 %%SHELL:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiScriptHappy.so
