@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.muhri.net/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ishmael27x@yahoo.com
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
