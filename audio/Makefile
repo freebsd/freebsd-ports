@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1999/03/09 02:35:14 nectar Exp $
+# $Id: Makefile,v 1.72 1999/03/22 05:36:57 asami Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -11,7 +11,6 @@
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += esound
-    SUBDIR += gmod
     SUBDIR += gnomeaudio
     SUBDIR += gnomemedia
     SUBDIR += gqmpeg
