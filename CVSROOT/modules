@@ -5216,6 +5216,7 @@ p5-XML-Encoding	ports/textproc/p5-XML-Encoding
 p5-XML-Filter-Base	ports/textproc/p5-XML-Filter-Base
 p5-XML-Filter-BufferText	ports/textproc/p5-XML-Filter-BufferText
 p5-XML-Filter-DetectWS	ports/textproc/p5-XML-Filter-DetectWS
+p5-XML-Filter-Reindent	ports/textproc/p5-XML-Filter-Reindent
 p5-XML-Filter-SAXT	ports/textproc/p5-XML-Filter-SAXT
 p5-XML-Filter-XInclude	ports/textproc/p5-XML-Filter-XInclude
 p5-XML-Filter-XSLT	ports/textproc/p5-XML-Filter-XSLT
