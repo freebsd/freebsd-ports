@@ -4,20 +4,20 @@
  ac_help=
  ac_default_prefix=/usr/local
  # Any additions from configure.in:
--ac_default_prefix=/usr/local/nagios
-+#ac_default_prefix=/usr/local/nagios
+-ac_default_prefix=/usr/local/netsaint
++#ac_default_prefix=/usr/local/netsaint
  ac_help="$ac_help
- --with-nagios-user=<user> sets user name to run nagios"
+ --with-netsaint-user=<user> sets user name to run netsaint"
  ac_help="$ac_help
 @@ -562,9 +562,9 @@
  # Prefer explicitly selected file to automatically selected ones.
  if test -z "$CONFIG_SITE"; then
    if test "x$prefix" != xNONE; then
 -    CONFIG_SITE="$prefix/share/config.site $prefix/etc/config.site"
-+    CONFIG_SITE="$prefix/share/nagios/config.site $prefix/etc/nagios/config.site"
++    CONFIG_SITE="$prefix/share/netsaint/config.site $prefix/etc/netsaint/config.site"
    else
 -    CONFIG_SITE="$ac_default_prefix/share/config.site $ac_default_prefix/etc/config.site"
-+    CONFIG_SITE="$ac_default_prefix/share/nagios/config.site $ac_default_prefix/etc/nagios/config.site"
++    CONFIG_SITE="$ac_default_prefix/share/netsaint/config.site $ac_default_prefix/etc/netsaint/config.site"
    fi
  fi
  for ac_site_file in $CONFIG_SITE; do
