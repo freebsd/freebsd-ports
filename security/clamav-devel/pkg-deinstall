@@ -1,0 +1,7 @@
+if [ ! "$2" = "POST-DEINSTALL" ]; then
+	exit 0
+fi
+echo "----------------------------------------------------------"
+echo "  If you really want to remove this package, please remove"
+echo " the clamav-user and clean out log files "
+echo "----------------------------------------------------------"
