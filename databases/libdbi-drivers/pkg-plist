@@ -1,0 +1,39 @@
+%%MYSQL%%lib/dbd/libmysql.so
+%%PGSQL%%lib/dbd/libpgsql.so
+%%SQLITE%%lib/dbd/libsqlite.so
+@unexec rmdir %D/lib/dbd 2>/dev/null || true
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql.pdf
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c128.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c32.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c36.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/c90.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/f21.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/index.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x131.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x39.html
+%%MYSQL%%%%DOCSDIR%%/dbd_mysql/x53.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql.pdf
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/copying-fdl.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/f27.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/index.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/install-build.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/install-prereq.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/install.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/intro.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/options.html
+%%PGSQL%%%%DOCSDIR%%/dbd_pgsql/specific.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite.pdf
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c119.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c32.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c43.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/c98.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/f21.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/index.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x122.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x198.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x46.html
+%%SQLITE%%%%DOCSDIR%%/dbd_sqlite/x60.html
+%%MYSQL%%@dirrm %%DOCSDIR%%/dbd_mysql
+%%PGSQL%%@dirrm %%DOCSDIR%%/dbd_pgsql
+%%SQLITE%%@dirrm %%DOCSDIR%%/dbd_sqlite
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

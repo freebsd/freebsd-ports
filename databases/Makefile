@@ -46,6 +46,7 @@
     SUBDIR += jdb
     SUBDIR += jdbc-oracle816
     SUBDIR += libdbi
+    SUBDIR += libdbi-drivers
     SUBDIR += libgda
     SUBDIR += libgda2
     SUBDIR += libgdamm
