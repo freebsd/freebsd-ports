@@ -10,7 +10,7 @@ ${PREFIX}/OpenOffice.org1.0/
 
 Just type "openoffice" after you have successfully
 installed the package. If there is no installed
-OO.org dir in hour homedir, you'll be prompted to
+OO.org dir in your homedir, you'll be prompted to
 install some files and choose a installed JDK.
 The setup installs a "OpenOffice.org1.0.2" folder
 in your homedir.
