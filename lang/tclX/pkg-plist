@@ -1,0 +1,11 @@
+@cwd /usr/local
+tclX/7.4a-p1
+tkX/4.0a-p1
+include/tclExtend.h
+include/tcl++.h
+bin/tcl
+bin/tclhelp
+bin/wishx
+lib/libtclx.a
+lib/tkxlibs.mk
+lib/libtkx.a
