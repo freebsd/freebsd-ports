@@ -17,4 +17,6 @@ COMMENT=	Perl5 package which allows use of macros defined in 'C' header files
 
 PERL_CONFIGURE=	YES
 
+MAN3=		Include.3
+
 .include <bsd.port.mk>
