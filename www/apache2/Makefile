@@ -35,7 +35,12 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 .if defined (WITH_WINDOWSUPDATEFIX)
 EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
 .endif
+
 .if defined(WITH_EXPERIMENTAL_PATCHES)
+IGNORE=		: Please define WITH_KQUEUE_SUPPORT instead
+.endif
+
+.if defined(WITH_KQUEUE_SUPPORT)
 EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
 .endif
 
