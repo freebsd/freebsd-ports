@@ -1141,3 +1141,10 @@ chinese/mkisofs|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
 chinese/cdrtools|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
 devel/libltdl|devel/libltdl15|2004-06-08|autotools cleanup
 www/httperf|benchmarks/httperf|2004-06-10|moved to more accurate category
+japanese/xdvik-vflib-pk118|japanese/xdvik-vflib|2004-06-18|no longer maintained
+japanese/xdvik-vflib-pk240|japanese/xdvik-vflib|2004-06-18|no longer maintained
+japanese/xdvik-vflib-pk300|japanese/xdvik-vflib|2004-06-18|no longer maintained
+japanese/xdvik-vflib-pk360|japanese/xdvik-vflib|2004-06-18|no longer maintained
+japanese/xdvik-vflib-pk400|japanese/xdvik-vflib|2004-06-18|no longer maintained
+japanese/xdvik-vflib-pk600|japanese/xdvik-vflib|2004-06-18|no longer maintained
+japanese/xdvik-vflib-pkall|japanese/xdvik-vflib|2004-06-18|no longer maintained

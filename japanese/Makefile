@@ -403,13 +403,6 @@
     SUBDIR += wwasw-fpw
     SUBDIR += xchat
     SUBDIR += xdvik-vflib
-    SUBDIR += xdvik-vflib-pk118
-    SUBDIR += xdvik-vflib-pk240
-    SUBDIR += xdvik-vflib-pk300
-    SUBDIR += xdvik-vflib-pk360
-    SUBDIR += xdvik-vflib-pk400
-    SUBDIR += xdvik-vflib-pk600
-    SUBDIR += xdvik-vflib-pkall
     SUBDIR += xemacs-devel-canna
     SUBDIR += xemacs-devel-canna+freewnn
     SUBDIR += xemacs-devel-canna+wnn6
