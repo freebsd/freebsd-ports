@@ -29,7 +29,7 @@ COMMENT?=	GNU Compiler Collection 3.3
 
 .if defined (WITH_BOUNDSCHECKING)
 # Fetch another file, but don't extract it.  Also add another patchfile.
-BCPATCH=	bounds-checking-gcc-3.3.1-1.00.patch.bz2
+BCPATCH=	bounds-checking-gcc-3.3.1-1.01.patch.bz2
 DISTFILES+=	${BCPATCH}:bc
 EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
 EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
@@ -91,9 +91,9 @@ INFO=		cpp cppinternals g77 gcc gccint gcj fastjar
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 .if !defined(WITH_BOUNDSCHECKING)
-	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
-	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
-	@${ECHO_MSG} "to use."
+#	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
+#	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
+#	@${ECHO_MSG} "to use."
 .endif
 
 .if defined(WITH_BOUNDSCHECKING)
