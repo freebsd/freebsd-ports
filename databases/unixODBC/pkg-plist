@@ -4,7 +4,6 @@
 bin/dltest
 bin/isql
 bin/odbcinst
-bin/sqi
 etc/odbc.ini
 etc/odbcinst.ini
 include/odbcinst.h
@@ -50,6 +49,7 @@ lib/libodbcnnS.so.1
 lib/libodbcpsql.a
 lib/libodbcpsql.so
 lib/libodbcpsql.so.1
+lib/libodbcpsql.so.2
 lib/libodbcpsqlS.a
 lib/libodbcpsqlS.so
 lib/libodbcpsqlS.so.1
@@ -62,6 +62,9 @@ lib/liboplodbcS.so.1
 lib/liboraodbcS.a
 lib/liboraodbcS.so
 lib/liboraodbcS.so.1
+lib/libsapdbS.a
+lib/libsapdbS.so
+lib/libsapdbS.so.1
 lib/libtdsS.a
 lib/libtdsS.so
 lib/libtdsS.so.1
@@ -117,15 +120,7 @@ lib/libtemplate.so.1
 %%PORTDOCS%%share/doc/unixODBC/lst/back.gif
 %%PORTDOCS%%share/doc/unixODBC/lst/next.gif
 %%PORTDOCS%%share/doc/unixODBC/smallbook.gif
-%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure.gif
-%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure.html
-%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure.vsd
-%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure2.gif
-%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure2.html
-%%PORTDOCS%%share/doc/unixODBC/sqi/back.gif
-%%PORTDOCS%%share/doc/unixODBC/sqi/next.gif
 %%PORTDOCS%%share/doc/unixODBC/unixODBC.gif
-%%PORTDOCS%%@dirrm share/doc/unixODBC/sqi
 %%PORTDOCS%%@dirrm share/doc/unixODBC/lst
 %%PORTDOCS%%@dirrm share/doc/unixODBC/UserManual
 %%PORTDOCS%%@dirrm share/doc/unixODBC/ProgrammerManual/Tutorial
