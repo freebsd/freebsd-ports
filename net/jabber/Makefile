@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.4.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.jabber.org/dists/1.4/final/
 DISTFILES+=	jabber-1.4.1.tar.gz \
@@ -39,11 +39,15 @@ post-extract:
 	@mv ${WRKDIR}/yahoo-transport-0.8-1.4 ${WRKDIR}/${JABDIR}/yahoo-transport
 
 post-configure:
-	@cd ${WRKDIR}/${JABDIR}/aim-transport && ./configure
-	@cd ${WRKDIR}/${JABDIR}/irc-transport && ./configure \
-		--includedir=${WRKDIR}/${JABDIR}/jabberd
-	@cd ${WRKDIR}/${JABDIR}/yahoo-transport && ./configure \
-		--includedir=${WRKDIR}/${JABDIR}/jabberd
+	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
+		CPPFLAGS=`pth-config --cflags` \
+		LDFLAGS=`pth-config --ldflags` \
+		LIBS=`pth-config --libs` ${SHELL} -c \
+	"cd ${WRKDIR}/${JABDIR}/aim-transport; ./configure; \
+	 cd ${WRKDIR}/${JABDIR}/irc-transport;  \
+		./configure --includedir=${WRKDIR}/${JABDIR}/jabberd; \
+	 cd ${WRKDIR}/${JABDIR}/yahoo-transport; \
+	 	./configure --includedir=${WRKDIR}/${JABDIR}/jabberd"
 
 post-install:
 	@PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
