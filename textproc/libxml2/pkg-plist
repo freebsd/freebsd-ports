@@ -27,6 +27,7 @@ include/libxml2/xpointer.h
 lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.5
+share/aclocal/libxml.m4
 share/gnome-xml2/DOM.gif
 share/gnome-xml2/FAQ.html
 share/gnome-xml2/book1.html
