@@ -44,7 +44,8 @@ PLIST_SUB+=	NLS=""
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|$$CFLAGS.*$${USE_SSE}|$$CFLAGS|g' ${WRKSRC}/configure
+		's|$$CFLAGS.*$${USE_SSE}|$$CFLAGS|g ; \
+		 s|fftw3f|fftw3|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc |$$(CC) |g ; \
 		 s| -lc| $$(LDFLAGS)|g ; \
 		 s|-lrt||g' ${WRKSRC}/Makefile.in
