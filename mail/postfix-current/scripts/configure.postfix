@@ -107,7 +107,7 @@ while [ "$1" ]; do
 		\"IPv6\")
 			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010228release-v6-20010302a.diff.gz"
+			echo "PATCHFILES+=	postfix-20010228release-v6-20010408a.diff.gz"
 			echo ""
 			echo "pre-patch:"
 			echo "	cd \${WRKSRC} && ln -s . postfix"
