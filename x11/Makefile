@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.179 1997/11/28 20:31:07 fenner Exp $
+# $Id: Makefile,v 1.180 1997/12/12 06:19:15 vanilla Exp $
 #
 
     SUBDIR += FWF
@@ -50,6 +50,7 @@
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += piewm
+    SUBDIR += props
     SUBDIR += pythonqt
     SUBDIR += qt
     SUBDIR += qvwm
@@ -59,6 +60,7 @@
     SUBDIR += slingshot
     SUBDIR += swisswatch
     SUBDIR += sxpc
+    SUBDIR += textedit
     SUBDIR += tix
     SUBDIR += tk41
     SUBDIR += tk42
