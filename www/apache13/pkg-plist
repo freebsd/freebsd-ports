@@ -133,6 +133,8 @@ www/data.default/index.html.ru.utf8
 www/data.default/index.html.se
 www/data.default/index.html.zh.Big5
 share/doc/apache/LICENSE
+@exec ln -fs %B %D/www/data.default/manual
+@unexec rm -f %D/www/data.default/manual
 share/doc/apache/bind.html.en
 share/doc/apache/bind.html.fr
 share/doc/apache/bind.html.html
