@@ -3,13 +3,16 @@
 # Date created:			Oct 27 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/04/22 04:40:42 mharo Exp $
+# $Id: Makefile,v 1.10 1999/05/29 03:56:02 steve Exp $
 #
 
 DISTNAME=	replay-source-dgtk_0.61
 PKGNAME=	replay-0.61
 CATEGORIES=	audio
-MASTER_SITES=	http://replay.linuxpower.org/files/
+MASTER_SITES=	http://replay.linuxpower.org/files/ \
+		ftp://ftp.replicant.nu/pub/replay/ \
+		ftp://ftp.icemark.ch/pub/replay/ \
+		ftp://k2.lund.se/pub/replay/
 
 MAINTAINER=	nacai@iname.com
 
