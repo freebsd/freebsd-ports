@@ -1,25 +1,16 @@
 @comment $FreeBSD$
 bin/kermit
+share/doc/kermit/COPYING.TXT
 share/doc/kermit/READ.ME
-share/doc/kermit/ckuaaa.txt
-share/doc/kermit/ckermit2.txt
 share/doc/kermit/ckcbwr.txt
+share/doc/kermit/ckccfg.txt
+share/doc/kermit/ckcplm.txt
+share/doc/kermit/ckermit70.txt
+share/doc/kermit/ckermit80.txt
 share/doc/kermit/ckubwr.txt
 share/doc/kermit/ckuins.txt
-share/doc/kermit/telnet.txt
-share/doc/kermit/security.txt
-share/doc/kermit/iksd.txt
-share/doc/kermit/ckcplm.txt
-share/doc/kermit/ckccfg.txt
+share/doc/kermit/ckututor.txt
 share/examples/kermit/dot.kermrc
 share/examples/kermit/dot.mykermrc
-share/examples/kermit/dot.rzszkermrc
-share/examples/kermit/dot.kdd
-share/examples/kermit/dot.knd
-share/examples/kermit/dot.ksd
-share/examples/kermit/ckedemo.ksc
-share/examples/kermit/ckepage.ksc
-share/examples/kermit/ckevt.ksc
-share/examples/kermit/iksdpy
 @dirrm share/doc/kermit
 @dirrm share/examples/kermit
