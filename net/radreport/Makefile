@@ -5,14 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	radreport
-PORTVERSION=	1.3
-CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.livingston.com/pub/le/contrib/radius/
-DISTNAME=	radreport
+PORTNAME=		radreport
+PORTVERSION=		1.3
+CATEGORIES=		net
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kbyanc
+DISTNAME=		radreport
 EXTRACT_SUFX=
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=		kbyanc@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
