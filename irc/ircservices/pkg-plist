@@ -53,6 +53,7 @@ lib/services/modules/protocol/bahamut.so
 lib/services/modules/protocol/dalnet.so
 lib/services/modules/protocol/dreamforge.so
 lib/services/modules/protocol/monkey.so
+lib/services/modules/protocol/ptlink.so
 lib/services/modules/protocol/rfc1459.so
 lib/services/modules/protocol/trircd.so
 lib/services/modules/protocol/ts8.so
