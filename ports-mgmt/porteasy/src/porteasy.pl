@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.2";
+my $VERSION	= "2.7.3";
 my $COPYRIGHT	= "Copyright (c) 2000-2002 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -813,14 +813,19 @@ sub cmp_version($$) {
     my $inst = shift;		# Installed package
     my $port = shift;		# Origin port
 
+    my $tree;			# Version in tree
+
     # Shortcut
-    if ($inst eq $pkgname{$port}) {
+    if (($tree = $pkgname{$port}) eq $inst) {
 	return '=';
     }
 
     # Compare port epochs
-    if ((($a) = ($inst =~ m/,(\d+)$/)) ||
-	(($b) = ($pkgname{$port} =~ m/,(\d+)$/))) {
+    $inst =~ s/,(\d+)$//
+	and $a = $1;
+    $tree =~ s/,(\d+)$//
+	and $b = $1;
+    if (defined($a) || defined($b)) {
 	$a = int($a || 0);
 	$b = int($b || 0);
 	if ($a != $b) {
@@ -830,7 +835,7 @@ sub cmp_version($$) {
 
     # Split it into components
     my @a = split(/[\._-]/, $inst);
-    my @b = split(/[\._-]/, $pkgname{$port});
+    my @b = split(/[\._-]/, $tree);
 
     # Compare the components one by one
     while (@a && @b) {
@@ -1101,7 +1106,7 @@ MAIN:{
     }
 
     # Step 3: update port directories and discover dependencies
-    $need_deps = ($update || $list);
+    $need_deps = ($update || $fetch || $list);
     update_ports_tree(keys(%reqd));
 
     # Step 4: deselect ports which are already installed
