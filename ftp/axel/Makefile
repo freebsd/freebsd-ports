@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	axel
-PORTVERSION=	0.99
+PORTVERSION=	0.99b
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
@@ -25,6 +25,7 @@ MAN1=		axel.1
 post-patch:
 	@${PERL} -pi -e "s,-pthread,${PTHREAD_LIBS},g ; \
 		s,^(CFLAGS = -O3),#\1,g ; \
-		s,gcc,${CC},g" ${WRKSRC}/Makefile
+		s,gcc,${CC},g ; \
+		s,install -D,${INSTALL_DATA},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
