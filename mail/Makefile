@@ -441,6 +441,7 @@
     SUBDIR += smtpmail
     SUBDIR += smtpproxy
     SUBDIR += smtprc
+    SUBDIR += smtptrapd
     SUBDIR += solidpop3d
     SUBDIR += sortmail
     SUBDIR += spamass-milter
