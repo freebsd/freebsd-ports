@@ -1,0 +1,40 @@
+--- macros/util/formatman.sci.orig	Fri Mar  2 03:50:36 2001
++++ macros/util/formatman.sci	Thu Dec 20 17:34:38 2001
+@@ -389,5 +389,5 @@
+   end
+ end
+-function wh=asciiwhatis(path,fnam)
++function wh_out=asciiwhatis(path,fnam)
+ txt=mgetl(path)
+ d=find(part(txt,1:8)=='.SH NAME')
+@@ -401,5 +401,17 @@
+ wh=stripblanks(wh)
+ k=find(wh=='');if k<>[] then wh(k)=[];end
+-wh=wh+'  @'+fnam
++sz=size(wh);
++for i=1:sz(1),
++// pad the output to make the descriptions all line up on the left
++ind=min(strindex(wh(i,:),' - '))-1;
++ind=ind(1);
++tmps=sprintf('%-15s%s',part(wh(i),1:ind),part(wh(i),(ind+1):length(wh(i))));
++tmps=tmps +'  @'+fnam
++if (i == 1),
++  wh_out = tmps;
++else
++  wh_out=sprintf('%s\n%s',wh_out,tmps);
++end
++end
+ 
+ function wh=texwhatis(path,fnam)
+@@ -426,5 +438,10 @@
+   p=p(1)
+ 
+-  whk=part(whk,1:p-1)+'</a>'+part(whk,p:length(whk))
++  // pad the output to make the descriptions all line up on the left
++  pad='';
++  for i=1:(15-p),
++    pad=pad+'&nbsp';
++  end
++  whk=part(whk,1:p-1)+'</a>'+pad+part(whk,p:length(whk))
+   wh(k)='<br><a href=""'+fnam+'"">'+whk+'<br>'
+ end

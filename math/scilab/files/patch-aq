@@ -1,0 +1,9 @@
+--- man/control/sysfact.man.orig	Thu Aug  9 10:03:06 2001
++++ man/control/sysfact.man	Thu Aug  9 10:05:23 2001
+@@ -2,5 +2,5 @@
+ .so ../sci.an 
+ .SH NAME
+-sysfact- system factorization
++sysfact - system factorization
+ .SH CALLING SEQUENCE
+ .nf

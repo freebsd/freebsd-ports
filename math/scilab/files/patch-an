@@ -1,0 +1,21 @@
+--- routines/signal/sigelm.f.orig	Mon Feb  5 10:19:36 2001
++++ routines/signal/sigelm.f	Sun Jun  3 18:52:29 2001
+@@ -134,8 +134,18 @@
+  22   continue
+ c     rhs=4
+       ilinc=iadr(lstk(top))
++      if (istk(ilinc).ne.1) then  !protect the 4th arg. (GA 2001) 
++         err=4
++         call error(53)
++         return
++      endif
+       linc=sadr(ilinc+4)
+       nspn=int(stk(linc))
++      if (nspn.eq.0) then  !protect the 4th arg. (GA 2001)
++         err=4
++         call error(36)
++         return
++      endif
+       top=top-1
+       iln=iadr(lstk(top))
+       ln=sadr(iln+4)

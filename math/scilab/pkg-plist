@@ -7127,10 +7127,6 @@ scilab-2.6/maple/maple2scilab.mpl.g
 scilab-2.6/maple/examples.tst
 scilab-2.6/maple/examples.dia.ref
 scilab-2.6/maple/maple2scilab.mpl
-scilab-2.6/pvm3/lib/pvm
-scilab-2.6/pvm3/lib/pvmd
-scilab-2.6/pvm3/lib/pvmtmparch
-scilab-2.6/pvm3/lib/pvmgetarch
 scilab-2.6/routines/callinter.h
 scilab-2.6/routines/machine-abs.h
 scilab-2.6/routines/machine.h
@@ -7449,8 +7445,6 @@ scilab-2.6/.pvmd.conf
 @dirrm scilab-2.6/routines/graphics
 @dirrm scilab-2.6/routines/default
 @dirrm scilab-2.6/routines
-@dirrm scilab-2.6/pvm3/lib
-@dirrm scilab-2.6/pvm3
 @dirrm scilab-2.6/maple
 @dirrm scilab-2.6/man/utilities
 @dirrm scilab-2.6/man/translation

@@ -1,0 +1,10 @@
+--- man/pvm/pvm_barrier.man.orig	Thu Aug  9 09:31:56 2001
++++ man/pvm/pvm_barrier.man	Thu Aug  9 10:12:55 2001
+@@ -2,6 +2,5 @@
+ .so ../sci.an
+ .SH NAME
+-pvm_barrier - blocks the calling process until all processes
+-in a group have called it.
++pvm_barrier - blocks the calling process until all processes in a group have called it.
+ .SH CALLING SEQUENCE
+ .nf

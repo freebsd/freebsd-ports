@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	math cad
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Meta2/Scilab/distributions/
 EXTRACT_SUFX=	.src.tar.gz
@@ -39,6 +40,11 @@ post-extract:
 	${RM} ${WRKSRC}/examples/callsci/callsciFortran/config/config
 	${RM} ${WRKSRC}/examples/callsci/callsciC/config/config
 	${RM} ${WRKSRC}/examples/callsci/callsciC++/config/config
+
+pre-patch:
+	@${PERL} -pi -e 's|\r\n|\n|' ${WRKSRC}/macros/util/formatman.sci
+	@${PERL} -pi -e 's,%%PVM_ROOT%%,${PVM_ROOT},' \
+		${WRKSRC}/scripts/scilab.g
 
 pre-install:
 	find ${WRKSRC} -name \*.orig -delete

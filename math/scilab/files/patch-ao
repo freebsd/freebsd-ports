@@ -1,0 +1,11 @@
+--- routines/interf/strelm.f.orig	Wed Feb 28 05:17:35 2001
++++ routines/interf/strelm.f	Wed Dec 12 16:17:42 2001
+@@ -1478,6 +1478,6 @@
+          lr=ilr+6
+          do 20 i=0,n-1
+-            m=int(stk(l+i))
+-            istk(lr+i)=getcode(m)
++            c=char(int(stk(l+i)))
++            istk(lr+i)=getcode(c)
+  20      continue
+          lstk(top+1)=sadr(lr+n)
