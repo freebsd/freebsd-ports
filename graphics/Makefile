@@ -294,6 +294,7 @@
     SUBDIR += plotutils
     SUBDIR += png
     SUBDIR += png2html
+    SUBDIR += png2ico
     SUBDIR += pngcheck
     SUBDIR += pngcrush
     SUBDIR += pngquant
