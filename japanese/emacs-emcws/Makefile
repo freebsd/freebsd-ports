@@ -26,7 +26,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
 
-BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs21
+BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 

@@ -14,8 +14,8 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 COMMENT?=	WWW browser based on emacs/mule
 
-BUILD_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs
-RUN_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs
+BUILD_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs19
+RUN_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs19
 
 WRKSRC=		${WRKDIR}/w3
 MAKE_ENV+=	EMACSCMD=${EMACSCMD} ELISPDIR=${ELISPDIR} \

@@ -17,8 +17,8 @@ COMMENT=	Libraries of (GNU) Emacs Input Method
 
 LATEST_LINK=	leim21
 
-BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs21
-RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs21
+BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
+RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
 
 USE_GMAKE=	yes
 EMACS_VER=	21.3

@@ -14,7 +14,7 @@ DISTNAME=	xslide
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing XSL stylesheets
 
-RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
+RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
