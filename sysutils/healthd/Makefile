@@ -61,4 +61,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/PROTOCOL ${HDDOCDIR}
 .endif
 
+pre-everything::
+.ifndef (WITHOUT_IPV6)
+	@${ECHO_MSG} "WITHOUT_IPV6=yes          builds without IPv6 support"
+.endif
 .include <bsd.port.post.mk>
