@@ -264,6 +264,7 @@
     SUBDIR += quranref
     SUBDIR += reed
     SUBDIR += rfc
+    SUBDIR += ringtonetools
     SUBDIR += rname
     SUBDIR += rtfm
     SUBDIR += salias
