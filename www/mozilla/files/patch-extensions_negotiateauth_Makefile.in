@@ -1,0 +1,12 @@
+--- extensions/negotiateauth/Makefile.in.orig	Tue Apr 13 12:19:44 2004
++++ extensions/negotiateauth/Makefile.in	Tue Apr 13 12:19:53 2004
+@@ -68,8 +68,8 @@
+ 		$(NULL)
+ 
+ EXTRA_DSO_LDOPTS = \
+-		$(MOZ_COMPONENT_LIBS) \
+ 		$(GSSAPI_LIBS) \
++		$(MOZ_COMPONENT_LIBS) \
+ 		$(NULL)
+ 
+ # make sure this component is never statically linked into the main
