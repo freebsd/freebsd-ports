@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	AfterStep-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A stable version of the AfterStep window manager
 
 LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay \
