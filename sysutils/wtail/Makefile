@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wtail
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.teaser.fr/~amajorel/wtail/
 
