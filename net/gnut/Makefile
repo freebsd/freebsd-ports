@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.gnutelliums.com/linux_unix/gnut/tars/
 
 MAINTAINER=	kris@FreeBSD.org
 
+FORBIDDEN=	"The distfile appears to have been withdrawn due to a vulnerability allowing injection of HTML code into the web front-end: http://www.der-keiler.de/Mailing-Lists/Securiteam/2001-09/0021.html"
+
 USE_AUTOCONF=	yes
 
 do-install:
