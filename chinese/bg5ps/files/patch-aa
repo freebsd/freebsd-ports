@@ -1,22 +1,43 @@
---- Makefile.orig	Fri Jun 26 22:05:28 1998
-+++ Makefile	Fri Jun 26 22:06:00 1998
-@@ -0,0 +1,5 @@
-+all:
-+	$(CC) $(CFLAGS) -o ttf2psm ttf2psm.c
-+
-+clean:
-+	-@rm ttf2psm
---- bg5ps.orig	Mon Dec  8 15:28:30 1997
-+++ bg5ps	Wed Jun 17 13:08:09 1998
+--- bg5ps.orig	Fri Oct  2 08:35:41 1998
++++ bg5ps	Fri Dec 17 17:01:21 1999
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/local/bin/python
  ################################################################################
  # bg5ps.py which use the ttf2ps program to convert the Big5 Coding chinese     #
  # text into printable postscript file.  Since it uses true type font, the      #
---- ttf2psm.c.orig	Mon Dec  8 03:57:58 1997
-+++ ttf2psm.c	Wed Jun 17 13:35:48 1998
-@@ -6,7 +6,6 @@
+@@ -418,10 +418,10 @@
+                 exec l
+             cf.close()
+         else:
+-            sys.stderr.write("\n~/.bg5ps.conf not found.\n Trying /etc/bg5ps.conf.")
+-            if os.path.isfile("/etc/bg5ps.conf"):
+-                sys.stderr.write("\n /etc/bg5ps.conf found. Use configuration file /etc/bg5ps.conf")
+-                cf=open("/etc/bg5ps.conf","r")
++            sys.stderr.write("\n~/.bg5ps.conf not found.\n Trying /usr/local/etc/chinese/bg5ps.conf.")
++            if os.path.isfile("/usr/local/etc/chinese/bg5ps.conf"):
++                sys.stderr.write("\n /usr/local/etc/chinese/bg5ps.conf found. Use configuration file /usr/local/etc/chinese/bg5ps.conf")
++                cf=open("/usr/local/etc/chinese/bg5ps.conf","r")
+                 for l in cf.readlines():
+                     exec l
+                 cf.close()
+--- bg5ps.conf.orig	Fri Dec 17 16:58:30 1999
++++ bg5ps.conf	Fri Dec 17 17:07:48 1999
+@@ -1,9 +1,9 @@
+ #chineseFontPath: 指定中文字型的路徑(預設值: 與 bg5ps 同) 
+-chineseFontPath=""
++chineseFontPath="/usr/X11R6/lib/X11/fonts/TrueType"
+ #modify the above line
+ 
+ #fontName: 指定中文字型的檔案名稱(預設值: ntu_kai) 
+-fontName="ntu_kai"
++fontName="moe_kai"
+ 
+ #oddPages: 0 不輸出奇數頁，1 輸出奇數頁(預設值: 1) 
+ #true=1, false=0 
+--- ttf2psm.c.orig	Wed Aug 26 21:50:26 1998
++++ ttf2psm.c	Fri Dec 17 17:03:31 1999
+@@ -10,7 +10,6 @@
  #include <math.h>
  #include <stdlib.h>
  #include <string.h>
@@ -24,3 +45,12 @@
  #include <memory.h>
  #include <time.h>
  
+@@ -96,7 +95,7 @@
+ void Beg();
+ void End();
+ 
+-void main(int argc, char *argv[]){
++int main(int argc, char *argv[]){
+   FILE *fn;
+   short cidx, i;
+   time_t t1, t2;

@@ -1,5 +1,6 @@
------------------------------------------------------------
-Copy ${PREFIX}/share/doc/bg5ps/bg5ps.conf to ~/.bg5ps.conf.
-Then run "bg5ps -h" for help.
------------------------------------------------------------
+
+------------------------------------------------------------
+Copy /usr/local/share/doc/bg5ps/bg5ps.conf to ~/.bg5ps.conf.
+Then modify it to suit your needs.
+------------------------------------------------------------
 
