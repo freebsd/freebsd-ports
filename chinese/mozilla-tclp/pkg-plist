@@ -1,5 +1,5 @@
-@exec env LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regxpcom
-@exec env LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regchrome
+@exec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regxpcom
+@exec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regchrome
 @exec mv %D/bin/mozilla %D/bin/mozilla.orig
 @exec mv %D/lib/mozilla/chrome/chrome.rdf %D/lib/mozilla/chrome/chrome.rdf.orig
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
@@ -14,6 +14,7 @@ lib/mozilla/chrome/zh-TW.jar
 lib/mozilla/chrome/zh-mac.jar
 lib/mozilla/chrome/zh-unix.jar
 lib/mozilla/chrome/zh-win.jar
+lib/mozilla/chrome/zh-optional.jar
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/profile/TW/chrome/userChrome.css
 lib/mozilla/defaults/profile/TW/chrome/userContent.css
@@ -22,8 +23,18 @@ lib/mozilla/defaults/profile/TW/localstore.rdf
 lib/mozilla/defaults/profile/TW/mimeTypes.rdf
 lib/mozilla/defaults/profile/TW/panels.rdf
 lib/mozilla/defaults/profile/TW/search.rdf
+lib/mozilla/defaults/profile/TW/user.js
+lib/mozilla/defaults/profile/user.js
 lib/mozilla/searchplugins/google.gif
 lib/mozilla/searchplugins/google.src
+lib/mozilla/searchplugins/google_en.gif
+lib/mozilla/searchplugins/google_en.src
+lib/mozilla/searchplugins/google_tw.gif
+lib/mozilla/searchplugins/google_tw.src
+lib/mozilla/res/mail_mozilla.gif
+lib/mozilla/res/mailnews_start_zhtw.html
+@exec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regxpcom
+@exec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regchrome
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
 @unexec mv %D/lib/mozilla/chrome/chrome.rdf.orig %D/lib/mozilla/chrome/chrome.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
@@ -32,3 +43,5 @@ lib/mozilla/searchplugins/google.src
 @unexec mv %D/lib/mozilla/searchplugins/google.src.orig %D/lib/mozilla/searchplugins/google.src
 @dirrm lib/mozilla/defaults/profile/TW/chrome
 @dirrm lib/mozilla/defaults/profile/TW
+@unexec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regxpcom
+@unexec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regchrome

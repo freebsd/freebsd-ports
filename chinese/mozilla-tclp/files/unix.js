@@ -311,8 +311,8 @@ pref("font.min-size.fixed.zh-TW", 10);
 //pref("printer.font.xprint.rejectfontpattern", 
 //     "fname=-urw.*;scalable=false;outline_scaled=false;xdisplay=.*;xdpy=.*;ydpy=.*;xdevice=.*");
 
-// Chatzilla
 pref("mail.signature_date", 0);
+// Chatzilla
 pref("extensions.irc.charset", "Big5");
 
 // ps font
@@ -320,21 +320,21 @@ pref("extensions.irc.charset", "Big5");
 // to enumerate the list of langGroups
 // there should be a call to get the
 // langGroups; see bug 75054
-pref("print.psnativefont.ar", "");
-pref("print.psnativefont.el", "");
-pref("print.psnativefont.he", "");
-pref("print.psnativefont.ja", "");
-pref("print.psnativefont.ko", "");
-pref("print.psnativefont.th", "");
-pref("print.psnativefont.tr", "");
-pref("print.psnativefont.x-baltic", "");
-pref("print.psnativefont.x-central-euro", "");
-pref("print.psnativefont.x-cyrillic", "");
-pref("print.psnativefont.x-unicode", "");
-pref("print.psnativefont.x-user-def", "");
-pref("print.psnativefont.x-western", "");
-pref("print.psnativefont.zh-CN", "");
+pref("print.postscript.nativefont.ar", "");
+pref("print.postscript.nativefont.el", "");
+pref("print.postscript.nativefont.he", "");
+pref("print.postscript.nativefont.ja", "");
+pref("print.postscript.nativefont.ko", "");
+pref("print.postscript.nativefont.th", "");
+pref("print.postscript.nativefont.tr", "");
+pref("print.postscript.nativefont.x-baltic", "");
+pref("print.postscript.nativefont.x-central-euro", "");
+pref("print.postscript.nativefont.x-cyrillic", "");
+pref("print.postscript.nativefont.x-unicode", "");
+pref("print.postscript.nativefont.x-user-def", "");
+pref("print.postscript.nativefont.x-western", "");
+pref("print.postscript.nativefont.zh-CN", "");
 // Change lines below to your local system fonts
 // Check http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html
-pref("print.psnativecode.zh-TW", "big5");
-pref("print.psnativefont.zh-TW", "ArphicMingB5-Regular-ETen-B5-H");
+pref("print.postscript.nativecode.zh-TW", "big5");
+pref("print.postscript.nativefont.zh-TW", "ArphicMingB5-Regular-ETen-B5-H");
