@@ -1,28 +1,29 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Call.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Exec.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/cpp.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/cpp.pm.bak
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/decrypt.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/exec.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/exec.pm.bak
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/sh.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/sh.pm.bak
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/tee.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Exec/Exec.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Exec/Exec.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/decrypt/decrypt.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/decrypt/decrypt.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/tee/tee.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/tee/tee.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/perlfilter.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Exec
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/decrypt
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/tee
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Call.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util/Exec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/cpp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/cpp.pm.bak
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/decrypt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/exec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/exec.pm.bak
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/sh.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/sh.pm.bak
+%%SITE_PERL%%/%%PERL_ARCH%%/Filter/tee.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec/Exec.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec/Exec.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt/decrypt.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt/decrypt.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee/tee.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee/tee.so
+%%SITE_PERL%%/%%PERL_ARCH%%/filter-util.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/perlfilter.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/tee
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/decrypt
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Exec
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util/Call
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter/Util
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filter
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter/Util
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Filter
