@@ -13,4 +13,6 @@ MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/align/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_PERL5=	yes
+
 .include <bsd.port.mk>
