@@ -1,11 +1,4 @@
 bin/nautilus
-bin/nautilus-adapter
-bin/nautilus-content-loser
-bin/nautilus-music-view
-bin/nautilus-sample-content-view
-bin/nautilus-sidebar-loser
-bin/nautilus-text-view
-bin/nautilus-throbber
 etc/X11/serverconfig/.directory
 etc/X11/starthere/.directory
 etc/X11/starthere/applications.desktop
@@ -18,7 +11,6 @@ etc/gconf/gconf.xml.defaults/apps/nautilus/icon_view/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/list_view/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/news/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/nautilus/preferences/xalf/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels/tree/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/%gconf.xml
@@ -26,7 +18,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/icon_view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/list_view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/news/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences/xalf/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels/tree/%gconf.xml
 etc/gconf/schemas/apps_nautilus_preferences.schemas
@@ -40,15 +31,15 @@ include/libnautilus/nautilus-undo.h
 include/libnautilus/nautilus-view-component.h
 include/libnautilus/nautilus-view-standard-main.h
 include/libnautilus/nautilus-view.h
+lib/bonobo/libnautilus-history-view.so
+lib/bonobo/libnautilus-notes-view.so
+lib/bonobo/libnautilus-tree-view.so
 lib/libnautilus-adapter.a
 lib/libnautilus-adapter.so
 lib/libnautilus-adapter.so.2
-lib/libnautilus-history-view.so
-lib/libnautilus-notes-view.so
 lib/libnautilus-private.a
 lib/libnautilus-private.so
 lib/libnautilus-private.so.2
-lib/libnautilus-tree-view.so
 lib/libnautilus.a
 lib/libnautilus.so
 lib/libnautilus.so.2
@@ -64,6 +55,13 @@ libdata/bonobo/servers/Nautilus_View_text.server
 libdata/bonobo/servers/Nautilus_View_tree.server
 libdata/bonobo/servers/Nautilus_shell.server
 libdata/pkgconfig/libnautilus.pc
+libexec/nautilus-adapter
+libexec/nautilus-content-loser
+libexec/nautilus-music-view
+libexec/nautilus-sample-content-view
+libexec/nautilus-sidebar-loser
+libexec/nautilus-text-view
+libexec/nautilus-throbber
 share/gnome/applications/nautilus.desktop
 share/gnome/gnome-2.0/ui/nautilus-clipboard-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-content-loser-ui.xml
@@ -101,6 +99,7 @@ share/gnome/nautilus/emblems/special.png
 share/gnome/nautilus/emblems/urgent.png
 share/gnome/nautilus/emblems/web.png
 share/gnome/nautilus/filesystem-attributes.xml
+share/gnome/nautilus/glade/nautilus-bookmarks-window.glade
 share/gnome/nautilus/nautilus-extras.placeholder
 share/gnome/nautilus/nautilus-suggested.placeholder
 share/gnome/nautilus/patterns/.striated.png
@@ -381,6 +380,8 @@ share/gnome/pixmaps/nautilus/default/side_bar_image.png
 share/gnome/pixmaps/nautilus/default/theme_preview.png
 share/gnome/pixmaps/nautilus/default/trash-empty.png
 share/gnome/pixmaps/nautilus/default/trash-full.png
+share/gnome/pixmaps/nautilus/default/trash-empty-192.png
+share/gnome/pixmaps/nautilus/default/trash-full-192.png
 share/gnome/pixmaps/nautilus/default/zoom_body.png
 share/gnome/pixmaps/nautilus/emblems.png
 share/gnome/pixmaps/nautilus/gnome/Services.png
@@ -443,15 +444,6 @@ share/gnome/pixmaps/nautilus/gnome/throbber/003.png
 share/gnome/pixmaps/nautilus/gnome/throbber/004.png
 share/gnome/pixmaps/nautilus/gnome/throbber/005.png
 share/gnome/pixmaps/nautilus/gnome/throbber/006.png
-share/gnome/pixmaps/nautilus/gnome/throbber/007.png
-share/gnome/pixmaps/nautilus/gnome/throbber/008.png
-share/gnome/pixmaps/nautilus/gnome/throbber/009.png
-share/gnome/pixmaps/nautilus/gnome/throbber/010.png
-share/gnome/pixmaps/nautilus/gnome/throbber/011.png
-share/gnome/pixmaps/nautilus/gnome/throbber/012.png
-share/gnome/pixmaps/nautilus/gnome/throbber/013.png
-share/gnome/pixmaps/nautilus/gnome/throbber/014.png
-share/gnome/pixmaps/nautilus/gnome/throbber/015.png
 share/gnome/pixmaps/nautilus/gnome/throbber/rest.png
 share/gnome/pixmaps/nautilus/gnome/trash-empty-192.png
 share/gnome/pixmaps/nautilus/gnome/trash-empty-accept-192.png
@@ -612,12 +604,12 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/nautilus/services/text
 @dirrm share/gnome/nautilus/services
 @dirrm share/gnome/nautilus/patterns
+@dirrm share/gnome/nautilus/glade
 @dirrm share/gnome/nautilus/emblems
 @dirrm share/gnome/nautilus
 @dirrm include/libnautilus
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels/tree
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/sidebar_panels
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences/xalf
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/preferences
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/news
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus/list_view
@@ -625,7 +617,6 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/nautilus
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels/tree
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/sidebar_panels
-@dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/preferences/xalf
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/preferences
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/news
 @dirrm etc/gconf/gconf.xml.defaults/apps/nautilus/list_view
