@@ -1,8 +1,8 @@
 # New ports collection makefile for:	zh Big5/GB-ized Netscape
 # Date created:		11 Mar 2000
-# Whom:			Jing-Tang Keith Jang <keith@freebsd.sinica.edu.tw>
+# Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.1 2000-11-02 03:39:11 foxfair Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.2 2000-11-06 18:14:52 keith Exp $
 #
 
 PORTNAME=	${REGION}-netscape-${BROWSER_ARC}
@@ -11,7 +11,7 @@ CATEGORIES=	chinese www
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTNAME=	${REGION}-nskit-${BROWSER_VERSION}
 
-MAINTAINER=	keith@freebsd.sinica.edu.tw
+MAINTAINER=	keith@FreeBSD.org
 
 # ?= is for ports that include this Makefile.
 # We need Arphic because there's no font with all sizes to deal with Java.

@@ -1,6 +1,6 @@
 # New ports collection makefile for:    zh-big5fs
 # Date created:         Oct 13, 2000
-# Whom:                 keith@freebsd.sinica.edu.tw
+# Whom:                 keith@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=		1.0
 CATEGORIES=		chinese
 MASTER_SITES=		ftp://freebsd.sinica.edu.tw/pub/keith/
 
-MAINTAINER=		keith@freebsd.sinica.edu.tw
+MAINTAINER=		keith@FreeBSD.org
 
 NO_PACKAGE=		"Different versions definitely cause crash"
 

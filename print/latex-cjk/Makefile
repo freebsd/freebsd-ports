@@ -1,6 +1,6 @@
 # New ports collection makefile for:	zh-CJK
 # Date created:		5 Sep 1999
-# Whom:			Keith Jang (keith@freebsd.sinica.edu.tw)
+# Whom:			Jing-Tang Keith Jang (keith@FreeBSD.org)
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTNAME=	cjk-20001003
 
-MAINTAINER=	keith@freebsd.sinica.edu.tw
+MAINTAINER=	keith@FreeBSD.org
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \

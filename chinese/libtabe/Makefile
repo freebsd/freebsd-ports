@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libtabe
 # Date created:				2 Nov 1999
-# Whom:					Keith Jang <keith@freebsd.sinica.edu.tw>
+# Whom:					Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.1.9
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/
 
-MAINTAINER=	keith@freebsd.sinica.edu.tw
+MAINTAINER=	keith@FreeBSD.org
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 
