@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.9 1998/09/19 01:27:52 hoek Exp $
+# $Id: Makefile,v 1.10 1998/09/19 01:36:18 hoek Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -28,7 +28,8 @@ pre-install:
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/include/EZ.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.so.1.3 ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.so.${VERSION} ${PREFIX}/lib
+	@ ${LN} -sf libEZ.so.${VERSION} ${PREFIX}/lib/libEZ.so
 .for file in ${MAN3}
 	@ ${INSTALL_MAN} ${WRKSRC}/man3/${file} ${PREFIX}/man/man3
 .endfor
@@ -46,6 +47,12 @@ do-install:
 .endif
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	1
+.else
+VERSION=	1.3
+.endif
