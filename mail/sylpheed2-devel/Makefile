@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
 MAINTAINER=	lehmann@ans-netz.de
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_LIBTOOL=	yes
+
+CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-compface --disable-gdk-pixbuf --enable-ipv6
+CONFIGURE_ARGS=	--disable-compface --disable-gdk-pixbuf --enable-ipv6 --prefix=${PREFIX} --with-included-gettext
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.3:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.4:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .endif
@@ -47,6 +51,9 @@ pre-extract:
 .endif
 	@${ECHO_MSG}
 
+pre-configure:
+	${PERL} -pi -e "s|AM_PROG_INSTALL|AC_PROG_INSTALL|g" ${WRKSRC}/aclocal.m4
+	${RM} -f ${WRKSRC}/ac/gpgme.m4
 
 post-install:
 .if !defined(NOPORTDOCS)
