@@ -30,6 +30,7 @@
     SUBDIR += xcruise
     SUBDIR += xdiskusage
     SUBDIR += xfce4-fm
+    SUBDIR += xfce4-fm-icons
     SUBDIR += xfm
     SUBDIR += xnc
 
