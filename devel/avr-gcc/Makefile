@@ -13,13 +13,16 @@ CATEGORIES=	devel
 #MASTER_SITES=	ftp://gcc.gnu.org/pub/gcc/snapshots/${PORTVERSION}/
 MASTER_SITES=	http://people.freebsd.org/~joerg/
 PKGNAMEPREFIX=	avr-
-DISTFILES=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX} \
+		${MAN_AUX}
+EXTRACT_ONLY=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		autoheader:${PORTSDIR}/devel/autoconf
+		autoheader:${PORTSDIR}/devel/autoconf \
+		perl:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
 
@@ -34,9 +37,21 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
 
+MAN_AUX=	gcc-man.2002.09.01.gz
+
 MAKE_FLAGS=	LANGUAGES="c c++"
 
 MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
+
+# Since the pod2man in FreeBSD 4-stable's /usr/bin cannot be used, we
+# help out by extracting precompiled manpages there.
+pre-build:
+		if perl -e 'use 1.10 Pod::Man' >/dev/null 2>/dev/null ; \
+		then : ; \
+		else \
+			cd ${WRKDIR}/gcc-${PORTVERSION} ; \
+			${TAR} -xvzf ${DISTDIR}/${MAN_AUX} ; \
+		fi
 
 .include <bsd.port.mk>
