@@ -1,0 +1,52 @@
+$FreeBSD$
+--- src/cmd/INIT/proto.c.orig	Thu Oct 26 16:00:44 2000
++++ src/cmd/INIT/proto.c	Thu Dec 28 18:26:19 2000
+@@ -1531,6 +1531,7 @@
+ 
+ 
+ 
++extern __MANGLE__ __V_*		realloc __PROTO__((__V_*, int));
+ extern __MANGLE__ __V_*		calloc __PROTO__((int, int));
+ extern __MANGLE__ char*		ctime __PROTO__((time_t*));
+ extern __MANGLE__ void		free __PROTO__((__V_*));
+@@ -3965,7 +3966,7 @@
+ 	if ((n = ip - bp - 1) > 0)
+ 	{
+ 		ip = bp;
+-		do switch( n) { default : memcpy( op, ip, n); op += n; ip += n; break; case 7 : * op++ = * ip++; case 6 : * op++ = * ip++; case 5 : * op++ = * ip++; case 4 : * op++ = * ip++; case 3 : * op++ = * ip++; case 2 : * op++ = * ip++; case 1 : * op++ = * ip++; case 0 : break; } while (0);
++		do switch( n) { default : memcopy( op, ip, n); op += n; ip += n; break; case 7 : * op++ = * ip++; case 6 : * op++ = * ip++; case 5 : * op++ = * ip++; case 4 : * op++ = * ip++; case 3 : * op++ = * ip++; case 2 : * op++ = * ip++; case 1 : * op++ = * ip++; case 0 : break; } while (0);
+ 		ip++;
+ 	}
+ 	state = ~state;
+@@ -5835,11 +5836,11 @@
+ 				pppclose(b);
+ 				return flags | ((1<<13)<<0);
+ 			}
+-			strcpy(buf, copy);
++			strcopy(buf, copy);
+ 			e = buf + n;
+ 			if (*file != '/')
+ 				*e++ = '/';
+-			strcpy(e, file);
++			strcopy(e, file);
+ 			if ((fd = creat(buf, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)) < 0)
+ 			{
+ 				for (e = buf; *e == '/'; e++);
+@@ -5882,7 +5883,7 @@
+ 		if (file && (flags & ((1<<13)<<1)))
+ 		{
+ 			*e = '_';
+-			strcpy(b, file);
++			strcopy(b, file);
+ 			*e = x;
+ 			if (replace(b, file, !(flags & (1<<0))))
+ 				proto_error(b, 2, "cannot rename to", file);
+@@ -5977,7 +5978,7 @@
+ 				else
+ 				{
+ 					*op++ = '\n';
+-					memcpy(op, b, n + 1);
++					memcopy(op, b, n + 1);
+ 					op += n;
+ 				}
+ 				break;

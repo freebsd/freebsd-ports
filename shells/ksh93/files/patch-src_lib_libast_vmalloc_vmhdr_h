@@ -1,0 +1,18 @@
+$FreeBSD$
+--- src/lib/libast/vmalloc/vmhdr.h.orig	Thu Dec 28 00:07:39 2000
++++ src/lib/libast/vmalloc/vmhdr.h	Thu Dec 28 00:08:18 2000
+@@ -56,12 +56,12 @@
+ #include	<ast_common.h>
+ #include	"FEATURE/vmalloc"
+ 
++#endif /*_PACKAGE_ast*/
++
+ #if !_UWIN
+ #define _npt_getpagesize	1
+ #define _npt_sbrk		1
+ #endif
+-
+-#endif /*_PACKAGE_ast*/
+ 
+ #undef free
+ #undef malloc

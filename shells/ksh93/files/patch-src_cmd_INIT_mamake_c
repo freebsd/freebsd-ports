@@ -1,0 +1,12 @@
+$FreeBSD$
+--- src/cmd/INIT/mamake.c.orig	Fri Sep 22 00:38:32 2000
++++ src/cmd/INIT/mamake.c	Thu Dec 28 18:26:19 2000
+@@ -98,6 +98,8 @@
+ #endif
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <ctype.h>
+ #include <sys/types.h>

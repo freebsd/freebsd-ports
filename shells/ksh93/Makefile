@@ -1,51 +1,41 @@
-# New ports collection makefile for:	ksh93
-# Date created:		1999-10-24
-# Whom:			Christian Weisgerber <naddy@mips.rhein-neckar.de>
+# New ports collection makefile for:   ksh93
+# Date created:                2000-12-26
+# Whom:                        Christian Weisgerber <naddy@mips.inka.de>
 #
 # $FreeBSD$
-#
-# ast-base-99 is linked dynamically for BSD/OS and will not work
 
-PORTNAME=		ksh
-PORTVERSION=		19931228
-CATEGORIES=		shells
-# Users must register with AT&T before downloading tarball.
-# You can use the following URL to register/download:
-# http://www.research.att.com/cgi-bin/access.cgi/as/vt/ext-software/www-ne-license.cgi?form.reuse.binary
-#MASTER_SITES=		http://www.research.att.com/sw/tools/reuse/
-DISTNAME=		ast-base-98.bsd.i386
-EXTRACT_SUFX=		.tgz
+PORTNAME=	ksh93
+PORTVERSION= 	${VERSION:S/-//g}
+VERSION=	2001-01-01.0000
+CATEGORIES=	shells
+MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 
-MAINTAINER=		naddy@mips.inka.de
+MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
 
-ONLY_FOR_ARCHS=		i386
-RESTRICTED=		"Requires user to register with AT&T."
+RESTRICTED=	"Impenetrable license"
+IS_INTERACTIVE=	yes	# must acknowledge license
 
-NO_BUILD=	yes
+DISTNAME=	${PORTNAME}-${VERSION}
+DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
+EXTRACT_ONLY=	INIT.${VERSION}.tgz
+
 NO_WRKSUBDIR=	yes
-MAN1=		ksh93.1
-STRIP=
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	  ${ECHO} ""; \
-	  ${ECHO} "Please read http://www.research.att.com/sw/tools/reuse/"; \
-	  ${ECHO} "for details of how to obtain the ksh93 binary.  Put the"; \
-	  ${ECHO} "file ${DISTFILES} in the directory"; \
-	  ${ECHO} "${DISTDIR} and run make again."; \
-	  ${ECHO} ""; \
-	  exit 1; \
-	fi
+MAN1=		ksh93.1
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/lib/package/tgz
+	@${LN} -s ${DISTDIR}/ast-ksh.${VERSION}.tgz ${WRKSRC}/lib/package/tgz/
+	@cd ${WRKSRC}; bin/package read
+
+do-build:
+	@cd ${WRKSRC}; bin/package make \
+	    CC='${CC}' CCFLAGS='${CFLAGS}' LDFLAGS=-static
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${PREFIX}/bin/ksh93
-	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${PREFIX}/man/man1/ksh93.1
-
-post-install:
-	@${ECHO_MSG} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/ksh93 /etc/shells.bak; \
-		${ECHO} ${PREFIX}/bin/ksh93) > /etc/shells
-	@${RM} /etc/shells.bak
+	${INSTALL_PROGRAM} ${WRKSRC}/arch/freebsd.${ARCH}/bin/ksh \
+	    ${PREFIX}/bin/ksh93
+	${INSTALL_MAN} ${WRKSRC}/arch/freebsd.${ARCH}/man/man1/sh.1 \
+	    ${PREFIX}/man/man1/ksh93.1
 
 .include <bsd.port.mk>
