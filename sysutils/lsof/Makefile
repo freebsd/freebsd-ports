@@ -28,10 +28,11 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
+FREEBSD_SYS?=	/usr/src/sys
 MAN8=		lsof.8
 
 .if defined(PACKAGE_BUILDING)
-.if !exists(/usr/src/sys/miscfs/fdesc/fdesc.h)
+.if !exists(${FREEBSD_SYS}/miscfs/fdesc/fdesc.h)
 BROKEN=	'please install kernel source for official package builds'
 .endif
 .endif
@@ -65,14 +66,15 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
 
-.if !exists(/sys/miscfs/fdesc/fdesc.h) && !exists(/usr/src/miscfs/fdesc/fdesc.h)
+if !exists(${FREEBSD_SYS}/miscfs/fdesc/fdesc.h)
 post-install:
 	@${ECHO} "************************************************************"
 	@${ECHO} "*                      W a r n i n g                       *"
 	@${ECHO} "* A more capable version of LSOF is built if you have      *"
-	@${ECHO} "* kernel source installed and /sys exists.                 *"
-	@${ECHO} "* If this is the case, please ensure /sys is consistent    *"
-	@${ECHO} "* with respect to your running kernel (i.e. not new than). *"
+	@${ECHO} "* the complete kernel source installed.                    *"
+	@${ECHO} "* If your kernel sources are somewhere other than          *"
+	@${ECHO} "* /usr/src/sys, you may set the FREEBSD_SYS variable       *"
+	@${ECHO} "* to the correct path.                                     *"
 	@${ECHO} "************************************************************"
 .endif
 
