@@ -6927,6 +6927,7 @@ p5-Finance-Quote	ports/finance/p5-Finance-Quote
 p5-Finance-QuoteHist	ports/finance/p5-Finance-QuoteHist
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF	ports/x11-fonts/p5-Font-TTF
+p5-FreeBSD-Portindex	ports/sysutils/p5-FreeBSD-Portindex
 p5-FreeBSD-Ports	ports/textproc/p5-FreeBSD-Ports
 p5-FreezeThaw	ports/devel/p5-FreezeThaw
 p5-Frontier-RPC	ports/net/p5-Frontier-RPC
