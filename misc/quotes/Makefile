@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	quotes
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.iae.nl/pub/users/grimaldo/
-DISTNAME=	quotes-1.6-2
+MASTER_SITES=	ftp://ftp.coralys.com/pub/free/
+DISTNAME=	${PORTNAME}-1.7-2
 
 MAINTAINER=	demon@FreeBSD.org
 
