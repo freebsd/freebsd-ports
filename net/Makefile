@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.203 1998/12/04 08:14:56 jkoshy Exp $
+# $Id: Makefile,v 1.204 1998/12/07 02:22:05 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -95,6 +95,7 @@
     SUBDIR += ntimelord
     SUBDIR += ntop
     SUBDIR += ntp
+    SUBDIR += nttcp
     SUBDIR += omi
     SUBDIR += openldap
     SUBDIR += p5-Archie
