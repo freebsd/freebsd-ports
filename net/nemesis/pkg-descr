@@ -1,7 +1,6 @@
 The Nemesis Project is designed to be a command line based, portable human IP
-stack for UNIX-like and Windows sytems.  The suite is broken down by protocol, 
-and should allow for useful scripting of injected packets from simple shell 
-scripts.
+stack.  The suite is broken down by protocol, and should allow for useful
+scripting of injected packets from simple shell scripts.
 
 Key Features:
 
@@ -12,10 +11,9 @@ Key Features:
   -d <device number> is used.
 + Packet payload from file
 + IP and TCP options from file
-+ Tested on OpenBSD, Linux, Solaris, Mac OS X and Windows 2000
 
 Each supported protocol uses its own protocol "injector" which is accompanied
 by a man page explaning its functionality.
 
 
-WWW:  http://www.packetfactory.net/projects/nemesis/
+WWW:  http://nemesis.sourceforge.net/

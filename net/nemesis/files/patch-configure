@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -4148,7 +4148,6 @@
+ 
+ 
+ CPPFLAGS="${CPPFLAGS} `libnet-config --defines`"
+-CFLAGS="${CFLAGS} -funroll-loops -pipe"
+ 
+ if test `libnet-config --cflags | wc -c` = "1"; then
+     CPPFLAGS="${CPPFLAGS} -I/usr/local/include -I/sw/include"
