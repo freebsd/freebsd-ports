@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.48 1998/08/04 19:26:04 obrien Exp $
+# $Id: Makefile,v 1.49 1998/09/22 21:59:45 smace Exp $
 
 DISTNAME=	mutt-0.93.2i
 PKGNAME=	mutt-0.93.2
@@ -26,14 +26,14 @@ PATCHFILES=
 MAINTAINER=     obrien@FreeBSD.org
 
 .if defined(BATCH)
-LIB_DEPENDS=	slang\\.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .elif defined(USE_NCURSES_PORT)
 LIB_DEPENDS=	ncurses\\.4\\.:${PORTSDIR}/devel/ncurses
 .elif defined(USE_SLANG)
-LIB_DEPENDS=	slang\\.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 .endif
 
 DIST_SUBDIR=	mutt
