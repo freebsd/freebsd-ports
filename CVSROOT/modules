@@ -5436,6 +5436,7 @@ py-gnome	ports/x11-toolkits/py-gnome
 py-gnupg	ports/security/py-gnupg
 py-gnuplot	ports/math/py-gnuplot
 py-grouch	ports/devel/py-grouch
+py-gsl		ports/math/py-gsl
 py-gtk		ports/x11-toolkits/py-gtk
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-htmlkit	ports/devel/py-htmlkit
