@@ -23,6 +23,7 @@
     SUBDIR += jce-aba
     SUBDIR += jdbcpool
     SUBDIR += jde
+    SUBDIR += jde-emacs20
     SUBDIR += jdk
     SUBDIR += jdk-tutorial
     SUBDIR += jdk11-doc
