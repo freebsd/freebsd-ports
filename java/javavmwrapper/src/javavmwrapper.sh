@@ -19,6 +19,7 @@
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
+ARGS="${*}"
 PREFIX="%%PREFIX%%"
 CONF="${PREFIX}/etc/javavms"
 IAM=`basename "${0}"`
@@ -101,7 +102,7 @@ unset JAVA_HOME
 
 # First check if JAVAVM environment variable is set
 if [ x"${JAVAVM}" != x"" ]; then
-    tryrunVM "${JAVAVM}" "${@}"
+    tryrunVM "${JAVAVM}" "${ARGS}"
 fi
 
 # Then try to make sure that ${CONF} exists
@@ -115,7 +116,7 @@ VMS=`/usr/bin/sed 's|#.*||' < "${CONF}" | uniq`
 
 # Finally try to run one of the ${VMS}
 for JAVAVM in ${VMS}; do
-    tryrunVM "${JAVAVM}" "${@}";
+    tryrunVM "${JAVAVM}" "${ARGS}";
 done
 
 echo "${IAM}: error: no suitable JavaVMs found" >&2
