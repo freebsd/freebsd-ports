@@ -1,0 +1,33 @@
+# New ports collection makefile for:	phptags
+# Date created:				06 May 2004
+# Whom:					Roman Bogorodskiy
+#
+# $FreeBSD$
+#
+
+PORTNAME=	phptags
+PORTVERSION=	0.1
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	bogorodskiy@inbox.ru
+COMMENT=	Create a tags file from PHP sources
+
+GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN1=		phptags.1
+PLIST_FILES=	bin/phptags
+PORTDOCS=	AUTHORS TODO README ChangeLog INSTALL
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>

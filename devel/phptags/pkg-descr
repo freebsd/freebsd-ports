@@ -1,0 +1,11 @@
+The phptags utility makes a tags file from the specified PHP sources.
+A tags file gives the locations of specified objects in a group of files.
+Each line of the tags file contains the object name, the file in which it is
+defined, and a search pattern for the object definition, separated by
+white-space. Using the tags file, many editors (ex(1), vim(1), emacs(1), etc)
+can quickly locate these object definitions.
+
+WWW: http://phptags.sf.net
+
+-Roman Bogorodskiy
+<bogorodskiy@inbox.ru>
