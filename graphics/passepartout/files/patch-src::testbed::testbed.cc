@@ -1,5 +1,5 @@
---- src/testbed/testbed.cc.orig	Fri Oct 31 20:36:24 2003
-+++ src/testbed/testbed.cc	Fri Oct 31 20:39:09 2003
+--- src/testbed/testbed.cc.orig	Sat Jan 17 22:58:16 2004
++++ src/testbed/testbed.cc	Sat Jan 17 22:42:18 2004
 @@ -1,6 +1,7 @@
  #include "testbed.hh"
  #include "util/warning.h"
@@ -7,7 +7,7 @@
 +#include <algorithm>
  #include <functional>
  ///
- // Copyright (C) 2003, Fredrik Arnerup & Rasmus Kaj, See COPYING
+ // Copyright (C) 2003, 2004, Fredrik Arnerup & Rasmus Kaj, See COPYING
 @@ -53,7 +54,7 @@
      verbose.active = true;
      verbose << "Starting test run. " << TestCase::cases.size()

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	passepartout
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	DTP application for X
 
 LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
-		xml\\+\\+-0.1:${PORTSDIR}/textproc/libxml++
+		xml\\+\\+-1.0:${PORTSDIR}/textproc/libxml++
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
@@ -32,12 +32,12 @@ MAN=	xml2ps.1 passepartout.1x
 EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_cxx
 .endif
 
-# Fix for recent libxml++ API change
-post-patch:
-	@${FIND} ${WRKSRC}/src/pptout -name *.cc \
-		| ${GREP} -v -E 'pagesel|undodialog' \
-		| ${XARGS} ${REINPLACE_CMD} \
-			-e 's|add_attribute|set_attribute|' \
-			-e 's|add_content|add_child_text|'
+.if exists(${LOCALBASE}/lib/libfam.a)
+WITH_FAM=       yes
+.endif
+
+.if defined(WITH_FAM)
+LIB_DEPENDS+=   fam.0:${PORTSDIR}/devel/fam
+.endif
 
 .include <bsd.port.post.mk>
