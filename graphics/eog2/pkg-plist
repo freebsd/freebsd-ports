@@ -164,6 +164,7 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog/de/figures
 @dirrm share/gnome/help/eog/de
 @dirrm share/gnome/help/eog/C/figures
+@dirrm share/gnome/help/eog/C
 @dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
