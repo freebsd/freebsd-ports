@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pmw
-# Version required:	0.8
+# Version required:	0.8.1
 # Date created:		03 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/11/24 10:10:21 tg Exp $
+# $Id: Makefile,v 1.5 1998/12/15 08:13:05 tg Exp $
 
-DISTNAME=	Pmw.0.8
-PKGNAME=	py-pmw-0.8
+DISTNAME=	Pmw.0.8.1
+PKGNAME=	py-pmw-0.8.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.dscpl.com.au/pub/pmw/
 
@@ -21,7 +21,7 @@ PYTHONSCRIPTDIR=${PREFIX}/lib/python1.5
 SITEPYDIR=	${PYTHONSCRIPTDIR}/site-packages
 DOCDIR=		${PREFIX}/share/doc/Pmw
 EXAMPLEDIR=	${PREFIX}/share/examples/Pmw
-PMWVERSION=	Pmw_0_8
+PMWVERSION=	Pmw_0_8_1
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
