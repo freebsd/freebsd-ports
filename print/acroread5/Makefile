@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 DISTNAME=	linux-505
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.homeip.net
 
 ONLY_FOR_ARCHS=	i386
 
