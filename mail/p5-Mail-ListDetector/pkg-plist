@@ -1,0 +1,21 @@
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Ezmlm.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Listar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Mailman.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Majordomo.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/RFC2369.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Smartlist.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Yahoogroups.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/List.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/ListDetector/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/ListDetector/.packlist
+share/examples/Mail-ListDetector/sample.pl
+@dirrm share/examples/Mail-ListDetector
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/ListDetector
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/ListDetector
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Mail 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true

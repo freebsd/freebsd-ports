@@ -1,0 +1,13 @@
+This module analyzses a Mail::Internet object and returns a
+Mail::ListDetector::List object representing the mailing list the
+email was sent to, if any.
+
+The RFC2369 mailing list detector is also capable of matching some
+Mailman and Ezmlm messages. It is deliberately checked last to allow
+the more specific Mailman and Ezmlm parsing to happen first, and
+more accurately identify the type of mailing list involved.
+
+WWW: http://search.cpan.org/search?dist=Mail-ListDetector
+
+- Pete
+petef@FreeBSD.org
