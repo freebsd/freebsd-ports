@@ -1,0 +1,42 @@
+--- src/process.c.orig	Tue Jul  1 16:24:08 2003
++++ src/process.c	Tue Jul  1 16:24:42 2003
+@@ -400,6 +400,14 @@
+ 
+ #ifdef HAVE_PTYS
+ 
++char to_tty_char(int i)
++{
++  if (i < 10)
++    return '0' + i;
++  else
++    return 'a' + i - 10;
++}
++
+ /* Open an available pty, returning a file descriptor.
+    Return -1 on failure.
+    The file name of the terminal corresponding to the pty
+@@ -423,13 +431,13 @@
+   PTY_ITERATION
+ #else
+   for (c = FIRST_PTY_LETTER; c <= 'z'; c++)
+-    for (i = 0; i < 16; i++)
++    for (i = 0; i < 'z' - 'a' + 1 + 10; i++)
+ #endif
+       {
+ #ifdef PTY_NAME_SPRINTF
+ 	PTY_NAME_SPRINTF
+ #else
+-	sprintf (pty_name, "/dev/pty%c%x", c, i);
++	sprintf (pty_name, "/dev/pty%c%c", c, to_tty_char(i));
+ #endif /* no PTY_NAME_SPRINTF */
+ 
+ #ifdef PTY_OPEN
+@@ -466,7 +474,7 @@
+ #ifdef PTY_TTY_NAME_SPRINTF
+ 	    PTY_TTY_NAME_SPRINTF
+ #else
+-            sprintf (pty_name, "/dev/tty%c%x", c, i);
++            sprintf (pty_name, "/dev/tty%c%c", c, to_tty_char(i));
+ #endif /* no PTY_TTY_NAME_SPRINTF */
+ #ifndef UNIPLUS
+ 	    if (access (pty_name, 6) != 0)
