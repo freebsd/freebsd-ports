@@ -1,0 +1,4 @@
+bin/wmlongrun
+%%PORTDOCS%%share/doc/wmlongrun/ChangeLog
+%%PORTDOCS%%share/doc/wmlongrun/README
+%%PORTDOCS%%@dirrm share/doc/wmlongrun
