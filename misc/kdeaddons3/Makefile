@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	kdeaddons
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -14,38 +15,30 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia2 \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia3 \
+		SDL-1.1.3:${PORTSDIR}/devel/sdl12
 
 WITH_SDL=	yes
-USE_KDEBASE_VER=2
+USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 PLIST_SUB+=	RM=${RM}
 CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
+CONFIGURE_ARGS=	--enable-objprelink
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
 .endif
 
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
+post-configure:
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+		"s@sdl-config@${SDL_CONFIG}@g"
 
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
-		"s@sdl-config@${LOCALBASE}/bin/sdl11-config@g"
+.include <bsd.port.pre.mk>
 
 .include <bsd.port.post.mk>

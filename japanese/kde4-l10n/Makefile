@@ -1,17 +1,28 @@
-# New ports collection makefile for:	ja-kde2-i18n
-# Date created:		11 April 2001
-# Whom:			Tadayuki OKADA <tadayuki.okada@windriver.com>
+# New ports collection makefile for:    kde3-i18n-ja
+# Date created:                         05 April 2002
+# Whom:                                 Lauri Watts <lauri@kde.org>
 #
 # $FreeBSD$
 #
 
-CATEGORIES=	japanese kde misc
+PORTNAME=	kde-i18n-ja
+PORTVERSION=	3.0
+CATEGORIES?=	misc kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=     stable/${PORTVERSION}/src
+DIST_SUBDIR=    KDE
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAINTAINER=	sahiro@crest.ocn.ne.jp
+MAINTAINER?=    kde@FreeBSD.org
 
-LINGUAS=	"ja"
-MASTERDIR=	${.CURDIR}/../../misc/kde2-i18n
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
-SCRIPTS_ENV+=	LINGUAS=${LINGUAS}
+USE_KDELIBS_VER=3
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
-.include "${MASTERDIR}/Makefile"
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.mk>

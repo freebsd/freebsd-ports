@@ -3,6 +3,7 @@
 
     SUBDIR += gd
     SUBDIR += kde-i18n-uk
+    SUBDIR += kde3-i18n
     SUBDIR += monacofonts
     SUBDIR += pine.language
     SUBDIR += webalizer

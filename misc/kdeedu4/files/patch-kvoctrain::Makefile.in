@@ -1,0 +1,11 @@
+--- kvoctrain/kvoctrain/Makefile.in	Sun Mar 24 14:35:29 2002
++++ kvoctrain/kvoctrain/Makefile.in.new	Tue Apr  2 11:54:30 2002
+@@ -712,7 +712,7 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_bindir)
+-	$(INSTALL_PROGRAM) $(srcdir)/langen2kvtml $(DESTDIR)$(kde_bindir)/langen2kvtml
++	$(INSTALL_SCRIPT) $(srcdir)/langen2kvtml $(DESTDIR)$(kde_bindir)/langen2kvtml
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_appsdir)/Edutainment/
+ 	$(INSTALL_DATA) $(srcdir)/kvoctrain.desktop $(DESTDIR)$(kde_appsdir)/Edutainment/kvoctrain.desktop
+ 	$(mkinstalldirs) $(DESTDIR)$(kde_icondir)/

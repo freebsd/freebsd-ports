@@ -220,6 +220,7 @@
     SUBDIR += jam
     SUBDIR += kdbg
     SUBDIR += kdesdk
+    SUBDIR += kdesdk3
     SUBDIR += kdestudio
     SUBDIR += kdevelop
     SUBDIR += kelp

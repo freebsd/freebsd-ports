@@ -1,17 +1,28 @@
-# New ports collection makefile for:	fr-kde2-i18n
-# Date created:				13 April 2001
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
+# New ports collection makefile for:    kde3-i18n-fr
+# Date created:                         05 April 2002
+# Whom:                                 Lauri Watts <lauri@kde.org>
 #
 # $FreeBSD$
 #
 
-CATEGORIES=	french kde misc
+PORTNAME=	kde-i18n-fr
+PORTVERSION=	3.0
+CATEGORIES?=	misc kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=     stable/${PORTVERSION}/src
+DIST_SUBDIR=    KDE
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=    kde@FreeBSD.org
 
-LINGUAS=	"fr"
-MASTERDIR=	${.CURDIR}/../../misc/kde2-i18n
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
-SCRIPTS_ENV+=	LINGUAS=${LINGUAS}
+USE_KDELIBS_VER=3
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
-.include "${MASTERDIR}/Makefile"
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.mk>

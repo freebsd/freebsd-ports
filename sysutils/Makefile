@@ -82,6 +82,7 @@
     SUBDIR += ipa
     SUBDIR += ipsc
     SUBDIR += kdeadmin
+    SUBDIR += kdeadmin3
     SUBDIR += koncd
     SUBDIR += lavaps
     SUBDIR += lfm

@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	kdepim
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -14,47 +15,24 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 USE_BISON=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
 .endif
-
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
-QTCPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-QTLDFLAGS=	${QTCPPFLAGS}
-CONFIGURE_ENV+=	LIBS="${QTLDFLAGS}"
-MAKE_ENV=	${CONFIGURE_ENV}
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
-		"s,#include.*<malloc.h>,#include <stdlib.h>,g"
+# Remove kpilot by author's request.
+CONFIGURE_ENV+=DO_NOT_COMPILE="kpilot"
 
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	find ${WRKSRC}/kpilot \( -name Makefile.in -o -name Makefile.am \) | \
-		xargs ${PERL} -pi -e \
-		"s@LDFLAGS =@LDFLAGS=-L${LOCALBASE}/pilot/lib@g"
-	find ${WRKSRC}/libical -name Makefile.in | xargs ${PERL} -pi -e \
-		"s|INSTALL = \@INSTALL\@|INSTALL=${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP}|g"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

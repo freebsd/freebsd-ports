@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdenetwork
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0
 PORTREVISION=	1
 CATEGORIES?=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -15,38 +15,21 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
 LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
-CONFIGURE_ENV+=	PATH=${WRKSRC}/auto-bin:$$PATH
 MAKE_ENV=	${CONFIGURE_ENV}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
-.endif
-
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-	${PERL} -pi -e "s:-lpthread:${PTHREAD_LIBS}:g" ${WRKSRC}/knode/Makefile.in
-	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
-	${PERL} -pi -e "s@^AC_CHECK_UTMP_FILE@# AC_CHECK_UTMP_FILE@g" ${WRKSRC}/configure.in
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kdemultimedia
-PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -15,46 +15,24 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	ogg.3:${PORTSDIR}/audio/libogg \
-		vorbis.1:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
+LIB_DEPENDS+=	ogg.3:${PORTSDIR}/audio/libogg \
+		vorbis.1:${PORTSDIR}/audio/libvorbis
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib
-
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
+# spurious, but i don't care
 .include <bsd.port.pre.mk>
-
-_NO_KDE_FINAL=	yes
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
-.endif
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
-
-pre-configure:
-	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" \
-		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
-	${PERL} -pi -e \
-		's,kscd_compile=no,kscd_compile=yes,g; \
-		s,kde_artsplug_compiles = xno,kde_artsplug_compiles = x,g' \
-		${WRKSRC}/kscd/configure.in.in
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
 
 post-install:
 	@${ECHO_MSG}

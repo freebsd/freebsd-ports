@@ -154,6 +154,7 @@
     SUBDIR += kcc
     SUBDIR += kde2
     SUBDIR += kde2-i18n
+    SUBDIR += kde3-i18n
     SUBDIR += kdeaddons
     SUBDIR += kdebase2
     SUBDIR += kdelibs2
