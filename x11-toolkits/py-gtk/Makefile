@@ -14,10 +14,10 @@ DISTNAME=	gnome-python-1.0.53
 
 MAINTAINER=	nectar@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
 		Imlib.5:${PORTSDIR}/graphics/imlib
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ DISTNAME=	biopython-0.90-d02
 
 MAINTAINER=	johann@egenetics.com
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 \
 		${LOCALBASE}/lib/python1.5/site-packages/Numeric/Numeric.py:${PORTSDIR}/math/numpy \
 		${LOCALBASE}/lib/python1.5/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
 

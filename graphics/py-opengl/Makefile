@@ -15,9 +15,9 @@ DISTNAME=	PyOpenGL-${PORTVERSION}
 
 MAINTAINER=	aa8vb@ipass.net
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
 
 USE_MESA=	yes

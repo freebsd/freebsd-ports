@@ -15,8 +15,8 @@ DISTNAME=		egp-coro-20000424
 MAINTAINER=		kbyanc@posi.net
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro \
-			python:${PORTSDIR}/lang/python
-RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+			python1.5:${PORTSDIR}/lang/python15
+RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
 
 CORO_MODULES=		coroutinemodule.so sendfilemodule.so
 CORO_PACKAGE=		coro corodns coromysql corourl \
