@@ -28,8 +28,10 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-D_P1003_1B_VISIBLE -pthread -I${PREFIX}/include -L${PREFIX}/lib"
-# Uncomment to force gnome dependency
-#USE_GNOMELIBS=	yes
+.if defined(WITH_GNOMELIBS)
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
+.endif
 
 # Directories for the three SableVM source components
 SABLEVMDIR=	${PORTNAME}-${PORTVERSION}
@@ -37,7 +39,7 @@ NATIVEDIR=	${PORTNAME}-native-library-${PORTVERSION}
 CLASSESDIR=	${PORTNAME}-class-library-${PORTVERSION}
 
 # Conditionally compile the gnome-dependent stuff
-.if !defined(USE_GNOMELIBS) && !exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
+.if !defined(WITH_GNOMELIBS) && !exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa ${PATCHDIR}/extra-patch-ab
 pre-fetch:
 	@${ECHO} ''
@@ -47,7 +49,7 @@ pre-fetch:
 	@${ECHO} '***' Therefore, SableVM will be built without graphics
 	@${ECHO} '***' support. If you would like to install the Gnome
 	@${ECHO} '***' libraries to include graphics support, hit Control-C
-	@${ECHO} '***' now and type \'make USE_GNOMELIBS=yes\'.
+	@${ECHO} '***' now and type \'make WITH_GNOMELIBS=yes\'.
 	@${ECHO} '***'
 	@${ECHO} ''
 	@sleep 3
@@ -58,7 +60,7 @@ post-patch:
 		@for dir in ${SABLEVMDIR}; do \
 		    for file in aclocal.m4 configure Makefile.in Makefile; do \
 			${ECHO} ${TOUCH} ${WRKDIR}/$${dir}/$${file}; \
-			touch ${WRKDIR}/$${dir}/$${file}; \
+			${TOUCH} ${WRKDIR}/$${dir}/$${file}; \
 		    done; \
 		done
 
