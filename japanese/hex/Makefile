@@ -3,7 +3,7 @@
 # Date created:         Nov 5, 1996
 # Whom:                 IMAMURA Tomoaki (yu@pastel.club.or.jp)
 #
-# $Id: Makefile,v 1.2 1997/09/14 23:07:36 max Exp $
+# $Id: Makefile,v 1.3 1997/11/16 09:25:46 fenner Exp $
 #
 
 DISTNAME=	hex203
@@ -15,9 +15,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	yu@pastel.club.or.jp
 
 USE_IMAKE=	yes
-
 PREFIX?=	${LOCALBASE}
-
+MTREE_FILE?=	/etc/mtree/BSD.local.dist
+ALL_TARGET=	hex
+MAN1=		hex.1
+MANCOMPRESSED=	yes
 MANLANG=	ja_JP.EUC
 
 .include <bsd.port.mk>
