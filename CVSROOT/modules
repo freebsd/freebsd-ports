@@ -5870,6 +5870,7 @@ p5-WWW-Robot	ports/www/p5-WWW-Robot
 p5-WWW-Search	ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista	ports/www/p5-WWW-Search-AltaVista
 p5-WWW-Search-Google	ports/www/p5-WWW-Search-Google
+p5-Want		ports/devel/p5-Want
 p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
