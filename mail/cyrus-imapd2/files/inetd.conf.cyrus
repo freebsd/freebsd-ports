@@ -15,5 +15,5 @@ pop3	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/pop3d	pop3d
 # NOTE: you will need to add "sieve" to /etc/services.
 #       timsieved uses port 2000.
 #
-sieve   strean  tcp     nowait  cyrus   /usr/local/cyrus/bin/timsieved  sieve
+sieve   stream  tcp     nowait  cyrus   /usr/local/cyrus/bin/timsieved  sieve
 
