@@ -1,0 +1,18 @@
+Hylafax was installed.  You'll need manual configurations to actually
+activate it.
+
+Setting up: (for impatients)
+	Invoke /usr/local/sbin/faxsetup, and answer what she asks.
+	When you are asked to specify the name of tty device, use "cuaa1"
+	instead of "ttyd1".  Otherwise it does not work well.
+
+	Consult /usr/local/etc/rc.d/hylafax.sh.sample for startups.
+
+	For accepting incoming FAX/data calls, modify /etc/ttys as below
+	and send SIGHUP to init process:
+
+>cuaa1	"/usr/local/sbin/faxgetty"	dialup	on secure
+
+Documentation:
+	On Line Manuals: 	man hylafax.
+	World Wide Web site:	http://www.vix.com/flexfax/

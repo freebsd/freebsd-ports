@@ -1,17 +1,129 @@
-Deal with cc -version reporting "2.7.2.1" or any other junk following the
-third number.
+For multilingualization (iso-2022 variant encodings).
+Some part of this is biased to Japanization, however, it should
+give some hints to asian people.
 
-Inspired by a larger patch from <jhs@freebsd.org> and apparently
-Andreas Klemm <andreas@klemm.gtn.com>
-
---- configure.dist	Mon Oct 14 10:17:10 1996
-+++ configure	Mon Oct 14 10:18:20 1996
-@@ -446,7 +446,7 @@
- {
-     app=$1; shift
-     eval `$app -v 2>&1 | \
--	sed -n -e '/version/s/.* \([0-9]*\)\.\([0-9]*\).\([0-9]*\)/GCCdist=\1;GCCmajor=\2;GCCminor=\3/p'`
-+	sed -n -e '/version/s/.* \([0-9]*\)\.\([0-9]*\).\([0-9]*\).*/GCCdist=\1;GCCmajor=\2;GCCminor=\3/p'`
-     GCCversion="${GCCdist}.${GCCmajor}.${GCCminor}"; export GCCversion
-     required="$1$2$3"
-     actual="${GCCdist}${GCCmajor}${GCCminor}"
+*** util/TypeRules.c++.orig	Wed Nov 27 08:20:45 1996
+--- util/TypeRules.c++	Sun Apr 20 23:43:42 1997
+***************
+*** 48,54 ****
+  }
+  
+  static const char* typeNames[] =
+!     { "ascii", "string", "address", "byte", "short", "long" };
+  static const char* opNames[] =
+      { "<any>", "=", "!=", "<", "<=", ">", ">=", "&", "^", "!" };
+  static const char* resultNames[] = { "tiff", "postscript", "error" };
+--- 48,54 ----
+  }
+  
+  static const char* typeNames[] =
+!     { "ascii", "asciiesc", "string", "address", "byte", "short", "long" };
+  static const char* opNames[] =
+      { "<any>", "=", "!=", "<", "<=", ">", ">=", "&", "^", "!" };
+  static const char* resultNames[] = { "tiff", "postscript", "error" };
+***************
+*** 65,71 ****
+  	);
+  	if (type == STRING)
+  	    printf(" \"%s\"", value.s);
+! 	else if (type != ASCII) {
+  	    if (op == ANY)
+  		printf(" <any value>");
+  	    else
+--- 65,71 ----
+  	);
+  	if (type == STRING)
+  	    printf(" \"%s\"", value.s);
+! 	else if (type != ASCII && type != ASCIIESC) {
+  	    if (op == ANY)
+  		printf(" <any value>");
+  	    else
+***************
+*** 83,88 ****
+--- 83,89 ----
+      const u_char* cp = (const u_char*) data;
+      switch (type) {
+      case ASCII:
++       {
+  	u_int i;
+  	for (i = 0; i < size; i++)
+  	    if (!isprint(cp[i]) && !isspace(cp[i])) {
+***************
+*** 92,97 ****
+--- 93,111 ----
+  	    }
+  	ok = TRUE;
+  	goto done;
++        }
++     case ASCIIESC:
++        {
++ 	u_int i;
++ 	for (i = 0; i < size; i++)
++ 	    if (!isprint(cp[i]) && !isspace(cp[i]) && cp[i] != '\033') {
++ 		if (verbose)
++ 		    printf("failed (unprintable char %#x)\n", cp[i]);
++ 		return (FALSE);
++ 	    }
++ 	ok = TRUE;
++ 	goto done;
++        }
+      case STRING:
+  	ok = (strncmp((const char*)(cp+off), value.s,
+  	    fxmin((u_int) strlen(value.s), (u_int)(size-off))) == 0);
+***************
+*** 307,312 ****
+--- 321,328 ----
+  	    rule.type = TypeRule::STRING;
+  	else if (strncasecmp(tp, "ascii", cp-tp) == 0)
+  	    rule.type = TypeRule::ASCII;
++ 	else if (strncasecmp(tp, "asciiesc", cp-tp) == 0)
++ 	    rule.type = TypeRule::ASCIIESC;
+  	else if (strncasecmp(tp, "addr", cp-tp) == 0)
+  	    rule.type = TypeRule::ADDR;
+  	else {
+***************
+*** 317,323 ****
+  	    cp++;
+  	rule.op = TypeRule::EQ;		// default is '='
+  	const char* vp = cp;
+! 	if (rule.type != TypeRule::STRING && rule.type != TypeRule::ASCII) {
+  	    // numeric value
+  	    switch (*vp) {
+  	    case '=':	rule.op = TypeRule::EQ;	cp++; break;
+--- 333,340 ----
+  	    cp++;
+  	rule.op = TypeRule::EQ;		// default is '='
+  	const char* vp = cp;
+! 	if (rule.type != TypeRule::STRING && rule.type != TypeRule::ASCII
+! 	 && rule.type != TypeRule::ASCIIESC) {
+  	    // numeric value
+  	    switch (*vp) {
+  	    case '=':	rule.op = TypeRule::EQ;	cp++; break;
+*** util/TypeRules.h.orig	Sun Apr 20 23:22:28 1997
+--- util/TypeRules.h	Sun Apr 20 23:21:11 1997
+***************
+*** 130,135 ****
+--- 130,136 ----
+      fxBool	cont;	// continuation
+      enum {
+  	ASCII,		// ascii-only string
++ 	ASCIIESC,	// ascii-only string + escape char (iso-2022 variants)
+  	STRING,		// byte string
+  	ADDR,		// address of match
+  	BYTE,		// 8 bits
+*** util/typerules.orig	Sun Apr 20 23:22:49 1997
+--- util/typerules	Sun Apr 20 23:24:45 1997
+***************
+*** 128,133 ****
+--- 128,138 ----
+  >15     string          ascii		ps	%F/textfmt -B -f Courier-Bold\
+  						    -p 11 -s %s >%o <%i
+  #
++ # Japanization (should help other iso-2022 variants too)
++ #
++ #>15	string		asciiesc	ps	a2ps-j -l '' -p -ns -nt <%i >%o
++ #0	asciiesc	x		ps	a2ps-j -l '' -p -ns -nt <%i >%o
++ #
+  # This causes anything else with ascii-only data to be treated as text.
+  #
+  0	ascii		x		ps	%F/textfmt -B -f Courier-Bold\

@@ -1,102 +1,78 @@
-*** 1.14        1995/04/08 21:29:53
---- faxd/ClassModem.c++ 1995/06/21 14:44:41
-***************
-*** 910,915 ****
---- 910,919 ----
-   * the syntax specified in the "standard".  Try looking
-   * at some of the responses given by rev ~4.04 of the
-   * ZyXEL firmware (for example)!
-+  *
-+  * NB: We accept alphanumeric items but don't return them
-+  *     in the parsed range so that modems like the ZyXEL 2864
-+  *     that indicate they support ``Class Z'' are handled.
-   */
-  fxBool
-  ClassModem::vparseRange(const char* cp, int nargs ... )
-***************
-*** 926,935 ****
-  	    matchc = CPAREN;
-  	    acceptList = TRUE;
-  	    cp++;
-! 	} else if (isdigit(cp[0])) {			// <item>
-  	    matchc = COMMA;
-  	    acceptList = (nargs == 0);
-! 	} else {
-  	    b = FALSE;
-  	    break;
-  	}
---- 930,939 ----
-  	    matchc = CPAREN;
-  	    acceptList = TRUE;
-  	    cp++;
-! 	} else if (isalnum(cp[0])) {			// <item>
-  	    matchc = COMMA;
-  	    acceptList = (nargs == 0);
-! 	} else {					// skip to comma
-  	    b = FALSE;
-  	    break;
-  	}
-***************
-*** 939,952 ****
-  		cp++;
-  		continue;
-  	    }
-! 	    if (!isdigit(cp[0])) {
-  		b = FALSE;
-  		goto done;
-  	    }
-! 	    int v = 0;
-! 	    do {
-! 		v = v*10 + (cp[0] - '0');
-! 	    } while (isdigit((++cp)[0]));
-  	    int r = v;
-  	    if (cp[0] == '-') {				// <low>-<high>
-  		cp++;
---- 943,963 ----
-  		cp++;
-  		continue;
-  	    }
-! 	    if (!isalnum(cp[0])) {
-  		b = FALSE;
-  		goto done;
-  	    }
-! 	    int v;
-! 	    if (isdigit(cp[0])) {
-! 		v = 0;
-! 		do {
-! 		    v = v*10 + (cp[0] - '0');
-! 		} while (isdigit((++cp)[0]));
-! 	    } else {
-! 		v = -1;					// XXX skip item below
-! 		while (isalnum((++cp)[0]))
-! 		    ;
-! 	    }
-  	    int r = v;
-  	    if (cp[0] == '-') {				// <low>-<high>
-  		cp++;
-***************
-*** 964,972 ****
-  		    cp++;
-  		v++, r++;				// XXX 2.0 -> 3
-  	    }
-! 	    // expand range or list
-! 	    for (; v <= r; v++)
-! 		mask |= 1<<v;
-  	    if (acceptList && cp[0] == COMMA)		// (<item>,<item>...)
-  		cp++;
-  	}
---- 975,984 ----
-  		    cp++;
-  		v++, r++;				// XXX 2.0 -> 3
-  	    }
-! 	    if (v != -1) {				// expand range or list
-! 		for (; v <= r; v++)
-! 		    mask |= 1<<v;
-! 	    }
-  	    if (acceptList && cp[0] == COMMA)		// (<item>,<item>...)
-  		cp++;
-  	}
+To fit the FreeBSD tty device handling scheme.
 
-
-
-
+*** faxd/Getty.c++.orig	Sun Apr 20 16:40:07 1997
+--- faxd/Getty.c++	Sun Apr 20 16:40:31 1997
+***************
+*** 218,224 ****
+      // NB: this is executed in the parent
+      fxStr device = fxStr::format("%s/" | line, _PATH_DEV);
+      Sys::chown(device, UUCPLock::getUUCPUid(), UUCPLock::getUUCPGid());
+!     Sys::chmod(device, 0600);			// reset protection
+  }
+  
+  extern void vlogError(const char* fmt, va_list ap);
+--- 218,224 ----
+      // NB: this is executed in the parent
+      fxStr device = fxStr::format("%s/" | line, _PATH_DEV);
+      Sys::chown(device, UUCPLock::getUUCPUid(), UUCPLock::getUUCPGid());
+!     Sys::chmod(device, 0660);			// reset protection
+  }
+  
+  extern void vlogError(const char* fmt, va_list ap);
+*** faxd/UUCPLock.c++.orig	Wed Nov 27 08:21:38 1996
+--- faxd/UUCPLock.c++	Sun Apr 20 17:09:21 1997
+***************
+*** 37,42 ****
+--- 37,43 ----
+  }
+  #endif
+  #include <pwd.h>
++ #include <grp.h>
+  
+  /*
+   * UUCP Device Locking Support.
+***************
+*** 146,153 ****
+  	if (!pwd)
+  	    faxApp::fatal("Can not deduce identity of UUCP");
+  	UUCPuid = pwd->pw_uid;
+- 	UUCPgid = pwd->pw_gid;
+  	endpwent();			// paranoia
+      }
+  }
+  uid_t UUCPLock::getUUCPUid() { setupIDs(); return UUCPuid; }
+--- 147,159 ----
+  	if (!pwd)
+  	    faxApp::fatal("Can not deduce identity of UUCP");
+  	UUCPuid = pwd->pw_uid;
+  	endpwent();			// paranoia
++ 
++ 	const group *grp = getgrnam("dialer");
++ 	if (!grp)
++ 	    faxApp::fatal("Can not deduce identity of DIALER");
++ 	UUCPgid = grp->gr_gid;
++ 	endgrent();			// paranoia
+      }
+  }
+  uid_t UUCPLock::getUUCPUid() { setupIDs(); return UUCPuid; }
+*** config/skel.orig	Sun Apr 20 21:53:58 1997
+--- config/skel	Sun Apr 20 21:54:30 1997
+***************
+*** 41,48 ****
+  SessionTracing:		11		# log server-related operations
+  RecvFileMode:		0600		# recvd facsimile are not public
+  LogFileMode:		0600		# private log files
+! DeviceMode:		0600		# device is accessible only to uucp/fax
+! GettyArgs:		"-h %l dx_%s"	# requires modem to auto-detect fax/data
+  QualifyTSI:		""		# do not restrict inbound facsimile
+  SpeakerVolume:		off		# machine's are already too loud
+  RingsBeforeAnswer:	1		# answer on first ring
+--- 41,48 ----
+  SessionTracing:		11		# log server-related operations
+  RecvFileMode:		0600		# recvd facsimile are not public
+  LogFileMode:		0600		# private log files
+! DeviceMode:		0660		# device is accessible only to uucp/fax
+! GettyArgs:		"std.%s"	# requires modem to auto-detect fax/data
+  QualifyTSI:		""		# do not restrict inbound facsimile
+  SpeakerVolume:		off		# machine's are already too loud
+  RingsBeforeAnswer:	1		# answer on first ring
