@@ -21,7 +21,7 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	samba-2.2.* samba-3.0.* sharity-light-1.*
 
-SAMBA_VERSION=		2.2.10
+SAMBA_VERSION=		2.2.11
 SAMBA_JA_VERSION=	1.0
 
 USE_BZIP2=	yes
@@ -45,18 +45,6 @@ LDAPSAM?=	"@comment "
 WINBIND?=	"@comment "
 SMBSH?=		"@comment "
 
-.if defined(WITH_AUDIT)
-AUDIT=		""
-LIBSAMBA=	""
-BUILD_VFS=	""
-.endif
-
-.if defined(WITH_RECYCLE)
-RECYCLE=	""
-LIBSAMBA=	""
-BUILD_VFS=	""
-.endif
-
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
 SAMBA_LOGDIR=	${VARDIR}/log
@@ -78,6 +66,20 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
+OPTIONS+=	SYSLOG		"With Syslog support" on \
+		SSL		"With SSL support" on \
+		LDAP		"With LDAP2 support" off \
+		CUPS		"With CUPS" off \
+		ACL		"With ACL support" off \
+		UTMP		"With UTMP support" on \
+		MSDFS		"With MSDFS support" on \
+		QUOTA		"With Quota support" on \
+		RECYCLE		"With Recycle Bin" on \
+		AUDIT		"With Audit" on \
+		WINBIND		"With Winbind" on \
+		WBAUTH		"With Winbind Auth Challenge" on \
+		SMBSH		"With Smbsh and smbwrapper" on
+
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR=	yes
@@ -91,6 +93,18 @@ CONFIGURE_ARGS=	--with-i18n-swat \
 		--with-piddir=${VARDIR}/run \
 		--with-pam --with-pam_smbpass \
 		--with-included-popt
+
+.if defined(WITH_AUDIT)
+AUDIT=		""
+LIBSAMBA=	""
+BUILD_VFS=	""
+.endif
+
+.if defined(WITH_RECYCLE)
+RECYCLE=	""
+LIBSAMBA=	""
+BUILD_VFS=	""
+.endif
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
@@ -139,9 +153,6 @@ SMBSH=		""
 
 # malloc.h check is not needed.
 CONFIGURE_ENV+=	ac_cv_header_malloc_h=no
-
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
@@ -251,9 +262,6 @@ post-install:
 
 	@${MKDIR} -m 500 ${SAMBA_PRIVATE}
 	@${CHOWN} root:wheel ${SAMBA_PRIVATE}
-	@${CAT} /etc/passwd | ${AWK} -F: '$$6 ~ /home/' | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.sample
-	@test -f ${SAMBA_PRIVATE}/smbpasswd || ${TOUCH} ${SAMBA_PRIVATE}/smbpasswd
-	@${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd.sample ${SAMBA_PRIVATE}/smbpasswd
 
 	@${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
 	@${CHMOD} 111 ${PREFIX}/bin/smbpasswd
