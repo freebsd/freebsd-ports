@@ -169,10 +169,14 @@ lib/tkgoodstuff/sample-rc/stacks
 lib/tkgoodstuff/sample-rc/win95
 lib/tkgoodstuff/tkgoodstuff
 lib/tkgoodstuff/Dialer
-lib/tkgoodstuff/libtkg41.so
-lib/tkgoodstuff/libpixmap41.so
-lib/tkgoodstuff/libblt41.so
-lib/tkgoodstuff/libtkNetscape41.so
-lib/tkgoodstuff/libtkfvwm41.so
-lib/tkgoodstuff/libtkSteal41.so
+lib/tkgoodstuff/libtkg42.so
+lib/tkgoodstuff/libpixmap42.so
+lib/tkgoodstuff/libtkNetscape42.so
+lib/tkgoodstuff/libtkfvwm42.so
+lib/tkgoodstuff/libtkSteal42.so
 lib/tkgoodstuff/pkgIndex.tcl
+@dirrm lib/tkgoodstuff/tcl
+@dirrm lib/tkgoodstuff/sample-rc
+@dirrm lib/tkgoodstuff/icons
+@dirrm lib/tkgoodstuff/doc
+@dirrm lib/tkgoodstuff

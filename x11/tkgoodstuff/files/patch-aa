@@ -1,7 +1,24 @@
-*** libs/Makefile.in.ORIG	Thu Sep 19 13:08:41 1996
---- libs/Makefile.in	Mon Oct  7 21:21:13 1996
+*** libs/Makefile.in.orig	Sat Nov 23 12:09:43 1996
+--- libs/Makefile.in	Sat Jun 21 13:43:32 1997
 ***************
-*** 72,97 ****
+*** 44,50 ****
+  INSTALL_DATA =		@INSTALL_DATA@
+  
+  CC_SWITCHES = ${CFLAGS} -I$(SRCDIR) \
+! 	-I$(TK_PREFIX)/include -I$(TK_PREFIX)/include/tcl \
+  	$(XINCLUDES) $(SHLIB_CFLAGS)
+  
+  OBJS = tkFvwm.o tixImgXpm.o tkXAccess.o tkNetscape.o clientWin.o \
+--- 44,50 ----
+  INSTALL_DATA =		@INSTALL_DATA@
+  
+  CC_SWITCHES = ${CFLAGS} -I$(SRCDIR) \
+! 	-I$(TK_PREFIX)/include/tk4.2 -I$(TK_PREFIX)/include/tcl7.6 \
+  	$(XINCLUDES) $(SHLIB_CFLAGS)
+  
+  OBJS = tkFvwm.o tixImgXpm.o tkXAccess.o tkNetscape.o clientWin.o \
+***************
+*** 58,79 ****
   libs: $(SHLIBS) pkgIndex.tcl
   
   $(TKG_SHLIB): tkg.o tkgButton.o
@@ -10,10 +27,6 @@
   
   $(XPM_SHLIB): tixImgXpm.o
 ! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tixImgXpm.o
-  	@chmod 0755 $@
-  
-  $(BLT_SHLIB): $(BLTSHARED)
-! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) $(BLTSHARED)
   	@chmod 0755 $@
   
   $(NETSCAPE_SHLIB): tkNetscape.o clientWin.o
@@ -28,7 +41,7 @@
   	@chmod 0755 $@
   
   tkgwish: $(TKGWISH_NAME)
---- 72,97 ----
+--- 58,79 ----
   libs: $(SHLIBS) pkgIndex.tcl
   
   $(TKG_SHLIB): tkg.o tkgButton.o
@@ -37,10 +50,6 @@
   
   $(XPM_SHLIB): tixImgXpm.o
 ! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tixImgXpm.o
-  	@chmod 0755 $@
-  
-  $(BLT_SHLIB): $(BLTSHARED)
-! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) $(BLTSHARED)
   	@chmod 0755 $@
   
   $(NETSCAPE_SHLIB): tkNetscape.o clientWin.o

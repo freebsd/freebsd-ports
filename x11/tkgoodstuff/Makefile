@@ -1,25 +1,29 @@
 # New ports collection makefile for:	tkgoodstuff
-# Version required:	4.1
+# Version required:	4.2b1-8
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
 # $Id: Makefile,v 1.5 1997/04/20 13:20:00 wosch Exp $
 #
 
-DISTNAME=	tkgoodstuff4.1
-PKGNAME=	tkgoodstuff-4.1
-CATEGORIES=	x11 tk41
-MASTER_SITES=	ftp://merv.philosophy.lsa.umich.edu/pub/
-EXTRACT_SUFX=	.tgz
+DISTNAME=	tkgoodstuff4.2
+PKGNAME=	tkgoodstuff-4.2b1.8
+CATEGORIES=	x11
+MASTER_SITES=	http://www-personal.umich.edu/~markcrim/tkgoodstuff/dists/
 
 MAINTAINER=	pst@FreeBSD.org
 
 RUN_DEPENDS=	fvwm:${PORTSDIR}/x11/fvwm2
-LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11/tk42
 
+WRKSRC=		${WRKDIR}/tkgoodstuff4.2b1-8
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	TCLCONFIGSH=/usr/libdata/tcl/tclConfig.sh TCLSH=/usr/bin/tclsh
+CONFIGURE_ENV=	TCLCONFIGSH=${PREFIX}/lib/tcl7.6/tclConfig.sh \
+		TKCONFIGSH=${PREFIX}/lib/tk4.2/tkConfig.sh
 CONFIGURE_ARGS=	--enable-libs
 STRIP=
+
+post-patch:
+	@${RM} -f ${WRKSRC}/tcl/*.orig
 
 .include <bsd.port.mk>
