@@ -18,8 +18,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Simple yet functional mediaplayer written with GStreamer
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
-		gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins \
+LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
+		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
