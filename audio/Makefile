@@ -200,6 +200,7 @@
     SUBDIR += rawrec
     SUBDIR += rebler
     SUBDIR += replay
+    SUBDIR += resid
     SUBDIR += rio
     SUBDIR += rio500
     SUBDIR += rioutil
