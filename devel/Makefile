@@ -35,7 +35,6 @@
     SUBDIR += apache-ant
     SUBDIR += apr
     SUBDIR += apr-svn
-    SUBDIR += arch
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
