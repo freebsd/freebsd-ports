@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	xmlcharent
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	fuyuki@mj.0038.net
-
-RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+MAINTAINER=	fuyuki@hadaly.org
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
@@ -20,16 +18,8 @@ NO_BUILD=	yes
 
 XMLDIR=		${PREFIX}/share/xml/${PORTNAME}
 
-MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
-PLIST_SUB=	MKCATALOG=${MKCATALOG}
-
 do-install:
 	${MKDIR} ${XMLDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ent ${FILESDIR}/catalog ${XMLDIR}
-
-post-install:
-	${MKCATALOG} -c ${PREFIX}/share/xml/catalog -q install xmlcharent
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 
 .include <bsd.port.mk>
