@@ -26,7 +26,7 @@ do-extract:
 	@${MKDIR} ${WRKSRC}/lib
 	@${CP} -R /usr/src/lib/libtelnet ${WRKSRC}/lib
 .else
-BROKEN=	"You need to build this port with ${SRCDIR}"
+IGNORE=	"You need to build this port with ${SRCDIR}"
 .endif
 
 pre-patch:
