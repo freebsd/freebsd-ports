@@ -11,10 +11,11 @@ PORTVERSION=	0.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.raisdorf.net/files/code/
 
-MAINTAINER=	mich@freebsdcluster.org
+MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A tcp based scanner, showing ttl responses
 
-BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet
+BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
+		${LOCALBASE}/include/libnet.h:${PORTSDIR}/net/libnet
 
 LDFLAGS+=	-lpcap -ldnet
 
