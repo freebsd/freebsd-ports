@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formvalidator
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://grub.ath.cx/formvalidator/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ USE_RUBY_RDOC=		yes
 DOCS=		AUTHORS \
 		CHANGELOG \
 		README \
+		TODO \
 		doc
 
 do-build:
