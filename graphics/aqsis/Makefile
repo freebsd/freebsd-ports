@@ -20,9 +20,16 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GL=		yes
-USE_MESA=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL_VER=13
+
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} < 500000 )
+USE_GCC=	3.3
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -31,12 +38,6 @@ INSTALLS_SHLIB=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-CFLAGS+=	-O0
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
