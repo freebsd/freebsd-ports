@@ -9,7 +9,8 @@
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
-REVISEDATE=	20020617
+REVISEDATE=	20020830
+PORTREVISION=	3
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
@@ -29,3 +30,5 @@ MD5_FILE=	${.CURDIR}/distinfo
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 .include "${MASTERDIR}/Makefile"
+# To be a satellite port, I do not have many choices to place this line.
+LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
