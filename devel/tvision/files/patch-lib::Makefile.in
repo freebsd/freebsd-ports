@@ -1,0 +1,64 @@
+--- lib/Makefile.in.orig	Sat Sep 22 17:04:27 2001
++++ lib/Makefile.in	Mon Jan 13 20:21:13 2003
+@@ -85,7 +85,7 @@
+ CLEANFILES = tvision
+ 
+ pkginclude_HEADERS = \
+-app.h buffers.h colorsel.h dialogs.h drawbuf.h editors.h \
++app.h colorsel.h dialogs.h drawbuf.h editors.h \
+ help.h helpbase.h menus.h msgbox.h objects.h outline.h resource.h \
+ stddlg.h system.h textview.h tkeys.h tobjstrm.h ttypes.h tv.h \
+ tvconfig.h tvobjs.h util.h validate.h views.h
+@@ -110,7 +110,7 @@
+ TSortedCollection.cc TStaticText.cc TStatusLine.cc TStrListMaker.cc \
+ TStringCollection.cc TValidator.cc TView.cc TWindow.cc allnames.cc asm.cc \
+ colorsel.cc drivers.cc editstat.cc help.cc helpbase.cc histlist.cc menu.cc \
+-misc.cc msgbox.cc new.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
++misc.cc msgbox.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
+ tobjstrm.cc tvtext.cc
+ 
+ 
+@@ -127,7 +127,7 @@
+ TSortedCollection.cc TStaticText.cc TStatusLine.cc TStrListMaker.cc \
+ TStringCollection.cc TValidator.cc TView.cc TWindow.cc allnames.cc asm.cc \
+ colorsel.cc drivers.cc editstat.cc help.cc helpbase.cc histlist.cc menu.cc \
+-misc.cc msgbox.cc new.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
++misc.cc msgbox.cc palette.cc sall.cc stddlg.cc system.cc textview.cc \
+ tobjstrm.cc tvtext.cc
+ 
+ subdir = lib
+@@ -161,7 +161,7 @@
+ 	allnames.$(OBJEXT) asm.$(OBJEXT) colorsel.$(OBJEXT) \
+ 	drivers.$(OBJEXT) editstat.$(OBJEXT) help.$(OBJEXT) \
+ 	helpbase.$(OBJEXT) histlist.$(OBJEXT) menu.$(OBJEXT) \
+-	misc.$(OBJEXT) msgbox.$(OBJEXT) new.$(OBJEXT) palette.$(OBJEXT) \
++	misc.$(OBJEXT) msgbox.$(OBJEXT) palette.$(OBJEXT) \
+ 	sall.$(OBJEXT) stddlg.$(OBJEXT) system.$(OBJEXT) \
+ 	textview.$(OBJEXT) tobjstrm.$(OBJEXT) tvtext.$(OBJEXT)
+ libtvision_a_OBJECTS = $(am_libtvision_a_OBJECTS)
+@@ -183,7 +183,7 @@
+ 	TStrListMaker.lo TStringCollection.lo TValidator.lo TView.lo \
+ 	TWindow.lo allnames.lo asm.lo colorsel.lo drivers.lo \
+ 	editstat.lo help.lo helpbase.lo histlist.lo menu.lo misc.lo \
+-	msgbox.lo new.lo palette.lo sall.lo stddlg.lo system.lo \
++	msgbox.lo palette.lo sall.lo stddlg.lo system.lo \
+ 	textview.lo tobjstrm.lo tvtext.lo
+ libtvision_la_OBJECTS = $(am_libtvision_la_OBJECTS)
+ 
+@@ -266,7 +266,6 @@
+ @AMDEP_TRUE@	$(DEPDIR)/menu.Plo $(DEPDIR)/menu.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/misc.Plo $(DEPDIR)/misc.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/msgbox.Plo $(DEPDIR)/msgbox.Po \
+-@AMDEP_TRUE@	$(DEPDIR)/new.Plo $(DEPDIR)/new.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/palette.Plo $(DEPDIR)/palette.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/sall.Plo $(DEPDIR)/sall.Po \
+ @AMDEP_TRUE@	$(DEPDIR)/stddlg.Plo $(DEPDIR)/stddlg.Po \
+@@ -491,8 +490,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/misc.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/msgbox.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/msgbox.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/new.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/new.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/palette.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/palette.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/sall.Plo@am__quote@
