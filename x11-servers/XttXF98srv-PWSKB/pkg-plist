@@ -1,3 +1,0 @@
-bin/XF98_PWSKB.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF98_PWSKB ] && /bin/ln -fs %B/XF98_PWSKB %B/X) || /bin/rm -f %B/X
