@@ -720,9 +720,10 @@ freebsd_uthread_notice_signals (ptid_t ptid)
 /* Fork an inferior process, and start debugging it with /proc.  */
 
 static void
-freebsd_uthread_create_inferior (char *exec_file, char *allargs, char **env)
+freebsd_uthread_create_inferior (char *exec_file, char *allargs, char **env,
+				 int from_tty)
 {
-  child_ops.to_create_inferior (exec_file, allargs, env);
+  child_ops.to_create_inferior (exec_file, allargs, env, from_tty);
 
   if (PIDGET(inferior_ptid) && freebsd_uthread_active)
     {
