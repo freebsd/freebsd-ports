@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.14
-PORTREVISION=	1
+PORTVERSION=	0.0.15
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
@@ -19,7 +18,6 @@ LIB_DEPENDS=	idn.13:${PORTSDIR}/devel/libidn \
 		tasn1.2:${PORTSDIR}/security/libtasn1
 
 USE_PERL5_BUILD=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -31,11 +29,21 @@ INSTALLS_SHLIB=	yes
 
 INFO=		shishi
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g'
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/shishi.info*
 
 post-install:
-	@${SED} 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
+	@${SED} ${SED_SCRIPT} < ${PKGMESSAGE}
 
 .include "Makefile.man"
 .include <bsd.port.mk>

@@ -14,5 +14,6 @@ lib/libshishi.so
 lib/libshishi.so.0
 libdata/pkgconfig/shishi.pc
 sbin/shishid
-share/locale/sv/LC_MESSAGES/shishi.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/shishi.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/shishi.mo
 @unexec rmdir %D/etc/shishi 2>/dev/null || true
