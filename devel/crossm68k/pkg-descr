@@ -1,0 +1,16 @@
+This package permits the creation of Motorola 68000 COFF executables for
+embedded systems development under FreeBSD.
+
+
+The package is composed of the following utilities:
+
+The GNU's C Compiler			gcc-2.7.2.3 + crosspatch
+GNU's misc. utilities			binutils-2.8.1
+Cygnus's embedded libraries		newlib-1.8.0
+
+-------------------------------------------------------------------------
+Pedro Giffuni S.
+giffunip@asme.org
+
+Modifications by Jerry Hicks
+jhicks@atlanta.glenayre.com
