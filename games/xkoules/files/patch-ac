@@ -1,0 +1,93 @@
+--- Imakefile.orig	Thu Mar  5 03:59:19 1998
++++ Imakefile	Sat Oct 14 08:58:09 2000
+@@ -56,7 +56,7 @@
+ 
+ DEFINES = -DONLYANSI -DSOUND $(JOYSTICK1) $(NET) $(MITSHM1) $(HAVEUSLEEP1) $(SYSDEFS) $(JOYSTICK) -Ixlib\
+ 	$(NAMEDEF) $(ASMDEF)\
+-	-DSOUNDSERVER=\"$(SOUNDDIR)/$(SOUNDSERVER)\" \
++	-DSOUNDSERVER=\"$(KOULESDIR)/$(SOUNDSERVER)\" \
+ 	-DSOUNDDIR=\"$(SOUNDDIR)\" \
+ 	-DSOUNDDEV=\"$(SOUNDDEV)\"
+ #endif
+@@ -84,9 +84,6 @@
+ all::xkoules
+ #endif
+ 
+-BINDIR = $(KOULESDIR)
+-DESTDIR = /
+-
+ ComplexProgramTarget(xkoules)
+ 
+ 
+@@ -97,19 +94,15 @@
+ install:: $(PROGRAMS) $(SOUNDSERVER)
+ 	@echo "Koules directory is " $(KOULESDIR)
+ 	@:
+-	@echo "Instalin man page to " $(MANDIR)
+-	@mkdirhier $(MANDIR)
+-	$(INSTALL) -c $(INSTBINFLAGS) xkoules.6 $(MANDIR);
+-	@:
+ 	@echo "Creating directory " $(KOULESDIR)
+-	@if [ ! -d $(KOULESDIR) ]; then mkdirhier $(KOULESDIR); fi
++	@if [ ! -d $(KOULESDIR) ]; then $(MKDIRHIER) $(KOULESDIR); fi
+ 	@:
+ 	@if [ "$(INSTALLSOUND)" = "True" ]; 				\
+ 	 then								\
+ 		echo "Creating directory " $(SOUNDDIR); 		\
+-		if [ ! -d $(SOUNDDIR) ]; then mkdirhier $(SOUNDDIR); fi;    \
+-		echo "Copying sound server to directory " $(SOUNDDIR); \
+-		$(INSTALL) -c -s $(INSTBINFLAGS) $(SOUNDSERVER) $(SOUNDDIR); \
++		if [ ! -d $(SOUNDDIR) ]; then $(MKDIRHIER) $(SOUNDDIR); fi;    \
++		echo "Copying sound server to directory " $(KOULESDIR); \
++		$(INSTALL) -c -s $(INSTBINFLAGS) $(SOUNDSERVER) $(KOULESDIR); \
+ 		echo "Copying sound files into directory " $(SOUNDDIR); \
+ 		cd ./sounds; set -x;					\
+ 		for file in *.raw; do                                   \
+@@ -125,19 +118,15 @@
+ install:: $(PROGRAMS) $(SOUNDSERVER)
+ 	@echo "Koules directory is " $(KOULESDIR)
+ 	@:
+-	@echo "Instalin man page to " $(MANDIR)
+-	@mkdirhier $(MANDIR)
+-	$(INSTALL) -c $(INSTBINFLAGS) xkoules.6 $(MANDIR);
+-	@:
+ 	@echo "Creating directory " $(KOULESDIR)
+-	@if [ ! -d $(KOULESDIR) ]; then mkdirhier $(KOULESDIR); fi
++	@if [ ! -d $(KOULESDIR) ]; then $(MKDIRHIER) $(KOULESDIR); fi
+ 	@:
+ 	@if [ "$(INSTALLSOUND)" = "True" ]; 				\
+ 	 then								\
+ 		echo "Creating directory " $(SOUNDDIR); 		\
+-		if [ ! -d $(SOUNDDIR) ]; then mkdirhier $(SOUNDDIR); fi;    \
+-		echo "Copying sound server to directory " $(SOUNDDIR); \
+-		$(INSTALL) -c -s $(INSTBINFLAGS) $(SOUNDSERVER) $(SOUNDDIR); \
++		if [ ! -d $(SOUNDDIR) ]; then $(MKDIRHIER) $(SOUNDDIR); fi;    \
++		echo "Copying sound server to directory " $(KOULESDIR); \
++		$(INSTALL) -c -s $(INSTBINFLAGS) $(SOUNDSERVER) $(KOULESDIR); \
+ 		echo "Copying sound files into directory " $(SOUNDDIR); \
+ 		cd ./sounds; set -x;					\
+ 		for file in *.raw; do                                   \
+@@ -155,19 +144,15 @@
+ install:: $(PROGRAMS) $(SOUNDSERVER)
+ 	@echo "Koules directory is " $(KOULESDIR)
+ 	@:
+-	@echo "Instalin man page to " $(MANDIR)
+-	@mkdirhier $(MANDIR)
+-	$(INSTALL) -c $(INSTBINFLAGS) xkoules.6 $(MANDIR);
+-	@:
+ 	@echo "Creating directory " $(KOULESDIR)
+-	@if [ ! -d $(KOULESDIR) ]; then mkdirhier $(KOULESDIR); fi
++	@if [ ! -d $(KOULESDIR) ]; then $(MKDIRHIER) $(KOULESDIR); fi
+ 	@:
+ 	@if [ "$(INSTALLSOUND)" = "True" ]; 				\
+ 	 then								\
+ 		echo "Creating directory " $(SOUNDDIR); 		\
+-		if [ ! -d $(SOUNDDIR) ]; then mkdirhier $(SOUNDDIR); fi;    \
+-		echo "Copying sound server to directory " $(SOUNDDIR); \
+-		$(INSTALL) -c -s $(INSTBINFLAGS) $(SOUNDSERVER) $(SOUNDDIR); \
++		if [ ! -d $(SOUNDDIR) ]; then $(MKDIRHIER) $(SOUNDDIR); fi;    \
++		echo "Copying sound server to directory " $(KOULESDIR); \
++		$(INSTALL) -c -s $(INSTBINFLAGS) $(SOUNDSERVER) $(KOULESDIR); \
+ 		echo "Copying sound files into directory " $(SOUNDDIR); \
+ 		cd ./sounds; set -x;					\
+ 		for file in *.raw; do					\

@@ -15,22 +15,19 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-.if ${MACHINE_ARCH} == "alpha"
-PLIST=		${PKGDIR}/pkg-plist.alpha
+.if ${MACHINE_ARCH} == "i386"
+PLIST_SUB=	SNDSRV:=""
+.else
+PLIST_SUB=	SNDSRV:="@comment "
 .endif
 
 USE_IMAKE=	yes
 MAN6=		xkoules.6
-MANCOMPRESSED=	no
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xkoules ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/xkoules
-.if ${MACHINE_ARCH} == "i386"
-	${INSTALL_PROGRAM} ${WRKSRC}/koules.sndsrv.freebsd ${PREFIX}/share/xkoules
-.endif
-	${INSTALL_DATA} ${WRKSRC}/sounds/*.raw ${PREFIX}/share/xkoules
-	${INSTALL_MAN} ${WRKSRC}/xkoules.6 ${PREFIX}/man/man6
+post-extract:
+	@${CP} ${WRKSRC}/xkoules.6 ${WRKSRC}/xkoules.man
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xkoules
 .for file in ANNOUNCE BUGS Card ChangeLog Koules.FAQ TODO
