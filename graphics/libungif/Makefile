@@ -6,18 +6,9 @@
 #
 
 PORTNAME=	libungif
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.0b1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://prtr-13.ucsc.edu/pub/libungif/
-MASTER_SITE_SUBDIR=	libs/graphics
-
-PATCH_SITES=	http://www.arrakeen.demon.co.uk/giflib/
-PATCHFILES=	libungif-4.1.0-19990224.patch.gz \
-		libungif-4.1.0-19990305.patch.gz \
-		libungif-4.1.0-19990322.patch.gz \
-		libungif-4.1.0-19990523.patch.gz
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/
 
 MAINTAINER=	ports@FreeBSD.org
 
