@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 PORTREVISION=	0
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -55,6 +55,7 @@ CONFIGURE_ARGS+=	--with-krb4-include=/usr/include --with-krb4-lib=/usr/lib
 CONFIGURE_ARGS+=	--without-krb4
 .endif
 
+INFO=				heimdal
 PLIST:=				${WRKDIR}/PLIST
 
 pre-configure:

@@ -1,3 +1,4 @@
+bin/afslog
 bin/ftp
 bin/kauth
 bin/kdestroy
@@ -11,6 +12,7 @@ bin/login
 bin/mk_cmds
 bin/otp
 bin/otpprint
+bin/pagsh
 bin/pfrom
 bin/rcp
 bin/rsh
@@ -56,16 +58,13 @@ include/rtbl.h
 include/sl.h
 include/ss/ss.h
 include/xdbm.h
-@unexec install-info --delete %D/info/heimdal.info %D/info/dir
-info/heimdal.info
-@exec install-info %D/info/heimdal.info %D/info/dir
 lib/libasn1.a
 lib/libasn1.so
 lib/libasn1.so.6
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so
-lib/libgssapi.so.3
+lib/libgssapi.so.4
 lib/libhdb.a
 lib/libhdb.so
 lib/libhdb.so.7
@@ -75,9 +74,12 @@ lib/libkadm5clnt.so.6
 lib/libkadm5srv.a
 lib/libkadm5srv.so
 lib/libkadm5srv.so.7
+lib/libkafs.a
+lib/libkafs.so
+lib/libkafs.so.4
 lib/libkrb5.a
 lib/libkrb5.so
-lib/libkrb5.so.18
+lib/libkrb5.so.19
 lib/libotp.a
 lib/libotp.so
 lib/libotp.so.1
