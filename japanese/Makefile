@@ -61,6 +61,7 @@
     SUBDIR += expect
     SUBDIR += flower-fpw
     SUBDIR += freepwing
+    SUBDIR += fumeikai-fpw
     SUBDIR += gal
     SUBDIR += gawk
     SUBDIR += gd
