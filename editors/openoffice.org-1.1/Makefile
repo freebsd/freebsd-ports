@@ -154,7 +154,7 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no --with-jdk-home=${JDKDIR}
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
