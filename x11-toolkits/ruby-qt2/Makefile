@@ -31,8 +31,6 @@ post-extract:
 	${FIND} ${WRKSRC} '(' -name .cvsignore -o -name a.out ')' -delete
 
 post-patch:
-	${GREP} -Frl 'typedef VALUE (*VALUEFUNC)();' ${WRKSRC} | \
-		${XARGS} ${RUBY} -i -pe 'sub(/typedef VALUE \(\*VALUEFUNC\)\(\);/, "typedef VALUE (*VALUEFUNC)(...);")'
 	${RUBY} -i -pe 'sub %r"/usr/X11\b", "${X11BASE}"' ${WRKSRC}/lib/qt2.rb
 
 post-install:

@@ -19,7 +19,11 @@ RUBY_QT2_CONFIGURE_ARGS= \
 
 MD5_FILE=		${RUBY_QT2_PORTDIR}/distinfo
 
-post-patch: post-patch-cflags
+post-patch: post-patch-cflags post-patch-c++
 
 post-patch-cflags:
 	${RUBY} -i -pe '~ /^\$$CFLAGS\b.*/ and $$_.sub!(/-O\w*/, "")' ${WRKSRC}/extconf.rb
+
+post-patch-c++:
+	${GREP} -Frl 'typedef VALUE (*VALUEFUNC)();' ${WRKSRC} | \
+		${XARGS} ${RUBY} -i -pe 'sub(/typedef VALUE \(\*VALUEFUNC\)\(\);/, "typedef VALUE (*VALUEFUNC)(...);")'
