@@ -8,7 +8,8 @@
 PORTNAME=	BBBike
 PORTVERSION=	3.11
 CATEGORIES=	german
-MASTER_SITES=	http://prdownloads.sourceforge.net/bbbike/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bbbike
 
 MAINTAINER=	slaven.rezic@berlin.de
 
