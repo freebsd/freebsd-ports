@@ -9,11 +9,15 @@ PORTNAME=	enemyterritory
 PORTVERSION=	2.56.2
 PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://ftp.wireplay.co.uk/enemyterritory/server/linux/ \
-		ftp://3dgamers.in-span.net/pub/3dgamers4/games/wolfensteinet/ \
-		http://ftp.algx.net/idsoftware/et/linux/ \
-		http://www.sh.nu/download/games/ \
-		http://games.gci.net/pub/R2CW/EnemyTerritory/
+MASTER_SITES=	http://rtcw2.baconsbits.com/download/gamefiles/ \
+		http://ftp.games.skynet.be/pub/ftp.idsoftware.com/et/linux/ \
+		http://mirrors.xmission.com/idsoftware/et/linux/ \
+		http://gda.utp.edu.co/pub/et/ \
+		http://3dgamers.intelenet.net/pub/3dgamers/games/wolfensteinet/ \
+		http://ftp7.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
+		http://ftp4.3dgamers.com/pub/3dgamers/games/wolfensteinet/ \
+		http://3dgamers.gameservers.net/pub/3dgamers/games/wolfensteinet/ \
+		http://downloads-3dg.planetmirror.com/pub/3dgamers/games/wolfensteinet/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.56-2.x86
 EXTRACT_SUFX=	.run
