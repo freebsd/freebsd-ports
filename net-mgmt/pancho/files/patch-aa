@@ -1,8 +1,11 @@
---- pancho.orig	Sat Dec  8 12:10:25 2001
-+++ pancho	Sat Dec  8 12:11:04 2001
-@@ -35,7 +35,7 @@
+--- pancho.orig	Fri Jan  4 23:33:48 2002
++++ pancho	Fri Jan  4 23:39:30 2002
+@@ -33,9 +33,9 @@
  
- my $logging 	= "";		# set this to "1" to enable logging
+ my @devices 	= qw();		# list of network devices 
+ 
+-my $logging 	= "";		# set this to "1" to enable logging
++my $logging 	= "1";		# set this to "1" to enable logging
  
 -my $logfile 	= "";		# full path to your logfile 
 +my $logfile 	= $ENV{HOME}."/pancho.log";	# full path to your logfile 

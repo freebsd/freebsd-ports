@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	net
 MASTER_SITES=	http://pancho.lunarmedia.net/
 DISTNAME=	pancho-v${PORTVERSION}
