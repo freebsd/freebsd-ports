@@ -1,12 +1,12 @@
 libexec/%%APACHE%%/mod_security.so
 @exec %D/sbin/apxs -e -a -n security %D/%F
 @unexec %D/sbin/apxs -e -A -n security %D/%F
-%%PORTDOCS%%share/doc/mod_security/CHANGES
-%%PORTDOCS%%share/doc/mod_security/INSTALL
-%%PORTDOCS%%share/doc/mod_security/LICENSE
-%%PORTDOCS%%share/doc/mod_security/README
-%%PORTDOCS%%share/doc/mod_security/modsecurity-manual-v1.5.1.pdf
-share/examples/mod_security/httpd.conf.example-full
-share/examples/mod_security/httpd.conf.example-minimal
-%%PORTDOCS%%@dirrm share/doc/mod_security
-@dirrm share/examples/mod_security
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/modsecurity-manual-%%VER%%.pdf
+%%EXAMPLESDIR%%/httpd.conf.example-full
+%%EXAMPLESDIR%%/httpd.conf.example-minimal
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
