@@ -20,8 +20,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-BROKEN=	Work is in progress right now.
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
@@ -66,5 +64,5 @@ post-install:
 .endfor
 
 .include <bsd.port.pre.mk>
-#.include "${FILESDIR}/manpages.mk"
+.include "${FILESDIR}/manpages.mk"
 .include <bsd.port.post.mk>
