@@ -1,6 +1,8 @@
 bin/ggv
 etc/CORBA/servers/application-ps.gnorba
 share/gnome/apps/Graphics/ggv.desktop
+share/gnome/pixmaps/ggv-splash.png
+share/locale/da/LC_MESSAGES/ggv.mo
 share/locale/de/LC_MESSAGES/ggv.mo
 share/locale/es/LC_MESSAGES/ggv.mo
 share/locale/fi/LC_MESSAGES/ggv.mo
