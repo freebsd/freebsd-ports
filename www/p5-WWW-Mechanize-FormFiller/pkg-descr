@@ -1,0 +1,10 @@
+The module is intended as a simple way to fill out HTML forms from a set
+of predetermined values. You set up the form filler with value elements,
+retrieve the HTML form, and let the form filler loose on that form.
+
+There are value classes provided for many tasks - fixed values, values
+to be queried interactively from the user, values taken randomly from a
+list of values and values specified through a callback to some Perl
+code.
+
+WWW:	http://search.cpan.org/search?dist=WWW-Mechanize-FormFiller
