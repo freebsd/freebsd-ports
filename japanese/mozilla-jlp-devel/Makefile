@@ -67,7 +67,6 @@ do-install:
 	${MV} -f all-locales.rdf all-locales.rdf.orig; \
 	${MV} -f all-packages.rdf all-packages.rdf.orig; \
 	${MV} -f all-skins.rdf all-skins.rdf.orig; \
-	${MV} -f user-locales.rdf user-locales.rdf.orig; \
 	${MV} -f user-skins.rdf user-skins.rdf.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
