@@ -1510,6 +1510,7 @@ dspam		ports/mail/dspam
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dt		ports/sysutils/dt
+dtach		ports/misc/dtach
 dtc		ports/sysutils/dtc
 dtcp		ports/net/dtcp
 dtcpclient	ports/net/dtcpclient
