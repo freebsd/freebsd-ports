@@ -96,6 +96,7 @@
     SUBDIR += p5-Video-Info
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += ppm2fli
+    SUBDIR += py-gstreamer
     SUBDIR += quark
     SUBDIR += recmpeg
     SUBDIR += replex
