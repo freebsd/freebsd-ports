@@ -8,6 +8,7 @@
     SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += forkbomb
+    SUBDIR += hpl
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += lmbench
