@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.36 1998/12/26 19:17:43 vanilla Exp $
+# $Id: Makefile,v 1.37 1998/12/28 13:57:36 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.9
@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	glib11d.1:${PORTSDIR}/devel/glib11-devel
 
 USE_X_PREFIX=	yes
@@ -27,7 +28,8 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL='$${INSTALL} -c' \
 		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk11d
 
 post-install:
