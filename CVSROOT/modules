@@ -6930,6 +6930,7 @@ sapphire	ports/x11-wm/sapphire
 sapphire-themes	ports/x11-wm/sapphire-themes
 sarah		ports/sysutils/sarah
 sarep		ports/textproc/sarep
+sary		ports/textproc/sary
 sasc		src/usr.bin/sasc
 sash		ports/shells/sash
 satellite	ports/net/satellite
