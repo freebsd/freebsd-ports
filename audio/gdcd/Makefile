@@ -12,6 +12,8 @@ MASTER_SITES=	http://gdcd.undergrid.net/source_archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 USE_REINPLACE=	yes

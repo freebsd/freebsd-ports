@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.geocities.com/gfslicer/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
 
 USE_REINPLACE=	yes
