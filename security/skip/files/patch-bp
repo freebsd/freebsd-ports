@@ -6,7 +6,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/Makefile.defs w
  # Kernel compilation flags
  #
 -K_FLAGS_FREEBSD_gnu	= -DKERNEL -DFREEBSD
-+K_FLAGS_FREEBSD_gnu	= -DKERNEL -D_KERNEL -DKLD_MODULE -I/sys
++K_FLAGS_FREEBSD_gnu	= -DKERNEL -D_KERNEL -DKLD_MODULE
  
  # OS Libraries
  #
