@@ -3,11 +3,12 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.5 1994/10/08 15:31:10 ache Exp $
+# $Id: Makefile,v 1.6 1994/10/12 09:26:40 adam Exp $
 #
 
 DISTNAME=       procmail-3.10pre5
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
+IS_INTERACTIVE=	yes
 
 install:
 	@echo "===>  Installing for ${DISTNAME}"
