@@ -460,6 +460,7 @@ autools		ports/audio/autools
 autopsy		ports/sysutils/autopsy
 autorespond	ports/mail/autorespond
 autosig		ports/mail/autosig
+autossh		ports/security/autossh
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
 avarice		ports/devel/avarice
