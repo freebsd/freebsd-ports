@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	icu2
-PORTVERSION=	2.4
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	devel
-MASTER_SITES=	http://oss.software.ibm.com/icu/download/${PORTVERSION}/
+MASTER_SITES=	ftp://www-126.ibm.com/pub/icu/${PORTVERSION}/
 DISTNAME=	icu-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -27,7 +26,7 @@ INSTALL_WRKSRC=		${ICUWRKSRC}
 
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigureICU
-CONFIGURE_ARGS=		FreeBSD
+CONFIGURE_ARGS+=	FreeBSD
 CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--enable-samples=no --enable-tests=no
@@ -49,6 +48,7 @@ MAN5+=	convrtrs.txt.5
 MAN8+=	decmn.8
 MAN8+=	genccode.8
 MAN8+=	gencmn.8
+MAN8+=	genidna.8
 MAN8+=	gennames.8
 MAN8+=	gennorm.8
 MAN8+=	genprops.8

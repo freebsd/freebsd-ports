@@ -7,11 +7,24 @@ bin/genrb
 bin/makeconv
 bin/pkgdata
 bin/uconv
-include/unicode/bidi.h
+include/layout/ArabicLayoutEngine.h
+include/layout/GXLayoutEngine.h
+include/layout/HanLayoutEngine.h
+include/layout/IndicLayoutEngine.h
+include/layout/LayoutEngine.h
+include/layout/OpenTypeLayoutEngine.h
+include/layout/ThaiLayoutEngine.h
+include/layout/LEFontInstance.h
+include/layout/LEGlyphFilter.h
+include/layout/LELanguages.h
+include/layout/LEScripts.h
+include/layout/LESwaps.h
+include/layout/LETypes.h
+include/layout/ParagraphLayout.h
+include/layout/RunArrays.h
 include/unicode/brkiter.h
 include/unicode/caniter.h
 include/unicode/chariter.h
-include/unicode/convert.h
 include/unicode/dbbi.h
 include/unicode/docmain.h
 include/unicode/locid.h
@@ -44,7 +57,6 @@ include/unicode/uiter.h
 include/unicode/uloc.h
 include/unicode/umachine.h
 include/unicode/umisc.h
-include/unicode/unicode.h
 include/unicode/unifilt.h
 include/unicode/unifunct.h
 include/unicode/unimatch.h
@@ -71,7 +83,6 @@ include/unicode/calendar.h
 include/unicode/choicfmt.h
 include/unicode/coleitr.h
 include/unicode/coll.h
-include/unicode/cpdtrans.h
 include/unicode/datefmt.h
 include/unicode/dcfmtsym.h
 include/unicode/decimfmt.h
@@ -80,12 +91,9 @@ include/unicode/fieldpos.h
 include/unicode/fmtable.h
 include/unicode/format.h
 include/unicode/gregocal.h
-include/unicode/hextouni.h
 include/unicode/msgfmt.h
-include/unicode/nultrans.h
 include/unicode/numfmt.h
 include/unicode/rbnf.h
-include/unicode/rbt.h
 include/unicode/search.h
 include/unicode/simpletz.h
 include/unicode/smpdtfmt.h
@@ -102,30 +110,49 @@ include/unicode/udat.h
 include/unicode/umsg.h
 include/unicode/unifltlg.h
 include/unicode/unirepl.h
-include/unicode/unitohex.h
 include/unicode/unum.h
 include/unicode/usearch.h
 include/unicode/utrans.h
 include/unicode/ustdio.h
 include/unicode/ustream.h
-lib/libicudata.a
+include/unicode/ucat.h
+include/unicode/uidna.h
+include/unicode/loengine.h
 lib/libicudata.so.%%ICUMAJOR%%.0
-lib/libicuuc.a
+lib/libicudata.so.%%ICUMAJOR%%
+lib/libicudata.so
+lib/libicudata.a
+lib/libicuio.so.%%ICUMAJOR%%.0
+lib/libicuio.so.%%ICUMAJOR%%
+lib/libicuio.so
+lib/libicuio.a
+lib/libicule.so.%%ICUMAJOR%%.0
+lib/libicule.so.%%ICUMAJOR%%
+lib/libicule.so
+lib/libicule.a
+lib/libiculx.so.%%ICUMAJOR%%.0
+lib/libiculx.so.%%ICUMAJOR%%
+lib/libiculx.so
+lib/libiculx.a
 lib/libicuuc.so.%%ICUMAJOR%%.0
-lib/libicui18n.a
+lib/libicuuc.so.%%ICUMAJOR%%
+lib/libicuuc.so
+lib/libicuuc.a
 lib/libicui18n.so.%%ICUMAJOR%%.0
-lib/libicuctestfw.a
-lib/libicuctestfw.so.%%ICUMAJOR%%.0
-lib/libicutoolutil.a
+lib/libicui18n.so.%%ICUMAJOR%%
+lib/libicui18n.so
+lib/libicui18n.a
 lib/libicutoolutil.so.%%ICUMAJOR%%.0
-lib/libustdio.a
-lib/libustdio.so.%%ICUMAJOR%%.0
+lib/libicutoolutil.so.%%ICUMAJOR%%
+lib/libicutoolutil.so
+lib/libicutoolutil.a
 lib/icu/%%ICUVER%%/Makefile.inc
 lib/icu/current
 lib/icu/Makefile.inc
 share/icu/%%ICUVER%%/config/mh-bsd-gcc
 share/icu/%%ICUVER%%/mkinstalldirs
 share/icu/%%ICUVER%%/README
+sbin/genidna
 sbin/genuca
 sbin/genccode
 sbin/genpname
@@ -135,22 +162,11 @@ sbin/gennorm
 sbin/gencmn
 sbin/decmn
 sbin/gentz
-@exec if test -r %D/lib/libicudata.so.%%ICUMAJOR%%.0; then { ln -sf %D/lib/libicudata.so.%%ICUMAJOR%%.0 %D/lib/libicudata.so.%%ICUMAJOR%%; ln -sf %D/lib/libicudata.so.%%ICUMAJOR%%.0 %D/lib/libicudata.so; } fi
-@exec if test -r %D/lib/libicuuc.so.%%ICUMAJOR%%.0; then { ln -sf %D/lib/libicuuc.so.%%ICUMAJOR%%.0 %D/lib/libicuuc.so.%%ICUMAJOR%%; ln -sf %D/lib/libicuuc.so.%%ICUMAJOR%%.0 %D/lib/libicuuc.so; } fi
-@exec if test -r %D/lib/libicui18n.so.%%ICUMAJOR%%.0; then { ln -sf %D/lib/libicui18n.so.%%ICUMAJOR%%.0 %D/lib/libicui18n.so.%%ICUMAJOR%%; ln -sf %D/lib/libicui18n.so.%%ICUMAJOR%%.0 %D/lib/libicui18n.so; } fi
-@exec if test -r %D/lib/libicuctestfw.so.%%ICUMAJOR%%.0; then { ln -sf %D/lib/libicuctestfw.so.%%ICUMAJOR%%.0 %D/lib/libicuctestfw.so.%%ICUMAJOR%%; ln -sf %D/lib/libicuctestfw.so.%%ICUMAJOR%%.0 %D/lib/libicuctestfw.so; } fi
-@exec if test -r %D/lib/libicutoolutil.so.%%ICUMAJOR%%.0; then { ln -sf %D/lib/libicutoolutil.so.%%ICUMAJOR%%.0 %D/lib/libicutoolutil.so.%%ICUMAJOR%%; ln -sf %D/lib/libicutoolutil.so.%%ICUMAJOR%%.0 %D/lib/libicutoolutil.so; } fi
-@exec if test -r %D/lib/libustdio.so.%%ICUMAJOR%%.0; then { ln -sf %D/lib/libustdio.so.%%ICUMAJOR%%.0 %D/lib/libustdio.so.%%ICUMAJOR%%; ln -sf %D/lib/libustdio.so.%%ICUMAJOR%%.0 %D/lib/libustdio.so; } fi
-@unexec if test ! -r %D/lib/libicudata.so.%%ICUMAJOR%%.0; then		{ rm -f %D/lib/libicudata.so.%%ICUMAJOR%%;	rm -f %D/lib/libicudata.so;	} fi
-@unexec if test ! -r %D/lib/libicuuc.so.%%ICUMAJOR%%.0; then		{ rm -f %D/lib/libicuuc.so.%%ICUMAJOR%%;	rm -f %D/lib/libicuuc.so;	} fi
-@unexec if test ! -r %D/lib/libicui18n.so.%%ICUMAJOR%%.0; then		{ rm -f %D/lib/libicui18n.so.%%ICUMAJOR%%;	rm -f %D/lib/libicui18n.so;	} fi
-@unexec if test ! -r %D/lib/libicuctestfw.so.%%ICUMAJOR%%.0; then	{ rm -f %D/lib/libicuctestfw.so.%%ICUMAJOR%%;	rm -f %D/lib/libicuctestfw.so;	} fi
-@unexec if test ! -r %D/lib/libicutoolutil.so.%%ICUMAJOR%%.0; then	{ rm -f %D/lib/libicutoolutil.so.%%ICUMAJOR%%;	rm -f %D/lib/libicutoolutil.so;	} fi
-@unexec if test ! -r %D/lib/libustdio.so.%%ICUMAJOR%%.0; then		{ rm -f %D/lib/libustdio.so.%%ICUMAJOR%%;	rm -f %D/lib/libustdio.so;	} fi
 @dirrm share/icu/%%ICUVER%%/config
 @dirrm share/icu/%%ICUVER%%
 @dirrm share/icu
 @dirrm lib/icu/%%ICUVER%%
 @dirrm lib/icu
 @dirrm include/unicode
+@dirrm include/layout
 @dirrm etc/icu
