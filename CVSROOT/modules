@@ -155,22 +155,6 @@ Xaw3d		ports/x11-toolkits/Xaw3d
 XawPlus		ports/x11-toolkits/XawPlus
 Xfstt		ports/x11-servers/Xfstt
 Xg		ports/x11-fonts/Xg
-XttXF86srv-3DLabs	ports/x11-servers/XttXF86srv-3DLabs
-XttXF86srv-8514		ports/x11-servers/XttXF86srv-8514
-XttXF86srv-AGX		ports/x11-servers/XttXF86srv-AGX
-XttXF86srv-I128		ports/x11-servers/XttXF86srv-I128
-XttXF86srv-Mach32	ports/x11-servers/XttXF86srv-Mach32
-XttXF86srv-Mach64	ports/x11-servers/XttXF86srv-Mach64
-XttXF86srv-Mach8	ports/x11-servers/XttXF86srv-Mach8
-XttXF86srv-Mono		ports/x11-servers/XttXF86srv-Mono
-XttXF86srv-P9000	ports/x11-servers/XttXF86srv-P9000
-XttXF86srv-S3		ports/x11-servers/XttXF86srv-S3
-XttXF86srv-S3V		ports/x11-servers/XttXF86srv-S3V
-XttXF86srv-SVGA		ports/x11-servers/XttXF86srv-SVGA
-XttXF86srv-VGA16	ports/x11-servers/XttXF86srv-VGA16
-XttXF86srv-W32		ports/x11-servers/XttXF86srv-W32
-XttXF86srv-common	ports/x11-servers/XttXF86srv-common
-XttXF86srv-xfs		ports/x11-servers/XttXF86srv-xfs
 ZendOptimizer	ports/devel/ZendOptimizer
 a2dev		ports/devel/a2dev
 a2ps-a4		ports/print/a2ps-a4
@@ -1197,7 +1181,6 @@ cxsc		ports/math/cxsc
 cxxtest		ports/devel/cxxtest
 cy-aspell	ports/textproc/cy-aspell
 cybercalendar	ports/www/cybercalendar
-cybervrml97	ports/graphics/cybervrml97
 cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
 cyr-rfx		ports/x11-fonts/cyr-rfx
@@ -2400,7 +2383,6 @@ glens		ports/science/glens
 glew		ports/graphics/glew
 gleyes		ports/games/gleyes
 glfw		ports/graphics/glfw
-glg		ports/devel/glg
 glgraph		ports/math/glgraph
 glib12		ports/devel/glib12
 glib20		ports/devel/glib20
@@ -3143,7 +3125,6 @@ impress		ports/editors/impress
 imwheel		ports/x11/imwheel
 indexme		ports/www/indexme
 ines		ports/emulators/ines
-inflex		ports/security/inflex
 info2html	ports/textproc/info2html
 info_to_html	ports/textproc/info_to_html
 infobot		ports/irc/infobot
@@ -5212,7 +5193,6 @@ morebalance	ports/net/morebalance
 moregroupware	ports/deskutils/moregroupware
 moria		ports/games/moria
 morpheus	ports/graphics/morpheus
-mosaic		ports/www/Mosaic
 moscow_ml	ports/lang/moscow_ml
 most		ports/misc/most
 motor		ports/devel/motor
@@ -7950,7 +7930,6 @@ py-oops		ports/databases/py-oops
 py-opengl	ports/graphics/py-opengl
 py-openssl	ports/security/py-openssl
 py-optik	ports/devel/py-optik
-py-orbit	ports/devel/py-orbit
 py-orbit2	ports/devel/py-orbit2
 py-osd		ports/misc/py-osd
 py-paint	ports/graphics/py-paint
@@ -9752,7 +9731,6 @@ vdkbuilder	ports/x11-toolkits/vdkbuilder
 vecfem		ports/math/vecfem
 vectoroids	ports/games/vectoroids
 ved		ports/editors/ved
-veepee		ports/devel/veepee
 velocity	ports/x11-fm/velocity
 vera		ports/misc/vera
 vertex		ports/graphics/vertex
