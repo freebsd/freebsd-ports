@@ -6,17 +6,18 @@
 %%MNEMODIR%%/config/conf.php
 %%MNEMODIR%%/config/conf.php.dist
 %%MNEMODIR%%/config/conf.php.dist.orig
-%%MNEMODIR%%/config/html.php
-%%MNEMODIR%%/config/html.php.dist
 %%MNEMODIR%%/config/menu.php
 %%MNEMODIR%%/config/menu.php.dist
 %%MNEMODIR%%/config/prefs.php
 %%MNEMODIR%%/config/prefs.php.dist
 %%MNEMODIR%%/graphics/add.gif
 %%MNEMODIR%%/graphics/checkbox.gif
+%%MNEMODIR%%/graphics/colorpicker.gif
+%%MNEMODIR%%/graphics/colorpicker.png
 %%MNEMODIR%%/graphics/down.gif
 %%MNEMODIR%%/graphics/list.gif
 %%MNEMODIR%%/graphics/mnemo.gif
+%%MNEMODIR%%/graphics/print.gif
 %%MNEMODIR%%/graphics/refresh.gif
 %%MNEMODIR%%/graphics/search.gif
 %%MNEMODIR%%/graphics/up.gif
@@ -29,18 +30,27 @@
 %%MNEMODIR%%/lib/constants.php
 %%MNEMODIR%%/lib/version.php
 %%MNEMODIR%%/list.php
+%%MNEMODIR%%/locale/bg_BG/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/cs_CZ/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/da_DK/help.xml
+%%MNEMODIR%%/locale/da_DK/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/de_DE/help.xml
 %%MNEMODIR%%/locale/de_DE/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/el_GR/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/en_US/help.xml
 %%MNEMODIR%%/locale/es_ES/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/fi_FI/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/fi_FI/help.xml
 %%MNEMODIR%%/locale/fr_FR/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/hu_HU/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/lt_LT/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/nb_NO/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/nl_NL/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/nn_NO/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/pt_BR/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/pt_PT/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/sk_SK/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/sk_SK/help.xml
 %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/zh_CN/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/zh_TW/LC_MESSAGES/mnemo.mo
@@ -48,22 +58,29 @@
 %%MNEMODIR%%/menu.php
 %%MNEMODIR%%/po/Makefile
 %%MNEMODIR%%/po/README
+%%MNEMODIR%%/po/bg_BG.po
 %%MNEMODIR%%/po/cs_CZ.po
+%%MNEMODIR%%/po/da_DK.po
 %%MNEMODIR%%/po/de_DE.po
+%%MNEMODIR%%/po/el_GR.po
 %%MNEMODIR%%/po/es_ES.po
+%%MNEMODIR%%/po/extract.pl
 %%MNEMODIR%%/po/fi_FI.po
 %%MNEMODIR%%/po/fr_FR.po
 %%MNEMODIR%%/po/hu_HU.po
+%%MNEMODIR%%/po/lt_LT.po
+%%MNEMODIR%%/po/mnemo.pot
+%%MNEMODIR%%/po/nb_NO.po
 %%MNEMODIR%%/po/nl_NL.po
 %%MNEMODIR%%/po/nn_NO.po
 %%MNEMODIR%%/po/pt_BR.po
 %%MNEMODIR%%/po/pt_PT.po
+%%MNEMODIR%%/po/shtool
+%%MNEMODIR%%/po/sk_SK.po
 %%MNEMODIR%%/po/sv_SE.po
+%%MNEMODIR%%/po/xgettext.sh
 %%MNEMODIR%%/po/zh_CN.po
 %%MNEMODIR%%/po/zh_TW.po
-%%MNEMODIR%%/po/extract.pl
-%%MNEMODIR%%/po/shtool
-%%MNEMODIR%%/po/xgettext.sh
 %%MNEMODIR%%/prefs.php
 %%MNEMODIR%%/scripts/drivers/mnemo_memos.sql
 %%MNEMODIR%%/search.php
@@ -71,6 +88,8 @@
 %%MNEMODIR%%/templates/common-header.inc
 %%MNEMODIR%%/templates/index/css.inc
 %%MNEMODIR%%/templates/index/notconfigured.inc
+%%MNEMODIR%%/templates/javascript/open_print_win.js
+%%MNEMODIR%%/templates/javascript/print.js
 %%MNEMODIR%%/templates/list/actions.inc
 %%MNEMODIR%%/templates/list/empty.inc
 %%MNEMODIR%%/templates/list/footer.inc
@@ -83,6 +102,7 @@
 %%MNEMODIR%%/templates/memo/end.inc
 %%MNEMODIR%%/templates/memo/memo.inc
 %%MNEMODIR%%/templates/menu/menu.inc
+%%MNEMODIR%%/templates/prefs/category_management.inc
 %%MNEMODIR%%/templates/search/begin.inc
 %%MNEMODIR%%/templates/search/end.inc
 %%MNEMODIR%%/templates/search/search.inc
@@ -90,24 +110,35 @@
 %%MNEMODIR%%/templates/view/headers.inc
 %%MNEMODIR%%/templates/view/navbar.inc
 %%MNEMODIR%%/templates/view/no-memo.inc
+%%MNEMODIR%%/util/colorpicker.php
 %%MNEMODIR%%/view.php
 @dirrm %%MNEMODIR%%/config
 @dirrm %%MNEMODIR%%/graphics
 @dirrm %%MNEMODIR%%/lib/Driver
 @dirrm %%MNEMODIR%%/lib
+@dirrm %%MNEMODIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/bg_BG
 @dirrm %%MNEMODIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/cs_CZ
+@dirrm %%MNEMODIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/da_DK
 @dirrm %%MNEMODIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/de_DE
 @dirrm %%MNEMODIR%%/locale/en_US
+@dirrm %%MNEMODIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/el_GR
 @dirrm %%MNEMODIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/es_ES
 @dirrm %%MNEMODIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/fi_FI
 @dirrm %%MNEMODIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/fr_FR
+@dirrm %%MNEMODIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/lt_LT
 @dirrm %%MNEMODIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/hu_HU
+@dirrm %%MNEMODIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/nb_NO
 @dirrm %%MNEMODIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/nl_NL
 @dirrm %%MNEMODIR%%/locale/nn_NO/LC_MESSAGES
@@ -116,6 +147,8 @@
 @dirrm %%MNEMODIR%%/locale/pt_BR
 @dirrm %%MNEMODIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/pt_PT
+@dirrm %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/sk_SK
 @dirrm %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/sv_SE
 @dirrm %%MNEMODIR%%/locale/zh_CN/LC_MESSAGES
@@ -127,12 +160,15 @@
 @dirrm %%MNEMODIR%%/scripts/drivers
 @dirrm %%MNEMODIR%%/scripts
 @dirrm %%MNEMODIR%%/templates/index
+@dirrm %%MNEMODIR%%/templates/javascript
 @dirrm %%MNEMODIR%%/templates/list
 @dirrm %%MNEMODIR%%/templates/memo
 @dirrm %%MNEMODIR%%/templates/menu
+@dirrm %%MNEMODIR%%/templates/prefs
 @dirrm %%MNEMODIR%%/templates/search
 @dirrm %%MNEMODIR%%/templates/view
 @dirrm %%MNEMODIR%%/templates
+@dirrm %%MNEMODIR%%/util
 @dirrm %%MNEMODIR%%
 etc/horde/httpd.conf.mnemo
 %%PORTDOCS%%@dirrm share/doc/mnemo
