@@ -26,6 +26,11 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-system-libmng -thread -no-opengl \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+.if defined(QT_DEBUG)
+CONFIGURE_ARGS+= -debug
+.endif
+
 CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC}
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"
