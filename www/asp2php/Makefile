@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	asp2php
-PORTVERSION=	0.76.4a
+PORTVERSION=	0.76.5
 CATEGORIES=	www
-MASTER_SITES=	http://home.i1.net/~naken/asp2php/
+MASTER_SITES=	http://65.108.58.129/asp2php/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -29,8 +29,10 @@ PLIST_SUB+=	WANT_GTK="@comment "
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's|^CC=|#CC=|g ; \
-		 s|`gtk-config|`\$$\{GTK_CONFIG\}|g' ${WRKSRC}/Makefile
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${PERL} -pi -e \
+		's|^CC=|#CC=|g ; \
+		 s| make| \$$\{MAKE\}|g ; \
+		 s|`gtk-config|`\$$\{GTK_CONFIG\}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/asp2php ${PREFIX}/bin
