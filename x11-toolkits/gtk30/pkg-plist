@@ -107,10 +107,10 @@ include/gtk/gtkwindow.h
 info/gdk.info
 info/glib.info
 info/gtk.info
-@exec [ -f %D/info/dif ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/gdk.info %D/info/dif
-@exec install-info %D/info/glib.info %D/info/dif
-@exec install-info %D/info/gtk.info %D/info/dif
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/gdk.info %D/info/dir
+@exec install-info %D/info/glib.info %D/info/dir
+@exec install-info %D/info/gtk.info %D/info/dir
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so
