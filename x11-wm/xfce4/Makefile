@@ -39,6 +39,7 @@ RUN_DEPENDS+=	${X11BASE}/lib/xfce4/panel-plugins/libmixer.so:${PORTSDIR}/audio/x
 .endif
 .endif
 
+LATEST_LINK=	xfce4
 NO_BUILD=	yes
 
 do-install:	# empty
