@@ -7,9 +7,8 @@ bin/coolmessage
 bin/coollistbox
 bin/coolquery
 bin/coolinput
+lib/libCw.a
 lib/libCw.la
-lib/libCw.so
-lib/libCw.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/cooledit/global.py
@@ -34,6 +33,22 @@ lib/coolicon/cdrom_view.xpm
 lib/coolicon/modify-xinitrc
 lib/coolicon/gmc.xpm
 lib/coolicon/lyx.xpm
+lib/cooledit/syntax/c.syntax
+lib/cooledit/syntax/changelog.syntax
+lib/cooledit/syntax/diff.syntax
+lib/cooledit/syntax/diffc.syntax
+lib/cooledit/syntax/html.syntax
+lib/cooledit/syntax/java.syntax
+lib/cooledit/syntax/latex.syntax
+lib/cooledit/syntax/lsm.syntax
+lib/cooledit/syntax/makefile.syntax
+lib/cooledit/syntax/ml.syntax
+lib/cooledit/syntax/nroff.syntax
+lib/cooledit/syntax/pascal.syntax
+lib/cooledit/syntax/perl.syntax
+lib/cooledit/syntax/python.syntax
+lib/cooledit/syntax/sh.syntax
+lib/cooledit/syntax/smalltalk.syntax
 share/locale/de/LC_MESSAGES/cooledit.mo
 share/locale/fr/LC_MESSAGES/cooledit.mo
 share/locale/sv/LC_MESSAGES/cooledit.mo
@@ -50,4 +65,5 @@ share/locale/ja/LC_MESSAGES/cooledit.mo
 share/locale/ko/LC_MESSAGES/cooledit.mo
 share/locale/sl/LC_MESSAGES/cooledit.mo
 @dirrm lib/coolicon
+@dirrm lib/cooledit/syntax
 @dirrm lib/cooledit
