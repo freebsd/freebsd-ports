@@ -25,16 +25,21 @@ ALL_TARGET=	popa3d
 MAN8=		popa3d.8
 PLIST=		${WRKDIR}/.PLIST.more
 CFLAGS+=	-DPREFIX=${PREFIX}
+.if defined(STANDALONE_POP3)
+PLIST_SUB+=	STANDALONE_POP3=""
+CONFLICTS?=	popa3d-0.* popa3d-before-sendmail-0.*
+PKGMESSAGE=	${NONEXISTENT}
+PKGDEINSTALL=	${NONEXISTENT}
+.else
+PLIST_SUB+=	STANDALONE_POP3="@comment "
+.endif
 .if defined(SMTP_AFTER_POP3)
 EXTRA_PATCHES+=	${FILESDIR}/pop-before-sendmail.patch
 PLIST_SUB+=	SMTP_AFTER_POP3=""
+CONFLICTS?=	popa3d-0.* popa3d-standalone-0.*
 .else
 PLIST_SUB+=	SMTP_AFTER_POP3="@comment "
-.endif
-.if defined(STANDALONE_POP3)
-PLIST_SUB+=	STANDALONE_POP3=""
-.else
-PLIST_SUB+=	STANDALONE_POP3="@comment "
+CONFLICTS?=	popa3d-standalone-0.* popa3d-before-sendmail-0.*
 .endif
 
 .if defined(STANDALONE_POP3)
@@ -85,8 +90,10 @@ do-install:
 .endif
 .endif
 
+.if !defined(STANDALONE_POP3)
 post-install:
 	@ ${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
 
