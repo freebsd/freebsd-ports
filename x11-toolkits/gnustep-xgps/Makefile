@@ -8,7 +8,9 @@
 PORTNAME=	gnustep-xgps
 PORTVERSION=	0.7.6
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+#MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 
