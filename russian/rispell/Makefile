@@ -7,7 +7,7 @@
 
 PORTNAME=	ispell
 PORTVERSION=	1.0
-PORTREVISION=   1
+PORTREVISION=	1
 CATEGORIES=	russian textproc
 MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 DISTNAME=	rispell

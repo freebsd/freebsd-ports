@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache+mod_ssl
-PORTVERSION= 	${VERSION_APACHE}+${RA_VERSION}+${VERSION_MODSSL}
+PORTVERSION=	${VERSION_APACHE}+${RA_VERSION}+${VERSION_MODSSL}
 CATEGORIES=	russian www security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/ \
