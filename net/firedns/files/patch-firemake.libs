@@ -1,5 +1,0 @@
---- firemake.libs.orig	Sat Nov 16 10:00:14 2002
-+++ firemake.libs	Sat Nov 16 10:00:23 2002
-@@ -1 +1 @@
---lfirestring -lpthread
-+-lfirestring -pthread
