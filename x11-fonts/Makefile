@@ -6,6 +6,7 @@
     SUBDIR += etlfonts
     SUBDIR += freefonts
     SUBDIR += getbdf
+    SUBDIR += nexfontsel
     SUBDIR += p5-type1inst
     SUBDIR += sharefonts
     SUBDIR += tkfont
