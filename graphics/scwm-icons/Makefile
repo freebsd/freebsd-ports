@@ -1,16 +1,16 @@
 # New ports collection makefile for:   scwm-icons
-# Version required:    0.8
+# Version required:    0.99.2
 # Date created:        07 April 1998
 # Whom:                Yukihiro Nakai <nacai@iname.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	scwm-icons-0.8
+DISTNAME=	scwm-icons-0.99.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://huis-clos.mit.edu/pub/scwm/
+MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
