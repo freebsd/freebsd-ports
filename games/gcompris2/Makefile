@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
 DISTNAME=	gcompris-${PORTVERSION}
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	gnome@freebsd.org
 COMMENT=	A simple Gnome2-based education game for children starting at 3
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \

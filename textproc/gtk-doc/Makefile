@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.1/docs/rdp/
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
 
 BUILD_DEPENDS=	${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk
