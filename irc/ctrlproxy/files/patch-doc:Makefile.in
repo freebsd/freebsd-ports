@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Wed Oct 22 22:44:44 2003
++++ doc/Makefile.in	Wed Oct 22 22:45:09 2003
+@@ -4,7 +4,7 @@
+ DOCS = ctrlproxy.1 ctrlproxyrc.5 ctrlproxy.pdf ctrlproxy.html $(MOD_DOCS)
+ XSLTPROC = @XSLTPROC@ --xinclude
+ XMLTO = @XMLTO@
+-docdir = @prefix@/doc/ctrlproxy
++docdir = @prefix@/share/doc/ctrlproxy
+ INSTALL = @INSTALL@
+ prefix = @prefix@
+ mandir = @mandir@

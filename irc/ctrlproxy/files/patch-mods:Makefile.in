@@ -1,0 +1,11 @@
+--- mods/Makefile.in.orig	Wed Oct 22 22:37:21 2003
++++ mods/Makefile.in	Wed Oct 22 22:37:47 2003
+@@ -17,7 +17,7 @@
+ 	$(CC) $(CFLAGS) -fPIC -c $<
+ 
+ libstats.so: stats.o
+-	$(CC) $(CFLAGS) -shared -o $@ $< -ltdb @LIB_PCRE@
++	$(CC) $(CFLAGS) -shared -o $@ $< ${LDFLAGS} -ltdb @LIB_PCRE@
+ 
+ libsocket.so: @SOCKET_OBJS@
+ 	$(CC) $(CFLAGS) -shared -o $@ @SOCKET_OBJS@ @SSL_LIB@
