@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/HDF5/hdf5-${PORTVERSION}/src/
 
