@@ -931,6 +931,7 @@
     SUBDIR += tkp4
     SUBDIR += tkref
     SUBDIR += tmake
+    SUBDIR += tnt
     SUBDIR += towitoko
     SUBDIR += tpasm
     SUBDIR += tpg
