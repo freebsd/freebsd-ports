@@ -24,6 +24,12 @@ MAKE_ENV+=	kpathsea_parent=../${KPATHSEA_PARENT}
 
 KPATHSEA_PARENT=	web2c-7.2
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64"
+.endif
+
 post-extract:
 	@( cd ${WRKSRC} ; ${MAKE} newlib )
 	@${CP} ${FILESDIR}/fontdesc ${WRKSRC}/lib
@@ -52,4 +58,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${PREFIX}/share/doc/dvi2dvi
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
