@@ -3,7 +3,7 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1998/10/28 08:06:37 tg Exp $
+# $Id: Makefile,v 1.10 1998/11/14 09:43:30 asami Exp $
 #
 
 DISTNAME=	neXtaw-0.5.1
@@ -12,6 +12,10 @@ MASTER_SITES=	http://www.freebsd.org/~tg/
 EXTRACT_SUFX=	.tar.gz.bin
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+.if ${MACHINE_ARCH} == "alpha"
+BROKEN=		compiler error in funtion fixup_memory_subreg
+.endif
 
 USE_IMAKE=	yes
 
