@@ -4713,6 +4713,7 @@ koffice-i18n-ven	ports/misc/koffice-i18n-ven
 koffice-i18n-xh	ports/misc/koffice-i18n-xh
 koffice-i18n-zu	ports/misc/koffice-i18n-zu
 koffice-kde3	ports/editors/koffice-kde3
+kompmgr		ports/x11-wm/kompmgr
 kompose		ports/deskutils/kompose
 konq-plugins	ports/misc/konq-plugins
 konversation	ports/irc/konversation
