@@ -16,6 +16,7 @@ share/locale/cs/LC_MESSAGES/xfce-utils.mo
 share/locale/de/LC_MESSAGES/xfce-utils.mo
 share/locale/es/LC_MESSAGES/xfce-utils.mo
 share/locale/es_MX/LC_MESSAGES/xfce-utils.mo
+share/locale/fa_IR/LC_MESSAGES/xfce-utils.mo
 share/locale/fi/LC_MESSAGES/xfce-utils.mo
 share/locale/fr/LC_MESSAGES/xfce-utils.mo
 share/locale/hi/LC_MESSAGES/xfce-utils.mo
@@ -28,6 +29,7 @@ share/locale/ms/LC_MESSAGES/xfce-utils.mo
 share/locale/nl/LC_MESSAGES/xfce-utils.mo
 share/locale/no/LC_MESSAGES/xfce-utils.mo
 share/locale/pl/LC_MESSAGES/xfce-utils.mo
+share/locale/pt_BR/LC_MESSAGES/xfce-utils.mo
 share/locale/pt_PT/LC_MESSAGES/xfce-utils.mo
 share/locale/ru/LC_MESSAGES/xfce-utils.mo
 share/locale/sv/LC_MESSAGES/xfce-utils.mo
@@ -41,11 +43,13 @@ share/xfce4/AUTHORS
 share/xfce4/AUTHORS.az
 share/xfce4/AUTHORS.ca
 share/xfce4/AUTHORS.de
+share/xfce4/AUTHORS.es
 share/xfce4/AUTHORS.fr
 share/xfce4/AUTHORS.html
 share/xfce4/AUTHORS.html.az
 share/xfce4/AUTHORS.html.ca
 share/xfce4/AUTHORS.html.de
+share/xfce4/AUTHORS.html.es
 share/xfce4/AUTHORS.html.fr
 share/xfce4/AUTHORS.vi
 share/xfce4/COPYING
@@ -57,10 +61,12 @@ share/xfce4/GPL
 share/xfce4/GPL.html
 share/xfce4/INFO
 share/xfce4/INFO.ca
+share/xfce4/INFO.es
 share/xfce4/INFO.fr
 share/xfce4/INFO.html
 share/xfce4/INFO.html.ca
 share/xfce4/INFO.html.de
+share/xfce4/INFO.html.es
 share/xfce4/INFO.html.fr
 share/xfce4/INFO.vi
 share/xfce4/LGPL
