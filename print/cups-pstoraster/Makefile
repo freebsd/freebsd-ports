@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.easysw.com/pub/ghostscript/
 MASTER_SITE_SUBDIR=	ghostscript espgs
 DISTFILES=	ghostscript-${PORTVERSION}${EXTRACT_SUFX} \
-		espgs-7.05.6-source${EXTRACT_SUFX}
+		espgs-${ESPGS_VER}-source${EXTRACT_SUFX}
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,6 +22,8 @@ COMMENT=	GNU Postscript interpreter for CUPS printing to non-PS printers
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps:${PORTSDIR}/print/ghostscript-gnu
 
+ESPGS_VER=	7.07.1
+ESPGS_WRKSRC=	${WRKDIR}/espgs-${ESPGS_VER}/pstoraster
 WRKSRC=		${WRKDIR}/ghostscript-${PORTVERSION}
 
 USE_BZIP2=	yes
@@ -35,8 +37,6 @@ CONFIGURE_ARGS=	--without-x --without-ijs --without-gimp-print \
 		--with-gs=espgs
 MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
 		DEVICE_DEVS="\$$(DD)cups.dev"
-
-ESPGS_WRKSRC=	${WRKDIR}/espgs-7.05.6/pstoraster
 
 post-patch:
 	${LN} -sf ${ESPGS_WRKSRC}/gdevcups.c ${WRKSRC}/src
