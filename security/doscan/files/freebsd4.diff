@@ -1,0 +1,11 @@
+--- src/results.cc.orig	Mon Feb 23 15:15:59 2004
++++ src/results.cc	Mon Feb 23 15:30:54 2004
+@@ -427,7 +427,7 @@
+ #ifdef GETHOSTBYADDR_ACCEPTS_CHAR
+   he = gethostbyaddr (reinterpret_cast<char*>(&in), sizeof (in), AF_INET);
+ #else
+-#error Type of first argument to gethostbyaddr() is not known.
++ he = gethostbyaddr ((const char*)(&in), sizeof (in), AF_INET);
+ #endif
+ #endif
+ 
