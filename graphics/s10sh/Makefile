@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	s10sh
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.edwinh.org/s10sh/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
 .endif
 
 # Don't extract the libusb bundled with s10sh:
-EXTRACT_AFTER_ARGS=     | ${TAR} -xf - --exclude '*/libusb*'
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libusb*'
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
