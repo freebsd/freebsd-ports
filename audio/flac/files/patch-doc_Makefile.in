@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- doc/Makefile.in.orig	Sat Oct  5 01:22:15 2002
-+++ doc/Makefile.in	Sat Oct  5 01:23:02 2002
-@@ -135,7 +135,7 @@
- 
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -236,7 +236,7 @@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign
  SUBDIRS = . html
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
 +docdir = $(datadir)/doc/$(PACKAGE)
- 
  doc_DATA = \
  	FLAC.tag
+ 

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- doc/html/ru/Makefile.in.orig	Sat Oct  5 01:22:27 2002
-+++ doc/html/ru/Makefile.in	Sat Oct  5 01:23:15 2002
-@@ -133,7 +133,7 @@
- 
+--- doc/html/ru/Makefile.in.orig
++++ doc/html/ru/Makefile.in
+@@ -226,7 +226,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html/ru
 +docdir = $(datadir)/doc/$(PACKAGE)/html/ru
- 
  doc_DATA = \
  	authors.html \
+ 	comparison.html \

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Sun Feb 23 01:11:25 2003
-+++ configure	Sun Feb 23 01:11:27 2003
-@@ -7817,6 +7817,7 @@
+--- configure.orig
++++ configure
+@@ -7976,6 +7976,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,30 +11,15 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9818,6 +9819,8 @@
-   fi
- 
- 
-+# Disable id3lib detection
-+if false; then
- 
- # Check whether --with-id3lib or --without-id3lib was given.
- if test "${with_id3lib+set}" = set; then
-@@ -10006,6 +10009,8 @@
- 
- 	rm -f conf.id3libtest
- 
-+fi
-+have_id3lib=no
- 
- 
- if test x$have_id3lib = xyes; then
-@@ -11713,7 +11718,7 @@
+@@ -10541,9 +10542,9 @@
  if test x$debug = xtrue; then
  	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -g -O0 -DDEBUG"
  else
--	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -DNDEBUG"
+-	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O2 -DNDEBUG"
 +	OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -DNDEBUG"
  	if test x$GCC = xyes; then
- 		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
+-		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -O3 -fomit-frame-pointer -funroll-loops -finline-functions -Wall -W -Winline -DFLaC__INLINE=__inline__"
++		OUR_CFLAGS_HEAD="$OUR_CFLAGS_HEAD -Wall -W -DFLaC__INLINE=__inline__"
  	fi
+ fi
+ CFLAGS="$OUR_CFLAGS_HEAD $CFLAGS"

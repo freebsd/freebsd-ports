@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- src/libFLAC/cpu.c.orig
 +++ src/libFLAC/cpu.c
-@@ -25,6 +25,11 @@
+@@ -37,6 +37,11 @@
  #include <config.h>
  #endif
  
@@ -12,22 +12,21 @@ $FreeBSD$
 +#include <sys/sysctl.h>
 +#endif
 +
- const unsigned FLAC__CPUINFO_IA32_CPUID_CMOV = 0x00008000;
- const unsigned FLAC__CPUINFO_IA32_CPUID_MMX = 0x00800000;
- const unsigned FLAC__CPUINFO_IA32_CPUID_FXSR = 0x01000000;
-@@ -52,6 +57,15 @@
+ #if defined FLAC__CPU_PPC
+ #if !defined FLAC__NO_ASM
+ #if defined FLAC__SYS_DARWIN
+@@ -95,6 +100,14 @@
  
  #ifndef FLAC__SSE_OS
  		info->data.ia32.fxsr = info->data.ia32.sse = info->data.ia32.sse2 = false;
-+#else
-+#if defined(__FreeBSD__)
++#elif defined(__FreeBSD__)
++		/* on FreeBSD we can double-check via sysctl whether the OS supports SSE */
 +		{
 +			int sse;
 +			size_t len = sizeof(sse);
 +			if (sysctlbyname("hw.instruction_sse", &sse, &len, NULL, 0) || !sse)
 +				info->data.ia32.fxsr = info->data.ia32.sse = info->data.ia32.sse2 = false;
 +		}
-+#endif
  #endif
  
  #ifdef FLAC__USE_3DNOW

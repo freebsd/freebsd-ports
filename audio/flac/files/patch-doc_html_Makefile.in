@@ -1,14 +1,35 @@
 
 $FreeBSD$
 
---- doc/html/Makefile.in.orig	Sat Oct  5 01:22:20 2002
-+++ doc/html/Makefile.in	Sat Oct  5 01:23:09 2002
-@@ -135,7 +135,7 @@
- 
+--- doc/html/Makefile.in.orig
++++ doc/html/Makefile.in
+@@ -236,7 +236,7 @@
+ target_alias = @target_alias@
+ AUTOMAKE_OPTIONS = foreign
  SUBDIRS = ru images
- 
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/html
 +docdir = $(datadir)/doc/$(PACKAGE)/html
- 
  doc_DATA = \
+ 	changelog.html \
  	comparison.html \
+@@ -577,13 +577,13 @@
+ 
+ # The install targets don't copy whole directories so we have to
+ # handle 'api/' specially:
+-@FLaC__HAS_DOXYGEN_TRUE@install-data-local:
+-@FLaC__HAS_DOXYGEN_TRUE@	$(mkinstalldirs) $(DESTDIR)$(docdir)/api
+-@FLaC__HAS_DOXYGEN_TRUE@	(cd api && $(INSTALL_DATA) * $(DESTDIR)$(docdir)/api)
+-@FLaC__HAS_DOXYGEN_TRUE@uninstall-local:
+-@FLaC__HAS_DOXYGEN_TRUE@	rm -rf $(DESTDIR)$(docdir)/api
+-@FLaC__HAS_DOXYGEN_TRUE@maintainer-clean-local:
+-@FLaC__HAS_DOXYGEN_TRUE@	rm -rf api
++install-data-local:
++	$(mkinstalldirs) $(DESTDIR)$(docdir)/api
++	(cd api && $(INSTALL_DATA) * $(DESTDIR)$(docdir)/api)
++uninstall-local:
++	rm -rf $(DESTDIR)$(docdir)/api
++maintainer-clean-local:
++	rm -rf api
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
