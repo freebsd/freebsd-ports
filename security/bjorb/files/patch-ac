@@ -35,7 +35,7 @@
 -  ssllibs="-lssl -lcrypto"
 +  AC_MSG_CHECKING([for RSAref library])
 +  saved_LIBS="-L$ssllib -lcrypto -lssl"
-+  LIBS="$saved_LIBS -lRSAglue -lrsaref"
++  LIBS="$saved_LIBS -L${LOCALBASE}/lib -lRSAglue -lrsaref"
 +  AC_TRY_LINK([], [],
 +    [AC_MSG_RESULT(yes); ],
 +    [AC_MSG_RESULT(no)]; LIBS="$saved_LIBS")

@@ -12,32 +12,16 @@ MASTER_SITES=	ftp://ftp.hitachi-ms.co.jp/pub/bjorb/
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-pre-fetch:
-	@${ECHO}
-	@${ECHO} You must set variable USA_RESIDENT to YES, if you are USA resident
-	@${ECHO} or to NO, if you aren\'t USA resident to build this package.
-	@${ECHO} You must also have installed RSAREF if you are USA resident.
-	@${FALSE}
-.elif defined(USA_RESIDENT)
-.if ${USA_RESIDENT} == YES
-LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
-.endif
-.endif
-BUILD_DEPENDS=	openssl:${PORTSDIR}/security/openssl
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
-RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
-
-RESTRICTED=	"Cryptography"
+USE_OPENSSL=	RSA
 
 .if !defined(BATCH)
 INSTALL_TARGET=		install certificate
 .endif
 
 USE_AUTOCONF=	yes
-CFLAGS+=	-I${PREFIX}/include/openssl
-CONFIGURE_ARGS=	--with-ssltop=${PREFIX} --with-ssllib=${PREFIX}/lib
+CFLAGS+=	-I${OPENSSLINC}/openssl
+CONFIGURE_ARGS=	--with-ssltop=${OPENSSLBASE} --with-ssllib=${OPENSSLLIB}
+CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCSRC=		${WRKDIR}/${DISTNAME}
 DOCS=		ChangeLog \
