@@ -28,7 +28,7 @@
 #	patches/patch-ae
 #	    ftp://ftp.crocodile.org/pub/jikes/jikes.makedepend.patch
 #
-# $Id: Makefile,v 1.5 1998/12/17 09:23:22 asami Exp $
+# $Id: Makefile,v 1.6 1998/12/22 08:05:33 asami Exp $
 #
 
 DISTNAME=	jikes-0.41
@@ -39,6 +39,7 @@ MAINTAINER=	dillon@backplane.com
 
 WRKSRC=		${WRKDIR}/jikesos
 MAN1=		jikes.1
+MAKE_ENV=	FILESDIR=${FILESDIR}
 SCRIPTS_ENV=	FILESDIR=${FILESDIR} PKGDIR=${PKGDIR}
 
 # 	(sufficiently handled by pkg/MESSAGE, but if IBM has an issue then
