@@ -1,11 +1,33 @@
-bin/gp
-include/pari/genpari.h
-include/pari/gencom.h
-include/pari/genport.h
-include/pari/gen68k.h
-include/pari/erreurs.h
-include/pari/mpansi.h
-include/pari/mpdefs.h
-include/pari/mpin.h
-lib/libpari.a
-@dirrm include/pari
+./lib/libpari.so.2.0.13
+./lib/libpari.so.2.0
+./lib/libpari.so
+./lib/pari/pari.elc
+./lib/pari/pari.el
+./lib/pari/pari.menu
+./lib/pari/pariemacs.txt
+./lib/pari/macros.tex
+./lib/pari/users.help.tex
+./lib/pari/usersch2.tex
+./lib/pari/usersch3.tex
+./lib/pari/gphelp
+./lib/pari/translations
+./include/pari/genpari.h
+./include/pari/paricfg.h
+./include/pari/pariinl.h
+./include/pari/pari.h
+./include/pari/paritype.h
+./include/pari/paricast.h
+./include/pari/paricom.h
+./include/pari/parierr.h
+./include/pari/parigen.h
+./include/pari/paristio.h
+./include/pari/parisys.h
+./include/pari/pariport.h
+./include/pari/paridecl.h
+./bin/gp-2.0
+./bin/gp
+@exec /bin/mkdir %D/lib/pari %D/include/pari
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@unexec /bin/rmdir %D/lib/pari/data 
+@unexec /bin/rmdir %D/lib/pari  %D/include/pari
