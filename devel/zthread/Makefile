@@ -26,8 +26,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.if ${ARCH} != i386
+BROKEN=		"Does not compile on ${ARCH}; mixes pointers and ints"
 .endif
 
 post-install:
