@@ -100,3 +100,4 @@ share/felt/german.trn
 share/felt/german_new.trn
 share/felt/spanish.trn
 @dirrm share/felt
+lib/X11/app-defaults/Velvet.ad
