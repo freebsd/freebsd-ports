@@ -7,11 +7,11 @@
 # $Id: Makefile,v 1.12 1998/03/17 21:10:40 jdp Exp $
 #
 
-DISTNAME=	egcs-1.0.2
+DISTNAME=	egcs-980315
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.0.2/  \
-		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.0.2/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.0.2/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-03-15/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-03-15/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-03-15/
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -33,12 +33,12 @@ post-patch:
 
 post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ ${PREFIX}/bin/c++ \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.90.27/cc1 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.90.27/cc1obj \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.90.27/cc1plus \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.90.27/cpp \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.90.27/f771 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.90.27/ld ; \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cc1 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cc1obj \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cc1plus \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cpp \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/f771 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/ld ; \
 		do strip $$prog ; \
 		done)
 	if [ ! -f ${PREFIX}/info/dir ]; then \
