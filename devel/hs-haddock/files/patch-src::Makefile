@@ -1,0 +1,11 @@
+--- haddock/src/Makefile.orig	Thu Mar 24 15:35:17 2005
++++ haddock/src/Makefile	Thu Mar 24 15:35:46 2005
+@@ -7,7 +7,7 @@
+ 
+ # Don't use any hslibs packages in GHC >= 5.04
+ ifeq "$(ghc_ge_504)" "YES"
+-SRC_HC_OPTS += -package network -fglasgow-exts -cpp
++SRC_HC_OPTS += -package mtl -package network -fglasgow-exts -cpp
+ else
+ SRC_HC_OPTS += -package data -package text -package util -package net -fglasgow-exts -cpp
+ endif
