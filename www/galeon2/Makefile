@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.16
-PORTREVISION=	2
+PORTVERSION=	1.3.17
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
@@ -86,13 +85,18 @@ post-patch:
 		${WRKSRC}/ui/galeon-bookmarks-editor-ui.xml.in
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%MOZILLA%%|${MOZILLA}|g ; \
-		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' ${WRKSRC}/src/galeon
+		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' < ${FILESDIR}/galeon \
+		> ${WRKDIR}/galeon
 
 pre-install:
 	@-${X11BASE}/bin/gconftool-2 --shutdown
+
+post-install:
+	@${MV} -f ${PREFIX}/bin/galeon ${PREFIX}/bin/galeon-bin
+	${INSTALL_SCRIPT} ${WRKDIR}/galeon ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

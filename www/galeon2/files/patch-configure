@@ -1,37 +1,6 @@
---- configure.orig	Sat Jul  3 16:37:01 2004
-+++ configure	Sat Jul  3 16:40:21 2004
-@@ -1705,30 +1705,7 @@
- echo "$as_me: WARNING: \`missing' script is too old or missing" >&2;}
- fi
- 
--if mkdir -p --version . >/dev/null 2>&1 && test ! -d ./--version; then
--  # Keeping the `.' argument allows $(mkdir_p) to be used without
--  # argument.  Indeed, we sometimes output rules like
--  #   $(mkdir_p) $(somedir)
--  # where $(somedir) is conditionally defined.
--  # (`test -n '$(somedir)' && $(mkdir_p) $(somedir)' is a more
--  # expensive solution, as it forces Make to start a sub-shell.)
-   mkdir_p='mkdir -p -- .'
--else
--  # On NextStep and OpenStep, the `mkdir' command does not
--  # recognize any option.  It will interpret all options as
--  # directories to create, and then abort because `.' already
--  # exists.
--  for d in ./-p ./--version;
--  do
--    test -d $d && rmdir $d
--  done
--  # $(mkinstalldirs) is defined by Automake if mkinstalldirs exists.
--  if test -f "$ac_aux_dir/mkinstalldirs"; then
--    mkdir_p='$(mkinstalldirs)'
--  else
--    mkdir_p='$(install_sh) -d'
--  fi
--fi
- 
- for ac_prog in gawk mawk nawk awk
- do
-@@ -22732,11 +22709,11 @@
+--- configure.orig	Mon Aug  9 23:57:15 2004
++++ configure	Mon Aug  9 23:57:15 2004
+@@ -22744,11 +22744,11 @@
  echo "$as_me:$LINENO: result: $MOZILLA_VERSION$autodetect" >&5
  echo "${ECHO_T}$MOZILLA_VERSION$autodetect" >&6
  
