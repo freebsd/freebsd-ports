@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix20/scripts/Attic/configure.postfix,v 1.20 2002-05-06 19:59:29 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix20/scripts/Attic/configure.postfix,v 1.21 2002-05-08 20:02:45 dwcjr Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -17,6 +17,7 @@ PCRE		"Perl Compatible Regular Expressions" OFF \
 SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
 MySQL		"MySQL map lookups" OFF \
+PgSQL		"PostgreSQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
 TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
@@ -99,6 +100,15 @@ while [ "$1" ]; do
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			echo "MYSQL_SUFFIX=	+mysql"
 			;;
+		\"PgSQL\")
+			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
+			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
+			echo "PGSQL_SUFFIX=	+pgsql"
+			echo "PATCH_SITES+=	http://mat.cc/postfix/"
+			echo "PATCHFILES+=	postfix-pg.postfix-1.1.8.patch"
+			echo "PATCH_DIST_STRIP= -p1"
+			;;
 		\"OpenLDAP\")
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
@@ -142,4 +152,4 @@ echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
 # we ask the configure questions) doesn't pick up the extensions, but
 # any subsequent build will.  so "make; make install" will build twice.
 # don't do this for now.
-#echo "PKGNAMESUFFIX=	\${PCRE_SUFFIX}\${SASL_SUFFIX}\${DB3_SUFFIX}\${MYSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
+#echo "PKGNAMESUFFIX=	\${PCRE_SUFFIX}\${SASL_SUFFIX}\${DB3_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
