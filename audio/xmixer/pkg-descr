@@ -1,5 +1,5 @@
 This package includes two programs for adjusting sound mixers:  xmixer, which
-uses the Athena toolkit, and gmixer, based on GTK+.  From the README:
+uses the Athena toolkit, and xgmixer, based on GTK+.  From the README:
 
     Features:
      * For every device which is supported by the soundcard you can
@@ -12,7 +12,5 @@ uses the Athena toolkit, and gmixer, based on GTK+.  From the README:
      * Hide devices which you don't want to see.
      * Batch support - just read and evaluate the settings in the
        configuration file.
-
-Note:  this conflicts with audio/gmixer.
 
 WWW:  http://www.hdk-berlin.de/~rasca/xmixer/

@@ -1,5 +1,5 @@
---- configure.in.orig	Sat Aug 21 21:46:55 1999
-+++ configure.in	Sat Jul  1 15:47:39 2000
+--- configure.in.orig	Thu Nov 16 17:13:39 2000
++++ configure.in	Tue Feb 20 02:04:19 2001
 @@ -23,15 +23,15 @@
  AC_CHECK_LIB(Xaw, XawPanedGetNumSub)
  
@@ -18,4 +18,4 @@
 +__gtk=`$GTK_CONFIG --version`
  case "$__gtk" in
  	1.2*)
- 	x_progs="xmixer gmixer"
+ 	x_progs="xmixer xgmixer"
