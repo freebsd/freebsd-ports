@@ -106,3 +106,39 @@
   	/* step 3 of 4: add new header output before this line */
   	(void) putchar('\n');
   }
+*** util/report.old	Thu Sep 15 13:24:57 1994
+--- util/report	Fri Sep 30 16:57:05 1994
+***************
+*** 65,70 ****
+  	else
+  		cat $r
+  	fi
+! ) | mail $args		# some sites might want "/usr/lib/sendmail -t" instead
+  
+  # and the trap handles the exit status
+--- 65,70 ----
+  	else
+  		cat $r
+  	fi
+! ) | /usr/sbin/sendmail -t $args	# some sites might want "mail" instead
+  
+  # and the trap handles the exit status
+*** expire/doexpire.old	Sun Sep 18 17:49:21 1994
+--- expire/doexpire	Fri Sep 30 19:47:39 1994
+***************
+*** 10,16 ****
+  dor='?'
+  opts=
+  histdir=$NEWSCTL
+! for dummy
+  do
+  	case "$1" in
+  	-r)	dor=yes ; opts="$opts -r"	;;
+--- 10,16 ----
+  dor='?'
+  opts=
+  histdir=$NEWSCTL
+! while test $# -ne 0
+  do
+  	case "$1" in
+  	-r)	dor=yes ; opts="$opts -r"	;;
