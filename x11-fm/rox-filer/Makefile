@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	0.1.29
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -31,7 +31,7 @@ do-build:
 
 	# Run the custom build procedure
 
-	cd ${WRKSRC} && ROX-Filer/AppRun --compile
+	cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} ROX-Filer/AppRun --compile
 
 do-install:
 	${MKDIR} ${PREFIX}/apps/ROX-Filer
