@@ -8,7 +8,8 @@
 PORTNAME=	morebalance
 PORTVERSION=	0.2
 CATEGORIES=	net
-MASTER_SITES=	http://mindx.dyndns.org/morebalance/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
+		http://mindx.dyndns.org/morebalance/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A modular open source user-space load balancing system
