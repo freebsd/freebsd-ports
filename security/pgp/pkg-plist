@@ -2,10 +2,10 @@ bin/pgp
 lib/pgp/pgp.hlp
 lib/pgp/pgpdoc1.txt
 lib/pgp/pgpdoc2.txt
+@unexec if cmp -s %D/lib/pgp/language.txt %D/lib/pgp/language.txt-dist; then rm -f %D/lib/pgp/language.txt; fi
 lib/pgp/language.txt-dist
 @exec [ ! -f %B/language.txt ] && cp %B/%f %B/language.txt
-@unexec if cmp -s %D/lib/pgp/language.txt %D/lib/pgp/language.txt-dist; then rm -f %D/lib/pgp/language.txt; fi
+@unexec if cmp -s %D/lib/pgp/config.txt %D/lib/pgp/config.txt-dist; then rm -f %D/lib/pgp/config.txt; fi
 lib/pgp/config.txt-dist
 @exec [ ! -f %B/config.txt ] && cp %B/%f %B/config.txt
-@unexec if cmp -s %D/lib/pgp/config.txt %D/lib/pgp/config.txt-dist; then rm -f %D/lib/pgp/config.txt; fi
 @dirrm lib/pgp
