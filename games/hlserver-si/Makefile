@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	si
-PORTVERSION=	0.97.0p5
-MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/si/ \
-		http://www.lysator.liu.se/amiga/si/ \
-		ftp://212.177.107.155/halflifeitalia/mod/
-#DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-linux
+PORTVERSION=	0.97.0ra
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g:S/0r//}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
 
-DISTFILES=	si-097-linux.tar.gz si-097-097pl5-linux-patch.tar.gz
+_DONT_INCLUDE_MK_=yes
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
+
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=		You must manually fetch the Linux Port distfile\
+		(${DISTFILES}) from http://www.fileplanet.com/dl/dl.asp?/planethalflife/si/${DISTFILES},\
+		place it in ${DISTDIR} and then run make again
+.endif
+
+.include <bsd.port.post.mk>
