@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srvx
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	irc net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	srvx
@@ -24,8 +24,6 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITH_PROTOCOL_BAHAMUT)
 CONFIGURE_ARGS+=	--with-protocol=bahamut
 .endif
-
-.include <bsd.port.pre.mk>
 
 pre-fetch:
 	@ ${ECHO} ""
@@ -50,4 +48,4 @@ post-install:
 	@ ${ECHO} "	${PORTNAME} .help files are located in ${DOCSDIR}."
 	@ ${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
