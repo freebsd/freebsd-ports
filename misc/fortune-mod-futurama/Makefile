@@ -11,12 +11,11 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.netmeister.org/apps/
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
 NO_BUILD=	yes
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat

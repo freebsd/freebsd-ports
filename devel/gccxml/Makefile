@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.gccxml.org/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-cc1plus-304${EXTRACT_SUFX}
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	XML output extension to GCC
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake

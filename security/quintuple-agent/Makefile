@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.vibe.at/tools/q-agent/
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Quintuple Agent is a program that stores secrets for you
 
 USE_GETTEXT=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.cis.unisa.edu.au/~pizza/gj/Distribution/
 DISTNAME=	gjdist${GJDIST}
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Extension of the Java programming language that supports generic types
 
 WRKSRC=		${WRKDIR}/gj
