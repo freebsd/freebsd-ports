@@ -120,4 +120,3 @@ share/locale/sv/LC_MESSAGES/mrproject.mo
 @dirrm share/gnome/help/mrproject
 @dirrm lib/mrproject/views
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/mrproject/mrproject-C.omf 2>/dev/null || /usr/bin/true
-
