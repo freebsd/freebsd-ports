@@ -21,7 +21,7 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany/extensions/libgesturesextension.so:${PORTSD
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
 		splashsetter:${PORTSDIR}/deskutils/splashsetter \
-		gnome-netinfo:${PORTSDIR}/net/gnomenetwork \
+		gnome-nettool:${PORTSDIR}/net/gnomenettool \
 		gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 NO_BUILD=	yes
