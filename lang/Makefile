@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += yorick-doc
 
     SUBDIR += ETHOberonV4
     SUBDIR += Gofer
