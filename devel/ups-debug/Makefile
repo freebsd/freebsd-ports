@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.6 1998/11/11 05:37:17 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/14 04:16:09 obrien Exp $
 #
 
 DISTNAME=	ups-3.33
@@ -14,9 +14,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		http://www.concerto.demon.co.uk/UPS/
 MASTER_SITE_SUBDIR= utilities
 
-PATCHFILES=	ide-333-patch-06oct98.txt.mod
-PATCH_SITES=	http://www.concerto.demon.co.uk/UPS/  \
-		http://www.freebsd.org/~obrien/
+PATCHFILES=	ide-333-patch-16nov98.txt
+PATCH_SITES=	http://www.concerto.demon.co.uk/UPS/
 
 MAINTAINER=     obrien@FreeBSD.org
 
