@@ -3,7 +3,7 @@
 # Date created:         Jan 15 1998
 # Whom:                 brianfeldman@hotmail.com
 #
-# $Id: Makefile,v 1.7 1999/06/28 02:21:11 billf Exp $
+# $Id: Makefile,v 1.8 1999/06/28 05:47:42 mharo Exp $
 #
 
 DISTNAME=	tkirc1.202
@@ -11,7 +11,7 @@ PKGNAME=	tkirc-1.202
 CATEGORIES=	irc tk80
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/tkirc/
 
-MAINTAINER=	brianfeldman@hotmail.com
+MAINTAINER=	green@FreeBSD.org
 
 RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII \
 		wish8.0:${PORTSDIR}/x11-toolkits/tk80
