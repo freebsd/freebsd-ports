@@ -7,6 +7,7 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.04
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -15,6 +16,10 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"SSL encryption wrapper for standard network daemons"
+
+PATCHFILES=	blinding-4.x_bri.patch
+PATCH_SITES=	http://www.stunnel.org/patches/patches/
+PATCH_DIST_STRIP=	-p1
 
 USE_OPENSSL=	YES
 USE_REINPLACE=	YES
