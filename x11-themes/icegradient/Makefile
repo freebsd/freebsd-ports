@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/ \
 MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	IceGradient-1.2.x-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-0.0.5
 
