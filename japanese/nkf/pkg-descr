@@ -8,8 +8,8 @@ So users needn't the input kanji code specification.
 
 The original author is Itaru Ichikawa (ichikawa@flab.fujitsu.co.jp).
 This port for FreeBSD includes patches posted to fj.sources by
-Kusakabe Youichi (void@merope.pleiades.or.jp) and NIDE Naoyuki
-(nide@ics.nara-wu.ac.jp).
+Shinji Kono (kono@csl.sony.co.jp).  It has the unofficial version
+number 1.5pl1.
 
 - Satoshi
 (asami@cs.berkeley.edu)
