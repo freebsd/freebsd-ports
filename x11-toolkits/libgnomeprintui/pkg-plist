@@ -13,13 +13,6 @@ share/doc/libgnomeprintui/home.png
 share/doc/libgnomeprintui/index.html
 share/doc/libgnomeprintui/index.sgml
 share/doc/libgnomeprintui/left.png
-share/doc/libgnomeprintui/libgnomeprintui-gnome-font-dialog.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-copies.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-dialog.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-job-preview.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-paper-selector.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-preview.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-selector.html
 share/doc/libgnomeprintui/libgnomeprintui.html
 share/doc/libgnomeprintui/right.png
 share/doc/libgnomeprintui/up.png

@@ -43,16 +43,6 @@ share/doc/libgnomeprint/index.sgml
 share/doc/libgnomeprint/left.png
 share/doc/libgnomeprint/libgnomeprint-building.html
 share/doc/libgnomeprint/libgnomeprint-compiling.html
-share/doc/libgnomeprint/libgnomeprint-gnome-font-face.html
-share/doc/libgnomeprint/libgnomeprint-gnome-font.html
-share/doc/libgnomeprint/libgnomeprint-gnome-glyphlist.html
-share/doc/libgnomeprint/libgnomeprint-gnome-pgl.html
-share/doc/libgnomeprint/libgnomeprint-gnome-print-config.html
-share/doc/libgnomeprint/libgnomeprint-gnome-print-job.html
-share/doc/libgnomeprint/libgnomeprint-gnome-print-paper.html
-share/doc/libgnomeprint/libgnomeprint-gnome-print-unit.html
-share/doc/libgnomeprint/libgnomeprint-gnome-print.html
-share/doc/libgnomeprint/libgnomeprint-gnome-rfont.html
 share/doc/libgnomeprint/libgnomeprint-resources.html
 share/doc/libgnomeprint/libgnomeprint.html
 share/doc/libgnomeprint/libgnomeprintunsorted.html
@@ -96,6 +86,7 @@ share/locale/lv/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/mk/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ml/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprint-2.2.mo
+share/locale/mr/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/nl/LC_MESSAGES/libgnomeprint-2.2.mo
 share/locale/nn/LC_MESSAGES/libgnomeprint-2.2.mo
