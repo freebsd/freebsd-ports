@@ -1,17 +1,15 @@
 # New ports collection makefile for:	platex2e-jis
-# Version required:		<1998/09/01>
+# Version required:		<1999/08/09>
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pl19980901j
-PKGNAME=	ja-platex2e-jis-1998.09.01
+DISTNAME=	pl19990809j
+PKGNAME=	ja-platex2e-jis-1999.08.09
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/1998-09-01/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		plpatch.ltx jclasses.dtx tascmac.sty
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/1999-08-09/
 
 MAINTAINER=	max@FreeBSD.org
 
@@ -21,16 +19,10 @@ RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
 		platex-common:${PORTSDIR}/japanese/platex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-WRKSRC=		${WRKDIR}/19980901
+WRKSRC=		${WRKDIR}/19990809
 DIST_SUBDIR=	platex2e
 
 TEXMF=		${PREFIX}/share/texmf
-
-post-extract:
-.for f in plpatch.ltx jclasses.dtx tascmac.sty
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/$f ${WRKSRC}
-.endfor
 
 do-build:
 	@(cd ${WRKSRC}; ptex -ini plcore.ins; ptex -ini platex.ltx)
