@@ -10,8 +10,7 @@
 # AbiWord build system.
 
 PORTNAME=	AbiWord
-PORTVERSION=	0.99.2
-PORTREVISION=	1
+PORTVERSION=	0.99.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
