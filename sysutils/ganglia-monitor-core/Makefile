@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ganglia-monitor-core
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -24,7 +24,6 @@ LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/ganglia
 .if !defined (WITHOUT_GMETAD)
 CONFIGURE_ARGS+=	--with-gmetad
 .endif

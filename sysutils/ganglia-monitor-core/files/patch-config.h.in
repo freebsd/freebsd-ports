@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- config.h.in.orig	Tue Oct 28 14:41:30 2003
++++ config.h.in	Tue Oct 28 14:41:41 2003
+@@ -3,8 +3,8 @@
+ /* AIX */
+ #undef AIX
+ 
+-/* BSD */
+-#undef BSD
++/* FREEBSD */
++#undef FREEBSD
+ 
+ /* CPU_VENDOR_OS */
+ #undef CPU_VENDOR_OS

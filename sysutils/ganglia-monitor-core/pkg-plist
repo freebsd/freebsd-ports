@@ -5,7 +5,7 @@ etc/gmond.conf.sample
 %%GMETAD%%etc/gmetad.conf.sample
 etc/rc.d/gmond.sh.sample
 %%GMETAD%%etc/rc.d/gmetad.sh.sample
-include/ganglia/ganglia.h
+include/ganglia.h
 include/ganglia/ascii.h
 include/ganglia/asciitab.h
 include/ganglia/daemon_inetd.h
