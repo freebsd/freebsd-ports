@@ -184,6 +184,8 @@ share/locale/ja/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/mk/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
+share/locale/ml/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
