@@ -14,19 +14,11 @@ MAINTAINER=	bjk@m-net.arbornet.org
 COMMENT=	Show information about local users
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ui.1
-MANCOMPRESSED=	no
-
-CONFIGURE_TARGET=
 
 pre-build:
-	${CP} ${WRKSRC}/doc/ui.man ${WRKSRC}/doc/ui.1
+	${MV} ${WRKSRC}/doc/ui.man ${WRKSRC}/doc/ui.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-BROKEN=	"Doesn't work on 5.x, mainainter informed - 2003-04-07"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
