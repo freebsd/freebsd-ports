@@ -55,6 +55,55 @@ bin/doxywizard
 %%PORTDOCS%%share/doc/doxygen/examples/define/html/globals.html
 %%PORTDOCS%%share/doc/doxygen/examples/define/html/index.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams.cfg
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/annotated.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a-members.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a__coll__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a__inherit__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b-members.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b__coll__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b__inherit__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c-members.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c__coll__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c__inherit__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d-members.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d__coll__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d__inherit__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e-members.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e__coll__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e__inherit__graph.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__a_8h-source.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__a_8h.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__a_8h__dep__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__b_8h-source.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__b_8h.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__b_8h__dep__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h-source.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h__dep__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h-source.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h__dep__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__e_8h-source.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__e_8h.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__e_8h__incl.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/doxygen.css
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/doxygen.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/files.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/functions.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.dot
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/hierarchy.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/index.html
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/inherit__graph__0.gif
+%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/inherits.html
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams_a.h
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams_b.h
 %%PORTDOCS%%share/doc/doxygen/examples/diagrams_c.h
@@ -325,6 +374,8 @@ bin/doxywizard
 %%PORTDOCS%%@dirrm share/doc/doxygen/examples/example
 %%PORTDOCS%%@dirrm share/doc/doxygen/examples/enum/html
 %%PORTDOCS%%@dirrm share/doc/doxygen/examples/enum
+%%PORTDOCS%%@dirrm share/doc/doxygen/examples/diagrams/html
+%%PORTDOCS%%@dirrm share/doc/doxygen/examples/diagrams
 %%PORTDOCS%%@dirrm share/doc/doxygen/examples/define/html
 %%PORTDOCS%%@dirrm share/doc/doxygen/examples/define
 %%PORTDOCS%%@dirrm share/doc/doxygen/examples/class/html
