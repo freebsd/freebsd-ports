@@ -12,6 +12,8 @@ COMMENT=	CDB jisyo (dictionary) files for the SKK Japanese-input software
 
 SKK_JISYO_SUFFIX=	.cdb
 
+BROKEN=		Broken distinfo
+
 MASTERDIR=	${.CURDIR}/../skk-jisyo
 
 MD5_FILE=	${.CURDIR}/distinfo
