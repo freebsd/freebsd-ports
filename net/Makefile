@@ -57,6 +57,7 @@
     SUBDIR += coda_server
     SUBDIR += confregdecode
     SUBDIR += corkscrew
+    SUBDIR += cphone
     SUBDIR += crescendo
     SUBDIR += cricket
     SUBDIR += cryptcat
