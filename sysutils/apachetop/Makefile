@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apachetop
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://clueful.shagged.org/apachetop/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,12 +14,17 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	esn@x123.info
 COMMENT=	Apache RealTime log stats
 
-WRKSRC=		${WRKDIR}/ApacheTop-${PORTVERSION}
+BUILD_DEPENDS= ${LOCALBASE}/bin/autoconf257:${PORTSDIR}/devel/autoconf257
 
-do-build:
-	cd ${WRKSRC}; ${MAKE} freebsd
+GNU_CONFIGURE=  yes
+USE_REINPLACE=	yes
 
-do-install:
-	${CP} -rp ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+MAN1=		apachetop.1
+
+post-configure:
+	${REINPLACE_CMD} \
+		-e 's/--run autoconf$$/--run autoconf257/' \
+		-e 's/--run autoheader$$/--run autoheader257/' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
