@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-crossfade
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
 		ftp://ftp.falsehope.com/pub/xmms-crossfade/
@@ -20,5 +20,12 @@ USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 INSTALLS_SHLIB=	yes
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
+		${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
+.endif # !NOPORTDOCS
 
 .include <bsd.port.mk>
