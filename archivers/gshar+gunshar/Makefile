@@ -3,11 +3,11 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:43:21 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/12 04:53:52 asami Exp $
 #
 DISTNAME=       sharutils-4.1.4
 CATEGORIES+=	archivers
-MASTER_SITES=   ftp://ftp.iro.umontreal.ca/pub/contrib/pinard/
+MASTER_SITES=   ftp://ftp.iro.umontreal.ca/pub/contrib/pinard/gnu/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
