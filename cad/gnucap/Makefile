@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.geda.seul.org/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnu Circuit Analysis Package
 
+BROKEN=		"Unfetchable"
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
