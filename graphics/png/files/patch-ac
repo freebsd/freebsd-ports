@@ -1,19 +1,11 @@
---- pngerror.c.orig	Thu Oct  3 15:32:27 2002
-+++ pngerror.c	Mon May  3 01:18:27 2004
-@@ -135,10 +135,14 @@
-       buffer[iout] = 0;
-    else
+--- pngerror.c.bak	Thu Oct  3 15:32:27 2002
++++ pngerror.c	Sun May 16 08:10:42 2004
+@@ -137,7 +137,7 @@
     {
-+      int len = strlen(error_message);
-+
-+      if (len > 63)
-+	 len = 63;
        buffer[iout++] = ':';
        buffer[iout++] = ' ';
 -      png_memcpy(buffer+iout, error_message, 64);
--      buffer[iout+63] = 0;
-+      png_memcpy(buffer+iout, error_message, len);
-+      buffer[iout+len] = 0;
++      strncpy(buffer+iout, error_message, 63);
+       buffer[iout+63] = 0;
     }
  }
- 
