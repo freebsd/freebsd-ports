@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.18 1997/04/13 00:33:24 obrien Exp $
+# $Id: Makefile,v 1.19 1997/07/13 18:49:29 max Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -16,7 +16,6 @@ DISTFILES=	${TETEX_SRC} ${TETEX_LIB}
 MAINTAINER=	br@schiele-ct.de
 
 DIST_SUBDIR=	teTeX
-EXTRACT_ONLY=	${TETEX_SRC}
 PATCH_DIST_STRIP=	-p1
 NO_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -32,25 +31,26 @@ MAN1=		afm2tfm.1 allcm.1 alldc.1 allneeded.1 amslatex.1 \
 		tangle.1 tex.1 texconfig.1 texhash.1 tftopl.1 \
 		vftovp.1 virtex.1 vptovf.1 weave.1 xdvi.1
 
-TETEX_SRC=	teTeX-src-0.4pl6.tar.gz
-TETEX_LIB=	teTeX-lib-0.4pl6.tar.gz
+TETEX_SRC=	teTeX-src-0.4pl7.tar.gz
+TETEX_LIB=	teTeX-lib-0.4pl8.tar.gz
 WRKLIB=		${WRKDIR}/teTeX
-
-post-extract:
-	@cd ${WRKDIR} && tar xfz ${DISTDIR}/${DIST_SUBDIR}/${TETEX_LIB}
+INSTALL_INFO=	/usr/bin/install-info
 
 pre-install:
 	@${RM} -f ${PREFIX}/share/texmf/ls-R
 	@chown -R bin:bin ${WRKLIB}/info ${WRKLIB}/man
-	@chmod 444 ${WRKLIB}/info/* ${WRKLIB}/man/man1/* ${WRKLIB/man/man5/*
-	@find ${WRKLIB}/texmf/fonts -type d -perm 1755 -exec chmod 755 {} \; 
+	@${RM} -f ${WRKLIB}/info/dir ${WRKLIB}/info/localdir ${WRKLIB}/info/*.orig
+	@chmod 444 ${WRKLIB}/info/* ${WRKLIB}/man/man1/* ${WRKLIB}/man/man5/*
+	@find ${WRKLIB}/texmf/fonts -type d -perm 1755 -exec chmod 755 {} \;
 	@ (cd ${WRKLIB}; tar cf - info man/man1 man/man5) | (cd ${PREFIX}; tar --unlink -xpf -)
 	@ (cd ${WRKLIB}; tar cf - texmf) | (cd ${PREFIX}/share; tar --unlink -xpf -)
 	@${INSTALL_DATA} ${WRKLIB}/texmf.cnf ${PREFIX}/share/texmf/web2c
-	
+
 post-install:
-	@(cd ${PREFIX}/bin ; /bin/ln -sf virtex latex)
-	@(cd ${PREFIX}/bin ; /bin/ln -sf virtex tex)
-	@${SETENV} PREFIX=${PREFIX} ${SH} ${FILESDIR}/install-note
+	${INSTALL_INFO} ${PREFIX}/info/latex ${PREFIX}/info/dir
+	${INSTALL_INFO} ${PREFIX}/info/kpathsea.info ${PREFIX}/info/dir
+	${INSTALL_INFO} ${PREFIX}/info/dvips.info ${PREFIX}/info/dir
+	${INSTALL_INFO} ${PREFIX}/info/fontname.info ${PREFIX}/info/dir
+	@${SETENV} PREFIX=${PREFIX} ${SH} files/install-note
 
 .include <bsd.port.mk>
