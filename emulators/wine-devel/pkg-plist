@@ -16,6 +16,8 @@ bin/wrc
 bin/regSet.sh
 @unexec if cmp -s %D/etc/wine.conf %D/etc/wine.conf.sample; then rm -f %D/etc/wine.conf; fi
 etc/wine.conf.sample
+include/wine/amaudio.h
+include/wine/amvideo.h
 include/wine/basetsd.h
 include/wine/cderr.h
 include/wine/cguid.h
@@ -23,6 +25,7 @@ include/wine/comcat.h
 include/wine/commctrl.h
 include/wine/commdlg.h
 include/wine/compobj.h
+include/wine/control.h
 include/wine/cpl.h
 include/wine/d3d.h
 include/wine/d3dcaps.h
@@ -82,6 +85,7 @@ include/wine/rpc.h
 include/wine/rpcdce.h
 include/wine/rpcdcep.h
 include/wine/rpcndr.h
+include/wine/rpcnterr.h
 include/wine/servprov.h
 include/wine/setupapi.h
 include/wine/shellapi.h
@@ -92,6 +96,7 @@ include/wine/sql.h
 include/wine/sqlext.h
 include/wine/sqltypes.h
 include/wine/storage.h
+include/wine/strmif.h
 include/wine/tapi.h
 include/wine/tlhelp32.h
 include/wine/unknwn.h
@@ -112,6 +117,7 @@ include/wine/winnetwk.h
 include/wine/winnls.h
 include/wine/winnt.h
 include/wine/winreg.h
+include/wine/winres.h
 include/wine/winresrc.h
 include/wine/winsock.h
 include/wine/winsock2.h
@@ -126,18 +132,23 @@ include/wine/wsipx.h
 include/wine/wtypes.h
 include/wine/zmouse.h
 include/wine/msvcrt/conio.h
+include/wine/msvcrt/crtdbg.h
 include/wine/msvcrt/ctype.h
 include/wine/msvcrt/direct.h
 include/wine/msvcrt/dos.h
+include/wine/msvcrt/eh.h
 include/wine/msvcrt/fcntl.h
 include/wine/msvcrt/io.h
+include/wine/msvcrt/malloc.h
 include/wine/msvcrt/process.h
+include/wine/msvcrt/search.h
 include/wine/msvcrt/stddef.h
 include/wine/msvcrt/stdio.h
 include/wine/msvcrt/stdlib.h
 include/wine/msvcrt/string.h
 include/wine/msvcrt/time.h
 include/wine/msvcrt/wchar.h
+include/wine/msvcrt/wctype.h
 include/wine/msvcrt/sys/stat.h
 include/wine/msvcrt/sys/timeb.h
 include/wine/msvcrt/sys/types.h
@@ -173,12 +184,14 @@ include/wine/wine/obj_picture.h
 include/wine/wine/obj_property.h
 include/wine/wine/obj_propertystorage.h
 include/wine/wine/obj_queryassociations.h
+include/wine/wine/obj_serviceprovider.h
 include/wine/wine/obj_shellbrowser.h
 include/wine/wine/obj_shellextinit.h
 include/wine/wine/obj_shellfolder.h
 include/wine/wine/obj_shelllink.h
 include/wine/wine/obj_shellview.h
 include/wine/wine/obj_storage.h
+include/wine/wine/obj_webbrowser.h
 include/wine/wine/unicode.h
 lib/wine/winedefault.reg
 lib/wine/bug_report.pl
@@ -255,6 +268,7 @@ lib/wine/libolepro32.so
 lib/wine/libolesvr.so
 lib/wine/libolesvr32.so
 lib/wine/libpsapi.so
+lib/wine/libquartz.so
 lib/wine/librasapi16.so
 lib/wine/librasapi32.so
 lib/wine/libriched32.so
