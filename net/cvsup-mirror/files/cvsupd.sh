@@ -13,6 +13,6 @@ umask 2
 test -x ${PREFIX}/sbin/cvsupd || exit 1
 echo -n " cvsupd"
 cd ${base} || exit
-. config.sh || exit
+. ./config.sh || exit
 su -m ${user} -c \
     "cvsupd -e -C ${maxclients} -l @${facility}" >>${out} 2>&1
