@@ -80,7 +80,7 @@ pre-everything::
 .endif
 
 do-build:
-	@for m in ${MODULES}; do \
+	-@for m in ${MODULES}; do \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/$$m; \
 	done
 
