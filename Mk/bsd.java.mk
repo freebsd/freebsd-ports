@@ -115,8 +115,8 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 #          suitable
 # Stage 4: <REMOVED> (merged in stage 3)
 # Stage 5: Decide the exact JDK to use (or install)
-# Stage 6: Define all settings for the port to use
-# Stage 7: Add any dependencies if necessary
+# Stage 6: Add any dependencies if necessary
+# Stage 7: Define all settings for the port to use
 #
 
 .	if defined(USE_JAVA)
@@ -371,8 +371,38 @@ JAVA_PORT_VENDOR=		${_JAVA_PORT_INFO:MVENDOR=*:S,VENDOR=,,}
 JAVA_PORT_VENDOR_DESCRIPTION:=	${JAVA_PORT_VENDOR:S/^/\${_JAVA_VENDOR_/:S/$/}/}
 JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 
+#-------------------------------------------------------------------------------
+# Stage 6: Add any dependencies if necessary
+#
+
+# Add the JDK port to the dependencies
+DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
+# When nothing is set, assume JAVA_BUILD=jdk and JAVA_RUN=jre
+# (unless NO_BUILD is set)
+.		if !defined(JAVA_EXTRACT) && !defined(JAVA_BUILD) && !defined(JAVA_RUN)
+.			if !defined(NO_BUILD)
+JAVA_BUILD=	jdk
+.			endif
+JAVA_RUN=	jre
+.		endif
+.		if defined(JAVA_EXTRACT)
+EXTRACT_DEPENDS+=	${DEPEND_JAVA}
+.			endif
+.		if defined(JAVA_BUILD)
+.			if defined(NO_BUILD)
+.BEGIN:
+	@${ECHO_CMD} "${PKGNAME}: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
+	@${FALSE}
+.				endif
+BUILD_DEPENDS+=		${DEPEND_JAVA}
+.			endif
+.		if defined(JAVA_RUN)
+RUN_DEPENDS+=		${DEPEND_JAVA}
+.		endif
+
+
 #-----------------------------------------------------------------------------
-# Stage 6: Define all settings for the port to use
+# Stage 7: Define all settings for the port to use
 #
 # At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 #
@@ -388,7 +418,7 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # First test if jikes is needed (and if USE_JIKES has a correct value)
 .		if defined(USE_JIKES)
 .			if (${USE_JIKES} == "YES") || (${USE_JIKES} == "yes")
-JAVAC=		${_JIKES_PATH}
+JAVAC=		${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
 BUILD_DEPENDS+=	${DEPEND_JIKES}
 .			elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
 .BEGIN:
@@ -401,7 +431,7 @@ BUILD_DEPENDS+=	${DEPEND_JIKES}
 .			if (${JAVA_BUILD} == "jdk" || ${JAVA_BUILD} == "JDK") && !defined(JAVAC)
 # Use jikes if available and not explicitly forbidden
 .				if exists(${_JIKES_PATH}) && !defined(USE_JIKES)
-JAVAC=			${_JIKES_PATH}
+JAVAC=			${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
 BUILD_DEPENDS+=	${DEPEND_JIKES}
 # Otherwise use 'javac'
 .				else
@@ -434,36 +464,6 @@ RMID=				${JAVA_HOME}/bin/rmid
 JAVA_CLASSES=	${JAVA_HOME}/lib/classes.zip
 .		else
 JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
-.		endif
-
-
-#-------------------------------------------------------------------------------
-# Stage 7: Add any dependencies if necessary
-#
-
-# Add the JDK port to the dependencies
-DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
-# When nothing is set, assume JAVA_BUILD=jdk and JAVA_RUN=jre
-# (unless NO_BUILD is set)
-.		if !defined(JAVA_EXTRACT) && !defined(JAVA_BUILD) && !defined(JAVA_RUN)
-.			if !defined(NO_BUILD)
-JAVA_BUILD=	jdk
-.			endif
-JAVA_RUN=	jre
-.		endif
-.		if defined(JAVA_EXTRACT)
-EXTRACT_DEPENDS+=	${DEPEND_JAVA}
-.			endif
-.		if defined(JAVA_BUILD)
-.			if defined(NO_BUILD)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
-	@${FALSE}
-.				endif
-BUILD_DEPENDS+=		${DEPEND_JAVA}
-.			endif
-.		if defined(JAVA_RUN)
-RUN_DEPENDS+=		${DEPEND_JAVA}
 .		endif
 
 
