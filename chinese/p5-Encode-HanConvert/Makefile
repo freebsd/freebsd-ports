@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Encode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	rafan@infor.org
 COMMENT=	Traditional and Simplified Chinese mappings
 
 PERL_CONFIGURE=	yes
