@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Display molecular orbitals and electron densities in 2D and 3D
 
+BROKEN=		"Checksum mismatch"
+
 USE_XLIB=	yes
 
 RESTRICTED=	"free for academic, non profit usage;"
