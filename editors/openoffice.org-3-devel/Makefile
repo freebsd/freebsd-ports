@@ -51,6 +51,8 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			CC=gcc295 \
 			CXX=g++295
 
+MAKE_ENV=		CC=${CC} CFLAGS=${CFLAGS}
+
 .include <bsd.port.pre.mk>
 
 pre-fetch:
