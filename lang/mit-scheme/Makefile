@@ -5,6 +5,7 @@
 #
 
 DISTNAME=       mit-scheme
+MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 DISTFILES=	scheme-microcode+dist-7.3-freebsd.tgz
 MAINTAINER= 	jmacd@uclink.berkeley.edu
 
