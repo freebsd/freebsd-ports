@@ -7,6 +7,7 @@
 
 PORTNAME=	healthd
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/
 
@@ -27,7 +28,7 @@ HDDOCDIR=	${PREFIX}/share/doc/healthd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400014
+.if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
