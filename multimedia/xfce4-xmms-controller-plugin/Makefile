@@ -12,7 +12,7 @@ CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://eoin.angrystickman.com/files/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	endx7@users.sf.net
+MAINTAINER=	robin.schoonover@gmail.google.com
 COMMENT=	XMMS controller plugin for the xfce4 panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
