@@ -3,20 +3,24 @@
 @unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/sample-access; then rm -f %D/etc/postfix/access; fi
 @unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/sample-aliases; then rm -f %D/etc/postfix/aliases; fi
 @unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/sample-canonical; then rm -f %D/etc/postfix/canonical; fi
+@unexec if cmp -s %D/etc/postfix/cidr_table %D/etc/postfix/sample-cidr_table; then rm -f %D/etc/postfix/cidr_table; fi
 @unexec if cmp -s %D/etc/postfix/pcre_table %D/etc/postfix/sample-pcre_table; then rm -f %D/etc/postfix/pcre_table; fi
 @unexec if cmp -s %D/etc/postfix/regexp_table %D/etc/postfix/sample-regexp_table; then rm -f %D/etc/postfix/regexp_table; fi
 @unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/sample-relocated; then rm -f %D/etc/postfix/relocated; fi
+@unexec if cmp -s %D/etc/postfix/tcp_table %D/etc/postfix/sample-tcp_table; then rm -f %D/etc/postfix/tcp_table; fi
 @unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/sample-transport; then rm -f %D/etc/postfix/transport; fi
 @unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/sample-virtual; then rm -f %D/etc/postfix/virtual; fi
 bin/rmail
 etc/postfix/LICENSE
 etc/postfix/main.cf.default
+etc/postfix/makedefs.out
 etc/postfix/post-install
 etc/postfix/postfix-files
 etc/postfix/postfix-script
 etc/postfix/sample-access
 etc/postfix/sample-aliases
 etc/postfix/sample-canonical
+etc/postfix/sample-cidr_table
 etc/postfix/sample-pcre_table
 etc/postfix/sample-regexp_table
 etc/postfix/sample-relocated
@@ -37,6 +41,7 @@ etc/postfix/sample-misc.cf
 etc/postfix/sample-pcre-access.cf
 etc/postfix/sample-pcre-body.cf
 etc/postfix/sample-pcre-header.cf
+etc/postfix/sample-pgsql-aliases.cf
 etc/postfix/sample-qmqpd.cf
 etc/postfix/sample-rate.cf
 etc/postfix/sample-regexp-access.cf
@@ -45,11 +50,14 @@ etc/postfix/sample-regexp-header.cf
 etc/postfix/sample-relocated.cf
 etc/postfix/sample-resource.cf
 etc/postfix/sample-rewrite.cf
+etc/postfix/sample-scheduler.cf
 etc/postfix/sample-smtp.cf
 etc/postfix/sample-smtpd.cf
+etc/postfix/sample-tcp_table
 etc/postfix/sample-transport.cf
 etc/postfix/sample-virtual.cf
 etc/postfix/sample-transport
+etc/postfix/sample-verify.cf
 etc/postfix/sample-virtual
 %%SUB_TLS%%etc/postfix/sample-tls.cf
 libexec/postfix/bounce
@@ -62,6 +70,7 @@ libexec/postfix/master
 libexec/postfix/nqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
+libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
 libexec/postfix/showq
@@ -69,6 +78,7 @@ libexec/postfix/smtp
 libexec/postfix/smtpd
 libexec/postfix/spawn
 libexec/postfix/trivial-rewrite
+libexec/postfix/verify
 libexec/postfix/virtual
 %%SUB_TLS%%libexec/postfix/tlsmgr
 sbin/postalias
@@ -87,6 +97,8 @@ bin/newaliases
 bin/mailq
 %%SUB_TEST%%sbin/smtp-sink
 %%SUB_TEST%%sbin/smtp-source
+%%PORTDOCS%%share/doc/postfix/ADDRESS_CLASS_README
+%%PORTDOCS%%share/doc/postfix/ADDRESS_VERIFICATION_README
 %%PORTDOCS%%share/doc/postfix/DB_README
 %%PORTDOCS%%share/doc/postfix/DEBUG_README
 %%PORTDOCS%%share/doc/postfix/ETRN_README
@@ -94,15 +106,19 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/INSTALL
 %%PORTDOCS%%share/doc/postfix/LDAP_README
 %%PORTDOCS%%share/doc/postfix/LINUX_README
+%%PORTDOCS%%share/doc/postfix/LOCAL_RECIPIENT_README
 %%PORTDOCS%%share/doc/postfix/LMTP_README
 %%PORTDOCS%%share/doc/postfix/MACOSX_README
+%%PORTDOCS%%share/doc/postfix/MAILDROP_README
 %%PORTDOCS%%share/doc/postfix/MYSQL_README
 %%PORTDOCS%%share/doc/postfix/NFS_README
 %%PORTDOCS%%share/doc/postfix/PACKAGE_README
 %%PORTDOCS%%share/doc/postfix/PCRE_README
 %%PORTDOCS%%share/doc/postfix/QMQP_README
+%%PORTDOCS%%share/doc/postfix/RELEASE_NOTES
 %%PORTDOCS%%share/doc/postfix/RESTRICTION_CLASS_README
 %%PORTDOCS%%share/doc/postfix/SASL_README
+%%PORTDOCS%%share/doc/postfix/SCHEDULER_README
 %%PORTDOCS%%share/doc/postfix/ULTRIX_README
 %%PORTDOCS%%share/doc/postfix/UUCP_README
 %%PORTDOCS%%share/doc/postfix/VERP_README
@@ -116,6 +132,7 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/big-picture.html
 %%PORTDOCS%%share/doc/postfix/bounce.8.html
 %%PORTDOCS%%share/doc/postfix/canonical.5.html
+%%PORTDOCS%%share/doc/postfix/cidr_table.5.html
 %%PORTDOCS%%share/doc/postfix/cleanup.8.html
 %%PORTDOCS%%share/doc/postfix/commands.html
 %%PORTDOCS%%share/doc/postfix/defer.8.html
@@ -148,6 +165,7 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/postmap.1.html
 %%PORTDOCS%%share/doc/postfix/postqueue.1.html
 %%PORTDOCS%%share/doc/postfix/postsuper.1.html
+%%PORTDOCS%%share/doc/postfix/proxymap.8.html
 %%PORTDOCS%%share/doc/postfix/qmgr.8.html
 %%PORTDOCS%%share/doc/postfix/qmqpd.8.html
 %%PORTDOCS%%share/doc/postfix/queuing.html
@@ -164,9 +182,12 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/smtp.8.html
 %%PORTDOCS%%share/doc/postfix/smtpd.8.html
 %%PORTDOCS%%share/doc/postfix/spawn.8.html
+%%PORTDOCS%%share/doc/postfix/tcp_table.5.html
+%%PORTDOCS%%share/doc/postfix/trace.8.html
 %%PORTDOCS%%share/doc/postfix/transport.5.html
 %%PORTDOCS%%share/doc/postfix/trivial-rewrite.8.html
 %%PORTDOCS%%share/doc/postfix/uce.html
+%%PORTDOCS%%share/doc/postfix/verify.8.html
 %%PORTDOCS%%share/doc/postfix/virtual.5.html
 %%PORTDOCS%%share/doc/postfix/virtual.8.html
 %%PORTDOCS%%@dirrm share/doc/postfix

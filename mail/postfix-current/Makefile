@@ -7,14 +7,15 @@
 
 # To pre-select options in batch mode, run make like this:
 #
-#  make -DBATCH POSTFIX_OPTIONS="DB3 PCRE"
+#  make -DBATCH POSTFIX_OPTIONS="DB3 IPv6TLS"
 #
 # the options are the same names as in the scripts/configure.postfix file.
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
 
+# NOTE: PCRE is enabled by default unless you specifically disable it.
+
 PORTNAME=	postfix
-PORTVERSION=	1.1.11-20021115
-#PORTREVISION=	1
+PORTVERSION=	2.0.14-20030717
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -28,7 +29,7 @@ DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khera@kciLink.com
-COMMENT=	An alternative to widely-used Sendmail
+COMMENT=	A secure alternative to widely-used Sendmail
 
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
@@ -37,21 +38,19 @@ MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
 	postsuper.1 sendmail.1
 
-MAN5=	access.5 aliases.5 canonical.5 pcre_table.5 regexp_table.5 \
-	relocated.5 transport.5 virtual.5
+MAN5=	access.5 aliases.5 canonical.5 cidr_table.5 pcre_table.5 regexp_table.5 \
+	relocated.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
-	master.8 nqmgr.8 pickup.8 pipe.8 qmgr.8 qmqpd.8 showq.8 smtp.8 \
-	smtpd.8 spawn.8 trivial-rewrite.8 virtual.8
+	master.8 nqmgr.8 pickup.8 pipe.8 proxymap.8 qmgr.8 qmqpd.8 showq.8 \
+	smtp.8 smtpd.8 spawn.8 trace.8 trivial-rewrite.8 verify.8 virtual.8
 
 # TLS patch adds to MAN8 but doesn't have .html file, so avoid trying to
 # patch it.
 MAN8base=$(MAN8:S/tlsmgr.8//)
 
-NO_LATEST_LINK=	yes
-
-CONF1=	main.cf master.cf access aliases canonical pcre_table regexp_table \
-	relocated transport virtual
+CONF1=	main.cf master.cf access aliases canonical cidr_table pcre_table \
+	regexp_table relocated tcp_table transport virtual
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -69,6 +68,14 @@ pre-fetch:
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.if defined(WITHOUT_PCRE)
+POSTFIX_CCARGS+=	-DNO_PCRE
+.else
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .endif
 
 post-patch:
@@ -107,7 +114,7 @@ READMEDIR=${PREFIX}/share/doc/postfix
 .endif
 
 do-install:
-	cd ${WRKSRC}; sh postfix-install -non-interactive install_root=/ tempdir=/tmp \
+	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
 	 config_directory=${PREFIX}/etc/postfix \
 	 daemon_directory=${PREFIX}/libexec/postfix \
 	 command_directory=${PREFIX}/sbin \
