@@ -1,5 +1,5 @@
 bin/TekNap
-bin/TekNap-%%PORTVERSION%%
+bin/TekNap-1.3g
 share/TekNap/help/1_General/1_General
 share/TekNap/help/1_General/close
 share/TekNap/help/1_General/disconnect
@@ -37,6 +37,7 @@ share/TekNap/help/1_General/whois
 share/TekNap/help/2_Napster/2_Napster
 share/TekNap/help/2_Napster/browse
 share/TekNap/help/2_Napster/cignore
+share/TekNap/help/2_Napster/chat
 share/TekNap/help/2_Napster/dbsearch
 share/TekNap/help/2_Napster/dccget
 share/TekNap/help/2_Napster/delete
@@ -105,6 +106,7 @@ share/TekNap/help/3_Admin/showallchannels
 share/TekNap/help/3_Admin/speed
 share/TekNap/help/3_Admin/sping
 share/TekNap/help/3_Admin/stats
+share/TekNap/help/3_Admin/tban
 share/TekNap/help/3_Admin/unbanuser
 share/TekNap/help/3_Admin/unmuzzle
 share/TekNap/help/3_Admin/unnukeuser
@@ -193,6 +195,7 @@ share/TekNap/help/4_Misc/bind/window_swap_9
 share/TekNap/help/4_Misc/bind/yank_from_cutbuffer
 share/TekNap/help/4_Misc/cd
 share/TekNap/help/4_Misc/clear
+share/TekNap/help/4_Misc/debug
 share/TekNap/help/4_Misc/df
 share/TekNap/help/4_Misc/du
 share/TekNap/help/4_Misc/history
@@ -226,6 +229,7 @@ share/TekNap/help/4_Misc/set/command_mode
 share/TekNap/help/4_Misc/set/connect_timeout
 share/TekNap/help/4_Misc/set/cpu_saver_after
 share/TekNap/help/4_Misc/set/cpu_saver_every
+share/TekNap/help/4_Misc/set/debug
 share/TekNap/help/4_Misc/set/default_dataport
 share/TekNap/help/4_Misc/set/default_email
 share/TekNap/help/4_Misc/set/default_metaserver
@@ -426,6 +430,7 @@ share/TekNap/help/5_Programming/on/exec_exit
 share/TekNap/help/5_Programming/on/exec_prompt
 share/TekNap/help/5_Programming/on/exit
 share/TekNap/help/5_Programming/on/flood
+share/TekNap/help/5_Programming/on/glist
 share/TekNap/help/5_Programming/on/help
 share/TekNap/help/5_Programming/on/hook
 share/TekNap/help/5_Programming/on/hotlist
@@ -471,6 +476,7 @@ share/TekNap/help/5_Programming/on/window_kill
 share/TekNap/help/5_Programming/parsekey
 share/TekNap/help/5_Programming/pause
 share/TekNap/help/5_Programming/pop
+share/TekNap/help/5_Programming/pretend
 share/TekNap/help/5_Programming/purge
 share/TekNap/help/5_Programming/push
 share/TekNap/help/5_Programming/repeat
@@ -499,6 +505,7 @@ share/TekNap/help/6_Functions/afterw
 share/TekNap/help/6_Functions/aliasctl
 share/TekNap/help/6_Functions/ascii
 share/TekNap/help/6_Functions/before
+share/TekNap/help/6_Functions/beforew
 share/TekNap/help/6_Functions/builtin
 share/TekNap/help/6_Functions/channel
 share/TekNap/help/6_Functions/channelnicks
@@ -520,6 +527,7 @@ share/TekNap/help/6_Functions/fexist
 share/TekNap/help/6_Functions/filter
 share/TekNap/help/6_Functions/finditem
 share/TekNap/help/6_Functions/findw
+share/TekNap/help/6_Functions/fromw
 share/TekNap/help/6_Functions/fsize
 share/TekNap/help/6_Functions/getarrays
 share/TekNap/help/6_Functions/getcap
@@ -528,6 +536,7 @@ share/TekNap/help/6_Functions/getmatches
 share/TekNap/help/6_Functions/getopt
 share/TekNap/help/6_Functions/getrmatches
 share/TekNap/help/6_Functions/gettmatch
+share/TekNap/help/6_Functions/globi
 share/TekNap/help/6_Functions/glob
 share/TekNap/help/6_Functions/idle
 share/TekNap/help/6_Functions/ifindfirst
@@ -535,12 +544,15 @@ share/TekNap/help/6_Functions/ifinditem
 share/TekNap/help/6_Functions/igetitem
 share/TekNap/help/6_Functions/igetmatches
 share/TekNap/help/6_Functions/igetrmatches
+share/TekNap/help/6_Functions/index
 share/TekNap/help/6_Functions/indextoitem
 share/TekNap/help/6_Functions/insertw
+share/TekNap/help/6_Functions/iptolong
 share/TekNap/help/6_Functions/isalnum
 share/TekNap/help/6_Functions/isalpha
 share/TekNap/help/6_Functions/isdigit
 share/TekNap/help/6_Functions/isdisplaying
+share/TekNap/help/6_Functions/isirc
 share/TekNap/help/6_Functions/isspace
 share/TekNap/help/6_Functions/isxdigit
 share/TekNap/help/6_Functions/itemtoindex
@@ -550,6 +562,7 @@ share/TekNap/help/6_Functions/left
 share/TekNap/help/6_Functions/leftw
 share/TekNap/help/6_Functions/line
 share/TekNap/help/6_Functions/listarray
+share/TekNap/help/6_Functions/longtoip
 share/TekNap/help/6_Functions/match
 share/TekNap/help/6_Functions/matchitem
 share/TekNap/help/6_Functions/md5
@@ -581,10 +594,12 @@ share/TekNap/help/6_Functions/revw
 share/TekNap/help/6_Functions/rfilter
 share/TekNap/help/6_Functions/right
 share/TekNap/help/6_Functions/rightw
+share/TekNap/help/6_Functions/rindex
 share/TekNap/help/6_Functions/rmatch
 share/TekNap/help/6_Functions/rmatchitem
 share/TekNap/help/6_Functions/rpattern
 share/TekNap/help/6_Functions/sar
+share/TekNap/help/6_Functions/servernick
 share/TekNap/help/6_Functions/setitem
 share/TekNap/help/6_Functions/shift
 share/TekNap/help/6_Functions/sort
@@ -599,6 +614,7 @@ share/TekNap/help/6_Functions/strrchr
 share/TekNap/help/6_Functions/time
 share/TekNap/help/6_Functions/tolower
 share/TekNap/help/6_Functions/toupper
+share/TekNap/help/6_Functions/tow
 share/TekNap/help/6_Functions/tr
 share/TekNap/help/6_Functions/twiddle
 share/TekNap/help/6_Functions/uname
@@ -608,6 +624,7 @@ share/TekNap/help/6_Functions/utime
 share/TekNap/help/6_Functions/winnum
 share/TekNap/help/6_Functions/winsize
 share/TekNap/help/6_Functions/word
+share/TekNap/help/6_Functions/wordtoindex
 share/TekNap/help/6_Functions/write
 share/TekNap/help/6_Functions/xmms
 share/TekNap/help/7_Docs/7_Docs

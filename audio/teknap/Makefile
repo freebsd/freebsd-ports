@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	TekNap
-PORTVERSION=	1.2
+PORTVERSION=	1.3.g
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/os/OpenBSD/distfiles/ \
+		ftp://ftp.arnes.si/packages2/OpenBSD/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
@@ -20,6 +22,7 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 .endif
 
 WRKSRC=		${WRKDIR}/TekNap
+USE_REINPLACE=	yes
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -55,7 +58,7 @@ pre-extract:
 	@${ECHO} "WITH_XMMS - Support XMMS"
 
 pre-configure:
-	@${PERL} -pi -e "s:-lc_r:${PTHREAD_LIBS}:g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s:-lc_r:${PTHREAD_LIBS}:g" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
