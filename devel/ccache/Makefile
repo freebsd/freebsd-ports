@@ -80,4 +80,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>IR}
+.include <bsd.port.post.mk>
