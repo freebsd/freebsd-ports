@@ -11158,6 +11158,7 @@ xorg-fonts-type1	ports/x11-fonts/xorg-fonts-type1
 xorg-fontserver	ports/x11-servers/xorg-fontserver
 xorg-libraries	ports/x11/xorg-libraries
 xorg-manpages	ports/x11/xorg-manpages
+xorg-nestserver	ports/x11-servers/xorg-nestserver
 xorg-printserver	ports/x11-servers/xorg-printserver
 xorg-server	ports/x11-servers/xorg-server
 xorg-vfbserver	ports/x11-servers/xorg-vfbserver
