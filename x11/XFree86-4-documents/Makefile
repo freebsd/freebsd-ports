@@ -32,11 +32,11 @@ post-extract:
 
 do-configure:
 	(cd ${WRKSRC} ; \
-	 ${ECHO} "#define BuildMiscDocs YES" > host.def ; \
-	 ${ECHO} "#define BuildSpecsDocs YES" >> host.def ; \
-	 ${ECHO} "#define BuildLinuxDocPS NO" >> host.def ; \
-	 ${ECHO} "#define InstallHardcopyDocs YES" >> host.def ; \
-	 ${ECHO} "#define FreeBSDBuildXdoc YES" >> host.def ; \
+	 ${ECHO_CMD} "#define BuildMiscDocs YES" > host.def ; \
+	 ${ECHO_CMD} "#define BuildSpecsDocs YES" >> host.def ; \
+	 ${ECHO_CMD} "#define BuildLinuxDocPS NO" >> host.def ; \
+	 ${ECHO_CMD} "#define InstallHardcopyDocs YES" >> host.def ; \
+	 ${ECHO_CMD} "#define FreeBSDBuildXdoc YES" >> host.def ; \
 	 imake -DUseInstalled ${PROJECTROOT} -I. -I${PREFIX}/lib/X11/config \
 		-DTOPDIR=.. -DCURDIR=.; \
 	 ${MAKE} Makefiles ; \

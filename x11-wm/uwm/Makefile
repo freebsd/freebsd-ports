@@ -24,9 +24,9 @@ post-patch:
 	${PERL} -pi -e 's:/usr/lib/X11:${PREFIX}/lib/X11:g' ${WRKSRC}/uwm.man
 
 pre-install:
-	${ECHO} bin/uwm > ${PLIST}
-	${ECHO} lib/X11/uwm/system.uwmrc >> ${PLIST}
-	${ECHO} @dirrm lib/X11/uwm >> ${PLIST}
+	${ECHO_CMD} bin/uwm > ${PLIST}
+	${ECHO_CMD} lib/X11/uwm/system.uwmrc >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/X11/uwm >> ${PLIST}
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/X11/uwm

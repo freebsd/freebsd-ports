@@ -54,7 +54,7 @@ PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
 pre-configure:
-	@if ${ECHO} "$(CFLAGS)" |${GREP} -q O[3456789]; then \
+	@if ${ECHO_CMD} "$(CFLAGS)" |${GREP} -q O[3456789]; then \
 		${ECHO} "XFree86-4 with thread support does not build with optimization"; \
 		${ECHO} "flags different from O or -O2"; \
 		${FALSE}; fi
@@ -124,7 +124,7 @@ post-patch:
 	@${MV} ${WRKDIR}/mgasource/mga-${MGA_DRIVER_DIR}/mga \
 		${WRKSRC}/programs/Xserver/hw/xfree86/drivers
 	@${CP} ${WRKSRC}/config/cf/xf86site.def ${WRKSRC}/config/cf/host.def
-	@${ECHO} "#define HaveMatroxHal YES" >> ${WRKSRC}/config/cf/host.def
+	@${ECHO_CMD} "#define HaveMatroxHal YES" >> ${WRKSRC}/config/cf/host.def
 	@${PERL} -pi.orig -ne 's!(#define PCI_CHIP_MGAG400\s+0x0525)!\1\n#define PCI_CHIP_MGAG550 0x2527\n!; \
 			s!({PCI_CHIP_MGAG400,\s+"MGA G400 AGP",0},)!\1\n{PCI_CHIP_MGAG550, "MGA G550 AGP", 0},\n!' \
 			${WRKSRC}/programs/Xserver/hw/xfree86/common/xf86PciInfo.h

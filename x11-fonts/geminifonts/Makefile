@@ -36,8 +36,8 @@ post-install:
 # applications look for cronyx-*-koi8-r or koi8-r explicitly.	-mi
 post-build:
 	# Creating aliases for koi8-r encoding and Cronyx foundry:
-	@${ECHO} >> ${WRKSRC}/fonts.alias
-	@${ECHO} "! Automaticly generated aliases for koi8-r encoding:" \
+	@${ECHO_CMD} >> ${WRKSRC}/fonts.alias
+	@${ECHO_CMD} "! Automaticly generated aliases for koi8-r encoding:" \
 		>> ${WRKSRC}/fonts.alias
 	${AWK} '/gemini/ { \
 		name = $$2; \

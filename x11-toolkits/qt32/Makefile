@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 CONFIGURE_ARGS+= -debug
 .endif
 
-CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC}
+CONFIGURE_ENV=	${ECHO_CMD} yes | QTDIR=${WRKSRC}
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"
 .endif

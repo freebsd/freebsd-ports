@@ -36,23 +36,23 @@ post-patch:
 		 s|^MOC|#MOC|g'
 
 pre-install:
-	${ECHO} bin/qlwm > ${PLIST}
+	${ECHO_CMD} bin/qlwm > ${PLIST}
 .for i in biff dclock qlwm
-	${ECHO} ${LIBDIR}/$i >> ${PLIST}
+	${ECHO_CMD} ${LIBDIR}/$i >> ${PLIST}
 .endfor
-	for i in `cd ${WRKSRC}/files; ${ECHO} *`; do \
-		${ECHO} ${LIBDIR}/files/$$i >> ${PLIST}; \
+	for i in `cd ${WRKSRC}/files; ${ECHO_CMD} *`; do \
+		${ECHO_CMD} ${LIBDIR}/files/$$i >> ${PLIST}; \
 	done
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}/$i >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/$i >> ${PLIST}
 .endfor
 .endif
 .for i in ${LIBDIR}/files ${LIBDIR}
-	${ECHO} @dirrm $i >> ${PLIST}
+	${ECHO_CMD} @dirrm $i >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

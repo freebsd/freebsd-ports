@@ -82,7 +82,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
+	@${ECHO_CMD} "SEARCHDIRS += ${PORTINCLUDES}" >> \
 		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
 
 post-build:

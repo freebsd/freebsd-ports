@@ -21,7 +21,7 @@ MAN1=		asclock.1
 
 pre-configure:
 	(cd ${WRKSRC}; \
-	${ECHO} ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)
+	${ECHO_CMD} ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)
 	@${ECHO_MSG} "*****************  NOTE  *****************"
 	@${ECHO_MSG} "*                                        *"
 	@${ECHO_MSG} "*  You can choose languages for asclock. *"

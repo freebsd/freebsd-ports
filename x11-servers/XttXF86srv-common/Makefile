@@ -162,7 +162,7 @@ pre-configure:
 	    ${SETENV} ${SCRIPT_ENV} DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} \
 		FILESDIR=${FILESDIR} ${MAKE}) ; \
 	   ${CAT} ${HOSTDEFLOCAL} ${HOSTDEFSRV} > ${HOSTDEFDST} ; \
-	   ${ECHO} "#include <${LOCALFILE}>" >> ${HOSTDEFORG} )
+	   ${ECHO_CMD} "#include <${LOCALFILE}>" >> ${HOSTDEFORG} )
 
 .if ${SERVER} == common
 do-install:

@@ -27,12 +27,12 @@ do-build:
 		-L${X11BASE}/lib -o evilwm *.c -lX11
 
 pre-install:
-	${ECHO} bin/evilwm > ${PLIST}
+	${ECHO_CMD} bin/evilwm > ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:
