@@ -3,7 +3,7 @@
 # Date created:     	15th August 1997
 # Whom:			Mark Murray <mark@grondar.za>
 #
-# $Id: Makefile,v 1.42 1998/02/17 12:52:26 markm Exp $
+# $Id: Makefile,v 1.43 1998/02/17 21:16:02 markm Exp $
 
 DISTNAME=       apache_1.2.5
 PKGNAME=        apacheSSL-1.2.5
@@ -78,7 +78,11 @@ pre-build:
 .endif
 
 certificate:
-	cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} $@
-	${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem
+	@if [ -f ${PREFIX}/etc/ssleay.cnf ]; then \
+		cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} $@; \
+		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem; \
+	else \
+		${ECHO} "You must create the file ${PREFIX}/etc/ssleay.cnf first."; \
+	fi
 
 .include <bsd.port.mk>
