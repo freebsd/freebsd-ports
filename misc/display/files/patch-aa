@@ -1,22 +1,23 @@
---- display.c.orig	Tue Nov 16 12:34:12 1999
-+++ display.c	Tue Nov 16 12:36:36 1999
-@@ -8,7 +8,7 @@
- #include <curses.h>
+--- display.c.orig	Mon Mar 26 10:03:42 2001
++++ display.c	Fri Mar  8 01:15:54 2002
+@@ -12,6 +12,7 @@
  #include <signal.h>
  #include <ctype.h>
--
+ #include <time.h>
 +#include <stdio.h>
  
  #define		DEFAULT_DELAY	5
- 
-@@ -16,15 +16,13 @@
+ #define         DISPLAY_VERSION "1.2"
+@@ -19,6 +20,8 @@
  static	char	*Command;
  static	int	Delay;
  
 +static void die(), display(), parse_args(), usage();
++
+ char lt[128];
+ int ntimes;
  
- main(argc, argv)
- int	argc;
+@@ -27,9 +30,6 @@
  char	*argv[];
  {
    int i, c;
@@ -24,14 +25,14 @@
 -    die(),
 -    display();
    
-   parse_args(argc, argv);
-   
-@@ -68,7 +66,7 @@
+   for(i = 0; i < 128; i++)
+     {
+@@ -90,7 +90,7 @@
  
- static void display()
+ void display()
  {
 -	FILE	*fp, *popen();
 +	FILE	*fp;
  	char	ch;
- 
- 	if (!(fp = popen(Command, "r"))) {
+ 	char    *dt;
+ 	time_t  tnow;
