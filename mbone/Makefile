@@ -14,6 +14,7 @@
     SUBDIR += rtptools
     SUBDIR += sdr
     SUBDIR += speak_freely
+    SUBDIR += udpcast
     SUBDIR += vat
     SUBDIR += vic
     SUBDIR += wb
