@@ -37,7 +37,6 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 # Select TLS/SSL API: either OpenSSL (default), GnuTLS, or none
 .if defined(WITH_GNUTLS)
-USE_GNUTLS=		yes
 LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 .elif !defined(WITHOUT_OPENSSL)
 USE_OPENSSL=		yes
@@ -61,7 +60,7 @@ CONFIGURE_ARGS+=	--with-pcre
 
 # PAM
 .if exists(/usr/lib/libpam.so)
-USE_PAM=		yes
+WITH_PAM=		yes
 CONFIGURE_ARGS+=	--with-pam
 PLIST_SUB+=		PAM=""
 .else
@@ -70,7 +69,7 @@ PLIST_SUB+=		PAM="@comment "
 
 # TCP Wrappers
 .if exists(/usr/include/tcpd.h)
-USE_TCP_WRAPPERS=	yes
+WITH_TCP_WRAPPERS=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
@@ -80,10 +79,10 @@ DOCS=	AUTHORS INSTALL NEWS README THANKS TODO
 
 pre-configure:
 	@${ECHO_MSG} ""
-.if defined(USE_OPENSSL)
-	@${ECHO_MSG} "Using OpenSSL as TLS/SSL API"
-.elif defined(USE_GNUTLS)
+.if defined(WITH_GNUTLS)
 	@${ECHO_MSG} "Using GnuTLS as TLS/SSL API"
+.elif !defined(WITHOUT_OPENSSL)
+	@${ECHO_MSG} "Using OpenSSL as TLS/SSL API"
 .else
 	@${ECHO_MSG} "Disabling TLS/SSL support"
 .endif
@@ -95,10 +94,10 @@ pre-configure:
 .else
 	@${ECHO_MSG} "You could define WITH_PCRE to enable PCRE support"
 .endif
-.if defined(USE_PAM)
+.if defined(WITH_PAM)
 	@${ECHO_MSG} "Enabling PAM support"
 .endif
-.if defined(USE_TCP_WRAPPERS)
+.if defined(WITH_TCP_WRAPPERS)
 	@${ECHO_MSG} "Enabling TCP wrappers support"
 .endif
 	@${ECHO_MSG} ""
@@ -113,7 +112,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/anubis.sh ${PREFIX}/etc/rc.d/anubis.sh.sample
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*rc ${EXAMPLESDIR}
-.if defined(USE_PAM)
+.if defined(WITH_PAM)
 	@${MKDIR} ${EXAMPLESDIR}/pam
 	${INSTALL_DATA} ${WRKSRC}/examples/pam/* ${EXAMPLESDIR}/pam
 .endif
