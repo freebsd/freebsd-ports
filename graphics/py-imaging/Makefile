@@ -3,7 +3,7 @@
 # Date created:         02 November 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/11/09 08:10:03 tg Exp $
+# $Id: Makefile,v 1.3 1998/11/16 08:52:11 tg Exp $
 #
 
 DISTNAME=	Imaging-0.3b2
@@ -35,7 +35,8 @@ PILINCDIR=	${PREFIX}/include/python1.5
 TKINTERORIG=	${PYTHONSCRIPTDIR}/lib-dynload/_tkinter.so
 
 post-extract:
-	@(cd ${WRKDIR}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/pyth151.tgz \
+	@(cd ${WRKDIR}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+	    ${_DISTDIR}/pyth151.tgz ${EXTRACT_AFTER_ARGS} \
 	    Python-1.5.1/Modules/_tkinter.c Python-1.5.1/Modules/tkappinit.c)
 	@${MV} ${WRKDIR}/Python-1.5.1/Modules/* ${WRKSRC}/..
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}/..
