@@ -1,0 +1,4 @@
+bin/finger
+bin/pfinger
+sbin/fingerd
+sbin/in.fingerd
