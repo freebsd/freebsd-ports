@@ -19,7 +19,7 @@ MAINTAINER=	sheldonh@freebsd.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 .if defined(USE_GTK)
-LIB_DEPENDS+=	Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS+=	Imlib.5:${PORTSDIR}/graphics/imlib
 .endif
 
 USE_BZIP2=	yes
