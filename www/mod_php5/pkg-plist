@@ -84,6 +84,7 @@ include/php/ext/standard/md5.h
 include/php/ext/standard/microtime.h
 include/php/ext/standard/pack.h
 include/php/ext/standard/pageinfo.h
+include/php/ext/standard/parsedate.h
 include/php/ext/standard/php_array.h
 include/php/ext/standard/php_assert.h
 include/php/ext/standard/php_browscap.h
