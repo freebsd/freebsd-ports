@@ -7,24 +7,26 @@
 #
 
 PORTNAME=	aub
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	news
 MASTER_SITES=	http://yukidoke.org/~mako/projects/aub/download/
 
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_BUILD=	yes
-MAN1=		aub.1
+MAN1=		aub.1 aubconf.1
 
 DOC_FILES=	COPYING README aubconf.example Introducing_AUB USAGE
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/aub ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/aub.1 ${PREFIX}/man/man1
+.for manpage in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${manpage} ${MANPREFIX}/man/man1
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/aub
+	${MKDIR} ${DOCSDIR}
 .for doc in ${DOC_FILES}
-	${INSTALL_MAN} ${WRKSRC}/${doc} ${PREFIX}/share/doc/aub
+	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
