@@ -1,0 +1,92 @@
+#!/bin/sh
+#
+#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/INSTALL.tmpl,v 1.1 2003-01-04 07:20:30 demon Exp $
+#
+
+USER=%%AMAVISUSER%%
+GROUP=%%AMAVISGROUP%%
+DIR=%%AMAVISDIR%%
+QUARANTINE=%%AMAVISQUARANTINE%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+	echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+	if /usr/sbin/pw groupadd ${GROUP} -h -
+	then
+	    echo "Added group \"${GROUP}\"."
+	else
+	    echo "Adding group \"${GROUP}\" failed..."
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+	echo "You already have a user \"${USER}\", so I will use it."
+    else
+	if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
+	   -d ${DIR} \
+	   -s /bin/sh \
+	   -c "Scanning Virus Account"
+	then
+	    echo "Added user \"${USER}\"."
+	else
+	    echo "Adding user \"${USER}\" failed..."
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}
+    echo "Created \"${DIR}\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${QUARANTINE}
+    echo "Created \"${QUARANTINE}\" directory."    
+fi
+#!/bin/sh
+#
+#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/INSTALL.tmpl,v 1.1 2003-01-04 07:20:30 demon Exp $
+#
+
+USER=%%AMAVISUSER%%
+GROUP=%%AMAVISGROUP%%
+DIR=%%AMAVISDIR%%
+QUARANTINE=%%AMAVISQUARANTINE%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+
+    if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+	echo "You already have a group \"${GROUP}\", so I will use it."
+    else
+	if /usr/sbin/pw groupadd ${GROUP} -h -
+	then
+	    echo "Added group \"${GROUP}\"."
+	else
+	    echo "Adding group \"${GROUP}\" failed..."
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+	echo "You already have a user \"${USER}\", so I will use it."
+    else
+	if /usr/sbin/pw useradd ${USER} -g ${GROUP} -h - \
+	   -d ${DIR} \
+	   -s /bin/sh \
+	   -c "Scanning Virus Account"
+	then
+	    echo "Added user \"${USER}\"."
+	else
+	    echo "Adding user \"${USER}\" failed..."
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}
+    echo "Created \"${DIR}\" directory."
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${QUARANTINE}
+    echo "Created \"${QUARANTINE}\" directory."    
+fi
