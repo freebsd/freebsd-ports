@@ -15,7 +15,6 @@ COMMENT=	A GNOME/GTK+ based RIFF PCM Wave file splitter
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomelibs
 
 .include <bsd.port.mk>

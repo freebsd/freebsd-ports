@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	k_nishizawa@anet.ne.jp
 COMMENT=	Utilities for Diamond Rio500
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-devicepath='/dev' \

@@ -26,7 +26,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehier gnomehack gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

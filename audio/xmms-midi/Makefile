@@ -15,7 +15,6 @@ COMMENT=	XMMS input plugin to play midi files
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=    timidity:${PORTSDIR}/audio/timidity
 
-USE_GNOMENG=	yes
 USE_GNOME=  	gtk12
 USE_X_PREFIX=	yes
 

@@ -17,7 +17,6 @@ COMMENT=	Volume Normalizer plugin for XMMS
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

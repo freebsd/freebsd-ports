@@ -18,7 +18,6 @@ MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Portable audio output library
 
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -17,7 +17,6 @@ COMMENT=	An Audio Visualization plugin for the X Window System
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 imlib esound
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

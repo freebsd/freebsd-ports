@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool to manipulate ID3 tags for MP3 files
 
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 MAN1=		mp3info.1

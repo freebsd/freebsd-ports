@@ -22,7 +22,6 @@ USE_X_PREFIX=	yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share

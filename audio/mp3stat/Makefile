@@ -18,7 +18,6 @@ COMMENT=	Read information about mp3s and oggs bitstream
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"

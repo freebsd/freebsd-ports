@@ -17,7 +17,6 @@ COMMENT=	X11/gtk+ mixer control
 
 ALL_TARGET=	gmixer
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 do-install:

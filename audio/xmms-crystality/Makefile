@@ -18,7 +18,6 @@ COMMENT=	Realtime XMMS plugin for remastering mp3 sound
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 INSTALLS_SHLIB=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \

@@ -19,7 +19,6 @@ LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomelibs gdkpixbuf
 USE_AUTOMAKE_VER=	15
 AUTOMAKE_ARGS=	-a -i

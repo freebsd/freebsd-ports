@@ -45,7 +45,6 @@ TIMID_LIBDIR=	${PREFIX}/lib/timidity
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 .elif ${INTERFACE} == "gtk"
 LINK=		gtkmidi
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ENV=	SHLD="gcc -shared"
 .elif ${INTERFACE} == "motif"

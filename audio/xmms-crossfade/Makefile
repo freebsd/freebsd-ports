@@ -19,7 +19,6 @@ LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 

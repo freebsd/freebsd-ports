@@ -14,7 +14,6 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A bass synthesizer, step sequencer, and sample player
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

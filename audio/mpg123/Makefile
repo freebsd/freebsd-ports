@@ -24,7 +24,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
 
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 .if defined(WITH_ICONV)

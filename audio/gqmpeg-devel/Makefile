@@ -22,7 +22,6 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes

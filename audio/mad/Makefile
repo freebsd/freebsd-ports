@@ -18,7 +18,6 @@ COMMENT=	High-quality MPEG audio decoder
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 USE_AUTOCONF=	yes

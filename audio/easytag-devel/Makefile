@@ -18,7 +18,6 @@ COMMENT=	Tag editor for MP3 and OGG files
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
