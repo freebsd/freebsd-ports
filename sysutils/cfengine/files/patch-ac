@@ -18,11 +18,11 @@
  		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
  
  
-@@ -262,6 +262,7 @@
+@@ -262,7 +262,7 @@
     freebsd*)
  	AC_DEFINE(FREEBSD)
-          CFLAGS="$CFLAGS -pthread"
-+         LIBS="$LIBS -ldes"
+-         CFLAGS="$CFLAGS -pthread"
++	LIBS="$LIBS -ldes"
          AC_CHECK_HEADERS(pthread.h)
          ;;
     netbsd*)

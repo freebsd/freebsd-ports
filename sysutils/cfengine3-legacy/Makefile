@@ -7,13 +7,13 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hioslo.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gordont@bluemtn.net
+MAINTAINER=	gordont@gnf.org
 
 LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)

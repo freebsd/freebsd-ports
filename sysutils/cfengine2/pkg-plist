@@ -50,4 +50,7 @@ share/cfengine/start-cfd
 %%PORTDOCS%%share/doc/cfengine/cf-security.html
 %%PORTDOCS%%share/doc/cfengine/cfengine-Reference.html
 %%PORTDOCS%%share/doc/cfengine/cfengine-Tutorial.html
+%%PORTDOCS%%share/doc/cfengine/locks.ps
+%%PORTDOCS%%share/doc/cfengine/paper1.ps
+%%PORTDOCS%%share/doc/cfengine/paper2.ps
 %%PORTDOCS%%@dirrm share/doc/cfengine

@@ -1,0 +1,13 @@
+Fix the linking so only cfd is linked with pthreads. This keeps cfengine
+from trying to use thread-unsafe resolver functions.
+
+--- src/Makefile.am.orig	Fri Aug 10 23:58:47 2001
++++ src/Makefile.am	Fri Aug 10 23:59:07 2001
+@@ -95,6 +95,7 @@
+ 	patches.c
+ 
+ cfd_LDADD = -L../pub -lpub $(LEXLIB)
++cfd_LDFLAGS = -pthread $(LDFLAGS)
+ 
+ cfrun_SOURCES =								\
+ 	cfrun.c								\
