@@ -158,6 +158,7 @@
     SUBDIR += sane
     SUBDIR += sced
     SUBDIR += scwm-icons
+    SUBDIR += sdl_image
     SUBDIR += sketch
     SUBDIR += smpeg
     SUBDIR += sodipodi

@@ -1,0 +1,11 @@
+--- Makefile.in	2000/09/20 07:05:33	1.1
++++ Makefile.in	2000/09/20 07:06:00
+@@ -89,7 +89,7 @@
+ 
+ lib_LTLIBRARIES = libSDL_image.la
+ 
+-libSDL_imageincludedir = $(includedir)/SDL
++libSDL_imageincludedir = $(includedir)/SDL11
+ libSDL_imageinclude_HEADERS =  	SDL_image.h
+ 
+ 
