@@ -1254,6 +1254,7 @@
     SUBDIR += viewcvs
     SUBDIR += vstr
     SUBDIR += vtcl
+    SUBDIR += websvn
     SUBDIR += whups
     SUBDIR += wizard
     SUBDIR += wxGlade
