@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- media_api/Makefile.in.orig	Wed Aug 20 17:46:39 2003
++++ media_api/Makefile.in	Sat Aug 23 01:38:46 2003
+@@ -176,7 +176,6 @@
+ 
+ INCLUDES = -I$(top_srcdir)/mediastreamer \
+ 		-I$(top_srcdir)/speex \
+-		-I$(top_srcdir)/gsmlib \
+ 		-I$(top_srcdir)/oRTP \
+ 		-I$(top_srcdir)/oRTP/src \
+ 		-I$(top_srcdir)/lpc10-1.5 \

@@ -1,13 +1,14 @@
 
 $FreeBSD$
 
---- oRTP/configure	2003/02/27 23:48:28	1.1
-+++ oRTP/configure	2003/02/27 23:49:02
-@@ -7793,6 +7793,7 @@
+--- oRTP/configure.orig	Wed Aug 13 01:22:52 2003
++++ oRTP/configure	Sat Aug 23 00:17:21 2003
+@@ -18804,8 +18804,6 @@
+ 			CFLAGS="$CFLAGS +DA2.0W +DS2.0"
+ 		fi
+ 	fi
+-else
+-	CFLAGS="-O2 -g"
+ fi
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ build_scheduler=yes
