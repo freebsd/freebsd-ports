@@ -7,7 +7,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -86,6 +86,8 @@ post-extract:
 		> ${WRKSRC}/sm-client.sh
 
 do-configure:
+	${PERL} -pi -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
+			${WRKSRC}/devtools/OS/FreeBSD
 	${PERL} -pi -e "s,\`-O\',\`${CFLAGS}\'," ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
