@@ -70,6 +70,7 @@
     SUBDIR += glife
     SUBDIR += gltron
     SUBDIR += gma
+    SUBDIR += gnarr
     SUBDIR += gniffel
     SUBDIR += gno3dtet
     SUBDIR += gnocatan

@@ -1,0 +1,41 @@
+--- gnarr.6	2000/12/13 13:10:33	1.1.1.1
++++ gnarr.6	2000/12/13 14:16:02	1.2
+@@ -3,7 +3,7 @@
+ .SH NAME
+ gnarr - generate a dwarven battle cry
+ 
+-\fBgnarr \fR[\fI-1\fR]
++\fBgnarr \fR[\fB-1m\fR]
+ .br
+ \fBgnarr -l\fR
+ .br
+@@ -18,21 +18,24 @@
+ 
+ .SH OPTIONS
+ .IP -1
+-Print one battle cry and exit (normal behavior is to prompt for another).
++Print one battle cry and exit (normal behavior, as opposed to \fB-m\fR).
+ Suitable for use in scripts.
+ 
++.IP -h
++Print a help text describing command options.
++
++.IP -m
++Print battle cries, prompting for more after each one.
++
+ .IP -l
+ Print all replacements Gnarr can make to templates. You should probably
+ pipe this to a pager.
+ 
+-.IP -h
+-Print a help text describing command options.
+-
+ .IP -v
+ Print version information.
+ 
+ .SH FILES
+-.IP \fB/etc/gnarrrc/fR, \fB~/.gnarrrc\fR
++.IP \fB/etc/gnarrrc\fR,\ \fB~/.gnarrrc\fR
+ Contains the templates Gnarr uses to construct battle cries; one is a global
+ system file (installed with Gnarr), the other is user-specific.
+ 

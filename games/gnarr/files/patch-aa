@@ -1,0 +1,44 @@
+--- Makefile	2000/12/13 13:10:33	1.1.1.1
++++ Makefile	2000/12/13 13:48:26	1.2
+@@ -1,13 +1,35 @@
++PREFIX ?=	/usr/local
++BINDIR =	${PREFIX}/bin
++ETCDIR =	${PREFIX}/etc
++MANDIR =	${PREFIX}/man
++MAN6DIR =	${MANDIR}/man6
++
++INSTALL ?=	install
++INST_COPY ?=	-c
++INST_OWNER ?=	-o root
++INST_GROUP ?=	-g wheel
++INST_P_MODE ?=	-m 555
++INST_D_MODE ?=	-m 444
++
++INSTALL_PROGRAM ?= ${INSTALL} ${COPY} ${INST_OWNER} ${INST_GROUP} ${INST_P_MODE}
++INSTALL_DATA ?= ${INSTALL} ${COPY} ${INST_OWNER} ${INST_GROUP} ${INST_D_MODE}
++
++MKDIR ?=	mkdir -p
++RM ?=		rm -f
++
+ all:
+ 
+ install:
+-	install -D -m 755 gnarr $(DESTDIR)/usr/games/gnarr
+-	install -D -m 755 gnarr.rc $(DESTDIR)/etc/gnarrrc
+-	install -D -m 644 gnarr.6 $(DESTDIR)/usr/share/man/man6/gnarr.6
++	${MKDIR} ${BINDIR}
++	${INSTALL_PROGRAM} gnarr ${BINDIR}
++	${MKDIR} ${ETCDIR}
++	${INSTALL_DATA} gnarr.rc ${ETCDIR}/gnarrrc
++	${MKDIR} ${MAN6DIR}
++	${INSTALL_DATA} gnarr.6 ${MAN6DIR}
+ 
+ clean:
+ 
+ uninstall:
+-	rm -f $(DESTDIR)/usr/games/gnarr
+-	rm -f $(DESTDIR)/etc/gnarrrc
+-	rm -f $(DESTDIR)/usr/share/man/man6/gnarr.6
++	${RM} ${BINDIR}/gnarr
++	${RM} ${ETCDIR}/gnarrrc
++	${RM} ${MAN6DIR}/gnarr.6

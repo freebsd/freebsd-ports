@@ -1,0 +1,61 @@
+--- gnarr	2000/12/13 13:10:33	1.1.1.1
++++ gnarr	2000/12/13 14:00:35	1.4
+@@ -1,15 +1,17 @@
+-#!/usr/bin/perl
++#!/usr/bin/perl -w
+ # public domain
+ 
+ use strict;
+ 
+ my $VERSION = "v2";
++my $PREFIX = "/usr/local";
+ 
+-my $one = 0; # Heh heh.
++my $one = 1; # Heh heh.
+ 
+ my %subrefs = ( '-h' => [\&help, 'print this help text'],
+ 		'-v' => [\&ver, 'print version information'],
+-		'-1' => [\&one, 'print one cry and exit'],
++		'-1' => [\&one, 'print one cry and exit (default)'],
++		'-m' => [\&mult, 'print multiple cries'],
+ 		'-l' => [\&list, 'list substitutions (long)'] );
+ 
+ my @place = ("hearth",
+@@ -135,13 +137,20 @@
+  }
+ }
+ 
+-open( BASE, "/etc/gnarrrc" );
+-open( USER, "$ENV{HOME}/.gnarrrc" );
+-my @base = (<BASE>, <USER>);
++my @base = ();
++
++if (open( BASE, "$PREFIX/etc/gnarrrc" )) {
++  push @base, (<BASE>);
++  close BASE;
++}
++if (open( USER, "$ENV{HOME}/.gnarrrc" )) {
++  push @base, (<USER>);
++  close USER;
++}
++
+ chomp @base;
+-close USER;
+-close BASE;
+ 
++die("No data read from gnarrc files!\n") if ($#base == -1);
+ 
+ do {
+ 
+@@ -187,8 +196,10 @@
+  print "Please send any enhancements to piman\@sacredchao.net.\n\n";
+  exit();
+ }
++
++sub one  { $one = 1; }
+ 
+-sub one { $one = 1; }
++sub mult { $one = 0; }
+ 
+ sub list {
+   print "PLACE:\n"; print "  $_\n" foreach (@place);
