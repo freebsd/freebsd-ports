@@ -94,6 +94,66 @@ fi
 echo
 yesno "Do you want your X applications linked with gnu malloc? [YES] "
 gnumalloc=$answ
+
+cat <<'END'
+
+ MIT supplies an authentication mechanism that relies upon DES, this is
+ called XDM-AUTHORIZATION-1.
+
+ Source code for this authentication mechanism may not be exported from
+ the United States, however, there are compatible replacements for this
+ mechanism available elsewhere.  Also, while this scheme is not used for
+ general purpose encryption,  some countries restrict the use of strong
+ cryptography.
+
+ If you have aquired a copy of "Wraphelp.c" and it currently resides in
+ the same location as the XFree86 upgrade patches or in the ports "files"
+ subdirectory,  it will be copied into the right place in the X11 source
+ distribution and support for this feature will be enabled if you answer
+ YES to the following question.
+
+ If you do not have a copy of this file, even if you answer YES to this
+ question, support will not be enabled.  If you wish to change this later,
+ the option controling this is contined the file xc/config/cf/xf86site.def.
+
+END
+yesno "Do you want to enable XDM-AUTHORIZATION-1 support? [YES] "
+if [ $answ = YES ]; then
+    WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
+
+    if [ -f $WH ] ; then
+	echo "==> $WH found in source distribution."
+    elif [ -f $X11FIXES/Wraphelp.c ] ; then
+	echo "==> Wraphelp.c found in fix directory, copying to source tree."
+	cp $X11FIXES/Wraphelp.c $WH
+    elif [ -f $FILESDIR/Wraphelp.c ] ; then
+	echo "==> Wraphelp.c found in files directory, copying to source tree."
+	cp $FILESDIR/Wraphelp.c $WH
+    else
+	echo "==> Wraphelp.c not found, DES support NOT enabled."
+	answ=NO
+    fi
+fi
+echo "#undef	HadXdmAuth"			>> $F
+echo "#define	HasXdmAuth		$answ"	>> $F
+
+cat <<'END'
+
+ Additional support for Kerberos V4 is available should you chose to
+ install it.  If you choose to install the Kerberos V4 patches, you
+ will also be asked if you want to enable Kerberos V4 support.
+
+END
+
+yesno "Do you want to add the Kerberos V4 support patches? [YES] "
+k4patch=$answ
+if [ $k4patch = YES ] ; then
+    echo
+    yesno "Do you want to enable Kerberos V4 support? [YES] "
+    echo "#undef	HasKrb4" >>$F
+    echo "#define	HasKrb4 $answ" >>$F
+fi
+
 echo
 echo "End of configuration questions. No more user input required"
 echo
@@ -187,8 +247,14 @@ echo
 echo "==> applying XFree86 patches"
 zcat $X11FIXES/XFree86-3.1.2.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
 tar xzf $X11FIXES/cfont312.tgz -C $WRKDIR
-zcat $X11FIXES/3.1.2-3.1.2-S.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1 
+zcat $X11FIXES/3.1.2-3.1.2-S.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
 
+if [ $k4patch = YES ] ; then
+    echo
+    echo "==> applying Kerberos-V4 support patch"
+    zcat $FILESDIR/kerberos4.diffs.gz | \
+	patch -d $WRKSRC --forward --quiet -E -p1
+fi
 
 cat $F >>  $WRKSRC/config/cf/xf86site.def
 
