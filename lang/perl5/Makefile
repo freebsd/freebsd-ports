@@ -7,13 +7,19 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S|/modules/by-module|/src|}
+# If you don't use MASTER_SITE_OVERRIDE set to one of the
+# ftp.FreeBSD.org mirrors, fetching will be *very* slow.
+MASTER_SITES=	${MASTER_SITE_LOCAL} ${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../src tobez
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} BSDPAN-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tobez@FreeBSD.org
 
-# This will need to be "fixed" in ../../Mk/bsd.port.mk as well.
 PERL_VER=	5.6.1
+PERL_ARCH=	mach
+PERL_VERSION=	${PERL_VER}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
@@ -23,17 +29,12 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsitearch=${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
 	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER} \
-	-Ui_gdbm
+	-Ui_gdbm -Ui_malloc -Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 INSTALLS_SHLIB=	yes
 
 INCLUDEDIR=	/usr/include
 
 .include <bsd.port.pre.mk>
-
-# If you know what you are doing, you may disable this!
-.if ${OSVERSION} > 300003
-FORBIDDEN=	perl is in system
-.endif
 
 MAN1=	a2p.1 c2ph.1 dprofpp.1 find2perl.1 h2ph.1 h2xs.1 perl.1 \
 	perl5004delta.1 perl5005delta.1 perlaix.1 perlamiga.1 \
@@ -112,10 +113,30 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 test:
 	@(cd ${WRKSRC}; make test)
 
+BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
+BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
+		ExtUtils/MM_Unix.pm ExtUtils/Packlist.pm
+BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
+
+post-patch:
+	${CP} ${FILESDIR}/use.perl ${WRKDIR}
+	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g;' \
+		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
+		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
+		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
+		${WRKDIR}/use.perl
+
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
 	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
 	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl${PERL_VER}
+	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
+.for file in ${BSDPAN_FILES}
+	${MKDIR} ${BSDPAN_DEST}/${file:H}
+	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
+		${BSDPAN_WRKSRC}/${file} ${BSDPAN_DEST}/${file}
+.endfor
 	@(cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
+	@fmt ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

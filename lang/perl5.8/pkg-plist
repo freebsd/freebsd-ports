@@ -26,6 +26,7 @@ bin/podselect
 bin/pstruct
 bin/s2p
 bin/splain
+bin/use.perl
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/AutoLoader.pm
 lib/perl5/%%PERL_VER%%/AutoSplit.pm
@@ -33,6 +34,11 @@ lib/perl5/%%PERL_VER%%/B/assemble
 lib/perl5/%%PERL_VER%%/B/cc_harness
 lib/perl5/%%PERL_VER%%/B/disassemble
 lib/perl5/%%PERL_VER%%/B/makeliblinks
+lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/BSDPAN/Override.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/Config.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/MM_Unix.pm
+lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils/Packlist.pm
 lib/perl5/%%PERL_VER%%/Benchmark.pm
 lib/perl5/%%PERL_VER%%/CGI.pm
 lib/perl5/%%PERL_VER%%/CGI/Apache.pm
