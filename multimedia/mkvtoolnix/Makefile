@@ -19,6 +19,8 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		expat.5:${PORTSDIR}/textproc/expat2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
+BROKEN=		"Unfetchable"
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -31,6 +31,8 @@ COMMENT=	Huge compilation of Win32 binary codecs, including MPEG-4(DivX ;-))
 
 RESTRICTED=	Unsure of codec\'s license
 
+BROKEN=		"Unfetchable"
+
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes

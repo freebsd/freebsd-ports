@@ -17,6 +17,8 @@ COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+BROKEN=		"Unfetchable"
+
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes

@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
+BROKEN=		"Unfetchable"
+
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
