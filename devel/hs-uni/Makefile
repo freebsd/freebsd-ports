@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	gtchask@mm.st
 COMMENT=	A tool integration framework for Haskell, including Htk
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc6
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc6
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 .include <bsd.port.pre.mk>
 

@@ -17,10 +17,10 @@ COMMENT=	Tcl/Tk binding for Haskell
 
 .if defined(WITH_GHC5)
 GHC=		ghc-5.04.3
-GHCDEP=		ghc
+GHCDEP=		ghc5
 .else
-GHC=		ghc-6.0.1
-GHCDEP=		ghc6
+GHC=		ghc-6.2
+GHCDEP=		ghc
 .endif
 PKGNAMESUFFIX=	-${GHCDEP}
 
