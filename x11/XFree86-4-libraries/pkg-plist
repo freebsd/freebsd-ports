@@ -647,3 +647,4 @@ lib/libxkbui.a
 lib/libxkbui.so
 lib/libxkbui.so.1
 libdata/pkgconfig/xcursor.pc
+@dirrm lib/X11/locale/zh_CN.UTF-8
