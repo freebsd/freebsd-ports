@@ -17,7 +17,7 @@ MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFPhotoAlbum product for Zope/CMF
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFPhoto/Photo.py:${PORTSDIR}/www/zope-cmfphoto \
-				${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/BTreeFolder2/BTreeFolder2.py:${PORTSDIR}/www/zope-btreefolder2
+		${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/BTreeFolder2/BTreeFolder2.py:${PORTSDIR}/www/zope-btreefolder2
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
