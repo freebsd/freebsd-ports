@@ -1,0 +1,11 @@
+--- Sources/Core/System/Unix/init_linux.cpp.orig	Wed May 10 16:02:01 2000
++++ Sources/Core/System/Unix/init_linux.cpp	Wed May 10 16:02:12 2000
+@@ -551,7 +551,7 @@
+ 			break;
+ 		millis -= elapsed;
+ 		tv.tv_sec = millis/1000;
+-		tv.tv_ysec = (millis%1000)*1000;
++		tv.tv_usec = (millis%1000)*1000;
+ #endif
+ 		was_error = select(0, NULL, NULL, NULL, &tv);
+ 	}

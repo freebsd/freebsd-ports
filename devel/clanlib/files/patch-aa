@@ -1,0 +1,21 @@
+--- Makefile.conf.in.orig	Sun Apr  9 15:17:58 2000
++++ Makefile.conf.in	Sun Sep 24 15:52:59 2000
+@@ -13,15 +13,15 @@
+ BIN_PREFIX = @bindir@
+ TARGET_PREFIX = @libdir@/ClanLib
+ 
+-INCLUDE_DIRS =	-I Sources @x_includes@
++INCLUDE_DIRS =	-I Sources @x_includes@ -I ${LOCALBASE}/include
+ 
+ COMP_OPTIONS =	-Wall $(INCLUDE_DIRS) -fPIC -DNOCONTROLS @DEFS@ @comp_mode@
+ 
+-LINK_CORE = @libs@
++LINK_CORE = -L${LOCALBASE}/lib @libs@
+ 
+ OBJF_NONDYN = @objf_nondyn@
+ 
+-LINK_COMMAND = $(CXX) -shared -fPIC -Wl,-rpath,$(TARGET_PREFIX)
++LINK_COMMAND = $(CXX) -shared -fPIC -Wl,-rpath,$(TARGET_PREFIX) -L${LOCALBASE}/lib
+ 
+ Libs/Intermediate/%.o : %.cpp
+ 	@echo "Compiling $<"

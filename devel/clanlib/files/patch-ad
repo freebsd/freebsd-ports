@@ -1,0 +1,42 @@
+--- Sources/Core/Input/X11/joystick_linux.h.orig	Wed May 10 15:48:28 2000
++++ Sources/Core/Input/X11/joystick_linux.h	Wed May 10 15:58:32 2000
+@@ -22,17 +22,17 @@
+ 
+ // TODO: ifdef this out if it isn't a linux system.
+ 
+-#include <linux/version.h>
++/*#include <linux/version.h>*/
+ 
+ #ifndef KERNEL_VERSION
+ #define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))
+ #endif
+ 
+-#ifndef LINUX_VERSION_CODE
++/*#ifndef LINUX_VERSION_CODE
+ #error "You need to use at least 2.0 Linux kernel." 
+-#endif
++#endif*/
+ 
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,1,0)
++#if 1
+ 
+ 
+ #include "API/Core/Input/inputdevice.h"
+@@ -40,7 +40,7 @@
+ #include "API/Core/System/keep_alive.h"
+ #include "Core/System/Unix/init_linux.h"
+ 
+-#include <linux/joystick.h>
++/*#include <linux/joystick.h>*/
+ 
+ class CL_LinuxJoystick_Axis;
+ class CL_LinuxJoystick_Button;
+@@ -82,7 +82,7 @@
+ 	int num_buttons;
+ 	int num_axes;
+ 	
+-	js_event jev;
++/*	js_event jev;*/
+ 
+ 	CL_LinuxJoystick_Axis *axes;
+ 	CL_LinuxJoystick_Button *buttons;

@@ -1,0 +1,11 @@
+--- configure.orig	Wed May 10 00:46:48 2000
++++ configure	Sun Sep 24 15:22:16 2000
+@@ -2199,7 +2199,7 @@
+ 
+ 
+ 
+-libs="-ldl -lz -lHermes -lpthread"
++libs="-lz -lHermes -pthread"
+ 
+ objf_nondyn=""
+ flag_tty=""

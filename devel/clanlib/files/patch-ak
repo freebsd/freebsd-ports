@@ -1,0 +1,26 @@
+--- Sources/Core/Input/TTY/keyboard_tty.h.orig	Sun Apr  9 15:18:01 2000
++++ Sources/Core/Input/TTY/keyboard_tty.h	Mon Sep 25 00:46:07 2000
+@@ -32,6 +32,8 @@
+ #include "Core/System/Unix/init_linux.h"
+ #include "API/Core/System/keep_alive.h"
+ #include <termios.h>
++#include <stdio.h>
++#include <sys/kbio.h>
+ 
+ class CL_InputButton_TTYKeyboard : public CL_InputButton
+ {
+@@ -71,12 +73,13 @@
+ 
+ 	char keymap[128];
+ 	
++	keymap_t vga_keymap;
+ 	int fd;
+ 	int old_mode;
+ 	int old_kd;
+ 	struct termios old_termios;
+ 	void handle_code(char code);
+-	char translate(int kb_value);
++	char translate(struct keyent_t kb_value);
+ 	
+ 	CL_InputButton_TTYKeyboard **buttons;
+ };

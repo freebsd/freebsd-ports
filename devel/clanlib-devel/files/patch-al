@@ -1,0 +1,19 @@
+--- Sources/Core/Display/Svgalib/displaycard_svgalib.cpp	2000/09/24 19:46:24	1.1
++++ Sources/Core/Display/Svgalib/displaycard_svgalib.cpp	2000/09/24 19:58:09
+@@ -13,6 +13,8 @@
+ */
+ 
+ #include "Core/precomp.h"
++#include "API/Core/Input/input.h"
++#include "Core/Input/TTY/keyboard_tty.h"
+ 
+ #ifdef USE_SVGALIB
+ 
+@@ -172,6 +174,7 @@
+ 				blue_mask,
+ 				0); // alpha mask
+ 
++			CL_Input::keyboards.push_back(new CL_TTYKeyboard());
+ 			return;
+ 		}
+ 	}

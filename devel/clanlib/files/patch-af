@@ -1,0 +1,11 @@
+--- Sources/Core/System/Unix/mutex_pthread.cpp.orig	Wed May 10 16:07:43 2000
++++ Sources/Core/System/Unix/mutex_pthread.cpp	Wed May 10 16:07:55 2000
+@@ -33,7 +33,7 @@
+ {
+ 	pthread_mutexattr_t attr;
+ 	pthread_mutexattr_init(&attr);
+-	pthread_mutexattr_setkind_np(&attr, PTHREAD_MUTEX_RECURSIVE_NP);
++	pthread_mutexattr_setkind_np(&attr, PTHREAD_MUTEX_RECURSIVE);
+ 	pthread_mutex_init(&mutex, &attr);
+ 	pthread_mutexattr_destroy(&attr);
+ 
