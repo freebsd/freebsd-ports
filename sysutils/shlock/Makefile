@@ -15,8 +15,6 @@ DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
 
-PORTCOMMENT=	Create lock files for use in shell scripts
-
 HAS_CONFIGURE=	yes
 
 MAN1=		shlock.1

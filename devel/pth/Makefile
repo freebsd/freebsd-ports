@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	pth
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GNU Portable Threads
-
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/pth
 GNU_CONFIGURE=	yes

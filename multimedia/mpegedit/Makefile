@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A program to edit encoded mpeg streams
-
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_X_PREFIX=	yes

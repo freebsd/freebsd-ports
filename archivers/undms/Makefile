@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Converts .dms Amiga disk images to uncompressed .adf images
-
 NO_WRKSUBDIR=	yes
 
 do-extract:

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Image pick up utility for X Window System
-
 USE_IMAKE=		yes
 MAN1=			xwpick.1
 

@@ -6,7 +6,6 @@
 
 PORTNAME=	Parallel-ForkManager
 PORTVERSION=	0.7.4
-PORTCOMMENT=	A simple parallel processing fork manager
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://hacks.dlux.hu/Parallel-ForkManager/download/
 PKGNAMEPREFIX=	p5-

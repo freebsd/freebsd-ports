@@ -13,8 +13,6 @@ DISTNAME=	PowerPak
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	SDL-based Game Software Development Kit
-
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

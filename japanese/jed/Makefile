@@ -18,8 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A SLang-based text editor (w/ Japanese support)
-
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		${LIBDEP_CANNA}
 

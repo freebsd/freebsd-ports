@@ -9,8 +9,6 @@ PORTNAME=	jpeg
 PORTVERSION=	6b.15
 CATEGORIES=	graphics linux
 
-PORTCOMMENT=	RPM of Jpeg lib
-
 RPM_SET=	libjpeg-6b-15.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

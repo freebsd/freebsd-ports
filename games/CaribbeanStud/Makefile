@@ -14,8 +14,6 @@ DISTNAME=		CS
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Caribbean Stud gambling game for X Window System
-
 MAKEFILE=		Xmakefile
 USE_MOTIF=		yes
 USE_X_PREFIX=		yes

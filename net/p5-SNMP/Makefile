@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A perl5 module for interfacing with the CMU SNMP library
-
 LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/net-snmp4
 
 PERL_CONFIGURE=	yes

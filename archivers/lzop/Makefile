@@ -14,8 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
-PORTCOMMENT=	Fast file compressor similar to gzip, using the LZO library
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

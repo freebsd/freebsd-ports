@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An implementation of Macromedia Flash plugin for Netscape
-
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>

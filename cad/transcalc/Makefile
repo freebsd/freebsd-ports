@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
-
 USE_GNOMENG=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes

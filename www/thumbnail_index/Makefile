@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}_10aug1998
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Make an HTML index file for a bunch of images
-
 RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
 		pnmscale:${PORTSDIR}/graphics/netpbm
 

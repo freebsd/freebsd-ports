@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.fressh.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A free rewritten implementation of the SSH communication protocol
-
 USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>

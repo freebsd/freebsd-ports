@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	apps/editors/X
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Borland-like IDE programming environment
-
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-Devel-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Perl code profiler
-
 PERL_CONFIGURE=	yes
 
 MAN1PREFIX=	${PREFIX}

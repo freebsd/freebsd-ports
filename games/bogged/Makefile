@@ -14,8 +14,6 @@ EXTRACT_SUFX=		.gz
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		Word game for X Window System
-
 RUN_DEPENDS=		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 EXTRACT_CMD=		${CP}

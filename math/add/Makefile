@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Full-screen editing calculator
-
 WRKSRC=		${WRKDIR}/add-970526
 
 GNU_CONFIGURE=	yes

@@ -18,8 +18,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Japanese Morphological Analysis System
-
 GNU_CONFIGURE=	yes
 #USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

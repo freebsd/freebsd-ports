@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
 
-PORTCOMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
-
 USE_BZIP2=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

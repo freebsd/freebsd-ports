@@ -16,8 +16,6 @@ DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python interface to the Expat XML parser
-
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 DIST_SUBDIR=	python

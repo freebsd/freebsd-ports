@@ -12,8 +12,6 @@ MASTER_SITES=	http://tuxaqfh.sourceforge.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An OpenGL adventure game
-
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_REINPLACE=	yes

@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fractal generation program
-
 USE_BISON=	yes
 USE_QT_VER=	3
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

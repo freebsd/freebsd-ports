@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 package which allows use of macros defined in 'C' header files
-
 PERL_CONFIGURE=	YES
 
 MAN3=		Include.3

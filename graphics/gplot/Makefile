@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Graphic utilities for the processing of CGM metafiles
-
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	drawcgm gtex gplot
 MAN1=		gplot.1

@@ -13,8 +13,6 @@ MASTER_SITES=	http://pornin.nerim.net/ucpp/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A C preprocessor and lexer
-
 MAKE_ENV=	FLAGS="${CFLAGS}"
 
 MAN1=	ucpp.1

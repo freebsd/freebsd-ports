@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Library for Shared Buffer IPC
-
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

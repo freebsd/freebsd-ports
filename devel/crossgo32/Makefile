@@ -18,8 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Cross Development Environment for 32-bit DOS
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${TARGET}
 USE_GMAKE=	yes

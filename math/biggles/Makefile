@@ -15,8 +15,6 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Create publication-quality 2D scientific plots
-
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
 

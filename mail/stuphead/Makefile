@@ -16,8 +16,6 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A lightweight MUA for X11
-
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_REINPLACE=	yes

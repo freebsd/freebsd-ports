@@ -17,8 +17,6 @@ PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An RFC1413 identification server
-
 ALL_TARGET=	freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}
 MAN8=		identd.8 idecrypt.8

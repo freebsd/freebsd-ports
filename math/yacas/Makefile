@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Yet Another Computer Algebra System
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes

@@ -14,8 +14,6 @@ DISTNAME=	make-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GNU version of 'make' utility
-
 .if !defined(WITHOUT_NLS)
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .endif

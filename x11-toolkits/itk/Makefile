@@ -15,8 +15,6 @@ DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	[incr Tk] (A.K.A. "itk")
-
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl
 

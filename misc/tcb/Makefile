@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	utils/file
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		File viewer for terminal
-
 USE_GMAKE=		yes
 
 MAN1=			tcb.1

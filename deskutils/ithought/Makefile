@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	ithought
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An extensible text management system
-
 LIB_DEPENDS=    xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes

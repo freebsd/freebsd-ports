@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	screen
 
 MAINTAINER=	cy@FreeBSD.org
 
-PORTCOMMENT=	A multi-screen window manager
-
 GNU_CONFIGURE=	yes
 MAN1=		screen.1
 

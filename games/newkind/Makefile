@@ -14,8 +14,6 @@ DISTFILES=	${PORTNAME}${EXTRACT_SUFX} ${PORTNAME}b${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Elite: The New Kind - a remake of the 8-bit classic
-
 LIB_DEPENDS=	alleg.4:${PORTSDIR}/devel/allegro
 
 BROKEN=		Does not build with version of devel/allegro currently in ports

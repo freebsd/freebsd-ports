@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Simple program for outgoing SMTP delivery
-
 NO_WRKSUBDIR=	yes
 
 do-install:

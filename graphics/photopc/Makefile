@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A utility to manage an Epson PhotoPC 500 digital camera
-
 GNU_CONFIGURE=	yes
 
 MAN1=	photopc.1 epinfo.1

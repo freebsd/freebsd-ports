@@ -16,8 +16,6 @@ DISTNAME=	python-mcrypt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A comprehensive Python interface to the mcrypt library
-
 LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
 
 USE_PYTHON=	yes

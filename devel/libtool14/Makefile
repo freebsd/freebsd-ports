@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	libtool
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Generic shared library support script
-
 # This port has not been upgraded to 1.4 because it is used by about 30% of
 # the ports collection, and more testing is needed.  If someone can supply a
 # working patch then it will be upgraded.

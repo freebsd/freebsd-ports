@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/install/cpbk/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Backup Copy programm
-
 MAN1=		cpbk.1
 MANCOMPRESSED=	yes
 

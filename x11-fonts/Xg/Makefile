@@ -13,8 +13,6 @@ DISTNAME=	libXg.utf.fonts
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	UNICODE fonts for use with 9term and sam
-
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 

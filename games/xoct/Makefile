@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Oct puzzle for X Window System
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xoct.1

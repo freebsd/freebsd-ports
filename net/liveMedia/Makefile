@@ -7,7 +7,6 @@
 
 PORTNAME=	liveMedia
 PORTVERSION=	2002.11.04
-PORTCOMMENT=	LIVE.COM Streaming Media
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The next generation graphic library for enlightenment package
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ltdl.1:${PORTSDIR}/devel/libtool \
 		png.5:${PORTSDIR}/graphics/png \

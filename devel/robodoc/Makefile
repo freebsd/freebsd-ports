@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Code reference program similar to cxref that produces HTML
-
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 

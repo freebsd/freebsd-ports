@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/old/
 
 MAINTAINER=	cy@FreeBSD.org
 
-PORTCOMMENT=	An ftp replacement that runs over an ssh tunnel
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400014

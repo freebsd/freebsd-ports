@@ -27,8 +27,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The NeXTSTEP clone window manager with Fontset support
-
 RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
 
 DIST_SUBDIR=	afterstep

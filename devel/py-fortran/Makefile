@@ -16,8 +16,6 @@ DISTNAME=	pyfort-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Creating extensions to the Python language with Fortran routines
-
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_PYTHON=	yes

@@ -12,8 +12,6 @@ MASTER_SITES=	http://web.onda.com.br/orso/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Squid log analyzer and HTML report generator
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-prefix=${PREFIX} --with-gcc

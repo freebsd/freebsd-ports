@@ -12,8 +12,6 @@ MASTER_SITES=	http://energyhq.homeip.net/files/
 
 MAINTAINER=	adamw@FreeBSD.org
 
-PORTCOMMENT=	Gtk+/ncurses rc.conf editor/management tool
-
 .if !defined(NO_GUI) && defined(WITH_GTK2)
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 .endif

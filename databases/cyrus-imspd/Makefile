@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	The cyrus IMSP (Internet Message Support Protocol) server
-
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 

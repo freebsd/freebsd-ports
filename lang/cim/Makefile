@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Compiler for the SIMULA programming language
-
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 MAN1=		cim.1

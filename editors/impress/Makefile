@@ -13,8 +13,6 @@ DISTNAME=	imp${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Publishing and presentation tool
-
 RUN_DEPENDS=    wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/${PKGNAME}

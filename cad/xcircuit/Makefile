@@ -13,8 +13,6 @@ MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An X11 drawing program [especially for circuit schematics]
-
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

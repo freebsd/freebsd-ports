@@ -12,8 +12,6 @@ MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Lines-like simple logic game for X Window System
-
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_REINPLACE=	yes

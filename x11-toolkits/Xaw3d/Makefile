@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	widgets/Xaw3d/R6.3
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A 3-D Athena Widget set that looks like Motif
-
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes

@@ -16,8 +16,6 @@ DIST_SUBDIR=	${ARCH}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A convenience package to install the compat4x libraries
-
 WRKSRC=		${WRKDIR}/usr/lib/compat
 NO_MTREE=	yes
 

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	ctrio
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A fully matured and stable set of printf and string functions
-
 GNU_CONFIGURE=	yes
 
 post-install:

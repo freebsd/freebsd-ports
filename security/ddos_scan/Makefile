@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Scans for a limited set of distributed denial of service agents
-
 ALL_TARGET=	dds
 
 do-install:

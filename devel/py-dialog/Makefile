@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.py
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python Dialog
-
 USE_PYTHON=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty

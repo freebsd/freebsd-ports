@@ -13,8 +13,6 @@ DISTNAME=	miniCHESS-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	WindowMaker chess dockapp game
-
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchessx:${PORTSDIR}/games/gnuchess
 
 USE_GMAKE=	YES

@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}102
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Classic game with apples and hungry worm
-
 WRKSRC=		${WRKDIR}/XWorm
 USE_X_PREFIX=	yes
 ALL_TARGET=	freebsd

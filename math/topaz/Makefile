@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A command driven graph plotting system for scientists and engineers
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

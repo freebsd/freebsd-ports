@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A perl5 module to generate and test even, odd, mark and space parity
-
 PERL_CONFIGURE=	yes
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

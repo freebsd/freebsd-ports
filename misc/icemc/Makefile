@@ -17,8 +17,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adamw@FreeBSD.org
 
-PORTCOMMENT=	QT-based menu editor for IceWM
-
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 

@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.radix.net/~cknudsen/gtimer/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A timer for your personal activities
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes

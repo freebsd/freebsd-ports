@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Interactive command line editing facilities
-
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Yet another GTK-based mail reader for X. Supports IMAP
-
 USE_REINPLACE=	yes
 USE_GTK=	yes
 USE_OPENSSL=	yes

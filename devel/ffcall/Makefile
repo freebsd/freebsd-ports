@@ -12,8 +12,6 @@ MASTER_SITES=  ftp://ftp.santafe.edu/pub/gnu/
 
 MAINTAINER=    ports@FreeBSD.org
 
-PORTCOMMENT=	Foreign function call libraries
-
 USE_GMAKE=     yes
 USE_LIBTOOL=   yes
 INSTALLS_SHLIB=        yes

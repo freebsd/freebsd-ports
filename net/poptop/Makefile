@@ -15,8 +15,6 @@ DISTNAME=		pptpd-${PORTVERSION}
 
 MAINTAINER=		ports@freebsd.org
 
-PORTCOMMENT=		Windows 9x compatible PPTP (VPN) server
-
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-bsdppp
 

@@ -14,8 +14,6 @@ DISTNAME=		BWidget-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.ORG
 
-PORTCOMMENT=		A high-level widget set for Tcl/Tk
-
 NO_BUILD=		yes
 PLIST_SUB+=		PORTVERSION=${PORTVERSION}
 

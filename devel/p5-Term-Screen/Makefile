@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Basic screen + input class
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Term::Screen.3

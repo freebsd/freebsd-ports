@@ -14,8 +14,6 @@ MASTER_SITES=	http://webhome.idirect.com/~tekatch/anthony/ucu/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A conversion utility that allows conversion between many units
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${PYTHON_SITELIBDIR}/gtk-1.2/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
 

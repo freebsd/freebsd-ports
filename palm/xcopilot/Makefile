@@ -12,8 +12,6 @@ MASTER_SITES=	http://xcopilot.cuspy.com/build/
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	Emulator for US Robotics Pilot PDA
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Produces a view output of an arbitrary region of the Earth
-
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 CFLAGS+=	-I${X11BASE}/include

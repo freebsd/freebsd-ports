@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A perl5 interface to build chart graphics
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 PERL_CONFIGURE=	yes

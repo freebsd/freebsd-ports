@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	games/textrpg
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Taipan was (and is) a classic role-playing game from the 1980s
-
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:

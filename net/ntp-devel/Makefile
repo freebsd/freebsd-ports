@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	cy@FreeBSD.org
 
-PORTCOMMENT=	The Network Time Protocol Distribution
-
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # if GNU_CONFIGURE is defined
 HAS_CONFIGURE=	yes

@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Simple program to generate anagrams
-
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	makefile

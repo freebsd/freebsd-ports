@@ -7,7 +7,6 @@
 
 PORTNAME=	crossfire
 PORTVERSION=	1.4.0
-PORTCOMMENT=	Multiplayer graphical arcade and adventure game made for X11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \

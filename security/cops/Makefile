@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A system secureness checker
-
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	reconfig

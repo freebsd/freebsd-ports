@@ -17,8 +17,6 @@ EXTRACT_ONLY=	xgs050.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Apple IIGS emulator stable release
-
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	xgs

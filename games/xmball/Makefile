@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Masterball puzzle for X Window System
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xmball.1

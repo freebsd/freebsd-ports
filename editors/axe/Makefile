@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Simple to use text editor for X
-
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes

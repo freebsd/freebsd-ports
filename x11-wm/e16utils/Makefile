@@ -15,8 +15,6 @@ DISTFILES=	e16menuedit-0.1.tar.gz e16keyedit-0.2.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Standalone menu and keybinding editors for enlightment 0.16
-
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_X_PREFIX=	yes

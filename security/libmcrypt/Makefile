@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Multi-cipher cryptographic library (used in PHP3)
-
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 

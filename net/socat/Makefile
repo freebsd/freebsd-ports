@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A relay for bidirectional data transfer between two indep. data channels
-
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
 

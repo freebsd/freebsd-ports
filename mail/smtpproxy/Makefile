@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.quietsche-entchen.de/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	SMTP proxy server
-
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
 

@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.doc.ic.ac.uk/~jsm00/scripts/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Rename mp3s and manipulate them
-
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MP3/Tag.pm:${PORTSDIR}/audio/p5-tagged
 
 USE_PERL5=	yes

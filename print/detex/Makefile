@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Strips TeX/LaTeX codes from a file
-
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	#empty
@@ -26,6 +24,5 @@ MAN1=		detex.1
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1}l ${MANPREFIX}/man/man1/${MAN1}
-
 
 .include <bsd.port.mk>

@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	rproxy
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Library for delta compression of streams
-
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2

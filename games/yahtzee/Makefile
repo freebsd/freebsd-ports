@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A curses version of the dice game for one or more players
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # Distribution does not include an install target. So here it is.

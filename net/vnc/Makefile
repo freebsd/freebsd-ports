@@ -21,8 +21,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
-
 USE_PERL5=	yes
 IGNOREFILES=	vnc-latest_doc.tgz
 WRKSRC=		${WRKDIR}/vnc_unixsrc

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The Visualization Toolkit
-
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_REINPLACE=	yes

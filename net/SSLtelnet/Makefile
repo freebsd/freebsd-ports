@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		SSL enhanced telnet/telnetd
-
 USE_OPENSSL=		YES
 
 PLIST_SUB+=		OPENSSLDIR="${OPENSSLDIR}"

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Ftp shell under X Window System
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		${PROGRAM_NAME}.1

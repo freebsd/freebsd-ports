@@ -16,8 +16,6 @@ CATEGORIES=	japanese editors
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A clone of vi/ex, with multilingual patch, default settings for euc-jp
-
 CONFIGURE_ARGS=        --enable-multibyte=euc-jp --program-prefix=n --enable-canna
 
 .include       "${MASTERDIR}/Makefile"

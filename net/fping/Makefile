@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_to-ipv6
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Quickly ping N hosts w/o flooding the network
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/sbin"

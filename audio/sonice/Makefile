@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.cyclooctane.com/sonice/release/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Sonice eases reencoding of .ogg files
-
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac
 

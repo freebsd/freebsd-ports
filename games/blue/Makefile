@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/blue/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Blue Moon card solitaire
-
 ALL_TARGET=	# empty
 MAN6=		blue.6
 

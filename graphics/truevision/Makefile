@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The GNOME 3D modeler
-
 LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_REINPLACE=	yes

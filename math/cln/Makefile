@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Class Library for Numbers
-
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 STRIP=		# none

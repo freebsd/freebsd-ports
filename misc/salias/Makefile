@@ -15,8 +15,6 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A command-line tool to alias arguments of other programs
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

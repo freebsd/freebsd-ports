@@ -14,8 +14,6 @@ DISTNAME=	rispell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Russian (KOI8-R) dictionary for ISPELL
-
 # Very dirty implementation, use rus-ispell port instead
 NO_LATEST_LINK= yes
 

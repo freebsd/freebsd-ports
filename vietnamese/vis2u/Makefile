@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-PORTCOMMENT=	VISCII->Unicode conversion
-
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 

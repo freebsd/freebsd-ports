@@ -9,8 +9,6 @@ PORTNAME=	sv-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Swedish dictionary
-
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_SV=	ja

@@ -14,8 +14,6 @@ DISTNAME=	plsrc${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Generates plots and graphs from data
-
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \

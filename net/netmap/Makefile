@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Make a graphical representation of the surounding network
-
 RUN_DEPENDS=	dotty:${PORTSDIR}/graphics/graphviz
 
 USE_GMAKE=	yes

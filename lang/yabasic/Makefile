@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.yabasic.de/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Yet another Basic for Unix and Windows
-
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_XLIB=	yes

@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-PORTCOMMENT=	A dockapp that keeps track of time you have spent on something
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_X_PREFIX=	yes

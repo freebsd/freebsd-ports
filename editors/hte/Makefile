@@ -15,8 +15,6 @@ DISTNAME=	ht-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A file editor/viewer/analyzer for executables
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lm"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

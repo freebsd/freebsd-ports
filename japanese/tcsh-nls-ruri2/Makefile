@@ -9,8 +9,6 @@ CATALOGNAME=	ruri2
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Japanese NLS catalog for TCSH. ("Hoshino Ruri" taste)
-
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
 PKGDIR=		${.CURDIR}
 PLIST=		${MASTERDIR}/pkg-plist

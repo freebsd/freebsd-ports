@@ -14,8 +14,6 @@ DISTNAME=	dist10
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	MPEG layer I, II and III audio file encoder
-
 RESTRICTED=	Condition is not clear
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lsf/encoder

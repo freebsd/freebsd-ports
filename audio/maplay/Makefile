@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
-
 NO_WRKSUBDIR=	yes
 
 post-patch:

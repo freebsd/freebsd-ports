@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Electronic Waveform Viewer
-
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif

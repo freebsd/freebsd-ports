@@ -7,7 +7,6 @@
 
 PORTNAME=	skkinput
 PORTVERSION=	2.06.1
-PORTCOMMENT=	An SKK-like Japanese input method for X11
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://downloads.sourceforge.jp/skkinput2/1445/
 

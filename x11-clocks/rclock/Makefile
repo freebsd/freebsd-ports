@@ -21,8 +21,6 @@ DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Analog clock for X w/appointment reminder and mail notification
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

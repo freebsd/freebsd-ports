@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	m4
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GNU m4
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 

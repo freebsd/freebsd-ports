@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-2.0
 
 MAINTAINER=	obrien@FreeBSD.org
 
-PORTCOMMENT=	Converts Vietnamese VIQR text into troff format
-
 NO_WRKSUBDIR=	yes
 MAN1=		vnroff.1
 

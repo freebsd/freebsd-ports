@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Galaga resurrected on X
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 HAS_CONFIGURE=	yes

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Memory Profiler and Leak Detector
-
 NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.i386
 MAN1=		mprof.1

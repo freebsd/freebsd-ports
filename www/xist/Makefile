@@ -14,8 +14,6 @@ DISTNAME=	XIST-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An XML-based extensible HTML generator
-
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/mx/Tidy/mxTidy/mxTidy.so:${PORTSDIR}/devel/py-mx-experimental

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A simple curses-based editor for BibTeX bibliography files
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.ncurses
 

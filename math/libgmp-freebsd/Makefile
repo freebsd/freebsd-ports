@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A library for arbitrary precision arithmetic
-
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 MAKE_FLAGS=	INCDIR=${PREFIX}/include \

@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/net/yale-tftpd/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Enhanced tftpd(8) from Yale University and cisco Systems
-
 NO_WRKSUBDIR=
 MAN8=		tftpd.8
 MANCOMPRESSED=	yes

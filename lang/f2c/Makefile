@@ -14,8 +14,6 @@ DISTNAME=	f2c-freebsd.3.0.0
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fortran-to-C converter and its run-time libraries
-
 .include <bsd.port.pre.mk>
 
 .if (${ARCH} == "alpha")

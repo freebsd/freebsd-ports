@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	ghostview
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An X11 front-end for ghostscript, the GNU postscript previewer
-
 FORBIDDEN=	"Security vulnerability, see bugtraq id 5808"
 
 USE_IMAKE=	yes

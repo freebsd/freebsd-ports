@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Strip cascading style sheets from webpages
-
 WRKSRC=		${WRKDIR}/source
 
 NO_BUILD=	YES

@@ -15,8 +15,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Configurable remote distributed denial of service tool detector
-
 ALL_TARGET=	rid
 USE_REINPLACE=	yes
 

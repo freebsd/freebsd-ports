@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Display all (ok, most of) the colors in the universe
-
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes
 MAN1=		xcolors.1

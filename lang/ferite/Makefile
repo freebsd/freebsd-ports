@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An embeddable scripting language
-
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Performance Test of Filesystem I/O
-
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-U__DEPRECATED"

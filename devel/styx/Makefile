@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A scanner/parser generator
-
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_REINPLACE=	yes

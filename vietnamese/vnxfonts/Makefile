@@ -18,8 +18,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
 
-PORTCOMMENT=	X fonts for displaying Vietnamese
-
 WRKSRC=		${WRKDIR}/fonts/X
 USE_X_PREFIX=	yes
 

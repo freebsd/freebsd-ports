@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Graphics viewer for viewing netpbm format on console or X using aalib
-
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm \
 		convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib

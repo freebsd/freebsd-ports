@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.ece.ucdavis.edu/~kenelson/gtk-glarea/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GtkGLArea-- is a wrapper for the GtkGLArea widget
-
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A front end to GCC from Liberty Basic source code
-
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

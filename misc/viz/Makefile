@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	Convert invisible (binary) characters to a visible form
-
 MAN1=		viz.1 inviz.1
 
 .include <bsd.port.mk>

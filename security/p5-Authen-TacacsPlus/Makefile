@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A perl module that provides authentication using a tacacs+ server
-
 PERL_CONFIGURE=	yes
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 

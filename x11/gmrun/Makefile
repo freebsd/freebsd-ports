@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adamw@FreeBSD.org
 
-PORTCOMMENT=	A customizable program to run programs, with tab-completion
-
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 
 USE_X_PREFIX=	yes

@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A free (GPL) encoder and decoder for the yEnc Usenet file format
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		intl.4:${PORTSDIR}/devel/gettext
 

@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.cs.wisc.edu/~schenney/sced/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	SCene EDitor for povray/renderman/genray/etc
-
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 
 USE_XLIB=	yes

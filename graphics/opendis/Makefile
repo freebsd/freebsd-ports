@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	ods
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Access Flashpoint Digita-based cameras, download images and more
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An extensible system for creating ray-traced images
-
 BUILD_DEPENDS=	$(LOCALBASE)/lib/librle.a:${PORTSDIR}/graphics/urt
 
 HAS_CONFIGURE=	yes

@@ -15,8 +15,6 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	find the checksum of files
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 GNU_CONFIGURE=	yes

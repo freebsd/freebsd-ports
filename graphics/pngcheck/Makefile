@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Checks the integrity of PNG images
-
 MAKEFILE=	Makefile.unx
 
 do-install:

@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A library for playing audio CDs
-
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 

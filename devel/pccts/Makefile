@@ -14,8 +14,6 @@ DISTNAME=		pccts${PORTVERSION:R:S/.//}mr${PORTVERSION:E}
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		The Purdue Compiler Construction Tool Set
-
 USE_ZIP=		yes
 WRKSRC=			${WRKDIR}/pccts
 ALL_TARGET=

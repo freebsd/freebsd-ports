@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.eecs.umich.edu/~pelzlpj/rpc/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A full-screen RPN calculator program
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libccm.so:${PORTSDIR}/math/ccmath
 RUN_DEPENDS=	${LOCALBASE}/lib/libccm.so:${PORTSDIR}/math/ccmath
 

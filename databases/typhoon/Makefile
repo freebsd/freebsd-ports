@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A relational database library
-
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes

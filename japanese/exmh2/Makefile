@@ -9,8 +9,6 @@ CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	X11/TK based mail reader front end to MH for Japanese environments
-
 JAPANESE_EXMH=	yes
 
 MASTERDIR=	${.CURDIR}/../../mail/exmh2

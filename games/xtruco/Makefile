@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Simple version for X Window of the famous card game Super Truco
-
 USE_X_PREFIX=	yes
 
 do-install:

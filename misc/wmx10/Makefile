@@ -7,7 +7,6 @@
 
 PORTNAME=	wmx10
 PORTVERSION=	0.03
-PORTCOMMENT=	Remote control for X10 devices
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 

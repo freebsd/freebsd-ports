@@ -17,8 +17,6 @@ DISTNAME=	d4x-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Program for downloading via ftp or http with GUI
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

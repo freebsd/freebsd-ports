@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A userspace thread library
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes

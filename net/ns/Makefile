@@ -13,8 +13,6 @@ DISTNAME=	ns-src-2.1b9
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The UCB/LBNL Network Simulator Version 2
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 

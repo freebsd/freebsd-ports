@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A player for many different Amiga and PC module formats
-
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_XLIB=	yes

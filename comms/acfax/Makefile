@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Recieve faxes using sound card and radio
-
 BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 

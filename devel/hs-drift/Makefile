@@ -6,7 +6,6 @@
 
 PORTNAME=	drift
 PORTVERSION=	2.0.r3
-PORTCOMMENT=	A type sensitive preprocessor for Haskell
 CATEGORIES=	devel
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/
 DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}

@@ -16,8 +16,6 @@ CATEGORIES=	japanese editors
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A clone of vi/ex, with multilingual patch, default settings for sjis
-
 CONFIGURE_ARGS=        --enable-multibyte=sjis --program-prefix=n --enable-canna
 
 .include       "${MASTERDIR}/Makefile"

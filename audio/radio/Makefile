@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Radio over the Internet
-
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	${OPSYS}
 MAN1=		radio.1 broadcast.1

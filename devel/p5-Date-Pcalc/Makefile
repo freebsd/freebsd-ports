@@ -16,8 +16,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Gregorian calendar date calculations
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Date::Pcalc.3

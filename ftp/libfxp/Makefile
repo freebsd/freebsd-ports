@@ -13,8 +13,6 @@ MASTER_SITES=	http://millweed.com/projects/libfxp/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An ftp client library
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I. -Ilibmillweed

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A 3D block-dropping game
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \

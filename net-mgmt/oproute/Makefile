@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tool for measuring general performance of the Internet
-
 USE_REINPLACE=	yes
 
 post-patch:

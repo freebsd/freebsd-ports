@@ -14,8 +14,6 @@ MASTER_SITES=	http://virtual.theo.phys.ulg.ac.be/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	OpenGL gravitational lens simulator
-
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
 
 USE_REINPLACE=	yes

@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}b
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Automatic Flic to animated GIF convertor
-
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes

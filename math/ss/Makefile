@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A curses-based SpreadSheet program
-
 WRKSRC=		${WRKDIR}/ss_133
 MAN1=		ss.1 pss.1
 

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Convert the result of the cflow utility in a VCG format
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

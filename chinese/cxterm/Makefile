@@ -21,8 +21,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An xterm that speaks Chinese
-
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
 

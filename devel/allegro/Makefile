@@ -8,7 +8,6 @@
 PORTNAME=	allegro
 PORTVERSION=	4.0.2
 PORTREVISION=	1
-PORTCOMMENT=	A cross-platform library for games and multimedia programming
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg

@@ -15,8 +15,6 @@ DISTNAME=	XML-Handler-AxPoint-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	XML Based Presentations
-
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
 		${PERL_SITELIBDIR}/XML/SAX/Writer.pm:${PORTSDIR}/textproc/p5-XML-SAX-Writer \
 		${PERL_SITELIBDIR}/PDFLib.pm:${PORTSDIR}/print/p5-PDFLib

@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Print multiple pages per sheet of paper
-
 MAN1=		mpage.1
 ALL_TARGET=	default
 

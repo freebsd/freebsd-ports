@@ -10,8 +10,6 @@ CATEGORIES=	french
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with French dictionaries
-
 MASTERDIR=	${.CURDIR}/../../textproc/aspell
 
 ASPELL_FR=	oui

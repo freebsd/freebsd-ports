@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-0.6-1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Displays the modem status, designed to match AfterStep
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 

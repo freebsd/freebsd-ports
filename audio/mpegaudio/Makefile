@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An MPEG/audio Layer 1 and Layer 2 encoder/decoder package
-
 MAN1=		mpeg_musicin.1 mpeg_musicout.1
 
 post-install:

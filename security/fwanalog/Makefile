@@ -12,8 +12,6 @@ MASTER_SITES=	http://tud.at/programm/fwanalog/
 
 MAINTAINER=	cy@FreeBSD.org
 
-PORTCOMMENT=	A firewall log summarizer that uses Analog
-
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog
 
 USE_REINPLACE=	yes

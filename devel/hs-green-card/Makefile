@@ -8,7 +8,6 @@
 PORTNAME=	green-card
 PORTVERSION=	2.04
 PORTREVISION=	1
-PORTCOMMENT=	A foreign function interface preprocessor for Haskell
 CATEGORIES=	devel
 MASTER_SITES=	http://www.galois.com/~sof/
 DISTNAME=	gc-${PORTVERSION}

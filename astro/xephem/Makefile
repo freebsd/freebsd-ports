@@ -13,8 +13,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An interactive astronomical ephemeris program
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
 USE_MOTIF=	yes

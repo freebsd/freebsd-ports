@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.ohse.de/uwe/releases/  \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Receive/Send files via X/Y/ZMODEM protocol.  (unrestrictive)
-
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all # vcheck
 MAN1=		lrz.1 lsz.1

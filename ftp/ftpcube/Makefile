@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A graphical FTP Client
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/gtk.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_PYTHON=	yes

@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	ahh
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Wake On LAN client
-
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

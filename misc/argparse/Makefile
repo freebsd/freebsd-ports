@@ -13,8 +13,6 @@ MASTER_SITES=	http://home.pages.at/kingleo/development/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tool for commandline parsing for shell scripts
-
 LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg
 
 GNU_CONFIGURE=	yes

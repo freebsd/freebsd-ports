@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	CRyptANalysis toolKit
-
 LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
 USE_GNOMENG=	yes

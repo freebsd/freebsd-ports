@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	An arcade style game with stereo sound for X Window System
-
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 

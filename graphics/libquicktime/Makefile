@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A library for reading and writing quicktime files
-
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		dv.2:${PORTSDIR}/graphics/libdv \

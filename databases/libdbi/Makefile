@@ -8,7 +8,6 @@
 
 PORTNAME=	libdbi
 PORTVERSION=	0.6.6
-PORTCOMMENT=	Database Independent Abstraction Layer for C
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linux.ucla.edu/~dap24/%SUBDIR%/

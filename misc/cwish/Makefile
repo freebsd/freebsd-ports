@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.hcs.de/users/hm/packages/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Curses based user friendly windowing shell
-
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	cwish
 MAN1=		cwish.1

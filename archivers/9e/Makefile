@@ -13,8 +13,6 @@ DISTNAME=	9e
 
 MAINTAINER=	ports@FreeBSD.Org
 
-PORTCOMMENT=	Explode Plan9 archives
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/9e ${PREFIX}/bin
 

@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Clock using flying balls to display the time
-
 EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SH}

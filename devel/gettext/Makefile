@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	gettext
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GNU gettext package
-
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.4:${PORTSDIR}/textproc/expat2
 

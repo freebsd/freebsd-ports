@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	A solitaire card game for X
-
 USE_XLIB=	yes
 
 pre-patch:

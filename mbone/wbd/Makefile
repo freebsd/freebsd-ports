@@ -13,8 +13,6 @@ DISTNAME=	wbd-1.0ucl4
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A shared drawing (whiteboard) tool using multicast, compatible with wb
-
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/wbd

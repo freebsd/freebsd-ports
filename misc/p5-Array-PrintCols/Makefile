@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl5 module to print arrays of elements in sorted columns
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Array::PrintCols.3

@@ -13,8 +13,6 @@ DISTNAME=		HTMLgen
 
 MAINTAINER=		ports@FreeBSD.org
 
-PORTCOMMENT=		A Python library for the generation of HTML documents
-
 USE_PYTHON=		yes
 
 WRKSRC=			${WRKDIR}/HTMLgen

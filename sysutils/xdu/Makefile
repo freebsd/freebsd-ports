@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Graphically display output of du
-
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN1=		xdu.1

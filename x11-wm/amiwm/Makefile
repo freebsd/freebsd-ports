@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}0.20pl48
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A window manager that makes your desktop look like an Amiga(TM)
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DHAVE_X11_EXTENSIONS_SHAPE_H"
 USE_X_PREFIX=	yes

@@ -8,7 +8,6 @@
 
 PORTNAME=	fastdb
 PORTVERSION=	2.51
-PORTCOMMENT=	Main Memory Relational Database Management System
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 

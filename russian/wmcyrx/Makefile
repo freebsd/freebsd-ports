@@ -15,8 +15,6 @@ DISTNAME=	cyrx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The cyrillic keyboard layout manager for Window Maker
-
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 

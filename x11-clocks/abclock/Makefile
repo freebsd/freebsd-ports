@@ -12,8 +12,6 @@ MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Clock for X that displays hours and minutes in an analog fashion
-
 USE_X_PREFIX=	yes
 
 do-install:

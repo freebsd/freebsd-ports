@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The classic space-age stock trading game
-
 ALL_TARGET=	# empty
 MAN6=		starlanes.6
 

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-ginac-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A program calculating Feynman diagrams
-
 LIB_DEPENDS=	ginac:${PORTSDIR}/math/GiNaC
 
 USE_LIBTOOL=	yes

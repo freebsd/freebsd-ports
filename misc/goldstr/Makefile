@@ -13,8 +13,6 @@ MASTER_SITES=	http://it.geocities.com/andreamolteni/prog/goldstr/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Compute the golden string
-
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes

@@ -14,8 +14,6 @@ DISTNAME=	xalloc-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A memory allocation library with error checking
-
 MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes
 

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	cproto
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Generate C function prototypes and convert function definitions
-
 GNU_CONFIGURE=	YES
 MAN1=		cproto.1
 

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	PDL pdl
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl Data Language
-
 BROKEN=		"Does not compile"
 
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \

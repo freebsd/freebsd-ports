@@ -9,8 +9,6 @@ PORTNAME=	pl-aspell
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Aspell with Polish dictionary
-
 MASTERDIR=	${.CURDIR}/../aspell
 
 ASPELL_PL=	tak

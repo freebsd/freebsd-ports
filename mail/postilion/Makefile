@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.postilion.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Mail client with the NeXt look
-
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		c-client4:${PORTSDIR}/mail/cclient
 RUN_DEPENDS=	${LOCALBASE}/lib/Img1.2/pkgIndex.tcl:${PORTSDIR}/graphics/libimg

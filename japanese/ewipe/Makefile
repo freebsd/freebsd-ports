@@ -12,6 +12,4 @@ COMMENT=	${.CURDIR}/pkg-comment
 
 KANJI=		yes
 
-PORTCOMMENT=	Tcl/tck-based presentation tool, with japanese configuration
-
 .include "${MASTERDIR}/Makefile"

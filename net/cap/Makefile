@@ -25,8 +25,6 @@ PATCHFILES=	cap60.patch193 cap60.patch194 cap60.patch195 cap60.patch196 \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Columbia AppleTalk Package for UNIX
-
 NO_CDROM=	"Don't sell for profit"
 WRKSRC=		${WRKDIR}/cap60
 DIST_SUBDIR=	cap60

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Multi-server/conn news suck
-
 GNU_CONFIGURE=	yes
 ALL_TARGET=	msuck
 

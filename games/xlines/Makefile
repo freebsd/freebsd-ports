@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Remove as many balls from board as you can
-
 USE_QT_VER=	1
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	XMMS Input plugin for playing TFMX tunes
-
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes

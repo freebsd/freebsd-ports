@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A tool for statically checking sourcecode for security vulnerabilities
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes

@@ -8,7 +8,6 @@
 
 PORTNAME=	eboxy
 PORTVERSION=	0.3.3
-PORTCOMMENT=	Create simple GUI interfaces for entertainment PC
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bluelightning.org/ebox/files/eboxy/

@@ -15,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
-PORTCOMMENT=	A tool for generating translations of strings used in i10 Qt programs
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes

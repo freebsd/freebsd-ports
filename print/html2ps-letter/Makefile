@@ -14,8 +14,6 @@ DISTNAME=	html2ps-1.0b3
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	HTML to PostScript converter
-
 BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		djpeg:${PORTSDIR}/graphics/jpeg \
 		giftopnm:${PORTSDIR}/graphics/netpbm \

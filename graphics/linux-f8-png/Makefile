@@ -13,6 +13,4 @@ MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 
 RPM_SET=	libpng-${PORTVERSION}-0.7x.3.${MACHINE_ARCH}.rpm
 
-PORTCOMMENT=	RPM of png lib
-
 .include "../../x11-toolkits/linux-gtk/Makefile"

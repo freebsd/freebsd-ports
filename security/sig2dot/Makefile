@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.pl
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GPG/PGP Keyring Graph Generator
-
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

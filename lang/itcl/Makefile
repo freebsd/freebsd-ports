@@ -14,8 +14,6 @@ DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	[incr Tcl] (A.K.A. "itcl")
-
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/itcl

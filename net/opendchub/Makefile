@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	Unofficial Unix version of the Direct Connect Hub software
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

@@ -13,8 +13,6 @@ MASTER_SITES=	http://kouli.iki.fi/~vlaurika/libtre/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A lightweight fully POSIX compliant regexp matching library
-
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

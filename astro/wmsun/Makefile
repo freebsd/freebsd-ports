@@ -12,8 +12,6 @@ DISTNAME=	wmSun-1.03
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A dockapp that displays the rise and set time of the sun
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
 
 USE_X_PREFIX=	yes

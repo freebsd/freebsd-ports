@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	System monitoring utility graphicaly showing cpu load and status
-
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh

@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.ldc.usb.ve/~96-28234/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Crossword Generator
-
 WRKSRC=		${WRKDIR}/Crossword
 USE_REINPLACE=	yes
 

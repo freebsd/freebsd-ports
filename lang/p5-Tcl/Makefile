@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A Tcl extension module for Perl5
-
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
 PERL_CONFIGURE=	yes

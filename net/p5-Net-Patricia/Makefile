@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl module for fast IP address lookups
-
 PERL_CONFIGURE=	YES
 
 MAN3=		Net::Patricia.3

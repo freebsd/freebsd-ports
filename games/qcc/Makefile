@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	The QuakeC compiler, for building custom games of Quake
-
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 

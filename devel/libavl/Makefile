@@ -15,8 +15,6 @@ DISTNAME=	avl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A library for balanced binary trees
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

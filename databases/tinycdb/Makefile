@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.corpit.ru/pub/tinycdb/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Analogous to cdb, but faster
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 

@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.copyleft.no/projects/fluxlib/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	High-level C library for development purposes
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14

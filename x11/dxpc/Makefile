@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
 
 MAINTAINER=	ports@freebsd.org
 
-PORTCOMMENT=	Compressing X protocol proxy designed to support X11 over slow links
-
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 MAN1=		dxpc.1

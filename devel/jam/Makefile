@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp1.perforce.com/pub/jam/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A build utility like make(1)
-
 ONLY_FOR_ARCHS=	alpha i386
 
 USE_ZIP=	yes

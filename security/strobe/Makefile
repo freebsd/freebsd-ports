@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fast scatter/gather TCP port scanner
-
 WRKSRC=		${WRKDIR}/strobe
 ALL_TARGET=	strobe
 MAN1=		strobe.1

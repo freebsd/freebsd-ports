@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.gz.sh
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A neat script to make self-extracting archives
-
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}

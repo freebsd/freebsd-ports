@@ -7,7 +7,6 @@
 PORTNAME=	sqsh
 PORTVERSION=	2.1
 PORTREVISION=	1
-PORTCOMMENT=	Interactive tool for querying Sybase database servers
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqsh.org/
 EXTRACT_SUFX=	-src.tar.gz

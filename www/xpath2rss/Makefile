@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	HTML to RSS converter
-
 RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes

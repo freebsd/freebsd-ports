@@ -15,8 +15,6 @@ DISTFILES=	${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Fonts used by GNU Ghostscript
-
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
 .include <bsd.port.pre.mk>

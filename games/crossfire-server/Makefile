@@ -7,7 +7,6 @@
 
 PORTNAME=	crossfire
 PORTVERSION=	1.4.0
-PORTCOMMENT=	Server for multiplayer graphical arcade and adventure game
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \

@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Converts among various molecular file formats
-
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 post-build:

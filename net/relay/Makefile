@@ -16,8 +16,6 @@ DISTNAME=	relay
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	TCP proxy server with telnet, ftp, finger client wrappers
-
 IS_INTERACTIVE=	'must set server hostname in relay.h'
 
 do-install:

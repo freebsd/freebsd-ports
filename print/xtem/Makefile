@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}_texmenu.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Tcl/Tk-based development menu (environment?) for TeX
-
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 .if defined(BUILD_IT_ALL)
 RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \

@@ -12,8 +12,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GTK-based GUI frontend for cdrdao, disk-at-once audio CD recorder
-
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/audio/cdrdao
 
 USE_GNOMENG=	yes

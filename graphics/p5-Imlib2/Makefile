@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Perl bindings for Imlib2
-
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 
 PERL_CONFIGURE=	yes

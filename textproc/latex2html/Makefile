@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Convert LaTeX documents to HTML
-
 .include <bsd.port.pre.mk>
 
 # Global variables

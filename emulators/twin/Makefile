@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Willows Toolkit for migrating and developing Windows applications
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes

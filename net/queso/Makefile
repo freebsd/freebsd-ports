@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Determine the remote OS using simple tcp packets
-
 GNU_CONFIGURE=  yes
 
 .include <bsd.port.pre.mk>

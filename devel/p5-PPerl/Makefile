@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Make perl scripts persistent in memory
-
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 

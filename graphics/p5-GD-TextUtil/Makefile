@@ -15,8 +15,6 @@ DISTNAME=	GDTextUtil-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Text utilities for use with GD drawing package
-
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 PERL_CONFIGURE=	YES

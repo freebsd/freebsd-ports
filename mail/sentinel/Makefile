@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Sentinel is a sendmail milter API implementation
-
 USE_REINPLACE=	yes
 MAKEFILE=	Makefile.FreeBSD
 ALL_TARGET=	sentinel

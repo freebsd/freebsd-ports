@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	apps/graphics/misc
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Character Animation Viewer for Everyone
-
 GNU_CONFIGURE=	yes
 
 MANCOMPRESSED=	yes

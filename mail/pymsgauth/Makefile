@@ -7,7 +7,6 @@
 
 PORTNAME=	pymsgauth
 PORTVERSION=	2.0.0
-PORTCOMMENT=	Automatically process qsecretary confirmation requests
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/pymsgauth/
 

@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	sane-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
-
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
 USE_GNOMENG=	yes

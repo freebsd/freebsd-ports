@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A re-port of a perl5 interface to Tk8.0p2
-
 USE_XLIB=	yes
 PERL_CONFIGURE=	yes
 

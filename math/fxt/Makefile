@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	FFT code and related stuff
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes

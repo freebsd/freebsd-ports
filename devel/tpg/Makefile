@@ -8,7 +8,6 @@
 
 PORTNAME=	tpg
 PORTVERSION=	2.1.3
-PORTCOMMENT=	Toy Parser Generator -- A parser generator in Python
 CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}

@@ -18,8 +18,6 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Toolkit and library for raster image processing
-
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnetpbm.a:${PORTSDIR}/graphics/netpbm
 

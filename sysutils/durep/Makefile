@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.hibernaculum.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Utility for monitoring disk usage in a more visual way than du
-
 USE_PERL5=	yes
 
 MAN1=		durep.1
