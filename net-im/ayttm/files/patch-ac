@@ -1,15 +1,3 @@
---- src/gtkhtml.c.orig	Wed May  3 17:19:38 2000
-+++ src/gtkhtml.c	Wed May  3 17:20:13 2000
-@@ -528,7 +528,7 @@
- 	{
- 		return my_font;
- 	}
--	my_font = gdk_font_load(font_name);
-+	my_font = gdk_fontset_load(font_name);
- 	if( !my_font )
- 	{
- 		if( italic == 1 )
-
 --- src/main.c.orig	Mon Jan 31 19:49:57 2000
 +++ src/main.c	Wed May  3 17:18:11 2000
 @@ -123,6 +123,7 @@
