@@ -1,0 +1,64 @@
+*** Imakefile.orig	Wed Jun  1 17:11:10 1994
+--- Imakefile	Sun Mar  5 23:43:55 1995
+***************
+*** 5,24 ****
+  XCOMM This is the directory where the highscore, level & sound data will be 
+  XCOMM placed. Default will be the current directory.
+  
+!     XBOING_DIR = .
+  
+  XCOMM These are some defines that must be set. Some may be overwritten in the
+  XCOMM machine arch section.
+  
+!     XPMLIB 				= -L../xpm3.4/lib -lXpm
+!     XPMINCLUDE 			= -I../xpm3.4/lib
+      XBOINGINCLUDE 		= -I./include
+      LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
+      SOUNDS_DIR 			= $(XBOING_DIR)/sounds
+      BACKUP_DIR 			= $(XBOING_DIR)/../backups
+      HIGH_SCORE_FILE 	= $(XBOING_DIR)/xboing.scr
+!     AUDIO_AVAILABLE 	= False
+!     AUDIO_SRC 			= audio/NOaudio.c
+      AUDIO_INCLUDE 		=
+      AUDIO_LIB 			=
+  
+--- 5,24 ----
+  XCOMM This is the directory where the highscore, level & sound data will be 
+  XCOMM placed. Default will be the current directory.
+  
+!     XBOING_DIR = /usr/X11R6/lib/X11/xboing
+  
+  XCOMM These are some defines that must be set. Some may be overwritten in the
+  XCOMM machine arch section.
+  
+!     XPMLIB 				= -lXpm
+!     XPMINCLUDE 			= -I/usr/X11R6/include/X11
+      XBOINGINCLUDE 		= -I./include
+      LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
+      SOUNDS_DIR 			= $(XBOING_DIR)/sounds
+      BACKUP_DIR 			= $(XBOING_DIR)/../backups
+      HIGH_SCORE_FILE 	= $(XBOING_DIR)/xboing.scr
+!     AUDIO_AVAILABLE 	= True
+!     AUDIO_SRC 			= audio/LINUXaudio.c
+      AUDIO_INCLUDE 		=
+      AUDIO_LIB 			=
+  
+***************
+*** 98,105 ****
+          -DLEVEL_INSTALL_DIR=\"$(LEVEL_INSTALL_DIR)\" \
+          -DAUDIO_AVAILABLE=\"$(AUDIO_AVAILABLE)\" \
+          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
+!         -DREADMEP_FILE=\"$(XBOING_DIR)/docs/problems.doc\"
+! XCOMM   -DUSE_FLOCK=\"True\" \
+  XCOMM   -DNO_LOCKING=\"True\" 
+  
+      LOCAL_LIBRARIES = $(AUDIO_LIB) $(XPMLIB) $(XLIB) -lm
+--- 98,105 ----
+          -DLEVEL_INSTALL_DIR=\"$(LEVEL_INSTALL_DIR)\" \
+          -DAUDIO_AVAILABLE=\"$(AUDIO_AVAILABLE)\" \
+          -DSOUNDS_DIR=\"$(SOUNDS_DIR)\" \
+!         -DREADMEP_FILE=\"$(XBOING_DIR)/docs/problems.doc\" \
+!         -DUSE_FLOCK=\"True\"
+  XCOMM   -DNO_LOCKING=\"True\" 
+  
+      LOCAL_LIBRARIES = $(AUDIO_LIB) $(XPMLIB) $(XLIB) -lm
