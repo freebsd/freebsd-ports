@@ -13,6 +13,7 @@ DISTFILES=	stveflinuxdedicated120.zip
 MAINTAINER=	nik@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
+USE_ZIP=	yes
 USE_LINUX_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Linux
