@@ -18,7 +18,6 @@ share/gnome/application-registry/gthumb.applications
 share/gnome/applications/gthumb.desktop
 share/gnome/gnome-2.0/ui/GNOME_GThumb_CatalogView.xml
 share/gnome/gnome-2.0/ui/GNOME_GThumb_Viewer.xml
-share/gnome/gnome-2.0/ui/gthumb-ui.xml
 share/gnome/gthumb/albumthemes/BlueStripes/back.png
 share/gnome/gthumb/albumthemes/BlueStripes/background.png
 share/gnome/gthumb/albumthemes/BlueStripes/bottom.png
@@ -161,6 +160,7 @@ share/locale/pt/LC_MESSAGES/gthumb.mo
 share/locale/pt_BR/LC_MESSAGES/gthumb.mo
 share/locale/ru/LC_MESSAGES/gthumb.mo
 share/locale/sk/LC_MESSAGES/gthumb.mo
+share/locale/sq/LC_MESSAGES/gthumb.mo
 share/locale/sr/LC_MESSAGES/gthumb.mo
 share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
