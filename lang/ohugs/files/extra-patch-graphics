@@ -1,0 +1,53 @@
+diff -ruN ohugs-0.5/src/Makefile ohugs-0.5-graphics/src/Makefile
+--- ohugs-0.5/src/Makefile	Fri Jan 26 19:37:15 2001
++++ ohugs-0.5-graphics/src/Makefile	Wed Mar  5 13:39:23 2003
+@@ -41,12 +41,12 @@
+ # and set O_TK to 0 in prelude.h.
+ 
+ # Solaris
+-CFLAGS		= -g -I/usr/X11/include -I/usr/pd/tcl/8.0/include
+-LDFLAGS    	= -lm -lX11 -lsocket -lreadline -ltermcap -lnsl -R/usr/X11/lib -R/usr/pd/tcl/8.0/lib -L/usr/pd/tcl/8.0/lib -ltk8.0 -ltcl8.0 -ltix4.1.8.0
++#CFLAGS		= -g -I/usr/X11/include -I/usr/pd/tcl/8.0/include
++#LDFLAGS    	= -lm -lX11 -lsocket -lreadline -ltermcap -lnsl -R/usr/X11/lib -R/usr/pd/tcl/8.0/lib -L/usr/pd/tcl/8.0/lib -ltk8.0 -ltcl8.0 -ltix4.1.8.0
+ 
+ # NetBSD
+-#CFLAGS		= -g -I/usr/X11/include -I/usr/pkg/include/tk8.0  -I/usr/pkg/include -I/usr/pkg/include/tcl8.0
+-#LDFLAGS    	= -lm -lreadline -ltermcap -L/usr/pkg/lib -Wl,-R/usr/pkg/lib -L/usr/X11/lib -Wl,-R/usr/X11/lib -lX11 -ltk80 -ltcl80 -ltix4180
++CFLAGS		= -g -I/usr/local/include/tcl8.2 -I/usr/local/include/tk8.2 -I/usr/local/include -I/usr/X11R6/include 
++LDFLAGS    	= -lm -lreadline -ltermcap -L/usr/local/lib -ltk82 -ltcl82 -L/usr/local/lib -ltix4182 
+ 
+ # Linux
+ #CFLAGS		= -g -I/usr/X11R6/include
+diff -ruN ohugs-0.5/src/parser.y ohugs-0.5-graphics/src/parser.y
+--- ohugs-0.5/src/parser.y	Wed Nov 29 23:13:01 2000
++++ ohugs-0.5-graphics/src/parser.y	Wed Mar  5 13:38:25 2003
+@@ -564,7 +564,7 @@
+ handle    : HANDLE beg malts end        {$$ = gc4(rev($3));}
+           ;
+ ohandle   : handle                      {$$ = $1;}
+-          | /*empty*/                   {$$ = gc0(NIL);}
++          | /*empty*/                   {$$ = gc0(NIL);};
+ mexp      : mopExp COCO sigType         {$$ = gc3(ap(ESIGN,pair($1,$3)));}
+ 	  | mopExp                      {$$ = $1;}
+ 	  ;
+diff -ruN ohugs-0.5/src/prelude.h ohugs-0.5-graphics/src/prelude.h
+--- ohugs-0.5/src/prelude.h	Wed Jan 31 00:18:40 2001
++++ ohugs-0.5-graphics/src/prelude.h	Wed Mar  5 13:37:59 2003
+@@ -22,7 +22,7 @@
+  * update the source.
+  *-------------------------------------------------------------------------*/
+ 
+-#define SOLARIS  1	/* For Solaris 2.4				   */
++#define SOLARIS  0	/* For Solaris 2.4				   */
+ #define SUNOS    0      /* For Sun 3/Sun 4 running SunOs 4.x		   */
+ #define BCWIN16	 0	/* For Windows 3.1, Borland C++ 4.52		   */
+ #define BCWIN32  0	/* For Windows 32,  Borland C++ 4.52		   */
+@@ -44,7 +44,7 @@
+ #define AIX	 0	/* For IBM AIX on RS/6000 using GCC		UN */
+ #define ATARI	 0	/* For Atari ST/STE/TT/Falcon w/ Lattice C 5.52 UN */
+ #define SGI4	 0	/* For SiliconGraphics Indigo, IRIX v*4*.0.5	UN */
+-#define NETBSD	 0	/* For NetBSD-current				UN */
++#define NETBSD	 1	/* For NetBSD-current				UN */
+ #define MACWP	 0	/* For Macintosh PPC/68K using CodeWarrior Pro     */
+ 
+ /*---------------------------------------------------------------------------
