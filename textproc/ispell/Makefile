@@ -4,7 +4,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.27 1998/12/03 02:58:57 asami Exp $
+# $Id: Makefile,v 1.28 1999/07/04 18:21:51 obrien Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -18,33 +18,33 @@ PATCHFILES=     ispell-html-mode.patch
 
 MAINTAINER=	jmz@FreeBSD.org
 
-MAKE_FLAGS=	TMPDIR=${WRKDIR} -f 
-MAN1=		buildhash.1 findaffix.1 ispell.1 munchlist.1 \
-		sq.1 tryaffix.1 unsq.1
+MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
+MAN1=		ispell.1 sq.1
 MAN4=		ispell.4 english.4
+MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 munchlist.1\
+		ispell.1 tryaffix.1 sq.1 unsq.1
 
 .if !defined(ISPELL_FR)
 .if (make(patch) || make(configure) || make(build) || make (install))
 .BEGIN:
-	@echo '*********************************************************' 
-	@echo '* Note that you can build a french or british version   *' 
+	@echo '*********************************************************'
+	@echo '* Note that you can build a french or british version   *'
 	@echo '* by typing "make french" or "make british"             *'
-	@echo '*********************************************************' 
+	@echo '*********************************************************'
 .endif
 .else
 EXTRA_DICT=	francais-IREQ-1.4.tar.gz
 MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
 DISTFILES+=	${EXTRA_DICT}
-.endif	
+.endif
 
 pre-extract:
-.if !defined(LANG) 
-	@echo '******************************************************' 
-	@echo '* Note that you can build a british version by       *' 
-	@echo '* typing "make british" following a "make clean"     *' 
-	@echo '******************************************************' 
-.endif	
-
+.if !defined(LANG)
+	@echo '******************************************************'
+	@echo '* Note that you can build a british version by       *'
+	@echo '* typing "make british" following a "make clean"     *'
+	@echo '******************************************************'
+.endif
 
 pre-configure:
 .if defined(EXTRA_DICT)
@@ -58,7 +58,7 @@ post-configure:
 
 british:
 	@echo "Okay, making a british version of ispell...."
-	@${MAKE} ${.MAKEFLAGS} LANG=british all 
+	@${MAKE} ${.MAKEFLAGS} LANG=british all
 
 french:
 	@echo "Okay, making a french/english version of ispell...."
