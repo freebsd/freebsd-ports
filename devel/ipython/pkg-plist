@@ -15,6 +15,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Debugger.py
 %%PYTHON_SITELIBDIR%%/IPython/Debugger.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Debugger.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/InterpreterExec.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/InterpreterExec.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/InterpreterExec.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/InterpreterPasteInput.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/InterpreterPasteInput.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/InterpreterPasteInput.pyo
@@ -79,8 +82,10 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-math
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-numeric
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-physics
+%%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-pysh
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-scipy
 %%PYTHON_SITELIBDIR%%/IPython/UserConfig/ipythonrc-tutorial
+%%PYTHON_SITELIBDIR%%/IPython/UserConfig/pysh.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyo
@@ -117,9 +122,14 @@ bin/pycolor
 %%DOCSDIR%%/examples/magic_grepl.py
 %%DOCSDIR%%/manual.pdf
 %%DOCSDIR%%/manual/footnode.html
+%%DOCSDIR%%/manual/img1.png
+%%DOCSDIR%%/manual/img2.png
+%%DOCSDIR%%/manual/img3.png
 %%DOCSDIR%%/manual/index.html
 %%DOCSDIR%%/manual/manual.css
 %%DOCSDIR%%/manual/manual.html
+%%DOCSDIR%%/manual/next.png
+%%DOCSDIR%%/manual/next_g.png
 %%DOCSDIR%%/manual/node1.html
 %%DOCSDIR%%/manual/node10.html
 %%DOCSDIR%%/manual/node11.html
@@ -128,6 +138,7 @@ bin/pycolor
 %%DOCSDIR%%/manual/node14.html
 %%DOCSDIR%%/manual/node15.html
 %%DOCSDIR%%/manual/node16.html
+%%DOCSDIR%%/manual/node17.html
 %%DOCSDIR%%/manual/node2.html
 %%DOCSDIR%%/manual/node3.html
 %%DOCSDIR%%/manual/node4.html
@@ -136,6 +147,10 @@ bin/pycolor
 %%DOCSDIR%%/manual/node7.html
 %%DOCSDIR%%/manual/node8.html
 %%DOCSDIR%%/manual/node9.html
+%%DOCSDIR%%/manual/prev.png
+%%DOCSDIR%%/manual/prev_g.png
+%%DOCSDIR%%/manual/up.png
+%%DOCSDIR%%/manual/up_g.png
 %%DOCSDIR%%/new_design.pdf
 %%DOCSDIR%%/pycon.ico
 @dirrm %%DOCSDIR%%/manual
