@@ -1,36 +1,11 @@
-*** nmbd/nmbd_winsserver.c.orig	Wed Jul 21 10:25:11 1999
---- nmbd/nmbd_winsserver.c	Mon Dec 27 04:46:26 1999
-***************
-*** 152,158 ****
-    start_async_dns();
-  #endif
-  
-!   pstrcpy(fname,lp_lockdir());
-    trim_string(fname,NULL,"/");
-    pstrcat(fname,"/");
-    pstrcat(fname,WINS_LIST);
---- 152,158 ----
-    start_async_dns();
-  #endif
-  
-!   pstrcpy(fname,"/var/db");
-    trim_string(fname,NULL,"/");
-    pstrcat(fname,"/");
-    pstrcat(fname,WINS_LIST);
-***************
-*** 1551,1557 ****
-  	  }
-    }
-  
-!   slprintf(fname,sizeof(fname),"%s/%s", lp_lockdir(), WINS_LIST);
-    all_string_sub(fname,"//", "/", 0);
-    slprintf(fnamenew,sizeof(fnamenew),"%s.%u", fname, (unsigned int)getpid());
-  
---- 1551,1557 ----
-  	  }
-    }
-  
-!   slprintf(fname,sizeof(fname),"%s/%s", "/var/db", WINS_LIST);
-    all_string_sub(fname,"//", "/", 0);
-    slprintf(fnamenew,sizeof(fnamenew),"%s.%u", fname, (unsigned int)getpid());
-  
+--- script/convert_smbpasswd.orig	Thu Nov  5 11:50:17 1998
++++ script/convert_smbpasswd	Wed Feb 10 00:02:01 1999
+@@ -7,7 +7,7 @@
+ # with trying to work out how to get the seconds since 1970
+ # in awk or the shell. JRA.
+ #
+-nawk 'BEGIN {FS=":"} 
++awk 'BEGIN {FS=":"} 
+ {
+ 	if( $0 ~ "^#" ) {
+ 		print $0

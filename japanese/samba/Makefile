@@ -6,17 +6,25 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.0.5a.2
+PORTVERSION=	2.0.7
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/${SAMBA_JP_NAME}/ \
-		http://www3.osk.3web.ne.jp/~pcmaster/network/samba/
-DISTNAME=	${SAMBA_JP_NAME}-1.3
+MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
+		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
+		ftp://SunSITE.sut.ac.jp/pub/archives/packages/samba/samba-jp/%SUBDIR%/ \
+		ftp://ftp.plathome.co.jp/pub/samba/samba-jp/%SUBDIR%/ \
+		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
+		ftp://ftp.tutrp.tut.ac.jp/pub/mirror/samba-jp/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
+PKGNAMESUFFIX=	-ja
+DISTNAME=	${SAMBA_JA_VERSION}
 
-MAINTAINER=	pcmaster@osk3.3web.ne.jp
+MAINTAINER=	nakaji@jp.FreeBSD.org
+
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
 
-SAMBA_JP_NAME=	${PORTNAME}-${PORTVERSION:R}-JP${PORTVERSION:E}
+SAMBA_JA_VERSION=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-1.2
 
 # directories
 VARDIR=		/var
@@ -29,9 +37,14 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS=	--with-i18n-swat --with-included-gettext \
+		--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
-		--with-lockdir=${VARDIR}/spool/lock --with-privatedir=${SAMBA_PRIVATE}
+		--with-sambabook=${PREFIX}/share/swat/using_samba \
+		--with-lockdir=${VARDIR}/spool/lock \
+		--with-privatedir=${SAMBA_PRIVATE} \
+		--with-swat-langfile=${PREFIX}/share/swat-i18n.txt
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
@@ -39,21 +52,25 @@ CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MANLANG=	"" ja
 MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
-		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1
+		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1 \
+		make_unicodemap.1
 MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
 MAN7=		samba.7
-MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 \
-		smbmount.8 smbumount.8 smbmnt.8
+MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8
+MANLANG=	"" ja
 
-post-extract:
-	${MV} ${WRKDIR}/${SAMBA_JP_NAME} ${WRKDIR}/${DISTNAME}
+pre-install:
+	${RM} -f ${WRKDIR}/${DISTNAME}/docs/manpages/smbmnt.8
+	${RM} -f ${WRKDIR}/${DISTNAME}/docs/manpages/smbmount.8
+	${RM} -f ${WRKDIR}/${DISTNAME}/docs/manpages/smbumount.8
+	${RM} -f ${WRKDIR}/${DISTNAME}/docs/ja/manpages/smbmnt.8.man
+	${RM} -f ${WRKDIR}/${DISTNAME}/docs/ja/manpages/smbmount.8.man
+	${RM} -f ${WRKDIR}/${DISTNAME}/docs/ja/manpages/smbumount.8.man
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
 	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
-	${CP} -rp ${WRKDIR}/${DISTNAME}/samba-jp/examples/* ${PREFIX}/share/examples/samba
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
 		${INSTALL_SCRIPT} ${FILESDIR}/samba.sh.sample 		\
@@ -80,6 +97,12 @@ post-install:
 	${CHMOD} 500 ${SAMBA_PRIVATE}
 	${CHOWN} root.wheel ${PREFIX}/bin/smbpasswd
 	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
+.if defined(PACKAGE_BUILDING)
+	${ECHO} "private/smbpasswd" >> ${TMPPLIST}
+	${ECHO} "@dirrm private" >> ${TMPPLIST}
+.else
+	${ECHO} "@unexec echo \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
+.endif
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba
@@ -88,34 +111,20 @@ post-install:
 			${WRKDIR}/${DISTNAME}/COPYING			\
 			${WRKDIR}/${DISTNAME}/Manifest			\
 			${WRKDIR}/${DISTNAME}/Read-Manifest-Now		\
-			${WRKDIR}/${DISTNAME}/README-smbmount		\
 			${WRKDIR}/${DISTNAME}/Roadmap			\
 			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
-			${WRKDIR}/${DISTNAME}/WHATSNEW-jp		\
-			${WRKDIR}/${DISTNAME}/WHATSNEW-jp.sjis.txt     	\
-			${WRKDIR}/${DISTNAME}/samba-jp/reg/*.reg       	\
+			${WRKDIR}/${DISTNAME}/docs/*.reg		\
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
 			${WRKDIR}/${DISTNAME}/docs/announce		\
 			${WRKDIR}/${DISTNAME}/docs/history ; do		\
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
 	done
-	for i in faq htmldocs manpages textdocs yodldocs ; do		\
+	for i in faq htmldocs textdocs yodldocs ; do			\
 		${MKDIR} ${PREFIX}/share/doc/samba/$$i ;		\
 		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
-			${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/$$i ;\
-		done							\
-	done
-	${MKDIR} ${PREFIX}/share/doc/samba/ja
-	for i in ${WRKDIR}/${DISTNAME}/samba-jp/CREDITS.txt	       	\
-			${WRKDIR}/${DISTNAME}/samba-jp/ML.txt		\
-			${WRKDIR}/${DISTNAME}/samba-jp/PROGRESS.txt	\
-			${WRKDIR}/${DISTNAME}/samba-jp/README.txt ; do	\
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/ja ;\
-	done
-	for i in man docs ; do						\
-		${MKDIR} ${PREFIX}/share/doc/samba/ja/$$i ;		\
-		for j in ${WRKDIR}/${DISTNAME}/samba-jp/$$i/* ; do	\
-			${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/ja/$$i ;\
+			if [ $$j != ${WRKDIR}/${DISTNAME}/docs/htmldocs/using_samba ] ; then \
+				${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/$$i ;\
+			fi; \
 		done							\
 	done
 	${MKDIR} ${PREFIX}/share/doc/samba
