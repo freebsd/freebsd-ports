@@ -59,10 +59,6 @@ CONFIGURE_ARGS+=--with-dummy-values
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	plist is incorrect for 4.x.  Please wait to be fixed.
-.endif
-
 .if defined(WITHOUT_PERL)
 PLIST_SUB+=	WITH_PERL="@comment "
 .else
@@ -234,8 +230,8 @@ post-configure:
 .if !defined(WITHOUT_PERL)
 post-build:
 	${FIND} ${WRKSRC}/perl -name Makefile | \
-	 ${XARGS} ${PERL} -pi -e '\
-		s!^(PREFIX) = /usr/local!$$1 = ${PREFIX}!; \
+	 ${XARGS} ${REINPLACE_CMD} -e '\
+		s!^(PREFIX) = .*!$$1 = ${PREFIX}!; \
 		s!^(INSTALLMAN3DIR) = /usr/local!$$1 = \$$\(PREFIX\)!; \
 		s! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!; \
 		'
