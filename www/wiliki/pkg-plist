@@ -1,0 +1,13 @@
+www/cgi-bin/wiliki.cgi.dist
+@unexec rmdir %D/www/cgi-bin 2>/dev/null || true
+share/gauche/site/lib/wiliki.scm
+share/gauche/site/lib/wiliki/macro.scm
+share/gauche/site/lib/wiliki/mcatalog.scm
+share/gauche/site/lib/wiliki/msgs.jp
+share/gauche/site/lib/wiliki/pasttime.scm
+share/gauche/site/lib/wiliki/rss.scm
+@dirrm share/gauche/site/lib/wiliki
+%%EXAMPLESDIR%%/wiliki-sample.css
+@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p /var/wiliki
+@exec chown www:www /var/wiliki

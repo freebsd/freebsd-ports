@@ -520,6 +520,7 @@
     SUBDIR += webstats
     SUBDIR += webstone
     SUBDIR += webstone-ssl
+    SUBDIR += wiliki
     SUBDIR += wml
     SUBDIR += wmnetselect
     SUBDIR += wsmake
