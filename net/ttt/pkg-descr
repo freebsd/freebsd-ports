@@ -1,7 +1,7 @@
 
-	TTT: Tele Traffic Tapper (version 1.5)
+	TTT: Tele Traffic Tapper (version 1.6)
 
-					2000/06/09
+					2000/12/21
 
 ttt is yet another decendant of tcpdump but it is capable of real-time,
 graphical, and remote traffic-monitoring.  ttt won't replace tcpdump,
