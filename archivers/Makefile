@@ -25,6 +25,7 @@
     SUBDIR += hffzip
     SUBDIR += hpack.non-usa.only
     SUBDIR += jzip.org
+    SUBDIR += jzlib
     SUBDIR += lbrate
     SUBDIR += lha
     SUBDIR += libarc
