@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nbench
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/mayer/
 DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
