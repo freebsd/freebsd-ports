@@ -46,7 +46,7 @@ MAN8=		v4l-conf.8
 .if ${OSVERSION} < 500000
 ONLY_FOR_ARCHS=	i386
 .else
-ONLY_FOR_ARCHS=	alpha i386 ia64
+ONLY_FOR_ARCHS=	alpha i386
 .endif
 
 .if defined(WITH_LIBZVBI)
