@@ -66,7 +66,11 @@ SCRIPTS_ENV+=	OSVERSION=${OSVERSION} \
 		BuildCIDFonts=${BuildCIDFonts} \
 		BuildTTFonts=${BuildTTFonts}
 INSTALL_TARGET=	install install.man
+.if ${OSVERSION} < 500000
 LATEST_LINK=	imake-4
+.else
+LATEST_LINK=	imake
+.endif
 # ---
 # User Config:
 # All variables are same as Imake config macros.
