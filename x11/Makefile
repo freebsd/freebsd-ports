@@ -71,6 +71,7 @@
     SUBDIR += wdm
     SUBDIR += wmbutton
     SUBDIR += wmmatrix
+    SUBDIR += wrapper
     SUBDIR += wterm
     SUBDIR += x3270
     SUBDIR += xaniroc
