@@ -12,33 +12,33 @@
 ***************
 *** 19,24 ****
   #
-! # canonical_maps = dbm:/etc/postfix/canonical
-! # canonical_maps = hash:/etc/postfix/canonical
-! # canonical_maps = hash:/etc/postfix/canonical, nis:canonical
-! # canonical_maps = hash:/etc/postfix/canonical, netinfo:/canonical
+! #canonical_maps = dbm:/etc/postfix/canonical
+! #canonical_maps = hash:/etc/postfix/canonical
+! #canonical_maps = hash:/etc/postfix/canonical, nis:canonical
+! #canonical_maps = hash:/etc/postfix/canonical, netinfo:/canonical
   canonical_maps = 
 --- 19,24 ----
   #
-! # canonical_maps = dbm:!!PREFIX!!/etc/postfix/canonical
-! # canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical
-! # canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical, nis:canonical
-! # canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical, netinfo:/canonical
+! #canonical_maps = dbm:!!PREFIX!!/etc/postfix/canonical
+! #canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical
+! #canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical, nis:canonical
+! #canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical, netinfo:/canonical
   canonical_maps = 
 ***************
 *** 32,34 ****
   #
-! # recipient_canonical_maps = hash:/etc/postfix/recipient_canonical
+! #recipient_canonical_maps = hash:/etc/postfix/recipient_canonical
   recipient_canonical_maps = 
 --- 32,34 ----
   #
-! # recipient_canonical_maps = hash:!!PREFIX!!/etc/postfix/recipient_canonical
+! #recipient_canonical_maps = hash:!!PREFIX!!/etc/postfix/recipient_canonical
   recipient_canonical_maps = 
 ***************
 *** 46,48 ****
   #
-! # sender_canonical_maps = hash:/etc/postfix/sender_canonical
+! #sender_canonical_maps = hash:/etc/postfix/sender_canonical
   sender_canonical_maps = 
 --- 46,48 ----
   #
-! # sender_canonical_maps = hash:!!PREFIX!!/etc/postfix/sender_canonical
+! #sender_canonical_maps = hash:!!PREFIX!!/etc/postfix/sender_canonical
   sender_canonical_maps = 
