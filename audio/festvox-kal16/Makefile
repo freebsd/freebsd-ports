@@ -18,9 +18,11 @@ DIST_SUBDIR=	festival
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	American English male voice, sampled at 16 kHz, for Festival
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \
-		${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:${.CURDIR}/../festlex-cmu
+RUN_DEPENDS=	\
+${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:\
+${PORTSDIR}/audio/festlex-poslex \
+${LOCALBASE}/share/festival/lib/dicts/cmu/cmulex.scm:\
+${PORTSDIR}/audio/festlex-cmu
 
 WRKSRC=		${WRKDIR}/festival
 

@@ -18,9 +18,11 @@ DIST_SUBDIR=	festival
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	British English male voice for Festival speech synthesis system
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \
-		${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:${.CURDIR}/../festlex-oald
+RUN_DEPENDS=	\
+${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:\
+${PORTSDIR}/audio/festlex-poslex \
+${LOCALBASE}/share/festival/lib/dicts/oald/oaldlex.scm:\
+${PORTSDIR}/audio/festlex-oald
 
 WRKSRC=		${WRKDIR}/festival
 
