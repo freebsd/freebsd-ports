@@ -1,7 +1,7 @@
 --- PATCHES Dec 2002 17:44:54 -0000	3.6
 +++ PATCHES Feb 2004 13:19:42 -0000
 @@ -0,0 +1 @@
-+patch-1.5.6.dw.maildir-mtime.1
++patch-1.5.7.ust.maildir-mtime.1
 --- browser.c Sep 2003 13:03:25 -0000	3.9
 +++ browser.c Feb 2004 13:19:42 -0000
 @@ -29,2 +29,3 @@
@@ -42,21 +42,49 @@
 -    add_folder (menu, state, buffer, &s, tmp->new);
 +    add_folder (menu, state, buffer, &s, tmp);
    }
---- buffy.c Feb 2004 17:50:43 -0000	3.9
-+++ buffy.c Feb 2004 13:19:42 -0000
-@@ -229,2 +229,3 @@ int mutt_parse_mailboxes (BUFFER *path, 
+--- buffy.c.orig	Sat Oct 30 23:40:07 2004
++++ buffy.c	Sat Feb  5 13:57:07 2005
+@@ -227,6 +227,7 @@
+     (*tmp)->new = 0;
+     (*tmp)->notified = 1;
      (*tmp)->newly_created = 0;
 +    (*tmp)->mtime = 0;
  
-@@ -260,2 +261,3 @@ int mutt_buffy_check (int force)
+ #ifdef BUFFY_SIZE
+     /* for buffy_size, it is important that if the folder is new (tested by
+@@ -258,6 +259,7 @@
+ {
+   BUFFY *tmp;
    struct stat sb;
 +  struct stat smd;
    struct dirent *de;
-@@ -299,2 +301,3 @@ int mutt_buffy_check (int force)
+   DIR *dirp;
+   char path[_POSIX_PATH_MAX];
+@@ -297,6 +299,7 @@
+   for (tmp = Incoming; tmp; tmp = tmp->next)
+   {
      tmp->new = 0;
 +    tmp->mtime = 0;
  
-@@ -383,6 +386,13 @@ int mutt_buffy_check (int force)
+ #ifdef USE_IMAP
+     if (mx_is_imap (tmp->path))
+@@ -370,21 +373,31 @@
+       case M_MAILDIR:
+ 
+ 	snprintf (path, sizeof (path), "%s/new", tmp->path);
++        stat (path, &smd);
++	tmp->mtime = smd.st_mtime;
+ 	if ((dirp = opendir (path)) == NULL)
+ 	{
+ 	  tmp->magic = 0;
+ 	  break;
+ 	}
++
+ 	while ((de = readdir (dirp)) != NULL)
+ 	{
+ 	  char *p;
+ 	  if (*de->d_name != '.' && 
+ 	      (!(p = strstr (de->d_name, ":2,")) || !strchr (p + 3, 'T')))
  	  {
 -	    /* one new and undeleted message is enough */
 -	    BuffyCount++;
@@ -74,6 +102,21 @@
 +	      tmp->mtime = smd.st_mtime;
 +	    }
  	  }
+ 	}
+ 	closedir (dirp);
+@@ -414,6 +427,12 @@
+ #ifdef BUFFY_SIZE
+     else if (Context && Context->path)
+       tmp->size = (long) sb.st_size;	/* update the size */
++#else
++    else if(tmp->magic == M_MAILDIR) {
++	snprintf (path, sizeof (path), "%s/new", tmp->path);
++        stat (path, &smd);
++	tmp->mtime = smd.st_mtime;
++    }
+ #endif
+ 
+     if (!tmp->new)
 --- buffy.h Dec 2002 11:19:39 -0000	3.2
 +++ buffy.h Feb 2004 13:19:42 -0000
 @@ -29,2 +29,3 @@ typedef struct buffy_t

@@ -42,15 +42,6 @@ diff -ru work.old/mutt-1.5.6/config.h.in work/mutt-1.5.6/config.h.in
 diff -ru work.old/mutt-1.5.6/configure work/mutt-1.5.6/configure
 --- configure	Sun Feb  1 19:22:06 2004
 +++ configure	Tue Feb 10 14:40:41 2004
-@@ -40,6 +40,8 @@
- ac_help="$ac_help
-     --with-gss[=PFX]         Compile in GSSAPI authentication for IMAP"
- ac_help="$ac_help
-+  --enable-imap-edit-threads Enable editing threads support for IMAP"
-+ac_help="$ac_help
-   --with-ssl[=PFX]           Compile in SSL support for POP/IMAP"
- ac_help="$ac_help
-   --with-nss[=PFX]           Compile in SSL support for POP/IMAP via NSS"
 @@ -5383,6 +5385,23 @@
  else
    USE_GSS_TRUE='#'
