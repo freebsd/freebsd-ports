@@ -1,0 +1,138 @@
+--- kplot3d/SetColor.cpp.orig	Sat Nov 27 08:05:33 1999
++++ kplot3d/SetColor.cpp	Sat Nov 27 08:28:36 1999
+@@ -148,9 +148,30 @@
+ 	Button_gray->setGeometry( 240, 90, 30, 30 );
+ 	Button_gray->setText( "" );
+ 	{
+-		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(10789024) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
+-		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
+-		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
++		QColorGroup normal(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
++		QColorGroup disabled(
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ) );
++		QColorGroup active(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
+ 		QPalette palette( normal, disabled, active );
+ 		Button_gray->setPalette( palette );
+ 	}
+@@ -161,9 +182,30 @@
+ 	Button_blue->setGeometry( 200, 90, 30, 30 );
+ 	Button_blue->setText( "" );
+ 	{
+-		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(8388608) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
+-		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
+-		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
++		QColorGroup normal(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)8388608 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
++		QColorGroup disabled(
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ) );
++		QColorGroup active(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
+ 		QPalette palette( normal, disabled, active );
+ 		Button_blue->setPalette( palette );
+ 	}
+@@ -174,9 +216,30 @@
+ 	Button_mag->setGeometry( 280, 90, 30, 30 );
+ 	Button_mag->setText( "" );
+ 	{
+-		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(8388736) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
+-		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
+-		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
++		QColorGroup normal(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)8388736 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
++		QColorGroup disabled(
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ) );
++		QColorGroup active(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
+ 		QPalette palette( normal, disabled, active );
+ 		Button_mag->setPalette( palette );
+ 	}
+@@ -186,9 +249,30 @@
+ 	Button_green->setGeometry( 320, 90, 30, 30 );
+ 	Button_green->setText( "" );
+ 	{
+-		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(32768) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
+-		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
+-		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(8421504) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
++		QColorGroup normal(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)32768 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
++		QColorGroup disabled(
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)12632256 ) );
++		QColorGroup active(
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)12632256 ),
++		    QColor( (unsigned int)16777215 ),
++		    QColor( (unsigned int)8421504 ),
++		    QColor( (unsigned int)10789024 ),
++		    QColor( (unsigned int)0 ),
++		    QColor( (unsigned int)16777215 ) );
+ 		QPalette palette( normal, disabled, active );
+ 		Button_green->setPalette( palette );
+ 	}

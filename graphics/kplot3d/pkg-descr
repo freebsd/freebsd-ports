@@ -1,0 +1,8 @@
+Kplot3d is KDE version of tool for plotting 3d surface
+of function z = f(x,y).  It supports shaded and grid
+(with erasing of invisible lines) modes, fast realtime
+surface rotation, printing result image, save images to
+local files.
+
+- Chris D. Faulhaber
+jedgar@fxp.org
