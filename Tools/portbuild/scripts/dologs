@@ -12,3 +12,5 @@ cd $home && ${scripts}/comparelogs $dir1 $dir2
 cd $home && ${scripts}/comparelogs $dir2 $dir1
 cd $home && ${scripts}/comparelogs $dir3 $dir4
 cd $home && ${scripts}/comparelogs $dir4 $dir3
+cd $home && ${scripts}/bothlogs $dir1 $dir2
+cd $home && ${scripts}/bothlogs $dir3 $dir4
