@@ -26,9 +26,6 @@ DISTNAME?=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 .if ${PORTNAME}==koffice-i18n && ${PORTVERSION}=="1.3.2"
 WRKSRC=		${WRKDIR}/kde-i18n-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 .endif
-.if ${PORTNAME}==kde-i18n
-BROKEN=         Wrong checksum and packing list, will be fixed ASAP
-.endif
 DIST_SUBDIR=	KDE/kde-i18n
 
 # nasty hack to force newer timestamps on cache
