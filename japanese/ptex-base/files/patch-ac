@@ -1,0 +1,30 @@
+--- klibtool.orig	Fri Dec 12 18:53:46 1997
++++ klibtool	Fri Feb  5 20:44:55 1999
+@@ -371,7 +371,7 @@
+         ot_args=`eval echo '$'args_SHARED_archive`
+         ot_prog=`eval echo '$'prog_SHARED_archive`
+         test -z "$ot_prog" && ot_prog=$CC
+-        cmdname="$ot_prog $ot_args -o"
++        cmdname="$ot_prog $ot_args"
+         $verbose "$0: replaced $old_ar with $cmdname."
+       fi
+       
+@@ -397,6 +397,9 @@
+                 lib_dir=.
+               fi
+               lib_basename=`basename $libname`
++	      if test $ot = SHARED; then
++	        cmdname="$cmdname -Wl,-soname,$lib_basename -o"
++		fi
+               lib_base=`echo $lib_basename | sed 's/[.0-9]*$//'`
+               
+               # We might have to run a command after making the library.
+@@ -669,7 +672,7 @@
+       exit 1
+     fi
+     $verbose "$0: dir = $dir, libname = $libname."
+-    version=`awk '$1 == "'$libname'" { print "." $2 "." $3 "." $4 }' $verfile`
++    version=`awk '$1 == "'$libname'" { print "." $2 }' $verfile`
+     $verbose "$0: version for $libname = $version."
+     echo $version
+     ;;
