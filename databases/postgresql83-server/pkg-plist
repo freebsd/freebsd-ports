@@ -128,6 +128,9 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/es/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_dump.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/fr/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/hr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/psql.mo
