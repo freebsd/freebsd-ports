@@ -8,7 +8,7 @@
 
 DISTNAME=	pgaccess-0.98
 CATEGORIES=	databases
-MASTER_SITES	ftp://ftp.flex.ro/pub/pgaccess/
+MASTER_SITES=	ftp://ftp.flex.ro/pub/pgaccess/
 
 MAINTAINER=	andreas@FreeBSD.org
 
