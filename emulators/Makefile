@@ -9,6 +9,7 @@
     SUBDIR += bsvc
     SUBDIR += cpmemu
     SUBDIR += cpmtools
+    SUBDIR += dgen-sdl
     SUBDIR += dlx
     SUBDIR += fmsx
     SUBDIR += frodo

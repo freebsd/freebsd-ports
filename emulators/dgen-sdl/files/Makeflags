@@ -1,0 +1,37 @@
+# This file contains the template for Makeflags
+
+SYSTEM = FreeBSD
+FEATURES =  -DASYNCHRONOUS_IO -DUSE_POSIX_SIGNALS -DUNSIGNED_AUDIO_DATA -DFORCE_XSHM -DNETPLAY
+
+LOGIC = netlogic
+
+XPMINCLUDE = 
+XPMLINKDIR = 
+
+BINDIR = ${PREFIX}/bin
+LIBDIR = ${PREFIX}/share/Maelstrom
+DATAFILES = Images/*.icon Images/*.cicn "Maelstrom Fonts" \
+            "Maelstrom Sounds" "Maelstrom Sprites"
+
+OBJS = main.o framebuf.o v_framebuf.o x11_framebuf.o vga_framebuf.o \
+       dga_framebuf.o fontserv.o sound.o Mac_Resource.o imagedump.o \
+       init.o $(LOGIC)/$(LOGIC).o \
+       controls.o scores.o dialog.o fastrand.o netscore.o checksum.o \
+       Utils.o shared.o myerror.o
+SOUNDOBJS = Maelstrom_sound.o Mac_Resource.o soundres.o mixer.o shared.o myerror.o
+
+X11INCLUDE = -I${X11BASE}/include
+INCLUDES = -I$(LOGIC) $(X11INCLUDE) $(XPMINCLUDE)
+CFLAGS += $(INCLUDES) $(FEATURES) \
+                       -pedantic -DSYSTEM=\"$(SYSTEM)\" -DLIBDIR=\"$(LIBDIR)\"
+EXTRALIBS = 
+X11LINKDIR = -L${X11BASE}/lib
+X11LIBS = -lXpm $(XPMLINKDIR) -lX11 -lXext $(X11LINKDIR)
+CSUMLIB = 
+LIBS = $(EXTRALIBS) $(X11LIBS) $(CSUMLIB)
+SOUNDLIBS = 
+
+INSTALL = install
+
+all: $(MAELSTROM)
+
