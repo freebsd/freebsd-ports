@@ -8,7 +8,8 @@
 PORTNAME=	xmms-quix3dn
 PORTVERSION=	4.4.1
 CATEGORIES=	audio
-MASTER_SITES=	http://nsys.by:8100/~mmts/quix/freebsd/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alex
 DISTNAME=	quix3dn-${PORTVERSION}-freebsd
 
 MAINTAINER=	alex@FreeBSD.org
