@@ -130,6 +130,7 @@
     SUBDIR += kinput2-wnn6
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
+    SUBDIR += kpcal
     SUBDIR += kterm
     SUBDIR += kterm16c
     SUBDIR += lambdamoo
