@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zebra
-PORTVERSION=	0.88
+PORTVERSION=	0.89
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
@@ -16,6 +16,9 @@ MAINTAINER=	andreas@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
+
+MAN1=		vtysh.1
+MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
 .include <bsd.port.pre.mk>
 
