@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	1.27
-PORTREVISION=	1
+PORTVERSION=	1.28
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
@@ -29,7 +28,7 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::Registry.3 Apache::SizeLimit.3 \
 		Apache::Status.3 Apache::Symbol.3 Apache::Symdump.3 \
 		Apache::Table.3 Apache::URI.3 Apache::Util.3 \
-		Apache::httpd_conf.3 Apache::src.3 Apache::test.3 \
+		Apache::httpd_conf.3 Apache::src.3 Apache::testold.3 \
 		Bundle::Apache.3 \
 		Apache::Debug.3 mod_perl.3 Apache::SIG.3 Apache::Resource.3 \
 		Apache::RegistryLoader.3 Apache::StatINC.3 Apache::Include.3 \
