@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	8.0.1
+PORTVERSION=	8.0.2
 CATEGORIES=	lang devel
 MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
