@@ -15,7 +15,7 @@ MASTER_SITES=	http://balsa.gnome.org/ \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A mail reader for the GNOME desktop
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client \
 		aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp

@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A mail reader for the GNOME 2 desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21 \
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21-client \
 		aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
