@@ -66,6 +66,11 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|<SDL/|<SDL11/|' ${WRKSRC}/libvo/*
 	@${REINPLACE_CMD} -e 's|-O3||;s|<termio.h>|<termios.h>|' ${WRKSRC}/configure
+# AMD64 prefers position independent code
+.if ${MACHINE_ARCH:L} == "amd64"
+	@${REINPLACE_CMD} -e 's|-prefer-non-pic||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/libmpeg2/Makefile.in
 
