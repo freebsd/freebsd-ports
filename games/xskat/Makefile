@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xskat
-PORTVERSION=	3.4
+PORTVERSION=	4.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.gulu.net/xskat/
+MASTER_SITES=	http://www.xskat.de/
 
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Play the card game Skat
