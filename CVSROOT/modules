@@ -4582,6 +4582,7 @@ ko-hlatex-psfonts-uhc-extra	ports/korean/hlatex-psfonts-uhc-extra
 ko-hlatexfonts-ocf	ports/korean/hlatexfonts-ocf
 ko-hmconv	ports/korean/hmconv
 ko-hpscat	ports/korean/hpscat
+ko-iiimf-le-handul	ports/korean/iiimf-le-handul
 ko-imhangul	ports/korean/imhangul
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
