@@ -8,7 +8,7 @@
 PORTNAME=	ssed
 PORTVERSION=	3.58
 CATEGORIES=	editors textproc
-MASTER_SITES=	http://king.rett.polimi.it/~paolob/seders/ssed/
+MASTER_SITES=	http://queen.rett.polimi.it/~paolob/seders/ssed/
 DISTNAME=	sed-${PORTVERSION}
 
 MAINTAINER=	verm@drunkmonk.net
@@ -16,6 +16,7 @@ MAINTAINER=	verm@drunkmonk.net
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		iconv:${PORTSDIR}/converters/libiconv
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --program-prefix=s
 
 MAN1=	ssed.1
