@@ -1,0 +1,15 @@
+--- Imakefile.orig	Tue Aug 17 00:17:20 2004
++++ Imakefile	Tue Aug 17 00:17:48 2004
+@@ -23,11 +23,10 @@
+ 
+            PROG = xonix
+        XONIXDIR = $(LIBDIR)/xonix
+-           CUTE = -DSEND_MAIL	/* cute feature :-) */
+ 
+         DEPLIBS = XawClientDepLibs XpmDepLib
+ LOCAL_LIBRARIES = XawClientLibs XpmLib MathLibrary
+-  EXTRA_DEFINES = -DUSE_X11 -DXONIXDIR=\"$(XONIXDIR)\" $(CUTE)
++  EXTRA_DEFINES = -DUSE_X11 -DXONIXDIR=\"$(XONIXDIR)\"
+ /*    CDEBUGFLAGS = DebuggableCDebugFlags */
+ 
+            SRCS = xonix.c x11.c stack.c
