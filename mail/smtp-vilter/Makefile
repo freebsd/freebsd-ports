@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.etc.msys.ch/software/smtp-vilter/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	dan@imp.ch
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	spam/virus filter infrastructure
 
 BROKEN=		"Checksum mismatch"
