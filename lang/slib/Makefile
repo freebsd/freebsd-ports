@@ -7,6 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	2d5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	slib${PORTVERSION}
@@ -23,8 +24,6 @@ NO_BUILD=	yes
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${DATADIR}
-	${MKDIR} ${PREFIX}/share/slib
-	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
 	${RM} -f ${LOCALBASE}/share/guile/slib
 	${LN} -sf ${PREFIX}/share/slib ${LOCALBASE}/share/guile/slib
 	${LOCALBASE}/bin/guile -c \
