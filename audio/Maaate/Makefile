@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Maaate
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 
@@ -20,12 +19,15 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-ldl,,g ; s,(CCLD,(CXXLD,g" ${WRKSRC}/demos/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ldl||g ; \
+		 s|(CCLD|(CXXLD|g' ${WRKSRC}/demos/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/Maaate
-	@${CP} ${WRKSRC}/doc/* ${PREFIX}/share/doc/Maaate
+	@${MKDIR} ${DOCSDIR}
+.for file in API.html ChangeLog THANKS applications.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

@@ -12,9 +12,14 @@ include/Maaate/layer2.H
 include/Maaate/layer3.H
 include/Maaate/maaateM_brief.H
 include/Maaate/module.H
+include/Maaate/mpegPlatform.h
 include/Maaate/plugins.H
+include/Maaate/pluginsPlatform.h
+include/Maaate/plugins_briefPlatform.h
 include/Maaate/segmentData.H
 include/Maaate/segmentTable.H
+include/Maaate/tier1Platform.h
+include/Maaate/tier2Platform.h
 include/Maaate/tools.H
 include/MaaateA.h
 include/MaaateMPEG.h
@@ -32,7 +37,6 @@ lib/libMaaateP.a
 lib/libMaaateP.so
 lib/libMaaateP.so.1
 %%PORTDOCS%%share/doc/Maaate/API.html
-%%PORTDOCS%%share/doc/Maaate/COPYING
 %%PORTDOCS%%share/doc/Maaate/ChangeLog
 %%PORTDOCS%%share/doc/Maaate/THANKS
 %%PORTDOCS%%share/doc/Maaate/applications.html
