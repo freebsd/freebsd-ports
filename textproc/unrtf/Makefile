@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.19.1
+PORTVERSION=	0.19.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://unrtf.50megs.com/ \
 		${MASTER_SITE_GNU}
