@@ -542,6 +542,7 @@
     SUBDIR += p5-Date-Simple
     SUBDIR += p5-DateConvert
     SUBDIR += p5-DateTime
+    SUBDIR += p5-DateTime-Calendar-Julian
     SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-Precise
     SUBDIR += p5-DateTime-Set
