@@ -1122,6 +1122,7 @@ dnews		ports/news/dnews
 dnrd		ports/net/dnrd
 dns_balance	ports/net/dns_balance
 dnsquery	src/usr.bin/dnsquery
+dnstracer	ports/net/dnstracer
 dnsutl		ports/net/dnsutl
 dnswalk		ports/net/dnswalk
 doc		doc
