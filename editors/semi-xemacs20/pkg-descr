@@ -20,6 +20,6 @@ SEMI, Library of MIME feature for GNU Emacs for xemacs20.
   MUAs.  They are released as separated packages.
 
   SEMI is installed the following directory tree:
-	${PREFIX}/lib/xemacs/site-lisp/semi/	--- SEMI
+	${LOCALBASE}/lib/xemacs/site-lisp/semi/	--- SEMI
 
 --- Porting by shige <shige@FreeBSD.ORG>

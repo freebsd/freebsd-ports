@@ -8,7 +8,7 @@ FLIM, message representation or encoding emacs lisp library for emacs.
     - mailcap parser and utility
 
   FLIM is installed the following directory tree:
-	${PREFIX}/share/emacs/site-lisp/flim/	--- FLIM
+	${LOCALBASE}/share/emacs/site-lisp/flim/	--- FLIM
 
 
 To use flim, put the following setup into your ~/.emacs:

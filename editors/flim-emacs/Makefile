@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	flim-${EMACS_PORT}
+PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.12/ \
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.12/ \
 		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.12/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.12/
 MAINTAINER?=	shige@FreeBSD.org
-DISTNAME=	flim-${FLIM_VER}
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 PORTCLASS?=	master
 
@@ -23,58 +23,38 @@ FLIM_VER=	1.12.7
 FLIM_SETUPEL=	flim-setupel.el
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
-FLIM_COOKIE=	flim-${EMACS_PORT}-${FLIM_VER}.FreeBSD-packages
+FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_VER}.FreeBSD-packages
 
 .if (${PORTCLASS} == "master")
 # for emacs
-EMACS_NAME=	emacs
-EMACS_PORT=	emacs
-EMACS_VER=	19.34
-EMACS_LIBDIR=		share/${EMACS_NAME}
-EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
+EMACS_PORT_NAME=	emacs
 # whether emacs requires *-setupel.el
 REQUIRE_SETUPEL= YES
 .endif
 
 # target name for make build
 ALL_TARGET?=	elc
-
-.if defined(EMACS_PORT)
-EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
-RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
-.else
-RUN_DEPENDS+=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-.endif
-SCRIPTS_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
-		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
-		TARGETS="${FLIM_SETUPEL}"
-PLIST_SUB+=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
-		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
-		FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL} \
+# environments
+SCRIPTS_ENV+=	TARGETS="${FLIM_SETUPEL}"
+PLIST_SUB+=	FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL} \
 		FLIM_COOKIE=${FLIM_COOKIE}
-MAKE_FLAGS+=	EMACS=${EMACS_CMD} XEMACS=${EMACS_CMD}
-.if (${EMACS_VER} == "19.34")
-# depends on custom: emacs-19.34 or mule-19.34
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_PORT}
-.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(EMACS_PORT_NAME)
 # depends on apel (case of xemacs-21.x or later)
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 .else
 # depends on apel (case of other emacsen etc...)
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 .endif
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
-	@${ECHO} "You must define EMACS_NAME, EMACS_PORT, EMACS_VER, EMACS_LIBDIR, EMACS_LIBDIR_WITH_VER."
+	@${ECHO} "You must define EMACS_PORT_NAME."
 	@${FALSE}
 .endif
 
@@ -87,8 +67,6 @@ pre-configure:
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${CP} ${FILESDIR}/${FLIM_SETUPEL}.in ${WRKDIR}
 .endif
-
-.include <bsd.port.pre.mk>
 
 # makeinfo stuff
 MAKEINFO=		makeinfo --no-split --no-validate
@@ -117,8 +95,8 @@ pre-install:
 
 post-install:
 # install package-cookie
-	@${MKDIR} -p ${PREFIX}/share/flim
-	@${TOUCH} ${PREFIX}/share/flim/${FLIM_COOKIE}
+	@${MKDIR} -p ${LOCALBASE}/share/flim
+	@${TOUCH} ${LOCALBASE}/share/flim/${FLIM_COOKIE}
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
 .endif
@@ -144,7 +122,7 @@ info-build:
 		${CAT} $${i}.jis | nkf -e > $${i} ; \
 		${MAKEINFO} $${i} || ${TRUE} ; \
 	done)
-.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+.if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ja.texi; do \
 		${MV} $${i} $${i}.jis ; \
@@ -158,7 +136,7 @@ info-build-by-emacs:
 	for i in mime-en.texi; do \
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
-.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+.if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ja.texi; do \
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
@@ -167,7 +145,7 @@ info-build-by-emacs:
 
 mkdir-site-packages:
 	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
-		${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/$${i} ; \
+		${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/$${i} ; \
 	done)
 
 pkg-el-copy:
@@ -177,34 +155,34 @@ pkg-el-copy:
 
 pkg-el-install:
 	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
+	${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
 	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
-		${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
+		${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
 	fi)
 
 doc-install:
-	@${MKDIR} ${PREFIX}/${FLIMDOCDIR}
+	@${MKDIR} ${LOCALBASE}/${FLIMDOCDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog NEWS README.* VERSION ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${FLIMDOCDIR}/ ; \
+		${INSTALL_DATA} $${i} ${LOCALBASE}/${FLIMDOCDIR}/ ; \
 	done)
 
 setupel-install:
 	@${INSTALL_DATA} ${WRKDIR}/${FLIM_SETUPEL} \
-			${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
+			${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 
 
 info-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
-		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${LOCALBASE}/info ; \
+		install-info ${LOCALBASE}/info/$${i} ${LOCALBASE}/info/dir ; \
 	done)
-.if defined(HAS_MULE) && (${HAS_MULE} == "YES")
+.if defined(EMACS_HAS_MULE) && (${EMACS_HAS_MULE} == "YES")
 	@(cd ${WRKSRC} ; \
 	for i in mime-ja.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
-		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
+		${INSTALL_DATA} ${WRKSRC}/$${i} ${LOCALBASE}/info ; \
+		install-info ${LOCALBASE}/info/$${i} ${LOCALBASE}/info/dir ; \
 	done)
 .endif
 
@@ -212,12 +190,12 @@ info-package-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.info mime-ja.info; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
-				${PREFIX}/${EMACS_PACKAGESDIR}/info ; \
+				${LOCALBASE}/${EMACS_PACKAGESDIR}/info ; \
 	done ; \
-	${MKDIR} -p ${PREFIX}/${EMACS_PACKAGESDIR}/man/flim ; \
+	${MKDIR} -p ${LOCALBASE}/${EMACS_PACKAGESDIR}/man/flim ; \
 	for i in mime-en.texi mime-ja.texi; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
-				${PREFIX}/${EMACS_PACKAGESDIR}/man/flim ; \
+				${LOCALBASE}/${EMACS_PACKAGESDIR}/man/flim ; \
 	done)
 
 manifest-install:
@@ -225,6 +203,6 @@ manifest-install:
 	@${CAT} ${PKGDIR}/PLIST | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
 		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
 	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${PREFIX}/${EMACS_PACKAGESDIR}/pkginfo/
+		${LOCALBASE}/${EMACS_PACKAGESDIR}/pkginfo/
 
 .include <bsd.port.post.mk>

@@ -3,6 +3,6 @@
 ;;                                            --  by shige@FreeBSD.ORG
 
 (setq load-path (append '(
-	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/semi"
+	"@@LOCALBASE@@/@@EMACS_LIBDIR@@/site-lisp/semi"
  ) load-path))
 (provide 'wemi-setupel)
