@@ -32,6 +32,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
+NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
 CD_MOUNTPT=	'/cdrom'

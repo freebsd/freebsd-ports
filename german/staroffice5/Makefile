@@ -22,6 +22,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
+NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
 IS_INTERACTIVE=	yes
