@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PP3 creates celestial charts
+COMMENT=	Creates celestial charts
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
