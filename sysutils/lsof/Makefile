@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.72.1
+PORTVERSION=	4.72.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
 FIXUP_RELEASE=	yes
 .if defined(FIXUP_RELEASE)
-DISTNAME=	${PORTNAME}_4.73A.freebsd
+DISTNAME=	${PORTNAME}_4.73B.freebsd
 .else
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 .endif
