@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	HTTP_Download
-PORTVERSION=	1.0.0.r4
+DISTVERSION=	1.0.0RC4
 CATEGORIES=	www devel pear
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR class to send HTTP downloads

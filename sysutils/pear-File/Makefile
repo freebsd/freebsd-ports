@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	File
-PORTVERSION=	1.1.0.r3
+DISTVERSION=	1.1.0RC3
 PORTEPOCH=	1
 CATEGORIES=	sysutils www pear
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR common file and directory routines
