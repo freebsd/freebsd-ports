@@ -15,7 +15,7 @@ MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT=	Web based Cyrus IMAP user admin client
 
 RUN_DEPENDS=	${SITE_PERL}/IMAP/Admin.pm:${PORTSDIR}/mail/p5-IMAP-Admin \
-		${SITE_PERL}/IMAP/Sieve.pm:mail/p5-IMAP-Sieve \
+		${SITE_PERL}/IMAP/Sieve.pm:${PORTSDIR}/mail/p5-IMAP-Sieve \
 		${SITE_PERL}/CGI/Cache.pm:${PORTSDIR}/www/p5-CGI-Cache
 .if defined(WITH_APACHE2)
 RUN_DEPENDS+=	${LOCALBASE}/www/cgi-bin:${PORTSDIR}/www/apache2
