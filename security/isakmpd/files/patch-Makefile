@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Aug 29 00:43:35 2003
-+++ Makefile	Thu Oct 16 18:54:23 2003
+--- Makefile.orig	Tue Dec  7 21:06:56 2004
++++ Makefile	Mon Dec 13 12:06:21 2004
 @@ -38,9 +38,9 @@
  
  # openbsd means OpenBSD 2.5 or newer. freeswan is the name for Linux with
@@ -12,16 +12,22 @@
  #OS=		freeswan
  #OS=		bsdi
  
-@@ -157,6 +157,7 @@
- USE_LIBDES=	yes
+@@ -133,9 +133,9 @@
+ 
+ .ifdef USE_KEYNOTE
+ USE_LIBCRYPTO=	yes
+-USE_LIBDES=	yes
  LDADD+=		-lkeynote -lm
  DPADD+=		${LIBKEYNOTE} ${LIBM}
 +POLICY=         policy.c
  CFLAGS+=	-DUSE_KEYNOTE
  .endif
  
-@@ -202,4 +203,3 @@
+@@ -181,7 +181,6 @@
  ${PROG} beforedepend: ${GENERATED}
  
  .include <bsd.prog.mk>
 -.include <bsd.subdir.mk>
+ 
+ debug:
+ 	(cd ${.CURDIR}; ${MAKE} DEBUG="-g -Werror")

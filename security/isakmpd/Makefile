@@ -4,20 +4,14 @@
 #
 # $FreeBSD$
 #
-# NOTE: See NetBSD's /usr/pkgsrc/security/isakmpd if this package
-#       should be updated!
-#
 
 PORTNAME=	isakmpd
-PORTVERSION=	20030903
+PORTVERSION=	20041207
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_NETBSD}
-MASTER_SITE_SUBDIR=	.
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	simon
 
-DEPRECATED=	http://vuxml.freebsd.org/b7cb488c-8349-11d8-a41f-0020ed76ef5a.html (security)
-EXPIRATION_DATE=2004-11-21
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
 
 # this is not compatible with cross build - there's no other way
