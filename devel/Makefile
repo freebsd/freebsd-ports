@@ -1350,6 +1350,7 @@
     SUBDIR += yacl
     SUBDIR += yasm
     SUBDIR += z80-asm
+    SUBDIR += zendstudio
     SUBDIR += zthread
     SUBDIR += zziplib
 
