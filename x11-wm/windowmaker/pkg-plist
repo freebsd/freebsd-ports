@@ -158,7 +158,7 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.2
+lib/libwraster.so.3
 lib/libwmfun.a
 lib/libwmfun.so
 lib/libwmfun.so.0
