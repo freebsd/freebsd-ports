@@ -1,0 +1,9 @@
+bin/ktoblzcheck
+include/ktoblzcheck.h
+include/ktoblzcheck.hh
+lib/libktoblzcheck.a
+lib/libktoblzcheck.la
+lib/libktoblzcheck.so
+lib/libktoblzcheck.so.1
+share/ktoblzcheck/bankdata.txt
+@dirrm share/ktoblzcheck

@@ -3841,6 +3841,7 @@ ksubeditor	ports/multimedia/ksubeditor
 ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
 ktnef		ports/converters/ktnef
+ktoblzcheck	ports/finance/ktoblzcheck
 ktritoc		ports/games/ktritoc
 kwappen		ports/games/kwappen
 kwatch		ports/misc/kwatch

@@ -6,6 +6,7 @@
     SUBDIR += grisbi
     SUBDIR += kexchange
     SUBDIR += khacc
+    SUBDIR += ktoblzcheck
     SUBDIR += libofx
     SUBDIR += myphpmoney
     SUBDIR += openhbci
