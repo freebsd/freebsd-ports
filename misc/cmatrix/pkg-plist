@@ -1,5 +1,5 @@
 bin/cmatrix
-%%PORTDOCS%%share/doc/cmatrix/ChangeLog
-%%PORTDOCS%%share/doc/cmatrix/README
-%%PORTDOCS%%share/doc/cmatrix/TODO
-%%PORTDOCS%%@dirrm share/doc/cmatrix
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
