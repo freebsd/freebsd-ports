@@ -46,6 +46,9 @@ WITH_JADETEX=	${JADETEX}
 .endif
 WITH_JADETEX?=
 
+.if empty(WITH_JADETEX)
+IS_INTERACTIVE=	"user must set WITH_JADETEX variable to 'yes' or 'no'"
+.endif
 .if defined(WITH_JADETEX) && ${WITH_JADETEX} == yes
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/web2c/jadetex.fmt:${PORTSDIR}/print/jadetex
 .endif
@@ -56,8 +59,6 @@ PLIST_FILES=		#empty
 
 WITHOUT_X11=	yes
 DEPENDS_ARGS+=	BATCH=yes WITHOUT_X11=${WITHOUT_X11}
-
-IS_INTERACTIVE=	"user must set WITH_JADETEX variable to 'yes' or 'no'"
 
 message-jadetex:
 	@${CAT} ${FILESDIR}/JADETEX
