@@ -152,6 +152,7 @@
     SUBDIR += gicq
     SUBDIR += gini
     SUBDIR += gkrellm_snmp
+    SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless
     SUBDIR += gnet
