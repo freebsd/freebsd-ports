@@ -8,6 +8,7 @@
     SUBDIR += flounder
     SUBDIR += gdis
     SUBDIR += glens
+    SUBDIR += libctl
     SUBDIR += libsvm
     SUBDIR += mayavi
     SUBDIR += mmtk

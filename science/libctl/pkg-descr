@@ -1,0 +1,14 @@
+Scientific software for performing large computations is typically managed
+using textual control files that specify the parameters of the computation.
+Historically, these control files have typically consisted of long,
+inflexible collections of numbers whose meaning and format is hard-coded
+into the program. With libctl, we make it easy for programmers to support
+a greatly superior control file structure, and with less effort than was
+required for traditional input formats.
+
+The "ctl" in "libctl" stands for Control Language (by convention, libctl
+control files end with ".ctl" and are referred to as ctl files). Thus,
+libctl is the Control Language Library (where the "lib" prefix follows the
+Unix idiom).
+
+WWW: http://ab-initio.mit.edu/libctl/
