@@ -4575,6 +4575,7 @@ mysql40-server	ports/databases/mysql40-server
 mysql41-client	ports/databases/mysql41-client
 mysql41-server	ports/databases/mysql41-server
 mysql_last_value	ports/databases/mysql_last_value
+mysqlcc		ports/databases/mysqlcc
 mysqlman	ports/databases/mysqlman
 mysqltcl	ports/databases/mysqltcl
 myth2_demo	ports/games/myth2_demo
