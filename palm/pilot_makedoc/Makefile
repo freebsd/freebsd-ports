@@ -3,7 +3,7 @@
 # Date created:				May 10th 1997
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/30 20:07:45 jfitz Exp $
+# $Id: Makefile,v 1.2 1997/06/08 01:41:06 jfitz Exp $
 #
 
 PKGNAME=	pilot_makedoc-0.7
@@ -14,11 +14,10 @@ DISTFILES=	makedoc7.cpp
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 NO_WRKSUBDIR=	YES
-
 ALL_TARGET=	pilot_makedoc
 
 do-extract:
-		@${MKDIR} -p ${WRKDIR}
+		@${MKDIR} ${WRKDIR}
 		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
 		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
