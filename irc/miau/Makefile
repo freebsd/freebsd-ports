@@ -7,6 +7,7 @@
 
 PORTNAME=		miau
 PORTVERSION=		0.5.2
+PORTREVISION=		1
 CATEGORIES=		irc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	miau
@@ -31,6 +32,7 @@ CONFIGURE_ARGS=		--enable-dccbounce \
 			--enable-privlog \
 			--enable-onconnect \
 			--enable-empty-awaymsg \
+			--enable-dumpstatus \
 			--disable-dependency-tracking
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
