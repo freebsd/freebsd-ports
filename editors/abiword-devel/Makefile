@@ -10,7 +10,7 @@
 # AbiWord build system.
 
 PORTNAME=	AbiWord
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -42,9 +42,6 @@ FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
-
-post-install:
-	@${LN} -sf LittleEndian32.american.hash \
-		${PREFIX}/share/abiword/dictionary/american.hash
+	@cd ${WRKSRC}/ac-helpers && ${RM} -f install-sh mkinstalldirs missing
 
 .include <bsd.port.mk>
