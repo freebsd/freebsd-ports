@@ -1,7 +1,7 @@
 AdaSockets allows Ada programmers to use sockets from within their programs
 with an easy-to-use Ada-friendly interface.
 
-WWW: http://www.infres.enst.fr/ANC/
+WWW: http://www.rfc1149.net/devel/adasockets
 
  -- Samuel Tardieu
-    sam@inf.enst.fr
+    sam@rfc1149.net
