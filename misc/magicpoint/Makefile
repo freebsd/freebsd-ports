@@ -7,8 +7,7 @@
 # "?=" and "+=" are for localized (i.e. Japanese) version
 
 PORTNAME=	magicpoint
-PORTVERSION=	1.10a
-PORTREVISION=	1
+PORTVERSION=	1.11a
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/mgp/
 
