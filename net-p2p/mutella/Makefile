@@ -1,6 +1,6 @@
 # New ports collection makefile for:	mutella
 # Date created:				2/12/2001
-# Whom:			Dominic Marks <d.marks@students.umist.ac.uk>
+# Whom:			Dominic Marks <d.marks@student.umist.ac.uk>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

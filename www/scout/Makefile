@@ -1,6 +1,6 @@
 # New ports collection makefile for:	scout
 # Date created:			15/04/2002
-# Whom:				Dominic Marks <d.marks@students.umist.ac.uk>
+# Whom:				Dominic Marks <d.marks@student.umist.ac.uk>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.armstrong.com/pub/scout/ \
 		http://nerf-herder.net/siege/
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--disable-shared --enable-static

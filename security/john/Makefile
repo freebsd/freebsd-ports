@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ca.openwall.com/pub/projects/john/ \
 		ftp://ftp.false.com/pub/security/projects/ \
 		http://www.false.com/security/john/
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 .include <bsd.port.pre.mk>
 

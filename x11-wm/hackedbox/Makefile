@@ -1,6 +1,6 @@
 # New ports collection makefile for:	hackedbox
 # Date created:				2002-05-11
-# Whom:				Dominic Marks <d.marks@students.umist.ac.uk>
+# Whom:				Dominic Marks <d.marks@student.umist.ac.uk>
 # based on the blackbox and openbox ports
 #
 # $FreeBSD$
@@ -11,7 +11,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://scrudgeware.org/hackedbox/
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 MAN1=		hackedbox.1
 DOCS=		AUTHORS ChangeLog INSTALL README TODO

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ccache
 # Date created:				31/03/2002
-# Whom:			Dominic Marks <d.marks@students.umist.ac.uk>
+# Whom:			Dominic Marks <d.marks@student.umist.ac.uk>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
-MAINTAINER=	d.marks@students.umist.ac.uk
+MAINTAINER=	d.marks@student.umist.ac.uk
 
 GNU_CONFIGURE=	yes
 MAN1=		ccache.1
