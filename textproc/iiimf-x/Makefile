@@ -5,73 +5,49 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iiimf-x
-PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
-PORTREVISION=	1
+PORTNAME=	x
+PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
+MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
+PKGNAMEPREFIX=	iiimf-
 DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method X Client Framework
 
 LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib \
 		iiimcf.2:${PORTSDIR}/textproc/iiimf-client-lib
+RUN_DEPENDS=	${LOCALBASE}/lib/im/xiiimp.so:${PORTSDIR}/textproc/iiimf-x-lib
 
-IIIMF_VER=	r11_4-1467
-WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
+IIIMF_VER=	r12_0_1-svn1891
+WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/iiimxcf/htt_xbe
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}-${IIIMF_VER}
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-USE_MOTIF=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-DIRS=		iiimxcf/xiiimp.so iiimxcf/htt_xbe
+USE_XLIB=	yes
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
+LIBTOOLFILES=	${WRKSRC}/aclocal.m4
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
 .endif
 
 post-patch:
-.for DIR in ${DIRS}
-	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
-		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
-		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
-		-e "s,/usr/lib/im,${LOCALBASE}/lib/im,g" \
-		-e "s,-I\$$(IM_INCLUDEDIR),-I${LOCALBASE}/include/iiimf,g" \
-		${WRKSRC}/${DIR}/configure
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		${WRKSRC}/iiimxcf/xiiimp.so/iiimp/Makefile.in \
-		${WRKSRC}/iiimxcf/xiiimp.so/iiimp/iiimpAux.c \
-		${WRKSRC}/iiimxcf/xiiimp.so/iiimp/iiimpIM.c \
-		${WRKSRC}/iiimxcf/xiiimp.so/iiimp/iiimpConv.c \
-		${WRKSRC}/iiimxcf/xiiimp.so/iiimp/csconv.h \
-		${WRKSRC}/iiimxcf/htt_xbe/lib/IMdkit/common/XIMPublic.cpp \
-		${WRKSRC}/iiimxcf/htt_xbe/src/watchdog.c
-.endfor
+		${WRKSRC}/../../acfiles/im_common.m4 \
+		${WRKSRC}/configure.ac \
+		${WRKSRC}/lib/IMdkit/common/XIMPublic.cpp \
+		${WRKSRC}/src/watchdog.c
 
-do-configure:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${SH} configure ${CONFIGURE_ARGS}
-.endfor
-
-do-build:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${GMAKE} all
-.endfor
-
-do-install:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${GMAKE} install
-.endfor
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../../acfiles
+	${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.post.mk>
