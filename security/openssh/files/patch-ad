@@ -1,5 +1,5 @@
---- lib/Makefile.orig	Fri Jan 14 04:55:08 2000
-+++ lib/Makefile	Fri Jan 14 08:01:17 2000
+--- lib/Makefile.orig	Sun Jan 16 07:10:10 2000
++++ lib/Makefile	Tue Jan 18 14:56:00 2000
 @@ -4,7 +4,12 @@
  SRCS=   authfd.c authfile.c bufaux.c buffer.c canohost.c channels.c \
  	cipher.c compat.c compress.c crc32.c deattack.c fingerprint.c \
@@ -8,7 +8,7 @@
 +	rsa.c tildexpand.c ttymodes.c uidswap.c xmalloc.c atomicio.c \
 +	strlcat.c strlcpy.c
 +
-+.if !defined(USE_INET6)
++.if defined(COMPAT_GETADDRINFO)
 +SRCS+=	getaddrinfo.c getnameinfo.c name6.c rcmd.c bindresvport.c
 +.endif
  
