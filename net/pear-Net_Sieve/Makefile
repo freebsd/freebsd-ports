@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Sieve
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	martin@tradex.sk
@@ -17,6 +17,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Net
 FILES=		Sieve.php
+TESTS=		test_sieve.php
+_TESTSDIR=	.
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
