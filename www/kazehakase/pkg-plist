@@ -1,0 +1,47 @@
+bin/kazehakase
+bin/kz
+bin/kzmigemo
+etc/kazehakase/bookmarkbar.xml
+etc/kazehakase/bookmarks.xml
+etc/kazehakase/kz-ui-beginner.xml
+etc/kazehakase/kz-ui-bookmarks.xml
+etc/kazehakase/kz-ui-expert.xml
+etc/kazehakase/kz-ui-medium.xml
+etc/kazehakase/kzrc
+etc/kazehakase/proxyrc
+etc/kazehakase/smartbookmarks.xml
+share/gnome/applications/kazehakase.desktop
+share/gnome/kazehakase/icons/kz-anchor.png
+share/gnome/kazehakase/icons/kz-bookmark.png
+share/gnome/kazehakase/icons/kz-closebackward.png
+share/gnome/kazehakase/icons/kz-closeforward.png
+share/gnome/kazehakase/icons/kz-closewindow.png
+share/gnome/kazehakase/icons/kz-copyimagelocation.png
+share/gnome/kazehakase/icons/kz-copyurl.png
+share/gnome/kazehakase/icons/kz-editor.png
+share/gnome/kazehakase/icons/kz-folder-open.png
+share/gnome/kazehakase/icons/kz-folder.png
+share/gnome/kazehakase/icons/kz-google.png
+share/gnome/kazehakase/icons/kz-gray.png
+share/gnome/kazehakase/icons/kz-green.png
+share/gnome/kazehakase/icons/kz-history.png
+share/gnome/kazehakase/icons/kz-logo-bg.png
+share/gnome/kazehakase/icons/kz-logo.png
+share/gnome/kazehakase/icons/kz-newwindow.png
+share/gnome/kazehakase/icons/kz-openimagewindow.png
+share/gnome/kazehakase/icons/kz-openlinkwindow.png
+share/gnome/kazehakase/icons/kz-openselectedlink.png
+share/gnome/kazehakase/icons/kz-red.png
+share/gnome/kazehakase/icons/kz-remote-bookmark.png
+share/gnome/kazehakase/icons/kz-savelink.png
+share/gnome/kazehakase/icons/kz-scrap-bookmark.png
+share/gnome/kazehakase/icons/kz-search.png
+share/gnome/kazehakase/icons/kz-separator.png
+share/gnome/kazehakase/icons/kz-smart-bookmark.png
+share/gnome/kazehakase/icons/kz-tab-next.png
+share/gnome/kazehakase/icons/kz-tab-prev.png
+share/gnome/pixmaps/kazehakase-icon.png
+share/locale/ja/LC_MESSAGES/kazehakase.mo
+@dirrm share/gnome/kazehakase/icons
+@dirrm share/gnome/kazehakase
+@dirrm etc/kazehakase

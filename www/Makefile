@@ -173,6 +173,7 @@
     SUBDIR += jonah
     SUBDIR += junkbuster
     SUBDIR += kannel
+    SUBDIR += kazehakase
     SUBDIR += knowledgekit
     SUBDIR += konqueror-nsplugins
     SUBDIR += larbin
