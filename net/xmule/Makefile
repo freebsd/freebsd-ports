@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmule
-PORTVERSION=	1.9.4.b
-PORTREVISION=	2
+DISTVERSION=	1.10.0a
 CATEGORIES=	net
 #MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITES=	http://download.berlios.de/%SUBDIR%/
@@ -17,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
@@ -31,13 +31,14 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext \
+		--with-cryptopp-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${X11BASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--enable-debug \
 		--with-wx-config=${WX_CONFIG}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 
 # for debugging purposes
@@ -78,6 +79,14 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|cp -p|${INSTALL_DATA}|' \
 		${WRKSRC}/po/Makefile.in.in
+# fix mkinstalldirs location
+# uphold CXX{,FLAGS}
+	${FIND} ${WRKSRC} -name "Makefile*" -type f -print0 | \
+		${XARGS} -0 \
+		${REINPLACE_CMD} -E \
+		-e 's,^(MKINSTALLDIRS|mkinstalldirs).*$$,\1=${INSTALL_WRKSRC}/mkinstalldirs,' \
+		-e 's|g\+\+|${CXX}|' \
+		-e 's|-O3|${CXXFLAGS}|'
 # use correct FreeBSD atoll() prototype
 .for file in ${FILES_ATOLL_PATCH}
 	@${REINPLACE_CMD} -E \
@@ -108,7 +117,7 @@ post-install:
 # do not install a generic named ed2k binary
 # install it under a more specific name
 	@${INSTALL_PROGRAM} \
-		${WRKSRC}/ed2k \
+		${WRKSRC}/ed2k.xmule-2.0 \
 		${PREFIX}/bin/${PORTNAME}-ed2k-handler
 
 .include <bsd.port.post.mk>
