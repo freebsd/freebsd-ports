@@ -1,0 +1,7 @@
+-
+You have to set PVM_ROOT=/usr/local/lib/pvm enviropment variable on all machines
+which you are planning to use for distributed computing. The best way to set
+this variable on system-wide basis is to add "PVM_ROOT=/opt/lib/pvm" into
+appropriate section of your /etc/login.conf file. You also have to enable
+rshd on those machines.
+-

@@ -1,9 +1,11 @@
---- src/host.c.orig	Fri Nov 26 17:28:41 1999
-+++ src/host.c	Fri Nov 26 17:28:54 1999
-@@ -939,7 +939,7 @@
+--- src/host.c	Wed Sep 26 19:35:18 2001
++++ src/host.c	Thu Oct 31 13:57:18 2002
+@@ -992,9 +992,7 @@
  			perror("ioctl");
  			goto bail;
  		}
+-		/* On some FreeBSD systems: */
+-		/* if (IFF_UP & req.ifr_flags) { */
 -		if (IFF_UP & req.ifr_ifru.ifru_flags) {
 +		if (IFF_UP & req.ifr_flags) {
  			if (nip > 0 && !(nip % 10))
