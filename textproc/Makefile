@@ -225,6 +225,7 @@
     SUBDIR += p5-Text-Reflow
     SUBDIR += p5-Text-Repository
     SUBDIR += p5-Text-SimpleTemplate
+    SUBDIR += p5-Text-Tabs+Wrap
     SUBDIR += p5-Text-Template
     SUBDIR += p5-Text-Tmpl
     SUBDIR += p5-Text-Wrapper
