@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		evilwm
-PORTVERSION=		0.99.14
+PORTVERSION=		0.99.17
 CATEGORIES=		x11-wm
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,6 @@ DISTNAME=		${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Minimalist window manager based on 9wm
-
-FORBIDDEN=	"source code for this version has not been reviewed"
 
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog README README.vdesk TODO
