@@ -1,20 +1,11 @@
---- Makefile.in.orig	Mon Jul  7 10:43:52 1997
-+++ Makefile.in	Sun Mar  7 23:01:22 1999
-@@ -15,7 +15,7 @@
- INSTALL=@INSTALL@
- INSTALL_DATA=@INSTALL_DATA@
- INSTALL_PROGRAM=@INSTALL_PROGRAM@
--LN=@LN@
-+LN=@LN@ -f
- YACC=@YACC@
- 
- HISTORY=@HISTORY@
-@@ -28,7 +28,7 @@
- all: rc $(HISTORY)
- 
- rc: $(OBJS)
--	$(CC) -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
-+	$(CC) -static -o $@ $(OBJS) $(LDFLAGS) $(LIBS)
- 
- sigmsgs.c: mksignal
- 	sh mksignal @SIGNAL_H@
+--- Makefile.in.orig	Fri Jun 25 10:04:52 1999
++++ Makefile.in	Fri Jun 25 10:05:07 1999
+@@ -109,7 +109,7 @@
+ glom.o hash.o heredoc.o input.o lex.o list.o main.o match.o nalloc.o \
+ open.o parse.o print.o redir.o signal.o status.o tree.o utils.o var.o \
+ wait.o walk.o which.o
+-rc_LDFLAGS = 
++rc_LDFLAGS = -static
+ mksignal_SOURCES = mksignal.c
+ mksignal_OBJECTS =  mksignal.o
+ mksignal_LDADD = $(LDADD)
