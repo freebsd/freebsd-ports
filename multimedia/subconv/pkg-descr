@@ -1,3 +1,5 @@
 Subconv converts DivX subtitles from one format to another (currently only
 from srt/tmplayer/microdvd to tmplayer). It can also adjust subtitle delay
 and split subtitles in a given time position.
+
+WWW: http://linux.bydg.org/~yogin/

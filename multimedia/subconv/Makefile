@@ -12,11 +12,15 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Subconv converts DivX subtitles from one format to another
+COMMENT=	Converts DivX subtitles from one format to another
 
-USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
 NO_BUILD=	yes
+USE_PYTHON=	yes
+
+PORTDOCS=	README
+PLIST_FILES=	bin/subconv
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/subconv ${PREFIX}/bin
