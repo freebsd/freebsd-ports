@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Profiler/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Devel/Profiler.pm
+lib/perl5/site_perl/%%PERL_VER%%/Devel/Profiler/Apache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Devel/Profiler/Test.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Devel/Profiler
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Profiler
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Devel 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true

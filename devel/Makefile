@@ -448,6 +448,7 @@
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-Peek
+    SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Devel-ptkdb
