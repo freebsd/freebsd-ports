@@ -35,7 +35,7 @@ ALL_TARGET=	sqlrelay.so
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
-.if ${PORTVERSION} == 0.34.3
+.if ${PORTVERSION} == 0.35
 PORTREVISION?=	1
 .endif
 
