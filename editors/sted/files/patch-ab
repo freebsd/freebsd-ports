@@ -1,0 +1,11 @@
+--- sted.c	Sun May 17 13:15:08 1998
++++ /home/andy/tmp/wrk/sted.c	Tue May 19 10:42:21 1998
+@@ -34,7 +34,7 @@
+  **************************************************************************/
+ 
+ 
+-#include <curses.h>
++#include <ncurses.h>
+ #include <signal.h>
+ #include <string.h>
+ #include <stdlib.h>

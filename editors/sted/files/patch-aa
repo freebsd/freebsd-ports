@@ -1,0 +1,15 @@
+--- Makefile	Sun May 17 13:09:10 1998
++++ /home/andy/tmp/wrk/Makefile	Tue May 19 10:42:14 1998
+@@ -5,10 +5,10 @@
+ 
+ 
+ #Compiler, change if you're using some other compiler
+-CC = gcc
++#CC = gcc
+ 
+ #Compiler and linker options
+-C_OPTS = -Wall -O2 
++C_OPTS = ${CFLAGS}
+ L_OPTS = -lncurses  
+ 
+ #Install directory
