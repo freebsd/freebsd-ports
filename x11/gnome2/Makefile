@@ -13,7 +13,7 @@ DISTFILES=	# empty
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
+LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		ORBit.2:${PORTSDIR}/devel/ORBit \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
