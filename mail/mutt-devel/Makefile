@@ -101,18 +101,18 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
 		defined(WITH_MUTT_QUOTE_PATCH)
-PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
-		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/ \
-		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
+PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/:vvv \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/:vvv
 .endif
 
 .if defined(WITH_MUTT_EDIT_THREADS) || defined(WITH_MUTT_SIGNATURE_MENU) || \
 		defined(WITH_MUTT_IFDEF_PATCH)
-PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/
+PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/:cd
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH) 
-PATCH_SITES+=	http://home.woolridge.ca/mutt/patches/
+PATCH_SITES+=	http://home.woolridge.ca/mutt/patches/:dw
 .endif
 
 # XXX
@@ -206,36 +206,36 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 PATCH_DIST_STRIP=	-p1
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
-PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_NNTP)
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_QUOTE_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
-		patch-${PATCH_VERSION}.vvv.quote.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz:vvv \
+		patch-${PATCH_VERSION}.vvv.quote.gz:vvv
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.3
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.3:cd
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
 .error The WITH_MUTT_MBOX_HOOK_PATCH option is currently not available
-#PATCHFILES+=	patch-${PATCH_VERSION}.dw.mbox-hook.1
+#PATCHFILES+=	patch-${PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
