@@ -30,8 +30,8 @@ post-patch:
 	@${TOUCH} ${WRKSRC}/configure
 
 post-install:
-	@${ECHO} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc.default
-	@${ECHO} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbitrc.default
+	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc.default
+	@${ECHO_CMD} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbitrc.default
 	@if [ ! -f ${PREFIX}/etc/orbitrc ]; then \
 		${CP} -p ${PREFIX}/etc/orbitrc.default ${PREFIX}/etc/orbitrc ; \
 	fi

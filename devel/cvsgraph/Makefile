@@ -49,17 +49,17 @@ post-configure:
 		${WRKSRC}/Makefile
 
 pre-install:
-	${ECHO} bin/cvsgraph > ${PLIST}
-	${ECHO} etc/cvsgraph.conf >> ${PLIST}
+	${ECHO_CMD} bin/cvsgraph > ${PLIST}
+	${ECHO_CMD} etc/cvsgraph.conf >> ${PLIST}
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
-	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+	${ECHO_CMD} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
 .for i in ${EXAMPLES}
-	${ECHO} share/examples/${PORTNAME}/${i} >> ${PLIST}
+	${ECHO_CMD} share/examples/${PORTNAME}/${i} >> ${PLIST}
 .endfor
-	${ECHO} @dirrm share/examples/${PORTNAME} >> ${PLIST}
-	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+	${ECHO_CMD} @dirrm share/examples/${PORTNAME} >> ${PLIST}
+	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:

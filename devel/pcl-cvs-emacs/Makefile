@@ -84,15 +84,15 @@ pre-build:
 	${RM} ${WRKSRC}/pcl-cvs.info*
 
 post-build:
-	${ECHO} "(provide 'pcl-cvs-startup)" >> ${WRKSRC}/pcl-cvs-startup.el
+	${ECHO_CMD} "(provide 'pcl-cvs-startup)" >> ${WRKSRC}/pcl-cvs-startup.el
 
 pre-install:
 .if defined(ELIB_SETUP) && !empty(ELIB_SETUP)
-	${ECHO} ${ELIB_SETUP} >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
+	${ECHO_CMD} ${ELIB_SETUP} >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
 .endif
 
 post-install:
-	${ECHO} "(provide 'pcl-cvs-setup)" >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
+	${ECHO_CMD} "(provide 'pcl-cvs-setup)" >> ${INSTALL_WRKSRC}/${PORT_SETUPEL}
 	@${MAKE} setupel-install
 .if !defined(NOPORTDOCS)
 	@${MAKE} doc-install

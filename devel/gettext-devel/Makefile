@@ -31,7 +31,7 @@ MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 
 # X X X - I know, but it doesn't work with BSD iconv yet. :(((
 post-patch:
-	@/usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
 		's|-liconv|-lgiconv|g ; s|iconv\.h|giconv\.h|g'
 
 pre-configure:
@@ -48,10 +48,10 @@ CONFIGURE_ARGS=	--disable-shared
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/misc/gettextize \
 		${PREFIX}/bin/gettextize-new
-	@${ECHO} bin/gettextize-new > ${WRKDIR}/PLIST
+	@${ECHO_CMD} bin/gettextize-new > ${WRKDIR}/PLIST
 .for file in ${BINFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin/${file}-new
-	@${ECHO} bin/${file}-new >> ${WRKDIR}/PLIST
+	@${ECHO_CMD} bin/${file}-new >> ${WRKDIR}/PLIST
 .endfor
 .else
 post-install:
