@@ -26,6 +26,8 @@ ALL_TARGET=	milter-greylist
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
+CONFLICTS=	milter-greylist-devel-[1-9]*.*
+
 post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/milter-greylist.sh > ${WRKSRC}/milter-greylist.sh
