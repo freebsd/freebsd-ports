@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/PHP/Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/PHP/Session/Serializer/PHP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PHP/Session/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PHP/Session
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PHP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PHP/Session/Serializer
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PHP/Session
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/PHP 2>/dev/null || true
