@@ -161,6 +161,7 @@
     SUBDIR += penguin-command
     SUBDIR += pentix
     SUBDIR += phalanx
+    SUBDIR += pipenightdreams
     SUBDIR += pmars
     SUBDIR += powerpak
     SUBDIR += pp
