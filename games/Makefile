@@ -256,6 +256,7 @@
     SUBDIR += xtic
     SUBDIR += xtriangles
     SUBDIR += xtris
+    SUBDIR += xtrojka
     SUBDIR += xtron
     SUBDIR += xtruco
     SUBDIR += xvier
