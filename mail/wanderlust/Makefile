@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	2.8.0.p2
+PORTVERSION=	2.8.1
 CATEGORIES=	mail elisp
-MASTER_SITES=	ftp://ftp.gohome.org/wl/beta/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/beta/&,} \
-		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.gohome.org/wl/beta/ \
-		http://www.jpl.org/elips/wl/beta/
+MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/elisp/wl/stable/&,} \
+		ftp://ftp.jaist.ac.jp/pub/GNU/elisp/ftp.gohome.org/wl/stable/ \
+		http://www.jpl.org/elips/wl/stable/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	wl-${PORTVERSION:S/.p2/pre2/}
+DISTNAME=	wl-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 

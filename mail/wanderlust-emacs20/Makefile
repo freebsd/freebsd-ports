@@ -5,14 +5,11 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	nobutaka@FreeBSD.org
-
 MASTERDIR=	${.CURDIR}/../../mail/wanderlust
 
 EMACS_PORT_NAME=	emacs20
-
-.if !defined(WITHOUT_X11) && !defined(WITHOUT_BITMAP)
-RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20
-.endif
+MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}
+EMACS_W3M_PORT_NAME=	emacs-w3m-${EMACS_PORT_NAME}
+BITMAP_PORT_NAME=	bitmap-${EMACS_PORT_NAME}
 
 .include <${MASTERDIR}/Makefile>
