@@ -7,6 +7,8 @@ user=asami
 # packages for dependencies only
 dummyports="x11/XFree86 x11-toolkits/Motif-dummy"
 
+date=$(date '+%Y%m%d')
+
 usage () {
   echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] branch"
   exit 1
@@ -36,6 +38,13 @@ makeindex () {
   fi
   echo $(wc -l <INDEX) "lines in INDEX"
   chown ${user} INDEX
+}
+
+# usage: checkindex pb
+checkindex () {
+  pb=$1
+
+  cd ${pb}/usr/ports
   if ! awk -F '|' '{if (NF != 10) { error=1; printf("line %d: %s\n", NR, $0)}} END {if (error == 1) exit(1)}' INDEX; then
     echo "error in INDEX"
     exit 1
@@ -190,7 +199,7 @@ if [ "$noduds" = 0 ]; then
 fi
 
 if [ "$noindex" = 0 ]; then
-  makeindex ${pb} ${scripts} ${branch} ${user}
+  makeindex ${pb} ${scripts} ${branch} ${user} &
 fi
 
 md5=$(/sbin/md5 ${pb}/${branch}/tarballs/bindist.tar | awk '{print $4}')
@@ -209,6 +218,8 @@ cdromlist ${pb} ${scripts} ${branch} &
 
 wait
 
+checkindex ${pb}
+
 echo "all preparation ended at $(date)"
 
 cd ${pb}/usr/ports
@@ -224,8 +235,16 @@ if [ "$nobuild" = 0 ]; then
   rm -rf errors logs packages old-errors
   cd ${pb}/${branch}
   mv -f errors logs packages old-errors make.* bak
-  mkdir -p errors logs packages/All
-  chown -R ${user} errors logs packages 
+  mkdir -p packages/All
+  mkdir -p ${pb}/archive/errorlogs
+  rm -rf ${pb}/archive/errorlogs/errors.${branch}.${date}
+  mkdir -p ${pb}/archive/errorlogs/errors.${branch}.${date}
+  ln -sf ${pb}/archive/errorlogs/errors.${branch}.${date} ${pb}/${branch}/errors
+  rm -rf ${pb}/archive/errorlogs/alllogs.${branch}.${date}
+  mkdir -p ${pb}/archive/errorlogs/alllogs.${branch}.${date}
+  ln -sf ${pb}/archive/errorlogs/alllogs.${branch}.${date} ${pb}/${branch}/logs
+  chown -RL ${user} errors logs packages 
+  echo "error logs in ${pb}/archive/errorlogs/errors.${branch}.${date}"
   for dir in ${dummyports}; do
     cp -p tarballs/$(cd ${pb}/usr/ports/$dir; make package-name).tgz packages/All
   done
