@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTML_QuickForm
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tux@pinguru.net
 COMMENT=	Provide methods for creating, validating and processing HTML forms
 
 BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
@@ -25,6 +25,7 @@ FILES=		QuickForm.php \
 		QuickForm/link.php QuickForm/password.php QuickForm/radio.php \
 		QuickForm/reset.php QuickForm/select.php QuickForm/static.php \
 		QuickForm/submit.php QuickForm/text.php QuickForm/textarea.php \
+		QuickForm/xbutton.php \
 		QuickForm/Renderer.php QuickForm/Rule.php QuickForm/RuleRegistry.php \
 		QuickForm/Renderer/Array.php QuickForm/Renderer/ArraySmarty.php \
 		QuickForm/Renderer/Default.php \
