@@ -7,7 +7,7 @@ to the "in-addr.arpa." format and vice-versa, and more. These commands can be
 used manually, or included as building blocks for higher level DNS tools. 
 They generate output that is easily computer parsable.
 
-<URL:http://www.domtools.com/dns/domtools.shtml>
+WWW: http://www.domtools.com/dns/domtools.shtml
 
 See also the net/dlint port.
 
