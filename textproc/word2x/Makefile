@@ -22,10 +22,4 @@ GNU_CONFIGURE=	yes
 MAN1=		word2x.1
 PLIST_FILES=	bin/rtest2 bin/word2x
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
