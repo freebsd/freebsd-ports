@@ -39,8 +39,14 @@ CONFIGURE_ENV=	LIBS="${LIBS}" CPPFLAGS="${CPPFLAGS}"
 
 MAN1=		im-ja-conf.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 post-install:
 	${X11BASE}/bin/gtk-query-immodules-2.0 > \
 	    ${X11BASE}/etc/gtk-2.0/gtk.immodules
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
