@@ -7,6 +7,7 @@
 
 PORTNAME=	threeDS
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.demonseed.net/~jp/code/threeDS/
 
