@@ -1,22 +1,20 @@
 # New ports collection makefile for:   mastergear
-# Version required:    0.8
+# Version required:    1.0
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/12/05 11:04:42 asami Exp $
+# $Id: Makefile,v 1.3 1997/04/30 03:17:59 asami Exp $
 #
 
 DISTNAME=	SMS
-PKGNAME=        mastergear-0.8
+PKGNAME=        mastergear-1.0
 CATEGORIES=     emulators
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.freeflight.com/fms/MG/
 DISTFILES=	MG.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 USE_X11=	yes
-
-CONFIGURE_ENV+=	X11BASE=${X11BASE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin
