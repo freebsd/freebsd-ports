@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tex2im
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
