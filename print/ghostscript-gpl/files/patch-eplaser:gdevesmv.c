@@ -1,5 +1,5 @@
---- eplaser/gdevesmv.c.orig	Tue Oct 28 19:40:09 2003
-+++ eplaser/gdevesmv.c	Wed Dec 17 00:50:58 2003
+--- eplaser/gdevesmv.c.orig	Mon May 17 14:25:19 2004
++++ eplaser/gdevesmv.c	Mon Aug  2 14:05:21 2004
 @@ -34,10 +34,6 @@
  
   */
@@ -82,6 +82,15 @@
  
  	/* ここを通過したら以下の色設定は無意味？ */
      }
+@@ -1771,7 +1797,7 @@
+ 		 gs_logical_operation_t lop, const gx_clip_path * pcpath)
+ {
+     gx_device_vector const	*vdev = (gx_device_vector *) dev;
+-    gx_device_esmv const	*pdev = (gx_device_esmv *) dev;
++    gx_device_esmv		*pdev = (gx_device_esmv *) dev;
+     stream			*s = gdev_vector_stream(vdev);
+     gx_color_index		color = gx_dc_pure_color(pdcolor);
+     char			obuf[64];
 @@ -1779,7 +1805,7 @@
      if (w <= 0 || h <= 0) return 0;
      
