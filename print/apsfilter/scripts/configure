@@ -102,7 +102,7 @@ while [ "$1" ]; do
 		esac
 		;;
 	\"ACROREAD5\")
-		echo RUN_DEPENDS+=acroread5:${PORTSDIR}/print/acroread5
+		echo RUN_DEPENDS+=acroread5:${PORTSDIR}/print/acroread
 		;;
 	\"CONVERT\")
 		echo RUN_DEPENDS+=convert:${PORTSDIR}/graphics/ImageMagick
