@@ -8,7 +8,7 @@
 PORTNAME=	edict-fpw
 PORTVERSION=	1.2.1
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/fpwbooks/edict/ \
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/edict/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
 		ftp://ftp.cdrom.com/pub/japanese/monash/ \
 		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
@@ -24,7 +24,6 @@ MAINTAINER=    	taoka@FreeBSD.org
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 		catdump:${PORTSDIR}/japanese/epwutil \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
-
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
