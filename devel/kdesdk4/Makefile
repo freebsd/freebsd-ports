@@ -33,7 +33,7 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|-I$$ac_db_includes|-I${LOCALBASE}/include/db41|g' \
+	@${REINPLACE_CMD} -e 's|-I$$ac_db_includes|-I${LOCALBASE}/include/db4|g' \
 			-e 's|ac_db_name="db"|ac_db_name="db4"|g' ${WRKSRC}/configure
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
