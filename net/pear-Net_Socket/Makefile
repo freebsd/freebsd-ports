@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net_Socket
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	net www pear
 
 MAINTAINER=	ports@FreeBSD.org
