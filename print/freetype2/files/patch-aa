@@ -1,11 +1,18 @@
---- builds/unix/detect.mk.orig	Sun Mar  4 17:10:36 2001
-+++ builds/unix/detect.mk	Sun Apr  8 01:13:41 2001
-@@ -71,7 +71,7 @@
-   setup: std_setup
- 
-   unix-def.mk: $(TOP)/builds/unix/unix-def.in
--	  cd builds/unix; ./configure $(CFG)
-+#	  cd builds/unix; ./configure $(CFG)
+
+$FreeBSD$
+
+--- builds/unix/detect.mk.orig	Sun May  5 13:57:06 2002
++++ builds/unix/detect.mk	Fri Jun 21 15:47:35 2002
+@@ -76,10 +76,10 @@
+   ifneq ($(have_mk),)
+     # we are building FT2 not in the src tree
+     unix-def.mk: $(TOP)/builds/unix/unix-def.in
+-	    $(TOP)/builds/unix/configure $(CFG)
++#	    $(TOP)/builds/unix/configure $(CFG)
+   else
+     unix-def.mk: $(TOP)/builds/unix/unix-def.in
+-	    cd builds/unix; ./configure $(CFG)
++#	    cd builds/unix; ./configure $(CFG)
+   endif
  
  endif   # test PLATFORM unix
- 
