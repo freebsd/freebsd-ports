@@ -1,5 +1,5 @@
---- configure.orig	Sat Oct  4 13:27:50 2003
-+++ configure	Sat Oct  4 13:29:05 2003
+--- configure.orig	Wed Nov 19 04:59:36 2003
++++ configure	Mon Feb  9 17:39:34 2004
 @@ -1321,7 +1321,7 @@
  VERSION=2.3
  
@@ -9,16 +9,25 @@
  
  # The later defininition of _XOPEN_SOURCE disables certain features
  # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
-@@ -3594,6 +3594,12 @@
- 	  LDLIBRARY='libpython$(VERSION).so'
- 	  BLDLIBRARY='-L. -lpython$(VERSION)'
+@@ -3608,6 +3608,12 @@
  	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
-+	  INSTSONAME="$LDLIBRARY".$SOVERSION
-+	  ;;
+ 	  INSTSONAME="$LDLIBRARY".$SOVERSION
+ 	  ;;
 +    FreeBSD*)
 +	  LDLIBRARY='libpython$(VERSION).so'
 +	  BLDLIBRARY='-L. -lpython$(VERSION)'
 +	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:$LD_LIBRARY_PATH
- 	  INSTSONAME="$LDLIBRARY".$SOVERSION
- 	  ;;
++	  INSTSONAME="$LDLIBRARY".$SOVERSION
++	  ;;
      hp*|HP*)
+ 	  LDLIBRARY='libpython$(VERSION).sl'
+ 	  BLDLIBRARY='-Wl,+b,$(LIBDIR) -L. -lpython$(VERSION)'
+@@ -12272,7 +12278,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_pthread_system_supported=yes
++  ac_cv_pthread_system_supported="ignored by port"
+ else
+   echo "$as_me: program exited with status $ac_status" >&5
+ echo "$as_me: failed program was:" >&5
