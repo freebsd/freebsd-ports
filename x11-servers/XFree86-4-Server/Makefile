@@ -18,11 +18,6 @@ DISTFILES=	X335src-1.tgz X335src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} > 400011
-BROKEN=                problem with /usr/libexec/cpp
-.endif
-
 IS_INTERACTIVE=	yes	# configure script asks questions
 .if (${MACHINE} != "alpha")
 NO_PACKAGE=	package available from XFree86
