@@ -1,14 +1,12 @@
-*** configure.orig	Tue Jan 27 12:06:22 1998
---- configure	Thu Jan 29 15:57:27 1998
-***************
-*** 1402,1407 ****
---- 1402,1410 ----
-  
-  int main() {
-  
-+ #ifdef __FreeBSD__
-+ #define bkgdset initscr
-+ #endif
-  /* The GNU C library defines this for functions which it implements
-      to always fail with ENOSYS.  Some functions are actually named
-      something starting with __ and the normal name is an alias.  */
+--- configure.orig.bak	Fri Feb 12 13:59:51 1999
++++ configure	Sat Feb 13 18:00:01 1999
+@@ -1725,6 +1725,9 @@
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+ char $ac_func();
++#ifdef __FreeBSD__
++#define bkgdset initscr
++#endif
+ 
+ int main() {
+ 
