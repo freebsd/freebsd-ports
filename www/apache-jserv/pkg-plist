@@ -1,7 +1,7 @@
 etc/apache/jserv/jserv.conf
 etc/apache/jserv/jserv.properties
 etc/apache/jserv/zone.properties
-libexec/apache/ApacheJServ.jar
+share/java/classes/ApacheJServ.jar
 libexec/apache/mod_jserv.so
 share/java/servlets/Hello.class
 share/java/servlets/Hello.java
@@ -158,3 +158,5 @@ docs/api/overview-frame.html
 @dirrm share/doc/mod_jserv/install
 @dirrm share/doc/mod_jserv/protocol
 @dirrm share/doc/mod_jserv
+@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
+@unexec rmdir %D/share/java > /dev/null 2>&1 || true

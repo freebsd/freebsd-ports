@@ -1,11 +1,11 @@
---- conf/jserv.properties.in.orig	Wed Jan 26 18:26:31 2000
-+++ conf/jserv.properties.in	Wed Jan 26 18:28:44 2000
+--- conf/jserv.properties.in.orig	Sat Jan 15 01:58:57 2000
++++ conf/jserv.properties.in	Fri Apr  7 01:57:42 2000
 @@ -53,8 +53,15 @@
  #       MUST NOT be in this classpath or the classpath of the shell
  #       you start the Apache from.
  #
 -wrapper.classpath=@JSERV_CLASSES@
-+wrapper.classpath=@libexecdir@/ApacheJServ.jar
++wrapper.classpath=@prefix@/share/java/classes/ApacheJServ.jar
  wrapper.classpath=@JSDK_CLASSES@
 +# Uncomment if you use Cocoon.
 +#wrapper.classpath=@prefix@/share/java/classes/Cocoon.jar
