@@ -17,5 +17,6 @@ MAINTAINER=	james@cs.uwm.edu
 # binary package
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>
