@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1997/11/15 13:35:35 peter Exp $
+# $Id: Makefile,v 1.13 1997/11/20 15:48:15 asami Exp $
 #
 
 DISTNAME=       netscape-communicator-4.04
@@ -12,8 +12,6 @@ MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.04/development/english
 DISTFILES=      communicator-v404-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
-
-RESTRICTED=	"Commercial software"
 
 NO_WRKSUBDIR=   Yes
 NO_BUILD=       Yes
