@@ -24,6 +24,8 @@
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-leim.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-look.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-look.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-lookup.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-lookup.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-num.el
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-num.elc
 %%EMACS_LIBDIR%%/site-lisp/skk/skk-obsolete.el
@@ -48,6 +50,7 @@ info/skk.info
 %%SKK_DOCDIR%%/Contributors
 %%SKK_DOCDIR%%/CVS_digest
 %%SKK_DOCDIR%%/CVS_on_Windows
+%%SKK_DOCDIR%%/FAQ.txt
 %%SKK_DOCDIR%%/GUIDELINE
 %%SKK_DOCDIR%%/INSTALL
 %%SKK_DOCDIR%%/NEWS
@@ -62,7 +65,6 @@ info/skk.info
 %%SKK_DOCDIR%%/skk-def.el
 %%SKK_DOCDIR%%/skk-hankaku-mode.el
 %%SKK_DOCDIR%%/skk-jisx0201.el
-%%SKK_DOCDIR%%/skk-lookup.el
 %%SKK_DOCDIR%%/skk-tutcdef.el
 %%SKK_DOCDIR%%/skk-tutcode.el
 @dirrm %%SKK_DOCDIR%%
