@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	luma
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +27,14 @@ PYDISTUTILS_BUILDARGS=		build
 PYDISTUTILS_INSTALLARGS=	--prefix=${PREFIX}
 USE_OPENLDAP=	yes
 
+MAN1=		luma.1
+
+.include <bsd.port.pre.mk>
+
 do-configure:
 
-.include <bsd.port.mk>
+pre-install:
+	${MV} ${WRKSRC}/share/man ${WRKSRC}/
+	${RM} ${WRKSRC}/lib/luma/base/utils/backend/\.\#mkpasswd.py.1.9
+
+.include <bsd.port.post.mk>
