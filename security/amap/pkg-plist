@@ -1,12 +1,7 @@
 @comment $FreeBSD$
 bin/amap
 bin/amapcrap
-share/amap/appdefs.resp
-share/amap/appdefs.rpc
-share/amap/appdefs.trig
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/VOTE
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/amap
+%%DATADIR%%/appdefs.resp
+%%DATADIR%%/appdefs.rpc
+%%DATADIR%%/appdefs.trig
+@dirrm %%DATADIR%%
