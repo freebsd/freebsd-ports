@@ -1,6 +1,6 @@
---- run.c.orig	Mon Oct 30 13:26:57 2000
-+++ run.c	Mon Apr 30 00:00:26 2001
-@@ -1483,15 +1483,15 @@
+--- run.c.orig	Mon Dec  6 06:44:42 2004
++++ run.c	Sat Feb 26 18:01:46 2005
+@@ -1507,15 +1507,15 @@
  		u = (Awkfloat) system(getsval(x)) / 256;   /* 256 is unix-dep */
  		break;
  	case FRAND:

@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	nawk
-PORTVERSION=	20040207
+PORTVERSION=	20041222
 CATEGORIES=	lang
-MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
+MASTER_SITES=	http://cm.bell-labs.com/cm/cs/who/bwk/
 DISTNAME=	awk
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Brian Kernighan's pattern scanning and processing language
