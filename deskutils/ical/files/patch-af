@@ -1,0 +1,11 @@
+--- types/Makefile.in.orig	Sat Apr 29 15:17:47 2000
++++ types/Makefile.in	Sat Apr 29 15:17:56 2000
+@@ -12,7 +12,7 @@
+          ECHO = echo
+        RANLIB = @RANLIB@
+ 
+-     CXXFLAGS = -O $(DEFS)
++     CXXFLAGS = $(DEFS)
+       CXXINCS = -I$(srcdir)
+          OBJS = bitvec.o hashfuncs.o intset.o
+         TESTS = testarray testbv testomap testoset timemap testhash testmap\
