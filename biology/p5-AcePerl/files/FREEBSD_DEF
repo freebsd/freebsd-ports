@@ -1,0 +1,23 @@
+#################################################################
+############### acedb: R.Durbin and J.Thierry-Mieg ##############
+#################################################################
+
+#################################################################
+########### This file is included by wmake/truemake #############
+######  Edit this file to adapt the ACeDB to a new machine ######
+#####   following the explanations given in wmake/truemake  #####
+#################################################################
+
+CFLAGS+= -g -Wall -O2 -DACEDB4
+NAME = FREEBSD
+COMPILER = gcc ${CFLAGS}
+LINKER = gcc -g
+
+LIBS = -lm
+Xt_LIBS = -L/usr/X11R6/lib -lXaw -lXt -lXmu -lXext -lX11
+LEX_LIBS = 
+
+RPCGEN_FLAGS = -b -I -K -1
+
+#################################################################
+#################################################################

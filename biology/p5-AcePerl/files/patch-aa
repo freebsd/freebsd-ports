@@ -1,0 +1,22 @@
+--- ace/wh/mystdlib.h.orig	Fri Jul  2 23:04:55 1999
++++ ace/wh/mystdlib.h	Thu Jul 27 17:20:19 2000
+@@ -161,7 +161,7 @@
+ #endif
+ 
+ #if defined(POSIX) || defined(LINUX) || defined(SOLARIS) || defined(SGI) || \
+-	defined(HP) || defined(WIN32)
++	defined(HP) || defined(WIN32) || defined(FREEBSD)
+ 
+ #ifdef WIN32
+ #include <mbctype.h>
+--- ace/wh/mydirent.h.orig	Mon Jan 11 01:51:40 1999
++++ ace/wh/mydirent.h	Thu Jul 27 17:20:41 2000
+@@ -55,7 +55,7 @@
+ extern char *getwd(char *pathname) ;
+ #endif /* HP || SOLARIS || WIN32 */
+ 
+-#if defined (POSIX) || defined(SUN) || defined(SUNSVR4) || defined(SOLARIS) || defined(DEC) || defined(ALPHA) || defined(SGI) || defined(LINUX) || defined(HP)
++#if defined (POSIX) || defined(SUN) || defined(SUNSVR4) || defined(SOLARIS) || defined(DEC) || defined(ALPHA) || defined(SGI) || defined(LINUX) || defined(HP) || defined(FREEBSD)
+ #include <dirent.h>
+   typedef struct dirent MYDIRENT ;
+ #endif
