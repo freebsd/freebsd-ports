@@ -7,7 +7,7 @@
 
 PORTNAME=	libnet
 PORTVERSION=	0.99g
-CATEGORIES=     net
+CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 EXTRACT_SUFX=	.tgz
 
@@ -21,10 +21,10 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} <= 300000
-BROKEN=         does not build
+BROKEN=		does not build
 .endif
 
-WRKSRC=         ${WRKDIR}/Libnet-0.99g
+WRKSRC=		${WRKDIR}/Libnet-0.99g
 
 post-install:
 .if !defined(NOPORTDOCS)
