@@ -1,0 +1,11 @@
+--- tclConfig.sh.in.ORIG	Mon Feb 10 13:22:37 1997
++++ tclConfig.sh.in	Mon Feb 10 13:23:28 1997
+@@ -20,7 +20,7 @@
+ TCL_CC='@CC@'
+ 
+ # -D flags for use with the C compiler.
+-TCL_DEFS='@DEFS@'
++TCL_DEFS='@DEFS@ -DKANJI'
+ 
+ # The name of the Tcl library (may be either a .a file or a shared library):
+ TCL_LIB_FILE=@TCL_LIB_FILE@
