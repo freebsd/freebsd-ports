@@ -1,11 +1,11 @@
 --- Makefile.in.orig	Sat Jan 18 12:25:01 2003
 +++ Makefile.in	Sat Jan 18 12:26:45 2003
-@@ -96,7 +96,7 @@
- 
+@@ -120,7 +120,7 @@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I. 
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -LIBS = @LIBS@
 +LIBS = -L%%LOCALBASE%%/lib -lgetline @LIBS@
- vqadmin_OBJECTS =  vqadmin.o cgi.o template.o global.o acl.o misc.o \
- domain.o lang.o user.o cedit.o
- vqadmin_DEPENDENCIES = 
+ depcomp =
+ am__depfiles_maybe =
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \

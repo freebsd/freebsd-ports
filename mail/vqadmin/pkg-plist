@@ -1,43 +1,45 @@
 bin/vqadmin
-@cwd %%CGIBINDIR%%
-vqadmin/.htaccess
-vqadmin/html/add_alias_domain.html
-vqadmin/html/add_domain.html
-vqadmin/html/add_user.html
-vqadmin/html/auth_failed.html
-vqadmin/html/br
-vqadmin/html/control.html
-vqadmin/html/ctrl_file.html
-vqadmin/html/de
-vqadmin/html/del_domain.html
-vqadmin/html/del_user.html
-vqadmin/html/en
-vqadmin/html/en-us
-vqadmin/html/error.html
-vqadmin/html/fi
-vqadmin/html/fr
-vqadmin/html/info_user.html
-vqadmin/html/init_error.html
-vqadmin/html/hu
-vqadmin/html/it
-vqadmin/html/ja
-vqadmin/html/main.html
-vqadmin/html/mod_domain.html
-vqadmin/html/mod_user.html
-vqadmin/html/nl
-vqadmin/html/pl
-vqadmin/html/qmail_controls_bottom.html
-vqadmin/html/qmail_controls_middle.html
-vqadmin/html/qmail_controls_top.html
-vqadmin/html/show_domains.html
-vqadmin/html/show_users.html
-vqadmin/html/view_domain.html
-vqadmin/html/view_user.html
-vqadmin/vqadmin.acl
-vqadmin/vqadmin.cgi
-@dirrm vqadmin/html
-@dirrm vqadmin
-@cwd %%WEBDATADIR%%
-images/vqadmin/vqadmin.css
-@dirrm images/vqadmin
-@dirrm images
+%%CGIBINDIR%%/vqadmin/.htaccess
+%%CGIBINDIR%%/vqadmin/html/add_alias_domain.html
+%%CGIBINDIR%%/vqadmin/html/add_domain.html
+%%CGIBINDIR%%/vqadmin/html/add_domain_body.html
+%%CGIBINDIR%%/vqadmin/html/add_domain_foot.html
+%%CGIBINDIR%%/vqadmin/html/add_domain_head.html
+%%CGIBINDIR%%/vqadmin/html/add_user.html
+%%CGIBINDIR%%/vqadmin/html/auth_failed.html
+%%CGIBINDIR%%/vqadmin/html/br
+%%CGIBINDIR%%/vqadmin/html/control.html
+%%CGIBINDIR%%/vqadmin/html/ctrl_file.html
+%%CGIBINDIR%%/vqadmin/html/de
+%%CGIBINDIR%%/vqadmin/html/del_domain.html
+%%CGIBINDIR%%/vqadmin/html/del_user.html
+%%CGIBINDIR%%/vqadmin/html/en
+%%CGIBINDIR%%/vqadmin/html/en-us
+%%CGIBINDIR%%/vqadmin/html/error.html
+%%CGIBINDIR%%/vqadmin/html/fi
+%%CGIBINDIR%%/vqadmin/html/fr
+%%CGIBINDIR%%/vqadmin/html/info_user.html
+%%CGIBINDIR%%/vqadmin/html/init_error.html
+%%CGIBINDIR%%/vqadmin/html/hu
+%%CGIBINDIR%%/vqadmin/html/it
+%%CGIBINDIR%%/vqadmin/html/ja
+%%CGIBINDIR%%/vqadmin/html/main.html
+%%CGIBINDIR%%/vqadmin/html/mod_domain.html
+%%CGIBINDIR%%/vqadmin/html/mod_user.html
+%%CGIBINDIR%%/vqadmin/html/my_main.html
+%%CGIBINDIR%%/vqadmin/html/nl
+%%CGIBINDIR%%/vqadmin/html/pl
+%%CGIBINDIR%%/vqadmin/html/qmail_controls_bottom.html
+%%CGIBINDIR%%/vqadmin/html/qmail_controls_middle.html
+%%CGIBINDIR%%/vqadmin/html/qmail_controls_top.html
+%%CGIBINDIR%%/vqadmin/html/show_domains.html
+%%CGIBINDIR%%/vqadmin/html/show_users.html
+%%CGIBINDIR%%/vqadmin/html/view_domain.html
+%%CGIBINDIR%%/vqadmin/html/view_user.html
+%%CGIBINDIR%%/vqadmin/vqadmin.acl
+%%CGIBINDIR%%/vqadmin/vqadmin.cgi
+%%WEBDATADIR%%/images/vqadmin/vqadmin.css
+@dirrm %%CGIBINDIR%%/vqadmin/html
+@dirrm %%CGIBINDIR%%/vqadmin
+@dirrm %%WEBDATADIR%%/images/vqadmin
+@dirrm %%WEBDATADIR%%/images

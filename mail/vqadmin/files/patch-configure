@@ -1,30 +1,30 @@
---- configure.orig	Fri Feb 21 18:40:17 2003
-+++ configure	Fri Feb 21 18:43:08 2003
-@@ -1389,19 +1389,17 @@
+--- configure.orig	Wed Sep 17 23:21:39 2003
++++ configure	Sun Apr 18 13:50:48 2004
+@@ -3355,19 +3355,15 @@
  cgibindir=""
  wwwroot=""
  
 -for f in /home/httpd /usr/local/apache /usr/local/www /var/lib/httpd /var/www /usr/local/www /var/www
 -do
 -    if test -d $f/html
--    then 
+-    then
 -        wwwroot=$f/html
 -    fi
-+if test "${enable_htmldir+set}" = set; then
-+  enableval="$enable_htmldir"
-+  wwwroot="$enableval"
-+else
- 
+-
 -    if test -d $f/cgi-bin
 -    then
 -        cgibindir=$f/cgi-bin
 -    fi
 -done
-+        if test "$wwwroot" = ""
-+        then
-+            { echo "configure: error: Unable to find your html directory, specify --enable-htmldir." 1>&2; exit 1; }
-+        fi
- 
+-
++if test "${enable_htmldir+set}" = set; then
++  enableval="$enable_htmldir"
++  wwwroot="$enableval"
++else
++  if test "$wwwroot" = ""
++  then
++  { echo "configure: error: Unable to find your html directory, specify --enable-htmldir." 1>&2; exit 1; }
++  fi
 +fi
  
  
