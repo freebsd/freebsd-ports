@@ -101,6 +101,8 @@ lib/ImageMagick/fonts.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/jbig.so
 %%MODULES%%lib/ImageMagick/modules/coders/jpeg.la
 %%MODULES%%lib/ImageMagick/modules/coders/jpeg.so
+%%MODULES%%lib/ImageMagick/modules/coders/jp2.la
+%%MODULES%%lib/ImageMagick/modules/coders/jp2.so
 %%MODULES%%lib/ImageMagick/modules/coders/label.la
 %%MODULES%%lib/ImageMagick/modules/coders/label.so
 %%MODULES%%lib/ImageMagick/modules/coders/logo.la
