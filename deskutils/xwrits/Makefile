@@ -8,7 +8,7 @@
 PORTNAME=	xwrits
 PORTVERSION=	2.21
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.lcdf.org/~eddietwo/xwrits/
+MASTER_SITES=	http://www.lcdf.org/xwrits/
 
 MAINTAINER=	mab@red-bean.com
 COMMENT=	Reminds you to take wrist breaks
