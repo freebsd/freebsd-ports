@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		root
-PORTVERSION=		4.00.06
+PORTVERSION=		4.02.00
 CATEGORIES=		devel science math
 MASTER_SITES=		ftp://root.cern.ch/root/
-DISTNAME=		${PORTNAME}_v${PORTVERSION}.sourcea
+DISTNAME=		${PORTNAME}_v${PORTVERSION}.source
 
 MAINTAINER=		simon@lang-clan.de
 COMMENT=		An Object-Oriented Data Analysis Framework
@@ -17,6 +17,9 @@ COMMENT=		An Object-Oriented Data Analysis Framework
 HAS_CONFIGURE=		yes
 CONFIGURE_TARGET=	freebsd5
 ALL_TARGET=		showbuild skip all
+MAKE_FLAGS=		ARCH=freebsd5
+### something more needed for OpenSSL ???
+USE_OPENSSL=		yes
 USE_GMAKE=		yes
 USE_XLIB=		yes
 USE_XPM=		yes
@@ -31,7 +34,7 @@ F77?=			f77
 
 # If you have installed MySQL (ports/databases/mysql50-client), then
 # you may enable ROOT's support for it, too.
-# A know but yet unsolved problem: The support of Kerberos 5 needs some
+# A known but yet unsolved problem: The support of Kerberos 5 needs some
 # patches to ROOT.
 # A lot of the features are related to software used in high
 # energy physics projects. Have a look to the ROOT web page for more
@@ -48,20 +51,24 @@ CONFIGURE_ARGS=		${CONFIGURE_TARGET}		\
 			--disable-globus		\
 			--disable-krb5			\
 			--disable-mysql			\
-			--disable-openiv		\
+			--disable-python		\
 			--disable-pythia		\
 			--disable-pythia6		\
 			--disable-rfio			\
 			--disable-rpath			\
+			--disable-ruby			\
 			--disable-sapdb			\
 			--disable-shadowpw		\
 			--disable-venus			\
-			--enable-opengl			\
+			--disable-xrootd		\
 			--enable-exceptions		\
 			--enable-explicitlink		\
+			--enable-opengl			\
 			--enable-shared			\
 			--enable-soversion		\
-			--enable-table
+			--enable-ssl			\
+			--enable-table			\
+			--enable-xml
 
 INSTALLS_SHLIB=		yes
 NO_FILTER_SHLIBS=	yes
@@ -69,6 +76,7 @@ LDCONFIG_DIRS=		%%PREFIX%%/lib/root %%PREFIX%%/lib/root/cint
 MAN1=			cint.1 g2root.1 h2root.1 hadd.1 makecint.1 memprobe.1
 MAN1+=			proofd.1 proofserv.1 rmkdepend.1 root-config.1 root.1
 MAN1+=			root.exe.1 rootcint.1 rootd.1 rootn.exe.1
+MAN1+=			system.rootdaemonrc.1
 
 MODTESTS=		Event hsimple minexam tcollex tstring
 MAKE_TENV=		${MAKE_ENV} CXX="${CXX}" LDFLAGS="${LDFLAGS}"
@@ -139,8 +147,12 @@ CONFIGURE_ARGS+=	--disable-srp
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.if ${OSVERSION} < 500000
+BROKEN=			Does not compile
+.endif
+
+.if ${ARCH} == "amd64"
+BROKEN=			Does not compile
 .endif
 
 # The thread sub-system was not working for ROOT versions 3.x on FreeBSD 4.x
@@ -180,11 +192,12 @@ pre-everything::
 	@sleep 3
 
 post-patch:
-	@${RM} ${WRKSRC}/configure.orig
-	@${RM} ${WRKSRC}/config/Makefile.freebsd4.orig
-	@${RM} ${WRKSRC}/config/Makefile.freebsd5.orig
+#	@${RM} ${WRKSRC}/configure.orig
+#	@${RM} ${WRKSRC}/config/Makefile.freebsd4.orig
+#	@${RM} ${WRKSRC}/config/Makefile.freebsd5.orig
 	@${RM} ${WRKSRC}/config/root-config.in.orig
 	@${RM} ${WRKSRC}/test/Makefile.arch.orig
+	@${RM} ${WRKSRC}/xml/Module.mk.orig
 .if ${OSVERSION} < 500016 || defined(WITHOUT_THREADS)
 	@${REINPLACE_CMD} -e                                  \
 		's|auxcflags=\"PTHREAD-CFLAGS|auxcflags=\"| ; \
