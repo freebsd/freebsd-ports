@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	0.90.0.3
+PORTVERSION=	0.90.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
-DISTNAME=	skype_ver-0_90_0_3-staticQT
+DISTNAME=	skype_ver-0_90_0_4-staticQT
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	P2P VoIP software
 
 RUN_DEPENDS=${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
-		${LINUXBASE}/usr/lib/libfreetype.so.6:${PORTSDIR}/x11-fonts/linux-fontconfig \
+		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
 		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat \
 		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
+
+RESTRICTED=	Redistribution not allowed yet.
 
 .include <bsd.port.pre.mk>
 
@@ -42,5 +44,6 @@ do-install:
 	${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
 	${INSTALL_DATA} ${WRKSRC}/call_in.wav ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
 
 .include <bsd.port.post.mk>
