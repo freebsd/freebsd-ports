@@ -94,6 +94,6 @@ do-install:
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
 
 post-install:
-	@$INSTALL_SCRIPT} ${WRKSRC}/wine.sh > ${PREFIX}/etc/rc.d/000.wine.sh
+	@${INSTALL_SCRIPT} ${WRKSRC}/wine.sh ${PREFIX}/etc/rc.d/000.wine.sh
 
 .include <bsd.port.post.mk>
