@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dap
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/downloads/
 EXTRACT_SUFX=.tgz
@@ -19,6 +19,8 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 MAKEFILE=	Makefile.linux
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+
+MAKE_ENV+=	OTHER_INCLUDE_DIR=. OTHER_LIBRARY_DIR=.
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/DAP ${PREFIX}/bin/
