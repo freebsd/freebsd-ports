@@ -1,19 +1,25 @@
 #!/bin/sh -e -
+#
+# $FreeBSD$
+#
 # startup script for ndtpd
-
-# Usage: ndtpd.sh [kill|restart|status|terminate|stop|start]
+# Usage: ndtpd.sh {start|stop}
 
 command=$1
 standalone=YES		# Run ndtpd as a standalone daemon.
 #standalone=NO		# Run ndtpd as a child of inetd.
 
 GetDirective() {
+    local directive
+
     directive=$1
 
     awk '/^[ 	]*'${directive}'[ 	]+/ {print $2; exit}' ${conf}
 }
 
 MakeWorkingDirectory() {
+    local user group work
+
     user="`GetDirective user`"
     group="`GetDirective group`"
     work="`GetDirective work-path`"
@@ -24,26 +30,25 @@ MakeWorkingDirectory() {
 
 conf=@prefix@/etc/ndtpd.conf
 
-[ -f ${conf} ] || exit
-ndtpcheck || exit
-
-if [ "${standalone}" = YES ]; then
-    ctrl=ndtpcontrol
-    start="echo -n ' ndtpd'; ndtpd"
-else
-    ctrl="echo 'Error: inetd invokes ndtpd.' >&2; false"
-fi
+ndtpcheck -c ${conf} || exit
 
 case "${command}" in
-kill|restart|status|terminate)
-    eval ${ctrl} ${command};;
-
-stop)
-    eval ${ctrl} terminate;;
-
-start|*)
+start)
     MakeWorkingDirectory
-    eval ${start};;
+
+    if [ "${standalone}" = YES ]; then
+	ndtpd && echo -n " ndtpd"
+    fi
+    ;;
+stop)
+    if [ "${standalone}" = YES ]; then
+	ndtpcontrol terminate && echo -n " ndtpd"
+    fi
+    ;;
+*)
+    echo "usage: `basename $0` {start|stop}" >&2
+    exit 22
+    ;;
 esac
 
 exit
