@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gtk-xfce-engine
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.6
 CATEGORIES=	x11-toolkits xfce
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-		http://www.xfce.org/archive/xfce4-rc3/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.xfce.org/archive/xfce-4.0.0/src/
 MASTER_SITE_SUBDIR=	xfce
-DISTNAME=	gtk-xfce-engine-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	An XFCE engine for GTK 2.0
