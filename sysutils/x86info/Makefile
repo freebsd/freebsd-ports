@@ -17,6 +17,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
+USE_REINPLACE=	yes
+
+post-patch:
+.for file in x86info.h mptable.c
+	@${REINPLACE_CMD} -e "s|machine/types.h|sys/types.h|g" ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x86info ${PREFIX}/bin
