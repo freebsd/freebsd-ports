@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dictd-database
-PORTVERSION=	20000129
+PORTVERSION=	20010130
 # clive: Ok, I have no idea how to name this somewhat-meta-port
 CATEGORIES=	net textproc
 MASTER_SITES=	ftp://ftp.dict.org/pub/dict/pre/
