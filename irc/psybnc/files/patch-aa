@@ -1,0 +1,29 @@
+--- ./Makefile	Sun Jul  7 18:09:25 2002
++++ ../../psybnc.mina/Makefile	Sun Nov 24 19:41:57 2002
+@@ -7,7 +7,7 @@
+ 	@$(CC) tools/convconf.c -o tools/convconf
+ 	@tools/convconf
+ 	@echo [*] Running Autoconfig.
+-	@$(CC) -I. tools/autoconf.c -o tools/autoconf
++	@$(CC) -I. tools/autoconf.c -o tools/autoconf -DPSYBASE=\"$(PSYBASE)\" -DPREFIX=\"$(PREFIX)\"
+ 	@tools/autoconf
+ 	@echo [*] Compiling MakeSalt for Encryption..
+ 	@$(CC) -I. -o makesalt tools/makesalt.c
+@@ -23,7 +23,7 @@
+ 	@$(CC) tools/convconf.c -o tools/convconf
+ 	@tools/convconf
+ 	@echo [*] Running Autoconfig.
+-	@$(CC) -I. tools/autoconf.c -o tools/autoconf
++	@$(CC) -I. tools/autoconf.c -o tools/autoconf -DPSYBASE=\"$(PSYBASE)\" -DPREFIX=\"$(PREFIX)\"
+ 	@tools/autoconf
+ 	@echo [*] Creating Menu, please wait.
+ 	@echo This needs the 'ncurses' library. If it is not available, menuconf wont work. If you are using 'curses', use make menuconfig-curses instead.
+@@ -39,7 +39,7 @@
+ 	@$(CC) tools/convconf.c -o tools/convconf
+ 	@tools/convconf
+ 	@echo [*] Running Autoconfig.
+-	@$(CC) -I. tools/autoconf.c -o tools/autoconf
++	@$(CC) -I. tools/autoconf.c -o tools/autoconf -DPSYBASE=\"$(PSYBASE)\" -DPREFIX=\"$(PREFIX)\"
+ 	@tools/autoconf
+ 	@echo [*] Creating Menu, please wait.
+ 	@echo This needs the 'curses' library. If it is not available, menuconf wont work.

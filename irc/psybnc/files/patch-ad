@@ -1,0 +1,11 @@
+--- ./lang/italiano.lng	Sat Jun  1 18:08:25 2002
++++ ../../psybnc.mina/lang/italiano.lng	Sun Nov 24 19:14:44 2002
+@@ -1998,7 +1998,7 @@
+ ; psybnc.c line 201:
+ msg0995=PORT1
+ ; psybnc.c line 203:
+-msg0996=Nessuna porta/host di listening definite.ÿEsegui 'make menuconfig' per il setupÿoppure aggiungi:ÿPSYBNC.SYSTEM.PORT1=tuaportaÿeÿPSYBNC.SYSTEM.HOST1=*ÿal file psybnc.confÿ
++msg0996=Nessuna porta/host di listening definite.ÿAggiungi:ÿPSYBNC.SYSTEM.PORT1=tuaportaÿeÿPSYBNC.SYSTEM.HOST1=*ÿal file psybnc.confÿ
+ ; psybnc.c line 207:
+ msg0997=SYSTEM
+ ; psybnc.c line 212:
