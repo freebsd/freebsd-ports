@@ -7,14 +7,14 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 	      	${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src \
 		marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
 		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -139,8 +139,6 @@ CONFIGURE_ARGS+=	--disable-composer
 
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-PKGCONFIG_FILES=	mozilla-gtkmozembed.pc mozilla-js.pc mozilla-xpcom.pc \
-			mozilla-nspr.pc mozilla-nss.pc mozilla-plugin.pc
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 .endif
@@ -150,6 +148,9 @@ CONFIGURE_ARGS+=	--enable-xft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif
+
+PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
+			mozilla-nspr mozilla-nss mozilla-plugin
 
 .include <bsd.port.pre.mk>
 
@@ -208,6 +209,11 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
+	@for pcfile in ${PKGCONFIG_FILES}; do \
+		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${PKGNAMESUFFIX}|g ; \
+			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
+			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
+	done
 
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
@@ -237,11 +243,9 @@ pre-install:
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
-.if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${ECHO_CMD} libdata/pkgconfig/$$pcfile >> ${PLIST} ; \
+	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
@@ -259,12 +263,10 @@ do-install:
 	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 	fi
-.if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$$pcfile \
-			${PREFIX}/libdata/pkgconfig ; \
+	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc ; \
 	done
-.endif
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components

@@ -31,7 +31,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5b"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6a"
 .else
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
@@ -78,7 +78,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' \
+	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}-gtk2|g' \
 		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
 		 's|-lpthread|${PTHREAD_LIBS}|g'
