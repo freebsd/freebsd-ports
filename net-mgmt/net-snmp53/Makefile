@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.12 1997/07/02 09:39:17 asami Exp $
+# $Id: Makefile,v 1.13 1997/07/03 04:58:40 fenner Exp $
 #
 
 DISTNAME=	ucd-snmp-3.2
@@ -12,6 +12,7 @@ MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
+BROKEN=		struct ifqueue
 GNU_CONFIGURE=	yes
 .if defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where
@@ -42,6 +43,5 @@ post-install:
 		echo "[ -x /usr/local/sbin/snmpd ] && /usr/local/sbin/snmpd && echo -n ' snmpd'" >> ${PREFIX}/etc/rc.d/snmpd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/snmpd.sh; \
 	 fi
-
 
 .include <bsd.port.mk>
