@@ -7,6 +7,7 @@
 
 PORTNAME=	ssl
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.notwork.org/~gotoyuzo/ruby/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

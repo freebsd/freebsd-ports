@@ -7,6 +7,7 @@
 
 PORTNAME=	syslog
 PORTVERSION=	20010130
+PORTREVISION=	1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.utdallas.edu/~amos/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

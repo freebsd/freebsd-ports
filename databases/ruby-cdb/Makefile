@@ -7,6 +7,7 @@
 
 PORTNAME=	cdb
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.fan.gr.jp/~kaz/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

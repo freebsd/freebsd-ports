@@ -7,6 +7,7 @@
 
 PORTNAME=	locale
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://kafka.salem.mass.edu/~yashi/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

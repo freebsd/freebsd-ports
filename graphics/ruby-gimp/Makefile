@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	20010315
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://homepage1.nifty.com/susho/software/gimp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

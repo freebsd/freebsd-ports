@@ -7,6 +7,7 @@
 
 PORTNAME=	clibpdf
 PORTVERSION=	20010519
+PORTREVISION=	1
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

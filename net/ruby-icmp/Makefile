@@ -7,6 +7,7 @@
 
 PORTNAME=	icmp
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.notwork.org/~gotoyuzo/ruby/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	eb
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.threeweb.ad.jp/~nyasu/software/
 DISTNAME=	ruby-${PORTNAME}${PORTVERSION}

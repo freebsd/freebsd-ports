@@ -7,6 +7,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

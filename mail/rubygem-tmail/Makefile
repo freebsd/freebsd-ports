@@ -7,6 +7,7 @@
 
 PORTNAME=	tmail
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 MASTER_SITE_SUBDIR=	knu

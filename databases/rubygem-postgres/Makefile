@@ -7,6 +7,7 @@
 
 PORTNAME=	postgres
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://webclub.kcom.ne.jp/mb/noborus/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

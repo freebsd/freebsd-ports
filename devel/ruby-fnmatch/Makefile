@@ -7,6 +7,7 @@
 
 PORTNAME=	fnmatch
 PORTVERSION=	1.1b
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.ruby-lang.org/~knu/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

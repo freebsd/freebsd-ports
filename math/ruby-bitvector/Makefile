@@ -7,6 +7,7 @@
 
 PORTNAME=	bitvector
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www.ce.chalmers.se/~feldt/ruby/extensions/bitvector/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

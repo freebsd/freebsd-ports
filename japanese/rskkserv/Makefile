@@ -7,7 +7,7 @@
 
 PORTNAME=	rskkserv
 PORTVERSION=	2.94.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby

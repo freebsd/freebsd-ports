@@ -7,6 +7,7 @@
 
 PORTNAME=	slang
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES+=	devel ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.kondara.org/~g/

@@ -7,6 +7,7 @@
 
 PORTNAME=	nis
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
