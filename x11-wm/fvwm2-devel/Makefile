@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -56,7 +56,8 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmTheme.1 FvwmWharf.1 FvwmWinList.1 fvwm-menu-desktop.1 \
 	fvwm-menu-directory.1 fvwm-menu-headlines.1 fvwm-menu-xlock.1 \
 	fvwm2.1 xpmroot.1 fvwm-config.1 fvwm-root.1 fvwm-bug.1 \
-	fvwm.1 fvwm-convert-2.2.1 fvwm-convert-2.4.1 fvwm-convert-2.6.1
+	fvwm.1 fvwm-convert-2.2.1 fvwm-convert-2.4.1 fvwm-convert-2.6.1 \
+	FvwmPerl.1 fvwm-perllib.1
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
