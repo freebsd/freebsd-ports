@@ -4558,6 +4558,7 @@ mod_sqlinclude	ports/www/mod_sqlinclude
 mod_throttle	ports/www/mod_throttle
 mod_ticket	ports/www/mod_ticket
 mod_tidy	ports/www/mod_tidy
+mod_traf_thief	ports/www/mod_traf_thief
 mod_trigger	ports/www/mod_trigger
 mod_tsunami	ports/www/mod_tsunami
 mod_v2h		ports/www/mod_v2h
