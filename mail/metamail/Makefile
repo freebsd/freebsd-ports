@@ -8,7 +8,8 @@
 PORTNAME=	metamail
 PORTVERSION=	2.7
 CATEGORIES=	mail
-MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
+MASTER_SITES=	http://ftp.dmz.digex.net/pub/packages/mail/metamail/ \
+		ftp://thumper.bellcore.com/pub/nsb/
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
