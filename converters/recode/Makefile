@@ -18,6 +18,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -36,7 +37,7 @@ remove-info-files:
 post-patch: patch-po-files patch-makeinfo
 
 patch-po-files:
-	@${REINPLACE_CMD} -e '\
+	@${PERL} -pi -e '\
 		if (/Project-Id-Version/) { \
 			s/3\.[45](r|\.[0-9])?/3.6/; \
 			s/: (Free )?recode/: GNU recode/; \
