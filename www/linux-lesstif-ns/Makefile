@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.90.5
+PORTVERSION=	0.91.0
 CATEGORIES=	www x11-toolkits linux
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
