@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.43 1999/01/31 16:55:06 vanilla Exp $
+# $Id: Makefile,v 1.44 1999/02/18 04:49:25 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.16
@@ -33,10 +33,11 @@ pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
+	@${MKDIR} ${LOCALBASE}/share/aclocal
+	@${INSTALL_DATA} ${WRKSRC}/gtk.m4 ${LOCALBASE}/share/aclocal/gtk11d.m4
 	@if [ ! -f ${PREFIX}/share/info ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
