@@ -7302,6 +7302,7 @@ py-PySQLite	ports/databases/py-PySQLite
 py-SQLDict	ports/databases/py-SQLDict
 py-adns		ports/dns/py-adns
 py-albatross	ports/www/py-albatross
+py-anonfunc	ports/devel/py-anonfunc
 py-ansistyle	ports/devel/py-ansistyle
 py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
