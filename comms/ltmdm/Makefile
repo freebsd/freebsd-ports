@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ltmdm
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.gsoft.com.au/~doconnor/
+MASTER_SITES=	http://www.csociety.org/~will/ \
+		http://www.gsoft.com.au/~doconnor/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	darius@dons.net.au
@@ -28,12 +29,8 @@ pre-fetch:
 do-install:
 	@${PERL} -pi.orig -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ltmdm.sh
 	@${MKDIR} ${DATADIR}
-	@${CP} ${WRKSRC}/sys/modules/ltmdm/ltmdm.ko ${DATADIR}
-	@(cd  ${WRKSRC}/sys/modules/ltmdm; ${MAKE} clean)
-	@${MKDIR} ${PREFIX}/src
-	${TAR} -C ${WRKSRC} -cf - sys | ${TAR} -C ${PREFIX}/src -xvf -
+	@${INSTALL_DATA} ${WRKSRC}/sys/modules/ltmdm/ltmdm.ko ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/ltmdm.sh ${PREFIX}/etc/rc.d/
-	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
