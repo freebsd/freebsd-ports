@@ -1,5 +1,5 @@
---- nls/Makefile.orig	Fri Dec 29 20:56:45 2000
-+++ nls/Makefile	Sat Jan  6 23:21:16 2001
+--- nls/Makefile.orig	Wed Mar 20 08:04:46 2002
++++ nls/Makefile	Tue Apr 16 04:58:53 2002
 @@ -3,7 +3,7 @@
  #
  LANGFILE=LANGS
@@ -12,7 +12,7 @@
 @@ -44,7 +44,7 @@
  	./Install $(LANGFILE) $(GENCAT) $(CATNAME)
  
- $(HFILES): $(MFILES)
+ $(HFILES): $(MFILES) gencat/gencat
 -	gencat/gencat $(MSGCAT) "$(SDIR)/`basename $@ .h`".m -h $@
 +	$(GENCAT) $(MSGCAT) "$(SDIR)/`basename $@ .h`".m -h $@
  

@@ -1,5 +1,5 @@
---- Configure.orig	Fri May 10 09:26:47 2002
-+++ Configure	Fri May 10 09:29:55 2002
+--- Configure.orig	Sat Jan 19 01:18:12 2002
++++ Configure	Sat Jan 19 17:19:40 2002
 @@ -84,10 +84,10 @@
      yes)
      ;;
@@ -8,10 +8,10 @@
 -	echo "Say 'sh Configure', not 'sh <Configure'"
 -	exit 1
 -    fi
-+#   if test ! -t 0; then
-+#	echo "Say 'sh Configure', not 'sh <Configure'"
-+#	exit 1
-+#   fi
++#     if test ! -t 0; then
++# 	echo "Say 'sh Configure', not 'sh <Configure'"
++# 	exit 1
++#     fi
      ;;
  esac
  
