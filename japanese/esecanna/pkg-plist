@@ -1,5 +1,5 @@
-etc/esecannarc
 @unexec if [ -x %D/etc/rc.d/esecanna.sh ]; then %D/etc/rc.d/esecanna.sh stop || true; fi
+etc/esecannarc
 etc/rc.d/%%STARTER%%
 @unexec if [ -f %B/canna.sh ]; then chmod +x %B/canna.sh; fi
 @exec if [ -x %B/canna.sh ]; then chmod -x %B/canna.sh; fi
