@@ -50,6 +50,7 @@
     SUBDIR += ecawave
     SUBDIR += esound
     SUBDIR += extace
+    SUBDIR += faad
     SUBDIR += fcplay
     SUBDIR += festdoc
     SUBDIR += festival

@@ -1,0 +1,8 @@
+bin/faad
+include/faad.h
+lib/libfaad.a
+lib/libfaad.so
+lib/libfaad.so.0
+lib/libmp4v2.a
+lib/libmp4v2.so
+lib/libmp4v2.so.0

@@ -1,0 +1,26 @@
+--- configure.in.orig	Fri Aug  9 03:23:28 2002
++++ configure.in	Wed Jan  8 19:20:59 2003
+@@ -1,8 +1,9 @@
+-AC_INIT()
++AC_INIT
++AC_CANONICAL_TARGET
+ AM_INIT_AUTOMAKE(faad,2.0)
+
+ AC_PROG_CC
+-AM_PROG_LIBTOOL
++AC_PROG_LIBTOOL
+ AC_SUBST(LIBTOOL_DEPS)
+
+ dnl Checks for programs.
+@@ -29,8 +30,9 @@
+   ])
+ fi
+
+-AC_OUTPUT_COMMANDS(,[cd common/mp4v2; aclocal -I .; autoheader; libtoolize --automake; automake --add-missing; autoconf; cd -])
++AC_CONFIG_COMMANDS([default-1],[[]],[[cd common/mp4v2; aclocal -I . -I /usr/local/share/aclocal; autoheader; libtoolize --automake; automake --add-missing; autoconf; cd -]])
+
+ AC_CONFIG_SUBDIRS(common/mp4v2)
+
+-AC_OUTPUT(libfaad/Makefile common/Makefile  frontend/Makefile Makefile)
++AC_CONFIG_FILES([libfaad/Makefile common/Makefile  frontend/Makefile Makefile])
++AC_OUTPUT
