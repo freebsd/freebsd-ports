@@ -1,9 +1,8 @@
-# $Id: Makefile,v 1.21 1996/12/08 23:40:57 obrien Exp $
+# $Id: Makefile,v 1.22 1996/12/27 05:29:44 obrien Exp $
 #
 
     SUBDIR += bpl+
     SUBDIR += ecu
-    SUBDIR += estic
     SUBDIR += hylafax
     SUBDIR += kermit
     SUBDIR += lrzsz
