@@ -74,9 +74,9 @@
    {
    case 1: /* (e)ncrypt */
      bits |= PGPENCRYPT;
---- lib.c.orig	Wed Jul  7 02:25:45 1999
-+++ lib.c	Sun Sep 26 23:46:25 1999
-@@ -859,7 +859,7 @@
+--- muttlib.c.orig	Sun Apr  9 14:39:02 2000
++++ muttlib.c	Fri May 12 11:26:58 2000
+@@ -671,7 +671,7 @@
    if (*append == 0 && access (fname, F_OK) == 0)
    {
      switch (mutt_multi_choice
