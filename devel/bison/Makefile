@@ -7,8 +7,7 @@
 #
 
 PORTNAME=		bison
-PORTVERSION=		1.28
-PORTEPOCH=		1
+PORTVERSION=		1.30
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
@@ -21,7 +20,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lintl" \
 			MAKEINFO="makeinfo --no-split"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=			bison.1
 
