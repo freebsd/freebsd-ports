@@ -13,12 +13,9 @@ CIDRAdvisor	suggests safe cidr aggregates
 
 aoe		autonomous system object editor
 
-pmatch		prints matching policies for destinations in aut-num objects
-
 prpath		enumerates a list of patchs between ASes and destinations
 
 prtraceroute	prints route and policy information packets take to a
 		network	host
 
-prcheck 	syntax checks the aut-num objects in the Internet Routing
-		Registry
+rpslcheck	sytax checks the aut-num policy for an AS. 	
