@@ -1,0 +1,14 @@
+Freebirth is a software bass synthesizer, step sequencer, and sample player.
+It consists of a bass synthesizer vaguely 303ish but, 
+it has much more sonic capability such as:
+
+    * three oscillators (saw, sin , sqr)
+    * phase offsets for each oscillator.
+    * separate filter and amplitude envelopes.
+    * separate tuning for each oscillator
+    * two effects busses (reverb and delay)
+
+WWW: http://www.bitmechanic.com/projects/freebirth
+
+- David
+dyeske@yahoo.com
