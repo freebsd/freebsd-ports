@@ -17,6 +17,7 @@ MAINTAINER=	patseal@hyperhost.net
 
 MAN1=		boxes.1
 USE_GMAKE=	yes
+USE_BISON=	yes
 ALL_TARGET=
 
 do-install:
