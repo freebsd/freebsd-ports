@@ -489,6 +489,7 @@ bdes		src/secure/usr.bin/bdes
 bdfresize	ports/x11-fonts/bdfresize
 beav		ports/editors/beav
 beecrypt	ports/security/beecrypt
+bestfit		ports/misc/bestfit
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bftpd		ports/ftp/bftpd
