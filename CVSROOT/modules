@@ -2148,7 +2148,6 @@ gnomelibs	ports/x11/gnomelibs
 gnomemag	ports/x11/gnomemag
 gnomemedia2	ports/audio/gnomemedia2
 gnomemeeting	ports/net/gnomemeeting
-gnomemeeting2	ports/net/gnomemeeting2
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
 gnomemm		ports/x11-toolkits/gnomemm
