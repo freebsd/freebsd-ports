@@ -11,7 +11,7 @@ etc/screenrc-uim
 include/uim/uim-helper.h
 include/uim/uim.h
 %%GNOME%%libdata/bonobo/servers/GNOME_UimApplet.server
-%%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.so
+%%GTK%%lib/gtk-2.0/2.4.0/immodules/im-uim.so
 lib/libuim.a
 lib/libuim.so
 lib/libuim.so.0
