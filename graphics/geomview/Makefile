@@ -14,6 +14,8 @@ MASTER_SITES=	http://ftp1.sourceforge.net/geomview/ \
 MAINTAINER=	fenner@freebsd.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
+BROKEN=		"Does not install"
+
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 # can't get autoconf to like forms.h, punt for now
 #forms.1:${PORTSDIR}/x11-toolkits/xforms \
