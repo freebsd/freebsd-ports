@@ -1,0 +1,5 @@
+DESCRIPTION
+       `Convert::BER' provides an OO interface to encoding and
+       decoding data using the ASN.1 Basic Encoding Rules (BER),
+       a platform independent way of encoding structured binary
+       data together with the structure.
