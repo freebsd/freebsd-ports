@@ -12,7 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.fping.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_to-ipv6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 COMMENT=	Quickly ping N hosts w/o flooding the network
 
 USE_REINPLACE=	yes
