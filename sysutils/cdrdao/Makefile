@@ -3,7 +3,7 @@
 # Date created:         7 April 1999
 # Whom:                 futatuki
 #
-# $Id: Makefile,v 1.3 1999/07/10 19:36:38 sada Exp $
+# $Id: Makefile,v 1.4 1999/08/12 18:49:27 cpiazza Exp $
 #
 # If You don't want to use Joerg Schilling's SCSI library,
 # set DONT_USE_SCGLIB = yes
@@ -38,7 +38,6 @@ XCDRDAO=		yes
 
 .if defined(XCDRDAO)
 LIB_DEPENDS+=		gtkmm-1.0.5:${PORTSDIR}/x11-toolkits/gtk--
-PLIST=          	${PKGDIR}/PLIST.xcdrdao
 .else
 CONFIGURE_ARGS= 	--disable-gtkmmtest
 .endif
