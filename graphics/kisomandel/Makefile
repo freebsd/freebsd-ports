@@ -11,7 +11,7 @@ PORTVERSION=	0.66
 CATEGORIES=	graphics
 MASTER_SITES=	http://helsteger.supereva.it/kisomandel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 

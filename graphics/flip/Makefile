@@ -11,7 +11,7 @@ PORTVERSION=	2.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.reptilelabour.com/software/files/flip/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/graphics/mpeg_encode

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qtez.ibl.sk/qtez/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 USE_PERL5=	yes
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ PORTVERSION=	1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.qglviewer.de/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

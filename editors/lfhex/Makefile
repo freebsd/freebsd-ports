@@ -11,7 +11,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://typedef.dnsalias.org/pub/lfhex/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
 		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/apps/utils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 

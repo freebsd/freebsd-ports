@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://www.lrv.fri.uni-lj.si/~bojank/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@freebsd.org
 
 NO_WRKSUBDIR=	yes
 
