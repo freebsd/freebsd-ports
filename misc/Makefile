@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.199 1999/04/08 17:47:17 steve Exp $
+# $Id: Makefile,v 1.200 1999/04/25 17:54:56 steve Exp $
 #
 
     SUBDIR += 221upgrade
@@ -79,6 +79,7 @@
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkman
+    SUBDIR += tkrunit
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += unclutter
