@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
@@ -67,6 +66,7 @@ APPENDIXDIR=	${PREFIX}/share/eb/appendix
 
 pre-configure:
 	cd ${WRKSRC}; autoconf
+
 post-install:
 .for file in ${LISTFILES}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${APPENDIXDIR}
