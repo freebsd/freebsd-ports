@@ -61,7 +61,6 @@ post-patch:
 		${WRKSRC}/doc/conf-o2n.rb
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/rskkserv.conf.sample ${PREFIX}/etc/
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		( \
@@ -102,5 +101,7 @@ post-install:
 .endif
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/conf-o2n.rb ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/rskkserv.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rskkserv.conf.sample ${EXAMPLESDIR}
 
 .include <bsd.port.mk>

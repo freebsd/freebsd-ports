@@ -1,6 +1,5 @@
 etc/rc.d/rskkserv.sh
-etc/rskkserv.conf
-etc/rskkserv.conf.sample
+@unexec if cmp -s %D/etc/rskkserv.conf %D/%%EXAMPLESDIR%%/rskkserv.conf; then rm -f %D/etc/rskkserv.conf; fi
 %%RUBY_SITEARCHLIBDIR%%/skkserv/skkdic.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/skkserv
 %%RUBY_SITELIBDIR%%/skkserv/bdbdic.rb
@@ -16,4 +15,7 @@ libexec/rskkserv
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%EXAMPLESDIR%%/conf-o2n.rb
+%%EXAMPLESDIR%%/rskkserv.conf
+@exec [ -f %D/etc/rskkserv.conf ] || cp %B/%f %D/etc/rskkserv.conf
+%%EXAMPLESDIR%%/rskkserv.conf.sample
 @dirrm %%EXAMPLESDIR%%
