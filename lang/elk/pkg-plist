@@ -1,4 +1,5 @@
 bin/elk
+bin/scheme-elk
 include/elk/compat.h
 include/elk/cstring.h
 include/elk/exception.h
