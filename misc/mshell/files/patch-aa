@@ -1,5 +1,5 @@
-*** Makefile.orig	Wed Oct  5 18:31:35 1994
---- Makefile	Wed Oct  5 18:35:39 1994
+*** Makefile.orig	Tue May 27 00:29:12 1997
+--- Makefile	Tue May 27 02:13:51 1997
 ***************
 *** 8,21 ****
   #
@@ -10,7 +10,7 @@
   	settatr.o setenv.o xsystem.o dl.o macro.o
   
   mshell: $(OBJS)
-  	cc $(CFLAGS) $(OBJS) -lcurses -ltermcap -o mshell
+! 	cc $(CFLAGS) $(OBJS) -lcurses -ltermcap -o mshell
   
   $(OBJS) : mshell.h
   
@@ -29,7 +29,7 @@
 + all: mshell
 + 
   mshell: $(OBJS)
-  	cc $(CFLAGS) $(OBJS) -lcurses -ltermcap -o mshell
+! 	cc $(CFLAGS) $(OBJS) -lncurses -ltermcap -o mshell
   
   $(OBJS) : mshell.h
   
