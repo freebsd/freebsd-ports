@@ -25,6 +25,7 @@ CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.*
 CONFLICTS+=	sendmail-8.11.* sendmail-*-8.11.* sendmail+*-8.11.*
 CONFLICTS+=	sendmail-8.13.* sendmail-*-8.13.* sendmail+*-8.13.*
 
+NO_CDROM=	please update to a newer version
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -77,7 +78,7 @@ OPENLDAP_LIB?=	libldap.so.2
 BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
 .else
-USE_OPENLDAP_VER?=	21
+USE_OPENLDAP_VER?=	22
 .endif
 .else
 CONFLICTS+=	sendmail*+ldap*-8.*
