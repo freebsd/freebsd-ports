@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	src/usr.bin/ssh
-PKGNAME=	OpenSSH-1.2.1
+PKGNAME=	OpenSSH-1.2.2
 CATEGORIES=	security net ipv6
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
@@ -18,12 +18,13 @@ LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
 
 .include <bsd.port.pre.mk>
 CAT?=		/bin/cat
-DISTFILES!=	${CAT} ${FILESDIR}/distfiles
-IGNOREFILES!=	${CAT} ${FILESDIR}/ignorefiles
+SED?=		/usr/bin/sed
+DISTFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/distfiles
+IGNOREFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/ignorefiles
 DISTFILES+=	${IGNOREFILES}
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Fri Jan  7 01:25:49 JST 2000
+CVS_DATE=	Tue Feb  1 02:19:07 EST 2000
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
@@ -35,7 +36,7 @@ CRYPTOLIBS+=	-lRSAglue -lrsaref
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 .if ${OSVERSION} < 400014
-MAKE_ENV+=	USET_INET6=yes
+MAKE_ENV+=	USE_INET6=yes
 MAKE_ENV+=	COMPAT_GETADDRINFO=yes
 .endif
 .if !exists(/usr/include/tcpd.h)
@@ -79,7 +80,7 @@ do-fetch:
 			${ECHO_MSG} ">> Attempting to CVS checkout from $${CVS_SITE}."; \
 			if ${CVS_CMD} -d $${CVS_SITE} co -D "${CVS_DATE}" \
 			    ${DISTNAME}; then \
-				${ECHO} -n ${CVS_DATE} > ${STAMPFILE}; \
+				${ECHO} -n "${CVS_DATE}" > ${STAMPFILE}; \
 				exit; \
 			fi \
 		done; \
