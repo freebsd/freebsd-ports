@@ -1,23 +1,23 @@
---- Makefile.orig	Wed Oct  9 18:54:01 2002
-+++ Makefile	Wed Oct  9 18:55:21 2002
-@@ -25,13 +25,13 @@
+--- Makefile.orig	Mon Mar 31 19:07:24 2003
++++ Makefile	Mon Mar 31 19:08:45 2003
+@@ -26,13 +26,13 @@
  
  # GNU
  
--cpp = g++ -c -O5 -Wall -pedantic -Iinclude $(vflags)
-+cpp = g++ -c -O5 -Wall -pedantic -Iinclude $(vflags) %%CXXFLAGS%%
+-cpp = g++ -c -g -O5 -Wall -pedantic -Iinclude
++cpp = g++ -c -g -O5 -Wall -pedantic -Iinclude %%CXXFLAGS%%
  # To link with the static library libtcl.*.a
--link = g++ -lm -lpthread
-+link = g++ -lm -lpthread %%LIBS%%
+-link = g++ -lm
++link = g++ -lm %%LIBS%%
  # To link with the shared object libtcl.*.so
- # link = g++ -lm -Wl,-brtl -lpthreads -bbigtoc
+ # link = g++ -lm -Wl,-brtl -bbigtoc
  # To link shared object
--linkShared = g++ -lm -lpthread -Wl,-shared
-+linkShared = g++ -lm -lpthread -Wl,-shared %%LIBS%%
+-linkShared = g++ -lm -Wl,-shared
++linkShared = g++ -lm -Wl,-shared %%LIBS%%
  
  # xlC
  
-@@ -46,15 +46,15 @@
+@@ -47,15 +47,15 @@
  
  # Tcl/Tk Release
  
