@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wx
-PORTVERSION=	2.5.2
-PORTREVISION?=	1
+PORTVERSION=	2.5.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxwindows
@@ -17,10 +16,11 @@ DISTNAME=	wxGTK-${PORTVERSION}
 MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings (devel version)
 
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png\
+		jpeg.9:${PORTSDIR}/graphics/jpeg\
+		tiff.4:${PORTSDIR}/graphics/tiff\
+		expat.5:${PORTSDIR}/textproc/expat2\
+		mspack.1:${PORTSDIR}/archivers/libmspack
 
 CONFLICTS=	wxgtk-*
 
@@ -32,12 +32,13 @@ USE_ICONV=	yes
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libpng=sys \
-		--with-libjpeg=sys \
-		--with-libtiff=sys \
-		--with-zlib=sys \
-		--with-expat=sys \
-		--with-opengl \
+CONFIGURE_ARGS=	--with-libpng=sys\
+		--with-libjpeg=sys\
+		--with-libtiff=sys\
+		--with-zlib=sys\
+		--with-expat=sys\
+		--with-opengl\
+		--with-mspack\
 		--enable-gtk2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
@@ -51,7 +52,7 @@ NO_LATEST_LINK=	yes
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
-RUN_DEPENDS=	${X11BASE}/include/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk2-common-devel
+RUN_DEPENDS=	${X11BASE}/include/wx-2.5/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk2-common-devel
 .endif
 
 .if ${WXGTK_FLAVOR:M*-common} != ""
@@ -66,22 +67,22 @@ BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
-RUN_DEPENDS=	${X11BASE}/include/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-common-devel
+RUN_DEPENDS=	${X11BASE}/include/wx-2.5/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-common-devel
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
-LIB_DEPENDS+=	wx_baseu-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-devel
+LIB_DEPENDS+=	wx_baseu-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-devel
 .else
-LIB_DEPENDS+=	wx_base-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-devel
+LIB_DEPENDS+=	wx_base-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-devel
 .endif
 
-.endif # !gtk2-contrib-common
-.endif # *-contrib*
-
 pre-configure:
-	@${FIND} ${WRKSRC}/contrib -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+	@${FIND} ${BUILD_WRKSRC} -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e "s,@CXXFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cxxflags`," \
 		-e "s,@CFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cflags`," \
 		-e "s,@CPPFLAGS@,,"
+
+.endif # !gtk2-contrib-common
+.endif # *-contrib*
 
 .include <bsd.port.pre.mk>
 

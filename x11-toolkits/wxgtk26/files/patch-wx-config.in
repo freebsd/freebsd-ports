@@ -1,11 +1,11 @@
---- wx-config.in.orig	Mon May 31 18:11:50 2004
-+++ wx-config.in	Sun Jun 27 20:08:21 2004
-@@ -230,7 +230,7 @@
-         includes=" -I${includedir}"
-     fi
+--- wx-config.in.orig	Sun Oct 10 22:17:27 2004
++++ wx-config.in	Wed Nov 24 22:48:01 2004
+@@ -1014,7 +1014,7 @@
+     _include_cppflags="-I${includedir}/wx-@WX_RELEASE@@WX_FLAVOUR@"
+ fi
  
--    includes="-I${libdir}/wx/include/${TOOLCHAIN_NAME}$includes"
-+    includes="-I${includedir}/wx/include/${TOOLCHAIN_NAME}$includes"
+-_cppflags=$(echo "-I${libdir}/wx/include/@TOOLCHAIN_FULLNAME@" $_include_cppflags "@WXDEBUG_DEFINE@" "@TOOLCHAIN_DEFS@" $_static_cppflags $_gui_cppflags "@WXCONFIG_INCLUDE@" "@WX_LARGEFILE_FLAGS@" "@GCC_PRAGMA_FLAGS@")  
++_cppflags=$(echo "-I${includedir}/wx-@WX_RELEASE@/@TOOLCHAIN_FULLNAME@" $_include_cppflags "@WXDEBUG_DEFINE@" "@TOOLCHAIN_DEFS@" $_static_cppflags $_gui_cppflags "@WXCONFIG_INCLUDE@" "@WX_LARGEFILE_FLAGS@" "@GCC_PRAGMA_FLAGS@")  
  
-     # in inplace case we need to also add path to contrib headers -- do it
-     # unconditionally as they might be used and we have no way of knowing if
+ # now without further ado, we can answer these too.
+ [ -z "$output_option_cppflags" ] || echo $_cppflags
