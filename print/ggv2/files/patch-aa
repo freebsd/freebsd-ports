@@ -1,6 +1,6 @@
---- configure.orig	Sat Apr 17 04:25:20 1999
-+++ configure	Sat May 22 21:58:31 1999
-@@ -4165,15 +4165,15 @@
+--- configure.orig	Tue May  9 17:06:45 2000
++++ configure	Fri Aug 25 11:04:07 2000
+@@ -4506,15 +4506,15 @@
  fi
  
          
@@ -20,3 +20,19 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
+@@ -4821,13 +4821,8 @@
+      fi
+   fi
+   if test "x$no_bonobo" = x ; then
+-     echo "$ac_t""yes" 1>&6
+-     
+-	cat >> confdefs.h <<\EOF
+-#define ENABLE_BONOBO 1
+-EOF
+-
+-	have_bonobo=true
++     echo "$ac_t""yes - but I'm ignoring it" 1>&6
++	have_bonobo=false
+      
+   else
+      echo "$ac_t""no" 1>&6
