@@ -3,13 +3,14 @@
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
-# $Id: Makefile,v 1.3 1998/12/20 22:29:52 nik Exp $
+# $Id: Makefile,v 1.4 1998/12/23 23:09:57 steve Exp $
 #
 
 DISTNAME=	tidy17dec98
 PKGNAME=	tidy-0.1.98.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saken@budoir.net
 
