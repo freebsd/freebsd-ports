@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat=${LOCALBASE} \
-		--with-default-fonts=${X11BASE}/lib/fonts
+		--with-default-fonts=${X11BASE}/lib/X11/fonts
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 WRKSRC=	${WRKDIR}/${DISTNAME}/fontconfig
 
