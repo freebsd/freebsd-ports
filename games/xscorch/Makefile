@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	xscorch
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.13a
 CATEGORIES=	games
-MASTER_SITES=	http://chaos2.org/xscorch/
+MASTER_SITES=	http://chaos2.org/xscorch/ \
+		http://mirror.dok.org/xscorch/
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 
+WRKSRC=	${WRKDIR}/xscorch-0.1.13
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
