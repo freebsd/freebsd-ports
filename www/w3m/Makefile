@@ -17,8 +17,7 @@ DISTNAME=	w3m-${W3M_VERSION}.${SNAPDATE}
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A pager/text-based WWW browser
 
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
-		intl.5:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 W3M_VERSION=	0.4.2
 SNAPDATE=	20040111
@@ -62,6 +61,14 @@ PLIST_SUB+=	JAPANESE="" M17N=""
 PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext
+PLIST_SUB+=	NLS=""
+.endif
+
 .if defined(INLINE_IMAGE)
 USE_GNOME=	gdkpixbuf
 CONFIGURE_ARGS+=	--with-imagelib=gdk-pixbuf
@@ -80,10 +87,14 @@ PKGMESSAGE=	${NONEXISTENT}
 .endif
 
 pre-everything::
-.if defined(M17N)
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> You can enable some features by defining following variables."
 	@${ECHO_MSG} "===>"
+.if defined(M17N)
+	@${ECHO_MSG} "===> M17N         (multilingualization, enabled)"
+.else
+	@${ECHO_MSG} "===> M17N         (multilingualization)"
+.endif
 .if defined(JAPANESE)
 	@${ECHO_MSG} "===> JAPANESE     (Japanese messages and migemo support, enabled)"
 .else
@@ -95,12 +106,19 @@ pre-everything::
 	@${ECHO_MSG} "===> INLINE_IMAGE (inline image support)"
 .endif
 	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> You can disable some features by defining following variables."
+	@${ECHO_MSG} "===>"
+.if defined(WITHOUT_SSL)
+	@${ECHO_MSG} "===> WITHOUT_SSL (disabled)"
+.else
+	@${ECHO_MSG} "===> WITHOUT_SSL"
 .endif
-
-pre-extract:
-.if !defined(WITHOUT_SSL)
-	@${ECHO_MSG} "You can disable support for SSL by defining WITHOUT_SSL."
+.if defined(WITHOUT_NLS)
+	@${ECHO_MSG} "===> WITHOUT_NLS (disabled)"
+.else
+	@${ECHO_MSG} "===> WITHOUT_NLS"
 .endif
+	@${ECHO_MSG} "===>"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
