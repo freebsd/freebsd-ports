@@ -7,13 +7,14 @@
 
 PORTNAME=	libexif-gtk
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libexif
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	exif.7:${PORTSDIR}/graphics/libexif \
+LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif \
 		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_REINPLACE=	yes
