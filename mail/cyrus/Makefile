@@ -1,9 +1,9 @@
 # New ports collection makefile for:		cyrus
-# Version required:				1.5.2
+# Version required:				1.5.14
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1998/09/23 15:36:26 stb Exp $
+# $Id: Makefile,v 1.9 1998/09/25 10:07:46 asami Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.14
