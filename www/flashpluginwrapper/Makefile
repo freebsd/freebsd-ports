@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	A wrapper allowing use of linux-flashplugin with native mozilla
-DEPRECATED=	"maintainer says to deprecate"
-EXPIRATION_DATE=	"March 09, 2004"
+DEPRECATED=	"Please use www/linuxpluginwrapper.  This port should be obsoleted.  But, I know many people which cannot upgrade by any reason.  So I won't remove this."
 
 RUN_DEPENDS=	${LOCALBASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin
 
@@ -25,7 +24,6 @@ ONLY_FOR_ARCHS=	i386
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	linuxpluginwrapper-*
 
-IGNORE=		"Please use www/linuxpluginwrapper.  This port should be obsoleted.  But, if you cannot use that for some reason, please set NO_IGNORE and you can use this."
 PLIST_FILES=	lib/libflashplayer.so.1
 
 post-patch:
