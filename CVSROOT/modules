@@ -2437,6 +2437,7 @@ husky-nltools	ports/news/husky-nltools
 husky-smapi	ports/news/husky-smapi
 husky-sqpack	ports/news/husky-sqpack
 hx		ports/net/hx
+hydra		ports/www/hydra
 hylafax		ports/comms/hylafax
 hyperlatex	ports/print/hyperlatex
 hypermail	ports/www/hypermail
