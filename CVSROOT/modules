@@ -8554,6 +8554,7 @@ tinyfugue	ports/net/tinyfugue
 tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
 tinyq		ports/devel/tinyq
+tipograf	ports/print/tipograf
 tirc		ports/irc/tirc
 tircproxy	ports/irc/tircproxy
 titano		ports/devel/titano
