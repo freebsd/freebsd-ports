@@ -1,0 +1,5 @@
+bin/filtermail
+share/locale/de/LC_MESSAGES/filtermail.mo
+share/locale/fr/LC_MESSAGES/filtermail.mo
+share/locale/it/LC_MESSAGES/filtermail.mo
+share/locale/pt_BR/LC_MESSAGES/filtermail.mo
