@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.127 1999/04/03 02:05:32 steve Exp $
+# $Id: Makefile,v 1.128 1999/04/21 05:56:24 nectar Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -14,6 +14,7 @@
     SUBDIR += cmucl
     SUBDIR += dylan
     SUBDIR += egcs
+    SUBDIR += egcs-devel
     SUBDIR += eiffel
     SUBDIR += elisp-manual
     SUBDIR += elk
