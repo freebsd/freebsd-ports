@@ -26,11 +26,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Event::Easter.3
 
-.include <bsd.port.pre.mk>
-
-# Because p5-Set-Infinite needs 5.6.1
-.if ${PERL_LEVEL} < 500601
-IGNORE="Need at least perl 5.6.1 to build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
