@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	xzgv
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://xzgv.browser.org/ \
-			${MASTER_SITE_SUNSITE}
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 
 MAINTAINER=	nosuzuki@e-mail.ne.jp
 
-USE_GMAKE=	yes
-USE_IMLIB=	yes
 USE_X_PREFIX=	yes
+USE_IMLIB=	yes
+USE_GMAKE=	yes
 
 MAN1=		xzgv.1
 
 post-patch:
-	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/config.mk
-
+	@${PERL} -pi -e 's|^CC|#CC|g ; \
+		 s|^CFLAGS|#CFLAGS|g ; \
+		 s|^PREFIX|#PREFIX|g' ${WRKSRC}/config.mk
 
 .include <bsd.port.mk>
