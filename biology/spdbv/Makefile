@@ -14,7 +14,6 @@ MASTER_SITES=	http://au.expasy.org/spdbv/program/ \
 		http://cn.expasy.org/spdbv/program/ \
 		http://ca.expasy.org/spdbv/program/ \
 		http://kr.expasy.org/spdbv/program/ \
-		http://inn-prot.weizmann.ac.il/spdbv/program/\
 		http://www.usm.maine.edu/spdbv/program/ \
 		http://www.genebee.msu.ru/spdbv/program/
 DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//}-Linux
