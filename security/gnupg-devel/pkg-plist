@@ -8,7 +8,7 @@ bin/kbxutil
 bin/watchgnupg
 libexec/gpg-protect-tool
 sbin/addgnupghome
-share/gnupg/options.skel
+share/gnupg/gpg-conf.skel
 %%NLS%%share/locale/de/LC_MESSAGES/gnupg2.mo
 %%NLS%%@dirrm share/locale/de/LC_MESSAGES
 @dirrm share/gnupg
