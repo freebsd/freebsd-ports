@@ -15,10 +15,10 @@ DIST_SUBDIR=	bdb
 
 PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
-PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
+PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Berkeley DB package, revision 3
+MAINTAINER=	matthias.andree@gmx.de
+COMMENT=	The Berkeley DB package, revision 3.3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
