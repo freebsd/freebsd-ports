@@ -156,6 +156,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += qdecoder
     SUBDIR += quanta
+    SUBDIR += reportmagic
     SUBDIR += roxen
     SUBDIR += ruboard
     SUBDIR += screem
