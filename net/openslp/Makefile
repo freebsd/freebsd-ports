@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openslp
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openslp
@@ -32,6 +32,13 @@ CONFIGURE_ARGS+=	--enable-async-api
 .endif
 
 INSTALLS_SHLIB=	yes
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "OpenSLP has the following tunable option(s):"
+	@${ECHO_MSG} "		WITH_SLP_SECURITY=yes	Turns on SLPv2 security support"
+	@${ECHO_MSG} "		WITH_ASYNC_API=yes	Enable asynchronous communication API"
+	@${ECHO_MSG} ""
 
 post-extract:
 	@(cd ${WRKSRC}; \
