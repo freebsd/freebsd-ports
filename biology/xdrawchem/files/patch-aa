@@ -31,13 +31,3 @@
  
  ####### Target
  
-@@ -164,3 +164,9 @@
- 
- moc_manual.cpp: manual.h
- 	$(MOC) manual.h -o moc_manual.cpp
-+
-+install:
-+	strip -s xdrawchem
-+	install -c -m 755 -o root -g wheel xdrawchem $(X11BASE)/bin/
-+	install -d -m 755 -o root -g wheel $(X11BASE)/share/xdrawchem/
-+	install -c -m 644 -o root -g wheel ring/* $(X11BASE)/share/xdrawchem/

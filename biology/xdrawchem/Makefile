@@ -21,4 +21,9 @@ USE_QT2=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xdrawchem ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/xdrawchem
+	${INSTALL_DATA} ${WRKSRC}/ring/* ${PREFIX}/share/xdrawchem
+
 .include <bsd.port.mk>
