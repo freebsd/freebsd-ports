@@ -8,7 +8,8 @@
 PORTNAME=	pilot-link
 PORTVERSION=	0.9.3
 CATEGORIES=	palm comms tk82
-MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/
+MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
+		ftp://ftp.forth.org/pub/PalmOS/ryerson/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dima@freebsd.org
