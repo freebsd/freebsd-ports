@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jdiskreport
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://www.jGoodies.com/download/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}
@@ -18,11 +17,12 @@ COMMENT=	Java program to graphically display disk usage statistics
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	YES
-USE_JAVA=	1.3
+USE_JAVA=	YES
+JAVA_VERSION=	1.4
 
 PLIST_SUB=	JDISKDIR=${JDISKDIR:S,${PREFIX}/,,g}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-JAVAVM?=	${LOCALBASE}/bin/javavm
+JAVAVM?=	${LOCALBASE}/bin/java
 JDISKDIR?=	${PREFIX}/lib/jdiskreport
 
 do-build:
