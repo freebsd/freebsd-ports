@@ -1,0 +1,9 @@
+Creates indexed pdf documents from text files. Designed to aid creating an
+electronic distribution method for legacy system reports, since many
+mainframe type print spools are plain text. Allows indexing, customizing
+page settings, font size, font face, and super-imposing text over an image
+in the case of using pre-printed forms. Supports unlimited levels of indexing
+bookmarks in documents and system/user configuration files. Suitable for
+use in an intranet gateway for generating PDF documents in real-time.
+
+WWW: http://hoopajoo.net/project_info.html?projectid=18
