@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	qkmj
-PORTVERSION=	95p4
+PORTVERSION=	95p5
 CATEGORIES=	games chinese
-MASTER_SITES=	ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/
 MASTER_SITE_SUBDIR=	${PORTNAME}${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}-freebsd
 EXTRACT_SUFX=
 EXTRACT_ONLY=
-PORTOBJFORMAT=	aout
 
 MAINTAINER=	clive@FreeBSD.org
 
-RUN_DEPENDS=	/usr/lib/compat/aout/libc.so.3.1:${PORTSDIR}/misc/compat22
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+RUN_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+.endif
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -27,4 +30,5 @@ do-install:
 	${INSTALL} -c ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${DISTNAME}
 	@${LN} -s ${PREFIX}/bin/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
 	@${CAT} ${PKGMESSAGE}
-.include <bsd.port.mk>
+
+.include <bsd.port.post.mk>
