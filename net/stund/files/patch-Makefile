@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- Makefile	2004/04/09 07:45:21	1.1
++++ Makefile	2004/04/09 07:46:00
+@@ -21,8 +21,8 @@
+ #
+ # Alternatively, for debugging.
+ #
+-CXXFLAGS+=-g -O -Wall
+-LDFLAGS+=-g -O -Wall -lssl -lcrypto 
++CXXFLAGS+=-Wall
++LDFLAGS+=-Wall -lssl -lcrypto 
+ # for solaris
+ #LDFLAGS+= -lnsl -lsocket
+ 
