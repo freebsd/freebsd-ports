@@ -9,6 +9,7 @@
     SUBDIR += cyrus-imspd
     SUBDIR += db
     SUBDIR += db3
+    SUBDIR += db33
     SUBDIR += db4
     SUBDIR += dbXML
     SUBDIR += dbconnect
