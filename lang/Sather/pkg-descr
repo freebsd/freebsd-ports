@@ -1,0 +1,17 @@
+Sather is an object oriented language which aims to be simple,
+efficient, safe, and non-proprietary. It aims to meet the needs of
+modern research groups and to foster the development of a large,
+freely available, high-quality library of efficient well-written
+classes for a wide variety of computational tasks. It was originally
+based on Eiffel but now incorporates ideas and approaches from several
+languages. One way of placing it in the "space of languages" is to say
+that it attempts to be as efficient as C, C++, or Fortran, as elegant
+and safe as Eiffel or CLU, and to support higher-order functions as
+well as Common Lisp, Scheme, or Smalltalk.
+
+Sather has garbage collection, statically-checked strong typing,
+multiple inheritance, separate implementation and type inheritance,
+parameterized classes, dynamic dispatch, iteration abstraction,
+higher-order routines and iters, exception handling, assertions,
+preconditions, postconditions, and class invariants.  Sather code can
+be compiled into C code and can efficiently link with C object files.
