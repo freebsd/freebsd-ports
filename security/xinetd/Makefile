@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.10
 PORTREVISION=	0
-CATEGORIES=	security
+CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.xinetd.org/
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -17,7 +17,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
-CONFIGURE_ARGS+=	--with-loadavg --with-libwrap
+CONFIGURE_ARGS+=	--with-loadavg --with-libwrap --with-ipv6
 
 MAN5=		xinetd.conf.5
 MAN8=		xconv.8 xinetd.8 xinetd.log.8
