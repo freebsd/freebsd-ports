@@ -7,12 +7,13 @@
 
 PORTNAME=	bforce
 PORTVERSION=	0.22.8.7
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://kst.spb.ru/bforce/
 PKGNAMESUFFIX=	-kst
 DISTNAME=	${PORTNAME}-0.22.8.kst7
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vasallia@ukr.net
 COMMENT=	Simple ifcico like Fidonet technology mailer
 
 USE_BZIP2=	yes
@@ -20,7 +21,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGDIR=	/etc/fido/bforce
+CONFIGDIR=	etc/fido/bforce
 
 FIXME=		include/bforce.h include/util.h include/logger.h \
 		bforce/bforce.c bforce/conf_proc.c bforce/conf_read.c bforce/daemon.c \
@@ -37,23 +38,24 @@ FIXME=		include/bforce.h include/util.h include/logger.h \
 		bforce/u_plock.c bfutil/bfindex.c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
+PLIST_SUB+=	CONFIGDIR=${CONFIGDIR}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/bin
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/bforce,${CONFIGDIR},g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's,/etc/bforce,/${CONFIGDIR},g' ${WRKSRC}/Makefile.in
 .for i in ${FIXME}
 	@${REINPLACE_CMD} -e 's,log(,bf_log(,g' ${WRKSRC}/${i}
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/bforce
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${PREFIX}/etc/bforce/bforce.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${PREFIX}/etc/bforce/bforce.passwd.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/etc/bforce/bforce.subst.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/etc/bforce/freq.aliases.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/etc/bforce/freq.dirs.sample
+	${MKDIR} ${PREFIX}/${CONFIGDIR}
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${PREFIX}/${CONFIGDIR}/bforce.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${PREFIX}/${CONFIGDIR}/bforce.passwd.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/${CONFIGDIR}/bforce.subst.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/${CONFIGDIR}/freq.aliases.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/${CONFIGDIR}/freq.dirs.sample
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bforce ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${PREFIX}/bin
