@@ -1,0 +1,12 @@
+Ecawave is a simple graphical audio file editor. The user-interface is
+based on Qt libraries, while almost all audio functionality is taken
+directly from ecasound libraries. As ecawave is designed for editing
+large audio files, all processing is done direct-to-disk. Simple
+waveform caching is used to speed-up file operations. Ecawave supports
+all audio file formats and effect algorithms provided by ecasound
+libraries. This includes OSS, ALSA, aRts, over 20 file formats, over 30
+effect types, LADPSA plugins and multi-operator effect presets.
+
+WWW: http://www.eca.cx/ecawave
+
+- The Anarcat <anarcat@anarcat.dyndns.org>
