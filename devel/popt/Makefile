@@ -8,8 +8,8 @@
 PORTNAME=	popt
 PORTVERSION=	1.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
-		ftp://ftp.cdrom.com/pub/linux/redhat/current/SRPMS/SRPMS/
+MASTER_SITES=	ftp://ftp.redhat.com/redhat/current/SRPMS/SRPMS/ \
+		ftp://ftp.freesoftware.com/pub/linux/redhat/current/SRPMS/SRPMS/
 EXTRACT_SUFX=	-1.src.rpm
 
 MAINTAINER=	ycheng@sinica.edu.tw
