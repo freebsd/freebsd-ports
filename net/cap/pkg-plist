@@ -92,3 +92,7 @@ share/doc/cap/doc.README
 share/doc/cap/applications.README
 share/doc/cap/uab.README
 share/doc/cap/ethertalk.README
+@dirrm include/netat
+@dirrm etc/cap
+@dirrm lib/cap
+@dirrm share/doc/cap
