@@ -1,0 +1,12 @@
+--- finder.desktop.orig	Tue Sep  5 16:00:38 2000
++++ finder.desktop	Tue Sep  5 16:00:53 2000
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Finder
+-Icon=finder.png
+ Comment=Finder Task Switcher
+-Exec=finder
++Exec=finder --activate-goad-server=finder
++Icon=finder.png
+ Terminal=0
+ Type=Application

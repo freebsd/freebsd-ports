@@ -1,0 +1,13 @@
+--- TaskMenu/Makefile.orig	Mon Sep  4 00:17:56 2000
++++ TaskMenu/Makefile	Mon Sep  4 16:18:17 2000
+@@ -1,8 +1,8 @@
+-INCLUDEFLAGS=`gnome-config --cflags gnome` `gtk-config --cflags` -I.
++INCLUDEFLAGS=`$(X11BASE)/bin/gnome-config --cflags gnome` `$(X11BASE)/bin/gtk12-config --cflags` -I.
+ 
+ OBJS=task-menu.o task-option.o task-manage.o task-icon.o
+ 
+-CC=gcc
++CC?=gcc
+ CFLAGS+=$(INCLUDEFLAGS)
+ 
+ default: $(OBJS)

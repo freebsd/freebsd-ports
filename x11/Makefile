@@ -23,6 +23,7 @@
     SUBDIR += eterm
     SUBDIR += eweather
     SUBDIR += fbsd-icons
+    SUBDIR += finder
     SUBDIR += gbackground
     SUBDIR += gmessage
     SUBDIR += gnome
