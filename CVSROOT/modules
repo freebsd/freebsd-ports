@@ -7744,6 +7744,7 @@ pgpmoose	ports/news/pgpmoose
 pgpsendmail	ports/mail/pgpsendmail
 phalanx		ports/games/phalanx
 pharmacy	ports/devel/pharmacy
+phase		ports/x11-themes/phase
 phatbeat	ports/audio/phatbeat
 phex		ports/net/phex
 phluid		ports/x11-wm/phluid
