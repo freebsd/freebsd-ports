@@ -1,0 +1,34 @@
+share/xml/dtd/docbook/calstblx.dtd
+share/xml/dtd/docbook/dbcentx.mod
+share/xml/dtd/docbook/dbgenent.ent
+share/xml/dtd/docbook/dbhierx.mod
+share/xml/dtd/docbook/dbnotnx.mod
+share/xml/dtd/docbook/dbpoolx.mod
+share/xml/dtd/docbook/docbookx.dtd
+share/xml/dtd/docbook/soextblx.dtd
+share/xml/entity/iso-amsa.ent
+share/xml/entity/iso-amsb.ent
+share/xml/entity/iso-amsc.ent
+share/xml/entity/iso-amsn.ent
+share/xml/entity/iso-amso.ent
+share/xml/entity/iso-amsr.ent
+share/xml/entity/iso-box.ent
+share/xml/entity/iso-cyr1.ent
+share/xml/entity/iso-cyr2.ent
+share/xml/entity/iso-dia.ent
+share/xml/entity/iso-grk1.ent
+share/xml/entity/iso-grk2.ent
+share/xml/entity/iso-grk3.ent
+share/xml/entity/iso-grk4.ent
+share/xml/entity/iso-lat1.ent
+share/xml/entity/iso-lat2.ent
+share/xml/entity/iso-num.ent
+share/xml/entity/iso-pub.ent
+share/xml/entity/iso-tech.ent
+share/xml/misc/docbook/README
+share/xml/misc/docbook/VERSION
+share/xml/misc/docbook/COPYRIGHT
+share/xml/misc/docbook/ChangeLog
+share/xml/misc/docbook/test.xml
+@dirrm share/xml/dtd/docbook
+@dirrm share/xml/misc/docbook
