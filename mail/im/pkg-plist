@@ -8,6 +8,7 @@ bin/imhist
 bin/imhsync
 bin/imjoin
 bin/imls
+bin/immknmz
 bin/immv
 bin/impack
 bin/impath
@@ -43,6 +44,7 @@ lib/IM/Pop.pm
 lib/IM/Recipient.pm
 lib/IM/Scan.pm
 lib/IM/Smtp.pm
+lib/IM/Ssh.pm
 lib/IM/Stdio.pm
 lib/IM/TcpTransaction.pm
 lib/IM/Util.pm
@@ -78,7 +80,8 @@ share/examples/im/password
 share/examples/im/scan.sbr
 share/examples/im/scan.sbr.sample1
 share/examples/im/scan.sbr.sample2
-@dirrm lib/IM
+@dirrm share/examples/im
 @dirrm share/doc/im/man
 @dirrm share/doc/im
-@dirrm share/examples/im
+@dirrm lib/IM
+@dirrm etc/im
