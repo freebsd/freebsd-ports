@@ -160,13 +160,10 @@ MAN5=		fonts-conf.5
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_CJK)
-PATCH_SITES+=	http://firefly.idv.tw/setfont-xft/patches/fontconfig/2.2.3/ \
-		http://download.linuxsir.org/fontconfig/ \
+PATCH_SITES+=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/ \
 		http://bsdchat.com/dist/firefly-cjk-patchset/
-PATCHFILES+=	fontconfig-2.2.3-default_config-20041114.patch \
-		fontconfig-2.2.3-include_CJK_charmaps-20041114.patch \
-		cjk-patch-fontconfig-20041115.diff.gz
-PATCH_DIST_STRIP+=	-p1:CJK_charmaps
+PATCHFILES+=	cjk-fontconfig-2.2.3-20050315.patch.gz
+PATCH_DIST_STRIP+=	-p1
 .endif
 
 .if defined(NOPORTDOCS)
