@@ -10,7 +10,7 @@ PORTVERSION=	14.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.miketaylor.org.uk/tech/tt/
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Tetris for Terminals
 
 ALL_TARGET=	tt

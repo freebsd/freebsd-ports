@@ -12,7 +12,7 @@ MASTER_SITES=	http://quakeworld.ru/files/vvd/mvdsv/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}-sources
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
 
 USE_BZIP2=	yes

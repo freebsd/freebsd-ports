@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download1.nvidia.com/freebsd/1.0-${NVVERSION}/
 DISTNAME=	NVIDIA-FreeBSD-x86-${PORTVERSION:S/0./0-/}
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
 USE_X_PREFIX=	yes

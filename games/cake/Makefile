@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.calodox.scene.org:8080/morbac/cake/download/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}_src
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake3 map viewer
 
 .if defined(WITH_FREEGLUT)
