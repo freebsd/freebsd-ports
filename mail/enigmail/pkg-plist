@@ -7,4 +7,5 @@
 %%LOCAL_SUBDIR%%/chrome/enigmail.jar
 %%LOCAL_SUBDIR%%/chrome/enigmail-skin.jar
 %%LOCAL_SUBDIR%%/chrome/enigmail-skin-tbird.jar
+%%LOCAL_SUBDIR%%/chrome/enigmime.jar
 %%LOCAL_SUBDIR%%/defaults/pref/enigmail.js
