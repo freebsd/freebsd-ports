@@ -33,7 +33,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-pty=BSD
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
 
 MAN1=		es.1 ives.1 vs.1 xjpegroot.1 xnc.1 xnlaunch.1
 
