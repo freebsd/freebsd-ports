@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youbin
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.agusa.nuie.nagoya-u.ac.jp/software/agusalab/youbin/archive/
 DISTNAME=	${PORTNAME}${PORTVERSION}-unix
