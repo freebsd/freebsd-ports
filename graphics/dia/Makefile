@@ -21,7 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf gnomeprint
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf bonobo
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-gnome --enable-gnome-print --enable-bonobo \
 		--enable-freetype
