@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Apache-MP3
-PORTVERSION=	3.04
-PORTREVISION=	1
+PORTVERSION=	3.05
 CATEGORIES=	www audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
@@ -19,7 +18,6 @@ COMMENT=	MP3 browsing and streaming under mod_perl and Apache
 BUILD_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav \
 		${SITE_PERL}/MPEG/MP3Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${SITE_PERL}/${PERL_ARCH}/Ogg/Vorbis.pm:${PORTSDIR}/audio/p5-libvorbis
-
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
