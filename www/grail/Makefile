@@ -7,13 +7,16 @@
 
 PORTNAME=	grail
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	ftp://ftp.python.org/pub/grail/
-DISTFILES=	${PORTNAME}-06.tgz
+MASTER_SITES=	http://prdownloads.sourceforge.net/grail/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nectar@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+
+BROKEN=		"Doesn't seem to work with Python 2.x"
 
 USE_PYTHON=	yes
 GRAILSUBDIR=	share/grail
