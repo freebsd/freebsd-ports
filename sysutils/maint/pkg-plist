@@ -1,0 +1,36 @@
+bin/maint
+bin/maint.py
+bin/maint-backup.py
+bin/maint-build.py
+bin/maint-build-kde2.csh
+bin/maint-build-system.csh
+bin/maint-build-system2.csh
+bin/maint-clean.py
+bin/maint-restore.py
+bin/maint-update.py
+bin/maintlib.py
+etc/maint/daily.conf.sample
+etc/maint/monthly.conf.sample
+etc/maint/special.conf.sample
+etc/maint/weekly.conf.sample
+etc/maint/yearly.conf.sample
+etc/maint/scripts/daily.local
+etc/maint/scripts/weekly.local
+etc/maint/scripts/monthly.local
+etc/maint/scripts/yearly.local
+etc/maint/supfiles/kde2.sample
+etc/maint/supfiles/ports.sample
+etc/maint/supfiles/source.sample
+share/maint/data/packages.sample
+share/maint/data/portsdeps.sample
+share/maint/doc/README.NOW
+share/maint/doc/TODO
+share/maint/doc/maint.txt
+share/maint/logs/keep.me
+@dirrm share/maint/data
+@dirrm share/maint/doc
+@dirrm share/maint/logs
+@dirrm share/maint
+@dirrm etc/maint/scripts
+@dirrm etc/maint/supfiles
+@dirrm etc/maint

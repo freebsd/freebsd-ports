@@ -74,6 +74,7 @@
     SUBDIR += logrotate
     SUBDIR += logtool
     SUBDIR += lsof
+    SUBDIR += maint
     SUBDIR += manck
     SUBDIR += medusa
     SUBDIR += mei
