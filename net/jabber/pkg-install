@@ -110,14 +110,24 @@ EOF
     user=jserver
     group=jserver
     spooldir="/var/jspool"
-    etcdir=${PREFIX}/etc
+    etcdir=${PREFIX:-$PKG_PREFIX}/etc
 
     echo ""
     make_account ${user} ${group} "Jabber Daemon" "/nonexistent"
 
+    if [ ! -d ${spooldir} ]; then
+	echo "Creating \"${spooldir}\"."
+	mkdir -p ${spooldir}
+    fi
+
     echo "Fixing ownerships and modes in \"${spooldir}\"."
     chown -R ${user}:${group} ${spooldir}
     chmod -R go= ${spooldir}
+
+    if [ ! -f ${etcdir}/jserver.xml ]; then
+	echo "Creating \"${etcdir}/jserver.xml\"."
+	cp -p ${etcdir}/jserver.xml.default ${etcdir}/jserver.xml
+    fi
 
     echo "Fixing config files ownerships and modes."
     chown root:${group} ${etcdir}/jserver.xml ${etcdir}/jserver.xml.default
