@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${JPERL_VER}.${JPERL_VER_PL}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.cpan.org/CPAN/src/5.0/ \
 		ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
