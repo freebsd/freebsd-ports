@@ -1,0 +1,16 @@
+--- Makefile.orig	Fri Feb 15 16:45:52 2002
++++ Makefile	Tue Apr 30 19:44:15 2002
+@@ -1,8 +1,11 @@
+ .PHONY: clean install
+ 
+ EXE=fluxconf
+-CC=gcc
+-CFLAGS=`gtk-config --cflags --libs` -Wall -s -O
++.ifdef(WITHOUT_LOGO)
++FLAGS=	-DWITHOUT_LOGO
++.endif
++
++CFLAGS+=`${GTK_CONFIG} --cflags --libs` -Wall -s -O $(FLAGS)
+ 
+ all: $(EXE) actions.h
+ 	ln -sf fluxconf fluxkeys
