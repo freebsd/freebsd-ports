@@ -7,6 +7,7 @@
     SUBDIR += daCode
     SUBDIR += eficas
     SUBDIR += facturier
+    SUBDIR += geonext
     SUBDIR += gfaim
     SUBDIR += gibi
     SUBDIR += homard
