@@ -6,6 +6,7 @@ include/streamtuner/st_handler_field.h
 include/streamtuner/st_handlers.h
 include/streamtuner/st_programs.h
 include/streamtuner/st_re.h
+include/streamtuner/st_settings.h
 include/streamtuner/st_state.h
 include/streamtuner/st_stream.h
 include/streamtuner/st_transfer.h
