@@ -7,6 +7,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
