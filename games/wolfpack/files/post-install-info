@@ -1,0 +1,7 @@
+If you compile this on one machine and install it on another you will not be
+able to login as a deity from the installed machine. Check the
+$PREFIX/wolfpack/data/auth file.
+
+Please read the documentation in $PREFIX/wolfpack/README about configuring the
+server and creating a world.
+

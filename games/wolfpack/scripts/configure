@@ -1,0 +1,40 @@
+#!/bin/sh
+
+doquit () {
+  if [ $1 -ne 0 ]; then
+    echo User abort
+    rm -f /tmp/__input$$
+    exit 1
+  fi
+}
+
+dialog --title "Wolfpack Empire Information" --inputbox "Name of deity" 8 60 2>/tmp/__input$$
+
+doquit $?
+
+name=`cat /tmp/__input$$`
+
+dialog --title "Wolfpack Empire Information" --inputbox "Username of deity" 8 60 2>/tmp/__input$$
+
+doquit $?
+
+username=`cat /tmp/__input$$`
+
+dialog --title "Wolfpack Empire Information" --inputbox "Email Address of game admin" 8 60 2>/tmp/__input$$
+
+doquit $?
+  
+email=`cat /tmp/__input$$`
+
+host=`hostname`
+ip=`host -t a $host | awk '{print $4}'`
+echo Email address is $email
+echo Username is $username
+echo Name is $name
+echo Hostname is $host
+echo IP is $ip
+
+FROM=$FILESDIR/build.conf.tmpl
+TO=$WRKSRC/build.conf
+
+sed -e "s/%%NAME%%/$name/" -e "s/%%USERNAME%%/$username/" -e "s/%%EMAIL%%/$email/" -e "s/%%HOSTNAME%%/$host/" -e "s/%%IPADDR%%/$ip/" -e "s#%%EMPDIR%%#$PREFIX/wolfpack#" <$FROM >$TO
