@@ -1,7 +1,7 @@
-*** Makefile.orig	Thu Feb 19 03:43:21 1998
---- Makefile	Sun Mar  8 07:21:37 1998
+*** Makefile.orig	Sat Dec 19 07:19:54 1998
+--- Makefile	Sat Dec 19 18:25:56 1998
 ***************
-*** 12,18 ****
+*** 12,23 ****
   #   Normally you should not have to change anything else.
   #
   
@@ -9,7 +9,12 @@
   BINDIR=$(PREFIX)/bin
   MANDIR=$(PREFIX)/man
   SECTION=1
---- 12,18 ----
+  
+! OPTFLAGS=-g
+  #OPTFLAGS=-O5
+  #OPTFLAGS=-fast -native -xO5
+  
+--- 12,23 ----
   #   Normally you should not have to change anything else.
   #
   
@@ -17,35 +22,8 @@
   BINDIR=$(PREFIX)/bin
   MANDIR=$(PREFIX)/man
   SECTION=1
-***************
-*** 61,68 ****
   
-  UTILS=utils
-  OBJS=omi.o cfg.o ftp.o dir.o mir.o stt.o lst.o rex.o
-! LDFLAGS=-g $(LINKFLAGS)
-! CFLAGS=-g -I$(UTILS) $(COMPFLAGS)
+! OPTFLAGS:=${CFLAGS}
+  #OPTFLAGS=-O5
+  #OPTFLAGS=-fast -native -xO5
   
-  #all: makeutils omi omi.man
-  all: makeutils omi
---- 61,70 ----
-  
-  UTILS=utils
-  OBJS=omi.o cfg.o ftp.o dir.o mir.o stt.o lst.o rex.o
-! LDFLAGS+= $(LINKFLAGS)
-! CFLAGS+= $(COMPFLAGS)
-! G_CFLAGS:= $(CFLAGS)
-! CFLAGS+= -I$(UTILS)
-  
-  #all: makeutils omi omi.man
-  all: makeutils omi
-***************
-*** 84,87 ****
-  
-  makeutils:
-  	@cd $(UTILS); \
-! 	$(MAKE) LDFLAGS='-g $(LINKFLAGS)' CFLAGS='-g $(COMPFLAGS)'
---- 86,89 ----
-  
-  makeutils:
-  	@cd $(UTILS); \
-! 	$(MAKE) LDFLAGS='$(LDFLAGS)' CFLAGS='$(G_CFLAGS)'

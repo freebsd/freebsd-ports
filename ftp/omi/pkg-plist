@@ -1,4 +1,5 @@
 bin/omi
 share/doc/omi/CHANGES
-share/doc/omi/README
+share/doc/omi/README.txt
+share/doc/omi/README.html
 share/doc/omi/BSD-COPYRIGHT
