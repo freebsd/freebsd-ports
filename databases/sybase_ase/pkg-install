@@ -1,0 +1,121 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+
+user=sybase
+group=sybase
+homedir=${PREFIX}/sybase-ase
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+make_account() {
+    local u g gcos home
+
+    u=$1
+    g=$2
+    gcos=$3
+    home=$4
+
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
+    else
+	echo "You need a group \"${g}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw groupadd ${g} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    if ! grep -q "^${u}:" /etc/passwd; then
+		echo "While you're at it, please create a user \"${u}\" too,"
+		echo "with a default group of \"${g}\"."
+	    fi
+	    exit 1
+	fi
+    fi
+
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
+    else
+	echo "You need a user \"${u}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${u} -g ${g} -d ${home} -c "${gcos}" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+}
+
+delete_account() {
+    local u g
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+	pw groupdel -n ${g}
+	echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+	pw userdel -n ${u}
+	echo "Done."
+    fi
+}
+
+case $2 in
+
+PRE-INSTALL)
+    if which -s pw ; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that it
+is missing the "pw" utility.  I need this utility.
+Please get it and install it, and try again.  You can get the
+source from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+
+    echo ""
+    make_account ${user} ${group} "Sybase User" ${homedir}
+    ;;
+
+DEINSTALL)
+    delete_account ${user} ${group}
+    ;;
+
+esac

@@ -1,0 +1,8 @@
+This is a port for the Sybase Adaptive Server Enterprise
+database server.
+
+Sybase ASE is a very powerful relational database server that
+offers support for transactions, locks, differend isolation
+levels, stored procedures, backup and housekeeping tasks.
+
+WWW: http://www.sybase.com/detail?id=1009516
