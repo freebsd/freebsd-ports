@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/nautilus
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2 \
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.8:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
-
-WITHOUT_MOZILLA=	"Broken with Mozilla 0.9.7."
 
 .if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla-embedded
