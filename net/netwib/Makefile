@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwib
-PORTVERSION=	5.26.0
+PORTVERSION=	5.27.0
 CATEGORIES=	net devel ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \
