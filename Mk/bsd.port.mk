@@ -144,7 +144,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #						target.
 # USE_X_PREFIX	- Says that the port installs in ${X11BASE}.  Implies USE_XLIB.
 # USE_XLIB		- Says that the port uses X libraries.
-# USE_QT		- Says that the port uses the latest version of qt toolkit.
+# USE_QT		- Says that the port uses version 1 of the qt toolkit.
+# USE_QT2		- Says that the port uses version 2 of the qt toolkit.
 #
 # Dependency checking.  Use these if your port requires another port
 # not in the list above.
@@ -608,6 +609,7 @@ LIBTOOLFILES?=		configure
 CC=				gcc295
 CXX=			g++295
 BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/egcs
+MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
 
 .if defined(REQUIRES_MOTIF)
@@ -617,7 +619,7 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
 
-PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.4|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.5|Motif-2\.1\.10)'
 
 .if ${OSVERSION} >= 300000
 PERL_VERSION=	5.00503
@@ -656,6 +658,11 @@ LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
 
 .if defined(USE_QT)
 LIB_DEPENDS+=	qt.2:${PORTSDIR}/x11-toolkits/qt142
+.endif
+
+.if defined(USE_QT2)
+LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt2
+USE_NEWGCC=	yes
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -858,6 +865,7 @@ SETENV?=	/usr/bin/env
 SH?=		/bin/sh
 TR?=		/usr/bin/tr
 TRUE?=		/usr/bin/true
+WHICH?=		/usr/bin/which
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG?=		${ECHO}
@@ -923,22 +931,16 @@ MASTER_SITE_GNOME+=	\
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/os/wm/AfterStep/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/X11/window-managerrs/afterstep/%SUBDIR%/ \
 	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/%SUBDIR%/ \
-	ftp://ftp.bse.bg/pub/Unix/X11/wm/afterstep/%SUBDIR%/ \
+	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
-	ftp://ftp.lbi.ro/mirrors/ftp.afterstep.org/pub/%SUBDIR%/ \
-	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/%SUBDIR%/ \
+	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/%SUBDIR%/
 
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
 	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
-	ftp://ftp.io.com/pub/mirror/windowmaker/%SUBDIR%/ \
-	ftp://ftp.ensm-ales.fr/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
-	ftp://ftp.freenews.de/pub/windowmaker/%SUBDIR%/ \
-	http://jgo.local.net/cool_downloads/wm/%SUBDIR%/ \
-	ftp://ftp.cybertrails.com/pub/windowmaker/%SUBDIR%/ \
+	ftp://ftp.io.com/pub/%SUBDIR%/ \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/
 
 MASTER_SITE_PORTS_JP+=	\
@@ -1070,7 +1072,8 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python russian \
 	security shells sysutils \
-	tcl75 tcl76 tcl80 tcl81 textproc tk41 tk42 tk80 tk81 tkstep80 \
+	tcl75 tcl76 tcl80 tcl81 tcl82 textproc \
+	tk41 tk42 tk80 tk81 tk82 tkstep80 \
 	vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm
 check-categories:
@@ -1397,7 +1400,7 @@ DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
 .endif
 .if defined(DEPENDS)
 # pretty much guarantees overwrite of existing installation
-DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
+.MAKEFLAGS:	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
@@ -2177,7 +2180,7 @@ _DEPENDS_USE:	.USE
 				notfound=1; \
 			fi; \
 		else \
-			if which "$$prog" > /dev/null 2>&1 ; then \
+			if ${WHICH} "$$prog" > /dev/null 2>&1 ; then \
 				${ECHO_MSG} "===>   ${PKGNAME} depends on executable: $$prog - found"; \
 				if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 					${ECHO_MSG} "       (but building it anyway)"; \
