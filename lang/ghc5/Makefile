@@ -10,6 +10,8 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
 
+ONLY_FOR_ARCHS=	i386
+
 SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX} 
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}
 BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}
