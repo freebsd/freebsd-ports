@@ -20,11 +20,14 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame/ \
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
 
+PLIST_FILS=	bin/cd2mp3
+PORTDOCS=	README
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cd2mp3 ${PREFIX}/bin/cd2mp3
+	${INSTALL_SCRIPT} ${WRKSRC}/cd2mp3 ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cd2mp3
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cd2mp3/README
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
