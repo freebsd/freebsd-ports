@@ -47,7 +47,11 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/driver38.htm
 %%PORTDOCS%%share/doc/ntp/driver39.htm
 %%PORTDOCS%%share/doc/ntp/driver40.htm
-%%PORTDOCS%%share/doc/ntp/driver42.html
+%%PORTDOCS%%share/doc/ntp/driver42.htm
+%%PORTDOCS%%share/doc/ntp/driver43.htm
+%%PORTDOCS%%share/doc/ntp/driver43_1.gif
+%%PORTDOCS%%share/doc/ntp/driver43_2.jpg
+%%PORTDOCS%%share/doc/ntp/driver44.htm
 %%PORTDOCS%%share/doc/ntp/driver4.htm
 %%PORTDOCS%%share/doc/ntp/driver5.htm
 %%PORTDOCS%%share/doc/ntp/driver6.htm
@@ -139,6 +143,7 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/pic/home.gif
 %%PORTDOCS%%share/doc/ntp/pic/hornraba.gif
 %%PORTDOCS%%share/doc/ntp/pic/igclock.gif
+%%PORTDOCS%%share/doc/ntp/pic/neoclock4x.gif
 %%PORTDOCS%%share/doc/ntp/pic/oncore_evalbig.gif
 %%PORTDOCS%%share/doc/ntp/pic/oncore_remoteant.jpg
 %%PORTDOCS%%share/doc/ntp/pic/oncore_utplusbig.gif
