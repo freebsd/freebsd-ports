@@ -1,5 +1,4 @@
 bin/xdvi
-man/man1/xdvi.1.gz
 share/texmf/xdvi/vfontmap
 share/texmf/xdvi/xdvipaper.dvi2ps-j
 share/texmf/xdvi/xdvipaper.dvips
