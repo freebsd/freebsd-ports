@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	patrick@watson.org
+MAINTAINER=	ports@FreeBSD.Org
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
