@@ -2465,6 +2465,7 @@ geramik		ports/x11-themes/geramik
 gerbv		ports/cad/gerbv
 geta		ports/dns/geta
 getbdf		ports/x11-fonts/getbdf
+getdp		ports/science/getdp
 getmail		ports/mail/getmail
 gettext		ports/devel/gettext
 gettext-lint	ports/devel/gettext-lint
