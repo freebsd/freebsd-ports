@@ -139,6 +139,7 @@
     SUBDIR += mp3info
     SUBDIR += mp3mover
     SUBDIR += mp3rename
+    SUBDIR += mp3stat
     SUBDIR += mpegaudio
     SUBDIR += mpg123
     SUBDIR += mpg123.el
