@@ -8435,6 +8435,7 @@ xmms-jess	ports/graphics/xmms-jess
 xmms-kde	ports/audio/xmms-kde
 xmms-ladspa	ports/audio/xmms-ladspa
 xmms-liveice	ports/audio/xmms-liveice
+xmms-mad	ports/audio/xmms-mad
 xmms-musepack	ports/audio/xmms-musepack
 xmms-osssurround	ports/audio/xmms-osssurround
 xmms-paranormal	ports/graphics/xmms-paranormal
