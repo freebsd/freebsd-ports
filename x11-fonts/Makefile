@@ -12,6 +12,7 @@
     SUBDIR += artwiz-fonts
     SUBDIR += bdfresize
     SUBDIR += bitmap-fonts
+    SUBDIR += bitstream-vera
     SUBDIR += cyr-rfx
     SUBDIR += etlfonts
     SUBDIR += fontconfig
