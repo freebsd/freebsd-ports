@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/16 15:37:32 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/11/17 04:15:49 asami Exp $
 #
 
 DISTNAME=	fkiss028
@@ -24,5 +24,9 @@ INSTALL_TARGET=	install install.man
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/fkiss
 	${INSTALL_DATA} ${WRKSRC}/frkismi4.lzh ${PREFIX}/share/examples/fkiss
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ja/fkiss
+	${INSTALL_MAN} ${WRKSRC}/fkiss.doc ${PREFIX}/share/doc/ja/fkiss
+.endif
 
 .include <bsd.port.mk>
