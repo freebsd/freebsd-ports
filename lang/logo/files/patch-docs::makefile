@@ -1,0 +1,9 @@
+--- docs/makefile.orig	Thu Feb 24 16:37:18 2005
++++ docs/makefile	Thu Feb 24 16:37:30 2005
+@@ -1,6 +1,4 @@
+ BUILDIR	      = `pwd`
+-INFODIR	      = $(prefix)/info
+-DOCSDIR	      = $(LIBLOC)/docs
+ HTMLDIR	      = $(DOCSDIR)/html
+ 
+ all: usermanual.ps usermanual.pdf html/usermanual_1.html ucblogo.info
