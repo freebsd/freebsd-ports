@@ -340,7 +340,7 @@ LIB_DEPENDS+=	shout.2:${PORTSDIR}/audio/libshout
 
 # shout2
 .if ${GST_PLUGIN}=="shout2"
-LIB_DEPENDS+=	shout.3:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS+=	shout.4:${PORTSDIR}/audio/libshout2
 .endif
 
 # sidplay
