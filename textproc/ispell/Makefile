@@ -31,7 +31,7 @@ UNSQ?=		${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==}/bin/unsq.pl
 MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI))
+.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL))
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -48,6 +48,7 @@ pre-everything::
 	@${ECHO_MSG} '*  - German (old spelling)     ISPELL_DEALT=yes         *'
 	@${ECHO_MSG} '*  - German (new spelling)     ISPELL_DENEU=yes         *'
 	@${ECHO_MSG} '*  - Italian                   ISPELL_IT=yes            *'
+	@${ECHO_MSG} '*  - Polish                    ISPELL_PL=yes            *'
 	@${ECHO_MSG} '*  - Swedish                   ISPELL_SE=yes            *'
 	@${ECHO_MSG} '*  - Norwegian                 ISPELL_NO=yes            *'
 	@${ECHO_MSG} '* Example: "make ISPELL_FR=yes ISPELL_SE=yes install"   *'
@@ -133,6 +134,14 @@ FIAFFIXFILE=	finnish.${ISPELL_FI:L}.aff.bz2
 FIAFFIXFILE=	finnish.medium.aff.bz2
 .endif
 EXTRA_DICT+=	${FIDICTFILE} ${FIAFFIXFILE}
+.endif
+.if defined(ISPELL_PL)
+MASTER_SITES+=	ftp://sunsite.icm.edu.pl/pub/unix/polish-ispell/ \
+		${MASTER_SITE_LOCAL}
+PLDISTFILE=	ispell-pl-20011004.tar.gz
+MASKBITS?=	64
+EXTRA_DICT+=	${PLDISTFILE}
+EXTRACT_ONLY+=	${PLDISTFILE}
 .endif
 
 DISTFILES+=	${EXTRA_DICT}
@@ -252,6 +261,11 @@ post-build:
 		${BUILDHASH} ${FIDICTFILE:S/.bz2//} ${FIAFFIXFILE:S/.bz2//} \
 		finnish.hash && ${MV} ${FIAFFIXFILE:S/.bz2//} finnish.aff
 .endif
+.if defined(ISPELL_PL)
+	@cd ${WRKDIR}/${PLDISTFILE:S=ispell-pl-==:S=.tar.gz==} && \
+		${CAT} A B C imiona-A imiona-B fachowe/* > polish.dic && \
+		${BUILDHASH} polish.dic polish.aff polish.hash
+.endif
 
 pre-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
@@ -302,6 +316,9 @@ post-install:
 .endif
 .if defined(ISPELL_FI)
 	@${CAT} ${MASTERDIR}/pkg-plist.fi >> ${TMPPLIST}
+.endif
+.if defined(ISPELL_PL)
+	@${CAT} ${MASTERDIR}/pkg-plist.pl >> ${TMPPLIST}
 .endif
 	@${ECHO_CMD} "@dirrm share/ispell" >> ${TMPPLIST}
 
