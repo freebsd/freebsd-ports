@@ -1,11 +1,11 @@
---- libaudiofile/Makefile.in.orig	Fri Jun  2 20:19:43 2000
-+++ libaudiofile/Makefile.in	Fri Jun  2 20:20:08 2000
-@@ -88,7 +88,7 @@
+--- libaudiofile/Makefile.in	2001/01/07 20:22:45	1.1
++++ libaudiofile/Makefile.in	2001/01/07 20:23:01
+@@ -87,7 +87,7 @@
+ 
+ libaudiofile_la_LIBADD = modules/libmodules.la
+ 
+-libaudiofile_la_LDFLAGS = -version-info 0:1:0 -release ${AUDIOFILE_MAJOR_VERSION}.${AUDIOFILE_MINOR_VERSION}
++libaudiofile_la_LDFLAGS = -version-info 0:1:0
  
  include_HEADERS = audiofile.h aupvlist.h af_vfs.h
  
--CFLAGS = -Wall -g
-+CFLAGS = @CFLAGS@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
