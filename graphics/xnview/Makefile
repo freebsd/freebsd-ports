@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	xnview
-PORTVERSION=   	1.50
+PORTVERSION=	1.50
 CATEGORIES=	graphics
-MASTER_SITES=  	http://perso.wanadoo.fr/pierre.g/download/viewer/ \
-		ftp://www.zoo-logique.org/xnview/download/
-DISTNAME=       XnView-x86-unknown-FreeBSD4.x-static
+MASTER_SITES=	ftp://www.zoo-logique.org/xnview/download/
+DISTNAME=	XnView-x86-unknown-FreeBSD4.x-static
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	An easy graphics viewer / converter
+
+LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
@@ -29,9 +30,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libformat.so.3.87 ${PREFIX}/lib/libformat.so.3
 	${LN} -sf ${PREFIX}/lib/libformat.so.3 ${PREFIX}/lib/libformat.so
 	${INSTALL_DATA} ${WRKSRC}/app-defaults/XnView.ad ${PREFIX}/lib/X11/app-defaults/XnView
-	${MKDIR} ${PREFIX}/share/doc/xnview
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} Formats.txt ReadMe.txt Usage.txt WhatsNew.txt \
-		${PREFIX}/share/doc/xnview
+		${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -4,8 +4,8 @@ bin/xnview
 lib/X11/app-defaults/XnView
 lib/libformat.so
 lib/libformat.so.3
-share/doc/xnview/Formats.txt
-share/doc/xnview/ReadMe.txt
-share/doc/xnview/Usage.txt
-share/doc/xnview/WhatsNew.txt
-@dirrm share/doc/xnview
+%%PORTDOCS%%%%DOCSDIR%%/Formats.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe.txt
+%%PORTDOCS%%%%DOCSDIR%%/Usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/WhatsNew.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
