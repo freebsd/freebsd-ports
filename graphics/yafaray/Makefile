@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	yafray
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.coala.uniovi.es/~jandro/noname/downloads/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A fast XML based raytracer
@@ -17,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
+INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
@@ -31,16 +33,32 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|' \
-		${WRKSRC}/configure
+.include <bsd.port.pre.mk>
 
-	@${REINPLACE_CMD} -E -e \
+.if ${OSVERSION} <= 500000
+BROKEN=		"Does not compile (bad C++ code)"
+.endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | \
+		${XARGS} ${REINPLACE_CMD} -E -e \
 		's|^CXX =.+$$|CXX=${CXX}|; \
 		s|-O3||; \
+		s|-D_PTHREADS||; \
+		s|-pthread|-lpthread|g; \
+		s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|-ffast-math||; \
-		s|-Wall|${CXXFLAGS}|' \
-		${WRKSRC}/src/Makefile.in
+		s|-ldl||; \
+		s|-Wall|${CXXFLAGS}|'
 
-.include <bsd.port.mk>
+	@${FIND} ${WRKSRC} -name "configure.in" \
+		-or -name "configure" | ${XARGS} \
+		${REINPLACE_CMD} -E -e \
+		's|-pthread|-lpthread|g; \
+		s|-lpthread|${PTHREAD_LIBS}|g'
+
+#make sure we don't need to run auto****
+	@${TOUCH} ${TOUCH_FLAGS} -t 199705212205.21 \
+		${WRKSRC}/configure.in
+
+.include <bsd.port.post.mk>

@@ -1,3 +1,21 @@
 bin/yafray
 etc/gram.yafray
-lib/libyafray.so
+lib/libyafraycore.so
+lib/libyafrayplugin.so
+lib/yafray/libpathlight.so
+lib/yafray/libsunlight.so
+lib/yafray/libpointlight.so
+lib/yafray/libphotonlight.so
+lib/yafray/libhemilight.so
+lib/yafray/libspotlight.so
+lib/yafray/libsoftlight.so
+lib/yafray/libarealight.so
+lib/yafray/libglobalphotonlight.so
+lib/yafray/libspherelight.so
+lib/yafray/libbasicshaders.so
+lib/yafray/libbasicblocks.so
+lib/yafray/libmixblocks.so
+lib/yafray/libblendershader.so
+lib/yafray/libhdri.so
+lib/yafray/libsunsky.so
+@dirrm lib/yafray
