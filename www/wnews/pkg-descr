@@ -1,0 +1,7 @@
+This tool downloads and displays RSS news feed from the
+web and displays them in a page-based curses interface
+or in parseable line-based output. There is support for
+HTTP gzip decompression, HTTP proxies, key-binding
+support and resources editing.
+
+WWW: http://www.kerneled.org/projects/wnews/
