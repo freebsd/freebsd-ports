@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
 		http://rpmfind.net/linux/rpm.org/rpm/dist/%SUBDIR%/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
+		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
 		http://gd.tuwien.ac.at/utils/rpm.org/dist/%SUBDIR%/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/rpm/dist/%SUBDIR%/ \
 		ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/
