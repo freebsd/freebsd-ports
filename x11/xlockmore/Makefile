@@ -38,8 +38,11 @@ WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesagl
 USE_MESA=	yes
+.if ${XFREE86_VERSION} >= 4
+CONFIGURE_ENV+=		XLOCKLIBS="${PTHREAD_LIBS}"
+.endif
 .else
-CONFIGURE_ARGS+=	--without-mesagl
+CONFIGURE_ARGS+=	--without-mesagl --without-opengl
 .endif
 
 .if ${XFREE86_VERSION} >= 4
