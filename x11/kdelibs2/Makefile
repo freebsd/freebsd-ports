@@ -39,6 +39,8 @@ USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
 PLIST_SUB+=	LIBVER="${SOMAJOR}"
 
+.include <bsd.port.pre.mk>
+
 pre-fetch:
 .if ${OSVERSION} <= 410002
 	@${ECHO}
@@ -66,4 +68,4 @@ post-install:
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.0 ${PREFIX}/lib/lib${LIB}.so
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
