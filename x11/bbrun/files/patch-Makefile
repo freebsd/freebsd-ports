@@ -1,29 +1,25 @@
---- Makefile.orig	Mon Oct  2 11:05:09 2000
-+++ Makefile	Sat Dec  1 20:33:06 2001
-@@ -1,19 +1,21 @@
--LIBDIR = -L/usr/X11R6/lib -L/usr/lib
--LIBS   = -lXpm -lXext -lX11 -lm  -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl
--CFLAGS = -I/usr/X11R6/include -I/usr/lib/glib/include
-+LIBDIR = -L${X11BASE}/lib -L${LOCALBASE}/lib
-+LIBS  = `${GTK_CONFIG} --libs` -rdynamic -lXpm
+--- Makefile.orig	Wed Feb  6 15:05:51 2002
++++ Makefile	Tue Jun 18 01:37:36 2002
+@@ -1,16 +1,17 @@
+-CC     = gcc
+-LIBS   = -lXpm `gtk-config --libs`
+-CFLAGS = `gtk-config --cflags`
++LIBS   = -lXpm `${GTK_CONFIG} --libs` -L${LOCALBASE}/lib -lgnugetopt
 +CFLAGS += `${GTK_CONFIG} --cflags` -Wall
- OBJS   =	bbrun.o \
- 		    ../wmgeneral/wmgeneral.o \
- 		    ../wmgeneral/misc.o \
- 		    ../wmgeneral/list.o
+ OBJS   = bbrun.o \
+          ../wmgeneral/wmgeneral.o \
+          ../wmgeneral/misc.o \
+          ../wmgeneral/list.o
  
  .c.o:
--	cc -c -O2 -Wall $< -o $*.o $(CFLAGS)
+-	$(CC) -c -O2 -Wall $< -o $*.o $(CFLAGS)
 +	$(CC) -c $< -o $*.o $(CFLAGS)
  
  bbrun: $(OBJS)
--	cc -Wall -g -o bbrun $^ $(LIBDIR) $(LIBS)
-+	$(CC) -o bbrun $^ $(LIBDIR) $(LIBS)
+-	$(CC) -Wall -g -o bbrun $^ $(LIBS)
++	$(CC) -o bbrun $^ $(LIBS)
  
- clean::
- 	for i in $(OBJS) ; do \
- 		rm $$i; \
- 	done
- 	rm bbrun 
+ clean:
+ 	rm -f bbrun $(OBJS)
 +
 +all: bbrun
