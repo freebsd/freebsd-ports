@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jython
-PORTVERSION=	2.0
+PORTVERSION=	2.1.a3
 CATEGORIES=	lang python java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -16,16 +16,16 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	perky@python.or.kr
 
-BUILD_DEPENDS=	${JAVA}:${PORTSDIR}/java/linux-jdk13
-RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/linux-jdk13
+BUILD_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
 
-JAVA?=		${LOCALBASE}/linux-jdk1.3.1/bin/java
+JAVA?=		${LOCALBASE}/bin/javavm
 NO_BUILD=	yes
 
 INST_PACKAGES?=	demo lib source
-INST_TARGET?=	${DISTNAME}
+INST_TARGET?=	${DISTNAME:S/-//g}
 
-JYTHON_PREFIX=	${LOCALBASE}/${INST_TARGET}
+JYTHON_PREFIX=	${PREFIX}/${INST_TARGET}
 PLIST_SUB+=	JYTHON_DIR=${INST_TARGET}
 
 do-install:
@@ -33,7 +33,7 @@ do-install:
 	cd ${JYTHON_PREFIX} && ./jython Lib/compileall.py Lib/
 
 	# symbolic links for convenience
-	-${LN} -s ${JYTHON_PREFIX}/jython ${LOCALBASE}/bin/jython
-	-${LN} -s ${JYTHON_PREFIX}/registry ${LOCALBASE}/etc/jython.reg
+	-${LN} -s ${JYTHON_PREFIX}/jython ${PREFIX}/bin/jython
+	-${LN} -s ${JYTHON_PREFIX}/registry ${PREFIX}/etc/jython.reg
 
 .include <bsd.port.mk>

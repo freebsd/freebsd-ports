@@ -59,16 +59,125 @@ etc/jython.reg
 %%JYTHON_DIR%%/Demo/awt/Colors.py
 %%JYTHON_DIR%%/Demo/awt/Graph.py
 %%JYTHON_DIR%%/Demo/awt/simple.py
+%%JYTHON_DIR%%/Demo/jreload/_xample/Version.class
+%%JYTHON_DIR%%/Demo/jreload/src/example/PrintVer.java
+%%JYTHON_DIR%%/Demo/jreload/src/example/jar-Version.java
+%%JYTHON_DIR%%/Demo/jreload/src/example/new-Version.java
+%%JYTHON_DIR%%/Demo/jreload/example.jar
 %%JYTHON_DIR%%/Demo/embed/SimpleEmbedded.java
 %%JYTHON_DIR%%/Doc/images/PythonPoweredSmall.gif
 %%JYTHON_DIR%%/Doc/images/jython-new-small.gif
-%%JYTHON_DIR%%/Doc/api/org.python.util.PythonInterpreter.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/InteractiveConsole.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/InteractiveInterpreter.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/PyMetaClass.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/PyServlet.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/PythonInterpreter.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/PythonObjectInputStream.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/ReadlineConsole.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/jython.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/package-frame.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/package-summary.html
+%%JYTHON_DIR%%/Doc/api/org/python/util/package-tree.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/ArgParser.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/AutoInternalTables.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/BytecodeLoader.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/CachedJarsPackageManager.JarXEntry.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/CachedJarsPackageManager.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/ClassDictInit.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/CompilerFlags.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/ExtraMath.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/InitModule.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/InternalTables._LazyRep.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/InternalTables.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/InternalTables1.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/InternalTables2.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/Loader.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/Options.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PackageManager.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PathPackageManager.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/Py.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyArray.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyBeanEvent.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyBeanEventProperty.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyBeanProperty.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyBuiltinFunctionSet.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyCell.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyClass.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyCode.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyComplex.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyCompoundCallable.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyDictionary.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyEllipsis.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyException.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyFile.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyFinalizableInstance.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyFloat.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyFrame.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyFunction.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyFunctionTable.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyInstance.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyInteger.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyJavaClass.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyJavaInnerClass.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyJavaInstance.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyJavaPackage.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyList.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyLong.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyMethod.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyModule.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyNone.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyObject.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyProxy.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyReflectedConstructor.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyReflectedField.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyReflectedFunction.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyRunnable.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PySequence.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PySingleton.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PySlice.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyString.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyStringMap.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PySyntaxError.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PySystemState.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyTableCode.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyTraceback.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyTuple.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/PyXRange.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/SoftIInternalTables.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/StderrWrapper.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/StdoutWrapper.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/SysPackageManager.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/SyspathJavaLoader.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/ThreadState.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/TraceFunction.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/WeakInternalTables.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/__builtin__.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/codecs.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/exceptions.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/imp.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/package-frame.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/package-summary.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/package-tree.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/parser.html
+%%JYTHON_DIR%%/Doc/api/org/python/core/ucnhashAPI.html
+%%JYTHON_DIR%%/Doc/api/allclasses-frame.html
+%%JYTHON_DIR%%/Doc/api/deprecated-list.html
+%%JYTHON_DIR%%/Doc/api/help-doc.html
+%%JYTHON_DIR%%/Doc/api/index-all.html
+%%JYTHON_DIR%%/Doc/api/index.html
+%%JYTHON_DIR%%/Doc/api/overview-frame.html
+%%JYTHON_DIR%%/Doc/api/overview-summary.html
+%%JYTHON_DIR%%/Doc/api/overview-tree.html
+%%JYTHON_DIR%%/Doc/api/packages.html
+%%JYTHON_DIR%%/Doc/api/serialized-form.html
+%%JYTHON_DIR%%/Doc/api/stylesheet.css
 %%JYTHON_DIR%%/Doc/compile.html
 %%JYTHON_DIR%%/Doc/differences.html
 %%JYTHON_DIR%%/Doc/embedding.html
 %%JYTHON_DIR%%/Doc/index.html
 %%JYTHON_DIR%%/Doc/interpreter.html
 %%JYTHON_DIR%%/Doc/jarray.html
+%%JYTHON_DIR%%/Doc/jreload.html
 %%JYTHON_DIR%%/Doc/jythonc.html
 %%JYTHON_DIR%%/Doc/properties.html
 %%JYTHON_DIR%%/Doc/registry.html
@@ -220,28 +329,33 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/encodings/utf_8$py.class
 %%JYTHON_DIR%%/Lib/test/pystone.py
 %%JYTHON_DIR%%/Lib/test/pystone$py.class
-%%JYTHON_DIR%%/Lib/StringIO.py
 %%JYTHON_DIR%%/Lib/copy.py
-%%JYTHON_DIR%%/Lib/exceptions.py
 %%JYTHON_DIR%%/Lib/javaos.py
 %%JYTHON_DIR%%/Lib/javapath.py
 %%JYTHON_DIR%%/Lib/jreload.py
 %%JYTHON_DIR%%/Lib/marshal.py
+%%JYTHON_DIR%%/Lib/re.py
 %%JYTHON_DIR%%/Lib/socket.py
 %%JYTHON_DIR%%/Lib/string.py
+%%JYTHON_DIR%%/Lib/zipfile.py
+%%JYTHON_DIR%%/Lib/zlib.py
 %%JYTHON_DIR%%/Lib/BaseHTTPServer.py
 %%JYTHON_DIR%%/Lib/CGIHTTPServer.py
 %%JYTHON_DIR%%/Lib/ConfigParser.py
+%%JYTHON_DIR%%/Lib/Cookie.py
 %%JYTHON_DIR%%/Lib/LICENSE
 %%JYTHON_DIR%%/Lib/MimeWriter.py
 %%JYTHON_DIR%%/Lib/Queue.py
 %%JYTHON_DIR%%/Lib/SimpleHTTPServer.py
 %%JYTHON_DIR%%/Lib/SocketServer.py
+%%JYTHON_DIR%%/Lib/StringIO.py
 %%JYTHON_DIR%%/Lib/UserDict.py
 %%JYTHON_DIR%%/Lib/UserList.py
 %%JYTHON_DIR%%/Lib/UserString.py
+%%JYTHON_DIR%%/Lib/__future__.py
 %%JYTHON_DIR%%/Lib/anydbm.py
 %%JYTHON_DIR%%/Lib/atexit.py
+%%JYTHON_DIR%%/Lib/base64.py
 %%JYTHON_DIR%%/Lib/bdb.py
 %%JYTHON_DIR%%/Lib/binhex.py
 %%JYTHON_DIR%%/Lib/bisect.py
@@ -264,8 +378,8 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/ftplib.py
 %%JYTHON_DIR%%/Lib/getopt.py
 %%JYTHON_DIR%%/Lib/glob.py
-%%JYTHON_DIR%%/Lib/pdb.py
 %%JYTHON_DIR%%/Lib/gopherlib.py
+%%JYTHON_DIR%%/Lib/gzip.py
 %%JYTHON_DIR%%/Lib/htmlentitydefs.py
 %%JYTHON_DIR%%/Lib/htmllib.py
 %%JYTHON_DIR%%/Lib/httplib.py
@@ -286,9 +400,9 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/nntplib.py
 %%JYTHON_DIR%%/Lib/ntpath.py
 %%JYTHON_DIR%%/Lib/nturl2path.py
+%%JYTHON_DIR%%/Lib/pdb.py
 %%JYTHON_DIR%%/Lib/pickle.py
 %%JYTHON_DIR%%/Lib/pipes.py
-%%JYTHON_DIR%%/Lib/re.py
 %%JYTHON_DIR%%/Lib/popen2.py
 %%JYTHON_DIR%%/Lib/poplib.py
 %%JYTHON_DIR%%/Lib/posixfile.py
@@ -325,6 +439,8 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/urllib.py
 %%JYTHON_DIR%%/Lib/urlparse.py
 %%JYTHON_DIR%%/Lib/user.py
+%%JYTHON_DIR%%/Lib/warnings.py
+%%JYTHON_DIR%%/Lib/whichdb.py
 %%JYTHON_DIR%%/Lib/whrandom.py
 %%JYTHON_DIR%%/Lib/xdrlib.py
 %%JYTHON_DIR%%/Lib/xmllib.py
@@ -336,6 +452,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/BaseHTTPServer$py.class
 %%JYTHON_DIR%%/Lib/CGIHTTPServer$py.class
 %%JYTHON_DIR%%/Lib/ConfigParser$py.class
+%%JYTHON_DIR%%/Lib/Cookie$py.class
 %%JYTHON_DIR%%/Lib/MimeWriter$py.class
 %%JYTHON_DIR%%/Lib/Queue$py.class
 %%JYTHON_DIR%%/Lib/SimpleHTTPServer$py.class
@@ -344,8 +461,10 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/UserDict$py.class
 %%JYTHON_DIR%%/Lib/UserList$py.class
 %%JYTHON_DIR%%/Lib/UserString$py.class
+%%JYTHON_DIR%%/Lib/__future__$py.class
 %%JYTHON_DIR%%/Lib/anydbm$py.class
 %%JYTHON_DIR%%/Lib/atexit$py.class
+%%JYTHON_DIR%%/Lib/base64$py.class
 %%JYTHON_DIR%%/Lib/bdb$py.class
 %%JYTHON_DIR%%/Lib/binhex$py.class
 %%JYTHON_DIR%%/Lib/bisect$py.class
@@ -362,7 +481,6 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/dircache$py.class
 %%JYTHON_DIR%%/Lib/dospath$py.class
 %%JYTHON_DIR%%/Lib/dumbdbm$py.class
-%%JYTHON_DIR%%/Lib/exceptions$py.class
 %%JYTHON_DIR%%/Lib/fileinput$py.class
 %%JYTHON_DIR%%/Lib/fnmatch$py.class
 %%JYTHON_DIR%%/Lib/formatter$py.class
@@ -370,6 +488,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/ftplib$py.class
 %%JYTHON_DIR%%/Lib/glob$py.class
 %%JYTHON_DIR%%/Lib/gopherlib$py.class
+%%JYTHON_DIR%%/Lib/gzip$py.class
 %%JYTHON_DIR%%/Lib/htmlentitydefs$py.class
 %%JYTHON_DIR%%/Lib/htmllib$py.class
 %%JYTHON_DIR%%/Lib/httplib$py.class
@@ -391,8 +510,8 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/mutex$py.class
 %%JYTHON_DIR%%/Lib/nntplib$py.class
 %%JYTHON_DIR%%/Lib/ntpath$py.class
-%%JYTHON_DIR%%/Lib/pdb$py.class
 %%JYTHON_DIR%%/Lib/nturl2path$py.class
+%%JYTHON_DIR%%/Lib/pdb$py.class
 %%JYTHON_DIR%%/Lib/pickle$py.class
 %%JYTHON_DIR%%/Lib/pipes$py.class
 %%JYTHON_DIR%%/Lib/popen2$py.class
@@ -401,11 +520,11 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/posixpath$py.class
 %%JYTHON_DIR%%/Lib/pprint$py.class
 %%JYTHON_DIR%%/Lib/profile$py.class
+%%JYTHON_DIR%%/Lib/re$py.class
 %%JYTHON_DIR%%/Lib/pstats$py.class
 %%JYTHON_DIR%%/Lib/pyclbr$py.class
 %%JYTHON_DIR%%/Lib/quopri$py.class
 %%JYTHON_DIR%%/Lib/random$py.class
-%%JYTHON_DIR%%/Lib/re$py.class
 %%JYTHON_DIR%%/Lib/reconvert$py.class
 %%JYTHON_DIR%%/Lib/repr$py.class
 %%JYTHON_DIR%%/Lib/rfc822$py.class
@@ -432,14 +551,20 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/urllib$py.class
 %%JYTHON_DIR%%/Lib/urlparse$py.class
 %%JYTHON_DIR%%/Lib/user$py.class
+%%JYTHON_DIR%%/Lib/warnings$py.class
+%%JYTHON_DIR%%/Lib/whichdb$py.class
 %%JYTHON_DIR%%/Lib/whrandom$py.class
 %%JYTHON_DIR%%/Lib/xdrlib$py.class
 %%JYTHON_DIR%%/Lib/xmllib$py.class
+%%JYTHON_DIR%%/Lib/zipfile$py.class
+%%JYTHON_DIR%%/Lib/zlib$py.class
 %%JYTHON_DIR%%/org/python/util/InteractiveConsole.java
 %%JYTHON_DIR%%/org/python/util/InteractiveInterpreter.java
 %%JYTHON_DIR%%/org/python/util/Makefile
+%%JYTHON_DIR%%/org/python/util/PyServlet.java
 %%JYTHON_DIR%%/org/python/util/PythonInterpreter.java
 %%JYTHON_DIR%%/org/python/util/PythonObjectInputStream.java
+%%JYTHON_DIR%%/org/python/util/ReadlineConsole.java
 %%JYTHON_DIR%%/org/python/util/jython.java
 %%JYTHON_DIR%%/org/python/core/ArgParser.java
 %%JYTHON_DIR%%/org/python/core/AutoInternalTables.java
@@ -450,6 +575,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/core/ClassDictInit.java
 %%JYTHON_DIR%%/org/python/core/CollectionProxy.java
 %%JYTHON_DIR%%/org/python/core/CollectionProxy2.java
+%%JYTHON_DIR%%/org/python/core/CompilerFlags.java
 %%JYTHON_DIR%%/org/python/core/ExtraMath.java
 %%JYTHON_DIR%%/org/python/core/InitModule.java
 %%JYTHON_DIR%%/org/python/core/InternalTables.java
@@ -469,6 +595,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/core/PyBeanEventProperty.java
 %%JYTHON_DIR%%/org/python/core/PyBeanProperty.java
 %%JYTHON_DIR%%/org/python/core/PyBuiltinFunctionSet.java
+%%JYTHON_DIR%%/org/python/core/PyCell.java
 %%JYTHON_DIR%%/org/python/core/PyClass.java
 %%JYTHON_DIR%%/org/python/core/PyCode.java
 %%JYTHON_DIR%%/org/python/core/PyComplex.java
@@ -490,13 +617,14 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/core/PyJavaPackage.java
 %%JYTHON_DIR%%/org/python/core/PyList.java
 %%JYTHON_DIR%%/org/python/core/PyLong.java
+%%JYTHON_DIR%%/org/python/core/PyMetaClass.java
 %%JYTHON_DIR%%/org/python/core/PyMethod.java
 %%JYTHON_DIR%%/org/python/core/PyModule.java
 %%JYTHON_DIR%%/org/python/core/PyNone.java
 %%JYTHON_DIR%%/org/python/core/PyObject.java
 %%JYTHON_DIR%%/org/python/core/PyProxy.java
-%%JYTHON_DIR%%/org/python/core/PyReflectedField.java
 %%JYTHON_DIR%%/org/python/core/PyReflectedConstructor.java
+%%JYTHON_DIR%%/org/python/core/PyReflectedField.java
 %%JYTHON_DIR%%/org/python/core/PyReflectedFunction.java
 %%JYTHON_DIR%%/org/python/core/PyRunnable.java
 %%JYTHON_DIR%%/org/python/core/PySequence.java
@@ -513,10 +641,11 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/core/PythonTraceFunction.java
 %%JYTHON_DIR%%/org/python/core/ReflectedArgs.java
 %%JYTHON_DIR%%/org/python/core/ReflectedCallData.java
-%%JYTHON_DIR%%/org/python/core/StderrWrapper.java
 %%JYTHON_DIR%%/org/python/core/SoftIInternalTables.java
+%%JYTHON_DIR%%/org/python/core/StderrWrapper.java
 %%JYTHON_DIR%%/org/python/core/StdoutWrapper.java
 %%JYTHON_DIR%%/org/python/core/SysPackageManager.java
+%%JYTHON_DIR%%/org/python/core/SyspathArchive.java
 %%JYTHON_DIR%%/org/python/core/SyspathJavaLoader.java
 %%JYTHON_DIR%%/org/python/core/ThreadState.java
 %%JYTHON_DIR%%/org/python/core/ThreadStateMapping.java
@@ -529,6 +658,11 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/core/imp.java
 %%JYTHON_DIR%%/org/python/core/parser.java
 %%JYTHON_DIR%%/org/python/core/ucnhashAPI.java
+%%JYTHON_DIR%%/org/python/modules/sre/MatchObject.java
+%%JYTHON_DIR%%/org/python/modules/sre/PatternObject.java
+%%JYTHON_DIR%%/org/python/modules/sre/SRE_REPEAT.java
+%%JYTHON_DIR%%/org/python/modules/sre/SRE_STATE.java
+%%JYTHON_DIR%%/org/python/modules/sre/ScannerObject.java
 %%JYTHON_DIR%%/org/python/modules/MD5Module.java
 %%JYTHON_DIR%%/org/python/modules/MD5Object.java
 %%JYTHON_DIR%%/org/python/modules/Makefile
@@ -542,13 +676,13 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/modules/_sre.java
 %%JYTHON_DIR%%/org/python/modules/binascii.java
 %%JYTHON_DIR%%/org/python/modules/cPickle.java
-%%JYTHON_DIR%%/org/python/modules/cPickle_exceptions.java
 %%JYTHON_DIR%%/org/python/modules/cStringIO.java
 %%JYTHON_DIR%%/org/python/modules/codeop.java
 %%JYTHON_DIR%%/org/python/modules/imp.java
 %%JYTHON_DIR%%/org/python/modules/jarray.java
 %%JYTHON_DIR%%/org/python/modules/math.java
 %%JYTHON_DIR%%/org/python/modules/md.java
+%%JYTHON_DIR%%/org/python/modules/newmodule.java
 %%JYTHON_DIR%%/org/python/modules/operator.java
 %%JYTHON_DIR%%/org/python/modules/os.java
 %%JYTHON_DIR%%/org/python/modules/py_compile.java
@@ -567,18 +701,24 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/compiler/ClassFile.java
 %%JYTHON_DIR%%/org/python/compiler/Code.java
 %%JYTHON_DIR%%/org/python/compiler/CodeCompiler.java
+%%JYTHON_DIR%%/org/python/compiler/CompilationContext.java
 %%JYTHON_DIR%%/org/python/compiler/Constant.java
 %%JYTHON_DIR%%/org/python/compiler/ConstantPool.java
+%%JYTHON_DIR%%/org/python/compiler/Future.java
 %%JYTHON_DIR%%/org/python/compiler/JavaMaker.java
 %%JYTHON_DIR%%/org/python/compiler/Label.java
-%%JYTHON_DIR%%/org/python/compiler/LocalsCompiler.java
+%%JYTHON_DIR%%/org/python/compiler/LineNumberTable.java
 %%JYTHON_DIR%%/org/python/compiler/Makefile
 %%JYTHON_DIR%%/org/python/compiler/Module.java
 %%JYTHON_DIR%%/org/python/compiler/ProxyMaker.java
+%%JYTHON_DIR%%/org/python/compiler/ScopeConstants.java
+%%JYTHON_DIR%%/org/python/compiler/ScopeInfo.java
+%%JYTHON_DIR%%/org/python/compiler/ScopesCompiler.java
 %%JYTHON_DIR%%/org/python/compiler/SourceFile.java
+%%JYTHON_DIR%%/org/python/compiler/SymInfo.java
 %%JYTHON_DIR%%/org/python/rmi/Makefile
 %%JYTHON_DIR%%/org/python/rmi/UnicastRemoteObject.java
-%%JYTHON_DIR%%/org/python/parser/ASCII_CharStream.java
+%%JYTHON_DIR%%/org/python/parser/CharStream.java
 %%JYTHON_DIR%%/org/python/parser/JJTPythonGrammarState.java
 %%JYTHON_DIR%%/org/python/parser/Makefile
 %%JYTHON_DIR%%/org/python/parser/Node.java
@@ -588,6 +728,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/org/python/parser/PythonGrammarConstants.java
 %%JYTHON_DIR%%/org/python/parser/PythonGrammarTokenManager.java
 %%JYTHON_DIR%%/org/python/parser/PythonGrammarTreeConstants.java
+%%JYTHON_DIR%%/org/python/parser/ReaderCharStream.java
 %%JYTHON_DIR%%/org/python/parser/SimpleNode.java
 %%JYTHON_DIR%%/org/python/parser/Token.java
 %%JYTHON_DIR%%/org/python/parser/TokenMgrError.java
@@ -630,6 +771,7 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/org/python/util
 @dirrm %%JYTHON_DIR%%/org/python/rmi
 @dirrm %%JYTHON_DIR%%/org/python/parser
+@dirrm %%JYTHON_DIR%%/org/python/modules/sre
 @dirrm %%JYTHON_DIR%%/org/python/modules
 @dirrm %%JYTHON_DIR%%/org/python/core
 @dirrm %%JYTHON_DIR%%/org/python/compiler
@@ -652,9 +794,17 @@ etc/jython.reg
 @dirrm %%JYTHON_DIR%%/Lib/encodings
 @dirrm %%JYTHON_DIR%%/Lib
 @dirrm %%JYTHON_DIR%%/Doc/images
+@dirrm %%JYTHON_DIR%%/Doc/api/org/python/util
+@dirrm %%JYTHON_DIR%%/Doc/api/org/python/core
+@dirrm %%JYTHON_DIR%%/Doc/api/org/python
+@dirrm %%JYTHON_DIR%%/Doc/api/org
 @dirrm %%JYTHON_DIR%%/Doc/api
 @dirrm %%JYTHON_DIR%%/Doc
 @dirrm %%JYTHON_DIR%%/Demo/swing
+@dirrm %%JYTHON_DIR%%/Demo/jreload/src/example
+@dirrm %%JYTHON_DIR%%/Demo/jreload/src
+@dirrm %%JYTHON_DIR%%/Demo/jreload/_xample
+@dirrm %%JYTHON_DIR%%/Demo/jreload
 @dirrm %%JYTHON_DIR%%/Demo/javaclasses/pygraph
 @dirrm %%JYTHON_DIR%%/Demo/javaclasses
 @dirrm %%JYTHON_DIR%%/Demo/embed
