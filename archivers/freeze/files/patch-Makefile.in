@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Thu Sep  6 11:10:34 2001
++++ Makefile.in	Thu Sep  6 11:10:46 2001
+@@ -3,7 +3,7 @@
+ VPATH         = $(srcdir)
+ 
+ CC            = @CC@
+-CFLAGS        = -I.     # -O2   # for gcc 2.2.2
++CFLAGS        += -I.     # -O2   # for gcc 2.2.2
+ 
+ INSTALL       = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
