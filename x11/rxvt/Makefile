@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--enable-menubar
 .endif # WITH_MENUBAR
 #
 # XIM (X Input Method) protocol support
-.if defined(WITH_XIM)
+.ifndef(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--enable-xim
 .endif # WITH_XIM
 #
@@ -61,6 +61,19 @@ CONFIGURE_ARGS+=	--enable-xim
 CONFIGURE_ARGS+=	--enable-xterm-scroll	
 .endif # WITH_XTERM_SCROLLBAR
 #
+
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITH_BIG5=yes		add support for Chinese characters (BIG5)"
+	@${ECHO_MSG} "WITH_GB=yes		add support for Chinese characters (GB)"
+	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes	add support for greek keyboard"
+	@${ECHO_MSG} "WITH_KANJI=yes		add support for Kanji characters"
+	@${ECHO_MSG} "WITH_MENUBAR=yes	add support for rxvt menu bar system"
+	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	make the scrollbar look like an Xterm scrollbar"
+	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes 	use cleartext passwords"
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
