@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.3g
+PORTVERSION=	2.4.a
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.activesw.com/pub/quake/
-DISTNAME=	qstat23g
+MASTER_SITES=	http://www.activesw.com/people/steve/
+DISTNAME=	qstat${PORTVERSION:S/.//g}
 
 MAINTAINER=	darius@dons.net.au
 
