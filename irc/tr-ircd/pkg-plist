@@ -90,6 +90,7 @@ lib/tr-ircd/contrib/m_admins.so
 lib/tr-ircd/contrib/m_locops.so
 lib/tr-ircd/contrib/m_rnotice.so
 lib/tr-ircd/contrib/m_sadmins.so
+lib/tr-ircd/contrib/m_topic.so
 lib/tr-ircd/contrib/rehash_more.so
 lib/tr-ircd/contrib/wordfilter.so
 lib/tr-ircd/languages/lang_eng_funny.so
