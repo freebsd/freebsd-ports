@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
-#PATCHFILES=	rsync-231-v6-19990723.diff.gz
+PATCHFILES=	rsync-232-v6-20000116.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=     obrien@FreeBSD.org
