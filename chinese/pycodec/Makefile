@@ -8,9 +8,9 @@
 PORTNAME=	pycodec
 PORTVERSION=	1.2.0
 CATEGORIES=	chinese python converters
-MASTER_SITES=	ftp://python-codecs.sourceforge.net/pub/python-codecs/ \
-		ftp://ftp2.python.or.kr/pub/FreeBSD/ports/distfiles/ \
-		ftp://www3.kr.freebsd.org/~perky/distfiles/
+MASTER_SITES=	http://www3.kr.freebsd.org/~perky/distfiles/ \
+		http://fallin.lv/distfiles/ \
+		#ftp://python-codecs.sourceforge.net/pub/python-codecs/
 DISTNAME=	ChineseCodecs${PORTVERSION}
 
 MAINTAINER=	perky@fallin.lv
