@@ -33,11 +33,9 @@ BINARY=		xaheretic
 .endif
 
 .if defined(WITH_SDL)
+USE_SDL=	yes
 ALL_TARGET=	sdl
 BINARY=		sdlheretic
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
-MAKE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 .endif
 
