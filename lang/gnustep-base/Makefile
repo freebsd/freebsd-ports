@@ -9,9 +9,9 @@ PORTNAME=	gnustep-base
 PORTVERSION=	1.5.1
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
-		ftp://ftp.gnustep.org/pub/gnustep/ \
-		http://archive.progeny.com/gnustep/ \
-		ftp://ftp.easynet.nl/mirror/GNUstep/
+		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
+		http://archive.progeny.com/gnustep/%SUBDIR%/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/%SUBDIR%/
 MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -83,5 +83,8 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/GNUstep.sh ${ETCDIR}/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/GNUstep.sh ${ETCDIR}/rc.d
 	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
+
+test:
+	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
 
 .include <bsd.port.post.mk>
