@@ -7637,6 +7637,7 @@ py-psycopg	ports/databases/py-psycopg
 py-px		ports/devel/py-px
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-pycrypto	ports/security/py-pycrypto
+py-pyx12	ports/textproc/py-pyx12
 py-qt		ports/x11-toolkits/py-qt
 py-rdflib	ports/textproc/py-rdflib
 py-repl		ports/devel/py-repl
