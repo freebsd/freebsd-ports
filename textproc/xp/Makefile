@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mike@vee.net
+COMMENT=	An XML parser written in Java
 
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
 

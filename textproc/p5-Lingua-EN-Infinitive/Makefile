@@ -14,6 +14,7 @@ PKGNAMEPREFIX=		p5-
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Determine the infinitive form of a conjugated word
 
 PERL_CONFIGURE=		yes
 

@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PPRblends.sty.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Prosper is a LaTeX class for writing transparencies
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \

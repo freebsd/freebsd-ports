@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/grep/ \
 DISTNAME=	grep-${PORTVERSION}
 
 MAINTAINER=	howardjp@wam.umd.edu
+COMMENT=	An implementation of grep(1) under a BSD-friendly license
 
 LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
 

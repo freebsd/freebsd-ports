@@ -13,6 +13,7 @@ DISTNAME=	XmlAda-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aidan@velvet.net
+COMMENT=	An XML parsing library for Ada 95
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 

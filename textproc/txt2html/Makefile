@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.aigeek.com/txt2html/
 
 MAINTAINER=	croyle@gelemna.org
+COMMENT=	Convert raw text to something with a little HTML formatting
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/mirror/ftp/lacheck/
 		ftp://ftp.sunsite.dk/pub/text/lacheck/
 
 MAINTAINER=	uwe.pierau@tu-clausthal.de
+COMMENT=	A tool for finding common mistakes in LaTeX documents
 
 MAN1=		lacheck.1
 ALL_TARGET=	lacheck lacheck.1

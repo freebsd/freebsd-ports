@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/K/KH/KHAMPTON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Base class SAX Drivers and Filters
 
 PERL_CONFIGURE=	yes
 

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.dtd
 EXTRACT_ONLY=	# Empty
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	XML version of the TEI-Lite DTD
 
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 

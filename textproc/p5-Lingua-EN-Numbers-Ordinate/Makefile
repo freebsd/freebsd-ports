@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Go from cardinal number (3) to ordinal ("3rd")
 
 PERL_CONFIGURE=		yes
 

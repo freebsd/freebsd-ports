@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha/}
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl-style XML objects
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/Data/Grove.pm:${PORTSDIR}/textproc/p5-libxml

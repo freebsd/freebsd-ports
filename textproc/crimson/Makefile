@@ -13,6 +13,7 @@ MASTER_SITES=	http://xml.apache.org/dist/crimson/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	girgen@partitur.se
+COMMENT=	Implements the Java API for XML Processing (JAXP)
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
 

@@ -10,6 +10,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.gutenbook.org/download/
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	GTK+ based reader for Project Gutenberg Etexts
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${site_perl}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \

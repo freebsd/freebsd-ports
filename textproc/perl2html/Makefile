@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/www/converters
 
 MAINTAINER=		mkamm@gmx.net
+COMMENT=	Perl sources to HTML converter
 
 USE_AUTOCONF=		yes
 

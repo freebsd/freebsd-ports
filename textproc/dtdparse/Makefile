@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	dtdparse
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Parse a DTD and produce an XML document that represents it
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/DelimMatch.pm:${PORTSDIR}/textproc/p5-DelimMatch \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM

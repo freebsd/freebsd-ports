@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://db.bell-labs.com/galax/Downloads/
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	Galax is a full-featured, fully compliant implementation of XQuery
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	Returns a content of directory as XML
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RDF/Notation3.pm:${PORTSDIR}/textproc/p5-RDF-Notation3
 RUN_DEPENDS=	${BUILD_DEPENDS}

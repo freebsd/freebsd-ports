@@ -14,6 +14,7 @@ DISTFILES=	teilite.dtd teilite.tag
 EXTRACT_ONLY=	# Empty
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	SGML version of the TEI-Lite DTD
 
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 

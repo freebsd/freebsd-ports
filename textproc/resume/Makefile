@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	XML Resume library
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes

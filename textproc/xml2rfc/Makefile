@@ -11,6 +11,7 @@ MASTER_SITES=	http://xml.resource.org/authoring/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jabley@automagic.org
+COMMENT=	A tool to create RFCs and related documents from XML, as per RFC2629
 
 RUN_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 

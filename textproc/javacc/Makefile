@@ -12,6 +12,7 @@ MASTER_SITES=	# Must accept license agreement. :(
 DISTNAME=	JavaCC2_1
 
 MAINTAINER=	gerweck@yahoo.com
+COMMENT=	Compiler compiler for Java; includes tools for building syntax trees
 
 USE_ZIP=	yes
 USE_JAVA=	1.1+

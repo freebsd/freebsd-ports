@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Convert singular words to their plural form
 
 PERL_CONFIGURE=		yes
 

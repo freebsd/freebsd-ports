@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.tei-c.org/Vault/GL/
 DISTNAME=	teip3dtd
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 

@@ -14,6 +14,7 @@ DISTNAME=	Smart_Interlingua_English-1_0.jar
 EXTRACT_SUFX=	#
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	JDictionary plugin: Interlingua-English dictionary
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13 \

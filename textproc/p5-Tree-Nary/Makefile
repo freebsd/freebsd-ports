@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tree
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Perl implementation of N-ary search trees
 
 PERL_CONFIGURE=		yes
 

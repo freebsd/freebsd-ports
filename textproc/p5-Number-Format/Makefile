@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Number
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Perl extension for formatting numbers
 
 PERL_CONFIGURE=		yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Routine for estimating syllable count in words
 
 PERL_CONFIGURE=	yes
 

@@ -15,6 +15,7 @@ DISTNAME=	teixsl-fo
 DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}_${PORTREVISION}
 
 MAINTAINER=	henrik.motakef@web.de
+COMMENT=	XSLT Stylesheets to convert TEI to XSL Formatting Objects
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	PerlSAX handlers for building tree structures
 
 BUILD_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos
 

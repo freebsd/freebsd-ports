@@ -13,6 +13,7 @@ MASTER_SITES=	http://livejournal.com/files/code/spellcheck/ \
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ahze@rgv.net
+COMMENT=	HTML highlighting misspellings using ispell compatible program
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 

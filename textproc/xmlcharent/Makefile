@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	XML character entities
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

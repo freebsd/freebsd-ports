@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	andreas@marvin.robin.de
+COMMENT=	A graphical front end to the Unix diff command
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes

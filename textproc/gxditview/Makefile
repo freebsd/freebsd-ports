@@ -10,6 +10,7 @@ CATEGORIES=	textproc
 DISTFILES=	# none
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	An X11 based previewer for groff output
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	h.eichmann@gmx.de
+COMMENT=	A KDE3 graphical frontend for diff
 
 CONFIGURE_ARGS+=	--program-transform-name=s,^,,
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Perl module to fix the case of people's names
 
 PERL_CONFIGURE=	yes
 

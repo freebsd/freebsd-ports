@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sgmltools-lite
 
 MAINTAINER=	benno@netizen.com.au
+COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
 		jade:${PORTSDIR}/textproc/jade \

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kunishi@acm.org
+COMMENT=	XML utility to create various documents(devel version)
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 

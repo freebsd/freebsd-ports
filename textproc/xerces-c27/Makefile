@@ -13,6 +13,7 @@ MASTER_SITES=	http://xml.apache.org/dist/xerces-c/stable/
 DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
 
 MAINTAINER?=	bzeeb+freebsdports@zabbadoz.net
+COMMENT?=	Validating XML parser from the Apache XML Project
 
 .if !defined(TRANSCODER)
 LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARKSTOS
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Validates user input (usually from an HTML form) based
 
 PERL_CONFIGURE=		yes
 

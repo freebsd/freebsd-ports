@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	RADIUS
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Perl extension for manipulating a RADIUS users file
 
 BUILD_DEPENDS=		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 RUN_DEPENDS=		${BUILD_DEPENDS}

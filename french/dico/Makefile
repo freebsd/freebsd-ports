@@ -17,6 +17,7 @@ MASTER_SITES=	http://homepages.starnet.fr/dtrystram/
 DISTNAME=	ledico
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	Interactive dictionary in french
 
 # Global variables
 #

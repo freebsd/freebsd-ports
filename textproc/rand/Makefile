@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
 MAINTAINER=	domi@saargate.de
+COMMENT=	Utility to display files or streams in random order
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	A modern soundex: phonetic encoding of words
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	A simple way to manage text without mixing it with Perl
 
 PERL_CONFIGURE=		yes
 

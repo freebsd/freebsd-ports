@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	Simple implementation of XUpdate format based on and XML::LibXML
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	${BUILD_DEPENDS}

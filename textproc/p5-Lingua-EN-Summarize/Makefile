@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	A simple tool for summarizing bodies of English text
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Summary.pm:${PORTSDIR}/www/p5-HTML-Summary
 RUN_DEPENDS=	${BUILD_DEPENDS}

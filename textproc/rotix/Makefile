@@ -13,6 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/${DISTNAME}/
 
 MAINTAINER=	lintux@debian.org
+COMMENT=	A program to generate rotational obfuscations
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

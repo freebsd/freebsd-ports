@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		killer@prosalg.no
+COMMENT=	A Perl module that encapsulates access to the Ispell program.
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
