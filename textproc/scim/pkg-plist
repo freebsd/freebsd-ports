@@ -40,10 +40,10 @@ include/scim-1.0/scim_types.h
 include/scim-1.0/scim_utility.h
 lib/libscim-1.0.a
 lib/libscim-1.0.so
-lib/libscim-1.0.so.1
+lib/libscim-1.0.so.3
 lib/libscim-gtkutils-1.0.a
 lib/libscim-gtkutils-1.0.so
-lib/libscim-gtkutils-1.0.so.1
+lib/libscim-gtkutils-1.0.so.3
 lib/gtk-2.0/immodules/im-scim.so
 lib/scim-1.0/1.0.0/Config/gconf.so
 lib/scim-1.0/1.0.0/Config/simple.so
@@ -64,6 +64,7 @@ share/applications/scim-setup.desktop
 share/control-center-2.0/capplets/scim-setup.desktop
 share/locale/zh_CN/LC_MESSAGES/scim.mo
 share/locale/zh_TW/LC_MESSAGES/scim.mo
+share/locale/ja_JP/LC_MESSAGES/scim.mo
 share/pixmaps/scim-setup.png
 share/scim/icons/down.png
 share/scim/icons/full-letter.png

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scim
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://freedesktop.org/~suzhe/sources/
 
@@ -31,11 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .if ${OSVERSION} <= 499999
 BROKEN=		"4.x lacks C99 compliant wctypes implementation"
 .endif
-
-# Pay attention to the quotes usage below
-post-patch:
-	${REINPLACE_CMD} 's/,.GB2312"/,.GB2312,.eucCN"/g' \
-		${WRKSRC}/src/scim_utility.cpp
 
 post-configure:
 	${REINPLACE_CMD} '/^pkgconfigdir/s|$$(libdir)|$${exec_prefix}/libdata|' \
