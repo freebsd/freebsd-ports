@@ -26,6 +26,7 @@
     SUBDIR += scponly
     SUBDIR += tcshrc
     SUBDIR += v7sh
+    SUBDIR += viewglob
     SUBDIR += vshnu
     SUBDIR += wapsh
     SUBDIR += zoidberg

@@ -1,0 +1,9 @@
+bin/gviewglob
+bin/viewglob
+lib/viewglob/.zshrc
+lib/viewglob/getopt.sh
+lib/viewglob/glob-expand
+lib/viewglob/gviewglob
+lib/viewglob/init-viewglob.bashrc
+lib/viewglob/seer
+@dirrm lib/viewglob

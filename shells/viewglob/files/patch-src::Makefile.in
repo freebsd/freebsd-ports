@@ -1,0 +1,32 @@
+--- src/Makefile.in.orig	Wed Oct  6 03:23:40 2004
++++ src/Makefile.in	Wed Oct  6 03:29:02 2004
+@@ -91,8 +91,6 @@
+ # Very slight modifications to these files from Marc J. Rochkind's
+ # book Advanced Unix Programming 2nd ed.  You can get them on the
+ # web at: http://www.basepath.com/aup/
+-BUILT_SOURCES = ptutil.viewglob.c ptutil.viewglob.h \
+-                tc_setraw.viewglob.c tc_setraw.viewglob.h
+ 
+ 
+ CLEANFILES = viewglob .zshrc getopt.sh ptutil.viewglob.c       \
+@@ -484,16 +482,16 @@
+ 
+ .zshrc: Makefile
+ 	cp -f init-viewglob.zshrc .zshrc
+-ptutil.viewglob.c: Makefile
++ptutil.viewglob.c:
+ 	rm -f ptutil.viewglob.c
+ 	patch -i ptutil.c.diff -o ptutil.viewglob.c ptutil.c
+-ptutil.viewglob.h: Makefile
++ptutil.viewglob.h:
+ 	rm -f ptutil.viewglob.h
+ 	patch -i ptutil.h.diff -o ptutil.viewglob.h ptutil.h
+-tc_setraw.viewglob.c: Makefile
++tc_setraw.viewglob.c:
+ 	rm -f tc_setraw.viewglob.c
+ 	patch -i tc_setraw.c.diff -o tc_setraw.viewglob.c tc_setraw.c
+-tc_setraw.viewglob.h: Makefile
++tc_setraw.viewglob.h:
+ 	rm -f tc_setraw.viewglob.h
+ 	patch -i tc_setraw.h.diff -o tc_setraw.viewglob.h tc_setraw.h
+ 
