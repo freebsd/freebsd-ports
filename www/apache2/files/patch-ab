@@ -1,5 +1,5 @@
-*** Makefile.tmpl.orig	Wed Jul 15 21:03:25 1998
---- Makefile.tmpl	Thu Jul 23 16:14:15 1998
+*** Makefile.tmpl.orig	Sat Sep 19 16:41:48 1998
+--- Makefile.tmpl	Thu Sep 24 04:07:49 1998
 ***************
 *** 107,112 ****
 --- 107,113 ----
@@ -49,7 +49,7 @@
   	$(MKDIR) $(root)$(runtimedir)
   	$(MKDIR) $(root)$(logfiledir)
 ***************
-*** 338,360 ****
+*** 340,365 ****
   #   icons and distributed CGI scripts.
   install-data:
   	@echo "===> [data: Installing initial data files]"
@@ -65,15 +65,18 @@
 ! 	-@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
 ! 		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
 ! 	else \
-! 		echo "Copying tree $(TOP)/cgi-bin/ -> $(root)$(datadir)/cgi-bin/"; \
-  		(cd $(TOP)/cgi-bin/ && $(TAR) cf - *) |\
-! 		(cd $(root)$(datadir)/cgi-bin/ && $(TAR) xf -); \
-! 		find $(root)$(datadir)/cgi-bin/ -type d -exec chmod a+rx {} \; ; \
-! 		find $(root)$(datadir)/cgi-bin/ -type f -exec chmod a+r {} \; ; \
-  	fi
+  		for script in printenv test-cgi; do \
+  			cat $(TOP)/cgi-bin/$${script} |\
+  			sed -e 's;^#!/.*perl;#!$(PERL);' \
+          		> $(TOP)/$(SRC)/.apaci.install.tmp; \
+! 			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin/$${script}"; \
+! 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin/$${script}; \
+  		done; \
+! 	fi
   	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
   	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
---- 339,368 ----
+  	(cd $(root)$(datadir)/icons/ && $(TAR) xf -); \
+--- 341,373 ----
   #   icons and distributed CGI scripts.
   install-data:
   	@echo "===> [data: Installing initial data files]"
@@ -93,38 +96,39 @@
 ! #        -@if [ -f $(root)$(datadir)/cgi-bin/printenv ]; then \
 ! #                echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(datadir)/cgi-bin/]"; \
 ! #        else \
-! 		echo "Copying tree $(TOP)/cgi-bin/ -> $(root)$(datadir)/cgi-bin.default/"; \
-  		(cd $(TOP)/cgi-bin/ && $(TAR) cf - *) |\
-! 		(cd $(root)$(datadir)/cgi-bin.default/ && $(TAR) xf -); \
-! 		find $(root)$(datadir)/cgi-bin.default/ -type d -exec chmod a+rx {} \; ; \
-! 		find $(root)$(datadir)/cgi-bin.default/ -type f -exec chmod a+r {} \; ; \
+  		for script in printenv test-cgi; do \
+  			cat $(TOP)/cgi-bin/$${script} |\
+  			sed -e 's;^#!/.*perl;#!$(PERL);' \
+          		> $(TOP)/$(SRC)/.apaci.install.tmp; \
+! 			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(datadir)/cgi-bin.default/$${script}"; \
+! 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(datadir)/cgi-bin.default/$${script}; \
+  		done; \
 ! #        fi
 ! 	if [ ! -d $(root)$(datadir)/cgi-bin ]; then \
 ! 		$(LN) -sf $(root)$(datadir)/cgi-bin.default $(root)$(datadir)/cgi-bin; \
-  	fi
+!   	fi
   	@echo "Copying tree $(TOP)/icons/ -> $(root)$(datadir)/icons/"; \
   	(cd $(TOP)/icons/ && $(TAR) cf - *) |\
+  	(cd $(root)$(datadir)/icons/ && $(TAR) xf -); \
 ***************
-*** 374,381 ****
+*** 378,384 ****
   		 echo ""; \
   		 cat $(TOP)/conf/$${conf}-dist ) |\
   		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
 ! 			-e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
-! 			-e 's;@@ServerRoot@@/htdocs;$(datadir)/htdocs;' \
   			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
   			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
   			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
---- 382,389 ----
+--- 386,392 ----
   		 echo ""; \
   		 cat $(TOP)/conf/$${conf}-dist ) |\
   		 sed -e '/# LoadModule/r $(TOP)/$(SRC)/.apaci.install.conf' \
-! 			-e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
 ! 			-e 's;@@ServerRoot@@/htdocs;$(datadir)/data;' \
   			-e 's;@@ServerRoot@@/icons;$(datadir)/icons;' \
   			-e 's;@@ServerRoot@@/cgi-bin;$(datadir)/cgi-bin;' \
   			-e 's;@@ServerRoot@@/proxy;$(proxycachedir);' \
 ***************
-*** 383,392 ****
+*** 386,395 ****
   			-e 's;logs/accept.lock;$(runtimedir)/httpd.lock;' \
   			-e 's;logs/apache_runtime_status;$(runtimedir)/httpd.scoreboard;' \
   			-e 's;logs/httpd.pid;$(runtimedir)/httpd.pid;' \
@@ -135,7 +139,7 @@
   			-e 's;conf/magic;$(sysconfdir)/magic;' \
   			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
   			-e 's;Group #-1;Group $(conf_group);' \
---- 391,400 ----
+--- 394,403 ----
   			-e 's;logs/accept.lock;$(runtimedir)/httpd.lock;' \
   			-e 's;logs/apache_runtime_status;$(runtimedir)/httpd.scoreboard;' \
   			-e 's;logs/httpd.pid;$(runtimedir)/httpd.pid;' \
