@@ -34,6 +34,12 @@ REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
 
 INFO=		goops guile-tut guile r5rs
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-ia64
+.endif
+
 post-extract:
 	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
 	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
@@ -44,4 +50,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/libguile/load.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
