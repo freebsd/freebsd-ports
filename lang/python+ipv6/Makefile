@@ -7,7 +7,7 @@
 
 PORTNAME=	python+ipv6
 PORTVERSION=	1.5.2
-CATEGORIES=	lang python tk82 ipv6
+CATEGORIES=	lang python ipv6
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 DISTNAME=	py152
@@ -18,8 +18,6 @@ PATCHFILES=	python-152-v6-20000120.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
-
-LIB_DEPENDS=	${TK_DEPENDS}
 
 DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
@@ -34,18 +32,6 @@ MAN1=		python.1
 # The standard setup file
 #
 SETUP_FILE=	Setup
-
-.include <bsd.port.pre.mk>
-
-#
-# Support for Tk is compiled in by default only if X11 is installed.
-#
-.if defined(WITH_TK) || (exists(${X11BASE}/lib/libX11.a) \
-    && !defined(WITHOUT_TK))
-TK_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-SETUP_LOCAL=	Setup.tk
-PLIST_TK=	${PKGDIR}/PLIST.tk
-.endif
 
 #
 # If you want to use Python's thread module, you need to set WITH_THREADS
@@ -80,12 +66,15 @@ PLIST_TOOLS=	${PKGDIR}/PLIST.Tools
 
 post-extract:
 	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd4.sh
+	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd5.sh
 
 post-configure:
 	${CP} ${FILESDIR}/${SETUP_FILE} ${WRKSRC}/Modules/Setup
 .for file in ${SETUP_LOCAL}
 	${CAT} ${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
+
+.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
 PLIST_V6=	${PKGDIR}/PLIST.v6
@@ -94,12 +83,14 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
-.if ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd2 plat-freebsd3
+.if ${OSVERSION} >= 500000
+PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd4
+.elif ${OSVERSION} >= 400000
+PLATFORMS=plat-freebsd2 plat-freebsd3 plat-freebsd5
 .elif ${OSVERSION} >= 300000
-PLATFORMS=plat-freebsd2 plat-freebsd4
-.else   
-PLATFORMS=plat-freebsd3 plat-freebsd4
+PLATFORMS=plat-freebsd2 plat-freebsd4 plat-freebsd5
+.else
+PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .endif
 
 pre-install:
@@ -120,9 +111,6 @@ post-install:
 .if !defined(WITHOUT_TOOLS)
 	@cd ${WRKSRC}; tar cf - Tools | \
 		(cd ${PREFIX}/lib/python1.5; tar xf -)
-.endif
-.if ${OSVERSION} >= 400014
-	${INSTALL_DATA} ${WRKSRC}/README.v6 ${PREFIX}/share/doc/python
 .endif
 
 .include <bsd.port.post.mk>
