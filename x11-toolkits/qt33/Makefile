@@ -32,9 +32,9 @@ INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=yes
 CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
-		-system-zlib -sm -qt-gif -thread -no-fast	\
-		${XINERAMA} -no-g++-exceptions -no-stl ${CUPS}	\
-		-shared -prefix ${PREFIX}
+		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
+		-no-fas ${XINERAMA} -no-g++-exceptions -no-stl	\
+		${CUPS}	-shared -prefix ${PREFIX}
 
 .if defined(DEBUG)
 CONFIGURE_ARGS+= -debug
