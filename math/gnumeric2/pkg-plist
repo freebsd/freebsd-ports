@@ -9,6 +9,7 @@ lib/gnumeric/%%VERSION%%/plugins/dif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/excel/excel.so
 lib/gnumeric/%%VERSION%%/plugins/excel/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gb/gnum_gb.so
+lib/gnumeric/%%VERSION%%/plugins/gb/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
 lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
@@ -73,6 +74,8 @@ share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.lila.
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/List/autoformat.List.simple.xml
 share/gnome/gnumeric/%%VERSION%%/glade/advanced-filter.glade
 share/gnome/gnumeric/%%VERSION%%/glade/analysis-tools.glade
+share/gnome/gnumeric/%%VERSION%%/glade/anova-one.glade
+share/gnome/gnumeric/%%VERSION%%/glade/anova-two.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autocorrect-exceptions.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autocorrect.glade
 share/gnome/gnumeric/%%VERSION%%/glade/autoformat.glade
@@ -92,15 +95,21 @@ share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dialog-zoom.glade
 share/gnome/gnumeric/%%VERSION%%/glade/font-sel.glade
 share/gnome/gnumeric/%%VERSION%%/glade/formula-guru.glade
+share/gnome/gnumeric/%%VERSION%%/glade/fourier-analysis.glade
 share/gnome/gnumeric/%%VERSION%%/glade/function-select.glade
+share/gnome/gnumeric/%%VERSION%%/glade/goalseek.glade
 share/gnome/gnumeric/%%VERSION%%/glade/graph-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/hf-config.glade
+share/gnome/gnumeric/%%VERSION%%/glade/histogram.glade
 share/gnome/gnumeric/%%VERSION%%/glade/insert-cells.glade
 share/gnome/gnumeric/%%VERSION%%/glade/mean-tests.glade
+share/gnome/gnumeric/%%VERSION%%/glade/moving-averages.glade
 share/gnome/gnumeric/%%VERSION%%/glade/names.glade
 share/gnome/gnumeric/%%VERSION%%/glade/plugin-manager.glade
 share/gnome/gnumeric/%%VERSION%%/glade/print.glade
+share/gnome/gnumeric/%%VERSION%%/glade/random-generation.glade
 share/gnome/gnumeric/%%VERSION%%/glade/rank.glade
+share/gnome/gnumeric/%%VERSION%%/glade/regression.glade
 share/gnome/gnumeric/%%VERSION%%/glade/row-height.glade
 share/gnome/gnumeric/%%VERSION%%/glade/sampling.glade
 share/gnome/gnumeric/%%VERSION%%/glade/search-replace.glade
@@ -110,7 +119,6 @@ share/gnome/gnumeric/%%VERSION%%/glade/sheet-rename.glade
 share/gnome/gnumeric/%%VERSION%%/glade/solver-options.glade
 share/gnome/gnumeric/%%VERSION%%/glade/solver.glade
 share/gnome/gnumeric/%%VERSION%%/glade/summary.glade
-share/gnome/gnumeric/%%VERSION%%/glade/validate.glade
 share/gnome/gnumeric/%%VERSION%%/glade/variance-tests.glade
 share/gnome/gnumeric/%%VERSION%%/glade/workbook-attr.glade
 share/gnome/gnumeric/%%VERSION%%/gnome/ui/GNOME_Gnumeric.xml
@@ -136,9 +144,11 @@ share/gnome/help/gnumeric/C/data-and-time-formatting.html
 share/gnome/help/gnumeric/C/descriptive-statistics-tool.html
 share/gnome/help/gnumeric/C/editing-selections.html
 share/gnome/help/gnumeric/C/editing.html
+share/gnome/help/gnumeric/C/file-format.html
 share/gnome/help/gnumeric/C/files.html
 share/gnome/help/gnumeric/C/formatting.html
 share/gnome/help/gnumeric/C/formulas.html
+share/gnome/help/gnumeric/C/fourier-analysis-tool.html
 share/gnome/help/gnumeric/C/ftest-two-sample-for-variances-tool.html
 share/gnome/help/gnumeric/C/function-reference.html
 share/gnome/help/gnumeric/C/gnumeric-abs.html
@@ -482,6 +492,8 @@ share/gnome/help/gnumeric/C/gnumeric-yield.html
 share/gnome/help/gnumeric/C/gnumeric-yielddisc.html
 share/gnome/help/gnumeric/C/gnumeric-yieldmat.html
 share/gnome/help/gnumeric/C/gnumeric-ztest.html
+share/gnome/help/gnumeric/C/goal-seek.html
+share/gnome/help/gnumeric/C/histogram-tool.html
 share/gnome/help/gnumeric/C/images/add-decimals.png
 share/gnome/help/gnumeric/C/images/align-center.png
 share/gnome/help/gnumeric/C/images/align-left.png

@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Aug 13 12:59:13 2001
-+++ configure	Mon Aug 13 13:00:05 2001
-@@ -18426,7 +18426,7 @@
- fi
+--- configure.orig	Tue Oct 23 13:08:10 2001
++++ configure	Tue Oct 23 13:09:21 2001
+@@ -10149,7 +10149,7 @@
  done
  
--for ac_header in iconv.h
-+for ac_header in giconv.h
+ 
+-for ac_hdr in iconv.h
++for ac_hdr in giconv.h
  do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- echo "$as_me:18432: checking for $ac_header" >&5
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
