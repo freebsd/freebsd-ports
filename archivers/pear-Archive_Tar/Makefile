@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Archive_Tar
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	archivers www pear
 
 MAINTAINER=	ports@FreeBSD.org
