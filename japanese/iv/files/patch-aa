@@ -1,16 +1,28 @@
 *** src/bin/iclass/dialogs.c	Wed Sep 23 09:45:09 1992
---- /usr/oports/x11/iv/src/bin/iclass/dialogs.c	Tue Apr 26 17:01:39 1994
+--- /usr/oports/x11/iv/src/bin/iclass/dialogs.c	Sat Sep 11 09:55:17 1999
 ***************
-*** 45,51 ****
-  #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5)
+*** 40,51 ****
+  
+  #include <stdlib.h>
+  #include <string.h>
+  #include <osfcn.h>
+  
+  #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5) && !defined(__386BSD__) && !defined(linux)
   /* sigh, not all systems have this prototype */
   extern "C" {
 !     char* getcwd(char*, int);
   }
   #endif
   
---- 45,51 ----
-  #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5)
+--- 40,53 ----
+  
+  #include <stdlib.h>
+  #include <string.h>
++ #if __FreeBSD_cc_version < 400002
+  #include <osfcn.h>
++ #endif
+  
+  #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5) && !defined(__386BSD__) && !defined(linux)
   /* sigh, not all systems have this prototype */
   extern "C" {
 !     char* getcwd(char*, unsigned int);
@@ -227,7 +239,19 @@
   #define	DECLARE2(f,t1,a1,t2,a2)		f(t1 a1, t2 a2)
   #define	DECLARE3(f,t1,a1,t2,a2,t3,a3)	f(t1 a1, t2 a2, t3 a3)
 *** src/bin/ibuild/ibcmds.c.old Fri Dec 11 20:33:25 1992
---- src/bin/ibuild/ibcmds.c	Wed Nov 13 06:38:33 1996
+--- src/bin/ibuild/ibcmds.c	Sat Sep 11 09:52:51 1999
+***************
+*** 86,92 ****
+--- 86,94 ----
+  #undef FileChooser
+  #define FileChooser _lib_iv(FileChooser)
+  
++ #if __FreeBSD_cc_version < 400002
+  #include <osfcn.h>
++ #endif
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <stream.h>
 ***************
 *** 2407,2415 ****
   	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
@@ -239,7 +263,7 @@
   	    ToolPanel* itoolpanel = iEd->GetToolPanel();
   
               for (int i = 0; i < installed->Count(); i++) {
---- 2407,2415 ----
+--- 2409,2417 ----
   	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
           EditorInfo* removed = (EditorInfo*) toolsdialog.Removed();
   

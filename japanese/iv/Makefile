@@ -10,11 +10,11 @@ DISTNAME=	iv-3.1
 PKGNAME=	ja-iv-3.1
 CATEGORIES=	japanese graphics
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+		${MASTER_SITE_PORTS_JP}
 DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
 
-PATCH_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-PATCHFILES=	iv-3.1j-gamma-fixcmpfont.patch	
+PATCH_SITES=	${MASTER_SITE_PORTS_JP}
+PATCHFILES=	iv-3.1j-gamma-fixcmpfont.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sanpei@sanpei.org
@@ -71,6 +71,12 @@ IV_LIB_VER=	3.1
 
 pre-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/diff-2.0gamma
+
+.if ${OSVERSION} >= 400002
+post-patch:
+	@(cd ${WRKSRC}/src/config/InterViews; ${MV} -f iv-freebsd.cf \
+	iv-freebsd.cf~; ${SED} -e 's/\-lg\+\+//' iv-freebsd.cf~ > iv-freebsd.cf)
+.endif
 
 post-install:
 	@${INSTALL_DATA} ${WRKDIR}/idraw-3_1j.ad ${PREFIX}/interviews/lib/all/app-defaults/idraw
