@@ -17,6 +17,8 @@ COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+BROKEN=		"Unfetchable"
+
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
@@ -34,7 +36,7 @@ NO_PACKAGE=	${RESTRICTED}
 LINPROCFS!=	/sbin/mount | ${GREP} linprocfs | ${AWK} '{print $1}'
 
 pre-everything::
-.if ${LINPROCFS}
+.if !${LINPROCFS}
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Check if linprocfs is running: YES"
 .else
