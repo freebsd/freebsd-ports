@@ -1,0 +1,19 @@
+*** btnlib/makefile.orig	Fri Feb 20 00:05:58 1998
+--- btnlib/makefile	Fri Feb 20 00:24:12 1998
+***************
+*** 27,33 ****
+  	press.o		remote.o	resize.o	util.o
+  
+  LIB	= libbtn.a
+! XLIBH	= /usr/include/X11/Xlib.h
+  #XLIBH = /usr/openwin/share/include/X11/Xlib.h  #for OpenWindows
+  
+  all:	$(LIB)
+--- 27,33 ----
+  	press.o		remote.o	resize.o	util.o
+  
+  LIB	= libbtn.a
+! XLIBH	= $(X11BASE)/include/X11/Xlib.h
+  #XLIBH = /usr/openwin/share/include/X11/Xlib.h  #for OpenWindows
+  
+  all:	$(LIB)

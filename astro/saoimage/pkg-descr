@@ -1,0 +1,21 @@
+SAOimage (pronounced S-A-0-image) displays astronomical images in the X11
+window environment. It was written by Mike Van Hilst while he was at the
+Smithsonian Astrophysical Observatory (SAO) in 1990 and is now maintained by
+Doug Mink also at the SAO. Online documentation is available at
+http://tdc-www.harvard.edu/software/saoimage.html
+
+Online help is available at
+http://tdc-www.harvard.edu/software/saoimage.html.
+
+Image files can be read directly, or image data may be passed through a
+named pipe (Unix) or a mailbox (VMS) from IRAF display tasks. SAOimage
+provides a large selection of options for zooming, panning, scaling,
+coloring, pixel readback, display blinking, and region specification. User
+interactions are generally performed with the mouse, but keyboard
+alternatives are often available.
+
+The SAOimage desktop includes, a main image display window, a button menu
+panel, a display magnifier, a pan and zoom reference image, and a color bar.
+A color table graph window can be brought up by clicking on the color bar.
+
+Bugs or problems should be reported to Doug Mink at dmink@cfa.harvard.edu.
