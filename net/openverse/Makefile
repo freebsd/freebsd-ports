@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	OpenVerse
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.7
 CATEGORIES=	net tk82
-MASTER_SITES=	http://sisko.se.wp.cc.nc.us/~ahze/
+MASTER_SITES=	http://www.openverse.com/files/OpenVerse/
+DISTNAME=	${PORTNAME}-0.8-7
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	A visual chat program written in Tcl/Tk
@@ -16,19 +17,22 @@ RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
-USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/OpenVerse
+USE_REINPLACE=	yes
 
-pre-build:
-	${PERL} -pi -e "s@set OvRunDir /usr/lib/OpenVerse@set OvRunDir ${PREFIX}/lib/OpenVerse@g ; \
-		s@/usr/bin/wish@${LOCALBASE}/bin/wish8.2@g" ${WRKSRC}/OpenVerse.tcl
+STRIP=	# Nothing to strip
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${PREFIX}/bin/wish8.2|g' \
+	-e 's|/usr/lib/OpenVerse|${PREFIX}/lib/OpenVerse|g' \
+		${WRKSRC}/OpenVerse.tcl
 
 do-install:
 .for DIR in anims icons images language lib panels plugins/Query rooms
 	${MKDIR} ${PREFIX}/lib/OpenVerse/${DIR}
 	${INSTALL_DATA} ${WRKSRC}/${DIR}/* ${PREFIX}/lib/OpenVerse/${DIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/OpenVerse.tcl ${WRKSRC}/server.cfg ${WRKSRC}/server.tcl \
+	${INSTALL_PROGRAM} ${WRKSRC}/OpenVerse.tcl ${WRKSRC}/server.cfg ${WRKSRC}/server.tcl \
 		${WRKSRC}/passageways.txt ${PREFIX}/lib/OpenVerse/
 	${MKDIR} ${PREFIX}/share/doc/OpenVerse/help
 	${INSTALL_DATA} ${WRKSRC}/help/* ${PREFIX}/share/doc/OpenVerse/help
