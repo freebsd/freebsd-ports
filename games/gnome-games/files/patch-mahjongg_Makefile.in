@@ -1,0 +1,18 @@
+--- mahjongg/Makefile.in.orig	Sun Jan 19 14:54:47 2003
++++ mahjongg/Makefile.in	Sun Jan 19 14:56:21 2003
+@@ -593,9 +593,12 @@
+ 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA)
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	$(mkinstalldirs) $(DESTDIR)$(bgdir)
+-	touch $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
+-	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
++	touch $(DESTDIR)$(scoredir)/mahjongg.easy.scores
++	touch $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
++	-chown games.games $(DESTDIR)$(scoredir)/mahjongg.easy.scores
++	-chown games.games $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
++	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.easy.scores
++	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
+ 	-chgrp games $(DESTDIR)$(bindir)/mahjongg && chmod 2555 $(DESTDIR)$(bindir)/mahjongg
+ 	$(mkinstalldirs) $(DESTDIR)$(Gamesdir)
+ 
