@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Merchant Of Venice, a stock market trading program
 
+BROKEN=		Does not build
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
