@@ -69,6 +69,8 @@ MAKEFILE=	Makefile
 #CONFIGURE_ARGS+= --enable-kill-parent-hack
 #  - Turn on SNMP server support
 #CONFIGURE_ARGS+= --enable-snmp
+#  - Turn on SSL server support for reverse proxies
+#CONFIGURE_ARGS+= --enable-ssl
 #  - Optimize time updates to one per second rather than calling gettimeofday()
 #CONFIGURE_ARGS+= --enable-time-hack
 #  - Set an explicit hostname in cachemgr.cgi
