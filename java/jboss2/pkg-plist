@@ -30,6 +30,7 @@ etc/rc.d/020.jboss2.sh
 %%T%%/docs/api/org/jboss/ejb/plugins/lock/package-frame.html
 %%T%%/docs/api/org/jboss/ejb/plugins/lock/ApplicationDeadlockException.html
 %%T%%/docs/api/org/jboss/ejb/plugins/lock/SimplePessimisticEJBLock.html
+%%T%%/docs/api/org/jboss/ejb/plugins/lock/NoLock.html
 %%T%%/docs/api/org/jboss/ejb/plugins/lock/MethodOnlyEJBLock.html
 %%T%%/docs/api/org/jboss/ejb/plugins/lock/BeanLockSupport.html
 %%T%%/docs/api/org/jboss/ejb/plugins/lock/package-summary.html
@@ -720,6 +721,7 @@ etc/rc.d/020.jboss2.sh
 %%T%%/src/org/jboss/ejb/plugins/lock/package.html
 %%T%%/src/org/jboss/ejb/plugins/lock/QueuedPessimisticEJBLock.java
 %%T%%/src/org/jboss/ejb/plugins/lock/SimplePessimisticEJBLock.java
+%%T%%/src/org/jboss/ejb/plugins/lock/NoLock.java
 %%T%%/src/org/jboss/ejb/plugins/lock/BeanLockSupport.java
 %%T%%/src/org/jboss/ejb/plugins/lock/ApplicationDeadlockException.java
 %%T%%/src/org/jboss/ejb/plugins/local/LocalHomeProxy.java
