@@ -1,0 +1,73 @@
+--- configure.orig	Wed Nov 19 13:00:56 1997
++++ configure	Mon Dec 15 10:43:02 1997
+@@ -19,9 +19,10 @@
+ 
+ # Usage: configure [-help] [-prefix=PREFIX] [-bin-prefix=PREFIX] 
+ #		   [-x-include-prefix=PREFIX] [-x-lib-prefix=PREFIX]
+-#		   [-x-font-prefix=PREFIX]
++#		   [-x-font-prefix=PREFIX] [-use-24-fonts]
+ 
+ 
++use_24_fonts=0
+ for arg in $@; do
+    case $arg in
+      -bin-prefix=*)
+@@ -34,6 +35,8 @@
+ 	x_lib_prefix=`echo $arg | sed 's/[-a-z]*=//'` ;;
+      -x-font-prefix=*)
+ 	x_font_prefix=`echo $arg | sed 's/[-a-z]*=//'` ;;
++     -use-24-fonts)
++	use_24_fonts=1 ;;
+      -help)
+ 	cat << EOF >&2
+ Usage:  configure [-help] [-prefix=PREFIX] [-exec-prefix=PREFIX] 
+@@ -52,6 +55,8 @@
+ 
+         -x-font-prefix:  Prefix dir of the X-win .pcf fonts.
+ 
++        -use-24-fonts: Use 24 Fonts
++
+ EOF
+ 	exit 0
+ ;;
+@@ -94,11 +99,11 @@
+ echo 'Chinese interface to setting up your XCIN system.'
+ echo 
+ echo 'Do you want to use the Chinese interface [y/n]?'
+-read chinese
++#read chinese
+ if [ "$chinese" = 'y' ] || [ "$chinese" = 'Y' ]; then
+     unique_file=script/configure.Cinstall
+ fi
+-$srcdir/$unique_file -root=$srcdir -prefix=$prefix -bin-prefix=$bin_prefix -x-font-prefix=$x_font_prefix
++$srcdir/$unique_file -root=$srcdir -prefix=$prefix -bin-prefix=$bin_prefix -x-font-prefix=$x_font_prefix -use-24-fonts=$use_24_fonts
+ if [ "$?" = '1' ]; then
+     echo 'Stop!'
+     echo
+@@ -155,7 +160,7 @@
+ 
+ # Test the -O2 for CFLAGS.
+ ${CC-cc} -O2 conftest.c >/dev/null 2>&1
+-test -f a.out && CFLAGS=-O2
++test -f a.out && CFLAGS="-O2 -m486"
+ CFLAGS="${CFLAGS--O}"
+ rm -f a.out
+ 
+@@ -248,7 +253,7 @@
+   IFS="$saveifs"
+ fi
+ INSTALL=${INSTALL-cp}
+-INSTALL_PROGRAM=${INSTALL_PROGRAM-'$(INSTALL)'}
++INSTALL_PROGRAM="/usr/bin/install -c -s"
+ INSTALL_DATA=${INSTALL_DATA-'$(INSTALL)'}
+ INSTALL_DIR=${INSTALL_DIR-mkdir}
+ 
+@@ -800,7 +805,7 @@
+     grep $1 install.status | sed "s%$1=%%"
+ }
+ INSTALL_XCIN=`GetData INSTALL_XCIN`
+-INSTALL_CRXVT=`GetData INSTALL_CRXVT`
++#INSTALL_CRXVT=`GetData INSTALL_CRXVT`
+ INSTALL_FONTS=`GetData INSTALL_FONTS`
+ INSTALL_INPTABS=`GetData INSTALL_INPTABS`
+ INSTALL_DOCS=`GetData INSTALL_DOCS`
