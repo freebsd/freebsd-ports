@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String/CRC32.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String/CRC32.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/CRC32/CRC32.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/CRC32/CRC32.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/CRC32/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/CRC32
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String

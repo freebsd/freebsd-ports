@@ -1,0 +1,6 @@
+The CRC32 module calculates CRC sums of 32 bit lenghts.
+It generates the same CRC values as ZMODEM, PKZIP, PIC-
+CHECK and many others.
+
+Despite its name, this module is able to compute the
+checksum of strings as well as of files.
