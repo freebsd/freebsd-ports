@@ -1,0 +1,14 @@
+--- defsysp.c.old	Wed Jul  7 02:21:11 1999
++++ defsysp.c	Wed Jul  7 02:21:32 1999
+@@ -932,9 +932,9 @@
+   t1 = t2 = Nnum_val(0.0,TEMPORAL);
+ #else
+   times(&TIMES);
+-  t1 = Nnum_val(((float)(TIMES.tms_stime+TIMES.tms_utime-OLD_TIME))/CPUTIME.0,
++  t1 = Nnum_val(((float)(TIMES.tms_stime+TIMES.tms_utime-OLD_TIME))/(float)CPUTIME,
+ 		TEMPORAL);
+-  t2 = Nnum_val(((float)CONSTRAINT_HANDLING_TIME)/CPUTIME.0,TEMPORAL);
++  t2 = Nnum_val(((float)CONSTRAINT_HANDLING_TIME)/(float)CPUTIME,TEMPORAL);
+ #endif
+ #endif
+   upush(&(p1->p_body));	upush(&(p1->p_env));

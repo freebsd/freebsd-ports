@@ -1,0 +1,16 @@
+--- makefile.old	Wed Jul  7 02:03:58 1999
++++ makefile	Wed Jul  7 02:04:19 1999
+@@ -6,11 +6,11 @@
+ 	 refute.o unify.o defsysp.o syspred1.o\
+ 	 syspred2.o trans.o tr_sub.o tr_split.o
+ #CFLAGS = -g
+-CFLAGS = -pg -g      # for debug
++CFLAGS?= -pg -g      # for debug
+ #CFLAGS = -O2        # for optimization
+ #CFLAGS = -O4
+ #CC = gcc
+-CC = cc
++CC?= cc
+ FLAGS = -lm
+ 
+ cup: $(OBJECTS)

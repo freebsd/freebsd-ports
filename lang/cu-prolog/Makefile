@@ -1,0 +1,35 @@
+# New ports collection makefile for:	cu-Prolog
+# Version required:	3.94
+# Date created:		7 July 1999
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	cupsrc
+PKGNAME=	cu-prolog-3.94
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.icot.or.jp/ifs/kbms-clp/unix/cuprolog/
+DISTFILES=	${DISTNAME}.tar.gz cupdoc.tar.gz
+
+MAINTAINER=	issei@jp.FreeBSD.ORG
+
+WRKSRC=		${WRKDIR}/src
+MAKEFILE=	makefile
+ALL_TARGET=	cup
+PORTDOCS=	CHANGES COPYRIGHT COPYRIGHT.j INSTALL INSTALL.j README \
+		README.j doc/cu3eman.dvi doc/cu3man.dvi doc/newpred_e.doc \
+		doc/newpred_j.doc
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cup3 ${PREFIX}/bin/cuprolog
+	${MKDIR} ${PREFIX}/share/examples/cu-prolog
+	${INSTALL_DATA} ${WRKDIR}/sample/* ${PREFIX}/share/examples/cu-prolog
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/cu-prolog
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKDIR}/$i ${PREFIX}/share/doc/cu-prolog
+.endfor
+.endif
+
+.include <bsd.port.mk>
