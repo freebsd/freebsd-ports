@@ -8,7 +8,7 @@
 PORTNAME=	schemetoc
 PORTVERSION=	93.3.15
 CATEGORIES=	lang
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Scheme-to-C/
+MASTER_SITES=	http://www.cs.indiana.edu/pub/scheme-repository/imp/Scheme-to-C/
 DISTNAME=	15mar93
 EXTRACT_SUFX=	.tar.Z
 
@@ -31,7 +31,7 @@ post-extract:
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scsc/*.sc
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/scsc/*.sc
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
+		s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/scsc/*.sc
 
 .include <bsd.port.mk>
