@@ -10125,3 +10125,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 starttls	ports/security/starttls
+howm		ports/deskutils/howm
