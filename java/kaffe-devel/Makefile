@@ -28,6 +28,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
 BROKEN=		"Broken pkg-plist"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-21
 
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
