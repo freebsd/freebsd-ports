@@ -565,6 +565,7 @@
     SUBDIR += ruby-radius
     SUBDIR += ruby-romp
     SUBDIR += ruby-spread
+    SUBDIR += ruby-socketproxy
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rude
