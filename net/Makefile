@@ -143,6 +143,7 @@
     SUBDIR += gnu-finger
     SUBDIR += gnugadu
     SUBDIR += gnut
+    SUBDIR += googolplex
     SUBDIR += gopher
     SUBDIR += gq
     SUBDIR += gsk
