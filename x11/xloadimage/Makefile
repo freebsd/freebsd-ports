@@ -3,7 +3,7 @@
 # Date created:         9 January 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1998/08/23 07:34:47 hoek Exp $
+# $Id: Makefile,v 1.13 1998/10/15 11:10:02 jseger Exp $
 #
 
 DISTNAME=	xloadimage.4.1
@@ -16,8 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 MAN1=		xloadimage.1
 MANCOMPRESSED=	yes
 
-BROKEN_ELF=	yes
-
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 ALL_TARGET=
