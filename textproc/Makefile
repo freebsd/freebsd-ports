@@ -147,6 +147,7 @@
     SUBDIR += sgmltools
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
+    SUBDIR += smartdoc
     SUBDIR += sp
     SUBDIR += tclExpat
     SUBDIR += tdtd.el

@@ -1,0 +1,10 @@
+--- bin/sdoc~	Tue Jan  2 17:02:37 2001
++++ bin/sdoc	Tue Jan  2 17:07:27 2001
+@@ -1,5 +1,5 @@
+ #! /bin/sh
+ 
+-INSTALLDIR=/usr/ports/textproc/smartdoc/work/sdoc
++INSTALLDIR=%%JAVADIR%%/classes
+ 
+-java -jar $INSTALLDIR/SmartDoc.jar $*
++%%JDKDIR%%/bin/java -jar $INSTALLDIR/SmartDoc.jar $*

@@ -1,0 +1,12 @@
+************************************************************************
+If you use on *Emacs*, you can make use of SmartDoc mode by installing
+sdoc-mode.el and sdoc-helper.el (these elisps are in etc subdirectory in
+the sorce archive) to respective *Emacs* site-lisp directory:
+
+    Emacs*   --> ${PREFIX}/share/emacs/site-lisp
+    Mule     --> ${PREFIX}/share/mule/site-lisp
+    XEmacs*  --> ${PREFIX}/lib/xemacs/site-lisp
+
+For more information of sdoc-mode, see below:
+WWW: http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/tips/SmartDocModeIntro_ja.html
+************************************************************************
