@@ -76,6 +76,47 @@ office52/program/resource/icd56933.res
 office52/program/resource/ept56933.res
 office52/program/resource/eme56933.res
 office52/program/resource/epn56933.res
+office52/program/resource/sfx56903.res
+office52/program/resource/sfx56907.res
+office52/program/resource/sfx56931.res
+office52/program/resource/sfx56933.res
+office52/program/resource/sfx56934.res
+office52/program/resource/sfx56939.res
+office52/program/resource/sfx56945.res
+office52/program/resource/sfx56946.res
+office52/program/resource/sfx56948.res
+office52/program/resource/ofa56901.res
+office52/program/resource/ofa56903.res
+office52/program/resource/ofa56907.res
+office52/program/resource/ofa56931.res
+office52/program/resource/ofa56933.res
+office52/program/resource/ofa56934.res
+office52/program/resource/ofa56939.res
+office52/program/resource/ofa56945.res
+office52/program/resource/ofa56946.res
+office52/program/resource/ofa56948.res
+office52/program/resource/svx56903.res
+office52/program/resource/svx56907.res
+office52/program/resource/svx56931.res
+office52/program/resource/svx56933.res
+office52/program/resource/svx56934.res
+office52/program/resource/svx56939.res
+office52/program/resource/svx56945.res
+office52/program/resource/svx56946.res
+office52/program/resource/svx56948.res
+office52/program/resource/svx56901.res
+office52/program/resource/sd56901.res
+office52/program/resource/sd56903.res
+office52/program/resource/sd56907.res
+office52/program/resource/sd56931.res
+office52/program/resource/sd56933.res
+office52/program/resource/sd56934.res
+office52/program/resource/sd56939.res
+office52/program/resource/sd56945.res
+office52/program/resource/sd56946.res
+office52/program/resource/sd56948.res
+office52/program/resource/sfx56901.res
+office52/program/libmbx569li.so
 office52/program/libctl569li.so
 office52/program/libimpreg.so
 office52/program/libpap569li.so
@@ -2908,6 +2949,8 @@ office52/help/33/shelp.dir
 office52/help/33/shelp.dat
 office52/LICENSE
 office52/README
+office52/README.109939-02
+office52/README.109939-03
 @dirrm office52
 @dirrm office52/program
 @dirrm office52/program/filter
