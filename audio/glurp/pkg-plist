@@ -1,13 +1,15 @@
 bin/glurp
-share/glurp/pixmaps/media-audiofile.png
-share/glurp/pixmaps/media-stream.png
-share/glurp/pixmaps/player-prev.png
-share/glurp/pixmaps/player-play.png
-share/glurp/pixmaps/player-pause.png
-share/glurp/pixmaps/player-stop.png
-share/glurp/pixmaps/player-next.png
-share/glurp/pixmaps/player-repeat.png
-share/glurp/pixmaps/player-shuffle.png
-share/glurp/glurp.glade
-@dirrm share/glurp/pixmaps
-@dirrm share/glurp
+%%DATADIR%%/pixmaps/media-audiofile.png
+%%DATADIR%%/pixmaps/media-stream.png
+%%DATADIR%%/pixmaps/player-prev.png
+%%DATADIR%%/pixmaps/player-play.png
+%%DATADIR%%/pixmaps/player-pause.png
+%%DATADIR%%/pixmaps/player-stop.png
+%%DATADIR%%/pixmaps/player-next.png
+%%DATADIR%%/pixmaps/player-repeat.png
+%%DATADIR%%/pixmaps/player-shuffle.png
+%%DATADIR%%/pixmaps/online.png
+%%DATADIR%%/pixmaps/offline.png
+%%DATADIR%%/glurp.glade
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
