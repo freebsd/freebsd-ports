@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnujsp
-PORTVERSION= 	1.0.0
+PORTVERSION= 	1.0.1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.klomp.org/gnujsp/downloads/
 
@@ -28,7 +28,7 @@ do-install:
 		@ cd ${WRKSRC}/examples ;\
 			${INSTALL_DATA} date.jsp snoop.jsp hello.jsp ${PREFIX}/share/examples/gnujsp
 		${MKDIR} ${PREFIX}/share/doc/gnujsp
-.for file in CHANGES FAQ INSTALL.apache INSTALL.vqserver INSTALL.jigsaw README install.html
+.for file in CHANGES FAQ INSTALL.apache INSTALL.vqserver.html INSTALL.jigsaw README install.html
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gnujsp
 .endfor
 		@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/gnujsp.properties.in > \
