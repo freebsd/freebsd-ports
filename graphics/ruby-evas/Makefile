@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby bindings for Evas
 
 LIB_DEPENDS=	evas.6:${PORTSDIR}/graphics/evas
 

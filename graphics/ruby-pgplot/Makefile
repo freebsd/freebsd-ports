@@ -15,6 +15,7 @@ DISTNAME=	rb_${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby interface to PGPLOT graphics library
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray

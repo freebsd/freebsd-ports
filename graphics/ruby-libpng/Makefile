@@ -17,6 +17,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A libpng wrapper class for Ruby
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

@@ -15,6 +15,7 @@ DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby binding for libart
 
 LIB_DEPENDS=	art_lgpl.5:${PORTSDIR}/graphics/libart
 

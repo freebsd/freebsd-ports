@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension library for libexif
 
 LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif
 

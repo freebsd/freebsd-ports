@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}r-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Graph-related Ruby classes
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
 
