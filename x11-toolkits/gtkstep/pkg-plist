@@ -1,8 +1,6 @@
 share/themes/Step/ICON.png
 share/themes/Step/README.html
 share/themes/Step/gtk/gtkrc
-share/themes/engines/libstep.la
 share/themes/engines/libstep.so
-share/themes/engines/libstep.so.0
 @dirrm share/themes/Step/gtk
 @dirrm share/themes/Step
