@@ -7,17 +7,14 @@
 #
 
 PORTNAME=	gtgt
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.karubik.de/gtgt/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-
-USE_GMAKE=	yes
 
 .include <bsd.port.mk>
