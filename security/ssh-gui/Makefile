@@ -15,7 +15,8 @@ MAINTAINER=	hmendes@brturbo.com
 
 RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 ALL_TARGET=	ssh-gui
 
 DOC_FILES=	README
