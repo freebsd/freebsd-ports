@@ -1,0 +1,19 @@
+RTG is a flexible, scalable, high-performance SNMP statistics monitoring
+system. It is designed for enterprises and service providers who need to
+collect time-series SNMP data from a large number of targets quickly. All
+collected data is inserted into a relational database that provides a common
+interface for applications to generate complex queries and reports. RTG
+includes utilities that generate configuration and target files, traffic
+reports, 95th percentile reports and graphical data plots. These utilities may
+be used to produce a web-based interface to the data. 
+
+The unique features of RTG are: 
+ * Runs as a daemon, incurring no cron or kernel startup overhead 
+ * Written entirely in C for speed, incurring no interpreter overhead 
+ * Multi-threaded for asynchronous polling and database insertion 
+ * Inserts data into a relational database where complex queries and reports
+	may be generated 
+ * Performs no data averaging in order to support billing, etc. 
+ * Can poll at sub-one-minute intervals 
+
+WWW: http://rtg.sourceforge.net

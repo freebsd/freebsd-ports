@@ -1,0 +1,31 @@
+--- etc/Makefile.in.orig	Thu Oct  2 09:59:32 2003
++++ etc/Makefile.in	Tue Jan  6 22:58:25 2004
+@@ -84,8 +84,8 @@
+ install_sh = @install_sh@
+ 
+ top_builddir = ..
+-etcdir = /etc
+-webdir = /web
++etcdir = @etcdir@
++webdir = @webdir@
+ reportsdir = /bin
+ 
+ ETC = rtg.conf rtgtargmkr.pl routers createdb BER.pm \
+@@ -220,13 +220,13 @@
+ all:
+ 
+ install: installdirs
+-	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(etcdir) ; echo "install: installed $$i in $(prefix)$(etcdir)" ; done
+-	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(webdir) ; echo "install: installed $$i in $(prefix)$(webdir)" ; done
++	@for i in $(ETC) ; do $(INSTALL) $(srcdir)/$$i $(etcdir) ; echo "install: installed $$i in $(etcdir)" ; done
++	@for i in $(WEB) ; do $(INSTALL) $(srcdir)/$$i $(webdir) ; echo "install: installed $$i in $(webdir)" ; done
+ 	@for i in $(REPORTS) ; do $(INSTALL) $(srcdir)/$$i $(prefix)$(reportsdir) ; echo "install: installed $$i in $(prefix)$(reportsdir)" ; done
+ 
+ installdirs:
+-	$(mkinstalldirs) $(prefix)$(etcdir)
+-	$(mkinstalldirs) $(prefix)$(webdir)
++	$(mkinstalldirs) $(etcdir)
++	$(mkinstalldirs) $(webdir)
+ 	$(mkinstalldirs) $(prefix)$(reportsdir)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

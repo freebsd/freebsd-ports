@@ -1,0 +1,43 @@
+--- configure.ori	Tue Jan  6 22:43:17 2004
++++ configure	Tue Jan  6 22:47:06 2004
+@@ -328,6 +328,8 @@
+ libexecdir='${exec_prefix}/libexec'
+ datadir='${prefix}/share'
+ sysconfdir='${prefix}/etc'
++etcdir='${prefix}/etc/rtg'
++webdir='${prefix}/www/data'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'
+ libdir='${exec_prefix}/lib'
+@@ -558,6 +560,12 @@
+   | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
+     sysconfdir=$ac_optarg ;;
+ 
++  -etcdir=* | --etcdir=* )
++    etcdir=$ac_optarg ;;
++
++  -webdir=* | --webdir=* )
++    webdir=$ac_optarg ;;
++
+   -target | --target | --targe | --targ | --tar | --ta | --t)
+     ac_prev=target_alias ;;
+   -target=* | --target=* | --targe=* | --targ=* | --tar=* | --ta=* | --t=*)
+@@ -654,7 +662,8 @@
+ 
+ # Be sure to have absolute paths.
+ for ac_var in bindir sbindir libexecdir datadir sysconfdir sharedstatedir \
+-              localstatedir libdir includedir oldincludedir infodir mandir
++              localstatedir libdir includedir oldincludedir infodir mandir \
++	      etcdir webdir
+ do
+   eval ac_val=$`echo $ac_var`
+   case $ac_val in
+@@ -5310,6 +5319,8 @@
+ s,@libexecdir@,$libexecdir,;t t
+ s,@datadir@,$datadir,;t t
+ s,@sysconfdir@,$sysconfdir,;t t
++s,@etcdir@,$etcdir,;t t
++s,@webdir@,$webdir,;t t
+ s,@sharedstatedir@,$sharedstatedir,;t t
+ s,@localstatedir@,$localstatedir,;t t
+ s,@libdir@,$libdir,;t t
