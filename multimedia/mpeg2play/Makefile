@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mpeg2play
-# Version required:	1.1b
 # Date created:		June 21, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mpeg2play-1.1b
+PORTNAME=	mpeg2play
+PORTVERSION=	1.1b
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.funet.fi/pub/graphics/packages/mpeg/mpeg2play/
 

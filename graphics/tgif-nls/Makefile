@@ -1,16 +1,16 @@
 # New ports collection makefile for:    tgif-nls
-# Version required:     4.1.26
 # Date created:         3 May 1999
 # Whom:                 one@netlab.is.tsukuba.ac.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tgif-4.1.26
-PKGNAME=	tgif-nls-4.1.26
+PORTNAME=	tgif
+PORTVERSION=	4.1.26
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
+PKGNAMESUFFIX=	-nls
 
 MAINTAINER=	one@netlab.is.tsukuba.ac.jp
 

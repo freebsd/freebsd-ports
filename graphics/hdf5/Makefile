@@ -1,15 +1,15 @@
 # New ports collection makefile for:	HDF_lib
-# Version required:	4.1r2
 # Date created:		17 November 1996
 # Whom:			mi
 #
 # $FreeBSD$
 #
 
-DISTNAME=	HDF4.1r3
-PKGNAME=	hdf-4.1r3
+PORTNAME=	hdf
+PORTVERSION=	4.1r3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF4.1r3/tar/
+DISTNAME=	HDF${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 

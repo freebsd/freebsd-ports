@@ -1,14 +1,15 @@
 # New ports collection makefile for:	PIL handbook
-# Version required:	1.0
 # Date created:		18th October 1999
 # Whom:			Jose Marques
 #
 # $FreeBSD$
 #
 
-DISTNAME=	py-imaging-handbook-1.0
+PORTNAME=	imaging-handbook
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pythonware.com/library/pil/handbook/
+PKGNAMEPREFIX=	py-
 DISTFILES=	labdoc.css index.htm overview.htm concepts.htm \
 		intro01.htm support.htm license.htm image.htm \
 		imagechops.htm imagedraw.htm imageenhance.htm \

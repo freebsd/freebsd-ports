@@ -1,15 +1,15 @@
 # New ports collection makefile for:	graphviz
-# Version required:	1.5.1
 # Date created:		03 Feb 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gviz15
-PKGNAME=	graphviz-1.5.1
+PORTNAME=	graphviz
+PORTVERSION=	1.5.1
 CATEGORIES=	graphics tk82
 MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
+DISTNAME=	gviz15
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtksee
-# Version required:	0.5.0
 # Date created:		Sun Nov 22 12:08:18 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtksee-0.5.0
+PORTNAME=	gtksee
+PORTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://hotaru.clinuxworld.com/gtksee/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/

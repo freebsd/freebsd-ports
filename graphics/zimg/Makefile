@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zimg
-# Version required:	2.4.0
 # Date created:		20 Feb 2000
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zimg-2.4.0
+PORTNAME=	zimg
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zellner.org/zimg/download/
 

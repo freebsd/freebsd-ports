@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mpeg2codec
-# Version required:	1.2
 # Date created:		November 25, 1996
 # Whom:			"Philippe Charnier" <charnier@lirmm.fr>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mpeg2codec-1.2
+PORTNAME=	mpeg2codec
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
 DISTFILES=	mpeg2vidcodec_v12.tar.gz

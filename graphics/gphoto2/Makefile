@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	gphoto
-# Version required:	gphoto-19990511
 # Date created:		26 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gphoto-0.4.0
+PORTNAME=	gphoto
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mustec.eu.org/~psj/downloads/ \
 		http://www.freenix.no/~anders/

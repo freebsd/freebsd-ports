@@ -1,21 +1,19 @@
 # New ports collection makefile for:    Gplot
-# Version required:     4.3
 # Date created:         26 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gplot
-PKGNAME=	gplot-4.3
+PORTNAME=	gplot
+PORTVERSION=	4.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.psc.edu/pub/gplot/
-EXTRACT_SUFX=	.tar.Z
+DISTFILES=	gplot.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 
 NO_WRKSUBDIR=	yes
-
 ALL_TARGET=	drawcgm gtex gplot
 MAN1=		gplot.1
 DOCS=		gplot.hlp gplot.txt gtex.doc

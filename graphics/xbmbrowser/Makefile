@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xbmbrowser
-# Version required:	xbmbrowser5.1
 # Date created:		06 September 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xbmbrowser5.1
-PKGNAME=	xbmbrowser-5.1
+PORTNAME=	xbmbrowser
+PORTVERSION=	5.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 

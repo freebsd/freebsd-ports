@@ -1,17 +1,17 @@
 # New ports collection makefile for:	mpeg
-# Version required:	1.2.2
 # Date created:		Sa  01 May 1999 15:00:00 MET
 # Whom:			Tobias Reifenberger <treif@mayn.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MPEGv1.2.2
-PKGNAME=	mpeg-1.2.2
+PORTNAME=	mpeg
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.uni-koeln.de/graph/mpeg/ \
 		ftp://ftp.mni.mcgill.ca/pub/mpeg/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/mpeg/mni.mcgill.ca/
+DISTNAME=	MPEGv${PORTVERSION}
 
 MAINTAINER=	treif@mayn.de
 

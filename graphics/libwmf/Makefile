@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libwmf
-# Version required:	0.1.16
 # Date Created:		22 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libwmf-0.1.16
+PORTNAME=	libwmf
+PORTVERSION=	0.1.16
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/libwmf/
 

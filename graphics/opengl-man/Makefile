@@ -1,12 +1,12 @@
 # New ports collection makefile for: opengl-manpage
-# Version required:     657
 # Date created:         19990120
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
 # $FreeBSD$
 #
 
-DISTNAME=	opengl-man-657
+PORTNAME=	opengl-man
+PORTVERSION=	657
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.FreeBSD.org/~cracauer/freebsd-distfiles/ \
 		http://www2.cons.org:8000/freebsd-distfiles/

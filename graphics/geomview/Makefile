@@ -1,12 +1,12 @@
 # New ports collection makefile for:	geomview
-# Version required:			1.6.1
 # Date created:				5 November 1996
 # Whom:					fenner
 #
 # $FreeBSD$
 #
 
-DISTNAME=	geomview-1.6.1
+PORTNAME=	geomview
+PORTVERSION=	1.6.1
 CATEGORIES=	graphics tk82
 MASTER_SITES=	ftp://ftp.geom.umn.edu/pub/software/geomview/	\
 		ftp://ftp-sfb288.math.tu-berlin.de/pub/geomview/

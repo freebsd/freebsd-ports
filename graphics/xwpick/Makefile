@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xwpick
-# Version required:			2.20
 # Date created:				24 June 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xwpick-2.20
+PORTNAME=		xwpick
+PORTVERSION=		2.20
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications

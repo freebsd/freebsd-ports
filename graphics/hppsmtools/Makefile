@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	hppsmtools
-# Version required:	0.3
 # Date created:		2 September 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hppsmtools-1.0
+PORTNAME=	hppsmtools
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/unimut/photosmart/ \
 		http://www.freenix.no/~anders/ \

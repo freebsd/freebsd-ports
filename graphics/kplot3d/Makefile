@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kplot3d
-# Version required:			0.70
 # Date created:				30 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kplot3d-0.70
+PORTNAME=	kplot3d
+PORTVERSION=	0.70
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://members.xoom.com/kplot3d/
 

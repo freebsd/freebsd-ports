@@ -1,12 +1,12 @@
 # New ports collection makefile for:	stamp
-# Version required:	2.0.8
 # Date created:	11 August 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	stamp-2.0.8
+PORTNAME=	stamp
+PORTVERSION=	2.0.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://stamp.netpedia.net/
 

@@ -36,7 +36,8 @@
 #    question bugs you
 #
 
-DISTNAME=	glx-990802
+PORTNAME=	glx
+PORTVERSION=	990802
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.FreeBSD.org/~3d/distfiles/glx/XF3.3.5/
 DISTFILES=	${DISTNAME}.tar.bz2 \

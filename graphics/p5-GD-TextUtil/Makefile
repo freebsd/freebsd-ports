@@ -1,16 +1,17 @@
 # New ports collection makefile for:	p5-GD-TextUtil
-# Version required:			0.70
 # Date created:				21 February 2000
 # Whom:	      				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	GDTextUtil-0.70
-PKGNAME=	p5-GD-TextUtil-0.70
+PORTNAME=	GD-TextUtil
+PORTVERSION=	0.70
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
+PKGNAMEPREFIX=	p5-
+DISTNAME=	GDTextUtil-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.RU
 

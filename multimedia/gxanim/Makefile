@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xanim
-# Version required:     0.50
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 Rod Taylor
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gxanim-0.50
+PORTNAME=	gxanim
+PORTVERSION=	0.50
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.iag.net/~aleris/ \
 		http://www.zort.on.ca/software/

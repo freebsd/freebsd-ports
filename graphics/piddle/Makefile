@@ -1,16 +1,15 @@
 # Ports collection makefile for:	piddle
-# Version required:			1.0b1
 # Date created:				29 Feb 2000
 # Whom:					dom@myrddin.demon.co.uk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	piddle-1.0b1-5
-PKGNAME=	piddle-1.0b1
+PORTNAME=	piddle
+PORTVERSION=	1.0b1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.sourceforge.net/piddle/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	piddle-1.0b1-5.tgz
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	tgd
-# Version required:			1.2c
 # Date created:				22 February 1999
 # Whom:	      				mharo@area51.fremont.ca.us
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tgd1.2c
-PKGNAME=	tgd-1.2c
+PORTNAME=	tgd
+PORTVERSION=	1.2c
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://probe.nalusda.gov/pub/treegenes/ \
 		ftp://dendrome.ucdavis.edu/pub/tgd/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	mharo@FreeBSD.org
 

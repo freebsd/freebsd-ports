@@ -1,16 +1,16 @@
 # New ports collection makefile for:	rayshade
-# Version required:	4.0
 # Date created:		21 January 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rayshade.4.0
-PKGNAME=	rayshade-4.0
+PORTNAME=	rayshade
+PORTVERSION=	4.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://graphics.stanford.edu/pub/rayshade/	\
 		ftp://ftp.princeton.edu/pub/Graphics/rayshade.4.0/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     ports@FreeBSD.org

@@ -6,9 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	linux_glx-991127
+PORTNAME=	glx
+PORTVERSION=	991127
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://people.FreeBSD.org/~3d/distfiles/glx/linux/
+PKGNAMEPREFIX=	linux_
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	3d@freebsd.org
 

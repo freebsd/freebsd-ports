@@ -1,17 +1,18 @@
 # New ports collection makefile for:    PIL
-# Version required:     1.0
 # Date created:         02 November 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Imaging-1.0
-PKGNAME=	py-imaging-1.0
+PORTNAME=	imaging
+PORTVERSION=	1.0
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.pythonware.com/downloads/ \
 		ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
+PKGNAMEPREFIX=	py-
+DISTNAME=	Imaging-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 

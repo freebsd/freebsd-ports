@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libdjvu++
-# Version required:	2.1
 # Date Created:		20 July 1999
 # Whom:			Mikhail Teterin <mi@aldan.algebra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libdjvu++-2.1
+PORTNAME=	libdjvu++
+PORTVERSION=	2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.djvu.com/open/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	qvplay
-# Version required:	0.94
 # Date created:		2 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	qvplay-0.94
+PORTNAME=	qvplay
+PORTVERSION=	0.94
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.asahi-net.or.jp/~xg2k-hys/
 

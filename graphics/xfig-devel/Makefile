@@ -1,17 +1,17 @@
 # New ports collection makefile for:	xfig
-# Version required:	3.2.3a
 # Date created:		4 January 1995
 # Whom:			roberto
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xfig.3.2.3a
-PKGNAME=	xfig-3.2.3a
+PORTNAME=	xfig
+PORTVERSION=	3.2.3a
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://www-epb.lbl.gov/xfig/
 MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    sced
-# Version required:     0.94
 # Date created:         27  Dec 1996
 # Whom:                 proff@iq.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       sced-1.02
+PORTNAME=       sced
+PORTVERSION=	1.02
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.berkeley.edu/~schenney/sced/src/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
