@@ -2486,6 +2486,7 @@ hu-hu-zipcodes	ports/hungarian/hu-zipcodes
 hu-ispell	ports/hungarian/ispell
 hu-jdictionary-eng-hun	ports/hungarian/jdictionary-eng-hun
 hu-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
+hu-koffice-i18n	ports/hungarian/koffice-i18n
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
