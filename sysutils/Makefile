@@ -7,6 +7,7 @@
     SUBDIR += ascpu
     SUBDIR += asfsm
     SUBDIR += asmem
+    SUBDIR += asmon
     SUBDIR += asrpages
     SUBDIR += bchunk
     SUBDIR += bkpupsd
