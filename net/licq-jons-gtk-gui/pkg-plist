@@ -1,2 +1,3 @@
 lib/licq/licq_%%GUI_NAME%%-gui.la
 lib/licq/licq_%%GUI_NAME%%-gui.so
+@dirrm lib/licq
