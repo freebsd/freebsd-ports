@@ -34,6 +34,7 @@
     SUBDIR += festvox-don
     SUBDIR += festvox-el11
     SUBDIR += festvox-hvs
+    SUBDIR += festvox-jph
     SUBDIR += festvox-kal16
     SUBDIR += festvox-kal8
     SUBDIR += festvox-ked16
