@@ -1,4 +1,4 @@
-# New ports collection makefile for:	semi-current for emacs
+# New ports collection makefile for:	semi-1.13.x for emacs
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -8,7 +8,8 @@
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/semi-1.13-for-flim-1.13/ \
+		ftp://ftp.etl.go.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.win.or.jp/pub/word/mule/semi/semi-1.13-for-flim-1.13/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/semi/semi-1.13-for-flim-1.13/
@@ -19,6 +20,7 @@ MAINTAINER?=	shige@FreeBSD.org
 PORTCLASS?=	master
 
 # distfile version
+FLIM_TRUNK=	1.13
 FLIM_VER=	1.13.2
 SEMI_VER=	1.13.7
 # setupel filename
@@ -46,8 +48,8 @@ PLIST_SUB+=	SEMIDOCDIR=${SEMIDOCDIR} SEMI_SETUPEL=${SEMI_SETUPEL} \
 
 .if defined(EMACS_PORT_NAME)
 # depends on flim
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current
+BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}-${EMACS_PORT_NAME}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."

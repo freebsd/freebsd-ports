@@ -8,12 +8,11 @@ FLIM, message representation or encoding emacs lisp library for mule.
     - mailcap parser and utility
 
   FLIM is installed the following directory tree:
-	${LOCALBASE}/share/mule/site-lisp/flim/	--- FLIM
-
+	${LOCALBASE}/share/mule/site-lisp/flim/
 
 To use flim, put the following setup into your ~/.emacs:
 
 	(require 'apel-setupel)
 	(require 'flim-setupel)
 
---- Porting by shige <shige@FreeBSD.ORG>
+Ported by shige@FreeBSD.ORG

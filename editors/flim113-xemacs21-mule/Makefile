@@ -1,4 +1,4 @@
-# New ports collection makefile for:	flim for xemacs21-mule
+# New ports collection makefile for:	flim-1.13.x for xemacs21-mule
 # Date created:		25 July 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -10,7 +10,7 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/flim-emacs-current
+MASTERDIR=	${.CURDIR}/../../editors/flim113-emacs
 
 # emacs port setup
 EMACS_PORT_NAME=	xemacs21-mule
