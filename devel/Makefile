@@ -358,10 +358,10 @@
     SUBDIR += ruby-racc
     SUBDIR += ruby-racc-runtime
     SUBDIR += ruby-rbison
-    SUBDIR += ruby-runit
     SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
     SUBDIR += ruby-textbuf
+    SUBDIR += ruby-unit
     SUBDIR += rvm
     SUBDIR += sdcc
     SUBDIR += sdl
