@@ -7,6 +7,9 @@ lib/VFlib/README.txt.JP_EUC
 lib/VFlib/bdfindex
 lib/VFlib/disol
 lib/VFlib/fmtest
+lib/VFlib/bdfindex
+lib/VFlib/fwindex
+lib/VFlib/disol
 lib/VFlib/kban
 lib/VFlib/ktest
 lib/VFlib/ttindex
