@@ -17,6 +17,6 @@
  install: rinetd
 -	install -m 700 rinetd /usr/sbin
 -	install -m 644 rinetd.8 /usr/man/man8
-+	install -C -o root -g wheel -m 700 rinetd ${PREFIX}/sbin
++	install -C -o root -g wheel -m 750 rinetd ${PREFIX}/sbin
 +	install -C -o root -g wheel -m 644 rinetd.8 ${PREFIX}/man/man8
  
