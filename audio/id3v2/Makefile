@@ -7,6 +7,7 @@
 
 PORTNAME=	id3v2
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	id3v2
@@ -14,8 +15,13 @@ MASTER_SITE_SUBDIR=	id3v2
 MAINTAINER=	rehsack@liwing.de
 COMMENT=	Command line id3v2 tag editor
 
-LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib
+
+USE_GETOPT_LONG=yes
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CFLAGS+=	${CPPFLAGS}
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		id3v2.1
 
