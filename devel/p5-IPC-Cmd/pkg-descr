@@ -1,0 +1,4 @@
+IPC::Cmd allows you to run commands, interactively if desired,
+platform independent but have them still work.
+
+WWW: http://search.cpan.org/dist/IPC-Cmd
