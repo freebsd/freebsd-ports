@@ -43,3 +43,4 @@ share/doc/plan/plan.lang.spanish
 @dirrm share/netplan.dir
 @dirrm share/doc/plan/examples
 @dirrm share/doc/plan
+@dirrm share/plan
