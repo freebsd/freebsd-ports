@@ -4,6 +4,7 @@ iog/iog-%%VERSION%%/README
 iog/iog-%%VERSION%%/SNMP_Session.pm
 iog/iog-%%VERSION%%/howto-iog.html
 iog/iog-%%VERSION%%/in.gif
+iog/iog-%%VERSION%%/index.php
 iog/iog-%%VERSION%%/iog
 @unexec if cmp -s %D/iog/iog-%%VERSION%%/iog.cfg %D/iog/iog-%%VERSION%%/iog.cfg.sample; then rm -f %D/iog/iog-%%VERSION%%/iog.cfg; fi
 iog/iog-%%VERSION%%/iog.cfg.sample
