@@ -37,6 +37,8 @@ CONFIGURE_ARGS=	--with-threads
 
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
+CPIO?=		/usr/bin/cpio
+
 do-install:
 	@${ECHO} ">> Installing program"
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
