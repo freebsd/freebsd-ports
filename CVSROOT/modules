@@ -2695,6 +2695,7 @@ htdump		ports/www/htdump
 hte		ports/editors/hte
 html		ports/textproc/html
 html2fo		ports/textproc/html2fo
+html2hdml	ports/www/html2hdml
 html2latex	ports/print/html2latex
 html2ps-a4	ports/print/html2ps-a4
 html2ps-letter	ports/print/html2ps-letter
