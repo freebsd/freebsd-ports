@@ -67,6 +67,7 @@
     SUBDIR += gimp-manual-ps
     SUBDIR += gimp1
     SUBDIR += giram
+    SUBDIR += glass
     SUBDIR += gle
     SUBDIR += glide3
     SUBDIR += gliv

@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Aug 19 04:00:33 2001
++++ Makefile	Thu Aug 23 10:06:34 2001
+@@ -1,12 +1,11 @@
+-CC = gcc
+ GLASS_VERSION = 1.1.1
+-CFLAGS = -g -O3 -Wall -DVERSION_STRING=\"$(GLASS_VERSION)\"
+-LIBS = -lGL
++CFLAGS += -Wall -I/usr/X11R6/include -DVERSION_STRING=\"$(GLASS_VERSION)\"
++LIBS = -L/usr/X11R6/lib -lGL
+ OBJS = glass_apoint.o glass_component.o glass_draw.o glass_interface.o glass_library.o \
+        glass_load.o glass_material.o glass_object.o glass_rgb.o glass_save.o \
+        glass_texture.o glass_tlist.o glass_transform.o glass_triangle.o glass_variable.o
+ all: $(OBJS)
+-	$(CC) -shared -Wl,-soname,libglass.so.1 -o libglass.so.$(GLASS_VERSION) $(OBJS) -lc
++	$(CC) -shared -Wl,-soname,libglass.so.1 -o libglass.so.1 $(OBJS) $(LIBS) -lc
+ 
+ $(OBJS): glass_types.h glass.h
+ 
