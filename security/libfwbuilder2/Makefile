@@ -6,7 +6,7 @@
 
 PORTNAME=	libfwbuilder
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.5:${PORTSDIR}/net/net-snmp \
+		netsnmp.6:${PORTSDIR}/net/net-snmp \
 		crypto.3:${PORTSDIR}/security/openssl
 
 CONFIGURE_SCRIPT= autogen.sh

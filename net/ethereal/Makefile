@@ -7,6 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.9.14
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
@@ -19,7 +20,7 @@ MAINTAINER=	billf@FreeBSD.org
 COMMENT=	An X11/GTK network analyzer/capture tool
 
 .if !defined(WITHOUT_SNMP)
-LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
+LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 .endif
 
 CONFIGURE_ARGS=	--program-transform-name=""
