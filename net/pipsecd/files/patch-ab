@@ -1,5 +1,5 @@
 --- tunip.c.orig	Tue Sep 21 18:20:40 1999
-+++ tunip.c	Fri Feb  4 15:09:46 2000
++++ tunip.c	Sun Feb 20 20:36:27 2000
 @@ -54,12 +54,14 @@
  #include <blowfish.h>
  #include <cast.h>
@@ -17,18 +17,6 @@
  #define _PATH_DEV_RANDOM	"/dev/random"
  
  #ifdef USE_ETHERTAP
-@@ -87,10 +89,10 @@
- 
- #define UDP_PORT	2001
- 
--#ifdef USE_SYSTEM_HASH
- #define MD5_Init		MD5Init
- #define MD5_Update		MD5Update
- #define MD5_Final		MD5Final
-+#ifdef USE_SYSTEM_HASH
- #define SHA1_Init		SHA1Init
- #define SHA1_Update		SHA1Update
- #define SHA1_Final		SHA1Final
 @@ -131,7 +133,9 @@
  	des_key_schedule k3;
      } des3;

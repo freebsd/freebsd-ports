@@ -1,11 +1,11 @@
 --- Makefile.orig	Thu Sep 16 17:44:50 1999
-+++ Makefile	Fri Feb  4 15:14:18 2000
-@@ -6,23 +6,26 @@
++++ Makefile	Sun Feb 20 20:41:18 2000
+@@ -6,10 +6,13 @@
  CLEANFILES=	*.core *.o pipsecd
  
  # Where your OpenSSL includes are located
 -INCDIR=/usr/local/ssl/include
-+INCDIR=-I$(OPENSSLINC) -I$(OPENSSLINC)/openssl -I$(LOCALBASE)/include
++INCDIR=-I$(OPENSSLINC)/openssl -I$(OPENSSLINC) -I$(LOCALBASE)/include
  
  # Where your libcrypto is located
 -LIBDIR=/usr/local/ssl/lib
@@ -15,11 +15,8 @@
 +DEFINES=-DFILE_PREFIX=\"$(PREFIX)\"
  
  # Optional: use FreeBSD's libmd
--#OPTLIB += -lmd
-+OPTLIB += -lmd
- #OPTDEF += -DUSE_SYSTEM_HASH
- 
- # Optional: use ethertap device under Linux instead of userlink
+ #OPTLIB += -lmd
+@@ -19,10 +22,10 @@
  #OPTDEF += -DUSE_ETHERTAP
  
  pipsecd:	tunip.c defs.h
