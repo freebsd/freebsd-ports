@@ -64,3 +64,24 @@
                             $(SRCDIR)/point.h    \
                             $(SRCDIR)/povproto.h \
 --- 901,906 ----
+*** source/unix/makefile~	Wed Dec 30 16:07:40 1998
+--- source/unix/makefile	Wed Dec 30 16:09:21 1998
+***************
+*** 79,85 ****
+  #   for compiles unless you are debugging new code, as it slows things down.
+  # The option -DPOV_COMMENTS enables informational comments in PNG and PPM
+  #   format output files (see png_pov.c and ppm.c for more info).
+! CFLAGS      = -O2 -ansi -c -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)
+  LFLAGS      = $(LIBPNGLIB) $(ZLIBLIB) -lm
+  
+  # Linux compiler flags
+--- 79,87 ----
+  #   for compiles unless you are debugging new code, as it slows things down.
+  # The option -DPOV_COMMENTS enables informational comments in PNG and PPM
+  #   format output files (see png_pov.c and ppm.c for more info).
+! CFLAGS      ?= -O2
+! CFLAGS      += -ansi -c -DCOMPILER_VER=\".`uname`.$(CC)\" $(SRCINC) $(LIBPNGINC) $(ZLIBINC) $(XLIBINC)
+! 
+  LFLAGS      = $(LIBPNGLIB) $(ZLIBLIB) -lm
+  
+  # Linux compiler flags
