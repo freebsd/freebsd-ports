@@ -10,6 +10,7 @@ PORTVERSION=	3.48
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/
+DISTNAME=	nmap-${PORTVERSION}	# needed for security/nmapfe
 
 MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT?=	Port scanning utility for large networks
