@@ -56,6 +56,7 @@ CONFLICTS=	*-teTeX-[0-9]* \
 		*-dvipsk-[0-9]*
 
 MAN1=		dvips.1 afm2tfm.1
+MLINKS=		dvips.1 odvips.1
 INFO=		dvips
 
 .if defined(WITH_LETTERSIZE)
