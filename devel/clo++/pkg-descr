@@ -1,9 +1,0 @@
-Clo++ is a command line option parser generator for C++. 
-It generates a C++ header file with a class that can parse your
-command line and supports just about anything that you want to do
-with your command line. It also generates usage information and
-can handle subcommands that take their own options. clo++ is itself
-written in C++ and uses a command line option parser that it
-generated.
-
-WWW: http://pmade.org/~pjones/software/clo++/
