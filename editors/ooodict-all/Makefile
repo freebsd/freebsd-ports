@@ -35,6 +35,8 @@ CUT?=	/usr/bin/cut
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
 DIST_SUBDIR=		openoffice
 DICT_DIR=		${INSTALLATION_BASEDIR}/share/dict/ooo
+DICT_PATH=		${LOCALBASE}/${DICT_DIR}
+DICT_LIST=		${DICT_PATH}/dictionary.lst
 
 .if defined(LANGPREFIX)
 PKGNAMEPREFIX=	${LANGPREFIX}-
@@ -55,11 +57,11 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 
 .if defined(RDEP)
-BUILD_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${RDEP}
-RUN_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${RDEP}
+BUILD_DEPENDS=	${DICT_LIST}:${RDEP}
+RUN_DEPENDS=	${DICT_LIST}:${RDEP}
 .else
-BUILD_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${PORTSDIR}/editors/openoffice
-RUN_DEPENDS=	${PREFIX}/${DICT_DIR}/dictionary.lst:${PORTSDIR}/editors/openoffice
+#BUILD_DEPENDS=	${DICT_LIST}:${PORTSDIR}/editors/openoffice
+#RUN_DEPENDS=	${DICT_LIST}:${PORTSDIR}/editors/openoffice
 .endif
 
 EXTRACT_CMD_L?=		unzip
@@ -78,7 +80,7 @@ post-install:
 		ABRV=`${ECHO_CMD} $${file} | ${SED} -e 's|\.zip||'`; \
 		LANGUAGE=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|_.*||'`; \
 		COUNTRY=`${ECHO_CMD} $${ABRV} | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
-		if ! (cd ${PREFIX}/${DICT_DIR}/ && ${EXTRACT_CMD_L} \
+		if ! (cd ${DICT_PATH} && ${EXTRACT_CMD_L} \
 			${EXTRACT_BEFORE_ARGS_L} \
 			${_DISTDIR}/$${file} '*.aff' '*.dic' ${EXTRACT_AFTER_ARGS_L}) ; \
 		then \
@@ -87,42 +89,36 @@ post-install:
 		fi ; \
 		${ECHO_MSG} "===>   Register spelling dictionary $${LANGUAGE}_$${COUNTRY}"; \
 		${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} $${COUNTRY} $${ABRV}\" \
-		    >> ${PREFIX}/${DICT_DIR}/dictionary.lst" \
-		    >> ${TMPPLIST} ; \
-		${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> \
-		    ${PREFIX}/${DICT_DIR}/dictionary.lst ; \
+		    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
+		${ECHO_CMD} "DICT $${LANGUAGE} $${COUNTRY} $${ABRV}" >> ${DICT_LIST} ; \
 		cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 		    ${GREP} $${LANGUAGE}_$${COUNTRY} >> ${TMPPLIST} ; \
-		${ECHO} "@unexec ${CP} ${PREFIX}/${DICT_DIR}/dictionary.lst \
-		    ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_$${COUNTRY}" \
-		    >> ${TMPPLIST} ; \
+		${ECHO} "@unexec ${CP} ${DICT_LIST} \
+		    ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" >> ${TMPPLIST} ; \
 		${ECHO} "@unexec \
-		    if ! ( ${CAT} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_$${COUNTRY} | \
-			${GREP} -v -e '^DICT.*$${LANGUAGE}_$${COUNTRY}' > ${PREFIX}/${DICT_DIR}/dictionary.lst ) ;  then \
-				${ECHO_MSG} '===>   Notice: ${PREFIX}/${DICT_DIR}/dictionary.lst is empty' ; \
+		    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY} | \
+			${GREP} -v -e '^DICT.*$${LANGUAGE}_$${COUNTRY}' > ${DICT_LIST} ) ; then \
+				${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
 		    fi" >> ${TMPPLIST} ; \
-		${ECHO} "@unexec ${RM} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_$${COUNTRY}" \
+		${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_$${COUNTRY}" \
 		    >> ${TMPPLIST} ; \
 		case $${ABRV} in \
 		de_DE) \
 			${ECHO_MSG} "===>   Cross-register spelling dictionary $${ABRV} to $${LANGUAGE}_AT"; \
-			${CP} ${PREFIX}/${DICT_DIR}/de_DE.aff ${PREFIX}/${DICT_DIR}/de_AT.aff; \
+			${LN} -fs ${DICT_PATH}/de_DE.aff ${DICT_PATH}/de_AT.aff; \
 			${ECHO} "@exec ${ECHO} \"DICT $${LANGUAGE} AT de_AT\" \
-			    >> ${PREFIX}/${DICT_DIR}/dictionary.lst" \
-			    >> ${TMPPLIST} ; \
-			${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> \
-			    ${PREFIX}/${DICT_DIR}/dictionary.lst ; \
+			    >> ${DICT_LIST}" >> ${TMPPLIST} ; \
+			${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
-			${ECHO} "@unexec ${CP} ${PREFIX}/${DICT_DIR}/dictionary.lst \
-			    ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_AT" \
-			    >> ${TMPPLIST} ; \
+			${ECHO} "@unexec ${CP} ${DICT_LIST} \
+			    ${DICT_LIST}.$${LANGUAGE}_AT" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \
-			    if ! ( ${CAT} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_AT | \
-				${GREP} -v -e '^DICT.*$${LANGUAGE}_AT' > ${PREFIX}/${DICT_DIR}/dictionary.lst ) ;  then \
-					${ECHO_MSG} '===>   Notice: ${PREFIX}/${DICT_DIR}/dictionary.lst is empty' ; \
+			    if ! ( ${CAT} ${DICT_LIST}.$${LANGUAGE}_AT | \
+				${GREP} -v -e '^DICT.*$${LANGUAGE}_AT' > ${DICT_LIST} ) ;  then \
+					${ECHO_MSG} '===>   Notice: ${DICT_LIST} is empty' ; \
 			    fi" >> ${TMPPLIST} ; \
-			${ECHO} "@unexec ${RM} ${PREFIX}/${DICT_DIR}/dictionary.lst.$${LANGUAGE}_AT" \
+			${ECHO} "@unexec ${RM} ${DICT_LIST}.$${LANGUAGE}_AT" \
 			    >> ${TMPPLIST} ; \
 			;; \
 		esac \
