@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Jun 13 16:09:01 2003
++++ src/Makefile.in	Fri Jun 13 16:11:45 2003
+@@ -318,7 +318,7 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-binPROGRAMS install-binSCRIPTS
++install-exec-am: install-binPROGRAMS
+ install-exec: install-exec-am
+ 
+ install-data-am: install-gladeDATA
