@@ -22,6 +22,7 @@
     SUBDIR += party
     SUBDIR += quirc
     SUBDIR += roxirc
+    SUBDIR += ruby-irc
     SUBDIR += scrollz
     SUBDIR += sic
     SUBDIR += sirc
