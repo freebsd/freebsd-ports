@@ -6,67 +6,48 @@
 #
 
 PORTNAME=	ipa-ttfonts
-PORTVERSION=	20040718
+PORTVERSION=	1.0.20040814
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://www.grass-japan.org/FOSS4G/ipafonts/
-DISTNAME=	grass5.0.3_i686-pc-linux-i18n-ipafull-gnu_bin
-DIST_SUBDIR=    ipa-fonts
+MASTER_SITES=	# empty
+DISTFILES=	# empty
 
 MAINTAINER=	hrs@FreeBSD.org
-COMMENT=	Freely available Japanese TrueType fonts by Infomation-technology Promotion Agency (IPA)
+COMMENT=	Japanese TrueType fonts distributed by IPA
 
-USE_X_PREFIX=	yes
+RUN_DEPENDS=	${LOCALBASE}/${GRASS_FONTSDIR}/ipam.ttf:${PORTSDIR}/databases/grass-i18n
+
 NO_BUILD=	yes
-NO_PACKAGE=	"License prohibits to distribute without i18n'ed GRASS http://www.grass-japan.org/FOSS4G/"
-NO_CDROM=	"License prohibits to distribute without i18n'ed GRASS http://www.grass-japan.org/FOSS4G/"
+NO_WRKSUBDIR=	yes
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-install
 
-FONTSDIR=	lib/X11/fonts/TrueType
-LOCALFONTSDIR=	share/fonts/TrueType
-MAKE_ENV=	FONTSDIR=${FONTSDIR}
-PLIST_SUB=	FONTSDIR=${FONTSDIR} \
-		LOCALFONTSDIR=${LOCALBASE}/${LOCALFONTSDIR}
+LOCAL_FONTSDIR=	share/fonts/TrueType
+X_FONTSDIR=	lib/X11/fonts/TrueType
+GRASS_FONTSDIR=	grass5/fonts
 
-WRKSRC=		${WRKDIR}
+PKGINSTALL_SUB=	X_FONTSDIR=${X11BASE}/${X_FONTSDIR}
+PLIST_SUB=	X_FONTSDIR=${X11BASE}/${X_FONTSDIR} \
+		FONTSDIR_EXTRA=${X11BASE}/${X_FONTSDIR}/fonts.dir.ipa \
+		LOCAL_FONTSDIR=${PREFIX}/${LOCAL_FONTSDIR} \
+		GRASS_FONTSDIR=${LOCALBASE}/${GRASS_FONTSDIR}
 
-DOC_FILES=	license-ipafonts.eucjp
+pre-install:
+	@${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/pkg-install.in \
+		> ${WRKDIR}/pkg-install
+	${CHMOD} +x ${WRKDIR}/pkg-install
 
 do-install:
-.if !exists(${PREFIX}/${FONTSDIR})
-	@${ECHO} "*********************************************************"
-	@${ECHO} "Please add ${PREFIX}/${FONTSDIR} to your font path"
-	@${ECHO} "and load 'xtt' module in /etc/XF86Config."
-	@${ECHO} "*********************************************************"
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-.endif
-	${INSTALL_DATA} ${WRKSRC}/fonts/ipag.ttf \
-			${WRKSRC}/fonts/ipagp.ttf \
-			${WRKSRC}/fonts/ipagui.ttf \
-			${WRKSRC}/fonts/ipam.ttf \
-			${WRKSRC}/fonts/ipamp.ttf \
-			${FILESDIR}/fonts.dir.ipa \
-			${FILESDIR}/fonts.alias.ipa \
-			${PREFIX}/${FONTSDIR}
-	${MKDIR} ${LOCALBASE}/${LOCALFONTSDIR}
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}
+	${MKDIR} ${X11BASE}/${X_FONTSDIR}
 	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/ipag.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/ipag.ttf
+		${LOCALBASE}/${GRASS_FONTSDIR}/ipa*.ttf \
+		${PREFIX}/${LOCAL_FONTSDIR}/
 	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/ipagp.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/ipagp.ttf
-	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/ipagui.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/ipagui.ttf
-	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/ipam.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/ipam.ttf
-	${LN} -s -f \
-		${PREFIX}/${FONTSDIR}/ipamp.ttf \
-		${LOCALBASE}/${LOCALFONTSDIR}/ipamp.ttf
+		${LOCALBASE}/${GRASS_FONTSDIR}/ipa*.ttf \
+		${X11BASE}/${X_FONTSDIR}/
 
-.for F in ${DOC_FILES}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
-.endfor
+post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
