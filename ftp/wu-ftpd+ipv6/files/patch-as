@@ -1,0 +1,11 @@
+--- src/realpath.c.orig	Mon Jul 28 16:18:15 2003
++++ src/realpath.c	Mon Jul 28 16:18:44 2003
+@@ -299,7 +299,7 @@
+ 	rootd = 0;
+ 
+     if (*wbuf) {
+-	if (strlen(resolved) + strlen(wbuf) + rootd + 1 > MAXPATHLEN) {
++	if (strlen(resolved) + strlen(wbuf) + !rootd + 1 > MAXPATHLEN) {
+ 	    errno = ENAMETOOLONG;
+ 	    goto err1;
+ 	}
