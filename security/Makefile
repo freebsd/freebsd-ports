@@ -163,6 +163,7 @@
     SUBDIR += smurflog
     SUBDIR += sniff
     SUBDIR += snort
+    SUBDIR += snort-rep
     SUBDIR += srm
     SUBDIR += ssh
     SUBDIR += ssh-multiadd

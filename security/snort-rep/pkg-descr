@@ -1,0 +1,10 @@
+Snort-rep is a Snort reporting tool that can produce text or HTML
+output from a syslog file. The reports contain:
+
+* Portscan summary
+* Alert Summary by ID
+* Alert summary by remote host and ID
+* Alert summary by local host and ID
+* Alert summary by local port and ID
+
+WWW: http://people.ee.ethz.ch/~dws/software/snort-rep/

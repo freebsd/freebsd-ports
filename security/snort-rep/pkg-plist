@@ -1,0 +1,3 @@
+bin/snort-rep
+share/examples/snort-rep/snort-rep-mail
+@dirrm share/examples/snort-rep
