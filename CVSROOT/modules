@@ -3618,6 +3618,7 @@ mguesser	ports/textproc/mguesser
 mgv		ports/print/mgv
 mh		ports/mail/mh
 mhash		ports/security/mhash
+mhc		ports/deskutils/mhc
 mhc-emacs20	ports/deskutils/mhc-emacs20
 mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
