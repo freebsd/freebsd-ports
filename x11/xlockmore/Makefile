@@ -28,22 +28,16 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		xlock.1
 
-.include <bsd.port.pre.mk>
-
-# .if ${OSVERSION} > 300000
-# CONFIGURE_ARGS+= --with-libraries=/usr/lib/aout
-# .endif
-
 WITH_MESAGL?=	yes
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesagl
-USE_MESA=	yes
-.if ${XFREE86_VERSION} >= 4
 CONFIGURE_ENV+=		XLOCKLIBS="${PTHREAD_LIBS}"
-.endif
+USE_MESA=	yes
 .else
 CONFIGURE_ARGS+=	--without-mesagl --without-opengl
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DISABLE_ALLOW_ROOT)
 CONFIGURE_ARGS+=	--disable-allow-root
