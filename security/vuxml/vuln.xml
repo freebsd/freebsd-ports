@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="746ca1ac-21ec-11d9-9289-000c41e2cdad">
+    <topic>ifmail -- unsafe set-user-ID application</topic>
+    <affects>
+      <package>
+	<name>ifmail</name>
+	<range><le>ifmail-2.15_4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Niels Heinen reports that ifmail allows one to specify
+	  a configuration file.  Since ifmail runs set-user-ID `news',
+	  this may allow a local attacker to write to arbitrary files
+	  or execute arbitrary commands as the `news' user.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://cvsweb.freebsd.org/ports/news/ifmail</url>
+    </references>
+    <dates>
+      <discovery>2004-08-23</discovery>
+      <entry>2004-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e31d44a2-21e3-11d9-9289-000c41e2cdad">
     <topic>imwheel -- insecure handling of PID file</topic>
     <affects>
