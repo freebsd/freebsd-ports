@@ -1,5 +1,14 @@
---- Makefile.in.orig	Sun Mar 25 00:33:43 2001
-+++ Makefile.in	Sun Mar 25 00:35:44 2001
+--- Makefile.in.orig	Mon Feb 19 22:25:04 2001
++++ Makefile.in	Wed Oct 17 17:00:46 2001
+@@ -8,7 +8,7 @@
+ eprefix=@exec_prefix@
+ #MORE_WARNINGS=-Weffc++ -Wcast-align
+ WFLAGS=-Wall -W -Wshadow -Wpointer-arith -Wwrite-strings -pedantic -ffor-scope $(MORE_WARNINGS)
+-CFLAGS=-O2 -DNDEBUG $(WFLAGS) $(MORECFLAGS)
++CFLAGS=${CXXFLAGS} -DNDEBUG $(WFLAGS) $(MORECFLAGS)
+ CXX=@CXX@ $(CFLAGS)
+ 
+ INSTALL=@INSTALL@
 @@ -34,7 +34,7 @@
  install-bin: $(EXES)
  	mkdir -p $(eprefix)/bin $(eprefix)/sbin
