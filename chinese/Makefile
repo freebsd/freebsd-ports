@@ -99,7 +99,6 @@
     SUBDIR += qe
     SUBDIR += qterm
     SUBDIR += stardict
-    SUBDIR += stardict2
     SUBDIR += tcl83
     SUBDIR += telnet
     SUBDIR += tin
