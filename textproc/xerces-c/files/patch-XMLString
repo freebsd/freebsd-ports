@@ -1,0 +1,20 @@
+--- src/xercesc/util/XMLString.cpp.orig	Fri May 31 19:07:45 2002
++++ src/xercesc/util/XMLString.cpp	Fri May 31 19:08:09 2002
+@@ -254,7 +254,7 @@
+ 
+ int XMLString::compareIString(const char* const str1, const char* const str2)
+ {
+-    return stricmp(str1, str2);
++    return strcasecmp(str1, str2);
+ }
+ 
+ 
+@@ -277,7 +277,7 @@
+     if (!count)
+         return 0;
+ 
+-    return strnicmp(str1, str2, count);
++    return strncasecmp(str1, str2, count);
+ }
+ 
+ 
