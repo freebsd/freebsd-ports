@@ -255,6 +255,8 @@
     SUBDIR += p5-TraceFuncs
     SUBDIR += patch
     SUBDIR += pccts
+    SUBDIR += pcl-cvs-emacs
+    SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
     SUBDIR += perforce
     SUBDIR += pharmacy
