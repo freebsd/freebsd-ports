@@ -17,7 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"ffs() clash, see i386/41930"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpmf20 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
