@@ -5,7 +5,7 @@ etc/pure-ftpd.conf.sample
 etc/pureftpd-ldap.conf.sample
 etc/pureftpd-mysql.conf.sample
 etc/pureftpd-pgsql.conf.sample
-etc/rc.d/pure-ftpd.sh.sample
+etc/rc.d/pure-ftpd.sh
 sbin/pure-authd
 sbin/pure-config.pl
 sbin/pure-ftpd
@@ -32,6 +32,7 @@ sbin/pure-uploadscript
 %%PORTDOCS%%%%DOCSDIR%%/pure-ftpd.png
 %%PORTDOCS%%%%DOCSDIR%%/pureftpd.schema
 %%EXAMPLESDIR%%/pam/pure-ftpd
+%%EXAMPLESDIR%%/pure-stat.pl
 %%EXAMPLESDIR%%/pure-vpopauth.pl
 %%EXAMPLESDIR%%/xml_python_processors.txt
 @dirrm %%EXAMPLESDIR%%/pam

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.18
-PORTREVISION=	0
+PORTVERSION=	1.0.19
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -25,6 +24,8 @@ COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_PERL5_RUN=	yes
+USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-everything \
 			--with-paranoidmsg \
@@ -32,6 +33,18 @@ CONFIGURE_ARGS=		--with-everything \
 			--with-tls \
 			--with-largefile \
 			--sysconfdir=${PREFIX}/etc
+
+MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
+		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
+		pure-authd.8
+
+OPTIONS=	LDAP	"Support for users in LDAP directories" off \
+		MYSQL	"Support for users in MySQL database" off \
+		PGSQL	"Support for users in PostgreSQL database" off \
+		PRIVSEP	"Enable privilege separation" off \
+		PERUSERLIMITS	"Per-user concurrency limits" off
+
+.include <bsd.port.pre.mk>
 
 # language support requested?
 .if defined(WITH_LANG)
@@ -62,6 +75,11 @@ CONFIGURE_ARGS+=	--with-pgsql
 CONFIGURE_ARGS+=	--with-privsep
 .endif
 
+# per-user concurrency limits requested?
+.if defined(WITH_PERUSERLIMITS)
+CONFIGURE_ARGS+=	--with-peruserlimits
+.endif
+
 # different certificate file location?
 .if defined(WITH_CERTFILE)
 CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
@@ -71,12 +89,6 @@ CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
 .if !defined(WITH_LDAP) && !defined(WITH_MYSQL) && !defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pam
 .endif
-
-MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
-		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
-		pure-authd.8
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
@@ -96,14 +108,10 @@ DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README.Authentication-Modules THANKS pure-ftpd.png \
 		pureftpd.schema README.TLS
 
-CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
+CONTRIB=	xml_python_processors.txt pure-stat.pl pure-vpopauth.pl
 
 pre-fetch:
 	@${ECHO_MSG} "You can use the following additional options:"
-	@${ECHO_MSG} "WITH_LDAP=1           - Support for users in LDAP directories"
-	@${ECHO_MSG} "WITH_MYSQL=1          - Support for users in MySQL databases"
-	@${ECHO_MSG} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
-	@${ECHO_MSG} "WITH_PRIVSEP=1        - Enable privilege separation"
 	@${ECHO_MSG} "WITH_CERTFILE=/path   - Set different location of certificate file for TLS"
 	@${ECHO_MSG} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
 	@${ECHO_MSG} "  english, german, romanian, french, french-funny, polish, spanish,"
@@ -128,7 +136,9 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	${INSTALL_SCRIPT} ${FILESDIR}/pure-ftpd.sh.sample ${PREFIX}/etc/rc.d/
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
+		< ${FILESDIR}/pure-ftpd.sh.sample > ${WRKDIR}/pure-ftpd.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/pure-ftpd.sh ${PREFIX}/etc/rc.d
 .if defined(PAM_TEMPL)
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}

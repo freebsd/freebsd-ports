@@ -1,25 +1,29 @@
 #!/bin/sh
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: pureftpd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
+#
+# Add the following lines to /etc/rc.conf to enable pure-ftpd:
+#
+# pureftpd_enable="YES"
+#
 
-case "$1" in
-start)
-	[ -r ${PREFIX}/etc/pure-ftpd.conf ] && \
-	${PREFIX}/sbin/pure-config.pl ${PREFIX}/etc/pure-ftpd.conf > /dev/null && \
-	echo -n ' pure-ftp'
-	;;
-stop)
-	[ -r /var/run/pure-ftpd.pid ] && \
-	kill `cat /var/run/pure-ftpd.pid` > /dev/null && \
-	echo -n ' pure-ftp'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+. %%RC_SUBR%%
 
-exit 0
+name=pureftpd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/pure-config.pl
+pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
+required_files=${pureftpd_config}
+pidfile=/var/run/pure-ftpd.pid
+procname=pure-ftpd
+
+pureftpd_enable=${pureftpd_enable:-"NO"}
+command_args=${pureftpd_config}
+
+load_rc_config $name
+run_rc_command "$1"
