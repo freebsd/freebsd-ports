@@ -1,5 +1,5 @@
-*** Imakefile.orig	Thu Oct 12 13:18:39 1995
---- Imakefile	Fri Jan 19 12:38:23 1996
+*** Imakefile.orig	Mon Jul 10 21:09:00 1995
+--- Imakefile	Sat Mar  9 20:33:14 1996
 ***************
 *** 44,52 ****
   PROGRAMS	= tgif prtgif XCOMM frontend11.o testdrive
@@ -39,3 +39,20 @@
   
   XCOMM Things to try to add to the DEFINES line above:
   XCOMM
+***************
+*** 66,72 ****
+  XCOMM    VMS:     -D_NO_GETTIMEOFDAY
+  XCOMM    Linux:   -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT
+  
+! LOCAL_LIBRARIES	= $(XLIB)
+  XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
+  DEPLIBS		= $(DEPXLIB)
+  SYS_LIBRARIES	= -lm
+--- 67,73 ----
+  XCOMM    VMS:     -D_NO_GETTIMEOFDAY
+  XCOMM    Linux:   -D_BACKGROUND_DONT_FORK -D_USE_XDRAWPOINT_TO_PUT_A_POINT
+  
+! LOCAL_LIBRARIES	= $(XLIB) -lcompat
+  XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
+  DEPLIBS		= $(DEPXLIB)
+  SYS_LIBRARIES	= -lm
