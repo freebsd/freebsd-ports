@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atmsupport
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 PORTREVISION=
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -16,8 +16,6 @@ MAINTAINER=	harti@FreeBSD.org
 COMMENT=	Tools for testing the ATM subsystem
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
-
-BROKEN=		Does not install
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
