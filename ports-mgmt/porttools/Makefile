@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	porttools
-PORTVERSION=	0.16
+PORTVERSION=	0.20
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,12 +18,19 @@ RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
 		sudo:${PORTSDIR}/security/sudo
 
 NO_BUILD=	yes
-MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-	  	INSTALL_DATA="${INSTALL_DATA}"
 
-post-install:
-	@${ECHO_MSG} "* * * WARNING * * * WARNING * * *"
-	@${ECHO_MSG} "Read ${DOCSDIR}/README before proceeding"
-	@${ECHO_MSG} "Report all problems to ${MAINTAINER}"
+SCRIPTS=	pr-update testport
+MAN1=		pr-change.1 pr-new.1 pr-update.1 testport.1
+DOCS=		LICENSE NEWS README THANKS TODO
+
+do-install:
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
+	${LN} ${PREFIX}/bin/pr-update ${PREFIX}/bin/pr-change
+	${LN} ${PREFIX}/bin/pr-update ${PREFIX}/bin/pr-new
+	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
