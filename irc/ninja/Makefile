@@ -9,7 +9,7 @@
 DISTNAME= 	ninja-1.1-src
 PKGNAME=	ninja-1.1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ninja.qoop.org/ninja/unstable/
+MASTER_SITES=	http://ninja.qoop.org/ftp/ninja/unstable/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
