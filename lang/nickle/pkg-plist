@@ -1,4 +1,5 @@
 bin/nickle
+share/nickle/abort.5c
 share/nickle/arc4.5c
 share/nickle/builtin.5c
 share/nickle/command.5c
