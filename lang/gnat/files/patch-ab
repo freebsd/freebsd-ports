@@ -1,26 +1,27 @@
-*** ./config/i386/freebsd.h.orig	Fri Dec  5 07:15:34 1997
---- ./config/i386/freebsd.h	Fri Feb 12 21:35:52 1999
-***************
-*** 152,159 ****
-   * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
-   */
-  #define LIB_SPEC \
-!   "%{!shared: %{mieee-fp:-lieee} %{p:-lgmon} %{pg:-lgmon} \
-!      %{!ggdb:-lc} %{ggdb:-lg}}"
-  #else
-  #define LIB_SPEC \
-    "%{!shared: \
---- 152,164 ----
-   * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
-   */
-  #define LIB_SPEC \
-!   "%{!shared: \
-!      %{!pg: \
-!        %{!pthread: %{!kthread:-lc} %{kthread:-lpthread -lc}} \
-!        %{pthread:-lc_r}} \
-!      %{pg: \
-!        %{!pthread: %{!kthread:-lc_p} %{kthread:-lpthread_p -lc_p}} \
-!        %{pthread:-lc_r_p}}}"
-  #else
-  #define LIB_SPEC \
-    "%{!shared: \
+--- config/i386/freebsd.h.orig	Mon Nov 25 07:16:22 2002
++++ config/i386/freebsd.h	Mon Nov 25 09:18:52 2002
+@@ -162,8 +162,13 @@
+  * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
+  */
+ #define LIB_SPEC \
+-  "%{!shared: %{mieee-fp:-lieee} %{p:-lgmon} %{pg:-lgmon} \
+-     %{!ggdb:-lc} %{ggdb:-lg}}"
++  "%{!shared: \
++     %{!pg: \
++       %{!pthread: %{!kthread:-lc} %{kthread:-lpthread -lc}} \
++       %{pthread:-lc_r}} \
++     %{pg: \
++       %{!pthread: %{!kthread:-lc_p} %{kthread:-lpthread_p -lc_p}} \
++       %{pthread:-lc_r_p}}}"
+ #else
+ #define LIB_SPEC \
+   "%{!shared: \
+@@ -186,7 +191,7 @@
+    done.  */
+ 
+ #undef	LINK_SPEC
+-#define LINK_SPEC "-m elf_i386 %{shared:-shared} \
++#define LINK_SPEC "%{shared:-shared} \
+   %{!shared: \
+     %{!ibcs: \
+       %{!static: \

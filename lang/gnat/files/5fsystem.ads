@@ -60,16 +60,16 @@ pragma Pure (System);
    Max_Mantissa          : constant := 63;
    Fine_Delta            : constant := 2.0 ** (-Max_Mantissa);
 
-   Tick                  : constant := Standard'Tick;
+   Tick                  : constant := 1.0;
 
    --  Storage-related Declarations
 
    type Address is private;
    Null_Address : constant Address;
 
-   Storage_Unit : constant := Standard'Storage_Unit;
-   Word_Size    : constant := Standard'Word_Size;
-   Memory_Size  : constant := 2 ** Standard'Address_Size;
+   Storage_Unit : constant := 8;
+   Word_Size    : constant := 32;
+   Memory_Size  : constant := 2 ** 32;
 
    --  Address comparison
 
@@ -88,32 +88,18 @@ pragma Pure (System);
    --  Other System-Dependent Declarations
 
    type Bit_Order is (High_Order_First, Low_Order_First);
-   Default_Bit_Order : constant Bit_Order :=
-                         Bit_Order'Val (Standard'Default_Bit_Order);
+   Default_Bit_Order : constant Bit_Order := Low_Order_First;
 
    --  Priority-related Declarations (RM D.1)
 
-   Max_Priority : constant Positive := 30;
-
+   Max_Priority           : constant Positive := 30;
    Max_Interrupt_Priority : constant Positive := 31;
 
-   subtype Any_Priority is Integer
-     range 0 .. Standard'Max_Interrupt_Priority;
+   subtype Any_Priority       is Integer      range  0 .. 31;
+   subtype Priority           is Any_Priority range  0 .. 30;
+   subtype Interrupt_Priority is Any_Priority range 31 .. 31;
 
-   subtype Priority is Any_Priority
-     range 0 .. Standard'Max_Priority;
-
-   --  Functional notation is needed in the following to avoid visibility
-   --  problems when this package is compiled through rtsfind in the middle
-   --  of another compilation.
-
-   subtype Interrupt_Priority is Any_Priority
-     range
-       Standard."+" (Standard'Max_Priority,  1) ..
-         Standard'Max_Interrupt_Priority;
-
-   Default_Priority : constant Priority :=
-     Standard."/" (Standard."+" (Priority'First, Priority'Last), 2);
+   Default_Priority : constant Priority := 15;
 
 private
 
@@ -126,117 +112,28 @@ private
 
    --  These parameters provide information about the target that is used
    --  by the compiler. They are in the private part of System, where they
-   --  can be accessed using Rtsfind. All values defined here must be
-   --  constants, since they are accessed at compile time.
+   --  can be accessed using the special circuitry in the Targparm unit
+   --  whose source should be consulted for more detailed descriptions
+   --  of the individual switch values.
 
-   --  Note these definitions must come before the definitions of any
-   --  complex types or other code that may require Rtsfind to access
-   --  these entities during compilation of System itself.
-
-   -----------------------------------
-   -- Control of Exception Handling --
-   -----------------------------------
-
-   --  GNAT provides two methods of implementing exceptions:
-
-   --    Longjmp/Setjmp (-gnatL)
-
-   --      This approach uses longjmp/setjmp to handle exceptions. It
-   --      uses less storage, and can often propagate exceptions faster,
-   --      at the expense of (sometimes considerable) overhead in setting
-   --      up an exception handler. This approach is available on all
-   --      targets, and is the default where it is the only approach.
-
-   --    Zero Cost (-gnatZ)
-
-   --      This approach uses separate exception tables. These use extra
-   --      storage, and exception propagation can be quite slow, but there
-   --      is no overhead in setting up an exception handler (it is to this
-   --      latter operation that the phrase zero-cost refers). This approach
-   --      is only available on some targets, and is the default where it is
-   --      available.
-
-   Zero_Cost_Exceptions : constant Boolean := False;
-   --  Set False for Longjmp/Setjmp, True for Zero Cost
-
-   -------------------------------
-   -- Control of Stack Checking --
-   -------------------------------
-
-   --  GNAT provides two methods of implementing exceptions:
-
-   --    GCC Probing Mechanism
-
-   --      This approach uses the standard GCC mechanism for
-   --      stack checking. The method assumes that accessing
-   --      storage immediately beyond the end of the stack
-   --      will result in a trap that is converted to a storage
-   --      error by the runtime system. This mechanism has
-   --      minimal overhead, but requires complex hardware,
-   --      operating system and run-time support. Probing is
-   --      the default method where it is available. The stack
-   --      size for the environment task depends on the operating
-   --      system and cannot be set in a system-independent way.
-
-   --   GNAT Stack-limit Checking
-
-   --      This method relies on comparing the stack pointer
-   --      with per-task stack limits. If the check fails, an
-   --      exception is explicitly raised. The advantage is
-   --      that the method requires no extra system dependent
-   --      runtime support and can be used on systems without
-   --      memory protection as well, but at the cost of more
-   --      overhead for doing the check. This method is the
-   --      default on systems that lack complete support for
-   --      probing.
-
-   Stack_Check_Probes : constant Boolean := True;
-   --  Set True for GCC Probing, False for GNAT Stack-limit Checking
-
-   Stack_Check_Default : constant Boolean := True;
-   --  Set True for systems where stack checking is performed by default
-
-   ----------------------------------------------
-   -- Boolean-Valued Floating-Point Attributes --
-   ----------------------------------------------
-
-   --  The constants below give the values for representation oriented
-   --  floating-point attributes that are the same for all float types
-   --  on the target. These are all boolean values.
-
-   --  A value is only True if the target reliably supports the corresponding
-   --  feature. Reliably here means that support is guaranteed for all
-   --  possible settings of the relevant compiler switches (like -mieee),
-   --  since we cannot control the user setting of those switches.
-
-   --  The attributes cannot dependent on the current setting of compiler
-   --  switches, since the values must be static and consistent throughout
-   --  the partition. We probably should add such consistency checks in future,
-   --  but for now we don't do this.
-
-   Denorm            : constant Boolean := True;
-
-   Machine_Rounds    : constant Boolean := True;
-
-   Machine_Overflows : constant Boolean := False;
-
-   Signed_Zeros      : constant Boolean := True;
-
-   ----------------------------
-   -- Support of Long Shifts --
-   ----------------------------
-
-   --  In GNORT mode, we cannot call library routines, and in particular
-   --  we cannot call routines for long (64-bit) shifts if such routines
-   --  are required on the target. This comes up in the context of support
-   --  of packed arrays. We can only represent packed arrays whose length
-   --  is in the range 33- to 64-bits as modular types if long shifts are
-   --  done with inline code.
-
-   --  For the default version, for now we set long shifts inlined as True
-   --  This may not be quite accurate, but until we get proper separate
-   --  System's for each target, it is a safer choice.
-
-   Long_Shifts_Inlined : constant Boolean := True;
-
+   AAMP                      : constant Boolean := False;
+   Backend_Divide_Checks     : constant Boolean := False;
+   Backend_Overflow_Checks   : constant Boolean := False;
+   Command_Line_Args         : constant Boolean := True;
+   Denorm                    : constant Boolean := True;
+   Fractional_Fixed_Ops      : constant Boolean := False;
+   Frontend_Layout           : constant Boolean := False;
+   Functions_Return_By_DSP   : constant Boolean := False;
+   Long_Shifts_Inlined       : constant Boolean := True;
+   High_Integrity_Mode       : constant Boolean := False;
+   Machine_Overflows         : constant Boolean := False;
+   Machine_Rounds            : constant Boolean := True;
+   OpenVMS                   : constant Boolean := False;
+   Signed_Zeros              : constant Boolean := True;
+   Stack_Check_Default       : constant Boolean := False;
+   Stack_Check_Probes        : constant Boolean := False;
+   Use_Ada_Main_Program_Name : constant Boolean := False;
+   ZCX_By_Default            : constant Boolean := False;
+   GCC_ZCX_Support           : constant Boolean := False;
+   Front_End_ZCX_Support     : constant Boolean := False;
 end System;

@@ -1,19 +1,19 @@
-*** ./ada/gnatchop.adb.orig	Fri Sep 24 08:42:44 1999
---- ./ada/gnatchop.adb	Tue Nov  2 02:43:44 1999
+*** ./ada/gnatchop.adb.orig	Thu Oct 24 04:02:18 2002
+--- ./ada/gnatchop.adb	Fri Nov 22 09:18:03 2002
 ***************
-*** 1575,1581 ****
-  begin
-     --  Check presence of required executables
+*** 49,55 ****
+     Config_File_Name : constant String_Access := new String'("gnat.adc");
+     --  The name of the file holding the GNAT configuration pragmas
   
-!    Gnat_Cmd := Locate_Executable ("gcc");
+!    Gcc : String_Access := new String'("gcc");
+     --  May be modified by switch --GCC=
   
-     if Gnat_Cmd = null then
-        goto No_Files_Written;
---- 1575,1581 ----
-  begin
-     --  Check presence of required executables
+     Gcc_Set : Boolean := False;
+--- 49,55 ----
+     Config_File_Name : constant String_Access := new String'("gnat.adc");
+     --  The name of the file holding the GNAT configuration pragmas
   
-!    Gnat_Cmd := Locate_Executable ("adagcc");
+!    Gcc : String_Access := new String'("adagcc");
+     --  May be modified by switch --GCC=
   
-     if Gnat_Cmd = null then
-        goto No_Files_Written;
+     Gcc_Set : Boolean := False;

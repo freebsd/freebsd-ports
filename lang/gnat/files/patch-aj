@@ -1,53 +1,54 @@
-*** ada/a-sysdep.c.orig	Wed Jul 19 15:09:47 2000
---- ada/a-sysdep.c	Fri Oct 13 08:58:43 2000
-***************
-*** 236,242 ****
-  
-  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
-    || (defined (__osf__) && ! defined (__alpha_vxworks)) || defined (WINNT) \
-!   || defined (__MACHTEN__)
-  #include <termios.h>
-  #include <fcntl.h>
-  #elif defined (VMS)
---- 236,242 ----
-  
-  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
-    || (defined (__osf__) && ! defined (__alpha_vxworks)) || defined (WINNT) \
-!   || defined (__MACHTEN__) || defined (__FreeBSD__)
-  #include <termios.h>
-  #include <fcntl.h>
-  #elif defined (VMS)
+*** ada/a-sysdep.c.orig	Thu Oct 24 04:02:16 2002
+--- ada/a-sysdep.c	Fri Nov 22 09:24:51 2002
 ***************
 *** 286,292 ****
-  {
   #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+    || (defined (__osf__) && ! defined (__alpha_vxworks)) || defined (WINNT) \
+    || defined (__MACHTEN__) || defined (hpux) || defined (_AIX) \
+!   || (defined (__svr4__) && defined (i386)) || defined (__Lynx__)
+  #include <termios.h>
+  #elif defined (VMS)
+  extern char *decc$ga_stdscr;
+--- 286,293 ----
+  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+    || (defined (__osf__) && ! defined (__alpha_vxworks)) || defined (WINNT) \
+    || defined (__MACHTEN__) || defined (hpux) || defined (_AIX) \
+!   || (defined (__svr4__) && defined (i386)) || defined (__Lynx__) \
+!   || defined (__FreeBSD__)
+  #include <termios.h>
+  #elif defined (VMS)
+  extern char *decc$ga_stdscr;
+***************
+*** 336,342 ****
       || (defined (__osf__) && ! defined (__alpha_vxworks)) \
-!     || defined (__CYGWIN32__) || defined (__MACHTEN__)
+      || defined (__CYGWIN32__) || defined (__MACHTEN__) || defined (hpux) \
+      || defined (_AIX) || (defined (__svr4__) && defined (i386)) \
+!     || defined (__Lynx__)
     char c;
     int nread;
     int good_one = 0;
---- 286,292 ----
-  {
-  #if defined (linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+--- 337,343 ----
       || (defined (__osf__) && ! defined (__alpha_vxworks)) \
-!     || defined (__CYGWIN32__) || defined (__MACHTEN__) || defined (__FreeBSD__)
+      || defined (__CYGWIN32__) || defined (__MACHTEN__) || defined (hpux) \
+      || defined (_AIX) || (defined (__svr4__) && defined (i386)) \
+!     || defined (__Lynx__) || defined (__FreeBSD__)
     char c;
     int nread;
     int good_one = 0;
 ***************
-*** 303,309 ****
-            /* Set RAW mode */
-            termios_rec.c_lflag = termios_rec.c_lflag & ~ICANON;
-  #if defined(sgi) || defined (sun) || defined (__EMX__) || defined (__osf__) \
-!       || defined (linux) || defined (__MACHTEN__)
-            eof_ch = termios_rec.c_cc[VEOF];
+*** 355,361 ****
+  #if defined(linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+    || defined (__osf__) || defined (__MACHTEN__) || defined (hpux) \
+    || defined (_AIX) || (defined (__svr4__) && defined (i386)) \
+!   || defined (__Lynx__)
+        eof_ch = termios_rec.c_cc[VEOF];
   
-            /* If waiting (i.e. Get_Immediate (Char)), set MIN = 1 and wait for
---- 303,309 ----
-            /* Set RAW mode */
-            termios_rec.c_lflag = termios_rec.c_lflag & ~ICANON;
-  #if defined(sgi) || defined (sun) || defined (__EMX__) || defined (__osf__) \
-!       || defined (linux) || defined (__MACHTEN__) || defined (__FreeBSD__)
-            eof_ch = termios_rec.c_cc[VEOF];
+        /* If waiting (i.e. Get_Immediate (Char)), set MIN = 1 and wait for
+--- 356,362 ----
+  #if defined(linux) || defined (sun) || defined (sgi) || defined (__EMX__) \
+    || defined (__osf__) || defined (__MACHTEN__) || defined (hpux) \
+    || defined (_AIX) || (defined (__svr4__) && defined (i386)) \
+!   || defined (__Lynx__) || defined (__FreeBSD__)
+        eof_ch = termios_rec.c_cc[VEOF];
   
-            /* If waiting (i.e. Get_Immediate (Char)), set MIN = 1 and wait for
+        /* If waiting (i.e. Get_Immediate (Char)), set MIN = 1 and wait for

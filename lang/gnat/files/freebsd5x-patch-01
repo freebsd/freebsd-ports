@@ -1,0 +1,15 @@
+--- ./config/i386/freebsd.h.orig	Tue Nov 26 12:56:06 2002
++++ ./config/i386/freebsd.h	Tue Nov 26 12:57:30 2002
+@@ -165,10 +165,10 @@
+   "%{!shared: \
+      %{!pg: \
+        %{!pthread: %{!kthread:-lc} %{kthread:-lpthread -lc}} \
+-       %{pthread:-lc_r}} \
++       %{pthread:-lc_r -lc}} \
+      %{pg: \
+        %{!pthread: %{!kthread:-lc_p} %{kthread:-lpthread_p -lc_p}} \
+-       %{pthread:-lc_r_p}}}"
++       %{pthread:-lc_r_p -lc_p}}}"
+ #else
+ #define LIB_SPEC \
+   "%{!shared: \
