@@ -49,6 +49,10 @@ BADSAMPLES=	load/myfunction.o tutorial/Makefile.in.orig
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--disable-optim
+.endif
+
 .if exists(${LOCALBASE}/mpich/bin/mpiCC)
 WITH_MPI=	yes
 .endif
