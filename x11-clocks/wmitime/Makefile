@@ -8,7 +8,7 @@
 
 DISTNAME=	wmitime-0.3
 CATEGORIES=	x11-clocks windowmaker afterstep
-MASTER_SITES=	http://www.neotokyo.org/illusion/
+MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
 
 MAINTAINER=	jim@FreeBSD.org
 
