@@ -18,10 +18,10 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SU
 		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.unicamp.br/pub6/netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://the.ausmac.net/wd2a/security/cryptography/128bit-browsers/Netscape/${NETSCAPE_DIST_SUBDIR}/
-DISTFILES=	${BROWSER}-v474-us.${NETSCAPE_DIST_TAG}.tar.gz
+DISTFILES=	${BROWSER}-v475-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-WRKSRC=		${WRKDIR}/${BROWSER}-v474.${NETSCAPE_DIST_TAG}
+WRKSRC=		${WRKDIR}/${BROWSER}-v475.${NETSCAPE_DIST_TAG}
 ONLY_FOR_ARCHS?=	i386 alpha
 
 .if ${ARCH} == "alpha" && !defined(BROWSER)
@@ -42,9 +42,9 @@ NETSCAPE_DIST_GRADE?=	complete_install # | navigator_standalone
 NETSCAPE_DIST_SUBDIR?=	${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
 NETSCAPE_DIST_TAG?=	x86-unknown-freebsd # | x86-unknown-linux2.2 | x86-bsdi-bsd2 | alpha-dec-osf4.0
 
-BROWSER_VER=	4.74
-INFILE_HEAD?=	'Communicator,4.74.0.20000707'
+BROWSER_VER=	4.75
+INFILE_HEAD?=	'Communicator,4.75.0.20000814'
 NO_AUTOADMIN=	'Not available'
-NO_FORTIFY=	'No need for 4.74'
+NO_FORTIFY=	'No need for this version'
 
 .include "${MASTERDIR}/Makefile"
