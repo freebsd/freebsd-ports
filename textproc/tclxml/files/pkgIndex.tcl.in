@@ -1,1 +1,0 @@
-package ifneeded expat 1.1 {load "PREFIX/lib/libtclexpat.so"}
