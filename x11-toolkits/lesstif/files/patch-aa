@@ -1,0 +1,11 @@
+--- doc/www.lesstif.org/Makefile.in.orig	Sat Apr 15 07:39:10 2000
++++ doc/www.lesstif.org/Makefile.in	Mon Apr 17 11:27:37 2000
+@@ -131,7 +131,7 @@
+ 
+ 
+ rootdir = $(exec_prefix)
+-root_DATA = Install
++root_DATA = 
+ 
+ root2dir = $(exec_prefix)/LessTif
+ root2_DATA = FAQ

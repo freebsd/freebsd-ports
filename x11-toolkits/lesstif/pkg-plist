@@ -218,6 +218,7 @@ LessTif/Motif2.0/include/Xm/Manager.h
 LessTif/Motif2.0/include/Xm/ManagerP.h
 LessTif/Motif2.0/include/Xm/MenuShell.h
 LessTif/Motif2.0/include/Xm/MenuShellP.h
+LessTif/Motif2.0/include/Xm/MenuT.h
 LessTif/Motif2.0/include/Xm/MenuUtilP.h
 LessTif/Motif2.0/include/Xm/MessageB.h
 LessTif/Motif2.0/include/Xm/MessageBP.h
