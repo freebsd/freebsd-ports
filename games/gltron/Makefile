@@ -6,35 +6,37 @@
 #
 
 PORTNAME=	gltron
-PORTVERSION=	0.59
+PORTVERSION=	0.61
 CATEGORIES=	games
-MASTER_SITES=	http://gltron.sourceforge.net/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://gltron.sourceforge.net/download/
+MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
+		SDL_net.0:${PORTSDIR}/net/sdl_net \
 		png.4:${PORTSDIR}/graphics/png
 
-.if defined(NO_SOUND)
-SOUND=""
-.else
-SOUND="-DSOUND"
-.endif
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_ENV+=	OPT="${CFLAGS}" SOUND="${SOUND}"
+CONFIGURE_ENV=	X11BASE="${X11BASE}" \
+		LOCALBASE="${LOCALBASE}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		SDL_CONFIG="${SDL_CONFIG}"
 
 pre-build:
 	${PERL} -pi -e "s+#include <SDL\/+#include <+g" ${WRKSRC}/*.[ch]
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gltron/ ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/data/*tx* ${WRKSRC}/data/*.png ${WRKSRC}/data/*.obj \
-			${WRKSRC}/data/*mtl ${WRKSRC}/data/*.it ${WRKSRC}/sounds/*wav \
-			${PREFIX}/share/gltron
+	@${MKDIR} ${PREFIX}/share/gltron
+	(cd ${WRKSRC} && ${TAR} -c -f - art data sounds) \
+		| (cd ${PREFIX}/share/gltron && ${TAR} --unlink -x -f -)
 	${INSTALL_PROGRAM} ${WRKSRC}/gltron ${PREFIX}/bin
 
 post-install:

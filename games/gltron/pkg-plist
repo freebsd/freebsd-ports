@@ -1,38 +1,102 @@
 bin/gltron
-share/gltron/babbage.0.png
-share/gltron/babbage.1.png
-share/gltron/babbage.ftx
-share/gltron/fonts.txt
-share/gltron/game_crash.wav
-share/gltron/game_engine.wav
-share/gltron/game_lose.wav
-share/gltron/game_start.wav
-share/gltron/game_win.wav
-share/gltron/gltron.it
-share/gltron/gltron.png
-share/gltron/gltron_crash.png
-share/gltron/gltron_floor.png
-share/gltron/gltron_logo.png
-share/gltron/gltron_trail.png
-share/gltron/gltron_traildecal.png
-share/gltron/gltron_wall_1.png
-share/gltron/gltron_wall_2.png
-share/gltron/gltron_wall_3.png
-share/gltron/gltron_wall_4.png
-share/gltron/lightcycle high.obj
-share/gltron/lightcycle low.obj
-share/gltron/lightcycle med.obj
-share/gltron/menu.txt
-share/gltron/menu_action.wav
-share/gltron/menu_highlight.wav
-share/gltron/settings.txt
-share/gltron/tron.mtl
-share/gltron/tron2.mtl
-share/gltron/xenotron.0.png
-share/gltron/xenotron.1.png
-share/gltron/xenotron.ftx
 share/doc/gltron/CHANGELOG
 share/doc/gltron/CREDITS
 share/doc/gltron/README
+share/gltron/art/arcade_spots/gltron_floor.png
+share/gltron/art/arcade_spots/gltron_traildecal.png
+share/gltron/art/arcade_spots/gltron_wall_1.png
+share/gltron/art/arcade_spots/gltron_wall_2.png
+share/gltron/art/arcade_spots/gltron_wall_3.png
+share/gltron/art/arcade_spots/gltron_wall_4.png
+share/gltron/art/arcade_spots/skybox0.png
+share/gltron/art/arcade_spots/skybox1.png
+share/gltron/art/arcade_spots/skybox2.png
+share/gltron/art/arcade_spots/skybox3.png
+share/gltron/art/arcade_spots/skybox4.png
+share/gltron/art/arcade_spots/skybox5.png
+share/gltron/art/biohazard/artpack.ini
+share/gltron/art/biohazard/babbage.0.png
+share/gltron/art/biohazard/babbage.1.png
+share/gltron/art/biohazard/gltron.png
+share/gltron/art/biohazard/gltron_crash.png
+share/gltron/art/biohazard/gltron_floor.png
+share/gltron/art/biohazard/gltron_logo.png
+share/gltron/art/biohazard/gltron_trail.png
+share/gltron/art/biohazard/gltron_traildecal.png
+share/gltron/art/biohazard/gltron_wall_1.png
+share/gltron/art/biohazard/gltron_wall_2.png
+share/gltron/art/biohazard/gltron_wall_3.png
+share/gltron/art/biohazard/gltron_wall_4.png
+share/gltron/art/biohazard/skybox0.png
+share/gltron/art/biohazard/skybox1.png
+share/gltron/art/biohazard/skybox2.png
+share/gltron/art/biohazard/skybox3.png
+share/gltron/art/biohazard/skybox4.png
+share/gltron/art/biohazard/skybox5.png
+share/gltron/art/default/artpack.ini
+share/gltron/art/default/babbage.0.png
+share/gltron/art/default/babbage.1.png
+share/gltron/art/default/gltron.png
+share/gltron/art/default/gltron_bitmap.png
+share/gltron/art/default/gltron_crash.png
+share/gltron/art/default/gltron_floor.png
+share/gltron/art/default/gltron_logo.png
+share/gltron/art/default/gltron_trail.png
+share/gltron/art/default/gltron_trail.png.bak
+share/gltron/art/default/gltron_traildecal.png
+share/gltron/art/default/gltron_wall_1.png
+share/gltron/art/default/gltron_wall_2.png
+share/gltron/art/default/gltron_wall_3.png
+share/gltron/art/default/gltron_wall_4.png
+share/gltron/art/default/skybox0.png
+share/gltron/art/default/skybox1.png
+share/gltron/art/default/skybox2.png
+share/gltron/art/default/skybox3.png
+share/gltron/art/default/skybox4.png
+share/gltron/art/default/skybox5.png
+share/gltron/art/default/test.bitmap.png
+share/gltron/art/default/xenotron.0.png
+share/gltron/art/default/xenotron.1.png
+share/gltron/art/metalTron/gltron_floor.png
+share/gltron/art/metalTron/gltron_wall_1.png
+share/gltron/art/metalTron/gltron_wall_2.png
+share/gltron/art/metalTron/gltron_wall_3.png
+share/gltron/art/metalTron/gltron_wall_4.png
+share/gltron/art/metalTron/skybox0.png
+share/gltron/art/metalTron/skybox1.png
+share/gltron/art/metalTron/skybox2.png
+share/gltron/art/metalTron/skybox3.png
+share/gltron/art/metalTron/skybox4.png
+share/gltron/art/metalTron/skybox5.png
+share/gltron/data/babbage.ftx
+share/gltron/data/fonts.txt
+share/gltron/data/game_crash.wav
+share/gltron/data/game_engine.wav
+share/gltron/data/lightcycle high.obj
+share/gltron/data/lightcycle low.obj
+share/gltron/data/lightcycle med.obj
+share/gltron/data/menu.txt
+share/gltron/data/music/song_revenge_of_cats.it
+share/gltron/data/recognizer.obj
+share/gltron/data/settings.txt
+share/gltron/data/test.fbmp
+share/gltron/data/tron.mtl
+share/gltron/data/tron2.mtl
+share/gltron/data/xenotron.ftx
+share/gltron/sounds/game_crash.wav
+share/gltron/sounds/game_engine.wav
+share/gltron/sounds/game_lose.wav
+share/gltron/sounds/game_start.wav
+share/gltron/sounds/game_win.wav
+share/gltron/sounds/menu_action.wav
+share/gltron/sounds/menu_highlight.wav
+@dirrm share/gltron/sounds
+@dirrm share/gltron/data/music
+@dirrm share/gltron/data
+@dirrm share/gltron/art/metalTron
+@dirrm share/gltron/art/default
+@dirrm share/gltron/art/biohazard
+@dirrm share/gltron/art/arcade_spots
+@dirrm share/gltron/art
 @dirrm share/gltron
 @dirrm share/doc/gltron
