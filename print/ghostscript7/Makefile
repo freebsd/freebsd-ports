@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	6.53
-PORTREVISION=	2
+PORTVERSION=	7.05
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,fonts,gprint,hpijs/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint,hpijs/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
@@ -20,8 +19,8 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
 		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/:eplaser \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs653/
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs705/
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			gimp-print/:gprint \
 			hpinkjet/:hpijs \
@@ -51,18 +50,16 @@ EXTRACT_ONLY=	${GS_SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
-MAKEFILE=	src/unix-gcc.mak
-ALL_TARGET=	all pcl3opts
 PLIST_SUB=	GS_VERSION=${PORTVERSION}
 
-MAN1=		dvipdf.1 eps2eps.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
+MAN1=		ansi2knr.1 dvipdf.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
 		gs.1 gslp.1 gsnd.1 pcl3opts.1 pdf2dsc.1 pdf2ps.1 pdfopt.1 \
 		pf2afm.1 pfbtopfa.1 printafm.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 \
 		ps2pdfwr.1 ps2ps.1 wftopfa.1
@@ -71,7 +68,8 @@ MLINKS=		gslp.1 gsbj.1 \
 		gslp.1 gsdj500.1 \
 		gslp.1 gslj.1 \
 		ps2pdf.1 ps2pdf12.1 \
-		ps2pdf.1 ps2pdf13.1
+		ps2pdf.1 ps2pdf13.1 \
+		ps2ps.1 eps2eps.1
 
 XCFLAGS=	-DUPD_SIGNAL=0
 
@@ -84,6 +82,20 @@ USE_XLIB=	yes
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 MAKE_ENV+=	WITHOUT_X11="${WITHOUT_X11}"
+.endif
+
+.if defined(WITH_SHLIB)
+.undef WITHOUT_X11
+USE_GTK=	yes
+MAKE_ENV+=	GS_SHLIB_VER="${SHLIB_VER}"
+ALL_TARGET=	so pcl3opts
+INSTALL_TARGET=	soinstall
+INSTALLS_SHLIB=	yes
+SHLIB_VER=	1
+PLIST_SUB+=	SHLIB="" SHLIB_VER="${SHLIB_VER}"
+.else
+ALL_TARGET=	all pcl3opts
+PLIST_SUB+=	SHLIB="@comment "
 .endif
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
@@ -127,7 +139,7 @@ DJ970_SRCS=	${DJ970}.c.gz
 # Gimp-Print - very high quality driver for Epson, HPs,...
 # http://gimp-print.sourceforge.net/
 GPRINT=		gimp-print
-GPRINT_VERS=	4.2.0
+GPRINT_VERS=	4.2.1
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
@@ -214,8 +226,6 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
-	${LN} -sf `cd ${PORTSDIR}/graphics/jpeg && ${MAKE} -V WRKSRC` \
-		${WRKSRC}/jpeg
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure and
 # configure.batch, which update unix-gcc.mak to build gs with these
@@ -283,6 +293,8 @@ post-extract:
 post-patch:
 	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
+	${PERL} -pi -e 's|\. de|\.|g' \
+		${WRKSRC}/src/unixinst.mak
 	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/lib/gs_res.ps
 # for HPinkjet driver
@@ -306,7 +318,7 @@ pre-configure:
 		>> ${WRKSRC}/src/contrib.mak
 # for PCL3 driver
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.51.add \
+	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-7.00.add \
 		>> ${WRKSRC}/src/contrib.mak
 # for MD2K driver
 	${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
@@ -365,8 +377,7 @@ post-configure:
 	${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure \
-			--without-cups --without-translated-ppds \
-			--with-ghost --without-foomatic \
+			--without-translated-ppds \
 			--without-gimp --without-samples \
 			--without-user-guide --disable-escputil \
 			--disable-nls --disable-shared \
@@ -382,6 +393,7 @@ pre-build:
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
+	${LN} -sf ${WRKSRC}/src/unix-gcc.mak ${WRKSRC}/Makefile
 # for Gimp-Print driver
 	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
@@ -452,7 +464,12 @@ pre-install:
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
 	${ECHO_MSG} ">>>   stripping gs ..."
+.if defined(WITH_SHLIB)
+	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx
+	${LN} -sf gsc ${PREFIX}/bin/gs
+.else
 	${STRIP_CMD} ${PREFIX}/bin/gs
+.endif
 # for HPDJ driver
 	${ECHO_MSG} ">>>   installing ${HPDJ} manpages ..."
 .for i in ${HPDJ_MAN1}

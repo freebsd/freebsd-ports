@@ -48,14 +48,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "stp"      "Configurable Canon/Epson/Lexmark/HP driver [Gimp-Print]" ON \
   "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" ON \
   "dmprt"    "Configurable dot matrix printer driver [DMPRT]" ON \
-  "dl2100"   "DEClaser 2100" OFF \
-  "la50"     "DEC LA50" OFF \
-  "la70"     "DEC LA70" OFF \
-  "la75"     "DEC LA75" OFF \
-  "la75plus" "DEC LA75plus" OFF \
   "lj250"    "DEC LJ250 Companion color printer" OFF \
   "declj250" "DEC LJ250 driver (alternate)" OFF \
-  "ln03"     "DEC LN03" OFF \
   "ap3250"   "Epson ActionPrinter 3250" OFF \
   "epson"    "Epson-compatible dot matrix, 9/24-pin" OFF \
   "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" OFF \
@@ -130,7 +124,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" ON \
   "pcl3"     "HP PCL 3+ (generic) [PCL3]" ON \
   "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" ON \
-  "ijs"      "HP PhotoSmart/DeskJet series [HPinkjet]" ON \
+  "ijs"      "HP Inkjet and other raster devices" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
@@ -153,7 +147,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
   "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
   "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
-  "xes"      "Xerox XES 2700/3700/4045" OFF \
   "bmpmono"  "BMP Monochrome" ON \
   "bmpgray"  "BMP 8-bit gray" ON \
   "bmp16"    "BMP 4-bit EGA/VGA" ON \
@@ -167,7 +160,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cgm8"     "CGM 8-bit 256-color -- DITTO" OFF \
   "cgm24"    "CGM 24-bit color -- DITTO" OFF \
   "cif"      "CIF file format for VLSI" OFF \
-  "sxlcrt"   "CRT sixels, e.g. for VT240-like terminals" OFF \
   "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" OFF \
   "dfaxlow"  "DigiFAX low (normal) resol" OFF \
   "faxg3"    "Group 3 fax, with EOLs but no header or EOD" ON \

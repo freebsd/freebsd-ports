@@ -1,5 +1,5 @@
---- src/gdevlbp8.c.orig	Thu Mar  9 03:40:41 2000
-+++ src/gdevlbp8.c
+--- src/gdevlbp8.c.orig	Wed Aug  1 09:48:23 2001
++++ src/gdevlbp8.c	Thu Mar 14 20:56:05 2002
 @@ -22,6 +22,8 @@
  
  /* 
@@ -15,13 +15,13 @@
  private dev_proc_print_page(lbp8_print_page);
 -private dev_proc_print_page(lips3_print_page);
  
- gx_device_printer far_data gs_lbp8_device =
+ const gx_device_printer far_data gs_lbp8_device =
    prn_device(prn_std_procs, "lbp8",
 @@ -58,14 +59,6 @@
  	0.16, 0.2, 0.32, 0.21,		/* margins: left, bottom, right, top */
  	1, lbp8_print_page);
  
--gx_device_printer far_data gs_lips3_device =
+-const gx_device_printer far_data gs_lips3_device =
 -  prn_device(prn_std_procs, "lips3",
 -	82,				/* width_10ths, 8.3" */
 -	117,				/* height_10ths, 11.7" */
