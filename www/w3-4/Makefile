@@ -19,6 +19,8 @@ BUILD_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-emacs=yes
+INFO=		w3-faq w3
 
 MAKE_ENV+=	EMACSCMD=${EMACSCMD} ELISPDIR=${ELISPDIR} \
 		MKDIR="${MKDIR}" CP=${CP} \
