@@ -9442,6 +9442,7 @@ thevalley	ports/games/thevalley
 thinice		ports/x11-toolkits/thinice
 thoteditor	ports/editors/thoteditor
 threeDS		ports/graphics/threeDS
+throttle	ports/sysutils/throttle
 thttpd		ports/www/thttpd
 thudboard	ports/games/thudboard
 thumbnail_index ports/www/thumbnail_index
