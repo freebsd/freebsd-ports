@@ -1,13 +1,12 @@
---- lib/fractal/DoubleNode.h.bak	Sat Dec  1 01:27:59 2001
-+++ lib/fractal/DoubleNode.h	Sun Dec 22 06:06:53 2002
-@@ -1,7 +1,9 @@
+--- lib/fractal/DoubleNode.h.orig	Fri Oct 24 22:31:52 2003
++++ lib/fractal/DoubleNode.h	Tue Mar  2 23:08:44 2004
+@@ -1,7 +1,8 @@
  #ifndef _DOUBLE_NODE_H_
  #   define _DOUBLE_NODE_H_
  
 -class ostream;
 +#include <iostream>
 +using namespace std;
-+
- class ComplexVariables;
- class DoubleVariables;
- class ColorEnvironment;
+ 
+ #define RND(x) ((x) >= 0.0 ? (int)((x) + 0.5) : (int)((x) - 0.5))
+ 

@@ -7,16 +7,13 @@
 #
 
 PORTNAME=	fractorama
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://fractorama.com/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractal generation program
-
-BROKEN=		"Checksum mismatch"
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
@@ -31,11 +28,11 @@ ALL_TARGET=	release
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|gcc|\$${CC}|g ; \
-		 s|g++|\$${CXX}|g ; \
-		 s|-L[$$][{]QTROOT[}]/lib -lqt|-lqt-mt \$${QTCFGLIBS}|g ; \
-		 s|-I[$$][{]QTROOT[}]/include|\$${QTCPPFLAGS}|g ; \
-		 s|-O2|\$${CFLAGS}|g'
+		's|gcc|$${CC}|g ; \
+		 s|g++|$${CXX}|g ; \
+		 s|-L$${QTROOT}/lib -lqt|-lqt-mt $${QTCFGLIBS}|g ; \
+		 s|-I$${QTROOT}/include|$${QTCPPFLAGS}|g ; \
+		 s|-O2|$${CFLAGS}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../fractorama.exe ${PREFIX}/bin/fractorama
