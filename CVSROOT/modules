@@ -1450,6 +1450,7 @@ epstool		ports/graphics/epstool
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
 erlang_xmlrpc	ports/net/erlang_xmlrpc
+erlgtk		ports/x11-toolkits/erlgtk
 erlslang	ports/devel/erlslang
 ermixer		ports/audio/ermixer
 error		ports/devel/error
