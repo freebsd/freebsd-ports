@@ -73,7 +73,6 @@ lib/libgda-report-2.so.2
 lib/libgdasql.a
 lib/libgdasql.so
 lib/libgdasql.so.0
-lib/libgda/providers/libgda-default.so
 %%FIREBIRD:%%lib/libgda/providers/libgda-firebird.so
 %%FREETDS:%%lib/libgda/providers/libgda-freetds.so
 %%LDAP:%%lib/libgda/providers/libgda-ldap.so
@@ -83,6 +82,7 @@ lib/libgda/providers/libgda-default.so
 %%POSTGRES:%%lib/libgda/providers/libgda-postgres.so
 %%SYBASE:%%lib/libgda/providers/libgda-sybase.so
 %%SQLITE:%%lib/libgda/providers/libgda-sqlite.so
+lib/libgda/providers/libgda-xml.so
 libdata/pkgconfig/libgda.pc
 share/doc/libgda/architecture.html
 share/doc/libgda/c689.html
@@ -195,7 +195,6 @@ share/gnome/libgda/xml/gda-xml-query.dtd
 share/gnome/libgda/xml/gda-xml-query.xsl
 share/gnome/omf/libgda/libgda-C.omf
 share/locale/az/LC_MESSAGES/libgda-2.mo
-share/locale/ca/LC_MESSAGES/libgda-2.mo
 share/locale/cs/LC_MESSAGES/libgda-2.mo
 share/locale/da/LC_MESSAGES/libgda-2.mo
 share/locale/de/LC_MESSAGES/libgda-2.mo
