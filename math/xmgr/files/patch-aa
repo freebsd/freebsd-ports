@@ -5,7 +5,7 @@
  ##################################
  XLIB = -lX11
 -LOCAL_LIBRARIES = -lXm -lXt -lPW
-+LOCAL_LIBRARIES = -lXm -lXt -lcompat
++LOCAL_LIBRARIES = $(MOTIFLIB) -lXt -lcompat
  LDLIBS = $(XLIB) -lm
  DEPLIBS = 
  #################################
