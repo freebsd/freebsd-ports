@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.8 1999/01/21 03:28:27 jkh Exp $
+# $Id: Makefile,v 1.9 1999/01/22 06:57:21 nik Exp $
 #
 
 DISTNAME=	docproj
@@ -17,7 +17,8 @@ MAINTAINER=	nik@freebsd.org
 RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		tidy:${PORTSDIR}/www/tidy \
-		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html
+		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
+		lynx:${PORTSDIR}/www/lynx-current
 
 IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
 
