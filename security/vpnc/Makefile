@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	vpnc
-PORTVERSION=	0.2
-PORTREVISION=	8
+PORTVERSION=	0.3.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/:source \
 	http://dragon.roe.ch/mirrors/distfiles/vpnc/:script
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rm+zomb.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source ${STARTSCRIPT}:script
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -35,7 +33,7 @@ IGNORE=		"Crashes on startup"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/vpnc.c
+		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e \
 		's|%%CC%%|${CC}|;s|%%CFLAGS%%|${CFLAGS}|' \
 			${WRKSRC}/Makefile
