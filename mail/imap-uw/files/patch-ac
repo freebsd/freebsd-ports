@@ -1,19 +1,22 @@
---- src/imapd/Makefile.orig	Mon Nov 18 17:48:25 2002
-+++ src/imapd/Makefile	Wed Nov 27 02:28:00 2002
-@@ -18,10 +18,10 @@
+--- src/imapd/Makefile.orig	Tue Jun 29 21:26:28 2004
++++ src/imapd/Makefile	Fri Sep  3 21:23:29 2004
+@@ -18,11 +18,11 @@
  # CPYRIGHT, included with this Distribution.
  
  
 -ALERT=/etc/imapd.alert
 +ALERT=$(PREFIX)/etc/imapd.alert
  USERALERT=.imapalert
- SHUTDOWN=/etc/nologin
+-SHUTDOWN=/etc/nologin
 -ANO=/etc/anonymous.newsgroups
+-NNTP=/etc/imapd.nntp
++SHUTDOWN=$(PREFIX)/etc/nologin
 +ANO=$(PREFIX)/etc/anonymous.newsgroups
++NNTP=$(PREFIX)//etc/imapd.nntp
  SHELL= /bin/sh
  
  
-@@ -29,7 +29,9 @@
+@@ -30,7 +30,9 @@
  # causes the "Manage Mail" menu item to open the given URL, e.g. to point to
  # an alternative IMAP client (e.g. Pine) or perhaps to a homebrew mail
  # account management page.
@@ -24,7 +27,7 @@
  
  
  
-@@ -38,28 +40,29 @@
+@@ -39,28 +41,30 @@
  # broken program does a STATUS on the selected mailbox.  This shouldn't be
  # necessary, and it's been reported that Entourage works without having to
  # un-comment this.
@@ -39,13 +42,14 @@
  C = ../c-client
 -CCLIENTLIB = $C/c-client.a
 -CC = `cat $C/CCTYPE`
--CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ENBD) \
--	-DANOFILE=\"$(ANO)\" -DALERTFILE=\"$(ALERT)\" \
+-CFLAGS = -I$C `cat $C/CFLAGS` $(NSBD) $(ENBD) -DANOFILE=\"$(ANO)\" \
+-	-DALERTFILE=\"$(ALERT)\" -DNNTPFILE=\"$(NNTP)\" \
 -	-DUSERALERTFILE=\"$(USERALERT)\" -DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +#CCLIENTLIB = $C/c-client.a
-+CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client -DANOFILE=\"$(ANO)\" \
-+		-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" \
++CFLAGS+=	-DNFSKLUDGE -I$(LOCALBASE)/include/c-client \
++		-DANOFILE=\"$(ANO)\" -DALERTFILE=\"$(ALERT)\" \
++		-DNNTPFILE=\"$(NNTP)\" -DUSERALERTFILE=\"$(USERALERT)\" \
 +		-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 +LDFLAGS+=	$(EXTRALDFLAGS) -L$(LOCALBASE)/lib -lc-client4
 +.if defined(WITH_DRAC)
