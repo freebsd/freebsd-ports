@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Epoch
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -25,5 +25,14 @@ PERL_CONFIGURE=	yes
 MAN3=		DateTime::Format::Epoch.3 DateTime::Format::Epoch::DotNet.3 \
        		DateTime::Format::Epoch::MacOS.3 DateTime::Format::Epoch::TAI64.3 \
 	       	DateTime::Format::Epoch::Unix.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
