@@ -1,0 +1,5 @@
+daaplib is a very tiny and portable C++ library which helps to read and
+write low-level DAAP stream s in memory. the code is fairly
+straightforward and can mirror the structure of the data fairly well.
+
+WWW: http://www.deleet.de/projekte/daap/daaplib/
