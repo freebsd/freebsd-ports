@@ -1,0 +1,38 @@
+Idled Copyright (c) 1995-1996  Mike Crider (crider@cs.hope.edu)
+All rights reserved.
+
+*****************************************************************
+*****************************************************************
+
+REDISTRIBUTION AND USE IN SOURCE AND BINARY FORMS FOR NON-PROFIT
+USE ARE PERMITTED PROVIDED THAT:
+        (1) SOURCE CODE DISTRIBUTIONS BE COMPLETE AND REMAIN
+            UNMODIFIED *IF* IT IS TO RETAIN THE NAME "IDLED" --
+            ALL SUCH DISTRIBUTIONS MUST ALSO RETAIN THIS
+            COPYRIGHT NOTICE IN ITS ENTIRETY.
+        (2) MODIFIED SOURCE CODE DISTRIBUTIONS USE A SUFFICIENTLY
+            DIFFERENT NAME, CLEARLY GIVE FULL CREDIT FOR ALL WORK
+            USED FROM THIS DISTRIBUTION, AND RETAIN THIS COPYRIGHT
+            NOTICE IN ITS ENTIRETY.
+        (3) IN GENERAL, ALL DISTRIBUTIONS *MUST* RETAIN THIS
+            COPYRIGHT NOTICE IN ITS ENTIRETY.
+
+I REQUEST THAT ANY MODIFICATIONS MADE TO IMPROVE THE CODE OR
+FUNCTIONALITY OF THE PROGRAM BE SENT TO ME FOR REVIEW AND
+POSSIBLE INCLUSION IN THE NEXT RELEASE OF IDLED.
+
+DISCLAIMER: IF IDLED FAILS TO PERFORM AS YOU EXPECTED, OR WORSE,
+            SOMEHOW DAMAGES YOUR SYSTEM, I WILL NOT BE HELD
+            RESPONSIBLE.  THIS SOFTWARE IS PROVIDED ``AS IS''
+            WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.  USE AT
+            YOUR OWN RISK.
+
+
+If you have questions, comments, bug reports, suggestions, and/or
+requests for modification of this program, please contact:
+
+      Mike Crider
+      crider@cs.hope.edu
+
+*****************************************************************
+*****************************************************************
