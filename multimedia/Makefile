@@ -53,6 +53,7 @@
     SUBDIR += linux-realplayer
     SUBDIR += linux-xmovie
     SUBDIR += mjpegtools
+    SUBDIR += mmpython
     SUBDIR += mmsclient
     SUBDIR += mpeg
     SUBDIR += mpeg2codec

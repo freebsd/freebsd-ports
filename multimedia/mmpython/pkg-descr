@@ -1,0 +1,6 @@
+MMPython is a Media Meta Data retrieval framework. It retrieves
+metadata from mp3, ogg, avi, jpg, tiff and other file formats.
+Among others it thereby parses ID3v2, ID3v1, EXIF, IPTC and
+Vorbis data into an object oriented struture.
+
+WWW:	http://sourceforge.net/projects/mmpython/
