@@ -1,0 +1,10 @@
+Xcheckers is a checkers simulation for X11.
+
+Features:
+  * Computer opponents with variable playing skills
+  * Matched against human opponents over the internet
+  
+- Simon Barner
+barner@gmx.de
+
+WWW: http://arton.cunst.net/xcheckers/index.html

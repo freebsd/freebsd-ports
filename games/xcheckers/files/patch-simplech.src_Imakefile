@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- simplech.src/Imakefile.orig	Mon Oct  9 14:27:40 2000
++++ simplech.src/Imakefile	Wed Jul 30 20:46:21 2003
+@@ -3,9 +3,7 @@
+ 
+ #     CDEBUGFLAGS = -g -Wall -O3
+       CDEBUGFLAGS = -Wall -O3
+-               CC = gcc
+ 
+-           PREFIX = /usr/local
+            BINDIR = $(PREFIX)/bin
+            MANDIR = $(PREFIX)/man/man6
+         MANSUFFIX = 6
