@@ -1,14 +1,3 @@
---- configure	Fri Nov  7 09:28:05 1997
-+++ configure	Fri Nov 21 23:36:13 1997
-@@ -3789,7 +3789,7 @@
- 	    DL_LIBS=""
- 	    LD_FLAGS=""
- 	    LD_SEARCH_FLAGS=""
--	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
-+	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.2'
- 	
- else
-   echo "$ac_t""no" 1>&6
 +++ Makefile.in	Wed Oct  1 09:51:59 1997
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
@@ -35,7 +24,7 @@
  SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
  
 -all: ${TCL_LIB_FILE} tclsh
-+all: ${TCL_LIB_FILE} libtcl80.a tclsh
++all: ${TCL_LIB_FILE} libtcl81.a tclsh
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
@@ -43,10 +32,10 @@
  	@MAKE_LIB@
  	$(RANLIB) ${TCL_LIB_FILE}
  
-+libtcl80.a: ${OBJS}
-+	rm -f libtcl80.a
-+	ar cr libtcl80.a ${OBJS}	
-+	$(RANLIB) libtcl80.a
++libtcl81.a: ${OBJS}
++	rm -f libtcl81.a
++	ar cr libtcl81.a ${OBJS}	
++	$(RANLIB) libtcl81.a
 +
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
@@ -56,7 +45,7 @@
  # possible (e.g. if installing as root).
  
 -install-binaries: $(TCL_LIB_FILE) tclsh
-+install-binaries: $(TCL_LIB_FILE) libtcl80.a tclsh
++install-binaries: $(TCL_LIB_FILE) libtcl81.a tclsh
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
@@ -64,10 +53,10 @@
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
-+	@echo "Installing libtcl80.a"
-+	@$(INSTALL_DATA) libtcl80.a $(LIB_INSTALL_DIR)/libtcl80.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl80.a)
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtcl80.a
++	@echo "Installing libtcl81.a"
++	@$(INSTALL_DATA) libtcl81.a $(LIB_INSTALL_DIR)/libtcl81.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl81.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtcl81.a
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh"

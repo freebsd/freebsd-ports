@@ -1,19 +1,19 @@
-# New ports collection makefile for:	tcl8.0
-# Version required:	8.0
+# New ports collection makefile for:	tcl8.1
+# Version required:	8.1.a1
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1997/11/26 22:48:50 pst Exp $
+# $Id: Makefile,v 1.4 1997/12/01 16:50:49 pst Exp $
 #
 
-DISTNAME=	tcl8.0p2
-PKGNAME=	tcl-8.0.2
-CATEGORIES=	lang tcl80
+DISTNAME=	tcl8.1a1
+PKGNAME=	tcl-8.1.a1
+CATEGORIES=	lang tcl81
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 
-MAINTAINER=	jkh@freebsd.org
+MAINTAINER=	jseger@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/tcl8.0/unix
+WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}

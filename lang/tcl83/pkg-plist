@@ -1,34 +1,106 @@
-bin/tclsh8.0
-lib/libtcl80.a
-lib/libtcl80.so.1.2
+bin/tclsh8.1
+include/tcl8.1/generic/chr.h
+include/tcl8.1/generic/guts.h
+include/tcl8.1/generic/tcl.h
+include/tcl8.1/generic/tclCompile.h
+include/tcl8.1/generic/tclInitScript.h
+include/tcl8.1/generic/tclInt.h
+include/tcl8.1/generic/tclMath.h
+include/tcl8.1/generic/tclPort.h
+include/tcl8.1/generic/tclRegexp.h
+include/tcl8.1/generic/wchar.h
+include/tcl8.1/generic/wctype.h
+include/tcl8.1/tcl.h
+include/tcl8.1/unix/tclUnixPort.h
+lib/libtcl81.a
+lib/libtcl81.so.1.0
 @exec /sbin/ldconfig -m %B
-include/tcl8.0/tcl.h
-include/tcl8.0/unix/tclUnixPort.h
-include/tcl8.0/generic/tcl.h
-include/tcl8.0/generic/tclCompile.h
-include/tcl8.0/generic/tclInt.h
-include/tcl8.0/generic/tclMath.h
-include/tcl8.0/generic/tclPort.h
-include/tcl8.0/generic/tclRegexp.h
-lib/tcl8.0/history.tcl
-lib/tcl8.0/init.tcl
-lib/tcl8.0/ldAout.tcl
-lib/tcl8.0/parray.tcl
-lib/tcl8.0/safe.tcl
-lib/tcl8.0/word.tcl
-lib/tcl8.0/tclAppInit.c
-lib/tcl8.0/ldAix
-lib/tcl8.0/tclIndex
-lib/tcl8.0/tclConfig.sh
-lib/tcl8.0/http2.0/http.tcl
-lib/tcl8.0/http2.0/pkgIndex.tcl
-lib/tcl8.0/http1.0/http.tcl
-lib/tcl8.0/http1.0/pkgIndex.tcl
-lib/tcl8.0/opt0.1/optparse.tcl
-lib/tcl8.0/opt0.1/pkgIndex.tcl
+lib/tcl8.1/auto.tcl
+lib/tcl8.1/encoding/ascii.enc
+lib/tcl8.1/encoding/big5.enc
+lib/tcl8.1/encoding/cp1250.enc
+lib/tcl8.1/encoding/cp1251.enc
+lib/tcl8.1/encoding/cp1252.enc
+lib/tcl8.1/encoding/cp1253.enc
+lib/tcl8.1/encoding/cp1254.enc
+lib/tcl8.1/encoding/cp1255.enc
+lib/tcl8.1/encoding/cp1256.enc
+lib/tcl8.1/encoding/cp1257.enc
+lib/tcl8.1/encoding/cp1258.enc
+lib/tcl8.1/encoding/cp437.enc
+lib/tcl8.1/encoding/cp737.enc
+lib/tcl8.1/encoding/cp775.enc
+lib/tcl8.1/encoding/cp850.enc
+lib/tcl8.1/encoding/cp852.enc
+lib/tcl8.1/encoding/cp855.enc
+lib/tcl8.1/encoding/cp857.enc
+lib/tcl8.1/encoding/cp860.enc
+lib/tcl8.1/encoding/cp861.enc
+lib/tcl8.1/encoding/cp862.enc
+lib/tcl8.1/encoding/cp863.enc
+lib/tcl8.1/encoding/cp864.enc
+lib/tcl8.1/encoding/cp865.enc
+lib/tcl8.1/encoding/cp866.enc
+lib/tcl8.1/encoding/cp869.enc
+lib/tcl8.1/encoding/cp874.enc
+lib/tcl8.1/encoding/cp932.enc
+lib/tcl8.1/encoding/cp936.enc
+lib/tcl8.1/encoding/cp949.enc
+lib/tcl8.1/encoding/cp950.enc
+lib/tcl8.1/encoding/dingbats.enc
+lib/tcl8.1/encoding/euc-jp.enc
+lib/tcl8.1/encoding/gb12345.enc
+lib/tcl8.1/encoding/gb1988.enc
+lib/tcl8.1/encoding/gb2312.enc
+lib/tcl8.1/encoding/iso2022-jp.enc
+lib/tcl8.1/encoding/iso2022-kr.enc
+lib/tcl8.1/encoding/iso2022.enc
+lib/tcl8.1/encoding/iso8859-1.enc
+lib/tcl8.1/encoding/iso8859-2.enc
+lib/tcl8.1/encoding/iso8859-3.enc
+lib/tcl8.1/encoding/iso8859-4.enc
+lib/tcl8.1/encoding/iso8859-5.enc
+lib/tcl8.1/encoding/iso8859-6.enc
+lib/tcl8.1/encoding/iso8859-7.enc
+lib/tcl8.1/encoding/iso8859-8.enc
+lib/tcl8.1/encoding/iso8859-9.enc
+lib/tcl8.1/encoding/jis0201.enc
+lib/tcl8.1/encoding/jis0208.enc
+lib/tcl8.1/encoding/jis0212.enc
+lib/tcl8.1/encoding/macCentEuro.enc
+lib/tcl8.1/encoding/macCroatian.enc
+lib/tcl8.1/encoding/macCyrillic.enc
+lib/tcl8.1/encoding/macDingbats.enc
+lib/tcl8.1/encoding/macGreek.enc
+lib/tcl8.1/encoding/macIceland.enc
+lib/tcl8.1/encoding/macJapan.enc
+lib/tcl8.1/encoding/macRoman.enc
+lib/tcl8.1/encoding/macRomania.enc
+lib/tcl8.1/encoding/macThai.enc
+lib/tcl8.1/encoding/macTurkish.enc
+lib/tcl8.1/encoding/macUkraine.enc
+lib/tcl8.1/encoding/shiftjis.enc
+lib/tcl8.1/encoding/symbol.enc
+lib/tcl8.1/history.tcl
+lib/tcl8.1/http1.0/http.tcl
+lib/tcl8.1/http1.0/pkgIndex.tcl
+lib/tcl8.1/http2.0/http.tcl
+lib/tcl8.1/http2.0/pkgIndex.tcl
+lib/tcl8.1/init.tcl
+lib/tcl8.1/ldAix
+lib/tcl8.1/ldAout.tcl
+lib/tcl8.1/opt0.4/optparse.tcl
+lib/tcl8.1/opt0.4/pkgIndex.tcl
+lib/tcl8.1/package.tcl
+lib/tcl8.1/parray.tcl
+lib/tcl8.1/safe.tcl
+lib/tcl8.1/tclAppInit.c
+lib/tcl8.1/tclConfig.sh
+lib/tcl8.1/tclIndex
+lib/tcl8.1/word.tcl
 man/man1/tclsh.1.gz
-man/man3/Alloc.3.gz
 man/man3/AddErrInfo.3.gz
+man/man3/Alloc.3.gz
 man/man3/AllowExc.3.gz
 man/man3/AppInit.3.gz
 man/man3/AssocData.3.gz
@@ -36,13 +108,13 @@ man/man3/Async.3.gz
 man/man3/BackgdErr.3.gz
 man/man3/Backslash.3.gz
 man/man3/BoolObj.3.gz
+man/man3/ByteArrObj.3.gz
 man/man3/CallDel.3.gz
 man/man3/CmdCmplt.3.gz
 man/man3/Concat.3.gz
 man/man3/CrtChannel.3.gz
 man/man3/CrtChnlHdlr.3.gz
 man/man3/CrtCloseHdlr.3.gz
-man/man3/Eval.3.gz
 man/man3/CrtCommand.3.gz
 man/man3/CrtFileHdlr.3.gz
 man/man3/CrtInterp.3.gz
@@ -56,7 +128,8 @@ man/man3/DetachPids.3.gz
 man/man3/DoOneEvent.3.gz
 man/man3/DoWhenIdle.3.gz
 man/man3/DoubleObj.3.gz
-man/man3/EvalObj.3.gz
+man/man3/Encoding.3.gz
+man/man3/Eval.3.gz
 man/man3/Exit.3.gz
 man/man3/ExprLong.3.gz
 man/man3/ExprLongObj.3.gz
@@ -71,21 +144,22 @@ man/man3/Interp.3.gz
 man/man3/LinkVar.3.gz
 man/man3/ListObj.3.gz
 man/man3/Notifier.3.gz
-man/man3/ObjSetVar.3.gz
 man/man3/Object.3.gz
 man/man3/ObjectType.3.gz
 man/man3/OpenFileChnl.3.gz
 man/man3/OpenTcp.3.gz
+man/man3/ParseCmd.3.gz
 man/man3/PkgRequire.3.gz
 man/man3/Preserve.3.gz
 man/man3/PrintDbl.3.gz
 man/man3/RecEvalObj.3.gz
 man/man3/RecordEval.3.gz
 man/man3/RegExp.3.gz
-man/man3/SetVar.3.gz
+man/man3/SaveResult.3.gz
 man/man3/SetErrno.3.gz
 man/man3/SetRecLmt.3.gz
 man/man3/SetResult.3.gz
+man/man3/SetVar.3.gz
 man/man3/Sleep.3.gz
 man/man3/SplitList.3.gz
 man/man3/SplitPath.3.gz
@@ -93,9 +167,11 @@ man/man3/StaticPkg.3.gz
 man/man3/StrMatch.3.gz
 man/man3/StringObj.3.gz
 man/man3/Tcl_Main.3.gz
+man/man3/ToUpper.3.gz
 man/man3/TraceVar.3.gz
 man/man3/Translate.3.gz
 man/man3/UpVar.3.gz
+man/man3/Utf.3.gz
 man/man3/WrongNumArgs.3.gz
 man/mann/Tcl.n.gz
 man/mann/after.n.gz
@@ -120,7 +196,6 @@ man/mann/expr.n.gz
 man/mann/fblocked.n.gz
 man/mann/fconfigure.n.gz
 man/mann/fcopy.n.gz
-man/mann/if.n.gz
 man/mann/file.n.gz
 man/mann/fileevent.n.gz
 man/mann/filename.n.gz
@@ -133,6 +208,7 @@ man/mann/glob.n.gz
 man/mann/global.n.gz
 man/mann/history.n.gz
 man/mann/http.n.gz
+man/mann/if.n.gz
 man/mann/incr.n.gz
 man/mann/info.n.gz
 man/mann/interp.n.gz
@@ -185,10 +261,11 @@ man/mann/upvar.n.gz
 man/mann/variable.n.gz
 man/mann/vwait.n.gz
 man/mann/while.n.gz
-@dirrm include/tcl8.0/generic
-@dirrm include/tcl8.0/unix
-@dirrm include/tcl8.0
-@dirrm lib/tcl8.0/http2.0
-@dirrm lib/tcl8.0/http1.0
-@dirrm lib/tcl8.0/opt0.1
-@dirrm lib/tcl8.0
+@dirrm include/tcl8.1/generic
+@dirrm include/tcl8.1/unix
+@dirrm include/tcl8.1
+@dirrm lib/tcl8.1/encoding
+@dirrm lib/tcl8.1/http2.0
+@dirrm lib/tcl8.1/http1.0
+@dirrm lib/tcl8.1/opt0.4
+@dirrm lib/tcl8.1
