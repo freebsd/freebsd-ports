@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -30,8 +31,7 @@ post-patch:
 		 s|share/pixmaps|share/gnome/pixmaps|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^gsubeditdoc|#gsubeditdoc|g ; \
-		 s|-g -O2|| ; \
-		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|'
+		 s|-g -O2|| '
 
 post-install:
 .if !defined(NOPORTDOCS)
