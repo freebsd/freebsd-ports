@@ -1,0 +1,11 @@
+--- configure.bak	Sun Jun  8 14:25:04 1997
++++ configure	Wed Aug 28 11:40:19 2002
+@@ -1766,7 +1766,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-      if test "$ac_cv_lib_socks5" = yes ; then
++      if test "$ac_cv_lib_socks5_SOCKSinit" = yes ; then
+               nc_cv_socks=no
+       else
+               LIBS="$savelibs"

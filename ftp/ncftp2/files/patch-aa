@@ -13,7 +13,7 @@
   VPATH=@srcdir@
   CPPFLAGS=-I. -I@srcdir@ @CPPFLAGS@
   
-! LIBS= -lreadline -lncurses -lmytinfo
+! LIBS=@LIBS@ -lmytinfo
   SHARED_LDFLAGS=@LDFLAGS@
   STATIC_LDFLAGS=@LDFLAGS@ @SLDFLAGS@
   
