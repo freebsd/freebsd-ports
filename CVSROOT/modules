@@ -4490,6 +4490,7 @@ mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
 mcal		ports/deskutils/mcal
 mcl		ports/mbone/mcl
+mcron		ports/sysutils/mcron
 mcrypt		ports/security/mcrypt
 mctoolame-decoder	ports/audio/mctoolame-decoder
 mctoolame-encoder	ports/audio/mctoolame-encoder
