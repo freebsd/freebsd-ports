@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jun 27 14:43:10 1997
-+++ Makefile	Thu Jun  4 09:10:31 1998
+--- Makefile.orig	Thu Jun 26 23:43:10 1997
++++ Makefile	Thu Aug 22 20:07:53 2002
 @@ -16,11 +16,13 @@
  #	NEED_STRERROR		- your system does NOT support strerror()
  #
@@ -27,7 +27,7 @@
 +		${BSD_INSTALL_DATA} example-qpage.cf ${PREFIX}/etc
 +		if [ ! -d /var/spool/qpage ]; then \
 +			mkdir /var/spool/qpage; \
-+			chown root.dialer /var/spool/qpage; \
++			chown root:dialer /var/spool/qpage; \
 +			chmod 0775 /var/spool/qpage; \
 +		fi
 +
