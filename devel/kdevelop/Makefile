@@ -31,12 +31,6 @@ CONFIGURE_ENV=	CXX="${CXX}" QTINC=${X11BASE}/include/X11/ \
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
 		--with-qtdoc-dir=${X11BASE}/share/doc/qt/html
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400012
-BROKEN=		"Requires NEWGCC-compiled kde libs"
-.endif
-
 .if !defined(USE_OPTIONAL_RUNDEPENDS)
 pre-patch:
 	@${ECHO}
@@ -52,4 +46,4 @@ RUN_DEPENDS+=	automake:${PORTSDIR}/devel/automake \
 		a2ps:${PORTSDIR}/print/a2ps43-letter
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
