@@ -34,7 +34,11 @@ COMMENT=	The GNU Bourne Again Shell
 WRKSRC=		${WRKDIR}/bash-${PORTVERSION:C/\....$//}
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
+.if defined(WANT_STATIC_BASH) || defined(NO_DYNAMICROOT)
 CONFIGURE_ENV=	LDFLAGS=-static
+.else
+CONFIGURE_ARGS+= --enable-static-link=no
+.endif
 MAN1=		bash.1 bashbug.1
 
 .if defined(WITH_NET_REDIRECTIONS)
