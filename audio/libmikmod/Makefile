@@ -23,7 +23,8 @@ CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ENV=	SHELL=/bin/sh
 INSTALLS_SHLIB=	yes
 
-MAN1=	libmikmod-config.1
+MAN1=		libmikmod-config.1
+INFO=		mikmod
 
 .include <bsd.port.pre.mk>
 
