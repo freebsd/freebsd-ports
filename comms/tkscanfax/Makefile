@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	comms tk83
 MASTER_SITES=	http://shino.pos.to/linux/tkscanfax/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Tcl/Tk frontend for fax scan/receive/send program (command is tkfax)
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83

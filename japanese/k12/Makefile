@@ -14,7 +14,7 @@ DISTNAME=	kaname_k12_bdf
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		knm_new_linux.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT=	X11 12-dot kanji font
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/beta/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	diclookup-mule-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 COMMENT=	CDROM dictionary client for emacs. (needs ndtpd or dserver package)
 
 RUN_DEPENDS=	${X11BASE}/share/doc/intlfonts-1.2/README:${PORTSDIR}/x11-fonts/intlfonts
