@@ -1,0 +1,5 @@
+bin/tgif2tex
+share/doc/tgif2tex/00readme
+share/doc/tgif2tex/example.obj
+share/doc/tgif2tex/example.tex
+@dirrm share/doc/tgif2tex

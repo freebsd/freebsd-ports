@@ -1,0 +1,14 @@
+Tgif2tex allows us to use LaTeX commands in figures drawn by Tgif.  It
+extracts strings and their positions from the figure and converts it
+in picture environment of the LaTeX.  It also converts other
+components of the figure such as lines, circles, ovals, etc into EPS.
+
+Please execute the following commands for example.
+
+(1) cd /usr/local/share/doc/tgif2tex
+(2) tgif2tex example.obj
+(3) latex example.tex
+(4) xdvi example.tex
+
+- S. Taoka
+taoka@infonets.hiroshima-u.ac.jp
