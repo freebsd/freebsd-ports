@@ -162,6 +162,7 @@
     SUBDIR += elib-emacs20
     SUBDIR += entity
     SUBDIR += error
+    SUBDIR += esdl
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fampp

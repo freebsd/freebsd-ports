@@ -1,0 +1,61 @@
+lib/erlang/lib/esdl-0.91.1129/doc/Makefile
+lib/erlang/lib/esdl-0.91.1129/doc/gl.html
+lib/erlang/lib/esdl-0.91.1129/doc/glu.html
+lib/erlang/lib/esdl-0.91.1129/doc/index.html
+lib/erlang/lib/esdl-0.91.1129/doc/makedoc.erl
+lib/erlang/lib/esdl-0.91.1129/doc/sdl.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_active.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_audio.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_events.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_joystick.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_keyboard.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_mouse.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_util.html
+lib/erlang/lib/esdl-0.91.1129/doc/sdl_video.html
+lib/erlang/lib/esdl-0.91.1129/ebin/gl.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/glu.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_active.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_audio.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_events.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_joystick.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_keyboard.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_mouse.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_util.beam
+lib/erlang/lib/esdl-0.91.1129/ebin/sdl_video.beam
+lib/erlang/lib/esdl-0.91.1129/include/gl.hrl
+lib/erlang/lib/esdl-0.91.1129/include/glu.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_active.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_audio.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_events.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_joystick.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_keyboard.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_mouse.hrl
+lib/erlang/lib/esdl-0.91.1129/include/sdl_video.hrl
+lib/erlang/lib/esdl-0.91.1129/priv/sdl_driver.so
+lib/erlang/lib/esdl-0.91.1129/priv/sdlwrapper
+lib/erlang/lib/esdl-0.91.1129/src/Makefile
+lib/erlang/lib/esdl-0.91.1129/src/Makefile.win32
+lib/erlang/lib/esdl-0.91.1129/src/esdl.hrl
+lib/erlang/lib/esdl-0.91.1129/src/gl.erl
+lib/erlang/lib/esdl-0.91.1129/src/gl_funcs.hrl
+lib/erlang/lib/esdl-0.91.1129/src/glu.erl
+lib/erlang/lib/esdl-0.91.1129/src/glu_funcs.hrl
+lib/erlang/lib/esdl-0.91.1129/src/sdl.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_active.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_audio.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_events.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_joystick.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_keyboard.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_mouse.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_util.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_util.hrl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_video.erl
+lib/erlang/lib/esdl-0.91.1129/src/sdl_video_funcs.hrl
+@dirrm lib/erlang/lib/esdl-0.91.1129/src
+@dirrm lib/erlang/lib/esdl-0.91.1129/priv
+@dirrm lib/erlang/lib/esdl-0.91.1129/include
+@dirrm lib/erlang/lib/esdl-0.91.1129/ebin
+@dirrm lib/erlang/lib/esdl-0.91.1129/doc
+@dirrm lib/erlang/lib/esdl-0.91.1129
