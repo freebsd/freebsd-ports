@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.8.3
+PORTVERSION=	5.5.1.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://imagemagick.sourceforge.net/http/ \
@@ -47,7 +47,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
-USE_REINPLACE=	yes
+PLIST_SUB+=	MVERSION=${PORTVERSION:R}
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
@@ -124,16 +124,16 @@ INSTALL_TARGET=	install install-data-html
 
 post-patch:
 # Do not use PTHREAD_LIBS here
-	@${REINPLACE_CMD} -e 's|-lpthread|-lc_r|g ; \
+	@${PERL} -pi -e 's|-lpthread|-lc_r|g ; \
 		 s|^tagnames=|#tagnames=|g ; \
 		 s|lcms/lcms.h|lcms.h|g ; \
 		 s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
 		 s| install-data-html||g'
-	@${REINPLACE_CMD} -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
-	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
-	@${REINPLACE_CMD} -e 's|timestamp: %ld|timestamp: %d|g' \
+	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
+	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
+	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
 
 .include <bsd.port.mk>
