@@ -35,11 +35,6 @@ EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
 
 CONFLICTS=	py*-gnome-1*
 
-.if !defined(PACKAGE_BUILDING)
-pre-build:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
-
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
