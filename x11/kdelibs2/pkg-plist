@@ -1,118 +1,134 @@
-lib/libkdecore.so.0.11
-lib/libkdecore.la
-lib/libkdeui.so.0.10
-lib/libkdeui.la
-lib/libjscript.so.0.1
-lib/libjscript.la
-lib/libkhtmlw.so.0.12
-lib/libkhtmlw.la
-lib/libkfm.so.0.1
-lib/libkfm.la
-lib/libmediatool.so.0.7
-lib/libmediatool.la
-include/kconfig.h
-include/kconfigdata.h
-include/ksimpleconfig.h
-include/kconfigbase.h
-include/kcolorgroup.h
-include/kapp.h
-include/kurl.h
-include/ksock.h
-include/drag.h
-include/kkeyconf.h
-include/kkeydata.h
-include/ckey.h
-include/kmisc.h
-include/kprocess.h
-include/kprocctrl.h
-include/klocale.h
-include/kiconloader.h
-include/kdebug.h
-include/kstdaccel.h
-include/kwm.h
-include/krootprop.h
-include/kledlamp.h
-include/kprogress.h
-include/kpanner.h
-include/html.h
-include/kcolordlg.h
-include/kselect.h
-include/dither.h
-include/kdatepik.h
-include/kdatetbl.h
-include/kfontdialog.h
-include/kmsgbox.h
-include/kpopmenu.h
-include/ktabctl.h
-include/ktreelist.h
-include/kstatusbar.h
-include/ktopwidget.h
-include/ktoolbar.h
-include/kmenubar.h
-include/kbutton.h
-include/kslider.h
-include/kseparator.h
-include/klined.h
-include/kcombo.h
-include/krestrictedline.h
-include/kintegerline.h
-include/kspinbox.h
-include/kcolorbtn.h
-include/kwmmapp.h
-include/kiconloaderdialog.h
-include/kbuttonbox.h
-include/ktablistbox.h
-include/knewpanner.h
-include/kcontrol.h
 include/bison2cpp.h
-include/jstree.h
-include/jsexec.h
-include/jserror.h
 include/builtin.h
-include/jscript.h
-include/htmlobj.h
-include/htmlfont.h
+include/ckey.h
+include/dither.h
+include/drag.h
 include/formats.h
-include/htmlform.h
-include/ampseq.h
-include/htmltoken.h
-include/htmlframe.h
-include/htmlview.h
+include/html.h
 include/htmlclue.h
 include/htmldata.h
+include/htmlfont.h
+include/htmlform.h
+include/htmlframe.h
+include/htmlobj.h
+include/htmltoken.h
+include/htmlview.h
+include/jscript.h
+include/jserror.h
+include/jsexec.h
+include/jstree.h
+include/kapp.h
+include/kaudio.h
+include/kbutton.h
+include/kbuttonbox.h
+include/kcharsets.h
+include/kcolorbtn.h
+include/kcolordlg.h
+include/kcolorgroup.h
+include/kcombo.h
+include/kconfig.h
+include/kconfigbase.h
+include/kconfigdata.h
+include/kcontrol.h
+include/kdatepik.h
+include/kdatetbl.h
+include/kdebug.h
+include/keditcl.h
 include/kfm.h
 include/kfmclient_ipc.h
 include/kfmipc.h
+include/kfontdialog.h
+include/kiconloader.h
+include/kiconloaderdialog.h
+include/kintegerline.h
+include/kkeyconf.h
+include/kkeydata.h
+include/kledlamp.h
+include/klined.h
+include/klocale.h
+include/kmenubar.h
+include/kmisc.h
+include/kmsgbox.h
+include/knewpanner.h
+include/kpanner.h
+include/kpopmenu.h
+include/kprocctrl.h
+include/kprocess.h
+include/kprogress.h
+include/krestrictedline.h
+include/krootprop.h
+include/kselect.h
+include/kseparator.h
+include/ksimpleconfig.h
+include/kslider.h
+include/ksock.h
+include/kspinbox.h
+include/kstatusbar.h
+include/kstdaccel.h
+include/kstring.h
+include/ktabctl.h
+include/ktablistbox.h
+include/ktoolbar.h
+include/ktopwidget.h
+include/ktreelist.h
+include/kurl.h
+include/kwm.h
+include/kwmmapp.h
 include/mediatool.h
-include/kaudio.h
+lib/libjscript.la
+lib/libjscript.so.0.90
+lib/libkdecore.la
+lib/libkdecore.so.0.90
+lib/libkdeui.la
+lib/libkdeui.so.0.91
+lib/libkfm.la
+lib/libkfm.so.0.90
+lib/libkhtmlw.la
+lib/libkhtmlw.so.0.91
+lib/libmediatool.la
+lib/libmediatool.so.0.90
 share/apps/kde/pics/error.xpm
 share/apps/kde/pics/exclamation.xpm
 share/apps/kde/pics/info.xpm
-share/apps/kde/pics/stopsign.xpm
 share/apps/kde/pics/question.xpm
+share/apps/kde/pics/stopsign.xpm
 share/apps/khtmlw/pics/khtmlw_dnd.xpm
-share/locale/de/LC_MESSAGES/kde.mo
-share/locale/fr/LC_MESSAGES/kde.mo
-share/locale/sv/LC_MESSAGES/kde.mo
+share/config/charsets.config
+share/doc/HTML/default
+share/doc/HTML/en/kdelibs/kdebug.html
 share/locale/cs/LC_MESSAGES/kde.mo
-share/locale/es/LC_MESSAGES/kde.mo
-share/locale/ru/LC_MESSAGES/kde.mo
-share/locale/hu/LC_MESSAGES/kde.mo
+share/locale/cs/charset
 share/locale/da/LC_MESSAGES/kde.mo
+share/locale/da/charset
+share/locale/de/LC_MESSAGES/kde.mo
+share/locale/de/charset
+share/locale/el/LC_MESSAGES/kde.mo
+share/locale/es/LC_MESSAGES/kde.mo
+share/locale/fi/LC_MESSAGES/kde.mo
+share/locale/fi/charset
+share/locale/fr/LC_MESSAGES/kde.mo
+share/locale/fr/charset
+share/locale/hr/LC_MESSAGES/kde.mo
+share/locale/hu/LC_MESSAGES/kde.mo
+share/locale/hu/charset
 share/locale/it/LC_MESSAGES/kde.mo
 share/locale/nl/LC_MESSAGES/kde.mo
-share/locale/pt/LC_MESSAGES/kde.mo
 share/locale/no/LC_MESSAGES/kde.mo
 share/locale/pl/LC_MESSAGES/kde.mo
-share/locale/el/LC_MESSAGES/kde.mo
-share/locale/fi/LC_MESSAGES/kde.mo
-share/doc/HTML/en/kdelibs/kdebug.html
-share/doc/HTML/default
+share/locale/pl/charset
+share/locale/pt/LC_MESSAGES/kde.mo
+share/locale/ro/LC_MESSAGES/kde.mo
+share/locale/ro/charset
+share/locale/ru/LC_MESSAGES/kde.mo
+share/locale/ru/charset
+share/locale/sv/LC_MESSAGES/kde.mo
 @exec /sbin/ldconfig -m %B
 @dirrm share/locale/sv/LC_MESSAGES
 @dirrm share/locale/sv
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
 @dirrm share/locale/pt/LC_MESSAGES
 @dirrm share/locale/pt
 @dirrm share/locale/pl/LC_MESSAGES
@@ -125,6 +141,8 @@ share/doc/HTML/default
 @dirrm share/locale/it
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/hr
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
 @dirrm share/locale/fi/LC_MESSAGES
@@ -143,7 +161,7 @@ share/doc/HTML/default
 @dirrm share/doc/HTML/en/kdelibs
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
-@dirrm share/doc
+@dirrm share/config
 @dirrm share/apps/khtmlw/pics
 @dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
