@@ -28,6 +28,10 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 MAN1PREFIX=	${PREFIX}/share
 .endif
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 MAN1=		checkbot.1
 USE_PERL5=	YES
 PERL_CONFIGURE=	yes
