@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of open source tools for genetic sequence analysis
 
+BROKEN=		Checksum mismatch
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 USE_SUBMAKE=	yes
