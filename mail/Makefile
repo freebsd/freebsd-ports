@@ -444,6 +444,7 @@
     SUBDIR += spamass-rules
     SUBDIR += spamass-rules_du_jour
     SUBDIR += spambnc
+    SUBDIR += spamcup
     SUBDIR += spamd
     SUBDIR += spamguard
     SUBDIR += spamilter
