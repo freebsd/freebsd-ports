@@ -1,6 +1,12 @@
+lib/webmin/virtual-server/CHANGELOG
+lib/webmin/virtual-server/RELEASE
 lib/webmin/virtual-server/acl_security.pl
 lib/webmin/virtual-server/all_webmin.cgi
 lib/webmin/virtual-server/autoreply.pl
+lib/webmin/virtual-server/backup.cgi
+lib/webmin/virtual-server/backup.pl
+lib/webmin/virtual-server/backup_form.cgi
+lib/webmin/virtual-server/backup_sched.cgi
 lib/webmin/virtual-server/check.cgi
 lib/webmin/virtual-server/config
 lib/webmin/virtual-server/config-freebsd
@@ -73,6 +79,7 @@ lib/webmin/virtual-server/help/postgres.html
 lib/webmin/virtual-server/help/proxypass.html
 lib/webmin/virtual-server/help/realname.de.html
 lib/webmin/virtual-server/help/realname.html
+lib/webmin/virtual-server/help/ssl.html
 lib/webmin/virtual-server/help/unixgroupname.de.html
 lib/webmin/virtual-server/help/unixgroupname.html
 lib/webmin/virtual-server/help/unixusername.de.html
@@ -116,12 +123,14 @@ lib/webmin/virtual-server/lang/fr
 lib/webmin/virtual-server/list_aliases.cgi
 lib/webmin/virtual-server/list_users.cgi
 lib/webmin/virtual-server/local-template
+lib/webmin/virtual-server/log_parser.pl
 lib/webmin/virtual-server/module.info
+lib/webmin/virtual-server/restore.cgi
+lib/webmin/virtual-server/restore_form.cgi
 lib/webmin/virtual-server/save_afile.cgi
 lib/webmin/virtual-server/save_alias.cgi
 lib/webmin/virtual-server/save_domain.cgi
 lib/webmin/virtual-server/save_ffile.cgi
-lib/webmin/virtual-server/save_luser.cgi
 lib/webmin/virtual-server/save_newdns.cgi
 lib/webmin/virtual-server/save_newdom.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
@@ -136,6 +145,7 @@ lib/webmin/virtual-server/start_mail.cgi
 lib/webmin/virtual-server/stop_apache.cgi
 lib/webmin/virtual-server/stop_bind.cgi
 lib/webmin/virtual-server/stop_mail.cgi
+lib/webmin/virtual-server/uninstall.pl
 lib/webmin/virtual-server/user-template
 lib/webmin/virtual-server/useradmin_update.pl
 lib/webmin/virtual-server/virtual-server-lib.pl
