@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	libbt
-PORTVERSION=	0.03
+PORTVERSION=	1.01
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
 LIB_DEPENDS=	uuid.1:${PORTSDIR}/sysutils/e2fsprogs \
 		curl.2:${PORTSDIR}/ftp/curl
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -28,13 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
-.endif
+ONLY_FOR_ARCHS=	i386
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@|' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ |' ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libbt.a ${PREFIX}/lib
@@ -42,7 +37,7 @@ do-install:
 .for i in btcheck btget btlist
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${PREFIX}/bin
 .endfor
-.for i in benc.h bitset.h bterror.h bts.h context.h peer.h random.h segmenter.h strbuf.h stream.h types.h util.h
+.for i in benc.h bitset.h bterror.h btmessage.h bts.h context.h peer.h random.h segmenter.h strbuf.h stream.h types.h util.h
 	${INSTALL_DATA} ${WRKSRC}/include/${i} ${PREFIX}/include/libbt
 .endfor
 
