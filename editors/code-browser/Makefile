@@ -19,6 +19,7 @@ COMMENT=	A Folding Text Editor
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_GNOME=	gtk20
+USE_GCC=	3.4+
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," \
