@@ -1,0 +1,13 @@
+--- kcd.1.orig	Sat Aug 12 17:03:56 2000
++++ kcd.1	Tue Aug 15 02:14:01 2000
+@@ -64,9 +64,7 @@
+ .TP
+ .I "\-\-config"
+ Display current configuration (excluding screen attributes) obtained from
+-.I /etc/kcd.conf
+-.I /usr/etc/kcd.conf,
+-.I /usr/local/etc/kcd.conf,
++.I %%PREFIX%%/etc/kcd.conf,
+ and
+ .I ~/.kcd.conf.
+ 

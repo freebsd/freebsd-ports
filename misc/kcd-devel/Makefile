@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kcd
-PORTVERSION=	4.11.2
+PORTVERSION=	5.0.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include" 
 MAN1=		kcd.1
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cc
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/kcd.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kcdmain ${PREFIX}/bin
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${PREFIX}/share/examples/kcd
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/kcd
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/kcd
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/kcd
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/kcd
 .endif
 

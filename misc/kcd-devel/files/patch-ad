@@ -1,0 +1,25 @@
+--- configure.orig	Sat Aug 12 17:03:47 2000
++++ configure	Tue Aug 15 01:09:10 2000
+@@ -1105,11 +1105,6 @@
+ echo "$ac_t""$CXXCPP" 1>&6
+ 
+ 
+-if test "$GXX" = yes; then
+-	CFLAGS="$CFLAGS -W -Wall"
+-	CXXFLAGS="$CXXFLAGS -W -Wall"
+-fi
+-
+ ac_aux_dir=
+ for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
+   if test -f $ac_dir/install-sh; then
+@@ -5309,10 +5304,6 @@
+ fi
+ if test "$prefix" = NONE; then
+ 	prefix=$ac_default_prefix
+-fi
+-
+-if test "$sysconfdir" = '${prefix}/etc'; then
+-	sysconfdir=/etc
+ fi
+ 
+ 
