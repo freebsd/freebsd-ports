@@ -66,6 +66,7 @@
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += pango
+    SUBDIR += paragui
     SUBDIR += pike-gtk
     SUBDIR += plib
     SUBDIR += pmw
