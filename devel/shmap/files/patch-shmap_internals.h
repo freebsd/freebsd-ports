@@ -1,6 +1,6 @@
---- shmap/core.h.orig	Wed Mar  6 01:38:37 2002
-+++ shmap/core.h	Wed Mar  6 01:38:47 2002
-@@ -53,12 +53,14 @@
+--- shmap/shmap_internals.h.orig	Thu Jul 11 13:16:52 2002
++++ shmap/shmap_internals.h	Thu Jul 11 13:17:13 2002
+@@ -85,12 +85,14 @@
  #define CORE_LOCK(l,m)          if ( l != NULL ) _core_lock(l,SHMAP_LOCK_WRITE);
  #define CORE_UNLOCK(l)          if ( l != NULL ) _core_unlock(l);
  
@@ -13,5 +13,5 @@
  };
 +#endif
  
- 
- #endif
+ /**
+  *  Module pointer definitions
