@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9ff4c91e-328c-11d9-a9e7-0001020eed82">
+    <topic>libxml -- remote buffer overflows</topic>
+    <affects>
+      <package>
+	<name>libxml</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.6.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p><q>infamous41md</q> reports that libxml contains multiple
+	  buffer overflows in the URL parsing and DNS name resolving
+	  functions.  These vulnerabilities could lead to execution of
+	  arbitrary code.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0989</cvename>
+      <bid>11526</bid>
+      <mlist msgid="20041025205132.1f1620a8.infamous41md@hotpop.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109880813013482</mlist>
+      <url>http://www.debian.org/security/2004/dsa-582</url>
+    </references>
+    <dates>
+      <discovery>2004-10-26</discovery>
+      <entry>2004-11-09</entry>
+    </dates>
+  </vuln>
+
    <vuln vid="a5742055-300a-11d9-a9e7-0001020eed82">
     <topic>p5-Archive-Zip -- virus detection evasion</topic>
     <affects>
