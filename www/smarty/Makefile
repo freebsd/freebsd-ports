@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpinsider.com/php/code/Smarty/download/
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
@@ -29,7 +29,7 @@ MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-.for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php overlib.js
+.for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php overlib.js templates/debug.tpl
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
 .endfor
 	@${MKDIR} ${DATADIR}/plugins
