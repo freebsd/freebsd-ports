@@ -1,7 +1,8 @@
 bin/argouml
 %%DATADIR%%/antlrall.jar
 %%DATADIR%%/argouml.jar
-%%DATADIR%%/gef-0.9.6.jar
+%%DATADIR%%/gef.jar
+%%DATADIR%%/i18n.jar
 %%DATADIR%%/log4j.jar
 %%DATADIR%%/nsuml.jar
 %%DATADIR%%/ocl-argo.jar
