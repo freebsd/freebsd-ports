@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.3/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
@@ -17,15 +16,13 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	glib-1.3.5:${PORTSDIR}/devel/glib13 \
+LIB_DEPENDS=	glib-1.3.6:${PORTSDIR}/devel/glib13 \
 		freetype.7:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-BROKEN=		"uses some freetype2 internals and as a result was b0rken by freetype2 upgrade"
-
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt=no
 
 # Hmm.. tough one.  Found this one when I had graphics/hdf installed
@@ -33,7 +30,9 @@ CONFIGURE_ARGS=	--with-qt=no
 # stuff, with Bad Results[tm]
 #
 GLIB2_CFLAGS=	`pkg-config glib-2.0 --cflags`
-CONFIGURE_ENV=	CPPFLAGS="${GLIB2_CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
+			${GLIB2_CFLAGS} -I${LOCALBASE}/include \
+			-I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
@@ -47,5 +46,7 @@ PLIST_SUB+=	XFREE4:=""
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+	@find ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${PERL} -pi -e \
+		's|internal/tterrors\.h|fterrors.h| ; s|TT_Err_|FT_Err_|g'
 
 .include <bsd.port.post.mk>
