@@ -2,13 +2,4 @@ bin/xplot
 bin/tcpdump2xplot.pl
 share/doc/xplot/README
 share/doc/xplot/README.tcp_plots
-share/examples/xplot/demo.0
-share/examples/xplot/demo.1
-share/examples/xplot/demo.2
-share/examples/xplot/demo.3
-share/examples/xplot/demo.4
-share/examples/xplot/demo.5
-share/examples/xplot/demo.6
-share/examples/xplot/demo.7
 @dirrm share/doc/xplot
-@dirrm share/examples/xplot
