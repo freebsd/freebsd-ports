@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AbiWord
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -20,7 +20,8 @@ COMMENT=	An open-source, cross-platform WYSIWYG word processor
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		psiconv.8:${PORTSDIR}/converters/psiconv
+		psiconv.8:${PORTSDIR}/converters/psiconv \
+		aspell.15:${PORTSDIR}/textproc/aspell
 
 DIST_SUBDIR=	AbiWord
 
@@ -28,11 +29,14 @@ WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
 
 USE_X_PREFIX=	yes
 USE_AUTOMAKE=	yes
+USE_AUTOMAKE_VER=14
+USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehier
 WANT_GNOME=	yes
+CONFIGURE_ARGS=	--with-expat
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 MAKEFILE=	GNUmakefile
@@ -56,6 +60,11 @@ PKGNAMESUFFIX=	-gnome
 .if exists(${LOCALBASE}/include/wv.h)
 BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord build"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%AUTOMAKE%%|${AUTOMAKE}|g ; \
+		s|%%ACLOCAL%%|${ACLOCAL}|g ; \
+		s|%%AUTOCONF%%|${AUTOCONF}|g' ${WRKSRC}/autogen.sh
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog INSTALL
