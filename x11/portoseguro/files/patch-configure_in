@@ -1,0 +1,14 @@
+--- configure.in.orig	Thu Sep  7 03:57:52 2000
++++ configure.in	Sun Oct  8 20:57:24 2000
+@@ -11,11 +11,8 @@
+ AC_PROG_INSTALL
+ 
+ AC_HEADER_STDC
+-AC_HEADER_CHECK(X11/xpm.h,,AC_MSG_ERROR(required header file missing))
+ 
+ dnl now gtk
+-
+-AC_PATH_PROG(GTKCONFIG,gtk-config,no)
+ 
+ if test x$GTKCONFIG = xno ; then
+ AC_MSG_ERROR(
