@@ -1,0 +1,12 @@
+---------------------------------------------------------
+* Copy %%DATADIR%%/templates/* to
+  ~/.rubyphoto-templates.
+* Copy %%DATADIR%%/sample_input/config.xml
+  to ~/.rubyphoto-conf and edit it if you wish to deviate
+  from the default settings.
+* Copy rubyphoto.css and the granitesm_*.gif icons from
+  %%DATADIR%%/sample_input/ to your
+  top-level photo directory. In this directory, create
+  a file called .rubyphoto-ignore which contains 
+  granitesm_*.gif.
+---------------------------------------------------------

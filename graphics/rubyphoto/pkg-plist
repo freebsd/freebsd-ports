@@ -1,0 +1,41 @@
+%%DATADIR%%/COPYING
+%%DATADIR%%/README.html
+%%DATADIR%%/album.rb
+%%DATADIR%%/config.rb
+%%DATADIR%%/dyn_resize.rb
+%%DATADIR%%/image_cat.rb
+%%DATADIR%%/image_size_cache.rb
+%%DATADIR%%/joke.rb
+%%DATADIR%%/myxml.rb
+%%DATADIR%%/photo.rb
+%%DATADIR%%/rp_debug.rb
+%%DATADIR%%/ruby_photo.rb
+%%DATADIR%%/sample_input/album.xml
+%%DATADIR%%/sample_input/config.xml
+%%DATADIR%%/sample_input/config.xml.old
+%%DATADIR%%/sample_input/example.jpg.xml
+%%DATADIR%%/sample_input/granitesm_left.gif
+%%DATADIR%%/sample_input/granitesm_right.gif
+%%DATADIR%%/sample_input/granitesm_top.gif
+%%DATADIR%%/sample_input/granitesm_up.gif
+%%DATADIR%%/sample_input/rubyphoto.css
+%%DATADIR%%/templates/alternate/album.xml
+%%DATADIR%%/templates/alternate/image.xml
+%%DATADIR%%/templates/alternate/shared.xml
+%%DATADIR%%/templates/alternate/tree.xml
+%%DATADIR%%/templates/album.xml
+%%DATADIR%%/templates/image.xml
+%%DATADIR%%/templates/shared.xml
+%%DATADIR%%/templates/tree.xml
+%%DATADIR%%/swigs-converters/albums.rb
+%%DATADIR%%/swigs-converters/images.rb
+%%DATADIR%%/xml-generators/classify-photos
+%%DATADIR%%/xml-generators/make-album
+%%DATADIR%%/template.rb
+%%DATADIR%%/urlencode.rb
+@dirrm %%DATADIR%%/sample_input
+@dirrm %%DATADIR%%/templates/alternate
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/swigs-converters
+@dirrm %%DATADIR%%/xml-generators
+@dirrm %%DATADIR%%

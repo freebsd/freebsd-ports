@@ -330,6 +330,7 @@
     SUBDIR += ruby-rmagick
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
+    SUBDIR += rubyphoto
     SUBDIR += s10sh
     SUBDIR += s3switch
     SUBDIR += sam2p
