@@ -1,0 +1,32 @@
+# New ports collection makefile for:	amy
+# Date created:				30 Jan 2003
+# Whom:					Thorsten Greiner <thorsten.greiner@web.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	amy
+PORTVERSION=	0.8.2
+CATEGORIES=	games
+MASTER_SITES=	http://www.stethojupi.de/
+DISTFILES=	amy-${PORTVERSION}.tar.gz ClassicGames.pgn.bz2
+EXTRACT_ONLY=	amy-${PORTVERSION}.tar.gz
+
+MAINTAINER=	thorsten.greiner@web.de
+COMMENT=	A chess program for playing and analyzing games
+
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2:install
+
+HAS_CONFIGURE=	yes
+
+post-extract:
+	${BZCAT} ${DISTDIR}/ClassicGames.pgn.bz2 > \
+		${WRKSRC}/PGN/ClassicGames.pgn
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>

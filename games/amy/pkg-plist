@@ -1,0 +1,6 @@
+bin/Amy
+share/amy/Book.db
+share/amy/Eco.db
+@dirrm share/amy
+%%PORTDOCS%%share/doc/amy/README
+%%PORTDOCS%%@dirrm share/doc/amy
