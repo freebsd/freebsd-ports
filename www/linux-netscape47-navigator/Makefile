@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1998/06/16 13:34:24 asami Exp $
+# $Id: Makefile,v 1.6 1998/12/24 06:29:59 steve Exp $
 #
 
 DISTNAME=       linux-netscape-4.08
@@ -16,6 +16,8 @@ MAINTAINER=     tom@eborcom.com
 
 RUN_DEPENDS=    /compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
 BUILD_DEPENDS=  /compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
+
+ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/communicator-v408.x86-unknown-linux1.2
 NO_BUILD=       Yes
