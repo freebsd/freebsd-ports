@@ -23,13 +23,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--disable-cdpar
 
 OPTIONS=	CDPARANOIA "Enable cdparanoia support" off
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_CDPARANOIA)
 LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
-.else
-CONFIGURE_ARGS+=	--disable-cdpar
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
