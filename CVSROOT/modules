@@ -736,6 +736,7 @@ bpl+		ports/comms/bpl+
 br-aspell	ports/textproc/br-aspell
 braa		ports/net-mgmt/braa
 braincurses	ports/games/braincurses
+bricolage	ports/www/bricolage
 bricons		ports/x11/bricons
 briquolo	ports/games/briquolo
 british-ispell	ports/textproc/british-ispell
