@@ -19,6 +19,8 @@ COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+BROKEN=		"Does not compile"
+
 USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
