@@ -1,0 +1,207 @@
+http://www.openoffice.org/issues/show_bug.cgi?id=33357
+Insecure permissions on temporary files at runtime
+*** SECURTY FIX ***
+
+--- ../sal/util/sal.map	9 Jan 2004 18:31:53 -0000	1.42.70.1
++++ ../sal/util/sal.map	30 Aug 2004 13:59:22 -0000
+@@ -402,6 +403,7 @@
+         osl_writeFile;
+         osl_closeFile;
+         osl_createDirectory;
++        osl_createDirectoryWithMode;
+         osl_removeDirectory;
+         osl_removeFile;
+         osl_copyFile;
+Index: ../sal/inc/osl/file.h
+===================================================================
+RCS file: /cvs/porting/sal/inc/osl/file.h,v
+retrieving revision 1.27.48.1
+diff -u -r1.27.48.1 file.h
+--- ../sal/inc/osl/file.h	9 Jan 2004 18:31:45 -0000	1.27.48.1
++++ ../sal/inc/osl/file.h	30 Aug 2004 13:59:25 -0000
+@@ -1036,6 +1036,8 @@
+ 
+ oslFileError SAL_CALL osl_createDirectory( rtl_uString* pustrDirectoryURL );
+ 
++oslFileError SAL_CALL osl_createDirectoryWithMode( rtl_uString* pustrDirectoryURL, sal_uInt64 uAttributes );
++
+ 
+ /**	Remove an empty directory.
+ 
+Index: ../sal/inc/osl/file.hxx
+===================================================================
+RCS file: /cvs/porting/sal/inc/osl/file.hxx,v
+retrieving revision 1.30.48.1
+diff -u -r1.30.48.1 file.hxx
+--- ../sal/inc/osl/file.hxx	9 Jan 2004 18:31:45 -0000	1.30.48.1
++++ ../sal/inc/osl/file.hxx	30 Aug 2004 13:59:32 -0000
+@@ -1819,6 +1819,12 @@
+ 	inline static RC create( const ::rtl::OUString& ustrDirectoryURL )
+ 	{
+         return (RC) osl_createDirectory( ustrDirectoryURL.pData );
++	}
++
++	inline static RC createWithMode( const ::rtl::OUString& ustrDirectoryURL,
++									 sal_uInt64 uAttributes )
++	{
++        return (RC) osl_createDirectoryWithMode( ustrDirectoryURL.pData, uAttributes );
+ 	}
+ 
+ 	/**	Remove an empty directory.
+Index: ../sal/osl/unx/file.c
+===================================================================
+RCS file: /cvs/porting/sal/osl/unx/Attic/file.c,v
+retrieving revision 1.72.28.1
+diff -u -r1.72.28.1 file.c
+--- ../sal/osl/unx/file.c	9 Jan 2004 18:31:46 -0000	1.72.28.1
++++ ../sal/osl/unx/file.c	30 Aug 2004 13:59:41 -0000
+@@ -246,7 +246,7 @@
+ 
+ static oslFileError osl_psz_getVolumeInformation(const sal_Char* , oslVolumeInfo* pInfo, sal_uInt32 uFieldMask);
+ static oslFileError osl_psz_removeFile(const sal_Char* pszPath);
+-static oslFileError osl_psz_createDirectory(const sal_Char* pszPath);
++static oslFileError osl_psz_createDirectory(const sal_Char* pszPath, sal_uInt64 uAttributes);
+ static oslFileError osl_psz_removeDirectory(const sal_Char* pszPath);
+ static oslFileError osl_psz_copyFile(const sal_Char* pszPath, const sal_Char* pszDestPath);
+ static oslFileError osl_psz_moveFile(const sal_Char* pszPath, const sal_Char* pszDestPath);
+@@ -853,7 +853,7 @@
+ /*	osl_createDirectory */
+ /****************************************************************************/
+ 
+-oslFileError osl_createDirectory( rtl_uString* ustrDirectoryURL )
++oslFileError osl_createDirectoryWithMode( rtl_uString* ustrDirectoryURL, sal_uInt64 uAttributes )
+ {
+     char path[PATH_MAX];
+     oslFileError eRet;
+@@ -865,7 +865,13 @@
+     if( eRet != osl_File_E_None )
+         return eRet;
+ 
+-    return osl_psz_createDirectory( path );
++    return osl_psz_createDirectory( path, uAttributes );
++}
++
++/* Broken, insecure, deprecated version */
++oslFileError osl_createDirectory( rtl_uString* ustrDirectoryURL )
++{
++		return osl_createDirectoryWithMode( ustrDirectoryURL, 0xffffffff );
+ }
+ 
+ /****************************************************************************/
+@@ -1383,12 +1389,9 @@
+  * osl_psz_setFileAttributes
+  ************************************/
+ 
+-static oslFileError osl_psz_setFileAttributes( const sal_Char* pszFilePath, sal_uInt64 uAttributes )
++static int osl_getNativeMode( sal_uInt64 uAttributes )
+ {
+-	oslFileError osl_error = osl_File_E_None;
+-    mode_t 		 nNewMode  = 0;
+-
+- 	OSL_ENSURE(!(osl_File_Attribute_Hidden & uAttributes), "osl_File_Attribute_Hidden doesn't work under Unix");
++    mode_t nNewMode = 0;
+ 
+     if (uAttributes & osl_File_Attribute_OwnRead)
+         nNewMode |= S_IRUSR;
+@@ -1417,7 +1420,17 @@
+     if (uAttributes & osl_File_Attribute_OthExe)
+         nNewMode|=S_IXOTH;
+ 
+-    if (chmod(pszFilePath, nNewMode) < 0)
++
++	return nNewMode;
++}
++
++static oslFileError osl_psz_setFileAttributes( const sal_Char* pszFilePath, sal_uInt64 uAttributes )
++{
++	oslFileError osl_error = osl_File_E_None;
++
++ 	OSL_ENSURE(!(osl_File_Attribute_Hidden & uAttributes), "osl_File_Attribute_Hidden doesn't work under Unix");
++
++    if (chmod(pszFilePath, osl_getNativeMode( uAttributes )) < 0)
+         osl_error = oslTranslateFileError(OSL_FET_ERROR, errno);
+ 
+     return osl_error;
+@@ -1543,13 +1558,12 @@
+  * osl_psz_createDirectory
+  ****************************************/
+ 
+-static oslFileError osl_psz_createDirectory( const sal_Char* pszPath )
++static oslFileError osl_psz_createDirectory( const sal_Char* pszPath, sal_uInt64 uAttributes )
+ {
+     int nRet=0;
+-    int mode = S_IRWXU | S_IRWXG | S_IRWXO;
+ 
+-    nRet = mkdir(pszPath,mode);
++    nRet = mkdir(pszPath, osl_getNativeMode( uAttributes ));
+ 
+     if ( nRet < 0 )
+     {
+         nRet=errno;
+Index: unotools/source/ucbhelper/tempfile.cxx
+===================================================================
+RCS file: /cvs/util/unotools/source/ucbhelper/tempfile.cxx,v
+retrieving revision 1.14
+diff -u -r1.14 tempfile.cxx
+--- ../unotools/source/ucbhelper/tempfile.cxx	9 Sep 2002 10:25:47 -0000	1.14
++++ ../unotools/source/ucbhelper/tempfile.cxx	30 Aug 2004 14:00:58 -0000
+@@ -125,7 +125,10 @@
+         return sal_True;
+ 
+     // try to create the directory
+-    nError = osl::Directory::create( aPath );
++    nError = osl::Directory::createWithMode( aPath,
++											 osl_File_Attribute_OwnWrite |
++											 osl_File_Attribute_OwnRead |
++											 osl_File_Attribute_OwnExe );
+ 	sal_Bool  bSuccess = ( nError == osl::File::E_None || nError == osl::FileBase::E_EXIST );
+     if( !bSuccess )
+ 	{
+@@ -139,7 +142,10 @@
+ 			if ( bSuccess )
+             {
+                 // Parent directory exists, retry creation of directory
+-				nError = osl::Directory::create( aPath );
++				nError = osl::Directory::createWithMode( aPath,
++														 osl_File_Attribute_OwnWrite |
++														 osl_File_Attribute_OwnRead |
++														 osl_File_Attribute_OwnExe );
+ 				bSuccess =( nError == osl::File::E_None || nError == osl::FileBase::E_EXIST );
+ 			}
+ 		}
+@@ -222,7 +228,10 @@
+ 
+         if ( bDir )
+         {
+-            FileBase::RC err = Directory::create( aTmp );
++			FileBase::RC err = Directory::createWithMode( aTmp,
++														  osl_File_Attribute_OwnWrite |
++														  osl_File_Attribute_OwnRead |
++														  osl_File_Attribute_OwnExe );
+             if (  err == FileBase::E_None )
+             {
+                 // !bKeep: only for creating a name, not a file or directory
+@@ -305,7 +314,10 @@
+             aTmp += String::CreateFromAscii( ".tmp" );
+         if ( bDirectory )
+         {
+-            FileBase::RC err = Directory::create( aTmp );
++			FileBase::RC err = osl::Directory::createWithMode( aTmp,
++															   osl_File_Attribute_OwnWrite |
++															   osl_File_Attribute_OwnRead |
++															   osl_File_Attribute_OwnExe );
+             if ( err == FileBase::E_None )
+             {
+                 pImp->aName = aTmp;
+@@ -401,7 +413,10 @@
+ 
+     // try to create the directory
+     sal_Bool bRet = sal_False;
+-    osl::FileBase::RC err = osl::Directory::create( aUnqPath );
++    osl::FileBase::RC err = osl::Directory::createWithMode( aUnqPath,
++															osl_File_Attribute_OwnWrite |
++															osl_File_Attribute_OwnRead |
++															osl_File_Attribute_OwnExe );
+     if ( err != FileBase::E_None && err != FileBase::E_EXIST )
+         // perhaps parent(s) don't exist
+         bRet = ensuredir( aUnqPath );
