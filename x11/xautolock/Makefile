@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}-pl15
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	eblood@cs.unr.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Used to activate xlock after a user defined time of inactivity
 
 USE_IMAKE=	yes
