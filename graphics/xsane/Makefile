@@ -1,15 +1,16 @@
 # New ports collection makefile for:	xsane
-# Version required:		0.39
+# Version required:		0.45
 # Date created:			Fri Apr  8 00:18:29 MET DST 1999
 # Whom:				Dominik Brettnacher <domi@saargate.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xsane-0.39
+DISTNAME=	xsane-0.45
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wolfsburg.de/~rauch/sane/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+		http://gd.tuwien.ac.at/hci/sane/xsane/ \
+		ftp://ftp.mostang.com/pub/sane/xsane/ \
 
 MAINTAINER=	domi@saargate.de
 
@@ -29,6 +30,8 @@ MAN1=		xsane.1
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}"
+
+CONFIGURE_ARGS=	--enable-intl-patch
 
 .include <bsd.port.pre.mk>
 
