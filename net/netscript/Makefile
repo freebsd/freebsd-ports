@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	netscript
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.6.4
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,19 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
+WANT_GTK=	yes
 
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -DARPA -DBSD_T netscript.c -o netscript 
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK)
+USE_GTK=	yes
+ALL_TARGET=	gbsd
+.else
+ALL_TARGET=	bsd
+.endif
+
+post-patch:
+	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netscript ${PREFIX}/bin
@@ -27,7 +36,7 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
