@@ -33,6 +33,7 @@
     SUBDIR += heimdal
     SUBDIR += ident2
     SUBDIR += identify
+    SUBDIR += inflex
     SUBDIR += its4
     SUBDIR += john
     SUBDIR += keynote
