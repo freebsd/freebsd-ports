@@ -1,5 +1,16 @@
---- configure.orig	Thu Dec 30 18:02:16 1999
-+++ configure	Fri Dec 31 12:29:33 1999
+--- configure.orig	Sat Jan 22 11:31:42 2000
++++ configure	Tue Jan 25 12:19:20 2000
+@@ -2294,8 +2294,8 @@
+ CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+ LD="$LD" NM="$NM" RANLIB="$RANLIB" LN_S="$LN_S" \
+ DLLTOOL="$DLLTOOL" AS="$AS" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Redirect the config.log output again, so that the ltconfig log is not
 @@ -2790,7 +2790,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
@@ -48,28 +59,39 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -6110,7 +6111,7 @@
- echo "configure:6111: checking for GnomePrint libraries" >&5
+@@ -6122,7 +6123,7 @@
+ echo $ac_n "checking for GnomePrint libraries >= 0.10""... $ac_c" 1>&6
+ echo "configure:6124: checking for GnomePrint libraries >= 0.10" >&5
  if gnome-config --libs print > /dev/null 2>&1; then 
-     echo "$ac_t""found" 1>&6
--    . `gnome-config --libdir`/printConf.sh
-+    . `$GNOME_CONFIG --sysconfdir`/printConf.sh
-     echo $ac_n "checking for GnomePrint >= 0.8""... $ac_c" 1>&6
- echo "configure:6116: checking for GnomePrint >= 0.8" >&5
-     case x$MODULE_VERSION in
-@@ -6125,8 +6126,8 @@
+-    vers=`(. \`gnome-config --libdir\`/printConf.sh && echo $MODULE_VERSION | sed -e "s/gnome-print-//" ) | \
++    vers=`(. \`$GNOME_CONFIG --sysconfdir\`/printConf.sh && echo $MODULE_VERSION | sed -e "s/gnome-print-//" ) | \
+         awk 'BEGIN { FS = "."; } { print $1 * 1000 + $2;}'`
+     if test "$vers" -ge 10; then
+         echo "$ac_t""found" 1>&6
+@@ -6135,8 +6136,8 @@
  
  echo $ac_n "checking for Glade libraries >= 0.11""... $ac_c" 1>&6
- echo "configure:6128: checking for Glade libraries >= 0.11" >&5
+ echo "configure:6138: checking for Glade libraries >= 0.11" >&5
 -if gnome-config --libs libglade > /dev/null 2>&1; then 
--	vers=`gnome-config --modversion libglade`
+-    vers=`gnome-config --modversion libglade | awk 'BEGIN { FS = "."; } { print $1 * 1000 + $2;}'`
 +if libglade-config --libs > /dev/null 2>&1; then 
-+	vers=`libglade-config --version | sed -e 's/ /-/'`
- 	case $vers
- 	in
- 	    libglade-0.1[123456789]) echo "$ac_t""found" 1>&6 ;;
-@@ -6136,8 +6137,8 @@
-     { echo "configure: error: Did not find libGlade installed" 1>&2; exit 1; }
++    vers=`libglade-config --version | sed -e 's/libglade //' | awk 'BEGIN { FS = "."; } { print $1 * 1000 + $2;}'`
+     if test "$vers" -ge 11; then
+         echo "$ac_t""found" 1>&6
+     else
+@@ -6148,8 +6149,8 @@
+ 
+ echo $ac_n "checking for GTK >= 1.2.2""... $ac_c" 1>&6
+ echo "configure:6151: checking for GTK >= 1.2.2" >&5
+-if gtk-config --version > /dev/null 2>&1; then 
+-        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
++if $GTK_CONFIG --version > /dev/null 2>&1; then 
++        vers=`$GTK_CONFIG --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+     if test "$vers" -ge 1002002; then
+         echo "$ac_t""found" 1>&6
+     else
+@@ -6159,8 +6160,8 @@
+     { echo "configure: error: Did not find GTK+ installed" 1>&2; exit 1; }
  fi
  
 -EXTRA_GNOME_LIBS=`gnome-config --libs gnomeui print libglade $bonobo $gb`
