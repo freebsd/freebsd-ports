@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	JBoss 3, an open-source J2EE application server
 
-USE_JAVA=	1.3+
+LATEST_LINK=	jboss3
+USE_JAVA=	1.4+
 
 USE_REINPLACE=	YES
 USE_BZIP2=	YES
