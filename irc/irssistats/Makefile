@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssistats
-PORTVERSION=	0.51
+PORTVERSION=	0.6
 CATEGORIES=	irc
 MASTER_SITES=	http://royale.zerezo.com/irssistats/
 
@@ -16,6 +16,6 @@ COMMENT=	Generate IRC statistics based on irssi logs
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
