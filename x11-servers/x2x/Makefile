@@ -15,11 +15,7 @@ MAINTAINER=	grog@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes
-MAKE_ENV+=	MAKE=${GMAKE}
-MANCOMPRESSED=	yes
+MAKE_ENV=	MAKE=${GMAKE}
 MAN1=		x2x.1
-
-do-install:
-	cd ${WRKSRC}; make install; make install.man
 
 .include <bsd.port.mk>
