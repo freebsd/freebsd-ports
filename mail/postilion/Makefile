@@ -3,7 +3,7 @@
 # Date created:		20 February 1999
 # Whom:			Glenn Johnson <gljohns@bellsouth.net>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1999/04/22 16:35:46 taoka Exp $
 #
 
 DISTNAME=	postilion-0.9.2
@@ -27,7 +27,7 @@ LIB_DEPENDS+=	tkstep80.1:${PORTSDIR}/x11-toolkits/tkstep80 \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Xpm.4:${PORTSDIR}/graphics/xpm
-CONFIGURE_ARGS+= --with-tk-config=${PREFIX}/share/tkstep8.0
+CONFIGURE_ARGS+= --with-tk-config=${PREFIX}/lib/tkstep8.0
 pre-patch:
 	${SED} s/'(DND) 0/(DND) 1'/ ${FILESDIR}/options.tcl > \
 	${WRKSRC}/postilion/options.tcl
