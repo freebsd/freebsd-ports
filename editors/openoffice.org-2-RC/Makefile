@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1rc5
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/stable/%SUBDIR%/ \
@@ -18,7 +17,7 @@ MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SU
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	OOo_${PORTVERSION}b_source.tar.bz2 gpc231.tar.Z:gpc \
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
