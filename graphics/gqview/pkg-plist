@@ -1,1 +1,3 @@
 bin/gqview
+share/doc/gqview/README
+@dirrm share/doc/gqview
