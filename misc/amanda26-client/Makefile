@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
-PORTREVISION=	2
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../amanda-server
 COMMENT=	${PKGDIR}/pkg-comment.client

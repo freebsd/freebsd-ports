@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	2.4.3b1
-PORTREVISION?=	2
+PORTVERSION=	2.4.3b2
+PORTREVISION?=	0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
@@ -21,9 +21,7 @@ MASTERPORTNAME=	amanda-server
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+HAS_CONFIGURE=	yes
 PATCH_STRIP=
 
 .include <bsd.port.pre.mk>
@@ -46,14 +44,14 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
-BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+RUN_DEPENDS=	${PREFIX}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS=	${PREFIX}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--with-user=operator --with-group=operator \
-		--without-client
+		--without-client --disable-libtool --prefix=${PREFIX}
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
 		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
@@ -121,7 +119,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--with-user=operator --with-group=operator \
-		--without-server
+		--without-server --disable-libtool --prefix=${PREFIX}
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
