@@ -1,0 +1,40 @@
+*** tcpdmatch.8.orig	Tue Aug  5 10:18:39 1997
+--- tcpdmatch.8	Tue Aug  5 10:18:56 1997
+***************
+*** 11,17 ****
+  request for service.  Examples are given below.
+  .PP
+  The program examines the \fItcpd\fR access control tables (default
+! \fI/etc/hosts.allow\fR and \fI/etc/hosts.deny\fR) and prints its
+  conclusion.  For maximal accuracy, it extracts additional information
+  from your \fIinetd\fR or \fItlid\fR network configuration file.
+  .PP
+--- 11,17 ----
+  request for service.  Examples are given below.
+  .PP
+  The program examines the \fItcpd\fR access control tables (default
+! \fI!!PREFIX!!/etc/hosts.allow\fR and \fI!!PREFIXX!!/etc/hosts.deny\fR) and prints its
+  conclusion.  For maximal accuracy, it extracts additional information
+  from your \fIinetd\fR or \fItlid\fR network configuration file.
+  .PP
+***************
+*** 76,84 ****
+  .PP
+  The default locations of the \fItcpd\fR access control tables are:
+  .PP
+! /etc/hosts.allow
+  .br
+! /etc/hosts.deny
+  .SH SEE ALSO
+  .na
+  .nf
+--- 76,84 ----
+  .PP
+  The default locations of the \fItcpd\fR access control tables are:
+  .PP
+! !!PREFIX!!/etc/hosts.allow
+  .br
+! !!PREFIX!!/etc/hosts.deny
+  .SH SEE ALSO
+  .na
+  .nf

@@ -1,0 +1,19 @@
+*** hosts_access.3.orig	Tue Aug  5 10:14:01 1997
+--- hosts_access.3	Tue Aug  5 10:14:35 1997
+***************
+*** 78,84 ****
+  hosts_access(5), format of the access control tables.
+  hosts_options(5), optional extensions to the base language.
+  .SH FILES
+! /etc/hosts.allow, /etc/hosts.deny, access control tables.
+  .SH BUGS
+  hosts_access() uses the strtok() library function. This may interfere
+  with other code that relies on strtok().
+--- 78,84 ----
+  hosts_access(5), format of the access control tables.
+  hosts_options(5), optional extensions to the base language.
+  .SH FILES
+! !!PREFIX!!/etc/hosts.allow, !!PREFIX!!/etc/hosts.deny, access control tables.
+  .SH BUGS
+  hosts_access() uses the strtok() library function. This may interfere
+  with other code that relies on strtok().

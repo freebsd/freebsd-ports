@@ -1,0 +1,40 @@
+*** tcpdchk.8.orig	Tue Aug  5 10:18:09 1997
+--- tcpdchk.8	Tue Aug  5 10:18:29 1997
+***************
+*** 8,14 ****
+  \fItcpdchk\fR examines your tcp wrapper configuration and reports all
+  potential and real problems it can find. The program examines the
+  \fItcpd\fR access control files (by default, these are
+! \fI/etc/hosts.allow\fR and \fI/etc/hosts.deny\fR), and compares the
+  entries in these files against entries in the \fIinetd\fR or \fItlid\fR
+  network configuration files.
+  .PP
+--- 8,14 ----
+  \fItcpdchk\fR examines your tcp wrapper configuration and reports all
+  potential and real problems it can find. The program examines the
+  \fItcpd\fR access control files (by default, these are
+! \fI!!PREFIX!!/etc/hosts.allow\fR and \fI!!PREFIX!!/etc/hosts.deny\fR), and compares the
+  entries in these files against entries in the \fIinetd\fR or \fItlid\fR
+  network configuration files.
+  .PP
+***************
+*** 44,52 ****
+  .PP
+  The default locations of the \fItcpd\fR access control tables are:
+  .PP
+! /etc/hosts.allow
+  .br
+! /etc/hosts.deny
+  .SH SEE ALSO
+  .na
+  .nf
+--- 44,52 ----
+  .PP
+  The default locations of the \fItcpd\fR access control tables are:
+  .PP
+! !!PREFIX!!/etc/hosts.allow
+  .br
+! !!PREFIX!!/etc/hosts.deny
+  .SH SEE ALSO
+  .na
+  .nf
