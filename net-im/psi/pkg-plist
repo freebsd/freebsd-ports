@@ -3,6 +3,7 @@ share/psi/COPYING
 share/psi/README
 share/psi/certs/README
 share/psi/certs/rootcert.xml
+share/psi/designer/libpsiwidgets.so
 share/psi/iconsets/emoticons/README
 share/psi/iconsets/emoticons/default/angry.png
 share/psi/iconsets/emoticons/default/bat.png
@@ -55,6 +56,7 @@ share/psi/iconsets/roster/default/chat.png
 share/psi/iconsets/roster/default/connect.png
 share/psi/iconsets/roster/default/dnd.png
 share/psi/iconsets/roster/default/ffc.png
+share/psi/iconsets/roster/default/file.png
 share/psi/iconsets/roster/default/groupclose.png
 share/psi/iconsets/roster/default/groupempty.png
 share/psi/iconsets/roster/default/groupopen.png
@@ -141,6 +143,7 @@ share/psi/iconsets/system/default/changeacc.png
 share/psi/iconsets/system/default/chatclear.png
 share/psi/iconsets/system/default/close.png
 share/psi/iconsets/system/default/configure_toolbars.png
+share/psi/iconsets/system/default/download.png
 share/psi/iconsets/system/default/edit.png
 share/psi/iconsets/system/default/editclear.png
 share/psi/iconsets/system/default/editcopy.png
@@ -148,6 +151,8 @@ share/psi/iconsets/system/default/editcut.png
 share/psi/iconsets/system/default/editdelete.png
 share/psi/iconsets/system/default/editpaste.png
 share/psi/iconsets/system/default/edittrash.png
+share/psi/iconsets/system/default/eye_blue.png
+share/psi/iconsets/system/default/filemanager.png
 share/psi/iconsets/system/default/groupchat.png
 share/psi/iconsets/system/default/help.png
 share/psi/iconsets/system/default/history.png
@@ -181,11 +186,14 @@ share/psi/iconsets/system/default/ssl_yes.png
 share/psi/iconsets/system/default/stop.png
 share/psi/iconsets/system/default/time.png
 share/psi/iconsets/system/default/tip.png
+share/psi/iconsets/system/default/upload.png
 share/psi/iconsets/system/default/url.png
 share/psi/iconsets/system/default/vcard.png
 share/psi/iconsets/system/default/xml.png
 share/psi/sound/chat1.wav
 share/psi/sound/chat2.wav
+share/psi/sound/ft_complete.wav
+share/psi/sound/ft_incoming.wav
 share/psi/sound/offline.wav
 share/psi/sound/online.wav
 share/psi/sound/send.wav
@@ -206,5 +214,6 @@ share/psi/sound/send.wav
 @dirrm share/psi/iconsets/emoticons/default
 @dirrm share/psi/iconsets/emoticons
 @dirrm share/psi/iconsets
+@dirrm share/psi/designer
 @dirrm share/psi/certs
 @dirrm share/psi
