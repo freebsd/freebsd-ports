@@ -1,0 +1,10 @@
+PloneLanguageTool is a product for Zope/CMF
+
+Provides a portal_languages tool that you can add to your Plone site in the
+ZMI. You can select the allowed and default languages and choose from a number
+of negotiation schemes.
+
+WWW: http://plone.org/collective
+
+- Khairil Yusof
+kaeru@inigo-tech.com
