@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.8
-PORTREVISION=	3
+PORTVERSION=	1.2.9
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
@@ -32,7 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		INPUT_PLUGINS="${INPUT_PLUGINS}" \
 		OUTPUT_PLUGINS="${OUTPUT_PLUGINS}" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
-MAN1=		gnomexmms.1 wmxmms.1 xmms.1
+MAN1=		wmxmms.1 xmms.1
 
 CONFLICTS=	ru-xmms-*
 

@@ -10,6 +10,7 @@ include/xmms/titlestring.h
 include/xmms/util.h
 include/xmms/xmmsctrl.h
 lib/libxmms.a
+lib/libxmms.so
 lib/libxmms.so.4
 lib/xmms/Effect/libecho.so
 lib/xmms/Effect/libstereo.so
@@ -59,6 +60,7 @@ share/locale/ko/LC_MESSAGES/xmms.mo
 share/locale/lt/LC_MESSAGES/xmms.mo
 share/locale/lv/LC_MESSAGES/xmms.mo
 share/locale/mk/LC_MESSAGES/xmms.mo
+share/locale/ms/LC_MESSAGES/xmms.mo
 share/locale/nl/LC_MESSAGES/xmms.mo
 share/locale/nn/LC_MESSAGES/xmms.mo
 share/locale/no/LC_MESSAGES/xmms.mo
@@ -78,7 +80,6 @@ share/locale/th/LC_MESSAGES/xmms.mo
 share/locale/tr/LC_MESSAGES/xmms.mo
 share/locale/uk/LC_MESSAGES/xmms.mo
 share/locale/uz/LC_MESSAGES/xmms.mo
-share/locale/uz@Cyrl/LC_MESSAGES/xmms.mo
 share/locale/vi/LC_MESSAGES/xmms.mo
 share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN/LC_MESSAGES/xmms.mo
