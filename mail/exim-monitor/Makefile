@@ -1,4 +1,4 @@
-# New ports collection makefile for:	exim-minitor
+# New ports collection makefile for:	exim-monitor
 # Date created:		27 August 2001
 # Whom:			sheldonh@FreeBSD.org
 #
