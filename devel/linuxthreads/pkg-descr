@@ -9,3 +9,6 @@ LinuxThreads implementation see:
 
 Note that LinuxThreads has been integrated with the GNU C library (glibc) since
 version 2.0, so the above URL points to dated information.
+
+The FreeBSD source code should be installed in /usr/src before building
+linuxthreads.
