@@ -28,8 +28,8 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-#klaptop doesn't like alpha because alpha doesn't support apm
-.if ${MACHINE_ARCH} == "alpha"
+#klaptop doesn't like alpha and ia64 because they don't support apm
+.if (${MACHINE_ARCH} == "alpha") || (${MACHINE_ARCH} == "ia64")
 WITHOUT_KLAPTOP	=yes
 .endif # ${MACHINE_ARCH} == "alpha"
 
