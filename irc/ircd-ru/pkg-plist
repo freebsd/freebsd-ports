@@ -1,0 +1,33 @@
+sbin/ircd
+sbin/mkpasswd
+etc/ircd-ru/example.conf
+etc/ircd-ru/example.motd
+etc/ircd-ru/example.smotd
+etc/ircd-ru/ru_RU.CP1251/example.motd
+etc/ircd-ru/ru_RU.CP1251/example.smotd
+etc/ircd-ru/ru_RU.KOI8-R/example.conf
+share/doc/ircd-ru/README.Ilines
+share/doc/ircd-ru/opers.txt
+share/doc/ircd-ru/ru_RU.KOI8-R/FAQ.ircd-RU
+share/doc/ircd-ru/ru_RU.KOI8-R/README.ircd-RU
+share/ircd-ru/codepages/cp1251.cp
+share/ircd-ru/codepages/cp866.cp
+share/ircd-ru/codepages/iso8859-5.cp
+share/ircd-ru/codepages/koi8-f.cp
+share/ircd-ru/codepages/koi8-r.cp
+share/ircd-ru/codepages/translit.cp
+@dirrm etc/ircd-ru/ru_RU.CP1251
+@dirrm etc/ircd-ru/ru_RU.KOI8-R
+@dirrm share/ircd-ru/codepages
+@dirrm share/ircd-ru/modules
+@dirrm share/ircd-ru/
+@dirrm share/doc/ircd-ru/ru_RU.KOI8-R
+@dirrm share/doc/ircd-ru
+@exec mkdir -m 755 %%VARDIR%%/log/ircd-ru
+@exec chown ircd:ircd %%VARDIR%%/log/ircd-ru
+@exec mkdir -m 755 %%VARDIR%%/run/ircd-ru
+@exec chown ircd:ircd %%VARDIR%%/run/ircd-ru
+@unexec rm -R %%VARDIR%%/run/ircd-ru > /dev/null
+@unexec rm -R %%VARDIR%%/log/ircd-ru > /dev/null
+@unexec rm /usr/local/etc/rc.d/ircd.sh
+@unexec echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'

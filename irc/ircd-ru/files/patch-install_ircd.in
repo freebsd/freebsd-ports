@@ -1,0 +1,442 @@
+--- tools/install_ircd.in.orig	17 Apr 2003 13:10:36 -0000	1.1.8.9
++++ tools/install_ircd.in	30 Jul 2003 12:52:17 -0000
+@@ -5,63 +5,99 @@
+ 
+ # $Id: install_ircd.in,v 1.1.8.9 2003/04/17 13:10:36 rzhe Exp $
+ 
+-DPATH=`@INSTALL_GREP@DPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-SPATH=${DPATH}/`@INSTALL_GREP@SPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-CPDIR=${DPATH}/`@INSTALL_GREP@CPDIR' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-MDIR=${DPATH}/`@INSTALL_GREP@MDIR' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-CPATH=${DPATH}/`@INSTALL_GREP@CPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-KPATH=${DPATH}/`@INSTALL_GREP@KPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-MPATH=${DPATH}/`@INSTALL_GREP@MPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-SMPATH=${DPATH}/`@INSTALL_GREP@SMPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-LPATH=${DPATH}/`@INSTALL_GREP@LPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-PPATH=${DPATH}/`@INSTALL_GREP@PPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-HPATH=${DPATH}/`@INSTALL_GREP@HPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-EPATH=${DPATH}/`@INSTALL_GREP@EPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-MCPATH=${DPATH}/`@INSTALL_GREP@MCPATH' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-USE_USERLOGFILE=`@INSTALL_GREP@USE_USERLOGFILE' include/config.h`; #'
+-USE_OPERLOGFILE=`@INSTALL_GREP@USE_OPERLOGFILE' include/config.h`; #'
+-USE_SYSLOGFILE=`@INSTALL_GREP@USE_SYSLOGFILE' include/config.h`; #'
+-FNAME_USERLOG=`@INSTALL_GREP@FNAME_USERLOG' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-FNAME_OPERLOG=`@INSTALL_GREP@FNAME_OPERLOG' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-FNAME_SYSLOG=`@INSTALL_GREP@FNAME_SYSLOG' include/paths.h|awk '{print $3}'|tr -d \"`; #'
+-
+-dir_SPATH=`dirname ${SPATH}`;
+-dir_CPATH=`dirname ${CPATH}`;
+-dir_MPATH=`dirname ${MPATH}`;
+-dir_SMPATH=`dirname ${SMPATH}`;
+-dir_KPATH=`dirname ${KPATH}`;
+-dir_LPATH=`dirname ${LPATH}`;
+-dir_PPATH=`dirname ${PPATH}`;
+-dir_HPATH=`dirname ${HPATH}`;
+-dir_EPATH=`dirname ${EPATH}`;
+-dir_MCPATH=`dirname ${MCPATH}`;
+-if [ ! -z "${USE_USERLOGFILE}" ] ; then
+-	FNAME_USERLOG=${DPATH}/${FNAME_USERLOG};
+-	dir_FNAME_USERLOG=`dirname ${FNAME_USERLOG}`;
+-fi;
+-if [ ! -z "${USE_OPERLOGFILE}" ] ; then
+-	FNAME_OPERLOG=${DPATH}/${FNAME_OPERLOG}
+-	dir_FNAME_OPERLOG=`dirname ${FNAME_OPERLOG}`;
+-fi;
+-if [ ! -z "${USE_SYSLOGFILE}" ] ; then
+-	FNAME_SYSLOG=${DPATH}/${FNAME_SYSLOG};
+-	dir_FNAME_SYSLOG=`dirname ${FNAME_SYSLOG}`;
+-fi;
+-
+-CONF=${dir_CPATH}/example.conf;
+-MOTD=${dir_MPATH}/example.motd;
+-SMOTD=${dir_SMPATH}/example.smotd;
+-KLINE=${dir_KPATH}/kline.conf;
+-
+-IRCD_SRC='src/ircd@BIN_SUF@';
+-CHKCONF_SRC='tools/chkconf@BIN_SUF@';
+-FIXKLINES_SRC='tools/fixklines@BIN_SUF@';
+-MKPASSWD_SRC='tools/mkpasswd@BIN_SUF@';
+-VICONF_SRC='tools/viconf@BIN_SUF@';
+-CHKCONF_DST=${dir_SPATH}/chkconf@BIN_SUF@;
+-FIXKLINES_DST=${dir_SPATH}/fixklines@BIN_SUF@;
+-MKPASSWD_DST=${dir_SPATH}/mkpasswd@BIN_SUF@;
+-VICONF_DST=${dir_SPATH}/viconf@BIN_SUF@;
++DPATH=`awk '/^#define@AWKSP@DPATH/ {print $3}' include/paths.h | tr -d \"`
++SPATH=`awk '/^#define@AWKSP@SPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $SPATH | awk '/^\// {print $1}'` ] ; then
++	SPATH=$DPATH/$SPATH
++fi
++CPDIR=`awk '/^#define@AWKSP@CPDIR/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $CPDIR | awk '/^\// {print $1}'` ] ; then
++	CPDIR=$DPATH/$CPDIR
++fi
++MDIR=`awk '/^#define@AWKSP@MDIR/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $MDIR | awk '/^\// {print $1}'` ] ; then
++	MDIR=$DPATH/$MDIR
++fi
++CPATH=`awk '/^#define@AWKSP@CPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $CPATH | awk '/^\// {print $1}'` ] ; then
++	CPATH=$DPATH/$CPATH
++fi
++KPATH=`awk '/^#define@AWKSP@KPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $KPATH | awk '/^\// {print $1}'` ] ; then
++	KPATH=$DPATH/$KPATH
++fi
++MPATH=`awk '/^#define@AWKSP@MPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $MPATH | awk '/^\// {print $1}'` ] ; then
++	MPATH=$DPATH/$MPATH
++fi
++SMPATH=`awk '/^#define@AWKSP@SMPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $SMPATH | awk '/^\// {print $1}'` ] ; then
++	SMPATH=$DPATH/$SMPATH
++fi
++LPATH=`awk '/^#define@AWKSP@LPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $LPATH | awk '/^\// {print $1}'` ] ; then
++	LPATH=$DPATH/$LPATH
++fi
++PPATH=`awk '/^#define@AWKSP@PPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $PPATH | awk '/^\// {print $1}'` ] ; then
++	PPATH=$DPATH/$PPATH
++fi
++HPATH=`awk '/^#define@AWKSP@HPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $HPATH | awk '/^\// {print $1}'` ] ; then
++	HPATH=$DPATH/$HPATH
++fi
++EPATH=`awk '/^#define@AWKSP@EPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $EPATH | awk '/^\// {print $1}'` ] ; then
++	EPATH=$DPATH/$EPATH
++fi
++MCPATH=`awk '/^#define@AWKSP@MCPATH/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $MCPATH | awk '/^\// {print $1}'` ] ; then
++	MCPATH=$DPATH/$MCPATH
++fi
++USE_USERLOGFILE=`awk '/^#define@AWKSP@USE_USERLOGFILE/ {print $2}' include/config.h`
++USE_OPERLOGFILE=`awk '/^#define@AWKSP@USE_OPERLOGFILE/ {print $2}' include/config.h`
++USE_SYSLOGFILE=`awk '/^#define@AWKSP@USE_SYSLOGFILE/ {print $2}' include/config.h`
++FNAME_USERLOG=`awk '/^#define@AWKSP@FNAME_USERLOG/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $FNAME_USERLOG | awk '/^\// {print $1}'` ] ; then
++	FNAME_USERLOG=$DPATH/$FNAME_USERLOG
++fi
++FNAME_OPERLOG=`awk '/^#define@AWKSP@FNAME_OPERLOG/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $FNAME_OPERLOG | awk '/^\// {print $1}'` ] ; then
++	FNAME_OPERLOG=$DPATH/$FNAME_OPERLOG
++fi
++FNAME_SYSLOG=`awk '/^#define@AWKSP@FNAME_SYSLOG/ {print $3}' include/paths.h | tr -d \"`
++if [ -z `echo $FNAME_SYSLOG | awk '/^\// {print $1}'` ] ; then
++	FNAME_SYSLOG=$DPATH/$FNAME_SYSLOG
++fi
++
++dir_SPATH=`dirname $SPATH`
++dir_CPATH=`dirname $CPATH`
++dir_MPATH=`dirname $MPATH`
++dir_SMPATH=`dirname $SMPATH`
++dir_KPATH=`dirname $KPATH`
++dir_LPATH=`dirname $LPATH`
++dir_PPATH=`dirname $PPATH`
++dir_HPATH=`dirname $HPATH`
++dir_EPATH=`dirname $EPATH`
++dir_MCPATH=`dirname $MCPATH`
++if [ ! -z $USE_USERLOGFILE ] ; then
++	dir_FNAME_USERLOG=`dirname $FNAME_USERLOG`
++fi
++if [ ! -z $USE_OPERLOGFILE ] ; then
++	dir_FNAME_OPERLOG=`dirname $FNAME_OPERLOG`
++fi
++if [ ! -z $USE_SYSLOGFILE ] ; then
++	dir_FNAME_SYSLOG=`dirname $FNAME_SYSLOG`
++fi
++
++CONF=$dir_CPATH/example.conf
++MOTD=$dir_MPATH/example.motd
++SMOTD=$dir_SMPATH/example.smotd
++KLINE=$dir_KPATH/kline.conf
++
++IRCD_SRC='src/ircd@BIN_SUF@'
++MKPASSWD_SRC='tools/mkpasswd@BIN_SUF@'
++MKPASSWD_DST=$dir_SPATH/mkpasswd@BIN_SUF@
+ 
+ #   DPATH = directory,
+ #   SPATH = server executable,
+@@ -81,178 +117,157 @@
+ 
+ # install ircd, save old one as ircd.old
+ 
+-if [ ! -f ${SPATH} ] ; then
+-	echo installing ${IRCD_SRC} as ${SPATH} ...;
+-	./install-sh -c -m 755 ${IRCD_SRC} ${SPATH};
++if [ ! -f $SPATH ] ; then
++	echo installing $IRCD_SRC as $SPATH ...
++	./install-sh -c -m 755 $IRCD_SRC $SPATH
+ else
+-	echo installing ${IRCD_SRC} as ${SPATH} ...;
+-	echo previous ${SPATH} saved as ${SPATH}.old ...;
+-	mv ${SPATH} ${SPATH}.old;
+-	./install-sh -c -m 755 ${IRCD_SRC} ${SPATH};
+-fi;
++	echo installing $IRCD_SRC as $SPATH ...
++	echo previous $SPATH saved as $SPATH.old ...
++	mv $SPATH $SPATH.old;
++	./install-sh -c -m 755 $IRCD_SRC $SPATH
++fi
+ 
+ # try to install tools, unless it already exists.
+ 
+-#if [ ! -f ${CHKCONF_DST} ] ; then
+-#	echo installing ${CHKCONF_SRC} as ${CHKCONF_DST} ...;
+-#	./install-sh -c -m 755 ${CHKCONF_SRC} ${CHKCONF_DST};
+-#else
+-#	echo You already have an ${CHKCONF_DST} file;
+-#fi;
+-
+-#if [ ! -f ${FIXKLINES_DST} ] ; then
+-#	echo installing ${FIXKLINES_SRC} as ${FIXKLINES_DST} ...;
+-#	./install-sh -c -m 755 ${FIXKLINES_SRC} ${FIXKLINES_DST};
+-#else
+-#	echo You already have an ${FIXKLINES_DST} file;
+-#fi;
+-
+-if [ ! -f ${MKPASSWD_DST} ] ; then
+-	echo installing ${MKPASSWD_SRC} as ${MKPASSWD_DST} ...;
+-	./install-sh -c -m 755 ${MKPASSWD_SRC} ${MKPASSWD_DST};
++if [ ! -f $MKPASSWD_DST ] ; then
++	echo installing $MKPASSWD_SRC as $MKPASSWD_DST ...
++	./install-sh -c -m 755 $MKPASSWD_SRC $MKPASSWD_DST
+ else
+-	echo You already have an ${MKPASSWD_DST} file;
+-fi;
+-
+-#if [ ! -f ${VICONF_DST} ] ; then
+-#	echo installing ${VICONF_SRC} as ${VICONF_DST} ...;
+-#	./install-sh -c -m 755 ${VICONF_SRC} ${VICONF_DST};
+-#else
+-#	echo You already have an ${VICONF_DST} file;
+-#fi;
++	echo You already have an $MKPASSWD_DST file
++fi
+ 
+ # try to install codepages.
+ 
+-if [ ! -d ${CPDIR} ] ; then
+-	echo creating ${CPDIR} directory ...;
+-	./install-sh -d ${CPDIR};
+-fi;
++if [ ! -d $CPDIR ] ; then
++	echo creating $CPDIR directory ...
++	./install-sh -d $CPDIR
++fi
+ 
+-echo installing codepages ...;
++echo installing codepages ...
+ 
+ for i in codepages/*.cp
+ do
+-	./install-sh -c -m 644 $i ${CPDIR}/`basename $i`;
++	./install-sh -c -m 644 $i $CPDIR/`basename $i`
+ done
+ 
+ # try to create modules directory, unless it already exists.
+ 
+-if [ ! -d ${MDIR} ] ; then
+-	echo creating ${MDIR} directory ...;
+-	./install-sh -d ${MDIR};
+-fi;
++if [ ! -d $MDIR ] ; then
++	echo creating $MDIR directory ...
++	./install-sh -d $MDIR
++fi
+ 
+ # try to install their .conf file.
+ 
+-echo installing a sample ${CONF} ...;
+-./install-sh -c -m 644 doc/example.conf ${CONF};
++echo installing a sample $CONF ...
++./install-sh -c -m 644 doc/example.conf $CONF
+ 
+ # try to install their .motd file.
+  
+-echo installing a sample ${MOTD} ...;
+-./install-sh -c -m 644 doc/example.motd ${MOTD};
++echo installing a sample $MOTD ...
++./install-sh -c -m 644 doc/example.motd $MOTD
+ 
+ # try to install their .smotd file.
+  
+-echo installing a sample ${SMOTD} ...;
+-./install-sh -c -m 644 doc/example.smotd ${SMOTD};
++echo installing a sample $SMOTD ...
++./install-sh -c -m 644 doc/example.smotd $SMOTD
+ 
+-echo installing other samples ...;
+-./install-sh -c -m 644 doc/ru_RU.KOI8-R/example.conf ${dir_CPATH}/ru_RU.KOI8-R/example.conf;
+-./install-sh -c -m 644 doc/ru_RU.CP1251/example.motd ${dir_MPATH}/ru_RU.CP1251/example.motd;
+-./install-sh -c -m 644 doc/ru_RU.CP1251/example.smotd ${dir_SMPATH}/ru_RU.CP1251/example.smotd;
++echo installing other samples ...
++./install-sh -c -m 644 doc/ru_RU.KOI8-R/example.conf $dir_CPATH/ru_RU.KOI8-R/example.conf
++./install-sh -c -m 644 doc/ru_RU.CP1251/example.motd $dir_MPATH/ru_RU.CP1251/example.motd
++./install-sh -c -m 644 doc/ru_RU.CP1251/example.smotd $dir_SMPATH/ru_RU.CP1251/example.smotd
+ 
+ # try to install their kpath file unless it already exists.
+ 
+-if [ ! -d ${dir_KPATH} ] ; then
+-	echo creating ${dir_KPATH} directory ...;
+-	./install-sh -d ${dir_KPATH};
+-fi;
+-
+-if [ ! -f ${KPATH} ] ; then
+-	echo touching ${KPATH} ...;
+-	touch ${KPATH};
++if [ ! -d $dir_KPATH ] ; then
++	echo creating $dir_KPATH directory ...
++	./install-sh -d $dir_KPATH
++fi
++
++if [ ! -f $KPATH ] ; then
++	echo touching $KPATH ...
++	touch $KPATH
+ else
+-	echo You already have an ${KPATH} file;
+-fi;
++	echo You already have an $KPATH file
++fi
+ 
+ # try to install their opers.txt file. 
+  
+-echo installing opers.txt as ${HPATH} ...;
+-./install-sh -c -m 644 opers.txt ${HPATH};
++echo installing opers.txt as $HPATH ...
++./install-sh -c -m 644 opers.txt $HPATH
+ 
+-echo installing other docs to ${dir_HPATH} ...;
+-./install-sh -c -m 644 doc/README.Ilines ${dir_HPATH}/README.Ilines;
+-./install-sh -c -m 644 doc/ru_RU.KOI8-R/FAQ.ircd-RU ${dir_HPATH}/ru_RU.KOI8-R/FAQ.ircd-RU;
+-./install-sh -c -m 644 doc/ru_RU.KOI8-R/README.ircd-RU ${dir_HPATH}/ru_RU.KOI8-R/README.ircd-RU;
++echo installing other docs to $dir_HPATH ...
++./install-sh -c -m 644 doc/README.Ilines $dir_HPATH/README.Ilines
++./install-sh -c -m 644 doc/ru_RU.KOI8-R/FAQ.ircd-RU $dir_HPATH/ru_RU.KOI8-R/FAQ.ircd-RU
++./install-sh -c -m 644 doc/ru_RU.KOI8-R/README.ircd-RU $dir_HPATH/ru_RU.KOI8-R/README.ircd-RU
+ 
+ # try to prepare directory for logs and create log files, unless they already
+ # exists.
+ 
+-if [ ! -d ${dir_LPATH} ] ; then
+-	echo creating ${dir_LPATH} directory ...;
+-	./install-sh -d ${dir_LPATH};
+-fi;
+-
+-if [ -n "${dir_FNAME_USERLOG}" ] && [ ! -d ${dir_FNAME_USERLOG} ] ; then
+-	echo creating ${dir_FNAME_USERLOG} directory ...;
+-	./install-sh -d ${dir_FNAME_USERLOG};
+-fi;
+-
+-if [ -n "${dir_FNAME_OPERLOG}" ] && [ ! -d ${dir_FNAME_OPERLOG} ] ; then
+-	echo creating ${dir_FNAME_OPERLOG} directory ...;
+-	./install-sh -d ${dir_FNAME_OPERLOG};
+-fi;
+-
+-if [ -n "${dir_FNAME_SYSLOG}" ] && [ ! -d ${dir_FNAME_SYSLOG} ] ; then
+-	echo creating ${dir_FNAME_SYSLOG} directory ...;
+-	./install-sh -d ${dir_FNAME_SYSLOG};
+-fi;
+-
+-if [ ! -z "${USE_USERLOGFILE}" ] ; then
+-	if [ ! -f ${FNAME_USERLOG} ] ; then
+-		echo touching ${FNAME_USERLOG} ...;
+-		touch ${FNAME_USERLOG};
++if [ ! -d $dir_LPATH ] ; then
++	echo creating $dir_LPATH directory ...
++	./install-sh -d $dir_LPATH
++fi
++
++if [ -n $dir_FNAME_USERLOG ] && [ ! -d $dir_FNAME_USERLOG ] ; then
++	echo creating $dir_FNAME_USERLOG directory ...
++	./install-sh -d $dir_FNAME_USERLOG
++fi
++
++if [ -n $dir_FNAME_OPERLOG ] && [ ! -d $dir_FNAME_OPERLOG ] ; then
++	echo creating $dir_FNAME_OPERLOG directory ...
++	./install-sh -d $dir_FNAME_OPERLOG
++fi
++
++if [ -n $dir_FNAME_SYSLOG ] && [ ! -d $dir_FNAME_SYSLOG ] ; then
++	echo creating $dir_FNAME_SYSLOG directory ...
++	./install-sh -d $dir_FNAME_SYSLOG
++fi
++
++if [ ! -z $USE_USERLOGFILE ] ; then
++	if [ ! -f $FNAME_USERLOG ] ; then
++		echo touching $FNAME_USERLOG ...
++		touch $FNAME_USERLOG
+ 	else
+-		echo You already have an ${FNAME_USERLOG} file;
+-	fi;
+-fi;
+-
+-if [ ! -z "${USE_OPERLOGFILE}" ] ; then
+-	if [ ! -f ${FNAME_OPERLOG} ] ; then
+-		echo touching ${FNAME_OPERLOG} ...;
+-		touch ${FNAME_OPERLOG};
++		echo You already have an $FNAME_USERLOG file
++	fi
++fi
++
++if [ ! -z $USE_OPERLOGFILE ] ; then
++	if [ ! -f $FNAME_OPERLOG ] ; then
++		echo touching $FNAME_OPERLOG ...
++		touch $FNAME_OPERLOG
+ 	else
+-		echo You already have an ${FNAME_OPERLOG} file;
+-	fi;
+-fi;
+-
+-if [ ! -z "${USE_SYSLOGFILE}" ] ; then
+-	if [ ! -f ${FNAME_SYSLOG} ] ; then
+-		echo touching ${FNAME_SYSLOG} ...;
+-		touch ${FNAME_SYSLOG};
++		echo You already have an $FNAME_OPERLOG file
++	fi
++fi
++
++if [ ! -z $USE_SYSLOGFILE ] ; then
++	if [ ! -f $FNAME_SYSLOG ] ; then
++		echo touching $FNAME_SYSLOG ...
++		touch $FNAME_SYSLOG
+ 	else
+-		echo You already have an ${FNAME_SYSLOG} file;
+-	fi;
+-fi;
++		echo You already have an $FNAME_SYSLOG file
++	fi
++fi
+ 
+ # try to create run directory, unless it already exists.
+ 
+-if [ ! -d ${dir_PPATH} ] ; then
+-	echo creating ${dir_PPATH} directory ...;
+-	./install-sh -d ${dir_PPATH};
+-fi;
++if [ ! -d $dir_PPATH ] ; then
++	echo creating $dir_PPATH directory ...
++	./install-sh -d $dir_PPATH
++fi
+ 
+ # try to create directory for EPATH, unless it already exists.
+ 
+-if [ ! -d ${dir_EPATH} ] ; then
+-	echo creating ${dir_EPATH} directory ...;
+-	./install-sh -d ${dir_EPATH};
+-fi;
++if [ ! -d $dir_EPATH ] ; then
++	echo creating $dir_EPATH directory ...
++	./install-sh -d $dir_EPATH
++fi
+ 
+ # try to create directory for MCPATH, unless it already exists.
+ 
+-if [ ! -d ${dir_MCPATH} ] ; then
+-	echo creating ${dir_MCPATH} directory ...;
+-	./install-sh -d ${dir_MCPATH};
+-fi;
++if [ ! -d $dir_MCPATH ] ; then
++	echo creating $dir_MCPATH directory ...
++	./install-sh -d $dir_MCPATH
++fi

@@ -1,0 +1,10 @@
+A port of the ircd-RU IRC daemon.
+
+ ircd-RU is a modern and powerful IRC server which is based on Bahamut,
+ the DALnet IRC server software, and supports translation schemes, 8-bit
+ nicknames, 8-bit case-insensitive names processing, DNSBL support and lots
+ of other useful features. 
+
+WWW: http://www.ircd.ru/
+
+- Khamushkin Ilya <ilya@ircd.ru>

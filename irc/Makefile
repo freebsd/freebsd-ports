@@ -21,6 +21,7 @@
     SUBDIR += ircII
     SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
+    SUBDIR += ircd-ru
     SUBDIR += irchat-pj-emacs20
     SUBDIR += irchat-pj-emacs21
     SUBDIR += irchat-pj-xemacs-devel-mule
