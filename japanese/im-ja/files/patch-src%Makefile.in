@@ -1,16 +1,22 @@
-*** src/Makefile.in.orig	Tue Sep  2 15:57:53 2003
---- src/Makefile.in	Tue Sep  2 15:58:09 2003
+*** src/Makefile.in.orig	Wed Jan  7 12:14:24 2004
+--- src/Makefile.in	Wed Jan  7 12:25:38 2004
 ***************
-*** 547,553 ****
+*** 2429,2438 ****
   
+  
+  ../IMdkit/libXimd.a :
+! 	cd ../IMdkit; make
   
   gtk.immodules: Makefile.am $(module_LTLIBRARIES)
 ! 	/usr/bin/gtk-query-immodules-2.0 im-ja.la > gtk.immodules
   
   all-local: gtk.immodules
   
---- 547,553 ----
+--- 2429,2438 ----
   
+  
+  ../IMdkit/libXimd.a :
+! 	cd ../IMdkit; $(MAKE)
   
   gtk.immodules: Makefile.am $(module_LTLIBRARIES)
 ! 	gtk-query-immodules-2.0 im-ja.la > gtk.immodules
