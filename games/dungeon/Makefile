@@ -8,24 +8,11 @@
 PORTNAME=	dungeon
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
-		http://wuarchive.wustl.edu/doc/misc/if-archive/games/source/ \
-		http://ftp.nodomainname.net/pub/mirrors/if-archive/games/source/ \
-		ftp://ftp.ifarchive.com/if-archive/games/source/ \
-		ftp://www.plover.net/if-archive/games/source/ \
-		ftp://ftp.guetech.org/if-archive/games/source/ \
-		ftp://ftp.funet.fi/pub/misc/if-archive/games/source/ \
-		http://www.planetmirror.com/pub/if-archive/games/source/ \
-		ftp://ftp.planetmirror.com/pub/if-archive/games/source/ \
-		ftp://mirror.holmoak.co.uk/if-archive/games/source/
+MASTER_SITES=	ftp://ftp.gmd.de/if-archive/games/source/
 DISTFILES=	dungn27s.zip dungn32b.zip
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Text adventure game of ZORK
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 EXTRACT_ONLY=	dungn27s.zip
 
