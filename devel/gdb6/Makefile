@@ -59,8 +59,8 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect readline sim tcl texinfo
-.for f in freebsd-uthread.c kvm-fbsd.c
-	${LN} -sf ${FILESDIR}/${f} ${WRKSRC}/gdb
+.for f in freebsd-uthread.c kvm-fbsd.c kvm-fbsd-${ARCH}.h
+	${LN} -sf ${FILESDIR}/${f} ${WRKSRC}/gdb/${f:C/-${ARCH}//}
 .endfor
 	${LN} -sf ${FILESDIR}/nm-fbsd.h ${WRKSRC}/gdb/config
 
