@@ -1,6 +1,6 @@
-diff -urN jack-audio-connection-kit-0.94.0/configure.in configure.in
---- jack-audio-connection-kit-0.94.0/configure.in	2004-01-13 04:43:12.000000000 +0200
-+++ configure.in	2004-02-14 16:21:26.000000000 +0200
+diff -urN jack-audio-connection-kit-0.94.0.orig/configure.in configure.in
+--- jack-audio-connection-kit-0.94.0.orig/configure.in	2004-01-13 04:43:12.000000000 +0200
++++ configure.in	2004-03-15 21:24:21.000000000 +0200
 @@ -116,7 +116,7 @@
  
  JACK_CORE_CFLAGS="-I\$(top_srcdir) -I\$(top_builddir) -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -Wall"
@@ -27,14 +27,14 @@ diff -urN jack-audio-connection-kit-0.94.0/configure.in configure.in
  example-clients/Makefile
  doc/Makefile
  doc/reference.doxygen
-diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/Makefile.am drivers/oss/Makefile.am
---- jack-audio-connection-kit-0.94.0/drivers/oss/Makefile.am	1970-01-01 02:00:00.000000000 +0200
-+++ drivers/oss/Makefile.am	2004-02-14 16:21:26.000000000 +0200
+diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/Makefile.am drivers/oss/Makefile.am
+--- jack-audio-connection-kit-0.94.0.orig/drivers/oss/Makefile.am	1970-01-01 02:00:00.000000000 +0200
++++ drivers/oss/Makefile.am	2004-03-15 21:25:01.000000000 +0200
 @@ -0,0 +1,14 @@
 +MAINTAINCLEANFILES = Makefile.in
 +
 +AM_CFLAGS = $(JACK_CFLAGS) -I/opt/oss/include -D_XOPEN_SOURCE=600 -DUSE_BARRIER
-+#AM_CFLAGS = $(JACK_CFLAGS) -I/opt/oss/include
++#AM_CFLAGS = $(JACK_CFLAGS) -I/opt/oss/include -D_XOPEN_SOURCE=600
 +AM_LDFLAGS = $(JACK_LDFLAGS) -lpthread -lrt
 +
 +plugindir = $(ADDON_DIR)
@@ -45,10 +45,10 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/Makefile.am drivers/oss/M
 +jack_oss_la_SOURCES = oss_driver.c oss_driver.h
 +
 +noinst_HEADERS = oss_driver.h
-diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/oss_driver.c
---- jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c	1970-01-01 02:00:00.000000000 +0200
-+++ drivers/oss/oss_driver.c	2004-02-14 17:22:53.000000000 +0200
-@@ -0,0 +1,1171 @@
+diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c drivers/oss/oss_driver.c
+--- jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c	1970-01-01 02:00:00.000000000 +0200
++++ drivers/oss/oss_driver.c	2004-03-15 21:35:09.000000000 +0200
+@@ -0,0 +1,1189 @@
 +/*
 +
 +	OSS driver for Jack
@@ -86,12 +86,8 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +#include <sys/soundcard.h>
 +#include <stdarg.h>
 +#include <getopt.h>
-+#ifndef USE_BARRIER
-+#include <pthread.h>
-+#else
 +#include <pthread.h>
 +#include <semaphore.h>
-+#endif
 +
 +#include <jack/types.h>
 +#include <jack/internal.h>
@@ -103,15 +99,15 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +
 +#define OSS_DRIVER_N_PARAMS	9
 +const static jack_driver_param_desc_t oss_params[OSS_DRIVER_N_PARAMS] = {
-+	{ "samplerate",
-+	  's',
++	{ "rate",
++	  'r',
 +	  JackDriverParamUInt,
 +	  { .ui = OSS_DRIVER_DEF_FS },
 +	  "sample rate",
 +	  "sample rate"
 +	},
-+	{ "periodsize",
-+	  'b',
++	{ "period",
++	  'p',
 +	  JackDriverParamUInt,
 +	  { .ui = OSS_DRIVER_DEF_BLKSIZE },
 +	  "period size",
@@ -124,36 +120,36 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +	  "word length",
 +	  "word length"
 +	},
-+	{ "capturech",
-+	  'c',
++	{ "inchannels",
++	  'i',
 +	  JackDriverParamUInt,
 +	  { .ui = OSS_DRIVER_DEF_INS },
 +	  "capture channels",
 +	  "capture channels"
 +	},
-+	{ "playbackch",
-+	  'p',
++	{ "outchannels",
++	  'o',
 +	  JackDriverParamUInt,
 +	  { .ui = OSS_DRIVER_DEF_OUTS },
 +	  "playback channels",
 +	  "playback channels"
 +	},
-+	{ "inputdev",
-+	  'i',
++	{ "capture",
++	  'C',
 +	  JackDriverParamString,
-+	  { .str = '\0' },
++	  { .str = OSS_DRIVER_DEF_DEV },
 +	  "input device",
 +	  "input device"
 +	},
-+	{ "outputdev",
-+	  'o',
++	{ "playback",
++	  'P',
 +	  JackDriverParamString,
-+	  { .str = '\0' },
++	  { .str = OSS_DRIVER_DEF_DEV },
 +	  "output device",
 +	  "output device"
 +	},
 +	{ "ignorehwbuf",
-+	  'd',
++	  'b',
 +	  JackDriverParamBool,
 +	  { },
 +	  "ignore hardware period size",
@@ -171,6 +167,34 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +
 +
 +/* internal functions */
++
++
++static inline void update_times (oss_driver_t *driver)
++{
++	driver->last_periodtime = jack_get_microseconds();
++	if (driver->next_periodtime > 0)
++	{
++		driver->iodelay = (float)
++			((long double) driver->last_periodtime - 
++			(long double) driver->next_periodtime);
++	}
++	else driver->iodelay = 0.0F;
++	driver->next_periodtime = 
++		driver->last_periodtime +
++		driver->period_usecs;
++}
++
++
++static inline void driver_cycle (oss_driver_t *driver)
++{
++	update_times(driver);
++	driver->engine->transport_cycle_start(driver->engine,
++		driver->last_periodtime);
++
++	driver->last_wait_ust = driver->last_periodtime;
++	driver->engine->run_cycle(driver->engine, 
++		driver->period_size, driver->iodelay);
++}
 +
 +
 +static void copy_and_convert_in (jack_sample_t *dst, void *src, 
@@ -638,8 +662,8 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +	pthread_mutex_init(&driver->mutex_out, NULL);
 +#	ifdef USE_BARRIER
 +	pthread_barrier_init(&driver->barrier, NULL, 2);
-+	sem_init(&driver->sem_start, 0, 0);
 +#	endif
++	sem_init(&driver->sem_start, 0, 0);
 +	driver->run = 1;
 +	driver->threads = 0;
 +	if (infd >= 0)
@@ -655,9 +679,6 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +	}
 +#	ifdef USE_BARRIER
 +	if (outfd >= 0)
-+#	else
-+	if (outfd >= 0 && infd != outfd)
-+#	endif
 +	{
 +		if (pthread_create(&driver->thread_out, NULL, io_thread,
 +			driver) < 0)
@@ -668,11 +689,14 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +		}
 +		driver->threads |= 2;
 +	}
-+
-+#	ifdef USE_BARRIER
-+	sem_post(&driver->sem_start);
-+	sem_post(&driver->sem_start);
 +#	endif
++
++	if (driver->threads & 1) sem_post(&driver->sem_start);
++	if (driver->threads & 2) sem_post(&driver->sem_start);
++
++	driver->last_periodtime = jack_get_microseconds();
++	driver->next_periodtime = 0;
++	driver->iodelay = 0.0F;
 +
 +	return 0;
 +}
@@ -701,8 +725,8 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +			return -1;
 +		}
 +	}
-+#	ifdef USE_BARRIER
 +	sem_destroy(&driver->sem_start);
++#	ifdef USE_BARRIER
 +	pthread_barrier_destroy(&driver->barrier);
 +#	endif
 +	pthread_mutex_destroy(&driver->mutex_in);
@@ -859,16 +883,12 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +		if (pthread_barrier_wait(&driver->barrier) ==
 +			PTHREAD_BARRIER_SERIAL_THREAD)
 +		{
-+			driver->last_wait_ust = jack_get_microseconds();
-+			driver->engine->run_cycle(driver->engine, 
-+				driver->period_size, 0);
++			driver_cycle(driver);
 +		}
 +	}
 +	else
 +	{
-+		driver->last_wait_ust = jack_get_microseconds();
-+		driver->engine->run_cycle(driver->engine,
-+			driver->period_size, 0);
++		driver_cycle(driver);
 +	}
 +}
 +#endif
@@ -887,7 +907,7 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +		schedpol = SCHED_FIFO;
 +		schedp.sched_priority = sched_get_priority_max(SCHED_FIFO) - 1;
 +		if (pthread_setschedparam(pthread_self(), schedpol, 
-+			&schedp) < 0)
++			&schedp) != 0)
 +		{
 +			puts("oss_driver: pthread_setschedparam() failed\n");
 +		}
@@ -897,9 +917,9 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +		puts("oss_driver: pthread_getschedparam() failed\n");
 +	}
 +
-+#	ifdef USE_BARRIER
 +	sem_wait(&driver->sem_start);
 +
++#	ifdef USE_BARRIER
 +	if (pthread_self() == driver->thread_in)
 +	{
 +		localsize = driver->indevbufsize;
@@ -916,8 +936,8 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +			if (read(driver->infd, localbuf, localsize) <
 +				(ssize_t) localsize)
 +			{
-+				/*jack_error("OSS: read() failed: %s@%i", 
-+					__FILE__, __LINE__);*/
++				jack_error("OSS: read() failed: %s@%i", 
++					__FILE__, __LINE__);
 +				break;
 +			}
 +
@@ -950,8 +970,8 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +			if (write(driver->outfd, localbuf, localsize) < 
 +				(ssize_t) localsize)
 +			{
-+				/*jack_error("OSS: write() failed: %s@%i", 
-+					__FILE__, __LINE__);*/
++				jack_error("OSS: write() failed: %s@%i", 
++					__FILE__, __LINE__);
 +				break;
 +			}
 +
@@ -1006,9 +1026,7 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +			pthread_mutex_unlock(&driver->mutex_in);
 +		}
 +
-+		driver->last_wait_ust = jack_get_microseconds();
-+		driver->engine->run_cycle(driver->engine, 
-+			driver->period_size, 0);
++		driver_cycle(driver);
 +	}
 +
 +	free(localbuf);
@@ -1092,38 +1110,39 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +
 +		switch (param->character)
 +		{
-+			case 's':
++			case 'r':
 +				sample_rate = param->value.ui;
 +				break;
-+			case 'b':
++			case 'p':
 +				period_size = param->value.ui;
 +				break;
 +			case 'w':
 +				bits = param->value.i;
 +				break;
-+			case 'c':
++			case 'i':
 +				capture_channels = param->value.ui;
 +				break;
-+			case 'p':
++			case 'o':
 +				playback_channels = param->value.ui;
 +				break;
-+			case 'i':
++			case 'C':
 +				driver->indev = strdup(param->value.str);
 +				break;
-+			case 'o':
++			case 'P':
 +				driver->outdev = strdup(param->value.str);
 +				break;
-+			case 'd':
++			case 'b':
 +				driver->ignorehwbuf = 1;
 +				break;
 +			case 'h':
-+				puts("-s <fs>\tsample rate");
-+				puts("-b <size>\tperiod size");
++				puts("-r <fs>\tsample rate");
++				puts("-p <size>\tperiod size");
 +				puts("-w <bits>\tword length");
-+				puts("-c <chs>\tcapture channels");
-+				puts("-p <chs>\tplayback channels");
-+				puts("-i <dev>\tcapture device");
-+				puts("-o <dev>\tplayback device");
++				puts("-i <chs>\tcapture channels");
++				puts("-o <chs>\tplayback channels");
++				puts("-C <dev>\tcapture device");
++				puts("-P <dev>\tplayback device");
++				puts("-b\tignore hardware buffer size");
 +				puts("-h\tthis help");
 +				break;
 +		}
@@ -1139,13 +1158,12 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +	driver->period_usecs = 
 +		((double) period_size / (double) sample_rate) * 1e6;
 +	driver->last_wait_ust = 0;
++	driver->last_periodtime = jack_get_microseconds();
++	driver->next_periodtime = 0;
++	driver->iodelay = 0.0F;
 +	
 +	driver->finish = driver_finish;
 +
-+	if (driver->indev == NULL)
-+		driver->indev = strdup("/dev/dsp");
-+	if (driver->outdev == NULL)
-+		driver->outdev = strdup(driver->indev);
 +	driver->infd = -1;
 +	driver->outfd = -1;
 +	switch (driver->bits)
@@ -1220,10 +1238,10 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.c drivers/oss/
 +	free(driver);
 +}
 +
-diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.h drivers/oss/oss_driver.h
---- jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.h	1970-01-01 02:00:00.000000000 +0200
-+++ drivers/oss/oss_driver.h	2004-02-14 17:23:01.000000000 +0200
-@@ -0,0 +1,92 @@
+diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.h drivers/oss/oss_driver.h
+--- jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.h	1970-01-01 02:00:00.000000000 +0200
++++ drivers/oss/oss_driver.h	2004-03-15 21:25:31.000000000 +0200
+@@ -0,0 +1,94 @@
 +/*
 +
 +	OSS driver for Jack
@@ -1250,20 +1268,18 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.h drivers/oss/
 +#ifndef __JACK_OSS_DRIVER_H__
 +#define __JACK_OSS_DRIVER_H__
 +
-+#ifndef USE_BARRIER
-+#include <pthread.h>
-+#else
 +#include <pthread.h>
 +#include <semaphore.h>
-+#endif
 +
 +#include <jack/types.h>
 +#include <jack/jslist.h>
 +#include <jack/driver.h>
++#include <jack/time.h>
 +#include <jack/jack.h>
 +
 +
-+#define OSS_DRIVER_DEF_FS	44100
++#define OSS_DRIVER_DEF_DEV	"/dev/dsp"
++#define OSS_DRIVER_DEF_FS	48000
 +#define OSS_DRIVER_DEF_BLKSIZE	1024
 +#define OSS_DRIVER_DEF_BITS	16
 +#define OSS_DRIVER_DEF_INS	2
@@ -1295,6 +1311,10 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.h drivers/oss/
 +	void *indevbuf;
 +	void *outdevbuf;
 +
++	float iodelay;
++	jack_time_t last_periodtime;
++	jack_time_t next_periodtime;
++
 +	JSList *capture_ports;
 +	JSList *playback_ports;
 +
@@ -1309,8 +1329,8 @@ diff -urN jack-audio-connection-kit-0.94.0/drivers/oss/oss_driver.h drivers/oss/
 +	pthread_mutex_t mutex_out;
 +#	ifdef USE_BARRIER
 +	pthread_barrier_t barrier;
-+	sem_t sem_start;
 +#	endif
++	sem_t sem_start;
 +} oss_driver_t;
 +
 +
