@@ -1,0 +1,8 @@
+sbin/diskprep
+%%EXAMPLESDIR%%/freedos-reboot/README
+%%EXAMPLESDIR%%/freedos-reboot/dosfiles.tar
+%%EXAMPLESDIR%%/freedos-reboot/fdos
+%%EXAMPLESDIR%%/freedos-reboot/mkfdosreboot.sh
+%%EXAMPLESDIR%%/freedos-reboot/node.prep
+@dirrm %%EXAMPLESDIR%%/freedos-reboot
+@dirrm %%EXAMPLESDIR%%
