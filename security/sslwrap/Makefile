@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sslwrap
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.rickk.com/sslwrap/
 DISTNAME=	${PORTNAME}
@@ -15,7 +15,7 @@ MAINTAINER=	ZGabor@CoDe.HU
 
 USE_OPENSSL=	YES
 
-WRKSRC=		${WRKDIR}/sslwrap205
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin/sslwrap
