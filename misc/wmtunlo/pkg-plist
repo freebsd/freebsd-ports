@@ -1,7 +1,11 @@
 bin/wmtunlo
-share/examples/wmtunlo/wmtunlo.example1
-share/examples/wmtunlo/wmtunlo.example2
-share/examples/wmtunlo/wmtunlo.example3
-share/examples/wmtunlo/wmtunlo.example4
-share/examples/wmtunlo/wmtunlo.example5
+share/examples/wmtunlo/wmtunlorc.example1
+share/examples/wmtunlo/wmtunlorc.example2
+share/examples/wmtunlo/wmtunlorc.example3
+share/examples/wmtunlo/wmtunlorc.example4
+share/examples/wmtunlo/wmtunlorc.example5
+share/examples/wmtunlo/wmtunlorc.example6
+share/examples/wmtunlo/wmtunlorc.example7
+share/examples/wmtunlo/wmtunlorc.example8
+share/examples/wmtunlo/wmtunlorc.original
 @dirrm share/examples/wmtunlo

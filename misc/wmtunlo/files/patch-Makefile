@@ -1,22 +1,23 @@
---- Makefile.orig	Sat Jul 20 04:32:12 2002
-+++ Makefile	Sat Jul 27 02:18:29 2002
-@@ -1,14 +1,15 @@
+--- Makefile.orig	Fri Nov  7 16:00:13 2003
++++ Makefile	Fri Nov  7 16:01:42 2003
+@@ -1,15 +1,15 @@
  
- wmTunlo: wmtunlo.o wmgeneral.o
--	gcc wmgeneral.o wmtunlo.o -o wmtunlo -L/usr/X11R6/lib -lXpm -lX11 -lXext -lm
-+	${CC} wmgeneral.o wmtunlo.o -o wmtunlo \
-+		-L${X11BASE}/lib -lXpm -lX11 -lXext -lm
+-CFLAGS			= -Wall -Os
+-INCS			= -I/usr/X11R6/include/X11
+-LIBS			= -L/usr/X11R6/lib -lXpm -lX11 -lXext -lm
++CFLAGS			+= -Wall
++INCS			= -I${X11BASE}/include -I${X11BASE}/include/X11
++LIBS			= -L${X11BASE}/lib -lXpm -lX11 -lXext -lm
+ INSTALL_PREFIX	= /usr/local
  
- wmtunlo.o: wmtunlo.c wmgeneral.c wmgeneral.h dock-master.xpm dock-mask.xbm
--	gcc -O3 -Wall -c wmtunlo.c
-+	${CC} $(CFLAGS) -c wmtunlo.c -I${X11BASE}/include
  
- wmgeneral.o: wmgeneral.c wmgeneral.h
--	gcc -O3 -Wall -c wmgeneral.c -I/usr/X11R6/include/X11
-+	${CC} $(CFLAGS) -c wmgeneral.c -I${X11BASE}/include
+ wmtunlo: docklib.o wmtunlo.c mask.h master.h
+-	gcc $(CFLAGS) $(INCS) docklib.o wmtunlo.c -o wmtunlo $(LIBS)
++	${CC} $(CFLAGS) $(INCS) docklib.o wmtunlo.c -o wmtunlo $(LIBS)
  
- clean:
- 	rm -f *~ *.o wmtunlo
+ docklib.o: docklib.c docklib.h
+-	gcc $(CFLAGS) $(INCS) -c docklib.c
++	${CC} $(CFLAGS) $(INCS) -c docklib.c
  
--
-+all: wmTunlo
+ install:
+ 	cp ./wmtunlo $(INSTALL_PREFIX)/bin
