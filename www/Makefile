@@ -400,6 +400,7 @@
     SUBDIR += p5-CGI-modules
     SUBDIR += p5-CGI.pm
     SUBDIR += p5-CGI_Lite
+    SUBDIR += p5-Compress-LeadingBlankSpaces
     SUBDIR += p5-FAQ-OMatic
     SUBDIR += p5-FastCGI
     SUBDIR += p5-FastCGI-ProcManager
