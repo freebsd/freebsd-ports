@@ -1,0 +1,611 @@
+bin/rss-to-site
+bin/sitescooper
+bin/subs-to-site
+etc/sitescooper.cf.sample
+lib/perl5/site_perl/%%PERL_VER%%/Exten/README
+lib/perl5/site_perl/%%PERL_VER%%/Exten/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDA/PilotInstall.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/CacheFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/CacheObject.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/CacheSingleton.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ConsolePasswordAsker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/DirCacheFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ForkHTTPClient.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ForkedPasswordAsker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/HTMLFindNew.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/HTMLLobotomize.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/HTTPClient.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ImageURLProcessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/LWPHTTPClient.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/LinksURLProcessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/Main.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/NewsHound.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PasswordAsker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PerSiteCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PerSiteDirCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PreloadURLProcessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/Robot.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/SCF.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/StoryURLProcessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/StripTablesFilter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/UI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/URLProcessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/UserAgent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/Util.pm
+%%PORTDOCS%%share/doc/sitescooper/contributing.html
+%%PORTDOCS%%share/doc/sitescooper/running.html
+%%PORTDOCS%%share/doc/sitescooper/site_params.html
+%%PORTDOCS%%share/doc/sitescooper/writing_site.html
+%%PORTDOCS%%@dirrm share/doc/sitescooper
+share/sitescooper/profile_samples/computers.nhp
+share/sitescooper/profile_samples/im.nhp
+share/sitescooper/profile_samples/palm.nhp
+share/sitescooper/profile_samples/robotics.nhp
+share/sitescooper/profile_samples/science.nhp
+share/sitescooper/profile_samples/scouts.nhp
+share/sitescooper/profile_samples/space.nhp
+share/sitescooper/site_samples/admin/sitescooper_archive.site
+share/sitescooper/site_samples/admin/sitescooper_changes.site
+share/sitescooper/site_samples/books/arts_letters_daily.site
+share/sitescooper/site_samples/books/barnes_and_noble.site
+share/sitescooper/site_samples/books/online_books_page.site
+share/sitescooper/site_samples/bsd/bsdtoday.site
+share/sitescooper/site_samples/bsd/daemonnews.site
+share/sitescooper/site_samples/bsd/oreillynet_bsd.site
+share/sitescooper/site_samples/business/cnnfn.site
+share/sitescooper/site_samples/business/economist.site
+share/sitescooper/site_samples/business/financial_times.site
+share/sitescooper/site_samples/business/fox_market_wire.site
+share/sitescooper/site_samples/business/fuckedcompany.site
+share/sitescooper/site_samples/business/hottips.site
+share/sitescooper/site_samples/business/industry_week.site
+share/sitescooper/site_samples/business/motley-fool.site
+share/sitescooper/site_samples/business/stocksmart.site
+share/sitescooper/site_samples/business/the_standard.site
+share/sitescooper/site_samples/business/the_street.site
+share/sitescooper/site_samples/business/wsj.site
+share/sitescooper/site_samples/cars/auto_com.site
+share/sitescooper/site_samples/cars/car_truck_news_chrysler.site
+share/sitescooper/site_samples/cinema/cinescape.site
+share/sitescooper/site_samples/cinema/coaxialnews.site
+share/sitescooper/site_samples/cinema/coolnews.site
+share/sitescooper/site_samples/cinema/darkhorizons.site
+share/sitescooper/site_samples/cinema/filmink-online.site
+share/sitescooper/site_samples/cinema/filthy_critic.site
+share/sitescooper/site_samples/cinema/forcenet.site
+share/sitescooper/site_samples/cinema/roger_ebert.site
+share/sitescooper/site_samples/cinema/variety.site
+share/sitescooper/site_samples/comics/apartment_3g.site
+share/sitescooper/site_samples/comics/baby_blues.site
+share/sitescooper/site_samples/comics/barney_google_and_snuffy_smith.site
+share/sitescooper/site_samples/comics/beetle_bailey.site
+share/sitescooper/site_samples/comics/better_half.site
+share/sitescooper/site_samples/comics/between_friends.site
+share/sitescooper/site_samples/comics/blondie.site
+share/sitescooper/site_samples/comics/buckles.site
+share/sitescooper/site_samples/comics/calvin_and_hobbes.site
+share/sitescooper/site_samples/comics/crock.site
+share/sitescooper/site_samples/comics/curtis.site
+share/sitescooper/site_samples/comics/dennis_the_menace.site
+share/sitescooper/site_samples/comics/dilbert.site
+share/sitescooper/site_samples/comics/dinette_set.site
+share/sitescooper/site_samples/comics/edge_city.site
+share/sitescooper/site_samples/comics/family_circus.site
+share/sitescooper/site_samples/comics/flash_gordon.site
+share/sitescooper/site_samples/comics/funky_winkerbean.site
+share/sitescooper/site_samples/comics/girls_and_sports.site
+share/sitescooper/site_samples/comics/grin_and_bear_it.site
+share/sitescooper/site_samples/comics/hagar_the_horrible.site
+share/sitescooper/site_samples/comics/hazel.site
+share/sitescooper/site_samples/comics/henry.site
+share/sitescooper/site_samples/comics/hi_and_lois.site
+share/sitescooper/site_samples/comics/horrorscope.site
+share/sitescooper/site_samples/comics/i_need_help.site
+share/sitescooper/site_samples/comics/judge_parker.site
+share/sitescooper/site_samples/comics/katzenjammer_kids.site
+share/sitescooper/site_samples/comics/lockhorns.site
+share/sitescooper/site_samples/comics/mallard_fillmore.site
+share/sitescooper/site_samples/comics/mandrake_the_magician.site
+share/sitescooper/site_samples/comics/mark_trail.site
+share/sitescooper/site_samples/comics/marvin.site
+share/sitescooper/site_samples/comics/mary_worth.site
+share/sitescooper/site_samples/comics/moose_and_molly.site
+share/sitescooper/site_samples/comics/mutts.site
+share/sitescooper/site_samples/comics/new_breed.site
+share/sitescooper/site_samples/comics/norm.site
+share/sitescooper/site_samples/comics/on_the_fastrack.site
+share/sitescooper/site_samples/comics/phantom.site
+share/sitescooper/site_samples/comics/piranha_club.site
+share/sitescooper/site_samples/comics/popeye.site
+share/sitescooper/site_samples/comics/pops_place.site
+share/sitescooper/site_samples/comics/prince_valiant.site
+share/sitescooper/site_samples/comics/redeye.site
+share/sitescooper/site_samples/comics/rex_morgan_md.site
+share/sitescooper/site_samples/comics/rhymes_with_orange.site
+share/sitescooper/site_samples/comics/safe_havens.site
+share/sitescooper/site_samples/comics/sally_forth.site
+share/sitescooper/site_samples/comics/sam_and_silo.site
+share/sitescooper/site_samples/comics/shermans_lagoon.site
+share/sitescooper/site_samples/comics/six_chix.site
+share/sitescooper/site_samples/comics/slylock_fox.site
+share/sitescooper/site_samples/comics/spiderman.site
+share/sitescooper/site_samples/comics/steve_roper_and_mike_nomad.site
+share/sitescooper/site_samples/comics/theyll_do_it_every_time.site
+share/sitescooper/site_samples/comics/tiger.site
+share/sitescooper/site_samples/comics/trudy.site
+share/sitescooper/site_samples/comics/tumbleweeds.site
+share/sitescooper/site_samples/comics/user_friendly.site
+share/sitescooper/site_samples/comics/wildwood.site
+share/sitescooper/site_samples/comics/zippy_the_pinhead.site
+share/sitescooper/site_samples/comics/zits.site
+share/sitescooper/site_samples/consumer/clark_howard.site
+share/sitescooper/site_samples/culture/plastic.site
+share/sitescooper/site_samples/fortune/oracularities.site
+share/sitescooper/site_samples/fortune/wingmail.site
+share/sitescooper/site_samples/games/bluesnews.site
+share/sitescooper/site_samples/games/gamasutra_features.site
+share/sitescooper/site_samples/games/gamedev_net.site
+share/sitescooper/site_samples/games/happypenguin.site
+share/sitescooper/site_samples/games/oldmanmurray.site
+share/sitescooper/site_samples/games/oswalds_6th_floor.site
+share/sitescooper/site_samples/health/drkoop.site
+share/sitescooper/site_samples/humor/bofh.site
+share/sitescooper/site_samples/humor/bofh_archive.site
+share/sitescooper/site_samples/humor/dave_barry.site
+share/sitescooper/site_samples/humor/ditherati.site
+share/sitescooper/site_samples/humor/modern_humorist.site
+share/sitescooper/site_samples/humor/pigdog.site
+share/sitescooper/site_samples/humor/satirewire.site
+share/sitescooper/site_samples/humor/the_onion.site
+share/sitescooper/site_samples/languages/aspwire.site
+share/sitescooper/site_samples/languages/javaworld.site
+share/sitescooper/site_samples/languages/merlyns_columns.site
+share/sitescooper/site_samples/languages/news_perl_org.site
+share/sitescooper/site_samples/languages/perlmonth.site
+share/sitescooper/site_samples/languages/perlnews.site
+share/sitescooper/site_samples/languages/sqlwire.site
+share/sitescooper/site_samples/languages/use_perl.site
+share/sitescooper/site_samples/languages/vbwire.site
+share/sitescooper/site_samples/lib/layouts.site
+share/sitescooper/site_samples/lifestyle/zen_stories.site
+share/sitescooper/site_samples/linux/advogato.site
+share/sitescooper/site_samples/linux/advogato_diaries.site
+share/sitescooper/site_samples/linux/alan_cox_diary.site
+share/sitescooper/site_samples/linux/debian_weekly_news.site
+share/sitescooper/site_samples/linux/freshmeat.site
+share/sitescooper/site_samples/linux/kc_debian_hurd.site
+share/sitescooper/site_samples/linux/kc_gimp.site
+share/sitescooper/site_samples/linux/kc_kde.site
+share/sitescooper/site_samples/linux/kde-dev-news.site
+share/sitescooper/site_samples/linux/kde-news.site
+share/sitescooper/site_samples/linux/kernel_cousin_debian.site
+share/sitescooper/site_samples/linux/kernel_traffic.site
+share/sitescooper/site_samples/linux/kerneltrap.site
+share/sitescooper/site_samples/linux/linux_gazette.site
+share/sitescooper/site_samples/linux/linux_magazine.site
+share/sitescooper/site_samples/linux/linuxdevices.site
+share/sitescooper/site_samples/linux/linuxplaza.site
+share/sitescooper/site_samples/linux/linuxtoday.site
+share/sitescooper/site_samples/linux/linuxworld.site
+share/sitescooper/site_samples/linux/mandrake_pda.site
+share/sitescooper/site_samples/linux/mandrakeforum.site
+share/sitescooper/site_samples/linux/rhad_rumor_mill.site
+share/sitescooper/site_samples/linux/slashdot.site
+share/sitescooper/site_samples/linux/weekly_news.site
+share/sitescooper/site_samples/misc/a_word_a_day.site
+share/sitescooper/site_samples/misc/drinkboy.site
+share/sitescooper/site_samples/misc/world_wide_words.site
+share/sitescooper/site_samples/news/csmonitor.site
+share/sitescooper/site_samples/news/my_excite.site
+share/sitescooper/site_samples/news/usa_today.site
+share/sitescooper/site_samples/news/wired_news/wired_news_business.site
+share/sitescooper/site_samples/news/wired_news/wired_news_culture.site
+share/sitescooper/site_samples/news/wired_news/wired_news_politics.site
+share/sitescooper/site_samples/news/wired_news/wired_news_tech.site
+share/sitescooper/site_samples/news/wired_news/wired_news_top_stories.site
+share/sitescooper/site_samples/news/world_new_york.site
+share/sitescooper/site_samples/news/yahoo/yahoo_business.site
+share/sitescooper/site_samples/news/yahoo/yahoo_entertainment.site
+share/sitescooper/site_samples/news/yahoo/yahoo_health.site
+share/sitescooper/site_samples/news/yahoo/yahoo_oddly_enough.site
+share/sitescooper/site_samples/news/yahoo/yahoo_politics.site
+share/sitescooper/site_samples/news/yahoo/yahoo_public_opinion.site
+share/sitescooper/site_samples/news/yahoo/yahoo_science.site
+share/sitescooper/site_samples/news/yahoo/yahoo_sports.site
+share/sitescooper/site_samples/news/yahoo/yahoo_technology.site
+share/sitescooper/site_samples/news/yahoo/yahoo_top_stories.site
+share/sitescooper/site_samples/news/yahoo/yahoo_world.site
+share/sitescooper/site_samples/odd/blather.site
+share/sitescooper/site_samples/odd/morbid_fact_du_jour.site
+share/sitescooper/site_samples/odd/snopes.site
+share/sitescooper/site_samples/opinion/davenet.site
+share/sitescooper/site_samples/opinion/feed.site
+share/sitescooper/site_samples/opinion/i_cringely.site
+share/sitescooper/site_samples/opinion/idler.site
+share/sitescooper/site_samples/opinion/jaundiced_eye.site
+share/sitescooper/site_samples/opinion/nro.site
+share/sitescooper/site_samples/opinion/roving_reporter.site
+share/sitescooper/site_samples/opinion/salon.site
+share/sitescooper/site_samples/opinion/salon_archives.site
+share/sitescooper/site_samples/opinion/simson_garfinkel.site
+share/sitescooper/site_samples/opinion/slate_todays_papers.site
+share/sitescooper/site_samples/opinion/suck.site
+share/sitescooper/site_samples/opinion/tbtf.site
+share/sitescooper/site_samples/opinion/tbtf_log.site
+share/sitescooper/site_samples/opinion/unblinking.site
+share/sitescooper/site_samples/palm/memoware.site
+share/sitescooper/site_samples/palm/palm_boulevard.site
+share/sitescooper/site_samples/palm/palmgear.site
+share/sitescooper/site_samples/palm/palmguru.site
+share/sitescooper/site_samples/palm/palmpilotsoftware.site
+share/sitescooper/site_samples/palm/palmpower.site
+share/sitescooper/site_samples/palm/palmstation.site
+share/sitescooper/site_samples/palm/pencomputing.site
+share/sitescooper/site_samples/palm/visorcentral_discussion.site
+share/sitescooper/site_samples/palm/visorcentral_mobile.site
+share/sitescooper/site_samples/palmsized/la_lettre_edition_mobile.site
+share/sitescooper/site_samples/palmsized/mercury_center_mobile.site
+share/sitescooper/site_samples/palmsized/motley_fool.site
+share/sitescooper/site_samples/palmsized/ny_times.site
+share/sitescooper/site_samples/palmsized/ny_times_handheld.site
+share/sitescooper/site_samples/palmsized/the_guardian_palmsized.site
+share/sitescooper/site_samples/palmsized/the_onion_pda.site
+share/sitescooper/site_samples/palmsized/the_standard.site
+share/sitescooper/site_samples/personalized/movietickets.site
+share/sitescooper/site_samples/personalized/my_yahoo.site
+share/sitescooper/site_samples/regional_africa/iol_africa_south.site
+share/sitescooper/site_samples/regional_australia/fairfax_it.site
+share/sitescooper/site_samples/regional_australia/sydney_morning_herald.site
+share/sitescooper/site_samples/regional_belgium/le_soir.site
+share/sitescooper/site_samples/regional_california/bayarea_com_news.site
+share/sitescooper/site_samples/regional_california/la_times.site
+share/sitescooper/site_samples/regional_california/latimes_nat.site
+share/sitescooper/site_samples/regional_california/latimes_oc.site
+share/sitescooper/site_samples/regional_california/mercury_center.site
+share/sitescooper/site_samples/regional_california/ocregister.site
+share/sitescooper/site_samples/regional_california/sf_chronicle_food.site
+share/sitescooper/site_samples/regional_california/sfgate_com_news.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_arts_and_entertainment.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_books.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_business.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_cars.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_commentary.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_editorials.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_friday.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_front_page.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_good_eating.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_health_and_family.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_home_and_garden.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_jobs.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_kidnews.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_magazine.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_metro_chicago.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_metro_dupage.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_metro_lake.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_metro_mchenry.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_metro_northwest.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_metro_southwest.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_new_homes.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_real_estate.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_sports.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_tempo.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_transportation.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_travel.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_tv_week.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_woman_news.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_your_money.site
+share/sitescooper/site_samples/regional_chicago/chicago_tribune_your_place.site
+share/sitescooper/site_samples/regional_croatia/DHMZ_Hrvatska_danas.site
+share/sitescooper/site_samples/regional_croatia/DHMZ_Hrvatska_sutra.site
+share/sitescooper/site_samples/regional_croatia/DHMZ_Jadran.site
+share/sitescooper/site_samples/regional_croatia/DHMZ_Zagreb_danas.site
+share/sitescooper/site_samples/regional_croatia/DHMZ_Zagreb_sutra.site
+share/sitescooper/site_samples/regional_croatia/KSET_monthly.site
+share/sitescooper/site_samples/regional_croatia/Vecernji.site
+share/sitescooper/site_samples/regional_croatia/accuweather_zagreb.site
+share/sitescooper/site_samples/regional_denmark/berlingsketidende.site
+share/sitescooper/site_samples/regional_denmark/computerworld.dk.site
+share/sitescooper/site_samples/regional_denmark/dmi-vejret.site
+share/sitescooper/site_samples/regional_denmark/ingeniøren.site
+share/sitescooper/site_samples/regional_denmark/sslug-kalender.site
+share/sitescooper/site_samples/regional_denmark/sslug-nyheder.site
+share/sitescooper/site_samples/regional_denmark/valutakurser.site
+share/sitescooper/site_samples/regional_detroit/detroit_free_press.site
+share/sitescooper/site_samples/regional_francais/01_informatique.site
+share/sitescooper/site_samples/regional_francais/LeMonde1_INT_FRA_STE_REG.site
+share/sitescooper/site_samples/regional_francais/LeMonde2_HORIZONS.site
+share/sitescooper/site_samples/regional_francais/LeMonde3_ENT_COM_PLA_ECO.site
+share/sitescooper/site_samples/regional_francais/LeMonde4_AUJ_SCI_SPO_CULT.site
+share/sitescooper/site_samples/regional_francais/LeMonde5_LIVRES.site
+share/sitescooper/site_samples/regional_francais/LeMonde6_Interactif.site
+share/sitescooper/site_samples/regional_francais/LeMonde7_UNE.site
+share/sitescooper/site_samples/regional_francais/LeMonde_AutoMoto.site
+share/sitescooper/site_samples/regional_francais/afp.site
+share/sitescooper/site_samples/regional_francais/cinenouba.site
+share/sitescooper/site_samples/regional_francais/journaldunet.site
+share/sitescooper/site_samples/regional_francais/journaldunet_dossiers.site
+share/sitescooper/site_samples/regional_francais/la_tribune.site
+share/sitescooper/site_samples/regional_francais/le_monde_full.site
+share/sitescooper/site_samples/regional_francais/libe_portrait_du_jour.site
+share/sitescooper/site_samples/regional_francais/libe_q.site
+share/sitescooper/site_samples/regional_francais/libe_rebonds.site
+share/sitescooper/site_samples/regional_francais/multimedium.site
+share/sitescooper/site_samples/regional_francais/nouvelobs.site
+share/sitescooper/site_samples/regional_francais/sia_fr.site
+share/sitescooper/site_samples/regional_germany/de_br_news.site
+share/sitescooper/site_samples/regional_germany/de_computerwoche.site
+share/sitescooper/site_samples/regional_germany/de_der_pocketstandard.site
+share/sitescooper/site_samples/regional_germany/de_dwelle.site
+share/sitescooper/site_samples/regional_germany/de_excite.site
+share/sitescooper/site_samples/regional_germany/de_fool.site
+share/sitescooper/site_samples/regional_germany/de_gnn.site
+share/sitescooper/site_samples/regional_germany/de_heise.site
+share/sitescooper/site_samples/regional_germany/de_heise_tp.site
+share/sitescooper/site_samples/regional_germany/de_kalenderblatt.site
+share/sitescooper/site_samples/regional_germany/de_onlinekosten.site
+share/sitescooper/site_samples/regional_germany/de_spiegel.site
+share/sitescooper/site_samples/regional_germany/de_sueddeutsche.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_bay.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_drei.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_feuill.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_nche.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_pano.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_politik.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_sport.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_streifl.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_verm.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_vier.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_wirt.site
+share/sitescooper/site_samples/regional_germany/de_sz/de_sz_wissen.site
+share/sitescooper/site_samples/regional_germany/de_teltarif.site
+share/sitescooper/site_samples/regional_germany/de_tvspielfilm.site
+share/sitescooper/site_samples/regional_germany/de_welt.site
+share/sitescooper/site_samples/regional_germany/de_yahoo.site
+share/sitescooper/site_samples/regional_germany/de_zdnet.site
+share/sitescooper/site_samples/regional_germany/de_zeit/de_zeit.site
+share/sitescooper/site_samples/regional_germany/de_zeit/de_zeit_alternate.site
+share/sitescooper/site_samples/regional_germany/de_zeit/de_zeit_politik.site
+share/sitescooper/site_samples/regional_hk/netvigator_hk_press_editorials.site
+share/sitescooper/site_samples/regional_hk/oriental_news.site
+share/sitescooper/site_samples/regional_hungary/linux_hu.site
+share/sitescooper/site_samples/regional_hungary/terminal_hu.site
+share/sitescooper/site_samples/regional_ireland/accuweather_dublin.site
+share/sitescooper/site_samples/regional_ireland/evilgerald.site
+share/sitescooper/site_samples/regional_ireland/hackwatch.site
+share/sitescooper/site_samples/regional_ireland/irish_aertel_listings.site
+share/sitescooper/site_samples/regional_ireland/irish_times.site
+share/sitescooper/site_samples/regional_ireland/linux_ie.site
+share/sitescooper/site_samples/regional_ireland/rte_news_online.site
+share/sitescooper/site_samples/regional_ireland/volta_netgains.site
+share/sitescooper/site_samples/regional_israel/jerusalem_post.site
+share/sitescooper/site_samples/regional_michigan/michigansports.site
+share/sitescooper/site_samples/regional_minnesota/pioneer_tech.site
+share/sitescooper/site_samples/regional_minnesota/pioneerplanet.site
+share/sitescooper/site_samples/regional_new_york/ny_post.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_business.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_editorials.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_international.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_letters.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_national.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_oped.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_politics.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_regional.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_science.site
+share/sitescooper/site_samples/regional_new_york/ny_times/ny_times_technology.site
+share/sitescooper/site_samples/regional_new_zealand/christchurch_press.site
+share/sitescooper/site_samples/regional_north_carolina/cats_cradle.site
+share/sitescooper/site_samples/regional_north_carolina/charlotte_observer.site
+share/sitescooper/site_samples/regional_north_carolina/gist_tv.site
+share/sitescooper/site_samples/regional_north_carolina/news_observer.site
+share/sitescooper/site_samples/regional_north_carolina/weather24_raleigh.site
+share/sitescooper/site_samples/regional_north_carolina/wral-tv.site
+share/sitescooper/site_samples/regional_philadelphia/phillynews.site
+share/sitescooper/site_samples/regional_philadelphia/whyytv12.site
+share/sitescooper/site_samples/regional_seattle/seattle_p_i.site
+share/sitescooper/site_samples/regional_seattle/seattletimes.site
+share/sitescooper/site_samples/regional_spain/elmundo_culture.site
+share/sitescooper/site_samples/regional_spain/elmundo_economy.site
+share/sitescooper/site_samples/regional_spain/elmundo_europe.site
+share/sitescooper/site_samples/regional_spain/elmundo_international.site
+share/sitescooper/site_samples/regional_spain/elmundo_national.site
+share/sitescooper/site_samples/regional_spain/elmundo_society.site
+share/sitescooper/site_samples/regional_spain/elmundo_sports.site
+share/sitescooper/site_samples/regional_spain/es_zdnet.site
+share/sitescooper/site_samples/regional_spain/marca_soccer.site
+share/sitescooper/site_samples/regional_spain/marca_sports.site
+share/sitescooper/site_samples/regional_spain/telebasket_nba_spanish.site
+share/sitescooper/site_samples/regional_spain/telebasket_spain.site
+share/sitescooper/site_samples/regional_switzerland/le_temps.site
+share/sitescooper/site_samples/regional_toronto/globe_and_mail_business.site
+share/sitescooper/site_samples/regional_toronto/globe_and_mail_national.site
+share/sitescooper/site_samples/regional_uk/bbc_news_front.site
+share/sitescooper/site_samples/regional_uk/bbc_news_health.site
+share/sitescooper/site_samples/regional_uk/bbc_news_sci_tech.site
+share/sitescooper/site_samples/regional_uk/bbc_news_world.site
+share/sitescooper/site_samples/regional_uk/digiguide_tv_listings.site
+share/sitescooper/site_samples/regional_uk/the_guardian.site
+share/sitescooper/site_samples/regional_uk/times_britain.site
+share/sitescooper/site_samples/regional_uk/times_world.site
+share/sitescooper/site_samples/regional_washington/washtech_inet.site
+share/sitescooper/site_samples/regional_washington/washtech_vc.site
+share/sitescooper/site_samples/regional_zimbabwe/zimbabwe_daily_news.site
+share/sitescooper/site_samples/religion/gabriels_mobile_channel.site
+share/sitescooper/site_samples/sci_fi/scifiwire.site
+share/sitescooper/site_samples/science/cosmiverse.site
+share/sitescooper/site_samples/science/explorezone.site
+share/sitescooper/site_samples/science/hotair_features.site
+share/sitescooper/site_samples/science/nasa2go.site
+share/sitescooper/site_samples/science/new_scientist.site
+share/sitescooper/site_samples/science/new_scientist_news.site
+share/sitescooper/site_samples/science/science_daily.site
+share/sitescooper/site_samples/science/spaceref.site
+share/sitescooper/site_samples/security/crypto_gram.site
+share/sitescooper/site_samples/security/cryptome.site
+share/sitescooper/site_samples/security/hacker_news_network.site
+share/sitescooper/site_samples/security/securityfocus.site
+share/sitescooper/site_samples/security/securityportal.site
+share/sitescooper/site_samples/sport/EurosportTV.site
+share/sitescooper/site_samples/sport/fox_sports.site
+share/sitescooper/site_samples/sport/sportingnews.site
+share/sitescooper/site_samples/sport/telebasket_nba.site
+share/sitescooper/site_samples/sport/thatsracin.site
+share/sitescooper/site_samples/sport/uk_sports_com.site
+share/sitescooper/site_samples/sport/yahoo_sport_news.site
+share/sitescooper/site_samples/stocks/lnux.site
+share/sitescooper/site_samples/stocks/msex.site
+share/sitescooper/site_samples/stocks/rhat.site
+share/sitescooper/site_samples/tech/anandtech.site
+share/sitescooper/site_samples/tech/anywhere_you_go/ayg-bluetooth.site
+share/sitescooper/site_samples/tech/anywhere_you_go/ayg-imode.site
+share/sitescooper/site_samples/tech/anywhere_you_go/ayg-pda.site
+share/sitescooper/site_samples/tech/anywhere_you_go/ayg-sms.site
+share/sitescooper/site_samples/tech/anywhere_you_go/ayg-wap.site
+share/sitescooper/site_samples/tech/anywhere_you_go/ayg-wireless.site
+share/sitescooper/site_samples/tech/ars_technica.site
+share/sitescooper/site_samples/tech/beyond2000.site
+share/sitescooper/site_samples/tech/cnet.site
+share/sitescooper/site_samples/tech/geeknews.site
+share/sitescooper/site_samples/tech/infoworld.site
+share/sitescooper/site_samples/tech/mit_tech_review.site
+share/sitescooper/site_samples/tech/oreillynet_features.site
+share/sitescooper/site_samples/tech/os_opinion.site
+share/sitescooper/site_samples/tech/rcfoc.site
+share/sitescooper/site_samples/tech/risks.site
+share/sitescooper/site_samples/tech/sendmail_net.site
+share/sitescooper/site_samples/tech/techdirt.site
+share/sitescooper/site_samples/tech/techweb.site
+share/sitescooper/site_samples/tech/the_register.site
+share/sitescooper/site_samples/tech/xmlhack.site
+share/sitescooper/site_samples/tech/zdnn/zdnn_business.site
+share/sitescooper/site_samples/tech/zdnn/zdnn_computing.site
+share/sitescooper/site_samples/tech/zdnn/zdnn_internet.site
+share/sitescooper/site_samples/tech/zdnn/zdnn_rumors.site
+share/sitescooper/site_samples/tech/zdnn/zdnn_software.site
+share/sitescooper/site_samples/tech/zdnn/zdnn_top.site
+share/sitescooper/site_samples/tech/zzz.site
+share/sitescooper/site_samples/tv/tvguide.site
+share/sitescooper/site_samples/unix/freshmeat_articles.site
+share/sitescooper/site_samples/unix/rootprompt.site
+share/sitescooper/site_samples/unix/samba_traffic.site
+share/sitescooper/site_samples/unix/wine_traffic.site
+share/sitescooper/site_samples/usenet/comp_sys_palmtops_pilot.site
+share/sitescooper/site_samples/weather/iwin.site
+share/sitescooper/site_samples/weather/nrcc_northeast_forecast.site
+share/sitescooper/site_samples/weather/wu_new_mexico.site
+share/sitescooper/site_samples/weather/wu_redmond.site
+share/sitescooper/site_samples/web/alertbox.site
+share/sitescooper/site_samples/web/alistapart.site
+share/sitescooper/site_samples/web/asktog.site
+share/sitescooper/site_samples/web/jon_udell.site
+share/sitescooper/site_samples/web/mappa_mundi.site
+share/sitescooper/site_samples/web/mozillazine.site
+share/sitescooper/site_samples/web/researchbuzz.site
+share/sitescooper/site_samples/web/searchenginereport.site
+share/sitescooper/site_samples/web/webmonkey.site
+share/sitescooper/site_samples/web/webreference_experts.site
+share/sitescooper/site_samples/weblog/bifurcated_rivets.site
+share/sitescooper/site_samples/weblog/boingboing.site
+share/sitescooper/site_samples/weblog/camworld.site
+share/sitescooper/site_samples/weblog/crummy.site
+share/sitescooper/site_samples/weblog/doc_searls.site
+share/sitescooper/site_samples/weblog/ethel_the_blog.site
+share/sitescooper/site_samples/weblog/flutterby.site
+share/sitescooper/site_samples/weblog/genehack.site
+share/sitescooper/site_samples/weblog/hack_the_planet.site
+share/sitescooper/site_samples/weblog/honeyguide.site
+share/sitescooper/site_samples/weblog/joel_on_software.site
+share/sitescooper/site_samples/weblog/memepool.site
+share/sitescooper/site_samples/weblog/monkeyfist.site
+share/sitescooper/site_samples/weblog/mydog.site
+share/sitescooper/site_samples/weblog/ntk.site
+share/sitescooper/site_samples/weblog/peterme.site
+share/sitescooper/site_samples/weblog/rathergood.site
+share/sitescooper/site_samples/weblog/rc3.site
+share/sitescooper/site_samples/weblog/robot_wisdom.site
+share/sitescooper/site_samples/weblog/scripting_news.site
+share/sitescooper/site_samples/weblog/tim_oreilly.site
+share/sitescooper/site_samples/weblog/tomalaks_realm.site
+share/sitescooper/site_samples/weblog/tsluts.site
+share/sitescooper/site_samples/windows/betanews.site
+share/sitescooper/site_samples/windows/cewire.site
+share/sitescooper/site_samples/windows/fileforum.site
+share/sitescooper/site_samples/windows/ntfaq.site
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Exten
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sitescooper
+@dirrm share/sitescooper/profile_samples
+@dirrm share/sitescooper/site_samples/admin
+@dirrm share/sitescooper/site_samples/books
+@dirrm share/sitescooper/site_samples/bsd
+@dirrm share/sitescooper/site_samples/business
+@dirrm share/sitescooper/site_samples/cars
+@dirrm share/sitescooper/site_samples/cinema
+@dirrm share/sitescooper/site_samples/comics
+@dirrm share/sitescooper/site_samples/consumer
+@dirrm share/sitescooper/site_samples/culture
+@dirrm share/sitescooper/site_samples/fortune
+@dirrm share/sitescooper/site_samples/games
+@dirrm share/sitescooper/site_samples/health
+@dirrm share/sitescooper/site_samples/humor
+@dirrm share/sitescooper/site_samples/languages
+@dirrm share/sitescooper/site_samples/lib
+@dirrm share/sitescooper/site_samples/lifestyle
+@dirrm share/sitescooper/site_samples/linux
+@dirrm share/sitescooper/site_samples/misc
+@dirrm share/sitescooper/site_samples/news/wired_news
+@dirrm share/sitescooper/site_samples/news/yahoo
+@dirrm share/sitescooper/site_samples/news
+@dirrm share/sitescooper/site_samples/odd
+@dirrm share/sitescooper/site_samples/opinion
+@dirrm share/sitescooper/site_samples/palm
+@dirrm share/sitescooper/site_samples/palmsized
+@dirrm share/sitescooper/site_samples/personalized
+@dirrm share/sitescooper/site_samples/regional_africa
+@dirrm share/sitescooper/site_samples/regional_australia
+@dirrm share/sitescooper/site_samples/regional_belgium
+@dirrm share/sitescooper/site_samples/regional_california
+@dirrm share/sitescooper/site_samples/regional_chicago
+@dirrm share/sitescooper/site_samples/regional_croatia
+@dirrm share/sitescooper/site_samples/regional_denmark
+@dirrm share/sitescooper/site_samples/regional_detroit
+@dirrm share/sitescooper/site_samples/regional_francais
+@dirrm share/sitescooper/site_samples/regional_germany/de_sz
+@dirrm share/sitescooper/site_samples/regional_germany/de_zeit
+@dirrm share/sitescooper/site_samples/regional_germany
+@dirrm share/sitescooper/site_samples/regional_hk
+@dirrm share/sitescooper/site_samples/regional_hungary
+@dirrm share/sitescooper/site_samples/regional_ireland
+@dirrm share/sitescooper/site_samples/regional_israel
+@dirrm share/sitescooper/site_samples/regional_michigan
+@dirrm share/sitescooper/site_samples/regional_minnesota
+@dirrm share/sitescooper/site_samples/regional_new_york/ny_times
+@dirrm share/sitescooper/site_samples/regional_new_york
+@dirrm share/sitescooper/site_samples/regional_new_zealand
+@dirrm share/sitescooper/site_samples/regional_north_carolina
+@dirrm share/sitescooper/site_samples/regional_philadelphia
+@dirrm share/sitescooper/site_samples/regional_seattle
+@dirrm share/sitescooper/site_samples/regional_spain
+@dirrm share/sitescooper/site_samples/regional_switzerland
+@dirrm share/sitescooper/site_samples/regional_toronto
+@dirrm share/sitescooper/site_samples/regional_uk
+@dirrm share/sitescooper/site_samples/regional_washington
+@dirrm share/sitescooper/site_samples/regional_zimbabwe
+@dirrm share/sitescooper/site_samples/religion
+@dirrm share/sitescooper/site_samples/sci_fi
+@dirrm share/sitescooper/site_samples/science
+@dirrm share/sitescooper/site_samples/security
+@dirrm share/sitescooper/site_samples/sport
+@dirrm share/sitescooper/site_samples/stocks
+@dirrm share/sitescooper/site_samples/tech/anywhere_you_go
+@dirrm share/sitescooper/site_samples/tech/zdnn
+@dirrm share/sitescooper/site_samples/tech
+@dirrm share/sitescooper/site_samples/tv
+@dirrm share/sitescooper/site_samples/unix
+@dirrm share/sitescooper/site_samples/usenet
+@dirrm share/sitescooper/site_samples/weather
+@dirrm share/sitescooper/site_samples/web
+@dirrm share/sitescooper/site_samples/weblog
+@dirrm share/sitescooper/site_samples/windows
+@dirrm share/sitescooper/site_samples
+@dirrm share/sitescooper
