@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-SearchBuilder
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -25,9 +26,11 @@ MAN3=	DBIx::SearchBuilder.3 DBIx::SearchBuilder::Handle.3 \
 	DBIx::SearchBuilder::Handle::Informix.3 \
 	DBIx::SearchBuilder::Handle::Oracle.3 \
 	DBIx::SearchBuilder::Handle::SQLite.3 \
+	DBIx::SearchBuilder::Handle::Sybase.3 \
 	DBIx::SearchBuilder::Handle::mysql.3 \
 	DBIx::SearchBuilder::Handle::mysqlPP.3 \
-	DBIx::SearchBuilder::Record.3
+	DBIx::SearchBuilder::Record.3 \
+	DBIx::SearchBuilder::Union.3
 
 .include <bsd.port.pre.mk>
 
