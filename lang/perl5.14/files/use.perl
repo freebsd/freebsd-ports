@@ -42,7 +42,7 @@ if [ "x$this" = "xuse.perl" ]; then
 else
 	if [ "$2" = "POST-INSTALL" ] ; then
 		need_remove_links=yes
-		if [ $osreldate -ge 502100 ] ; then
+		if [ $osreldate -ge 500036 ] ; then
 			need_create_links=yes
 			need_cleanup_make_conf=yes
 			need_cleanup_manpath=yes

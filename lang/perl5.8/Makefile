@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -90,8 +91,9 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 CONFIGURE_ARGS+=	-Duse64bitint
 .endif
 
-.if ${OSVERSION} < 502100
 LATEST_LINK=	perl5.8
+
+.if ${OSVERSION} < 500036
 PLIST_SUB+=		NEED_USE_PERL=""
 .else
 PKGMESSAGE=	${PKGDIR}/.not-here
@@ -151,7 +153,7 @@ post-install:
 		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
 .endfor
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if ${OSVERSION} < 502100
+.if ${OSVERSION} < 500036
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 	@fmt ${PKGMESSAGE}
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -79,23 +79,13 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 .error You have `USE_PERL5' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-.if ${OSVERSION} >= 502100
-LATEST_LINK=	perl5.8
-.endif
-
 .if ${OSVERSION} < 500036
 PKGMESSAGE=	${PKGDIR}/pkg-message-sysperl
-.elif ${OSVERSION} < 502100
-PKGMESSAGE=	${PKGDIR}/.not-here
 .else
 PKGMESSAGE=	${PKGDIR}/pkg-message-prefer58
 .endif
 
-.if ${OSVERSION} >= 500036 && ${OSVERSION} < 502100
-PLIST_SUB+=		NEED_USE_PERL="@comment "
-.else
 PLIST_SUB+=		NEED_USE_PERL=""
-.endif
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
@@ -140,9 +130,7 @@ post-install:
 		${BSDPAN_WRKSRC}/${file} ${BSDPAN_DEST}/${file}
 .endfor
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if ${OSVERSION} < 500036 || ${OSVERSION} >= 502100
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 	@fmt ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.post.mk>
