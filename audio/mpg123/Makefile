@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 
 MAINTAINER=	jkoshy@freebsd.org
 
+ONLY_FOR_ARCHS=	i836
+
 MAN1=		mpg123.1
 
 .include <bsd.port.pre.mk>
