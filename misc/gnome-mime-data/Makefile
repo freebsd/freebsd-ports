@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomemimedata
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	2.0.1/sources/gnome-mime-data
 DISTNAME=	gnome-mime-data-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
