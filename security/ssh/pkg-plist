@@ -1,39 +1,53 @@
 etc/rc.d/sshd.sh
-bin/scp
 bin/scp1
-bin/ssh
+@exec ln -fs %f %B/scp
+@unexec rm -f %B/scp
 bin/ssh1
+@exec ln -fs %f %B/ssh
+@unexec rm -f %B/ssh
 @exec ln -fs %f %B/slogin
 @unexec rm -f %B/slogin
-bin/ssh-add
 bin/ssh-add1
-bin/ssh-agent
+@exec ln -fs %f %B/ssh-add
+@unexec rm -f %B/ssh-add
 bin/ssh-agent1
-bin/ssh-askpass
+@exec ln -fs %f %B/ssh-agent
+@unexec rm -f %B/ssh-agent
 bin/ssh-askpass1
-bin/ssh-keygen
+@exec ln -fs %f %B/ssh-askpass
+@unexec rm -f %B/ssh-askpass
 bin/ssh-keygen1
-bin/make-ssh-known-hosts
+@exec ln -fs %f %B/ssh-keygen
+@unexec rm -f %B/ssh-keygen
 bin/make-ssh-known-hosts1
+@exec ln -fs %f %B/make-ssh-known-hosts
+@unexec rm -f %B/make-ssh-known-hosts
 etc/ssh_config
 etc/sshd_config
-man/man1/make-ssh-known-hosts.1.gz
 man/man1/make-ssh-known-hosts1.1.gz
-man/man1/scp.1.gz
+@exec ln -fs %f %B/make-ssh-known-hosts.1.gz
+@unexec rm -f %B/make-ssh-known-hosts.1.gz
 man/man1/scp1.1.gz
-man/man1/ssh-add.1.gz
+@exec ln -fs %f %B/scp.1.gz
+@unexec rm -f %B/scp.1.gz
 man/man1/ssh-add1.1.gz
-man/man1/ssh-agent.1.gz
+@exec ln -fs %f %B/ssh-add.1.gz
+@unexec rm -f %B/ssh-add.1.gz
 man/man1/ssh-agent1.1.gz
-man/man1/ssh-keygen.1.gz
+@exec ln -fs %f %B/ssh-agent.1.gz
+@unexec rm -f %B/ssh-agent.1.gz
 man/man1/ssh-keygen1.1.gz
-man/man1/ssh.1.gz
+@exec ln -fs %f %B/ssh-keygen.1.gz
+@unexec rm -f %B/ssh-keygen.1.gz
 man/man1/ssh1.1.gz
+@exec ln -fs %f %B/ssh.1.gz
+@unexec rm -f %B/ssh.1.gz
 @exec ln -fs %f %B/slogin.1.gz
 @unexec rm -f %B/slogin.1.gz
-@unexec rm -f %B/slogin1.1.gz
-man/man8/sshd.8.gz
 man/man8/sshd1.8.gz
-sbin/sshd
+@exec ln -fs %f %B/sshd.8.gz
+@unexec rm -f %B/sshd.8.gz
 sbin/sshd1
+@exec ln -fs %f %B/sshd
+@unexec rm -f %B/sshd
 @exec if [ ! -f %D/etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
