@@ -21,8 +21,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
-Y2K=		http://rsync.samba.org/rsync/y2k.html
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

@@ -13,8 +13,6 @@ DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
 
 MAINTAINER=	obrien@FreeBSD.org
 
-Y2K=		http://home.netscape.com/products/year2000/faq/client.html
-
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	"Commerial & USA ITAR export restrictions"

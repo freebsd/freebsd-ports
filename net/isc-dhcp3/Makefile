@@ -20,7 +20,6 @@ USE_FACILITY=	${_USE_FACILITY}
 .else
 USE_FACILITY=	DAEMON
 .endif
-Y2K=		http://www.isc.org/y2k.html
 
 HAS_CONFIGURE=	yes
 

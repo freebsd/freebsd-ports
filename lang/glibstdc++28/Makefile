@@ -22,8 +22,6 @@ RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 
 NO_CDROM=	'old version, not worth the cost in real estate'
 
-Y2K=		http://www.gnu.org/software/year2000.html
-
 .include <bsd.port.pre.mk>
 
 CC=		gcc28
