@@ -3,7 +3,7 @@
 # Date created:         19 April 1997
 # Whom:                 Mark Huizer <xaa@stack.nl>
 #
-# $Id: Makefile,v 1.21 1997/03/29 23:11:08 max Exp $
+# $Id: Makefile,v 1.22 1997/04/21 11:58:57 tg Exp $
 #
 
 DISTNAME=	kaffe-0.8.4
@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}.tgz kaffe-0.8.4-package-biss-net.com.tgz
 MAINTAINER=	xaa@stack.nl
 
 RUN_DEPENDS=	${PREFIX}/share/java/classes.zip:${PORTSDIR}/lang/jdk
+
+BROKEN=		not compatible with latest jdk port
 
 GNU_CONFIGURE=	yes
 MAN1=		kaffe.1
