@@ -1,14 +1,32 @@
---- configure.orig	Wed Dec 13 02:36:14 2000
-+++ configure	Wed Oct  3 17:34:03 2001
-@@ -3752,9 +3752,9 @@
+The fudging of the value of $ltmain is a workaround for a bug in bsd.port.mk,
+described (with patch) in PR 31142.
+
+-- Johann Visagie <wjv@FreeBSD.org>
+
+
+
+--- configure.orig	Wed Nov  7 17:02:23 2001
++++ configure	Wed Nov 14 13:38:01 2001
+@@ -2823,7 +2823,8 @@
+ # All known linkers require a `.a' archive for static linking (except M$VC,
+ # which needs '.lib').
+ libext=a
+-ltmain="$ac_aux_dir/ltmain.sh"
++ac_aux_dir_tmp="$ac_aux_dir"
++ltmain="$ac_aux_dir_tmp/ltmain.sh"
+ ofile="$default_ofile"
+ with_gnu_ld="$lt_cv_prog_gnu_ld"
+ need_locks="$enable_libtool_lock"
+@@ -7136,10 +7137,10 @@
  	
  	if test "x$enable_threads" = "xyes"
  	then
 -		QT_LIBS="-lqt-mt"
 +		QT_LIBS="-lqt2-mt"
+ 		QT_DEFS="-DODBCXX_QT -DQT_THREAD_SUPPORT"
  	else
 -		QT_LIBS="-lqt"
 +		QT_LIBS="-lqt2"
+ 		QT_DEFS="-DODBCXX_QT"
  	fi
  
- 	QT_MOC="$qt_moc"

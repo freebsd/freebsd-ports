@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libodbc++
-PORTVERSION=	0.2.2.p5
+PORTVERSION=	0.2.2
 CATEGORIES=	databases devel
-MASTER_SITES=	http://orcane.net/freeodbc++/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S|.p|pre|}
+MASTER_SITES=	http://orcane.net/freeodbc++/download/${PORTVERSION}/
 
 MAINTAINER=	wjv@FreeBSD.org
 
@@ -17,7 +16,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-isqlxx
 
 # libodbc++ needs an ODBC driver manager to be installed, and it supports
 # both iODBC and unixODBC.  The following variable may be set at build-time
@@ -48,9 +46,10 @@ CONFIGURE_ARGS+=	--with-qt \
 			--with-qtsqlxx
 CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
 		CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
-PLIST_SUB+=	PLIST_GUI=""
+PLIST_SUB+=	PLIST_GUI="" PLIST_NOGUI="@comment "
 .else
-PLIST_SUB+=	PLIST_GUI="@comment "
+CONFIGURE_ARGS+=	--with-isqlxx
+PLIST_SUB+=	PLIST_GUI="@comment " PLIST_NOGUI=""
 .endif
 
 post-patch:
