@@ -104,4 +104,6 @@
 %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGToolKit.so.%%MAJORVERSION%%
 %%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGToolKit.so.%%VERSION%%
 System/Makefiles/gtk-tool.make
+@dirrm %%LOCALLIBRARY%%/Libraries
 @dirrm %%LOCALLIBRARY%%/Headers/GToolKit
+@dirrm %%LOCALLIBRARY%%/Headers
