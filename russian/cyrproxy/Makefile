@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrproxy
 PORTVERSION=	1.4.2.20010208
+PORTREVISION=	1
 CATEGORIES=	russian net www
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/lexa/
 DISTNAME=	cyrproxy-1.4.2
