@@ -1,11 +1,10 @@
-lib/perl5/man/man3/GD.3.gz
-lib/perl5/site_perl/GD.pm
-lib/perl5/site_perl/auto/GD/autosplit.ix
-lib/perl5/site_perl/qd.pl
-lib/perl5/site_perl/i386-freebsd/auto/GD/GD.bs
-lib/perl5/site_perl/i386-freebsd/auto/GD/GD.so
-lib/perl5/site_perl/i386-freebsd/auto/GD/.packlist
-lib/perl5/site_perl/i386-freebsd/auto/libgd/extralibs.ld
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/libgd
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/GD
-@dirrm lib/perl5/site_perl/auto/GD
+lib/perl5/5.00501/man/man3/GD.3.gz
+lib/perl5/site_perl/5.005/i386-freebsd/GD.pm
+lib/perl5/site_perl/5.005/i386-freebsd/qd.pl
+lib/perl5/site_perl/5.005/i386-freebsd/auto/GD/.packlist
+lib/perl5/site_perl/5.005/i386-freebsd/auto/GD/GD.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/GD/GD.so
+lib/perl5/site_perl/5.005/i386-freebsd/auto/GD/autosplit.ix
+lib/perl5/site_perl/5.005/i386-freebsd/auto/libgd/extralibs.ld
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/libgd
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/GD
