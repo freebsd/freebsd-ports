@@ -12,8 +12,9 @@ MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
 
+.if !defined(USE_DB2)
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
-.if defined(USE_DB2)
+.else
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
 .endif
 
@@ -21,6 +22,7 @@ WRKSRC=		${WRKDIR}/libtabe
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XLIB=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/tabe \
 		--with-db-lib=${LOCALBASE}/lib \
