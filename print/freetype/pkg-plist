@@ -17,6 +17,6 @@ include/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
 lib/libttf.so
-lib/libttf.so.2
+lib/libttf.so.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
