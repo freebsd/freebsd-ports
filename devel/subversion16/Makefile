@@ -30,10 +30,10 @@ CONFIGURE_ARGS=	--with-ssl \
 MAN1=		svn.1 svnadmin.1 svnlook.1
 MANCOMPRESSED=	no
 
+.include <bsd.port.pre.mk>
+
 SVNREPOS?=	/home/svn/repos
 APXS=		${LOCALBASE}/sbin/apxs
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE2_APR=	yes
