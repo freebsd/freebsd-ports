@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-DOM
 PORTVERSION=	1.35
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -14,7 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${PBASE}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${PBASE}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${PBASE}/XML/RegExp.pm:${PORTSDIR}/textproc/p5-XML-RegExp
 
 PERL_CONFIGURE=	yes
 
@@ -32,4 +35,13 @@ MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
 		XML::DOM::XMLDecl.3 XML::Handler::BuildDOM.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+PBASE=		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500007
+post-patch:
+	@${PERL} -i -pe 's/^use bytes;.*//;' ${WRKSRC}/lib/XML/DOM.pm
+.endif
+
+.include <bsd.port.post.mk>
