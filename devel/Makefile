@@ -120,6 +120,7 @@
     SUBDIR += cl-split-sequence-cmucl
     SUBDIR += cl-split-sequence-sbcl
     SUBDIR += clanlib
+    SUBDIR += clanlib-devel
     SUBDIR += clig
     SUBDIR += clint
     SUBDIR += clisp-hyperspec

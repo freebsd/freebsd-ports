@@ -19,6 +19,9 @@ LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+# conflicts with devel/clanlib
+CONFLICTS=	clanlib-0.6.*
+
 WRKSRC=		${WRKDIR}/ClanLib-${PORTVERSION:R}
 
 USE_BZIP2=	yes
