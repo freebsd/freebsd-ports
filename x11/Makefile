@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.139 1997/06/14 08:06:40 andreas Exp $
+# $Id: Makefile,v 1.140 1997/06/16 03:05:31 jfitz Exp $
 #
 
     SUBDIR += FWF
@@ -65,6 +65,7 @@
     SUBDIR += xdtm
     SUBDIR += xfed
     SUBDIR += xfedor
+    SUBDIR += xfishtank
     SUBDIR += xfm
     SUBDIR += xforms
     SUBDIR += xgrab
