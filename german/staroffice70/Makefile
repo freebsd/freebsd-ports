@@ -15,8 +15,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-BUILD_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+FETCH_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0:${PORTSDIR}/emulators/linux_base-7
+BUILD_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0:${PORTSDIR}/emulators/linux_base-7
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
@@ -29,7 +29,7 @@ TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
 
-SIZE!=		/bin/df -k . | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
+SIZE!=		/bin/df -k ${WRKDIRPREFIX} | /usr/bin/tail -n 1 | /usr/bin/awk '{print $$4}'
 LINPROCFS!=	/sbin/mount | /usr/bin/grep linprocfs | /usr/bin/awk '{print $1}'
 
 .include <bsd.port.pre.mk>
@@ -64,9 +64,9 @@ pre-fetch:
 .endif
 .if ${SIZE} < 400000
 	@${ECHO}
-	@${ECHO} There is too few free disk space in your port
-	@${ECHO} directory. To unpack Staroffice needs
-	@${ECHO} at least 400MB free diskspace.
+	@${ECHO} There is only ${SIZE}K free disk space in
+	@${ECHO} ${WRKDIRPREFIX}. To unpack Staroffice needs
+	@${ECHO} at least 400000K free diskspace.
 	@${FALSE}
 .endif
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -112,6 +112,9 @@ do-install:
 .if exists(${LINUXBASE}/${PREFIX})
 	@${LN} -fs ${LINUXBASE}/${PREFIX}/${SOVERSION} ${PREFIX}/${SOVERSION}
 .endif
+.if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
+	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 ${WRKDIR}/tmp/libXrender.so
+.endif
 	@${CAT} ${PKGMESSAGE}
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup -net'
 	@if [ -f ${PREFIX}/${SOVERSION}/program/setup ]; then \
@@ -134,13 +137,16 @@ post-install:
 	    < ${INSTDB.INS}.orig > ${INSTDB.INS}
 	@${CP} ${PREFIX}/${SOVERSION}/program/soffice ${PREFIX}/${SOVERSION}/program/spadmin
 	@${CHMOD} 755 ${PREFIX}/${SOVERSION}/program/spadmin
+.if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
+	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 ${PREFIX}/${SOVERSION}/program/libXrender.so
+.endif
 
 install-user:
 .if !exists(/home/mb/staroffice6.0/setup)
 .if exists(${HOME}/.sversionrc)
 	@${ECHO} "StarOffice 6.0=${HOME}/${SOVERSION}" >> "${HOME}/.sversionrc"
 .else
-	@${SED} -e 's|%%HOME%%|${HOME}|' < "${FILESDIR}/.sversionrc" > "${HOME}/.sversionrc"
+	@${SED} -e 's|%%HOME%%|${HOME}|' < "${FILESDIR}/sversionrc" > "${HOME}/.sversionrc"
 .endif
 	@${MKDIR} "${HOME}/${SOVERSION}/user/autotext"
 	@${MKDIR} "${HOME}/${SOVERSION}/user/temp"
@@ -236,9 +242,9 @@ install-user:
 		"${HOME}/${SOVERSION}/LICENSE"
 	@${CP} "${PREFIX}/${SOVERSION}/README" \
 		"${HOME}/${SOVERSION}/README"
-	@${LN} -s "${PREFIX}/${SOVERSION}/program/setup" "${HOME}/${SOVERSION}/setup"
-	@${LN} -s "${PREFIX}/${SOVERSION}/program/soffice" "${HOME}/${SOVERSION}/soffice"
-	@${LN} -s "${PREFIX}/${SOVERSION}/program/spadmin" "${HOME}/${SOVERSION}/spadmin"
+	@${LN} -fs "${PREFIX}/${SOVERSION}/program/setup" "${HOME}/${SOVERSION}/setup"
+	@${LN} -fs "${PREFIX}/${SOVERSION}/program/soffice" "${HOME}/${SOVERSION}/soffice"
+	@${LN} -fs "${PREFIX}/${SOVERSION}/program/spadmin" "${HOME}/${SOVERSION}/spadmin"
 .if exists(${HOME}/.gnome/apps)
 	@${MKDIR} "${HOME}/.gnome/apps/StarOffice 6.0"
 	@${MKDIR} "${HOME}/.gnome/apps/StarOffice 6.0/information and setup"

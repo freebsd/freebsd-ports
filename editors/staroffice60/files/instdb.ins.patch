@@ -1,6 +1,6 @@
 --- %%PREFIX%%/staroffice6.0/program/instdb.ins	Tue Oct  9 11:35:01 2001
 +++ instdb.ins	Tue Oct  9 14:02:04 2001
-@@ -2,14 +2,15 @@
+@@ -2,10 +2,10 @@
  	ProductName	 = "StarOffice";
  	ProductVersion = "6.0";
  	DefaultDestPath = "staroffice6.0";
@@ -15,12 +15,7 @@
  	ScriptVersion = 100;
  	Bitmap		 = "so60.bmp";
  	DefaultLanguage = "01";
- 	Languages	 = "01";
-+	InstLanguages = "01:1:1";
- End
- 
- HelpText gid_Help_Address
-@@ -6676,6 +6677,7 @@
+@@ -6677,6 +6677,7 @@
  
  
  
@@ -28,7 +23,7 @@
  };
  End
  
-@@ -6724,6 +6726,7 @@
+@@ -6725,6 +6726,7 @@
  
  
  
@@ -36,7 +31,7 @@
  };
  End
  
-@@ -6786,6 +6789,7 @@
+@@ -6787,6 +6789,7 @@
  
  
  
@@ -44,7 +39,7 @@
  };
  End
  
-@@ -6888,6 +6892,7 @@
+@@ -6889,6 +6892,7 @@
  
  
  
@@ -52,7 +47,7 @@
  };
  End
  
-@@ -7093,7 +7098,31 @@
+@@ -7094,7 +7098,31 @@
  					gid_Dir_Psprint_Driver, gid_Dir_Httphome, gid_Dir_Share_Dtd_Math_1_01, gid_Dir_Share_Dtd_Ooo, gid_Dir_Mimelnk_Text, gid_Dir_Share_Config_Registry_Cache, gid_Dir_Icons_Mini, gid_Dir_Bookmark_Tourismus, gid_Dir_Cde_Language_Netdir, gid_Dir_Share_Pqa, 
  					gid_Dir_Mimelnk_Text_Netdir, gid_Dir_Resource, gid_Dir_Help_03, gid_Dir_Program_Local, gid_Dir_Database_Biblio, gid_Dir_Home_Gnome, gid_Dir_Share, gid_Dir_Help_Isolanguage, gid_Dir_Share_Config, gid_Dir_Gallery_Surface, 
  					gid_Dir_Samples_Drawings, gid_Dir_Share_Config_Registry_Instance, gid_Dir_Kde, gid_Dir_Bookmark_Freizeit, gid_Dir_Gallery_Htmlexpo, gid_Dir_Cde_Icons, gid_Dir_User_Psprint, gid_Dir_Template_Wizard_Web, gid_Dir_Icons_Netdir, gid_Dir_Samples_Texts_Homepage, 
@@ -85,7 +80,7 @@
  	Procedures	 = (gid_Procedure_Kill_Plugin_Wrkstn, gid_Procedure_Kill_Dirs, gid_Procedure_Languageselect, gid_Procedure_Patch_Font_Dir);
  	Customs		 = (gid_Custom_Del, gid_Cust_Mig);
  End
-@@ -7102,12 +7131,14 @@
+@@ -7103,12 +7131,14 @@
  	ParentID	 = gid_Module_Root;
  	Name		 = "StarOffice Program Modules";
  	Description	 = "This is where you decide which StarOffice modules are to be installed.";
@@ -100,7 +95,7 @@
  End
  
  File gid_File_Lib_Wps2star
-@@ -7893,6 +7924,7 @@
+@@ -7894,6 +7924,7 @@
  	ParentID	 = gid_Module_Prg;
  	Name		 = "StarOffice Calc";
  	Description	 = "The StarOffice spreadsheet program.";
@@ -108,7 +103,7 @@
  End
  
  File gid_File_Lib_Calc
-@@ -8390,6 +8422,7 @@
+@@ -8391,6 +8422,7 @@
  	ParentID	 = gid_Module_Prg;
  	Name		 = "StarOffice Impress";
  	Description	 = "The presentation module helps you create impressive presentations.";
@@ -116,7 +111,7 @@
  End
  
  File gid_File_Exe_Simpress
-@@ -8730,6 +8763,7 @@
+@@ -8731,6 +8763,7 @@
  	ParentID	 = gid_Module_Prg;
  	Name		 = "StarOffice Draw";
  	Description	 = "Use the vector-oriented StarOffice Draw to create illustrations, logos and posters.";
@@ -124,7 +119,7 @@
  End
  
  File gid_File_Exe_Sdraw
-@@ -9182,6 +9216,7 @@
+@@ -9183,6 +9216,7 @@
  	ParentID	 = gid_Module_Prg;
  	Name		 = "StarOffice Math";
  	Description	 = "The formula editor enables you to include mathematical formula in your documents.";
@@ -132,7 +127,7 @@
  End
  
  File gid_File_Html_W3c_Ipr
-@@ -9420,12 +9455,14 @@
+@@ -9421,12 +9455,14 @@
  	ParentID	 = gid_Module_Root;
  	Name		 = "Optional Components";
  	Description	 = "Common components and additional programs shared by all StarOffice programs.";
@@ -147,7 +142,7 @@
  	Styles		 = (HIDDEN_ROOT);
  End
  
-@@ -10050,6 +10087,7 @@
+@@ -10051,6 +10087,7 @@
  
  
  
@@ -155,7 +150,7 @@
  };
  End
  
-@@ -10066,6 +10104,7 @@
+@@ -10067,6 +10104,7 @@
  	ParentID	 = gid_Module_Optional;
  	Name		 = "Graphics Filters";
  	Description	 = "Several optional graphics filters required to embed external graphics in your documents.";
@@ -163,7 +158,7 @@
  End
  
  File gid_File_Filter_Ipd
-@@ -10733,6 +10772,7 @@
+@@ -10734,6 +10772,7 @@
  	ParentID	 = gid_Module_Optional;
  	Name		 = "Language Modules";
  	Description	 = "The language modules can be used for finding synonyms (Thesaurus) when creating texts and help you to check your spelling.";
@@ -171,7 +166,7 @@
  End
  
  File gid_File_Extra_Inso1_Lang
-@@ -11378,197 +11418,165 @@
+@@ -11379,197 +11418,165 @@
  	Files		 = (gid_File_Font_Ans, gid_File_Font_Ansb, gid_File_Font_Ansbi, gid_File_Font_Ansi);
  End
  
@@ -470,7 +465,7 @@
  End
  
  File gid_File_Bin_Cde_Sagenda
-@@ -11655,719 +11663,93 @@
+@@ -11656,719 +11663,93 @@
  	Styles		 = (PACKED);
  End
  
@@ -1261,7 +1256,7 @@
  End
  
  File gid_File_Extra_Kdemimedraw
-@@ -12630,6 +12012,7 @@
+@@ -12631,6 +12012,7 @@
  End Sub	
  
  
@@ -1269,7 +1264,7 @@
  };
  End
  
-@@ -12754,6 +12137,7 @@
+@@ -12755,6 +12137,7 @@
  
  
  
@@ -1277,7 +1272,7 @@
  };
  End
  
-@@ -12769,13 +12153,6 @@
+@@ -12770,13 +12153,6 @@
  	Procedures	 = (gid_Procedure_Kde_Inst, gid_Procedure_Kde_Inst_For_Redhat);
  End
  
@@ -1291,7 +1286,7 @@
  Profile gid_Profile_Sversion_Ini
  	ModuleID	 = gid_Module_Root;
  	Name		 = ".sversionrc";
-@@ -12788,80 +12165,16 @@
+@@ -12789,80 +12165,16 @@
  	Dir			 = gid_Dir_User;
  End
  
@@ -1373,7 +1368,7 @@
  ProfileItem gid_Profileitem_Sregistry_Configuration_Servertype
  	ModuleID	 = gid_Module_Root;
  	ProfileID	 = gid_Profile_Sregistry_Ini;
-@@ -12869,87 +12182,6 @@
+@@ -12870,87 +12182,6 @@
  	Key			 = "servertype";
  	Value		 = "local";
  	Order		 = 1;
