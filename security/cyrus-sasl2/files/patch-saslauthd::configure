@@ -1,40 +1,48 @@
 Index: saslauthd/configure
 diff -u saslauthd/configure.orig saslauthd/configure
---- saslauthd/configure.orig	Sat Jun 28 06:21:15 2003
-+++ saslauthd/configure	Tue Jul  1 01:26:30 2003
-@@ -2990,7 +2990,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+--- saslauthd/configure.orig	Tue Dec  2 01:35:11 2003
++++ saslauthd/configure	Tue Dec  2 14:02:53 2003
+@@ -1523,6 +1523,7 @@
+ fi
+ echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
++program_prefix=NONE
+ test "$program_prefix" != NONE &&
+   program_transform_name="s,^,$program_prefix,;$program_transform_name"
+ # Use a double $ so make ignores it.
+@@ -6376,7 +6377,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
 +LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi` $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2996 "configure"
- #include "confdefs.h"
-@@ -3071,7 +3071,7 @@
-      GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
-      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -6725,7 +6726,7 @@
+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
--     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
-+     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi`"
-      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-   elif test "$gss_impl" = "seam"; then
-      GSSAPIBASE_LIBS=-lgss
-@@ -3486,7 +3486,7 @@
+-    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
++    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi`"
+     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   elif test "$gss_impl" = "cybersafe03"; then
+ # Version of CyberSafe with two libraries
+@@ -7484,7 +7485,7 @@
  	    BDB_LIBADD=""
  	fi
  
 -        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
 +        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
-             echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:3493: checking for db_create in -l$dbname" >&5
-@@ -3877,7 +3877,7 @@
+             as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
+@@ -8287,7 +8288,7 @@
  	    BDB_LIBADD=""
  	fi
  
 -        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
 +        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
-             echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:3884: checking for db_create in -l$dbname" >&5
+             as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
