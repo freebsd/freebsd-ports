@@ -18,5 +18,5 @@ are:
    plays. The most dramatic example of how this helps is an experiment
    we conducted on FICS in which KnightCap learnt from a 1650 player
    to a 2100 player in just 300 games. See
-   http://keating.anu.edu.au/~jon/papers/knigtcap.ps.gz for more info on
+   http://keating.anu.edu.au/~jon/papers/knightcap.ps.gz for more info on
    its learning algorithm.
