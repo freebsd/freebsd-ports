@@ -1,4 +1,6 @@
-bin/imapd
+libexec/imapd
+libexec/ipop2d
+libexec/ipop3d
 bin/mtest
 bin/pico
 bin/pine
