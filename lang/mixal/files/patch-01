@@ -1,7 +1,8 @@
---- Makefile.orig	Fri Dec 27 16:48:44 1996
-+++ Makefile	Fri Dec 27 16:49:36 1996
-@@ -1,6 +1,6 @@
- # UNIX makefile for the MIX interpreter
+--- Makefile.orig	Mon Jun  3 20:00:53 2002
++++ Makefile	Mon Jun  3 20:01:02 2002
+@@ -3,7 +3,7 @@
+ # Must be changed in the spec file as well.
+ V=1.07
  
 -CFLAGS = -g
 +#CFLAGS = -g
