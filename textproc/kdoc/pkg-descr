@@ -1,0 +1,3 @@
+KDOC creates cross-referenced documentation for C++ and CORBA IDL libraries
+directly from the source.  Documentation can be embedded in special doc
+comments in the source.
