@@ -13,9 +13,9 @@ MASTER_SITES=	http://ftp.interchange.redhat.com/interchange/4.8/tar/
 
 MAINTAINER=	netchild@FreeBSB.org
 
-BUILD_DEPENDS=	${ARCH_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
+BUILD_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 
-RUN_DEPENDS=	${ARCH_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
+RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement \
 	${ARCH_PERL}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 	${ARCH_PERL}/Safe/Hole.pm:${PORTSDIR}/security/p5-Safe-Hole \
 	${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
