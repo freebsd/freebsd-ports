@@ -45,6 +45,8 @@ MAN1=		autopoint.1 gettext.1 gettextize.1 msgattrib.1 msgcat.1 \
 MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 		dcngettext.3 dgettext.3 dngettext.3 gettext.3 ngettext.3 \
 		textdomain.3
+HTML=		gettext.3 ngettext.3 textdomain.3 \
+		bindtextdomain.3 bind_textdomain_codeset.3
 
 INFO=		autosprintf gettext
 
@@ -81,7 +83,7 @@ pre-install:
 .endfor
 .endif
 .if defined (WITH_HTMLMAN)
-.for ii in ${MAN1} ${MAN3}
+.for ii in ${MAN1} ${HTML}
 	${ECHO_CMD} %%DOCSDIR%%/${ii}.html >> ${PLISTU}
 .endfor
 .endif
@@ -90,7 +92,7 @@ pre-install:
 		${FIND} -s examples -type f | ${GREP} -vw examples/po | \
 		${GREP} -v ChangeLog | ${GREP} -v examples/Makefile | \
 		${GREP} -v examples/installpaths.in | \
-		${SED} 's:^:share/doc/gettext/:' > ${PLISTU} && \
+		${SED} 's:^:share/doc/gettext/:' >> ${PLISTU} && \
 		${FIND} -d examples -type d | ${GREP} -v examples/po | \
 		${GREP} / | ${SED} -e 's:^:@dirrm share/doc/gettext/:' \
 		>> ${PLISTU}
