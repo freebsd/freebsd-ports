@@ -1,0 +1,11 @@
+--- ./configure.org	Thu Jan  9 06:22:00 1997
++++ ./configure	Sun Mar 30 04:25:11 1997
+@@ -3148,7 +3148,7 @@
+ 
+ fi
+ 
+-for ac_hdr in fcntl.h unistd.h memory.h malloc.h errno.h direct.h
++for ac_hdr in fcntl.h unistd.h memory.h errno.h direct.h
+ do
+ ac_safe=`echo "$ac_hdr" | tr './\055' '___'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
