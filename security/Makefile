@@ -17,6 +17,7 @@
     SUBDIR += ca-roots
     SUBDIR += calife
     SUBDIR += cfs
+    SUBDIR += cfv
     SUBDIR += checkpassword
     SUBDIR += chkrootkit
     SUBDIR += chrootuid
