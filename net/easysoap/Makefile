@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	EasySoap++-${PORTVERSION}
 
-MAINTAINER=    gabriel_ambuehl@buz.ch
+MAINTAINER=	gabriel_ambuehl@buz.ch
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
