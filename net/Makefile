@@ -212,6 +212,7 @@
     SUBDIR += howl
     SUBDIR += http_ping
     SUBDIR += hx
+    SUBDIR += i2p
     SUBDIR += icb
     SUBDIR += ickle
     SUBDIR += icmpchat
