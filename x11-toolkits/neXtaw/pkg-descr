@@ -1,0 +1,5 @@
+This is neXtaw, a modified version of the Athena Widgets with N*XTSTEP
+appearance. It is based on the Xaw3d 1.3 library by Kaleb Keithley.
+This is not a magic library which will beautify all your apps instantly.
+But with some .Xdefaults fiddling you can make Athena applications look
+and behave much better.
