@@ -1,0 +1,100 @@
+*** lib/CIDFnmap.orig	Mon Jan 14 16:20:06 2002
+--- lib/CIDFnmap	Mon Jan 14 16:26:34 2002
+***************
+*** 121,130 ****
+  % in particular, you must leave at least one space or tab between each
+  % field in the entry.  
+  
+! %(CIDFnmap.Ore) .runlibfile
+  %(CIDFnmap.ARP) .runlibfile
+  %(CIDFnmap.Bae) .runlibfile
+  %(CIDFnmap.Koc) .runlibfile
+  %(CIDFnmap.Sol) .runlibfile
+  
+  %(CIDFnmap.CJK) .runlibfile
+--- 121,131 ----
+  % in particular, you must leave at least one space or tab between each
+  % field in the entry.  
+  
+! (CIDFnmap.Ore) .runlibfile
+  %(CIDFnmap.ARP) .runlibfile
+  %(CIDFnmap.Bae) .runlibfile
+  %(CIDFnmap.Koc) .runlibfile
+  %(CIDFnmap.Sol) .runlibfile
+  
+  %(CIDFnmap.CJK) .runlibfile
++ (CIDFnmap.ports) .runlibfile
+*** lib/CIDFnmap.Ore.orig	Mon Jan 14 16:29:32 2002
+--- lib/CIDFnmap.Ore	Mon Jan 14 16:30:09 2002
+***************
+*** 9,18 ****
+  
+  % Adobe-Japan1
+  
+- /WadaGo-Bold			(WadaGo-Bold)			;
+  /WadaMaruGo-Regular		(WadaMaruGo-Regular)		;
+  /WadaMin-Bold			(WadaMin-Bold)			;
+- /WadaMin-Regular		(WadaMin-Regular)		;
+  
+  % Adobe-Japan2
+  
+--- 9,16 ----
+*** /dev/null	Mon Jan 14 16:14:11 2002
+--- lib/CIDFnmap.ports	Mon Jan 14 16:27:11 2002
+***************
+*** 0 ****
+--- 1,54 ----
++ % Japanese Truetype Fonts (Kochi)
++ /Kochi-Mincho	(/usr/X11R6/lib/X11/fonts/TrueType/kochi-mincho.ttf) 1 /Adobe-Japan1 ;
++ /Kochi-Gothic	(/usr/X11R6/lib/X11/fonts/TrueType/kochi-gothic.ttf) 1 /Adobe-Japan1 ;
++ 
++ %
++ % Fallback aliases for CJK PDF files
++ %
++ /Adobe-CNS1		/MOESung-Regular	; % CIDFnmap.Ore
++ /Adobe-Korea1		/Munhwa-Regular		; % CIDFnmap.Ore
++ 
++ %
++ % Convenient aliases for PS files on Traditional Chinese PostScript printer
++ %
++ /MSung-Light		/MOESung-Regular	; % CIDFnmap.Ore
++ %/MSung-Medium		/ShanHeiSun-Light	; % CIDFnmap.ARP
++ %/MHei-Medium		/ShanHeiSun-Light	; % CIDFnmap.ARP
++ %/MHei-Medium		/hei			; % CIDFnmap.Sol
++ %/MKai-Medium		/ZenKai-Medium		; % CIDFnmap.ARP
++ /MKai-Medium		/MOEKai-Regular		; % CIDFnmap.Ore
++ 
++ %
++ % Convenient aliases for PS files on Simplified Chinese PostScript printer
++ %
++ %/STSong-Light		/BousungEG-Light-GB	; % CIDFnmap.ARP
++ %/STSong-Light		/zycjksun		; % CIDFnmap.Sol
++ %/STFangsong-Light	/zycjkfangs		; % CIDFnmap.Sol
++ %/STHeiti-Regular	/zycjkhei		; % CIDFnmap.Sol
++ %/STKaiti-Regular	/GBZenKai-Medium	; % CIDFnmap.ARP
++ %/STKaiti-Regular	/zycjkkai		; % CIDFnmap.Sol
++ 
++ %
++ % Convenient aliases for PS files on Japanese PostScript printer
++ %
++ /Ryumin-Light		/Kochi-Mincho		; % CIDFnmap.Koc
++ /Ryumin-Light-H		/Kochi-Mincho		; % CIDFnmap.Koc
++ /Ryumin-Light-V		/Kochi-Mincho		; % CIDFnmap.Koc
++ /GothicBBB-Medium	/Kochi-Gothic		; % CIDFnmap.Koc
++ /GothicBBB-Medium-H	/Kochi-Gothic		; % CIDFnmap.Koc
++ /GothicBBB-Medium-V	/Kochi-Gothic		; % CIDFnmap.Koc
++ /HeiseiMin-W3H		/WadaMin-RegularH	; % CIDFnmap.Ore
++ /HeiseiKakuGo-W5H	/WadaMaruGo-RegularH	; % CIDFnmap.Ore
++ 
++ %
++ % Convenient aliases for PS files on Korean PostScript printer
++ %
++ /HYGoThic-Medium	/MunhwaGothic-Regular	; % CIDFnmap.Ore
++ %/HYGoThic-Medium	/Baekmuk-Dotum		; % CIDFnmap.Bae
++ %/HYGoThic-Medium	/Gothic			; % CIDFnmap.Sol
++ /HYSMyeongJo-Medium	/Munhwa-Regular		; % CIDFnmap.Ore
++ %/HYSMyeongJo-Medium	/Baekmuk-Batang		; % CIDFnmap.Bae
++ %/HYSMyeongJo-Medium	/Myeongjo		; % CIDFnmap.Sol
++ %/HYRGoThic-Medium	/Baekmuk-Gulim		; % CIDFnmap.Bae
++ %/HYRGoThic-Medium	/RoundedGothic		; % CIDFnmap.Sol
++ /HYRGoThic-Medium	/MunhwaGungSeo-Bold	; % CIDFnmap.Ore
