@@ -7,7 +7,7 @@
 
 PORTNAME=	sablot
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.inac.co.jp/~maki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	sablot.52:${PORTSDIR}/textproc/sablotron
+LIB_DEPENDS=	sablot.60:${PORTSDIR}/textproc/sablotron
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
