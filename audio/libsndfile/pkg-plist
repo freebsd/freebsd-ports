@@ -1,3 +1,6 @@
+bin/sndfile-convert
+bin/sndfile-info
+bin/sndfile-play
 include/sndfile.h
 lib/libsndfile.a
 lib/libsndfile.so
