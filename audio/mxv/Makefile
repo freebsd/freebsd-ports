@@ -3,7 +3,7 @@
 # Date created:		17 March 1997
 # Whom:			davidn@blaze.net.au
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/17 07:05:38 davidn Exp $
 #
 
 DISTNAME=	mxv-v1.10-source
@@ -17,13 +17,14 @@ MASTER_SITES=	ftp://ftp.ccmrc.ucsb.edu/pub/MixViews/source/
 #and and a hand-edited version is supplied in the patches subdir
 
 MAINTAINER=	davidn@blaze.net.au
-#From InterViews 3.1
-BUILD_DEPENDS=	ivmkmf
 
+BUILD_DEPENDS=	${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf:${PORTSDIR}/x11/iv
+
+NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
-WRKSRC=		$(WRKDIR)
 #ivmkmf -a (with makedepend) not recommended by documentation
-XMKMF=		env CPU=FREEBSD ivmkmf;make Makefiles
+XMKMF=		env CPU=FREEBSD ${LOCALBASE}/interviews/bin/FREEBSD/ivmkmf; \
+		make Makefiles
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/FREEBSD/mxv ${PREFIX}/bin
