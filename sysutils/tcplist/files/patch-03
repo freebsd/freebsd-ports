@@ -1,0 +1,11 @@
+--- lsof.c.orig	Tue Mar  9 11:49:40 1999
++++ lsof.c	Tue Mar  9 11:51:17 1999
+@@ -27,7 +27,7 @@
+ #define LSOFCMD  "lsof -HPsli TCP | awk '{print $3,$NF}' | sort | uniq"
+ #else /* !OLDLSOF */
+ /* These use the current (as of 3.62W, at least) parameters for lsof */
+-#define LSOFCMD  "lsof -nPsli TCP | awk '{print $3,$NF}' | sort | uniq"
++#define LSOFCMD  "lsof -nPsli TCP | awk '{print $3,$(NF - 1)}' | sort | uniq"
+ #endif /* !OLDLSOF */
+ #endif /* LSOFCMD */
+ 
