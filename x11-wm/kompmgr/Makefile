@@ -36,6 +36,9 @@ PLIST_FILES=	bin/kompmgr
 IGNORE=	Requires the composite extension, which is unavailable with XFree86
 .endif
 
+pre-configure:
+	${CP} ${FILESDIR}/configure ${WRKSRC}/
+
 do-build:
 	cd ${WRKSRC}/kwin/kompmgr && ${GMAKE}
 
