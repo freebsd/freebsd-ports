@@ -23,7 +23,7 @@ USE_XPM=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/gnome-vfs-1.0" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gnomevfs --with-ssl --with-included-neon
 
