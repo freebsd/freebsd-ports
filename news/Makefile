@@ -62,6 +62,7 @@
     SUBDIR += rkive
     SUBDIR += slnr
     SUBDIR += slrn
+    SUBDIR += slrnconf
     SUBDIR += slrnface
     SUBDIR += slurp
     SUBDIR += straw
