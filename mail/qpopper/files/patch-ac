@@ -1,11 +1,11 @@
---- man/popper.8.orig	Sat Jul 15 02:41:38 2000
-+++ man/popper.8	Wed Jul 19 10:18:40 2000
+--- man/popper.8.orig	Sun Sep 10 08:52:41 2000
++++ man/popper.8	Fri Oct  6 02:49:25 2000
 @@ -19,7 +19,7 @@
  .SH NAME
- qpopper \-\- pop 3 server (v3.1b5)
+ qpopper \-\- pop 3 server (v3.1b7)
  .SH SYNOPSIS
 -.B /usr/local/lib/popper
-+.B /usr/local/libexec/qpopper
- [ -b buildir ]
- [ -c ]
- [ -d ]
++.B !!PREFIX!!/libexec/qpopper
+ [
+ .I [ address ]
+ .I [ ":" ]
