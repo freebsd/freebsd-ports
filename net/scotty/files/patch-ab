@@ -1,24 +1,69 @@
---- ../tnm/generic/tnmNetdb.c	Wed Aug  7 07:13:18 1996
-+++ ../tnm/generic/tnmNetdb.c	Mon Mar  3 11:46:16 1997
-@@ -218,6 +218,9 @@
-     if (TnmSetIPAddress(interp, name, &addr) != TCL_OK) {
- 	return TCL_ERROR;
-     }
-+
-+    addr.sin_addr.s_addr = ntohl(addr.sin_addr.s_addr);
-+
-     sprintf(interp->result, "%lu.%lu.%lu.%lu",
- 	    (addr.sin_addr.s_addr >> 24) & 0xff, 
- 	    (addr.sin_addr.s_addr >> 16) & 0xff,
-diff -u -r work.ref/scotty-2.1.3/tnm/generic/tnmUtil.c work/scotty-2.1.3/tnm/generic/tnmUtil.c
---- ../tnm/generic/tnmUtil.c	Tue Aug  6 17:20:38 1996
-+++ ../tnm/generic/tnmUtil.c	Mon Mar  3 11:41:33 1997
-@@ -478,6 +478,8 @@
- 	return name;
-     }
+--- ../tkined/apps/ip_discover.tcl	Thu Sep 12 22:01:03 1996
++++ /usr/local/lib/tkined1.4.5/apps/ip_discover.tcl	Tue Mar  4 23:05:50 1997
+@@ -30,6 +30,7 @@
+ set columns 16
+ set report true
+ set debug false
++set communities {public private}
  
-+    addr->sin_addr.s_addr = ntohl(addr->sin_addr.s_addr);
-+
-     if (interp) {
- 	char buffer[20];
- 	sprintf(buffer, "%lu.%lu.%lu.%lu",
+ 
+ ##
+@@ -343,20 +344,22 @@
+ }
+ 
+ proc discover_snmp {} {
+-    global nodes address snmp
++    global nodes address snmp communities
+     global icmp_retries icmp_timeout
+     set start [clock seconds]
+     mib load rfc1213.mib
+-    foreach id [array names nodes] {
+-        set ip $address($id)
+-	if {[catch {snmp session -address $ip \
+-		-retries $icmp_retries -timeout $icmp_timeout} s]} continue
+-	if {[catch {
+-	    $s get sysObjectID.0 [list discover_snmp_callback $id "%S" "%E"]
+-	} msg]} {
+-	    writeln "Oops: $ip get sysObjectID.0: $msg"
++    foreach com $communities {
++	foreach id [array names nodes] {
++	    set ip $address($id)
++	    if {[catch {snmp session -address $ip -community $com \
++		    -retries $icmp_retries -timeout $icmp_timeout} s]} continue
++	    if {[catch {
++		$s get sysObjectID.0 [list discover_snmp_callback $id "%S" "%E"]
++	    } msg]} {
++		writeln "Oops: $ip get sysObjectID.0: $msg"
++	    }
++	    update
+ 	}
+-        update
+     }
+     snmp wait
+     set count [llength [array names snmp]]
+@@ -1276,6 +1279,7 @@
+     global email_trace
+     global report
+     global debug
++    global communities
+ 
+     set result [ined request "IP-Discover Parameter" \
+ 	[list [list "# of ICMP retries:" $icmp_retries scale 1 10] \
+@@ -1287,7 +1291,8 @@
+           [list "Nodes per row:" $columns scale 10 40] \
+           [list "Email Discover Routes:" $email_trace radio true false] \
+           [list "Write Report:" $report radio true false] \
+-          [list "Debug Mode:" $debug radio true false] ] \
++          [list "Debug Mode:" $debug radio true false]  \
++          [list "SNMP Communities:" $communities entry 10] ] \
+         [list "set values" cancel] ]
+ 
+     if {[lindex $result 0] == "cancel"} return
+@@ -1302,6 +1307,7 @@
+     set email_trace      [lindex $result  8]
+     set report           [lindex $result  9]
+     set debug            [lindex $result 10]
++    set communities      [lindex $result 11]
+ 
+     icmp -retries $icmp_retries
+     icmp -timeout $icmp_timeout
