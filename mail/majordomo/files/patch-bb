@@ -1,0 +1,11 @@
+--- bounce.orig	Sun Apr 27 20:22:35 1997
++++ bounce	Sun Apr 27 20:22:45 1997
+@@ -41,7 +41,7 @@
+ # $Locker:  $
+ #
+ 
+-$MAILER = "/usr/lib/sendmail";
++$MAILER = "/usr/sbin/sendmail";
+ 
+ $default_maxage = 21;
+ 

@@ -1,5 +1,5 @@
---- sample.cf.orig	Mon Dec 23 10:05:15 1996
-+++ sample.cf	Fri Dec 27 00:31:03 1996
+--- sample.cf.orig	Sun Apr 27 10:56:45 1997
++++ sample.cf	Sun Apr 27 20:19:32 1997
 @@ -6,11 +6,11 @@
  
  # $whereami -- What machine am I running on?
@@ -54,12 +54,12 @@
 -#$max_loadavg = 10;                 # Choose the maximum allowed load
 +$max_loadavg = 10;                 # Choose the maximum allowed load
  #
--#$uptime = `/usr/bin/uptime` if -x </usr/bin/uptime>;     # Get system uptime
-+$uptime = `/usr/bin/uptime` if -x </usr/bin/uptime>;     # Get system uptime
- #$uptime = `/usr/bsd/uptime` if -x </usr/bsd/uptime>;     # or uptime is over here.
+-#$uptime = `/usr/bin/uptime` if -x '/usr/bin/uptime';     # Get system uptime
++$uptime = `/usr/bin/uptime` if -x '/usr/bin/uptime';     # Get system uptime
+ #$uptime = `/usr/bsd/uptime` if -x '/usr/bsd/uptime';     # or uptime is over here.
  #
  #($avg_1_minute, $avg_5_minutes, $avg_15_minutes) = 
-@@ -181,7 +177,7 @@
+@@ -190,7 +186,7 @@
  # majordomo has r/w permission to.
  # Uses the environment variable TMPDIR, since that's pretty common
  #

@@ -1,0 +1,11 @@
+--- approve.orig	Sun Apr 27 20:28:18 1997
++++ approve	Sun Apr 27 20:28:27 1997
+@@ -63,7 +63,7 @@
+ #
+ # $Locker:  $
+ 
+-$MAILER = '/usr/lib/sendmail' if -x '/usr/lib/sendmail';
++$MAILER = '/usr/sbin/sendmail' if -x '/usr/sbin/sendmail';
+ $MAILER = '/usr/sbin/sendmail' if -x '/usr/sbin/sendmail';
+ 
+ die "Couldn't find a sendmail to invoke, please define!" 

@@ -1,0 +1,11 @@
+--- archive2.pl.orig	Sun Apr 27 20:22:15 1997
++++ archive2.pl	Sun Apr 27 20:22:23 1997
+@@ -85,7 +85,7 @@
+     exit 1;
+ }
+ 
+-$sendmail_command = $sendmail_command || "/usr/lib/sendmail";
++$sendmail_command = $sendmail_command || "/usr/sbin/sendmail";
+ $bounce_mailer = $bounce_mailer || "$sendmail_command -f\$sender -t";
+ &set_abort_addr($whoami_owner);
+ &set_mail_from($whoami);
