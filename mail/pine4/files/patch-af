@@ -32,7 +32,7 @@
 + 	$(MAKE) mtest OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
 + 		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
 + 		ACTIVEFILE=/usr/local/lib/news/active NEWSSPOOL=/var/news \
-+ 		RSHPATH=/usr/bin/rsh CFLAGS="-O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
++               RSHPATH=/usr/bin/rsh CFLAGS="${CFLAGS} -DNFSKLUDGE $(EXTRACFLAGS)" \
 + 		LDFLAGS="-lcrypt"
 + 
   cvx:	# Convex
