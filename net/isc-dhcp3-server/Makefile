@@ -27,6 +27,9 @@ MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 post-patch:
 	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/includes/dhcpd.h
 	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/client/scripts/freebsd
+.for MF in relay/Makefile.dist server/Makefile.dist client/Makefile.dist common/Makefile.dist dhcpctl/Makefile.dist minires/Makefile.dist omapip/Makefile.dist 
+	@${PERL} -pi.fbsd -e 's|^DEBUG[	 ]*=|DEBUG ?=|g ; s|^CFLAGS[	 ]*=|CFLAGS +=|g' ${WRKSRC}/${MF}
+.endfor
 
 post-install:
 	${TOUCH} /var/db/dhcpd.leases
