@@ -1,53 +1,25 @@
---- ../stlport/STLport-4.5.patch	Thu Mar 27 12:54:46 2003
-+++ ../stlport/STLport-4.5.patch	Tue Aug 12 12:07:48 2003
-@@ -65,27 +65,20 @@
- ! 
- *** misc/STLport-4.5/stlport/config/stl_gcc.h	Tue Sep  4 13:10:16 2001
- --- misc/build/STLport-4.5/stlport/config/stl_gcc.h	Mon Nov 11 09:37:18 2002
--*************** typedef unsigned int wint_t;
--*** 226,233 ****
--  
--  # if (__GNUC__ >= 3)
--  
--! #  define _STLP_NATIVE_INCLUDE_PATH ../g++-v3
--! #  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH ../g++-v3/backward
--  
--  # elif (__GNUC_MINOR__ < 8)
--
----- 226,235 ----
--  
--  # if (__GNUC__ >= 3)
--  
--! /* properly determine the STLP_NATIVE_INCLUDE_PATH */
--! #  define _STLP_NATIVE_INCLUDE_PATH GXX_INCLUDE_PATH
--! #  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH \
--!           GXX_INCLUDE_PATH/backward
--  
--  # elif (__GNUC_MINOR__ < 8)
--
-+@@ -226,8 +226,11 @@
-+ 
-+ # if (__GNUC__ >= 3)
-+ 
-+-#  define _STLP_NATIVE_INCLUDE_PATH ../g++-v3
-+-#  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH ../g++-v3/backward
-++/* properly determine the STLP_NATIVE_INCLUDE_PATH */
-++#undef i386
-++#  define _STLP_NATIVE_INCLUDE_PATH /usr/include/c++/3.3
-++#  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH \
-++          /usr/include/c++/3.3/backward
-+ 
-+ # elif (__GNUC_MINOR__ < 8)
-+ 
- *** misc/STLport-4.5/stlport/stdexcept	Mon May 21 20:50:21 2001
- --- misc/build/STLport-4.5/stlport/stdexcept	Mon Nov 11 09:37:18 2002
- ***************
-@@ -206,7 +199,7 @@
-  # endif
-  
- +#ifdef __FreeBSD__
--+# include <../wchar.h>
-++# include _STLP_NATIVE_C_HEADER(wchar.h)
- +#endif
-  # include <stl/_cwchar.h>
-  
+--- ../stlport/STLport-4.5.patch.orig	Sat Aug 16 08:45:46 2003
++++ ../stlport/STLport-4.5.patch	Sat Aug 16 08:52:25 2003
+@@ -254,11 +254,12 @@
+   
+   # elif (__GNUC_MINOR__ < 8)
+   
+---- 244,253 ----
++--- 244,254 ----
+   
+   # if (__GNUC__ >= 3)
+   
+ ! /* properly determine the STLP_NATIVE_INCLUDE_PATH */
++! #undef i386
+ ! #  define _STLP_NATIVE_INCLUDE_PATH GXX_INCLUDE_PATH
+ ! #  define _STLP_NATIVE_OLD_STREAMS_INCLUDE_PATH \
+ !           GXX_INCLUDE_PATH/backward
+@@ -274,7 +275,7 @@
+   # endif
+   
+ + #ifdef __FreeBSD__
+-+ # include <../wchar.h>
+++ #include _STLP_NATIVE_C_HEADER(wchar.h)
+ + #endif
+   # include <stl/_cwchar.h>
+   
