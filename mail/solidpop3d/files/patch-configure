@@ -1,0 +1,11 @@
+--- configure.orig	Fri Dec 15 10:21:19 2000
++++ configure	Fri Dec 15 10:21:28 2000
+@@ -2914,7 +2914,7 @@
+ #define HAVE_PAM 1
+ EOF
+ 
+-				SPOPLIBS="$SPOPLIBS -lpam -ldl"
++				SPOPLIBS="$SPOPLIBS -lpam"
+ 				echo "$ac_t""yes" 1>&6
+ 			else
+ 				echo "$ac_t""no" 1>&6
