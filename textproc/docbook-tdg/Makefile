@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-tdg
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/tdg/en/
 DISTNAME=	tdg-en-html-${PORTVERSION}
@@ -18,11 +18,16 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tdg/en
 CPIO=		cpio --quiet -pdum -R
 
+post-patch:
+	@ ${PERL} -pi -e \
+	  's#file:/share/projects/sourceforge/docbook/defguide/en/entities/figures/100dpi/#figures/#g; \
+	   s#file:/share/projects/sourceforge/docbook/defguide/(glyphs/100dpi/)#../$$1#g' \
+	  ${WRKSRC}/html/*.html
+
 do-install:
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC} && find * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@ cd ${DOCSDIR}/html/figures && ${LN} -s . 100dpi
 	@ ${INSTALL_DATA} ${FILESDIR}/index.html ${DOCSDIR}
 
 .include <bsd.port.mk>
