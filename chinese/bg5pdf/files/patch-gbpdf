@@ -1,0 +1,302 @@
+--- gbpdf.orig	Fri Jul  5 01:38:22 2002
++++ gbpdf	Fri Jul  5 01:39:10 2002
+@@ -0,0 +1,299 @@
++#!/usr/bin/env python
++
++"""
++Bg5pdf is a simple wrapper for wrapping big5 encoding text file into
++PDF file by using PDFlib. The output of this program does not contain
++embedding fonts.  You have to download Acrobat Acroread Asianfont pack
++to view and print the output file.  This wrapper does not provide any
++formatting function except simple line wrapping.  If you need
++sophisticated formatting, you should try CJK-LaTex or other equivalent
++tools.  
++
++Information about PDFlib can be found at http://www.pdflib.com.
++You might need it if you need to compile bg5pdflib module which 
++is used by gbpdf.
++
++You can download Acrobat Acroread Asianfont Pack at
++http://www.adobe.com/products/acrobat/acrrasianfontpack.html
++
++============================================================================
++
++Copyright (C) 2001 by Chen-Shan Chin
++gbpdf ver. 1.0 Date:Jun 3 2001
++
++ This program is free software; you can redistribute it and/or modify
++ it under the terms of the GNU General Public License as published by
++ the Free Software Foundation; either version 2 of the License, or any
++ later version.  This program is distributed in the hope that it will
++ be useful, but WITHOUT ANY WARRANTY; without even implied warranty of
++ MERCHANTABILITY of FITTNESS
++
++ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
++ details.
++
++ You should have received a copy of the GNU General Public License
++ along with this program; if not, write to the Free Sofeware
++ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA
++
++"""
++
++import getopt
++from string import *
++from sys import *
++from bg5pdflib import *
++#If you want to use python binding (pdflib_py.so) coming with PDFlib,
++#remark the above line and unmark the next line.
++#from pdflib_py import *
++
++
++False = 0
++True = 1
++
++ASCII = 0
++GB2312 = 1
++
++
++def renderer(doc, fn):
++    p = PDF_new()
++    if PDF_open_file(p, fn) == -1:
++        print "Couldn't open PDF file '%s'\n" % fn
++        exit(2)
++    PDF_set_info(p, "Author", "gbpdf")
++    PDF_set_info(p, "Creator", "gbpdf")
++    PDF_set_info(p, "Title", "%s" % fn)
++    cfname = doc.fontName
++    cEncoding = doc.encoding
++    fontSize = doc.fontSize
++    topM = 792.0 / 11.0
++    leftM = 792.0 / 11.0
++
++    PDF_begin_page(p, 612, 792)
++    font = PDF_findfont(p, cfname, cEncoding, 0)
++    PDF_setfont(p, font, fontSize)
++    mode = GB2312
++    y = 0
++    pageN = 1
++    for l in doc.parsedLines:
++        if len(l) == 0:
++            y = y + fontSize
++            continue
++        x = 0.0
++        PDF_set_text_pos(p, leftM + x, 792 - topM -y)
++        curStr = ""
++        for pos in range(len(l)):
++            ch = l[pos]
++            if ch[0] != mode:
++                if len(curStr) != 0:
++                    if mode == GB2312:
++                        font = PDF_findfont(p, cfname, cEncoding, 0)
++                        PDF_setfont(p, font, fontSize)
++                        PDF_show(p, curStr)
++                    else:
++                        font = PDF_findfont(p, "Courier", "host", 0)
++                        PDF_setfont(p, font, fontSize)
++                        PDF_show(p, curStr)
++                mode = ch[0]
++                curStr = ch[1]
++            else:
++                curStr = curStr + ch[1]
++
++        if len(curStr) != 0:
++            if mode == 1:
++                font = PDF_findfont(p, cfname, cEncoding, 0)
++                PDF_setfont(p, font, fontSize)
++                PDF_show(p, curStr)
++            else:
++                font = PDF_findfont(p, "Courier", "host", 0)
++                PDF_setfont(p, font, fontSize)
++                PDF_show(p, curStr)
++                
++        y = y + fontSize + doc.lineSpacing
++        if y > 792 - 2* topM:
++            font = PDF_findfont(p, "Helvetica-Oblique", "host", 0)
++            PDF_setfont(p, font, 12)
++            PDF_show_xy(p,"Converted to PDF by gbpdf", 400, 750)
++            PDF_show_xy(p,"file name: %s--Page %d" % (doc.infileName, pageN), 60,750)
++            PDF_setlinewidth(p,2)
++            PDF_moveto(p, 50, 740)
++            PDF_lineto(p, 562, 740)
++            PDF_stroke(p)
++            PDF_end_page(p)
++            pageN = pageN + 1
++            PDF_begin_page(p, 612, 792)
++            font = PDF_findfont(p, cfname, cEncoding, 0)
++            PDF_setfont(p, font, fontSize)
++            mode = GB2312
++            y = 0
++    font = PDF_findfont(p, "Helvetica-Oblique", "host", 0)
++    PDF_setfont(p, font, 12)
++    PDF_show_xy(p,"Converted to PDF by gbpdf", 400, 750);
++    PDF_show_xy(p,"file name: %s--Page %d" % (doc.infileName, pageN), 60,750)
++    PDF_setlinewidth(p,2)
++    PDF_moveto(p, 50, 740)
++    PDF_lineto(p, 562, 740)
++    PDF_stroke(p)
++    PDF_end_page(p)
++    PDF_close(p)
++    PDF_delete(p)    
++
++class document:
++    infileName = ""
++    fontSize = 12;
++    fontNames = ["STSong-Light"]
++    fontName = fontNames[0]
++    encodings = ["GBK-EUC-H"]
++    encoding = encodings[0]
++    wrapped = False
++    numOfChr = 55 #number of character per line for wrapping text
++    parsedLines=[]
++    lineSpacing = 2
++
++    def getChr(self, st, i):
++        if i + 1 < len(st) and\
++           (ord(st[i]) >= 161 and ord(st[i]) <= 249) and \
++           ((ord(st[i+1]) >=64 and ord(st[i+1]) <=126) or \
++            (ord(st[i+1]) >=161 and ord(st[i+1]) <=254)) : # bg5_c
++            cnchr = st[i:i+2]
++            return (cnchr, 2)
++        else:
++            cnchr = st[i]
++            return (cnchr, 1)
++    
++    def setFontSize(self, fs):
++        self.fontSize = fs
++
++    def setFont(self, fn):
++        if not fn in self.fontNames:
++            raise FontError
++        else:
++            self.fontName = fn
++            
++    def setWrapped(self, yn, nc):
++        if yn > 0:
++            self.wrapped = True
++            self.numOfChr = nc
++
++    def setLineSpacing(self, ls):
++        self.lineSpacing = ls
++
++    def setFontSize(self, fs):
++        self.fontSize = fs
++
++    def parseFile(self, filename):
++        self.infileName = filename
++        try:
++            f = open(filename,"r");
++        except IOError:
++            print 'can not open file: "%s"' % filename
++            exit(2)
++        for line in f.readlines():
++            line = rstrip(line)
++            #if line[-1] == '\n':
++            #    line = line[:-1]
++            if len(line) == 0:
++                self.parsedLines.append([])
++                continue
++            pline = []
++            pos = 0
++            cpos = 0
++            line_len = len(line)
++            while 1:
++                (chrx, inc) = self.getChr(line, pos)
++                pos = pos + inc
++                cpos = cpos + inc
++                if inc == 2:
++                    pline.append([GB2312, chrx])
++                else:
++                    pline.append([ASCII, chrx])
++                if pos >= line_len:
++                    break
++                if (self.wrapped == True) and ((cpos + 2) >= self.numOfChr):
++                    cpos = 0
++                    self.parsedLines.append(pline)
++                    pline = []
++            self.parsedLines.append(pline)
++
++def usage():
++    print "usage: gbpdf [option] inputfile outfile"
++    print "d: integer, s:string"
++    print "-w d, --wrap=d: wrapping line up to d ASCII characters (Each GB2312 character"
++    print "      occupis two ASCII character spaces.)"
++    print "-s d, --size=d: set the size of font (default: 11)"
++    print "-f s, --font=s: set font (default: 'Msung-Light')"
++    print "-l d, --linespacing=d: set spacing between line (default:2)"
++    print "--inputfile=s: input file name"
++    print "--outputfile=s: outfile name (default: inputfile.pdf)"
++    print "--showfonts: show avaiable fonts"
++
++getopt.GetoptError = getopt.error
++
++def main():
++    try:
++        opts, args =\
++              getopt.getopt(argv[1:],
++                            "w:s:f:l:",
++                            ["size=",
++                             "font=",
++                             "linespacing=",
++                             "inputfile=",
++                             "outputfile=",
++                             "wrap=",
++                             "showfonts"])
++    except getopt.error:
++        usage()
++        exit(2)
++
++    #print opts, args
++
++    doc = document()
++    doc.setFont(doc.fontNames[0])
++    doc.setWrapped(False, 0)
++    doc.setLineSpacing(2)
++    doc.setFontSize(11)
++
++    infile = ""
++    outfile = ""
++
++    for opt in opts:
++        if opt[0] == "--size" or opt[0] == "-s":
++            doc.setFontSize(atof(opt[1]))
++            continue
++        if opt[0] == "--font" or opt[0] == "-f":
++            doc.setFont(opt[1])
++            continue
++        if opt[0] == "--wrap" or opt[0] == "-w":
++            doc.setWrapped(True, atoi(opt[1]))
++            continue
++        if opt[0] == "--linespacing" or opt[0] == "-l":
++            doc.setLineSpacing(atof(opt[1]))
++        if opt[0] == "--inputfile":
++            infile = opt[1]
++            continue
++        if opt[0] == "--outfile":
++            outfile = opt[1]
++            continue
++        if opt[0] == "--showfonts":
++            print "Avaiable Fonts:"
++            for f in doc.fontNames:
++                print f
++            exit(2)
++
++    if len(args) == 2:
++        infile = args[0]
++        outfile = args[1]
++    elif len(args) == 1:
++        infile = args[0]
++
++    if infile == "":
++        print "no input file name"
++        exit(2)
++
++    if outfile == "":
++        outfile = infile+".pdf"
++
++    doc.parseFile(infile)
++    renderer(doc,outfile)
++    print "Output File is %s" % outfile 
++
++if __name__ == "__main__":                
++    main()
