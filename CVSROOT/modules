@@ -6771,6 +6771,7 @@ qstat		ports/games/qstat
 qt-bluecurve-theme	ports/x11-toolkits/qt-bluecurve-theme
 qt-designer	ports/devel/qt-designer
 qt-mysql-plugin	ports/databases/qt-mysql-plugin
+qt-pgsql-plugin	ports/databases/qt-pgsql-plugin
 qt145		ports/x11-toolkits/qt145
 qt2-static	ports/x11-toolkits/qt2-static
 qt23		ports/x11-toolkits/qt23
