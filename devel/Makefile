@@ -237,6 +237,7 @@
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
     SUBDIR += korelib
+    SUBDIR += kprof
     SUBDIR += lbpp
     SUBDIR += lemon
     SUBDIR += leoarg
