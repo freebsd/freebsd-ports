@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pvr250
-PORTVERSION=	20041107
-PORTREVISION=	1
+PORTVERSION=	20041230
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
