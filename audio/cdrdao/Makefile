@@ -3,7 +3,7 @@
 # Date created:         7 April 1999
 # Whom:                 futatuki
 #
-# $Id: Makefile,v 1.4 1999/08/12 18:49:27 cpiazza Exp $
+# $Id: Makefile,v 1.5 1999/08/12 18:54:46 cpiazza Exp $
 #
 # If You don't want to use Joerg Schilling's SCSI library,
 # set DONT_USE_SCGLIB = yes
@@ -28,7 +28,7 @@ MAN1=		cdrdao.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${PREFIX}/include/gtk--.h)
+.if exists(${X11BASE}/include/gtk--.h)
 XCDRDAO=		yes
 .endif
 
