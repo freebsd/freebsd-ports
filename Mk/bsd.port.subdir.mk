@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$Id: bsd.port.subdir.mk,v 1.26 1998/11/08 10:29:53 asami Exp $
+#	$Id: bsd.port.subdir.mk,v 1.27 1998/12/12 07:39:30 asami Exp $
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
 # for building ports subdirectories. 
@@ -101,7 +101,7 @@ afterinstall: realinstall
 realinstall: beforeinstall _SUBDIRUSE
 .endif
 
-IGNOREDIR=	CVS distfiles packages pkg templates
+IGNOREDIR=	CVS Mk Templates Tools distfiles packages pkg
 
 .if !target(checksubdirs)
 .if defined(PORTSTOP)
@@ -144,7 +144,7 @@ PORTSDIR ?= /usr/opt
 .else
 PORTSDIR ?= /usr/ports
 .endif
-TEMPLATES ?= ${PORTSDIR}/templates
+TEMPLATES ?= ${PORTSDIR}/Templates
 .if defined(PORTSTOP)
 README=	${TEMPLATES}/README.top
 .else
