@@ -15,19 +15,18 @@ DISTNAME=	p4html
 MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
-BROKEN=		"Checksum mismatch"
-
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/TEI_P4
+LATEST_LINK=	tei-guidelines-p4
 INSTDIR=	${PREFIX}/share/doc/tei/p4
 
 do-install:
 	@${MKDIR} ${INSTDIR}
-	@${MKDIR} ${INSTDIR}/Status
+	@${MKDIR} ${INSTDIR}/Figures
 	@${INSTALL_MAN} ${WRKSRC}/*.html ${INSTDIR}
 	@${INSTALL_MAN} ${WRKSRC}/*.css ${INSTDIR}
 	@${INSTALL_MAN} ${WRKSRC}/*.gif ${INSTDIR}
 	@${INSTALL_MAN} ${WRKSRC}/*.jpg ${INSTDIR}
-	@${INSTALL_MAN} ${WRKSRC}/Status/* ${INSTDIR}/Status
+	@${INSTALL_MAN} ${WRKSRC}/Figures/* ${INSTDIR}/Figures
 
 .include <bsd.port.mk>
