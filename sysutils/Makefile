@@ -55,6 +55,7 @@
     SUBDIR += cdrtools-devel
     SUBDIR += cfengine
     SUBDIR += cfengine2
+    SUBDIR += cfvers
     SUBDIR += checkservice
     SUBDIR += chgrep
     SUBDIR += clean
