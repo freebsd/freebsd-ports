@@ -1,7 +1,7 @@
 bin/xft-config
 include/X11/Xft/Xft.h
 include/X11/Xft/XftCompat.h
-include/X11/Xft/XftFreetype.h
+lib/libXft.a
 lib/libXft.so
 lib/libXft.so.2
 libdata/pkgconfig/xft.pc
