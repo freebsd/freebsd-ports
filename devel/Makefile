@@ -624,6 +624,7 @@
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Dump
     SUBDIR += p5-Data-DumpXML
+    SUBDIR += p5-Data-Dumper
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-HexDump
     SUBDIR += p5-Data-Hexdumper
