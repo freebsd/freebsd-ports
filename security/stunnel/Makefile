@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 11 11:53:54 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/18 04:27:02 steve Exp $
 #
 
 DISTNAME=	stunnel-2.1
@@ -11,8 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://mike.daewoo.com.pl/computer/stunnel/ \
 		ftp://ftp.fu-berlin.de/unix/security/stunnel/ \
 		ftp://ftp.uni-freiburg.de/pub/net/stunnel/ \
-		ftp://ftp.all.de/pub2/unix/security/stunnel/ \
-		http://mike.daewoo.com.pl/computer/stunnel/
+		ftp://ftp.all.de/pub2/unix/security/stunnel/
 
 MAINTAINER=	martti.kuparinen@ericsson.com
 
