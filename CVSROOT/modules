@@ -9568,6 +9568,7 @@ wmclockmon	ports/x11-clocks/wmclockmon
 wmconfig	ports/x11-wm/wmconfig
 wmcp		ports/misc/wmcp
 wmcpuload	ports/sysutils/wmcpuload
+wmctrl		ports/x11/wmctrl
 wmcube		ports/sysutils/wmcube
 wmcube-gdk	ports/sysutils/wmcube-gdk
 wmdate		ports/x11-clocks/wmdate
