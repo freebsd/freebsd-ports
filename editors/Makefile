@@ -33,6 +33,7 @@
     SUBDIR += emacs20-dl
     SUBDIR += emacs20-mule-devel
     SUBDIR += emacs21
+    SUBDIR += eshell-emacs20
     SUBDIR += fb
     SUBDIR += fine
     SUBDIR += flim

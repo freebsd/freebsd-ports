@@ -1,0 +1,11 @@
+Eshell is a command shell implemented entirely in Emacs Lisp.
+
+Put the expression below into your ~/.emacs.
+
+;; You can run eshell by M-x eshell
+(require 'eshell-auto)
+;; Use pcomplete with shell-mode 
+(require 'pcmpl-auto)
+(add-hook 'shell-mode-hook 'pcomplete-shell-setup)
+
+WWW: http://www.gci-net.com/~johnw/eshell.html
