@@ -20,7 +20,7 @@ case $2 in
 	echo "    You'd certainly like to pay attention to the"
 	echo "    ACTUAL locations of cache \"spool\", logfiles, pidfile!"
 	tput me
-	read skip
+	if [ -z "${PACKAGE_BUILDING}" ]; then read skip; fi
 	chown root:wheel ${PREFIX:-/usr/local}/etc/squid/squid.conf*
 	chmod 644 ${PREFIX:-/usr/local}/etc/squid/squid.conf*
 	[ -f ${PREFIX:-/usr/local}/etc/squid/squid.conf ] || \
