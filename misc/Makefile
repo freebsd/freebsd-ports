@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.130 1998/01/26 16:28:12 erich Exp $
+# $Id: Makefile,v 1.131 1998/02/18 14:41:53 cwt Exp $
 #
 
     SUBDIR += acron
@@ -63,6 +63,7 @@
     SUBDIR += xpns
     SUBDIR += xtar
     SUBDIR += xtimer
+    SUBDIR += ytree
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
