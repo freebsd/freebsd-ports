@@ -21,7 +21,6 @@
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-engines
     SUBDIR += gtk-engines-collection
-    SUBDIR += gtk10
     SUBDIR += gtk12
     SUBDIR += gtk13
     SUBDIR += gtkbe
