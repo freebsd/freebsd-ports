@@ -1,0 +1,8 @@
+--- admin/.htaccess.orig	Thu Oct 23 11:17:10 2003
++++ admin/.htaccess	Thu Oct 23 11:17:23 2003
+@@ -1,4 +1,4 @@
+-AuthUserFile /usr/local/postfixadmin/admin/.htpasswd
++AuthUserFile /usr/local/www/postfixadmin/admin/.htpasswd
+ AuthGroupFile /dev/null
+ AuthName "Postfix Admin"
+ AuthType Basic

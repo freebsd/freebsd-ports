@@ -279,6 +279,7 @@
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix1
+    SUBDIR += postfixadmin
     SUBDIR += postilion
     SUBDIR += premail
     SUBDIR += procmail
