@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tpad
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	editors tcl84 tk84
 MASTER_SITES=	http://monitor.deis.unical.it/ant/tpad/ \
 		http://queen.rett.polimi.it/~ant/tcl/script/
 
 MAINTAINER=	ant@monitor.deis.unical.it
-COMMENT=	Win95/98 (TM) Notepad clone written in Tcl/Tk
+COMMENT=	Windows XP (TM) Notepad clone written in Tcl/Tk
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
@@ -21,11 +21,17 @@ PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 PORTDOCS=	ChangeLog conf.html index.html intro.html keys.html \
 		log.html mouse.html todo tpad.html
+MAN1=		tpad.1
+MLINKS=		tpad.1 tview.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bin/tpad ${PREFIX}/bin/tpad
 
 post-install:
+	${TEST} -e ${PREFIX}/bin/tview || (cd ${PREFIX}/bin ; ${LN} -s tpad tview)
+.if !defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKDIR}/man/man1/tpad.1 ${MANPREFIX}/man/man1
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
