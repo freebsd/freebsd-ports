@@ -151,3 +151,4 @@ share/doc/djgpp2/readme
 @unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/specs %D/lib/gcc-lib/i386-go32/2.7.2.2/
 @unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/libgcc.a %D/lib/gcc-lib/i386-go32/2.7.2.2/
 @unexec mv %D/lib/gcc-lib/i386-go32/2.7.2.2/old-newlib/include %D/lib/gcc-lib/i386-go32/2.7.2.2/
+@dirrm lib/gcc-lib/i386-go32/2.7.2.2/old-newlib
