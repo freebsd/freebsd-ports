@@ -1,0 +1,8 @@
+KSteak is a KDE frontend for steak, an english - german dictionary. 
+KSteak translates a given word or the lastest one in the X-Clipboard.
+Since version 0.2 KSteak can be docked on the KDE-panel (kicker).
+
+WWW: http://www.der-fritz.de/ksteak/
+
+Heiner
+h.eichmann@gmx.de
