@@ -71,6 +71,7 @@
     SUBDIR += p5-Tk-Date
     SUBDIR += p5-Tk-Enscript
     SUBDIR += p5-Tk-GBARR
+    SUBDIR += p5-Tk-Getopt
     SUBDIR += panel--
     SUBDIR += pango
     SUBDIR += paragui
