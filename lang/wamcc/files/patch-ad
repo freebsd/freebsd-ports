@@ -1,0 +1,36 @@
+--- src/debugger.c.orig	Sun Dec 18 12:15:55 1994
++++ src/debugger.c	Tue Sep 14 04:16:44 1999
+@@ -278,7 +278,15 @@
+ 
+ #define Y_Storing_Invoc_Nb(e)   (Y(e,3))                   /* see call.pl */
+ 
++static void mygets(char *str, int size)
++{
++	char *p;
++	fgets(str,size,stdin);
+ 
++	p = index(str, '\n');
++	if(p)
++		*p = '\0';
++}
+ 
+ 
+ 
+@@ -959,7 +967,7 @@
+  Lib1(printf," ? ");
+ 
+  *str='\0';
+- Lib1(gets,str);
++ Lib2(mygets,str,sizeof(str) - 1);
+  if (*str=='\0')
+      Lib2(strcpy,str,"creep");
+ 
+@@ -2047,7 +2055,7 @@
+      Lib1(printf,"\nNew value: ");
+ 
+      *str='\0';
+-     Lib1(gets,str);
++     Lib2(mygets,str,sizeof(str) - 1);
+      if (*str=='\0')
+          return;
+ 
