@@ -1,0 +1,4 @@
+bin/grig
+share/pixmaps/grig/digits_normal.xpm
+share/pixmaps/grig/digits_small.xpm
+@dirrm share/pixmaps/grig
