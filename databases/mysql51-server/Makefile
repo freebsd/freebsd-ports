@@ -54,6 +54,9 @@ CONFIGURE_ARGS+=--with-named-thread-libs='-DHAVE_GLIBC2_STYLE_GETHOSTBYNAME_R -D
 CFLAGS+=	-D__USE_UNIX98 -D_REENTRANT -D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
 LIB_DEPENDS+=	lthread.2:${PORTSDIR}/devel/linuxthreads
 .endif
+.if defined(THREAD_SAFE_CLIENT)
+CONFIGURE_ARGS+=--enable-thread-safe-client
+.endif
 CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
