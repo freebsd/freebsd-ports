@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.11
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -54,6 +54,14 @@ MAN7=	scrollkeeper.7
 MAN8=	scrollkeeper-preinstall.8 scrollkeeper-rebuilddb.8 \
 	scrollkeeper-update.8
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 3
+MTREE_FILE=     /etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=     /etc/mtree/BSD.x11-4.dist
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -69,4 +77,4 @@ post-patch:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
