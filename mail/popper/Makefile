@@ -16,6 +16,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ache@freebsd.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
+# See http://www.eudora.com/qpopper/#BUFFER for more details on this 
+# vulnerability.
+FORBIDDEN=	"Contains a privilege escalation vulnerability"
+
 # Set WITH_POPPER_YOUBIN_SUPPORT variable in the environment to enable
 # youbin support.
 #
