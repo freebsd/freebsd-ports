@@ -28,6 +28,7 @@ share/AbiSuite-2.0/AbiWord/glade/xap_UnixDlg_Zoom.glade
 share/AbiSuite-2.0/AbiWord/readme.txt
 share/AbiSuite-2.0/AbiWord/scripts/abw2html.pl
 share/AbiSuite-2.0/AbiWord/strings/am-ET.strings
+share/AbiSuite-2.0/AbiWord/strings/ar.strings
 share/AbiSuite-2.0/AbiWord/strings/be-BY.strings
 share/AbiSuite-2.0/AbiWord/strings/bg-BG.strings
 share/AbiSuite-2.0/AbiWord/strings/br-FR.strings
