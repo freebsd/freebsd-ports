@@ -226,6 +226,7 @@
 %%GTK20%%@dirrm share/themes/AluminumAlloy-Cryogenic/gtk-2.0/icons
 %%GTK20%%@dirrm share/themes/AluminumAlloy-Cryogenic/gtk-2.0
 %%GTK20%%@dirrm share/themes/AluminumAlloy-Cryogenic
+%%GTK20%%@unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
 %%METACITY%%share/gnome/themes/AluminumAlloy-Cryogenic/metacity-1/title-bar.png
 %%METACITY%%share/gnome/themes/AluminumAlloy-Cryogenic/metacity-1/title-bar-inactive.png
 %%METACITY%%share/gnome/themes/AluminumAlloy-Cryogenic/metacity-1/text_right.png
