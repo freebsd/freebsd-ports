@@ -1,0 +1,137 @@
+*** install.sh.orig	Tue Dec  3 19:27:22 1996
+--- install.sh	Tue Dec  3 20:18:07 1996
+***************
+*** 47,52 ****
+--- 47,55 ----
+  ERRFILE=/tmp/xmcd.err
+  TMPFILE=/tmp/xmcdinst.$$
+  
++ # Flag for indicating we do not want to prompt the user if possible.
++ NO_PROMPT=1
++ 
+  #
+  # Utility functions
+  #
+***************
+*** 542,548 ****
+  
+  while :
+  do
+! 	if getstr "\nEnter X binary directory\n[${BINDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 545,555 ----
+  
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "X binary directory - using ${BINDIR}"
+! 		break
+! 	elif getstr "\nEnter X binary directory\n[${BINDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 594,600 ****
+  
+  while :
+  do
+! 	if getstr "\nEnter X library directory\n[${LIBDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 601,611 ----
+  
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "X library directory - using ${LIBDIR}"
+! 		break
+! 	elif getstr "\nEnter X library directory\n[${LIBDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 613,619 ****
+  APPDEFAULTSDIR=$LIBDIR/app-defaults
+  while :
+  do
+! 	if getstr "\nEnter X app-defaults directory\n[${APPDEFAULTSDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+--- 624,634 ----
+  APPDEFAULTSDIR=$LIBDIR/app-defaults
+  while :
+  do
+! 	if [ -n "$NO_PROMPT" ]
+! 	then
+! 		$ECHO "X app-defaults directory - using ${LIBDIR}"
+! 		break
+! 	elif getstr "\nEnter X app-defaults directory\n[${APPDEFAULTSDIR}]:"
+  	then
+  		if [ -d "$ANS" ]
+  		then
+***************
+*** 648,654 ****
+  	MANFILE=`echo $MANFILE | sed 's/\/\//\//g'`
+  fi
+  
+! if getstr "\nEnter xmcd on-line manual file path\n[${MANFILE}]:"
+  then
+  	MANFILE=$ANS
+  fi
+--- 663,672 ----
+  	MANFILE=`echo $MANFILE | sed 's/\/\//\//g'`
+  fi
+  
+! if [ -n "$NO_PROMPT" ]
+! then
+! 	$ECHO "xmcd on-line manual file path - using ${MANFILE}"
+! elif getstr "\nEnter xmcd on-line manual file path\n[${MANFILE}]:"
+  then
+  	MANFILE=$ANS
+  fi
+***************
+*** 670,676 ****
+  # Determine CMANFILE
+  
+  CMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/cda/'`"
+! if getstr "\nEnter cda on-line manual file path\n[${CMANFILE}]:"
+  then
+  	CMANFILE=$ANS
+  fi
+--- 688,697 ----
+  # Determine CMANFILE
+  
+  CMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/cda/'`"
+! if [ -n "$NO_PROMPT" ]
+! then
+! 	$ECHO "cda on-line manual file path - using ${CMANFILE}"
+! elif getstr "\nEnter cda on-line manual file path\n[${CMANFILE}]:"
+  then
+  	CMANFILE=$ANS
+  fi
+***************
+*** 692,698 ****
+  # Determine WMANFILE
+  
+  WMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/wm2xmcd/'`"
+! if getstr "\nEnter wm2xmcd on-line manual file path\n[${WMANFILE}]:"
+  then
+  	WMANFILE=$ANS
+  fi
+--- 713,722 ----
+  # Determine WMANFILE
+  
+  WMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/wm2xmcd/'`"
+! if [ -n "$NO_PROMPT" ]
+! then
+! 	$ECHO "wm2xmcd on-line manual file path - using ${WMANFILE}"
+! elif getstr "\nEnter wm2xmcd on-line manual file path\n[${WMANFILE}]:"
+  then
+  	WMANFILE=$ANS
+  fi
