@@ -1,13 +1,17 @@
 sbin/checkservice
-lib/perl5/site_perl/%%PERL_VER%%/opensocket.pl
+%%SITE_PERL%%/CS/Config.pm
+%%SITE_PERL%%/CS/Functions.pm
+%%SITE_PERL%%/CS/Plugin.pm
+@dirrm %%SITE_PERL%%/CS
 etc/checkservice/checkservice.conf
 etc/checkservice/failed.mail
-etc/checkservice/hosts/localhost
-etc/checkservice/plugins/sms.conf
-etc/checkservice/plugins/smsnet.conf
+etc/checkservice/plugins/warning/sms.conf
+etc/checkservice/plugins/warning/smsnet.conf
 etc/checkservice/statuspage.conf
+etc/checkservice/successful.mail
 etc/checkservice/timeout.mail
 etc/checkservice/unreachable.mail
+lib/checkservice/check/dns.plugin
 lib/checkservice/check/ftp.plugin
 lib/checkservice/check/http.plugin
 lib/checkservice/check/https.plugin
@@ -24,7 +28,7 @@ lib/checkservice/check/template.plugin
 lib/checkservice/warning/beep.plugin
 lib/checkservice/warning/sms.plugin
 lib/checkservice/warning/smsnet.plugin
-@dirrm etc/checkservice/hosts
+@dirrm etc/checkservice/plugins/warning
 @dirrm etc/checkservice/plugins
 @dirrm etc/checkservice
 @dirrm lib/checkservice/check

@@ -7,16 +7,16 @@
 #
 
 PORTNAME=	checkservice
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.linvision.com/checkservice/files/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
+RUN_DEPENDS=	${SITE_PERL}/${PERL_VER}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
-USE_PERL5=	YES
-
+USE_REINPLACE=	yes
+USE_PERL5_RUN=	YES
 NO_BUILD=	YES
 
 MAN1=		checkservice.1
@@ -24,26 +24,26 @@ MAN5=		checkservice.5
 
 post-patch:
 .for file in ${PORTNAME} man/${PORTNAME}.1 man/${PORTNAME}.5
-	@${PERL} -pi -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/${file}
 .endfor
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/opensocket.pl ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${CP} -R ${WRKSRC}/lib/CS ${SITE_PERL}
+	@${MKDIR} -m 755 ${PREFIX}/lib/${PORTNAME}
+	${CP} -R ${WRKSRC}/plugins/ ${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} -m 755 ${PREFIX}/etc/${PORTNAME}
+	${CP} -R ${WRKSRC}/config/ ${PREFIX}/etc/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/man/checkservice.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/checkservice.5 ${PREFIX}/man/man5
-	${MKDIR} -m 755 ${PREFIX}/lib/${PORTNAME}
-	${CP} -R ${WRKSRC}/plugins/ ${PREFIX}/lib/${PORTNAME}
-	${MKDIR} -m 755 ${PREFIX}/etc/${PORTNAME}
-	${CP} -R ${WRKSRC}/config/ ${PREFIX}/etc/${PORTNAME}
 
 post-install:
 .if !defined(BATCH)
-	@${ECHO} ""
-	@${ECHO} "############################################################################"
-	@${ECHO} "# Config files are in ${PREFIX}/etc/${PORTNAME}                            #"
-	@${ECHO} "# Plugins are in ${PREFIX}/lib/${PORTNAME}                                 #"
-	@${ECHO} "############################################################################"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "############################################################################"
+	@${ECHO_CMD} "# Config files are in ${PREFIX}/etc/${PORTNAME}                            #"
+	@${ECHO_CMD} "# Plugins are in ${PREFIX}/lib/${PORTNAME}                                 #"
+	@${ECHO_CMD} "############################################################################"
 .endif
 
 .include <bsd.port.mk>
