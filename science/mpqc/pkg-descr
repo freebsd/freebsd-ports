@@ -6,17 +6,19 @@ massively parallel computers. Its design is object oriented, using the C++
 programming language.
 
 Capabilities
-
-Closed shell and general restricted open shell Hartree-Fock energies and
+o Closed shell and general restricted open shell Hartree-Fock energies and
 gradients
-
-Second order open shell perturbation theory (OPT2[2]) and Z-averaged
+o Second order open shell perturbation theory (OPT2[2]) and Z-averaged
 perturbation theory (ZAPT2) energies.
-
-Second order closed shell Moller-Plesset perturbation theory energies and
+o Second order closed shell Moller-Plesset perturbation theory energies and
 gradients.
-
-Robust internal coordinate geometry optimizer that efficiently optimizes
+o Robust internal coordinate geometry optimizer that efficiently optimizes
 molecules with many degrees of freedom.
+
+You can also validate your mpqc binaries when you employ other settings by:
+% make validate >& validate.log &
+(it may take few days, though)
+For details, please see file:///usr/local/share/doc/mpqc/hierarchy.html
+or http://aros.ca.sandia.gov/~cljanss/mpqc/html/ValidatingMPQC.html.
 
 WWW: http://aros.ca.sandia.gov/~cljanss/mpqc/
