@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.6.1
 CATEGORIES=	games net
 MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
@@ -20,14 +19,12 @@ COMMENT=	A networked Mah Jong program, together with a computer player
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
-MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" \
-		DESTDIR="${PREFIX}/" INSTMANFLAGS="${INSTALL_MAN}" \
-		INSTPGMFLAGS="${INSTALL_PROGRAM}" PERL="${PERL}"
-INSTALL_TARGET=	install install.man
+MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" PERL="${PERL}"
 
 MAN1=		xmj.1
 MLINKS=		xmj.1 mj-player.1 \
 		xmj.1 mj-server.1
+PLIST_FILES=	bin/mj-server bin/mj-player bin/xmj
 
 post-patch:
 	@${PERL} -pi -e 's|^CC|#CC|g ; \
