@@ -56,4 +56,4 @@ lib/lyx/templates/iletter.lyx
 lib/lyx/templates/latex_letter.lyx
 lib/lyx/templates/letter.lyx
 lib/lyx/tex/iletter.cls
-man/man1/lyx.1
+man/man1/lyx.1.gz
