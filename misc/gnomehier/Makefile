@@ -29,6 +29,10 @@ pre-install:
 	@${TOUCH} -f ${PLIST}
 	@${CAT} ${FILESDIR}/dirlist | sort | ${SED} -e \
 		's|$$|/.keep_me|' >> ${PLIST}
+	@${ECHO_CMD} "/etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml" \
+		>> ${PLIST}
+	@${ECHO_CMD} "/etc/gconf/gconf.xml.defaults/apps/%gconf.xml" \
+		>> ${PLIST}
 	@${CAT} ${FILESDIR}/dirlist | sort -r | ${SED} -e \
 		's|^|@dirrm |' >> ${PLIST}
 
