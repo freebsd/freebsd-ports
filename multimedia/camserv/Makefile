@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cserv.sourceforge.net/old/
 
-MAINTAINER=	chein@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -32,4 +32,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/javascript.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+  
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.else
+ONLY_FOR_ARCHS=	alpha i386 ia64
+.endif
+
+.include <bsd.port.post.mk>
