@@ -3,12 +3,12 @@
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.9 1997/03/21 23:07:01 asami Exp $
+# $Id: Makefile,v 1.10 1997/06/03 07:15:50 asami Exp $
 #
 
 DISTNAME=       xpdf-0.7
 CATEGORIES=	graphics print
-MASTER_SITES=   ftp://ftp.andrew.cmu.edu/pub/xpdf/
+MASTER_SITES=	ftp://ftp.aimnet.com/pub/users/derekn/xpdf/
 
 MAINTAINER=	chuckr@glue.umd.edu
 
