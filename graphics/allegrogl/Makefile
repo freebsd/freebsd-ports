@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	allegrogl
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +26,7 @@ USE_AUTOCONF_VER=253
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lib
+INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/alleggl
 
@@ -39,17 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%ALLEGRO_CONFIG%%|${ALLEGRO_CONFIG}|g' \
 		${WRKSRC}/make/makefile.unx
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/unix/libagl.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/include/alleggl.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/include/alleggl_config.h ${PREFIX}/include
-	@${MKDIR} ${PREFIX}/include/allegrogl
-	${INSTALL_DATA} ${WRKSRC}/include/allegrogl/*.h \
-		${PREFIX}/include/allegrogl
-	@${MKDIR} ${PREFIX}/include/allegrogl/GLext
-	${INSTALL_DATA} ${WRKSRC}/include/allegrogl/GLext/*.h \
-		${PREFIX}/include/allegrogl/GLext
-
+post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examp/* ${EXAMPLESDIR}
 	@${PERL} -pi -e 's|%%CC%%|${CC}|g; \
