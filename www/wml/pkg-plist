@@ -28,6 +28,8 @@ lib/wml/aux/logos/logo-freebsd.gif
 lib/wml/aux/logos/logo-freebsd.info
 lib/wml/aux/logos/logo-linux.gif
 lib/wml/aux/logos/logo-linux.info
+lib/wml/aux/logos/logo-vim.gif
+lib/wml/aux/logos/logo-vim.info
 lib/wml/aux/logos/logo-wml.gif
 lib/wml/aux/logos/logo-wml.info
 lib/wml/include/all.wml
