@@ -22,6 +22,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf
+NO_LATEST_LINK=	YES
 
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
