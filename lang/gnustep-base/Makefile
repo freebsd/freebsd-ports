@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	gnustep-base
-.if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.9.2
-.else
-PORTVERSION=	1.10.1
-.endif
+PORTVERSION=	1.10.2
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -34,6 +30,7 @@ USE_GNUSTEP=	yes
 USE_GNUSTEP_CONFIGURE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
+USE_ICONV=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
@@ -51,17 +48,8 @@ MAKE_APPS=	SSL
 INSTALL_APPS=	SSL
 .endif
 
-.if defined(WITH_GNUSTEP_DEVEL)
-LIBS+=		-lkvm
-CONFIGURE_ENV+=	LIBS="${LIBS}"
-.endif
-
-.if defined(WITH_GNUSTEP_DEVEL)
-PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
-.else
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1} 
 EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -86,11 +74,9 @@ post-install:
 	(cd ${WRKSRC}/${i}; . ${SYSMAKEDIR}/GNUstep.sh; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} -d ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
-.if !defined(WITH_GNUSTEP_DEVEL)
 	${RM} ${PREFIX}/System/Library/Libraries/libgnustep-base.so
 	${LN} -s libgnustep-base.so.${PORTVERSION} \
 	 ${PREFIX}/System/Library/Libraries/libgnustep-base.so
-.endif
 
 test:
 	@(cd ${WRKSRC}/Testing && . ${SYSTEMDIR}/Makefiles/GNUstep.sh; ${GMAKE})
