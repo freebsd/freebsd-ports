@@ -1,0 +1,10 @@
+--- krogue/kdun.cpp	Tue Dec 21 15:31:48 1999
++++ krogue/kdun.cpp.new	Tue Feb 22 00:41:48 2000
+@@ -6,6 +6,7 @@
+ #include <kmsgbox.h>
+ #include <kconfig.h>
+ #include <ctype.h>
++#include <unistd.h>
+ #include "krestoredlg.h"
+ #include "rogue/dun.h"
+ #include "kcharfile.h"

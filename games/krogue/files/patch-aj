@@ -1,0 +1,64 @@
+--- krogue/kcmdr.cpp.orig	Sun Oct 10 09:33:41 1999
++++ krogue/kcmdr.cpp	Wed Dec 15 15:28:50 1999
+@@ -36,26 +36,26 @@
+   {'m', ASK_DIR, 0, NULL},
+   {'s', 0, 0, NULL},
+   {'f', ASK_DIR, 0, NULL},
+-  {'e', ASK_ITEM, FOOD, _T("eat what")},
+-  {'r', ASK_ITEM, SCROLL, _T("read what")},
+-  {'P', ASK_ITEM|ASK_EMPTY_HAND, RING, _T("put on what")},
++  {'e', ASK_ITEM, FOOD, msgQuote("eat what")},
++  {'r', ASK_ITEM, SCROLL, msgQuote("read what")},
++  {'P', ASK_ITEM|ASK_EMPTY_HAND, RING, msgQuote("put on what")},
+   {'^', ASK_DIR, 0, NULL},
+   {'T', 0, 0, NULL},
+-  {'w', ASK_ITEM, ALL_OBJECTS&(~(ARMOR|RING)), _T("wield what")},
+-  {'z', ASK_DIR|ASK_ITEM, WAND, _T("zap what")},
++  {'w', ASK_ITEM, ALL_OBJECTS&(~(ARMOR|RING)), msgQuote("wield what")},
++  {'z', ASK_DIR|ASK_ITEM, WAND, msgQuote("zap what")},
+   {'v', 0, 0, NULL},
+   {'\x01', 0, 0, NULL},
+   {'F', ASK_DIR, 0, NULL},
+-  {'q', ASK_ITEM, POTION, _T("quaff what")},
+-  {'d', ASK_ITEM, ALL_OBJECTS, _T("drop what")},
++  {'q', ASK_ITEM, POTION, msgQuote("quaff what")},
++  {'d', ASK_ITEM, ALL_OBJECTS, msgQuote("drop what")},
+   {'R', ASK_HAND, 0, NULL},
+-  {'I', ASK_ITEM, ALL_OBJECTS, _T("inventory what")},
+-  {'W', ASK_ITEM, ARMOR, _T("wear what")},
+-  {'t', ASK_DIR|ASK_ITEM, ALL_OBJECTS, _T("throw what")},
++  {'I', ASK_ITEM, ALL_OBJECTS, msgQuote("inventory what")},
++  {'W', ASK_ITEM, ARMOR, msgQuote("wear what")},
++  {'t', ASK_DIR|ASK_ITEM, ALL_OBJECTS, msgQuote("throw what")},
+   {')', 0, 0, NULL},
+   {']', 0, 0, NULL},
+   {'=', 0, 0, NULL},
+-  {CMD_CALL, ASK_ITEM, SCROLL|POTION|WAND|RING, _T("call what")},
++  {CMD_CALL, ASK_ITEM, SCROLL|POTION|WAND|RING, msgQuote("call what")},
+   {CMD_WIZ, 0, 0, NULL},
+   {CMD_QUIT, 0, 0, NULL},
+   {CMD_INV, 0, 0, NULL},
+@@ -213,9 +213,9 @@
+   {
+     for (i=0; i<NCMD; i++)
+     {
+-      if (r_cmdtable[i].cmd==k->ascii())
++      if (r_cmdtable[i].thecmd==k->ascii())
+       {
+-        ccmd=r_cmdtable[i].cmd;
++        ccmd=r_cmdtable[i].thecmd;
+ 	cmd_ask=r_cmdtable[i].ask;
+ 	cmd_q=r_cmdtable[i].q;
+ 	cmd_mask=r_cmdtable[i].mask;
+@@ -226,9 +226,9 @@
+     {
+       if (::wizard)
+         for (i=0; i<NWIZCMD; i++)
+-	  if (wiz_cmdtable[i].cmd==k->ascii())
++	  if (wiz_cmdtable[i].thecmd==k->ascii())
+ 	  {
+-            ccmd=wiz_cmdtable[i].cmd;
++            ccmd=wiz_cmdtable[i].thecmd;
+ 	    cmd_ask=wiz_cmdtable[i].ask;
+ 	    cmd_q=wiz_cmdtable[i].q;
+ 	    cmd_mask=wiz_cmdtable[i].mask;

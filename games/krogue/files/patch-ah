@@ -1,0 +1,33 @@
+--- krogue/rogue/trap.c	Fri May 14 07:08:43 1999
++++ krogue/rogue/trap.c.new	Sun Nov 21 23:06:08 1999
+@@ -18,18 +18,18 @@
+ short bear_trap = 0;
+ 
+ char *trap_strings[TRAPS * 2] = {
+-	_T("trap door"),
+-			_T("you fell down a trap"),
+-	_T("bear trap"),
+-			_T("you are caught in a bear trap"),
+-	_T("teleport trap"),
+-			_T("teleport"),
+-	_T("poison dart trap"),
+-			_T("a small dart just hit you in the shoulder"),
+-	_T("sleeping gas trap"),
+-			_T("a strange white mist envelops you and you fall asleep"),
+-	_T("rust trap"),
+-			_T("a gush of water hits you on the head")
++	msgQuote("trap door"),
++			msgQuote("you fell down a trap"),
++	msgQuote("bear trap"),
++			msgQuote("you are caught in a bear trap"),
++	msgQuote("teleport trap"),
++			msgQuote("teleport"),
++	msgQuote("poison dart trap"),
++			msgQuote("a small dart just hit you in the shoulder"),
++	msgQuote("sleeping gas trap"),
++			msgQuote("a strange white mist envelops you and you fall asleep"),
++	msgQuote("rust trap"),
++			msgQuote("a gush of water hits you on the head")
+ };
+ 
+ extern short cur_level, party_room;

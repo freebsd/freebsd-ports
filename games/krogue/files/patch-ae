@@ -1,0 +1,11 @@
+--- krogue/rogue/pack.c	Wed Sep  1 15:44:36 1999
++++ krogue/rogue/pack.c.new	Sun Nov 21 23:04:02 1999
+@@ -13,7 +13,7 @@
+ #include "rogue.h"
+ #include "dun.h"
+ 
+-char *curse_message = _T("you can't, it appears to be cursed");
++char *curse_message = msgQuote("you can't, it appears to be cursed");
+ extern short levitate;
+ 
+ object *

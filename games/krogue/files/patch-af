@@ -1,0 +1,11 @@
+--- krogue/rogue/ring.c	Sat Aug 28 14:23:08 1999
++++ krogue/rogue/ring.c.new	Sun Nov 21 23:04:16 1999
+@@ -13,7 +13,7 @@
+ #include "rogue.h"
+ #include "dun.h"
+ 
+-char *no_ring = _T("there's no ring on that hand");
++char *no_ring = msgQuote("there's no ring on that hand");
+ short stealthy, r_rings, add_strength, e_rings, regeneration, ring_exp;
+ short auto_search;
+ boolean r_teleport, r_see_invisible, sustain_strength, maintain_armor;

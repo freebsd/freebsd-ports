@@ -1,0 +1,33 @@
+--- krogue/rogue/move.c	Sun Oct 24 13:30:32 1999
++++ krogue/rogue/move.c.new	Sun Nov 21 23:03:50 1999
+@@ -15,7 +15,7 @@
+ 
+ short m_moves = 0;
+ boolean jump = 1;
+-char *you_can_move_again = _T("you can move again");
++char *you_can_move_again = msgQuote("you can move again");
+ 
+ extern short cur_room, halluc, blind, levitate;
+ extern short cur_level, max_level;
+@@ -324,18 +324,18 @@
+ 	boolean fainted = 0;
+ 
+ 	if (rogue.moves_left == HUNGRY) {
+-		(void) strcpy(hunger_str, _T("hungry"));
++		(void) strcpy(hunger_str, msgQuote("hungry"));
+ 		message(transl(hunger_str), 0);
+ 		print_stats(STAT_HUNGER);
+ 	}
+ 	if (rogue.moves_left == WEAK) {
+-		(void) strcpy(hunger_str, _T("weak"));
++		(void) strcpy(hunger_str, msgQuote("weak"));
+ 		message(transl(hunger_str), 1);
+ 		print_stats(STAT_HUNGER);
+ 	}
+ 	if (rogue.moves_left <= FAINT) {
+ 		if (rogue.moves_left == FAINT) {
+-			(void) strcpy(hunger_str, _T("faint"));
++			(void) strcpy(hunger_str, msgQuote("faint"));
+ 			message(transl(hunger_str), 1);
+ 			print_stats(STAT_HUNGER);
+ 		}
