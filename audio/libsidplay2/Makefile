@@ -1,15 +1,15 @@
 # New ports collection makefile for:   sidplay
-# Version required:    1.36.10
+# Version required:    1.36.31
 # Date created:        31 October 1996
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.2 1998/07/27 18:11:10 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/28 09:07:10 asami Exp $
 #
 
-DISTNAME=	sidplay-13625
-PKGNAME=        sidplay-1.36.25
+DISTNAME=	sidplay-1_36_31
+PKGNAME=        sidplay-1.36.31
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
