@@ -5,6 +5,15 @@
 # $FreeBSD$
 #
 
-EMACS_PORT_NAME=	xemacs
+MAINTAINER=	kiri@FreeBSD.org
 
-.include "${.CURDIR}/../mew/Makefile"
+# This is a slave port.
+MASTERDIR=	${.CURDIR}/../mew
+
+# set emacs port
+EMACS_PORT_NAME=xemacs
+
+# use pkg-* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}
+
+.include "${MASTERDIR}/Makefile"

@@ -1,6 +1,6 @@
---- bin/Makefile.orig	Tue Mar  2 12:05:21 1999
-+++ bin/Makefile	Mon Aug 30 22:50:21 1999
-@@ -21,16 +21,16 @@
+--- bin/Makefile~	Wed Oct 27 08:55:11 1999
++++ bin/Makefile	Tue Jul 10 01:06:02 2001
+@@ -22,7 +22,7 @@
  	$(CC) -o $@ $(OBJS)
  	$(RM) $(ALT)
  	for f in $(ALT); do \
@@ -9,8 +9,10 @@
  
  uumerge: uumerge.in
  	sed -e "s|@PERL@|${PERL}|" < uumerge.in > uumerge
- 
- install: $(PRG) $(OTH)
+@@ -32,10 +32,10 @@
+ 	-@if [ ! -d $(BINDIR) ]; then \
+ 		$(MKDIR) $(BINDIR); \
+ 	fi; \
 -	cp $(PRG) $(BINDIR)
 +	${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)
  	for f in $(ALT); do \
