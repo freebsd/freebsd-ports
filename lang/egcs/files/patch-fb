@@ -1,0 +1,12 @@
+--- gcc/flags.h.orig	Sat Feb 27 10:33:03 1999
++++ gcc/flags.h	Tue Mar 30 03:36:49 1999
+@@ -449,6 +449,9 @@
+ 
+ /* Do the full regmove optimization pass.  */
+ extern int flag_regmove;
++
++/* Nonzero means that -Wformat accepts certain non-ANSI formats.  */
++extern int flag_format_extensions;
+ 
+ /* Other basic status info about current function.  */
+ 
