@@ -30,5 +30,6 @@ lib/libMesatk.a
 lib/libMesatk.so.13.6
 lib/libglut.a
 lib/libglut.so.3.6
-@exec ldconfig -m %B
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm include/GL

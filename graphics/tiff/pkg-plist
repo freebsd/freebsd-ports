@@ -1,6 +1,7 @@
 lib/libtiff34.a
 lib/libtiff34.so.1.0
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 bin/fax2tiff
 bin/fax2ps
 bin/gif2tiff

@@ -1,6 +1,7 @@
 lib/libStrn.so.1
 lib/libncftp.so.2
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 bin/ncftp3
 bin/ncftpbatch
 bin/ncftpget

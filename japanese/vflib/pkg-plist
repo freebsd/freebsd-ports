@@ -429,3 +429,4 @@ share/fonts/watanabe_font/mincho.vf2
 @dirrm lib/VFlib
 @dirrm share/fonts/watanabe_font
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R

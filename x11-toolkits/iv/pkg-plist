@@ -679,3 +679,5 @@ interviews/man/mann/mailbox.n.gz
 interviews/man/mann/stateviews.n.gz
 interviews/man/refman.PS
 @exec ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+@unexec /sbin/ldconfig -R

@@ -10,6 +10,7 @@ bin/bltwish
 lib/libBLT.a
 lib/libBLT.so.2.1
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 man/mann/BLT.n.gz
 man/mann/barchart.n.gz
 man/mann/bgexec.n.gz

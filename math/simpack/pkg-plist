@@ -36,6 +36,7 @@ lib/libsim++.so.1.0
 lib/libqueuing.a
 lib/libqueuing.so.1.0
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 lib/SimPack/constraint/differential/deq/deq
 lib/SimPack/constraint/differential/deq/order1
 lib/SimPack/constraint/differential/deq/contsim

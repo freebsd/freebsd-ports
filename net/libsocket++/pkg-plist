@@ -2,6 +2,7 @@ lib/libsocket++.a
 lib/libsocket++.so.1.10
 lib/libsocket++_p.a
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 include/Fork.h
 include/echo.h 
 include/ftp.h

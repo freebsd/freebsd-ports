@@ -514,3 +514,4 @@ share/itcl/iwidgets/man/mann/tabnotebook.n.gz
 share/itcl/iwidgets/man/mann/tabset.n.gz
 share/itcl/iwidgets/man/mann/toolbar.n.gz
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R

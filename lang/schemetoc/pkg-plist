@@ -8,6 +8,7 @@ lib/schemetoc
 lib/libsc.so.1.0
 lib/libscxl.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @exec /usr/bin/ranlib %D/lib/schemetoc/libsc.a
 @exec /usr/bin/ranlib %D/lib/schemetoc/libsc_p.a
 @exec /usr/bin/ranlib %D/lib/schemetoc/scxl.a

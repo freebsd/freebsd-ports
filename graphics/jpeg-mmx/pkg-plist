@@ -12,6 +12,7 @@ lib/libjpeg.la
 lib/libjpeg.so
 lib/libjpeg.so.8.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 man/man1/cjpeg.1.gz
 man/man1/djpeg.1.gz
 man/man1/jpegtran.1.gz

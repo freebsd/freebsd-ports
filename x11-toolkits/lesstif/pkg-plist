@@ -137,6 +137,7 @@ lib/libMrm.so.1.2
 lib/libXm.la
 lib/libXm.so.1.2
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 share/doc/LessTif/AUTHORS
 share/doc/LessTif/BUG-REPORTING
 share/doc/LessTif/COPYING

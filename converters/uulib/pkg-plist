@@ -1,5 +1,6 @@
 lib/libuu.a
 lib/libuu.so.1.0
+@unexec /sbin/ldconfig -R
 include/uu.h
 share/doc/uulib/Makefile
 share/doc/uulib/README

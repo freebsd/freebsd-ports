@@ -13,6 +13,7 @@ lib/libtkx.so
 @exec ln -fs %D/%F %B/libtkx.so.41.2
 lib/tkxConfig.sh
 @exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 man/man3/TclCommandWriting.3.gz
 man/man3/Tcl_HandleAlloc.3.gz
 man/man3/Tcl_HandleFree.3.gz

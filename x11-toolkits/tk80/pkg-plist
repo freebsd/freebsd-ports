@@ -245,6 +245,7 @@ lib/tk8.0/tkConfig.sh
 lib/libtk80.a
 lib/libtk80.so.1.2
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm lib/tk8.0/demos/images
 @dirrm lib/tk8.0/demos
 @dirrm lib/tk8.0/images

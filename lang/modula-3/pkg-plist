@@ -812,3 +812,4 @@ man/man1/shownew.1.gz
 man/man1/showthread.1.gz
 share/modula-3/COPYRIGHT
 @exec /sbin/ldconfig -m %D/lib/m3/FreeBSD2
+@unexec /sbin/ldconfig -R

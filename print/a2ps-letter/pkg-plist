@@ -23,6 +23,7 @@ lib/liba2ps.a
 lib/liba2ps.la
 lib/liba2ps.so.1.0
 @exec /sbin/ldconfig -R %B
+@unexec /sbin/ldconfig -R
 man/man1/a2ps.1.gz
 man/man1/ogonkify.1.gz
 share/a2ps/README

@@ -26,4 +26,5 @@ include/tvision/views.h
 lib/libtvision.a
 lib/libtvision.so.0.4
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm include/tvision
