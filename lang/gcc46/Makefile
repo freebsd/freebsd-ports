@@ -4,15 +4,15 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.27 1998/08/26 09:51:15 obrien Exp $
+# $Id: Makefile,v 1.28 1998/09/03 08:49:10 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1a
 PKGNAME=	egcs-1.1.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/ \
-		ftp://cambridge.cygnus.com/pub/egcs/releases/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1a/ \
+		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1a/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1a/
 
 MAINTAINER=	obrien@FreeBSD.org
 
