@@ -1,0 +1,28 @@
+apps/Edit/.DirIcon
+apps/Edit/AppInfo.xml
+apps/Edit/AppRun
+apps/Edit/EditWindow.py
+apps/Edit/EditWindow.pyc
+apps/Edit/EditWindow.pyo
+apps/Edit/Help/COPYING
+apps/Edit/Help/Changes
+apps/Edit/Help/README
+apps/Edit/Options.xml
+apps/Edit/buffer.py
+apps/Edit/buffer.pyc
+apps/Edit/buffer.pyo
+apps/Edit/findrox.py
+apps/Edit/findrox.pyc
+apps/Edit/findrox.pyo
+apps/Edit/goto.py
+apps/Edit/goto.pyc
+apps/Edit/goto.pyo
+apps/Edit/process.py
+apps/Edit/process.pyc
+apps/Edit/process.pyo
+apps/Edit/search.py
+apps/Edit/search.pyc
+apps/Edit/search.pyo
+@dirrm apps/Edit/Help
+@dirrm apps/Edit
+@unexec rmdir %D/apps 2>/dev/null || true
