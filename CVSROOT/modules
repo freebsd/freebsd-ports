@@ -2147,6 +2147,7 @@ intel2gas	ports/lang/intel2gas
 interbase4	ports/databases/interbase4
 intercal	ports/lang/intercal
 intlfonts	ports/x11-fonts/intlfonts
+intltool	ports/textproc/intltool
 ion		ports/x11-wm/ion
 iostat		src/usr.sbin/iostat
 iozone		ports/benchmarks/iozone
