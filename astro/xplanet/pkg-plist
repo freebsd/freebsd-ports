@@ -1,0 +1,8 @@
+bin/xplanet
+bin/xplanetbg
+bin/tkxplanet
+share/xplanet/earth.jpg
+share/xplanet/earth-markers.txt
+share/xplanet/mars-markers.txt
+share/xplanet/moon-markers.txt
+@dirrm share/xplanet
