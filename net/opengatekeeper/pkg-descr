@@ -8,10 +8,7 @@ As it follows the H323 standard, it is compatible with H323
 client programs inclding voxilla, OhPhone, OpenPhone and MS NetMeeting.
 
 It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
+WWW: http://www.openh323.org/
 
 For more information see
-http://www.opengatekeeper.org
-
-and
-
-http://www.openh323.org
+WWW: http://www.opengatekeeper.org/
