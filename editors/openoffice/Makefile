@@ -330,7 +330,11 @@ mozilla:
 		-e 's|--enable-strip||' \
 		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
 .endif
-	@cd ${WRKDIR}/mozilla && ${MAKE} build
+.if defined(USE_GCC)
+	cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build
+.else
+	cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build
+.endif
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
 	@${WRKDIR}/zipmoz.sh ${WRKDIR}/mozilla/work/mozilla/dist FREEBSDGCCI ${WRKDIR}
