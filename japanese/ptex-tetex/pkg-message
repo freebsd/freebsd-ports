@@ -1,9 +1,9 @@
 === IMPORTANT NOTICE ===
 
  - The standard texmf.cnf for pTeX is installed into
-   texmf/web2c-ptex/texmf.cnf and this is used by default.
+   texmf/web2c/ptex/texmf.cnf and this is used by default.
    Do not edit it directly; instead put the file to
-   texmf-var/web2c-ptex/texmf.cnf and edit it if you want
+   texmf-local/web2c/ptex/texmf.cnf and edit it if you want
    to customize it.
 
  - Japanized versions of "pltotf" and "tftopl" are installed

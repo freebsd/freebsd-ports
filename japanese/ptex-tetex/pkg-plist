@@ -1,23 +1,21 @@
 @comment $FreeBSD$
-bin/iniptex
 bin/jbibtex
 bin/pdvitype
 bin/platex
 bin/pltotf-ptex
 bin/ptex
 bin/tftopl-ptex
-bin/virptex
-%%TEXMFDIR%%/web2c-ptex/platex-euc.fmt
-%%TEXMFDIR%%/web2c-ptex/platex-jis.fmt
-%%TEXMFDIR%%/web2c-ptex/platex-sjis.fmt
-%%TEXMFDIR%%/web2c-ptex/platex.fmt
-%%TEXMFDIR%%/web2c-ptex/ptex-euc.fmt
-%%TEXMFDIR%%/web2c-ptex/ptex-jis.fmt
-%%TEXMFDIR%%/web2c-ptex/ptex-sjis.fmt
-%%TEXMFDIR%%/web2c-ptex/ptex.fmt
-%%TEXMFDIR%%/web2c-ptex/ptex.pool
-%%TEXMFDIR%%/web2c-ptex/texmf.cnf
-@dirrm %%TEXMFDIR%%/web2c-ptex
+%%TEXMFDIR%%/web2c/ptex/platex-euc.fmt
+%%TEXMFDIR%%/web2c/ptex/platex-jis.fmt
+%%TEXMFDIR%%/web2c/ptex/platex-sjis.fmt
+%%TEXMFDIR%%/web2c/ptex/platex.fmt
+%%TEXMFDIR%%/web2c/ptex/ptex-euc.fmt
+%%TEXMFDIR%%/web2c/ptex/ptex-jis.fmt
+%%TEXMFDIR%%/web2c/ptex/ptex-sjis.fmt
+%%TEXMFDIR%%/web2c/ptex/ptex.fmt
+%%TEXMFDIR%%/web2c/ptex/ptex.pool
+%%TEXMFDIR%%/web2c/ptex/texmf.cnf
+@dirrm %%TEXMFDIR%%/web2c/ptex
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/Makefile
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/README
 %%TEXMFDIR%%/doc/jbibtex/doc-ascii/README.1st
@@ -318,8 +316,10 @@ bin/virptex
 @dirrm %%TEXMFDIR%%/ptex/platex/config
 @dirrm %%TEXMFDIR%%/ptex/platex
 @dirrm %%TEXMFDIR%%/ptex
-%%TEXMFDIR%%/dvips-ptex/jis.map
-%%TEXMFDIR%%/dvips-ptex/morisawa.map
-@unexec rmdir %D/%%TEXMFDIR%%/dvips-ptex 2> /dev/null || true
+%%TEXMFDIR%%/dvips/ptex/jis.map
+%%TEXMFDIR%%/dvips/ptex/morisawa.map
+@unexec rmdir %D/%%TEXMFDIR%%/dvips/ptex 2> /dev/null || true
+%%TEXMFCONFIGDIR%%/texconfig/tcfmgr.map
+@dirrm %%TEXMFCONFIGDIR%%/texconfig
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%

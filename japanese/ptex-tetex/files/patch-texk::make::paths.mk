@@ -1,11 +1,11 @@
---- texk/make/paths.mk.orig	Wed Nov 13 05:54:37 2002
-+++ texk/make/paths.mk	Fri Sep 17 13:22:23 2004
+--- texk/make/paths.mk.orig	Sat May  8 19:05:24 2004
++++ texk/make/paths.mk	Tue Jan 11 01:15:49 2005
 @@ -61,7 +61,7 @@
  dvilj_latex2e_macrodir = $(texinputdir)/latex/dvilj
  
  # mktex.cnf, texmf.cnf, etc.
 -web2cdir = $(texmf)/web2c
-+web2cdir = $(texmf)/web2c-ptex
++web2cdir = $(texmf)/web2c/ptex
  
  # The top-level font directory.
  fontdir = $(texmf)/fonts
@@ -14,7 +14,7 @@
  
  # For dvips configuration files, psfonts.map, etc.
 -dvipsdir = $(texmf)/dvips
-+dvipsdir = $(texmf)/dvips-ptex
++dvipsdir = $(texmf)/dvips/ptex
  
  # For dvips .pro files, gsftopk's render.ps, etc.
  psheaderdir = $(dvipsdir)

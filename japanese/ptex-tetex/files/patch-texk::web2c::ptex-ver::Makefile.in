@@ -1,5 +1,5 @@
---- texk/web2c/ptex-3.1.5/Makefile.in.orig	Tue Jun 17 14:30:40 2003
-+++ texk/web2c/ptex-3.1.5/Makefile.in	Wed Sep 15 18:09:11 2004
+--- texk/web2c/ptex-3.1.8/Makefile.in.orig	Fri Dec  3 17:33:13 2004
++++ texk/web2c/ptex-3.1.8/Makefile.in	Tue Jan 11 01:41:20 2005
 @@ -5,7 +5,7 @@
  
  default: programs formats
@@ -26,17 +26,17 @@
 +pltotf-ptex: pltotf.o $(plib_o) $(kpathsea) $(proglib)
  	$(kpathsea_link) pltotf.o $(plib_o) $(LOADLIBES)
  pltotf.o: pltotf.c kanji.h ptexhelp.h
- pltotf.c: pltotf.p $(web2c_aux)
-@@ -167,7 +167,7 @@
+ 	$(compile) -DKANJI_C=1 -c pltotf.c
+@@ -168,7 +168,7 @@
  texmf.cnf: $(kpathsea_dir)/texmf.cnf
  	$(SHELL) $(thisdir)/mkconf $(kpathsea_dir)/texmf.cnf > texmf.cnf
  
 -dumpenv = TEXMFCNF=$(thisdir) TEXMF=$(texmf)
-+dumpenv = TEXMFCNF=$(thisdir) TEXMF=\{${TEXMFDUMP},$(texmf),${TEXMFLOCAL}\}
++dumpenv = TEXMFCNF=$(thisdir) TEXMF=\{${TEXMFDUMP},${TEXMFDISTDIR},$(texmf),${TEXMFLOCALDIR}\}
  
  ptex-euc.fmt: ptex texmf.cnf
- 	$(dumpenv) $(MAKE) $(makeargs) files="--progname=ptex ptex.tex min10.tfm" prereq-check
-@@ -277,13 +277,13 @@
+ 	$(dumpenv) $(MAKE) progname=ptex files="ptex.tex min10.tfm" prereq-check
+@@ -271,13 +271,13 @@
  	-$(DIFF) $(DIFFFLAGS) $(tripdir)/trip.typ trip.typ
  
  # Ad hoc tests.
