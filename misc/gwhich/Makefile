@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwhich
-PORTVERSION=	2.12
+PORTVERSION=	2.14
 CATEGORIES=	misc
 MASTER_SITES=	http://www.xs4all.nl/~carlo17/which/
 DISTNAME=	which-${PORTVERSION}
