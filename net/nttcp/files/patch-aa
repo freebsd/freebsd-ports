@@ -1,20 +1,13 @@
---- Makefile.orig	Tue Sep 28 12:02:26 1999
-+++ Makefile	Fri Dec 24 22:29:00 1999
-@@ -109,12 +109,12 @@
- #INC=	
+--- Makefile.orig	Mon Dec 18 19:17:20 2000
++++ Makefile	Mon Jan 29 12:26:51 2001
+@@ -111,8 +111,8 @@
+ # For FreeBSD
+ ARCH=	-DFreeBSD
+ LIB=
+-OPT=	-O2
+-CC=	cc
++#OPT=	-O2
++#CC=	cc
+ DBG=	
+ INC=	
  
- ## For FreeBSD
--#ARCH=	-DFreeBSD
--#LIB=
-+ARCH=	-DFreeBSD
-+LIB=
- #OPT=	-O2
--#CC=	cc
--#DBG=	
--#INC=	
-+CC=	cc
-+DBG=	
-+INC=	
- 
- ## For SGI IRIX 5.3, 6.2 (cc or gcc)
- #ARCH=
