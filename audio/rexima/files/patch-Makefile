@@ -1,0 +1,10 @@
+--- Makefile.orig	Sun Jan 19 19:44:36 2003
++++ Makefile	Sun Jan 19 19:44:49 2003
+@@ -7,7 +7,6 @@
+ # MANDIR to directory for man page.
+ # Usually it will be simpler to just set PREFIX.
+ #
+-PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/man/man1
+ 
