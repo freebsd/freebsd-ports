@@ -4,12 +4,14 @@
 #
 # $FreeBSD$
 
-PORTNAME=	aim-transport
+PORTNAME=	aim
 PORTVERSION=	0.9.24c
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.jabber.org/dists/transports/aim-transport/
 PKGNAMEPREFIX=	jabber-
+PKGNAMESUFFIX=	-transport
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	seanc@FreeBSD.org
@@ -21,12 +23,14 @@ PLIST_FILES=	lib/jabber/aimtrans.so
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	213
 
-CONFIGURE_ARGS+=	--with-jabberd=${PREFIX}/include/jabber
+CONFIGURE_ARGS+=--with-jabberd=${LOCALBASE}/include/jabber
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include/pth
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/aimtrans.so ${PREFIX}/lib/jabber/
+	@${MKDIR} ${PREFIX}/lib/jabber
+	${INSTALL_DATA} ${WRKSRC}/src/aimtrans.so ${PREFIX}/lib/jabber
 
 post-install:
-	@cat pkg-message
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>
