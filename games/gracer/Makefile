@@ -8,7 +8,8 @@
 PORTNAME= 	gracer
 PORTVERSION= 	0.1.4
 CATEGORIES=	games
-MASTER_SITES=	http://arch.comp.kyutech.ac.jp/~matsu/my_products/gtk/race/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 
