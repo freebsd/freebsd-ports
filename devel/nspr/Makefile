@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gnome@FreeBSD.org
 
+BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/nsprpub/build
 
 INSTALLS_SHLIB=	yes
