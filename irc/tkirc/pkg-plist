@@ -1,6 +1,21 @@
 bin/tkirc
-share/doc/tkirc/tkircrc-example
-share/doc/tkirc/README
+bin/tkirc2
 share/doc/tkirc/CHANGES
 share/doc/tkirc/COPYING
+share/doc/tkirc/README
+@exec mkdir -p %D/share/doc/tkirc/examples/.tkirc2/.data
+@exec mkdir -p %D/share/doc/tkirc/examples/.tkirc2/autoload
+share/doc/tkirc/examples/.tkirc2/netscape.sh
+share/doc/tkirc/examples/.tkirc2/tkircrc-example
+share/doc/tkirc/examples/.tkirc2/scripts/crazy1.tcl
+share/doc/tkirc/examples/.tkirc2/scripts/crazy2.tcl
+share/doc/tkirc/examples/.tkirc2/scripts/crazy3.tcl
+share/doc/tkirc/examples/.tkirc2/scripts/examples.tcl
+share/doc/tkirc/examples/.tkirc2/scripts/hilo.tcl
+share/doc/tkirc/examples/.tkirc2/scripts/sound.tcl
+@dirrm share/doc/tkirc/examples/.tkirc2/.data
+@dirrm share/doc/tkirc/examples/.tkirc2/autoload
+@dirrm share/doc/tkirc/examples/.tkirc2/scripts
+@dirrm share/doc/tkirc/examples/.tkirc2
+@dirrm share/doc/tkirc/examples
 @dirrm share/doc/tkirc
