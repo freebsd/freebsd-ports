@@ -1,0 +1,17 @@
+share/doc/silc/CodingStyle
+share/doc/silc/FAQ
+share/doc/silc/example_silc.conf
+share/doc/silc/example_silc.conf.in
+share/doc/silc/example_silcd.conf
+share/doc/silc/example_silcd.conf.in
+share/doc/silc/draft-riikonen-silc-commands-02.txt
+share/doc/silc/draft-riikonen-silc-ke-auth-04.txt
+share/doc/silc/draft-riikonen-silc-pp-04.txt
+share/doc/silc/draft-riikonen-silc-spec-04.txt
+share/doc/silc/COPYING
+share/doc/silc/CHANGES
+share/doc/silc/CREDITS
+share/doc/silc/README
+share/doc/silc/INSTALL
+share/doc/silc/TODO
+@dirrm share/doc/silc
