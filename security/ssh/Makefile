@@ -101,14 +101,16 @@ fetch-depends:
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/ssh_host_key ]; then \
-		${ECHO} "Generating a secret host key..."; \
-		${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
+	    ${ECHO} "Generating a secret host key..."; \
+	    ${PREFIX}/bin/ssh-keygen -f ${PREFIX}/etc/ssh_host_key -N ""; \
+	fi; \
+	if [ "`grep ssh /etc/inetd.conf|grep -v ^#ssh`" = "" ]; then \
+	    if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${SED} -e 's+!!PREFIX!!+${PREFIX}+g' ${FILESDIR}/sshd.sh \
-			> ${PREFIX}/etc/rc.d/sshd.sh; \
+		    > ${PREFIX}/etc/rc.d/sshd.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+	    fi; \
 	fi
 
 .include <bsd.port.pre.mk>
