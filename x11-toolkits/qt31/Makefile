@@ -50,8 +50,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/libqt2.so.${VERSION} ${PREFIX}/lib/libqt2.so.${VERSION}
 	${LN} -sf ${PREFIX}/lib/libqt2.so.${VERSION} ${PREFIX}/lib/libqt2.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/X11/qt2
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/X11/qt2
+	${MKDIR} ${PREFIX}/include/qt2
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
 	${INSTALL_MAN} ${WRKSRC}/man/man1/moc.1 ${PREFIX}/man/man1/moc2.1
 	${INSTALL_MAN} ${WRKSRC}/man/man3/q* ${PREFIX}/man/man3
 .if !defined(NOPORTDOCS)
