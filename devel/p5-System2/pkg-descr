@@ -1,0 +1,12 @@
+Execute a command, and returns output from STDOUT and STDERR. Much like
+system(). $? is set. (Much cheaper than using open3() to get the same
+info.)
+
+If $debug is set, on-the fly diagnostics will be reported about how much
+data is being read.
+
+Author: Brian Reichert <reichert@numachi.com>
+WWW: http://search.cpan.org/search?dist=System2
+
+-Anton
+<tobez@FreeBSD.org>
