@@ -1,38 +1,31 @@
---- fhist/breaks.c~	Fri Oct  7 18:05:04 1994
-+++ fhist/breaks.c	Wed Apr 29 09:25:29 1998
-@@ -23,13 +23,34 @@
-  * MANIFEST: Unix-specific routines to implement special actions.
-  */
- 
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+
- #include <signal.h>
- 
- #include <breaks.h>
- 
--#if defined(sun) || defined(__sun__)
-+#if defined(sun) || defined(__sun__) 
- #define sighold(n)
- #define sigrelse(n)
-+#elif (defined(BSD) && (BSD > 199306))
-+/* POSIX handling, assumed present from 4.4 days */
-+/* Will this be valid for {Open,Net}BSD too? */
-+#define sighold(n)						\
-+	do {							\
-+	  sigset_t set;						\
-+	  (void) sigemptyset(&set);				\
-+	  (void) sigaddset(&set, (n));				\
-+	  (void) sigprocmask(SIG_BLOCK, &set, (void *)0);	\
-+	} while(0)
-+#define sigrelse(n)						\
-+	do {							\
-+	  sigset_t set;						\
-+	  (void) sigemptyset(&set);				\
-+	  (void) sigaddset(&set, (n));				\
-+	  (void) sigprocmask(SIG_UNBLOCK, &set, (void *)0);	\
-+	} while (0)  
- #endif
+--- configure--	Wed Jan  5 21:46:38 2000
++++ configure	Wed Jan  5 21:46:42 2000
+@@ -1425,28 +1425,6 @@
+ done
  
  
+-if test -n "$SOELIM"; then
+-echo $ac_n "checking that $SOELIM understands the -I option""... $ac_c" 1>&6
+-echo "configure:1431: checking that $SOELIM understands the -I option" >&5
+-echo ".so version.so" > conftest.in 2>&5
+-$SOELIM -Ietc -Ibl/etc -Iblbl/etc conftest.in > conftest.out 2>&5
+-if grep 1998 conftest.out 1>&5 2>&5; then
+-	echo "$ac_t""yes" 1>&6
+-else
+-	echo "$ac_t""no" 1>&6
+-	echo "$ac_t""" 1>&6
+-	echo "$ac_t""	The FHist documentation set and manual pages" 1>&6
+-	echo "$ac_t""	will be formatted and installed installed if" 1>&6
+-	echo "$ac_t""	you first install GNU Groff with the patch found" 1>&6
+-	echo "$ac_t""	at http://www.canb.auug.org.au/~millerp/ and then" 1>&6
+-	echo "$ac_t""	re-run this ./configure script.  Remember to" 1>&6
+-	echo "$ac_t""	use \`\`rm config.cache'' before you do." 1>&6
+-	echo "$ac_t""" 1>&6
+-	SOELIM=
+-fi
+-rm -rf conftest*
+-fi
+-
+ echo $ac_n "checking for TIOCGWINSZ""... $ac_c" 1>&6
+ echo "configure:1452: checking for TIOCGWINSZ" >&5
+ if test "$cross_compiling" = yes; then
