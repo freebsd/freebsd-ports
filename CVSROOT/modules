@@ -3906,6 +3906,7 @@ libmytinfo	src/lib/libmytinfo
 libncp		src/lib/libncp
 libncurses	src/lib/libncurses
 libnet		ports/net/libnet
+libnet-devel	ports/net/libnet-devel
 libnetgraph	src/lib/libnetgraph
 libneural	ports/math/libneural
 libnids		ports/net/libnids
