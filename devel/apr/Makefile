@@ -4,6 +4,13 @@
 #
 # $FreeBSD$
 #
+# Tunables:
+# APR_UTIL_WITH_GDBM:		force dependency on the GNU dbm
+# APR_UTIL_WITHOUT_GDBM:	unconditionally disable the use of GNU dbm
+# APR_UTIL_WITH_BERKELEY_DB:	force dependency on Sleepycat's Berkeley DB 4
+# APR_UTIL_WITHOUT_BERKELEY_DB:	unconditionally disable the use of db4
+# (the database bindings are detected and recorded automatically if these
+# switches are not set)
 
 PORTNAME=	apr
 PORTVERSION=	0.9.4
@@ -26,7 +33,8 @@ USE_LIBTOOL_VER=	14
 LIBTOOLFILES=		# none
 INSTALLS_SHLIB=		yes
 CONFIGURE_ENV=  CPPFLAGS="${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS}"
+		LIBS="${PTHREAD_LIBS}" \
+		CC="${CC}" CFLAGS="${CFLAGS}"
 
 WRKSRC=	${WRKDIR}
 
@@ -42,6 +50,34 @@ APR_UTIL_CONF_ENV=	\
 APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 			--with-expat=${PREFIX} \
 			--with-iconv=${PREFIX}
+
+.include <bsd.port.pre.mk>
+
+.if defined(APR_UTIL_WITHOUT_GDBM)
+APR_UTIL_CONF_ARGS+=	--without-gdbm
+.else
+.if defined(APR_UTIL_WITH_GDBM) || exists(${LOCALBASE}/lib/libgdbm.so.3)
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
+.else
+PKGNAMESUFFIX=	-gdbm
+.endif
+.endif
+.endif
+
+.if defined(APR_UTIL_WITHOUT_BERKELEY_DB)
+APR_UTIL_CONF_ARGS+=	--without-berkeley-db
+.else
+.if defined(APR_UTIL_WITH_BERKELEY_DB) || exists(${LOCALBASE}/lib/libdb4.so.0)
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
+.else
+PKGNAMESUFFIX=	-db4
+.endif
+.endif
+.endif
 
 pre-configure:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
@@ -64,4 +100,4 @@ do-install:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
