@@ -93,8 +93,6 @@ pre-build:
 	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
 		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
 		${BUILD_WRKSRC}/Makefile
-
-pre-build:
 	cd ${WRKSRC} && ${MAKE} keymap_defs.h
 
 .if !defined(NOPORTDOCS)
