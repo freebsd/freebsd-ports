@@ -14,5 +14,5 @@ notably:
 	filename, command, internal mode and variable completion
 	auxiliary utilities for man page and C program syntax highlighting
 	built-in macro language
-	portability to all UNIX platforms, VMS, DOS.
+	portability to all UNIX platforms, VMS, DOS, Win32, OS/2
 
