@@ -33,9 +33,9 @@ lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc/cparse.so
 @dirrm lib/ruby/site_ruby/%%RUBY_VER%%/amstd
 @dirrm lib/ruby/site_ruby/%%RUBY_VER%%/racc
 @dirrm lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc
-share/doc/ruby/racc/examples/calc.y
-share/doc/ruby/racc/examples/calc2-ja.y
-share/doc/ruby/racc/examples/compile.rb
+share/examples/ruby/racc/calc.y
+share/examples/ruby/racc/calc2-ja.y
+share/examples/ruby/racc/compile.rb
 share/doc/ruby/racc/ja/changes.html
 share/doc/ruby/racc/ja/command.html
 share/doc/ruby/racc/ja/debug.html
@@ -49,6 +49,6 @@ share/doc/ruby/racc/debug.html
 share/doc/ruby/racc/grammer.html
 share/doc/ruby/racc/index.html
 share/doc/ruby/racc/usage.html
-@dirrm share/doc/ruby/racc/examples
+@dirrm share/examples/ruby/racc
 @dirrm share/doc/ruby/racc/ja
 @dirrm share/doc/ruby/racc

@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${f}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/optparse/examples/ja
+	${MKDIR} ${PREFIX}/share/examples/ruby/optparse/ja
 	${MKDIR} ${PREFIX}/share/doc/ruby/optparse/ja
 .for f in optparse.rlog
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/optparse/
@@ -39,10 +39,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/optparse/ja/
 .endfor
 .for f in cmd-ls.rb cmd.rb getopts.test.en opttest.rb
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/optparse/examples/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/ruby/optparse/
 .endfor
 .for f in getopts.test
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/optparse/examples/ja
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/ruby/optparse/ja
 .endfor
 .endif
 
