@@ -182,6 +182,7 @@
     SUBDIR += pips820
     SUBDIR += pips880
     SUBDIR += pips900
+    SUBDIR += pips980
     SUBDIR += pipsv500
     SUBDIR += pipsv600
     SUBDIR += pkfonts118
