@@ -1,10 +1,10 @@
---- data/Makefile.orig	Sat Aug 18 10:38:01 2001
-+++ data/Makefile	Sat Aug 18 10:39:25 2001
-@@ -93,14 +93,14 @@
+--- data/Makefile.orig	Thu Jan 31 09:53:42 2002
++++ data/Makefile	Sat Feb  2 23:34:44 2002
+@@ -97,14 +97,14 @@
  	for file in $(DATAFILES); do \
  		$(INSTALL_DATA) $$file $(DATADIR)/data; \
  	done
--	-if test x$(PAMDIR) != x; then \
+-	-if test x$(PAMDIR) != x$(BUILDROOT); then \
 -		$(INSTALL_DIR) $(PAMDIR); \
 -		if test -f /lib/security/pam_unix.so; then \
 -			$(INSTALL_DATA) cups.suse $(PAMDIR)/cups; \
@@ -12,7 +12,7 @@
 -			$(INSTALL_DATA) cups.pam $(PAMDIR)/cups; \
 -		fi \
 -	fi
-+#	-if test x$(PAMDIR) != x; then \
++#	-if test x$(PAMDIR) != x$(BUILDROOT); then \
 +#		$(INSTALL_DIR) $(PAMDIR); \
 +#		if test -f /lib/security/pam_unix.so; then \
 +#			$(INSTALL_DATA) cups.suse $(PAMDIR)/cups; \

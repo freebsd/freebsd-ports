@@ -16,6 +16,7 @@ etc/cups/printers.conf.sample
 @exec test -f %B/printers.conf || cp %B/%f %B/printers.conf
 include/cups/cups.h
 include/cups/http.h
+include/cups/image.h
 include/cups/ipp.h
 include/cups/language.h
 include/cups/md5.h
@@ -69,6 +70,8 @@ share/cups/charsets/iso-8859-6
 share/cups/charsets/iso-8859-7
 share/cups/charsets/iso-8859-8
 share/cups/charsets/iso-8859-9
+share/cups/charsets/koi8-r
+share/cups/charsets/koi8-u
 share/cups/charsets/utf-8
 share/cups/charsets/windows-1250
 share/cups/charsets/windows-1251
@@ -287,12 +290,20 @@ share/doc/cups/sum.pdf
 share/doc/cups/svd.html
 share/doc/cups/svd.pdf
 share/locale/C/cups_C
+share/locale/be/cups_be
 share/locale/cs/cups_cs
 share/locale/de/cups_de
 share/locale/en/cups_en
 share/locale/es/cups_es
 share/locale/fr/cups_fr
+share/locale/he/cups_he
 share/locale/it/cups_it
+share/locale/ru_RU.cp1251/cups_ru_RU.cp1251
+share/locale/ru_RU.koi8r/cups_ru_RU.koi8r
+share/locale/sv/cups_sv
+share/locale/uk/cups_uk
+share/locale/uk_UA.cp1251/cups_uk_UA.cp1251
+share/locale/zh_CN/cups_zh_CN
 @exec mkdir -p /var/log/cups
 @unexec rmdir /var/log/cups 2>/dev/null || true
 @exec mkdir -p /var/spool/cups/tmp
@@ -325,10 +336,18 @@ share/locale/it/cups_it
 @dirrm share/doc/cups/images
 @dirrm share/doc/cups
 @dirrm share/locale/C
+@dirrm share/locale/be
 @dirrm share/locale/cs
 @dirrm share/locale/de
 @dirrm share/locale/en
 @dirrm share/locale/es
 @dirrm share/locale/fr
+@dirrm share/locale/he
 @dirrm share/locale/it
+@dirrm share/locale/ru_RU.cp1251
+@dirrm share/locale/ru_RU.koi8r
+@dirrm share/locale/sv
+@dirrm share/locale/uk
+@dirrm share/locale/uk_UA.cp1251
+@dirrm share/locale/zh_CN
 @dirrm share/locale
