@@ -197,7 +197,7 @@ CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 .if defined(WANT_KRB5)
 # Relay on PATH
 KRB5_PREFIX!=		krb5-config --prefix
-.if defined(KRB5_PREFIX)
+.if defined(KRB5_PREFIX) && !empty (KRB5_PREFIX)
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_PREFIX}
 .elif defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
