@@ -10,13 +10,13 @@
   XCOMM These are some defines that must be set. Some may be overwritten in the
   XCOMM machine arch section.
   
-!     XPMLIB 				= -L../xpm3.4/lib -lXpm
-!     XPMINCLUDE 			= -I../xpm3.4/lib
+!     XPMLIB 				= -L../xpm-3.4c/lib -lXpm
+!     XPMINCLUDE 			= -I../xpm-3.4c/lib
       XBOINGINCLUDE 		= -I./include
       LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
       SOUNDS_DIR 			= $(XBOING_DIR)/sounds
       BACKUP_DIR 			= $(XBOING_DIR)/../backups
-      HIGH_SCORE_FILE 	= $(XBOING_DIR)/xboing.scr
+      HIGH_SCORE_FILE 	= $(XBOING_DIR)/.xboing.scr
 !     AUDIO_AVAILABLE 	= False
 !     AUDIO_SRC 			= audio/NOaudio.c
       AUDIO_INCLUDE 		=
@@ -37,7 +37,7 @@
       LEVEL_INSTALL_DIR 	= $(XBOING_DIR)/levels
       SOUNDS_DIR 			= $(XBOING_DIR)/sounds
       BACKUP_DIR 			= $(XBOING_DIR)/../backups
-      HIGH_SCORE_FILE 	= $(XBOING_DIR)/xboing.scr
+      HIGH_SCORE_FILE 	= $(XBOING_DIR)/.xboing.scr
 !     AUDIO_AVAILABLE 	= True
 !     AUDIO_SRC 			= audio/LINUXaudio.c
       AUDIO_INCLUDE 		=

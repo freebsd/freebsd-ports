@@ -1,17 +1,17 @@
-*** highscore.c.orig	Wed May 25 02:53:44 1994
---- highscore.c	Sat Apr  1 23:34:07 1995
+*** highscore.c.orig	Wed Jan  4 17:13:31 1995
+--- highscore.c	Fri Apr  7 00:13:54 1995
 ***************
-*** 40,45 ****
---- 40,46 ----
+*** 54,59 ****
+--- 54,60 ----
+  #include <unistd.h>
+  #include <time.h>
   #include <sys/param.h>
-  #include <sys/file.h>
-  #include <sys/types.h>
 + #include <sys/stat.h>
   #include <netinet/in.h>
   #include <X11/Xlib.h>
   #include <X11/Xutil.h>
 ***************
-*** 104,110 ****
+*** 118,124 ****
   static void InitialiseHighScores(void);
   static void SortHighScores(void);
   static void DeleteScore(int i);
@@ -19,7 +19,7 @@
   #else
   static int LockUnlock();
   static void DeleteScore();
---- 105,111 ----
+--- 119,125 ----
   static void InitialiseHighScores(void);
   static void SortHighScores(void);
   static void DeleteScore(int i);
@@ -28,7 +28,7 @@
   static int LockUnlock();
   static void DeleteScore();
 ***************
-*** 825,831 ****
+*** 839,845 ****
   
   	/* Lock the file for me only */
   	if (type == GLOBAL)
@@ -36,7 +36,7 @@
   
   	/* Read in the lastest scores */
   	if (ReadHighScoreTable(type) == False)
---- 826,832 ----
+--- 840,846 ----
   
   	/* Lock the file for me only */
   	if (type == GLOBAL)
@@ -45,7 +45,7 @@
   	/* Read in the lastest scores */
   	if (ReadHighScoreTable(type) == False)
 ***************
-*** 855,861 ****
+*** 869,875 ****
   				else
   				{
   					/* Don't add as score is smaller */
@@ -53,7 +53,7 @@
   				}
   			}
   		}	/* for */
---- 856,862 ----
+--- 870,876 ----
   				else
   				{
   					/* Don't add as score is smaller */
@@ -62,7 +62,7 @@
   			}
   		}	/* for */
 ***************
-*** 877,892 ****
+*** 891,906 ****
   
   				/* Unlock the file now thanks */
   				if (id != -1) 
@@ -79,7 +79,7 @@
   
   		/* Not even a highscore - loser! */
   		return False;
---- 878,894 ----
+--- 892,908 ----
   
   				/* Unlock the file now thanks */
   				if (id != -1) 
@@ -98,7 +98,7 @@
   		/* Not even a highscore - loser! */
   		return False;
 ***************
-*** 1164,1173 ****
+*** 1178,1187 ****
   }
   
   #if NeedFunctionPrototypes
@@ -108,8 +108,8 @@
 ! 	int cmd;
   #endif
   {
-  	int 	inter = -1;
---- 1166,1175 ----
+  	static int 	inter = -1;
+--- 1180,1189 ----
   }
   
   #if NeedFunctionPrototypes
@@ -119,16 +119,16 @@
 ! 	int cmd, fd;
   #endif
   {
-  	int 	inter = -1;
+  	static int 	inter = -1;
 ***************
-*** 1204,1209 ****
---- 1206,1214 ----
+*** 1218,1223 ****
+--- 1220,1228 ----
   	/* Open the highscore file for both read & write */
   	if (cmd == LOCK_FILE)
-  		inter = open(filename, O_CREAT | O_RDWR);
+  		inter = open(filename, O_CREAT | O_RDWR, 0666);
 + 	else
 + 		/* use old fd to unlock */
 + 		inter = fd;
   
-  
   #ifndef NO_LOCKING
+  
