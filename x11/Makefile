@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.196 1998/04/24 05:36:52 mph Exp $
+# $Id: Makefile,v 1.197 1998/04/28 20:16:32 andreas Exp $
 #
 
     SUBDIR += FWF
@@ -48,6 +48,7 @@
     SUBDIR += mouseclock
     SUBDIR += neXtaw
     SUBDIR += olvwm
+    SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += piewm
