@@ -1568,6 +1568,7 @@ fetchmail	ports/mail/fetchmail
 ffcall		ports/devel/ffcall
 ffmpeg		ports/multimedia/ffmpeg
 ffmpeg045		ports/multimedia/ffmpeg045
+ffproxy		ports/www/ffproxy
 ffsrecov	ports/sysutils/ffsrecov
 fftpack		ports/math/fftpack
 fftw		ports/math/fftw
