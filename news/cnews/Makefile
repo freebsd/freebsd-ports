@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.19 1998/12/17 21:54:51 jseger Exp $
+# $Id: Makefile,v 1.20 1999/02/22 03:56:51 steve Exp $
 #
 
 DISTNAME=	c-news
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		pgpverify-1.11
+		pgpverify-1.12
 
 PATCH_SITES=    ftp://ftp.dinoex.org/pub/c-news/
 PATCHFILES=     c-news-patch-fileart.c c-news-patch-namecheck.awk \
@@ -27,7 +27,7 @@ PATCHFILES=     c-news-patch-fileart.c c-news-patch-namecheck.awk \
 		c-news-patch-doexpire c-news-patch-queuelen.tay \
 		c-news-patch-bunzip2 \
 		c-news-patch-ctl-underscore \
-		c-news-patch-pgpverify-1.11
+		c-news-patch-pgpverify-1.12
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
@@ -46,7 +46,7 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 NEWSSPOOL=	${PREFIX}/newsspool
 NEWSBIN=	${PREFIX}/news/cnewsbin
 NEWSLIB=	${PREFIX}/news/lib
-PGPVERIFY=	pgpverify-1.11
+PGPVERIFY=	pgpverify-1.12
 
 pre-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
