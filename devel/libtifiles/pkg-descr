@@ -1,0 +1,10 @@
+The tifiles library is a multi-platform library which handles the
+various
+Texas Instruments calculator file formats through a set of functions
+which
+constitutes a common API.
+
+WWW: http://tilp.info/
+
+- Tijl Coosemans
+tijl@ulyssis.org

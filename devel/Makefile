@@ -359,6 +359,7 @@
     SUBDIR += libtai
     SUBDIR += libtar
     SUBDIR += libtecla
+    SUBDIR += libtifiles
     SUBDIR += libtool13
     SUBDIR += libtool14
     SUBDIR += libtool15
