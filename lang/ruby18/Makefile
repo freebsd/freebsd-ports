@@ -58,7 +58,7 @@ MAN1=		${RUBY_NAME}.1
 LATEST_LINK=	ruby-devel
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 502102
+.if ${OSVERSION} >= 502102 && ${ARCH} != "sparc64"                              
 RUBY_ENABLE_PTHREAD?=	public demand
 .endif
 
