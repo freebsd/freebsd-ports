@@ -13,7 +13,7 @@ MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
 DISTNAME=	${PORTNAME}-${JDK_VERSION:S/./_/g}-linux-i586
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.2 for Linux
 
 EXTRACT_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper

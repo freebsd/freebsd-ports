@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	cli-${PORTVERSION}-src
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
 
 BUILD_DEPENDS=	${JAVALIBDIR}/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang

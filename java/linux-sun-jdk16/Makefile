@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-sun-
 DISTNAME=	jdk-1_5_0-linux-i586
 EXTRACT_SUFX=	.bin
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.5 for Linux
 
 EXTRACT_DEPENDS=${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base

@@ -11,7 +11,7 @@ CATEGORIES=	java math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jump-math
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
 
 USE_JAVA=	yes

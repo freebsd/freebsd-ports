@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.tildeslash.com/mmake/dist/
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create a Makefile for Your Java files, ready to compile
 
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
 
 LATEST_LINK=	jdk${JDK_CONCAT_VER}-doc

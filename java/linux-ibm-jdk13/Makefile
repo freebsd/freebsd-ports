@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-ibm-
 DISTNAME=	IBMJava2-SDK-131
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	IBM Java Development Kit 1.3 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin

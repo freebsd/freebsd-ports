@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	#
 DISTNAME=	bugseeker2ee-1_0_2
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BugSeeker for Java 2, a debugger for Java applications
 
 USE_JAVA=	1.3+

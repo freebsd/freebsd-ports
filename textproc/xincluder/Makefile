@@ -12,7 +12,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/languages/java/javafaq/
 DISTNAME=	${PORTNAME}-1.0d11
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based XInclude processors
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant

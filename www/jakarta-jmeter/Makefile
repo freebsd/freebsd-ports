@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional behaviour load and performance test application
 
 USE_JAVA=	1.3+

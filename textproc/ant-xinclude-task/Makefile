@@ -11,7 +11,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	http://people.freebsd.org/~znerd/xinclude-task/
 PKGNAMEPREFIX=	ant-
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XInclude task for Jakarta Ant
 
 BUILD_DEPENDS=	${JAVAJARDIR}/xincluder.jar:${PORTSDIR}/textproc/xincluder

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	znerd@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Generic logging wrapper library
 
 OPTIONS=	LOG4J "Enable Jakarta Log4j log factory" on \
