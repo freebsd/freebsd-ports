@@ -1,0 +1,9 @@
+LaTeX-Mk is a tool for managing small to large sized LaTeX projects. The
+typical LaTeX-Mk input file is simply a series of variable definitions in a
+Makefile for the project. After creating a simple Makefile the user can easily
+perform all required steps to do such tasks as: preview the document, print
+the document, or produce a PDF file. LaTeX-Mk will keep track of files that
+have changed and how to run the various programs that are needed to produce
+the output.
+
+WWW: http://latex-mk.sourceforge.net/
