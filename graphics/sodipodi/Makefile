@@ -17,7 +17,7 @@ COMMENT=	A small vector based drawing program with GNOME libraries
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
 LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
-		libgnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/frontline
 
 USE_GMAKE=	yes
