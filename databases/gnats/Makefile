@@ -3,7 +3,7 @@
 # Date created:		28 October 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1995/11/02 08:07:29 asami Exp $
+# $Id: Makefile,v 1.3 1995/11/22 11:41:26 asami Exp $
 #
 
 DISTNAME=       gnats-3.2
@@ -14,6 +14,7 @@ MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ \
 # we've got some .elc and info files to compile (yuck)
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
+NO_PACKAGE=	yes	# requires user "gnats"
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS= --prefix=${PREFIX} --with-full-gnats
