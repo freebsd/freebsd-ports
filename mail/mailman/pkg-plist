@@ -1,13 +1,13 @@
 @unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
 @unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
-@exec mkdir -p %D/%%MMDIR%%/archives/private && chmod 2770 %D/%%MMDIR%%/archives/private
-@exec mkdir -p %D/%%MMDIR%%/archives/public && chmod 2775 %D/%%MMDIR%%/archives/public
-@exec mkdir -p %D/%%MMDIR%%/archives && chmod 2775 %D/%%MMDIR%%/archives
-@exec mkdir -p %D/%%MMDIR%%/lists && chmod 2775 %D/%%MMDIR%%/lists
-@exec mkdir -p %D/%%MMDIR%%/locks && chmod 2775 %D/%%MMDIR%%/locks
-@exec mkdir -p %D/%%MMDIR%%/logs && chmod 2775 %D/%%MMDIR%%/logs
-@exec mkdir -p %D/%%MMDIR%%/qfiles && chmod 2775 %D/%%MMDIR%%/qfiles
-@exec mkdir -p %D/%%MMDIR%%/spam && chmod 2775 %D/%%MMDIR%%/spam
+@exec mkdir -p %D/%%MMDIR%%/archives/private
+@exec mkdir -p %D/%%MMDIR%%/archives/public
+@exec mkdir -p %D/%%MMDIR%%/archives
+@exec mkdir -p %D/%%MMDIR%%/lists
+@exec mkdir -p %D/%%MMDIR%%/locks
+@exec mkdir -p %D/%%MMDIR%%/logs
+@exec mkdir -p %D/%%MMDIR%%/qfiles
+@exec mkdir -p %D/%%MMDIR%%/spam
 %%IMGDIR%%/PythonPowered.png
 %%IMGDIR%%/gnu-head-tiny.jpg
 %%IMGDIR%%/mailman.jpg
@@ -22,7 +22,6 @@
 %%MMDIR%%/Mailman/Archiver/__init__.pyc
 %%MMDIR%%/Mailman/Archiver/pipermail.py
 %%MMDIR%%/Mailman/Archiver/pipermail.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/Mailman/Autoresponder.py
 %%MMDIR%%/Mailman/Autoresponder.pyc
 %%MMDIR%%/Mailman/Bouncer.py
@@ -59,7 +58,6 @@
 %%MMDIR%%/Mailman/Bouncers/Yahoo.pyc
 %%MMDIR%%/Mailman/Bouncers/__init__.py
 %%MMDIR%%/Mailman/Bouncers/__init__.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/Mailman/Cgi/Auth.py
 %%MMDIR%%/Mailman/Cgi/Auth.pyc
 %%MMDIR%%/Mailman/Cgi/__init__.py
@@ -82,7 +80,6 @@
 %%MMDIR%%/Mailman/Cgi/roster.pyc
 %%MMDIR%%/Mailman/Cgi/subscribe.py
 %%MMDIR%%/Mailman/Cgi/subscribe.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/Mailman/Cookie.py
 %%MMDIR%%/Mailman/Cookie.pyc
 %%MMDIR%%/Mailman/Crypt.py
@@ -135,7 +132,6 @@
 %%MMDIR%%/Mailman/Handlers/ToUsenet.pyc
 %%MMDIR%%/Mailman/Handlers/__init__.py
 %%MMDIR%%/Mailman/Handlers/__init__.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/Mailman/ListAdmin.py
 %%MMDIR%%/Mailman/ListAdmin.pyc
 %%MMDIR%%/Mailman/LockFile.py
@@ -152,7 +148,6 @@
 %%MMDIR%%/Mailman/Logging/Utils.pyc
 %%MMDIR%%/Mailman/Logging/__init__.py
 %%MMDIR%%/Mailman/Logging/__init__.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/Mailman/MailCommandHandler.py
 %%MMDIR%%/Mailman/MailCommandHandler.pyc
 %%MMDIR%%/Mailman/MailList.py
@@ -191,10 +186,8 @@
 %%MMDIR%%/Mailman/pythonlib/smtplib.pyc
 %%MMDIR%%/Mailman/pythonlib/tempfile.py
 %%MMDIR%%/Mailman/pythonlib/tempfile.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/Mailman/versions.py
 %%MMDIR%%/Mailman/versions.pyc
-@exec chmod 2775 %B
 %%MMDIR%%/bin/add_members
 %%MMDIR%%/bin/arch
 %%MMDIR%%/bin/check_db
@@ -217,7 +210,6 @@
 %%MMDIR%%/bin/update
 %%MMDIR%%/bin/version
 %%MMDIR%%/bin/withlist
-@exec chmod 2775 %B
 %%MMDIR%%/cgi-bin/admin
 %%MMDIR%%/cgi-bin/admindb
 %%MMDIR%%/cgi-bin/edithtml
@@ -227,7 +219,6 @@
 %%MMDIR%%/cgi-bin/private
 %%MMDIR%%/cgi-bin/roster
 %%MMDIR%%/cgi-bin/subscribe
-@exec chmod 2775 %B
 %%MMDIR%%/cron/bumpdigests
 %%MMDIR%%/cron/checkdbs
 %%MMDIR%%/cron/crontab.in
@@ -238,19 +229,14 @@
 %%MMDIR%%/cron/paths.pyc
 %%MMDIR%%/cron/qrunner
 %%MMDIR%%/cron/senddigests
-@exec chmod 2775 %B
 %%MMDIR%%/data/last_mailman_version
 %%MMDIR%%/data/pending_subscriptions.db
-@exec chmod 2775 %B
 %%MMDIR%%/filters/bowa-strip
-@exec chmod 2775 %B
 %%MMDIR%%/icons/PythonPowered.png
 %%MMDIR%%/icons/gnu-head-tiny.jpg
 %%MMDIR%%/icons/mailman-large.jpg
 %%MMDIR%%/icons/mailman.jpg
-@exec chmod 2775 %B
 %%MMDIR%%/mail/wrapper
-@exec chmod 2775 %B
 %%MMDIR%%/scripts/answer_majordomo_mail
 %%MMDIR%%/scripts/driver
 %%MMDIR%%/scripts/mailcmd
@@ -258,7 +244,6 @@
 %%MMDIR%%/scripts/paths.py
 %%MMDIR%%/scripts/paths.pyc
 %%MMDIR%%/scripts/post
-@exec chmod 2775 %B
 %%MMDIR%%/templates/admindbpreamble.html
 %%MMDIR%%/templates/adminsubscribeack.txt
 %%MMDIR%%/templates/adminunsubscribeack.txt
@@ -287,8 +272,6 @@
 %%MMDIR%%/templates/subscribeack.txt
 %%MMDIR%%/templates/userpass.txt
 %%MMDIR%%/templates/verify.txt
-@exec chmod 2775 %B
-@exec chgrp -R %%MMGRP%% %D/%%MMDIR%%
 %%PORTDOCS%%share/doc/mailman/BUGS
 %%PORTDOCS%%share/doc/mailman/FAQ
 %%PORTDOCS%%share/doc/mailman/INSTALL
@@ -327,4 +310,3 @@
 @unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/Mailman 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true
-@unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true

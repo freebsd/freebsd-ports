@@ -12,8 +12,8 @@ You will also find README files with MTA-specific hints in
 You'll need to add at least the following to Apache's httpd.conf to
 activate Mailman's web interface:
 
-  ScriptAlias /mailman/ "%%MAILMANDIR%%/cgi-bin/"
-  Alias /pipermail/ "%%MAILMANDIR%%/archives/public/"
+  ScriptAlias /mailman "%%MAILMANDIR%%/cgi-bin"
+  Alias /pipermail "%%MAILMANDIR%%/archives/public"
 
 Remember to reload your mail aliases if required, and to restart your httpd!
 

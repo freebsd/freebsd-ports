@@ -59,31 +59,21 @@ create_crontab() {
 
 }
 
+fix_perms() {
+  echo -n "Checking (and fixing) permissions... "
+  %%MAILMANDIR%%/bin/check_perms -f >/dev/null 2>&1
+  echo "done."
+}
+
 case $2 in
 
 PRE-INSTALL)
-  if which -s pw && which -s lockf; then
-    :
-  else
-    cat <<EOF
-
-This system looks like a pre-2.2 version of FreeBSD. I see that it
-is missing the "lockf" and/or "pw" utilities. I need these utilities.
-Please get them and install them, and try again. You can get the
-sources from:
-
- ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.bin/lockf.tar.gz
- ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
-
-EOF
-    exit 1
-  fi
-
   make_account %%USER%% %%UID%% %%GROUP%% %%GID%% \
     "Mailman User" "%%MAILMANDIR%%" "/sbin/nologin"
   ;;
 
 POST-INSTALL)
   create_crontab %%USER%% "%%MAILMANDIR%%/cron/crontab.in"
+  fix_perms
   ;;
 esac
