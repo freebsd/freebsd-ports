@@ -2,6 +2,7 @@ lpmud.dgd
 runlpmud
 bin/hname
 bin/oconv
+tmp
 lpmud-2.4.5/NEWS
 lpmud-2.4.5/README
 lpmud-2.4.5/WELCOME
