@@ -16,6 +16,7 @@
     SUBDIR += sash
     SUBDIR += scsh
     SUBDIR += tcsh
+    SUBDIR += vshnu
     SUBDIR += zsh
     SUBDIR += zsh-devel
 
