@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
+CATEGORIES=	portuguese
 
 LANG_PKGNAME=	pt
 LANG_EXT=	03
 LANG_CONFIGURE_ARG=	PORT
-MASTERDIR=	${.CURDIR}/../openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
 .include "${MASTERDIR}/Makefile"
