@@ -1,28 +1,13 @@
 #!/usr/local/bin/ruby
+# pkg-plist generator by Brian Fundakowski Feldman <green@FreeBSD.org>
+# (public domain)
+# $FreeBSD$
+
 class Plist
-	def initialize(no_manpages = true, excl = nil)
+	def initialize(no_manpages = true, mtree = [])
 		@no_manpages = no_manpages
-		self.excludes = excl
+		@mtree = mtree
 		self
-	end
-	def excludes
-		@excludes.dup
-	end
-	def excludes=(excl)
-		if !excl
-			@excludes = [
-				/^(bin|etc|include|info|lib|libexec|man|sbin|share)$/,
-				'etc/rc.d',
-				/^lib\/perl5?(\/.*site_perl\/[[:digit:]]\.[[:digit:]]+)?$/,
-				/^lib\/xemacs(\/site-lisp)?$/,
-				/^man\//,
-				/^share\/(dict|doc|emacs|emacs\/site-lisp|examples|misc|skel)$/,
-				/^share\/nls($|\/)/
-			]
-		else
-			@excludes = excl.to_a
-		end
-		
 	end
 	def make(dir)
 		@root = dir.to_s + '/'
@@ -44,21 +29,64 @@ class Plist
 			end
 		}
 		thiswd.chop!
-		if level > 0 && !@excludes.find {|x| x === thiswd}
+		# Strip mtree-created directories
+		if level > 0 && !@mtree.find {|x| x == thiswd}
 			subs.push('@dirrm ' + thiswd)
 		end
 		return subs
 	end
 end
 
+class Mtree
+	def initialize(strip = 1)
+		@paths = []
+		@curlevel = []
+		@strip = strip.to_i
+		self
+	end
+	def parse_line(line)
+		line.gsub!(/^[[:space:]]*(.*?)[[:space:]]*$/, '\1')
+		line.chomp!
+		case line
+		when ''
+		when /^[\/#]/
+			# ignore "command" lines and comments
+		when '..'
+			if @curlevel.pop.nil?
+				raise '".." with no previous directory'
+			end
+		else
+			line = line.split
+			@curlevel.push(line[0])
+			@paths.push(@curlevel.dup)
+		end
+		self
+	end
+	def Mtree.read(filename)
+		m = Mtree.new
+		open(filename, 'r') {|file|
+				file.each_line {|line| m.parse_line(line)}
+		}
+		m
+	end
+	def paths
+		@paths.collect {|path| path[@strip..-1].join('/')}
+	end
+end
+
 if __FILE__ == $0
-	if ARGV.size != 1
+	require 'getopts'
+	if !getopts('M', 'm:') || ARGV.size != 1
 		$stderr.print <<-USAGE_EOF
-usage: #{$0} somepath
+usage: #{$0} [-M] [-m mtree] somepath
        Generate a pkg-plist to stdout given a previously empty somepath which
-       a port has been installed into (PREFIX=somepath).
+       a port has been installed into (PREFIX=somepath).  The mtree file is
+       consulted to prevent base directories from being added to the plist.
+       The -M argument allows manpages to be added to the plist.
 USAGE_EOF
 		exit 1
 	end
-	puts Plist.new.make(ARGV[0]).join("\n")
+	man = $OPT_M || true
+	mtree = $OPT_m || '/etc/mtree/BSD.local.dist'
+	puts Plist.new(man, Mtree.read(mtree).paths).make(ARGV[0]).join("\n")
 end
