@@ -7501,6 +7501,7 @@ w3m-m17n	ports/www/w3m-m17n
 w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
 waccess	ports/www/waccess
+waimea		ports/x11-wm/waimea
 wais		ports/net/wais
 wakeonlan	ports/net/wakeonlan
 walker		ports/net/walker
