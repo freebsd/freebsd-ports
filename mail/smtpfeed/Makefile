@@ -8,7 +8,8 @@
 PORTNAME=	smtpfeed
 PORTVERSION=	1.18
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/
+MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/smtpfeed/&,}
 
 MAINTAINER=	ports@FreeBSD.org
 
