@@ -38,7 +38,6 @@
 
 #include <stdlib.h>
 
-#ifdef _THREAD_SAFE
 #  include <pthread.h>
 
 /*
@@ -118,5 +117,3 @@ int
 lp_mutex_destroy_ (pthread_mutex_t ** mutex) {}
 
 #  endif	/* (defined(BSD) && (BSD >= 199103)) */
-
-#endif /* _THREAD_SAFE */
