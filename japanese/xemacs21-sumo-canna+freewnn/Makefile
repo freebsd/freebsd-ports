@@ -10,6 +10,6 @@ CATEGORIES=	japanese
 XEMACS_MAJOR_VER=	21
 PKGNAMESUFFIX=		-canna+wnn4
 
-MASTERDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule-sumo
+MASTERDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-sumo
 
 .include	"${MASTERDIR}/Makefile"

@@ -1,9 +1,9 @@
 This is a package containing only the executables for XEmacs with
-Mule(version 21.1.9), the next generation of Emacs.
+Mule(version 21.1.10), the next generation of Emacs.
 
-You need to install a package, xemacs-common-21.1, containing emacs
+You need to install a package, xemacs-common-21.1.10, containing emacs
 lisp files, info pages, and so on (except executables) for
-XEmacs with Mule(version 21.1.9).
+XEmacs with Mule(version 21.1.10).
 
 This package is built with Japanese support by using SKK, SJ3, Canna,
 Wnn4 or Wnn6 as an external input engine. Each input method would be
@@ -19,7 +19,7 @@ If you use with SJ3 or SKK, you should be installed sj3serv or skkserv
 in advance. SKK is supported as already builtin. Also it will
 support several input methods under leim. 
 
-This package and the package xemacs-common-21.1, might clobber any
+This package and the package xemacs-common-21.1.10, might clobber any
 existing emacs installation.  In particular, the executables and man
 pages of etags/ctags are installed, and the info pages that come with
 the original emacs will be overwritten too.

@@ -1,11 +1,14 @@
-This port is for XEmacs environment using XEmacs mule ports and 
-Mule SUMO packages. 
+This port is for XEmacs environment using XEmacs ports and Mule SUMO
+packages. `SUMO package would be made by installing xemacs-packages and
+xemacs-additonal-packages(for Mule SUMO xemacs-basic-mule-packages and
+xemacs-mule-packages in addition).
 
-This package is built with Multilingual Imput Methods. Especially, Japanese
-input is supported by using SKK, SJ3, Canna, Wnn4 or Wnn6 as an external
-input engine . Each input method would be supported in following ports
-respectively:
+Each package except for xemacs21-sumo is built with Multilingual Imput
+Methods. Especially, Japanese input is supported by using SKK, SJ3, Canna,
+Wnn4 or Wnn6 as an external input engine . Each input method would be
+supported in following ports respectively:
 
+	editors/xemacs21-sumo ............... No input method supports
 	editors/xemacs21-mule-sumo .......... SKK, SJ3
 	japanese/xemacs21-sumo-canna ........ SKK, SJ3, Canna
 	japanese/xemacs21-sumo-canna+wnn4 ... SKK, SJ3, Canna, Wnn4

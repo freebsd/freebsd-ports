@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=		${.CURDIR}/pkg/COMMENT
+
 XEMACS_MAJOR_VER=	21
 WNN4=			yes
 

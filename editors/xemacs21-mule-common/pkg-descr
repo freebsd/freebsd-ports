@@ -1,9 +1,9 @@
 This is XEmacs lisp files, info pages, and so on (except executables)
-for XEmacs with Mule(version 21.1.9), the next generation of Emacs. 
+for XEmacs with Mule(version 21.1.10), the next generation of Emacs. 
 
-You must install one of packages, xemacs-mule-21.1,
-ja-xemacs-*-21.1 (ja-xemacs-canna-21.1, ja-xemacs-canna+wnn4-21.1, etc.),
-each of which contains only the executables for XEmacs with Mule(vresion 21.1.9).
+You must install one of packages, xemacs-mule-21.1.10,
+ja-xemacs-*-21.1.10 (ja-xemacs-canna-21.1.10, ja-xemacs-canna+wnn4-21.1.10, etc.),
+each of which contains only the executables for XEmacs with Mule(vresion 21.1.10).
 
 This package and the above package of the executables *will* clobber any
 existing XEmacs installation.  In particular, the executables and man
