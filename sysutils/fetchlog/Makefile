@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchlog
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fetchlog
@@ -15,14 +15,13 @@ MAINTAINER=	alexander.haderer@charite.de
 COMMENT=	Fetch and convert new messages of a logfile
 
 MAN1=		fetchlog.1
+DOCS=		CHANGES README README.Nagios README.SNMP
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/CHANGES 	${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README 	${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.Nagios	${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README.SNMP	${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
