@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	ANTLR: ANother Tool for Language Recognition
 
-CONFLICTS=	pccts
+CONFLICTS=	pccts*
 
 USE_GMAKE=	yes
 USE_JAVA=	1.2+
