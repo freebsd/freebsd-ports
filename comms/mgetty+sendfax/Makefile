@@ -7,7 +7,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.30.12.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	mgetty1.1.30-Dec16
@@ -17,7 +17,7 @@ MAINTAINER=	jmz@FreeBSD.org
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/mgetty-1.1.30
-MAKE_FLAGS=	prefix=${PREFIX} -f
+MAKE_FLAGS=	CFLAGS="${CFLAGS}" prefix=${PREFIX} -f
 MAN1=		autopvf.1 \
 		basictopvf.1 \
 		coverpg.1 \
