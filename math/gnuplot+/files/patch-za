@@ -1,0 +1,74 @@
+--- gplt_x11.c.ORIG	Thu Dec  2 17:02:05 1999
++++ gplt_x11.c	Thu Dec  2 17:02:54 1999
+@@ -169,6 +169,10 @@
+ # define EINTR	E_ILLFNC
+ #endif
+ 
++#ifdef __FreeBSD__
++# include <floatingpoint.h>
++#endif
++
+ /* information about one window/plot */
+ 
+ typedef struct plot_struct {
+@@ -301,6 +305,10 @@
+ int argc;
+ char *argv[];
+ {
++#ifdef __FreeBSD__
++  /* allow divide by zero -- Inf */
++  fpsetmask(fpgetmask() & ~(FP_X_DZ | FP_X_INV));
++#endif
+ 
+ #ifndef X11ORG
+    setlocale(LC_ALL, "");
+@@ -335,6 +343,12 @@
+ 	}
+     }
+     XCloseDisplay(dpy);
++
++#ifdef __FreeBSD__
++  fpresetsticky(FP_X_DZ | FP_X_INV);
++  fpsetmask(fpgetmask() | (FP_X_DZ | FP_X_INV));
++#endif
++
+ 
+     FPRINTF((stderr, "exiting\n"));
+ 
+--- plot.c.ORIG	Thu Dec  2 17:02:05 1999
++++ plot.c	Thu Dec  2 17:02:54 1999
+@@ -73,6 +73,10 @@
+ # endif
+ #endif /* _Windows */
+ 
++#ifdef __FreeBSD__
++# include <floatingpoint.h>
++#endif
++
+ extern FILE *gpoutfile;
+ 
+ TBOOLEAN interactive = TRUE;	/* FALSE if stdin not a terminal */
+@@ -347,6 +351,11 @@
+     _control87(MCW_EM, MCW_EM);
+ #endif
+ 
++#ifdef __FreeBSD__
++  /* allow divide by zero -- Inf */
++  fpsetmask(fpgetmask() & ~(FP_X_DZ | FP_X_INV));
++#endif
++
+ #if defined(OS2)
+     int rc;
+     if (_osmode == OS2_MODE) {
+@@ -565,6 +574,11 @@
+ #ifdef OS2
+     if (_osmode == OS2_MODE)
+ 	RexxDeregisterSubcom("GNUPLOT", NULL);
++#endif
++
++#ifdef __FreeBSD__
++  fpresetsticky(FP_X_DZ | FP_X_INV);
++  fpsetmask(fpgetmask() | (FP_X_DZ | FP_X_INV));
+ #endif
+ 
+ #if defined(ATARI) || defined(MTOS)

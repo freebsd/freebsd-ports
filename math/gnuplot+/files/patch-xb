@@ -1,0 +1,22 @@
+# key-below-clipping
+--- graphics.c.ORIG	Wed Sep 15 16:30:29 1999
++++ graphics.c	Wed Nov 17 17:22:24 1999
+@@ -1763,7 +1763,9 @@
+ #else
+ 			int x = xl + key_text_right - (t->h_char) * strlen(s);
+ #endif
+-			if (key_hpos == TOUT || inrange(x, xleft, xright))
++			if (key_hpos == TOUT ||
++			    key_vpos == TUNDER || /* HBB 990327 */
++			    inrange(x, xleft, xright))
+ 			    (*t->put_text) (x, yl, s);
+ 		    }
+ 		}
+@@ -1820,6 +1822,7 @@
+ 			int x = xl + key_text_right - (t->h_char) * strlen(this_plot->title);
+ #endif
+ 			if (key_hpos == TOUT ||
++			    key_vpos == TUNDER || /* HBB 990327 */
+ 			    i_inrange(x, xleft, xright))
+ 			    (*t->put_text) (x, yl, this_plot->title);
+ 		    }

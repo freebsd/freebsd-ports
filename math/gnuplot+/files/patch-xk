@@ -1,0 +1,283 @@
+# command-substitution
+--- command.c.ORIG	Thu Aug 19 15:42:21 1999
++++ command.c	Thu Dec  9 17:13:18 1999
+@@ -248,7 +248,7 @@
+ 	    (void) fputs("!\n", stderr);	/* why do we need this ? */
+ 	return (0);
+     }
+-    num_tokens = scanner(input_line);
++    num_tokens = scanner(&input_line, &input_line_len);
+     c_token = 0;
+     while (c_token < num_tokens) {
+ 	if (command())
+@@ -728,7 +728,7 @@
+     plot_token = 0;		/* whole line to be saved as replot line */
+ 
+     screen_ok = FALSE;
+-    num_tokens = scanner(input_line);
++    num_tokens = scanner(&input_line, &input_line_len);
+     c_token = 1;		/* skip the 'plot' part */
+     if (is_3d_plot)
+ 	plot3drequest();
+@@ -1006,7 +1006,7 @@
+ 		    else
+ 			(void) strcpy(prompt, "Help topic: ");
+ 		    read_line(prompt);
+-		    num_tokens = scanner(input_line);
++		    num_tokens = scanner(&input_line, &input_line_len);
+ 		    c_token = 0;
+ 		    more_help = !(END_OF_COMMAND);
+ 		    if (more_help)
+--- docs/gnuplot.doc.ORIG	Wed Oct 27 11:10:16 1999
++++ docs/gnuplot.doc	Thu Dec  9 17:13:25 1999
+@@ -1257,7 +1257,7 @@
+  blanks.
+ 
+  Command-line substitution can be used anywhere on the `gnuplot` command
+- line.
++ line, except inside strings delimited by single quotes.
+ 
+  Example:
+ 
+@@ -1267,6 +1267,11 @@
+ 
+  or, in VMS
+        f(x) = `run leastsq`
++
++ These will generate labels with the current time and userid:
++       set label "generated on `date +%Y-%m-%d`by `whoami`" at 1,1
++       set timestamp "generated on %Y-%m-%d by `whoami`"
++
+ 2 Syntax
+ ?syntax
+ ?specify
+--- protos.h.ORIG	Fri Oct  1 11:37:23 1999
++++ protos.h	Thu Dec  9 17:13:18 1999
+@@ -224,7 +224,7 @@
+ 
+ /* Prototypes from file "scanner.c" */
+ 
+-int scanner __PROTO((char expression[]));
++int scanner __PROTO((char **expression, int *line_lengthp));
+ 
+ 
+ /* Prototypes from "stdfn.c" */
+--- scanner.c.ORIG	Wed Nov  4 14:49:57 1998
++++ scanner.c	Thu Dec  9 17:13:18 1999
+@@ -37,7 +37,7 @@
+ #include "plot.h"
+ 
+ static int get_num __PROTO((char str[]));
+-static void substitute __PROTO((char *str, int max));
++static void substitute __PROTO((char **strp, int *str_lenp, int current));
+ 
+ #ifdef AMIGA_AC_5
+ #define O_RDONLY	0
+@@ -74,9 +74,10 @@
+ 
+ /*
+  * scanner() breaks expression[] into lexical units, storing them in token[].
+- *   The total number of tokens found is returned as the function value.
+- *   Scanning will stop when '\0' is found in expression[], or when token[]
+- *     is full.
++ *   The total number of tokens found is returned as the function
++ *   value.  Scanning will stop when '\0' is found in expression[], or
++ *   when token[] is full.  extend_input_line() is called to extend
++ *   expression array if needed.
+  *
+  *       Scanning is performed by following rules:
+  *
+@@ -95,13 +96,19 @@
+  *      5.  !,<,>       current char; also next if next is =
+  *      6.  ", '        all chars up until matching quote
+  *      7.  #           this token cuts off scanning of the line (DFK).
++ *      8.  `           (command substitution: all characters through the
++ *                      matching backtic are replaced by the output of
++ *                      the contained command, then scanning is restarted.)
+  *
+  *                      white space between tokens is ignored
+  */
+-int scanner(expression)
+-char expression[];
++int
++scanner(expressionp, expressionlenp)
++char **expressionp;
++int *expressionlenp;
+ {
+     register int current;	/* index of current char in expression[] */
++    char *expression = *expressionp;
+     register int quote;
+     char brace;
+ 
+@@ -118,7 +125,8 @@
+ 	token[t_num].is_token = TRUE;	/* to start with... */
+ 
+ 	if (expression[current] == '`') {
+-	    substitute(&expression[current], MAX_LINE_LEN - current);
++	    substitute(expressionp, expressionlenp, current);
++	    expression = *expressionp; /* expression might have moved */
+ 	    goto again;
+ 	}
+ 	/* allow _ to be the first character of an identifier */
+@@ -165,6 +173,10 @@
+ 			   && expression[current + 1]) {
+ 		    current++;
+ 		    token[t_num].length += 2;
++		} else if (quote == '\"' && expression[current] == '`') {
++		    substitute(expressionp, expressionlenp, current);
++		    expression = *expressionp; /* it might have moved */
++		    current--;
+ 		} else
+ 		    token[t_num].length++;
+ 	    }
+@@ -267,10 +279,6 @@
+ 
+ #if defined(VMS) || defined(PIPES) || (defined(ATARI) || defined(MTOS)) && defined(__PUREC__)
+ 
+-/* this really ought to make use of the dynamic-growth of the
+- * input line in 3.6.  And it definitely should not have
+- * static arrays !
+- */
+ /* A macro to reduce clutter ... */
+ # ifdef AMIGA_AC_5
+ #  define CLOSE_FILE_OR_PIPE ((void) close(fd))
+@@ -280,42 +288,58 @@
+ #  define CLOSE_FILE_OR_PIPE ((void) pclose(f))
+ # endif
+ 
+-static void substitute(str, max)	/* substitute output from ` ` */
+-char *str;
+-int max;
++/* substitute output from ` ` 
++ * *strp points to the input string.  (*strp)[current] is expected to
++ * be the initial back tic.  Characters through the following back tic
++ * are replaced by the output of the command.  extend_input_line()
++* is called to extend *strp array if needed.
++ */
++static void substitute(strp, str_lenp, current)        
++char **strp;
++int *str_lenp;
++int current;
+ {
+     register char *last;
+-    register int i, c;
++    register int c;
+     register FILE *f;
+ # ifdef AMIGA_AC_5
+     int fd;
+ # elif (defined(ATARI) || defined(MTOS)) && defined(__PUREC__)
+     char *atari_tmpfile;
+-    char *atari_pgm[MAX_LINE_LEN+100];
+ # endif /* !AMIGA_AC_5 */
+-    static char pgm[MAX_LINE_LEN+1], output[MAX_LINE_LEN+1];
++    char *str, *pgm, *rest = NULL;
++    int pgm_len, rest_len;
+ 
+ # ifdef VMS
+     int chan, one = 1;
+-    static $DESCRIPTOR(pgmdsc, pgm);
++    struct dsc$descriptor_s pgmdsc = {0, DSC$K_DTYPE_T, DSC$K_CLASS_S, 0};
+     static $DESCRIPTOR(lognamedsc, MAILBOX);
+ # endif /* VMS */
+ 
+     /* forgive missing closing backquote at end of line */
+-    i = 0;
++    str = *strp + current;
+     last = str;
+     while (*++last) {
+-	if (*last == '`') {
+-	    ++last;		/* move past it */
++	if (*last == '`')
+ 	    break;
++    }
++    pgm_len = last - str;
++    pgm = gp_alloc(pgm_len, "command string");
++    safe_strncpy(pgm, str + 1, pgm_len); /* omit ` to leave room for NUL */
++
++    /* save rest of line, if any */
++    if (*last) {
++	last++;                 /* advance past ` */
++	rest_len = strlen(last) + 1;
++	if (rest_len > 1) {
++	    rest = gp_alloc(rest_len, "input line copy");
++	    strcpy(rest, last);
+ 	}
+-	pgm[i++] = *last;
+     }
+-    pgm[i] = NUL;		/* end with null */
+-    max -= strlen(last);	/* max is now the max length of output sub. */
+ 
+ # ifdef VMS
+-    pgmdsc.dsc$w_length = i;
++    pgmdsc.dsc$a_pointer = pgm;
++    pgmdsc.dsc$w_length = pgm_len;
+     if (!((vaxc$errno = sys$crembx(0, &chan, 0, 0, 0, 0, &lognamedsc)) & 1))
+ 	os_error("sys$crembx failed", NO_CARET);
+ 
+@@ -327,13 +351,11 @@
+ # elif (defined(ATARI) || defined(MTOS)) && defined(__PUREC__)
+     if (system(NULL) == 0)
+ 	os_error("no command shell", NO_CARET);
+-    if ((strlen(atari_tmpfile) + strlen(pgm) + 5) > MAX_LINE_LEN + 100)
+-	os_error("sorry, command to long", NO_CARET);
+     atari_tmpfile = tmpnam(NULL);
+-    strcpy(atari_pgm, pgm);
+-    strcat(atari_pgm, " >> ");
+-    strcat(atari_pgm, atari_tmpfile);
+-    system(atari_pgm);
++    gp_realloc(pgm, pgm_len + 5 + strlen(atari_tmpfile), "command string");
++    strcat(pgm, " >> ");
++    strcat(pgm, atari_tmpfile);
++    system(pgm);
+     if ((f = fopen(atari_tmpfile, "r")) == NULL)
+ # elif defined(AMIGA_AC_5)
+     if ((fd = open(pgm, "O_RDONLY")) == -1)
+@@ -342,23 +364,36 @@
+ 	os_error("popen failed", NO_CARET);
+ # endif /* !VMS */
+ 
+-    i = 0;
+-    while ((c = getc(f)) != EOF) {
+-	output[i++] = ((c == '\n') ? ' ' : c);	/* newlines become blanks */
+-	if (i == max) {
+-	    CLOSE_FILE_OR_PIPE;
+-	    int_error("substitution overflow", t_num);
+-	}
++    free(pgm);
++
++    /* now replace ` ` with output */
++    while (1) {
++# if defined(AMIGA_AC_5)
++	char ch;
++	if (read(fd, &ch, 1) != 1)
++	    break;
++	c = ch;
++# else
++	if ((c = getc(f)) == EOF)
++	    break;
++# endif /* !AMIGA_AC_5 */
++	/* newlines become blanks */
++	(*strp)[current++] = ((c == '\n') ? ' ' : c); 
++	if (current == *str_lenp)
++	    extend_input_line();
+     }
++    (*strp)[current] = 0;
+ 
+     CLOSE_FILE_OR_PIPE;
+ 
+-    if (i + strlen(last) > max)
+-	int_error("substitution overflowed rest of line", t_num);
+     /* tack on rest of line to output */
+-    safe_strncpy(output + i, last, MAX_LINE_LEN - i);
+-    /* now replace ` ` with output */
+-    safe_strncpy(str, output, max);
++    if (rest) {
++	while (current + rest_len > *str_lenp)
++	    extend_input_line();
++	strcpy(*strp+current, rest);
++	free(rest);
++    }
++
+     screen_ok = FALSE;
+ }
+ 

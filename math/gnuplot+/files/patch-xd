@@ -1,0 +1,103 @@
+# table-format.2
+--- plot2d.c.ORIG	Mon Oct 11 13:18:56 1999
++++ plot2d.c	Thu Nov 18 19:13:48 1999
+@@ -718,12 +718,22 @@
+ int plot_num;
+ {
+     int i, curve;
++    char *table_format = NULL;
++
++    /* The data format is determined by the format of the axis labels.
++     * See 'set format'.  Patch by Don Taber
++     */
++    table_format = gp_alloc(strlen(xformat)+strlen(yformat)+5, "table format");
++    strcpy(table_format, xformat);
++    strcat(table_format, " ");
++    strcat(table_format, yformat);
++    strcat(table_format, " %c\n");
+ 
+     for (curve = 0; curve < plot_num;
+ 	 curve++, this_plot = this_plot->next_cp) {
+ 	fprintf(gpoutfile, "#Curve %d, %d points\n#x y type\n", curve, this_plot->p_count);
+ 	for (i = 0; i < this_plot->p_count; i++) {
+-	    fprintf(gpoutfile, "%g %g %c\n",
++	    fprintf(gpoutfile, table_format,
+ 		    this_plot->points[i].x,
+ 		    this_plot->points[i].y,
+ 		    this_plot->points[i].type == INRANGE ? 'i'
+@@ -732,9 +742,12 @@
+ 	}
+ 	fputc('\n', gpoutfile);
+     }
+-/* two blank lines between plots in table output */
++
++    /* two blank lines between plots in table output */
+     fputc('\n', gpoutfile);
+     fflush(gpoutfile);
++
++    free(table_format);
+ }
+ 
+ /*
+--- plot3d.c.ORIG	Thu Dec 10 18:30:52 1998
++++ plot3d.c	Thu Nov 18 19:12:01 1999
+@@ -694,6 +694,17 @@
+     int i, curve, surface;
+     struct iso_curve *icrvs;
+     struct coordinate GPHUGE *points;
++    char *table_format = NULL;
++    char *pcat;
++
++    table_format = gp_alloc(strlen(xformat)+strlen(yformat)+strlen(zformat)+6,
++			    "table format");
++    strcpy(table_format, xformat);
++    strcat(table_format, " ");
++    strcat(table_format, yformat);
++    strcat(table_format, " ");
++    strcat(table_format, zformat);
++    pcat = &table_format[strlen(table_format)];
+ 
+     for (surface = 0, this_plot = first_3dplot; surface < pcount;
+ 	 this_plot = this_plot->next_sp, surface++) {
+@@ -702,12 +713,13 @@
+ 	curve = 0;
+ 
+ 	if (draw_surface) {
++	    strcpy(pcat," %c\n");
+ 	    /* only the curves in one direction */
+ 	    while (icrvs && curve < this_plot->num_iso_read) {
+ 		fprintf(gpoutfile, "\n#IsoCurve %d, %d points\n#x y z type\n",
+ 			curve, icrvs->p_count);
+ 		for (i = 0, points = icrvs->points; i < icrvs->p_count; i++) {
+-		    fprintf(gpoutfile, "%g %g %g %c\n",
++		    fprintf(gpoutfile, table_format,
+ 			    points[i].x,
+ 			    points[i].y,
+ 			    points[i].z,
+@@ -723,6 +735,7 @@
+ 	if (draw_contour) {
+ 	    int number = 0;
+ 	    struct gnuplot_contours *c = this_plot->contours;
++	    strcpy(pcat,"\n");
+ 	    while (c) {
+ 		int count = c->num_pts;
+ 		struct coordinate GPHUGE *p = c->coords;
+@@ -732,7 +745,8 @@
+ 		    /* double blank line to allow plot ... index ... */
+ 		    fprintf(gpoutfile, "\n# Contour %d, label: %s\n", number++, c->label);
+ 		for (; --count >= 0; ++p)
+-		    fprintf(gpoutfile, "%g %g %g\n", p->x, p->y, p->z);
++		    fprintf(gpoutfile, table_format, p->x, p->y, p->z);
++
+ 		/* blank line between segments of same contour */
+ 		putc('\n', gpoutfile);
+ 		c = c->next;
+@@ -740,6 +754,8 @@
+ 	}
+     }
+     fflush(gpoutfile);
++
++    free(table_format);
+ }
+ 
+ 

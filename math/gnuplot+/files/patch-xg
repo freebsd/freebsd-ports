@@ -1,0 +1,236 @@
+# vector-clip
+--- graphics.c.ORIG	Wed Sep 15 16:30:29 1999
++++ graphics.c	Thu Dec  2 13:16:57 1999
+@@ -1369,7 +1369,6 @@
+ 
+     /* label first y axis tics */
+     if (ytics) {
+-	int axis = map_x(ZERO);
+ 	/* set the globals ytick2d_callback() needs */
+ 
+ 	if (rotate_ytics && (*t->text_angle) (1)) {
+@@ -1388,8 +1387,8 @@
+ 	else
+ 	    tic_mirror = -1;	/* no thank you */
+ 
+-	if ((ytics & TICS_ON_AXIS) && !log_array[FIRST_X_AXIS] && inrange(axis, xleft, xright)) {
+-	    tic_start = axis;
++	if ((ytics & TICS_ON_AXIS) && !log_array[FIRST_X_AXIS] && inrange(0.0, x_min, x_max)) {
++	    tic_start = map_x(0.0);
+ 	    tic_direction = -1;
+ 	    if (ytics & TICS_MIRROR)
+ 		tic_mirror = tic_start;
+@@ -1409,7 +1408,6 @@
+     }
+     /* label first x axis tics */
+     if (xtics) {
+-	int axis = map_y(ZERO);
+ 	/* set the globals xtick2d_callback() needs */
+ 
+ 	if (rotate_xtics && (*t->text_angle) (1)) {
+@@ -1426,8 +1424,8 @@
+ 	    tic_mirror = ytop;
+ 	else
+ 	    tic_mirror = -1;	/* no thank you */
+-	if ((xtics & TICS_ON_AXIS) && !log_array[FIRST_Y_AXIS] && inrange(axis, ybot, ytop)) {
+-	    tic_start = axis;
++	if ((xtics & TICS_ON_AXIS) && !log_array[FIRST_Y_AXIS] && inrange(0.0, y_min, y_max)) {
++	    tic_start = map_y(0.0);
+ 	    tic_direction = -1;
+ 	    if (xtics & TICS_MIRROR)
+ 		tic_mirror = tic_start;
+@@ -1454,7 +1452,6 @@
+     /* label second y axis tics */
+     if (y2tics) {
+ 	/* set the globalss ytick2d_callback() needs */
+-	int axis = map_x(ZERO);
+ 
+ 	if (rotate_y2tics && (*t->text_angle) (1)) {
+ 	    tic_hjust = CENTRE;
+@@ -1470,8 +1467,8 @@
+ 	    tic_mirror = xleft;
+ 	else
+ 	    tic_mirror = -1;	/* no thank you */
+-	if ((y2tics & TICS_ON_AXIS) && !log_array[FIRST_X_AXIS] && inrange(axis, xleft, xright)) {
+-	    tic_start = axis;
++	if ((y2tics & TICS_ON_AXIS) && !log_array[FIRST_X_AXIS] && inrange(0.0, x_min, x_max)) {
++	    tic_start = map_x(0.0);
+ 	    tic_direction = 1;
+ 	    if (y2tics & TICS_MIRROR)
+ 		tic_mirror = tic_start;
+@@ -1490,7 +1487,6 @@
+     }
+     /* label second x axis tics */
+     if (x2tics) {
+-	int axis = map_y(ZERO);
+ 	/* set the globals xtick2d_callback() needs */
+ 
+ 	if (rotate_x2tics && (*t->text_angle) (1)) {
+@@ -1507,8 +1503,8 @@
+ 	    tic_mirror = ybot;
+ 	else
+ 	    tic_mirror = -1;	/* no thank you */
+-	if ((x2tics & TICS_ON_AXIS) && !log_array[SECOND_Y_AXIS] && inrange(axis, ybot, ytop)) {
+-	    tic_start = axis;
++	if ((x2tics & TICS_ON_AXIS) && !log_array[SECOND_Y_AXIS] && inrange(0.0, y_min, y_max)) {
++	    tic_start = map_y(0.0);
+ 	    tic_direction = 1;
+ 	    if (x2tics & TICS_MIRROR)
+ 		tic_mirror = tic_start;
+@@ -1560,45 +1556,58 @@
+ 
+     x_axis = FIRST_X_AXIS;
+     y_axis = FIRST_Y_AXIS;	/* chose scaling */
+-    axis_zero[FIRST_Y_AXIS] = map_y(0.0);
+-    axis_zero[FIRST_X_AXIS] = map_x(0.0);
+ 
+-    if (axis_zero[FIRST_Y_AXIS] < ybot || is_log_y)
++    if (y_min >= 0.0 && y_max >= 0.0 || is_log_y)
+ 	axis_zero[FIRST_Y_AXIS] = ybot;		/* save for impulse plotting */
+-    else if (axis_zero[FIRST_Y_AXIS] >= ytop)
++    else if (y_min <= 0.0 && y_max <= 0.0)
+ 	axis_zero[FIRST_Y_AXIS] = ytop;
+-    else if (xzeroaxis.l_type > -3) {
+-	term_apply_lp_properties(&xzeroaxis);
+-	(*t->move) (xleft, axis_zero[FIRST_Y_AXIS]);
+-	(*t->vector) (xright, axis_zero[FIRST_Y_AXIS]);
+-    }
+-    if ((yzeroaxis.l_type > -3) && !is_log_x
+-	&& axis_zero[FIRST_X_AXIS] >= xleft
+-	&& axis_zero[FIRST_X_AXIS] < xright) {
+-	term_apply_lp_properties(&yzeroaxis);
+-	(*t->move) (axis_zero[FIRST_X_AXIS], ybot);
+-	(*t->vector) (axis_zero[FIRST_X_AXIS], ytop);
++    else {
++	axis_zero[FIRST_X_AXIS] = map_y(0.0);
++	if (xzeroaxis.l_type > -3) {
++	    term_apply_lp_properties(&xzeroaxis);
++	    (*t->move) (xleft, axis_zero[FIRST_Y_AXIS]);
++	    (*t->vector) (xright, axis_zero[FIRST_Y_AXIS]);
++	}
++    }
++    if (x_min >= 0.0 && x_max >= 0.0)
++	axis_zero[FIRST_Y_AXIS] = xleft;
++    else if (x_min <= 0.0 && x_max <= 0.0)
++	axis_zero[FIRST_Y_AXIS] = xright;
++    else {
++	axis_zero[FIRST_Y_AXIS] = map_x(0.0);
++	if ((yzeroaxis.l_type > -3) && !is_log_x) {
++	    term_apply_lp_properties(&yzeroaxis);
++	    (*t->move) (axis_zero[FIRST_X_AXIS], ybot);
++	    (*t->vector) (axis_zero[FIRST_X_AXIS], ytop);
++	}
+     }
++
+     x_axis = SECOND_X_AXIS;
+     y_axis = SECOND_Y_AXIS;	/* chose scaling */
+-    axis_zero[SECOND_Y_AXIS] = map_y(0.0);
+-    axis_zero[SECOND_X_AXIS] = map_x(0.0);
+ 
+-    if (axis_zero[SECOND_Y_AXIS] < ybot || is_log_y2)
++    if (is_log_y2 || y_min >= 0.0 && y_max >= 0.0)
+ 	axis_zero[SECOND_Y_AXIS] = ybot;  /* save for impulse plotting */
+-    else if (axis_zero[SECOND_Y_AXIS] >= ytop)
++    else if (y_min <= 0.0 && y_max <= 0.0)
+ 	axis_zero[SECOND_Y_AXIS] = ytop;
+-    else if (x2zeroaxis.l_type > -3) {
+-	term_apply_lp_properties(&x2zeroaxis);
+-	(*t->move) (xleft, axis_zero[SECOND_Y_AXIS]);
+-	(*t->vector) (xright, axis_zero[SECOND_Y_AXIS]);
+-    }
+-    if ((y2zeroaxis.l_type > -3) && !is_log_x2 &&
+-	axis_zero[SECOND_X_AXIS] >= xleft &&
+-	axis_zero[SECOND_X_AXIS] < xright) {
+-	term_apply_lp_properties(&y2zeroaxis);
+-	(*t->move) (axis_zero[SECOND_X_AXIS], ybot);
+-	(*t->vector) (axis_zero[SECOND_X_AXIS], ytop);
++    else {
++	axis_zero[SECOND_X_AXIS] = map_y(0.0);
++	if (x2zeroaxis.l_type > -3) {
++	    term_apply_lp_properties(&x2zeroaxis);
++	    (*t->move) (xleft, axis_zero[SECOND_Y_AXIS]);
++	    (*t->vector) (xright, axis_zero[SECOND_Y_AXIS]);
++	}
++    }
++    if (y_min >= 0.0 && y_max >= 0.0)
++	axis_zero[SECOND_Y_AXIS] = xleft;
++    else if (x_min <= 0.0 && x_max <= 0.0)
++	axis_zero[SECOND_Y_AXIS] = xright;
++    else {
++	axis_zero[SECOND_Y_AXIS] = map_x(0.0);
++	if ((y2zeroaxis.l_type > -3) && !is_log_x2) {
++	    term_apply_lp_properties(&y2zeroaxis);
++	    (*t->move) (axis_zero[SECOND_X_AXIS], ybot);
++	    (*t->vector) (axis_zero[SECOND_X_AXIS], ytop);
++	}
+     }
+     /* DRAW PLOT BORDER */
+     if (draw_border) {
+@@ -2739,14 +2748,61 @@
+     int i;
+     int x1, y1, x2, y2;
+     struct termentry *t = term;
++    TBOOLEAN head;
++    struct coordinate GPHUGE points[2];
++    double ex, ey;
++    double lx[2], ly[2];
+ 
+     for (i = 0; i < plot->p_count; i++) {
+-	if (plot->points[i].type == INRANGE) {
+-	    x1 = map_x(plot->points[i].xlow);
+-	    y1 = map_y(plot->points[i].ylow);
+-	    x2 = map_x(plot->points[i].xhigh);
+-	    y2 = map_y(plot->points[i].yhigh);
+-	    (*t->arrow) (x1, y1, x2, y2, TRUE);
++	points[0] = plot->points[i];
++	points[1].x = plot->points[i].xhigh;
++	points[1].y = plot->points[i].yhigh;
++	if (inrange(points[1].x, x_min, x_max) &&
++	    inrange(points[1].y, y_min, y_max)) {
++	    /* to inrange */
++	    points[1].type = INRANGE;
++	    x2 = map_x(points[1].x);
++	    y2 = map_y(points[1].y);
++	    head = TRUE;
++	    if (points[0].type == INRANGE) {
++		x1 = map_x(points[0].x);
++		y1 = map_y(points[0].y);
++		(*t->arrow) (x1, y1, x2, y2, head);
++	    } else if (points[0].type == OUTRANGE) {
++		/* from outrange to inrange */
++		if (clip_lines1) {
++		    edge_intersect(points, 1, &ex, &ey);
++		    x1 = map_x(ex);
++		    y1 = map_y(ey);
++		    (*t->arrow) (x1, y1, x2, y2, head);
++		}
++	    }
++	} else {
++	    /* to outrange */
++	    points[1].type = OUTRANGE;
++	    head = FALSE;
++	    if (points[0].type == INRANGE) {
++		/* from inrange to outrange */
++		if (clip_lines1) {
++		    x1 = map_x(points[0].x);
++		    y1 = map_y(points[0].y);
++		    edge_intersect(points, 1, &ex, &ey);
++		    x2 = map_x(ex);
++		    y2 = map_y(ey);
++		    (*t->arrow) (x1, y1, x2, y2, head);
++		}
++	    } else if (points[0].type == OUTRANGE) {
++		/* from outrange to outrange */
++		if (clip_lines2) {
++		    if (two_edge_intersect(points, 1, lx, ly)) {
++			x1 = map_x(lx[0]);
++			y1 = map_y(ly[0]);
++			x2 = map_x(lx[1]);
++			y2 = map_y(ly[1]);
++			(*t->arrow) (x1, y1, x2, y2, head);
++		    }
++		}
++	    }
+ 	}
+     }
+ }

@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
 		--libdir=${LOCALBASE}/lib \
 		--with-x --without-linux-vga \
 		--with-gd=${LOCALBASE}/lib \
-		--with-gnu-readline --with-lasergnu --with-png \
+		--with-readline=gnu --with-lasergnu --with-png \
 		--with-vflib=${LOCALBASE}/lib
 
 MAN1=		gnuplot.1 lasergnu.1
