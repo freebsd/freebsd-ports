@@ -1,13 +1,13 @@
+@comment $FreeBSD$
 bin/icehelp
 bin/icesh
 %%ESOUND%%bin/icesound
 bin/icewm
-%%GNOME:%%bin/icewm-menu-gnome1
+%%GNOMEDESKTOP%%bin/icewm-menu-gnome2
 bin/icewmbg
 bin/icewmhint
 bin/icewmtray
 %%PORTDOCS%%share/doc/icewm/CHANGES
-%%PORTDOCS%%share/doc/icewm/FAQ
 %%PORTDOCS%%share/doc/icewm/INSTALL
 %%PORTDOCS%%share/doc/icewm/README
 %%PORTDOCS%%share/doc/icewm/TODO
@@ -30,7 +30,7 @@ bin/icewmtray
 %%PORTDOCS%%share/doc/icewm/icewm-8.html
 %%PORTDOCS%%share/doc/icewm/icewm-9.html
 %%PORTDOCS%%share/doc/icewm/icewm.html
-%%GNOME:%%share/gnome/wm-properties/IceWM.desktop
+%%GNOMEDESKTOP%%share/gnome/wm-properties/IceWM.desktop
 share/icewm/icons/app_16x16.xpm
 share/icewm/icons/app_32x32.xpm
 share/icewm/icons/bomb_16x16.xpm
