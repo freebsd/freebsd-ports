@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscorch
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/
 
@@ -29,6 +29,7 @@ CONFIGURE_ARGS+=--without-gnome
 .endif
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}"
 USE_GMAKE=	yes
+CFLAGS+=	-g
 
 MAN6=		xscorch.6
 
