@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	janosvm
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	java
-MASTER_SITES=	http://www.cs.utah.edu/flux/janos/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${DISTNAME}
+MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
@@ -20,13 +19,13 @@ CONFIGURE_ARGS=	--with-x
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN1=	janosvm.1 jsihey.1
+MAN1=	janosvm.1 jsihey.1 jsiregister.1 jsiunregister.1
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/janosvm
-	${CP} -R ${WRKSRC}/FAQ ${PREFIX}/share/doc/janosvm
-	${CP} -R ${WRKSRC}/doc ${PREFIX}/share/doc/janosvm
+	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/FAQ ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
