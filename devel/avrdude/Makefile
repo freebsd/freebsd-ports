@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	bsd
 MAINTAINER=	bsd@FreeBSD.org
 COMMENT=	Program for programming the on-chip memory of Atmel AVR CPUs
 
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+
 MAN1=		avrdude.1
 MANCOMPRESSED=	no
 
