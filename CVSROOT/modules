@@ -8924,6 +8924,7 @@ zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
 zh-cce		ports/chinese/cce
+zh-cdict5	ports/chinese/cdict5
 zh-celvis	ports/chinese/celvis
 zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
