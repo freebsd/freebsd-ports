@@ -1,17 +1,0 @@
---- dvipsk/psfonts.map.orig2	Sat Jul  4 15:26:51 1998
-+++ dvipsk/psfonts.map	Sat Jul  4 15:38:24 1998
-@@ -531,10 +531,10 @@
- cshb0	 CgShannonBd			<cshb.pfa
- cshx0	 CgShannonExBd			<cshx.pfa
- 
--rml      Ryumin-Light-H
--rmlv     Ryumin-Light-V
--gbm      GothicBBB-Medium-H
--gbmv     GothicBBB-Medium-V
-+rml	 Ryumin-Light-H			<`min
-+gbm	 GothicBBB-Medium-H		<`goth
-+rmlv	 Ryumin-Light-V			<`min
-+gbmv	 GothicBBB-Medium-V		<`goth
- 
- % 	
- % Local variables:

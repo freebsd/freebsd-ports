@@ -1,8 +1,0 @@
---- dvipsk/xdefs.make.orig	Sun Jul 19 21:07:20 1998
-+++ dvipsk/xdefs.make	Sun Jul 19 21:07:33 1998
-@@ -1,4 +1,4 @@
- VFPRO=vffonts.pro
- VFOBJS=downvfchar.o
--VFLIB=-lVFlib
-+VFLIB=-lVFlib2 -lttf
- XDEFS=-DVFLIB

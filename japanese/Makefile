@@ -47,7 +47,6 @@
     SUBDIR += dvi2tty
     SUBDIR += dvipdfm
     SUBDIR += dvipsk
-    SUBDIR += dvipsk-vflib
     SUBDIR += e2ps
     SUBDIR += easypr
     SUBDIR += eb
