@@ -11,15 +11,3 @@
  BDFTOPCF	= $(X11BINDIR)/bdftopcf
  MKDIRHIER	= $(X11BINDIR)/mkdirhier
  MKFONTDIR	= $(X11BINDIR)/mkfontdir
-@@ -36,7 +36,10 @@
- 	mona8x16a mona8x16aB mona8x16aI mona8x16aBI \
- 	monak12 monak12B monak12I monak12BI \
- 	monak14 monak14B monak14I monak14BI \
--	monak16 monak16B monak16I monak16BI
-+	monak16 monak16B monak16I monak16BI \
-+	mona6x12r mona6x12rB mona6x12rI mona6x12rBI \
-+	mona7x14r mona7x14rB mona7x14rI mona7x14rBI \
-+	mona8x16r mona8x16rB mona8x16rI mona8x16rBI
- 
- ## Dependencies
- 
