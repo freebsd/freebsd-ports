@@ -54,6 +54,12 @@ pre-configure:
 
 .include <bsd.port.pre.mk>
 
+# XXX due to gcc-3.4 (20040706) bug in preprocessing of inline functions,
+# this needs at least -O2 to compile. Fails with -O
+.if ${OSVERSION} >= 502126
+CFLAGS+=	-O2
+.endif
+
 # hack to make ogle work with liba52 + djbfft
 .if exists(${LOCALBASE}/lib/liba52.la)
 LIBA52_DEP_LIBS!=	${GREP} dependency_libs ${LOCALBASE}/lib/liba52.la | ${CUT} -d \' -f 2
