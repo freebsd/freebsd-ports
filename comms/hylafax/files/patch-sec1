@@ -1,0 +1,22 @@
+--- hfaxd/Makefile.in.orig	Sat Apr 14 18:47:02 2001
++++ hfaxd/Makefile.in	Sat Apr 14 18:47:42 2001
+@@ -96,7 +96,7 @@
+ incdepend:
+ 
+ install: default
+-	${INSTALL} -F ${LIBEXEC} -u root -m 4755 \
++	${INSTALL} -F ${LIBEXEC} -u root -m 755 \
+ 	    -idb ${PRODUCT}.sw.server -O hfaxd
+ 	${INSTALL} -F ${LIBDATA} -m 644 -idb ${PRODUCT}.sw.server \
+ 	    -idb "config(noupdate)" -src ${SRCDIR}/hfaxd.conf -O hfaxd.conf
+--- hfaxd/main.c++.orig	Sat Apr 14 18:55:07 2001
++++ hfaxd/main.c++	Sat Apr 14 18:53:04 2001
+@@ -237,7 +237,7 @@
+     if (detach == -1)			// no protocol options means -I
+ 	detach = false;
+     if (Sys::chdir(queueDir) < 0)
+-	fatal(queueDir | ": Can not change directory");
++	fatal("Can not change directory to %s", (const char*)queueDir);
+     CheckSpoolingSetup();
+     if (detach)
+ 	detachFromTTY();
