@@ -5,10 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.83
+PORTVERSION=	1.2.85
 PORTREVISION=	0
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	http://www.powertrip.co.za/distfiles/pdmenu/ \
+				http://dev.powertrip.co.za/distfiles/pdmenu/ \
+				${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	pdmenu_${PORTVERSION}
 
 MAINTAINER=	jacques@php.net
