@@ -191,6 +191,7 @@
     SUBDIR += tcl81-thread
     SUBDIR += tcl82
     SUBDIR += tcl83
+    SUBDIR += tcl84
     SUBDIR += tclX80
     SUBDIR += tclX82
     SUBDIR += tclplugin
