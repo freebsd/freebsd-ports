@@ -1,54 +1,34 @@
 bin/snmpbulkwalk
 bin/snmpcheck
+bin/snmpdelta
 bin/snmpget
 bin/snmpgetnext
 bin/snmpnetstat
 bin/snmpset
 bin/snmpstatus
+bin/snmptable
 bin/snmptest
 bin/snmptranslate
 bin/snmptrap
-bin/snmptrapd
 bin/snmpwalk
 etc/rc.d/snmpd.sh
-include/snmp/acl.h
-include/snmp/asn1.h
-include/snmp/context.h
-include/snmp/md5.h
-include/snmp/mib.h
-include/snmp/parse.h
-include/snmp/party.h
-include/snmp/snmp.h
-include/snmp/snmp_api.h
-include/snmp/snmp_client.h
-include/snmp/snmp_impl.h
-include/snmp/system.h
-include/snmp/view.h
+include/ucd-snmp/asn1.h
+include/ucd-snmp/mib.h
+include/ucd-snmp/parse.h
+include/ucd-snmp/snmp.h
+include/ucd-snmp/snmp_api.h
+include/ucd-snmp/snmp_client.h
+include/ucd-snmp/snmp_impl.h
 lib/libsnmp.a
-lib/snmp/mibs/EtherLike-MIB.txt
-lib/snmp/mibs/HOST-RESOURCES-MIB.txt
-lib/snmp/mibs/IANAifType-MIB.txt
-lib/snmp/mibs/IF-MIB.txt
-lib/snmp/mibs/IP-MIB.txt
-lib/snmp/mibs/RFC1155-SMI.txt
-lib/snmp/mibs/RFC1213-MIB.txt
-lib/snmp/mibs/RFC1271-MIB.txt
-lib/snmp/mibs/SNMPv2-CONF.txt
-lib/snmp/mibs/SNMPv2-M2M-MIB.txt
-lib/snmp/mibs/SNMPv2-MIB.txt
-lib/snmp/mibs/SNMPv2-PARTY-MIB.txt
-lib/snmp/mibs/SNMPv2-SMI.txt
-lib/snmp/mibs/SNMPv2-TC.txt
-lib/snmp/mibs/SNMPv2-TM.txt
-lib/snmp/mibs/TCP-MIB.txt
-lib/snmp/mibs/UCD-SNMP-MIB.txt
-lib/snmp/mibs/UDP-MIB.txt
 man/man1/snmpbulkwalk.1.gz
+man/man1/snmpd.1.gz
+man/man1/snmpdelta.1.gz
 man/man1/snmpget.1.gz
 man/man1/snmpgetnext.1.gz
 man/man1/snmpnetstat.1.gz
 man/man1/snmpset.1.gz
 man/man1/snmpstatus.1.gz
+man/man1/snmptable.1.gz
 man/man1/snmptest.1.gz
 man/man1/snmptranslate.1.gz
 man/man1/snmptrap.1.gz
@@ -57,15 +37,34 @@ man/man3/mib_api.3.gz
 man/man3/snmp_api.3.gz
 man/man5/snmpd.conf.5.gz
 man/man5/variables.5.gz
-man/man8/snmpd.8.gz
 man/man8/snmptrapd.8.gz
 sbin/snmpd
+sbin/snmptrapd
 share/examples/ucd-snmp/README
 share/examples/ucd-snmp/acl.conf
 share/examples/ucd-snmp/context.conf
 share/examples/ucd-snmp/party.conf
 share/examples/ucd-snmp/view.conf
-@dirrm lib/snmp/mibs
-@dirrm lib/snmp
-@dirrm include/snmp
+share/snmp/mibs/EtherLike-MIB.txt
+share/snmp/mibs/HOST-RESOURCES-MIB.txt
+share/snmp/mibs/IANAifType-MIB.txt
+share/snmp/mibs/IF-MIB.txt
+share/snmp/mibs/IP-MIB.txt
+share/snmp/mibs/RFC1155-SMI.txt
+share/snmp/mibs/RFC1213-MIB.txt
+share/snmp/mibs/RFC1271-MIB.txt
+share/snmp/mibs/SNMPv2-CONF.txt
+share/snmp/mibs/SNMPv2-M2M-MIB.txt
+share/snmp/mibs/SNMPv2-MIB.txt
+share/snmp/mibs/SNMPv2-PARTY-MIB.txt
+share/snmp/mibs/SNMPv2-SMI.txt
+share/snmp/mibs/SNMPv2-TC.txt
+share/snmp/mibs/SNMPv2-TM.txt
+share/snmp/mibs/TCP-MIB.txt
+share/snmp/mibs/UCD-SNMP-MIB.txt
+share/snmp/mibs/UDP-MIB.txt
+@dirrm share/snmp/mibs/ucd-snmp
+@dirrm share/snmp/mibs
+@dirrm share/snmp
 @dirrm share/examples/ucd-snmp
+@dirrm include/ucd-snmp

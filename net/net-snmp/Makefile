@@ -3,32 +3,30 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.14 1997/11/22 01:27:13 asami Exp $
+# $Id: Makefile,v 1.15 1997/11/23 16:59:12 asami Exp $
 #
 
-DISTNAME=	ucd-snmp-3.2
+DISTNAME=	ucd-snmp-3.3.1
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
-.if defined(PACKAGE_BUILDING)
+.if defined(BATCH)
 CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where
 .else
 IS_INTERACTIVE= yes
 .endif
-MAN1=		snmpget.1 snmpset.1 snmpwalk.1 snmpbulkwalk.1 \
-		snmpgetnext.1 snmptest.1 snmpnetstat.1 snmptranslate.1 \
-		snmptrap.1 snmpstatus.1
-MAN3=		snmp_api.3 mib_api.3
-MAN5=		variables.5 snmpd.conf.5
-MAN8=		snmptrapd.8 snmpd.8
-
-BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat \
-		snmpset snmpstatus snmptest snmptranslate \
-		snmptrap snmptrapd snmpwalk
-SBIN=		snmpd
+MAN1=		snmpbulkwalk.1 snmpd.1 snmpdelta.1 snmpget.1 snmpgetnext.1 \
+		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
+		snmptranslate.1 snmptrap.1 snmpwalk.1
+MAN3=		mib_api.3 snmp_api.3
+MAN5=		snmpd.conf.5 variables.5
+MAN8=		snmptrapd.8
+BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
+		snmpstatus snmptest snmptranslate snmptrap snmpwalk
+SBIN=		snmpd snmptrapd
 
 post-install:
 	( cd ${PREFIX}/bin; strip ${BIN} )
