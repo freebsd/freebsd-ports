@@ -6,4 +6,4 @@ bin/ftmulti
 bin/ftstring
 bin/fttimer
 bin/ftview
-bin/testnames
+bin/testname

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ft2demos
 # Date created:		12 April 2001
-# Whom:			KANOU Hiroki <kanou@mil.allnet.ne.jp>
+# Whom:			KANOU Hiroki <kanou@khdd.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -31,9 +31,9 @@ MAKE_ENV=	TOP_DIR="${FREETYPE_WRKSRC}"
 
 FREETYPE_WRKSRC!=	cd ${PORTSDIR}/print/freetype2; ${MAKE} -V WRKSRC
 
-FT_PROGRAMS=	ftbench ftdump ftlint ftmemchk ftmulti ftstring fttimer ftview testnames
+FT_PROGRAMS=	ftbench ftdump ftlint ftmemchk ftmulti ftstring fttimer ftview testname
 
 do-install:
-	@(cd ${WRKSRC}/bin/; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${PREFIX}/bin)
+	@(cd ${WRKSRC}/bin/.libs/; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${PREFIX}/bin)
 
 .include <bsd.port.post.mk>
