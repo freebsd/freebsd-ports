@@ -47,6 +47,7 @@
     SUBDIR += kbiff
     SUBDIR += knewmail
     SUBDIR += lbdb
+    SUBDIR += libesmtp
     SUBDIR += listar
     SUBDIR += listmanager
     SUBDIR += mahogany
