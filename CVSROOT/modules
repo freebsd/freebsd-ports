@@ -5092,6 +5092,7 @@ p5-Apache-AutoIndex	ports/www/p5-Apache-AutoIndex
 p5-Apache-DBI	ports/www/p5-Apache-DBI
 p5-Apache-DumpHeaders	ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter	ports/www/p5-Apache-Filter
+p5-Apache-Gallery	ports/www/p5-Apache-Gallery
 p5-Apache-Icon	ports/www/p5-Apache-Icon
 p5-Apache-Language	ports/www/p5-Apache-Language
 p5-Apache-MP3	ports/www/p5-Apache-MP3
