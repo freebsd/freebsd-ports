@@ -3,6 +3,6 @@
 ;;                                            --  by shige@FreeBSD.ORG
 
 (setq load-path (append '(
-	"@@LOCALBASE@@/@@EMACS_LIBDIR@@/site-lisp/flim"
+	"@@LOCALBASE@@/@@EMACS_VERSION_SITE_LISPDIR@@/flim"
  ) load-path))
 (provide 'flim-setupel)
