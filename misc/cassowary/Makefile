@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.washington.edu/research/constraints/cassowary/
 
 MAINTAINER=	nakai@FreeBSD.org
 
+BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	GTL.3:${PORTSDIR}/misc/gtl
 
 GNU_CONFIGURE=	yes
