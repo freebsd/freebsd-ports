@@ -7,7 +7,7 @@
 
 PORTNAME=	veepee
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python gnome
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	VeePee-${PORTVERSION}
@@ -15,9 +15,7 @@ DISTNAME=	VeePee-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user orientated scripting environment for embedding in applications
 
-BROKEN=		"Does not configure"
-
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_GNOME=	gnomelibs
 USE_XLIB=	yes
@@ -25,7 +23,7 @@ USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} ${PYTHON_LIBS}"
-CONFIGURE_ARGS=	--with-gd-includes=${LOCALBASE}/include/gd \
+CONFIGURE_ARGS=	--with-gd-includes=${LOCALBASE}/include \
 		--disable-kde
 .if exists(/usr/lib/libcrypto.a)
 PYTHON_LIBS+=	-lssl -lcrypto

@@ -7,7 +7,7 @@
 
 PORTNAME=	png2html
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.engr.mun.ca/~holden/
 
@@ -15,7 +15,7 @@ MAINTAINER=	jedgar@fxp.org
 COMMENT=	Takes a PNG image and transforms it into HTML
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		gd.4:${PORTSDIR}/graphics/gd2
+		gd.4:${PORTSDIR}/graphics/gd
 
 do-configure:
 		@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig

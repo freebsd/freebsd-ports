@@ -76,6 +76,18 @@ static void ReadImage (gdImagePtr im, gdIOCtx *fd, int len, int height, unsigned
 
 int ZeroDataBlock;
 
+gdImagePtr gdImageCreateFromGifSource(gdSourcePtr inSource)
+{
+        gdIOCtx         *in = gdNewSSCtx(inSource, NULL);
+        gdImagePtr      im;
+
+        im = gdImageCreateFromGifCtx(in);
+
+        in->gd_free(in);
+
+        return im;
+}
+
 gdImagePtr
 gdImageCreateFromGif(FILE *fdFile)
 {
@@ -84,7 +96,7 @@ gdImageCreateFromGif(FILE *fdFile)
 
         im = gdImageCreateFromGifCtx(fd);
 
-        fd->free(fd);
+        fd->gd_free(fd);
 
         return im;
 }
@@ -92,7 +104,7 @@ gdImageCreateFromGif(FILE *fdFile)
 gdImagePtr
 gdImageCreateFromGifCtx(gdIOCtxPtr fd)
 {
-       int imageNumber;
+/* 1.4       int imageNumber; */
        int BitPixel;
        int ColorResolution;
        int Background;

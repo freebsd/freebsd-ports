@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass5/source/ \
@@ -23,7 +23,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gd.4:${PORTSDIR}/graphics/gd2 \
+		gd.4:${PORTSDIR}/graphics/gd \
 		fftw.2:${PORTSDIR}/math/fftw \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		freetype.9:${PORTSDIR}/print/freetype2 \
@@ -48,7 +48,6 @@ USE_GMAKE=	yes
 USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
-		--with-gd-includes=${LOCALBASE}/include/gd \
 		--with-tcltk-includes="${LOCALBASE}/include/tcl8.3 \
 					 ${LOCALBASE}/include/tk8.3" \
 		--with-postgres-includes=${LOCALBASE}/include/postgresql/internal/ \

@@ -21,22 +21,3 @@
    fi
  fi
  for ac_site_file in $CONFIG_SITE; do
-@@ -1298,6 +1298,9 @@
- 	LDFLAGS="${LDFLAGS} -L${withval}"
- 	LD_RUN_PATH="${withval}${LD_RUN_PATH:+:}${LD_RUN_PATH}"
- 	
-+else
-+	LDFLAGS="${LDFLAGS} -L/usr/local/lib"
-+	LD_RUN_PATH="/usr/local/ib${LD_RUN_PATH:+:}${LD_RUN_PATH}"
- fi
- 
- # Check whether --with-gd-inc or --without-gd-inc was given.
-@@ -1305,6 +1308,8 @@
-   withval="$with_gd_inc"
-   
- 	CFLAGS="${CFLAGS} -I${withval}"
-+else
-+	CFLAGS="${CFLAGS} -I/usr/local/include/gd"
- 	
- fi
- 

@@ -7,6 +7,7 @@
 
 PORTNAME=	analog
 PORTVERSION=	5.32
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
@@ -24,7 +25,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	An extremely fast program for analysing WWW logfiles
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2 \
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 

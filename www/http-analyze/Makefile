@@ -16,7 +16,7 @@ MAINTAINER=	todd@thisisa.com
 COMMENT=	A fast Log-Analyzer for web servers
 
 BUILD_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 MAN1=		http-analyze.1
 

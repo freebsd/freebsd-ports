@@ -516,3 +516,6 @@ net/openldap22|net/openldap22-server|2003-08-13|split into -client and -server
 x11-toolkits/gtk-industrial-theme|x11-toolkits/gnome-themes-extras|2003-08-14|gtk-industrial-theme is now included with gnome-themes-extras
 devel/gnomedebug||2003-08-17|remove stale, broken port
 devel/gide|devel/anjuta|2003-08-17|gide was superceded by anjuta
+graphics/gd2|graphics/gd|2003-08-19|Cleanup gd-related ports
+graphics/gd-nox11|graphics/gd|2003-08-19|Cleanup gd-related ports
+graphics/p5-GD2|graphics/p5-GD|2003-08-19|Cleanup gd-related ports

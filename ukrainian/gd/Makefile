@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../graphics/gd2
+MASTERDIR=	${.CURDIR}/../../graphics/gd
 CATEGORIES=	ukrainian
 
 MAINTAINER=	mi@aldan.algebra.com

@@ -7,10 +7,10 @@
 
 PORTNAME=	emboss
 PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/old/ \
-		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
+		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/old \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
@@ -19,9 +19,7 @@ EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of open source tools for genetic sequence analysis
 
-BROKEN=		Checksum mismatch
-
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
@@ -35,7 +33,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/gd" \
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" RM="${RM}"

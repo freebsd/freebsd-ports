@@ -7,6 +7,7 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.fred.net/brv/chart/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}dev
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Easy to use, fast C API for creating charts and graphs
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2 \
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
 

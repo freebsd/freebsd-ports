@@ -6,7 +6,7 @@
 
 PORTNAME=	phplot
 PORTVERSION=	4.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phplot
@@ -16,7 +16,7 @@ MAINTAINER=	yukinopo@livedoor.com
 COMMENT=	A PHP class for creating scientific and business charts
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 NO_BUILD=	YES
 
