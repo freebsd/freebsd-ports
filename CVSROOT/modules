@@ -8460,6 +8460,7 @@ synce-gnomevfs	ports/palm/synce-gnomevfs
 synce-librapi2	ports/palm/synce-librapi2
 synce-libsynce	ports/palm/synce-libsynce
 synce-serial	ports/palm/synce-serial
+synce-trayicon	ports/palm/synce-trayicon
 syncmal		ports/palm/syncmal
 synergy 	ports/sysutils/synergy
 syntax_tools	ports/devel/syntax_tools
