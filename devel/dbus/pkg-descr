@@ -1,0 +1,8 @@
+D-BUS supplies both a system daemon (for events such as "new hardware device
+added" or "printer queue changed") and a per-user-login-session daemon (for
+general IPC needs among user applications). Also, the message bus is built on
+top of a general one-to-one message passing framework, which can be used by
+any two apps to communicate directly (without going through the message bus
+daemon).
+
+WWW: http://www.freedesktop.org/Software/dbus
