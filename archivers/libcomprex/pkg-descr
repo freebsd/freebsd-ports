@@ -1,0 +1,7 @@
+The libcomprex library transparently handles automatic compression and
+decompression of files. The API is similar to C's built-in file access
+functions, which provides a smooth transition to libcomprex. libcomprex
+can also open uncompressed files, making it a good replacement for the
+native file access functions.
+
+WWW: http://www.gnupdate.org/components/libcomprex/index.xml
