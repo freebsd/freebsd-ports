@@ -7374,6 +7374,7 @@ super		ports/security/super
 superlu		ports/math/superlu
 surf		ports/math/surf
 surfraw		ports/www/surfraw
+sv-aspell	ports/textproc/sv-aspell
 sv-ooodict-SE	ports/editors/ooodict-sv_SE
 svg2swf		ports/graphics/svg2swf
 svgalib		ports/graphics/svgalib
