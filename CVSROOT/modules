@@ -2327,6 +2327,7 @@ gworkspace	ports/deskutils/gworkspace
 gxanim		ports/multimedia/gxanim
 gxditview	ports/textproc/gxditview
 gxedit		ports/editors/gxedit
+gxine		ports/multimedia/gxine
 gxmlviewer	ports/textproc/gxmlviewer
 gxset		ports/x11/gxset
 gyroscope	ports/x11/gyroscope
