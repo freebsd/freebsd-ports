@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.13 1998/11/25 09:01:07 asami Exp $
+# $Id: Makefile,v 1.14 1999/01/10 17:57:37 steve Exp $
 #
 
 DISTNAME=	tiff-v3.4
@@ -14,7 +14,7 @@ CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.sgi.com/graphics/tiff/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 
