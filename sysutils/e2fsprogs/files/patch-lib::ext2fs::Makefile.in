@@ -1,5 +1,0 @@
---- lib/ext2fs/Makefile.in.orig	Wed Jul 23 06:53:05 2003
-+++ lib/ext2fs/Makefile.in	Thu Aug 28 09:58:57 2003
-@@ -173 +173 @@
--COMPILE_ET=../et/compile_et --build-tree
-+COMPILE_ET=compile_et
