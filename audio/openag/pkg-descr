@@ -1,0 +1,18 @@
+OpenAG is the first, and currently only, Open Source Unix implementation
+of the Audiogalaxy File Sharing Protocol.
+
+Features:
+- FULL procotol compliance with the v520L protocol.
+- FAST - written with using POSIX non-blocking I/O multiplexing.
+- Sharing support:up to 10 simultaneous downloads (up to 21 total connections).
+- Supports Gold accounts
+- Supports FULL 255 character filenames
+- Auto-resuming downloads
+
+Check http://www.audiogalaxy.com/ for Audiogalaxy information or
+below for OpenAG information.
+
+WWW: http://sourceforge.net/projects/openags/
+
+- Janos Mohacsi        and      Jon Wilson
+  janos.mohacsi@bsd.hu          jon@phuq.co.uk            

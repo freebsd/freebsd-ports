@@ -162,6 +162,7 @@
     SUBDIR += normalize
     SUBDIR += nosefart
     SUBDIR += nspmod
+    SUBDIR += openag
     SUBDIR += openal
     SUBDIR += opennap
     SUBDIR += opmixer
