@@ -1,0 +1,29 @@
+--- cal_tcl.C.orig	Sun Nov 28 17:29:13 1999
++++ cal_tcl.C	Sun Nov 28 17:30:24 1999
+@@ -516,7 +516,7 @@
+ 	TCL_Error(tcl, "no such calendar");
+     }
+ 
+-    TCL_Return(tcl, file->GetCalendar()->ReadOnly() ? "1" : "0");
++    TCL_Return(tcl, file->GetCalendar()->ReadOnly() ? (char *)"1" : (char *)"0");
+ }
+ 
+ static int cal_dirty(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]){
+@@ -527,7 +527,7 @@
+ 	TCL_Error(tcl, "no such calendar");
+     }
+ 
+-    TCL_Return(tcl, (file->IsModified() ? "1" : "0"));
++    TCL_Return(tcl, (file->IsModified() ? (char *)"1" : (char *)"0"));
+ }
+ 
+ static int cal_stale(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]){
+@@ -538,7 +538,7 @@
+ 	TCL_Error(tcl, "no such calendar");
+     }
+ 
+-    TCL_Return(tcl, (file->FileHasChanged() ? "1" : "0"));
++    TCL_Return(tcl, (file->FileHasChanged() ? (char *)"1" : (char *)"0"));
+ }
+ 
+ static int cal_save(ClientData c, Tcl_Interp* tcl, int argc, char* argv[]){
