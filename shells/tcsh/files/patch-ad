@@ -1,0 +1,93 @@
+*** sh.glob.c.orig	Sun May 14 00:49:17 1995
+--- sh.glob.c	Mon Aug 12 06:36:22 1996
+***************
+*** 1038,1045 ****
+  		if (match)
+  		    continue;
+  		if (rangec == '-' && *(pattern-2) != '[' && *pattern  != ']') {
+! 		    match = (stringc <= (*pattern & TRIM) &&
+! 			      (*(pattern-2) & TRIM) <= stringc);
+  		    pattern++;
+  		}
+  		else 
+--- 1038,1046 ----
+  		if (match)
+  		    continue;
+  		if (rangec == '-' && *(pattern-2) != '[' && *pattern  != ']') {
+! 		    match = (   collcmp(stringc, *pattern & TRIM) <= 0
+! 			     && collcmp(*(pattern-2) & TRIM, stringc) <= 0
+! 			    );
+  		    pattern++;
+  		}
+  		else 
+*** glob.c.orig	Sun May 14 00:49:21 1995
+--- glob.c	Mon Aug 12 06:35:03 1996
+***************
+*** 610,615 ****
+--- 610,645 ----
+      return ((copy == NULL) ? GLOB_NOSPACE : 0);
+  }
+  
++ int collcmp (c1, c2)
++ 	int c1, c2;
++ {
++ 	static char s1[2], s2[2];
++ 
++ 	if (c1 == c2)
++ 		return (0);
++ 	if (   (isascii(c1) && isascii(c2))
++ 	    || (!isalpha(c1) && !isalpha(c2))
++ 	   )
++ 		return (c1 - c2);
++ 	if (isalpha(c1) && !isalpha(c2)) {
++ 		if (isupper(c1))
++ 			return ('A' - c2);
++ 		else
++ 			return ('a' - c2);
++ 	} else if (isalpha(c2) && !isalpha(c1)) {
++ 		if (isupper(c2))
++ 			return (c1 - 'A');
++ 		else
++ 			return (c1 - 'a');
++ 	}
++ 	if (isupper(c1) && islower(c2))
++ 		return (-1);
++ 	else if (islower(c1) && isupper(c2))
++ 		return (1);
++ 	s1[0] = c1;
++ 	s2[0] = c2;
++ 	return strcoll(s1, s2);
++ }
+  
+  /*
+   * pattern matching function for filenames.  Each occurrence of the *
+***************
+*** 646,652 ****
+  		++pat;
+  	    while (((c = *pat++) & M_MASK) != M_END) {
+  		if ((*pat & M_MASK) == M_RNG) {
+! 		    if (c <= k && k <= pat[1])
+  			ok = 1;
+  		    pat += 2;
+  		}
+--- 676,684 ----
+  		++pat;
+  	    while (((c = *pat++) & M_MASK) != M_END) {
+  		if ((*pat & M_MASK) == M_RNG) {
+! 		    if (   collcmp(CHAR(c), CHAR(k)) <= 0
+! 			&& collcmp(CHAR(k), CHAR(pat[1])) <= 0
+! 		       )
+  			ok = 1;
+  		    pat += 2;
+  		}
+*** glob.h.orig	Sun May 14 00:49:21 1995
+--- glob.h	Mon Aug 12 06:35:03 1996
+***************
+*** 65,69 ****
+--- 65,70 ----
+  
+  int glob __P((const char *, int, int (*)(char *, int), glob_t *));
+  void globfree __P((glob_t *));
++ int collcmp __P((int, int));
+  
+  #endif /* !_GLOB_H_ */
