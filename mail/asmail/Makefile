@@ -6,36 +6,40 @@
 #
 
 PORTNAME=	asmail
-PORTVERSION=	0.56
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	mail afterstep
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://gates.enemy.at/pub/
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asmail/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Biff-type program, designed to match AfterStep
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shaping
 
-MAN1=	asmail.1
+MAN1=	asmail.1x 
+MAN5=	asmailrc.5x
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample.asmailrc
+.for file in configure autoconf/Makefile.defines.in
+	@${REINPLACE_CMD} -e 's|-lpthread -lrt|${PTHREAD_LIBS}|g ; \
+		 s|-lssl|-lcrypto -lssl|g ; \
+		 s|-D_REENTRANT|-D_REENTRANT ${PTHREAD_CFLAGS}|g ; \
+		 s|machine/soundcard|sys/soundcard|g' ${WRKSRC}/${file}
+.endfor
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${PREFIX}|g' ${WRKSRC}/asmailrc.sample
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/asmail.man ${PREFIX}/man/man1/asmail.1
-	@${MKDIR} ${PREFIX}/include/X11/pixmaps/cloud-e
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/cloud-e/*.xpm ${PREFIX}/include/X11/pixmaps/cloud-e
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/include/X11/pixmaps
-	@${MKDIR} ${PREFIX}/share/examples/asmail
-	${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/examples/asmail
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/asmail
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/asmail
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/asmailrc.sample ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
