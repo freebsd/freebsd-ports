@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 1995/10/03 09:36:49 asami Exp $
+# $Id: Makefile,v 1.16 1995/11/09 06:50:18 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -10,6 +10,7 @@
     SUBDIR += mpeg_play
     SUBDIR += netpbm
     SUBDIR += pixmap
+    SUBDIR += png
     SUBDIR += povray
     SUBDIR += spigot
     SUBDIR += tiff
