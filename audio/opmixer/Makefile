@@ -39,7 +39,7 @@ do-install:
 		${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/{DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${DOCDIR}
 .endif
 
 .include <bsd.port.mk>
