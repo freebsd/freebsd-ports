@@ -11,7 +11,7 @@ CATEGORIES=	chinese
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
 REVISEDATE=	20020901
 
-MAINTAINER=	ycheng@sinica.edu.tw
+MAINTAINER=	clive@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
 PATCH_SITES=	http://bsdchat.com/~clive/dist/mutt15/ \
@@ -24,6 +24,8 @@ MUTT_CONFIGURE_ARGS+=	--without-wc-funcs
 WITH_MUTT_NCURSES=	yes
 .if !defined(PACKAGE_BUILDING)
 WITHOUT_MUTT_SGMLFORMAT=	yes
+WITHOUT_MUTT_HTML=		yes
+WITHOUT_MUTT_COMPRESSED_FOLDERS=yes
 .endif
 
 MD5_FILE=	${.CURDIR}/distinfo

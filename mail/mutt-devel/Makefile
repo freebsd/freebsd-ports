@@ -86,7 +86,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
 
-PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
