@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.23 1997/03/09 22:51:56 jmz Exp $
+# $Id: Makefile,v 1.24 1998/10/20 01:48:37 steve Exp $
 #
 
 DISTNAME=	xdvi-20
@@ -36,7 +36,7 @@ do-install:
 	@(cd ${WRKSRC}; ${GMAKE} -f Makefile install BINDIR=${PREFIX}/bin)
 	@(cd ${WRKSRC}; ${INSTALL_SCRIPT} MakeTeXPK ${PREFIX}/bin)
 
-pre-clean:
-	@rm -f ${SCRIPTDIR}/post-install
+post-install:
+	@if [ -f ${WRKDIR}/post-install ]; then sh ${WRKDIR}/post-install; fi
 
 .include <bsd.port.mk>

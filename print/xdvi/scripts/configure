@@ -45,7 +45,7 @@ for i in $RES; do
   fi
   shift
 done
-rm -f $SCRIPTDIR/post-install
+
 echo
 echo "Choose a font directory for automatic font generation."
 echo "------------------------------------------------------"
@@ -57,7 +57,7 @@ echo -n "font directory [$CACHE]: "
 $READ answ; if [ "$answ" != "" ]; then 
   CACHE=$answ; 
 else
-  echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/post-install
+  echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $WRKDIR/post-install
 fi
   
 sed -e s:/usr/lib/tex:$prefix/share/texmf: \
