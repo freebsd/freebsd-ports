@@ -1,0 +1,16 @@
+A perl module that is designed to provide easy to use settings
+files for your project. You subclass the basic Config::Setting
+class in one of your own modules, and then provide an interface to
+your code using it. When set up, you can then override the settings
+on a per-host basis, or even using an environment variable.
+
+By default a win.ini style of configuration is used, but this can
+be overridden and an XML based configuration is also included. The
+access mechanism can also be overridden, the setting don't have to
+come from a file, but (maybe) from a website. You'll have to write
+your own there, though.
+
+WWW: http://www.myrddin.demon.co.uk/Config-Setting.html
+
+- Pete
+petef@databits.net
