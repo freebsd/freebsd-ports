@@ -1,14 +1,13 @@
---- monotone.cc.orig	Wed Jan  7 13:11:47 2004
-+++ monotone.cc	Sun Mar 21 22:49:59 2004
-@@ -129,8 +129,11 @@
+--- monotone.cc.orig	Fri Dec 31 03:16:53 2004
++++ monotone.cc	Wed Jan 26 22:20:17 2005
+@@ -140,8 +140,10 @@
  
    setlocale(LC_CTYPE, "");
    setlocale(LC_MESSAGES, "");
-+
 +#ifdef ENABLE_NLS
    bindtextdomain(PACKAGE, LOCALEDIR);
    textdomain(PACKAGE);
 +#endif
  
-   // decode all argv values into a UTF-8 array
- 
+   L(F("set locale: LC_CTYPE=%s, LC_MESSAGES=%s\n")
+     % (setlocale(LC_CTYPE, NULL) == NULL ? "n/a" : setlocale(LC_CTYPE, NULL))
