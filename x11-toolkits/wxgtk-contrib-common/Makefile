@@ -8,7 +8,7 @@
 PORTREVISION=	1
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	The wxWindows GUI toolkit contributed libraries (common files)
+COMMENT=	The wxWidgets GUI toolkit contributed libraries (common files)
 
 WXGTK_FLAVOR=	gtk-contrib-common
 MASTERDIR=	${.CURDIR}/../wxgtk

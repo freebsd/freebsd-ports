@@ -8,7 +8,7 @@
 PORTREVISION=	2
 
 MAINTAINER=	fjoe@FreeBSD.org
-COMMENT=	The wxWindows GUI toolkit contributed libraries (GTK2 version)
+COMMENT=	The wxWidgets GUI toolkit contributed libraries (GTK2 version)
 
 WXGTK_FLAVOR=	gtk2-contrib
 MASTERDIR=	${.CURDIR}/../wxgtk
