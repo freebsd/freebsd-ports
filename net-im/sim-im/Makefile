@@ -58,4 +58,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
 		${CONFIGURE_WRKSRC}/configure
 
+post-configure:
+.if defined(WITHOUT_SSL)
+	@${REINPLACE_CMD} -e 's|plugins/yahoo||g' ${WRKSRC}/Makefile
+.endif
+
 .include <bsd.port.mk>
