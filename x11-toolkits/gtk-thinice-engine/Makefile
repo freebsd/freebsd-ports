@@ -15,12 +15,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A simple, clean theme engine
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+USE_GNOME=	gnomehack gnometarget gtk20
 
 .include <bsd.port.mk>
