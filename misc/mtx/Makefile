@@ -16,6 +16,6 @@ MAINTAINER=	mbr@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		mtx.1 tapeinfo.1 scsitape.1
+MAN1=		loaderinfo.1 mtx.1 tapeinfo.1 scsitape.1
 
 .include <bsd.port.mk>
