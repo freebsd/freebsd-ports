@@ -1,5 +1,4 @@
 bin/povray
-man/man1/povray.1.gz
 lib/povray3/pov3demo/lights/fadelt2.pov
 lib/povray3/pov3demo/lights/fillite.pov
 lib/povray3/pov3demo/lights/fadelt1.pov

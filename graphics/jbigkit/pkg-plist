@@ -1,9 +1,6 @@
 include/jbig.h
 bin/pbmtojbg
 bin/jbgtopbm
-man/man1/jbgtopbm.1.gz
-man/man1/pbmtojbg.1.gz
-man/man5/pbm.5.gz
 lib/libjbig.a
 lib/libjbig.so.1.0
 @exec /sbin/ldconfig -m %B

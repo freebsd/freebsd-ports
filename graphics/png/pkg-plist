@@ -5,6 +5,3 @@ lib/libpng.a
 lib/libpng.so.2.1
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
-man/man3/libpng.3.gz
-man/man3/libpngpf.3.gz
-man/man5/png.5.gz

@@ -1,8 +1,7 @@
 bin/cqcam
 bin/xcqcam
 bin/webcam
-man/man1/cqcam.1.gz
-@exec ln -s %D/%F %B/webcam.1.gz
-@exec ln -s %D/%F %B/xcqcam.1.gz
-@unexec rm %B/webcam.1.gz
-@unexec rm %B/xcqcam.1.gz
+@exec ln -s %D/man/man1/cqcam.1.gz %D/man/man1/webcam.1.gz
+@exec ln -s %D/man/man1/cqcam.1.gz %D/man/man1/xcqcam.1.gz
+@unexec rm %D/man/man1/webcam.1.gz
+@unexec rm %D/man/man1/xcqcam.1.gz

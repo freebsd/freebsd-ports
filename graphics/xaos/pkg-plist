@@ -113,7 +113,6 @@ share/XaoS/doc/compilers.txt
 share/XaoS/doc/ANNOUNCE
 share/XaoS/doc/PROBLEMS
 share/XaoS/doc/tutorial.txt
-man/man6/xaos.6.gz
 @unexec install-info --delete %D/info/xaos.info %D/info/dir
 info/xaos.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu/p' /usr/share/info/dir > %D/info/dir

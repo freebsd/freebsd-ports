@@ -1,5 +1,4 @@
 bin/imgsize
-lib/perl5/man/man3/Image::Size.3.gz
 lib/perl5/site_perl/Image/Size.pm
 lib/perl5/site_perl/auto/Image/Size/autosplit.ix
 lib/perl5/site_perl/auto/Image/Size/gifsize.al
@@ -10,6 +9,5 @@ lib/perl5/site_perl/auto/Image/Size/tiffsize.al
 lib/perl5/site_perl/auto/Image/Size/xbmsize.al
 lib/perl5/site_perl/auto/Image/Size/xpmsize.al
 lib/perl5/site_perl/i386-freebsd/auto/Image/Size/.packlist
-man/man1/imgsize.1.gz
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Image/Size
 @dirrm lib/perl5/site_perl/auto/Image/Size

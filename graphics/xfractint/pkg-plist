@@ -40,5 +40,4 @@ lib/fractint/royal.map
 lib/fractint/tiling.l
 lib/fractint/topo.map
 lib/fractint/volcano.map
-man/man1/xfractint.1.gz
 @dirrm lib/fractint
