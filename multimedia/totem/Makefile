@@ -19,7 +19,7 @@ LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomedesktop
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
