@@ -227,7 +227,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/mod_perl.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 libexec/apache2/mod_perl.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/mod_perl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util
