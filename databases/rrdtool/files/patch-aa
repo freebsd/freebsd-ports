@@ -1,12 +1,12 @@
---- perl-shared/Makefile.PL.orig	Wed Sep 29 17:26:51 1999
-+++ perl-shared/Makefile.PL	Wed Sep 29 17:42:36 1999
-@@ -9,7 +9,8 @@
+--- perl-shared/Makefile.PL.orig	Tue Jun 13 20:51:17 2000
++++ perl-shared/Makefile.PL	Tue Jun 13 20:51:19 2000
+@@ -10,7 +10,8 @@
      'NAME'         => 'RRDs',
      'VERSION_FROM' => 'RRDs.pm', # finds $VERSION
-     'OPTIMIZE'     => '-g',
+     'DEFINE'	   => "-DPERLPATCHLEVEL=$Config{PATCHLEVEL}",
 -    'INC'          => '-I../src -I../gd1.3',
-+    'CCFLAGS'	   => '-DHAVE_CONFIG_H',
++    'CCFLAGS'	   => "-DHAVE_CONFIG_H",
 +    'INC'          => '-I../config -I../src -I../gd1.3',
      # where to look for the necessary libraries 
      # Perl will figure out which one is valid
-     'depend'	   => {'RRDs.c' => $librrd},
+     'depend'	   => {'RRDs.c' => "../src/.libs/librrd_private.a"},

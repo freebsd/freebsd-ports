@@ -1,21 +1,21 @@
---- Makefile.in.orig	Fri Jan  7 22:59:16 2000
-+++ Makefile.in	Fri Jan  7 22:59:21 2000
-@@ -373,12 +373,12 @@
+--- Makefile.in.orig	Tue Jun 13 20:58:24 2000
++++ Makefile.in	Tue Jun 13 20:58:25 2000
+@@ -382,12 +382,12 @@
  
  
  # lets schedule the perl stuff for installation
 -install-data-local:
--	$(INSTALL) -d -m 755 $(prefix)/lib/perl/auto/RRDs
--	$(INSTALL) -m 644 perl-piped/RRDp.pm $(prefix)/lib/perl
--	$(INSTALL) -m 644 perl-shared/RRDs.pm $(prefix)/lib/perl
--	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(prefix)/lib/perl/auto/RRDs
--	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.so $(prefix)/lib/perl/auto/RRDs
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
+-	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
+-	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
+-	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
+-	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
 +install-data-local: site-perl-inst
-+#	$(INSTALL) -d -m 755 $(prefix)/lib/perl/auto/RRDs
-+#	$(INSTALL) -m 644 perl-piped/RRDp.pm $(prefix)/lib/perl
-+#	$(INSTALL) -m 644 perl-shared/RRDs.pm $(prefix)/lib/perl
-+#	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(prefix)/lib/perl/auto/RRDs
-+#	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.so $(prefix)/lib/perl/auto/RRDs
++#	$(INSTALL) -d -m 755 $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
++#	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
++#	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
++#	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
++#	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
  
  # rules for building the perl module
  perl_piped: perl-piped/Makefile

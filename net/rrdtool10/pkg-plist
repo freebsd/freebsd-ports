@@ -1,8 +1,10 @@
 bin/rrdtool
 bin/rrdcgi
+bin/trytime
 lib/librrd.a
 lib/librrd.so.0
 lib/librrd.so
+include/rrd.h
 share/examples/rrdtool/cgi-demo.cgi
 share/examples/rrdtool/piped-demo.pl
 share/examples/rrdtool/shared-demo.pl
@@ -28,6 +30,7 @@ share/examples/rrdtool/rrdfetchnames/rrdfetchnames.pl
 share/examples/rrdtool/rrdfetchnames/README
 share/examples/rrdtool/README
 share/doc/rrdtool/rrdtool.pod
+share/doc/rrdtool/rrdinfo.pod
 share/doc/rrdtool/rrdlast.pod
 share/doc/rrdtool/rrdcreate.pod
 share/doc/rrdtool/rrdupdate.pod
@@ -43,6 +46,7 @@ share/doc/rrdtool/rrdresize.pod
 share/doc/rrdtool/rrdcgi.pod
 share/doc/rrdtool/rrdtutorial.pod
 share/doc/rrdtool/rrdtool.txt
+share/doc/rrdtool/rrdinfo.txt
 share/doc/rrdtool/rrdlast.txt
 share/doc/rrdtool/rrdcreate.txt
 share/doc/rrdtool/rrdupdate.txt
@@ -60,6 +64,7 @@ share/doc/rrdtool/rrdtutorial.txt
 share/doc/rrdtool/RRDs.txt
 share/doc/rrdtool/RRDp.txt
 share/doc/rrdtool/html/rrdtool.html
+share/doc/rrdtool/html/rrdinfo.html
 share/doc/rrdtool/html/rrdlast.html
 share/doc/rrdtool/html/rrdcreate.html
 share/doc/rrdtool/html/rrdupdate.html
