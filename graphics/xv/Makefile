@@ -1,27 +1,26 @@
 # New ports collection makefile for:	xv
-# Version required:	3.10a
 # Date created:		30 October 1994
 # Whom:			smace
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xv-3.10a
+PORTNAME=	xv
+PORTVERSION=	3.10a
 CATEGORIES?=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
 		http://people.FreeBSD.org/~shige/ports/xv/ \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		xv310a-jp-extension-rev5.3.3.tar.gz \
+		${PORTNAME}${PORTVERSION:S/.//}-jp-extension-rev5.3.3.tar.gz \
 		croppad.patch grabpatch jp-ext-bzip2.patch longname.patch \
 		mp-tiff-patch pdf.patch png-1.2d-fix.patch xv-png-1.2d.patch
-DIST_SUBDIR=	xv
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		xv310a-jp-extension-rev5.3.3.tar.gz
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTFILES:N*patch}
 
 PATCH_SITES=    ftp://ftp.cis.upenn.edu/pub/xv/
-PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
+PATCHFILES=     ${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch
 
 MAINTAINER?=	shige@FreeBSD.org
 
