@@ -1,7 +1,4 @@
-This is a Run... box, allowing you to spawn other programs.
-
-Features
---------
+gmrun is a very featureful GTK+-2 Run box. Its features include:
 
 	* Tilde completion
 	* Completion for separate words
@@ -11,6 +8,6 @@ Features
 	* Can spawn commands in a terminal
 	* Intelligent URL handling
 
-WWW: http://sourceforge.net/projects/gmrun
+WWW: http://students.infoiasi.ro/~mishoo/site/gmrun.epl
 
 - Adam Weinberger <adamw@FreeBSD.org>
