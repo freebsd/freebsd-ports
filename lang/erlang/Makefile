@@ -52,6 +52,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-threads
 .endif
 
+.if defined(WITH_ERLANG_HIPE)
+CONFIGURE_ARGS+=	--enable-hipe
+.endif
+
 .if !defined(WITHOUT_JAVA)
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
@@ -77,6 +81,9 @@ post-patch:
 pre-extract:
 .if !defined(WITH_ERLANG_THREADS)
 	@${ECHO_MSG} "You can enable support for threaded I/O by defining WITH_ERLANG_THREADS."
+.endif
+.if !defined(WITH_ERLANG_HIPE)
+	@${ECHO_MSG} "You can enable HiPE support by defining WITH_ERLANG_HIPE."
 .endif
 
 pre-configure:
