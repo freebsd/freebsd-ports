@@ -1,6 +1,3 @@
-bluej/examples/appletClock/bluej.pkg
-bluej/examples/appletClock/Clock.java
-bluej/examples/appletClock/README.TXT
 bluej/examples/appletdemo/bluej.pkg
 bluej/examples/appletdemo/CaseConverter.java
 bluej/examples/appletdemo/README.TXT
@@ -8,6 +5,10 @@ bluej/examples/debugdemo/bluej.pkg
 bluej/examples/debugdemo/Car.java
 bluej/examples/debugdemo/Demo.java
 bluej/examples/debugdemo/README.TXT
+bluej/examples/file-reader/bluej.pkg
+bluej/examples/file-reader/FileReader.java
+bluej/examples/file-reader/README.TXT
+bluej/examples/file-reader/test.txt
 bluej/examples/hello/bluej.pkg
 bluej/examples/hello/Hello.java
 bluej/examples/hello/README.TXT
@@ -39,9 +40,6 @@ bluej/examples/picture/Picture.java
 bluej/examples/picture/README.TXT
 bluej/examples/picture/Square.java
 bluej/examples/picture/Triangle.java
-bluej/examples/reader/bluej.pkg
-bluej/examples/reader/Reader.java
-bluej/examples/reader/README.TXT
 bluej/examples/shapes/bluej.pkg
 bluej/examples/shapes/Canvas.java
 bluej/examples/shapes/Circle.java
@@ -193,14 +191,13 @@ bluej/lib/editor.jar
 bluej/lib/moe.defs
 bluej/lib/MRJToolkitStubs.zip
 bluej/bluej
-@dirrm bluej/examples/appletClock
 @dirrm bluej/examples/appletdemo
 @dirrm bluej/examples/debugdemo
+@dirrm bluej/examples/file-reader
 @dirrm bluej/examples/hello
 @dirrm bluej/examples/people
 @dirrm bluej/examples/people2
 @dirrm bluej/examples/picture
-@dirrm bluej/examples/reader
 @dirrm bluej/examples/shapes
 @dirrm bluej/examples
 @dirrm bluej/lib/english/templates/newclass
@@ -220,3 +217,4 @@ bluej/bluej
 @dirrm bluej/lib/swedish/templates
 @dirrm bluej/lib/swedish
 @dirrm bluej/lib
+@dirrm bluej

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	1.1.6
+PORTVERSION=	1.2.0
 CATEGORIES=	java editors
 MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -22,19 +22,16 @@ EXTRACT_ONLY=
 NO_BUILD=	yes
 
 # Called MY_JDK and MY_JDK_PORT so not to conflict with any other possible
-# defns in the ports system.
-MY_JDK=		linux-jdk1.3.1
-MY_JDK_PORT=	linux-sun-jdk13
+# definitions in the ports system.
+MY_JDK=		linux-jdk1.4.0.01
+MY_JDK_PORT=	linux-sun-jdk14
 RUN_DEPENDS=    ${LOCALBASE}/${MY_JDK}/bin/java:${PORTSDIR}/java/${MY_JDK_PORT}
 
 do-install:
 	@${LN} -s ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/${DISTNAME}${EXTRACT_SUFX}
-	@${ECHO} ""
 	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of
 	@${ECHO} ${PREFIX}/bluej.  Close the installer when done.
 	@cd ${PREFIX}; ${LOCALBASE}/${MY_JDK}/bin/java -jar ${DISTNAME}${EXTRACT_SUFX}
 	@${RM} -f ${PREFIX}/${DISTNAME}${EXTRACT_SUFX}
-	@${PATCH} ${PREFIX}/bluej/bluej < ${FILESDIR}/bluej.diff
-	@${RM} -f ${PREFIX}/bluej/bluej.orig
 
 .include <bsd.port.mk>
