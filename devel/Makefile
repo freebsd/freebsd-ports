@@ -111,6 +111,7 @@
     SUBDIR += gcc-6811
     SUBDIR += gcc-m68k
     SUBDIR += gconf
+    SUBDIR += gcvs
     SUBDIR += gdb-m68k
     SUBDIR += gdb51
     SUBDIR += gengetopt

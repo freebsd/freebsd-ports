@@ -1,0 +1,20 @@
+--- cvsunix/src/Makefile.in.orig	Tue Mar  6 17:36:21 2001
++++ cvsunix/src/Makefile.in	Thu Mar 29 00:44:20 2001
+@@ -33,7 +33,7 @@
+ # Use cp if you don't have install.
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ 
+ LIBS = @LIBS@
+ 
+@@ -88,7 +88,7 @@
+ install: installdirs
+ 	@for prog in $(PROGS); do \
+ 	  echo Installing $$prog in $(bindir); \
+-	  $(INSTALL) $$prog $(bindir)/$$prog ; \
++	  $(INSTALL_SCRIPT) $$prog $(bindir)/$$prog ; \
+ 	done
+ 
+ installdirs:
