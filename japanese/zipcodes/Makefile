@@ -3,12 +3,12 @@
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/12 05:12:17 itojun Exp $
+# $Id: Makefile,v 1.2 1997/11/15 10:33:58 asami Exp $
 #
 
 DISTNAME=	ken_all
 PKGNAME=	ja-zipcodes-1.0
-CATEGORIES=	japanese
+CATEGORIES=	japanese misc
 MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/
 EXTRACT_SUFX=	.lzh
 
