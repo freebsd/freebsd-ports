@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Games-Bingo
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	games perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Games
@@ -15,10 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A bingo game Perl implementation
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Games::Bingo.3 \
 		Games::Bingo::Card.3 \
@@ -28,11 +25,8 @@ MAN3=		Games::Bingo.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-# damn old MakeMaker...
-post-configure:
-	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
-.endif
+post-patch:
+	@${PERL} -pi -e '$$_="" if /Test::/' ${WRKSRC}/Build.PL
 
 post-install:
 .ifndef(NOPORTDOCS)
