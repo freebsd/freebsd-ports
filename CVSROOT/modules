@@ -602,7 +602,6 @@ bluej		ports/java/bluej
 blwm		ports/x11-wm/blwm
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
-bmsync		ports/www/bmsync
 bnc		ports/irc/bnc
 bnf		ports/devel/bnf
 boa		ports/www/boa
