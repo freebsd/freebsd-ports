@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/network/ndtp/eb/
@@ -16,12 +17,11 @@ DISTFILES=	${EBFILES} \
 EXTRACT_ONLY=	${EBFILES}
 
 PATCH_SITES=	${MASTER_SITES}
-#PATCHFILES=	${DISTNAME}+.diff
+PATCHFILES=	${DISTNAME}+.diff ${DISTNAME}+2.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -33,9 +33,12 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/chujiten6-2.3.tar.gz \
 		appendix/colloc-2.0.tar.gz \
 		appendix/crownfj-2.0.tar.gz \
+		appendix/crownfj2-1.0.tar.gz \
+		appendix/crowngj-1.0.tar.gz \
 		appendix/daihyakka-1.0.tar.gz \
 		appendix/daijirin-2.0.tar.gz \
 		appendix/dd75-2.0.tar.gz \
+		appendix/gendai2000-1.0.tar.gz \
 		appendix/genius-1.0.tar.gz \
 		appendix/genius2-1.1.tar.gz \
 		appendix/global-2.0.tar.gz \
@@ -58,21 +61,23 @@ DIST_SUBDIR=	eb
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-nls \
+		--enable-pthread \
+		--with-pthread-cflags="${PTHREAD_CFLAGS}" \
+		--with-pthread-ldflags="${PTHREAD_LIBS}" \
 		--with-gettext-includes=${PREFIX}/include \
 		--with-gettext-libraries=${PREFIX}/lib \
 		--with-iconv-includes=${PREFIX}/include \
 		--with-iconv-libraries=${PREFIX}/lib
 
-INSTALLS_SHLIB=	yes
-
 APPENDIXDIR=	${PREFIX}/share/eb/appendix
 
-pre-configure:
-	cd ${WRKSRC}; autoconf
-	${MKDIR} ${WRKDIR}/appendix
+post-extract:
+	@${RM} -fr ${WRKSRC}/zlib
+	@${MKDIR} ${WRKDIR}/appendix
 .for file in ${APPENDIXFILES}
-	${TAR} --exclude CVS -C ${WRKDIR}/appendix -zxmf \
+	@${TAR} --exclude CVS -C ${WRKDIR}/appendix -zxmf \
 	  ${DISTDIR}/${DIST_SUBDIR}/${file}
 .endfor
 
