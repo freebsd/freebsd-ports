@@ -1,5 +1,15 @@
 ******************************************************************************
- Before running zphoto, users should prepare as follows:
+ This port requires a kernel built with
+ the directive:
+
+ options USER_LDT
+
+ Please, check the FreeBSD Handbook for instructions
+ on building a custom kernel. If you do not know
+ where to find it, check the FreeBSD website
+ http://www.freebsd.org/
+
+ Then before running zphoto, users should prepare as follows:
 
  sh or bash:
   $ ZPHOTO_TEMPLATE_DIR=%%PREFIX%%/share/zphoto/templates/en (english)
