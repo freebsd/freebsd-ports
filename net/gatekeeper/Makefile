@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gatekeeper
-PORTVERSION=	2.0a
+PORTVERSION=	2.0.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnugk.org/download/
 DISTNAME=	gk-${PORTVERSION}
