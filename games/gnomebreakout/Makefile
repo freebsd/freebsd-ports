@@ -8,7 +8,7 @@
 PORTNAME=	gnomebreakout
 PORTVERSION=	0.5.3
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.users.on.net/mipearson/
+MASTER_SITES=	http://www.users.on.net/~mipearson/
 DISTNAME=	gnome-breakout-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
