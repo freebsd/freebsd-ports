@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041019:
+  AFFECTS: users of databases/mysql41-server
+  AUTHOR: ale@FreeBSD.org
+
+  The MySQL Daemon must now be enabled / disabled in rc.conf.
+  See the script for details.
+
 20041018:
   AFFECTS: users of mail/courier-imap
   AUTHOR: oliver@FreeBSD.org
