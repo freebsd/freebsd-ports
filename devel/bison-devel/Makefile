@@ -7,12 +7,12 @@
 #
 
 PORTNAME=		bison
-PORTVERSION=		1.30
+PORTVERSION=		1.33
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
 
-MAINTAINER=		obrien@NUXI.com
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
 

@@ -1,15 +1,15 @@
---- src/reader.c.orig	Sun Sep 23 02:10:06 2001
-+++ src/reader.c	Sun Sep 23 02:08:08 2001
-@@ -65,6 +65,8 @@
+--- src/reader.c.orig	Thu Feb  7 09:12:44 2002
++++ src/reader.c	Sat Feb 16 19:49:02 2002
+@@ -34,6 +34,8 @@
+ #include "reader.h"
+ #include "conflicts.h"
  
- static bucket *errtoken;
- static bucket *undeftoken;
-+
 +extern int broken_undeftoken_init;
- 
- 
- /*===================\
-@@ -1959,7 +1961,10 @@
++
+ typedef struct symbol_list
+ {
+   struct symbol_list *next;
+@@ -1978,7 +1979,10 @@
       It is always token number 2.  */
    undeftoken = getsym ("$undefined.");
    undeftoken->class = token_sym;

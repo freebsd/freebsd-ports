@@ -1,18 +1,14 @@
---- src/getargs.c.orig	Sun Sep 23 02:08:44 2001
-+++ src/getargs.c	Sun Sep 23 02:09:27 2001
-@@ -35,6 +35,7 @@
- int statistics_flag = 0;
- int yacc_flag = 0;	/* for -y */
+--- src/getargs.c.orig	Wed Jan 23 05:12:17 2002
++++ src/getargs.c	Sat Feb 16 19:47:24 2002
+@@ -36,4 +36,5 @@
  int graph_flag = 0;
+ int trace_flag = 0;
 +int broken_undeftoken_init;
  
  const char *skeleton = NULL;
+@@ -50,4 +51,5 @@
  
-@@ -42,6 +43,7 @@
- const char *shortopts = "yvgdhrltknVo:b:p:S:";
- static struct option longopts[] =
- {
+   /* Parser. */
 +  {"broken-undeftoken-init", 0, &broken_undeftoken_init, 1},
-   /* Operation modes. */
-   {"help",		no_argument,	0, 'h'},
-   {"version",		no_argument, 	0, 'V'},
+   {"skeleton",		required_argument,	0, 'S'},
+   {"debug",		no_argument,		0, 't'},
