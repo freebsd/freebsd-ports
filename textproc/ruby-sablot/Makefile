@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sablot
-PORTVERSION=	0.0.2
+PORTVERSION=	0.4.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.inac.co.jp/~maki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,13 +22,9 @@ USE_RUBY_EXTCONF=	yes
 USE_RUBY_RD=	yes
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
 
 DOCS=		README		sablot.html	sablot.rd
-
-post-extract:
-	${RM} ${WRKSRC}/Makefile
 
 post-build:
 .if !defined(NOPORTDOCS)
