@@ -14,9 +14,9 @@ lib/libmej.so.8
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/Eterm/pix/014.png
+share/Eterm/pix/40.png
+share/Eterm/pix/6.png
 share/Eterm/pix/backwave.jpg
-share/Eterm/pix/button1.jpg
-share/Eterm/pix/button5.jpg
 share/Eterm/pix/circuit.png
 share/Eterm/pix/fourthday.jpg
 share/Eterm/pix/gaia.jpg
@@ -47,7 +47,6 @@ share/Eterm/themes/trans/pixmaps.list
 share/doc/Eterm/Eterm_reference.html
 share/doc/Eterm/Eterm.tcap
 share/doc/Eterm/Eterm.ti
-share/doc/Eterm/FAQ.html
 share/doc/Eterm/ReleaseNotes
 @dirrm share/Eterm/themes/trans
 @dirrm share/Eterm/themes/tn3270

@@ -1,7 +1,20 @@
---- src/command.c.orig	Sat Apr 24 05:56:49 1999
-+++ src/command.c	Mon May  3 03:05:33 1999
-@@ -91,6 +91,10 @@
- #  include <X11/Xlocale.h>
+--- src/command.c.orig	Wed Nov  3 01:34:35 1999
++++ src/command.c	Wed Jan 26 23:45:10 2000
+@@ -40,6 +40,8 @@
+ #include "feature.h"
+ #include "config.h"
+ 
++#undef HAVE_SAVED_UIDS
++
+ /* System Headers */
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -87,10 +89,12 @@
+ # if (XtVersion < 11005)
+ #  define NO_XLOCALE
+ #  include <locale.h>
+-# else
+-#  include <X11/Xlocale.h>
  # endif
  #endif /* NO_XLOCALE */
 +#ifdef USE_XIM
@@ -11,7 +24,15 @@
  #ifdef USE_GETGRNAME
  # include <grp.h>
  #endif
-@@ -299,7 +303,7 @@
+@@ -120,6 +124,7 @@
+ #endif
+ #ifdef HAVE_TERMIOS_H
+ # include <termios.h>
++# include <sys/ttydefaults.h>
+ #else
+ # include <sgtty.h>
+ #endif
+@@ -299,7 +304,7 @@
  
  /* defines: */
  
@@ -20,24 +41,23 @@
  #define STRING_MAX	512	/* max string size for process_xterm_seq() */
  #define ESC_ARGS	32	/* max # of args for esc sequences */
  
-@@ -584,12 +588,11 @@
+@@ -577,11 +582,12 @@
  
  #endif /* OFFIX_DND */
  
 -#ifndef NO_XLOCALE
 -static char *rs_inputMethod = "";	/* XtNinputMethod */
--static char *rs_preeditType = NULL;	/* XtNpreeditType */
 +#ifdef USE_XIM
-+extern char *rs_inputMethod;	/* XtNinputMethod */
-+extern char *rs_preeditType;	/* XtNpreeditType */
++extern char *rs_inputMethod;
++extern char *rs_preeditType;
  static XIC Input_Context;	/* input context */
--
+ 
 -#endif /* NO_XLOCALE */
 +#endif /* USE_XIM */
  
  /* command input buffering */
  
-@@ -647,6 +650,16 @@
+@@ -638,6 +644,16 @@
  #else
  # define init_xlocale() ((void)0)
  #endif
@@ -54,7 +74,17 @@
  
  /*for Big Paste Handling */
  static int v_doPending(void);
-@@ -2425,8 +2438,6 @@
+@@ -2075,6 +2091,9 @@
+ # if VTIME != VEOL
+   tio->c_cc[VTIME] = 0;
+ # endif
++# ifdef VSTATUS
++  tio->c_cc[VSTATUS] = CSTATUS;
++# endif
+ 
+   /* input modes */
+   tio->c_iflag = (BRKINT | IGNPAR | ICRNL | IXON
+@@ -2401,8 +2420,6 @@
    DndSelection = XInternAtom(Xdisplay, "DndSelection", False);
  #endif /* OFFIX_DND */
  
@@ -63,11 +93,11 @@
    /* get number of available file descriptors */
  #ifdef _POSIX_VERSION
    num_fds = sysconf(_SC_OPEN_MAX);
-@@ -2489,135 +2500,20 @@
+@@ -2467,135 +2484,21 @@
  void
  init_xlocale(void)
  {
-+  char *locale;
++    char *locale = NULL;
  
 -  char *p, *s, buf[32], tmp[1024];
 -  XIM xim = NULL;
@@ -105,7 +135,7 @@
 -
 -      for (; *s && isspace(*s); s++);
 -      if (!*s)
--	break;
+-        break;
 -      end = s;
 -      for (; *end && (*end != ','); end++);
 -      next_s = end--;
@@ -113,21 +143,13 @@
 -      *(end + 1) = '\0';
 -
 -      if (*s) {
--	snprintf(buf, sizeof(buf), "@im=%s", s);
--	if ((p = XSetLocaleModifiers(buf)) != NULL && *p && (xim = XOpenIM(Xdisplay, NULL, NULL, NULL)) != NULL) {
--	  break;
--	}
-+#ifdef USE_XIM
-+  locale = setlocale(LC_CTYPE, "");
-+    if (locale == NULL) {
-+      print_error("Setting locale failed.");
-+    } else {
-+      if (strcmp(locale, "C") != 0) {
-+        setTermFontSet();
-+        XRegisterIMInstantiateCallback(Xdisplay, NULL, NULL, NULL, IMInstantiateCallback, NULL);
-       }
+-        snprintf(buf, sizeof(buf), "@im=%s", s);
+-        if ((p = XSetLocaleModifiers(buf)) != NULL && *p && (xim = XOpenIM(Xdisplay, NULL, NULL, NULL)) != NULL) {
+-          break;
+-        }
+-      }
 -      if (!*next_s)
--	break;
+-        break;
 -      s = (next_s + 1);
 -    }
 -  }
@@ -157,12 +179,12 @@
 -  for (i = 0, found = 0; i < xim_styles->count_styles; i++) {
 -    D_X11((" -> Supported style flags:  0x%08x %s\n", xim_styles->supported_styles[i], get_input_style_flags(xim_styles->supported_styles[i])));
 -    D_X11(("     -> 0x%08x %s\n", xim_styles->supported_styles[i] & input_style,
--	   get_input_style_flags(xim_styles->supported_styles[i] & input_style)));
+-           get_input_style_flags(xim_styles->supported_styles[i] & input_style)));
 -    if ((xim_styles->supported_styles[i] & input_style) == (xim_styles->supported_styles[i])) {
 -      input_style = xim_styles->supported_styles[i];
 -      found = 1;
 -      break;
-     }
+-    }
 -  }
 -  XFree(xim_styles);
 -
@@ -172,8 +194,7 @@
 -    return;
 -  }
 -  /* Create Font Set */
-+#endif
- 
+-
 -#ifdef KANJI
 -  fontname = MALLOC(strlen(rs_font[0]) + strlen(rs_kfont[0]) + sizeof(fs_base) + 2);
 -  if (fontname) {
@@ -197,19 +218,31 @@
 -      XFreeStringList(ml);
 -      fontset = 0;
 -      return;
--    }
++#ifndef NO_XLOCALE
++    locale = setlocale(LC_CTYPE, "");
++#endif
++#ifdef USE_XIM
++    if (locale == NULL)
++        print_error("Setting locale failed.");
++    else {
++        setTermFontSet();
++        if (strcmp(locale, "C"))
++            XRegisterIMInstantiateCallback(Xdisplay, NULL, NULL, NULL,
++                                           IMInstantiateCallback, NULL);
+     }
 -  }
 -  list = XVaCreateNestedList(0, XNFontSet, fontset, NULL);
 -  Input_Context = XCreateIC(xim, XNInputStyle, input_style, XNClientWindow, TermWin.parent, XNFocusWindow, TermWin.parent,
--			    XNPreeditAttributes, list, XNStatusAttributes, list, NULL);
+-                            XNPreeditAttributes, list, XNStatusAttributes, list, NULL);
 -  if (Input_Context == NULL) {
 -    D_X11(("Error:  Unable to create Input Context\n"));
 -    XCloseIM(xim);
 -  }
++#endif
  }
  #endif /* NO_XLOCALE */
  
-@@ -3160,6 +3056,9 @@
+@@ -3138,6 +3041,9 @@
      if (greek_mode)
        len = greek_xlat(kbuf, len);
  #endif
@@ -219,7 +252,7 @@
    }
  
    if (len <= 0)
-@@ -3344,6 +3243,7 @@
+@@ -3323,6 +3229,7 @@
  #else
      scr_refresh(refresh_type);
  #endif
@@ -227,7 +260,7 @@
    }
    /* characters already read in */
    if (CHARS_READ()) {
-@@ -3444,6 +3344,9 @@
+@@ -3423,6 +3330,9 @@
  	scr_refresh(refresh_type);
  	if (scrollbar_visible())
  	  scrollbar_show(1);
@@ -237,7 +270,7 @@
        }
      }
    }
-@@ -4157,6 +4060,9 @@
+@@ -4136,6 +4046,9 @@
  	refresh_count = refresh_limit = 0;
  	scr_refresh(refresh_type);
  	scrollbar_show(mouseoffset);
@@ -247,7 +280,7 @@
  #endif
        } else if ((ev->xany.window == scrollBar.win) && scrollbar_isMotion()) {
  	Window unused_root, unused_child;
-@@ -4174,6 +4080,9 @@
+@@ -4153,6 +4066,9 @@
  	refresh_count = refresh_limit = 0;
  	scr_refresh(refresh_type);
  	scrollbar_show(mouseoffset);
@@ -257,7 +290,7 @@
        }
  #ifdef PROFILE_X_EVENTS
        P_SETTIMEVAL(motion_stop);
-@@ -5065,6 +4974,9 @@
+@@ -5044,6 +4960,9 @@
      }
    }
    Gr_do_graphics(cmd, nargs, args, text);
@@ -267,7 +300,7 @@
  #endif
  }
  
-@@ -6311,6 +6223,9 @@
+@@ -6293,6 +6212,9 @@
    /* parent already resized */
  
    resize_window1(width, height);
@@ -277,7 +310,7 @@
  }
  
  /* xterm sequences - title, iconName, color (exptl) */
-@@ -6893,6 +6808,328 @@
+@@ -6875,6 +6797,328 @@
    free(orig_tnstr);
  #endif
  }
