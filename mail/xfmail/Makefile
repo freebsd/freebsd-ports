@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfmail
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/%SUBDIR%/	\
