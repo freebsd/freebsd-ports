@@ -4,7 +4,7 @@
 # Whom:			Norio Suzuki
 #			KUNISHIMA Takeo <kunishi@c.oka-pu.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/02 20:27:41 sada Exp $
+# $Id: Makefile,v 1.3 1999/01/07 08:19:47 simokawa Exp $
 #
 
 DISTNAME=	ppxp-0.98112523
@@ -81,11 +81,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/console/tcltk/README ${PREFIX}/share/doc/tkppxp
 	@${MKDIR} ${PREFIX}/share/doc/xppxp
 	@${INSTALL_DATA} ${WRKSRC}/console/xppxp/README ${PREFIX}/share/doc/xppxp
-
-hoge:
-.if defined(USE_TCLJP)
-	echo hoge
-.endif
-
 
 .include <bsd.port.mk>
