@@ -17,6 +17,7 @@ include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
 include/apache/ap_mmn.h
+include/apache/ap_sha1.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -41,6 +42,18 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+include/apache/xml/asciitab.h
+include/apache/xml/hashtable.h
+include/apache/xml/iasciitab.h
+include/apache/xml/latin1tab.h
+include/apache/xml/nametab.h
+include/apache/xml/utf8tab.h
+include/apache/xml/xmldef.h
+include/apache/xml/xmlparse.h
+include/apache/xml/xmlrole.h
+include/apache/xml/xmltok.h
+include/apache/xml/xmltok_impl.h
+libexec/apache/httpd.exp
 libexec/apache/libproxy.so
 libexec/apache/mod_access.so
 libexec/apache/mod_actions.so
@@ -71,6 +84,7 @@ libexec/apache/mod_status.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_userdir.so
 libexec/apache/mod_usertrack.so
+libexec/apache/mod_vhost_alias.so
 sbin/ab
 sbin/apache
 sbin/apachectl
@@ -144,6 +158,7 @@ share/apache/htdocs/manual/mod/mod_auth.html
 share/apache/htdocs/manual/mod/mod_auth_anon.html
 share/apache/htdocs/manual/mod/mod_auth_db.html
 share/apache/htdocs/manual/mod/mod_auth_dbm.html
+share/apache/htdocs/manual/mod/mod_auth_digest.html
 share/apache/htdocs/manual/mod/mod_autoindex.html
 share/apache/htdocs/manual/mod/mod_browser.html
 share/apache/htdocs/manual/mod/mod_cern_meta.html
@@ -178,6 +193,7 @@ share/apache/htdocs/manual/mod/mod_status.html
 share/apache/htdocs/manual/mod/mod_unique_id.html
 share/apache/htdocs/manual/mod/mod_userdir.html
 share/apache/htdocs/manual/mod/mod_usertrack.html
+share/apache/htdocs/manual/mod/mod_vhost_alias.html
 share/apache/htdocs/manual/multilogs.html
 share/apache/htdocs/manual/new_features_1_0.html
 share/apache/htdocs/manual/new_features_1_1.html
@@ -322,6 +338,7 @@ share/doc/apache/README
 share/doc/php/CODING_STANDARDS
 share/doc/php/LICENSE
 @dirrm etc/apache
+@dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
 @dirrm share/apache/cgi-bin

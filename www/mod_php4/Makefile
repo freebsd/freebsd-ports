@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.88 1999/08/19 11:26:47 dirk Exp $
+# $Id: Makefile,v 1.89 1999/08/19 11:55:29 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -47,7 +47,7 @@ Y2K=		http://www.php.net/y2k.php3
 
 PHP_DISTDIR=	version4/downloads
 
-VERSION_APACHE=	1.3.6
+VERSION_APACHE=	1.3.9
 VERSION_PHP=	4.0b2
 
 NO_LATEST_LINK=	yes

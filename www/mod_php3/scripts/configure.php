@@ -117,11 +117,11 @@ BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.3.11
+VERSION_MODSSL=	2.4.0
 
 RESTRICTED=	"Contains cryptography"
 
-CONFIGURE_ARGS+=--enable-module=ssl \
+CONFIGURE_ARGS+=--enable-module=ssl \\
 		--enable-module=define
 CONFIGURE_ENV+=	SSL_BASE='SYSTEM' EAPI_MM='SYSTEM' PATH="\${PREFIX}/bin:\${PATH}"
 
