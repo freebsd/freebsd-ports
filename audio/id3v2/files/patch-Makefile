@@ -1,0 +1,18 @@
+--- Makefile.orig	Sun Feb 23 19:55:25 2003
++++ Makefile	Sun Feb 23 20:06:35 2003
+@@ -5,11 +5,11 @@
+ LDFLAGS+=	-L${PREFIX}/lib/
+ 
+ id3v2:	convert.o list.o id3v2.o
+-	c++ ${LDFLAGS} -pedantic -Wall -lz -lid3 -g -o $@ id3v2.o list.o convert.o
++	${CXX} ${LDFLAGS} -lz -lid3 -lgnugetopt -o $@ id3v2.o list.o convert.o
+ 
+ install: all
+-	install -c -s id3v2 ${PREFIX}/bin/id3v2
++	${INSTALL} -c -s id3v2 ${PREFIX}/bin/id3v2
+ 	nroff -man id3v2.1 > ${PREFIX}/man/man1/id3v2.1
+ 
+-clean:
+-	rm -f id3v2 core *.o
++.include <bsd.prog.mk>
++

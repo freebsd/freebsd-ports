@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	id3v2
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.9
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	id3v2
 
-MAINTAINER=	djm@pix.net
+MAINTAINER=	rehsack@liwing.de
 COMMENT=	Command line id3v2 tag editor
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
