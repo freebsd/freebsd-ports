@@ -11,10 +11,11 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkyahoo
 
-MAINTAINER=	dannyman@dannyland.org
+MAINTAINER=	anders@codefactory.se
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
