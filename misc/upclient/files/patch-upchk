@@ -1,0 +1,16 @@
+--- scripts/upchk.orig	Wed Nov 29 01:19:14 2000
++++ scripts/upchk	Sat Dec 30 00:19:54 2000
+@@ -24,11 +24,11 @@
+ #
+ 
+ # change this to the full path AND name of your upclient executable:
+-upclient="/home/mydir/upclient"
++upclient="!!PREFIX!!/sbin/upclient"
+ 
+ # change this to the name of your upclient's pidfile (as defined in
+ # config.h of the upclient distribution)
+-pidfile="/home/mydir/upclient.pid"
++pidfile="/var/run/upclient.pid"
+ 
+ ########## you probably don't need to change anything below here ##########
+ 

@@ -1,18 +1,24 @@
 Before running the client for the first time, be sure to:
+
  1. visit the Server Uptimes project web site and register yourself
-        (WWW: http://uptime.hexon.cx/register.html),
+	(WWW: http://www.uptimes.net/bottom.html?show=createaccount).
 
- 2. log in (WWW: http://uptime.hexon.cx/login)
+ 2. validate your registration
+	(WWW: http://www.uptimes.net/bottom.html?show=validate).
 
- 3. Add your host (WWW: http://uptime.hexon.cx/login/cgi-bin/addhost.cgi)
+ 2. log in (WWW: http://www.uptimes.net/bottom.html?show=login).
+
+ 3. Add your host (WWW: http://www.uptimes.net/bottom.html?show=addhost).
 
 Note that in order to send your uptime information to the uptime server,
 you hosts need more-or-less full-time Internet access.
 
-You will also need to edit /usr/local/etc/upclient.conf:
-HostID is the ID you've received when you added your host
-Login and pass are your login and password
-Interval is the amount of time between each update.
-Don't set this higher than 10 minutes, or else your host
-won't appear in the list.
+You will also have to edit /usr/local/etc/upclient.conf:
 
+  - AuthKey is the ID you've received when you added your host
+	(WWW: http://www.uptimes.net/bottom.html?show=hosts).
+
+  - Interval is the amount of time between each update.
+
+    Don't set this higher than 10 minutes, or else your host
+    won't appear in the list.

@@ -1,9 +1,11 @@
---- upclient.conf.orig	Fri Aug 20 11:22:32 1999
-+++ upclient.conf	Fri Aug 20 11:25:12 1999
-@@ -3,5 +3,5 @@
- HostID <HostID>
- Login <Loginname>
- Pass <Password>
--Interval 60
-+Interval 550
- UptimeServer uptime.hexon.cx
+--- upclient.conf.orig	Mon Dec 18 14:19:35 2000
++++ upclient.conf	Sat Dec 30 00:37:19 2000
+@@ -4,7 +4,7 @@
+ # upclient.conf
+ #
+ 
+-PidFile = /home/alex/.upclient.pid	# Location of pid file
++PidFile = /var/run/upclient.pid		# Location of pid file
+ 
+ AuthKey = <your_authkey>		# Your Authorization key
+ Interval = 120				# Transmit interval
