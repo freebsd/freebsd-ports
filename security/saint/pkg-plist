@@ -163,6 +163,7 @@ saint/html/images/target_sel_banner.gif
 saint/html/images/target_selection_button.gif
 saint/html/images/troubleshooting_button.gif
 saint/html/images/wwdsi_logo.gif
+saint/html/images/saintwriter_config_banner.gif
 saint/html/name.html
 saint/html/reporting/saintwriter/saintwriter_action.pl
 saint/html/reporting/saintwriter/saintwriter_form.pl
@@ -199,6 +200,7 @@ saint/html/tutorials/first_time/learning_to_use.html
 saint/html/tutorials/first_time/make.html
 saint/html/tutorials/first_time/scanning.html
 saint/html/tutorials/first_time/template.html
+saint/html/tutorials/vulnerability/Serv_U_vulnerabilities.html
 saint/html/tutorials/vulnerability/Cisco_Catalyst_access.html
 saint/html/tutorials/vulnerability/Lotus_Domino_vulnerability.html
 saint/html/tutorials/vulnerability/Microsoft_Terminal_Server.html
