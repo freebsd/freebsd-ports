@@ -31,6 +31,7 @@ share/sane/sane-xsane-standard-doc.html
 share/sane/xsane/UMAX-logo.xpm
 share/sane/xsane/sane-epson-logo.xpm
 share/sane/xsane/sane-hp-logo.xpm
+share/sane/xsane/sane-umax-logo.xpm
 share/sane/xsane/sane-xsane-logo.xpm
 share/sane/xsane/umax-logo.xpm
 share/sane/xsane/xsane-calibration.pnm
@@ -78,5 +79,9 @@ share/sane/xsane-zoom-out.jpg
 share/sane/xsane-zoom-undo.jpg
 share/sane/xsane-zoom.jpg
 share/sane/xsane.jpg
+share/sane/sane-xsane-setup-image-doc.html
+share/sane/xsane-preset-area.jpg
+share/sane/xsane-rotation.jpg
+share/sane/xsane-setup-image.jpg
 @dirrm share/sane/xsane
 @dirrm share/sane
