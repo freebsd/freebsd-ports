@@ -5199,6 +5199,7 @@ mixer.app	ports/audio/mixer.app
 mixer_port	ports/sysutils/mixer
 mixmaster	ports/mail/mixmaster
 mixminion	ports/mail/mixminion
+mixxx		ports/audio/mixxx
 mjpegtools	ports/multimedia/mjpegtools
 mkbold		ports/x11-fonts/mkbold
 mkcatalog	ports/textproc/mkcatalog
