@@ -38,6 +38,16 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=${PREFIX}/share -
 	@${FALSE}
 .endif
 
+.if ${PAPERSIZE} == a4
+CONFLICTS?=	a2ps-letter-4.* a2ps-letterdj-4.*
+.else
+.if ${PAPERSIZE} == letter
+CONFLICTS?=	a2ps-a4-4.* a2ps-letterdj-4.*
+.else
+CONFLICTS?=	a2ps-a4-4.* a2ps-letter-4.*
+.endif
+.endif
+
 .if defined(WITH_EMACS)
 PLIST_SUB+=	WITHEMACS=""
 .else

@@ -33,6 +33,9 @@ LDFLAGS+=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=--enable-socks5
 CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CONFLICTS?=	licq-base-1.*
+.else
+CONFLICTS?=	licq-base-socks-1.*
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
