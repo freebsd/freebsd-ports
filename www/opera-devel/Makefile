@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
 		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/static/ \
@@ -73,15 +74,6 @@ pre-everything::
 	@${ECHO_CMD} '===>'
 	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to not install aspell.'
 .endif
-
-pre-patch:
-	@${AWK} '{if (/^\[Search/) { \
-		num=$$3; sub(/\]$$/, "", num); \
-		if (num+0 < 4) {print; next} \
-		num+=2; \
-		print $$1, $$2, num"]"} else {print} \
-	}' ${WRKSRC}/search.ini > ${WRKSRC}/search.ini.new
-	@${MV} ${WRKSRC}/search.ini.new ${WRKSRC}/search.ini
 
 post-patch:
 	@${CP} ${WRKSRC}/search.ini ${WRKSRC}/locale/en
