@@ -1,0 +1,12 @@
+diff -ur sablevm-0.1.6.orig/src/libsablevm/Makefile.am sablevm-0.1.6/src/libsablevm/Makefile.am
+--- sablevm-0.1.6.orig/src/libsablevm/Makefile.am	Fri Apr 20 04:30:45 2001
++++ sablevm-0.1.6/src/libsablevm/Makefile.am	Mon Jul  8 18:12:47 2002
+@@ -68,7 +68,7 @@
+ 	native.c \
+ 	native.h
+ 
+-libsablevm_la_LIBADD = -lpthread -lm -ldl -lffi
++libsablevm_la_LIBADD = -lm -L@libdir@ -lffi
+ ## -lefence
+ 
+ libsablevm_la_LDFLAGS = -version-info @LIBVERSION@

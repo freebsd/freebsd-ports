@@ -1,0 +1,17 @@
+diff -ur sablevm-0.1.6.orig/src/libsablevm/error.c sablevm-0.1.6/src/libsablevm/error.c
+--- sablevm-0.1.6.orig/src/libsablevm/error.c	Sun Apr 15 03:52:45 2001
++++ sablevm-0.1.6/src/libsablevm/error.c	Tue Jul  9 13:11:04 2002
+@@ -202,11 +202,13 @@
+       {
+ 	/* probably NULL pointer exception.  Let's check... */
+ 
++#if 0
+ 	if (info->si_addr != NULL)
+ 	  {
+ 	    /* not a NULL memory access. We don't handle this. */
+ 	    goto delegate_0;
+ 	  }
++#endif
+ 
+ 	signal_throw (NULL_POINTER_EXCEPTION);
+       }
