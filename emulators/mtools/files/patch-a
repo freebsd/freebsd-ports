@@ -1,7 +1,7 @@
 *** Makefile.in.orig	Thu Feb 20 18:54:20 1997
 --- Makefile.in	Thu Apr  3 04:16:37 1997
 ***************
-*** 96,102 ****
+*** 98,104 ****
   streamcache.c subdir.c toupper.c tty.o vfat.c xdf_io.c mkmanifest.c
   
   
@@ -9,7 +9,7 @@
   
   LINKS=mattrib mcd mcopy mdel mdeltree mdir mformat minfo mlabel \
   mmd mmount mmove mpartition mrd mread mren mtype mwrite mtoolstest \
---- 96,102 ----
+--- 98,104 ----
   streamcache.c subdir.c toupper.c tty.o vfat.c xdf_io.c mkmanifest.c
   
   
@@ -18,7 +18,7 @@
   LINKS=mattrib mcd mcopy mdel mdeltree mdir mformat minfo mlabel \
   mmd mmount mmove mpartition mrd mread mren mtype mwrite mtoolstest \
 ***************
-*** 187,193 ****
+*** 195,201 ****
   install-scripts: $(bindir)/mtools
   	@$(top_srcdir)/mkinstalldirs $(bindir)
   	@for j in $(SCRIPTS) ; do \
@@ -26,7 +26,7 @@
   		echo $(bindir)/$$j ; \
   	done
   	rm -f $(bindir)/lz
---- 187,193 ----
+--- 195,201 ----
   install-scripts: $(bindir)/mtools
   	@$(top_srcdir)/mkinstalldirs $(bindir)
   	@for j in $(SCRIPTS) ; do \
