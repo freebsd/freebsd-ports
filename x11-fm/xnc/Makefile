@@ -24,7 +24,7 @@ MAINTAINER=	dima@Chg.RU
 #		lha:${PORTSDIR}/archivers/lha		\
 #		bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
