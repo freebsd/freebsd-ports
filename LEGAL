@@ -158,6 +158,7 @@ l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
 						from OpenSSL.
 libudbc			ports/databases/libudbc		Downloading and redistribution
 						terms are unclear.
+linux-runrev		ports/devel/linux-runrev	Don't sell for profit
 lsh*			ports/security/lsh	Crypto; export-controlled
 mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
