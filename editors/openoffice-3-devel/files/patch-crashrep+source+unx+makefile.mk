@@ -1,13 +1,11 @@
---- ../crashrep/source/unx/makefile.mk.org	Tue Jul  1 08:57:23 2003
-+++ ../crashrep/source/unx/makefile.mk	Tue Jul  1 08:57:30 2003
-@@ -105,6 +105,10 @@
- APP1STDLIBS=$(GTKLINKFLAGS) `pkg-config $(ONLYMODLIBS) --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff -Bdynamic -lXext -lX11 -ldl -lsocket -lnsl
+--- ../crashrep/source/unx/makefile.mk.orig	Tue Jul 22 19:37:38 2003
++++ ../crashrep/source/unx/makefile.mk	Thu Aug 14 18:44:09 2003
+@@ -123,7 +123,7 @@
+ APP2STDLIBS+=-lsocket
+ .ENDIF
+ .IF "$(OS)" == "FREEBSD"
+-APP2STDLIBS=$(STATIC) `pkg-config --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff $(DYNAMIC) -lXext -lX11
++APP2STDLIBS=$(STATIC) `pkg-config --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff -lintl -lfreetype -lexpat $(DYNAMIC) -lXext -lX11
  .ENDIF
  
-+.IF "$(OS)" == "FREEBSD"
-+APP1STDLIBS=$(GTKLINKFLAGS) `pkg-config $(ONLYMODLIBS) --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff -Wl,-Bdynamic -lXext -lX11
-+.ENDIF
-+
- ALL: ALLTAR $(BIN)$/crash_dump.res.01
- 
- # --- Targets ------------------------------------------------------
+ .ENDIF
