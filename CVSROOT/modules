@@ -1087,6 +1087,7 @@ dc3play		ports/graphics/dc3play
 dcc		ports/irc/dcc
 dcc-dccd	ports/mail/dcc-dccd
 dcdflib		ports/math/dcdflib
+dcetest		ports/security/dcetest
 dcgui		ports/net/dcgui
 dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
