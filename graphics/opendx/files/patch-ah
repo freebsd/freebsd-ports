@@ -9,33 +9,3 @@
  set showversion=0
  
  
-@@ -155,9 +155,9 @@
-     
- setenv DXARCH $exarch
- 
--# default to running locally, from /usr/lpp/dx  
-+# default to running locally, from @prefix@/dx  
- set exhost=$thishost
--set dxroot=/usr/lpp/dx
-+set dxroot=@prefix@/dx
- set startup=1   # run the startup window by default
- 
- 
-@@ -1137,7 +1137,7 @@
- if (! $?port)     set port=1900        # default socket
- if (! $?cdto)     set cdto=`pwd`       # default current dir for exec
- 
--if (! $?dxdata)   set dxdata="/usr/lpp/dx/samples/data"
-+if (! $?dxdata)   set dxdata="@prefix@/dx/samples/data"
- 
- 
- #
-@@ -1605,7 +1605,7 @@
-                       For example, 
-                         dx -key 193495946952abed bar.net 
- 
-- -dxroot dirname      dx root directory; defaults to /usr/lpp/dx
-+ -dxroot dirname      dx root directory; defaults to @prefix@/dx
- 
-  -macros pathlist     directory list to search for UI macros
-  -data pathlist       directory list to search for data files
