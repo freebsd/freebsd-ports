@@ -1,0 +1,10 @@
+--- Imakefile~	Thu Aug 21 01:44:52 1997
++++ Imakefile	Sun Sep  3 16:44:47 2000
+@@ -10,3 +10,7 @@
+     CDEBUGFLAGS = -O
+ 
+ ComplexProgramTarget(x2x)
++# Added by Greg Lehey <grog@FreeBSD.org> for FreeBSD port
++x2x.man:	x2x.1
++	rm -f x2x.man
++	ln x2x.1 x2x.man
