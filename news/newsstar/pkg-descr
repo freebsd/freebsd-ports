@@ -1,0 +1,20 @@
+Newsstar fetches news and posts it to a local server; INN, s-news and sn are
+supported, and it should be easy to adapt for other servers with some
+configuration and extra scripts. It's designed for Unix-like systems, and all
+the development was done on Linux.
+
+There are already plenty of other programs to do this, but what makes newsstar
+special is that it can make multiple simultaneous connections, not only to
+one server, but to several, supporting up to 10 threads. Before fetching each
+article it checks that it hasn't already been downloaded by another thread or
+in a previous session. It can also pipeline article requests to make better
+use of available bandwidth.
+
+I wrote it because a number of ISPs I have used suffer from unreliable
+newsfeeds. There is an excellent free server made available by
+news.individual.net, but it can be a bit slow at times, and using external
+servers uses more bandwidth. Therefore I wanted a program which could fetch
+whatever articles my ISP has available, but use the foreign server to avoid
+missing posts or getting them very late, and to do it as fast as possible.
+
+WWW: http://newsstar.sourceforge.net/
