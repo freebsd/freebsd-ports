@@ -1,5 +1,5 @@
---- autologin/autologin.c.orig	Sun Apr 19 04:04:45 1998
-+++ autologin/autologin.c	Sun Apr 19 04:13:14 1998
+--- autologin/autologin.c.orig	Sun Apr 19 04:13:35 1998
++++ autologin/autologin.c	Sun Apr 19 04:46:10 1998
 @@ -22,7 +22,7 @@
  
  
@@ -20,11 +20,12 @@
 -#define setsid()	getpid()
 -#define getsid(Mp)	(Mp)
 -#define USE_IOCTL	1
+-#define USE_OLD_UTENT	1
+-#define PATH_SU		"/usr/ucb/su"
 +#include <sys/ttydefaults.h>
++#include <ttyent.h>
 +#define getsid(Mp)	(-1)
 +#define USE_TC		1
- #define USE_OLD_UTENT	1
--#define PATH_SU		"/usr/ucb/su"
 +#define PATH_SU		"/usr/bin/su"
 +#define UTMP_PATH	"/var/run/utmp"
  #else
