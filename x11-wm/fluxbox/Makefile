@@ -7,22 +7,25 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	0.1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-.if defined(WITH_REMEMBER)
-PATCH_SITES=	http://www.raisdorf.net/files/FreeBSD/
-PATCHFILES=	remember-patch-0.1.13.gz
+PATCH_SITES=	http://www.cse.unsw.edu.au/~simonb/
 PATCH_DIST_STRIP=	-p1
+PATCHFILES=	fluxbox.openoffice.patch fluxbox-0.1.13.aa2.patch
+.if defined(WITH_REMEMBER)
+PATCHFILES+=	fluxbox-remember-patch-0.1.13.gz
 .endif
 
 MAINTAINER=	hendrik@scholz.net
 
-RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools
+RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
+		xterm:${PORTSDIR}/x11/XFree86-4-clients
+BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
 .if defined(WITH_REMEMBER)
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
+BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
 .endif
 
 USE_X_PREFIX=	yes
