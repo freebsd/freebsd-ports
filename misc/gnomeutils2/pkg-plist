@@ -11,7 +11,6 @@ bin/gsearchtool
 bin/gshutdown
 bin/gstripchart
 bin/gtt
-bin/guname
 bin/gw
 bin/splac
 bin/splash
@@ -24,14 +23,17 @@ share/gnome/apps/Utilities/gfontsel.desktop
 share/gnome/apps/Utilities/gless.desktop
 share/gnome/apps/Utilities/gsearchtool.desktop
 share/gnome/apps/Utilities/gstripchart.desktop
-share/gnome/apps/Utilities/guname.desktop
 share/gnome/apps/Utilities/gw.desktop
 share/gnome/apps/gnome-run.desktop
 share/gnome/gstripchart/gstripchart.conf
 share/gnome/help/ghex/C/index.html
 share/gnome/help/ghex/C/topic.dat
+share/gnome/help/ghex/es/index.html
+share/gnome/help/ghex/es/topic.dat
 share/gnome/help/gshutdown/C/index.html
 share/gnome/help/gshutdown/C/topic.dat
+share/gnome/help/gshutdown/es/index.html
+share/gnome/help/gshutdown/es/topic.dat
 share/gnome/help/gstripchart/C/gstripchart.html
 share/gnome/help/gstripchart/C/index.html
 share/gnome/help/gstripchart/C/topic.dat
@@ -52,8 +54,10 @@ share/locale/pt/LC_MESSAGES/gnome-utils.mo
 share/locale/sv/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/gstripchart
 @dirrm share/gnome/help/ghex/C
+@dirrm share/gnome/help/ghex/es
 @dirrm share/gnome/help/ghex
 @dirrm share/gnome/help/gshutdown/C
+@dirrm share/gnome/help/gshutdown/es
 @dirrm share/gnome/help/gshutdown
 @dirrm share/gnome/help/gstripchart/C
 @dirrm share/gnome/help/gstripchart
