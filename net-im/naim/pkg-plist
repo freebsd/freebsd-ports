@@ -1,8 +1,10 @@
 bin/naim
-lib/naim/libnsocket.so
+bin/nirc
 lib/naim/libnsocket.so.0
+lib/naim/libnsocket.so
 lib/naim/libnsocket.la
 @dirrm lib/naim
 %%PORTDOCS%%share/doc/naim/naim.hlp
 %%PORTDOCS%%share/doc/naim/COLORS
+%%PORTDOCS%%share/doc/naim/FAQ
 %%PORTDOCS%%@dirrm share/doc/naim
