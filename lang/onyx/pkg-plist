@@ -33,8 +33,6 @@ include/libonyx/nxo_null.h
 include/libonyx/nxo_operator.h
 include/libonyx/nxo_pmark.h
 include/libonyx/nxo_real.h
-include/libonyx/nxo_regex.h
-include/libonyx/nxo_regsub.h
 include/libonyx/nxo_stack.h
 include/libonyx/nxo_string.h
 include/libonyx/nxo_thread.h
@@ -47,7 +45,7 @@ include/libonyx/tsd.h
 include/libonyx/xep.h
 lib/libonyx.a
 lib/libonyx.so
-lib/libonyx.so.10
+lib/libonyx.so.12
 share/onyx
 share/onyx-%%ONYX_VERSION%%/doc/html/contents.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img1.png
@@ -86,6 +84,7 @@ share/onyx-%%ONYX_VERSION%%/doc/html/node110.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node111.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node112.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node113.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node114.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node12.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node13.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node14.html
