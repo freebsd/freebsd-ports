@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://vampiro.rshb.com.ru/pub/warez/virt/ \
 		ftp://ftp.treasury.ru/pub/unix/virt/
 
-MAINTAINER=	lg@rrf.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game and keyboard teacher in one. Enjoy it!
 
 USE_GNOME=	gtk12
