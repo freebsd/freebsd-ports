@@ -1,5 +1,14 @@
---- wmtz.c.orig	Sat Apr 21 20:18:05 2001
-+++ wmtz.c	Sat Apr 21 20:19:47 2001
+--- wmtz.c.orig	Thu Nov 20 22:04:56 2003
++++ wmtz.c	Thu Nov 20 22:06:57 2003
+@@ -51,7 +51,7 @@
+ #define STRSIZE 10
+ #define LMST 1
+ #define GMST 0
+-#define ABOUT "xmessage -center -buttons \"Close\" \"WMTZ - Window Maker Time Zone dockapp v0.7
++#define ABOUT "xmessage -center -buttons \"Close\" \"WMTZ - Window Maker Time Zone dockapp v0.7\n\
+ http://www.geocities.com/jl1n/wmtz/wmtz.html\""
+ 
+ 
 @@ -275,15 +275,15 @@
  
          if (!Read_Config_File(config_file))
@@ -19,7 +28,23 @@
          
              Read_Config_File(config_file);
          }
-@@ -729,7 +729,8 @@
+@@ -479,6 +479,7 @@
+ 		   but_stat = -1;
+                    break;
+ 	    default:
++		;
+ 	  }
+         }  
+ 
+@@ -529,6 +530,7 @@
+ 	    exit(0);
+ 	    break;
+ 	default:
++	    ;
+       }
+     return;
+ }
+@@ -729,7 +731,8 @@
  void usage(void)
  {
    fprintf(stderr, "\nwmtz - shows local time around the world and more.\n");
