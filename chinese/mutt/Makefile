@@ -18,7 +18,8 @@ PORTREVISION=	${REVISEDATE}
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
-PATCH_SITES=	http://wood.ite.ntnu.edu.tw/~clive/dist/mutt15/ \
+PATCH_SITES=	http://bsdchat.com/dist/mutt15/ \
+		http://wood.ite.ntnu.edu.tw/~clive/dist/mutt15/ \
 		ftp://freebsd.sinica.edu.tw/pub/clive/mutt15/
 PATCHFILES=	${PKGNAMEPREFIX}mutt-${PORTVERSION}-${REVISEDATE}.diff.gz
 
