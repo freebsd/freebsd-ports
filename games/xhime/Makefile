@@ -3,7 +3,7 @@
 # Date created:        25 August 1998
 # Whom:                Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.3 1998/11/22 03:35:44 flathill Exp $
+# $Id: Makefile,v 1.1.1.1 1998/11/24 08:49:45 flathill Exp $
 #
 
 DISTNAME=	xhime151
