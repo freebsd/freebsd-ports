@@ -20,6 +20,8 @@ LIB_DEPENDS=	${QTLIB}.${QTLIB_SHLIBVER}:${PORTSDIR}/x11-toolkits/${QT_PORTNAME}
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+USE_GMAKE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-qt-include=${X11BASE}/include/X11/qt \
 		--with-qt-lib=${X11BASE}/lib
