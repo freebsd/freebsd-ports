@@ -1,0 +1,13 @@
+--- docs/gvd.info.orig	Sun Jul  7 20:03:26 2002
++++ docs/gvd.info	Sun Jul  7 20:03:58 2002
+@@ -1,5 +1,10 @@
+ This is gvd.info, produced by makeinfo version 4.0 from gvd.texi.
+ 
++INFO-DIR-SECTION Programming
++START-INFO-DIR-ENTRY
++* gvd: (gvd).			The GNU Debugger.
++END-INFO-DIR-ENTRY
++
+ 
+ File: gvd.info,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+ 
