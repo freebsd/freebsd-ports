@@ -1,0 +1,11 @@
+--- compress/Makefile.in~	Thu Apr  8 23:18:20 1999
++++ compress/Makefile.in	Thu Apr  8 23:18:29 1999
+@@ -34,7 +34,7 @@
+ 
+ all: lib tbuild cast uncast test
+ 
+-CFLAGS = @CFLAGS@ -O
++CFLAGS = -O @CFLAGS@
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS) -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 
+ .c.o:

@@ -1,0 +1,11 @@
+--- index/Makefile.in~	Thu Apr  8 23:24:57 1999
++++ index/Makefile.in	Thu Apr  8 23:25:05 1999
+@@ -36,7 +36,7 @@
+ LIBTEMPLATE	= template
+ LIBUTIL		= util
+ 
+-CFLAGS = @CFLAGS@ -O -DSTRUCTURED_QUERIES=1
++CFLAGS = -O @CFLAGS@ -DSTRUCTURED_QUERIES=1
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ LINKFLAGS	= @LINKFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 

@@ -1,0 +1,11 @@
+--- agrep/Makefile.in~	Thu Nov 21 12:58:44 1996
++++ agrep/Makefile.in	Thu Apr  8 23:04:27 1999
+@@ -28,7 +28,7 @@
+ TCOMPSRC      = $(srcdir)/../compress
+ TEMPLATESRC   = $(srcdir)/../libtemplate
+ 
+-CFLAGS = @CFLAGS@ -O -DDOTCOMPRESSED=0 -I$(TEMPLATESRC)/include
++CFLAGS = -O @CFLAGS@ -DDOTCOMPRESSED=0 -I$(TEMPLATESRC)/include
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS)
+ LINKFLAGS	= @LINKFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 

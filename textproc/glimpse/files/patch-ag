@@ -1,0 +1,11 @@
+--- libtemplate/template/Makefile.in~	Thu Apr  8 23:16:06 1999
++++ libtemplate/template/Makefile.in	Thu Apr  8 23:16:17 1999
+@@ -24,7 +24,7 @@
+ DEBUG		= $(DEBUG_TOP) #-O #-g #-DDEBUG
+ DEBUG_LIBS	=
+ 
+-CFLAGS		= -O
++CFLAGS		= -O @CFLAGS@
+ INCLUDE		= -I$(srcdir)/../include
+ ALL_CFLAGS	= $(CFLAGS) $(DEBUG) $(INCLUDE)
+ 

@@ -1,0 +1,11 @@
+--- libtemplate/util/Makefile.in~	Thu Apr  8 23:14:47 1999
++++ libtemplate/util/Makefile.in	Thu Apr  8 23:15:06 1999
+@@ -19,7 +19,7 @@
+ RANLIB		= @RANLIB@
+ 
+ INCLUDE         = -I$(srcdir)/../include
+-CFLAGS                = -O
++CFLAGS                = -O @CFLAGS@
+ ALL_CFLAGS	= $(CFLAGS) $(DEBUG) $(INCLUDE)
+ 
+ .c.o:
