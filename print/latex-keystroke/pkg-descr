@@ -1,0 +1,5 @@
+TeX package `keystroke' provides macros for the graphical
+representation of the keys on a computer keyboard. `keystroke' is
+based on macros which were used in a previous edition of the Linux
+manual published by the SuSE G.m.b.H. distributor, and is licensed
+under the GPL.
