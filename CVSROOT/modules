@@ -305,6 +305,7 @@ amap		ports/security/amap
 amarok		ports/audio/amarok
 amaterus	ports/x11-wm/amaterus
 amavis-perl	ports/security/amavis-perl
+amavis-stats	ports/security/amavis-stats
 amavisd		ports/security/amavisd
 amavisd-new	ports/security/amavisd-new
 amaya		ports/www/amaya
