@@ -1,5 +1,5 @@
---- src/hooks/msnhook.cc	Tue Nov 19 10:18:22 2002
-+++ src/hooks/msnhook.cc	Tue Nov 19 10:18:35 2002
+--- src/hooks/msnhook.cc	Mon Nov 24 10:16:27 2002
++++ src/hooks/msnhook.cc	Mon Nov 25 10:16:27 2002
 @@ -30,6 +30,7 @@
  #include "eventmanager.h"
  #include "centericq.h"
@@ -39,7 +39,7 @@
  	em.store(immessage(ic, imevent::incoming, text));
  
  	if(c)
-@@ -453,3 +456,121 @@
+@@ -453,3 +456,132 @@
  	clist.get(contactroot)->playsound(imevent::email);
      }
  }
@@ -68,11 +68,12 @@
 +	return loc_charset;
 +
 +    lang = getenv("LANG");
-+    ch = strrchr( lang, '.' ) + 1;
++    ch = strrchr( lang, '.' );
 +    if (!ch)
 +	strcpy( loc_charset, DEFAULT_CHARSET );
 +    else {
 +	iconv_t pt;
++	ch++;
 +	strncpy( loc_charset, ch, sizeof(loc_charset) );
 +	/* try to open iconv handle using guessed charset */
 +	if ( (pt = iconv_open( loc_charset, loc_charset )) == (iconv_t)(-1) )
@@ -96,12 +97,15 @@
 +    int ret;
 +
 +    iconv_t handle = iconv_open( "utf-8", guess_current_locale_charset() );
-+    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++    if(((int) handle) != -1) {
++	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +    
-+    *outbuf = '\0';
-+    iconv_close( handle );
-+
-+    return outbuf_save;
++	*outbuf = '\0';
++	iconv_close( handle );
++	return outbuf_save;
++    } else {
++	return (char *)inbuf;
++    };
 +}
 + 
 +std::string StrToUtf8( const std::string &instr )
@@ -114,13 +118,17 @@
 +    int ret;
 +
 +    iconv_t handle = iconv_open( "utf-8", guess_current_locale_charset() );
-+    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++    if(((int) handle) != -1) {
++	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +    
-+    *outbuf = '\0';
-+    iconv_close( handle );
++	*outbuf = '\0';
++	iconv_close( handle );
 +
-+    std::string return_me = outbuf_save;
-+    return return_me;
++	std::string return_me = outbuf_save;
++	return return_me;
++    } else {
++	return instr;
++    };
 +}
 + 
 +char *Utf8ToStr( const char *inbuf )
@@ -132,13 +140,14 @@
 +    int ret;
 +
 +    iconv_t handle = iconv_open( guess_current_locale_charset(), "utf-8" );
-+
-+    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
-+    
-+    *outbuf = '\0';
-+    iconv_close( handle );
-+
-+    return outbuf_save;
++    if(((int) handle) != -1) {
++	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++	*outbuf = '\0';
++	iconv_close( handle );
++	return outbuf_save;
++    } else {
++	return (char *)inbuf;
++    };
 +}
 +
 +std::string Utf8ToStr( const std::string &instr )
@@ -152,12 +161,14 @@
 +
 +    iconv_t handle = iconv_open( guess_current_locale_charset(), "utf-8" );
 +
-+    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
-+
-+    *outbuf = '\0';
-+    iconv_close( handle );
-+
-+    std::string return_me = outbuf_save;
-+    return return_me;
++    if(((int) handle) != -1) {
++	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++	*outbuf = '\0';
++	iconv_close( handle );
++	std::string return_me = outbuf_save;
++	return return_me;
++    } else {
++	return instr;
++    };
 +}
 +#endif /* HAVE_ICONV_H */
