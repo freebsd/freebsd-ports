@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.49 1999/05/19 08:47:50 tg Exp $
+# $Id: Makefile,v 1.50 1999/07/06 13:27:35 tg Exp $
 #
 
 DISTNAME=       py152
@@ -38,6 +38,7 @@ WITH_TK?=	yes
 .if defined(WITH_TK) && $(WITH_TK) == yes
 TK_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 SETUP_LOCAL=	Setup.tk
+PLIST_TK=	${PKGDIR}/PLIST.tk
 .endif
 
 #
@@ -60,7 +61,7 @@ CONFIGURE_ENV+=		LDFLAGS="-pthread ${LDFLAGS}"
 #
 .if exists(/usr/src/contrib/libgmp/gmp-impl.h)
 SETUP_LOCAL+=	Setup.gmp
-PLIST_GMP=	lib/python1.5/lib-dynload/mpzmodule.so
+PLIST_GMP=	${PKGDIR}/PLIST.gmp
 .endif
 
 #
@@ -69,6 +70,9 @@ PLIST_GMP=	lib/python1.5/lib-dynload/mpzmodule.so
 # while extending or managing Python.
 #
 WITH_TOOLS?=	yes
+.if defined(WITH_TOOLS) && ${WITH_TOOLS} == yes
+PLIST_TOOLS=	${PKGDIR}/PLIST.Tools
+.endif
 
 post-extract:
 	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd4.sh
@@ -95,7 +99,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
 		${PREFIX}/lib/python1.5/${platform}/
 .endfor
-	@${ECHO} ${PLIST_GMP} | sort -r -o ${PLIST} - ${PKGDIR}/PLIST
+	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/PLIST
 
 post-install:
 	strip ${PREFIX}/bin/python
