@@ -1,5 +1,6 @@
 bin/distcc
 bin/distccmon-text
+%%WITH_GNOME%%bin/distccmon-gnome
 sbin/distccd
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
