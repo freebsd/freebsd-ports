@@ -12,6 +12,7 @@
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
+    SUBDIR += jdictionary-ger-hun
     SUBDIR += kde3-i18n
     SUBDIR += kheisereg
     SUBDIR += koffice-i18n
