@@ -240,7 +240,7 @@ foreach my $thisdir (@dirs) {
 			$tmp = 0;
 			# Until we reach the offset, record the number of words.
 			while ($tmp < $offset) {
-				$tmp += length($commentArr[$tmp2]);
+				$tmp += length($commentArr[$tmp2]) + 1;
 				$tmp2++;
 			}
 			$tmp2--;
