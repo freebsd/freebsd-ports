@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Jun  2 09:18:22 2000
++++ Makefile.in	Fri Jun  2 14:04:24 2000
+@@ -107,7 +107,7 @@
+ @BONOBO_TRUE@DIR_COMPONENTS = components
+ @BONOBO_FALSE@DIR_COMPONENTS = 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gtkhtmlConf.sh
+ 
+ EXTRA_DIST =  	html-component.gnorba				gtkhtmlConf.sh.in				gtkhtml.spec.in					gtkhtml.spec
