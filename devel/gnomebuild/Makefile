@@ -18,6 +18,8 @@ COMMENT=	A GNOME Build Framework (GBF)
 
 LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl
 
+IGNORE=		"Broken for now; to be updated after GNOME 2.4 is released"
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomevfs bonobo libglade gal gtkhtml
