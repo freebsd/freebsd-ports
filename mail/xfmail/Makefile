@@ -7,11 +7,13 @@
 
 PORTNAME=	xfmail
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/%SUBDIR%/	\
 		ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
+MASTER_SITE_SUBDIR=	${PORTVERSION}rc1/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc1
 
 MAINTAINER=	mikeh@FreeBSD.org
 
