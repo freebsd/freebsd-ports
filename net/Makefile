@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.69 1996/05/04 02:49:38 asami Exp $
+# $Id: Makefile,v 1.70 1996/06/19 20:09:49 adam Exp $
 #
 
     SUBDIR += archie
@@ -17,6 +17,7 @@
     SUBDIR += ivs
     SUBDIR += mirror
     SUBDIR += moxftp
+    SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += nv
     SUBDIR += pcnfsd
