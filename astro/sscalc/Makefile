@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.icehouse.net/kew/
 MAINTAINER=	kew@icehouse.net
 COMMENT=	A sunrise/sunset time calculator
 
-BROKEN=		"Installs manpage into wrong directory"
+MAN1=		sscalc.1
 
 pre-fetch:
 .if !defined(LAT)
@@ -22,10 +22,13 @@ pre-fetch:
 	@${ECHO_MSG} "Compiling in lat/longs"
 .endif
 
-post-install:
-	@strip ${PREFIX}/bin/sscalc
-	@${MKDIR} ${PREFIX}/share/doc/sscalc
-	${INSTALL_DATA} ${WRKSRC}/cities.txt ${PREFIX}/share/doc/sscalc
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sscalc
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/sscalc ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/sscalc.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cities.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
