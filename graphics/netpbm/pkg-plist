@@ -46,12 +46,14 @@ bin/pamflip
 bin/pamfunc
 bin/pamlookup
 bin/pamoil
+bin/pampop9
 bin/pamseq
 bin/pamslice
 bin/pamstack
 bin/pamstretch
 bin/pamstretch-gen
 bin/pamtohdiff
+bin/pamtohtmltbl
 bin/pamtopnm
 bin/pamtotga
 bin/pamtouil
@@ -189,6 +191,7 @@ bin/ppmdither
 bin/ppmfade
 bin/ppmflash
 bin/ppmforge
+bin/ppmglobe
 bin/ppmhist
 bin/ppmlabel
 bin/ppmmake
