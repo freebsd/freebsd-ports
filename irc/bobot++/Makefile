@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	bobotpp/stable.pkg/${PORTVERSION}
 DISTNAME=	Bobot++-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mranner@inode.at
 COMMENT=	An IRC bot written in C++
 
 GNU_CONFIGURE=	yes
