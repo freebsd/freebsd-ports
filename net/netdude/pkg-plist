@@ -1,37 +1,87 @@
 bin/netdude
 include/netdude/nd.h
-include/netdude/nd_capture.h
-include/netdude/nd_clipboard.h
+include/netdude/nd_types.h
 include/netdude/nd_crc_32.h
 include/netdude/nd_debug.h
-include/netdude/nd_dialog.h
-include/netdude/nd_gettext.h
-include/netdude/nd_globals.h
-include/netdude/nd_gui.h
 include/netdude/nd_macros.h
+include/netdude/nd_capture.h
+include/netdude/nd_clipboard.h
+include/netdude/nd_dialog.h
+include/netdude/nd_plugin.h
+include/netdude/nd_globals.h
+include/netdude/nd_gettext.h
+include/netdude/nd_gui.h
 include/netdude/nd_main.h
 include/netdude/nd_misc.h
 include/netdude/nd_null_protocol.h
 include/netdude/nd_packet.h
 include/netdude/nd_packet_iterator.h
-include/netdude/nd_plugin.h
 include/netdude/nd_prefs.h
 include/netdude/nd_protocol.h
 include/netdude/nd_protocol_inst.h
 include/netdude/nd_protocol_plugin.h
 include/netdude/nd_protocol_registry.h
-include/netdude/nd_raw_protocol.h
 include/netdude/nd_recent.h
+include/netdude/nd_raw_protocol.h
 include/netdude/nd_tcpdump.h
 include/netdude/nd_timestamp.h
 include/netdude/nd_trace.h
 include/netdude/nd_trace_registry.h
-include/netdude/nd_types.h
 include/netdude/protocols/snap/nd_proto_snap.h
-@dirrm include/netdude/protocols/fddi
-@dirrm include/netdude/protocols/snap
-@dirrm include/netdude/protocols
-@dirrm include/netdude
+share/netdude/plugins/nd_cksumfix.so
+share/netdude/plugins/nd_cksumfix.la
+share/netdude/plugins/nd_cksumfix.a
+share/netdude/plugins/nd_dummyplugin.so
+share/netdude/plugins/nd_dummyplugin.la
+share/netdude/plugins/nd_dummyplugin.a
+share/netdude/protocols/nd_arp.so
+share/netdude/protocols/nd_arp.la
+share/netdude/protocols/nd_arp.a
+share/netdude/protocols/nd_ethernet.so
+share/netdude/protocols/nd_ethernet.la
+share/netdude/protocols/nd_ethernet.a
+share/netdude/protocols/nd_fddi.so
+share/netdude/protocols/nd_fddi.la
+share/netdude/protocols/nd_fddi.a
+share/netdude/protocols/nd_icmp.so
+share/netdude/protocols/nd_icmp.la
+share/netdude/protocols/nd_icmp.a
+share/netdude/protocols/nd_ip.so
+share/netdude/protocols/nd_ip.la
+share/netdude/protocols/nd_ip.a
+share/netdude/protocols/nd_sll.so
+share/netdude/protocols/nd_sll.la
+share/netdude/protocols/nd_sll.a
+share/netdude/protocols/nd_snap.so
+share/netdude/protocols/nd_snap.la
+share/netdude/protocols/nd_snap.a
+share/netdude/protocols/nd_tcp.so
+share/netdude/protocols/nd_tcp.la
+share/netdude/protocols/nd_tcp.a
+share/netdude/protocols/nd_udp.so
+share/netdude/protocols/nd_udp.la
+share/netdude/protocols/nd_udp.a
+share/netdude/pixmaps/incomplete.xpm
+share/netdude/pixmaps/delete.xpm
+share/netdude/pixmaps/delete_okay.xpm
+share/netdude/pixmaps/question.xpm
+share/netdude/pixmaps/exclamation.xpm
+share/netdude/pixmaps/netdude_small.xpm
+share/netdude/pixmaps/netdude_splash.xpm
+share/netdude/pixmaps/netdude-icon.png
+share/locale/de/LC_MESSAGES/netdude.mo
+share/gtk-doc/html/netdude/images/exit.gif
+share/gtk-doc/html/netdude/images/main_window.gif
+share/gtk-doc/html/netdude/images/preferences.gif
+share/gtk-doc/html/netdude/images/capture.gif
+share/gtk-doc/html/netdude/images/logo.gif
+share/gtk-doc/html/netdude/images/plugin_menu.gif
+share/gtk-doc/html/netdude/images/ascii_editor.gif
+share/gtk-doc/html/netdude/images/hex_editor.gif
+share/gtk-doc/html/netdude/images/about_menu.gif
+share/gtk-doc/html/netdude/images/note.gif
+share/gtk-doc/html/netdude/images/warning.gif
+share/gtk-doc/html/netdude/images/caution.gif
 share/gtk-doc/html/netdude/a6190.html
 share/gtk-doc/html/netdude/a6191.html
 share/gtk-doc/html/netdude/a6219.html
@@ -87,20 +137,7 @@ share/gtk-doc/html/netdude/c207.html
 share/gtk-doc/html/netdude/c208.html
 share/gtk-doc/html/netdude/c70.html
 share/gtk-doc/html/netdude/c71.html
-share/gtk-doc/html/netdude/images/about_menu.gif
-share/gtk-doc/html/netdude/images/ascii_editor.gif
-share/gtk-doc/html/netdude/images/capture.gif
-share/gtk-doc/html/netdude/images/caution.gif
-share/gtk-doc/html/netdude/images/exit.gif
-share/gtk-doc/html/netdude/images/hex_editor.gif
-share/gtk-doc/html/netdude/images/logo.gif
-share/gtk-doc/html/netdude/images/main_window.gif
-share/gtk-doc/html/netdude/images/note.gif
-share/gtk-doc/html/netdude/images/plugin_menu.gif
-share/gtk-doc/html/netdude/images/preferences.gif
-share/gtk-doc/html/netdude/images/warning.gif
 share/gtk-doc/html/netdude/index.html
-share/gtk-doc/html/netdude/index.sgml
 share/gtk-doc/html/netdude/netdude-gtkhex.html
 share/gtk-doc/html/netdude/netdude-nd-capture.html
 share/gtk-doc/html/netdude/netdude-nd-clipboard.html
@@ -127,7 +164,6 @@ share/gtk-doc/html/netdude/netdude-nd-tcpdump.html
 share/gtk-doc/html/netdude/netdude-nd-trace-registry.html
 share/gtk-doc/html/netdude/netdude-nd-trace.html
 share/gtk-doc/html/netdude/netdude-nd.html
-share/gtk-doc/html/netdude/stylesheet.css
 share/gtk-doc/html/netdude/x101.html
 share/gtk-doc/html/netdude/x102.html
 share/gtk-doc/html/netdude/x111.html
@@ -156,53 +192,17 @@ share/gtk-doc/html/netdude/x280.html
 share/gtk-doc/html/netdude/x65.html
 share/gtk-doc/html/netdude/x90.html
 share/gtk-doc/html/netdude/x91.html
-@dirrm share/gtk-doc/html/netdude/images
-@dirrm share/gtk-doc/html/netdude
-@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
-@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
-share/locale/de/LC_MESSAGES/netdude.mo
-share/netdude/pixmaps/delete.xpm
-share/netdude/pixmaps/delete_okay.xpm
-share/netdude/pixmaps/exclamation.xpm
-share/netdude/pixmaps/incomplete.xpm
-share/netdude/pixmaps/netdude-icon.png
-share/netdude/pixmaps/netdude_small.xpm
-share/netdude/pixmaps/netdude_splash.xpm
-share/netdude/pixmaps/question.xpm
-share/netdude/plugins/nd_cksumfix.a
-share/netdude/plugins/nd_cksumfix.la
-share/netdude/plugins/nd_cksumfix.so
-share/netdude/plugins/nd_dummyplugin.a
-share/netdude/plugins/nd_dummyplugin.la
-share/netdude/plugins/nd_dummyplugin.so
-share/netdude/protocols/nd_arp.a
-share/netdude/protocols/nd_arp.la
-share/netdude/protocols/nd_arp.so
-share/netdude/protocols/nd_ethernet.a
-share/netdude/protocols/nd_ethernet.la
-share/netdude/protocols/nd_ethernet.so
-share/netdude/protocols/nd_fddi.a
-share/netdude/protocols/nd_fddi.la
-share/netdude/protocols/nd_fddi.so
-share/netdude/protocols/nd_icmp.a
-share/netdude/protocols/nd_icmp.la
-share/netdude/protocols/nd_icmp.so
-share/netdude/protocols/nd_ip.a
-share/netdude/protocols/nd_ip.la
-share/netdude/protocols/nd_ip.so
-share/netdude/protocols/nd_sll.a
-share/netdude/protocols/nd_sll.la
-share/netdude/protocols/nd_sll.so
-share/netdude/protocols/nd_snap.a
-share/netdude/protocols/nd_snap.la
-share/netdude/protocols/nd_snap.so
-share/netdude/protocols/nd_tcp.a
-share/netdude/protocols/nd_tcp.la
-share/netdude/protocols/nd_tcp.so
-share/netdude/protocols/nd_udp.a
-share/netdude/protocols/nd_udp.la
-share/netdude/protocols/nd_udp.so
-@dirrm share/netdude/pixmaps
+share/gtk-doc/html/netdude/stylesheet.css
+share/gtk-doc/html/netdude/index.sgml
+@dirrm include/netdude/protocols/fddi
+@dirrm include/netdude/protocols/snap
+@dirrm include/netdude/protocols
+@dirrm include/netdude
 @dirrm share/netdude/plugins
 @dirrm share/netdude/protocols
+@dirrm share/netdude/pixmaps
 @dirrm share/netdude
+@dirrm share/gtk-doc/html/netdude/images
+@dirrm share/gtk-doc/html/netdude
+@dirrm share/gtk-doc/html
+@dirrm share/gtk-doc
