@@ -1,0 +1,8 @@
+OpenH323 is a multi-platform H323 Video Conferencing library.
+
+This port contains version 1.1 of OpenH323 which is required for
+gnomemeeting.
+
+For more information, refer to the main port in net/openh323.
+
+WWW: http://www.openh323.org
