@@ -16,8 +16,8 @@ DESTDIR=${PREFIX}/
 .else
 DESTDIR=/usr/local/
 .endif
-INCDIR=include/divx/
-INCLUDEDIR=include/divx/
+INCSDIR=include/divx/
+INCDIR=${INCSDIR}			# for pre-bsd.incs.mk API
 LIBDIR=lib/
 
 .include <bsd.lib.mk>
