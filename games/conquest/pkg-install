@@ -12,8 +12,7 @@ case "$2" in
 		fi
 	;;
 	POST-INSTALL)
-		chown root:conquest ${PREFIX}/etc/conquest
-		chmod 775 ${PREFIX}/etc/conquest
+		install -d -o root -g conquest -m 770 /var/games/conquest
 	;;
 	*)
 		echo "Incorrect parameter"
