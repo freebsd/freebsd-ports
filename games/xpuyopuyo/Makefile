@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xpuyopuyo-0.3.3
+DISTNAME=	xpuyopuyo-0.3.4
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
 		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/
