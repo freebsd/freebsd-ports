@@ -3,7 +3,7 @@
 # Date created:		24 October 1997
 # Whom:			Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.9 1998/10/09 10:05:52 asami Exp $
+# $Id: Makefile,v 1.10 1998/10/12 21:11:48 jseger Exp $
 #
 
 DISTNAME=	tkrat-1.1
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
 
 MAINTAINER=	appleseed@his.com
-
-BROKEN_ELF=	depends on imap-uw
 
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
