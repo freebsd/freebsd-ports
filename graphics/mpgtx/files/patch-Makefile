@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jul 12 20:03:42 2001
-+++ Makefile	Thu Jul 12 20:13:26 2001
+--- Makefile.orig	Tue Jul 24 15:39:59 2001
++++ Makefile	Tue Jul 24 15:41:13 2001
 @@ -1,5 +1,4 @@
  # installation dirs : Edit at your convenance
 -PREFIX=/usr
@@ -10,12 +10,12 @@
  
  # compilation flags
  DEVEL_CFLAGS= -g  -Wall -Werror -pedantic -fno-builtin
--RELEASE_CFLAGS= -Wall -O3 -pedantic 
+-RELEASE_CFLAGS= -Wall -g -O2 -pedantic 
 +RELEASE_CFLAGS= ${CFLAGS}
  SHARED_LFLAGS= -s
  STATIC_LFLAGS= -static -s
  DEVEL_LFLAGS= #-lefence
-@@ -52,12 +51,10 @@
+@@ -50,12 +49,10 @@
  	ln -sf mpgtx tagmp3
  	install -d -m 755  $(INSTALLDIR)
  	install -d -m 755  $(MANDIR)
