@@ -15,6 +15,7 @@
     SUBDIR += addttfont
     SUBDIR += another-htmllint
     SUBDIR += balsa
+    SUBDIR += bible_names-fpw
     SUBDIR += binder
     SUBDIR += bookview
     SUBDIR += canuum

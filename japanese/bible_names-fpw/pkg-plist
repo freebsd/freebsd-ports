@@ -1,0 +1,8 @@
+share/dict/bible_names-fpw/biblenam/data/honmon
+share/dict/bible_names-fpw/catalogs
+@dirrm share/dict/bible_names-fpw/biblenam/data
+@dirrm share/dict/bible_names-fpw/biblenam
+@dirrm share/dict/bible_names-fpw
+share/doc/bible_names-fpw/biblenam.txt
+share/doc/bible_names-fpw/readme
+@dirrm share/doc/bible_names-fpw
