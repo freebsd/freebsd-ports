@@ -7,17 +7,19 @@
 #
 
 PORTNAME=	cgicc
-PORTVERSION=	3.1.5
+PORTVERSION=	3.2
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
-
 USE_GMAKE=	yes
 
 INSTALLS_SHLIB=	yes
+
+post-extract:
+	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.mk>
