@@ -46,7 +46,7 @@ GNOME_ONE_DESKTOP=	gnomecore gnomeapplets gnomemedia gnomeutils \
 
 pre-everything::
 	@for package in ${GNOME_ONE_DESKTOP}; do \
-		if ${PKG_INFO} | ${GREP} $$package"-[0-9]" >/dev/null 2>&1; then \
+		if ${PKG_INFO} | ${GREP} "^$$package-[0-9]" >/dev/null 2>&1; then \
 		    ${ECHO_MSG} "$$package was detected on the system.  This package is part of the GNOME 1.x"; \
 		    ${ECHO_MSG} "desktop, and cannot coexist with the GNOME 2.0 desktop."; \
 		    ${ECHO_MSG} ""; \
