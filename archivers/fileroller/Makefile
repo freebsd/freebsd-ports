@@ -29,15 +29,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	file-roller.schemas
 
-.if !defined(NOPORTDOCS)
 post-install:
+	@-update-desktop-database > /dev/null
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in AUTHORS NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@-update-desktop-database > /dev/null
 
 .include <bsd.port.mk>
