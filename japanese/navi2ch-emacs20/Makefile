@@ -18,7 +18,8 @@ MAINTAINER=	sf@FreeBSD.org
 EMACS_PORT_NAME?=	emacs20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/navi2ch
+CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/navi2ch \
+		--with-emacs=${EMACS_CMD}
 
 DOCDIR=		share/doc/ja/navi2ch
 PLIST_SUB=	LISPDIR=${LISPDIR}
@@ -26,7 +27,6 @@ PLIST_SUB=	LISPDIR=${LISPDIR}
 .if ${EMACS_PORT_NAME} == xemacs21-mule
 LISPDIR=	${EMACS_SITE_LISPDIR}
 PLIST_SUB+=	FSF="@comment " 
-CONFIGURE_ARGS+=	--with-xemacs
 .else
 LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 PLIST_SUB+=	FSF=""
