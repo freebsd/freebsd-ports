@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mo
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/susho/software/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
