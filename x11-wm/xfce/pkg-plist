@@ -21,6 +21,7 @@ bin/xfplay
 bin/xfprint
 bin/xfrun
 bin/xfsamba
+bin/xfskin
 bin/xfsound
 bin/xfterm
 bin/xftrash
@@ -52,6 +53,7 @@ etc/xfce/xinitrc.mwm
 etc/xfce/xsession
 etc/xfce/xtree.reg
 lib/gtk/themes/engines/libxfce.so
+share/locale/bg/LC_MESSAGES/xfce.mo
 share/locale/ca/LC_MESSAGES/xfce.mo
 share/locale/cs/LC_MESSAGES/xfce.mo
 share/locale/da/LC_MESSAGES/xfce.mo
@@ -65,6 +67,7 @@ share/locale/gl/LC_MESSAGES/xfce.mo
 share/locale/hu/LC_MESSAGES/xfce.mo
 share/locale/it/LC_MESSAGES/xfce.mo
 share/locale/ja/LC_MESSAGES/xfce.mo
+share/locale/ms/LC_MESSAGES/xfce.mo
 share/locale/nl/LC_MESSAGES/xfce.mo
 share/locale/pl/LC_MESSAGES/xfce.mo
 share/locale/pt_BR/LC_MESSAGES/xfce.mo
@@ -132,7 +135,7 @@ share/xfce/backdrops/Linea.xpm
 share/xfce/backdrops/Marbled.xpm
 share/xfce/backdrops/Master-Plan.jpg
 share/xfce/backdrops/Maze.xpm
-share/xfce/backdrops/MiceBlue.jpg
+share/xfce/backdrops/Metal-blue.jpg
 share/xfce/backdrops/Nebula.xpm
 share/xfce/backdrops/Notes.xpm
 share/xfce/backdrops/Overdriven.jpg
@@ -423,7 +426,9 @@ share/xfce/icons/X_server.xpm
 share/xfce/icons/Xmix.xpm
 share/xfce/icons/Xterm.xpm
 share/xfce/icons/Xv.xpm
+share/xfce/icons/playball.xpm
 share/xfce/icons/xfsamba.xpm
+share/xfce/icons/xfskin.xpm
 share/xfce/palettes/Alpine
 share/xfce/palettes/Altxfce
 share/xfce/palettes/Altxfce2
@@ -444,7 +449,9 @@ share/xfce/palettes/BlueX3
 share/xfce/palettes/BlueX4
 share/xfce/palettes/Bronze
 share/xfce/palettes/Bronze2
+share/xfce/palettes/Cadmium
 share/xfce/palettes/CandyBox
+share/xfce/palettes/CandyBox2
 share/xfce/palettes/Cheese
 share/xfce/palettes/Chrome
 share/xfce/palettes/Citrouille
@@ -454,6 +461,7 @@ share/xfce/palettes/Clinky
 share/xfce/palettes/Craters
 share/xfce/palettes/DarkMetal
 share/xfce/palettes/Default
+share/xfce/palettes/DefaultTextured
 share/xfce/palettes/Defcon
 share/xfce/palettes/Desert
 share/xfce/palettes/Dolly
@@ -470,6 +478,7 @@ share/xfce/palettes/Grayscale
 share/xfce/palettes/GreenIron
 share/xfce/palettes/GreySlate
 share/xfce/palettes/Ground
+share/xfce/palettes/GtkXfce
 share/xfce/palettes/Helice
 share/xfce/palettes/HiContrast
 share/xfce/palettes/HiTech
@@ -477,6 +486,9 @@ share/xfce/palettes/HiTech2
 share/xfce/palettes/Iceland
 share/xfce/palettes/Jazza
 share/xfce/palettes/Jazza2
+share/xfce/palettes/KDE
+share/xfce/palettes/KStyle2
+share/xfce/palettes/KXfce
 share/xfce/palettes/Kdetheme
 share/xfce/palettes/LightBulb
 share/xfce/palettes/LightBulb2
@@ -491,6 +503,7 @@ share/xfce/palettes/Metal
 share/xfce/palettes/Military
 share/xfce/palettes/Modern
 share/xfce/palettes/Modern2
+share/xfce/palettes/Monkey
 share/xfce/palettes/Moz9
 share/xfce/palettes/Moz9-2
 share/xfce/palettes/Nature
@@ -499,6 +512,7 @@ share/xfce/palettes/Netsy
 share/xfce/palettes/OldWood
 share/xfce/palettes/Pale
 share/xfce/palettes/Paper
+share/xfce/palettes/Pelgrim
 share/xfce/palettes/Pinky
 share/xfce/palettes/Plum
 share/xfce/palettes/Power
@@ -510,6 +524,7 @@ share/xfce/palettes/Quartz
 share/xfce/palettes/Reader
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
+share/xfce/palettes/SaltLake
 share/xfce/palettes/Sand
 share/xfce/palettes/Silver
 share/xfce/palettes/Silver2
@@ -541,6 +556,7 @@ share/xfce/palettes/Vanadium
 share/xfce/palettes/Win
 share/xfce/palettes/Win2
 share/xfce/palettes/Win3
+share/xfce/palettes/XLight
 share/xfce/palettes/Xfce-1
 share/xfce/palettes/Xfce-2
 share/xfce/sounds/alert01.wav
