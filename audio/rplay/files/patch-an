@@ -1,0 +1,20 @@
+--- rplayd/audio/audio_FreeBSD.c.orig	Sun Jul 22 19:44:58 2001
++++ rplayd/audio/audio_FreeBSD.c	Sun Jul 22 19:47:01 2001
+@@ -353,7 +353,7 @@
+ 	return (-1);
+     }
+ 
+-    if (!(mxdevmask & SOUND_MIXER_PCM))
++    if (!(mxdevmask & SOUND_MASK_PCM))
+     {
+ 	report(REPORT_ERROR, "rplay_audio_get_volume: pcm mixer device not installed\n");
+ 	close(mx);
+@@ -417,7 +417,7 @@
+ 	return (-1);
+     }
+ 
+-    if (!(mxdevmask & SOUND_MIXER_PCM))
++    if (!(mxdevmask & SOUND_MASK_PCM))
+     {
+ 	report(REPORT_ERROR, "rplay_audio_set_volume: pcm mixer device not installed\n");
+ 	close(mx);
