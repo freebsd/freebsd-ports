@@ -1,0 +1,10 @@
+Bubblemon is a dockapp for Blackbox, Window Maker, Afterstep and
+Enlightenment. It displays CPU and memory load as bubbles in a jar of
+water.
+
+Bubblemon has 2 additional screen available - memory and load average.
+To see the load average screen move the mouse into the window. To see
+the memory screen hold the shift key before moving the mouse into the
+window. Bubblemon fades from one display to the next, click the right
+mouse button in the window to lock the fading halfway between the
+displays.
