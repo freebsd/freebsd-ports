@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssh
-PORTVERSION=	1.2.27
+PORTVERSION=	1.2.27 # Note, 1.2.30 is under a more restrictive license
 PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cs.engr.uky.edu/cs/software/ \
@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://ftp.cs.engr.uky.edu/cs/software/ \
 		ftp://ftp.comp.hkbu.edu.hk/.6/unix/ \
 		ftp://ftp.dei.uc.pt/.disk2/Crypto/SSH/old/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 #RESTRICTED=	"Crypto: export-controlled"
 
@@ -66,6 +66,12 @@ CONFIGURE_ARGS+= --with-secureid
 CONFIGURE_ARGS+= --without-idea
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 400016 && !defined(REALLY_WANT_SSH))
+BROKEN=		"OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE. This port is now deprecated and will be removed at some point in the future. To override this warning set the REALLY_WANT_SSH environment variable and rebuild."
+.endif
+
 MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
 		make-ssh-known-hosts1.1
 MAN8=		sshd1.8
@@ -96,8 +102,6 @@ post-install:
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
 	    fi; \
 	fi
-
-.include <bsd.port.pre.mk>
 
 # Include tcp-wrapper support (call remote identd)
 .if exists(/usr/include/tcpd.h)
