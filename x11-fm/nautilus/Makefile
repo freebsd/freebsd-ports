@@ -7,12 +7,14 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/nautilus
 
 MAINTAINER=	ade@FreeBSD.org
 
+BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		gtkhtml.4:${PORTSDIR}/www/gtkhtml \
 		ghttp.1:${PORTSDIR}/www/libghttp \
@@ -20,8 +22,7 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 
 .if defined(WITH_MOZILLA)
 MOZILLA=	mozilla-embedded
-BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm \
-		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 .endif
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
