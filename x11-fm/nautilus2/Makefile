@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nautilus2
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop eel2 librsvg2
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier gnomedesktop eel2 \
+		librsvg2
 GNOME_DESKTOP_VERSION=2
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
