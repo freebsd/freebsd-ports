@@ -16,7 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		xml.5:${PORTSDIR}/textproc/libxml
+		xml.5:${PORTSDIR}/textproc/libxml \
+		popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
