@@ -18,6 +18,7 @@ bin/regSet.sh
 etc/wine.conf.sample
 include/wine/amaudio.h
 include/wine/amvideo.h
+include/wine/audevcod.h
 include/wine/basetsd.h
 include/wine/cderr.h
 include/wine/cguid.h
@@ -41,7 +42,10 @@ include/wine/dlgs.h
 include/wine/docobj.h
 include/wine/dplay.h
 include/wine/dplobby.h
+include/wine/dshow.h
 include/wine/dsound.h
+include/wine/errors.h
+include/wine/evcode.h
 include/wine/guiddef.h
 include/wine/imagehlp.h
 include/wine/imm.h
@@ -101,8 +105,10 @@ include/wine/tapi.h
 include/wine/tlhelp32.h
 include/wine/unknwn.h
 include/wine/urlmon.h
+include/wine/uuids.h
 include/wine/ver.h
 include/wine/vfw.h
+include/wine/vfwmsgs.h
 include/wine/winbase.h
 include/wine/wincon.h
 include/wine/wincrypt.h
