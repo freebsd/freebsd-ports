@@ -8,7 +8,7 @@
 PORTNAME=	xmake
 PORTVERSION=	1.05
 CATEGORIES=	devel
-MASTER_SITES=	http://www.backplane.com/xmake/ \
+MASTER_SITES=	http://apollo.backplane.com/xmake/ \
 		ftp://atari.saturn5.com/pub/dlowe/
 EXTRACT_SUFX=	.tgz
 
