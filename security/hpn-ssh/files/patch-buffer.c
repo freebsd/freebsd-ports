@@ -43,7 +43,7 @@ diff -u -r1.16 -r1.18
  	buffer->offset = 0;
  	buffer->end = 0;
  }
-@@ -34,8 +37,10 @@
+@@ -34,8 +37,11 @@
  void
  buffer_free(Buffer *buffer)
  {
@@ -51,12 +51,13 @@ diff -u -r1.16 -r1.18
 -	xfree(buffer->buf);
 +	if (buffer->alloc > 0) {
 +		memset(buffer->buf, 0, buffer->alloc);
++		buffer->alloc = 0;
 +		xfree(buffer->buf);
 +	}
  }
  
  /*
-@@ -69,6 +74,7 @@
+@@ -69,6 +75,7 @@
  void *
  buffer_append_space(Buffer *buffer, u_int len)
  {
@@ -64,7 +65,7 @@ diff -u -r1.16 -r1.18
  	void *p;
  
  	if (len > 0x100000)
-@@ -98,11 +104,13 @@
+@@ -98,11 +105,13 @@
  		goto restart;
  	}
  	/* Increase the size of the buffer and retry. */
