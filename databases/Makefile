@@ -38,6 +38,7 @@
     SUBDIR += libudbc
     SUBDIR += mdbtools
     SUBDIR += metakit
+    SUBDIR += mird
     SUBDIR += msql
     SUBDIR += myodbc
     SUBDIR += mysql++
