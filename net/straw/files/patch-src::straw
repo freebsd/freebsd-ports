@@ -1,12 +1,6 @@
---- src/straw.orig	Thu Nov 13 21:59:51 2003
-+++ src/straw	Thu Nov 13 22:01:07 2003
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python2.2
-+#!/usr/bin/env python
- #
- # Copyright (c) 2002 Juri Pakaste
- # You may use and distribute this software under the terms of the
-@@ -19,13 +19,14 @@
+--- src/straw.orig	Tue Feb 17 13:37:00 2004
++++ src/straw	Tue Feb 17 13:37:50 2004
+@@ -20,13 +20,14 @@
              return sd
      h, t = os.path.split(os.path.split(os.path.abspath(sys.argv[0]))[0])
      if t == 'bin':
