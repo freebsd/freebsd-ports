@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTREVISION=	2
-PORTVERSION=	3.2.3p1
+PORTVERSION=	3.3p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -18,7 +17,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
-MAN8=	sftp-server.8 sshd.8
+MAN5=	ssh_config.5 sshd_config.5
+MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
