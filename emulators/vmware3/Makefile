@@ -110,6 +110,9 @@ post-patch:
 		${WRKSRC}/vmware-distrib/vmmon-only/freebsd/*.c
 .endif
 	cat ${FILESDIR}/kmoddeps.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.if ${OSVERSION} >= 500038
+	cat ${FILESDIR}/fo_ioctl.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
