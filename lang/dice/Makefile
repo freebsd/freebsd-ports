@@ -27,6 +27,9 @@ post-patch:
 
 		@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
+		@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
+			${REINPLACE_CMD} -e 's@__aligned@dice_aligned@g'
+
 do-install:
 		@for i in ${WRKSRC}/ubin/*; \
 		do \
