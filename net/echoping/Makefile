@@ -1,15 +1,14 @@
 # New ports collection makefile for:	echoping
-# Version required:	2.1-BETA
+# Version required:	2.2.0
 # Date created:		13 April 1997
 # Whom:			peter
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/12 17:17:31 peter Exp $
+# $Id: Makefile,v 1.2 1998/06/22 11:56:39 peter Exp $
 #
 
-DISTNAME=	echoping-2.1-BETA
-PKGNAME=	echoping-2.1b
+DISTNAME=	echoping-2.2.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.pasteur.fr/pub/computing/unix/network/echoping/
+MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
 
 MAINTAINER=	peter@FreeBSD.ORG
 
