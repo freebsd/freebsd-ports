@@ -1,0 +1,17 @@
+--- Makefile.orig	Tue Dec  5 09:57:04 1995
++++ Makefile	Thu May  7 22:35:23 1998
+@@ -21,10 +21,10 @@
+ # -DHARD_COLORS
+ # to the CFLAGS line.
+ 
+-CC = cc
+-CFLAGS = -c -DPOSIX 
+-LDFLAGS = -O
+-LIBS = -lcurses
++#CC = cc
++CFLAGS += -c -DBSD -DHAVE_GETOPT
++#LDFLAGS = -O
++LIBS = -ltermcap
+ 
+ INC = ztypes.h
+ OBJS = jzip.o control.o extern.o fileio.o input.o interpre.o math.o memory.o \
