@@ -1,35 +1,11 @@
---- Makefile.orig	Wed Jan 14 21:38:17 2004
-+++ Makefile	Fri Jan 16 01:39:20 2004
-@@ -1,8 +1,8 @@
- #Possible optimizations -fomit-frame-pointer -ffast-math
- OBS= bandwidthd.o graph.o conf.tab.o conf.l.o
--LIBS= -L/usr/local/lib -lgd -lpng -lpcap 
--CFLAGS= -I/usr/local/include -O3 -Wall
--NONWALLCFLAGS= -O3 #-g -DDEBUG
-+LIBS= -L${LOCALBASE}/lib -lgd -lpng -lpcap 
-+CFLAGS+= -I${LOCALBASE}/include
-+#NONWALLCFLAGS= -O3 #-g -DDEBUG
+--- Makefile.in.orig	Sun Jan 16 17:02:04 2005
++++ Makefile.in	Sun Jan 16 17:02:38 2005
+@@ -41,7 +41,7 @@
+ 	@INSTALL@ -d $(DESTDIR)$(exec_prefix)/bandwidthd/etc
+ 	@INSTALL@ -d $(DESTDIR)$(exec_prefix)/bandwidthd/htdocs
+ 	@INSTALL@ -m755 -s bandwidthd $(DESTDIR)$(exec_prefix)/bandwidthd	
+-	if [ ! -f $(DESTDIR)$(exec_prefix)/bandwidthd/etc/bandwidthd.conf ] ; then @INSTALL@ -m644 etc/bandwidthd.conf $(DESTDIR)$(exec_prefix)/bandwidthd/etc/ ; fi
++	@INSTALL@ -m644 etc/bandwidthd.conf $(DESTDIR)$(exec_prefix)/bandwidthd/etc/bandwidthd.conf-dist
+ 	@INSTALL@ -m644 htdocs/legend.gif $(DESTDIR)$(exec_prefix)/bandwidthd/htdocs
+ 	@INSTALL@ -m644 htdocs/logo.gif $(DESTDIR)$(exec_prefix)/bandwidthd/htdocs
  
- # Debugging stuff
- #CFLAGS= -O3 -Wall -pg -DPROFILE
-@@ -44,13 +44,13 @@
- 	rm -f *.o bandwidthd *~ conf.tab.c conf.tab.h conf.l.c DEADJOE
- 
- install: all
--	if [ ! -d $(DESTDIR)/usr/local/bandwidthd/etc ] ; then mkdir -p $(DESTDIR)/usr/local/bandwidthd/etc ; fi
--	if [ ! -d $(DESTDIR)/usr/local/bandwidthd/htdocs ] ; then mkdir -p $(DESTDIR)/usr/local/bandwidthd/htdocs ; fi
--	cp bandwidthd $(DESTDIR)/usr/local/bandwidthd	
--	if [ ! -f $(DESTDIR)/usr/local/bandwidthd/etc/bandwidthd.conf ] ; then cp etc/bandwidthd.conf $(DESTDIR)/usr/local/bandwidthd/etc/ ; fi
--	cp htdocs/legend.gif $(DESTDIR)/usr/local/bandwidthd/htdocs/
--	cp htdocs/logo.gif $(DESTDIR)/usr/local/bandwidthd/htdocs/
-+	mkdir -p $(DESTDIR)${PREFIX}/bandwidthd/etc
-+	mkdir -p $(DESTDIR)${PREFIX}/bandwidthd/htdocs
-+	${BSD_INSTALL_PROGRAM} bandwidthd $(DESTDIR)${PREFIX}/bandwidthd
-+	${BSD_INSTALL_DATA} etc/bandwidthd.conf $(DESTDIR)${PREFIX}/bandwidthd/etc/bandwidthd.conf-dist
-+	${BSD_INSTALL_DATA} htdocs/legend.gif $(DESTDIR)${PREFIX}/bandwidthd/htdocs/
-+	${BSD_INSTALL_DATA} htdocs/logo.gif $(DESTDIR)${PREFIX}/bandwidthd/htdocs/
- 
- #**** Stuff where -WALL is turned off to reduce the noise in a compile so I can see my own errors *******************
- conf.l.o: conf.l.c
--	$(CC) $(NONWALLCFLAGS) -c -o conf.l.o conf.l.c	
-+	$(CC) -c -o conf.l.o conf.l.c
