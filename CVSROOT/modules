@@ -9232,6 +9232,7 @@ upsmon		ports/sysutils/upsmon
 uptimed		ports/sysutils/uptimed
 uqm		ports/games/uqm
 urban		ports/games/urban
+urban-sounds	ports/games/urban-sounds
 urchin5		ports/www/urchin5
 urlendec	ports/net/urlendec
 urlview		ports/textproc/urlview
