@@ -1,0 +1,37 @@
+*** cyrcoder/Makefile.orig	Fri Jul 19 00:28:29 1996
+--- cyrcoder/Makefile	Thu Jun 19 10:14:36 1997
+***************
+*** 1,7 ****
+  # $Id: Makefile,v 1.7 1996/07/18 20:28:29 lexa Exp $
+  
+  TDIR=../tables
+! UTILDIR?=/usr/local/bin
+  BINLIST=cyrtrans transtree transfiles
+  CHOWN?=/usr/sbin/chown
+  CHMOD?=chmod
+--- 1,8 ----
+  # $Id: Makefile,v 1.7 1996/07/18 20:28:29 lexa Exp $
+  
+  TDIR=../tables
+! UTILDIR?=${PREFIX}/bin
+! CGIPATH=${PREFIX}/www/cgi-bin
+  BINLIST=cyrtrans transtree transfiles
+  CHOWN?=/usr/sbin/chown
+  CHMOD?=chmod
+***************
+*** 9,15 ****
+  BINOWNER=root.wheel
+  TESTBIN=cytest
+  
+! CC=gcc -O
+  ENCLIST?=alt iso koi8 win
+  
+  #### DO NOT CHANGE BELOW THIS LINE ###########
+--- 10,16 ----
+  BINOWNER=root.wheel
+  TESTBIN=cytest
+  
+! #CC=gcc -O
+  ENCLIST?=alt iso koi8 win
+  
+  #### DO NOT CHANGE BELOW THIS LINE ###########
