@@ -1,5 +1,5 @@
---- extract.h.orig	Wed Dec 11 07:13:51 2002
-+++ extract.h	Wed Mar 31 01:03:41 2004
+--- extract.h.orig	Tue Dec 10 23:13:51 2002
++++ extract.h	Tue Mar 30 20:38:35 2004
 @@ -96,3 +96,12 @@
  		     (u_int32_t)*((const u_int8_t *)(p) + 2) << 16 | \
  		     (u_int32_t)*((const u_int8_t *)(p) + 1) << 8 | \
