@@ -3,7 +3,7 @@ include/tinyxml.h
 lib/libtinyxml.a
 lib/libtinyxml.so
 lib/libtinyxml.so.%%SHLIB_MAJOR%%
-lib/libtinyxml_p.a
+%%PROFILE%%lib/libtinyxml_p.a
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/classTiXmlAttribute-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classTiXmlAttribute.html
