@@ -9,7 +9,7 @@ if `echo $PREFIX |grep -q X11` ; then
 fi
 CACHE=$prefix/lib/texmf/fonts
 
-if [ -f $prefix/bin/MakeTeXPK ]; then
+if [ -f $PREFIX/bin/MakeTeXPK ]; then
   echo "**WARNING** MakeTeXPK already exists in $PREFIX/bin"
   echo "**WARNING** This file will be replaced during install."
   echo 
