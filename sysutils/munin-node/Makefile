@@ -17,8 +17,6 @@ DISTNAME=	munin_1.0.0pre3
 MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	Node-specific part of Munin
 
-BROKEN=		"Broken pkg-plist, and changes permissions on system directories"
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/Net/Server/Fork.pm:${PORTSDIR}/net/p5-Net-Server
 
@@ -49,8 +47,6 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf; \
 	fi
 	@${CAT} ${PKGMESSAGE}
-	@${INSTALL_MAN} -d ${PREFIX}/man/man5
-	@${INSTALL_MAN} -d ${PREFIX}/man/man8
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-node.conf.5 ${PREFIX}/man/man5
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-node-configure.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-node.8 ${PREFIX}/man/man8
