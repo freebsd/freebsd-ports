@@ -3,7 +3,7 @@
 # Date Created:		27 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/27 16:56:41 vanilla Exp $
 #
 
 DISTNAME=	gqview-0.4.3.src
@@ -16,6 +16,8 @@ MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		Imlib.1:${PORTSDIR}/graphics/imlib
+
+BROKEN=		build
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/gqview-0.4.3
