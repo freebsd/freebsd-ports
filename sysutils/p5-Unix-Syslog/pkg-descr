@@ -1,0 +1,6 @@
+This module provides an interface to the system logger syslogd(8) via Perl's
+XSUBs. The implementation attempts to resemble the native libc-functions of
+your system, so that anyone being familiar with syslog.h should be able to
+use this module right away.
+
+WWW: http://search.cpan.org/search?dist=Syslog
