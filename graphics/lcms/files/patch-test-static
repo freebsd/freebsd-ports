@@ -1,0 +1,9 @@
+--- testbed/Makefile.in	Mon Apr 19 12:02:23 2004
++++ testbed/Makefile.in	Mon Oct 25 16:07:37 2004
+@@ -198,5 +198,5 @@
+ 
+ testcms_LDADD = $(top_builddir)/src/liblcms.la 
+-testcms_LDFLAGS = @LDFLAGS@
++testcms_LDFLAGS = @LDFLAGS@ -static
+ testcms_SOURCES = testcms.c
+ 

@@ -16,13 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
-
 USE_GNOME=	gnomehack gnometarget lthack
 USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	13
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-jpeg --without-tiff
 INSTALLS_SHLIB=	yes
 
