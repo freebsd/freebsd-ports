@@ -20,4 +20,8 @@ GNU_CONFIGURE=	yes
 MAN1=		ginsu.1
 PLIST_FILES=	bin/ginsu
 
+BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-19
+
 .include <bsd.port.mk>
