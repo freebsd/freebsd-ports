@@ -1,5 +1,5 @@
 --- configure.orig	Sat Aug  9 16:12:30 2003
-+++ configure	Tue Dec 23 18:52:29 2003
++++ configure	Mon Mar 15 20:51:21 2004
 @@ -300,7 +300,7 @@
  
  
@@ -104,6 +104,20 @@
  echores "yes (using $_ld_pthread)"
  
  
+@@ -3819,11 +3781,11 @@
+ 
+ 
+ echocheck "RTC"
+-if linux ; then
++if freebsd ; then
+   if test "$_rtc" = auto ; then
+     cat > $TMPC << EOF
+ #include <sys/ioctl.h>
+-#include <linux/rtc.h>
++#include <rtc.h>
+ int main(void) { return RTC_IRQP_READ; }
+ EOF
+     _rtc=no
 @@ -4848,7 +4810,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then

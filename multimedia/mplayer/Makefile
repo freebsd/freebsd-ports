@@ -74,6 +74,11 @@
 # kernel config. This is standard for 5.x systems on I686_CPU and above.
 # 4.x users will have to define this explicitly.
 #
+# WITH_RTC
+# default: undefined
+# This option enables support for real time clock timing instead of
+# defaulting to usleep() timing. This can improve cpu load as well
+# as run-time accuracy.
 #
 # Feature options:
 # These options influence, which libraries mplayer is linked to.
@@ -171,7 +176,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -220,8 +225,6 @@ WANT_SDL=	yes
 USE_REINPLACE=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/mplayer/vidix
 
 CONFFILES=	codecs.conf example.conf input.conf menu.conf
 DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
@@ -235,6 +238,21 @@ TOOLFILES=	calcbpp.pl countquant.pl \
 		x2mpsub.sh
 
 .include <bsd.port.pre.mk>
+
+#Building of vidix dependent shared libs is only possible
+#on i386 at the moment.
+.if ${ARCH} == "i386"
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/mplayer/vidix
+PLIST_SUB+=	VIDIX=""
+.else
+CONFIGURE_ARGS+=--disable-vidix
+PLIST_SUB+=	VIDIX="@comment "
+.endif
+
+#.if exists(${LOCALBASE}/modules/rtc.ko)
+#WITH_RTC=	yes
+#.endif
 
 .if exists(${LOCALBASE}/lib/libartsc.so.0)
 WITH_ARTS=	yes
@@ -321,6 +339,10 @@ WITH_LZO=	yes
 WITH_FREETYPE=	yes
 .endif
 
+.if defined (DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
@@ -330,6 +352,15 @@ WITH_GUI=	yes
 PLIST_SUB+=	GMPLAYER=""
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
+.endif
+
+.if defined(WITH_RTC)
+BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+CONFIGURE_ARGS+=	--enable-rtc
+CONFIGURE_ENV+=		CFLAGS+="-I/${LOCALBASE}/include"
+.else
+CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
 .if defined(WITH_GUI)
@@ -553,6 +584,20 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#g' \
 		${WRKSRC}/configure
+.if defined(WITH_RTC)
+	@${REINPLACE_CMD} -e \
+		's|<linux/rtc.h>|<rtc.h>|' \
+		${WRKSRC}/mplayer.c
+	@${REINPLACE_CMD} -e \
+		's|RTC_IRQP_SET|RTCIO_IRQP_SET|' \
+		${WRKSRC}/mplayer.c
+	@${REINPLACE_CMD} -e \
+		's|RTC_PIE_ON|RTCIO_PIE_ON|' \
+		${WRKSRC}/mplayer.c
+	@${REINPLACE_CMD} -e \
+		's|rtc_fd|rtc|' \
+		${WRKSRC}/mplayer.c
+.endif
 
 pre-configure:
 .if defined(WITH_LIBDVDREAD)
