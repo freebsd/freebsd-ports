@@ -12,8 +12,6 @@ share/apps/kwin/liquid.desktop
 @unexec rmdir %D/share/apps/kwin 2>/dev/null || true
 @unexec rmdir %D/share/apps/kstyle/themes 2>/dev/null || true
 @unexec rmdir %D/share/apps/kstyle 2>/dev/null || true
-@unexec rmdir %D/share/apps/ksplash/pics 2>/dev/null || true
-@unexec rmdir %D/share/apps/ksplash 2>/dev/null || true
 @unexec rmdir %D/share/apps/kdisplay/color-schemes 2>/dev/null || true
 @unexec rmdir %D/share/apps/kdisplay 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
