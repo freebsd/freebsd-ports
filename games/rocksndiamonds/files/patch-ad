@@ -1,11 +1,11 @@
---- src/sound.h.orig	Sun Jun 20 18:05:54 1999
-+++ src/sound.h	Sun Jun 20 18:06:06 1999
-@@ -26,7 +26,7 @@
- extern void ioctl(long, long, void *);
- #endif
+--- src/libgame/sound.h.orig	Sat Dec 16 23:07:58 2000
++++ src/libgame/sound.h	Tue Jan 30 09:48:31 2001
+@@ -24,7 +24,7 @@
  
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) && !defined(NO_SOUNDS)
+ #if defined(PLATFORM_LINUX)
+ #include <linux/soundcard.h>
+-#elif defined(PLATFORM_FREEBSD)
++#elif defined(PLATFORM_FREEBSD) && !defined(NO_SOUNDS)
  #include <machine/soundcard.h>
- #endif
- 
+ #elif defined(PLATFORM_HPUX)
+ #include <sys/audio.h>

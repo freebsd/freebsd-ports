@@ -1,13 +1,13 @@
---- src/tools.c.orig	Sun Jun 20 18:09:07 1999
-+++ src/tools.c	Sun Jun 20 18:09:42 1999
+--- src/tools.c.orig	Tue Dec  5 02:14:16 2000
++++ src/tools.c	Tue Jan 30 09:50:28 2001
 @@ -13,10 +13,6 @@
  
  #include <stdarg.h>
  
--#ifdef __FreeBSD__
+-#if defined(PLATFORM_FREEBSD)
 -#include <machine/joystick.h>
 -#endif
 -
+ #include "libgame/libgame.h"
+ 
  #include "tools.h"
- #include "game.h"
- #include "events.h"
