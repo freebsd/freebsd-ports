@@ -1,12 +1,12 @@
 # New ports collection makefile for:	knapster
-# Version required:			0.5
+# Version required:			0.6
 # Date created:				06 January 2000
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	knapster-0.5
+DISTNAME=	knapster-0.6
 CATEGORIES=	audio kde
 MASTER_SITES=	http://knapster.netpedia.net/packages/
 
