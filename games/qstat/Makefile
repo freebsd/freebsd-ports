@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.4.a
-CATEGORIES=	games
-MASTER_SITES=	http://www.activesw.com/people/steve/
+PORTVERSION=	2.4.c
+CATEGORIES=	games net
+MASTER_SITES=	http://www.qstat.org/
 DISTNAME=	qstat${PORTVERSION:S/.//g}
 
-MAINTAINER=	darius@dons.net.au
+MAINTAINER=	pat@databits.net
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qstat ${PREFIX}/bin
