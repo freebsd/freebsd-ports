@@ -79,8 +79,6 @@ share/doc/vnc/makefile
 share/doc/vnc/newlogosmall2.gif
 share/doc/vnc/ns1.gif
 share/doc/vnc/ns1_small.gif
-share/doc/vnc/oldcontribs.html
-share/doc/vnc/oldfaq.html
 share/doc/vnc/platforms.html
 share/doc/vnc/pmw.jpg
 share/doc/vnc/protocol.html
