@@ -357,6 +357,8 @@
     SUBDIR += linux-libglade
     SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
+    SUBDIR += linux-understand_ada
+    SUBDIR += linux-understand_c
     SUBDIR += linux-understand_java
     SUBDIR += linux_devtools-6
     SUBDIR += linux_devtools-7
@@ -932,8 +934,6 @@
     SUBDIR += uds
     SUBDIR += uisp
     SUBDIR += umbrello
-    SUBDIR += understand_ada
-    SUBDIR += understand_c
     SUBDIR += upnp
     SUBDIR += ups-debug
     SUBDIR += varconf
