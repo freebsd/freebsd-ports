@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.3.8.1
-PORTREVISION=	1
+PORTVERSION=	1.3.10
+PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -39,10 +39,10 @@ VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 .if !defined(WITH_VPOPMAIL)
 CONFIGURE_ARGS+=	\
 		--without-authvchkpw
-PLIST_SUB+=	VPOPMAILFLAG="@comment "
 .else
+CONFIGURE_ARGS+=	\
+		--with-authvchkpw
 BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-PLIST_SUB+=	VPOPMAILFLAG=""
 .endif
 
 .if !defined(WITH_MYSQL)
@@ -57,11 +57,9 @@ PLIST_SUB+=	MYSQLFLAG=""
 .if !defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=	\
 		--with-authpam
-PLIST_SUB+=	PAMFLAG=""
 .else
 CONFIGURE_ARGS+=	\
 		--without-authpam
-PLIST_SUB+=	PAMFLAG="@comment "
 .endif
 
 MAN1=		maildirmake.1
