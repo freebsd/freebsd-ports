@@ -1,20 +1,17 @@
-
-$FreeBSD$
-
---- builds/unix/freetype-config.in.orig	Sat Feb  2 17:05:38 2002
-+++ builds/unix/freetype-config.in	Mon Feb 11 21:05:10 2002
+--- builds/unix/freetype-config.in.orig	Thu Apr 24 01:45:59 2003
++++ builds/unix/freetype-config.in	Tue Sep 30 01:39:03 2003
 @@ -79,12 +79,8 @@
  fi
  
  if test "$echo_cflags" = "yes" ; then
 - cflags="-I@includedir@/freetype2"
 - if test "@includedir@" != "/usr/include" ; then
--  echo -I@includedir@ $cflags
+-  echo $cflags -I@includedir@
 - else
 -  echo $cflags
 - fi
-+ cflags="-I@includedir@/freetype2 -I@includedir@"
-+ echo $cflags
++    cflags="-I@includedir@/freetype2 -I@includedir@"
++    echo $cflags
  fi
  
  if test "$echo_libs" = "yes" ; then

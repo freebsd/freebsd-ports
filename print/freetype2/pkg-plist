@@ -32,7 +32,7 @@ include/freetype2/freetype/ftpfr.h
 include/freetype2/freetype/ftrender.h
 include/freetype2/freetype/ftsizes.h
 include/freetype2/freetype/ftsnames.h
-include/freetype2/freetype/ftstroker.h
+include/freetype2/freetype/ftstroke.h
 include/freetype2/freetype/ftsynth.h
 include/freetype2/freetype/ftsysio.h
 include/freetype2/freetype/ftsysmem.h
@@ -71,10 +71,12 @@ include/freetype2/freetype/t1tables.h
 include/freetype2/freetype/ttnameid.h
 include/freetype2/freetype/tttables.h
 include/freetype2/freetype/tttags.h
+include/freetype2/freetype/ttunpat.h
 include/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
 lib/libfreetype.so.9
+libdata/pkgconfig/freetype2.pc
 share/aclocal/freetype2.m4
 @dirrm include/freetype2/freetype/internal
 @dirrm include/freetype2/freetype/config
