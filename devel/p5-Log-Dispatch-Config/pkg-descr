@@ -1,0 +1,4 @@
+Log::Dispatch::Config is a subclass of Log::Dispatch and provides a
+way to configure Log::Dispatch object with configulation file
+(default, in AppConfig format).  This is almost a log4j equivalent for
+Perl, not with all API compatibility though.
