@@ -16,10 +16,9 @@ MAINTAINER=	eivind@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=yes
 MAN6=		scavenger.6
 
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/scavenger.6 ${PREFIX}/man/man6/scavenger.6
+post-extract:
+	(cd ${WRKSRC}; ${CP} scavenger.6 scavenger.man)
 
 .include <bsd.port.mk>
