@@ -23,7 +23,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=-without-wlex-compat
+CONFIGURE_ARGS+=-without-wlex-compat -without-wlex
 
 USE_REINPLACE=	yes
 
