@@ -1,0 +1,7 @@
+giFTcurs is a cursed frontend to the giFT daemon and has been described as
+"seriously slick". It won't work that well without giFT, which you should have
+already. The version in CVS always works with the daemon in CVS. The latest
+giFTcurs release also works with the latest giFT release, and there are very
+rarely any incompatible changes in the protocol.
+
+WWW: http://www.nongnu.org/giftcurs/

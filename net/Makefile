@@ -154,6 +154,7 @@
     SUBDIR += geta
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += giftcurs
     SUBDIR += gini
     SUBDIR += gift
     SUBDIR += gkrellm_snmp
