@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_auth_external
-PORTVERSION=	2.1.12
+PORTVERSION=	2.1.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.wwnet.net/~janc/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
