@@ -3500,6 +3500,7 @@ indexme		ports/www/indexme
 indubstrial	ports/x11-themes/indubstrial
 ines		ports/emulators/ines
 info2html	ports/textproc/info2html
+info2man	ports/textproc/info2man
 info_to_html	ports/textproc/info_to_html
 infobot		ports/irc/infobot
 infobus		ports/java/infobus
