@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xscavenger
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xdr.com/dash/
-DISTNAME=	xscavenger-135
+DISTNAME=	xscavenger-142
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eivind@FreeBSD.org

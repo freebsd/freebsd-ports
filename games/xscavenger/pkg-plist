@@ -1,5 +1,4 @@
 bin/scavenger
-lib/X11/scavenger/scavserver
 lib/X11/scavenger/badguy.lbm
 lib/X11/scavenger/brownblue.lbm
 lib/X11/scavenger/death.raw
