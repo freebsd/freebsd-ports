@@ -1792,6 +1792,7 @@ eukleides	ports/math/eukleides
 euler		ports/science/euler
 eval		ports/math/eval
 evas		ports/graphics/evas
+eventwatcher	ports/sysutils/eventwatcher
 evg		ports/www/evg
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
