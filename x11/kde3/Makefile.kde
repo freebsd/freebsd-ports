@@ -97,19 +97,15 @@ _NO_KDE_FIXPTHREAD=	yes
 .endif
 
 .if !defined(_NO_KDE_FIXPTHREAD)
-PTHFIX_DATE?=	2003092201
-MASTER_SITES+=	http://www.fruitsalad.org/patches/:kde \
-		${MASTER_SITE_KDE_kde:S,src,FreeBSD/patches,g}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-${PTHFIX_DATE}-configure.tar.bz2:kde
-PATCH_SITES+=	http://www.fruitsalad.org/patches/:kde \
-		${MASTER_SITE_KDE_kde:S,src,FreeBSD/patches,g}
-PATCHFILES+=	patch-ltmain.sh:kde
 USE_REINPLACE=	yes
 
-pre-configure: fix-pedantic
-fix-pedantic:
-	@${REINPLACE_CMD} "s,-pedantic,,g" ${WRKSRC}/configure
+pre-configure: kde-fix-configure kde-fix-ltmain.sh
+kde-fix-configure:
+	${REINPLACE_CMD} "s,-pedantic,,g; \
+			   s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+
+kde-fix-ltmain.sh:
+	${REINPLACE_CMD} "s, | .*freebsd\*)$$,*),g" ${WRKSRC}/admin/ltmain.sh
 .endif
 
 kde-version-check:
