@@ -19,6 +19,7 @@
     SUBDIR += dore
     SUBDIR += electriceyes
     SUBDIR += enfle
+    SUBDIR += eog
     SUBDIR += eterm-bg
     SUBDIR += fbm
     SUBDIR += flashplayer
