@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rsync
-PORTVERSION=	2.5.4
+PORTVERSION=	2.5.5
 PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 GNU_CONFIGURE=	yes
 
