@@ -3,21 +3,21 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:23:49 asami Exp $
+# $Id: Makefile,v 1.5 1996/12/11 23:03:42 ache Exp $
 #
 
-DISTNAME=       uudeview-0.5.9
-PKGNAME=        uulib-0.5.9
+DISTNAME=       uudeview-0.5.13
+PKGNAME=        uulib-0.5.13
 CATEGORIES=	devel
-MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/
+MASTER_SITES=	ftp://ftp.uni-frankfurt.de/pub/dist/frank/ \
+		http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/  \
+		ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/         
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libuu.a
-
-EXTRAFILES+=	uulib.3
-EXTRAFILES+=	porting.notes
+MAN3=		uulib.3
 
 DOCFILES+=	doc/Makefile
 DOCFILES+=	doc/README
@@ -28,28 +28,20 @@ DOCFILES+=	doc/td-v1.c
 DOCFILES+=	doc/td-v2.c
 DOCFILES+=	doc/td-v3.c
 DOCFILES+=	doc/test.txt
-DOCFILES+=	porting.notes
-
-post-patch:
-	@for l in ${EXTRAFILES}; \
-	do \
-		cp ${FILESDIR}/$${l} ${WRKSRC}/$${l}; \
-	done
 
 do-install:
-.if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/uulib
-	for l in ${DOCFILES}; \
-	do \
-		cp ${WRKSRC}/$$l ${PREFIX}/share/doc/uulib; \
-	done
-.endif
-	cp ${WRKSRC}/uulib.3 ${PREFIX}/man/man3/uulib.3
+	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.a ${PREFIX}/lib
+	/usr/bin/ranlib ${PREFIX}/lib/libuu.a
+	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include/uu.h
+	${INSTALL_MAN} ${FILESDIR}/uulib.3 ${PREFIX}/man/man3
 	perl -pi -e '$$a = '\''${PREFIX}/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man3/uulib.3
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man3/uulib.3
+.if !defined(NOPORTDOCS)
+	@echo "===>   Installing documentation for ${PKGNAME}"
+	@${MKDIR} ${PREFIX}/share/doc/uulib
+	@${INSTALL_MAN} ${FILESDIR}/porting.notes ${PREFIX}/share/doc/uulib
+.for docfile in ${DOCFILES}
+	@${INSTALL_MAN} ${WRKSRC}/${docfile} ${PREFIX}/share/doc/uulib
+.endfor
 .endif
-	cp ${WRKSRC}/uulib/libuu.a ${PREFIX}/lib/libuu.a
-	cp ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include/uu.h
 
 .include <bsd.port.mk>
