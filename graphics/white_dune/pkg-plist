@@ -256,7 +256,7 @@ bin/illegal2vrml
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/spheretransform.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid2indexedfaceset.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid2nurbssurface.jpg
-%%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid2nurbssurface_dialog.jpg
+%%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid2nurbssurface_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid2nurbssurface_inexact.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid_box_smooth.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/superellipsoid_cylinder.jpg
@@ -267,8 +267,9 @@ bin/illegal2vrml
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/superextrusion.png
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/supershape.png
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/supershape2nurbssurface.png
-%%PORTDOCS%%%%DOCSDIR%%/usage_docs/supershape2nurbssurface_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/supershape_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/usage_docs/supershapes.jpg
+%%PORTDOCS%%%%DOCSDIR%%/usage_docs/supershapes.wrl
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/symetric1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/symetric2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/usage_docs/tess0.jpg
