@@ -7,6 +7,7 @@
 
 PORTNAME=	sformat
 PORTVERSION=	3.5
+PORTREVISON=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
 		ftp://ftp.berlios.de/pub/sformat/
