@@ -1,0 +1,14 @@
+bin/gdcalc
+share/applnk/Applications/gdcalc.kdelnk
+share/gnome/apps/Utilities/gdcalc.desktop
+share/icons/HP-16C-48.xpm
+share/icons/mini-HP-16C-48.xpm
+share/pixmaps/HP-16C-48.xpm
+share/pixmaps/mini-HP-16C-48.xpm
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
+@unexec rmdir %D/share/gnome/ 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
