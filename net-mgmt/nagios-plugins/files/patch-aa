@@ -1,0 +1,238 @@
+--- configure	Mon Jun 26 11:49:40 2000
++++ configure.new	Wed Jul 12 12:17:48 2000
+@@ -11,7 +11,7 @@
+ ac_help=
+ ac_default_prefix=/usr/local
+ # Any additions from configure.in:
+-ac_default_prefix=/usr/local/netsaint
++#ac_default_prefix=/usr/local/netsaint
+ ac_help="$ac_help
+ --with-cgiurl=<dir> sets URL for cgi programs"
+ ac_help="$ac_help
+@@ -47,12 +47,12 @@
+ x_includes=NONE
+ x_libraries=NONE
+ bindir='${exec_prefix}/bin'
+-sbindir='${exec_prefix}/sbin'
+-libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
+-sysconfdir='${prefix}/etc'
++sbindir='${exec_prefix}/share/netsaint/sbin'
++libexecdir='${exec_prefix}/libexec/netsaint'
++datadir='${prefix}/share/netsaint'
++sysconfdir='${prefix}/etc/netsaint'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='${prefix}/var/netsaint'
+ libdir='${exec_prefix}/lib'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+@@ -3116,15 +3116,15 @@
+ EOF
+ 
+         echo "      ps syntax... $PATH_TO_PS -eo 's  comm vsz rss user ppid args'"
+-elif ps -Ao 's comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
++elif ps -axo 's comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
+ then
+         cat >> confdefs.h <<EOF
+-#define PS_RAW_COMMAND "$PATH_TO_PS -Ao 's user ppid args'"
++#define PS_RAW_COMMAND "$PATH_TO_PS -axo 's user ppid args'"
+ EOF
+ 
+ 	EXTRAS="$EXTRAS check_netsaint"
+ 	cat >> confdefs.h <<EOF
+-#define PS_COMMAND "$PATH_TO_PS -Ao 's uid ppid comm args'"
++#define PS_COMMAND "$PATH_TO_PS -axo 's uid ppid comm args'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3132,7 +3132,7 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define VSZ_COMMAND "$PATH_TO_PS -Ao 'vsz comm'"
++#define VSZ_COMMAND "$PATH_TO_PS -axo 'vsz comm'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3140,23 +3140,23 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define RSS_COMMAND "$PATH_TO_PS -Ao 'rss comm'"
++#define RSS_COMMAND "$PATH_TO_PS -axo 'rss comm'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+ #define RSS_FORMAT "%d %s"
+ EOF
+ 
+-	echo "      ps syntax... $PATH_TO_PS -Ao 's comm vsz rss'"
+-elif ps -Ao 'status comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
++	echo "      ps syntax... $PATH_TO_PS -axo 's comm vsz rss'"
++elif ps -axo 'status comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
+ then
+         cat >> confdefs.h <<EOF
+-#define PS_RAW_COMMAND "$PATH_TO_PS -Ao 'status user ppid args'"
++#define PS_RAW_COMMAND "$PATH_TO_PS -axo 'status user ppid args'"
+ EOF
+ 
+ 	EXTRAS="$EXTRAS check_netsaint"
+ 	cat >> confdefs.h <<EOF
+-#define PS_COMMAND "$PATH_TO_PS -Ao 'status uid ppid comm args'"
++#define PS_COMMAND "$PATH_TO_PS -axo 'status uid ppid comm args'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3164,7 +3164,7 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define VSZ_COMMAND "$PATH_TO_PS -Ao 'vsz comm'"
++#define VSZ_COMMAND "$PATH_TO_PS -axo 'vsz comm'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3172,23 +3172,23 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define RSS_COMMAND "$PATH_TO_PS -Ao 'rss comm'"
++#define RSS_COMMAND "$PATH_TO_PS -axo 'rss comm'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+ #define RSS_FORMAT "%d %s"
+ EOF
+ 
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'status comm vsz rss'"
+-elif ps -Ao 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
++	echo "      ps syntax... $PATH_TO_PS -axo 'status comm vsz rss'"
++elif ps -axo 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
+ then
+         cat >> confdefs.h <<EOF
+-#define PS_RAW_COMMAND "$PATH_TO_PS -Ao 'state user ppid args'"
++#define PS_RAW_COMMAND "$PATH_TO_PS -axo 'state user ppid args'"
+ EOF
+ 
+ 	EXTRAS="$EXTRAS check_netsaint"
+ 	cat >> confdefs.h <<EOF
+-#define PS_COMMAND "$PATH_TO_PS -Ao 'state uid ppid comm args'"
++#define PS_COMMAND "$PATH_TO_PS -axo 'state uid ppid comm args'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3196,7 +3196,7 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define VSZ_COMMAND "$PATH_TO_PS -Ao 'vsz comm'"
++#define VSZ_COMMAND "$PATH_TO_PS -axo 'vsz comm'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3204,14 +3204,14 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define RSS_COMMAND "$PATH_TO_PS -Ao 'rss comm'"
++#define RSS_COMMAND "$PATH_TO_PS -axo 'rss comm'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+ #define RSS_FORMAT "%d %s"
+ EOF
+ 
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state comm vsz rss'"
++	echo "      ps syntax... $PATH_TO_PS -axo 'state comm vsz rss'"
+ elif ps -ao 'state command vsz rss user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
+ then
+         cat >> confdefs.h <<EOF
+@@ -3228,7 +3228,7 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define VSZ_COMMAND "$PATH_TO_PS -ao 'vsz command'"
++#define VSZ_COMMAND "$PATH_TO_PS -axo 'vsz command'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3243,16 +3243,16 @@
+ #define RSS_FORMAT "%d %s"
+ EOF
+ 
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state command vsz rss'"
+-elif ps waxco 'state command vsz rss uid user ppid' 2>/dev/null | egrep -i "^STAT +COMMAND +VSZ +RSS +UID +USER +PPID" >/dev/null
++	echo "      ps syntax... $PATH_TO_PS -axo 'state command vsz rss'"
++elif ps waxo 'state command vsz rss uid user ppid' 2>/dev/null | egrep -i "^STAT +COMMAND +VSZ +RSS +UID +USER +PPID" >/dev/null
+ then
+         cat >> confdefs.h <<EOF
+-#define PS_RAW_COMMAND "$PATH_TO_PS waxco 'state uid ppid command'"
++#define PS_RAW_COMMAND "$PATH_TO_PS waxo 'state uid ppid command'"
+ EOF
+ 
+ 	EXTRAS="$EXTRAS check_netsaint"
+ 	cat >> confdefs.h <<EOF
+-#define PS_COMMAND "$PATH_TO_PS waxco 'state uid ppid command'"
++#define PS_COMMAND "$PATH_TO_PS waxo 'state uid ppid command'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3260,7 +3260,7 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define VSZ_COMMAND "$PATH_TO_PS waxco 'vsz command'"
++#define VSZ_COMMAND "$PATH_TO_PS waxo 'vsz command'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+@@ -3268,18 +3268,18 @@
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+-#define RSS_COMMAND "$PATH_TO_PS waxco 'rss command'"
++#define RSS_COMMAND "$PATH_TO_PS waxo 'rss command'"
+ EOF
+ 
+ 	cat >> confdefs.h <<EOF
+ #define RSS_FORMAT "%d %s"
+ EOF
+ 
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state command vsz rss'"
++	echo "      ps syntax... $PATH_TO_PS -axo 'state command vsz rss'"
+ elif ps waxno 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S +COMMAND +VSZ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null
+ then
+         cat >> confdefs.h <<EOF
+-#define PS_RAW_COMMAND "$PATH_TO_PS waxco 'state user ppid command'"
++#define PS_RAW_COMMAND "$PATH_TO_PS waxo 'state user ppid command'"
+ EOF
+ 
+ 	EXTRAS="$EXTRAS check_netsaint"
+@@ -3307,7 +3307,7 @@
+ #define RSS_FORMAT "%d %s"
+ EOF
+ 
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state command vsz rss'"
++	echo "      ps syntax... $PATH_TO_PS -axo 'state command vsz rss'"
+ elif ps -el 2>/dev/null | egrep -i "^ *F +S +UID +PID +PPID +C +PRI +NI +P +SZ +RSS +WCHAN +TTY +TIME +[RGSCOMDNA]+" >/dev/null
+ then
+ 	cat >> confdefs.h <<EOF
+@@ -3597,17 +3597,6 @@
+ EOF
+ 
+ 	echo "      ping syntax... $PATH_TO_PING -n -h <host> -s 56 -c <count>"
+-elif ping -n -s 56 -c 1 127.0.0.1 2>/dev/null | egrep -i "^round-trip" >/dev/null
+-then
+-	cat >> confdefs.h <<EOF
+-#define PING_COMMAND "$PATH_TO_PING -n -s 56 -c %d %s"
+-EOF
+-
+-	cat >> confdefs.h <<EOF
+-#define PING_PACKETS_FIRST "$PATH_TO_PING -n -s 56 -c %d %s"
+-EOF
+-
+-	echo "      ping syntax... $PATH_TO_PING -n -s 56 -c <count> <host>"
+ elif ping -n -c 1 127.0.0.1 2>/dev/null | egrep -i "^round-trip" >/dev/null
+ then
+ 	cat >> confdefs.h <<EOF

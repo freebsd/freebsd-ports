@@ -138,6 +138,7 @@
     SUBDIR += netcat
     SUBDIR += netpipes
     SUBDIR += netsaint
+    SUBDIR += netsaint-plugins
     SUBDIR += nettest
     SUBDIR += ngrep
     SUBDIR += nocol

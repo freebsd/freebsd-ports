@@ -1,0 +1,104 @@
+--- configure.in	Wed Jul 12 12:18:15 2000
++++ configure.in.new	Wed Jul 12 12:22:11 2000
+@@ -223,39 +223,39 @@
+ 	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -eo 'rss comm'")
+ 	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
+         echo "      ps syntax... $PATH_TO_PS -eo 's  comm vsz rss user ppid args'"
+-elif [ps -Ao 's comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
++elif [ps -axo 's comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
+ then
+-        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -Ao 's user ppid args'")
++        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -axo 's user ppid args'")
+ 	EXTRAS="$EXTRAS check_netsaint"
+-	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -Ao 's uid ppid comm args'")
++	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -axo 's uid ppid comm args'")
+ 	AC_DEFINE_UNQUOTED(PS_FORMAT,"%s %d %d %s")
+-	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -Ao 'vsz comm'")
++	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -axo 'vsz comm'")
+ 	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
+-	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -Ao 'rss comm'")
++	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -axo 'rss comm'")
+ 	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
+-	echo "      ps syntax... $PATH_TO_PS -Ao 's comm vsz rss'"
+-elif [ps -Ao 'status comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
++	echo "      ps syntax... $PATH_TO_PS -axo 's comm vsz rss'"
++elif [ps -axo 'status comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
+ then
+-        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -Ao 'status user ppid args'")
++        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -axo 'status user ppid args'")
+ 	EXTRAS="$EXTRAS check_netsaint"
+-	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -Ao 'status uid ppid comm args'")
++	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -axo 'status uid ppid comm args'")
+ 	AC_DEFINE_UNQUOTED(PS_FORMAT,"%s %d %d %s")
+-	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -Ao 'vsz comm'")
++	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -axo 'vsz comm'")
+ 	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
+-	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -Ao 'rss comm'")
++	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -axo 'rss comm'")
+ 	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'status comm vsz rss'"
+-elif [ps -Ao 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
++	echo "      ps syntax... $PATH_TO_PS -axo 'status comm vsz rss'"
++elif [ps -axo 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
+ then
+-        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -Ao 'state user ppid args'")
++        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -axo 'state user ppid args'")
+ 	EXTRAS="$EXTRAS check_netsaint"
+-	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -Ao 'state uid ppid comm args'")
++	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS -axo 'state uid ppid comm args'")
+ 	AC_DEFINE_UNQUOTED(PS_FORMAT,"%s %d %d %s")
+-	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -Ao 'vsz comm'")
++	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS -axo 'vsz comm'")
+ 	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
+-	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -Ao 'rss comm'")
++	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -axo 'rss comm'")
+ 	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state comm vsz rss'"
++	echo "      ps syntax... $PATH_TO_PS -axo 'state comm vsz rss'"
+ elif [ps -ao 'state command vsz rss user ppid args' 2>/dev/null | egrep -i "^S[TAUES]* +C[OMDNA]+ +V[SIZE]+ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
+ then
+         AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS -ao 'state user ppid args'")
+@@ -266,23 +266,23 @@
+ 	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
+ 	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS -ao 'rss command'")
+ 	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state command vsz rss'"
++	echo "      ps syntax... $PATH_TO_PS -axo 'state command vsz rss'"
+ dnl FreeBSD
+-elif [ps waxco 'state command vsz rss uid user ppid' 2>/dev/null | egrep -i "^STAT +COMMAND +VSZ +RSS +UID +USER +PPID" >/dev/null]
++elif [ps waxo 'state command vsz rss uid user ppid' 2>/dev/null | egrep -i "^STAT +COMMAND +VSZ +RSS +UID +USER +PPID" >/dev/null]
+ then
+-        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS waxco 'state uid ppid command'")
++        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS waxo 'state uid ppid command'")
+ 	EXTRAS="$EXTRAS check_netsaint"
+-	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS waxco 'state uid ppid command'")
++	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS waxo 'state uid ppid command'")
+ 	AC_DEFINE_UNQUOTED(PS_FORMAT,"%s %d %d %s")
+-	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS waxco 'vsz command'")
++	AC_DEFINE_UNQUOTED(VSZ_COMMAND,"$PATH_TO_PS waxo 'vsz command'")
+ 	AC_DEFINE_UNQUOTED(VSZ_FORMAT,"%d %s")
+-	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS waxco 'rss command'")
++	AC_DEFINE_UNQUOTED(RSS_COMMAND,"$PATH_TO_PS waxo 'rss command'")
+ 	AC_DEFINE_UNQUOTED(RSS_FORMAT,"%d %s")
+-	echo "      ps syntax... $PATH_TO_PS -Ao 'state command vsz rss'"
++	echo "      ps syntax... $PATH_TO_PS -axo 'state command vsz rss'"
+ dnl BSD-like mode in RH 6.1
+ elif [ps waxno 'state comm vsz rss uid user ppid args' 2>/dev/null | egrep -i "^S +COMMAND +VSZ +RSS +UID +USER +PPID +[RGSCOMDNA]+" >/dev/null]
+ then
+-        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS waxco 'state user ppid command'")
++        AC_DEFINE_UNQUOTED(PS_RAW_COMMAND,"$PATH_TO_PS waxo 'state user ppid command'")
+ 	EXTRAS="$EXTRAS check_netsaint"
+ 	AC_DEFINE_UNQUOTED(PS_COMMAND,"$PATH_TO_PS waxno 'state uid ppid comm args'")
+ 	AC_DEFINE_UNQUOTED(PS_FORMAT,"%s %d %d %s")
+@@ -386,11 +386,6 @@
+ then
+ 	AC_DEFINE_UNQUOTED(PING_COMMAND,"$PATH_TO_PING -n -h %s -s 56 -c %d")
+ 	echo "      ping syntax... $PATH_TO_PING -n -h <host> -s 56 -c <count>"
+-elif [ping -n -s 56 -c 1 127.0.0.1 2>/dev/null | egrep -i "^round-trip" >/dev/null]
+-then
+-	AC_DEFINE_UNQUOTED(PING_COMMAND,"$PATH_TO_PING -n -s 56 -c %d %s")
+-	AC_DEFINE_UNQUOTED(PING_PACKETS_FIRST,"$PATH_TO_PING -n -s 56 -c %d %s")
+-	echo "      ping syntax... $PATH_TO_PING -n -s 56 -c <count> <host>"
+ elif [ping -n -c 1 127.0.0.1 2>/dev/null | egrep -i "^round-trip" >/dev/null]
+ then
+ 	AC_DEFINE_UNQUOTED(PING_COMMAND,"$PATH_TO_PING -n -c %d %s")
