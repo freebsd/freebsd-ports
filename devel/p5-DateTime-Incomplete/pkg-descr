@@ -1,0 +1,6 @@
+DateTime::Incomplete is a class for representing partial dates and times.
+
+These are actually encountered relatively frequently. For example, a birthday
+is commonly given as a month and day, without a year. 
+
+WWW: http://datetime.perl.org/

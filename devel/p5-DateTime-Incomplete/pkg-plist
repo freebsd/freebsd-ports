@@ -1,0 +1,5 @@
+%%SITE_PERL%%/DateTime/Incomplete.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Incomplete/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Incomplete
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
