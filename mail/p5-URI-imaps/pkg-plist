@@ -1,0 +1,5 @@
+%%SITE_PERL%%/URI/imaps.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/imaps/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/imaps
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/URI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/URI 2>/dev/null || true
