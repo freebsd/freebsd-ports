@@ -25,7 +25,7 @@ DISTFILES=	\
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.3 (inprogress version)
 
 NO_CDROM=	'dated material'
