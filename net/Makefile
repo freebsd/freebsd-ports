@@ -62,6 +62,7 @@
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
     SUBDIR += gopher
+    SUBDIR += gtic
     SUBDIR += gtksamba
     SUBDIR += gtkyahoo
     SUBDIR += h2n
@@ -142,6 +143,7 @@
     SUBDIR += radius
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron
+    SUBDIR += radreport
     SUBDIR += ratoolset
     SUBDIR += rdist6
     SUBDIR += relay
