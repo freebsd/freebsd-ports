@@ -1,5 +1,5 @@
 *** makefile.unx.bak	Sun Sep 29 23:27:00 1996
---- makefile.unx	Tue Jan 14 01:06:55 1997
+--- Makefile	Tue Jan 14 01:06:55 1997
 ***************
 *** 23,30 ****
    charts0.o charts1.o charts2.o charts3.o intrpret.o\

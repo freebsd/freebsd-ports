@@ -1,38 +1,30 @@
-*** astrolog.h.bak	Sun Sep 29 23:27:00 1996
---- astrolog.h	Tue Jan 14 01:16:37 1997
+*** astrolog.h.orig	Sun Feb  2 23:06:03 1997
+--- astrolog.h	Thu May 29 05:06:03 1997
 ***************
-*** 47,61 ****
-  ** the X11 graphics can be disabled even if you are running X windows.
-  */
+*** 82,92 ****
+  #define ENVIRON /* Comment out this #define if your system doesn't have  */
+                  /* environment variables or can't compile calls to them. */
   
-! #define PC /* Comment out this #define if you have a Unix, Mac, or other */
-             /* system that isn't a generic PC running DOS or MS Windows.  */
+! #define ATOF /* Comment out this #define if you have a system in which  */
+               /* 'atof' and related functions aren't defined in stdio.h, */
+               /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
   
-  /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
+! /*#define PROTO /* Comment out this #define if you have an older compiler   */
+                /* which doesn't allow full Ansi function prototypes. This  */
+                /* is for programmers only and has no effect on executable. */
   
-! /*#define X11 /* Comment out this #define if you don't have X windows, or */
-              /* else have them and don't wish to compile in X graphics.  */
+--- 82,92 ----
+  #define ENVIRON /* Comment out this #define if your system doesn't have  */
+                  /* environment variables or can't compile calls to them. */
   
-! #define WIN /* Comment out this #define if you don't have MS Windows, or */
-              /* else have them but want to compile a DOS version instead. */
+! /*#define ATOF /* Comment out this #define if you have a system in which  */
+               /* 'atof' and related functions aren't defined in stdio.h, */
+               /* such as most PC's, Linux, VMS compilers, and NeXT's.    */
   
-  /*#define MSG /* Comment out this #define if you don't have access to the     */
---- 47,61 ----
-  ** the X11 graphics can be disabled even if you are running X windows.
-  */
+! #define PROTO /* Comment out this #define if you have an older compiler   */
+                /* which doesn't allow full Ansi function prototypes. This  */
+                /* is for programmers only and has no effect on executable. */
   
-! /*#define PC /* Comment out this #define if you have a Unix, Mac, or other */
-             /* system that isn't a generic PC running DOS or MS Windows.  */
-  
-  /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
-  
-! #define X11 /* Comment out this #define if you don't have X windows, or */
-              /* else have them and don't wish to compile in X graphics.  */
-  
-! /*#define WIN /* Comment out this #define if you don't have MS Windows, or */
-              /* else have them but want to compile a DOS version instead. */
-  
-  /*#define MSG /* Comment out this #define if you don't have access to the     */
 ***************
 *** 131,137 ****
 --- 131,139 ----
