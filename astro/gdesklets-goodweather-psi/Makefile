@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	gdesklets-
 PKGNAMESUFFIX=	-psi
 DISTNAME=	GoodWeather-psi
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A desklet that displays current weather condition and forecast
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/gdesklets/Sensors/GoodWeather/__init__.py:${PORTSDIR}/astro/gdesklets-goodweather \
