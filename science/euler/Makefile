@@ -14,13 +14,14 @@ MASTER_SITE_SUBDIR=	euler
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:R}/source
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
 
 post-patch:
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g ; \
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g ; \
 		s,gtk-config,${GTK_CONFIG},g ; \
 		s,glib-config,${GLIB_CONFIG},g" ${WRKSRC}/${MAKEFILE}
 
