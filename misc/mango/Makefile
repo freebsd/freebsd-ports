@@ -7,6 +7,7 @@
 
 PORTNAME=	mango
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://mango.sourceforge.net/pub/mango/
 
@@ -21,7 +22,6 @@ MAKE_ENV+=	QTDIR=${X11BASE}
 
 do-build:
 	(cd ${WRKSRC}; ${SETENV} ${TMAKEENV} tmake -o Makefile mango.pro)
-	(${PERL} -pi.orig -e "s@-lqt2@-lqtgl@g" ${WRKSRC}/Makefile)
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
