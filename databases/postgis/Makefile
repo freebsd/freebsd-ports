@@ -23,9 +23,9 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 MAKE_ARGS=	PGSQL_SRC=${PGSQL_SRC}
 
-PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql7
+PGSQL_PORTDIR=	${WRKDIR}/../../../databases/postgresql7
 WRKSRC=		${WRKDIR}/postgis-${PORTVERSION}
-PGSQL_SRC=	${WRKDIRPREFIX}${PGSQL_PORTDIR}/work/postgresql-7.4.3
+PGSQL_SRC=	${PGSQL_PORTDIR}/work/postgresql-7.4.3
 INSTALL_TARGET=	install
 
 .if defined(WITH_GEOS)
