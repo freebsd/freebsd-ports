@@ -8822,6 +8822,7 @@ q3server-ra3	ports/games/q3server-ra3
 q3server-ut	ports/games/q3server-ut
 q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
+qalculate	ports/math/qalculate
 qbrew		ports/misc/qbrew
 qca-tls		ports/security/qca-tls
 qcad		ports/cad/qcad
