@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
@@ -37,7 +36,7 @@ ONLY_FOR_ARCHS=		i386
 # There are some problems on alpha and sparc64; use 1.8 or later.
 ONLY_FOR_ARCHS+=	alpha sparc64
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 
 RUBY_VER=	1.6
 
