@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} ${PKGDIR}/INSTALL
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 pre-patch:

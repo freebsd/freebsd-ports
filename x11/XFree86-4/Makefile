@@ -57,7 +57,7 @@ pre-fetch:
 .if ${USA_RESIDENT} == NO
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} ${PKGDIR}/INSTALL
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
@@ -69,7 +69,7 @@ IGNOREFILES=	Wraphelp.c
 .if ${USA_RESIDENT} == YES
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} ${PKGDIR}/INSTALL
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
