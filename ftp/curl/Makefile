@@ -7,7 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
