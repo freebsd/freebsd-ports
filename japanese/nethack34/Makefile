@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	4
+PORTREVISION=	0
 
 CATEGORIES=	japanese games
 
@@ -20,8 +20,8 @@ MD5_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-PATCH_SITES=	http://downloads.sourceforge.jp/jnethack/1864/
-PATCHFILES=	jnethack-${PORTVERSION}-0.9.diff.gz
+PATCH_SITES=	http://downloads.sourceforge.jp/jnethack/4546/
+PATCHFILES=	jnethack-${PORTVERSION}-0.2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 USE_BISON=	yes
