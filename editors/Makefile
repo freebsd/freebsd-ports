@@ -1,6 +1,9 @@
-# $Id: Makefile,v 1.61 1998/12/13 14:23:50 kuriyama Exp $
+# $Id: Makefile,v 1.62 1998/12/20 05:24:18 msmith Exp $
 #
 
+    SUBDIR += apel-emacs
+    SUBDIR += apel-emacs20
+    SUBDIR += apel-mule
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
