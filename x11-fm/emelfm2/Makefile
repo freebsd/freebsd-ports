@@ -9,7 +9,7 @@ PORTNAME=	emelfm2
 PORTVERSION=	0.0.9
 PORTREVISION=	1
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://dasui.prima.de/~tooar/
+MASTER_SITES=	http://www.emelfm2.org/rel/
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	The gtk2 port of emelfm, a fast graphical filemanager
