@@ -127,7 +127,7 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.8
+lib/libgal.so.9
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
@@ -141,6 +141,24 @@ share/gnome/gal/html/gal-sections.txt
 share/gnome/gal/html/gal.hierarchy
 share/gnome/gal/html/gal.signals
 share/gnome/gal/html/gal.types
+share/gnome/pixmaps/gal/categories/category_birthday_16.png
+share/gnome/pixmaps/gal/categories/category_business_16.png
+share/gnome/pixmaps/gal/categories/category_favorites_16.png
+share/gnome/pixmaps/gal/categories/category_gifts_16.png
+share/gnome/pixmaps/gal/categories/category_goals_16.png
+share/gnome/pixmaps/gal/categories/category_holiday-cards_16.png
+share/gnome/pixmaps/gal/categories/category_holiday_16.png
+share/gnome/pixmaps/gal/categories/category_hot-contacts_16.png
+share/gnome/pixmaps/gal/categories/category_ideas_16.png
+share/gnome/pixmaps/gal/categories/category_international_16.png
+share/gnome/pixmaps/gal/categories/category_key-customer_16.png
+share/gnome/pixmaps/gal/categories/category_miscellaneous_16.png
+share/gnome/pixmaps/gal/categories/category_personal_16.png
+share/gnome/pixmaps/gal/categories/category_phonecalls_16.png
+share/gnome/pixmaps/gal/categories/category_status_16.png
+share/gnome/pixmaps/gal/categories/category_strategies_16.png
+share/gnome/pixmaps/gal/categories/category_suppliers_16.png
+share/gnome/pixmaps/gal/categories/category_time-and-expenses_16.png
 share/locale/az/LC_MESSAGES/gal.mo
 share/locale/ca/LC_MESSAGES/gal.mo
 share/locale/cs/LC_MESSAGES/gal.mo
@@ -167,10 +185,13 @@ share/locale/sv/LC_MESSAGES/gal.mo
 share/locale/ta/LC_MESSAGES/gal.mo
 share/locale/tr/LC_MESSAGES/gal.mo
 share/locale/uk/LC_MESSAGES/gal.mo
-@dirrm share/gnome/gal/%%VERSION%%/glade
-@dirrm share/gnome/gal/%%VERSION%%
+share/locale/zh_TW.Big5/LC_MESSAGES/gal.mo
+@dirrm share/gnome/pixmaps/gal/categories
+@dirrm share/gnome/pixmaps/gal
 @dirrm share/gnome/gal/html/gal
 @dirrm share/gnome/gal/html
+@dirrm share/gnome/gal/%%VERSION%%/glade
+@dirrm share/gnome/gal/%%VERSION%%
 @dirrm share/gnome/gal
 @dirrm share/gnome/etable/%%VERSION%%/glade
 @dirrm share/gnome/etable/%%VERSION%%
