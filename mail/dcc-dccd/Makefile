@@ -29,7 +29,7 @@ MAN8=		cdcc.8		dcc.8		dccd.8 \
 PLIST_SUB+=	WITH_SENDMAIL=""
 .else
 CONFIGURE_ARGS+=	--disable-dccm --disable-dccifd
-PLIST_SUB+=	WITH_SENDMAIL="@comment"
+PLIST_SUB+=	WITH_SENDMAIL="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
