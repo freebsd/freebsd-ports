@@ -3,12 +3,14 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1995/11/02 08:07:29 asami Exp $
+# $Id: Makefile,v 1.5 1996/07/20 06:54:33 pst Exp $
 #
 
 DISTNAME=       gnats-3.97-beta
 CATEGORIES+=	databases
 MASTER_SITES=   ftp://ftp.cygnus.com/pub/
+
+NO_PACKAGE=	"Requires gnats UID"
 
 # we've got some .elc and info files to compile (yuck)
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
