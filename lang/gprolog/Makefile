@@ -17,6 +17,8 @@ MAINTAINER=	yotta@dougdidit.com
 
 CONFIGURE_ARGS=	--disable-linedit
 
+PLIST_SUB+=	GPROLOG_VER=1.2.16
+
 GNU_CONFIGURE=	yes
 AUTOCONF=	autoconf
 USE_AUTOCONF_VER=	253
