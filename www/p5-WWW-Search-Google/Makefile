@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl WWW::Search class for searching Google
 
 BUILD_DEPENDS=	${SITE_PERL}/WWW/Search.pm:${PORTSDIR}/www/p5-WWW-Search \
