@@ -1,15 +1,22 @@
-The Berkeley Internet Name Daemon, an implementation of DNS.
+BIND version 9 is a major rewrite of nearly all aspects of the underlying
+BIND architecture.  Some of the important features of BIND 9 are:
 
-BIND 8 Features
-	-> DNS Dynamic Updates (RFC 2136)
-	-> DNS Change Notification (RFC 1996)
-	-> Completely new configuration syntax
-	-> Flexible, categorized logging system
-	-> IP-address-based access control for queries, zone transfers, and
-	   updates that may be specified on a zone-by-zone basis
-	-> More efficient zone transfers
-	-> Improved performance for servers with thousands of zones
-	-> The server no longer forks for outbound zone transfers
-	-> Many bug fixes
+DNS Security
+     DNSSEC (signed zones)
+     TSIG (signed DNS requests)
+IP version 6
+     Answers DNS queries on IPv6 sockets
+     IPv6 resource records (A6, DNAME, etc.)
+     Bitstring Labels
+     Experimental IPv6 Resolver Library
+DNS Protocol Enhancements
+     IXFR, DDNS, Notify, EDNS0
+     Improved standards conformance
+Views
+     One server process can provide multiple "views" of
+          the DNS namespace, e.g. an "inside" view to certain
+          clients, and an "outside" view to others.
+Multiprocessor Support
+Improved Portability Architecture
 
-WWW: http://www.isc.org/products/BIND/
+WWW: http://www.isc.org/products/BIND/bind9.html
