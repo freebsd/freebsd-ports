@@ -25,6 +25,7 @@
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gauche-gdbm
+    SUBDIR += gbib
     SUBDIR += gdbm
     SUBDIR += gigabase
     SUBDIR += gmysql
