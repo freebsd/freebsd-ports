@@ -20,6 +20,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date
 		poster:${PORTSDIR}/print/poster \
 		xsltproc:${PORTSDIR}/textproc/libxslt
 
+BROKEN=		Does not build
+
 # KTJView currently doesn't compile
 #OPTIONS=	KTJVIEW "Build KDE KTJView program (Requires KDE)" off
 
