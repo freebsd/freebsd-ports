@@ -3,7 +3,7 @@
 # Date created:		24 Feb 1997
 # Whom:			thepish
 #
-# $Id$
+# $Id: Makefile,v 1.41 1999/05/19 16:06:37 sada Exp $
 #
 
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.6/english/unix/unsupported/freebsd/complete_install/
@@ -18,6 +18,5 @@ WRKSRC=		${WRKDIR}/${BROWSER}-v46.x86-unknown-freebsd
 BROWSER_VER=	4.6
 INFILE_HEAD?=	'Communicator,4.6.0.99124'
 NO_AUTOADMIN=	yes
-NO_FORTIFY=	yes
 
 .include "${MASTERDIR}/Makefile"
