@@ -1,0 +1,21 @@
+This is a collection of modules that represent, create, and extract
+information from HTML syntax trees.
+
+The modules present in this collection are:
+
+  HTML::Element - represents the nodes of the HTML syntax trees.  The
+        elements have other elements and text segments as children.
+        The HTML::Element class have methods to methods to build,
+        alter, and traverse the structure of the tree.
+
+  HTML::TreeBuilder - uses HTML::Parser to read HTML document text and
+        build from it a syntax tree made of HTML::Element nodes.
+
+  HTML::Parse - deprecated.  Now just a wrapper around
+        HTML::TreeBuilder
+
+  HTML::AsSubs - Easy way to build an HTML syntax tree by nesting
+        functions.
+
+--Dima
+dima@Chg.RU
