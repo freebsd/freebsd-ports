@@ -5,7 +5,7 @@
  
  #   If you prefer optimization to debugging, change -g to something like -O:
 -CFLAGS = -g
-+CFLAGS = -O -pipe
++CFLAGS ?= -O -pipe
  
  #   Uncomment the second line if you use pdftex to bypass .dvi files:
  PDFTEX = dvipdfm
