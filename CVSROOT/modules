@@ -9163,6 +9163,7 @@ scrollz		ports/irc/scrollz
 scrollz-doc	ports/irc/scrollz-doc
 scrot		ports/graphics/scrot
 scsh		ports/lang/scsh
+scsh-install-lib	ports/devel/scsh-install-lib
 scud		ports/comms/scud
 scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
@@ -9627,6 +9628,7 @@ sudo		ports/security/sudo
 sudoscript	ports/security/sudoscript
 sun-wtk		ports/java/sun-wtk
 sunclock	ports/astro/sunclock
+sunterlib	ports/devel/sunterlib
 sup_port	ports/net/sup
 super		ports/security/super
 super_methane_brothers	ports/games/super_methane_brothers
