@@ -39,6 +39,7 @@
     SUBDIR += extipl
     SUBDIR += fcron
     SUBDIR += ffsrecov
+    SUBDIR += filedupe
     SUBDIR += fileutils
     SUBDIR += flexbackup
     SUBDIR += fontedit
