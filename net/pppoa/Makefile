@@ -29,5 +29,7 @@ post-install:
 		${CHOWN} root:wheel ${PREFIX}/arpwatch;		\
 	fi
 	${INSTALL_DATA} ${WRKSRC}/../mgmt/mgmt.o ${PREFIX}/libdata/.
+	${INSTALL_DATA} ${FILESDIR}/quick-install ${PREFIX}/share/speedtouch/.
+	${CAT} ${PREFIX}/share/speedtouch/quick-install
 
 .include <bsd.port.mk>

@@ -4,4 +4,6 @@ bin/pppoa2
 etc/rc.d/adsl.sh.sample
 share/speedtouch/ppp.conf.sample
 share/speedtouch/INSTALL
+share/speedtouch/quick-install
+@exec cat %D/share/speedtouch/quick-install
 @dirrm share/speedtouch
