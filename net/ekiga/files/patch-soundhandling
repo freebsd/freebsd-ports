@@ -1,0 +1,41 @@
+*** src/sound_handling.cpp.orig	Thu Aug 28 07:18:16 2003
+--- src/sound_handling.cpp	Thu Aug 28 07:20:23 2003
+***************
+*** 46,55 ****
+  #include "dialog.h"
+  
+  
+! #ifdef __FreeBSD__
+! #include <sys/types.h>
+! #include <signal.h>
+! #endif
+  
+  #ifdef HAS_IXJ
+  #include <ixjlid.h>
+--- 46,55 ----
+  #include "dialog.h"
+  
+  
+! //#ifdef __FreeBSD__
+! //#include <sys/types.h>
+! //#include <signal.h>
+! //#endif
+  
+  #ifdef HAS_IXJ
+  #include <ixjlid.h>
+***************
+*** 59,64 ****
+--- 59,71 ----
+  #include <linux/soundcard.h>
+  #endif
+  
++ #ifdef __FreeBSD__
++ #if (__FreeBSD__ >= 5)
++ #include <sys/soundcard.h>
++ #else
++ #include <machine/soundcard.h>
++ #endif
++ #endif
+  
+  
+  static void dialog_response_cb (GtkWidget *, gint, gpointer);
