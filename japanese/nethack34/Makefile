@@ -34,6 +34,8 @@ HACKDOCSDIR?=	share/doc/ja/nethack
 post-install: jnethack-post-install
 
 jnethack-post-install:
+# Makefile.top digs bin/lib somehow
+	${RMDIR} ${PREFIX}/bin/lib
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${HACKDOCSDIR}
 .for i in README.j ChangeLog.j INSTALL.j
