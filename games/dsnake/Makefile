@@ -8,7 +8,7 @@
 PORTNAME=	dsnake
 PORTVERSION=	3.0.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.dascdev.net/_files/
+MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
