@@ -64,12 +64,12 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (missing -fPIC from shared libraries)"
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
 .endif
 
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC from shared libraries)"
 .endif
 
 post-patch:
