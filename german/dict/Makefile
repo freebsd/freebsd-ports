@@ -3,10 +3,11 @@
 # Date created:         6 August 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.4 1997/12/28 12:17:46 wosch Exp $
+# $Id: Makefile,v 1.5 1997/12/31 12:11:56 wosch Exp $
 #
 
 DISTNAME=       dict-1.1
+PKGNAME=        de-dict-1.1
 CATEGORIES=	german
 MASTER_SITES=   http://www.freebsd.org/~wosch/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
