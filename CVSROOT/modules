@@ -2467,6 +2467,7 @@ hackedbox	ports/x11-wm/hackedbox
 hafiye		ports/security/hafiye
 hagelslag	ports/net/hagelslag
 halflifeserver	ports/games/halflifeserver
+hammerhead	ports/sysutils/hammerhead
 handbook	doc/en_US.ISO8859-1/books/handbook
 hangman		src/games/hangman
 happydoc	ports/devel/happydoc
