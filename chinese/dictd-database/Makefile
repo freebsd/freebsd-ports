@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dictd-database
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://freebsd.sinica.edu.tw/~statue/
 DISTNAME=	dict-zh-${PORTVERSION}
