@@ -31,6 +31,7 @@ CONFIGURE_ENV=	CFLAGS="-D_P1003_1B_VISIBLE -pthread -I${PREFIX}/include -L${PREF
 .if defined(WITH_GNOMELIBS)
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
+PLIST=		${PKGDIR}/pkg-plist.gnome
 .endif
 
 # Directories for the three SableVM source components
