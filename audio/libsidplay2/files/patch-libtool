@@ -1,11 +1,11 @@
---- configure.orig	Sat Jan 12 02:17:19 2002
-+++ configure	Sat Jan 12 02:18:08 2002
-@@ -6159,7 +6159,7 @@
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+--- configure.orig	Mon May  7 19:23:11 2001
++++ configure	Mon Nov 18 05:04:02 2002
+@@ -1841,7 +1841,7 @@
+ LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
  
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 +LIBTOOL='libtool'
  
- # Prevent multiple expansion
- 
+ # Redirect the config.log output again, so that the ltconfig log is not
+ # clobbered by the next message.

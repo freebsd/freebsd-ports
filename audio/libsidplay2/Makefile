@@ -1,25 +1,27 @@
-# New ports collection makefile for:   libsidplay
-# Date created:        31 October 1996
-# Whom:                Stefan Zehl <sec@42.org>
+# New ports collection makefile for:	libsidplay2
+# Date created:				6 October 2002
+# Whom:					Anders Nordby <anders@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libsidplay
-PORTVERSION=	1.36.57
+PORTNAME=	libsidplay2
+PORTVERSION=	2.0.7
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sidplay2
+DISTNAME=	${PORTNAME:S/2//}-${PORTVERSION}-5
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sec@42.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_LIBTOOL=	yes
+LIB_DEPENDS=	resid.2:${PORTSDIR}/audio/resid
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
+
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 
-.include <bsd.port.pre.mk>
-
-.if (${ARCH} == i386)
-CONFIGURE_ARGS+=	--enable-optendian --enable-optfixpoint
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
