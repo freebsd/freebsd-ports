@@ -138,6 +138,6 @@ while (<AVAIL>) {
 close(AVAIL);
 print "$$ ==== \$exit_val = $exit_val\n" if $debug;
 print "**** Access denied: Insufficient Karma ($myname|$repos)\n" if $exit_val;
-print "**** Access allowed: Personal Karma exceeds Environmental Karma.\n"
-	if $universal_off && !$exit_val;
+#print "**** Access allowed: Personal Karma exceeds Environmental Karma.\n"
+#	if $universal_off && !$exit_val;
 exit($exit_val);
