@@ -38,6 +38,8 @@ share/locale/fr/LC_MESSAGES/xine-ui.mo
 share/locale/fr/LC_MESSAGES/xitk.mo
 share/locale/it/LC_MESSAGES/xine-ui.mo
 share/locale/it/LC_MESSAGES/xitk.mo
+share/locale/ja/LC_MESSAGES/xine-ui.mo
+share/locale/ja/LC_MESSAGES/xitk.mo
 share/locale/pl/LC_MESSAGES/xine-ui.mo
 share/locale/pl/LC_MESSAGES/xitk.mo
 share/locale/pt_BR/LC_MESSAGES/xine-ui.mo
@@ -52,7 +54,6 @@ share/pixmaps/xine_22x22.png
 share/pixmaps/xine_32x32.png
 share/pixmaps/xine_48x48.png
 share/xine/desktop/xine.desktop
-share/xine/skins/black.mpv
 share/xine/skins/xine_splash.png
 share/xine/skins/xine-ui_logo.mpv
 share/xine/skins/xinetic/BigArrowDown.png
