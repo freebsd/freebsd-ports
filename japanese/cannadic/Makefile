@@ -7,6 +7,7 @@
 
 PORTNAME=	cannadic
 PORTVERSION=	0.94e
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
@@ -15,9 +16,9 @@ MAINTAINER=	toga@puyo.org
 RUN_DEPENDS=	${LOCALBASE}/sbin/cannaserver:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	crxdic:${PORTSDIR}/japanese/Canna
 
-ALL_TARGET=	maindic subdic
+ALL_TARGET=	maindic
 
-DICS=		gcanna.cbd gcanna.cld gcannaf.cbd gcannaf.cld
+DICS=		gcanna.cbd gcanna.cld gcannaf.t
 DICSFILE=	dics.dir.gpl_canna
 DICDIR=		${PREFIX}/lib/canna/dic/canna
 

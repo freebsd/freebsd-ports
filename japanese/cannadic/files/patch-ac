@@ -3,7 +3,6 @@
 ***************
 *** 0 ****
 --- 1,4 ----
-+ gcanna.cld(gcanna.mwd)     -gcanna---
-+ gcanna.cbd(gcanna.mwd)    -gcanna---
-+ gcannaf.cld(gcannaf.swd)   -gcannaf---
-+ gcannaf.cbd(gcannaf.swd)  -gcannaf---
++ gcanna.cld(gcanna.mwd)	-gcanna---
++ gcanna.cbd(gcanna.mwd)	-gcanna---
++ gcannaf.t(swd)		-gcannaf---
