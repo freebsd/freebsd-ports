@@ -1,43 +1,31 @@
 # New ports collection makefile for:	xfwm4
 # Date created:		August 14, 2002
-# Whom:			James Earl <jamesearl@shaw.ca>
+# Whom:			James Earl <jdearl@telus.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xfwm4
-PORTVERSION=	020724
+PORTNAME=	xfce4-wm
+PORTVERSION=	3.99.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://belnet.dl.sourceforge.net/sourceforge/xfce/ \
-		http://unc.dl.sourceforge.net/sourceforge/xfce/
-MASTER_SITE_SUBDIR=	xfce
+MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
+		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
+		http://usuarios.lycos.es/xfce4/tarballs/rc2/separate/ \
+		http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/
+DISTNAME=	xfwm4-${PORTVERSION}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Gtk-2.0 based window manager part of the XFCE project
+COMMENT=	XFce 4 window manager
+
+BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
+LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/src/pixmap.c
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xfwm4 ${PREFIX}/share/examples/xfwm4
-	${MKDIR} ${PREFIX}/share/examples/xfwm4
-
-	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/TODO ${PREFIX}/share/doc/xfwm4
-	${INSTALL_MAN} ${WRKSRC}/example.xfwm4rc ${WRKSRC}/example.gtkrc-2.0 ${PREFIX}/share/examples/xfwm4
-
-	@${ECHO} "===>   Configuration:" ;
-	@${ECHO} "        - Example rc files installed in ${PREFIX}/share/examples/${PORTNAME}" ;
-	@${ECHO} "        - Refer to documentation in ${PREFIX}/share/doc/${PORTNAME}" ;
-	@${ECHO} "        - For online help see: http://xfce.sourceforge.net" ;
-.endif
+CONFIGURE_ARGS=	--enable-xinerama
 
 .include <bsd.port.mk>
