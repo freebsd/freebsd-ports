@@ -1,0 +1,20 @@
+--- configure.orig	Tue Mar 10 10:06:40 1998
++++ configure	Tue Mar 10 10:06:56 1998
+@@ -710,7 +710,7 @@
+   if test "$ac_test_CFLAGS" = set; then
+     CFLAGS="$ac_save_CFLAGS"
+   elif test $ac_cv_prog_cc_g = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-O2 -m486 -pipe"
+   else
+     CFLAGS="-O2"
+   fi
+@@ -842,7 +842,7 @@
+   if test "$ac_test_CXXFLAGS" = set; then
+     CXXFLAGS="$ac_save_CXXFLAGS"
+   elif test $ac_cv_prog_cxx_g = yes; then
+-    CXXFLAGS="-g -O2"
++    CXXFLAGS="-O2 -m486 -pipe"
+   else
+     CXXFLAGS="-O2"
+   fi
