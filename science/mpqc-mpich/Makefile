@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../mpqc/
 
 .include "${.CURDIR}/../mpqc/Makefile"
 
-PORTNAME=	mpqc-mpich
+PKGNAMESUFFIX=	-mpich
 
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
