@@ -1,0 +1,7 @@
+This sensor allows a user to set maximum constraints on a display.
+
+The display will then not grow larger then the maximum values specified.
+
+Currently only display 'Width' and 'Height' are supported.
+
+WWW: http://gdesklets.gnomedesktop.org/
