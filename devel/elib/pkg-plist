@@ -1,33 +1,33 @@
-%%EMACS_LIBDIR%%/site-lisp/elib/avltree.el
-%%EMACS_LIBDIR%%/site-lisp/elib/avltree.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/bintree.el
-%%EMACS_LIBDIR%%/site-lisp/elib/bintree.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/cookie.el
-%%EMACS_LIBDIR%%/site-lisp/elib/cookie.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/dll-debug.el
-%%EMACS_LIBDIR%%/site-lisp/elib/dll-debug.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/dll.el
-%%EMACS_LIBDIR%%/site-lisp/elib/dll.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/elib-node.el
-%%EMACS_LIBDIR%%/site-lisp/elib/elib-node.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/queue-f.el
-%%EMACS_LIBDIR%%/site-lisp/elib/queue-f.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/queue-m.el
-%%EMACS_LIBDIR%%/site-lisp/elib/queue-m.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/read.el
-%%EMACS_LIBDIR%%/site-lisp/elib/read.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/stack-f.el
-%%EMACS_LIBDIR%%/site-lisp/elib/stack-f.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/stack-m.el
-%%EMACS_LIBDIR%%/site-lisp/elib/stack-m.elc
-%%EMACS_LIBDIR%%/site-lisp/elib/string.el
-%%EMACS_LIBDIR%%/site-lisp/elib/string.elc
-%%LOADPATHSETUP:%%%%EMACS_LIBDIR_WITH_VER%%/site-lisp/%%PORT_SETUPEL%%
-@dirrm %%EMACS_LIBDIR%%/site-lisp/elib
-%%PORTDOCDIR%%/ChangeLog
-%%PORTDOCDIR%%/NEWS
-%%PORTDOCDIR%%/README
-@dirrm %%PORTDOCDIR%%
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/avltree.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/avltree.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/bintree.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/bintree.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/cookie.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/cookie.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/dll-debug.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/dll-debug.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/dll.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/dll.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/elib-node.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/elib-node.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/queue-f.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/queue-f.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/queue-m.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/queue-m.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/read.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/read.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/stack-f.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/stack-f.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/stack-m.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/stack-m.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/string.el
+%%EMACS_VERSION_SITE_LISPDIR%%/elib/string.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/elib
+%%LOADPATHSETUP:%%%%EMACS_VERSION_SITE_LISPDIR%%/%%PORT_SETUPEL%%
+%%PORTDOCS%%share/doc/elib/ChangeLog
+%%PORTDOCS%%share/doc/elib/NEWS
+%%PORTDOCS%%share/doc/elib/README
+%%PORTDOCS%%@dirrm share/doc/elib
 @unexec install-info --delete %D/info/elib.info %D/info/dir
 info/elib.info
 @exec install-info %D/info/elib.info %D/info/dir

@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Elib for GNU Emacs 19
+# New ports collection makefile for:	Elib for GNU Emacs 21
 # Date created:		24 Feb 2000
 # Whom:			OKAZAKI Tetsurou
 #
@@ -7,6 +7,7 @@
 
 PORTNAME=	elib
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -16,15 +17,13 @@ MAINTAINER?=	okazaki@FreeBSD.org
 
 # setupel filename
 PORT_SETUPEL=	elib-startup.el
-# document install directory by install-doc target
-PORTDOCDIR=	share/doc/elib
 
 # This is a master port.
 PORTCLASS?=	master
 
 # emacs port setup
 .if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs
+EMACS_PORT_NAME=	emacs21
 .endif
 
 # target name for make build
@@ -33,14 +32,13 @@ ALL_TARGET?=	all
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
-		PORTDOCDIR=${PORTDOCDIR} \
 		PORT_SETUPEL=${PORT_SETUPEL}
 MAKE_ARGS+=	EMACS="${EMACS_CMD} -q --no-site-file" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		MAKEINFO="makeinfo --no-split" \
 		MKDIR="${MKDIR}" \
 		prefix="${PREFIX}" \
-		locallisppath="${PREFIX}/${EMACS_SITE_LISPDIR}"
+		locallisppath="${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}"
 
 .if defined(EMACS_PORT_NAME)
 .if ${EMACS_MAJOR_VER} <= 19
@@ -72,10 +70,10 @@ post-install:
 .endif
 
 doc-install:
-	${MKDIR} ${PREFIX}/${PORTDOCDIR}
+	${MKDIR} ${DOCSDIR}
 	cd ${INSTALL_WRKSRC} && \
 	for i in ChangeLog NEWS README ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${PORTDOCDIR}/ ; \
+		${INSTALL_DATA} $${i} ${DOCSDIR} ; \
 	done
 
 setupel-install:

@@ -8,7 +8,4 @@ Elib provides features of:
    - minibuffer handling functions missing in standard Emacs
    - routines for handling lists of so-called cookies in a buffer.
 
-ELIB is installed into the following directory tree:
-        PREFIX/share/emacs/site-lisp/elib/		--- elib
-
 WWW: http://www.gnu.org/software/elib/elib.html
