@@ -1,0 +1,73 @@
+From ftp://ftp.etl.go.jp/pub/mule/BUG-INFO
+
+6) This fix a bug of displaying multilingual text in mode lines.
+
+--- /usr/dist/mule/mule-2.3/src/xdisp.c	Fri Jun  9 17:37:14 1995
++++ ./src/xdisp.c	Wed Mar  6 17:08:03 1996
+@@ -3973,8 +3973,9 @@
+ 
+   /* 91.10.21 by K.Handa, 92.4.30 by Y.Niibe */
+   int mc_flag = !NILP(XBUFFER (w->buffer)->mc_flag);
+-  /* 92.3.21, 92.9.7 by K.Handa */
+-  register unsigned char *endp = string + strlen(string);
++  /* 92.3.21, 92.9.7, 95.8.31 by K.Handa */
++  register unsigned char *endp
++    = string + (length < 0 ? strlen(string) : length);
+   char *hexa = "0123456789ABCDEF"; /* 92.4.9 by K.Handa */
+   /* 92.4.9 by K.Handa, 92.4.30 by Y.Niibe */
+   int ctl_hexa = !NILP (XBUFFER (w->buffer)->ctl_hexa);
+
+8) Another fix for a severe bug for writing *viscii* file.
+
+--- mule/lisp/mule-init.el.old	Wed May  8 13:05:30 1996
++++ ./lisp/mule-init.el	Wed May  8 13:04:06 1996
+@@ -638,7 +638,7 @@
+ 		  (r0 -= 160)
+ 		  (write-read-repeat
+ 		   r0
+-	       [  0 129 130 131 132 165 134 135 136 137 138 139 140 141 142 143
++	       [  0 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 	        144 145 146   0   0 147 150 151 152   0   0   0   0 180 149   0
+ 		  0   0   0   0   0   0   2   5   0   0   0   0   0   0   0 159
+ 		  0 186   0   0   0 128  20 187 188   0   0  25  30   0 179 191
+
+
+11) This patch fixes Single Shift 3 handling.
+
+--- /usr/dist/mule/mule-2.3/src/coding.c	Wed Nov 30 16:45:02 1994
++++ ./src/coding.c	Sat Sep 28 09:41:51 1996
+@@ -1044,7 +1044,7 @@
+ { \
+   if (lc != lcg) dp = designate(dp, lcg, lc, 3, form), lcg = lc; \
+   if (form & CODE_SEVEN) \
+-    *dp++ = ESC, *dp++ = 'N'; \
++    *dp++ = ESC, *dp++ = 'O'; \
+   else \
+     *dp++ = SS3; \
+   cntl = (cntl & ~CC_GRAPHIC_MASK) | CC_IN_G3; \
+
+12) This patch fixes wrong handling of *iso-2022-lock* by coco.
+--- /usr/dist/mule/mule-2.3/lib-src/mulelib.c	Mon Jul 17 15:03:43 1995
++++ ./lib-src/mulelib.c	Fri Oct  4 21:28:48 1996
+@@ -287,13 +287,18 @@
+   p0 = p1 + 1;
+   if (CODE_TYPE (cs) == ISO2022)  {
+     long flags[12];
+-    for (i = 0; i < 11; i++) {
+-      if (!(flags[i] = atoi(p0))) flags[i] = Qnil;
++    for (i = 0; i < 4; i++) {
++      if ((flags[i] = atoi(p0)) == -1) flags[i] = LCASCII;
+       PROCEED_CHAR(',');
+       p0 = p1 + 1;
+     }
+-    flags[i] = atoi(p0);
+     CODE_LC_SET(cs, flags[0], flags[1], flags[2], flags[3]);
++    for (; i < 11; i++) {
++      if (!(flags[i] = atoi(p0))) flags[i] = Qnil;
++      PROCEED_CHAR(',');
++      p0 = p1 + 1;
++    }
++    if (!(flags[i] = atoi(p0))) flags[i] = Qnil;
+     CODE_FORM_SET(cs, (Lisp_Object)flags[4], (Lisp_Object)flags[5],
+ 		  (Lisp_Object)flags[6], (Lisp_Object)flags[7],
+ 		  (Lisp_Object)flags[8], (Lisp_Object)flags[9],

@@ -1,0 +1,60 @@
+--- ../mule.org/lisp/eggrc-wnn	Fri Jul 28 20:12:41 1995
++++ ./lisp/eggrc-wnn	Wed Oct 29 12:13:50 1997
+@@ -24,7 +24,7 @@
+ ;;;
+ ;;;      modified for Wnn V4 - Use compatible library of Wnn v3
+ ;;;	 Copyright 1989 OMRON Tateisi Electronics, Co.
+-;;;	 1989 7/12 by H.Kuribayashi kuri@frf.oron.junet
++;;;	 1989 7/12 by H.Kuribayashi kuri@frf.omron.junet
+ 
+ ;;; 92.5.19  modified for Wnn V4 by T.Shingu <shingu@cpr.canon.co.jp>
+ ;;;	Use non compatible library.
+@@ -50,14 +50,16 @@
+ 		     (concat wnn-usr-dic-dir "/symbol.h") 1 nil t)
+        (add-wnn-dict "iwanami/tankan.dic" "" 1 nil nil)
+        (add-wnn-dict "iwanami/tankan2.dic" "" 1 nil nil)
+-       (add-wnn-dict "iwanami/tel.dic" "" 1 nil nil)
+-       (add-wnn-dict "iwanami/zip.dic" "" 1 nil nil)
++       (add-wnn-dict "iwanami/tel.dic"
++		     (concat wnn-usr-dic-dir "/tel.h") 1 nil t)
++       (add-wnn-dict "iwanami/zip.dic"
++		     (concat wnn-usr-dic-dir "/zip.h") 1 nil t)
+        (add-wnn-dict (concat wnn-usr-dic-dir "/ud") "" 15 t t)
+ ;       (add-wnn-dict "wnncons/tankan2.dic" "" 1 nil nil)
+ ;       (add-wnn-dict "wnncons/tankan3.dic" "" 1 nil nil)
+        (set-wnn-param  5 10 2 45 0  80 5 1 20  0 400 -100 400   80 200 2 200)
+ 
+-       (add-wnn-notrans-dict (concat wnn-usr-dic-dir "/katakana") 15 t)
++       (add-wnn-notrans-dict (concat wnn-usr-dic-dir "/muhenkan") 15 t)
+        (add-wnn-bmodify-dict (concat wnn-usr-dic-dir "/bunsetsu") 15 t)
+ 
+        (set-last-is-first-mode t)
+@@ -101,7 +103,9 @@
+        (add-wnn-dict (concat wnn-usr-dic-dir "/ud") "" 5 t t)
+ ;       (add-wnn-dict "wnncons/tankan2.dic" "" 1 nil nil)
+ ;       (add-wnn-dict "wnncons/tankan3.dic" "" 1 nil nil)
+-       (set-wnn-param  2 10 2 45 5  80 5 1 40  0 400 -100 400   80 200 2 200)
++;       (set-wnn-param  2 10 2 45 5  80 5 1 40  0 400 -100 400   80 200 2 200)
++; New Parameter
++       (set-wnn-param  2 10 2 45 100 200 5 1 40 -100 200 -100 200 80 200 200 200)
+        (set-wnn-reverse t)
+        (set-wnn-fuzokugo "pubdic/full.fzk")
+        (add-wnn-dict "pubdic/kihon.dic" (concat wnn-usr-dic-dir "/kihon.h") 5 nil t)
+@@ -158,7 +162,7 @@
+       ((eq wnn-server-type 'kserver)
+        (set-wnn-reverse nil)
+        (set-wnn-fuzokugo "sys/full.fzk")
+-					;       (add-wnn-dict "sys/hword.dic" (concat wnn-usr-dic-dir "/hword.h") 4 nil t)
++       (add-wnn-dict "sys/hword.dic" (concat wnn-usr-dic-dir "/hword.h") 4 nil t)
+        (add-wnn-dict "sys/single.dic" (concat wnn-usr-dic-dir "/single.h") 1 nil t)
+        (add-wnn-dict (concat wnn-usr-dic-dir "/ud") "" 5 t t)
+ 					;       (add-wnn-dict (concat wnn-usr-dic-dir "/hangul") "" 5 t t)
+@@ -166,7 +170,7 @@
+        (set-wnn-param 1 5 2 750 10 80 10 5 1000 50  0 -200 0 0 0 16 0)
+        (set-wnn-reverse t)
+        (set-wnn-fuzokugo "sys/full.fzk")
+-					;       (add-wnn-dict "sys/hword.dic" (concat wnn-usr-dic-dir "/hword.h") 4 nil t)
++       (add-wnn-dict "sys/hword.dic" (concat wnn-usr-dic-dir "/hword.h") 4 nil t)
+        (add-wnn-dict "sys/single.dic" (concat wnn-usr-dic-dir "/single.h") 1 nil t)
+        (add-wnn-dict (concat wnn-usr-dic-dir "/ud") "" 5 t t)
+ 					;       (add-wnn-dict (concat wnn-usr-dic-dir "/hangul") "" 5 t t)

@@ -1,0 +1,89 @@
+diff -arcN ../mule-2.3.org/etc/FAQ-Mule.jp ./etc/FAQ-Mule.jp
+*** ../mule-2.3.org/etc/FAQ-Mule.jp	Fri Jul 21 20:40:06 1995
+--- ./etc/FAQ-Mule.jp	Wed Aug 21 11:33:22 1996
+***************
+*** 1867,1872 ****
+--- 1867,1874 ----
+  
+     と書く方法もあります。 
+  
++    (注記 : FreeBSDでは、他と競合するためポート番号は3086にしてあります。)
++ 
+  Emacs lisp プログラミング
+  =========================
+  
+diff -arcN ../mule-2.3.org/lisp/eggrc-sj3 ./lisp/eggrc-sj3
+*** ../mule-2.3.org/lisp/eggrc-sj3	Fri Oct 21 13:18:21 1994
+--- ./lisp/eggrc-sj3	Wed Aug 21 13:05:24 1996
+***************
+*** 3,11 ****
+  ;;;	Version 1.0
+  ;;;	Copyright 1990 Kiyoji Ishii
+  ;;;
+  
+! (set-default-sys-dic-directory "/usr/sony/dict/sj3")
+! (set-default-usr-dic-directory "/usr/sony/dict/sj3/user/$USER")
+  
+  ;;;
+  ;;; System Dictionary
+--- 3,17 ----
+  ;;;	Version 1.0
+  ;;;	Copyright 1990 Kiyoji Ishii
+  ;;;
++ ;;;
++ ;;; Change dictionary paths.
++ ;;; Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
++ ;;; Remove $USER variable. Use (user-login-name).
++ ;;; Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ ;;;
+  
+! (set-default-sys-dic-directory "/usr/local/lib/sj3/dict")
+! (set-default-usr-dic-directory (concat "/usr/local/lib/sj3/dict/user/" (user-login-name)))
+  
+  ;;;
+  ;;; System Dictionary
+diff -arcN ../mule-2.3.org/lisp/sj3-egg.el ./lisp/sj3-egg.el
+*** ../mule-2.3.org/lisp/sj3-egg.el	Fri Feb 17 17:23:31 1995
+--- ./lisp/sj3-egg.el	Wed Aug 21 13:32:36 1996
+***************
+*** 294,301 ****
+  ;;;
+  ;;; Entry functions for egg-startup-file
+  ;;;
+  
+! (defvar *default-sys-dic-directory* "/usr/sony/dict/sj3")
+  
+  (defun set-default-sys-dic-directory (pathname)
+    "システム辞書の標準directory PATHNAMEを指定する。
+--- 294,307 ----
+  ;;;
+  ;;; Entry functions for egg-startup-file
+  ;;;
++ ;;;
++ ;;; Change dictionary paths.
++ ;;; Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
++ ;;; Remove $USER variable. Use (user-login-name).
++ ;;; Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++ ;;;
+  
+! (defvar *default-sys-dic-directory* "/usr/local/lib/sj3/dict")
+  
+  (defun set-default-sys-dic-directory (pathname)
+    "システム辞書の標準directory PATHNAMEを指定する。
+***************
+*** 310,316 ****
+  	 (format "System Default directory(%s) がありません。" pathname))
+        (setq *default-sys-dic-directory* (file-name-as-directory pathname)))))
+  
+! (defvar *default-usr-dic-directory* "/usr/sony/dict/sj3/user/$USER")
+  
+  (defun set-default-usr-dic-directory (pathname)
+    "利用者辞書の標準directory PATHNAMEを指定する。
+--- 316,322 ----
+  	 (format "System Default directory(%s) がありません。" pathname))
+        (setq *default-sys-dic-directory* (file-name-as-directory pathname)))))
+  
+! (defvar *default-usr-dic-directory* (concat "/usr/local/lib/sj3/dict/user/" (user-login-name)))
+  
+  (defun set-default-usr-dic-directory (pathname)
+    "利用者辞書の標準directory PATHNAMEを指定する。

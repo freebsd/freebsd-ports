@@ -1,30 +1,5 @@
-bin/mule-19.28
+bin/mule-19.34
 @exec ln -sf %D/%F %B/mule
 @unexec rm %B/mule
-bin/any2ps
-bin/b2m
-bin/coco
-bin/ctags
-bin/emacsclient
-bin/etags
-bin/m2ps
-bin/rcs-checkin
-lib/mule/19.28/etc/DOC
-lib/mule/19.28/etc/DOC-19.28.1
-lib/mule/19.28/i386--freebsd/cvtmail
-lib/mule/19.28/i386--freebsd/digest-doc
-lib/mule/19.28/i386--freebsd/emacsserver
-lib/mule/19.28/i386--freebsd/fakemail
-lib/mule/19.28/i386--freebsd/hexl
-lib/mule/19.28/i386--freebsd/make-docfile
-lib/mule/19.28/i386--freebsd/make-path
-lib/mule/19.28/i386--freebsd/movemail
-lib/mule/19.28/i386--freebsd/profile
-lib/mule/19.28/i386--freebsd/rcs2log
-lib/mule/19.28/i386--freebsd/sorted-doc
-lib/mule/19.28/i386--freebsd/test-distrib
-lib/mule/19.28/i386--freebsd/timer
-lib/mule/19.28/i386--freebsd/vcdiff
-lib/mule/19.28/i386--freebsd/wakeup
-lib/mule/19.28/i386--freebsd/yow
-lib/mule/site-lisp/site-start.el
+share/mule/19.34/etc/DOC-19.34.1
+share/mule/19.34/site-lisp/site-start.el

@@ -1,0 +1,16 @@
+--- configure.orig	Sat Sep 19 23:06:14 1998
++++ configure	Sat Sep 19 23:14:44 1998
+@@ -564,11 +564,11 @@
+ emacs_prefix=emacs
+ lispdir='${datadir}/${emacs_prefix}/${version}/lisp'
+ locallisppath='${datadir}/${emacs_prefix}/${version}/site-lisp:'\
+-'${datadir}/${emacs_prefix}/site-lisp'
++'${datadir}/${emacs_prefix}/site-lisp:${datadir}/emacs/site-lisp'
+ lisppath='${locallisppath}:${lispdir}'
+ etcdir='${datadir}/${emacs_prefix}/${version}/etc'
+ # share lockdir with emacs and mule.
+-lockdir='${sharedstatedir}/emacs/lock'
++lockdir='/var/run/emacs/lock'
+ archlibdir='${libexecdir}/${emacs_prefix}/${version}/${configuration}'
+ docdir='${datadir}/${emacs_prefix}/${version}/etc'
+ 

@@ -1,9 +1,9 @@
-# New ports collection makefile for:	mule with sj3 and Wnn4
-# Version required:	2.3
+# New ports collection makefile for:	mule 2.3@19.34 with sj3 and Wnn4
+# Version required:	2.3@19.34
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.1 1997/09/10 08:50:52 asami Exp $
+# $Id: Makefile,v 1.2 1997/09/14 21:35:14 max Exp $
 #
 
 PKGNAME=	ja-mule-sj3+wnn4-2.3

@@ -1,25 +1,6 @@
---- ./man/Makefile.org	Sat Jul  2 14:35:17 1994
-+++ ./man/Makefile	Tue May 20 22:28:50 1997
-@@ -4,7 +4,7 @@
- MAKEINFO = makeinfo
- TEXINDEX_OBJS = texindex.o getopt.o
- INFO_TARGETS = ../info/emacs ../info/cl ../info/forms ../info/vip \
--	       ../info/gnus ../info/sc ../info/info ../info/dired-x
-+	       ../info/gnus ../info/sc ../info/dired-x
- DVI_TARGETS = emacs.dvi cl.dvi forms.dvi vip.dvi gnus.dvi sc.dvi dired-x.dvi
- INFOSOURCES = info.texi info-stnd.texi
- 
-@@ -54,6 +54,7 @@
- 	gnu1.texi \
- 	glossary.texi
- 
-+all: info
- info: $(INFO_TARGETS)
- 
- dvi: $(DVI_TARGETS)
---- ./man/vip.texi.org	Tue May 20 22:29:04 1997
-+++ ./man/vip.texi	Tue May 20 22:30:32 1997
-@@ -24,6 +24,10 @@
+--- ./man/vip.texi.org	Fri Jun 16 15:31:11 1995
++++ ./man/vip.texi	Tue May 20 01:28:33 1997
+@@ -2,6 +2,10 @@
  
  @setfilename ../info/vip
  @settitle VIP
@@ -30,8 +11,8 @@
  
  @iftex
  @finalout
---- ./man/emacs.texi.org	Fri Nov  4 03:08:52 1994
-+++ ./man/emacs.texi	Tue May 20 22:30:32 1997
+--- ./man/emacs.texi.org	Mon Aug 19 21:15:12 1996
++++ ./man/emacs.texi	Tue May 20 01:20:11 1997
 @@ -49,6 +49,11 @@
  @settitle GNU Emacs Manual
  @setfilename ../info/emacs
@@ -44,8 +25,21 @@
  @c
  @c in general, keep the following line commented out, unless doing a
  @c copy of this manual that will be published.  the manual should go
---- ./man/forms.texi.org	Thu Jul 28 13:46:45 1994
-+++ ./man/forms.texi	Tue May 20 22:30:32 1997
+--- ./man/viper.texi.org	Wed Aug  7 10:59:45 1996
++++ ./man/viper.texi	Tue May 20 01:29:17 1997
+@@ -4,6 +4,10 @@
+ \input texinfo
+ 
+ @setfilename ../info/viper
++@dircategory The Emacs editor and associated tools
++@direntry
++* VIPER: (viper).		The new VI-emulation mode in Emacs-19.29.
++@end direntry
+ 
+ @iftex
+ @finalout
+--- ./man/forms.texi.org	Sat Mar 23 06:42:27 1996
++++ ./man/forms.texi	Tue May 20 01:22:37 1997
 @@ -9,6 +9,11 @@
  @syncodeindex vr cp
  @syncodeindex fn cp
@@ -58,8 +52,35 @@
  @iftex
  @finalout
  @setchapternewpage odd
---- ./man/cl.texi.org	Sat Jan  8 00:42:47 1994
-+++ ./man/cl.texi	Tue May 20 22:30:32 1997
+--- ./man/gnus.texi.org	Wed Jun 26 14:49:29 1996
++++ ./man/gnus.texi	Tue May 20 01:23:15 1997
+@@ -5,6 +5,11 @@
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* GNUS: (gnus).			The news reader GNUS.
++@end direntry
++
+ @iftex
+ @finalout
+ @end iftex
+--- ./man/mh-e.texi.org	Sun Aug  4 00:00:29 1996
++++ ./man/mh-e.texi	Tue May 20 01:23:49 1997
+@@ -4,6 +4,10 @@
+ @setfilename ../info/mh-e
+ @settitle mh-e
+ @c %**end of header
++@dircategory The Emacs editor and associated tools
++@direntry
++* MH-E: (mh-e).			Emacs interface to the MH mail system.
++@end direntry
+ 
+ @setchapternewpage odd
+ 
+--- ./man/cl.texi.org	Mon Apr 15 21:36:53 1996
++++ ./man/cl.texi	Tue May 20 01:24:18 1997
 @@ -2,6 +2,12 @@
  @setfilename ../info/cl
  @settitle Common Lisp Extensions
@@ -73,8 +94,8 @@
  @iftex
  @finalout
  @end iftex
---- ./man/sc.texi.org	Sat Jan  8 00:41:40 1994
-+++ ./man/sc.texi	Tue May 20 22:30:32 1997
+--- ./man/sc.texi.org	Thu Jan  4 12:55:23 1996
++++ ./man/sc.texi	Tue May 20 01:25:13 1997
 @@ -3,6 +3,12 @@
  @comment %**start of header (This is for running Texinfo on a region.)
  @setfilename ../info/sc
@@ -88,8 +109,8 @@
  @iftex
  @finalout
  @end iftex
---- ./man/dired-x.texi.org	Sat Aug 13 09:58:50 1994
-+++ ./man/dired-x.texi	Tue May 20 22:48:19 1997
+--- ./man/dired-x.texi.org	Thu Jan  4 12:54:19 1996
++++ ./man/dired-x.texi	Tue May 20 01:25:55 1997
 @@ -18,6 +18,11 @@
  @setfilename ../info/dired-x
  @c dired-x.el REVISION NUMBER
@@ -102,57 +123,106 @@
  @iftex
  @finalout
  @end iftex
-@@ -196,32 +201,32 @@
- @enumerate
- @item
- Omitting of uninteresting files from dired listing. 
--@itemize
-+@itemize @bullet
- @xref{Omitting Files in Dired}
- @end itemize
- @item
- Local variables for dired directories.
--@itemize
-+@itemize @bullet
- @xref{Local Variables}
- @end itemize
- @item
- Guessing shell commands in dired buffers.
--@itemize
-+@itemize @bullet
- @xref{Shell Command Guessing}
- @end itemize
- @item
- Running dired command in non-dired buffers.
--@itemize
-+@itemize @bullet
- @xref{Virtual Dired}
- @end itemize
- @item
- Finding a file mentioned in a buffer
--@itemize
-+@itemize @bullet
- @xref{Find File At Point}
- @end itemize
- @item
- Commands using file marking.
--@itemize
-+@itemize @bullet
- @xref{Advanced Mark Commands}
- @end itemize
- @end enumerate
---- ./man/gnus.texi.org	Sun Sep 11 11:52:45 1994
-+++ ./man/gnus.texi	Tue May 20 23:23:03 1997
-@@ -3,6 +3,12 @@
- @comment %**start of header (This is for running Texinfo on a region.)
- @setfilename ../info/gnus
- @settitle GNUS 3.15 Manual
-+
+--- ./man/ediff.texi.org	Fri Jun 21 20:00:04 1996
++++ ./man/ediff.texi	Tue May 20 01:26:29 1997
+@@ -10,6 +10,11 @@
+ @synindex vr cp
+ @synindex fn cp
+ @synindex pg cp
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* GNUS: (gnus).			The news reader GNUS.
++* Ediff: (ediff).		A comprehensive visual interface to diff
++				and patch.
 +@end direntry
-+
  @iftex
  @finalout
  @end iftex
+--- ./man/cc-mode.texi.org	Sun Aug  4 21:56:21 1996
++++ ./man/cc-mode.texi	Tue May 20 01:27:18 1997
+@@ -9,6 +9,12 @@
+ @settitle     CC-MODE Version 4 Documentation
+ @footnotestyle end
+ 
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* CC mode: (ccmode).		The GNU Emacs mode for editing C, C++,
++				Objective-C and Java code.
++@end direntry
++
+ @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ @comment @setchapternewpage odd !! we don't want blank pages !!
+ @comment %**end of header (This is for running Texinfo on a region)
+--- ./man/message.texi.org	Wed Jun 26 14:49:43 1996
++++ ./man/message.texi	Sat Dec 13 17:46:31 1997
+@@ -5,6 +5,10 @@
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Message: (message).		Editing mail and news messages.
++@end direntry
+ @iftex
+ @finalout
+ @end iftex
+--- Makefile.in.~1~	Sat Jul 11 17:57:16 1998
++++ Makefile.in	Sat Jul 11 17:58:45 1998
+@@ -191,7 +191,7 @@
+ # Subdirectories to make recursively.  `lisp' is not included
+ # because the compiled lisp files are part of the distribution
+ # and you cannot remake them without installing Emacs first.
+-SUBDIR = lib-src src
++SUBDIR = lib-src src man
+ 
+ # The makefiles of the directories in $SUBDIR.
+ SUBDIR_MAKEFILES = lib-src/Makefile man/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile
+--- Makefile.in.~1~	Fri Jul 10 00:00:50 1998
++++ Makefile.in	Fri Jul 10 00:10:50 1998
+@@ -375,14 +375,9 @@
+ 	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
+ 	then \
+ 	  (cd ${infodir};  \
+-	   if [ -f dir ]; then \
+-	     if [ ! -f dir.old ]; then mv -f dir dir.old; \
+-	     else mv -f dir dir.bak; fi; \
+-	   fi; \
+ 	   cd ${srcdir}/info ; \
+-	   (cd $${thisdir}; ${INSTALL_DATA} ${srcdir}/info/dir ${infodir}/dir); \
+ 	   (cd $${thisdir}; chmod a+r ${infodir}/dir); \
+-	   for f in ccmode* cl* dired-x* ediff* emacs* forms* gnus* info* message* mh-e* sc* vip* \
++	   for f in ccmode* cl* dired-x* ediff* emacs* forms* gnus* message* mh-e* sc* vip* \
+ 		antenews* canna* egg* languages* m2ps* mule* kbd-trans* \
+ 		quail* terminology* CCL* ISO2022* R2L* XFONT*; do \
+ 	     (cd $${thisdir}; \
+--- ./man/Makefile.in.org	Thu Jun 27 15:27:19 1996
++++ ./man/Makefile.in	Tue Apr 15 00:29:52 1997
+@@ -13,7 +13,7 @@
+ # The makeinfo program is part of the Texinfo distribution.
+ MAKEINFO = makeinfo
+ INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl ../info/dired-x \
+-	       ../info/ediff ../info/forms ../info/gnus ../info/info \
++	       ../info/ediff ../info/forms ../info/gnus \
+ 	       ../info/mh-e ../info/sc ../info/vip ../info/viper \
+ 	       ../info/message
+ DVI_TARGETS = emacs.dvi cc-mode.dvi cl.dvi dired-x.dvi ediff.dvi forms.dvi \
+@@ -66,6 +66,7 @@
+ 	${srcdir}/gnu1.texi \
+ 	${srcdir}/glossary.texi
+ 
++all: info
+ info: $(INFO_TARGETS)
+ 
+ dvi: $(DVI_TARGETS)
+@@ -74,12 +75,6 @@
+ # in srcdir.  There is no provision for Info files
+ # to exist in the build directory.
+ # In a distribution of Emacs, the Info files should be up to date.
+-
+-../info/info: ${INFOSOURCES}
+-	cd $(srcdir); $(MAKEINFO) --no-split info.texi
+-
+-info.dvi: ${INFOSOURCES}
+-	TEXINPUTS="$(srcdir) $(TEXINPUTS)"; $(TEXI2DVI) ${srcdir}/info.texi
+ 
+ ../info/emacs: ${EMACSSOURCES}
+ 	cd $(srcdir); $(MAKEINFO) emacs.texi

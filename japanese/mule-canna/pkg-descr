@@ -1,5 +1,5 @@
 This is a package containing only the executables for mule-2.3, a
-multilingual editor based on emacs-19.28.
+multilingual editor based on emacs-19.34.
 
 You should install a package, mule-common-2.3, containing emacs lisp
 files, info pages, and so on (except executables) for mule-2.3.
@@ -22,8 +22,8 @@ that may have been added to that file!
 
 [Notice]
 Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for mule-2.3.
-Patches for those are in 'mule-2.3.patch.tar.gz' and are applied in
-this port.
+Patches for those are in 'mule-2.3-19.34.patch-YYMMDD.tar.gz' and are
+applied in this port.
 
 - S. Taoka
 taoka@infonets.hiroshima-u.ac.jp
