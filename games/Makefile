@@ -107,6 +107,7 @@
     SUBDIR += frotz
     SUBDIR += frozenbubble
     SUBDIR += fsgs
+    SUBDIR += fuhquake
     SUBDIR += galaxis
     SUBDIR += garith
     SUBDIR += gcompris
