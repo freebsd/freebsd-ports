@@ -1,0 +1,13 @@
+bin/the
+lib/THE/append.the
+lib/THE/comm.the
+lib/THE/uncomm.the
+lib/THE/total.the
+lib/THE/match.the
+lib/THE/rm.the
+lib/THE/words.the
+lib/THE/l.the
+lib/THE/compile.the
+lib/THE/spell.the
+lib/THE/demo.the
+lib/THE/THE_Help.txt
