@@ -35,9 +35,11 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/bdb.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/cursor.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/cursor.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sequence.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/sequence.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Btree.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Btree.src/M000167.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Btree.src/M000206.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000047.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000048.html
@@ -120,10 +122,11 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000125.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000126.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000127.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000128.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000129.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000130.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Common.src/M000131.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000168.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000169.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000170.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000171.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000172.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000173.html
@@ -156,11 +159,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000200.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000201.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000202.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000203.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000204.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Cursor.src/M000205.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000128.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000129.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000130.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000131.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000132.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000133.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000134.html
@@ -195,42 +197,42 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000163.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000164.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000165.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000166.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000167.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000168.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Env.src/M000169.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Hash.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Hash.src/M000166.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Hash.src/M000170.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000043.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000044.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000045.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000046.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lock.src/M000004.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/LockDead.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/LockError.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/LockGranted.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/LockHeld.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000205.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000206.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000207.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000208.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000216.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000217.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000218.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lockid.src/M000219.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000209.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000210.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000211.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000212.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000213.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000214.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000215.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000222.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000223.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000224.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000225.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000226.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000227.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Lsn.src/M000228.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000216.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000217.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000218.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000229.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000230.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src/M000231.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src/M000203.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src/M000204.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src/M000220.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src/M000221.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000001.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000002.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000003.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000004.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000005.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000006.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000007.html
@@ -269,20 +271,21 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000040.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000041.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000043.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000044.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000045.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src/M000046.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000207.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000208.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000209.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000210.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000211.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000212.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000213.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000214.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src/M000215.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000219.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000220.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000221.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000222.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000223.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000224.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000225.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000226.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000227.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000228.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000229.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000230.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000231.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000232.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000233.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000234.html
@@ -291,6 +294,19 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000237.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000238.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000239.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000240.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000241.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000242.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000243.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000244.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000245.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000246.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000247.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000248.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000249.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000250.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000251.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src/M000252.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/bdb_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/common_rb.html
@@ -300,6 +316,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/exception_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lock_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/log_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/sequence_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/transaction_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
@@ -318,6 +335,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transaction.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/BDB/Txn.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/BDB/Sequence.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/BDB/Recnum.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/BDB/Recno.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/BDB/Queue.src
@@ -349,6 +367,7 @@
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/close-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/count-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/create-c.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/create_sequence-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/cursor-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/cursor_write-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/database-i.yaml
@@ -366,6 +385,7 @@
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/dup_count-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/duplicates-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/each-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/each_by_prefix-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/each_dup-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/each_dup_value-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/each_key-i.yaml
@@ -393,6 +413,7 @@
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/member%3f-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/new-c.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/open-c.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/open_sequence-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/partial_clear-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/pget-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/put-i.yaml
@@ -400,6 +421,7 @@
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/reject-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/remove-c.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/reverse_each-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/reverse_each_by_prefix-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/reverse_each_key-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/reverse_each_pair-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Common/reverse_each_primary-i.yaml
@@ -562,6 +584,16 @@
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Recnum/to_a-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Recnum/to_ary-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Recnum/unshift-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/cachesize-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/cdesc-Sequence.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/close-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/db-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/flags-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/get-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/key-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/range-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/remove-i.yaml
+%%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Sequence/stat-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Txn/abort-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Txn/assoc-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Txn/associate-i.yaml
@@ -585,6 +617,7 @@
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/Txn/txn_prepare-i.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%%%RUBY_SITERIDIR%%/BDB/cdesc-BDB.yaml
 %%RUBY18_ONLY%%%%PORTDOCS%%@dirrm %%RUBY_SITERIDIR%%/BDB/Txn
+%%RUBY18_ONLY%%%%PORTDOCS%%@dirrm %%RUBY_SITERIDIR%%/BDB/Sequence
 %%RUBY18_ONLY%%%%PORTDOCS%%@dirrm %%RUBY_SITERIDIR%%/BDB/Recnum
 %%RUBY18_ONLY%%%%PORTDOCS%%@dirrm %%RUBY_SITERIDIR%%/BDB/Recno
 %%RUBY18_ONLY%%%%PORTDOCS%%@dirrm %%RUBY_SITERIDIR%%/BDB/Queue
