@@ -249,7 +249,7 @@ WITH_LIBDV=	yes
 WITH_DVD=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libdvdnav.so.1)
+.if exists(${LOCALBASE}/lib/libdvdnav.so.3)
 WITH_LIBDVDNAV=	yes
 .endif
 
@@ -370,7 +370,7 @@ LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss
 LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 .endif
 .if defined(WITH_LIBDVDNAV)
-LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
 
 CONFIGURE_ARGS+=	--enable-dvdnav
 .else

@@ -133,7 +133,7 @@ PLIST_SUB+=	DVD='@comment '
 .endif
 # xine libdvdnav
 .if defined(WITH_LIBDVDNAV) && !defined(WITHOUT_LIBDVDNAV)
-LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
 
 CONFIGURE_ARGS+=	--with-libdvdnav=${LOCALBASE}
 .endif
