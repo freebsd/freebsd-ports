@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/vmsbackup
+man/man1/vmsbackup.1.gz

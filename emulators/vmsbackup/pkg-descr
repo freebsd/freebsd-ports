@@ -1,0 +1,10 @@
+
+    VMSBACKUP reads VMS BACKUP tapes.
+
+    Main features:
+	swaps bytes from big-endian to little-endian, if required.
+	savesets can be selected individually.
+	can preserve directory structure.
+	excludes vms specific files (eg executables and objects).
+	converts vms version numbering semicolons to colons.
+

@@ -1,0 +1,162 @@
+*** vmsbackup.1	Sun Feb 19 10:35:29 1989
+--- ../../src/vmsbackup.1	Tue Apr 18 20:59:08 1995
+***************
+*** 4,18 ****
+  .SH SYNOPSIS
+  .B vmsbackup
+! .B \-{tx}[cdevw][s setnumber][f tapefile] 
+  [ name ... ]
+  .SH DESCRIPTION
+  .I vmsbackup 
+  reads a VMS generated backup tape, converting the files
+! to Unix format and writing the files to disc.
+  The default operation of the program is to go through an entire
+! tape, extracting every file and writing it to disc.
+  This may be modified by the following options.
+  .TP 8
+! .B c
+  Use complete filenames, including the version number.
+  A colon and the octal version number will be appended to all filenames.
+--- 4,18 ----
+  .SH SYNOPSIS
+  .B vmsbackup
+! .B \-[txcdevw][s setnumber][f tapefile] 
+  [ name ... ]
+  .SH DESCRIPTION
+  .I vmsbackup 
+  reads a VMS generated backup tape, converting the files
+! to Unix format and writing the files to disk.
+  The default operation of the program is to go through an entire
+! tape, extracting every file and writing it to disk.
+  This may be modified by the following options.
+  .TP 8
+! .B -c
+  Use complete filenames, including the version number.
+  A colon and the octal version number will be appended to all filenames.
+***************
+*** 26,33 ****
+  The default is to ignore version numbers.
+  .TP 8
+! .B d
+  use the directory structure from VMS, the default value is off.
+  .TP 8
+! .B e
+  Process all filename extensions.
+  Since this program is mainly intended to move source code and possibly
+--- 26,33 ----
+  The default is to ignore version numbers.
+  .TP 8
+! .B -d
+  use the directory structure from VMS, the default value is off.
+  .TP 8
+! .B -e
+  Process all filename extensions.
+  Since this program is mainly intended to move source code and possibly
+***************
+*** 35,39 ****
+  all files whose filename extension specifies system dependent data.
+  The file types which will be ignored, unless the
+! .B e
+  option is specified, are
+  .IP "" 10
+--- 35,39 ----
+  all files whose filename extension specifies system dependent data.
+  The file types which will be ignored, unless the
+! .B -e
+  option is specified, are
+  .IP "" 10
+***************
+*** 57,61 ****
+  .PP
+  .TP 8
+! .B f
+  Use the next argument in the command line as the tape device to
+  be used, rather than the default.
+--- 57,61 ----
+  .PP
+  .TP 8
+! .B -f
+  Use the next argument in the command line as the tape device to
+  be used, rather than the default.
+***************
+*** 83,94 ****
+  This must be a raw mode tape device.
+  .TP 8
+! .B s saveset
+  Process only the given saveset number.
+  .TP 8
+! .B t
+! Produce a table of contents (a directory listing) on the standard output
+! of the files on tape.
+  .TP 8
+! .B v
+  Verbose output.
+  Normally
+--- 83,94 ----
+  This must be a raw mode tape device.
+  .TP 8
+! .B -s saveset
+  Process only the given saveset number.
+  .TP 8
+! .B -t
+! Produce a table of contents (a recursive directory listing) on the 
+! standard output of the files on tape.
+  .TP 8
+! .B -v
+  Verbose output.
+  Normally
+***************
+*** 98,102 ****
+  tape to disk to be output on the standard output.
+  .TP 8
+! .B w
+  .I vmsbackup
+  prints the action to be taken followed by file name, then
+--- 98,102 ----
+  tape to disk to be output on the standard output.
+  .TP 8
+! .B -w
+  .I vmsbackup
+  prints the action to be taken followed by file name, then
+***************
+*** 104,108 ****
+  is given, the action is done. Any other input means don't do it.
+  .TP 8
+! .B x
+  extract the named files from the tape.
+  .TP 8
+--- 104,108 ----
+  is given, the action is done. Any other input means don't do it.
+  .TP 8
+! .B -x
+  extract the named files from the tape.
+  .TP 8
+***************
+*** 111,122 ****
+  argument specifies one or more filenames to be
+  searched for specifically on the tape and only those files are to be processed.
+! The name may contain the usal sh(1) meta-characters *?![] \nnn.
+  .SH FILES
+! /dev/rmt\fIx\fP
+  .SH SEE ALSO
+! rmtops(3)
+  .SH BUGS
+  The filename match uses the complete VMS file names.
+! 
+  .SH AUTHOR
+  John Douglas Carey
+--- 111,124 ----
+  argument specifies one or more filenames to be
+  searched for specifically on the tape and only those files are to be processed.
+! The name may contain the usal 
+! .I sh(1)
+! meta-characters *?![].
+  .SH FILES
+! /dev/rmt\fIx\fP, /dev/rst\fIx\fP
+  .SH SEE ALSO
+! rsh(1), rmt(8)
+  .SH BUGS
+  The filename match uses the complete VMS file names.
+! Filename matching does not use libregex.a
+  .SH AUTHOR
+  John Douglas Carey
