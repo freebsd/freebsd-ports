@@ -30,7 +30,7 @@ live/liveMedia/include/FramedFileSource.hh
 live/liveMedia/include/FramedFilter.hh
 live/liveMedia/include/FramedSource.hh
 live/liveMedia/include/GSMAudioRTPSink.hh
-liveMedia/include/GroupsockHelper.hh
+live/liveMedia/include/GroupsockHelper.hh
 live/liveMedia/include/H263plusVideoRTPSink.hh
 live/liveMedia/include/H263plusVideoRTPSource.hh
 live/liveMedia/include/HTTPSink.hh
