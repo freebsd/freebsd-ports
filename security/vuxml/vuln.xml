@@ -245,10 +245,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <blockquote cite="http://rhn.redhat.com/errata/RHSA-2004-611.html">
                 <p>Oleksandr Byelkin discovered that "ALTER TABLE ... RENAME"
                 checked the CREATE/INSERT rights of the old table instead of the new one.</p>
+        </blockquote>
                 <p>Table access restrictions, on the affected MySQL servers,
                 may accidently or intentially be bypassed due to this
                 bug.</p>
-        </blockquote>
        </body>
      </description>
      <references>
