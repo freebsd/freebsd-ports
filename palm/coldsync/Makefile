@@ -28,6 +28,8 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ARGS+=	--with-i18n
+
 # I don't know how to test for a version of {Net,Open}BSD that supports USB.
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 400000
 CONFIGURE_ARGS+=	--with-usb
