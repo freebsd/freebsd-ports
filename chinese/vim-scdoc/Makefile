@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vim-scdoc
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-s//}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 PLIST_SUB=	PATH_SUB=vim63
 NO_BUILD=	yes
 VIM_PATH=	${PREFIX}/share/vim/vim63
+VIM_DOCS_PATH=	${VIM_PATH}/doc.zh_CN
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
@@ -27,6 +28,9 @@ do-install:
 	${CP} -rf ${WRKSRC}/doc/ ${WRKSRC}/doc.zh_CN/
 	(cd ${WRKSRC}; ${TAR} -cf - doc.zh_CN) | \
 	${TAR} --exclude CVS -xf - -C ${VIM_PATH}/
+.for i in AUTHORS INSTALL README VERSION ChangeLog LICENSE TODO dict.txt guides.txt
+	${INSTALL_DATA} ${WRKSRC}/${i} ${VIM_DOCS_PATH}/
+.endfor
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
