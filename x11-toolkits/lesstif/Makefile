@@ -14,7 +14,7 @@ MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
 		http://gd.tuwien.ac.at/hci/lesstif/srcdist/ \
 		ftp://linux.sarang.net/mirror/development/widget/lesstif/srcdist/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	dinoex@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
