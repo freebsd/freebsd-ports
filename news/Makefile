@@ -32,6 +32,7 @@
     SUBDIR += ifmail
     SUBDIR += ija
     SUBDIR += inn
+    SUBDIR += inn-current
     SUBDIR += inn-stable
     SUBDIR += knews
     SUBDIR += leafnode

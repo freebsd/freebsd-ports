@@ -1,26 +1,31 @@
 # New ports collection makefile for:	inn
-# Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1), 14 Feb 1999 (2.2)
-# Whom:			torstenb
+# Date created:				2003
+# Whom:					clement
 #
 # $FreeBSD$
 #
 
 PORTNAME=	inn
-PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTVERSION=	${SNAPSHOT}
 CATEGORIES=	news ipv6
-MASTER_SITES=	${MASTER_SITE_ISC}
-MASTER_SITE_SUBDIR=	inn
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	clement
+PKGNAMESUFFIX=	-${BRANCH}
+DISTNAME=	${PORTNAME}-${BRANCH:U}-${SNAPSHOT}
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
+
+BRANCH=		current
+SNAPSHOT=	20040118
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 
-CONFLICTS=	inn-*
+CONFLICTS=	inn-2.4* inn-stable-*
 
 .if exists(/var/news) && !defined(PACKAGE_BUILDING)
 INN_NEWSSPOOL?=/var/news
@@ -38,14 +43,27 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--with-spool-dir=${INN_NEWSSPOOL} \
 			--with-log-dir=${INN_NEWSLOG} \
 			--with-perl \
-			--with-tmp-path=${INN_NEWSSPOOL}/tmp \
-			--with-openssl=${OPENSSLBASE} \
-			--enable-ipv6
+			--with-tmp-dir=${INN_NEWSSPOOL}/tmp \
+			--with-openssl=${OPENSSLBASE}
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
 
 .if defined(WITH_BERKELEYDB)
-# We don't support other versions for the moment.
-CONFIGURE_ARGS+=	--with-berkeleydb
-LIB_DEPENDS+=		db4:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=	--with-berkeleydb=${LOCABASE}
+.    if !defined(WITH_BDB_VER)
+WITH_BDB_VER=	41
+.    endif
+.    if (${WITH_BDB_VER} == 3) || (${WITH_BDB_VER} == 4) || (${WITH_BDB_VER} == 41)
+LIB_DEPENDS+=	db${WITH_BDB_VER}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+.    elif ${WITH_BDB_VER} == 2
+BROKEN=		"Does not compile with db2"
+.    else
+BROKEN=		"Unknown BerkeleyDB version"
+.    endif
+CONFIGURE_ENV+=		DB_VER=db${WITH_BDB_VER}
+CONFIGURE_ARGS+=	--with-berkeleydb=${LOCALBASE}
 .endif
 
 .if defined(WITH_PYTHON)
@@ -54,7 +72,6 @@ CONFIGURE_ARGS+=	--with-python
 .endif
 
 .if defined(WITH_TCL)
-USE_REINPLACE=		yes
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}
 BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 .endif
@@ -84,13 +101,12 @@ PLIST_SUB=		SUB_WITH_TAGGED_HASH="@comment "
 PLIST_SUB+=		SUB_WITHOUT_TAGGED_HASH=""
 .endif
 
-
 EXTRA=		CONTRIBUTORS HACKING INSTALL LICENSE MANIFEST NEWS README TODO
 HEADERS=	clibrary.h config.h dbz.h libinn.h storage.h
 
 MAN1=	convdate.1 fastrm.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
-	innfeed.1 innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
-	shrinkfile.1 simpleftp.1 sm.1 startinnfeed.1
+	innmail.1 nntpget.1 pgpverify.1 rnews.1 shlock.1 \
+	shrinkfile.1 simpleftp.1 sm.1
 MAN3=	clientlib.3 dbz.3 inndcomm.3 libauth.3 libinn.3 libinnhist.3 \
 	libstorage.3 list.3 parsedate.3 qio.3 tst.3 uwildmat.3
 MAN5=	active.5 active.times.5 buffindexed.conf.5 control.ctl.5 \
@@ -102,7 +118,7 @@ MAN5=	active.5 active.times.5 buffindexed.conf.5 control.ctl.5 \
 MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 	ckpasswd.8 cnfsheadconf.8 cnfsstat.8 controlchan.8 ctlinnd.8 \
 	cvtbatch.8 domain.8 expire.8 expireover.8 expirerm.8 filechan.8 \
-	ident.8 inncheck.8 innd.8 inndf.8 inndstart.8 innreport.8 innstat.8 \
+	ident.8 innbind.8 inncheck.8 innd.8 inndf.8 innreport.8 innstat.8 \
 	innupgrade.8 innwatch.8 innxbatch.8 innxmit.8 mailpost.8 makedbz.8 \
 	makehistory.8 mod-active.8 news.daily.8 news2mail.8 ninpaths.8 \
 	nnrpd.8 nntpsend.8 ovdb_init.8 ovdb_monitor.8 ovdb_server.8 \
@@ -113,6 +129,7 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's!/usr/local!${LOCALBASE}!' ${WRKSRC}/configure
 .if defined(WITH_TCL)
 	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.3/tcl.h>!' ${WRKSRC}/innd/innd.h
 	@${REINPLACE_CMD} -e 's!-ltcl!-ltcl83!' ${WRKSRC}/configure
@@ -147,5 +164,9 @@ post-install:
 	    done ; \
 	fi)
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${ECHO_MSG} "*********************** WARNING ***********************"
+	@${ECHO_MSG} "  This port may NOT work correctly. It has been made"
+	@${ECHO_MSG} "  for people who want to track inn-CURRENT via the"
+	@${ECHO_MSG} "  FreeBSD ports tree."
 
 .include <bsd.port.post.mk>
