@@ -405,7 +405,6 @@
     SUBDIR += onenetd
     SUBDIR += openam
     SUBDIR += opendchub
-    SUBDIR += opengatekeeper
     SUBDIR += opengk
     SUBDIR += openh323
     SUBDIR += openh323proxy
