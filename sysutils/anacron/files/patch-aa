@@ -1,6 +1,6 @@
 diff -uN ../anacron-2.3/Makefile ./Makefile
 --- ../anacron-2.3/Makefile	Fri Jun 23 00:26:11 2000
-+++ ./Makefile	Thu Aug 26 11:52:13 2004
++++ ./Makefile	Sun Nov 21 14:29:24 2004
 @@ -19,16 +19,16 @@
  #   `COPYING' that comes with the Anacron source distribution.
  
@@ -31,11 +31,12 @@ diff -uN ../anacron-2.3/Makefile ./Makefile
  		$(MANDIR)/man5 $(MANDIR)/man8
  
  .PHONY: install
-@@ -72,6 +72,7 @@
+@@ -72,6 +72,8 @@
  	$(INSTALL_PROGRAM) anacron $(BINDIR)/anacron
  	$(INSTALL_DATA) anacrontab.5 $(MANDIR)/man5/anacrontab.5
  	$(INSTALL_DATA) anacron.8 $(MANDIR)/man8/anacron.8
 +	$(INSTALL_DATA) anacrontab.sample $(PREFIX)/etc/anacrontab.sample
++	$(INSTALL_DATA) anacron.sh $(PREFIX)/etc/rc.d/anacron.sh
  
  .PHONY: clean
  clean:
@@ -69,6 +70,28 @@ diff -uN ../anacron-2.3/anacron.8 ./anacron.8
  Contains specifications of jobs.  See \fBanacrontab(5)\fR for a complete
  description.
  .TP
+diff -uN ../anacron-2.3/anacron.sh ./anacron.sh
+--- ../anacron-2.3/anacron.sh	Thu Jan  1 01:00:00 1970
++++ ./anacron.sh	Sun Nov 21 11:34:51 2004
+@@ -0,0 +1,18 @@
++#!/bin/sh
++#
++#    initialization/shutdown script for anacron
++
++# PROVIDE: anacron
++# REQUIRE: LOGIN
++# KEYWORD: FreeBSD
++
++. /etc/rc.subr
++
++prefix=/usr/local
++
++name="anacron"
++rcvar=`set_rcvar`
++command="$prefix/sbin/anacron"
++
++load_rc_config $name
++run_rc_command "$1"
 diff -uN ../anacron-2.3/anacrontab.5 ./anacrontab.5
 --- ../anacron-2.3/anacrontab.5	Wed Jun 21 01:12:18 2000
 +++ ./anacrontab.5	Thu Aug 26 11:52:13 2004

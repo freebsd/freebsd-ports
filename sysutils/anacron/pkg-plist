@@ -1,2 +1,3 @@
 sbin/anacron
 etc/anacrontab.sample
+etc/rc.d/anacron.sh
