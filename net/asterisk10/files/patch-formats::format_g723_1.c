@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- /dev/null	Fri Jan 30 01:52:11 2004
-+++ formats/format_g723_1.c	Fri Jan 30 01:58:19 2004
+--- formats/format_g723_1.c.orig	Sun Oct 10 15:59:18 2004
++++ formats/format_g723_1.c	Sun Oct 10 16:05:05 2004
 @@ -0,0 +1,345 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
@@ -57,7 +57,7 @@ $FreeBSD$
 +
 +static long g723_tell(struct ast_filestream *);
 +
-+static ast_mutex_t g723_lock = AST_MUTEX_INITIALIZER;
++AST_MUTEX_DEFINE_STATIC(g723_lock);
 +static int glistcnt = 0;
 +
 +static char *name = "g723";

@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- /dev/null	Fri Jan 30 01:52:11 2004
-+++ codecs/codec_g729_dummy.c	Fri Jan 30 01:57:59 2004
+--- codecs/codec_g729_dummy.c.orig	Sun Oct 10 16:05:56 2004
++++ codecs/codec_g729_dummy.c	Sun Oct 10 16:07:12 2004
 @@ -0,0 +1,275 @@
 +/*
 + * Asterisk -- A telephony toolkit for Linux.
@@ -38,7 +38,7 @@ $FreeBSD$
 +#include "slin_g729_ex.h"
 +#include "g729_slin_ex.h"
 +
-+static ast_mutex_t localuser_lock = AST_MUTEX_INITIALIZER;
++AST_MUTEX_DEFINE_STATIC(localuser_lock);
 +static int localusecnt=0;
 +
 +static char *tdesc = "Dummy G.729/PCM16 Codec Translator";

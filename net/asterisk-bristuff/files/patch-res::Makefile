@@ -1,12 +1,21 @@
 
 $FreeBSD$
 
---- res/Makefile.orig	Sun Oct 26 20:50:49 2003
-+++ res/Makefile	Fri Jan 30 01:47:34 2004
-@@ -25,7 +25,7 @@
- all: depend $(MODS)
+--- res/Makefile.orig	Sat Jul 17 23:58:01 2004
++++ res/Makefile	Thu Oct 14 19:15:00 2004
+@@ -21,7 +21,7 @@
  
- install: all
+ CFLAGS+=
+ CFLAGS+=$(shell [ -f /usr/include/linux/zaptel.h ] && echo " -DZAPATA_MOH")
+-CFLAGS+=$(shell [ -f /usr/local/include/zaptel.h ] && echo " -DZAPATA_MOH")
++CFLAGS+=-DZAPATA_MOH -I$(LOCALBASE)/include
+ #
+ # Work around buggy RedHat 9.0
+ #
+@@ -34,7 +34,7 @@
+ 	rm -f $(DESTDIR)$(ASTHEADERDIR)/parking.h
+ 	rm -f $(DESTDIR)$(MODULES_DIR)/app_agi.so 
+ 	rm -f $(DESTDIR)$(MODULES_DIR)/res_parking.so
 -	for x in $(MODS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(MODULES_DIR) ; done
 +	for x in $(MODS); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(MODULES_DIR) ; done
  

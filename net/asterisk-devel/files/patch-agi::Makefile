@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- agi/Makefile.orig	Sat Oct 25 20:27:53 2003
-+++ agi/Makefile	Fri Jan 30 02:31:07 2004
-@@ -11,21 +11,24 @@
+--- agi/Makefile.orig	Tue Jun 22 20:42:13 2004
++++ agi/Makefile	Tue Oct  5 21:03:40 2004
+@@ -11,15 +11,18 @@
  # the GNU General Public License
  #
  
@@ -24,12 +24,4 @@ $FreeBSD$
 +	for x in $(AGIS_SCR); do $(BSD_INSTALL_SCRIPT) $$x $(DESTDIR)$(AGI_DIR) ; done
  
  eagi-test: eagi-test.o
--	$(CC) -o eagi-test eagi-test.o
-+	$(CC) $(CFLAGS) -o eagi-test eagi-test.o
- 	
- eagi-sphinx-test: eagi-sphinx-test.o
--	$(CC) -o eagi-sphinx-test eagi-sphinx-test.o
-+	$(CC) $(CFLAGS) -o eagi-sphinx-test eagi-sphinx-test.o
- 
- clean:
- 	rm -f *.so *.o look .depend
+ 	$(CC) $(CFLAGS) -o eagi-test eagi-test.o
