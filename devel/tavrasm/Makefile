@@ -17,7 +17,7 @@ COMMENT=	Tom's AVR Assembler
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
-WRKSRC=		${WRKDIR}/tavrasm.120
+WRKSRC=		${WRKDIR}/tavrasm.122
 BUILD_WRKSRC=	${WRKSRC}/src
 
 AVR_INCLUDE=	${PREFIX}/include/avr
