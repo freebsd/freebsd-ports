@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.25
+PORTVERSION=	2.26
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
