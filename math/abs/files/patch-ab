@@ -5,7 +5,7 @@
  
  ATHENALIBS = -lXaw -lXmu -lXt -lX11 -lm
 -CFLAGS = $(DEFINES) $(CDEBUGFLAGS) -I/usr/contrib/X11R6/include 
-+CFLAGS = $(DEFINES) $(CDEBUGFLAGS) -I/usr/X11R6/include 
++CFLAGS += $(DEFINES) $(CDEBUGFLAGS) -I$(X11BASE)/include 
  CDEBUGFLAGS =
  DEFINES =
  RM = rm -f

@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	abs
-PORTVERSION=	0.6
+PORTVERSION=	0.6a
 CATEGORIES=	math
 MASTER_SITES=	http://www.ping.be/bertin/ \
 		http://www.giovannelli.it/~gmarco/files/
-DISTNAME=	abs-src-0.6a
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
 
 USE_XLIB=	yes
 USE_XPM=	yes
-WRKSRC=         ${WRKDIR}/abs-src-0.6a/src
+WRKSRC=         ${WRKDIR}/${DISTNAME}/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abs ${PREFIX}/bin
 
 post-install:
 	@${ECHO} "For the changes from previous version 0.5"
-	@${ECHO} "you can read the NEWS file in ${WRKDIR}/abs-src-0.6a"
+	@${ECHO} "you can read the NEWS file in ${WRKDIR}"
 	@${ECHO} ""
 	@${ECHO} "There are also some examples (not installed) in :"
-	@${ECHO} "${WRKDIR}/abs-src-0.6a/Examples"
+	@${ECHO} "${WRKDIR}/Examples"
 	@${ECHO} ""
 	@${ECHO} ""
 
