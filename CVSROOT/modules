@@ -4598,6 +4598,7 @@ mldonkey-serverspy	ports/net/mldonkey-serverspy
 mldonkey-urlslave	ports/net/mldonkey-urlslave
 mls		ports/mail/mls
 mlterm		ports/x11/mlterm
+mlview		ports/editors/mlview
 mlvwm		ports/x11-wm/mlvwm
 mm		ports/devel/mm
 mmail		ports/news/mmail
