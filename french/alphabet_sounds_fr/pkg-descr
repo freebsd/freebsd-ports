@@ -1,0 +1,14 @@
+French language alphabet and number sounds for the Childsplay game
+
+Childsplay is a 'suite' of educational games for young children, like gcompris,
+but without the overkill of c/c++ and the gnome environ.:-)
+Also the use of the SDL libraries makes smooth animation and the playing of 
+sound very easy.
+Childsplay uses a plugin system for the games, so you might want to check 
+the childsplay-plugins page.
+(There are two built-in games; Memory and a typing game)
+
+Childsplay and the games are GNU-GPL licensed and are tested on GNU/Linux 
+and the Windows platforms. (and now, FreeBSD)
+
+WWW: http://childsplay.sourceforge.net

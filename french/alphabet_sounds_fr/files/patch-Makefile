@@ -1,0 +1,10 @@
+--- Makefile.orig        Wed Dec 31 16:00:00 1969
++++ Makefile    Mon Jul 12 12:33:14 2004
+@@ -0,0 +1,7 @@
++default: all
++all: 
++	@echo "run make install"
++
++install: all
++	./install.sh
++
