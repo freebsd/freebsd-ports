@@ -11,7 +11,7 @@ PORTVERSION=	4.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.vex.net/~cthuang/cproto/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	YES
 MAN1=		cproto.1
