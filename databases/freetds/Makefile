@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.60
-PORTREVISION=	1
+PORTVERSION=	0.61
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	ALPHA/freetds
+MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kiesel@schlund.de
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
