@@ -513,6 +513,7 @@ autosig		ports/mail/autosig
 autossh		ports/security/autossh
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
+avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
 avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
