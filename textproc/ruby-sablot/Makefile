@@ -7,7 +7,7 @@
 
 PORTNAME=	sablot
 PORTVERSION=	0.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubycolor.org/arc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to the Sablotron XSLT processor
 
-LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron \
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.4:${PORTSDIR}/textproc/expat2
 
