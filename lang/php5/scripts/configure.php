@@ -74,7 +74,7 @@ UNIXODBC	"unixODBC support" ${WITH_UNIXODBC:-OFF} \
 WDDX		"WDDX support (implies XML)" ${WITH_WDDX:-OFF} \
 XML		"XML support" ${WITH_XML:-OFF} \
 XMLRPC		"XMLRPC-EPI support (implies ICONV)" ${WITH_XMLRPC:-OFF} \
-XML		"XSL support" ${WITH_XSL:-OFF} \
+XSL		"XSL support" ${WITH_XSL:-OFF} \
 YAZ		"YAZ support (ANSI/NISO Z39.50)" ${WITH_YAZ:-OFF} \
 YP		"YP/NIS support" ${WITH_YP:-OFF} \
 ZLIB		"ZLIB support" ${WITH_ZLIB:-OFF} \
