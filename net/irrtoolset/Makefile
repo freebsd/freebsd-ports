@@ -3,12 +3,12 @@
 # Date created:				May 4th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1997/11/22 01:11:32 asami Exp $
+# $Id: Makefile,v 1.4 1998/02/08 03:01:22 hoek Exp $
 #
 
 DISTNAME=	RAToolSet-3.5.2
 PKGNAME=	ratoolset-3.5.2
-CATEGORIES=	net
+CATEGORIES=	net tk41
 MASTER_SITES=	ftp://ftp.isi.edu/ra/RAToolSet/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
