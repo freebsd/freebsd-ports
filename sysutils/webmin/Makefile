@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.87
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -22,7 +22,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	bind8-0.87-2.wbm.gz net-0.87-1.wbm.gz software-0.87-1.wbm.gz
+WEBMIN_MODULES=	acl-0.87-1.wbm.gz bind8-0.87-2.wbm.gz net-0.87-1.wbm.gz \
+		software-0.87-1.wbm.gz
 WEBMIN_THEMES=	caldera-0.87-1.wbt.gz
 		
 post-extract:
