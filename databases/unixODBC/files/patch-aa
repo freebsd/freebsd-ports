@@ -1,0 +1,56 @@
+--- configure.orig	Fri May 12 07:50:57 2000
++++ configure	Fri May 12 07:57:18 2000
+@@ -2565,6 +2565,53 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
++  echo $ac_n "checking for pthread_mutex_lock  in -lc_r""... $ac_c" 1>&6
++echo "configure:2523: checking for pthread_mutex_lock  in -lc_r" >&5
++ac_lib_var=`echo c_r'_'pthread_mutex_lock  | sed 'y%./+-%__p_%'`
++if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  ac_save_LIBS="$LIBS"
++LIBS="$LIBS -lc_r"
++cat > conftest.$ac_ext <<EOF
++#line 2531 "configure"
++#include "confdefs.h"
++/* Override any gcc2 internal prototype to avoid an error.  */
++/* We use char because int might match the return type of a gcc2
++    builtin and then its argument prototype would still apply.  */
++char pthread_mutex_lock ();
++
++int main() {
++pthread_mutex_lock ()
++; return 0; }
++EOF
++if { (eval echo configure:2542: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=yes"
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=no"
++fi
++rm -f conftest*
++LIBS="$ac_save_LIBS"
++
++fi
++if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
++  echo "$ac_t""yes" 1>&6
++    ac_tr_lib=HAVE_LIB`echo pthread | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
++  cat >> confdefs.h <<EOF
++#define $ac_tr_lib 1
++EOF
++
++  LIBS="$LIBS -lc_r"
++
++else
++  echo "$ac_t""no" 1>&6
++fi
++
+   echo $ac_n "checking for mutex_lock  in -lthread""... $ac_c" 1>&6
+ echo "configure:2570: checking for mutex_lock  in -lthread" >&5
+ ac_lib_var=`echo thread'_'mutex_lock  | sed 'y%./+-%__p_%'`
