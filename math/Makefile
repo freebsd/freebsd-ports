@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.21 1997/01/11 11:39:44 asami Exp $
+# $Id: Makefile,v 1.22 1997/01/24 12:32:35 max Exp $
 #
 
     SUBDIR += blas
     SUBDIR += calc
     SUBDIR += calctool
     SUBDIR += eispack
+    SUBDIR += fftpack
     SUBDIR += freefem
     SUBDIR += fudgit
     SUBDIR += gnuplot
