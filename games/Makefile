@@ -6,6 +6,7 @@
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += acm
+    SUBDIR += acorn
     SUBDIR += acorn-media
     SUBDIR += actx
     SUBDIR += adom
