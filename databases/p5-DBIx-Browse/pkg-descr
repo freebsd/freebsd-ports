@@ -1,0 +1,13 @@
+The purpose of DBIx::Browse is to handle the browsing of relational
+tables.
+
+DBIx::Browse transparently translates SELECTs, UPDATEs, DELETEs and
+INSERTs from the desired "human view" to the values needed for the ta-
+ble. This is the case when you have related tables (1 to n) where the
+detail table has a reference (FOREIGN KEY) to a generic table (i.e.
+Customers and Bills) with some index (tipically an integer).
+
+
+WWW: http://search.cpan.org/search?dist=DBIx-Browse
+
+Philip M. Gollucci <philip@p6m7g8.com>
