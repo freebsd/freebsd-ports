@@ -325,7 +325,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # a major can of worms.
 #
 # Set these variables if your port doesn't need some of the steps.
-# Note that there are no NO_PATCH or NO_CONFIGURE variables becuase
+# Note that there are no NO_PATCH or NO_CONFIGURE variables because
 # those steps are empty by default.  NO_EXTRACT is not allowed anymore
 # since we need to at least create ${WRKDIR}.  Also, NO_CHECKSUM is a user
 # variable and is not to be set in a port's Makefile.  See above for NO_PACKAGE.
@@ -633,8 +633,11 @@ FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
 PKGDIR?=		${MASTERDIR}
 
-.if defined(USE_IMAKE)
+.if defined(USE_IMAKE) && !defined(USE_X_PREFIX)
 USE_X_PREFIX=	yes
+.endif
+.if defined(USE_X_PREFIX) && ${USE_X_PREFIX} == "no"
+.undef USE_X_PREFIX
 .endif
 .if defined(USE_X_PREFIX)
 USE_XLIB=		yes
