@@ -59,6 +59,7 @@
     SUBDIR += ghex2
     SUBDIR += glimmer
     SUBDIR += gmanedit
+    SUBDIR += gnome2-office
     SUBDIR += gnotepad+
     SUBDIR += gnuserv
     SUBDIR += gnuserv-emacs20
