@@ -1,0 +1,15 @@
+--- configure.in.orig	Tue Jul 25 21:56:32 2000
++++ configure.in	Fri Jul 28 02:51:24 2000
+@@ -324,12 +324,6 @@
+ AM_GNU_GETTEXT
+ 
+ dnl
+-dnl This used to cause all kinds of problems in an earlier revision
+-dnl	of oleo. (Mostly because of using earlier auto* tools.)
+-dnl
+-AC_LINK_FILES($nls_cv_header_libgt, $nls_cv_header_intl)
+-
+-dnl
+ dnl Pass information about where we install to the source, to be
+ dnl	able to read AFM files. Note this doesn't work if you
+ dnl	install via "make install DESTDIR=/xxx"

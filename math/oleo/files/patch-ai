@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sat Jul 22 18:51:35 2000
++++ doc/Makefile.in	Fri Jul 28 03:02:45 2000
+@@ -87,7 +87,7 @@
+ LIBOBJS = @LIBOBJS@
+ LN_S = @LN_S@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ MOTIF_CFLAGS = @MOTIF_CFLAGS@
+ MOTIF_LIBS = @MOTIF_LIBS@

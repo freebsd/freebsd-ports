@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	Fri Aug 28 06:15:29 1998
++++ po/Makefile.in.in	Fri Jul 28 04:30:24 2000
+@@ -119,7 +119,7 @@
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+ 	  case "$$cat" in \
+-	    *.gmo) destdir=$(gnulocaledir);; \
++	    *.mo) destdir=$(gnulocaledir);; \
+ 	    *)     destdir=$(localedir);; \
+ 	  esac; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
