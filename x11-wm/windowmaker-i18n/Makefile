@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/04 10:33:43 tg Exp $
+# $Id: Makefile,v 1.2 1998/02/24 09:16:48 tg Exp $
 
 DISTNAME=	WindowMaker-0.13.1
 PKGNAME=	windowmaker-0.13.1
@@ -22,7 +22,11 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 
 USE_X11=	yes
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-nlsdir=${LOCALBASE}/lib/locale
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	X11BASE=${X11BASE}
+CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
+	--with-nlsdir=${LOCALBASE}/lib/locale \
+	--with-gfx-libs=-L${LOCALBASE}/lib \
+	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
