@@ -18,6 +18,7 @@ LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext \
 		${X11BASE}/libdata/pkgconfig/xrender.pc:${PORTSDIR}/x11/libXrender
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/randr.pc:${PORTSDIR}/x11/randrext \
 		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
+		${X11BASE}/libdata/pkgconfig/render.pc:${PORTSDIR}/x11/renderext \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
