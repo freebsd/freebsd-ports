@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- formats/format_g729.c.orig	Mon Sep  8 19:48:07 2003
-+++ formats/format_g729.c	Fri Jan 30 01:47:34 2004
+--- formats/format_g729.c.orig	Wed Jan 28 23:32:48 2004
++++ formats/format_g729.c	Thu Feb 19 01:03:30 2004
 @@ -45,7 +45,7 @@
  	struct ast_frame fr;				/* Frame information */
  	char waste[AST_FRIENDLY_OFFSET];	/* Buffer for sending frames, etc */
@@ -27,22 +27,6 @@ $FreeBSD$
  		if (res)
  			ast_log(LOG_WARNING, "Short read (%d) (%s)!\n", res, strerror(errno));
  		return NULL;
-@@ -150,12 +150,12 @@
- 		ast_log(LOG_WARNING, "Asked to write non-G729 frame (%d)!\n", f->subclass);
- 		return -1;
- 	}
--	if (f->datalen % 20) {
--		ast_log(LOG_WARNING, "Invalid data length, %d, should be multiple of 20\n", f->datalen);
-+	if (f->datalen % 10) {
-+		ast_log(LOG_WARNING, "Invalid data length, %d, should be multiple of 10\n", f->datalen);
- 		return -1;
- 	}
- 	if ((res = write(fs->fd, f->data, f->datalen)) != f->datalen) {
--			ast_log(LOG_WARNING, "Bad write (%d/20): %s\n", res, strerror(errno));
-+			ast_log(LOG_WARNING, "Bad write (%d/10): %s\n", res, strerror(errno));
- 			return -1;
- 	}
- 	return 0;
 @@ -174,7 +174,7 @@
  	cur = lseek(fs->fd, 0, SEEK_CUR);
  	max = lseek(fs->fd, 0, SEEK_END);
