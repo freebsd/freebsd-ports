@@ -6127,6 +6127,7 @@ p5-Text-CSV_XS	ports/textproc/p5-Text-CSV_XS
 p5-Text-Diff	ports/textproc/p5-Text-Diff
 p5-Text-DoubleMetaphone	ports/textproc/p5-Text-DoubleMetaphone
 p5-Text-EtText	ports/textproc/p5-Text-EtText
+p5-Text-ExtractWords	ports/textproc/p5-Text-ExtractWords
 p5-Text-FIGlet	ports/misc/p5-Text-FIGlet
 p5-Text-FillIn	ports/textproc/p5-Text-FillIn
 p5-Text-Filter	ports/textproc/p5-Text-Filter
