@@ -968,7 +968,7 @@ MAIN:{
 	    clean_tree();
 	} else {
 	    foreach $port (keys(%reqd)) {
-		if ($reqd{$port} == &REQ_EXPLICIT) {
+		if ($reqd{$port} & &REQ_EXPLICIT) {
 		    clean_port($port);
 		}
 	    }
@@ -988,7 +988,7 @@ MAIN:{
     # some dependencies (most commonly XFree86) may be bogus.
     if ($build || $packages) {
 	foreach $port (keys(%reqd)) {
-	    if ($reqd{$port} == &REQ_EXPLICIT) {
+	    if ($reqd{$port} & &REQ_EXPLICIT) {
 		build_port($port);
 	    }
 	}
