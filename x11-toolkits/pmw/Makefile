@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	py-pmw
-PORTVERSION=	0.8.4
+PORTNAME=	pmw
+PORTVERSION=	0.8.5
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	ftp://ftp.dscpl.com.au/pub/pmw/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pmw
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pmw.${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
@@ -29,8 +31,11 @@ do-build:
 do-install:
 	@(cd ${WRKDIR}; tar cf - Pmw/__init__.py Pmw/${PMWVERSION}/__init__.py Pmw/${PMWVERSION}/lib) | \
 	    (cd ${PYTHON_SITELIBDIR}; tar xf -)
+	${INSTALL_DATA} ${WRKDIR}/Pmw/${PMWVERSION}/contrib/Pmw* \
+		${PYTHON_SITELIBDIR}/Pmw/${PMWVERSION}/lib
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PYTHON_SITELIBDIR}/Pmw
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PYTHON_SITELIBDIR}/Pmw
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		${PYTHON_SITELIBDIR}/Pmw
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR} ${EXAMPLEDIR}
 	@(cd ${WRKDIR}/Pmw/${PMWVERSION}/doc; tar cf - .) | \
