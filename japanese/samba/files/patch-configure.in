@@ -1,0 +1,26 @@
+Index: configure.in
+===================================================================
+RCS file: /project/cvs/samba22-ja/source/configure.in,v
+retrieving revision 1.27
+diff -u -r1.27 configure.in
+--- configure.in	22 Aug 2003 08:45:59 -0000	1.27
++++ configure.in	8 Oct 2003 12:50:23 -0000
+@@ -696,6 +696,18 @@
+ 		LDFLAGS="$LDFLAGS `$CUPS_CONFIG --ldflags`"
+ 		LIBS="$LIBS `$CUPS_CONFIG --libs`"
+         fi
++	set - $CFLAGS
++	CFLAGS=
++	while test -n "$1"; do
++		case "$1" in
++		"`$CUPS_CONFIG --cflags`")
++		;;
++		*)
++			CFLAGS="$CFLAGS $1"
++		;;
++		esac
++		shift
++	done
+ fi
+ 
+ ############################################

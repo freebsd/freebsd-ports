@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -25,6 +25,7 @@ SAMBA_JA_VERSION=	1.1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	253
 
 # directories
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
@@ -78,13 +79,10 @@ CONFIGURE_ARGS=	--with-i18n-swat \
 		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-piddir=${VARDIR}/run \
-		--with-pam --with-pam_smbpass
+		--with-pam --with-pam_smbpass \
+		--with-included-popt
 
 .include <bsd.port.pre.mk>
-
-CONFIGURE_ENV+=	TESTDIR=/tmp \
-		CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
@@ -138,6 +136,7 @@ post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .if defined(WITH_CUPS)
+#BROKEN=	"CUPS support depends on the latest version of gettext whose msgfmt cannot build language catalogs for SWAT"
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
@@ -183,9 +182,9 @@ PLIST_SUB=      AUDIT=${AUDIT} \
 post-patch:
 	${FIND} ${WRKSRC}/.. -name '*.orig' -delete
 
-#pre-build:
-#	${RM} -fr ${WRKSRC}/include/proto.h
-#	(cd ${WRKSRC} && make proto)
+pre-build:
+	${RM} -fr ${WRKSRC}/include/proto.h
+	(cd ${WRKSRC} && make proto)
 
 post-build:
 	${SED} 's:/usr/local:${PREFIX}:g' ${FILESDIR}/samba.sh.sample \
