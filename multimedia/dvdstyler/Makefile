@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-PORTVERSION=	1.3b
+PORTVERSION=	1.31
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,6 +23,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
 		lavfile-1.6.2:${PORTSDIR}/multimedia/mjpegtools \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

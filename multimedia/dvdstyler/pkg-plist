@@ -24,11 +24,14 @@ bin/dvdstyler
 %%DATADIR%%/rc/plus.png
 %%DATADIR%%/rc/run.png
 %%DATADIR%%/rc/save.png
+share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/de/LC_MESSAGES/dvdstyler.mo
 share/locale/es/LC_MESSAGES/dvdstyler.mo
 share/locale/fr/LC_MESSAGES/dvdstyler.mo
 share/locale/hu/LC_MESSAGES/dvdstyler.mo
 share/locale/it/LC_MESSAGES/dvdstyler.mo
+share/locale/pl/LC_MESSAGES/dvdstyler.mo
+share/locale/pt/LC_MESSAGES/dvdstyler.mo
 share/locale/ru/LC_MESSAGES/dvdstyler.mo
 @dirrm %%DATADIR%%/rc
 @dirrm %%DATADIR%%/data
