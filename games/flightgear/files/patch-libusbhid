@@ -1,0 +1,75 @@
+# libplibjs (from x11-toolkits/plib) requires libusbhid, but since it's
+# statically linked, there is no dependency information, so we have to
+# add -lusbhid manually.  A better solution would be to modify the plib
+# port to install shared libraries with the proper dependencies.
+
+--- src/Main/Makefile.am.orig	Wed Oct  6 21:52:24 2004
++++ src/Main/Makefile.am	Sat Dec 11 19:45:03 2004
+@@ -93,7 +93,7 @@
+ 	-lsgmagvar -lsgmisc -lsgnasal -lsgxml -lsgsound -lsgserial \
+ 	-lsgstructure -lsgenvironment \
+ 	$(THREAD_LIBS) \
+-	-lplibpu -lplibfnt -lplibjs -lplibnet -lplibssg -lplibsg -lplibul \
++	-lplibpu -lplibfnt -lplibjs -lusbhid -lplibnet -lplibssg -lplibsg -lplibul \
+ 	$(network_LIBS) \
+ 	-lz \
+ 	$(opengl_LIBS) \
+--- src/Main/Makefile.in.orig	Tue Oct 12 18:19:02 2004
++++ src/Main/Makefile.in	Sat Dec 11 19:45:03 2004
+@@ -329,7 +329,7 @@
+ 	-lsgmagvar -lsgmisc -lsgnasal -lsgxml -lsgsound -lsgserial \
+ 	-lsgstructure -lsgenvironment \
+ 	$(THREAD_LIBS) \
+-	-lplibpu -lplibfnt -lplibjs -lplibnet -lplibssg -lplibsg -lplibul \
++	-lplibpu -lplibfnt -lplibjs -lusbhid -lplibnet -lplibssg -lplibsg -lplibul \
+ 	$(network_LIBS) \
+ 	-lz \
+ 	$(opengl_LIBS) \
+--- src/Input/Makefile.am.orig	Wed Feb  5 16:13:07 2003
++++ src/Input/Makefile.am	Sat Dec 11 19:45:03 2004
+@@ -6,10 +6,10 @@
+ 
+ js_demo_SOURCES = js_demo.cxx
+ 
+-js_demo_LDADD = -lplibjs $(audio_LIBS) -lplibul
++js_demo_LDADD = -lplibjs -lusbhid $(audio_LIBS) -lplibul
+ 
+ fgjs_SOURCES = fgjs.cxx jsinput.cxx jsinput.h jssuper.cxx jssuper.h
+ 
+-fgjs_LDADD = -lplibjs $(audio_LIBS) -lplibul
++fgjs_LDADD = -lplibjs -lusbhid $(audio_LIBS) -lplibul
+ 
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/src
+--- src/Input/Makefile.in.orig	Tue Oct 12 18:19:01 2004
++++ src/Input/Makefile.in	Sat Dec 11 19:45:03 2004
+@@ -201,9 +201,9 @@
+ noinst_LIBRARIES = libInput.a
+ libInput_a_SOURCES = input.cxx input.hxx
+ js_demo_SOURCES = js_demo.cxx
+-js_demo_LDADD = -lplibjs $(audio_LIBS) -lplibul
++js_demo_LDADD = -lplibjs -lusbhid $(audio_LIBS) -lplibul
+ fgjs_SOURCES = fgjs.cxx jsinput.cxx jsinput.h jssuper.cxx jssuper.h
+-fgjs_LDADD = -lplibjs $(audio_LIBS) -lplibul
++fgjs_LDADD = -lplibjs -lusbhid $(audio_LIBS) -lplibul
+ INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/src
+ all: all-am
+ 
+--- utils/js_server/Makefile.am.orig	Tue Mar  2 15:58:22 2004
++++ utils/js_server/Makefile.am	Sat Dec 11 19:45:03 2004
+@@ -1,4 +1,4 @@
+ sbin_PROGRAMS = js_server
+ 
+ js_server_SOURCES = js_server.cxx
+-js_server_LDADD = -lplibjs -lplibnet -lplibul $(audio_LIBS) $(network_LIBS)
++js_server_LDADD = -lplibjs -lusbhid -lplibnet -lplibul $(audio_LIBS) $(network_LIBS)
+--- utils/js_server/Makefile.in.orig	Tue Oct 12 18:19:06 2004
++++ utils/js_server/Makefile.in	Sat Dec 11 19:45:03 2004
+@@ -183,7 +183,7 @@
+ target_vendor = @target_vendor@
+ thread_LIBS = @thread_LIBS@
+ js_server_SOURCES = js_server.cxx
+-js_server_LDADD = -lplibjs -lplibnet -lplibul $(audio_LIBS) $(network_LIBS)
++js_server_LDADD = -lplibjs -lusbhid -lplibnet -lplibul $(audio_LIBS) $(network_LIBS)
+ all: all-am
+ 
+ .SUFFIXES:
