@@ -1,0 +1,337 @@
+--- applets/batmon/Makefile.in.orig	Tue Sep  1 11:09:50 1998
++++ applets/batmon/Makefile.in	Tue Sep  1 11:17:15 1998
+@@ -127,7 +127,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = batmon_applet
+--- applets/battery/Makefile.in.orig	Tue Sep  1 11:17:22 1998
++++ applets/battery/Makefile.in	Tue Sep  1 11:17:35 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = battery_applet
+--- applets/bussign/Makefile.in.orig	Tue Sep  1 11:17:42 1998
++++ applets/bussign/Makefile.in	Tue Sep  1 11:17:58 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = bussign_applet
+--- applets/cdplayer/Makefile.in.orig	Tue Sep  1 11:18:05 1998
++++ applets/cdplayer/Makefile.in	Tue Sep  1 11:18:16 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = cdplayer_applet
+--- applets/clockmail/Makefile.in.orig	Tue Sep  1 11:18:24 1998
++++ applets/clockmail/Makefile.in	Tue Sep  1 11:18:35 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = clockmail_applet
+--- applets/cpuload/Makefile.in.orig	Tue Sep  1 11:18:42 1998
++++ applets/cpuload/Makefile.in	Tue Sep  1 11:18:51 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = cpuload_applet
+--- applets/cpumemusage/Makefile.in.orig	Tue Sep  1 11:19:00 1998
++++ applets/cpumemusage/Makefile.in	Tue Sep  1 11:19:10 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = cpumemusage_applet
+--- applets/dialer/Makefile.in.orig	Tue Sep  1 11:19:15 1998
++++ applets/dialer/Makefile.in	Tue Sep  1 11:19:26 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = dialer_applet
+--- applets/diskusage/Makefile.in.orig	Tue Sep  1 11:19:33 1998
++++ applets/diskusage/Makefile.in	Tue Sep  1 11:19:45 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = diskusage_applet
+--- applets/drivemount/Makefile.in.orig	Tue Sep  1 11:19:52 1998
++++ applets/drivemount/Makefile.in	Tue Sep  1 11:20:06 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = drivemount_applet
+--- applets/fifteen/Makefile.in.orig	Tue Sep  1 11:20:11 1998
++++ applets/fifteen/Makefile.in	Tue Sep  1 11:20:25 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = fifteen_applet
+--- applets/fish/Makefile.in.orig	Tue Sep  1 11:20:32 1998
++++ applets/fish/Makefile.in	Tue Sep  1 11:20:43 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = fish_applet
+--- applets/gen_util/Makefile.in.orig	Tue Sep  1 11:20:49 1998
++++ applets/gen_util/Makefile.in	Tue Sep  1 11:21:05 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = gen_util_applet
+--- applets/icewm-pager/Makefile.in.orig	Tue Sep  1 11:21:11 1998
++++ applets/icewm-pager/Makefile.in	Tue Sep  1 11:21:21 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = wmpager_applet
+--- applets/mixer/Makefile.in.orig	Tue Sep  1 11:21:27 1998
++++ applets/mixer/Makefile.in	Tue Sep  1 11:21:36 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = mixer_applet
+--- applets/modemlights/Makefile.in.orig	Tue Sep  1 11:21:41 1998
++++ applets/modemlights/Makefile.in	Tue Sep  1 11:21:51 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = modemlights_applet
+--- applets/netload/Makefile.in.orig	Tue Sep  1 11:22:00 1998
++++ applets/netload/Makefile.in	Tue Sep  1 11:22:15 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = netload_applet
+--- applets/webcontrol/Makefile.in.orig	Tue Sep  1 11:22:20 1998
++++ applets/webcontrol/Makefile.in	Tue Sep  1 11:22:36 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = webcontrol_applet
+--- applets/winlist/Makefile.in.orig	Tue Sep  1 11:22:42 1998
++++ applets/winlist/Makefile.in	Tue Sep  1 11:22:52 1998
+@@ -125,7 +125,7 @@
+ INCLUDES = -I. -I$(srcdir) 				\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(srcdir)/../../panel				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = winlist_applet
+--- control-center/Makefile.in.orig	Tue Sep  1 11:29:55 1998
++++ control-center/Makefile.in	Tue Sep  1 11:30:07 1998
+@@ -119,7 +119,7 @@
+ l = @l@
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+--- desktop-properties/Makefile.in.orig	Tue Sep  1 11:30:33 1998
++++ desktop-properties/Makefile.in	Tue Sep  1 11:30:45 1998
+@@ -119,7 +119,7 @@
+ l = @l@
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(includedir) $(X_CFLAGS) $(GNOME_INCLUDEDIR)
+ 
+--- gmenu/Makefile.in.orig	Thu Aug 20 02:46:44 1998
++++ gmenu/Makefile.in	Sun Sep  6 03:21:25 1998
+@@ -119,7 +119,7 @@
+ l = @l@
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+--- gnome-terminal/Makefile.in.orig	Tue Sep  1 11:31:53 1998
++++ gnome-terminal/Makefile.in	Tue Sep  1 11:32:04 1998
+@@ -123,7 +123,7 @@
+ 	-I$(top_srcdir)/intl	\
+ 	-I$(top_builddir)/intl	\
+ 	$(GNOME_INCLUDEDIR)	\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale\""
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
+ 
+ LDADD = \
+ 	$(GNOME_LIBDIR)					\
+--- gsm/Makefile.in.orig	Tue Sep  1 11:32:20 1998
++++ gsm/Makefile.in	Tue Sep  1 11:32:33 1998
+@@ -120,7 +120,7 @@
+ 
+ INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) \
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl	\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale\"" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" \
+ 	-DDEFAULTDIR="\"$(datadir)\""
+ 
+ LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
+--- panel/Makefile.in.orig	Thu Aug 20 02:45:47 1998
++++ panel/Makefile.in	Sun Sep  6 03:22:52 1998
+@@ -126,7 +126,7 @@
+ 
+ INCLUDES = -I. -I$(srcdir) \
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl \
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir) $(GNOME_INCLUDEDIR) $(ORB_CFLAGS)
+ 
+ bin_PROGRAMS = panel #launcher_applet
+@@ -162,7 +162,7 @@
+ 	applet-lib.h \
+ 	applet-widget.h
+ 
+-libpanel_applet_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
++libpanel_applet_la_LDFLAGS = -version-info 0:27:0 -rpath $(libdir)
+ libpanel_applet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
+ 
+ BUILT_SOURCES = $(CORBA_SRCLIST)
+@@ -228,7 +228,7 @@
+ 
+ EXTRA_DIST = panelrc.in panel.in gnome-panel.idl appletsConf.sh.in
+ 
+-confexecdir = $(libdir)
++confexecdir = $(datadir)
+ confexec_DATA = appletsConf.sh
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+--- smproxy/Makefile.in.orig	Tue Sep  1 11:34:30 1998
++++ smproxy/Makefile.in	Tue Sep  1 11:34:41 1998
+@@ -119,7 +119,7 @@
+ l = @l@
+ 
+ INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) \
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale\"" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" \
+ 	-DHAS_MKSTEMP $(SMPROXY_DEFS)
+ 
+ LDADD = -lXt -lXmu $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
+--- core-docs/Makefile.in.orig	Tue Sep  1 12:32:02 1998
++++ core-docs/Makefile.in	Tue Sep  1 12:32:20 1998
+@@ -126,7 +126,7 @@
+ YACC = @YACC@
+ l = @l@
+ 
+-gnome_intro_helpdir = $(datadir)/gnome/help/gnome-intro/C
++gnome_intro_helpdir = $(datadir)/help/gnome-intro/C
+ 
+ GNOME_INTRO_HTML_FILES = \
+ 	gnome-intro/c93191.html \
+--- help-browser/Makefile.in.orig	Thu Aug 20 02:46:36 1998
++++ help-browser/Makefile.in	Tue Sep  1 12:35:49 1998
+@@ -124,8 +124,8 @@
+ 	-I$(includedir)						\
+ 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		\
+ 	$(GNOME_INCLUDEDIR)					\
+-	-DGNOMEHELPPATH=\""$(datadir)/gnome/help\"" 	\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale\""
++	-DGNOMEHELPPATH=\""$(datadir)/help\"" 	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
+ 
+ LDADD = \
+ 	$(GNOME_LIBDIR)					\
+@@ -159,7 +159,7 @@
+ 	     toc.h toc-man.h toc-ghelp.h toc-info.h \
+ 	     $(PIXMAPS) gnome-help.desktop
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/C
++help_browser_helpdir = $(datadir)/help/help-browser/C
+ 
+ sysdir = $(datadir)/apps
+ sys_DATA = gnome-help.desktop
