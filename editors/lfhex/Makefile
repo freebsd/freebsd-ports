@@ -7,34 +7,21 @@
 #
 
 PORTNAME=	lfhex
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.4
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	http://home.earthlink.net/~eyekode/data/
 
-MAINTAINER=	ports@freebsd.org
-COMMENT=	"Large file hex editor"
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Large file hex editor
 
-USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 USE_QT_VER=	3
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${PTHREAD_CFLAGS}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
+CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 
-.include <bsd.port.pre.mk>
+MAKE_ARGS=	EXEC_PREFIX="${PREFIX}/bin" \
+		IFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
+		LFLAGS="${QTCFGLIBS} -lqt-mt ${PTHREAD_LIBS}"
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
-		s,%%X11BASE%%,${X11BASE},g" ${WRKSRC}/src/Makefile.in
-
-post-configure:
-	${REINPLACE_CMD} -e "s,LFLAGS =,LFLAGS = ${PTHREAD_LIBS} ${LDFLAGS}," ${WRKSRC}/src/Makefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
