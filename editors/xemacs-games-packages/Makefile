@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	xemacs-games-packages
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		cookie-1.12-pkg.tar.gz \
-		games-1.12-pkg.tar.gz \
-		mine-1.13-pkg.tar.gz \
-		misc-games-1.14-pkg.tar.gz
+		cookie-1.13-pkg.tar.gz \
+		games-1.13-pkg.tar.gz \
+		mine-1.14-pkg.tar.gz \
+		misc-games-1.15-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
