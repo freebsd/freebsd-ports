@@ -1,0 +1,91 @@
+--- dbcolmultiscale.O	Wed Feb 12 15:15:35 2003
++++ dbcolmultiscale	Wed Feb 12 15:15:50 2003
+@@ -127,7 +127,6 @@
+     push(@INC, $dblibdir);
+ }
+ use DbGetopt;
+-use FileCache;
+ require "$dblibdir/dblib.pl";
+ 
+ @orig_argv = @ARGV;
+--- dbmultistats.O	Wed Feb 12 15:08:07 2003
++++ dbmultistats	Wed Feb 12 15:09:28 2003
+@@ -57,7 +57,6 @@
+     push(@INC, $dblibdir);
+ }
+ use DbGetopt;
+-use FileCache;
+ require "$dblibdir/dblib.pl";
+ 
+ @orig_argv = @ARGV;
+@@ -112,13 +111,13 @@
+ 	# open a new file
+ 	$path = $tag_files{$tag} = &db_tmpfile(TMP);
+ 	close(TMP);
+-	cacheout $path;
+-	print $path "$col_headertag data\n";
++	open PATH, ">>$path";
++	print PATH "$col_headertag data\n";
+ 	$tag_counts{$tag} = 1;
+     };
+     $path = $tag_files{$tag};
+-    cacheout $path;
+-    print $path "$val\n";
++    open PATH, ">>$path";
++    print PATH "$val\n";
+ };
+ 
+ @dbstats_args = ("$dbbindir/dbstats");
+@@ -131,8 +130,7 @@
+ foreach $tag (sort keys %tag_files) {
+     # close it
+     $path = $tag_files{$tag};
+-    cacheout $path;
+-    close($path);
++    close(PATH);
+ 
+     open(FROMMEAN, join(" ", @dbstats_args) . " <$tag_files{$tag} |") || die "$prog: cannot run dbstats.\n";
+     @meanout = <FROMMEAN>;    
+--- dbrowsplituniq.O	Wed Feb 12 15:10:08 2003
++++ dbrowsplituniq	Wed Feb 12 15:14:43 2003
+@@ -77,7 +77,6 @@
+ require "$dblibdir/dblib.pl";
+ use DbGetopt;
+ use English;
+-use FileCache;
+ 
+ @orig_argv = @ARGV;
+ my($prog) = &progname;
+@@ -130,8 +129,8 @@
+     my($path) = $prefix . $index . ".jdb";
+     $index++;
+     $keys_to_paths{$key} = $path;
+-    cacheout $path;
+-    write_header_fh_tag($path, $col_headertag);
++    open $fh, ">>$path";
++    write_header_fh_tag($fh, $col_headertag);
+     return $path;
+ }
+ 
+@@ -141,15 +140,15 @@
+         &split_cols;
+ 	] . $code . q[
+ 	my($path) = &key_to_path($key);
+-	cacheout $path;
+-	write_these_cols_fh($path, @f);
++	open $fh, ">>$path";
++	write_these_cols_fh($fh, @f);
+     };
+     # cleanup
+     foreach (values %keys_to_paths) {
+-	cacheout $_;
+-	delayed_write_comments($_);
+-	print $_ "#  | $prog ", join(" ", @orig_argv), "\n";
+-	close $_;
++	open $fh, ">>$_";
++	delayed_write_comments($fh);
++	print $fh "#  | $prog ", join(" ", @orig_argv), "\n";
++	close $fh;
+     };
+ ];
+ print $loop if ($debug);
