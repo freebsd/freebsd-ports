@@ -8,6 +8,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,6 +19,7 @@ COMMENT=	Network-related programs and modules for KDE
 
 LIB_DEPENDS=	idn:${PORTSDIR}/devel/libidn \
 		slp:${PORTSDIR}/net/openslp
+RUN_DEPENDS=	${QT_PREFIX}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
 
 CONFLICTS=	kopete-[0-9]*
 
