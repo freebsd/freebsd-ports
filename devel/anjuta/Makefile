@@ -27,10 +27,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		anjuta.1 anjuta_launcher.1
 
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -Ee \
-		's|-D[^[:space:]_]+_DISABLE_DEPRECATED||g'
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/applogo.png \
 		${PREFIX}/share/gnome/anjuta/glade
