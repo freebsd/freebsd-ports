@@ -9,6 +9,7 @@
     SUBDIR += bsdftpd-ssl
     SUBDIR += cftp
     SUBDIR += curl
+    SUBDIR += curlpp
     SUBDIR += downloader
     SUBDIR += emacs-wget
     SUBDIR += emirror
