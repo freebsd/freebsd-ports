@@ -6,25 +6,16 @@
 # $FreeBSD$
 #
 
-DISTNAME=	kbanner-2.1
+DISTNAME=	kbanner2
+PKGNAME=	kbanner-2.1
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/NetNews/fj.sources/volume93/Oct/
-DISTFILES=	931016.04.Z 931016.05.Z 931016.06.Z \
-		931016.07.Z 931016.08.Z 931016.09.Z
+MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1993/oct/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sumikawa@kame.net
 
-DIST_SUBDIR=	kbanner
 WRKSRC=		$(WRKDIR)/kbanner2.1
 ALL_TARGET=	kbanner
 MAN1=		kbanner.1
-
-TMPFILE=	kbanner.uu.txt
-EXTRACT_CMD=	${GZCAT}
-EXTRACT_BEFORE_ARGS=	-cd
-EXTRACT_AFTER_ARGS=	>> ${TMPFILE}
-
-post-extract:
-	cd ${WRKDIR} && ${SED} '/^END/,/^BEGIN/d' ${TMPFILE} | uudecode -p | tar zxvf -
 
 .include <bsd.port.mk>
