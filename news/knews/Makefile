@@ -1,12 +1,12 @@
 # New ports collection makefile for:	knews
-# Version required:     0.9.7
+# Version required:     0.9.8
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
-# Whom:                 Andreas Klemm <andreas@knobel.gun.de>
+# Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1996/06/03 00:28:05 asami Exp $
+# $Id: Makefile,v 1.4 1996/07/10 06:41:38 asami Exp $
 #
 
-DISTNAME=	knews-0.9.7
+DISTNAME=	knews-0.9.8
 CATEGORIES+=	x11 news
 MASTER_SITES=	ftp://ftp.nada.kth.se/home/su95-kjo/knews/ \
 	ftp://sunsite.unc.edu/pub/Linux/X11/xapps/networked/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.nada.kth.se/home/su95-kjo/knews/ \
 	ftp://ftp.germany.eu.net/pub/os/Linux/Mirror.SunSITE/X11/xapps/networked/ \
 	ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/X11/xapps/networked/
 
-MAINTAINER=	andreas@knobel.gun.de
+MAINTAINER=	andreas@klemm.gtn.com
 
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
