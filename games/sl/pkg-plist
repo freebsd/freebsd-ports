@@ -1,0 +1,4 @@
+bin/sl
+share/doc/sl/README
+share/doc/sl/sl.txt
+@dirrm share/doc/sl

@@ -1,0 +1,32 @@
+# New ports collection makefile for:    sl
+# Version required:    3.03
+# Date created:                17 Sep 1999
+# Whom:                        HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
+#
+# $FreeBSD$
+#
+
+DISTNAME=      sl
+PKGNAME=       sl-3.03
+CATEGORIES=    games
+MASTER_SITES=  http://www.is.titech.ac.jp/~toyoda/sl/
+EXTRACT_SUFX=  .tar
+
+MAINTAINER=    th@cis.ibaraki.ac.jp
+
+BUILD_DEPENDS= nkf:${PORTSDIR}/japanese/nkf
+
+ALL_TARGET=    sl
+MAN1=          sl.1
+MANLANG=       ja
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/sl ${PREFIX}/bin
+	${MV} ${WRKSRC}/sl.1 ${WRKSRC}/sl.man
+	nkf -e ${WRKSRC}/sl.man > ${WRKSRC}/sl.1
+	${INSTALL_MAN} ${WRKSRC}/sl.1 ${PREFIX}/man/ja/man1
+	${MKDIR} ${PREFIX}/share/doc/sl
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sl
+	${INSTALL_DATA} ${WRKSRC}/sl.txt ${PREFIX}/share/doc/sl
+
+.include <bsd.port.mk>
