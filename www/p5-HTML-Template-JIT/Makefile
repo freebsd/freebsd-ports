@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Template-JIT
 PORTVERSION=	0.04
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -27,13 +28,16 @@ MAN3=		HTML::Template::JIT.3 HTML::Template::JIT::Compiler.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/5.005-JIT-Compiler.pm
 post-patch:
+	@${PERL} -i -pe 's/indent -kr/indent/' \
+			${WRKSRC}/JIT/Compiler.pm
+.if ${PERL_LEVEL} < 500600
 	@${PERL} -i -pe '$$_ = "" if /warnings|5\.006/g;' \
 			-e 's/\bour ([^ ;]+)/use vars qw{$$1};$$1/g;' \
 			${WRKSRC}/Makefile.PL ${WRKSRC}/JIT.pm \
 			${WRKSRC}/JIT/Base.pm ${WRKSRC}/JIT/Compiler.pm
+
+EXTRA_PATCHES=	${PATCHDIR}/5.005-JIT-Compiler.pm
 .endif
 
 .include <bsd.port.post.mk>
