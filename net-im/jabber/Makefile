@@ -25,6 +25,9 @@ LIB_DEPENDS=	pth:${PORTSDIR}/devel/pth
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_OPENSSL=	yes
+
+CONFIGURE_ARGS+=	--enable-ssl
 
 rc=${PREFIX}/etc/rc.d
 
