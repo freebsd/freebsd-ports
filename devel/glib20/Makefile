@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.0,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -29,6 +29,8 @@ USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu
@@ -39,9 +41,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		glib-genmarshal.1 glib-mkenums.1
-
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
