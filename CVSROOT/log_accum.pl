@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# $Id: log_accum.pl,v 1.9 1995/10/31 20:05:12 peter Exp $
+# $Id: log_accum.pl,v 1.10 1995/10/31 23:17:11 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -162,8 +162,6 @@ sub build_header {
     delete $ENV{'TZ'};
     local($sec,$min,$hour,$mday,$mon,$year) = localtime(time);
     $version = '';
-    #$login = getlogin || (getpwuid($<))[0] || die("Unknown user $<.\n");
-    $login = (getpwuid($<))[0] || die("Unknown user $<.\n");
     $header = sprintf("%-8s  %s  %02d/%02d/%02d %02d:%02d:%02d",
 		       $login, $version, $year%100, $mon+1, $mday,
 		       $hour, $min, $sec);
@@ -281,6 +279,8 @@ sub mail_notification {
 #
 $id = getpgrp();
 $state = $STATE_NONE;
+$login = `logname` || (getpwuid($<))[0] || die("Unknown user $<.\n");
+chop($login);
 @files = split(' ', $ARGV[0]);
 @path = split('/', $files[0]);
 $repository = @path[0];
