@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xzx
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zx-spectrum.net/xzx/files/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
@@ -24,6 +24,10 @@ USE_X_PREFIX=	yes
 
 # Hardcoding FETCH_CMD is necessary since -A argument causes problems
 FETCH_CMD=	/usr/bin/fetch
+
+# License forbids redistribution
+NO_CDROM=	Redistribution forbidden by license
+NO_PACKAGE=	Redistribution forbidden by license
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-oss
