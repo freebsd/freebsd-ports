@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PKG_PLIST=	bin/c2mdoc libexec/c2mdoc.awk
+PLIST_FILES=	bin/c2mdoc libexec/c2mdoc.awk
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/c2mdoc.awk ${PREFIX}/libexec
