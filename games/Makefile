@@ -3,6 +3,7 @@
 
     SUBDIR += 3dc
     SUBDIR += 3dpong
+    SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += acm
     SUBDIR += actx
