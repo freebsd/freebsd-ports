@@ -15,6 +15,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dannyman@toldme.com
 
+USE_REINPLACE=	yes
+USE_PERL5=	yes
 NO_WRKSUBDIR=	true
 NO_BUILD=	true
 
@@ -23,7 +25,7 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 
 do-patch:
-	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/enteruser
+	@${REINPLACE_CMD} -e 's,^#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/enteruser
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/enteruser ${PREFIX}/sbin
