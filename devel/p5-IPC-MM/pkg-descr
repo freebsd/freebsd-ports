@@ -1,0 +1,13 @@
+IPC::MM provides an interface to Ralf Engelschall's mm library, allowing
+memory to be shared between multiple processes in a relatively
+convenient way.
+
+IPC::MM provides methods to create and destoy shared memory segments and
+to access data structures within those shared memory segments, as well
+as miscellaneous methods.  Additionally, it provides a tied interface
+for scalars and hashes.
+
+WWW: http://search.cpan.org/dist/IPC-MM/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
