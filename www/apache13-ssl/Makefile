@@ -3,7 +3,7 @@
 # Date created:     	15th August 1997
 # Whom:			Mark Murray <mark@grondar.za>
 #
-# $Id: Makefile,v 1.45 1998/04/12 09:53:50 markm Exp $
+# $Id: Makefile,v 1.46 1998/12/01 11:14:55 obrien Exp $
 
 DISTNAME=       apache_1.2.6
 PKGNAME=        apacheSSL-1.2.6
@@ -16,6 +16,8 @@ MAINTAINER=     markm@freebsd.org
 
 BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+
+BROKEN=		repository copy
 
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
