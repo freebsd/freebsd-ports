@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rubber
-PORTVERSION=	0.99.5
+PORTVERSION=	0.99.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://beffara.org/pub/
 
