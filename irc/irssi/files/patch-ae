@@ -1,5 +1,5 @@
---- plugins/perl/Makefile.PL.in	Fri Feb 25 12:52:31 2000
-+++ plugins/perl/Makefile.PL.in.new	Fri Feb 25 19:38:08 2000
+--- plugins/perl/xs/Makefile.PL.in	Fri Feb 25 12:52:31 2000
++++ plugins/perl/xs/Makefile.PL.in.new	Fri Feb 25 19:38:08 2000
 @@ -2,5 +2,5 @@
  
  WriteMakefile('NAME' => 'Irssi',
