@@ -1,0 +1,102 @@
+diff -ruN xpvm.orig/src/Makefile.aimk xpvm/src/Makefile.aimk
+--- src/Makefile.aimk	Fri Apr 10 05:11:22 1998
++++ src/Makefile.aimk	Thu Apr  1 13:38:57 2004
+@@ -39,36 +39,39 @@
+ #
+ 
+ # Personal Installation
+-TCLTKHOME	=	$(HOME)/TCL
++#TCLTKHOME	=	$(HOME)/TCL
+ # System Installation
+-#TCLTKHOME	=	/usr/local/lib
++TCLTKHOME	=	$(LOCALBASE)
+ 
+ # Tcl 7.5 / Tk 4.1 and above
+-TCLINCL		=	-I$(TCLTKHOME)/tcl/generic
+-TKINCL		=	-I$(TCLTKHOME)/tk/generic
++#TCLINCL	=	-I$(TCLTKHOME)/tcl/generic
++#TKINCL		=	-I$(TCLTKHOME)/tk/generic
+ # Tcl 7.4 / Tk 4.0 and below
+ #TCLINCL	=	-I$(TCLTKHOME)/tcl
+ #TKINCL		=	-I$(TCLTKHOME)/tk
+ # System Installed Tcl / Tk
+-#TCLINCL	=	-I$(TCLTKHOME)
+-#TKINCL		=	-I$(TCLTKHOME)
++TCLINCL		=	-I$(TCLTKHOME)/include/tcl8.4
++TKINCL		=	-I$(TCLTKHOME)/include/tk8.4
+ 
+ # Tcl 7.5 / Tk 4.1 and above
+-TCLLIBDIR	=	-L$(TCLTKHOME)/tcl/unix/$(PVM_ARCH)
+-TKLIBDIR	=	-L$(TCLTKHOME)/tk/unix/$(PVM_ARCH)
++#TCLLIBDIR	=	-L$(TCLTKHOME)/tcl/unix/$(PVM_ARCH)
++#TKLIBDIR	=	-L$(TCLTKHOME)/tk/unix/$(PVM_ARCH)
+ # Tcl 7.4 / Tk 4.0 and below
+ #TCLLIBDIR	=	-L$(TCLTKHOME)/tcl/$(PVM_ARCH)
+ #TKLIBDIR	=	-L$(TCLTKHOME)/tk/$(PVM_ARCH)
+ # System Installed Tcl / Tk
+-#TCLLIBDIR	=	-L$(TCLTKHOME)
+-#TKLIBDIR	=	-L$(TCLTKHOME)
++TCLLIBDIR	=	-L$(TCLTKHOME)/lib/tcl8.4
++TKLIBDIR	=	-L$(TCLTKHOME)/lib/tk8.4
+ 
++# Tcl / Tk 8.4
++TCLLIB		=	-ltcl84
++TKLIB		=	-ltk84
+ # Tcl / Tk 8.1
+ #TCLLIB		=	-ltcl8.1
+ #TKLIB		=	-ltk8.1
+ # Tcl / Tk 8.0
+-TCLLIB		=	-ltcl8.0
+-TKLIB		=	-ltk8.0
++#TCLLIB		=	-ltcl8.0
++#TKLIB		=	-ltk8.0
+ # Tcl 7.6 / Tk 4.2
+ #TCLLIB		=	-ltcl7.6
+ #TKLIB		=	-ltk4.2
+@@ -80,14 +83,14 @@
+ #TKLIB		=	-ltk
+ 
+ # Generic X11 System
+-XINCL		=
+-XLIBDIR		=
++#XINCL		=
++#XLIBDIR	=
+ # Default Locations...
+ #XINCL		=	-I/usr/include/X11
+ #XLIBDIR	=	-L/usr/lib
+ # Linux Like Systems
+-#XINCL		=	-I/usr/X11R6/include
+-#XLIBDIR	=	-L/usr/X11R6/lib
++XINCL		=	-I$(X11BASE)/include
++XLIBDIR		=	-L$(X11BASE)/lib
+ 
+ XLIB		=	-lX11 
+ #XLIB		=	-lX11 -lXpm
+@@ -115,7 +118,7 @@
+ # Libraries
+ #
+ 
+-PVMLIBDIR	=	-L$(PVM_ROOT)/lib/$(PVM_ARCH)
++PVMLIBDIR	=	-L$(LOCALBASE)/lib
+ 
+ TRCLIBDIR	=	-L$(TRCDIR)/$(PVM_ARCH)
+ 
+@@ -136,7 +139,7 @@
+ # Include Directories
+ #
+ 
+-PVMINCL		=	-I$(PVM_ROOT)/include
++PVMINCL		=	-I$(LOCALBASE)/include
+ 
+ TRCINCL		=	-I$(TRCDIR)
+ 
+@@ -157,8 +160,8 @@
+ HEADERS		=	$(SRCDIR)/Makefile.aimk $(SRCDIR)/xpvm.h \
+ 				$(SRCDIR)/globals.h $(SRCDIR)/const.h \
+ 				$(SRCDIR)/trace.h $(SRCDIR)/compat.pvmtev.h \
+-				$(PVM_ROOT)/include/pvm3.h \
+-				$(PVM_ROOT)/include/pvmtev.h \
++				$(LOCALBASE)/include/pvm3.h \
++				$(LOCALBASE)/include/pvmtev.h \
+ 				$(TRCDIR)/trcdef.h $(TRCDIR)/trctype.h \
+ 				$(TRCDIR)/trcproto.h $(TRCDIR)/trccompat.h

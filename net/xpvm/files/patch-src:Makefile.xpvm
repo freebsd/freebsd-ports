@@ -1,0 +1,12 @@
+diff -ruN xpvm.orig/src/Makefile.xpvm xpvm/src/Makefile.xpvm
+--- src/Makefile.xpvm	Fri Apr 10 05:11:23 1998
++++ src/Makefile.xpvm	Thu Apr  1 13:45:15 2004
+@@ -2,4 +2,7 @@
+ #
+ 
++default:
++	cd src ; ${PVM_ROOT}/lib/aimk
++
+ install:
+ 	cd src ; $(PVM_ROOT)/lib/aimk install
+

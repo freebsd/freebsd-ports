@@ -742,6 +742,7 @@
     SUBDIR += xmule
     SUBDIR += xnap
     SUBDIR += xprobe
+    SUBDIR += xpvm
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xwhois

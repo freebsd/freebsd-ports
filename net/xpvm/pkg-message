@@ -1,0 +1,8 @@
+-
+You have to set following enviroment variable before using xpvm
+
+	XPVM_ROOT=%%DATADIR%%
+	PVM_ROOT=%%LOCALBASE%%/lib/pvm
+
+You can also put them into /etc/login.conf for system-wide defaults.
+-
