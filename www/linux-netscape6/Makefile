@@ -16,6 +16,8 @@ MAINTAINER=	girgen@partitur.se
 
 RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 
+ONLY_FOR_ARCHS=	i386
+
 WRKSRC=		${WRKDIR}/${BROWSER}-v47.x86-unknown-linux2.0
 
 # use fake shell REQ script, since we don't require X aout libs.
