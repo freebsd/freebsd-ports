@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wminet
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	kevlo
+MASTER_SITES=	http://www.neotokyo.org/illusion/downloads/
 
 MAINTAINER=	sk-ports@vegamuse.org
 
@@ -20,8 +19,8 @@ USE_XPM=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/wminet
-	${INSTALL_MAN} ${WRKSRC}/../HINTS ${PREFIX}/share/doc/wminet
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../HINTS ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

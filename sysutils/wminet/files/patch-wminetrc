@@ -1,0 +1,25 @@
+--- wminetrc.orig	Fri Dec 18 05:56:58 1998
++++ wminetrc	Thu Aug 16 11:09:23 2001
+@@ -18,7 +18,7 @@
+ monitor_ftp=3
+ monitor_http=4
+ monitor_nfs=0
+-monitor_lpd=0
++monitor_lpd=0	#Doesn't work in FreeBSD yet
+ 
+ # -----------------
+ # Interval -- seconds between stat updates
+@@ -68,8 +68,8 @@
+ #
+ # These correspond to the 5 positions. See above.
+ #
+-action1=rxvt -bg black -fg white -e top
+-action2=rxvt -bg black -fg white -e sh -c "w; read"
+-action3=rxvt -bg black -fg white -e sh -c "ftpwho; read"
+-action4=rxvt -bg black -fg white -e tail -f /usr/local/apache/var/logs/access_log
+-action5=rxvt -bg black -fg white -e sh -c "showmount;read"
++action1=xterm -e top
++action2=xterm -e sh -c "w; read"
++action3=xterm -e sh -c "ftpwho; read"
++action4=xterm -e tail -f /usr/local/apache/var/logs/access_log
++action5=xterm -e sh -c "showmount; read"
