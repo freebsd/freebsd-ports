@@ -3,6 +3,7 @@ include/musicbrainz/bitzi/bitcollider.h
 include/musicbrainz/bitzi/gui_win32.h
 include/musicbrainz/bitzi/list.h
 include/musicbrainz/bitzi/plugin.h
+include/musicbrainz/browser.h
 include/musicbrainz/errors.h
 include/musicbrainz/mb_c.h
 include/musicbrainz/musicbrainz.h
@@ -12,3 +13,4 @@ lib/libmusicbrainz.so
 lib/libmusicbrainz.so.2
 @dirrm include/musicbrainz/bitzi
 @dirrm include/musicbrainz
+libdata/pkgconfig/libmusicbrainz.pc
