@@ -3,4 +3,4 @@ This is a windowmaker dockapp which displays meteorological data
 city, retrieved from the net. You will need to look up the METAR code for
 your city (a standard code used in aviation)
 
-WWW: http://www.nws.noaa.gov/oso/siteloc.shtml
+WWW: http://www.godisch.de/debian/wmweather/
