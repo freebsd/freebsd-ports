@@ -53,10 +53,17 @@ PCXXDEFS = -D_BSD_SOURCE -DHALF_RATE_AUDIO \
 # compiler options
 #
 PCOPTS   = -Wall -W -ansi $(ACOPTS)
+.if defined(OSVERSION) && ${OSVERSION} < 400000
+PCXXOPTS = -Wall -W -fno-rtti $(ACXXOPTS)
+COPT     = -DNDEBUG ${PORTCFLAGS} -DAddrLen='int'
+CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer -fnonnull-objects \
+		-fexpensive-optimizations -DAddrLen='int'
+.else
 PCXXOPTS = -Wall -W -fno-exceptions -fno-rtti $(ACXXOPTS)
 COPT     = -DNDEBUG ${PORTCFLAGS} -DAddrLen='socklen_t'
 CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer -fnonnull-objects \
 		-fexpensive-optimizations -DAddrLen='socklen_t'
+.endif
 CDEBUG   = -DDEBUG -g
 CXXDEBUG = -DDEBUG -g
 CWOFF    =
