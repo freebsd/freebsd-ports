@@ -1,14 +1,19 @@
 bin/knoda
 share/applnk/Office/knoda.desktop
+share/apps/hk_kdeclasses/hk_kdedbdesigner.rc
+share/apps/hk_kdeclasses/hk_kdedbdesignerpart.rc
 share/apps/hk_kdeclasses/hk_kdeform.rc
 share/apps/hk_kdeclasses/hk_kdegridpart.rc
 share/apps/hk_kdeclasses/hk_kdeinterpreterdialog.rc
+share/apps/hk_kdeclasses/hk_kdeqbepart.rc
 share/apps/hk_kdeclasses/hk_kdequery.rc
 share/apps/hk_kdeclasses/hk_kdereport.rc
 share/apps/hk_kdeclasses/hk_kdetable.rc
+share/apps/hk_kdeclasses/knodamaindockwindowbase.rc
 share/apps/hk_kdeclasses/pics/boolean22x22.png
 share/apps/hk_kdeclasses/pics/button.png
 share/apps/hk_kdeclasses/pics/combobox22x22.png
+share/apps/hk_kdeclasses/pics/dbdesigner.png
 share/apps/hk_kdeclasses/pics/designmode.png
 share/apps/hk_kdeclasses/pics/edit.png
 share/apps/hk_kdeclasses/pics/exit.png
@@ -16,6 +21,7 @@ share/apps/hk_kdeclasses/pics/filter.png
 share/apps/hk_kdeclasses/pics/filterexec.png
 share/apps/hk_kdeclasses/pics/find.png
 share/apps/hk_kdeclasses/pics/grid22x22.png
+share/apps/hk_kdeclasses/pics/gridadd22x22.png
 share/apps/hk_kdeclasses/pics/gridcursor.png
 share/apps/hk_kdeclasses/pics/gridfilter.png
 share/apps/hk_kdeclasses/pics/label.png
@@ -40,7 +46,9 @@ share/icons/locolor/32x32/apps/knoda.png
 share/locale/de/LC_MESSAGES/knoda.mo
 share/locale/es/LC_MESSAGES/knoda.mo
 share/locale/hu/LC_MESSAGES/knoda.mo
+share/services/hk_kdedbdesignerpart.desktop
 share/services/hk_kdegridpart.desktop
+share/services/hk_kdeqbepart.desktop
 @dirrm share/apps/hk_kdeclasses/pics/
 @dirrm share/apps/hk_kdeclasses
 @dirrm share/apps/knoda/pics
