@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Jun 15 04:36:13 2000
-+++ Imakefile	Fri Aug 18 14:40:02 2000
-@@ -18,8 +18,26 @@
+--- Imakefile.orig	Thu Aug  3 22:25:52 2000
++++ Imakefile	Mon Mar 26 03:32:39 2001
+@@ -18,8 +18,32 @@
  #endif
  #endif
  
@@ -13,7 +13,13 @@
 +#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
 +        SUBDIRS = include config lib $(NLSSUBDIR) \
 +		programs/Xserver/include programs/Xserver/hw/xfree86/parser \
-+		programs programs/Xserver/hw/xfree86/xf86cfg
++		programs/Xserver/hw/xfree86/dummylib \
++		programs/Xserver/hw/xfree86/loader \
++		programs/Xserver/hw/xfree86/xf86cfg \
++		programs/Xserver/hw/xfree86/os-support \
++		programs/rgb \
++		programs \
++		fonts/util
 +#else
 +#if defined(FreeBSDBuildXfs) && FreeBSDBuildXfs
 +        SUBDIRS = include config lib $(NLSSUBDIR) \
@@ -27,21 +33,24 @@
    LNINSTALLDIRS = lib
  
  #if HasParallelMake
-@@ -206,3 +224,97 @@
+@@ -210,3 +234,98 @@
  #undef BootstrapCleanSubdirs
  #define BootstrapCleanSubdirs BOOTSTRAPSUBDIRS="$(BOOTSTRAPSUBDIRS)"
  BOOTSTRAPSUBDIRS = imake makedepend
 +
++#if defined(BuildXF86DRI) && BuildXF86DRI
++FreeBSDPortsDRIDir = lib/GL/mesa/src/drv
++#endif
 +#if defined(FreeBSDBuildXlib) && FreeBSDBuildXlib
 +FreeBSDPortsInstallDir = include lib nls programs/Xserver/include \
 +			programs/xrx/plugin \
 +			programs/Xserver/hw/xfree86/parser
 +#else
 +#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
-+FreeBSDPortsInstallDir = lib programs programs programs/Xserver/hw/xfree86/xf86cfg
++FreeBSDPortsInstallDir = lib programs programs programs/Xserver/hw/xfree86/xf86cfg fonts/util programs/rgb
 +#else
 +#if defined(FreeBSDBuildXxserv) && FreeBSDBuildXxserv
-+FreeBSDPortsInstallDir = programs lib/font lib/GL/mesa/src/drv
++FreeBSDPortsInstallDir = programs lib/font $(FreeBSDPortsDRIDir)
 +#else
 +#if defined(FreeBSDBuildXfs) && FreeBSDBuildXfs
 +FreeBSDPortsInstallDir = programs/xfs
@@ -105,11 +114,7 @@
 +	  $(INSTALL) -c $(INSTALLFLAGS) $(INSTPGMFLAGS) Xnest $(DESTDIR)$(BINDIR)/Xnest)
 +
 +installXnest.man::
-+	(cd programs/Xserver/hw/xnest && \
-+	  $(RM) $(DESTDIR)$(MANDIR)/Xnest.$(MANSUFFIX)*; \
-+	  $(INSTALL) -c $(INSTMANFLAGS) Xnest.man \
-+		$(DESTDIR)$(MANDIR)/Xnest.$(MANSUFFIX); \
-+	  $(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/Xnest.$(MANSUFFIX))
++	(cd programs/Xserver/hw/xnest && $(MAKE) install.man)
 +
 +installXprt::
 +	(cd programs/Xserver && \
@@ -120,8 +125,10 @@
 +	  $(INSTALL) -c $(INSTALLFLAGS) $(INSTPGMFLAGS) Xvfb $(DESTDIR)$(BINDIR)/Xvfb)
 +
 +installXvfb.man::
-+	(cd programs/Xserver/hw/vfb && \
-+	  $(RM) $(DESTDIR)$(MANDIR)/Xvfb.$(MANSUFFIX)*; \
-+	  $(INSTALL) -c $(INSTMANFLAGS) Xvfb.man \
-+		$(DESTDIR)$(MANDIR)/Xvfb.$(MANSUFFIX); \
-+	  $(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/Xvfb.$(MANSUFFIX))
++	(cd programs/Xserver/hw/vfb && $(MAKE) install.man)
++
++installXserver.man::
++	(cd programs/Xserver && $(MAKE) install.man)
++
++NOOP:
++	@echo :

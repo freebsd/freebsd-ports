@@ -1,17 +1,27 @@
---- programs/Xserver/hw/xfree86/xf86cfg/Imakefile.orig	Thu Jun 15 04:42:20 2000
-+++ programs/Xserver/hw/xfree86/xf86cfg/Imakefile	Sat Aug 19 18:09:24 2000
-@@ -2,6 +2,10 @@
+--- programs/Xserver/hw/xfree86/xf86cfg/Imakefile.orig	Fri Dec 15 04:47:46 2000
++++ programs/Xserver/hw/xfree86/xf86cfg/Imakefile	Fri Jan  5 16:39:23 2001
+@@ -12,6 +12,11 @@
+ TEXTOBJ	= text-mode.o
+ #endif
  
- XCOMM CDEBUGFLAGS=-g -Wall -ansi -pedantic
- 
-+#if defined(FreeBSDBuildXbin) && FreeBSDBuildXbin
++#if defined(FreeBSDBuildXbin) 
 +INCLUDES = -I../parser
 +#endif
++
 +
  SRCS	=\
  	accessx.c\
  	card-cfg.c\
-@@ -67,8 +71,10 @@
+@@ -82,7 +87,7 @@
+ #if DoLoadableServer
+ LOADERLIB      = -L../loader -lxloader -L../dummylib -ldummy
+ MODULEDEFINES  = -DUSE_MODULES
+-INCLUDES       = -I../common -I../loader -I$(XF86OSSRC) \
++INCLUDES       = -I../common -I../loader -I$(XF86OSSRC) -I$(XF86OSSRC)/bus \
+ 		 -I$(SERVERSRC)/include -I$(XINCLUDESRC)
+ #if !HasSnprintf
+ SNPRINTF_DEFS  = -DNEED_SNPRINTF
+@@ -109,8 +114,10 @@
  
  NormalProgramTarget($(PROG),$(OBJS),,$(LOCAL_LIBRARIES),)
  InstallProgramWithFlags($(PROG),$(BINDIR),NullParameter)
@@ -20,5 +30,5 @@
  InstallMultipleFlags($(XPMPICS),$(INCDIR)/X11/pixmaps,$(INSTINCFLAGS))
 +#endif
  InstallAppDefaults(XF86Cfg)
- InstallManPage(xf86cfg,$(MANDIR))
  
+ CppManTarget(xf86cfg,)

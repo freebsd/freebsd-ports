@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	documents
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X401src-1.tgz X401src-2.tgz
-EXTRACT_ONLY=	X401src-2.tgz
+DISTFILES=	X402src-1.tgz X402src-2.tgz X402src-3.tgz
+EXTRACT_ONLY=	X402src-2.tgz X402src-3.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -27,15 +27,17 @@ INSTALL_TARGET=		install install.man
 post-extract:
 	(cd ${WRKDIR} && \
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X401src-1.tgz \
+		${DISTDIR}/${DIST_SUBDIR}/X402src-1.tgz \
 		${EXTRACT_AFTER_ARGS} xc/doc)
 
 do-configure:
-	(cd ${WRKSRC} && \
-	 imake -DUseInstalled ${PROJECTROOT} -I${PREFIX}/lib/X11/config \
-		-DBuildMiscDocs=YES -DBuildSpecsDocs=YES \
-		-DBuildLinuxDocPS=NO \
-		-DFreeBSDBuildXdoc=YES \
+	(cd ${WRKSRC} ; \
+	 ${ECHO} "#define BuildMiscDocs YES" > host.def ; \
+	 ${ECHO} "#define BuildSpecsDocs YES" >> host.def ; \
+	 ${ECHO} "#define BuildLinuxDocPS NO" >> host.def ; \
+	 ${ECHO} "#define InstallHardcopyDocs YES" >> host.def ; \
+	 ${ECHO} "#define FreeBSDBuildXdoc YES" >> host.def ; \
+	 imake -DUseInstalled ${PROJECTROOT} -I. -I${PREFIX}/lib/X11/config \
 		-DTOPDIR=.. -DCURDIR=.; \
 	 ${MAKE} Makefiles ; \
 	 ${MAKE} includes ; \

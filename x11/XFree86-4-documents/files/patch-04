@@ -1,13 +1,14 @@
---- specs/Imakefile~	Sat Mar  4 13:35:49 2000
-+++ specs/Imakefile	Wed May 10 16:17:32 2000
-@@ -8,8 +8,8 @@
+--- specs/Imakefile.orig	Sat Dec 16 15:39:49 2000
++++ specs/Imakefile	Wed Dec 20 17:51:49 2000
+@@ -7,9 +7,9 @@
+ #if defined(SpecsDocDirs) && !BuildAllSpecsDocs
  SUBDIRS = SpecsDocDirs
  #else
- SUBDIRS = BDF CTEXT FSProtocol ICCCM XProtocol Xserver X11 XDMCP XLFD \
--          Xaw Xmu Xt Xext Xi xfs PEX5 ICE SM xtrans XIM xterm rstart \
--          GL Xv i18n programs
-+          Xaw Xmu Xt Xext xfs ICE SM xtrans xterm rstart \
-+          GL Xv i18n
+-SUBDIRS = BDF CTEXT FSProtocol GL ICCCM ICE PEX5 PM Render SM X11 XDMCP \
++SUBDIRS = BDF CTEXT FSProtocol GL ICCCM ICE PM Render SM X11 XDMCP \
+ 	  XIM XLFD XProtocol Xaw Xext Xi Xmu Xserver Xt Xv \
+-          i18n programs rstart xfs xterm xtrans
++          i18n rstart xfs xterm xtrans
  #endif
  
  all::

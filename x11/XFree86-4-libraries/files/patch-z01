@@ -1,6 +1,28 @@
---- Makefile.orig	Sun Aug 15 22:19:32 1999
-+++ Makefile	Tue May  9 16:01:21 2000
-@@ -192,3 +192,33 @@
+--- Makefile.orig	Wed Mar 22 21:23:30 2000
++++ Makefile	Mon Mar 19 20:08:33 2001
+@@ -24,6 +24,12 @@
+ MAKE_CMD = $(MAKE) $(MAKE_OPTS)
+ FLAGS = $(MFLAGS) -f Makefile.ini BOOTSTRAPCFLAGS="$(BOOTSTRAPCFLAGS)" CC="$(CC)"
+ 
++# Quick Hack!
++# FreeBSD ports system always call 'install.man'
++# It's good for almost ports. but not Dividing XFree86-4 ports.
++# Here is a quick hack for it.
++MAN_INSTALL_TARGET?=	install.man
++
+ all:
+ 	@$(MAKE_CMD) xmakefile-exists || $(MAKE) all-initial
+ 	@$(MAKE_CMD) $@
+@@ -181,7 +187,7 @@
+ install.ln:
+ 	    $(MAKE_CMD) $@
+ install.man:
+-	    $(MAKE_CMD) $@
++	    $(MAKE_CMD) $(MAN_INSTALL_TARGET)
+ install:
+ 	    $(MAKE_CMD) $@
+ Makefiles:
+@@ -192,3 +198,43 @@
  	    $(MAKE_CMD) $@
  VerifyOS:
  	    $(MAKE_CMD) $@
@@ -8,7 +30,7 @@
 +#####
 +FreeBSDPortsBuild:
 +	@echo ""
-+	@echo Building $(RELEASE) of the X Window System: $@ distribution
++	@echo Building $(RELEASE) of the X Window System: $(PKGNAMEPREFIX)$(PORTNAME)-$(PORTVERSION)
 +	@echo ""
 +	@date
 +	@echo ""
@@ -23,14 +45,24 @@
 +	@echo ""
 +	@date
 +	@echo ""
-+	@echo build of X Window System: $@ distribution complete.
++	@echo build of X Window System complete.
 +	@echo ""
 +
-+FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib:
++FreeBSDPortsInstall installXlib installXnest installXprt installXvfb:
 +	$(MAKE_CMD) $@
 +
-+installXnest installXnest.man installXprt:
-+	$(MAKE_CMD) $@
++FreeBSDPortsInstall.man:
++	$(MAKE_CMD) FreeBSDPortsInstall.man
 +
-+installXvfb installXvfb.man:
-+	$(MAKE_CMD) $@
++installXnest.man:
++	$(MAKE_CMD) installXnest.man
++
++installXvfb.man:
++	$(MAKE_CMD) installXvfb.man
++
++installXserver.man:
++	$(MAKE_CMD) installXserver.man
++
++NOOP:
++	@echo :
++

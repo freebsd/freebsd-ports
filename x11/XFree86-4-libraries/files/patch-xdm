@@ -1,0 +1,11 @@
+--- programs/xdm/config/Imakefile.orig	Tue Feb  1 04:33:43 2000
++++ programs/xdm/config/Imakefile	Sun Mar 25 06:57:37 2001
+@@ -1,7 +1,7 @@
+ XCOMM $XConsortium: Imakefile /main/17 1996/01/15 12:19:32 gildea $
+ XCOMM $XFree86: xc/programs/xdm/config/Imakefile,v 1.7 2000/01/31 19:33:43 dawes Exp $
+ 
+-SERVERSTYPE = XdmServersType
++SERVERSTYPE = ws
+ 
+ all:: Xservers.ws xdm-config Xservers Xresources
+ 

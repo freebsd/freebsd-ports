@@ -1,6 +1,7 @@
 lib/X11/doc/DPMS.TXT
 lib/X11/doc/DPMSLib.TXT
 lib/X11/doc/INSTALL.TXT
+lib/X11/doc/PM_spec.TXT
 lib/X11/doc/PostScript/DPMS.PS
 lib/X11/doc/PostScript/DPMSLib.PS
 lib/X11/doc/PostScript/INSTALL.PS
@@ -27,6 +28,7 @@ lib/X11/doc/libGL.TXT
 lib/X11/doc/mit-shm.TXT
 lib/X11/doc/record.TXT
 lib/X11/doc/recordlib.TXT
+lib/X11/doc/render-protocol.TXT
 lib/X11/doc/shape.TXT
 lib/X11/doc/shapelib.TXT
 lib/X11/doc/tog-cup.TXT

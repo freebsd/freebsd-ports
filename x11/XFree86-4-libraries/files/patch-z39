@@ -1,0 +1,12 @@
+--- programs/Xserver/include/Imakefile~	Sat Oct 28 10:26:51 2000
++++ programs/Xserver/include/Imakefile	Tue Dec 26 13:22:59 2000
+@@ -55,3 +55,9 @@
+ InstallDriverSDKNonExecFile(validate.h,$(DRIVERSDKINCLUDEDIR))
+ InstallDriverSDKNonExecFile(window.h,$(DRIVERSDKINCLUDEDIR))
+ InstallDriverSDKNonExecFile(windowstr.h,$(DRIVERSDKINCLUDEDIR))
++
++/* Followings are for programs/rgb (aka. showrgb) */
++#if !defined(LibHeaders) || LibHeaders
++HEADERS=	rgb.h site.h
++InstallMultipleFlags($(HEADERS),$(INCDIR),$(INSTINCFLAGS))
++#endif

@@ -6,16 +6,12 @@
 #
 
 PORTNAME=	fontDefaultBitmaps
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
+MASTER_SITES=	${MASTER_SITE_XFREE}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X401src-1.tgz X401src-2.tgz
-EXTRACT_ONLY=	X401src-2.tgz
+DISTFILES=	X402src-1.tgz X402src-2.tgz
+EXTRACT_ONLY=	X402src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -32,7 +28,7 @@ WRKSRC=			${WRKDIR}/xc/fonts/bdf/misc
 post-extract:
 	(cd ${WRKDIR} && \
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X401src-1.tgz \
+		${DISTDIR}/${DIST_SUBDIR}/X402src-1.tgz \
 		| ${TAR} -xf - xc/extras/fonts)
 
 do-configure:

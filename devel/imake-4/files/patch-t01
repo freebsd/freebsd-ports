@@ -1,6 +1,15 @@
---- imake/imake.c~	Thu Jun 15 04:36:17 2000
-+++ imake/imake.c	Thu Sep 28 13:58:02 2000
-@@ -1184,6 +1184,19 @@
+--- imake/imake.c.ORIG	Mon Dec 18 14:54:34 2000
++++ imake/imake.c	Mon Dec 18 14:55:25 2000
+@@ -399,7 +399,7 @@
+ int
+ main(int argc, char *argv[])
+ {
+-	FILE	*tmpfd;
++	FILE	*tmpfd = (FILE *)NULL;
+ 	char	makeMacro[ BUFSIZ ];
+ 	char	makefileMacro[ BUFSIZ ];
+ 
+@@ -1208,6 +1208,19 @@
  	if (uname(&name) < 0)
  		LogFatal("Cannot invoke uname", "");
  

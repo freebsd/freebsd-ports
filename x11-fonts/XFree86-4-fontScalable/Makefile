@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	fontScalable
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
+MASTER_SITES=	${MASTER_SITE_XFREE}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X401src-2.tgz
+DISTFILES=	X402src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -27,12 +23,39 @@ PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
 WRKSRC=			${WRKDIR}/xc/fonts
-# User Config:
-# To disable following fonts, set variable to "NO"
-BuildSpeedoFonts?=	YES
-BuildType1Fonts?=	YES
-BuildCIDFonts?=		YES
-BuildTTFonts?=		YES
+
+# XFree86 User Config:
+# ---
+# Name          	Default		Meaning
+# ----------------------------------------------------------------------------
+# BuildSpeedoFonts	YES		build/install Speedo fonts
+# BuildType1Fonts	YES		build/install Type1 fonts
+# BuildCIDFonts		YES		build/install CID fonts
+BuildSpeedoFonts?=	DEFAULT
+BuildType1Fonts?=	DEFAULT
+BuildCIDFonts?=		DEFAULT
+
+.if ${BuildSpeedoFonts} == DEFAULT || ${BuildSpeedoFonts} == YES
+PLIST_SUB+=	SPEEDO:=""
+SPEEDO:=	-DBuildSpeedoFonts=YES
+.elif ${BuildSpeedoFonts} == NO
+PLIST_SUB+=	SPEEDO:="@comment "
+SPEEDO:=	-DBuildSpeedoFonts=NO
+.endif
+.if ${BuildType1Fonts} == DEFAULT || ${BuildType1Fonts} == YES
+PLIST_SUB+=	TYPE1:=""
+TYPE1:=	-DBuildType1Fonts=YES
+.elif ${BuildType1Fonts} == NO
+PLIST_SUB+=	TYPE1:="@comment "
+TYPE1:=	-DBuildType1Fonts=NO
+.endif
+.if ${BuildCIDFonts} == DEFAULT || ${BuildCIDFonts} == YES
+PLIST_SUB+=	CID:=""
+CID:=	-DBuildCIDFonts=YES
+.elif ${BuildCIDFonts} == NO
+PLIST_SUB+=	CID:="@comment "
+CID:=	-DBuildCIDFonts=NO
+.endif
 
 do-configure:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
@@ -43,10 +66,7 @@ do-configure:
 	 ${MAKE} depend)
 	(cd ${WRKSRC} && \
 	 imake -DUseInstalled ${PROJECTROOT} -I${PREFIX}/lib/X11/config \
-		-DBuildSpeedoFonts=${BuildSpeedoFonts} \
-		-DBuildType1Fonts=${BuildType1Fonts} \
-		-DBuildCIDFonts=${BuildCIDFonts} \
-		-DBuildTTFonts=${BuildTTFonts} \
+		${SPEEDO} ${TYPE1} ${CID} \
 		-DMakeLocalFontDir=YES \
 		-DFreeBSDBuildXscl=YES \
 		-DTOPDIR=.. -DCURDIR=.; \

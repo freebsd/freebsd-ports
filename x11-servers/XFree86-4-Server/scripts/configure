@@ -22,16 +22,32 @@ configure () {
     grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
     echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
 
-    if [ X$ExtendedInputDevices = "X" ]; then
-	ExtendedInputDevices=YES
-    fi
-
     # It's good for FreeBSD ports/packages system.
     echo "#define NothingOutsideProjectRoot YES" >> $LOCALDEF
 
     # Now, We can use this configuration.
     # Thanks, Trevor Johnson <trevor@jpj.net>
     echo "#define InstallXserverSetUID NO" >> $LOCALDEF
+
+    # User Config.
+    if [ X$HasSecureRPC != XDEFAULT -a X$HasSecureRPC != X ]; then
+	echo "#define HasSecureRPC $HasSecureRPC" >> $LOCALDEF
+    fi
+    if [ X$HasPam != XDEFAULT -a X$HasPam != X ]; then
+	echo "#define HasPam $HasPam" >> $LOCALDEF
+    fi
+    if [ ! -d /sys -a ! -d /usr/src/sys ]; then
+	echo "#define BuildXF86DRI NO" >> $LOCALDEF
+    fi
+    if [ X$ExtendedInputDevices = XDEFAULT -o X$ExtendedInputDevices = XYES ]; then
+	echo "#define XInputDrivers mouse digitaledge dynapro elo2300 \
+				elographics magellan \
+				microtouch mutouch spaceorb summa \
+				wacom void citron" >> $LOCALDEF
+        echo "#define JoystickSupport YES" >> $LOCALDEF
+    else
+	echo "#define XInputDrivers mouse" >> $LOCALDEF	
+    fi
 
     # disable some configs: there are not used this ports
     for i in \
@@ -56,32 +72,29 @@ configure () {
     done
     echo "#define BuildServer YES" >> $LOCALDEF
     echo "#define LibInstallBuild YES" >> $LOCALDEF
+    echo "#define ModInstall YES" >> $LOCALDEF
     echo "#define XF86Server YES" >> $LOCALDEF
     echo "#define BuildServersOnly YES" >> $LOCALDEF
     cat >> $LOCALDEF <<END
+#ifndef XF86CardDrivers
 #ifdef i386Architecture
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
-                                neomagic i740 tdfx \
+                                neomagic i740 tdfx savage \
                                 cirrus tseng trident chips apm \
-                                GlideDriver fbdev \
-                                ati r128 AgpGartDrivers cyrix \
-				vga  XF86OSCardDrivers XF86ExtraCardDrivers
+                                GlideDriver fbdev i128 \
+                                ati AgpGartDrivers DevelDrivers ark cyrix \
+				siliconmotion \
+				vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
 #else
-#define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
-                                neomagic i740 tdfx \
-                                cirrus tseng trident chips apm \
-                                GlideDriver fbdev \
-                                ati r128 cyrix \
-				vga  XF86OSCardDrivers XF86ExtraCardDrivers
+#ifdef AlphaArchitecture
+#define XF86CardDrivers         mga tdfx glint s3virge rendition tga \
+				savage nv DevelDrivers siliconmotion vga \
+				XF86OSCardDrivers XF86xtraCardDrivers
+#endif
+#endif
 #endif
 END
-    if [ $ExtendedInputDevices != "YES" ]; then
-	echo "#define XInputDrivers mouse" >> $LOCALDEF
-    else
-	echo "#define XInputDrivers mouse dynapro elo2300 elographics \
-	    magellan microtouch \
-	    mutouch spaceorb wacom"  >> $LOCALDEF
-    fi
+    echo "#define BuildThreadStubLibrary YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXxserv YES" >> $LOCALDEF
 
     # Check Wraphelp.c
@@ -104,6 +117,9 @@ END
 	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
 	echo "#define HasXdmAuth NO" >> $DESTDEF
     else
+	if [ X$HasXdmAuth != XDEFAULT -a X$HasXdmAuth != X ]; then
+	    echo "#define HasXdmAuth $HasXdmAuth" >> $LOCALDEF
+        fi
 	cp -f $ORIGDEF $DESTDEF
     fi
 

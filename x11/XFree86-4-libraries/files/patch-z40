@@ -1,0 +1,15 @@
+--- /usr/local/src/XFree86-4/ORIG/xc/programs/Xserver/hw/xfree86/os-support/bus/Imakefile	Tue Dec  5 11:57:47 2000
++++ programs/Xserver/hw/xfree86/os-support/bus/Imakefile	Tue Dec 19 23:50:18 2000
+@@ -74,6 +74,7 @@
+ 
+ SRCS = Pci.c $(PCIDRVRSRC) $(SBUSDRVSRC)
+ OBJS = Pci.o $(PCIDRVROBJ) $(SBUSDRVOBJ)
++HEADERS= xf86Pci.h
+ 
+ INCLUDES = -I. -I$(XF86COMSRC) -I$(XF86OSSRC) \
+ 	   -I$(SERVERSRC)/include -I$(XINCLUDESRC)
+@@ -91,3 +92,4 @@
+ 
+ DependTarget()
+ 
++BuildIncludesTop($(HEADERS))

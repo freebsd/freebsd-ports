@@ -1,0 +1,18 @@
+--- config/cf/xttMod.tmpl~	Tue Dec  5 11:59:36 2000
++++ config/cf/xttMod.tmpl	Wed Dec 20 13:39:42 2000
+@@ -24,11 +24,15 @@
+ 
+ ModuleObjectRule()
+ LibraryModuleTarget($(MODULENAME),$(OBJS))
++#if (!defined(LibInstall) || LibInstall) || (!defined(ModInstall) || ModInstall)
+ InstallLibraryModule($(MODULENAME),$(MODULEDIR),codeconv)
++#endif
+ 
+ DependTarget()
+ 
++#if (!defined(LibInstall) || LibInstall) || (!defined(ModInstall) || ModInstall)
+ InstallDriverSDKLibraryModule($(MODULENAME),$(DRIVERSDKMODULEDIR),codeconv)
++#endif
+ 
+ # else
+ /* dlopen based code converter */

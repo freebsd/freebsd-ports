@@ -1,14 +1,6 @@
---- cf/FreeBSD.cf.orig	Sun Jun 25 03:15:53 2000
-+++ cf/FreeBSD.cf	Sun Jul 16 18:22:14 2000
-@@ -351,19 +356,22 @@
- #else
- #define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME -DXNO_SYSCONF
- #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
-+#endif
-+#ifndef HasPam
-+#define HasPam			YES
- #endif
- 
+--- cf/FreeBSD.cf~	Tue Dec  5 10:16:28 2000
++++ cf/FreeBSD.cf	Tue Dec  5 10:45:42 2000
+@@ -371,14 +371,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)

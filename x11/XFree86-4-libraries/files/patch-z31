@@ -1,35 +1,37 @@
---- lib/GL/Imakefile.orig	Thu Jul 27 16:05:37 2000
-+++ lib/GL/Imakefile	Thu Jul 27 16:08:01 2000
-@@ -283,10 +283,13 @@
+--- lib/GL/Imakefile.orig	Wed Dec 20 13:20:28 2000
++++ lib/GL/Imakefile	Wed Dec 20 13:24:16 2000
+@@ -303,10 +303,13 @@
  
  #if NormalLibGlx
  NormalDepLibraryTarget($(LIBNAME),$(GLXSUBDIRS) $(DONES),$(UOBJS))
-+#if !defined(LibInstall) || LibInstall
++# if !defined(LibInstall) || LibInstall 
  InstallLibrary($(LIBNAME),$(USRLIBDIR))
++# endif /* LibInstall */
  #endif
-+#endif
  #if SharedLibGlx
  SharedDepLibraryTarget($(LIBNAME),$(SOREV),$(GLXSUBDIRS) $(DONES),$(OBJS) $(THREADOBJS),.,.)
-+#if !defined(LibInstall) || LibInstall
++# if !defined(LibInstall) || LibInstall 
  InstallSharedLibrary($(LIBNAME),$(SOREV),$(SHLIBDIR))
  #if LinkGLToUsrLib && AlternateUsrLibDir
  install::
-@@ -296,13 +299,18 @@
- 	$(LN) $(SHLIBDIR)/lib$(LIBNAME).so.1 $(DESTDIR)$(SYSTEMUSRLIBDIR)/lib$(LIBNAME).so.1
+@@ -315,15 +318,20 @@
+ 	$(LN) $(SHLIBDIR)/lib$(LIBNAME).so $(DESTDIR)$(SYSTEMUSRLIBDIR)/lib$(LIBNAME).so || true
+ 	$(RM) $(DESTDIR)$(SYSTEMUSRLIBDIR)/lib$(LIBNAME).so.1
+ 	$(LN) $(SHLIBDIR)/lib$(LIBNAME).so.1 $(DESTDIR)$(SYSTEMUSRLIBDIR)/lib$(LIBNAME).so.1 || true
++# endif /* LibInstall */
  #endif
  #endif
-+#endif
  #if DebugLibGlx
  DebuggedDepLibraryTarget($(LIBNAME),$(GLXSUBDIRS) $(DONES),$(DOBJS))
-+#if !defined(LibInstall) || LibInstall
++# if !defined(LibInstall) || LibInstall 
  InstallLibrary($(LIBNAME)_d,$(USRLIBDIR))
++# endif /* LibInstall */
  #endif
-+#endif
  #if ProfileLibGlx
  ProfiledDepLibraryTarget($(LIBNAME),$(GLXSUBDIRS) $(DONES),$(POBJS))
-+#if !defined(LibInstall) || LibInstall
++# if !defined(LibInstall) || LibInstall 
  InstallLibrary($(LIBNAME)_p,$(USRLIBDIR))
-+#endif
++# endif /* LibInstall */
  #endif
  
  XCOMM libOSmesa needs libGL, so build it now
