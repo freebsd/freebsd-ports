@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/Net/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/Net/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Singleton.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory/Net
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource/Net
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Resource
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ResourcePool
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ResourcePool
