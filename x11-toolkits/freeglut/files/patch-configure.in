@@ -1,0 +1,12 @@
+--- configure.in.orig	Sat Jan 26 05:22:54 2002
++++ configure.in	Fri Apr 25 11:35:52 2003
+@@ -9,8 +9,7 @@
+ AC_C_CONST
+ AC_EXEEXT
+ AC_PROG_RANLIB
+-AC_LIBTOOL_DLOPEN
+-AM_PROG_LIBTOOL
++AC_PROG_LIBTOOL
+ AC_SUBST(LIBTOOL_DEPS)
+ 
+ dnl Checks for libraries.

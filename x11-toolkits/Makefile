@@ -22,6 +22,7 @@
     SUBDIR += fox
     SUBDIR += fox-devel
     SUBDIR += fox-xunicode
+    SUBDIR += freeglut
     SUBDIR += gail
     SUBDIR += gal
     SUBDIR += gal2
