@@ -3,10 +3,12 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/09 09:07:30 asami Exp $
 #
 
-DISTNAME=	lesstif-0.75a
+PREFIX=/local/lesstif
+
+DISTNAME=	lesstif-0.76
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/lesstif/
 
@@ -43,7 +45,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/mwm/alt.map ${PREFIX}/lib/X11/mwm
 	${INSTALL_DATA} ${WRKSRC}/clients/mwm/Mwm \
 		${PREFIX}/lib/X11/app-defaults/Mwm
-	/usr/bin/strip ${PREFIX}/lib/libXm.so.0.0 ${PREFIX}/lib/libMrm.so.0.0
+	/usr/bin/strip ${PREFIX}/lib/libXm.so.0.76 ${PREFIX}/lib/libMrm.so.0.76
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
