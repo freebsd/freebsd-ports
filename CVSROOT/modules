@@ -3540,7 +3540,6 @@ kssh		ports/security/kssh
 kstars		ports/astro/kstars
 kstash		src/eBones/kstash
 ktrace		src/usr.bin/ktrace
-kuickshow	ports/graphics/kuickshow
 kvirc		ports/irc/kvirc
 kvm_mkdb	src/usr.sbin/kvm_mkdb
 kwatch		ports/misc/kwatch
