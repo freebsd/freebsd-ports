@@ -186,9 +186,8 @@ sub check_version {
 #
 ############################################################
 
-$id = getpgrp();
 #print("ARGV - ", join(":", @ARGV), "\n");
-#print("id   - ", id, "\n");
+#print("id   - ", $cfg::PID, "\n");
 
 #
 # Suck in the Entries file
@@ -243,7 +242,7 @@ if ($check_id != 0) {
     }
     if ($failed) {
 	print "\n";
-	unlink("$cfg::LAST_FILE.$id");
+	unlink($cfg::LAST_FILE);
 	exit(1);
     }
 }
@@ -254,6 +253,6 @@ if ($check_id != 0) {
 # the final directory of a multi-directory commit.
 #
 if ($record_directory != 0) {
-    &write_line("$cfg::LAST_FILE.$id", $directory);
+    &write_line($cfg::LAST_FILE, $directory);
 }
 exit(0);

@@ -12,7 +12,7 @@ package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS
-	    $LAST_FILE);
+	    $LAST_FILE $PID);
 
 
 ######################
@@ -21,6 +21,9 @@ use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 ### WARNING: these aren't global across all the scripts yet.
 ### This is work in progress.
 
+# Process group id; used as a unique number in temporary file names.
+$PID = getpgrp();
+
 # Debug level, 0 = off, 1 = on.
 $DEBUG = 0;
 
@@ -28,7 +31,7 @@ $DEBUG = 0;
 $TMPDIR = "/tmp/";
 
 # The filename prefix used for temporary files.
-$FILE_PREFIX = "#cvs.files";
+$FILE_PREFIX = "#cvs.files.$PID";
 
 # The file used to store the name of the last directory examined
 # when processing a multi-directory commit.
