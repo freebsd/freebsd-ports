@@ -188,6 +188,7 @@
     SUBDIR += py-ao
     SUBDIR += py-cddb
     SUBDIR += py-id3
+    SUBDIR += py-mad
     SUBDIR += py-ogg
     SUBDIR += py-vorbis
     SUBDIR += py-xmms

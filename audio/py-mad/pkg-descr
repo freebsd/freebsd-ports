@@ -1,0 +1,5 @@
+This is a Python module that allows Python programs to use the
+MPEG Audio Decoder library. It provides a high-level API which
+makes reading from MPEG audio streams a piece of cake. 
+
+WWW: http://spacepants.org/src/pymad/
