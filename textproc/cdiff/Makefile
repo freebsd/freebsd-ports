@@ -1,6 +1,6 @@
 # New ports collection makefile for:		cdiff
 # Date created:					September 20th 2000
-# Whom:						des
+# Whom:						eivind
 #
 # $FreeBSD$
 #
@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	cdiff
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
