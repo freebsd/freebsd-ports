@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.8 1996/12/06 12:21:49 asami Exp $
+# $Id: Makefile,v 1.9 1997/01/24 10:18:53 asami Exp $
 #
 
 DISTNAME=	groff-1.10
@@ -21,12 +21,21 @@ MAINTAINER=	graphite@taurus.bekkoame.or.jp
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-DNDP=		${WRKSRC}/devnippon/DESC.proto
+DESCS=		${WRKSRC}/devnippon/DESC.proto ${WRKSRC}/devps/DESC.in
 
 #for not writing "/usr/local" explicitly in the patch
 post-patch:
-	/bin/mv -f ${DNDP} ${DNDP}.tmp
-	/usr/bin/sed -e '$$d' ${DNDP}.tmp > ${DNDP}
-	/bin/echo "postpro ${PREFIX}/bin/grotty" >> ${DNDP}
+	@for f in ${DESCS}; do \
+	  /bin/mv -f $${f} $${f}.tmp; \
+	  ${SED} -e '$$d' $${f}.tmp > $${f}; \
+	  case $${f} in \
+  	    */devnippon/*) \
+		${ECHO} "postpro ${PREFIX}/bin/grotty" >> $${f}; \
+		;; \
+	    */devps/*) \
+		${ECHO} "postpro ${PREFIX}/bin/grops" >> $${f}; \
+		;; \
+	  esac; \
+	done
 
 .include <bsd.port.mk>
