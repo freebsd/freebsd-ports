@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.57 1998/12/05 10:03:21 flathill Exp $
+# $Id: Makefile,v 1.58 1998/12/07 02:13:28 asami Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -38,6 +38,7 @@
     SUBDIR += timidity
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += wmcdplay
     SUBDIR += wmmixer
     SUBDIR += workman
     SUBDIR += x11amp
