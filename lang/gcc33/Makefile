@@ -5,11 +5,10 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-02-02
+SNAPDATE=	2004-02-16
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTVERSION=	3.3.4
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
 VERSIONSTRING=	3.3-${PORTREVISION}
@@ -148,8 +147,8 @@ post-install: fake-manpages
 		${PREFIX}/man/man1/${f}${SUFFIX}.1 ); \
 	fi
 .endfor
-	${MV} -f ${PREFIX}/bin/g7733 ${PREFIX}/bin/g77-33
-	-${MV} -f ${PREFIX}/man/man1/g7733.1 ${PREFIX}/man/man1/g77-33.1
+	${MV} -f ${PREFIX}/bin/g77${SUFFIX} ${PREFIX}/bin/g77-${SUFFIX}
+	-${MV} -f ${PREFIX}/man/man1/g77${SUFFIX}.1 ${PREFIX}/man/man1/g77-${SUFFIX}.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
