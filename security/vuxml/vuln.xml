@@ -321,7 +321,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <cvename>CAN-2004-9893</cvename>
+      <cvename>CAN-2004-0903</cvename>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=257314</url>
       <uscertta>TA04-261A</uscertta>
       <certvu>414240</certvu>
@@ -329,6 +329,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-13</discovery>
       <entry>2004-09-28</entry>
+      <modified>2004-09-30</modified>
     </dates>
   </vuln>
 
