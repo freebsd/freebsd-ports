@@ -3,7 +3,7 @@
 # Date created:				05/28/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1999/05/30 03:36:10 steve Exp $
+# $Id: Makefile,v 1.4 1999/08/02 10:43:45 asami Exp $
 #
 
 DISTNAME=		gtm-0.3.1
@@ -15,8 +15,8 @@ MAINTAINER=		nectar@FreeBSD.ORG
 
 # wget is in BUILD_DEPENDS because the configure script checks for it
 LIB_DEPENDS=		gnome.2:${PORTSDIR}/x11/gnomelibs
-BUILD_DEPENDS=		wget:${PORTSDIR}/net/wget
-RUN_DEPENDS=		wget:${PORTSDIR}/net/wget
+BUILD_DEPENDS=		wget:${PORTSDIR}/ftp/wget
+RUN_DEPENDS=		wget:${PORTSDIR}/ftp/wget
 
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 
