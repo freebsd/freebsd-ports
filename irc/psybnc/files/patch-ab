@@ -1,0 +1,11 @@
+--- ./lang/english.lng	Sat Jun  1 18:07:47 2002
++++ ../../psybnc.mina/lang/english.lng	Sun Nov 24 19:14:01 2002
+@@ -1998,7 +1998,7 @@
+ ; psybnc.c line 201:
+ msg0995=PORT1
+ ; psybnc.c line 203:
+-msg0996=No Listenports/-hosts defined.ÿRun either 'make menuconfig' to setupÿor add:ÿPSYBNC.SYSTEM.PORT1=yourportÿandÿPSYBNC.SYSTEM.HOST1=*ÿto the psybnc.confÿ
++msg0996=No Listenports/-hosts defined.ÿAdd:ÿPSYBNC.SYSTEM.PORT1=yourportÿandÿPSYBNC.SYSTEM.HOST1=*ÿto the psybnc.confÿ
+ ; psybnc.c line 207:
+ msg0997=SYSTEM
+ ; psybnc.c line 212:

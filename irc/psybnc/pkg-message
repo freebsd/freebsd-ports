@@ -1,0 +1,8 @@
+psyBNC has now been installed.
+
+You should now copy ${PREFIX}/etc/psybnc.conf.sample to
+either ${PREFIX}/etc/psybnc.conf, or as "psybnc.conf" in whatever
+direcory you'll run psybnc while in.
+
+You can then run psybnc by running:
+psybnc

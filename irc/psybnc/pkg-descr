@@ -1,0 +1,22 @@
+psyBNC is an extremely powerful IRC bouncer.
+
+Features include:
+
+. It stays connected when you disconnect
+. It allows Full Online Administration
+. It allows you to set Users who could get op from psyBNC
+. It supports full logging of Messages and traffic
+. It supports linking to other psyBNCs + PartyLine
+. It allows multiple connections of one Client to different irc-servers
+. It has a translation module
+	- english to italian,english to german,english to portugese,english to french,
+	  french to english,german to english,portugese to english,french to english
+. Modular
+. IPv6 Support
+. Much more (see README in package)
+
+
+WWW: http://www.psychoid.lam3rz.de/
+
+- Mina Naguib
+webmaster@topfx.com

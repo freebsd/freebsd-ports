@@ -37,6 +37,7 @@
     SUBDIR += party
     SUBDIR += pircbot
     SUBDIR += pisg
+    SUBDIR += psybnc
     SUBDIR += pure-emacs20
     SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs-devel-mule
