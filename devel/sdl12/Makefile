@@ -11,7 +11,7 @@ PKGNAME=		sdl-1.0.8
 CATEGORIES=		devel
 MASTER_SITES=		http://www.devolution.com/~slouken/SDL/release/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		sobomax@altavista.net
 
 #This port doesn't love FreeBSD pthread :(
 LIB_DEPENDS=		lthread.2:${PORTSDIR}/devel/linuxthreads \
