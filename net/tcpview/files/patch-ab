@@ -1,0 +1,97 @@
+--- DOC/INSTALL.binaries	Fri Apr 23 05:58:49 1993
++++ DOC/INSTALL.binaries	Wed Feb 26 00:12:18 1997
+@@ -2,9 +2,9 @@
+ Installing Tcpview
+ 
+ 1. Create a directory for the tcpview support files.  I use 
+-/usr/local/tcpview.  Create /usr/local/tcpview/filters for the filters.
++/usr/local/lib/tcpview.  Create /usr/local/lib/tcpview/filters for the filters.
+ Copy BGP, generic, and telnet from bin to the filters directory. Copy
+-manuf and hosts to /usr/local/tcpview.  Edit the last two files as 
++manuf and hosts to /usr/local/lib/tcpview.  Edit the last two files as 
+ needed.
+ 
+ 2. Edit a copy of the tcpview resource file, which is DOC/Tcpview.  Change
+@@ -21,7 +21,7 @@
+ a copy of MOSY, download the UW-CMU SNMP package on ftp.cac.washington.edu.
+ Tcpdump and tcpview will search for the mib file in the following locations,
+ using the first one found: the environmental variable "MIBFILE", ./mib.txt,
+-and /usr/local/mib/mib.txt.
++and /usr/local/lib/tcpview/mib/mib.txt.
+ 
+ 5. If you are running on an Ultrix system, you will have to run pfconfig
+ before you can capture any data.  On a Sun system, you should make
+--- DOC/Tcpview	Tue Mar 30 07:26:25 1993
++++ DOC/Tcpview	Wed Feb 26 00:30:33 1997
+@@ -1,18 +1,22 @@
++*.foreground:	brown
++*.background:	ivory2
++
++
+ ! These are the fonts used in the summary window.  For best results, choose
+ ! fixed fonts where the second font is exactly the same size as the first, only
+ ! BOLD
+-*FontList: courier12=chset1, courB12=chset2
++!*FontList: courier12=chset1, courB12=chset2
+ !
+ ! This is the directory that contains the external protocol filters
+-! default is /usr/local/tcpview/filters
+-!Tcpview.filters:	/usr/staff/martinh/tcp/filters
++! default is /usr/local/lib/tcpview/filters
++Tcpview.filters:	/usr/local/lib/tcpview/filters
+ !
+ ! Print Command.  Default is "lpr"
+-Tcpview.printcommand:	enscript -2r
++Tcpview.printcommand:	lpr 
+ !
+ ! set the height and width of the initial window
+ ! There are no defaults
+-Tcpview.height:		800
++Tcpview.height:		465
+ Tcpview.width:		600
+ !
+ ! this sets the number of visible items in each pane
+@@ -23,11 +27,11 @@
+ !
+ ! Full pathnames for files containing manufacturer id's, ethernet numbers,
+ ! and tcp/udp service mappings.  See sample files for format. 
+-! Defaults are /usr/local/tcpview/manuf, /usr/local/tcpview/hosts, 
++! Defaults are /usr/local/lib/tcpview/manuf, /usr/local/lib/tcpview/hosts, 
+ ! and /etc/services
+-!Tcpview.manuf:		/usr/local/sniffer/manuf
+-!Tcpview.hostnames:	/usr/local/sniffer/ethers
+-!Tcpview.services:	/usr/local/sniffer/services
++Tcpview.manuf:		/usr/local/lib/tcpview/manuf
++Tcpview.hostnames:	/usr/local/lib/tcpview/hosts
++Tcpview.services:	/etc/services
+ 
+ ! Lookup (using DNS) names of hosts not on your local subnet
+ ! default is true.  If 'false', IP numbers will be used on foreign hosts.
+@@ -85,10 +89,3 @@
+ !	4 - Print Relative times
+ !
+ !Tcpview.time:	4
+-
+-
+-
+-
+-
+-
+-
+--- DOC/tcpview.1	Fri Mar 26 04:41:02 1993
++++ DOC/tcpview.1	Wed Feb 26 00:16:53 1997
+@@ -234,11 +234,11 @@
+ .RS
+ \fIResource name\fP		\fIDefault\fP
+ .PP
+-Tcpview.hostnames:     /usr/local/tcpview/ethers
++Tcpview.hostnames: /usr/local/lib/tcpview/ethers
+ .PP
+-Tcpview.manuf:         /usr/local/tcpview/manuf
++Tcpview.manuf:     /usr/local/lib/tcpview/manuf
+ .PP
+-Tcpview.services:      /etc/services
++Tcpview.services:  /etc/services
+ .PP
+ The hostnames file contains DLC-to-name mappings.  It is in the same format 
+ as \fISniffer\fP name files.
