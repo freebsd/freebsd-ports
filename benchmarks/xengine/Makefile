@@ -8,8 +8,8 @@
 PORTNAME=	xengine
 PORTVERSION=	1.0.1
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
-DISTFILES=	part01.z patch1.z
+MASTER_SITES=	ftp://ftp.sunsite.org.uk/usenet/comp.sources.x/volume9/xengine/
+DISTFILES=	part01.gz patch1.gz
 
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 
@@ -21,7 +21,7 @@ DIST_SUBDIR=	xengine
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
-EXTRACT_CMD=		zcat
+EXTRACT_CMD=		gzcat
 EXTRACT_BEFORE_ARGS=	#empty
 EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
 
