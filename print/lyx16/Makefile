@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/04/03 15:38:54 andreas Exp $
+# $Id: Makefile,v 1.7 1997/04/21 00:41:39 asami Exp $
 #
 
 DISTNAME=	lyx-0.10.7
@@ -14,7 +14,7 @@ MAINTAINER=	andreas@klemm.gtn.com
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
-		ispell:${PORTSDIR}/misc/ispell
+		ispell:${PORTSDIR}/textproc/ispell
 LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms \
 		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 
