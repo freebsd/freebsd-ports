@@ -1,7 +1,7 @@
-*** initx.c.orig	Mon Nov  8 15:16:00 1993
---- initx.c	Wed Sep 21 00:32:35 1994
+*** initx.c.orig	Mon Apr  6 12:59:29 1992
+--- initx.c	Mon Jan  2 12:14:16 1995
 ***************
-*** 44,50 ****
+*** 44,57 ****
   	resulting fontname right into the code.
   */
   
@@ -9,7 +9,14 @@
   static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
   
   /*	init_X opens the display and sets up all the color stuff
---- 44,50 ----
+  */
+  init_X()
+  {
+!     display = XOpenDisplay(NULL);
+      if (display == NULL) {
+         fprintf(stderr, "Jetpack : Cannot connect to X Server %s\n",
+                 XDisplayName(NULL));
+--- 44,62 ----
   	resulting fontname right into the code.
   */
   
@@ -17,3 +24,15 @@
   static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
   
   /*	init_X opens the display and sets up all the color stuff
+  */
+  init_X()
+  {
+!     int saved_euid;
+! 
+!     saved_euid = geteuid();
+!     seteuid(getuid());
+!     display = XOpenDisplay("");
+!     seteuid(saved_euid);
+      if (display == NULL) {
+         fprintf(stderr, "Jetpack : Cannot connect to X Server %s\n",
+                 XDisplayName(NULL));
