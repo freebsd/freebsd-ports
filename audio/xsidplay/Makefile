@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsidplay
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4.3
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--with-qt-binaries=${X11BASE}/bin
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 
+MAN1=		xsidplay.1
+
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} == "alpha"
@@ -34,8 +36,15 @@ pre-patch:
 	@${PERL} -pi -e 's|moc|${MOC:T}|g ; \
 		 s|qt-mt|${QTNAME}-mt|g' ${WRKSRC}/${file}
 .endfor
+	@${PERL} -pi -e 's|/usr/share|${PREFIX}|g' ${WRKSRC}/xsidplay.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xsidplay.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.faq ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>
