@@ -17,6 +17,7 @@
 #
 access
 avail
+badcommitters
 cfg.pm
 cfg_local.pm
 commit_prep.pl
