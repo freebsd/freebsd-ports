@@ -10325,6 +10325,7 @@ skippy		ports/x11-wm/skippy
 skippy-xd	ports/x11-wm/skippy-xd
 skribe		ports/textproc/skribe
 sks		ports/security/sks
+skstream	ports/net/skstream
 sky2000		ports/astro/sky2000
 skype		ports/net/skype
 skyutils	ports/misc/skyutils
