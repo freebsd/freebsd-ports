@@ -2,7 +2,7 @@ bin/gimp-1.3
 bin/gimp-remote-1.3
 bin/gimptool-1.3
 etc/gimp/1.3/gimprc
-etc/gimp/1.3/gtkrc_user
+etc/gimp/1.3/gtkrc
 etc/gimp/1.3/ps-menurc
 etc/gimp/1.3/sessionrc
 etc/gimp/1.3/templaterc
@@ -104,13 +104,15 @@ include/gimp-1.3/libgimpwidgets/gimpchainbutton.h
 include/gimp-1.3/libgimpwidgets/gimpcolorarea.h
 include/gimp-1.3/libgimpwidgets/gimpcolorbutton.h
 include/gimp-1.3/libgimpwidgets/gimpcolordisplay.h
+include/gimp-1.3/libgimpwidgets/gimpcolordisplaystack.h
 include/gimp-1.3/libgimpwidgets/gimpcolornotebook.h
 include/gimp-1.3/libgimpwidgets/gimpcolorscale.h
 include/gimp-1.3/libgimpwidgets/gimpcolorscales.h
 include/gimp-1.3/libgimpwidgets/gimpcolorselect.h
+include/gimp-1.3/libgimpwidgets/gimpcolorselection.h
 include/gimp-1.3/libgimpwidgets/gimpcolorselector.h
 include/gimp-1.3/libgimpwidgets/gimpdialog.h
-include/gimp-1.3/libgimpwidgets/gimpfileselection.h
+include/gimp-1.3/libgimpwidgets/gimpfileentry.h
 include/gimp-1.3/libgimpwidgets/gimphelpui.h
 include/gimp-1.3/libgimpwidgets/gimpmemsizeentry.h
 include/gimp-1.3/libgimpwidgets/gimpoffsetarea.h
@@ -193,6 +195,7 @@ libexec/gimp/1.3/plug-ins/deinterlace
 libexec/gimp/1.3/plug-ins/depthmerge
 libexec/gimp/1.3/plug-ins/despeckle
 libexec/gimp/1.3/plug-ins/destripe
+libexec/gimp/1.3/plug-ins/dicom
 libexec/gimp/1.3/plug-ins/diffraction
 libexec/gimp/1.3/plug-ins/displace
 libexec/gimp/1.3/plug-ins/edge
@@ -449,13 +452,15 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/GimpColorArea.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorButton.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorDisplay.html
+%%DOCSDIR%%/libgimpwidgets/GimpColorDisplayStack.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorNotebook.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorScale.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorScales.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorSelect.html
+%%DOCSDIR%%/libgimpwidgets/GimpColorSelection.html
 %%DOCSDIR%%/libgimpwidgets/GimpColorSelector.html
 %%DOCSDIR%%/libgimpwidgets/GimpDialog.html
-%%DOCSDIR%%/libgimpwidgets/GimpFileSelection.html
+%%DOCSDIR%%/libgimpwidgets/GimpFileEntry.html
 %%DOCSDIR%%/libgimpwidgets/GimpMemsizeEntry.html
 %%DOCSDIR%%/libgimpwidgets/GimpOffsetArea.html
 %%DOCSDIR%%/libgimpwidgets/GimpPathEditor.html
@@ -590,6 +595,8 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-menu-left-12.png
 %%DOCSDIR%%/libgimpwidgets/stock-menu-right-12.png
 %%DOCSDIR%%/libgimpwidgets/stock-merge-down-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-move-to-screen-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-move-to-screen-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-navigation-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-paste-as-new-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-paste-into-16.png
@@ -1231,6 +1238,7 @@ share/gimp/themes/Default/images/preferences/monitor.png
 share/gimp/themes/Default/images/preferences/new-image.png
 share/gimp/themes/Default/images/preferences/session.png
 share/gimp/themes/Default/images/preferences/tool-options.png
+share/gimp/themes/Default/images/preferences/window-management.png
 share/gimp/themes/Default/images/stock-anchor-16.png
 share/gimp/themes/Default/images/stock-cap-butt-16.png
 share/gimp/themes/Default/images/stock-cap-round-16.png
@@ -1343,6 +1351,8 @@ share/gimp/themes/Default/images/stock-linked-20.png
 share/gimp/themes/Default/images/stock-menu-left-12.png
 share/gimp/themes/Default/images/stock-menu-right-12.png
 share/gimp/themes/Default/images/stock-merge-down-16.png
+share/gimp/themes/Default/images/stock-move-to-screen-16.png
+share/gimp/themes/Default/images/stock-move-to-screen-24.png
 share/gimp/themes/Default/images/stock-navigation-16.png
 share/gimp/themes/Default/images/stock-paste-as-new-16.png
 share/gimp/themes/Default/images/stock-paste-into-16.png
@@ -1481,6 +1491,7 @@ share/gimp/themes/Default/images/stock-web-24.png
 share/gimp/themes/Default/images/stock-wilber-16.png
 share/gimp/themes/Default/images/stock-wilber-64.png
 share/gimp/themes/Default/images/stock-wilber-eek-64.png
+share/gimp/themes/Small/gtkrc
 share/gimp/tips/gimp-tips.xml
 %%GNOME:%%share/gnome/application-registry/gimp-1.3.applications
 %%GNOME:%%share/gnome/applications/gimp-1.3.desktop
@@ -1637,6 +1648,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm %%DOCSDIR%%/libgimp
 @dirrm %%DOCSDIR%%
 @dirrm share/gimp/tips
+@dirrm share/gimp/themes/Small
 @dirrm share/gimp/themes/Default/images/preferences
 @dirrm share/gimp/themes/Default/images
 @dirrm share/gimp/themes/Default
@@ -1655,6 +1667,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm share/gimp/gflare
 @dirrm share/gimp/gfig
 @dirrm share/gimp/fractalexplorer
+@dirrm share/gimp/fonts
 @dirrm share/gimp/brushes
 @dirrm share/gimp
 %%PYTHON:%%@dirrm libexec/gimp/1.3/python
