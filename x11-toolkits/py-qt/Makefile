@@ -8,7 +8,9 @@ PORTNAME=	qt
 PORTVERSION=	3.14
 PORTREVISION=
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=lofi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
@@ -18,8 +20,6 @@ COMMENT=	Python bindings for the Qt toolkit
 LIB_DEPENDS=	qscintilla.5:${PORTSDIR}/x11-toolkits/qscintilla
 BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Unfetchable
 
 USE_QT_VER=	3
 USE_PYTHON=	yes
