@@ -8,7 +8,7 @@
 
 DISTNAME=       xtris-1.15
 CATEGORIES=	games
-MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/xtris/
+MASTER_SITES=	http://www.iagora.com/~espel/xtris/
 
 MAINTAINER=	sec@42.org
 
