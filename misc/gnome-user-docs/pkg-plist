@@ -171,12 +171,16 @@ share/gnome/omf/user-guide/gosstartsession-C.omf
 @dirrm share/gnome/omf/gnome2-user-docs
 @dirrm share/gnome/help/user-guide/C/figures
 @dirrm share/gnome/help/user-guide/C
+@dirrm share/gnome/help/user-guide
 @dirrm share/gnome/help/system-admin-guide/C/figures
 @dirrm share/gnome/help/system-admin-guide/C
+@dirrm share/gnome/help/system-admin-guide
 @dirrm share/gnome/help/introduction-to-gnome/C/figures
 @dirrm share/gnome/help/introduction-to-gnome/C
+@dirrm share/gnome/help/introduction-to-gnome
 @dirrm share/gnome/help/gnome-access-guide/C/figures
 @dirrm share/gnome/help/gnome-access-guide/C
+@dirrm share/gnome/help/gnome-access-guide
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/introduction-to-gnome-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf 2>/dev/null || /usr/bin/true
