@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME vocabulary builder
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget pygnome2
 USE_PYTHON=	yes
