@@ -1,33 +1,29 @@
-
-$FreeBSD$
-
---- driver/Makefile.in.orig	Tue Jun 11 12:09:07 2002
-+++ driver/Makefile.in	Mon Aug  5 14:55:05 2002
-@@ -23,9 +23,9 @@
+--- driver/Makefile.in.orig	Wed Oct 23 23:26:18 2002
++++ driver/Makefile.in	Sun Nov 10 01:07:33 2002
+@@ -23,11 +23,11 @@
  INTLTOOL_MERGE	= @INTLTOOL_MERGE@
  
  GNOME_DATADIR	= @GNOME_DATADIR@
--GNOME_CCDIR	= $(GNOME_DATADIR)/control-center/Desktop
-+GNOME_CCDIR	= $(GNOME_DATADIR)/gnome/control-center/Desktop
+-GNOME_CCDIR_1	= $(GNOME_DATADIR)/control-center/Desktop
++GNOME_CCDIR_1	= $(GNOME_DATADIR)/gnome/control-center/Desktop
+ GNOME_CCDIR_2	= $(GNOME_DATADIR)/control-center/capplets
+ GNOME_CCDIR_3	= $(GNOME_DATADIR)/control-center-2.0/capplets
  GNOME_PANELDIR1 = $(GNOME_DATADIR)/gnome/apps/Settings/Desktop
 -GNOME_PANELDIR2	= $(GNOME_DATADIR)/applications
-+GNOME_PANELDIR2	= $(GNOME_DATADIR)/gnome/applications
++GNOME_PANELDIR2 = $(GNOME_DATADIR)/gnome/applications
  GNOME_PANELDIR	= @GNOME_PANELDIR@
  GLADE_DATADIR	= @GLADE_DATADIR@
  GNOME_BINDIR	= $(bindir)
-@@ -444,11 +444,14 @@
-              echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR)"          ;\
-                   $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR)"          ;\
-            fi                                                                ;\
+@@ -475,8 +475,11 @@
+ 	                                                                      \
+            echo $(INSTALL_DATA) screensaver-properties.desktop		      \
+              $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\
 +	   /usr/bin/sed 's|xscreensaver-demo.*|screensaver-properties-capplet|'\
-+			screensaver-properties.desktop >                      \
-+				screensaver-properties.desktop1              ;\
++	   	screensaver-properties.desktop >                      	      \
++			screensaver-properties.desktop1              	      ;\
  	                                                                      \
-            echo    $(INSTALL_DATA) screensaver-properties.desktop	      \
-              $(install_prefix)$(GNOME_CCDIR)/screensaver-properties.desktop;  \
- 	                                                                      \
--           if      $(INSTALL_DATA) screensaver-properties.desktop	      \
-+           if      $(INSTALL_DATA) screensaver-properties.desktop1	      \
-              $(install_prefix)$(GNOME_CCDIR)/screensaver-properties.desktop;  \
+-           if   $(INSTALL_DATA) screensaver-properties.desktop		      \
++           if   $(INSTALL_DATA) screensaver-properties.desktop1		      \
+              $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\
               then true                                                       ;\
             else                                                               \

@@ -1,12 +1,9 @@
-
-$FreeBSD$
-
---- po/Makefile.in.in	2002/06/06 19:53:47	1.1
-+++ po/Makefile.in.in	2002/06/06 19:54:28
+--- po/Makefile.in.in.orig	Wed Oct 23 07:23:05 2002
++++ po/Makefile.in.in	Sun Nov 10 01:09:28 2002
 @@ -101,7 +101,7 @@
  exec_prefix = @exec_prefix@
  #datadir = $(prefix)/@DATADIRNAME@      -- not for xscreensaver
- datadir = @GNOME_DATADIR@
+ datadir = @PO_DATADIR@
 -localedir = $(datadir)/locale
 +localedir = $(prefix)/share/locale
  #gnulocaledir = $(prefix)/share/locale  -- not for xscreensaver
