@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--with-ldap
 # can be used to store user tables.
 #
 .if WITH_PGSQL
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
