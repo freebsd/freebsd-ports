@@ -15,4 +15,4 @@ echo -n " cvsupd"
 cd ${base} || exit
 . ./config.sh || exit
 su -m ${user} -c \
-    "cvsupd -e -C ${maxclients} -l @${facility}" >>${out} 2>&1
+    "cvsupd -e -C ${maxclients} -l @${facility} -s sup.client" >>${out} 2>&1

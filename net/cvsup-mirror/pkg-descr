@@ -10,6 +10,6 @@ This kit is not for people who just want to keep their own files
 up to date with CVSup.  It is for people who wish to run servers
 that distribute the FreeBSD sources to others.
 
-This port requires CVSup version 15.1 or later.
+This port requires CVSup version 15.3 or later.
 
 jdp@FreeBSD.org
