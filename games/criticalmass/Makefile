@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	criticalmass
-PORTVERSION=	0.98
-PORTREVISION=	2
+PORTVERSION=	0.99
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	criticalmass
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	CriticalMass-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL/OpenGL space shoot\'em up game
 
-USE_SDL=	image mixer sdl
+CONFLICTS=	shaaft-*
+
 USE_BZIP2=	yes
+USE_SDL=	image mixer sdl
+USE_GL=		yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
-		CPPFLAGS="${CFLAGS} -I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ARGS=	--disable-optimize
 
 MAN6=		critter.6
 
-SDLINCPFILES=	utilssdl/PNG.hpp utilsgl/GLTexture.hpp \
-		utilsgl/GLBitmapCollection.cpp utilsgl/GLExtension.hpp
-
-.include <bsd.port.pre.mk>
-
 post-patch:
-	${REINPLACE_CMD} -e 's#sdl-config#sdl11-config#; s#-lSDL # #;' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's#SDL/#SDL11/#;' ${SDLINCPFILES:S#^#${WRKSRC}/#}
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
+		 s|^CXXFLAGS|#CXXFLAGS|g ; \
+		 s|-lSDL | |g' ${WRKSRC}/configure
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SDL/SDL|SDL|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
