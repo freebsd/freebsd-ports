@@ -7,6 +7,7 @@
     SUBDIR += bfe
     SUBDIR += bochs
     SUBDIR += bsvc
+    SUBDIR += cingb
     SUBDIR += cpmemu
     SUBDIR += cpmtools
     SUBDIR += dgen-sdl
