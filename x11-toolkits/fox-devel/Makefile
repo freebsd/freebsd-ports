@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	0.99.166
+PORTVERSION=	0.99.167
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
 .if defined(WITH_XUNICODE)
-PKGNAMESUFFIX=	-xunicode
+PKGNAMESUFFIX=	-unicode
 
 PATCH_SITES=	http://www.ab.wakwak.com/~tino/jatk/fox/
 PATCHFILES=	${PORTNAME}${PKGNAMESUFFIX}-${PATCHVERSION}.diff
