@@ -1,5 +1,5 @@
 --- scripts/ltmain.sh.orig	Wed Jul 17 15:42:41 2002
-+++ scripts/ltmain.sh	Wed Jul 17 15:47:36 2002
++++ ltmain.sh	Wed Jul 17 15:47:36 2002
 @@ -1062,8 +1062,16 @@
  	continue
  	;;

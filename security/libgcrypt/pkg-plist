@@ -2,5 +2,5 @@ bin/libgcrypt-config
 include/gcrypt.h
 lib/libgcrypt.a
 lib/libgcrypt.so
-lib/libgcrypt.so.6
+lib/libgcrypt.so.12
 share/aclocal/libgcrypt.m4
