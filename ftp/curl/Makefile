@@ -1,11 +1,11 @@
 # New ports collection makefile for:	curl
-# Version required:     5.5
+# Version required:     5.8
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.3 1999/03/30 10:13:26 dirk Exp $
+# $Id: Makefile,v 1.4 1999/04/16 02:24:14 mharo Exp $
 
-DISTNAME=	curl-5.5.1
+DISTNAME=	curl-5.8
 CATEGORIES=	net www
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
