@@ -26,8 +26,6 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-extra-includes=${LOCALBASE}/pilot/include \
-		--with-extra-libs=${LOCALBASE}/pilot/lib
 .if ${MACHINE_ARCH} == "i386" && !defined(NO_KDE_OBJPRELINK)
 CONFIGURE_ARGS+=--enable-objprelink
 .endif
@@ -37,7 +35,7 @@ CONFIGURE_ARGS+=--enable-final
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
 CONFIGURE_ARGS+=--disable-debug
 .endif
-QTCPPFLAGS=	-I${LOCALBASE}/pilot/include -L${LOCALBASE}/pilot/lib
+QTCPPFLAGS=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 QTLDFLAGS=	${QTCPPFLAGS}
 CONFIGURE_ENV+=	LIBS="${QTLDFLAGS}"
 MAKE_ENV=	${CONFIGURE_ENV}
