@@ -1,2 +1,2 @@
-bin/ruby_s
+%%IF_DEFAULT%%bin/ruby_s
 bin/ruby%%_RUBY_SUFFIX%%_s

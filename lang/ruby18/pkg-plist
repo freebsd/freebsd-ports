@@ -1,6 +1,6 @@
-bin/irb
+%%IF_DEFAULT%%bin/irb%%RUBY_R%%
 bin/irb%%_RUBY_SUFFIX%%
-bin/ruby
+%%IF_DEFAULT%%bin/ruby%%RUBY_R%%
 bin/ruby%%_RUBY_SUFFIX%%
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
@@ -31,108 +31,108 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/st.h
 %%RUBY_ARCHLIBDIR%%/util.h
 %%RUBY_ARCHLIBDIR%%/version.h
-%%RUBY_LIBDIR%%/English.rb
-%%RUBY_LIBDIR%%/Env.rb
-%%RUBY_LIBDIR%%/base64.rb
-%%RUBY_LIBDIR%%/cgi-lib.rb
-%%RUBY_LIBDIR%%/cgi.rb
-%%RUBY_LIBDIR%%/complex.rb
-%%RUBY_LIBDIR%%/date.rb
-%%RUBY_LIBDIR%%/date2.rb
-%%RUBY_LIBDIR%%/debug.rb
-%%RUBY_LIBDIR%%/delegate.rb
-%%RUBY_LIBDIR%%/e2mmap.rb
-%%RUBY_LIBDIR%%/eregex.rb
-%%RUBY_LIBDIR%%/expect.rb
-%%RUBY_LIBDIR%%/final.rb
-%%RUBY_LIBDIR%%/finalize.rb
-%%RUBY_LIBDIR%%/find.rb
-%%RUBY_LIBDIR%%/forwardable.rb
-%%RUBY_LIBDIR%%/ftools.rb
-%%RUBY_LIBDIR%%/ftplib.rb
-%%RUBY_LIBDIR%%/getoptlong.rb
-%%RUBY_LIBDIR%%/getopts.rb
-%%RUBY_LIBDIR%%/importenv.rb
-%%RUBY_LIBDIR%%/irb.rb
-%%RUBY_LIBDIR%%/jcode.rb
-%%RUBY_LIBDIR%%/kconv.rb
-%%RUBY_LIBDIR%%/mailread.rb
-%%RUBY_LIBDIR%%/mathn.rb
-%%RUBY_LIBDIR%%/matrix.rb
-%%RUBY_LIBDIR%%/mkmf.rb
-%%RUBY_LIBDIR%%/monitor.rb
-%%RUBY_LIBDIR%%/mutex_m.rb
-%%RUBY_LIBDIR%%/observer.rb
-%%RUBY_LIBDIR%%/open3.rb
-%%RUBY_LIBDIR%%/ostruct.rb
-%%RUBY_LIBDIR%%/parsearg.rb
-%%RUBY_LIBDIR%%/parsedate.rb
-%%RUBY_LIBDIR%%/ping.rb
-%%RUBY_LIBDIR%%/profile.rb
-%%RUBY_LIBDIR%%/pstore.rb
-%%RUBY_LIBDIR%%/rational.rb
-%%RUBY_LIBDIR%%/readbytes.rb
-%%RUBY_LIBDIR%%/resolv-replace.rb
-%%RUBY_LIBDIR%%/resolv.rb
-%%RUBY_LIBDIR%%/shell.rb
-%%RUBY_LIBDIR%%/shellwords.rb
-%%RUBY_LIBDIR%%/singleton.rb
-%%RUBY_LIBDIR%%/sync.rb
-%%RUBY_LIBDIR%%/telnet.rb
-%%RUBY_LIBDIR%%/tempfile.rb
-%%RUBY_LIBDIR%%/thread.rb
-%%RUBY_LIBDIR%%/thwait.rb
-%%RUBY_LIBDIR%%/timeout.rb
-%%RUBY_LIBDIR%%/tracer.rb
-%%RUBY_LIBDIR%%/weakref.rb
-%%RUBY_LIBDIR%%/cgi/session.rb
-%%RUBY_LIBDIR%%/irb/xmp.rb
-%%RUBY_LIBDIR%%/irb/ws-for-case-2.rb
-%%RUBY_LIBDIR%%/irb/workspace.rb
-%%RUBY_LIBDIR%%/irb/version.rb
-%%RUBY_LIBDIR%%/irb/slex.rb
-%%RUBY_LIBDIR%%/irb/ruby-token.rb
-%%RUBY_LIBDIR%%/irb/ruby-lex.rb
-%%RUBY_LIBDIR%%/irb/multi-irb.rb
-%%RUBY_LIBDIR%%/irb/locale.rb
-%%RUBY_LIBDIR%%/irb/loader.rb
-%%RUBY_LIBDIR%%/irb/input-method.rb
-%%RUBY_LIBDIR%%/irb/init.rb
-%%RUBY_LIBDIR%%/irb/help.rb
-%%RUBY_LIBDIR%%/irb/frame.rb
-%%RUBY_LIBDIR%%/irb/extend-command.rb
-%%RUBY_LIBDIR%%/irb/context.rb
-%%RUBY_LIBDIR%%/irb/completion.rb
-%%RUBY_LIBDIR%%/irb/lc/error.rb
-%%RUBY_LIBDIR%%/irb/lc/help-message
-%%RUBY_LIBDIR%%/irb/lc/ja/error.rb
-%%RUBY_LIBDIR%%/irb/lc/ja/help-message
-%%RUBY_LIBDIR%%/net/ftp.rb
-%%RUBY_LIBDIR%%/net/http.rb
-%%RUBY_LIBDIR%%/net/imap.rb
-%%RUBY_LIBDIR%%/net/pop.rb
-%%RUBY_LIBDIR%%/net/protocol.rb
-%%RUBY_LIBDIR%%/net/smtp.rb
-%%RUBY_LIBDIR%%/net/telnet.rb
-%%RUBY_LIBDIR%%/shell/builtin-command.rb
-%%RUBY_LIBDIR%%/shell/command-processor.rb
-%%RUBY_LIBDIR%%/shell/error.rb
-%%RUBY_LIBDIR%%/shell/filter.rb
-%%RUBY_LIBDIR%%/shell/process-controller.rb
-%%RUBY_LIBDIR%%/shell/system-command.rb
-%%RUBY_LIBDIR%%/shell/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/English.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/Env.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/base64.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi-lib.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/complex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/date.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/date2.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/debug.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/delegate.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/e2mmap.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/eregex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/expect.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/final.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/finalize.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/find.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/forwardable.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/ftools.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/ftplib.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/getoptlong.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/getopts.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/importenv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/jcode.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/kconv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/mailread.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/mathn.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/matrix.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/mkmf.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/monitor.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/mutex_m.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/observer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/open3.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/ostruct.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/parsearg.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/parsedate.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/ping.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/profile.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/pstore.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rational.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/readbytes.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/resolv-replace.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/resolv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shellwords.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/singleton.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/sync.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/telnet.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/tempfile.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/thread.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/thwait.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/timeout.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/tracer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/xmp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ws-for-case-2.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/workspace.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/version.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/slex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ruby-token.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ruby-lex.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/multi-irb.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/locale.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/loader.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/input-method.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/init.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/help.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/frame.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/extend-command.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/context.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/completion.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/lc/error.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/lc/help-message
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/lc/ja/error.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/irb/lc/ja/help-message
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/ftp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/http.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/imap.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/pop.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/protocol.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/smtp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/net/telnet.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/builtin-command.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/command-processor.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/error.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/filter.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/process-controller.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/system-command.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/shell/version.rb
 @exec /bin/mkdir -p %D/%%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITEARCHLIBDIR%%
-@dirrm %%RUBY_SITELIBDIR%%
+%%RUBYLIB%%@dirrm %%RUBY_SITELIBDIR%%
 @unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
-@dirrm %%RUBY_LIBDIR%%/cgi
-@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
-@dirrm %%RUBY_LIBDIR%%/irb/lc
-@dirrm %%RUBY_LIBDIR%%/irb
-@dirrm %%RUBY_LIBDIR%%/net
-@dirrm %%RUBY_LIBDIR%%/shell
-@dirrm %%RUBY_LIBDIR%%
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/net
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/shell
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%
 @unexec rmdir %D/lib/ruby 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.jp

@@ -1,7 +1,8 @@
 ====
 When you are to build a ruby related port for Ruby 1.7, please define
 RUBY_VER=1.7 in the make command line, or put it in your
-/etc/make.conf if you want to always use Ruby 1.7 instead of 1.6.
+/etc/make.conf.  If you want to always use Ruby 1.7 instead of 1.6,
+set RUBY_DEFAULT_VER=1.7.
 
 Note that some stuff that comes with the standard Ruby distribution is
 provided as separate ports:
