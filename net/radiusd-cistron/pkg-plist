@@ -28,18 +28,18 @@ share/radius/dictionary.standard
 share/radius/dictionary.tunnel
 share/radius/dictionary.usr
 share/radius/dictionary.versanet
-share/doc/radiusd-cistron/COPYRIGHT
-share/doc/radiusd-cistron/ChangeLog
-share/doc/radiusd-cistron/INSTALL
-share/doc/radiusd-cistron/README
-share/doc/radiusd-cistron/README.Y2K
-share/doc/radiusd-cistron/README.cisco
-share/doc/radiusd-cistron/README.pam
-share/doc/radiusd-cistron/README.proxy
-share/doc/radiusd-cistron/README.simul
-share/doc/radiusd-cistron/README.usersfile
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.Y2K
+%%PORTDOCS%%%%DOCSDIR%%/README.cisco
+%%PORTDOCS%%%%DOCSDIR%%/README.pam
+%%PORTDOCS%%%%DOCSDIR%%/README.proxy
+%%PORTDOCS%%%%DOCSDIR%%/README.simul
+%%PORTDOCS%%%%DOCSDIR%%/README.usersfile
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/raddb
-@dirrm share/doc/radiusd-cistron
 @dirrm share/radius
 @unexec rm -f /var/log/radius.log
 @unexec rm -f /var/run/radiusd.pid
