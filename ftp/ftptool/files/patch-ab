@@ -1,0 +1,35 @@
+--- ./Imakefile.org	Sun Aug 28 20:05:38 1994
++++ ./Imakefile	Mon Mar 25 00:47:06 1996
+@@ -21,10 +21,10 @@
+ #CC=gcc -ansi
+ 
+ #Uncomment the following lines for SunOS 5.x with Sun cc.
+-DEFINES= -DSYSV -DSVR4 $(XVIEW) $(SOCKDEFS) -DGLOBAL_FTPTOOLRC=\"$(FTPTOOLRC)\"
+-LIBSUNOS5= -R /usr/openwin/lib:/opt/openwin/lib:/usr/opt/openwin/lib \
+-	-lsocket -lnsl
+-CC=cc -Xa
++#DEFINES= -DSYSV -DSVR4 $(XVIEW) $(SOCKDEFS) -DGLOBAL_FTPTOOLRC=\"$(FTPTOOLRC)\"
++#LIBSUNOS5= -R /usr/openwin/lib:/opt/openwin/lib:/usr/opt/openwin/lib \
++#	-lsocket -lnsl
++#CC=cc -Xa
+ 
+ #Uncomment the following lines for SunOS 5.x with gcc
+ #Don't use -ansi, there seems to be a header file problem with that.
+@@ -45,6 +45,8 @@
+ #define ManSuffix 1
+ #endif
+ 
++OPENWINHOME	=	$(PROJECTROOT)
++
+ FTPTOOLRCDIR = $(LIBDIR)/ftptool
+ FTPTOOLRC    = $(FTPTOOLRCDIR)/ftptoolrc
+ SYS_LIBRARIES 	= -lm
+@@ -73,7 +75,7 @@
+ 
+ SRCS = batch.c button_funcs.c change_dir.c create_main.c create_other.c \
+ 	dircache.c dirlist.c dofuncs.c dnd.c event.c ftp.c host_list.c \
+-	lex.l main.c menu_funcs.c misc.c readdir.c schedule.c tar_view.c \
++	lex.c main.c menu_funcs.c misc.c readdir.c schedule.c tar_view.c \
+ 	transfer.c view_file.c
+ 
+ OBJS = batch.o button_funcs.o change_dir.o create_main.o create_other.o \

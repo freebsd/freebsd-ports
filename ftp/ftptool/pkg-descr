@@ -1,0 +1,8 @@
+The source for ftptool is, as far as I'm concerned freely distributable as 
+long as I recieve credit for it (my bosses agree, though Sun hasn't spoken).
+
+Author: Mike Sullivan (Mike.Sullivan@Sun.COM)
+
+Ported to 386 SVR4 by Jerry Whelan <guru@stasi.bradley.edu>.
+Ported to Ultrix by Robert Evans <Robert.Evans@cm.cf.ac.uk>.
+Ported to FreeBSD by Janusz Kokot <janek@gaja.ipan.lublin.pl>
