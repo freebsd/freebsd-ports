@@ -1,14 +1,22 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Mar  8 19:22:14 2002
-+++ configure	Mon Mar 11 12:03:39 2002
-@@ -9788,7 +9788,7 @@
-   echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
- CATOBJEXT=.mo
+--- configure.orig	Tue Apr  2 14:45:37 2002
++++ configure	Fri Apr 26 11:36:40 2002
+@@ -5671,6 +5671,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7864,7 +7865,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
 -	         DATADIRNAME=lib
 +	         DATADIRNAME=share
  fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ rm -f conftest*
  	      INSTOBJEXT=.mo
