@@ -46,6 +46,16 @@ have_boot!=	/bin/sh scripts/check_files files/T.boot installed /usr/local
 DISTFILES+=	m3-fbsd-boot-3.6.tar.gz
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400011
+EXTRA_PATCHES=	${FILESDIR}/patch-new-sigset-aa \
+		${FILESDIR}/patch-new-sigset-ab \
+		${FILESDIR}/patch-new-sigset-ac
+.else
+EXTRA_PATCHES=	${FILESDIR}/patch-old-sigset-aa
+.endif
+
 # Startup script, run at boot time
 startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.m3.sh
@@ -151,4 +161,4 @@ do-install:
 	@${ECHO_MSG} "Running ldconfig"
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

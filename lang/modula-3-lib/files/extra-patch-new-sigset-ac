@@ -1,0 +1,30 @@
+--- m3/m3core/src/runtime/FreeBSD2/RTThread.m3.orig	Wed Nov 23 13:01:14 1994
++++ m3/m3core/src/runtime/FreeBSD2/RTThread.m3	Wed Oct  6 15:22:49 1999
+@@ -93,19 +93,21 @@
+   END setup_sigvtalrm;
+ 
+ PROCEDURE allow_sigvtalrm () =
+-  VAR svt : Usignal.sigset_t := Usignal.sigmask(Usignal.SIGVTALRM);
+-      old : Usignal.sigset_t;
+-      i   : INTEGER;
++  VAR svt, old : Usignal.sigset_t;
++      i        : INTEGER;
+   BEGIN
++    EVAL Usignal.sigemptyset(svt);
++    EVAL Usignal.sigaddset(svt, Usignal.SIGVTALRM);
+     i := Usignal.sigprocmask(Usignal.SIG_UNBLOCK, svt, old);
+     <*ASSERT i = 0 *>
+   END allow_sigvtalrm;
+ 
+ PROCEDURE disallow_sigvtalrm () =
+-  VAR svt : Usignal.sigset_t := Usignal.sigmask(Usignal.SIGVTALRM);
+-      old : Usignal.sigset_t;
+-      i   : INTEGER;
++  VAR svt, old : Usignal.sigset_t;
++      i        : INTEGER;
+   BEGIN
++    EVAL Usignal.sigemptyset(svt);
++    EVAL Usignal.sigaddset(svt, Usignal.SIGVTALRM);
+     i := Usignal.sigprocmask(Usignal.SIG_BLOCK, svt, old);
+     <*ASSERT i = 0 *>
+   END disallow_sigvtalrm;

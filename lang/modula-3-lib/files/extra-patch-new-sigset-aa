@@ -1,0 +1,192 @@
+--- m3/m3core/src/unix/freebsd-2/Usignal.i3.orig	Mon Aug 12 15:47:48 1996
++++ m3/m3core/src/unix/freebsd-2/Usignal.i3	Wed Dec 22 22:12:10 1999
+@@ -12,8 +12,6 @@
+ 
+ (*** <signal.h> ***)
+ 
+-  (* I don't know about all the indented values below from the 
+-     Linux implementation *)
+ CONST
+   SIGHUP    =  1;      (* hangup *)
+   SIGINT    =  2;      (* interrupt *)
+@@ -23,27 +21,19 @@
+   SIGIOT    =  6;      (* IOT instruction *)
+   SIGEMT    =  7;      (* EMT instruction *)
+   SIGFPE    =  8;      (* floating point exception *)
+-      FPE_INTDIV_TRAP      = 20;  (* integer divide by zero *)
+-      FPE_INTOVF_TRAP      = 21;  (* integer overflow *)
+-      FPE_FLTOPERR_TRAP    =  1;  (* [floating operand error] *)
+-      FPE_FLTDEN_TRAP      =  2;  (* [floating denormalized operand] *)
+-      FPE_FLTDIV_TRAP      =  3;  (* [floating divide by zero] *)
+-      FPE_FLTOVF_TRAP      =  4;  (* [floating overflow] *)
+-      FPE_FLTUND_TRAP      =  5;  (* [floating underflow] *)
+-      FPE_FLTINEX_TRAP     =  6;  (* [floating inexact result] *)
+-      FPE_UUOP_TRAP        =  7;  (* [floating undefined opcode] *)
+-      FPE_DATACH_TRAP      =  8;  (* [floating data chain exception] *)
+-      FPE_FLTSTK_TRAP      = 16;  (* [floating stack fault] *)
+-      FPE_FPA_ENABLE       = 17;  (* [FPA not enabled] *)
+-      FPE_FPA_ERROR        = 18;  (* [FPA arithmetic exception] *)
++      FPE_INTOVF_TRAP      =  1;  (* integer overflow *)
++      FPE_INTDIV_TRAP      =  2;  (* integer divide by zero *)
++      FPE_FLTDIV_TRAP      =  3;  (* floating/decimal divide by zero *)
++      FPE_FLTOVF_TRAP      =  4;  (* floating overflow *)
++      FPE_FLTUND_TRAP      =  5;  (* floating underflow *)
++      FPE_FPU_NP_TRAP      =  6;  (* floating point unit not present *)
++      FPE_SUBRNG_TRAP      =  7;  (* subrange out of bounds *)
+   SIGKILL   =  9;      (* kill (cannot be caught or ignored) *)
+   SIGBUS    =  10;     (* bus error *)
+-      BUS_HWERR	  = 1;     (* misc hardware error (e.g. timeout) *)
+-      BUS_ALIGN	  = 2;     (* hardware alignment error *)
++      BUS_PAGE_FAULT       = 12;  (* page fault protection base *)
++      BUS_SEGNP_FAULT      = 26;  (* segment not present *)
++      BUS_STK_FAULT        = 27;  (* stack fault *)
+   SIGSEGV   =  11;     (* segmentation violation *)
+-      SEGV_NOMAP  = 3;     (* no mapping at the fault address *)
+-      SEGV_PROT   = 4;      (* access exceeded protections *)
+-      SEGV_OBJERR = 5;    (* object returned errno value *)
+   SIGSYS    =  12;     (* bad argument to system call *)
+   SIGPIPE   =  13;     (* write on a pipe with no one to read it *)
+   SIGALRM   =  14;     (* alarm clock *)
+@@ -61,9 +51,9 @@
+   SIGVTALRM =  26;     (* virtual time alarm *)
+   SIGPROF   =  27;     (* profiling time alarm *)
+   SIGWINCH  =  28;     (* window size changes *)
+-  SIGLOST   =  29;     (* Sys-V rec lock: notify user upon server crash *)
+-  SIGUSR1   =  30;     (* User signal 1 (from SysV) *)
+-  SIGUSR2   =  31;     (* User signal 2 (from SysV) *)
++  SIGINFO   =  29;     (* information request *)
++  SIGUSR1   =  30;     (* user defined signal 1 *)
++  SIGUSR2   =  31;     (* user defined signal 2 *)
+ 
+   (* System V definitions *)
+   SIGCLD    = SIGCHLD;
+@@ -75,17 +65,19 @@
+   SignalHandler = PROCEDURE (sig, code: int;
+                              scp: UNTRACED REF struct_sigcontext);
+ 
+-  sigset_t = int;
++  sigset_t = ARRAY [0..3] OF unsigned_int;
++  sigset_t_star = UNTRACED REF sigset_t;
+ 
+   struct_sigvec  = RECORD
+     sv_handler: SignalHandler;     (* signal handler *)
+-    sv_mask:    sigset_t;          (* signal mask to apply *)
+-    sv_flags:   int;               (* see signal options below *) END;
++    sv_mask:    int;               (* signal mask to apply *)
++    sv_flags:   int;               (* see signal options below *)
++  END;
+     
+ 
+ CONST
+-  empty_sigset_t : sigset_t = 0;
+-  empty_sv_mask  : sigset_t = 0;
++  empty_sigset_t = sigset_t{ 0, .. };
++  empty_sv_mask  : int = 0;
+ 
+ CONST
+  (* Valid flags defined for sv_flags field of sigvec structure. *)
+@@ -101,16 +93,10 @@
+   SIG_SETMASK  = 3;    (* Set block mask to this mask *)
+ 
+ TYPE
+-  SignalActionHandler  = PROCEDURE (sig: int);
+-  SignalRestoreHandler = PROCEDURE ();
+-
+   struct_sigaction = RECORD
+-    sa_handler  : SignalActionHandler;  (* signal handler *)
+-    sa_mask     : sigset_t;             (* signals to block while in handler *)
++    sa_handler  : SignalHandler;        (* signal handler *)
+     sa_flags    : int;                  (* signal action flags *)
+-    (* ow
+-    sa_restorer : SignalRestoreHandler; (* restores interrupted state *)
+-    *)
++    sa_mask     : sigset_t;             (* signals to block while in handler *)
+   END;
+ 
+   struct_sigaction_star = UNTRACED REF struct_sigaction;
+@@ -135,31 +121,31 @@
+  * execution of the signal handler.  It is also made available
+  * to the handler to allow it to properly restore state if
+  * a non-standard exit is performed.
+- *
+- * WARNING: THE sigcontext MUST BE KEPT CONSISTENT WITH /usr/include/setjmp.h
+- * AND THE LIBC ROUTINES setjmp() AND longjmp()
+- *  ???? (ow)
+  *)
+ 
+ TYPE
+   struct_sigcontext = RECORD
++    sc_mask: sigset_t; (* signal mask to restore *)
+     sc_onstack: int;   (* sigstack state to restore *)
+-    sc_mask: int;      (* signal mask to restore *)
+-    sc_esp: int;       (* stack pinter *)
+-    sc_ebp: int;       (* frame pointer *)
+-    sc_isp: int;
+-    sc_eip: int;       (* program counter *)
+-    sc_efl: int;       (* program status word *)
++    sc_gs: int;
++    sc_fs: int;
+     sc_es: int;
+     sc_ds: int;
+-    sc_cs: int;
+-    sc_ss: int;
+     sc_edi: int;
+     sc_esi: int;
++    sc_ebp: int;       (* frame pointer *)
++    sc_isp: int;
+     sc_ebx: int;
+     sc_edx: int;
+     sc_ecx: int;
+     sc_eax: int;
++    sc_trapno: int;
++    sc_err: int;
++    sc_eip: int;       (* program counter *)
++    sc_cs: int;
++    sc_efl: int;
++    sc_esp: int;       (* stack pinter *)
++    sc_ss: int;
+   END;
+ 
+ (* Do not modifiy these variables *)
+@@ -204,8 +190,13 @@
+ 
+ (*** sigstack(2) - set and/or get signal stack context ***)
+ 
++(* FIXME - It is OK for ss and/or oss to be NIL, so we shouldn't use VAR *)
+ <*EXTERNAL*> PROCEDURE sigstack (VAR ss, oss: struct_sigstack): int;
+ 
++(*** sigsuspend(2) - release blocked signals and wait for interrupt ***)
++
++<*EXTERNAL*>
++PROCEDURE sigsuspend (VAR sigmask: sigset_t): int;
+ 
+ (*** sigaction(2) - software signal facilities ***)
+ 
+@@ -214,10 +205,27 @@
+ 
+ (*** sigvec(2) - software signal facilities ***)
+ 
++(* FIXME - It is OK for vec and/or ovec to be NIL, so we shouldn't use VAR *)
+ <*EXTERNAL*>
+ PROCEDURE sigvec (sig: int; VAR vec, ovec: struct_sigvec): int;
+ 
++(* FIXME - It is OK for vec and/or ovec to be NIL, so we shouldn't use VAR *)
+ <*EXTERNAL*>
+ PROCEDURE sigprocmask (how: int; VAR set, oldset: sigset_t) : int;
++
++<*EXTERNAL*>
++PROCEDURE sigemptyset (VAR set: sigset_t) : int;
++
++<*EXTERNAL*>
++PROCEDURE sigfillset (VAR set: sigset_t) : int;
++
++<*EXTERNAL*>
++PROCEDURE sigaddset (VAR set: sigset_t; signo: int) : int;
++
++<*EXTERNAL*>
++PROCEDURE sigdelset (VAR set: sigset_t; signo: int) : int;
++
++<*EXTERNAL*>
++PROCEDURE sigismember(VAR set: sigset_t; signo: int) : int;
+ 
+ END Usignal.
