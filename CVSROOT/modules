@@ -5225,6 +5225,7 @@ p5-IMAP-Admin	ports/mail/p5-IMAP-Admin
 p5-IO		ports/devel/p5-IO
 p5-IO-Interface	ports/net/p5-IO-Interface
 p5-IO-Multiplex	ports/devel/p5-IO-Multiplex
+p5-IO-Socket-Multicast	ports/net/p5-IO-Socket-Multicast
 p5-IO-Socket-SSL	ports/security/p5-IO-Socket-SSL
 p5-IO-String	ports/devel/p5-IO-String
 p5-IO-Stty	ports/devel/p5-IO-Stty
