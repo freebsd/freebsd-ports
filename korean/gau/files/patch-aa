@@ -1,0 +1,11 @@
+--- Makefile.in.o	Sat Jan 20 23:24:55 2001
++++ Makefile.in	Sat Jan 20 23:25:23 2001
+@@ -86,7 +86,7 @@
+ 
+ bin_SCRIPTS = gau-install
+ 
+-doc_dir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++doc_dir = $(prefix)/share/doc/$(PACKAGE)
+ 
+ doc_all =  	doc/README					doc/README-0.1a					doc/README-0.2					doc/README-0.3					doc/README-0.4					doc/TODO					doc/USAGE					doc/PROBLEMS
+ 

@@ -2,15 +2,15 @@ bin/gau
 bin/gau-install
 @exec ln -s %D/bin/gau %D/bin/gaui
 @unexec rm -f %D/bin/gaui
-doc/gau-0.4.1/PROBLEMS
-doc/gau-0.4.1/README
-doc/gau-0.4.1/README-0.1a
-doc/gau-0.4.1/README-0.2
-doc/gau-0.4.1/README-0.3
-doc/gau-0.4.1/README-0.4
-doc/gau-0.4.1/TODO
-doc/gau-0.4.1/USAGE
-@dirrm doc/gau-0.4.1
+share/doc/gau/PROBLEMS
+share/doc/gau/README
+share/doc/gau/README-0.1a
+share/doc/gau/README-0.2
+share/doc/gau/README-0.3
+share/doc/gau/README-0.4
+share/doc/gau/TODO
+share/doc/gau/USAGE
+@dirrm share/doc/gau
 share/gau/auto-response
 share/gau/cap/INFO
 share/gau/chat-binding
