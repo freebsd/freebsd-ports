@@ -3,7 +3,7 @@
 # Date created:         1997-12-30
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.1.1.1 1998/01/02 17:09:08 wosch Exp $
+# $Id: Makefile,v 1.2 1998/01/02 17:11:19 wosch Exp $
 #
 
 DISTNAME=	zipcodes
@@ -13,7 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_LOCAL} \
 		http://www.freebsd.org/~wosch/src/
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=     wosch@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${GZCAT}
