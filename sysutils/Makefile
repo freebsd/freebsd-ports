@@ -128,6 +128,7 @@
     SUBDIR += personality
     SUBDIR += pib
     SUBDIR += pkg_remove
+    SUBDIR += pkg_tarup
     SUBDIR += pkg_tree
     SUBDIR += portupgrade
     SUBDIR += prips
