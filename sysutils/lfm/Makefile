@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lfm
-PORTVERSION=	0.4
+PORTVERSION=	0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
 
@@ -19,7 +19,10 @@ SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 do-build:
 	@${SETUP_CMD} build
 
+pre-install:
+	@${SH} ${PKGREQ} INSTALL
+
 do-install:
-	@${SETUP_CMD} install
+	@${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>

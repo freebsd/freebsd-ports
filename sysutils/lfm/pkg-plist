@@ -1,10 +1,28 @@
 bin/lfm
+bin/pyview
 lib/%%PYTHON_VERSION%%/site-packages/lfm/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/lfm/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/lfm/files.py
 lib/%%PYTHON_VERSION%%/site-packages/lfm/files.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/files.pyo
 lib/%%PYTHON_VERSION%%/site-packages/lfm/lfm.py
 lib/%%PYTHON_VERSION%%/site-packages/lfm/lfm.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/lfm.pyo
 lib/%%PYTHON_VERSION%%/site-packages/lfm/messages.py
 lib/%%PYTHON_VERSION%%/site-packages/lfm/messages.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/messages.pyo
+lib/%%PYTHON_VERSION%%/site-packages/lfm/preferences.py
+lib/%%PYTHON_VERSION%%/site-packages/lfm/preferences.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/preferences.pyo
+lib/%%PYTHON_VERSION%%/site-packages/lfm/pyview.py
+lib/%%PYTHON_VERSION%%/site-packages/lfm/pyview.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/pyview.pyo
+share/doc/lfm/COPYING
+share/doc/lfm/ChangeLog
+share/doc/lfm/NEWS
+share/doc/lfm/README
+share/doc/lfm/README.pyview
+share/doc/lfm/TODO
+@dirrm share/doc/lfm
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/lfm
