@@ -97,8 +97,9 @@ while ($j >= 0  and  my $header = $log_in[$j]) {
 		}
 
 	} else {
-		print "Error: malformed line in template headers: $header\n";
-		++$error;
+		## print "Error: malformed line in template headers: $header\n";
+		## ++$error;
+		print "Warning: malformed line in template headers: $header\n";
 		next;
 	}
 }
