@@ -14,11 +14,11 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
+LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2 \
+		libsearch.3:${PORTSDIR}/net/kdenetwork2
 RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \
-		kcalc:${PORTSDIR}/misc/kdeutils2 \
-		kmahjongg:${PORTSDIR}/games/kdegames2 \
-		kmail:${PORTSDIR}/net/kdenetwork2
+		kdf:${PORTSDIR}/misc/kdeutils2 \
+		kjumpingcube:${PORTSDIR}/games/kdegames2
 
 NO_BUILD=	yes
 
