@@ -17,18 +17,24 @@ MAINTAINER=	ports@geeksrus.net
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
 
 .if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-.error You have `USE_AUTOMAKE' or `USE_AUTOMAKE_VER' variables defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+pre-everything:
+	@${ECHO} ===========================================================
+	@${ECHO} "You have 'USE_AUTOMAKE' or 'USE_AUTOMAKE_VER' variables"
+	@${ECHO} "defined either in environment or in make(1) arguments."
+	@${ECHO} "Please undefine them and try again."
+	@${ECHO} ===========================================================
+	@${FALSE}
+.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
 pre-configure:
 	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
 
 post-install:
-	@install-info ${PREFIX}/info/automake.info ${PREFIX}/info/dir
+	@install-info ${DESTDIR}${PREFIX}/info/automake.info \
+		${DESTDIR}${PREFIX}/info/dir
 
 .include <bsd.port.mk>
