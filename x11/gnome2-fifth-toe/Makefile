@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -37,15 +37,10 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnomegames2-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		evince:${PORTSDIR}/graphics/evince \
-		goobox:${PORTSDIR}/audio/goobox
+		goobox:${PORTSDIR}/audio/goobox \
+		inkscape:${PORTSDIR}/graphics/inkscape
 
 .include <bsd.port.pre.mk>
-
-#inkscape currently needs 5.X to build. this should hopefully
-#change soon
-.if ${OSVERSION} > 500000
-RUN_DEPENDS+=	inkscape:${PORTSDIR}/graphics/inkscape
-.endif
 
 NO_BUILD=	yes
 
