@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.93
+PORTVERSION=	3.94
 PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
