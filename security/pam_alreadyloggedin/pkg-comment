@@ -1,0 +1,1 @@
+This PAM module provides authorization based on a user already being currently logged in.
