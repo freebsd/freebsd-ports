@@ -3603,7 +3603,6 @@ ja-ebview-gtk2	ports/japanese/ebview-gtk2
 ja-ebw3		ports/japanese/ebw3
 ja-edict	ports/japanese/edict
 ja-edict-fpw	ports/japanese/edict-fpw
-ja-edict-sdic	ports/japanese/edict-sdic
 ja-edict-utf-8	ports/japanese/edict-utf-8
 ja-ebnetd	ports/japanese/ebnetd
 ja-eijiro-fpw	ports/japanese/eijiro-fpw
@@ -3887,7 +3886,6 @@ ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
 ja-scim-tables	ports/japanese/scim-tables
-ja-sdic		ports/japanese/sdic
 ja-sed		ports/japanese/sed
 ja-seizedesktop	ports/japanese/seizedesktop
 ja-shinonome	ports/japanese/shinonome
