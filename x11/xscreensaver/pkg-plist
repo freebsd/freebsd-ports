@@ -89,4 +89,5 @@ bin/xroger
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
+bin/xsublim
 lib/X11/app-defaults/XScreenSaver
