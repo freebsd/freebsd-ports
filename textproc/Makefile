@@ -55,7 +55,6 @@
     SUBDIR += fist
     SUBDIR += fop
     SUBDIR += freegrep
-    SUBDIR += fribidi
     SUBDIR += gaspell
     SUBDIR += gdict
     SUBDIR += gdome2
