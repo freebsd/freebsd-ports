@@ -7,20 +7,20 @@
 
 PORTNAME=	gaspell
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://aspell.sourceforge.net/
-DISTNAME=	${PORTNAME}-.30
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0//}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		aspell.8:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell.9:${PORTSDIR}/textproc/aspell
 
+USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
-ALL_TARGET=	gaspell
+USE_GNOMELIBS=	yes
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/gaspell ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gaspell ${PREFIX}/bin
 
 .include <bsd.port.mk>
