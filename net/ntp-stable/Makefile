@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--enable-RAWDCF
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ntp
-	${TAR} -C ${WRKSRC}/html --exclude '.*' -cf - . | \
+	${TAR} -C ${WRKSRC}/html -cf - . | \
 		${TAR} -C ${PREFIX}/share/doc/ntp --unlink -xf -
 	find ${PREFIX}/share/doc/ntp | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	find ${PREFIX}/share/doc/ntp -type f | xargs ${CHMOD} ${SHAREMODE}
