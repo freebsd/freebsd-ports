@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- docs/reference/Makefile.in	2001/05/28 13:11:32	1.1
++++ docs/reference/Makefile.in	2001/05/28 13:12:10
+@@ -262,6 +262,7 @@
+ 
+ 
+ @ENABLE_GTK_DOC_TRUE@all-local: html-build.stamp
++@ENABLE_GTK_DOC_FALSE@all-local:
+ 
+ #### scan ####
+ 
