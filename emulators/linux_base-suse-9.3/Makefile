@@ -3,11 +3,13 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1995/11/06 15:18:05 erich Exp $
+# $Id: Makefile,v 1.4 1995/11/08 15:05:22 erich Exp $
 #
 
 DISTNAME=	linux_lib
-CATEGORIES=	emulators
+PKGNAME=	linux_lib-1.0
+CATEGORIES=	emulation
+
 MAINTAINER=	erich@FreeBSD.org
 
 PREFIX=		/compat/linux/
