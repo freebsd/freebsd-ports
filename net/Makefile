@@ -128,6 +128,7 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += nttcp
+    SUBDIR += openh323
     SUBDIR += openldap
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
