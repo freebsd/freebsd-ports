@@ -9491,6 +9491,7 @@ qwt		ports/x11-toolkits/qwt
 qwtplot3d	ports/math/qwtplot3d
 race		ports/games/race
 racoon		ports/security/racoon
+racoon2		ports/security/racoon2
 raddump		ports/net/raddump
 radiator	ports/net/radiator
 radio		ports/audio/radio
