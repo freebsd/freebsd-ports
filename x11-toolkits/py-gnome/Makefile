@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-gnome
-PORTVERSION= 	1.0.50
+PORTVERSION= 	1.0.53
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
