@@ -4890,6 +4890,7 @@ libid3tag	ports/audio/libid3tag
 libidea		ports/security/libidea
 libident	ports/security/libident
 libidn		ports/devel/libidn
+libieee1284	ports/sysutils/libieee1284
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
