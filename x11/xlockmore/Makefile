@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.13
+PORTVERSION=	5.14.1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/
@@ -19,7 +19,8 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
-		--without-nas --without-gtk --without-esound
+		--without-nas --without-gtk --without-esound \
+		--without-gtk2
 .if defined(MAKE_KERBEROS4)
 CONFIGURE_ARGS+=--enable-kerberos4
 KRB4LIB=	-lcom_err -lcrypto
