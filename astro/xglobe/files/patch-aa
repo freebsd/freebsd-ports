@@ -1,0 +1,80 @@
+*** Makefile.orig	Wed Jan 20 06:02:59 1999
+--- Makefile	Wed Jan 20 21:59:45 1999
+***************
+*** 4,40 ****
+  
+  ####### Installation directory
+  
+! XGLOBE_DIR     = /usr/local
+! XGLOBE_LIB_DIR = $(XGLOBE_DIR)/lib/xglobe
+  XGLOBE_BIN_DIR = $(XGLOBE_DIR)/bin
+  
+  ####### Library directories - you may need to modify these
+  
+  X11_INCLUDE_DIR = /usr/X11R6/include
+! QT_INCLUDE_DIR  = /usr/lib/qt/include
+  
+! QT_LIB_DIR      = /usr/lib/qt/lib
+  X11_LIB_DIR     = /usr/X11R6/lib
+  
+  
+  ####### Compiler and tools
+  
+! CPP     = g++
+! LINK    = g++
+  MOC     = moc
+  INSTALL = install
+  
+  ####### compile and link options
+  
+! CFLAGS       = $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" -O2 -Wall
+! 
+  LFLAGS       =
+  
+  INCLUDE_DIRS = -I$(QT_INCLUDE_DIR) -I$(X11_INCLUDE_DIR)
+  
+  LIB_DIRS     = -L$(QT_LIB_DIR) -L$(X11_LIB_DIR)
+  
+! #LIBS         = -lX11 -lqt -lm
+  # If you want to use the QImageIO lib (to support jpg and png maps) use this
+  # line and comment the one above (don't forget to edit config.h as well!)
+  #LIBS         = -lX11 -lqt -lm -lqimgio
+--- 4,41 ----
+  
+  ####### Installation directory
+  
+! XGLOBE_DIR     = ${PREFIX}
+! XGLOBE_LIB_DIR = $(XGLOBE_DIR)/share/xglobe
+  XGLOBE_BIN_DIR = $(XGLOBE_DIR)/bin
+  
+  ####### Library directories - you may need to modify these
+  
+  X11_INCLUDE_DIR = /usr/X11R6/include
+! QT_INCLUDE_DIR  = /usr/X11R6/include/X11/qt
+  
+! QT_LIB_DIR      = /usr/X11R6/lib
+  X11_LIB_DIR     = /usr/X11R6/lib
+  
+  
+  ####### Compiler and tools
+  
+! CXX     ?= g++
+! CPP     = ${CXX}
+! LINK    = ${CXX}
+  MOC     = moc
+  INSTALL = install
+  
+  ####### compile and link options
+  
+! CFLAGS       ?= -O2 -pipe
+! CFLAGS       += $(INCLUDE_DIRS) -DXGLOBE_LIB_DIR=\"$(XGLOBE_LIB_DIR)\" -Wall
+  LFLAGS       =
+  
+  INCLUDE_DIRS = -I$(QT_INCLUDE_DIR) -I$(X11_INCLUDE_DIR)
+  
+  LIB_DIRS     = -L$(QT_LIB_DIR) -L$(X11_LIB_DIR)
+  
+! LIBS         = -lX11 -lqt -lm
+  # If you want to use the QImageIO lib (to support jpg and png maps) use this
+  # line and comment the one above (don't forget to edit config.h as well!)
+  #LIBS         = -lX11 -lqt -lm -lqimgio
