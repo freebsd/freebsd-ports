@@ -160,6 +160,9 @@ include/wraster.h
 lib/libWINGs.a
 lib/libWMaker.a
 lib/libWUtil.a
+lib/libwmfun.a
+lib/libwmfun.so
+lib/libwmfun.so.0
 lib/libwraster.a
 lib/libwraster.so
 lib/libwraster.so.3

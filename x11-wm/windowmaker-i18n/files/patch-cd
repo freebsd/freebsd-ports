@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue Feb 15 16:03:27 2000
++++ Makefile.in	Tue Feb 15 15:22:24 2000
+@@ -92,7 +92,8 @@
+ X_LIBRARY_PATH = @X_LIBRARY_PATH@
+ wprefsdir = @wprefsdir@
+ 
+-SUBDIRS = wrlib WINGs src util po WindowMaker wmlib test WPrefs.app doc 	contrib
++SUBDIRS = wrlib WINGs src util po WindowMaker wmlib test WPrefs.app doc 	contrib \
++		libwmfun-0.0.2/libwmfun
+ 
+ 
+ EXTRA_DIST = TODO BUGS BUGFORM FAQ FAQ.I18N MIRRORS COPYING.OPL 	Install acconfig.h INSTALL.pt 	mkpatch README.KDE README.GNOME WindowMaker.lsm.in 	docklib-0.2.tar.gz libwmfun-0.0.2.tar.gz 
