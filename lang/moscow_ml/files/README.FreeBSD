@@ -1,0 +1,35 @@
+Notes for the FreeBSD port
+==========================
+
+Once the port is installed, you are good to go. Be sure to note the
+docs and examples installed in the standard places.
+
+Bugs & Incompatibilities 
+========================
+
+1. Some C-libraries depending on other ports were not built. As a
+consequence, the structures 
+
+        Gdbm, Gdimage, Mysql and Postgres
+
+will fail to load. 
+
+2. The Regex structure now considers the empty string an invalid
+regular expression. Certain GNU regex 0.12 specific performance hacks
+could not be brought to work under FreeBSD, so expect a performance
+penalty relative to, say, GNU/Linux-based mosml distributions. 
+
+Copyright
+=========
+
+The Moscow ML system is governed by three different licenses (due to
+inclusion of other peoples work). For details, refer to the following
+files:
+
+        %%PREFIX%%/share/doc/mosml/copyrght.cl
+        %%PREFIX%%/share/doc/mosml/copyrght.att
+        %%PREFIX%%/share/doc/mosml/README
+
+Non-profit source redistribution seems to be ok.
+
+        -- debois@diku.dk

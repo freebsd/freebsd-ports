@@ -1,0 +1,27 @@
+--- dynlibs/crypt/Makefile.orig	Fri Feb  6 09:30:42 2004
++++ dynlibs/crypt/Makefile	Fri Feb  6 09:32:47 2004
+@@ -1,20 +1,16 @@
+ # Makefile for Moscow ML dynamic libraries: the crypt example
+ 
+-include ../../Makefile.inc
+-
+-OPTS=-fno-defer-pop
+-CFLAGS=-Dunix -O2 $(OPTS) $(ADDDYNLIBCFLAGS) -I$(INCDIR)
+-BASELIBS=-lm -ldl
++CFLAGS += -Dunix -fno-defer-pop -fPIC 
++INC += -I/usr/local/include/mosml
+ 
+ all: libcrypt.so 
+ 	@echo "Now execute 'mosml crypt.sml' to test the C function"
+ 
+ crypt.o: crypt.c
+-	$(CC) $(CFLAGS) -c -o crypt.o crypt.c
++	$(CC) $(CFLAGS) $(INC) -c -o crypt.o crypt.c
+ 
+ libcrypt.so: crypt.o
+-	$(DYNLD) -lcrypt -o libcrypt.so crypt.o
+-#	$(DYNLD)         -o libcrypt.so crypt.o
++	$(LD) -shared -o libcrypt.so -lcrypt crypt.o
+ 
+ clean:
+ 	rm -f *.o

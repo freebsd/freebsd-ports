@@ -1,0 +1,10 @@
+--- mosmlyac/Makefile.orig	Tue Feb  3 21:13:27 2004
++++ mosmlyac/Makefile	Tue Feb  3 21:13:37 2004
+@@ -1,6 +1,6 @@
+ # Unix Makefile for the parser generator.
+ 
+-CFLAGS=-O -DNDEBUG
++CFLAGS += -DNDEBUG
+ 
+ include ../Makefile.inc
+ 

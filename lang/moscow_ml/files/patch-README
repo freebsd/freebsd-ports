@@ -1,0 +1,19 @@
+---  ../README.orig	Fri Jun 30 16:38:16 2000
++++  ../README	Sat Feb 26 11:17:52 2005
+@@ -1,12 +1,13 @@
+-This is file README for Moscow ML 2.00 for Linux/Unix (June 2000)
++This is file README for Moscow ML 2.01 for Linux/Unix (Jan 2004)
+ 
+ EXTENT OF THE IMPLEMENTATION
+ 
+-The current version 2.00 of Moscow ML
++The current version 2.01 of Moscow ML
+ 
++    * fixes Y2004 bugs in handling of time values
+     * implements the full Standard ML language, as revised 1997, 
+       including Modules and some extensions
+-    * yet is backwards compatible with versions prior to 2.00
++    * yet is backwards compatible with versions prior to 2.01
+     * implements large parts of the new SML Basis Library
+     * implements separate compilation 
+     * can produce compact stand-alone executables (a la Caml Light)
