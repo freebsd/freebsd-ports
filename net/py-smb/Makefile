@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	smb
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	net python
 MASTER_SITES=	http://miketeo.net/projects/pysmb/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/pysmb
 NO_BUILD=	yes
+DATADIR=	${PREFIX}/share/py-smb
+DOCSDIR=	${PREFIX}/share/doc/py-smb
 
 do-install:
 .for file in nmb.py smb.py
@@ -26,12 +28,12 @@ do-install:
 .for file in nmbquery smbcp smbdu smblistshare
 	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
 .endfor
-	@${MKDIR} ${PREFIX}/share/py-smb
-	${CP} ${WRKSRC}/extra/*.reg ${PREFIX}/share/py-smb
+	@${MKDIR} ${DATADIR}
+	${CP} ${WRKSRC}/extra/*.reg ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/py-smb
-	${CP} ${WRKSRC}/README ${PREFIX}/share/doc/py-smb
-	${CP} ${WRKSRC}/docs/*.html ${WRKSRC}/docs/*.gif ${PREFIX}/share/doc/py-smb
+	@${MKDIR} ${DOCSDIR}
+	${CP} ${WRKSRC}/README ${DOCSDIR}
+	${CP} ${WRKSRC}/docs/*.html ${WRKSRC}/docs/*.gif ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
