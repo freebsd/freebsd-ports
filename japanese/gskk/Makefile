@@ -40,12 +40,14 @@ DICS=		${PORTNAME}.cbd ${PORTNAME}.cld
 DICSFILE=	dics.dir.${PORTNAME}
 DICDIR=		${PREFIX}/share/canna/dic/canna
 
+INSTALL_DIC=	${INSTALL} ${COPY} -o bin -g bin -m 664
+
 do-build:
 	cd ${WRKDIR} && mkbindic ${PORTNAME}.t
 
 do-install:
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DICS} ${DICDIR}
-	${INSTALL_DATA} ${FILESDIR}/${DICSFILE} ${DICDIR}
+	cd ${WRKSRC} && ${INSTALL_DIC} ${DICS} ${DICDIR}
+	${INSTALL_DIC} ${FILESDIR}/${DICSFILE} ${DICDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/README.FreeBSD ${DOCSDIR}
