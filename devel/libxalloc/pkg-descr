@@ -1,3 +1,5 @@
 xalloc is a memory allocation library with error checking.
 It contains wrappers including error checking for memory
 allocating C-functions.
+
+WWW: http://shh.thathost.com/pub-unix/#xalloc
