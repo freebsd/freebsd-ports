@@ -20,4 +20,10 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+pre-everything::
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> For qtorrent to work you need to compile"
+	@${ECHO_MSG} "===> python WITH_THREADS defined, it is default"
+	@${ECHO_MSG} "===>"
+
 .include <bsd.port.mk>
