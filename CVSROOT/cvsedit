@@ -6,7 +6,7 @@
 # To use this, make it executable, and set your editinfo DEFAULT line:
 # DEFAULT   /path/to/this/program
 #
-# $Id: cvsedit,v 1.5 1995/08/13 16:38:07 peter Exp $
+# $Id: cvsedit,v 1.6 1995/08/23 11:42:34 peter Exp $
 #
 
 # same rules as CVS
@@ -80,9 +80,9 @@ close(IN);
 close(OUT);
 
 # sanity check...
-if (!$first) {
-	die("cvsedit: Empty log message not permitted!\n");
-}
+#if (!$first) {
+#	die("cvsedit: Empty log message not permitted!\n");
+#}
 
 unlink($filename . "~");	# Nuke likely editor backups..
 unlink($filename . ".bak");	# Nuke likely editor backups..
