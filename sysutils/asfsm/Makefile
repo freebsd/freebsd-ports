@@ -1,0 +1,34 @@
+# New ports collection makefile for:	asfsm
+# Version required:	asfsm-1.0pre15
+# Date created:		4 June 1999
+# Whom:				jack
+#
+# $Id: Makefile,v 1.1.1.1 1999/06/14 19:30:25 taoka Exp $
+
+DISTNAME=	asfsm-1.0pre15
+PKGNAME=	asfsm-1.0p15
+CATEGORIES=	sysutils afterstep
+MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asfsm/
+
+MAINTAINER=	jack@germnaium.xtalwind.net
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--x-includes=${X11BASE}/include/X11
+
+MAN1=		asfsm.1
+
+do-install:
+	${INSTALL_MAN} ${WRKSRC}/asfsm.man ${PREFIX}/man/man1/asfsm.1
+	${INSTALL_PROGRAM} ${WRKSRC}/asfsm ${PREFIX}/bin
+
+post-install:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you would like to be able to mount and umount file systems"
+	@${ECHO_MSG} "using asfsm, as root, type \`chmod 4555 ${PREFIX}/bin/asfsm\`"
+	@${ECHO_MSG} "NOTE: This opens a SECURITY HOLE as ALL users will have this ability."
+	@${ECHO_MSG} ""
+
+.include <bsd.port.mk>
