@@ -1,0 +1,9 @@
+%%LOCAL_SUBDIR%%/components/ipc.xpt
+%%LOCAL_SUBDIR%%/components/enigmime.xpt
+%%LOCAL_SUBDIR%%/components/libenigmime.so
+%%LOCAL_SUBDIR%%/components/enigmail.xpt
+%%LOCAL_SUBDIR%%/components/enigmail.js
+%%LOCAL_SUBDIR%%/components/enigprefs-service.js
+%%LOCAL_SUBDIR%%/chrome/enigmail.jar
+%%LOCAL_SUBDIR%%/chrome/enigmail-skin.jar
+%%LOCAL_SUBDIR%%/chrome/enigmail-skin-tbird.jar

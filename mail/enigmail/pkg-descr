@@ -1,0 +1,13 @@
+Enigmail is an extension to the mail client of Mozilla / Thunderbird
+which allows users to access the authentication and encryption features
+provided by the popular GnuPG software.
+
+Enigmail can encrypt/sign mail when sending, and also decrypt/authenticate
+received mail. It can also import/export public keys. Enigmail supports
+both the inline PGP format, and the PGP/MIME format (RFC 3156), which can
+be used to encrypt attachments.
+
+WWW: http://enigmail.mozdev.org/
+
+- Alex Dupre
+ale@FreeBSD.org
