@@ -1,24 +1,25 @@
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Ecartis.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Ezmlm.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Fml.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Listar.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Mailman.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Majordomo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/RFC2369.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/RFC2919.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Smartlist.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector/Yahoogroups.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/List.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/ListDetector/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/ListDetector/.packlist
-share/examples/Mail-ListDetector/sample.pl
-@dirrm share/examples/Mail-ListDetector
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/ListDetector
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/ListDetector
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Mail 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector/Detector
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/ListDetector
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+%%SITE_PERL%%/Mail/ListDetector.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Base.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/CommuniGatePro.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Ecartis.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Ezmlm.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Fml.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Listar.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Mailman.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Majordomo.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/RFC2369.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/RFC2919.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Smartlist.pm
+%%SITE_PERL%%/Mail/ListDetector/Detector/Yahoogroups.pm
+%%SITE_PERL%%/Mail/ListDetector/List.pm
+%%SITE_PERL%%/auto/Mail/ListDetector/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector/.packlist
+%%EXAMPLESDIR%%/sample.pl
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/ListDetector
+@dirrm %%SITE_PERL%%/auto/Mail/ListDetector
+@dirrm %%SITE_PERL%%/Mail/ListDetector/Detector
+@dirrm %%SITE_PERL%%/Mail/ListDetector
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
