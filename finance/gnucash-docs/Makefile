@@ -26,5 +26,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+# XXX Note, this is a hack.  When DocBook 4.1.2 has been merged into the
+# system XML catalog file, this line should be removed.
+MAKE_ENV=	XML_CATALOG_FILES="${LOCALBASE}/share/sk/catalog ${LOCALBASE}/share/sk/docbook/catalog"
 
 .include <bsd.port.mk>
