@@ -1,7 +1,18 @@
 bin/gnumeric
+bin/libole2-config
 etc/CORBA/servers/gnumeric.gnorba
 etc/CORBA/servers/graph.gnorba
 etc/gnumericConf.sh
+etc/libole2Conf.sh
+include/libole2/libole2.h
+include/libole2/ms-ole-summary.h
+include/libole2/ms-ole-vba.h
+include/libole2/ms-ole.h
+lib/libole2.a
+lib/libole2.so
+lib/libole2.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 lib/gnumeric/%%VERSION%%/plugins/gnum_csv.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_dif.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_guile.so
@@ -13,6 +24,8 @@ lib/gnumeric/%%VERSION%%/plugins/gnum_sc.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_sylk.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_text.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_xbase.so
+share/aclocal/gnome-libole2.m4
+share/aclocal/libole2.m4
 share/gnome/apps/Applications/gnumeric.desktop
 share/gnome/gnumeric/%%VERSION%%/glade/advanced-filter.glade
 share/gnome/gnumeric/%%VERSION%%/glade/analysis-tools.glade
@@ -49,9 +62,21 @@ share/gnome/gnumeric/%%VERSION%%/python/gnumeric_defs.py
 share/gnome/gnumeric/%%VERSION%%/python/gnumeric_startup.py
 share/gnome/idl/Gnumeric.idl
 share/gnome/idl/Graph.idl
+share/gnome/libole2/html/libole2-decl.txt
+share/gnome/libole2/html/libole2-sections.txt
+share/gnome/libole2/html/libole2.html
+share/gnome/libole2/html/libole2/index.html
+share/gnome/libole2/html/libole2/libole2-common.html
+share/gnome/libole2/html/libole2/libole2-miscellaneous.html
+share/gnome/libole2/html/libole2/libole2-msole.html
+share/gnome/libole2/html/libole2/libole2-msolestream.html
+share/gnome/libole2/html/libole2/libole2-msolesummary.html
+share/gnome/libole2/html/libole2/r14.html
+share/gnome/libole2/html/libole2/r19.html
 share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
+share/gnome/oaf/gnumeric.oafinfo
 share/gnome/oaf/graph.oafinfo
 share/gnome/pixmaps/gnome-application-x-gnumeric.png
 share/gnome/pixmaps/gnome-application-x-xls.png
@@ -199,6 +224,7 @@ share/locale/et/LC_MESSAGES/gnumeric.mo
 share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
 share/locale/ga/LC_MESSAGES/gnumeric.mo
+share/locale/gl/LC_MESSAGES/gnumeric.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
@@ -220,8 +246,12 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/gnumeric/%%VERSION%%/glade
 @dirrm share/gnome/gnumeric/%%VERSION%%
 @dirrm share/gnome/gnumeric
-@dirrm share/gnome/pixmaps/gnumeric
+@dirrm share/gnome/libole2/html/libole2
+@dirrm share/gnome/libole2/html
+@dirrm share/gnome/libole2
 @dirrm share/gnome/oaf
+@dirrm share/gnome/pixmaps/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
+@dirrm include/libole2
