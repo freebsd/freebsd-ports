@@ -1,4 +1,6 @@
 -------------------------------------------------------------------------------
+IMPORTANT! MAKE SURE TO READ THE FOLLOWING!
+
 To use the driver, make a copy of %%PREFIX%%/etc/rc.d/aureal.sh.sample under 
 %%PREFIX%%/etc/rc.d/aureal.sh and do: chmod +x %%PREFIX%%/etc/rc.d/aureal.sh.
 
@@ -16,6 +18,10 @@ In case it fails to detect the type of your Vortex soundcard correctly,
 edit this script and set "CARD=" to 88X0 where X is 1, 2 or 3 depending 
 on which Aureal chipset you have - au8810 (Vortex Advantage), au8820 
 (Vortex 1) or au8830 (Vortex 2) correspondingly.
+
+If your system is based on a Via Apollo KX133 chipset, your computer will
+most likely lock up soon after playback is started. This is a known issue.
+Make sure to uncomment "VIAKX133FIX=yes" in aureal.sh start-up script.
 
 Please note that you also need to have a `snd_pcm.ko' module either already
 loaded or placed into appropriate location for modules on your system (default
