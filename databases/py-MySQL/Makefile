@@ -39,8 +39,8 @@ do-configure:
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/py-MySQL
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-MySQL
-	@${ECHO} "share/doc/py-MySQL/README" >> ${TMPPLIST}
-	@${ECHO} "@dirrm share/doc/py-MySQL" >> ${TMPPLIST}
+	@${ECHO_CMD} "share/doc/py-MySQL/README" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/doc/py-MySQL" >> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

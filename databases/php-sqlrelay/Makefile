@@ -40,7 +40,7 @@ pre-install:
 
 post-install:
 	dir=`php-config --extension-dir | ${SED} 's,^${LOCALBASE}/,,'`; \
-	${ECHO} "$$dir/sql_relay.so" >> ${TMPPLIST}; \
-	${ECHO} "@unexec rmdir %D/$$dir 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "$$dir/sql_relay.so" >> ${TMPPLIST}; \
+	${ECHO_CMD} "@unexec rmdir %D/$$dir 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>

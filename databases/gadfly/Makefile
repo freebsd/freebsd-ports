@@ -23,7 +23,7 @@ do-install:
 	${MKDIR} ${GADFLYDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${GADFLYDIR}
 	${INSTALL_DATA} ${WRKSRC}/sql.mar ${GADFLYDIR}
-	${ECHO} 'gadfly' > ${PYTHON_SITELIBDIR}/gadfly.pth
+	${ECHO_CMD} 'gadfly' > ${PYTHON_SITELIBDIR}/gadfly.pth
 	(cd ${GADFLYDIR}; ${PYTHON_CMD} gfinstall.py)
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${GADFLYDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${GADFLYDIR}

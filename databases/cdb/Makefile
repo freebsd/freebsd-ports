@@ -16,11 +16,11 @@ ALL_TARGET=	it
 
 do-configure:
 	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
-	${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
+	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
 	@${MV} ${WRKSRC}/conf-cc ${WRKSRC}/conf-cc.orig
-	${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
 	@${MV} ${WRKSRC}/conf-ld ${WRKSRC}/conf-ld.orig
-	${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
+	${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 
 do-install:
 .for file in cdbdump cdbget cdbmake cdbstats cdbtest

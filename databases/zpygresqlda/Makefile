@@ -32,9 +32,9 @@ WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 
 do-build:
-	@${ECHO} '*shared*' > ${WRKSRC}/src/Setup
-	@${ECHO} '' >> ${WRKSRC}/src/Setup
-	@${ECHO} '_pg   pgmodule.c ' \
+	@${ECHO_CMD} '*shared*' > ${WRKSRC}/src/Setup
+	@${ECHO_CMD} '' >> ${WRKSRC}/src/Setup
+	@${ECHO_CMD} '_pg   pgmodule.c ' \
 		'-I${LOCALBASE}/include/pgsql ' \
 		'-L${LOCALBASE}/lib ' \
 		'-lpq -lcrypt' >> ${WRKSRC}/src/Setup

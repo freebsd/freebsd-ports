@@ -30,7 +30,7 @@ DOCS_EN=	readme.en.txt doc/en/*
 DOCS_JA=	readme.ja.txt
 
 post-configure:
-	${ECHO} '#define INST_DIR "${LOCALBASE}"' >> ${WRKSRC}/site.h
+	${ECHO_CMD} '#define INST_DIR "${LOCALBASE}"' >> ${WRKSRC}/site.h
 
 post-install:
 .if !defined(NOPORTDOCS)

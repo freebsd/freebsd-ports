@@ -61,7 +61,7 @@ do-configure:
 
 do-build:
 	@(								\
-	 ${ECHO} '#!/bin/sh'; ${ECHO}					\
+	 ${ECHO_CMD} '#!/bin/sh'; ${ECHO_CMD}				\
 	'[ -d ${LDCONFIG_RUNLIST} ] && ${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
 	) > ${WRKDIR}/000.${PORTNAME}.sh
 	@(								\
