@@ -11,8 +11,10 @@ share/doc/ascend-radius/ChangeLog
 share/doc/ascend-radius/README
 share/doc/ascend-radius/README.cexample
 share/doc/ascend-radius/README.dict
-share/doc/ascend-radius/radius-961029.ps
-share/doc/ascend-radius/radius-961029.pdf
+share/doc/ascend-radius/radius.ps
+share/doc/ascend-radius/radius.pdf
+share/doc/ascend-radius/rradius.ps
+share/doc/ascend-radius/rradius.pdf
 etc/raddb/clients.example
 etc/raddb/dictionary
 etc/raddb/users.example

@@ -1,24 +1,28 @@
 # New ports collection makefile for:	ascend-radius
-# Version required:			961015 (v1.16)
+# Version required:			970424 (v1.16)
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/01/24 10:19:18 jfitz Exp $
+#   $Id: Makefile,v 1.8 1997/01/24 12:10:10 asami Exp $
 #
 
-#DISTNAME=	radius-961029
-PKGNAME=	ascend-radius-961029
+#DISTNAME=	radius-970424
+PKGNAME=	ascend-radius-970424
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/ \
-		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/
-DISTFILES=	radius-961029.tar.gz \
-		radius-961029.ps \
-		radius-961029.pdf
-EXTRACT_ONLY=	radius-961029.tar.gz
+		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/doc/ \
+		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/ \
+		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/doc/
+DISTFILES=	radius-970424.tar.gz \
+		radius.ps \
+		radius.pdf \
+		rradius.ps \
+		rradius.pdf
+EXTRACT_ONLY=	radius-970424.tar.gz
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-WRKPREFIX=	radius-961029/radius-1.16-ascend
+WRKPREFIX=	radius-970424/radius-ascend/radius-1.16-ascend
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/ascendd
 
 ALL_TARGET=	all dbm
@@ -38,8 +42,10 @@ do-install:
 		for file in ChangeLog README README.cexample README.dict; do \
 			${INSTALL_DATA} ${WRKDIR}/${WRKPREFIX}/$$file ${PREFIX}/share/doc/ascend-radius; \
 		done
-		${INSTALL_DATA} ${DISTDIR}/radius-961029.ps ${PREFIX}/share/doc/ascend-radius
-		${INSTALL_DATA} ${DISTDIR}/radius-961029.pdf ${PREFIX}/share/doc/ascend-radius
+		${INSTALL_DATA} ${DISTDIR}/radius.ps ${PREFIX}/share/doc/ascend-radius
+		${INSTALL_DATA} ${DISTDIR}/radius.pdf ${PREFIX}/share/doc/ascend-radius
+		${INSTALL_DATA} ${DISTDIR}/rradius.ps ${PREFIX}/share/doc/ascend-radius
+		${INSTALL_DATA} ${DISTDIR}/rradius.pdf ${PREFIX}/share/doc/ascend-radius
 .endif
 		@ ${MKDIR} ${PREFIX}/etc/raddb
 		@ chown root.wheel ${PREFIX}/etc/raddb
