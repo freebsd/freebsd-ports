@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vi-vnroff
+PORTNAME=	vnroff
 PORTVERSION= 	2.0
 CATEGORIES=	vietnamese print
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Troff/

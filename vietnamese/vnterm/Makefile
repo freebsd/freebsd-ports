@@ -6,12 +6,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vi-vnterm
+PORTNAME=	vnterm
 PORTVERSION= 	3.3
 CATEGORIES=	vietnamese x11
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
-DISTNAME=	vnterm3.3
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org

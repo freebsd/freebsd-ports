@@ -6,12 +6,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	vi-vnpstext
+PORTNAME=	vnpstext
 PORTVERSION= 	1.1
 CATEGORIES=	vietnamese print
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
-DISTNAME=	vnpstext
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
