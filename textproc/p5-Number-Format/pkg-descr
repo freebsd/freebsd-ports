@@ -1,0 +1,12 @@
+Number::Format is a library for formatting numbers.  Functions are
+provided for converting numbers to strings in a variety of ways, and to
+convert strings that contain numbers back into numeric form.  The output
+formats may include thousands separators - characters inserted between
+each group of three characters counting right to left from the decimal
+point.  The characters used for the decimal point and the thousands
+separator come from the locale information or can be specified by the
+user.
+
+WWW: http://www.bayview.com/~wrw/
+
+Seamus Venasse <svenasse@polaris.ca>
