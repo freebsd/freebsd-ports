@@ -6410,6 +6410,7 @@ tridiavnc	ports/net/tridiavnc
 trinokiller	ports/security/trinokiller
 trio		ports/devel/trio
 tripwire	ports/security/tripwire
+tripwire12	ports/security/tripwire12
 tripwire-131	ports/security/tripwire-131
 trn		ports/news/trn
 trn4		ports/news/trn4
