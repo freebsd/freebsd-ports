@@ -7,7 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -47,8 +47,13 @@ SHLIB_VER=	2
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_SSL)
-USE_OPENSSL=	YES
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .else
 CONFIGURE_ARGS=	--without-ssl
@@ -57,9 +62,6 @@ CONFIGURE_ARGS=	--without-ssl
 .if exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
 CONFIGURE_ARGS += --with-krb4=/usr
 .endif
-
-GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 
 # Note: some of these tests seem to intermitently fail on my system.
 # I don't know why they would do that, yet.
@@ -72,4 +74,4 @@ post-install:
 	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}/ 
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
