@@ -212,6 +212,7 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
+share/locale/fr/LC_MESSAGES/gentoo.mo
 share/locale/pl/LC_MESSAGES/gentoo.mo
 share/locale/sv/LC_MESSAGES/gentoo.mo
 @dirrm share/gentoo/icons
