@@ -4999,6 +4999,7 @@ mod_hosts_access	ports/www/mod_hosts_access
 mod_index_rss	ports/www/mod_index_rss
 mod_injection	ports/www/mod_injection
 mod_jk		ports/www/mod_jk
+mod_jk-apache2	ports/www/mod_jk-apache2
 mod_jk2		ports/www/mod_jk2
 mod_layout	ports/www/mod_layout
 mod_layout2	ports/www/mod_layout2
