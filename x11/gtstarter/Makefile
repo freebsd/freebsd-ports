@@ -18,26 +18,26 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pygnome2
+USE_GNOME=	pygnome2 gnomeprefix
 
 do-build:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${PREFIX}|g' \
 		${WRKSRC}/*.py
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${X11BASE}/libexec/${PORTNAME}
+	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
-		${X11BASE}/libexec/${PORTNAME}/
+		${PREFIX}/libexec/${PORTNAME}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/*.py* \
-		${X11BASE}/libexec/${PORTNAME}/
+		${PREFIX}/libexec/${PORTNAME}/
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${X11BASE}/share/gnome/applications/
+		${PREFIX}/share/gnome/applications/
 	@${INSTALL_DATA} ${WRKSRC}/*.server \
-		${X11BASE}/libdata/bonobo/servers/
-	@${LN} -sf ${X11BASE}/libexec/${PORTNAME}/${PORTNAME} \
-		${X11BASE}/bin/${PORTNAME}
+		${PREFIX}/libdata/bonobo/servers/
+	@${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \
+		${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
