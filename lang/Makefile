@@ -42,6 +42,7 @@
     SUBDIR += gcc27
     SUBDIR += gcc28
     SUBDIR += gcc295
+    SUBDIR += gcc30
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
