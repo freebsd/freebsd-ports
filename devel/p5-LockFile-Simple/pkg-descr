@@ -1,0 +1,11 @@
+The LockFile::Simple extension provides simple file locking, of
+the advisory kind, i.e. it requires cooperation between applications
+wishing to lock the same files.
+
+It is meant to be used in quick-and-dirty scripts or more elaborated
+programs that want a simple locking scheme, yet with a reasonable
+level of configuration.
+
+Author: Raphael Manfredi <Raphael_Manfredi@pobox.com>
+
+--will
