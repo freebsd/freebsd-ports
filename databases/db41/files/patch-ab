@@ -1,0 +1,15 @@
+--- ../dist/configure.orig	Fri Sep 22 19:04:19 2000
++++ ../dist/configure	Fri Sep 22 19:05:01 2000
+@@ -1599,9 +1599,9 @@
+ 	echo $ac_n "checking libtool configuration""... $ac_c" 1>&6
+ echo "configure:1601: checking libtool configuration" >&5
+ 	echo "$ac_t""" 1>&6
+-	${CONFIG_SHELL-/bin/sh} $srcdir/ltconfig \
+-		--no-verify $srcdir/ltmain.sh \
+-		--output=./libtool $host_os \
++	${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig \
++		--no-verify $ac_aux_dir/ltmain.sh $target \
++		--output=./libtool \
+ 		--disable-static \
+ 	|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
