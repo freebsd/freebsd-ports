@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 DISTNAME=	song_change-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Beep Media Player do-this-on-song-change plugin
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player

@@ -33,7 +33,7 @@ PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch \
 		deepcolor.patch gifpatch exceed_grab.patch \
 		tiff1200.patch gssafer.patch
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	flynn@energyhq.es.eu.org
 COMMENT?=	An X11 program that displays images of various formats
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
