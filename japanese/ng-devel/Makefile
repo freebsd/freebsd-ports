@@ -17,14 +17,14 @@ COMMENT=	A very light Emacs-clone with Japanese support
 ALL_TARGET=	ng
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
+MYPORTDOCS=	CHANGES.1_3 CHANGES.1_4 CHANGES.doc Ng.FAQ Ng.doc Ng.ref Ng.tut \
 		README.Ng README.SKG
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/ng
-.for file in ${PORTDOCS}
+.for file in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${PREFIX}/share/doc/ja/ng/${file}.euc-jp
 .endfor
 .endif
