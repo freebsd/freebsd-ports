@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://hadess.net/files/
 
