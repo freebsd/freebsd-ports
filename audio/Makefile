@@ -183,7 +183,6 @@
     SUBDIR += libtremor
     SUBDIR += libtunepimp
     SUBDIR += libvorbis
-    SUBDIR += libvorbis-aotuv
     SUBDIR += libworkman
     SUBDIR += lindele
     SUBDIR += linux-arts
