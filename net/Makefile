@@ -140,6 +140,7 @@
     SUBDIR += eudc-emacs20
     SUBDIR += everybuddy
     SUBDIR += ez-ipupdate
+    SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += firedns
     SUBDIR += firetalk
