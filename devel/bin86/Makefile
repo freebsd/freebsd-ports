@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bin86
-PORTVERSION=	0.15.5
+PORTVERSION=	0.16.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cix.co.uk/~mayday/
 
@@ -17,7 +17,6 @@ DOCDIR=		share/doc/${PORTNAME}
 MAN1=		as86.1 ld86.1
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-extract:
 	find ${WRKSRC} -type f -print0 | xargs -0 ${CHMOD} 644
