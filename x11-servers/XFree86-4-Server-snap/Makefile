@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	4.2.0/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X420src-1.tgz:x \
-		Wraphelp.gz:local
+		Wraphelp2.gz:local
 EXTRACT_ONLY=	X420src-1.tgz
 
 PATCH_SITES=		${MASTER_SITE_LOCAL}
@@ -31,7 +31,8 @@ DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 .for pf in patch-text-mode.c patch-xf86Configure.c patch-xf86config.c \
-	patch-mga_driver.c patch-alp_xaam.c
+	patch-i810_driver.c patch-mga_driver.c patch-r128_driver.c \
+	patch-alp_xaam.c
 EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
@@ -188,7 +189,7 @@ PLIST_SUB+=		MATROX="@comment "
 .endif
 
 post-extract::
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-build:
@@ -198,6 +199,10 @@ post-build:
 post-install::
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
 	strip ${PREFIX}/bin/XFree86
+	@if [ -f ${PREFIX}/bin/Xwrapper-4 ] ; then \
+	ln -sf Xwrapper-4 ${PREFIX}/bin/X; \
+	fi;
+	
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.post.mk>

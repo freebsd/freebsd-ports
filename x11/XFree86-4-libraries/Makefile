@@ -7,7 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	4.2.0/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X420src-1.tgz:x \
-		Wraphelp.gz:local
+		Wraphelp2.gz:local
 EXTRACT_ONLY=	X420src-1.tgz
 
 PATCH_SITES=		${MASTER_SITE_LOCAL}
@@ -104,7 +104,7 @@ PLIST_SUB+=	XTHRSTUB:=""
 .endif
 
 post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-patch:
