@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME= 	xtet42
+PORTNAME=	xtet42
 PORTVERSION=	2.21
 CATEGORIES=	games
 MASTER_SITES=	http://www.pvv.ntnu.no/~oyvindmo/xtet42/

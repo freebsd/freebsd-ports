@@ -12,11 +12,11 @@ MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/ \
 	     	ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.tgz
 
-MAINTAINER= gmarco@giovannelli.it
+MAINTAINER=	gmarco@giovannelli.it
 
 WRKSRC=		${WRKDIR}/tetrinetx-${PORTVERSION}
 
-INSTALLDIR= ${PREFIX}/tetrinet-x
+INSTALLDIR=	${PREFIX}/tetrinet-x
 
 do-build:
 	(cd ${WRKDIR}/tetrinetx-1.13.16/src && \

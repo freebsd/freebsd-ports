@@ -7,7 +7,7 @@
 
 PORTNAME=	powerpak
 PORTVERSION=	991203
-CATEGORIES= 	games
+CATEGORIES=	games
 MASTER_SITES=	http://www.imperialpenguin.com/software/powerpak/
 DISTNAME=	PowerPak
 

@@ -19,7 +19,7 @@ PLIST=		${PKGDIR}/pkg-plist.alpha
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-WRKSRC= ${WRKDIR}/xboing
+WRKSRC=		${WRKDIR}/xboing
 MAN1=		xboing.1
 
 post-install:
