@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	sentinel
-PORTVERSION=	1.2b
+PORTVERSION=	1.6.1b
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-MAKEFILE=	Makefile.FreeBSD
-ALL_TARGET=	sentinel
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e \
+		's|:/var|:${PREFIX}/var|g' ${WRKSRC}/sentinel.cf.SAMPLE
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -o ${PORTNAME} \
+		${PORTNAME}.c -lmilter ${PTHREAD_LIBS} 
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
@@ -27,9 +29,6 @@ do-install:
 	${CHOWN} smmsp:smmsp ${PREFIX}/var/sentinel
 	${INSTALL_SCRIPT} ${FILESDIR}/000.sentinel.sh ${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${PREFIX}/etc/sentinel.cf.dist
-
-post-install:
-	@${STRIP_CMD} ${PREFIX}/sbin/sentinel
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
