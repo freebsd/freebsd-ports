@@ -6,11 +6,11 @@
 #
 
 PORTNAME=       	dircproxy
-PORTVERSION=		1.0.0
+PORTVERSION=		1.0.1
 CATEGORIES=     	irc
 MASTER_SITES=   	ftp://dircproxy.sourceforge.net/pub/dircproxy/1.0/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		greid@FreeBSD.org
 
 GNU_CONFIGURE=		yes
 
