@@ -3143,6 +3143,7 @@ hatari		ports/emulators/hatari
 hayes		ports/multimedia/hayes
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
+hcidump		ports/comms/hcidump
 hdconv		ports/palm/hdconv
 hdf		ports/science/hdf
 hdf5		ports/science/hdf5
