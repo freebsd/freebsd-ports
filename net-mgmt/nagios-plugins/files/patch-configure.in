@@ -1,5 +1,5 @@
---- configure.in.orig	Mon Dec  1 03:55:32 2003
-+++ configure.in	Sat Nov 27 13:52:10 2004
+--- configure.in.orig	Wed Dec  1 09:41:08 2004
++++ configure.in	Fri Dec  3 22:27:18 2004
 @@ -10,7 +10,7 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -18,7 +18,7 @@
  
  AC_ARG_WITH(trusted_path,
  	ACX_HELP_STRING([--with-trusted-path=PATH],
-@@ -181,25 +179,32 @@
+@@ -181,27 +179,35 @@
  LIBS="$_SAVEDLIBS"
  CPPFLAGS="$_SAVEDCPPFLAGS"
  
@@ -56,8 +56,11 @@
 +  LDAPINCLUDE="-I${LOCALBASE}/include"
    AC_SUBST(LDAPLIBS)
    AC_SUBST(LDAPINCLUDE)
++  LIBS="-L${LOCALBASE}/lib $LIBS"
    AC_CHECK_FUNCS(ldap_set_option)
-@@ -209,6 +214,7 @@
+   EXTRAS="$EXTRAS check_ldap"
+ else
+@@ -209,6 +215,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
@@ -65,16 +68,7 @@
  
  
  dnl Check for mysql libraries
-@@ -251,7 +257,7 @@
-   AC_MSG_WARN([Skipping mysql plugin])
-   AC_MSG_WARN([install mysql client libs to compile this plugin (see REQUIREMENTS).])
- fi
--CPPFLAGS="$_SAVEDCPPFLAGS"
-+CPPFLAGS="$_SAVEDCPPFLAGS $MYSQLINCLUDE"
- LIBS="$_SAVEDLIBS"
- 
- dnl Check for OpenSSL location
-@@ -658,7 +664,7 @@
+@@ -676,7 +683,7 @@
  	egrep -i ["^STAT +COMMAND +VSZ +RSS +UID +USER +PPID"] >/dev/null
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
@@ -83,7 +77,7 @@
  	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
  	ac_cv_ps_cols=8
  	AC_MSG_RESULT([$ac_cv_ps_command])
-@@ -1184,6 +1190,8 @@
+@@ -1221,6 +1228,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -92,7 +86,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -1206,7 +1214,10 @@
+@@ -1243,7 +1252,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -103,7 +97,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  
-@@ -1228,7 +1239,10 @@
+@@ -1265,7 +1277,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -114,7 +108,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -1236,6 +1250,7 @@
+@@ -1273,6 +1288,7 @@
  	EXTRAS="$EXTRAS check_fping"
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])

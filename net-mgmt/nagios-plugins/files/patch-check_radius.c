@@ -1,6 +1,6 @@
---- plugins/check_radius.c.orig	Fri Aug 22 08:22:38 2003
-+++ plugins/check_radius.c	Sat Nov 27 13:25:35 2004
-@@ -102,6 +102,7 @@
+--- plugins/check_radius.c.orig	Wed Nov 24 01:46:39 2004
++++ plugins/check_radius.c	Fri Dec  3 20:37:30 2004
+@@ -103,6 +103,7 @@
  	int result;
  	UINT4 client_id;
  	char *str;
@@ -8,7 +8,7 @@
  
  	setlocale (LC_ALL, "");
  	bindtextdomain (PACKAGE, LOCALEDIR);
-@@ -111,31 +112,34 @@
+@@ -112,32 +113,35 @@
  		usage (_("Could not parse arguments\n"));
  
  	str = strdup ("dictionary");
@@ -25,10 +25,12 @@
  
 -	if (!(rc_avpair_add (&data.send_pairs, PW_SERVICE_TYPE, &service, 0) &&
 -				rc_avpair_add (&data.send_pairs, PW_USER_NAME, username, 0) &&
--				rc_avpair_add (&data.send_pairs, PW_USER_PASSWORD, password, 0)))
+-				rc_avpair_add (&data.send_pairs, PW_USER_PASSWORD, password, 0) &&
+-				(nasid==NULL || rc_avpair_add (&data.send_pairs, PW_NAS_IDENTIFIER, nasid, 0))))
 +	if (!(rc_avpair_add (rh, &data.send_pairs, PW_SERVICE_TYPE, &service, -1, 0) &&
 +				rc_avpair_add (rh, &data.send_pairs, PW_USER_NAME, username, -1, 0) &&
-+				rc_avpair_add (rh, &data.send_pairs, PW_USER_PASSWORD, password, -1, 0)))
++				rc_avpair_add (rh, &data.send_pairs, PW_USER_PASSWORD, password, -1, 0) &&
++				(nasid==NULL || rc_avpair_add (rh, &data.send_pairs, PW_NAS_IDENTIFIER, nasid, -1, 0))))
  		die (STATE_UNKNOWN, _("Out of Memory?"));
  
  	/* 
