@@ -1,0 +1,29 @@
+bin/ilasm
+bin/ildasm
+bin/ilsize
+bin/ilnative
+bin/ilfind
+bin/cscc
+bin/resgen
+include/pnet/il_config.h
+include/pnet/il_decimal.h
+include/pnet/il_dumpasm.h
+include/pnet/il_image.h
+include/pnet/il_meta.h
+include/pnet/il_opcodes.h
+include/pnet/il_program.h
+include/pnet/il_system.h
+include/pnet/il_types.h
+include/pnet/il_utils.h
+include/pnet/il_values.h
+include/pnet/il_writer.h
+lib/libILSupport.a
+lib/libILImage.a
+lib/libILDumpAsm.a
+lib/libILEngine.a
+lib/libILCodeGen.a
+lib/cscc/plugins/cscc-cs
+lib/cscc/plugins/cscc-csharp
+@dirrm include/pnet
+@dirrm lib/cscc/plugins
+@dirrm lib/cscc
