@@ -7,6 +7,7 @@
 
 PORTNAME=	mtoolsfm
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.core-coutainville.org/MToolsFM/archive/SOURCES/
 DISTNAME=	MToolsFM-${PORTVERSION:R}-${PORTVERSION:E}
@@ -29,8 +30,13 @@ post-patch:
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/MToolsFM.1
-	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${PERL} -pi -e \
 		's|MToolsFM|mtoolsfm|g'
+.for file in src/mtoolsfm.h po/de.po po/fr.po
+	@${MV} -f ${WRKSRC}/${file} ${WRKSRC}/${file}.preedit
+	@${CAT} ${WRKSRC}/${file}.preedit | \
+		${TR} '\264' '\047' > ${WRKSRC}/${file}
+.endfor
 
 pre-build:
 	@${LN} -sf ${WRKSRC}/MToolsFM.1 ${WRKSRC}/mtoolsfm.1
