@@ -1,0 +1,113 @@
+*** newaliases.c.orig	Fri Apr 24 17:34:58 1998
+--- newaliases.c	Fri Apr 24 17:38:32 1998
+***************
+*** 12,17 ****
+--- 12,21 ----
+  
+  #define FATAL "newaliases: fatal: "
+  
++ stralloc fnsrc = {0};
++ stralloc fncdb = {0};
++ stralloc fntmp = {0};
++ 
+  void nomem()
+  {
+    strerr_die2x(111,FATAL,"out of memory");
+***************
+*** 26,36 ****
+  }
+  void writeerr()
+  {
+!   strerr_die2sys(111,FATAL,"unable to write to /etc/aliases.tmp: ");
+  }
+  void readerr()
+  {
+!   strerr_die2sys(111,FATAL,"unable to read /etc/aliases: ");
+  }
+  void die_control()
+  {
+--- 30,40 ----
+  }
+  void writeerr()
+  {
+!   strerr_die4sys(111,FATAL,"unable to write to ",fntmp.s,": ");
+  }
+  void readerr()
+  {
+!   strerr_die4sys(111,FATAL,"unable to read ",fnsrc.s,": ");
+  }
+  void die_control()
+  {
+***************
+*** 270,288 ****
+    if (cdbmss_add(&cdbmss,key.s,key.len,instr.s,instr.len) == -1) writeerr();
+  }
+  
+! void main()
+  {
+    int fd;
+  
+    umask(033);
+    readcontrols();
+  
+!   fd = open_read("/etc/aliases");
+    if (fd == -1) readerr();
+    substdio_fdbuf(&ssin,read,fd,inbuf,sizeof inbuf);
+  
+!   fd = open_trunc("/etc/aliases.tmp");
+!   if (fd == -1) strerr_die2sys(111,FATAL,"unable to create /etc/aliases.tmp: ");
+    if (cdbmss_start(&cdbmss,fd) == -1) writeerr();
+  
+    if (!stralloc_copys(&line,"")) nomem();
+--- 274,305 ----
+    if (cdbmss_add(&cdbmss,key.s,key.len,instr.s,instr.len) == -1) writeerr();
+  }
+  
+! void main(argc,argv)
+! int argc;
+! char **argv;
+  {
+    int fd;
+  
+    umask(033);
+    readcontrols();
+  
+!   if (!stralloc_copys(&fnsrc,argv[1] ? argv[1] : "/etc/aliases")) nomem();
+!   if (!stralloc_0(&fnsrc)) nomem();
+! 
+!   if (!stralloc_copys(&fncdb,fnsrc.s)) nomem();
+!   if (!stralloc_cats(&fncdb,".cdb")) nomem();
+!   if (!stralloc_0(&fncdb)) nomem();
+! 
+!   if (!stralloc_copys(&fntmp,fnsrc.s)) nomem();
+!   if (!stralloc_cats(&fntmp,".tmp")) nomem();
+!   if (!stralloc_0(&fntmp)) nomem();
+!   
+!   fd = open_read(fnsrc.s);
+    if (fd == -1) readerr();
+    substdio_fdbuf(&ssin,read,fd,inbuf,sizeof inbuf);
+  
+!   fd = open_trunc(fntmp.s);
+!   if (fd == -1) strerr_die4sys(111,FATAL,"unable to create ",fntmp.s,": ");
+    if (cdbmss_start(&cdbmss,fd) == -1) writeerr();
+  
+    if (!stralloc_copys(&line,"")) nomem();
+***************
+*** 314,321 ****
+    if (fsync(fd) == -1) writeerr();
+    if (close(fd) == -1) writeerr(); /* NFS stupidity */
+  
+!   if (rename("/etc/aliases.tmp","/etc/aliases.cdb") == -1)
+!     strerr_die2sys(111,FATAL,"unable to move /etc/aliases.tmp to /etc/aliases.cdb: ");
+    
+    _exit(0);
+  }
+--- 331,338 ----
+    if (fsync(fd) == -1) writeerr();
+    if (close(fd) == -1) writeerr(); /* NFS stupidity */
+  
+!   if (rename(fntmp.s,fncdb.s) == -1)
+!     strerr_die6sys(111,FATAL,"unable to move ",fntmp.s," to ",fncdb.s,": ");
+    
+    _exit(0);
+  }

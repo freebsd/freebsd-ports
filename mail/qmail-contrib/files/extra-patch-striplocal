@@ -1,0 +1,28 @@
+*** fastforward.c.orig	Thu Apr 23 20:35:48 1998
+--- fastforward.c	Thu Apr 23 20:37:05 1998
+***************
+*** 261,270 ****
+        if (gettarget(1,"?",addr))
+          if (!stralloc_copy(&sender,&data)) nomem();
+    if (!gettarget(1,":",addr))
+!     if (flagpassthrough)
+!       _exit(0);
+!     else
+!       strerr_die1x(100,"Sorry, no mailbox here by that name. (#5.1.1)");
+    dodata();
+  }
+  
+--- 261,273 ----
+        if (gettarget(1,"?",addr))
+          if (!stralloc_copy(&sender,&data)) nomem();
+    if (!gettarget(1,":",addr))
+!     if (strpbrk(addr,"-"))
+!       if (!str_copy(addr,strpbrk(addr,"-")+1)) nomem();
+!     if (!gettarget(1,":",addr))
+!       if (flagpassthrough)
+!         _exit(0);
+!       else
+!         strerr_die1x(100,"Sorry, no mailbox here by that name. (#5.1.1)");
+    dodata();
+  }
+  

@@ -1,0 +1,10 @@
+doc/fastforward/ALIASES
+bin/dot-forward
+bin/fastforward
+bin/printforward
+bin/setforward
+bin/newaliases
+bin/printmaillist
+bin/setmaillist
+bin/newinclude
+@dirrm doc/fastforward
