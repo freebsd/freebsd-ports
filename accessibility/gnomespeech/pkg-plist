@@ -1,0 +1,18 @@
+bin/festival-synthesis-driver
+bin/test-speech
+include/gnome-speech-1.0/gnome-speech/GNOME_Speech.h
+include/gnome-speech-1.0/gnome-speech/gnome-speech.h
+include/gnome-speech-1.0/gnome-speech/speaker.h
+lib/libgnomespeech.a
+lib/libgnomespeech.so
+lib/libgnomespeech.so.6
+lib/orbit-2.0/GNOME_Speech_module.so
+libdata/bonobo/servers/GNOME_Speech_SynthesisDriver_Festival.server
+libdata/pkgconfig/gnome-speech-1.0.pc
+share/idl/gnome-speech-1.0/GNOME_Speech.idl
+share/idl/gnome-speech-1.0/GNOME_Speech_Speaker.idl
+share/idl/gnome-speech-1.0/GNOME_Speech_SpeechCallback.idl
+share/idl/gnome-speech-1.0/GNOME_Speech_SynthesisDriver.idl
+@dirrm share/idl/gnome-speech-1.0
+@dirrm include/gnome-speech-1.0/gnome-speech
+@dirrm include/gnome-speech-1.0
