@@ -2,33 +2,37 @@
 --- Makefile	Wed Oct  5 16:03:22 1994
 ***************
 *** 0 ****
---- 1,29 ----
+--- 1,33 ----
 + all: iozone
 + 
 + iozone:
-+ 	cc -O -o iozone iozone.c
++ 	$(CC) $(CFLAGS) -Dbsd4_3 -DOS_TYPE="\"FreeBSD 2.x\"" -o iozone iozone.c
 + 
 + install:
-+ 	mkdir -p ${PREFIX}/bin
-+ 	mkdir -p ${PREFIX}/man/man1
-+ 	install -c -o bin -m 755 iozone ${PREFIX}/bin
-+ 	echo .Dd `/bin/date` > iozone.1
-+ 	echo .Dt IOZONE 1 >> iozone.1
-+ 	echo .Sh NAME >> iozone.1
-+ 	echo .Nm iozone >> iozone.1
-+ 	echo .Nd Performance Test of Sequential File I/O  >> iozone.1
-+ 	echo .Sh SYNOPSIS >> iozone.1
-+ 	echo .Nm iozone >> iozone.1
-+ 	echo .Op Ar megabytes >> iozone.1
-+ 	echo .Op Ar record_length_in_bytes >> iozone.1
-+ 	echo .Op Ar [path]filename>> iozone.1
-+ 	echo .Nm iozone >> iozone.1
-+ 	echo .Ar help >> iozone.1
-+ 	echo .Nm iozone >> iozone.1
-+ 	echo .Ar auto >> iozone.1
-+ 	echo .Sh DESCRIPTION >> iozone.1
++ 	-@mkdir -p ${PREFIX}/bin
++ 	-@mkdir -p ${PREFIX}/man/man1
++ 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} iozone ${PREFIX}/bin
++ 	@echo .Dd `/bin/date` > iozone.1
++ 	@echo .Dt IOZONE 1 >> iozone.1
++ 	@echo .Sh NAME >> iozone.1
++ 	@echo .Nm iozone >> iozone.1
++ 	@echo .Nd Performance Test of Sequential File I/O  >> iozone.1
++ 	@echo .Sh SYNOPSIS >> iozone.1
++ 	@echo .Nm iozone >> iozone.1
++ 	@echo .Op Ar megabytes >> iozone.1
++ 	@echo .Op Ar record_length_in_bytes >> iozone.1
++ 	@echo .Op Ar [path]filename>> iozone.1
++ 	@echo .Nm iozone >> iozone.1
++ 	@echo .Ar auto[=filename] >> iozone.1
++ 	@echo .Nm iozone >> iozone.1
++ 	@echo .Ar raw[=filename] >> iozone.1
++ 	@echo .Nm iozone >> iozone.1
++ 	@echo .Ar cdrom[=filename] >> iozone.1
++ 	@echo .Nm iozone >> iozone.1
++ 	@echo .Ar help >> iozone.1
++ 	@echo .Sh DESCRIPTION >> iozone.1
 + 	./iozone help|awk '{if (/Copyright/) x++} {if (/For V1.06/) exit;}\
 + 		 {if (x) print $0}' >>iozone.1
-+ 	echo .Sh AUTHOR >> iozone.1
-+ 	echo Bill Norcott >> iozone.1
-+ 	install -m 644  iozone.1 ${PREFIX}/man/man1
++ 	@echo .Sh AUTHOR >> iozone.1
++ 	@echo Bill Norcott >> iozone.1
++ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 iozone.1 ${PREFIX}/man/man1
