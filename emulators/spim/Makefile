@@ -4,13 +4,13 @@
 # Date created:         Mon Oct 28, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/11/12 02:16:56 obrien Exp $
+# $Id: Makefile,v 1.3 1997/02/15 22:35:16 obrien Exp $
 #
 
 DISTNAME=	spim5.9
 PKGNAME=	spim-5.9
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/
+MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/Old_Versions/
 
 MAINTAINER=	obrien@cs.ucdavis.edu
 
