@@ -1,18 +1,15 @@
 bin/teapot
-share/doc/teapot/README-de.html
-share/doc/teapot/README-en.html
-share/doc/teapot/README-nl.html
-share/doc/teapot/teapot.doc
-share/doc/teapot/teapot.html
-share/doc/teapot/teapot.ps
-share/examples/teapot/asqrt
-share/examples/teapot/asqrt.README
-share/examples/teapot/blink
-share/examples/teapot/counter
-share/examples/teapot/counter.README
-share/examples/teapot/life
-share/examples/teapot/life.README
-share/examples/teapot/sqrt
-share/examples/teapot/sqrt.README
-@dirrm share/examples/teapot
-@dirrm share/doc/teapot
+%%PORTDOCS%%share/doc/teapot/teapot.doc
+%%PORTDOCS%%share/doc/teapot/teapot.html
+%%PORTDOCS%%share/doc/teapot/teapot.ps
+%%PORTDOCS%%share/examples/teapot/asqrt
+%%PORTDOCS%%share/examples/teapot/asqrt.README
+%%PORTDOCS%%share/examples/teapot/blink
+%%PORTDOCS%%share/examples/teapot/counter
+%%PORTDOCS%%share/examples/teapot/counter.README
+%%PORTDOCS%%share/examples/teapot/life
+%%PORTDOCS%%share/examples/teapot/life.README
+%%PORTDOCS%%share/examples/teapot/sqrt
+%%PORTDOCS%%share/examples/teapot/sqrt.README
+%%PORTDOCS%%@dirrm share/examples/teapot
+%%PORTDOCS%%@dirrm share/doc/teapot
