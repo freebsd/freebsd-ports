@@ -29,7 +29,7 @@ MKFONTDIR_CMD=	${PREFIX}/bin/mkfontdir
 FONTSDIR=	lib/X11/fonts/local
 INSTALLDIR=	${PREFIX}/${FONTSDIR}
 DOCDIR=		${PREFIX}/share/doc/elisa
-PORTDOCS=	elisa100.doc elisat10.doc elisat10.html
+MYPORTDOCS=	elisa100.doc elisat10.doc elisat10.html
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 do-build:
@@ -56,7 +56,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}
 	@(cd ${WRKSRC} ;\
-	${INSTALL_DATA} ${PORTDOCS} ${DOCDIR} ;\
+	${INSTALL_DATA} ${MYPORTDOCS} ${DOCDIR} ;\
 	)
 .endif
 
