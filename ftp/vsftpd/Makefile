@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A FTP daemon that aims to be "very secure"
 
 USE_PERL5=	yes
 ALL_TARGET=	vsftpd
