@@ -1,9 +1,0 @@
-lib/kde3/videothumbnail.la
-lib/kde3/videothumbnail.so
-lib/libarts_xine.la
-lib/libarts_xine.so
-lib/mcop/xinePlayObject.mcopclass
-share/apps/videothumbnail/sprocket-large.png
-share/apps/videothumbnail/sprocket-medium.png
-share/apps/videothumbnail/sprocket-small.png
-share/services/videothumbnail.desktop

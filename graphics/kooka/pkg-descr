@@ -1,0 +1,11 @@
+Kooka is an intuitive, easy to use open source GNU/Linux scan program
+which is released under the GNU General Public License with exceptions.
+
+Kooka is the scan application of choice for the KDE project and
+thus it is official part of the KDE Graphics Package.
+
+Kooka helps you to handle the most important scan parameters, find
+the correct image file format to save and manage your scanned images.
+It offers support for different OCR modules. Libkscan, a autonomous
+part of Kooka, provides a scan service for easy and consistent use
+to all KDE applications.

@@ -1,0 +1,134 @@
+bin/kpalmdoc
+bin/kpilot
+bin/kpilotDaemon
+include/kpilot/kpilotlink.h
+include/kpilot/pilotDatabase.h
+include/kpilot/pilotLocalDatabase.h
+include/kpilot/pilotRecord.h
+include/kpilot/pilotSerialDatabase.h
+include/kpilot/plugin.h
+include/kpilot/syncAction.h
+include/kpilot/uiDialog.h
+lib/kde3/conduit_address.la
+lib/kde3/conduit_address.so
+lib/kde3/conduit_doc.la
+lib/kde3/conduit_doc.so
+lib/kde3/conduit_knotes.la
+lib/kde3/conduit_knotes.so
+lib/kde3/conduit_mal.la
+lib/kde3/conduit_mal.so
+lib/kde3/conduit_popmail.la
+lib/kde3/conduit_popmail.so
+lib/kde3/conduit_sysinfo.la
+lib/kde3/conduit_sysinfo.so
+lib/kde3/conduit_time.la
+lib/kde3/conduit_time.so
+lib/kde3/conduit_todo.la
+lib/kde3/conduit_todo.so
+lib/kde3/conduit_vcal.la
+lib/kde3/conduit_vcal.so
+lib/libkpilot.la
+lib/libkpilot.so
+lib/libkpilot.so.0
+share/applications/kde/kpalmdoc.desktop
+share/applications/kde/kpilot.desktop
+share/applications/kde/kpilotdaemon.desktop
+share/apps/kpilot/icons/crystalsvg/16x16/actions/backup.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/busysync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/restore.png
+share/apps/kpilot/icons/crystalsvg/16x16/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/backup.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/busysync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/22x22/actions/restore.png
+share/apps/kpilot/icons/crystalsvg/22x22/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/32x32/apps/kpalmdoc.png
+share/apps/kpilot/icons/crystalsvg/48x48/apps/kpalmdoc.png
+share/apps/kpilot/kpilot-address.png
+share/apps/kpilot/kpilot-calendar.png
+share/apps/kpilot/kpilot-db.png
+share/apps/kpilot/kpilot-fileinstaller.png
+share/apps/kpilot/kpilot-hotsync.png
+share/apps/kpilot/kpilot-knotes.png
+share/apps/kpilot/kpilot-splash.png
+share/apps/kpilot/kpilot-todo.png
+share/apps/kpilot/kpilotui.rc
+share/apps/kpilot/sysinfoconduit/Template.html
+share/apps/kpilot/sysinfoconduit/Template.txt
+share/doc/HTML/en/kdepim-apidocs/common
+share/doc/HTML/en/kpilot/address-app.png
+share/doc/HTML/en/kpilot/common
+share/doc/HTML/en/kpilot/conduit-knotes.png
+share/doc/HTML/en/kpilot/conduit-popmail-kmail.png
+share/doc/HTML/en/kpilot/conduit-popmail-recv-method.png
+share/doc/HTML/en/kpilot/conduit-popmail-send-as.png
+share/doc/HTML/en/kpilot/conduit-popmail-send-method.png
+share/doc/HTML/en/kpilot/conduit-popmail-sendmail.png
+share/doc/HTML/en/kpilot/conduit-popmail-smtp.png
+share/doc/HTML/en/kpilot/conduit-popmail-top.png
+share/doc/HTML/en/kpilot/conduit-vcal.png
+share/doc/HTML/en/kpilot/file-app.png
+share/doc/HTML/en/kpilot/index.cache.bz2
+share/doc/HTML/en/kpilot/index.docbook
+share/doc/HTML/en/kpilot/main-app.png
+share/doc/HTML/en/kpilot/memo-app.png
+share/doc/HTML/en/kpilot/setup-address.png
+share/doc/HTML/en/kpilot/setup-conduit.png
+share/doc/HTML/en/kpilot/setup-dbspecial.png
+share/doc/HTML/en/kpilot/setup-general.png
+share/doc/HTML/en/kpilot/setup-sync.png
+share/doc/HTML/en/kpilot/toolbar_backup.png
+share/doc/HTML/en/kpilot/toolbar_hotsync.png
+share/icons/crystalsvg/16x16/apps/kpalmdoc.png
+share/icons/crystalsvg/16x16/apps/kpilot.png
+share/icons/crystalsvg/16x16/apps/kpilotDaemon.png
+share/icons/crystalsvg/22x22/apps/kpalmdoc.png
+share/icons/crystalsvg/22x22/apps/kpilot.png
+share/icons/crystalsvg/32x32/apps/kpalmdoc.png
+share/icons/crystalsvg/32x32/apps/kpilot.png
+share/icons/crystalsvg/48x48/apps/kpalmdoc.png
+share/icons/crystalsvg/48x48/apps/kpilot.png
+share/icons/crystalsvg/48x48/apps/kpilotDaemon.png
+share/icons/locolor/16x16/apps/kpilot.png
+share/services/abbrowser_conduit.desktop
+share/services/doc_conduit.desktop
+share/services/knotes-conduit.desktop
+share/services/mal_conduit.desktop
+share/services/popmail-conduit.desktop
+share/services/sysinfo_conduit.desktop
+share/services/time_conduit.desktop
+share/services/todo-conduit.desktop
+share/services/vcal-conduit.desktop
+share/servicetypes/kpilotconduit.desktop
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/doc/HTML/en/kpilot
+@dirrm share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@dirrm share/doc/HTML/en/kdepim-apidocs/kpilot
+@dirrm share/doc/HTML/en/kdepim-apidocs
+@dirrm share/apps/kpilot/sysinfoconduit
+@dirrm share/apps/kpilot/icons/crystalsvg/48x48/apps
+@dirrm share/apps/kpilot/icons/crystalsvg/48x48
+@dirrm share/apps/kpilot/icons/crystalsvg/32x32/apps
+@dirrm share/apps/kpilot/icons/crystalsvg/32x32
+@dirrm share/apps/kpilot/icons/crystalsvg/22x22/apps
+@dirrm share/apps/kpilot/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kpilot/icons/crystalsvg/22x22
+@dirrm share/apps/kpilot/icons/crystalsvg/16x16/apps
+@dirrm share/apps/kpilot/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kpilot/icons/crystalsvg/16x16
+@dirrm share/apps/kpilot/icons/crystalsvg
+@dirrm share/apps/kpilot/icons
+@dirrm share/apps/kpilot
+@dirrm include/kpilot

@@ -1902,7 +1902,6 @@ share/apps/koffice/pics/koPortrait.png
 share/apps/koffice/pics/koRulerFirst.png
 share/apps/koffice/pics/koRulerLeft.png
 share/apps/koffice/pics/koffice-logo.png
-share/apps/kontour/kpartplugins/scan-kontour.rc
 share/apps/koshell/koshellui.rc
 share/apps/kpresenter/autoforms/.autoforms
 share/apps/kpresenter/autoforms/Arrows/.directory
@@ -3204,8 +3203,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kpresenter/autoforms
 @dirrm share/apps/kpresenter
 @dirrm share/apps/koshell
-@dirrm share/apps/kontour/kpartplugins
-@dirrm share/apps/kontour
 @dirrm share/apps/koffice/pics
 @dirrm share/apps/koffice/icons/crystalsvg/48x48/apps
 @dirrm share/apps/koffice/icons/crystalsvg/48x48

@@ -239,6 +239,7 @@
     SUBDIR += xrsh
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
+    SUBDIR += xscreensaver-kde
     SUBDIR += xsel
     SUBDIR += xskyroot
     SUBDIR += xsnow

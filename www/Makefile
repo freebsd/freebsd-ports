@@ -175,6 +175,7 @@
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += knowledgekit
+    SUBDIR += konqueror-nsplugins
     SUBDIR += larbin
     SUBDIR += libghttp
     SUBDIR += libgtkhtml

@@ -1,0 +1,125 @@
+bin/mpeglibartsplay
+bin/yaf-cdda
+bin/yaf-mpgplay
+bin/yaf-splay
+bin/yaf-tplay
+bin/yaf-vorbis
+bin/yaf-yuv
+include/mpeglib/decoder/cddaPlugin.h
+include/mpeglib/decoder/command.h
+include/mpeglib/decoder/commandPipe.h
+include/mpeglib/decoder/decoderPlugin.h
+include/mpeglib/decoder/mpegPlugin.h
+include/mpeglib/decoder/mpgPlugin.h
+include/mpeglib/decoder/nukePlugin.h
+include/mpeglib/decoder/splayPlugin.h
+include/mpeglib/decoder/tplayPlugin.h
+include/mpeglib/decoder/vorbisPlugin.h
+include/mpeglib/decoder/yuvPlugin.h
+include/mpeglib/frame/IOFrameQueue.h
+include/mpeglib/frame/audioFrame.h
+include/mpeglib/frame/audioFrameQueue.h
+include/mpeglib/frame/floatFrame.h
+include/mpeglib/frame/frame.h
+include/mpeglib/frame/frameQueue.h
+include/mpeglib/frame/framer.h
+include/mpeglib/frame/pcmFrame.h
+include/mpeglib/frame/rawDataBuffer.h
+include/mpeglib/frame/rawFrame.h
+include/mpeglib/input/bufferInputStream.h
+include/mpeglib/input/cddaInputStream.h
+include/mpeglib/input/cdromInputStream.h
+include/mpeglib/input/fileInputStream.h
+include/mpeglib/input/httpInputStream.h
+include/mpeglib/input/inputDetector.h
+include/mpeglib/input/inputPlugin.h
+include/mpeglib/input/inputStream.h
+include/mpeglib/input/threadSafeInputStream.h
+include/mpeglib/mpegutil/mpegStreamPlayer.h
+include/mpeglib/mpegutil/mpegSystemHeader.h
+include/mpeglib/mpegutil/mpegSystemStream.h
+include/mpeglib/mpegutil/mpegVideoLength.h
+include/mpeglib/mpegutil/pesSystemStream.h
+include/mpeglib/mpegutil/psSystemStream.h
+include/mpeglib/mpegutil/tsSystemStream.h
+include/mpeglib/oggvorbis/oggFrame.h
+include/mpeglib/oggvorbis/ovFramer.h
+include/mpeglib/oggvorbis/vorbisDecoder.h
+include/mpeglib/oggvorbis/vorbisInfo.h
+include/mpeglib/output/artsOutputStream.h
+include/mpeglib/output/audioTime.h
+include/mpeglib/output/avSyncer.h
+include/mpeglib/output/dspX11OutputStream.h
+include/mpeglib/output/outPlugin.h
+include/mpeglib/output/outputStream.h
+include/mpeglib/output/pluginInfo.h
+include/mpeglib/output/threadSafeOutputStream.h
+include/mpeglib/splay/mpegAudioFrame.h
+include/mpeglib/splay/mpegAudioInfo.h
+include/mpeglib/splay/splayDecoder.h
+include/mpeglib/util/abstract/abs_thread.h
+include/mpeglib/util/abstract/threadQueue.h
+include/mpeglib/util/dynBuffer.h
+include/mpeglib/util/file/fileAccess.h
+include/mpeglib/util/mmx/mm_accel.h
+include/mpeglib/util/mmx/mmx.h
+include/mpeglib/util/mmx/mmx_asm.h
+include/mpeglib/util/render/pictureArray.h
+include/mpeglib/util/render/yuvPicture.h
+include/mpeglib/util/syncClock.h
+include/mpeglib/util/timeStamp.h
+include/mpeglib/util/timeStampArray.h
+include/mpeglib/util/timeWrapper.h
+include/mpeglib/util/yaf/yafcore/buffer.h
+include/mpeglib/util/yaf/yafcore/inputDecoder.h
+include/mpeglib/util/yaf/yafcore/inputInterface.h
+include/mpeglib/util/yaf/yafcore/outputInterface.h
+include/mpeglib/util/yaf/yafcore/yaf_control.h
+include/mpeglib/util/yaf/yafxplayer/inputDecoderXPlayer.h
+include/mpeglib/util/yaf/yafxplayer/inputDecoderYAF.h
+include/mpeglib/util/yaf/yafxplayer/yafOutputStream.h
+include/mpeglib_artsplug/decoderBaseObject.h
+include/mpeglib_artsplug/decoderBaseObject.idl
+include/mpeglib_artsplug/decoderBaseObject_impl.h
+include/mpeglib_artsplug/splayPlayObject.h
+include/mpeglib_artsplug/splayPlayObject.idl
+include/mpeglib_artsplug/splayPlayObject_impl.h
+lib/libarts_mpeglib-0.3.0.so
+lib/libarts_mpeglib-0.3.0.so.0
+lib/libarts_mpeglib.la
+lib/libarts_mpeglib.so
+lib/libarts_splay.la
+lib/libarts_splay.so
+lib/libarts_splay.so.0
+lib/libmpeg-0.3.0.so
+lib/libmpeg.la
+lib/libmpeg.so
+lib/libyafcore.la
+lib/libyafcore.so
+lib/libyafcore.so.0
+lib/libyafxplayer.la
+lib/libyafxplayer.so
+lib/libyafxplayer.so.0
+lib/mcop/CDDAPlayObject.mcopclass
+lib/mcop/MP3PlayObject.mcopclass
+lib/mcop/NULLPlayObject.mcopclass
+lib/mcop/OGGPlayObject.mcopclass
+lib/mcop/SplayPlayObject.mcopclass
+lib/mcop/WAVPlayObject.mcopclass
+@dirrm include/mpeglib_artsplug
+@dirrm include/mpeglib/util/yaf/yafxplayer
+@dirrm include/mpeglib/util/yaf/yafcore
+@dirrm include/mpeglib/util/yaf
+@dirrm include/mpeglib/util/render
+@dirrm include/mpeglib/util/mmx
+@dirrm include/mpeglib/util/file
+@dirrm include/mpeglib/util/abstract
+@dirrm include/mpeglib/util
+@dirrm include/mpeglib/splay
+@dirrm include/mpeglib/output
+@dirrm include/mpeglib/oggvorbis
+@dirrm include/mpeglib/mpegutil
+@dirrm include/mpeglib/input
+@dirrm include/mpeglib/frame
+@dirrm include/mpeglib/decoder
+@dirrm include/mpeglib

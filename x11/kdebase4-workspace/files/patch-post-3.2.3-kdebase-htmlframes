@@ -1,0 +1,138 @@
+Index: konqueror/konq_mainwindow.cc
+===================================================================
+RCS file: /home/kde/kdebase/konqueror/konq_mainwindow.cc,v
+retrieving revision 1.1274.2.24
+diff -u -p -r1.1274.2.24 konq_mainwindow.cc
+--- konqueror/konq_mainwindow.cc	7 Jun 2004 23:10:55 -0000	1.1274.2.24
++++ konqueror/konq_mainwindow.cc	3 Aug 2004 14:54:23 -0000
+@@ -862,6 +862,7 @@ void KonqMainWindow::slotOpenURLRequest(
+ {
+   kdDebug(1202) << "KonqMainWindow::slotOpenURLRequest frameName=" << args.frameName << endl;
+ 
++  KParts::ReadOnlyPart *callingPart = static_cast<KParts::ReadOnlyPart *>( sender()->parent() );
+   QString frameName = args.frameName;
+ 
+   if ( !frameName.isEmpty() )
+@@ -882,11 +883,11 @@ void KonqMainWindow::slotOpenURLRequest(
+          frameName.lower() != _parent )
+     {
+       KParts::BrowserHostExtension *hostExtension = 0;
+-      KonqView *view = childView( frameName, &hostExtension, 0 );
++      KonqView *view = childView( callingPart, frameName, &hostExtension, 0 );
+       if ( !view )
+       {
+         KonqMainWindow *mainWindow = 0;
+-        view = findChildView( frameName, &mainWindow, &hostExtension, 0 );
++        view = findChildView( callingPart, frameName, &mainWindow, &hostExtension, 0 );
+ 
+         if ( !view || !mainWindow )
+         {
+@@ -909,8 +910,7 @@ void KonqMainWindow::slotOpenURLRequest(
+     }
+   }
+ 
+-  KParts::ReadOnlyPart *part = static_cast<KParts::ReadOnlyPart *>( sender()->parent() );
+-  KonqView *view = childView( part );
++  KonqView *view = childView( callingPart );
+   openURL( view, url, args );
+ }
+ 
+@@ -1045,7 +1045,7 @@ void KonqMainWindow::slotCreateNewWindow
+     if ( !args.frameName.isEmpty() && args.frameName.lower() != "_blank" )
+     {
+         KParts::BrowserHostExtension *hostExtension = 0;
+-        if ( findChildView( args.frameName, &mainWindow, &hostExtension, &part ) )
++        if ( findChildView( 0, args.frameName, &mainWindow, &hostExtension, &part ) )
+         {
+             // Found a view. If url isn't empty, we should open it - but this never happens currently
+             // findChildView put the resulting part in 'part', so we can just return now
+@@ -2097,9 +2097,9 @@ KonqView * KonqMainWindow::childView( KP
+     return 0L;
+ }
+ 
+-KonqView * KonqMainWindow::childView( const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part )
++KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part )
+ {
+-  //kdDebug() << "KonqMainWindow::childView this=" << this << " looking for " << name << endl;
++  kdDebug() << "KonqMainWindow::childView this=" << this << " looking for " << name << endl;
+ 
+   MapViews::ConstIterator it = m_mapViews.begin();
+   MapViews::ConstIterator end = m_mapViews.end();
+@@ -2107,11 +2107,11 @@ KonqView * KonqMainWindow::childView( co
+   {
+     KonqView* view = it.data();
+     QString viewName = view->viewName();
+-    //kdDebug() << "       - viewName=" << viewName << "   "
+-    //          << "frame names:" << view->frameNames().join( "," ) << endl;
++    kdDebug() << "       - viewName=" << viewName << "   "
++              << "frame names:" << view->frameNames().join( "," ) << endl;
+     if ( !viewName.isEmpty() && viewName == name )
+     {
+-      //kdDebug() << "found existing view by name: " << view << endl;
++      kdDebug() << "found existing view by name: " << view << endl;
+       if ( hostExtension )
+         *hostExtension = 0;
+       if ( part )
+@@ -2120,8 +2120,13 @@ KonqView * KonqMainWindow::childView( co
+     }
+ 
+     // First look for a hostextension containing this frame name
+-    // (KonqView looks for it recursively)
+-    KParts::BrowserHostExtension* ext = KonqView::hostExtension( view->part(), name );
++    KParts::BrowserHostExtension *ext = KParts::BrowserHostExtension::childObject( view->part() );
++    if ( ext )
++    {
++      ext = ext->findFrameParent(callingPart, name);
++    }
++    
++//    KParts::BrowserHostExtension* ext = KonqView::hostExtension( view->part(), name );
+ 
+     if ( ext )
+     {
+@@ -2131,7 +2136,7 @@ KonqView * KonqMainWindow::childView( co
+       {
+         if ( frameIt.current()->name() == name )
+         {
+-          //kdDebug() << "found a frame of name " << name << " : " << frameIt.current() << endl;
++          kdDebug() << "found a frame of name " << name << " : " << frameIt.current() << endl;
+           if ( hostExtension )
+             *hostExtension = ext;
+           if ( part )
+@@ -2146,7 +2151,7 @@ KonqView * KonqMainWindow::childView( co
+ }
+ 
+ // static
+-KonqView * KonqMainWindow::findChildView( const QString &name, KonqMainWindow **mainWindow, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part )
++KonqView * KonqMainWindow::findChildView( KParts::ReadOnlyPart *callingPart, const QString &name, KonqMainWindow **mainWindow, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part )
+ {
+   if ( !s_lstViews )
+     return 0;
+@@ -2154,7 +2159,7 @@ KonqView * KonqMainWindow::findChildView
+   QPtrListIterator<KonqMainWindow> it( *s_lstViews );
+   for (; it.current(); ++it )
+   {
+-    KonqView *res = it.current()->childView( name, hostExtension, part );
++    KonqView *res = it.current()->childView( callingPart, name, hostExtension, part );
+     if ( res )
+     {
+       if ( mainWindow )
+Index: konqueror/konq_mainwindow.h
+===================================================================
+RCS file: /home/kde/kdebase/konqueror/konq_mainwindow.h,v
+retrieving revision 1.423.2.4
+diff -u -p -r1.423.2.4 konq_mainwindow.h
+--- konqueror/konq_mainwindow.h	7 Jun 2004 23:10:56 -0000	1.423.2.4
++++ konqueror/konq_mainwindow.h	3 Aug 2004 14:54:23 -0000
+@@ -145,10 +145,10 @@ public:
+   void insertChildView( KonqView *childView );
+   void removeChildView( KonqView *childView );
+   KonqView *childView( KParts::ReadOnlyPart *view );
+-  KonqView *childView( const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
++  KonqView *childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
+ 
+   // dcop idl bug! it can't handle KonqMainWindow *&mainWindow
+-  static KonqView *findChildView( const QString &name, KonqMainWindow **mainWindow, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
++  static KonqView *findChildView( KParts::ReadOnlyPart *callingPart, const QString &name, KonqMainWindow **mainWindow, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
+ 
+   // Total number of views
+   int viewCount() const { return m_mapViews.count(); }

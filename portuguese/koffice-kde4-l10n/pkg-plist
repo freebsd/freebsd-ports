@@ -6,11 +6,8 @@ share/locale/pt/LC_MESSAGES/example.mo
 share/locale/pt/LC_MESSAGES/karbon.mo
 share/locale/pt/LC_MESSAGES/karbonepsfilter.mo
 share/locale/pt/LC_MESSAGES/kchart.mo
-share/locale/pt/LC_MESSAGES/kdgantt.mo
-share/locale/pt/LC_MESSAGES/kexi.mo
 share/locale/pt/LC_MESSAGES/kfile_koffice.mo
 share/locale/pt/LC_MESSAGES/kfile_ooo.mo
-share/locale/pt/LC_MESSAGES/kformdesigner.mo
 share/locale/pt/LC_MESSAGES/kformula.mo
 share/locale/pt/LC_MESSAGES/kformulalatexfilter.mo
 share/locale/pt/LC_MESSAGES/kformulamathmlfilter.mo
@@ -20,10 +17,8 @@ share/locale/pt/LC_MESSAGES/koconverter.mo
 share/locale/pt/LC_MESSAGES/koffice.mo
 share/locale/pt/LC_MESSAGES/koshell.mo
 share/locale/pt/LC_MESSAGES/kounavail.mo
-share/locale/pt/LC_MESSAGES/kplato.mo
 share/locale/pt/LC_MESSAGES/kpresenter.mo
 share/locale/pt/LC_MESSAGES/kpresenterkwordfilter.mo
-share/locale/pt/LC_MESSAGES/krita.mo
 share/locale/pt/LC_MESSAGES/kscan_plugin.mo
 share/locale/pt/LC_MESSAGES/kspread.mo
 share/locale/pt/LC_MESSAGES/kspreadcalc_calc.mo

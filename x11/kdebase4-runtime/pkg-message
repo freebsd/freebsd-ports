@@ -9,3 +9,12 @@ $ xset fp rehash
 or by adding it to your X-server configuration file (usually
 /etc/X11/XF86Config or %%X11BASE%%/lib/X11/XF86Config) and
 restarting the X-server.
+
+You also have to make the new path known to fontconfig by
+adding a 
+
+<dir>%%PREFIX%%/share/fonts</dir> line to either
+
+%%X11BASE%%/etc/fonts/local.conf or ~/.fonts.conf and running
+
+fc-cache -f (as root if you edited local.conf) afterwards.
