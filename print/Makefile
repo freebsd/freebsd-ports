@@ -92,6 +92,7 @@
     SUBDIR += kcdlabel
     SUBDIR += kover
     SUBDIR += latex
+    SUBDIR += latex-pgf
     SUBDIR += latex2rtf
     SUBDIR += latex2slides
     SUBDIR += lgrind
