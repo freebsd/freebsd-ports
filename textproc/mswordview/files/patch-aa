@@ -1,5 +1,5 @@
---- support.c	Mon May 17 15:27:00 1999
-+++ support.c.new	Sun Jul  2 22:24:08 2000
+--- support.c.orig	Tue May 18 07:27:00 1999
++++ support.c	Sun Nov 12 16:26:39 2000
 @@ -36,6 +36,7 @@
  #include "utf.h"
  #ifdef HAVE_WMF
@@ -26,7 +26,7 @@
  	wmfinit(cstruct);
  
      wmffunctions = &gd_wmffunctions;
-@@ -1252,7 +1253,7 @@
+@@ -1252,18 +1253,18 @@
          return;
          }
  
@@ -34,10 +34,15 @@
 +	error(erroroutput,"3 converting wmf to png, via libwmf\n");
  
      cstruct->preparse = 1;
-     PlayMetaFile((void *)cstruct,file);
-@@ -1263,7 +1264,7 @@
+-    PlayMetaFile((void *)cstruct,file);
++    PlayMetaFile((void *)cstruct,file,!0,NULL);
+ 
+     gdstruct.im_out = gdImageCreate(cstruct->realwidth, cstruct->realheight);
+     gdImageColorResolve(gdstruct.im_out, 0xff, 0xff, 0xff);
+ 
      cstruct->preparse = 0;
-     PlayMetaFile((void *)cstruct,file);
+-    PlayMetaFile((void *)cstruct,file);
++    PlayMetaFile((void *)cstruct,file,!0,NULL);
  
 -	strcat(filename,".gif");
 +	strcat(filename,".png");

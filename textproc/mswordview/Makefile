@@ -7,11 +7,12 @@
 
 PORTNAME=	mswordview
 PORTVERSION= 	0.5.14.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/mswordview/
 DISTNAME=	${PORTNAME}-0.5.14-bw6
 
-MAINTAINER=	sumikawa@kame.net
+MAINTAINER=	sumikawa@FreeBSD.org
 
 LIB_DEPENDS=	wmf.1:${PORTSDIR}/graphics/libwmf
 
