@@ -177,6 +177,7 @@ MASTER_SITE_PERL_CPAN+=	\
 #	ring.nihon-u.ac.jp		ring.ctc.jp
 #	ring.riken.go.jp		ring.hosei.ac.jp
 #	ring.dcs.pref.mie.jp		ring.wakwak.com
+#	ring.qgpop.net
 #
 # (The latest list is available at http://www.ring.gr.jp/)
 #
