@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.26 1998/11/03 05:58:17 jkoshy Exp $
+# $Id: Makefile,v 1.27 1998/11/12 06:45:05 asami Exp $
 #
 
 ################################
@@ -17,6 +17,8 @@ MASTER_SITES=	ftp://ftp.troll.no/qt/old/
 MAINTAINER=	andreas@FreeBSD.ORG
 
 LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
+
+BROKEN=		upgrade
 
 MAJ=		1
 MIN=		40
