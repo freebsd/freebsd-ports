@@ -66,6 +66,7 @@
     SUBDIR += libjsearch
     SUBDIR += libjtoolbar
     SUBDIR += libjtree
+    SUBDIR += libzvt
     SUBDIR += linux-gtk
     SUBDIR += linux-openmotif
     SUBDIR += mowitz
