@@ -2902,6 +2902,7 @@ jdbc-oracle816	ports/databases/jdbc-oracle816
 jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
 jde-emacs20	ports/java/jde-emacs20
+jdictionary	ports/textproc/jdictionary
 jdk		ports/java/jdk
 jdk-tutorial	ports/java/jdk-tutorial
 jdk11-doc	ports/java/jdk11-doc
