@@ -1,0 +1,24 @@
+To complete the installation of I18NLayer:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+With CMFQuickInstaller (optional)
+
+- Use the QuickInstaller tool to register I18NLayer in your portal
+  instance
+
+With Plone (optional)
+
+- Use Plone Setup, to install I18NLayer product.
+
+Without CMFQuickInstaller
+
+    - Create an ExternalMethod object inside your portal object with the
+      following data:
+
+      Id: install_I18NLayer
+      Title: installs I18NLayer to this portal
+      Module Name: I18NLayer.Install
+      Function Name: install
+
+    - Run this newly created ExternalMethod by clicking on the test tab.

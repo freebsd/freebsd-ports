@@ -1,0 +1,9 @@
+I18NLayer is a product for Zope
+
+I18NLayer provides a transparent overlay above multiple content objects to
+provide multilanguage content support for existing document types.
+
+WWW: http://plone.org/collective
+
+- Khairil Yusof
+kaeru@inigo-tech.com
