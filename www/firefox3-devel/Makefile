@@ -39,7 +39,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libidl
 USE_ICONV=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
 
