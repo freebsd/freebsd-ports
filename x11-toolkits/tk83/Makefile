@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Graphical toolkit for TCL
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 

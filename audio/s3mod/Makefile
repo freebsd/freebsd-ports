@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	MOD/S3M player
 
 ALL_TARGET=	freebsd
 

@@ -17,6 +17,7 @@ DISTFILES=	bind-${ISCVERSION}.tar.gz \
 	   	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 
 POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}

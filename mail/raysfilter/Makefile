@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sendmail-filter.sbu.ac.uk/
 DISTNAME=	rays-filter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A configurable filter for Sendmail
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail

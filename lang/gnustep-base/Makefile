@@ -16,6 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep Foundation library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
 BUILD_DEPENDS+=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make

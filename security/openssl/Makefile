@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	SSL and crypto library
 
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.

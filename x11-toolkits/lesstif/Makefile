@@ -16,6 +16,7 @@ MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
 		ftp://linux.sarang.net/mirror/development/widget/lesstif/srcdist/
 
 MAINTAINER=	dinoex@freebsd.org
+COMMENT=	API compatible clone of the Motif toolkit
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 

@@ -17,6 +17,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20020203.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	The binutils-2.9.1 cross-toolchain for the 6811
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

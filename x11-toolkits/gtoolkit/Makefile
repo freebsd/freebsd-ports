@@ -11,6 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 
 BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cvsgui
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	High-end interface client for CVS
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 BUILD_DEPENDS+=	autoconf213:${PORTSDIR}/devel/autoconf213

@@ -12,6 +12,7 @@ MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	An advanced DNS server with SQL backend
 
 USE_GMAKE=	YES
 USE_SUBMAKE=	YES

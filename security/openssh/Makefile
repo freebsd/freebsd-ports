@@ -18,6 +18,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	openbsd28_${PORTVERSION}.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	OpenBSD's secure shell client and server (remote login program)
 
 MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1

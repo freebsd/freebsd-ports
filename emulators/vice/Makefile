@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-gnome
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Emulator for Commodore's C64, C128, VIC20, PET, and CBM-II
 
 .if !defined(VICE_WITH_GNOME)
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
