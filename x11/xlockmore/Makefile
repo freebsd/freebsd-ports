@@ -3,7 +3,7 @@
 # Date created:		9 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.29 1998/03/04 08:20:47 tg Exp $
+# $Id: Makefile,v 1.30 1998/03/16 10:04:04 tg Exp $
 #
 
 DISTNAME=       xlockmore-4.08.2
@@ -19,6 +19,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --without-gl --without-motif --without-sx \
 		--without-editres --without-dtsaver --without-rplay \
 		--without-nas
+.if defined(MAKE_KERBEROS4)
+CONFIGURE_ARGS+= --enable-kerberos4
+.endif
 USE_X11=	yes
 MAN1=		xlock.1
 
