@@ -14,6 +14,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/asclock-xlib
 USE_XPM=	YES
+MAN1=		asclock.1
 
 .if defined(BATCH)
 USE_IMAKE=	YES
