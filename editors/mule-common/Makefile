@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.18 1995/04/23 10:33:33 asami Exp $
+# $Id: Makefile,v 1.19 1995/06/27 10:45:31 asami Exp $
 #
 
 DISTNAME=	mule-2.2
@@ -25,7 +25,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		--terminal-face \
-		--locallisppath=${PREFIX}/share/emacs/site-lisp:${PREFIX}/lib/mule/site-lisp
+		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
 
 STRIP=
 
@@ -41,5 +41,8 @@ post-install:
 	gzip -9nf ${PREFIX}/man/man1/coco.1
 	gzip -9nf ${PREFIX}/man/man1/m2ps.1
 	gzip -9nf ${PREFIX}/man/man1/mule.1
+	if [ ! -d ${PREFIX}/share/emacs/site-lisp ]; then \
+	  mkdir -p ${PREFIX}/share/emacs/site-lisp; \
+	fi
 
 .include <bsd.port.mk>
