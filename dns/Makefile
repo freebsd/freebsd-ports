@@ -57,6 +57,7 @@
     SUBDIR += py-adns
     SUBDIR += py-dns
     SUBDIR += rbldnsd
+    SUBDIR += skadns
     SUBDIR += sleuth
     SUBDIR += staticcharge
     SUBDIR += totd
