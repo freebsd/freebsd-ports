@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jun 16 23:37:28 2004
++++ Makefile	Wed Jun 16 23:37:47 2004
+@@ -3,7 +3,7 @@
+ OPT	= -O
+ DEBUG	= -g
+ PROGS	= memdump
+-CFLAGS	= $(OPT) $(DEBUG) -I. $(XFLAGS) $(DEFS)
++CFLAGS += $(OPT) $(DEBUG) -I. $(XFLAGS) $(DEFS)
+ OBJS	= memdump.o convert_size.o error.o mymalloc.o
+ PROGS	= memdump
+ MAN	= memdump.1

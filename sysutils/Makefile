@@ -225,6 +225,7 @@
     SUBDIR += makefs
     SUBDIR += manck
     SUBDIR += mcron
+    SUBDIR += memdump
     SUBDIR += memgrep
     SUBDIR += memtest
     SUBDIR += memtest86
