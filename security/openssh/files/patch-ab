@@ -10,10 +10,10 @@
 -LDADD+=         -L${.CURDIR}/../lib/${__objdir} -lssh
 -DPADD+=         ${.CURDIR}/../lib/${__objdir}/libssh.a
 -.else
-+AFS?=		NO
-+KERBEROS?=	NO
-+SKEY?=		NO
-+TCP_WRAPPERS?=	YES
++AFS?=		no
++KERBEROS?=	no
++SKEY?=		no
++TCP_WRAPPERS?=	yes
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
 -.endif
