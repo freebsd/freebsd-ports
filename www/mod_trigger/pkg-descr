@@ -1,0 +1,12 @@
+mod_trigger gives you hooks into each Apache request to launch
+triggers if certain actions occur. You specify the actions
+through directives that mod_trigger adds to the Web server.
+This allows you to, for example, have a script email you when
+someone is visiting a certain page, let you know when someone
+from a certain domain is looking through your Web site, etc.
+This will allow you to fire off scripts/CGI/servlets when
+these and a few other dozen) events occur. No modifications
+are required to the content of your site and users of your
+server never need to know that a trigger has been put in place. 
+
+WWW: http://tangent.org/mod_trigger/

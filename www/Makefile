@@ -135,6 +135,7 @@
     SUBDIR += mod_snake
     SUBDIR += mod_throttle
     SUBDIR += mod_ticket
+    SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
     SUBDIR += mod_zap
     SUBDIR += momspider
