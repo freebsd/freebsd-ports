@@ -1,0 +1,21 @@
+--- low.c.orig	Mon Nov 15 06:33:54 1999
++++ low.c	Mon Nov 15 06:41:26 1999
+@@ -21,7 +21,6 @@
+ #include "cpmemu.h"
+ #include <ctype.h>
+ #include <unistd.h>
+-#include <sys/perm.h>		/* needed for ioperm() -rjm */
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <signal.h>
+@@ -88,10 +87,8 @@
+ 
+     /* get access to sound port */
+     cptr = NULL;
+-    if (ioperm(0x61, 1, 1)) {
+ 	hardware_access = 0;	/* no access to speaker port */
+ 	return;
+-    }
+ 
+     /* install signal handler */
+     sa.sa_handler = tickerint;

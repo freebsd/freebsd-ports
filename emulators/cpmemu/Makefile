@@ -1,5 +1,5 @@
 # New ports collection makefile for:	cpm-emulator
-# Version required:	0.2.1
+# Version required:	0.2.1.1
 # Date created:		28 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
@@ -7,19 +7,17 @@
 #
 
 DISTNAME=	cpm-0.2.1
-PKGNAME=	cpmemu-0.2.1
+PKGNAME=	cpmemu-0.2.1.1
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/slackware-4.0/source/extra-stuff/CPM-80-emulator/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://ftp.cdrom.com/pub/linux/slackware-4.0/source/extra-stuff/CPM-80-emulator/
+MASTER_SITE_SUBDIR=	system/emulators
+
+PATCH_SITES=	${MASTER_SITE_SUNSITE}
+PATCH_SITE_SUBDIR=	system/emulators
+PATCHFILES=	cpm-0.2.1-glibc-rjm.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cpm ${PREFIX}/bin/cpmemu
-	${INSTALL_PROGRAM} ${WRKSRC}/format ${PREFIX}/bin/cpmformat
-	${MKDIR} ${PREFIX}/share/cpm
-	${INSTALL_DATA} ${WRKSRC}/z80-binaries/cpm.sys ${PREFIX}/share/cpm
-	${INSTALL_DATA} ${WRKSRC}/z80-binaries/cd.com ${PREFIX}/share/cpm
-	${INSTALL_DATA} ${WRKSRC}/z80-binaries/link.com ${PREFIX}/share/cpm
-	${INSTALL_DATA} ${WRKSRC}/z80-binaries/xccp.com ${PREFIX}/share/cpm
 
 .include <bsd.port.mk>
