@@ -3,20 +3,19 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.1 1997/11/05 15:22:36 jmz Exp $
 #
 
 DISTNAME=	cdrecord-1.5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/
 
-
 MAINTAINER=	jmz@FreeBSD.org
 
-MAN1=		cdrecord.1
-
-USE_GMAKE=	yes
 RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs
+
+MAN1=		cdrecord.1
+USE_GMAKE=	yes
 
 do-build:
 	@cd ${WRKSRC}/lib && ../Gmake
