@@ -140,6 +140,7 @@
     SUBDIR += tkman
     SUBDIR += tkregexp
     SUBDIR += tkrunit
+    SUBDIR += tvguide
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += unclutter
