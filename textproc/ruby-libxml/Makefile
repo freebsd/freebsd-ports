@@ -25,4 +25,10 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

@@ -26,6 +26,12 @@ WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
 DOCS=		AUTHORS README docs/*.rd doc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Configure fails on FreeBSD >= 5.x"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
@@ -34,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
