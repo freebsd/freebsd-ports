@@ -8,12 +8,12 @@ include/stklos/stklosconf.h
 @dirrm include/stklos
 @unexec install-info --delete --section="%%INFOSECTION%%" --entry="%%INFOENTRY%%" %D/info/stklos.info %D/info/dir
 info/stklos.info
-info/stklos.info-1
-info/stklos.info-2
-info/stklos.info-3
-info/stklos.info-4
-info/stklos.info-5
-info/stklos.info-6
+@unexec rm -f info/stklos.info-1
+@unexec rm -f info/stklos.info-2
+@unexec rm -f info/stklos.info-3
+@unexec rm -f info/stklos.info-4
+@unexec rm -f info/stklos.info-5
+@unexec rm -f info/stklos.info-6
 @exec install-info --section="%%INFOSECTION%%" --entry="%%INFOENTRY%%" %D/info/stklos.info %D/info/dir
 lib/stklos/%%VERSION%%/ldap.so
 @dirrm lib/stklos/%%VERSION%%
