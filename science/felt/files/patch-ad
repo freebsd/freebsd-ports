@@ -1,0 +1,15 @@
+--- include/allocate.h.orig	Fri Jan 10 20:11:30 1997
++++ include/allocate.h	Fri Jan 10 20:10:54 1997
+@@ -25,7 +25,12 @@
+ 
+ # ifndef _ALLOCATE_H
+ # define _ALLOCATE_H
++
++#ifdef __STDC__
++#include <stdlib.h>
++#else
+ # include "malloc.h"
++#endif
+ 
+ # define AllocNew(type) \
+ 	(type *) malloc (sizeof (type))
