@@ -1,0 +1,10 @@
+HLaTeX-0.95 Type 1 Korean fonts
+-------------------------------
+
+This is Hangul(Korean) and Hanja Type 1 PostScript font set 
+from HLaTeX-0.95. It has all Korean character of KS C 5601, except symbols.
+
+It is used by HLaTeX, and other applications such as nh2ps or nhppf.
+
+--
+Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
