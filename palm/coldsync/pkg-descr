@@ -3,7 +3,7 @@ synchronizing PalmOS devices (PalmPilot et al.) with a Unix
 workstation. It also supports USB connections to a Visor, under
 FreeBSD 4.0.
 	It runs without a GUI, and therefore allows you to sync
-without logging in.
+without running X.
 	ColdSync is extensible through the use of conduits, which
 allow it to share information with other applications.
 
