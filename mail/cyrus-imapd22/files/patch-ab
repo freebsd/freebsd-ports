@@ -1,0 +1,38 @@
+--- man/quota.8.orig	Sun May  4 22:26:33 1997
++++ man/quota.8	Sun May  4 22:27:24 1997
+@@ -11,9 +11,9 @@
+ .\" use of the code for commercial purposes or benefits by anyone
+ .\" without specific, additional permission by the owner of the code.
+ .SH NAME
+-quota \- report and optionally fix quota usage
++cyrquota \- report and optionally fix quota usage
+ .SH SYNOPSIS
+-.B quota
++.B cyrquota
+ [
+ .B \-f
+ ]
+@@ -21,12 +21,12 @@
+ .IR mailbox-prefix ...
+ ]
+ .SH DESCRIPTION
+-.I Quota
++.I Cyrquota
+ generates a report listing quota roots, giving their limits and usage.
+ If the
+ .I \-f
+ option is given, 
+-.I quota
++.I cyrquota
+ first fixes any inconsistencies in the quota subsystem, such as
+ mailboxes with the wrong quota root or quota roots with the wrong
+ quota usage reported.
+@@ -37,7 +37,7 @@
+ prefixes.
+ .PP
+ Running
+-.I quota
++.I cyrquota
+ with both the 
+ .I \-f
+ option and

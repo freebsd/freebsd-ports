@@ -1,0 +1,75 @@
+bin/cyradm
+bin/imtest
+cyrus/bin/pwcheck
+cyrus/bin/arbitron
+cyrus/bin/collectnews
+cyrus/bin/cyrquota
+cyrus/bin/deliver
+cyrus/bin/feedcyrus
+cyrus/bin/imapd
+cyrus/bin/pop3d
+cyrus/bin/reconstruct
+cyrus/bin/syncnews
+cyrus/bin/updateimsp
+etc/imapd.conf
+etc/rc.d/cyrus.sh
+include/cyrus/acl.h
+include/cyrus/assert.h
+include/cyrus/auth.h
+include/cyrus/bsearch.h
+include/cyrus/charset.h
+include/cyrus/glob.h
+include/cyrus/gmtoff.h
+include/cyrus/imclient.h
+include/cyrus/imparse.h
+include/cyrus/lock.h
+include/cyrus/map.h
+include/cyrus/mkgmtime.h
+include/cyrus/nonblock.h
+include/cyrus/parseaddr.h
+include/cyrus/prot.h
+include/cyrus/retry.h
+include/cyrus/sasl.h
+include/cyrus/sysexits.h
+include/cyrus/util.h
+include/cyrus/xmalloc.h
+lib/libcyrus.a
+man/man1/cyradm.1.gz
+man/man3/imclient.3.gz
+man/man5/imapd.conf.5.gz
+man/man8/arbitron.8.gz
+man/man8/collectnews.8.gz
+man/man8/cyrquota.8.gz
+man/man8/deliver.8.gz
+man/man8/imapd.8.gz
+man/man8/pop3d.8.gz
+man/man8/reconstruct.8.gz
+man/man8/rmnews.8.gz
+man/man8/syncnews.8.gz
+share/doc/cyrus/html/bugs.html
+share/doc/cyrus/html/changes.html
+share/doc/cyrus/html/htmlstrip.c
+share/doc/cyrus/html/index.html
+share/doc/cyrus/html/install.html
+share/doc/cyrus/html/overview.html
+share/doc/cyrus/html/readme.html
+share/doc/cyrus/html/unpack.html
+share/doc/cyrus/acl-extension
+share/doc/cyrus/bugs
+share/doc/cyrus/changes
+share/doc/cyrus/copyrights
+share/doc/cyrus/install
+share/doc/cyrus/overview
+share/doc/cyrus/quota-extension
+share/doc/cyrus/server-design
+@dirrm etc/imap/user
+@dirrm etc/imap/quota
+@dirrm etc/imap/proc
+@dirrm etc/imap/log
+@dirrm etc/imap/msg
+@dirrm etc/imap
+@dirrm include/cyrus
+@dirrm cyrus/bin
+@dirrm cyrus
+@dirrm share/doc/cyrus/html
+@dirrm share/doc/cyrus
