@@ -48,7 +48,9 @@ USE_OPENSSL=	RSA
 
 .include <bsd.port.pre.mk>
 
-HAS_CONFIGURE=	yes
+#
+# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
+#
 
 .if !defined(OPENSSLINC)
 OPENSSLINC=	${PREFIX}/ssl/include
@@ -59,20 +61,24 @@ CFLAGS+=	-I${OPENSSLINC}/openssl
 OPENSSLLIB=	${PREFIX}/ssl/lib
 .endif
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	\
+		--prefix=${PREFIX} \
+		--server-gid=nogroup \
+		--with-perl=${PERL} \
 		--with-layout=GNU \
-		--sysconfdir=${PREFIX}/etc/apache \
-		--includedir=${PREFIX}/include/apache \
-		--localstatedir=/var \
-		--datadir=${PREFIX}/www \
 		--suexec-docroot=${PREFIX}/www/data \
-		--proxycachedir=${PREFIX}/www/proxy \
-		--libexecdir=${PREFIX}/libexec/apache \
 		--without-confadjust \
 		--enable-shared=remain \
 		--enable-module=most \
 		--enable-module=auth_db \
-		--disable-module=auth_dbm
+		--disable-module=auth_dbm \
+		--sysconfdir=${PREFIX}/etc/apache \
+		--includedir=${PREFIX}/include/apache \
+		--localstatedir=/var \
+		--datadir=${PREFIX}/www \
+		--proxycachedir=${PREFIX}/www/proxy \
+		--libexecdir=${PREFIX}/libexec/apache
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
