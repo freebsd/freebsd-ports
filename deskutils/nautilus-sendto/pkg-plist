@@ -1,9 +1,9 @@
 bin/nautilus-sendto
 lib/bonobo/libnautilus-sendto-component.so
-lib/bonobo/servers/Nautilus_Sendto_Component.server
 lib/gaim/nautilus.so
 lib/nautilus-sendto/plugins/libevolution.so
 lib/nautilus-sendto/plugins/libgaim.so
+libdata/bonobo/servers/Nautilus_Sendto_Component.server
 share/gnome/nautilus-sendto/glade/nautilus-sendto-force.glade
 share/gnome/nautilus-sendto/glade/nautilus-sendto.glade
 @dirrm share/gnome/nautilus-sendto/glade
