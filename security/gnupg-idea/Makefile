@@ -31,11 +31,7 @@ CFLAGS+=	-Wall -Wcast-align -Wshadow -Wstrict-prototypes
 PLIST=		${WRKDIR}/.PLIST.more
 
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must set variable USA_RESIDENT to YES, if you are USA resident
-	@${ECHO_MSG} or to NO, if you aren\'t USA resident to build this package
-	@${FALSE}
+NO_PACKAGE=	You must set variable USA_RESIDENT to YES or NO
 
 .include <bsd.port.mk>
 
