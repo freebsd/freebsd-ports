@@ -33,41 +33,27 @@ PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,tls
 
 MASTER_SITE_QMAIL+= \
 	http://qmail.deliver3.com/%SUBDIR%/ \
-	http://qmail.valueclick.com/%SUBDIR%/ \
 	http://qmail.geto.net/%SUBDIR%/ \
-	http://qmail.silverservices.com/%SUBDIR%/ \
 	http://qmail.palomine.net/%SUBDIR%/ \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
 	http://qmail.mirrors.netnumina.com/%SUBDIR%/ \
-	http://qmail.prodigysolutions.com/%SUBDIR%/ \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.fidnet.com/%SUBDIR%/ \
 	http://qmail.mscnetworks.com/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/ \
 	http://qmail.teleglobe.net/%SUBDIR%/ \
-	http://www.pingpackets.com/mirrors/qmail/%SUBDIR%/ \
-	http://qmail.sgi.net/qmail/%SUBDIR%/ \
 	http://qmail.homegrownhost.net/%SUBDIR%/ \
 	http://qmail.webmast.com/%SUBDIR%/ \
 	http://qmail.xanthor.net/%SUBDIR%/ \
-	http://qmail.goof.com/%SUBDIR%/ \
-	http://qmail.phihost.com/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.planetmirror.com/%SUBDIR%/ \
 	http://www2.linuxforum.net/mirror/qmail/%SUBDIR%/ \
-	http://qmail.mirror.os.org.cn/%SUBDIR%/ \
-	http://infobase.ibase.com.hk/qmail/%SUBDIR%/ \
-	http://www.zentek-international.com/mirrors/qmail/%SUBDIR%/ \
 	http://qmail.404-not-found.net/%SUBDIR%/ \
 	http://qmail.gremlins.com.hk/%SUBDIR%/ \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
 	http://qmail.linuxphreakers.net/%SUBDIR%/ \
-	http://qmail.indosite.co.id/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
-	http://qmail.servercyber.com/%SUBDIR%/ \
-	http://qmail.morva.net/%SUBDIR%/ \
 	http://www9.jp.qmail.org/%SUBDIR%/ \
-	http://mirror.nucba.ac.jp/mirror/qmail/%SUBDIR%/ \
 	http://qmail.kita-q.com/www.qmail.org/%SUBDIR%/ \
 	http://qmailorg.data-hotel.net/%SUBDIR%/ \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
@@ -75,30 +61,23 @@ MASTER_SITE_QMAIL+= \
 	http://mirror.bofh.info/qmail/%SUBDIR%/ \
 	http://qmail-mirror.bugpond.net/%SUBDIR%/ \
 	http://qmail.soa.co.nz/%SUBDIR%/ \
-	http://qmail.imchost.com/%SUBDIR%/ \
 	http://d2.nctu.edu.tw/qmail/%SUBDIR%/ \
-	http://qmail.sga.net.th/%SUBDIR%/ \
 	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
 	http://qmail.ssi.bg/%SUBDIR%/ \
 	http://qmail.interbgc.com/%SUBDIR%/ \
-	http://qmail.ruk.cuni.cz/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
-	http://qmail.agarik.com/%SUBDIR%/ \
 	http://qmail.mirrors.fastnetxp.com/%SUBDIR%/ \
 	http://qmail.xinus.net/%SUBDIR%/ \
 	http://qmail.lightwerk.com/%SUBDIR%/ \
 	http://qmail.mirrors.Space.Net/%SUBDIR%/ \
 	http://qmail-mirror.hoermann-rawema.de/%SUBDIR%/ \
 	http://qmail.ebusiness4all.de/%SUBDIR%/ \
-	http://qmail.cti.gr/%SUBDIR%/ \
 	http://www.ntua.gr/qmail/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
 	http://qmail-mirror.naplopok.hu/%SUBDIR%/ \
 	http://qmail.hu/%SUBDIR%/ \
 	http://qmail.rhnet.is/%SUBDIR%/ \
-	http://www.ie.qmail.org/%SUBDIR%/ \
 	http://qmail.netsoc.ucd.ie/%SUBDIR%/ \
-	http://www.programmers.net/mirrors/qmail/%SUBDIR%/ \
 	http://complanet.ath.cx/qmail/%SUBDIR%/ \
 	http://ice.dammit.lt/qmail/%SUBDIR%/ \
 	http://qmail.mirrors.emu.lt/%SUBDIR%/ \
@@ -106,42 +85,30 @@ MASTER_SITE_QMAIL+= \
 	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
 	http://qmail.basefreak.nl/%SUBDIR%/ \
 	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
-	http://qmail.easyisp.org/%SUBDIR%/ \
 	http://qmail.obeer.com/%SUBDIR%/ \
-	http://qmail.segfault.pl/%SUBDIR%/ \
 	http://qmail.telenet.pt/%SUBDIR%/ \
 	http://qmail.konnekt.org/%SUBDIR%/ \
 	http://qmail.smux.net/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
-	http://qmail.totalnet.ro/%SUBDIR%/ \
 	http://qmail.ssc.nsu.ru/%SUBDIR%/ \
 	http://qmail.tps.sk/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
-	http://qmail.blrf.net/%SUBDIR%/ \
 	http://qmail-mirror.neptuno2000.com/%SUBDIR%/ \
 	http://qmail.imasd.elmundo.es/%SUBDIR%/ \
 	http://qmail.x42.com/%SUBDIR%/ \
 	http://qmail.netrogenic.com/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
 	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.enderunix.org/%SUBDIR%/ \
-	http://qmail.mrjesus.org/%SUBDIR%/ \
-	http://qmail.plig.org/%SUBDIR%/ \
 	http://qmail.humourengine.com/%SUBDIR%/ \
 	http://qmail.softflare.com/%SUBDIR%/ \
 	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
-	http://qmail.daemonbsd.com.ar/%SUBDIR%/ \
 	http://qmail.sst.com.br/%SUBDIR%/ \
 	http://qmail.usp.br/%SUBDIR%/ \
 	http://qmail.matrix.com.br/%SUBDIR%/ \
 	http://madhaus.utcs.utoronto.ca/qmail/%SUBDIR%/ \
 	http://qmail.freezer-burn.org/%SUBDIR%/ \
-	http://www.qmail.ca/%SUBDIR%/ \
-	http://qmail.fulltime.cl/%SUBDIR%/ \
 	http://qmail.unam.mx/%SUBDIR%/ \
 	http://qmail.ru.ac.za/%SUBDIR%/ \
-	http://qmail.ElectroCity.com/%SUBDIR%/ \
-	http://qmail.area.com/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 
 .if !defined(MAIN_QMAIL_PORT_DNS_PATCH_BARRIER) \
