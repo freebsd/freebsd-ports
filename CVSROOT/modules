@@ -2497,6 +2497,7 @@ gsl		ports/math/gsl
 gsm		ports/audio/gsm
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
+gspeakers	ports/audio/gspeakers
 gspoof		ports/net/gspoof
 gss		ports/security/gss
 gstopd		ports/sysutils/gstopd
