@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
-MAINTAINER=	mezz7@cox.net
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
 BUILD_DEPENDS=	${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2
