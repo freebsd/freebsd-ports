@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.0.r2
+PORTVERSION=	4.0.r3
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
