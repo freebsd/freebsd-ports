@@ -128,6 +128,12 @@ include/octave-%%OCTAVE_VERSION%%/octave/gripes.h
 include/octave-%%OCTAVE_VERSION%%/octave/help.h
 include/octave-%%OCTAVE_VERSION%%/octave/idx-vector.h
 include/octave-%%OCTAVE_VERSION%%/octave/input.h
+include/octave-%%OCTAVE_VERSION%%/octave/int16NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/int32NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/int64NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/int8NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/intNDArray.cc
+include/octave-%%OCTAVE_VERSION%%/octave/intNDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/kpse-xfns.h
 include/octave-%%OCTAVE_VERSION%%/octave/kpse.cc
 include/octave-%%OCTAVE_VERSION%%/octave/lex.h
@@ -170,6 +176,102 @@ include/octave-%%OCTAVE_VERSION%%/octave/mx-dm-cs.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-dm-m.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-dm-s.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ext.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i16nda-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i32nda-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i64nda-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-i8nda-ui8nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-inlines.cc
 include/octave-%%OCTAVE_VERSION%%/octave/mx-m-cdm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-m-cm.h
@@ -177,12 +279,132 @@ include/octave-%%OCTAVE_VERSION%%/octave/mx-m-cs.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-m-dm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-cnda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-cs.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-nda-ui8nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-op-defs.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-ops.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-cdm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-cm.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-cnda.h
 include/octave-%%OCTAVE_VERSION%%/octave/mx-s-dm.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-s-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui16nda-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui32nda-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-ui8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui64nda-ui8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8-ui64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i64nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i8.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-i8nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-s.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui16.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui16nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui32.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui32nda.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui64.h
+include/octave-%%OCTAVE_VERSION%%/octave/mx-ui8nda-ui64nda.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-alloc.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-cmplx.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-conf.h
@@ -193,6 +415,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/oct-getopt.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-gperf.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-group.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-hist.h
+include/octave-%%OCTAVE_VERSION%%/octave/oct-inttypes.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-iostrm.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-lvalue.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-map.h
@@ -204,6 +427,8 @@ include/octave-%%OCTAVE_VERSION%%/octave/oct-rand.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-rl-edit.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-rl-hist.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-shlib.h
+include/octave-%%OCTAVE_VERSION%%/octave/oct-sort.cc
+include/octave-%%OCTAVE_VERSION%%/octave/oct-sort.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-stdstrm.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-stream.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct-strstrm.h
@@ -212,6 +437,8 @@ include/octave-%%OCTAVE_VERSION%%/octave/oct-time.h
 include/octave-%%OCTAVE_VERSION%%/octave/oct.h
 include/octave-%%OCTAVE_VERSION%%/octave/octave.h
 include/octave-%%OCTAVE_VERSION%%/octave/ops.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-base-int.cc
+include/octave-%%OCTAVE_VERSION%%/octave/ov-base-int.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-base-mat.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-base-scalar.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-base.h
@@ -226,8 +453,15 @@ include/octave-%%OCTAVE_VERSION%%/octave/ov-cs-list.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-cx-mat.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-dld-fcn.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-fcn-handle.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-fcn-inline.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-fcn.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-file.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-int-traits.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-int16.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-int32.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-int64.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-int8.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-intx.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-list.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-mapper.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-range.h
@@ -236,7 +470,12 @@ include/octave-%%OCTAVE_VERSION%%/octave/ov-scalar.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-str-mat.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-streamoff.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-struct.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-type-conv.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-typeinfo.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-uint16.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-uint32.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-uint64.h
+include/octave-%%OCTAVE_VERSION%%/octave/ov-uint8.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-usr-fcn.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov-va-args.h
 include/octave-%%OCTAVE_VERSION%%/octave/ov.h
@@ -288,6 +527,10 @@ include/octave-%%OCTAVE_VERSION%%/octave/systime.h
 include/octave-%%OCTAVE_VERSION%%/octave/syswait.h
 include/octave-%%OCTAVE_VERSION%%/octave/token.h
 include/octave-%%OCTAVE_VERSION%%/octave/toplev.h
+include/octave-%%OCTAVE_VERSION%%/octave/uint16NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/uint32NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/uint64NDArray.h
+include/octave-%%OCTAVE_VERSION%%/octave/uint8NDArray.h
 include/octave-%%OCTAVE_VERSION%%/octave/unwind-prot.h
 include/octave-%%OCTAVE_VERSION%%/octave/utils.h
 include/octave-%%OCTAVE_VERSION%%/octave/variables.h
@@ -306,6 +549,7 @@ include/octave-%%OCTAVE_VERSION%%/octave/vx-s-ccv.h
 include/octave-%%OCTAVE_VERSION%%/octave/vx-s-crv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xdiv.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
+
 @unexec install-info --delete --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
 @unexec install-info --delete --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
 info/octave.info
@@ -355,6 +599,7 @@ libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/find.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fsolve.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/fsolve_options.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/gammainc.oct
+libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/gcd.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getgrent.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getgrgid.oct
 libexec/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/getgrnam.oct
@@ -570,6 +815,7 @@ share/octave/%%OCTAVE_VERSION%%/m/control/util/zgrownorm.m
 share/octave/%%OCTAVE_VERSION%%/m/control/util/zgscal.m
 share/octave/%%OCTAVE_VERSION%%/m/control/util/zgsgiv.m
 share/octave/%%OCTAVE_VERSION%%/m/control/util/zgshsr.m
+share/octave/%%OCTAVE_VERSION%%/m/deprecated/com2str.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_bool.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_complex.m
 share/octave/%%OCTAVE_VERSION%%/m/deprecated/is_global.m
@@ -595,7 +841,6 @@ share/octave/%%OCTAVE_VERSION%%/m/elfun/cot.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/coth.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/csc.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/csch.m
-share/octave/%%OCTAVE_VERSION%%/m/elfun/gcd.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/lcm.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/sec.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/sech.m
@@ -609,17 +854,23 @@ share/octave/%%OCTAVE_VERSION%%/m/finance/pv.m
 share/octave/%%OCTAVE_VERSION%%/m/finance/pvl.m
 share/octave/%%OCTAVE_VERSION%%/m/finance/rate.m
 share/octave/%%OCTAVE_VERSION%%/m/finance/vol.m
+share/octave/%%OCTAVE_VERSION%%/m/general/bitcmp.m
+share/octave/%%OCTAVE_VERSION%%/m/general/bitget.m
+share/octave/%%OCTAVE_VERSION%%/m/general/bitset.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cart2pol.m
 share/octave/%%OCTAVE_VERSION%%/m/general/cart2sph.m
+share/octave/%%OCTAVE_VERSION%%/m/general/circshift.m
 share/octave/%%OCTAVE_VERSION%%/m/general/columns.m
 share/octave/%%OCTAVE_VERSION%%/m/general/common_size.m
 share/octave/%%OCTAVE_VERSION%%/m/general/deal.m
 share/octave/%%OCTAVE_VERSION%%/m/general/diff.m
+share/octave/%%OCTAVE_VERSION%%/m/general/flipdim.m
 share/octave/%%OCTAVE_VERSION%%/m/general/fliplr.m
 share/octave/%%OCTAVE_VERSION%%/m/general/flipud.m
 share/octave/%%OCTAVE_VERSION%%/m/general/ind2sub.m
 share/octave/%%OCTAVE_VERSION%%/m/general/int2str.m
 share/octave/%%OCTAVE_VERSION%%/m/general/is_duplicate_entry.m
+share/octave/%%OCTAVE_VERSION%%/m/general/isa.m
 share/octave/%%OCTAVE_VERSION%%/m/general/isdefinite.m
 share/octave/%%OCTAVE_VERSION%%/m/general/isscalar.m
 share/octave/%%OCTAVE_VERSION%%/m/general/issquare.m
@@ -639,8 +890,10 @@ share/octave/%%OCTAVE_VERSION%%/m/general/randperm.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rem.m
 share/octave/%%OCTAVE_VERSION%%/m/general/repmat.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rot90.m
+share/octave/%%OCTAVE_VERSION%%/m/general/rotdim.m
 share/octave/%%OCTAVE_VERSION%%/m/general/rows.m
 share/octave/%%OCTAVE_VERSION%%/m/general/shift.m
+share/octave/%%OCTAVE_VERSION%%/m/general/shiftdim.m
 share/octave/%%OCTAVE_VERSION%%/m/general/sph2cart.m
 share/octave/%%OCTAVE_VERSION%%/m/general/strerror.m
 share/octave/%%OCTAVE_VERSION%%/m/general/sub2ind.m
@@ -694,12 +947,12 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/etime.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fileparts.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/flops.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/fullfile.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/is_leap_year.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/ispc.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/isunix.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/is_leap_year.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/list_primes.m
-share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/not.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/menu.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/not.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/pack.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/paren.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/path.m
@@ -991,7 +1244,6 @@ share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/z_test_2.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/base2dec.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/bin2dec.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/blanks.m
-share/octave/%%OCTAVE_VERSION%%/m/strings/com2str.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/deblank.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/dec2base.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/dec2bin.m
@@ -1017,13 +1269,15 @@ share/octave/%%OCTAVE_VERSION%%/m/time/ctime.m
 share/octave/%%OCTAVE_VERSION%%/m/time/date.m
 share/octave/ls-R
 share/octave/site/m/startup/octaverc
-@dirrm share/octave/site/api-v8/m
-@dirrm share/octave/site/api-v8
+@dirrm share/octave/site/api-v12/m
+@dirrm share/octave/site/api-v12
 @dirrm share/octave/site/m/startup
 @dirrm share/octave/site/m
 @dirrm share/octave/site
 @dirrm share/octave/%%OCTAVE_VERSION%%/site/m
 @dirrm share/octave/%%OCTAVE_VERSION%%/site
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/deprecated
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/general
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/time
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/strings
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/tests
@@ -1043,10 +1297,8 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/linear-algebra
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/io
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/image
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/general
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/finance
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/elfun
-@dirrm share/octave/%%OCTAVE_VERSION%%/m/deprecated
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control/util
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control/system
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control/obsolete
@@ -1059,8 +1311,8 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%
 @dirrm share/octave
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/octave/site/oct/api-v8/%%GNU_HOST%%
-@dirrm libexec/octave/site/oct/api-v8
+@dirrm libexec/octave/site/oct/api-v12/%%GNU_HOST%%
+@dirrm libexec/octave/site/oct/api-v12
 @dirrm libexec/octave/site/oct/%%GNU_HOST%%
 @dirrm libexec/octave/site/oct
 @dirrm libexec/octave/site/exec/%%GNU_HOST%%
