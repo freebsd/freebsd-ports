@@ -229,6 +229,7 @@
     SUBDIR += p5-XML-SAX-Writer
     SUBDIR += p5-XML-SAXDriver-Sablotron
     SUBDIR += p5-XML-Sablotron
+    SUBDIR += p5-XML-Schematron
     SUBDIR += p5-XML-Simple
     SUBDIR += p5-XML-SimpleObject
     SUBDIR += p5-XML-Stream
