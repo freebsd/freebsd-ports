@@ -1,0 +1,55 @@
+bin/emma
+share/gnome/apps/Applications/emma.desktop
+share/gnome/emma/date.py
+share/gnome/emma/emma.py
+share/gnome/emma/report_gnuplot.py
+share/gnome/emma/report_grace.py
+share/gnome/emma/standard.py
+share/gnome/help/emma/C/accounts.html
+share/gnome/help/emma/C/book1.html
+share/gnome/help/emma/C/c21.html
+share/gnome/help/emma/C/c26.html
+share/gnome/help/emma/C/c61.html
+share/gnome/help/emma/C/docbook.css
+share/gnome/help/emma/C/files.html
+share/gnome/help/emma/C/images/acc_axis_dlg.gif
+share/gnome/help/emma/C/images/accountdlg.gif
+share/gnome/help/emma/C/images/filedlg.gif
+share/gnome/help/emma/C/images/grp_axis_dlg.gif
+share/gnome/help/emma/C/images/newfile.gif
+share/gnome/help/emma/C/images/transactiondlg.gif
+share/gnome/help/emma/C/limits.html
+share/gnome/help/emma/C/ln14.html
+share/gnome/help/emma/C/reports.html
+share/gnome/help/emma/C/scheduled-transactions.html
+share/gnome/help/emma/C/topic.dat
+share/gnome/help/emma/C/transactions.html
+share/gnome/help/emma/C/x44.html
+share/gnome/help/emma/ja/accounts.html
+share/gnome/help/emma/ja/book1.html
+share/gnome/help/emma/ja/c21.html
+share/gnome/help/emma/ja/c26.html
+share/gnome/help/emma/ja/c58.html
+share/gnome/help/emma/ja/docbook.css
+share/gnome/help/emma/ja/files.html
+share/gnome/help/emma/ja/images/accountdlg.gif
+share/gnome/help/emma/ja/images/filedlg.gif
+share/gnome/help/emma/ja/images/newfile.gif
+share/gnome/help/emma/ja/images/transactiondlg.gif
+share/gnome/help/emma/ja/limits.html
+share/gnome/help/emma/ja/ln14.html
+share/gnome/help/emma/ja/scheduled-transactions.html
+share/gnome/help/emma/ja/topic.dat
+share/gnome/help/emma/ja/transactions.html
+share/gnome/help/emma/ja/x44.html
+share/locale/de/LC_MESSAGES/emma.mo
+share/locale/fr/LC_MESSAGES/emma.mo
+share/locale/ja/LC_MESSAGES/emma.mo
+share/locale/pl/LC_MESSAGES/emma.mo
+share/locale/sv/LC_MESSAGES/emma.mo
+@dirrm share/gnome/help/emma/ja/images
+@dirrm share/gnome/help/emma/ja
+@dirrm share/gnome/help/emma/C/images
+@dirrm share/gnome/help/emma/C
+@dirrm share/gnome/help/emma
+@dirrm share/gnome/emma

@@ -1,0 +1,10 @@
+--- ./src/misc.c	2000/11/07 11:24:41	1.1
++++ ./src/misc.c	2000/11/07 11:24:49
+@@ -2,7 +2,6 @@
+ 
+ #include <ctype.h>
+ #include <time.h>
+-#include <langinfo.h>
+ 
+ #include "data.h"
+ 

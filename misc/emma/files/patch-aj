@@ -1,0 +1,20 @@
+--- data/standard.py	2000/11/07 14:27:11	1.1
++++ data/standard.py	2000/11/07 14:27:48
+@@ -48,7 +48,7 @@
+    "Example : CurDay()");
+ 
+ A = NormalisedTime()
+-FirstDayOfMonth = time.mktime(A[0], A[1], 1, A[3], A[4], A[5], A[6], A[7], A[8]);
++FirstDayOfMonth = time.mktime((A[0], A[1], 1, A[3], A[4], A[5], A[6], A[7], A[8]));
+ 
+ def CurMonth():
+     return emma.date() >= FirstDayOfMonth
+@@ -59,7 +59,7 @@
+    "Example : CurMonth()");
+ 
+ A = NormalisedTime()
+-FirstDayOfYear = time.mktime(A[0], 1, 1, A[3], A[4], A[5], A[6], A[7], A[8]);
++FirstDayOfYear = time.mktime((A[0], 1, 1, A[3], A[4], A[5], A[6], A[7], A[8]));
+ 
+ def CurYear():
+     return emma.date() >= FirstDayOfYear

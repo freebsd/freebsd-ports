@@ -1,0 +1,19 @@
+--- ./src/prefs.c	2000/11/07 11:25:16	1.1
++++ ./src/prefs.c	2000/11/07 12:11:29
+@@ -3,7 +3,6 @@
+ #include <gnome.h>
+ 
+ #include <ctype.h>
+-#include <langinfo.h>
+ 
+ #include "interface.h"
+ #include "actions.h"
+@@ -116,7 +115,7 @@
+   gchar *path;
+   gchar *format;
+ 
+-  path = g_strdup_printf("/emma/Misc/DateFormat=%s", nl_langinfo(D_FMT));
++  path = g_strdup_printf("/emma/Misc/DateFormat=%s", "%D");
+   format = gnome_config_get_string(path);
+ 
+   strncpy(misc_date_fmt, format, MISC_DATE_FMT_SIZE-1);

@@ -1,0 +1,11 @@
+--- ./src/prefs_dlg.c	2000/11/07 12:12:14	1.1
++++ ./src/prefs_dlg.c	2000/11/07 12:12:23
+@@ -2,8 +2,6 @@
+ 
+ #include <gnome.h>
+ 
+-#include <langinfo.h>
+-
+ #include "limit_dlg.h"
+ #include "py_module.h"
+ #include "misc.h"
