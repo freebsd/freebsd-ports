@@ -18,6 +18,6 @@ PERL_CONFIGURE=	YES
 
 MAN1=		MsgFormat.1 XText.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Locale::PGettext.3
+MAN3=		Locale::PGetText.3
 
 .include <bsd.port.mk>
