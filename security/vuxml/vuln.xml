@@ -3824,4 +3824,36 @@ misc.c:
       <entry>2004-07-02</entry>
     </dates>
   </vuln>
+
+  <vuln vid="c5519420-cec2-11d8-8898-000d6111a684">
+    <topic>"Content-Type" XSS vulnerability affecting other webmail systems</topic>
+    <affects>
+      <package>
+        <name>openwebmail</name>
+        <range><le>2.32</le></range>
+      </package>
+      <package>
+        <name>ilohamail</name>
+        <range><lt>0.8.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Roman Medina-Heigl Hernandez did a survey which other webmail systems
+          where vulnerable to a bug he discovered in SquirrelMail. This advisory
+          summarizes the results.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.rs-labs.com/adv/RS-Labs-Advisory-2004-2.txt</url>
+      <url>http://www.freebsd.org/ports/portaudit/89a0de27-bf66-11d8-a252-02e0185c0b53.html</url>
+      <url>http://www.freebsd.org/ports/portaudit/911f1b19-bd20-11d8-84f9-000bdb1444a4.html</url>
+      <url>http://www.freebsd.org/ports/portaudit/c3e56efa-c42f-11d8-864c-02e0185c0b53.html</url>
+      <cvename>CAN-2004-0519</cvename>
+    </references>
+    <dates>
+      <discovery>2004-05-29</discovery>
+      <entry>2004-07-05</entry>
+    </dates>
+  </vuln>
 </vuxml>
