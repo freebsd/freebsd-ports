@@ -1,0 +1,135 @@
+--- ../dist/Makefile.in.orig	Sat Nov 10 01:48:45 2001
++++ ../dist/Makefile.in	Wed Dec  5 13:38:23 2001
+@@ -11,7 +11,7 @@
+ bindir=	@bindir@
+ includedir=@includedir@
+ libdir=	@libdir@
+-docdir=	$(prefix)/docs
++docdir=	$(prefix)/share/doc/db4
+ 
+ dmode=	755
+ emode=	555
+@@ -45,6 +45,7 @@
+ SOLINK=		@MAKEFILE_SOLINK@
+ SOFLAGS=	@SOFLAGS@
+ SOMAJOR=	@DB_VERSION_MAJOR@
++SOMINOR=	@DB_VERSION_MINOR@
+ SOVERSION=	@DB_VERSION_MAJOR@.@DB_VERSION_MINOR@
+ 
+ ##################################################
+@@ -60,13 +61,13 @@
+ LIBS=		@LIBS@
+ LIBSO_LIBS=	@LIBSO_LIBS@
+ 
+-libdb=		libdb.a
+-libso_base=	libdb
+-libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
+-libso_static=	$(libso_base)-$(SOVERSION).a
+-libso_target=	$(libso_base)-$(SOVERSION).la
++libdb=		libdb4.a
++libso_base=	libdb4
++libso=		$(libso_base).@SOSUFFIX@
++libso_static=	$(libso_base).a
++libso_target=	$(libso_base).la
+ libso_default=	$(libso_base).@SOSUFFIX@
+-libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
++libso_major=	$(libso_base).@SOSUFFIX@.$(SOMINOR)
+ 
+ ##################################################
+ # C++ API.
+@@ -79,13 +80,13 @@
+ XSOLINK=	@MAKEFILE_XSOLINK@
+ LIBXSO_LIBS=	@LIBXSO_LIBS@
+ 
+-libcxx=		libdb_cxx.a
+-libxso_base=	libdb_cxx
+-libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
+-libxso_static=	$(libxso_base)-$(SOVERSION).a
+-libxso_target=	$(libxso_base)-$(SOVERSION).la
++libcxx=		libdb4_cxx.a
++libxso_base=	libdb4_cxx
++libxso=		$(libxso_base).@SOSUFFIX@
++libxso_static=	$(libxso_base).a
++libxso_target=	$(libxso_base).la
+ libxso_default=	$(libxso_base).@SOSUFFIX@
+-libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
++libxso_major=	$(libxso_base).@SOSUFFIX@.$(SOMINOR)
+ 
+ ##################################################
+ # Java API.
+@@ -235,8 +236,8 @@
+ 	db_server_proc@o@ db_server_svc@o@ db_server_util@o@ gen_db_server@o@
+ 
+ UTIL_PROGS=\
+-	@ADDITIONAL_PROGS@ db_archive db_checkpoint db_deadlock \
+-	db_dump db_load db_printlog db_recover db_stat db_upgrade db_verify
++	@ADDITIONAL_PROGS@ db4_archive db4_checkpoint db4_deadlock \
++	db4_dump db4_load db4_printlog db4_recover db4_stat db4_upgrade db4_verify
+ 
+ ##################################################
+ # List of files installed into the library directory.
+@@ -330,53 +331,53 @@
+ 	    $(RPC_SRV_OBJS) util_log@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
++db4_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_archive@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db4_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db4_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_dump: db_dump@o@ util_sig@o@ $(DEF_LIB)
++db4_dump: db_dump@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_dump@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_dump185: db_dump185@o@ @LIBOBJS@
++db4_dump185: db_dump185@o@ @LIBOBJS@
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_dump185@o@ @LIBOBJS@ $(DB185LIB)
+ 	$(POSTLINK) $@
+ 
+-db_load: db_load@o@ util_sig@o@ $(DEF_LIB)
++db4_load: db_load@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_load@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_printlog: db_printlog@o@ util_sig@o@ $(DEF_LIB)
++db4_printlog: db_printlog@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_printlog@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
++db4_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_recover@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_stat: db_stat@o@ util_sig@o@ $(DEF_LIB)
++db4_stat: db_stat@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_stat@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
++db4_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_upgrade@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
+ 
+-db_verify: db_verify@o@ util_sig@o@ $(DEF_LIB)
++db4_verify: db_verify@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) \
+ 	    db_verify@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
+ 	$(POSTLINK) $@
