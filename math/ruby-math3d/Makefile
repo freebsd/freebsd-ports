@@ -15,12 +15,13 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library for mathematics for 3D graphics
 
-BROKEN=		Does not compile
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
+
+pre-patch:
+	cd ${WRKSRC}; ${RUBY} -i -pe 'sub(/\r/, "")' *.[ch]
 
 post-install:
 .if !defined(NOPORTDOCS)
