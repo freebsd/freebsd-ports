@@ -15,15 +15,12 @@ MASTER_SITE_SUBDIR=	freedroid
 MAINTAINER=	benlutz@datacomm.ch
 COMMENT=	Freedroid is a clone of the classic game "Paradroid"
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
-		SDL_image:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer:${PORTSDIR}/audio/sdl_mixer \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_XLIB=	yes
-USE_SDL=	yes
+USE_SDL=	mixer image sdl
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

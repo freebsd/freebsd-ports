@@ -12,10 +12,8 @@ MASTER_SITES=	http://www.contrib.andrew.cmu.edu/~tmartin/senken/download/
 MAINTAINER=	tmartin@andrew.cmu.edu
 COMMENT=	A city simulation game
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
 GNU_CONFIGURE=	yes
-USE_SDL=	yes
+USE_SDL=	image sdl
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

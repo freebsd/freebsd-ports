@@ -45,8 +45,7 @@ CONFIGURE_ARGS+=	--disable-gtk
 .if defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--disable-sdl
 .else
-LIB_DEPENDS+=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-USE_SDL=	yes
+USE_SDL=	image sdl
 .endif
 
 post-install:

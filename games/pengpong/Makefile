@@ -14,12 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A cross-platform pong game written in SDL
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	image sdl
 NO_WRKSUBDIR=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 USE_PERL5_BUILD=yes
 
 DATAFILES=	24P_Copperplate_Blue.png ball.tga logo.jpg \
