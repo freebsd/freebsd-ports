@@ -8,8 +8,8 @@
 PORTNAME=	exim-doc-${DOCFORMAT}
 PORTVERSION=	4.10
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
-		http://www.exim.org/ftp/exim3/ \
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
+		http://www.exim.org/ftp/exim4/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
 DISTNAME=	exim-${DOCFORMAT}-${PORTVERSION}
 
