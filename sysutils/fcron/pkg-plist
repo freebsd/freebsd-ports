@@ -1,7 +1,11 @@
 bin/fcrontab
 sbin/fcron
-etc/fcron.allow
-etc/fcron.deny
+@unexec if cmp -s %D/etc/fcron.allow %D/etc/fcron.allow.dist; then rm -f %D/etc/fcron.allow; fi
+etc/fcron.allow.dist
+@exec [ -f %B/fcron.allow ] || cp %B/%f %B/fcron.allow
+@unexec if cmp -s %D/etc/fcron.deny %D/etc/fcron.deny.dist; then rm -f %D/etc/fcron.deny; fi
+etc/fcron.deny.dist
+@exec [ -f %B/fcron.deny ] || cp %B/%f %B/fcron.deny
 etc/rc.d/fcron.sh
 %%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/CHANGES
 %%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/LICENSE
