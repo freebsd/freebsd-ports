@@ -7352,6 +7352,7 @@ postgresql-libpqxx	ports/databases/postgresql-libpqxx
 postgresql-odbc	ports/databases/postgresql-odbc
 postgresql-plruby	ports/databases/postgresql-plruby
 postgresql-pltcl	ports/databases/postgresql-pltcl
+postgresql-relay	ports/databases/postgresql-relay
 postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
 postgresql72	ports/databases/postgresql72
