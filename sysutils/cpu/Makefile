@@ -16,6 +16,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Change Password Utility for LDAP
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_OPENLDAP=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/cpu --with-ldap=${LOCALBASE}
