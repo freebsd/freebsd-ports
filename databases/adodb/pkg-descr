@@ -1,0 +1,21 @@
+PHP's database access functions are not standardized.
+Every database extension uses a different and incompatibile API.
+This creates a need for a database class library to hide the differences
+between the different databases (encapsulate the differences) so we can
+easily switch databases.
+
+ADODB stands for Active Data Objects Data Base.
+
+ADODB currently supports: MySQL, PostgreSQL, Interbase, Oracle, MS SQL 7,
+Foxpro, Access, ADO, Sybase and generic ODBC.
+The Sybase and PostgreSQL drivers are community contributions.
+The developers of ABODB hope more people will contribute drivers to support
+more databases.
+
+Feature requests and bug reports can be emailed to jlim@natsoft.com.my or
+posted to http://php.weblogs.com/discuss/msgReader$96.
+
+WWW: http://php.weblogs.com/ADODB
+
+--
+Andre Goeree <abgoeree@uwnet.nl>

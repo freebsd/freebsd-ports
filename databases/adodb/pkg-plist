@@ -1,0 +1,36 @@
+share/doc/apache/php/adodb/adodb-access.inc.php
+share/doc/apache/php/adodb/adodb-ado.inc.php
+share/doc/apache/php/adodb/adodb-ado_access.inc.php
+share/doc/apache/php/adodb/adodb-ado_mssql.inc.php
+share/doc/apache/php/adodb/adodb-csv.inc.php
+share/doc/apache/php/adodb/adodb-db2.inc.php
+share/doc/apache/php/adodb/adodb-fbsql.inc.php
+share/doc/apache/php/adodb/adodb-ibase.inc.php
+share/doc/apache/php/adodb/adodb-mssql.inc.php
+share/doc/apache/php/adodb/adodb-mysql.inc.php
+share/doc/apache/php/adodb/adodb-mysqlt.inc.php
+share/doc/apache/php/adodb/adodb-oci8.inc.php
+share/doc/apache/php/adodb/adodb-odbc.inc.php
+share/doc/apache/php/adodb/adodb-odbc_mssql.inc.php
+share/doc/apache/php/adodb/adodb-oracle.inc.php
+share/doc/apache/php/adodb/adodb-postgres.inc.php
+share/doc/apache/php/adodb/adodb-postgres7.inc.php
+share/doc/apache/php/adodb/adodb-session.php
+share/doc/apache/php/adodb/adodb-sybase.inc.php
+share/doc/apache/php/adodb/adodb-vfp.inc.php
+share/doc/apache/php/adodb/adodb.inc.php
+share/doc/apache/php/adodb/benchmark.php
+share/doc/apache/php/adodb/client.php
+share/doc/apache/php/adodb/license.txt
+share/doc/apache/php/adodb/readme.htm
+share/doc/apache/php/adodb/readme.txt
+share/doc/apache/php/adodb/server.php
+share/doc/apache/php/adodb/test.php
+share/doc/apache/php/adodb/test2.php
+share/doc/apache/php/adodb/test3.php
+share/doc/apache/php/adodb/testdatabases.inc.php
+share/doc/apache/php/adodb/tohtml.inc.php
+share/doc/apache/php/adodb/tute.htm
+share/doc/apache/php/adodb/vssver.scc
+@dirrm share/doc/apache/php/adodb
+@dirrm share/doc/apache/php
