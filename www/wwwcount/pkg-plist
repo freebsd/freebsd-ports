@@ -10,6 +10,7 @@ lib/Counter/digits/D/lenna.gif
 lib/Counter/digits/E/strip.gif
 lib/Counter/digits/mkstrip.sh
 bin/mkstrip
+bin/extdgts
 man/man1/mkstrip.1.gz
 @exec touch /var/log/Counter.log
 @exec chown nobody.nogroup /var/log/Counter.log

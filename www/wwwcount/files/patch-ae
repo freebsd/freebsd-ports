@@ -1,5 +1,5 @@
-*** Count-install.orig	Tue Oct 21 02:08:46 1997
---- Count-install	Thu Nov  6 00:55:09 1997
+*** Count-install.orig	Mon Nov 24 04:49:51 1997
+--- Count-install	Sat Nov 29 18:33:38 1997
 ***************
 *** 193,199 ****
   
@@ -130,7 +130,7 @@
   
   EOM
   echo "installing Count.cgi->$CGIBIN_DIR"
-! $INSTALL_PROG -c -m 755 ./Count.cgi $CGIBIN_DIR/Count.cgi
+! $INSTALL_PROG -c -m 755 $Binary $CGIBIN_DIR/Count.cgi
   echo "installing $CONFIG_FILE->$CONFIG_DIR"
   $INSTALL_PROG -c $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
   echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"
@@ -148,7 +148,7 @@
   
   EOM
   echo "installing Count.cgi->$CGIBIN_DIR"
-! $INSTALL_PROG -s -c -m 755 ./Count.cgi $CGIBIN_DIR/Count.cgi
+! $INSTALL_PROG -s -c -m 755 $Binary $CGIBIN_DIR/Count.cgi
   echo "installing $CONFIG_FILE->$CONFIG_DIR"
   $INSTALL_PROG -c $CONFIG_FILE $CONFIG_DIR/$CONFIG_FILE
   echo "installing sample datafile $SAMPLE_DAT->$DATA_DIR"

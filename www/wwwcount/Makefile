@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1996/11/18 11:42:25 asami Exp $
+# $Id: Makefile,v 1.9 1997/11/06 00:12:09 ache Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -25,13 +25,12 @@ pre-configure:
 	cd ${WRKSRC}; yes "" | PREFIX=${PREFIX} ./Count-config
 
 post-build:
-	cd ${WRKSRC}/utils; ${MAKE}
 	cd ${WRKSRC}; ./Gen-conf
 
 do-install:
 	cd ${WRKSRC}; yes "" | ./Count-install
-	cd ${WRKSRC}/utils; \
-		${INSTALL_PROGRAM} mkstrip ${PREFIX}/bin; \
+	cd ${WRKSRC}/utils/mkstrip; \
+		${INSTALL_PROGRAM} extdgts mkstrip ${PREFIX}/bin; \
 		${INSTALL_MAN} mkstrip.1 ${PREFIX}/man/man1; \
 		${INSTALL_SCRIPT} mkstrip.sh ${PREFIX}/lib/Counter/digits
 
