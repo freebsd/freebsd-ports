@@ -1,0 +1,112 @@
+bin/jext
+share/doc/java/jext/Copying.txt
+share/doc/java/jext/History.txt
+share/doc/java/jext/Jext-fr.txt
+share/doc/java/jext/Scripts.txt
+share/doc/java/jext/index.html
+share/doc/java/jext/jext-console.html
+share/doc/java/jext/jext-editor.html
+share/doc/java/jext/jext-menus-edit.html
+share/doc/java/jext/jext-menus-file.html
+share/doc/java/jext/jext-menus-jext.html
+share/doc/java/jext/jext-menus-plugins.html
+share/doc/java/jext/jext-menus-search.html
+share/doc/java/jext/jext-menus.html
+share/doc/java/jext/jext.gif
+share/doc/java/jext/source/bin/bin.txt
+share/doc/java/jext/source/dtd/xtiny-doc-page.dtd
+share/doc/java/jext/source/dtd/xtiny-doc.dtd
+share/doc/java/jext/source/gaia-batch
+share/doc/java/jext/source/gaia.bat
+share/doc/java/jext/source/xml/index.xml
+share/doc/java/jext/source/xml/jext-console.xml
+share/doc/java/jext/source/xml/jext-editor.xml
+share/doc/java/jext/source/xml/jext-menus-edit.xml
+share/doc/java/jext/source/xml/jext-menus-file.xml
+share/doc/java/jext/source/xml/jext-menus-jext.xml
+share/doc/java/jext/source/xml/jext-menus-plugins.xml
+share/doc/java/jext/source/xml/jext-menus-search.xml
+share/doc/java/jext/source/xml/jext-menus.xml
+share/doc/java/jext/source/xsl/xtiny-doc-page.xsl
+share/doc/java/jext/source/xsl/xtiny-doc.xsl
+share/doc/java/jext/stylesheet.css
+share/java/jext/icons/jext.ico
+share/java/jext/icons/jext.xpm
+share/java/jext/jext.jar
+share/java/jext/plugins/DnD.jar
+share/java/jext/plugins/DnD/DnD.props.xml
+share/java/jext/plugins/DnD/DnDHandler.java
+share/java/jext/plugins/DnD/DnDPlugin.java
+share/java/jext/plugins/FastFind.jar
+share/java/jext/plugins/FastFind/FastFind.java
+share/java/jext/plugins/FastFind/FastFind.props.xml
+share/java/jext/plugins/FastFind/FastFindOptions.java
+share/java/jext/plugins/FastFind/FastFindPlugin.java
+share/java/jext/plugins/FastSyntax.jar
+share/java/jext/plugins/FastSyntax/FastSyntax.java
+share/java/jext/plugins/FastSyntax/FastSyntax.props.xml
+share/java/jext/plugins/FastSyntax/FastSyntaxOptions.java
+share/java/jext/plugins/FastSyntax/FastSyntaxPlugin.java
+share/java/jext/plugins/HTML.jar
+share/java/jext/plugins/HTML/HTML.props.xml
+share/java/jext/plugins/HTML/HTMLIndenter.java
+share/java/jext/plugins/HTML/HTMLPlugin.java
+share/java/jext/plugins/HTML/IndenterOptionPane.java
+share/java/jext/plugins/HTML/NextTag.java
+share/java/jext/plugins/HTML/PreviousTag.java
+share/java/jext/plugins/HTML/ToAccents.java
+share/java/jext/plugins/HTML/ToEntities.java
+share/java/jext/plugins/HyperTyper.jar
+share/java/jext/plugins/HyperTyper/HyperTyper.props.xml
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperAction.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperHotkey.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperMapping.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperMappingGrid.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperObjectManager.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperOption.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperPlugin.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperSequenceList.java
+share/java/jext/plugins/HyperTyper/hyperTyper/HyperTyperWindowGUI.java
+share/java/jext/plugins/HyperTyper/hyperTyper/Sequence.java
+share/java/jext/plugins/HyperTyper/hyperTyper/SequenceChangedEvent.java
+share/java/jext/plugins/HyperTyper/hyperTyper/SequenceChangedListener.java
+share/java/jext/plugins/Java.jar
+share/java/jext/plugins/Java/Beautifier.java
+share/java/jext/plugins/Java/ClassBrowser.java
+share/java/jext/plugins/Java/ClassBrowserGUI.java
+share/java/jext/plugins/Java/HTMLViewer.java
+share/java/jext/plugins/Java/JSBeautifier.java
+share/java/jext/plugins/Java/JSFormatter.java
+share/java/jext/plugins/Java/JSLineBreaker.java
+share/java/jext/plugins/Java/Java.props.xml
+share/java/jext/plugins/Java/JavaPlugin.java
+share/java/jext/plugins/Java/MethodsSeeker.java
+share/java/jext/plugins/Java/Seeker.java
+share/java/jext/plugins/TextMode.jar
+share/java/jext/plugins/TextMode/Text.props.xml
+share/java/jext/plugins/TextMode/TextMode.java
+share/java/jext/plugins/TextMode/TextModePlugin.java
+share/java/jext/plugins/TextMode/syntax/TextTokenMarker.java
+share/java/jext/scripts/insert_date_at_anchor.jext-script
+share/java/jext/scripts/os.jext-script
+share/java/jext/xtools/xinsert.dtd
+@dirrm share/doc/java/jext/source/bin
+@dirrm share/doc/java/jext/source/dtd
+@dirrm share/doc/java/jext/source/xml
+@dirrm share/doc/java/jext/source/xsl
+@dirrm share/doc/java/jext/source
+@dirrm share/doc/java/jext
+@dirrm share/java/jext/icons
+@dirrm share/java/jext/plugins/DnD
+@dirrm share/java/jext/plugins/FastFind
+@dirrm share/java/jext/plugins/FastSyntax
+@dirrm share/java/jext/plugins/HTML
+@dirrm share/java/jext/plugins/HyperTyper/hyperTyper
+@dirrm share/java/jext/plugins/HyperTyper
+@dirrm share/java/jext/plugins/Java
+@dirrm share/java/jext/plugins/TextMode/syntax
+@dirrm share/java/jext/plugins/TextMode
+@dirrm share/java/jext/plugins
+@dirrm share/java/jext/scripts
+@dirrm share/java/jext/xtools
+@dirrm share/java/jext
