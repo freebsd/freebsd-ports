@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String/LRC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String/LRC.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String/bench.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/LRC/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/LRC/LRC.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/LRC/LRC.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/LRC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String
