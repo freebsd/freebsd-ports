@@ -12,6 +12,7 @@ MASTER_SITES=		http://dustman.net/andy/python/HyperText/1.0.1/
 PKGNAMEPREFIX=		py-
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Lightweight HTML/XHTML generator for Python
 
 USE_PYTHON=		yes
 WRKSRC=			${WRKDIR}/HyperText

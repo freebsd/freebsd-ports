@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= whistlerk
 DISTNAME=	whistlerk-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GTK theme engine inspired by the Windows Whistler
 
 WRKSRC=		${WRKDIR}/gtk-theme-WhistlerK
 

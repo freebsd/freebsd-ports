@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 

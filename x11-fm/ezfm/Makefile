@@ -13,6 +13,7 @@ DISTNAME=	EZFM-0.4-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	EZWGL-based file manager for X Window System
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		EZ.1:${PORTSDIR}/graphics/EZWGL

@@ -8,6 +8,7 @@
 PORTNAME=	it-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Italian dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

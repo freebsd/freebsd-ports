@@ -13,6 +13,7 @@ DISTNAME=	t3d
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Clock using flying balls to display the time
 
 EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc

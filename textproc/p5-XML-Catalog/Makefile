@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Resolve public identifiers and remap system identifiers
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/${PERL_VER}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \

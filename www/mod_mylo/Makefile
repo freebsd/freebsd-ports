@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.pvv.org/~oyving/code/mod_mylo/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Apache module to make Apache log to MySQL
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

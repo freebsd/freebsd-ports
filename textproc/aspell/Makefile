@@ -16,6 +16,7 @@ DISTFILES=	aspell-0.50.3.tar.gz	# needed for slave ports / options
 EXTRACT_ONLY=	aspell-0.50.3.tar.gz
 
 MAINTAINER?=	thierry@pompo.net
+COMMENT?=	Spelling checker with better suggestion logic than ispell
 
 .if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
@@ -34,7 +35,6 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/aspell-${PORTVERSION}	# needed for slave ports / options
 DOCSDIR=	${PREFIX}/share/doc/aspell
 DATADIR=	${PREFIX}/share/aspell
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\

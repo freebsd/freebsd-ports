@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://kouli.iki.fi/~vlaurika/tre/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= gtkbe
 DISTNAME=	gtkbe-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	BeOS look-alike GTK+ theme engine
 
 WRKSRC=		${WRKDIR}/GTKBeEngine
 

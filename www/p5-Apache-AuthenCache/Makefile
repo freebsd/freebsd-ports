@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module that implements authentication caching
 
 BUILD_DEPENDS=	${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${SITE_PERL}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache \

@@ -35,6 +35,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
 APACHE_VERSION=		1.3.27
 APACHE_SSL_VERSION=	1.48

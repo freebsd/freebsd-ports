@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/4.8/tar/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	RedHat's database-enabled e-commerce server
 
 BUILD_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 

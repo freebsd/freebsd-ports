@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.boutell.com/cgic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ANSI C library for CGI programming
 
 MAKE_ENV=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 MAKEFILE=	${FILESDIR}/Makefile.lib

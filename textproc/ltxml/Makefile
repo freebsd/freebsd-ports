@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XML Toolkit
 
 CONFIGURE_WRKSRC=	${WRKSRC}/XML
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}

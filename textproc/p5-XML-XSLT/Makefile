@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XML::XSLT - A perl module for processing XSLT
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \

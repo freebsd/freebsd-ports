@@ -8,6 +8,7 @@
 PORTNAME=	ro-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Romanian dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	utilities
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X utility to translate rgb values into X color names
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A web site vulnerability scanner
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple X11 library
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

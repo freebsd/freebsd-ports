@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	colorstep
 DISTNAME=	${PORTNAME}-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A theme engine based on GtkStep and Step-pastel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
 

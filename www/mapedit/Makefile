@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.boutell.com/ftp-materials/boutell/mapedit/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A WWW authoring tool to create clickable maps
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 

@@ -13,6 +13,7 @@ DISTNAME=	w3c-${PKGNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The W3C Reference Library
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

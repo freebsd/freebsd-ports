@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.geocities.com/tuorfa/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command-line converter from RTF (Rich Text) to HTML
 
 USE_REINPLACE=	yes
 

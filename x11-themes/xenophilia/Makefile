@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= xenophilia
 DISTNAME=	xenophilia-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Xenophilia theme module to make GTK+ look nicer
 
 WRKSRC=		${WRKDIR}/Xenophilia-0.7
 

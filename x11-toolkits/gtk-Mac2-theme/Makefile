@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= mac2
 DISTNAME=	mac2-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK+ engine theme based on the look of MacOS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

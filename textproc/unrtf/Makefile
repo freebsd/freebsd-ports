@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
 WRKSRC=		${WRKDIR}/unrtf
 

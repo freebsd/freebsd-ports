@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR= xenostep
 DISTNAME=	${PORTNAME}-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GTK+ theme engine based on the Xenophilia and Interface engines
 
 WRKSRC=		${WRKDIR}/XenoStep
 

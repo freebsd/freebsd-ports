@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcl8_0
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@Freebsd.ORG
+COMMENT=	Graphical toolkit for TCL
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK+ bindings for Evas canvas library
 
 LIB_DEPENDS=	evas.6:${PORTSDIR}/graphics/evas
 

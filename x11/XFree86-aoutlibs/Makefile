@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XFree86 a.out compatibility libraries
 
 ONLY_FOR_ARCHS=	i386
 

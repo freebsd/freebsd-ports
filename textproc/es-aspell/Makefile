@@ -8,6 +8,7 @@
 PORTNAME=	es-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Spanish dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

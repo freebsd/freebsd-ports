@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	markp
 DISTNAME=	${PORTNAME}	
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Display all (ok, most of) the colors in the universe
 
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes

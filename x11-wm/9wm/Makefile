@@ -12,6 +12,7 @@ MASTER_SITES=	http://sources.isc.org/X/window-managers/ \
 		ftp://ftp.mathcs.emory.edu/pub/arnold/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An 8 1/2-like Window Manager for X
 
 USE_IMAKE=	yes
 MAN1=		9wm.1

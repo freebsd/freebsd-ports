@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	An anti-aliased font support for gtk+
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

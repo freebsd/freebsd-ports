@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.mnot.net/xpath2rss/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HTML to RSS converter
 
 RUN_DEPENDS=	${PYXML}
 

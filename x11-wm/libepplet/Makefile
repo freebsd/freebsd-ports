@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for building enlightenment dock applications
 
 WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
 

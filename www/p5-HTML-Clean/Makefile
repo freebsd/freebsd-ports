@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Cleans up HTML code for web browsers, not humans
 
 PERL_CONFIGURE=	yes
 

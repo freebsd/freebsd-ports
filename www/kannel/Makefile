@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	WAP / SMS Gateway
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

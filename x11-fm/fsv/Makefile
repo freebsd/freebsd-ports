@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fsv
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	3D filesystem visualizer
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 

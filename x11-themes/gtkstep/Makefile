@@ -11,6 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ulli.on.openave.net/gtkstep/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A theme module to make GTK+ look like the NeXTSTEP(tm) interface
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

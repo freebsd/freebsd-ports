@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache::Session extension that store session in shared memory
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IPC/Cache.pm:${PORTSDIR}/devel/p5-IPC-Cache \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session

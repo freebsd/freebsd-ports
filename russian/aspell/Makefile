@@ -9,6 +9,7 @@ PORTNAME=	aspell
 CATEGORIES=	russian
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Russian dictionary
 
 MASTERDIR=	${.CURDIR}/../../textproc/aspell
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool made for Blackbox that displays the date in a decorated window
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Collection of icons related to the FreeBSD project
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes

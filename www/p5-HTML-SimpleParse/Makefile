@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HTML::SimpleParse - a bare-bones HTML parser
 
 PERL_CONFIGURE=	yes
 

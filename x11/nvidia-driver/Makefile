@@ -12,6 +12,7 @@ MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-3203/
 DISTNAME=	NVIDIA_FreeBSD-${PORTVERSION:S/0./0-/}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel

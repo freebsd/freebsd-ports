@@ -12,6 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.cs.uchicago.edu/~ahiorean/ahwm/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X11 window manager
 
 USE_X_PREFIX=	yes
 

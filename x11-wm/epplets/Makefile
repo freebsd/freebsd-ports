@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A collection of Enlightenment dock applications
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
 		epplet.1:${PORTSDIR}/x11-wm/libepplet

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache module for rejecting and logging chunked requests
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

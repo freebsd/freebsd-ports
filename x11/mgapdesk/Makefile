@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-1_00-7beta_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Matrox Powerdesk for *nix
 
 BUILD_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	DocBook XML JRefEntry DTD
 
 RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/catalog:${PORTSDIR}/textproc/docbook-xml
 

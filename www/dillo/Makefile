@@ -12,6 +12,7 @@ MASTER_SITES=	http://dillo.auriga.wearlab.de/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A fast, small graphical Web browser built upon GTK+
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

@@ -8,6 +8,7 @@
 PORTNAME=	cy-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Welsh dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

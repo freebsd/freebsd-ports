@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/converters/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	HTML to LaTeX to PDF Converter
 
 LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
 

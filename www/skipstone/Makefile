@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.muhri.net/skipstone/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Web browser that uses the mozilla-embedded renderer
 
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded

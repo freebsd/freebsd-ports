@@ -12,6 +12,7 @@ MASTER_SITES=	http://hpwww.ec-lyon.fr/~vincent/apache/
 DISTFILES=	mod_put.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Apache module that provides PUT and DELETE methods
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

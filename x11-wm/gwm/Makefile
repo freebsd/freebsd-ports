@@ -12,6 +12,7 @@ MASTER_SITES=	http://koala.ilog.fr/ftp/pub/gwm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generic Window Manager
 
 USE_IMAKE=	yes
 USE_XPM=	yes

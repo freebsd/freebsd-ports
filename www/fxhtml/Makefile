@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.flevel.co.uk/pub/fxhtml/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Server side extension to HTML eliminating the need for CGI scripts
 
 pre-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin ${PREFIX}/www/data

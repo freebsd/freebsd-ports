@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An apache module that embeds a copy of the sed(1) command
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

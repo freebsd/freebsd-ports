@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
 DISTNAME=	Mosaic-src-2.7b5
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A World Wide Web browser
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

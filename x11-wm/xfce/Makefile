@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	CDE like desktop with GTK
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-11.00
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Blast blows holes through windows
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.chez.com/godefroy/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes
 USE_GNOMENG=	yes

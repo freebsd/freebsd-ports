@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A text web browser, very ambitious, in active development
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

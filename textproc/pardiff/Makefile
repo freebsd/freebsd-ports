@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pardiff
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Parallelizing diff Filter, converts diff output to paralleled format
 
 GNU_CONFIGURE=	yes
 

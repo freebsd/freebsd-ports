@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.librelogiciel.com/software/jaxml/tarballs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Python module to generate XML easily
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

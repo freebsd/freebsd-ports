@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tk
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tk::Autoscroll - space invaders-like scrolling
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS=	${BUILD_DEPENDS}

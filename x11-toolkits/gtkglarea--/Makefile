@@ -12,6 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ece.ucdavis.edu/~kenelson/gtk-glarea/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GtkGLArea-- is a wrapper for the GtkGLArea widget
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \

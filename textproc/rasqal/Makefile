@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \

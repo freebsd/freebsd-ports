@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	PHP-Nuke-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An automated website package to distribute and manage content
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .if defined(WITH_PHP3)

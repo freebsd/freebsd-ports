@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extremely lightweight CGI processing package
 
 PERL_CONFIGURE=	yes
 

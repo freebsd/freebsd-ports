@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PowerShell is a terminal emulator for the X11 Window System
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

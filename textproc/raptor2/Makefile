@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	librdf
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	RDF Parser Toolkit for Redland
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xmlparse.1:${PORTSDIR}/www/libwww

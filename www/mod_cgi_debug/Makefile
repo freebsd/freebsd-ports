@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache module to make debugging server-side scripts easier
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

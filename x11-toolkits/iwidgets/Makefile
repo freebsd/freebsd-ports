@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl3.2
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	[incr Widgets] (A.K.A. "iwidgets")
 
 LIB_DEPENDS=	itk32.1:${PORTSDIR}/x11-toolkits/itk
 

@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python interface to the Expat XML parser
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

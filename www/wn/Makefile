@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}	# ftp://ftp.acns.nwu.edu/pub/wn/
 MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A great http server
 
 FORBIDDEN=	"Remotely exploitable buffer overflow."
 

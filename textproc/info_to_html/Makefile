@@ -12,6 +12,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.mons.net/software/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Translate GNU info files into HTML pages
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 

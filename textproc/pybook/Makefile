@@ -12,6 +12,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	http://silmarill.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Project Gutenberg e-texts reader
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes

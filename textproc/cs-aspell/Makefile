@@ -8,6 +8,7 @@
 PORTNAME=	cs-aspell
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with Czech dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=grail
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	An extensible Internet browser written entirely in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	X11/xutils
 DISTNAME=	XBanner${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Make your XDM login screen look beautiful
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

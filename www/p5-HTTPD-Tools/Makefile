@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTTPD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module for a HTTP server authentication class
 
 PERL_CONFIGURE=	yes
 

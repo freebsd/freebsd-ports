@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Apache/mod_perl module to handle auth against external URLs
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Apache/AuthenCache.pm:${PORTSDIR}/www/p5-Apache-AuthenCache

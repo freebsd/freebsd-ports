@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Clock for X that displays hours and minutes in an analog fashion
 
 USE_X_PREFIX=	yes
 

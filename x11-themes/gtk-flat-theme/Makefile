@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	flat
 DISTNAME=	flat-1.2.x
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GTK+ theme engine which gives GTK+ a flattened appearance
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

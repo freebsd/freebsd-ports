@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Expand template text with embedded Perl
 
 PERL_CONFIGURE=	YES
 

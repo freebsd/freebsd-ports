@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 #DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} agrep.ps.1.Z  agrep.ps.2.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Approximate grep (fast approximate pattern-matching tool)
 
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.logilab.org/pub/xmltools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	High level xml tools for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

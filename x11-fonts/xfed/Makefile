@@ -12,6 +12,7 @@ MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/X11/fonts/edit/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program that will let you edit X fonts (.bdf files)
 
 IGNOREFILES=	${DISTFILES}
 USE_IMAKE=	yes

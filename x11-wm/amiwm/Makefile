@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 DISTNAME=	${PORTNAME}0.20pl48
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A window manager that makes your desktop look like an Amiga(TM)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DHAVE_X11_EXTENSIONS_SHAPE_H"

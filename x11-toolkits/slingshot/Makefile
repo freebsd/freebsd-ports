@@ -13,6 +13,7 @@ DISTNAME=	SlingShot${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Supplemental Libraries to extend Xview
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

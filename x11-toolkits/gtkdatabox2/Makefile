@@ -12,6 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.eudoxos.de/gtk/download/gtkdatabox/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Display large amounts of numerical data fast and easy
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -9,6 +9,7 @@ PORTNAME=	aspell
 CATEGORIES=	german
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Aspell with German dictionary
 
 MASTERDIR=	${.CURDIR}/../../textproc/aspell
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Python library for RDF manipulation
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

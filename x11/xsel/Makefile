@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.niksula.cs.hut.fi/~vherva/xsel/
 DISTFILES=	xsel.c xsel.man
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Access X selection from command line
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
