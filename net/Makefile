@@ -43,6 +43,7 @@
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
     SUBDIR += dhid
+    SUBDIR += dhcpconf
     SUBDIR += dip
     SUBDIR += dlint
     SUBDIR += dnsutl
