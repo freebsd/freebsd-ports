@@ -8,7 +8,7 @@
 PORTNAME=	gtkgraph
 PORTVERSION=	0.6.1
 CATEGORIES=	math
-MASTER_SITES=	http://gtkgraph.linuxbox.com/
+MASTER_SITES=	http://gtkgraph.linuxave.net/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
