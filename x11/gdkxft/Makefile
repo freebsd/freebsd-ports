@@ -13,14 +13,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@hack.org
 
-BUILD_DEPENDS=	giconv:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	LDFLAGS=-lgnuregex
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgnuregex -lgiconv"
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin
 INSTALLS_SHLIB=	yes
 
