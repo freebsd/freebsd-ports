@@ -112,6 +112,7 @@
     SUBDIR += unzip
     SUBDIR += ve
     SUBDIR += vflib
+    SUBDIR += vim-scdoc
     SUBDIR += wangttf
     SUBDIR += wenju
     SUBDIR += xcin25
