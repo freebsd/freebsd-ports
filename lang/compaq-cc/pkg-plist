@@ -118,6 +118,7 @@ usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/__DECC_include_prologue.h
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/as
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ccc
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/comp.config
+usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/comp.config.ORIG
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/cpp.Linux-bad
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/cpp
 usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/create-comp-config.sh
@@ -162,6 +163,13 @@ usr/man/man1/ccc.1
 usr/man/man8/protect_headers_setup.8
 usr/man/rsml
 usr/man/sml
+@comment Insert PLIST.alpha-freebsd here
+@comment -=[ begin PLIST.alpha-freebsd ]=-
+@comment -=[ end PLIST.alpha-freebsd ]=-
+@unexec rm -f %D/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/as
+@unexec rm -f %D/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/cpp
+@unexec rm -f %D/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/ld
+@unexec rm -f %D/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/include/machine
 @dirrm usr/doc/ccc-6.2.9.504/Language_Reference
 @dirrm usr/doc/ccc-6.2.9.504/Programmers_Guide
 @dirrm usr/doc/ccc-6.2.9.504
