@@ -1,71 +1,91 @@
 bin/gnomemeeting
+bin/gnomemeeting-config-tool
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/audio_codecs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/audio_settings/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomemeeting/call_forwarding/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/devices/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/gatekeeper/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/history/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/ldap/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/personal_data/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnomemeeting/video_display/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/video_settings/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomemeeting/view/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/audio_codecs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/audio_settings/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/call_forwarding/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/devices/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/gatekeeper/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/history/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/ldap/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/personal_data/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_display/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_settings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/view/%gconf.xml
-etc/gconf/schemas/gnomemeeting.schema
-etc/sound/events/GnomeMeeting.soundlist
-share/gnome/apps/Internet/gnomemeeting.desktop
+etc/gconf/schemas/gnomemeeting.schemas
+etc/sound/events/gnomemeeting.soundlist
+lib/bonobo/servers/gnomemeeting.server
+share/gnome/applications/gnomemeeting.desktop
+share/gnome/gnomemeeting/xdap/ils_nm_reg.xml
+share/gnome/gnomemeeting/xdap/ils_nm_unreg.xml
+share/gnome/gnomemeeting/xdap/ils_nm_mod.xml
 share/gnome/pixmaps/gnomemeeting-logo-icon.png
 share/gnome/pixmaps/gnomemeeting-logo.png
 share/gnome/pixmaps/gnomemeeting-splash.png
+share/gnome/pixmaps/Lumi.png
 share/gnome/sounds/gnomemeeting/gnomemeeting.wav
-share/locale/cs/LC_MESSAGES/GnomeMeeting.mo
-share/locale/de/LC_MESSAGES/GnomeMeeting.mo
-share/locale/el/LC_MESSAGES/GnomeMeeting.mo
-share/locale/es/LC_MESSAGES/GnomeMeeting.mo
-share/locale/fr/LC_MESSAGES/GnomeMeeting.mo
-share/locale/gl/LC_MESSAGES/GnomeMeeting.mo
-share/locale/it/LC_MESSAGES/GnomeMeeting.mo
-share/locale/ja/LC_MESSAGES/GnomeMeeting.mo
-share/locale/nl/LC_MESSAGES/GnomeMeeting.mo
-share/locale/no/LC_MESSAGES/GnomeMeeting.mo
-share/locale/pt_BR/LC_MESSAGES/GnomeMeeting.mo
-share/locale/ru/LC_MESSAGES/GnomeMeeting.mo
-share/locale/sk/LC_MESSAGES/GnomeMeeting.mo
-share/locale/sv/LC_MESSAGES/GnomeMeeting.mo
-share/locale/tr/LC_MESSAGES/GnomeMeeting.mo
-share/locale/wa/LC_MESSAGES/GnomeMeeting.mo
-share/locale/zh_CN/LC_MESSAGES/GnomeMeeting.mo
-share/locale/zh_TW/LC_MESSAGES/GnomeMeeting.mo
+share/locale/cs/LC_MESSAGES/gnomemeeting.mo
+share/locale/da/LC_MESSAGES/gnomemeeting.mo
+share/locale/de/LC_MESSAGES/gnomemeeting.mo
+share/locale/el/LC_MESSAGES/gnomemeeting.mo
+share/locale/es/LC_MESSAGES/gnomemeeting.mo
+share/locale/fr/LC_MESSAGES/gnomemeeting.mo
+share/locale/gl/LC_MESSAGES/gnomemeeting.mo
+share/locale/hu/LC_MESSAGES/gnomemeeting.mo
+share/locale/it/LC_MESSAGES/gnomemeeting.mo
+share/locale/ja/LC_MESSAGES/gnomemeeting.mo
+share/locale/nl/LC_MESSAGES/gnomemeeting.mo
+share/locale/no/LC_MESSAGES/gnomemeeting.mo
+share/locale/pl/LC_MESSAGES/gnomemeeting.mo
+share/locale/pt/LC_MESSAGES/gnomemeeting.mo
+share/locale/pt_BR/LC_MESSAGES/gnomemeeting.mo
+share/locale/ru/LC_MESSAGES/gnomemeeting.mo
+share/locale/sk/LC_MESSAGES/gnomemeeting.mo
+share/locale/sv/LC_MESSAGES/gnomemeeting.mo
+share/locale/ta/LC_MESSAGES/gnomemeeting.mo
+share/locale/tr/LC_MESSAGES/gnomemeeting.mo
+share/locale/vi/LC_MESSAGES/gnomemeeting.mo
+share/locale/wa/LC_MESSAGES/gnomemeeting.mo
+share/locale/zh_CN/LC_MESSAGES/gnomemeeting.mo
+share/locale/zh_TW/LC_MESSAGES/gnomemeeting.mo
 @dirrm share/gnome/sounds/gnomemeeting
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/view
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_settings
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/video_display
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/personal_data
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/ldap
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/history
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/general
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/gatekeeper
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/devices
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/call_forwarding
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/audio_settings
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting/audio_codecs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomemeeting
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/view
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/video_settings
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/video_display
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/personal_data
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/ldap
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/history
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/general
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/gatekeeper
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/devices
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/call_forwarding
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/audio_settings
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting/audio_codecs
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomemeeting
