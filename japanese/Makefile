@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.92 1997/10/23 13:57:09 itojun Exp $
+# $Id: Makefile,v 1.93 1997/10/27 15:20:16 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -107,5 +107,6 @@
     SUBDIR += x0212fonts
     SUBDIR += xdvi
     SUBDIR += xshodo
+    SUBDIR += zipcodes
 
 .include <bsd.port.subdir.mk>
