@@ -1,8 +1,15 @@
 ==================================================================
 
-Dict client could be found within ports/textproc/dict.
+This port installs the dict daemon but does not envoke dictd
+by default.
 
-Don't forget to install ports/net/dictd-database. After that, you
-could run your own dictd server without pain.
+To invoke dictd on startup, put the following in /etc/rc.conf:
+
+    dictd_enable="YES"
+
+The dict client can be found within ports/textproc/dict.
+
+Don't forget to install ports/net/dictd-database to run
+a dictd server without pain.
 
 ==================================================================
