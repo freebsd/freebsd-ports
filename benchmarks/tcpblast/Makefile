@@ -3,12 +3,12 @@
 # Date created:		22 August 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.12 1998/12/01 00:54:15 asami Exp $
+# $Id: Makefile,v 1.13 1998/12/05 08:12:11 obrien Exp $
 #
 
 DISTNAME=	tcpblast
 PKGNAME=	tcpblast-1.0
-CATEGORIES=	net benchmarks
+CATEGORIES=	benchmarks net
 DISTFILES=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
