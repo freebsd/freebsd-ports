@@ -15,4 +15,5 @@ WWW: http://www2.hursley.ibm.com/
 
 Mike Cowlishaw <mfc@uk.ibm.com>
 ___________________
-NOTE: Remember to add NetRexxC.zip to your Java CLASSPATH environment.
+NOTE: Remember to add NetRexxC.jar to your Java CLASSPATH or NETREXX_JAVA
+environment.
