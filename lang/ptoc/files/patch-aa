@@ -1,11 +1,22 @@
---- main.cxx	Fri Nov  6 11:19:54 1998
-+++ /home/andy/tmp/wrk/main.cxx	Sun Feb 14 15:11:06 1999
-@@ -319,7 +319,7 @@
+--- main.cxx.orig	Fri Nov  6 09:19:54 1998
++++ main.cxx	Sat Feb 12 17:25:53 2000
+@@ -279,7 +279,7 @@
+     prog_path = (p != NULL) ? dprintf("%.*s", p + 1 - argv[0], argv[0]) : ""; 
+ #else
+     char* p = strrchr(argv[0], '/');
+-    prog_path = (p != NULL) ? dprintf("%.*s", p + 1 - argv[0], argv[0]) : ""; 
++    prog_path = (p != NULL) ? dprintf("%.*s", p + 1 - argv[0], argv[0]) : (char *) ""; 
+ #endif
+ #endif
+     i_path = dprintf("%s:%s", i_path, prog_path);
+@@ -318,8 +318,8 @@
+     compile_system_library = TRUE;
  #ifdef PREFIX
      token::input(turbo_pascal 
- 		 ? PREFIX "/share/ptoc/tptoc.pas" 
+-		 ? PREFIX "/share/ptoc/tptoc.pas" 
 -		 : PREFIX "/share/ptoc/ptoc.pas")); 
-+		 : PREFIX "/share/ptoc/ptoc.pas"); 
++		 ? (char *) PREFIX "/share/ptoc/tptoc.pas" 
++		 : (char *) PREFIX "/share/ptoc/ptoc.pas"); 
  #else
      token::input(dprintf("%s%s", prog_path, 
   			 turbo_pascal ? "tptoc.pas" : "ptoc.pas")); 
