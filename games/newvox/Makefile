@@ -16,7 +16,7 @@ LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${PREFIX}/bin/sdl11-config"
+CONFIGURE_ENV=	SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/newvox ${PREFIX}/bin
