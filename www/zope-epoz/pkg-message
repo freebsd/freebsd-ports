@@ -1,0 +1,19 @@
+To complete the installation of Epoz:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+With CMFQuickInstaller (optional)
+
+- Use the QuickInstaller tool to register Epoz in your portal instance
+
+Without CMFQuickInstaller
+
+- Add and run an External Method with the following settings in your
+  CMF/Plone root using the Zope Management Interface (ZMI):
+
+id: install_epoz
+title: Install Epoz (optional)
+module: Epoz.Install
+function: install
+
+- Click the Test tab to run the install script
