@@ -1,7 +1,8 @@
 etc/rc.d/caudium.sh.sample
+bin/caudiumctl
+bin/htpasswd
 bin/pixsl
 bin/ultrasum
-bin/htpasswd
 caudium/readme/BUGS
 caudium/readme/README.ssl3
 caudium/readme/README.history
@@ -21,10 +22,6 @@ caudium/readme/README.cvs
 caudium/readme/README.Lucene
 caudium/readme/INSTALLING
 caudium/readme/License-Boilerplate-MPL-LGPL.txt
-caudium/server/more_modules/configure.pike
-caudium/server/more_modules/bofh.pike
-caudium/server/more_modules/clock.pike
-caudium/server/more_modules/lysator.pike
 caudium/server/base_server/config/describers.pike
 caudium/server/base_server/config/builders.pike
 caudium/server/base_server/config/button_font
@@ -96,8 +93,6 @@ caudium/server/server_templates/vhs-ldap-basic.pike
 caudium/server/server_templates/vhs-ldap-standard.pike
 caudium/server/server_templates/vhs-sql-basic.pike
 caudium/server/server_templates/vhs-sql-standard.pike
-caudium/server/protocols/gopher.pike
-caudium/server/protocols/ftp.pike
 caudium/server/protocols/http2.pike
 caudium/server/protocols/ssl3.pike
 caudium/server/protocols/tetris.pike
@@ -149,6 +144,8 @@ caudium/server/modules/3rdparty/oliv3/mcif.pike
 caudium/server/modules/3rdparty/vida/ldap_admin.pike
 caudium/server/modules/3rdparty/kiwi/.exclude_dir
 caudium/server/modules/3rdparty/kiwi/pop3.pike
+caudium/server/modules/3rdparty/kiwi/cidr_fs.pike
+caudium/server/modules/3rdparty/kiwi/cidr-list.txt
 caudium/server/modules/3rdparty/bertrand/supportslab/example/supportslab.html
 caudium/server/modules/3rdparty/bertrand/supportslab/module/supportslab.pike
 caudium/server/modules/3rdparty/bertrand/simple_vhs.pike
@@ -186,7 +183,6 @@ caudium/server/modules/filesystems/filesystem.pike
 caudium/server/modules/filesystems/cvsfs.pike
 caudium/server/modules/filesystems/restrictedfs.pike
 caudium/server/modules/filesystems/incoming.pike
-caudium/server/modules/filesystems/mirrorfs.pike
 caudium/server/modules/filesystems/secure_fs.pike
 caudium/server/modules/filesystems/sqlfs.pike
 caudium/server/modules/filesystems/tarfs.pike
@@ -253,7 +249,6 @@ caudium/server/modules/misc/demo.pike
 caudium/server/modules/misc/hostmatch.pike
 caudium/server/modules/misc/ismap.pike
 caudium/server/modules/misc/language.pike
-caudium/server/modules/misc/mirrorserver.pike
 caudium/server/modules/misc/pathinfo.pike
 caudium/server/modules/misc/referrerdeny.pike
 caudium/server/modules/misc/sqldb.pike
@@ -270,7 +265,6 @@ caudium/server/modules/misc/chase.pike
 caudium/server/modules/proxies/ftpgateway.pike
 caudium/server/modules/proxies/connect.pike
 caudium/server/modules/proxies/port_forwarder.pike
-caudium/server/modules/proxies/gopher.pike
 caudium/server/modules/proxies/simple_proxy.pike
 caudium/server/modules/proxies/proxy.pike
 caudium/server/modules/proxies/wais.pike
@@ -280,7 +274,6 @@ caudium/server/modules/scripting/caucho.pike
 caudium/server/modules/scripting/cgi.pike
 caudium/server/modules/scripting/fpscript.pike
 caudium/server/modules/scripting/jssupport.pike
-caudium/server/modules/scripting/php4.pike
 caudium/server/modules/scripting/servlet.pike
 caudium/server/modules/scripting/uniscript.pike
 caudium/server/modules/scripting/fastcgi.pike
@@ -432,7 +425,6 @@ caudium/server/modules/tags/calendar.pike
 caudium/server/modules/tags/hash.pike
 caudium/server/modules/tags/mailform.pike
 caudium/server/modules/tags/mailit.pike
-caudium/server/modules/tags/mnogosearch.pike
 caudium/server/modules/tags/sscanf.pike
 caudium/server/modules/tags/ssi_compat.pike
 caudium/server/modules/tags/navbar.pike
@@ -447,15 +439,10 @@ caudium/server/modules/vhs/vhs_fs.pike
 caudium/server/modules/vhs/vhs_redirect.pike
 caudium/server/modules/vhs/vhs_system_ldap.pike
 caudium/server/modules/vhs/vhs_system_sql.pike
-caudium/server/deprecated_modules/ldap/ldapuserauth.pike
-caudium/server/deprecated_modules/misc/activedirectoryauth.pike
-caudium/server/deprecated_modules/misc/SQLuserdb.pike
-caudium/server/deprecated_modules/misc/ip-less_hosts.pike
-caudium/server/deprecated_modules/misc/userdb.pike
-caudium/server/deprecated_modules/misc/ypuserdb.pike
-caudium/server/deprecated_modules/scripting/fcgi.pike
-caudium/server/deprecated_modules/scripting/oldcgi.pike
-caudium/server/deprecated_modules/.keep_me
+caudium/server/modules/examples/bofh.pike
+caudium/server/modules/examples/clock.pike
+caudium/server/modules/examples/configure.pike
+caudium/server/modules/examples/lysator.pike
 caudium/server/bin/install.pike
 caudium/server/bin/.cvsignore
 caudium/server/bin/garbagecollector.pike
@@ -597,8 +584,6 @@ caudium/server/lib/%%PIKEVERSION%%/_Caudium.so
 caudium/server/lib/%%PIKEVERSION%%/PiXSL.so
 caudium/server/lib/%%PIKEVERSION%%/UltraLog.so
 caudium/server/lib/%%PIKEVERSION%%/Mhash.so
-caudium/server/lib/%%PIKEVERSION%%/OpenSSL.so
-caudium/server/lib/%%PIKEVERSION%%/SpiderMonkey.so
 caudium/server/etc/include/sqlfs/stdio_helper.h
 caudium/server/etc/include/sqlfs/cache.h
 caudium/server/etc/include/sqlfs/read.h
@@ -680,6 +665,7 @@ caudium/server/etc/modules/Cache.pmod/FastStorage.pike
 caudium/server/etc/modules/Cache.pmod/Manager.pike
 caudium/server/etc/modules/Cache.pmod/SlowStorage.pike
 caudium/server/etc/modules/Cache.pmod/helpers.pike
+caudium/server/etc/modules/Cache.pmod/Types.pmod
 caudium/server/etc/modules/Config.pmod/Files.pmod
 caudium/server/etc/modules/Caudium.pmod/HighLight.pmod/Pike.pmod
 caudium/server/etc/modules/Caudium.pmod/Crypto.pmod
@@ -702,10 +688,6 @@ caudium/server/etc/modules/UltraSupport.pmod/Storage.pmod/File.pike
 caudium/server/etc/modules/UltraSupport.pmod/Storage.pmod/Gdbm.pike
 caudium/server/etc/modules/UltraSupport.pmod/Profile.pmod
 caudium/server/etc/modules/UltraSupport.pmod/Util.pmod
-caudium/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/Client.pike
-caudium/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/Server.pike
-caudium/server/etc/modules/RoxenRPC.pmod/Client.pike
-caudium/server/etc/modules/RoxenRPC.pmod/Server.pike
 caudium/server/etc/modules/InternalFiles.pmod/nofile.html
 caudium/server/etc/modules/InternalFiles.pmod/ERROR.html
 caudium/server/etc/modules/InternalFiles.pmod/ERROR.pmod
@@ -740,9 +722,9 @@ caudium/server/etc/content-encodings
 caudium/server/fonts/32/urw_itc_avant_garde-demi-r
 caudium/server/fonts/ttf/lucida_unicode.ttf
 caudium/server/fonts/ttf/lucida_unicode.txt
-caudium/server/fonts/ttf/verdana.ttf
-caudium/server/fonts/ttf/verdana.txt
 caudium/server/fonts/ttf/fontrstc.ttf
+caudium/server/fonts/ttf/Vera.ttf
+caudium/server/fonts/ttf/VeraBd.ttf
 caudium/server/config_actions/.exclude_files
 caudium/server/config_actions/flushnewcache.pike
 caudium/server/config_actions/debuginformation.pike
@@ -775,7 +757,7 @@ caudium/server/perl/bin/perlhelper
 caudium/server/perl/bin/perlrun
 caudium/server/perl/lib/.keep_me
 caudium/server/mkdir
-caudium/server/start
+caudium/server/start-caudium
 caudium/server/demo_certificate.pem
 caudium/server/testca.pem
 caudium/server/install
@@ -789,7 +771,6 @@ caudium/server/.cvsignore
 @unexec rmdir %D/caudium/var 2>/dev/null || true
 @unexec rmdir %D/caudium/server/include 2>/dev/null || true
 @dirrm caudium/readme
-@dirrm caudium/server/more_modules
 @dirrm caudium/server/base_server/config
 @dirrm caudium/server/base_server/struct
 @dirrm caudium/server/base_server
@@ -841,10 +822,6 @@ caudium/server/.cvsignore
 @dirrm caudium/server/modules/ultralog
 @dirrm caudium/server/modules/vhs
 @dirrm caudium/server/modules
-@dirrm caudium/server/deprecated_modules/ldap
-@dirrm caudium/server/deprecated_modules/misc
-@dirrm caudium/server/deprecated_modules/scripting
-@dirrm caudium/server/deprecated_modules
 @dirrm caudium/server/bin
 @dirrm caudium/server/caudium-images/auto
 @dirrm caudium/server/caudium-images/dir
@@ -876,8 +853,6 @@ caudium/server/.cvsignore
 @dirrm caudium/server/etc/modules/UltraSupport.pmod/Period.pmod
 @dirrm caudium/server/etc/modules/UltraSupport.pmod/Storage.pmod
 @dirrm caudium/server/etc/modules/UltraSupport.pmod
-@dirrm caudium/server/etc/modules/RoxenRPC.pmod/HTTP.pmod
-@dirrm caudium/server/etc/modules/RoxenRPC.pmod
 @dirrm caudium/server/etc/modules/InternalFiles.pmod
 @dirrm caudium/server/etc/modules/LCC.pmod
 @dirrm caudium/server/etc/modules
