@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Figaro's Password Manager, an app to securely store your passwords
 
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomelibs libgnomeui
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
