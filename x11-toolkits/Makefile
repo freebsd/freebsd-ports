@@ -5,6 +5,7 @@
     SUBDIR += Motif-dummy
     SUBDIR += Xaw3d
     SUBDIR += blt
+    SUBDIR += clean-theme-gtk
     SUBDIR += fltk
     SUBDIR += fox
     SUBDIR += gob
@@ -48,6 +49,7 @@
     SUBDIR += ruby-gtk
     SUBDIR += rubytk
     SUBDIR += slingshot
+    SUBDIR += thinice
     SUBDIR += tix
     SUBDIR += tk80
     SUBDIR += tk82
