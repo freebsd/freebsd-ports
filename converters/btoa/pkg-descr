@@ -1,0 +1,13 @@
+This is a port of btoa version 5.2, written by Paul Rutter, Joe
+Orost & Stefan Parmark.  btoa converts 4 binary characters to 5
+ascii ones, causing a 25% expansion.  (btoa is thus more efficient
+than uuencode, which causes a 33% expansion.)  Spaces will not be
+used, which should make it safe to send files over e-mail or Usenet
+without risking that blanks become tabs.  Each resulting row of
+text has a single-byte checksum for error detection.  A diagnosis
+file provides a list of errors found this way, which could then be
+used to retransmit only the failing lines.
+
+Port to FreeBSD 2.1 by
+Brent J. Nordquist (nordquist@platinum.com)
+Fri Apr  5 23:20:58  1996
