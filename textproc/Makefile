@@ -126,6 +126,7 @@
     SUBDIR += glimpse
     SUBDIR += gmat
     SUBDIR += gmetadom
+    SUBDIR += gnome-translate
     SUBDIR += gnomespell
     SUBDIR += gpp
     SUBDIR += grap
