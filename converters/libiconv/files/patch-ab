@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Tue Jul 18 09:37:10 2000
-+++ src/Makefile.in	Tue Jul 18 09:46:08 2000
+--- src/Makefile.in.orig	Tue Oct 24 02:24:41 2000
++++ src/Makefile.in	Mon Nov 20 18:54:10 2000
 @@ -49,10 +49,10 @@
  
  PLUG_SOURCES =
@@ -22,20 +22,20 @@
 +	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(libdir)/libgiconv.la
  
  install : all force
- 	if [ ! -d $(prefix) ] ; then mkdir $(prefix) ; fi
- 	if [ ! -d $(exec_prefix) ] ; then mkdir $(exec_prefix) ; fi
- 	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
--	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(libdir)/libiconv.la
-+	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(libdir)/libgiconv.la
- 	if test -n "@PLUGLIB@"; then $(INSTALL_DATA) @PLUGLIB@ $(libdir)/@PLUGLIB@.new && mv $(libdir)/@PLUGLIB@.new $(libdir)/@PLUGLIB@ ; fi
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(exec_prefix) ] ; then mkdir $(DESTDIR)$(exec_prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
+-	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(DESTDIR)$(libdir)/libiconv.la
++	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(DESTDIR)$(libdir)/libgiconv.la
+ 	if test -n "@PLUGLIB@"; then $(INSTALL_DATA) @PLUGLIB@ $(DESTDIR)$(libdir)/@PLUGLIB@.new && mv $(DESTDIR)$(libdir)/@PLUGLIB@.new $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
  
  installdirs : force
 @@ -94,7 +94,7 @@
- 	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
+ 	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
  
  uninstall : force
--	$(LIBTOOL_UNINSTALL) $(RM) $(libdir)/libiconv.la
-+	$(LIBTOOL_UNINSTALL) $(RM) $(libdir)/libgiconv.la
- 	if test -n "@PLUGLIB@"; then $(RM) $(libdir)/@PLUGLIB@ ; fi
+-	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libiconv.la
++	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libgiconv.la
+ 	if test -n "@PLUGLIB@"; then $(RM) $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
  
  check : all
