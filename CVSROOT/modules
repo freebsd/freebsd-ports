@@ -633,6 +633,7 @@ burncd		src/usr.sbin/burncd
 buttonbox	ports/x11/buttonbox
 bvi		ports/editors/bvi
 bwbasic		ports/lang/bwbasic
+bwidget		ports/x11-toolkits/bwidget
 bytebench	ports/benchmarks/bytebench
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
@@ -925,6 +926,7 @@ cpbk		ports/sysutils/cpbk
 cpdup		ports/sysutils/cpdup
 cphone		ports/net/cphone
 cpio		src/gnu/usr.bin/cpio
+cplay		ports/audio/cplay
 cpmemu		ports/emulators/cpmemu
 cpmtools	ports/emulators/cpmtools
 cpp		src/usr.bin/cpp
@@ -1096,6 +1098,7 @@ deal		ports/games/deal
 deco		ports/misc/deco
 decompyle	ports/devel/decompyle
 decss		ports/www/decss
+decurs		ports/x11/decurs
 dedit		ports/editors/dedit
 deepforest	ports/archivers/deepforest
 defendguin	ports/games/defendguin
@@ -2225,6 +2228,7 @@ heimdal		ports/security/heimdal
 hello		ports/misc/hello
 help		src/usr.bin/help
 help2man	ports/misc/help2man
+hercules	ports/emulators/hercules
 heretic		ports/games/heretic
 heroes		ports/games/heroes
 hesinfo		src/usr.bin/hesinfo
@@ -2239,6 +2243,7 @@ hexpert		ports/editors/hexpert
 heyu		ports/misc/heyu
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
+hgl		ports/graphics/hgl
 histring	ports/misc/histring
 hlfl		ports/security/hlfl
 hlmaster	ports/net/hlmaster
@@ -4403,6 +4408,7 @@ nhc98		ports/lang/nhc98
 nice		src/usr.bin/nice
 nicetext	ports/textproc/nicetext
 nickle		ports/lang/nickle
+nightfall	ports/astro/nightfall
 nighthawk	ports/games/nighthawk
 nil		ports/games/nil
 ninja		ports/irc/ninja
@@ -5290,6 +5296,7 @@ pcre		ports/devel/pcre
 pcre++		ports/devel/pcre++
 pcsc-lite	ports/devel/pcsc-lite
 pcvt		src/usr.sbin/pcvt
+pd		ports/audio/pd
 pdflib		ports/print/pdflib
 pdfmap		ports/misc/pdfmap
 pdftohtml	ports/textproc/pdftohtml
@@ -7394,6 +7401,7 @@ w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
 waccess	ports/www/waccess
 wais		ports/net/wais
+wait_on		ports/sysutils/wait_on
 wakeonlan	ports/net/wakeonlan
 walker		ports/net/walker
 wall		src/usr.bin/wall
