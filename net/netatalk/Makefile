@@ -20,7 +20,6 @@ LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .endif
 
-NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	yes
