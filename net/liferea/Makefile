@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.8
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -19,10 +19,5 @@ USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
 		gnomevfs2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e '28s,^,#include <time.h>,' \
-		${WRKSRC}/src/common.h
 
 .include <bsd.port.mk>
