@@ -1,13 +1,11 @@
---- makefile.orig	Sat Jul 13 20:54:06 2002
-+++ makefile	Sat Jul 13 20:56:15 2002
-@@ -12,9 +12,9 @@
- # GENERAL
+--- src/makefile.orig	Sat May 18 20:27:15 2002
++++ src/makefile	Thu Aug 22 12:07:51 2002
+@@ -13,8 +13,8 @@
  #
  
--INCLUDES	=	-I/usr/local/include/
+ INCLUDES	=	-I/usr/local/include/
 -CFLAGS		=	$(INCLUDES) -Wall -Werror -O3 -fPIC
 -CXXFLAGS	=	$(CFLAGS)
-+INCLUDES	=	-I${LOCALBASE}/include/
 +CFLAGS		+=	$(INCLUDES) -Wall -Werror -fPIC
 +CXXFLAGS	+=	$(CFLAGS)
  PLUGIN_LIB	=	../plugins/cmt.so
