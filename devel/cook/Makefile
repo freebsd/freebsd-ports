@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.20
+PORTVERSION=	2.21
 CATEGORIES=	devel
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 
