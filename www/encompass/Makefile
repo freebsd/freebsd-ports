@@ -17,8 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
-LIB_DEPENDS=	neon.19:${PORTSDIR}/www/neon \
-		elysium.0:${PORTSDIR}/misc/libelysium
+LIB_DEPENDS=	neon.19:${PORTSDIR}/www/neon
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
