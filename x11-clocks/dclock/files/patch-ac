@@ -1,0 +1,11 @@
+--- d_clock.c.orig	Fri Jun  3 08:00:00 1994
++++ d_clock.c	Sun Dec 19 16:01:36 1999
+@@ -131,7 +131,7 @@
+     else
+ 	name = argv[0];
+ 
+-    toplevel = XtInitialize(name, "DClock", options, XtNumber(options),
++    toplevel = XtInitialize(name, "Dclock", options, XtNumber(options),
+ 			    &argc, argv);
+     XtAddActions(actionsList, 1);
+ 
