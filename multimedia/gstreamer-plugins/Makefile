@@ -388,7 +388,7 @@ PLIST_SUB+=	LIBDV=""
 # libdvdnav
 .ifndef(WITH_LIBDVDNAV)
 CONFIGURE_ARGS+=	--disable-dvdnav
-PLIST_SUB+=	LIBDVDREAD="@comment "
+PLIST_SUB+=	LIBDVDNAV="@comment "
 .else
 LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/graphics/libdvdnav
 
