@@ -6,7 +6,6 @@ bin/ssh-keygen2
 bin/ssh-add2
 bin/ssh-signer2
 bin/ssh-probe2
-bin/ssh-askpass2
 bin/sftp-server2
 bin/ssh-dummy-shell
 bin/ssh-pubkeymgr
