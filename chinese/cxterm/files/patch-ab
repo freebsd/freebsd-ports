@@ -1,0 +1,22 @@
+--- scripts/CXterm.sh.orig	Tue Jan 31 20:05:00 1995
++++ scripts/CXterm.sh	Sat Aug 24 14:36:03 1996
+@@ -11,14 +11,17 @@
+ check_use_font ()
+ {
+     for f in "$@" ; do
+-	if [ "`xlsfonts $f 2>/dev/null`" = "$f" ]; then
++	# the awk'ing is needed if $f exists in more than one font dir - DEO
++	TRYFONT=`xlsfonts $f 2>/dev/null | /usr/bin/awk '{print $1 ; exit}'`
++	if [ "$TRYFONT" = "$f" ]; then
+ 	    echo $f
+ 	    return 0
+ 	fi
+     done
+     xset fp+ "$XFONTDIR"
+     for f in "$@" ; do
+-	if [ "`xlsfonts $f 2>/dev/null`" = "$f" ]; then
++	TRYFONT=`xlsfonts $f 2>/dev/null | /uar/bin/awk '{print $1 ; exit}'`
++	if [ "$TRYFONT" = "$f" ]; then
+ 	    echo $f
+ 	    return 0
+ 	fi
