@@ -1,0 +1,8 @@
+IO::String is an IO::File (and IO::Handle) compatible class that reads data
+from or writes data to in-core strings.  It is essentially a simplification
+of parts of the IO-stringy collection of modules.  As such, IO::String is a
+replacement for IO::Scalar.
+
+Author:	Gisle Aas <gisle@aas.no>
+
+-- Johann Visagie <johann@egenetics.com>
