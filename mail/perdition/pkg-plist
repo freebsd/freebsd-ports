@@ -1,0 +1,26 @@
+bin/makegdbm
+etc/pam.d/perdition
+etc/perdition/popmap.sample
+etc/perdition/Makefile.popmap
+etc/perdition/Makefile
+etc/perdition/README.perditiondb_nis
+etc/perdition/popmap.re.sample
+etc/perdition/perdition.conf.sample
+include/jain.h
+lib/libjain.so.0
+lib/libjain.so
+lib/libjain.a
+lib/libperditiondb_gdbm.so.0
+lib/libperditiondb_gdbm.so
+lib/libperditiondb_gdbm.a
+lib/libperditiondb_nis.so.0
+lib/libperditiondb_nis.so
+lib/libperditiondb_nis.a
+lib/libperditiondb_posix_regex.so.0
+lib/libperditiondb_posix_regex.so
+lib/libperditiondb_posix_regex.a
+sbin/perdition
+sbin/perdition.pop3
+sbin/perdition.imap4
+@dirrm etc/perdition
+@dirrm etc/pam.d

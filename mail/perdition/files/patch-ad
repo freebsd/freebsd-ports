@@ -1,0 +1,19 @@
+*** etc/Makefile.in.orig	Sun Apr 29 00:59:15 2001
+--- etc/Makefile.in	Sun Apr 29 00:59:23 2001
+***************
+*** 115,121 ****
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! SUBDIRS = perdition @pam_dir@ rc.d sysconfig
+  
+  EXTRA_DIST = 
+  
+--- 115,121 ----
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! SUBDIRS = perdition @pam_dir@
+  
+  EXTRA_DIST = 
+  

@@ -1,0 +1,25 @@
+*** perdition/db/gdbm/Makefile.in.orig	Sun Apr 29 01:00:08 2001
+--- perdition/db/gdbm/Makefile.in	Sun Apr 29 01:00:36 2001
+***************
+*** 115,124 ****
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! EXTRA_DIST = popmap Makefile.popmap.in Makefile.popmap
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap Makefile.popmap
+  
+  lib_LTLIBRARIES = libperditiondb_gdbm.la
+  
+--- 115,124 ----
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! EXTRA_DIST = popmap.sample Makefile.popmap.in Makefile.popmap
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap.sample Makefile.popmap
+  
+  lib_LTLIBRARIES = libperditiondb_gdbm.la
+  

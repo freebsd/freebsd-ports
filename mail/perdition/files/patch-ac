@@ -1,0 +1,19 @@
+*** etc/Makefile.am.orig	Sun Apr 29 00:31:48 2001
+--- etc/Makefile.am	Sun Apr 29 00:32:01 2001
+***************
+*** 23,29 ****
+  #
+  ######################################################################
+  
+! SUBDIRS = perdition @pam_dir@ rc.d sysconfig
+  
+  EXTRA_DIST = 
+  
+--- 23,29 ----
+  #
+  ######################################################################
+  
+! SUBDIRS = perdition @pam_dir@
+  
+  EXTRA_DIST = 
+  

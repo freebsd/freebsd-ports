@@ -1,0 +1,25 @@
+*** perdition/db/posix_regex/Makefile.am.orig	Sun Apr 29 00:36:56 2001
+--- perdition/db/posix_regex/Makefile.am	Sun Apr 29 00:37:17 2001
+***************
+*** 24,33 ****
+  #
+  ######################################################################
+  
+! EXTRA_DIST = popmap.re
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap.re
+  
+  lib_LTLIBRARIES = libperditiondb_posix_regex.la
+  
+--- 24,33 ----
+  #
+  ######################################################################
+  
+! EXTRA_DIST = popmap.re.sample
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap.re.sample
+  
+  lib_LTLIBRARIES = libperditiondb_posix_regex.la
+  

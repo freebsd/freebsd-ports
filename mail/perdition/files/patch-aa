@@ -1,0 +1,19 @@
+*** etc/perdition/Makefile.am.orig	Sun Apr 29 00:29:58 2001
+--- etc/perdition/Makefile.am	Sun Apr 29 00:30:52 2001
+***************
+*** 23,29 ****
+  #
+  ######################################################################
+  
+! EXTRA_DIST = perdition.conf
+  
+  perditionconfdir = $(sysconfdir)/perdition
+! perditionconf_DATA = perdition.conf
+--- 23,29 ----
+  #
+  ######################################################################
+  
+! EXTRA_DIST = perdition.conf.sample
+  
+  perditionconfdir = $(sysconfdir)/perdition
+! perditionconf_DATA = perdition.conf.sample

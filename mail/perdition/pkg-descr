@@ -1,0 +1,23 @@
+Perdition is a mail retrieval proxy that allows users to connect to a
+content-free POP3 or IMAP4 server that will redirect them to their real
+POP3 or IMAP4 server. This enables mail retrieval for a domain to be
+split across multiple backend servers on a per user basis. It can also
+be used as a POP3 or IMAP4 proxy in firewall applications.
+
+Perdition supports arbitrary library based map access to determine the
+server for each user - POSIX regex, GDBM, PostgreSQL, MySQL, NIS and
+OpenLDAP libraries ship with the distribution.
+
+Please note that this package does not include support for PostgreSQL,
+MySQL or OpenLDAP, however if you build the port and you have any of
+those installed, the apropriate libraries WILL be build and you will
+be able to use them. Please note though that the packing list does not
+take these into account!
+
+The use of perditon to scale mail services beyond a single box is discussed
+in a paper the author wrote on high capacity email, so be sure to check the
+web page.
+
+WWW: http://perdition.sourceforge.net/
+
+-- K. Konstantinidis <kkonstan@daemon.gr>
