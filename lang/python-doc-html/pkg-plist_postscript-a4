@@ -1,0 +1,9 @@
+share/doc/python/api.ps
+share/doc/python/doc.ps
+share/doc/python/ext.ps
+share/doc/python/lib.ps
+share/doc/python/mac.ps
+share/doc/python/ref.ps
+share/doc/python/tut.ps
+share/doc/python/README
+@unexec rmdir share/doc/python 2>/dev/null || true
