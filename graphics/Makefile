@@ -174,6 +174,7 @@
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += librsvg
+    SUBDIR += librsvg2
     SUBDIR += libungif
     SUBDIR += libwmf
     SUBDIR += libxine

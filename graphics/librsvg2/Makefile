@@ -1,38 +1,42 @@
-# New ports collection makefile for:    librsvg
+# New ports collection makefile for:    librsvg2
 # Date created:         		8th May 2001
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	librsvg
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTNAME=	librsvg2
+PORTVERSION=	1.1.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/librsvg
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
+DIST_SUBDIR=	gnome2
+DISTNAME=	librsvg-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		xml.5:${PORTSDIR}/textproc/libxml \
+		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gdk_pixbuf-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMELIBS=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
+		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
