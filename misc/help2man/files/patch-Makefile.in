@@ -1,19 +1,19 @@
---- Makefile.in.orig	Mon Dec  3 16:06:09 2001
-+++ Makefile.in	Wed Jan 30 20:48:38 2002
-@@ -17,6 +17,7 @@
- 
+--- Makefile.in.orig	Tue Mar  2 17:59:55 2004
++++ Makefile.in	Tue Mar  2 18:00:28 2004
+@@ -23,6 +23,7 @@
+ LIBS = @LIBS@
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_INFO = @INSTALL_INFO@
  MAKEINFO = @MAKEINFO@
-@@ -28,7 +29,7 @@
- all: $(target)
- install: $(target) $(target)$(manext) $(target).info
- 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir)
--	$(INSTALL_PROGRAM) $(target) $(DESTDIR)$(bindir)/$(target)
-+	$(INSTALL_SCRIPT) $(target) $(DESTDIR)$(bindir)/$(target)
- 	$(MKINSTALLDIRS) $(DESTDIR)$(man1dir)
- 	$(INSTALL_DATA) $(target)$(manext) \
- 	    $(DESTDIR)$(man1dir)/$(target)$(manext)
+@@ -41,7 +42,7 @@
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
+ 
+-	$(INSTALL_PROGRAM) $(target) $(DESTDIR)$(bindir)
++	$(INSTALL_SCRIPT) $(target) $(DESTDIR)$(bindir)
+ 	$(INSTALL_DATA) $(target).1 $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL_DATA) $(target).info $(DESTDIR)$(infodir)/$(target).info
+ 	if test -f $(DESTDIR)$(infodir)/dir; \
