@@ -11,8 +11,7 @@ fixlib()
     shift
     if [ ! -f $olib/$crt ]; then
         if [ ! -f $nlib/$crt ]; then
-            echo "Can't find $crt" >&2
-            exit 1
+            echo "Warning: Can't find $crt" >&2
         else
             for i in "$@"
             do
