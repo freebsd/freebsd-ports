@@ -26,8 +26,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default
 
-IS_INTERACTIVE=	yes
-
 MAN3=		POE.3 POE::API::ResLoader.3 POE::Component.3 \
 		POE::Component::Client::TCP.3 POE::Component::Server::TCP.3 \
 		POE::Driver.3 POE::Driver::SysRW.3 POE::Filter.3 \
@@ -57,4 +55,10 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/samples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500702
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
