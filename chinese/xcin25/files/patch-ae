@@ -1,6 +1,6 @@
---- src/xcinrc.in.orig	Fri Sep  3 01:17:52 1999
-+++ src/xcinrc.in	Fri Sep  3 01:18:29 1999
-@@ -86,8 +86,8 @@
+--- src/xcinrc.in.orig	Mon Oct 18 11:48:24 1999
++++ src/xcinrc.in	Mon Oct 18 11:50:39 1999
+@@ -95,8 +95,8 @@
  (define bimsphone
  	'((SETKEY	6)
  	  (MODULE	"bimsphone")
@@ -8,6 +8,6 @@
 -	  (YIN_FNAME    "yin.db")
 +	  (TSI_FNAME    "/usr/local/share/tabe/tsiyin/tsi.db")
 +	  (YIN_FNAME    "/usr/local/share/tabe/tsiyin/yin.db")
- 	  (KEYMAP	0)))		; 0: ¹s³ü, 1: ­Ê¤Ñ, 2: ³\¤ó
- 
- (define cj
+ 	  (SPACE_SEL	NO)
+ 	  (MOD_PHR	1)		; 1: shift, 2: ctrl, 4: alt
+ 	  (NSELKEY	9)		; The maximun number is 10
