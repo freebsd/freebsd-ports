@@ -2539,6 +2539,7 @@ gpkgdep		ports/sysutils/gpkgdep
 gplbp		ports/misc/gplbp
 gplot		ports/graphics/gplot
 gpp		ports/textproc/gpp
+gpredict	ports/comms/gpredict
 gprolog		ports/lang/gprolog
 gps		ports/net/gps
 gpsdrive	ports/astro/gpsdrive
