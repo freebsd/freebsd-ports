@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/pylint/__init__.py:${PORTSDIR}/devel/py-logilab-common
+RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/__init__.py:${PORTSDIR}/devel/py-logilab-common
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
