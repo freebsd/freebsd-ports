@@ -255,12 +255,71 @@ share/gnome/help/gnome-intro/C/pix/panel-menu.gif
 share/gnome/help/gnome-intro/C/pix/same-gnome.gif
 share/gnome/help/gnome-intro/C/pix/terminal.gif
 share/gnome/help/gnome-intro/C/topic.dat
+share/gnome/help/gnome-terminal/C/authors.html
+share/gnome/help/gnome-terminal/C/classes.html
+share/gnome/help/gnome-terminal/C/config.html
+share/gnome/help/gnome-terminal/C/docbook.css
+share/gnome/help/gnome-terminal/C/emulation.html
+share/gnome/help/gnome-terminal/C/environment.html
+share/gnome/help/gnome-terminal/C/index.html
+share/gnome/help/gnome-terminal/C/ln12.html
+share/gnome/help/gnome-terminal/C/menus.html
+share/gnome/help/gnome-terminal/C/options.html
+share/gnome/help/gnome-terminal/C/pointerusage.html
+share/gnome/help/gnome-terminal/C/terminal.html
+share/gnome/help/gnome-terminal/C/topic.dat
+share/gnome/help/gnome-terminal/da/authors.html
+share/gnome/help/gnome-terminal/da/classes.html
+share/gnome/help/gnome-terminal/da/config.html
+share/gnome/help/gnome-terminal/da/docbook.css
+share/gnome/help/gnome-terminal/da/emulation.html
+share/gnome/help/gnome-terminal/da/enviroment.html
+share/gnome/help/gnome-terminal/da/index.html
+share/gnome/help/gnome-terminal/da/ln9.html
+share/gnome/help/gnome-terminal/da/menus.html
+share/gnome/help/gnome-terminal/da/options.html
+share/gnome/help/gnome-terminal/da/pointerusage.html
+share/gnome/help/gnome-terminal/da/terminal.html
+share/gnome/help/gnome-terminal/da/termtech.html
+share/gnome/help/gnome-terminal/da/topic.dat
+share/gnome/help/gnome-terminal/es/authors.html
+share/gnome/help/gnome-terminal/es/classes.html
+share/gnome/help/gnome-terminal/es/config.html
+share/gnome/help/gnome-terminal/es/docbook.css
+share/gnome/help/gnome-terminal/es/emulation.html
+share/gnome/help/gnome-terminal/es/environment.html
+share/gnome/help/gnome-terminal/es/index.html
+share/gnome/help/gnome-terminal/es/ln15.html
+share/gnome/help/gnome-terminal/es/menus.html
+share/gnome/help/gnome-terminal/es/options.html
+share/gnome/help/gnome-terminal/es/pointerusage.html
+share/gnome/help/gnome-terminal/es/terminal.html
+share/gnome/help/gnome-terminal/es/topic.dat
+share/gnome/help/gnome-terminal/no/authors.html
+share/gnome/help/gnome-terminal/no/classes.html
+share/gnome/help/gnome-terminal/no/config.html
+share/gnome/help/gnome-terminal/no/docbook.css
+share/gnome/help/gnome-terminal/no/emulation.html
+share/gnome/help/gnome-terminal/no/enviroment.html
+share/gnome/help/gnome-terminal/no/index.html
+share/gnome/help/gnome-terminal/no/ln9.html
+share/gnome/help/gnome-terminal/no/menus.html
+share/gnome/help/gnome-terminal/no/options.html
+share/gnome/help/gnome-terminal/no/pointerusage.html
+share/gnome/help/gnome-terminal/no/terminal.html
+share/gnome/help/gnome-terminal/no/termtech.html
+share/gnome/help/gnome-terminal/no/topic.dat
 share/gnome/help/help-browser/C/default-page.html
 share/gnome/help/help-browser/C/gnome-logo-large.png
 share/gnome/help/help-browser/C/help-browser.html
 share/gnome/help/help-browser/C/index.html
 share/gnome/help/help-browser/C/topic.dat
 share/gnome/help/help-browser/ca/default-page.html
+share/gnome/help/help-browser/da/default-page.html
+share/gnome/help/help-browser/da/help-browser.html
+share/gnome/help/help-browser/da/index.html
+share/gnome/help/help-browser/da/topic.dat
+share/gnome/help/help-browser/el/default-page.html
 share/gnome/help/help-browser/es/default-page.html
 share/gnome/help/help-browser/es/help-browser.html
 share/gnome/help/help-browser/es/index.html
@@ -542,6 +601,7 @@ share/locale/nl/LC_MESSAGES/gnome-core.mo
 share/locale/no/LC_MESSAGES/gnome-core.mo
 share/locale/pl/LC_MESSAGES/gnome-core.mo
 share/locale/pt/LC_MESSAGES/gnome-core.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-core.mo
 share/locale/ro/LC_MESSAGES/gnome-core.mo
 share/locale/ru/LC_MESSAGES/gnome-core.mo
 share/locale/sk/LC_MESSAGES/gnome-core.mo
@@ -574,11 +634,18 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/asclock/classic
 @dirrm share/gnome/asclock/shaped
 @dirrm share/gnome/asclock
+@dirrm share/gnome/help/gnome-terminal/C
+@dirrm share/gnome/help/gnome-terminal/da
+@dirrm share/gnome/help/gnome-terminal/es
+@dirrm share/gnome/help/gnome-terminal/no
+@dirrm share/gnome/help/gnome-terminal
 @dirrm share/gnome/help/gnome-intro/C/pix
 @dirrm share/gnome/help/gnome-intro/C
 @dirrm share/gnome/help/gnome-intro
 @dirrm share/gnome/help/help-browser/C
 @dirrm share/gnome/help/help-browser/ca
+@dirrm share/gnome/help/help-browser/da
+@dirrm share/gnome/help/help-browser/el
 @dirrm share/gnome/help/help-browser/es
 @dirrm share/gnome/help/help-browser/et
 @dirrm share/gnome/help/help-browser/eu
