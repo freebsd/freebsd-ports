@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+CFLAGS+=	"-fPIC"
 
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
 
