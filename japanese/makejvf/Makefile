@@ -9,19 +9,17 @@ PORTNAME=	makejvf-fkr
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.tooyoo.l.u-tokyo.ac.jp/pub/TeX/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
+MASTER_SITES=	ftp://ftp.tooyoo.l.u-tokyo.ac.jp/pub/TeX/:0 \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/:1 \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	makejvf-${PORTVERSION}-fkr
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		standard${EXTRACT_SUFX} nmin-ngoth${EXTRACT_SUFX} \
-		jis${EXTRACT_SUFX} morisawa${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 \
+		standard${EXTRACT_SUFX}:1 nmin-ngoth${EXTRACT_SUFX}:1 \
+		jis${EXTRACT_SUFX}:1 morisawa${EXTRACT_SUFX}:1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
 COMMENT=	Japanese Virtual Font file maker + TFM and VF
-
-BROKEN=		"Checksum mismatch"
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
