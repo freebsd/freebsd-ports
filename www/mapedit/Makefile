@@ -11,7 +11,7 @@ PKGNAME=	mapedit-2.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/java/bin/java:${PORTSDIR}/java/jdk
 

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
