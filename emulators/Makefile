@@ -31,6 +31,7 @@
     SUBDIR += tkhfs
     SUBDIR += vgb
     SUBDIR += vice
+    SUBDIR += vMac
     SUBDIR += vmsbackup
     SUBDIR += vpce
     SUBDIR += wine
