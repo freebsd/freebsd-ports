@@ -96,6 +96,8 @@ static struct cdevsw rtc_cdevsw = {
 #if __FreeBSD_version >= 502103
 	.d_version =    D_VERSION,
 	.d_flags =      D_NEEDGIANT,
+#else 
+	.d_maj =	CDEV_MAJOR,
 #endif
 	.d_open =	rtc_open,
 	.d_close =	rtc_close,
@@ -103,7 +105,6 @@ static struct cdevsw rtc_cdevsw = {
 	.d_poll =	rtc_poll,
 	.d_read =	rtc_read,
 	.d_name =	DEVICE_NAME,
-	.d_maj =	CDEV_MAJOR,
 #else
 	/* open */	rtc_open,
 	/* close */	rtc_close,
