@@ -9,11 +9,13 @@ PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.53
 PORTREVISION?=	4
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
+MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
 		http://mysql.he.net/Downloads/MySQL-3.23/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/
-MASTER_SITE_SUBDIR=	mirrors/mysql/Downloads/MySQL-3.23
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/ \
+		ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-3.23/ \
+		http://mysql.orst.edu/Downloads/MySQL-3.23/ \
+		http://web.tryc.on.ca/mysql/Downloads/MySQL-3.23/ \
+		ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQL-3.23/
 DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dirk@FreeBSD.org
