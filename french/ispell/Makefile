@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-MAINTAINER=     alex@FreeBSD.org
+MAINTAINER=	alex@FreeBSD.org
 
 ISPELL_FR=	yes
-PORTVERSION= 	1.4
+PORTVERSION=	1.4
 CATEGORIES=	french
-MASTERDIR=      ${.CURDIR}/../../textproc/ispell
+MASTERDIR=	${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"
