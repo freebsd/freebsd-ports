@@ -10,6 +10,30 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040416:
+	There has been a couple of bsd.java.mk tweaks and fixes.
+
+	. Features from Stage 2 has been removed.  A port can no
+	  longer use the JDK dependency features by setting JAVA_HOME.
+	  Use JAVA_PREFERRED_PORT instead (see below).
+
+	. The default JDK port now depends on OS version:
+	  java/diablo-jdk13 for 4.x, and java/jdk14 for 5.x
+
+	. It is now possible for the user (and the porters) to
+	  define a list of preferred JDK ports to build and run ports.
+	  The port will use the first JDK port from the list that
+	  matches the requirements specified in the Makefile.
+	  JAVA_PREFERRED_PORT contains a list of suitable JDK ports
+	  (sorted by preference).  Names for JDKs may be found in
+	  bsd.java.mk, listed in ${_JAVA_PORTS_ALL} (e.g.
+	  "JAVA_PORT_NATIVE_BSDJAVA_1_4").
+
+	. JAVA_PORT_VERSION is now set to the full version number
+	  of the chosen JDK (e.g. "1.4.2").  Porters will find hints
+	  regarding how to obtain the same behavior as before in the
+	  header of bsd.java.mk.
+
 20040414:
 	When writing a port that uses GTK+ 2.X, you can now list the dependency
 	with "USE_GNOME=gtk20" which is preferable to LIB_DEPENDS because the
