@@ -1,0 +1,13 @@
+--- src/gnu/usr.bin/gdb/gdb/freebsd-nat.c.orig	Mon Sep 14 15:49:02 1998
++++ src/gnu/usr.bin/gdb/gdb/freebsd-nat.c	Wed Sep  8 10:33:06 1999
+@@ -115,9 +115,7 @@
+   for (regno = 0; regno < NUM_REGS; regno++)
+     {
+       cregno = tregmap[regno];
+-      if (cregno == tFS)
+-        addr = offsetof (struct user, u_pcb) + offsetof (struct pcb, pcb_fs);
+-      else if (cregno == tGS)
++      if (cregno == tGS)
+         addr = offsetof (struct user, u_pcb) + offsetof (struct pcb, pcb_gs);
+       else
+         addr = offset + 4 * cregno;

@@ -6,24 +6,26 @@
 # $FreeBSD$
 #
 
-DISTNAME=      m3gdb-4.17
-CATEGORIES=    lang devel
-MASTER_SITES=  http://www.freebsd.org/~jdp/distfiles/
+DISTNAME=	m3gdb-4.17
+CATEGORIES=	lang devel
+MASTER_SITES=	http://www.freebsd.org/~jdp/distfiles/
+DISTFILES=	m3gdb-4.17.tar.gz \
+		m3gdb-fbsd-4.17.tar.gz
 
-MAINTAINER=    jdp@FreeBSD.org
+MAINTAINER=	jdp@FreeBSD.org
 
-MAN1=          m3gdb.1
-MANCOMPRESSED= yes
+MAN1=		m3gdb.1
+MANCOMPRESSED=	yes
+ONLY_FOR_ARCHS=	i386
 
-pre-fetch:
-	@if [ ! -d /usr/src/contrib/gdb ]; then \
-	    ${ECHO_MSG} "To build this port you must have the FreeBSD" \
-		"sources in \"/usr/src\"."; \
-	    exit 1; \
-	fi
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "aout"
+BROKEN=		does not support a.out systems
+.endif
 
 pre-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make depend
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make libbuild
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

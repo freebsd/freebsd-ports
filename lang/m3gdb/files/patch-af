@@ -1,0 +1,13 @@
+--- kvm-fbsd.c.orig	Sun Feb  7 04:36:10 1999
++++ kvm-fbsd.c	Wed Sep  8 10:38:14 1999
+@@ -835,9 +835,8 @@
+   supply_register (6, (char *)&pcb.pcb_esi);
+   supply_register (7, (char *)&pcb.pcb_edi);
+   supply_register (PC_REGNUM, (char *)&pcb.pcb_eip);
+-  for (i = 9; i < 13; ++i)		/* eflags, cs, ss, ds, es */
++  for (i = 9; i < 14; ++i)		/* eflags, cs, ss, ds, es, fs */
+     supply_register (i, (char *)&noreg);
+-  supply_register (14, (char *)&pcb.pcb_fs);
+   supply_register (15, (char *)&pcb.pcb_gs);
+ 
+   /* XXX 80387 registers? */
