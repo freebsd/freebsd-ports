@@ -27,4 +27,6 @@ load_rc_config $name
 
 pidfile="${apache_pidfile}"
 
+start_precmd="`/usr/bin/limits -e -U www`"
+
 run_rc_command "$1"
