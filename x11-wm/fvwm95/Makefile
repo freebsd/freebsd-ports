@@ -3,7 +3,7 @@
 # Date created:		Wed Apr 10 21:57:17 MET DST 1996
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1996/06/14 20:31:19 asami Exp $
+# $Id: Makefile,v 1.4 1996/09/19 03:00:59 andreas Exp $
 #
 
 DISTNAME=	fvwm95-2.0.41f
@@ -11,7 +11,7 @@ CATEGORIES+=	x11
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
+MAINTAINER=	andreas@klemm.gtn.com
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 

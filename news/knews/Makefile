@@ -3,7 +3,7 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1996/09/03 20:34:58 andreas Exp $
+# $Id: Makefile,v 1.6 1996/09/19 03:01:13 andreas Exp $
 #
 
 DISTNAME=	knews-0.9.8
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.nada.kth.se/home/su95-kjo/knews/ \
 	ftp://ftp.germany.eu.net/pub/os/Linux/Mirror.SunSITE/X11/xapps/networked/ \
 	ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/X11/xapps/networked/
 
-MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
+MAINTAINER=	andreas@klemm.gtn.com
 
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 

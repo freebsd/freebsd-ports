@@ -3,14 +3,14 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1996/09/28 12:34:36 andreas Exp $
+# $Id: Makefile,v 1.4 1996/10/15 19:56:29 andreas Exp $
 #
 
 DISTNAME=       bzip-0.21
 CATEGORIES+=	archivers
 MASTER_SITES=   http://www.cs.man.ac.uk/arch/people/j-seward/
 
-MAINTAINER=     Andreas Klemm <andreas@klemm.gtn.com>
+MAINTAINER=     andreas@klemm.gtn.com
 
 NO_CDROM=       yes     # Restrictive copyright (don't sell for profit)
 
