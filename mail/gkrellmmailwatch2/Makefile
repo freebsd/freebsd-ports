@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	gkrellmmailwatch
-PORTVERSION=	2.0
+PORTVERSION=	2.4.2
 CATEGORIES=	mail
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	gkrellm-mailwatch-${PORTVERSION}
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	GKrellM mailwatch plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
@@ -20,7 +20,9 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 WRKSRC=		${WRKDIR}/gkrellm-mailwatch
 
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+INSTALLS_SHLIB=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins
 
