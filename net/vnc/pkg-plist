@@ -40,10 +40,12 @@ share/doc/vnc/download.html
 share/doc/vnc/downloadbutton.gif
 share/doc/vnc/downloadtemplate.html
 share/doc/vnc/extras.html
+share/doc/vnc/extras.html~
 share/doc/vnc/faq.html
 share/doc/vnc/faq.xml
 share/doc/vnc/faqbutton.gif
 share/doc/vnc/faqtemplate.html
+share/doc/vnc/faqtemplate.html~
 share/doc/vnc/free.html
 share/doc/vnc/freebutton.gif
 share/doc/vnc/gpl.html
@@ -60,6 +62,7 @@ share/doc/vnc/iemacx_small.gif
 share/doc/vnc/index.html
 share/doc/vnc/internalversion.html
 share/doc/vnc/intouch.html
+share/doc/vnc/intouch.html~
 share/doc/vnc/intouchbutton.gif
 share/doc/vnc/invalid-download.html
 share/doc/vnc/javavncviewer.html
@@ -80,6 +83,7 @@ share/doc/vnc/ns1_small.gif
 share/doc/vnc/oldcontribs.html
 share/doc/vnc/oldfaq.html
 share/doc/vnc/platforms.html
+share/doc/vnc/platforms.html.curr
 share/doc/vnc/pmw.jpg
 share/doc/vnc/protocol.html
 share/doc/vnc/qsf.jpg
@@ -118,6 +122,7 @@ share/doc/vnc/vncce3.jpg
 share/doc/vnc/vncce3_small.jpg
 share/doc/vnc/vnchistory.html
 share/doc/vnc/vncpeople.html
+share/doc/vnc/vncpeople.html~
 share/doc/vnc/vncpeoplebutton.gif
 share/doc/vnc/vnctitle.gif
 share/doc/vnc/winhistory.html
@@ -126,7 +131,6 @@ share/doc/vnc/winviewer1_small.gif
 share/doc/vnc/winvnc.html
 share/doc/vnc/winvnctray.GIF
 share/doc/vnc/winvncviewer.html
-share/doc/vnc/winvncviewer-new.html
 share/doc/vnc/xlibvncviewer.html
 share/doc/vnc/xvnc.html
 share/doc/vnc/xvnchistory.html
