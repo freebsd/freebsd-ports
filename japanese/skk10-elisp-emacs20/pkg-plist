@@ -1,0 +1,46 @@
+%%EMACS_LIBDIR%%/site-lisp/skk/queue-m.el
+%%EMACS_LIBDIR%%/site-lisp/skk/queue-m.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-auto.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-auto.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-autoloads.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-autoloads.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-comp.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-comp.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-foreword.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-foreword.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-gadget.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-gadget.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-isearch.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-isearch.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-kakasi.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-kakasi.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-kcode.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-kcode.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-leim.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-leim.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-look.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-look.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-num.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-num.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-obsolete.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-obsolete.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-server.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-server.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-tut.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-tut.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-viper.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk-viper.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/skk.el
+%%EMACS_LIBDIR%%/site-lisp/skk/skk.elc
+%%EMACS_LIBDIR%%/site-lisp/skk/stack-m.el
+%%EMACS_LIBDIR%%/site-lisp/skk/stack-m.elc
+@dirrm %%EMACS_LIBDIR%%/site-lisp/skk
+@unexec install-info --delete %D/info/skk.info %D/info/dir
+info/skk.info
+info/skk.info-1
+info/skk.info-2
+info/skk.info-3
+info/skk.info-4
+@exec install-info %D/info/skk.info %D/info/dir
+share/skk/SKK.tut
+share/skk/SKK.tut.E
