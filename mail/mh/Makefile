@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mh
-PORTVERSION= 	6.8.4
+PORTVERSION=	6.8.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
 DISTNAME=	${PORTNAME}-6.8.3

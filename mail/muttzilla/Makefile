@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	muttzilla
-PORTVERSION= 	0.40
+PORTVERSION=	0.40
 CATEGORIES=	mail www
 MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 

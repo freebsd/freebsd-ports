@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lbdb
-PORTVERSION= 	0.22
+PORTVERSION=	0.22
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	mwest@uct.ac.za
 
 WRKSRC=		${WRKDIR}/lbdb-${PORTVERSION}
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/libexec --enable-lbdb-dotlock
 USE_GMAKE=	YES
 
 MAN1=		nodelist2lbdb.1 lbdbq.1 lbdb-fetchaddr.1 lbdb_dotlock.1

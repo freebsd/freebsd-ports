@@ -9,7 +9,7 @@
 #       Berkeley DB2 is in conflict with libc, so commented out. :-(
 
 PORTNAME=	cucipop
-PORTVERSION= 	1.31
+PORTVERSION=	1.31
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 

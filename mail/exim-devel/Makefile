@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exim
-PORTVERSION= 	3.20
+PORTVERSION=	3.20
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		http://www.exim.org/ftp/ \

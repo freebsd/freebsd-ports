@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	popa3d
-PORTVERSION= 	0.4
+PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/popa3d/ \

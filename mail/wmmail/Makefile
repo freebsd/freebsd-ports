@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmail
-PORTVERSION= 	0.64
+PORTVERSION=	0.64
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/WMMail.app/
 DISTNAME=	WMMail.app-${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbuffy
-PORTVERSION= 	0.2.2
+PORTVERSION=	0.2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/
 

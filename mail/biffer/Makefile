@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biffer
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 

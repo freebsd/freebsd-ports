@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smail
-PORTVERSION= 	3.2.0.111
+PORTVERSION=	3.2.0.111
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 		ftp://ftp.planix.com/pub/Smail/ \

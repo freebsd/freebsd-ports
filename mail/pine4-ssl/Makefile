@@ -11,7 +11,7 @@
 # Good luck to you. :-P
 
 PORTNAME=	pine4-ssl
-PORTVERSION= 	4.21.1.4
+PORTVERSION=	4.21.1.4
 PORTREVISION=	1
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \

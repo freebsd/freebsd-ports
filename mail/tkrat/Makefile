@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.karen.hik.se/pub2/unix/mail/ratatosk/ \
 		ftp://ftp.mc.hik.se/pub/unix/mail/ratatosk/ \

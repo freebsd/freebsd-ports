@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postilion
-PORTVERSION= 	0.9.3c
+PORTVERSION=	0.9.3c
 CATEGORIES=	mail tk82
 MASTER_SITES=	http://www.postilion.org/
 

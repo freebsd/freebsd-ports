@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION= 	3.1.2
+PORTVERSION=	3.1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		ftp://ftp.gmxuk.net/pub/qpopper/ \

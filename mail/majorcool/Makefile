@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	majorcool
-PORTVERSION= 	1.3.2
+PORTVERSION=	1.3.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.netsw.org/netsw/Network/Mail/Tools/ListManager/majordomo/ \
 		ftp://ftp.nhl.nl/pub/unix/MajorDomo/

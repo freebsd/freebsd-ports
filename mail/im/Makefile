@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	im
-PORTVERSION= 	140
+PORTVERSION=	140
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \

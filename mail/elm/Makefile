@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elm
-PORTVERSION= 	2.5.3
+PORTVERSION=	2.5.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/
 DISTNAME=	${PORTNAME}${PORTVERSION}
