@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.163 1998/06/08 14:17:03 itojun Exp $
+# $Id: Makefile,v 1.164 1998/06/08 14:40:59 kuriyama Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -46,6 +46,7 @@
     SUBDIR += ivs
     SUBDIR += kdenetwork
     SUBDIR += kirc
+    SUBDIR += ksamba
     SUBDIR += ldap
     SUBDIR += lftp
     SUBDIR += libsocket++
