@@ -16,7 +16,7 @@ LIB_DEPENDS=	gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GNOMENG=	yes
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix gnomelibs
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
