@@ -24,7 +24,10 @@ DOCS_EN=	ChangeLog zlib.en.html
 DOCS_JA=	zlib.ja.html
 
 post-patch:
-	${RUBY} -i -pe 'sub /\bNORETURN\b/, ""' ${WRKSRC}/zlib.c
+	${RUBY} -i -p \
+		-e 'gsub /\bNORETURN\b/, ""' \
+		-e 'gsub /\bstr2cstr\b/, "rb_str2cstr"' \
+		 ${WRKSRC}/zlib.c
 
 post-install:
 .if !defined(NOPORTDOCS)
