@@ -18,8 +18,6 @@ BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../${RUBY_PORT}:patch
 
 USE_RUBY=	yes
 
-USE_AUTOCONF=	yes
-
 # Beware, because gdbm is under GPL, you must treat the whole binary
 # as GPL says if you include gdbm in it.
 EXT_PORTS=	archivers/ruby-zlib \
@@ -35,6 +33,19 @@ EXT_PORTS+=	devel/ruby-fnmatch
 .for p in ${EXT_PORTS}
 BUILD_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
 .endfor
+
+.if defined(RUBY_VER)
+.if ${RUBY_VER} > 1.6
+NEWAUTOCONF=	yes
+.endif
+.endif
+
+.if defined(NEWAUTOCONF)
+BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
+GNU_CONFIGURE=	yes
+.else
+USE_AUTOCONF=	yes
+.endif
 
 WRKSRC=		${RUBY_WRKSRC}
 
@@ -94,6 +105,11 @@ do-extract:
 .endif
 	(cd ${WRKSRC}/ext && \
 	for x in *; do [ -d $$x ] && echo $$x >> Setup; done)
+
+.if defined(NEWAUTOCONF)
+pre-configure:
+	cd ${WRKSRC}; autoconf
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${RUBY_NAME} ${RUBY_WITH_SUFFIX}_s
