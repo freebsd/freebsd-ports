@@ -8,7 +8,8 @@
 PORTNAME=	code_medic
 PORTVERSION=	1.0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://people.FreeBSD.org/~sobomax/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	Code_Medic_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
