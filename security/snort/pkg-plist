@@ -1,40 +1,74 @@
 bin/snort
-etc/classification.config-sample
+@unexec if [ -f %D/etc/snort.conf ] && cmp -s %D/etc/snort.conf %D/etc/snort.conf-sample; then rm -f %D/etc/snort.conf; fi
 etc/snort.conf-sample
-share/snort/CREDITS
-share/snort/RULES.SAMPLE
-share/snort/USAGE
+@exec [ -f %B/snort.conf ] || cp %B/%f %B/snort.conf
+%%PORTDOCS%%share/doc/snort/AUTHORS
+%%PORTDOCS%%share/doc/snort/NEWS
+%%PORTDOCS%%share/doc/snort/README.csv
+%%PORTDOCS%%share/doc/snort/BUGS
+%%PORTDOCS%%share/doc/snort/README
+%%PORTDOCS%%share/doc/snort/README.database
+%%PORTDOCS%%share/doc/snort/CREDITS
+%%PORTDOCS%%share/doc/snort/README.SNMP
+%%PORTDOCS%%share/doc/snort/README.xml
+%%PORTDOCS%%share/doc/snort/README.FLEXRESP
+%%PORTDOCS%%share/doc/snort/RULES.todo
+%%PORTDOCS%%share/doc/snort/FAQ
+%%PORTDOCS%%share/doc/snort/SnortUsersManual.pdf
+%%PORTDOCS%%share/doc/snort/README.PLUGINS
+%%PORTDOCS%%share/doc/snort/USAGE
 share/snort/attack-responses.rules
 share/snort/backdoor.rules
 share/snort/bad-traffic.rules
+share/snort/chat.rules
+@unexec if [ -f %B/classification.config ] && cmp -s %B/classification.config %B/classification.config-sample; then rm -f %B/classification.config; fi
+share/snort/classification.config-sample
+@exec [ -f %B/classification.config ] || cp %B/%f %B/classification.config
 share/snort/ddos.rules
+share/snort/deleted.rules
 share/snort/dns.rules
 share/snort/dos.rules
+share/snort/experimental.rules
 share/snort/exploit.rules
 share/snort/finger.rules
 share/snort/ftp.rules
 share/snort/icmp-info.rules
 share/snort/icmp.rules
+share/snort/imap.rules
 share/snort/info.rules
 share/snort/local.rules
 share/snort/misc.rules
+share/snort/multimedia.rules
+share/snort/mysql.rules
 share/snort/netbios.rules
+share/snort/nntp.rules
+share/snort/oracle.rules
+share/snort/other-ids.rules
+share/snort/p2p.rules
 share/snort/policy.rules
+share/snort/pop3.rules
 share/snort/porn.rules
+@unexec if [ -f %B/reference.config ] && cmp -s %B/reference.config %B/reference.config-sample; then rm -f %B/reference.config; fi
+share/snort/reference.config-sample
+@exec [ -f %B/reference.config ] || cp %B/%f %B/reference.config
 share/snort/rpc.rules
 share/snort/rservices.rules
 share/snort/scan.rules
 share/snort/shellcode.rules
 share/snort/smtp.rules
+share/snort/snmp.rules
 share/snort/sql.rules
 share/snort/telnet.rules
 share/snort/tftp.rules
 share/snort/virus.rules
 share/snort/web-attacks.rules
 share/snort/web-cgi.rules
+share/snort/web-client.rules
 share/snort/web-coldfusion.rules
 share/snort/web-frontpage.rules
 share/snort/web-iis.rules
 share/snort/web-misc.rules
+share/snort/web-php.rules
 share/snort/x11.rules
+%%PORTDOCS%%@dirrm share/doc/snort
 @dirrm share/snort
