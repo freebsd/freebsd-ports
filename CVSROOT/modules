@@ -3771,6 +3771,7 @@ libicq		ports/net/libicq
 libicq2000	ports/net/libicq2000
 libidea		ports/security/libidea
 libident	ports/security/libident
+libidn		ports/devel/libidn
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
 libiodbc	ports/databases/libiodbc
@@ -4701,6 +4702,7 @@ no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
 nocc		ports/mail/nocc
 nocol		ports/net/nocol
+noffle		ports/news/noffle
 nofgpg		ports/security/nofgpg
 nogger		ports/audio/nogger
 nohtml		ports/mail/nohtml
@@ -6429,6 +6431,7 @@ proxycheck	ports/security/proxycheck
 proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
 prozilla	ports/ftp/prozilla
+prtunnel	ports/net/prtunnel
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 psgml		ports/editors/psgml
@@ -7493,6 +7496,7 @@ smssend		ports/misc/smssend
 smtpclient	ports/mail/smtpclient
 smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
+smtpmail	ports/mail/smtpmail
 smtpmap		ports/security/smtpmap
 smtpproxy	ports/mail/smtpproxy
 smtprc		ports/mail/smtprc
@@ -8099,6 +8103,7 @@ untar		ports/archivers/untar
 unzip		ports/archivers/unzip
 uox3		ports/games/uox3
 upclient	ports/misc/upclient
+uplog		ports/net/uplog
 upnp		ports/devel/upnp
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
