@@ -1,5 +1,14 @@
 --- Makefile.orig	Fri Jun 11 07:09:12 1993
-+++ Makefile	Fri Apr 30 18:21:35 1999
++++ Makefile	Mon Jun  3 02:48:05 2002
+@@ -10,7 +10,7 @@
+ #CC = gcc
+ #
+ # standard
+-CC = cc
++CC ?= gcc
+ 
+ #####################################
+ # Optimization flags
 @@ -18,7 +18,7 @@
  #  GNU C
  #OPTIMIZE= -fcombine-regs -O
@@ -14,7 +23,7 @@
  #
  #
 -CFLAGS	=  $(DEBUG) $(OPTIMIZE) $(INCLUDEDIR)
-+CFLAGS	+=  $(DEBUG) $(OPTIMIZE) -I$(INCLUDEDIR)
++CFLAGS	+=  $(DEBUG) $(OPTIMIZE) 
  
  txtmerge:	
  	$(CC) $(CFLAGS) -o txtmerge txtmerge.c
