@@ -46,8 +46,6 @@ cvswrappers	CVSROOT cvswrappers
 editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
-mod_auth_imap	ports/www/mod_auth_imap
-mod_auth_imap2	ports/www/mod_auth_imap2
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
@@ -5220,6 +5218,8 @@ mod_auth_any	ports/www/mod_auth_any
 mod_auth_cookie_mysql	ports/www/mod_auth_cookie_mysql
 mod_auth_external	ports/www/mod_auth_external
 mod_auth_external2	ports/www/mod_auth_external2
+mod_auth_imap	ports/www/mod_auth_imap
+mod_auth_imap2	ports/www/mod_auth_imap2
 mod_auth_kerb	ports/www/mod_auth_kerb
 mod_auth_mysql	ports/www/mod_auth_mysql
 mod_auth_mysql41_ap2	ports/www/mod_auth_mysql41_ap2
@@ -9584,6 +9584,7 @@ tdir		ports/sysutils/tdir
 tdl		ports/devel/tdl
 tdtd.el		ports/textproc/tdtd.el
 teTeX		ports/print/teTeX
+teTeX-base	ports/print/teTeX-base
 tea-total	ports/security/tea-total
 team		ports/misc/team
 teamspeak_client	ports/audio/teamspeak_client
