@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zope-cmf
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	www zope
-MASTER_SITES=	http://cmf.zope.org/download/CMF-${PORTVERSION}/
+MASTER_SITES=	http://zope.org/Products/CMF/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
 
 MAINTAINER=	filippo@widestore.net
