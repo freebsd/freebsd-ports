@@ -8,8 +8,8 @@
 PORTNAME=	gnomemeeting
 PORTVERSION=	0.98.5
 CATEGORIES=	net gnome
-MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.98.0/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/gnomemeeting/0.98/
+MASTER_SITES=	ftp://ftp.gnome.org/pub/GNOME/sources/gnomemeeting/0.98/ \
+		# http://www.gnomemeeting.org/downloads/0.98.0/sources/
 
 MAINTAINER=	roger@FreeBSD.org
 COMMENT=	GNOME H323 Video Conferencing program, similar to NetMeeting
