@@ -9747,6 +9747,7 @@ ruby-mode.el	ports/lang/ruby-mode.el
 ruby-mp3info	ports/audio/ruby-mp3info
 ruby-mp3tag	ports/audio/ruby-mp3tag
 ruby-msql	ports/databases/ruby-msql
+ruby-musicbrainz	ports/audio/ruby-musicbrainz
 ruby-mwdom	ports/textproc/ruby-mwdom
 ruby-mysql	ports/databases/ruby-mysql
 ruby-narray	ports/math/ruby-narray
