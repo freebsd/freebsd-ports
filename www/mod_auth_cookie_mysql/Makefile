@@ -15,21 +15,19 @@ DIST_SUBDIR=	apache
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Allows authentication against a MySQL database via a secure cookie
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_MYSQL=	YES
 # If someone can test it with MySQL 4.1 ;-)
 BROKEN_WITH_MYSQL=	41
 
-APXS?=		${LOCALBASE}/sbin/apxs
-MYSQL_INC?=	${LOCALBASE}/include/mysql
-MYSQL_LIBS?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
+WANT_APACHE=	13
 
-do-build:
-	@(cd ${WRKSRC} && ${APXS} -I ${MYSQL_INC} -L ${MYSQL_LIBS} -c ${PORTNAME}.c)
+AP_FAST_BUILD=	YES
+AP_INC?=	${LOCALBASE}/include/mysql
+AP_LIB?=	${LOCALBASE}/lib/mysql -lmysqlclient -lz
 
-do-install:
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+post-install:
 	@(cd ${WRKSRC} && ${APXS} -A -i ${PORTNAME}.so)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -39,4 +37,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/putcookie.cgi ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
