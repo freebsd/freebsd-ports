@@ -1,18 +1,10 @@
---- winhelpcgi/Makefile.am.orig	Thu Apr 10 05:40:05 2003
-+++ winhelpcgi/Makefile.am	Sat May  1 15:48:37 2004
-@@ -1,5 +1,5 @@
- ## Process this file using automake to create makefile.in
--INCLUDES = -I../include -I../include/linux
-+INCLUDES = -I../include -I../include/linux -I${LOCALBASE}/include
- #CFLAGS = -ggdb
- 
- bin_PROGRAMS = winhelpcgi.cgi
-@@ -7,7 +7,7 @@
- winhelpcgi_cgi_SOURCES=dib2png.c wc_html.c wc_kwsrch.c winhelpcgi.c
- #winhelpcgi_cgi_LDFLAGS=-static
- #winhelpcgi_cgi_LDADD=-L../libhlpaccess -lhlpaccess -lpng -lz
--winhelpcgi_cgi_LDADD= \
-+winhelpcgi_cgi_LDADD= -L${LOCALBASE}/lib \
+--- winhelpcgi/Makefile.am.orig Fri Jun 11 22:31:21 2004
++++ winhelpcgi/Makefile.am      Fri Jun 11 22:31:30 2004
+@@ -10,7 +10,7 @@
          ../libhlpaccess/libhlpaccess.a \
-         -lpng -lz
+         -lpng -lz \
+         @LIBWMF_LIBS@ \
+-        @INTLLIBS@
++        @INTLLIBS@ -lintl
  
+ noinst_HEADERS = dib2png.h winhelpcgi.h wmf2png.h 

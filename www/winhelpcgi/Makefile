@@ -6,36 +6,35 @@
 #
 
 PORTNAME=	winhelpcgi
-PORTVERSION=	0.93.1
+PORTVERSION=	0.99
 CATEGORIES=	www textproc
 MASTER_SITES=	http://www.herdsoft.com/ftp/
-DISTNAME=	${PORTNAME}_0.93-1
+DISTNAME=	${PORTNAME}_0.99-3
 
 MAINTAINER=	endx7@users.sf.net
 COMMENT=	A winhelp converter cgi program
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE_VER=	14
-AUTOMAKE_ARGS=	--add-missing
+USE_GETTEXT=		yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
-# get rid of symlinks
 pre-patch:
-	(cd ${WRKSRC}; ${RM} INSTALL install-sh mkinstalldirs missing COPYING)
+	(cd ${WRKSRC}; ${TOUCH} config.h)
 
 post-build:
 	@${CAT} ${PKGDIR}/pkg-message | ${SED} -e 's:%%PREFIX%%:${PREFIX}:' > ${PKGMESSAGE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/winhelpcgi/winhelpcgi/winhelpcgi.cgi ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/www/winhelpcgi
+	${INSTALL_PROGRAM} ${WRKSRC}/winhelpcgi/winhelpcgi.cgi ${PREFIX}/www/winhelpcgi
 
-.include <bsd.port.post.mk>
+post-install:
+.if !defined(BATCH)
+	@${CAT} ${PKGMESSAGE}
+.endif
+
+.include <bsd.port.mk>
