@@ -1,0 +1,15 @@
+*** alevt-date.c.orig	Wed Aug 18 13:33:52 1999
+--- alevt-date.c	Wed Aug 18 13:33:31 1999
+*************** chk_time(int t)
+*** 32,39 ****
+--- 32,41 ----
+  
+      t = t/100/100 * 60*60 + t/100%100 * 60 + t%100;
+      t += timezone;
++ /*
+      if (daylight)
+  	t -= 60*60;
++ */
+  
+      sys_t = time(0);
+      dt = t - sys_t % (24*60*60);
