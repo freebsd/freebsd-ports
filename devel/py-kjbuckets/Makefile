@@ -3,7 +3,7 @@
 # Date created:				03/27/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/20 08:50:50 nectar Exp $
+# $Id: Makefile,v 1.1.1.1 1999/03/28 02:53:03 nectar Exp $
 #
 
 DISTNAME=		kjb
@@ -21,8 +21,9 @@ MAKEFILE=		makefile
 WRKSRC=			${WRKDIR}
 
 do-install:
+	${MKDIR} ${PREFIX}/lib/python1.5/site-packages
 	${INSTALL_DATA} ${WRKSRC}/kjbucketsmodule.so                   \
-		${PREFIX}/lib/python1.5/site-packages
+		${PREFIX}/lib/python1.5/site-packages/
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/kjbuckets.html ${PREFIX}/share/doc/
 .endif
