@@ -9,7 +9,7 @@ PORTNAME=	qt-gui
 PORTVERSION=	${QT_LICQ_VER}
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 USE_AUTOMAKE=	yes
 USE_QT_VER=	2
