@@ -7,6 +7,7 @@
 
 PORTNAME=	odbc
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.ch-werner.de/rubyodbc/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,10 +21,6 @@ LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-RUBY_WITH_PTHREAD=	yes
-
-CONFIGURE_ARGS=	--with-pthread-cflags="${PTHREAD_CFLAGS}" \
-		--with-pthread-libs="${PTHREAD_LIBS}"
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README doc/odbc.html
