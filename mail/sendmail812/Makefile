@@ -156,6 +156,8 @@ post-install:
 	@cd ${WRKSRC}; ${TAR} cf - cf |\
 		(cd ${PREFIX}/share/sendmail; ${TAR} xf -)
 	@cd ${WRKSRC}; ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/sendmail/
+	${INSTALL_DATA} ${WRKSRC}/doc/op/op.ps \
+		${PREFIX}/share/doc/sendmail/op.ps
 	${INSTALL_DATA} ${WRKSRC}/devtools/README \
 		${PREFIX}/share/doc/sendmail/DEVTOOLS
 	${INSTALL_DATA} ${WRKSRC}/sendmail/README \

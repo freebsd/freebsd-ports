@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail/pkg-plist,v 1.8 2001-10-10 21:32:56 dinoex Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail/pkg-plist,v 1.9 2001-10-21 03:10:29 dinoex Exp $
 @exec if ! pw groupshow smmsp 2>/dev/null; then pw groupadd smmsp -g 90; fi
 @exec if ! pw usershow smmsp 2>/dev/null; then pw useradd smmsp -g smmsp -u 90 -h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 @exec mkdir -p /var/spool/clientmqueue
@@ -24,6 +24,7 @@ sbin/sendmail
 @group wheel
 @comment (overwritten by pkg_add) chown root:smmsp sbin/sendmail
 @exec chmod 2555 sbin/sendmail
+%%PORTDOCS%%share/doc/sendmail/op.ps
 %%PORTDOCS%%share/doc/sendmail/DEVTOOLS
 %%PORTDOCS%%share/doc/sendmail/SENDMAIL
 %%PORTDOCS%%share/doc/sendmail/MAIL.LOCAL
