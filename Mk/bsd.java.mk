@@ -181,7 +181,7 @@ _JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO=	PORT=java/linux-blackdown-jdk14	HOME=${
 											VERSION=1.4.2	OS=linux	VENDOR=blackdown
 _JAVA_PORT_LINUX_IBM_JDK_1_3_INFO=			PORT=java/linux-ibm-jdk13		HOME=${LOCALBASE}/linux-ibm-jdk1.3.1 \
 											VERSION=1.3.1	OS=linux	VENDOR=ibm
-_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO=			PORT=java/linux-ibm-jdk14		HOME=${LOCALBASE}/linux-ibm-jdk1.4.1 \
+_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO=			PORT=java/linux-ibm-jdk14		HOME=${LOCALBASE}/linux-ibm-jdk1.4.2 \
 											VERSION=1.4.1	OS=linux	VENDOR=ibm
 _JAVA_PORT_LINUX_SUN_JDK_1_2_INFO=			PORT=java/linux-sun-jdk12		HOME=${LOCALBASE}/linux-sun-jdk1.2.2 \
 											VERSION=1.2.2	OS=linux	VENDOR=sun
