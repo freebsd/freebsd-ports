@@ -7,6 +7,8 @@ share/tightvnc/classes/AuthPanel.class
 share/tightvnc/classes/ButtonPanel.class
 share/tightvnc/classes/ClipboardFrame.class
 share/tightvnc/classes/DesCipher.class
+share/tightvnc/classes/HTTPConnectSocket.class
+share/tightvnc/classes/HTTPConnectSocketFactory.class
 share/tightvnc/classes/OptionsFrame.class
 share/tightvnc/classes/RecordingFrame.class
 share/tightvnc/classes/ReloginPanel.class
