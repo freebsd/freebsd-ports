@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Apr 12 10:04:41 2003
++++ Makefile	Wed Jun  2 21:10:14 2004
+@@ -1,5 +1,5 @@
+ 
+-CFLAGS=-Wall -g -O0 -ansi -pedantic
++CFLAGS+=-Wall -ansi -pedantic
+ 
+ SRCS=$(wildcard *.c)
+ 
+@@ -26,7 +26,6 @@
+ 	groff -Tps -mandoc sheerdns.8 > sheerdns.ps
+ 
+ install: all
+-	install sheerdnshash sheerdns /usr/sbin/
+-	install sheerdns.8 /usr/share/man/man8/
+-	install sheerdns.8 /usr/man/man8/
++	install sheerdnshash sheerdns ${PREFIX}/sbin/
++	install sheerdns.8 ${MANPREFIX}/man/man8/
+ 
