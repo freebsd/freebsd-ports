@@ -20,4 +20,6 @@ PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 LOCAL_SRCDIR=	${PORTSDIR}/mail/thunderbird
 LOCAL_SUBDIR=	lib/thunderbird/lib/mozilla-1.6b
 
+BROKEN=		"Does not compile"
+
 .include "${MASTERDIR}/Makefile"
