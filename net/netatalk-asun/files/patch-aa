@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Feb  7 12:15:46 1999
-+++ Makefile	Mon Mar  8 09:42:21 1999
+--- Makefile.orig	Sun Feb  7 20:15:46 1999
++++ Makefile	Sat Dec 23 13:31:49 2000
 @@ -1,15 +1,15 @@
  # Root of installation. Subdirectories will be ${DESTDIR}/etc,
  # ${DESTDIR}/bin, and ${DESTDIR}/lib.
@@ -19,7 +19,7 @@
  # for configuration files (AppleVolumes.system, etc.)
  ETCDIR=$(DESTDIR)/etc
  # for include files
-@@ -27,22 +27,27 @@
+@@ -27,22 +27,29 @@
  #MANDIR=/usr/man
  
  # Location of the Berkeley v2 db library and include files. 
@@ -32,7 +32,9 @@
  # don't want Randnum Exchange and 2-Way Randnum Exchange as allowable UAMs 
  # for afpd. We expect libdes.a in $DESDIR/lib and des.h in $DESDIR/include.
 -DESDIR=/usr/local
++.if exists(/usr/lib/libdes.a)
 +DESDIR=/usr
++.endif
  
  # Location of the tcp wrapper library and include files. Comment this out
  # if you don't want tcp wrapper support. having tcp wrapper support is
@@ -52,7 +54,7 @@
   
  # Location of the AFS and Kerberos libraries and include files.  Uncomment
  # and edit these if you want to include AFS or Kerberos support in afpd
-@@ -77,12 +82,13 @@
+@@ -77,12 +84,13 @@
  	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
  	    DESTDIR="${DESTDIR}" MANDIR="${MANDIR}" \
  	    TCPWRAPDIR="${TCPWRAPDIR}" PAMDIR="${PAMDIR}" DB2DIR="${DB2DIR}" \
