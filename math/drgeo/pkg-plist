@@ -3,6 +3,8 @@ share/gnome/applications/drgeo.desktop
 share/gnome/drgeo/encode/latin1.ps
 share/gnome/drgeo/examples/figures/accel.fgeo
 share/gnome/drgeo/examples/figures/angle-inscrit.fgeo
+share/gnome/drgeo/examples/figures/baballe.fgeo
+share/gnome/drgeo/examples/figures/braik_conic.fgeo
 share/gnome/drgeo/examples/figures/cercle-inscrit.fgeo
 share/gnome/drgeo/examples/figures/circle-locus.fgeo
 share/gnome/drgeo/examples/figures/conics.fgeo
@@ -24,6 +26,7 @@ share/gnome/drgeo/examples/figures/saliera.fgeo
 share/gnome/drgeo/examples/figures/signed-distance.fgeo
 share/gnome/drgeo/examples/figures/sinusoide.fgeo
 share/gnome/drgeo/examples/figures/slope.fgeo
+share/gnome/drgeo/examples/figures/steiner_conic.fgeo
 share/gnome/drgeo/examples/figures/symmetry-axe-2.fgeo
 share/gnome/drgeo/examples/figures/symmetry-center.fgeo
 share/gnome/drgeo/examples/figures/triangle-scale.fgeo
@@ -41,7 +44,9 @@ share/gnome/drgeo/examples/scheme/baum.scm
 share/gnome/drgeo/examples/scheme/figure.scm
 share/gnome/drgeo/examples/scheme/polygon.scm
 share/gnome/drgeo/examples/scheme/polygon2.scm
+share/gnome/drgeo/examples/scheme/spiral.scm
 share/gnome/drgeo/examples/scheme/square.scm
+share/gnome/drgeo/examples/scheme/steiner.scm
 share/gnome/drgeo/glade/angle.png
 share/gnome/drgeo/glade/angle.xpm
 share/gnome/drgeo/glade/axial_symetry.png
@@ -81,6 +86,7 @@ share/gnome/drgeo/glade/eraser.png
 share/gnome/drgeo/glade/eraser.xpm
 share/gnome/drgeo/glade/free_point.png
 share/gnome/drgeo/glade/free_point.xpm
+share/gnome/drgeo/glade/grid.png
 share/gnome/drgeo/glade/half_line.png
 share/gnome/drgeo/glade/half_line.xpm
 share/gnome/drgeo/glade/homothetie.png
@@ -119,6 +125,7 @@ share/gnome/drgeo/glade/preferences.xpm
 share/gnome/drgeo/glade/property.png
 share/gnome/drgeo/glade/property.xpm
 share/gnome/drgeo/glade/quit.xpm
+share/gnome/drgeo/glade/rename.png
 share/gnome/drgeo/glade/rotation.png
 share/gnome/drgeo/glade/rotation.xpm
 share/gnome/drgeo/glade/round-empty.xpm
@@ -163,6 +170,7 @@ share/locale/cs/LC_MESSAGES/drgeo.mo
 share/locale/da/LC_MESSAGES/drgeo.mo
 share/locale/de/LC_MESSAGES/drgeo.mo
 share/locale/el/LC_MESSAGES/drgeo.mo
+share/locale/en_CA/LC_MESSAGES/drgeo.mo
 share/locale/en_GB/LC_MESSAGES/drgeo.mo
 share/locale/es/LC_MESSAGES/drgeo.mo
 share/locale/fr/LC_MESSAGES/drgeo.mo
@@ -170,6 +178,7 @@ share/locale/ga/LC_MESSAGES/drgeo.mo
 share/locale/gl/LC_MESSAGES/drgeo.mo
 share/locale/gu/LC_MESSAGES/drgeo.mo
 share/locale/hi/LC_MESSAGES/drgeo.mo
+share/locale/hr/LC_MESSAGES/drgeo.mo
 share/locale/hu/LC_MESSAGES/drgeo.mo
 share/locale/it/LC_MESSAGES/drgeo.mo
 share/locale/ja/LC_MESSAGES/drgeo.mo
