@@ -8,11 +8,9 @@
 PORTNAME=	thinice
 PORTVERSION=	1.0.4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_THEMES} \
-		http://www.ing.umu.se/~stric/theme/
-MASTER_SITE_SUBDIR=	gtk
-DISTNAME=	ThinIce-1.2.x-200104091453
-#DISTNAME=	gtk-${PORTNAME}-theme-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_THEMES}
+MASTER_SITE_SUBDIR= thinice
+DISTNAME=	thinice-1.2.x
 
 MAINTAINER=	sobomax@FreeBSD.org
 
