@@ -8,10 +8,10 @@
 
 DISTNAME=	sane-1.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/  \
+MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
 		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
-MAINTAINER= 	ports@FreeBSD.org	
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
