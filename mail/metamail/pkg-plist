@@ -24,7 +24,6 @@ bin/sun-audio-file
 bin/sun-message.csh
 bin/sun-to-mime
 bin/sun2mime
-bin/sun2mime.orig
 lib/metamail/fonts/heb6x13.pcf
 lib/metamail/fonts/heb8x13.pcf
 lib/metamail/fonts/heb8x13B.pcf
