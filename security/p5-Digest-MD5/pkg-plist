@@ -3,5 +3,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest/MD5.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest 2>/dev/null || true
