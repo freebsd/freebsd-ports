@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR= anholt
 DISTNAME=	glean-20030925-snap
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of OpenGL conformance tests
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
