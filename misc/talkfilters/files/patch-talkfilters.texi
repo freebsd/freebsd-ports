@@ -1,0 +1,13 @@
+--- talkfilters.texi.orig	Wed Jul 23 13:17:36 2003
++++ talkfilters.texi	Mon Sep 22 01:32:59 2003
+@@ -5,6 +5,10 @@
+ @c All text is ignored before the setfilename.
+ @setfilename talkfilters.info
+ @settitle talkfilters @value{edition}
++@dircategory Applications
++@direntry
++* Talkfilters: (talkfilters).		GNU Talk Filters.
++@end direntry
+ 
+ @set edition 2.1
+ @set update-month July 2003
