@@ -10,7 +10,106 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
-20040504:
+20040610:
+  The following behavioural or feature changes were committed:
+
+  * Support verbose index builds with INDEX_VERBOSE
+
+  * Support glob expressions in USE_GETTEXT to allow more flexibility
+    in the face of future gratuitous library version bumps by the gettext
+    developers:
+
+    USE_GETTEXT=yEs   # Works as before (case-insensitive)
+    USE_GETTEXT=[5-7] # Accepts any of those libintl.so.x versions
+                      # in the LIB_DEPENDS
+
+  * Extend 'make search' support to allow much more flexible searching
+    From the PR:
+
+    Besides the good old key and name variables, this patch adds
+    support for path, info, maint, cat, bdeps, and rdeps, which match
+    on the appropriate fields, plus their exclusion counterparts: xkey,
+    xname, etc.
+
+    Examples:
+
+    Find all ports whose names contain "pear-" but not "html" or "http":
+
+      make search name=pear- xname='ht(tp|ml)'
+     
+    Find ports whose names contain "pear-" and which don't have apache
+    listed in build-time dependencies:
+
+      make search name=pear- xbdeps=apache
+
+    The positive variables (name, key, maint, etc) are AND-ed, their
+    negative versions are OR-ed; in other words, matching any x-
+    variable will cause the port to be skipped, mismatch on any non-x-
+    variable will cause it to be skipped.
+
+    Examples:
+
+    Find ports that are both in the www category and maintained by
+    Thierry Thomas:
+
+      make search maint=thierry@ path=/www/
+
+    Find ports in the archivers category that are either not orphaned
+    or don't have "zip" in their names (contrived):
+
+      make search cat=archivers xmaint=ports@freebsd xname=zip
+
+    It is possible to select fields to display.
+
+    Example:
+
+    Find PEAR ports that don't build-depend on apache, displaying only
+    Port:, Path:, and Info: lines:
+
+      make search name=pear- xbdeps=apache display=name,path,info
+
+    Case-sensitivity can now be turned of with icase=1.
+
+    Example:
+
+    Find ports with @freebsd.org maintainer addresses without the
+    "proper" capitalization (@FreeBSD.org), display their paths and
+    maintainer addresses:
+
+      make search maint=@freebsd\\.org icase=0 display=maint,path
+
+    The key and xkey variables can be limited in scope to displayed fields
+    by setting keylim to 1.
+
+    Example:
+
+    Find ports that contain "apache" in either of the name, path, info
+    fields, ignore the rest of the record (dependencies, maintainer
+    address, etc):
+
+      make search key=apache display=name,path,info keylim=1
+
+    The following variables can be set e.g. in /etc/make.conf to
+    control default search behaviour:
+
+      PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps
+      PORTSEARCH_KEYLIM?=0
+      PORTSEARCH_XKEYLIM?=0
+      PORTSEARCH_IGNORECASE?=1
+
+  * Extend USE_PERL5_BUILD and USE_PERL5 to add EXTRACT and PATCH
+    dependencies
+
+  * While building index, treat non-existent dependencies as fatal.
+    Previously the error was being hidden by the stderr
+    redirection.
+
+  * Don't always retry BROKEN ports when package building (it is taking
+    too much time to continually rebuild ports that are usually going
+    to really be broken).  Set TRYBROKEN if you want to attempt a
+    build of a BROKEN port.
+
+20040604:
 	Over the past few weeks, we have been testing the next
 	incarnation of ports/Mk/bsd.autotools.mk on the road to bringing
 	at least some semblance of sanity back to this corner of the
