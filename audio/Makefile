@@ -69,7 +69,6 @@
     SUBDIR += ermixer
     SUBDIR += esound
     SUBDIR += etktab
-    SUBDIR += evilbar
     SUBDIR += extace
     SUBDIR += faad
     SUBDIR += fcplay
