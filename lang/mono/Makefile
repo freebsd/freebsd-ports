@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	lang
-MASTER_SITES=	http://mono.ximian.com/archive/${PORTVERSION}/
+MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	An open source implementation of .NET Development Framework
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_GNOME=	gnomehack glib20 pkgconfig
+USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+LIBTOOLFILES=	configure libgc/configure
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-transform-name=\'\' \
 		--with-gc=included \
-		--with-nptl=no
+		--with-tls=pthread
 
 MAN1=		cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 gacutil.1 \
 		genxs.1 ilasm.1 makecert.1 mcs.1 mint.1 mono.1 \
@@ -38,8 +38,12 @@ ONLY_FOR_ARCHS=	i386
 
 .if ${OSVERSION} < 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-signbit
-.elif ${OSVERSION} < 502113
-IGNORE=	"Does not work on 5.X before 502113"
+.elif ${OSVERSION} < 503000
+IGNORE=	"Does not work on 5.X before 503000"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/mono/metadata/assembly.c
 
 .include <bsd.port.post.mk>

@@ -1,21 +1,6 @@
---- configure.orig	Wed Jul  7 22:19:06 2004
-+++ configure	Wed Jul  7 22:35:38 2004
-@@ -2020,10 +2020,10 @@
- 		;;
- 	*-*-*freebsd*|*-*-*openbsd*)
- 		platform_win32=no
--		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS"
--		libmono_cflags="-D_THREAD_SAFE"
--		LDFLAGS="$LDFLAGS -pthread"
--		libmono_ldflags="-pthread"
-+		CPPFLAGS="$CPPFLAGS $PTHREAD_CFLAGS -DGC_FREEBSD_THREADS"
-+		libmono_cflags="$PTHREAD_CFLAGS"
-+		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
-+		libmono_ldflags="$PTHREAD_LIBS"
- 		need_link_unlink=yes
- 		cat >>confdefs.h <<\_ACEOF
- #define PTHREAD_POINTER_ID 1
-@@ -14003,8 +14003,8 @@
+--- configure.orig	Wed Aug  4 17:42:34 2004
++++ configure	Sun Aug 29 02:39:35 2004
+@@ -14148,8 +14148,8 @@
  ACCESS_UNALIGNED="yes"
  
  JIT_SUPPORTED=no
