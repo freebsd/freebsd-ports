@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.00
+PORTVERSION=	4.10
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
@@ -15,11 +15,22 @@ MAINTAINER=	tg@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+.if defined(WITH_SOUND)
+RUN_DEPENDS+=	${LOCALBASE}/lib/python1.5/site-packages/pysolsoundservermodule.so:${PORTSDIR}/audio/pysol-sound-server
+.endif
+
 NO_BUILD=	yes
 
 MAN6=	pysol.6
 
 CARDSETS=	pysol-cardsets-3.40
+
+.if !defined(WITH_SOUND)
+post-extract:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want install sound support please use \"make -DWITH_SOUND\""
+	@${ECHO_MSG}
+.endif
 
 do-install:
 	${SED} -e "s|@pkgdatadir@|${PREFIX}/share/pysol|" < ${WRKSRC}/pysol > ${PREFIX}/bin/pysol
