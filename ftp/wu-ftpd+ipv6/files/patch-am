@@ -1,5 +1,5 @@
 *** src/makefiles/Makefile.fbs.orig	Thu Jan 16 11:27:58 1997
---- src/makefiles/Makefile.fbs	Thu Jan 30 17:50:47 1997
+--- src/makefiles/Makefile.fbs	Wed Feb  5 14:18:13 1997
 ***************
 *** 1,8 ****
   CC       = cc
@@ -42,3 +42,20 @@
   
   all: ftpd ftpcount ftpshut ckconfig
   
+***************
+*** 24,30 ****
+  	${CC} ${CFLAGS} -o $@ ftpshut.c vers.o ${LIBES}
+  
+  ftpd: ${OBJS} ${LIBC}
+! 	${CC} ${CFLAGS} -o $@ ${OBJS} ${LIBES}
+  
+  ckconfig:   ckconfig.c
+  	${CC} ${CFLAGS} -o $@ ckconfig.c
+--- 24,30 ----
+  	${CC} ${CFLAGS} -o $@ ftpshut.c vers.o ${LIBES}
+  
+  ftpd: ${OBJS} ${LIBC}
+! 	${CC} -static ${CFLAGS} -o $@ ${OBJS} ${LIBES}
+  
+  ckconfig:   ckconfig.c
+  	${CC} ${CFLAGS} -o $@ ckconfig.c
