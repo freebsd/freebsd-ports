@@ -19,7 +19,7 @@ PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCHFILES=	vnc-3.3.3r2-v6-20010421.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 IGNOREFILES=	vnc-latest_doc.tgz
