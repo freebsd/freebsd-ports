@@ -22,12 +22,17 @@ lib/cbb/images/cbb.xbm
 lib/cbb/images/mini-cross.gif
 lib/cbb/images/mini-exclam.gif
 lib/cbb/images/splash-32.gif
+lib/cbb/contrib/conv-french-qif.pl
+lib/cbb/contrib/emacs-edb
+lib/cbb/contrib/emacs-forms
 lib/cbb/contrib/fetch-latest.pl
 lib/cbb/contrib/importcat.README
 lib/cbb/contrib/importcat.pl
 lib/cbb/contrib/invest.pl
 lib/cbb/contrib/loan.gnuplot
 lib/cbb/contrib/loan.pl
+lib/cbb/contrib/loan_recur.pl
+lib/cbb/contrib/mym_to_cbb.pl
 lib/cbb/contrib/recur.pl
 lib/cbb/contrib/term.pl
 lib/cbb/contrib/trimold.pl

@@ -2,7 +2,7 @@
 +++ Makefile	Fri Oct 10 20:52:22 1997
 @@ -26,14 +26,15 @@
  
- CBB_ROOT = cbb-0.74
+ CBB_ROOT = cbb-0.77
  TAR = tar
 -PERL = perl
 +PERL = ${PERL5}
