@@ -11,12 +11,12 @@ MAINTAINER=	nobutaka@nobutaka.com
 MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 
 EMACS_NAME=		xemacs
-EMACS_PORT=		xemacs-mule
-EMACS_VER=		21.1.6
-MULE_VER=		21.1.6
+EMACS_PORT=		xemacs21-mule
+EMACS_VER=		21.1.8
+MULE_VER=		21.1.8
 EMACS_LIBDIR=		lib/xemacs
-EMACS_VER_LIBDIR=	lib/xemacs
-EMACS_PACKAGESDIR=	lib/${EMACS_NAME}/${EMACS_NAME}-packages
+EMACS_PACKAGESDIR=	lib/xemacs/site-packages
+MANIFEST=		MANIFEST.wl
 
 HAVE_COMMON_PORT=	yes
 
