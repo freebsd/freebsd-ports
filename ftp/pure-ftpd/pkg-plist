@@ -2,7 +2,9 @@ sbin/pure-mrtginfo
 sbin/pure-ftpd
 sbin/pure-ftpwho
 sbin/pure-uploadscript
-sbin/pure-statsdecode
+bin/pure-statsdecode
+bin/pure-pw
+bin/pure-pwconvert
 sbin/pure-config.pl
 etc/pureftpd-ldap.conf.sample
 etc/pureftpd-mysql.conf.sample
@@ -13,6 +15,7 @@ etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/HISTORY
 %%PORTDOCS%%share/doc/pure-ftpd/NEWS
 %%PORTDOCS%%share/doc/pure-ftpd/README
+%%PORTDOCS%%share/doc/pure-ftpd/README.Virtual-Users
 %%PORTDOCS%%share/doc/pure-ftpd/README.Configuration-File
 %%PORTDOCS%%share/doc/pure-ftpd/README.Contrib
 %%PORTDOCS%%share/doc/pure-ftpd/README.LDAP
