@@ -1,14 +1,16 @@
 # New ports collection makefile for:	zircon
-# Version required:	1.17p3
+# Version required:	1.18.31
 # Date created:		19 Aug 1995
 # Whom:			jkh / pst
 #
-# $Id: Makefile,v 1.12 1996/12/03 10:42:26 obrien Exp $
+# $Id: Makefile,v 1.13 1997/04/20 13:19:39 wosch Exp $
 #
 
-DISTNAME=	zircon-1.18b8
+DISTNAME=	zircon-1.18.31
 CATEGORIES=	net tk41
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
+IS_INTERACTIVE=	yes
+NO_BUILD=	yes
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -19,24 +21,12 @@ MAINTAINER=	ports@FreeBSD.org
 .if defined(USE_DPWISH) && ${USE_DPWISH} == YES
 BUILD_DEPENDS=	dpwish:${PORTSDIR}/net/tclDP
 RUN_DEPENDS=	dpwish:${PORTSDIR}/net/tclDP
-MAKE_ENV=	WISH=${PREFIX}/bin/dpwish
 .else
 BUILD_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
-MAKE_ENV=	WISH=${PREFIX}/bin/wish4.1
 .endif
 
-# In case the port is built not on FreeBSD-2.2+ (which has tcl standard)
-.if exists(/usr/bin/tclsh)
-MAKE_ENV+=	TCLSH=tclsh
-.else
-BUILD_DEPENDS+=	tclsh7.5:${PORTSDIR}/lang/tcl75
-MAKE_ENV+=	TCLSH=tclsh7.5
-.endif
-
-MAKEFILE=	Makefile.FreeBSD
-
-pre-patch:
-	${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile.FreeBSD
+install:
+	(cd ${WRKSRC} && ./installZircon)
 
 .include <bsd.port.mk>
