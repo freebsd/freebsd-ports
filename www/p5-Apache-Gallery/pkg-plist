@@ -1,25 +1,44 @@
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Gallery.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
+%%SITE_PERL%%/Apache/Gallery.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery/.packlist
+share/Apache-Gallery/templates/dircomment.tpl
 share/Apache-Gallery/templates/directory.tpl
 share/Apache-Gallery/templates/error.tpl
+share/Apache-Gallery/templates/file.tpl
 share/Apache-Gallery/templates/index.tpl
 share/Apache-Gallery/templates/info.tpl
+share/Apache-Gallery/templates/interval.tpl
+share/Apache-Gallery/templates/intervalactive.tpl
 share/Apache-Gallery/templates/layout.tpl
-share/Apache-Gallery/templates/movie.tpl
 share/Apache-Gallery/templates/navpicture.tpl
+share/Apache-Gallery/templates/nodircomment.tpl
+share/Apache-Gallery/templates/nopictureinfo.tpl
 share/Apache-Gallery/templates/orig.tpl
 share/Apache-Gallery/templates/picture.tpl
 share/Apache-Gallery/templates/scale.tpl
+share/Apache-Gallery/templates/pictureinfo.tpl
+share/Apache-Gallery/templates/refresh.tpl
+share/Apache-Gallery/templates/scaleactive.tpl
 share/Apache-Gallery/templates/showpicture.tpl
+share/Apache-Gallery/templates/slideshowisoff.tpl
+share/Apache-Gallery/templates/slideshowoff.tpl
 share/Apache-Gallery/css/gallery.css
-www/icons/folder.png
+www/icons/application-doc.png
+www/icons/application-mp3.png
+www/icons/application-ogg.png
+www/icons/application-pdf.png
+www/icons/application-rtf.png
+www/icons/application-wav.png
+www/icons/gallery.css
 www/icons/video-asf.png
 www/icons/video-avi.png
 www/icons/video-mov.png
 www/icons/video-mpeg.png
 www/icons/video-mpg.png
+www/icons/video-wmv.png
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Gallery
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
 @dirrm share/Apache-Gallery/templates
 @dirrm share/Apache-Gallery/css
 @dirrm share/Apache-Gallery
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Gallery
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
+@unexec rmdir %D/share/Apache-Gallery/templates 2>/dev/null || true
+@unexec rmdir %D/www/icons 2>/dev/null || true
