@@ -6,7 +6,8 @@ bin/uncompface
 man/man1/compface.1.gz
 man/man1/uncompface.1.gz
 lib/libcompface.a
-lib/libcompface.so.1.6
+lib/libcompface.so.1.0
+@exec /sbin/ldconfig -m %D/lib
 man/man3/compface.3.gz
 man/man3/uncompface.3.gz
 bin/icon2ikon 
