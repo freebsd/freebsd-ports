@@ -1,5 +1,7 @@
 bin/%%MAMEMESS%%
 %%MAMEONLY%%bin/xml2info
+%%MAMEONLY%%bin/chdman
+%%MAMEONLY%%bin/romcmp
 etc/%%MAMEMESS%%rc.sample
 share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/changes.unix
