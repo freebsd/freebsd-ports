@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		expat.4:${PORTSDIR}/textproc/expat2

@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 
 MAINTAINER=	petef@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 USE_GMAKE=	yes

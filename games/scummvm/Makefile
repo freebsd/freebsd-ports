@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_GMAKE=	yes
 WRKSRC=         ${WRKDIR}/${PORTNAME}-0.3.0

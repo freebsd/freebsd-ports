@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fracture@allusion.net
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_net.0:${PORTSDIR}/net/sdl_net

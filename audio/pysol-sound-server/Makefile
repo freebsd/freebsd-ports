@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 

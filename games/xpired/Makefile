@@ -17,7 +17,7 @@ MAINTAINER=	edwin@mavetju.org
 LIB_DEPENDS=	SDL_gfx.0:${PORTSDIR}/graphics/sdl_gfx \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 WRKSRC=		${WRKDIR}/src
 

@@ -15,7 +15,7 @@ MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_XLIB=	yes
 USE_AUTOCONF=	yes

@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		SDLmm.8:${PORTSDIR}/devel/sdlmm \

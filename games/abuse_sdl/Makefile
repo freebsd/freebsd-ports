@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 
 MAINTAINER=	des@freebsd.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12:install
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12:install
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES

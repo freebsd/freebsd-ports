@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		smpeg:${PORTSDIR}/graphics/smpeg
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

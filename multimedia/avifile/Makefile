@@ -118,7 +118,7 @@ PLIST_SUB+=	QT="@comment "
 
 # sdl
 .if !defined(WITHOUT_SDL)
-LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE} \
 			--with-sdl-exec-prefix=${LOCALBASE}

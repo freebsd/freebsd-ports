@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	lgames
 
 MAINTAINER=	verm@drunkmonk.net
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

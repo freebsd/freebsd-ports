@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	mjpeg
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GNOMENG=	yes

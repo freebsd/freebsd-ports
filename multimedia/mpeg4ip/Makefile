@@ -15,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		nasm:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GNOMENG=	yes

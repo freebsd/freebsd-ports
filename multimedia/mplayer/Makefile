@@ -112,7 +112,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
 .if defined(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 .endif
 
 .if defined(WITH_VORBIS)

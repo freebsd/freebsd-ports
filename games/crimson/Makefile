@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	Jan.Stocker@t-online.de
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 USE_BZIP2=	yes

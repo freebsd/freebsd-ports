@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	lgeneral
 
 MAINTAINER=	filippo@widestore.net
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"

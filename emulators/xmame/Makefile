@@ -191,7 +191,7 @@ pre-everything::
 	@${ECHO_MSG} "'make options' for more information."
 	@exit 1
 .endif
-LIB_DEPENDS=    SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=    SDL-1.1.5:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DISPLAY_METHOD=	SDL
 .endif

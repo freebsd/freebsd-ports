@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=    SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=    SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
 MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}

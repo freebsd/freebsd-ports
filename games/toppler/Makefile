@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	toppler
 
 MAINTAINER=	dom@happygiraffe.net
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 LIB_DEPENDS+=	SDL_mixer:${PORTSDIR}/audio/sdl_mixer
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
