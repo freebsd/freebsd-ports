@@ -8,13 +8,11 @@
 PORTNAME=	balance
 PORTVERSION=	3.11
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	balance
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Simple but powerful generic tcp proxy with round robin features
-
-BROKEN=		"Checksum mismatch"
 
 ALL_TARGET=	balance
 USE_REINPLACE=	yes
