@@ -1,0 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/gamin.py
+lib/%%PYTHON_VERSION%%/site-packages/gamin.pyc
+lib/%%PYTHON_VERSION%%/site-packages/gamin.pyo
+lib/%%PYTHON_VERSION%%/site-packages/_gamin.so
