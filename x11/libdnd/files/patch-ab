@@ -1,0 +1,53 @@
+--- Makefile.in.orig	Fri May 23 04:18:22 1997
++++ Makefile.in	Wed Nov 19 13:11:44 1997
+@@ -23,20 +23,28 @@
+ CXXCOMPILE = $(CXX) $(INCLUDES) $(CXXFLAGS) -c
+ LINK = $(CC) $(LDFLAGS) -o $@
+ 
++SOCOMPILE= $(COMPILE) -fpic 
++SOCXXCOMPILE = $(CXX) $(INCLUDES) $(CXXFLAGS) -c -fpic
++
+ default: all
+ 
+-all: libC libCpp dndtest
++all: libC libCpp dndtest libC-so libCpp-so
+ 
+ install: libCpp libC
+ 	install -d $(INC_DIR)
+-	install DragAndDrop.h DragAndDropTypes.h $(INC_DIR)
++	install -c -m 644 DragAndDrop.h DragAndDropTypes.h $(INC_DIR)
+ 	install -d $(LIB_DIR)
+-	install libDnd.a libDnd++.a $(LIB_DIR)
++	install -c -m 644 libDnd.a libDnd++.a $(LIB_DIR)
++	install -c libDnd.so.1.0 libDnd++.so.1.0 $(LIB_DIR)
+ 
+ libC: libDnd.a
+ 
+ libCpp: libDnd++.a
+ 
++libC-so: libDnd.so.1.0
++
++libCpp-so: libDnd++.so.1.0
++
+ dndtest: dndtest.c libDnd.a
+ 	rm -f dndtest
+ 	$(COMPILE) dndtest.c
+@@ -57,6 +65,16 @@
+ 	$(AR) cru libDnd++.a DragAndDrop.o
+ 	$(RANLIB) libDnd++.a
+ 
+-clean:
+-	rm -f *.o *.cxx *.a dndtest *~ *bak
++libDnd.so.1.0: DragAndDrop.c
++	rm -f DragAndDrop.so 
++	$(SOCOMPILE) -o DragAndDrop.so DragAndDrop.c
++	$(LD) -Bshareable -x -o libDnd.so.1.0 DragAndDrop.so
+ 
++libDnd++.so.1.0: DragAndDrop.c
++	rm -f DragAndDrop.so DragAndDrop.cxx
++	ln -s DragAndDrop.c DragAndDrop.cxx
++	$(SOCXXCOMPILE) -o DragAndDrop.so DragAndDrop.cxx
++	$(LD) -Bshareable -x -o libDnd++.so.1.0 DragAndDrop.so
++
++clean:
++	rm -f *.o *.so *.cxx *.a dndtest *~ *bak
