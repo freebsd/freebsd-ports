@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Summarize.pm
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Summarize/Filters.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/Summarize 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/Summarize 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua 2>/dev/null || true

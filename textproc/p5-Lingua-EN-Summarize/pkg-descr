@@ -1,0 +1,10 @@
+This is a simple module which makes an unscientific effort at
+summarizing English text. It recognizes simple patterns which look
+like statements, abridges them, and concatenates them into something
+vaguely resembling a summary. It needs more work on large bodies
+of text, but it seems to have a decent effect on small inputs at
+the moment.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Summarize
+
+Seamus Venasse <svenasse@polaris.ca>
