@@ -7,12 +7,9 @@ include/xine/buffer.h
 include/xine/compat.h
 include/xine/configfile.h
 include/xine/demux.h
-include/xine/dvd_reader.h
-include/xine/ifo_types.h
 include/xine/input_plugin.h
 include/xine/lrb.h
 include/xine/metronom.h
-include/xine/nav_types.h
 include/xine/osd.h
 include/xine/plugin_catalog.h
 include/xine/post.h
