@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.17 1999/03/31 16:41:29 sada Exp $
+# $Id: Makefile,v 1.18 1999/04/02 12:01:39 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
@@ -27,6 +27,7 @@ PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG}
 WRKSRC=		${WRKDIR}/netscape-ja_euc
 
 BROWSER?=	communicator
+BROWSER_BIN?=	${BROWSER}-${BROWSER_VERSION}.bin
 BROWSER_CMD?=	ja-${BROWSER}-4
 BROWSER_VERSION?= 4.08
 FONT_DEPEND=	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
@@ -37,11 +38,12 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 			-e "s;@NDIR@;${NDIR};g" \
 			-e "s;@RDIR@;${NDIR};g" \
 			-e "s;@BROWSER@;${BROWSER}-${BROWSER_VERSION};g" \
+			-e "s;@BROWSER_BIN@;${BROWSER_BIN};g" \
 			-e "s;@LANG@;${LANG};g"
 MANDIR=		${MANPREFIX}/man/${MANLANG}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
-PORTKIT=	ja-netscape-portkit.1999.0320.tar.gz
+PORTKIT=	ja-netscape-portkit.1999.0502.tar.gz
 PORTKIT_DIR=	${WRKDIR}/portkit
 PORTKIT_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
