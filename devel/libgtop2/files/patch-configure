@@ -1,6 +1,6 @@
---- configure.orig	Sun Jan 12 21:40:08 2003
-+++ configure	Tue Jan 14 00:17:38 2003
-@@ -1479,10 +1479,10 @@
+--- configure.orig	Sat Oct 25 00:01:15 2003
++++ configure	Sat Oct 25 00:14:56 2003
+@@ -1580,10 +1580,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
  # will get canonicalized.
@@ -12,10 +12,10 @@
 +#  test "$program_prefix$program_suffix$program_transform_name" = \
 +#    NONENONEs,x,x, &&
 +#  program_prefix=${target_alias}-
- 
- LIBGTOP_MAJOR_VERSION=2
- LIBGTOP_MINOR_VERSION=0
-@@ -1777,9 +1777,9 @@
+ # Making releases:
+ #   LIBGTOP_MICRO_VERSION += 1;
+ #   LIBGTOP_INTERFACE_AGE += 1;
+@@ -1886,9 +1886,9 @@
  
  # libtool versioning
  LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
@@ -28,7 +28,7 @@
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
  
-@@ -18514,7 +18514,7 @@
+@@ -30160,7 +30160,7 @@
  
  
  if test x$libgtop_need_server = xyes ; then
