@@ -18,12 +18,9 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 
 post-patch:
-	@${PERL5} -pi -e 's|0777|0755|g;' \
-		-e 's|-lqt|-lqt2-mt|g' ${WRKSRC}/share/Makefile.am
-	@${PERL5} -pi -e 's|libqt.so.2|libqt2-mt.so.4|g;' \
-		-e 's|libqt.so|libqt2-mt.so|g;' ${WRKSRC}/acinclude.m4
-	@${PERL5} -pi -e 's|-lqt|-lqt2|g;' ${WRKSRC}/src/Makefile.am \
-		${WRKSRC}/src/Makefile.in
+	@${PERL5} -pi -e 's|libqt-mt.so.2|libqt2-mt.so.4|g;' \
+		-e 's|-lqt-mt|-lqt2-mt|g;' -e 's|libqt.so|libqt2.so|g;' \
+		-e 's|-lqt$$|-lqt2|g;' ${WRKSRC}/acinclude.m4
 
 pre-configure:
 	@(cd ${WRKSRC} && ${ACLOCAL})
