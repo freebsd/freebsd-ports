@@ -11,6 +11,7 @@ etc/mimedefang/spamassassin/sa-mimedefang.cf.example
 %%PORTDOCS%%share/doc/mimedefang/README
 %%PORTDOCS%%share/doc/mimedefang/README.ANOMY
 %%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
+%%PORTDOCS%%share/doc/mimedefang/README.SOPHIE
 %%PORTDOCS%%share/doc/mimedefang/README.NONROOT
 %%PORTDOCS%%share/doc/mimedefang/README.SECURITY
 %%PORTDOCS%%share/doc/mimedefang/README.TRU64
@@ -24,3 +25,4 @@ etc/mimedefang/spamassassin/sa-mimedefang.cf.example
 @dirrm etc/mimedefang
 @cwd /var/spool
 @dirrm MIMEDefang
+@dirrm MD-Quarantine
