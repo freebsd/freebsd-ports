@@ -12,7 +12,7 @@
    if (dev->interface < 0)
      USB_ERROR(-EINVAL);
  
-+#if (__FreeBSD_version > 50000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
    intf.interface_index = dev->interface;
    intf.alt_no = alternate;
 +#else
@@ -26,7 +26,7 @@
      fprintf(stderr, "usb_control_msg: %d %d %d %d %p %d %d\n",
              requesttype, request, value, index, bytes, size, timeout);
  
-+#if (__FreeBSD_version > 50000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
    req.request.bmRequestType = requesttype;
    req.request.bRequest = request;
    USETW(req.request.wValue, value);
@@ -51,7 +51,7 @@
      USB_ERROR_STR(ret, "error sending control message: %s",
                    strerror(errno));
  
-+#if (__FreeBSD_version > 50000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
    return UGETW(req.request.wLength);
 +#else
 +  return UGETW(req.ucr_request.wLength);
@@ -63,7 +63,7 @@
      struct usb_device *dev;
      char buf[20];
  
-+#if (__FreeBSD_version > 50000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
      di.addr = device;
 +#else
 +    di.udi_addr = device;
@@ -73,7 +73,7 @@
  
      /* There's a device; is it one we should mess with? */
  
-+#if (__FreeBSD_version > 50000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
      if (strncmp(di.devnames[0], "ugen", 4) != 0)
 +#else
 +    if (strncmp(di.udi_devnames[0], "ugen", 4) != 0)
@@ -82,7 +82,7 @@
        continue;
  
  #if __FreeBSD__
-+#if (__FreeBSD_version > 50000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
++#if (__FreeBSD_version > 500000 && __FreeBSD_version < 500031) || (__FreeBSD_version < 450001)
      snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.devnames[0]);
 +#else
 +    snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.udi_devnames[0]);
