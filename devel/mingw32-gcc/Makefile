@@ -9,9 +9,9 @@ PORTNAME=	gcc
 PORTVERSION=	2.95.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= mingw
+MASTER_SITE_SUBDIR=	mingw
 PKGNAMEPREFIX=	mingw-
-DISTNAME=	gcc-${PORTVERSION}-20010723-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-20010828-src
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binu
 RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binutils \
 		${LOCALBASE}/bin/mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}-20010828
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -38,6 +38,10 @@ MAN1=	cccp.1                 \
 
 post-patch:
 	${PERL} -i.orig -pe 's/install-libiberty//' ${WRKSRC}/Makefile.in
+
+pre-install:
+	${MV} ${PREFIX}/bin/i386-mingw32msvc-c++filt \
+		${PREFIX}/bin/i386-mingw32msvc-c++filt.binutils
 
 post-install:
 	@for file in \
