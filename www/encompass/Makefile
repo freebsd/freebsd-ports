@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
 LIB_DEPENDS=	neon.19:${PORTSDIR}/www/neon \
 		elysium.0:${PORTSDIR}/misc/libelysium
 
@@ -23,7 +24,9 @@ USE_GNOME=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
+		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

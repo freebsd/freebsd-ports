@@ -13,12 +13,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt-old:${PORTSDIR}/devel/gettext-old
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib" \
+		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
+		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
