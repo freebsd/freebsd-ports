@@ -10,7 +10,7 @@ PORTVERSION=	1.0b
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ruin.org/pub/All/
 
-MAINTAINER=	jmrobins@jmirror.ruin.org
+MAINTAINER=	ports@FreeBSD.Org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
