@@ -64,6 +64,7 @@
     SUBDIR += idesk
     SUBDIR += imwheel
     SUBDIR += kb2mb2
+    SUBDIR += kde-lite
     SUBDIR += kde3
     SUBDIR += kdebase3
     SUBDIR += kdelibs3
