@@ -35,7 +35,8 @@ SCRIPTS_ENV+=	NO_INPUT=yes
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
 PREFIX=		${X11BASE}
 .if defined(DISTRIB) || defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	no
+#IS_INTERACTIVE is boolean -- "no" is the same as defining it "yes"!
+#IS_INTERACTIVE=	no
 .else
 IS_INTERACTIVE=	yes	# configure script asks questions
 .endif
