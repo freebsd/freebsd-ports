@@ -1958,6 +1958,7 @@ grail		ports/www/grail
 gramofile	ports/audio/gramofile
 granulate	ports/misc/granulate
 grap		ports/textproc/grap
+graphthing	ports/misc/graphthing
 graphviz	ports/graphics/graphviz
 grappa		ports/biology/grappa
 grass		ports/databases/grass
