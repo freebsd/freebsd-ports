@@ -7,12 +7,13 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
 MAINTAINER=	lars@thegler.dk
 
-BUILD_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
+RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 		${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI \
 		${SITE_PERL}/BER.pm:${PORTSDIR}/net/p5-SNMP_Session \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
