@@ -6,33 +6,33 @@
 #
 
 PORTNAME=	dtdinst
-PORTVERSION=	2003.01.22
+PORTVERSION=	2003.06.19
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.thaiopensource.com/relaxng/dtdinst/
-DISTNAME=	${PORTNAME}
-DISTFILES=	dtdinst.jar dtdinst2rng.xsl index.html copying.txt
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-EXTRACT_ONLY=
+MASTER_SITES=	http://www.thaiopensource.com/download/
+DISTNAME=	${PORTNAME}-20030619
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts DTDs to XML instance, in a specific or RELAX NG format
 
-BROKEN=		"Checksum mismatch"
-
+USE_ZIP=	YES
 USE_JAVA=	1.1+
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 NO_BUILD_DEPENDS_JAVA=	yes
 
 do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.jar ${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${JAVAJARDIR}
 	${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.xsl \
-		${PREFIX}/share/xsl/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.xsl ${PREFIX}/share/xsl/${PORTNAME}
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/dtdinst.rng ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
