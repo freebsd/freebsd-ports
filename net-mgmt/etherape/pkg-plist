@@ -1,20 +1,24 @@
 bin/etherape
 etc/etherape/services
-lib/locale/es/LC_MESSAGES/etherape.mo
-lib/locale/fr/LC_MESSAGES/etherape.mo
-lib/locale/nl/LC_MESSAGES/etherape.mo
-lib/locale/tr/LC_MESSAGES/etherape.mo
 share/etherape/glade/etherape.glade2
 share/etherape/glade/etherape.png
 share/etherape/glade/pause.xpm
 share/etherape/glade/play.xpm
 share/etherape/glade/stop.xpm
 share/gnome/apps/Applications/etherape.desktop
+share/gnome/help/etherape/C/topic.dat
+share/locale/es/LC_MESSAGES/etherape.mo
+share/locale/fr/LC_MESSAGES/etherape.mo
+share/locale/nl/LC_MESSAGES/etherape.mo
+share/locale/tr/LC_MESSAGES/etherape.mo
 share/pixmaps/etherape.png
+@dirrm etc/etherape
 @dirrm share/etherape/glade
 @dirrm share/etherape
-@dirrm lib/locale/tr/LC_MESSAGES
-@dirrm lib/locale/nl/LC_MESSAGES
-@dirrm lib/locale/fr/LC_MESSAGES
-@dirrm lib/locale/es/LC_MESSAGES
-@dirrm etc/etherape
+@dirrm share/gnome/help/etherape/C/stylesheet-images
+@dirrm share/gnome/help/etherape/C
+@dirrm share/gnome/help/etherape
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/tr/LC_MESSAGES
