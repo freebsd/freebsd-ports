@@ -1,4 +1,7 @@
+bin/dawndusk
 bin/heyu
+bin/heyuhelper
+bin/makesched
 share/examples/heyu/x10config.sample
 share/examples/heyu/x10sched.conf.sample
 @dirrm share/examples/heyu
