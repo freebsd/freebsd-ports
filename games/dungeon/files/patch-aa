@@ -1,0 +1,101 @@
+*** makefile	Mon Nov  1 00:44:13 1999
+--- Makefile	Mon Nov  1 00:47:09 1999
+***************
+*** 1,10 ****
+  # Makefile for dungeon
+  
+  # Where to install the program
+! BINDIR = /usr/games
+  
+  # Where to install the data file
+! LIBDIR = /usr/games/lib
+  
+  # The dungeon program provides a ``more'' facility which tries to
+  # figure out how many rows the terminal has.  Several mechanisms are
+--- 1,10 ----
+  # Makefile for dungeon
+  
+  # Where to install the program
+! BINDIR = ${PREFIX}/bin
+  
+  # Where to install the data file
+! LIBDIR = ${PREFIX}/share/dungeon
+  
+  # The dungeon program provides a ``more'' facility which tries to
+  # figure out how many rows the terminal has.  Several mechanisms are
+***************
+*** 62,67 ****
+--- 62,69 ----
+  	dverb2.o gdt.o lightp.o local.o nobjs.o np.o np1.o np2.o np3.o\
+  	nrooms.o objcts.o rooms.o sobjs.o supp.o sverbs.o verbs.o villns.o
+  
++ all: dungeon dtextc.dat
++ 
+  dungeon: $(OBJS) dtextc.dat
+  	$(CC) $(CFLAGS) -o dungeon $(OBJS) $(LIBS)
+  
+***************
+*** 90,120 ****
+  supp.o: supp.c funcs.h vars.h
+  	$(CC) $(CFLAGS) $(TERMFLAG) -c supp.c	
+  
+! actors.o: funcs.h vars.h
+! ballop.o: funcs.h vars.h
+! clockr.o: funcs.h vars.h
+! demons.o: funcs.h vars.h
+! dmain.o: funcs.h vars.h
+! dso1.o: funcs.h vars.h
+! dso2.o: funcs.h vars.h
+! dso3.o: funcs.h vars.h
+! dso4.o: funcs.h vars.h
+! dso5.o: funcs.h vars.h
+! dso6.o: funcs.h vars.h
+! dso7.o: funcs.h vars.h
+! dsub.o: funcs.h vars.h
+! dverb1.o: funcs.h vars.h
+! dverb2.o: funcs.h vars.h
+! lightp.o: funcs.h vars.h
+! nobjs.o: funcs.h vars.h
+! np.o: funcs.h vars.h
+! np1.o: funcs.h vars.h parse.h
+! np2.o: funcs.h vars.h parse.h
+! np3.o: funcs.h vars.h parse.h
+! nrooms.o: funcs.h vars.h
+! objcts.o: funcs.h vars.h
+! rooms.o: funcs.h vars.h
+! sobjs.o: funcs.h vars.h
+! sverbs.o: funcs.h vars.h
+! verbs.o: funcs.h vars.h
+! villns.o: funcs.h vars.h
+--- 92,122 ----
+  supp.o: supp.c funcs.h vars.h
+  	$(CC) $(CFLAGS) $(TERMFLAG) -c supp.c	
+  
+! #actors.o: funcs.h vars.h
+! #ballop.o: funcs.h vars.h
+! #clockr.o: funcs.h vars.h
+! #demons.o: funcs.h vars.h
+! #dmain.o: funcs.h vars.h
+! #dso1.o: funcs.h vars.h
+! #dso2.o: funcs.h vars.h
+! #dso3.o: funcs.h vars.h
+! #dso4.o: funcs.h vars.h
+! #dso5.o: funcs.h vars.h
+! #dso6.o: funcs.h vars.h
+! #dso7.o: funcs.h vars.h
+! #dsub.o: funcs.h vars.h
+! #dverb1.o: funcs.h vars.h
+! #dverb2.o: funcs.h vars.h
+! #lightp.o: funcs.h vars.h
+! #nobjs.o: funcs.h vars.h
+! #np.o: funcs.h vars.h
+! #np1.o: funcs.h vars.h parse.h
+! #np2.o: funcs.h vars.h parse.h
+! #np3.o: funcs.h vars.h parse.h
+! #nrooms.o: funcs.h vars.h
+! #objcts.o: funcs.h vars.h
+! #rooms.o: funcs.h vars.h
+! #sobjs.o: funcs.h vars.h
+! #sverbs.o: funcs.h vars.h
+! #verbs.o: funcs.h vars.h
+! #villns.o: funcs.h vars.h
