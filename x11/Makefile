@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.211 1998/06/15 12:05:33 tg Exp $
+# $Id: Makefile,v 1.212 1998/06/16 03:06:36 mph Exp $
 #
 
     SUBDIR += FWF
@@ -91,6 +91,7 @@
     SUBDIR += windowmaker
     SUBDIR += workplace
     SUBDIR += wm2
+    SUBDIR += wmx
     SUBDIR += x3270
     SUBDIR += xalarm
     SUBDIR += xaniroc
