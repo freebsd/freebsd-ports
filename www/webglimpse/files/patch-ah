@@ -1,11 +1,57 @@
---- lib/siteconf.pl.bak	Thu Jul 23 01:44:21 1998
-+++ lib/siteconf.pl	Mon Nov  2 13:58:29 1998
-@@ -28,7 +28,7 @@
+--- lib/siteconf.pl.orig	Thu Jul 23 01:44:21 1998
++++ lib/siteconf.pl	Wed Nov  4 07:06:48 1998
+@@ -9,6 +9,7 @@
  
- # If can't write to preferred cache file, use alternate
- if (!open(F,">$FCacheFile")) {
+ local($DirectoryIndex, $UserDir, $DocumentRoot, $Port, $Server, $ServerAddress);
+ local(@AliasList,@ScriptAliasList,@ServerCache);
++local($FCacheFile);
+ 
+ $DirectoryIndex="";
+ $UserDir="";
+@@ -24,21 +25,6 @@
+ 
+ $NUM_IP_ADDR_RE = '(\d+)\.(\d+)\.(\d+)\.(\d+)';
+ 
+-$FCacheFile = "$WEBGLIMPSE_HOME/.sitecache";
+-
+-# If can't write to preferred cache file, use alternate
+-if (!open(F,">$FCacheFile")) {
 -	$FCacheFile = "/tmp/.sitecache";
-+	$FCacheFile = ".sitecache";
- 	if (!open(F,">$FCacheFile")) {
- 		print "Error, cannot find a usable cache file!\n";
- 		$FCacheFile = '';
+-	if (!open(F,">$FCacheFile")) {
+-		print "Error, cannot find a usable cache file!\n";
+-		$FCacheFile = '';
+-	} else {
+-		close(F);
+-	}
+-} else {
+-	close(F);
+-}
+-
+ ########################################################################
+ # Read [vhost].wgsiteconf file settings
+ sub ReadConf	{
+@@ -327,10 +313,9 @@
+ 	return "";
+ }
+ 
+-# NO GUARANTEE THAT THE USER RUNNING confarc CAN WRITE TO $WEBGLIMPSE_HOME!!!
+-# Changed fixed filename to $FCacheFile, tested at beginning of package. --GB 7/6/98
+ sub SaveCache	{
+-	open (FCACHE, ">$FCacheFile");
++	open (FCACHE, ">$FCacheFile") ||
++		die "Error, can't write to $FCacheFile: ";
+ 	foreach $host (keys %ServerCache)	{
+ 		my($a, $b, $c, $d) = unpack('C4', $ServerCache{$host});
+ 		print FCACHE "$host $a $b $c $d\n";
+@@ -340,7 +325,10 @@
+ }
+ 
+ sub LoadCache	{
+-	open (FCACHE, $FCacheFile);
++	$FCacheFile = shift;
++	return if (! -e $FCacheFile);
++	open (FCACHE, $FCacheFile) ||
++		die "Error, can't read from $FCacheFile: ";
+ 	while (<FCACHE>)	{
+ 		my($host, $a, $b, $c, $d) = split(' ');
+ 		$ServerCache{$host} = pack('C4', $a, $b, $c, $d);

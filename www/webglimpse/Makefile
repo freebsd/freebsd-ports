@@ -4,7 +4,7 @@
 # Date created:                         2 Nov 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.9 1998/10/07 10:15:19 ache Exp $
+# $Id: Makefile,v 1.2 1998/11/02 20:04:22 ache Exp $
 #
 
 DISTNAME=       webglimpse-1.6.src
@@ -29,8 +29,6 @@ pre-configure:
 
 do-install:
 	cd ${WRKSRC}; ./wginstall
-	${INSTALL} -o nobody -m 644 /dev/null \
-		${PREFIX}/www/webglimpse/.sitecache
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/share/doc/webglimpse
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${PREFIX}/share/doc/webglimpse
