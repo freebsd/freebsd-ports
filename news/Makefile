@@ -43,6 +43,7 @@
     SUBDIR += p5-News-Article
     SUBDIR += p5-News-Newsrc
     SUBDIR += pan
+    SUBDIR += pan2
     SUBDIR += pgpmoose
     SUBDIR += plor
     SUBDIR += pyne
