@@ -1,16 +1,14 @@
 bin/libquicktime_config
 bin/lqt-config
+bin/lqt_transcode
 bin/lqtplay
 bin/qtdechunk
 bin/qtdump
 bin/qtinfo
 bin/qtrechunk
-bin/qtrecover
 bin/qtstreamize
 bin/qtyuv4toyuv
 include/quicktime/colormodels.h
-include/quicktime/jpeg.h
-include/quicktime/libmjpeg.h
 include/quicktime/lqt.h
 include/quicktime/lqt1394_config.h
 include/quicktime/lqt_codecapi.h
@@ -18,23 +16,17 @@ include/quicktime/lqt_codecinfo.h
 include/quicktime/lqt_version.h
 include/quicktime/qtprivate.h
 include/quicktime/quicktime.h
+lib/libquicktime.so
+lib/libquicktime.so.0
 lib/libquicktime/lqt_audiocodec.so
 lib/libquicktime/lqt_dv.so
-lib/libquicktime/lqt_ferguson.so
+lib/libquicktime/lqt_lame.so
 lib/libquicktime/lqt_mjpeg.so
 lib/libquicktime/lqt_opendivx.so
 lib/libquicktime/lqt_png.so
 lib/libquicktime/lqt_rtjpeg.so
-lib/libquicktime/lqt_svq.so
 lib/libquicktime/lqt_videocodec.so
 lib/libquicktime/lqt_vorbis.so
-lib/libquicktime/lqt_xanim.so
-lib/libquicktime.a
-lib/libquicktime.so
-lib/libquicktime.so.0
-lib/libquicktime_mjpeg.a
-lib/libquicktime_mjpeg.so
-lib/libquicktime_mjpeg.so.0
 share/aclocal/lqt.m4
 @dirrm lib/libquicktime
 @dirrm include/quicktime
