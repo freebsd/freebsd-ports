@@ -15,6 +15,7 @@ EXTRACT_SUFX=	-1.tar.gz
 MAINTAINER=	mark@kyne.com.au
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound
