@@ -25,6 +25,10 @@ MAN1=	janosvm.1 jsihey.1 jsiregister.1 jsiunregister.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Configure fails on alpha"
+.endif
+
 .if ${OSVERSION} >= 500113
 BROKEN=         "Fails to link"
 .endif
