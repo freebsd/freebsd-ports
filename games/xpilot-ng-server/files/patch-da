@@ -1,0 +1,11 @@
+--- src/common/Makefile.in.orig	Thu Sep 11 03:28:54 2003
++++ src/common/Makefile.in	Thu Sep 11 03:29:43 2003
+@@ -18,7 +18,7 @@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
++pkglibdir = $(datadir)/xpilot-ng
+ pkgincludedir = $(includedir)/@PACKAGE@
+ top_builddir = ../..
+ 

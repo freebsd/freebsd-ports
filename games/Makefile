@@ -478,6 +478,7 @@
     SUBDIR += xpenguins
     SUBDIR += xphotohunter
     SUBDIR += xpilot
+    SUBDIR += xpilot-ng
     SUBDIR += xpilotmon
     SUBDIR += xpipeman
     SUBDIR += xpired
