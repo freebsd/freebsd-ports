@@ -1,0 +1,19 @@
+*** All/freebsd/Makefile.include.orig	Mon Dec 30 17:18:49 1996
+--- All/freebsd/Makefile.include	Mon Dec 30 17:19:46 1996
+***************
+*** 5,11 ****
+  WWW_MACH = freebsd
+  
+  CFLAGS += -DDEBUG -D__BSD__
+! LFLAGS =
+  
+  # Directory for installed binary:
+  BINDIR = /usr/local/bin
+--- 5,11 ----
+  WWW_MACH = freebsd
+  
+  CFLAGS += -DDEBUG -D__BSD__
+! LFLAGS = -lcrypt
+  
+  # Directory for installed binary:
+  BINDIR = /usr/local/bin
