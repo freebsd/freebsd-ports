@@ -1,5 +1,5 @@
---- gmix/gmix.c.orig	Fri Feb 19 18:30:49 1999
-+++ gmix/gmix.c	Wed Mar  3 10:49:51 1999
+--- gmix/gmix.c.orig	Sun Feb 21 12:10:17 1999
++++ gmix/gmix.c	Mon Mar  8 20:41:05 1999
 @@ -94,6 +94,17 @@
  /* 
   * All, that is known about a mixer-device
@@ -52,7 +52,7 @@
  	/* 
  	 * several bitmasks describing the mixer
  	 */
-@@ -386,15 +400,15 @@
+@@ -386,15 +400,16 @@
  {
  	int cnt;
  	device_info *new_device;
@@ -67,7 +67,8 @@
  		}
 -	} while (new_device);
 -	num_mixers=cnt-1;
-+	} while ((errno == EACCES) || (errno == EINVAL) || new_device);
++	} while ((errno == EACCES) || (errno == EINVAL) || (errno == ENXIO) \
++		 || new_device);
  }
  
  void free_one_device(gpointer a, gpointer b)
