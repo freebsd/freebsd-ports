@@ -7,6 +7,7 @@
 
 PORTNAME=	amavisd
 PORTVERSION=	0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -36,9 +37,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_RC_SUBR=	yes
 
 AMAVISGROUP?=	vscan
 AMAVISUSER?=	vscan
+MILTER_SCRIPT=
+MILTER=		"@comment -- no milter script --"
+SBIN_AMAVIS=	amavis
 SMTPPORT?=	10025
 STARTSCRIPT=	amavisd.sh
 WARNADMIN?=	yes
@@ -52,7 +57,15 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc	\
 			--with-warnrecip=${WARNRECIP}	\
 			--with-warnadmin=${WARNADMIN}
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS}
+
+RC_SCRIPTS_SUB=	AMAVISUSER=${AMAVISUSER} \
+		PREFIX=${PREFIX} \
+ 		PERL=${PERL} \
+	 	RC_SUBR=${RC_SUBR}
+PLIST_SUB=	SBIN_AMAVIS=${SBIN_AMAVIS} \
+	 	MILTER=${MILTER}
 
 .if !defined(WITHOUT_UVSCAN)
 BUILD_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
@@ -73,8 +86,9 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix-curren
 .elif defined(WITH_MILTER)
 CONFIGURE_ARGS+=	--enable-milter
 MTA?=		milter
-PLIST=		${PKGDIR}/pkg-plist.milter
-STARTSCRIPT=	amavisd-milter.sh
+MILTER_SCRIPT=	amavisd-milter
+MILTER=
+SBIN_AMAVIS=	amavis-milter
 .else
 CONFIGURE_ARGS+=	--enable-sendmail
 MTA?=		sendmail
@@ -88,14 +102,18 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${SED} 's,%%AMAVISUSER%%,${AMAVISUSER},g' ${FILESDIR}/${STARTSCRIPT} > ${WRKSRC}/${STARTSCRIPT}
+.for script in amavisd ${MILTER_SCRIPT}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/${script}.sh > ${WRKSRC}/${script}.sh
+.endfor
 	@${PERL} -pi.orig -e 's|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|g' ${WRKSRC}/configure ${WRKSRC}/amavis/amavisd.in ${WRKSRC}/amavis/Makefile.in
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${AMAVISUSER} ${AMAVISGROUP}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${STARTSCRIPT} ${PREFIX}/etc/rc.d
+.for script in amavisd ${MILTER_SCRIPT}
+	${INSTALL_SCRIPT} ${WRKSRC}/${script}.sh ${PREFIX}/etc/rc.d/${script}.sh
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in FAQ INSTALL README README.exim README.milter README.postfix README.qmail README.scanners README.sendmail doc/amavis.html doc/amavis.m4 doc/amavis.png doc/amavis.txt

@@ -1,31 +1,57 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-	echo "$0: Cannot determine the PREFIX" >&2
-	exit 1
-fi
+# PROVIDE: amavisd-milter
+# BEFORE: amavisd mail
+# KEYWORD: FreeBSD shutdown
 
-case "$1" in
-start)
-	( [ -x ${PREFIX}/sbin/amavisd ] || [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
-	AMAVISD=$(/bin/ps -xU %%AMAVISUSER%% | grep amavisd | awk '{ print $1 }')
-	AMAVIS_MILTER=$(/bin/ps -xU %%AMAVISUSER%% | grep amavis-milter | awk '{ print $1 }')
-	( /bin/test "$AMAVISD" || /bin/test "$AMAVIS_MILTER" ) && \
-	su - %%AMAVISUSER%% -c "/bin/kill $AMAVISD $AMAVIS_MILTER" > /dev/null
-	rm -rf /var/amavis/amavis*.sock
-	su - %%AMAVISUSER%% -c "${PREFIX}/sbin/amavis-milter -D -p /var/amavis/amavis-milter.sock" > /dev/null
-	su - %%AMAVISUSER%% -c ${PREFIX}/sbin/amavisd > /dev/null 2>&1 && echo -n ' amavisd-milter'
-	;;
-stop)
-	( [ -x ${PREFIX}/sbin/amavisd ] || [ -x ${PREFIX}/sbin/amavis-milter ] ) || exit 1
-	AMAVISD=$(/bin/ps -xU %%AMAVISUSER%% | grep amavisd | awk '{ print $1 }')
-	AMAVIS_MILTER=$(/bin/ps -xU %%AMAVISUSER%% | grep amavis-milter | awk '{ print $1 }')
-	( /bin/test "$AMAVISD" || /bin/test "$AMAVIS_MILTER" ) && \
-	su - %%AMAVISUSER%% -c "/bin/kill $AMAVISD $AMAVIS_MILTER" > /dev/null && echo -n ' amavisd-milter'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+prefix=%%PREFIX%%
 
-exit 0
+# Define these amavisd_milter_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+amavisd_milter_enable=no
+amavisd_milter_flags="-D"
+amavisd_milter_user=%%AMAVISUSER%%
+#amavisd_milter_socket="inet:9999@127.0.0.1"
+amavisd_milter_socket="local:/var/amavis/amavis-milter.sock"
+
+. %%RC_SUBR%%
+
+name="amavisd_milter"
+rcvar=`set_rcvar`
+start_precmd="amavisd_precmd"
+stop_postcmd="remove_socket"
+command=${prefix}/sbin/amavis-milter
+
+# Remove the AMaViSd Milter Socket
+remove_socket()
+{
+	case ${amavisd_milter_socket} in
+		unix:*|local:*)
+			socket=`echo ${amavisd_milter_socket} | /usr/bin/cut -d: -f2`
+			if [ -S ${socket} ]; then
+				rm -f ${socket}
+			fi
+			;;
+		/*)
+			if [ -S ${amavisd_milter_socket} ]; then
+				rm -f ${amavisd_milter_socket}
+			fi
+			;;
+	esac
+}
+
+amavisd_precmd()
+{
+	rc_flags="${rc_flags} -p ${amavisd_milter_socket}"
+
+	remove_socket
+}
+
+load_rc_config $name
+run_rc_command "$1"

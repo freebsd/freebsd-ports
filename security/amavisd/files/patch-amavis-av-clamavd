@@ -1,0 +1,11 @@
+--- amavis/av/clamavd.orig	Tue Feb 25 11:42:54 2003
++++ amavis/av/clamavd	Sun May 30 13:26:34 2004
+@@ -5,7 +5,7 @@
+ 
+ if ($clamd) {
+     do_log(2,"Using clamd");
+-    my $sock = IO::Socket::INET->new('127.0.0.1:3310');
++    my $sock = IO::Socket::UNIX->new('/var/run/clamav/clamd');
+     if (defined $sock) {
+ 	$sock->print("SCAN $TEMPDIR/parts\n");
+ 	$sock->flush;
