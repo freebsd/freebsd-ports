@@ -10,6 +10,7 @@
 %%RUBY_EXAMPLESDIR%%/optparse/opttest.rb
 %%RUBY_DOCDIR%%/optparse/ja/README.ja
 %%RUBY_DOCDIR%%/optparse/ja/optparse.ja.rd
+%%RUBY_DOCDIR%%/optparse/ChangeLog
 %%RUBY_DOCDIR%%/optparse/README.en
 %%RUBY_DOCDIR%%/optparse/optparse.en.rd
 %%RUBY_DOCDIR%%/optparse/optparse.rlog
