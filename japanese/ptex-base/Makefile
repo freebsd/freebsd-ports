@@ -3,16 +3,13 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.18 1997/07/13 18:49:19 max Exp $
+# $Id: Makefile,v 1.20 1997/10/04 17:13:37 max Exp $
 #
 
 DISTNAME=	web2c-7.0
 PKGNAME=	ja-ptex-common-2.1.5
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex215/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex215/web2c/ \
-		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ \
-		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/corresponding-sources/ 
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex215/web2c/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} web-7.0.tar.gz texmflib-7.2.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG
