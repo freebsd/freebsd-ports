@@ -1,0 +1,54 @@
+--- Makefile.in.orig	Sun Apr  8 17:17:01 2001
++++ Makefile.in	Sun Apr  8 17:40:11 2001
+@@ -60,7 +60,7 @@
+ # Pathname of directory to install the man page
+ MANDEST = @mandir@
+ # Pathname of directory to install the docs
+-DOCDIR = /usr/share/doc/argus-2.0
++DOCDIR = ${prefix}/share/doc/argus-2.0
+ 
+ # VPATH
+ srcdir = @srcdir@
+@@ -127,15 +127,6 @@
+ 	[ -d $(DESTDIR)/argus/archive ] || \
+ 		(mkdir -p $(DESTDIR)/argus/archive; chmod 755 $(DESTDIR)/argus/archive)
+ 
+-	[ -d $(DOCDIR) ] || \
+-		(mkdir -p $(DOCDIR); chmod 755 $(DOCDIR))
+-
+-	[ -d $(DOCDIR)/html ] || \
+-		(mkdir -p $(DOCDIR)/html; chmod 755 $(DOCDIR)/html)
+-
+-	[ -d $(DOCDIR)/html/man ] || \
+-		(mkdir -p $(DOCDIR)/html/man; chmod 755 $(DOCDIR)/html/man)
+-
+ 	[ -d /var/log/argus ] || \
+ 		(mkdir -p /var/log/argus; chmod 755 /var/log/argus)
+ 
+@@ -148,17 +139,9 @@
+ 		fi; \
+ 	done
+ 
+-	$(INSTALL) -m 0644 $(srcdir)/doc/CHANGES $(DOCDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/doc/FAQ $(DOCDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/doc/HOW-TO $(DOCDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/doc/html/man/*.html $(DOCDIR)/html/man
+-
+ 	$(INSTALL) -m 0644 $(srcdir)/README $(DESTDIR)/argus
+-	$(INSTALL) -m 0644 $(srcdir)/README $(DOCDIR)
+ 	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DESTDIR)/argus
+-	$(INSTALL) -m 0644 $(srcdir)/LICENSE $(DOCDIR)
+ 	$(INSTALL) -m 0644 $(srcdir)/COPYRIGHT $(DESTDIR)/argus
+-	$(INSTALL) -m 0644 $(srcdir)/COPYRIGHT $(DOCDIR)
+ 
+ 	$(INSTALL) -m 0755 $(srcdir)/bin/argusbug $(BINDIR)/argusbug
+ 	$(INSTALL) -m 0755 $(srcdir)/support/Archive/argusarchive $(BINDIR)/argusarchive
+@@ -176,6 +159,8 @@
+ 		$(MANDEST)/man1/racount.1
+ 	$(INSTALL) -m 0644 $(srcdir)/man/man1/ragator.1 \
+ 		$(MANDEST)/man1/ragator.1
++	$(INSTALL) -m 0644 $(srcdir)/man/man1/ramon.1 \
++		$(MANDEST)/man1/ramon.1
+ 	$(INSTALL) -m 0644 $(srcdir)/man/man1/rasort.1 \
+ 		$(MANDEST)/man1/rasort.1
+ 	$(INSTALL) -m 0644 $(srcdir)/man/man1/raxml.1 \
