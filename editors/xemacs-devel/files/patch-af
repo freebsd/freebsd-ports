@@ -7,6 +7,7 @@
 +  *-*-freebsd* ) opsys=freebsd ;;
    *-*-netbsd*   ) opsys=netbsd ;;
    *-*-openbsd* ) opsys=openbsd ;;
+   *-*-nextstep* ) opsys=nextstep ;;
 @@ -11108,7 +11108,7 @@
  if test "$with_database_berkdb" != "no"; then
    echo $ac_n "checking for Berkeley db.h""... $ac_c" 1>&6
