@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webrick
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.notwork.org/ipr/webrick/src/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
