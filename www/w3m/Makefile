@@ -77,6 +77,10 @@ PLIST_SUB+=	INLINE_IMAGE="@comment "
 PKGMESSAGE=	${NONEXISTENT}
 .endif
 
+.if defined(KEY_LYNX)
+CONFIGURE_ARGS+=	--enable-keymap=lynx
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> You can enable some features by defining following variables."
@@ -95,6 +99,11 @@ pre-everything::
 	@${ECHO_MSG} "===> INLINE_IMAGE (inline image support, enabled)"
 .else
 	@${ECHO_MSG} "===> INLINE_IMAGE (inline image support)"
+.endif
+.if defined(KEY_LYNX)
+	@${ECHO_MSG} "===> KEY_LYNX	(keymap like lynx browser, enabled)"
+.else
+	@${ECHO_MSG} "===> KEY_LYNX     (keymap like lynx browser)"
 .endif
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> You can disable some features by defining following variables."
