@@ -28,7 +28,7 @@ pre-configure:
 	@${ECHO_MSG} "make WITH_MICQ_LANG=<your_lang>"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Currently supported <your_lang> values are:"
-	@${ECHO} "  "${SUP_LANGS} | /usr/bin/fmt
+	@${ECHO} "  "${SUP_LANGS} | ${SED} 's|,$$|.|' | /usr/bin/fmt
 .else
 	@/usr/bin/printf "#define ${WITH_MICQ_LANG}_LANG\n#undef ENGLISH_LANG" >> \
 		${WRKSRC}/../include/config.h
