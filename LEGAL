@@ -165,6 +165,7 @@ vfrb101e.taz		ports/security/vscan	Commercial software
 vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
+xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xhime*.tgz		ports/games/xhime	Contains commercial character
