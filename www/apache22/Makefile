@@ -60,8 +60,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--with-port=${WITH_HTTP_PORT} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${LOCALBASE} \
-		--libdir=${PREFIX_RELDEST}/lib/apache21 \
-		--includedir=${PREFIX_RELDEST}/include/apache21 \
 		--enable-http
 
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
@@ -129,8 +127,15 @@ CONFIGURE_ARGS+=	--with-ldap \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libapr-1.so) || defined(WITH_APR_FROM_PORTS)
-IGNORE=	: apr from ports is not yet supported
+.if defined(WITH_APR_FROM_PORTS)
+PLIST_SUB+=	APR_PORTS="@comment "
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr
+CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}/bin/apr-1-config \
+			--with-apr-util=${LOCALBASE}/bin/apu-1-config
+CONFIGURE_ENV+=		LTFLAGS="--tag=CXX"
+.else
+PLIST_SUB+=	APR_PORTS=""
+CONFLICTS+=	apr-1.*
 .endif
 
 WITH_PTHREAD_LIBS?=	${PTHREAD_LIBS:S/-l//:S/-//}
@@ -191,8 +196,6 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache21.sh
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache21libs.sh > ${WRKDIR}/apache21libs.sh
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
@@ -215,10 +218,6 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/apache21/Includes
-.if !defined(WITH_APR_FROM_PORTS)
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/000.apache21libs.sh startup script."
-	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache21libs.sh ${PREFIX}/etc/rc.d/000.apache21libs.sh
-.endif
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache21.sh startup script."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache21.sh ${PREFIX}/etc/rc.d/apache21.sh
 	@@${CAT} ${PKGMESSAGE}
