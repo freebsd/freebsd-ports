@@ -1,5 +1,19 @@
 lib/perl5/site_perl/%%PERL_VER%%/File/Scan.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Scan/.packlist
+%%PORTDOCS%%share/doc/p5-File-Scan/Changes
+%%PORTDOCS%%share/doc/p5-File-Scan/FAQ
+%%PORTDOCS%%share/doc/p5-File-Scan/README
+%%PORTDOCS%%share/doc/p5-File-Scan/TODO
+%%PORTDOCS%%share/doc/p5-File-Scan/docs/write_sign_bin.txt
+share/examples/p5-File-Scan/latest.pl
+share/examples/p5-File-Scan/scan.pl
+share/examples/p5-File-Scan/procmail/.procmailrc
+share/examples/p5-File-Scan/procmail/README
+share/examples/p5-File-Scan/procmail/scanvirus.pl
+@dirrm share/examples/p5-File-Scan/procmail
+@dirrm share/examples/p5-File-Scan
+%%PORTDOCS%%@dirrm share/doc/p5-File-Scan/docs
+%%PORTDOCS%%@dirrm share/doc/p5-File-Scan
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Scan
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true

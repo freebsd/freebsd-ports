@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Scan
-PORTVERSION=	0.38
+PORTVERSION=	0.43
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File/HDIAS
@@ -18,5 +18,25 @@ PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		File::Scan.3
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/docs
+.for file in Changes FAQ README TODO
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.for file in docs/write_sign_bin.txt
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/docs
+.endfor
+.endif
+	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/procmail
+.for file in latest.pl scan.pl
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
+.endfor
+.for file in procmail/.procmailrc procmail/README procmail/scanvirus.pl
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}/procmail
+.endfor
 
 .include <bsd.port.mk>
