@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/thumbnail_index/
 DISTNAME=	${PORTNAME}_10aug1998
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Make an HTML index file for a bunch of images
 
 RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \

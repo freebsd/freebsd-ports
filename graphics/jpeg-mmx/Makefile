@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ijg.org/files/ \
 		ftp://ftp.uu.net/graphics/jpeg/
 DISTNAME=	jpegsrc.v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	IJG's jpeg compression utilities
 
 WRKSRC=		${WRKDIR}/jpeg-6b

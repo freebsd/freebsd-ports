@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.ohse.de/uwe/releases/  \
 		http://www.netsw.org/net/modem/protocols/zmodem/lrzsz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receive/Send files via X/Y/ZMODEM protocol.  (unrestrictive)
 
 GNU_CONFIGURE=	yes
