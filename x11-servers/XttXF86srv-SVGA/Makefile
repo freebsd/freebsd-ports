@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.3 1998/10/10 04:22:08 steve Exp $
+# $Id: Makefile,v 1.4 1998/12/01 03:06:45 asami Exp $
 #
 
 DISTNAME=	xc
@@ -20,4 +20,3 @@ MASTERDIR=	${.CURDIR}/../XttXF86srv-common
 PKGDIR=		${.CURDIR}/pkg
 
 .include	"${MASTERDIR}/Makefile"
-
