@@ -14,9 +14,8 @@ include/log4c/location_info.h
 include/log4c/logging_event.h
 include/log4c/priority.h
 include/log4c/version.h
-@dirrm include/log4c
 lib/liblog4c.a
-lib/liblog4c.la
 lib/liblog4c.so
 lib/liblog4c.so.1
 share/aclocal/log4c.m4
+@dirrm include/log4c
