@@ -1,0 +1,13 @@
+bin/waimea
+share/Waimea/actions/action
+share/Waimea/actions/action.click-to-focus
+share/Waimea/actions/action.non-opaque
+share/Waimea/actions/action.no-mouse
+share/Waimea/actions/action.sloppy-focus
+share/Waimea/backgrounds/waimea.png
+share/Waimea/menu
+share/Waimea/styles/Default
+@dirrm share/Waimea/actions
+@dirrm share/Waimea/backgrounds
+@dirrm share/Waimea/styles
+@dirrm share/Waimea
