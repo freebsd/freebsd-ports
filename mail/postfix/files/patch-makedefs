@@ -1,10 +1,10 @@
---- makedefs.orig	Wed Aug 25 06:13:57 2004
-+++ makedefs	Wed Aug 25 06:14:46 2004
-@@ -93,6 +93,8 @@
+--- makedefs.orig	Tue Feb  8 20:27:50 2005
++++ makedefs	Sat Mar  5 11:53:42 2005
+@@ -116,6 +116,8 @@
  		;;
    FreeBSD.5*)	SYSTYPE=FREEBSD5
  		;;
-+  FreeBSD.6*)	SYSTYPE=FREEBSD6
++  FreeBSD.6*)	SYSTYPE=FREEBSD5
 +		;;
    OpenBSD.2*)	SYSTYPE=OPENBSD2
  		;;
