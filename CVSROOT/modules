@@ -6800,6 +6800,7 @@ qtk		ports/devel/qtk
 qtools		ports/mail/qtools
 qtpkg		ports/sysutils/qtpkg
 qtutils		ports/graphics/qtutils
+quake2forge	ports/games/quake2forge
 quakeforge	ports/games/quakeforge
 quakeserver	ports/games/quakeserver
 quanta		ports/www/quanta
