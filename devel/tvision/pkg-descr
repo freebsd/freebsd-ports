@@ -1,0 +1,17 @@
+Turbo Vision for UNIX
+
+Turbo Vision (or TV, for short) is a library that provides an application
+framework for C++ programmers.  With TV, you can write beautiful
+object-oriented character-mode user interfaces in very a short time.
+
+TV is available in C++ and Pascal and is a product of Borland International.
+It was developed to run on MS-DOS systems, but today it is available for many
+other platforms (ported by independent programmers).
+
+This port is based on the Borland 2.0 version with fixes.
+
+Borland has released the source code to the public some time ago (take a look
+at the COPYRIGHT file in the source package for more information).
+
+Sandro Sigala
+ssigala@globalnet.it
