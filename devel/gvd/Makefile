@@ -9,6 +9,7 @@ PORTNAME=		gvd
 PORTVERSION=		1.0.1
 CATEGORIES=		devel
 MASTER_SITES=		http://libre.act-europe.fr/gvd/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=		sam@inf.enst.fr
 
