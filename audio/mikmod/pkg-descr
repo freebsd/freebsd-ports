@@ -1,0 +1,6 @@
+This is a mod player which uses ncurses as a UI. It can play S3M, XM, MOD, 
+MTM, STM, ULT, and UNI module types.
+It uses the Open Sound System, and has features like sample interpolation,
+random mod playing, and supports playing compressed modules. (Note: its
+playing of compressed modules is OK, providing they don't have spaces in
+their names...)
