@@ -20,7 +20,12 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -Ee \
+		's|-D[^[:space:]_]+_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>
