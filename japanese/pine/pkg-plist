@@ -3,8 +3,17 @@ libexec/ipop2d
 libexec/ipop3d
 bin/mtest
 bin/pico
+bin/pilot
 bin/pine
+lib/libc-client.so.1.3
+lib/libpico.so.1.3
+@exec /sbin/ldconfig -m %B
+lib/pine/pine.hlp
+lib/pine/pine.ndx
+lib/pine/pine_ja.hlp
+lib/pine/pine_ja.ndx
 man/man1/pico.1.gz
+man/man1/pilot.1.gz
 man/man1/pine.1.gz
 man/man8/imapd.8c.gz
 man/man8/ipopd.8c.gz
