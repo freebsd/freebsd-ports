@@ -6722,6 +6722,7 @@ w3m-img		ports/www/w3m-img
 w3m-m17n	ports/www/w3m-m17n
 w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
+waccess	ports/www/waccess
 wais		ports/net/wais
 wakeonlan	ports/net/wakeonlan
 walker		ports/net/walker
