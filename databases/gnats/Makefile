@@ -3,25 +3,25 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.5 1996/07/20 06:54:33 pst Exp $
+# $Id: Makefile,v 1.6 1996/08/03 19:11:26 pst Exp $
 #
 
 DISTNAME=       gnats-3.97-beta
-CATEGORIES+=	databases
+CATEGORIES=	databases
 MASTER_SITES=   ftp://ftp.cygnus.com/pub/
 
-NO_PACKAGE=	"Requires gnats UID"
+MAINTAINER=	pst@FreeBSD.org
 
 # we've got some .elc and info files to compile (yuck)
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		gm4:${PORTSDIR}/devel/m4
 
+NO_PACKAGE=	"Requires gnats UID"
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-
 CONFIGURE_ARGS= --prefix=${PREFIX} \
 		--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-full-gnats
+USE_GMAKE=	yes
 
 # this stops the configuration program from pulling installation
 # information in from the standard freebsd send-pr program

@@ -3,18 +3,14 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/23 23:52:52 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/10/24 09:58:34 jfitz Exp $
 #
 
 DISTNAME=	DBI-0.73
 PKGNAME=	p5-DBI-0.73
-CATEGORIES+=	databases
-MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/DBI/ \
-		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/DBI/ \
-		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/DBI/ \
-		ftp://ftp.leo.org/pub/comp/programming/languages/perl/CPAN/modules/by-module/DBI/ \
-		ftp://ftp.demon.co.uk/pub/mirrors/perl/CPAN/modules/by-module/DBI/ \
-		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/modules/by-module/DBI/
+CATEGORIES=	databases
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	DBI
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 

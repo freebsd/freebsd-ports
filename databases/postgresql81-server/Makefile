@@ -3,10 +3,10 @@
 # Date created:				Oct 9 1996
 # Whom:	      				Matthew Stein <matt@bdd.net>
 #
-#   $Id: Makefile,v 1.2 1996/09/26 01:40:19 jfitz Exp $
+#   $Id: Makefile,v 1.3 1996/10/10 12:53:49 jfitz Exp $
 
 PKGNAME=	postgres95-1.08
-CATEGORIES+=	databases
+CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.ki.net/pub/postgres95/ \
 		ftp://ftp.luga.or.at/pub/postgres95/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/ \
@@ -18,7 +18,6 @@ DISTFILES=	postgres95-1.08.tar.gz \
 MAINTAINER=	matt@bdd.net
 
 NO_PACKAGE=	yes
-
 WRKSRC=		${WRKDIR}/postgres95/src/
 MAKE_ENV+=	WRKSRC=${WRKSRC} WRKDIR=${WRKDIR}
 USE_GMAKE=	yes
@@ -35,7 +34,7 @@ MASTER_SITES+=	ftp://ftp.freebsd.org/pub/FreeBSD/packages-2.1.5/All/
 .endif
 
 pre-install:
-		@ ${MKDIR} -p ${PREFIX}/postgres95
+		@ ${MKDIR} ${PREFIX}/postgres95
 		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 
 post-install:
@@ -46,8 +45,8 @@ post-install:
 .endif
 		@ chown -R postgres:postgres ${PREFIX}/postgres95
 		@ echo 'Initializing Postgres95 Databases - this may take a few minutes...'
-		@ su -l postgres -c ${PREFIX}/postgres95/bin/initdb
-		@ ${MKDIR} -p ${PREFIX}/etc/rc.d
+		@ su -l posgres -c ${PREFIX}/postgres95/bin/initdb
+		@ ${MKDIR} ${PREFIX}/etc/rc.d
 		@ if [ ! -f ${PREFIX}/etc/rc.d/postgres95.sh ]; then \
 			echo "Installing ${PREFIX}/etc/rc.d/postgres95.sh startup file."; \
 			echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/postgres95.sh; \

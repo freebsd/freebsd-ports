@@ -3,18 +3,18 @@
 # Date created:		14 January 1995
 # Whom:			mr (original)
 #
-# $Id: Makefile,v 1.12 1996/08/29 10:20:55 asami Exp $
+# $Id: Makefile,v 1.13 1996/10/04 00:38:34 jfitz Exp $
 #
 
 DISTNAME=	msql-1.0.16
-CATEGORIES+=	databases
+CATEGORIES=	databases
 MASTER_SITES=	ftp://bond.edu.au/pub/Minerva/msql/
 
 MAINTAINTER=	jfitz@FreeBSD.ORG
 
 #IS_INTERACTIVE=	yes
-NO_MTREE=	yes
 RESTRICTED=	"restrictive copyright (no commercial use)"
+NO_MTREE=	yes
 
 post-install:
 .for file in Commercial License mSQL-Invoice.txt msql-pwr.README msql-pwr.gif msql-pwr2.gif
@@ -26,7 +26,7 @@ post-install:
 .endfor
 .endif
 		${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/Minerva
-		@ ${MKDIR} -p ${PREFIX}/etc/rc.d
+		@ ${MKDIR} ${PREFIX}/etc/rc.d
 		@ if [ ! -f ${PREFIX}/etc/rc.d/msql.sh ]; then \
 			echo "Installing ${PREFIX}/etc/rc.d/msql.sh startup file."; \
 			echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/msql.sh; \
