@@ -371,4 +371,6 @@ cat <<END
 END
 wn "file (eg /usr/local/lib/mgetty+sendfax/dialin.config):" CNDFILE 
 
+ww MAILER \"/usr/sbin/sendmail\"
+
 exit 0
