@@ -1,0 +1,11 @@
+--- lisp/Makefile.in.orig	Sun Oct 11 14:06:21 1998
++++ lisp/Makefile.in	Sun Oct 11 14:06:30 1998
+@@ -18,7 +18,7 @@
+ 
+ install::
+ 	$(SHELL) $(top_srcdir)/mkinstalldirs $(lispdir)
+-	for p in *.elc eggrc-*; do \
++	for p in *.el *.elc eggrc-*; do \
+ 	  echo " $(INSTALL_DATA) $$p $(lispdir)/$$p"; \
+ 	  $(INSTALL_DATA) $$p $(lispdir)/$$p; \
+ 	done
