@@ -1,0 +1,14 @@
+--- bindings/Imakefile.orig	Wed May  3 11:12:34 2000
++++ bindings/Imakefile	Thu May 18 11:02:40 2000
+@@ -37,10 +37,10 @@
+ XCOMM HISTORY
+ XCOMM 
+ XCOMM   $TOG: Imakefile /main/8 1997/07/02 17:51:43 samborn $
+-INSTALLFLAGS = $(INSTINCFLAGS)
+ 
+ FILES = \
+ 	xmbind.alias \
++	CDE \
+ 	acorn \
+ 	apollo \
+ 	dec \

@@ -9,42 +9,679 @@
 PORTNAME=	open-motif
 PORTVERSION= 	2.1.30
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
-		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
-		ftp://ftp.isca.uiowa.edu/pub/mirrors/openmotif/binaries/metrolink/  \
-		ftp://ftp.kddlabs.co.jp/X11/openmotif/binaries/metrolink/
-DISTNAME=	openmotif-${PORTVERSION}-4_MLI
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R${PORTVERSION}/tars/  \
+		ftp://ftp.opengroup.org/pub/openmotif/R${PORTVERSION}/tars/  \
+		ftp://ftp.kddlabs.co.jp/X11/openmotif/R${PORTVERSION}/tars/
+DISTNAME=	openmotif${PORTVERSION}
 
-MAINTAINER=	obrien@FreeBSD.org
+PATCH_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R${PORTVERSION}/fixes/ \
+		ftp://ftp.opengroup.org/pub/openmotif/R${PORTVERSION}/fixes/  \
+		ftp://ftp.kddlabs.co.jp/X11/openmotif/R${PORTVERSION}/fixes/
+PATCHFILES=	patch1 patch2 patch3 patch4 patch5
+PATCH_DIST_STRIP=	-p1
 
-ONLY_FOR_ARCHS=	i386
-PREFIX?=	/	# will install into ${PREFIX}/usr/X11R6
-NO_MTREE=	yes
-USE_X_PREFIX=	yes
-NO_WRKSUBDIR=	yes
-EXTRACT_ONLY=	# don't exact the tarball
-NO_BUILD=	binary distrubition
-NO_PKG_REGISTER=do-install: target will take care of this
 
-do-install:
-	@pkg_add -f -p ${PREFIX} ${DISTDIR}/${DISTFILES}
-	@${MV} -v ${PKG_DBDIR}/${DISTNAME} ${PKG_DBDIR}/${PKGNAME}
+MAINTAINER=	ports@FreeBSD.org
 
-#	shouldn't this be covered by "NO_PKG_REGISTER" ??
-generate-plist:
-	@${DO_NADA}
+DIST_SUBDIR=	openmotif
+WRKSRC=		${WRKDIR}/motif
+USE_IMAKE=	yes
+MAKE_ENV+=	LANG=C
+XMKMF=		${MAKE} Makefile.boot
+ALL_TARGET=	VerifyOS Everything
+MANCOMPRESSED=	yes
 
-do-package:
-	@${ECHO_MSG} "===>  Building package for ${PKGNAME}"
-	@if [ -d ${PACKAGES} ]; then \
-		if [ ! -d ${PKGREPOSITORY} ]; then \
-			if ! ${MKDIR} ${PKGREPOSITORY}; then \
-				${ECHO_MSG} ">> Can't create directory ${PKGREPOSITORY}."; \
-				exit 1; \
-			fi; \
-		fi; \
+MAN1=	mwm.1 \
+	uil.1 \
+	xmbind.1 \
+	DNDDemo.1 \
+	draw.1 \
+	earth.1 \
+	exm_in_c.1 \
+	exm_in_uil.1 \
+	filemanager.1 \
+	getsubres.1 \
+	helloint.1 \
+	i18ninput.1 \
+	periodic.1 \
+	piano.1 \
+	sampler2_0.1 \
+	setDate.1 \
+	simpleDemo.1 \
+	simpledrop.1 \
+	todo.1 \
+
+MAN1DONT=\
+	animate.1 \
+	panner.1 \
+	wsm.1
+
+MAN3=	ApplicationShell.3 \
+	Composite.3 \
+	Constraint.3 \
+	Core.3 \
+	MrmCloseHierarchy.3 \
+	MrmFetchBitmapLiteral.3 \
+	MrmFetchColorLiteral.3 \
+	MrmFetchIconLiteral.3 \
+	MrmFetchLiteral.3 \
+	MrmFetchSetValues.3 \
+	MrmFetchWidget.3 \
+	MrmFetchWidgetOverride.3 \
+	MrmInitialize.3 \
+	MrmOpenHierarchy.3 \
+	MrmOpenHierarchyFromBuffer.3 \
+	MrmOpenHierarchyPerDisplay.3 \
+	MrmRegisterClass.3 \
+	MrmRegisterNames.3 \
+	MrmRegisterNamesInHierarchy.3 \
+	Object.3 \
+	OverrideShell.3 \
+	RectObj.3 \
+	Shell.3 \
+	TopLevelShell.3 \
+	TransientShell.3 \
+	Uil.3 \
+	UilDumpSymbolTable.3 \
+	VendorShell.3 \
+	VirtualBindings.3 \
+	WMShell.3 \
+	XmActivateProtocol.3 \
+	XmActivateWMProtocol.3 \
+	XmAddProtocolCallback.3 \
+	XmAddProtocols.3 \
+	XmAddTabGroup.3 \
+	XmAddToPostFromList.3 \
+	XmAddWMProtocolCallback.3 \
+	XmAddWMProtocols.3 \
+	XmArrowButton.3 \
+	XmArrowButtonGadget.3 \
+	XmBulletinBoard.3 \
+	XmCascadeButton.3 \
+	XmCascadeButtonGadget.3 \
+	XmCascadeButtonGadgetHighlight.3 \
+	XmCascadeButtonHighlight.3 \
+	XmChangeColor.3 \
+	XmClipboardCancelCopy.3 \
+	XmClipboardCopy.3 \
+	XmClipboardCopyByName.3 \
+	XmClipboardEndCopy.3 \
+	XmClipboardEndRetrieve.3 \
+	XmClipboardInquireCount.3 \
+	XmClipboardInquireFormat.3 \
+	XmClipboardInquireLength.3 \
+	XmClipboardInquirePendingItems.3 \
+	XmClipboardLock.3 \
+	XmClipboardRegisterFormat.3 \
+	XmClipboardRetrieve.3 \
+	XmClipboardStartCopy.3 \
+	XmClipboardStartRetrieve.3 \
+	XmClipboardUndoCopy.3 \
+	XmClipboardUnlock.3 \
+	XmClipboardWithdrawFormat.3 \
+	XmComboBox.3 \
+	XmComboBoxAddItem.3 \
+	XmComboBoxDeletePos.3 \
+	XmComboBoxSelectItem.3 \
+	XmComboBoxSetItem.3 \
+	XmComboBoxUpdate.3 \
+	XmCommand.3 \
+	XmCommandAppendValue.3 \
+	XmCommandError.3 \
+	XmCommandGetChild.3 \
+	XmCommandSetValue.3 \
+	XmContainer.3 \
+	XmContainerCopy.3 \
+	XmContainerCopyLink.3 \
+	XmContainerCut.3 \
+	XmContainerGetItemChildren.3 \
+	XmContainerPaste.3 \
+	XmContainerPasteLink.3 \
+	XmContainerRelayout.3 \
+	XmContainerReorder.3 \
+	XmConvertStringToUnits.3 \
+	XmConvertUnits.3 \
+	XmCreateArrowButton.3 \
+	XmCreateArrowButtonGadget.3 \
+	XmCreateBulletinBoard.3 \
+	XmCreateBulletinBoardDialog.3 \
+	XmCreateCascadeButton.3 \
+	XmCreateCascadeButtonGadget.3 \
+	XmCreateComboBox.3 \
+	XmCreateCommand.3 \
+	XmCreateCommandDialog.3 \
+	XmCreateContainer.3 \
+	XmCreateDialogShell.3 \
+	XmCreateDragIcon.3 \
+	XmCreateDrawingArea.3 \
+	XmCreateDrawnButton.3 \
+	XmCreateDropDownComboBox.3 \
+	XmCreateDropDownList.3 \
+	XmCreateErrorDialog.3 \
+	XmCreateFileSelectionBox.3 \
+	XmCreateFileSelectionDialog.3 \
+	XmCreateForm.3 \
+	XmCreateFormDialog.3 \
+	XmCreateFrame.3 \
+	XmCreateIconGadget.3 \
+	XmCreateInformationDialog.3 \
+	XmCreateLabel.3 \
+	XmCreateLabelGadget.3 \
+	XmCreateList.3 \
+	XmCreateMainWindow.3 \
+	XmCreateMenuBar.3 \
+	XmCreateMenuShell.3 \
+	XmCreateMessageBox.3 \
+	XmCreateMessageDialog.3 \
+	XmCreateNotebook.3 \
+	XmCreateOptionMenu.3 \
+	XmCreatePanedWindow.3 \
+	XmCreatePopupMenu.3 \
+	XmCreatePromptDialog.3 \
+	XmCreatePulldownMenu.3 \
+	XmCreatePushButton.3 \
+	XmCreatePushButtonGadget.3 \
+	XmCreateQuestionDialog.3 \
+	XmCreateRadioBox.3 \
+	XmCreateRowColumn.3 \
+	XmCreateScale.3 \
+	XmCreateScrollBar.3 \
+	XmCreateScrolledList.3 \
+	XmCreateScrolledText.3 \
+	XmCreateScrolledWindow.3 \
+	XmCreateSelectionBox.3 \
+	XmCreateSelectionDialog.3 \
+	XmCreateSeparator.3 \
+	XmCreateSeparatorGadget.3 \
+	XmCreateSimpleCheckBox.3 \
+	XmCreateSimpleMenuBar.3 \
+	XmCreateSimpleOptionMenu.3 \
+	XmCreateSimplePopupMenu.3 \
+	XmCreateSimplePulldownMenu.3 \
+	XmCreateSimpleRadioBox.3 \
+	XmCreateSimpleSpinBox.3 \
+	XmCreateSpinBox.3 \
+	XmCreateTemplateDialog.3 \
+	XmCreateText.3 \
+	XmCreateTextField.3 \
+	XmCreateToggleButton.3 \
+	XmCreateToggleButtonGadget.3 \
+	XmCreateWarningDialog.3 \
+	XmCreateWorkArea.3 \
+	XmCreateWorkingDialog.3 \
+	XmCvtByteStreamToXmString.3 \
+	XmCvtCTToXmString.3 \
+	XmCvtStringToUnitType.3 \
+	XmCvtTextPropertyToXmStringTable.3 \
+	XmCvtXmStringTableToTextProperty.3 \
+	XmCvtXmStringToByteStream.3 \
+	XmCvtXmStringToCT.3 \
+	XmDeactivateProtocol.3 \
+	XmDeactivateWMProtocol.3 \
+	XmDestroyPixmap.3 \
+	XmDialogShell.3 \
+	XmDirection.3 \
+	XmDirectionMatch.3 \
+	XmDirectionMatchPartial.3 \
+	XmDirectionToStringDirection.3 \
+	XmDisplay.3 \
+	XmDragCancel.3 \
+	XmDragContext.3 \
+	XmDragIcon.3 \
+	XmDragStart.3 \
+	XmDrawingArea.3 \
+	XmDrawnButton.3 \
+	XmDropSite.3 \
+	XmDropSiteConfigureStackingOrder.3 \
+	XmDropSiteEndUpdate.3 \
+	XmDropSiteQueryStackingOrder.3 \
+	XmDropSiteRegister.3 \
+	XmDropSiteRegistered.3 \
+	XmDropSiteRetrieve.3 \
+	XmDropSiteStartUpdate.3 \
+	XmDropSiteUnregister.3 \
+	XmDropSiteUpdate.3 \
+	XmDropTransfer.3 \
+	XmDropTransferAdd.3 \
+	XmDropTransferStart.3 \
+	XmFileSelectionBox.3 \
+	XmFileSelectionBoxGetChild.3 \
+	XmFileSelectionDoSearch.3 \
+	XmFontList.3 \
+	XmFontListAdd.3 \
+	XmFontListAppendEntry.3 \
+	XmFontListCopy.3 \
+	XmFontListCreate.3 \
+	XmFontListEntryCreate.3 \
+	XmFontListEntryFree.3 \
+	XmFontListEntryGetFont.3 \
+	XmFontListEntryGetTag.3 \
+	XmFontListEntryLoad.3 \
+	XmFontListFree.3 \
+	XmFontListFreeFontContext.3 \
+	XmFontListGetNextFont.3 \
+	XmFontListInitFontContext.3 \
+	XmFontListNextEntry.3 \
+	XmFontListRemoveEntry.3 \
+	XmForm.3 \
+	XmFrame.3 \
+	XmGadget.3 \
+	XmGetAtomName.3 \
+	XmGetColorCalculation.3 \
+	XmGetColors.3 \
+	XmGetDestination.3 \
+	XmGetDragContext.3 \
+	XmGetFocusWidget.3 \
+	XmGetMenuCursor.3 \
+	XmGetPixmap.3 \
+	XmGetPixmapByDepth.3 \
+	XmGetPostedFromWidget.3 \
+	XmGetScaledPixmap.3 \
+	XmGetSecondaryResourceData.3 \
+	XmGetTabGroup.3 \
+	XmGetTearOffControl.3 \
+	XmGetVisibility.3 \
+	XmGetXmDisplay.3 \
+	XmGetXmScreen.3 \
+	XmIconGadget.3 \
+	XmImCloseXIM.3 \
+	XmImFreeXIC.3 \
+	XmImGetXIC.3 \
+	XmImGetXIM.3 \
+	XmImMbLookupString.3 \
+	XmImMbResetIC.3 \
+	XmImRegister.3 \
+	XmImSetFocusValues.3 \
+	XmImSetValues.3 \
+	XmImSetXIC.3 \
+	XmImUnregister.3 \
+	XmImUnsetFocus.3 \
+	XmImVaSetFocusValues.3 \
+	XmImVaSetValues.3 \
+	XmInstallImage.3 \
+	XmInternAtom.3 \
+	XmIsMotifWMRunning.3 \
+	XmIsTraversable.3 \
+	XmLabel.3 \
+	XmLabelGadget.3 \
+	XmList.3 \
+	XmListAddItem.3 \
+	XmListAddItemUnselected.3 \
+	XmListAddItems.3 \
+	XmListAddItemsUnselected.3 \
+	XmListDeleteAllItems.3 \
+	XmListDeleteItem.3 \
+	XmListDeleteItems.3 \
+	XmListDeleteItemsPos.3 \
+	XmListDeletePos.3 \
+	XmListDeletePositions.3 \
+	XmListDeselectAllItems.3 \
+	XmListDeselectItem.3 \
+	XmListDeselectPos.3 \
+	XmListGetKbdItemPos.3 \
+	XmListGetMatchPos.3 \
+	XmListGetSelectedPos.3 \
+	XmListItemExists.3 \
+	XmListItemPos.3 \
+	XmListPosSelected.3 \
+	XmListPosToBounds.3 \
+	XmListReplaceItems.3 \
+	XmListReplaceItemsPos.3 \
+	XmListReplaceItemsPosUnselected.3 \
+	XmListReplaceItemsUnselected.3 \
+	XmListReplacePositions.3 \
+	XmListSelectItem.3 \
+	XmListSelectPos.3 \
+	XmListSetAddMode.3 \
+	XmListSetBottomItem.3 \
+	XmListSetBottomPos.3 \
+	XmListSetHorizPos.3 \
+	XmListSetItem.3 \
+	XmListSetKbdItemPos.3 \
+	XmListSetPos.3 \
+	XmListUpdateSelectedList.3 \
+	XmListYToPos.3 \
+	XmMainWindow.3 \
+	XmMainWindowSep1.3 \
+	XmMainWindowSep2.3 \
+	XmMainWindowSep3.3 \
+	XmMainWindowSetAreas.3 \
+	XmManager.3 \
+	XmMapSegmentEncoding.3 \
+	XmMenuPosition.3 \
+	XmMenuShell.3 \
+	XmMessageBox.3 \
+	XmMessageBoxGetChild.3 \
+	XmNotebook.3 \
+	XmNotebookGetPageInfo.3 \
+	XmObjectAtPoint.3 \
+	XmOptionButtonGadget.3 \
+	XmOptionLabelGadget.3 \
+	XmPanedWindow.3 \
+	XmParseMapping.3 \
+	XmParseMappingCreate.3 \
+	XmParseMappingFree.3 \
+	XmParseMappingGetValues.3 \
+	XmParseMappingSetValues.3 \
+	XmParseTable.3 \
+	XmParseTableFree.3 \
+	XmPrimitive.3 \
+	XmPrintPopupPDM.3 \
+	XmPrintSetup.3 \
+	XmPrintShell.3 \
+	XmPrintToFile.3 \
+	XmProcessTraversal.3 \
+	XmPushButton.3 \
+	XmPushButtonGadget.3 \
+	XmRedisplayWidget.3 \
+	XmRegisterSegmentEncoding.3 \
+	XmRemoveFromPostFromList.3 \
+	XmRemoveProtocolCallback.3 \
+	XmRemoveProtocols.3 \
+	XmRemoveTabGroup.3 \
+	XmRemoveWMProtocolCallback.3 \
+	XmRemoveWMProtocols.3 \
+	XmRenderTable.3 \
+	XmRenderTableAddRenditions.3 \
+	XmRenderTableCopy.3 \
+	XmRenderTableCvtFromProp.3 \
+	XmRenderTableCvtToProp.3 \
+	XmRenderTableFree.3 \
+	XmRenderTableGetRendition.3 \
+	XmRenderTableGetRenditions.3 \
+	XmRenderTableGetTags.3 \
+	XmRenderTableRemoveRenditions.3 \
+	XmRendition.3 \
+	XmRenditionCreate.3 \
+	XmRenditionFree.3 \
+	XmRenditionRetrieve.3 \
+	XmRenditionUpdate.3 \
+	XmRepTypeAddReverse.3 \
+	XmRepTypeGetId.3 \
+	XmRepTypeGetNameList.3 \
+	XmRepTypeGetRecord.3 \
+	XmRepTypeGetRegistered.3 \
+	XmRepTypeInstallTearOffModelConverter.3 \
+	XmRepTypeRegister.3 \
+	XmRepTypeValidValue.3 \
+	XmResolveAllPartOffsets.3 \
+	XmResolvePartOffsets.3 \
+	XmRowColumn.3 \
+	XmScale.3 \
+	XmScaleGetValue.3 \
+	XmScaleSetTicks.3 \
+	XmScaleSetValue.3 \
+	XmScreen.3 \
+	XmScrollBar.3 \
+	XmScrollBarGetValues.3 \
+	XmScrollBarSetValues.3 \
+	XmScrollVisible.3 \
+	XmScrolledWindow.3 \
+	XmScrolledWindowSetAreas.3 \
+	XmSelectionBox.3 \
+	XmSelectionBoxGetChild.3 \
+	XmSeparator.3 \
+	XmSeparatorGadget.3 \
+	XmSetColorCalculation.3 \
+	XmSetFontUnit.3 \
+	XmSetFontUnits.3 \
+	XmSetMenuCursor.3 \
+	XmSetProtocolHooks.3 \
+	XmSetWMProtocolHooks.3 \
+	XmSimpleSpinBox.3 \
+	XmSimpleSpinBoxAddItem.3 \
+	XmSimpleSpinBoxDeletePos.3 \
+	XmSimpleSpinBoxSetItem.3 \
+	XmSpinBox.3 \
+	XmSpinBoxValidatePosition.3 \
+	XmString.3 \
+	XmStringBaseline.3 \
+	XmStringByteCompare.3 \
+	XmStringByteStreamLength.3 \
+	XmStringCompare.3 \
+	XmStringComponentCreate.3 \
+	XmStringComponentType.3 \
+	XmStringConcat.3 \
+	XmStringConcatAndFree.3 \
+	XmStringCopy.3 \
+	XmStringCreate.3 \
+	XmStringCreateLocalized.3 \
+	XmStringCreateLtoR.3 \
+	XmStringCreateSimple.3 \
+	XmStringDirection.3 \
+	XmStringDirectionCreate.3 \
+	XmStringDirectionToDirection.3 \
+	XmStringDraw.3 \
+	XmStringDrawImage.3 \
+	XmStringDrawUnderline.3 \
+	XmStringEmpty.3 \
+	XmStringExtent.3 \
+	XmStringFree.3 \
+	XmStringFreeContext.3 \
+	XmStringGenerate.3 \
+	XmStringGetLtoR.3 \
+	XmStringGetNextComponent.3 \
+	XmStringGetNextSegment.3 \
+	XmStringGetNextTriple.3 \
+	XmStringHasSubstring.3 \
+	XmStringHeight.3 \
+	XmStringInitContext.3 \
+	XmStringIsVoid.3 \
+	XmStringLength.3 \
+	XmStringLineCount.3 \
+	XmStringNConcat.3 \
+	XmStringNCopy.3 \
+	XmStringParseText.3 \
+	XmStringPeekNextComponent.3 \
+	XmStringPeekNextTriple.3 \
+	XmStringPutRendition.3 \
+	XmStringSegmentCreate.3 \
+	XmStringSeparatorCreate.3 \
+	XmStringTable.3 \
+	XmStringTableParseStringArray.3 \
+	XmStringTableProposeTablist.3 \
+	XmStringTableToXmString.3 \
+	XmStringTableUnparse.3 \
+	XmStringToXmStringTable.3 \
+	XmStringUnparse.3 \
+	XmStringWidth.3 \
+	XmTab.3 \
+	XmTabCreate.3 \
+	XmTabFree.3 \
+	XmTabGetValues.3 \
+	XmTabList.3 \
+	XmTabListCopy.3 \
+	XmTabListFree.3 \
+	XmTabListGetTab.3 \
+	XmTabListInsertTabs.3 \
+	XmTabListRemoveTabs.3 \
+	XmTabListReplacePositions.3 \
+	XmTabListTabCount.3 \
+	XmTabSetValue.3 \
+	XmTargetsAreCompatible.3 \
+	XmText.3 \
+	XmTextClearSelection.3 \
+	XmTextCopy.3 \
+	XmTextCopyLink.3 \
+	XmTextCut.3 \
+	XmTextDisableRedisplay.3 \
+	XmTextEnableRedisplay.3 \
+	XmTextField.3 \
+	XmTextFieldClearSelection.3 \
+	XmTextFieldCopy.3 \
+	XmTextFieldCopyLink.3 \
+	XmTextFieldCut.3 \
+	XmTextFieldGetBaseline.3 \
+	XmTextFieldGetEditable.3 \
+	XmTextFieldGetInsertionPosition.3 \
+	XmTextFieldGetLastPosition.3 \
+	XmTextFieldGetMaxLength.3 \
+	XmTextFieldGetSelection.3 \
+	XmTextFieldGetSelectionPosition.3 \
+	XmTextFieldGetSelectionWcs.3 \
+	XmTextFieldGetString.3 \
+	XmTextFieldGetStringWcs.3 \
+	XmTextFieldGetSubstring.3 \
+	XmTextFieldGetSubstringWcs.3 \
+	XmTextFieldInsert.3 \
+	XmTextFieldInsertWcs.3 \
+	XmTextFieldPaste.3 \
+	XmTextFieldPasteLink.3 \
+	XmTextFieldPosToXY.3 \
+	XmTextFieldRemove.3 \
+	XmTextFieldReplace.3 \
+	XmTextFieldReplaceWcs.3 \
+	XmTextFieldSetAddMode.3 \
+	XmTextFieldSetEditable.3 \
+	XmTextFieldSetHighlight.3 \
+	XmTextFieldSetInsertionPosition.3 \
+	XmTextFieldSetMaxLength.3 \
+	XmTextFieldSetSelection.3 \
+	XmTextFieldSetString.3 \
+	XmTextFieldSetStringWcs.3 \
+	XmTextFieldShowPosition.3 \
+	XmTextFieldXYToPos.3 \
+	XmTextFindString.3 \
+	XmTextFindStringWcs.3 \
+	XmTextGetBaseline.3 \
+	XmTextGetCenterline.3 \
+	XmTextGetEditable.3 \
+	XmTextGetInsertionPosition.3 \
+	XmTextGetLastPosition.3 \
+	XmTextGetMaxLength.3 \
+	XmTextGetSelection.3 \
+	XmTextGetSelectionPosition.3 \
+	XmTextGetSelectionWcs.3 \
+	XmTextGetSource.3 \
+	XmTextGetString.3 \
+	XmTextGetStringWcs.3 \
+	XmTextGetSubstring.3 \
+	XmTextGetSubstringWcs.3 \
+	XmTextGetTopCharacter.3 \
+	XmTextInsert.3 \
+	XmTextInsertWcs.3 \
+	XmTextPaste.3 \
+	XmTextPasteLink.3 \
+	XmTextPosToXY.3 \
+	XmTextPosition.3 \
+	XmTextRemove.3 \
+	XmTextReplace.3 \
+	XmTextReplaceWcs.3 \
+	XmTextScroll.3 \
+	XmTextSetAddMode.3 \
+	XmTextSetEditable.3 \
+	XmTextSetHighlight.3 \
+	XmTextSetInsertionPosition.3 \
+	XmTextSetMaxLength.3 \
+	XmTextSetSelection.3 \
+	XmTextSetSource.3 \
+	XmTextSetString.3 \
+	XmTextSetStringWcs.3 \
+	XmTextSetTopCharacter.3 \
+	XmTextShowPosition.3 \
+	XmTextXYToPos.3 \
+	XmToggleButton.3 \
+	XmToggleButtonGadget.3 \
+	XmToggleButtonGadgetGetState.3 \
+	XmToggleButtonGadgetSetState.3 \
+	XmToggleButtonGetState.3 \
+	XmToggleButtonSetState.3 \
+	XmToggleButtonSetValue.3 \
+	XmTrackingEvent.3 \
+	XmTrackingLocate.3 \
+	XmTransferDone.3 \
+	XmTransferSendRequest.3 \
+	XmTransferSetParameters.3 \
+	XmTransferStartRequest.3 \
+	XmTransferValue.3 \
+	XmTranslateKey.3 \
+	XmUninstallImage.3 \
+	XmUpdateDisplay.3 \
+	XmVaCreateSimpleCheckBox.3 \
+	XmVaCreateSimpleMenuBar.3 \
+	XmVaCreateSimpleOptionMenu.3 \
+	XmVaCreateSimplePopupMenu.3 \
+	XmVaCreateSimplePulldownMenu.3 \
+	XmVaCreateSimpleRadioBox.3 \
+	XmWidgetGetBaselines.3 \
+	XmWidgetGetDisplayRect.3
+
+MAN5=	Traits.5 UIL.5 WML.5 mwmrc.5
+
+post-patch:
+# fix sections
+	@cd ${WRKSRC}/doc/man/man1 && ${PERL} -pi.orig -e "s|user cmd|1|" *.1
+	@cd ${WRKSRC}/doc/man/man3 && ${PERL} -pi.orig \
+	    -e "s|library call|3|" *.3
+# mwmrc is not a kernel interface!!
+	@cd ${WRKSRC}/doc/man/man4 && ${PERL} -pi.orig \
+	    -e "s|special file|5|" *.4  && mv mwmrc.4 ../man5/mwmrc.5
+	@cd ${WRKSRC}/doc/man/man5 && ${PERL} -pi.orig \
+	    -e "s|file formats|5|" *.5
+
+
+pre-configure:
+	-@if [ -d ${WRKSRC}/imports/x11/lib/X11 ]; then \
+		: ; \
+	else \
+		${MKDIR} ${WRKSRC}/imports/x11/lib/X11/; \
+		${LN} -s ${X11BASE}/bin ${WRKSRC}/imports/x11/; \
+		${LN} -s ${X11BASE}/include ${WRKSRC}/imports/x11/; \
+		${LN} -s ${X11BASE}/lib/* ${WRKSRC}/imports/x11/lib/; \
+		${LN} -s ${X11BASE}/lib/X11/* ${WRKSRC}/imports/x11/lib/X11/; \
+		${RM} -f ${WRKSRC}/imports/x11/lib/X11/config; \
+		${LN} -s ${WRKSRC}/config/cf ${WRKSRC}/imports/x11/lib/X11/config; \
 	fi
-	@${CP} -p ${DISTDIR}/${DISTFILES} ${PKGFILE}
+
+post-configure:
+	@${CP} ${X11BASE}/bin/imake ${WRKSRC}/config/imake/
+	cd ${WRKSRC} && ${MAKE} imake.bootstrap
+
+pre-install:
+	@if [ -f ${PREFIX}/lib/X11/config/host.def.orig ]; then \
+		: ; \
+	elif [ -f ${PREFIX}/lib/X11/config/host.def ]; then \
+		${MV} ${PREFIX}/lib/X11/config/host.def \
+		   ${PREFIX}/lib/X11/config/host.def.orig; \
+	else \
+		: ; \
+	fi
+
+post-install: share-doc share-guides share-examples
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+share-doc:
+	@${MKDIR} ${PREFIX}/share/doc/openmotif/
+	@${INSTALL_DATA} \
+		${WRKSRC}/BUGREPORT \
+		${WRKSRC}/COPYRIGHT.MOTIF \
+		${WRKSRC}/README \
+		${WRKSRC}/RELNOTES \
+		${PREFIX}/share/doc/openmotif/
+.if !defined{NOPORTDOCS}
+	@${INSTALL_DATA} \
+		${WRKSRC}/CLOSEDBUGS \
+		${WRKSRC}/OPENBUGS \
+		${PREFIX}/share/doc/openmotif/
+	@${GZIP_CMD} \
+		${PREFIX}/share/doc/openmotif/CLOSEDBUGS \
+		${PREFIX}/share/doc/openmotif/OPENBUGS
+.endif
+
+share-guides:
+.if !defined{NOPORTDOCS}
+	@${MKDIR} ${PREFIX}/share/doc/openmotif/guides/
+	@cd ${WRKSRC} && \
+		${CP} -rp doc/ps/* ${PREFIX}/share/doc/openmotif/guides/
+.endif
+
+share-examples:
+#	@${MKDIR} ${PREFIX}/share/examples/openmotif/demos/
+#	@cd ${WRKSRC}/demos && make clean
+#	@find ${WRKSRC}/demos -name \*.orig -delete
+#	@cd ${WRKSRC} && \
+#		${CP} -rp demos/doc/programGuide/* \
+#			  ${PREFIX}/share/examples/openmotif/demos/
+	@${RM} -rf ${PREFIX}/share/examples/openmotif/demos
 
 .include <bsd.port.mk>

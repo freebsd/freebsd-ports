@@ -1,3 +1,27 @@
-This is the Metro Link Open Motif 2.1.30 runtime environment.
-It includes the Motif shared libraries, needed to run applications which
-are dynamically linked against Motif, and the Motif Window Manager, `mwm'.
+Motif(r) is the industry standard graphical user interface, (as defined by
+the IEEE 1295 specification), used on more than 200 hardware and software
+platforms.  It provides application developers, end users, and system
+vendors with the industry's most widely used environment for standardizing
+application presentation on a wide range of platforms.  Motif is the
+leading user interface toolkit for the UNIX(r) system.
+
+Here is what you might ask.  (excerpted from The Open Group FAQ)
+
+  Q:  What is Open Motif? How does it differ from standard Motif?
+
+  A:  Aside from some different copyright and license statements, both
+  Motif and Open Motif share the same functionality and source code.  The
+  primary difference is the software license for each of the software
+  products. Open Motif source code and binaries can be distributed royalty
+  free under The Open Group Public License as long as the operating system
+  upon which Open Motif is running meets the OSI's Open Source Definition.
+  Motif is made available under the standard Open Group software licenses
+  and requires the payment of source code and royalty fees.
+  
+Visit http://www.motifzone.org for more information about Motif.
+
+NOTE: Some ports with GNU configure do not know that Motif 2.1 requires -lXp.
+In that case, you need to edit Makefile after configure, or, hack
+configure(.in) before configure.
+
+WWW: http://www.opengroup.org/openmotif/

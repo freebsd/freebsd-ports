@@ -1,0 +1,9 @@
+XCOMM $FreeBSD$
+
+#define IHaveSubdirs
+#define PassCDebugFlags
+
+SUBDIRS = man
+
+MakeSubdirs($(SUBDIRS))
+DependSubdirs($(SUBDIRS))
