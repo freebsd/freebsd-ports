@@ -41,17 +41,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
-
 USE_OPENSSL=	YES
 
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
-VERSION_APACHE=	1.3.24
-VERSION_MODSSL=	2.8.8
+VERSION_APACHE=	1.3.26
+VERSION_MODSSL=	2.8.9
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
