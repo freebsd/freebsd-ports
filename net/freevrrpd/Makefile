@@ -10,7 +10,7 @@ PORTVERSION=	0.8.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsdshell.net/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spe@b0l.org
 COMMENT=	This a VRRP RFC2338 Compliant implementation under FreeBSD
 
 MAN8=		freevrrpd.8
