@@ -711,6 +711,7 @@
     SUBDIR += vchat
     SUBDIR += verlihub
     SUBDIR += vicq
+    SUBDIR += vino
     SUBDIR += vls
     SUBDIR += vnc
     SUBDIR += vnc2swf

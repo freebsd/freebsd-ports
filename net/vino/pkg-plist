@@ -1,0 +1,22 @@
+bin/vino-preferences
+bin/vino-session
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/vino-server.schemas > /dev/null || /usr/bin/true
+etc/gconf/schemas/vino-server.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/vino-server.schemas > /dev/null || /usr/bin/true
+libdata/bonobo/servers/GNOME_RemoteDesktop.server
+libexec/vino-server
+share/gnome/control-center-2.0/capplets/vino-preferences.desktop
+share/gnome/pixmaps/gnome-remote-desktop.png
+share/gnome/vino/vino-client.html
+share/gnome/vino/vino-client.jar
+share/gnome/vino/vino-preferences.glade
+share/gnome/vino/vino-prompt.glade
+share/locale/bg/LC_MESSAGES/vino.mo
+share/locale/cs/LC_MESSAGES/vino.mo
+share/locale/en_CA/LC_MESSAGES/vino.mo
+share/locale/en_GB/LC_MESSAGES/vino.mo
+share/locale/nl/LC_MESSAGES/vino.mo
+share/locale/pt/LC_MESSAGES/vino.mo
+share/locale/pt_BR/LC_MESSAGES/vino.mo
+share/locale/sv/LC_MESSAGES/vino.mo
+@dirrm share/gnome/vino
