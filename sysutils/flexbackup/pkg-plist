@@ -1,4 +1,8 @@
 bin/flexbackup
-%%PORTDOCS%%share/doc/flexbackup/flexbackup.conf.sample
-%%PORTDOCS%%share/doc/flexbackup/flexbackup.README
-%%PORTDOCS%%@dirrm share/doc/flexbackup
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,22 +1,9 @@
---------------------- Flexbackup Configuration Information --------------------
+-------------------------------------------------------------------------------
+Flexbackup supports utilities from the following ports (all optional):
 
-Flexbackup needs to have its configuration file placed in /etc. A template
-copy of this configuration file has been installed into
-
-  %%PREFIX%%/share/doc/flexbackup/flexbackup.conf.sample
-
-Please copy this file as 
-
-  /etc/flexbackup.conf
-
-and edit appropriately for your site configuration.
-
- *****************************************************************
- **   Changes have occurred in this file since version 0.9.8!   **
- *****************************************************************
-
-Also see %%PREFIX%%/share/doc/flexbackup/flexbackup.README
-for more information on how to use flexbackup (until the man 
-pages are written :).
+archivers/afio
+archivers/star
+archivers/zip
+misc/buffer
 
 -------------------------------------------------------------------------------
