@@ -166,7 +166,6 @@ include/wraster.h
 lib/libWINGs.a
 lib/libWMaker.a
 lib/libwraster.a
-lib/libwraster.la
 lib/libwraster.so
 lib/libwraster.so.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
