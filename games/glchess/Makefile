@@ -24,17 +24,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 USE_AUTOMAKE_VER=	14
+USE_REINPLACE=	yes
 
 MAN6=		${PORTNAME}.6
 
 pre-patch:
-	@${PERL} -pi.orig -e 's!/usr/local/share/games/glchess!${DATADIR}!' \
+	@${REINPLACE_CMD} -e 's!/usr/local/share/games/glchess!${DATADIR}!' \
 		${WRKSRC}/glchessrc
-	@${PERL} -pi.orig -e 's!/etc!${PREFIX}/etc!' \
+	@${REINPLACE_CMD} -e 's!/etc!${PREFIX}/etc!' \
 		${WRKSRC}/src/config.c
-	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
+	@${REINPLACE_CMD} -e 's|^aclocal|${ACLOCAL}|; \
 		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
 		${WRKSRC}/autogen.sh
+	@${REINPLACE_CMD} -e 's|"gnuchessx"|"gnuchess"|' ${WRKSRC}/src/main.c
 
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh
