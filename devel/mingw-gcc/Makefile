@@ -26,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/i386-mingw32msvc/bin/as:${PORTSDIR}/devel/mingw-binuti
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}-20010828
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=i386-mingw32msvc \
 		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/i386-mingw32msvc/${PORTVERSION}/include/g++
@@ -38,7 +39,7 @@ MAN1=	cccp.1                 \
 	i386-mingw32msvc-gcc.1
 
 post-patch:
-	${PERL} -i.orig -pe 's/install-libiberty//' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's/install-libiberty//' ${WRKSRC}/Makefile.in
 
 pre-install:
 	${MV} ${PREFIX}/bin/i386-mingw32msvc-c++filt \
