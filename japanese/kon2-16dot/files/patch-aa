@@ -89,7 +89,7 @@ diff -c -r README.FreeBSD README.FreeBSD
 + 	は以下の用になっています。
 + 		/usr/local/bin			実行モジュール格納先
 + 		/usr/local/etc			kon.cfg ファイル格納先
-+ 		/usr/local/man/ja_JP.ujis/man1	man ファイル格納先
++ 		/usr/local/man/ja_JP.EUC/man1	man ファイル格納先
 + 
 +   1.4	kon.cfg ファイルをフォントにあわせて変更してください。記述方法な
 + 	どは doc 以下のファイルを参考にしてください。使用するフォントは
@@ -1230,7 +1230,7 @@ diff -c -r tools/Configure tools/Configure
 ! TOPDIR	= /usr/local
 ! BINDIR	= $(TOPDIR)/bin
   LIBDIR	= $(TOPDIR)/etc
-! MANDIR	= $(TOPDIR)/man/ja_JP.ujis/man1
+! MANDIR	= $(TOPDIR)/man/ja_JP.EUC/man1
   CONFIG_NAME = kon.cfg
   OPTS    = -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\" -I$(INCDIR)
   CFLAGS  = -O -Wall $(OPTS)
