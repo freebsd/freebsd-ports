@@ -196,6 +196,7 @@
     SUBDIR += gtgt
     SUBDIR += gtranslator
     SUBDIR += gvd
+    SUBDIR += haddock
     SUBDIR += happy
     SUBDIR += happydoc
     SUBDIR += hmake
