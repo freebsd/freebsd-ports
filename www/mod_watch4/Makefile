@@ -30,6 +30,8 @@ MAKEFILE=	Makefile.dso
 
 MAKE_ARGS+=	APXS="${APXS}"
 
+LATEST_LINK=	mod_watch4
+
 ALL_TARGET=	build
 
 DOCS=			apache2mrtg.shtml index.shtml mailto.js mod_watch.shtml style.css
