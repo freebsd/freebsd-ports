@@ -847,6 +847,7 @@ cl-asdf-cmucl	ports/devel/cl-asdf-cmucl
 cl-asdf-sbcl	ports/devel/cl-asdf-sbcl
 cl-lml		ports/www/cl-lml
 cl-lml-clisp	ports/www/cl-lml-clisp
+cl-meta		ports/textproc/cl-meta
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
 clanbomber	ports/games/clanbomber
