@@ -1,0 +1,6 @@
+xgrasp is a program to display GL animations in an X window.
+
+This is version 1.7d.  It only works on 8-bit Pseudocolor displays.
+
+-Satoshi
+asami@cs.berkeley.edu
