@@ -4471,6 +4471,10 @@ mew2		ports/mail/mew2
 mew2-emacs20	ports/mail/mew2-emacs20
 mew2-xemacs21	ports/mail/mew2-xemacs21
 mew2-xemacs21-mule	ports/mail/mew2-xemacs21-mule
+mew3		ports/mail/mew3
+mew3-emacs20	ports/mail/mew3-emacs20
+mew3-xemacs21	ports/mail/mew3-xemacs21
+mew3-xemacs21-mule	ports/mail/mew3-xemacs21-mule
 mftrace		ports/print/mftrace
 mg		ports/editors/mg
 mgapdesk	ports/x11/mgapdesk
