@@ -1,0 +1,24 @@
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/AutoSlide.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Backgrounds.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Simple.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/Stages.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Text.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Video.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/Xml.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/slideshow.dtd
+%%PORTDOCS%%%%EXAMPLESDIR%%/speedfull.jpg
+%%PORTDOCS%%%%EXAMPLESDIR%%/standard.ttf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PYTHON_SITELIBDIR%%/_slideshow.a
+%%PYTHON_SITELIBDIR%%/_slideshow.la
+%%PYTHON_SITELIBDIR%%/_slideshow.so
+%%PYTHON_SITELIBDIR%%/slideshow.py
+%%PYTHON_SITELIBDIR%%/slideshow.pyc
+%%PYTHON_SITELIBDIR%%/slideshow.pyo
+bin/slideshow
+lib/libslideshow.a
+lib/libslideshow.la
+lib/libslideshow.so
+lib/libslideshow.so.0
