@@ -81,6 +81,7 @@
     SUBDIR += tkirc
     SUBDIR += tr-ircd
     SUBDIR += trickyirc
+    SUBDIR += undernet-ircu
     SUBDIR += weechat
     SUBDIR += xaric
     SUBDIR += xchat

@@ -1,0 +1,9 @@
+Undernet's popular and reliable irc daemon.  See website (URL below) for
+details.
+
+Note that this port is titled "undernet-ircu" to differentiate it from another
+ircd known as ircu (which was created and is maintained by a former undernet
+coder who forked project paths without changing project names).
+
+Author:	"Coder-Com" <coder-com@undernet.org>
+WWW:	http://coder-com.undernet.org
