@@ -1,6 +1,31 @@
---- star/star.c.orig	Fri Apr 27 19:29:55 2001
-+++ star/star.c	Fri Apr 27 19:33:54 2001
-@@ -442,46 +442,48 @@ LOCAL void
+--- star/star.c.orig	Fri May 17 19:26:31 2002
++++ star/star.c	Tue Jun 11 22:27:46 2002
+@@ -485,14 +485,16 @@
+ susage(ret)
+ 	int	ret;
+ {
+-	error("Usage:\t%s cmd [options] file1 ... filen\n", get_progname());
+-	error("\nUse\t%s -help\n", get_progname());
+-	error("and\t%s -xhelp\n", get_progname());
+-	error("to get a list of valid cmds and options.\n");
+-	error("\nUse\t%s H=help\n", get_progname());
+-	error("to get a list of valid archive header formats.\n");
+-	error("\nUse\t%s diffopts=help\n", get_progname());
+-	error("to get a list of valid diff options.\n");
++	FILE *fp = ret ? stderr : stdout;
++
++	fprintf(fp, "Usage:\t%s cmd [options] file1 ... filen\n", get_progname());
++	fprintf(fp, "\nUse\t%s -help\n", get_progname());
++	fprintf(fp, "and\t%s -xhelp\n", get_progname());
++	fprintf(fp, "to get a list of valid cmds and options.\n");
++	fprintf(fp, "\nUse\t%s H=help\n", get_progname());
++	fprintf(fp, "to get a list of valid archive header formats.\n");
++	fprintf(fp, "\nUse\t%s diffopts=help\n", get_progname());
++	fprintf(fp, "to get a list of valid diff options.\n");
+ 	exit(ret);
+ 	/* NOTREACHED */
+ }
+@@ -501,48 +503,50 @@
  usage(ret)
  	int	ret;
  {
@@ -12,6 +37,7 @@
 -	error("Options:\n");
 -	error("\t-help\t\tprint this help\n");
 -	error("\t-xhelp\t\tprint extended help\n");
+-	error("\t-version\tprint version information and exit\n");
 -	error("\tblocks=#,b=#\tset blocking factor to #x512 Bytes (default 20)\n"); 
 -	error("\tfile=nm,f=nm\tuse 'nm' as tape instead of stdin/stdout\n");
 -	error("\t-T\t\tuse $TAPE as tape instead of stdin/stdout\n");
@@ -25,6 +51,7 @@
 +	fprintf(fp, "Options:\n");
 +	fprintf(fp, "\t-help\t\tprint this help\n");
 +	fprintf(fp, "\t-xhelp\t\tprint extended help\n");
++	fprintf(fp, "\t-version\tprint version information and exit\n");
 +	fprintf(fp, "\tblocks=#,b=#\tset blocking factor to #x512 Bytes (default 20)\n"); 
 +	fprintf(fp, "\tfile=nm,f=nm\tuse 'nm' as tape instead of stdin/stdout\n");
 +	fprintf(fp, "\t-T\t\tuse $TAPE as tape instead of stdin/stdout\n");
@@ -36,7 +63,8 @@
 +	fprintf(fp, "\t-shm\t\tuse SysV shared memory for fifo\n");
  #endif
  #endif
--	error("\t-v\t\tbe verbose\n");
+-	error("\t-v\t\tincrement verbose level\n");
+-	error("\t-block-number\tprint the block numbers where the TAR headers start\n");
 -	error("\t-tpath\t\tuse with -t to list path names only\n");
 -	error("\tH=header\tgenerate 'header' type archive (see H=help)\n");
 -	error("\tC=dir\t\tperform a chdir to 'dir' before storing next file\n");
@@ -46,11 +74,11 @@
 -	error("\t-i\t\tignore checksum errors\n");
 -	error("\t-d\t\tdo not store/create directories\n");
 -	error("\t-m\t\tdo not restore access and modification time\n");
--	error("\t-nochown\tdo not restore owner and group\n");
+-	error("\t-o,-nochown\tdo not restore owner and group\n");
 -	error("\t-a,-atime\treset access time after storing file\n");
 -	error("\t-p\t\trestore filemodes of directories\n");
 -	error("\t-l\t\tdo not print a message if not all links are dumped\n");
--	error("\t-L\t\tfollow symbolic links as if they were files\n");
+-	error("\t-h,-L\t\tfollow symbolic links as if they were files\n");
 -	error("\t-D\t\tdo not descend directories\n");
 -	error("\t-M\t\tdo not descend mounting points\n");
 -	error("\t-I,-w\t\tdo interactive creation/extraction/renaming\n");
@@ -59,7 +87,8 @@
 -	error("\t-S\t\tdo not store/create special files\n");
 -	error("\t-F,-FF,-FFF,...\tdo not store/create SCCS/RCS, core and object files\n");
 -	error("\t-U\t\trestore files unconditionally\n");
-+	fprintf(fp, "\t-v\t\tbe verbose\n");
++	fprintf(fp, "\t-v\t\tincrement verbose level\n");
++	fprintf(fp, "\t-block-number\tprint the block numbers where the TAR headers start\n");
 +	fprintf(fp, "\t-tpath\t\tuse with -t to list path names only\n");
 +	fprintf(fp, "\tH=header\tgenerate 'header' type archive (see H=help)\n");
 +	fprintf(fp, "\tC=dir\t\tperform a chdir to 'dir' before storing next file\n");
@@ -69,11 +98,11 @@
 +	fprintf(fp, "\t-i\t\tignore checksum errors\n");
 +	fprintf(fp, "\t-d\t\tdo not store/create directories\n");
 +	fprintf(fp, "\t-m\t\tdo not restore access and modification time\n");
-+	fprintf(fp, "\t-nochown\tdo not restore owner and group\n");
++	fprintf(fp, "\t-o,-nochown\tdo not restore owner and group\n");
 +	fprintf(fp, "\t-a,-atime\treset access time after storing file\n");
 +	fprintf(fp, "\t-p\t\trestore filemodes of directories\n");
 +	fprintf(fp, "\t-l\t\tdo not print a message if not all links are dumped\n");
-+	fprintf(fp, "\t-L\t\tfollow symbolic links as if they were files\n");
++	fprintf(fp, "\t-h,-L\t\tfollow symbolic links as if they were files\n");
 +	fprintf(fp, "\t-D\t\tdo not descend directories\n");
 +	fprintf(fp, "\t-M\t\tdo not descend mounting points\n");
 +	fprintf(fp, "\t-I,-w\t\tdo interactive creation/extraction/renaming\n");
@@ -85,51 +114,73 @@
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -490,56 +492,58 @@ LOCAL void
+@@ -551,69 +555,71 @@
  xusage(ret)
  	int	ret;
  {
 -	error("Usage:\tstar cmd [options] file1 ... filen\n");
 -	error("Extended options:\n");
 -	error("\tdiffopts=optlst\tcomma separated list of diffopts (see diffopts=help)\n");
+-	error("\t-debug\t\tprint additional debug messages\n");
+-	error("\t-silent\t\tno not print informational messages\n");
 -	error("\t-not,-V\t\tuse those files which do not match pattern\n");
 -	error("\tVOLHDR=name\tuse name to generate a volume header\n");
 -	error("\t-xdir\t\textract dir even if the current is never\n");
+-	error("\t-dirmode\t\twrite directories after the files they contain\n");
+-	error("\t-link-dirs\tlook for hard linked directories in create mode\n");
+-	error("\t-dump\t\texperimental option for incremental dumps (more ino metadata)\n");
+-	error("\t-meta\t\texperimental option to use inode metadata only\n");
 -	error("\t-keep-old-files,-k\tkeep existing files\n");
 -	error("\t-refresh-old-files\trefresh existing files, don't create new files\n");
+-	error("\t-refresh\trefresh existing files, don't create new files\n");
 -	error("\t-/\t\tdon't strip leading '/'s from file names\n");
 -	error("\tlist=name\tread filenames from named file\n");
 -	error("\t-dodesc\t\tdo descend directories found in a list= file\n");
 -	error("\tpattern=p,pat=p\tset matching pattern\n");
--	error("\tmaxsize=#\tdo not store file if it is bigger than # kBytes\n");
+-	error("\tmaxsize=#\tdo not store file if bigger than # (default mult is kB)\n");
 -	error("\tnewer=name\tstore only files which are newer than 'name'\n");
+-	error("\tnew-volume-script=script\tcall 'scipt' at end of each volume\n");
 -	error("\t-ctime\t\tuse ctime for newer= option\n");
+-	error("\t-nodump\t\tdo not dump files that have the nodump flag set\n");
+-	error("\t-acl\t\thandle access control lists\n");
+-	error("\t-xfflags\t\thandle extended file flags\n");
 -	error("\tbs=#\t\tset (output) block size to #\n");
 +	FILE *fp = ret ? stderr : stdout;
 +
 +	fprintf(fp, "Usage:\tstar cmd [options] file1 ... filen\n");
 +	fprintf(fp, "Extended options:\n");
 +	fprintf(fp, "\tdiffopts=optlst\tcomma separated list of diffopts (see diffopts=help)\n");
++	fprintf(fp, "\t-debug\t\tprint additional debug messages\n");
++	fprintf(fp, "\t-silent\t\tno not print informational messages\n");
 +	fprintf(fp, "\t-not,-V\t\tuse those files which do not match pattern\n");
 +	fprintf(fp, "\tVOLHDR=name\tuse name to generate a volume header\n");
 +	fprintf(fp, "\t-xdir\t\textract dir even if the current is never\n");
++	fprintf(fp, "\t-dirmode\t\twrite directories after the files they contain\n");
++	fprintf(fp, "\t-link-dirs\tlook for hard linked directories in create mode\n");
++	fprintf(fp, "\t-dump\t\texperimental option for incremental dumps (more ino metadata)\n");
++	fprintf(fp, "\t-meta\t\texperimental option to use inode metadata only\n");
 +	fprintf(fp, "\t-keep-old-files,-k\tkeep existing files\n");
 +	fprintf(fp, "\t-refresh-old-files\trefresh existing files, don't create new files\n");
++	fprintf(fp, "\t-refresh\trefresh existing files, don't create new files\n");
 +	fprintf(fp, "\t-/\t\tdon't strip leading '/'s from file names\n");
 +	fprintf(fp, "\tlist=name\tread filenames from named file\n");
 +	fprintf(fp, "\t-dodesc\t\tdo descend directories found in a list= file\n");
 +	fprintf(fp, "\tpattern=p,pat=p\tset matching pattern\n");
-+	fprintf(fp, "\tmaxsize=#\tdo not store file if it is bigger than # kBytes\n");
++	fprintf(fp, "\tmaxsize=#\tdo not store file if bigger than # (default mult is kB)\n");
 +	fprintf(fp, "\tnewer=name\tstore only files which are newer than 'name'\n");
++	fprintf(fp, "\tnew-volume-script=script\tcall 'scipt' at end of each volume\n");
 +	fprintf(fp, "\t-ctime\t\tuse ctime for newer= option\n");
++	fprintf(fp, "\t-nodump\t\tdo not dump files that have the nodump flag set\n");
++	fprintf(fp, "\t-acl\t\thandle access control lists\n");
++	fprintf(fp, "\t-xfflags\t\thandle extended file flags\n");
 +	fprintf(fp, "\tbs=#\t\tset (output) block size to #\n");
  #ifdef	FIFO
 -	error("\tfs=#\t\tset fifo size to #\n");
 +	fprintf(fp, "\tfs=#\t\tset fifo size to #\n");
  #endif
--	error("\ttsize=#\t\tset tape volume size to # 512 byte blocks\n");
+-	error("\ttsize=#\t\tset tape volume size to # (default multiplier is 512)\n");
 -	error("\t-qic24\t\tset tape volume size to %d kBytes\n",
-+	fprintf(fp, "\ttsize=#\t\tset tape volume size to # 512 byte blocks\n");
++	fprintf(fp, "\ttsize=#\t\tset tape volume size to # (default multiplier is 512)\n");
 +	fprintf(fp, "\t-qic24\t\tset tape volume size to %d kBytes\n",
  						TSIZE(QIC_24_TSIZE)/1024);
 -	error("\t-qic120\t\tset tape volume size to %d kBytes\n",
@@ -157,6 +208,8 @@
 -	error("\t-hpdev\t\tuse HP's non POSIX compliant method to store dev numbers\n");
 -	error("\t-modebits\tinclude all 16 bits from stat.st_mode, this violates POSIX-1003.1\n");
 -	error("\t-copylinks\tCopy hard and symlinks rather than linking\n");
+-	error("\t-hardlinks\tExtract symlinks as hardlinks\n");
+-	error("\t-symlinks\tExtract hardlinks as symlinks\n");
 -	error("\t-signed-checksum\tuse signed chars to calculate checksum\n");
 -	error("\t-sparse\t\thandle file with holes effectively on store/create\n");
 -	error("\t-force-hole\ttry to extract all files with holes\n");
@@ -173,6 +226,8 @@
 +	fprintf(fp, "\t-hpdev\t\tuse HP's non POSIX compliant method to store dev numbers\n");
 +	fprintf(fp, "\t-modebits\tinclude all 16 bits from stat.st_mode, this violates POSIX-1003.1\n");
 +	fprintf(fp, "\t-copylinks\tCopy hard and symlinks rather than linking\n");
++	fprintf(fp, "\t-hardlinks\tExtract symlinks as hardlinks\n");
++	fprintf(fp, "\t-symlinks\tExtract hardlinks as symlinks\n");
 +	fprintf(fp, "\t-signed-checksum\tuse signed chars to calculate checksum\n");
 +	fprintf(fp, "\t-sparse\t\thandle file with holes effectively on store/create\n");
 +	fprintf(fp, "\t-force-hole\ttry to extract all files with holes\n");
@@ -186,7 +241,7 @@
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -548,27 +552,29 @@ LOCAL void
+@@ -622,27 +628,29 @@
  dusage(ret)
  	int	ret;
  {
@@ -237,26 +292,32 @@
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -577,13 +583,15 @@ LOCAL void
+@@ -651,16 +659,18 @@
  husage(ret)
  	int	ret;
  {
 -	error("Header types:\n");
 -	error("\ttar\t\told tar format\n");
--	error("\tstar\t\tstar format\n");
--	error("\tgnutar\t\tgnu tar format\n");
--	error("\tustar\t\tstandard tar (ieee 1003.1) format\n");
--	error("\txstar\t\textended standard tar format\n");
+-	error("\tstar\t\told star format from 1985\n");
+-	error("\tgnutar\t\tgnu tar format (violates POSIX, use with care)\n");
+-	error("\tustar\t\tstandard tar (ieee POSIX 1003.1-1988) format\n");
+-	error("\txstar\t\textended standard tar format (star 1994)\n");
 -	error("\txustar\t\textended standard tar format without tar signature\n");
+-	error("\texustar\t\textended standard tar format without tar signature (always x-header)\n");
+-	error("\tpax\t\textended (ieee POSIX 1003.1-2001) standard tar format\n");
+-	error("\tsuntar\t\tSun's extended pre-POSIX.1-2001 Solaris 7/8 tar format\n");
 +	FILE *fp = ret ? stderr : stdout;
 +
 +	fprintf(fp, "Header types:\n");
 +	fprintf(fp, "\ttar\t\told tar format\n");
-+	fprintf(fp, "\tstar\t\tstar format\n");
-+	fprintf(fp, "\tgnutar\t\tgnu tar format\n");
-+	fprintf(fp, "\tustar\t\tstandard tar (ieee 1003.1) format\n");
-+	fprintf(fp, "\txstar\t\textended standard tar format\n");
++	fprintf(fp, "\tstar\t\told star format from 1985\n");
++	fprintf(fp, "\tgnutar\t\tgnu tar format (violates POSIX, use with care)\n");
++	fprintf(fp, "\tustar\t\tstandard tar (ieee POSIX 1003.1-1988) format\n");
++	fprintf(fp, "\txstar\t\textended standard tar format (star 1994)\n");
 +	fprintf(fp, "\txustar\t\textended standard tar format without tar signature\n");
++	fprintf(fp, "\texustar\t\textended standard tar format without tar signature (always x-header)\n");
++	fprintf(fp, "\tpax\t\textended (ieee POSIX 1003.1-2001) standard tar format\n");
++	fprintf(fp, "\tsuntar\t\tSun's extended pre-POSIX.1-2001 Solaris 7/8 tar format\n");
  	exit(ret);
  	/* NOTREACHED */
  }
