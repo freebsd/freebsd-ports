@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Types.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Install/Files.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Install/GnomePrintDefs.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Install/GnomePrintTypemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Install/PerlGnomePrintInt.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Install/pkg.typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Print/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Print/Print.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Print/Print.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Print/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print/Install
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Print
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Print
