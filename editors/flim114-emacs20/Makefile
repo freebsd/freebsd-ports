@@ -22,11 +22,12 @@ PORTCLASS?=	master
 # distfile version
 FLIM_VER=	1.14.3
 FLIM_TRUNK=	1.14
-# setupel filename
-FLIM_SETUPEL=	flim-setupel.el
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+# flim lispdir
+FLIM_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
+FLIM_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 .if (${PORTCLASS} == "master")
 # for emacs20
@@ -36,9 +37,10 @@ EMACS_PORT_NAME=	emacs20
 # target name for make build
 ALL_TARGET?=	elc
 # environments
-SCRIPTS_ENV+=	TARGETS="${FLIM_SETUPEL}"
-PLIST_SUB+=	FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL} \
-		FLIM_COOKIE=${FLIM_COOKIE}
+PLIST_SUB+=	FLIMDOCDIR=${FLIMDOCDIR} FLIM_COOKIE=${FLIM_COOKIE}
+MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
+		LISPDIR="${FLIM_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${FLIM_VERSION_SPECIFIC_LISPDIR}"
 
 .include <bsd.port.pre.mk>
 
@@ -66,11 +68,6 @@ RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTS
 .if !defined(BUILD_INFO_BY_EMACS) || (${BUILD_INFO_BY_EMACS} == "NO")
 # info files JIS to EUC
 BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
-.endif
-
-pre-configure:
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
-	@${CP} ${FILESDIR}/${FLIM_SETUPEL}.in ${WRKDIR}
 .endif
 
 # makeinfo stuff
@@ -102,9 +99,6 @@ post-install:
 # install package-cookie
 	@${MKDIR} ${LOCALBASE}/share/flim
 	@${TOUCH} ${LOCALBASE}/share/flim/${FLIM_COOKIE}
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
-	@${MAKE} setupel-install
-.endif
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
 	@${MAKE} info-package-install
 	@${MAKE} manifest-install
@@ -170,10 +164,6 @@ doc-install:
 	for i in ChangeLog NEWS README.* VERSION ; do \
 		${INSTALL_DATA} $${i} ${LOCALBASE}/${FLIMDOCDIR}/ ; \
 	done)
-
-setupel-install:
-	@${INSTALL_DATA} ${WRKDIR}/${FLIM_SETUPEL} \
-			${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 
 info-install:
 	@(cd ${WRKSRC} ; \

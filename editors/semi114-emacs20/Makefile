@@ -23,12 +23,13 @@ PORTCLASS?=	master
 FLIM_TRUNK=	1.14
 SEMI_TRUNK=	1.14
 SEMI_VER=	1.14.3
-# setupel filename
-SEMI_SETUPEL=	semi-setupel.el
 # document install directory by install-doc target
 SEMIDOCDIR?=	share/doc/semi
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 SEMI_COOKIE=	semi-${EMACS_PORT_NAME}-${SEMI_TRUNK}.FreeBSD-packages
+# semi lispdir
+SEMI_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
+SEMI_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 .if (${PORTCLASS} == "master")
 # emacs port setup
@@ -38,9 +39,10 @@ EMACS_PORT_NAME=	emacs20
 # target name for make build
 ALL_TARGET?=	elc
 # environments
-SCRIPTS_ENV+=	TARGETS="${SEMI_SETUPEL}"
-PLIST_SUB+=	SEMIDOCDIR=${SEMIDOCDIR} SEMI_SETUPEL=${SEMI_SETUPEL} \
-		SEMI_COOKIE=${SEMI_COOKIE}
+PLIST_SUB+=	SEMIDOCDIR=${SEMIDOCDIR} SEMI_COOKIE=${SEMI_COOKIE}
+MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
+		LISPDIR="${SEMI_LISPDIR}" \
+		VERSION_SPECIFIC_LISPDIR="${SEMI_VERSION_SPECIFIC_LISPDIR}"
 
 .include <bsd.port.pre.mk>
 
@@ -58,11 +60,6 @@ RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${F
 .if !defined(BUILD_INFO_BY_EMACS) || (${BUILD_INFO_BY_EMACS} == "NO")
 # info files JIS to EUC
 BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
-.endif
-
-pre-configure:
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
-	@${CP} ${FILESDIR}/${SEMI_SETUPEL}.in ${WRKDIR}
 .endif
 
 MAKEINFO=		makeinfo --no-split --no-validate
@@ -92,9 +89,6 @@ pre-install:
 post-install:
 	@${MKDIR} ${LOCALBASE}/share/semi
 	@${TOUCH} ${LOCALBASE}/share/semi/${SEMI_COOKIE}
-.if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
-	@${MAKE} setupel-install
-.endif
 .if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
 	@${MAKE} info-package-install
 	@${MAKE} manifest-install
@@ -160,10 +154,6 @@ doc-install:
 	for i in ChangeLog NEWS README.* TODO VERSION ; do \
 		${INSTALL_DATA} $${i} ${LOCALBASE}/${SEMIDOCDIR}/ ; \
 	done)
-
-setupel-install:
-	@${INSTALL_DATA} ${WRKDIR}/${SEMI_SETUPEL} \
-		${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 
 info-install:
 	@(cd ${WRKSRC} ; \
