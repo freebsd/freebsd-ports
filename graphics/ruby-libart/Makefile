@@ -17,7 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby binding for libart
 
-LIB_DEPENDS=	art_lgpl.5:${PORTSDIR}/graphics/libart
+LIB_DEPENDS=	art_lgpl.5:${PORTSDIR}/graphics/libart \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
