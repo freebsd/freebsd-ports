@@ -320,6 +320,7 @@
     SUBDIR += ruby-rexml
     SUBDIR += ruby-rss
     SUBDIR += ruby-sablot
+    SUBDIR += ruby-sary
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
     SUBDIR += ruby-xslt
