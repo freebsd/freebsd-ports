@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
