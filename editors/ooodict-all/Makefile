@@ -39,6 +39,7 @@ DICT_PATH=		${LOCALBASE}/${DICT_DIR}
 DICT_LIST_INST=		${DICT_PATH}/dictionary.lst
 DICT_PATH_PLIST=	"%D/${DICT_DIR}"
 DICT_LIST=		${DICT_PATH_PLIST}/dictionary.lst
+PLIST=			${WRKDIR}/pkg-plist
 
 .if defined(LANGPREFIX)
 PKGNAMEPREFIX=	${LANGPREFIX}-
@@ -71,8 +72,8 @@ EXTRACT_BEFORE_ARGS_L?=	-q -o
 EXTRACT_AFTER_ARGS_L?=	-d ${PREFIX}/${DICT_DIR}
 
 pre-install:
-.if ! exists(${WRKDIR}/../pkg-plist)
-	@${TOUCH} ${WRKDIR}/../pkg-plist
+.if ! exists(${WRKDIR}/pkg-plist)
+	@${TOUCH} ${WRKDIR}/pkg-plist
 .endif
 
 do-install:
