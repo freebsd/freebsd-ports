@@ -1,9 +1,9 @@
 wmmount - The WindowMaker universal mount point
 05/09/98  Release 1.0 Beta1
-http://www.geocities.com/SiliconValley/Vista/2471/
 
 In addition, individual users can create their own configuration files,
 saving them as ~/.wmmount
 
-Autor: Sam Hawker (17/m/uk) <shawkie@geocities.com>
+Author: Sam Hawker (17/m/uk) <shawkie@geocities.com>
 Ported: Osokin Sergey aka oZZ <ozz@FreeBSD.org.ru>  
+WWW: http://www.geocities.com/SiliconValley/Vista/2471/

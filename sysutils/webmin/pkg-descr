@@ -8,4 +8,4 @@ which directly update system files like /etc/inetd.conf and
 Perl version 5, and use no external modules. This means that you
 only need a Perl binary to run Webmin.
 
-Homepage:	http://www.webmin.com/webmin/
+WWW: http://www.webmin.com/webmin/
