@@ -136,4 +136,4 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.tooltalk
 @dirrm lib/xemacs/xemacs-packages/lisp/sounds-au
 @dirrm lib/xemacs/xemacs-packages/lisp/edebug
 @dirrm lib/xemacs/xemacs-packages/lisp/Sun
-@dirrm lib/xemacs/xemacs-packages/etc/sounds
+@unexec rmdir %D/lib/xemacs/xemacs-packages/etc/sounds 2>/dev/null || true

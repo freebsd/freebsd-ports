@@ -1057,7 +1057,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc
 @dirrm lib/xemacs/xemacs-packages/lisp/bbdb
 @dirrm lib/xemacs/xemacs-packages/etc/zenirc
 @dirrm lib/xemacs/xemacs-packages/etc/vm
-@dirrm lib/xemacs/xemacs-packages/etc/sounds
 @dirrm lib/xemacs/xemacs-packages/etc/smilies
 @dirrm lib/xemacs/xemacs-packages/etc/mew
 @dirrm lib/xemacs/xemacs-packages/etc/message
@@ -1066,3 +1065,4 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc
 @dirrm lib/xemacs/xemacs-packages/etc/gnats
 @dirrm lib/xemacs/xemacs-packages/etc/bbdb/tex
 @dirrm lib/xemacs/xemacs-packages/etc/bbdb
+@unexec rmdir %D/lib/xemacs/xemacs-packages/etc/sounds 2>/dev/null || true

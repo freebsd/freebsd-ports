@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xemacs-libs-packages
-PORTVERSION=	1.0
-CATEGORIES=	editors
+PORTVERSION=	1.1
+CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	\
 
 DISTFILES=	\
 		Sun-1.12-pkg.tar.gz \
-		edebug-1.09-pkg.tar.gz \
+		edebug-1.10-pkg.tar.gz \
 		sounds-au-1.09-pkg.tar.gz \
 		sounds-wav-1.09-pkg.tar.gz \
 		tooltalk-1.11-pkg.tar.gz
