@@ -1,13 +1,13 @@
 # New ports collection makefile for:	pavuk
-# Version required:			0.9pl11
+# Version required:			0.9pl12
 # Date created:				19 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1999/04/22 08:01:56 mharo Exp $
+# $Id: Makefile,v 1.5 1999/05/05 14:03:27 flathill Exp $
 #
 
-DISTNAME=		pavuk-0.9pl11
-PKGNAME=		pavuk-0.9.11
+DISTNAME=		pavuk-0.9pl12
+PKGNAME=		pavuk-0.9.12
 CATEGORIES=		net www
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://ftp.idata.sk/pub/unix/www/
