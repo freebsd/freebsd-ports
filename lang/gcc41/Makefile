@@ -1,42 +1,44 @@
-# ex:ts=8
-# Ports collection makefile for:	egcs
+# ex:ts=8 
+# Ports collection makefile for:	egcs 
 # Version required: 			1998-09-14
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.54 1999/04/08 19:05:43 billf Exp $
+# $Id: Makefile,v 1.35 1998/10/01 21:40:03 obrien Exp $
 #
 
-DISTNAME=	egcs-1.1.2
+SNAPDATE=	1999-04-18
+SNAPVER=	${SNAPDATE:S/-//g}
+
+DISTNAME=	egcs-${SNAPVER}
+PKGNAME=	egcs-devel-${SNAPVER}
 CATEGORIES=	lang
-MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.crc.ca/pub/packages/egcs/egcs-1.1.2/ \
-		ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
-		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.nluug.nl/pub/languages/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/releases/egcs-1.1.2/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.2/ \
-		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.2/
-DISTFILES=	egcs-core-1.1.2${EXTRACT_SUFX} egcs-g++-1.1.2${EXTRACT_SUFX} \
-		egcs-g77-1.1.2${EXTRACT_SUFX} egcs-objc-1.1.2${EXTRACT_SUFX}
+MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/snapshots/${SNAPDATE}/ \
+		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/ \
+		ftp://ftp.nluug.nl/pub/languages/egcs/snapshots/${SNAPDATE}/ \
+		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
+DISTFILES=	egcs-chill-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-core-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-g++-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-g77-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-java-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-objc-${SNAPVER}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WWW_SITE=	http://egcs.cygnus.com/
+WWW_SITE=	http://egcs.cygnus.com
 
-FORBIDDEN=	repository copy of lang/egcs, awaiting upgrade
-
-USE_BZIP2=	yes
+NO_CDROM=	'dated material'
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	egcs-2.91.66
-LIBSTDCPP_REV=	2.9.0
+EGCS_REV=	egcs-2.93.19
+LIBSTDCPP_REV=	4
 
 .if ${PORTOBJFORMAT} == "elf"
-.if ${MACHINE_ARCH} == "i386"
 PLIST=		${WRKDIR}/PLIST
-.endif
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
@@ -51,14 +53,13 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 CONFIGURE_ARGS+= --enable-shared
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cccp.1 g++.1 g77.1 gcc.1
+MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
 
 pre-patch:
-	@${MV} ${WRKSRC}/gcc/config/i386/t-freebsd ${WRKSRC}/gcc/config/
-	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
-	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
-	@${CP} ${FILESDIR}/alpha-freebsd-elf.h ${WRKSRC}/gcc/config/alpha/freebsd-elf.h
-	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
+	${MV} ${WRKSRC}/gcc/config/i386/t-freebsd ${WRKSRC}/gcc/config/
+	${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
+	${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
+	${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
@@ -90,12 +91,17 @@ post-install:
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
 		do strip $$prog ; \
 		done)
-	ln -f ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
-	ln -f ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
+	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
+	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
+	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/eg77
+	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/eg++filt
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	${MV} -f ${PREFIX}/lib/libstdc++.a  \
+	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/libstdc++.a
+	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/egcc.1
+	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/eg++.1
+	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/eg77.1
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}

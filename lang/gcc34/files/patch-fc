@@ -1,0 +1,21 @@
+--- gcc/toplev.c.orig	Mon Mar 22 15:23:26 1999
++++ gcc/toplev.c	Tue Mar 30 13:13:44 1999
+@@ -754,6 +754,9 @@
+ 
+ int flag_no_ident = 0;
+ 
++/* Nonzero means that -Wformat accepts certain system-dependent formats.  */
++int flag_format_extensions = 0;
++
+ /* Table of supported debugging formats.  */
+ static struct
+ {
+@@ -954,6 +957,8 @@
+    "Generate code to check every memory access" },
+   {"prefix-function-name", &flag_prefix_function_name, 1,
+    "Add a prefix to all function names" },
++  {"format-extensions", &flag_format_extensions, 1,
++   "-Wformat accepts certain FreeBSD system-dependent formats" },
+   {"dump-unnumbered", &flag_dump_unnumbered, 1,
+    "Suppress output of instruction numbers and line number notes in debugging dumps"},
+   {"instrument-functions", &flag_instrument_function_entry_exit, 1,
