@@ -29,6 +29,7 @@ USE_MOTIF=	yes
 USE_NEWGCC=	yes
 USE_XLIB=	yes
 AUTOMAKE_ARGS=	-a -i
+CONFIGURE_ARGS=	--without-magick
 CONFIGURE_ENV=	ARCH="" \
 		CFLAGS="${CFLAGS} -I${PREFIX}/include" \
 		CPPFLAGS="-I${PREFIX}/include" \
@@ -40,6 +41,7 @@ PLIST_SUB=	ARCH=${OPSYS:L}
 post-patch:
 	@find ${WRKSRC} -name Makefile.am | \
 	  xargs ${PERL} -pi -e "s;-lXm ;${MOTIFLIB} ;g"
+	@${RM} -f ${WRKSRC}/include/stamp-h.in
 
 pre-configure:
 	@cd ${WRKSRC} && aclocal && ${SETENV} ${CONFIGURE_ENV} autoheader
