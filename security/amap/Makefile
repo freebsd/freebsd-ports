@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	amap
-PORTVERSION=	1.2.1
+PORTVERSION=	2.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Yonatan@xpert.com
 COMMENT=	Application mapper
 
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
-ALL_TARGET=	all
+
 MAN1=		amap.1
 
 post-patch:
@@ -24,9 +23,17 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/amap ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/amapcrap ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/share/amap
 	${INSTALL_DATA} ${WRKSRC}/appdefs.resp ${PREFIX}/share/amap/
+	${INSTALL_DATA} ${WRKSRC}/appdefs.rpc ${PREFIX}/share/amap/
 	${INSTALL_DATA} ${WRKSRC}/appdefs.trig ${PREFIX}/share/amap/
 	${INSTALL_MAN} ${WRKSRC}/amap.1 ${MANPREFIX}/man/man1/
+.	if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}
+.		for i in README BUGS TODO CHANGES LICENSE
+			${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+.		endfor
+.	endif
 
 .include <bsd.port.mk>
