@@ -1,5 +1,5 @@
 *** sshd.c.orig	Wed Apr 23 04:40:08 1997
---- sshd.c	Sat May  3 00:04:30 1997
+--- sshd.c	Wed Jun 11 14:56:57 1997
 ***************
 *** 400,405 ****
 --- 400,409 ----
@@ -14,8 +14,59 @@
   #define DEFAULT_SHELL		_PATH_BSHELL
   #else
 ***************
+*** 1542,1547 ****
+--- 1546,1583 ----
+      endspent();
+    }
+  #endif /* HAVE_ETC_SHADOW */
++ #ifdef __FreeBSD__
++   {
++     time_t currtime;
++ 
++     if (pwd->pw_change || pwd->pw_expire)
++ 	currtime = time(NULL);
++ 
++     /*
++      * Check for an expired password
++      */
++     if (pwd->pw_change && pwd->pw_change <= currtime)
++       {
++ 	debug("Account %.100s's password is too old - forced to change.",
++ 	      user);
++ 	if (options.forced_passwd_change)
++ 	  forced_command = "/usr/bin/passwd";
++ 	else
++ 	  {
++ 	    return 0;
++ 	  }
++       }
++     
++     /*
++      * Check for expired account
++      */
++     if (pwd->pw_expire && pwd->pw_expire <= currtime)
++       {
++ 	debug("Account %.100s has expired - access denied.", user);
++ 	return 0;
++       }
++   }
++ #else   /* !FreeBSD */
+    /*
+     * Check if account is locked. Check if encrypted password starts
+     * with "*LK*".
+***************
+*** 1553,1558 ****
+--- 1589,1595 ----
+  	return 0;
+        }
+    }
++ #endif  /* !FreeBSD */
+  #ifdef CHECK_ETC_SHELLS
+    {
+      int  invalid = 1;
+***************
 *** 1698,1703 ****
---- 1702,1710 ----
+--- 1735,1743 ----
     memset(&pwcopy, 0, sizeof(pwcopy));
     pwcopy.pw_name = xstrdup(pw->pw_name);
     pwcopy.pw_passwd = xstrdup(pw->pw_passwd);
@@ -27,7 +78,7 @@
     pwcopy.pw_dir = xstrdup(pw->pw_dir);
 ***************
 *** 2654,2659 ****
---- 2661,2669 ----
+--- 2694,2702 ----
     struct sockaddr_in from;
     int fromlen;
     struct pty_cleanup_context cleanup_context;
@@ -50,7 +101,7 @@
         /* If the user has logged in before, display the time of last login. 
            However, don't display anything extra if a command has been 
   	 specified (so that ssh can be used to execute commands on a remote
---- 2735,2753 ----
+--- 2768,2786 ----
         record_login(pid, ttyname, pw->pw_name, pw->pw_uid, hostname, 
   		   &from);
   
@@ -72,7 +123,7 @@
   	 specified (so that ssh can be used to execute commands on a remote
 ***************
 *** 2749,2754 ****
---- 2767,2795 ----
+--- 2800,2828 ----
   	    printf("Last login: %s from %s\r\n", time_string, buf);
   	}
   
@@ -104,7 +155,7 @@
   	 print it in /etc/profile or similar. */
 ***************
 *** 2758,2764 ****
---- 2799,2809 ----
+--- 2832,2842 ----
   	  FILE *f;
   
   	  /* Print /etc/motd if it exists. */
@@ -118,7 +169,7 @@
   	      while (fgets(line, sizeof(line), f))
 ***************
 *** 2766,2771 ****
---- 2811,2839 ----
+--- 2844,2872 ----
   	      fclose(f);
   	    }
   	}
@@ -157,7 +208,7 @@
     /* Check /etc/nologin. */
     f = fopen("/etc/nologin", "r");
     if (f)
---- 3085,3097 ----
+--- 3118,3130 ----
     char *user_shell;
     char *remote_ip;
     int remote_port;
@@ -173,7 +224,7 @@
     if (f)
 ***************
 *** 3031,3036 ****
---- 3105,3111 ----
+--- 3138,3144 ----
         if (pw->pw_uid != UID_ROOT)
   	exit(254);
       }
@@ -190,7 +241,7 @@
   #ifdef HAVE_SETLOGIN
     /* Set login name in the kernel.  Warning: setsid() must be called before
        this. */
---- 3118,3125 ----
+--- 3151,3158 ----
         else
   	log_msg("executing remote command as user %.200s", pw->pw_name);
       }
@@ -201,7 +252,7 @@
        this. */
 ***************
 *** 3064,3069 ****
---- 3140,3146 ----
+--- 3173,3179 ----
     if (setpcred((char *)pw->pw_name, NULL))
       log_msg("setpcred %.100s: %.100s", strerror(errno));
   #endif /* HAVE_USERSEC_H */
@@ -211,7 +262,7 @@
        before we switch to user's uid.  (We must clear all sensitive data 
 ***************
 *** 3134,3139 ****
---- 3211,3276 ----
+--- 3244,3309 ----
     if (command != NULL || !options.use_login)
   #endif /* USELOGIN */
       {
@@ -280,7 +331,7 @@
   	{ 
 ***************
 *** 3165,3170 ****
---- 3302,3308 ----
+--- 3335,3341 ----
         
         if (getuid() != user_uid || geteuid() != user_uid)
   	fatal("Failed to set uids to %d.", (int)user_uid);
@@ -290,7 +341,7 @@
     /* Reset signals to their default settings before starting the user
 ***************
 *** 3175,3185 ****
---- 3313,3328 ----
+--- 3346,3361 ----
        and means /bin/sh. */
     shell = (user_shell[0] == '\0') ? DEFAULT_SHELL : user_shell;
   
@@ -309,7 +360,7 @@
     if (command != NULL || !options.use_login)
 ***************
 *** 3189,3194 ****
---- 3332,3339 ----
+--- 3365,3372 ----
         child_set_env(&env, &envsize, "HOME", user_dir);
         child_set_env(&env, &envsize, "USER", user_name);
         child_set_env(&env, &envsize, "LOGNAME", user_name);
@@ -320,7 +371,7 @@
   #ifdef MAIL_SPOOL_DIRECTORY
 ***************
 *** 3200,3205 ****
---- 3345,3351 ----
+--- 3378,3384 ----
         child_set_env(&env, &envsize, "MAIL", buf);
   #endif /* MAIL_SPOOL_FILE */
   #endif /* MAIL_SPOOL_DIRECTORY */
@@ -330,7 +381,7 @@
         /* Read /etc/default/login; this exists at least on Solaris 2.x.  Note
 ***************
 *** 3215,3223 ****
---- 3361,3371 ----
+--- 3394,3404 ----
       child_set_env(&env, &envsize, "SSH_ORIGINAL_COMMAND",
   		  original_command);
     
@@ -344,7 +395,7 @@
     while (custom_environment) 
 ***************
 *** 3437,3443 ****
---- 3585,3595 ----
+--- 3618,3628 ----
   	  /* Execute the shell. */
   	  argv[0] = buf;
   	  argv[1] = NULL;
@@ -358,7 +409,7 @@
   	  exit(1);
 ***************
 *** 3458,3464 ****
---- 3610,3620 ----
+--- 3643,3653 ----
     argv[1] = "-c";
     argv[2] = (char *)command;
     argv[3] = NULL;
