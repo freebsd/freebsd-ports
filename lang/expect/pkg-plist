@@ -40,3 +40,4 @@ man/man1/tknewsbiff.1.gz
 man/man1/unbuffer.1.gz
 man/man1/xkibitz.1.gz
 man/man3/libexpect.3.gz
+@dirrm lib/expect5.22
