@@ -10,7 +10,7 @@ PORTVERSION=	2.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rob@debank.tv
 COMMENT=	A server-side bayesian spam filter
 
 GNU_CONFIGURE=	yes
