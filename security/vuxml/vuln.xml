@@ -89,11 +89,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>12108</bid>
+      <bid>12109</bid>
       <url>http://secunia.com/advisories/13641/</url>
     </references>
     <dates>
       <discovery>2004-12-27</discovery>
       <entry>2004-12-30</entry>
+      <modified>2005-01-02</modified>
     </dates>
   </vuln>
 
