@@ -1,0 +1,21 @@
+*** xui/Makefile.orig	Wed Aug 27 07:10:44 1997
+--- xui/Makefile	Wed Aug 27 07:11:05 1997
+***************
+*** 475,482 ****
+  # start of Imakefile
+  
+  # Please Modifed Here
+! BINDIR=/usr/local/bin
+! LIBDIR=/usr/local/lib/netmaj
+  
+  # #######################################################
+  G=-O
+--- 475,482 ----
+  # start of Imakefile
+  
+  # Please Modifed Here
+! BINDIR=/usr/X11R6/bin
+! LIBDIR=/usr/X11R6/lib/X11/xnetmaj
+  
+  # #######################################################
+  G=-O

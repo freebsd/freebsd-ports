@@ -1,0 +1,36 @@
+*** Makefile.orig	Mon Nov 11 23:43:22 1996
+--- Makefile	Wed Aug 27 07:09:40 1997
+***************
+*** 27,41 ****
+  
+  SHELL=/bin/sh
+  # Install Directory
+! LIBDIR=/usr/local/lib/netmaj
+! BINDIR=/usr/local/bin
+  PERL=/usr/bin/perl
+  
+  STD_CFLAGS=-I. -Ilib -DNETMAJ_LIB=\"$(LIBDIR)\" 
+  
+  # for 386BSD,FreeBSD,NetBSD...
+  CC=gcc
+! OS_CFLAGS= -O -g -DUSE_SGTTY -DUSE_FWOPEN -DUSE_TERMCAP -DHAVE_GETTIMEOFDAY
+  RANLIB=ranlib
+  LIBS= 
+  CURSES= -lcurses -ltermcap
+--- 27,42 ----
+  
+  SHELL=/bin/sh
+  # Install Directory
+! LIBDIR=/usr/X11R6/lib/X11/xnetmaj
+! BINDIR=/usr/X11R6/bin
+  PERL=/usr/bin/perl
+  
+  STD_CFLAGS=-I. -Ilib -DNETMAJ_LIB=\"$(LIBDIR)\" 
+  
+  # for 386BSD,FreeBSD,NetBSD...
+  CC=gcc
+! OS_CFLAGS= -O -g -DUSE_SGTTY -DUSE_FWOPEN -DUSE_TERMCAP \
+! 		-DDEF_OPTARG -DHAVE_GETTIMEOFDAY
+  RANLIB=ranlib
+  LIBS= 
+  CURSES= -lcurses -ltermcap

@@ -1,0 +1,29 @@
+*** server.c.orig	Fri Sep  6 06:29:53 1996
+--- server.c	Wed Aug 27 04:27:00 1997
+***************
+*** 22,27 ****
+--- 22,28 ----
+  /* $Id: server.c,v 1.25 1996/09/05 21:29:53 suz Exp $ */
+  
+  #include <signal.h>
++ #include <unistd.h>
+  #include <sys/wait.h>
+  #ifndef SIGCHLD
+  #define SIGCHLD SIGCLD
+***************
+*** 131,137 ****
+  	pack_rule(&rule);
+  
+  	if (debug == 0) {
+! 		if (!fork(0)) {
+  			fclose(stdin);
+  			fclose(stdout);
+  			fclose(stderr);
+--- 132,138 ----
+  	pack_rule(&rule);
+  
+  	if (debug == 0) {
+! 		if (!fork()) {
+  			fclose(stdin);
+  			fclose(stdout);
+  			fclose(stderr);
