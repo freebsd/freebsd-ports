@@ -1,5 +1,5 @@
---- src/radiusd.c~	Mon Jul 27 22:52:37 1998
-+++ src/radiusd.c	Thu Sep 17 18:31:50 1998
+--- src/radiusd.c.orig	Mon Jul 27 15:52:37 1998
++++ src/radiusd.c	Sun Dec 10 17:04:17 2000
 @@ -793,6 +793,19 @@
  	sigaction (SIGIOT, &action, NULL); /* Perhaps also known as SIGABRT ! */
  	sigaction (SIGFPE, &action, NULL);
@@ -28,3 +28,12 @@
  
  	for (j = dtablesize; j >= 3; j--)
  	{
+@@ -4467,7 +4481,7 @@
+ 	while ((event = authreq->event_q) != (EVENT_ENT *) NULL)
+ 	{
+ 		authreq->event_q = event->next;
+-		free_event_final (event);
++		free_event (event);
+ 	}
+ 
+ 	while ((event = authreq->freed_events) != (EVENT_ENT *) NULL)

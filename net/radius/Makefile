@@ -7,6 +7,7 @@
 
 PORTNAME=	radius-basic
 PORTVERSION=	3.6B
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.merit.edu/radius/releases/
 DISTNAME=	radius.3.6B.basic
