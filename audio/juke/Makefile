@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		juke
-PORTVERSION=		0.6
-PORTREVISION=		1
+PORTVERSION=		0.7
 CATEGORIES=		audio
-MASTER_SITES=		http://www.nocrew.org/software/juke/archive/
+MASTER_SITES=		http://www.nocrew.org/software/juke/archive/ \
+			http://www.initio.no/~oyvindmo/distfiles/
 
 MAINTAINER=		oyvindmo@initio.no
 
