@@ -3,7 +3,7 @@
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/11 05:49:29 obrien Exp $
+# $Id: Makefile,v 1.3 1996/11/17 09:05:43 obrien Exp $
 #
 
 DISTNAME=       FD-1.01
@@ -15,13 +15,10 @@ MAINTAINER=	nobu@psrc.isac.co.jp
 
 ALL_TARGET=	goal
 PATCH_STRIP=	-p0 -o fdrc
-INSTALL_TARGET=	install catman
+MANLANG=	ja_JP.EUC
 MAN1=		fd.1
 
 do-configure:
 	cd ${WRKSRC} ; make config
-
-post-install:
-	rm -f /usr/local/man/man1/fd.1.gz /usr/local/man/cat1/fd.1.gz
 
 .include <bsd.port.mk>
