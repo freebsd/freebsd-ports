@@ -3,7 +3,7 @@
 # Date created:        19 August 1999
 # Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 NAMEEXT=	-canna
