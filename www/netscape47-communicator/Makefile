@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.29 1998/11/24 22:05:13 obrien Exp $
+# $Id: Makefile,v 1.30 1998/11/24 22:10:42 obrien Exp $
 #
 
 DISTNAME=	communicator-v45-export.x86-unknown-freebsd
@@ -32,13 +32,6 @@ RESTRICTED=	"Contains strong cryptography"
 pre-extract:
 		@${ECHO} "You can make Netscape use 128-bit encryption by defining USE_128BIT"
 .endif	# USE_128BIT
-
-.if !defined(MULTIVERSION)
-		@${ECHO} "you can define MULTIVERSION to install the script which runs communicator-v45"
-		@${ECHO} "as ${BINDIR}/communicator-4.5 rather than ${BINDIR}/netscape."
-		@${ECHO} "You may find this useful if you want to run the stable and pre release versions"
-		@${ECHO} "concurrently."
-.endif
 
 post-configure:
 	${SED}	-e "s;@X11BASE@;${X11BASE};g" \
