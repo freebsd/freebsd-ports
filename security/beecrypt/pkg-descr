@@ -20,4 +20,4 @@ The BeeCrypt library currently includes:
    - ElGamal signature scheme (two variants) 
    - Basic RSA primitives and key pair generation 
 
-WWW: http://beecrypt.virtualunlimited.com/
+WWW: http://sourceforge.net/projects/beecrypt

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	beecrypt
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.virtualunlimited.com/download/
