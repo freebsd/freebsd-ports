@@ -56,7 +56,7 @@
 -OWNER=root.tty		# typical
 -MODE=666		# anybody
 -# MODE=660		# only owner & group
-+OWNER=uucp.dialer		# typical
++OWNER=uucp:dialer		# typical
 +#MODE=666		# anybody
 +MODE=660		# only owner & group
  

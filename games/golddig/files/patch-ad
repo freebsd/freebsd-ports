@@ -39,14 +39,14 @@
  install: all
  	-mkdir ${LIB}
  	cp ${GAME} ${EDITOR} ${BIN}
-+	chown root.games ${BIN}/${GAME}
++	chown root:games ${BIN}/${GAME}
 +	chmod g+s  ${BIN}/${GAME}
  # The next line sets up the level files so that anyone can edit all of
  # the levels.  Remove this line to have better security.
 -	chmod 4755 ${BIN}/${EDITOR}
 +#	chmod 4755 ${BIN}/${EDITOR}
  	touch ${LIB}/scores
-+	chown  root.games ${LIB}/scores
++	chown  root:games ${LIB}/scores
 +	chmod g+w  ${LIB}/scores
  # Allow anyone to modify the high score file.  An alternative is to
  # change the mode bits of ${GAME} to be 4755.
