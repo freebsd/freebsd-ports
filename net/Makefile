@@ -158,6 +158,7 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += nttcp
+    SUBDIR += ohphone
     SUBDIR += openam
     SUBDIR += opengatekeeper
     SUBDIR += openh323
