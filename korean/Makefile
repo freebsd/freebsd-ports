@@ -17,6 +17,7 @@
     SUBDIR += gaim
     SUBDIR += gau
     SUBDIR += ghostscript-gnu-cjk
+    SUBDIR += ghostscript-gnu-korfont
     SUBDIR += ghostscript55httf
     SUBDIR += gtkcomm
     SUBDIR += h2ps
