@@ -47,7 +47,7 @@ WRKSRC=         setiathome-1.2.i386-unknown-freebsd2.2.6
 DISTFILES=
 .endif
 
-.if make(makesum) | defined(FETCH_ALL)
+.if make(makesum) || defined(FETCH_ALL)
 DISTFILES=	setiathome-1.2.i386-unknown-freebsd2.2.6.tar	\
 			setiathome-1.2.i386-unknown-freebsd2.2.7.tar	\
 			setiathome-1.2.i386-unknown-freebsd2.2.8.tar	\
