@@ -9,6 +9,7 @@ libdata/snortsnarf/SnortSnarf/Filtering.pm
 libdata/snortsnarf/SnortSnarf/HTMLAnomMemStorage.pm
 libdata/snortsnarf/SnortSnarf/HTMLMemStorage.pm
 libdata/snortsnarf/SnortSnarf/HTMLOutput.pm
+libdata/snortsnarf/SnortSnarf/IPObfuscater.pm
 libdata/snortsnarf/SnortSnarf/Input.pm
 libdata/snortsnarf/SnortSnarf/KnownEquiv.pm
 libdata/snortsnarf/SnortSnarf/MemAlert.pm
