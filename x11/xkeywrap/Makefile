@@ -8,11 +8,11 @@
 PORTNAME=	xkeywrap
 PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft/ \
+MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 		http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
 		http://www.people.or.jp/~hsakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.sut.ac.jp
+MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
 
 USE_X_PREFIX=	yes
 MAN1=		xkeywrap.1
