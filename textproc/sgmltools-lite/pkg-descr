@@ -4,4 +4,4 @@ from a single source; due to the flexible nature of SGML many other target
 formats are possible.  As the front-end is written in Python, it is relatively
 easy to adapt to your needs. 
 
-WWW: http://www.sgmltools.org/
+WWW: http://sgmltools-lite.sourceforge.net/
