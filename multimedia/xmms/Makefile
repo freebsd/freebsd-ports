@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
@@ -76,14 +76,14 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
 .if ${MACHINE_ARCH} != "i386"
-WITHOUT_3DNOW=	yes
+WITHOUT_SIMD=	yes
 .endif
 
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-CONFIGURE_ARGS+=	--enable-3dnow
+.if !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021
+CONFIGURE_ARGS+=	--enable-simd
 .endif
 
-.if defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
+.if defined(WITHOUT_SIMD) || ${OSVERSION} < 400021
 post-extract:
 	(cd ${WRKSRC}/Input/mpg123 && ${MV} decode_i586.s decode_i586.S && \
 	  cd ${WRKSRC}/Visualization/blur_scope && ${MV} blur_8.s blur_8.S);
@@ -93,7 +93,7 @@ post-extract:
 .endif
 
 pre-extract:
-.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 ) || ${HAVE_GNOME:Mesound}!=""
+.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021 ) || ${HAVE_GNOME:Mesound}!=""
 	@${ECHO_MSG}
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
@@ -101,8 +101,8 @@ pre-extract:
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
 .endif
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable 3DNow! optimized decoding routines by defining WITHOUT_3DNOW."
+.if !defined(WITHOUT_SIMD) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} "You can disable x86 SIMD (3DNow!/MMX) optimized decoding routines by defining WITHOUT_SIMD."
 .endif
 .if ${HAVE_GNOME:Mesound}!=""
 	@${ECHO_MSG} "You can disable support for esound by defining WITHOUT_GNOME=esound."
