@@ -14,7 +14,6 @@ DISTNAME=	awk
 
 MAINTAINER=	obrien@FreeBSD.org
 
-USE_BISON=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out
