@@ -1,15 +1,14 @@
 --- clients/ksu/main.c.ORIG	Fri Dec 17 14:44:39 1999
 +++ clients/ksu/main.c	Fri Dec 17 18:52:57 1999
-@@ -56,7 +56,7 @@
+@@ -60,6 +60,6 @@
     ill specified arguments to commands */        
  
  void usage (){
 -	fprintf(stderr, "Usage: %s [target user] [-n principal] [-c source cachename] [-C target cachename] [-k] [-D] [-r time] [-pf] [-l lifetime] [-zZ] [-q] [-e command [args... ] ] [-a [args... ] ]\n", prog_name);
 +	fprintf(stderr, "Usage: %s [target user] [-m] [-n principal] [-c source cachename] [-C target cachename] [-k] [-D] [-r time] [-pf] [-l lifetime] [-zZ] [-q] [-e command [args... ] ] [-a [args... ] ]\n", prog_name);
- 
  }
  
-@@ -75,6 +75,7 @@
+@@ -76,6 +76,7 @@
  	int argc;
  	char ** argv;
  { 
@@ -25,16 +24,14 @@
  
  krb5_ccache cc_source = NULL;
  const char * cc_source_tag = NULL; 
-@@ -173,7 +175,7 @@
+@@ -183,5 +185,5 @@
          }
- 
- 
 -    while(!done && ((option = getopt(pargc, pargv,"n:c:r:a:zZDfpkql:e:")) != -1)){
 +    while(!done && ((option = getopt(pargc, pargv,"n:c:r:a:zZDfpkmql:e:")) != -1)){
  	switch (option) {
  	case 'r':
  	    options.opt |= KDC_OPT_RENEWABLE;
-@@ -219,6 +221,9 @@
+@@ -227,6 +229,9 @@
  		errflg++;
  	    }
  	    break;
@@ -44,7 +41,7 @@
  	case 'n': 
  	    if ((retval = krb5_parse_name(ksu_context, optarg, &client))){
  		com_err(prog_name, retval, "when parsing name %s", optarg); 
-@@ -326,6 +331,7 @@
+@@ -341,6 +341,7 @@
  
  	/* allocate space and copy the usernamane there */        
  	source_user = xstrdup(pwd->pw_name);
@@ -52,8 +49,9 @@
  	source_uid = pwd->pw_uid;
  	source_gid = pwd->pw_gid;
  
-@@ -699,43 +705,60 @@
+@@ -669,44 +675,61 @@
  	/* get the shell of the user, this will be the shell used by su */      
+
  	target_pwd = getpwnam(target_user);
  
 -	if (target_pwd->pw_shell)
@@ -81,18 +79,18 @@
  
 -       if (!standard_shell(target_pwd->pw_shell) && source_uid) {
 -	       fprintf(stderr, "ksu: permission denied (shell).\n");
--	       sweep_up(ksu_context, use_source_cache, cc_target);
+-	       sweep_up(ksu_context, cc_target);
 -	       exit(1);
 +	if (asme) {
 +		if (!standard_shell(pwd->pw_shell) && source_uid) {
 +			fprintf(stderr, "ksu: permission denied (shell).\n");
-+			sweep_up(ksu_context, use_source_cache, cc_target);
++			sweep_up(ksu_context, cc_target);
 +			exit(1);
 +		}
 +	} else {
 +		if (!standard_shell(target_pwd->pw_shell) && source_uid) {
 +			fprintf(stderr, "ksu: permission denied (shell).\n");
-+			sweep_up(ksu_context, use_source_cache, cc_target);
++			sweep_up(ksu_context, cc_target);
 +			exit(1);
 +		}
  	}
@@ -102,40 +100,40 @@
 -	
 -	      if(set_env_var("USER", target_pwd->pw_name)){
 -   		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
--	        sweep_up(ksu_context, use_source_cache, cc_target);
+-	        sweep_up(ksu_context, cc_target);
 -	        exit(1);
 -	      } 			
 -       }	
 -
 -      if(set_env_var( "HOME", target_pwd->pw_dir)){
 -		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
--	        sweep_up(ksu_context, use_source_cache, cc_target);
+-	        sweep_up(ksu_context, cc_target);
 -	        exit(1);
 -      } 			
 -
 -      if(set_env_var( "SHELL", shell)){
 -		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
--	        sweep_up(ksu_context, use_source_cache, cc_target);
+-	        sweep_up(ksu_context, cc_target);
 -	        exit(1);
 -      } 			
 +	if (!asme) {
 +		if (target_pwd->pw_uid){
 +		      if (set_env_var("USER", target_pwd->pw_name)){
 +			fprintf(stderr,"ksu: couldn't set environment variable USER\n");
-+			sweep_up(ksu_context, use_source_cache, cc_target);
++			sweep_up(ksu_context, cc_target);
 +			exit(1);
 +		      } 			
 +		}
 +
 +		if (set_env_var( "HOME", target_pwd->pw_dir)){
 +			fprintf(stderr,"ksu: couldn't set environment variable USER\n");
-+			sweep_up(ksu_context, use_source_cache, cc_target);
++			sweep_up(ksu_context, cc_target);
 +			exit(1);
 +		}
 +
 +		if (set_env_var( "SHELL", shell)){
 +			fprintf(stderr,"ksu: couldn't set environment variable USER\n");
-+			sweep_up(ksu_context, use_source_cache, cc_target);
++			sweep_up(ksu_context, cc_target);
 +			exit(1);
 +		} 			
 +	}

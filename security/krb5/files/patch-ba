@@ -30,7 +30,7 @@
  	bad_login:
  	    setpriority(PRIO_PROCESS, 0, 0 + PRIO_OFFSET);
  
-@@ -1634,19 +1625,28 @@
+@@ -1640,20 +1631,28 @@
  	/* set up credential cache -- obeying KRB5_ENV_CCNAME 
  	   set earlier */
  	/* (KRB5_ENV_CCNAME == "KRB5CCNAME" via osconf.h) */
@@ -66,7 +66,8 @@
 +	    }
  	}
 -
--	krb5_cc_destroy(kcontext, xtra_creds);
+-	if (xtra_creds)
+-	    krb5_cc_destroy(kcontext, xtra_creds);
      } else if (forwarded_v5_tickets && rewrite_ccache) {
  	if ((retval = krb5_cc_initialize (kcontext, ccache, me))) {
  	    syslog(LOG_ERR,
