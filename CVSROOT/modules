@@ -2453,6 +2453,7 @@ gschem		ports/cad/gschem
 gsculpt		ports/graphics/gsculpt
 gsed		ports/textproc/gsed
 gsfonts		ports/print/gsfonts
+gsfv		ports/security/gsfv
 gshar+gunshar	ports/archivers/gshar+gunshar
 gshisen		ports/games/gshisen
 gsi		ports/audio/gsi
