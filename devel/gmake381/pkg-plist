@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/gmake
 man/man1/gmake.1
 info/make.info
