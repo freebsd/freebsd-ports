@@ -1,0 +1,11 @@
+--- src/xitk/Makefile.in.orig	Wed Jan  7 22:11:20 2004
++++ src/xitk/Makefile.in	Wed Jan  7 22:16:30 2004
+@@ -469,7 +469,7 @@
+ 	$(LINK) $(xine_LDFLAGS) $(xine_OBJECTS) $(xine_LDADD) $(LIBS)
+ xine-remote$(EXEEXT): $(xine_remote_OBJECTS) $(xine_remote_DEPENDENCIES) 
+ 	@rm -f xine-remote$(EXEEXT)
+-	$(LINK) $(xine_remote_LDFLAGS) $(xine_remote_OBJECTS) $(xine_remote_LDADD) $(LIBS)
++	$(LINK) $(xine_remote_LDFLAGS) $(xine_remote_OBJECTS) $(xine_remote_LDADD) $(LIBS) $(INTLLIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
