@@ -462,7 +462,6 @@ qmail-*			mail/qmail-*		Restricted binary distribution
 qtools-*		mail/qtools		Possibly restricted binary
 						distribution of modified
 						versions
-quake106.zip		games/quakeserver	Shareware
 Radiator/*		net/radiator		Commercial software
 raproxy*.tar.gz		audio/raproxy		License allows only use in a
 						firewall or with RA products
@@ -554,7 +553,6 @@ tutorial.zip		java/java-tutorial	This software is under license
 						and export control.
 ue*dev.zip		editors/uemacs		Resale allowed for media cost
 						only
-unixded-*bsdi3.0.tar.gz	games/quakeserver	This software is shareware
 upsmon*			sysutils/upsmon		Redistribute only with
 						original source code.
 urchin*.tar.gz		www/urchin5		Commercial software, also comes
