@@ -31,7 +31,7 @@ USE_XLIB=	yes
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-freetype \
-		--with-freetype-includedir=${PREFIX}/include/freetype \
+		--with-freetype-includedir=${PREFIX}/include/freetype1/freetype \
 		--with-freetype-libdir=${PREFIX}/lib
 
 pre-patch:

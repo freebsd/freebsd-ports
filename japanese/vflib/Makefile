@@ -27,8 +27,8 @@ USE_XLIB=	yes
 USE_AUTOCONF_VER=213
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-freetype \
-		--with-freetype-includedir=${PREFIX}/include/freetype \
-		--with-freetype-libdir=${PREFIX}/lib
+		--with-freetype-includedir=${LOCALBASE}/include/freetype1/freetype \
+		--with-freetype-libdir=${LOCALBASE}/lib
 
 pre-install:
 	@(cd ${WRKSRC}/tools; \

@@ -47,7 +47,7 @@
  XCFLAGS=
  
 -CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
-+#CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
++CFLAGS+=-I$(prefix)/include/freetype1
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.

@@ -1,5 +1,8 @@
---- configure.orig	Thu Apr 12 11:21:35 2001
-+++ configure	Thu May 17 14:44:42 2001
+
+$FreeBSD$
+
+--- configure.orig	Thu Apr 12 12:21:35 2001
++++ configure	Thu Mar 14 13:09:31 2002
 @@ -7,6 +7,9 @@
  # This configure script is free software; the Free Software Foundation
  # gives unlimited permission to copy, distribute and modify it.
@@ -10,26 +13,15 @@
  # Defaults:
  ac_help=
  ac_default_prefix=/usr/local
-@@ -1829,8 +1832,8 @@
- LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
--${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $lt_target \
-+${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
-+$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $lt_target \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+@@ -3573,7 +3576,7 @@
  
- # Reload cache, that may have been modified by ltconfig
-@@ -1844,7 +1847,7 @@
+ CFLAGS=
+ CXXFLAGS=
+-CPPFLAGS=-Wall
++CPPFLAGS="$CPPFLAGS -Wall"
  
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="/usr/local/share/libtool/ltconfig --disable-ltlibs /usr/local/share/libtool/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ case $win32 in
+     true)
 @@ -4603,7 +4606,7 @@
      no_sdl=yes
    else

@@ -18,7 +18,7 @@
 -#FTYPE_INCS = -I/usr/local/include
 -#FTYPE_LIBS = -L/user/local/lib -lttf
 -#FTYPE_DEFS = -DHAVE_FREETYPE
-+FTYPE_INCS = -I${LOCALBASE}/include/freetype
++FTYPE_INCS = -I${LOCALBASE}/include/freetype1/freetype
 +FTYPE_LIBS = -L${LOCALBASE}/lib -lttf
 +FTYPE_DEFS = -DHAVE_FREETYPE
  

@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- configure	2002/03/14 10:49:01	1.1
++++ configure	2002/03/14 10:50:56
+@@ -1777,8 +1777,8 @@
+  			ac_cv_ft_lib="$dir/lib"
+  			ac_cv_ft_libpath="libttf.a"
+  		fi
+- 		if test -d $dir/include -a -f $dir/include/freetype.h; then
+- 			ac_cv_ft_include="$dir/include"
++ 		if test -d $dir/include/freetype1/freetype -a -f $dir/include/freetype1/freetype/freetype.h; then
++ 			ac_cv_ft_include="$dir/include/freetype1/freetype"
+  		elif test -d $dir/include/freetype -a -f $dir/include/freetype/freetype.h; then
+  			ac_cv_ft_include="$dir/include/freetype"
+ 		fi

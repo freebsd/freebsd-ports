@@ -7,4 +7,4 @@ $FreeBSD$
  #[MGW32]swig_options.extend(['-shadow', '-docstring'])
 -freetypec freetype_wrap.c -I../../lib -I../../lib/extend -L../../lib -lttf.dll
 +*shared*
-+freetypec freetype_wrap.c -I${LOCALBASE}/include/freetype -L${LOCALBASE}/lib -lttf
++freetypec freetype_wrap.c -I${LOCALBASE}/include/freetype1/freetype -L${LOCALBASE}/lib -lttf

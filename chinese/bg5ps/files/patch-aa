@@ -1,11 +1,14 @@
---- Makefile.orig	Tue Feb 15 04:41:27 2000
-+++ Makefile	Tue Jan 30 22:01:34 2001
+
+$FreeBSD$
+
+--- Makefile.orig	Mon Feb 14 22:41:27 2000
++++ Makefile	Thu Mar 14 09:33:24 2002
 @@ -19,21 +19,22 @@
  
  CC = gcc
  INSTALL = install
 -CFLAGS =
-+CFLAGS += -I${LOCALBASE}/include
++CFLAGS += -I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include
  LIBS = -lttf -lm
 -INCLUDEDIR = 
 +LIBSDIR = -L${LOCALBASE}/lib

@@ -21,7 +21,8 @@ USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1 \
+			  -I${LOCALBASE}/include" \
 		SPOOLER="/usr/bin/lpr" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-fontdir="${LOCALBASE}/share/ghostscript/fonts" \
