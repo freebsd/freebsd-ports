@@ -3,13 +3,15 @@
 # Date created:		5 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.3 1996/10/18 07:47:10 max Exp $
+# $Id: Makefile,v 1.4 1996/10/18 16:11:04 max Exp $
 #
 
 DISTNAME=	radio2.0.4
 PKGNAME=	radio-2.0.4
-CATEGORIES+=	audio net
+CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.cwi.nl/pub/audio/
+
+MAINTAINER=	janek@gaja.ipan.lublin.pl
 
 NO_WRKSUBDIR=	yes
 MAKE_FLAGS=	FreeBSD -f
