@@ -197,6 +197,7 @@
     SUBDIR += p5-sqlrelay
     SUBDIR += pear-DB
     SUBDIR += pear-DB_Pager
+    SUBDIR += pear-sqlite
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgbash
