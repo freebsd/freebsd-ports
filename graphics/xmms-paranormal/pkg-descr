@@ -1,0 +1,12 @@
+Paranormal is an extremely customizable (pseudo-programmable) audio
+visualization library, based (conceptually) on Winamp's AVS plugin.
+The goal of Paranormal is to be as flexible as possible by providing
+a number of 'actuators' that perform various tasks involved in
+generating an image. These actuators can then be combined to create
+a nearly unlimited number of effects. These combinations can be
+saved to a file to be brought back later.
+
+WWW: http://paranormal.sourceforge.net/
+
+- David
+dyeske@yahoo.com
