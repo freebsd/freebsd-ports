@@ -1,0 +1,104 @@
+www/data/phpgroupware/projects/stats_userstat.php
+www/data/phpgroupware/projects/invoice_update.php
+www/data/phpgroupware/projects/hours_index.php
+www/data/phpgroupware/projects/hours_addhour.php
+www/data/phpgroupware/projects/fail.php
+www/data/phpgroupware/projects/stats_projectlist.php
+www/data/phpgroupware/projects/index.php
+www/data/phpgroupware/projects/activities.php
+www/data/phpgroupware/projects/delivery_update.php
+www/data/phpgroupware/projects/del_deliveryshow.php
+www/data/phpgroupware/projects/del_deliverylist.php
+www/data/phpgroupware/projects/bill_invoiceshow.php
+www/data/phpgroupware/projects/delete.php
+www/data/phpgroupware/projects/addactivity.php
+www/data/phpgroupware/projects/edit.php
+www/data/phpgroupware/projects/hours_deletehour.php
+www/data/phpgroupware/projects/hours_listhours.php
+www/data/phpgroupware/projects/bill_invoicelist.php
+www/data/phpgroupware/projects/add.php
+www/data/phpgroupware/projects/preferences.php
+www/data/phpgroupware/projects/deleteactivity.php
+www/data/phpgroupware/projects/del_index.php
+www/data/phpgroupware/projects/stats_userlist.php
+www/data/phpgroupware/projects/doc/lang.sql
+www/data/phpgroupware/projects/doc/USING
+www/data/phpgroupware/projects/doc/update.mysql
+www/data/phpgroupware/projects/doc/de_translation.sql
+www/data/phpgroupware/projects/doc/update.pgsql
+www/data/phpgroupware/projects/doc/drop_tables.pgsql
+www/data/phpgroupware/projects/doc/logo.jpg
+www/data/phpgroupware/projects/doc/CHANGELOG
+www/data/phpgroupware/projects/doc/INSTALL
+www/data/phpgroupware/projects/doc/create_tables.mysql
+www/data/phpgroupware/projects/doc/create_tables.pgsql
+www/data/phpgroupware/projects/doc/drop_tables.mysql
+www/data/phpgroupware/projects/bill_index.php
+www/data/phpgroupware/projects/inc/footer.inc.php
+www/data/phpgroupware/projects/inc/functions.inc.php
+www/data/phpgroupware/projects/inc/hook_projects_add_def_pref.inc.php
+www/data/phpgroupware/projects/inc/header.inc.php
+www/data/phpgroupware/projects/inc/hook_preferences.inc.php
+www/data/phpgroupware/projects/del_delivery.php
+www/data/phpgroupware/projects/addressbook.php
+www/data/phpgroupware/projects/hours_edithour.php
+www/data/phpgroupware/projects/templates/default/header.tpl
+www/data/phpgroupware/projects/templates/default/listactivities.tpl
+www/data/phpgroupware/projects/templates/default/bill_listinvoice.tpl
+www/data/phpgroupware/projects/templates/default/addressbook.tpl
+www/data/phpgroupware/projects/templates/default/stats_userstat.tpl
+www/data/phpgroupware/projects/templates/default/bill_invoiceform.tpl
+www/data/phpgroupware/projects/templates/default/bill_list.tpl
+www/data/phpgroupware/projects/templates/default/delete.tpl
+www/data/phpgroupware/projects/templates/default/formactivity.tpl
+www/data/phpgroupware/projects/templates/default/images/navbar.gif
+www/data/phpgroupware/projects/templates/default/preferences.tpl
+www/data/phpgroupware/projects/templates/default/hours_listhours.tpl
+www/data/phpgroupware/projects/templates/default/list.tpl
+www/data/phpgroupware/projects/templates/default/stats_projectlist.tpl
+www/data/phpgroupware/projects/templates/default/hours_formhours.tpl
+www/data/phpgroupware/projects/templates/default/del_listhours.tpl
+www/data/phpgroupware/projects/templates/default/stats_projectstat.tpl
+www/data/phpgroupware/projects/templates/default/bill_listhours.tpl
+www/data/phpgroupware/projects/templates/default/stats_userlist.tpl
+www/data/phpgroupware/projects/templates/default/del_deliveryform.tpl
+www/data/phpgroupware/projects/templates/default/del_list.tpl
+www/data/phpgroupware/projects/templates/default/del_listdelivery.tpl
+www/data/phpgroupware/projects/templates/default/form.tpl
+www/data/phpgroupware/projects/templates/default/hours_list.tpl
+www/data/phpgroupware/projects/templates/verdilak/header.tpl
+www/data/phpgroupware/projects/templates/verdilak/listactivities.tpl
+www/data/phpgroupware/projects/templates/verdilak/bill_listinvoice.tpl
+www/data/phpgroupware/projects/templates/verdilak/addressbook.tpl
+www/data/phpgroupware/projects/templates/verdilak/stats_userstat.tpl
+www/data/phpgroupware/projects/templates/verdilak/bill_invoiceform.tpl
+www/data/phpgroupware/projects/templates/verdilak/bill_list.tpl
+www/data/phpgroupware/projects/templates/verdilak/delete.tpl
+www/data/phpgroupware/projects/templates/verdilak/formactivity.tpl
+www/data/phpgroupware/projects/templates/verdilak/images/navbar.gif
+www/data/phpgroupware/projects/templates/verdilak/preferences.tpl
+www/data/phpgroupware/projects/templates/verdilak/hours_listhours.tpl
+www/data/phpgroupware/projects/templates/verdilak/list.tpl
+www/data/phpgroupware/projects/templates/verdilak/stats_projectlist.tpl
+www/data/phpgroupware/projects/templates/verdilak/hours_formhours.tpl
+www/data/phpgroupware/projects/templates/verdilak/del_listhours.tpl
+www/data/phpgroupware/projects/templates/verdilak/stats_projectstat.tpl
+www/data/phpgroupware/projects/templates/verdilak/bill_listhours.tpl
+www/data/phpgroupware/projects/templates/verdilak/stats_userlist.tpl
+www/data/phpgroupware/projects/templates/verdilak/del_deliveryform.tpl
+www/data/phpgroupware/projects/templates/verdilak/del_list.tpl
+www/data/phpgroupware/projects/templates/verdilak/del_listdelivery.tpl
+www/data/phpgroupware/projects/templates/verdilak/form.tpl
+www/data/phpgroupware/projects/templates/verdilak/hours_list.tpl
+www/data/phpgroupware/projects/stats_projectstat.php
+www/data/phpgroupware/projects/bill_invoice.php
+www/data/phpgroupware/projects/editactivity.php
+@dirrm www/data/phpgroupware/projects/templates/verdilak/images
+@dirrm www/data/phpgroupware/projects/templates/verdilak
+@dirrm www/data/phpgroupware/projects/templates/default/images
+@dirrm www/data/phpgroupware/projects/templates/default
+@dirrm www/data/phpgroupware/projects/templates
+@dirrm www/data/phpgroupware/projects/inc
+@dirrm www/data/phpgroupware/projects/doc
+@dirrm www/data/phpgroupware/projects
+@unexec rmdir %D/www/data/phpgroupware 2>/dev/null || true
