@@ -95,6 +95,7 @@
     SUBDIR += p5-XML-Sablotron
     SUBDIR += p5-XML-Simple
     SUBDIR += p5-XML-Stream
+    SUBDIR += p5-XML-TreeBuilder
     SUBDIR += p5-XML-Writer
     SUBDIR += p5-XML-XPath
     SUBDIR += p5-dTemplate

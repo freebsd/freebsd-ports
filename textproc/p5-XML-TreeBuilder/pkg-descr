@@ -1,0 +1,10 @@
+This module uses XML::Parser to make XML document trees constructed of
+XML::Element objects (and XML::Element is a subclass of HTML::Element
+adapted for XML).  XML::TreeBuilder is meant particularly for people
+who are used to the HTML::TreeBuilder / HTML::Element interface to
+document trees, and who don't want to learn some other document
+interface like XML::Twig or XML::DOM.
+
+Author: Sean M. Burke
+
+--will
