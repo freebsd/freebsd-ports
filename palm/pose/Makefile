@@ -19,6 +19,8 @@ COMMENT=	Palm OS(R) Emulator
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		Does not compile
+
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/Emulator_Src_${PORTVERSION}/BuildUnix
 USE_GMAKE=	yes
@@ -31,10 +33,6 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
