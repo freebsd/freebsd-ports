@@ -7,6 +7,7 @@
 
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.0
+PORTREVISION?=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
