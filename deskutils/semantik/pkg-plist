@@ -1,20 +1,29 @@
 bin/kdissert
-lib/libkdissasciidoc.la
-lib/libkdissasciidoc.so
-lib/libkdisshtmldoc.la
-lib/libkdisshtmldoc.so
-lib/libkdisspdflatexarticle.la
-lib/libkdisspdflatexarticle.so
-lib/libkdisspdflatexbook.la
-lib/libkdisspdflatexbook.so
+lib/kde3/libkdissOOOdoc.so
+lib/kde3/libkdissOOOdoc.so.10
+lib/kde3/libkdissasciidoc.so
+lib/kde3/libkdissasciidoc.so.10
+lib/kde3/libkdissbeamerslides.so
+lib/kde3/libkdissbeamerslides.so.10
+lib/kde3/libkdisshtmldoc.so
+lib/kde3/libkdisshtmldoc.so.10
+lib/kde3/libkdisspdflatexarticle.so
+lib/kde3/libkdisspdflatexarticle.so.10
+lib/kde3/libkdisspdflatexbook.so
+lib/kde3/libkdisspdflatexbook.so.10
+lib/kde3/libkdissprosperslides.so
+lib/kde3/libkdissprosperslides.so.10
 share/applications/kde/kdissert.desktop
 share/applnk/Utilities/kdissert.desktop
 share/apps/kdissert/kdissertui.rc
 share/apps/kdissert/pics/nopix.png
+share/apps/kdissert/templatedata/kdissOOOdoc.tar.gz
 share/apps/kdissert/templatedata/kdissasciidoc.tar.gz
+share/apps/kdissert/templatedata/kdissbeamerslides.tar.gz
 share/apps/kdissert/templatedata/kdisshtmldoc.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexarticle.tar.gz
 share/apps/kdissert/templatedata/kdisspdflatexbook.tar.gz
+share/apps/kdissert/templatedata/kdissprosperslides.tar.gz
 share/apps/kdissert/tips
 share/config.kcfg/kdissert.kcfg
 share/doc/HTML/en/kdissert/common
@@ -40,6 +49,32 @@ share/locale/de/LC_MESSAGES/kdissert.mo
 share/locale/fr/LC_MESSAGES/kdissert.mo
 share/locale/nl/LC_MESSAGES/kdissert.mo
 share/mimelnk/application/x-kdissert.desktop
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kdissert
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @dirrm share/apps/kdissert/templatedata
 @dirrm share/apps/kdissert/pics
 @dirrm share/apps/kdissert
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
