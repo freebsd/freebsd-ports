@@ -16,8 +16,9 @@ bin/rbbr
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/libselectiondialog.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/methodlist.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduledisplay.rb
-%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduleindex.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/modulelabel.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/modulelistview.rb
+%%RUBY_SITELIBDIR%%/rbbr/ui/gtk/moduletreeview.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/stockbrowser.rb
 %%RUBY_SITELIBDIR%%/rbbr/ui/gtk/windowutils.rb
 @dirrm %%RUBY_SITELIBDIR%%/rbbr/ui/gtk
