@@ -4,8 +4,6 @@
     SUBDIR += a2ps-a4
     SUBDIR += a2ps-letter
     SUBDIR += a2ps-letterdj
-    SUBDIR += a2ps43-a4
-    SUBDIR += a2ps43-letter
     SUBDIR += abc2mtex
     SUBDIR += acrobatviewer
     SUBDIR += acroread
