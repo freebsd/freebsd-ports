@@ -1,0 +1,88 @@
+--- programs/xdm/Chooser.ad	1994/04/27 07:20:01	1.1.1.1
++++ programs/xdm/Chooser.ad	2001/04/06 01:04:41	1.1.1.1.12.1
+@@ -1,3 +1,5 @@
++! $XFree86$
++!
+ *ShapeStyle:		Oval
+ *cursor:		left_ptr
+ *allowShellResize:	true
+@@ -18,7 +20,7 @@
+ 	<BtnDown>:	Set() CheckWilling() \n\
+ 	<BtnUp>(2):	Accept()
+ *list.defaultColumns:	1
+-*list.forceFolumns:	true
++*list.forceColumns:	true
+ 
+ *box.skipAdjust:	true
+ *cancel.fromHoriz:	viewport
+Index: xvidtune.c
+--- programs/xvidtune/xvidtune.c	1998/10/22 19:09:04	3.22.4.1
++++ programs/xvidtune/xvidtune.c	2001/04/06 01:04:41	3.22.4.2
+@@ -545,7 +545,7 @@
+     if (mode_flags & V_INTERLACE) strcat(modebuf, " interlace");
+     if (mode_flags & V_CSYNC)     strcat(modebuf, " composite");
+     if (mode_flags & V_PCSYNC)    strcat(modebuf, " +csync");
+-    if (mode_flags & V_PCSYNC)    strcat(modebuf, " -csync");
++    if (mode_flags & V_NCSYNC)    strcat(modebuf, " -csync");
+     if (mode_flags & V_DBLSCAN)   strcat(modebuf, " doublescan");
+     printf("%s\n", modebuf);
+     time = XtLastTimestampProcessed(XtDisplay(w));
+--- lib/X11/GetProp.c	1994/04/27 07:10:56	1.1.1.1
++++ lib/X11/GetProp.c	2001/04/26 16:23:34	1.1.1.1.12.1
+@@ -76,21 +76,24 @@
+        */
+ 	  case 8:
+ 	    nbytes = netbytes = reply.nItems;
+-	    if (*prop = (unsigned char *) Xmalloc ((unsigned)nbytes + 1))
++	    if (nbytes + 1 > 0 &&
++		(*prop = (unsigned char *) Xmalloc ((unsigned)nbytes + 1)))
+ 		_XReadPad (dpy, (char *) *prop, netbytes);
+ 	    break;
+ 
+ 	  case 16:
+ 	    nbytes = reply.nItems * sizeof (short);
+ 	    netbytes = reply.nItems << 1;
+-	    if (*prop = (unsigned char *) Xmalloc ((unsigned)nbytes + 1))
++	    if (nbytes + 1 > 0 &&
++		(*prop = (unsigned char *) Xmalloc ((unsigned)nbytes + 1)))
+ 		_XRead16Pad (dpy, (short *) *prop, netbytes);
+ 	    break;
+ 
+ 	  case 32:
+ 	    nbytes = reply.nItems * sizeof (long);
+ 	    netbytes = reply.nItems << 2;
+-	    if (*prop = (unsigned char *) Xmalloc ((unsigned)nbytes + 1))
++	    if (nbytes + 1 > 0 &&
++		(*prop = (unsigned char *) Xmalloc ((unsigned)nbytes + 1)))
+ 		_XRead32 (dpy, (long *) *prop, netbytes);
+ 	    break;
+ 
+--- lib/X11/XlibInt.c	2001/02/08 21:11:24	3.9.2.5
++++ lib/X11/XlibInt.c	2001/04/26 16:23:34	3.9.2.6
+@@ -1824,7 +1824,13 @@
+ 
+     (void) _XSetLastRequestRead(dpy, &rep->generic);
+     len = SIZEOF(xReply) + (rep->generic.length << 2);
+-
++    if (len < SIZEOF(xReply)) {
++	_XIOError (dpy);
++	buf += *lenp;
++	*lenp = 0;
++	return buf;
++    }
++    
+     for (async = dpy->async_handlers; async; async = next) {
+ 	next = async->next;
+ 	if (consumed = (*async->handler)(dpy, rep, buf, *lenp, async->data))
+--- programs/Xserver/hw/xfree86/CHANGELOG	2001/03/07 17:08:15	3.390.2.337
++++ programs/Xserver/hw/xfree86/CHANGELOG	2001/04/26 16:23:36	3.390.2.339
+@@ -1,4 +1,9 @@
+ XFree86 3.3.6a (xx March 2001)
++1630. [SECURITY] Avoid DoS attacks on xdm (Keith Packard).
++1629. [SECURITY] Check for negative reply length/overflow in _XAsyncReply
++      (Xlib) (#4601, Mike Harris).
++1628. Fix a typo in xvidtune (#A.327, Peter Breitenlohner).
++1627. Fix typo in Chooser.ad (#A.327, Peter Breitenlohner).
+ 1626. Bug fixes and improvements for mouse 3 button emulation state machine
+       (Andrew Pimlott).
+ 1625. Include <time.h> in Xos.h to get struct tm (based on #4464, Mike Harris,
