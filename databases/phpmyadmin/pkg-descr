@@ -1,4 +1,4 @@
-phpMyAdmin is intended to handle the adminstration of MySQL over the WWW.
+phpMyAdmin is intended to handle the adminstration of MySQL over the web.
 
 Currently it can:
  - create and drop databases
@@ -9,4 +9,6 @@ Currently it can:
  - load text files into tables
  - create and read dumps of tables
  - export and import CSV data
- - administer one single database
+ - administer multiple servers and single databases
+
+WWW: http://phpwizard.net/projects/phpMyAdmin/
