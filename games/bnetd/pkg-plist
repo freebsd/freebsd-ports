@@ -11,21 +11,30 @@ bin/tgainfo
 sbin/bnetd
 sbin/bnproxy
 sbin/bntrackd
+sbin/d2cs
+sbin/d2dbs
 etc/rc.d/bnetd.sh
 etc/bnetd/ad.list
+etc/bnetd/autoupdate
+etc/bnetd/bnban
+etc/bnetd/bnbitsmotd.txt
+etc/bnetd/bnbitspasswd
 etc/bnetd/bnetd.conf
 etc/bnetd/bnetd_default_user
-etc/bnetd/bnmotd.txt
-etc/bnetd/bnissue.txt
-etc/bnetd/channel.list
-etc/bnetd/news.txt
-etc/bnetd/bnban
 etc/bnetd/bnhelp
+etc/bnetd/bnissue.txt
+etc/bnetd/bnmotd.txt
+etc/bnetd/channel.list
+etc/bnetd/d2cs.conf
+etc/bnetd/d2dbs.conf
 etc/bnetd/gametrans
-etc/bnetd/autoupdate
+etc/bnetd/news.txt
 etc/bnetd/realm.list
+etc/bnetd/versioncheck
 share/bnetd/files/ad000001.pcx
+share/bnetd/files/bnserver-D2DV.ini
 share/bnetd/files/icons.bni
+share/bnetd/files/newbie.save
 share/bnetd/files/tos.txt
 @dirrm etc/bnetd
 @unexec rm -rf %D/share/bnetd 2>/dev/null || true
@@ -41,6 +50,8 @@ share/bnetd/files/tos.txt
 %%PORTDOCS%%share/doc/bnetd/README.diablo108
 %%PORTDOCS%%share/doc/bnetd/README.ladder
 %%PORTDOCS%%share/doc/bnetd/README.registry
+%%PORTDOCS%%share/doc/bnetd/README.storage
+%%PORTDOCS%%share/doc/bnetd/TODO.Sherpya
 %%PORTDOCS%%share/doc/bnetd/TODO_BUCKY
 %%PORTDOCS%%share/doc/bnetd/TODO_VAP
 %%PORTDOCS%%share/doc/bnetd/bniheader.txt
