@@ -8,8 +8,7 @@
 PORTNAME=	ldmud
 PORTVERSION=	3.2.9
 CATEGORIES=	games net
-MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
-		ftp://ftp.mud.de/pub/software/gamedriver/ldmud/
+MASTER_SITES=	http://www.bearnip.com/ftp/mud/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	glewis@FreeBSD.org
