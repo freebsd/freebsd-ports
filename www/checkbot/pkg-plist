@@ -1,3 +1,0 @@
-bin/checkbot
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/checkbot/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/checkbot
