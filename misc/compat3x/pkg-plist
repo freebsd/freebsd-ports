@@ -15,7 +15,6 @@ lib/compat/libg++.so.4
 lib/compat/libhistory.so.3
 lib/compat/libmytinfo.so.2
 lib/compat/libncurses.so.3
-lib/compat/libperl.so.3
 lib/compat/libreadline.so.3
 lib/compat/libss.so.2
 lib/compat/libstdc++.so.2
