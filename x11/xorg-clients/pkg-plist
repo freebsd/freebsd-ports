@@ -25,7 +25,6 @@ bin/mkfontdir
 bin/mkfontscale
 bin/oclock
 bin/proxymngr
-bin/resize
 bin/rstart
 bin/rstartd
 bin/sessreg
@@ -38,7 +37,6 @@ bin/sxpm
 bin/texteroids
 bin/twm
 bin/ucs2any
-bin/uxterm
 bin/viewres
 bin/x11perf
 bin/x11perfcomp
@@ -94,7 +92,6 @@ bin/xsetpointer
 bin/xsetroot
 bin/xsm
 bin/xstdcmap
-bin/xterm
 bin/xtrapchar
 bin/xtrapin
 bin/xtrapinfo
@@ -133,7 +130,6 @@ lib/X11/app-defaults/Chooser
 lib/X11/app-defaults/Clock-color
 lib/X11/app-defaults/Editres
 lib/X11/app-defaults/Editres-color
-lib/X11/app-defaults/UXTerm
 lib/X11/app-defaults/Viewres
 lib/X11/app-defaults/XCalc
 lib/X11/app-defaults/XCalc-color
@@ -146,8 +142,6 @@ lib/X11/app-defaults/XLoad
 lib/X11/app-defaults/XLogo
 lib/X11/app-defaults/XLogo-color
 lib/X11/app-defaults/XSm
-lib/X11/app-defaults/XTerm
-lib/X11/app-defaults/XTerm-color
 lib/X11/app-defaults/Xditview
 lib/X11/app-defaults/Xditview-chrtr
 lib/X11/app-defaults/Xedit
@@ -160,8 +154,6 @@ lib/X11/app-defaults/Xmessage
 lib/X11/app-defaults/Xmessage-color
 lib/X11/app-defaults/Xmh
 lib/X11/app-defaults/Xvidtune
-lib/X11/etc/xterm.termcap
-lib/X11/etc/xterm.terminfo
 lib/X11/fonts/util/map-ISO8859-1
 lib/X11/fonts/util/map-ISO8859-10
 lib/X11/fonts/util/map-ISO8859-11
