@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	libdvbpsi
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.2
+PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/libdvbpsi/${PORTVERSION}/
 
