@@ -1,0 +1,17 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/Digest.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/FileIO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP/FileList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/Digest.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/Digest.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/File/RsyncP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/File 2>/dev/null || true
