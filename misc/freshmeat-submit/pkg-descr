@@ -1,0 +1,7 @@
+freshmeat-submit is a Python script that supports remote submission of
+release updates to Freshmeat via its XML-RPC interface. It is intended
+for use in project release scripts. It reads the metadata from an
+RFC-2822-like message on standard input, possibly with overrides
+by command-line switches.
+
+WWW: http://www.catb.org/~esr/freshmeat-submit/

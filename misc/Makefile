@@ -87,6 +87,7 @@
     SUBDIR += fortune-mod-futurama
     SUBDIR += fortuneit
     SUBDIR += freedialog
+    SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
     SUBDIR += ftree
     SUBDIR += gaim-guifications
