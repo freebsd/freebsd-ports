@@ -1,6 +1,6 @@
---- biewlib/sysdep/generic/unix/keyboard.c.orig	Thu Jul  6 14:31:08 2000
-+++ biewlib/sysdep/generic/unix/keyboard.c	Mon Jul 24 23:06:19 2000
-@@ -27,7 +27,11 @@
+--- biewlib/sysdep/generic/unix/keyboard.c.orig	Thu Mar  1 09:19:32 2001
++++ biewlib/sysdep/generic/unix/keyboard.c	Fri Nov  9 00:00:37 2001
+@@ -41,7 +41,11 @@
  #endif
  
  #ifdef	_CURSES_
@@ -9,6 +9,6 @@
 +#else
  #include <curses.h>
 +#endif
- MEVENT me;
+ #ifdef	NCURSES_MOUSE_VERSION
+ #define	HAVE_MOUSE
  #endif
- 
