@@ -10,9 +10,8 @@ PORTVERSION=	0.5.6
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
-		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
-		ftp://ftp.newplanetsoftware.com/pub/medic/source/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/ \
+		ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/
 DISTNAME=	JSearch_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org

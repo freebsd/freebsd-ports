@@ -9,7 +9,9 @@ PORTNAME=	libj2dplot
 PORTVERSION=	0.6.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/glove/source/ \
-		ftp://ftp.newplanetsoftware.com/pub/thx/source/
+		ftp://ftp.newplanetsoftware.com/pub/thx/source/ \
+		ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/ \
+		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
 DISTNAME=	J2DPlot_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
