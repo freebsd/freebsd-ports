@@ -8833,6 +8833,7 @@ xg		ports/x11-toolkits/xg
 xgalaga		ports/games/xgalaga
 xgammon		ports/games/xgammon
 xgas		ports/misc/xgas
+xglobe		ports/astro/xglobe
 xgobi		ports/math/xgobi
 xgolgo		ports/games/xgolgo
 xgospel		ports/games/xgospel
