@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	junglemonkey
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.9
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
@@ -32,5 +32,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		jm.1 jmlite.1 jmsearchserver.1 mtprendezvous.1
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

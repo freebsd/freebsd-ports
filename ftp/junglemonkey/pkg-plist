@@ -38,6 +38,7 @@ share/gnome/jm/glade/master_popup.glade
 share/gnome/jm/glade/preferences_dialog.glade
 share/gnome/jm/glade/properties_dialog.glade
 share/gnome/pixmaps/jm-logo.png
+share/locale/fr/LC_MESSAGES/jm.mo
 @dirrm share/gnome/help/jm/C/stylesheet-images
 @dirrm share/gnome/help/jm/C/images
 @dirrm share/gnome/help/jm/C
