@@ -9,7 +9,7 @@ PORTREVISION=	0
 CATEGORIES=	databases java
 PKGNAMESUFFIX=	-jdbc
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The Java JDBC implementation for PostgreSQL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	girgen@pingpong.net
+MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
 # XXX: this will eventually go away

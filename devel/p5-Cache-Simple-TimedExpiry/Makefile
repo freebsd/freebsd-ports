@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Cache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A lightweight cache with timed expiration
 
 PERL_CONFIGURE=	yes

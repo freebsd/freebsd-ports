@@ -9,7 +9,7 @@ PORTREVISION=	0
 CATEGORIES=	databases tcl${TCLVERSION:S/.//}
 PKGNAMESUFFIX=	-pltcl
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A module for using Tcl to write SQL functions
 
 POSTGRESQL_PORT?=	databases/postgresql7

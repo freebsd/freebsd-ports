@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqpp/stable/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ interface for  PostgreSQL
 
 POSTGRESQL_PORT?=	databases/postgresql7

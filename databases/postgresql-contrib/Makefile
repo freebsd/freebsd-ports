@@ -9,7 +9,7 @@ PORTREVISION=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-contrib
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
 LIB_DEPENDS=	pq:${PORTSDIR}/${POSTGRESQL_PORT}

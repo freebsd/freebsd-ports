@@ -8,7 +8,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-docs
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
 POSTGRESQL_SUBPORT=	YES

@@ -10,7 +10,7 @@ CATEGORIES=	databases perl5
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-plperl
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A module for using Perl5 to write SQL functions
 
 POSTGRESQL_PORT?=	databases/postgresql7
