@@ -1,7 +1,7 @@
-*** authen.c.orig	Sat Jul 29 02:49:15 1995
---- authen.c	Wed Jul 16 15:00:40 1997
+*** authen.c.orig	Thu Sep  9 15:21:09 1999
+--- authen.c	Thu Sep  9 15:21:28 1999
 ***************
-*** 209,217 ****
+*** 227,235 ****
   
   	    datap->status = TAC_PLUS_AUTHEN_STATUS_GETUSER;
   	    if (datap->service == TAC_PLUS_AUTHEN_SVC_LOGIN) {
@@ -11,7 +11,7 @@
   	    }
   	    send_authen_reply(TAC_PLUS_AUTHEN_STATUS_GETUSER, /* status */
   			      prompt, /* msg */
---- 209,217 ----
+--- 227,235 ----
   
   	    datap->status = TAC_PLUS_AUTHEN_STATUS_GETUSER;
   	    if (datap->service == TAC_PLUS_AUTHEN_SVC_LOGIN) {
@@ -21,10 +21,10 @@
   	    }
   	    send_authen_reply(TAC_PLUS_AUTHEN_STATUS_GETUSER, /* status */
   			      prompt, /* msg */
-*** default_fn.c.orig	Sat Jul 29 02:49:18 1995
---- default_fn.c	Wed Jul 16 15:00:52 1997
+*** default_v0_fn.c.orig	Thu Sep  9 15:22:52 1999
+--- default_v0_fn.c	Thu Sep  9 15:23:09 1999
 ***************
-*** 76,84 ****
+*** 87,95 ****
   	    /* No username. Try requesting one */
   	    data->status = TAC_PLUS_AUTHEN_STATUS_GETUSER;
   	    if (data->service == TAC_PLUS_AUTHEN_SVC_LOGIN) {
@@ -34,7 +34,7 @@
   	    }
   	    data->server_msg = tac_strdup(prompt);
   	    p->state = STATE_AUTHEN_GETUSER;
---- 76,84 ----
+--- 87,95 ----
   	    /* No username. Try requesting one */
   	    data->status = TAC_PLUS_AUTHEN_STATUS_GETUSER;
   	    if (data->service == TAC_PLUS_AUTHEN_SVC_LOGIN) {
@@ -44,10 +44,10 @@
   	    }
   	    data->server_msg = tac_strdup(prompt);
   	    p->state = STATE_AUTHEN_GETUSER;
-*** skey_fn.c.orig	Wed Jul 16 14:38:34 1997
---- skey_fn.c	Wed Jul 16 15:01:01 1997
+*** skey_fn.c.orig	Thu Sep  9 15:23:23 1999
+--- skey_fn.c	Thu Sep  9 15:23:56 1999
 ***************
-*** 104,112 ****
+*** 116,124 ****
   	    /* No username. Try requesting one */
   	    data->status = TAC_PLUS_AUTHEN_STATUS_GETUSER;
   	    if (data->service == TAC_PLUS_AUTHEN_SVC_LOGIN) {
@@ -57,7 +57,7 @@
   	    }
   	    data->server_msg = tac_strdup(prompt);
   	    p->state = STATE_AUTHEN_GETUSER;
---- 104,112 ----
+--- 116,124 ----
   	    /* No username. Try requesting one */
   	    data->status = TAC_PLUS_AUTHEN_STATUS_GETUSER;
   	    if (data->service == TAC_PLUS_AUTHEN_SVC_LOGIN) {

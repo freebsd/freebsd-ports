@@ -1,107 +1,49 @@
-*** tac_plus.1.orig	Sat Jul 29 02:49:20 1995
---- tac_plus.1	Mon Mar  3 17:34:30 1997
-***************
-*** 30,36 ****
-  authorisation and accounting.
-  .LP
-  On startup, tac_plus creates the file
-! .B /etc/tac_plus.pid ,
-  if possible, containing its process id.
-  .LP
-  .SH ARGUMENTS and OPTIONS
---- 30,36 ----
-  authorisation and accounting.
-  .LP
-  On startup, tac_plus creates the file
-! .B /var/run/tac_plus.pid ,
-  if possible, containing its process id.
-  .LP
-  .SH ARGUMENTS and OPTIONS
-***************
-*** 79,91 ****
-  .B \-d <level>
-  Switch on debugging and write debug output into
-  .B
-! /tmp/var/tac_plus.log. 
-  
-  See the definitions of debugging flags at the bottom of tac_plus.h for
-  available flags and their meanings.  Most flags cause extra messages
-  to be sent to 
-  .B
-! /tmp/var/tac_plus.log 
-  and also to 
-  .B
-  syslog.
---- 79,91 ----
-  .B \-d <level>
-  Switch on debugging and write debug output into
-  .B
-! /var/tmp/tac_plus.log. 
-  
-  See the definitions of debugging flags at the bottom of tac_plus.h for
-  available flags and their meanings.  Most flags cause extra messages
-  to be sent to 
-  .B
-! /var/tmp/tac_plus.log 
-  and also to 
-  .B
-  syslog.
-***************
-*** 177,183 ****
-  facility.
-  .nf
-  
-! local6.info					/var/adm/messages
-  
-  .fi
-  .LP
---- 177,183 ----
-  facility.
-  .nf
-  
-! local6.info					/var/log/tac_plus.log
-  
-  .fi
-  .LP
-***************
-*** 194,200 ****
-  .B /var/tmp/tac_plus.log
-  Contains debugging output when -d is in effect.
-  .TP
-! .B /etc/tac_plus.pid 
-  contains the process id of currently running daemon.
-  .SH BUGS
-  The configuration file syntax is too complex.
---- 194,200 ----
-  .B /var/tmp/tac_plus.log
-  Contains debugging output when -d is in effect.
-  .TP
-! .B /var/run/tac_plus.pid 
-  contains the process id of currently running daemon.
-  .SH BUGS
-  The configuration file syntax is too complex.
-*** users_guide.orig	Sat Jul 29 02:49:20 1995
---- users_guide	Mon Mar  3 19:51:56 1997
-***************
-*** 996,1005 ****
-  and then send the daemon a SIGUSR1. This will cause it to reinitialize
-  itself and re-read the configuration file.
-  
-! On startup, tac_plus creates the file /etc/tac_plus.pid , if possible,
-  containing its process id, so something like the following should work:
-  
-! # kill -USR1 `cat /etc/tac_plus.pid`
-  
-  It's a good idea to check that the daemon is still running after
-  sending it a SIGUSR1, since a syntactically incorrect configuration
---- 996,1005 ----
-  and then send the daemon a SIGUSR1. This will cause it to reinitialize
-  itself and re-read the configuration file.
-  
-! On startup, tac_plus creates the file /var/run/tac_plus.pid, if possible,
-  containing its process id, so something like the following should work:
-  
-! # kill -USR1 `cat /var/run/tac_plus.pid`
-  
-  It's a good idea to check that the daemon is still running after
-  sending it a SIGUSR1, since a syntactically incorrect configuration
+--- tac_plus.1.orig	Sat Apr  3 08:03:47 1999
++++ tac_plus.1	Tue Nov  9 21:55:56 1999
+@@ -32,7 +32,7 @@
+ authorisation and accounting.
+ .LP
+ On startup, tac_plus creates the file
+-.B /etc/tac_plus.pid ,
++.B /var/run/tac_plus.pid ,
+ if possible, containing its process id.
+ .LP
+ .SH ARGUMENTS and OPTIONS
+@@ -195,7 +195,7 @@
+ facility.
+ .nf
+ 
+-local6.info					/var/adm/messages
++local6.info					/var/log/tac_plus.log
+ 
+ .fi
+ .LP
+@@ -212,7 +212,7 @@
+ .B /var/tmp/tac_plus.log
+ Contains debugging output when -d is in effect.
+ .TP
+-.B /etc/tac_plus.pid  or /etc/tac_plus.pid.port
++.B /var/run/tac_plus.pid  or /var/run/tac_plus.pid.port
+ contains the process id of the currently running daemon.  The port
+ number is appended to the filename only if the port being used is not
+ the default one of 49.
+--- users_guide.orig	Sat Apr  3 08:03:48 1999
++++ users_guide	Tue Nov  9 21:57:03 1999
+@@ -1368,7 +1368,7 @@
+ and then send the daemon a SIGUSR1. This will cause it to reinitialize
+ itself and re-read the configuration file.
+ 
+-On startup, tac_plus creates the file /etc/tac_plus.pid , if possible,
++On startup, tac_plus creates the file /var/run/tac_plus.pid , if possible,
+ containing its process id. If you invoke the daemon so that it listens
+ on a non-standard port, the file created is /etc/tac_plus.pid.<port>
+ instead, where <port> is the port number the daemon is listening on.
+@@ -1376,7 +1376,7 @@
+ Assuming you are listening on the default port 49, something like the
+ following should work:
+ 
+-# kill -USR1 `cat /etc/tac_plus.pid`
++# kill -USR1 `cat /var/run/tac_plus.pid`
+ 
+ It's a good idea to check that the daemon is still running after
+ sending it a SIGUSR1, since a syntactically incorrect configuration
