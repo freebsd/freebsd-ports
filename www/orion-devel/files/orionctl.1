@@ -58,9 +58,9 @@ Prints an error message and exits the script with error code 4.
 .Bl -tag -width -indent
 .It Pa /var/run/orion.pid
 The %%APP_TITLE%% PID file that is used to store the process
-ID of the currently running process in. It is deleted as soon as the server is
-stopped and recreated when it is started. It should never be writable for anyone but
-.Em root ,
+ID of the currently running process in. It is emptied as soon as the server is
+stopped and filled with the process ID when it is started. It should never be writable for anyone but
+.Em www ,
 .It Pa %%PREFIX%%/etc/rc.d/%%STARTUP_ORDER%%.orion.sh
 A script that starts the
 .Nm
