@@ -7,6 +7,7 @@
 
 PORTNAME=	p2c
 PORTVERSION=	1.21a
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=   ftp://ftp.clara.net/pub/mirrors/gnu/hurd/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/netsw/Pascal/ \
