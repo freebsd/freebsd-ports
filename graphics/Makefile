@@ -39,6 +39,7 @@
     SUBDIR += fli2gif
     SUBDIR += fly
     SUBDIR += fnlib
+    SUBDIR += fractorama
     SUBDIR += fujiplay
     SUBDIR += fxtv
     SUBDIR += g2

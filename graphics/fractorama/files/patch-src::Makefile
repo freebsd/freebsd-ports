@@ -1,0 +1,21 @@
+--- Makefile.orig	Mon Apr  9 02:33:36 2001
++++ Makefile	Sun Apr 15 16:25:40 2001
+@@ -89,7 +89,7 @@
+    endif
+ 
+    QTROOT        := ${UNIX_QTROOT}
+-   PLATFORM_LIBS := -L${QTROOT}/lib -lqt
++   PLATFORM_LIBS := ${QTCFGLIBS} -lqt2
+    CPP           := g++
+    WARN          := -W -Wall
+    LINK          := ${CPP} -o ${EXE}
+@@ -112,8 +113,7 @@
+ LIBS := ${FRACT_LIBS} ${PLATFORM_LIBS}
+ 
+ OUT     := ${OUT1}${OUT2}
+-MOC     := ${QTROOT}/bin/moc
+-INCLUDE := -I${QTROOT}/include \
++INCLUDE := ${QTCPPFLAGS} \
+            -Ilib/fractal       \
+            -Ilib/tiff          \
+            -Ilib/persist       \
