@@ -29,7 +29,7 @@
  cannaGroup = bin
 -
  cannaOwnerGroup = -o $(cannaOwner) -g $(cannaGroup)
-+cannaOwnerDefinition = -DcannaOwner="$(cannaOwner)"
++cannaOwnerDefinition = -DcannaOwner="\"$(cannaOwner)\""
  
  pointerIntegerDef =
  
