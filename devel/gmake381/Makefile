@@ -17,7 +17,11 @@ MAINTAINER=	jseger@FreeBSD.org
 Y2K=		http://www.gnu.org/software/year2000.html
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g \
+		--without-included-gettext
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 MAN1=		gmake.1
 
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
