@@ -1,0 +1,19 @@
+*** platforms/etc/Makefile.in.orig	Sat Nov  1 13:46:41 2003
+--- platforms/etc/Makefile.in	Sat Nov  1 13:47:05 2003
+***************
+*** 34,40 ****
+  	       $(RMF) $(DESTDIR)$(sysconfdir)/$$src.orig; \
+  	       mv $(DESTDIR)$(sysconfdir)/$$src $(DESTDIR)$(sysconfdir)/$$src.orig; \
+  	   fi; \
+! 	   $(INSTALL_PROGRAM) $$src $(DESTDIR)$(sysconfdir)/$$src; \
+  	done
+  
+  uninstall:
+--- 34,40 ----
+  	       $(RMF) $(DESTDIR)$(sysconfdir)/$$src.orig; \
+  	       mv $(DESTDIR)$(sysconfdir)/$$src $(DESTDIR)$(sysconfdir)/$$src.orig; \
+  	   fi; \
+! 	   $(INSTALL_SCRIPT) $$src $(DESTDIR)$(sysconfdir)/$$src; \
+  	done
+  
+  uninstall:
