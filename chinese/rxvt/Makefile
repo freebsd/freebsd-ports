@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 MASTER_SITE_SUBDIR=	X11/terms
 DISTNAME=	rxvt-${PORTVERSION}
 
-MAINTAINER=	keichii@iteration.net
+MAINTAINER=	keichii@freebsd.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.ucsd.edu/pub/scg/KeLP/
 DISTNAME=	KeLP1.3
 
-MAINTAINER=	keichii@iteration.net
+MAINTAINER=	keichii@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpirun:${PORTSDIR}/net/mpich
 

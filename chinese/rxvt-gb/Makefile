@@ -13,7 +13,7 @@ PORTVERSION=	2.6.3
 #.include <bsd.port.pre.mk>
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}cn-
 
-MAINTAINER=	keichii@iteration.net
+MAINTAINER=	keichii@freebsd.org
 
 CONFIGURE_ARGS+=	--enable-xim --enable-big5 \
 			--enable-next-scroll --with-term=xterm-color
