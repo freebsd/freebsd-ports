@@ -1,6 +1,6 @@
---- src/page_capture.cc	Mon Dec 15 06:31:21 2003
-+++ src/page_capture.cc	Fri Apr  9 16:51:50 2004
-@@ -288,6 +288,7 @@
+--- src/page_capture.cc.orig	Thu Apr  1 23:50:01 2004
++++ src/page_capture.cc	Sun Apr 11 00:35:15 2004
+@@ -295,6 +295,7 @@
  		}
  		gui_state_was = 0;
  	}
@@ -8,7 +8,7 @@
  	else if ( check_phyid == true )
  	{
  		if ( gui_state_was != 1 )
-@@ -432,6 +433,7 @@
+@@ -438,6 +439,7 @@
  			gui_state_was = 3;
  		}
  	}

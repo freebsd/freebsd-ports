@@ -1,6 +1,14 @@
---- configure.orig	Mon Dec 15 22:42:05 2003
-+++ configure	Sat Apr 10 12:13:08 2004
-@@ -4300,7 +4300,7 @@
+--- configure.orig	Sat Apr 10 16:22:32 2004
++++ configure	Sun Apr 11 02:19:54 2004
+@@ -4293,13 +4293,13 @@
+ 
+ 
+ 
+-echo "$as_me:$LINENO: checking for dv_is_normal_speed in -ldv" >&5
+-echo $ECHO_N "checking for dv_is_normal_speed in -ldv... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for dv_decoder_new in -ldv" >&5
++echo $ECHO_N "checking for dv_decoder_new in -ldv... $ECHO_C" >&6
+ if test "${ac_cv_lib_dv_dv_is_normal_speed+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +17,21 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -4630,7 +4630,7 @@
+@@ -4314,11 +4314,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char dv_is_normal_speed ();
++char dv_decoder_new ();
+ int
+ main ()
+ {
+-dv_is_normal_speed ();
++dv_decoder_new()
+   ;
+   return 0;
+ }
+@@ -4629,7 +4629,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&5
  echo "$as_me: error: Unable to link with libraw1394. Check that you have libraw1394 installed" >&2;}
@@ -18,7 +40,7 @@
  
  fi
  
-@@ -4640,7 +4640,7 @@
+@@ -4639,7 +4639,7 @@
  else
    { { echo "$as_me:$LINENO: error: raw1394.h not found install libraw1394-devel" >&5
  echo "$as_me: error: raw1394.h not found install libraw1394-devel" >&2;}
@@ -27,7 +49,7 @@
  
  fi
  
-@@ -4782,7 +4782,7 @@
+@@ -4781,7 +4781,7 @@
  else
    { { echo "$as_me:$LINENO: error: avc1394.h not found, install libavc1394-devel" >&5
  echo "$as_me: error: avc1394.h not found, install libavc1394-devel" >&2;}
@@ -36,7 +58,7 @@
  
  fi
  
-@@ -4852,7 +4852,7 @@
+@@ -4851,7 +4851,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer" >&5
  echo "$as_me: error: Unable to link with libavc1394. Check that you have libavc1394 installed and that the version is 0.4.1 or newer" >&2;}
@@ -45,7 +67,7 @@
  fi
  
  
-@@ -4991,7 +4991,7 @@
+@@ -4990,7 +4990,7 @@
  else
    { { echo "$as_me:$LINENO: error: rom1394.h not found, install libavc1394-devel" >&5
  echo "$as_me: error: rom1394.h not found, install libavc1394-devel" >&2;}
@@ -54,7 +76,7 @@
  
  fi
  
-@@ -5061,7 +5061,7 @@
+@@ -5060,7 +5060,7 @@
  else
    { { echo "$as_me:$LINENO: error: Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer" >&5
  echo "$as_me: error: Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer" >&2;}
@@ -63,7 +85,7 @@
  fi
  
  
-@@ -5131,7 +5131,7 @@
+@@ -5130,7 +5130,7 @@
  
  	{ { echo "$as_me:$LINENO: error: You need the pthread library to compile kino" >&5
  echo "$as_me: error: You need the pthread library to compile kino" >&2;}

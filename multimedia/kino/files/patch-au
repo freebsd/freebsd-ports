@@ -1,7 +1,7 @@
---- src/storyboard.cc	Sat Dec  6 05:26:03 2003
-+++ src/storyboard.cc	Fri Apr  9 17:45:51 2004
-@@ -28,6 +28,7 @@
- using std::vector;
+--- src/storyboard.cc.orig	Fri Apr  2 22:10:11 2004
++++ src/storyboard.cc	Sun Apr 11 00:35:26 2004
+@@ -26,6 +26,7 @@
+ #include <string>
  
  #include <pthread.h>
 +#include <libgen.h>

@@ -1,18 +1,20 @@
---- src/ieee1394io.h	Tue Nov 25 20:51:15 2003
-+++ src/ieee1394io.h	Sat Apr 10 12:19:14 2004
-@@ -20,8 +20,9 @@
+--- src/ieee1394io.h.orig	Sun Mar 28 20:42:50 2004
++++ src/ieee1394io.h	Tue Apr 13 11:14:32 2004
+@@ -20,10 +20,13 @@
  #ifndef _IEEE1394IO_H
  #define _IEEE1394IO_H 1
  
--#include <libraw1394/raw1394.h>
--#include <libraw1394/csr.h>
-+#include <pthread.h>
-+//#include <libraw1394/raw1394.h>
-+//#include <libraw1394/csr.h>
- #include <libdv/dv1394.h>
++#if 0
+ #include <libraw1394/raw1394.h>
+ #include <libraw1394/csr.h>
++#endif
+ #include "dv1394.h"
  
++#include <pthread.h>
  #include <string>
-@@ -104,7 +105,7 @@
+ using std::string;
+ #include <deque>
+@@ -115,7 +118,7 @@
  	int	port;
  
  	/// the handle to the ieee1394 subsystem
@@ -21,7 +23,7 @@
  
  public:
  
-@@ -119,7 +120,7 @@
+@@ -130,7 +133,7 @@
  	void StopThread( void );
  
  private:
@@ -30,7 +32,7 @@
  	static void* Thread( void *arg );
  };
  
-@@ -160,7 +161,7 @@
+@@ -171,7 +174,7 @@
  	static pthread_mutex_t avc_mutex;
  
  	/// the handle to the ieee1394 subsystem
@@ -39,7 +41,7 @@
  
  public:
  	AVC( int crd = 0 );
-@@ -184,7 +185,7 @@
+@@ -195,7 +198,7 @@
  	int getNodeId( const char *guid );
  
  private:

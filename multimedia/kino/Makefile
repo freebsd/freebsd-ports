@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
-		http://kino.schirmacher.de/filemanager/download/17/
+MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/31/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pb@FreeBSD.org
 COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
-		intl.6:${PORTSDIR}/devel/gettext		\
 		Magick.6:${PORTSDIR}/graphics/ImageMagick	\
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		samplerate.0:${PORTSDIR}/audio/libsamplerate
 
+USE_GETTEXT=	yes
+USE_GNOME=	libgnomeui libxml2
 USE_ICONV=	yes
-USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS=-"I${LOCALBASE}/include -I${X11BASE}/include" \

@@ -1,11 +1,11 @@
---- src/filehandler.h	Tue Nov 25 20:51:14 2003
-+++ src/filehandler.h	Sat Apr 10 12:14:37 2004
-@@ -33,7 +33,7 @@
- #include "riff.h"
- #include "avi.h"
- #include <sys/types.h>
--#include <stdint.h>
-+//#include <stdint.h>
- 
- enum FileCaptureMode {
-     CAPTURE_IGNORE,
+--- src/filehandler.cc.orig	Tue Mar 30 06:41:06 2004
++++ src/filehandler.cc	Sun Apr 11 02:47:44 2004
+@@ -243,7 +243,7 @@
+ 				struct timeval tv;
+ 				struct timezone tz;
+ 				gettimeofday( &tv, &tz );
+-				localtime_r( &tv.tv_sec, &date );
++				localtime_r( (const time_t *)&tv.tv_sec, &date );
+ 			}
+ 			sb << setfill( '0' )
+ 			<< setw( 4 ) << date.tm_year + 1900 << '.'
