@@ -18,9 +18,11 @@ MAINTAINER=	alane@FreeBSD.org
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
 
-#RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
-
 DIST_SUBDIR=	zope
+
+# Note: the notes that follow reflect the decisions of prior maintainers
+# of this port. IOW, don't blame me if you don't like the way it's done.
+# Exceptions to this are marked as such.
 
 # Build has to be done in the final location after installing the sources
 # there. It was a major action to fix all paths otherwise.
@@ -49,20 +51,16 @@ PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR} \
 		WEBBASEDIR=${WEBBASEDIR}
 
 # Force the cgi-bin dir or link to exist.
-pre-everything:
+# If we have to create it, call it -dist to emphasize that the port
+# set it up. <alane>
+
+pre-everything: 
 	@if test ! -d ${CGIBINDIR}; then \
-	  ${ECHO_CMD} \
-	    "============================================================";\
-	  ${ECHO_CMD} \
-	    "===> ${CGIBINDIR} does not exist.";\
-	  ${ECHO_CMD} \
-	    "===> Please create it (it can be a link to an existing";\
-	  ${ECHO_CMD} \
-	    "===> directory) and run ${MAKE} again.";\
-	  ${ECHO_CMD} \
-	    "============================================================";\
-	  ${FALSE}; \
-	fi
+		${ECHO_CMD} "The directory for Zope's CGI scripts does"\
+			"not exist, so I will create it.";\
+		${ECHO_CMD} "They will be placed in ${CGIBINDIR}.";\
+		${ECHO_CMD} ;\
+		${MKDIR} ${CGIBINDIR}; ${CHMOD} 0755 ${CGIBINDIR}; fi
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
