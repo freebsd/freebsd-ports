@@ -16,7 +16,7 @@ PATCHFILES=     ${DISTNAME}.ttf-kanji.patch.990731
 
 MAINTAINER=	ichiro@ichiro.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 FETCH_BEFORE_ARGS=	-b
 USE_LIBTOOL=		yes

@@ -18,7 +18,7 @@ MAINTAINER=	keith@freebsd.sinica.edu.tw
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	xcin2.5:${PORTSDIR}/chinese/xcin25 \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
