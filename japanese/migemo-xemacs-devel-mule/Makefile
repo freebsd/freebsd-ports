@@ -16,12 +16,14 @@ EMACS_PORT_NAME=	xemacs-devel-mule
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${PREFIX}/${EMACS_LIBDIR}/site-lisp
+		--with-lispdir=${PREFIX}/${EMACS_SITE_LISPDIR}
 ALL_TARGET=	migemo.elc
 
 PLIST_SUB=	MIGEMO="@comment " ELISP=""
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/migemo.el ${PREFIX}/${EMACS_LIBDIR}/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/migemo.elc ${PREFIX}/${EMACS_LIBDIR}/site-lisp
+	${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/migemo.el ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/migemo.elc ${PREFIX}/${EMACS_SITE_LISPDIR}
+
 .include "${MASTERDIR}/Makefile"
