@@ -724,6 +724,7 @@ cfs		ports/security/cfs
 cftp		ports/ftp/cftp
 cfv		ports/security/cfv
 cgi-lib		ports/www/cgi-lib
+cgi-lib.pl	ports/www/cgi-lib.pl
 cgic		ports/www/cgic
 cgicc		ports/www/cgicc
 cgichk		ports/www/cgichk
