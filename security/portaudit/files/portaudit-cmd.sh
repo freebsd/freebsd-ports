@@ -130,6 +130,7 @@ audit_installed()
 	extract_auditfile | awk -F\| '
 		BEGIN { vul=0 }
 		/^(#|\$)/ { next }
+		$2 !~ /'"$opt_restrict"'/ { next }
 		{
 			cmd="'"$pkg_info"' -E \"" $1 "\""
 			while((cmd | getline pkg) > 0) {
@@ -187,6 +188,8 @@ audit_file()
 		{
 			cmd="'"$pkg_version"' -T - \"" $1 "\" <\"'"$FILE"'\""
 			while((cmd | getline pkg) > 0) {
+				if ($2 !~ /'"$opt_restrict"'/)
+					next
 				vul++
 				split($2, ref, / /)
 				split(pkg, p)
@@ -224,7 +227,11 @@ audit_args()
 			echo "portaudit: Can't audit remote file $1" >&2
 			;;
 		*)
-			if VLIST=`extract_auditfile | grep -v '^#' | $pkg_version -T "$1" -`; then
+			if VLIST=`extract_auditfile | awk -F\| '
+					/^(#|\$)/ { next }
+					$2 !~ /'"$opt_restrict"'/ { next }
+					{ print }
+				' | $pkg_version -T "$1" -`; then
 				VULCNT=$(($VULCNT+1))
 				echo "$VLIST" | awk -F\| '{
 					print "Affected package: '$1' (matched by " $1 ")"
@@ -259,7 +266,11 @@ audit_cwd()
 		return 2
 	fi
 
-	if VLIST=`extract_auditfile | grep -v '^#' | $pkg_version -T "$PKGNAME" -`; then
+	if VLIST=`extract_auditfile | awk -F\| '
+			/^(#|\$)/ { next }
+			$2 !~ /'"$opt_restrict"'/ { next }
+			{ print }
+		' | $pkg_version -T "$PKGNAME" -`; then
 		echo "$VLIST" | awk -F\| '{
 			print "Affected package: '$PKGNAME' (matched by " $1 ")"
 			print "Type of problem: " $3 "."
@@ -332,6 +343,7 @@ opt_dbversion=false
 opt_fetch=false
 opt_file=
 opt_quiet=false
+opt_restrict=
 opt_verbose=false
 opt_version=false
 opt_expiry=
@@ -340,7 +352,7 @@ if [ $# -eq 0 ] ; then
 	opt_audit=true
 fi
 
-while getopts aCdf:FqvVX: opt; do
+while getopts aCdf:Fqr:vVX: opt; do
 	case "$opt" in
 	a)
 		opt_audit=true;;
@@ -354,6 +366,8 @@ while getopts aCdf:FqvVX: opt; do
 		opt_fetch=true;;
 	q)
 		opt_quiet=true;;
+	r)
+		opt_restrict="$OPTARG";;
 	v)
 		opt_verbose=true;;
 	V)
