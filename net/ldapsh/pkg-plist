@@ -13,5 +13,6 @@ etc/LdapConfig.pl.sample
 %%SITE_PERL%%/Net/LDAP/Shell/Desc.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Schema.pm
 %%SITE_PERL%%/Net/LDAP/Shell/Util.pm
+%%DOCSDIR%%/COMMANDS
 @dirrm %%SITE_PERL%%/Net/LDAP/Shell/Commands
 @dirrm %%SITE_PERL%%/Net/LDAP/Shell
