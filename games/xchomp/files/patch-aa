@@ -1,19 +1,17 @@
-*** Imakefile.orig	Mon Apr 23 05:50:51 1990
---- Imakefile	Wed Jan  4 00:23:19 1995
-***************
-*** 2,8 ****
-  #include BandAidCompiler
-  #endif
-  
-! DEFINES = -DX11
-  INCLUDES = -I$(TOP) -I$(TOP)/X11
-  DEPLIBS = $(DEPXLIB)
-  LOCAL_LIBRARIES = $(XLIB)
---- 2,8 ----
-  #include BandAidCompiler
-  #endif
-  
-! DEFINES = -DX11 -DFRAME_DELAY=40000
-  INCLUDES = -I$(TOP) -I$(TOP)/X11
-  DEPLIBS = $(DEPXLIB)
-  LOCAL_LIBRARIES = $(XLIB)
+--- Imakefile.orig	Fri Mar 18 14:16:10 1994
++++ Imakefile	Wed Nov  1 09:32:17 2000
+@@ -2,7 +2,7 @@
+ #include BandAidCompiler
+ #endif
+ 
+-DEFINES = -DX11
++DEFINES = -DX11 -DFRAME_DELAY=40000
+ INCLUDES = -I$(TOP) -I$(TOP)/X11
+ DEPLIBS = $(DEPXLIB)
+ LOCAL_LIBRARIES = $(XLIB)
+@@ -11,4 +11,4 @@
+ SRCS = contact.c demo.c drivers.c main.c maze.c props.c resources.c status.c
+ OBJS = contact.o demo.o drivers.o main.o maze.o props.o resources.o status.o
+ 
+-ComplexProgramTarget(xchomp)
++ComplexProgramTargetNoMan(xchomp)
