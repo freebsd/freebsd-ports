@@ -713,6 +713,7 @@
     SUBDIR += vtun
     SUBDIR += wais
     SUBDIR += wakeonlan
+    SUBDIR += warppipe
     SUBDIR += whois
     SUBDIR += widentd
     SUBDIR += wistumbler2
