@@ -1,11 +1,11 @@
---- configure.orig	Sun Dec 20 00:46:10 1998
-+++ configure	Sun Feb 21 22:26:48 1999
-@@ -812,7 +812,7 @@
-     esac
-   done
+--- configure.bak	Mon Oct 18 00:00:03 1999
++++ configure	Sun Nov 21 05:44:06 1999
+@@ -1061,7 +1061,7 @@
+       esac
+     done
  
--  exec < /dev/tty
-+  #exec < /dev/tty
-   rm $tmpfile
+-    exec < /dev/tty
++#    exec < /dev/tty
+     rm $tmpfile
+   fi
  
-   if test -n "$font1"
