@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.111 1998/12/26 15:56:21 peter Exp $
+# $Id: Makefile,v 1.112 1999/01/07 21:32:04 obrien Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
+    SUBDIR += amaya
     SUBDIR += analog
     SUBDIR += apache12
     SUBDIR += apache12-fp
