@@ -1,1 +1,3 @@
 bin/lupe
+share/doc/lupe/lupe.doc
+@dirrm share/doc/lupe
