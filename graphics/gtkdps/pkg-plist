@@ -1,14 +1,21 @@
 bin/gtkDPS-config
 include/gtkDPS/gdkDPS.h
+include/gtkDPS/gdkDPSfont.h
+include/gtkDPS/gdkDPSgeometry.h
+include/gtkDPS/gdkDPSline.h
 include/gtkDPS/gtkDPS.h
 include/gtkDPS/gtkDPSarea.h
 include/gtkDPS/gtkDPScontext.h
-include/gtkDPS/gdkDPSfont.h
 include/gtkDPS/gtkDPSfontsel.h
+include/gtkDPS/gtkDPSintl.h
+include/gtkDPS/gtkDPSlinesel.h
+include/gtkDPS/gtkDPSpaintsel.h
 include/gtkDPS/gtkDPSwidget.h
+include/gtkDPS/parseAFM.h
 lib/libgtkDPS.a
 lib/libgtkDPS.so
 lib/libgtkDPS.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/aclocal/gtkDPS.m4
 @dirrm include/gtkDPS
