@@ -1,0 +1,9 @@
+--- ../bioperl-ext-06/Bio/Ext/Align/libs/makefile.orig	Thu Sep 16 15:33:08 1999
++++ ../bioperl-ext-06/Bio/Ext/Align/libs/makefile	Fri Jul 28 11:57:27 2000
+@@ -47,5 +47,5 @@
+ # For NetBSD or Sun (solaris) installs, add -fPIC to the CFLAGS lines
+ #
+ 
+-CFLAGS = -c -O
++CFLAGS+= -c -O -fPIC
+ CC     = cc
