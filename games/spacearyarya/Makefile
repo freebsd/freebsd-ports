@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spacearyarya
-PORTVERSION=	0.3.0
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://www2.mwnet.or.jp/~fc3srx7/download/
 DISTNAME=	SpaceAryarya-KXL-${PORTVERSION}
