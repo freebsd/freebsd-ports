@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/CDDB/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDDB/File/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CDDB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDDB/File
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CDDB 2>/dev/null || true

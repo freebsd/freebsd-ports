@@ -170,6 +170,7 @@
     SUBDIR += osalp
     SUBDIR += p5-Audio-CD
     SUBDIR += p5-CDDB
+    SUBDIR += p5-CDDB-File
     SUBDIR += p5-CDDB_get
     SUBDIR += p5-MP3-ID3v1Tag
     SUBDIR += p5-MP3-Info

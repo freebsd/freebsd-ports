@@ -1,0 +1,6 @@
+This module provides an interface for extracting data from CDDB-format data
+files, as used by freedb.
+
+It does not read data from your CD, or submit information to freedb.
+
+WWW: http://search.cpan.org/search?dist=CDDB-File
