@@ -1,0 +1,11 @@
+--- ext/Makefile.in.orig	Sat Feb 12 09:44:24 2005
++++ ext/Makefile.in	Sat Feb 12 09:44:34 2005
+@@ -1,7 +1,7 @@
+ 
+ @SET_MAKE@
+ SUBDIRS= auxsys threads uvector charconv binary net termios \
+-         fcntl sxml syslog dbm mt-random digest vport
++         fcntl syslog dbm mt-random digest vport
+ 
+ CONFIG_GENERATED = Makefile Makefile.ext
+ 
