@@ -43,7 +43,7 @@ if [ -f $WRKDIR/.cdrom ]; then
   fi
 else
   X11FIXES=`cat $WRKDIR/.ftp`
-  pl=01
+  pl=12
 fi
 
 echo -n "==> applying XC patches (please wait)"
