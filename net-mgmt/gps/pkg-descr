@@ -1,0 +1,13 @@
+The aim of Ghost Port Scan is to provide administrators and pen-testers
+with a tool that allow them to easily test firewalls and get information
+from a remote host.
+
+GPS is a port scanner and a firewall rules disclosure (FWRD) tool, which
+uses IP spoofing, ARP poisoning and some other stratagems in order to
+perform a stealth and untrackable information collect.
+
+As far as GPS needs to sniff the responses from the target host, it
+requires to be run using a loopback or an ethernet interface (including
+cable modem).
+
+WWW: http://gps.sourceforge.net/
