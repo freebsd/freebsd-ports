@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-DBSchema
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -24,16 +24,19 @@ MAN3=	DBIx::DBSchema.3 DBIx::DBSchema::ColGroup.3 \
 	DBIx::DBSchema::ColGroup::Index.3 DBIx::DBSchema::ColGroup::Unique.3 \
 	DBIx::DBSchema::Column.3 DBIx::DBSchema::DBD.3 \
 	DBIx::DBSchema::DBD::mysql.3 DBIx::DBSchema::DBD::Pg.3 \
-	DBIx::DBSchema::DBD::Sybase.3 DBIx::DBSchema::Table.3
+	DBIx::DBSchema::DBD::Sybase.3 DBIx::DBSchema::Table.3 \
+	DBIx::DBSchema::DBD::Oracle.3
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+.else
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.endif
 .endif
 
 .include <bsd.port.post.mk>
