@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	nInvaders
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	games
-MASTER_SITES=	http://freebsdcluster.org/~mich/software/
+MASTER_SITES=	http://dettus.dyndns.org/ninvaders/
 
 MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	The nIvaders game is a Space Invaders clone for ncurses
 
+WRKSRC=		${WRKDIR}/ninvaders-${PORTVERSION}
 USE_REINPLACE=	yes
 
 post-patch:
