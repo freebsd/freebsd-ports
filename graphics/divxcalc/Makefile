@@ -13,7 +13,7 @@ MASTER_SITES=	http://members.ams.chello.nl/r.slooten2/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/devel/automake14
+BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
@@ -28,7 +28,7 @@ post-patch:
 
 pre-configure:
 .for file in config.guess config.sub install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/automake/${file} ${WRKSRC}
+	@${LN} -sf ${LOCALBASE}/share/automake14/${file} ${WRKSRC}
 .endfor
 
 .include <bsd.port.mk>
