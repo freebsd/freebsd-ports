@@ -35,6 +35,6 @@ CONFIGURE_ARGS=	--with-xvid-as-decoder
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

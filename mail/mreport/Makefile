@@ -19,7 +19,7 @@ MAN8=		mreport.8
 post-patch:
 	@${REINPLACE_CMD} -e "s/^.TH mreport 1/.TH mreport 8/g; s/^.LO 1/.LO 8/g;" \
 		${WRKSRC}/mreport.1
-	@${REINPLACE_CMD} -E -e "s/^CC.+//g; s/-Wall -c -O2/${CFLAGS} -c/g;" \
+	@${REINPLACE_CMD} -E -e "s/^CC.+//g; s|-Wall -c -O2|${CFLAGS} -c|g;" \
 		${WRKSRC}/Makefile
 
 do-install:

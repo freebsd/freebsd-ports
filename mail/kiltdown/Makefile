@@ -27,8 +27,8 @@ BUILD_ENV+=		PATH=${PATH}:${X11BASE}/bin
 post-patch:
 	@${MV} ${WRKSRC}/configs/bsd-generic ${WRKSRC}/configs/bsd-generic.sed
 	${SED} \
-	 -e "s/SYS_CFLAGS=-pthread/SYS_CFLAGS=${PTHREAD_CFLAGS} ${CFLAGS}/" \
-	 -e "s/SYS_LDFLAGS=-pthread/SYS_LDFLAGS=${PTHREAD_LIBS} ${LDFLAGS}/" \
+	 -e "s|SYS_CFLAGS=-pthread|SYS_CFLAGS=${PTHREAD_CFLAGS} ${CFLAGS}|" \
+	 -e "s|SYS_LDFLAGS=-pthread|SYS_LDFLAGS=${PTHREAD_LIBS} ${LDFLAGS}|" \
 		${WRKSRC}/configs/bsd-generic.sed \
 		> ${WRKSRC}/configs/bsd-generic
 

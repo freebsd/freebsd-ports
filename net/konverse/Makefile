@@ -25,10 +25,10 @@ CONFIGURE_ARGS+=--with-extra-includes=${LOCALBASE}/include \
 		--with-qt-libraries=${QT_PREFIX}/lib
 
 pre-patch:
-	${REINPLACE_CMD} -e 's/-lqt/-lqt-mt '${PTHREAD_LIBS}'/' \
+	${REINPLACE_CMD} -e 's|-lqt|-lqt-mt ${PTHREAD_LIBS}|' \
 		-e 's/libqt\.\*/libqt-mt.*/' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's/\(LDADD.*\)-ldl/\1/' \
-		-e 's/-lqt/'${PTHREAD_LIBS}'/' ${WRKSRC}/konverse/Makefile.in
+		-e 's|-lqt|${PTHREAD_LIBS}|' ${WRKSRC}/konverse/Makefile.in
 	${REINPLACE_CMD} -e 's/\(QDateTime.*\)timezone/\1local-\>tm_gmtoff/g' \
 		${WRKSRC}/konverse/jabbercore.cpp
 .for f in konverse/rostertree.h konverse/dlgchat.h

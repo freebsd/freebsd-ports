@@ -43,7 +43,7 @@ post-patch:
 .endfor
 
 post-configure:
-	${SED} -e "s/\(objc_threaded:=\).*/\1 ${PTHREAD_LIBS}/" \
+	${SED} -e "s|\(objc_threaded:=\).*|\1 ${PTHREAD_LIBS}|" \
 		< ${WRKSRC}/config.make > ${WRKSRC}/config.make.new
 	${MV} ${WRKSRC}/config.make.new ${WRKSRC}/config.make
 

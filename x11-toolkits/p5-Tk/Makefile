@@ -128,8 +128,8 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-configure:
 	@${PERL} -i -p \
-		-e 's/^(CC = ).*/$$1 ${CC}/;' \
-		-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' \
+		-e 's|^(CC = ).*|$$1 ${CC}|;' \
+		-e 's|^(CCFLAGS = ).*|$$1 ${CFLAGS}|' \
 		`${FIND} ${WRKSRC} -name Makefile`
 
 .include <bsd.port.mk>
