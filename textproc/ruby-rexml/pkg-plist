@@ -75,6 +75,9 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/XMLDecl.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/XPath.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/XPath.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/graph.png
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/graph.ps
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/graph.svg
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/index.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/style.css

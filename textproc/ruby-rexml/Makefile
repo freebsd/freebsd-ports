@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rexml
-PORTVERSION=	1.1a
+PORTVERSION=	1.1a3
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.germane-software.com/~ser/software/archives/
+MASTER_SITES=	http://www.germane-software.com/~ser/Software/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -22,9 +22,6 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		README index.html tutorial.html api
-
-post-extract:
-	find ${WRKSRC} -type d -name CVS | xargs ${RM} -rf
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
