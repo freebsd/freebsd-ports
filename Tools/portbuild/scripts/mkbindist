@@ -81,13 +81,13 @@ fi
 date '+%Y%m%d' > var/db/port.mkversion
 
 rm -f kernel.GENERIC
-rm -f /usr/lib/aout/lib*_p.a
 
 mkdir ${tmpdir}/var/run
 
 chroot ${tmpdir} /sbin/ldconfig /usr/lib
 if [ "${arch}" = "i386" ]; then
 	chroot ${tmpdir} /sbin/ldconfig -aout /usr/lib/aout
+	rm -f /usr/lib/aout/lib*_p.a
 fi
 #sed -e "s/%%KERNEL%%/${kernel}/g" ${here}/dokernel > ${tmpdir}/dokernel
 
