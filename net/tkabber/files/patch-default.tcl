@@ -1,10 +1,10 @@
---- default.tcl.orig	Fri Oct 17 17:01:09 2003
-+++ default.tcl	Fri Oct 17 17:02:24 2003
-@@ -4,8 +4,8 @@
+--- default.tcl.orig	Sun Jan 25 21:49:09 2004
++++ default.tcl	Sun Jan 25 21:49:30 2004
+@@ -23,8 +23,8 @@
  
  set loginconf(user) ""
  set loginconf(password) ""
--set loginconf(resource) test
+-set loginconf(resource) tkabber
 -set loginconf(server) localhost
 +set loginconf(resource) TKabber
 +set loginconf(server) jabber.ru
