@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	espgs
 DISTNAME=		espgs-${PORTVERSION}-source
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Postscript interpreter for CUPS printing to non-PS printers
 
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base

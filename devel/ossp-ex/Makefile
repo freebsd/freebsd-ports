@@ -15,7 +15,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/ex/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OSSP ex is a small exception handling library for use in C
 
 USE_GMAKE=	yes

@@ -15,7 +15,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/l2/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 
 USE_GMAKE=	yes

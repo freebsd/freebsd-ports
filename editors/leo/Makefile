@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}.zip ${SBOOKFILE} \
 	${EXAMPLESFILES} ${WEBDOCSFILE} ${LEODOCSFILE}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	alane@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced outline editor
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter

@@ -14,7 +14,7 @@ PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 
 INSTALLS_SHLIB=	yes

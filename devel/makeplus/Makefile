@@ -14,7 +14,7 @@ PORTEPOCH=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of GNU Make rules for building packages with gmake
 
 USE_GMAKE=	yes
