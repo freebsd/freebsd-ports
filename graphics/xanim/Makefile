@@ -1,48 +1,38 @@
 # New ports collection makefile for:	xanim
-# Version required:     2.70.6.4
+# Version required:     2.80.1
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.17 1998/11/21 07:27:36 steve Exp $
+# $Id: Makefile,v 1.18 1999/03/31 13:32:24 flathill Exp $
 #
 
 DISTNAME=       xanim2801
 PKGNAME=        xanim-2.80.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
-		ftp://xanim.va.pubnix.com/modules/
-DISTFILES=	${EXTRACT_ONLY} ${EXTRA_FILES}
+		ftp://xanim.va.pubnix.com/dlls/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-EXTRACT_ONLY=   ${DISTNAME}.tar.gz
+EXTRA_FILES=    vid_cvid_2.1_freebsdELFx86.tgz \
+		vid_cyuv_1.0_freebsdELFx86.tgz \
+		vid_h261_1.0_freebsdELFx86.tgz \
+		vid_h263_1.0_freebsdELFx86.tgz \
+		vid_iv32_2.1_freebsdELFx86.tgz \
+		vid_iv41_1.1_freebsdELFx86.tgz \
+		vid_iv50_1.0_freebsdELFx86.tgz
 USE_IMAKE=	yes
 MAN1=		xanim.1
-MAKE_ENV=	XA_IV32_DEF=-DXA_INDEO \
-		XA_CVID_DEF=-DXA_CINEPAK \
-		XA_CYUV_DEF=-DXA_CYUV
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "aout"
-EXTRA_FILES=    xa2.0_cvid_netbsd386.o.Z xa2.0_iv32_netbsd386.o.Z \
-		xa1.0_cyuv_netbsd386.o.Z
-MAKE_ENV+=	XA_IV32_LIB=xa2.0_cvid_netbsd386.o \
-		XA_CVID_LIB=xa2.0_iv32_netbsd386.o \
-		XA_CYUV_LIB=xa1.0_cyuv_netbsd386.o
-.else
-EXTRA_FILES=    xa2.0_cvid_linuxELF.o.Z xa2.0_iv32_linuxELF.o.Z \
-		xa1.0_cyuv_linuxELF.o.Z
-MAKE_ENV+=	XA_IV32_LIB=xa2.0_cvid_linuxELF.o \
-		XA_CVID_LIB=xa2.0_iv32_linuxELF.o \
-		XA_CYUV_LIB=xa1.0_cyuv_linuxELF.o
-.endif
+DLLDIR=		${PREFIX}/lib/X11/xanim
 
 post-extract:
-	@for file in ${EXTRA_FILES}; do \
-	  ${CP} ${DISTDIR}/$$file ${WRKSRC}; \
-	  uncompress ${WRKSRC}/$$file; \
-	done
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
 
-.include <bsd.port.post.mk>
+post-install:
+	@${MKDIR} ${DLLDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.readme ${DLLDIR}
+	${INSTALL_DATA} ${WRKDIR}/*.xa ${DLLDIR}
+
+.include <bsd.port.mk>
