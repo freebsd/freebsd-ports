@@ -1,0 +1,86 @@
+bin/atlas-config
+lib/libAtlas.la
+lib/libAtlas.so.0
+lib/libAtlas.a
+lib/libAtlasObjects.la
+lib/libAtlasObjects.so.0
+lib/libAtlasObjects.a
+lib/libAtlasObjectsEntity.la
+lib/libAtlasObjectsEntity.so.0
+lib/libAtlasObjectsEntity.a
+lib/libAtlasObjectsOperation.so.0
+lib/libAtlasObjectsOperation.la
+lib/libAtlasObjectsOperation.a
+lib/libAtlasMessage.so.0
+lib/libAtlasMessage.la
+lib/libAtlasMessage.a
+lib/libAtlasCodecs.so.0
+lib/libAtlasCodecs.la
+lib/libAtlasCodecs.a
+lib/libAtlasNet.so.0
+lib/libAtlasNet.la
+lib/libAtlasNet.a
+lib/libAtlasFunky.so.0
+lib/libAtlasFunky.la
+lib/libAtlasFunky.a
+include/Atlas/Bridge.h
+include/Atlas/Codec.h
+include/Atlas/Negotiate.h
+include/Atlas/EncoderBase.h
+include/Atlas/Task.h
+include/Atlas/Codec_impl.h
+include/Atlas/Objects/Root.h
+include/Atlas/Objects/Decoder.h
+include/Atlas/Objects/Encoder.h
+include/Atlas/Objects/Entity/Account.h
+include/Atlas/Objects/Entity/Admin.h
+include/Atlas/Objects/Entity/AdminEntity.h
+include/Atlas/Objects/Entity/Game.h
+include/Atlas/Objects/Entity/GameEntity.h
+include/Atlas/Objects/Entity/Player.h
+include/Atlas/Objects/Entity/RootEntity.h
+include/Atlas/Objects/Operation/Action.h
+include/Atlas/Objects/Operation/Appearance.h
+include/Atlas/Objects/Operation/Combine.h
+include/Atlas/Objects/Operation/Communicate.h
+include/Atlas/Objects/Operation/Create.h
+include/Atlas/Objects/Operation/Delete.h
+include/Atlas/Objects/Operation/Disappearance.h
+include/Atlas/Objects/Operation/Divide.h
+include/Atlas/Objects/Operation/Error.h
+include/Atlas/Objects/Operation/Feel.h
+include/Atlas/Objects/Operation/Get.h
+include/Atlas/Objects/Operation/Imaginary.h
+include/Atlas/Objects/Operation/Info.h
+include/Atlas/Objects/Operation/Listen.h
+include/Atlas/Objects/Operation/Login.h
+include/Atlas/Objects/Operation/Logout.h
+include/Atlas/Objects/Operation/Look.h
+include/Atlas/Objects/Operation/Move.h
+include/Atlas/Objects/Operation/Perceive.h
+include/Atlas/Objects/Operation/Perception.h
+include/Atlas/Objects/Operation/RootOperation.h
+include/Atlas/Objects/Operation/Set.h
+include/Atlas/Objects/Operation/Sight.h
+include/Atlas/Objects/Operation/Smell.h
+include/Atlas/Objects/Operation/Sniff.h
+include/Atlas/Objects/Operation/Sound.h
+include/Atlas/Objects/Operation/Talk.h
+include/Atlas/Objects/Operation/Touch.h
+include/Atlas/Message/Object.h
+include/Atlas/Message/Layer.h
+include/Atlas/Message/Encoder.h
+include/Atlas/Message/DecoderBase.h
+include/Atlas/Message/QueuedDecoder.h
+include/Atlas/Net/Stream.h
+include/Atlas/Net/Loopback.h
+include/Atlas/Funky/Encoder.h
+share/aclocal/atlas.m4
+@dirrm include/Atlas/Objects/Entity
+@dirrm include/Atlas/Objects/Operation
+@dirrm include/Atlas/Message
+@dirrm include/Atlas/Objects
+@dirrm include/Atlas/Net
+@dirrm include/Atlas/Funky
+@dirrm include/Atlas
+@dirrm include/varconf
