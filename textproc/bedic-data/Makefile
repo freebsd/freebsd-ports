@@ -28,8 +28,10 @@ pre-fetch:
 		@${ECHO_MSG} "should be installed; currently, it is set to ${DICTIONARIES}"
 		@${ECHO_MSG} "Set it to one or more of the following: ${DICT_ALL}"
 
+pre-install:
+		@${ECHO_CMD} ${DICTIONARIES} | ${TR} ' ' '\n' | ${SED} 's,^,share/,' > ${PLIST}
+
 do-install:
-		${ECHO_CMD} ${DICTIONARIES} | ${TR} ' ' '\n' | ${SED} 's,^,share/,' > ${PLIST}
 		${MKDIR} ${DICT_DIR}
 		${INSTALL} ${DICTIONARIES:S,^,${WRKSRC}/,} ${DICT_DIR}/
 
