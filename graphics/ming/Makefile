@@ -19,6 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	NOPROFILE=true
+INSTALLS_SHLIB=	yes
 
 UTILS=		gif2dbl \
 		gif2mask \
