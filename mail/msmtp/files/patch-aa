@@ -1,0 +1,37 @@
+*** Makefile.orig	Thu Aug 21 22:28:13 2003
+--- Makefile	Thu Aug 21 22:28:44 2003
+***************
+*** 3,18 ****
+  # 
+  
+  # GNU/Linux and GNU/Hurd
+- CC = gcc
+- CFLAGS = -DHAVE_VASPRINTF -DHAVE_GETOPT_LONG -D_GNU_SOURCE -Wall -O2
+- LFLAGS = -lssl -lcrypto -s
+- EXTRAOBJS = 
+- 
+- # FreeBSD, NetBSD, OpenBSD
+  #CC = gcc
+! #CFLAGS = -DHAVE_VASPRINTF -DHAVE_GETOPT_LONG -Wall -O2
+  #LFLAGS = -lssl -lcrypto -s
+  #EXTRAOBJS = 
+  
+  # SunOS
+  #CC = cc
+--- 3,18 ----
+  # 
+  
+  # GNU/Linux and GNU/Hurd
+  #CC = gcc
+! #CFLAGS = -DHAVE_VASPRINTF -DHAVE_GETOPT_LONG -D_GNU_SOURCE -Wall -O2
+  #LFLAGS = -lssl -lcrypto -s
+  #EXTRAOBJS = 
++ 
++ # FreeBSD, NetBSD, OpenBSD
++ CC = gcc
++ CFLAGS = -DHAVE_VASPRINTF -DHAVE_GETOPT_LONG -Wall -O2 -I${LOCALBASE}/include
++ LFLAGS = -lssl -lcrypto -s -L${LOCALBASE}/lib
++ EXTRAOBJS = getopt.o getopt1.o
+  
+  # SunOS
+  #CC = cc
