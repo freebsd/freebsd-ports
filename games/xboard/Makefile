@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}
@@ -18,5 +18,9 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 STRIP=
 MAN6=		xboard.6 cmail.6 zic2xpm.6
+
+pre-patch:
+	@${PERL} -pi.orig -e 's|\$$\(prefix\)/share/info|\@infodir\@|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
