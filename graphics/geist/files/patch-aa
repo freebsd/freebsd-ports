@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Thu Oct 26 21:29:01 2000
++++ Makefile.in	Thu Oct 26 22:25:07 2000
+@@ -71,10 +71,10 @@
+ XML_CFLAGS = @XML_CFLAGS@
+ XML_LIBS = @XML_LIBS@
+ 
+-SUBDIRS = pixmaps src
++SUBDIRS = src
+ 
+ docs_DATA = README AUTHORS ChangeLog TODO
+-docsdir = $(prefix)/doc/geist
++docsdir = $(datadir)/doc/geist
+ 
+ EXTRA_DIST = geist.spec $(docs_DATA)
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -384,15 +384,15 @@
+ 
+ 
+ install-data-local:
+-	@$(NORMAL_INSTALL)
+-	if test -d $(srcdir)/pixmaps; then \
+-	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
+-	  for pixmap in $(srcdir)/pixmaps/*; do \
+-	    if test -f $$pixmap; then \
+-	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
+-	    fi \
+-	  done \
+-	fi
++#	@$(NORMAL_INSTALL)
++#	if test -d $(srcdir)/pixmaps; then \
++#	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/pixmaps; \
++#	  for pixmap in $(srcdir)/pixmaps/*; do \
++#	    if test -f $$pixmap; then \
++#	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/pixmaps; \
++#	    fi \
++#	  done \
++#	fi
+ 
+ dist-hook:
+ 	if test -d pixmaps; then \

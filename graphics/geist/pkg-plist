@@ -1,0 +1,27 @@
+bin/geist
+share/doc/geist/AUTHORS
+share/doc/geist/ChangeLog
+share/doc/geist/README
+share/doc/geist/TODO
+share/geist/fonts/20thcent.ttf
+share/geist/fonts/cinema.ttf
+share/geist/fonts/droid.ttf
+share/geist/fonts/goodtime.ttf
+share/geist/fonts/grunge.ttf
+share/geist/fonts/joystix.ttf
+share/geist/fonts/morpheus.ttf
+share/geist/fonts/notepad.ttf
+share/geist/fonts/soulpapa.ttf
+share/geist/images/bg.png
+share/geist/images/bulb.png
+share/geist/images/elogo.png
+share/geist/images/globe.png
+share/geist/images/mail.png
+share/geist/images/mush.png
+share/geist/images/paper.png
+share/geist/test.xml
+share/geist/text_test.xml
+@dirrm share/doc/geist
+@dirrm share/geist/fonts
+@dirrm share/geist/images
+@dirrm share/geist

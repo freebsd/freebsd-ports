@@ -44,6 +44,7 @@
     SUBDIR += gd
     SUBDIR += gdk-pixbuf
     SUBDIR += gdtclft
+    SUBDIR += geist
     SUBDIR += geomview
     SUBDIR += gfont
     SUBDIR += gif2png
