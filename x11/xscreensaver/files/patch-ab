@@ -1,9 +1,9 @@
---- configure.Dist	Sun Feb 24 01:56:28 2002
-+++ configure	Sun Feb 24 22:45:24 2002
-@@ -10309,13 +10309,13 @@
- 
+--- configure.orig	Mon Mar 18 15:42:35 2002
++++ configure	Sat Mar 23 23:58:01 2002
+@@ -10728,13 +10728,13 @@
  # Now that we know whether we have Gnome, we can decide where the XML
  # config files get installed.
+ #
 -if test -z "$HACK_CONF_DIR" ; then
 -  if test -n "$GNOME_DATADIR" ; then
 -    HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
@@ -19,5 +19,5 @@
 +#  fi
 +#fi
  
- # canonicalize slashes.
- HACK_CONF_DIR=`echo "${HACK_CONF_DIR}" | sed 's@/$@@;s@//*@/@g'`
+ 
+ 
