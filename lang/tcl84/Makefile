@@ -15,13 +15,11 @@ MAINTAINER=	jseger@FreeBSD.org
 
 Y2K=            http://www.scriptics.com/Y2K.html
 
-FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
-PKGINSTALL=     ${PORTSDIR}/lang/tcl80/pkg/INSTALL.tclsh
+PKGINSTALL=     ${PKGDIR}/INSTALL.tclsh
 
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 

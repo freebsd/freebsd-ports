@@ -14,14 +14,13 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_2/
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
-FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk82.so.1
-PKGINSTALL=     ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
+PKGINSTALL=     ${PKGDIR}/INSTALL.wish
 
 PLIST_SUB=	TK_VER=8.2 SHORT_TK_VER=82
 
