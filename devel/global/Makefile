@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.6.1
+PORTVERSION=	4.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,16 @@ COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gctags.1 global.1 gozilla.1 gtags.1 htags.1
 INFO=		global
 
+post-patch:
+	${REINPLACE_CMD} -E 's,^(gtags_DATA = )AUTHORS .* THANKS( \\$$),\1\2,' ${WRKSRC}/Makefile.in
+
 post-install:
-	install-info ${PREFIX}/info/global.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/global
 .for file in AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README \
