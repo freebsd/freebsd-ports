@@ -41,11 +41,10 @@ do-install:
 		${INSTALL_PROGRAM} analog ${PREFIX}/bin
 	cd ${WRKSRC} && \
 	for file in analog.cfg ; do \
-	    if [ -f ${PREFIX}/etc/$$file ] ; then \
-		${INSTALL_DATA} -m 644 $$file ${PREFIX}/etc/$$file-dist ; \
-	    else \
+	    if [ ! -f ${PREFIX}/etc/$$file ] ; then \
 		${INSTALL_DATA} -m 644 $$file ${PREFIX}/etc/$$file ; \
 	    fi ; \
+	${INSTALL_DATA} -m 644 $$file ${PREFIX}/etc/$$file-dist ; \
 	done
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/docs && \
