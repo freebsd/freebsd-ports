@@ -809,6 +809,7 @@ cabextract	ports/archivers/cabextract
 cacti		ports/net/cacti
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
+cake		ports/games/cake
 cal3d		ports/graphics/cal3d
 calamaris	ports/www/calamaris
 calc		ports/math/calc
