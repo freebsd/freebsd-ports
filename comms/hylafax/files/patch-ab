@@ -1,9 +1,12 @@
---- ./configure.org	Tue Nov 26 15:20:17 1996
-+++ ./configure	Wed May 28 21:55:16 1997
-@@ -1,1 +1,1 @@
+--- configure.orig	Wed Nov 27 08:20:17 1996
++++ configure	Mon Feb  2 10:21:51 1998
+@@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/usr/local/bin/bash
-@@ -239,7 +241,7 @@
+ #	$Id: configure,v 1.401 1996/11/23 17:28:45 sam Rel $
+ #
+ # HylaFAX Facsimile Software
+@@ -239,7 +239,7 @@
  test -d /usr/ucb && PATH=$PATH:/usr/ucb			# Sun and others
  test -d /usr/contrib/bin && PATH=$PATH:/usr/contrib/bin	# BSDi
  test -d /usr/5bin && PATH=/usr/5bin:$PATH:/usr/etc	# Sun and others
@@ -12,7 +15,20 @@
  PATH=$PATH:$OPATH
  
  POSIXLY_CORRECT=1; export POSIXLY_CORRECT		# disable GNU extensions
-@@ -3928,7 +3930,8 @@
+@@ -1662,6 +1662,12 @@
+ 			    CONFIG_OPENFIFO=O_RDONLY;
+ 			fi
+ 			;;
++	*-freebsd*)	if releaseAtLeast 3.0; then
++			    CONFIG_OPENFIFO=O_RDWR;
++			else
++			    CONFIG_OPENFIFO=O_RDONLY;
++			fi
++ 			;;
+ 	*)		CONFIG_OPENFIFO=O_RDONLY;;
+ 	esac
+     }
+@@ -3928,7 +3934,8 @@
  	printConfig
  	checkForExecutable $PATH_SENDMAIL
  	checkForExecutable $PATH_GETTY
