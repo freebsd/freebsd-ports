@@ -1,6 +1,5 @@
-diff -ur src.orig/contrib/im/Xsi/config/X11.tmpl src/contrib/im/Xsi/config/X11.tmpl
---- src.orig/contrib/im/Xsi/config/X11.tmpl	Wed Oct 28 13:36:37 1998
-+++ config/X11.tmpl	Fri Oct 30 03:25:47 1998
+--- config/X11.tmpl.orig	Wed Oct 28 13:36:37 1998
++++ config/X11.tmpl	Sun Nov 22 01:24:46 1998
 @@ -417,7 +417,8 @@
  
  #define	WnnSpecialObjectRule(obj, depends, direct, define)	@@\
@@ -22,3 +21,11 @@ diff -ur src.orig/contrib/im/Xsi/config/X11.tmpl src/contrib/im/Xsi/config/X11.t
  #endif
  
         WNNOWNER = WnnOwner
+@@ -660,6 +663,7 @@
+ XCOMM for SDK
+ #define BuildWnn	YES
+ #define BuildJlib	YES
++#define InstallOnlyJlib	YES
+ 
+  EXTRA_INCLUDES =
+   EXTRA_DEFINES =

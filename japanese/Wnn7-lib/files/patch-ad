@@ -1,0 +1,14 @@
+--- ../Xsi.org/Wnn/Imakefile	Wed Oct 28 13:36:14 1998
++++ ./Wnn/Imakefile	Sun Nov 22 01:28:58 1998
+@@ -14,7 +14,11 @@
+ MakeSubdirs($(SUBDIRS))
+ DependSubdirs($(SUBDIRS))
+ 
++#if InstallOnlyJlib
++install::
++#else
+ install:: mkwnndir
++#endif
+ 
+ MakeDirectory(mkwnndir, $(DESTDIR)$(WNNWNNDIR))
+ MakeDirectory(mkwnndir, $(DESTDIR)$(JWNNWNNDIR))
