@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	freebase
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/1641/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2030/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	freeride-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	alecn2002@yandex.ru
