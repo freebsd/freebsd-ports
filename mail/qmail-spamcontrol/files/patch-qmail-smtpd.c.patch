@@ -1,0 +1,247 @@
+diff -ruN ./qmail-smtpd.c.patch ../galle/qmail-smtpd.c.patch
+--- ./qmail-smtpd.c.patch	Sun Jan 30 08:27:34 2005
++++ ../galle/qmail-smtpd.c.patch	Tue Feb  1 08:10:38 2005
+@@ -1,8 +1,6 @@
+---- qmail-smtpd.c.orig  1998-06-15
+-+++ qmail-smtpd.c       2005-01-31
+---- .././qmail-1.03/qmail-smtpd.c	Mon Jun 15 12:53:16 1998
+-+++ ../qmail-1.03.2312/qmail-smtpd.c	Sun Jan 30 11:24:25 2005
+-@@ -20,14 +20,51 @@
++--- qmail-smtpd.c.orig	Tue Feb  1 07:47:52 2005
+++++ qmail-smtpd.c	Tue Feb  1 08:08:28 2005
++@@ -20,14 +20,52 @@
+  #include "now.h"
+  #include "exit.h"
+  #include "rcpthosts.h"
+@@ -20,6 +18,7 @@
+ +#define CRAM_MD5
+ +#define AUTHSLEEP 5
+ +#define RECIPIENTS550
+++#define LOCALMFREQAUTH
+ +
+ +#define MIMETYPE_LEN 9
+ +#define LOADER_LEN 5
+@@ -55,7 +54,7 @@
+  int safewrite(fd,buf,len) int fd; char *buf; int len;
+  {
+    int r;
+-@@ -48,9 +85,6 @@
++@@ -48,9 +86,6 @@
+  void die_control() { out("421 unable to read controls (#4.3.0)\r\n"); flush(); _exit(1); }
+  void die_ipme() { out("421 unable to figure out my IP addresses (#4.3.0)\r\n"); flush(); _exit(1); }
+  void straynewline() { out("451 See http://pobox.com/~djb/docs/smtplf.html.\r\n"); flush(); _exit(1); }
+@@ -65,7 +64,7 @@
+  void err_unimpl() { out("502 unimplemented (#5.5.1)\r\n"); }
+  void err_syntax() { out("555 syntax error (#5.5.4)\r\n"); }
+  void err_wantmail() { out("503 MAIL first (#5.5.1)\r\n"); }
+-@@ -58,6 +92,114 @@
++@@ -58,6 +93,114 @@
+  void err_noop() { out("250 ok\r\n"); }
+  void err_vrfy() { out("252 send some mail, i'll try my best\r\n"); }
+  void err_qqt() { out("451 qqt failure (#4.3.0)\r\n"); }
+@@ -180,7 +179,7 @@
+  
+  
+  stralloc greeting = {0};
+-@@ -76,6 +218,7 @@
++@@ -76,6 +219,7 @@
+    smtp_greet("221 "); out("\r\n"); flush(); _exit(0);
+  }
+  
+@@ -188,7 +187,7 @@
+  char *remoteip;
+  char *remotehost;
+  char *remoteinfo;
+-@@ -85,10 +228,30 @@
++@@ -85,10 +229,30 @@
+  stralloc helohost = {0};
+  char *fakehelo; /* pointer into helohost, or 0 */
+  
+@@ -220,7 +219,7 @@
+  }
+  
+  int liphostok = 0;
+-@@ -97,6 +260,39 @@
++@@ -97,6 +261,41 @@
+  stralloc bmf = {0};
+  struct constmap mapbmf;
+  
+@@ -248,6 +247,8 @@
+ +char *localmfcheck;
+ +char *mfdnscheck;
+ +char *reqauth;
+++char *reqbrackets;
+++char *localmf_reqauth;
+ +
+ +int maxrcptcount = 0;
+ +int flaglocal = -1;
+@@ -260,7 +261,7 @@
+  void setup()
+  {
+    char *x;
+-@@ -111,17 +307,24 @@
++@@ -111,17 +310,24 @@
+    if (timeout <= 0) timeout = 1;
+  
+    if (rcpthosts_init() == -1) die_control();
+@@ -286,7 +287,7 @@
+    remoteip = env_get("TCPREMOTEIP");
+    if (!remoteip) remoteip = "unknown";
+    local = env_get("TCPLOCALHOST");
+-@@ -131,11 +334,70 @@
++@@ -131,11 +337,82 @@
+    if (!remotehost) remotehost = "unknown";
+    remoteinfo = env_get("TCPREMOTEINFO");
+    relayclient = env_get("RELAYCLIENT");
+@@ -338,6 +339,18 @@
+ +  qhpsi = env_get("QHPSI");
+ +  if (!qhpsi) qhpsi = "unknown";
+ +
+++  #ifdef LOCALMFREQAUTH
+++    localmf_reqauth = env_get("LOCALMFREQAUTH");
+++  #else
+++    localmf_reqauth = 0;
+++  #endif
+++
+++  #ifdef REQBRACKETS
+++    reqbrackets = env_get("REQBRACKETS");
+++  #else
+++    reqbrackets = 0;
+++  #endif
+++
+ +#ifdef RELAYMAILFROM
+ +  if (!relayclient) {
+ +    relaymailfromok = control_readfile(&relaymailfrom,"control/relaymailfrom",0);
+@@ -358,35 +371,21 @@
+  
+  int addrparse(arg)
+  char *arg;
+-@@ -151,12 +413,17 @@
++@@ -151,6 +428,8 @@
+    i = str_chr(arg,'<');
+    if (arg[i])
+      arg += i + 1;
+-+#ifdef REQBRACKETS
+-+  else
+++  else if (reqbrackets)
+ +    return 0;
+-+#else
+    else { /* partner should go read rfc 821 */
+      terminator = ' ';
+      arg += str_chr(arg,':');
+-     if (*arg == ':') ++arg;
+-     while (*arg == ' ') ++arg;
+-   }
+-+#endif
+- 
+-   /* strip source route */
+-   if (*arg == '@') while (*arg) if (*arg++ == ':') break;
+-@@ -199,12 +466,106 @@
++@@ -199,12 +478,106 @@
+  
+  int bmfcheck()
+  {
+ +  int i;
+-   int j;
+--  if (!bmfok) return 0;
+--  if (constmap(&mapbmf,addr.s,addr.len - 1)) return 1;
+--  j = byte_rchr(addr.s,addr.len,'@');
+--  if (j < addr.len)
+--    if (constmap(&mapbmf,addr.s + j,addr.len - j - 1)) return 1;
+++  int j;
+ +  int k = 0;
+ +  char subvalue;
+ +
+@@ -436,7 +435,12 @@
+ +int bhelocheck()
+ +{
+ +  int i;
+-+  int j;
++   int j;
++-  if (!bmfok) return 0;
++-  if (constmap(&mapbmf,addr.s,addr.len - 1)) return 1;
++-  j = byte_rchr(addr.s,addr.len,'@');
++-  if (j < addr.len)
++-    if (constmap(&mapbmf,addr.s + j,addr.len - j - 1)) return 1;
+ +  int k = 0;
+ +  char subvalue;
+ + 
+@@ -488,7 +492,7 @@
+    return 0;
+  }
+  
+-@@ -216,21 +577,126 @@
++@@ -216,21 +589,136 @@
+    return r;
+  }
+  
+@@ -583,6 +587,16 @@
+ +    }
+ +}
+ +
+++int mailfromallowed()
+++{
+++  int r;
+++
+++  r = rcpthosts(mailfrom.s,strlen(mailfrom.s));
+++  if (r == -1) die_control();
+++
+++  return ((r == 1) ? 0 : 1);
+++}
+++
+ +#ifdef RELAYMAILFROM
+ +int rmfcheck()
+ +{
+@@ -618,7 +632,7 @@
+  }
+  void smtp_rset()
+  {
+-@@ -240,28 +706,73 @@
++@@ -240,28 +728,74 @@
+  void smtp_mail(arg) char *arg;
+  {
+    if (!addrparse(arg)) { err_syntax(); return; }
+@@ -671,6 +685,7 @@
+ +    flagrcpt = rcptallowed();
+ +    if (!flagrcpt) { err_recipient("Reject::RCPT::Failed_Rcptto:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); flagerrcpts++; return; } 
+ +    if (reqauth) if (!flagauth) { err_authreq("Reject::ORIG::Missing_Auth:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
+++    if (localmf_reqauth && !flagauth && !mailfromallowed()) { err_authreq("Reject::ORIG::Local_MailFrom_Req_Auth:",remoteip,remotehost,helohost.s,mailfrom.s,addr.s); return; }
+    }
+ -  else
+ -    if (!addrallowed()) { err_nogateway(); return; }
+@@ -697,7 +712,7 @@
+  }
+  
+  
+-@@ -279,11 +790,69 @@
++@@ -279,11 +813,69 @@
+  substdio ssin = SUBSTDIO_FDBUF(saferead,0,ssinbuf,sizeof ssinbuf);
+  
+  struct qmail qqt;
+@@ -768,7 +783,7 @@
+    if (bytestooverflow)
+      if (!--bytestooverflow)
+        qmail_fail(&qqt);
+-@@ -316,8 +885,8 @@
++@@ -316,8 +908,8 @@
+          if (flagmaybex) if (pos == 7) ++*hops;
+          if (pos < 2) if (ch != "\r\n"[pos]) flagmaybey = 0;
+          if (flagmaybey) if (pos == 1) flaginheader = 0;
+@@ -778,7 +793,7 @@
+        if (ch == '\n') { pos = 0; flagmaybex = flagmaybey = flagmaybez = 1; }
+      }
+      switch(state) {
+-@@ -373,31 +942,275 @@
++@@ -373,31 +965,275 @@
+    if (!seenmail) { err_wantmail(); return; }
+    if (!rcptto.len) { err_wantrcpt(); return; }
+    seenmail = 0;
+@@ -1058,7 +1073,7 @@
+  , { "quit", smtp_quit, flush }
+  , { "helo", smtp_helo, flush }
+  , { "ehlo", smtp_ehlo, flush }
+-@@ -408,8 +1221,11 @@
++@@ -408,8 +1244,11 @@
+  , { 0, err_unimpl, flush }
+  } ;
+  
