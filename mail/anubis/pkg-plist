@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 sbin/anubis
-etc/rc.d/anubis.sh
+etc/rc.d/anubis.sh.sample
 @unexec install-info --delete %D/info/anubis.info %D/info/dir
 info/anubis.info
 @exec install-info %D/info/anubis.info %D/info/dir
@@ -13,10 +13,10 @@ info/anubis.info
 %%PORTDOCS%%@dirrm share/doc/anubis
 share/examples/anubis/1anubisrc
 share/examples/anubis/2anubisrc
-share/examples/anubis/redhat-defaultrc
 %%PAM%%share/examples/anubis/pam/anubis
 %%PAM%%share/examples/anubis/pam/anubis.allow
 %%PAM%%share/examples/anubis/pam/anubis.deny
 %%PAM%%@dirrm share/examples/anubis/pam
 @dirrm share/examples/anubis
 share/locale/fr/LC_MESSAGES/anubis.mo
+share/locale/tr/LC_MESSAGES/anubis.mo
