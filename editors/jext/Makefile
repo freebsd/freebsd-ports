@@ -6,57 +6,45 @@
 #
 
 PORTNAME=	jext
-PORTVERSION=	2.8.0.3
+PORTVERSION=	2.8.1.1
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.jext.org/ \
 		http://members.xoom.com/romainguy/
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX} swingall.jar
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} swingall.jar
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
 
-FETCH_BEFORE_ARGS=	-b
-
-EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}
-USE_ZIP=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
 
-JDK_VERSION=	1.1.8
 JAVAVM?=	${LOCALBASE}/bin/javavm
 
-.if defined(USE_JIT)
-RUN_DEPENDS+=	${LOCALBASE}/jdk${JDK_VERSION}/lib/${ARCH}/green_threads/libshujit.so:${PORTSDIR}/java/shujit
-JAVAJIT=	shujit
-.else
-JAVAJIT=
-.endif
-
 INSTSBDR=	${PREFIX}/share/java/jext
-DATATARG=	jext.jar icons plugins scripts xtools
 
-post-extract:
-		@${PERL} -pi -e "s.\x0D.." ${WRKSRC}/jext
+pre-patch:
+	@${PERL} -pi -e 's.\x0D..' ${WRKSRC}/bin/jext.sh
 
 do-configure:
-		@${PERL} -pi -e "s|%JAVAVM%|${JAVAVM}|g" ${WRKSRC}/jext
-		@${PERL} -pi -e "s|%JEXT_HOME%|${INSTSBDR}|g" ${WRKSRC}/jext
-		@${PERL} -pi -e "s|%JAVAJIT%|${JAVAJIT}|g" ${WRKSRC}/jext
-		@${PERL} -pi -e "s|%JFC%|${INSTSBDR}/swingall.jar|g" ${WRKSRC}/jext
+	@${PERL} -pi -e 's|%%JAVAVM%%|${JAVAVM}|g			; \
+			 s|%%JEXT_HOME%%|${INSTSBDR}|g			; \
+			 s|%%JFC%%|${INSTSBDR}/lib/swingall.jar|g'	  \
+			 ${WRKSRC}/bin/jext.sh
 
 do-install:
-		@${MKDIR} ${INSTSBDR}
-		@${INSTALL_SCRIPT} ${WRKSRC}/jext ${PREFIX}/bin
-		@(cd ${WRKSRC} && ${TAR} -c -f - ${DATATARG}) \
-			| (cd ${INSTSBDR} && ${TAR} --unlink -x -f -)
-		@${INSTALL_DATA} ${DISTDIR}/swingall.jar ${INSTSBDR}
+	@${MKDIR} ${INSTSBDR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/jext.sh ${PREFIX}/bin/jext
+	@(cd ${WRKSRC} && ${TAR} -c -f - LICENSE README bin lib) \
+		| (cd ${INSTSBDR} && ${TAR} --unlink -x -f -)
+	@${INSTALL_DATA} ${DISTDIR}/swingall.jar ${INSTSBDR}/lib
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${PREFIX}/share/doc/java/jext
-		@(cd ${WRKSRC}/doc && ${TAR} -c -f - * ) \
-			| (cd ${PREFIX}/share/doc/java/jext && ${TAR} --unlink -x -f -)
+	@${MKDIR} ${PREFIX}/share/doc/java/jext
+	@(cd ${WRKSRC}/docs && ${TAR} -c -f - * ) \
+		| (cd ${PREFIX}/share/doc/java/jext && ${TAR} --unlink -x -f -)
 .endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 bin/jext
-share/doc/java/jext/Copying.txt
 share/doc/java/jext/History.txt
+share/doc/java/jext/Perl5-Syntax.html
 share/doc/java/jext/index.html
 share/doc/java/jext/jext-console.html
 share/doc/java/jext/jext-editor.html
@@ -11,54 +11,66 @@ share/doc/java/jext/jext-menus-plugins.html
 share/doc/java/jext/jext-menus-search.html
 share/doc/java/jext/jext-menus-tools.html
 share/doc/java/jext/jext-menus.html
+share/doc/java/jext/jext-search.html
+share/doc/java/jext/jext-xinsert.html
 share/doc/java/jext/jext.gif
 share/doc/java/jext/stylesheet.css
-share/java/jext/icons/jext.ico
-share/java/jext/icons/jext.xpm
-share/java/jext/jext.jar
-share/java/jext/plugins/DawnServer.jar
-share/java/jext/plugins/DnD.jar
-share/java/jext/plugins/FastFind.jar
-share/java/jext/plugins/FastSyntax.jar
-share/java/jext/plugins/HTML.jar
-share/java/jext/plugins/HyperTyper.jar
-share/java/jext/plugins/JCompile.jar
-share/java/jext/plugins/Java.jar
-share/java/jext/plugins/Print.jar
-share/java/jext/scripts/CopyFile.jext-script
-share/java/jext/scripts/HelloWorld.jext-script
-share/java/jext/scripts/JavaCounter.jext-script
-share/java/jext/scripts/Rot13.jext-script
-share/java/jext/scripts/help-summary
-share/java/jext/scripts/help-summary-jext-only
-share/java/jext/scripts/lang/err/error
-share/java/jext/scripts/lang/loop/do
-share/java/jext/scripts/lang/loop/loops
-share/java/jext/scripts/lang/loop/subvariable
-share/java/jext/scripts/lang/misc/global
-share/java/jext/scripts/lang/misc/misc
-share/java/jext/scripts/lang/misc/package
-share/java/jext/scripts/lang/naming/naming
-share/java/jext/scripts/lang/stack/roll
-share/java/jext/scripts/lang/string/string
-share/java/jext/scripts/lang/test/if
-share/java/jext/scripts/lang/test/types
-share/java/jext/scripts/lang/util/random
-share/java/jext/scripts/lang/util/time
-share/java/jext/swingall.jar
-share/java/jext/xtools/xinsert.dtd
-@dirrm share/java/jext/xtools
-@dirrm share/java/jext/scripts/lang/util
-@dirrm share/java/jext/scripts/lang/test
-@dirrm share/java/jext/scripts/lang/string
-@dirrm share/java/jext/scripts/lang/stack
-@dirrm share/java/jext/scripts/lang/naming
-@dirrm share/java/jext/scripts/lang/misc
-@dirrm share/java/jext/scripts/lang/loop
-@dirrm share/java/jext/scripts/lang/err
-@dirrm share/java/jext/scripts/lang
-@dirrm share/java/jext/scripts
-@dirrm share/java/jext/plugins
-@dirrm share/java/jext/icons
+share/java/jext/LICENSE
+share/java/jext/README
+share/java/jext/bin/icons/jext.ico
+share/java/jext/bin/icons/jext.xpm
+share/java/jext/bin/jext.bat
+share/java/jext/bin/jext.js
+share/java/jext/bin/jext.ncf
+share/java/jext/bin/jext.sh
+share/java/jext/bin/jext.sh.orig
+share/java/jext/bin/plugins/CodeMaster.jar
+share/java/jext/bin/plugins/DnD.jar
+share/java/jext/bin/plugins/FastFind.jar
+share/java/jext/bin/plugins/FastSyntax.jar
+share/java/jext/bin/plugins/HTML.jar
+share/java/jext/bin/plugins/HyperTyper.jar
+share/java/jext/bin/plugins/Java.jar
+share/java/jext/bin/plugins/Print.jar
+share/java/jext/bin/plugins/QuickMake.jar
+share/java/jext/bin/scripts/CopyFile.jext-script
+share/java/jext/bin/scripts/HelloWorld.jext-script
+share/java/jext/bin/scripts/JavaCounter.jext-script
+share/java/jext/bin/scripts/Rot13.jext-script
+share/java/jext/bin/scripts/ScriptLoader.jext-script
+share/java/jext/bin/scripts/help-summary
+share/java/jext/bin/scripts/help-summary-jext-only
+share/java/jext/bin/scripts/lang/err/error
+share/java/jext/bin/scripts/lang/javaccess/swing.jext-script
+share/java/jext/bin/scripts/lang/loop/do
+share/java/jext/bin/scripts/lang/loop/loops
+share/java/jext/bin/scripts/lang/loop/subvariable
+share/java/jext/bin/scripts/lang/misc/global
+share/java/jext/bin/scripts/lang/misc/misc
+share/java/jext/bin/scripts/lang/misc/package
+share/java/jext/bin/scripts/lang/naming/naming
+share/java/jext/bin/scripts/lang/stack/roll
+share/java/jext/bin/scripts/lang/string/string
+share/java/jext/bin/scripts/lang/test/if
+share/java/jext/bin/scripts/lang/test/types
+share/java/jext/bin/scripts/lang/util/random
+share/java/jext/bin/scripts/lang/util/time
+share/java/jext/lib/jext.jar
+share/java/jext/lib/swingall.jar
+@dirrm share/java/jext/lib
+@dirrm share/java/jext/bin/scripts/lang/util
+@dirrm share/java/jext/bin/scripts/lang/test
+@dirrm share/java/jext/bin/scripts/lang/string
+@dirrm share/java/jext/bin/scripts/lang/stack
+@dirrm share/java/jext/bin/scripts/lang/naming
+@dirrm share/java/jext/bin/scripts/lang/misc
+@dirrm share/java/jext/bin/scripts/lang/loop
+@dirrm share/java/jext/bin/scripts/lang/javaccess
+@dirrm share/java/jext/bin/scripts/lang/err
+@dirrm share/java/jext/bin/scripts/lang
+@dirrm share/java/jext/bin/scripts
+@dirrm share/java/jext/bin/plugins
+@dirrm share/java/jext/bin/icons
+@dirrm share/java/jext/bin
 @dirrm share/java/jext
 @dirrm share/doc/java/jext
