@@ -337,6 +337,7 @@
     SUBDIR += samba
     SUBDIR += samba3
     SUBDIR += sazanami-ttf
+    SUBDIR += scim-anthy
     SUBDIR += scim-tables
     SUBDIR += scim-uim
     SUBDIR += sed
