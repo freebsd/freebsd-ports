@@ -6,14 +6,31 @@
 #
 
 PORTNAME=	beav
-PORTVERSION=	1.40.13
+PORTVERSION=	1.40.15
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.debian.org/debian/dists/stable/main/source/editors/
-DISTNAME=	${PORTNAME}_1.40-13
+MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/b/beav/
+DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
+ALL_TARGET=	beav
+
 MAN1=		beav.1
-WRKSRC=		${WRKDIR}/beav-1.40
+
+post-patch:
+	@${PERL} -pi -e 's|^CFLAGS=|CFLAGS+=-DUNIX -DBSD #|g ; \
+		 s|^CC=|CC?=|g ; \
+		 s|^\(|\$$\(|g' ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's|/usr/doc/beav|${DOCSDIR}|g' ${WRKSRC}/beav.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/beav ${PREFIX}/bin/beav
+	${INSTALL_MAN} ${WRKSRC}/beav.1 ${MANPREFIX}/man/man1/beav.1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/beav140.txt ${DOCSDIR}/beav.txt
+.endif
 
 .include <bsd.port.mk>
