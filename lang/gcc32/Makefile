@@ -43,6 +43,8 @@ EXTRACT_ONLY=
 .endif
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
+# do not require Gcc 3.1 to compile -- or we have an infinate loop on RELENG_4.
+USE_GCC=	X
 
 .include <bsd.port.pre.mk>
 
