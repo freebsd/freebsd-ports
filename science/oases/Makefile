@@ -14,6 +14,7 @@ DISTNAME=	oases_Mar-28-2002
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/Oases_export
 
 OASES_ROOT=	${WRKSRC}
