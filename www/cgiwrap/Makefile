@@ -3,12 +3,12 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/10 00:16:36 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/17 00:38:16 steve Exp $
 #
 
-DISTNAME=	cgiwrap-3.6.2
+DISTNAME=	cgiwrap-3.6.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.umr.edu/~cgiwrap/dist/ \
+MASTER_SITES=	http://www.unixtools.org/cgiwrap/dist/ \
 		ftp://ftp.umr.edu/pub/cgi/cgiwrap/ \
 		ftp://concert.cert.dfn.de/pub/tools/net/cgiwrap/
 
