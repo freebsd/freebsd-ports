@@ -1,6 +1,6 @@
---- configure.orig	Sat May  8 10:19:38 1999
-+++ configure	Sun May  9 12:14:58 1999
-@@ -842,11 +842,13 @@
+--- configure.orig	Wed Nov 17 17:27:48 1999
++++ configure	Thu Dec  9 21:20:52 1999
+@@ -863,11 +863,13 @@
  echo "configure: warning: cant find gtk-config" 1>&2
  echo "-------------------------------------------------"
  echo " GTK+ doesnt seam to be installed on this system"
@@ -16,25 +16,34 @@
  x=`echo $GTK_PREFIX|cut -d. -f1`
  y=`echo $GTK_PREFIX|cut -d. -f2`
  z=`echo $GTK_PREFIX|cut -d. -f3`
-@@ -928,10 +930,10 @@
+@@ -1397,10 +1399,10 @@
  XWHOIS_SERVERS='$(prefix)/share/xwhois/xwhois.servers'
  
  
--INCLUDES="-I. `gtk-config --cflags`"
-+INCLUDES="-I. `$GTK_CONFIG --cflags`"
+-INCLUDES="-I. -I.. `gtk-config --cflags`"
++INCLUDES="-I. -I.. `$GTK_CONFIG --cflags`"
  
  
 -LIBS=`gtk-config --libs`
 +LIBS=`$GTK_CONFIG --libs`
  
- DEFINES='-DSTD -DHAVE_SNPRINTF -DXWHOIS_SERVERS=\"$(XWHOIS_SERVERS)\" -D$(GTK_TYPE)'
+ # DEFINES='-DSTD -DHAVE_SNPRINTF -DXWHOIS_SERVERS=\"$(XWHOIS_SERVERS)\" -D$(GTK_TYPE)'
+ DEFINES='-DXWHOIS_SERVERS=\"$(XWHOIS_SERVERS)\" -D$(GTK_TYPE)'
+@@ -1419,7 +1421,7 @@
  
-@@ -1234,7 +1236,7 @@
- 	CFLAGS="-Wall $CFLAGS"
+ # Special compiler options.
+ if test $CC = "gcc"; then
+-	CFLAGS="-Wall ${CFLAGS}"
++	CFLAGS="${CFLAGS}"
  fi
- if test $CC = "cc"; then
--	CFLAGS="-g3 $CFLAGS"
-+	CFLAGS="$CFLAGS"
- fi
+ #if test $CC = "cc" && test $arch = "SunOS"; then
+ #	CFLAGS="-g ${CFLAGS}"
+@@ -1571,7 +1573,7 @@
  
- # Special system options.
+ if test $USE_PTHREADS = "yes"; then
+ if test -r /usr/include/pthread.h; then
+-  LIBS="-L/lib -L/usr/lib -lpthread ${LIBS}"
++  LIBS="-L/lib -L/usr/lib -pthread ${LIBS}"
+ elif test -r /usr/local/include/pthread.h; then
+   LIBS="-L/lib -L/usr/lib -L/usr/local/lib -lpthread ${LIBS}"
+ elif test -r /lib/libpthread.a; then
