@@ -58,7 +58,7 @@ pre-extract:
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${REINPLACE_CMD} -e 's,etc/codepage,etc/ircd-hybrid-ru/codepage,' ${WRKSRC}/etc/example.conf
+	@${REINPLACE_CMD} -e 's,ircd/etc/codepage,etc/ircd-hybrid-ru/codepage,' ${WRKSRC}/etc/example.conf
 	@${REINPLACE_CMD} -e 's,/ircd/modules,/lib/ircd-hybrid-ru-modules,' ${WRKSRC}/etc/example.conf
 
 post-install:
