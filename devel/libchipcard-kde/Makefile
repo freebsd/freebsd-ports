@@ -26,7 +26,13 @@ CONFIGURE_ARGS+=	--with-distri=freebsd --with-kde3-prefix=${LOCALBASE}\
 USE_KDELIBS_VER=	3
 USE_REINPLACE=		yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=		"Links against conflicting thread libraries"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,libkdeui.so.4,libkdeui.so,' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

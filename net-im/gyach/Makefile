@@ -18,4 +18,10 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Links against conflicting thread libraries"
+.endif
+
+.include <bsd.port.post.mk>
