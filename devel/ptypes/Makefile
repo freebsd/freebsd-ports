@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.melikyan.com/ptypes/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 USE_REINPLACE=	yes
 
