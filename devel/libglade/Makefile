@@ -11,7 +11,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libglade
 
-MAINTAINER=	ade@lovett.com
+MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		xml.5:${PORTSDIR}/textproc/libxml

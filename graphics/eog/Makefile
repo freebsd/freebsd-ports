@@ -11,7 +11,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/eog
 
-MAINTAINER=	ade@lovett.com
+MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		gdk_pixbuf.1:${PORTSDIR}/graphics/gdk-pixbuf

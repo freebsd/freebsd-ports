@@ -10,7 +10,7 @@ DISTNAME=	glade-0.5.5
 CATEGORIES=	devel
 MASTER_SITES=   http://glade.pn.org/
 
-MAINTAINER=     ade@lovett.com
+MAINTAINER=     ade@FreeBSD.org
 
 .if defined(USE_GNOME)
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs

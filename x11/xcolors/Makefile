@@ -11,7 +11,7 @@ PKGNAME=	xcolors-1.3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.lovett.com/~ade/FreeBSD/
 
-MAINTAINER=	ade@lovett.com
+MAINTAINER=	ade@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xcolors
 USE_IMAKE=	yes
