@@ -10,7 +10,7 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/flim113-emacs
+MASTERDIR=	${.CURDIR}/../../editors/flim113
 
 # emacs port setup
 EMACS_PORT_NAME=	xemacs21-mule
@@ -29,9 +29,6 @@ INSTALL_TARGET=	install-package
 BUILD_INFO_BY_EMACS=	YES
 # texinfo packages
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages
-
-# use pkg-* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}
 
 # package info manifest
 MANIFEST=	MANIFEST.flim
