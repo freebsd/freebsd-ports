@@ -8,7 +8,8 @@
 PORTNAME=	treecc
 PORTVERSION=	0.3.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.southern-storm.com.au/download/
+MASTER_SITES=	${PNET_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Treecc is designed to assist in the development of compilers
@@ -19,4 +20,5 @@ MAN1=		treecc.1
 INFO=		treecc
 PLIST_FILES=	bin/treecc
 
+.include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.mk>
