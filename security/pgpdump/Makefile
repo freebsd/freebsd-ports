@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	security
 MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
 
