@@ -38,7 +38,7 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -96,7 +96,7 @@ MAN5=	samhainrc.5
 MAN8=	samhain.8
 .endif
 .if defined(LOG_SERVER)
-CONFIGURE_ARGS+=	--with-logserver=${ALT_LOG_SERVER}
+CONFIGURE_ARGS+=	--with-logserver=${LOG_SERVER}
 .endif
 .if defined(ALT_LOG_SERVER)
 CONFIGURE_ARGS+=	--with-altlogserver=${ALT_LOG_SERVER}
