@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	idesk
-PORTVERSION=	0.3.5
+PORTVERSION=	0.5.5
 CATEGORIES=	x11
-MASTER_SITES=	http://linuxhelp.hn.org/ \
-		ftp://sunsite.informatik.rwth-aachen.de/pub/comp/Linux/gentoo/distfiles/ \
-		ftp://metalab.unc.edu/pub/Linux/distributions/gentoo/distfiles/
+MASTER_SITES=	http://idesk.timmfin.net/releases/ \
+		${MASTER_SITE_SOURCEFORGE}
 
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Place launch icons directly on your desktop
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft \
+		rsvg-2.4:${PORTSDIR}/graphics/librsvg2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
+
+NO_WRKSUBDIR=	yes
 
 CXXFLAGS+=	`imlib-config --cflags` `freetype-config --cflags`
 MAKE_ARGS=	cc="${CXX}" cflags="${CXXFLAGS}"
