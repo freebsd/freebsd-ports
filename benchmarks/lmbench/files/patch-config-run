@@ -1,0 +1,37 @@
+--- scripts/config-run.orig	Sun May  6 16:04:39 2001
++++ scripts/config-run	Sun May  6 16:06:10 2001
+@@ -32,12 +32,12 @@
+ drive.  The simplest way to do this is to run the benchmark as root.
+ If you are paranoid about running code as root, good for you, you should
+ be.  The paranoid solution is to grab another window, pick the disk
+-drive, make it world readable ( chmod a+r /dev/rsd0a ), and then specify
++drive, make it world readable ( chmod a+r /dev/da0s1a ), and then specify
+ that drive below.  Remember to change the permissions back after running
+ the benchmark if you took the paranoid route.
+ 
+ If you want to get disk latency results, please specify the disk device
+-to use, such as /dev/rsd0a.
++to use, such as /dev/da0s1a.
+ 
+ EOF
+ 	echo $ECHON "DISK [default none] $ECHOC"
+@@ -85,16 +85,16 @@
+ 	cat<<EOF;
+ 
+ We need a place to store a $MB Mbyte file as well as create and delete a
+-large number of small files.  We default to /usr/tmp.  If /usr/tmp is a
++large number of small files.  We default to /tmp.  If /tmp is a
+ memory resident file system (i.e., tmpfs), pick a different place.
+ Please specify a directory that has enough space and is a local file
+ system.
+ 
+ EOF
+-	echo $ECHON "FSDIR [default /usr/tmp] $ECHOC"
++	echo $ECHON "FSDIR [default /tmp] $ECHOC"
+ 	read FSDIR
+ 	if [ X$FSDIR = X ]
+-	then	FSDIR=/usr/tmp
++	then	FSDIR=/tmp
+ 	else	mkdir -p $FSDIR 2>/dev/null
+ 	fi
+ 	if [ -d $FSDIR -a -w $FSDIR ]
