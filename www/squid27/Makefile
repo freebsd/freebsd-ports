@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.10
+# Version required:	1.1.11
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.27 1997/05/17 19:45:27 peter Exp $
+# $Id: Makefile,v 1.28 1997/05/17 19:54:45 peter Exp $
 #
 
-DISTNAME=	squid-1.1.10
+DISTNAME=	squid-1.1.11
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1/ \
@@ -15,12 +15,12 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.1/
 EXTRACT_SUFX=	-src.tar.gz
 
-#PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.10/
-#PATCHFILES+=    fixes.patch
+PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.11/
+PATCHFILES+=    config.h.in.patch long-dns-coredump.patch
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1110
+DIST_SUBDIR=	squid1111
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
