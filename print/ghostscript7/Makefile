@@ -24,6 +24,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
+NO_LATEST_LINK=	"Older version."
+
 WRKSRC=		${WRKDIR}/gs5.50
 
 USE_XLIB=	yes
