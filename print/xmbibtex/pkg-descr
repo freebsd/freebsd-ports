@@ -1,0 +1,23 @@
+xmbibtex is a Motif (LessTif) reference manager based on the BibTeX
+file format. It allows to add, delete, and edit references. The
+references can be saved in the BibTeX file format and also written on
+a LaTeX file that can be printed using LaTeX and BibTeX. References
+can be retrieved by several search strategies. Import of references
+from the Medline and Inspec file format is included. However, I found
+that the Medline file format is not unique. Up to now, there are
+import filters available for the "Ovid Medline", the "PubMed Medline"
+and for the "Spirs Medline" format. It would be nice if some people
+could write additional import filters for other file formats.
+
+If you find this program useful, I would appreciate receiving a
+picture postcard from your home city (although this is not enforced
+since the program is GPL).
+
+Harald M. Stauss, MD
+Dept. of Physiology
+Humboldt University - Charite Berlin
+Tucholskystr. 2
+10117 Berlin
+Germany
+
+(harald.stauss@rz.hu-berlin.de)
