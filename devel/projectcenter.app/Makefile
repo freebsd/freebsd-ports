@@ -16,31 +16,21 @@ MASTER_SITE_SUBDIR=	dev-apps
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A development environment for GNUstep
 
-BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
-RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-
 PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/ProjectCenter
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	ADDITIONAL_INCLUDE_DIRS="-I${WRKSRC}" \
-		ADDITIONAL_LIB_DIRS="-L${WRKSRC}/PCLib/shared_obj/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu"
+MAKE_ENV+=	ADDITIONAL_INCLUDE_DIRS="-I${WRKSRC}"
+MAKE_ENV+=	ADDITIONAL_LIB_DIRS="-L${WRKSRC}/PCLib/shared_obj/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu"
 ALL_TARGET=
-NO_MTREE=	yes
-USE_GCC=	3.2
-
-BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
-
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 # XXX This is ugly beyond measure. Don't tell anyone I did this.
 post-extract:
@@ -53,13 +43,5 @@ post-patch:
 	${SED} -e "s=@\"/usr/GNUstep=@\"${PREFIX}=g" \
 		${WRKSRC}/${file}.sed > ${WRKSRC}/${file}
 .endfor
-
-do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>
