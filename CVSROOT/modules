@@ -742,6 +742,7 @@ bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
 bpft		ports/net-mgmt/bpft
 bpl+		ports/comms/bpl+
+bpm		ports/sysutils/bpm
 br-aspell	ports/textproc/br-aspell
 braa		ports/net-mgmt/braa
 braincurses	ports/games/braincurses
