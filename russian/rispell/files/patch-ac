@@ -1,0 +1,38 @@
+*** Makefile.orig	Fri Oct 24 11:58:47 1997
+--- Makefile	Tue Dec 16 20:46:27 1997
+***************
+*** 1,7 ****
+  ISPELL_TGZ  = /usr/src/redhat/SOURCES/ispell-3.1.20.tar.gz
+! ELISP_DIR   = /usr/share/emacs/site-lisp
+  
+! IPATH       = ./ispell-3.1
+  KITDIR      = ../save-kostya-dict
+  
+  first:
+--- 1,7 ----
+  ISPELL_TGZ  = /usr/src/redhat/SOURCES/ispell-3.1.20.tar.gz
+! ELISP_DIR   = NOTYET/usr/share/emacs/site-lisp
+  
+! IPATH       = ${PREFIX}/bin
+  KITDIR      = ../save-kostya-dict
+  
+  first:
+***************
+*** 33,40 ****
+  	make $(IPATH)
+  	cp local.h $(IPATH)
+  
+! $(IPATH)/unsq: $(IPATH)/local.h
+! 	cd $(IPATH) ; make ; cd ..
+  
+  clean:
+  	rm -f russian.sml* russian.hash makedict
+--- 33,40 ----
+  	make $(IPATH)
+  	cp local.h $(IPATH)
+  
+! #$(IPATH)/unsq: $(IPATH)/local.h
+! #        cd $(IPATH) ; make ; cd ..
+  
+  clean:
+  	rm -f russian.sml* russian.hash makedict
