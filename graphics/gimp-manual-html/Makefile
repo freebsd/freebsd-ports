@@ -49,7 +49,7 @@ do-install:
 	for file in ${DISTFILES} ; do \
 		cd ${PREFIX}/share/doc/gimp; \
 		${TAR} -zxf ${DISTDIR}/$${file}; \
-		@${CHOWN} -R root:wheel ${PREFIX}/share/doc/gimp \
+		${CHOWN} -R root:wheel ${PREFIX}/share/doc/gimp; \
 	done
 .endif
 
