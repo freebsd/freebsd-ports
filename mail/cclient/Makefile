@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2004
+PORTVERSION=	2004a
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
