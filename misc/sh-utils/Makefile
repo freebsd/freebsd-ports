@@ -7,7 +7,7 @@
 
 PORTNAME=	sh-utils
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= sh-utils
@@ -20,6 +20,7 @@ COMMENT=	The FSF's versions of date(1), expr(1), test(1), etc
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
