@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.hakubi.us/hayes/
 MAINTAINER=		brueffer@phoenix-systems.de
 COMMENT=		A filesystem-based playlist for Noatun
 
-LIB_DEPENDS=		noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
+LIB_DEPENDS=		noatun:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDEBASE_VER=	3
 USE_BZIP2=		yes
