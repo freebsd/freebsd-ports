@@ -18,9 +18,9 @@ etc/apache/mime.types.default
 @unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf.default; then rm -f %D/etc/apache/srm.conf; fi
 etc/apache/srm.conf.default
 @exec [ -f %B/srm.conf ] || cp %B/%f %B/srm.conf
+@unexec if cmp -s %D/etc/rc.d/apache.sh %D/etc/rc.d/apache.sh.default; then rm -f %D/etc/rc.d/apache.sh; fi
 etc/rc.d/apache.sh.default
 @exec [ -f %B/apache.sh ] || ( cp %B/%f %B/apache.sh; chmod 755 %B/apache.sh )
-@unexec if cmp -s %D/etc/rc.d/apache.sh %D/etc/rc.d/apache.sh.default; then rm -f %D/etc/rc.d/apache.sh; fi
 include/apache/ap.h
 include/apache/ap_alloc.h
 include/apache/ap_compat.h
