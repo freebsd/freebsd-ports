@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsdelta
-PORTVERSION=	1.6.9
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/cvsdelta/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,9 +19,6 @@ COMMENT=	Cvsdelta summarizes differences between local and in-cvs files
 USE_RUBY=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/usr/bin/ruby|#!${RUBY}|' ${WRKSRC}/*.rb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
