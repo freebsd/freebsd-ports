@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.17
+PORTVERSION=	0.5.18
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -34,7 +34,6 @@ BUILD_DEPENDS= \
 	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
@@ -83,12 +82,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f \
 		-name "*.bak" | \
 		${XARGS} -n 10 ${RM}
-
-pre-configure:
-	@${ECHO_MSG}
-	@${ECHO_MSG} '====> Please answer yes to all configure questions'
-	@${ECHO_MSG} '====> The port is assuming that you have answered yes to all of them'
-	@${ECHO_MSG}
 
 post-install:
 	@${MKDIR} ${PREFIX}/${CGIDIR}

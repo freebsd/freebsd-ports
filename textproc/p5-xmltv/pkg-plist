@@ -24,6 +24,8 @@ bin/tv_to_text
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Ask.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/AskTerm.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/AskTk.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Clumps.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Config_file.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Europe_TZ.pm
