@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.35 1997/06/04 07:48:29 asami Exp $
+# $Id: Makefile,v 1.36 1997/07/10 09:50:26 max Exp $
 #
 
+    SUBDIR += amp
     SUBDIR += cam
     SUBDIR += cddbd
     SUBDIR += gmod
