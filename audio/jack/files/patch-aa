@@ -47,8 +47,8 @@ diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/Makefile.am drivers/
 +noinst_HEADERS = oss_driver.h
 diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c drivers/oss/oss_driver.c
 --- jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c	1970-01-01 02:00:00.000000000 +0200
-+++ drivers/oss/oss_driver.c	2004-03-15 21:35:09.000000000 +0200
-@@ -0,0 +1,1189 @@
++++ drivers/oss/oss_driver.c	2004-03-23 23:27:15.000000000 +0200
+@@ -0,0 +1,1195 @@
 +/*
 +
 +	OSS driver for Jack
@@ -71,6 +71,8 @@ diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c drivers
 +
 +*/
 +
++
++#include <config.h>
 +
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -1058,7 +1060,7 @@ diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c drivers
 +		return NULL;
 +	}
 +	strcpy(desc->name, driver_client_name);
-+	desc->nparams = 8;
++	desc->nparams = OSS_DRIVER_N_PARAMS;
 +
 +	params = calloc(desc->nparams, sizeof(jack_driver_param_desc_t));
 +	memcpy(params, oss_params, 
@@ -1164,6 +1166,10 @@ diff -urN jack-audio-connection-kit-0.94.0.orig/drivers/oss/oss_driver.c drivers
 +	
 +	driver->finish = driver_finish;
 +
++	if (driver->indev == NULL)
++		driver->indev = strdup(OSS_DRIVER_DEF_DEV);
++	if (driver->outdev == NULL)
++		driver->outdev = strdup(OSS_DRIVER_DEF_DEV);
 +	driver->infd = -1;
 +	driver->outfd = -1;
 +	switch (driver->bits)
