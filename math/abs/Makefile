@@ -20,8 +20,7 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/abs-src-0.908
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/trcasestr/strcasestr_/g' < ${WRKSRC}/Database/cell.c >${WRKSRC}/Database/cell.c.new
-	@${MV} ${WRKSRC}/Database/cell.c.new ${WRKSRC}/Database/cell.c
+	@${REINPLACE_CMD} -e 's/trcasestr/strcasestr_/g' ${WRKSRC}/Database/cell.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abs ${PREFIX}/bin
