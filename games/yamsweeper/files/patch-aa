@@ -1,0 +1,20 @@
+diff -arcN ../yamsweeper-1.9.org/main.c ./main.c
+*** ../yamsweeper-1.9.org/main.c	Thu Nov  3 09:20:41 1994
+--- ./main.c	Sat Sep 21 09:50:53 1996
+***************
+*** 118,124 ****
+  #endif
+  {
+  #if LOG_USER
+!     char* user = getenv(appData.identifier);
+      time_t tt = time(NULL);
+      char* ct = ctime(&tt);
+      FILE* fp = fopen(LOGFILE, "a");
+--- 118,124 ----
+  #endif
+  {
+  #if LOG_USER
+!     char* user = (char *)getenv(appData.identifier);
+      time_t tt = time(NULL);
+      char* ct = ctime(&tt);
+      FILE* fp = fopen(LOGFILE, "a");
