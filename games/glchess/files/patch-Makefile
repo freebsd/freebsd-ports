@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Jul 18 09:19:16 2001
++++ Makefile	Wed Jul 18 09:06:04 2001
+@@ -1,12 +1,11 @@
+-INSTALLDIR = /usr/local/bin
+-MANDIR     = /usr/local/man/man6
+-SHAREDIR   = /usr/local/share/games/glchess
++INSTALLDIR = ${PREFIX}/bin
++MANDIR     = ${PREFIX}/man/man6
++SHAREDIR   = ${DATADIR}
+ 
+ VERSION    = 0.3.3
+ DATE       = `date "+%Y-%m-%d"`
+ 
+ all:
+-	@clear
+ 	@echo "Building glChess..."
+ 	@cd src && make
+ 	@mv src/glchess .

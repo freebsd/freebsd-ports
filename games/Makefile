@@ -81,6 +81,7 @@
     SUBDIR += gcompris
     SUBDIR += gemdropx
     SUBDIR += glasteroids
+    SUBDIR += glchess
     SUBDIR += gleyes
     SUBDIR += glife
     SUBDIR += gltron
