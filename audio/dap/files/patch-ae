@@ -14,7 +14,7 @@ diff -urN ../dap-2.1.1.orig/main/Makefile.linux ./main/Makefile.linux
  INCDIR  = -I. -I.. -I$(SOUND) -I$(SPKIT) -I$(FORMS) -I$(TOOLTIP) -I$(X11DIR)/include
  LIBDIR  = -L$(SPKIT)/spkit -L$(FORMS) -L$(AUDIO) -L$(AUDIOF) -L$(TOOLTIP) -L$(X11DIR)/lib
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -DSIGNALWORKAROUND -Wall -Wno-unused
-+CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DUSINGGCC -Wall -Wno-unused
++CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O1
 -LDFLAGS = $(LIBDIR) -ldsp -laudio -laudiofile -ltooltips -lforms -lXpm -lX11 -lm

@@ -10,7 +10,7 @@ diff -urN ../dap-2.1.1.orig/libaudiofile/Makefile.linux ./libaudiofile/Makefile.
  HOMEDIR = $(HOME)
  INCDIR  = -I.
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
-+CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DUSINGGCC -Wall -Wno-unused
++CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O1
 +OPTIM   = ${CXXFLAGS}
