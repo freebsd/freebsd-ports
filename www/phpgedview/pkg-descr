@@ -1,0 +1,10 @@
+PhpGedView parses GEDCOM 5.5 genealogy files and displays them on the
+Internet in a format similar to desktop programs. All it requires to
+run is a PHP enabled web server and a gedcom file. You can easily
+customize it by using one of the provided themes or by modifying them
+to meet your own needs.
+
+WWW: http://phpgedview.sourceforge.net/
+
+- Hubert Tournier
+hubert@frbsd.org
