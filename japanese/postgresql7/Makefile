@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.1.2
+PORTVERSION=	7.1.3
 CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION}/ \
 	ftp://ftp.postgresql.org/pub/v${PORTVERSION}/ \
@@ -15,11 +15,9 @@ MASTER_SITE_SUBDIR=	misc/db/postgresql-jp/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
-#PATCH_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION:R}/patches/ \
 PATCH_SITES=	ftp://ftp.net-newbie.com/pub/postgres/
-PATCHFILES=	psqlj-${PORTVERSION}.diff.gz
-#	jumbo-${PORTVERSION:E}.patch.gz
-PATCH_DIST_STRIP=	-p0 -d ${WRKDIR}
+PATCHFILES=	psqlj-7.1.2.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	saito@a2z.co.jp
 
@@ -100,7 +98,7 @@ pre-everything:
 
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
-.if !defined(BATCH)	
+.if !defined(BATCH)
 # remind folks twice for a while, so they really don't miss the layout shift
 	@ ${SED} "s|/usr/local|${PREFIX}|g" < ${PKGMESSAGE} | head -n 25 | more -e
 .endif
