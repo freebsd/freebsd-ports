@@ -1,4 +1,4 @@
-LyX is a wordprocessor frontend to LaTeX, which gives both the
+LyX is a document processor interfaced with LaTeX, which gives both the
 ease-of-use of a wordprocessor, and the flexibility and power of
 LaTeX.
 
@@ -9,5 +9,5 @@ character support, WYSIWYG graphics, tables, and equations.
 
 http://www.lyx.org/
 
-Author:		ettrich@informatik.uni-tuebingen.de (Matthias Ettrich)
-Maintained-by:	dlj0@lehigh.edu (David L. Johnson)
+Author:		Matthias Ettrich <ettrich@informatik.uni-tuebingen.de>
+Maintained-by:	Lars Gullik Bjønnes <larsbj@ifi.uio.no>
