@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	tdl
-PORTVERSION=	0.7.4
+PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rrbcurnow.freeuk.com/tdl/
 
 MAINTAINER=	petef@FreeBSD.org
-
-ALL_TARGET=	tdl
 
 MAN1=	tdl.1
 
