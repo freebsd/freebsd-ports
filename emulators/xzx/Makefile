@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	xzx
-PORTVERSION=	4.1
+PORTVERSION=	4.3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw
-DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
+DISTNAME=	${PORTNAME}-pro-${PORTVERSION}
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZX Spectrum (48K/128K/+3) Emulator for X11
 
 # xmkmf is used in configure script
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-pro-${PORTVERSION}
+BUILD_DEPENDS=  xmkmf:${PORTSDIR}/devel/imake-4
 
 USE_MOTIF=      yes
-USE_XPM=        yes
 USE_X_PREFIX=	yes
 
 # License forbids redistribution
