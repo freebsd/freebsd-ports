@@ -2,6 +2,7 @@
 #
 
     SUBDIR += LPRng
+    SUBDIR += LPRngTool
     SUBDIR += abck
     SUBDIR += afio
     SUBDIR += anteater

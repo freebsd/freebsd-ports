@@ -1,0 +1,99 @@
+#!/bin/sh
+PREFIX=/usr
+SYSCONFDIR=/usr/etc
+LPRNGTOOL_CONF=/usr/etc/lprngtool.conf
+MANDIR=/usr/man
+VERSION=1.3.1
+#
+# -- START --
+# $FreeBSD$
+# $Id: postinstall.freebsd.sh,v 1.8 2000/11/27 20:09:31 papowell Exp papowell $
+#
+#  If you are building a PORT, see the
+#  DISTRIBUTIONS/Freebsd directory for a complete port
+#  building package.
+# 
+# This is the shell script that does the postinstall
+# dynamic fixup
+#  It needs to be massaged with the information for
+#  various paths.
+# If you are building a package,  then you do NOT want
+#  to have this executed - it will put the sample files
+#  in place.  You need to do this during the postinstall
+#  step in the package installation.
+#
+echo RUNNING postinstall.freebsd.sh MAKEPACKAGE="$MAKEPACKAGE" MAKEINSTALL="$MAKEINSTALL" PREFIX="$PREFIX" cwd `pwd`
+if [ "$VERBOSE_INSTALL" != "" ] ; then set -x; fi
+fix () {
+	v=`echo $1 | sed -e 's/[:;].*//'`;
+    p=`echo $2 | sed -e 's/:.*//'`; d=`dirname $p`;
+	if expr "$p" : "\|" >/dev/null ; then
+		echo "$v is a filter '$p'" 
+		exit 0
+	fi
+    echo "Putting $p in $d, using $v.sample"
+	if [ ! -d "$d" ] ; then
+		echo "Directory $d does not exist!"
+		mkdir -p $d
+	fi
+	if [ -f $v.sample ] ; then
+		if [ $v.sample != $p.sample ] ; then cp $v.sample $p.sample; fi
+	elif [ -f $v ] ; then
+		if [ $v != $p.sample ] ; then cp $v $p.sample; fi
+	else
+		echo "Do not have $v.sample or $v"
+	fi
+	if [ ! -f $p.sample ] ; then
+		echo "Do not have $p.sample"
+	else
+		if [ -f $p ] ; then
+			date=`date | awk '{ print $6, $2, $3, $4;}' | sed -e 's/  */_/g' `
+			echo "Saving $p in $p.$date"
+			mv $p $p.$date
+		fi
+		chmod 644 $p.sample
+		cp $p.sample $p;
+		chmod 644 $p;
+	fi;
+}
+# we use the /usr/local/etc/rc.d method to start
+# lpd
+# we have to take them from one place and put in another
+if [ "X$MAKEPACKAGE" = "XYES" ] ; then
+	hold=${DESTDIR}${PREFIX}/etc
+	echo "Setting up configuration files path for package creation" ${hold}
+    if [ ! -d ${hold} ] ; then mkdir -p ${hold} ; fi;
+    cp lprngtool.conf ${hold}/lprngtool.conf.sample
+elif [ X$MAKEINSTALL = XYES ] ; then
+	# we have the port pre-install operation
+	if [ "$MANDIR" = "/usr/man" -a ! -d ${DESTDIR}/usr/man ] ; then
+		# we have the dreaded standard installation
+		# try to make a symbolic link to 
+		echo "Creating symbolic link from /usr/man to /usr/share/man"
+		v=`ln -s ${DESTDIR}/usr/share/man ${DESTDIR}/usr/man`;
+	fi
+	hold=${DESTDIR}${PREFIX}/etc
+	echo "Setting up configuration files path for installation" ${hold}
+    if [ ! -d ${hold} ] ; then mkdir -p ${hold} ; fi;
+    cp lprngtool.conf ${hold}/lprngtool.conf.sample
+    fix lprngtool.conf "${DESTDIR}${LPRNGTOOL_CONF}"
+elif [ "X$2" = "XPOST-INSTALL" ] ; then
+	# when doing an install from a package we get the file from the package
+	hold=etc
+    if [ -f ${hold}/lprngtool.conf.sample ] ; then
+        fix ${hold}/lprngtool.conf "${LPRNGTOOL_CONF}"
+    else
+        echo "WARNING: configuration files missing from package! CWD " `pwd`
+		ls
+		exit 1
+    fi
+elif [ "X$2" = "XPRE-INSTALL" ] ; then
+	# we have the port pre-install operation
+	if [ "$MANDIR" = "/usr/man" -a ! -d /usr/man ] ; then
+		# we have the dreaded standard installation
+		# try to make a symbolic link to 
+		echo "Creating symbolic link from /usr/man to /usr/share/man"
+		v=`ln -s /usr/share/man /usr/man`;
+	fi
+fi
+exit 0
