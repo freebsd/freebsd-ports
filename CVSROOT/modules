@@ -2127,6 +2127,7 @@ gauche-readline	ports/devel/gauche-readline
 gauche-sdl	ports/devel/gauche-sdl
 gauche-sxml	ports/textproc/gauche-sxml
 gaul		ports/devel/gaul
+gave		ports/science/gave
 gawk		ports/lang/gawk
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
