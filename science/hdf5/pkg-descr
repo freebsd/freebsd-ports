@@ -1,0 +1,23 @@
+From HDF's manpage:
+
+       hdf - Hierarchical Data Format library
+
+Description:
+       HDF  is	a  multi-object  file format that facilitates the
+       transfer of  various  types  of	scientific  data  between
+       machines  and  operating systems.  Machines currently sup-
+       ported  include	the  Cray,  Convex,  HP,  Vax,	Sun,  IBM
+       RS/6000,  Silicon  Graphics, Macintosh, and IBM PC comput-
+       ers.  HDF allows self-definitions of data content and easy
+       extensibility  for  future  enhancements  or compatibility
+       with other standard formats. HDF includes  Fortran  and	C
+       calling	interfaces,and	utilities to prepare raw image of
+       data files or for use with other NCSA software.	 The  HDF
+       library	contains  interfaces  for  storing and retrieving
+       compressed or uncompressed 8-bit and 24-bit raster  images
+       with   palettes,  n-Dimensional	scientific  datasets  and
+       binary tables. An interface is also included  that  allows
+       arbitray grouping of other HDF objects.
+
+
+		-mi (mi@aldan.ziplink.net)
