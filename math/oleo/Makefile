@@ -47,7 +47,13 @@ pre-everything::
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
-		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
+	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|malloc\.h|stdlib.h|g'
+
+pre-build:
+.for file in src/io-term.c
+	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
+		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
+.endfor
 
 .include <bsd.port.post.mk>
