@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vicq
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 
@@ -14,9 +14,15 @@ MAINTAINER=	kevlo@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_BUILD=	yes
+PERL_CONFIGURE=	yes
 
-do-install:
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-extract:
+	${MV} ${WRKSRC}/Net/vICQ/*  ${WRKSRC}
+	${RM} ${WRKSRC}/install.pl
+
+post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vicq ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/examples/vicq
 	${INSTALL_DATA} ${WRKSRC}/vicqrc.example ${PREFIX}/share/examples/vicq
