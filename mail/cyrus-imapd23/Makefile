@@ -25,7 +25,8 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 USE_PERL5=	yes
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
-		--with-cyrus-group=cyrus \
+		--with-cyrus-user=${CYRUS_USER} \
+		--with-cyrus-group=${CYRUS_GROUP} \
 		--with-sasl=${LOCALBASE} \
 		--with-dbdir=${LOCALBASE} \
 		--with-auth=unix \
@@ -52,6 +53,9 @@ LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
 CONFIGURE_ARGS+=--with-ucdsnmp=no
 .endif
 
+CYRUS_USER?=	cyrus
+CYRUS_GROUP?=	cyrus
+
 MAN1=		cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
 		pop3test.1 sieveshell.1 sivtest.1 smtptest.1
 MAN3=		imclient.3
@@ -69,6 +73,9 @@ DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install-upgrade mailing-list man notes os overview questions \
 		readme sieve sieve-protocol specs
 
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+PKGINSTALL=	${WRKDIR}/pkg-install
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
@@ -79,8 +86,14 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTS
 .endif
 
 post-patch:
-		@${SED} -e "s|/etc/|${PREFIX}/etc/|" ${WRKSRC}/tools/mkimap \
-			> ${WRKSRC}/tools/mkimap.new
+		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+			${.CURDIR}/pkg-install > ${PKGINSTALL}
+		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+			${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
+		@${SED} -e "s|/etc/|${PREFIX}/etc/|" \
+			-e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+			-e "s|%%CYRUS_GROUP%%|${CYRUS_GROUP}|g" \
+			${WRKSRC}/tools/mkimap > ${WRKSRC}/tools/mkimap.new
 		@${MV} ${WRKSRC}/tools/mkimap.new ${WRKSRC}/tools/mkimap
 		@${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
 .if ${PERL_LEVEL} < 500600
@@ -130,7 +143,8 @@ post-install:
 			${PREFIX}/etc/cyrus.conf.dist
 		${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 			${PREFIX}/cyrus/bin/mkimap
-		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
+			POST-INSTALL
 		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
