@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.13.22
+PORTVERSION=	1.13.23
 PKGNAMEPREFIX=	g
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib ${LDSTATIC}' \
-		DEFAULT_ARCHIVE='/dev/sa0'
+		DEFAULT_ARCHIVE='/dev/sa0' \
+		MAKEINFO='makeinfo --no-split'
 
 .if defined(WANT_STATIC)
 LDSTATIC=	-static
