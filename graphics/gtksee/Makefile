@@ -3,7 +3,7 @@
 # Date created:         Sun Nov 22 12:08:18 CET 1998
 # Whom:                 Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.3 1998/12/01 21:47:45 billf Exp $
+# $Id: Makefile,v 1.4 1998/12/04 20:29:09 billf Exp $
 #
 
 DISTNAME=	gtksee-0.2.1
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk \
 		tiff.4:${PORTSDIR}/graphics/tiff34
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${PREFIX}/include" \
 		LDFLAGS=-L${PREFIX}/lib
 
 .include <bsd.port.mk>
