@@ -8,7 +8,7 @@
 PORTNAME=	mplayer
 PORTVERSION=	0.18
 CATEGORIES=	graphics
-MASTER_SITES=	http://mp.dev.hu/MPlayer/releases/ \
+MASTER_SITES=	http://MPlayerHQ.hu/MPlayer/releases/ \
 		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/
 DISTNAME=	MPlayer-${PORTVERSION}pre
 EXTRACT_SUFX=	.tgz
@@ -32,22 +32,50 @@ USE_XLIB=	yes
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PREFIX}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
-CONFIGURE_ARGS+=--disable-esd \
-		--enable-mmx2 \
-		--enable-3dnow \
-		--enable-3dnowex
+CONFIGURE_ARGS+=--disable-esd
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SDL)
 LIB_DEPENDS+=    SDL-1.1.3:${PORTSDIR}/devel/sdl12
 .else
 BUILD_DEPENDS+=  nasm:${PORTSDIR}/devel/nasm
 .endif
-
+.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+CONFIGURE_ARGS+=--enable-3dnow
+.endif
+.if !defined(WITHOUT_3DNOWEX) && !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+CONFIGURE_ARGS+=--enable-3dnowex
+.endif
+.if !defined(WITHOUT_MMX2)
+CONFIGURE_ARGS+=--enable-mmx2
+.endif
+.if defined(WITH_SSE)
+CONFIGURE_ARGS+=--enable-sse
+.endif
 .if defined(USE_AVIFILE_CODECS)
 BUILD_DEPENDS+=	${PREFIX}/lib/win32:${PORTSDIR}/graphics/win32-codecs
 .else
 BUILD_DEPENDS+=	${PREFIX}/lib/mplayer-codecs:${PORTSDIR}/graphics/mplayer-codecs
 CONFIGURE_ARGS+=--with-win32libdir=${LOCALBASE}/lib/mplayer-codecs
+.endif
+
+pre-extract:
+
+.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} "You can disable 3DNow! support by defining WITHOUT_3DNOW"
+.endif
+
+.if !defined(WITHOUT_3DNOWEX) && !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+	@${ECHO_MSG} "You can disable K7 3DNow! extension support by defining WITHOUT_3DNOWEX"
+.endif
+.if !defined(WITHOUT_MMX2)
+	@${ECHO_MSG} "You can disable MMX2 support by defining WITHOUT_MMX2"
+.endif
+.if !defined(WITH_SSE)
+	@${ECHO_MSG} "You can enable SSE optimized decoding by defining WITH_SSE"
+	@${ECHO_MSG} "You have to enable \"options CPU_ENABLE_SSE\" in your kernel"
+	@${ECHO_MSG} "config in order to enable kernel support for SSE."
 .endif
 
 post-install:
@@ -71,4 +99,4 @@ post-install:
 install-user:
 	@${PERL} ${FILESDIR}/install-user
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
