@@ -1,0 +1,11 @@
+--- he2/Makefile.in.orig	Fri Aug  3 19:16:24 2001
++++ he2/Makefile.in	Fri Aug  3 19:16:41 2001
+@@ -582,7 +582,7 @@
+ 	$(INSTALL_DATA) $(srcdir)/data/espell.wor $(DESTDIR)/$(datadir)/he2/espell.wor
+ 	$(INSTALL_DATA) $(srcdir)/data/hspell.wor $(DESTDIR)/$(datadir)/he2/hspell.wor
+ 	$(INSTALL_DATA) $(srcdir)/data/laxet.wor $(DESTDIR)/$(datadir)/he2/laxet.wor
+-	$(INSTALL_DATA) $(srcdir)/data/.he2rc $(DESTDIR)/$(datadir)/he2/.he2rc
++	$(INSTALL_DATA) $(srcdir)/data/.he2rc $(DESTDIR)/$(datadir)/he2/.he2rc.sample
+ 
+ install-exec-local:
+ 	$(mkinstalldirs) $(bindir)

@@ -1,0 +1,11 @@
+--- he2/he2.in.old	Fri Aug  3 18:35:49 2001
++++ he2/he2.in	Fri Aug  3 18:36:08 2001
+@@ -2,7 +2,7 @@
+ export HEDIR=#datadir#/he2
+ if test "$DISPLAY." != "." ; then
+    export HE2_NEW_SHELL_ON_SUSPEND=1
+-   xterm +sb -fn heb8x13 -geometry 90x40 -T "Hebrew Editor" -e he2-bin $*
++   xterm +sb -fn heb-new8x14 -geometry 90x40 -T "Hebrew Editor" -e he2-bin $*
+ else
+    export HE2_NEW_SHELL_ON_SUSPEND=
+    he2-bin $*
