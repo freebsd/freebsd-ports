@@ -1,0 +1,13 @@
+--- script/harch.orig	Mon May 27 10:30:55 2002
++++ script/harch	Mon May 27 10:31:11 2002
+@@ -13,8 +13,8 @@
+ 
+ if uname >/dev/null 2>&1
+ then
+-  if uname -p >/dev/null 2>&1
+-  then PROCESSOR=`uname -p`
++  if uname -m >/dev/null 2>&1
++  then PROCESSOR=`uname -m`
+     case "$PROCESSOR" in
+     unknown|*\ *)
+       PROCESSOR=`uname -m`
