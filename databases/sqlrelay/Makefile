@@ -7,7 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.firstworks.com/downloads/sqlrelay/
 
@@ -52,7 +52,7 @@ WITH_GTK?=		yes
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
 LIB_DEPENDS+=		gdbm.2:${PORTSDIR}/databases/gdbm \
-			sqlite.1:${PORTSDIR}/databases/sqlite
+			sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"
 IF_SQLITE=	""
