@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Default
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -18,7 +18,7 @@ COMMENT=	Static calls apply to a default instantiation
 BUILD_DEPENDS=	${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Class::Default.3
 
