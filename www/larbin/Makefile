@@ -23,6 +23,10 @@ MAKE_ARGS=	CXX=${CXX}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
+
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/imake
 .else

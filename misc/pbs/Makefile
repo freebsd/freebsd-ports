@@ -6,16 +6,22 @@
 #
 
 PORTNAME=	pbs
-PORTVERSION=	2.2p11
+PORTVERSION=	2.3.16
 CATEGORIES=	misc parallel
-MASTER_SITES=	http://vaccine.sourceforge.net/
-DISTNAME=	pbs_v2.2p11
+MASTER_SITES=	http://www.openpbs.org/UserArea/Download/
+DISTNAME=	OpenPBS_2_3_16
 
 MAINTAINER=	dbader@eece.unm.edu
 COMMENT=	Batch job queueing system
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
+		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 HAS_CONFIGURE=	yes
@@ -39,10 +45,11 @@ MAN7=	pbs_resources_unicosmk2.7B pbs_resources_irix6array.7B \
 	pbs_resources_unicos8.7B pbs_resources.7B pbs_job_attributes.7B \
 	pbs_queue_attributes.7B pbs_server_attributes.7B pbs_resources_all.soB \
 	pbs_resources_aix4.7B pbs_resources_digitalunix.7B \
-	pbs_resources_freebsd.7B pbs_resources_fujitsu.7B pbs_resources_irix5.7B
+	pbs_resources_freebsd.7B pbs_resources_fujitsu.7B pbs_resources_irix5.7B \
+	pbs_resources_solaris7.7B
 
 MAN8=	qstart.8B qterm.8B pbs_sched_tcl.8B pbs_sched_basl.8B pbs_sched_cc.8B \
 	pbsnodes.8B qstop.8B pbs_server.8B qmgr.8B qrun.8B qdisable.8B \
 	qenable.8B pbs_mom.8B
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
