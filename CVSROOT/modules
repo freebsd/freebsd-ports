@@ -7435,6 +7435,7 @@ p5-XML-DifferenceMarkup	ports/textproc/p5-XML-DifferenceMarkup
 p5-XML-Directory	ports/textproc/p5-XML-Directory
 p5-XML-Dumper	ports/textproc/p5-XML-Dumper
 p5-XML-Encoding	ports/textproc/p5-XML-Encoding
+p5-XML-Feed		ports/textproc/p5-XML-Feed
 p5-XML-Filter-BufferText	ports/textproc/p5-XML-Filter-BufferText
 p5-XML-Filter-DetectWS	ports/textproc/p5-XML-Filter-DetectWS
 p5-XML-Filter-GenericChunk	ports/textproc/p5-XML-Filter-GenericChunk
@@ -9622,6 +9623,7 @@ snort-rep	ports/security/snort-rep
 snortreport	ports/security/snortreport
 snortsnarf	ports/security/snortsnarf
 snowflake	ports/misc/snowflake
+snowlog		ports/sysutils/snowlog
 snownews	ports/www/snownews
 snowstar	ports/audio/snowstar
 sntop		ports/net/sntop
