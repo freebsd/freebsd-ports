@@ -25,8 +25,7 @@ MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 .if ${OSVERSION} >= 400014
 PLIST:=         ${WRKDIR}/PLIST
 pre-install:
-	@${CAT} ${PKGDIR}/PLIST.v6 > ${PLIST}
-	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.v6 ${PKGDIR}/pkg-plist ${PLIST}
 .else
 CONFIGURE_ARGS+=--disable-ospf6d --disable-ripngd
 .endif
