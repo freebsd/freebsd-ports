@@ -14,10 +14,10 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 MAINTAINER?=	markm@FreeBSD.org
 
 .if defined(JAPANESE_EXMH)
-RUN_DEPENDS=	wish8.2jp:${PORTSDIR}/japanese/tk82
-BUILD_DEPENDS=	tclsh8.2jp:${PORTSDIR}/japanese/tcl82
-WISH=		wish8.2jp
-TCLSH=		tclsh8.2jp
+RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
+BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
+WISH=		wish8.0jp
+TCLSH=		tclsh8.0jp
 .else
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
