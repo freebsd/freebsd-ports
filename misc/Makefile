@@ -84,7 +84,6 @@
     SUBDIR += proxyper
     SUBDIR += qclock
     SUBDIR += quotes
-    SUBDIR += rboot
     SUBDIR += rc5des
     SUBDIR += rfc
     SUBDIR += rpm

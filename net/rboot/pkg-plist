@@ -1,0 +1,56 @@
+rboot/boot/files.win95
+rboot/boot/files.win98
+rboot/dev/MAKEDEV
+rboot/dev/MAKEDEV.local
+rboot/etc/disktab
+rboot/etc/master.passwd
+rboot/etc/passwd
+rboot/etc/pwd.db
+rboot/etc/rboot.conf
+rboot/etc/rc
+rboot/etc/spwd.db
+rboot/etc/ttys
+rboot/kernel
+rboot/stand/[
+rboot/stand/cat
+rboot/stand/cmos
+rboot/stand/cp
+rboot/stand/dd
+rboot/stand/devfs
+rboot/stand/echo
+rboot/stand/gzip
+rboot/stand/head
+rboot/stand/hostname
+rboot/stand/init
+rboot/stand/md5
+rboot/stand/meter
+rboot/stand/minigzip
+rboot/stand/mount
+rboot/stand/mount_devfs
+rboot/stand/mount_mfs
+rboot/stand/mount_msdos
+rboot/stand/mount_nfs
+rboot/stand/mount_ntfs
+rboot/stand/mount_std
+rboot/stand/msdos
+rboot/stand/pax
+rboot/stand/reboot
+rboot/stand/setcookie
+rboot/stand/sh
+rboot/stand/sysctl
+rboot/stand/test
+rboot/stand/tr
+rboot/stand/umount
+rboot/stand/win95_hooks.sh
+rboot/stand/win98_hooks.sh
+rboot/stand/winnt_hooks.sh
+@unexec rm -f %D/rboot/bin
+@dirrm rboot/boot
+@unexec rm -rf %D/rboot/dev
+@dirrm rboot/etc
+@dirrm rboot/mnt
+@unexec rm -f %D/rboot/sbin
+@dirrm rboot/stand
+@dirrm rboot/var/tmp
+@dirrm rboot/var
+@dirrm rboot

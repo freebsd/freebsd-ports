@@ -1,0 +1,19 @@
+RBoot is a remote boot facility for PC operating systems.               
+More specifically, it allows you to set up several PCs so that they fetch
+their operating system from a central UNIX server on boot time.
+    
+By having all the clients use the same boot image, and by storing
+differences in the clients' configuration in separate files, RBoot allows
+the sysadmin to reduce his/her administration efforts from factor N to 
+factor 1.                               
+
+RBoot requires a UNIX server that is capable of exporting a directory via
+NFS, and that has a bootpd server (for BOOTP). Any recent UNIX should meet
+these criteria. At the moment, RBoot supports only booting the          
+Windows 95/98 operating systems, but support for Windows NT 4, Win 3.11
+and DOS/LanManager eventually be added.
+
+RBoot is freely redistributable under a BSD-style license.          
+
+For more information, see the RBoot homepage at: 
+WWW: http://www.bs.ni.schule.de/support/rboot/

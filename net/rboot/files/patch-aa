@@ -1,0 +1,13 @@
+*** Makefile.orig	Sun Oct 10 14:30:03 1999
+--- Makefile	Sun Oct 10 14:26:58 1999
+***************
+*** 1,4 ****
+! INSTALL_PREFIX=/exports/rboot 
+! MANDIR=/usr/local/man
+  SUBDIRS= boot dev etc mnt stand
+  
+--- 1,4 ----
+! INSTALL_PREFIX=$(PREFIX)/rboot 
+! MANDIR=$(PREFIX)/man
+  SUBDIRS= boot dev etc mnt stand
+  

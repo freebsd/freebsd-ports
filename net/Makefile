@@ -149,6 +149,7 @@
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
     SUBDIR += ratoolset
+    SUBDIR += rboot
     SUBDIR += rdist6
     SUBDIR += relay
     SUBDIR += rinetd

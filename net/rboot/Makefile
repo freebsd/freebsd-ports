@@ -1,0 +1,27 @@
+# New ports collection makefile for:    rboot
+# Version required:     3.0
+# Date created:         25 Jun 1999
+# Whom:                 m.butkus@tu-bs.de
+#
+# $FreeBSD$
+#
+
+DISTNAME=       rboot-3.0.1
+CATEGORIES=	net
+MASTER_SITES=   http://www.bs.ni.schule.de/support/rboot/download/
+
+MAINTAINER=	m.butkus@tu-bs.de
+
+NO_PACKAGE=     "this port creates devices"
+
+post-install:
+	@${ECHO} ""
+	@${ECHO} "======================================================="
+	@${ECHO} "This port performs only a basic RBoot installation."
+	@${ECHO} "Please see the file ${WRKDIR}/${DISTNAME}/INSTALL"
+	@${ECHO} "for additional instructions on setting up RBoot."
+	@${ECHO} "Note that RBoot has been installed in ${PREFIX}/rboot."
+	@${ECHO} "======================================================="
+	@${ECHO} ""
+
+.include <bsd.port.mk>
