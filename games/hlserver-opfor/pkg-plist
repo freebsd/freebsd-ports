@@ -1,28 +1,36 @@
 %%PORTDOCS%%%%HLDSDIR%%gearbox/Sierra.inf
 %%HLDSDIR%%gearbox/cached.wad
 %%HLDSDIR%%gearbox/cl_dlls/client.dll
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_adrian.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_barney.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_civ_random.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_cleansuit.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_drillsgt.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_gina.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_gordon.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_grunt.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_op4_random.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_otis.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_random.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_recruit.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_scientist.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_squadleader.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_tower.txt
+%%HLDSDIR%%gearbox/classes/short_adrian.txt
+%%HLDSDIR%%gearbox/classes/short_barney.txt
+%%HLDSDIR%%gearbox/classes/short_civ_random.txt
+%%HLDSDIR%%gearbox/classes/short_cleansuit.txt
+%%HLDSDIR%%gearbox/classes/short_drillsgt.txt
+%%HLDSDIR%%gearbox/classes/short_gina.txt
+%%HLDSDIR%%gearbox/classes/short_gordon.txt
+%%HLDSDIR%%gearbox/classes/short_grunt.txt
+%%HLDSDIR%%gearbox/classes/short_op4_random.txt
+%%HLDSDIR%%gearbox/classes/short_otis.txt
+%%HLDSDIR%%gearbox/classes/short_random.txt
+%%HLDSDIR%%gearbox/classes/short_recruit.txt
+%%HLDSDIR%%gearbox/classes/short_scientist.txt
+%%HLDSDIR%%gearbox/classes/short_squadleader.txt
+%%HLDSDIR%%gearbox/classes/short_tower.txt
+%%HLDSDIR%%gearbox/config.cfg
 %%HLDSDIR%%gearbox/custom.hpk
 %%HLDSDIR%%gearbox/decals.wad
+%%HLDSDIR%%gearbox/dedicated.cfg
 %%HLDSDIR%%gearbox/delta.lst
 %%HLDSDIR%%gearbox/dlls/opfor_i386.so
-%%HLDSDIR%%gearbox/events/eagle1.sc
-%%HLDSDIR%%gearbox/events/eagle2.sc
-%%HLDSDIR%%gearbox/game.cfg
+%%HLDSDIR%%gearbox/events/displacer.sc
+%%HLDSDIR%%gearbox/events/eagle.sc
+%%HLDSDIR%%gearbox/events/knife.sc
+%%HLDSDIR%%gearbox/events/m249.sc
+%%HLDSDIR%%gearbox/events/penguinfire.sc
+%%HLDSDIR%%gearbox/events/pipewrench.sc
+%%HLDSDIR%%gearbox/events/shock.sc
+%%HLDSDIR%%gearbox/events/sniper.sc
+%%HLDSDIR%%gearbox/events/spore.sc
 %%HLDSDIR%%gearbox/gfx/env/cliff2bk.bmp
 %%HLDSDIR%%gearbox/gfx/env/cliff2bk.tga
 %%HLDSDIR%%gearbox/gfx/env/cliff2dn.bmp
@@ -94,9 +102,8 @@
 %%HLDSDIR%%gearbox/gfx/shell/won_logo.bmp
 %%HLDSDIR%%gearbox/liblist.gam
 %%HLDSDIR%%gearbox/listenserver.cfg
-%%HLDSDIR%%gearbox/mapcycle.txt
-%%HLDSDIR%%gearbox/maps/graphs/op4_datacore.nod
-%%HLDSDIR%%gearbox/maps/graphs/op4_datacore.nrp
+%%HLDSDIR%%gearbox/mapcycle-ctf.txt
+%%HLDSDIR%%gearbox/mapcycle-dm.txt
 %%HLDSDIR%%gearbox/maps/op4_bootcamp.bsp
 %%HLDSDIR%%gearbox/maps/op4_datacore.bsp
 %%HLDSDIR%%gearbox/maps/op4_demise.bsp
@@ -110,34 +117,30 @@
 %%HLDSDIR%%gearbox/maps/op4_repent.bsp
 %%HLDSDIR%%gearbox/maps/op4_rubble.bsp
 %%HLDSDIR%%gearbox/maps/op4_xendance.bsp
+%%HLDSDIR%%gearbox/maps/op4cp_park.bsp
+%%HLDSDIR%%gearbox/maps/op4cp_park.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_biodomes.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_biodomes.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_biodomes.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_biodomes.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_chasm.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_chasm.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_chasm.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_chasm.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_crash.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_crash.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_crash.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_crash.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_dam.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_dam.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_dam.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_dam.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_gunyard.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_gunyard.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_gunyard.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_gunyard.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_hairball.bsp
+%%HLDSDIR%%gearbox/maps/op4ctf_hairball.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_mortar.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_mortar.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_mortar.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_mortar.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_power.bsp
+%%HLDSDIR%%gearbox/maps/op4ctf_power.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_repent.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_repent.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_repent.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_repent.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_wonderland.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_wonderland.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_wonderland.txt
+%%HLDSDIR%%gearbox/maps/op4ctf_wonderland.txt
 %%HLDSDIR%%gearbox/maps/op4ctf_xendance.bsp
-%%HLDSDIR%%gearbox/maps/op4ctf_xendance.res
-%%PORTDOCS%%%%HLDSDIR%%gearbox/maps/op4ctf_xendance.txt
-%%HLDSDIR%%gearbox/maps/res.zip
+%%HLDSDIR%%gearbox/maps/op4ctf_xendance.txt
 %%HLDSDIR%%gearbox/models/blkop_apache.mdl
 %%HLDSDIR%%gearbox/models/blkop_apachet.mdl
 %%HLDSDIR%%gearbox/models/blkop_bodygibs.mdl
@@ -299,10 +302,10 @@
 %%HLDSDIR%%gearbox/models/wire_red8.mdl
 %%HLDSDIR%%gearbox/motd.txt
 %%HLDSDIR%%gearbox/op4ctf.wad
-%%PORTDOCS%%%%HLDSDIR%%gearbox/op4ctf_credits.txt
+%%HLDSDIR%%gearbox/op4ctf_credits.txt
 %%HLDSDIR%%gearbox/opfor.wad
 %%HLDSDIR%%gearbox/pldecal.wad
-%%PORTDOCS%%%%HLDSDIR%%gearbox/readme1106.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/readme1108.txt
 %%HLDSDIR%%gearbox/server.cfg
 %%HLDSDIR%%gearbox/skillopfor.cfg
 %%HLDSDIR%%gearbox/sound/ambience/alienflyby2.wav
@@ -519,6 +522,7 @@
 %%HLDSDIR%%gearbox/sprites/of_nv_int.spr
 %%HLDSDIR%%gearbox/sprites/ofch1.spr
 %%HLDSDIR%%gearbox/sprites/ofch2.spr
+%%HLDSDIR%%gearbox/sprites/parkhud.spr
 %%HLDSDIR%%gearbox/sprites/smoke_blk.spr
 %%HLDSDIR%%gearbox/sprites/spike_trail.spr
 %%HLDSDIR%%gearbox/sprites/spore_exp_01.spr
@@ -530,16 +534,16 @@
 %%HLDSDIR%%gearbox/sprites/sprite_c_1.spr
 %%HLDSDIR%%gearbox/sprites/tinyspit.spr
 %%HLDSDIR%%gearbox/sprites/tongue.spr
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_displacer.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_eagle.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_grapple.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_knife.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_m249.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_penguin.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_pipewrench.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_shockrifle.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_sniperrifle.txt
-%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_sporelauncher.txt
+%%HLDSDIR%%gearbox/sprites/weapon_displacer.txt
+%%HLDSDIR%%gearbox/sprites/weapon_eagle.txt
+%%HLDSDIR%%gearbox/sprites/weapon_grapple.txt
+%%HLDSDIR%%gearbox/sprites/weapon_knife.txt
+%%HLDSDIR%%gearbox/sprites/weapon_m249.txt
+%%HLDSDIR%%gearbox/sprites/weapon_penguin.txt
+%%HLDSDIR%%gearbox/sprites/weapon_pipewrench.txt
+%%HLDSDIR%%gearbox/sprites/weapon_shockrifle.txt
+%%HLDSDIR%%gearbox/sprites/weapon_sniperrifle.txt
+%%HLDSDIR%%gearbox/sprites/weapon_sporelauncher.txt
 %%HLDSDIR%%gearbox/sprites/wep_smoke_01.spr
 %%HLDSDIR%%gearbox/sprites/xpl_001.spr
 %%HLDSDIR%%gearbox/stats/stats_blackmesa.ost
@@ -581,14 +585,13 @@
 @dirrm %%HLDSDIR%%gearbox/models/player/barney
 @dirrm %%HLDSDIR%%gearbox/models/player
 @dirrm %%HLDSDIR%%gearbox/models
-@dirrm %%HLDSDIR%%gearbox/maps/graphs
 @dirrm %%HLDSDIR%%gearbox/maps
 @dirrm %%HLDSDIR%%gearbox/gfx/shell
 @dirrm %%HLDSDIR%%gearbox/gfx/env
 @dirrm %%HLDSDIR%%gearbox/gfx
 @dirrm %%HLDSDIR%%gearbox/events
 @dirrm %%HLDSDIR%%gearbox/dlls
-%%PORTDOCS%%@dirrm %%HLDSDIR%%gearbox/classes
+@dirrm %%HLDSDIR%%gearbox/classes
 @dirrm %%HLDSDIR%%gearbox/cl_dlls
 @unexec rmdir %D/%%HLDSDIR%%gearbox/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%gearbox/logs 2>/dev/null || true
