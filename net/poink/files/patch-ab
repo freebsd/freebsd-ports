@@ -1,0 +1,16 @@
+--- ping.1.orig	Sat Jul 11 08:31:00 1998
++++ ping.1
+@@ -1,11 +1,11 @@
+ .TH C2SH 1 "August, 08, 1998" "poink-1.5"
+ .SH NAME
+-ping \-  Nosuid, secure TCP/IP ping
++poink \-  Nosuid, secure TCP/IP ping
+ .SH SYNOPSIS
+ .hy 0
+ .na
+ .TP
+-.B ping
++.B poink
+ [
+ .B -i
+ .I delay

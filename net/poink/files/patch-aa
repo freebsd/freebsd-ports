@@ -1,0 +1,17 @@
+--- Makefile.orig	Fri Jul 10 16:10:00 1998
++++ Makefile
+@@ -1,5 +1,3 @@
+-CC      = gcc
+-OPTS    = -O3 -Wall
+ FILE	= poink
+ DEST	= /bin/ping
+ MANPAGE = ping.1
+@@ -8,7 +6,7 @@
+ all: $(FILE)
+ 
+ $(FILE): $(FILE).c
+-	$(CC) $(OPTS) $(FILE).c -o $(FILE)
++	$(CC) $(CFLAGS) $(FILE).c -o $(FILE)
+ 
+ install: all
+ 	cp $(FILE) $(DEST)
