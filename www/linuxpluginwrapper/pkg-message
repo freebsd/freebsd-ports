@@ -28,13 +28,16 @@ error "can't find gtk_major_version" ad-hoc-ly.
 
 I don't set default to use flash7.  Please set-up your
 enviroment(ln -s, apply patch to rtld,...).
+
+
+** PLEASE CONFIRM YOUR /etc/libmap.conf ***
+The configuration file was minor fixed.  So please update your
+/etc/libmap.conf.
 ================================================================
 
 
-Setup your /etc/libmap.conf.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
-%%LIBMAPCONF%%
-- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Setup your /etc/libmap.conf.  Please SEE ALSO following file.
+==> %%LIBMAPCONF%%
 
 Now start browser and go to 'about:plugins' and the new plugins
 are enabled!

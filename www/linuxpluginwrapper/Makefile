@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20041017
+PORTVERSION=	20041219
 PORTREVISION=	0
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
@@ -39,11 +39,11 @@ PLIST=		${WRKDIR}/pkg-plist
 CONFLICTS=	flashpluginwrapper-*
 
 .if		${OSVERSION} >= 503001
-LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5-stable
+LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-stable
 .elif		${OSVERSION} >= 500000
-LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5-current
+LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD5-current
 .else
-LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD4.x
+LIBMAPCONF=	${EXAMPLESDIR}/libmap.conf-FreeBSD4.x
 .endif
 
 .if		${OSVERSION} < 501105
@@ -79,8 +79,7 @@ post-build:
 		-e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		-e 's,%%X11BASE%%,${X11BASE},' \
 		-e 's,%%LTHREADSHMAJOR%%,${LTHREADSHMAJOR},' \
-		-e '/^%%LIBMAPCONF%%$$/r ${LIBMAPCONF}' \
-		-e '/^%%LIBMAPCONF%%$$/d' \
+		-e 's,%%LIBMAPCONF%%,${LIBMAPCONF},' \
 		< ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 .if		defined(WITHOUT_PLUGINS)
 	@${SED} -e "/exec/d" ${.CURDIR}/pkg-plist > ${PLIST}
