@@ -1,13 +1,13 @@
 # New ports collection makefile for:	fetchmail
-# Version required:	1.9
+# Version required:	2.2.0
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.5 1996/11/16 22:54:39 max Exp $
+# $Id: Makefile,v 1.6 1996/11/19 06:37:36 max Exp $
 #
 
-DISTNAME=	fetchmail-2.0
-PKGNAME=	fetchmail-2.0.0
+DISTNAME=	fetchmail-2.2
+PKGNAME=	fetchmail-2.2.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
 
