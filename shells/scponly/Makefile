@@ -49,8 +49,8 @@
 # to be installed.
 
 PORTNAME=	scponly
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	3.9
+PORTREVISION=	0
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
@@ -64,10 +64,6 @@ GNU_CONFIGURE=	yes
 PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501105 && exists(/libexec/ld-elf.so.1)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-aa
-.endif
 
 .if defined(WITHOUT_SCPONLY_WILDCARDS)
 CONFIGURE_ARGS+=--disable-wildcards
@@ -88,6 +84,8 @@ CONFIGURE_ARGS+=--disable-winscp-compat
 .if defined(WITH_SCPONLY_CHROOT)
 PLIST_SUB=	SCPONLY_CHROOT=""
 CONFIGURE_ARGS+=--enable-chrooted-binary
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
+USE_AUTOCONF_VER=253
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
@@ -102,10 +100,22 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-install:
+	@${ECHO_MSG} "Updating /etc/shells"
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/bin/scponly /etc/shells.bak; \
+	  ${ECHO_CMD} ${PREFIX}/bin/scponly) > /etc/shells
+	@${RM} /etc/shells.bak
 .if defined(WITH_SCPONLY_CHROOT)
+	@${CP} /etc/shells /etc/shells.bak
+	@(${GREP} -v ${PREFIX}/sbin/scponlyc /etc/shells.bak; \
+	  ${ECHO_CMD} ${PREFIX}/sbin/scponlyc) > /etc/shells
+	@${RM} /etc/shells.bak
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/setup_chroot.sh ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/config.h ${EXAMPLESDIR}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Run following script to setup chroot cage;"
-	@${ECHO_MSG} "${WRKSRC}/setup_chroot.sh"
+	@${ECHO_MSG} "To setup chroot cage, run following command:"
+	@${ECHO_MSG} "  cd ${EXAMPLESDIR}/ && ${SH} setup_chroot.sh"
 	@${ECHO_MSG} ""
 .endif
 .if !defined(NOPORTDOCS)
