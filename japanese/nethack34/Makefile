@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 
 CATEGORIES=	japanese games
 
@@ -20,8 +20,8 @@ COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-PATCH_SITES=	http://downloads.sourceforge.jp/jnethack/1119/
-PATCHFILES=	jnethack-${PORTVERSION}-0.8.diff.gz
+PATCH_SITES=	http://downloads.sourceforge.jp/jnethack/1864/
+PATCHFILES=	jnethack-${PORTVERSION}-0.9.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 USE_BISON=	yes
