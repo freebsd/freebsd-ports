@@ -141,7 +141,6 @@
     SUBDIR += katalog
     SUBDIR += kcd
     SUBDIR += kde3-i18n
-    SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-af
     SUBDIR += kde3-i18n-ar
     SUBDIR += kde3-i18n-az
