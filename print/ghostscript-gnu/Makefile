@@ -7,37 +7,37 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU:S/$/:fonts/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gprint/} \
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
-		${MASTER_SITE_PORTS_JP:S/$/:ports_jp/} \
+		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
+		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/:eplaser \
+		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_304/:eplaser \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs705/
-MASTER_SITE_SUBDIR=	ghostscript/:DEFAULT,fonts,ports_jp \
-			gimp-print/:gprint
+MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
+			./:ports_jp
 PKGNAMESUFFIX=	-gnu
-DISTFILES=	${GS_SRCS}:DEFAULT \
-		${GS_FONTS_STD}:fonts \
-		${GS_FONTS_OTHER}:fonts \
+DISTFILES=	${GS_SRCS}:gs_srcs \
+		${GS_FONTS_STD}:gs_fonts \
+		${GS_FONTS_OTHER}:gs_fonts \
 		${HP8XX_SRCS}:hp8xx \
 		${HPDJ_SRCS}:hpdj_pcl3 \
 		${PCL3_SRCS}:hpdj_pcl3 \
 		${DJ970_SRCS}:dj970 \
-		${GPRINT_SRCS}:gprint \
 		${MD2K_SRCS}:md2k \
-		${ALPS_SRCS}:ports_jp \
-		${BJ10V_SRCS}:ports_jp \
-		${LIPS_SRCS}:ports_jp \
-		${DMPRT_SRCS}:ports_jp \
+		${ALPS_SRCS}:ports_jp_gs \
+		${BJ10V_SRCS}:ports_jp_gs \
+		${LIPS_SRCS}:lips \
+		${DMPRT_SRCS}:ports_jp_gs \
 		${EPAG_SRCS}:epag \
 		${EPLASER_SRCS}:eplaser \
 		${MJC_SRCS}:ports_jp \
@@ -51,8 +51,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_REINPLACE=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
@@ -135,13 +135,6 @@ PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
 DJ970=		gdevdj9
 DJ970_SRCS=	${DJ970}.c.gz
 
-# Gimp-Print - very high quality driver for Epson, HPs,...
-# http://gimp-print.sourceforge.net/
-GPRINT=		gimp-print
-GPRINT_VERS=	4.2.1
-GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
-GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
-
 # MD2K - additional driver for Alps MD-2000/2010/4000/1300/1500/5000
 # http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
 MD2K=		md2k
@@ -161,6 +154,7 @@ BJ10V_NAME=	gdev10v
 BJ10V_SRCS=	${BJ10V_NAME}.tar.gz
 
 # LIPS - additional driver for Canon LIPS II+/III/IVc/IV printers
+# http://www.ucatv.ne.jp/~taeko/software/gs/
 LIPS=		lips
 LIPS_VERS=	2.4.0
 LIPS_NAME=	gdevlips-${LIPS_VERS}
@@ -173,7 +167,7 @@ DMPRT_NAME=	${DMPRT}-${DMPRT_VERS}
 DMPRT_SRCS=	${DMPRT_NAME}.tar.gz
 
 # EPAG - additional driver for Epson ESC/Page printers
-# http://www.humblesoft.com/
+# http://www.humblesoft.com/gdevepag.html
 EPAG=		epag
 EPAG_VERS=	3.09
 EPAG_NAME=	${EPAG}-${EPAG_VERS}
@@ -182,7 +176,7 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
 # http://www.epkowa.co.jp/linux/lpd.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.0.1
+EPLASER_VERS=	3.0.4
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
 EPLASER_SRCS=	${EPLASER_NAME}-651.tgz
 
@@ -200,7 +194,7 @@ NPDL_SRCS=	${NPDL_NAME}.tar.gz
 
 # GDI - additional driver for Samsung SmartGDI laser printers
 GDI=		gdi
-GDI_NAME=	samsung-gdi-driver-gs5.50
+GDI_NAME=	Samsung-SmartGDI-all-GS
 GDI_SRCS=	${GDI_NAME}.tar.gz
 
 # contributed uniprint profiles
@@ -240,9 +234,6 @@ post-extract:
 	${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DJ970_SRCS} ${WRKSRC}/src
 	${GUNZIP_CMD} ${WRKSRC}/src/${DJ970_SRCS}
-# for Gimp-Print driver
-	${ECHO_MSG} ">>>   extracting ${GPRINT_SRCS} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRCS}
 # for MD2K driver
 	${ECHO_MSG} ">>>   extracting ${MD2K_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MD2K_SRCS}
@@ -343,7 +334,7 @@ pre-configure:
 		>> ${WRKSRC}/src/contrib.mak
 # for GDI driver
 	${ECHO_MSG} ">>>   adding ${GDI} driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/gdi.contrib.mak \
+	${CAT} ${WRKSRC}/src/smartgdi-contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
 do-configure:
@@ -354,34 +345,12 @@ do-configure:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 
-post-configure:
-	${ECHO_MSG} ">>> in post-configure ..."
-# for Gimp-Print driver
-	${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
-	cd ${WRKSRC}/${GPRINT_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${SH} ./configure \
-			--without-translated-ppds \
-			--without-gimp --without-samples \
-			--without-user-guide --disable-escputil \
-			--disable-nls --disable-shared \
-			--prefix=${PREFIX}
-
 pre-build:
 	${ECHO_MSG} ">>> in pre-build ..."
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
 	${LN} -sf ${WRKSRC}/src/unix-gcc.mak ${WRKSRC}/Makefile
-# for Gimp-Print driver
-	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
-	cd ${WRKSRC}/${GPRINT_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
-	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT} ..."
-	${MKDIR} ${WRKSRC}/${GPRINT}
-	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/include/gimp-print \
-		${WRKSRC}/${GPRINT}/gimp-print
-	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/main/.libs/libgimpprint.a \
-		${WRKSRC}/${GPRINT}/libgimpprint.a
 # for MD2K driver
 	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
 .for i in gdevmd2k.c
@@ -511,13 +480,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
 		${DOCSDIR}/${PORTVERSION}/${PCL3}
 .endfor
-# for Gimp-Print driver
-	${ECHO_MSG} ">>>   installing ${GPRINT} docs ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${GPRINT}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/src/ghost/${i} \
-		${DOCSDIR}/${PORTVERSION}/${GPRINT}
-.endfor
 # for MD2K driver
 	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
 	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MD2K}
@@ -567,7 +529,7 @@ post-install:
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
 	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPLASER}
-.for i in readme-eplaser-651.euc
+.for i in readme-eplaser-651.euc readme-eplaser-651-jp.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
 		${DOCSDIR}/${PORTVERSION}/${EPLASER}
 .endfor
@@ -584,6 +546,13 @@ post-install:
 .for i in gdevnpdl.jis
 	${INSTALL_DATA} ${WRKSRC}/${NPDL_NAME}/${i} \
 		${DOCSDIR}/${PORTVERSION}/${NPDL}
+.endfor
+# for GDI driver
+	${ECHO_MSG} ">>>   installing ${GDI} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${GDI}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${DOCSDIR}/${PORTVERSION}/${GDI}
 .endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
