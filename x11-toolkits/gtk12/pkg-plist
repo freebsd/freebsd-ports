@@ -110,14 +110,14 @@ include/gtk11/gtk/gtkvscrollbar.h
 include/gtk11/gtk/gtkvseparator.h
 include/gtk11/gtk/gtkwidget.h
 include/gtk11/gtk/gtkwindow.h
-lib/libgdk-1.1.a
-lib/libgdk-1.1.la
-lib/libgdk-1.1.so
-lib/libgdk-1.1.so.1.0
-lib/libgtk-1.1.a
-lib/libgtk-1.1.la
-lib/libgtk-1.1.so
-lib/libgtk-1.1.so.1.0
+lib/libgdk11.a
+lib/libgdk11.la
+lib/libgdk11.so
+lib/libgdk11.so.1.0
+lib/libgtk11.a
+lib/libgtk11.la
+lib/libgtk11.so
+lib/libgtk11.so.1.0
 share/aclocal/gtk11.m4
 @unexec /sbin/ldconfig -R
 @exec /sbin/ldconfig -m %D/lib

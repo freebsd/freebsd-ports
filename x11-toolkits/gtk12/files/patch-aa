@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Wed Aug  5 13:06:11 1998
-+++ Makefile.in	Wed Aug 12 17:58:02 1998
++++ Makefile.in	Fri Aug 14 18:14:54 1998
 @@ -91,9 +91,9 @@
  xinput_progs = @xinput_progs@
  
@@ -46,13 +46,133 @@
  install-binSCRIPTS: $(bin_SCRIPTS)
  	@$(NORMAL_INSTALL)
 --- gtk/Makefile.in.orig	Wed Aug  5 13:06:16 1998
-+++ gtk/Makefile.in	Wed Aug 12 17:47:57 1998
-@@ -433,7 +433,7 @@
- SOURCES = $(libgtk_1_1_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c simple.c
- OBJECTS = $(libgtk_1_1_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o simple.o
++++ gtk/Makefile.in	Fri Aug 14 18:16:50 1998
+@@ -94,9 +94,9 @@
+ 
+ gtkincludedir = $(includedir)/gtk
+ 
+-lib_LTLIBRARIES = libgtk-1.1.la
++lib_LTLIBRARIES = libgtk11.la
+ 
+-libgtk_1_1_la_SOURCES = \
++libgtk11_la_SOURCES = \
+ 	gtkaccelgroup.c		\
+ 	gtkaccellabel.c		\
+ 	gtkadjustment.c		\
+@@ -302,7 +302,7 @@
+ 	gtkwindow.h             \
+ 	gtktypebuiltins.h
+ 
+-libgtk_1_1_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libgtk11_la_LDFLAGS = -version-info 1:0:0
+ 
+ EXTRA_DIST = \
+ 	line-arrow.xbm 		\
+@@ -341,11 +341,11 @@
+ # FIXME, we currently rely on linking against libglib-1.1
+ 
+ DEPS =	\
+-	libgtk-@LT_RELEASE@.la				\
++	libgtk11.la				\
+ 	$(top_builddir)/gdk/libgdk-@LT_RELEASE@.la
+ 
+ LDADDS = \
+-	libgtk-@LT_RELEASE@.la				\
++	libgtk11.la				\
+ 	$(top_builddir)/gdk/libgdk-@LT_RELEASE@.la	\
+ 	@x_ldflags@					\
+ 	@x_libs@					\
+@@ -377,8 +377,8 @@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+-libgtk_1_1_la_LIBADD = 
+-libgtk_1_1_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo \
++libgtk11_la_LIBADD = 
++libgtk11_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo \
+ gtkadjustment.lo gtkalignment.lo gtkarg.lo gtkarrow.lo \
+ gtkaspectframe.lo gtkbin.lo gtkbindings.lo gtkbbox.lo gtkbox.lo \
+ gtkbutton.lo gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo \
+@@ -430,10 +430,10 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libgtk_1_1_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c simple.c
+-OBJECTS = $(libgtk_1_1_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o simple.o
++SOURCES = $(libgtk11_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c simple.c
++OBJECTS = $(libgtk11_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o simple.o
  
 -all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
 +all: Makefile $(LTLIBRARIES) $(HEADERS)
  
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
+@@ -510,8 +510,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libgtk-1.1.la: $(libgtk_1_1_la_OBJECTS) $(libgtk_1_1_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgtk_1_1_la_LDFLAGS) $(libgtk_1_1_la_OBJECTS) $(libgtk_1_1_la_LIBADD) $(LIBS)
++libgtk11.la: $(libgtk11_la_OBJECTS) $(libgtk11_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgtk11_la_LDFLAGS) $(libgtk11_la_OBJECTS) $(libgtk11_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-noinstPROGRAMS:
+ 
+--- gdk/Makefile.in.orig	Fri Aug 14 18:46:01 1998
++++ gdk/Makefile.in	Fri Aug 14 18:46:36 1998
+@@ -92,9 +92,9 @@
+ 
+ gdkincludedir = $(includedir)/gdk
+ 
+-lib_LTLIBRARIES = libgdk-1.1.la
++lib_LTLIBRARIES = libgdk11.la
+ 
+-libgdk_1_1_la_SOURCES = \
++libgdk11_la_SOURCES = \
+ 	gdk.c		\
+ 	gdkcc.c		\
+ 	gdkcolor.c	\
+@@ -136,8 +136,8 @@
+ 	gdktypes.h	\
+ 	gdkx.h
+ 
+-libgdk_1_1_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
++libgdk11_la_LDFLAGS = \
++	-version-info 1:0:0 \
+ 	@x_ldflags@ @x_libs@
+ 
+ INCLUDES = -I$(top_srcdir) @GLIB_CFLAGS@ @x_cflags@ 
+@@ -170,8 +170,8 @@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+-libgdk_1_1_la_LIBADD = 
+-libgdk_1_1_la_OBJECTS =  gdk.lo gdkcc.lo gdkcolor.lo gdkcursor.lo \
++libgdk11_la_LIBADD = 
++libgdk11_la_OBJECTS =  gdk.lo gdkcc.lo gdkcolor.lo gdkcursor.lo \
+ gdkdnd.lo gdkdraw.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkimage.lo \
+ gdkinput.lo gdkpixmap.lo gdkproperty.lo gdkrgb.lo gdkrectangle.lo \
+ gdkregion.lo gdkselection.lo gdkthreads.lo gdkvisual.lo gdkwindow.lo \
+@@ -194,8 +194,8 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libgdk_1_1_la_SOURCES) $(gxid_SOURCES)
+-OBJECTS = $(libgdk_1_1_la_OBJECTS) $(gxid_OBJECTS)
++SOURCES = $(libgdk11_la_SOURCES) $(gxid_SOURCES)
++OBJECTS = $(libgdk11_la_OBJECTS) $(gxid_OBJECTS)
+ 
+ all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
+ 
+@@ -272,8 +272,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libgdk-1.1.la: $(libgdk_1_1_la_OBJECTS) $(libgdk_1_1_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgdk_1_1_la_LDFLAGS) $(libgdk_1_1_la_OBJECTS) $(libgdk_1_1_la_LIBADD) $(LIBS)
++libgdk11.la: $(libgdk11_la_OBJECTS) $(libgdk11_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgdk11_la_LDFLAGS) $(libgdk11_la_OBJECTS) $(libgdk11_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-binPROGRAMS:
+ 

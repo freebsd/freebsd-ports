@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.22 1998/08/07 23:08:38 asami Exp $
+# $Id: Makefile,v 1.23 1998/08/12 10:38:28 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.1
@@ -15,8 +15,9 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	glib11\\.0\\.:${PORTSDIR}/devel/glib
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk11
 
