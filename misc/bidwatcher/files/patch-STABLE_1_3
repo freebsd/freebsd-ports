@@ -1,0 +1,1767 @@
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgroup.cpp anoncvs-STABLE_1_3/bidgroup.cpp
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgroup.cpp	Wed Dec 31 16:00:00 1969
++++ bidgroup.cpp	Thu Jun 10 02:02:08 2004
+@@ -0,0 +1,191 @@
++
++// Copyright (C) 2004 Planet Intelligent Systems GmbH
++// Residence Park 1-7, 19065 Raben Steinfeld, Germany, Europe, Earth
++// All rights reserved
++//
++// Author: Jan Starzynski
++//
++// $Id: bidgroup.cpp,v 1.1.2.1 2004/06/10 09:02:08 sturnus Exp $
++//
++// $Log: bidgroup.cpp,v $
++// Revision 1.1.2.1  2004/06/10 09:02:08  sturnus
++// files for bidgroups and extensions
++//
++// Revision 1.13  2004/05/18 13:29:50  js02
++// integration continued
++//
++// Revision 1.12  2004/05/17 23:33:33  js02
++// bid groups continued
++//
++// Revision 1.10  2004/05/14 16:30:39  js02
++// bidgroup control via middle mouse button implemented
++//
++// Revision 1.9  2004/05/13 21:54:57  js02
++// View and Control for Bidgroups
++//
++// Revision 1.8  2004/05/13 15:38:07  js02
++// new function groupId
++//
++// Revision 1.7  2004/05/13 11:31:39  js02
++// Load/Save of BidGroups
++//
++// Revision 1.6  2004/05/13 09:56:29  js02
++// vereinfachte Version
++//
++
++#include <algorithm>
++#include <functional>
++
++#include "bidgroup.h"
++
++using namespace std;
++
++struct FindItem: public unary_function<BidGroup::ItemList, bool> {
++  BidGroup::IdType id;
++  FindItem(BidGroup::IdType id): id(id) {}
++  bool operator()(const BidGroup::ItemList &list) const { return list.find(id) != list.end(); }
++};
++
++struct UselessList: public unary_function<BidGroup::ItemList, bool> {
++  bool operator()(const BidGroup::ItemList &list) const { return list.size() <= 1; }
++};
++
++void BidGroup::clear()
++{
++  m_list.clear();
++}
++
++int BidGroup::numGroup() const
++{
++  return m_list.size();
++}
++
++BidGroup::ItemList *BidGroup::addItem(const IdType &id1, const IdType &id2)
++{
++  ItemList *item;
++
++  item = findItem(id1);
++  if(item) {
++    item->insert(id2);
++    return item;
++  }
++
++  item = findItem(id2);
++  if(item) {
++    item->insert(id1);
++    return item;
++  }
++
++  if(id1 == id2) return 0;
++
++  ItemList add;
++  add.insert(id1);
++  add.insert(id2);
++  GroupList::iterator insert = find_if(m_list.begin(), m_list.end(), UselessList());
++  if(insert == m_list.end()) {
++    m_list.insert(insert, add);
++  } else {
++    *insert = add;
++  }
++
++  return &m_list.back();
++}
++
++int BidGroup::groupId(const IdType &id) const
++{
++  GroupList::const_iterator it = find_if(m_list.begin(), m_list.end(), FindItem(id));
++  return it == m_list.end() ? -1 : it - m_list.begin();
++}
++
++BidGroup::ItemList *BidGroup::findItemP(const IdType &id) const
++{
++  return getGroupP(groupId(id));
++}
++
++BidGroup::ItemList *BidGroup::getGroupP(int gid) const
++{
++  return const_cast<BidGroup::ItemList*>(gid < 0 || gid >= numGroup() ? 0 : &m_list[gid]);
++}
++
++bool BidGroup::delItem(const IdType &id)
++{
++  bool ok = false;
++  for(GroupList::iterator it = m_list.begin(); it != m_list.end(); ++it) {
++    ok |= it->erase(id);
++  }
++  return ok;
++}
++
++vector<BidGroup::IdType> &BidGroup::findItem(vector<IdType> &vec, const IdType &id)
++{
++  ItemList *item = findItem(id);
++  if(id) vec.insert(vec.end(), item->begin(), item->end());
++  return vec;
++}
++
++bool BidGroup::read(const char *file)
++{
++  FILE *fp = fopen(file, "r");
++  bool ret = read(fp);
++  if(fp) fclose(fp);
++  return ret;
++}
++
++bool BidGroup::write(const char *file) const
++{
++  FILE *fp = fopen(file, "w");
++  bool ret = write(fp);
++  if(fp) fclose(fp);
++  return ret;
++}
++
++bool BidGroup::read(FILE *fp)
++{
++  if(!fp) return false;
++
++  bool ok = true;
++  char buffer[30];
++
++  ItemList group;
++  while(fgets(buffer, sizeof(buffer), fp)) {
++    IdType id;
++    if(sscanf(buffer, "%llu", &id) == 1) {
++      group.insert(id);
++    } else {
++      if(!group.empty()) {
++        m_list.push_back(group);
++        group.clear();
++      }
++    }
++  }
++
++  if(!group.empty()) m_list.push_back(group);
++
++  return ok;
++}
++
++bool BidGroup::write(FILE *fp) const
++{
++  if(!fp) return false;
++
++  bool ok = true;
++  for(GroupList::const_iterator it = m_list.begin(); it != m_list.end(); ++it) {
++    if(!it->empty()) {
++      for(ItemList::const_iterator jt = it->begin(); jt != it->end(); ++jt) {
++        fprintf(fp, "%llu\n", *jt);
++      }
++      fprintf(fp, "\n");
++    }
++  }
++  return ok;
++}
++
++void BidGroup::sweepList(bool at_end_only)
++{
++  if(at_end_only) {
++    m_list.erase(find_if(m_list.rbegin(), m_list.rend(), not1<UselessList>(UselessList())).base(), m_list.end());
++  } else {
++    m_list.erase(remove_if(m_list.begin(), m_list.end(), UselessList()), m_list.end());
++  }
++}
++
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgroup.h anoncvs-STABLE_1_3/bidgroup.h
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgroup.h	Wed Dec 31 16:00:00 1969
++++ bidgroup.h	Thu Jul 15 07:27:30 2004
+@@ -0,0 +1,82 @@
++
++/*
++ * Copyright (C) 2004 Planet Intelligent Systems GmbH
++ * Residence Park 1-7, 19065 Raben Steinfeld, Germany, Europe, Earth
++ * All rights reserved
++ *
++ * Author: Jan Starzynski
++ *
++ * $Id: bidgroup.h,v 1.1.2.2 2004/07/15 14:27:30 sturnus Exp $
++ *
++ * $Log: bidgroup.h,v $
++ * Revision 1.1.2.2  2004/07/15 14:27:30  sturnus
++ * #include <cstdio> + std::FILE added
++ *
++ * Revision 1.1.2.1  2004/06/10 09:02:08  sturnus
++ * files for bidgroups and extensions
++ *
++ * Revision 1.12  2004/05/18 13:29:50  js02
++ * integration continued
++ *
++ * Revision 1.11  2004/05/17 23:33:33  js02
++ * bid groups continued
++ *
++ * Revision 1.9  2004/05/14 16:30:39  js02
++ * bidgroup control via middle mouse button implemented
++ *
++ * Revision 1.8  2004/05/13 21:54:57  js02
++ * View and Control for Bidgroups
++ *
++ * Revision 1.7  2004/05/13 15:38:07  js02
++ * new function groupId
++ *
++ * Revision 1.6  2004/05/13 11:31:39  js02
++ * Load/Save of BidGroups
++ *
++ * Revision 1.5  2004/05/13 09:56:29  js02
++ * vereinfachte Version
++ *
++ */
++
++#ifndef BIDWATCHER_BIDGROUP_H
++#define BIDWATCHER_BIDGROUP_H
++
++#include <vector>
++#include <set>
++#include <cstdio>
++
++class BidGroup {
++public:
++  typedef unsigned long long    IdType;
++  typedef std::set<IdType>      ItemList;
++  typedef std::vector<ItemList> GroupList;
++
++  void clear();
++  int numGroup() const;
++
++  ItemList *addItem(const IdType &id1, const IdType &id2);
++  bool delItem(const IdType &id);
++
++  int groupId(const IdType &id) const;
++  const ItemList *getGroup(int idx) const { return getGroupP(idx); }
++  ItemList *getGroup(int idx) { return getGroupP(idx); }
++
++  const ItemList *findItem(const IdType &id) const { return findItemP(id); }
++  ItemList *findItem(const IdType &id) { return findItemP(id); }
++  std::vector<IdType> &findItem(std::vector<IdType> &vec, const IdType &id);
++
++  void sweepList(bool at_end_only = true);
++
++  bool read(const char *file);
++  bool read(std::FILE *fp);
++
++  bool write(const char *file) const;
++  bool write(std::FILE *fp) const;
++
++private:
++  GroupList m_list;
++  ItemList *findItemP(const IdType &id) const;
++  ItemList *getGroupP(int idx) const;
++};
++
++#endif
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgui.cpp anoncvs-STABLE_1_3/bidgui.cpp
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgui.cpp	Wed Dec 31 16:00:00 1969
++++ bidgui.cpp	Mon Jul 12 01:02:55 2004
+@@ -0,0 +1,398 @@
++
++// Copyright (C) 2004 Planet Intelligent Systems GmbH
++// Residence Park 1-7, 19065 Raben Steinfeld, Germany, Europe, Earth
++// All rights reserved
++//
++// Author: Jan Starzynski
++//
++// $Id: bidgui.cpp,v 1.1.2.4 2004/07/12 08:02:55 sturnus Exp $
++//
++// $Log: bidgui.cpp,v $
++// Revision 1.1.2.4  2004/07/12 08:02:55  sturnus
++// accelerating snipe setting: don't get snipe key, it's done again later anyway
++//
++// Revision 1.1.2.3  2004/06/25 14:22:02  sturnus
++// finished remote control via ~/.bidwatcher/item.add
++//
++// Revision 1.1.2.2  2004/06/10 16:31:08  sturnus
++// continued work on commando file parser
++//
++// Revision 1.1.2.1  2004/06/10 09:02:08  sturnus
++// files for bidgroups and extensions
++//
++// Revision 1.14  2004/06/03 12:52:03  js02
++// *** empty log message ***
++//
++// Revision 1.13  2004/06/03 12:50:19  js02
++// add items from ~/.bidwatcher/item.add
++//
++// Revision 1.12  2004/05/28 06:50:56  js02
++// failed getkeys are stored
++//
++// Revision 1.11  2004/05/25 15:14:34  js02
++// Bugfix: wrong parameter type for call to delBidGroupItem
++//
++// Revision 1.10  2004/05/19 08:46:52  js02
++// Bugfixes
++//
++// Revision 1.9  2004/05/18 14:45:19  js02
++// *** empty log message ***
++//
++// Revision 1.8  2004/05/18 14:36:20  js02
++// copying of snipe data at creation
++//
++// Revision 1.7  2004/05/18 14:10:33  js02
++// Bidgroups work
++//
++// Revision 1.6  2004/05/18 13:29:50  js02
++// integration continued
++//
++// Revision 1.5  2004/05/17 23:33:33  js02
++// bid groups continued
++//
++// Revision 1.3  2004/05/15 13:12:24  js02
++// rebuild function: do not depend on global variables anymore
++//
++// Revision 1.2  2004/05/14 16:30:39  js02
++// bidgroup control via middle mouse button implemented
++//
++// Revision 1.1  2004/05/13 21:54:57  js02
++// View and Control for Bidgroups
++//
++
++#include <unistd.h>
++#include <sys/file.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <fcntl.h>
++
++#include <cstdarg>
++#include <map>
++
++#include "bidgui.h"
++
++using namespace std;
++
++// Replaces or removes ascii characters > 127. On some system they are not properly shown.
++void removeAscii127(char *info)
++{
++  unsigned char *p = (unsigned char*)info;
++  while(*p) {
++    switch(*p) {
++    case (unsigned char)'ä':
++      *p = 'a';
++      break;
++
++    case (unsigned char)'ö':
++      *p = 'o';
++      break;
++
++    case (unsigned char)'ü':
++      *p = 'u';
++      break;
++
++    case (unsigned char)'Ä':
++      *p = 'A';
++      break;
++
++    case (unsigned char)'Ö':
++      *p = 'O';
++      break;
++
++    case (unsigned char)'Ü':
++      *p = 'u';
++      break;
++
++    case (unsigned char)'ß':
++      *p = 's';
++      break;
++    }
++
++    if(*p > 127) *p = ' ';
++
++    p++;
++  }
++}
++
++BidGroup *getBidGroup()
++{
++  static BidGroup bid_group;
++  return &bid_group;
++}
++
++static bool hasBid(struct auctioninfo *auc)
++{
++  if(auc->isSnipe)         return true;
++  if(auc->snipeAmount > 0) return true;
++  if(auc->myBidAmount > 0) return true;
++  return false;
++}
++
++static void copySnipe(struct auctioninfo *dst, const struct auctioninfo *src)
++{
++  setBid(dst, src->myBidAmount, src->myBidQuantity, true);
++}
++
++// set/change bidgroup for an item
++void switchBidGroup(struct auctioninfo *auction[], int auc_num, int current_auc, int new_auc,
++                    const char *subdir, int time_diff, const char *auth_id)
++{
++  if(current_auc < 0 || current_auc >= auc_num) return;
++  if(new_auc < 0 || new_auc >= auc_num) return;
++  BidGroup *group = getBidGroup();
++  struct auctioninfo *cauc = auction[current_auc];
++  struct auctioninfo *auc = auction[new_auc];
++  BidGroup::IdType cid = cauc->ItemNumber;
++  BidGroup::IdType id = auc->ItemNumber;
++  int cgid = group->groupId(cid);
++//  int gid = group->groupId(id);
++
++  if(cgid >= 0) group->delItem(id);
++  group->addItem(cid, id);
++  group->sweepList();
++  if(hasBid(cauc) && !hasBid(auc)) copySnipe(auc, cauc);
++  if(!hasBid(cauc) && hasBid(auc)) copySnipe(cauc, auc);
++
++  setBidGroupAuction(auction, auc_num, auth_id);
++  UpdateList();
++  WriteAucFile();
++}
++
++char *configFileName(char *file, const char *subdir, const char *fname)
++{
++  sprintf(file, "%s/%s/%s", getenv("HOME"), subdir, fname);
++  return file;
++}
++
++char *bidGroupFile(char *file, const char *subdir)
++{
++  return configFileName(file, subdir, "bidgroup.cfg");
++}
++
++void writeBidGroup(const char *subdir)
++{
++  char file[200];
++  BidGroup *group = getBidGroup();
++  group->write(bidGroupFile(file, subdir));
++}
++
++void readBidGroup(const char *subdir)
++{
++  char file[200];
++  BidGroup *group = getBidGroup();
++  group->clear();
++  group->read(bidGroupFile(file, subdir));
++}
++
++void bidGroupComment(char **str, struct auctioninfo *auction[], int auc)
++{
++  BidGroup *group = getBidGroup();
++  const int gid = group->groupId(auction[auc]->ItemNumber);
++  if(group->numGroup() > 0) {
++    if(gid >= 0) *str = g_strdup_printf(" %*s%d%*s: %s", gid, "", gid + 1, group->numGroup() - gid - 1, "", *str);
++    else         *str = g_strdup_printf(" %*s : %s", group->numGroup() - 1, "", *str);
++  }
++}
++
++SetBidGroupAuction::~SetBidGroupAuction()
++{
++  setBidGroupAuction(auction, auc_num, auth_id);
++}
++
++// mark all items in a successful bidgroup
++static void findSucceededAuc(map<BidGroup::IdType, bool> &succeeded, const BidGroup::ItemList *list)
++{
++  if(!list) return;
++
++  bool any_succeeded = false;
++  for(BidGroup::ItemList::const_iterator it = list->begin(); it != list->end(); ++it) {
++    if(succeeded[*it]) {
++      any_succeeded = true;
++      break;
++    }
++  }
++
++  if(any_succeeded) {
++    for(BidGroup::ItemList::const_iterator it = list->begin(); it != list->end(); ++it) {
++      succeeded[*it] = any_succeeded;
++    }
++  }
++}
++
++// I won this auction.
++static bool isMine(struct auctioninfo *auction, const char *auth_id)
++{
++  return strcmp(auction->HighBidder, auth_id) == 0 && auction->UpdTime >= auction->EndsValue;
++}
++
++void setBidGroupAuction(struct auctioninfo *auction[], int auc_num, const char *auth_id)
++{
++  BidGroup *group = getBidGroup();
++  map<BidGroup::IdType, bool> succeeded;
++
++  for(int i = 0; i < auc_num; i++) {
++    struct auctioninfo *a = auction[i];
++    succeeded[a->ItemNumber] = isMine(a, auth_id);
++  }
++
++  for(int i = 0; i < group->numGroup(); i++) {
++    findSucceededAuc(succeeded, group->getGroup(i));
++  }
++
++  for(int i = 0; i < auc_num; i++) {
++    struct auctioninfo *a = auction[i];
++    if(a->isSnipe && !isMine(a, auth_id) && succeeded[a->ItemNumber]) {
++      printf("clear snipe %llu\n", a->ItemNumber);
++      ClearSnipe(i);
++    }
++  }
++}
++
++void delBidGroupItem(struct auctioninfo *auction[], int auc)
++{
++  BidGroup *group = getBidGroup();
++  group->delItem(auction[auc]->ItemNumber);
++  group->sweepList();
++}
++
++// save something in a file defined by format
++void savePage(const char *page, const char *format, ...)
++{
++  va_list va;
++  va_start(va, format);
++  char fname[4096];
++  vsprintf(fname, format, va);
++  va_end(va);
++  FILE *fp = fopen(fname, "w");
++  if(fp) {
++    fprintf(fp, "%s", page);
++    fclose(fp);
++  }
++}
++
++// set up a bid or snipe
++void setBid(struct auctioninfo *auction, float bid, int quantity, bool snipe)
++{
++  if(!auction) return;
++
++  auction->isSnipe = snipe;
++  auction->isPreBid = snipe;
++  auction->myBidAmount = bid;
++  auction->myBidQuantity = quantity;
++  memset(auction->snipeKey, 0, sizeof(auction->snipeKey));
++
++  if(snipe) {
++    auction->snipeAmount = bid;
++    auction->snipeQty = quantity;
++  } else {
++    auction->snipeAmount = 0;
++    auction->snipeQty = 0;
++    auction->getkey(bid, quantity);
++    if(auction->snipeKey[0]) auction->bid(FALSE);
++  }
++
++  UpdateList();
++}
++
++// set up a bid or snipe reading amount + quantity from a file
++static struct auctioninfo *setBid(struct auctioninfo *auction, FILE *fp, bool snipe)
++{
++  if(!auction) return auction;
++  float bid;
++  int qty;
++  if(fscanf(fp, "%f%d", &bid, &qty) != 2) return auction;
++  setBid(auction, bid, qty, snipe);
++  fprintf(stderr, "%s %llu bid: %f qty: %d\n", snipe ? "snipeing" : "bidding ", auction->ItemNumber, bid, qty);
++  return auction;
++}
++
++/*
++ * Adds items from the file "~/.bidwatcher/item.add" to bidwatcher.
++ * Places bids/snipes if required.
++ *
++ * Syntax: a continuous stream of the following command
++ * "ebay-id"                            adds an item
++ * "add ebay-id"                        adds an item
++ * "bid ebay-id amount quantity"        bids for an item
++ * "snipe ebay-id amount quantity"      snipes for an item
++ *
++ * Example:
++ *   568880089
++ *   add 568880010
++ *   bid 568888888 10.51 1
++ *   snipe 568888777 12.11 1
++ *
++ * I use this to remotely control my bidwatcher via email-filters.
++ */
++void addItemsFromFile(const char *subdir, volatile bool  &up_in_prog)
++{
++  class AutoFp {
++    FILE *fp;
++
++  public:
++    AutoFp(FILE *fp): fp(fp) {
++      if(!fp) return;
++      flock(fileno(fp), LOCK_EX);
++    }
++
++    ~AutoFp() {
++      if(!fp) return;
++      flock(fileno(fp), LOCK_UN);
++      fclose(fp);
++    }
++
++    operator FILE*() const { return fp; }
++    FILE* operator->() const { return fp; }
++  };
++
++  class AutoFlag {
++    volatile bool &up_in_prog;
++
++  public:
++    AutoFlag(volatile bool  &up_in_prog): up_in_prog(up_in_prog) { up_in_prog = true; }
++    ~AutoFlag() { up_in_prog = false;}
++  };
++
++  if(up_in_prog) return;
++  AutoFlag a_flag(up_in_prog);
++
++  if(timeToNextEnd() < 5 * 60) return;
++
++  char file[256];
++  configFileName(file, subdir, "item.add");
++  AutoFp fp(fopen(file, "r+"));
++  if(!fp) return;
++  char buffer1[20];
++  char buffer2[20];
++  char *rd = buffer1;
++  char *act = buffer2;
++  const char *def_action = "add";
++  strcpy(act, def_action);
++
++  while(fscanf(fp, "%19s", rd) == 1) {
++    if(timeToNextEnd() < 5 * 60) return;
++    unsigned long long id;
++
++    if(sscanf(rd, "%llu", &id) != 1) {
++      swap(rd, act);
++      continue;
++    }
++
++    up_in_prog = false;
++    if(strcmp(act, "add") == 0) {
++      fprintf(stderr, "adding %llu\n", id);
++      addNewItem(id);
++    } else if(strcmp(act, "bid") == 0) {
++      setBid(addNewItem(id), fp, false);
++    } else if(strcmp(act, "snipe") == 0) {
++      setBid(addNewItem(id), fp, true);
++    } else {
++      fprintf(stderr, "ignoring %s %llu\n", act, id);
++    }
++    up_in_prog = true;
++
++    strcpy(act, def_action);
++  }
++  ftruncate(fileno(fp), 0);
++}
++
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgui.h anoncvs-STABLE_1_3/bidgui.h
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidgui.h	Wed Dec 31 16:00:00 1969
++++ bidgui.h	Fri Jun 25 07:22:02 2004
+@@ -0,0 +1,90 @@
++
++/*
++ * Copyright (C) 2004 Planet Intelligent Systems GmbH
++ * Residence Park 1-7, 19065 Raben Steinfeld, Germany, Europe, Earth
++ * All rights reserved
++ *
++ * Author: Jan Starzynski
++ *
++ * $Id: bidgui.h,v 1.1.2.2 2004/06/25 14:22:02 sturnus Exp $
++ *
++ * $Log: bidgui.h,v $
++ * Revision 1.1.2.2  2004/06/25 14:22:02  sturnus
++ * finished remote control via ~/.bidwatcher/item.add
++ *
++ * Revision 1.1.2.1  2004/06/10 09:02:09  sturnus
++ * files for bidgroups and extensions
++ *
++ * Revision 1.9  2004/06/03 12:50:19  js02
++ * add items from ~/.bidwatcher/item.add
++ *
++ * Revision 1.8  2004/05/28 06:50:56  js02
++ * failed getkeys are stored
++ *
++ * Revision 1.7  2004/05/25 15:14:34  js02
++ * Bugfix: wrong parameter type for call to delBidGroupItem
++ *
++ * Revision 1.6  2004/05/18 14:45:19  js02
++ * *** empty log message ***
++ *
++ * Revision 1.5  2004/05/18 13:29:50  js02
++ * integration continued
++ *
++ * Revision 1.4  2004/05/17 23:33:33  js02
++ * bid groups continued
++ *
++ * Revision 1.3  2004/05/15 13:12:24  js02
++ * rebuild function: do not depend on global variables anymore
++ *
++ * Revision 1.2  2004/05/14 16:30:39  js02
++ * bidgroup control via middle mouse button implemented
++ *
++ * Revision 1.1  2004/05/13 21:54:57  js02
++ * View and Control for Bidgroups
++ *
++ */
++
++#ifndef BIDWATCHER_BIDGUI_H
++#define BIDWATCHER_BIDGUI_H
++
++#include <gdk/gdk.h>
++#include <gdk/gdkprivate.h>
++#include <gtk/gtk.h>
++
++#include "bidwatcher.h"
++#include "bidgroup.h"
++
++class SetBidGroupAuction  {
++  struct auctioninfo **auction;
++  int auc_num;
++  int ebay_offset;
++  const char *auth_id;
++public:
++  SetBidGroupAuction(struct auctioninfo *auction[], int auc_num, int ebay_offset, const char *auth_id):
++    auction(auction),
++    auc_num(auc_num),
++    ebay_offset(ebay_offset),
++    auth_id(auth_id)
++  {}
++
++  ~SetBidGroupAuction();
++};
++
++void removeAscii127(char *info);
++
++BidGroup *getBidGroup();
++void switchBidGroup(struct auctioninfo *auction[], int auc_num, int current_auc, int new_auc,
++                    const char *subdir, int time_diff, const char *auth_id);
++void delBidGroupItem(struct auctioninfo *auction[], int auc);
++char *configFileName(char *file, const char *subdir, const char *fname);
++char *bidGroupFile(char *file, const char *subdir);
++void writeBidGroup(const char *subdir);
++void readBidGroup(const char *subdir);
++void bidGroupComment(char **str, struct auctioninfo *auction[], int auc);
++void setBidGroupAuction(struct auctioninfo *auction[], int auc_num, const char *auth_id);
++void savePage(const char *page, const char *format, ...);
++void addItemsFromFile(const char *subdir, volatile bool &up_in_prog);
++void setBid(struct auctioninfo *auction, float bid, int quantity, bool snipe);
++
++#endif
++
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidwatcher.cpp anoncvs-STABLE_1_3/bidwatcher.cpp
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidwatcher.cpp	Fri Apr 23 13:23:28 2004
++++ bidwatcher.cpp	Tue Aug  3 08:34:27 2004
+@@ -63,6 +63,8 @@
+ #include <gtk/gtk.h>
+ 
+ #include "bidwatcher.h"
++#include "bidgroup.h"
++#include "bidgui.h"
+ 
+ #include "pixmaps/user.xpm"
+ #include "pixmaps/clock.xpm"
+@@ -223,19 +225,12 @@
+   */
+ 
+ 
+-  if (auc->myBidQuantity!=0) {
+-    if (!strcmp(auc->HighBidder, authID)) 
+-      return (i%2)?clist_win2:clist_win1;
+-
+-    else if ((auc->isSnipe && auc->myBidAmount > auc->CurrentBid) ||
+-	     (auc->isSnipe && auc->BidCount == 0 &&
+-	      auc->myBidAmount >= auc->CurrentBid))
+-      return (i%2)?clist_willwin2:clist_willwin1;
++  if (auc->myBidQuantity > 0) {
++    if (!strcmp(auc->HighBidder, authID)) return (i % 2) ? clist_win2 : clist_win1;
++    if ((auc->isSnipe && auc->myBidAmount > auc->minBid())) return (i % 2) ? clist_willwin2 : clist_willwin1;
++  }
+ 
+-    else 
+       return (i%2)?clist_lose2:clist_lose1;
+-      
+-  } else return (i%2)?clist_lose2:clist_lose1;
+ }
+ 
+ void checkaucs(int line) {
+@@ -786,19 +781,16 @@
+   gtk_widget_set_sensitive(obj->okbutton, FALSE);
+   gtk_widget_set_sensitive(obj->cancelbutton, FALSE);
+   gtk_label_set_text(GTK_LABEL(obj->currentbidlabel), "Obtaining key...");
+-  obj->myauc->getkey(atof(gtk_entry_get_text(GTK_ENTRY(obj->bidtext))),
+-		     atoi(gtk_entry_get_text(GTK_ENTRY(obj->quantitytext))));
++  setBid(obj->myauc,
++         atof(gtk_entry_get_text(GTK_ENTRY(obj->bidtext))),
++         atoi(gtk_entry_get_text(GTK_ENTRY(obj->quantitytext))),
++         doSnipe
++        );
+   gtk_widget_set_sensitive(obj->okbutton, TRUE);
+   gtk_widget_set_sensitive(obj->cancelbutton, TRUE);
+   gtk_label_set_text(GTK_LABEL(obj->currentbidlabel), "");
+ 
+-  // Don't do any bidding if the key setup failed
+-  if (obj->myauc->snipeKey[0] == '\0') return;
+-
+   if (doSnipe) {
+-    obj->myauc->snipeAmount=atof(gtk_entry_get_text(GTK_ENTRY(obj->bidtext)));
+-    obj->myauc->snipeQty=atoi(gtk_entry_get_text(GTK_ENTRY(obj->quantitytext)));
+-    obj->myauc->isSnipe = TRUE;
+     gtk_widget_set_sensitive(obj->okbutton, TRUE);
+     gtk_widget_set_sensitive(obj->cancelbutton, TRUE);
+     gtk_label_set_text(GTK_LABEL(obj->currentbidlabel), "");
+@@ -806,6 +798,8 @@
+     return;
+   }
+   else {
++    // Don't do any bidding if the key setup failed
++    if (obj->myauc->snipeKey[0] == '\0') return;
+     gtk_label_set_text(GTK_LABEL(obj->currentbidlabel), "Submitting bid...");
+     // now, finalize bid with the key obtained.
+     char WebPage[255];
+@@ -880,7 +874,7 @@
+   
+ }
+ 
+-static int find_auction_index(unsigned long long aucnum)
++int find_auction_index(unsigned long long aucnum)
+ {
+   // Locate the auction in the array of auctions
+   for(int i=0; i<aucIdx; i++) {
+@@ -890,11 +884,18 @@
+   return -1;
+ }
+ 
+-static int find_auction_index(struct auctioninfo *auc)
++int find_auction_index(struct auctioninfo *auc)
+ {
+   return find_auction_index(auc->ItemNumber);
+ }
+ 
++struct auctioninfo *find_auction(unsigned long long aucnum)
++{
++  int idx = find_auction_index(aucnum);
++  if(idx < 0) return NULL;
++  return auction[idx];
++}
++
+ void commentok_callback(GtkWidget *widget, gpointer data)
+ {
+   // Set the comment text into the auction struct
+@@ -1832,12 +1833,7 @@
+   if (myauc->snipeQty >= 2)	        // DBS
+     strcpy(unitstring, " units at ");	// DBS
+ 
+-  if (myauc->BidCount == 0 && !TYPE_EBAYMOTORSCAR) 
+-    sprintf(temp, "%.2f", myauc->FirstBid);
+-  else {
+-    sprintf(temp,"%.2f", 
+-	    calculateBidIncrement(myauc->CurrentBid, myauc->currency));
+-  }
++  sprintf(temp, "%.2f", myauc->minBid());
+ 
+   char *quant, *bidc;
+   strcpy(info, " ");
+@@ -1924,6 +1920,7 @@
+       gtk_widget_set_sensitive(bidderbutton, !strcasecmp(authID, myauc->Seller)); 
+   */
+ 
++  removeAscii127(info);
+   gtk_label_set_text(GTK_LABEL(infolabel), info);
+ 
+   /*  gtk_widget_set_sensitive(sellerbutton, FALSE);
+@@ -2029,15 +2026,7 @@
+   gtk_widget_show(currentbidlabel);
+   gtk_widget_show(timeleftlabel);
+   
+-  chTemp[0]=0;
+-  //  int skipchars=strcspn(myauc->FirstBid, "0123456789");
+-  if (myauc->BidCount == 0) 
+-    sprintf(chTemp, "%.2f", myauc->FirstBid);
+-  else {
+-    sprintf(chTemp, "%.2f", 
+-	    calculateBidIncrement(myauc->CurrentBid, myauc->currency));
+-  }
+-  
++  sprintf(chTemp, "%.2f", myauc->minBid());
+   bidlabel = gtk_label_new("Your MAXIMUM bid");
+   bidtext = gtk_entry_new();
+   gtk_entry_set_text(GTK_ENTRY(bidtext), chTemp);
+@@ -2381,6 +2370,7 @@
+   gtk_clist_get_selection_info(GTK_CLIST(w), (gint) event->x, 
+ 			       (gint) event->y, &row, &col);
+ 
++  if(event->button == 2) switchBidGroup(auction, aucIdx, currentauc, row, bw_subdir, timeDiff, authID); // always call before setting currentauc
+   currentauc = row;
+ 
+   if (aucIdx != 0) {
+@@ -2867,6 +2858,8 @@
+     fprintf(file, " endauction\n");
+   }
+   fclose(file); 
++
++  writeBidGroup(bw_subdir);
+ }
+ 
+ BidWindow::~BidWindow() {
+@@ -3002,6 +2995,7 @@
+ void ClearSnipe(int choice)
+ {
+   auction[choice]->isSnipe = FALSE;
++  auction[choice]->isPreBid = FALSE;
+   strcpy(auction[choice]->snipeKey, "");
+   auction[choice]->snipeAmount=0;
+   auction[choice]->snipeQty=0;
+@@ -3291,7 +3285,7 @@
+ //   calls:
+ //      UpdateAuction(), DeleteAuction(), UpdateList()
+ //////////////////////////////////////////////////////////////////////////////
+-void addNewItem(unsigned long long newNumber)
++struct auctioninfo *addNewItem(unsigned long long newNumber)
+ {
+   updateInProgress = TRUE;
+   int i;
+@@ -3301,7 +3295,7 @@
+     // over the limit on auctions already
+     showError("You already have the maximum allowed auctions." );
+     updateInProgress = FALSE;
+-    return;
++    return NULL;
+   }
+ 
+   // scan current list, make sure this isn't a dup
+@@ -3318,9 +3312,9 @@
+       // caller would have to duplicate this loop if he did not want to take
+       // the chance of the user seeing an "error" message.
+       DPRINTF(DLOW, ("The auction %llu is already in the list.\n", auction[i]->ItemNumber));
+-      showStatus(" adding auction...");
++      showStatus("");
+       updateInProgress = FALSE;
+-      return;
++      return auction[i];
+     }
+   }
+ 
+@@ -3343,7 +3337,7 @@
+     updateInProgress = FALSE;
+     updatelist_callback(NULL);
+     WriteAucFile();
+-    return;
++    return NewAuction;
+   }
+   else if (returnVal == INFO_BADAUCTION) {
+ 	  char msg[100];
+@@ -3357,6 +3351,7 @@
+   
+   updateInProgress = FALSE;
+   showStatus("");
++  return NULL;
+ }
+ //////////////////////////////////////////////////////////////////////////////
+ // timer1Up:
+@@ -3383,6 +3378,8 @@
+ 
+ gint secondticker_callback(gpointer data)  // second ticker
+ {
++  addItemsFromFile(bw_subdir, updateInProgress);
++
+   static volatile int	checking_snipes = FALSE;
+   
+   if (clockIsSet) {
+@@ -3422,12 +3419,20 @@
+       if (auction[i]->isSnipe) {
+ 	timeLeft = CalcTimeLeft(auction[i]->EndsValue, timeDiff);
+ 	  
+-	if (!checking_snipes) {
++	if (!checking_snipes && timeLeft > -30) {
+ 	  checking_snipes = TRUE;
+ 	      
++          if(timeLeft < cur_snipe_delay + 60) {
++            if(auction[i]->isPreBid) {
++              auction[i]->isPreBid = FALSE;
++              auction[i]->getkey(auction[i]->snipeAmount,
++                                 auction[i]->snipeQty);
++            }
++          }
++
+ 	  if (timeLeft < cur_snipe_delay) {
+ 	    auction[i]->isSnipe = FALSE;
+-	    DoSnipe(i);
++	    if(auction[i]->snipeKey[0]) DoSnipe(i);
+ 	  }
+ 	      
+ 	  checking_snipes = FALSE;
+@@ -3613,6 +3618,23 @@
+   gtk_timeout_add(time_to_next_update,updatelist_callback,NULL);
+   return FALSE;
+ }
++
++static void setProxyURL(char *proxystring, char *proxyuserstring, char *proxypassstring)
++{
++  if (proxyurl != NULL) {
++    delete(proxyurl);
++    proxyurl = NULL;
++  }
++
++  if (strlen(proxystring) > 2) {
++    char *pxy = g_strdup_printf("http://%s/", proxystring);
++    proxyurl = new URL(pxy, NULL, proxyuserstring, proxypassstring);
++    g_free(pxy);
++  } else {
++    proxyurl = NULL;
++  }
++}
++
+ //////////////////////////////////////////////////////////////////////////////
+ // ReadAucFile:
+ //      called once at startup, reads the username and stored auctions from
+@@ -3829,6 +3851,7 @@
+ 				memset(authPASS, 0, sizeof(authPASS));
+ 		}
+ 		else if (!strcasecmp(keyword, "auction")) {
++                        setProxyURL(proxystring, proxyuserstring, proxypassstring);
+ 			char which[20];
+ 			auction[aucIdx] = new auctioninfo();
+ 			fscanf(file, "%llu", &auction[aucIdx]->ItemNumber);
+@@ -3866,9 +3889,11 @@
+ 					       auction[aucIdx]->snipeAmount, 
+ 					       auction[aucIdx]->snipeQty);
+ #endif
+-					auction[aucIdx]->isSnipe = 1;
+-					auction[aucIdx]->getkey(auction[aucIdx]->snipeAmount,
+-								auction[aucIdx]->snipeQty);
++
++                                        setBid(auction[aucIdx],
++                                               auction[aucIdx]->snipeAmount,
++                                               auction[aucIdx]->snipeQty,
++                                               true);
+ 					
+ 				}
+ 				else if (!strcasecmp(which, "endauction")) 
+@@ -3879,22 +3904,13 @@
+ 	}
+ 	fclose(file);
+ 	
+-	if (proxyurl != NULL) {
+-		delete(proxyurl);
+-		proxyurl = NULL;
+-	}
+-	if (strlen(proxystring) > 2) {
+-		char *pxy = g_strdup_printf("http://%s/", proxystring);
+-		proxyurl = new URL(pxy, NULL, proxyuserstring,
+-				   proxypassstring);
+-		g_free(pxy);
+-	}
+-	else proxyurl = NULL;
+-	
++        setProxyURL(proxystring, proxyuserstring, proxypassstring);
+ 	resetTimeSyncURL();
+ 
+ 	makeStyles();
+ 	resetStyles();
++
++        readBidGroup(bw_subdir);
+ }
+ 
+ //////////////////////////////////////////////////////////////////////////////
+@@ -3938,6 +3954,8 @@
+ 		 auction[i]->Comments,
+ 		 auction[i]->Seller};
+ 
++  bidGroupComment(&item[5], auction, i);
++
+   int j;
+   for(j=0; j<NUM_COLUMNS; j++) 
+     gtk_clist_set_text(GTK_CLIST(aucList), i, j, item[j]);
+@@ -3991,6 +4009,7 @@
+   CHECK;
+   int idx; 
+   if (index >= aucIdx) return;  // we are out of range
++  delBidGroupItem(auction, index);
+   // Loop through AucNumList, moving list up to fill the gap
+   // where choice will be removed, this should be a linked list.  
+   WriteLog(index); 
+@@ -4172,6 +4191,8 @@
+     // the item number out of the URL. because it is possible that there are CRLF
+     // in the URL, strip them out first and call addNewItem() with the auction
+     // number.
++    strip_crlf(Buff);
++
+     char *pszendurl;
+     char *pszonlyurl;
+     char *pszitemnumber;
+@@ -4184,12 +4205,12 @@
+       memset(pszonlyurl, 0, pszendurl - pszitemurl + 1);
+       memcpy(pszonlyurl, pszitemurl, pszendurl - pszitemurl);
+       pszitemnumber = strstr(pszonlyurl, "item=");
+-      // save some time and only strip crlf from the item number
+-      strip_crlf(pszitemnumber);
+-      if(pszitemnumber)
++      if(pszitemnumber) {
+ 	// addNewItem() checks for dups and for maximum number of auctions.
+ 	// no need to do it twice.
+-	addNewItem(atoul(pszitemnumber + 5));
++        unsigned long long item;
++        if(sscanf(pszitemnumber + 5, "%llu", &item) == 1) addNewItem(item);
++      }
+       // delete the new'd memory
+       delete pszonlyurl;
+       // get the next url starting from the end of the current url.
+@@ -4205,6 +4226,8 @@
+ ///////////////////////////////////////////////////////////////////
+ void UpdateList()
+ {
++  if(!aucList) return;
++
+   CHECK;
+   char chTemp[20];
+   ArrangeList();
+@@ -4248,6 +4271,8 @@
+ 		   auction[i]->Comments,
+ 		   auction[i]->Seller};
+ 
++    bidGroupComment(&item[5], auction, i);
++
+     gtk_clist_insert(GTK_CLIST(aucList), i, item);
+     if (auction[i]->isSnipe) { 
+       gtk_clist_set_pixtext(GTK_CLIST(aucList), i, 0, item[0], 5,
+@@ -4326,6 +4351,8 @@
+ int auctioninfo::getinfo()
+ {
+   CHECK;
++  SetBidGroupAuction set_bid_group(auction, aucIdx, timeDiff, authID);
++
+   int returnVal;
+   char *HtmlBuff;
+   char *urlstring;
+@@ -4417,6 +4444,7 @@
+       }
+     }
+     free(Buff);
++    UpdTime = time(NULL) + timeDiff;
+     return INFO_SUCCESS;
+   }
+   free(Buff);
+@@ -4983,6 +5011,7 @@
+   memset(this, 0, sizeof(auctioninfo));
+   magic = 12345;
+   isEndless = 0;
++  UpdTime = 0;
+ }
+ 
+ auctioninfo::~auctioninfo() {
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidwatcher.h anoncvs-STABLE_1_3/bidwatcher.h
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/bidwatcher.h	Mon Apr 19 20:14:09 2004
++++ bidwatcher.h	Tue Aug  3 08:34:27 2004
+@@ -94,6 +94,7 @@
+ gint secondticker_callback(gpointer data);
+ gint bigdelay_callback(gpointer data);
+ gint updatelist_callback(gpointer data);
++float calculateBidIncrement(float currentBid,  const char *currency);
+ 
+ // other constants
+ #define HUGEBUFF  (256*1024)
+@@ -161,15 +162,16 @@
+ 	float myBidAmount;            /* Our bid                      */
+ 	int myBidQuantity;            /* Our bid quantity for dutch   */
+ 	long int EndsValue;           /* time auction ends in seconds */
++        long int UpdTime;             /* time of last update          */
+ 	char stat;                    /* status of auction for GUI    */
+ 	char bidstatus;               /* final status of bid/snipe    */
+ 	char reserveMet;              /* [y/n/x] = Status of reserve  */ 
+ 	bool isSnipe;                 /* Is this a snipe or not?      */
++        bool isPreBid;                /* Needs pre-bid for snipe      */
+ 	int AuctionType;              /* Type: ebay/ebaymotors/etc.   */
+ 	URL *infourl;                 /* URL for auction info         */
+ 	URL *bidurl;                  /* URL for bidding/sniping      */
+ 	int magic;                    /* Used to detect corrupt lists */
+-	int bid(bool);
+ 	int isEndless;                /* For non-auction auctions     */
+ 
+ 	auctioninfo();
+@@ -177,6 +179,10 @@
+ 	int getinfo();
+ 	bool parseaucinfo(const char *);
+ 	void getkey(float bid, int quantity);
++        int bid(bool);
++
++        double currentPrize() const { return BidCount > 0 ? CurrentBid : FirstBid; }
++        double minBid() const { return BidCount > 0 ? calculateBidIncrement(CurrentBid, currency) : FirstBid; }
+ };
+ 
+ typedef char string30[30];
+@@ -196,7 +202,7 @@
+ void CmExit();
+ void CmCancelClicked();
+ void doubleClick(int);
+-void addNewItem(unsigned long long);
++struct auctioninfo *addNewItem(unsigned long long);
+ void timer1Up();
+ void timer2Up();
+ void timer3Up();
+@@ -360,7 +366,6 @@
+ 	~ConfirmWindow();
+ };
+ 
+-float calculateBidIncrement(float currentBid,  char *currency);
+ char *StripHtmlTags(const char *stringToStrip);
+ char *StripAndTab(const char *stringToStrip);
+ int ProcessBidSubmission(char *Buff, char *lineBuff, int lineBuffLen);
+@@ -400,6 +405,10 @@
+ void basic_authentication_encode (const char *user,
+ 				   const char *passwd,
+ 				   char **encstr);
++
++int find_auction_index(unsigned long long aucnum);
++int find_auction_index(struct auctioninfo *auc);
++struct auctioninfo *find_auction(unsigned long long aucnum);
+ 
+ extern bool cancelPressed;
+ 
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/daemon.c anoncvs-STABLE_1_3/daemon.c
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/daemon.c	Wed Dec 31 16:00:00 1969
++++ daemon.c	Tue Apr  2 13:58:06 2002
+@@ -0,0 +1,266 @@
++/* daemon.c
++ * Main code for the biddaemon software.
++ * Hey you with your bug report ready, DO NOT EXPECT THIS TO WORK YET.
++ * ;)  -kdwyer
++ */
++
++/* bidwatcher
++   copyright (c) 1999, 2000, 2001, 2002
++   Trent McNair (trent@rmci.net)
++   Tom McNair  (tmcnair@cyberhighway.net)
++   Wayne Schlitt (wayne@midwestcs.com)
++   Ben Byer (bushing@users.sourceforge.net)
++   Kevin Dwyer (kevin@pheared.net)
++ 
++   use of this code is restricted to the terms
++   of the GNU GPL, which should have been included in this
++   distribution. If not, see www.gnu.org/copyleft/gpl.html.
++   Here is the short version:
++
++   This program is free software; you can redistribute it and/or modify
++   it under the terms of the GNU General Public License as published by
++   the Free Software Foundation; either version 2 of the License, or
++   (at your option) any later version.
++
++   This program is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++   GNU General Public License for more details.
++*/
++
++#include <stdio.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <netinet/in.h>
++#include <netdb.h>
++#include <sys/socket.h>
++#include <arpa/inet.h>
++#include <unistd.h>
++#include <string.h>
++#include <fcntl.h>
++#include <stdlib.h>
++#include <errno.h>
++#include <signal.h>
++#include "daemon.h"
++
++#define MAXMSG sizeof(struct bidmessage)
++#define MAXCLIENTS 100
++
++typedef struct {
++  int sd;
++  char inbuf[MAXMSG];
++  char outbuf[MAXMSG];
++  struct sockaddr_in addr;
++  int closed;
++  int pending;
++  int welcome;
++} users;
++
++/*typedef struct users U;*/
++
++typedef void (*sighandler_t)(int);
++
++int write_pending(users *);
++int read_pending(users *);
++int parse_input(users);
++sighandler_t got_sig(int);
++
++int main (int argc, char *argv[])
++{
++  int sd=0, ret=0, len=0, i=0, stoploop=0;
++  char *port="4221";
++
++  users c[MAXCLIENTS];
++
++  struct sockaddr_in sin;
++  struct sockaddr_in sintmp;
++
++  signal(SIGINT, got_sig(sd));
++
++  memset(&sin,0,sizeof(sin));
++  memset(&sin,0,sizeof(sintmp));
++  memset(&c,0,sizeof(c));
++
++  /* setting up our daemon, sin_port = port to listen on
++     and sin_addr.saddr is source address to listen on.
++  */
++
++  sin.sin_family = AF_INET;
++  sin.sin_port = htons(atoi(port));
++  /* Listen on all addresses */
++  sin.sin_addr.s_addr = inet_addr("0.0.0.0");
++
++  /* procedure is socket, bind, listen, accept in loop. */
++
++  sd = socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
++
++  ret = bind(sd, (struct sockaddr *)&sin, sizeof(sin));
++
++  if (ret == -1) {
++      perror("bind()");
++      exit(0);
++  }
++
++  ret = listen(sd, 5);
++
++  if (ret == -1) {
++      perror("listen()");
++      exit(0);
++  }
++
++  ret = fcntl(sd, F_SETFL, O_NONBLOCK);
++
++  if (ret == -1) {
++      perror("fcntl()");
++      exit(0);
++  }
++
++  while (!stoploop) {
++      len = sizeof(c[i].addr);
++      ret = accept(sd, (struct sockaddr *)&c[i].addr, &len);
++      if (ret != -1) {
++	  c[i].sd = ret;
++	  c[i].pending = 1;
++	  c[i].closed = 0;
++
++	  /* Should make this quieter later. */
++	  write(c[i].sd, "biddaemon v1.0\n", 15);
++
++	  printf("accept():Got connect from %s source port %i\n",
++		 inet_ntoa(c[i].addr.sin_addr), 
++		 ntohs(c[i].addr.sin_port));
++
++	  ret = fcntl(c[i].sd, F_SETFL, O_NONBLOCK);
++
++	  if (ret == -1) {
++	      perror("fcntl()");
++	      exit(0);
++	  }
++
++	  printf("i=%i/sd=%i/pend=%i/closed=%i\n", i,c[i].sd,c[i].pending,c[i].closed);
++	  i++;
++      }
++
++      
++      write_pending(c);
++
++      read_pending(c);
++
++      usleep(1);
++
++  }
++
++  return 0;
++}
++
++int write_pending(users c[MAXCLIENTS])
++{
++  int i=0,ret=0;
++
++  while (i < MAXCLIENTS) {
++      if (c[i].pending == 1) {
++	      if (ret == -1) {
++		      perror("write()");
++		      close(c[i].sd);
++		      c[i].closed = 1;
++	      }
++
++	      if (strlen(c[i].outbuf) > 0) {
++		      ret = write(c[i].sd, c[i].outbuf, strlen(c[i].outbuf));
++
++		      if (ret == -1) {
++			      perror("write()");
++			      close(c[i].sd);
++			      c[i].closed = 1;
++			      c[i].sd = -1;
++		      }
++
++		      memset(&c[i].outbuf, 0, sizeof(c[i].outbuf));
++	      }
++
++	      c[i].pending = 0;
++	      
++      }
++
++      i = i + 1;
++
++  }
++  return 0;
++}
++
++int parse_input(users c)
++{	
++	struct bidmessage bm;
++
++	printf("DEBUG: Parsing a message\n");
++
++	memset(&bm, 0, sizeof(bm));
++	memcpy(&bm, c.inbuf, sizeof(bm));
++
++	if (bm.type == 0) {
++		printf("Got 0\n");
++		return MSG_PING;
++	}
++	if (bm.type == 1)
++		return MSG_ADD;
++}
++
++int read_pending(users c[MAXCLIENTS])
++{
++  int i=0, ret=0, x=0;
++  /*  char inbuf[MAXMSG];*/
++
++  while(i < MAXCLIENTS) {
++	if (c[i].sd > 0) {
++	ret = read(c[i].sd, c[i].inbuf, sizeof(c[i].inbuf));
++
++	if (ret >= 0) {
++		printf("%s --- %i bytes \n", c[i].inbuf, ret);
++
++		switch(parse_input(c[i])) {
++		case MSG_DETACH:
++			printf("Closing sd %i!\n", i);
++			write(c[i].sd,"Closing connection...\n",22);
++			close(c[i].sd);
++			c[i].closed = 1;
++			c[i].sd = -1;
++			break;
++		case MSG_ADD:
++			printf("got add on sd %i\n", i);
++			break;
++		}
++	}
++	else {
++		if (errno != EAGAIN) {
++			perror("write()");
++			close(c[i].sd);
++			c[i].closed = 1;
++			c[i].sd = -1;
++		}
++	}
++	memset(&c[i].inbuf,0,sizeof(c[i].inbuf));
++	}
++	i++;
++  }
++  return 0;
++}
++
++sighandler_t got_sig(int sd)
++{
++    // This is broken right now.
++    //  printf("Got Signal !\n");
++
++  //  if (i == SIGINT)
++  //{
++  //      printf("Shutting down daemon! %i\n", sd);
++  //      close(sd);
++      // }
++
++  return 0;
++}
++
++
++
++
++
++
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/daemon.h anoncvs-STABLE_1_3/daemon.h
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/daemon.h	Wed Dec 31 16:00:00 1969
++++ daemon.h	Sun Feb  3 20:28:38 2002
+@@ -0,0 +1,20 @@
++struct bidmessage {
++	/* layout will change a lot */
++	int type;
++	
++};
++
++/* Message types */
++#define MSG_PING        0 /* Are you there */
++#define MSG_BID         1 /* Place a bid */
++#define MSG_UPDATE      2 /* Update an auction */
++#define MSG_UPDATE_ALL  3 /* Update all auctions */
++#define MSG_ADD         4 /* Add an auction */
++#define MSG_PREFS       5 /* Update preferences */
++#define MSG_SYNC        6 /* Time Sync */
++#define MSG_SHUTDOWN    7 /* Shut down server */
++#define MSG_ATTACH      8 /* Attach to server */
++#define MSG_DETACH      9 /* Detach from server */
++#define MSG_REMOVE     10 /* Remove an auction */
++#define MSG_SNIPE      11 /* Setup a snipe */
++
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/helpers.cpp anoncvs-STABLE_1_3/helpers.cpp
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/helpers.cpp	Fri Apr 23 13:23:28 2004
++++ helpers.cpp	Tue Aug  3 08:34:28 2004
+@@ -98,7 +98,7 @@
+ 			}
+ };
+ 
+-float calculateBidIncrement(float currentBid,  char *currency)
++float calculateBidIncrement(float currentBid,  const char *currency)
+ {
+ 	// step 1 - parse currentBid into useable int's
+   /*
+@@ -162,13 +162,21 @@
+ 	  if (fcb<=600) inc=30;
+ 	  if (fcb<=120) inc=5;
+ 	  break;
+-	case 'D':  // deutsche marks (german)
++	case 'D':  // deutsche marks (german, obsolete)
+ 	  inc=100;
+ 	  if (fcb<10000) inc=10;
+ 	  if (fcb<1000) inc=5;
+ 	  if (fcb<100) inc=1;
+ 	  break;
++        case 'E': // Euro
++          inc = 50;
++          if(fcb < 5000) inc = 10;
++          if(fcb < 1000) inc = 5;
++          if(fcb < 500) inc = 1;
++          if(fcb < 50) inc = 0.5;
++          break;
+ 	default: 
++          fprintf(stderr, "unknown currency %s\n", currency);
+ 	  inc=0;
+ 	}
+ 	fcb = fcb + inc;
+@@ -319,9 +327,24 @@
+   // strip the html tags
+   for (u = 0; u < buffLength; u++) {
+     c = stringToStrip[u];
+-    if (c == '<') IncludeFlag=5;
+-    else if (c == '>') IncludeFlag=10;
+-    else if (IncludeFlag==10) {
++    if (c == '<') {
++      IncludeFlag=5;
++      if(u+3<buffLength) {
++        if (stringToStrip[u+1] == 't' && \
++	    stringToStrip[u+2] == 'r' && \
++	    stringToStrip[u+3] == '>') {
++	  Buff[BuffIdx++] = '\n';
++	  u+=2;
++	} else if (stringToStrip[u+1] == 'b' && \
++	    stringToStrip[u+2] == 'r' && \
++	    stringToStrip[u+3] == '>') {
++	  Buff[BuffIdx++] = '\n';
++	  u+=2;
++	}
++      }
++    } else if (c == '>') {
++      IncludeFlag=10;
++    } else if (IncludeFlag==10) {
+       if ((BuffIdx > 0) && (c == ' ') &&
+ 	  (Buff[BuffIdx-1] != ' ') &&
+ 	  (Buff[BuffIdx-1] != '\n'))
+@@ -711,7 +734,9 @@
+   NewAuction->stat = '0';
+   NewAuction->reserveMet = '0';
+   NewAuction->isSnipe = FALSE;
++  NewAuction->isPreBid = FALSE;
+   NewAuction->EndsValue = 0;
++  NewAuction->UpdTime = 0;
+   if (NewAuction->infourl) delete NewAuction->infourl;
+   if (NewAuction->infourl) delete NewAuction->bidurl;
+   NewAuction->infourl=NULL;
+@@ -866,6 +891,9 @@
+ 
+ // Parse out currency and price
+ void parseprice(char *buf,struct auctioninfo * auc, bool isfirst) {
++  char *p = strchr(buf, ':');
++  if(p) buf = p + 1;
++
+   int len;
+   if ((buf[0]=='$') || (buf[0]=='U' && buf[1]=='S')) strcpy(auc->currency,"$");
+   else {
+@@ -880,10 +908,8 @@
+   buf[len]='\0';
+   strip_commas(buf);
+   
+-  //if (isfirst) auc->FirstBid = atof(buf);
+-  //else auc->CurrentBid = atof(buf);
+-
+   auc->CurrentBid = atof(buf);
++  if (isfirst) auc->FirstBid = auc->CurrentBid;
+ 
+   DPRINTF(DLOW, ("buf='%s'\n", buf));
+   DPRINTF(DLOW, ("Price is '%.2f'/'%.2f'\n", auc->CurrentBid, auc->FirstBid));
+@@ -1044,7 +1071,6 @@
+ 	   isBuyItNow = 1;
+ 	   reserveMet = 'b';
+ 	   if (!CurrentBid && !FirstBid) {
+-	     streamBuff.getline(LineData, 1024, '\n');
+ 	     parseprice(LineData, this, TRUE);
+ 	   }
+ 	   break;
+@@ -1059,8 +1085,6 @@
+ 	 case 5: // bid count
+ 	 case 22:
+ 	   if (!BidCount) {
+-	     char bc[80];
+-	     streamBuff.getline(LineData, 1024, '\n');
+ 	     DPRINTF(DLOW, ("LDBC: %s\n", LineData));
+ 	     // if instead of the number of bids an item has "Purchases" and
+ 	     // there was no time left in the auction the auction is not endless
+@@ -1070,11 +1094,18 @@
+ 	     } else if (strstr(LineData, "Winning bidders list")) {
+ 	       strcpy(HighBidder, "Dutch Auction");
+ 	     } else {
+-	       for(cnt=0; (((LineData[cnt]!=' ') && 
+-			    (LineData[cnt]!=0)) && (cnt<14)); ++cnt)
+-		 bc[cnt] = LineData[cnt];
+-	       bc[cnt] = 0;
+-	       BidCount = atoi(bc);
++               scratch = strchr(LineData, ':');
++               if(scratch) {
++                 int limit = strlen(scratch);
++                 for ( int i=0; i < limit; i++ )
++                 {
++                   // strip the ':' off the currentBid;
++                   scratch[i] = scratch[i + 1];
++                 }
++                 BidCount = atoi(scratch);
++               } else {
++                 fprintf(stderr, "cannot determine BidCount: propably parser broken\n");
++               }
+ 	       DPRINTF(DLOW, ("BidCount: %i\n", BidCount));
+ 	     }
+ 	   }
+@@ -1125,6 +1156,7 @@
+ 	     unsigned int count;
+ 
+ 	     streamBuff.getline(LineData, 1024, '\n');
++             if (*LineData == '\0') streamBuff.getline(LineData, 1024, '\n');
+ 	     strncpy(Seller, LineData, 75);
+ 
+ 	     for (count=0; count < sizeof(Seller); count++)
+@@ -1155,8 +1187,19 @@
+ 	 case 24:
+ 	 case 26: // "Buyer:"
+ 	   if (!HighBidder[0]) {
++             char *p;
++	     p = strchr(LineData, ':');
++	     if (p) {
++	       if (*(p+1) == '\0') {
++		 streamBuff.getline(LineData, 1024, '\n');
++		 p = LineData;
++	       } else
++		 p++;
++	     } else {
+ 	     streamBuff.getline(LineData, 1024, '\n');
+-	     strncpy(HighBidder, LineData, 76);
++	       p = LineData;
++	     }
++	     strncpy(HighBidder, p, 76);
+ 	     for (unsigned int count=0; count < sizeof(HighBidder); count++)
+ 	     {
+ 		if (HighBidder[count] == '(')
+@@ -1301,9 +1344,12 @@
+    
+    // now calculate the ending time in seconds and save it if the auction ended
+    // early due to cancel or "buy it now"
+-   if (ended_early == 1)
++   if (ended_early == 1) {
+      EndsValue = 0;
+-  
++   } else {
++     EndsValue = CalcEndsValue(Ends);
++     if(EndsValue < 0) EndsValue = 0;
++   }
+   
+    // now We'll parse the High Bidder and Seller's ratings off their names
+    // and assign them to .SellerRate and .BidderRate
+@@ -1677,8 +1723,21 @@
+     'w','x','y','z','0','1','2','3',
+     '4','5','6','7','8','9','+','/'
+   };
++
+   int i;
+   unsigned char *p = (unsigned char *)store;
++  char *src = NULL;
++
++  // s is used in triples: ensure engouh space for this
++  if(length % 3) {
++    int slen = length + 2;
++    src = (char*)malloc(slen);
++    if(src) {
++      memset(src, 0, slen);
++      memcpy(src, s, length);
++      s = src;
++    }
++  }
+ 
+   // Transform the 3x8 bits to 4x6 bits, as required by base64.
+   for (i = 0; i < length; i += 3)
+@@ -1696,6 +1755,8 @@
+     *(p - 1) = *(p - 2) = '=';
+   // ...and zero-terminate it.
+   *p = '\0';
++
++  if(src) free(src);
+ }
+ 
+ //  Create the authentication header contents for the `Basic' scheme.
+diff -u -ruN -b -B -w /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/netstuff.cpp anoncvs-STABLE_1_3/netstuff.cpp
+--- /usr/ports/misc/bidwatcher/work/bidwatcher-1.3.15/netstuff.cpp	Mon Apr 19 20:33:30 2004
++++ netstuff.cpp	Tue Aug  3 08:34:28 2004
+@@ -156,10 +156,8 @@
+     free(hostinfo);
+   }
+ 
+-  if(proxyuser != NULL)
+-    delete proxyuser;
+-  if(proxypass != NULL)
+-    delete proxypass;
++  if(proxyuser != NULL) free(proxyuser);
++  if(proxypass != NULL) free(proxypass);
+ }
+ 
+ void URL::create(char *newurl,URL *proxy) {
