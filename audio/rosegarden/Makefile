@@ -29,7 +29,7 @@ do-install:
 	)
 
 post-install:
-	${MV} -i ${PREFIX}/bin/rosegarden ${PREFIX}/bin/rosegarden-bin
+	${MV} ${PREFIX}/bin/rosegarden ${PREFIX}/bin/rosegarden-bin
 	${SED} s-%%PREFIX%%-${PREFIX}-g ${FILESDIR}/rosegarden >${WRKDIR}/rosegarden
 	${INSTALL_SCRIPT} ${WRKDIR}/rosegarden ${PREFIX}/bin
 
