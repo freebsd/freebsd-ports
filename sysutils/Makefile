@@ -75,6 +75,7 @@
     SUBDIR += fortunelock
     SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
+    SUBDIR += fvcool
     SUBDIR += gcombust
     SUBDIR += gconf-editor
     SUBDIR += gfslicer
