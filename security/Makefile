@@ -98,6 +98,7 @@
     SUBDIR += lcrzo
     SUBDIR += lcrzoex
     SUBDIR += libfwbuilder
+    SUBDIR += libgcrypt
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
