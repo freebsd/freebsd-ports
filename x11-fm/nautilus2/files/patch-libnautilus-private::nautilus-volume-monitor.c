@@ -1,5 +1,5 @@
 --- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 09:37:20 2002
-+++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 10 16:37:32 2002
++++ libnautilus-private/nautilus-volume-monitor.c	Wed Sep 11 02:04:23 2002
 @@ -59,6 +59,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -28,19 +28,30 @@
  #define setmntent(f,m) fopen(f,m)
  #endif
  
-@@ -501,6 +513,11 @@
+@@ -492,6 +504,9 @@
+ static gboolean
+ has_removable_mntent_options (MountTableEntry *ent)
+ {
++#ifdef __FreeBSD__
++    	struct fstab *fsent;
++#endif
+ #ifdef HAVE_HASMNTOPT
+ 	/* Use "owner" or "user" or "users" as our way of determining a removable volume */
+ 	if (hasmntopt (ent, "user") != NULL
+@@ -501,6 +516,12 @@
  		return TRUE;
  	}
  #endif
 +#ifdef __FreeBSD__
-+	if (eel_str_has_prefix (ent->f_mntonname, "/mnt/")) {
++	fsent = getfsspec(ent->f_mntfromname);
++	if (fsent != NULL && strstr (fsent->fs_mntops, "noauto")) {
 +	    	return TRUE;
 +	}
 +#endif
  
  #ifdef SOLARIS_MNT
  	if (eel_str_has_prefix (ent->mnt_special, "/vol/")) {
-@@ -522,10 +539,15 @@
+@@ -522,10 +543,15 @@
  static GList *
  get_removable_volumes (NautilusVolumeMonitor *monitor)
  {
@@ -59,7 +70,7 @@
  	char * fs_opt;
  #ifdef HAVE_SYS_MNTTAB_H
          MountTableEntry ent_storage;
-@@ -533,26 +555,27 @@
+@@ -533,26 +559,27 @@
  #ifdef HAVE_GETMNTINFO
  	int count, index;
  #endif
@@ -92,7 +103,7 @@
  		return NULL;
  	}
  	
-@@ -587,9 +610,21 @@
+@@ -587,9 +614,21 @@
  				(monitor, volume, ent->mnt_type, volumes);
  		}
  	}
@@ -115,7 +126,7 @@
  	
  #ifdef HAVE_CDDA
  	volume = create_volume (CD_AUDIO_PATH, CD_AUDIO_PATH);
-@@ -619,7 +654,7 @@
+@@ -619,7 +658,7 @@
        return result;
  }
  
@@ -124,7 +135,7 @@
  
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
-@@ -963,23 +998,34 @@
+@@ -963,23 +1002,34 @@
  
  
  
@@ -161,7 +172,7 @@
          while (! getmntent(fh, &ent)) {
                  volume = create_volume (ent.mnt_special, ent.mnt_mountp);
                  volume->is_removable = has_removable_mntent_options (&ent);
-@@ -988,6 +1034,16 @@
+@@ -988,6 +1038,16 @@
          }
  
  	fclose (fh);
@@ -178,7 +189,47 @@
  
          return volumes;
  }
-@@ -1765,7 +1821,7 @@
+@@ -1214,9 +1274,38 @@
+ static int
+ get_cdrom_type (const char *vol_dev_path, int* fd)
+ {
+-#ifndef SOLARIS_MNT
++#if !defined(SOLARIS_MNT) && !defined(FREEBSD_MNT)
+ 	*fd = open (vol_dev_path, O_RDONLY|O_NONBLOCK);
+ 	return ioctl (*fd, CDROM_DISC_STATUS, CDSL_CURRENT);
++#elif defined(FREEBSD_MNT)
++       struct ioc_toc_header header;
++       struct ioc_read_toc_single_entry entry;
++       int type;
++
++       *fd = open (vol_dev_path, O_RDONLY|O_NONBLOCK);
++       if (*fd < 0) {
++               return CDS_DATA_1;
++       }
++
++       if ( ioctl(*fd, CDIOREADTOCHEADER, &header) == 0) {
++               return CDS_DATA_1;
++       }
++
++       type = CDS_DATA_1;
++
++       for (entry.track = header.starting_track;
++            entry.track <= header.ending_track;
++            entry.track++) {
++           entry.address_format = CD_LBA_FORMAT;
++           if (ioctl (*fd, CDIOREADTOCENTRY, &entry) == 0) {
++                   if (entry.entry.control & CDROM_DATA_TRACK) {
++                       type = CDS_AUDIO;
++                       break;
++                   }
++           }
++       }
++
++       return type;
+ #else
+ 	GString *new_dev_path;
+ 	struct cdrom_tocentry entry;
+@@ -1765,7 +1854,7 @@
  	for (node = volume_list; node != NULL; node = node->next) {
  		volume = node->data;
  		
@@ -187,7 +238,7 @@
  		/* These are set up by get_current_mount_list for Solaris. */
  		volume->is_removable = volume_is_removable (volume);
  #endif
-@@ -1794,7 +1850,7 @@
+@@ -1794,7 +1883,7 @@
  		ok = mount_volume_auto_add (volume);
  	} else if (strcmp (file_system_type_name, "cdda") == 0) {
  		ok = mount_volume_cdda_add (volume);
@@ -196,7 +247,7 @@
  		ok = mount_volume_iso9660_add (volume);
  	} else if (strcmp (file_system_type_name, "nfs") == 0) {
  		ok = mount_volume_nfs_add (volume);
-@@ -1823,8 +1879,8 @@
+@@ -1823,8 +1912,8 @@
  	}
  
  	/* Identify device type */
