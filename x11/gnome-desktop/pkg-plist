@@ -155,8 +155,10 @@ share/gnome/pixmaps/panel-folder.png
 share/gnome/pixmaps/panel-knob.png
 share/gnome/pixmaps/panel-menu-main.png
 share/gnome/pixmaps/vnterm.xpm
+share/locale/am/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -204,6 +206,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/lgpl/C/figures
 @dirrm share/gnome/help/gpl/C/figures
+@dirrm share/gnome/help/gnome-feedback/C/figures
 @dirrm share/gnome/help/gnome-feedback/C
 @dirrm share/gnome/help/gnome-feedback
 @dirrm share/gnome/help/fdl/C/figures
