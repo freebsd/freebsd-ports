@@ -1,54 +1,94 @@
-*** src/Makefile.in.orig	Thu Feb 18 08:40:27 1999
---- src/Makefile.in	Thu Feb 18 08:44:15 1999
+*** src/Makefile.in.orig	Sun Apr 29 07:40:37 2001
+--- src/Makefile.in	Wed Sep  3 09:22:13 2003
 ***************
-*** 95,103 ****
-  EXTRAdir = $(bindir)
-  EXTRA_PROGRAMS = df mvdir
+*** 121,129 ****
+  
+  EXTRA_PROGRAMS = df
   
 ! bin_PROGRAMS = chgrp chown chmod cp dd dircolors du \
 ! ginstall ln dir vdir ls mkdir \
-! mkfifo mknod mv rm rmdir sync touch @DF_PROG@
+! mkfifo mknod mv rm rmdir shred sync touch @DF_PROG@
   
-  libexec_PROGRAMS = @MVDIR_PROG@
+  
   datadir = $(prefix)/@DATADIRNAME@
---- 95,101 ----
-  EXTRAdir = $(bindir)
-  EXTRA_PROGRAMS = df mvdir
+--- 121,127 ----
+  
+  EXTRA_PROGRAMS = df
   
 ! bin_PROGRAMS = gnuls dir vdir dircolors
   
-  libexec_PROGRAMS = @MVDIR_PROG@
+  
   datadir = $(prefix)/@DATADIRNAME@
 ***************
-*** 203,209 ****
-  ls_OBJECTS =  ls$U.o ls-ls$U.o
-  ls_LDADD = $(LDADD)
-  ls_DEPENDENCIES =  ../lib/libfu.a
+*** 173,183 ****
+  CONFIG_HEADER = $(top_builddir)/config.h
+  CONFIG_CLEAN_FILES =
+  EXTRA_PROGRAMS = df$(EXEEXT)
+! bin_PROGRAMS = chgrp$(EXEEXT) chown$(EXEEXT) chmod$(EXEEXT) cp$(EXEEXT) \
+! dd$(EXEEXT) dircolors$(EXEEXT) du$(EXEEXT) ginstall$(EXEEXT) \
+! ln$(EXEEXT) dir$(EXEEXT) vdir$(EXEEXT) ls$(EXEEXT) mkdir$(EXEEXT) \
+! mkfifo$(EXEEXT) mknod$(EXEEXT) mv$(EXEEXT) rm$(EXEEXT) rmdir$(EXEEXT) \
+! shred$(EXEEXT) sync$(EXEEXT) touch$(EXEEXT) @DF_PROG@
+  PROGRAMS = $(bin_PROGRAMS)
+  
+  CPPFLAGS = @CPPFLAGS@
+--- 171,177 ----
+  CONFIG_HEADER = $(top_builddir)/config.h
+  CONFIG_CLEAN_FILES =
+  EXTRA_PROGRAMS = df$(EXEEXT)
+! bin_PROGRAMS = dircolors$(EXEEXT) dir$(EXEEXT) vdir$(EXEEXT) gnuls$(EXEEXT)
+  PROGRAMS = $(bin_PROGRAMS)
+  
+  CPPFLAGS = @CPPFLAGS@
+***************
+*** 242,248 ****
+  am_ls_OBJECTS = ls$U.$(OBJEXT) ls-ls$U.$(OBJEXT)
+  ls_OBJECTS = $(am_ls_OBJECTS)
+  ls_DEPENDENCIES = ../lib/libfetish.a
 ! ls_LDFLAGS = 
   mkdir_SOURCES = mkdir.c
-  mkdir_OBJECTS =  mkdir$U.o
+  mkdir_OBJECTS = mkdir$U.$(OBJEXT)
   mkdir_LDADD = $(LDADD)
---- 201,207 ----
-  ls_OBJECTS =  ls$U.o ls-ls$U.o
-  ls_LDADD = $(LDADD)
-  ls_DEPENDENCIES =  ../lib/libfu.a
+--- 236,242 ----
+  am_ls_OBJECTS = ls$U.$(OBJEXT) ls-ls$U.$(OBJEXT)
+  ls_OBJECTS = $(am_ls_OBJECTS)
+  ls_DEPENDENCIES = ../lib/libfetish.a
 ! ls_LDFLAGS = -o gnuls
   mkdir_SOURCES = mkdir.c
-  mkdir_OBJECTS =  mkdir$U.o
+  mkdir_OBJECTS = mkdir$U.$(OBJEXT)
   mkdir_LDADD = $(LDADD)
 ***************
-*** 412,419 ****
-  	@rm -f vdir
-  	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
+*** 316,323 ****
+  DIST_COMMON = $(noinst_HEADERS) Makefile.am Makefile.in ansi2knr.1 \
+  ansi2knr.c
+  
+! SOURCES = $(chgrp_SOURCES) chmod.c $(chown_SOURCES) $(cp_SOURCES) dd.c df.c $(dir_SOURCES) dircolors.c du.c $(ginstall_SOURCES) ln.c $(ls_SOURCES) mkdir.c mkfifo.c mknod.c $(mv_SOURCES) $(rm_SOURCES) rmdir.c shred.c sync.c touch.c $(vdir_SOURCES)
+! OBJECTS = $(am_chgrp_OBJECTS) chmod$U.$(OBJEXT) $(am_chown_OBJECTS) $(am_cp_OBJECTS) dd$U.$(OBJEXT) df$U.$(OBJEXT) $(am_dir_OBJECTS) dircolors$U.$(OBJEXT) du$U.$(OBJEXT) $(am_ginstall_OBJECTS) ln$U.$(OBJEXT) $(am_ls_OBJECTS) mkdir$U.$(OBJEXT) mkfifo$U.$(OBJEXT) mknod$U.$(OBJEXT) $(am_mv_OBJECTS) $(am_rm_OBJECTS) rmdir$U.$(OBJEXT) shred$U.$(OBJEXT) sync$U.$(OBJEXT) touch$U.$(OBJEXT) $(am_vdir_OBJECTS)
+  
+  all: $(BUILT_SOURCES)
+  	$(MAKE) $(AM_MAKEFLAGS) all-am
+--- 310,317 ----
+  DIST_COMMON = $(noinst_HEADERS) Makefile.am Makefile.in ansi2knr.1 \
+  ansi2knr.c
+  
+! SOURCES = $(dir_SOURCES) dircolors.c $(ls_SOURCES) $(vdir_SOURCES)
+! OBJECTS = $(am_dir_OBJECTS) dircolors$U.$(OBJEXT) $(am_ls_OBJECTS) $(am_vdir_OBJECTS)
+  
+  all: $(BUILT_SOURCES)
+  	$(MAKE) $(AM_MAKEFLAGS) all-am
+***************
+*** 415,422 ****
+  	@rm -f ln
+  	$(LINK) $(ln_LDFLAGS) $(ln_OBJECTS) $(ln_LDADD) $(LIBS)
   
 ! ls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
 ! 	@rm -f ls
   	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
   
   mkdir: $(mkdir_OBJECTS) $(mkdir_DEPENDENCIES)
---- 410,417 ----
-  	@rm -f vdir
-  	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
+--- 409,416 ----
+  	@rm -f ln
+  	$(LINK) $(ln_LDFLAGS) $(ln_OBJECTS) $(ln_LDADD) $(LIBS)
   
 ! gnuls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
 ! 	@rm -f gnuls
