@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	khacc
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.4
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qhacc
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	qhacc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple KDE-base financial manager
 
-LIB_DEPENDS=	qhacc.2:${PORTSDIR}/finance/qhacc
+LIB_DEPENDS=	qhacc.3:${PORTSDIR}/finance/qhacc
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_KDELIBS_VER=	3
@@ -21,19 +21,20 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-qhacc-includes=${X11BASE}/include \
-		--with-qhacc-libs=${X11BASE}/lib \
-		--with-qt-moc=${QT_PREFIX}/bin \
-		--with-qt-libs=${QT_PREFIX}/lib
+CONFIGURE_ARGS=	--with-qhacc-config=${X11BASE}/bin
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-STRIP=		# none
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CXXFLAGS+=	-fpermissive
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|#! /bin/sh|#!${LOCALBASE}/bin/bash|g ; \
-		 s|/usr/local/q|${X11BASE}/lib/q|g' ${WRKSRC}/khacc/khacc.orig
-	@${REINPLACE_CMD} -e 's|-pedantic||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/khacc/khacc.in
+	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/khacc-*
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

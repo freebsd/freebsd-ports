@@ -1,0 +1,15 @@
+--- configure.dist	Wed Dec 10 22:08:44 2003
++++ configure	Mon Dec 15 02:20:38 2003
+@@ -24523,9 +24523,9 @@
+ 
+ 
+ 
+-# Check whether --with-qhacc or --without-qhacc was given.
+-if test "${with_qhacc+set}" = set; then
+-  withval="$with_qhacc"
++# Check whether --with-qhacc-config or --without-qhacc-config was given.
++if test "${with_qhacc_config+set}" = set; then
++  withval="$with_qhacc_config"
+ 
+   echo -n "checking for qhacc-config... "
+   for dir in $withval
