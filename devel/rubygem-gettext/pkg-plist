@@ -42,6 +42,7 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/config.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
