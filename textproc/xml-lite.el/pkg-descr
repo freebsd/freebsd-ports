@@ -1,0 +1,8 @@
+This package provides a simple indentation engine for XML.  It is
+intended for use in situations where the full power of the popular
+PSGML package (DTD parsing, syntax checking) is not required.
+
+WWW: http://www.bigfoot.com/~mdub/
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
