@@ -15,6 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProZilla is a fast download accelerator
 
 FORBIDDEN=	"http://www.vuxml.org/freebsd/1a32e8ee-3edb-11d9-8699-00065be4b5b6.html"
+DEPRECATED=	${FORBIDDEN}
+EXPIRATION_DATE=	2005-01017
+
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
