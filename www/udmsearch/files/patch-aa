@@ -1,0 +1,15 @@
+--- doc/Makefile.in.orig	Thu Dec  2 22:11:39 1999
++++ doc/Makefile.in	Thu Dec  2 22:12:27 1999
+@@ -261,9 +261,9 @@
+ 
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(prefix)/doc
+-	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/doc/
+-	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/doc/
++	$(mkinstalldirs) $(prefix)/share/doc/udmsearch
++	echo ${INSTALL_DATA} docs $(DESTDIR)$(prefix)/share/doc/udmsearch
++	${INSTALL_DATA} ${txt_DOCS} $(DESTDIR)$(prefix)/share/doc/udmsearch
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
