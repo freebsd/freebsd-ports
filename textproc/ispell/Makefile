@@ -32,8 +32,7 @@ BUILDHASH=	${WRKSRC}/buildhash
 DATADIR=	${PREFIX}/share/ispell
 
 .if (!defined(ISPELL_FR) && !defined (ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO))
-.if (make(extract) || make(patch) || make(configure) || make(build) || make (install))
-.BEGIN:
+pre-everything:
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'
@@ -47,7 +46,6 @@ DATADIR=	${PREFIX}/share/ispell
 	@${ECHO_MSG} '*  - Norwegian                 ISPELL_NO=yes            *'
 	@${ECHO_MSG} '* Example: "make ISPELL_FR=yes ISPELL_SE=yes install"   *'
 	@${ECHO_MSG} '*********************************************************'
-.endif
 .else
 .if defined(ISPELL_FR)
 FRDISTFILE=	francais-IREQ-1.4.tar.gz
