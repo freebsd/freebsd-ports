@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sredird
-PORTVERSION=	1.1.8
+PORTVERSION=	2.1.0
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/serial
@@ -19,9 +19,8 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sredird ${PREFIX}/libexec
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/sredird
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/sredird
-	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/sredird
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${WRKSRC}/COPYING ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
