@@ -1,0 +1,10 @@
+This package the DCC (Distributed Checksum Clearinghouse) procmail and 
+non-sendmail interface, dccproc; the sendmail DCC interface, dccm; and the 
+DCC server, dccd. Also included are utilities such as cdcc and all of the 
+manual pages and documentation.
+
+WWW: http://www.rhyolite.com/anti-spam/dcc/
+
+- Dean
+
+dean@odyssey.apana.org.au

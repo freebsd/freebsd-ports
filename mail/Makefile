@@ -31,6 +31,7 @@
     SUBDIR += cyrus
     SUBDIR += cyrus-imapd
     SUBDIR += cyrus-imapd2
+    SUBDIR += dcc-dccd
     SUBDIR += demime
     SUBDIR += distribute
     SUBDIR += dkimap4
