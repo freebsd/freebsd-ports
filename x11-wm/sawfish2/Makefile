@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sawmill
-PORTVERSION= 	0.25.2
+PORTVERSION= 	0.26
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/
 
@@ -24,8 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
-PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${VERSION}
-VERSION=	0.25.2
+PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${PORTVERSION}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
