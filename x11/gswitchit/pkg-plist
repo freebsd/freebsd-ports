@@ -11,6 +11,7 @@ etc/gconf/schemas/gswitchit.schemas
 include/gswitchit/common/gswitchit_plugin.h
 include/gswitchit/common/gswitchit_xkb_config.h
 lib/libgswitchit.a
+lib/libgswitchit.so
 lib/libgswitchit.so.0
 libdata/bonobo/servers/GNOME_GSwitchItApplet.server
 libdata/pkgconfig/gswitchit.pc
