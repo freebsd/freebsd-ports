@@ -4170,6 +4170,7 @@ kkbswitch	ports/sysutils/kkbswitch
 kkeyled		ports/sysutils/kkeyled
 klassmodeler	ports/devel/klassmodeler
 klh10		ports/emulators/klh10
+klog		ports/comms/klog
 klogoturtle	ports/lang/klogoturtle
 klondike	ports/games/klondike
 klone		ports/lang/klone
