@@ -8,7 +8,7 @@
 PORTNAME=	crafty-open-small
 PORTVERSION=	19970301
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
+MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/small/
 DISTNAME=	small
 
 MAINTAINER=	seggers@semyam.dinoco.de
