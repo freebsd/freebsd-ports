@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	t1.3:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
