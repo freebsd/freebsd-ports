@@ -1,0 +1,12 @@
+*****************************************************************************
+
+Add the following to ${PREFIX}/etc/dictd.conf:
+
+database moecomp   { data "/usr/local/lib/dict/moecomp.dict.dz"
+                     index "/usr/local/lib/dict/moecomp.index" }
+database netterm   { data "/usr/local/lib/dict/netterm.dict.dz"
+                     index "/usr/local/lib/dict/netterm.index" }
+database pydict    { data "/usr/local/lib/dict/pydict.dict.dz"
+                     index "/usr/local/lib/dict/pydict.index" }
+
+*****************************************************************************
