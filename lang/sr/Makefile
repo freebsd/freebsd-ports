@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parallel language "Synchronization Resources"
 
+BROKEN=		Broken pkg-plist
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix
 NO_WRKSUBDIR=	yes
