@@ -10,7 +10,8 @@ PORTVERSION=	3.1
 PORTEPOCH=	1
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://ufm.kgb.ru/files/
+MASTER_SITES=	http://ufm.kgb.ru/files/ \
+		http://forsite.ibch.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}sr
 
 MAINTAINER=	forsite@spamtest.ru
