@@ -1,5 +1,5 @@
 --- makenh.orig	Tue Jul 28 03:21:30 1998
-+++ makenh	Mon Nov  2 11:46:14 1998
++++ makenh	Mon Nov  2 19:55:02 1998
 @@ -68,6 +68,7 @@
  $SITE_RE = '[^:]+:\/\/([^\/]+)\/.*';
  $NumLocalCollected = 0;
@@ -8,6 +8,34 @@
  # LOGFILE, ERRFILE -- files for logging
  
  ### *TO CHANGE TRAVERSAL*
+@@ -187,22 +188,22 @@
+ 
+ # Initialize variables to avoid warnings
+    ($title, $urlpath, $traverse_type, $explicit_only, $numhops,
+-    $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem) = 
+-   ('','','','','','','','','','','');
++    $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset) =
++   ('','','','','','','','','','','','','');
+ 
+ ($title, $urlpath, $traverse_type, $explicit_only, $numhops,
+- $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, @urllist) = ReadConfig($archivepwd);
++ $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($archivepwd);
+ 
+ # open logs
+ &open_logs();
+ 
+ print LOGFILE "From Configuration:\n";
+ my(@configlist) = qw(title urlpath traverse_type explicit_only numhops
+-	nhhops local_limit remote_limit addboxes vhost usemaxmem ) ;
++	nhhops local_limit remote_limit addboxes vhost usemaxmem locale charset) ;
+ foreach $item (@configlist) 
+ {
+ 	$value = '';
+-	eval "$value = \$$item";
++	eval "\$value = \$$item";
+ 	print LOGFILE " $item: $value\n";
+ }
+ print LOGFILE " urllist: @urllist\n\n";
 @@ -398,7 +399,7 @@
  &close_logs();
  
@@ -102,3 +130,28 @@
  	    last;
  	 }
        }
+@@ -1159,6 +1178,15 @@
+       ($prot, $host, $port, $path) = &url::parse_url($url);
+       #print "URL after parsing: $prot://$host:$port$path\n";
+       
++      next if !defined($prot);
++      if (!defined($port) ||
++	  ($port eq '80' && $prot =~ /^https?$/) ||
++	  ($port eq '21' && $prot eq 'ftp')) {
++	$port = '';
++      } else {
++	$port = ":$port";
++      }
++
+       # make sure the path has a preceding /
+       $path = "/$path" if $path!~/^\//;
+       
+@@ -1177,7 +1205,7 @@
+ #      $host = "$a.$b.$c.$d";
+ #      }
+       
+-      $url = "$prot://$host:$port$path";
++      $url = "$prot://$host$port$path";
+       #print "URL after normalization: $url\n";
+       
+       # strip off any #text

@@ -1,0 +1,103 @@
+--- getfile.old	Wed Nov 12 15:38:21 1997
++++ getfile	Mon Nov  2 17:00:00 1998
+@@ -22,7 +22,16 @@
+ require "config.pl";
+ #---------------------------------
+ 
+-print "Content-type: text/html\n\n";
++$charset = '';
++$put_header = 0;
++
++sub http_header {
++
++return if ($put_header);
++$put_header = 1;
++
++print "Content-type: text/html$charset\n\n";
++}
+ 
+ $query = $ENV{'QUERY_STRING'};
+ 
+@@ -67,11 +76,25 @@
+ 	&err_badindexdir;
+ }
+ 
+-# get the url for the file from the config
+-open(CFG, "<$indexdir/archive.cfg") || &err_badconfig;
+-$input = <CFG>;
+-($title,$url,$subindex) = split("\t", $input);
+-close(CFG);
++$explicit_only = 0;
++$remote_limit = 0;
++$local_limit = 0;
++$addboxes = 0;
++$numhops = 0;
++$nhhops = 0;
++$traverse_type = 0;
++$url = '';
++$vhost = '';
++$usemaxmem = '';
++$locale = '';
++@urllist = ();
++
++($title, $url, $traverse_type, $explicit_only, $numhops,
++ $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($indexdir);
++
++$charset = "; charset=$charset" if ($charset ne '');
++
++&http_header;
+ 
+ # print "indexdir = $indexdir<br>file = $file<br>line = $line<br>query=$query<br>\n";
+ 
+@@ -149,12 +172,12 @@
+ 	if ($HTML) {
+ 		$baseurl &&
+ 			s#<title>#<BASE HREF=\"$baseurl\">$&#i;
+-		s|\&lt;([\w\$][-\w.\$]*\@\w[-\w.]+)&gt;|\<a href="/cgi-bin/artbyid?$1"\>\&lt;$1\&gt;\</a\>|g;
++#                s|\&lt;([\w\$][-\w.\$]*\@\w[-\w.]+)&gt;|\<a href="/cgi-bin/artbyid?$1"\>\&lt;$1\&gt;\</a\>|g;
+ 	} else {
+ 		s|\&|\&amp;|g;
+ 		s|\<|\&lt;|g;
+ 		s|\>|\&gt;|g;
+-		s|\&lt;([\w\$][-\w.\$]*\@\w[-\w.]+)&gt;|\<a href="/cgi-bin/artbyid?$1"\>\&lt;$1\&gt;\</a\>|g;
++#                s|\&lt;([\w\$][-\w.\$]*\@\w[-\w.]+)&gt;|\<a href="/cgi-bin/artbyid?$1"\>\&lt;$1\&gt;\</a\>|g;
+ 		# s|\bgopher://([^ ><'")(]*[\w\/])\b|\<a href="$&">$&\</a>|g;
+ 		# s|\bhttp://[-.\w?/+&\%:]+[.\w/]\b|\<a href="$&">$&\</a>|g;
+ 		# s|\bftp://[-.\w/+]+[.\w/]\b|\<a href="$&"\>$&\</a\>|g;
+@@ -177,24 +200,28 @@
+ close(INPUT);
+ 
+ sub err_badconfig {
++	&http_header;
+ 	print "<TITLE>Error</TITLE>\n";
+ 	print "<H1>Error with \"$indexdir\"</H1>\n";
+ 	print "Cannot open configuration file for archive directory.\n";
+ 	exit;
+ }
+ sub err_noindexdir {
++	&http_header;
+ 	print "<TITLE>Error</TITLE>\n";
+ 	print "<H1>Error with \"$indexdir\"</H1>\n";
+ 	print "Archive directory does not exist.\n";
+ 	exit;
+ }
+ sub err_badindexdir {
++	&http_header;
+ 	print "<TITLE>Error</TITLE>\n";
+ 	print "<H1>Error with \"$indexdir\"</H1>\n";
+ 	print "Directory is not an archive directory.\n";
+ 	exit;
+ }
+ sub err_noaccess {
++	&http_header;
+ 	print "<TITLE>Access denied</TITLE>\n";
+ 	print "<H1>Access to \"$path\" denied</H1>\n";
+ 	print "You don't have permission to get file \"$path\"\n";
+@@ -203,6 +230,7 @@
+ }
+ sub err_file {
+ 	local ($path) = @_;
++	&http_header;
+ 	print "<TITLE>Cannot read file \"$path\"</TITLE>\n";
+ 	print "<H1>Cannot read file \"$path\": $!</H1>\n";
+ 	exit;

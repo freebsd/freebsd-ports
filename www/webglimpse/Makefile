@@ -29,6 +29,8 @@ pre-configure:
 
 do-install:
 	cd ${WRKSRC}; ./wginstall
+	${INSTALL} -o nobody -m 644 /dev/null \
+		${PREFIX}/www/webglimpse/.sitecache
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/share/doc/webglimpse
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${PREFIX}/share/doc/webglimpse

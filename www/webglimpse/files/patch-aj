@@ -1,0 +1,20 @@
+--- lib/config.pl.orig	Tue Jul 28 03:19:55 1998
++++ lib/config.pl	Mon Nov  2 18:00:02 1998
+@@ -36,6 +36,8 @@
+ 		 addboxes
+ 		 vhost
+ 		 usemaxmem
++		 locale
++		 charset
+ 		 urllist
+ );  # in *that* order
+ 
+@@ -101,7 +103,7 @@
+ 
+    # fill in the values so there's *something* there...
+    foreach $var (@ConfigVars) {
+-      $Values{$var} = "{}";
++      $Values{$var} = "";
+    }
+ 
+    foreach $line (@lines) {

@@ -1,6 +1,52 @@
---- cgi-bin/webglimpse-fullsearch.orig	Mon Nov  2 08:52:04 1998
-+++ cgi-bin/webglimpse-fullsearch	Mon Nov  2 08:53:25 1998
-@@ -159,19 +159,19 @@
+--- cgi-bin/webglimpse-fullsearch.orig	Mon Jan 26 00:22:51 1998
++++ cgi-bin/webglimpse-fullsearch	Mon Nov  2 15:17:02 1998
+@@ -7,6 +7,9 @@
+ # returns full search box (with preference to the referring page)
+ #########################################################################
+ 
++use POSIX qw(locale_h);
++use locale;
++
+ # The following variables are changed by wginstall
+ $WEBGLIMPSE_HOME = "/usr/local/webglimpse";
+ $CGIBIN = "cgi-bin/webglimpse";
+@@ -25,8 +28,18 @@
+ # name of config file
+ $CONFIGFILE = "archive.cfg";
+ 
++$charset = '';
++$locale = '';
++$put_header = 0;
++
++sub http_header {
++
++return if ($put_header);
++$put_header = 1;
++
+ # start the header
+-print "Content-type: text/html\n\n";
++print "Content-type: text/html$charset\n\n";
++}
+ 
+ # ENV variables 
+ # path info contains the archive directory
+@@ -115,7 +128,14 @@
+ 	&err_conf;
+ }
+ ($title, $archiveurl, $traverse_type, $explicit_only, $numhops,
+- $nhhops, $local_limit, $remote_limit, $addboxes, @urllist) = ReadConfig($archivepwd);
++ $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($indexdir);
++
++$ENV{LANG}=$locale if ($locale ne '');
++setlocale(LC_CTYPE, "");
++
++$charset = "; charset=$charset" if ($charset ne '');
++
++&http_header;
+ 
+ # look for the title for this page
+ $thistitle = &lookup_title($file);
+@@ -159,19 +179,19 @@
  print "<INPUT TYPE=submit VALUE=Submit>\n";
  print "<br>\n";
  print "<center>\n";
@@ -28,3 +74,19 @@
  print "<br>\n";
  print "</center>\n";
  print "Return only files modified within the last <INPUT NAME=age size=5>\n";
+@@ -273,6 +293,7 @@
+ 
+ #########################################################################
+ sub err_conf{
++	&http_header;
+ 	print "<title>Cannot find archive</title>\n";
+ 	print "</head><body>\n";
+ 	print "<h1>Specified directory $archivepwd is not an archive directory.</h1>\n";
+@@ -283,6 +304,7 @@
+ 
+ sub err_file{
+ 	local ($file) = @_;
++	&http_header;
+ 	print "<title>Can't read file</title>\n";
+ 	print "</head><body>\n";
+ 	print "<h1>Specified file $file is not readable.</h1>\n";

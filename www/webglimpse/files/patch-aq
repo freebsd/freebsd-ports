@@ -1,0 +1,21 @@
+--- makecron.bak	Mon Jan 26 00:27:25 1998
++++ makecron	Mon Nov  2 18:20:39 1998
+@@ -37,6 +37,7 @@
+ # Get command-line options
+ $indexdir = $ARGV[0];
+ $usemaxmem = $ARGV[1];
++$locale = $ARGV[2];
+ 
+ # lock file
+ $LOCKFILE = "indexing-in-progress";
+@@ -104,6 +105,10 @@
+ print OUT "#!$SHELL\n\n";
+ 
+ print OUT "# CRONFILE FOR ARCHIVE IN DIRECTORY $indexdir\n\n";
++
++if (defined($locale) && $locale ne '') {
++	print OUT "LANG=$locale; export LANG\n";
++}
+ 
+ print OUT ('quiet=""',"\n");
+ print OUT ('if [ "$1" = "-q" ] ; then',"\n");

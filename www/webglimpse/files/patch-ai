@@ -1,0 +1,18 @@
+--- addsearch.orig	Thu Jul  2 03:02:53 1998
++++ addsearch	Mon Nov  2 14:51:28 1998
+@@ -121,12 +121,12 @@
+ 
+ # Initialize variables to avoid warnings
+    ($title, $archiveurl, $traverse_type, $explicit_only, $numhops,
+-    $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem) = 
+-   ('','','','','','','','','','','');
++    $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset) =
++   ('','','','','','','','','','','','','');
+ 
+ 
+    ($title, $archiveurl, $traverse_type, $explicit_only, $numhops,
+-    $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, @urllist) = ReadConfig($archivepwd);
++    $nhhops, $local_limit, $remote_limit, $addboxes, $vhost, $usemaxmem, $locale, $charset, @urllist) = ReadConfig($archivepwd);
+ 
+ ### HUH?  What does this code do?  Can we remove it?
+ ###       here just in case.
