@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_Gettext
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils devel pear
 
 MAINTAINER=	antonio@php.net
@@ -22,7 +22,7 @@ FILES=		Gettext.php Gettext/MO.php Gettext/PO.php
 
 .include <bsd.port.pre.mk>
 
-PHP_VERS=       ${PHP_VERSION:S/.//g}
+PHP_VERS=	${PHP_VERSION:S/.//g}
 
 .if defined(PHP_VERS) && ${PHP_VERS} < 410
 IGNORE=		"You need PHP 4.1.0 or later to install PEAR::File_Gettext"
