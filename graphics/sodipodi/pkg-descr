@@ -1,7 +1,13 @@
-a small Vector based drawing program with GNOME libraries
+Sodipodi is a vector-based drawing program, like CorelDraw® or Adobe
+Illustrator® from the proprietary software world, and Sketch or Kontour from
+the free software world. It is free software, distributed under the terms of
+the Gnu General Public License, Version 2.
 
-*** NOTE ***
-This is in very earlier level of development, so please don't
-use for non-development usage.
+Sodipodi uses W3C SVG as its native file format. It is therefore a very useful
+tool for web designers.
+
+It has a relatively modern display engine, giving you finely antialiased
+display, alpha transparencies, vector fonts and so on. Sodipodi is written in
+C, using the Gtk+ toolkit and some Gnome libraries. 
 
 WWW: http://sodipodi.sourceforge.net/
