@@ -1,0 +1,11 @@
+--- contrib/rrdproc/Makefile.in.orig	Fri Jan  7 21:09:17 2000
++++ contrib/rrdproc/Makefile.in	Fri Jan  7 21:09:36 2000
+@@ -76,7 +76,7 @@
+ ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
+ 
+ EXTRA_DIST = rrdproc.c
+-contribdir = $(prefix)/contrib/rrdproc
++contribdir = $(prefix)/share/examples/rrdtool/rrdproc
+ contrib_DATA = README rrdproc.c
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = ../../config/config.h
