@@ -1,0 +1,28 @@
+--- Makefile.orig	Fri Oct 10 15:14:19 2003
++++ Makefile	Fri Oct 10 17:32:56 2003
+@@ -3,7 +3,7 @@
+ #
+ # The default is to use a FORTRAN compiler
+ all:
+-	(cd Robot; make)
++	(cd Robot; ${MAKE})
+ # This is if you are going to use f2c instead of a FORTRAN compiler
+ f2c:
+ 	(cd Robot; make -f makefile.f2c)
+@@ -21,11 +21,11 @@
+ 	(cd Robot; make solaris)
+ 
+ clean:
+-	(cd Robot; make clean)
+-	(cd Fitsio; make clean)
+-	(cd ARK; make clean)
+-	(cd ARKc; make clean)
+-	(cd Fitsioc; make clean)
++	(cd Robot; ${MAKE} clean)
++	(cd Fitsio; ${MAKE} clean)
++	(cd ARK; ${MAKE} clean)
++	(cd ARKc; ${MAKE} clean)
++	(cd Fitsioc; ${MAKE} clean)
+ 
+ # gets rid of even more than "clean" -e.g. 'C' files created by
+ # f2c

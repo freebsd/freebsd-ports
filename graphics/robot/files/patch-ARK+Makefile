@@ -1,0 +1,27 @@
+--- ARK/Makefile.orig	Sat Oct 11 14:58:54 2003
++++ ARK/Makefile	Sat Oct 11 15:00:04 2003
+@@ -1,12 +1,12 @@
+ #CC = gcc -ansi
+-CC = gcc
++#CC ?= cc
+ #CC = cc
+-FC = f77
++#FC ?= f77
+ #FC = g77
+ 
+ INCLUDE = ${OPENWINHOME}/include
+ #CFLAGS = -Wall
+-CFLAGS = -O 
++#CFLAGS += -O 
+ #CFLAGS = -g 
+ 
+ 
+@@ -17,7 +17,7 @@
+ arkcplot.o:	arkcplot.c kana.h kana2.h
+ 	$(CC) -c $(CFLAGS) arkcplot.c -I$(INCLUDE) $(OS) -DLPR=\"$(LPR)\"
+ ARKfort.o:	ARKfort.f axecom comfil typecom
+-	$(FC) -c $(CFLAGS) ARKfort.f 
++	$(FC) -c $(FFLAGS) ARKfort.f 
+ 	
+ libark.a:	ARKfort.o arkcplot.o
+ 		ar rv $@ $?

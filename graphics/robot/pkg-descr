@@ -1,0 +1,14 @@
+Robot is a general purpose open-source plotting and data analysis program. 
+The main documentation is contained in the file Docs/RobotManual.ps.
+
+If you publish a paper in a journal which includes a graph produced by 
+Robot I'd be grateful if you could send me a reprint.
+If you wish to cite this program you may reference:  Corbet, R.H.D., 
+Larkin, C. & Nousek, J.A.  Proceedings of "Astronomical Data Analysis and 
+Software Systems", Tucson, November, 1991. Astronomical Society of the 
+Pacific Conference Series, 1992, Vol. 25, 106. (ISBN 0-937707-44-9)
+
+______
+Robin Corbet
+
+WWW:	http://www.robotx.cx/
