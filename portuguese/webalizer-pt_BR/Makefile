@@ -6,7 +6,7 @@
 
 PKGNAMEPREFIX?=	pt_BR-
 MASTERDIR?=	${.CURDIR}/../../www/webalizer
-CATEGORIES=	portuguese www
+CATEGORIES=	portuguese
 WEBALIZER_LANG=	portuguese_brazil
 
 .if exists(${.CURDIR}/Makefile.local)
