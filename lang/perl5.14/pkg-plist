@@ -672,7 +672,6 @@ lib/perl5/5.00501/timelocal.pl
 lib/perl5/5.00501/validate.pl
 lib/perl5/5.00501/vars.pm
 lib/perl5/site_perl/5.005/i386-freebsd/a.out.ph
-lib/perl5/site_perl/5.005/i386-freebsd/acl.ph
 lib/perl5/site_perl/5.005/i386-freebsd/alias.ph
 lib/perl5/site_perl/5.005/i386-freebsd/ar.ph
 lib/perl5/site_perl/5.005/i386-freebsd/assert.ph
@@ -704,14 +703,6 @@ lib/perl5/site_perl/5.005/i386-freebsd/gmp.ph
 lib/perl5/site_perl/5.005/i386-freebsd/gnuregex.ph
 lib/perl5/site_perl/5.005/i386-freebsd/grp.ph
 lib/perl5/site_perl/5.005/i386-freebsd/histedit.ph
-lib/perl5/site_perl/5.005/i386-freebsd/kadm.ph
-lib/perl5/site_perl/5.005/i386-freebsd/kadm_err.ph
-lib/perl5/site_perl/5.005/i386-freebsd/kafs.ph
-lib/perl5/site_perl/5.005/i386-freebsd/kdc.ph
-lib/perl5/site_perl/5.005/i386-freebsd/klog.ph
-lib/perl5/site_perl/5.005/i386-freebsd/krb.ph
-lib/perl5/site_perl/5.005/i386-freebsd/krb_db.ph
-lib/perl5/site_perl/5.005/i386-freebsd/krb_err.ph
 lib/perl5/site_perl/5.005/i386-freebsd/kvm.ph
 lib/perl5/site_perl/5.005/i386-freebsd/libdisk.ph
 lib/perl5/site_perl/5.005/i386-freebsd/libutil.ph
@@ -732,7 +723,6 @@ lib/perl5/site_perl/5.005/i386-freebsd/machine/bus_pio.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/cdk.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/clock.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/comstats.ph
-lib/perl5/site_perl/5.005/i386-freebsd/machine/conf.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/cons.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/console.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/cpu.ph
@@ -784,7 +774,6 @@ lib/perl5/site_perl/5.005/i386-freebsd/machine/soundcard.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/speaker.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/specialreg.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/spigot.ph
-lib/perl5/site_perl/5.005/i386-freebsd/machine/spl.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/stdarg.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/sysarch.ph
 lib/perl5/site_perl/5.005/i386-freebsd/machine/trap.ph
@@ -814,7 +803,6 @@ lib/perl5/site_perl/5.005/i386-freebsd/paths.ph
 lib/perl5/site_perl/5.005/i386-freebsd/pcap-int.ph
 lib/perl5/site_perl/5.005/i386-freebsd/pcap-namedb.ph
 lib/perl5/site_perl/5.005/i386-freebsd/pcap.ph
-lib/perl5/site_perl/5.005/i386-freebsd/prot.ph
 lib/perl5/site_perl/5.005/i386-freebsd/pthread.ph
 lib/perl5/site_perl/5.005/i386-freebsd/pthread_np.ph
 lib/perl5/site_perl/5.005/i386-freebsd/pwd.ph
@@ -957,7 +945,6 @@ lib/perl5/site_perl/5.005/i386-freebsd/sys/wormio.ph
 lib/perl5/site_perl/5.005/i386-freebsd/sysexits.ph
 lib/perl5/site_perl/5.005/i386-freebsd/syslog.ph
 lib/perl5/site_perl/5.005/i386-freebsd/tar.ph
-lib/perl5/site_perl/5.005/i386-freebsd/telnet.ph
 lib/perl5/site_perl/5.005/i386-freebsd/term.ph
 lib/perl5/site_perl/5.005/i386-freebsd/termcap.ph
 lib/perl5/site_perl/5.005/i386-freebsd/termios.ph
