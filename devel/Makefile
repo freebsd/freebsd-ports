@@ -1048,6 +1048,7 @@
     SUBDIR += py-kqueue
     SUBDIR += py-log4py
     SUBDIR += py-logging
+    SUBDIR += py-logilab-common
     SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
     SUBDIR += py-omniorb
