@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PKGNAME=	p5-Convert-Recode
+PORTNAME=	Convert-Recode
 PORTVERSION=	1.03
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
-DISTNAME=	Convert-Recode-${PORTVERSION}
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dima@Chg.RU
 
