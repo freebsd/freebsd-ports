@@ -9,7 +9,7 @@
 #       Program and compiler flags are finetuned to gcc 2.95/3.1.
 
 PORTNAME=	atlas
-PORTVERSION=	3.5.6
+PORTVERSION=	3.5.7
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
