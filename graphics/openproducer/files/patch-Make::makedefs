@@ -1,6 +1,6 @@
---- Make/makedefs.orig	Sat Apr 19 01:07:23 2003
-+++ Make/makedefs	Tue Jul 29 19:22:15 2003
-@@ -232,15 +232,22 @@
+--- Make/makedefs.orig	Fri Oct  3 00:01:31 2003
++++ Make/makedefs	Fri Oct 17 18:26:27 2003
+@@ -281,19 +281,25 @@
        CXX               = g++
      endif
    DEPARG            = -MM
@@ -13,8 +13,9 @@
    SHARED            = -shared
    ARCH              = 32
    ARCHARGS          = 
--  INST_SYS_PREFIX   = /opt/X11R6
--  INST_SHARE_PREFIX = /usr/share/Producer
+-  INST_LOCATION   = /opt/X11R6
+-  INST_SHARE = /usr/share/Producer
+-
 +  INST_SYS_PREFIX   = $(PREFIX)
 +  INST_SHARE_PREFIX = $(DATADIR)
 +  LINKARGS          = -L${X11BASE}/lib -L${LOCALBASE}/lib -rpath ${LOCALBASE}/lib -rpath ${X11BASE}/lib
@@ -24,6 +25,10 @@
 +  INST_SRC          = $(EXAMPLESDIR)/src
 +  INST_DOC          = $(DOCSDIR)
 +  INST_DATA         = $(DATADIR)
+   GL_LIBS           = -lGL
+   X_LIBS            = -lXmu -lX11
+-  OPEN_THREAD_LIB   = -lOpenThreads -lpthread
++  OPEN_THREAD_LIB   = -lOpenThreads ${PTHREAD_LIBS}
+ 
  endif
  
- #### MacOS X specific definitions
