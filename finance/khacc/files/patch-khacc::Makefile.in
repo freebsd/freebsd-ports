@@ -1,5 +1,14 @@
---- khacc/Makefile.in.orig	Thu Apr  8 00:35:47 2004
-+++ khacc/Makefile.in	Fri Apr  9 21:11:53 2004
+--- khacc/Makefile.in.orig	Mon May 24 22:21:12 2004
++++ khacc/Makefile.in	Tue May 25 14:10:52 2004
+@@ -273,7 +273,7 @@
+ # kde_designerdir     Where Qt Designer plugins should go to (new in KDE 3).
+ 
+ # set the include path for X, qt and KDE
+-khacc_METASOURCES = AUTO
++#>- khacc_gui_METASOURCES = AUTO
+ 
+ INCLUDES = $(QHACCINCDIR) $(all_includes)
+ khacc_gui_INCLUDES = $(INCLUDES)
 @@ -281,7 +281,6 @@
  # the library search path. 
  khacc_gui_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(QHACCLIBDIR) -lqhaccext
@@ -1252,53 +1261,107 @@
  mostlyclean-libtool:
  	-rm -f *.lo
  
-@@ -1924,112 +881,6 @@
+@@ -1727,7 +684,7 @@
+ 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 4
+-KDE_DIST=khacc.cpp Makefile.in khacc-gui 
++KDE_DIST=khacc.cpp Makefile.in 
+ 
+ DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
+@@ -1815,7 +772,7 @@
+ 
+ #>- clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
+ #>+ 1
+-clean-am: clean-final  clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
++clean-am: clean-metasources clean-final  clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
+ 
+ distclean: distclean-recursive
+ 	-rm -rf ./$(DEPDIR)
+@@ -1924,116 +881,73 @@
  	if test -n "$$LIST"; then \
  	$(XGETTEXT) $$LIST -o $(podir)/khacc.pot; \
  	fi
--
++# Tell versions [3.59,3.63) of GNU make to not export all variables.
++# Otherwise a system limit (for SysV at least) may be exceeded.
++.NOEXPORT:
+ 
 -qhaccwidget.moc:		qhaccwidget.h
 -	$(MOC) $(srcdir)/qhaccwidget.h -o qhaccwidget.moc
 -
 -qhaccview.moc:	qhaccview.h
 -	$(MOC) $(srcdir)/qhaccview.h -o qhaccview.moc
--
++#>+ 3
++qhaccjrnlchsr.moc: $(srcdir)/qhaccjrnlchsr.h
++	$(MOC) $(srcdir)/qhaccjrnlchsr.h -o qhaccjrnlchsr.moc
+ 
 -qhaccacctchsr.moc:	qhaccacctchsr.h
 -	$(MOC) $(srcdir)/qhaccacctchsr.h -o qhaccacctchsr.moc
--
++#>+ 3
++qhaccdialogs.moc: $(srcdir)/qhaccdialogs.h
++	$(MOC) $(srcdir)/qhaccdialogs.h -o qhaccdialogs.moc
+ 
 -qhaccacctbox.moc:	qhaccacctbox.h
--	$(MOC) $(srcdir)/qhaccacctbox.h -o qhaccacctbox.moc
--
++#>+ 3
++qhaccacctbox.moc: $(srcdir)/qhaccacctbox.h
+ 	$(MOC) $(srcdir)/qhaccacctbox.h -o qhaccacctbox.moc
+ 
 -qhaccacctboxchsr.moc:	qhaccacctboxchsr.h
 -	$(MOC) $(srcdir)/qhaccacctboxchsr.h -o qhaccacctboxchsr.moc
--
++#>+ 3
++qhaccwidget.moc: $(srcdir)/qhaccwidget.h
++	$(MOC) $(srcdir)/qhaccwidget.h -o qhaccwidget.moc
+ 
 -transeditor.moc:	transeditor.h
 -	$(MOC) $(srcdir)/transeditor.h -o transeditor.moc
--
++#>+ 3
++khaccsounder.moc: $(srcdir)/khaccsounder.h
++	$(MOC) $(srcdir)/khaccsounder.h -o khaccsounder.moc
+ 
 -qhaccrecwin.moc:	qhaccrecwin.h
 -	$(MOC) $(srcdir)/qhaccrecwin.h -o qhaccrecwin.moc
--
++#>+ 3
++qhaccacctboxchsr.moc: $(srcdir)/qhaccacctboxchsr.h
++	$(MOC) $(srcdir)/qhaccacctboxchsr.h -o qhaccacctboxchsr.moc
+ 
 -qhacclineedits.moc:	qhacclineedits.h
 -	$(MOC) $(srcdir)/qhacclineedits.h -o qhacclineedits.moc
--
++#>+ 3
++qhaccrecwin.moc: $(srcdir)/qhaccrecwin.h
++	$(MOC) $(srcdir)/qhaccrecwin.h -o qhaccrecwin.moc
+ 
 -qhaccdialogs.moc:	qhaccdialogs.h
 -	$(MOC) $(srcdir)/qhaccdialogs.h -o qhaccdialogs.moc
--
++#>+ 3
++qhaccview.moc: $(srcdir)/qhaccview.h
++	$(MOC) $(srcdir)/qhaccview.h -o qhaccview.moc
+ 
 -qhacclistview.moc:	qhacclistview.h
 -	$(MOC) $(srcdir)/qhacclistview.h -o qhacclistview.moc
--
++#>+ 3
++qhaccsubsetwin.moc: $(srcdir)/qhaccsubsetwin.h
++	$(MOC) $(srcdir)/qhaccsubsetwin.h -o qhaccsubsetwin.moc
+ 
 -qhaccgrwin.moc:	qhaccgrwin.h
--	$(MOC) $(srcdir)/qhaccgrwin.h -o qhaccgrwin.moc
--
++#>+ 3
++qhaccgrwin.moc: $(srcdir)/qhaccgrwin.h
+ 	$(MOC) $(srcdir)/qhaccgrwin.h -o qhaccgrwin.moc
+ 
 -qhaccsubsetwin.moc:	qhaccsubsetwin.h
 -	$(MOC) $(srcdir)/qhaccsubsetwin.h -o qhaccsubsetwin.moc
 -
 -qhaccjrnlchsr.moc:	qhaccjrnlchsr.h
 -	$(MOC) $(srcdir)/qhaccjrnlchsr.h -o qhaccjrnlchsr.moc
--
++#>+ 3
++qhaccacctchsr.moc: $(srcdir)/qhaccacctchsr.h
++	$(MOC) $(srcdir)/qhaccacctchsr.h -o qhaccacctchsr.moc
+ 
 -splitdialog.moc:	splitdialog.h
--	$(MOC) $(srcdir)/splitdialog.h -o splitdialog.moc
--
++#>+ 3
++splitdialog.moc: $(srcdir)/splitdialog.h
+ 	$(MOC) $(srcdir)/splitdialog.h -o splitdialog.moc
+ 
 -khaccsounder.moc:	khaccsounder.h
 -	$(MOC) $(srcdir)/khaccsounder.h -o khaccsounder.moc
 -
@@ -1356,12 +1419,78 @@
 -
 -qhaccjrnlchsr.$(OBJEXT):	$(srcdir)/qhaccjrnlchsr.cpp qhaccjrnlchsr.h
 -	$(CXXCOMPILE) -c $<
--
++#>+ 3
++qhacclineedits.moc: $(srcdir)/qhacclineedits.h
++	$(MOC) $(srcdir)/qhacclineedits.h -o qhacclineedits.moc
+ 
 -splitdialog.$(OBJEXT):	$(srcdir)/splitdialog.cpp splitdialog.h
 -	$(CXXCOMPILE) -c $<
--
++#>+ 3
++transeditor.moc: $(srcdir)/transeditor.h
++	$(MOC) $(srcdir)/transeditor.h -o transeditor.moc
+ 
 -khaccsounder.$(OBJEXT): $(srcdir)/khaccsounder.cpp khaccsounder.h
 -	$(CXXCOMPILE) -c $<
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
+-# Tell versions [3.59,3.63) of GNU make to not export all variables.
+-# Otherwise a system limit (for SysV at least) may be exceeded.
+-.NOEXPORT:
++#>+ 3
++qhacclistview.moc: $(srcdir)/qhacclistview.h
++	$(MOC) $(srcdir)/qhacclistview.h -o qhacclistview.moc
+ 
++#>+ 3
++clean-metasources:
++	-rm -f  qhaccjrnlchsr.moc qhaccdialogs.moc qhaccacctbox.moc qhaccwidget.moc khaccsounder.moc qhaccacctboxchsr.moc qhaccrecwin.moc qhaccview.moc qhaccsubsetwin.moc qhaccgrwin.moc qhaccacctchsr.moc splitdialog.moc qhacclineedits.moc transeditor.moc qhacclistview.moc
+ 
+ #>+ 2
+ docs-am:
+@@ -2042,11 +956,11 @@
+ force-reedit:
+ 		cd $(top_srcdir) && \
+ 	$(AUTOMAKE) --gnu  khacc/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit khacc-3.0/khacc/Makefile.in
++	cd $(top_srcdir) && perl admin/am_edit khacc/Makefile.in
+ 
+ 
+ #>+ 11
+-khacc_gui.all_cpp.cpp: $(srcdir)/Makefile.in  $(srcdir)/transeditor.cpp $(srcdir)/qhaccwidget.cpp $(srcdir)/qhaccview.cpp $(srcdir)/qhaccsubsetwin.cpp $(srcdir)/qhacclistview.cpp $(srcdir)/qhaccrecwin.cpp $(srcdir)/qhacclineedits.cpp $(srcdir)/qhaccjrnlchsr.cpp $(srcdir)/qhaccgrwin.cpp $(srcdir)/qhaccdialogs.cpp $(srcdir)/qhaccacctchsr.cpp $(srcdir)/main.cpp $(srcdir)/splitdialog.cpp $(srcdir)/khaccsounder.cpp $(srcdir)/copystore.cpp $(srcdir)/guiconstants.cpp $(srcdir)/qhaccacctbox.cpp $(srcdir)/qhaccacctboxchsr.cpp 
++khacc_gui.all_cpp.cpp: $(srcdir)/Makefile.in  $(srcdir)/transeditor.cpp $(srcdir)/qhaccwidget.cpp $(srcdir)/qhaccview.cpp $(srcdir)/qhaccsubsetwin.cpp $(srcdir)/qhacclistview.cpp $(srcdir)/qhaccrecwin.cpp $(srcdir)/qhacclineedits.cpp $(srcdir)/qhaccjrnlchsr.cpp $(srcdir)/qhaccgrwin.cpp $(srcdir)/qhaccdialogs.cpp $(srcdir)/qhaccacctchsr.cpp $(srcdir)/main.cpp $(srcdir)/splitdialog.cpp $(srcdir)/khaccsounder.cpp $(srcdir)/copystore.cpp $(srcdir)/guiconstants.cpp $(srcdir)/qhaccacctbox.cpp $(srcdir)/qhaccacctboxchsr.cpp  qhaccdialogs.moc qhaccjrnlchsr.moc qhaccwidget.moc qhaccacctbox.moc khaccsounder.moc qhaccacctboxchsr.moc qhaccrecwin.moc qhaccgrwin.moc qhaccsubsetwin.moc qhaccview.moc qhaccacctchsr.moc qhacclineedits.moc splitdialog.moc transeditor.moc qhacclistview.moc
+ 	@echo 'creating khacc_gui.all_cpp.cpp ...'; \
+ 	rm -f khacc_gui.all_cpp.files khacc_gui.all_cpp.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> khacc_gui.all_cpp.final; \
+@@ -2080,3 +994,35 @@
+ #>+ 3
+ kde-rpo-clean:
+ 	-rm -f *.rpo
++
++#>+ 31
++splitdialog.lo: splitdialog.moc 
++qhaccwidget.o: qhaccwidget.moc 
++qhaccacctboxchsr.lo: qhaccacctboxchsr.moc 
++qhaccdialogs.lo: qhaccdialogs.moc 
++qhaccacctchsr.lo: qhaccacctchsr.moc 
++qhaccacctbox.lo: qhaccacctbox.moc 
++qhaccrecwin.lo: qhaccrecwin.moc 
++qhaccacctboxchsr.o: qhaccacctboxchsr.moc 
++qhaccacctbox.o: qhaccacctbox.moc 
++qhacclineedits.o: qhacclineedits.moc 
++khaccsounder.o: khaccsounder.moc 
++transeditor.o: transeditor.moc 
++qhaccgrwin.lo: qhaccgrwin.moc 
++qhaccacctchsr.o: qhaccacctchsr.moc 
++qhaccdialogs.o: qhaccdialogs.moc 
++qhaccview.o: qhaccview.moc 
++splitdialog.o: splitdialog.moc 
++qhaccview.lo: qhaccview.moc 
++transeditor.lo: transeditor.moc 
++khaccsounder.lo: khaccsounder.moc 
++qhacclistview.lo: qhacclistview.moc 
++qhaccwidget.lo: qhaccwidget.moc 
++qhacclineedits.lo: qhacclineedits.moc 
++qhaccsubsetwin.o: qhaccsubsetwin.moc 
++qhaccsubsetwin.lo: qhaccsubsetwin.moc 
++qhacclistview.o: qhacclistview.moc 
++qhaccjrnlchsr.o: qhaccjrnlchsr.moc 
++qhaccjrnlchsr.lo: qhaccjrnlchsr.moc 
++qhaccgrwin.o: qhaccgrwin.moc 
++qhaccrecwin.o: qhaccrecwin.moc 
