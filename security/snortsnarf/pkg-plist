@@ -1,0 +1,32 @@
+bin/snortsnarf
+libdata/snortsnarf/IPAddrContact.pm
+libdata/snortsnarf/SnortSnarf/AlertBase.pm
+libdata/snortsnarf/SnortSnarf/AllMods.pm
+libdata/snortsnarf/SnortSnarf/BasicFilters.pm
+libdata/snortsnarf/SnortSnarf/BasicSorters.pm
+libdata/snortsnarf/SnortSnarf/Filter.pm
+libdata/snortsnarf/SnortSnarf/Filtering.pm
+libdata/snortsnarf/SnortSnarf/HTMLAnomMemStorage.pm
+libdata/snortsnarf/SnortSnarf/HTMLMemStorage.pm
+libdata/snortsnarf/SnortSnarf/HTMLOutput.pm
+libdata/snortsnarf/SnortSnarf/Input.pm
+libdata/snortsnarf/SnortSnarf/KnownEquiv.pm
+libdata/snortsnarf/SnortSnarf/MemAlert.pm
+libdata/snortsnarf/SnortSnarf/MemPacket.pm
+libdata/snortsnarf/SnortSnarf/MemStorage.pm
+libdata/snortsnarf/SnortSnarf/MemTimeBase.pm
+libdata/snortsnarf/SnortSnarf/MultiStore.pm
+libdata/snortsnarf/SnortSnarf/PacketBase.pm
+libdata/snortsnarf/SnortSnarf/SnortFileInput.pm
+libdata/snortsnarf/SnortSnarf/SnortRules.pm
+libdata/snortsnarf/SnortSnarf/Sort.pm
+libdata/snortsnarf/SnortSnarf/SorterBase.pm
+libdata/snortsnarf/SnortSnarf/StorageBase.pm
+libdata/snortsnarf/ann_xml.pl
+libdata/snortsnarf/web_utils.pl
+libdata/snortsnarf/xml_help.pl
+%%PORTDOCS%%share/doc/snortsnarf/README
+%%PORTDOCS%%share/doc/snortsnarf/Usage
+%%PORTDOCS%%@dirrm share/doc/snortsnarf
+@dirrm libdata/snortsnarf/SnortSnarf
+@dirrm libdata/snortsnarf
