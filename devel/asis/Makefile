@@ -19,6 +19,12 @@ COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_GMAKE=	yes
 MAKEFILE=	"${FILESDIR}/Makefile.bsd"
 MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
@@ -45,4 +51,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/gnatstub/README ${DOCSDIR}/README.gnatstub
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
