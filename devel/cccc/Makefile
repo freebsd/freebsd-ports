@@ -25,6 +25,12 @@ USE_GMAKE=		yes
 MAKEFILE=		makefile
 MAKE_ENV=		OSTYPE=FreeBSD
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=			"Does not compile"
+.endif
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/cccc ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/cccc
@@ -34,4 +40,4 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/cccc
 	@ ${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/cccc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
