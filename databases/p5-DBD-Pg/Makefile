@@ -3,7 +3,7 @@
 # Date created:				June 17th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1997/06/18 19:41:01 jfitz Exp $
 #
 
 DISTNAME=	DBD-Pg-0.3
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	DBD
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS+=	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/site_perl/DBI.pm:${PORTSDIR}/database/p5-DBI \
+		${PREFIX}/lib/perl5/site_perl/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${PREFIX}/pgsql/lib/libpq.so.1.0:${PORTSDIR}/databases/postgresql
 RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
