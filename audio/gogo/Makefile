@@ -32,7 +32,7 @@ pre-fetch:
 	@${ECHO_MSG} "set WITH_THREADS to compile with linuxthreads."
 	@${ECHO_MSG} "It would increase performance in SMP environment."
 .else
-MAKE_ENV+=	"WITH_THREADS=yes"
+MAKE_ENV+=	"USE_MT=yes"
 LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
 .endif
 
