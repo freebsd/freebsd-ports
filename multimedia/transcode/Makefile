@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.9
-PORTREVISION=	1
+PORTVERSION=	0.6.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -33,7 +32,7 @@ USE_LIBTOOL=	yes
 
 MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \
-	tcxmlcheck.1
+	tcpvmexportd.1 tcxmlcheck.1
 
 .include <bsd.port.pre.mk>
 
@@ -342,14 +341,21 @@ pre-configure:
 	@${REINPLACE_CMD} -E -e 's|-ldl||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|WRKSRC|${WRKSRC}|g' ${WRKSRC}/export/Makefile.in
 
+pre-build:
+.if defined(WITH_SUBRIP)
+	@cd ${WRKSRC}/contrib/subrip; ${GMAKE} clean all
+.endif
+
 post-install:
 .if defined(WITH_XVID)
 	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so \
 		${PREFIX}/lib/transcode/libxvidcore.so
+	@${LN} -sf ${LOCALBASE}/lib/libxvidcore.so.2 \
+		${PREFIX}/lib/transcode/libxvidcore.so.2
 .endif
 
 .if defined(WITH_SUBRIP)
-	@cd ${WRKSRC}/contrib/subrip; ${GMAKE} clean all; \
+	@cd ${WRKSRC}/contrib/subrip; \
 		${INSTALL_PROGRAM} srttool subtitle2pgm subtitle2vobsub ${PREFIX}/bin
 .endif
 
