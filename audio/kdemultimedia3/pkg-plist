@@ -1,0 +1,69 @@
+bin/cddaslave
+bin/kmedia
+bin/kmid
+bin/kmix
+bin/kscd
+share/applnk/Multimedia/KMedia.kdelnk
+share/applnk/Multimedia/KMix.kdelnk
+share/applnk/Multimedia/kscd.kdelnk
+share/apps/kmedia/pics/media.xpm
+share/apps/kmedia/pics/playpause.xbm
+share/apps/kmedia/pics/playpause_both.xpm
+share/apps/kmedia/pics/playpause_play.xpm
+share/apps/kmid/toolbar/kmid_fforward.xpm
+share/apps/kmid/toolbar/kmid_frewind.xpm
+share/apps/kmid/toolbar/kmid_next.xpm
+share/apps/kmid/toolbar/kmid_pause.xpm
+share/apps/kmid/toolbar/kmid_play.xpm
+share/apps/kmid/toolbar/kmid_prev.xpm
+share/apps/kmid/toolbar/kmid_stop.xpm
+share/apps/kmix/pics/mix_audio.xpm
+share/apps/kmix/pics/mix_bass.xpm
+share/apps/kmix/pics/mix_cd.xpm
+share/apps/kmix/pics/mix_ext.xpm
+share/apps/kmix/pics/mix_microphone.xpm
+share/apps/kmix/pics/mix_midi.xpm
+share/apps/kmix/pics/mix_recmon.xpm
+share/apps/kmix/pics/mix_treble.xpm
+share/apps/kmix/pics/mix_unknown.xpm
+share/apps/kmix/pics/mix_volume.xpm
+share/apps/kscd/pics/kscdlogo.xpm
+share/doc/HTML/en/kmedia/kmedia.html
+share/doc/HTML/en/kmedia/kmix.html
+share/doc/HTML/en/kmid/kmid.html
+share/doc/HTML/en/kscd/kscd-1.html
+share/doc/HTML/en/kscd/kscd-2.html
+share/doc/HTML/en/kscd/kscd-3.html
+share/doc/HTML/en/kscd/kscd-4.html
+share/doc/HTML/en/kscd/kscd.html
+share/icons/kmedia.xpm
+share/icons/kmid.xpm
+share/icons/kmix.xpm
+share/icons/kscd.xpm
+share/icons/mini/kmedia_mini.xpm
+share/icons/mini/kmix.xpm
+share/icons/mini/mini-kscd.xpm
+share/locale/cs/LC_MESSAGES/kmedia.mo
+share/locale/de/LC_MESSAGES/kmedia.mo
+share/locale/fr/LC_MESSAGES/kmedia.mo
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/doc/HTML/en/kscd
+@dirrm share/doc/HTML/en/kmid
+@dirrm share/doc/HTML/en/kmedia
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/apps/kscd/pics
+@dirrm share/apps/kscd
+@dirrm share/apps/kmix/pics
+@dirrm share/apps/kmix
+@dirrm share/apps/kmid/toolbar
+@dirrm share/apps/kmid
+@dirrm share/apps/kmedia/pics
+@dirrm share/apps/kmedia
+@dirrm share/applnk/Multimediawxit
+@dirrm share/applnk/Multimedia
