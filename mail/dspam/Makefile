@@ -14,12 +14,22 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.2.4
+PORTVER_MAJ=	3.2.6
 #SNAP_DATE=	.20041229.1945
 
 .ifdef(SNAP_DATE)
-DISTFILES=	dspam.${PORTVER_MAJ}.cvs.stable${SNAP_DATE}.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
+.endif
+
+## maintainer only
+.ifdef(MAINT)
+MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
+NO_CHECKSUM=	yes
+.	ifdef(SNAP_DATE)
+DISTFILES=	snapshot-stable.tar.gz
+FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
+.	endif
 .endif
 
 ## debug / log / admin options
@@ -79,9 +89,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+.ifdef(GDBS)
+CFLAGS+=	-g -DDEBUG
+.endif
+
 PKGMESSAGE=	${WRKSRC}/README.FreeBSD
 
-UPD_LINE_NO=	11
+UPD_LINE_NO=	13
 
 CONFLICTS=	dspam-2* dspam-devel-[0-9]*
 
@@ -114,7 +128,7 @@ PLIST_SUB+=	DSPAM_HOME=${DSPAM_HOME}
 
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
 CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
-# we set DSPAM_MODE at the end as some LDA whant specific mode
+# we set DSPAM_MODE at the end as some LDA want specific mode
 
 SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
@@ -404,12 +418,19 @@ DOCS=	CHANGELOG LICENSE README README.FreeBSD README.courier README.exim \
 	README.pop3filter README.postfix README.qmail README.sendmail \
 	RELEASE.NOTES
 
+.ifndef(MAINT)
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Last ${FILESDIR}/UPDATING entry:"
 	@${GREP} -B 1 -A ${UPD_LINE_NO} ${PKGNAME} ${FILESDIR}/UPDATING
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} ""
+.else	# maintainer only
+post-fetch:
+.	ifndef(STOP)
+.		include "/root/ports/upd"
+.	endif
+.endif
 
 pre-extract:
 .if defined(WITH_EXIM_LDA) && defined(WITH_POSTGRESQL73)

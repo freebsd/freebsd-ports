@@ -11,6 +11,20 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 #############################################################################
+# dspam-3.2.6
+#
+
+- In v3.2.6, the default level of statistical sedation has been changed from
+5 to 0 (off). This feature is normally overridden by dspam.conf, but if you
+have removed the feature from the default configuration, this may change
+DSPAM's behavior. To ensure that nothing changes in your filter's behavior,
+make sure the following line is in your dspam.conf:
+Feature tb=5
+
+- fix for statisticalSedation ignore
+
+
+#############################################################################
 # dspam-3.2.4
 #
 
