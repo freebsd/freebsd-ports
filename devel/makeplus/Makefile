@@ -8,18 +8,20 @@
 #
 
 PORTNAME=	makeplus
-PORTVERSION=	0.0.15
+PORTVERSION=	0.1.2
 PORTREVISION=	0
 PORTEPOCH=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
+
+MAINTAINER=	alane@FreeBSD.org
 
 USE_GMAKE=	yes
 PREFIX?=	${LOCALBASE}
 MAKE_ENV+=	MAKEPLUS_HOME=${WRKSRC}
 NO_MTREE=	yes
 
-MAINTAINER=	alane@FreeBSD.org
+MAN1=		make+.1
 
 .include <bsd.port.pre.mk>
 
@@ -27,7 +29,8 @@ do-build:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./make+
 
 do-install:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./make+ install prefix=${PREFIX}
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
+		./make+ install prefix=${PREFIX} manprefix=${PREFIX}
 
 .include <bsd.port.post.mk>
 
