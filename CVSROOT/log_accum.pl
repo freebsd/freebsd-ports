@@ -158,6 +158,7 @@ sub bump_version {
 sub build_header {
     local($version) = @_;
     local($header);
+    delete $ENV{'TZ'};
     local($sec,$min,$hour,$mday,$mon,$year) = localtime(time);
     $version = '';
     $header = sprintf("%-8s  %s  %02d/%02d/%02d %02d:%02d:%02d",
