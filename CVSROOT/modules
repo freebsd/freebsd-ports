@@ -1112,6 +1112,7 @@ despoof		ports/net/despoof
 detach		ports/sysutils/detach
 detex		ports/print/detex
 devel-replay	ports/devel/replay
+devhelp		ports/devel/devhelp
 devtodo		ports/devel/devtodo
 dfm		ports/x11-fm/dfm
 dgd		ports/net/dgd
