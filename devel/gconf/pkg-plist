@@ -52,7 +52,9 @@ share/locale/uk/LC_MESSAGES/GConf.mo
 @dirrm etc/gconf/schemas
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/standard
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop
+@unexec rmdir %D/etc/gconf/gconf.xml.defaults/schemas/apps 2>/dev/null || true
 @dirrm etc/gconf/gconf.xml.defaults/schemas
+@unexec rmdir %D/etc/gconf/gconf.xml.defaults/apps 2>/dev/null || true
 @dirrm etc/gconf/gconf.xml.defaults
 @dirrm etc/gconf/1
 @dirrm etc/gconf
