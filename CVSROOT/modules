@@ -923,6 +923,7 @@ cowsay		ports/games/cowsay
 cp		src/bin/cp
 cpbk		ports/sysutils/cpbk
 cpdup		ports/sysutils/cpdup
+cphone		ports/net/cphone
 cpio		src/gnu/usr.bin/cpio
 cpmemu		ports/emulators/cpmemu
 cpmtools	ports/emulators/cpmtools
