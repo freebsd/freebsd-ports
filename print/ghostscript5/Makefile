@@ -36,7 +36,7 @@ PCL3_DRV=	hpdj-2.6.tar.gz
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.5 ${WRKSRC}/libpng
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.6 ${WRKSRC}/libpng
 	# additional PCL3  driver
 	@${TAR} -xf ${WRKDIR}/hpdj-2.6/hpdj.tar -C ${WRKSRC}
 	@${CAT} ${WRKSRC}/devs.mak-5.10.add >> ${WRKSRC}/devs.mak
