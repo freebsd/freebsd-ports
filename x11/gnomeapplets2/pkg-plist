@@ -49,7 +49,7 @@ etc/gconf/schemas/stickynotes.schemas
 %%BATTERY%%etc/sound/events/battstat_applet.soundlist
 etc/sound/events/mailcheck.soundlist
 libdata/bonobo/servers/GNOME_AccessxStatusApplet.server
-libdata/bonobo/servers/GNOME_BattstatApplet.server
+%%BATTERY%%libdata/bonobo/servers/GNOME_BattstatApplet.server
 libdata/bonobo/servers/GNOME_CDPlayerApplet.server
 libdata/bonobo/servers/GNOME_CharpickerApplet.server
 libdata/bonobo/servers/GNOME_DriveMountApplet.server
@@ -231,7 +231,7 @@ share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
 share/gnome/gkb/Yugoslav.keyprop
 share/gnome/gkb/presets.xml
 share/gnome/gnome-2.0/ui/GNOME_AccessxApplet.xml
-share/gnome/gnome-2.0/ui/GNOME_BattstatApplet.xml
+%%BATTERY%%share/gnome/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_CDPlayerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_DriveMountApplet.xml
