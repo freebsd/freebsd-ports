@@ -1,0 +1,3 @@
+bin/weblint
+lib/weblintrc
+man/man1/weblint.1
