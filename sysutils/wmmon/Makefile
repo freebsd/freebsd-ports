@@ -3,7 +3,7 @@
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/11 15:22:46 flathill Exp $
 #
 
 DISTNAME=	wmmon-1.0b2
@@ -24,10 +24,6 @@ pre-patch:
 
 post-extract:
 	${CP} ${WRKDIR}/wmmon/Makefile.FreeBSD ${WRKSRC}/Makefile
-
-pre-clean:
-	${RM} ${WRKDIR}/wmmon-freebsd.patch
-	${RM} -rf ${WRKDIR}/wmmon
 
 post-install:
 	strip ${PREFIX}/bin/wmmon
