@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/nc
-share/doc/netcat/README
-@dirrm share/doc/netcat

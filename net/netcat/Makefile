@@ -26,12 +26,14 @@ COMMENT=	Simple utility which reads and writes data across network connections
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 
+PLIST_FILES=	bin/nc
+PORTDOCS=	README
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nc ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/netcat \
-		&& ${CHMOD} a+rx ${PREFIX}/share/doc/netcat
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/netcat
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
