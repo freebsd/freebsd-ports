@@ -1,0 +1,11 @@
+--- modules/vfolder/Makefile.in.orig	Wed Nov 13 11:05:45 2002
++++ modules/vfolder/Makefile.in	Wed Nov 13 11:06:24 2002
+@@ -221,7 +221,7 @@
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+-LIBS = @LIBS@
++LIBS = @LIBS@ @PTHREAD_LIB@
+ libvfolder_desktop_la_DEPENDENCIES =  \
+ $(top_builddir)/libgnomevfs/libgnomevfs-2.la
+ libvfolder_desktop_la_OBJECTS =  vfolder-info.lo vfolder-util.lo \
