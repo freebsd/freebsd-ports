@@ -56,12 +56,12 @@ CONFIGURE_ARGS+=	--without-gdbm
 PLIST=	${WRKDIR}/PLIST
 
 post-patch:
-	@${CP} ${PKGDIR}/PLIST ${WRKDIR}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 .if !defined(NO_GDBM)
-	@${CAT} ${PKGDIR}/PLIST.gdbm >> ${WRKDIR}/PLIST
+	@${CAT} ${PKGDIR}/pkg-plist.gdbm >> ${PLIST}
 .endif
 .if !defined(NOPORTDOCS)
-	@${CAT} ${PKGDIR}/PLIST.docs >> ${WRKDIR}/PLIST
+	@${CAT} ${PKGDIR}/pkg-plist.docs >> ${PLIST}
 .endif
 
 .include <bsd.port.mk>
