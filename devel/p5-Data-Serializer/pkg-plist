@@ -59,7 +59,9 @@
 %%SITE_PERL%%/auto/Data/Serializer/freeze.al
 %%SITE_PERL%%/auto/Data/Serializer/raw_deserialize.al
 %%SITE_PERL%%/auto/Data/Serializer/raw_serialize.al
+%%SITE_PERL%%/auto/Data/Serializer/retrieve.al
 %%SITE_PERL%%/auto/Data/Serializer/serialize.al
+%%SITE_PERL%%/auto/Data/Serializer/store.al
 %%SITE_PERL%%/auto/Data/Serializer/thaw.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Serializer/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Serializer
