@@ -1,6 +1,6 @@
---- configure.orig	Mon Jan 17 16:53:17 2000
-+++ configure	Sun Feb 20 15:43:26 2000
-@@ -1151,7 +1151,8 @@
+--- configure.orig	Thu Sep 27 13:12:03 2001
++++ configure	Fri Jan 25 14:32:58 2002
+@@ -1169,7 +1169,8 @@
      conf_port="80"
  fi
  conf_serveradmin="you@your.address"
@@ -10,7 +10,7 @@
  if [ "x$confadjust" = "x1" ]; then
      if [ -f /etc/passwd ]; then
          if [ "x$conf_user" = "x" ]; then
-@@ -1175,7 +1176,10 @@
+@@ -1193,7 +1194,10 @@
          conf_port="8080"
      fi
      conf_serveradmin="`$aux/buildinfo.sh -n %u@%h%d`"
@@ -22,7 +22,7 @@
  fi
   
  ##
-@@ -1232,8 +1236,8 @@
+@@ -1251,8 +1255,8 @@
      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}${thetarget}.pid"
      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}${thetarget}.scoreboard"
      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}${thetarget}.lock"
@@ -33,7 +33,7 @@
      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}${thetarget}.conf"
      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
-@@ -1330,8 +1334,8 @@
+@@ -1350,8 +1354,8 @@
  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}${thetarget}.pid\"'" >>$src/apaci
  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}${thetarget}.scoreboard\"'" >>$src/apaci
  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}${thetarget}.lock\"'" >>$src/apaci
