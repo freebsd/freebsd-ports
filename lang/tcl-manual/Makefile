@@ -29,6 +29,7 @@ post-patch:
 		${WRKDIR}/tcl8.4a3/html/TclLib/*
 	@${REINPLACE_CMD} -e 's|tk\.h|tk8.4/tk.h|g' \
 		${WRKDIR}/tcl8.4a3/html/TkLib/*
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/tcl83
