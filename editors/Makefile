@@ -177,7 +177,6 @@
     SUBDIR += xemacs
     SUBDIR += xemacs-devel
     SUBDIR += xemacs-devel-mule
-    SUBDIR += xemacs-games-packages
     SUBDIR += xemacs-libs-packages
     SUBDIR += xemacs-mule-packages
     SUBDIR += xemacs-oa-packages
