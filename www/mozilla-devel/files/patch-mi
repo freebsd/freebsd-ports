@@ -11,7 +11,7 @@
 +
 +# During FreeBSD port build, CFLAGS contains all of the optimizations
 +# flags desired...
-+OPTIMIZER		=
++OPTIMIZER		= $(MOZ_OPTIMIZE_FLAGS)
  
  ifeq ($(OS_TEST),alpha)
  CPU_ARCH		= alpha

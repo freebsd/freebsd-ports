@@ -31,6 +31,7 @@ lib/mozilla/TestCOMPtr
 lib/mozilla/TestCOMPtrEq
 lib/mozilla/TestCRT
 lib/mozilla/TestCSSPropertyLookup
+lib/mozilla/TestCallTemplates
 lib/mozilla/TestCallbacks
 lib/mozilla/TestColorNames
 lib/mozilla/TestCookie
@@ -52,6 +53,7 @@ lib/mozilla/TestObserverService
 lib/mozilla/TestOutSinks.pl
 lib/mozilla/TestOutput
 lib/mozilla/TestOverlappedIO
+lib/mozilla/TestPageLoad
 lib/mozilla/TestPipes
 lib/mozilla/TestProtocols
 lib/mozilla/TestRect
@@ -79,6 +81,7 @@ lib/mozilla/chrome/comm.jar
 lib/mozilla/chrome/content-packs.jar
 lib/mozilla/chrome/embed.jar
 lib/mozilla/chrome/en-US.jar
+lib/mozilla/chrome/en-mac.jar
 lib/mozilla/chrome/en-unix.jar
 lib/mozilla/chrome/en-win.jar
 lib/mozilla/chrome/help.jar
@@ -116,6 +119,7 @@ lib/mozilla/components/dom_events.xpt
 lib/mozilla/components/dom_html.xpt
 lib/mozilla/components/dom_range.xpt
 lib/mozilla/components/dom_stylesheets.xpt
+lib/mozilla/components/dom_traversal.xpt
 lib/mozilla/components/dom_views.xpt
 lib/mozilla/components/dom_xbl.xpt
 lib/mozilla/components/dom_xul.xpt
@@ -369,7 +373,6 @@ lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
-lib/mozilla/libxlibrgb.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
 lib/mozilla/lots
