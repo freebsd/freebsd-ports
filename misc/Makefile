@@ -331,6 +331,7 @@
     SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += pybliographer
+    SUBDIR += pylize
     SUBDIR += pypanda
     SUBDIR += qbrew
     SUBDIR += qlas
