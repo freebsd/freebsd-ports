@@ -9,8 +9,8 @@ PORTNAME=	zile
 PORTVERSION=	1.6.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://prdownloads.sourceforge.net/zile/
-MASTER_SITE_SUBDIR=	apps/editors/emacs/clones
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	apps/editors/emacs/clones zile
 
 MAINTAINER=	jasone@freebsd.org
 
