@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	mktool
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.25
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.io.com/~manoj/file/
 
 MAINTAINER=	jos@catnook.com
 COMMENT=	Portable tools to manage processes and networked services
 
-WRKSRC=		${WRKDIR}/mktool
-
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_BZIP2=	yes
 
-post-extract:
+pre-patch:
 	@${REINPLACE_CMD} -e ' \
 		s,^OPT=.*,OPT=${CFLAGS},; \
 		s,=gcc,?=gcc,; \
 		s,^bindir=.*,bindir=${PREFIX}/bin,; \
-		s,cp -a,install -m ${BINMODE},' ${WRKSRC}/Makefile
+		s,cp -p,${INSTALL_PROGRAM},' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

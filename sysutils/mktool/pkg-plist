@@ -1,7 +1,10 @@
 bin/babysit
+bin/bsc
 bin/bsok
-bin/envuidgid
+bin/bswait
 bin/execlp
+bin/getlock
 bin/setugid
-bin/tcpaccept
+bin/sockaccept
 bin/tcplisten
+bin/unixlisten
