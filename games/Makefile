@@ -92,6 +92,7 @@
     SUBDIR += empire
     SUBDIR += enigma
     SUBDIR += euchre
+    SUBDIR += evilfinder
     SUBDIR += exult
     SUBDIR += falconseye
     SUBDIR += farblazer
