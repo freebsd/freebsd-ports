@@ -231,7 +231,6 @@ lib/libsmbclient.so.0
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
-%%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/.cvsignore
 %%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/oldtdbutil.py
 %%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/tdbtimetrial.py
 %%PYTHON%%%%EXAMPLESDIR%%/python/tdbpack/test_tdbpack.py
@@ -719,18 +718,9 @@ share/swat/using_samba/samba2_xs.gif
 @dirrm lib/samba/charset
 @dirrm lib/samba/auth
 @dirrm lib/samba
-%%PYTHON%%@unexec rmdir -p %D/lib/%%PYTHON_VERSION%%/site-packages/samba 2>/dev/null || true
+%%PYTHON%%@unexec rmdir -p %D/lib/%%PYTHON_VERSION%%/site-packages/samba/. 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Registry
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %%SAMBA_SPOOL%% || true
-@exec chmod 0755 %%SAMBA_SPOOL%%
-@unexec rm -fr %%SAMBA_SPOOL%%/printing
-@unexec for file in `ls %%SAMBA_SPOOL%% | grep -v '^winbindd_'`; do rm -fr %%SAMBA_SPOOL%%/$file; done
-@unexec rmdir %%SAMBA_SPOOL%% 2>/dev/null || true
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%SAMBA_SPOOL%%/*.tdb manually."
-@exec mkdir -p %%SAMBA_LOGDIR%% || true
-@unexec rmdir %%SAMBA_LOGDIR%% 2>/dev/null || true
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%SAMBA_LOGDIR%% manually."
