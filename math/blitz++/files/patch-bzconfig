@@ -1,0 +1,14 @@
+--- compiler/bzconfig.orig	Thu May 22 15:06:34 2003
++++ compiler/bzconfig	Thu May 22 15:07:00 2003
+@@ -37,11 +37,6 @@
+ # to edit the next line
+ objextension='o'
+ 
+-if test ! -t 0; then
+-    echo "Use 'sh bzconfig', not 'sh < bzconfig'"
+-    exit 1
+-fi
+-
+ # clean="rm -f a.out core bztemp bztest bzjunk.cpp bzjunk.o bzjunk.ii bzjunk.int.c bzjunk.s"
+ clean="rm -f core"
+ trap '$clean; exit 1' 1 2 3 15
