@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/RawSock.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawSock/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawSock/RawSock.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawSock/RawSock.bs
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawSock/ 2>/dev/null || true
+%%PORTDOCS%%share/doc/p5-Net-RawSock/README
+%%PORTDOCS%%share/doc/p5-Net-RawSock/demo.pl
+%%PORTDOCS%%@dirrm share/doc/p5-Net-RawSock
