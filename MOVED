@@ -492,3 +492,4 @@ x11-toolkits/ruby-qt2||2003-08-09|obsolete
 x11-toolkits/ruby-qt2canvas||2003-08-09|obsolete
 x11-toolkits/ruby-qt2iconview||2003-08-09|obsolete
 x11-toolkits/ruby-qt2table||2003-08-09|obsolete
+x11-wm/toolbox||2003-08-09|superseded by bbconf
