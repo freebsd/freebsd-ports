@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1998/12/26 21:28:59 asami Exp $
+# $Id: Makefile,v 1.14 1999/01/08 20:33:45 billf Exp $
 #
 
 DISTNAME=	Msql-Mysql-modules-1.2003
@@ -14,9 +14,13 @@ MASTER_SITE_SUBDIR=	DBD
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321 \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/DBI.pm:${PORTSDIR}/databases/p5-DBI
+.if !exists(${PREFIX}/lib/mysql/libmysqlclient.a) || exists(${PREFIX}/lib/mysql/libmysqlclient.so)
+LIB_DEPENDS=	mysqlclient.5:${PORTSDIR}/databases/mysql322
+.else
+BUILD_DEPENDS+=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321
+.endif
 
 CONFIGURE_ENV=	PREFIX=${PREFIX} MYSQL_HOME=${PREFIX} IN_MYSQL_DISTRIBUTION=1
 USE_PERL5=	YES
