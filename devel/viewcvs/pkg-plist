@@ -1,41 +1,51 @@
-share/viewcvs/cgi/viewcvs.cgi
-share/viewcvs/cgi/queryform.cgi
-share/viewcvs/cgi/query.cgi
-share/viewcvs/viewcvs.conf
-share/viewcvs/lib/PyFontify.py
-share/viewcvs/lib/PyFontify.pyc
-share/viewcvs/lib/blame.py
-share/viewcvs/lib/blame.pyc
-share/viewcvs/lib/commit.py
-share/viewcvs/lib/commit.pyc
-share/viewcvs/lib/compat.py
-share/viewcvs/lib/compat.pyc
-share/viewcvs/lib/config.py
-share/viewcvs/lib/config.pyc
-share/viewcvs/lib/cvsdbapi.py
-share/viewcvs/lib/cvsdbapi.pyc
-share/viewcvs/lib/database.py
-share/viewcvs/lib/database.pyc
-share/viewcvs/lib/dbi.py
-share/viewcvs/lib/dbi.pyc
-share/viewcvs/lib/popen.py
-share/viewcvs/lib/popen.pyc
-share/viewcvs/lib/py2html.py
-share/viewcvs/lib/py2html.pyc
-share/viewcvs/lib/query.py
-share/viewcvs/lib/query.pyc
-share/viewcvs/lib/rcsparse.py
-share/viewcvs/lib/rcsparse.pyc
-share/viewcvs/lib/rlog.py
-share/viewcvs/lib/rlog.pyc
-share/viewcvs/lib/viewcvs.py          
-share/viewcvs/lib/viewcvs.pyc
-share/viewcvs/loginfo-handler
-share/viewcvs/cvsdbadmin
-share/viewcvs/make-database
-share/viewcvs/html-templates/queryformtemplate.html
-share/viewcvs/html-templates/querytemplate.html
-@dirrm share/viewcvs/html-templates
-@dirrm share/viewcvs/lib
-@dirrm share/viewcvs/cgi
-@dirrm share/viewcvs
+viewcvs-0.8/cvsdbadmin
+viewcvs-0.8/loginfo-handler
+viewcvs-0.8/make-database
+viewcvs-0.8/standalone.py
+viewcvs-0.8/cgi/viewcvs.cgi
+viewcvs-0.8/cgi/query.cgi
+viewcvs-0.8/doc/help_rootview.html
+viewcvs-0.8/doc/help_dirview.html
+viewcvs-0.8/doc/images/logo.png
+viewcvs-0.8/doc/images/chalk.jpg
+viewcvs-0.8/doc/images/cvsgraph_16x16.png
+viewcvs-0.8/doc/images/cvsgraph_32x32.png
+viewcvs-0.8/lib/PyFontify.py
+viewcvs-0.8/lib/PyFontify.pyc
+viewcvs-0.8/lib/blame.py
+viewcvs-0.8/lib/blame.pyc
+viewcvs-0.8/lib/compat.py
+viewcvs-0.8/lib/compat.pyc
+viewcvs-0.8/lib/config.py
+viewcvs-0.8/lib/config.pyc
+viewcvs-0.8/lib/cvsdb.py
+viewcvs-0.8/lib/cvsdb.pyc
+viewcvs-0.8/lib/dbi.py
+viewcvs-0.8/lib/dbi.pyc
+viewcvs-0.8/lib/debug.py
+viewcvs-0.8/lib/debug.pyc
+viewcvs-0.8/lib/popen.py
+viewcvs-0.8/lib/popen.pyc
+viewcvs-0.8/lib/py2html.py
+viewcvs-0.8/lib/py2html.pyc
+viewcvs-0.8/lib/query.py
+viewcvs-0.8/lib/query.pyc
+viewcvs-0.8/lib/rcsparse.py
+viewcvs-0.8/lib/rcsparse.pyc
+viewcvs-0.8/lib/rlog.py
+viewcvs-0.8/lib/rlog.pyc
+viewcvs-0.8/lib/viewcvs.py
+viewcvs-0.8/lib/viewcvs.pyc
+viewcvs-0.8/lib/ezt.py
+viewcvs-0.8/lib/ezt.pyc
+viewcvs-0.8/lib/apache_icons.py
+viewcvs-0.8/lib/apache_icons.pyc
+viewcvs-0.8/templates/directory.ezt
+viewcvs-0.8/templates/log.ezt
+viewcvs-0.8/templates/log_table.ezt
+viewcvs-0.8/templates/query.ezt
+@dirrm viewcvs-0.8/cgi
+@dirrm viewcvs-0.8/doc/images
+@dirrm viewcvs-0.8/doc
+@dirrm viewcvs-0.8/lib
+@dirrm viewcvs-0.8/templates
