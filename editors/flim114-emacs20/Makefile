@@ -146,7 +146,7 @@ info-build-by-emacs:
 		${MAKEINFO_EMACS} $${i} ${MAKEINFO_EMACS_FLAGS} || ${TRUE} ; \
 	done)
 .endif
- 
+
 pkg-el-copy:
 	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
 	${CP} ${FILESDIR}/_pkg.el ${WRKSRC}/_pkg.el ;\
