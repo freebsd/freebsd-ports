@@ -13,13 +13,11 @@ The DBCP Component
    request processing is the only time that a database connection is
    required. The application itself logs into the DBMS, and handles any
    user account issues internally.
-
    There are several Database Connection Pools already available, both
    within Jakarta products and elsewhere. This Commons package provides
    an opportunity to coordinate the efforts required to create and
    maintain an efficient, feature-rich package under the ASF license.
-
    The commons-dbcp package relies on code in the commons-pool package to
    provide the underlying object pool mechanisms that it utilizes.
 
-WWW: http://jakarta.apache.org/commons/dbcp
+WWW: http://jakarta.apache.org/commons/dbcp/
