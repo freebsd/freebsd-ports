@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes

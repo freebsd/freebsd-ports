@@ -37,8 +37,6 @@ MAN1=	divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
 	yuvplay.1 yuvscaler.1 yuvycsnoise.1
 MAN5=	yuv4mpeg.5
 
-SDL_CONFIG?=		${LOCALBASE}/bin/sdl11-config
-
 DOC_FILES=	AUTHORS BUGS CHANGES COPYING ChangeLog HINTS NEWS \
 		PLANS README README.DV README.avilib README.glav \
 		README.lavpipe README.transist TODO
@@ -107,10 +105,8 @@ CONFIGURE_ARGS+=	--with-movtar-prefix=${LOCALBASE}
 .endif
 #
 .ifdef(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	yes
 CONFIGURE_ARGS+=	--with-sdl
-CONFIGURE_ENV+=		SDL_CONFIG="${SDL_CONFIG}"
 .endif
 #
 .ifdef(WITH_QUICKTIME)

@@ -37,12 +37,8 @@ DOC_FILES=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 .include <bsd.port.pre.mk>
 
 .ifndef(WITHOUT_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	sdl
 CONFIGURE_ARGS+= --enable-sdl
-CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 .endif
 
 pre-everything::
