@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	nork@cityfujisawa.ne.jp
+MAINTAINER=	nork@FreeBSD.org
 
 RESTRICTED=	"Crypto; export-controlled"
 
