@@ -7,13 +7,13 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.5
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	phpBB-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
@@ -59,6 +59,8 @@ pre-everything::
 post-patch:
 	@ ${REINPLACE_CMD} -e "s#\.\./templates#/${PHPBBURL}/templates#" \
 	  ${WRKSRC}/docs/*.html
+	@ ${RM} ${WRKSRC}/viewtopic.php.orig
+	@ ${RM} ${WRKSRC}/admin/admin_styles.php.orig
 
 post-configure:
 	@ ${SED} \
