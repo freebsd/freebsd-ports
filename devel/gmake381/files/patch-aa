@@ -1,62 +1,39 @@
---- Makefile.in.orig	Thu Aug 29 06:13:09 1996
-+++ Makefile.in	Thu Jun 12 20:53:26 1997
-@@ -79,7 +79,7 @@
- # Number to put on the man page filename.
- manext = 1
- # Prefix to put on installed `make' binary file name.
--binprefix =
-+binprefix = g
- # Prefix to put on installed `make' man page file name.
- manprefix = $(binprefix)
+--- Makefile.in.orig	Sat Sep 20 03:58:51 1997
++++ Makefile.in	Thu Oct 16 00:50:40 1997
+@@ -54,7 +54,7 @@
+ CC = @CC@
+ CPP = @CPP@
+ LIBOBJS = @LIBOBJS@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ PACKAGE = @PACKAGE@
+ REMOTE = @REMOTE@
+ VERSION = @VERSION@
+@@ -259,12 +259,12 @@
+ 	  done; \
+ 	done
+ 	@$(POST_INSTALL)
+-	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+-	  for file in $(INFO_DEPS); do \
+-	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
+-	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
+-	  done; \
+-	else : ; fi
++#	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
++#	  for file in $(INFO_DEPS); do \
++#	    echo " install-info --info-dir=$(infodir) $(infodir)/$$file";\
++#	    install-info --info-dir=$(infodir) $(infodir)/$$file || :;\
++#	  done; \
++#	else : ; fi
  
-@@ -130,14 +130,14 @@
- .SUFFIXES:
- .SUFFIXES: .o .c .h .ps .dvi .info .texinfo
+ uninstall-info:
+ 	$(PRE_UNINSTALL)
+@@ -476,7 +476,7 @@
  
--all: make
-+all: make info
- info: make.info
- dvi: make.dvi
- # Some makes apparently use .PHONY as the default goal if it is before `all'.
- .PHONY: all check info dvi
+ uninstall: uninstall-recursive uninstall-am
  
- make.info: make.texinfo
--	$(MAKEINFO) -I$(srcdir) $(srcdir)/make.texinfo -o make.info
-+	rm -f make.info* && $(MAKEINFO) --no-split -I$(srcdir) $(srcdir)/make.texinfo -o make.info
+-all: all-recursive-am all-am
++all: all-recursive-am all-am info
  
- make.dvi: make.texinfo
- 	$(TEXI2DVI) $(srcdir)/make.texinfo
-@@ -175,6 +175,8 @@
- 
- installdirs:
- 	$(SHELL) ${srcdir}/mkinstalldirs $(bindir) $(infodir) $(mandir)
-+	rm -f $(bindir)/$(binprefix)make $(infodir)/make.info \
-+		$(mandir)/$(manprefix)make.$(manext)
- 
- $(bindir)/$(binprefix)make: make
- 	$(INSTALL_PROGRAM) make $@.new
-@@ -204,10 +206,10 @@
- # line so we notice real errors from install-info.
- # We use `$(SHELL) -c' because some shells do not
- # fail gracefully when there is an unknown command.
--	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
--	  if [ -r ./make.info ]; then dir=.; else dir=$(srcdir); fi; \
--	  install-info --infodir=$(infodir) $$dir/make.info; \
--	else true; fi
-+#	if $(SHELL) -c 'install-info --version' >/dev/null 2>&1; then \
-+#	  if [ -r ./make.info ]; then dir=.; else dir=$(srcdir); fi; \
-+#	  install-info --infodir=$(infodir) $$dir/make.info; \
-+#	else true; fi
- 
- $(mandir)/$(manprefix)make.$(manext): make.man
- 	$(INSTALL_DATA) $(srcdir)/make.man $@
-@@ -250,7 +252,8 @@
- 	$(SHELL) config.status
- glob/Makefile: config.status $(srcdir)/glob/Makefile.in
- 	$(SHELL) config.status
--config.h: stamp-config ;
-+config.h: stamp-config
-+
- stamp-config: config.status $(srcdir)/config.h.in
- 	$(SHELL) config.status
- 	touch stamp-config
+ install-strip:
+ 	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
