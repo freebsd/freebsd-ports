@@ -231,6 +231,7 @@
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-Net-ext
     SUBDIR += p5-NetAddr-IP
+    SUBDIR += p5-NetAddr-IP-Count
     SUBDIR += p5-PlRPC
     SUBDIR += p5-SNMP
     SUBDIR += p5-SNMP-Util
