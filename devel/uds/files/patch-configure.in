@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Apr  2 20:09:38 2001
++++ configure.in	Mon Apr  2 20:09:49 2001
+@@ -23,7 +23,7 @@
+ AC_LANG_CPLUSPLUS
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(pthread, main, thread_dir=thread, thread_dir=)
++AC_CHECK_LIB(c_r, main, thread_dir=thread, thread_dir=)
+ AC_SUBST(thread_dir)
+ 
+ dnl Checks for header files.

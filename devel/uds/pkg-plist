@@ -11,6 +11,7 @@ include/uds/exception.hh
 include/uds/exit.hh
 include/uds/flex_func.hh
 include/uds/functional.hh
+include/uds/init.hh
 include/uds/log.hh
 include/uds/md5.h
 include/uds/procstream.hh
@@ -30,12 +31,12 @@ include/uds/uds.hh
 lib/libuds.a
 lib/libuds.so
 lib/libuds.so.0
-share/uds/doc/relnotes.html
-share/uds/doc/index.html
-share/uds/doc/features.html
-share/uds/doc/download.html
-share/uds/doc/contributing.html
-share/uds/doc/config.html
+share/doc/uds/config.html
+share/doc/uds/contributing.html
+share/doc/uds/download.html
+share/doc/uds/features.html
+share/doc/uds/index.html
+share/doc/uds/relnotes.html
+@dirrm share/doc/uds
 share/uds/udsdeff.cc
-@dirrm share/uds/doc
 @dirrm share/uds
