@@ -9,8 +9,7 @@ PORTNAME=	links
 PORTVERSION=	2.1.p7
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/ \
-		http://unixpages.org/distfiles/
+MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/
 DISTNAME=	${PORTNAME}-2.1pre7
 
 MAINTAINER=	demon@FreeBSD.org
