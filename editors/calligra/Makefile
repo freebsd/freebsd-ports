@@ -8,11 +8,15 @@
 
 PORTNAME=	koffice
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/src
 DIST_SUBDIR=	KDE/koffice
+
+PATCH_SITES=	http://www.koffice.org/bugfixes/
+PATCHFILES=	1.2.1_kword_crashes.diff
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Office Suite for KDE3
@@ -27,6 +31,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PYTHON=		yes
 GNU_CONFIGURE=		yes
+PATCH_WRKSRC=		${WRKSRC}/kword
 
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
