@@ -3,7 +3,7 @@
 # Date created:		17 June 1998
 # Whom:			J.T. Jang (keith@email.gcn.net.tw)
 #
-# $Id: Makefile,v 1.2 1998/10/10 13:39:00 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/10/15 21:25:10 jseger Exp $
 #
 
 DISTNAME=	CJK-4.1.3.src
@@ -17,8 +17,6 @@ MAINTAINER=	keith@email.gcn.net.tw
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-
-BROKEN=		patching during install
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/CJK
