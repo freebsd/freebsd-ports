@@ -1,1 +1,2 @@
 MD5 (ssh-1.2.27.tar.gz) = c22bc000bee0f7d6f4845eab72a81395
+MD5 (patch-ssh-1.2.27-bsd.tty.chown) = e4d7755994c2fa0d419a60723e8a9d53
