@@ -5,7 +5,7 @@
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.4 1997/02/06 07:14:48 asami Exp $
 #
 
 DISTNAME=	crack5.0
@@ -14,8 +14,8 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/  \
 		ftp://ftp.lerc.nasa.gov/security/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
-		ftp://ftp.info.au/security/eindhoven/  \
-		ftp://ftp.iis.u-tokyo.ac.jp/pub/security/
+		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
+		ftp://ftp.riken.go.jp/pub/net/cert_security_tools/crack/
 
 MAINTAINER=     obrien@FreeBSD.org
 
