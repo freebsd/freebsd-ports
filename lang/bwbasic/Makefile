@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.rahul.net/pub/rhn/
 DISTFILES=	bwbasic-2.20.tar.Z bwb-2.20-patch01.tar.Z.uu.txt
 
-MAINTAINER=	msmith@gsoft.com.au
+MAINTAINER=	msmith@FreeBSD.org
 
 BROKEN=		"Checksum fails"
 
