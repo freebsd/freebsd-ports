@@ -15,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	${QTLIB}.${QTLIB_SHLIBVER}:${PORTSDIR}/x11-toolkits/${QT_PORTNAME}
+LIB_DEPENDS=	qt.3:${PORTSDIR}/x11-toolkits/qt145
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
@@ -28,17 +28,7 @@ CONFIGURE_ARGS=	--with-qt-include=${X11BASE}/include/X11/qt \
 MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
-.if defined(WITH_I18N)
-I18NQT=		-DI18NQT
-QTLIB=		qti18n
-QTLIB_SHLIBVER=	3
-QT_PORTNAME=	qt-i18n
-CONFIGURE_ARGS+=	--with-qti18n=qti18n
-.else
-QTLIB=		qt
-QTLIB_SHLIBVER=	3
-QT_PORTNAME=	qt145
-.endif
+CONFIGURE_ARGS+=	--with-qti18n
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r"/usr/X11\b", "${X11BASE}"' ${WRKSRC}/lib/qt.rb
