@@ -1,0 +1,7 @@
+bin/xawmidi
+lib/timidity/interface_a.so
+share/doc/timidity/C/README.xaw
+share/doc/timidity/ja/README.xaw
+@cwd /usr/X11R6
+lib/X11/app-defaults/TiMidity
+lib/X11/ja_JP.EUC/app-defaults/TiMidity
