@@ -7,6 +7,7 @@
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm
+    SUBDIR += gigabase
     SUBDIR += gmysql
     SUBDIR += gnats
     SUBDIR += grass
