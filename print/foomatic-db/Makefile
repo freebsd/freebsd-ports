@@ -36,27 +36,27 @@ CVS_MODULE=	foomatic-db
 # kris@freebsd.org
 #
 do-fetch:
-	@if test ! -f ${DISTDIR}/${PKGNAME}${EXTRACT_SUFX} ; then \
-		${MKDIR} ${DISTDIR}/${PKGNAME} && \
-		cd ${DISTDIR}/${PKGNAME}; \
+	@if test ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ; then \
+		${MKDIR} ${DISTDIR}/${DISTNAME} && \
+		cd ${DISTDIR}/${DISTNAME}; \
 		for CVS_SITE in ${CVS_SITES}; do \
 			${ECHO_MSG} ">> Attempting to check out from $${CVS_SITE}."; \
 			if ${CVS_CMD} -d:$${CVS_SITE} co -D "${CVS_DATE}" ${CVS_MODULE}; \
 			    then \
 				cd ${DISTDIR}; \
 				${ECHO_MSG} ">> Creating dist tarball in ${DISTDIR}"; \
-				${ECHO_MSG} ">> \"${PKGNAME}${EXTRACT_SUFX}\"."; \
-				${MV} ${PKGNAME}/${CVS_MODULE} \
-					${PKGNAME}/${CVS_MODULE:H}/${PKGNAME}; \
+				${ECHO_MSG} ">> \"${DISTNAME}${EXTRACT_SUFX}\"."; \
+				${MV} ${DISTNAME}/${CVS_MODULE} \
+					${DISTNAME}/${CVS_MODULE:H}/${DISTNAME}; \
 				${TAR} -cj \
 					-X ${FILESDIR}/tarignore \
-					-f ${PKGNAME}${EXTRACT_SUFX} \
-					-C ${PKGNAME}/${CVS_MODULE:H} \
-					${PKGNAME}; \
+					-f ${DISTNAME}${EXTRACT_SUFX} \
+					-C ${DISTNAME}/${CVS_MODULE:H} \
+					${DISTNAME}; \
 				exit; \
 			fi \
 		done; \
-		${RMDIR} ${DISTDIR}/${PKGNAME}; \
+		${RMDIR} ${DISTDIR}/${DISTNAME}; \
 		${ECHO_MSG} ">> CVS checkout failed."; \
 		exit 1; \
 	fi
