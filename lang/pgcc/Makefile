@@ -96,7 +96,7 @@ post-install:
 	do \
 		strip $$prog ; \
 	done)
-	${MV} ${PREFIX}/bin/i386-portbld-freebsd4.0-gcc ${PREFIX}/bin/i386-portbld-freebsd4.0-pgcc
+	${MV} ${PREFIX}/bin/${CONFIGURE_TARGET}-gcc ${PREFIX}/bin/${CONFIGURE_TARGET}-pgcc
 	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/pgcc
 	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/pg++
 	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/pg77
