@@ -32,6 +32,64 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3fbf9db2-658b-11d9-abad-000a95bc6fae">
+    <topic>mozilla -- heap overflow in NNTP handler</topic>
+    <affects>
+      <package>
+        <name>de-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>ja-netscape7</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.5</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.5,2</lt></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
+        <name>linux-netscape</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Maurycy Prodeus reports a critical vulnerability in
+	  Mozilla-based browsers:</p>
+	<blockquote cite="http://isec.pl/vulnerabilities/isec-0020-mozilla.txt">
+	  <p>Mozilla browser supports NNTP urls. Remote side is able to
+	    trigger  news:// connection to any server. I found a flaw in
+	    NNTP handling code which may cause heap overflow and allow
+	    remote attacker to execute arbitrary code on client
+	    machine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1316</cvename>
+      <url>http://isec.pl/vulnerabilities/isec-0020-mozilla.txt</url>
+      <mlist msgid="Pine.LNX.4.44.0412292228440.19239-200000@isec.pl">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110436284718949</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-29</discovery>
+      <entry>2005-01-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3cc84400-6576-11d9-a9e7-0001020eed82">
     <topic>mpg123 -- buffer overflow vulnerability</topic>
     <affects>
