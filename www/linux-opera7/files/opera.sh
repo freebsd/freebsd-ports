@@ -1,2 +1,2 @@
 #!/bin/sh
-%%PREFIX%%/%%DISTNAME%%/opera
+%%PREFIX%%/opera-4.0/opera
