@@ -1,0 +1,59 @@
+bin/gcov
+bin/m68k-palmos-c++
+bin/m68k-palmos-c++filt
+bin/m68k-palmos-cpp
+bin/m68k-palmos-g++
+bin/m68k-palmos-gcc
+bin/m68k-palmos-protoize
+bin/m68k-palmos-unprotoize
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/SYSCALLS.c.X
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/cc1
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/cc1plus
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/collect2
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/cpp
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/README
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/exception
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/fixed
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/float.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/iso646.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/limits.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/math-68881.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/new
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/new.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/proto.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/stdarg.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/stdbool.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/stddef.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/syslimits.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/typeinfo
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-alpha.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-arc.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-c4x.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-clipper.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-h8300.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-i860.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-i960.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-m32r.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-m88k.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-mips.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-mn10200.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-mn10300.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-pa.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-ppc.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-pyr.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-sh.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-sparc.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-spur.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/va-v850.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include/varargs.h
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/libgcc.a
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/pilot.ld
+lib/gcc-lib/m68k-palmos/2.95.2-kgpd/specs
+lib/libiberty.a
+m68k-palmos/bin/gcc
+@exec mkdir %D/m68k-palmos/include
+@dirrm m68k-palmos/include
+@dirrm lib/gcc-lib/m68k-palmos/2.95.2-kgpd/include
+@dirrm lib/gcc-lib/m68k-palmos/2.95.2-kgpd
+@dirrm lib/gcc-lib/m68k-palmos
+@dirrm lib/gcc-lib

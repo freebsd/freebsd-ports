@@ -1,0 +1,19 @@
+--- ../gcc-2.95.2/gcc/Makefile.in~	Fri Mar 24 12:47:55 2000
++++ ../gcc-2.95.2/gcc/Makefile.in	Fri Mar 24 12:49:24 2000
+@@ -2455,7 +2455,7 @@
+ # Install the driver last so that the window when things are
+ # broken is small.
+ install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+-    $(INSTALL_CPP) install-man install-info intl.install lang.install-normal \
++    $(INSTALL_CPP) install-man intl.install lang.install-normal \
+     install-driver
+ 
+ # Do nothing while making gcc with a cross-compiler. The person who
+@@ -2524,7 +2524,6 @@
+ 	-if [ -d $(gcc_tooldir) ] ; then true ; else mkdir $(gcc_tooldir) ; chmod a+rx $(gcc_tooldir) ; fi
+ 	-if [ -d $(assertdir) ] ; then true ; else mkdir $(assertdir) ; chmod a+rx $(assertdir) ; fi
+ 	-if [ -d $(infodir) ] ; then true ; else mkdir $(infodir) ; chmod a+rx $(infodir) ; fi
+-	-if [ -d $(htmldir) ] ; then true ; else mkdir $(htmldir) ; chmod a+rx $(htmldir) ; fi
+ # We don't use mkdir -p to create the parents of man1dir,
+ # because some systems don't support it.
+ # Instead, we use this technique to create the immediate parent of man1dir.
