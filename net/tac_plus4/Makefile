@@ -16,13 +16,11 @@ MAINTAINER=	tasic@lucky.net
 
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1
-EXTRA_PATCH=	patch-ba
 
 # To change the text displayed when users are prompted to enter
 # a username, set appropriately TAC_CHANGE_PROMPT variable.
 .if defined(TAC_CHANGE_PROMPT) && ${TAC_CHANGE_PROMPT} == YES
-pre-patch:
-	@${CP} ${FILESDIR}/${EXTRA_PATCH} ${PATCHDIR}
+EXTRA_PATCHES=	${FILESDIR}/patch-ba
 .endif
 
 do-install:
@@ -43,8 +41,5 @@ do-install:
 
 post-install:
 	strip ${PREFIX}/sbin/tac_plus
-
-pre-clean:
-	@${RM} -f ${PATCHDIR}/${EXTRA_PATCH}
 
 .include <bsd.port.mk>
