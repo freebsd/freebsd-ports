@@ -3,10 +3,10 @@
 # Date created:         6 August 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.2 1997/08/13 05:09:22 asami Exp $
+# $Id: Makefile,v 1.3 1997/08/16 10:14:36 wosch Exp $
 #
 
-DISTNAME=       dict-1.0
+DISTNAME=       dict-1.1
 CATEGORIES=	german
 MASTER_SITES=   http://www.freebsd.org/~wosch/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PORTSDIR}/textproc/agrep
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-dict=		eng2germ.dict
+dict=		ger-eng.txt
 
 post-extract: ${dict}
 ${dict}:
