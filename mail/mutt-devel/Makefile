@@ -40,6 +40,9 @@
 # If you do not want mutt to use the iconv library define:
 #  WITHOUT_MUTT_ICONV
 #
+# If you want mutt to use the idn library define:
+#  WITH_MUTT_IDN
+#
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
@@ -59,9 +62,9 @@
 # If you want to read and post news with mutt define:
 #  WITH_MUTT_NNTP
 #
-# If you want to use the SASL authentication features with your email server
+# If you want to use the SASL2 authentication features with your email server
 # define
-#  WITH_MUTT_CYRUS_SASL
+#  WITH_MUTT_CYRUS_SASL2
 #
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
@@ -115,7 +118,7 @@ CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-sharedir=${PREFIX}/share/mutt --with-docdir=${DOCSDIR} \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
-		--enable-pop --enable-imap
+		--enable-pop --enable-imap --disable-warnings
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
@@ -186,14 +189,12 @@ SGML_USED=	no
 .if !defined(SGML_USED)
 SGML_USED=	no
 .endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
 .if !defined(WITHOUT_MUTT_ICONV)
 USE_ICONV=	yes
 .endif
-
 .if defined(NOPORTDOCS)
 SGML_USED=	no
 .endif
@@ -203,13 +204,18 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .elif defined(MUTT_USES_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .endif
-.if defined(WITH_MUTT_CYRUS_SASL)
-BROKEN=		"mutt-devel's SASL code appears to be broken"
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+.if defined(WITH_MUTT_CYRUS_SASL2)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 CFLAGS+=	-I${PREFIX}/include/db42
+.endif
+.if exists(${LOCALBASE}/lib/libidn.so)
+WITH_MUTT_IDN=	yes
+.endif
+.if defined(WITH_MUTT_IDN)
+LIB_DEPENDS+=   idn.15:${PORTSDIR}/devel/libidn
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
@@ -252,8 +258,8 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.slang.gz:vvv
 .endif
-.if defined(WITH_MUTT_CYRUS_SASL)
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
+.if defined(WITH_MUTT_CYRUS_SASL2)
+CONFIGURE_ARGS+=	--with-sasl2=${LOCALBASE}
 .endif
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -262,6 +268,11 @@ CONFIGURE_ARGS+=	--disable-nls
 CONFIGURE_ARGS+=	--disable-iconv
 .else
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
+.endif
+.if defined(WITH_MUTT_IDN) 
+CONFIGURE_ARGS+=	--with-idn
+.else
+CONFIGURE_ARGS+=	--without-idn
 .endif
 
 PATCH_DIST_STRIP=	-p1
@@ -321,7 +332,7 @@ SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
-CONFIGURE_ARGS+=	--enable-hcache
+CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
 SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"
