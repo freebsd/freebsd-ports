@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	heroes
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0
 MASTER_SITES=	http://mapage.noos.fr/ambrelune/ \
 		http://perso.libertysurf.fr/ambrelune/
-DISTFILES=	hero10.zip HLH101.zip
+DISTFILES=	hero10.zip
 
 MAINTAINER=	lioux@FreeBSD.org
 
