@@ -1,0 +1,28 @@
+jnethackのX版の遊び方
+
+画面の広さは、1024 x 768以上にしておきましょう。
+
+1. リソースファイルをコピーします。
+% cd /usr/local/share/examples/ja/nethack
+% xrdb -m JNetHack.ad
+# cp JNetHack.ad /usr/X11R6/lib/X11/app-defaults/JNetHack
+
+2. フォントをコピーします。
+# cp ibm.pcf.gz nh10.pcf.gz /usr/X11R6/lib/X11/fonts/misc
+# mkfontdir /usr/X11R6/lib/X11/fonts/misc
+
+3. ~/.Xresourcesに設定を追加します。
+   xdmを使っている場合は、~/.Xdefaultsです。
+   この作業をすると、タイル表示されるようになります。
+   1280 x 1024以上の広い画面がお勧めです。
+% echo "JNetHack.tile_file: x11tiles" >> ~/.Xresources
+% xrdb -m ~/.Xresources
+
+4. 設定完了、起動します。
+% jnethack &
+
+jnethackに関する情報は、以下のURLをご覧下さい。
+	http://www.guru.gr.jp/~issei/jnethack/
+
+- Seiichirou Hiraoka
+flathill@FreeBSD.ORG

@@ -1,12 +1,14 @@
-diff -ruN ./sys/unix/Makefile.src ../nethack-3.2.2/sys/unix//Makefile.src
---- ./sys/unix/Makefile.src	Sat Nov 21 01:23:57 1998
-+++ ../nethack-3.2.2/sys/unix/Makefile.src	Sat Nov 21 01:15:41 1998
-@@ -204,7 +204,7 @@
- #
- # LIBS = -lxpg4
- #
--LIBS =
-+LIBS = -lxpg4 -lSM -lICE
- 
- # make NetHack
- #JP by issei(96/5/27)
+diff -ruN ./win/X11/JNetHack.ad ../nethack-3.2.2/win/X11/JNetHack.ad
+--- ./win/X11/JNetHack.ad	Sat Nov 21 01:38:14 1998
++++ ../nethack-3.2.2/win/X11/JNetHack.ad	Sat Nov 21 01:40:00 1998
+@@ -154,7 +154,7 @@
+ !
+ !
+ !
+-JNetHack*fontSet: -*-fixed-medium-r-normal--14-*-iso8859-1,\
+-                  -*-fixed-medium-r-normal--14-*-iso8859-1,\
+-                  -*-fixed-medium-r-*--14-*-jisx0208.1983-*
++JNetHack*fontSet: -*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,\
++                  -*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1,\
++                  -*-fixed-medium-r-*--14-*-*-*-*-*-jisx0208.1983-*
+ JNetHack*international:	True

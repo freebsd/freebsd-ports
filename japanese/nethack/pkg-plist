@@ -117,8 +117,22 @@ lib/jnethackdir/water.lev
 lib/jnethackdir/wizard1.lev
 lib/jnethackdir/wizard2.lev
 lib/jnethackdir/wizard3.lev
-@mode 664
 lib/jnethackdir/logfile
 lib/jnethackdir/record
 lib/jnethackdir/perm
+lib/jnethackdir/nh_icon.xpm
+lib/jnethackdir/pet_mark.xbm
+lib/jnethackdir/rip.xpm
+lib/jnethackdir/x11tiles
+share/doc/ja/nethack/jGuidebook.txt
+share/doc/ja/nethack/README
+share/doc/ja/nethack/README.j
+share/doc/ja/nethack/ChangeLog.j
+share/doc/ja/nethack/INSTALL.j
+share/examples/ja/nethack/nethack.rc
+share/examples/ja/nethack/JNetHack.ad
+share/examples/ja/nethack/nh10.pcf.gz
+share/examples/ja/nethack/ibm.pcf.gz
+@dirrm share/doc/ja/nethack
+@dirrm share/examples/ja/nethack
 @dirrm lib/jnethackdir
