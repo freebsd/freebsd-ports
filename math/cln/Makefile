@@ -8,6 +8,7 @@
 
 PORTNAME=	cln
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 		ftp://ftp.santafe.edu/pub/gnu/ \
@@ -15,7 +16,7 @@ MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
+LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
 
 USE_LIBTOOL=	yes
 CFLAGS+=	-I${LOCALBASE}/include

@@ -8,13 +8,14 @@
 
 PORTNAME=	nettle
 PORTVERSION=	1.5
+PORTREVISIOIN=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gmp.4:${PORTSDIR}/math/libgmp3
+LIB_DEPENDS=	gmp.5:${PORTSDIR}/math/libgmp4
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
