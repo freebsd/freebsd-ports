@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=     chinese
+CATEGORIES=     chinese editors
 
 LANG_PKGNAME=   zh
 LANG_EXT=       86
