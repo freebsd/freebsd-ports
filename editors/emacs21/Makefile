@@ -7,12 +7,13 @@
 
 PORTNAME=	emacs
 PORTVERSION=	21.1
+PORTREVISION=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=		http://www.nijino.com/ari/patches/
-PATCHFILES=		emacs-21.0.104-fontset.patch.gz
+PATCHFILES=		emacs-21.1-fontset.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nobutaka@nobutaka.com
