@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	mpiosh
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1.p2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mpio
-DISTNAME=	mpio-${PORTVERSION}
+DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
 
 MAINTAINER=	asa@gascom.ru
 COMMENT=	Digit@lway MPIO MP3 player tool
 
-RUN_DEPENDS=	${MODULES}/mpio.ko:${PORTSDIR}/audio/mpio-driver
-
-MODULES?=	/modules
+LIB_DEPENDS=	usb-0.1:${PORTSDIR}/devel/libusb
 
 USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
@@ -28,10 +26,4 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-IGNORE=		This port only works for FreeBSD 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
