@@ -216,6 +216,7 @@
     SUBDIR += p5-RDF-Core
     SUBDIR += p5-RDF-Notation3
     SUBDIR += p5-RDFStore
+    SUBDIR += p5-RTF-Writer
     SUBDIR += p5-Regex-PreSuf
     SUBDIR += p5-Regexp-Common
     SUBDIR += p5-SVG

@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer/.packlist
+%%SITE_PERL%%/RTF/Cookbook.pod
+%%SITE_PERL%%/RTF/Writer.pm
+%%SITE_PERL%%/RTF/Writer.pod
+%%SITE_PERL%%/RTF/Writer/TableRowDecl.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RTF/Writer
+@dirrm %%SITE_PERL%%/RTF/Writer
+@dirrm %%SITE_PERL%%/RTF
+@unexec rmdir %D/%%SITE_PERL%%/RTF 2>/dev/null || true
