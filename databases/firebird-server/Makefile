@@ -53,6 +53,12 @@ pre-everything::
 	@sleep 10
 .endif
 
+patch-libtool:
+	@${DO_NADA}
+
+run-autotools:
+	@${DO_NADA}
+
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\
 	LIBTOOL=libtool13 LIBTOOLIZE=libtoolize13 ./autogen.sh		\
