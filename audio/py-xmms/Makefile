@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.via.ecp.fr/~flo/2002/PyXMMS/dist/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
