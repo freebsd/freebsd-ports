@@ -13,7 +13,6 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
-		ftp://mirror.pipex.net/pub/unix/mail/qmail/ \
 		${MASTER_SITE_QMAIL}
 DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
@@ -36,7 +35,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.geto.net/%SUBDIR%/ \
 	http://qmail.palomine.net/%SUBDIR%/ \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
-	http://qmail.mirrors.netnumina.com/%SUBDIR%/ \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.fidnet.com/%SUBDIR%/ \
 	http://qmail.mscnetworks.com/%SUBDIR%/ \
@@ -59,7 +57,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://mirror.bofh.info/qmail/%SUBDIR%/ \
-	http://qmail-mirror.bugpond.net/%SUBDIR%/ \
 	http://qmail.soa.co.nz/%SUBDIR%/ \
 	http://d2.nctu.edu.tw/qmail/%SUBDIR%/ \
 	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
@@ -80,7 +77,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.netsoc.ucd.ie/%SUBDIR%/ \
 	http://complanet.ath.cx/qmail/%SUBDIR%/ \
 	http://ice.dammit.lt/qmail/%SUBDIR%/ \
-	http://qmail.mirrors.emu.lt/%SUBDIR%/ \
 	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
 	http://qmail.basefreak.nl/%SUBDIR%/ \
 	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
@@ -92,7 +88,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.ssc.nsu.ru/%SUBDIR%/ \
 	http://qmail.tps.sk/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
-	http://qmail-mirror.neptuno2000.com/%SUBDIR%/ \
 	http://qmail.imasd.elmundo.es/%SUBDIR%/ \
 	http://qmail.x42.com/%SUBDIR%/ \
 	http://qmail.netrogenic.com/%SUBDIR%/ \
