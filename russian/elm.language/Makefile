@@ -1,15 +1,13 @@
-# New ports collection makefile for:    ru-elm+mime
+# New ports collection makefile for:    ru-elm
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/12/03 01:31:38 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1995/12/20 06:58:00 ache Exp $
 #
 
-PKGNAME=        ru-elm+mime
+PKGNAME=        ru-elm
 CATEGORIES+=    russian mail
-RUN_DEPENDS+=   elm:${PORTSDIR}/mail/elm+mime
-# A little trick here, it can be elm without mime
-RUN_DEPENDS+=   metamail:${PORTSDIR}/mail/elm+mime
+RUN_DEPENDS+=   elm:${PORTSDIR}/mail/elm
 MAINTAINER=     ache@FreeBSD.org
 NO_EXTRACT=     YES
 NO_WRKDIR=      YES
