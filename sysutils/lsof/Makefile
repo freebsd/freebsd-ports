@@ -21,9 +21,6 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 #DISTNAME=	${PORTNAME}_${PORTVERSION}_W
 DISTNAME=	${PORTNAME}_4.54C.freebsd
 
-PATCH_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/patches/4.53/
-PATCHFILES=	misc.c_patch
-
 MAINTAINER=	obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
