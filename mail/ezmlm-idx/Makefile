@@ -3,7 +3,7 @@
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.3 1999/03/31 15:34:31 steve Exp $
+# $Id: Makefile,v 1.4 1999/06/07 13:30:28 billf Exp $
 
 DISTNAME=	ezmlm-idx-${IDX_VERSION}
 CATEGORIES=	mail
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 # If USE_MYSQL is defined, build with MySQL extensions
 .if defined(USE_MYSQL)
 ALL_TARGET=	it ${LANGUAGE} mysql
-LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322
+LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 .else
 ALL_TARGET=	it ${LANGUAGE}
 .endif
