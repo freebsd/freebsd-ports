@@ -107,4 +107,3 @@ share/aclocal/cln.m4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/dvi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/cln
-@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
