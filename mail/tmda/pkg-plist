@@ -55,10 +55,10 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/htdocs/index.html
 %%PORTDOCS%%share/doc/tmda/htdocs/install.html
 %%PORTDOCS%%share/doc/tmda/htdocs/inuse.html
-%%PORTDOCS%%share/doc/tmda/htdocs/lists.html
 %%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
 %%PORTDOCS%%share/doc/tmda/htdocs/resources.html
 %%PORTDOCS%%share/doc/tmda/htdocs/results.html
+%%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
 @dirrm share/tmda

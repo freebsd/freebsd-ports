@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.44
+PORTVERSION=	0.46
 CATEGORIES=	mail python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	tmda
+MASTER_SITES=	http://software.libertine.org/tmda/releases/ \
+		http://software.libertine.org/tmda/releases/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jason@mastaler.com
@@ -18,6 +18,9 @@ USE_PYTHON=	yes
 
 do-build:
 	(cd ${WRKSRC}; ${PYTHON_CMD} ./compileall)
+
+pre-install:
+	@${SH} ${PKGREQ} INSTALL
 
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA
