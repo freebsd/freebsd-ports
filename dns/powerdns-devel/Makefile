@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -71,8 +71,7 @@ PLIST_SUB+=		WITHLDAP="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/${SQLITE_PORT}
-SQLITE_PORT?=	databases/sqlite
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--enable-sqlite
 CONFIGURE_MODULES+=	"gsqlite"
 .else

@@ -1361,3 +1361,4 @@ lang/gcc34|lang/gcc-ooo|2004-12-15|finished repocopy and required by OOo port
 print/pxfonts||2004-12-19|already included in the teTeX distribution
 print/txfonts||2004-12-19|already included in the teTeX distribution
 audio/juk|multimedia/kdemultimedia3|2004-12-22|juk has been integrated into kdemultimedia3
+databases/sqlite|databases/sqlite2|2004-12-23|port renamed

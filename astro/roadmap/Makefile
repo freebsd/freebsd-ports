@@ -7,6 +7,7 @@
 
 PORTNAME=	roadmap
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/:S/./_/g}_src
@@ -15,7 +16,7 @@ MAINTAINER=	nick@netdot.net
 COMMENT=	Vector-based GPS moving map
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		sqlite.2:${PORTSDIR}/databases/sqlite
+		sqlite.2:${PORTSDIR}/databases/sqlite2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src

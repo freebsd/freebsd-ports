@@ -1,0 +1,41 @@
+--- Makefile.in.orig	Sat Mar 27 08:16:32 2004
++++ Makefile.in	Sun Nov 21 04:32:00 2004
+@@ -188,12 +188,12 @@
+ 
+ libsqlite.la:	$(LIBOBJ)
+ 	$(LTLINK) -o libsqlite.la $(LIBOBJ) ${RELEASE} -rpath @exec_prefix@/lib \
+-		-version-info "8:6:8"
++		-version-info "2:0:0"
+ 
+ libtclsqlite.la:	tclsqlite.lo libsqlite.la
+ 	$(LTLINK) -o libtclsqlite.la tclsqlite.lo \
+ 		libsqlite.la $(LIBTCL) -rpath @exec_prefix@/lib/sqlite \
+-		-version-info "8:6:8"
++		-version-info "2:0:0"
+ 
+ sqlite@TARGET_EXEEXT@:	$(TOP)/src/shell.c libsqlite.la sqlite.h
+ 	$(LTLINK) $(READLINE_FLAGS) -o sqlite $(TOP)/src/shell.c \
+@@ -466,13 +466,19 @@
+ 
+ install:	sqlite libsqlite.la sqlite.h
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib
+-	$(LTINSTALL) libsqlite.la $(DESTDIR)$(exec_prefix)/lib
++	$(INSTALL) .libs/libsqlite.a $(exec_prefix)/lib
++	$(INSTALL) .libs/libsqlite.so $(exec_prefix)/lib
++	$(INSTALL) .libs/libsqlite.so.2 $(exec_prefix)/lib
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/bin
+-	$(LTINSTALL) sqlite $(DESTDIR)$(exec_prefix)/bin
++	$(INSTALL) .libs/sqlite $(exec_prefix)/bin
+ 	$(INSTALL) -d $(DESTDIR)$(prefix)/include
+ 	$(INSTALL) -m 0644 sqlite.h $(DESTDIR)$(prefix)/include
+-	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
+-	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
++	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig
++	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig
++
++install-tcl:	libtclsqlite.la
++	$(INSTALL) -d $(prefix)/lib/sqlite
++	$(INSTALL) .libs/libtclsqlite.so $(prefix)/lib/sqlite
+ 
+ clean:	
+ 	rm -f *.lo *.la *.o sqlite@TARGET_EXEEXT@ libsqlite.la sqlite.h opcodes.*

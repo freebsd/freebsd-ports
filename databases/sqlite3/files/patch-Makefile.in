@@ -1,144 +1,18 @@
---- Makefile.in.orig	Wed Oct  6 12:03:05 2004
-+++ Makefile.in	Tue Nov 30 21:55:09 2004
-@@ -34,7 +34,7 @@
- exec_prefix = @exec_prefix@
- libdir = @libdir@
- INSTALL = @INSTALL@
--LIBTOOL = ./libtool
-+LIBTOOL = /usr/local/bin/libtool13
- RELEASE = @ALLOWRELEASE@
+--- Makefile.in.orig	Thu Oct  7 00:03:05 2004
++++ Makefile.in	Thu Dec 23 17:17:22 2004
+@@ -543,12 +543,13 @@
+ install:	sqlite3 libsqlite3.la sqlite3.h
+ 	$(INSTALL) -d $(DESTDIR)$(libdir)
+ 	$(LTINSTALL) libsqlite3.la $(DESTDIR)$(libdir)
++	rm $(DESTDIR)$(exec_prefix)/lib/libsqlite3.la
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/bin
+ 	$(LTINSTALL) sqlite3 $(DESTDIR)$(exec_prefix)/bin
+ 	$(INSTALL) -d $(DESTDIR)$(prefix)/include
+ 	$(INSTALL) -m 0644 sqlite3.h $(DESTDIR)$(prefix)/include
+-	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig; 
+-	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(libdir)/pkgconfig; 
++	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
++	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
  
- # libtool compile/link/install
-@@ -396,25 +396,25 @@
- # Rules used to build documentation
- #
- arch.html:	$(TOP)/www/arch.tcl
--	tclsh $(TOP)/www/arch.tcl >arch.html
-+	$(TCLSH) $(TOP)/www/arch.tcl >arch.html
- 
- arch2.gif:	$(TOP)/www/arch2.gif
- 	cp $(TOP)/www/arch2.gif .
- 
- c_interface.html:	$(TOP)/www/c_interface.tcl
--	tclsh $(TOP)/www/c_interface.tcl >c_interface.html
-+	$(TCLSH) $(TOP)/www/c_interface.tcl >c_interface.html
- 
- capi3.html:	$(TOP)/www/capi3.tcl
--	tclsh $(TOP)/www/capi3.tcl >capi3.html
-+	$(TCLSH) $(TOP)/www/capi3.tcl >capi3.html
- 
- capi3ref.html:	$(TOP)/www/capi3ref.tcl
--	tclsh $(TOP)/www/capi3ref.tcl >capi3ref.html
-+	$(TCLSH) $(TOP)/www/capi3ref.tcl >capi3ref.html
- 
- changes.html:	$(TOP)/www/changes.tcl
--	tclsh $(TOP)/www/changes.tcl >changes.html
-+	$(TCLSH) $(TOP)/www/changes.tcl >changes.html
- 
- copyright.html:	$(TOP)/www/copyright.tcl
--	tclsh $(TOP)/www/copyright.tcl >copyright.html
-+	$(TCLSH) $(TOP)/www/copyright.tcl >copyright.html
- 
- copyright-release.html:	$(TOP)/www/copyright-release.html
- 	cp $(TOP)/www/copyright-release.html .
-@@ -426,77 +426,77 @@
- 	cp $(TOP)/www/common.tcl .
- 
- conflict.html:	$(TOP)/www/conflict.tcl
--	tclsh $(TOP)/www/conflict.tcl >conflict.html
-+	$(TCLSH) $(TOP)/www/conflict.tcl >conflict.html
- 
- datatypes.html:	$(TOP)/www/datatypes.tcl
--	tclsh $(TOP)/www/datatypes.tcl >datatypes.html
-+	$(TCLSH) $(TOP)/www/datatypes.tcl >datatypes.html
- 
- datatype3.html:	$(TOP)/www/datatype3.tcl
--	tclsh $(TOP)/www/datatype3.tcl >datatype3.html
-+	$(TCLSH) $(TOP)/www/datatype3.tcl >datatype3.html
- 
- docs.html:	$(TOP)/www/docs.tcl
--	tclsh $(TOP)/www/docs.tcl >docs.html
-+	$(TCLSH) $(TOP)/www/docs.tcl >docs.html
- 
- download.html:	$(TOP)/www/download.tcl
- 	mkdir -p doc
--	tclsh $(TOP)/www/download.tcl >download.html
-+	$(TCLSH) $(TOP)/www/download.tcl >download.html
- 
- faq.html:	$(TOP)/www/faq.tcl
--	tclsh $(TOP)/www/faq.tcl >faq.html
-+	$(TCLSH) $(TOP)/www/faq.tcl >faq.html
- 
- fileformat.html:	$(TOP)/www/fileformat.tcl
--	tclsh $(TOP)/www/fileformat.tcl >fileformat.html
-+	$(TCLSH) $(TOP)/www/fileformat.tcl >fileformat.html
- 
- formatchng.html:	$(TOP)/www/formatchng.tcl
--	tclsh $(TOP)/www/formatchng.tcl >formatchng.html
-+	$(TCLSH) $(TOP)/www/formatchng.tcl >formatchng.html
- 
- index.html:	$(TOP)/www/index.tcl last_change
--	tclsh $(TOP)/www/index.tcl >index.html
-+	$(TCLSH) $(TOP)/www/index.tcl >index.html
- 
- lang.html:	$(TOP)/www/lang.tcl
--	tclsh $(TOP)/www/lang.tcl >lang.html
-+	$(TCLSH) $(TOP)/www/lang.tcl >lang.html
- 
- lockingv3.html:	$(TOP)/www/lockingv3.tcl
--	tclsh $(TOP)/www/lockingv3.tcl >lockingv3.html
-+	$(TCLSH) $(TOP)/www/lockingv3.tcl >lockingv3.html
- 
- oldnews.html:	$(TOP)/www/oldnews.tcl
--	tclsh $(TOP)/www/oldnews.tcl >oldnews.html
-+	$(TCLSH) $(TOP)/www/oldnews.tcl >oldnews.html
- 
- omitted.html:	$(TOP)/www/omitted.tcl
--	tclsh $(TOP)/www/omitted.tcl >omitted.html
-+	$(TCLSH) $(TOP)/www/omitted.tcl >omitted.html
- 
- opcode.html:	$(TOP)/www/opcode.tcl $(TOP)/src/vdbe.c
--	tclsh $(TOP)/www/opcode.tcl $(TOP)/src/vdbe.c >opcode.html
-+	$(TCLSH) $(TOP)/www/opcode.tcl $(TOP)/src/vdbe.c >opcode.html
- 
- mingw.html:	$(TOP)/www/mingw.tcl
--	tclsh $(TOP)/www/mingw.tcl >mingw.html
-+	$(TCLSH) $(TOP)/www/mingw.tcl >mingw.html
- 
- nulls.html:	$(TOP)/www/nulls.tcl
--	tclsh $(TOP)/www/nulls.tcl >nulls.html
-+	$(TCLSH) $(TOP)/www/nulls.tcl >nulls.html
- 
- quickstart.html:	$(TOP)/www/quickstart.tcl
--	tclsh $(TOP)/www/quickstart.tcl >quickstart.html
-+	$(TCLSH) $(TOP)/www/quickstart.tcl >quickstart.html
- 
- speed.html:	$(TOP)/www/speed.tcl
--	tclsh $(TOP)/www/speed.tcl >speed.html
-+	$(TCLSH) $(TOP)/www/speed.tcl >speed.html
- 
- sqlite.gif:	$(TOP)/art/SQLite.gif
- 	cp $(TOP)/art/SQLite.gif sqlite.gif
- 
- sqlite.html:	$(TOP)/www/sqlite.tcl
--	tclsh $(TOP)/www/sqlite.tcl >sqlite.html
-+	$(TCLSH) $(TOP)/www/sqlite.tcl >sqlite.html
- 
- support.html:	$(TOP)/www/support.tcl
--	tclsh $(TOP)/www/support.tcl >support.html
-+	$(TCLSH) $(TOP)/www/support.tcl >support.html
- 
- tclsqlite.html:	$(TOP)/www/tclsqlite.tcl
--	tclsh $(TOP)/www/tclsqlite.tcl >tclsqlite.html
-+	$(TCLSH) $(TOP)/www/tclsqlite.tcl >tclsqlite.html
- 
- vdbe.html:	$(TOP)/www/vdbe.tcl
--	tclsh $(TOP)/www/vdbe.tcl >vdbe.html
-+	$(TCLSH) $(TOP)/www/vdbe.tcl >vdbe.html
- 
- version3.html:	$(TOP)/www/version3.tcl
--	tclsh $(TOP)/www/version3.tcl >version3.html
-+	$(TCLSH) $(TOP)/www/version3.tcl >version3.html
- 
- 
- # Files to be published on the website.
+ clean:	
+ 	rm -f *.lo *.la *.o sqlite3@TARGET_EXEEXT@ libsqlite3.la

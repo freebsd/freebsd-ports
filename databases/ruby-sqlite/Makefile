@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-ruby
@@ -17,7 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine
 
-LIB_DEPENDS=	sqlite.2:${.CURDIR}/../sqlite
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
