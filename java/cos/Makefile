@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.servlets.com/cos/
 DISTNAME=	${PORTNAME}-05Nov2002
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	java@freebsd.org
 COMMENT=	The O'Reilly package of utility classes for servlet developers
 
 USE_ZIP=	yes
