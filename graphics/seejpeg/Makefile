@@ -7,6 +7,7 @@
 
 PORTNAME=	seejpeg
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
@@ -16,14 +17,16 @@ MAINTAINER=	greid@ukug.uk.freebsd.org
 COMMENT=	A console graphics viewer using the svga console graphics library
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 ALL_TARGET=	seejpeg
 
 MAN1=		seejpeg.1
+USE_GETOPT_LONG=yes
 MANCOMPRESSED=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 post-extract:
 	${CHMOD} 0644 ${WRKSRC}/Makefile

@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Nov  7 00:55:19 1999
-+++ Makefile	Thu Oct 19 10:31:56 2000
-@@ -6,19 +6,19 @@
+--- Makefile.orig	Sun Nov  7 14:55:19 1999
++++ Makefile	Sun Jul  6 19:53:33 2003
+@@ -6,30 +6,30 @@
  # $Id: Makefile,v 1.8 1999/11/07 05:55:19 evan Exp $	
  
  # The installation directories.
@@ -24,22 +24,21 @@
  #JPEG_LIBS=	-L /usr/X11R6/lib
  
  # These may be changed, if desired.
-@@ -29,13 +29,13 @@
+ 
+-CC=		gcc
+-CCOPTS=		-O3
++#CC=		gcc
++#CCOPTS=		-O -pipe
+ 
  # Editing of the rest of this Makefile shouldn't be necessary.
  
- CFLAGS=		$(JPEG_HEADERS) -I jpeglib $(CCOPTS) $(OPTIONS)
+-CFLAGS=		$(JPEG_HEADERS) -I jpeglib $(CCOPTS) $(OPTIONS)
 -LIBS=		-lvga $(JPEG_LIBS) -ljpeg -lm
-+LIBS=		-lvga $(JPEG_LIBS) -ljpeg -lgnugetopt -lm
++CFLAGS+=	$(JPEG_HEADERS) -I jpeglib $(OPTIONS)
++LIBS=		-lvga $(JPEG_LIBS) -ljpeg -lm $(LDFLAGS)
  LDOPTS=		-s
  
  SEEJPEG=	seejpeg.o jpeg.o image.o display.o cmap.o \
- 		jpeglib/rdbmp.o jpeglib/rdgif.o jpeglib/rdppm.o \
- 		jpeglib/rdtarga.o
--
-+		
- default:
- 	@echo "To build seejpeg, first obtain the library for v6 of libjpeg.  This ought"
- 	@echo "to be available from the same place that you obtained seejpeg.  Having"
 @@ -54,7 +54,8 @@
  
  install:

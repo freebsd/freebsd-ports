@@ -7,15 +7,18 @@
 
 PORTNAME=	gbe
 PORTVERSION=	0.0.22
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zophar.net/unix/Files/
 
 MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 
 USE_X_PREFIX=	yes
 
