@@ -5003,6 +5003,7 @@ openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
 openquicktime	ports/multimedia/openquicktime
+opensc		ports/security/opensc
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
 opensp		ports/textproc/opensp
