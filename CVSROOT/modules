@@ -8620,6 +8620,7 @@ xmms-sndfile	ports/audio/xmms-sndfile
 xmms-sndstretch	ports/audio/xmms-sndstretch
 xmms-speex	ports/audio/xmms-speex
 xmms-tfmx	ports/audio/xmms-tfmx
+xmms-uade	ports/audio/xmms-uade
 xmms-volnorm	ports/audio/xmms-volnorm
 xmms-xvs	ports/graphics/xmms-xvs
 xmold		ports/x11/xmold
