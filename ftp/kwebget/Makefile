@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kwebget
-PORTVERSION=	0.8
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kpage.de/download/
 DIST_SUBDIR=	KDE
@@ -17,17 +16,19 @@ COMMENT=	A KDE frontend to wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_KDELIBS_VER=	3
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_BZIP2=	yes
+USE_KDELIBS_VER=	3
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_REINPLACE=	yes
-
-CONFIGURE_TARGET=       --build=${ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e \
+		's|$$(LIBSOCKET)$$|$$(LIBSOCKET) $$(LIBPTHREAD)|g' \
+			${WRKSRC}/kwebget/Makefile.in
 
 .include <bsd.port.mk>
