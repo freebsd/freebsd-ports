@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Used to activate xlock after a user defined time of inactivity
 
+RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
+
 USE_IMAKE=	yes
 MAN1=		xautolock.1
 PLIST_FILES=	bin/xautolock
