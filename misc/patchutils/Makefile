@@ -8,6 +8,7 @@
 
 PORTNAME=	patchutils
 PORTVERSION=	0.2.22
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
@@ -19,9 +20,9 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	combinediff.1 dehtmldiff.1 editdiff.1 filterdiff.1 fixcvsdiff.1 \
-	flipdiff.1 grepdiff.1 interdiff.1 lsdiff.1 recountdiff.1 rediff.1 \
-	splitdiff.1 unwrapdiff.1
+MAN1=	combinediff.1 dehtmldiff.1 editdiff.1 espdiff.1 filterdiff.1 \
+	fixcvsdiff.1 flipdiff.1 grepdiff.1 interdiff.1 lsdiff.1 recountdiff.1 \
+	rediff.1 splitdiff.1 unwrapdiff.1
 
 post-patch:
 	@${PERL} -pi.bak -e "s,#!/bin/bash,#!/bin/sh," \
