@@ -14,9 +14,6 @@ MASTER_SITES=	ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
 MAINTAINER=	seiken@ARGV.AC
 
 WRKSRC=		${WRKDIR}/mnews-1.22/build
-.ifdef (USE_INET6)
-MAKE_ENV	= USE_INET6=1
-.endif
 MAN1=		mnews.1
 MANLANG=	ja
 
@@ -27,6 +24,12 @@ SAMPLES=	_mnews.smp jnames.fj jnames.jp jnames.smp jnames.tnn
 
 GNSPOOL?=	0
 IMPUT?=		0
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+MAKE_ENV+=	USE_INET6=yes
+.endif
 
 do-configure:
 .for f in Makefile site_dep.h
@@ -72,4 +75,4 @@ post-install:
 	@${ECHO} "Please refer to the files in:"
 	@${ECHO} "${PREFIX}/share/doc/mnews & ${PREFIX}/share/examples/mnews."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
