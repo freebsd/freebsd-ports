@@ -614,6 +614,7 @@ lib/%%PYTHON_VERSION%%/email/test/data/msg_32.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_33.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_34.txt
 lib/%%PYTHON_VERSION%%/email/test/data/msg_35.txt
+lib/%%PYTHON_VERSION%%/email/test/data/msg_40.txt
 lib/%%PYTHON_VERSION%%/email/test/test_email.py
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyc
 lib/%%PYTHON_VERSION%%/email/test/test_email.pyo
@@ -1578,7 +1579,6 @@ lib/%%PYTHON_VERSION%%/test/greyrgb.uue
 lib/%%PYTHON_VERSION%%/test/output/test_MimeWriter
 lib/%%PYTHON_VERSION%%/test/output/test_asynchat
 lib/%%PYTHON_VERSION%%/test/output/test_augassign
-lib/%%PYTHON_VERSION%%/test/output/test_binascii
 lib/%%PYTHON_VERSION%%/test/output/test_cgi
 lib/%%PYTHON_VERSION%%/test/output/test_class
 lib/%%PYTHON_VERSION%%/test/output/test_coercion

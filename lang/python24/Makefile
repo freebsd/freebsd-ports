@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.3.3
-PORTREVISION=	5
+PORTVERSION=	2.3.4
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -40,12 +39,12 @@ TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
-		UCS2 "Use UCS2 instead of UCS4 for unicode support" off \
+		UCS4 "Use UCS4 for unicode support" on \
 		PYMALLOC "Uses python's internal malloc" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THREADS)
+.if !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 .if defined(WITHOUT_HUGE_STACK_SIZE)
@@ -61,7 +60,7 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .endif # defined(LDFLAGS)
 .endif # defined(WITH_THREADS)
 
-.if defined(WITHOUT_UCS2)
+.if !defined(WITHOUT_UCS4) && !defined(WITH_UCS2)
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
 .endif
 
