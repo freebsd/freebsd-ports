@@ -105,6 +105,12 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+# Fix build on ia64.  This patch breaks other archs, so include it
+# conditionally
+.if ${ARCH} == "ia64"
+EXTRA_PATCHES=	${FILESDIR}/ia64-patch-ffmpeg::configure
+.endif
+
 # hermes is required for gstreamer-player to work
 # since it is currently the only colorspace plugin available
 WITH_HERMES=	yes
