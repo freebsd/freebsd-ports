@@ -10216,6 +10216,7 @@ ser		ports/net/ser
 serialmail	ports/mail/serialmail
 serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
+ses		ports/math/ses
 setcdboot	ports/sysutils/setcdboot
 seti_applet	ports/astro/seti_applet
 setiathome	ports/astro/setiathome
