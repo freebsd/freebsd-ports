@@ -26,8 +26,7 @@ WX_CONFIG=	${X11BASE}/bin/wx-config
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GNOME=	gtk12
-MAKE_ENV=	WX_CONFIG="${WX_CONFIG}"
+PYDISTUTILS_BUILDARGS=	WX_CONFIG="${WX_CONFIG}"
 DEMO_DIR=	${PYTHONPREFIX_SITELIBDIR}/wxPython/demo
 
 post-build:
@@ -48,4 +47,22 @@ post-install:
 .endfor
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${WX_CONFIG})
+# detect if wxgtk was linked against gtk1 or gtk2
+DECISION_GTK_1_OR_2!=	${WX_CONFIG} --static --libs | ${GREP} glib-2.0
+.else
+DECISION_GTK_1_OR_2=	""
+.endif
+
+.if (${DECISION_GTK_1_OR_2} != "")
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--enable-gtk2
+PYDISTUTILS_BUILDARGS+=	WXPORT=gtk2
+PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} ${PYDISTUTILS_BUILDARGS}
+.else
+USE_GNOME+=	gtk12
+.endif
+
+.include <bsd.port.post.mk>
