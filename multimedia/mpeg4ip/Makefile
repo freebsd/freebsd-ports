@@ -91,6 +91,10 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if exists(${LOCALBASE}/include/systems.h)
 CONFLICTS=	faad*
 .endif
