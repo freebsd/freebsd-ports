@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	SQL*PLUS with commandline editing, history, and name completion
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
 MAKEFILE=	makefile
 PLIST_FILES=	bin/gqlplus
 USE_GMAKE=	yes
