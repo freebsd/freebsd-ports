@@ -11,6 +11,7 @@ etc/kazehakase/mozilla/encodings.xml
 etc/kazehakase/proxyrc
 etc/kazehakase/smartbookmarks.xml
 share/gnome/applications/kazehakase.desktop
+share/gnome/kazehakase/icons/autoscroll.xpm
 share/gnome/kazehakase/icons/kz-anchor.png
 share/gnome/kazehakase/icons/kz-book-search.png
 share/gnome/kazehakase/icons/kz-bookmark.png
