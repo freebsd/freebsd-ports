@@ -3407,6 +3407,7 @@ lame		ports/audio/lame
 lame-devel	ports/audio/lame-devel
 landscape	ports/graphics/landscape
 lapack		ports/math/lapack
+lapack++	ports/math/lapack++
 larbin		ports/www/larbin
 larn		src/games/larn
 larswm		ports/x11-wm/larswm
