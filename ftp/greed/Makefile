@@ -16,9 +16,14 @@ COMMENT=	A utility for downloading files with resume capabilities
 
 ALL_TARGET=	freebsd
 WRKSRC=		${WRKDIR}/greed.81p
+USE_REINPLACE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		greed.1
+
+post-patch:
+	${REINPLACE_CMD} -e "s,-funroll-all-loops -ffast-math,${CFLAGS}," \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/greed ${PREFIX}/bin
