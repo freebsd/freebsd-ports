@@ -13,24 +13,36 @@ share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
 share/apps/kmplayer/pluginsinfo
 share/config/kmplayerrc
-share/icons/crystalsvg/32x32/apps/kmplayer.png
-share/icons/locolor/16x16/apps/kmplayer.png
-share/icons/locolor/32x32/apps/kmplayer.png
+share/icons/crystalsvg/scalable/apps/kmplayer.svgz
+share/icons/hicolor/128x128/apps/kmplayer.png
+share/icons/hicolor/16x16/apps/kmplayer.png
+share/icons/hicolor/22x22/apps/kmplayer.png
+share/icons/hicolor/32x32/apps/kmplayer.png
+share/icons/hicolor/48x48/apps/kmplayer.png
+share/icons/hicolor/64x64/apps/kmplayer.png
+share/icons/hicolor/scalable/apps/kmplayer.svgz
 share/services/kmplayer_part.desktop
 share/services/mms.protocol
 share/services/pnm.protocol
 share/services/rtsp.protocol
 @unexec rmdir %D/share/services 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32/apps 2>/dev/null || true
-@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/scalable/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/scalable 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/scalable/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/scalable 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/config 2>/dev/null || true

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kmplayer
-PORTVERSION=	0.8.3a
-PORTREVISION=	1
+PORTVERSION=	0.8.4.r2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/rc/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE frontend to mplayer
