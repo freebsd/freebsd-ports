@@ -25,7 +25,7 @@ USE_GCC=	3.3
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PATCH_STRIP=	-p1
-CONFIGURE_ARGS+=	--cc=${CC}\ -fno-strict-aliasing\ -DDEBUG_IRQ_COUNT\ -I${PREFIX}/include --enable-slirp
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}\ -fno-strict-aliasing\ -DDEBUG_IRQ_COUNT\ -I${PREFIX}/include --enable-slirp
 MAN1=		qemu.1 qemu-mkcow.1
 
 post-install:
