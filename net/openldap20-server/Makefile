@@ -30,14 +30,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source LDAP client and server software
 
-.if exists(${LOCALBASE}/lib/libdb4.so)
-DB_CFLAGS=      -I${LOCALBASE}/include/db4
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
-.else
-DB_CFLAGS=      -I${LOCALBASE}/include/db3
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
-.endif
-
 USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
@@ -97,6 +89,14 @@ BINS=		bin/ldapadd \
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages"
+
+.if exists(${LOCALBASE}/lib/libdb4.so)
+DB_CFLAGS=      -I${LOCALBASE}/include/db4
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+.else
+DB_CFLAGS=      -I${LOCALBASE}/include/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@%LOCALSTATEDIR%/slapd[.]pid@/var/run/slapd.pid@g; \
