@@ -53,6 +53,7 @@
     SUBDIR += bonobo-conf
     SUBDIR += bugbuddy
     SUBDIR += c2lib
+    SUBDIR += c4
     SUBDIR += c_c++_reference
     SUBDIR += camlp4
     SUBDIR += cbrowser

@@ -1,0 +1,14 @@
+C4: A CVS-like Frontend to Perforce
+
+C4 provides a CVS-like feel to Perforce.  C4 is not a substitute for
+CVS, in that it does not try to mimic CVS's command set.  Rather, it
+provides a workspace (client) where every file is writable, and can be
+modified on an adhoc basis.  C4 provides commands that search a
+client, looking for files that have been added or changed, and runs P4
+commands on them to add, edit, revert, refresh or update them.  C4
+provides a control file that is placed at the top of each client to
+set environment variables, such as P4PORT and P4CLIENT.  A manpage is
+included.
+
+WWW:	http://www.perforce.com/perforce/loadsupp.html
+Author:	Neil Russell <caret@c-side.com>
