@@ -1,0 +1,12 @@
+lib/libla.a
+share/doc/LinAlg/README
+include/LinAlg/LinAlg.h
+include/LinAlg/LAStreams.h
+include/LinAlg/builtin.h
+include/LinAlg/math_num.h
+include/LinAlg/minmax.h
+include/LinAlg/myenv.h
+include/LinAlg/std.h
+include/LinAlg/svd.h
+@dirrm share/doc/LinAlg
+@dirrm include/LinAlg
