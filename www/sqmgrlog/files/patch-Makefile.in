@@ -1,0 +1,31 @@
+--- Makefile.in.orig	Thu Feb  1 11:03:42 2001
++++ Makefile.in	Fri Aug 31 19:41:44 2001
+@@ -1,6 +1,5 @@
+ # Makefile.in for sqmgrlog
+ 
+-CC 		= @CC@
+ LANGUAGE 	= @LANGUAGE@
+ PREFIX   	= @PREFIX@
+ CONFIG   	= @CONFIG@
+@@ -35,19 +34,8 @@
+ 	$(CC) $(LDFLAGS) $(OBJS) $(LIBCRYPT) -o $@
+ 
+ install: all
+-	-@if test ! -d $(PREFIX); then \
+-		echo "mkdir $(PREFIX)"; \
+-		mkdir $(PREFIX); \
+-	fi
+-	$(INSTALL_PROGRAM) sqmgrlog $(PREFIX)/sqmgrlog
+-	chmod 755 $(PREFIX)/sqmgrlog
+-	@if test ! -f $(CONFIG)/sqmgrlog.conf; then \
+-		echo "cp $(CONFIG)/sqmgrlog.conf"; \
+-		cp sqmgrlog.conf $(CONFIG)/sqmgrlog.conf; \
+-		chmod 644 $(CONFIG)/sqmgrlog.conf; \
+-	else \
+-		cp sqmgrlog.conf $(CONFIG)/sqmgrlog.conf.orig; \
+-	fi
++	$(BSD_INSTALL_PROGRAM) sqmgrlog $(PREFIX)/bin
++	$(BSD_INSTALL_DATA) sqmgrlog.conf $(PREFIX)/etc/sqmgrlog.conf.dist
+ 
+ uninstall:
+ 	rm -f $(PREFIX)/sqmgrlog

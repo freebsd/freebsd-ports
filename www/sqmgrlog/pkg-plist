@@ -1,0 +1,4 @@
+bin/sqmgrlog
+@unexec if cmp -s %D/etc/sqmgrlog.conf.dist %D/etc/sqmgrlog.conf; then rm -f %D/etc/sqmgrlog.conf; fi
+etc/sqmgrlog.conf.dist
+@exec if [ ! -f %D/etc/sqmgrlog.conf ]; then cp %D/etc/%f %D/etc/sqmgrlog.conf; fi

@@ -1,0 +1,6 @@
+sqmgrlog is a Squid analisys report generator that allow you to
+view "where" your users are going through squid.  sqmgrlog generates
+reports in html, with many fields including users, IP addresses, bytes,
+sites and times.
+
+WWW: http://web.onda.com.br/orso/sqmgrlog.html
