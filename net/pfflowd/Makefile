@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfflowd
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.mindrot.org/files/pfflowd/
 
