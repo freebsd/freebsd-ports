@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lookat
-PORTVERSION=	1.3.4
+PORTVERSION=	1.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://staf.patat.org/downloads/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
@@ -26,12 +26,9 @@ post-patch:
 	's|/etc/lookat.conf|${PREFIX}/etc/lookat.conf|g' ${WRKSRC}/${PORTNAME}.1
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/lookat \
-		${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/lookat.1 \
-		${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/lookat.conf \
-		${PREFIX}/etc/lookat.conf.sample
+	@${INSTALL_PROGRAM} ${WRKSRC}/lookat ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/lookat.1 ${PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/lookat.conf ${PREFIX}/etc/lookat.conf.sample
 	@${ECHO} "------------------------------------------------------------"
 	@${ECHO} "Sample of configuration file placed at"
 	@${ECHO} "${PREFIX}/etc/lookat.conf.sample"
