@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/ghex
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint.12:${PORTSDIR}/print/gnomeprint
+LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
-		gnomeprint.12:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
 		unicode.0:${PORTSDIR}/devel/libunicode
 

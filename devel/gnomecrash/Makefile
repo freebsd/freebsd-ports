@@ -15,7 +15,7 @@ DISTNAME=	gnome-crash-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
-		gnomeprint.12:${PORTSDIR}/print/gnomeprint
+		gnomeprint.13:${PORTSDIR}/print/gnomeprint
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.superpimp.org/pan/${PORTVERSION}/
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint.12:${PORTSDIR}/print/gnomeprint \
+LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		uu.1:${PORTSDIR}/converters/uulib
 
 USE_BZIP2=	yes

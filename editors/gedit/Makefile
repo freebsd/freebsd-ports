@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint.12:${PORTSDIR}/print/gnomeprint \
+LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		glade.4:${PORTSDIR}/devel/libglade
 
 USE_X_PREFIX=	yes
