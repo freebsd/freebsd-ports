@@ -1,14 +1,14 @@
-@comment $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp30-client/Attic/pkg-plist,v 1.1 2004-01-17 23:43:51 edwin Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp30-client/Attic/pkg-plist,v 1.2 2004-03-05 22:03:02 sergei Exp $
 etc/dhclient.conf.sample
 @exec [ -f %D/etc/dhclient.conf ] || touch %D/etc/dhclient.conf
 @unexec [ -L %D/etc/dhclient.conf -o -s %D/etc/dhclient.conf ] || rm -f %D/etc/dhclient.conf
 sbin/dhclient
 sbin/dhclient-script
-%%PORTDOCS%%share/doc/isc-dhcp3-client/ANONCVS
-%%PORTDOCS%%share/doc/isc-dhcp3-client/CHANGES
-%%PORTDOCS%%share/doc/isc-dhcp3-client/COPYRIGHT
-%%PORTDOCS%%share/doc/isc-dhcp3-client/README
-%%PORTDOCS%%share/doc/isc-dhcp3-client/RELNOTES
-%%PORTDOCS%%@dirrm share/doc/isc-dhcp3-client
+%%PORTDOCS%%%%DOCSDIR%%/ANONCVS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec [ -f /var/run/dhclient.leases ] || touch /var/run/dhclient.leases
 @unexec [ -s /var/run/dhclient.leases ] || rm -f /var/run/dhclient.leases

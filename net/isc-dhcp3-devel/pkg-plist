@@ -12,11 +12,11 @@ include/omapip/buffer.h
 include/omapip/omapip.h
 lib/libdhcpctl.a
 lib/libomapi.a
-%%PORTDOCS%%share/doc/isc-dhcp3-devel/ANONCVS
-%%PORTDOCS%%share/doc/isc-dhcp3-devel/CHANGES
-%%PORTDOCS%%share/doc/isc-dhcp3-devel/COPYRIGHT
-%%PORTDOCS%%share/doc/isc-dhcp3-devel/README
-%%PORTDOCS%%share/doc/isc-dhcp3-devel/RELNOTES
-%%PORTDOCS%%@dirrm share/doc/isc-dhcp3-devel
+%%PORTDOCS%%%%DOCSDIR%%/ANONCVS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/omapip
 @dirrm include/isc-dhcp
