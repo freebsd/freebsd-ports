@@ -1,13 +1,13 @@
-Msql.pm and DBD::mSQL implement two different approaches to
-communicate with an mSQL server. DBD::mSQL is built upon the DBI, the
+Mysql.pm and DBD::mysql implement two different approaches to
+communicate with an MySQL server. DBD::mysql is built upon the DBI, the
 generic Perl Database Interface. It brings you an identical interface
 to a broad variety of databases and is in this regard comparable to
 ODBC. The advantage of the DBI approach is portability and
 interoperability. Msql.pm is the elder species. It was written before
 DBI was available but it was inspired by an early draft of the DBI
 specification. As it has been circulating longer it is more mature and
-pretty stable. It's also more complete than DBD::mSQL.
+pretty stable. It's also more complete than DBD::mysql.
 
-Some day in the future DBD::mSQL will probably be the clearly superior
+Some day in the future DBD::mysql will probably be the clearly superior
 competitor in this package. Today you have to decide on your own about
 the trade-offs.
