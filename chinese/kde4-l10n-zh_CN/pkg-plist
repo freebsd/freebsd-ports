@@ -80,6 +80,7 @@ share/locale/zh_CN/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/zh_CN/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/zh_CN/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/zh_CN/LC_MESSAGES/dirfilterplugin.mo
+share/locale/zh_CN/LC_MESSAGES/dockbarextension.mo
 share/locale/zh_CN/LC_MESSAGES/domtreeviewer.mo
 share/locale/zh_CN/LC_MESSAGES/drkonqi.mo
 share/locale/zh_CN/LC_MESSAGES/dub.mo
@@ -278,6 +279,7 @@ share/locale/zh_CN/LC_MESSAGES/kinetd.mo
 share/locale/zh_CN/LC_MESSAGES/kio_audiocd.mo
 share/locale/zh_CN/LC_MESSAGES/kio_devices.mo
 share/locale/zh_CN/LC_MESSAGES/kio_finger.mo
+share/locale/zh_CN/LC_MESSAGES/kio_fish.mo
 share/locale/zh_CN/LC_MESSAGES/kio_floppy.mo
 share/locale/zh_CN/LC_MESSAGES/kio_help.mo
 share/locale/zh_CN/LC_MESSAGES/kio_imap4.mo

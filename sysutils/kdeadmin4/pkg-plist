@@ -120,24 +120,14 @@ share/icons/locolor/16x16/apps/kxconfig.png
 share/mimelnk/application/x-debian-package.desktop
 share/services/kfile_deb.desktop
 share/services/kfile_rpm.desktop
-@dirrm share/services
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/64x64/apps
-@dirrm share/icons/crystalsvg/64x64
 @dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
 @dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32
 @dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16
 @dirrm share/icons/crystalsvg/128x128/apps
-@dirrm share/icons/crystalsvg/128x128
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kxconfig
 @dirrm share/doc/HTML/en/kwuftpd
 @dirrm share/doc/HTML/en/kuser
@@ -145,8 +135,6 @@ share/services/kfile_rpm.desktop
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kdat
 @dirrm share/doc/HTML/en/kcron
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/kxconfig/pics
 @dirrm share/apps/kxconfig/hwdata
 @dirrm share/apps/kxconfig
@@ -159,9 +147,5 @@ share/services/kfile_rpm.desktop
 @dirrm share/apps/kpackage/toolbar
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
-@dirrm share/apps
 @dirrm share/applnk/System
 @dirrm share/applnk/Settings/Peripherals
-@dirrm share/applnk/Settings
-@dirrm share/applnk
-@dirrm lib/kde3

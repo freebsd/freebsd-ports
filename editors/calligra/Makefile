@@ -32,10 +32,16 @@ USE_GMAKE=		yes
 USE_PYTHON=		yes
 GNU_CONFIGURE=		yes
 PATCH_WRKSRC=		${WRKSRC}/kword
+USE_REINPLACE=		yes
 
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

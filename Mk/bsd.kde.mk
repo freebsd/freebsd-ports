@@ -70,7 +70,7 @@ LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
 PREFIX=			${KDE_PREFIX}
 .else
-BROKEN=			"KDE2 is gone. This port needs to be updated or deleted!"
+BROKEN=			"Unknown value in USE_KDELIBS_VER"
 # kdelibs 2.x common stuff -- DEFAULT
 USE_QT_VER=		2
 .endif # ${USE_KDELIBS_VER} == 3
@@ -113,7 +113,7 @@ CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}" \
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff. Arts does NOT use it anymore.
-KDE_VERSION=		3.1.2
+KDE_VERSION=		3.1.3
 KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 

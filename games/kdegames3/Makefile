@@ -21,11 +21,16 @@ PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
 
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @-pedantic -fpermissive @g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

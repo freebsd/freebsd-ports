@@ -22,8 +22,7 @@ COMMENT=	A C++ X GUI toolkit
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -39,10 +38,19 @@ CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
 		-docdir ${DOCSDIR} -plugindir ${PREFIX}/lib/plugins
 
-.if defined(DEBUG)
-CONFIGURE_ARGS+=	-debug
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_XFT)
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+.else
+CONFIGURE_ARGS+=-no-xft
 .endif
 
+.if defined(DEBUG)
+CONFIGURE_ARGS+= -debug
+.endif
+
+.if !defined(BUILD_PLUGIN_ONLY)
 .if !defined(WITHOUT_OPENGL)
 USE_MESA=	yes
 .else
@@ -55,19 +63,21 @@ CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 .else
 CUPS=
 .endif
+.endif
 
+.if !defined(BUILD_PLUGIN_ONLY)
 CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} \
-		LD_LIBRARY_PATH=${WRKSRC}/lib:${LD_LIBRARY_PATH} \
+		LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-tools
-
-.include <bsd.port.pre.mk>
+.endif
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 
+.if !defined(BUILD_PLUGIN_ONLY)
 .if !defined(WITHOUT_OPENGL)
 # Display WITH_OPENGL advisory.
 pre-everything::
@@ -76,6 +86,14 @@ pre-everything::
 	@${ECHO_MSG} '===> the NVidia drivers provided by the x11/nvidia port'
 	@${ECHO_MSG} '===> If you use these drivers, we recommend you press'
 	@${ECHO_MSG} '===> Ctrl-C now and set WITHOUT_OPENGL'
+	@${ECHO_MSG} '===> **************************************************'
+.endif
+.if !defined(WITHOUT_XFT)
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} '===> **************************************************'
+	@${ECHO_MSG} '===> If you do not want to build QT with XFT support '
+	@${ECHO_MSG} '===> press Ctrl-C and set WITHOUT_XFT'
 	@${ECHO_MSG} '===> **************************************************'
 .endif
 
@@ -87,8 +105,10 @@ BROKEN=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 BROKEN=	"You have QT2 headers installed!  Installing this port"
 BROKEN+="will result in conflicts between QT3 and QT2!"
 .endif
+.endif
 
 post-patch:
+.if !defined(BUILD_PLUGIN_ONLY)
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -fr
 	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
 	@cd ${WRKSRC}/include; \
@@ -96,6 +116,7 @@ post-patch:
 	@cd ${WRKSRC}/extensions/nsplugin/src; \
 		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h \
 		npunix.c npwin.cpp
+.endif
 	@${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,gcc,${CC},' \
@@ -110,6 +131,7 @@ post-patch:
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${RM} ${WRKSRC}/mkspecs/freebsd-g++/qmake.conf.bak
 
+.if !defined(BUILD_PLUGIN_ONLY)
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
 	cd ${WRKSRC}/tools/${tool}; ${SETENV} ${MAKE_ENV} ${MAKE}
@@ -122,5 +144,6 @@ pre-install:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/${tool}/${tool} ${PREFIX}/bin
 .endfor
+.endif
 
 .include <bsd.port.post.mk>

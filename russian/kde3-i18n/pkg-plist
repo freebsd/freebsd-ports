@@ -254,6 +254,12 @@ share/doc/HTML/ru/kodo/index.docbook
 share/doc/HTML/ru/kolf/common
 share/doc/HTML/ru/kolf/index.cache.bz2
 share/doc/HTML/ru/kolf/index.docbook
+share/doc/HTML/ru/konq-plugins/babel/common
+share/doc/HTML/ru/konq-plugins/babel/index.cache.bz2
+share/doc/HTML/ru/konq-plugins/babel/index.docbook
+share/doc/HTML/ru/konq-plugins/crashes/common
+share/doc/HTML/ru/konq-plugins/crashes/index.cache.bz2
+share/doc/HTML/ru/konq-plugins/crashes/index.docbook
 share/doc/HTML/ru/konqueror/basics.docbook
 share/doc/HTML/ru/konqueror/bookmarks.docbook
 share/doc/HTML/ru/konqueror/browser.docbook
@@ -787,6 +793,9 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kpovmodeler
 @dirrm share/doc/HTML/ru/kpager
 @dirrm share/doc/HTML/ru/konqueror
+@dirrm share/doc/HTML/ru/konq-plugins/crashes
+@dirrm share/doc/HTML/ru/konq-plugins/babel
+@dirrm share/doc/HTML/ru/konq-plugins
 @dirrm share/doc/HTML/ru/kolf
 @dirrm share/doc/HTML/ru/kodo
 @dirrm share/doc/HTML/ru/kmix

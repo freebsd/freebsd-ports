@@ -36,8 +36,12 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 pre-configure:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l sdl-config \
+	@ ${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l sdl-config \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@sdl-config@${SDL_CONFIG}@g"
-	${FIND} ${WRKSRC} | ${XARGS} touch
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
+
+post-configure:
+	@ ${TOUCH} ${WRKSRC}/configure ${WRKSRC}/config.status \
+		${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>

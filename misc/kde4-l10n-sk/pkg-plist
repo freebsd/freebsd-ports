@@ -303,6 +303,12 @@ share/doc/HTML/sk/kcontrol/useragent/index.docbook
 share/doc/HTML/sk/kcontrol/windowmanagement/common
 share/doc/HTML/sk/kcontrol/windowmanagement/index.cache.bz2
 share/doc/HTML/sk/kcontrol/windowmanagement/index.docbook
+share/doc/HTML/sk/kcron/common
+share/doc/HTML/sk/kcron/index.cache.bz2
+share/doc/HTML/sk/kcron/index.docbook
+share/doc/HTML/sk/kdat/common
+share/doc/HTML/sk/kdat/index.cache.bz2
+share/doc/HTML/sk/kdat/index.docbook
 share/doc/HTML/sk/kdebugdialog/common
 share/doc/HTML/sk/kdebugdialog/index.cache.bz2
 share/doc/HTML/sk/kdebugdialog/index.docbook
@@ -647,6 +653,9 @@ share/doc/HTML/sk/konsole/konsole.png
 share/doc/HTML/sk/kooka/common
 share/doc/HTML/sk/kooka/index.cache.bz2
 share/doc/HTML/sk/kooka/index.docbook
+share/doc/HTML/sk/kpackage/common
+share/doc/HTML/sk/kpackage/index.cache.bz2
+share/doc/HTML/sk/kpackage/index.docbook
 share/doc/HTML/sk/kpager/common
 share/doc/HTML/sk/kpager/index.cache.bz2
 share/doc/HTML/sk/kpager/index.docbook
@@ -729,6 +738,9 @@ share/doc/HTML/sk/kspell/index.docbook
 share/doc/HTML/sk/ksysguard/common
 share/doc/HTML/sk/ksysguard/index.cache.bz2
 share/doc/HTML/sk/ksysguard/index.docbook
+share/doc/HTML/sk/ksysv/common
+share/doc/HTML/sk/ksysv/index.cache.bz2
+share/doc/HTML/sk/ksysv/index.docbook
 share/doc/HTML/sk/kteatime/common
 share/doc/HTML/sk/kteatime/config.png
 share/doc/HTML/sk/kteatime/index.cache.bz2
@@ -746,6 +758,9 @@ share/doc/HTML/sk/ktuberling/technical-reference.docbook
 share/doc/HTML/sk/kuickshow/common
 share/doc/HTML/sk/kuickshow/index.cache.bz2
 share/doc/HTML/sk/kuickshow/index.docbook
+share/doc/HTML/sk/kuser/common
+share/doc/HTML/sk/kuser/index.cache.bz2
+share/doc/HTML/sk/kuser/index.docbook
 share/doc/HTML/sk/kview/common
 share/doc/HTML/sk/kview/index.cache.bz2
 share/doc/HTML/sk/kview/index.docbook
@@ -758,6 +773,12 @@ share/doc/HTML/sk/kwin4/index.docbook
 share/doc/HTML/sk/kworldclock/common
 share/doc/HTML/sk/kworldclock/index.cache.bz2
 share/doc/HTML/sk/kworldclock/index.docbook
+share/doc/HTML/sk/kwuftpd/common
+share/doc/HTML/sk/kwuftpd/index.cache.bz2
+share/doc/HTML/sk/kwuftpd/index.docbook
+share/doc/HTML/sk/kxconfig/common
+share/doc/HTML/sk/kxconfig/index.cache.bz2
+share/doc/HTML/sk/kxconfig/index.docbook
 share/doc/HTML/sk/lskat/common
 share/doc/HTML/sk/lskat/index.cache.bz2
 share/doc/HTML/sk/lskat/index.docbook
@@ -801,6 +822,7 @@ share/locale/sk/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/sk/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/sk/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/sk/LC_MESSAGES/dirfilterplugin.mo
+share/locale/sk/LC_MESSAGES/dockbarextension.mo
 share/locale/sk/LC_MESSAGES/domtreeviewer.mo
 share/locale/sk/LC_MESSAGES/drkonqi.mo
 share/locale/sk/LC_MESSAGES/dub.mo
@@ -996,6 +1018,7 @@ share/locale/sk/LC_MESSAGES/kinetd.mo
 share/locale/sk/LC_MESSAGES/kio_audiocd.mo
 share/locale/sk/LC_MESSAGES/kio_devices.mo
 share/locale/sk/LC_MESSAGES/kio_finger.mo
+share/locale/sk/LC_MESSAGES/kio_fish.mo
 share/locale/sk/LC_MESSAGES/kio_floppy.mo
 share/locale/sk/LC_MESSAGES/kio_imap4.mo
 share/locale/sk/LC_MESSAGES/kio_lan.mo
@@ -1194,15 +1217,19 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/noatun
 @dirrm share/doc/HTML/sk/megami
 @dirrm share/doc/HTML/sk/lskat
+@dirrm share/doc/HTML/sk/kxconfig
+@dirrm share/doc/HTML/sk/kwuftpd
 @dirrm share/doc/HTML/sk/kworldclock
 @dirrm share/doc/HTML/sk/kwin4
 @dirrm share/doc/HTML/sk/kweather
 @dirrm share/doc/HTML/sk/kview
+@dirrm share/doc/HTML/sk/kuser
 @dirrm share/doc/HTML/sk/kuickshow
 @dirrm share/doc/HTML/sk/ktuberling
 @dirrm share/doc/HTML/sk/ktron
 @dirrm share/doc/HTML/sk/ktimer
 @dirrm share/doc/HTML/sk/kteatime
+@dirrm share/doc/HTML/sk/ksysv
 @dirrm share/doc/HTML/sk/ksysguard
 @dirrm share/doc/HTML/sk/kspell
 @dirrm share/doc/HTML/sk/kspaceduel
@@ -1223,6 +1250,7 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kpat
 @dirrm share/doc/HTML/sk/kpaint
 @dirrm share/doc/HTML/sk/kpager
+@dirrm share/doc/HTML/sk/kpackage
 @dirrm share/doc/HTML/sk/kooka
 @dirrm share/doc/HTML/sk/konsole
 @dirrm share/doc/HTML/sk/konquest
@@ -1288,6 +1316,8 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/kdesu
 @dirrm share/doc/HTML/sk/kdeprint
 @dirrm share/doc/HTML/sk/kdebugdialog
+@dirrm share/doc/HTML/sk/kdat
+@dirrm share/doc/HTML/sk/kcron
 @dirrm share/doc/HTML/sk/kcontrol/windowmanagement
 @dirrm share/doc/HTML/sk/kcontrol/useragent
 @dirrm share/doc/HTML/sk/kcontrol/spellchecking

@@ -21,6 +21,7 @@ PREFIX=		${KDE_PREFIX}
 
 USE_MESA=	yes
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
@@ -30,6 +31,9 @@ KDE_BUILD_PLIST=yes
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .if exists(${X11BASE}/bin/xscreensaver)
 WITH_XS=	yes

@@ -46,6 +46,26 @@ share/doc/HTML/fi/common/web-docbottom.png
 share/doc/HTML/fi/common/web-doctop.png
 share/doc/HTML/fi/common/x11-license.html
 share/doc/HTML/fi/common/xml.dcl
+share/doc/HTML/fi/kfind/common
+share/doc/HTML/fi/kfind/index.cache.bz2
+share/doc/HTML/fi/kfind/index.docbook
+share/doc/HTML/fi/khangman/common
+share/doc/HTML/fi/khangman/index.cache.bz2
+share/doc/HTML/fi/khangman/index.docbook
+share/doc/HTML/fi/khangman/khangman1.png
+share/doc/HTML/fi/khelpcenter/common
+share/doc/HTML/fi/khelpcenter/contact.docbook
+share/doc/HTML/fi/khelpcenter/glossary/common
+share/doc/HTML/fi/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/fi/khelpcenter/glossary/index.docbook
+share/doc/HTML/fi/khelpcenter/glossary/kdeprintingglossary.docbook
+share/doc/HTML/fi/khelpcenter/help.docbook
+share/doc/HTML/fi/khelpcenter/index.cache.bz2
+share/doc/HTML/fi/khelpcenter/index.docbook
+share/doc/HTML/fi/khelpcenter/links.docbook
+share/doc/HTML/fi/khelpcenter/support.docbook
+share/doc/HTML/fi/khelpcenter/welcome.docbook
+share/doc/HTML/fi/khelpcenter/whatiskde.docbook
 share/locale/fi/LC_MESSAGES/aktion.mo
 share/locale/fi/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/fi/LC_MESSAGES/alsaplayerui.mo
@@ -80,6 +100,7 @@ share/locale/fi/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/fi/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/fi/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/fi/LC_MESSAGES/dirfilterplugin.mo
+share/locale/fi/LC_MESSAGES/dockbarextension.mo
 share/locale/fi/LC_MESSAGES/domtreeviewer.mo
 share/locale/fi/LC_MESSAGES/drkonqi.mo
 share/locale/fi/LC_MESSAGES/dub.mo
@@ -253,7 +274,6 @@ share/locale/fi/LC_MESSAGES/kfile_txt.mo
 share/locale/fi/LC_MESSAGES/kfile_vcf.mo
 share/locale/fi/LC_MESSAGES/kfile_wav.mo
 share/locale/fi/LC_MESSAGES/kfile_xbm.mo
-share/locale/fi/LC_MESSAGES/kfind.mo
 share/locale/fi/LC_MESSAGES/kfindpart.mo
 share/locale/fi/LC_MESSAGES/kfloppy.mo
 share/locale/fi/LC_MESSAGES/kfmclient.mo
@@ -261,6 +281,7 @@ share/locale/fi/LC_MESSAGES/kfmexec.mo
 share/locale/fi/LC_MESSAGES/kfontviewpart.mo
 share/locale/fi/LC_MESSAGES/kfouleggs.mo
 share/locale/fi/LC_MESSAGES/kgantt.mo
+share/locale/fi/LC_MESSAGES/kgeo.mo
 share/locale/fi/LC_MESSAGES/kget.mo
 share/locale/fi/LC_MESSAGES/kghostview.mo
 share/locale/fi/LC_MESSAGES/khangman.mo
@@ -273,8 +294,8 @@ share/locale/fi/LC_MESSAGES/kiconedit.mo
 share/locale/fi/LC_MESSAGES/kio_audiocd.mo
 share/locale/fi/LC_MESSAGES/kio_devices.mo
 share/locale/fi/LC_MESSAGES/kio_finger.mo
+share/locale/fi/LC_MESSAGES/kio_fish.mo
 share/locale/fi/LC_MESSAGES/kio_floppy.mo
-share/locale/fi/LC_MESSAGES/kio_help.mo
 share/locale/fi/LC_MESSAGES/kio_imap4.mo
 share/locale/fi/LC_MESSAGES/kio_lan.mo
 share/locale/fi/LC_MESSAGES/kio_mac.mo
@@ -366,6 +387,7 @@ share/locale/fi/LC_MESSAGES/ksnapshot.mo
 share/locale/fi/LC_MESSAGES/ksokoban.mo
 share/locale/fi/LC_MESSAGES/kspaceduel.mo
 share/locale/fi/LC_MESSAGES/ksplash.mo
+share/locale/fi/LC_MESSAGES/kstars.mo
 share/locale/fi/LC_MESSAGES/kstart.mo
 share/locale/fi/LC_MESSAGES/kstartperf.mo
 share/locale/fi/LC_MESSAGES/ksync.mo
@@ -461,5 +483,9 @@ share/locale/fi/LC_MESSAGES/webarchiver.mo
 share/locale/fi/charset
 share/locale/fi/entry.desktop
 share/locale/fi/flag.png
+@dirrm share/doc/HTML/fi/khelpcenter/glossary
+@dirrm share/doc/HTML/fi/khelpcenter
+@dirrm share/doc/HTML/fi/khangman
+@dirrm share/doc/HTML/fi/kfind
 @dirrm share/doc/HTML/fi/common
 @dirrm share/doc/HTML/fi

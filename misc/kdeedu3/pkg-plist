@@ -681,6 +681,7 @@ share/apps/kstars/venus.R3.vsop
 share/apps/kstars/venus.R4.vsop
 share/apps/kstars/venus.R5.vsop
 share/apps/kstars/venus.png
+share/apps/ktouch/danish-2.ktouch
 share/apps/ktouch/danish.ktouch
 share/apps/ktouch/de-ch.keyboard
 share/apps/ktouch/de.keyboard
@@ -693,9 +694,12 @@ share/apps/ktouch/english.ktouch
 share/apps/ktouch/es.keyboard
 share/apps/ktouch/fi.keyboard
 share/apps/ktouch/fr.keyboard
+share/apps/ktouch/fr_ch.keyboard
 share/apps/ktouch/french-2.ktouch
 share/apps/ktouch/french.ktouch
+share/apps/ktouch/german-2.ktouch
 share/apps/ktouch/german.ktouch
+share/apps/ktouch/he.keyboard
 share/apps/ktouch/it.keyboard
 share/apps/ktouch/ktouchui.rc
 share/apps/ktouch/la.keyboard
@@ -703,8 +707,10 @@ share/apps/ktouch/no.keyboard
 share/apps/ktouch/norwegian.ktouch
 share/apps/ktouch/number.keyboard
 share/apps/ktouch/number.ktouch
+share/apps/ktouch/portuguese.ktouch
 share/apps/ktouch/pt.keyboard
 share/apps/ktouch/se.keyboard
+share/apps/ktouch/spanish.ktouch
 share/apps/ktouch/splash.png
 share/apps/ktouch/up.wav
 share/apps/kverbos/kverbosui.rc
@@ -1035,8 +1041,6 @@ share/icons/locolor/32x32/apps/kpercentage.png
 share/icons/locolor/32x32/apps/kstars.png
 share/icons/locolor/48x48/apps/kstars.png
 share/mimelnk/application/x-edu.desktop
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/locolor/48x48/apps
 @dirrm share/icons/locolor/48x48
 @dirrm share/icons/locolor/32x32/apps
@@ -1051,18 +1055,9 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/apps
 @dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor
 @dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
 @dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
 @dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kvoctrain
 @dirrm share/doc/HTML/en/kverbos
 @dirrm share/doc/HTML/en/ktouch
@@ -1078,8 +1073,6 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/doc/HTML/en/keduca
 @dirrm share/doc/HTML/en/kalzium
 @dirrm share/doc/HTML/en/flashkard
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/kvoctrain/examples
 @dirrm share/apps/kvoctrain
 @dirrm share/apps/kverbos/pics
@@ -1143,11 +1136,9 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/apps/flashkard/icons/crystalsvg
 @dirrm share/apps/flashkard/icons
 @dirrm share/apps/flashkard
-@dirrm share/apps
 @dirrm share/applnk/Edutainment/Tools
 @dirrm share/applnk/Edutainment/Science
 @dirrm share/applnk/Edutainment/Miscellanous
 @dirrm share/applnk/Edutainment/Mathematics
 @dirrm share/applnk/Edutainment/Languages
 @dirrm share/applnk/Edutainment
-@dirrm share/applnk

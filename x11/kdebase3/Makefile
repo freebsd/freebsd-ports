@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -71,6 +70,7 @@ pre-extract::
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
+	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
 
 post-configure:
 	${REINPLACE_CMD} -e "s@genkdmconf --in@genkdmconf --no-old --in@" \

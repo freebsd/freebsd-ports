@@ -1,6 +1,7 @@
 share/doc/HTML/xh/amor/common
 share/doc/HTML/xh/amor/index.cache.bz2
 share/doc/HTML/xh/amor/index.docbook
+share/doc/HTML/xh/artsbuilder/gui.docbook
 share/doc/HTML/xh/kaddressbook/common
 share/doc/HTML/xh/kaddressbook/index.cache.bz2
 share/doc/HTML/xh/kaddressbook/index.docbook
@@ -511,5 +512,6 @@ share/locale/xh/entry.desktop
 @dirrm share/doc/HTML/xh/kdeprint
 @dirrm share/doc/HTML/xh/kate-plugins
 @dirrm share/doc/HTML/xh/kaddressbook
+@dirrm share/doc/HTML/xh/artsbuilder
 @dirrm share/doc/HTML/xh/amor
 @dirrm share/doc/HTML/xh

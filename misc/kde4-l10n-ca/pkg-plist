@@ -1,6 +1,43 @@
+share/doc/HTML/ca/kbugbuster/common
+share/doc/HTML/ca/kbugbuster/index.cache.bz2
+share/doc/HTML/ca/kbugbuster/index.docbook
 share/doc/HTML/ca/kcontrol/common
 share/doc/HTML/ca/kcontrol/index.cache.bz2
 share/doc/HTML/ca/kcontrol/index.docbook
+share/doc/HTML/ca/kcontrol/kalarmd/common
+share/doc/HTML/ca/kcontrol/kalarmd/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kalarmd/index.docbook
+share/doc/HTML/ca/kcontrol/kcmktalkd/common
+share/doc/HTML/ca/kcontrol/kcmktalkd/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kcmktalkd/index.docbook
+share/doc/HTML/ca/kcontrol/kcmlowbatcrit/common
+share/doc/HTML/ca/kcontrol/kcmlowbatcrit/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kcmlowbatcrit/index.docbook
+share/doc/HTML/ca/kcontrol/kcmlowbatwarn/common
+share/doc/HTML/ca/kcontrol/kcmlowbatwarn/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kcmlowbatwarn/index.docbook
+share/doc/HTML/ca/kcontrol/kmixcfg/common
+share/doc/HTML/ca/kcontrol/kmixcfg/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kmixcfg/index.docbook
+share/doc/HTML/ca/kcontrol/kxmlrpcd/common
+share/doc/HTML/ca/kcontrol/kxmlrpcd/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kxmlrpcd/index.docbook
+share/doc/HTML/ca/kcontrol/lanbrowser/common
+share/doc/HTML/ca/kcontrol/lanbrowser/index.cache.bz2
+share/doc/HTML/ca/kcontrol/lanbrowser/index.docbook
+share/doc/HTML/ca/kcontrol/laptop/common
+share/doc/HTML/ca/kcontrol/laptop/index.cache.bz2
+share/doc/HTML/ca/kcontrol/laptop/index.docbook
+share/doc/HTML/ca/kcontrol/powerctrl/common
+share/doc/HTML/ca/kcontrol/powerctrl/index.cache.bz2
+share/doc/HTML/ca/kcontrol/powerctrl/index.docbook
+share/doc/HTML/ca/keduca/common
+share/doc/HTML/ca/keduca/index.cache.bz2
+share/doc/HTML/ca/keduca/index.docbook
+share/doc/HTML/ca/keduca/screenshot.png
+share/doc/HTML/ca/kgpgcertmanager/common
+share/doc/HTML/ca/kgpgcertmanager/index.cache.bz2
+share/doc/HTML/ca/kgpgcertmanager/index.docbook
 share/doc/HTML/ca/khelpcenter/background.png
 share/doc/HTML/ca/khelpcenter/bgtable.png
 share/doc/HTML/ca/khelpcenter/common
@@ -114,6 +151,50 @@ share/doc/HTML/ca/kioslave/telnet.docbook
 share/doc/HTML/ca/kioslave/thumbnail.docbook
 share/doc/HTML/ca/kioslave/webdav.docbook
 share/doc/HTML/ca/kioslave/webdavs.docbook
+share/doc/HTML/ca/kmail/common
+share/doc/HTML/ca/kmail/configure.docbook
+share/doc/HTML/ca/kmail/credits-and-licenses.docbook
+share/doc/HTML/ca/kmail/faq.docbook
+share/doc/HTML/ca/kmail/getting-started.docbook
+share/doc/HTML/ca/kmail/importing.docbook
+share/doc/HTML/ca/kmail/index.cache.bz2
+share/doc/HTML/ca/kmail/index.docbook
+share/doc/HTML/ca/kmail/intro.docbook
+share/doc/HTML/ca/kmail/menus.docbook
+share/doc/HTML/ca/kmail/using-kmail.docbook
+share/doc/HTML/ca/kmoon/common
+share/doc/HTML/ca/kmoon/index.cache.bz2
+share/doc/HTML/ca/kmoon/index.docbook
+share/doc/HTML/ca/kompare/common
+share/doc/HTML/ca/kompare/index.cache.bz2
+share/doc/HTML/ca/kompare/index.docbook
+share/doc/HTML/ca/kpercentage/answer.png
+share/doc/HTML/ca/kpercentage/commands.docbook
+share/doc/HTML/ca/kpercentage/common
+share/doc/HTML/ca/kpercentage/credits.docbook
+share/doc/HTML/ca/kpercentage/devel.docbook
+share/doc/HTML/ca/kpercentage/edu-logo.png
+share/doc/HTML/ca/kpercentage/faq.docbook
+share/doc/HTML/ca/kpercentage/help.png
+share/doc/HTML/ca/kpercentage/index.cache.bz2
+share/doc/HTML/ca/kpercentage/index.docbook
+share/doc/HTML/ca/kpercentage/install.docbook
+share/doc/HTML/ca/kpercentage/introduction.docbook
+share/doc/HTML/ca/kpercentage/main.png
+share/doc/HTML/ca/kpercentage/using.docbook
+share/doc/HTML/ca/kpercentage/welcome.png
+share/doc/HTML/ca/krfb/common
+share/doc/HTML/ca/krfb/index.cache.bz2
+share/doc/HTML/ca/krfb/index.docbook
+share/doc/HTML/ca/kspell/common
+share/doc/HTML/ca/kspell/index.cache.bz2
+share/doc/HTML/ca/kspell/index.docbook
+share/doc/HTML/ca/kweather/common
+share/doc/HTML/ca/kweather/index.cache.bz2
+share/doc/HTML/ca/kweather/index.docbook
+share/doc/HTML/ca/kworldclock/common
+share/doc/HTML/ca/kworldclock/index.cache.bz2
+share/doc/HTML/ca/kworldclock/index.docbook
 share/locale/ca/LC_MESSAGES/aktion.mo
 share/locale/ca/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/ca/LC_MESSAGES/alsaplayerui.mo
@@ -135,6 +216,7 @@ share/locale/ca/LC_MESSAGES/cupsdconf.mo
 share/locale/ca/LC_MESSAGES/desktop_kde-i18n.mo
 share/locale/ca/LC_MESSAGES/desktop_kdeaddons.mo
 share/locale/ca/LC_MESSAGES/desktop_kdeadmin.mo
+share/locale/ca/LC_MESSAGES/desktop_kdeartwork.mo
 share/locale/ca/LC_MESSAGES/desktop_kdebase.mo
 share/locale/ca/LC_MESSAGES/desktop_kdeedu.mo
 share/locale/ca/LC_MESSAGES/desktop_kdegames.mo
@@ -343,6 +425,7 @@ share/locale/ca/LC_MESSAGES/kinetd.mo
 share/locale/ca/LC_MESSAGES/kio_audiocd.mo
 share/locale/ca/LC_MESSAGES/kio_devices.mo
 share/locale/ca/LC_MESSAGES/kio_finger.mo
+share/locale/ca/LC_MESSAGES/kio_fish.mo
 share/locale/ca/LC_MESSAGES/kio_floppy.mo
 share/locale/ca/LC_MESSAGES/kio_help.mo
 share/locale/ca/LC_MESSAGES/kio_imap4.mo
@@ -358,6 +441,7 @@ share/locale/ca/LC_MESSAGES/kio_smb.mo
 share/locale/ca/LC_MESSAGES/kio_smbro.mo
 share/locale/ca/LC_MESSAGES/kio_smtp.mo
 share/locale/ca/LC_MESSAGES/kit.mo
+share/locale/ca/LC_MESSAGES/kiten.mo
 share/locale/ca/LC_MESSAGES/kjobviewer.mo
 share/locale/ca/LC_MESSAGES/kjots.mo
 share/locale/ca/LC_MESSAGES/kjumpingcube.mo
@@ -400,6 +484,7 @@ share/locale/ca/LC_MESSAGES/kpackage.mo
 share/locale/ca/LC_MESSAGES/kpager.mo
 share/locale/ca/LC_MESSAGES/kpaint.mo
 share/locale/ca/LC_MESSAGES/kpartapp.mo
+share/locale/ca/LC_MESSAGES/kpartsaver.mo
 share/locale/ca/LC_MESSAGES/kpat.mo
 share/locale/ca/LC_MESSAGES/kpercentage.mo
 share/locale/ca/LC_MESSAGES/kpersonalizer.mo
@@ -438,6 +523,7 @@ share/locale/ca/LC_MESSAGES/ksplash.mo
 share/locale/ca/LC_MESSAGES/kstars.mo
 share/locale/ca/LC_MESSAGES/kstart.mo
 share/locale/ca/LC_MESSAGES/kstartperf.mo
+share/locale/ca/LC_MESSAGES/ksync.mo
 share/locale/ca/LC_MESSAGES/ksysctrl.mo
 share/locale/ca/LC_MESSAGES/ksysguard.mo
 share/locale/ca/LC_MESSAGES/ksystemtrayapplet.mo
@@ -470,7 +556,9 @@ share/locale/ca/LC_MESSAGES/kweather.mo
 share/locale/ca/LC_MESSAGES/kwin.mo
 share/locale/ca/LC_MESSAGES/kwin4.mo
 share/locale/ca/LC_MESSAGES/kwin_b2_config.mo
+share/locale/ca/LC_MESSAGES/kwin_cde_config.mo
 share/locale/ca/LC_MESSAGES/kwin_default_config.mo
+share/locale/ca/LC_MESSAGES/kwin_glow_config.mo
 share/locale/ca/LC_MESSAGES/kwin_icewm_config.mo
 share/locale/ca/LC_MESSAGES/kwin_keramik_config.mo
 share/locale/ca/LC_MESSAGES/kwin_modernsys_config.mo
@@ -481,18 +569,23 @@ share/locale/ca/LC_MESSAGES/kxconfig.mo
 share/locale/ca/LC_MESSAGES/kxkb.mo
 share/locale/ca/LC_MESSAGES/kxmlrpcd.mo
 share/locale/ca/LC_MESSAGES/kxsconfig.mo
+share/locale/ca/LC_MESSAGES/libkcal.mo
+share/locale/ca/LC_MESSAGES/libkcalsystem.mo
 share/locale/ca/LC_MESSAGES/libkdegames.mo
 share/locale/ca/LC_MESSAGES/libkdehighscores.mo
 share/locale/ca/LC_MESSAGES/libkdenetwork.mo
+share/locale/ca/LC_MESSAGES/libkdepim.mo
 share/locale/ca/LC_MESSAGES/libkicker.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/ca/LC_MESSAGES/libkonq.mo
+share/locale/ca/LC_MESSAGES/libkpimexchange.mo
 share/locale/ca/LC_MESSAGES/libkscan.mo
 share/locale/ca/LC_MESSAGES/libkscreensaver.mo
 share/locale/ca/LC_MESSAGES/libksirtet.mo
+share/locale/ca/LC_MESSAGES/libksync.mo
 share/locale/ca/LC_MESSAGES/libtaskbar.mo
 share/locale/ca/LC_MESSAGES/libtaskmanager.mo
 share/locale/ca/LC_MESSAGES/lockout.mo
@@ -525,6 +618,14 @@ share/locale/ca/LC_MESSAGES/webarchiver.mo
 share/locale/ca/charset
 share/locale/ca/entry.desktop
 share/locale/ca/flag.png
+@dirrm share/doc/HTML/ca/kworldclock
+@dirrm share/doc/HTML/ca/kweather
+@dirrm share/doc/HTML/ca/kspell
+@dirrm share/doc/HTML/ca/krfb
+@dirrm share/doc/HTML/ca/kpercentage
+@dirrm share/doc/HTML/ca/kompare
+@dirrm share/doc/HTML/ca/kmoon
+@dirrm share/doc/HTML/ca/kmail
 @dirrm share/doc/HTML/ca/kioslave
 @dirrm share/doc/HTML/ca/khelpcenter/visualdict
 @dirrm share/doc/HTML/ca/khelpcenter/userguide
@@ -532,5 +633,17 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/khelpcenter/glossary
 @dirrm share/doc/HTML/ca/khelpcenter/faq
 @dirrm share/doc/HTML/ca/khelpcenter
+@dirrm share/doc/HTML/ca/kgpgcertmanager
+@dirrm share/doc/HTML/ca/keduca
+@dirrm share/doc/HTML/ca/kcontrol/powerctrl
+@dirrm share/doc/HTML/ca/kcontrol/laptop
+@dirrm share/doc/HTML/ca/kcontrol/lanbrowser
+@dirrm share/doc/HTML/ca/kcontrol/kxmlrpcd
+@dirrm share/doc/HTML/ca/kcontrol/kmixcfg
+@dirrm share/doc/HTML/ca/kcontrol/kcmlowbatwarn
+@dirrm share/doc/HTML/ca/kcontrol/kcmlowbatcrit
+@dirrm share/doc/HTML/ca/kcontrol/kcmktalkd
+@dirrm share/doc/HTML/ca/kcontrol/kalarmd
 @dirrm share/doc/HTML/ca/kcontrol
+@dirrm share/doc/HTML/ca/kbugbuster
 @dirrm share/doc/HTML/ca
