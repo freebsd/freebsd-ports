@@ -162,6 +162,7 @@ share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
+@unexec rmdir %D/lib/mysql 2> /dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Flags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/mysql/charsets
