@@ -297,6 +297,7 @@
     SUBDIR += tinyproxy
     SUBDIR += transproxy
     SUBDIR += udmsearch
+    SUBDIR += ump
     SUBDIR += viewml
     SUBDIR += w3
     SUBDIR += w3-4
