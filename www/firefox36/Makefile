@@ -178,7 +178,8 @@ pre-install:
 		${SED} -e 's|^|@dirrm lib/${FIREFOX}/|' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/firefox >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|${FIREFOX}-${FF_VER}|${FIREFOX}|g' \
+		${REINPLACE_CMD} -e 's|${FIREFOX}-${FF_VER}|${FIREFOX}|g; \
+			s|${FAKEDIR}|${PREFIX}|' \
 			${FAKEDIR}/lib/pkgconfig/$${pcfile}.pc ; \
 		${ECHO_CMD} libdata/pkgconfig/$${pcfile}.pc >> ${PLIST} ; \
 	done
