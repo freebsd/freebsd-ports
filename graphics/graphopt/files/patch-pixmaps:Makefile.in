@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Fri Dec  5 23:02:55 2003
++++ pixmaps/Makefile.in	Fri Dec  5 23:03:06 2003
+@@ -67,7 +67,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-pixmapdir = $(prefix)/share/pixmaps/graphopt
++pixmapdir = $(prefix)/share/graphopt/pixmaps
+ 
+ pixmap_DATA = export.xpm \
+               import.xpm  \
