@@ -2,7 +2,7 @@
 %%RUBY_SITELIBDIR%%/graph/directed_graph.rb
 %%RUBY_SITELIBDIR%%/graph/graphviz_dot.rb
 @dirrm %%RUBY_SITELIBDIR%%/graph
-%%PORTDOCS%%%%RUBY_DOCDIR%%/graph/BUGS
-%%PORTDOCS%%%%RUBY_DOCDIR%%/graph/Changelog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/graph/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/graph
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changelog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

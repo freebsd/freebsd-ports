@@ -5,15 +5,15 @@
 %%RUBY_SITELIBDIR%%/gimpfu.rb
 %%RUBY_SITELIBDIR%%/gimpshelf.rb
 %%RUBY_SITELIBDIR%%/gimpui.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/TODO
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ENVIRONMENT
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/MEMO.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/BUGS.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/API.ja.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gimp/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gimp
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ENVIRONMENT
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/MEMO.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/BUGS.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/API.ja.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 @cwd %%X11BASE%%
 libexec/gimp/1.2/plug-ins/clothify.rb
 libexec/gimp/1.2/plug-ins/coolmetal-logo.rb

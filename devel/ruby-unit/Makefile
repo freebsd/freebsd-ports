@@ -18,6 +18,8 @@ MAINTAINER=	knu@FreeBSD.org
 USE_RUBY=	yes
 USE_RUBY_RDTOOL=	yes
 
+RUBY_MODNAME=	runit
+
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/c2t.rb	\
 			${WRKSRC}/bin/runtest.rb
 
@@ -38,17 +40,17 @@ do-install:
 	${LN} -sf ${f}.rb ${PREFIX}/bin/${f}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/runit
-	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/runit/
-	${MKDIR} ${RUBY_DOCDIR}/runit/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/runit/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/runit/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
-	${CP} -R ${WRKSRC}/doc_en/ ${RUBY_DOCDIR}/runit/
-	${CP} -R ${WRKSRC}/doc_ja/ ${RUBY_DOCDIR}/runit/ja/
+	${CP} -R ${WRKSRC}/doc_en/ ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/doc_ja/ ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

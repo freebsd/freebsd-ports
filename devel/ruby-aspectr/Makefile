@@ -26,12 +26,12 @@ DOCS=		CHANGELOG README TODO
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/aspectr.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/examples/logger.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/logger.rb ${RUBY_MODEXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

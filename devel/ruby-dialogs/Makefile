@@ -23,8 +23,8 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/dialogs.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/dialogs
-	${INSTALL_DATA} ${WRKDIR}/dialogs.html ${RUBY_DOCDIR}/dialogs/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/dialogs.html ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>

@@ -42,9 +42,9 @@ post-extract:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/ming.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/ming
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/ming/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
 .endif
 

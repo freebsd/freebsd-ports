@@ -19,22 +19,22 @@
 @dirrm %%RUBY_SITELIBDIR%%/cvs
 @dirrm %%RUBY_SITELIBDIR%%/diff
 @dirrm %%RUBY_SITELIBDIR%%/rcs
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/viztree
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/list_repositories.rsp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/log.rsp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/reviz
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/reviz-conf.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/rsp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_annotate.rsp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_checkout.rsp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_diff.rsp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_directory.rsp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/cvs/reviz/view_log.rsp
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/cvs/reviz
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/cvs
-%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/TODO
-%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/cvs.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/diff.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/cvs/tempdir.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/cvs
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/viztree
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/list_repositories.rsp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/log.rsp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/reviz
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/reviz-conf.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/rsp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/view_annotate.rsp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/view_checkout.rsp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/view_diff.rsp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/view_directory.rsp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/reviz/view_log.rsp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/reviz
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/cvs.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/diff.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/tempdir.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,9 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/textbuf.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/textbuf/stest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/textbuf/ja/test.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/textbuf/ja
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/textbuf
-%%PORTDOCS%%%%RUBY_DOCDIR%%/textbuf/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/textbuf/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/textbuf/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/textbuf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,11 +1,11 @@
 bin/byaccr
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/Makefile
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/cal.y
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/calfunc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/byaccr/main.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/byaccr
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cal.y
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calfunc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/main.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%@unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
-%%PORTDOCS%%%%RUBY_DOCDIR%%/byaccr/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/byaccr/README.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/byaccr
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true

@@ -27,11 +27,11 @@ do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-	${CP} -R ${WRKSRC}/doc/en/* ${RUBY_DOCDIR}/${PORTNAME}/
-	${CP} -R ${WRKSRC}/doc/ja/* ${RUBY_DOCDIR}/${PORTNAME}/ja/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${CP} -R ${WRKSRC}/doc/en/* ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/doc/ja/* ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

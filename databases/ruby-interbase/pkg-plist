@@ -1,5 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/interbase.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/interbase/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/interbase/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/interbase/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/interbase
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

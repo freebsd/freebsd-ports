@@ -28,8 +28,8 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/tzfile.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/tzfile.html ${RUBY_DOCDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/tzfile.html ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>

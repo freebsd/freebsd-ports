@@ -1,15 +1,15 @@
 %%RUBY_SITEARCHLIBDIR%%/odbc.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/00connect.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/10create_table.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/20insert.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/30select.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/40update.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/50drop_table.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/odbc/test/70close.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/odbc/test
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/odbc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/odbc/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/odbc/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/odbc/odbc.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/odbc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/00connect.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/10create_table.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/20insert.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/30select.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/40update.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/50drop_table.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/70close.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/odbc.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

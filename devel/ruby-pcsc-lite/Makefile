@@ -28,13 +28,13 @@ EXAMPLES=	examples/test.rb examples/pcsclient.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODDOCDIR}/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${EXAMPLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
 .endif
 

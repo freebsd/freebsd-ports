@@ -12,12 +12,12 @@
 %%RUBY_SITELIBDIR%%/lgram/Marshal.rb
 @dirrm %%RUBY_SITELIBDIR%%/Hollow
 @dirrm %%RUBY_SITELIBDIR%%/lgram
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/BitArray.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/metaruby/ProcAsArray.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/metaruby
-%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/Hollow.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/LGram.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/Overview
-%%PORTDOCS%%%%RUBY_DOCDIR%%/metaruby/TODO
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/metaruby
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/BitArray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ProcAsArray.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Hollow.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LGram.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Overview
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

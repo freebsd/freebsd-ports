@@ -25,12 +25,12 @@ DOCS_JA=	zlib.rd.ja zlib.ja.html
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/zlib/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/zlib/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/zlib/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 

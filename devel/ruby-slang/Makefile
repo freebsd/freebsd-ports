@@ -45,19 +45,19 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/slang/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/slang/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
 .for f in ${EXAMPLES_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/slang/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/ja/
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/slang/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/slang/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/slang/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 

@@ -34,9 +34,9 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gemfinder ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/gemfinder
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/gemfinder/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

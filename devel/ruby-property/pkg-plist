@@ -1,10 +1,10 @@
 %%RUBY_SITELIBDIR%%/property.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/property-example.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/test.default
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/property.README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/Properties.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/rubyapi.css
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/ja/property.README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/property/ja/Properties-ja.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/property/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/property
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/property-example.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/test.default
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/property.README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Properties.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubyapi.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/property.README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Properties-ja.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

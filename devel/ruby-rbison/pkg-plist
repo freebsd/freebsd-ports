@@ -1,10 +1,10 @@
 bin/rbison
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rbison/CalcFileLexer.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rbison/CalcStringLexer.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rbison/calc.in
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rbison/calc.ry
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rbison/calc_test.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rbison/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rbison/README
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rbison
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rbison
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/CalcFileLexer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/CalcStringLexer.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calc.in
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calc.ry
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/calc_test.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

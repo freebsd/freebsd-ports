@@ -1,35 +1,35 @@
 %%RUBY_SITEARCHLIBDIR%%/sdl.so
 %%RUBY_SITELIBDIR%%/rubysdl_aliases.rb
 %%RUBY_SITELIBDIR%%/sdl.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/alpha.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cdrom.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cursor.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/cursor.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/event2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/font.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/icon.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/joy.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/joy2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/movesp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playmod.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/plaympeg.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/playwave.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/randrect.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/rotate.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sdlskk.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/sgetest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testgl.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/testsprite.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/sdl/transformblit.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/sdl
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/NEWS.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_const_list.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/rubysdl_doc.en.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/NEWS.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/sdl/ja/rubysdl_doc.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/sdl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/alpha.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cdrom.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cursor.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cursor.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/event2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/font.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/icon.bmp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/joy.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/joy2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/movesp.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/playmod.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plaympeg.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/playwave.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/randrect.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rotate.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sdlskk.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sgetest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgl.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testsprite.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/transformblit.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysdl_const_list.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysdl_doc.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysdl_doc.en.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/NEWS.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rubysdl_doc.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rubysdl_doc.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -1,51 +1,51 @@
 %%RUBY_SITEARCHLIBDIR%%/fam.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fam/dirmon.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fam/famtest.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fam
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/COPYING
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000007.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000008.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000009.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000010.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000011.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000012.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000013.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000014.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000015.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000016.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000017.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000018.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000019.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000020.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src/M000021.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Debug.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.src/M000002.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.src/M000003.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.src/M000004.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.src/M000005.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.src/M000006.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Request.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/classes/Fam/Request.src/M000001.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/created.rid
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/event_codes.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/files/_/fam_c.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/files/fam_c.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/fr_class_index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/fr_file_index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/fr_method_index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/index.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fam/doc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/files/_
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/files
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/classes/Fam/Request.src
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/classes/Fam/Event.src
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/classes/Fam/Connection.src
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/classes/Fam
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc/classes
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam/doc
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fam
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dirmon.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/famtest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Debug.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/event_codes.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/_/fam_c.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/fam_c.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/_
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

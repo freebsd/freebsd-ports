@@ -1,6 +1,6 @@
 %%RUBY_SITELIBDIR%%/mock.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mock/demo_mock.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mock/demo_mock_class.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mock
-%%PORTDOCS%%%%RUBY_DOCDIR%%/mock/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mock
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo_mock.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo_mock_class.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

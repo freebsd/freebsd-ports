@@ -40,13 +40,13 @@ post-build:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/libpng
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/libpng/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/libpng/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/libpng/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 

@@ -1,8 +1,8 @@
 %%RUBY_SITELIBDIR%%/bsearch.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bsearch/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bsearch/bsearch.en.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bsearch/bsearch.en.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bsearch/ja/bsearch.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bsearch/ja/bsearch.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bsearch/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bsearch
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bsearch.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/bsearch.en.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/bsearch.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/bsearch.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

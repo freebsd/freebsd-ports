@@ -1,7 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/iconv.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/iconv.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/iconv.rlog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/iconv.rlog.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/iconv.rmi.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/iconv/rd.css
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/iconv
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.rlog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.rlog.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/iconv.rmi.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

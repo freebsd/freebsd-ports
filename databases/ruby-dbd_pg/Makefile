@@ -31,9 +31,9 @@ DOCS_EN=	lib/${PORTNAME}/doc/*
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${RUBY_DBI_PORTNAME}/${PORTNAME}
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${RUBY_DBI_PORTNAME}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

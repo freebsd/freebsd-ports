@@ -8,19 +8,19 @@ lib/swig_lib/ruby/ptrlang.i
 lib/swig_lib/ruby/ruby.swg
 lib/swig_lib/ruby/typemaps.i
 @dirrm lib/swig_lib/ruby
-%%PORTDOCS%%%%RUBY_DOCDIR%%/swigruby/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/swigruby/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/swigruby/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/swigruby/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/swigruby
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/dbm/Makefile.swig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/dbm/DBM.i
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/dbm/extconf.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/dbm/dbmtest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/qt/Makefile.swig
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/qt/qt.i
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/qt/extconf.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/swigruby/qt/hello.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/swigruby/dbm
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/swigruby/qt
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/swigruby
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dbm/Makefile.swig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dbm/DBM.i
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dbm/extconf.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dbm/dbmtest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/qt/Makefile.swig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/qt/qt.i
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/qt/extconf.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/qt/hello.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/dbm
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/qt
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
