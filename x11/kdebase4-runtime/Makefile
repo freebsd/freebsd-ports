@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -21,7 +22,6 @@ LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
-KDE_BUILD_PLIST=yes
 
 USE_OPENLDAP=	yes
 USE_BZIP2=	yes
@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
+PKGINSTALL=	${WRKDIR}/INSTALL
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -50,8 +51,7 @@ RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 .endif
 
 .if !defined(WITHOUT_MOTIF)
-USE_MOTIF=	yes
-PLIST_APPEND+=	plist.motif
+RUN_DEPENDS=	nspluginviewer:${PORTSDIR}/www/konqueror-nsplugins
 .elseif defined(WITHOUT_MOTIF)
 CONFIGURE_ARGS+=	--without-motif
 .endif
@@ -69,14 +69,20 @@ post-configure:
 post-build:
 	@${CAT} ${PKGDIR}/pkg-message | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGMESSAGE}
+	@${CAT} ${PKGDIR}/pkg-install | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGINSTALL}
+	@${CAT} ${FILESDIR}/kdm.sh | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${WRKDIR}/kdm.sh
 
 post-install:
-	${LOCALBASE}/bin/genkdmconf --no-old --in ${PREFIX}/share/config/kdm/default
-	${LOCALBASE}/bin/genkdmconf --no-backup --no-old-scripts --in ${PREFIX}/share/config/kdm
 	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
 		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/kdm.sh ${PREFIX}/etc/rc.d
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

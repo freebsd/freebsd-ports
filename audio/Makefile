@@ -226,6 +226,7 @@
     SUBDIR += mp3wrap
     SUBDIR += mpc
     SUBDIR += mpegaudio
+    SUBDIR += mpeglib_artsplug
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpg321

@@ -7,6 +7,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils mail news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -28,7 +29,7 @@ USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
-KDE_BUILD_PLIST=yes
+DO_NOT_COMPILE+=kpilot
 
 OPTIONS=	KPILOT "Build KPilot, hotsync software for KDE" off \
 		GNOKII "KAdressbook import/export for Nokia phones" off
@@ -48,11 +49,7 @@ LIB_DEPENDS+=	gnokii:${PORTSDIR}/comms/gnokii
 .endif # defined ($(WITH_GNOKII))
 
 .if defined(WITH_KPILOT)
-LIB_DEPENDS+=	mal:${PORTSDIR}/palm/libmal \
-		pisock:${PORTSDIR}/palm/pilot-link
-PLIST_APPEND+=	plist.kpilot
-.elseif defined(WITHOUT_KPILOT)
-DO_NOT_COMPILE+=kpilot
+RUN_DEPENDS+=	kpilot:${PORTSDIR}/palm/kpilot
 .endif
 
 .if defined(DO_NOT_COMPILE)
@@ -72,5 +69,6 @@ pre-everything::
 pre-configure:
 	${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-lgnokii|-lgnokii -liconv -lintl|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '/^SUBDIRS/s/kpilot//g' ${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.post.mk>

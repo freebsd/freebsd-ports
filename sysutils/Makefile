@@ -196,6 +196,7 @@
     SUBDIR += kdirstat
     SUBDIR += kkbswitch
     SUBDIR += kkeyled
+    SUBDIR += klaptopdaemon
     SUBDIR += knutclient
     SUBDIR += krename
     SUBDIR += lavaps

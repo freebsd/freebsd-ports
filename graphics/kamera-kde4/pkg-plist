@@ -1,0 +1,19 @@
+lib/kde3/kcm_kamera.la
+lib/kde3/kcm_kamera.so
+lib/kde3/kio_kamera.la
+lib/kde3/kio_kamera.so
+share/applnk/Settings/Peripherals/kamera.desktop
+share/doc/HTML/en/kamera/common
+share/doc/HTML/en/kamera/index.cache.bz2
+share/doc/HTML/en/kamera/index.docbook
+share/icons/crystalsvg/16x16/actions/camera_test.png
+share/icons/crystalsvg/16x16/apps/camera.png
+share/icons/crystalsvg/16x16/devices/camera.png
+share/icons/crystalsvg/32x32/devices/camera.png
+share/icons/crystalsvg/32x32/filesystems/camera.png
+share/services/kamera.protocol
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/doc/HTML/en/kamera
+@dirrm share/applnk/Settings/Peripherals
+@dirrm share/applnk/Settings
+@dirrm share/applnk

@@ -1,0 +1,34 @@
+bin/kuickshow
+lib/kde3/kuickshow.la
+lib/kde3/kuickshow.so
+lib/libkdeinit_kuickshow.la
+lib/libkdeinit_kuickshow.so
+share/applications/kde/kuickshow.desktop
+share/apps/kuickshow/im_palette.pal
+share/apps/kuickshow/pics/about.png
+share/apps/kuickshow/pics/calibrate.png
+share/apps/kuickshow/pics/handcursor.png
+share/apps/kuickshow/pics/imageviewer-medium.png
+share/apps/kuickshow/pics/imageviewer-small.png
+share/apps/kuickshow/pics/ksslide.png
+share/apps/kuickshow/pics/kuickshow-day.jpg
+share/apps/kuickshow/pics/kuickshow-night.jpg
+share/apps/kuickshow/pics/logo.png
+share/doc/HTML/en/kuickshow/common
+share/doc/HTML/en/kuickshow/index.cache.bz2
+share/doc/HTML/en/kuickshow/index.docbook
+share/doc/HTML/en/kuickshow/screenshot.png
+share/icons/crystalsvg/16x16/apps/kuickshow.png
+share/icons/crystalsvg/32x32/apps/kuickshow.png
+share/icons/locolor/16x16/apps/kuickshow.png
+share/icons/locolor/32x32/apps/kuickshow.png
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/doc/HTML/en/kuickshow
+@dirrm share/apps/kuickshow/pics
+@dirrm share/apps/kuickshow

@@ -8,6 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -39,9 +40,10 @@ GNU_CONFIGURE=	yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
 
-CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}"
+CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" --disable-xinetest
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+DO_NOT_COMPILE+=mpeglib mpeglib_artsplug xine_artsplugin
 
 OPTIONS=	LAME "Enable support for mp3 encoding using LAME" off \
 		MPEGLIB "Use mpeglib for audio playback" on \
@@ -58,19 +60,14 @@ CONFIGURE_ARGS+=	--without-lame --disable-lametest
 .endif
 
 .if defined(WITH_XINE)
-PLIST_APPEND+=	plist.xine
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
-BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
-CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
-.elseif defined(WITHOUT_XINE)
-DO_NOT_COMPILE+=	xine_artsplugin
-CONFIGURE_ARGS+=	--disable-xinetest
+RUN_DEPENDS=	${LOCALBASE}/lib/libarts_xine.la:${PORTSDIR}/multimedia/xine_artsplugin
 .endif
 
 .if !defined(WITHOUT_MPEGLIB)
-PLIST_APPEND+=	plist.mpeglib
+RUN_DEPENDS+=		mpeglibartsplay:${PORTSDIR}/audio/mpeglib_artsplug
 .elseif defined(WITHOUT_MPEGLIB)
-PLIST_APPEND+=	plist.no-mpeglib
+# Use the KFile plugins. Those can't do streaming, but work better with
+# some buggy(?) sound drivers in -STABLE.
 .endif
 
 .if defined(DO_NOT_COMPILE)
@@ -78,21 +75,7 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
 pre-configure:
-.if defined(WITHOUT_MPEGLIB)
-	${REINPLACE_CMD} -e \
-	'/FreeBSD/,/;$$/s/kde_mpeglib_compiles=yes/kde_mpeglib_compiles=no/g' \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -e '/union semun/,/;$$/s/.*//g' \
-		${WRKSRC}/oggvorbis_artsplugin/oggPlayObject_impl.h
-.endif
-	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' \
-		-e 's/-lxine.*$$LIBS/-lxine $$LIBS ${PTHREAD_LIBS}/g' \
-			${WRKSRC}/configure
-
-post-configure:
-	${REINPLACE_CMD} -e '/^XINE_CFLAGS/s/-D_THREAD_SAFE//g' \
-			-e 's/-pthread/${PTHREAD_LIBS}/g' \
-		${WRKSRC}/xine_artsplugin/Makefile
+	${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

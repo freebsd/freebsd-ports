@@ -129,6 +129,7 @@
     SUBDIR += xdvshow
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
+    SUBDIR += xine_artsplugin
     SUBDIR += xmms
     SUBDIR += xmms-avi
     SUBDIR += xmms-status-plugin

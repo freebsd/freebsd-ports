@@ -7,6 +7,7 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -23,29 +24,24 @@ CONFLICTS=	kgpg-*
 USE_KDELIBS_VER=3
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
-KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-DO_NOT_COMPILE+=kmilo
+DO_NOT_COMPILE+=klaptopdaemon kmilo
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
-CONFLICTS=	kgpg-*
+CONFLICTS=	kgpg-[0-9]*
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-#klaptop needs APM, which is i386 only
-.if ${MACHINE_ARCH} != "i386"
-WITHOUT_KLAPTOP=yes
-.endif
+.include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_KLAPTOP)
-DO_NOT_COMPILE+=klaptopdaemon
-.else
-PLIST_APPEND+=	plist.klaptop
+#klaptop needs APM, which is i386 only
+.if ${ARCH} == "i386"
+RUN_DEPENDS+=	klaptop_check:${PORTSDIR}/sysutils/klaptopdaemon
 .endif
 
 post-configure:
@@ -53,4 +49,4 @@ post-configure:
 		${WRKSRC}/config.h
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

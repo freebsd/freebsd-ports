@@ -1,0 +1,3 @@
+Kamera is an IO slave and a KControl panel module which allows you to access
+folders and images within any digital camera supported by the upcoming gPhoto2
+libraries. 

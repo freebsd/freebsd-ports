@@ -1,0 +1,51 @@
+bin/klaptop_acpi_helper
+bin/klaptop_check
+lib/kde3/kcm_laptop.la
+lib/kde3/kcm_laptop.so
+lib/kde3/kded_klaptopdaemon.la
+lib/kde3/kded_klaptopdaemon.so
+lib/libkcmlaptop.la
+lib/libkcmlaptop.so
+lib/libkcmlaptop.so.0
+share/applications/kde/laptop.desktop
+share/applications/kde/pcmcia.desktop
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt2_laptop_nobattery.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt2_laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt2_laptop_power.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt3_laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt3_laptop_power.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt_laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/alt_laptop_power.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_charge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nobattery.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/power.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_charge.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nobattery.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_power.png
+share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/power.png
+share/icons/crystalsvg/128x128/apps/laptop_battery.png
+share/icons/crystalsvg/16x16/apps/klaptopdaemon.png
+share/icons/crystalsvg/16x16/apps/laptop_battery.png
+share/icons/crystalsvg/16x16/apps/laptop_pcmcia.png
+share/icons/crystalsvg/32x32/apps/laptop_battery.png
+share/icons/crystalsvg/32x32/apps/laptop_pcmcia.png
+share/icons/crystalsvg/48x48/apps/laptop_battery.png
+share/icons/crystalsvg/48x48/apps/laptop_pcmcia.png
+share/icons/crystalsvg/64x64/apps/laptop_battery.png
+share/services/kded/klaptopdaemon.desktop
+@dirrm share/icons/crystalsvg/64x64/apps
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/128x128/apps
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/32x32
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/22x22
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg/16x16
+@dirrm share/apps/klaptopdaemon/icons/crystalsvg
+@dirrm share/apps/klaptopdaemon/icons
+@dirrm share/apps/klaptopdaemon

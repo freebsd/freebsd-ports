@@ -17,13 +17,12 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Network-related programs and modules for KDE
 
-CONFLICTS=	kopete-*
-
 LIB_DEPENDS=	slp:${PORTSDIR}/net/openslp
+
+CONFLICTS=	kopete-[0-9]*
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
-KDE_BUILD_PLIST=yes
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -42,23 +41,5 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|g' \
 		${WRKSRC}/kopete/protocols/gadu/libgadu/libgadu-config.h.in
 .endif
-
-.if !defined(WITHOUT_KTALKD)
-UTMP?=	/var/run/utmp
-.if exists(${UTMP})
-PLIST_APPEND+=	plist.ktalkd
-.else
-DO_NOT_COMPILE+=	ktalkd
-pre-everything::
-	@${ECHO_MSG} "===> \"${UTMP}\" was not found."
-	@${ECHO_MSG} "===> The talk daemon (ktalkd) will not be built."
-.endif # exists(${UTMP})
-.else
-DO_NOT_COMPILE+=	ktalkd
-.endif # !defined(WITHOUT_KTALKD)
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
 
 .include <bsd.port.post.mk>

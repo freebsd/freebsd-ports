@@ -199,6 +199,7 @@
     SUBDIR += k3d
     SUBDIR += kalbum
     SUBDIR += kallery
+    SUBDIR += kamera
     SUBDIR += kbarcode
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
@@ -208,6 +209,8 @@
     SUBDIR += kix-kmod
     SUBDIR += kludge3d
     SUBDIR += kolourpaint
+    SUBDIR += kooka
+    SUBDIR += kuickshow
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak

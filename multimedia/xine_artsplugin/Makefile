@@ -1,0 +1,46 @@
+# New ports collection makefile for:	xine_artsplugin
+# Date created:				July 09 2004
+# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xine_artsplugin
+PORTVERSION=	${KDE_VERSION}
+CATEGORIES=	multimedia kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+PKGNAMEPREFIX=	kdemultimedia-
+DISTNAME=	kdemultimedia-${PORTVERSION}
+DIST_SUBDIR=	KDE
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Xine-based multimedia backend for KDE
+
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+
+CONFLICTS=	kdemultimedia-3.1.* kdemultimedia-3.2.[0-3]
+
+USE_KDELIBS_VER=3
+PREFIX=		${KDE_PREFIX}
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
+INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+pre-configure:
+	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' \
+		-e 's/-lxine.*$$LIBS/-lxine $$LIBS ${PTHREAD_LIBS}/g' \
+		-e 's|-lc_r|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	${ECHO_CMD} "xine_artsplugin" > ${WRKSRC}/inst-apps
+
+post-configure:
+	${REINPLACE_CMD} -e '/^XINE_CFLAGS/s/-D_THREAD_SAFE//g' \
+			-e 's/-pthread/${PTHREAD_LIBS}/g' \
+					${WRKSRC}/xine_artsplugin/Makefile
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.mk>
