@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icegradient
-PORTVERSION= 	200008051620
+PORTVERSION= 	200012290259
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/ \
 		${MASTER_SITE_LOCAL}
@@ -15,7 +15,7 @@ DISTNAME=	IceGradient-1.2.x-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-0.0.2
+WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-0.0.5
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
