@@ -29,7 +29,8 @@ CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
+.if defined(HAVE_GNOME) || defined(PACKAGE_BUILDING)
+.undef WITHOUT_GNOME
 USE_GNOME=	yes
 CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
 		--with-gnome-canvas-pixbuf
