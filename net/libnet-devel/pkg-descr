@@ -1,0 +1,23 @@
+Libnet  A C library for portable packet creation (development version)
+
+domains of sockets and protocols.
+
+A C library for portable packet creation 
+
+Included are also simple example test programs
+
+Libnet is a collection of routines to help with the construction
+and handling of network packets. It provides a portable framework
+for low-level network packet writing and handling.
+
+Libnet features portable packet creation interfaces at the IP layer
+and link layer, as well as a host of supplementary and complementary
+functionality.
+
+WWW: http://www.packetfactory.net/projects/libnet/
+
+*NOTE*
+Libnet 1.1.x API is not compatible with earlier Libnet 1.0.x.
+This port serves as a development tool to aid in porting applications
+to the new API.
+*NOTE*
