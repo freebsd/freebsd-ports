@@ -9,9 +9,24 @@
 %%IPPLANDIR%%/INTERNALS
 %%IPPLANDIR%%/IPplan.jpg
 %%IPPLANDIR%%/LICENSE
+%%IPPLANDIR%%/Net/DNS.php
+%%IPPLANDIR%%/Net/DNS/Header.php
+%%IPPLANDIR%%/Net/DNS/Packet.php
+%%IPPLANDIR%%/Net/DNS/Question.php
+%%IPPLANDIR%%/Net/DNS/RR.php
+%%IPPLANDIR%%/Net/DNS/RR/A.php
+%%IPPLANDIR%%/Net/DNS/RR/CNAME.php
+%%IPPLANDIR%%/Net/DNS/RR/MX.php
+%%IPPLANDIR%%/Net/DNS/RR/NS.php
+%%IPPLANDIR%%/Net/DNS/RR/PTR.php
+%%IPPLANDIR%%/Net/DNS/RR/SOA.php
+%%IPPLANDIR%%/Net/DNS/RR/TSIG.php
+%%IPPLANDIR%%/Net/DNS/Resolver.php
+%%IPPLANDIR%%/Net/LICENSE
 %%IPPLANDIR%%/README
 %%IPPLANDIR%%/README.html
 %%IPPLANDIR%%/README.sgml
+%%IPPLANDIR%%/README1st-WINDOWS.txt
 %%IPPLANDIR%%/TODO
 %%IPPLANDIR%%/TRANSLATIONS
 %%IPPLANDIR%%/UPGRADE
@@ -231,6 +246,7 @@
 %%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
 %%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
+%%IPPLANDIR%%/testdns.php
 %%IPPLANDIR%%/user/createarea.php
 %%IPPLANDIR%%/user/createrange.php
 %%IPPLANDIR%%/user/createsubnet.php
@@ -277,37 +293,40 @@
 %%IPPLANDIR%%/user/whois.php
 %%IPPLANDIR%%/user/whoisclass.php
 %%IPPLANDIR%%/xmllib.php
-@dirrm %%IPPLANDIR%%/admin
-@dirrm %%IPPLANDIR%%/adodb/contrib
-@dirrm %%IPPLANDIR%%/adodb/cute_icons_for_site
-@dirrm %%IPPLANDIR%%/adodb/datadict
-@dirrm %%IPPLANDIR%%/adodb/docs
-@dirrm %%IPPLANDIR%%/adodb/drivers
-@dirrm %%IPPLANDIR%%/adodb/lang
+@dirrm %%IPPLANDIR%%/user
+@dirrm %%IPPLANDIR%%/templates
+@dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/pt
+@dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/no
+@dirrm %%IPPLANDIR%%/locale/it/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/it
+@dirrm %%IPPLANDIR%%/locale/fr/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/fr
+@dirrm %%IPPLANDIR%%/locale/es/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/es
+@dirrm %%IPPLANDIR%%/locale/de/LC_MESSAGES
+@dirrm %%IPPLANDIR%%/locale/de
+@dirrm %%IPPLANDIR%%/locale
+@dirrm %%IPPLANDIR%%/layout
+@dirrm %%IPPLANDIR%%/contrib
+@dirrm %%IPPLANDIR%%/adodb/xsl
+@dirrm %%IPPLANDIR%%/adodb/tests
+@dirrm %%IPPLANDIR%%/adodb/session/old
+@dirrm %%IPPLANDIR%%/adodb/session
+@dirrm %%IPPLANDIR%%/adodb/perf
 @dirrm %%IPPLANDIR%%/adodb/pear/Auth/Container
 @dirrm %%IPPLANDIR%%/adodb/pear/Auth
 @dirrm %%IPPLANDIR%%/adodb/pear
-@dirrm %%IPPLANDIR%%/adodb/perf
-@dirrm %%IPPLANDIR%%/adodb/session/old
-@dirrm %%IPPLANDIR%%/adodb/session
-@dirrm %%IPPLANDIR%%/adodb/tests
-@dirrm %%IPPLANDIR%%/adodb/xsl
+@dirrm %%IPPLANDIR%%/adodb/lang
+@dirrm %%IPPLANDIR%%/adodb/drivers
+@dirrm %%IPPLANDIR%%/adodb/docs
+@dirrm %%IPPLANDIR%%/adodb/datadict
+@dirrm %%IPPLANDIR%%/adodb/cute_icons_for_site
+@dirrm %%IPPLANDIR%%/adodb/contrib
 @dirrm %%IPPLANDIR%%/adodb
-@dirrm %%IPPLANDIR%%/contrib
-@dirrm %%IPPLANDIR%%/layout
-@dirrm %%IPPLANDIR%%/locale/de/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/de
-@dirrm %%IPPLANDIR%%/locale/es/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/es
-@dirrm %%IPPLANDIR%%/locale/fr/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/fr
-@dirrm %%IPPLANDIR%%/locale/it/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/it
-@dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/no
-@dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/pt
-@dirrm %%IPPLANDIR%%/locale
-@dirrm %%IPPLANDIR%%/templates
-@dirrm %%IPPLANDIR%%/user
+@dirrm %%IPPLANDIR%%/admin
+@dirrm %%IPPLANDIR%%/Net/DNS/RR
+@dirrm %%IPPLANDIR%%/Net/DNS
+@dirrm %%IPPLANDIR%%/Net
 @dirrm %%IPPLANDIR%%
