@@ -24,6 +24,8 @@ CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
+MAN1=			dvipdfm.1
+
 post-install:
 	strip ${PREFIX}/bin/dvipdfm
 	strip ${PREFIX}/bin/ebb
