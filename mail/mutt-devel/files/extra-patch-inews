@@ -1,11 +1,11 @@
---- configure.in.orig2	Mon Oct 29 10:12:28 2001
-+++ configure.in	Mon Oct 29 10:16:16 2001
-@@ -456,7 +456,7 @@
+--- configure.in.orig2	Tue Jan  1 23:00:00 2002
++++ configure.in	Tue Jan  1 23:01:04 2002
+@@ -457,7 +457,7 @@
  AC_ARG_ENABLE(nntp, [  --enable-nntp              Enable NNTP support],
  [	if test x$enableval = xyes ; then
  		AC_DEFINE(USE_NNTP)
 -		AC_PATH_PROG(INEWS, inews, no, $PATH:/usr/sbin:/usr/lib)
-+		AC_PATH_PROG(INEWS, nn-inews, no, $PATH:/usr/sbin:/usr/lib)
++		AC_PATH_PROG(INEWS, inews, no, $PATH:/usr/local/news/bin:/usr/sbin:/usr/lib)
  		AC_DEFINE_UNQUOTED(INEWS, "$ac_cv_path_INEWS -hS")
  		MUTT_LIB_OBJECTS="$MUTT_LIB_OBJECTS nntp.o newsrc.o"
  		need_socket="yes"
