@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Mail-Procmailrc
-PORTVERSION=	1.00
+PORTVERSION=	1.03
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://scott.wiersdorf.org/perl/
@@ -18,4 +18,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	YES
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BROKEN=		This port requires perl 5.6.0
+.endif
+
+.include <bsd.port.post.mk>
