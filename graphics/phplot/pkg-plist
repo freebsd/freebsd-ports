@@ -1,0 +1,44 @@
+lib/php/phplot/phplot.php
+lib/php/phplot/phplot_data.php
+lib/php/phplot/rgb.inc.php
+lib/php/phplot/benjamingothic.ttf
+@dirrm lib/php/phplot 
+@unexec rmdir lib/php 2>/dev/null || true
+share/phplot/examples/test_setup.php
+share/phplot/examples/benjamingothic.ttf
+share/phplot/examples/create_chart.php
+share/phplot/examples/data.php
+share/phplot/examples/data_date.php
+share/phplot/examples/data_date2.php
+share/phplot/examples/data_sample1.php
+share/phplot/examples/data_sample2.php
+share/phplot/examples/data_sample3.php
+share/phplot/examples/data_sample4.php
+share/phplot/examples/example1.php
+share/phplot/examples/example10.php
+share/phplot/examples/example11.php
+share/phplot/examples/example12.php
+share/phplot/examples/example13.php
+share/phplot/examples/example2.php
+share/phplot/examples/example3.php
+share/phplot/examples/example4.php
+share/phplot/examples/example5.php
+share/phplot/examples/example6.php
+share/phplot/examples/example7.php
+share/phplot/examples/example8.php
+share/phplot/examples/example9.php
+share/phplot/examples/format_chart.php
+share/phplot/examples/inline_image.php
+share/phplot/examples/rgb.inc.php
+share/phplot/examples/test1.php
+share/phplot/examples/0cars.jpg
+share/phplot/doc/internal_functions.html
+share/phplot/doc/function_reference.html
+share/phplot/doc/index.html
+share/phplot/doc/examples.html
+share/phplot/doc/quick_start.php
+share/phplot/doc/user_functions.html
+share/phplot/doc/user_internal_functions.html
+@dirrm share/phplot/examples
+@dirrm share/phplot/doc
+@dirrm share/phplot
