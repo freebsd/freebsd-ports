@@ -19,11 +19,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-mysql=${PREFIX}
 
 pre-configure:
-	@${PERL} -pi -e "s.gtk-config.${GTK_CONFIG}.g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s.gtk-config.${GTK_CONFIG}.g" ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dbmetrix ${PREFIX}/bin
