@@ -1,12 +1,18 @@
---- Makefile.in.orig	Thu Feb  8 06:03:15 2001
-+++ Makefile.in	Fri Feb  9 17:10:51 2001
 
-@@ -84,6 +84,6 @@
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Jul 24 01:47:05 2001
++++ Makefile.in	Mon Jul 30 16:00:19 2001
+@@ -98,10 +98,10 @@
+ XSLT_LIBDIR = @XSLT_LIBDIR@
+ XSLT_LIBS = @XSLT_LIBS@
  
--SUBDIRS =  	libxslt 	tests 	doc
-+SUBDIRS =  	libxslt
+-SUBDIRS =  	libxslt 	libexslt 	xsltproc 	tests 	doc
++SUBDIRS =  	libxslt 	libexslt 	xsltproc 	doc
  
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xsltConf.sh
+ 
+ bin_SCRIPTS = xslt-config

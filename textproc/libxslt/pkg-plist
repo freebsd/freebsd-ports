@@ -1,6 +1,27 @@
 bin/xslt-config
 bin/xsltproc
+doc/libxslt/html/book1.html
+doc/libxslt/html/libxslt-attributes.html
+doc/libxslt/html/libxslt-functions.html
+doc/libxslt/html/libxslt-imports.html
+doc/libxslt/html/libxslt-keys.html
+doc/libxslt/html/libxslt-lib.html
+doc/libxslt/html/libxslt-namespaces.html
+doc/libxslt/html/libxslt-notes.html
+doc/libxslt/html/libxslt-numbersinternals.html
+doc/libxslt/html/libxslt-pattern.html
+doc/libxslt/html/libxslt-templates.html
+doc/libxslt/html/libxslt-transform.html
+doc/libxslt/html/libxslt-variables.html
+doc/libxslt/html/libxslt-xslt.html
+doc/libxslt/html/libxslt-xsltinternals.html
+doc/libxslt/html/libxslt-xsltutils.html
+doc/libxslt/html/tutorial/libxslt_tutorial.c
+doc/libxslt/html/tutorial/libxslttutorial.html
+doc/libxslt/html/tutorial/libxslttutorial.xml
 etc/xsltConf.sh
+include/libexslt/exslt.h
+include/libexslt/exsltconfig.h
 include/libxslt/attributes.h
 include/libxslt/documents.h
 include/libxslt/extensions.h
@@ -18,7 +39,14 @@ include/libxslt/variables.h
 include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
 include/libxslt/xsltutils.h
+lib/libexslt.a
+lib/libexslt.so
+lib/libexslt.so.2
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
 @dirrm include/libxslt
+@dirrm include/libexslt
+@dirrm doc/libxslt/html/tutorial
+@dirrm doc/libxslt/html
+@dirrm doc/libxslt
