@@ -9,9 +9,12 @@
 DISTNAME=       plplot4p99j
 PKGNAME=	plplot-4.99j
 CATEGORIES=	math
-MASTER_SITES=	ftp://dino.ph.utexas.edu/plplot/distrib/alpha/
+MASTER_SITES=	ftp://dino.ph.utexas.edu/plplot/distrib/alpha/ \
+		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/plot/plplot/distrib/alpha/ \
+		ftp://ftp.che.utexas.edu/pub/graphics/ \
+		ftp://ftp.uniovi.es/pub6/graphics/plotting/
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
