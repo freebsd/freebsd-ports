@@ -17,6 +17,7 @@ COMMENT=	Header files and documentation for the X render extension
 
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
