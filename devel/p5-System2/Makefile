@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	System2
-PORTVERSION=	0.82
+PORTVERSION=	0.83
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	System2
@@ -18,5 +18,8 @@ COMMENT=	System2 - like system(), but with STDERR available as well
 PERL_CONFIGURE=	yes
 
 MAN3=		System2.3
+
+pre-configure:
+	${RM} -f ${WRKSRC}/io_test.pl
 
 .include <bsd.port.mk>
