@@ -17,7 +17,10 @@ MAINTAINER=	mkm@ieee.org
 USE_JAVA=	1.3+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_CDROM=	"License does not allow"
+
+RESTRICTED=	License does not allow redistribution of any kind
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
 
 JAR_DIR=	${PREFIX}/share/java/jar/limewire
 PLIST_SUB=	JAR_DIR="${JAR_DIR:S/${PREFIX}//}"
