@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Feb 13 23:46:51 2001
-+++ Makefile	Tue Feb 13 23:47:50 2001
+--- Makefile.orig	Tue Feb 13 22:02:11 2001
++++ Makefile	Wed Aug 14 05:20:36 2002
 @@ -1,14 +1,14 @@
  SHAREDOPT = -shared
 -LIBDIR = /usr/lib
@@ -21,7 +21,15 @@
  
  shared: libecgi.so
  	cp libecgi.so /usr/lib
-@@ -26,25 +26,25 @@
+@@ -19,32 +19,32 @@
+ 	printf "\n\n***congratulations - compilation worked***\n***       run 'make install' now       ***\n\n"
+ 
+ libecgi.so: obj/ecgi.o obj/ecgitk.o
+-	gcc $(SHAREDOPT) obj/ecgi.o obj/memfile.o obj/ecgitk.o -o libecgi.so
++	$(CC) $(SHAREDOPT) obj/ecgi.o obj/memfile.o obj/ecgitk.o -o libecgi.so
+ 
+ install:
+ 	cp libecgi.a $(LIBDIR)
  	cp ecgi.h $(INCDIR)
  	cp include/memfile.h $(INCDIR)
  	cp ecgitk.h $(INCDIR)

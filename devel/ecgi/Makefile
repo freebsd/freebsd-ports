@@ -5,16 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=       ecgi
+PORTNAME=	ecgi
 PORTVERSION=	0.6.2
-CATEGORIES=     devel
-MASTER_SITES=   http://www.global-owl.com/ecgi/download/
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/libe/libecgi/
+DISTNAME=	lib${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_REINPLACE=	yes
-
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
@@ -23,16 +26,16 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/src/memfile.c
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/libecgi.a ${PREFIX}/lib
-	@${INSTALL_PROGRAM} ${WRKSRC}/libecgi.so ${PREFIX}/lib
-	@${INSTALL_PROGRAM} ${WRKSRC}/html2h/html2h ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libecgi.a ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libecgi.so ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/html2h/html2h ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/include/ecgi
 .for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/ecgi
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/ecgi
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ecgi
-	@${INSTALL_DATA} ${WRKSRC}/doc/ecgitut.txt ${PREFIX}/share/doc/ecgi
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ecgitut.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
