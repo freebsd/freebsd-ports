@@ -3,11 +3,11 @@
 # Date created:         Sun Feb  5 16:12:09  1995
 # Whom:			hsu
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/15 03:46:02 asami Exp $
 #
 
-DISTNAME=       Wine-950302
-PKGNAME=	Wine-95.03.02
+DISTNAME=       Wine-950430
+PKGNAME=	Wine-95.04.30
 CATEGORIES+=	utilities x11 emulation
 MASTER_SITES=   ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/ \
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
@@ -15,7 +15,11 @@ MASTER_SITES=   ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/ \
 		ftp://ftp.funet.fi/pub/OS/Linux/ALPHA/Wine/ \
 		ftp://ftp.wonderland.org/Wine/
 
-WRKSRC=		${WRKDIR}/wine950302
+MAINTAINER=	ports@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+WRKSRC=		${WRKDIR}/wine950430
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT= Configure
