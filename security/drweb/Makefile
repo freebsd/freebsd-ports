@@ -18,6 +18,8 @@ COMMENT=	DrWeb antivirus suite
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
+BROKEN=		Unfetchable
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
