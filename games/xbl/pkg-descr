@@ -1,22 +1,8 @@
-                                 XBL 1.0                                  
+X11 block dropping game in 3 dimensions.
 
-XBL is a 3D block-dropping game.
-XBL is an interactive game under X11 (color or black&white) and UN*X.
-XBL is a good training tool to understand 3D rotations and 3D vision.
-    You need reflex and memory (human).
-XBL implements 6 different ways to perform animation under X11!
- 
-- The game world is a 3D discrete space.
-- The player has a top view of this discrete space.
-- The game throws blocks made of cubes (one to five cubes).
-- A block falls inside the discrete space, and stops when hitting the 
-  floor or another block.
-- If a discrete space level is full, it is destroyed.
-- Another block appears (only one moving block at a time).
-- Player can move or rotate blocks (perfect real time if you have a fast host).
-The goal is to play as long as possible.
+The grand father of this game is Tetris, its father is Blockout on
+PC/DOS.  The player must place 3D pieces by translations and rotations
+in order to fill the game floor.  The game is realtime and the speed
+increases with the player skill.
 
 WWW: http://www710.univ-lyon1.fr/ftp/xbl/xbl.html
-ftp://ftp710.univ-lyon1.fr/pub/xbl
-
-Thierry.EXCOFFIER@ligia.univ-lyon1.fr
