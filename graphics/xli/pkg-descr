@@ -1,4 +1,4 @@
-xli, xsetbg and xsetbg (the last two are symlinks to the first one)
+xli, xlito and xsetbg (the last two are symlinks to the first one)
 display images on X11.
 
 xlito works with xloadimage to "mark" images.  Take a look at the
@@ -6,6 +6,8 @@ xlito man page for details.  It also installs app-defaults for
 xloadimage if it's not there but I didn't include it in the packing
 list so it won't clobber an existing one if xloadimage is already
 installed.
+
+WWW: http://pantransit.reptiles.org/prog/index.html#xli
 
 - Satoshi
 asami@cs.berkeley.edu

@@ -1,13 +1,13 @@
 --- Imakefile--	Wed Feb  9 09:23:32 2000
-+++ Imakefile	Thu Feb 10 18:38:21 2000
++++ Imakefile	Thu Apr 13 00:59:16 2000
 @@ -12,8 +12,8 @@
        CCOPTIONS = -Aa -D_HPUX_SOURCE
  #endif
  
 -JPEG_INCLUDES = 
 -JPEG_LDFLAGS = 
-+JPEG_INCLUDES = -I/usr/local/include
-+JPEG_LDFLAGS = -L/usr/local/lib
++JPEG_INCLUDES = -I%%LOCALBASE%%/include
++JPEG_LDFLAGS = -L%%LOCALBASE%%/lib
  
  PNG_INCLUDES = 
  PNG_LDFLAGS = 

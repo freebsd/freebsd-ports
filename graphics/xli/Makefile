@@ -20,4 +20,7 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 USE_IMAKE=	yes
 MAN1=		xli.1 xlito.1
 
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Imakefile
+
 .include <bsd.port.mk>
