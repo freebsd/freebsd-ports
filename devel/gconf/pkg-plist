@@ -23,7 +23,7 @@ lib/libgconf-gtk.so.1
 lib/libgconf.a
 lib/libgconf.so
 lib/libgconf.so.8
-share/gnome/aclocal/gconf.m4
+share/aclocal/gconf.m4
 share/gnome/oaf/gconfd.oafinfo
 share/locale/cs/LC_MESSAGES/GConf.mo
 share/locale/da/LC_MESSAGES/GConf.mo
