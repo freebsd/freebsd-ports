@@ -43,6 +43,7 @@ etc/info-dir
 etc/inputrc
 etc/ld.so.cache
 etc/ld.so.conf
+etc/mtab
 etc/nsswitch.conf
 etc/pam.d/su
 etc/profile
