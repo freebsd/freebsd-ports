@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.6
+PORTVERSION=	5.1.7
 CATEGORIES=	math print
 #
 # You never know when and why it is moved to ../src/old/   :-)
