@@ -3,15 +3,16 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.3 1996/06/20 12:39:36 adam Exp $
+# $Id: Makefile,v 1.4 1996/09/19 09:58:47 gpalmer Exp $
 #
 
-DISTNAME=       fwtk-1.3
-CATEGORIES+=    security net
+DISTNAME=	fwtk-1.3
+CATEGORIES=	security net
+DISTFILES=	fwtk-v1.3.tar.Z fwtk-doc-only.tar.Z
 
-MAINTAINER=     gpalmer@FreeBSD.ORG
+MAINTAINER=	gpalmer@FreeBSD.ORG
 
-WRKSRC=         ${WRKDIR}/fwtk
+WRKSRC=		${WRKDIR}/fwtk
 HAS_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	fixmake
 
@@ -21,7 +22,7 @@ INSTMAN=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
 
 MAN3=		auth.3
 MAN5=		netperm-table.5
-MAN8= 		authmgr.8 authsrv.8 ftp-gw.8 http-gw.8 login-sh.8 netacl.8 \
+MAN8=		authmgr.8 authsrv.8 ftp-gw.8 http-gw.8 login-sh.8 netacl.8 \
 		plug-gw.8 rlogin-gw.8 smap.8 smapd.8 tn-gw.8 x-gw.8
 DOCS=		sample-report.txt manpages.ps admin_guide.ps user_guide.ps \
 		overview.ps presentation.ps
