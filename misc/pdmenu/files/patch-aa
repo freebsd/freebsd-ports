@@ -1,11 +1,58 @@
---- configure.in.orig	Sat Jan  9 14:08:32 1999
-+++ configure.in	Sat Jan  9 14:10:14 1999
-@@ -46,7 +46,7 @@
- dnl The function we check for in libslang is important, because
- dnl we need to make sure we have the right version of slang.
- AC_CHECK_LIB(slang, SLsig_block_signals,, 
--	AC_MSG_ERROR(can't find required slang library or library is obsolete. Try setting the SLANG_LIB_LOC environment variable to point to the directory containing the slang library.))
-+	AC_MSG_ERROR(can't find required slang library or library is obsolete. Try setting the SLANG_LIB_LOC environment variable to point to the directory containing the slang library.),-ltermcap)
+--- configure.in.orig	Thu Jan 14 17:49:38 1999
++++ configure.in	Thu Jan 14 17:50:06 1999
+@@ -36,6 +36,27 @@
+ rmdir ./test/test2 2>/dev/null
+ rmdir ./test 2>/dev/null
  
- dnl Checks for header files.
- AC_HEADER_STDC
++dnl If we cannot find terminfo, link with termcap.
++Terminfo_Dirs="/usr/lib/terminfo \
++	/usr/share/lib/terminfo \
++	/usr/local/lib/terminfo"
++TERMCAP=yes
++AC_MSG_CHECKING(for terminfo)
++for terminfo_dir in $Terminfo_Dirs
++do
++	if test -d $terminfo_dir; then
++		AC_MSG_RESULT(found)
++		TERMCAP=""
++		break
++	fi
++done
++if test "$TERMCAP"; then
++	AC_MSG_RESULT(not found)
++	AC_CHECK_LIB(termcap,tgetent)
++	# Note that if this fails, we continue and make probably dies with
++	# an error. Unless terminfo is hiding somewhere else..
++fi
++
+ dnl Let the user specify an alternate location for the libs.
+ dnl I have to add this to CFLAGS, instead of to LIBS, to placate 
+ dnl some compiler that wanted -L before -l .
+@@ -96,27 +117,6 @@
+ 	fi
+ else
+ 	AC_MSG_WARN(pdmenu will be built without GPM mouse support.)
+-fi
+-
+-dnl If we cannot find terminfo, link with termcap.
+-Terminfo_Dirs="/usr/lib/terminfo \
+-	/usr/share/lib/terminfo \
+-	/usr/local/lib/terminfo"
+-TERMCAP=yes
+-AC_MSG_CHECKING(for terminfo)
+-for terminfo_dir in $Terminfo_Dirs
+-do
+-	if test -d $terminfo_dir; then
+-		AC_MSG_RESULT(found)
+-		TERMCAP=""
+-		break
+-	fi
+-done
+-if test "$TERMCAP"; then
+-	AC_MSG_RESULT(not found)
+-	AC_CHECK_LIB(termcap,tgetent)
+-	# Note that if this fails, we continue and make probably dies with
+-	# an error. Unless terminfo is hiding somewhere else..
+ fi
+ 
+ AC_CHECK_PROG(DATE_PROG,date,yes,no)
