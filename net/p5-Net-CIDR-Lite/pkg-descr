@@ -5,3 +5,5 @@ ranges. Works for IPv4 and IPv6 addresses.
 
 - Michael Haro
 mharo@FreeBSD.org
+
+WWW: http://search.cpan.org/dist/Net-CIDR-Lite/
