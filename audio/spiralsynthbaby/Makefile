@@ -13,6 +13,8 @@ DISTNAME=	SpiralSynthBaby-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Synthesizer plugin for SpiralLoops
+DEPRECATED=	"broken\; mastersite says to use SpiralSynth Modular instead"
+EXPIRATION_DATE=	"March 09, 2004"
 
 BROKEN=		"needs fltk 1.0.10"
 
