@@ -14,9 +14,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-.if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
-USE_OPENSSL=	yes
-.endif
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl
@@ -34,14 +31,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .include <bsd.port.pre.mk>
 
 .if defined(SUCK_WITH_SSL) || defined(WITH_SSL)
-USE_OPENSSL=	yes
-.if ${OSVERSION} < 430000 || exists(${LOCALBASE}/lib/libcrypto.so.3)
-OPENSSLBASE=	/usr/local
-OPENSSLDIR=	${OPENSSLBASE}/openssl
-LIB_DEPENDS+=   crypto.3:${PORTSDIR}/security/openssl
-OPENSSLLIB=	${OPENSSLBASE}/lib
-OPENSSLINC=	${OPENSSLBASE}/include
-.endif
+.include <${PORTSDIR}/security/openssl/Makefile.ssl>
 MAKE_ENV+=	SSL_LIB="-lssl -lcrypto"
 MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
 MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"
