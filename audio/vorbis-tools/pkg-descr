@@ -10,6 +10,3 @@ This package contains utilities to encode and decode vorbis streams, and to
 add comments to them.
 
 WWW: http://www.vorbis.com
-
-- Theo van Klaveren
-t.vanklaveren@student.utwente.nl
