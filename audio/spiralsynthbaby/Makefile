@@ -14,6 +14,8 @@ DISTNAME=	SpiralSynthBaby-${PORTVERSION}
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Synthesizer plugin for SpiralLoops
 
+BROKEN=		"needs fltk 1.0.10"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes

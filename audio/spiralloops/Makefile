@@ -14,6 +14,8 @@ DISTNAME=	SpiralLoops-${PORTVERSION}
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Loop-based sampler
 
+BROKEN=		"needs fltk 1.0.10"
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 DOCDIR=		share/doc/${PORTNAME}
