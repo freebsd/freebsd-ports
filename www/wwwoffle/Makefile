@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wwwoffle
-PORTVERSION=	2.6d
+PORTVERSION=	2.7
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/httpd/ \
 		${MASTER_SITE_SUNSITE}
@@ -20,38 +20,34 @@ USE_GMAKE=	yes
 
 # $SPOOL seems like a common name which could be used for other things, so
 # use $WWWOFFLE_SPOOL as the overriding setting.
-WWWOFFLE_SPOOL?=	/var/spool
-SPOOL=		${WWWOFFLE_SPOOL}
+WWWOFFLE_SPOOL?=	/var/spool/wwwoffle
 
-PLIST_SUB+=	SPOOL=${SPOOL}
+PLIST_SUB+=	WWWOFFLE_SPOOL=${WWWOFFLE_SPOOL}
 
-MAKE_ENV+=	SPOOL="${SPOOL}" \
-		BINOWN="${BINOWN}" \
-		BINGRP="${BINGRP}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_MAN="${INSTALL_MAN}"
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS=-lmd
+CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
+		--with-spooldir=${WWWOFFLE_SPOOL}
 
 MAN1=		wwwoffle.1
 MAN5=		wwwoffle.conf.5
 MAN8=		wwwoffled.8
 
-.if ${SPOOL} != "/var/spool"
+.if ${WWWOFFLE_SPOOL} != "/var/spool/wwwoffle"
 # If using a non-standard spool, change all the documentation (and anything
 # else) to reflect that.
 PKGMESSAGE=${WRKDIR}/MESSAGE
 
-do-configure:
-	@find ${WRKSRC} | xargs ${CHMOD} u+w
-	@find ${WRKSRC} -type f | \
-	  xargs perl -pi -e 's@/var/spool/wwwoffle@${SPOOL}/wwwoffle@g'
-	@${SED} 's@/var/spool/wwwoffle@${SPOOL}/wwwoffle@g' \
+post-configure:
+	@${SED} 's@/var/spool/wwwoffle@${WWWOFFLE_SPOOL}/wwwoffle@g' \
 	  ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+
 .endif
 
 post-install:
-	@${MKDIR} ${SPOOL}/wwwoffle
-	@${INSTALL_SCRIPT} ${WRKSRC}/upgrade-config.pl ${SPOOL}/wwwoffle
+	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.5-2.6.pl ${WWWOFFLE_SPOOL}
+	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.x-2.5.pl ${WWWOFFLE_SPOOL}
+	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
 	@${SED} 's@%PREFIX%@${LOCALBASE}@' ${FILESDIR}/wwwoffled.sh > ${PREFIX}/etc/rc.d/wwwoffled.sh
 	@${CHMOD} +x ${PREFIX}/etc/rc.d/wwwoffled.sh
 	@${CAT} ${PKGMESSAGE}
