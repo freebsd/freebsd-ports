@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dylan
-PORTVERSION=	2.3.10
+PORTVERSION=	2.3.11
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.gwydiondylan.org/pub/gd/src/                 \
 		ftp://ftp.gwydiondylan.org/pub/gd/FreeBSD/             \
@@ -27,16 +27,22 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	housel@acm.org
 COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 
-BROKEN=		Does not compile
-
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--srcdir=$(WRKSRC) --enable-debug --with-gc-prefix=$(PREFIX)
+CONFIGURE_ARGS=	--srcdir=$(WRKSRC) --with-gc-prefix=$(PREFIX)
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
 
-PLIST_SUB=	DYLANVER="${PORTVERSION}" DYLANARCH="x86-freebsd-elf-gcc"
+GCCVER!=	gcc -dumpversion
+PLIST_SUB=	DYLANVER="${PORTVERSION}"
+.if ${GCCVER:M3.3*}!=""
+PLIST_SUB+=	DYLANARCH="x86-freebsd-elf-gcc33"
+.elif ${GCCVER:M3.2*}!=""
+PLIST_SUB+=	DYLANARCH="x86-freebsd-elf-gcc32"
+.else
+PLIST_SUB+=	DYLANARCH="x86-freebsd-elf-gcc"
+.endif
 
 ONLY_FOR_ARCHS=	i386
 
@@ -59,6 +65,7 @@ USE_REINPLACE=	yes
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
 PLIST_SUB+=	GTK_ONLY=""
+CONFIGURE_ARGS+=--enable-duim=gtk
 .else
 PLIST_SUB+=	GTK_ONLY="@comment "
 CONFIGURE_ARGS+=--without-gtk
@@ -71,8 +78,7 @@ post-extract:
 pre-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|' \
 		${WRKSRC}/platform/gtk+/gtk+/gtk.lid
-
-patch-libtool:
-	@${DO_NADA}
+	${REINPLACE_CMD} -e 's|libtool$$|${LIBTOOL_LIBEXECDIR}/libtool|' \
+		${WRKSRC}/d2c/compiler/platforms.descr
 
 .include <bsd.port.post.mk>
