@@ -1,0 +1,38 @@
+Wanderlust is a mail/news agent on Emacs/XEmacs .
+
+The features of Wanderlust are as follows:
+
+ * Implementation in elisp only.
+ * Support of IMAP4rev1, NNTP, POP(POP3/APOP) and MH format.
+ * Integrated access to messages based on Folder Specifications like Mew.
+ * Key bindings and mark processing like Mew.
+ * Management of threads and unread messages.
+ * Folder mode that displays all folder you read.
+ * Message cache, Disconnected Operation.
+ * MH-like FCC (FCC: %Backup is possible).
+ * Support of MIME (by SEMI or tm).
+ * Draft editing of mail and news as a same interface.
+ * Icon based interface for the list of Folder (XEmacs).
+ * Non-fetched operations for a big message part of MIME (IMAP4).
+ * Server side search (IMAP4), also Japanese support.
+ * Virtual Folder.
+ * Compression Folder.
+ * Automatic expiration of old messages.
+
+Before using Wanderlust, you must set following elisp
+to your own .emacs file.
+
+(require 'wanderlust-startup)
+(load "mime-setup")
+(autoload 'wl "wl" "Wanderlust" t)
+(autoload 'wl-draft "wl" "Write draft with Wanderlust." t)
+
+And sample configuration files are installed into
+${PREFIX}/share/wanderlust. Please copy to your home
+directory and edit them.
+
+The homepage of Wanderlust is http://www.gohome.org/wl/ 
+(in Japanese).
+
+--
+MANTANI Nobutaka <nobutaka@nobutaka.com>
