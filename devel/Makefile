@@ -569,7 +569,6 @@
     SUBDIR += p5-DateTime-Format-Pg
     SUBDIR += p5-DateTime-Format-Roman
     SUBDIR += p5-DateTime-Format-Strptime
-    SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-Locale
     SUBDIR += p5-DateTime-Precise
     SUBDIR += p5-DateTime-Set
