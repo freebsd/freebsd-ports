@@ -28,14 +28,15 @@ share/examples/ifmail/cnews/sys
 share/examples/ifmail/config
 share/examples/ifmail/contrib/README
 share/examples/ifmail/contrib/a2dbm
-share/examples/ifmail/contrib/areafix-0.5.04/HISTORY
-share/examples/ifmail/contrib/areafix-0.5.04/README
-share/examples/ifmail/contrib/areafix-0.5.04/areafix.pl
-share/examples/ifmail/contrib/areafix-0.5.04/areaqueue.c
-share/examples/ifmail/contrib/areafix-0.5.04/config
-share/examples/ifmail/contrib/areafix-0.5.04/help
-share/examples/ifmail/contrib/areafix-0.5.04/passwords
-share/examples/ifmail/contrib/areafix-0.5.04/restricted
+share/examples/ifmail/contrib/areafix-0.5.07/HISTORY
+share/examples/ifmail/contrib/areafix-0.5.07/README
+share/examples/ifmail/contrib/areafix-0.5.07/areafix.pl
+share/examples/ifmail/contrib/areafix-0.5.07/areaqueue.c
+share/examples/ifmail/contrib/areafix-0.5.07/config
+share/examples/ifmail/contrib/areafix-0.5.07/help
+share/examples/ifmail/contrib/areafix-0.5.07/passwords
+share/examples/ifmail/contrib/areafix-0.5.07/restricted
+share/examples/ifmail/contrib/areafix-0.5.07/uplinks
 share/examples/ifmail/contrib/cnews-msgids
 share/examples/ifmail/contrib/edalias
 share/examples/ifmail/contrib/fdpass/NOTICE
@@ -43,6 +44,7 @@ share/examples/ifmail/contrib/fdpass/fdpass.c
 share/examples/ifmail/contrib/fdpass/session.h
 share/examples/ifmail/contrib/fido.daily
 share/examples/ifmail/contrib/ifinfo
+share/examples/ifmail/contrib/ifinfo.pl
 share/examples/ifmail/contrib/ifman
 share/examples/ifmail/contrib/ifpoll
 share/examples/ifmail/contrib/ifreq
@@ -88,10 +90,37 @@ share/examples/ifmail/contrib/tic/process_tics.pl
 share/examples/ifmail/contrib/tic/purge_history.pl
 share/examples/ifmail/contrib/tic/readtick.pli
 share/examples/ifmail/contrib/tic/sequencer.pli
+share/examples/ifmail/contrib/u-tic/MAKE.CONFIG
+share/examples/ifmail/contrib/u-tic/Makefile
+share/examples/ifmail/contrib/u-tic/README
+share/examples/ifmail/contrib/u-tic/areas
+share/examples/ifmail/contrib/u-tic/config
+share/examples/ifmail/contrib/u-tic/crc.c
+share/examples/ifmail/contrib/u-tic/ctlfiles.pl
+share/examples/ifmail/contrib/u-tic/feeds
+share/examples/ifmail/contrib/u-tic/felist
+share/examples/ifmail/contrib/u-tic/ftn.pl
+share/examples/ifmail/contrib/u-tic/hacks.pl
+share/examples/ifmail/contrib/u-tic/help
+share/examples/ifmail/contrib/u-tic/make_machdep.pl
+share/examples/ifmail/contrib/u-tic/makeflock.c
+share/examples/ifmail/contrib/u-tic/misc.pl
+share/examples/ifmail/contrib/u-tic/outaltkoi8
+share/examples/ifmail/contrib/u-tic/passwd
+share/examples/ifmail/contrib/u-tic/queuemail.c
+share/examples/ifmail/contrib/u-tic/restricted
+share/examples/ifmail/contrib/u-tic/semaphore.pl
+share/examples/ifmail/contrib/u-tic/u-attach.pl
+share/examples/ifmail/contrib/u-tic/u-fix.pl
+share/examples/ifmail/contrib/u-tic/u-tic.pl
+share/examples/ifmail/contrib/u-tic/xfutil.pl
 share/examples/ifmail/getnodelist
 share/examples/ifmail/ifmail.gif
 share/examples/ifmail/inn/newsfeeds
 share/examples/ifmail/inn/send-ifmail
+share/examples/ifmail/inouttabs/cp895__cp437
+share/examples/ifmail/inouttabs/cp895__iso-8859-2
+share/examples/ifmail/inouttabs/iso-8859-2__cp895
 share/examples/ifmail/inouttabs/fidom2iso
 share/examples/ifmail/inouttabs/fidomazovia
 share/examples/ifmail/inouttabs/ibmpc-latin1
@@ -121,10 +150,11 @@ share/examples/ifmail/zmailer/sm.conf
 @dirrm share/examples/ifmail/contrib/mmdf
 @dirrm share/examples/ifmail/contrib/tic/config
 @dirrm share/examples/ifmail/contrib/tic
+@dirrm share/examples/ifmail/contrib/u-tic
 @dirrm share/examples/ifmail/contrib/news_via_mail
 @dirrm share/examples/ifmail/contrib/fdpass
 @dirrm share/examples/ifmail/contrib/iftelnetd
-@dirrm share/examples/ifmail/contrib/areafix-0.5.04
+@dirrm share/examples/ifmail/contrib/areafix-0.5.07
 @dirrm share/examples/ifmail/contrib
 @dirrm share/examples/ifmail/inouttabs
 @dirrm share/examples/ifmail
