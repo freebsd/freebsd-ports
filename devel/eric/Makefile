@@ -17,16 +17,12 @@ BUILD_DEPENDS=	${X11BASE}/lib/libqscintilla.so:${PORTSDIR}/x11-toolkits/qscintil
 		${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip\
 		pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
-BROKEN=		"Does not compile"
-
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
-# dirty hack to fix plist if PREFIX != PYTHONBASE
-DESTDIR_LIBS=	${PYTHON_SITELIBDIR:S/${PYTHONBASE}/${PREFIX}/}
 
 do-install:
 	cd ${WRKSRC} && ${PYTHON_CMD} install.py -b ${PREFIX}/bin/ \
-		-d ${DESTDIR_LIBS}
+		-d ${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
