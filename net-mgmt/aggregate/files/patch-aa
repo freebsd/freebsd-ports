@@ -1,0 +1,16 @@
+--- aggregate-1.1/Makefile	Fri Feb 16 11:31:55 2001
++++ Makefile	Fri Feb 16 13:27:38 2001
+@@ -27,9 +27,9 @@
+ 	rm aggregate
+ 
+ install: aggregate aggregate.1
+-	install -c -g wheel -m 0755 -o root aggregate /usr/local/bin/
+-	install -c -g wheel -m 0644 -o root aggregate.1 /usr/local/man/man1/
+-	install -c -g wheel -m 0755 -o root aggregate-ios /usr/local/bin/
+-	install -c -g wheel -m 0644 -o root aggregate-ios.1 /usr/local/man/man1/
++	install -c -g wheel -m 0755 -o root aggregate ${PREFIX}/bin/
++	install -c -g wheel -m 0644 -o root aggregate.1 ${PREFIX}/man/man1/
++	install -c -g wheel -m 0755 -o root aggregate-ios ${PREFIX}/bin/
++	install -c -g wheel -m 0644 -o root aggregate-ios.1 ${PREFIX}/man/man1/
+ 
+ aggregate: aggregate.c
