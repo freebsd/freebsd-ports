@@ -1,2 +1,3 @@
 bin/tkxanim
 share/icons/tkxanim.gif
+@dirrm share/icons
