@@ -8,11 +8,11 @@
 PORTNAME=	drscheme
 PORTVERSION=	202
 CATEGORIES=	lang
-MASTER_SITES=	http://download.plt-scheme.org/bundles/202/plt/ \
-		http://www.cs.utah.edu/plt/download/202/plt/ \
-		ftp://ftp.pasteur.fr/pub/computing/Scheme/plt-scheme/202/plt/ \
-		ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/202/plt/ \
-		ftp://morpheus.wish.com.mx/pub/plt/202/plt/
+MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
+		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
+		ftp://ftp.pasteur.fr/pub/computing/Scheme/plt-scheme/${PORTVERSION}/plt/ \
+		ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/${PORTVERSION}/plt/ \
+		ftp://morpheus.wish.com.mx/pub/plt/${PORTVERSION}/plt/
 DISTNAME=	plt.src.x
 
 MAINTAINER=	jkoshy@freebsd.org
