@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.1.71
+PORTVERSION=	4.1.72
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
-MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
+MAINTAINER=	cy@FreeBSD.org
 
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # if GNU_CONFIGURE is defined
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+
+.if defined(ENABLE_RAWDCF)
+CONFIGURE_ARGS+=	--enable-RAWDCF
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
