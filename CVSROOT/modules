@@ -1547,6 +1547,7 @@ fte		ports/editors/fte
 ftnchek		ports/devel/ftnchek
 ftp		src/usr.bin/ftp
 ftpcopy		ports/ftp/ftpcopy
+ftpcube		ports/ftp/ftpcube
 ftpd		src/libexec/ftpd
 ftpfind		ports/ftp/ftpfind
 ftplocate	ports/ftp/ftplocate
