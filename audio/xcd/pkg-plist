@@ -1,0 +1,26 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/cdplayer
+bin/xcd
+@mode 644
+lib/xcd/eject.xbm    
+lib/xcd/eject_s.xbm  
+lib/xcd/ff.xbm       
+lib/xcd/ff_s.xbm     
+lib/xcd/logo.xbm     
+lib/xcd/next.xbm     
+lib/xcd/next_s.xbm   
+lib/xcd/pause.xbm    
+lib/xcd/pause_s.xbm  
+lib/xcd/play.xbm     
+lib/xcd/play_s.xbm   
+lib/xcd/prev.xbm     
+lib/xcd/prev_s.xbm   
+lib/xcd/rewind.xbm   
+lib/xcd/rewind_s.xbm 
+lib/xcd/stop.xbm     
+lib/xcd/stop_s.xbm   
+man/man1/cdplayer.1
+man/man1/xcd.1
+
