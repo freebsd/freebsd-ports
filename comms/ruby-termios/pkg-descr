@@ -2,4 +2,4 @@ Ruby-termios is a Ruby interface to termios.
 
 Authors:	Akira Yamada <akira@arika.org>,
 		Goto Kentaro <gotoken@math.sci.hokudai.ac.jp>
-WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=ruby-termios+%28serial+ports%29
+WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=ruby-termios
