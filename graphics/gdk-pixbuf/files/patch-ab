@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jan 22 17:28:45 2000
++++ Makefile.in	Fri Jan 28 10:44:24 2000
+@@ -108,7 +108,7 @@
+ 
+ bin_SCRIPTS = gdk-pixbuf-config
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA =  	gdk_pixbufConf.sh			gnomecanvaspixbufConf.sh
+ 
+ 

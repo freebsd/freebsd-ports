@@ -11,25 +11,3 @@
     
     
     echo "$ac_t""yes" 1>&6
---- Makefile.in.orig	Tue Nov  9 15:48:21 1999
-+++ Makefile.in	Mon Nov 15 14:07:45 1999
-@@ -100,7 +100,7 @@
- 
- SUBDIRS = src doc
- 
--confexecdir = $(libdir)
-+confexecdir = $(sysconfdir)
- confexec_DATA = gdk_pixbufConf.sh
- 
- EXTRA_DIST = configure acconfig.h gdk_pixbufConf.sh.in
---- src/Makefile.in.orig	Tue Nov  9 15:48:22 1999
-+++ src/Makefile.in	Mon Nov 15 14:10:26 1999
-@@ -125,7 +125,7 @@
- 
- LDADDS = libgdk_pixbuf.la $(LIBART_LIBS) $(GLIB_LIBS)
- 
--testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
-+testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS)
- 
- #
- # The GdkPixBuf library
