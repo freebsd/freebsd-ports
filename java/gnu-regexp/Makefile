@@ -20,8 +20,6 @@ NO_BUILD=	yes
 
 DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 
-CPIO?=		/usr/bin/cpio
-
 do-install:
 	${MKDIR} ${DOCDIR}
 	cd ${WRKSRC}/docs && ${FIND} . \

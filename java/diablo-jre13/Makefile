@@ -46,7 +46,6 @@ DOWNLOAD_URL=	http://www.FreeBSDFoundation.org/cgi-bin/download.cgi?package=${DI
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 NO_BUILD=	yes
 
-CPIO?=		/usr/bin/cpio
 INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 
 .if defined(WITHOUT_PLUGIN)

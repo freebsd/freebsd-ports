@@ -25,8 +25,6 @@ PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
 NO_BUILD=	yes
 
-CPIO?=		/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"

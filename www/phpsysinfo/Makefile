@@ -39,7 +39,7 @@ post-patch:
 do-install:
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| cpio -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
+		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
 	${CHMOD} -R ${BINMODE} ${INSTALLDIR}
 	${FIND} ${INSTALLDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 

@@ -28,7 +28,6 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 NO_WRKSUBDIR=	yes
 
 RPM2CPIO=	rpm2cpio
-CPIO=		/usr/bin/cpio
 CPIO_OPT=	-i --make-directories
 UNCOMPRESS=	/usr/bin/uncompress
 FONTS=		mzgt16e.pcf mzgt16h.pcf mzgt16h1.pcf mzmj16e.pcf mzmj16h.pcf \

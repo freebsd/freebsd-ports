@@ -50,8 +50,6 @@ MAN1=		${CONTROL_SCRIPT_NAME}.1
 
 JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
 
-CPIO?=		/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 do-configure:

@@ -35,7 +35,7 @@ do-install:
 	for d in ${DATA_DIRS}; do \
 	    ${MKDIR} ${PREFIX}/share/gnome/gdeskcal/$$d ; \
 	    cd ${WRKSRC}/$$d && ${FIND} . | \
-	    	cpio -pdm -L -R ${LIBOWN}:${LIBGRP}  \
+	    	${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP}  \
 		${PREFIX}/share/gnome/gdeskcal/$$d ; \
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/gdeskcal \

@@ -44,8 +44,6 @@ INSTALLS_SHLIB=	yes
 
 .include "${.CURDIR}/maninfo.mk"
 
-CPIO?=	/usr/bin/cpio
-
 post-configure:
 	${REINPLACE_CMD} -e 's|^DOCUMENT_DIR.*$$|DOCUMENT_DIR=${DOCSDIR}|' \
 		-e 's|^CDKSHLIB.*$$|CDKSHLIB=$$(SONAME)|' \

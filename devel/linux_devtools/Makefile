@@ -68,7 +68,8 @@ pre-install:
 	${RM} -rf ${WRKSRC}/tmp
 	${MKDIR} ${WRKSRC}/tmp
 .for ii in ${DISTFILES} ${PATCHFILES}
-	cd ${WRKSRC}/tmp; rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${ii} | cpio -id
+	cd ${WRKSRC}/tmp; rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${ii} | \
+		${CPIO} -id
 .endfor
 	cd ${WRKSRC}/tmp; ${FIND} * -type f -o -type l > ${PLIST}; \
 		${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :'>> ${PLIST}

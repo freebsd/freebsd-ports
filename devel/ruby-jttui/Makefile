@@ -28,7 +28,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DESTDIR}${RUBY_MODDOCDIR}
 	cd ${WRKSRC}/doc; \
-	${FIND} . | cpio -pdmv ${DESTDIR}${RUBY_MODDOCDIR}
+	${FIND} . | ${CPIO} -pdmv ${DESTDIR}${RUBY_MODDOCDIR}
 	${CHMOD} -R ugo+rX,ugo-w ${DESTDIR}${RUBY_MODDOCDIR}
 	${MKDIR} ${DESTDIR}${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${DESTDIR}${RUBY_MODEXAMPLESDIR}

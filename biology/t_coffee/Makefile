@@ -47,7 +47,7 @@ post-install:
 	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${RMDIR} ${WRKSRC}/example/aln 2>/dev/null || ${TRUE}
 	@ cd ${WRKSRC}/example && ${FIND} * \
-	  | cpio --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	@ ${SED} -e 's#%%DATADIR%%#${DATADIR}#' ${.CURDIR}/pkg-message \
 	  > ${PKGMESSAGE}
 .if !defined(BATCH)

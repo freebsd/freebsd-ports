@@ -36,7 +36,6 @@ ONLY_FOR_ARCHS=	i386
 DOWNLOAD_URL?=	http://jsecom16.sun.com/ECom/EComActionServlet?StoreId=22&PartDetailId=j2sdk-1.5.0-beta-b31-oth-JPR
 PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
-CPIO?=		/usr/bin/cpio
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
 UNPACK_CMD=	${APP_HOME}/lib/unpack
 

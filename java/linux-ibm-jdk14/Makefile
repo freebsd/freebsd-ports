@@ -36,8 +36,6 @@ RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 DOWNLOAD_URL=	https://www6.software.ibm.com/dl/lxdk/lxdk-p/
 
-CPIO?=		/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)

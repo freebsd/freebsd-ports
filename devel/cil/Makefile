@@ -25,8 +25,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-CPIO?=		/usr/bin/cpio
-
 BINFILES=	cilly patcher teetwo
 LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm
 EXECFILES=	cilly.byte.exe machdep.exe

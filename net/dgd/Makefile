@@ -31,7 +31,6 @@ PATCH_WRKSRC=	${WRKDIR}/dgd
 ALL_TARGET=	install
 USE_REINPLACE=	yes
 
-CPIO?=          /usr/bin/cpio
 .ifdef (WITH_NETWORKING)
 PLIST_SUB+=	NETWORKING=""
 .else

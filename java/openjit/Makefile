@@ -36,8 +36,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME}
 
-CPIO?=		/usr/bin/cpio
-
 PLIST_SUB+=	JAVADIR=${JAVA_HOME:S,${PREFIX}/,,}
 .if defined(WITH_JDK11)
 JAVALIBDIR=	${PREFIX}/lib/OpenJIT

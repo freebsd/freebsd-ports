@@ -20,7 +20,6 @@ BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 
-CPIO?=		/usr/bin/cpio
 CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
 MAN8=		tmpwatch.8
 

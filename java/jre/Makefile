@@ -38,8 +38,6 @@ STRIPFILES=	bin/i386/green_threads/jre \
 		lib/i386/green_threads/libsysresource.so \
 		lib/i386/green_threads/libzip.so
 
-CPIO?=		/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"

@@ -29,8 +29,6 @@ MSG_SRC=${FILESDIR}/pkg-message
 
 MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
-CPIO?=	/usr/bin/cpio
-
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl

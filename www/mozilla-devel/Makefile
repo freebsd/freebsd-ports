@@ -270,7 +270,7 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/lib/${MOZILLA}
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${LN} -sf ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/mozilla ; \
@@ -295,7 +295,7 @@ do-install:
 	${MKDIR} ${PREFIX}/include/mozilla
 	${CHMOD} 755 ${PREFIX}/include/mozilla
 	cd ${WRKSRC}/dist/include && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/mozilla
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/mozilla
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components

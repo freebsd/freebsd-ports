@@ -116,7 +116,6 @@ PREFIX=		${LINUXBASE}
 .include <bsd.port.pre.mk>
 
 RPM2CPIO?=	${LOCALBASE}/bin/rpm2cpio
-CPIO?=		/usr/bin/cpio
 CPIOFLAGS=	--extract --make-directories --no-absolute-filenames \
 		--preserve-modification-time --quiet
 RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
@@ -183,7 +182,7 @@ pre-install:
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && ${FIND} * | cpio -dlmp ${PREFIX}
+	cd ${WRKSRC} && ${FIND} * | ${CPIO} -dlmp ${PREFIX}
 	${FIND} ${PREFIX} -type d \! -ipath '${LINUXBASE}/proc*' -exec ${CHMOD} 755 \{\} \;
 
 post-install:

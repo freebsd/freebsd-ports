@@ -48,7 +48,6 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .for file in ${DISTNAME}

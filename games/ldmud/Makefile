@@ -20,7 +20,6 @@ CONFIGURE_ARGS+=--libdir=${DATADIR} --bindir=${PREFIX}/sbin
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	ldmud
 
-CPIO?=		/usr/bin/cpio
 LOGDIR=		${DATADIR}
 .if defined(MUDLIB) && ${MUDLIB} == lpmud
 PLIST_SUB+=	LPMUD="" MUDLIB="@comment "

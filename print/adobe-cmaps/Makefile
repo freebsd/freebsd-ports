@@ -23,6 +23,6 @@ do-install:
 	@${MKDIR} ${RESOURCE}/CIDFont
 	@${MKDIR} ${RESOURCE}/Font
 	@cd ${WRKSRC} && ${FIND} . \! -name '.*' \
-		| cpio --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${RESOURCE}
+		| ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${RESOURCE}
 
 .include <bsd.port.mk>

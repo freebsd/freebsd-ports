@@ -26,8 +26,6 @@ DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/mud
 USE_REINPLACE=	yes
 
-CPIO?=		/usr/bin/cpio
-
 post-extract:
 	@${CP} ${FILESDIR}/oconv.c ${WRKSRC}/
 	@${CP} ${FILESDIR}/Makefile.bin ${WRKSRC}/Makefile

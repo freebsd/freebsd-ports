@@ -21,14 +21,17 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
-	(cd ${WRKSRC} && ${FIND} [^d]* \! -name ".cvsignore" -type f | cpio -R ${SHAREOWN}:${SHAREGRP} -pdum ${PYTHON_SITELIBDIR}/${PORTNAME})
+	(cd ${WRKSRC} && ${FIND} [^d]* \! -name ".cvsignore" -type f | \
+		${CPIO} -R ${SHAREOWN}:${SHAREGRP} -pdum \
+		${PYTHON_SITELIBDIR}/${PORTNAME})
 	${CHMOD} -R 644 ${PYTHON_SITELIBDIR}/${PORTNAME}
 	${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} -type d | ${XARGS} ${CHMOD} 755
 	${CHMOD} 755 ${PYTHON_SITELIBDIR}/${PORTNAME}/wxglade.py \
 		${PYTHON_SITELIBDIR}/${PORTNAME}/xrc2wxg.py
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${FIND} . -type f | cpio -R ${SHAREOWN}:${SHAREGRP} -pdum ${DOCSDIR})
+	(cd ${WRKSRC}/docs && ${FIND} . -type f | \
+		${CPIO} -R ${SHAREOWN}:${SHAREGRP} -pdum ${DOCSDIR})
 	${CHMOD} -R 644 ${DOCSDIR}
 	${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} 755
 .endif

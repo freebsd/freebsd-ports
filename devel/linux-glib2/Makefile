@@ -25,8 +25,8 @@ pre-install:
 	${RM} -rf ${WRKSRC}/tmp
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
-		rpm2cpio.pl < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
-		${FIND} * -type f -o -type l > ${PLIST}; \
+		rpm2cpio.pl < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | \
+		${CPIO} -id; ${FIND} * -type f -o -type l > ${PLIST}; \
 		${FIND} -d * -type d | ${GREP} glib | ${SED} -e 's:^:@dirrm :' \
 		>> ${PLIST}
 

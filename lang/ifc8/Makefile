@@ -53,7 +53,6 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 IFCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 BRANDELF?=	/usr/bin/brandelf
-CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .for file in ${DISTFILES}

@@ -35,7 +35,7 @@ PLIST_SUB+=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
 do-install:
 	${MKDIR} ${INSTALLDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| cpio -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
+		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
 	${FIND} ${INSTALLDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 
 .include <bsd.port.mk>

@@ -22,8 +22,6 @@ USE_REINPLACE=	yes
 
 MAN1=	cscout.1 cswc.1
 
-CPIO=		/usr/bin/cpio
-
 post-patch:
 .if exists(/usr/include/g++/)
 	${REINPLACE_CMD} -i "" -e 's:g++-3:g++:g' \

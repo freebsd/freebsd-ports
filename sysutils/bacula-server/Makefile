@@ -123,7 +123,7 @@ post-install:
 	${MKDIR} ${DOCSDIR}/html-manual
 	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${FIND} html-manual | \
-		cpio -pdm -L -R root:wheel ${DOCSDIR}
+		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
 .endif
 
 # Inform user after install about important things ....

@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/sgi-fonts
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR}; rpm2cpio.pl ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
-		| cpio --extract --no-preserve-owner \
+		| ${CPIO} --extract --no-preserve-owner \
 		--preserve-modification-time --unconditional --quiet
 	@${TAR} -C ${WRKDIR} -xf ${WRKDIR}/sgi-fonts.tar.gz
 

@@ -59,8 +59,6 @@ JDKIMAGEDIR=	${WRKSRC}/jdk-image-i386
 JDKIMAGEDIR_G=	${WRKSRC}/jdk-debug-image-i386
 JREIMAGEDIR=	${WRKSRC}/jre-image-i386
 
-CPIO?=		/usr/bin/cpio
-
 .if defined(NODEBUG)
 PLIST_SUB+=	DEBUG:="@comment "
 PKGNAMESUFFIX=	-nodebug

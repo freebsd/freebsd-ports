@@ -43,8 +43,6 @@ RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/j
 PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
-CPIO?=          /usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)

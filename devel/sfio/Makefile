@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.src.unix.cpio
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	The Safe/Fast I/O Library
 
-EXTRACT_CMD=	cpio
+EXTRACT_CMD=	${CPIO}
 EXTRACT_BEFORE_ARGS=	-idF
 EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes

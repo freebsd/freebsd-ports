@@ -61,7 +61,7 @@ do-install:
 		@cd ${WRKSRC} && ${GMAKE} prepareexports
 		@cd ${WRKSRC} && ${GMAKE} -s --no-print-directory exportnames | \
 		   ${SED} 'y/ /\n/; /^$$/d ; s+${PORTNAME}/++g' | \
-		   cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/uni
+		   ${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/uni
 
 		@cd ${PREFIX}/lib/uni && ${FIND} . -type d -print0 | \
 			${XARGS} -0 ${CHMOD} 755 # ugly, but necessary
