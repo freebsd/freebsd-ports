@@ -3281,6 +3281,7 @@ jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
 jde-emacs20	ports/java/jde-emacs20
 jdictionary	ports/textproc/jdictionary
+jdictionary-eng-hun	ports/hungarian/jdictionary-eng-hun
 jdk11		ports/java/jdk11
 jdk11-doc	ports/java/jdk11-doc
 jdk12		ports/java/jdk12
