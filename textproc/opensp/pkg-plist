@@ -141,33 +141,32 @@ include/OpenSP/rtti.h
 include/OpenSP/sptchar.h
 include/OpenSP/types.h
 include/OpenSP/xnew.h
-lib/charset.alias
 lib/libosp.a
 lib/libosp.la
 lib/libosp.so
 lib/libosp.so.3
-share/doc/OpenSP/archform.htm
-share/doc/OpenSP/autoconf.htm
-share/doc/OpenSP/build.htm
-share/doc/OpenSP/catalog.htm
-share/doc/OpenSP/charset.htm
-share/doc/OpenSP/features.htm
-share/doc/OpenSP/generic.htm
-share/doc/OpenSP/ideas.htm
-share/doc/OpenSP/index.htm
-share/doc/OpenSP/new.htm
-share/doc/OpenSP/nsgmls.htm
-share/doc/OpenSP/sgmldecl.htm
-share/doc/OpenSP/sgmlnorm.htm
-share/doc/OpenSP/sgmlsout.htm
-share/doc/OpenSP/spam.htm
-share/doc/OpenSP/spcat.htm
-share/doc/OpenSP/spent.htm
-share/doc/OpenSP/sx.htm
-share/doc/OpenSP/sysdecl.htm
-share/doc/OpenSP/sysid.htm
-share/doc/OpenSP/xml.htm
-share/doc/OpenSP/xmlwarn.htm
+%%PORTDOCS%%%%DOCSDIR%%/archform.htm
+%%PORTDOCS%%%%DOCSDIR%%/autoconf.htm
+%%PORTDOCS%%%%DOCSDIR%%/build.htm
+%%PORTDOCS%%%%DOCSDIR%%/catalog.htm
+%%PORTDOCS%%%%DOCSDIR%%/charset.htm
+%%PORTDOCS%%%%DOCSDIR%%/features.htm
+%%PORTDOCS%%%%DOCSDIR%%/generic.htm
+%%PORTDOCS%%%%DOCSDIR%%/ideas.htm
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/new.htm
+%%PORTDOCS%%%%DOCSDIR%%/nsgmls.htm
+%%PORTDOCS%%%%DOCSDIR%%/sgmldecl.htm
+%%PORTDOCS%%%%DOCSDIR%%/sgmlnorm.htm
+%%PORTDOCS%%%%DOCSDIR%%/sgmlsout.htm
+%%PORTDOCS%%%%DOCSDIR%%/spam.htm
+%%PORTDOCS%%%%DOCSDIR%%/spcat.htm
+%%PORTDOCS%%%%DOCSDIR%%/spent.htm
+%%PORTDOCS%%%%DOCSDIR%%/sx.htm
+%%PORTDOCS%%%%DOCSDIR%%/sysdecl.htm
+%%PORTDOCS%%%%DOCSDIR%%/sysid.htm
+%%PORTDOCS%%%%DOCSDIR%%/xml.htm
+%%PORTDOCS%%%%DOCSDIR%%/xmlwarn.htm
 share/sgml/openjade/OpenSP/HTML32.dcl
 share/sgml/openjade/OpenSP/HTML32.dtd
 share/sgml/openjade/OpenSP/HTML32.soc
@@ -196,20 +195,15 @@ share/sgml/openjade/OpenSP/unicode.sd
 share/sgml/openjade/OpenSP/unicode.syn
 share/sgml/openjade/OpenSP/xml.dcl
 share/sgml/openjade/OpenSP/xml.soc
-share/sgml/openjade/doc/OpenSP/ABOUT-NLS
-share/sgml/openjade/doc/OpenSP/AUTHORS
-share/sgml/openjade/doc/OpenSP/COPYING
-share/sgml/openjade/doc/OpenSP/ChangeLog
-share/sgml/openjade/doc/OpenSP/NEWS
-share/sgml/openjade/doc/OpenSP/README
-share/sgml/openjade/doc/OpenSP/releasenotes.html
-share/sgml/openjade/doc/OpenSP/releasenotes.pdf
-share/sgml/openjade/doc/OpenSP/releasenotes.ps
-share/sgml/openjade/locale/locale.alias
-@dirrm share/doc/OpenSP
+%%PORTDOCS%%share/sgml/openjade/doc/OpenSP/AUTHORS
+%%PORTDOCS%%share/sgml/openjade/doc/OpenSP/NEWS
+%%PORTDOCS%%share/sgml/openjade/doc/OpenSP/README
+%%PORTDOCS%%share/sgml/openjade/doc/OpenSP/releasenotes.html
+%%PORTDOCS%%share/sgml/openjade/doc/OpenSP/releasenotes.pdf
+%%PORTDOCS%%share/sgml/openjade/doc/OpenSP/releasenotes.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/OpenSP
 @dirrm share/sgml/openjade/OpenSP
-@dirrm share/sgml/openjade/doc/OpenSP
-@dirrm share/sgml/openjade/doc
-@dirrm share/sgml/openjade/locale
+%%PORTDOCS%%@dirrm share/sgml/openjade/doc/OpenSP
+%%PORTDOCS%%@dirrm share/sgml/openjade/doc
 @dirrm share/sgml/openjade

@@ -1,0 +1,11 @@
+--- sx/Makefile.in.orig	Sat Oct 25 21:26:34 2003
++++ sx/Makefile.in	Sat Oct 25 21:27:03 2003
+@@ -140,7 +140,7 @@
+ 	sx_inst.$(OBJEXT)
+ osx_OBJECTS = $(am_osx_OBJECTS)
+ osx_DEPENDENCIES = $(top_builddir)/lib/libosp.la
+-osx_LDFLAGS =
++osx_LDFLAGS = -lintl
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)

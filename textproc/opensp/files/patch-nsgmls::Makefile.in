@@ -1,0 +1,11 @@
+--- nsgmls/Makefile.in.orig	Sat Oct 25 21:23:36 2003
++++ nsgmls/Makefile.in	Sat Oct 25 21:23:48 2003
+@@ -142,7 +142,7 @@
+ 	nsgmls_inst.$(OBJEXT)
+ onsgmls_OBJECTS = $(am_onsgmls_OBJECTS)
+ onsgmls_DEPENDENCIES = $(top_builddir)/lib/libosp.la
+-onsgmls_LDFLAGS =
++onsgmls_LDFLAGS = -lintl
+ 
+ DEFS = @DEFS@
+ DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
