@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.37 1998/12/26 19:33:34 vanilla Exp $
+# $Id: Makefile,v 1.38 1998/12/26 19:54:26 vanilla Exp $
 #
 
 DISTNAME=	imlib-1.8.2
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
 		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
-		LIBS=-L${LOCALBASE}/lib \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		INSTALL="$${INSTALL} -c"
 
 post-install:

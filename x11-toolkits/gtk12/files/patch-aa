@@ -252,3 +252,14 @@
  
  mostlyclean-noinstPROGRAMS:
  
+--- po/Makefile.in.in.orig	Sun Jan  3 13:09:51 1999
++++ po/Makefile.in.in	Sun Jan  3 13:10:02 1999
+@@ -18,7 +18,7 @@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po

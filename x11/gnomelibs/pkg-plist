@@ -222,3 +222,4 @@ share/locale/sv/LC_MESSAGES/gnome-libs.mo
 @dirrm share/gnome/idl
 @dirrm share/gnome/mime-info
 @dirrm share/gnome/pixmaps
+@dirrm share/gnome

@@ -3,7 +3,7 @@
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/11/17 15:28:08 vanilla Exp $
+# $Id: Makefile,v 1.9 1999/01/01 04:43:03 vanilla Exp $
 #
 
 DISTNAME=	libgtop-0.99.0
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 
 MAINTAINER=	Nakai@technologist.com
 
-LIB_DEPENDS=	glib11d.1:${PORTSDIR}/devel/glib11-devel \
+LIB_DEPENDS=	glib11d.2:${PORTSDIR}/devel/glib11-devel \
 		gnome.0:${PORTSDIR}/x11/gnomelibs \
 		guile.4:${PORTSDIR}/lang/guile
 
