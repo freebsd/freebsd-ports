@@ -3,15 +3,14 @@
 # Date created:			  Sun May 3, 1999
 # Whom:                 	shipley@dis.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/09 17:50:05 steve Exp $
 #
-#DISTDIR=	/var/tmp/	# for debuging
 
-DISTNAME=	slush-0_1_0_tar
+DISTNAME=	slush-0_1_0
 PKGNAME=	slush-0.1.0
 CATEGORIES=	security net
 MASTER_SITES=	ftp://www.dis.org/pub/Security/
-EXTRACT_SUFX=	.gz
+EXTRACT_SUFX=	_tar.gz
 
 MAINTAINER=	shipley@dis.org
 
