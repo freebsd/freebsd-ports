@@ -16,11 +16,11 @@ MAINTAINER=	fuyuki@mj.0038.net
 
 USE_ZIP=	yes
 USE_JAVA=	1.1+
-NO_BUILD_DEPENDS_JAVA=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 JAVALIBDIR=	${PREFIX}/share/java/classes
+NO_BUILD_DEPENDS_JAVA=	yes
 
 do-install:
 	${MKDIR} ${JAVALIBDIR}
