@@ -1,0 +1,5 @@
+Perltidy reads a Perl script and writes an indented, reformatted
+script. The default formatting closely follows the recommendations
+in perlstyle(1).
+
+WWW: http://perltidy.sourceforge.net/

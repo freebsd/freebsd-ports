@@ -313,6 +313,7 @@
     SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
     SUBDIR += perforce
+    SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += picprog
     SUBDIR += pinstall
