@@ -1,7 +1,7 @@
 bin/mozilla
-%%CHATZILLA%%lib/mozilla/DocStream
-%%CHATZILLA%%lib/mozilla/HelloWorld
-%%CHATZILLA%%lib/mozilla/INSTALL.xmlterm
+lib/mozilla/DocStream
+lib/mozilla/HelloWorld
+lib/mozilla/INSTALL.xmlterm
 lib/mozilla/TestGtkEmbed
 lib/mozilla/TestGtkEmbedChild
 lib/mozilla/TestGtkEmbedNotebook
@@ -35,7 +35,7 @@ lib/mozilla/chrome/pipnss.jar
 lib/mozilla/chrome/pippki.jar
 lib/mozilla/chrome/toolkit.jar
 lib/mozilla/chrome/venkman.jar
-%%CHATZILLA%%lib/mozilla/chrome/xmlterm.jar
+lib/mozilla/chrome/xmlterm.jar
 lib/mozilla/component.reg
 lib/mozilla/components/absync.xpt
 lib/mozilla/components/accessibility.xpt
@@ -187,7 +187,7 @@ lib/mozilla/components/libwalletviewers.so
 lib/mozilla/components/libwebbrwsr.so
 lib/mozilla/components/libwidget_gtk.so
 lib/mozilla/components/libxmlextras.so
-%%CHATZILLA%%lib/mozilla/components/libxmlterm.so
+lib/mozilla/components/libxmlterm.so
 lib/mozilla/components/libxpconnect.so
 lib/mozilla/components/libxpinstall.so
 lib/mozilla/components/libxremote_client.so
@@ -275,8 +275,8 @@ lib/mozilla/components/xml-rpc.xpt
 lib/mozilla/components/xmlextras.xpt
 lib/mozilla/components/xmlschema.xpt
 lib/mozilla/components/xmlsoap.xpt
-%%CHATZILLA%%lib/mozilla/components/xmlterm-service.js
-%%CHATZILLA%%lib/mozilla/components/xmlterm.xpt
+lib/mozilla/components/xmlterm-service.js
+lib/mozilla/components/xmlterm.xpt
 lib/mozilla/components/xpcom_base.xpt
 lib/mozilla/components/xpcom_components.xpt
 lib/mozilla/components/xpcom_ds.xpt
@@ -323,7 +323,7 @@ lib/mozilla/defaults/wallet/SchemaStrings.tbl
 lib/mozilla/defaults/wallet/StateSchema.tbl
 lib/mozilla/defaults/wallet/VcardSchema.tbl
 lib/mozilla/dirver
-%%CHATZILLA%%lib/mozilla/escape
+lib/mozilla/escape
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
 lib/mozilla/libgkgfx.so
@@ -539,12 +539,12 @@ lib/mozilla/searchplugins/lxrmozilla.gif
 lib/mozilla/searchplugins/lxrmozilla.src
 lib/mozilla/searchplugins/mozilla.gif
 lib/mozilla/searchplugins/mozilla.src
-%%CHATZILLA%%lib/mozilla/teststream
+lib/mozilla/teststream
 lib/mozilla/timebombgen
-%%CHATZILLA%%lib/mozilla/xcat
-%%CHATZILLA%%lib/mozilla/xenv
-%%CHATZILLA%%lib/mozilla/xls
-%%CHATZILLA%%lib/mozilla/xmlterm
+lib/mozilla/xcat
+lib/mozilla/xenv
+lib/mozilla/xls
+lib/mozilla/xmlterm
 lib/mozilla/xpcshell
 lib/mozilla/xpicleanup
 lib/mozilla/xpidl
