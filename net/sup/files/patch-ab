@@ -74,8 +74,8 @@
   The "system" flag
   .I 
   -s
-*** scan.c.orig	Sun Dec 10 14:45:57 1995
---- scan.c	Sun Dec 10 14:46:26 1995
+*** scan.c.orig	Mon Dec 11 23:52:54 1995
+--- scan.c	Wed Dec 13 08:15:36 1995
 ***************
 *** 183,189 ****
   static omitanyone();
@@ -168,11 +168,7 @@
   
   static
 ***************
-*** 396,409 ****
-  }
-  
-  static
-! makescan (listfile,scanfile)
+*** 400,409 ****
   char *listfile,*scanfile;
   {
   	listT = NULL;
@@ -183,11 +179,7 @@
   }
   
   static
---- 410,424 ----
-  }
-  
-  static
-! int makescan (listfile,scanfile)
+--- 414,424 ----
   char *listfile,*scanfile;
   {
   	listT = NULL;
@@ -254,7 +246,6 @@
   	(void) sprintf (tname,"%s.temp",fname);
   	scanF = fopen (tname,"w");
 --- 959,964 ----
-*** supscan.c.orig	Fri Aug 20 17:46:35 1993
 --- supscan.c	Sun Dec 10 15:44:22 1995
 ***************
 *** 25,40 ****
