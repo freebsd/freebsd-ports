@@ -1087,6 +1087,7 @@
     SUBDIR += syntax_tools
     SUBDIR += sysconftool
     SUBDIR += t1lib
+    SUBDIR += tavrasm
     SUBDIR += tcl-memchan
     SUBDIR += tcl-neo
     SUBDIR += tcl-trf
