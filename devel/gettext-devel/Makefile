@@ -16,6 +16,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
+NO_LATEST_LINK=	yes
+
 USE_BISON=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
