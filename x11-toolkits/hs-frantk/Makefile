@@ -10,6 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/FranTk/
 DISTNAME=	FranTk${PORTVERSION:S/./_/}
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 

@@ -1748,7 +1748,6 @@ frabs		ports/games/frabs
 fractorama	ports/graphics/fractorama
 fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
-frantk		ports/x11-toolkits/frantk
 freebirth	ports/audio/freebirth
 freebsd-uucp	ports/net/freebsd-uucp
 freecell-solver	ports/games/freecell-solver
@@ -2296,7 +2295,6 @@ gthumb		ports/graphics/gthumb
 gthumb2		ports/graphics/gthumb2
 gtic		ports/net/gtic
 gtimer		ports/deskutils/gtimer
-gtk+hs		ports/x11-toolkits/gtk+hs
 gtk+licq	ports/net/gtk+licq
 gtk--		ports/x11-toolkits/gtk--
 gtk-Mac2-theme	ports/x11-toolkits/gtk-Mac2-theme
@@ -2459,9 +2457,12 @@ hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/security/hping
-hpl		ports/devel/hpl
 hppsmtools	ports/graphics/hppsmtools
 hr-ooodict-HR	ports/editors/ooodict-hr_HR
+hs-frantk	ports/x11-toolkits/hs-frantk
+hs-gtk+hs	ports/x11-toolkits/hs-gtk+hs
+hs-hpl		ports/devel/hs-hpl
+hs-popenhs	ports/devel/hs-popenhs
 hsftp		ports/ftp/hsftp
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
@@ -5936,7 +5937,6 @@ pop3gwd		ports/mail/pop3gwd
 pop3lite	ports/mail/pop3lite
 popa3d		ports/mail/popa3d
 popd		ports/mail/popd
-popenhs		ports/devel/popenhs
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
 poppwd		ports/mail/poppwd
