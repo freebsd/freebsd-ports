@@ -1755,7 +1755,6 @@ eights		ports/games/eights
 eispack		ports/math/eispack
 ejabberd	ports/net/ejabberd
 eject		ports/sysutils/eject
-ekg		ports/polish/ekg
 el-aspell	ports/textproc/el-aspell
 el-ooodict-GR	ports/editors/ooodict-el_GR
 eldav.el	ports/www/eldav.el
@@ -2866,8 +2865,6 @@ gnucap		ports/cad/gnucap
 gnucash		ports/finance/gnucash
 gnucash-docs	ports/finance/gnucash-docs
 gnuchess	ports/games/gnuchess
-gnugadu		ports/polish/gnugadu
-gnugadu2	ports/polish/gnugadu2
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
 gnulibiberty	ports/devel/gnulibiberty
@@ -4251,7 +4248,6 @@ k3b		ports/sysutils/k3b
 k3b-i18n	ports/misc/k3b-i18n
 k3d		ports/graphics/k3d
 kaddressbook-plugins	ports/misc/kaddressbook-plugins
-kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
 kaffeine	ports/multimedia/kaffeine
 kaffeine-mozilla	ports/multimedia/kaffeine-mozilla
@@ -4356,7 +4352,6 @@ kde3-i18n-nl	ports/misc/kde3-i18n-nl
 kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-nso	ports/misc/kde3-i18n-nso
 kde3-i18n-pa	ports/misc/kde3-i18n-pa
-kde3-i18n-pl	ports/polish/kde3-i18n
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
 kde3-i18n-se	ports/misc/kde3-i18n-se
 kde3-i18n-sk	ports/misc/kde3-i18n-sk
@@ -4548,7 +4543,6 @@ koffice-i18n-mt	ports/misc/koffice-i18n-mt
 koffice-i18n-nb	ports/misc/koffice-i18n-nb
 koffice-i18n-nl	ports/misc/koffice-i18n-nl
 koffice-i18n-nn	ports/misc/koffice-i18n-nn
-koffice-i18n-pl	ports/polish/koffice-i18n
 koffice-i18n-se	ports/misc/koffice-i18n-se
 koffice-i18n-sk	ports/misc/koffice-i18n-sk
 koffice-i18n-sl	ports/misc/koffice-i18n-sl
@@ -5048,7 +5042,6 @@ libtheora	ports/multimedia/libtheora
 libticables	ports/comms/libticables
 libticalcs	ports/devel/libticalcs
 libtifiles	ports/devel/libtifiles
-libtlen		ports/polish/libtlen
 libtomcrypt	ports/security/libtomcrypt
 libtool13	ports/devel/libtool13
 libtool15	ports/devel/libtool15
@@ -6366,7 +6359,6 @@ onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
 oonsoo		ports/games/oonsoo
 ooodict-all	ports/editors/ooodict-all
-ooodict_PL	ports/polish/ooodict_PL
 oooqs		ports/x11/oooqs
 oops		ports/www/oops
 op		ports/security/op
@@ -8623,14 +8615,24 @@ pkill		ports/sysutils/pkill
 pks		ports/security/pks
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
+pl-ekg		ports/polish/ekg
 pl-fortunepl	ports/polish/fortunepl
+pl-gnugadu	ports/polish/gnugadu
+pl-gnugadu2	ports/polish/gnugadu2
+pl-ispell	ports/polish/ispell
+pl-kadu		ports/polish/kadu
+pl-kde3-i18n	ports/polish/kde3-i18n
+pl-koffice-i18n	ports/polish/koffice-i18n
+pl-libtlen	ports/polish/libtlen
+pl-ooodict_PL	ports/polish/ooodict_PL
 pl-openoffice-1.0	ports/polish/openoffice-1.0
 pl-openoffice-1.1	ports/polish/openoffice-1.1
 pl-sap		ports/polish/sap
 pl-sms		ports/polish/sms
 pl-sms2		ports/polish/sms2
 pl-tleenx2	ports/polish/tleenx2
-pl_ispell	ports/polish/ispell
+pl-trf		ports/polish/trf
+pl-webalizer2	ports/polish/webalizer2
 plan		ports/deskutils/plan
 planets		ports/astro/planets
 planner		ports/deskutils/planner
@@ -10959,7 +10961,6 @@ treeline	ports/deskutils/treeline
 treepuzzle	ports/biology/treepuzzle
 treeviewx	ports/biology/treeviewx
 treewm		ports/x11-wm/treewm
-trf		ports/polish/trf
 triangle	ports/math/triangle
 trickle		ports/net/trickle
 trickyirc	ports/irc/trickyirc
@@ -11345,7 +11346,6 @@ wdm		ports/x11/wdm
 web-traceroute	ports/www/web-traceroute
 web2ldap	ports/www/web2ldap
 webalizer	ports/www/webalizer
-webalizer2	ports/polish/webalizer2
 webbench	ports/benchmarks/webbench
 webcheck	ports/www/webcheck
 webcopy		ports/www/webcopy
