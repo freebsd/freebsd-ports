@@ -45,7 +45,6 @@ cyrus/bin/smmapd
 cyrus/bin/squatter
 cyrus/bin/timsieved
 cyrus/bin/tls_prune
-etc/rc.d/imapd.sh
 include/cyrus/acl.h
 include/cyrus/assert.h
 include/cyrus/auth.h

@@ -23,7 +23,7 @@ CONFLICTS=	gkrellm-1.*
 
 LATEST_LINK=	${PORTNAME}2
 
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	gkrellmd.sh
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 
@@ -77,9 +77,6 @@ CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${X11BASE}/share/gkrellm2/themes\"' \
 		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"' \
 		-DGKRELLMD_SYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm2/plugins-gkrellmd\"'
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
 pre-everything::
 .if !defined(GKRELLM_SERVER_ONLY)
 	@${ECHO_MSG} ""
@@ -96,9 +93,6 @@ post-install:
 .endif
 	@${CHMOD} 2511 ${PREFIX}/sbin/gkrellmd
 	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh
-	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
 		${EXAMPLESDIR}/gkrellmd.conf
