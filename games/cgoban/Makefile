@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cgoban
-PORTVERSION=	1.9.10
+PORTVERSION=	1.9.11
 CATEGORIES=	games
-MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/
+MASTER_SITES=	http://www.inetarena.com/~wms/comp/cgoban/ \
+		http://www.igoweb.org/~wms/comp/cgoban/
 
 MAINTAINER=	simonm@dcs.gla.ac.uk
 
