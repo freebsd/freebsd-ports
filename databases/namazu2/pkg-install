@@ -21,7 +21,7 @@ case $2 in
 	    if [ -f $f$sfx ]; then
 		touch $f$sfx
 	    else
-		cp $f $fsfx
+		cp $f $f$sfx
 	    fi
 	done
 	;;
