@@ -1,6 +1,5 @@
-diff -ru cave-1.0b.orig/doc/Makefile.in cave-1.0b/doc/Makefile.in
---- cave-1.0b.orig/doc/Makefile.in	Sat Oct 26 09:26:04 2002
-+++ cave-1.0b/doc/Makefile.in	Wed Nov  6 09:41:34 2002
+--- doc/Makefile.in.orig	Sat Oct 26 09:26:04 2002
++++ doc/Makefile.in	Wed Nov  6 09:41:34 2002
 @@ -114,7 +114,7 @@
  target_cpu = @target_cpu@
  target_os = @target_os@
