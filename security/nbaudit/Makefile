@@ -21,6 +21,7 @@ MAN1=		nat.1 nbaudit.1
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/nat ${PREFIX}/bin
 	@${LN} -f ${PREFIX}/bin/nat ${PREFIX}/bin/nbaudit
+	@${INSTALL_SCRIPT} ${FILESDIR}/nbaudition.pl ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/nat.1 ${PREFIX}/man/man1
 	@${LN} -f ${PREFIX}/man/man1/nat.1 ${PREFIX}/man/man1/nbaudit.1
 
