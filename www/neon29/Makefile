@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat
+LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
 
 .ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes
