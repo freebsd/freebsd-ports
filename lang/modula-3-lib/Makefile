@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.16 1999/08/22 23:32:52 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	modula-3-lib-3.6

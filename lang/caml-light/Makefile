@@ -3,7 +3,7 @@
 # Date created:		21 July 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.5 1998/12/22 07:45:39 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cl74unix

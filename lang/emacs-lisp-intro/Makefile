@@ -3,7 +3,7 @@
 # Date created:		18 November 1997
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.3 1999/01/25 12:43:24 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	emacs-lisp-intro-1.05

@@ -3,7 +3,7 @@
 # Date created:			21 Sept 1996
 # Whom:				giffunip
 #
-# $Id: Makefile,v 1.8 1999/03/15 01:22:57 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cim-3.29

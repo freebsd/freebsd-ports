@@ -3,7 +3,7 @@
 # Date created:         16 May 1998
 # Whom:                 chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.9 1999/03/21 13:25:21 chuckr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       objc-2.2.15

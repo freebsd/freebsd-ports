@@ -3,7 +3,7 @@
 # Date created:        			20 December 1998
 # Whom:                			jesse@cs.uni-magdeburg.de
 #
-# $Id: Makefile,v 1.5 1998/12/23 04:32:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	1.31

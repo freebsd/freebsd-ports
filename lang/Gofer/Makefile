@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.9 1996/11/12 02:17:59 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gofer230a

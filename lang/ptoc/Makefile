@@ -3,7 +3,7 @@
 # Date created:				10 December 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1999/02/22 04:02:44 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		ptoc-3.41

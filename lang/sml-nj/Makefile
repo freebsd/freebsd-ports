@@ -3,7 +3,7 @@
 # Date created:        7 July 1998
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.7 1999/08/22 18:58:55 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=     110.9.1-bin.x86-unix

@@ -3,7 +3,7 @@
 # Date created:        17 February 1999
 # Whom:                wagner@luthien.in-berlin.de
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/01 04:11:23 jdp Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      m3gdb-4.17

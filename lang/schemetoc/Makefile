@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.11 1998/10/14 04:02:27 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME= 	schemetoc-93.3.15

@@ -3,7 +3,7 @@
 # Date created:         04 September 1997
 # Whom:                 Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
-# $Id: Makefile,v 1.10 1999/04/19 03:55:51 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ruby-1.2.5

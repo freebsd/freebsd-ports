@@ -4,7 +4,7 @@
 # Date created:				10 Dec 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.17 1999/06/05 22:30:57 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	egcs-1.1.2

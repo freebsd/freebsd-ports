@@ -3,7 +3,7 @@
 # Date created:		12 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.2 1999/01/07 02:31:44 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ETHLinuxOberon

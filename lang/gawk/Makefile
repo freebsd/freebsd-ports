@@ -3,7 +3,7 @@
 # Date created:		Mi  21 Okt 1998 13:53:18 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1998/11/13 07:42:20 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	gawk-3.0.3
 CATEGORIES=	lang

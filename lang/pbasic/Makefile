@@ -3,7 +3,7 @@
 # Date created:		13th August 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1997/04/30 03:18:04 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pbasic-2.0-950813

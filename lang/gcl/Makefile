@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.12 1999/01/27 07:41:20 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gcl-2.2.2

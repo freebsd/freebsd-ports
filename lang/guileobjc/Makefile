@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1998/11/26 05:35:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	guileobjc-0.3.8

@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.2 1996/11/12 02:18:42 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	modula-3-socks

@@ -3,7 +3,7 @@
 # Date created:         19 April 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	irb-0.5.1

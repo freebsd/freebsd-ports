@@ -3,7 +3,7 @@
 # Date created:         05 April 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1998/02/20 12:19:36 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       unix

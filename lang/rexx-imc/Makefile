@@ -3,7 +3,7 @@
 # Date created:				Septermber 21 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/10/14 03:46:56 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rexx-imc-1.6d

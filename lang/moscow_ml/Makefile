@@ -3,7 +3,7 @@
 # Date created:         2 August 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.10 1998/08/02 17:42:01 chuckr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       mos14src

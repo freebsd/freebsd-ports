@@ -3,7 +3,7 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.20 1997/07/17 15:12:47 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	itcl3.0.1

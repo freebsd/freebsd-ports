@@ -3,7 +3,7 @@
 # Date created:		December 3, 1997
 # Whom:			Oliver Breuninger <ob@seicom.NET>
 #
-# $Id: Makefile,v 1.3 1998/06/16 12:48:59 tg Exp $
+# $FreeBSD$
 
 DISTNAME=	o2c-1.16
 CATEGORIES=	lang

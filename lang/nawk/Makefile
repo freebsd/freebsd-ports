@@ -3,7 +3,7 @@
 # Date created:        29 April 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.3 1999/01/18 02:53:20 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	awk

@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.18 1999/03/31 10:42:21 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libstdc++-2.8.1.1

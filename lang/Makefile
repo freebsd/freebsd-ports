@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.143 1999/08/05 16:22:10 obrien Exp $
+# $FreeBSD$
 #
 
     SUBDIR += ETHOberonV4

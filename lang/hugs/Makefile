@@ -3,7 +3,7 @@
 # Date created:		22 September 1997
 # Whom:			Torsten Teg Grust (Torsten.Grust@uni-konstanz.de)
 #
-# $Id: Makefile,v 1.5 1998/08/09 00:25:28 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	hugs-June98-source

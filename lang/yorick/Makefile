@@ -3,7 +3,7 @@
 # Date created:         26 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.2 1998/01/27 01:26:13 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	yorick-1.4

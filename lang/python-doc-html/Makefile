@@ -3,7 +3,7 @@
 # Date created:         12 May 1999
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/02 10:13:22 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	${DOCFORMAT}-${VERSION}

@@ -3,7 +3,7 @@
 # Date created:         4 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1996/11/18 14:02:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	p2c-1.21alpha-07.Dec.93

@@ -3,7 +3,7 @@
 # Date created:         23 Jan 1998
 # Whom:                 housel@acm.org
 #
-# $Id: Makefile,v 1.6 1999/04/22 07:42:45 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gd-2.2.0

@@ -3,7 +3,7 @@
 # Date created:         26 Ag 97
 # Whom:                 Pedro Giffuni
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/17 09:48:17 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	atlast-1.0

@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.27 1998/11/11 05:37:25 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	perl5.005_02

@@ -5,7 +5,7 @@
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.19 1999/07/01 14:42:41 sheldonh Exp $
+# $FreeBSD$
 #
 # Note:
 # - FreeBSD tasking libraries created by Dan Eischen have been incorporated

@@ -3,7 +3,7 @@
 # Date created:		2 November 1997
 # Whom:			jseger@FreeBSD.org
 #
-# $Id: Makefile,v 1.15 1999/01/27 07:41:21 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	guile-1.3

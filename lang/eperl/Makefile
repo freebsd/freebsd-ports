@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.29 1998/09/15 21:31:46 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	eperl-2.2.14

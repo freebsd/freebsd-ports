@@ -3,7 +3,7 @@
 # Date created:				19 JAN 1999
 # Whom:					Steven G. Kargl
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/24 22:50:24 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	f77-freebsd.0.3

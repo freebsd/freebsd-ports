@@ -3,7 +3,7 @@
 # Date created:			2 Jun 1997
 # Whom:				Ruslan Shevchenko <rssh@satori.ipri.kiev.ua>
 #
-# $Id: Makefile,v 1.4 1998/10/14 04:10:03 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sr

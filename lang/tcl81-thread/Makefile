@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1999/04/08 19:05:48 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcl8.1b1

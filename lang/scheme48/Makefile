@@ -3,7 +3,7 @@
 # Date created:         25 Aug 1997
 # Whom:                 jmacd
 #
-# $Id: Makefile,v 1.9 1997/08/27 19:15:54 jmacd Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	scheme48-0.46

@@ -3,7 +3,7 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.15 1999/01/27 07:41:22 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	smalltalk-1.1.5

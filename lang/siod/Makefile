@@ -3,7 +3,7 @@
 # Date created:        28 April 1999
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/28 09:45:37 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	siod

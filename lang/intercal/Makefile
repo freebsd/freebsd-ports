@@ -3,7 +3,7 @@
 # Date created:        20 March 1998
 # Whom:                Matthew Hunt <mph@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/17 21:52:16 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	intercal-0.18

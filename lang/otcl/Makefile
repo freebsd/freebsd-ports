@@ -3,7 +3,7 @@
 # Date created:		23 April 1999
 # Whom:			obonilla
 #
-# $Id: Makefile,v 1.3 1999/05/12 09:53:18 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	otcl-1.0a4

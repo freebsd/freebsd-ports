@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.23 1999/03/31 10:42:20 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gcc-2.8.1
