@@ -1,0 +1,20 @@
+include/ical.h
+include/icalss.h
+include/libicalvcal/icalvcal.h
+include/libicalvcal/port.h
+include/libicalvcal/vcc.h
+include/libicalvcal/vobject.h
+include/libicalvcal/vcaltmp.h
+lib/libical.so.0
+lib/libical.so
+lib/libical.a
+lib/libicalss.so.0
+lib/libicalss.so
+lib/libicalss.a
+lib/libicalvcal.so.0
+lib/libicalvcal.so
+lib/libicalvcal.a
+%%PYTHON:%%lib/libLibicalWrap.so.0
+%%PYTHON:%%lib/libLibicalWrap.so
+%%PYTHON:%%lib/libLibicalWrap.a
+@dirrm include/libicalvcal
