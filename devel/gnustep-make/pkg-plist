@@ -4,16 +4,17 @@ System/Makefiles/MediaBook.func
 System/Makefiles/MediaBook.sh
 System/Makefiles/aggregate.make
 System/Makefiles/application.make
-System/Makefiles/brain.make
 System/Makefiles/bundle.make
 System/Makefiles/clean_cpu.sh
 System/Makefiles/clean_os.sh
 System/Makefiles/clean_vendor.sh
+System/Makefiles/clibrary.make
 System/Makefiles/common.make
 System/Makefiles/config.guess
 System/Makefiles/config.sub
 System/Makefiles/cpu.sh
 System/Makefiles/ctool.make
+System/Makefiles/cygpath.sh
 System/Makefiles/documentation.make
 System/Makefiles/executable.template
 System/Makefiles/framework.make
@@ -28,14 +29,13 @@ System/Makefiles/java.make
 System/Makefiles/jni.make
 System/Makefiles/ld_lib_path.csh
 System/Makefiles/ld_lib_path.sh
+System/Makefiles/library-combo.make
 System/Makefiles/library.make
 System/Makefiles/mkinstalldirs
 System/Makefiles/names.make
 System/Makefiles/objc.make
 System/Makefiles/os.sh
 System/Makefiles/palette.make
-System/Makefiles/rootinstall.sh
-System/Makefiles/rootuninstall.sh
 System/Makefiles/rpm.make
 System/Makefiles/rules.make
 System/Makefiles/service.make
@@ -51,33 +51,50 @@ System/Makefiles/test-tool.make
 System/Makefiles/tool.make
 System/Makefiles/transform_paths.sh
 System/Makefiles/vendor.sh
-System/Makefiles/woapp.make
-System/Makefiles/wobundle.make
 System/Tools/debugapp
 System/Tools/openapp
 System/Tools/opentool
 System/share/config.site
-@exec mkdir -p %D/Local
-@exec mkdir -p %D/Local/Users
+@exec mkdir -p %D/Local/Apps
+@exec mkdir -p %D/Local/Developer/Palettes
+@exec mkdir -p %D/Local/Documentation/Developer
+@exec mkdir -p %D/Local/Documentation/User
+@exec mkdir -p %D/Local/Headers/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@exec mkdir -p %D/Local/Libraries/Java
+@exec mkdir -p %D/Local/Libraries/Resources
+@exec mkdir -p %D/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@exec mkdir -p %D/Local/Library/Bundles
+@exec mkdir -p %D/Local/Library/Colors
+@exec mkdir -p %D/Local/Library/Frameworks
+@exec mkdir -p %D/Local/Library/PostScript
+@exec mkdir -p %D/Local/Library/Services
+@exec mkdir -p %D/Local/Tools/Java
+@exec mkdir -p %D/Local/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @exec mkdir -p %D/Local/Users/Administrator
 @exec mkdir -p %D/Network
 @exec mkdir -p %D/System/Apps
-@exec mkdir -p %D/System/Documentation
+@exec mkdir -p %D/System/Developer/Palettes
 @exec mkdir -p %D/System/Documentation/Developer
 @exec mkdir -p %D/System/Documentation/User
 @exec mkdir -p %D/System/Documentation/info
 @exec mkdir -p %D/System/Documentation/man
 @exec mkdir -p %D/System/Headers/%%GNU_ARCH%%/%%OPSYS%%
+@exec mkdir -p %D/System/Libraries/Java
+@exec mkdir -p %D/System/Libraries/Resources
 @exec mkdir -p %D/System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@exec mkdir -p %D/System/Library/Bundles
 @exec mkdir -p %D/System/Library/Colors
+@exec mkdir -p %D/System/Library/Frameworks
 @exec mkdir -p %D/System/Library/PostScript
 @exec mkdir -p %D/System/Library/Services
 @exec mkdir -p %D/System/Makefiles/Additional
+@exec mkdir -p %D/System/Tools/Java
 @exec mkdir -p %D/System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/share
 @dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Tools/%%GNU_ARCH%%
+@dirrm System/Tools/Java
 @dirrm System/Tools
 @dirrm System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Makefiles/%%GNU_ARCH%%
@@ -85,11 +102,15 @@ System/share/config.site
 @dirrm System/Makefiles
 @dirrm System/Library/Services
 @dirrm System/Library/PostScript
+@dirrm System/Library/Frameworks
 @dirrm System/Library/Colors
+@dirrm System/Library/Bundles
 @dirrm System/Library
 @dirrm System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Libraries/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Libraries/%%GNU_ARCH%%
+@dirrm System/Libraries/Resources
+@dirrm System/Libraries/Java
 @dirrm System/Libraries
 @dirrm System/Headers/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Headers/%%GNU_ARCH%%
@@ -99,9 +120,37 @@ System/share/config.site
 @dirrm System/Documentation/User
 @dirrm System/Documentation/Developer
 @dirrm System/Documentation
+@dirrm System/Developer/Palettes
+@dirrm System/Developer
 @dirrm System/Apps
 @dirrm System
 @dirrm Network
 @dirrm Local/Users/Administrator
 @dirrm Local/Users
+@dirrm Local/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Tools/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Tools/%%GNU_ARCH%%
+@dirrm Local/Tools/Java
+@dirrm Local/Tools
+@dirrm Local/Library/Services
+@dirrm Local/Library/PostScript
+@dirrm Local/Library/Frameworks
+@dirrm Local/Library/Colors
+@dirrm Local/Library/Bundles
+@dirrm Local/Library
+@dirrm Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Libraries/%%GNU_ARCH%%
+@dirrm Local/Libraries/Resources
+@dirrm Local/Libraries/Java
+@dirrm Local/Libraries
+@dirrm Local/Headers/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Headers/%%GNU_ARCH%%
+@dirrm Local/Headers
+@dirrm Local/Documentation/User
+@dirrm Local/Documentation/Developer
+@dirrm Local/Documentation
+@dirrm Local/Developer/Palettes
+@dirrm Local/Developer
+@dirrm Local/Apps
 @dirrm Local

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-make
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://ftp.codefactory.se/pub/gnu/gstep/ \
@@ -23,7 +23,8 @@ BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 USE_NEWGCC=	yes
 PREFIX=		${LOCALBASE}/GNUstep
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c" \
+		CFLAGS="${CFLAGS} -D_THREAD_SAFE"
 CONFIGURE_TARGET=
 USE_GMAKE=	yes
 MAKEFILE=
@@ -38,13 +39,13 @@ GNU_ARCH=	${MACHINE_ARCH}
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
 
 post-patch:
-.for f in gswapp gswbundle woapp wobundle
+.for f in gswapp gswbundle
 	${PERL} -pi -e 's/\$$\(TAR\) ch --exclude=CVS --to-stdout/\$$\(TAR\) -ch --exclude=CVS -f -/g' ${WRKSRC}/${f}.make
 .endfor
 
-post-install:
-	${SED} -e "s/\(objc_threaded:=\)/\1 ${PTHREAD_LIBS}/" \
-		< ${WRKSRC}/config.make \
-		> ${PREFIX}/System/Makefiles/${GNU_ARCH}/${OPSYS:L}/config.make
+post-configure:
+	${SED} -e "s/\(objc_threaded:=\).*/\1 ${PTHREAD_LIBS}/" \
+		< ${WRKSRC}/config.make > ${WRKSRC}/config.make.new
+	${MV} ${WRKSRC}/config.make.new ${WRKSRC}/config.make
 
 .include <bsd.port.post.mk>
