@@ -12,6 +12,7 @@ share/gauche/%%VERSION%%/lib/gl/math3d.scm
 %%PORTDOCS%%info/gauche-gl-refj.info
 %%PORTDOCS%%@exec install-info %D/info/gauche-gl-refe.info %D/info/dir
 %%PORTDOCS%%@exec install-info %D/info/gauche-gl-refj.info %D/info/dir
+%%PORTDOCS%%%%EXAMPLESDIR%%/gears.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-2.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-3.scm
@@ -53,7 +54,6 @@ share/gauche/%%VERSION%%/lib/gl/math3d.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example9-8.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/run
 %%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/gears.scm
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/glbook
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
