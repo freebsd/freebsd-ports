@@ -15,7 +15,7 @@
  #!/bin/sh 
  # \
 -exec wish "$0" "$@"
-+exec wish8.2 "$0" "$@"
++exec wish8.3 "$0" "$@"
  
  ;# NAME:   TclTutor.tcl
  ;# AUTHOR: Clif Flynt
@@ -34,7 +34,7 @@
  #!/bin/sh
  # \
 -exec wish "$0" ${1+"$@"}
-+exec wish8.2 "$0" ${1+"$@"}
++exec wish8.3 "$0" ${1+"$@"}
         
  # CONFIGURATION DETAIL: SET THIS FOR YOUR IMAGE VIEWER:
  #  (xli, xv, ee, etc)
