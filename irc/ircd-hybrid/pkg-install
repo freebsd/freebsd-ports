@@ -50,7 +50,7 @@ EOF
 fi
 
 echo ""
-if pw groupshow ircd 2> /dev/nul ; then
+if pw groupshow ircd 2> /dev/null ; then
 	echo "You already have a group \"ircd\", so I will use it."
 else
 	echo "You need a group \"ircd\"."
