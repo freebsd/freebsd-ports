@@ -37,6 +37,7 @@
     SUBDIR += tuxnes
     SUBDIR += twin
     SUBDIR += vgb
+    SUBDIR += vgb-bin
     SUBDIR += vice
     SUBDIR += vMac
     SUBDIR += vmsbackup
