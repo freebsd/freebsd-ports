@@ -15,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
-		freetype.7:${PORTSDIR}/print/freetype2
+		freetype.8:${PORTSDIR}/print/freetype2
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	AfterBase.0:${PORTSDIR}/devel/libafterbase \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.7:${PORTSDIR}/print/freetype2
+		freetype.8:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/libAfterImage
 

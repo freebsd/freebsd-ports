@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@protey.ru
 
 LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg \
-		freetype.7:${PORTSDIR}/print/freetype2 \
+		freetype.8:${PORTSDIR}/print/freetype2 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		png.5:${PORTSDIR}/graphics/png \

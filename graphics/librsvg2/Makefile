@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/sources/librsvg
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	freetype.7:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	freetype.8:${PORTSDIR}/print/freetype2 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		xml.5:${PORTSDIR}/textproc/libxml \
 		popt.0:${PORTSDIR}/devel/popt
