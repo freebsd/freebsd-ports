@@ -32,6 +32,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/available-xa.xpm
 %%DATADIR%%/pixmaps/gaim/available.xpm
 %%DATADIR%%/pixmaps/gaim/away.xpm
+%%DATADIR%%/pixmaps/gaim/away_big.xpm
 %%DATADIR%%/pixmaps/gaim/away_icon.xpm
 %%DATADIR%%/pixmaps/gaim/away_small.xpm
 %%DATADIR%%/pixmaps/gaim/bgcolor.xpm
@@ -96,6 +97,7 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/logout_icon.xpm
 %%DATADIR%%/pixmaps/gaim/luke03.xpm
 %%DATADIR%%/pixmaps/gaim/moneymouth.xpm
+%%DATADIR%%/pixmaps/gaim/mrt.xpm
 %%DATADIR%%/pixmaps/gaim/msg_pending.xpm
 %%DATADIR%%/pixmaps/gaim/msn_away.xpm
 %%DATADIR%%/pixmaps/gaim/msn_online.xpm
@@ -137,7 +139,10 @@ lib/gaim/spellchk.so
 %%DATADIR%%/pixmaps/gaim/status-idle.xpm
 %%DATADIR%%/pixmaps/gaim/strike.xpm
 %%DATADIR%%/pixmaps/gaim/tb_forward.xpm
+%%DATADIR%%/pixmaps/gaim/tb_redo.xpm
+%%DATADIR%%/pixmaps/gaim/tb_refresh.xpm
 %%DATADIR%%/pixmaps/gaim/tb_search.xpm
+%%DATADIR%%/pixmaps/gaim/tb_undo.xpm
 %%DATADIR%%/pixmaps/gaim/think.xpm
 %%DATADIR%%/pixmaps/gaim/tmp_send.xpm
 %%DATADIR%%/pixmaps/gaim/tongue.xpm
