@@ -52,9 +52,7 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/net/www/apache/httpd/%SUBDIR%/ \
-	ftp://ftp.dkuug.dk/pub/apache/httpd/%SUBDIR%/ \
-	ftp://sunsite.auc.dk/pub/infosystems/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.cs.tu-berlin.de/pub/net/www/apache/%SUBDIR%/ \
 	ftp://mir1.ovh.net/ftp.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://sunsite.srce.hr/mirrors/ftp.apache.org/apache/dist/httpd/%SUBDIR%/ \
@@ -70,7 +68,6 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.telepac.pt/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.kappa.ro/pub/mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.opsynet.com/linux/apache/dist/httpd/%SUBDIR%/ \
 	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/www/servers/apache/dist/httpd/%SUBDIR%/ \
@@ -85,8 +82,6 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://ftp.epix.net/pub/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.rge.com/pub/infosystems/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.tux.org/pub/net/apache/dist/httpd/%SUBDIR%/ \
-	ftp://mirror.telentente.com/pub/apache/dist/httpd/%SUBDIR%/ \
-	ftp://www.ibiblio.org/pub/packages/infosystems/WWW/servers/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.saix.net/pub/apache/dist/httpd/%SUBDIR%/ \
 	${MASTER_SITE_APACHE:S,dist/%SUBDIR%,mirror/httpd/%SUBDIR%,}
 
