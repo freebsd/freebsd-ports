@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd %%DATADIR%%/newsbot && python bot.py
