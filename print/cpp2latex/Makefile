@@ -17,12 +17,18 @@ COMMENT=	Convert C++ source to a file you can input in an LaTeX-document
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for docfile in AUTHORS ChangeLog README TODO
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
