@@ -1391,3 +1391,4 @@ print/teTeX-latex2e||2005-02-06|obsolete by new teTeX-texmf
 emulators/qcl|science/qcl|2005-02-10|moved to better category
 security/rng_82802||2005-02-14|obsolete
 lang/aleph|lang/afnix|2005-02-19|project renamed
+net/ipw||2005-02-19|abandoned
