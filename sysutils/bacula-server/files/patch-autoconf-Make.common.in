@@ -1,16 +1,6 @@
 *** autoconf/Make.common.in.orig	Sat Jun 19 23:16:06 2004
 --- autoconf/Make.common.in	Sun Jun 27 18:38:11 2004
 ***************
-*** 24,29 ****
---- 24,30 ----
-  sysconfdir = @sysconfdir@
-  scriptdir = @scriptdir@
-  mandir = @mandir@/man1
-+ datadir = @datadir@
-  manext = 1
-  
-  # Tools & program stuff
-***************
 *** 43,49 ****
   RANLIB = @RANLIB@
   INSTALL = @INSTALL@

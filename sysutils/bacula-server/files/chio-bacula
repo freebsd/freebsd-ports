@@ -33,7 +33,7 @@ MTX=/bin/chio
 # Set default values (see case statement below for
 # free mapping of drive index and tape device
 # We have a double drive Qualstar where drive 1 is the default bacula drive
-TAPE=/dev/nrsa1
+TAPE=/dev/nrsa0
 DRIVE=0
 # Time to wait for (un)loading
 SLEEP=20
@@ -58,6 +58,11 @@ fi
 # The slot number
 if [ ! -z "$3" ]; then
     SLOT=$3
+    # btape fill says "... slot 1 drive 0" :-(
+    if [ "$SLOT" = "slot" ]; then
+	shift
+	SLOT=$3
+    fi
 fi
 # Set tape device
 if [ ! -z "$4" ]; then
@@ -65,16 +70,18 @@ if [ ! -z "$4" ]; then
 fi
 # Set drive for chio as you need
 # here you can also map to any tape device
+# DRIVE is the chio drive number!
 case $5 in
     0)
 	DRIVE=0
+	TAPE=/dev/nrsa0
 	#DRIVE=1
 	#TAPE=/dev/nrsa2
 	;;
     1)
 	DRIVE=1
 	#DRIVE=0
-	#TAPE=/dev/nrsa1
+	TAPE=/dev/nrsa1
 	;;
 esac
 
@@ -109,8 +116,16 @@ case ${COMMAND} in
 	# enable the following line if you need to eject the cartridge
 	mt -f ${TAPE} off
 	sleep 2
+	# if we have a slot, try it
+	if [ ! -z "$SLOT" ]; then
+	    ${MTX} -f ${CHANGER} move drive ${DRIVE} slot $((${SLOT}-1))
+	    exit $?
+	fi
+	# Try other way (works if source element information is valid for drive)
 	${MTX} -f ${CHANGER} return drive ${DRIVE}
 	# If the changer is power cycled with a tape loaded in a drive
+	# we can compute the slot in case of a complete filled magazine, with
+	# one slot free.
 	if [ "$?" != "0" ]; then
 	    free_slot=`${MTX} -f ${CHANGER} stat | grep "^slot " | grep -v "FULL" | awk '{print $2}'`
 	    free_slot=${free_slot%:}

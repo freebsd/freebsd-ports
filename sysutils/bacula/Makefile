@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.34.5
-PORTREVISION=	4
+PORTVERSION=	1.34.6
+#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -43,6 +43,7 @@ OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL7 "Use PostgreSQL 7.X database instead of SqLite" off
+OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 
 # Prepare if gnome-console is selected this must be happen before
 # include of bsd.port.pre.mk!
@@ -98,6 +99,11 @@ PLIST_SUB+=		DBTYPE=${DBTYPE}
 PLIST_SUB+=		SERVER=""
 .endif
 
+# Install mtx
+.if defined(WITH_MTX)
+RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
+.endif
+
 PORTDOCS=	bacula.pdf ReleaseNotes html-manual/*
 
 pre-everything::
@@ -115,11 +121,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes		if you only want the file daemon."
-	@${ECHO_MSG} "  WITH_WXCONSOLE=yes		if you only want a wxGTK based GUI console."
-	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes		if you only want a GNOME based GUI console."
+	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
+	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
+	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes	if you only want a GNOME based GUI console."
+	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL7)
-	@${ECHO_MSG} "  WITH_MYSQL=yes		if you want MySQL instead of SqLite as the database."
+	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
 	@${ECHO_MSG} "  WITH_POSTGRESQL7=yes	if you want PostgreSQL 7.X instead of SqLite as the database."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite!"
