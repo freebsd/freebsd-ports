@@ -3,7 +3,7 @@
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1996/12/12 05:22:21 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/19 14:33:02 erich Exp $
 #
 
 DISTNAME=	doom-1.8
@@ -27,7 +27,7 @@ pre-install:
 	@sed 's,@PREFIX@,${PREFIX},' ${PKGDIR}/INSTALL.in > ${PKGDIR}/INSTALL
 
 post-install:
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 pre-clean:
 	@rm -f ${PKGDIR}/INSTALL

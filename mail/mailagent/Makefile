@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.17 1997/06/02 18:33:30 max Exp $
+# $Id: Makefile,v 1.18 1997/06/24 20:59:30 max Exp $
 #
 
 DISTNAME=		mailagent-3.0@56
@@ -34,7 +34,7 @@ MAN1=			edusers.1 mailagent.1 maildist.1  \
 PERLPATH?=		${PREFIX}/bin
 
 pre-extract:
-	@if [ `/bin/sh -c umask` != 0022 ]; then \
+	@if [ `${SH} -c umask` != 0022 ]; then \
 	  echo "Please set umask to 022 before running make,"; \
 	  echo "or mailagent will not build successfully."; \
 	  false; fi

@@ -3,7 +3,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1997/04/21 04:05:14 max Exp $
+# $Id: Makefile,v 1.9 1997/04/21 10:09:14 max Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -31,6 +31,6 @@ post-install:
 		echo "fi" >> ${STARTUP_SCRIPT} ;			\
 		chmod 755 ${STARTUP_SCRIPT} ;				\
 	fi
-	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

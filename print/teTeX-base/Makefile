@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.17 1997/02/27 09:05:09 tg Exp $
+# $Id: Makefile,v 1.18 1997/04/13 00:33:24 obrien Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -51,6 +51,6 @@ pre-install:
 post-install:
 	@(cd ${PREFIX}/bin ; /bin/ln -sf virtex latex)
 	@(cd ${PREFIX}/bin ; /bin/ln -sf virtex tex)
-	@${SETENV} PREFIX=${PREFIX} /bin/sh files/install-note
+	@${SETENV} PREFIX=${PREFIX} ${SH} ${FILESDIR}/install-note
 
 .include <bsd.port.mk>

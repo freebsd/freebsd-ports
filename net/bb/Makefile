@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.15 1997/03/04 05:14:57 asami Exp $
+# $Id: Makefile,v 1.16 1997/05/04 03:26:54 max Exp $
 #
 
 DISTNAME=	bb
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 #NO_CDROM=	"It can't be sold"
 
 post-configure:
-	( cd ${WRKSRC}/doc; /bin/sh bbconfig freebsd )
+	( cd ${WRKSRC}/doc; ${SH} bbconfig freebsd )
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:

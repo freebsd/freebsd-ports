@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/01 11:38:33 asami Exp $
+# $Id: Makefile,v 1.2 1997/04/01 11:40:16 asami Exp $
 #
 
 DISTNAME=	jp-k12font-1.0
@@ -17,6 +17,6 @@ USE_X11=	yes
 NO_WRKSUBDIR=	yes
 
 post-install:
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>

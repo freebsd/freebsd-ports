@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/30 00:04:10 max Exp $
 #
 
 DISTNAME=       hanyang-font-pcf
@@ -40,6 +40,6 @@ do-install:
 	${INSTALL_DATA} fonts.dir ${PREFIX}/lib/X11/fonts/korean/hanyang
 
 post-install:
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL;
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL;
 	
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 02:13:17 asami Exp $
+# $Id: Makefile,v 1.2 1997/06/29 11:30:39 obrien Exp $
 #
 
 DISTNAME=	GP-2.01jp
@@ -27,7 +27,7 @@ pre-patch:
 	@${MKDIR} ${PATCHDIR}
 	@${SETENV} FILESDIR=${FILESDIR} PATCHDIR=${PATCHDIR} \
 		PREFIX=${PREFIX} SED=${SED} X11BASE=${X11BASE} \
-		/bin/sh ${FILESDIR}/pr-setup.sh
+		${SH} ${FILESDIR}/pr-setup.sh
 
 do-install:
 	@${MKDIR} ${PREFIX}/etc/GP-jp

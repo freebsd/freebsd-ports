@@ -1,10 +1,9 @@
-# ex:ts=8
 # New ports collection makefile for:    minicom
 # Version required:     1.74
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.9 1997/04/04 15:57:32 obrien Exp $
+# $Id: Makefile,v 1.10 1997/04/04 15:58:10 obrien Exp $
 #
 
 DISTNAME=	minicom-1.75
@@ -25,7 +24,7 @@ MAN1=		minicom.1 runscript.1 ascii-xfr.1
 .if !defined(BATCH)
 pre-install:
 	# this script creates a link from your comm port to /dev/modem
-	/bin/sh ${SCRIPTDIR}/create-dev-link
+	${SH} ${SCRIPTDIR}/create-dev-link
 .endif
 
 .include <bsd.port.mk>

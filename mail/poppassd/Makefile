@@ -3,7 +3,7 @@
 # Date Created:	21 August 1996
 # Whom:	Andrew Stevenson <andrew@ugh.net.au> based heavily on the changes by Stephen Melvin <melvin@zytek.com>
 #
-# $Id: Makefile,v 1.3 1996/11/17 07:42:55 obrien Exp $
+# $Id: Makefile,v 1.4 1997/06/13 22:30:19 max Exp $
 #
 
 DISTNAME=	pwserve-4
@@ -16,7 +16,7 @@ MAINTAINER=	andrew@ugh.net.au
 EXTRACT_CMD=	/bin/cat
 EXTRACT_SUFX=	
 EXTRACT_BEFORE_ARGS=	
-EXTRACT_AFTER_ARGS=	| /usr/bin/sed -e '1,16d' | /bin/sh
+EXTRACT_AFTER_ARGS=	| /usr/bin/sed -e '1,16d' | ${SH}
 WRKSRC=			${WRKDIR}/poppassd
 ALL_TARGET=	poppassd
 MAN8=		poppassd.8

@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.13 1996/11/11 08:26:44 max Exp $
+# $Id: Makefile,v 1.14 1996/11/13 12:40:55 asami Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -49,6 +49,6 @@ post-install:
 		chmod 755 ${STARTUP_SCRIPT} ;				\
 		chown bin.bin ${STARTUP_SCRIPT};			\
 	fi
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

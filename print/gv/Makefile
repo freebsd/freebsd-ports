@@ -3,7 +3,7 @@
 # Date created:		16 Apr 1996
 # Whom:			tg@freebsd.org
 #
-# $Id: Makefile,v 1.14 1997/06/11 05:02:06 asami Exp $
+# $Id: Makefile,v 1.15 1997/06/23 07:35:15 tg Exp $
 #
 
 DISTNAME=	gv-3.5.8
@@ -20,6 +20,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}; ${MAKE} install.doc)
 .endif
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

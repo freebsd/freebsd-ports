@@ -3,7 +3,7 @@
 # Date created:		01 February 1997
 # Whom:			jdp
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/02 04:11:33 jdp Exp $
+# $Id: Makefile,v 1.2 1997/02/06 06:50:40 asami Exp $
 #
 
 DISTNAME=	cvsup-mirror-1.0
@@ -41,6 +41,6 @@ do-install:
 	@${CP} /dev/null ${base}/.start_server
 
 post-install:
-	@PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

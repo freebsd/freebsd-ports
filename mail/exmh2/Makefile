@@ -3,7 +3,7 @@
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.10 1997/07/03 05:57:39 asami Exp $
+# $Id: Makefile,v 1.11 1997/07/08 02:45:57 peter Exp $
 #
 
 DISTNAME=	exmh-2.0delta
@@ -44,10 +44,10 @@ MAN1=		exmh.1
 do-build:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
 		WISH=${PREFIX}/bin/${WISH} WRKSRC=${WRKSRC} \
-		FILESDIR=${FILESDIR} /bin/sh ${SCRIPTDIR}/build
+		FILESDIR=${FILESDIR} ${SH} ${SCRIPTDIR}/build
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} \
-		WRKSRC=${WRKSRC} /bin/sh ${SCRIPTDIR}/install
+		WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/install
 
 .include <bsd.port.mk>

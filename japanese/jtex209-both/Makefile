@@ -3,7 +3,7 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/11 08:42:46 asami Exp $
+# $Id: Makefile,v 1.2 1996/12/03 13:08:11 obrien Exp $
 #
 
 DISTNAME?=	jp-jlatex209-a17-n152
@@ -38,12 +38,12 @@ pre-build:
 .if defined(BATCH)
 	@(\
 	  cd ${WRKSRC} ; \
-	  /bin/sh ${FILESDIR}/select.sh ${FILESDIR} ${DISTDIR} ${PKGDIR} ${BATCH_TEX}; \
+	  ${SH} ${FILESDIR}/select.sh ${FILESDIR} ${DISTDIR} ${PKGDIR} ${BATCH_TEX}; \
 	)
 .else
 	@(\
 	  cd ${WRKSRC} ; \
-	  /bin/sh ${FILESDIR}/select.sh ${FILESDIR} ${DISTDIR} ${PKGDIR} SELECT ; \
+	  ${SH} ${FILESDIR}/select.sh ${FILESDIR} ${DISTDIR} ${PKGDIR} SELECT ; \
 	)
 .endif
 
@@ -51,7 +51,7 @@ post-install:
 .if !defined(BATCH)
 	@(\
 	  if [ -e /usr/local/share/tex/BOTH ] ;  \
-	    then /bin/sh ${FILESDIR}/linkselect.sh ; \
+	    then ${SH} ${FILESDIR}/linkselect.sh ; \
 	  fi \
 	)
 .endif

@@ -3,7 +3,7 @@
 # Date created:		15 Sep 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1996/12/07 00:20:24 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/30 08:23:07 max Exp $
 #
 
 DISTNAME=	dvi2ps-2.0j-gamma
@@ -40,6 +40,6 @@ post-install:
 	${INSTALL_SCRIPT} tools/psstrip ${PREFIX}/bin ;\
 	${INSTALL_SCRIPT} tools/MakePK ${PREFIX}/bin ;\
 	)
-	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>
