@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buildtool-doc
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	buildtool
@@ -35,6 +35,7 @@ DOCS=		CHANGES COPYING PEOPLE README README.bt
 
 do-configure:
 	cd ${WRKSRC} && \
+		CATALOG_FILE=${LOCALBASE}/share/xml/catalog.ports \
 		DOCBOOK_XSL=${LOCALBASE}/share/xsl/docbook \
 		${BUILDTOOL} config ${CONFIGURE_ARGS}
 
