@@ -11,9 +11,9 @@ CATEGORIES=	mail
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/ \
 		ftp://stokes.tte.ele.tue.nl/pub/bbmail/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	patseal@hyperhost.net
 
-GNU_CONFIGURE=	yes	
-USE_XLIB=	yes	
+GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 
 .include <bsd.port.mk>
