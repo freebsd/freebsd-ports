@@ -1,0 +1,37 @@
+*** Makefile	Sun Apr 18 16:07:07 1993
+--- ../../Makefile.new	Wed Nov 23 06:42:43 1994
+***************
+*** 36,43 ****
+  # lptops program expects them to reside in files without a ".afm"
+  # suffix.
+  #
+! DEPTH=..
+! include ${DEPTH}/defs
+  
+  AFMFILES=\
+  	AvantGarde-Book.afm \
+--- 36,43 ----
+  # lptops program expects them to reside in files without a ".afm"
+  # suffix.
+  #
+! AFMDIR=/usr/local/lib/afm
+! INSTALL=install
+  
+  AFMFILES=\
+  	AvantGarde-Book.afm \
+***************
+*** 80,85 ****
+  	${NULL}
+  
+  install: ${AFMFILES}
+  	for i in ${AFMFILES}; do \
+! 	    ${INSTALL} -F ${AFMDIR} -m 444 -src $$i -O `basename $$i .afm`; \
+  	done
+--- 80,86 ----
+  	${NULL}
+  
+  install: ${AFMFILES}
++ 	[ -d ${AFMDIR} ] || mkdir ${AFMDIR}
+  	for i in ${AFMFILES}; do \
+! 	    ${INSTALL} -c -o bin -g bin -m 444 $$i  ${AFMDIR}/`basename $$i .afm`; \
+  	done
