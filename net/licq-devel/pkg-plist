@@ -21,7 +21,6 @@ include/licq/licq_onevent.h
 include/licq/licq_packets.h
 include/licq/licq_plugin.h
 include/licq/licq_plugind.h
-include/licq/licq_remoteserver.h
 include/licq/licq_sar.h
 include/licq/licq_sighandler.h
 include/licq/licq_socket.h
