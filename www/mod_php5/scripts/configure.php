@@ -98,6 +98,9 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"IMAP\")
+			echo "IMAP is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw"
 			echo "PHP_CONF_ARGS+=	--with-imap=\${PREFIX}"
 			;;
