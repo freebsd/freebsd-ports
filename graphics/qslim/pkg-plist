@@ -1,6 +1,5 @@
 bin/qslim
 bin/qvis
-lib/libmix.a
 include/mixkit/MxArcball.h
 include/mixkit/MxAsp.h
 include/mixkit/MxBlock.h
@@ -46,4 +45,5 @@ include/mixkit/mixmops.h
 include/mixkit/mixmsg.h
 include/mixkit/mixvops.h
 include/mixkit/stdmix.h
+lib/libmix.a
 @dirrm include/mixkit
