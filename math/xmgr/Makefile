@@ -17,7 +17,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
 		${LOCALBASE}/lib/libmfhdf.a:${PORTSDIR}/graphics/hdf
-LIB_DEPENDS=	Xbae.7:${PORTSDIR}/x11-toolkits/xbae
+LIB_DEPENDS=	Xbae.8:${PORTSDIR}/x11-toolkits/xbae
 
 USE_X_PREFIX=	YES
 USE_MOTIF=	YES

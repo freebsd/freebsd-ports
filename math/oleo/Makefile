@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 .if defined(WITH_MOTIF)
 LIB_DEPENDS+=	plot.3:${PORTSDIR}/graphics/plotutils \
-		Xbae.7:${PORTSDIR}/x11-toolkits/xbae
+		Xbae.8:${PORTSDIR}/x11-toolkits/xbae
 .endif
 
 USE_XLIB=	yes
