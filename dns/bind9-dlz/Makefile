@@ -20,6 +20,7 @@ DISTFILES=	bind-${ISCVERSION}.tar.gz \
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	bind9/${ISCVERSION}
 PATCHFILES=	patch.9.2.2-P1
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
@@ -35,7 +36,6 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
 PATCH_STRIP=	-p1
-PATCH_DIST_STRIP=	-p1
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
