@@ -1,26 +1,21 @@
---- lib/ASTK/astkrc/outils.orig	Mon Jun 23 08:42:59 2003
-+++ lib/ASTK/astkrc/outils	Wed Oct  8 23:45:12 2003
-@@ -13,3 +13,23 @@
- ext : comm com0 com1 com2
+--- ./lib/ASTK/astkrc/outils.orig	Fri Nov 28 11:21:00 2003
++++ ./lib/ASTK/astkrc/outils	Thu May 20 23:17:34 2004
+@@ -19,7 +19,7 @@
  dist : on
  #
-+nom : Gmsh
-+cmde : TOOLS_DIR/gmsh (@F)
-+ext : geo pos
-+dist : on
-+#
-+nom : Gibi
-+cmde : TOOLS_DIR/gibi (@F)
-+ext : dgibi
-+dist : on
-+#
-+nom : Grace
-+cmde : TOOLS_DIR/xmgrace (@F)
-+ext : dat
-+dist : on
+ nom : Gibi
+-cmde : TOOLS_DIR/gibi.x (@F)
++cmde : TOOLS_DIR/GIBI (@F)
+ ext : datg dgibi
+ dist : on
+ #
+@@ -27,4 +27,9 @@
+ cmde : TOOLS_DIR/xmgrace (@F)
+ ext : dat
+ dist : on
 +#
 +nom : Stanley
 +cmde : TOOLS_DIR/../bibpyt/Stanley/stanley.py
 +ext : _VIDE
 +dist : off
-+#
+ #
