@@ -1,6 +1,4 @@
-bin/pydoc
 bin/pydoc2.2
-bin/python
 bin/%%PYTHON_VERSION%%
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
@@ -2299,7 +2297,6 @@ lib/%%PYTHON_VERSION%%/xmlrpclib.pyo
 lib/%%PYTHON_VERSION%%/zipfile.py
 lib/%%PYTHON_VERSION%%/zipfile.pyc
 lib/%%PYTHON_VERSION%%/zipfile.pyo
-share/emacs/site-lisp/python-mode.el
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/README
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/classes/Complex.py
 %%PORTDOCS%%share/examples/%%PYTHON_VERSION%%/classes/Dates.py
