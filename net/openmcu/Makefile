@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	openmcu
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	openmcu_1.0.9
+DISTNAME=	openmcu_1.0.10
 
 MAINTAINER=	roger@FreeBSD.org
 
