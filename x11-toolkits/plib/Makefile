@@ -6,34 +6,24 @@
 #
 
 PORTNAME=		plib
-PORTVERSION= 		1.0.12a
+PORTVERSION= 		1.2.0
 CATEGORIES=		x11-toolkits
-MASTER_SITES=		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
-			http://math.missouri.edu/~stephen/software/flightgear/
-DISTFILES=		plib-1.0.12a.tar.gz calibrate-0.0.1.tar.gz
+MASTER_SITES=		http://plib.sourceforge.net/dist/
 
-MAINTAINER=		brian@CSUA.Berkeley.EDU
+MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		GL.14:${PORTSDIR}/graphics/Mesa3 		\
-			GLU.14:${PORTSDIR}/graphics/Mesa3		\
-			glut.3:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=		GL.14:${PORTSDIR}/graphics/Mesa3
 
 USE_X_PREFIX=		yes
-
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		CPPFLAGS=-I${X11BASE}/include
-CONFIGURE_ARGS+=	--includedir=$(PREFIX)/include/plib
+CONFIGURE_ARGS+=	--includedir=$(PREFIX)/include/plib \
+			--with-glut=${PREFIX}
 USE_GMAKE=		yes
 USE_NEWGCC=		yes
 MANCOMPRESSED=		yes
 
-MAN1=			calibrate.1
-
-pre-build:
-	@(cd ${WRKDIR}/calibrate-0.0.1; ${MAKE})
-	@${ECHO_MSG} "${PREFIX}"
-
-pre-install:
-	@(cd ${WRKDIR}/calibrate-0.0.1; ${MAKE} PREFIX=${PREFIX} install)
+pre-configure:
+	${PERL} -pi -e "s:-O6 ::g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
