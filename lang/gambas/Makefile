@@ -23,7 +23,6 @@ USE_LIBTOOL_VER=	13
 LIBTOOLFILES=		configure libltdl/configure
 LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes
-USE_GCC=		3.3
 CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
 			--with-conv-libraries=${LOCALBASE}/lib		\
 			--with-moc=${X11BASE}/bin
@@ -49,10 +48,6 @@ PLIST_SUB+=		SDL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not run on FreeBSD-4.x at this time"
-.endif
-
 .for lib in ${LIBS2FIX}
 NEW${lib:U}!=	${LDCONFIG} -r | ${GREP} ${lib} | ${GREP} -v 'compat/pkg'	\
 		| ${AWK} -F 'lib\/' '{print $$2}'
@@ -72,18 +67,17 @@ CONFIGURE_ARGS+=	--without-postgresql-includes				\
 PLIST_SUB+=		PGSQL="@comment "
 .endif
 
-.if exists(${LOCALBASE}/include/sqlite.h)
+.if exists(${LOCALBASE}/include/sqlite.h) && ${OSVERSION} > 500000
 WITH_SQLITE=		yes
 .endif
-.if defined(WITH_SQLITE)
+.if defined(WITH_SQLITE) && ${OSVERSION} > 500000
 LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include		\
 			--with-sqlite-libraries=${LOCALBASE}/lib
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib
 PLIST_SUB+=		SQLITE=""
 .else
-CONFIGURE_ARGS+=	--without-sqlite-includes				\
-			--without-sqlite-libraries
+CONFIGURE_ARGS+=	--disable-sqlite
 PLIST_SUB+=		SQLITE="@comment "
 .endif
 
