@@ -1,30 +1,35 @@
-bin/kdetelnet
-share/applnk/Internet/ktelnet.kdelnk
-share/apps/ktelnet/pics/kdelogo.gif
-share/apps/ktelnet/pics/ktelnet.xpm
-share/apps/ktelnet/pics/ktname.xpm
-share/apps/ktelnet/toolbar/dec.xpm
-share/apps/ktelnet/toolbar/next_ws.xpm
-share/apps/ktelnet/toolbar/panelize.xpm
-share/apps/ktelnet/toolbar/session1.xpm
-share/apps/ktelnet/toolbar/sgi.xpm
-share/apps/ktelnet/toolbar/smalldown.xpm
-share/apps/ktelnet/toolbar/smallup.xpm
-share/apps/ktelnet/toolbar/sun.xpm
-share/config/ktelnetrc
-share/doc/HTML/en/ktelnet/index.html
-share/icons/ktelnet.xpm
-share/icons/mini/ktelnet.xpm
-share/locale/de/LC_MESSAGES/ktelnet.mo
-share/locale/es/LC_MESSAGES/ktelnet.mo
-share/locale/fr/LC_MESSAGES/ktelnet.mo
-share/locale/hr/LC_MESSAGES/ktelnet.mo
-share/locale/it/LC_MESSAGES/ktelnet.mo
-share/locale/no/LC_MESSAGES/ktelnet.mo
-share/locale/pt/LC_MESSAGES/ktelnet.mo
-share/locale/sk/LC_MESSAGES/ktelnet.mo
-share/locale/zh/LC_MESSAGES/ktelnet.mo
-@dirrm share/doc/HTML/en/ktelnet
-@dirrm share/apps/ktelnet/toolbar
-@dirrm share/apps/ktelnet/pics
-@dirrm share/apps/ktelnet
+bin/ktelnet2
+share/applnk/Internet/ktelnet2.desktop
+share/apps/ktelnet2/icons/locolor/22x22/actions/dec.png
+share/apps/ktelnet2/icons/locolor/22x22/actions/next_ws.png
+share/apps/ktelnet2/icons/locolor/22x22/actions/sgi.png
+share/apps/ktelnet2/icons/locolor/22x22/actions/sun.png
+share/apps/ktelnet2/plugins/ssh_proxy.plugin
+share/apps/ktelnet2/plugins/ssh_proxy_pass.plugin
+share/apps/ktelnet2/plugins/telnet_tis.plugin
+share/apps/ktelnet2/plugins/telnet_tis_pass.plugin
+share/doc/HTML/en/ktelnet2/.anchors
+share/doc/HTML/en/ktelnet2/common
+share/doc/HTML/en/ktelnet2/compilation.html
+share/doc/HTML/en/ktelnet2/configuration.html
+share/doc/HTML/en/ktelnet2/credits.html
+share/doc/HTML/en/ktelnet2/faq.html
+share/doc/HTML/en/ktelnet2/index.docbook
+share/doc/HTML/en/ktelnet2/index.docbook.html
+share/doc/HTML/en/ktelnet2/index.html
+share/doc/HTML/en/ktelnet2/installation.html
+share/doc/HTML/en/ktelnet2/introduction.html
+share/doc/HTML/en/ktelnet2/kapp-panel.html
+share/doc/HTML/en/ktelnet2/ktelnet2-passwords.html
+share/doc/HTML/en/ktelnet2/requirements.html
+share/doc/HTML/en/ktelnet2/using-kapp.html
+share/icons/locolor/16x16/apps/ktelnet.png
+share/icons/locolor/32x32/apps/ktelnet.png
+share/locale/fr/LC_MESSAGES/ktelnet2.mo
+@dirrm share/doc/HTML/en/ktelnet2
+@dirrm share/apps/ktelnet2/plugins
+@dirrm share/apps/ktelnet2/icons/locolor/22x22/actions
+@dirrm share/apps/ktelnet2/icons/locolor/22x22
+@dirrm share/apps/ktelnet2/icons/locolor
+@dirrm share/apps/ktelnet2/icons
+@dirrm share/apps/ktelnet2
