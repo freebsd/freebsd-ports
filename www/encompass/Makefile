@@ -8,7 +8,8 @@
 PORTNAME=	encompass
 PORTVERSION=	0.3.3
 CATEGORIES=	www gnome
-MASTER_SITES=	http://zephyr.webhop.net/encompass/ \
+MASTER_SITES=	http://dobey.free.fr/encompass/ \
+		http://zephyr.webhop.net/encompass/ \
 		ftp://ftp.one.net/pub/users/dobez/
 
 MAINTAINER=	sobomax@FreeBSD.org
