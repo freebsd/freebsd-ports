@@ -1,13 +1,13 @@
---- SConstruct.orig	Wed Feb  2 09:35:41 2005
-+++ SConstruct	Wed Feb  2 21:47:51 2005
-@@ -20,6 +20,10 @@
- 
- env.AppendUnique(LIBS = ['qt-mt', 'kdecore'])
+--- SConstruct.orig	Wed Mar  9 02:57:54 2005
++++ SConstruct	Wed Mar  9 14:47:59 2005
+@@ -9,6 +9,10 @@
+ # TODO : remove
+ env.AppendUnique( ENV = os.environ )
  
 +env['CXX'] = "%%CXX%%"
-+env['CXXFLAGS'] = "%%CXXFLAGS%%"
++env['CPPFLAGS'] = "%%CXXFLAGS%%"
 +env.AppendUnique(LINKFLAGS = ['%%LINKFLAGS%%'])
 +
- if env['INSTALL_ALL'] == 1:
-     env['ITARGETS'] = []
+ ## The target make dist requires the python module shutil which is in 2.3
+ env.EnsurePythonVersion(2, 3)
  

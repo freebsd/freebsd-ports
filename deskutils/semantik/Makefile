@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.freehackers.org/~tnagy/kdissert/ \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/
@@ -21,12 +20,6 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--qtincludes=${QT_PREFIX}/include \
-		--qtlibs=${QT_PREFIX}/lib \
-		--kdeincludes=${KDE_PREFIX}/include \
-		--kdelibs=${KDE_PREFIX}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -35,6 +28,13 @@ post-patch:
 		 s:%%LINKFLAGS%%:${PTHREAD_LIBS}:g' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e \
 		's:|sed:|gsed:g' ${WRKSRC}/kde.py
+
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} PREFIX="${PREFIX}" \
+		QTDIR="${QT_PREFIX}" KDEDIR="${KDE_PREFIX}" scons configure
+
+do-build:
+	@cd ${WRKSRC} && scons
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/kdissert/kdissert ${PREFIX}/bin
@@ -92,7 +92,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/pics/toolbar/cr${size}-action-kdissert_point.png \
 		${PREFIX}/share/icons/crystalsvg/${size}x${size}/actions/kdissert_point.png
 .endfor
-.for size in 16 32 64 128
+.for size in 16 22 32 64 128
 	@${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps
 	${INSTALL_DATA} ${WRKSRC}/src/appdata/hi${size}-app-kdissert.png \
 		${PREFIX}/share/icons/hicolor/${size}x${size}/apps/kdissert.png

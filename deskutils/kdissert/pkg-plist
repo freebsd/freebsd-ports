@@ -1,6 +1,8 @@
 bin/kdissert
 lib/kde3/libkdissOOOdoc.la
 lib/kde3/libkdissOOOdoc.so
+lib/kde3/libkdissOOOimpress.la
+lib/kde3/libkdissOOOimpress.so
 lib/kde3/libkdissasciidoc.la
 lib/kde3/libkdissasciidoc.so
 lib/kde3/libkdissbeamerslides.la
@@ -18,6 +20,7 @@ share/applnk/Utilities/kdissert.desktop
 share/apps/kdissert/kdissertui.rc
 share/apps/kdissert/pics/nopix.png
 share/apps/kdissert/templatedata/kdissOOOdoc.tar.gz
+share/apps/kdissert/templatedata/kdissOOOimpress.tar.gz
 share/apps/kdissert/templatedata/kdissasciidoc.tar.gz
 share/apps/kdissert/templatedata/kdissbeamerslides.tar.gz
 share/apps/kdissert/templatedata/kdisshtmldoc.tar.gz
@@ -45,6 +48,7 @@ share/icons/crystalsvg/32x32/actions/kdissert_sort.png
 share/icons/crystalsvg/64x64/actions/kdissert_sort.png
 share/icons/hicolor/128x128/apps/kdissert.png
 share/icons/hicolor/16x16/apps/kdissert.png
+share/icons/hicolor/22x22/apps/kdissert.png
 share/icons/hicolor/32x32/apps/kdissert.png
 share/icons/hicolor/64x64/apps/kdissert.png
 share/locale/de/LC_MESSAGES/kdissert.mo
