@@ -9844,6 +9844,7 @@ rtfm		ports/misc/rtfm
 rtfreader	ports/textproc/rtfreader
 rtfx		ports/textproc/rtfx
 rtg		ports/net/rtg
+rtorrent	ports/net/rtorrent
 rtplib		ports/devel/rtplib
 rtpmon		ports/mbone/rtpmon
 rtptools	ports/mbone/rtptools
