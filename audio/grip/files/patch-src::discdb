@@ -1,0 +1,20 @@
+--- src/discdb.c.orig	Thu Apr 15 21:23:37 2004
++++ src/discdb.c	Wed Mar 16 19:02:09 2005
+@@ -311,7 +311,7 @@
+     query->query_match=MATCH_EXACT;
+     query->query_matches=0;
+ 
+-    while((inbuffer=DiscDBReadLine(&dataptr))) {
++    while(query->query_matches < MAX_INEXACT_MATCHES && (inbuffer=DiscDBReadLine(&dataptr))) {
+       query->query_list[query->query_matches].list_genre=
+ 	DiscDBGenreValue(g_strstrip(strtok(inbuffer," ")));
+       
+@@ -331,7 +331,7 @@
+     query->query_match=MATCH_INEXACT;
+     query->query_matches=0;
+ 
+-    while((inbuffer=DiscDBReadLine(&dataptr))) {
++    while(query->query_matches < MAX_INEXACT_MATCHES && (inbuffer=DiscDBReadLine(&dataptr))) {
+       query->query_list[query->query_matches].list_genre=
+ 	DiscDBGenreValue(g_strstrip(strtok(inbuffer," ")));
+       
