@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Molecular viewer, editor and visualization program
 
+BROKEN=		"Checksum mismatch"
+
 USE_XLIB=  yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
