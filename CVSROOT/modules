@@ -1313,6 +1313,7 @@ dig		src/usr.bin/dig
 digest		ports/security/digest
 digger-vgl	ports/games/digger-vgl
 digictl		src/usr.sbin/digictl
+digikam		ports/graphics/digikam
 dillo		ports/www/dillo
 dim		ports/sysutils/dim
 dircproxy	ports/irc/dircproxy
