@@ -35,11 +35,11 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-opengl
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
-			  -I${X11BASE}/include" \
+			  -I${X11BASE}/include \
+			  ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv \
-			 -L${X11BASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+			 -L${X11BASE}/lib \
+			 ${PTHREAD_LIBS}"
 
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
