@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.msg.gz
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

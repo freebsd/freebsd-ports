@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://iraf.noao.edu/contrib/xephem/ \
 		ftp://iphcip1.physik.uni-mainz.de/pub/xephem/ \
 		ftp://wolf.ifj.edu.pl/mirror/xephem/
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

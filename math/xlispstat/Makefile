@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.stat.umn.edu/pub/xlispstat/current/   \
 		ftp://statlab.uni-heidelberg.de/pub/mirrors/umn/xlispstat/current/
 DISTNAME=	xlispstat-3-52-9
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	x11 plan9
 MASTER_SITES=   ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # needs library and private header, but not during runtime
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/editors/sam:build

@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
 DISTNAME=	${PKGNAME}-src
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		mpeg_stat.1
 MANCOMPRESSED=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ecel.uwa.edu.au/users/michael/
 DISTFILES=	${PORTNAME}.tgz
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		splitmpeg.1
 MANCOMPRESSED=	yes

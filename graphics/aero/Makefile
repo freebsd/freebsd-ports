@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ee.uwa.edu.au/users/braunl/aero/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libfwf.a:${PORTSDIR}/x11-toolkits/FWF
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray

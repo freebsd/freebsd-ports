@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/tools/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pbmplus.h:${PORTSDIR}/graphics/netpbm
 
