@@ -1,7 +1,0 @@
---- local/tkmib~	Wed Jul 26 08:53:26 2000
-+++ local/tkmib	Wed Jan 17 18:32:52 2001
-@@ -1,4 +1,3 @@
--#!/usr/bin/perl
- #!/usr/bin/perl -w
- 
- require 5;
