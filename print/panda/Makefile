@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${PREFIX}/lib" \
 		LIBS="${PTHREAD_LIBS}"
+MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes
 
 MAN3=		checkinfo.3 initpanda.3 makedate.3 nowdate.3 \
