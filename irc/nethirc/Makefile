@@ -1,0 +1,25 @@
+# New ports collection makefile for:	nethirc
+# Version required:	0.04
+# Date created:		15 Dec 1999
+# Whom:			Will Andrews <andrews@technologist.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	nethirc-0.04
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	andrews@technologist.com
+
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
+
+NO_BUILD=	yes
+USE_PERL5=	yes
+MAN1=		nethirc.1
+
+do-install:
+	(cd ${WRKSRC} && ${SH} install.sh ${PREFIX})
+
+.include <bsd.port.mk>
