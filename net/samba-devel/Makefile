@@ -36,8 +36,18 @@ CONFIGURE_ARGS=	 --libdir=${SAMBA_CONFDIR} \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE}
 
+.include <bsd.port.pre.mk>
+
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+.endif
+
+.if defined(WITH_ACL_SUPPORT)
+.if ${OSVERSION} < 500018
+BROKEN=	"Requires a recent FreeBSD 5.0-CURRENT"
+.else
+CONFIGURE_ARGS+=--with-acl-support
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
@@ -114,4 +124,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${PREFIX}/share/doc/samba/README.swat
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
