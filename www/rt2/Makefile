@@ -5,12 +5,15 @@
 # $FreeBSD$
 #
 
+
 PORTNAME=	rt2
 PORTVERSION=	2.0.14
+RT_VERSION=    ${PORTVERSION:C/\./-/g}
 CATEGORIES=	www
 MASTER_SITES=	http://www.fsck.com/pub/rt/release/
-WRKSRC=		${WRKDIR}/rt-2-0-14
-DISTFILES=	rt.tar.gz
+RT_VERSION=    ${PORTVERSION:C/\./-/g}
+DISTFILES=     rt-${RT_VERSION}.tar.gz
+WRKSRC=        ${WRKDIR}/rt-${RT_VERSION}
 
 MAINTAINER=	plasmaball@pchome.com.tw
 
