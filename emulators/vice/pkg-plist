@@ -7,9 +7,6 @@ bin/xcbm2
 bin/xpet
 bin/xplus4
 bin/xvic
-@unexec install-info --delete %D/info/vice.info %D/info/dir
-info/vice.info
-@exec install-info %D/info/vice.info %D/info/dir
 lib/vice/C128/basic64
 lib/vice/C128/basichi
 lib/vice/C128/basiclo
