@@ -15,7 +15,8 @@ A .embossrc in a user's home directory overrides settings in the
 system-wide emboss.default.
 
 Online EMBOSS documentation is available at:
-	http://www.uk.embnet.org/Software/EMBOSS/general.html
+	http://www.uk.embnet.org/Software/EMBOSS/userdoc.html
 	http://www.uk.embnet.org/Software/EMBOSS/Doc/
+  http://emboss.sourceforge.net/docs/
 
 --------------------------------------------------------------------------
