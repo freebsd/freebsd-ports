@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmakerconf
-# Version required:			2.1
+# Version required:			2.2
 # Date Created:				14 August 1999
 # Whom:					Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmakerconf-2.1
+DISTNAME=	wmakerconf-2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2.informatik.uni-wuerzburg.de/staff/ulli/wmakerconf/
 
@@ -24,13 +24,14 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.3:${PORTSDIR}/graphics/png \
-		wraster.3:${PORTSDIR}/x11-wm/windowmaker
+		wraster.3:${PORTSDIR}/x11-wm/windowmaker \
+		wmfun.0:${PORTSDIR}/x11-wm/libwmfun
 
 BUILD_DEPENDS=	bunzip2:${PORTSDIR}/archivers/bzip2 \
 		wget:${PORTSDIR}/ftp/wget
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=		yes
+USE_GMAKE=	yes
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
