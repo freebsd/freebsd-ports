@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.5 1996/03/29 02:33:27 asami Exp $
+# $Id: Makefile,v 1.6 1996/04/26 08:47:37 asami Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -27,9 +27,9 @@ EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 
 MAINTAINER=	max@sfc.wide.ad.jp
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/kpathsea-2.6
+STRIP=		# some shell scripts
 
 pre-fetch:
 .if !defined(KANJI-CODE)
@@ -116,6 +116,7 @@ pre-install:
 	        return 1; \
 	        ;; \
 	  esac)
+.endif
 	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/lib-6.9.tar.gz | tar xf -)
 .if ${KANJI-CODE} == JIS
 	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/plib-jis.tar.gz | tar xf -)
@@ -126,18 +127,25 @@ pre-install:
 .if ${KANJI-CODE} == EUC
 	@(cd ${PREFIX}/lib ; gzip -dc ${DISTDIR}/plib-euc.tar.gz | tar xf -)
 .endif
-.endif
 
-MANPAGE=amslatex.1 amstex.1 bibtex.1 dvitype.1 etex.1 gftodvi.1 \
+BINARIES=kpsewhich dvicopy dvitype pdvitype gftodvi gftopk \
+	mft pktogf pktype vftovp vptovf gftype pltotf tftopl initex \
+	virtex patgen iniptex virptex inimf virmf bibtex jbibtex \
+	tangle weave pooltype
+
+MANPAGES=amslatex.1 amstex.1 bibtex.1 dvitype.1 etex.1 gftodvi.1 \
 	gftopk.1 gftype.1 initex.1 lamstex.1 latex.1 mf.1 mft.1 \
 	patgen.1 pktogf.1 pktype.1 pltotf.1 pooltype.1 slitex.1 \
 	tangle.1 tex.1 tftopl.1 vftovp.1 virtex.1 vptovf.1 weave.1
 
 post-install:
+.for bin in ${BINARIES}
+	strip ${PREFIX}/bin/${bin}
+.endfor
 .if !defined(NOMANCOMPRESS)
-	@for manpage in ${MANPAGE}; do \
-		gzip -9nf ${PREFIX}/man/man1/$$manpage ;\
-	done 
+.for man in ${MANPAGES}
+	gzip -9nf ${PREFIX}/man/man1/${man}
+.endfor
 .endif
 
 .include <bsd.port.mk>
