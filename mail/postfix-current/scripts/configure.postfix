@@ -13,15 +13,15 @@ else
 	/usr/bin/dialog --title "Postfix configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
-PCRE		"Perl Compatible Regular Expressions" ON \
+PCRE		"Perl Compatible Regular Expressions" OFF \
 SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
 MySQL		"MySQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
+TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
 IPv6		"IPv6 support" OFF \
 2> $tempfile
-#TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
 
 	retval=$?
 
@@ -78,8 +78,8 @@ while [ "$1" ]; do
 			echo "BIN1+=		tlsmgr"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.6.35-snap20010202-0.9.6.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.6.35-snap20010202-0.9.6/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.6.36-snap20010204-0.9.6.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.6.36-snap20010204-0.9.6/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;
