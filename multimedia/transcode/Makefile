@@ -140,7 +140,7 @@ PLIST_SUB+=	WITH_FFMPEG="@comment "
 .endif
 
 .if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
 PLIST_SUB+=	WITH_LIBDV=""
 CONFIGURE_ARGS+=	--with-pal-yuv=YV12
 .else
