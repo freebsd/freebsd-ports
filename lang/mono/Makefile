@@ -7,21 +7,22 @@
 
 PORTNAME=	mono
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open source implementation of .NET Development Framework
 
-LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
-
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig
 USE_GMAKE=	yes
+LIBTOOLFILES=	configure libgc/configure
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--program-transform-name=\'\'
+CONFIGURE_ARGS=	--program-transform-name=\'\' \
+		--with-gc=included
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -32,4 +33,14 @@ MAN5=		mono-config.5
 
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-signbit
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
