@@ -12,6 +12,7 @@ include/tvmet/MatrixOperators.h
 include/tvmet/NumericTraits.h
 include/tvmet/RunTimeError.h
 include/tvmet/TypePromotion.h
+include/tvmet/TvmetBase.h
 include/tvmet/UnaryFunctionals.h
 include/tvmet/Vector.h
 include/tvmet/VectorEval.h
@@ -22,6 +23,11 @@ include/tvmet/Xpr.h
 include/tvmet/XprFunctions.h
 include/tvmet/XprOperators.h
 include/tvmet/config.h
+include/tvmet/config/config-gcc.h
+include/tvmet/config/config-icc.h
+include/tvmet/config/config-kcc.h
+include/tvmet/config/config-pgi.h
 include/tvmet/tvmet.h
-@dirrm include/tvmet
 share/aclocal/tvmet.m4
+@dirrm include/tvmet/config
+@dirrm include/tvmet
