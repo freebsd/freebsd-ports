@@ -39,7 +39,6 @@ bin/vcp
 %%SITE_PERL%%/VCP/Filter/dumpdata.pm
 %%SITE_PERL%%/VCP/Filter/identity.pm
 %%SITE_PERL%%/VCP/Filter/labelmap.pm
-%%SITE_PERL%%/VCP/Filter/logmemsize.pm
 %%SITE_PERL%%/VCP/Filter/map.pm
 %%SITE_PERL%%/VCP/Filter/sort.pm
 %%SITE_PERL%%/VCP/Filter/stringedit.pm

@@ -6,7 +6,7 @@
 
 PORTNAME=	VCP
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML/RBS
@@ -26,7 +26,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 		${SITE_PERL}/BFD.pm:${PORTSDIR}/devel/p5-BFD \
 		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table \
 		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
-
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
@@ -77,7 +76,6 @@ MAN3=		RevML::Doctype.3 \
 		VCP::Filter::dumpdata.3 \
 		VCP::Filter::identity.3 \
 		VCP::Filter::labelmap.3 \
-		VCP::Filter::logmemsize.3 \
 		VCP::Filter::map.3 \
 		VCP::Filter::sort.3 \
 		VCP::Filter::stringedit.3 \
@@ -113,5 +111,8 @@ MAN3=		RevML::Doctype.3 \
 		VCP::Utils::p4.3 \
 		VCP::Utils::revml.3 \
 		VCP::Utils::vss.3
+
+post-patch:
+	${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 .include <bsd.port.post.mk>

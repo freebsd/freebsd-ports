@@ -1,0 +1,41 @@
+--- bin/vcp.orig	Fri Mar 19 05:30:20 2004
++++ bin/vcp	Tue Apr 13 02:08:37 2004
+@@ -360,8 +360,6 @@
+             || -S _ < 1_000_000       # That would be toooo big
+          );
+ 
+-         print banner() if $is_vcp_file;
+-
+          $vcp_spec = $is_vcp_file
+             ? VCP::ConfigFileUtils::parse_config_file( $source_spec )
+             : ! $cant_be_vcp_file
+@@ -375,6 +373,7 @@
+             $vcp_filename = $source_spec;
+             shift @ARGV;
+          }
++
+       };
+ 
+       if ( $vcp_spec ) {
+@@ -418,6 +417,10 @@
+                $spec = "";
+             }
+ 
++           print banner()
++               if $type eq "dest" && length $spec && $spec ne "-";
++               ## Don't emit the banner if we're emitting to STDOUT.
++
+             push @plugins, load_module( $spec, $type, $default_scheme, $value );
+ 
+             die "extra parameters for $tag: ", shell_quote( @$value ), "\n" 
+@@ -442,6 +445,10 @@
+                $type           = "Dest";
+                $default_scheme = "revml";
+             }
++
++           print banner()
++               if $type eq "Dest" && length $spec && $spec ne "-";
++               ## Don't emit the banner if we're emitting to STDOUT.
+ 
+             ## We pass \@ARGV to the constructors for source and dest so
+             ## that they may parse some of @ARGV and leave the rest.
