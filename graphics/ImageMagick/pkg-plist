@@ -439,8 +439,8 @@ lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.6
-lib/pkgconfig/ImageMagick++.pc
-lib/pkgconfig/ImageMagick.pc
+libdata/pkgconfig/ImageMagick++.pc
+libdata/pkgconfig/ImageMagick.pc
 %%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image/Magick.pm
 %%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
 %%WITH_PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
