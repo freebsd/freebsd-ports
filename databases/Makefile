@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.32 1998/11/16 15:48:36 vanilla Exp $
+# $Id: Makefile,v 1.33 1998/12/26 08:52:53 kuriyama Exp $
 #
     SUBDIR += cdb
     SUBDIR += db
@@ -10,6 +10,7 @@
     SUBDIR += msql
     SUBDIR += mysql321
     SUBDIR += mysql322
+    SUBDIR += mysqltutor
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBI
     SUBDIR += p5-MLDBM
