@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- makefile.orig	Fri Aug 15 23:31:32 2003
-+++ makefile	Sun Sep 28 13:23:50 2003
+--- makefile.orig	Wed Dec 24 08:44:58 2003
++++ makefile	Sun Jan 11 19:47:08 2004
 @@ -5,7 +5,7 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
@@ -40,21 +37,21 @@ $FreeBSD$
  
  ifdef DEBUG
 -CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
-+CXXFLAGS+=-DDEBUG $(CXXBASEFLAGS)
++CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
  else
 -CXXFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
 +CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
  endif
  
- .cxx.o:
-@@ -71,8 +71,8 @@
- LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)
+ ifeq ($(shell uname), Darwin)
+@@ -75,8 +75,8 @@
+ COMPLIB=../../scintilla/bin/scintilla.a
  
- $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
--SciTEProps.o Utf8_16.o $(LEXEROBJS) ../../scintilla/bin/scintilla.a
+ $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o \
+-MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o $(COMPLIB)
 -	$(CC) `$(CONFIGLIB)` `glib-config --libs gthread` -DGTK $^ -o $@
-+SciTEProps.o Utf8_16.o
++MultiplexExtension.o DirectorExtension.o SciTEProps.o Utf8_16.o
 +	$(CC) `$(CONFIGLIB)` -lscintilla -lscintilla_lexers -DGTK $^ -o $@
  
- # SciTE-static no longer builds. Kept here in case of later need.
- SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
+ # Automatically generate header dependencies with "make deps"
+ include deps.mak
