@@ -9,7 +9,15 @@ PORTNAME=	gnus
 PORTVERSION=	5.8.8
 PORTREVISION=	1
 CATEGORIES=	news mail elisp
-MASTER_SITES=	ftp://ftp.gnus.org/pub/gnus/
+MASTER_SITES=	http://quimby.gnus.org/gnus/dist/ \
+		ftp://quimby.gnus.org/gnus/dist/ \
+		ftp://ftp.monash.edu.au/pub/gnus/ \
+		ftp://ftp.win.ne.jp/pub/word/elisp/gnus/ \
+		ftp://ftp.kreonet.re.kr/pub/tools/emacs/gnus/ \
+		ftp://ftp.task.gda.pl/mirror/ftp.gnus.org/pub/gnus/ \
+		http://www.gnus.org/dist/ \
+		ftp://ftp.gnus.org/dist/ \
+		ftp://ftp.twoguys.org/gnus/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	ilya@martynov.org
