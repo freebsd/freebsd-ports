@@ -7,21 +7,18 @@
 #
 
 PORTNAME=	chmlib
-PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTVERSION=	0.3.5
+PORTREVISION=	0
 CATEGORIES=	misc
 MASTER_SITES=	http://66.93.236.84/~jedwin/projects/chmlib/
-DISTNAME=	${PORTNAME}-0.31
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for dealing with Microsoft ITSS/CHM format files
 
-WANT_LIBTOOL_VER=13
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-
-do-configure:
-	@${DO_NADA}
 
 .include <bsd.port.mk>
