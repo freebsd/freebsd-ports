@@ -33,11 +33,9 @@ MAN1=		xfig.1
 INSTALL_TARGET=	install install.all
 .endif
 
-pre-everything::
-.if !defined(WITHOUT_GHOSTSCRIPT)
-	@${ECHO_MSG} "To build this port without Ghostscript support,"
-	@${ECHO_MSG} "define \"WITHOUT_GHOSTSCRIPT\"."
-.endif
+OPTIONS=	GHOSTSCRIPT "Ghostscript support" on
+
+.include <bsd.port.pre.mk>
 
 post-extract:
 	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
@@ -47,4 +45,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
