@@ -77,6 +77,7 @@
     SUBDIR += grepmail
     SUBDIR += gtkgrepmail
     SUBDIR += hbiff
+    SUBDIR += hotwayd
     SUBDIR += icqmail
     SUBDIR += ifile
     SUBDIR += im
