@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 USE_GLIB=	yes
 USE_GMAKE=	yes
