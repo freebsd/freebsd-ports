@@ -7387,6 +7387,7 @@ p5-Tk-XMLViewer	ports/textproc/p5-Tk-XMLViewer
 p5-TraceFuncs	ports/devel/p5-TraceFuncs
 p5-Tree-DAG_Node	ports/devel/p5-Tree-DAG_Node
 p5-Tree-Nary	ports/textproc/p5-Tree-Nary
+p5-Tree-Parser	ports/devel/p5-Tree-Parser
 p5-Tree-Simple	ports/devel/p5-Tree-Simple
 p5-Tree-Simple-View	ports/devel/p5-Tree-Simple-View
 p5-UML-Sequence	ports/textproc/p5-UML-Sequence
