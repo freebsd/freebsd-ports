@@ -3,13 +3,13 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.55 1998/06/12 07:55:06 dima Exp $
+# $Id: Makefile,v 1.56 1998/06/12 11:39:32 ache Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
 #
 
-DISTNAME=       ssh-1.2.25
+DISTNAME=       ssh-1.2.26
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
