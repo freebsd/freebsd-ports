@@ -6,30 +6,41 @@
 #
 
 PORTNAME=	highmoon
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	http://highmoon.gerdsmeier.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duel in the universe
 
-USE_REINPLACE=	yes
-USE_SDL=	sdl mixer
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-pre-patch:
-	@${REINPLACE_CMD} -E 's,"(snd|gfx)/,"${DATADIR}/\1/,' \
-		${WRKSRC}/galaxy.cpp ${WRKSRC}/graphics.cpp ${WRKSRC}/sound.cpp
-	@${REINPLACE_CMD} -e 's,[[:cntrl:]]*$$,,' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's,^#include <SDL/,#include <,' \
-		${WRKSRC}/constants.hpp ${WRKSRC}/graphics.hpp \
-		${WRKSRC}/main.cpp ${WRKSRC}/main.cpp ${WRKSRC}/sound.hpp
+USE_SDL=	image sdl
+USE_GCC=	3.4
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LIBS="${LDFLAGS}"
+
+CXXFLAGS+=	`${SDL_CONFIG} --cflags`
+LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image
+
+post-patch:
+	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SDL/SDL|SDL|g ; \
+		 s|^#define __ENV|//#define __ENV|g ; \
+		 s|"gfx/|"${DATADIR}/gfx/|g ; \
+		 s|"snd/|"${DATADIR}/snd/|g ; \
+		 s|-round(|-rint(|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ufo ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DATADIR}/snd ${DATADIR}/gfx
-	${INSTALL_DATA} ${WRKSRC}/snd/* ${DATADIR}/snd
+	@${MKDIR} ${DATADIR}/gfx
 	${INSTALL_DATA} ${WRKSRC}/gfx/* ${DATADIR}/gfx
+	@${MKDIR} ${DATADIR}/snd
+	${INSTALL_DATA} ${WRKSRC}/snd/* ${DATADIR}/snd
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
