@@ -1,6 +1,7 @@
 bin/pan
 share/locale/da/LC_MESSAGES/pan.mo
 share/locale/es/LC_MESSAGES/pan.mo
+share/locale/it/LC_MESSAGES/pan.mo
 share/locale/ja/LC_MESSAGES/pan.mo
 share/locale/ko/LC_MESSAGES/pan.mo
 share/locale/pl/LC_MESSAGES/pan.mo
