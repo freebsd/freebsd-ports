@@ -5,7 +5,7 @@
  
      va_start(arg_ptr, fmt);
 -    vsprintf((char *)buf, fmt, arg_ptr);
-+    vsnprintf((char *)buf, sizeof((char *) buf), fmt, arg_ptr);
++    vsnprintf((char *)buf, sizeof(buf), fmt, arg_ptr);
      va_end(arg_ptr);
      rxvt_tt_write(r, buf, (unsigned int)STRLEN(buf));
  }
