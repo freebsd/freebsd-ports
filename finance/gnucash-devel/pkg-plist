@@ -257,6 +257,7 @@ share/locale/no/LC_MESSAGES/gnucash.mo
 share/locale/pt_BR/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
 share/locale/sv/LC_MESSAGES/gnucash.mo
+share/locale/tr/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
 @exec cd share/guile && ln -sf ../slib . 
 @exec guile -c "(use-modules (ice-9 slib)) (require 'new-catalog)" 
