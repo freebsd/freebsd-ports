@@ -301,6 +301,7 @@
     SUBDIR += xtradius
     SUBDIR += xwhois
     SUBDIR += yaz
+    SUBDIR += ymessenger
     SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zebra-server
