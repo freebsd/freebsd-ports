@@ -7,6 +7,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.11.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.3:${PORTSDIR}/textproc/expat2
+		expat.4:${PORTSDIR}/textproc/expat2
 
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
