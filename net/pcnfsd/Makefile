@@ -3,7 +3,7 @@
 # Date created:		Oct 6, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.8 1997/07/10 15:50:52 pst Exp $
+# $Id: Makefile,v 1.9 1998/08/24 08:41:36 hoek Exp $
 #
 
 DISTNAME=	pcnfsd.93.02.16
@@ -18,5 +18,8 @@ MAN8=		pcnfsd.8
 MANCOMPRESSED=	maybe
 
 NO_WRKSUBDIR=
+
+post-extract:
+	${CP} ${FILESDIR}/Makefile.inc ${WRKSRC}
 
 .include <bsd.port.mk>
