@@ -2,7 +2,7 @@
 +++ Makefile	Fri Nov 24 14:42:09 2000
 @@ -1 +1 @@
 -CFLAGS = -O2 -Wall
-+CFLAGS += -Wall
++CFLAGS += -Wall -fPIC
 @@ -7,3 +7,3 @@
 -BINDIR = /usr/local/bin
 -LIBDIR = /usr/local/lib
