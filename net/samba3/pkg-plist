@@ -156,11 +156,13 @@ share/doc/samba/textdocs/DOMAIN_CONTROL.txt
 share/doc/samba/textdocs/DOMAIN_MEMBER.txt
 share/doc/samba/textdocs/ENCRYPTION.txt
 share/doc/samba/textdocs/Faxing.txt
+share/doc/samba/textdocs/File-Cacheing.txt
 share/doc/samba/textdocs/GOTCHAS.txt
 share/doc/samba/textdocs/HINTS.txt
 share/doc/samba/textdocs/INSTALL.sambatar
 share/doc/samba/textdocs/MIRRORS.txt
 share/doc/samba/textdocs/Macintosh_Clients.txt
+share/doc/samba/textdocs/NT-Guest-Access.txt
 share/doc/samba/textdocs/NTDOMAIN.txt
 share/doc/samba/textdocs/NetBIOS.txt
 share/doc/samba/textdocs/OS2-Client-HOWTO.txt
@@ -186,6 +188,7 @@ share/doc/samba/textdocs/UNIX_INSTALL.txt
 share/doc/samba/textdocs/UNIX_SECURITY.txt
 share/doc/samba/textdocs/Win95.txt
 share/doc/samba/textdocs/WinNT.txt
+share/doc/samba/textdocs/CRLF-LF-Conversions.txt
 share/doc/samba/textdocs/cifsntdomain.txt
 share/doc/samba/textdocs/security_level.txt
 share/doc/samba/yodldocs/DOMAIN_MEMBER.yo
