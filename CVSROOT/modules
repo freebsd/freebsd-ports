@@ -1864,6 +1864,7 @@ evolvotron	ports/graphics/evolvotron
 eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
 exact		ports/mail/exact
+excalibur-configuration	ports/devel/excalibur-configuration
 exctags		ports/devel/ctags
 execline	ports/lang/execline
 exifprobe	ports/graphics/exifprobe
