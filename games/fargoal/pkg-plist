@@ -1,0 +1,53 @@
+bin/fargoal
+bin/sword
+share/fargoal/data/sof.cfg
+share/fargoal/gfx/black.bmp
+share/fargoal/gfx/chars.bmp
+share/fargoal/gfx/chars_ep.bmp
+share/fargoal/gfx/dmz_chars.bmp
+share/fargoal/gfx/dmz_layout.bmp
+share/fargoal/gfx/dmz_tiles.bmp
+share/fargoal/gfx/layout.bmp
+share/fargoal/gfx/layout_ep.bmp
+share/fargoal/gfx/originalchars.bmp
+share/fargoal/gfx/originalset.bmp
+share/fargoal/gfx/sword.dat
+share/fargoal/gfx/tiles.bmp
+share/fargoal/gfx/tiles_ep.bmp
+share/fargoal/sfx/attack.wav
+share/fargoal/sfx/beacon.wav
+share/fargoal/sfx/boom.wav
+share/fargoal/sfx/chop.wav
+share/fargoal/sfx/clang.wav
+share/fargoal/sfx/claw.wav
+share/fargoal/sfx/climb.wav
+share/fargoal/sfx/clink.wav
+share/fargoal/sfx/crash.wav
+share/fargoal/sfx/crunch.wav
+share/fargoal/sfx/ding.wav
+share/fargoal/sfx/down.wav
+share/fargoal/sfx/fight.wav
+share/fargoal/sfx/gnarl.wav
+share/fargoal/sfx/gold.wav
+share/fargoal/sfx/intro.wav
+share/fargoal/sfx/item.wav
+share/fargoal/sfx/levelup.wav
+share/fargoal/sfx/move.wav
+share/fargoal/sfx/pit.wav
+share/fargoal/sfx/potion.wav
+share/fargoal/sfx/sacrifice.wav
+share/fargoal/sfx/shred.wav
+share/fargoal/sfx/shriek.wav
+share/fargoal/sfx/slain.wav
+share/fargoal/sfx/slash.wav
+share/fargoal/sfx/spell.wav
+share/fargoal/sfx/step.wav
+share/fargoal/sfx/teleport.wav
+share/fargoal/sfx/thump.wav
+share/fargoal/sfx/ugh.wav
+share/fargoal/sfx/up.wav
+share/fargoal/sfx/victory.wav
+@dirrm share/fargoal/data
+@dirrm share/fargoal/gfx
+@dirrm share/fargoal/sfx
+@dirrm share/fargoal
