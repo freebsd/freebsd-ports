@@ -1,0 +1,11 @@
+--- configure	2002-05-18 20:25:00.000000000 +0100
++++ configure	2002-10-12 19:23:12.000000000 +0100
+@@ -2370,7 +2370,7 @@
+ 
+ fi
+ 
+-for ac_header in fcntl.h limits.h malloc.h syslog.h unistd.h
++for ac_header in fcntl.h limits.h malloc.h syslog.h unistd.h sys/file.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ echo "$as_me:2376: checking for $ac_header" >&5
