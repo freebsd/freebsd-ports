@@ -9,3 +9,9 @@
  
         LIBLIBS = $(LIBSDIR) $(HELPLIB) $(HTMLWLIB) $(BUTTFACELIB) $(XPMLIB) 
        ALLXLIBS = $(MOTIFLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+@@ -97,4 +97,4 @@
+ XCOMM  Insert Macros
+ XCOMM ------------------------------------------------------------------
+ 
+-ComplexProgramTarget(xmhelp)
++ComplexProgramTargetNoMan(xmhelp)
