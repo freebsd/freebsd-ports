@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/manual.tex
+%%PORTDOCS%%%%DOCSDIR%%/caption.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/caption.dtx
+%%CLASSDIR%%/caption.sty
+%%CLASSDIR%%/caption.ins
+%%CLASSDIR%%/caption2.dtx
+%%CLASSDIR%%/caption2.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
