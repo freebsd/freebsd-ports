@@ -27,11 +27,12 @@
 PORTNAME=	zsh
 PORTVERSION=	4.2.1
 CATEGORIES=	shells
-MASTER_SITES=	http://www.zsh.org/pub/ \
-		ftp://ftp.zsh.org/pub/ \
-		ftp://sunsite.dk/pub/unix/shells/zsh/ \
+MASTER_SITES=	\
 		http://archive.progeny.com/zsh/ \
 		ftp://archive.progeny.com/zsh/ \
+		http://www.zsh.org/pub/ \
+		ftp://ftp.zsh.org/pub/ \
+		ftp://sunsite.dk/pub/unix/shells/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \
 		ftp://sunsite.org.uk/package/zsh/ \
 		ftp://ftp.fu-berlin.de/pub/unix/shells/zsh/ \
