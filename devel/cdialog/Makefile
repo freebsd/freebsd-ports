@@ -25,12 +25,15 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
 BINDIR?=	${PREFIX}/bin
+INCLUDEDIR?=	${PREFIX}/include/cdialog
 LIBDIR?=	${PREFIX}/lib
 MAN1DIR?=	${MANPREFIX}/man/man1
 
 do-install:
 	cd ${WRKSRC};\
+	${MKDIR} ${BINDIR} ${INCLUDEDIR} ${LIBDIR}; \
 	${INSTALL_PROGRAM} dialog ${BINDIR}/cdialog;\
+	${INSTALL_DATA} dialog.h colors.h ${INCLUDEDIR}; \
 	$(INSTALL_DATA) libdialog.a $(LIBDIR)/libcdialog.a;\
 	${INSTALL_DATA} dialog.1 ${MAN1DIR}/cdialog.1
 
