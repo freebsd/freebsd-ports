@@ -17,6 +17,7 @@ DISTFILES=	gnuplot-3.7.1.tar.gz \
 EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz
 
 MAINTAINER=	nakaji@jp.freebsd.org
+COMMENT=	A command-driven interactive function plotting program
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib

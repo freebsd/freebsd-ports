@@ -11,6 +11,7 @@ CATEGORIES=	math parallel
 MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/parmetis/files/
 
 MAINTAINER=	eoin@maths.tcd.ie
+COMMENT=	A package for parallel (mpi) unstructured graph partitioning
 
 RUN_DEPENDS=	$(PREFIX)/mpich/bin/mpirun:${PORTSDIR}/net/mpich
 BUILD_DEPENDS=	$(PREFIX)/mpich/bin/mpicc:${PORTSDIR}/net/mpich

@@ -12,6 +12,7 @@ CATEGORIES=	misc
 # MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
+COMMENT=	FreeBSD's next-generation sysinstall/package management tool
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		tvision.0:${PORTSDIR}/devel/tvision

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Roman
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	philip@paeps.cx
+COMMENT=	Perl module to convert between Arabic and Roman numerals
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

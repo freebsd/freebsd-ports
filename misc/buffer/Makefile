@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	steve
 
 MAINTAINER=	jonny@jonny.eng.br
+COMMENT=	Buffer sporadic I/O for faster tape and pipe throughput
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mahogany
 
 MAINTAINER=		sk-ports@vegamuse.org
+COMMENT=	An X11 mail and news client with an embedded Python interpreter
 
 LIB_DEPENDS+=		wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
 BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig11

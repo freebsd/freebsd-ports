@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	math-atlas
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
+COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
 
 LIB_DEPENDS=    lapack:${PORTSDIR}/math/lapack
 

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-3.3.5
 #SLAVEDIRS=misc/afbackup-client misc/afbackup-server
 
 MAINTAINER=	voland@catpipe.net
+COMMENT=	AF's backup system
 
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist

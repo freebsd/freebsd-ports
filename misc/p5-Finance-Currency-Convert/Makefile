@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Convert currencies and fetch their exchange rates
 
 PERL_CONFIGURE=	yes
 

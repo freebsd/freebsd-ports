@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
 DISTNAME=	fortune.it-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	A very funny fortune file in Italian
 
 NO_BUILD=	yes
 

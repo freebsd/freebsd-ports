@@ -14,6 +14,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=   # defined
 
 MAINTAINER=	paul@it.ca
+COMMENT=	Test an SMTP host for third-party relay
 
 USE_PERL5=	yes
 

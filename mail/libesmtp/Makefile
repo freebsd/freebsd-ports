@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.borgsdemons.com/distfiles/
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	A library for posting electronic mail
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -26,6 +26,7 @@ DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2:w32codec \
 EXTRACT_ONLY=	w32codec-${CODEC_MPLAYER_VERSION}.tar.bz2
 
 MAINTAINER=	holger@e-gitt.net
+COMMENT=	Huge compilation of Win32 binary codecs, including MPEG-4(DivX ;-))
 
 RESTRICTED=	Unsure of codec\'s license
 

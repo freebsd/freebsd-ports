@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
 MAINTAINER=	andrey@mgul.ac.ru
+COMMENT=	Milter based anti-spam and anti-virus filtering program
 
 BUILD_DEPENDS=	\
 	${PERL_SITELIBDIR}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \

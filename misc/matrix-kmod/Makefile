@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.belousov.com/download/
 PKGNAMESUFFIX=	-kmod
 
 MAINTAINER=     strijar@urai.ru
+COMMENT=	Screensaver for console (matrix_saver.ko) "Matrix" like
 
 MAKE_ENV=	DESTDIR="${PREFIX}/lib/matrix"
 

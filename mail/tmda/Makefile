@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mwm@mired.org
+COMMENT=	Python-based SPAM reduction system
 
 USE_PYTHON=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://zekiller.skytech.org/fichiers/smssend/
 
 MAINTAINER=	mico@bsd.hu
+COMMENT=	A tool to send a SMS to any GSM
 
 MAN1=	smssend.1 smssend.scripting.1 email2smssend.1
 

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	brett@peloton.runet.edu
+COMMENT=	Biff-type program, designed to match AfterStep
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.dbox.handshake.de/download/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	IMAP4rev1 and POP3 server from the DBOX BBS package
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

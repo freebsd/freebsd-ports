@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.1/ \
 		http://www.gn-50uma.de/ftp/pari-2.1/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
+COMMENT=	Mathmatics library and advanced calculator package
 
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes

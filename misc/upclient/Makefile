@@ -12,6 +12,7 @@ MASTER_SITES=	http://uptimes.wonko.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	The Uptimes project client
 
 # Global variables
 #

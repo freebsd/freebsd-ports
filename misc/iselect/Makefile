@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.engelschall.com/sw/iselect/distrib/ \
 		ftp://ftp.engelschall.com/sw/iselect/
 
 MAINTAINER=	rse@engelschall.com
+COMMENT=	Interactive Selection Tool
 
 HAS_CONFIGURE=	yes
 

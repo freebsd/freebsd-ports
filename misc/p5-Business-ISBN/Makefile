@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Business
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
+COMMENT=	Work with International Standard Book Numbers
 
 PERL_CONFIGURE=		yes
 

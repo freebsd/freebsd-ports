@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	Remove idle cursor image from screen
 
 WRKSRC=		$(WRKDIR)/unclutter
 USE_IMAKE=	yes

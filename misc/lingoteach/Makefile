@@ -17,6 +17,7 @@ DISTFILES=	${PORTNAME}-sound-${PORTVERSION}.tar.gz \
 .endif
 
 MAINTAINER=	mva121@gmx.net
+COMMENT=	A language teaching program with sound
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20

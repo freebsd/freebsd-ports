@@ -12,6 +12,7 @@ MASTER_SITES=	http://dovecot.procontrol.fi/test/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-test5
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	Secure and compact IMAP server
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

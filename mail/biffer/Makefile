@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.generalconcepts.com/resources/software/
 
 MAINTAINER=	jsellens@generalconcepts.com
+COMMENT=	A better mail notification server
 
 RUN_DEPENDS=	xmsg:${PORTSDIR}/x11/xmsg
 

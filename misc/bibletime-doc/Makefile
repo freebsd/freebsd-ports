@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bibletime
 
 MAINTAINER=	wvengen@stack.nl
+COMMENT=	Documentation for bibletime, a powerful Bible study program for KDE3
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	mail textproc
 MASTER_SITES=	http://savannah.nongnu.org/download/ifile/default.pkg/${PORTVERSION}/
 
 MAINTAINER=	david+ports@bushong.net
+COMMENT=	An application of machine learning to e-mail filtering
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
 MASTER_SITE_SUBDIR=	system/mail/pop
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	A virtual POP3 server
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

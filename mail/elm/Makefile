@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.virginia.edu/pub/elm/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	toasty@dragondata.com
+COMMENT=	A once-popular mail user agent, version 2.5.x
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell

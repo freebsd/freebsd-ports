@@ -11,6 +11,7 @@ CATEGORIES=	math archivers
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 
 MAINTAINER=	maneo@bsdpro.com
+COMMENT=	Calculate data entropy to benchmark compression algorithms
 
 MAN1=		entropy.1
 MANCOMPRESSED=	yes

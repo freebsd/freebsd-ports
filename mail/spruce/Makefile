@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	erich@tacni.net
+COMMENT=	A simple GTK based email client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 DISTNAME=	translate
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Translates string using Babelfish
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 

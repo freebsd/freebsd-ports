@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.messagewall.org/download/
 DISTNAME=	messagewall-${PORTVERSION}
 
 MAINTAINER=	opr@bsdaemon.be
+COMMENT=	Free SMTP PROXY with filtering
 
 BUILD_DEPENDS=  ${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
 		${LOCALBASE}/include/firedns.h:${PORTSDIR}/net/firedns

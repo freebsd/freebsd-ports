@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ping.be/bertin/ \
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	A free spreadsheet with graphical user interface
 
 USE_XLIB=	yes
 USE_XPM=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/pymsgauth/
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Automatically process qsecretary confirmation requests
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes

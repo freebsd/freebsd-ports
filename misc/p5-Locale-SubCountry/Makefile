@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Convert state, province, county etc. names to/from code
 
 PERL_CONFIGURE=	yes
 

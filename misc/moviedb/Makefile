@@ -17,6 +17,7 @@ DIST_SUBDIR=	moviedb
 EXTRACT_ONLY=	tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	user@unknown.nu
+COMMENT=	The Internet Movie Database package
 
 IGNOREFILES=	actors.list.gz actresses.list.gz aka-names.list.gz \
 	aka-titles.list.gz alternate-versions.list.gz biographies.list.gz \

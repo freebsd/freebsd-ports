@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	Unit conversion and calculation
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.2/ \
 DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.alpha
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
+COMMENT=	Mathmatics library and advanced calculator package
 
 ONLY_FOR_ARCHS=	i386
 

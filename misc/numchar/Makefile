@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://www.whizkidtech.net/unix/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Converts phone numbers between digits and characters
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/numchar ${PREFIX}/bin

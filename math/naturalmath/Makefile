@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/naturalmath/
 
 MAINTAINER=	stephen@math.missouri.edu
+COMMENT=	Script to turn intuitively written math into latex
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 

@@ -11,6 +11,7 @@ CATEGORIES=	mail gnome
 MASTER_SITES=	http://flink.leyman.nu/
 
 MAINTAINER=	rael@vectorstar.net
+COMMENT=	The Flink mailchecker is a small panelapplet for the GNOME panel
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
 DISTNAME=	Video-DVDRip-${PORTVERSION}
 
 MAINTAINER=	michaelnottebrock@gmx.net
+COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 .if !defined(WITHOUT_CLUSTER)
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.usermode.org/code/
 
 MAINTAINER=	david@usermode.org
+COMMENT=	A homebrewer's recipe calculator
 
 GNU_CONFIGURE=	yes
 

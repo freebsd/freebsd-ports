@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	Process logfiles and conditionally perform certain actions
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-etc-dir=${PREFIX}/etc

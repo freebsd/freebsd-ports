@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+COMMENT=	A powerful plotting tool (successor of xmgr)
 
 LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		netcdf.1:${PORTSDIR}/math/netcdf	\

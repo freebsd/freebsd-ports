@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Keeps insertion order, allows duplicate keys
 
 PERL_CONFIGURE=	yes
 

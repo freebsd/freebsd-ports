@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s/-snap/}
 
 MAINTAINER=	trish@bsdunix.net
+COMMENT=	The Ecartis Listserver \ Mailing List Manager
 
 USE_GMAKE=	yes
 

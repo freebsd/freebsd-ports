@@ -12,6 +12,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	A webmail system which accesses mail over IMAP
 
 #-----------------------------------------------------------------------
 # You may define these options:

@@ -60,6 +60,7 @@ MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 MASTER_SITE_SUBDIR=	jkoshy
 
 MAINTAINER=	scott+ports@sabami.seaslug.org
+COMMENT=	A cleaned up MH mailer suite
 
 USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213

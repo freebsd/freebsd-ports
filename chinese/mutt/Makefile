@@ -12,6 +12,7 @@ MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
 REVISEDATE=	20020901
 
 MAINTAINER=	ycheng@sinica.edu.tw
+COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
 PATCH_SITES=	http://bsdchat.com/~clive/dist/mutt15/ \
 		ftp://freebsd.sinica.edu.tw/pub/clive/mutt15/

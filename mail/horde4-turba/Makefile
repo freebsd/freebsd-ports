@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.pt.horde.org/pub/horde-ftp/turba/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	The Horde contact management application
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

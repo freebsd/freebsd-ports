@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=system/mail/biffs
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ust@cert.siemens.de
+COMMENT=	A Xbiff like mail tool with animated 3D graphics
 
 USE_XLIB=	yes
 PATCH_STRIP=	-p1

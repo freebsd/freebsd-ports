@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wchao@isi.edu
+COMMENT=	Perl module for persistent counter class
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/${PORTVERSION}/
 
 MAINTAINER=	tmutoh@mx10.freecom.ne.jp
+COMMENT=	Mbone integrated interface, audio, video, editor, and whiteboard
 
 LIB_DEPENDS=	tk82:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	rat30:${PORTSDIR}/mbone/rat30 \

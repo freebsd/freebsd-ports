@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.unknown.nu/ports/
 
 MAINTAINER=	user@unknown.nu
+COMMENT=	An interactive Quran (Koran)
 
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 

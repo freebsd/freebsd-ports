@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	A RRDtool frontend for Postfix statistics
 
 RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/net/rrdtool	\
 		${SITE_PERL}/File/Tail.pm:${PORTSDIR}/devel/p5-File-Tail

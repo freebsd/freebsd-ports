@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://65.108.58.129/ringtonetools/
 
 MAINTAINER=	mike@mikekohn.net
+COMMENT=	Create ringtones (songs) and logos for mobile phones
 
 RESTRICTED=	no-commercial-use
 

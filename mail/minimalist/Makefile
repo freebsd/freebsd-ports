@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g:S/-/./}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	A minimalistic mailing list manager
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	us-
 DISTFILES=	${PORTNAME}.gz
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	USA postal code
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

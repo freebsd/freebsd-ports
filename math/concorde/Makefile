@@ -14,6 +14,7 @@ DISTNAME=	co991215
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	Combinatorial Optimization package
 
 WRKSRC=		${WRKDIR}/concorde
 

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	gsutter@zer0.org
+COMMENT=	Spam filtering software for procmail
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 

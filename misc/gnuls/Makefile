@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	fileutils
 DISTNAME=	fileutils-${PORTVERSION}
 
 MAINTAINER=	bmc@WillsCreek.COM
+COMMENT=	GNU colorized `ls'
 
 GNU_CONFIGURE=	yes
 MAN1=		gnuls.1 dircolors.1 dir.1 vdir.1

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	freebsdports@arved.de
+COMMENT=	Automatically generating simple manual pages from program output
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
 		http://www.rrr.de/~riggs/mplayer/
 
 MAINTAINER=	riggs@rrr.de
+COMMENT=	A font pack for the mplayer OSD and SUB
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

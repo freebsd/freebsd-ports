@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wvengen@stack.nl
+COMMENT=	A powerful Bible study application for KDE3
 
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 .if !defined(NOPORTDOCS)

@@ -12,6 +12,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/gotmail/stable.pkg/${PORTVERSI
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \

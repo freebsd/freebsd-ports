@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/misc/tkcron-2.12/
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	sander@haldjas.folklore.ee
+COMMENT=	A frontend to crontab
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

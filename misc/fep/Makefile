@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/fep/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nobu@psrc.isac.co.jp
+COMMENT=	A general purpose front end for command line editing
 
 MAN1=		fep.1
 MANCOMPRESSED=	yes

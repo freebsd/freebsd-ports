@@ -12,6 +12,7 @@ MASTER_SITES=	http://vaccine.sourceforge.net/
 DISTNAME=	pbs_v2.2p11
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	Batch job queueing system
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80

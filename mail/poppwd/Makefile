@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/poppwd/ \
 		http://ftp.megamirror.com/pub/ugh/unix/poppwd/
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	Implementation of the Eudora (compatible) password changing protocol
 
 WRKSRC=		${WRKDIR}/poppwd
 

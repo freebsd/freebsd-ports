@@ -11,6 +11,7 @@ CATEGORIES=	math graphics
 MASTER_SITES=	http://www.mit.edu/~ibaran/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
+COMMENT=	A simulator of euclidean geometry
 
 USE_GCC=	2.95
 USE_QT_VER=	2

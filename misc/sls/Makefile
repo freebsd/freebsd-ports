@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	dannyboy
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	sec@42.org
+COMMENT=	List information about file(s) and directories
 
 WRKSRC=		${WRKDIR}/sls
 

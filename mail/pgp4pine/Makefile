@@ -13,6 +13,7 @@ MASTER_SITES=	http://pgp4pine.flatline.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	holger@e-gitt.net
+COMMENT=	Tool to use PGP 2/5/6 or GPG with Pine
 
 # Global variables
 #

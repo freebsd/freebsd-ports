@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/qmail-notify/
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Delayed delivery notification for qmail
 
 EXAMPLES=	cron.hourly message.txt
 DOCS=		ANNOUNCEMENT NEWS README TODO

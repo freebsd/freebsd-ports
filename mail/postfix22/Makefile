@@ -27,6 +27,7 @@ DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khera@kciLink.com
+COMMENT=	An alternative to widely-used Sendmail
 
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes

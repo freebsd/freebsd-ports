@@ -14,6 +14,7 @@ DISTNAME=	maxima-5.6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sf@dsinw.com
+COMMENT=	Maxima symbolic computation program
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.enderunix.org/isoqlog/ \
 		http://www.acikkod.org/softwares/
 
 MAINTAINER=	roots@enderunix.org
+COMMENT=	A MTA log analysis program supporting qmail, postfix, sendmail
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

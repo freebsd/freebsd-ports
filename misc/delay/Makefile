@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/
 
 MAINTAINER=	gmarco@giovannelli.it
+COMMENT=	A delay program with feedback to the user
 
 GNU_CONFIGURE=	yes
 

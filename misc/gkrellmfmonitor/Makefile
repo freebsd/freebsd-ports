@@ -16,6 +16,7 @@ DISTNAME=	fmonitor-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	GKrellM FMonitor plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm

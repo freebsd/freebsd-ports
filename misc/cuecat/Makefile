@@ -11,6 +11,7 @@ CATEGORIES=	misc python
 MASTER_SITES=	http://www.mired.org/downloads/
 
 MAINTAINER=	mwm@mired.org
+COMMENT=	Tools for decoding and using the output of a :Cue:Cat(TM) wand scanner
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \

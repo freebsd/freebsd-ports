@@ -12,6 +12,7 @@ MASTER_SITES=	http://exe2bin.com/granulate/ \
 		http://galileo.spaceports.com/~jharris/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	Granulate is a program for splitting files in place
 
 USE_REINPLACE=	yes
 post-patch:

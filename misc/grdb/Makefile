@@ -11,6 +11,7 @@ CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.win.tue.nl/~stijn/grdb/
 
 MAINTAINER=	stijn@win.tue.nl
+COMMENT=	Matches Motif/Athena/Tk widgets with the current GTK theme
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

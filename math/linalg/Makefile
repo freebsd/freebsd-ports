@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	oleg@pobox.com
+COMMENT=	C++ Linear Algebra and Optimization classlib
 
 WRKSRC=		${WRKDIR}/LinAlg
 ALL_TARGET=	lib

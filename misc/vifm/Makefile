@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vifm
 
 MAINTAINER=	swalter@lettermax.de
+COMMENT=	Ncurses based file manager with vi like keybindings
 
 .if defined(WITH_VIFM_SCREEN)
 RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen

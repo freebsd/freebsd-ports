@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.csua.berkeley.edu/pub/nwrite/
 
 MAINTAINER=	daveh@csua.berkeley.edu
+COMMENT=	Improved, recipient configureable replacement for /usr/bin/write
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-clear-procs
