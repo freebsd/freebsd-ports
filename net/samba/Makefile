@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://samba.anu.edu.au/pub/samba/ \
@@ -157,6 +157,8 @@ post-build:
 		${RM} -f config.cache config.log config.status
 .endif
 
+pre-configure:
+	${PERL} -pi.fbsd -e 's/DYNEXP="-Wl,-Bdynamic"/DYNEXP="-Wl,--export-dynamic"/' ${WRKSRC}/configure.in
 post-install:
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
