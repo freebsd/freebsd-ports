@@ -77,6 +77,7 @@ share/java/jedit/modes/inform.xml
 share/java/jedit/modes/ini.xml
 share/java/jedit/modes/java.xml
 share/java/jedit/modes/javascript.xml
+share/java/jedit/modes/jhtml.xml
 share/java/jedit/modes/jmk.xml
 share/java/jedit/modes/jsp.xml
 share/java/jedit/modes/lisp.xml
@@ -99,6 +100,7 @@ share/java/jedit/modes/pvwave.xml
 share/java/jedit/modes/python.xml
 share/java/jedit/modes/rpmspec.xml
 share/java/jedit/modes/ruby.xml
+share/java/jedit/modes/rview.xml
 share/java/jedit/modes/sgml.xml
 share/java/jedit/modes/shellscript.xml
 share/java/jedit/modes/shtml.xml
