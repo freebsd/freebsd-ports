@@ -36,3 +36,5 @@ The regular expression "pattern matching" routines follow the
 Unix-style rules.  For example, '*' matches all MSDOS files in lieu of
 '*.*'.  The archive, hidden, read-only and system attribute bits are
 ignored during pattern matching.
+
+WWW: http://mtools.linux.lu/
