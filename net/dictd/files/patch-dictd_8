@@ -1,32 +1,29 @@
---- dictd.8.orig	Mon Jun 10 02:41:34 2002
-+++ dictd.8	Mon Jun 10 02:42:35 2002
-@@ -105,7 +105,7 @@
+--- dictd.8.orig	Mon Jan 26 06:41:05 2004
++++ dictd.8	Mon Jan 26 06:43:07 2004
+@@ -128,7 +128,7 @@
  .TP
  .BI \-c " file\fR or "  \-\-config " file"
  Specify configuration file.  The default is
--.IR /etc/dictd.conf ,
-+.IR %%PREFIX%%/etc/dictd.conf ,
- but may be changed in the
- .I dictd.h
- file at compile time (DICT_CONFIG_FILE).
-@@ -358,7 +358,7 @@
+-.I /etc/dictd.conf
++.I %%PREFIX%%/etc/dictd.conf
+ , but may be changed in the
+ .I defs.h
+ file at compile time (DICTD_CONFIG_FILE).
+@@ -444,7 +444,7 @@
  .TP
  .B Introduction
  The configuration file defaults to
--.IR /etc/dictd.conf ,
-+.IR %%PREFIX%%/etc/dictd.conf ,
+-.I /etc/dictd.conf 
++.I %%PREFIX%%/etc/dictd.conf 
  but can be specified on the command line with the
  .B \-c
- option (see above).  The configuration file has four distinct sections.
-@@ -755,9 +755,9 @@
- There is no way to get a running server to re-read the configuration file,
- so databases cannot be added or deleted on the fly.
+ option (see above).
+@@ -995,7 +995,7 @@
+ library you build dictd with.
+ 
  .SH "FILES"
 -.I /etc/dictd.conf
 +.I %%PREFIX%%/etc/dictd.conf
  .br
--.I /usr/sbin/dictd
-+.I %%PREFIX%%/sbin/dictd
+ .I /usr/sbin/dictd
  .SH "SEE ALSO"
- .BR dict (1),
- .BR dictzip (1),
