@@ -1,0 +1,81 @@
+bin/xracer
+bin/mktrackmodel
+bin/mktrack
+bin/perlin
+bin/test-poly-opts
+share/doc/xracer/README
+share/doc/xracer/AUTHORS
+share/doc/xracer/COPYING
+share/doc/xracer/NEWS
+share/doc/xracer/README.html
+share/doc/xracer/ChangeLog
+@dirrm share/doc/xracer
+lib/xracer/images/beestripes1.jpg
+lib/xracer/images/track1.jpg
+lib/xracer/images/track1-large.jpg
+lib/xracer/images/clouds1.jpg
+lib/xracer/images/track2.jpg
+lib/xracer/images/track3.jpg
+lib/xracer/images/beestripes1-large.jpg
+lib/xracer/images/clouds2.jpg
+lib/xracer/images/powerup-energy-alpha.jpg
+lib/xracer/images/powerup-shield-alpha.jpg
+lib/xracer/images/track5.jpg
+lib/xracer/images/skyscraper1.jpg
+lib/xracer/images/snowtex1.jpg
+lib/xracer/images/track5+left-powerup+right-fast.jpg
+lib/xracer/images/track5+right-fast.jpg
+lib/xracer/images/track5+left-fast.jpg
+lib/xracer/images/track5+left-powerup.jpg
+lib/xracer/images/snow1.jpg
+lib/xracer/images/track5+right-powerup.jpg
+lib/xracer/images/track5+left-fast+right-powerup.jpg
+lib/xracer/images/track5+left-faster.jpg
+lib/xracer/images/track5+right-faster.jpg
+lib/xracer/images/track5+left-fast+right-fast.jpg
+lib/xracer/images/track5+left-faster+right-faster.jpg
+lib/xracer/images/track5+left-fast+right-faster.jpg
+lib/xracer/images/track5+left-faster+right-fast.jpg
+lib/xracer/images/track5+left-powerup+right-faster.jpg
+lib/xracer/images/track5+left-faster+right-powerup.jpg
+lib/xracer/images/track5+left-powerup+right-powerup.jpg
+lib/xracer/images/clouds3.jpg
+lib/xracer/images/snowtex2.jpg
+lib/xracer/images/clouds4.jpg
+lib/xracer/images/craft1-side.jpg
+lib/xracer/images/clouds2-large.jpg
+lib/xracer/images/clouds5.jpg
+lib/xracer/images/craft1-windscreen.jpg
+lib/xracer/images/powerup-faster-alpha.jpg
+lib/xracer/images/powerup-autopilot.jpg
+lib/xracer/images/craft1-inner-side.jpg
+lib/xracer/images/snowtex3.jpg
+lib/xracer/images/craft1-back-side.jpg
+lib/xracer/images/craft1-under.jpg
+lib/xracer/images/crillee48.jpg
+lib/xracer/images/xracer-logo-3.jpg
+lib/xracer/images/powerup-autopilot-alpha.jpg
+lib/xracer/images/snow2.jpg
+lib/xracer/images/andre-logo.jpg
+lib/xracer/images/powerup-energy.jpg
+lib/xracer/images/powerup-shield.jpg
+lib/xracer/images/powerup-faster.jpg
+lib/xracer/images/menus-bg.jpg
+lib/xracer/images/crillee36.jpg
+lib/xracer/images/crillee24.jpg
+lib/xracer/images/crillee14.jpg
+lib/xracer/images/mountains4-alpha.jpg
+lib/xracer/images/mountains4.jpg
+@dirrm lib/xracer/images
+lib/xracer/tracks/demo.trk.gz
+@dirrm lib/xracer/tracks
+lib/xracer/objects/start-lamp/start-lamp-green-texture.jpg
+lib/xracer/objects/start-lamp/start-lamp-orange-texture.jpg
+lib/xracer/objects/start-lamp/start-lamp-red-texture.jpg
+@dirrm lib/xracer/objects/start-lamp
+@dirrm lib/xracer/objects
+lib/xracer/sounds/powerup.wav
+lib/xracer/sounds/faster.wav
+lib/xracer/sounds/wind.wav
+@dirrm lib/xracer/sounds
+@dirrm lib/xracer

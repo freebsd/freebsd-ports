@@ -1,0 +1,11 @@
+XRacer is a Wipeout clone. At the moment it is incomplete, but
+I will be working on the following areas over the next few
+weeks:
+  * better game physics (eg. sometimes the craft turns over)
+  * instrument panel (partially done)
+  * scenery
+  * time trial and arcade mode
+  * weapons, powerups
+  * LAN multiplayer mode
+
+WWW: http://xracer.annexia.org/
