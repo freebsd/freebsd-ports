@@ -9,8 +9,8 @@
  		     scm_makfrom0str (SCM_LIBRARY_DIR),
 -		     scm_makfrom0str (SCM_PKGDATA_DIR));
 +		     scm_makfrom0str (SCM_PKGDATA_DIR),
-+		     scm_makfrom0str ("/usr/X11R6/share/guile"),
-+		     scm_makfrom0str ("/usr/local%%/share/guile"));
++		     scm_makfrom0str ("%%X11BASE%%/share/guile"),
++		     scm_makfrom0str ("%%LOCALBASE%%/share/guile"));
  #endif /* SCM_LIBRARY_DIR */
  
    path = scm_internal_parse_path (getenv ("GUILE_LOAD_PATH"), path);

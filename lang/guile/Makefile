@@ -41,6 +41,6 @@ post-patch:
 	@cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
-		s|%%LOCALBASE|${LOCALBASE}|g' ${WRKSRC}/libguile/load.c
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/libguile/load.c
 
 .include <bsd.port.mk>
