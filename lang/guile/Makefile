@@ -8,12 +8,14 @@
 
 DISTNAME=	guile-1.3.4
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.guile.org/pub/
 MASTER_SITE_SUBDIR=	guile
 
 MAINTAINER=	jseger@FreeBSD.org
 
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--with-threads
 
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure guile-readline/configure
