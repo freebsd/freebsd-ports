@@ -3,7 +3,7 @@
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!/usr/local/bin/bash
- #	$Id: configure,v 1.401 1996/11/23 17:28:45 sam Rel $
+ #	$Id: patch-ab,v 1.4 1998/02/02 01:25:38 itojun Exp $
  #
  # HylaFAX Facsimile Software
 @@ -239,7 +239,7 @@
@@ -15,19 +15,6 @@
  PATH=$PATH:$OPATH
  
  POSIXLY_CORRECT=1; export POSIXLY_CORRECT		# disable GNU extensions
-@@ -1662,6 +1662,12 @@
- 			    CONFIG_OPENFIFO=O_RDONLY;
- 			fi
- 			;;
-+	*-freebsd*)	if releaseAtLeast 3.0; then
-+			    CONFIG_OPENFIFO=O_RDWR;
-+			else
-+			    CONFIG_OPENFIFO=O_RDONLY;
-+			fi
-+ 			;;
- 	*)		CONFIG_OPENFIFO=O_RDONLY;;
- 	esac
-     }
 @@ -3928,7 +3934,8 @@
  	printConfig
  	checkForExecutable $PATH_SENDMAIL
