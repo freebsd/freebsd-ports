@@ -1,4 +1,3 @@
-MAN1+=	cupsaddsmb.1
 MAN1+=	cupstestppd.1
 MAN1+=	lp.1
 MAN1+=	lpoptions.1
@@ -8,6 +7,7 @@ MAN1+=	lpr.1
 MAN1+=	lprm.1
 MAN1+=	lpstat.1
 MAN8+=	accept.8
+MAN8+=	cupsaddsmb.8
 MAN8+=	enable.8
 MAN8+=	lpadmin.8
 MAN8+=	lpc.8

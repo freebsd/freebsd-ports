@@ -1,8 +1,8 @@
---- man/Makefile.common.orig	Tue Dec 17 13:59:55 2002
-+++ man/Makefile.common	Wed Jan 22 07:25:31 2003
-@@ -28,58 +28,22 @@
- 
+--- man/Makefile.common.orig	Thu May 27 11:51:30 2004
++++ man/Makefile.common	Sun Nov 14 17:14:24 2004
+@@ -29,57 +29,16 @@
  MAN1	=	backend.man \
+ 		cups-config.man \
  		cupstestppd.man \
 -		filter.man \
 -		lp.man \
@@ -13,7 +13,6 @@
 -		lpr.man \
 -		lpstat.man
 +		filter.man
- MAN3	=	cups-config.man
  MAN5	=	classes.conf.man \
  		cupsd.conf.man \
  		mime.convs.man \
@@ -32,6 +31,7 @@
 -		lpc.man
 -
 -CAT1	=	backend.$(CAT1EXT) \
+-		cups-config.$(CAT1EXT) \
 -		cupstestppd.$(CAT1EXT) \
 -		filter.$(CAT1EXT) \
 -		lp.$(CAT1EXT) \
@@ -41,7 +41,6 @@
 -		lprm.$(CAT1EXT) \
 -		lpr.$(CAT1EXT) \
 -		lpstat.$(CAT1EXT)
--CAT3	=	cups-config.$(CAT3EXT)
 -CAT5	=	classes.conf.$(CAT5EXT) \
 -		cupsd.conf.$(CAT5EXT) \
 -		mime.convs.$(CAT5EXT) \
@@ -57,12 +56,8 @@
 -		lpinfo.$(CAT8EXT) \
 -		lpmove.$(CAT8EXT) \
 -		lpc.$(CAT8EXT)
+-
 +		cupsd.man
  
-+CAT1	=
-+CAT3	=
-+CAT5	=
-+CAT8	=
- 
  #
- # End of "$Id: Makefile.common,v 1.3 2002/12/17 18:59:55 swdev Exp $".
+ # End of "$Id: Makefile.common,v 1.5 2004/05/27 18:51:30 mike Exp $".
