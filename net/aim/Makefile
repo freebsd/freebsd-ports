@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aim
-PORTVERSION=	1.1.112.1
+PORTVERSION=	1.5.234
 CATEGORIES=	net linux
 MASTER_SITES=	ftp://ftp.newaol.com/aimgen/73010/
-DISTNAME=	aim-1.1.112-1
+DISTNAME=	aim-${PORTVERSION}-1
 EXTRACT_SUFX=	.i386.tgz
 
-MAINTAINER=	roger@freebsd.org
+MAINTAINER=	p9711422@mmu.edu.my
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		/compat/linux/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
@@ -31,5 +31,6 @@ do-install:
 	${CP} ${WRKSRC}/usr/local/lib/lib* ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/lib/aim
 	${CP} -R ${WRKSRC}/usr/local/lib/aim/* ${PREFIX}/lib/aim
+	${RM} -rf ${PREFIX}/lib/aim/source
 
 .include <bsd.port.mk>
