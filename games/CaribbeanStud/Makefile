@@ -18,6 +18,8 @@ MAKEFILE=		Xmakefile
 REQUIRES_MOTIF=		yes
 USE_X_PREFIX=		yes
 
+BROKEN=			"Bad C++"
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/CaribbeanStud ${PREFIX}/bin
 	@ ${INSTALL_DATA} ${WRKSRC}/CaribbeanStud.res ${PREFIX}/lib/X11/app-defaults/CaribbeanStud
