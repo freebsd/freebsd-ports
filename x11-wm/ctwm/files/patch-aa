@@ -5,7 +5,7 @@
   #undef  IMCONV
   #undef  USE_SOUND
   #define XPM
-! #define USEM4
+  #define USEM4
   
            YFLAGS = -d
           DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
@@ -21,7 +21,7 @@
   #undef  IMCONV
   #undef  USE_SOUND
   #define XPM
-! #undef	USEM4
+  #define  USEM4
   
            YFLAGS = -d
           DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
