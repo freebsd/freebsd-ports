@@ -8,7 +8,8 @@
 PORTNAME=	gtk-Mac2-theme
 PORTVERSION= 	200003050858
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/
+MASTER_SITES=	${MASTER_SITE_THEMES}
+MASTER_SITE_SUBDIR=	gtk
 DISTNAME=	Mac2-1.2.x-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
