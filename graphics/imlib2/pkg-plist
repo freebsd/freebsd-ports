@@ -8,7 +8,6 @@ lib/loaders/filter/colormod.so
 lib/loaders/filter/testfilter.so
 lib/loaders/image/argb.so
 lib/loaders/image/bmp.so
-lib/loaders/image/db.so
 lib/loaders/image/gif.so
 lib/loaders/image/jpeg.so
 lib/loaders/image/png.so
