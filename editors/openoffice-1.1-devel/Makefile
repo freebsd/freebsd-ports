@@ -35,7 +35,7 @@ ANT?=   ${LOCALBASE}/bin/ant
 .include <bsd.port.pre.mk>
 
 PROCFS!=		${MOUNT} | ${GREP} ^procfs | ${AWK} '{print $1}'
-INSTALLATION_BASEDIR=	OpenOffice.org1.0
+INSTALLATION_BASEDIR=	OpenOffice.org-643
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
@@ -123,7 +123,7 @@ USE_AUTOCONF=	yes
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
-LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
+LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/643/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
@@ -493,16 +493,16 @@ post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/openoffice-wrapper \
 	   > ${WRKDIR}/openoffice
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-scalc
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sdraw
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-setup
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sfax
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-simpress
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-spadmin
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sweb
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-swriter
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-scalc-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sdraw-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-setup-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sfax-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-simpress-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-spadmin-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sweb-643
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-swriter-643
 	@cd ${PREFIX} && ${FIND} -s bin -type f | ${GREP} openoffice > ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s bin -type l | ${GREP} openoffice >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
