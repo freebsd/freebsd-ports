@@ -345,6 +345,7 @@
     SUBDIR += p5-Sledge-Plugin-ScratchPad
     SUBDIR += p5-Sledge-Plugin-SessionAutoCleanup
     SUBDIR += p5-Sledge-SessionManager-CookieStore
+    SUBDIR += p5-Sledge-Template-Expr
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-URI-Sequin
     SUBDIR += p5-WWW-Automate
