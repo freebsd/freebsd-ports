@@ -4,7 +4,7 @@
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #			Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1997/05/17 15:14:34 max Exp $
+# $Id: Makefile,v 1.4 1997/07/17 15:12:51 max Exp $
 #
 
 DISTNAME=	faces-1.6.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/ \
 		ftp://odie.physik2.uni-rostock.de/pub/
 EXTRACT_SUFX=	.tar.Z
 		
-MAINTAINER=	Lars_Koeller@odie.physik2.uni-rostock.de
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 WRKSRC=		$(WRKDIR)/faces
 MAN1=		compface.1 faces.1 face_update.1
