@@ -133,7 +133,7 @@ diff -urNp src/lhext.c.orig lha-114i/src/lhext.c
 +				name[255] = 0;
  #else
 -				sprintf(buf, "%s -> %s", bb1, bb2);
-+				sprintf(buf, sizeof(buf), "%s -> %s", bb1, bb2);
++				snprintf(buf, sizeof(buf), "%s -> %s", bb1, bb2);
  				warning("Can't make Symbolic Link", buf);
  				return;
  #endif

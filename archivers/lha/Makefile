@@ -7,7 +7,7 @@
 
 PORTNAME=	lha
 PORTVERSION=	1.14i
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www2m.biglobe.ne.jp/~dolphin/lha/prog/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
