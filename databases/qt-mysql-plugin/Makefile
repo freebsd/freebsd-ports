@@ -9,7 +9,6 @@
 PORTNAME=	qt-mysql-plugin
 PORTREVISION=	0
 CATEGORIES=	databases x11-toolkits
-PKGNAMESUFFIX=	-mysql-plugin
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	A plugin for QT to connect to MySQL-Databases
