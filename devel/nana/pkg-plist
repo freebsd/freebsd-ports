@@ -26,6 +26,7 @@ include/now.h
 info/nana.info
 info/nana.info-1
 info/nana.info-2
+info/nana.info-3
 @exec install-info %D/info/nana.info %D/info/dir
 lib/libnana.a
 libexec/nana-trace.gdb
