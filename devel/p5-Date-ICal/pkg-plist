@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Date/ICal/Duration.pm
 %%SITE_PERL%%/Date/ICal.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/ICal/.packlist
