@@ -1,0 +1,41 @@
+--- Makefile~	Sun Nov 12 17:55:44 2000
++++ Makefile	Sun Feb 11 16:30:32 2001
+@@ -1,4 +1,4 @@
+-FC      = g77
++FC      = f77
+ FFLAGS  = -fno-automatic -O
+ BASEDIR = `pwd`
+ INSTDIR = /usr/local
+@@ -13,19 +13,19 @@
+ 	cd x1;  ${MAKE} "FC=${FC}" "FFLAGS=${FFLAGS}" 
+ 	cd x2;  ${MAKE} "FC=${FC}" "FFLAGS=${FFLAGS}" 
+ install:
+-	install -s -m 755 x1/exec1          ${BINDIR}
+-	install -m 644    x2/exec2.o        ${LIBDIR}
+-	install -m 644    x2/libx2.a        ${LIBDIR}
+-	install -s -m 755 x3/ngp_gnu        ${BINDIR}
+-	install -s -m 755 x3/asa            ${BINDIR}
+-	install -m 644    x3/libx3.a        ${LIBDIR}
+-	install -m 755    bin/sceptre       ${BINDIR}
+-	install -m 755    bin/sceptre.inst  ${BINDIR}
+-	install -m 755    bin/ngp           ${BINDIR}
+-	install -m 644    lib/usrlib.a      ${LIBDIR}
+-	install -m 644    lib/modellib.dat  ${LIBDIR}
+-	install -d 			    ${ETCDIR}
+-	install -m 644    etc/ngp.rc        ${ETCDIR}
++	install -c -s -m 755 x1/exec1          ${BINDIR}
++	install -c -m 644    x2/exec2.o        ${LIBDIR}
++	install -c -m 644    x2/libx2.a        ${LIBDIR}
++	install -c -s -m 755 x3/ngp_gnu        ${BINDIR}
++	install -c -s -m 755 x3/asa            ${BINDIR}
++	install -c -m 644    x3/libx3.a        ${LIBDIR}
++	install -c -m 755    bin/sceptre       ${BINDIR}
++	install -c -m 755    bin/sceptre.inst  ${BINDIR}
++	install -c -m 755    bin/ngp           ${BINDIR}
++	install -c -m 644    lib/usrlib.a      ${LIBDIR}
++	install -c -m 644    lib/modellib.dat  ${LIBDIR}
++	install -c -d 			    ${ETCDIR}
++	install -c -m 644    etc/ngp.rc        ${ETCDIR}
+ 	@echo "installation finished"
+ uninstall:
+ 	@rm -fv ${BINDIR}/exec1 

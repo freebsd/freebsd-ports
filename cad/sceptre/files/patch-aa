@@ -1,0 +1,19 @@
+--- x3/qqqcpu.f    Mon Oct  4 03:53:42 1999
++++ x3/qqqcpu.f   Sun Feb 11 14:34:50 2001
+@@ -9,9 +9,14 @@
+       data       r0 /1d6/ 
+       intrinsic  ETime
+  
+-      CALL ETime(RESULT, TARRAY)
++C     This appears not to be complete.  The original code contained the
++C     following two code lines, which generate an "incorrect type" error.
++C     Since I don't have a description of ETIME, just carry out the sentiment 
++C     of the comment above
++C     CALL ETime(RESULT, TARRAY)
+ 
+-      r2 = r0 - tarray(1)
++C     r2 = r0 - tarray(1)
++      r2 = r0
+ 
+       RETURN 
+ 

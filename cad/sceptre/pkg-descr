@@ -1,0 +1,10 @@
+SCEPTRE (System for Circuit Evaluation and Prediction of Transient
+Radiation Effects) is a general purpose circuit analysis program which
+provides all three major analyses, AC, DC, and transient analysis, on
+either linear or nonlinear networks.  It employs a free-form input
+language and state variable methods to simulate problems of interest
+to electrical engineers.
+
+This package does not include online documentation.  Documentation in
+PDF format, in English and German, is available in the directory
+work/sceptre*/doc.
