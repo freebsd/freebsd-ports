@@ -4,7 +4,6 @@ bin/ab_gnome
 bin/ab_names
 lib/libbroca.so.0
 lib/libbroca.a
-lib/adabroker/allsrc.adb
 lib/adabroker/broca-buffers-io_operations.adb
 lib/adabroker/broca-buffers-io_operations.ads
 lib/adabroker/broca-buffers.adb
