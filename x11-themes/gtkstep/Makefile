@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ulli.on.openave.net/gtkstep/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
