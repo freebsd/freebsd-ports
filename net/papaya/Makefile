@@ -16,12 +16,14 @@ COMMENT=	Graphical GTK mud client with plugin support
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(HAVE_GNOME)
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomeprefix gnomehack gnomelibs
+.else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
