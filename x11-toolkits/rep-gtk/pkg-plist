@@ -1,0 +1,6 @@
+libexec/rep/%%GNUHOST%%/libgtk.a
+libexec/rep/%%GNUHOST%%/libgtk.la
+libexec/rep/%%GNUHOST%%/libgtk.so
+libexec/rep/%%GNUHOST%%/libgtk.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
