@@ -1,0 +1,4 @@
+bin/vmware-toolbox
+%%INSTALLXSERVER3:%%bin/XF86_VMware
+%%INSTALLXSERVER3:%%etc/XF86Config_VMware
+%%INSTALLXSERVER4:%%etc/XF86Config-4_VMware

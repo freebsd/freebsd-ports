@@ -9,7 +9,7 @@ case "$1" in
 start)
 	exec 2>/dev/null
 	ulimit -c 0
-	if ${PREFIX}/sbin/checkvm >/dev/null; then
+	if ${PREFIX}/sbin/vmware-checkvm >/dev/null; then
 		${PREFIX}/sbin/vmware-guestd &
 		echo -n ' vmware-guestd'
 	fi
@@ -17,7 +17,7 @@ start)
 stop)
 	exec 2>/dev/null
 	ulimit -c 0
-	if ${PREFIX}/sbin/checkvm >/dev/null; then
+	if ${PREFIX}/sbin/vmware-checkvm >/dev/null; then
 		killall vmware-guestd && echo -n ' vmware-guestd'
 	fi
 	;;
