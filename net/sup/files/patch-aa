@@ -1,9 +1,56 @@
-This patch is required for FreeBSD 2.0 because password crypt vs cipher
-technology has now been split into different libraries.  In this case,
-USE_CRYPT really means "use cipher."
-
-*** Makefile	Thu Oct 27 14:12:41 1994
---- Makefile	Thu Oct 27 14:14:46 1994
+diff -c /var/tmp/sup/Makefile sup/Makefile
+*** Makefile	Mon Apr 11 08:02:04 1994
+--- sup/Makefile	Sun Aug 13 19:40:26 1995
+***************
+*** 42,54 ****
+  #
+  SITE			= NETBSD
+  #SITE			= CMUCS
+  NETBSD_DEFINES		= -UMACH -DVAR_TMP -DHAS_DAEMON
+  AFS_DEFINES		= -DAFS -I/usr/afsws/include
+  OSF_DEFINES		= -UMACH -DOSF -D_BSD -noshrlib -g -DNEED_VSNPRINTF -DVAR_TMP
+  CMUCS_DEFINES		= -DMACH -DDOPRINT_VA -DNEED_VPRINTF
+  NON_MACH_DEFINES	= -UMACH
+  #DEFS			= -UCMUCS -UCMU  ${${SITE}_DEFINES}
+! DEFS			= -UCMUCS -UCMU  ${NETBSD_DEFINES}
+  
+  #INSTALLATION PARAMETERS
+  NETBSD_BINDIR		= /usr/local/bin
+--- 42,55 ----
+  #
+  SITE			= NETBSD
+  #SITE			= CMUCS
++ RENAMELOG		= \"/usr/local/etc/sup.moved\"
+  NETBSD_DEFINES		= -UMACH -DVAR_TMP -DHAS_DAEMON
+  AFS_DEFINES		= -DAFS -I/usr/afsws/include
+  OSF_DEFINES		= -UMACH -DOSF -D_BSD -noshrlib -g -DNEED_VSNPRINTF -DVAR_TMP
+  CMUCS_DEFINES		= -DMACH -DDOPRINT_VA -DNEED_VPRINTF
+  NON_MACH_DEFINES	= -UMACH
+  #DEFS			= -UCMUCS -UCMU  ${${SITE}_DEFINES}
+! DEFS			= -UCMUCS -UCMU  ${NETBSD_DEFINES} -DRENAMELOG=${RENAMELOG}
+  
+  #INSTALLATION PARAMETERS
+  NETBSD_BINDIR		= /usr/local/bin
+***************
+*** 60,67 ****
+  SUPCL			= supcmain.o supcvers.o supcparse.o supcname.o \
+  			  supcmisc.o supcmeat.o
+  SUPS			= scm.o scmio.o stree.o log.o supmsg.o netcrypt.o
+! EXTRA			= atoo.o errmsg.o expand.o ffilecopy.o filecopy.o nxtarg.o  \
+! 			  path.o quit.o run.o salloc.o skipto.o  vprintf.o
+  
+  
+  PROGRAMS		= sup supscan supfilesrv
+--- 61,69 ----
+  SUPCL			= supcmain.o supcvers.o supcparse.o supcname.o \
+  			  supcmisc.o supcmeat.o
+  SUPS			= scm.o scmio.o stree.o log.o supmsg.o netcrypt.o
+! EXTRA			= atoo.o errmsg.o expand.o ffilecopy.o filecopy.o \
+! 			  nxtarg.o path.o quit.o run.o salloc.o skipto.o  \
+! 			  vprintf.o
+  
+  
+  PROGRAMS		= sup supscan supfilesrv
 ***************
 *** 76,84 ****
   .endif
@@ -15,7 +62,7 @@ USE_CRYPT really means "use cipher."
   .endif
   CMUCS_LIBS		= -lsys
   OSF_LIBS		= -lbsd
---- 76,84 ----
+--- 78,86 ----
   .endif
   
   .if defined(USE_CRYPT)
@@ -25,3 +72,3100 @@ USE_CRYPT really means "use cipher."
   .endif
   CMUCS_LIBS		= -lsys
   OSF_LIBS		= -lbsd
+diff -c /var/tmp/sup/ffilecopy.c sup/ffilecopy.c
+*** ffilecopy.c	Fri Aug 20 17:46:33 1993
+--- sup/ffilecopy.c	Wed Apr  5 11:46:38 1995
+***************
+*** 58,64 ****
+  	if (fflush (there) == EOF)		/* flush pending output */
+  		return (EOF);
+  
+! #ifdef __386BSD__
+  	if ((here->_r) > 0) {			/* flush buffered input */
+  		i = write (therefile, here->_p, here->_r);
+  		if (i != here->_r)  return (EOF);
+--- 58,64 ----
+  	if (fflush (there) == EOF)		/* flush pending output */
+  		return (EOF);
+  
+! #ifdef __FreeBSD__
+  	if ((here->_r) > 0) {			/* flush buffered input */
+  		i = write (therefile, here->_p, here->_r);
+  		if (i != here->_r)  return (EOF);
+***************
+*** 76,82 ****
+  	i = filecopy (herefile, therefile);	/* fast file copy */
+  	if (i < 0)  return (EOF);
+  
+! #ifdef __386BSD__
+  	(here->_flags) |= __SEOF;		/* indicate EOF */
+  #else
+  	(here->_flag) |= _IOEOF;		/* indicate EOF */
+--- 76,82 ----
+  	i = filecopy (herefile, therefile);	/* fast file copy */
+  	if (i < 0)  return (EOF);
+  
+! #ifdef __FreeBSD__
+  	(here->_flags) |= __SEOF;		/* indicate EOF */
+  #else
+  	(here->_flag) |= _IOEOF;		/* indicate EOF */
+diff -c /var/tmp/sup/libc.h sup/libc.h
+*** libc.h	Fri Aug 20 17:46:33 1993
+--- sup/libc.h	Sun Aug 13 19:03:32 1995
+***************
+*** 81,86 ****
+--- 81,90 ----
+  #ifndef	_LIBC_H_
+  #define	_LIBC_H_ 1
+  
++ #if defined(__hpux)
++ #define __P(x) x
++ #endif
++ 
+  #ifndef _TYPES_
+  #include <sys/types.h>
+  #endif	/* _TYPES_ */
+***************
+*** 195,200 ****
+--- 199,224 ----
+  #if defined(c_plusplus)
+  typedef int (*PFI2)(...);
+  #endif /* c_plusplus */
++ 
++ #if defined(__hpux)
++ extern int utimes(char *, struct timeval *);
++ 
++ #ifndef LOCK_SH
++ #define LOCK_SH 1
++ #endif
++ #ifndef LOCK_EX
++ #define LOCK_EX 2
++ #endif
++ #ifndef LOCK_NB
++ #define LOCK_NB 4
++ #endif
++ #ifndef LOCK_UN
++ #define LOCK_UN 8
++ #endif
++ 
++ extern int flock(int, int);
++ #endif /* __hpux */
++ 
+  #if 0
+  extern void abort(void);
+  extern int abs(int);
+diff -c /var/tmp/sup/log.c sup/log.c
+*** log.c	Fri Aug 20 17:46:33 1993
+--- sup/log.c	Sun Aug 13 19:43:12 1995
+***************
+*** 52,59 ****
+--- 52,64 ----
+   */
+  
+  #include <stdio.h>
++ #ifdef __hpux
++ #include <syslog.h>
++ #include <stdlib.h>
++ #else
+  #include <sys/syslog.h>
+  #include <c.h>
++ #endif
+  #if __STDC__
+  #include <stdarg.h>
+  #else
+***************
+*** 72,78 ****
+  char *program;
+  {
+  	if (opened)  return;
+! 	openlog(program,LOG_PID,LOG_DAEMON);
+  	opened++;
+  }
+  
+--- 77,83 ----
+  char *program;
+  {
+  	if (opened)  return;
+! 	openlog(program,LOG_PID,LOG_LOCAL1);
+  	opened++;
+  }
+  
+diff -c /var/tmp/sup/run.c sup/run.c
+*** run.c	Fri Aug 20 17:46:33 1993
+--- sup/run.c	Thu Apr  6 13:32:15 1995
+***************
+*** 95,100 ****
+--- 95,101 ----
+  #include <signal.h>
+  #include <sys/wait.h>
+  #include <varargs.h>
++ #define MAXARGS 100
+  
+  static int dorun();
+  
+***************
+*** 123,132 ****
+  {
+  	int val;
+  	va_list ap;
+! 
+  	va_start(ap);
+! 	val = runvp (name,ap);
+  	va_end(ap);
+  	return (val);
+  }
+  
+--- 124,137 ----
+  {
+  	int val;
+  	va_list ap;
+! 	char *args[MAXARGS];
+! 	int argno=0;
+! 	
+  	va_start(ap);
+!         while (argno < MAXARGS 
+! 	       && (args[argno++] = va_arg(ap, char *)) != (char *)0);
+  	va_end(ap);
++ 	val = runvp (name,args);
+  	return (val);
+  }
+  
+diff -c /var/tmp/sup/scan.c sup/scan.c
+*** scan.c	Fri Aug 20 17:46:33 1993
+--- sup/scan.c	Sun Aug 13 18:44:51 1995
+***************
+*** 122,134 ****
+  typedef enum {			/* <collection>/list file lines */
+  	LUPGRADE,	LOMIT,		LBACKUP,	LEXECUTE,
+  	LINCLUDE,	LNOACCT,	LOMITANY,	LALWAYS,
+! 	LSYMLINK,	LRSYMLINK
+  } LISTTYPE;
+  
+  static char *ltname[] = {
+  	"upgrade",	"omit",		"backup",	"execute",
+  	"include",	"noaccount",	"omitany",	"always",
+! 	"symlink",	"rsymlink",
+  	0
+  };
+  
+--- 122,134 ----
+  typedef enum {			/* <collection>/list file lines */
+  	LUPGRADE,	LOMIT,		LBACKUP,	LEXECUTE,
+  	LINCLUDE,	LNOACCT,	LOMITANY,	LALWAYS,
+! 	LSYMLINK,	LRSYMLINK,	LRENAME
+  } LISTTYPE;
+  
+  static char *ltname[] = {
+  	"upgrade",	"omit",		"backup",	"execute",
+  	"include",	"noaccount",	"omitany",	"always",
+! 	"symlink",	"rsymlink",	"rename",
+  	0
+  };
+  
+***************
+*** 365,373 ****
+  
+  	if (newonly && (t->Tflags&FNEW) == 0)
+  		return (SCMOK);
+! 	newt = Tinsert (&listT,t->Tname,FALSE);
+  	if (newt == NULL)
+  		return (SCMOK);
+  	newt->Tmode = t->Tmode;
+  	newt->Tflags = t->Tflags;
+  	newt->Tmtime = t->Tmtime;
+--- 365,375 ----
+  
+  	if (newonly && (t->Tflags&FNEW) == 0)
+  		return (SCMOK);
+! 	newt = Tinsert (&listT,t->Tname,t->Tflags&FRENAME ? TRUE : FALSE);
+  	if (newt == NULL)
+  		return (SCMOK);
++ 	if(t->Tnewname)
++ 	  newt->Tnewname = salloc(t->Tnewname);
+  	newt->Tmode = t->Tmode;
+  	newt->Tflags = t->Tflags;
+  	newt->Tmtime = t->Tmtime;
+***************
+*** 473,478 ****
+--- 475,484 ----
+  		case LUPGRADE:
+  			t = &upgT;
+  			break;
++ 		case LRENAME:
++ 			t = &flagsT;
++ 			flags = FRENAME;
++ 			break;
+  		case LBACKUP:
+  			t = &flagsT;
+  			flags = FBACKUP;
+***************
+*** 522,528 ****
+  					if (*q == 0)
+  						_argbreak = ')';
+  					else
+! 						expTinsert (q,&execT,0,r);
+  				} while (_argbreak != ')');
+  				continue;
+  			}
+--- 528,534 ----
+  					if (*q == 0)
+  						_argbreak = ')';
+  					else
+! 						expTinsert (q,&execT,0,r,NULL);
+  				} while (_argbreak != ')');
+  				continue;
+  			}
+***************
+*** 533,554 ****
+  		while (*(q=nxtarg(&p," \t"))) {
+  			if (lt == LOMITANY)
+  				(void) Tinsert (t,q,FALSE);
+  			else
+! 				expTinsert (q,t,flags,(char *)NULL);
+  		}
+  	}
+  	(void) fclose (f);
+  }
+  
+  static
+! expTinsert (p,t,flags,exec)
+  char *p;
+  TREE **t;
+  int flags;
+  char *exec;
+  {
+  	register int n, i;
+! 	register TREE *newt;
+  	char *speclist[SPECNUMBER];
+  	char buf[STRINGLENGTH];
+  
+--- 539,575 ----
+  		while (*(q=nxtarg(&p," \t"))) {
+  			if (lt == LOMITANY)
+  				(void) Tinsert (t,q,FALSE);
++ 			else if( lt == LRENAME )
++ 				if(*(r=nxtarg(&p," \t")))
++ 				{
++ 					expTinsert (q,t,flags,(char *)NULL,r);
++ 					/*
++ 					 * Omit the file it is being
++ 					 * renamed to, to avoid confusion
++ 					 */
++ 					expTinsert (r,&omitT,0,
++ 						   (char *)NULL, (char *)NULL);
++ 				}
++ 				else
++ 					printf("Rename %s without destination "
++ 					       "file.  Skipping...\n", q);
+  			else
+! 				expTinsert (q,t,flags,(char *)NULL,(char *)NULL);
+  		}
+  	}
+  	(void) fclose (f);
+  }
+  
+  static
+! expTinsert (p,t,flags,exec, q)
+  char *p;
++ char *q;
+  TREE **t;
+  int flags;
+  char *exec;
+  {
+  	register int n, i;
+! 	register TREE *newt, *ts;
+  	char *speclist[SPECNUMBER];
+  	char buf[STRINGLENGTH];
+  
+***************
+*** 557,574 ****
+  		newt = Tinsert (t,speclist[i],TRUE);
+  		newt->Tflags |= flags;
+  		if (exec) {
+! 			(void) sprintf (buf,exec,speclist[i]);
+  			(void) Tinsert (&newt->Texec,buf,FALSE);
+  		}
+  		free (speclist[i]);
+  	}
+  }
+  
+  static
+! listone (t)		/* expand and add one name from upgrade list */
+  TREE *t;
+  {
+! 	listentry(t->Tname,t->Tname,(char *)NULL,(t->Tflags&FALWAYS) != 0);
+  	return (SCMOK);
+  }
+  
+--- 578,602 ----
+  		newt = Tinsert (t,speclist[i],TRUE);
+  		newt->Tflags |= flags;
+  		if (exec) {
+! 			if((ts = Tsearch(flagsT, speclist[i])) 
+! 			   && ts->Tflags&FRENAME)
+! 				(void) sprintf (buf,exec,ts->Tnewname);
+! 			else
+! 				(void) sprintf (buf,exec,speclist[i]);
+  			(void) Tinsert (&newt->Texec,buf,FALSE);
+  		}
++ 		if (q)
++ 			newt->Tnewname = salloc(q);
+  		free (speclist[i]);
+  	}
+  }
+  
+  static
+! listone(t)		/* expand and add one name from upgrade list */
+  TREE *t;
+  {
+! 	listentry(t->Tname,t->Tname,(char *)NULL,
+! 		  (t->Tflags&FALWAYS) != 0);
+  	return (SCMOK);
+  }
+  
+***************
+*** 644,651 ****
+  	t->Tctime = st->st_ctime;
+  	t->Tmtime = st->st_mtime;
+  	if (new)  t->Tflags |= FNEW;
+! 	if (ts = Tsearch (flagsT,name))
+  		t->Tflags |= ts->Tflags;
+  	if (ts = Tsearch (execT,name)) {
+  		t->Texec = ts->Texec;
+  		ts->Texec = NULL;
+--- 672,682 ----
+  	t->Tctime = st->st_ctime;
+  	t->Tmtime = st->st_mtime;
+  	if (new)  t->Tflags |= FNEW;
+! 	if (ts = Tsearch (flagsT,name)){
+  		t->Tflags |= ts->Tflags;
++ 		if(t->Tflags&FRENAME)
++ 			t->Tnewname = salloc(ts->Tnewname);
++ 	}
+  	if (ts = Tsearch (execT,name)) {
+  		t->Texec = ts->Texec;
+  		ts->Texec = NULL;
+***************
+*** 831,836 ****
+--- 862,871 ----
+  			p++;
+  			ts.Tflags |= FNOACCT;
+  		}
++ 		if (*p == 'R') {
++ 			p++;
++ 			ts.Tflags |= FRENAME;
++ 		}
+  		if ((q = index (p,' ')) == NULL)
+  			goaway ("scanfile format inconsistant");
+  		*q++ = '\0';
+***************
+*** 845,850 ****
+--- 880,894 ----
+  			goaway ("scanfile format inconsistant");
+  		*q++ = 0;
+  		ts.Tmtime = atoi (p);
++ 		p = q;
++ 		ts.Tnewname = NULL;
++ 		if (ts.Tflags & FRENAME){
++ 			if ((q = index (p,' ')) == NULL)
++ 				goaway ("scanfile format inconsistant");
++ 			*q++ = '\0';
++ 			ts.Tnewname = salloc(q);
++ 			q = p;
++ 		}
+  		if (ts.Tctime > lasttime)
+  			ts.Tflags |= FNEW;
+  		else if (newonly) {
+***************
+*** 863,868 ****
+--- 907,913 ----
+  		t->Tflags = ts.Tflags;
+  		t->Tctime = ts.Tctime;
+  		t->Tmtime = ts.Tmtime;
++ 		t->Tnewname = ts.Tnewname;
+  	}
+  	(void) fclose (f);
+  	return (TRUE);
+***************
+*** 925,932 ****
+  
+  	if (t->Tflags&FBACKUP)  fprintf (*scanF,"B");
+  	if (t->Tflags&FNOACCT)  fprintf (*scanF,"N");
+! 	fprintf (*scanF,"%o %d %d %s\n",
+  		t->Tmode,t->Tctime,t->Tmtime,t->Tname);
+  	(void) Tprocess (t->Texec,recordexec,*scanF);
+  	return (SCMOK);
+  }
+--- 970,983 ----
+  
+  	if (t->Tflags&FBACKUP)  fprintf (*scanF,"B");
+  	if (t->Tflags&FNOACCT)  fprintf (*scanF,"N");
+! 	if (t->Tflags&FRENAME)  fprintf (*scanF,"R");
+! 
+! 	fprintf (*scanF,"%o %d %d",
+  		t->Tmode,t->Tctime,t->Tmtime,t->Tname);
++ 	if ( t->Tflags&FRENAME)
++ 		fprintf (*scanF," %s %s\n",t->Tname, t->Tnewname);
++ 	else
++ 		fprintf (*scanF," %s\n", t->Tname);
+  	(void) Tprocess (t->Texec,recordexec,*scanF);
+  	return (SCMOK);
+  }
+diff -c /var/tmp/sup/scm.c sup/scm.c
+*** scm.c	Sun Jun 19 23:04:04 1994
+--- sup/scm.c	Thu Apr  6 13:53:57 1995
+***************
+*** 208,214 ****
+   * PROTOTYPES
+   */
+  #if __STDC__
+! int	scmerr	__P((int, char *,...));
+  #endif
+  /*************************
+   ***    M A C R O S    ***
+--- 208,214 ----
+   * PROTOTYPES
+   */
+  #if __STDC__
+! int   scmerr  __P((int, FILE *, char *,...));
+  #endif
+  /*************************
+   ***    M A C R O S    ***
+***************
+*** 245,275 ****
+  	int one = 1;
+  
+  	if (myhost () == NULL)
+! 		return (scmerr (-1,"Local hostname not known"));
+  	if ((sp = getservbyname(server,"tcp")) == 0) {
+  		if (strcmp(server, FILEPORT) == 0)
+  			port = htons((u_short)FILEPORTNUM);
+  		else if (strcmp(server, DEBUGFPORT) == 0)
+  			port = htons((u_short)DEBUGFPORTNUM);
+  		else
+! 			return (scmerr (-1,"Can't find %s server description",server));
+! 		(void) scmerr (-1,"%s/tcp: unknown service: using port %d",
+  					server,port);
+  	} else
+  		port = sp->s_port;
+  	endservent ();
+  	sock = socket (AF_INET,SOCK_STREAM,0);
+  	if (sock < 0)
+! 		return (scmerr (errno,"Can't create socket for connections"));
+  	if (setsockopt (sock,SOL_SOCKET,SO_REUSEADDR,(char *)&one,sizeof(int)) < 0)
+! 		(void) scmerr (errno,"Can't set SO_REUSEADDR socket option");
+  	(void) bzero ((char *)&sin,sizeof(sin));
+  	sin.sin_family = AF_INET;
+  	sin.sin_port = port;
+  	if (bind (sock,(struct sockaddr *)&sin,sizeof(sin)) < 0)
+! 		return (scmerr (errno,"Can't bind socket for connections"));
+  	if (listen (sock,NCONNECTS) < 0)
+! 		return (scmerr (errno,"Can't listen on socket"));
+  	return (SCMOK);
+  }
+  
+--- 245,275 ----
+  	int one = 1;
+  
+  	if (myhost () == NULL)
+! 		return (scmerr (-1, stderr, "Local hostname not known"));
+  	if ((sp = getservbyname(server,"tcp")) == 0) {
+  		if (strcmp(server, FILEPORT) == 0)
+  			port = htons((u_short)FILEPORTNUM);
+  		else if (strcmp(server, DEBUGFPORT) == 0)
+  			port = htons((u_short)DEBUGFPORTNUM);
+  		else
+! 			return (scmerr (-1, stderr, "Can't find %s server description",server));
+! 		(void) scmerr (-1, stderr, "%s/tcp: unknown service: using port %d",
+  					server,port);
+  	} else
+  		port = sp->s_port;
+  	endservent ();
+  	sock = socket (AF_INET,SOCK_STREAM,0);
+  	if (sock < 0)
+! 		return (scmerr (errno, stderr, "Can't create socket for connections"));
+  	if (setsockopt (sock,SOL_SOCKET,SO_REUSEADDR,(char *)&one,sizeof(int)) < 0)
+! 		(void) scmerr (errno, stderr, "Can't set SO_REUSEADDR socket option");
+  	(void) bzero ((char *)&sin,sizeof(sin));
+  	sin.sin_family = AF_INET;
+  	sin.sin_port = port;
+  	if (bind (sock,(struct sockaddr *)&sin,sizeof(sin)) < 0)
+! 		return (scmerr (errno, stderr, "Can't bind socket for connections"));
+  	if (listen (sock,NCONNECTS) < 0)
+! 		return (scmerr (errno, stderr, "Can't listen on socket"));
+  	return (SCMOK);
+  }
+  
+***************
+*** 284,299 ****
+  		netfile = accept (sock,(struct sockaddr *)&from,&len);
+  	} while (netfile < 0 && errno == EINTR);
+  	if (netfile < 0)
+! 		return (scmerr (errno,"Can't accept connections"));
+  	remoteaddr = from.sin_addr;
+  	if (read(netfile,(char *)&x,sizeof(int)) != sizeof(int))
+! 		return (scmerr (errno,"Can't transmit data on connection"));
+  	if (x == 0x01020304)
+  		swapmode = 0;
+  	else if (x == 0x04030201)
+  		swapmode = 1;
+  	else
+! 		return (scmerr (-1,"Unexpected byteswap mode %x",x));
+  	return (SCMOK);
+  }
+  
+--- 284,299 ----
+  		netfile = accept (sock,(struct sockaddr *)&from,&len);
+  	} while (netfile < 0 && errno == EINTR);
+  	if (netfile < 0)
+! 		return (scmerr (errno, stderr, "Can't accept connections"));
+  	remoteaddr = from.sin_addr;
+  	if (read(netfile,(char *)&x,sizeof(int)) != sizeof(int))
+! 		return (scmerr (errno, stderr, "Can't transmit data on connection"));
+  	if (x == 0x01020304)
+  		swapmode = 0;
+  	else if (x == 0x04030201)
+  		swapmode = 1;
+  	else
+! 		return (scmerr (-1, stderr, "Unexpected byteswap mode %x",x));
+  	return (SCMOK);
+  }
+  
+***************
+*** 354,360 ****
+  			s = *t;
+  		*t -= s;
+  	}
+! 	(void) scmerr (-1,"Will retry in %d seconds",s);
+  	sleep (s);
+  	return (1);
+  }
+--- 354,360 ----
+  			s = *t;
+  		*t -= s;
+  	}
+! 	(void) scmerr (-1, stdout, "Will retry in %d seconds",s);
+  	sleep (s);
+  	return (1);
+  }
+***************
+*** 376,384 ****
+  		else if (strcmp(server, DEBUGFPORT) == 0)
+  			port = htons((u_short)DEBUGFPORTNUM);
+  		else
+! 			return (scmerr (-1,"Can't find %s server description",
+  					server));
+! 		(void) scmerr (-1,"%s/tcp: unknown service: using port %d",
+  					server,port);
+  	} else
+  		port = sp->s_port;
+--- 376,384 ----
+  		else if (strcmp(server, DEBUGFPORT) == 0)
+  			port = htons((u_short)DEBUGFPORTNUM);
+  		else
+! 			return (scmerr (-1, stderr, "Can't find %s server description",
+  					server));
+! 		(void) scmerr (-1, stderr, "%s/tcp: unknown service: using port %d",
+  					server,port);
+  	} else
+  		port = sp->s_port;
+***************
+*** 387,393 ****
+  	sin.sin_addr.s_addr = inet_addr (hostname);
+  	if (sin.sin_addr.s_addr == (u_long) INADDR_NONE) {
+  		if ((h = gethostbyname (hostname)) == NULL)
+! 			return (scmerr (-1,"Can't find host entry for %s",
+  					hostname));
+  		hostname = h->h_name;
+  		(void) bcopy (h->h_addr,(char *)&sin.sin_addr,h->h_length);
+--- 387,393 ----
+  	sin.sin_addr.s_addr = inet_addr (hostname);
+  	if (sin.sin_addr.s_addr == (u_long) INADDR_NONE) {
+  		if ((h = gethostbyname (hostname)) == NULL)
+! 			return (scmerr (-1, stderr, "Can't find host entry for %s",
+  					hostname));
+  		hostname = h->h_name;
+  		(void) bcopy (h->h_addr,(char *)&sin.sin_addr,h->h_length);
+***************
+*** 397,407 ****
+  	for (;;) {
+  		netfile = socket (AF_INET,SOCK_STREAM,0);
+  		if (netfile < 0)
+! 			return (scmerr (errno,"Can't create socket"));
+  		tin = sin;
+  		if (connect(netfile,(struct sockaddr *)&tin,sizeof(tin)) >= 0)
+  			break;
+! 		(void) scmerr (errno,"Can't connect to server for %s",server);
+  		(void) close(netfile);
+  		if (!dobackoff (retry,&backoff))
+  			return (SCMERR);
+--- 397,407 ----
+  	for (;;) {
+  		netfile = socket (AF_INET,SOCK_STREAM,0);
+  		if (netfile < 0)
+! 			return (scmerr (errno, stderr, "Can't create socket"));
+  		tin = sin;
+  		if (connect(netfile,(struct sockaddr *)&tin,sizeof(tin)) >= 0)
+  			break;
+! 		(void) scmerr (errno, stderr, "Can't connect to server for %s",server);
+  		(void) close(netfile);
+  		if (!dobackoff (retry,&backoff))
+  			return (SCMERR);
+***************
+*** 522,527 ****
+--- 522,529 ----
+  	struct hostent *h;
+  	struct in_addr addr;
+  	char **ap;
++ 	if(!strcmp(name,"*"))
++ 		return (1);
+  	if ((addr.s_addr = inet_addr(name)) != (u_long) INADDR_NONE)
+  		return (addr.s_addr == remoteaddr.s_addr);
+  	if ((h = gethostbyname (name)) == 0)
+***************
+*** 535,541 ****
+  }
+  
+  #if __STDC__
+! int scmerr (int errno,char *fmt,...)
+  #else
+  /*VARARGS*//*ARGSUSED*/
+  int scmerr (va_alist)
+--- 537,543 ----
+  }
+  
+  #if __STDC__
+! int scmerr (int errno,FILE *filedes,char *fmt,...)
+  #else
+  /*VARARGS*//*ARGSUSED*/
+  int scmerr (va_alist)
+***************
+*** 544,558 ****
+  {
+  #if !__STDC__
+  	int errno;
+  	char *fmt;
+  #endif
+  	va_list ap;
+  
+! 	(void) fflush (stdout);
+  	if (progpid > 0)
+! 		fprintf (stderr,"%s %d: ",program,progpid);
+  	else
+! 		fprintf (stderr,"%s: ",program);
+  #if __STDC__
+  	va_start(ap,fmt);
+  #else
+--- 546,561 ----
+  {
+  #if !__STDC__
+  	int errno;
++ 	FILE *filedes;
+  	char *fmt;
+  #endif
+  	va_list ap;
+  
+! 	(void) fflush (filedes);
+  	if (progpid > 0)
+! 		fprintf (filedes,"%s %d: ",program,progpid);
+  	else
+! 		fprintf (filedes,"%s: ",program);
+  #if __STDC__
+  	va_start(ap,fmt);
+  #else
+***************
+*** 560,572 ****
+  	errno = va_arg(ap,int);
+  	fmt = va_arg(ap,char *);
+  #endif
+! 	vfprintf(stderr, fmt, ap);
+  	va_end(ap);
+  	if (errno >= 0)
+! 		fprintf (stderr,": %s\n",errmsg(errno));
+  	else
+! 		fprintf (stderr,"\n");
+! 	(void) fflush (stderr);
+  	return (SCMERR);
+  }
+  
+--- 563,575 ----
+  	errno = va_arg(ap,int);
+  	fmt = va_arg(ap,char *);
+  #endif
+! 	vfprintf(filedes, fmt, ap);
+  	va_end(ap);
+  	if (errno >= 0)
+! 		fprintf (filedes,": %s\n",errmsg(errno));
+  	else
+! 		fprintf (filedes,"\n");
+! 	(void) fflush (filedes);
+  	return (SCMERR);
+  }
+  
+diff -c /var/tmp/sup/scmio.c sup/scmio.c
+*** scmio.c	Fri Aug 20 17:46:33 1993
+--- sup/scmio.c	Sun Aug 13 19:12:45 1995
+***************
+*** 249,261 ****
+  	}
+  	if (x <= 0) {
+  		if (errno == EPIPE)
+! 			return (scmerr (-1,"Network write timed out"));
+  		if (errno)
+! 			return (scmerr (errno,"Write error on network"));
+! 		return (scmerr (-1,"Write retries failed"));
+  	}
+  	if (x != count)
+! 		return (scmerr (-1,"Write error on network returned %d on write of %d",x,count));
+  	return (SCMOK);
+  }
+  
+--- 249,261 ----
+  	}
+  	if (x <= 0) {
+  		if (errno == EPIPE)
+! 			return (scmerr (-1,stderr,"Network write timed out"));
+  		if (errno)
+! 			return (scmerr (errno,stderr,"Write error on network"));
+! 		return (scmerr (-1,stderr,"Write retries failed"));
+  	}
+  	if (x != count)
+! 		return (scmerr (-1,stderr,"Write error on network returned %d on write of %d",x,count));
+  	return (SCMOK);
+  }
+  
+***************
+*** 280,286 ****
+  	if (scmdebug > 1)
+  		loginfo ("SCM Writing message %d",msg);
+  	if (bufptr)
+! 		return (scmerr (-1,"Buffering already enabled"));
+  	bufptr = buffers;
+  	bufptr->b_ptr = bufptr->b_data;
+  	bufptr->b_cnt = 0;
+--- 280,286 ----
+  	if (scmdebug > 1)
+  		loginfo ("SCM Writing message %d",msg);
+  	if (bufptr)
+! 		return (scmerr (-1,stderr,"Buffering already enabled"));
+  	bufptr = buffers;
+  	bufptr->b_ptr = bufptr->b_data;
+  	bufptr->b_cnt = 0;
+***************
+*** 298,304 ****
+  	x = writedata (sizeof(int),(char *)&x);
+  	if (x != SCMOK)  return (x);
+  	if (bufptr == NULL)
+! 		return (scmerr (-1,"Buffering already disabled"));
+  	if (bufptr->b_cnt == 0) {
+  		bufptr = NULL;
+  		return (SCMOK);
+--- 298,304 ----
+  	x = writedata (sizeof(int),(char *)&x);
+  	if (x != SCMOK)  return (x);
+  	if (bufptr == NULL)
+! 		return (scmerr (-1,stderr,"Buffering already disabled"));
+  	if (bufptr->b_cnt == 0) {
+  		bufptr = NULL;
+  		return (SCMOK);
+***************
+*** 351,357 ****
+  	struct stat statbuf;
+  
+  	if (fstat(f,&statbuf) < 0)
+! 		return (scmerr (errno,"Can't access open file for message"));
+  	filesize = statbuf.st_size;
+  	y = byteswap(filesize);
+  	x = writedata (sizeof(int),(char *)&y);
+--- 351,357 ----
+  	struct stat statbuf;
+  
+  	if (fstat(f,&statbuf) < 0)
+! 		return (scmerr (errno,stderr,"Can't access open file for message"));
+  	filesize = statbuf.st_size;
+  	y = byteswap(filesize);
+  	x = writedata (sizeof(int),(char *)&y);
+***************
+*** 375,383 ****
+  		} while (x == SCMOK && number > 0);
+  	}
+  	if (sum != filesize)
+! 		return (scmerr (-1,"File size error on output message"));
+  	if (number < 0)
+! 		return (scmerr (errno,"Read error on file output message"));
+  	return (x);
+  }
+  
+--- 375,383 ----
+  		} while (x == SCMOK && number > 0);
+  	}
+  	if (sum != filesize)
+! 		return (scmerr (-1,stderr,"File size error on output message"));
+  	if (number < 0)
+! 		return (scmerr (errno,stderr,"Read error on file output message"));
+  	return (x);
+  }
+  
+***************
+*** 431,437 ****
+  
+  	if (count < 0) {
+  		if (bufptr + count < buffer)
+! 			return (scmerr (-1,"No space in buffer %d",count));
+  		bufptr += count;
+  		bufcnt -= count;
+  		bcopy (data,bufptr,-count);
+--- 431,437 ----
+  
+  	if (count < 0) {
+  		if (bufptr + count < buffer)
+! 			return (scmerr (-1,stderr,"No space in buffer %d",count));
+  		bufptr += count;
+  		bufcnt -= count;
+  		bcopy (data,bufptr,-count);
+***************
+*** 463,478 ****
+  		tries = 0;
+  		for (;;) {
+  			imask = 1 << netfile;
+  			if (select(32,(fd_set *)&imask,(fd_set *)0,(fd_set *)0,&timout) < 0)
+  				imask = 1;
+  			errno = 0;
+  			if (imask)
+  				x = read (netfile,p,n);
+  			else
+! 				return (scmerr (-1,"Timeout on network input"));
+  			if (x > 0)  break;
+  			if (x == 0)
+! 				return (scmerr (-1,"Premature EOF on network input"));
+  			if (errno)  break;
+  			if (++tries > RETRIES)  break;
+  			if (scmdebug > 0)
+--- 463,483 ----
+  		tries = 0;
+  		for (;;) {
+  			imask = 1 << netfile;
++ #if defined(__hpux)
++ 			if (select(32,&imask,(int *)0,(int *)0,&timout) < 0)
++ #else
+  			if (select(32,(fd_set *)&imask,(fd_set *)0,(fd_set *)0,&timout) < 0)
++ #endif
+  				imask = 1;
+  			errno = 0;
+  			if (imask)
+  				x = read (netfile,p,n);
+  			else
+! 				return (scmerr (-1,stderr,"Timeout on network input"));
+  			if (x > 0)  break;
+  			if (x == 0)
+! 				return (scmerr (-1,stderr,"Premature EOF on network "
+! 						"input"));
+  			if (errno)  break;
+  			if (++tries > RETRIES)  break;
+  			if (scmdebug > 0)
+***************
+*** 480,487 ****
+  		}
+  		if (x < 0) {
+  			if (errno)
+! 				return (scmerr (errno,"Read error on network"));
+! 			return (scmerr (-1,"Read retries failed"));
+  		}
+  		p += x;
+  		n -= x;
+--- 485,492 ----
+  		}
+  		if (x < 0) {
+  			if (errno)
+! 				return (scmerr (errno,stderr,"Read error on network"));
+! 			return (scmerr (-1,stderr,"Read retries failed"));
+  		}
+  		p += x;
+  		n -= x;
+***************
+*** 538,544 ****
+  
+  	/* check for MSGGOAWAY in case he noticed problems first */
+  	if (m != MSGGOAWAY)
+! 		return (scmerr (-1,"Received unexpected message %d",m));
+  	(void) netcrypt ((char *)NULL);
+  	(void) readstring (&goawayreason);
+  	(void) readmend ();
+--- 543,549 ----
+  
+  	/* check for MSGGOAWAY in case he noticed problems first */
+  	if (m != MSGGOAWAY)
+! 		return (scmerr (-1,stderr,"Received unexpected message %d",m));
+  	(void) netcrypt ((char *)NULL);
+  	(void) readstring (&goawayreason);
+  	(void) readmend ();
+***************
+*** 555,561 ****
+  	x = readdata (sizeof(int),(char *)&y);
+  	y = byteswap(y);
+  	if (x == SCMOK && y != ENDCOUNT)
+! 		return (scmerr (-1,"Error reading end of message"));
+  	return (x);
+  }
+  
+--- 560,566 ----
+  	x = readdata (sizeof(int),(char *)&y);
+  	y = byteswap(y);
+  	if (x == SCMOK && y != ENDCOUNT)
+! 		return (scmerr (-1,stderr,"Error reading end of message"));
+  	return (x);
+  }
+  
+***************
+*** 567,573 ****
+  	x = readcount (&n);
+  	if (x != SCMOK)  return (x);
+  	if (n < 0)
+! 		return (scmerr (-1,"Invalid message count %d",n));
+  	while (x == SCMOK && n > 0) {
+  		x = readdata (XFERSIZE(n),buf);
+  		n -= XFERSIZE(n);
+--- 572,578 ----
+  	x = readcount (&n);
+  	if (x != SCMOK)  return (x);
+  	if (n < 0)
+! 		return (scmerr (-1,stderr,"Invalid message count %d",n));
+  	while (x == SCMOK && n > 0) {
+  		x = readdata (XFERSIZE(n),buf);
+  		n -= XFERSIZE(n);
+***************
+*** 583,591 ****
+  	x = readcount (&y);
+  	if (x != SCMOK)  return (x);
+  	if (y < 0)
+! 		return (scmerr (-1,"Invalid message count %d",y));
+  	if (y != sizeof(int))
+! 		return (scmerr (-1,"Size error for int message is %d",y));
+  	x = readdata (sizeof(int),(char *)&y);
+  	(*buf) = byteswap(y);
+  	if (scmdebug > 2)
+--- 588,596 ----
+  	x = readcount (&y);
+  	if (x != SCMOK)  return (x);
+  	if (y < 0)
+! 		return (scmerr (-1,stderr,"Invalid message count %d",y));
+  	if (y != sizeof(int))
+! 		return (scmerr (-1,stderr,"Size error for int message is %d",y));
+  	x = readdata (sizeof(int),(char *)&y);
+  	(*buf) = byteswap(y);
+  	if (scmdebug > 2)
+***************
+*** 609,619 ****
+  		return (SCMOK);
+  	}
+  	if (count < 0)
+! 		return (scmerr (-1,"Invalid message count %d",count));
+  	if (scmdebug > 3)
+  		loginfo ("SCM Reading string count %d",count);
+  	if ((p = (char *)malloc ((unsigned)count+1)) == NULL)
+! 		return (scmerr (-1,"Can't malloc %d bytes for string",count));
+  	if (cryptflag) {
+  		x = getcryptbuf (count+1);
+  		if (x == SCMOK)  x = readdata (count,cryptbuf);
+--- 614,624 ----
+  		return (SCMOK);
+  	}
+  	if (count < 0)
+! 		return (scmerr (-1,stderr,"Invalid message count %d",count));
+  	if (scmdebug > 3)
+  		loginfo ("SCM Reading string count %d",count);
+  	if ((p = (char *)malloc ((unsigned)count+1)) == NULL)
+! 		return (scmerr (-1,stderr,"Can't malloc %d bytes for string",count));
+  	if (cryptflag) {
+  		x = getcryptbuf (count+1);
+  		if (x == SCMOK)  x = readdata (count,cryptbuf);
+***************
+*** 647,653 ****
+  	x = readcount (&count);
+  	if (x != SCMOK)  return (x);
+  	if (count < 0)
+! 		return (scmerr (-1,"Invalid message count %d",count));
+  	while (x == SCMOK && count > 0) {
+  		if (cryptflag) {
+  			x = readdata (XFERSIZE(count),cryptbuf);
+--- 652,658 ----
+  	x = readcount (&count);
+  	if (x != SCMOK)  return (x);
+  	if (count < 0)
+! 		return (scmerr (-1,stderr,"Invalid message count %d",count));
+  	while (x == SCMOK && count > 0) {
+  		if (cryptflag) {
+  			x = readdata (XFERSIZE(count),cryptbuf);
+***************
+*** 709,715 ****
+--- 714,724 ----
+  		FD_ZERO (&xbits);
+  		FD_SET (0,&ibits);
+  		FD_SET (netfile,&ibits);
++ #if defined(__hpux)
++ 		if ((c = select(16, (int *)&ibits, (int *)&obits, (int *)&xbits,
++ #else
+  		if ((c = select(16, &ibits, &obits, &xbits,
++ #endif
+  				(struct timeval *)NULL)) < 1) {
+  			if (c == -1) {
+  				if (errno == EINTR) {
+diff -c /var/tmp/sup/stree.c sup/stree.c
+*** stree.c	Fri Aug 20 17:46:34 1993
+--- sup/stree.c	Wed Apr  5 12:36:58 1995
+***************
+*** 77,82 ****
+--- 77,83 ----
+  	Tfree (&((*t)->Tlo));
+  	Tfree (&((*t)->Thi));
+  	if ((*t)->Tname)  free ((*t)->Tname);
++ 	if ((*t)->Tnewname)  free ((*t)->Tnewname);
+  	if ((*t)->Tuser)  free ((*t)->Tuser);
+  	if ((*t)->Tgroup)  free ((*t)->Tgroup);
+  	free (*(char **)t);
+***************
+*** 90,95 ****
+--- 91,97 ----
+  	register TREE *t;
+  	t = (TREE *) malloc (sizeof (TREE));
+  	t->Tname = (p == NULL) ? NULL : salloc (p);
++ 	t->Tnewname = NULL;
+  	t->Tflags = 0;
+  	t->Tuid = 0;
+  	t->Tgid = 0;
+diff -c /var/tmp/sup/sup.1 sup/sup.1
+*** sup.1	Thu Aug 11 06:24:44 1994
+--- sup/sup.1	Wed Apr 12 00:22:06 1995
+***************
+*** 59,65 ****
+  .\" 04-Apr-85  Steven Shafer (sas) at Carnegie-Mellon University
+  .\" 	Created.
+  .\" 
+! .TH SUP 1 02/08/92
+  .CM 4
+  .SH "NAME"
+  sup \- software upgrade protocol
+--- 59,65 ----
+  .\" 04-Apr-85  Steven Shafer (sas) at Carnegie-Mellon University
+  .\" 	Created.
+  .\" 
+! .TH SUP 1 03/15/95
+  .CM 4
+  .SH "NAME"
+  sup \- software upgrade protocol
+***************
+*** 247,252 ****
+--- 247,287 ----
+  will be printed that indicate what would happen if
+  an actual upgrade were done.
+  .TP
++ .B -i
++ Normally, 
++ .I sup 
++ will fail to upgrade any files that are \fBETXTBSY\fR.
++ The
++ .B -i
++ flag, or the
++ .B unlinkbusy
++ supfile option, will cause
++ .I sup
++ to try to upgrade a busy file by unlinking it before the 
++ replacement file is installed.  The option is intended for
++ environments where upgrades to possibly running binaries or 
++ libraries will take place.  Some operating systems \fB(HPUX)\fR 
++ do not allow the unlink system call to succeed on ETXTBSY files.
++ If the unlink does not succeed, an attempt is made to rename the 
++ file to filename.sup#sup-pid.moved.  The new name is logged in either 
++ the system default rename log file, \fB/usr/local/etc/sup.moved\fR, 
++ or in a logfile as set by the \fBrenamelog\fR supfile option.  The 
++ logfile allows for easy deletion of ETXTBSY files once they are no 
++ longer in use.  A typical time to perform the deletions is at system 
++ boot time with something similar to:
++ .TP
++ .ce 1
++ cat /usr/local/etc/sup.moved | xargs rm -rf
++ .TP
++ .B -I
++ The
++ .B -I
++ flag overrides and disables the
++ .B -i
++ flag and the
++ .B unlinkbusy
++ supfile option.
++ .TP
+  .B -k
+  .I Sup
+  will check the modification times of
+***************
+*** 537,542 ****
+--- 572,590 ----
+  .I sup
+  to upgrade that collection.
+  .TP
++ .BI renamelog= filename
++ When the 
++ .B
++ unlinkbusy
++ or
++ .B
++ -i
++ option is enabled, but the system cannot unlink a busy file, it
++ will rename it instead and log the new filename.  Logging will 
++ occur to the system default rename log file or to the specified
++ .IR filename
++ in the renamelog entry of a supfile.
++ .TP
+  .B backup
+  As described above under the
+  .B -b
+***************
+*** 562,567 ****
+--- 610,620 ----
+  .B -o
+  flag.
+  .TP
++ .B unlinkbusy
++ As described above under the
++ .B -i
++ flag.
++ .TP
+  .B noupdate
+  As described above under the
+  .B -u
+***************
+*** 729,734 ****
+--- 782,793 ----
+  omitany commands do not affect filenames specified with the always
+  command.
+  .TP
++ \fBrename\fR \fIfilename\fR \fIdest-filename\fR...
++ The rename command allows for a file on the server to be placed on the
++ client under a different name.  To prevent confusion and ease its use,
++ the rename option implicitly omits any files on the server that have 
++ the same name as \fIdest-filename\fR.
++ .TP
+  \fBomit\fR \fIfilename\fR ...
+  The specified file(s) (or directories) will be excluded from the
+  list of files to be upgraded.
+***************
+*** 796,802 ****
+  .I sup
+  with the
+  .B -e
+! flag to allow the automatic execution of command files.
+  .TP
+  \fBinclude\fR \fIlistfile\fR ...
+  The specified
+--- 855,863 ----
+  .I sup
+  with the
+  .B -e
+! flag to allow the automatic execution of command files.  The timestamp
+! of the upgraded file is maintained even if the executed command might
+! change it so as to prevent an upgrade with every \fIsup\fR.
+  .TP
+  \fBinclude\fR \fIlistfile\fR ...
+  The specified
+***************
+*** 861,866 ****
+--- 922,930 ----
+  .TP
+  <\fIbase-directory\fR>\fB/sup/\fR<\fIcollection\fR>\fB/logfile
+  log file for a collection
++ .TP
++ \fB/usr/local/etc/sup.moved\fR 
++ log file for files renamed by the \fBunlinkbusy\fR option
+  .TP
+  <\fIbase-directory\fR>\fB/sup/\fR<\fIcollection\fR>\fB/prefix
+  file containing the name of the prefix directory
+diff -c /var/tmp/sup/sup.h sup/sup.h
+*** sup.h	Fri Aug 20 17:46:34 1993
+--- sup/sup.h	Thu Apr  6 14:08:06 1995
+***************
+*** 101,108 ****
+  
+  /* PGMVERSION is defined separately in each program */
+  extern char scmversion[];		/* string version of scm */
+! #define PROTOVERSION 8			/* version of network protocol */
+! #define SCANVERSION  2			/* version of scan file format */
+  
+  /* TCP servers for name server and file server */
+  #define FILEPORT	"supfilesrv"
+--- 101,108 ----
+  
+  /* PGMVERSION is defined separately in each program */
+  extern char scmversion[];		/* string version of scm */
+! #define PROTOVERSION 9			/* version of network protocol */
+! #define SCANVERSION  3			/* version of scan file format */
+  
+  /* TCP servers for name server and file server */
+  #define FILEPORT	"supfilesrv"
+***************
+*** 182,187 ****
+--- 182,188 ----
+  struct treestruct {
+  /* fields for file information */
+  	char *Tname;			/* path component name */
++ 	char *Tnewname;			/* Used for renameing files */
+  	int Tflags;			/* flags of file */
+  	int Tmode;			/* st_mode of file */
+  	char *Tuser;			/* owner of file */
+***************
+*** 220,225 ****
+--- 221,227 ----
+  #define FBACKUP		     02		/* backup of file is allowed */
+  #define FNOACCT		     04		/* don't set file information */
+  #define FUPDATE		    010		/* only set file information */
++ #define FRENAME		    020		/* Rename this file while updating */
+  #define FNEEDED		0100000		/* file needed for upgrade */
+  
+  /* version 3 compatability */
+diff -c /var/tmp/sup/supcdefs.h sup/supcdefs.h
+*** supcdefs.h	Thu Aug 11 06:24:45 1994
+--- sup/supcdefs.h	Thu Apr  6 15:32:42 1995
+***************
+*** 118,123 ****
+--- 118,124 ----
+  	char *Clogin;			/* remote login name */
+  	char *Cpswd;			/* remote password */
+  	char *Ccrypt;			/* data encryption key */
++ 	char *Crenamelog;		/* Where to log files moved when busy */
+  	int Ctimeout;			/* timeout for backoff */
+  	int Cflags;			/* collection flags */
+  	int Cnogood;			/* upgrade no good, "when" unchanged */
+***************
+*** 126,144 ****
+  };
+  typedef struct collstruct COLLECTION;
+  
+! #define CFALL		00001
+! #define CFBACKUP	00002
+! #define CFDELETE	00004
+! #define CFEXECUTE	00010
+! #define CFLIST		00020
+! #define CFLOCAL		00040
+! #define CFMAIL		00100
+! #define CFOLD		00200
+! #define CFVERBOSE	00400
+! #define CFKEEP		01000
+! #define CFURELSUF	02000
+! #define CFCOMPRESS	04000
+! #define CFNOUPDATE     010000
+  
+  /*************************
+   ***	M A C R O S    ***
+--- 127,146 ----
+  };
+  typedef struct collstruct COLLECTION;
+  
+! #define CFALL		0x0001
+! #define CFBACKUP	0x0002
+! #define CFDELETE	0x0004
+! #define CFEXECUTE	0x0008
+! #define CFLIST		0x0010
+! #define CFLOCAL		0x0020
+! #define CFMAIL		0x0040
+! #define CFOLD		0x0080
+! #define CFVERBOSE	0x0100
+! #define CFKEEP		0x0200
+! #define CFURELSUF	0x0400
+! #define CFCOMPRESS	0x0800
+! #define CFNOUPDATE	0x1000
+! #define CFUNLINKBUSY	0x2000
+  
+  /*************************
+   ***	M A C R O S    ***
+***************
+*** 149,155 ****
+   * C prototypes
+   */
+  #if __STDC__
+! void	done	__P((int value,char *fmt,...));
+! void	goaway	__P((char *fmt,...));
+! void	notify	__P((char *fmt,...));
+  #endif
+--- 151,157 ----
+   * C prototypes
+   */
+  #if __STDC__
+! void  done    __P((int value,char *fmt,...));
+! void  goaway  __P((char *fmt,...));
+! void  notify  __P((char *fmt,...));
+  #endif
+diff -c /var/tmp/sup/supcmain.c sup/supcmain.c
+*** supcmain.c	Thu Aug 11 06:24:45 1994
+--- sup/supcmain.c	Thu Apr  6 15:43:18 1995
+***************
+*** 418,424 ****
+--- 418,428 ----
+  			int fd;
+  			loginfo ("SUP Restarting %s with new supfile %s",
+  				progname,supfname);
++ #ifdef __hpux
++ 			for (fd = 256; fd > 3; fd--)
++ #else
+  			for (fd = getdtablesize (); fd > 3; fd--)
++ #endif
+  				(void) close (fd);
+  			execv (progname,argv);
+  			logquit (1,"Restart failed");
+***************
+*** 550,555 ****
+--- 554,567 ----
+  			break;
+  		case 'm':
+  			oflags |= CFMAIL;
++ 			break;
++ 		case 'i':
++ 			oflags |= CFUNLINKBUSY;
++ 			aflags &= ~CFUNLINKBUSY;
++ 			break;
++ 		case 'I':
++ 			oflags &= ~CFUNLINKBUSY;
++ 			aflags |= CFUNLINKBUSY;
+  			break;
+  		case 'o':
+  			oflags |= CFOLD;
+diff -c /var/tmp/sup/supcmeat.c sup/supcmeat.c
+*** supcmeat.c	Thu Aug 11 06:24:45 1994
+--- sup/supcmeat.c	Sun Aug 13 18:44:26 1995
+***************
+*** 156,161 ****
+--- 156,163 ----
+  int dontjump;				/* flag to void sjbuf */
+  int cancompress=FALSE;			/* Can we do compression? */
+  int docompress=FALSE;			/* Do we do compression? */
++ int dounlinkbusy=FALSE;			/* Should we try to unlink busy files?*/
++ FILE *renamelog=NULL;			/* Where we log renamed files */
+  
+  extern COLLECTION *thisC;		/* collection list pointer */
+  extern int rpauseflag;			/* don't disable resource pausing */
+***************
+*** 492,498 ****
+  	int needone(), denyone(), deleteone();
+  	char buf[STRINGLENGTH];
+  	char relsufix[STRINGLENGTH];
+! 	register char *p,*q;
+  	register FILE *f;
+  	register int x;
+  
+--- 494,501 ----
+  	int needone(), denyone(), deleteone();
+  	char buf[STRINGLENGTH];
+  	char relsufix[STRINGLENGTH];
+! 	TREE *t;
+! 	register char *p,*q,*r;
+  	register FILE *f;
+  	register int x;
+  
+***************
+*** 506,513 ****
+  	if (f) {
+  		while (p = fgets (buf,STRINGLENGTH,f)) {
+  			if (q = index (p,'\n'))  *q = '\0';
+  			if (index ("#;:",*p))  continue;
+! 			(void) Tinsert (&lastT,p,FALSE);
+  		}
+  		(void) fclose (f);
+  	}
+--- 509,522 ----
+  	if (f) {
+  		while (p = fgets (buf,STRINGLENGTH,f)) {
+  			if (q = index (p,'\n'))  *q = '\0';
++ 			if (r = index (p,' '))  *r++ = '\0';
+  			if (index ("#;:",*p))  continue;
+! 			t = Tinsert (&lastT,p,FALSE);
+! 			if(t && r)
+! 			{
+! 				t->Tnewname = salloc(r);
+! 				t->Tflags = FRENAME;
+! 			}
+  		}
+  		(void) fclose (f);
+  	}
+***************
+*** 532,537 ****
+--- 541,547 ----
+  		goaway ("Error reading file list from file server");
+  	if (thisC->Cprefix)  (void) chdir (thisC->Cprefix);
+  	needT = NULL;
++ 	renameT = NULL;
+  	(void) Tprocess (listT,needone);
+  	Tfree (&listT);
+  	x = msgneed ();
+***************
+*** 548,553 ****
+--- 558,565 ----
+  	if (thisC->Cflags&(CFALL|CFDELETE|CFOLD))
+  		(void) Trprocess (lastT,deleteone);
+  	Tfree (&refuseT);
++ 	Tfree (&renameT);
++ 	renameT = NULL;
+  }
+  
+  needone (t)
+***************
+*** 556,572 ****
+  	register TREE *newt;
+  	register int exists, fetch;
+  	struct stat sbuf;
+  
+  	newt = Tinsert (&lastT,t->Tname,TRUE);
+  	newt->Tflags |= FUPDATE;
+  	fetch = TRUE;
+  	if ((thisC->Cflags&CFALL) == 0) {
+  		if ((t->Tflags&FNEW) == 0 && (thisC->Cflags&CFOLD) == 0)
+  			return (SCMOK);
+  		if ((t->Tmode&S_IFMT) == S_IFLNK)
+! 			exists = (lstat (t->Tname,&sbuf) == 0);
+  		else
+! 			exists = (stat (t->Tname,&sbuf) == 0);
+  		/* This is moderately complicated:
+  		   If the file is the wrong type or doesn't exist, we need to
+  		   fetch the whole file.  If the file is a special file, we
+--- 568,593 ----
+  	register TREE *newt;
+  	register int exists, fetch;
+  	struct stat sbuf;
++ 	char *name;
+  
+  	newt = Tinsert (&lastT,t->Tname,TRUE);
+  	newt->Tflags |= FUPDATE;
++ 	if(t->Tflags&FRENAME) {
++ 	  newt->Tflags |= FRENAME;
++ 	  newt->Tnewname = salloc(t->Tnewname);
++ 	  name = t->Tnewname; 
++ 	  Tinsert(&renameT,t->Tnewname);
++ 	}
++ 	else
++ 	  name = t->Tname;
+  	fetch = TRUE;
+  	if ((thisC->Cflags&CFALL) == 0) {
+  		if ((t->Tflags&FNEW) == 0 && (thisC->Cflags&CFOLD) == 0)
+  			return (SCMOK);
+  		if ((t->Tmode&S_IFMT) == S_IFLNK)
+! 			exists = (lstat (name,&sbuf) == 0);
+  		else
+! 			exists = (stat (name,&sbuf) == 0);
+  		/* This is moderately complicated:
+  		   If the file is the wrong type or doesn't exist, we need to
+  		   fetch the whole file.  If the file is a special file, we
+***************
+*** 592,603 ****
+  				else return (SCMOK);
+  	}
+  	/* If we get this far, we're either doing an update or a full fetch. */
+  	if (!fetch && t->Tmode == sbuf.st_mode &&
+  	    (t->Tmode&S_IFMT) == S_IFREG && (thisC->Cflags&CFNOUPDATE)) {
+  		vnotify ("SUP update avoided for %s\n", t->Tname);
+! 		return (SCMOK);
+  	}
+- 	newt = Tinsert (&needT,t->Tname,TRUE);
+  	if (!fetch && (t->Tmode&S_IFMT) == S_IFREG)
+  		newt->Tflags |= FUPDATE;
+  	return (SCMOK);
+--- 613,624 ----
+  				else return (SCMOK);
+  	}
+  	/* If we get this far, we're either doing an update or a full fetch. */
++ 	newt = Tinsert (&needT,t->Tname,TRUE);
+  	if (!fetch && t->Tmode == sbuf.st_mode &&
+  	    (t->Tmode&S_IFMT) == S_IFREG && (thisC->Cflags&CFNOUPDATE)) {
+  		vnotify ("SUP update avoided for %s\n", t->Tname);
+! 		 return (SCMOK);
+  	}
+  	if (!fetch && (t->Tmode&S_IFMT) == S_IFREG)
+  		newt->Tflags |= FUPDATE;
+  	return (SCMOK);
+***************
+*** 615,626 ****
+  {
+  	struct stat sbuf;
+  	register int x;
+! 	register char *name = t->Tname;
+  
+  	if (t->Tflags&FUPDATE)		/* in current upgrade list */
+  		return (SCMOK);
+  	if (lstat(name,&sbuf) < 0)	/* doesn't exist */
+  		return (SCMOK);
+  	/* is it a symbolic link ? */
+  	if ((sbuf.st_mode & S_IFMT) == S_IFLNK) {
+  		if (Tlookup (refuseT,name)) {
+--- 636,650 ----
+  {
+  	struct stat sbuf;
+  	register int x;
+! 	register char *name = t->Tflags & FRENAME ? t->Tnewname : t->Tname;
+  
+  	if (t->Tflags&FUPDATE)		/* in current upgrade list */
+  		return (SCMOK);
+  	if (lstat(name,&sbuf) < 0)	/* doesn't exist */
+  		return (SCMOK);
++ 	if (Tlookup (renameT, name))    /* it is a file we're going to replace
++ 	        return (SCMOK);          * by renaming another target.
++ 		                         */
+  	/* is it a symbolic link ? */
+  	if ((sbuf.st_mode & S_IFMT) == S_IFLNK) {
+  		if (Tlookup (refuseT,name)) {
+***************
+*** 723,728 ****
+--- 747,756 ----
+  		if (docompress)
+  			vnotify("SUP Using compressed file transfer\n");
+  	}
++ 	/* Should we attempt to unlink files that are busy? */
++ 	dounlinkbusy = (thisC->Cflags & CFUNLINKBUSY);
++ 	if(dounlinkbusy)
++ 		vnotify("SUP Will attempt to unlink busy files\n");
+  	recvmore = TRUE;
+  	upgradeT = NULL;
+  	do {
+***************
+*** 735,740 ****
+--- 763,770 ----
+  			goaway ("Error receiving file from file server");
+  		Tfree (&upgradeT);
+  	} while (recvmore);
++ 	if( renamelog )
++ 	   fclose( renamelog );
+  }
+  
+  /* prepare the target, if necessary */
+***************
+*** 779,785 ****
+  	}
+  	if ((statp->st_mode&S_IFMT) == S_IFDIR) {
+  		if (rmdir (name) < 0)
+! 			runp ("rm","rm","-rf",name,0);
+  	} else
+  		(void) unlink (name);
+  	if (stat (name,statp) < 0) {
+--- 809,815 ----
+  	}
+  	if ((statp->st_mode&S_IFMT) == S_IFDIR) {
+  		if (rmdir (name) < 0)
+! 			runp ("rm","rm","-rf",name,(char *)0);
+  	} else
+  		(void) unlink (name);
+  	if (stat (name,statp) < 0) {
+***************
+*** 799,805 ****
+  	struct stat sbuf;
+  	int linkone (),execone ();
+  	int *recvmore = va_arg(ap,int *);
+! 
+  	/* check for end of file list */
+  	if (t == NULL) {
+  		*recvmore = FALSE;
+--- 829,835 ----
+  	struct stat sbuf;
+  	int linkone (),execone ();
+  	int *recvmore = va_arg(ap,int *);
+! 	char *name;
+  	/* check for end of file list */
+  	if (t == NULL) {
+  		*recvmore = FALSE;
+***************
+*** 812,819 ****
+  		thisC->Cnogood = TRUE;
+  		return (SCMOK);
+  	}
+! 	if (prepare (t->Tname,t->Tmode&S_IFMT,&new,&sbuf)) {
+! 		notify ("SUP: Can't prepare path for %s\n",t->Tname);
+  		if ((t->Tmode&S_IFMT) == S_IFREG) {
+  			x = readskip ();	/* skip over file */
+  			if (x != SCMOK)
+--- 842,850 ----
+  		thisC->Cnogood = TRUE;
+  		return (SCMOK);
+  	}
+! 	name = t->Tflags & FRENAME ? t->Tnewname : t->Tname; 
+! 	if (prepare (name,t->Tmode&S_IFMT,&new,&sbuf)) {
+! 		notify ("SUP: Can't prepare path for %s\n",name);
+  		if ((t->Tmode&S_IFMT) == S_IFREG) {
+  			x = readskip ();	/* skip over file */
+  			if (x != SCMOK)
+***************
+*** 841,848 ****
+  		return (SCMOK);
+  	}
+  	if ((t->Tmode&S_IFMT) == S_IFREG)
+! 		(void) Tprocess (t->Tlink,linkone,t->Tname);
+! 	(void) Tprocess (t->Texec,execone);
+  	return (SCMOK);
+  }
+  
+--- 872,879 ----
+  		return (SCMOK);
+  	}
+  	if ((t->Tmode&S_IFMT) == S_IFREG)
+! 		(void) Tprocess (t->Tlink,linkone,name);
+! 	(void) Tprocess (t->Texec,execone,name);
+  	return (SCMOK);
+  }
+  
+***************
+*** 852,866 ****
+  register struct stat *statp;
+  {
+  	struct timeval tbuf[2];
+  
+  	if (new) {
+  		if (thisC->Cflags&CFLIST) {
+! 			vnotify ("SUP Would create directory %s\n",t->Tname);
+  			return (FALSE);
+  		}
+! 		(void) mkdir (t->Tname,0755);
+! 		if (stat (t->Tname,statp) < 0) {
+! 			notify ("SUP: Can't create directory %s\n",t->Tname);
+  			return (TRUE);
+  		}
+  	}
+--- 883,898 ----
+  register struct stat *statp;
+  {
+  	struct timeval tbuf[2];
++ 	char *name = t->Tflags & FRENAME ? t->Tnewname : t->Tname;
+  
+  	if (new) {
+  		if (thisC->Cflags&CFLIST) {
+! 			vnotify ("SUP Would create directory %s\n",name);
+  			return (FALSE);
+  		}
+! 		(void) mkdir (name,0755);
+! 		if (stat (name,statp) < 0) {
+! 			notify ("SUP: Can't create directory %s\n",name);
+  			return (TRUE);
+  		}
+  	}
+***************
+*** 875,891 ****
+  			return (FALSE);
+  	}
+  	if (thisC->Cflags&CFLIST) {
+! 		vnotify ("SUP Would update directory %s\n",t->Tname);
+  		return (FALSE);
+  	}
+  	if ((t->Tflags&FNOACCT) == 0) {
+! 		(void) chown (t->Tname,t->Tuid,t->Tgid);
+! 		(void) chmod (t->Tname,t->Tmode&S_IMODE);
+  	}
+  	tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
+  	tbuf[1].tv_sec = t->Tmtime;  tbuf[1].tv_usec = 0;
+! 	(void) utimes (t->Tname,tbuf);
+! 	vnotify ("SUP %s directory %s\n",new?"Created":"Updated",t->Tname);
+  	return (FALSE);
+  }
+  
+--- 907,923 ----
+  			return (FALSE);
+  	}
+  	if (thisC->Cflags&CFLIST) {
+! 		vnotify ("SUP Would update directory %s\n",name);
+  		return (FALSE);
+  	}
+  	if ((t->Tflags&FNOACCT) == 0) {
+! 		(void) chown (name,t->Tuid,t->Tgid);
+! 		(void) chmod (name,t->Tmode&S_IMODE);
+  	}
+  	tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
+  	tbuf[1].tv_sec = t->Tmtime;  tbuf[1].tv_usec = 0;
+! 	(void) utimes (name,tbuf);
+! 	vnotify ("SUP %s directory %s\n",new?"Created":"Updated",name);
+  	return (FALSE);
+  }
+  
+***************
+*** 897,925 ****
+  	char buf[STRINGLENGTH];
+  	int n;
+  	register char *linkname;
+  
+! 	if (t->Tlink == NULL || t->Tlink->Tname == NULL) {
+  		notify ("SUP: Missing linkname for symbolic link %s\n",
+  			t->Tname);
+  		return (TRUE);
+  	}
+  	linkname = t->Tlink->Tname;
+  	if (!new && (t->Tflags&FNEW) == 0 &&
+! 	    (n = readlink (t->Tname,buf,sizeof(buf))) >= 0 &&
+  	    (n == strlen (linkname)) && (strncmp (linkname,buf,n) == 0))
+  		return (FALSE);
+  	if (thisC->Cflags&CFLIST) {
+  		vnotify ("SUP Would %s symbolic link %s to %s\n",
+! 			new?"create":"update",t->Tname,linkname);
+  		return (FALSE);
+  	}
+  	if (!new)
+! 		(void) unlink (t->Tname);
+! 	if (symlink (linkname,t->Tname) < 0 || lstat(t->Tname,statp) < 0) {
+! 		notify ("SUP: Unable to create symbolic link %s\n",t->Tname);
+  		return (TRUE);
+  	}
+! 	vnotify ("SUP Created symbolic link %s to %s\n",t->Tname,linkname);
+  	return (FALSE);
+  }
+  
+--- 929,958 ----
+  	char buf[STRINGLENGTH];
+  	int n;
+  	register char *linkname;
++ 	char *name = t->Tflags & FRENAME ? t->Tnewname : t->Tname;
+  
+! 	if (t->Tlink == NULL || name == NULL) {
+  		notify ("SUP: Missing linkname for symbolic link %s\n",
+  			t->Tname);
+  		return (TRUE);
+  	}
+  	linkname = t->Tlink->Tname;
+  	if (!new && (t->Tflags&FNEW) == 0 &&
+! 	    (n = readlink (name,buf,sizeof(buf))) >= 0 &&
+  	    (n == strlen (linkname)) && (strncmp (linkname,buf,n) == 0))
+  		return (FALSE);
+  	if (thisC->Cflags&CFLIST) {
+  		vnotify ("SUP Would %s symbolic link %s to %s\n",
+! 			new?"create":"update",name,linkname);
+  		return (FALSE);
+  	}
+  	if (!new)
+! 		(void) unlink (name);
+! 	if (symlink (linkname,name) < 0 || lstat(name,statp) < 0) {
+! 		notify ("SUP: Unable to create symbolic link %s\n",name);
+  		return (TRUE);
+  	}
+! 	vnotify ("SUP Created symbolic link %s to %s\n",name,linkname);
+  	return (FALSE);
+  }
+  
+***************
+*** 934,939 ****
+--- 967,973 ----
+  	struct timeval tbuf[2];
+  	register int x;
+  	register char *p;
++ 	char *name = t->Tflags & FRENAME ? t->Tnewname : t->Tname;
+  
+  	if (t->Tflags&FUPDATE) {
+  		if ((t->Tflags&FNOACCT) == 0) {
+***************
+*** 950,966 ****
+  				return (FALSE);
+  		}
+  		if (thisC->Cflags&CFLIST) {
+! 			vnotify ("SUP Would update file %s\n",t->Tname);
+  			return (FALSE);
+  		}
+! 		vnotify ("SUP Updating file %s\n",t->Tname);
+  		if ((t->Tflags&FNOACCT) == 0) {
+! 			(void) chown (t->Tname,t->Tuid,t->Tgid);
+! 			(void) chmod (t->Tname,t->Tmode&S_IMODE);
+  		}
+  		tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
+  		tbuf[1].tv_sec = t->Tmtime;  tbuf[1].tv_usec = 0;
+! 		(void) utimes (t->Tname,tbuf);
+  		return (FALSE);
+  	}
+  	if (thisC->Cflags&CFLIST) {
+--- 984,1000 ----
+  				return (FALSE);
+  		}
+  		if (thisC->Cflags&CFLIST) {
+! 			vnotify ("SUP Would update file %s\n",name);
+  			return (FALSE);
+  		}
+! 		vnotify ("SUP Updating file %s\n",name);
+  		if ((t->Tflags&FNOACCT) == 0) {
+! 			(void) chown (name,t->Tuid,t->Tgid);
+! 			(void) chmod (name,t->Tmode&S_IMODE);
+  		}
+  		tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
+  		tbuf[1].tv_sec = t->Tmtime;  tbuf[1].tv_usec = 0;
+! 		(void) utimes (name,tbuf);
+  		return (FALSE);
+  	}
+  	if (thisC->Cflags&CFLIST) {
+***************
+*** 972,993 ****
+  			p = "receive old";
+  		else
+  			p = "receive";
+! 		vnotify ("SUP Would %s file %s\n",p,t->Tname);
+  		return (FALSE);
+  	}
+! 	vnotify ("SUP Receiving file %s\n",t->Tname);
+  	if (!new && (t->Tmode&S_IFMT) == S_IFREG &&
+  	    (t->Tflags&FBACKUP) && (thisC->Cflags&CFBACKUP)) {
+! 		fin = fopen (t->Tname,"r");	/* create backup */
+  		if (fin == NULL) {
+  			x = readskip ();	/* skip over file */
+  			if (x != SCMOK)
+  				goaway ("Can't skip file transfer");
+  			notify ("SUP: Can't open %s to create backup\n",
+! 				t->Tname);
+  			return (TRUE);		/* mark upgrade as nogood */
+  		}
+! 		path (t->Tname,dirpart,filepart);
+  		(void) sprintf (filename,FILEBACKUP,dirpart,filepart);
+  		fout = fopen (filename,"w");
+  		if (fout == NULL) {
+--- 1006,1027 ----
+  			p = "receive old";
+  		else
+  			p = "receive";
+! 		vnotify ("SUP Would %s file %s\n",p,name);
+  		return (FALSE);
+  	}
+! 	vnotify ("SUP Receiving file %s\n",name);
+  	if (!new && (t->Tmode&S_IFMT) == S_IFREG &&
+  	    (t->Tflags&FBACKUP) && (thisC->Cflags&CFBACKUP)) {
+! 		fin = fopen (name,"r");	/* create backup */
+  		if (fin == NULL) {
+  			x = readskip ();	/* skip over file */
+  			if (x != SCMOK)
+  				goaway ("Can't skip file transfer");
+  			notify ("SUP: Can't open %s to create backup\n",
+! 				name);
+  			return (TRUE);		/* mark upgrade as nogood */
+  		}
+! 		path (name,dirpart,filepart);
+  		(void) sprintf (filename,FILEBACKUP,dirpart,filepart);
+  		fout = fopen (filename,"w");
+  		if (fout == NULL) {
+***************
+*** 1006,1025 ****
+  		ffilecopy (fin,fout);
+  		(void) fclose (fin);
+  		(void) fclose (fout);
+! 		vnotify ("SUP Backup of %s created\n", t->Tname);
+  	}
+! 	x = copyfile (t->Tname,(char *)NULL);
+  	if (x)
+  		return (TRUE);
+  	if ((t->Tflags&FNOACCT) == 0) {
+  		/* convert user and group names to local ids */
+  		ugconvert (t->Tuser,t->Tgroup,&t->Tuid,&t->Tgid,&t->Tmode);
+! 		(void) chown (t->Tname,t->Tuid,t->Tgid);
+! 		(void) chmod (t->Tname,t->Tmode&S_IMODE);
+  	}
+  	tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
+  	tbuf[1].tv_sec = t->Tmtime;  tbuf[1].tv_usec = 0;
+! 	(void) utimes (t->Tname,tbuf);
+  	return (FALSE);
+  }
+  
+--- 1040,1059 ----
+  		ffilecopy (fin,fout);
+  		(void) fclose (fin);
+  		(void) fclose (fout);
+! 		vnotify ("SUP Backup of %s created\n", name);
+  	}
+! 	x = copyfile (name,(char *)NULL);
+  	if (x)
+  		return (TRUE);
+  	if ((t->Tflags&FNOACCT) == 0) {
+  		/* convert user and group names to local ids */
+  		ugconvert (t->Tuser,t->Tgroup,&t->Tuid,&t->Tgid,&t->Tmode);
+! 		(void) chown (name,t->Tuid,t->Tgid);
+! 		(void) chmod (name,t->Tmode&S_IMODE);
+  	}
+  	tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
+  	tbuf[1].tv_sec = t->Tmtime;  tbuf[1].tv_usec = 0;
+! 	(void) utimes (name,tbuf);
+  	return (FALSE);
+  }
+  
+***************
+*** 1067,1075 ****
+  	return (SCMOK);
+  }
+  
+! execone (t)			/* execute command for file */
+  register TREE *t;
+  {
+  	union wait w;
+  
+  	if (thisC->Cflags&CFLIST) {
+--- 1101,1112 ----
+  	return (SCMOK);
+  }
+  
+! execone (t,name)			/* execute command for file */
+  register TREE *t;
++ register char **name;
+  {
++ 	struct stat sbuf;
++ 	struct timeval tbuf[2];
+  	union wait w;
+  
+  	if (thisC->Cflags&CFLIST) {
+***************
+*** 1082,1087 ****
+--- 1119,1128 ----
+  	}
+  	vnotify ("SUP Executing %s\n",t->Tname);
+  
++ 	if (lstat(*name,&sbuf)){
++ 		notify ("SUP Unable to stat file %s\n", *name);
++ 		sbuf.st_ino = 0;
++ 	}
+  	w.w_status = system (t->Tname);
+  	if (WIFEXITED(w) && w.w_retcode != 0) {
+  		notify ("SUP: Execute command returned failure status %#o\n",
+***************
+*** 1096,1101 ****
+--- 1137,1150 ----
+  			w.w_stopsig);
+  		thisC->Cnogood = TRUE;
+  	}
++ 	if ((sbuf.st_ino != 0) && (sbuf.st_mode&S_IFMT) != S_IFLNK){
++ 		(void) chown (*name,sbuf.st_uid,sbuf.st_gid);
++ 		(void) chmod (*name,(sbuf.st_mode)&0x1ff);
++ 		tbuf[0].tv_sec = time((long *)NULL);  tbuf[0].tv_usec = 0;
++ 		tbuf[1].tv_sec = sbuf.st_mtime;  tbuf[1].tv_usec = 0;
++ 		(void) utimes (*name,tbuf);
++ 	}
++ 
+  	return (SCMOK);
+  }
+  
+***************
+*** 1108,1113 ****
+--- 1157,1163 ----
+  	char tname[STRINGLENGTH];
+  	char sys_com[STRINGLENGTH];
+  	struct stat sbuf;
++ 	int retried = 0;
+  
+  	static int thispid = 0;		/* process id # */
+  
+***************
+*** 1241,1246 ****
+--- 1291,1297 ----
+  		return (FALSE);
+  	}
+  	/* uncompress it first */
++ retry:
+  	if (docompress) {
+  		/* make sure file permissions don't cause a problem */
+  		(void) unlink (to);
+***************
+*** 1274,1279 ****
+--- 1325,1372 ----
+  	tof = open (to,(O_WRONLY|O_CREAT|O_TRUNC),0600);
+  	if (tof < 0) {
+  		(void) close (fromf);
++ 		/* Here we can tell if it is ETXTBSY and try this loop
++ 		   again */
++ 		if( dounlinkbusy && errno == ETXTBSY && !retried ) {
++ 		     /* Try to unlink the destination */
++ 		     if( unlink(to) == 0 ){
++ 			vnotify ("SUP: Removed busy file %s\n", to);
++ 			retried = 1;
++ 			goto retry;
++ 		     }
++ 		     /* 
++ 		      * Some OSs (ie. HP-UX), return ETXTBUSY on unlinking
++ 		      * a busy file.  We try to rename it instead and log
++ 		      * the filename so it can be removed later.
++ 		      */
++ 		      else if( errno == ETXTBSY ) {
++ 			char mname[STRINGLENGTH];
++ 
++ 			sprintf(mname, "%s.sup.#%d.moved", to, thispid);
++ 
++ 			if( rename(to, mname) == 0) {
++ 			   vnotify ("SUP: Moved busy file %s to %s\n", to,
++ 				    mname);
++ 			   if(renamelog == NULL) {
++ 			      renamelog = fopen(thisC->Crenamelog, "a");
++ 			      if( renamelog == NULL ) {
++ 				 notify ("SUP: Cannot open rename log file %s: "
++ 					 "%s\n",thisC->Crenamelog,errmsg (-1));
++ 			      }
++ 			      else {
++ 			   	fprintf(renamelog, "%s\n", mname);
++ 				fflush(renamelog);
++ 			      }
++ 			   }
++ 			   else {
++ 			   	fprintf(renamelog, "%s\n", mname);
++ 				fflush(renamelog);
++ 			   }
++ 			   retried = 1;
++ 			   goto retry;
++ 			}
++ 		      }
++ 		}
+  		notify ("SUP: Can't create %s from temp file: %s\n",
+  			to,errmsg (-1));
+  		(void) unlink (tname);
+***************
+*** 1399,1405 ****
+  FILE **finishfile;
+  {
+  	if ((thisC->Cflags&CFDELETE) == 0 || (t->Tflags&FUPDATE))
+! 		fprintf (*finishfile,"%s\n",t->Tname);
+  	return (SCMOK);
+  }
+  
+--- 1492,1501 ----
+  FILE **finishfile;
+  {
+  	if ((thisC->Cflags&CFDELETE) == 0 || (t->Tflags&FUPDATE))
+! 		if(t->Tflags&FRENAME)
+! 			fprintf(*finishfile,"%s %s\n",t->Tname,t->Tnewname);
+! 		else
+! 			fprintf (*finishfile,"%s\n",t->Tname);
+  	return (SCMOK);
+  }
+  
+diff -c /var/tmp/sup/supcparse.c sup/supcparse.c
+*** supcparse.c	Thu Aug 11 06:24:46 1994
+--- sup/supcparse.c	Tue Apr 11 15:18:57 1995
+***************
+*** 82,92 ****
+  extern char _argbreak;			/* break character from nxtarg */
+  #endif
+  
+  typedef enum {				/* supfile options */
+  	OHOST, OBASE, OHOSTBASE, OPREFIX, ORELEASE,
+! 	ONOTIFY, OLOGIN, OPASSWORD, OCRYPT,
+  	OBACKUP, ODELETE, OEXECUTE, OOLD, OTIMEOUT, OKEEP, OURELSUF,
+! 	OCOMPRESS, ONOUPDATE
+  } OPTION;
+  
+  struct option {
+--- 82,94 ----
+  extern char _argbreak;			/* break character from nxtarg */
+  #endif
+  
++ char default_renamelog[] = RENAMELOG;
++ 
+  typedef enum {				/* supfile options */
+  	OHOST, OBASE, OHOSTBASE, OPREFIX, ORELEASE,
+! 	ONOTIFY, OLOGIN, OPASSWORD, OCRYPT, ORENAMELOG,
+  	OBACKUP, ODELETE, OEXECUTE, OOLD, OTIMEOUT, OKEEP, OURELSUF,
+! 	OCOMPRESS, ONOUPDATE, OUNLINKBUSY
+  } OPTION;
+  
+  struct option {
+***************
+*** 102,107 ****
+--- 104,110 ----
+  	"login",	OLOGIN,
+  	"password",	OPASSWORD,
+  	"crypt",	OCRYPT,
++ 	"renamelog",	ORENAMELOG,
+  	"backup",	OBACKUP,
+  	"delete",	ODELETE,
+  	"execute",	OEXECUTE,
+***************
+*** 110,116 ****
+  	"keep",		OKEEP,
+  	"use-rel-suffix", OURELSUF,
+   	"compress", 	OCOMPRESS,
+! 	"noupdate",	ONOUPDATE
+  };
+  
+  passdelim (ptr,delim)		/* skip over delimiter */
+--- 113,120 ----
+  	"keep",		OKEEP,
+  	"use-rel-suffix", OURELSUF,
+   	"compress", 	OCOMPRESS,
+! 	"noupdate",	ONOUPDATE,
+! 	"unlinkbusy",	OUNLINKBUSY,
+  };
+  
+  passdelim (ptr,delim)		/* skip over delimiter */
+***************
+*** 143,148 ****
+--- 147,153 ----
+  	c->Clogin = NULL;
+  	c->Cpswd = NULL;
+  	c->Ccrypt = NULL;
++ 	c->Crenamelog = default_renamelog;
+  	c->Ctimeout = 3*60*60;	/* default to 3 hours instead of no timeout */
+  	c->Cflags = 0;
+  	c->Cnogood = FALSE;
+***************
+*** 209,214 ****
+--- 214,224 ----
+  			arg = nxtarg (&args," \t");
+  			c->Ccrypt = salloc (arg);
+  			break;
++ 		case ORENAMELOG:
++ 			passdelim (&args,'=');
++ 			arg = nxtarg (&args," \t");
++ 			c->Crenamelog= salloc (arg);
++ 			break;
+  		case OBACKUP:
+  			c->Cflags |= CFBACKUP;
+  			break;
+***************
+*** 232,237 ****
+--- 242,250 ----
+  			break;
+  		case ONOUPDATE:
+  			c->Cflags |= CFNOUPDATE;
++ 			break;
++ 		case OUNLINKBUSY:
++ 			c->Cflags |= CFUNLINKBUSY;
+  			break;
+  		case OTIMEOUT:
+  			passdelim (&args,'=');
+diff -c /var/tmp/sup/supfilesrv.c sup/supfilesrv.c
+*** supfilesrv.c	Thu Aug 11 06:24:46 1994
+--- sup/supfilesrv.c	Sun Aug 13 18:44:09 1995
+***************
+*** 25,34 ****
+  /*
+   * supfilesrv -- SUP File Server
+   *
+!  * Usage:  supfilesrv [-l] [-P] [-N]
+   *	-l	"live" -- don't fork daemon
+   *	-P	"debug ports" -- use debugging network ports
+   *	-N	"debug network" -- print debugging messages for network i/o
+   *
+   **********************************************************************
+   * HISTORY
+--- 25,35 ----
+  /*
+   * supfilesrv -- SUP File Server
+   *
+!  * Usage:  supfilesrv [-l] [-P] [-N] [-R]
+   *	-l	"live" -- don't fork daemon
+   *	-P	"debug ports" -- use debugging network ports
+   *	-N	"debug network" -- print debugging messages for network i/o
++  *	-R	"RCS mode" -- if file is an rcs file, use co to get contents
+   *
+   **********************************************************************
+   * HISTORY
+***************
+*** 280,285 ****
+--- 281,287 ----
+  uid_t getuid ();
+  
+  int maxchildren;
++ int maxfriends = -1;
+  
+  /*
+   * These are used to save the stat information from the crosspatch crypt
+***************
+*** 327,344 ****
+  int dbgportsq;				/* -P flag */
+  extern int scmdebug;			/* -N flag */
+  extern int netfile;
+  
+  char *clienthost;			/* host name of client */
+  int nchildren;				/* number of children that exist */
+  char *prefix;				/* collection pathname prefix */
+  char *release;				/* collection release name */
+  char *cryptkey;				/* encryption key if non-null */
+  int lockfd;				/* descriptor of lock file */
+  
+  /* global variables for scan functions */
+  int trace = FALSE;			/* directory scan trace */
+! int cancompress=FALSE;			/* Can we compress files */
+! int docompress=FALSE;			/* Do we compress files */
+  
+  HASH *uidH[HASHSIZE];			/* for uid and gid lookup */
+  HASH *gidH[HASHSIZE];
+--- 329,355 ----
+  int dbgportsq;				/* -P flag */
+  extern int scmdebug;			/* -N flag */
+  extern int netfile;
++ #ifdef RCS
++ int candorcs;				/* -R flag */
++ int dorcs = FALSE;
++ #endif
+  
+  char *clienthost;			/* host name of client */
++ int friend;				/* The client is a friend of us */
+  int nchildren;				/* number of children that exist */
+  char *prefix;				/* collection pathname prefix */
+  char *release;				/* collection release name */
+  char *cryptkey;				/* encryption key if non-null */
++ #ifdef CVS
++ char *cvs_root;				/* RCS root */
++ #endif
++ char *rcs_branch;			/* RCS branch name */
+  int lockfd;				/* descriptor of lock file */
+  
+  /* global variables for scan functions */
+  int trace = FALSE;			/* directory scan trace */
+! int cancompress = FALSE;		/* Can we compress files */
+! int docompress = FALSE;			/* Do we compress files */
+  
+  HASH *uidH[HASHSIZE];			/* for uid and gid lookup */
+  HASH *gidH[HASHSIZE];
+***************
+*** 350,356 ****
+   * PROTOTYPES
+   */
+  #if __STDC__
+! void	goaway	__P((char *,...));
+  #endif
+  
+  #ifdef LOG_PID_PATHNAME
+--- 361,367 ----
+   * PROTOTYPES
+   */
+  #if __STDC__
+! void  goaway  __P((char *,...));
+  #endif
+  
+  #ifdef LOG_PID_PATHNAME
+***************
+*** 442,454 ****
+  /*
+   * Child status signal handler
+   */
+- 
+  void
+  chldsig()
+  {
+  	int w;
+  
+  	while (wait3(&w, WNOHANG, (struct rusage *)0) > 0) {
+  		if (nchildren) nchildren--;
+  	}
+  }
+--- 453,472 ----
+  /*
+   * Child status signal handler
+   */
+  void
+  chldsig()
+  {
++ #if defined(__hpux) || defined(__FreeBSD__)
+  	int w;
++ #else
++ 	union wait w;
++ #endif
+  
++ #ifdef __hpux
++ 	while (wait3(&w, WNOHANG, (int *)0) > 0) {
++ #else
+  	while (wait3(&w, WNOHANG, (struct rusage *)0) > 0) {
++ #endif
+  		if (nchildren) nchildren--;
+  	}
+  }
+***************
+*** 474,479 ****
+--- 492,500 ----
+  	int maxsleep;
+  	register FILE *f;
+  
++ #ifdef RCS
++         candorcs = FALSE;
++ #endif
+  	live = FALSE;
+  	dbgportsq = FALSE;
+  	scmdebug = 0;
+***************
+*** 500,505 ****
+--- 521,532 ----
+  			argv++;
+  			maxchildren = atoi(argv[0]);
+  			break;
++ 		case 'F':
++ 			if (--argc < 1)
++ 				quit (1,"Missing arg to -F\n");
++ 			argv++;
++ 			maxfriends = atoi(argv[0]);
++ 			break;
+  		case 'H':
+  			if (--argc < 3)
+  				quit (1,"Missing args to -H\n");
+***************
+*** 510,515 ****
+--- 537,547 ----
+  			argc -= 2;
+  			argv += 2;
+  			break;
++ #ifdef RCS
++                 case 'R':
++                         candorcs = TRUE;
++                         break;
++ #endif
+  		default:
+  			fprintf (stderr,"Unknown flag %s ignored\n",argv[0]);
+  			break;
+***************
+*** 517,522 ****
+--- 549,559 ----
+  		--argc;
+  		argv++;
+  	}
++ 	if (maxfriends == -1)
++ 		maxfriends = 2*maxchildren;
++ 	else
++ 		maxfriends += maxchildren; /* due to the way we check */
++ 
+  	if (clienthost == NULL) {
+  		if (argc != 0)
+  			usage ();
+***************
+*** 621,626 ****
+--- 658,667 ----
+  	basedir = NULL;
+  	prefix = NULL;
+  	release = NULL;
++         rcs_branch = NULL;
++ #ifdef CVS
++         cvs_root = NULL;
++ #endif
+  	goawayreason = NULL;
+  	donereason = NULL;
+  	lockfd = -1;
+***************
+*** 642,648 ****
+--- 683,693 ----
+  			(void) dup2 (netfile,0);
+  			(void) dup2 (netfile,1);
+  			(void) dup2 (netfile,2);
++ #ifdef __hpux
++ 			fd = 256;
++ #else
+  			fd = getdtablesize ();
++ #endif
+  			while (--fd > 2)
+  				(void) close (fd);
+  			execv (xargv[0],xargv);
+***************
+*** 656,661 ****
+--- 701,710 ----
+  	if (basedir)  free (basedir);
+  	if (prefix)  free (prefix);
+  	if (release)  free (release);
++ 	if (rcs_branch)  free (rcs_branch);
++ #ifdef CVS
++ 	if (cvs_root)  free (cvs_root);
++ #endif
+  	if (goawayreason) {
+  		if (donereason == goawayreason)
+  			donereason = NULL;
+***************
+*** 778,783 ****
+--- 827,841 ----
+  			goaway ("Error sending setup reply to client");
+  		return;
+  	}
++ #ifdef RCS
++         if (candorcs && release != NULL &&
++             (strncmp(release, "RCS.", 4) == 0)) {
++                 rcs_branch = salloc(&release[4]);
++                 free(release);
++                 release = salloc("RCS");
++                 dorcs = TRUE;
++         }
++ #endif
+  	if (release == NULL)
+  		release = salloc (DEFRELEASE);
+  	if (basedir == NULL || *basedir == '\0') {
+***************
+*** 824,830 ****
+  	if (prefix)  (void) chdir (basedir);
+  	if (x < 0)
+  		goaway ("Can't stat base/prefix directory");
+! 	if (nchildren >= maxchildren) {
+  		setupack = FSETUPBUSY;
+  		(void) msgsetupack ();
+  		if (protver >= 6)  longjmp (sjbuf,TRUE);
+--- 882,888 ----
+  	if (prefix)  (void) chdir (basedir);
+  	if (x < 0)
+  		goaway ("Can't stat base/prefix directory");
+! 	if (nchildren >=  maxfriends) {
+  		setupack = FSETUPBUSY;
+  		(void) msgsetupack ();
+  		if (protver >= 6)  longjmp (sjbuf,TRUE);
+***************
+*** 861,867 ****
+  				q = nxtarg (&p," \t");
+  				if ((not = (*q == '!')) && *++q == '\0')
+  					q = nxtarg (&p," \t");
+! 				hostok = (not == (matchhost(q) == 0));
+  				if (hostok) {
+  					while ((*p == ' ') || (*p == '\t')) p++;
+  					if (*p)  cryptkey = salloc (p);
+--- 919,934 ----
+  				q = nxtarg (&p," \t");
+  				if ((not = (*q == '!')) && *++q == '\0')
+  					q = nxtarg (&p," \t");
+! 				if ((friend = (*q == '+')) && *++q == '\0')
+! 					q = nxtarg (&p," \t");
+! 				hostok = matchhost(q);
+! 				if (hostok && not) {
+! 					setupack = FSETUPHOST;
+! 					(void) msgsetupack ();
+! 					if (protver >= 6)  longjmp (sjbuf,TRUE);
+! 					goaway ("Host blacklisted for %s",
+! 						collname);
+! 				}
+  				if (hostok) {
+  					while ((*p == ' ') || (*p == '\t')) p++;
+  					if (*p)  cryptkey = salloc (p);
+***************
+*** 878,883 ****
+--- 945,956 ----
+  			}
+  		}
+  	}
++ 	if (!friend && nchildren >= maxchildren) {
++ 		setupack = FSETUPBUSY;
++ 		(void) msgsetupack ();
++ 		if (protver >= 6)  longjmp (sjbuf,TRUE);
++ 		goaway ("Sup client told to try again later");
++ 	}
+  	/* try to lock collection */
+  	(void) sprintf (buf,FILELOCK,collname);
+  	x = open (buf,O_RDONLY,0);
+***************
+*** 1111,1116 ****
+--- 1184,1200 ----
+  	/* send all files */
+  	for (tl = listTL; tl != NULL; tl = tl->TLnext) {
+  		cdprefix (tl->TLprefix);
++ #ifdef CVS
++                 if (candorcs) {
++                         cvs_root = getcwd(NULL, 256);
++                         if (access("CVSROOT", F_OK) < 0)
++                                 dorcs = FALSE;
++                         else {
++                                 loginfo("is a CVSROOT \"%s\"\n", cvs_root);
++                                 dorcs = TRUE;
++                         }
++                 }
++ #endif
+  		(void) Tprocess (tl->TLtree,sendone);
+  	}
+  	/* send directories in reverse order */
+***************
+*** 1132,1138 ****
+  {
+  	register int x,fd;
+  	register int fdtmp;
+! 	char sys_com[STRINGLENGTH], temp_file[STRINGLENGTH];
+  	char *uconvert(),*gconvert();
+  	int sendfile ();
+  
+--- 1216,1223 ----
+  {
+  	register int x,fd;
+  	register int fdtmp;
+! 	char sys_com[STRINGLENGTH], temp_file[STRINGLENGTH], rcs_file[STRINGLENGTH];
+!         union wait status;
+  	char *uconvert(),*gconvert();
+  	int sendfile ();
+  
+***************
+*** 1146,1165 ****
+  	fd = -1;			/* no open file */
+  	if ((t->Tmode&S_IFMT) == S_IFREG) {
+  		if (!listonly && (t->Tflags&FUPDATE) == 0) {
+! 			if (docompress) {
+! 				tmpnam(temp_file);
+! 				sprintf(sys_com, "gzip -c < %s > %s\n", t->Tname, temp_file);
+! 				if (system(sys_com) < 0) {
+! 					/* Just in case */
+! 					unlink(temp_file);
+! 					goaway ("We died trying to compress");
+! 					t->Tmode = 0;
+! 				}
+! 				fd = open (temp_file,O_RDONLY,0);
+! 			}
+! 			else
+! 				fd = open (t->Tname,O_RDONLY,0);
+! 			if (fd < 0)  t->Tmode = 0;
+  		}
+  		if (t->Tmode) {
+  			t->Tuser = salloc (uconvert (t->Tuid));
+--- 1231,1304 ----
+  	fd = -1;			/* no open file */
+  	if ((t->Tmode&S_IFMT) == S_IFREG) {
+  		if (!listonly && (t->Tflags&FUPDATE) == 0) {
+! #ifdef RCS
+!                         if (dorcs) {
+!                                 char rcs_release[STRINGLENGTH];
+! 
+! 				tmpnam(rcs_file);
+!                                 if (strcmp(&t->Tname[strlen(t->Tname)-2], ",v") == 0) {
+!                                         t->Tname[strlen(t->Tname)-2] = '\0';
+!                                         if (rcs_branch != NULL)
+! #ifdef CVS
+!                                                 sprintf(rcs_release, "-r %s", rcs_branch);
+! #else
+!                                                 sprintf(rcs_release, "-r%s", rcs_branch);
+! #endif
+!                                         else
+!                                                 rcs_release[0] = '\0';
+! #ifdef CVS
+!                                         sprintf(sys_com, "cvs -d %s -r -l -Q co -p %s %s > %s\n", cvs_root, rcs_release, t->Tname, rcs_file);
+! #else
+!                                         sprintf(sys_com, "co -q -p %s %s > %s 2> /dev/null\n", rcs_release, t->Tname, rcs_file);
+! #endif
+!                                         /*loginfo("using rcs mode \"%s\"\n", sys_com);*/
+!                                         status.w_status = system(sys_com);
+!                                         if (status.w_status < 0 || status.w_retcode) {
+!                                                 /* Just in case */
+!                                                 unlink(rcs_file);
+!                                                 if (status.w_status < 0) {
+!                                                         goaway ("We died trying to \"%s\"", sys_com);
+!                                                         t->Tmode = 0;
+!                                                 }
+!                                                 else {
+!                                                         /*logerr("rcs command failed \"%s\" = %d\n",
+!                                                                sys_com, status.w_retcode);*/
+!                                                         t->Tflags |= FUPDATE;
+!                                                 }
+!                                         }
+!                                         else if (docompress) {
+!                                                 tmpnam(temp_file);
+!                                                 sprintf(sys_com, "/usr/local/bin/gzip -c < %s > %s\n", rcs_file, temp_file);
+!                                                 if (system(sys_com) < 0) {
+!                                                         /* Just in case */
+!                                                         unlink(temp_file);
+!                                                         unlink(rcs_file);
+!                                                         goaway ("We died trying to \"%s\"", sys_com);
+!                                                         t->Tmode = 0;
+!                                                 }
+!                                                 fd = open (temp_file,O_RDONLY,0);
+!                                         }
+!                                         else
+!                                                 fd = open (rcs_file,O_RDONLY,0);
+!                                 }
+!                         }
+! #endif
+!                         if (fd == -1) {
+!                                 if (docompress) {
+!                                         tmpnam(temp_file);
+!                                         sprintf(sys_com, "gzip -c < %s > %s\n", t->Tname, temp_file);
+!                                         if (system(sys_com) != 0) {
+!                                                 /* Just in case */
+!                                                 unlink(temp_file);
+!                                                 goaway ("We died trying to \"%s\"", sys_com);
+!                                                 t->Tmode = 0;
+!                                         }
+!                                         fd = open (temp_file,O_RDONLY,0);
+!                                 }
+!                                 else
+!                                         fd = open (t->Tname,O_RDONLY,0);
+!                         }
+! 			if (fd < 0 && (t->Tflags&FUPDATE) == 0)  t->Tmode = 0;
+  		}
+  		if (t->Tmode) {
+  			t->Tuser = salloc (uconvert (t->Tuid));
+***************
+*** 1169,1174 ****
+--- 1308,1317 ----
+  	x = msgrecv (sendfile,fd);
+  	if (docompress)
+  		unlink(temp_file);
++ #ifdef RCS
++ 	if (dorcs)
++ 		unlink(rcs_file);
++ #endif
+  	if (x != SCMOK)  goaway ("Error sending file to client");
+  	return (SCMOK);
+  }
+diff -c /var/tmp/sup/supmsg.c sup/supmsg.c
+*** supmsg.c	Fri Aug 20 17:46:35 1993
+--- sup/supmsg.c	Thu Apr  6 15:17:07 1995
+***************
+*** 299,304 ****
+--- 299,305 ----
+   * list files message
+   */
+  extern TREE	*listT;			/* tree of files to list */
++ extern TREE     *renameT;               /* tree of rename target files */
+  extern long	scantime;		/* time that collection was scanned */
+  
+  static int listone (t)
+***************
+*** 307,312 ****
+--- 308,315 ----
+  	register int x;
+  
+  	x = writestring (t->Tname);
++ 	if ( protver > 8 )
++ 		if (x == SCMOK)  x = writestring (t->Tnewname);
+  	if (x == SCMOK)  x = writeint ((int)t->Tmode);
+  	if (x == SCMOK)  x = writeint ((int)t->Tflags);
+  	if (x == SCMOK)  x = writeint (t->Tmtime);
+***************
+*** 323,341 ****
+  		if (x == SCMOK)  x = writeint ((int)scantime);
+  		if (x == SCMOK)  x = writemend ();
+  	} else {
+! 		char *name;
+  		int mode,flags,mtime;
+  		register TREE *t;
+  		x = readmsg (MSGLIST);
+  		if (x == SCMOK)  x = readstring (&name);
+  		while (x == SCMOK) {
+  			if (name == NULL)  break;
+! 			x = readint (&mode);
+  			if (x == SCMOK)  x = readint (&flags);
+  			if (x == SCMOK)  x = readint (&mtime);
+  			if (x != SCMOK)  break;
+  			t = Tinsert (&listT,name,TRUE);
+  			free (name);
+  			t->Tmode = mode;
+  			t->Tflags = flags;
+  			t->Tmtime = mtime;
+--- 326,350 ----
+  		if (x == SCMOK)  x = writeint ((int)scantime);
+  		if (x == SCMOK)  x = writemend ();
+  	} else {
+! 		char *name, *newname = NULL;
+  		int mode,flags,mtime;
+  		register TREE *t;
+  		x = readmsg (MSGLIST);
+  		if (x == SCMOK)  x = readstring (&name);
+  		while (x == SCMOK) {
+  			if (name == NULL)  break;
+! 			if (protver > 8){
+! 				x = readstring (&newname);
+! 				if (x == SCMOK)  x = readint (&mode);
+! 			}
+! 			else
+! 				x = readint (&mode);
+  			if (x == SCMOK)  x = readint (&flags);
+  			if (x == SCMOK)  x = readint (&mtime);
+  			if (x != SCMOK)  break;
+  			t = Tinsert (&listT,name,TRUE);
+  			free (name);
++ 			t->Tnewname = newname;
+  			t->Tmode = mode;
+  			t->Tflags = flags;
+  			t->Tmtime = mtime;
+***************
+*** 474,479 ****
+--- 483,490 ----
+  			return (x);
+  		}
+  		if (x == SCMOK)  x = writestring (t->Tname);
++ 		if (protver > 8)
++ 			if (x == SCMOK)  x = writestring (t->Tnewname);
+  		if (x == SCMOK)  x = writeint (t->Tmode);
+  		if (t->Tmode == 0) {
+  			if (x == SCMOK)  x = writemend ();
+***************
+*** 499,504 ****
+--- 510,517 ----
+  			if (x == SCMOK)  x = (*xferfile) (NULL,args);
+  			return (x);
+  		}
++ 		if (protver > 8)
++ 			if (x == SCMOK)  x = readstring (&t->Tnewname);
+  		if (x == SCMOK)  x = readint (&t->Tmode);
+  		if (t->Tmode == 0) {
+  			x = readmend ();
+diff -c /var/tmp/sup/supmsg.h sup/supmsg.h
+*** supmsg.h	Fri Aug 20 17:46:35 1993
+--- sup/supmsg.h	Thu Apr  6 15:18:04 1995
+***************
+*** 170,175 ****
+--- 170,176 ----
+  
+  /* msglist */
+  EXTERN	TREE	*listT;			/* tree of files to list */
++ EXTERN	TREE	*renameT;		/* tree of file rename targets */
+  EXTERN	long	scantime;		/* time that collection was scanned */
+  
+  /* msgneed */
+diff -c /var/tmp/sup/vprintf.c sup/vprintf.c
+*** vprintf.c	Fri Aug 20 17:46:35 1993
+--- sup/vprintf.c	Thu Apr  6 15:26:03 1995
+***************
+*** 118,126 ****
+--- 118,133 ----
+  {
+  	FILE fakebuf;
+  
++ #ifdef __hpux
++ 	fakebuf._flag = _IODUMMY+_IOWRT;/* no _IOWRT: avoid stdio bug */
++ 	fakebuf._base = fakebuf._ptr = s;
++ 	fakebuf._cnt = n-1;
++ 	fakebuf.__fileL = fakebuf.__fileH = 0xff;
++ #else
+  	fakebuf._flag = _IOSTRG+_IOWRT;	/* no _IOWRT: avoid stdio bug */
+  	fakebuf._ptr = s;
+  	fakebuf._cnt = n-1;
++ #endif
+  	_doprnt(fmt, args, &fakebuf);
+  	fakebuf._cnt++;
+  	putc('\0', &fakebuf);
+*** /dev/null	Sun Aug 13 11:14:38 1995
+--- daemon.c	Sun Aug 13 19:59:10 1995
+***************
+*** 0 ****
+--- 1,68 ----
++ /*-
++  * Copyright (c) 1990 The Regents of the University of California.
++  * All rights reserved.
++  *
++  * Redistribution and use in source and binary forms, with or without
++  * modification, are permitted provided that the following conditions
++  * are met:
++  * 1. Redistributions of source code must retain the above copyright
++  *    notice, this list of conditions and the following disclaimer.
++  * 2. Redistributions in binary form must reproduce the above copyright
++  *    notice, this list of conditions and the following disclaimer in the
++  *    documentation and/or other materials provided with the distribution.
++  * 3. All advertising materials mentioning features or use of this software
++  *    must display the following acknowledgement:
++  *	This product includes software developed by the University of
++  *	California, Berkeley and its contributors.
++  * 4. Neither the name of the University nor the names of its contributors
++  *    may be used to endorse or promote products derived from this software
++  *    without specific prior written permission.
++  *
++  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
++  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++  * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
++  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
++  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
++  * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++  * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
++  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++  * SUCH DAMAGE.
++  *
++  *	from: "@(#)daemon.c	5.3 (Berkeley) 12/28/90
++  *	$Id: daemon.c,v 1.3 1994/02/23 09:56:41 rgrimes Exp $
++  */
++ 
++ #if defined(LIBC_SCCS) && !defined(lint)
++ static char sccsid[] = "@(#)daemon.c	5.3 (Berkeley) 12/28/90";
++ #endif /* LIBC_SCCS and not lint */
++ 
++ #include <sys/fcntl.h>
++ #include <unistd.h>
++ 
++ daemon(nochdir, noclose)
++ 	int nochdir, noclose;
++ {
++ 	int cpid;
++ 
++ 	if ((cpid = fork()) == -1)
++ 		return (-1);
++ 	if (cpid)
++ 		exit(0);
++ 	(void) setsid();
++ 	if (!nochdir)
++ 		(void) chdir("/");
++ 	if (!noclose) {
++ 		int devnull = open("/dev/null", O_RDWR, 0);
++ 
++ 		if (devnull != -1) {
++ 			(void) dup2(devnull, STDIN_FILENO);
++ 			(void) dup2(devnull, STDOUT_FILENO);
++ 			(void) dup2(devnull, STDERR_FILENO);
++ 			if (devnull > 2)
++ 				(void) close(devnull);
++ 		}
++ 	}
++ 	return 0;
++ }
+*** /dev/null	Sun Aug 13 11:14:38 1995
+--- flock.c	Sun Aug 13 19:58:50 1995
+***************
+*** 0 ****
+--- 1,112 ----
++ /*
++  * Copyright (c) 1991 Carnegie Mellon University
++  * All Rights Reserved.
++  * 
++  * Permission to use, copy, modify and distribute this software and its
++  * documentation is hereby granted, provided that both the copyright
++  * notice and this permission notice appear in all copies of the
++  * software, derivative works or modified versions, and any portions
++  * thereof, and that both notices appear in supporting documentation.
++  *
++  * CARNEGIE MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS"
++  * CONDITION.  CARNEGIE MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR
++  * ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
++  *
++  * Carnegie Mellon requests users of this software to return to
++  *
++  *  Software Distribution Coordinator   or   Software.Distribution@CS.CMU.EDU
++  *  School of Computer Science
++  *  Carnegie Mellon University
++  *  Pittsburgh PA 15213-3890
++  *
++  * any improvements or extensions that they make and grant Carnegie the rights
++  * to redistribute these changes.
++  */
++ /*
++  * flock (fd, operation)
++  *
++  * This routine performs some file locking like the BSD 'flock'
++  * on the object described by the int file descriptor 'fd',
++  * which must already be open.
++  *
++  * The operations that are available are:
++  *
++  * LOCK_SH  -  get a shared lock.
++  * LOCK_EX  -  get an exclusive lock.
++  * LOCK_NB  -  don't block (must be ORed with LOCK_SH or LOCK_EX).
++  * LOCK_UN  -  release a lock.
++  *
++  * Return value: 0 if lock successful, -1 if failed.
++  *
++  * Note that whether the locks are enforced or advisory is
++  * controlled by the presence or absence of the SETGID bit on
++  * the executable.
++  *
++  * Note that there is no difference between shared and exclusive
++  * locks, since the 'lockf' system call in SYSV doesn't make any
++  * distinction.
++  *
++  * The file "<sys/file.h>" should be modified to contain the definitions
++  * of the available operations, which must be added manually (see below
++  * for the values).
++  */
++ 
++ #include <unistd.h>
++ #include <sys/file.h>
++ #include <errno.h>
++ 
++ #ifndef LOCK_SH
++ #define LOCK_SH 1
++ #endif
++ #ifndef LOCK_EX
++ #define LOCK_EX 2
++ #endif
++ #ifndef LOCK_NB
++ #define LOCK_NB 4
++ #endif
++ #ifndef LOCK_UN
++ #define LOCK_UN 8
++ #endif
++ 
++ /*extern int errno;*/
++ 
++ int
++ flock (fd, operation)
++      int fd, operation;
++ {
++ 	int i;
++ 
++ 	switch (operation) {
++ 
++ 	/* LOCK_SH - get a shared lock */
++ 	case LOCK_SH:
++ 	/* LOCK_EX - get an exclusive lock */
++ 	case LOCK_EX:
++ 		i = lockf (fd, F_LOCK, 0);
++ 		break;
++ 
++ 	/* LOCK_SH|LOCK_NB - get a non-blocking shared lock */
++ 	case LOCK_SH|LOCK_NB:
++ 	/* LOCK_EX|LOCK_NB - get a non-blocking exclusive lock */
++ 	case LOCK_EX|LOCK_NB:
++ 		i = lockf (fd, F_TLOCK, 0);
++ 		if (i == -1)
++ 			if ((errno == EAGAIN) || (errno == EACCES))
++ 				errno = EWOULDBLOCK;
++ 		break;
++ 
++ 	/* LOCK_UN - unlock */
++ 	case LOCK_UN:
++ 		i = lockf (fd, F_ULOCK, 0);
++ 		break;
++ 
++ 	/* Default - can't decipher operation */
++ 	default:
++ 		i = -1;
++ 		errno = EINVAL;
++ 		break;
++ 	}
++ 
++ 	return (i);
++ }
++ 
+*** /dev/null	Sun Aug 13 11:14:38 1995
+--- utimes.c	Sun Aug 13 19:58:43 1995
+***************
+*** 0 ****
+--- 1,43 ----
++ /*
++  * Copyright (c) 1991 Carnegie Mellon University
++  * All Rights Reserved.
++  * 
++  * Permission to use, copy, modify and distribute this software and its
++  * documentation is hereby granted, provided that both the copyright
++  * notice and this permission notice appear in all copies of the
++  * software, derivative works or modified versions, and any portions
++  * thereof, and that both notices appear in supporting documentation.
++  *
++  * CARNEGIE MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS"
++  * CONDITION.  CARNEGIE MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR
++  * ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
++  *
++  * Carnegie Mellon requests users of this software to return to
++  *
++  *  Software Distribution Coordinator   or   Software.Distribution@CS.CMU.EDU
++  *  School of Computer Science
++  *  Carnegie Mellon University
++  *  Pittsburgh PA 15213-3890
++  *
++  * any improvements or extensions that they make and grant Carnegie the rights
++  * to redistribute these changes.
++  */
++ #include <sys/types.h>
++ #include <sys/time.h>
++ #include <utime.h>
++ 
++ int utimes(file,tvp) char *file; struct timeval *tvp;
++ {
++         struct utimbuf ut;
++         time_t now;
++ 
++         now = time((time_t *)NULL);
++         if (tvp == (struct timeval *)NULL) {
++                 ut.actime = now;
++                 ut.modtime = now;
++         } else {
++                 ut.actime = tvp++->tv_sec;
++                 ut.modtime = tvp->tv_sec;
++         }
++         return(utime(file,&ut));
++ }
+*** /dev/null	Sun Aug 13 11:14:38 1995
+--- Makefile.HP	Sun Aug 13 19:59:02 1995
+***************
+*** 0 ****
+--- 1,127 ----
++ # Copyright (c) 1992,1991 Carnegie Mellon University
++ # All Rights Reserved.
++ # 
++ # Permission to use, copy, modify and distribute this software and its
++ # documentation is hereby granted, provided that both the copyright
++ # notice and this permission notice appear in all copies of the
++ # software, derivative works or modified versions, and any portions
++ # thereof, and that both notices appear in supporting documentation.
++ #
++ # CARNEGIE MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS"
++ # CONDITION.  CARNEGIE MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR
++ # ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
++ #
++ # Carnegie Mellon requests users of this software to return to
++ #
++ #  Software Distribution Coordinator   or   Software.Distribution@CS.CMU.EDU
++ #  School of Computer Science
++ #  Carnegie Mellon University
++ #  Pittsburgh PA 15213-3890
++ #
++ # any improvements or extensions that they make and grant Carnegie the rights
++ # to redistribute these changes.
++ ######################################################################
++ # Makefile to build sup (the client side), supfilesrv (the repository
++ # side, and supscan (used by the repository. If you only want to sup
++ # files from CMU, just build sup.
++ # The header files: c.h, libc.h and sysent.h are only
++ # necessary if you are compiling on a non-Mach system. Likewise the
++ # files in libextra.a are normally found in libcs.a on a Mach system.
++ # DOPRINT_VA is used by vprintf.c and should be defined if your version
++ # of libc/doprnt.c defines the routine _doprnt_va. If it defines _doprnt
++ # instead, leave DORPINT_VA undefined.
++ ######################################################################
++ #
++ # If you need to build a sup for export outside of North America use
++ # 	"make EXPORTABLE_SYSTEM=true"
++ # this will remove (not use) any vestiges of crypt code that is present
++ # on the system.
++ #
++ # If you have crypt/crypt.c and /usr/lib/libcrypt.a, you will be building
++ # a system that uses the SUP crypt mechanism by default.
++ #
++ SITE			= NETBSD
++ #SITE			= CMUCS
++ RENAMELOG		= \"/usr/local/etc/sup.moved\"
++ NETBSD_DEFINES		= -UMACH -DHAS_DAEMON -DNEED_VSNPRINTF
++ AFS_DEFINES		= -DAFS -I/usr/afsws/include
++ OSF_DEFINES		= -UMACH -DOSF -D_BSD -noshrlib -g -DNEED_VSNPRINTF -DVAR_TMP
++ CMUCS_DEFINES		= -DMACH -DDOPRINT_VA -DNEED_VPRINTF
++ NON_MACH_DEFINES	= -UMACH
++ #DEFS			= -UCMUCS -UCMU  ${${SITE}_DEFINES}
++ DEFS			= -UCMUCS -UCMU  ${NETBSD_DEFINES} -DRENAMELOG=${RENAMELOG} -D_BSD
++ 
++ #INSTALLATION PARAMETERS
++ NETBSD_BINDIR		= /usr/local/etc
++ NETBSD_MAN1		= /usr/local/man/man1
++ NETBSD_MAN8		= /usr/local/man/man8
++ EXPORTABLE_SYSTEM	= true
++ CC			= gcc
++ CFLAGS			= ${DEFS} -I. 
++ 
++ SUPCL			= supcmain.o supcvers.o supcparse.o supcname.o \
++ 			  supcmisc.o supcmeat.o
++ SUPS			= scm.o scmio.o stree.o log.o supmsg.o netcrypt.o
++ EXTRA			= atoo.o errmsg.o expand.o ffilecopy.o filecopy.o \
++ 			  nxtarg.o path.o quit.o run.o salloc.o skipto.o  \
++ 			  vprintf.o flock.o utimes.o
++ 
++ PROGRAMS		= sup supscan supfilesrv
++ MAN1			= sup.1
++ MAN8			= supservers.8
++ 
++ AFS_LIBPATH		= /usr/afs/lib
++ AFS_LIBS		= -L${AFS_LIBPATH}/afs -lkauth -lprot -L${AFS_LIBPATH} -lubik -lauth -lrxkad -lsys -ldes -lrx -llwp -lcmd -lcom_err -lc ${AFS_LIBPATH}/afs/util.a
++ 
++ USE_CRYPT		= no
++ 
++ LIBS			= libextra.a
++ sup_OFILES		= ${SUPCL} ${SUPS}
++ supfilesrv_OFILES	= supfilesrv.o scan.o daemon.o ${SUPS}
++ supfilesrv_LIBS		= libextra.a 
++ supscan_OFILES		= supscan.o stree.o scan.o
++ 
++ 
++ all: ${PROGRAMS}
++ 
++ sup: ${sup_OFILES} ${LIBS}
++ 	${CC} ${CFLAGS} -o sup ${sup_OFILES} ${LIBS} ${NETBSD_LIBS} -lBSD
++ 
++ supfilesrv: ${supfilesrv_OFILES} ${supfilesrv_LIBS}
++ 	${CC} ${CFLAGS} -o supfilesrv ${supfilesrv_OFILES} ${supfilesrv_LIBS} ${NETBSD_LIBS} -lBSD
++ 
++ supscan:  ${supscan_OFILES} ${LIBS}
++ 	${CC} ${CFLAGS} -o supscan ${supscan_OFILES} ${LIBS} ${NETBSD_LIBS} -lBSD
++ 
++ libextra.a: ${EXTRA}
++ 	ar r libextra.a $?
++ 	ranlib libextra.a
++ 
++ clean cleandir:
++ 	rm -f ${PROGRAMS} libextra.a netcrypt.c *.o core a.out
++ 
++ install: ${PROGRAMS}
++ 	install -m 500 -u bin -g bin -f ${NETBSD_BINDIR} supscan 
++ 	install -m 500 -u bin -g bin -f ${NETBSD_BINDIR} sup 
++ 	install -m 500 -u bin -g bin -f ${NETBSD_BINDIR} supfilesrv
++ 	install -m 444 -u bin -g bin -f ${NETBSD_MAN1} ${MAN1} 
++ 	install -m 444 -u bin -g bin -f ${NETBSD_MAN8} ${MAN8} 
++ 
++ #netcrypt.c: crypt.diffs
++ netcrypt.c:	netcryptvoid.c
++ 	cp netcryptvoid.c netcrypt.c
++ 
++ scan.o:	sup.h
++ scm.o:	sup.h
++ scmio.o: sup.h supmsg.h
++ stree.o: sup.h
++ supcmain.o: sup.h supmsg.h supcdefs.h
++ supcmeat.o: sup.h supmsg.h supcdefs.h
++ supcmisc.o: sup.h supmsg.h supcdefs.h
++ supcname.o: sup.h supmsg.h supcdefs.h
++ supcparse.o: sup.h supmsg.h supcdefs.h
++ supfilesrv.o: sup.h supmsg.h
++ supmsg.o: sup.h supmsg.h
++ supscan.o: sup.h
++ netcryptvoid.o: sup.h supmsg.h
++ netcrypt.o: sup.h supmsg.h
