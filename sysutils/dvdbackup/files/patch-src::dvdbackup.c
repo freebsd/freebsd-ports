@@ -1,5 +1,5 @@
 --- src/dvdbackup.c.orig	Mon Aug  5 02:08:39 2002
-+++ src/dvdbackup.c	Sat Dec 11 16:10:31 2004
++++ src/dvdbackup.c	Tue Mar  1 05:01:19 2005
 @@ -210,6 +210,7 @@
  	fprintf(stderr,"\t-v X\t\twhere X is the amount of verbosity\n");
  	fprintf(stderr,"\t-I\t\tfor information about the DVD\n");
@@ -19,6 +19,15 @@
  	fprintf(stderr,"\t-a is option to the -F switch and has no effect on other options\n");
  	fprintf(stderr,"\t-s and -e should prefereibly be used together with -t \n\n");
  	exit(1);
+@@ -782,7 +783,7 @@
+ 	 to consider the second one a feature title we are doing two checks (biggest  + biggest - second) /second == 1
+ 	 and biggest%second * 3 < biggest */
+ 
+-	if ( CheckSizeArray(size_size_array, 0, 1)  == 1 ) {
++	if ( CheckSizeArray(size_size_array, 0, 1)  == 1 && title_sets >1 ) {
+ 		/* We have a dual DVD with two feature films - now lets see if they have the same amount of chapters*/
+ 
+ 		chapters_1 = 0;
 @@ -1530,7 +1531,7 @@
  
  	/* Seek to title of first track, which is at (track_no * 32768) + 40 */
