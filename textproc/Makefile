@@ -224,6 +224,7 @@
     SUBDIR += raptor
     SUBDIR += redland
     SUBDIR += replaceit
+    SUBDIR += resume
     SUBDIR += rman
     SUBDIR += rot
     SUBDIR += rotix
