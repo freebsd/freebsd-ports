@@ -32,6 +32,47 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="273cc1a3-0d6b-11d9-8a8a-000c41e2cdad">
+    <topic>lha -- numerous vulnerabilities when extracting archives</topic>
+    <affects>
+      <package>
+	<name>lha</name>
+	<range><lt>1.14i_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Source code reviews of lha by Lukasz Wojtow, Thomas Biege,
+	  and others uncovered a number of vulnerabilities affecting
+	  lha:</p>
+	<ul>
+	  <li>Buffer overflows when handling archives and filenames.
+	    (CAN-2004-0694)</li>
+	  <li>Possible command execution via shell meta-characters when
+	    built with NOMKDIR. (CAN-2004-0745)</li>
+	  <li>Buffer overflow resulting in arbitrary code execution when
+	    handling long pathnames in LHZ archives. (CAN-2004-0769)</li>
+	  <li>Buffer overflow in the extract_one. (CAN-2004-0771)</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0694</cvename>
+      <cvename>CAN-2004-0745</cvename>
+      <cvename>CAN-2004-0769</cvename>
+      <cvename>CAN-2004-0771</cvename>
+      <mlist msgid="20040515110900.24784.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108464470103227</mlist>
+      <mlist msgid="20040606162856.29866.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108668791510153</mlist>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=51285</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16196</url>
+      <bid>10354</bid>
+    </references>
+    <dates>
+      <discovery>2004-05-17</discovery>
+      <entry>2004-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="77420ebb-0cf4-11d9-8a8a-000c41e2cdad">
     <topic>mysql -- heap buffer overflow with prepared statements</topic>
     <affects>
