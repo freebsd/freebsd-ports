@@ -7,8 +7,8 @@
 
 PORTNAME=	swig
 PORTVERSION=	${VER}p5
-PORTREVISION=	4
-CATEGORIES=	devel perl5 python tcl82
+PORTREVISION=	5
+CATEGORIES=	devel perl5 python tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/${VER}/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
@@ -18,20 +18,20 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
-		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 
 VER=		1.1
 
 USE_PERL5=	yes
-PYTHON_VERSION?=	python1.5
+PYTHON_VERSION?=	python2.0
 PYTHON_NO_DEPENDS?=	yes
 INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/SWIG${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC"
-CONFIGURE_ARGS=	--with-tclincl=${PREFIX}/include/tcl8.2/ \
-		--with-tcllib=${PREFIX}/lib/tcl8.2/
+CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.3/ \
+		--with-tcllib=${LOCALBASE}/lib/tcl8.3/
 ALL_TARGET=	all runtime
 
 MAN1=		swig.1
