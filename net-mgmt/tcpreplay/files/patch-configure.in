@@ -1,0 +1,10 @@
+--- configure.in.orig	Thu Nov  2 16:18:38 2000
++++ configure.in	Thu Nov  2 16:18:52 2000
+@@ -29,7 +29,5 @@
+ dnl Checks for library functions.
+ AC_CHECK_FUNCS(gettimeofday)
+ 
+-AC_CONFIG_SUBDIRS(Libnet-0.99 libpcap-0.4)
+-
+ AC_CONFIG_HEADER(config.h)
+ AC_OUTPUT(Makefile)

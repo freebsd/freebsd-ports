@@ -261,6 +261,7 @@
     SUBDIR += tcpflow
     SUBDIR += tcpillust
     SUBDIR += tcpmssd
+    SUBDIR += tcpreplay
     SUBDIR += tcpshow
     SUBDIR += tcptrace
     SUBDIR += tcserver
