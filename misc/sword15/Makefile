@@ -28,7 +28,7 @@ PLIST_SUB+=	INSTALLMGR=""
 CONFIGURE_ARGS+=	--disable-installmgr
 PLIST_SUB+=	INSTALLMGR="@comment "
 
-pre-everything:
+pre-everything::
 	@${ECHO_CMD} "Define WITH_INSTALLMGR to include the installmanager (curl)"
 .endif
 

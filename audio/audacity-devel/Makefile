@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--with-vorbis
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS.MSG."
 .endif

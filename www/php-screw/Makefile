@@ -31,7 +31,7 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=--enable-php_screw=shared \
 		--with-php-config=${PREFIX}/bin/php-config
 
-pre-everything:
+pre-everything::
 	@${ECHO} ""
 	@${ECHO} "To achieve real security, define your own encryption"
 	@${ECHO} "seed key (CRYPTKEY); longer is better."

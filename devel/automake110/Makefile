@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 STRIP=		# none
 
 .if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-pre-everything:
+pre-everything::
 	@${ECHO} ===========================================================
 	@${ECHO} "You have 'USE_AUTOMAKE' or 'USE_AUTOMAKE_VER' variables"
 	@${ECHO} "defined either in environment or in make(1) arguments."

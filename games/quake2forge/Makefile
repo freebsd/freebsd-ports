@@ -68,7 +68,7 @@ PLIST_SUB+=	SDL:="@comment "
 PLIST_SUB+=	SDLGL:="@comment "
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "Define WITH_SVGALIB to use svgalib"
 .endif

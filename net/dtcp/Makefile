@@ -25,7 +25,7 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/dtcpauth.rb ${WRKSRC}/dtcpc.rb \
 MAN8=		dtcpauth.8 dtcpc.8 dtcps.8
 MANCOMPRESSED=	yes
 
-pre-everything:
+pre-everything::
 .if !defined(DTCP_CLIENT_ONLY)
 	@${ECHO} ""
 	@${ECHO} "If you don't use DTCP server, you don't need qpopper."

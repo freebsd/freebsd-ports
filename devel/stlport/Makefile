@@ -45,7 +45,7 @@ CXX=	icpc
 .endif
 
 .if ${COMPILER} == gcc && ${OSVERSION} < 460000
-pre-everything:
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "There may be a bug in your version of gcc's exception"
 	@${ECHO_MSG} "handling code.  Consider upgrading to FreeBSD 4.6"

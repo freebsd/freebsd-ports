@@ -30,7 +30,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--enable-apm
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITHOUT_XMMS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can disable XMMS control by defining WITHOUT_XMMS."

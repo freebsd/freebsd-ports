@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=	--with-hc=ghc
 .endif
 
 .if !defined(WITH_GHC)
-pre-everything:
+pre-everything::
 	@${ECHO} ""
 	@${ECHO} " DrIFT will be build with nhc98."
 	@${ECHO} " Define WITH_GHC to build with ghc."

@@ -62,7 +62,7 @@ CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${X11BASE}/share/gkrellm2/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${X11BASE}/libexec/gkrellm2/plugins\"' \
 		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"'
 
-pre-everything:
+pre-everything::
 .if !defined(GKRELLM_SERVER_ONLY)
 	@${ECHO} ""
 	@${ECHO} "You may use GKRELLM_SERVER_ONLY=yes to build gkrellmd only."

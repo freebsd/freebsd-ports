@@ -63,7 +63,7 @@ MAN1=		fluxbox.1
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
 
-pre-everything:
+pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Definable build options"
 	@${ECHO_CMD} "-----------------------"

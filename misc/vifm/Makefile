@@ -17,7 +17,7 @@ COMMENT=	Ncurses based file manager with vi like keybindings
 .if defined(WITH_VIFM_SCREEN)
 RUN_DEPENDS=	screen:${PORTSDIR}/misc/screen
 .else
-pre-everything:
+pre-everything::
 	@${ECHO_CMD} "You can define WITH_VIFM_SCREEN to add screen as a dependency."
 .endif
 

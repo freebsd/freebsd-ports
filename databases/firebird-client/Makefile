@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "NOTE: If the work directory is on an NFS mount, you will"
 	@${ECHO_MSG} "require NFS client locking support for the build to"
 	@${ECHO_MSG} "succeed. Currently this is only available on FreeBSD 5.0"

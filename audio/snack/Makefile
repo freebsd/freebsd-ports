@@ -36,7 +36,7 @@ PLIST_SUB+=	VORBIS=""
 PLIST_SUB+=	VORBIS="@comment "
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_VORBIS)
 	@${ECHO}
 	@${ECHO} 'Use "make WITH_VORBIS=yes" to build support for OGG Vorbis.'
