@@ -12,8 +12,8 @@ MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
-# This port requires Wanderlust. But we can't decide which Wanderlust to depends,
-# there is NO RUN_DEPNDS mail/wanderlust-*.
+# This port requires Wanderlust. But we can't decide which Wanderlust to
+# depends, there is NO RUN_DEPENDS mail/wanderlust-*.
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 NO_BUILD=	yes
