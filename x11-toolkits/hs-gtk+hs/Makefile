@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	obraun@FreeBSD.org
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		c2hs:${PORTSDIR}/devel/c2hs
+		c2hs:${PORTSDIR}/devel/hs-c2hs
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 USE_GNOMENG=	yes
