@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.red-bean.com/~decklin/aewm/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	ICCCM-compliant window manager based on 9wm
 
-BROKEN=		"Does not compile"
+#BROKEN=		"Does not compile"
 
 GTKCLIENTS=	aemenu-gtk aepanel-gtk
 XAWCLIENTS=	set-gnome-pda \
@@ -34,9 +34,6 @@ REINPLACE_ARGS=	-i'' -E
 .include <bsd.port.pre.mk>
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=    gtk20
-PKGNAMESUFFIX= -gtk
-.elseif ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=    gtk12
 PKGNAMESUFFIX= -gtk
 .endif
 
