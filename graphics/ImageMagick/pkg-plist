@@ -322,6 +322,7 @@ share/ImageMagick-%%PORTVERSION%%/LICENSE
 share/ImageMagick-%%PORTVERSION%%/Magick.pdf
 share/ImageMagick-%%PORTVERSION%%/NOTICE
 share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
+%%PORTDOCS%%share/doc/ImageMagick/images/ImageMagick.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/devlib.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/dogwaffle.png
@@ -391,6 +392,7 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/sprite.png
 %%PORTDOCS%%share/doc/ImageMagick/images/star.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/top.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/travelsur.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/twi.png
 %%PORTDOCS%%share/doc/ImageMagick/index.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Authors.html
@@ -454,6 +456,7 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/cache_view.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/color.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/colorspace.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/compare.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/constitute.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/draw.html
@@ -487,6 +490,7 @@ share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/transform.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/types.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/widget.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/version.html
 %%PORTDOCS%%share/doc/ImageMagick/www/apis.html
 %%PORTDOCS%%share/doc/ImageMagick/www/cd.html
 %%PORTDOCS%%share/doc/ImageMagick/www/color.html
