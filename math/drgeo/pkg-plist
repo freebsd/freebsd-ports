@@ -1,6 +1,7 @@
 bin/drgeo
 share/gnome/applications/drgeo.desktop
 share/gnome/drgeo/encode/latin1.ps
+share/gnome/drgeo/examples/figures/accel.big5.fgeo
 share/gnome/drgeo/examples/figures/accel.fgeo
 share/gnome/drgeo/examples/figures/angle-inscrit.fgeo
 share/gnome/drgeo/examples/figures/baballe.fgeo
@@ -19,6 +20,7 @@ share/gnome/drgeo/examples/figures/orthocenter-locus.fgeo
 share/gnome/drgeo/examples/figures/orthocentre-symetique.fgeo
 share/gnome/drgeo/examples/figures/parallelogramme.fgeo
 share/gnome/drgeo/examples/figures/partage-segment.fgeo
+share/gnome/drgeo/examples/figures/polygon-7.fgeo
 share/gnome/drgeo/examples/figures/polygons.fgeo
 share/gnome/drgeo/examples/figures/problem1.fgeo
 share/gnome/drgeo/examples/figures/refraction.fgeo
@@ -39,11 +41,16 @@ share/gnome/drgeo/examples/macros/bissectrice.mgeo
 share/gnome/drgeo/examples/macros/centre1.mgeo
 share/gnome/drgeo/examples/macros/orthocentre.mgeo
 share/gnome/drgeo/examples/macros/pentagone.mgeo
+share/gnome/drgeo/examples/macros/polygon-7.mgeo
 share/gnome/drgeo/examples/macros/segment.mgeo
+share/gnome/drgeo/examples/scheme/baravelle.scm
 share/gnome/drgeo/examples/scheme/baum.scm
 share/gnome/drgeo/examples/scheme/figure.scm
+share/gnome/drgeo/examples/scheme/fractale.scm
+share/gnome/drgeo/examples/scheme/pappo.scm
 share/gnome/drgeo/examples/scheme/polygon.scm
 share/gnome/drgeo/examples/scheme/polygon2.scm
+share/gnome/drgeo/examples/scheme/premier.scm
 share/gnome/drgeo/examples/scheme/spiral.scm
 share/gnome/drgeo/examples/scheme/square.scm
 share/gnome/drgeo/examples/scheme/steiner.scm
@@ -100,7 +107,6 @@ share/gnome/drgeo/glade/line_menu.png
 share/gnome/drgeo/glade/line_menu.xpm
 share/gnome/drgeo/glade/load.xpm
 share/gnome/drgeo/glade/locus.png
-share/gnome/drgeo/glade/locus.xpm
 share/gnome/drgeo/glade/macro_menu.png
 share/gnome/drgeo/glade/macro_menu.xpm
 share/gnome/drgeo/glade/middle.png
