@@ -1,2 +1,2 @@
 sbin/iplog
-etc/iplog.rules.sample
+etc/example-iplog.conf
