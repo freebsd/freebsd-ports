@@ -6,38 +6,29 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.5.9
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	www gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.screem.org/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Nice GNOME/GTK-based HTML editor
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
-		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
-		zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt \
-		neon.23:${PORTSDIR}/www/neon
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui libgtkhtml
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gnomevfs --with-ssl
+CONFIGURE_ARGS=	--with-ssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\@GNOME_DATA_PREFIX\@|\$$\(datadir\)|g'
 
 .include <bsd.port.mk>
