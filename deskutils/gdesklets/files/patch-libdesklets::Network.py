@@ -1,8 +1,9 @@
-# Many thanks to Alexander Leidinger <netchild@FreeBSD.org> for
-# help and create those patches.
+# Many thanks to Alexander Leidinger <netchild@FreeBSD.org> and
+# Franz Klammer <klammer@webonaut.com> for help and create
+# those patches.
 
---- libdesklets/Network.py.orig	Sun Nov  9 00:52:39 2003
-+++ libdesklets/Network.py	Sun Nov  9 00:53:05 2003
+--- libdesklets/Network.py.orig	Sun Nov 16 15:15:30 2003
++++ libdesklets/Network.py	Sun Nov 16 15:18:22 2003
 @@ -1,8 +1,8 @@
  import polling
  import glibtop
@@ -43,9 +44,9 @@
 -                devices.append(device)
 +        if ("FreeBSD" == platform):
 +            for lines in data:
-+                fields = lines.strip().strip(":")
++                fields = lines.strip().split(":")
 +
-+                if (fields[0] == "lo"):
++                if (fields[0][:2] == "lo"):
 +                    continue
 +                else:
 +                    device = fields[0]

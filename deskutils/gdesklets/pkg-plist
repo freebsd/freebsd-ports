@@ -1,8 +1,6 @@
 bin/gdesklets
 bin/gdesklets-display-thumbnailer
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gdesklets-display/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gdesklets-display/%gconf.xml
 etc/gconf/schemas/gdesklets-display-thumbnail.schemas
 libdata/pkgconfig/gdesklets-core.pc
@@ -152,6 +150,4 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/Displays
 @dirrm share/gnome/gdesklets
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gdesklets-display
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gdesklets-display
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers
