@@ -1,11 +1,9 @@
 ********************************************************************
-* Before using emacs-w3m, you must set following elisp to your own *
-* .emacs file.                                                     *
+* Before using emacs-w3m, you must add this to your own .emacs:    *
 *                                                                  *
 * (autoload 'w3m "w3m" "Interface for w3m on Emacs." t)            *
 *                                                                  *
-* If you want to use emacs-w3m on Wanderlust, set following elisp  *
-* to your own .emacs file.                                         *
+* To use emacs-w3m on Wanderlust, add this to your own .emacs:     *
 *                                                                  *
 * (setq mime-setup-enable-inline-html nil)                         *
 * (eval-after-load "mime-view"                                     *
@@ -13,15 +11,12 @@
 *     (autoload 'mime-w3m-preview-text/html "mime-w3m")            *
 *     (ctree-set-calist-strictly                                   *
 *      'mime-preview-condition                                     *
-*      '((type . text)                                             *
-*        (subtype . html)                                          *
-*	 (body . visible)                                          *
+*      '((type . text) (subtype . html) (body . visible)           *
 *	 (body-presentation-method . mime-w3m-preview-text/html))) *
 *     (set-alist 'mime-view-type-subtype-score-alist               *
 *		 '(text . html) 3)))                               *
 *                                                                  *
-* And if you want to use emacs-w3m on Mew, set following elisp to  *
-* your own .mew file.                                              *
+* And to use emacs-w3m on Mew, add this to your own .mew:          *
 *                                                                  *
 * (require 'mew-w3m)                                               *
 * (setq mew-prog-html '(mew-mime-text/html-w3m nil nil))           *
