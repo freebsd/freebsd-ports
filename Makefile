@@ -53,11 +53,11 @@ PORTSTOP=	yes
 
 index:
 	@rm -f ${.CURDIR}/INDEX
-	@make ${.CURDIR}/INDEX
+	@cd ${.CURDIR} && make ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
 	@echo -n "Generating INDEX - please wait.."
-	@make describe ECHO_MSG="echo > /dev/null" | \
+	@cd ${.CURDIR} && make describe ECHO_MSG="echo > /dev/null" | \
 		perl ${.CURDIR}/Tools/make_index > ${.CURDIR}/INDEX
 .if !defined(INDEX_NOSORT)
 	@sed -e 's./..g' ${.CURDIR}/INDEX | \
