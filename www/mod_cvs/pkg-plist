@@ -1,0 +1,3 @@
+libexec/apache/mod_cvs.so
+@exec %D/sbin/apxs -e -a -n cvs %D/%f
+@unexec echo "===>  If you do not plan on reinstalling mod_cvs, you must manually remove"; echo "===>  references to it in httpd.conf."
