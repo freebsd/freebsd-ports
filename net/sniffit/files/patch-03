@@ -1,8 +1,13 @@
---- sn_packetstructs.h.orig	Fri Apr 18 02:33:58 1997
-+++ sn_packetstructs.h	Fri Apr  3 20:41:08 1998
-@@ -48,4 +48,5 @@
- {
- 	int IP_len, TCP_len, ICMP_len, UDP_len;         /* header lengths */ 
- 	int DATA_len;
-+	char FRAG_nf;									/* not the first fragment */
- };
+--- sn_data.h.orig	Sun Aug 16 23:29:35 1998
++++ sn_data.h	Sun Aug 16 23:30:48 1998
+@@ -38,8 +38,8 @@
+ char *NETDEV[]={"ppp","ed"};		
+ int HEADSIZE[]={4    ,14}; 
+ */
+-#define NETDEV_NR      1
+-char *NETDEV[]={"ed"};		
++#define NETDEV_NR      6
++char *NETDEV[]={"fxp","de","ed","ppp","tun","lo"};		
+ int HEADSIZE[]={14}; 
+ #endif
+ 
