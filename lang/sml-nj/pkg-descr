@@ -1,7 +1,7 @@
 A Standard ML implementation from Bell-Labs.  Implements the SML '97 definition
 including the new Basis library with a few minor omissions and discrepancies.
 
-WWW:    http://cm.bell-labs.com/cm/cs/what/smlnj/index.html
+WWW: http://www.smlnj.org/
 
 If you are interested in a lighter weight implementation of ML, 
 the Moscow-ML port is recommended.
