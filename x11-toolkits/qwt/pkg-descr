@@ -1,0 +1,7 @@
+Qwt is an extension to the Qt GUI library from Troll Tech AS.  The Qwt library 
+contains widgets and componets which are primarily useful for technical and 
+scientifical purposes.  It includes a 2-D plotting widget, different kinds of 
+sliders and much more.
+
+- Bob Bomar
+<bob@fly.homeunix.org>

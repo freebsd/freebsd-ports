@@ -1,0 +1,27 @@
+--- makefiles/freebsd-g++.orig	Mon Oct 22 12:38:06 2001
++++ makefiles/freebsd-g++	Tue Mar 12 17:40:28 2002
+@@ -7,17 +7,17 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -O2 -fPIC -DNO_DEBUG
+-CXXFLAGS=	-pipe -O2 -fPIC -DNO_DEBUG
+-INCPATH	=	-I/usr/local/include -I$(QTDIR)/include
++CC	?=	gcc
++CXX	?=	g++
++CFLAGS	?=	-pipe -O2 -fPIC -DNO_DEBUG
++CXXFLAGS?=	-pipe -O2 -fPIC -DNO_DEBUG
++INCPATH	?=	-I/usr/local/include -I$(QTDIR)/include
+ LINK	=	g++
+ LFLAGS	=	-shared 
+-LIBS	=	$(SUBLIBS) -L/usr/local/lib -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
++LIBS	=	$(SUBLIBS) -L/usr/local/lib -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt2 -lXext -lX11 -lm
+ AR	=	ar cqs
+ RANLIB	=	
+-MOC	=	$(QTDIR)/bin/moc
++MOC	?=	$(QTDIR)/bin/moc
+ UIC	=	$(QTDIR)/bin/uic
+ 
+ TAR	=	tar -cf

@@ -1,0 +1,68 @@
+# New ports collection makefile for:	Qwt
+# Date created:		02 March 2002
+# Whom:			Bob Bomar <bob@fly.homeunix.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qwt
+PORTVERSION=	0.4.0
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=qwt
+
+MAINTAINER= 	bob@fly.homeunix.org
+
+USE_QT_VER=	2
+
+MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		INCPATH="-I${X11BASE}/include/qt2" \
+		LIBS="-L${X11BASE}/lib" \
+		QTDIR="${X11BASE}"	\
+		MOC=${MOC}
+
+MAN3=		Qwt.3			\
+		QwtArrowButton.3	\
+		QwtAutoScale.3		\
+		QwtColorFilter.3	\
+		QwtCounter.3		\
+		QwtCurve.3		\
+		QwtDblRange.3		\
+		QwtDiMap.3		\
+		QwtFltrDim.3		\
+		QwtFltrGray.3		\
+		QwtFltrInv.3		\
+		QwtGrid.3		\
+		QwtKnob.3		\
+		QwtLegend.3		\
+		QwtLegendItem.3		\
+		QwtMarker.3		\
+		QwtPixFrame.3		\
+		QwtPlot.3		\
+		QwtScale.3		\
+		QwtScaleDiv.3		\
+		QwtScaleDraw.3		\
+		QwtScaleIf.3		\
+		QwtSlider.3		\
+		QwtSliderBase.3		\
+		QwtSpline.3		\
+		QwtSymbol.3		\
+		QwtThermo.3		\
+		QwtWheel.3		\
+		bug.3			\
+		changes.3		\
+		install.3		\
+		qwt_math.h.3		\
+		screenshots.3
+
+pre-build:
+	${LN} -fs ${WRKSRC}/makefiles/freebsd-g++ ${WRKSRC}/Makefile
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/libqwt.so.0.4.0 ${PREFIX}/lib
+	${LN} -fs libqwt.so.0.4.0 ${PREFIX}/lib/libqwt.so
+	${MKDIR} ${PREFIX}/include/qwt
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qwt
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/* ${PREFIX}/man/man3
+
+.include <bsd.port.mk>
