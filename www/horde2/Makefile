@@ -29,14 +29,11 @@ LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
 # Remark: pear-XML_sql2xml is included, but never used.
-RUN_DEPENDS=	${PHP_LIB}/Console/Getopt.php:${PORTSDIR}/devel/pear-Console_Getopt \
-		${PHP_LIB}/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC	\
+RUN_DEPENDS=	${PHP_LIB}/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC	\
 		${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date		\
-		${PHP_LIB}/DB.php:${PORTSDIR}/databases/pear-DB		\
 		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select	\
 		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log	\
-		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
-		${PHP_LIB}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
