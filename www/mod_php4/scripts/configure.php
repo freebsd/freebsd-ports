@@ -173,9 +173,7 @@ while [ "$1" ]; do
 			LIBS="${LIBS} -L\${OPENSSLBASE}/lib -lcrypto -lssl"
 			;;
 		\"XML\")
-			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
-			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmlparse.h:\${PORTSDIR}/textproc/expat"
-			echo "BUILD_DEPENDS+=	\${PREFIX}/include/xml/xmltok.h:\${PORTSDIR}/textproc/expat"
+			echo "LIB_DEPENDS+=	expat.2:\${PORTSDIR}/textproc/expat2"
 			echo "CONFIGURE_ARGS+=--with-xml=\${PREFIX}"
 			;;
 		\"FTP\")
