@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
