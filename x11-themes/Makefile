@@ -7,6 +7,7 @@
     SUBDIR += gnome-icons-iris
     SUBDIR += gnome-icons-noia-full
     SUBDIR += gnome-icons-noia-warm
+    SUBDIR += gnome-icons-refined
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
