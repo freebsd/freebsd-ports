@@ -1,0 +1,9 @@
+Zimg is a graphics program that generates interesting
+graphics by reading simple ASCII input files filled with
+numbers. It can output in either EDF or PNG. It uses the
+GD library for image creation.
+
+WWW: http://www.zellner.org/zimg/
+Author: Johannes Zellner <johannes@zellner.org>
+
+- Will <andrews@technologist.com>
