@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kde-i18n
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 
 MAINTAINER?=	demon@FreeBSD.org
 
@@ -25,6 +25,6 @@ PLIST=		${WRKDIR}/PLIST
 SCRIPTS_ENV+=	PLIST=${PLIST}
 
 pre-configure:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/Configure
+#	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/Configure
 
 .include <bsd.port.mk>
