@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="cad045c0-81a5-11d8-9645-0020ed76ef5a">
+    <topic>zebra/quagga denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>zebra</name>
+	<range><lt>0.93b_7</lt></range>
+      </package>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.96.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A remote attacker could cause zebra/quagga to crash by
+          sending a malformed telnet command to their management
+          port.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0858</cvename>
+      <url>http://rhn.redhat.com/errata/RHSA-2003-305.html</url>
+      <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=107140</url>
+      <url>http://lists.quagga.net/pipermail/quagga-users/2003-November/000906.html</url>
+    </references>
+    <dates>
+      <discovery>2003-11-20</discovery>
+      <entry>2004-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c6acefd-8194-11d8-9645-0020ed76ef5a">
     <topic>setsockopt(2) IPv6 sockets input validation error</topic>
     <affects>
