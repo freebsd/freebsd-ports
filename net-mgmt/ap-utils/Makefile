@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	net
-MASTER_SITES=	http://ap-utils.polesye.net/files/ \
-		http://web.cs.cmu.edu/~dpelleg/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	daniel+aputils@pelleg.org
 
@@ -21,9 +21,9 @@ MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/uk
-	@cd ${WRKSRC}/Documentation && ${INSTALL_DATA} FAQ Ovislink-HOWTO.html ${DOCSDIR}
-	@cd ${WRKSRC}/Documentation/uk && ${INSTALL_DATA} INSTALL README.atmel ${DOCSDIR}/uk
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/Documentation && \
+		${INSTALL_DATA} FAQ Ovislink-HOWTO.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
