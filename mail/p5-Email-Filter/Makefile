@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Filter
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -24,8 +24,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::Filter.3
-
-test:	build
-	cd ${WRKSRC} ; make test
 
 .include <bsd.port.mk>
