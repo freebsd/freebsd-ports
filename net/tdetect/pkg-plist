@@ -1,0 +1,2 @@
+sbin/tdetect
+etc/rc.d/tdetect.sh
