@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.67 1995/11/20 13:41:17 asami Exp $
+# $Id: Makefile,v 1.68 1995/11/27 03:38:03 asami Exp $
 #
 
     SUBDIR += amanda
@@ -7,10 +7,12 @@
     SUBDIR += chord
     SUBDIR += colorls
     SUBDIR += git
+    SUBDIR += glimpse
     SUBDIR += ical
     SUBDIR += ispell
     SUBDIR += kp
     SUBDIR += less
+    SUBDIR += linuxls
     SUBDIR += mc
 RESTRICTED += mmv               # restrictive copyright
     SUBDIR += mshell
