@@ -1,5 +1,5 @@
---- plugins/qt-gui-1.0.2/configure.in.orig	Wed Aug  9 14:07:59 2000
-+++ plugins/qt-gui-1.0.2/configure.in	Wed Aug  9 14:15:46 2000
+--- plugins/qt-gui-1.0.3/configure.in.orig	Wed Aug  9 14:07:59 2000
++++ plugins/qt-gui-1.0.3/configure.in	Wed Aug  9 14:15:46 2000
 @@ -51,8 +51,6 @@
  LICQ_CHECK_X11HEADERS
  

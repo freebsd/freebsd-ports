@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	licq
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.wibble.net/pub/licq/srcs/ \
@@ -28,6 +28,10 @@ USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2
 CONFIGURE_TARGET=	$(ARCH)-unknown-freebsdelf$(OSREL)
+
+post-patch:
+	@${PERL} -pi.orig -e 's:<wait\.h>:<sys/wait.h>:g' \
+	    ${WRKSRC}/src/sighandler.c
 
 post-configure:
 	@(cd ${WRKSRC}/plugins/qt-gui-${PORTVERSION} && ${AUTOCONF})
@@ -62,7 +66,5 @@ post-install:
 	   ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET}
 	${CHMOD} -R a-w ${PREFIX}/share/licq
 	${CHMOD} 755 ${PREFIX}/share/licq
-	${RM} -f ${PREFIX}/share/licq/qt-gui/locale/*.qm
-	${RMDIR} ${PREFIX}/share/licq/qt-gui/locale
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- plugins/qt-gui-1.0.2/aclocal.m4.orig	Tue Oct 10 16:52:41 2000
-+++ plugins/qt-gui-1.0.2/aclocal.m4	Sun Oct 15 17:51:04 2000
+--- plugins/qt-gui-1.0.3/aclocal.m4.orig	Tue Oct 10 16:52:41 2000
++++ plugins/qt-gui-1.0.3/aclocal.m4	Sun Oct 15 17:51:04 2000
 @@ -59,7 +59,7 @@
        fi
  
