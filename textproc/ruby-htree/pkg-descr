@@ -1,0 +1,16 @@
+Ruby/htree - HTML/XML tree library
+
+htree provides a tree data structure representing HTML and XML data.
+
+Features:
+    * Permissive unified HTML/XML parser
+    * byte-to-byte round-tripping unparser
+    * XML namespace support
+    * Dedicated class for escaped string that eases sanitization
+    * XHTML/XML generator
+    * template engine
+    * recursive template expansion
+    * converter to REXML document
+
+Author:	Tanaka Akira <akr@m17n.org>
+WWW:	http://cvs.m17n.org/~akr/htree/
