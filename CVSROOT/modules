@@ -46,7 +46,6 @@ cvswrappers	CVSROOT cvswrappers
 editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
-mod_chroot	ports/www/mod_chroot
 modules		CVSROOT modules
 rcsinfo		CVSROOT rcsinfo
 rcstemplate	CVSROOT rcstemplate
@@ -4611,6 +4610,7 @@ libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
 libspectrum	ports/emulators/libspectrum
 libspf		ports/mail/libspf
+libspf-alt	ports/mail/libspf-alt
 libsrs		ports/mail/libsrs
 libstatgrab	ports/devel/libstatgrab
 libstocks	ports/finance/libstocks
@@ -5208,6 +5208,7 @@ mod_blowchunks	ports/www/mod_blowchunks
 mod_bunzip2	ports/www/mod_bunzip2
 mod_cfg_ldap	ports/www/mod_cfg_ldap
 mod_cgi_debug	ports/www/mod_cgi_debug
+mod_chroot	ports/www/mod_chroot
 mod_clamav	ports/www/mod_clamav
 mod_color	ports/www/mod_color
 mod_csacek	ports/www/mod_csacek
