@@ -9,7 +9,6 @@ include/opencl/blowfish.h
 include/opencl/buf_filt.h
 include/opencl/cast128.h
 include/opencl/cast256.h
-include/opencl/cast5.h
 include/opencl/cbc.h
 include/opencl/cfb.h
 include/opencl/chain.h
@@ -30,6 +29,7 @@ include/opencl/eme1.h
 include/opencl/emsa1.h
 include/opencl/emsa2.h
 include/opencl/emsa3.h
+include/opencl/emsa4.h
 include/opencl/emsa_raw.h
 include/opencl/es_file.h
 include/opencl/exceptn.h
@@ -38,6 +38,7 @@ include/opencl/filters.h
 include/opencl/fork.h
 include/opencl/fused.h
 include/opencl/gost.h
+include/opencl/hash_id.h
 include/opencl/haval.h
 include/opencl/hex.h
 include/opencl/hmac.h
@@ -68,10 +69,12 @@ include/opencl/modebase.h
 include/opencl/mp_core.h
 include/opencl/mp_types.h
 include/opencl/mutex.h
+include/opencl/mux_def.h
 include/opencl/nr.h
 include/opencl/numthry.h
 include/opencl/ofb.h
 include/opencl/opencl.h
+include/opencl/par_hash.h
 include/opencl/pgp_s2k.h
 include/opencl/pipe.h
 include/opencl/pk_filts.h
