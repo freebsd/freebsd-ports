@@ -18,6 +18,7 @@
     SUBDIR += gkermit
     SUBDIR += gnokii
     SUBDIR += gsmlib
+    SUBDIR += hamlib
     SUBDIR += hylafax
     SUBDIR += ixj
     SUBDIR += java-commapi
