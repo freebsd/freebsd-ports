@@ -3,13 +3,13 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1998/03/02 02:08:26 jseger Exp $
+# $Id: Makefile,v 1.7 1998/03/22 09:37:07 asami Exp $
 #
 
 DISTNAME=	tcl8.1a2
 PKGNAME=	tcl-8.1.a2
 CATEGORIES=	lang tcl81
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
