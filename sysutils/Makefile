@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.50 1998/12/05 05:37:07 flathill Exp $
+# $Id: Makefile,v 1.51 1998/12/06 07:26:35 flathill Exp $
 #
 
     SUBDIR += LPRng
@@ -13,6 +13,7 @@
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += gnomeadmin
+    SUBDIR += glload
     SUBDIR += gtar
     SUBDIR += gtop
     SUBDIR += idled
