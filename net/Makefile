@@ -132,6 +132,7 @@
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += ncplib
+    SUBDIR += nemesis
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
     SUBDIR += netcat
