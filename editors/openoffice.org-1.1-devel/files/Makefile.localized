@@ -1,6 +1,6 @@
 # localized makefile
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.1-devel/files/Attic/Makefile.localized,v 1.1 2004-07-31 14:36:10 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-1.1-devel/files/Attic/Makefile.localized,v 1.2 2004-08-05 04:46:34 maho Exp $
 
 ################################################################
 .if defined(LOCALIZED_LANG)
@@ -161,6 +161,7 @@ COMMENT=        Editor texto/grBaGico, banco de dados/planilha/navegador integra
 CATEGORIES=     portuguese
 LANG_PKGNAME=	pt
 LANG_SUFFIX=	BR
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_EXT=	55
 LANG_CONFIGURE_ARG=	PORTBR
 .endif
