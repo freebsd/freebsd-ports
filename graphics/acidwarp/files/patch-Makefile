@@ -1,0 +1,10 @@
+--- Makefile.orig	Thu Aug  8 17:57:37 1996
++++ Makefile	Sun Oct 22 02:56:06 2000
+@@ -1,5 +1,5 @@
+-CC=gcc
+-CFLAGS = -O2 -funroll-all-loops
++CC ?= gcc
++CFLAGS += -L%%PREFIX%%/lib -I%%PREFIX%%/include
+ LFLAGS = -lvgagl -lvga
+ PROGS = acidwarp 
+ OSOURCES = bit_map.o palinit.o rolnfade.o lut.o
