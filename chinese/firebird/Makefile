@@ -3,20 +3,20 @@
 # Whom:                                 Edward Chuang <edwardc@firebird.org.tw>
 # $FreeBSD$
 
-PORTNAME=		firebird
-PORTVERSION=		3.0R
-CATEGORIES=		chinese net
-MASTER_SITES=		ftp://ftp4.firebird.org.tw/Network/BBS/Firebird/
+PORTNAME=	firebird
+PORTVERSION=	3.0R
+PORTREVISION=	1
+CATEGORIES=	chinese net
+MASTER_SITES=	ftp://ftp4.firebird.org.tw/Network/BBS/Firebird/
+DISTNAME=	3.0-RELEASE
 
-DISTNAME=		3.0-RELEASE
-
-MAINTAINER=		edwardc@firebird.org.tw
+MAINTAINER=	edwardc@firebird.org.tw
 COMMENT=	A Common BBS Server with its own customized INN News Server
 
-WRKSRC=			${WRKDIR}/bbs/bbssrc
-GNU_CONFIGURE=		yes
-USE_BZIP2=			yes
-IS_INTERACTIVE=		yes
+WRKSRC=		${WRKDIR}/bbs/bbssrc
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+IS_INTERACTIVE=	yes
 
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
