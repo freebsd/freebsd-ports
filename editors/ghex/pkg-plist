@@ -4,6 +4,8 @@ share/gnome/help/ghex/C/index.html
 share/gnome/help/ghex/C/topic.dat
 share/gnome/help/ghex/es/index.html
 share/gnome/help/ghex/es/topic.dat
+share/gnome/help/ghex/ja/index.html
+share/gnome/help/ghex/ja/topic.dat
 share/gnome/help/ghex/sv/index.html
 share/gnome/help/ghex/sv/topic.dat
 share/gnome/pixmaps/gnome-ghex.png
@@ -37,6 +39,7 @@ share/locale/wa/LC_MESSAGES/ghex.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/ghex.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/ghex.mo
 @dirrm share/gnome/help/ghex/sv
+@dirrm share/gnome/help/ghex/ja
 @dirrm share/gnome/help/ghex/es
 @dirrm share/gnome/help/ghex/C
 @dirrm share/gnome/help/ghex
