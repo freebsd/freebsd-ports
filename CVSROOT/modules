@@ -3729,6 +3729,7 @@ lingoteach	ports/misc/lingoteach
 linguist	ports/devel/linguist
 links		ports/www/links
 links1		ports/www/links1
+linneighborhood	ports/sysutils/linneighborhood
 linpack		ports/math/linpack
 linphone	ports/net/linphone
 linplasma	ports/graphics/linplasma
