@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION= 	0.89.9
+PORTVERSION= 	0.90.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -48,7 +48,7 @@ IS_INTERACTIVE= yes
 pre-extract:
 	@${ECHO} "***********************************************************"
 	@${ECHO} "*                      W a r n i n g                      *"
-	@${ECHO} "* This port will overwrite your Motif installation.       *"
+	@${ECHO} "*    This port will overwrite your Motif installation.    *"
 	@${ECHO} "***********************************************************"
 	@${ECHO} -n "Is this ok? (y/n) ==> "
 	@(read ans; \
