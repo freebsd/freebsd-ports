@@ -1,0 +1,5 @@
+A class for DBI drivers that acts on Excel files
+
+WWW: http://search.cpan.org/search?dist=DBD-Excel
+
+Seamus Venasse <svenasse@polaris.ca>
