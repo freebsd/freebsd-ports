@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ng_netflow
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	net
 MASTER_SITES=	http://cell.sick.ru/~glebius/ng_netflow/ \
 		${MASTER_SITE_SOURCEFORGE}
