@@ -66,10 +66,10 @@ diff -ru xmms/playlist_list.c xmms/playlist_list.c
  
  	if (cfg.playlist_font == NULL)
 -		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*");
-+		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,-*-big5-0");
++		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,-*-bold-r-*-big5-0");
  	if (cfg.mainwin_font == NULL)
 -		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*");
-+		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,-*-big5-0");
++		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,-*-medium-r-*-big5-0");
  	if (cfg.outputplugin == NULL)
  	{
  #if defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H)
