@@ -1,5 +1,5 @@
 --- makefile.orig	Wed Sep 25 09:32:22 1996
-+++ makefile	Fri Sep 25 15:22:12 1998
++++ makefile	Sun Jun 20 13:35:05 1999
 @@ -1,6 +1,6 @@
  PURIFY   = #purify
  PURELINK = #purelink
@@ -8,7 +8,7 @@
  LD     = $(PURELINK) g++
  
  #C++    = $(PURIFY) g++ -w  -I/sgisoft/gnu/lib/g++-include 	# !!! SGI GNU 2.7.1
-@@ -18,25 +18,29 @@
+@@ -18,25 +18,33 @@
  #FORFLAGS = -O -extend_source 				# SGI
  
  DEBFLAG  = -g
@@ -30,7 +30,11 @@
  # F77LIBS  =  -lxlf -lxlf90 -lxlfutil     			# IBM
  # F77LIBS  =  -lfor     			      		# DEC Alpha
 -# F77LIBS  =  -lf2c						# PC LINUX, XFree86 3.1.1
++.if $(HAVE_G2C)
++F77LIBS  =  -lg2c						# PC LINUX, XFree86 3.1.1
++.else
 +F77LIBS  =  -lf2c						# PC LINUX, XFree86 3.1.1
++.endif
  
 -CFLAGS   = -ansi 
 -CPPFLAGS =  
@@ -45,7 +49,7 @@
  
  default: k6
  
-@@ -77,18 +81,18 @@
+@@ -77,18 +85,18 @@
  FSources = ma28.f madc28.f
  
  # SUN / SGI:
@@ -71,7 +75,7 @@
  # IBM:
  #ma28.o: ma28.f  sysmat.h sysmatml.h sysmatsp.h 
  #	$(FOR)  -c -qextname  $(FORFLAGS) ma28.f
-@@ -224,12 +228,12 @@
+@@ -224,12 +232,12 @@
  k3: 	$(k3O) 
  	$(LD) $(LDFLAGS) -o  k3   $(k3O) $(LIBS)
  
