@@ -25,7 +25,7 @@
   # Postfix support programs and daemons. This setting can be overruled
   # with the command_directory and daemon_directory parameters.
   #
-! program_directory = !!PREFIX!!/pbexec/postfix
+! program_directory = !!PREFIX!!/libexec/postfix
   
   # The command_directory parameter specifies the location of all
   # postXXX commands.  The default value is $program_directory.
