@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/ShiftReg.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/ShiftReg/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/ShiftReg/ShiftReg.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/ShiftReg/ShiftReg.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/ShiftReg
