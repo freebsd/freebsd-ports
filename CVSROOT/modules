@@ -1432,6 +1432,7 @@ ffsinfo		src/sbin/ffsinfo
 ffsrecov	ports/sysutils/ffsrecov
 fftpack		ports/math/fftpack
 fftw		ports/math/fftw
+fget		ports/ftp/fget
 fhist		ports/devel/fhist
 fhttpd		ports/www/fhttpd
 fib		src/usr.bin/fib
