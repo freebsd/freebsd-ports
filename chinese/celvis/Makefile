@@ -3,12 +3,12 @@
 # Date created:         Thur Aug 15, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/09/23 01:50:32 chuckr Exp $
+# $Id: Makefile,v 1.2 1996/10/16 02:24:33 chuckr Exp $
 #
 
 DISTNAME=	celvis
 PKGNAME=	cn-celvis-1.3
-CATEGORIES+=	chinese editors
+CATEGORIES=	chinese editors
 MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/ygz/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/
 
@@ -25,6 +25,5 @@ do-install:
 .else
 	ln -sf ${PREFIX}/man/man1/celvis.1 ${PREFIX}/man/man1/cvi.1
 .endif
-
 
 .include <bsd.port.mk>
