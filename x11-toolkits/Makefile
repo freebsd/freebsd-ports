@@ -185,6 +185,7 @@
     SUBDIR += ruby-fox
     SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
+    SUBDIR += ruby-gtkglext
     SUBDIR += ruby-pango
     SUBDIR += ruby-tk
     SUBDIR += scintilla
