@@ -1,0 +1,66 @@
+--- makefile.orig	Wed Aug 11 21:02:50 1993
++++ makefile	Wed Nov 10 23:17:56 1999
+@@ -11,9 +11,9 @@
+ SOURCES		=	main.c postscri.c print.c fontwidt.c font_lis.c paper.c
+ OBJECTS		=	$(SOURCES:.c=.o)
+ 
+-INSTALLDIR	=	/usr/local
+-BININSTALLDIR	=	$(INSTALLDIR)/bin
+-MANINSTALLDIR	=	$(INSTALLDIR)/man/man1
++#INSTALLDIR	=	/usr/local
++BININSTALLDIR	=	${PREFIX}/bin
++MANINSTALLDIR	=	${MANPREFIX}/man/man1
+ 
+ LOCALINSTALLDIR		=	$(HOME)/bin
+ LOCALMANINSTALLDIR	=	$(HOME)/man/man1
+@@ -26,14 +26,20 @@
+ #
+ # US_VERSION selects default US paper format as well as selecting US format date
+ #
+-CFLAGS	=	-O $(DEBUG) -DUS_VERSION
++.if !defined(NON_US)
++CFLAGS += -DUS_VERSION
++.endif
++.if defined(DEBUG)
++CFLAGS += -g
++.endif
++
+ LFLAGS	=	
+ 
+-CHMOD	=	chmod
+-CP	=	cp
+-RM	=	rm
++#CHMOD	=	chmod
++#CP	=	cp
++#RM	=	rm
+ #INSTALL	=	/etc/install
+-INSTALL	=	/usr/ucb/install -c
++#INSTALL	=	/usr/ucb/install -c
+ 
+ all debug:	$(PROG)
+ 
+@@ -43,18 +49,18 @@
+ main.$(OBJ):	main.c
+ 
+ install: $(PROG)
+-	$(INSTALL) -s -m 555 $(PROG) $(BININSTALLDIR)
+-	$(INSTALL) -m 444 $(MAN) $(MANINSTALLDIR)
++	${INSTALL_PROGRAM} $(PROG) $(BININSTALLDIR)
++	${INSTALL_MAN} $(MAN) $(MANINSTALLDIR)
+ 
+ install.man: $(MAN)
+-	$(INSTALL) -f $(MAININSTALLDIR) -m 444 $(MAN)
++	${INSTALL_MAN} $(MAININSTALLDIR) $(MAN)
+ 
+ install.local:	$(PROG) $(MAN)
+-	$(INSTALL) -s -m 555 $(PROG) $(LOCALINSTALLDIR)
+-	$(INSTALL) -m 444 $(MAN) $(LOCALMANINSTALLDIR)
++	${INSTALL_PROGRAM} $(PROG) $(LOCALINSTALLDIR)
++	${INSTALL_MAN} $(MAN) $(LOCALMANINSTALLDIR)
+ 
+ clean:
+-	rm -f *.o *.obj *.exe *.mdt $(PROG)
++	${RM} -rf *.o *.obj *.exe *.mdt $(PROG)
+ 
+ font_lis.c: machdep.h defs.h font_lis.h main.h
+ 

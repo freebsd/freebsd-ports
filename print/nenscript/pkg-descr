@@ -1,0 +1,19 @@
+A clone of the proprietary enscript program from Adobe Systems. For those
+who have never used enscript, it is a good ASCII to Postscript converter.
+
+The main features of nenscript are:
+
+        . produces Postscript output which fully conforms to
+          the Document Structuring Conventions
+        . support for normal and "gaudy" output
+        . support for single or double column output
+        . allows insertion of titles and headers in any font.
+        . multiple copies of a document
+
+Features additional to nenscript are:
+        . automatic wrapping of long lines
+        . availability under MSDOS 
+        . executable is self contained - no additional files required
+
+-Chris
+cjm2@altavista.net
