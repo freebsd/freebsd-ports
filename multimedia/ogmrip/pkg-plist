@@ -10,6 +10,7 @@ include/ogmrip/ogmrip-codec.h
 include/ogmrip/ogmrip-lavc.h
 include/ogmrip/ogmrip-merge.h
 include/ogmrip/ogmrip-misc.h
+%%MKV_SUPPORT%%include/ogmrip/ogmrip-mkv.h
 include/ogmrip/ogmrip-mp3.h
 include/ogmrip/ogmrip-mux.h
 include/ogmrip/ogmrip-split.h
@@ -19,6 +20,7 @@ include/ogmrip/ogmrip-tools.h
 include/ogmrip/ogmrip-video.h
 include/ogmrip/ogmrip-vobsub.h
 include/ogmrip/ogmrip-vorbis.h
+include/ogmrip/ogmrip-theora.h
 include/ogmrip/ogmrip-wav.h
 include/ogmrip/ogmrip-xvid.h
 include/ogmrip/ogmrip.h
@@ -42,7 +44,9 @@ libdata/pkgconfig/ogmdvd.pc
 libdata/pkgconfig/ogmrip.pc
 libdata/pkgconfig/ogmspawn.pc
 share/applications/ogmrip.desktop
+%%DATADIR%%/ogmrip-crop.glade
 %%DATADIR%%/ogmrip-main.glade
+%%DATADIR%%/ogmrip-options.glade
 %%DATADIR%%/ogmrip-pref.glade
 %%DATADIR%%/ogmrip-progress.glade
 %%DATADIR%%/ogmrip-spell.glade
