@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.32 1999/06/14 01:02:14 taoka Exp $
+# $Id: Makefile,v 1.33 1999/06/16 16:16:09 taoka Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.jaist.ac.jp/~daisuke/Linux/gs/gs5/Original-sources/OLD/ \
 		http://www.rd.nacsis.ac.jp/~katayama/homepage/ghostscript/jpdf/ \
 		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
+		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/ \
 		ftp://ftp.humblesoft.com/pub/ \
 		http://www.necs.co.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
@@ -51,6 +52,8 @@ GS_DRIVERS+=	gdevlips-2.3.2.tar.gz
 GS_DRIVERS+=	gdevmjc-0.8.tar.gz
 GS_DRIVERS+=	gdev10v.tar.gz
 GS_DRIVERS+=	dmprt-2.01.tar.gz
+GS_DRIVERS+=	gdevnpdl-1.6.2.tar.gz
+GS_DRIVERS+=	epag-3.08.tar.gz
 GS_DRIVERS+=	gdevalps-0.2.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.2.tar.gz
@@ -83,14 +86,19 @@ post-patch:
 	  tar xzf ${DISTDIR}/gdev10v.tar.gz ; \
 	  ${MKDIR} ${PRINTER}/gdevdmpr ; \
 	  tar -C gdevdmpr -xzf ${DISTDIR}/dmprt-2.01.tar.gz ; \
+	  tar xzf ${DISTDIR}/gdevnpdl-1.6.2.tar.gz ; \
+	  tar xzf ${DISTDIR}/epag-3.08.tar.gz ; \
 	  tar xzf ${DISTDIR}/gdevalps-0.2.tar.gz ; \
 	  tar xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
 	  tar xzf ${DISTDIR}/gdevrpdl-1.2.tar.gz ; \
 	  ${CP} gdev10v/gdev10v.c gdev10v/gdev10v.mak ${WRKSRC}; \
 	  ${CP} gdevmjc-0.8/*.[ch] gdevmjc-0.8/gdevmjc.mak ${WRKSRC}; \
-	  ${CP} gdevlips-2.3.2/*.[ch] gdevlips-2.3.2/gdevlips.mak ${WRKSRC}; \
+	  ${CP} gdevlips-2.3.2/gdevlips.[ch] gdevlips-2.3.2/gdevlips.mak ${WRKSRC}; \
+	  ${CP} gdevlips-2.3.2/gdevl4[rv].c gdevlips-2.3.2/gdevlprn.[ch] ${WRKSRC}; \
 	  ${CP} gdevdmpr/gdevdmpr.c gdevdmpr/gdevdmpr.mak ${WRKSRC}; \
 	  ${CP} gdevdmpr/dviprlib.c gdevdmpr/dviprlib.h   ${WRKSRC}; \
+	  ${CP} epag-3.08/gdevepag.c epag-3.08/gdevepag.mak ${WRKSRC}; \
+	  ${CP} gdevnpdl/gdevnpdl.c gdevnpdl/gdevnpdl.mak ${WRKSRC}; \
 	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevrpdl-1.2/gdevrpdl.c gdevrpdl-1.2/gdevrpdl.mak ${WRKSRC}; \
@@ -98,16 +106,22 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/mjc.dev.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevdmpr.mak.patch
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevepag.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevmjc.c.patch
-#	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevmjc.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevdmpr.patch
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevlips.mak.patch
 	@${CAT} ${WRKSRC}/gdev10v.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevdmpr.mak >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevepag.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevlips.mak >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevnpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevrpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevmjc.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevalps.mak-5.50 >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevmd2k.mak-5.50 >> ${WRKSRC}/contrib.mak
+
+post-build:
+	@(cd ${PRINTER}/epag-3.08 ;  ${MAKE})
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript
@@ -115,6 +129,7 @@ pre-install:
 	@tar -C ${PREFIX}/share/ghostscript/fonts -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
 post-install:
+	${INSTALL_PROGRAM} ${PRINTER}/epag-3.08/ert ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
 	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \
@@ -137,12 +152,18 @@ post-install:
 	  ${CP} ${PRINTER}/gdevdmpr/dmp_site.ps ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/escp_24.src ${GSINST_DIR} ; \
 	  ${CP} ${PRINTER}/gdevdmpr/testpage.ps ${GSINST_DIR} ; \
+	  ${CP} ${PRINTER}/gdevnpdl/gdevnpdl.jis ${DOC_DIR} ; \
+	  ${MKDIR} ${DOC_DIR}/epag-3.08 ; \
+	  ${CP} ${PRINTER}/epag-3.08/FILES ${DOC_DIR}/epag-3.08 ; \
+	  ${CP} ${PRINTER}/epag-3.08/*.txt ${DOC_DIR}/epag-3.08 ; \
+	  ${CP} ${PRINTER}/epag-3.08/adjust.ps ${DOC_DIR}/epag-3.08 ; \
+	  ${CP} ${PRINTER}/epag-3.08/gsepagif.sh ${DOC_DIR}/epag-3.08 ; \
+	  ${CP} ${PRINTER}/epag-3.08/psprint ${DOC_DIR}/epag-3.08 ; \
 	  ${CP} ${PRINTER}/gdevmjc-0.8/gdevmjc.ps ${GSINST_DIR} ; \
 	)
 .if defined(PDFENCRYPT)
 	@${CP} -f ${DISTDIR}/pdf_sec.ps ${GSINST_DIR}
 .endif
-
 
 # encrypted PDF support.  can't be packaged due to export control issues.
 .if defined(PDFENCRYPT)
