@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}d-${PORTVERSION}
 MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}"
+CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
+		--with-etcdir=${PREFIX}/etc
 USE_GMAKE=	yes
 ALL_TARGET=	dict
 INSTALL_TARGET=	install.dict
