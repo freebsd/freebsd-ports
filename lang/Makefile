@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.101 1998/06/12 12:09:15 tg Exp $
+# $Id: Makefile,v 1.102 1998/06/24 19:53:34 msmith Exp $
 #
 
     SUBDIR += Gofer
@@ -31,6 +31,7 @@
     SUBDIR += javac_netscape
     SUBDIR += jdk
     SUBDIR += kaffe
+    SUBDIR += kawk
     SUBDIR += lcc
     SUBDIR += logo
     SUBDIR += mit-scheme
