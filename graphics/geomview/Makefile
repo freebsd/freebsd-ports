@@ -13,6 +13,9 @@ MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	xforms\\.0:${PORTSDIR}/x11/xforms \
 		MesaGL\\.13:${PORTSDIR}/graphics/Mesa
+
+BROKEN=		tcl
+
 WRKSRC=		${WRKDIR}/Geomview
 REQUIRES_MOTIF=	yes
 USE_X11=	yes
