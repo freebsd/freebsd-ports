@@ -1,0 +1,1725 @@
+--- ../SrcShared/Hardware/EmRegs328.cpp	2002-03-29 05:11:18.000000000 -0800
++++ ../SrcShared/Hardware/EmRegs328.cpp	2004-01-27 00:06:45.000000000 -0800
+@@ -97,13 +97,45 @@
+ const HwrM68328Type	kInitial68328RegisterValues =
+ {
+ 	0x0C,		//	Byte		scr;						// $000: System Control Register
+-	{ 0 },		//	Byte										___filler0[0x004-0x001];
++	{ 0,0,0 },	//	Byte										___filler0[0x004-0x001];
+ 
+ 	// The following ID stuff is not present on earlier chips (before ??)
+ 	hwr328chipID328,	//	Byte		chipID;						// $004: Chip ID Register
+ 	hwr328maskID1H58B,	//	Byte		maskID;						// $005: Mask ID Register
+ 	0x00,		//	Word		swID;						// $006: Software ID Register
+-	{ 0 },		//	Byte										___filler1[0x100-0x008];				 
++	{ 
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0
++	},		//	Byte										___filler1[0x100-0x008];				 
+ 
+ 	0x0000,		//	Word		csAGroupBase;				// $100: Chip Select Group A Base Register
+ 	0x0000,		//	Word		csBGroupBase;				// $102: Chip Select Group B Base Register
+@@ -136,18 +168,73 @@
+ 	0x00000000,	//	DWord		csDSelect3;					// $14C: Group D Chip Select 3 Register
+ 
+ 	0x0000,		//	Word		csDebug;					// $150: Chip Select debug register
+-	{ 0 },		//	Byte										___filler2[0x200-0x152];
++	{ 
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0
++	},		//	Byte										___filler2[0x200-0x152];
+ 
+ 	0x2400,		//	Word		pllControl;					// $200: PLL Control Register
+ 	0x0123,		//	Word		pllFreqSel;					// $202: PLL Frequency Select Register
+ 	0x0000,		//	Word		pllTest;					// $204: PLL Test Register
+-	{ 0 },		//	Byte										__filler44;
++	0x0000,		//	Byte										__filler44;
+ 	0x1F,		//	Byte		pwrControl;					// $207: Power Control Register
+ 
+-	{ 0 },		//	Byte										___filler3[0x300-0x208];
++	{
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0
++	},		//	Byte										___filler3[0x300-0x208];
+ 
+ 	0x00,		//	Byte		intVector;					// $300: Interrupt Vector Register
+-	{ 0 },		//	Byte										___filler4;
++	0x00,		//	Byte										___filler4;
+ 	0x0000,		//	Word		intControl;					// $302: Interrupt Control Register
+ 	0x00FF,		//	Word		intMaskHi;					// $304: Interrupt Mask Register/HIGH word
+ 	0xFFFF,		//	Word		intMaskLo;					// $306: Interrupt Mask Register/LOW word
+@@ -158,36 +245,67 @@
+ 	0x0000,		//	Word		intPendingHi;				// $310: Interrupt Pending Register
+ 	0x0000,		//	Word		intPendingLo;				// $312: Interrupt Pending Register
+ 
+-	{ 0 },		//	Byte 										___filler4a[0x400-0x314];
++	{
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0
++	},		//	Byte 										___filler4a[0x400-0x314];
+ 
+ 	0x00,		//	Byte		portADir;					// $400: Port A Direction Register
+ 	0x00,		//	Byte		portAData;					// $401: Port A Data Register
+-	{ 0 },		//	Byte										___filler5;
++	0x00,		//	Byte										___filler5;
+ 	0x00,		//	Byte		portASelect;				// $403: Port A Select Register
+ 
+-	{ 0 },		//	Byte										___filler6[4];
++	{ 0,0,0,0 },	//	Byte										___filler6[4];
+ 
+ 	0x00,		//	Byte		portBDir;					// $408: Port B Direction Register
+ 	0x00,		//	Byte		portBData;					// $409: Port B Data Register
+-	{ 0 },		//	Byte										___filler7;
++	0x00,		//	Byte										___filler7;
+ 	0x00,		//	Byte		portBSelect;				// $40B: Port B Select Register
+ 
+-	{ 0 },		//	Byte										___filler8[4];
++	{ 0,0,0,0 },	//	Byte										___filler8[4];
+ 
+ 	0x00,		//	Byte		portCDir;					// $410: Port C Direction Register
+ 	0x00,		//	Byte		portCData;					// $411: Port C Data Register
+-	{ 0 },		//	Byte										___filler9;
++	0x00,		//	Byte										___filler9;
+ 	0x00,		//	Byte		portCSelect;				// $413: Port C Select Register
+ 
+-	{ 0 },		//	Byte										___filler10[4];
++	{ 0,0,0,0 },	//	Byte										___filler10[4];
+ 
+ 	0x00,		//	Byte		portDDir;					// $418: Port D Direction Register
+ 	0x00,		//	Byte		portDData;					// $419: Port D Data Register
+ 	0xFF,		//	Byte		portDPullupEn;				// $41A: Port D Pull-up Enable
+-	{ 0 },		//	Byte										___filler11;
++	0x00,		//	Byte										___filler11;
+ 	0x00,		//	Byte		portDPolarity;				// $41C: Port D Polarity Register
+ 	0x00,		//	Byte		portDIntReqEn;				// $41D: Port D Interrupt Request Enable
+-	{ 0 },		//	Byte										___filler12;
++	0x00,		//	Byte										___filler12;
+ 	0x00,		//	Byte		portDIntEdge;				// $41F: Port D IRQ Edge Register
+ 
+ 	0x00,		//	Byte		portEDir;					// $420: Port E Direction Register
+@@ -195,51 +313,106 @@
+ 	0x80,		//	Byte		portEPullupEn;				// $422: Port E Pull-up Enable
+ 	0x80,		//	Byte		portESelect;				// $423: Port E Select Register
+ 
+-	{ 0 },		//	Byte										___filler14[4];
++	{ 0,0,0,0 },	//	Byte										___filler14[4];
+ 
+ 	0x00,		//	Byte		portFDir;					// $428: Port F Direction Register
+ 	0x00,		//	Byte		portFData;					// $429: Port F Data Register
+ 	0xFF,		//	Byte		portFPullupEn;				// $42A: Port F Pull-up Enable
+ 	0xFF,		//	Byte		portFSelect;				// $42B: Port F Select Register
+ 
+-	{ 0 },		//	Byte										___filler16[4];
++	{ 0,0,0,0 },	//	Byte										___filler16[4];
+ 
+ 	0x00,		//	Byte		portGDir;					// $430: Port G Direction Register
+ 	0x00,		//	Byte		portGData;					// $431: Port G Data Register
+ 	0xFF,		//	Byte		portGPullupEn;				// $432: Port G Pull-up Enable
+ 	0xFF,		//	Byte		portGSelect;				// $433: Port G Select Register
+ 
+-	{ 0 },		//	Byte										___filler18[4];
++	{ 0,0,0,0 },	//	Byte										___filler18[4];
+ 
+ 	0x00,		//	Byte		portJDir;					// $438: Port J Direction Register
+ 	0x00,		//	Byte		portJData;					// $439: Port J Data Register
+-	{ 0 },		//	Byte										___filler19;
++	0x00,		//	Byte										___filler19;
+ 	0x00,		//	Byte		portJSelect;				// $43B: Port J Select Register
+ 
+-	{ 0 },		//	Byte										___filler19a[4];
++	{ 0,0,0,0 },	//	Byte										___filler19a[4];
+ 
+ 	0x00,		//	Byte		portKDir;					// $440: Port K Direction Register
+ 	0x00,		//	Byte		portKData;					// $441: Port K Data Register
+ 	0x3F,		//	Byte		portKPullupEn;				// $442: Port K Pull-up Enable
+ 	0x3F,		//	Byte		portKSelect;				// $443: Port K Select Register
+ 
+-	{ 0 },		//	Byte										___filler21[4];
++	{ 0,0,0,0 },	//	Byte										___filler21[4];
+ 
+ 	0x00,		//	Byte		portMDir;					// $448: Port M Direction Register
+ 	0x00,		//	Byte		portMData;					// $449: Port M Data Register
+ 	0xFF,		//	Byte		portMPullupEn;				// $44A: Port M Pull-up Enable Register
+ 	0x02,		//	Byte		portMSelect;				// $44B: Port M Select Register
+ 
+-	{ 0 },		//	Byte										___filler22[4];
++	{ 0,0,0,0 },	//	Byte										___filler22[4];
+ 
+-	{ 0 },		//	Byte										___filler23[0x500-0x450];
++	{
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0
++	},		//	Byte										___filler23[0x500-0x450];
+ 
+ 	0x0000,		//	Word		pwmControl;					// $500: PWM Control Register
+ 	0x0000,		//	Word		pwmPeriod;					// $502: PWM Period Register
+ 	0x0000,		//	Word		pwmWidth;					// $504: PWM Width Register
+ 	0x0000,		//	Word		pwmCounter;					// $506: PWM Counter
+ 
+-	{ 0 },		//	Byte										___filler24[0x600-0x508];
++	{
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0
++	},		//	Byte										___filler24[0x600-0x508];
+ 
+ 	0x0000,		//	Word		tmr1Control;				// $600: Timer 1 Control Register
+ 	0x0000,		//	Word		tmr1Prescaler;				// $602: Timer 1 Prescaler Register
+@@ -259,16 +432,112 @@
+ 	0x0000,		//	Word		wdReference;				// $61A: Watchdog Reference Register
+ 	0x0000,		//	Word		wdCounter;					// $61C: Watchdog Counter
+ 
+-	{ 0 },		//	Byte										___filler25[0x700-0x61E];
++	{ 
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0,0,0,0,0,0,0,
++	  0,0
++	},		//	Byte										___filler25[0x700-0x61E];
+ 
+ 	0x0000,		//	Word		spiSlave;					// $700: SPI Slave Register
+ 
+-	{ 0 },		//	Byte										___filler26[0x800-0x702];
++	{ 
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0
++	},		//	Byte										___filler26[0x800-0x702];
+ 
+ 	0x0000,		//	Word		spiMasterData;				// $800: SPI Master Data Register
+ 	0x0000,		//	Word		spiMasterControl;			// $802: SPI Master Control Register
+ 
+-	{ 0 },		//	Byte										___filler27[0x900-0x804];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		//	Byte										___filler27[0x900-0x804];
+ 
+ 	0x0000,		//	Word		uControl;					// $900: Uart Control Register
+ 	0x003F,		//	Word		uBaud;						// $902: Uart Baud Control Register
+@@ -276,19 +545,54 @@
+ 	0x0000,		//	Word		uTransmit;					// $906: Uart Transmit Register
+ 	0x0000,		//	Word		uMisc;						// $908: Uart Miscellaneous Register
+ 
+-	{ 0 },		//	Byte										___filler28[0xA00-0x90A];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0
++	},		//	Byte										___filler28[0xA00-0x90A];
+ 
+ 	0x00000000,	//	DWord		lcdStartAddr;				// $A00: Screen Starting Address Register
+-	{ 0 },		//	Byte										___filler29;
++	0x00,		//	Byte										___filler29;
+ 	0xFF,		//	Byte		lcdPageWidth;				// $A05: Virtual Page Width Register
+-	{ 0 },		//	Byte										___filler30[2];
++	{ 0,0 },	//	Byte										___filler30[2];
+ 	0x03FF,		//	Word		lcdScreenWidth;				// $A08: Screen Width Register
+ 	0x01FF,		//	Word		lcdScreenHeight;			// $A0A: Screen Height Register
+-	{ 0 },		//	Byte										___filler31[0xA18-0xA0C];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		//	Byte										___filler31[0xA18-0xA0C];
+ 	0x0000,		//	Word		lcdCursorXPos;				// $A18: Cursor X Position
+ 	0x0000,		//	Word		lcdCursorYPos;				// $A1A:	Cursor Y Position
+ 	0x0101,		//	Word		lcdCursorWidthHeight;		// $A1C: Cursor Width and Height
+-	{ 0 },		//	Byte										___filler32;
++	0x00,		//	Byte										___filler32;
+ 	0x7F,		//	Byte		lcdBlinkControl;			// $A1F: Blink Control Register
+ 	0x00,		//	Byte		lcdPanelControl;			// $A20: Panel Interface Control Register
+ 	0x00,		//	Byte		lcdPolarity;				// $A21: Polarity Config Register
+@@ -304,12 +608,39 @@
+ 	0x3F,		//	Byte		lcdOctetTermCount;			// $A2B: Octet Terminal Count Register
+ 	0x00,		//	Byte										___filler38;
+ 	0x00,		//	Byte		lcdPanningOffset;			// $A2D: Panning Offset Register
+-	{ 0 },		//	Byte										___filler39[3];
++	{ 0,0,0 },	//	Byte										___filler39[3];
+ 	0xB9,		//	Byte		lcdFrameRate;				// $A31: Frame Rate Control Modulation Register
+ 	0x1073,		//	Word		lcdGrayPalette;				// $A32: Gray Palette Mapping Register
+ 	0x00,		//	Byte		lcdReserved;				// $A34: Reserved
+ 
+-	{ 0 },		//	Byte										___filler40[0xB00-0xA35];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0
++	},		//	Byte										___filler40[0xB00-0xA35];
+ 
+ 	0x00000000,	//	DWord		rtcHourMinSec;				// $B00: RTC Hours, Minutes, Seconds Register
+ 	0x00000000,	//	DWord		rtcAlarm;					// $B04: RTC Alarm Register
+--- ../SrcShared/Hardware/EmRegsEZ.cpp	2002-03-29 05:11:18.000000000 -0800
++++ ../SrcShared/Hardware/EmRegsEZ.cpp	2004-01-27 00:06:45.000000000 -0800
+@@ -59,18 +59,21 @@
+ static const HwrM68EZ328Type	kInitial68EZ328RegisterValues =
+ {
+ 	0x1C,		// Byte		scr;							// $000: System Control Register
+-	{ 0 },		// Byte											___filler0[0x004-0x001];
++	{ 0,0,0 },		// Byte											___filler0[0x004-0x001];
+ 	hwrEZ328chipIDEZ,		// Byte		chipID;							// $004: Chip ID Register
+ 	hwrEZ328maskID1J83G,	// Byte		maskID;							// $005: Mask ID Register
+ 	0x00,		// Word		swID;							// $006: Software ID Register
+-	{ 0 },		// Byte											___filler1[0x100-0x008];				 
++	{
++	},		// Byte											___filler1[0x100-0x008];				 
+ 
+ 	0x0000,		// Word		csAGroupBase;					// $100: Chip Select Group A Base Register
+ 	0x0000,		// Word		csBGroupBase;					// $102: Chip Select Group B Base Register
+ 	0x0000,		// Word		csCGroupBase;					// $104: Chip Select Group C Base Register
+ 	0x0000,		// Word		csDGroupBase;					// $106: Chip Select Group D Base Register
+ 
+-	{ 0 },		// Byte											___filler6[0x110-0x108];
++	{
++	  0,0,0,0,0,0,0,0
++	},		// Byte											___filler6[0x110-0x108];
+ 
+ 	0x00E0,		// Word		csASelect;						// $110: Group A Chip Select Register
+ 	0x0000,		// Word		csBSelect;						// $112: Group B Chip Select Register
+@@ -79,47 +82,50 @@
+ 
+ 	0x0060,		// Word		emuCS;							// $118: EMU Chip Select Register
+ 
+-	{ 0 },		// Byte											___filler2[0x200-0x11A];		
++	{
++	},		// Byte											___filler2[0x200-0x11A];		
+ 
+ 	0x2430,		// Word		pllControl;						// $200: PLL Control Register
+ 	0x0123,		// Word		pllFreqSel;						// $202: PLL Frequency Select Register
+ 	0,		// !!! ---> Marked as reserved in 1.4 Word		pllTest;						// $204: PLL Test Register (do not access)
+-	{ 0 },		// Byte											___filler44;
++	0x00,		// Byte											___filler44;
+ 	0x1F,		// Byte		pwrControl;						// $207: Power Control Register
+ 
+-	{ 0 },		// Byte											___filler3[0x300-0x208];
++	{
++	},		// Byte											___filler3[0x300-0x208];
+ 
+ 	0x00,		// Byte		intVector;						// $300: Interrupt Vector Register
+-	{ 0 },		// Byte											___filler4;
++	0x00,		// Byte											___filler4;
+ 	0x0000,		// Word		intControl;						// $302: Interrupt Control Register
+ 	0x00FF,		// Word		intMaskHi;						// $304: Interrupt Mask Register/HIGH word
+ 	0xFFFF,		// Word		intMaskLo;						// $306: Interrupt Mask Register/LOW word
+-	{ 0 },		// Byte											___filler7[0x30c-0x308];
++	{ 0,0,0,0 },	// Byte											___filler7[0x30c-0x308];
+ 	0x0000,		// Word		intStatusHi;					// $30C: Interrupt Status Register/HIGH word
+ 	0x0000,		// Word		intStatusLo;					// $30E: Interrupt Status Register/LOW word
+ 	0x0000,		// Word		intPendingHi;					// $310: Interrupt Pending Register
+ 	0x0000,		// Word		intPendingLo;					// $312: Interrupt Pending Register
+ 
+-	{ 0 },		// Byte 										___filler4a[0x400-0x314];
++	{
++	},		// Byte 										___filler4a[0x400-0x314];
+ 
+ 	0x00,		// Byte		portADir;						// $400: Port A Direction Register
+ 	0x00,		// Byte		portAData;						// $401: Port A Data Register
+ 	0xFF,		// Byte		portAPullupEn;					// $402: Port A Pullup Enable (similar to Select on DB)
+-	{ 0 },		// Byte											___filler8[5];	
++	{ 0,0,0,0,0 },	// Byte											___filler8[5];	
+ 
+ 	0x00,		// Byte		portBDir;						// $408: Port B Direction Register
+ 	0x00,		// Byte		portBData;						// $409: Port B Data Register
+ 	0xFF,		// Byte		portBPullupEn;					// $40A: Port B Pullup Enable
+ 	0xFF,		// Byte		portBSelect;					// $40B: Port B Select Register	
+ 
+-	{ 0 },		// Byte											___filler9[4];
++	{ 0,0,0,0 },	// Byte											___filler9[4];
+ 
+ 	0x00,		// Byte		portCDir;						// $410: Port C Direction Register
+ 	0x00,		// Byte		portCData;						// $411: Port C Data Register
+ 	0xFF,		// Byte		portCPulldnEn;					// $412: Port C Pulldown Enable
+ 	0xFF,		// Byte		portCSelect;					// $413: Port C Select Register	
+ 
+-	{ 0 },		// Byte											___filler10[4];
++	{ 0,0,0,0 },	// Byte											___filler10[4];
+ 
+ 	0x00,		// Byte		portDDir;						// $418: Port D Direction Register
+ 	0x00,		// Byte		portDData;						// $419: Port D Data Register
+@@ -135,21 +141,48 @@
+ 	0xFF,		// Byte		portEPullupEn;					// $422: Port E Pull-up Enable
+ 	0xFF,		// Byte		portESelect;					// $423: Port E Select Register
+ 
+-	{ 0 },		// Byte											___filler14[4];
++	{ 0,0,0,0 },	// Byte											___filler14[4];
+ 
+ 	0x00,		// Byte		portFDir;						// $428: Port F Direction Register
+ 	0x00,		// Byte		portFData;						// $429: Port F Data Register
+ 	0xFF,		// Byte		portFPullupdnEn;				// $42A: Port F Pull-up/down Enable
+ 	0x00,		// Byte		portFSelect;					// $42B: Port F Select Register
+ 
+-	{ 0 },		// Byte											___filler16[4];
++	{ 0,0,0,0 },	// Byte											___filler16[4];
+ 
+ 	0x00,		// Byte		portGDir;						// $430: Port G Direction Register
+ 	0x00,		// Byte		portGData;						// $431: Port G Data Register
+ 	0x3D,		// Byte		portGPullupEn;					// $432: Port G Pull-up Enable
+ 	0x08,		// Byte		portGSelect;					// $433: Port G Select Register
+ 
+-	{ 0 },		// Byte											___filler2000[0x500-0x434];
++	{ 
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// Byte											___filler2000[0x500-0x434];
+ 
+ 	0x0020,		// Word		pwmControl;						// $500: PWM Control Register
+ 	0x00,		// Byte		pwmSampleHi;					// $502: PWM Sample - high byte
+@@ -157,7 +190,40 @@
+ 	0xFE,		// Byte		pwmPeriod;						// $504: PWM Period
+ 	0x00,		// Byte		pwmCounter;						// $505: PWM Counter
+ 	
+-	{ 0 },		// Byte											___filler24[0x600-0x506];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// Byte											___filler24[0x600-0x506];
+ 
+ 	0x0000,		// Word		tmr1Control;					// $600: Timer 1 Control Register
+ 	0x0000,		// Word		tmr1Prescaler;					// $602: Timer 1 Prescaler Register
+@@ -166,12 +232,107 @@
+ 	0x0000,		// Word		tmr1Counter;					// $608: Timer 1 Counter Register
+ 	0x0000,		// Word		tmr1Status;						// $60A: Timer 1 Status Register
+ 
+-	{ 0 },		// Byte											___filler25[0x800-0x61E];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// Byte											___filler25[0x800-0x61E];
+ 
+ 	0x0000,		// Word		spiMasterData;					// $800: SPI Master Data Register
+ 	0x0000,		// Word		spiMasterControl;				// $802: SPI Master Control Register
+ 
+-	{ 0 },		// Byte											___filler27[0x900-0x804];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// Byte											___filler27[0x900-0x804];
+ 
+ 	0x0000,		// Word		uControl;						// $900: Uart Control Register
+ 	0x003F,		// Word		uBaud;							// $902: Uart Baud Control Register
+@@ -180,62 +341,188 @@
+ 	0x0000,		// Word		uMisc;							// $908: Uart Miscellaneous Register
+ 	0x0000,		// Word		uNonIntPresc;					// $90A: Uart IRDA Non-Integer Prescaler
+ 
+-	{ 0 },		// Byte											___filler28[0xA00-0x90C];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// Byte											___filler28[0xA00-0x90C];
+ 
+ 	0x00000000,	// DWord	lcdStartAddr;					// $A00: Screen Starting Address Register
+-	{ 0 },		// Byte											___filler29;
++	0x00,		// Byte											___filler29;
+ 	0xFF,		// Byte		lcdPageWidth;					// $A05: Virtual Page Width Register
+-	{ 0 },		// Byte											___filler30[2];
++	{ 0,0 },		// Byte											___filler30[2];
+ 	0x03FF,		// Word		lcdScreenWidth;					// $A08: Screen Width Register
+ 	0x01FF,		// Word		lcdScreenHeight;				// $A0A: Screen Height Register
+-	{ 0 },		// Byte											___filler31[0xA18-0xA0C];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// Byte											___filler31[0xA18-0xA0C];
+ 	0x0000,		// Word		lcdCursorXPos;					// $A18: Cursor X Position
+ 	0x0000,		// Word		lcdCursorYPos;					// $A1A:	Cursor Y Position
+ 	0x0101,		// Word		lcdCursorWidthHeight;			// $A1C: Cursor Width and Height
+-	{ 0 },		// Byte											___filler32;
++	0x00,		// Byte											___filler32;
+ 	0x7F,		// Byte		lcdBlinkControl;				// $A1F: Blink Control Register
+ 	0x00,		// Byte		lcdPanelControl;				// $A20: Panel Interface Control Register
+ 	0x00,		// Byte		lcdPolarity;					// $A21: Polarity Config Register
+-	{ 0 },		// Byte											___filler33;						
++	0x00,		// Byte											___filler33;						
+ 	0x00,		// Byte		lcdACDRate;						// $A23: ACD (M) Rate Control Register
+-	{ 0 },		// Byte											___filler34;
++	0x00,		// Byte											___filler34;
+ 	0x00,		// Byte		lcdPixelClock;					// $A25: Pixel Clock Divider Register
+-	{ 0 },		// Byte											___filler35;
++	0x00,		// Byte											___filler35;
+ 	0x40,		// Byte		lcdClockControl;				// $A27: Clocking Control Register
+-	{ 0 },		// Byte											___filler36;
++	0x00,		// Byte											___filler36;
+ 	0xFF,		// Byte		lcdRefreshRateAdj;				// $A29: Refresh Rate Adjustment Register
+-	{ 0 },		// Byte											___filler2003[0xA2D-0xA2A];
++	{ 0,0,0	},	// Byte											___filler2003[0xA2D-0xA2A];
+ 	0x00,		// Byte		lcdPanningOffset;				// $A2D: Panning Offset Register
+ 
+-	{ 0 },		// Byte											___filler37[0xA31-0xA2E];
++	{ 0,0,0	},	// Byte											___filler37[0xA31-0xA2E];
+ 
+ 	0xB9,		// Byte		lcdFrameRate;					// $A31: Frame Rate Control Modulation Register
+-	{ 0 },		// Byte											___filler2004;
++	0x00,		// Byte											___filler2004;
+ 	0x84,		// Byte		lcdGrayPalette;					// $A33: Gray Palette Mapping Register
+ 	0x00,		// Byte		lcdReserved;					// $A34: Reserved
+-	{ 0 },		// Byte											___filler2005;
++	0x00,		// Byte											___filler2005;
+ 	0x0000,		// Word		lcdContrastControlPWM;			// $A36: Contrast Control
+ 
+-	{ 0 },		// Byte											___filler40[0xB00-0xA38];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++	},		// Byte											___filler40[0xB00-0xA38];
+ 
+ 	0x00000000,	// DWord	rtcHourMinSec;					// $B00: RTC Hours, Minutes, Seconds Register
+ 	0x00000000,	// DWord	rtcAlarm;						// $B04: RTC Alarm Register
+-	{ 0 },		// Byte											___filler2001[0xB0A-0xB08];
++	{ 0,0 },	// Byte											___filler2001[0xB0A-0xB08];
+ 	0x0001,		// Word		rtcWatchDog;					// $B0A: RTC Watchdog Timer
+ 	0x00,		// Word		rtcControl;						// $B0C: RTC Control Register
+ 	0x00,		// Word		rtcIntStatus;					// $B0E: RTC Interrupt Status Register
+ 	0x00,		// Word		rtcIntEnable;					// $B10: RTC Interrupt Enable Register
+ 	0x00,		// Word		stopWatch;						// $B12: Stopwatch Minutes
+-	{ 0 },		// Byte											___filler2002[0xB1A-0xB14];
++	{
++          0,0,0,0,0,0
++	},		// Byte											___filler2002[0xB1A-0xB14];
+ 	0x0000,		// Word		rtcDay;							// $B1A: RTC Day
+ 	0x0000,		// Word		rtcDayAlarm;					// $B1C: RTC Day Alarm
+ 
+-	{ 0 },		// Byte											___filler41[0xC00-0xB1E];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// Byte											___filler41[0xC00-0xB1E];
+ 
+ 	0x0000,		// Word		dramConfig;						// $C00: DRAM Memory Config Register
+ 	0x0000,		// Word		dramControl;					// $C02: DRAM Control Register
+ 
+-	{ 0 },		// Byte											___filler42[0xD00-0xC04];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// Byte											___filler42[0xD00-0xC04];
+ 
+ 	0x00000000,	// DWord	emuAddrCompare;					// $D00: Emulation Address Compare Register   
+ 	0x00000000,	// DWord	emuAddrMask;					// $D04: Emulation Address Mask Register
+--- ../SrcShared/Hardware/EmRegsVZ.cpp	2002-03-29 05:11:19.000000000 -0800
++++ ../SrcShared/Hardware/EmRegsVZ.cpp	2004-01-27 00:06:45.000000000 -0800
+@@ -74,7 +74,7 @@
+ {
+ 	0x1C,		// UInt8	scr;						// $000: System Control Register
+ 
+-	{ 0 },		// UInt8									___filler0[0x003-0x001];
++	{ 0,0 },	// UInt8									___filler0[0x003-0x001];
+ 
+ 	0x00,		// UInt8	pcr;						// $003: Peripheral Control Register
+ 	0x56,		// UInt8	chipID;						// $004: Chip ID Register
+@@ -82,7 +82,39 @@
+ 	0x0000,		// UInt16	swID;						// $006: Software ID Register
+ 	0x1FFF,		// UInt16	ioDriveControl;				// $008: I/O Drive Control Register
+ 
+-	{ 0 },		// UInt8									___filler1[0x100-0x00A];				 
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0
++	},		// UInt8									___filler1[0x100-0x00A];				 
+ 
+ 	0x0000,		// UInt16	csAGroupBase;				// $100: Chip Select Group A Base Register
+ 	0x0000,		// UInt16	csBGroupBase;				// $102: Chip Select Group B Base Register
+@@ -94,7 +126,7 @@
+ 	0x0000,		// UInt16	csControl1;					// $10A: Chip Select Control Register
+ 	0x0000,		// UInt16	csControl2;					// $10C: Chip Select Control Register
+ 
+-	{ 0 },		// UInt8									___filler2[0x110-0x10c];
++	{ 0,0 },	// UInt8									___filler2[0x110-0x10E];
+ 
+ 	0x00B0,		// UInt16	csASelect;					// $110: Group A Chip Select Register
+ 	0x0000,		// UInt16	csBSelect;					// $112: Group B Chip Select Register
+@@ -103,54 +135,148 @@
+ 
+ 	0x0060,		// UInt16	emuCS;						// $118: EMU Chip Select Register
+ 
+-	{ 0 },		// UInt8									___filler3[0x200-0x11A];		
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0
++	},		// UInt8									___filler3[0x150-0x11A];		
+ 
+ 	0x0000,		// UInt16	csControl3;					// $150: Chip Select Control Register
+ 
+-	{ 0 },		// UInt8									___filler3[0x200-0x11A];		
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0
++	},		// UInt8									___filler3a[0x200-0x152];		
+ 
+ 	0x24B3,		// UInt16	pllControl;					// $200: PLL Control Register
+ 	0x0123,		// UInt16	pllFreqSel;					// $202: CGM Frequency Select Register
+ 
+-	{ 0 },		// UInt8									___filler4[0x207-0x204];
++	{ 0,0,0 },	// UInt8									___filler4[0x207-0x204];
+ 
+ 	0x1F,		// UInt8	pwrControl;					// $207: Power Control Register
+ 
+-	{ 0 },		// UInt8									___filler5[0x300-0x208];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0
++	},		// UInt8									___filler5[0x300-0x208];
+ 
+ 	0x00,		// UInt8	intVector;					// $300: Interrupt Vector Register
+ 	0x00,		// UInt8									___filler6;
+ 	0x0000,		// UInt16	intControl;					// $302: Interrupt Control Register
+ 	0x00FF,		// UInt16	intMaskHi;					// $304: Interrupt Mask Register/HIGH word
+ 	0xFFFF,		// UInt16	intMaskLo;					// $306: Interrupt Mask Register/LOW word
+-	{ 0 },		// UInt8									___filler7[0x30c-0x308];
++	{ 0,0,0,0 },	// UInt8									___filler7[0x30c-0x308];
+ 	0x0000,		// UInt16	intStatusHi;				// $30C: Interrupt Status Register/HIGH word
+ 	0x0000,		// UInt16	intStatusLo;				// $30E: Interrupt Status Register/LOW word
+ 	0x0000,		// UInt16	intPendingHi;				// $310: Interrupt Pending Register/HIGH word
+ 	0x0000,		// UInt16	intPendingLo;				// $312: Interrupt Pending Register/LOW word
+ 	0x6533,		// UInt16	intLevelControl;			// $314: Interrupt Level Control Register
+ 
+-	{ 0 },		// UInt8 									___filler4a[0x400-0x316];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// UInt8 									___filler4a[0x400-0x316];
+ 
+ 	0x00,		// UInt8	portADir;					// $400: Port A Direction Register
+ 	0x00,		// UInt8	portAData;					// $401: Port A Data Register
+ 	0xFF,		// UInt8	portAPullupEn;				// $402: Port A Pullup Enable
+ 
+-	{ 0 },		// UInt8									___filler8[5];	
++	{ 0,0,0,0,0 },	// UInt8									___filler8[5];	
+ 
+ 	0x00,		// UInt8	portBDir;					// $408: Port B Direction Register
+ 	0x00,		// UInt8	portBData;					// $409: Port B Data Register
+ 	0xFF,		// UInt8	portBPullupEn;				// $40A: Port B Pullup Enable
+ 	0xFF,		// UInt8	portBSelect;				// $40B: Port B Select Register	
+ 
+-	{ 0 },		// UInt8									___filler9[4];
++	{ 0,0,0,0 },	// UInt8									___filler9[4];
+ 
+ 	0x00,		// UInt8	portCDir;					// $410: Port C Direction Register
+ 	0x00,		// UInt8	portCData;					// $411: Port C Data Register
+ 	0xFF,		// UInt8	portCPulldnEn;				// $412: Port C Pulldown Enable
+ 	0xFF,		// UInt8	portCSelect;				// $413: Port C Select Register	
+ 
+-	{ 0 },		// UInt8									___filler10[4];
++	{ 0,0,0,0 },	// UInt8									___filler10[4];
+ 
+ 	0x00,		// UInt8	portDDir;					// $418: Port D Direction Register
+ 	0x00,		// UInt8	portDData;					// $419: Port D Data Register
+@@ -166,42 +292,66 @@
+ 	0xFF,		// UInt8	portEPullupEn;				// $422: Port E Pull-up Enable
+ 	0xFF,		// UInt8	portESelect;				// $423: Port E Select Register
+ 
+-	{ 0 },		// UInt8									___filler14[4];
++	{ 0,0,0,0 },	// UInt8									___filler14[4];
+ 
+ 	0x00,		// UInt8	portFDir;					// $428: Port F Direction Register
+ 	0x00,		// UInt8	portFData;					// $429: Port F Data Register
+ 	0xFF,		// UInt8	portFPullupdnEn;			// $42A: Port F Pull-up/down Enable
+ 	0x8F,		// UInt8	portFSelect;				// $42B: Port F Select Register
+ 
+-	{ 0 },		// UInt8									___filler16[4];
++	{ 0,0,0,0 },	// UInt8									___filler16[4];
+ 
+ 	0x00,		// UInt8	portGDir;					// $430: Port G Direction Register
+ 	0x00,		// UInt8	portGData;					// $431: Port G Data Register
+ 	0x3D,		// UInt8	portGPullupEn;				// $432: Port G Pull-up Enable
+ 	0x08,		// UInt8	portGSelect;				// $433: Port G Select Register
+ 
+-	{ 0 },		// UInt8									___filler17[0x438-0x434];
++	{ 0,0,0,0 },	// UInt8									___filler17[0x438-0x434];
+ 
+ 	0x00,		// UInt8	portJDir;					// $438: Port J Direction Register
+ 	0x00,		// UInt8	portJData;					// $439: Port J Data Register
+ 	0xFF,		// UInt8	portJPullupEn;				// $43A: Port J Pull-up Enable
+ 	0xEF,		// UInt8	portJSelect;				// $43B: Port J Select Register
+ 
+-	{ 0 },		// UInt8									___filler18[0x440-0x43C];
++	{ 0,0,0,0 },		// UInt8									___filler18[0x440-0x43C];
+ 
+ 	0x00,		// UInt8	portKDir;					// $440: Port K Direction Register
+ 	0x00,		// UInt8	portKData;					// $441: Port K Data Register
+ 	0xFF,		// UInt8	portKPullupdnEn;			// $442: Port K Pull-up/down Enable
+ 	0xFF,		// UInt8	portKSelect;				// $443: Port K Select Register
+ 
+-	{ 0 },		// UInt8									___filler19[0x448-0x444];
++	{ 0,0,0,0 },	// UInt8									___filler19[0x448-0x444];
+ 
+ 	0x00,		// UInt8	portMDir;					// $448: Port M Direction Register
+ 	0x00,		// UInt8	portMData;					// $449: Port M Data Register
+ 	0x3F,		// UInt8	portMPullupdnEn;			// $44A: Port M Pull-up/down Enable
+ 	0x3F,		// UInt8	portMSelect;				// $44B: Port M Select Register
+ 
+-	{ 0 },		// UInt8									___filler20[0x500-0x44C];
++	{  
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},	// UInt8									___filler20[0x500-0x44C];
+ 
+ 	0x0020,		// UInt16	pwmControl;					// $500: PWM 1 Control Register  (PWM 1 is the same as the single PWM in EZ)
+ 	0x00,		// UInt8	pwmSampleHi;    			// $502: PWM 1 Sample - high byte
+@@ -209,14 +359,47 @@
+ 	0xFE,		// UInt8	pwmPeriod;					// $504: PWM 1 Period
+ 	0x00,		// UInt8	pwmCounter;					// $505: PWM 1 Counter
+ 
+-	{ 0 },		// UInt8									___filler22[0x510-0x506];
++	{ 
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// UInt8									___filler22[0x510-0x506];
+ 
+ 	0x0000,		// UInt16	pwm2Control;				// $510: PWM 2 Control Register
+ 	0x0000,		// UInt16	pwm2Period;					// $512: PWM 2 Period
+ 	0x0000,		// UInt16	pwm2Width;					// $514: PWM 2 Width
+ 	0x0000,		// UInt16	pwm2Counter;				// $516: PWM 2 Counter
+ 
+-	{ 0 },		// UInt8									___filler23[0x600-0x518];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0
++	},		// UInt8									___filler23[0x600-0x518];
+ 
+ 	0x0000,		// UInt16	tmr1Control;				// $600: Timer 1 Control Register
+ 	0x0000,		// UInt16	tmr1Prescaler;				// $602: Timer 1 Prescaler Register
+@@ -225,7 +408,7 @@
+ 	0x0000,		// UInt16	tmr1Counter;				// $608: Timer 1 Counter Register
+ 	0x0000,		// UInt16	tmr1Status;					// $60A: Timer 1 Status Register
+ 
+-	{ 0 },		// UInt8									___filler24[0x610-0x60C];
++	{ 0,0,0,0 },	// UInt8									___filler24[0x610-0x60C];
+ 
+ 	0x0000,		// UInt16	tmr2Control;				// $610: Timer 2 Control Register
+ 	0x0000,		// UInt16	tmr2Prescaler;				// $612: Timer 2 Prescaler Register
+@@ -234,7 +417,37 @@
+ 	0x0000,		// UInt16	tmr2Counter;				// $618: Timer 2 Counter Register
+ 	0x0000,		// UInt16	tmr2Status;					// $61A: Timer 2 Status Register
+ 
+-	{ 0 },		// UInt8									___filler25[0x700-0x61C];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// UInt8									___filler25[0x700-0x61C];
+ 
+ 	0x0000,		// UInt16	spiRxD;						// $700: SPI Unit 1 Receive Data Register
+ 	0x0000,		// UInt16	spiTxD;						// $702: SPI Unit 1 Transmit Data Register
+@@ -243,12 +456,77 @@
+ 	0x0000,		// UInt16	spiTest;					// $708: SPI Unit 1 Test Register
+ 	0x0000,		// UInt16	spiSpc;						// $70A: SPI Unit 1 Sample period counter register
+ 
+-	{ 0 },		// UInt8									___filler26[0x800-0x706];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// UInt8									___filler26[0x800-0x70C];
+ 
+ 	0x0000,		// UInt16	spiMasterData;				// $800: SPI Unit 2 Data Register (SPI 2 is the same as the single SPI Master in EZ)
+ 	0x0000,		// UInt16	spiMasterControl;			// $802: SPI Unit 2 Control/Status Register
+ 
+-	{ 0 },		// UInt8									___filler27[0x900-0x804];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// UInt8									___filler27[0x900-0x804];
+ 
+ 	0x0000,		// UInt16	uControl;					// $900: Uart 1 Status/Control Register (Uart 1 is the same as the single Uart in EZ)
+ 	0x003F,		// UInt16	uBaud;						// $902: Uart 1 Baud Control Register
+@@ -257,7 +535,7 @@
+ 	0x0000,		// UInt16	uMisc;						// $908: Uart 1 Miscellaneous Register
+ 	0x0000,		// UInt16	uNonIntPresc;				// $90A: Uart 1 Non-Integer Prescaler
+ 
+-	{ 0 },		// UInt8									___filler28[0x910-0x90C];
++	{ 0,0,0,0 },	// UInt8									___filler28[0x910-0x90C];
+ 
+ 	0x0000,		// UInt16	u2Control;					// $910: Uart 2 Status/Control Register
+ 	0x003F,		// UInt16	u2Baud;						// $912: Uart 2 Baud Control Register
+@@ -267,67 +545,190 @@
+ 	0x0000,		// UInt16	u2NonIntPresc;				// $91A: Uart 2 Non-Integer Prescaler
+ 	0x0000,		// UInt16	u2FIFOHMark;				// $91C: Uart 2 Half Mark FIFO Register
+ 
+-	{ 0 },		// UInt8									___filler28a[0xA00-0x91E];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// UInt8									___filler28a[0xA00-0x91E];
+ 
+ 	0x00000000,	// UInt32	lcdStartAddr;				// $A00: Screen Starting Address Register
+-	{ 0 },		// UInt8									___filler29;
++	0x00,		// UInt8									___filler29;
+ 	0xFF,		// UInt8	lcdPageWidth;				// $A05: Virtual Page Width Register
+-	{ 0 },		// UInt8									___filler30[2];
++	{ 0,0 },	// UInt8									___filler30[2];
+ 	0x03F0,		// UInt16	lcdScreenWidth;				// $A08: Screen Width Register
+ 	0x01FF,		// UInt16	lcdScreenHeight;			// $A0A: Screen Height Register
+-	{ 0 },		// UInt8									___filler31[0xA18-0xA0C];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0
++	},		// UInt8									___filler31[0xA18-0xA0C];
+ 	0x0000,		// UInt16	lcdCursorXPos;				// $A18: Cursor X Position
+ 	0x0000,		// UInt16	lcdCursorYPos;				// $A1A: Cursor Y Position
+ 	0x0101,		// UInt16	lcdCursorWidthHeight;		// $A1C: Cursor Width and Height
+-	{ 0 },		// UInt8									___filler32;
++	0x00,		// UInt8									___filler32;
+ 	0x7F,		// UInt8	lcdBlinkControl;			// $A1F: Blink Control Register
+ 	0x00,		// UInt8	lcdPanelControl;			// $A20: Panel Interface Configuration Register
+ 	0x00,		// UInt8	lcdPolarity;				// $A21: Polarity Config Register
+-	{ 0 },		// UInt8									___filler33;						
++	0x00,		// UInt8									___filler33;						
+ 	0x00,		// UInt8	lcdACDRate;					// $A23: ACD (M) Rate Control Register
+-	{ 0 },		// UInt8									___filler34;
++	0x00,		// UInt8									___filler34;
+ 	0x00,		// UInt8	lcdPixelClock;				// $A25: Pixel Clock Divider Register
+-	{ 0 },		// UInt8									___filler35;
++	0x00,		// UInt8									___filler35;
+ 	0x00,		// UInt8	lcdClockControl;			// $A27: Clocking Control Register
+ 	0x00FF,		// UInt16	lcdRefreshRateAdj;			// $A28: Refresh Rate Adjustment Register
+-	{ 0 },		// UInt8									___filler37;
++	0x00,		// UInt8									___filler37;
+ 	0x00,		// UInt8	lcdReserved1;				// $A2B: Reserved
+-	{ 0 },		// UInt8									___filler38;
++	0x00,		// UInt8									___filler38;
+ 	0x00,		// UInt8    lcdPanningOffset;			// $A2D: Panning Offset Register
+ 
+-	{ 0 },		// UInt8									___filler39[0xA31-0xA2E];
++	{ 0,0,0	},	// UInt8									___filler39[0xA31-0xA2E];
+ 
+ 	0x00,		// UInt8	lcdFrameRate;				// $A31: Frame Rate Control Modulation Register
+-	{ 0 },		// UInt8									___filler2004;
++	0x00,		// UInt8									___filler2004;
+ 	0x84,		// UInt8	lcdGrayPalette;				// $A33: Gray Palette Mapping Register
+ 	0x00,		// UInt8	lcdReserved2;				// $A34: Reserved
+-	{ 0 },		// UInt8									___filler2005;
++	0x00,		// UInt8									___filler2005;
+ 	0x0000,		// UInt16	lcdContrastControlPWM;		// $A36: Contrast Control
+ 	0x00,		// UInt8	lcdRefreshModeControl;		// $A38: Refresh Mode Control Register
+ 	0x62,		// UInt8	lcdDMAControl;				// $A39: DMA Control Register
+ 
+-	{ 0 },		// UInt8									___filler40[0xB00-0xA3a];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0
++	},		// UInt8									___filler40[0xB00-0xA3a];
+ 
+ 	0x00000000,	// UInt32	rtcHourMinSec;				// $B00: RTC Hours, Minutes, Seconds Register
+ 	0x00000000,	// UInt32	rtcAlarm;					// $B04: RTC Alarm Register
+-	{ 0 },		// UInt8									___filler2001[0xB0A-0xB08];
++	{ 0,0 },	// UInt8									___filler2001[0xB0A-0xB08];
+ 	0x0001,		// UInt16   rtcWatchDog;				// $B0A: RTC Watchdog Timer
+ 	0x0080,		// UInt16	rtcControl;					// $B0C: RTC Control Register
+ 	0x0000,		// UInt16	rtcIntStatus;				// $B0E: RTC Interrupt Status Register
+ 	0x0000,		// UInt16	rtcIntEnable;				// $B10: RTC Interrupt Enable Register
+ 	0x003F,		// UInt16	stopWatch;					// $B12: Stopwatch Minutes
+-	{ 0 },		// UInt8									___filler2002[0xB1A-0xB14];
++	{
++          0,0,0,0,0,0
++	},		// UInt8									___filler2002[0xB1A-0xB14];
+ 	0x0000,		// UInt16	rtcDay;						// $B1A: RTC Day
+ 	0x0000,		// UInt16   rtcDayAlarm;				// $B1C: RTC Day Alarm
+ 
+-	{ 0 },		// UInt8									___filler41[0xC00-0xB1E];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0
++	},		// UInt8									___filler41[0xC00-0xB1E];
+ 
+ 	0x0000,		// UInt16	dramConfig;					// $C00: DRAM Memory Config Register
+ 	0x003C,		// UInt16   dramControl;				// $C02: DRAM Control Register
+ 	0x0000,		// UInt16   sdramControl;				// $C04: SDRAM Control Register
+ 	0x0000,		// UInt16   sdramPwDn;              	// $C06: SDRAM Power Down Register
+ 
+-	{ 0 },		// UInt8									___filler42[0xD00-0xC08];
++	{
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0,
++          0,0,0,0,0,0,0,0
++	},		// UInt8									___filler42[0xD00-0xC08];
+ 
+ 	0x00000000,	// UInt32	emuAddrCompare;				// $D00: Emulation Address Compare Register   
+ 	0x00000000,	// UInt32	emuAddrMask;				// $D04: Emulation Address Mask Register
