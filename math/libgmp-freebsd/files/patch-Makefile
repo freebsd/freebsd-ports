@@ -1,10 +1,15 @@
 
 $FreeBSD$
 
---- Makefile	2001/08/28 16:21:28	1.1
-+++ Makefile	2001/08/28 16:21:41
-@@ -145,7 +145,7 @@
+--- Makefile	Tue Aug 28 19:01:54 2001
++++ Makefile	Mon Aug  4 15:52:56 2003
+@@ -143,9 +143,12 @@
+ 		${.OBJDIR}/mpf \
+ 		${.OBJDIR}/mpq
  
++.c.o:
++	${CC} ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
++
  beforeinstall:
  	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
 -		${GMPDIR}/gmp.h ${DESTDIR}/usr/include
