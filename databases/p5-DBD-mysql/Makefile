@@ -16,6 +16,7 @@ MAINTAINER=	jedgar@fxp.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
 CONFIGURE_ARGS=	PREFIX=${PREFIX} --noprompt --mysql-install --nomsql-install
