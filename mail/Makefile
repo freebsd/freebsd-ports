@@ -181,7 +181,6 @@
     SUBDIR += mmc
     SUBDIR += mmr
     SUBDIR += movemail
-    SUBDIR += mozilla-thunderbird
     SUBDIR += mreport
     SUBDIR += msgconvert
     SUBDIR += msmtp
@@ -376,6 +375,7 @@
     SUBDIR += sympa-elixus
     SUBDIR += teapop
     SUBDIR += teapop-devel
+    SUBDIR += thunderbird
     SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda
