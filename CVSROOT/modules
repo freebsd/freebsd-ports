@@ -5647,6 +5647,7 @@ p5-HTML-Summary	ports/www/p5-HTML-Summary
 p5-HTML-Table	ports/www/p5-HTML-Table
 p5-HTML-TableExtract	ports/www/p5-HTML-TableExtract
 p5-HTML-TableLayout	ports/www/p5-HTML-TableLayout
+p5-HTML-TableTiler	ports/www/p5-HTML-TableTiler
 p5-HTML-Tagset	ports/www/p5-HTML-Tagset
 p5-HTML-Template	ports/www/p5-HTML-Template
 p5-HTML-Template-Associate	ports/www/p5-HTML-Template-Associate
