@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	convert
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
