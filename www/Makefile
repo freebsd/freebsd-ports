@@ -90,6 +90,7 @@
     SUBDIR += mhonarc
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
+    SUBDIR += mod_fastcgi
     SUBDIR += mod_perl
     SUBDIR += mod_php3
     SUBDIR += mod_php4
