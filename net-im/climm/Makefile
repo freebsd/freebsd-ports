@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrew@chg.ru
+MAINTAINER=	ports@freebsd.org
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
