@@ -7,7 +7,7 @@
 
 PORTNAME=	mozart
 PORTVERSION=	1.2.4.20020829
-CATEGORIES=	lang tk83
+CATEGORIES=	lang tk83 parallel
 MASTER_SITES=	ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
 		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
 DISTFILES=	${DISTNAME}-src.tar.gz ${MOZART_DOCS}

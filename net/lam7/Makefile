@@ -7,7 +7,7 @@
 
 PORTNAME=      	lam
 PORTVERSION=   	6.5.6
-CATEGORIES=    	net
+CATEGORIES=    	net parallel
 MASTER_SITES=  	http://www.lam-mpi.org/download/files/
 
 MAINTAINER=    	bremner@unb.ca

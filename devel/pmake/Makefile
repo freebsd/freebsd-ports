@@ -7,7 +7,7 @@
 
 PORTNAME=	pmake
 PORTVERSION=	2.1.33
-CATEGORIES=	devel
+CATEGORIES=	devel parallel
 MASTER_SITES=	ftp://ftp.icsi.berkeley.edu/pub/ai/stolcke/software/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	steve

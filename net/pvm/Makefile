@@ -7,7 +7,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.4
-CATEGORIES=	net
+CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm/pvm3/
 DISTNAME=	pvm${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	pvmpov
 PORTVERSION=	3.1e.2
-CATEGORIES=	graphics
+CATEGORIES=	graphics parallel
 MASTER_SITES=	http://www.luga.de/~flierl/pvmpov/
 DISTNAME=	${PORTNAME}-3.1e2
 EXTRACT_SUFX=	.tgz

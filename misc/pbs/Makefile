@@ -7,7 +7,7 @@
 
 PORTNAME=	pbs
 PORTVERSION=	2.2p11
-CATEGORIES=	misc
+CATEGORIES=	misc parallel
 MASTER_SITES=	http://vaccine.sourceforge.net/
 DISTNAME=	pbs_v2.2p11
 

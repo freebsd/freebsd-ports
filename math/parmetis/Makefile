@@ -7,7 +7,7 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	3.0
-CATEGORIES=	math
+CATEGORIES=	math parallel
 MASTER_SITES=	http://www-users.cs.umn.edu/~karypis/metis/parmetis/files/
 
 MAINTAINER=	eoin@maths.tcd.ie
