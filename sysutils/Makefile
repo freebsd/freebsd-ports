@@ -166,6 +166,7 @@
     SUBDIR += gksu
     SUBDIR += glload
     SUBDIR += gnome-pkgview
+    SUBDIR += gnome-schedule
     SUBDIR += gnomecontrolcenter
     SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind

@@ -1,0 +1,46 @@
+# New ports collection makefile for:	gnome-schedule
+# Date created:		2004-11-06
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnome-schedule
+PORTVERSION=	0.1.0
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME GUI for configuring a users crontab
+
+USE_PYTHON=	yes
+USE_GNOME=	gnomeprefix pygnome2
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+DATADIR=	${PREFIX}/share/gnome
+
+PORTDOCS=	addingandediting.html index.html
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if defined(NOPORTDOCS)
+.for f in ${PORTDOCS}
+	@${REINPLACE_CMD} -e 's|${f}||' ${WRKSRC}/doc/Makefile.in
+.endfor
+.else
+	@${REINPLACE_CMD} -e 's|gnome-schedule-$$(VERSION)|gnome-schedule|' \
+		${WRKSRC}/doc/Makefile.in
+.endif
+	@${REINPLACE_CMD} -e 's|/usr/share/icons|${X11BASE}/share/icons|; \
+		s|@prefix@/share|${DATADIR}|; \
+		s|/usr/local/share/|${DATADIR}|; \
+		s|/usr/share/|${DATADIR}|; \
+		s|/usr/bin/gnome-help|${X11BASE}/bin/gnome-help|; \
+		s|$$(prefix)/share/|$$(datadir)/|' \
+			${WRKSRC}/src/*.* ${WRKSRC}/Makefile.in \
+			${WRKSRC}/pixmaps/Makefile.in
+
+.include <bsd.port.post.mk>
