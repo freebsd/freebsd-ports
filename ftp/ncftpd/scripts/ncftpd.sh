@@ -1,8 +1,15 @@
 #!/bin/sh
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
+	case $(dirname $0) in
+	.)
+	    PREFIX=$(pwd)
+	    ;;
+	*)
+	    echo "$0: Cannot determine the PREFIX" >&2
+	    exit 1
+	    ;;
+esac
 fi
 
 args="${PREFIX}/etc/ncftpd/general.cf ${PREFIX}/etc/ncftpd/domain.cf"
