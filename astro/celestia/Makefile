@@ -23,8 +23,8 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
-USE_GNOMELIBS=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir="${LOCALBASE}/include" \
