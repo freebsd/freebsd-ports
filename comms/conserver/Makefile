@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id: Makefile,v 1.2 1997/11/22 15:25:01 peter Exp $
+# $Id: Makefile,v 1.3 1997/11/22 15:37:11 peter Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	peter@FreeBSD.org
+
+BROKEN=		patch
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
