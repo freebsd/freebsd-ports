@@ -14,6 +14,8 @@ MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	FreeBSD's next-generation sysinstall/package management tool
 
 BROKEN=		"fails to compile due to recent changes elsewhere"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-22
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		tvision.0:${PORTSDIR}/devel/tvision
