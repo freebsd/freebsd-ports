@@ -18,6 +18,11 @@ COMMENT=	GTK+ binding for Erlang/OTP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+.if defined(PACKAGE_BUILDING)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
+.endif
+
+BROKEN=		Missing dependency
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -35,8 +40,8 @@ CONFIGURE_ARGS=	--without-gnome --with-gtk=1.2
 USE_GNOME=	gtk12 gdkpixbuf
 .endif
 
-.if !defined(DISPLAY)
-IGNORE=		"must be built from within the X11 environment"
+.if !defined(DISPLAY) && !defined(PACKAGE_BUILDING)
+IGNORE=		must be built from within the X11 environment
 .endif
 
 pre-everything::
