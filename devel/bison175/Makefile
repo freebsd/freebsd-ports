@@ -19,7 +19,7 @@ LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=			bison.1
 
