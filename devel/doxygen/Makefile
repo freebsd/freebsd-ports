@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.14
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -64,6 +64,9 @@ pre-configure:
 		s:%%CFLAGS%%:${CFLAGS}:g ; \
 		s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
 
+post-build:
+	cd ${BUILD_WRKSRC}/examples; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin
@@ -72,7 +75,7 @@ do-install:
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/doxygen/html
 	${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/doc/doxygen/html
-	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' -cf - examples | \
+	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' -cf - examples | \
 		${TAR} -C ${PREFIX}/share/doc/doxygen --unlink -xf -
 .ifdef HAVE_LATEX
 	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.dvi \
