@@ -7,6 +7,7 @@
 
 PORTNAME=	NetRexx
 PORTVERSION=	2.02
+PORTREVISION=	1
 CATEGORIES=	java lang
 MASTER_SITES=	http://www2.hursley.ibm.com/netrexx/
 DISTNAME=	NetRexx
@@ -29,14 +30,14 @@ do-install:
 		${PREFIX}/bin/NetRexxC.rexx
 	@${LN} -sf ${PREFIX}/bin/NetRexxC.rexx ${PREFIX}/bin/nrc.rexx
 
-	@${MKDIR} ${PREFIX}/NetRexx/lib
-	@${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${PREFIX}/NetRexx/lib/
-	@${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${PREFIX}/NetRexx/lib/
+	@${MKDIR} ${PREFIX}/share/java/classes
+	@${INSTALL_DATA} ${WRKSRC}/lib/NetRexxC.jar ${PREFIX}/share/java/classes
+	@${INSTALL_DATA} ${WRKSRC}/runlib/NetRexxR.jar ${PREFIX}/share/java/classes
 
-	@${MKDIR} ${PREFIX}/share/examples/NetRexx
-	@${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx \
-		${PREFIX}/share/examples/NetRexx/
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/bin/hello.nrx \
+		${EXAMPLESDIR}
 	@${MKDIR} ${DOCSDIR}/netrexx/lang
 .for dir in netrexx/lang .
 	@${INSTALL_DATA} ${WRKSRC}/browse/${dir}/* ${DOCSDIR}/${dir}

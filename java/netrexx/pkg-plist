@@ -133,12 +133,10 @@ bin/nrc.rexx
 %%PORTDOCS%%share/doc/NetRexx/ArchText.nrx
 %%PORTDOCS%%share/doc/NetRexx/wordclock.html
 %%PORTDOCS%%share/doc/NetRexx/ArchText.class
-share/examples/NetRexx/hello.nrx
-NetRexx/lib/NetRexxC.jar
-NetRexx/lib/NetRexxR.jar
+%%PORTDOCS%%share/examples/NetRexx/hello.nrx
+share/java/classes/NetRexxC.jar
+share/java/classes/NetRexxR.jar
 %%PORTDOCS%%@dirrm share/doc/NetRexx/netrexx/lang
 %%PORTDOCS%%@dirrm share/doc/NetRexx/netrexx
 %%PORTDOCS%%@dirrm share/doc/NetRexx
-@dirrm share/examples/NetRexx
-@dirrm NetRexx/lib
-@dirrm NetRexx
+%%PORTDOCS%%@dirrm share/examples/NetRexx
