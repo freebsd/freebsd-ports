@@ -21,6 +21,7 @@
     SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-sensor-psi_iconbutton
+    SUBDIR += gdesklets-sensor-psi_memo
     SUBDIR += gdesklets-sensor-psi_theme
     SUBDIR += gdesklets-sensor-psi_variableborder
     SUBDIR += gdesklets-starterbar
