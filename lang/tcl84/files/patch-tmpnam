@@ -1,0 +1,17 @@
+--- tclUnixPipe.c	Tue Apr  3 18:54:39 2001
++++ tclUnixPipe.c	Sat Apr 28 12:41:46 2001
+@@ -193,13 +193,10 @@
+     /*
+      * Linux says we should use mkstemp, but Solaris prefers tmpnam.
+      * We should also check against making more then TMP_MAX of these.
+      */
+ 
+-    if (tmpnam(fileName) == NULL) {			/* INTL: Native. */
+-	return NULL;
+-    }
+-    fd = open(fileName, O_RDWR|O_CREAT|O_EXCL, 0666);	/* INTL: Native. */
++    fd = mkstemp(fileName);				/* INTL: Native. */
+     if (fd == -1) {
+ 	return NULL;
+     }
+     fcntl(fd, F_SETFD, FD_CLOEXEC);
