@@ -6495,6 +6495,7 @@ proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
 prozilla	ports/ftp/prozilla
 prtunnel	ports/net/prtunnel
+prune		ports/sysutils/prune
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 psgml		ports/editors/psgml
