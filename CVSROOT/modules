@@ -1280,6 +1280,7 @@ dumplfs		src/sbin/dumplfs
 dumpmpeg	ports/graphics/dumpmpeg
 dumpon		src/sbin/dumpon
 dungeon		ports/games/dungeon
+durep		ports/sysutils/durep
 dvdrip		ports/graphics/dvdrip
 dvdtape		ports/sysutils/dvdtape
 dvi2tty		ports/print/dvi2tty
