@@ -1,0 +1,8 @@
+Don'  link  include this  useless  getopt  reimplementations into  every
+executable. When/if pilot-link starts to use the longopt/getopt_long, it
+should check if the libc or the libgnugetopt has them first.
+
++++ Makefile.in	Fri Aug 24 10:17:57 2001
+@@ -102,1 +102,1 @@ PERLEXECS = pilot-undelete ietf2datebook
+-GETOPT = getopt.o getopt1.o
++GETOPT =

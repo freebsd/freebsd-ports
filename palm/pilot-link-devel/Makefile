@@ -6,36 +6,44 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.9.3
-CATEGORIES=	palm comms tk82
-MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
-		ftp://ftp.forth.org/pub/PalmOS/ryerson/
+PORTVERSION=	0.9.5
+CATEGORIES=	palm comms tk83
+MASTER_SITES=	http://www.gnu-designs.com/pilot-link/source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dima@freebsd.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83 \
+		giconv:${PORTSDIR}/converters/libiconv
 
+USE_BZIP2=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
 PREFIX=		${LOCALBASE}/pilot
-CONFIGURE_ARGS=	--with-perl5=${PERL5}
-
-.include <bsd.port.pre.mk>
-
-CFLAGS!=	${ECHO} "${CFLAGS}" | ${SED} -e 's/-O[0-9a-z]*//g'
+CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
 
 MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		install-hinote.1 install-memo.1 install-user.1 \
 		pilot-xfer.1 read-ical.1
 MAN7=		pilot-link.7
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 post-patch:
-	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
+	# FreeBSD installs -lgiconv instead of -liconv. Patch configure.
+	${PERL} -pi -e 's/([^g])iconv.h/\1giconv.h/g;' \
+		-e 's/-liconv/-lgiconv/g' ${WRKSRC}/${CONFIGURE_SCRIPT} \
+		${WRKSRC}/libsock/util.c
+	# Remove the FORCE tag, which forced recompiling/relinking
+	# of the otherwise up-to-date files.
+	${PERL} -pi -e 's/: FORCE/:/;' -e 's/getopt.h//;' ${WRKSRC}/Makefile.in
+	# When the day comes, and pilot-link starts using longopt,
+	# we'll start using -lgnugetopt. No need for this files:
+	${RM} -f ${WRKSRC}/getopt*
 
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pilot-link.sh > ${LOCALBASE}/etc/rc.d/pilot-link.sh
 	@${CHMOD} 750 ${LOCALBASE}/etc/rc.d/pilot-link.sh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
