@@ -1,0 +1,13 @@
+*** a2ps-1.39.orig	Sat Nov 16 07:22:10 1996
+--- a2ps-1.39	Sat Nov 16 07:35:10 1996
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl
+  ;#
+  ;# a2ps: ascii to ps
+  ;#
+--- 1,4 ----
+! #!/usr/bin/perl
+  ;#
+  ;# a2ps: ascii to ps
+  ;#
