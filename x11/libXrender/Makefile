@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	libXrender
-PORTVERSION=	0.8.3
-CATEGORIES=	x11 x11-toolkits
+PORTVERSION=	0.8.4
+CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
-DISTNAME=	xrender-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	XRender extension for XFree86
+COMMENT=	X Render extension library
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/xextensions
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
-		${X11BASE}/libdata/pkgconfig/render.pc:${PORTSDIR}/x11-toolkits/render \
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/render.pc:${PORTSDIR}/x11-toolkits/render \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
+USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack pkgconfig
 
 .include <bsd.port.mk>

@@ -783,3 +783,4 @@ misc/wmstock|finance/wmstock|2004-01-22|moved to finance category
 misc/xquote|finance/xquote|2004-01-22|moved to finance category
 java/xalan-j|textproc/xalan-j|2004-01-22|moved to textproc category
 x11-toolkits/render|x11/render|2004-01-24|moved to x11 category
+x11-toolkits/xrender|x11/libXrender|2004-01-24|moved to x11 category
