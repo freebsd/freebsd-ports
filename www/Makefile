@@ -97,6 +97,7 @@
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
+    SUBDIR += feedonfeeds
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
