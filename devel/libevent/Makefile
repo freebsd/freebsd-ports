@@ -24,6 +24,9 @@ MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_set.3 \
 	event.3 signal_set.3 event.3 signal_add.3 event.3 signal_del.3 \
 	event.3 signal_pending.3 event.3 signal_initialized.3
 
+post-patch:
+	@${RM} ${WRKSRC}/compat/sys/time.h
+
 # install target strangely broken
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/event.h ${PREFIX}/include
