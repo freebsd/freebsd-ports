@@ -44,8 +44,9 @@ CONFIGURE_ARGS+=	--with-fribidi
 .endif
 
 .if !defined(WITH_MSN)
-LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--disable-msn
+.else
+LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
 .endif
 
 .if !defined(WITH_YAHOO)
