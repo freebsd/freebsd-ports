@@ -3,4 +3,4 @@ libexec/popd
 lib/libpoputil.a
 lib/libpoputil.so
 lib/libpoputil.so.1
-lib/libpoputil_p.a
+%%NOPROFILE%%lib/libpoputil_p.a

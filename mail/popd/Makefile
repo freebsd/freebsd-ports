@@ -15,7 +15,12 @@ MAINTAINER=	ianf@za.uu.net
 MAN8=   popd.8
 
 INSTALLS_SHLIB=	yes
-NOMANCOMPRESS=	yes
+MANCOMPRESSED=	maybe
+.if defined(NOPROFILE)
+PLIST_SUB=	NOPROFILE="@comment "
+.else
+PLIST_SUB=	NOPROFILE=""
+.endif
 
 post-extract:
 	${MV} ${WRKSRC}/src/popd.8 ${WRKSRC}/src/popd.mdoc
