@@ -4,7 +4,7 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1998/12/12 16:23:37 obrien Exp $
+# $Id: Makefile,v 1.12 1999/02/03 11:11:37 asami Exp $
 #
 
 DISTNAME=       rarbsd
@@ -15,6 +15,7 @@ EXTRACT_SUFX=   .exe
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=     Only unmodified original package can be distributed
 
 NO_WRKSUBDIR=   yes
