@@ -1,0 +1,4 @@
+bin/xwmm
+bin/startkde.fixed
+lib/X11/xwmm/system.xwmmrc
+@dirrm lib/X11/xwmm
