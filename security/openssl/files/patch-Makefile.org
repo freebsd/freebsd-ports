@@ -1,5 +1,5 @@
---- Makefile.org.orig	Tue Apr  8 13:54:32 2003
-+++ Makefile.org	Fri Apr 11 20:01:14 2003
+--- Makefile.org.orig	Fri Mar 12 22:33:04 2004
++++ Makefile.org	Mon Jul 19 06:16:00 2004
 @@ -191,7 +191,7 @@
  MAKEFILE= Makefile.ssl
  MAKE=     make -f Makefile.ssl
@@ -8,8 +8,8 @@
 +MANDIR=$(MANPREFIX)/man
  MAN1=1
  MAN3=3
- SHELL=/bin/sh
-@@ -274,6 +274,21 @@
+ MANSUFFIX=
+@@ -275,6 +275,21 @@
  
  build-shared: clean-shared do_$(SHLIB_TARGET) link-shared
  
@@ -31,7 +31,7 @@
  do_bsd-gcc-shared: do_gnu-shared
  do_linux-shared: do_gnu-shared
  do_gnu-shared:
-@@ -593,7 +608,7 @@
+@@ -596,7 +611,7 @@
  	@false
  
  libclean:
@@ -40,3 +40,23 @@
  
  clean:	libclean
  	rm -f shlib/*.o *.o core a.out fluff rehash.time testlog make.log cctest cctest.c
+@@ -773,7 +788,7 @@
+ install: all install_docs
+ 	@$(PERL) $(TOP)/util/mkdir-p.pl $(INSTALL_PREFIX)$(INSTALLTOP)/bin \
+ 		$(INSTALL_PREFIX)$(INSTALLTOP)/lib \
+-		$(INSTALL_PREFIX)$(INSTALLTOP)/lib/pkgconfig \
++		$(INSTALL_PREFIX)$(INSTALLTOP)/libdata/pkgconfig \
+ 		$(INSTALL_PREFIX)$(INSTALLTOP)/include/openssl \
+ 		$(INSTALL_PREFIX)$(OPENSSLDIR)/misc \
+ 		$(INSTALL_PREFIX)$(OPENSSLDIR)/certs \
+@@ -833,8 +848,8 @@
+ 			sed -e '1,/^$$/d' doc/openssl-shared.txt; \
+ 		fi; \
+ 	fi
+-	cp openssl.pc $(INSTALL_PREFIX)$(INSTALLTOP)/lib/pkgconfig
+-	chmod 644 $(INSTALL_PREFIX)$(INSTALLTOP)/lib/pkgconfig/openssl.pc
++	cp openssl.pc $(INSTALL_PREFIX)$(INSTALLTOP)/libdata/pkgconfig
++	chmod 644 $(INSTALL_PREFIX)$(INSTALLTOP)/libdata/pkgconfig/openssl.pc
+ 
+ install_docs:
+ 	@$(PERL) $(TOP)/util/mkdir-p.pl \

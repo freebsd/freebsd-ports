@@ -71,7 +71,7 @@ lib/libcrypto.a
 lib/libssl.a
 %%SHARED%%lib/libssl.so
 %%SHARED%%lib/libssl.so.%%SHLIBVER%%
-lib/pkgconfig/openssl.pc
+libdata/pkgconfig/openssl.pc
 %%NOBASE%%openssl/misc/CA.pl
 %%NOBASE%%openssl/misc/CA.sh
 %%NOBASE%%openssl/misc/c_hash
@@ -82,7 +82,7 @@ lib/pkgconfig/openssl.pc
 %%NOBASE%%openssl/openssl.cnf.sample
 %%PORTDOCS%%%%DOCSDIR%%/openssl.txt
 @dirrm include/openssl
-@dirrm lib/pkgconfig
+@dirrm libdata/pkgconfig
 %%NOBASE%%@dirrm openssl/certs
 %%NOBASE%%@dirrm openssl/lib
 %%MANDIR%%@dirrm openssl/man/man1
