@@ -38,7 +38,7 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
-	@find ${WRKSRC} -name "*.bak" | xargs ${RM}
+	@find ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
 
 post-patch:
 	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
@@ -62,13 +62,13 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
 	@cd ${PREFIX}/lib/webmin && find . -name "*.orig" -print \
-		| xargs ${RM}
+		| ${XARGS} ${RM}
 # we may have 2 levels of empty directories which cause the plist generation
 # system to fail
 	@cd ${PREFIX}/lib/webmin && find . -type d -empty -print \
-		| xargs ${RMDIR}
+		| ${XARGS} ${RMDIR}
 	@cd ${PREFIX}/lib/webmin && find . -type d -empty -print \
-		| xargs ${RMDIR}
+		| ${XARGS} ${RMDIR}
 	@${CP} ${WRKDIR}/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh
 
