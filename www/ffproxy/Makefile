@@ -21,6 +21,7 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		's|/etc|${PREFIX}/etc|g ; \
 		s|/usr/local|${PREFIX}|g ; \
+		s|^CFLAGS =|CFLAGS +=|g ; \
 		s|/var/ffproxy|${DOCSDIR}|g' \
 			${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
