@@ -1,19 +1,24 @@
 # New ports collection makefile for:	mimekit
-# Version required:		1.1
+# Version required:		1.6
 # Date created:			9 April 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1996/09/18 12:36:49 max Exp $
+# $Id: Makefile,v 1.4 1996/11/11 10:12:26 max Exp $
 #
 
-DISTNAME=	mimekit1.1
-PKGNAME=	jp-mimekit-1.1
-CATEGORIES=	japanese mail
+DISTNAME=	mimekit1.6
+PKGNAME=	jp-mimekit-1.6
+CATEGORIES=	japanese devel mail
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/ccipr/DeleGate/ \
 		ftp://ftp.iij.ad.jp/pub/mail/mime/
 
 MAINTAINER=	max@FreeBSD.ORG
 
-NO_WRKSUBDIR=	yes
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/mimekit
+	${INSTALL_DATA} ${WRKSRC}/README.LIB ${PREFIX}/share/doc/mimekit
+	${INSTALL_DATA} ${WRKSRC}/README.PGP ${PREFIX}/share/doc/mimekit
+.endif
 
 .include <bsd.port.mk>

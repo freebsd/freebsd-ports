@@ -1,33 +1,34 @@
---- ./Makefile.org	Fri Dec  1 23:55:07 1995
-+++ ./Makefile	Fri Apr 26 01:15:07 1996
-@@ -12,7 +12,7 @@
+--- Makefile.orig	Mon Feb 17 03:41:03 1997
++++ Makefile	Thu May  8 08:30:17 1997
+@@ -15,7 +15,7 @@
+ 
+ LIBFILE =	libmimekit.a
+ 
+-CFLAGS =	-O
++CFLAGS +=	-O
+ TARGET =	all
+ target:		$(TARGET)
+ libx:		Makefile.go
+@@ -51,7 +51,8 @@
+ 
  MMDIR =		../../../src
  MMSDIR =	../
- DGDIR =		../src
 -INSTDIR =	/usr/local/lib
++PREFIX ?= /usr/local
 +INSTDIR =	${PREFIX}/lib
  
  LOCALFILES =	README \
- 		README.jp \
-@@ -52,7 +52,7 @@
- ALL =		toMime fromMime enMime deMime test.out bench
+ 		README.LIB \
+@@ -147,9 +148,9 @@
+ 		enMime deMime bench.o test.out sample.out
  
- CC =		cc
--CFLAGS =	-O
-+CFLAGS +=	-O
- RM =		rm -f
- RANLIB =	`./mkranlib`
- TAR =		tar
-@@ -98,9 +98,9 @@
- 		enMime deMime bench.o test.out
- 
- install:	fromMime toMime $(LIBMKIT)
+ install:	fromMime toMime $(LIBFILE)
 -		install -o bin -g bin -m 755 fromMime $(INSTDIR)
 -		install -o bin -g bin -m 755 toMime $(INSTDIR)
--		install -o root -g staff -m 644 $(LIBMKIT) $(INSTDIR)
-+		install -cs -o bin -g bin -m 755 fromMime $(INSTDIR)
-+		install -cs -o bin -g bin -m 755 toMime $(INSTDIR)
-+		install -o bin -g bin -m 644 $(LIBMKIT) $(INSTDIR)
- 		$(RANLIB) $(INSTDIR)/$(LIBMKIT)
+-		install -o root -g staff -m 644 $(LIBFILE) $(INSTDIR)
++		install -s -c -o bin -g bin -m 755 fromMime $(INSTDIR)
++		install -s  -c -o bin -g bin -m 755 toMime $(INSTDIR)
++		install -c -o bin -g bin -m 644 $(LIBFILE) $(INSTDIR)
+ 		-$(RANLIB) $(INSTDIR)/$(LIBFILE)
  
- config.h:;	ln -s $(MMDIR)/config.h .
+ config.h:;	$(LKFILE) $(MMDIR)/config.h .
