@@ -23,7 +23,7 @@ USE_IMAKE=	yes
 ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 
-.if exists(${X11BASE}/bin/Xvnc)
+.if exists(${X11BASE}/share/vnc/classes/index.vnc)
 IGNORE=		"vnc has already been installed, please uninstall it first."
 .endif
 
