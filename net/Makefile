@@ -53,10 +53,8 @@
     SUBDIR += cricket
     SUBDIR += cryptcat
     SUBDIR += cvsup
-    SUBDIR += cvsup-bin
     SUBDIR += cvsup-devel
     SUBDIR += cvsup-mirror
-    SUBDIR += cvsupd-bin
     SUBDIR += cvsupit
     SUBDIR += dante
     SUBDIR += datapipe
