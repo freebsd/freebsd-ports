@@ -1,8 +1,8 @@
---- default.c	Tue Mar  5 11:31:44 2002
-+++ default.c	Tue Mar  5 11:26:50 2002
-@@ -773,6 +773,9 @@
-   Write a plain-text version of the given HTML document to\n\
-   stdout.\n\
+--- default.c.orig	Fri Jun 28 14:53:11 2002
++++ default.c	Fri Jun 28 14:56:17 2002
+@@ -908,6 +908,9 @@
+   is allowed, but user can't add or modify entries in\n\
+   association table.\n\
  \n\
 + -width <size>\n\
 +  Size of screen in characters, used in combination with -dump\n\
@@ -10,22 +10,22 @@
   -no-connect\n\
    Runs links as a separate instance - instead of connecting to\n\
    existing instance.\n\
-@@ -831,6 +834,7 @@
+@@ -982,6 +985,7 @@
  int download_utime = 0;
  int max_connections = 10;
- int max_connections_to_host = 2;
+ int max_connections_to_host = 8;
 +int screen_width = 80;
  int max_tries = 3;
  int receive_timeout = 120;
  int unrestartable_receive_timeout = 600;
-@@ -884,6 +888,7 @@
- 	1, gen_cmd, num_rd, num_wr, 1, 16, &max_connections, "max_connections", "max-connections",
- 	1, gen_cmd, num_rd, num_wr, 1, 8, &max_connections_to_host, "max_connections_to_host", "max-connections-to-host",
- 	1, gen_cmd, num_rd, num_wr, 1, 16, &max_tries, "retries", "retries",
-+	1, gen_cmd, num_rd, num_wr, 40, 512, &screen_width, "screen_width", "width",
- 	1, gen_cmd, num_rd, num_wr, 1, 1800, &receive_timeout, "receive_timeout", "receive-timeout",
- 	1, gen_cmd, num_rd, num_wr, 1, 1800, &unrestartable_receive_timeout, "unrestartable_receive_timeout", "unrestartable-receive-timeout",
- 	1, gen_cmd, num_rd, num_wr, 0, 256, &max_format_cache_entries, "format_cache_size", "format-cache-size",
+@@ -1060,6 +1064,7 @@
+ 	{1, gen_cmd, num_rd, num_wr, 1, 16, &max_connections, "max_connections", "max-connections"},
+ 	{1, gen_cmd, num_rd, num_wr, 1, 8, &max_connections_to_host, "max_connections_to_host", "max-connections-to-host"},
+ 	{1, gen_cmd, num_rd, num_wr, 1, 16, &max_tries, "retries", "retries"},
++	{1, gen_cmd, num_rd, num_wr, 40, 512, &screen_width, "screen_width", "width"},
+ 	{1, gen_cmd, num_rd, num_wr, 1, 1800, &receive_timeout, "receive_timeout", "receive-timeout"},
+ 	{1, gen_cmd, num_rd, num_wr, 1, 1800, &unrestartable_receive_timeout, "unrestartable_receive_timeout", "unrestartable-receive-timeout"},
+ 	{1, gen_cmd, num_rd, num_wr, 0, 256, &max_format_cache_entries, "format_cache_size", "format-cache-size"},
 --- links.1	Mon Jan  1 09:26:52 2001
 +++ links.1	Tue Mar  5 11:34:37 2002
 @@ -94,6 +94,11 @@
