@@ -265,6 +265,7 @@
     SUBDIR += p5-XML-Filter-Base
     SUBDIR += p5-XML-Filter-BufferText
     SUBDIR += p5-XML-Filter-DetectWS
+    SUBDIR += p5-XML-Filter-GenericChunk
     SUBDIR += p5-XML-Filter-Reindent
     SUBDIR += p5-XML-Filter-SAX1toSAX2
     SUBDIR += p5-XML-Filter-SAXT
