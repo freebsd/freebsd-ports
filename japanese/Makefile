@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.166 1998/11/22 08:14:36 kuriyama Exp $
+# $Id: Makefile,v 1.167 1998/12/13 03:16:19 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -119,6 +119,7 @@
     SUBDIR += netscape3.language
     SUBDIR += netscape4-communicator
     SUBDIR += netscape4-navigator
+    SUBDIR += netscape45-communicator
     SUBDIR += newosaka
     SUBDIR += ng
     SUBDIR += nkf
