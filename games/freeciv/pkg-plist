@@ -27,6 +27,12 @@ share/freeciv/default/units.ruleset
 share/freeciv/freeciv.rc
 share/freeciv/freeciv.rc-2.0
 share/freeciv/helpdata.txt
+share/freeciv/history/buildings.ruleset
+share/freeciv/history/game.ruleset
+share/freeciv/history/governments.ruleset
+share/freeciv/history/techs.ruleset
+share/freeciv/history/terrain.ruleset
+share/freeciv/history/units.ruleset
 share/freeciv/isotrident.tilespec
 share/freeciv/isotrident/cities.spec
 share/freeciv/isotrident/cities.xpm
@@ -94,13 +100,11 @@ share/freeciv/nation/italian.ruleset
 share/freeciv/nation/japanese.ruleset
 share/freeciv/nation/kenyan.ruleset
 share/freeciv/nation/korean.ruleset
-share/freeciv/nation/krevi.ruleset
 share/freeciv/nation/latvian.ruleset
 share/freeciv/nation/lithuanian.ruleset
 share/freeciv/nation/misc_cities.ruleset
 share/freeciv/nation/mongol.ruleset
 share/freeciv/nation/mordor.ruleset
-share/freeciv/nation/olympic.ruleset
 share/freeciv/nation/persian.ruleset
 share/freeciv/nation/polish.ruleset
 share/freeciv/nation/portuguese.ruleset
@@ -146,6 +150,7 @@ share/locale/da/LC_MESSAGES/freeciv.mo
 share/locale/de/LC_MESSAGES/freeciv.mo
 share/locale/en_GB/LC_MESSAGES/freeciv.mo
 share/locale/es/LC_MESSAGES/freeciv.mo
+share/locale/et/LC_MESSAGES/freeciv.mo
 share/locale/fi/LC_MESSAGES/freeciv.mo
 share/locale/fr/LC_MESSAGES/freeciv.mo
 share/locale/hu/LC_MESSAGES/freeciv.mo
@@ -163,6 +168,7 @@ share/locale/sv/LC_MESSAGES/freeciv.mo
 @dirrm share/freeciv/scenario
 @dirrm share/freeciv/nation
 @dirrm share/freeciv/misc
+@dirrm share/freeciv/history
 @dirrm share/freeciv/isotrident
 @dirrm share/freeciv/default
 @dirrm share/freeciv/civ2
