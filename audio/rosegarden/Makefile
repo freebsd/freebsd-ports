@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	MAKEDEPEND=${TRUE}
 CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
@@ -25,7 +26,7 @@ CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.2
 post-patch:
 	@${CP} ${FILESDIR}/rosegarden ${WRKSRC}/rosegarden.sh
 .for file in Rosegarden rosegarden.sh
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 
 do-install:
