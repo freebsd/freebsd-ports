@@ -18,7 +18,7 @@ modify_cyrus_user() {
 	shell=/bin/csh
 	uhome=${PKG_PREFIX}/cyrus
 
-	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}" \ ; then
+	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
 			e=$?
 			echo "*** Failed to update user \`${USER}'."
 			exit ${e}
@@ -33,8 +33,8 @@ checkfile() {
 		0)	# config file exists, but is the same
 			;;
 		1)	# config file exists and differs
-			echo "** Make sure $1 is in sync with this version"; 
-			echo "   of the port.  See $1.dist for details."; 
+			echo "** Make sure $1 is in sync with this version";
+			echo "   of the port.  See $1.dist for details.";
 			;;
 		*)	# no config file exists, copy it
 			install -c -m 644 $1.dist $1

@@ -23,13 +23,13 @@ CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
 create_user() {
 	USER=${CYRUS_USER}
 	GROUP=${CYRUS_GROUP}
-	PW=/usr/sbin/pw 
+	PW=/usr/sbin/pw
 
-	if [ -x /sbin/nologin ]; then   
-		shell=/sbin/nologin   
-	else   
-		shell=/nonexistent   
-	fi 
+	if [ -x /sbin/nologin ]; then
+		shell=/sbin/nologin
+	else
+		shell=/nonexistent
+	fi
 	uhome="/nonexistent"
 
 	if ! ${PW} show group ${GROUP} -q >/dev/null; then
