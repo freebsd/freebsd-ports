@@ -1,0 +1,48 @@
+#! /bin/sh
+
+delete_account() {
+  local u g home
+
+  u=$1
+  g=$2
+  echo -n "Removing group \"${g}\"... "
+  pw groupdel -n ${g}
+  echo "done."
+  echo -n "Removing user \"${u}\"... "
+  eval home=~${u}
+  echo 'y' | pw userdel -n ${u}
+  echo "done."
+}
+
+zero_crontab() {
+  local u
+
+  u=$1
+  
+  echo -n "Zeroing Mailman user's crontab(5) file... "
+  crontab -u ${u} /dev/null || exit
+  echo "done."
+}
+
+export PATH=/bin:/usr/bin:/usr/sbin
+
+case $2 in
+
+DEINSTALL)
+  zero_crontab %%USER%%
+  if ps -axwww | grep -q qrunner; then
+    echo "Killing all running qrunning processes."
+    killall qrunner
+    sleep 2
+  fi
+  ;;
+
+POST-DEINSTALL)
+  if [ -d %%MAILMANDIR%% ]; then
+    echo "%%MAILMANDIR%% is not empty - this installation may have active lists"
+    echo "The \"%%USER%%\" user and \"%%GROUP%%\" group were therefore not deleted."
+  else
+    delete_account %%USER%% %%GROUP%%
+  fi
+  ;;
+esac
