@@ -20,7 +20,7 @@ RUN_DEPENDS+= 	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 NO_BUILD=	yes
 
 do-install:
-	${ECHO} "Installing in ${PREFIX}/www/dadode"
+	${ECHO} "Installing in ${PREFIX}/www/dacode"
 	${MKDIR} ${PREFIX}/www/dacode
 	${CP} -R ${WRKSRC}/* ${PREFIX}/www/dacode
 	${CHOWN} -R www:www ${PREFIX}/www/dacode
