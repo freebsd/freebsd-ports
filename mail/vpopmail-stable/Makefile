@@ -50,7 +50,7 @@ CONFIGURE_ARGS=	--enable-qmail-dir=${QMAIL_DIR} \
 HARDQUOTA?=	10000000
 RELAYCLEAR?=	30
 LOGLEVEL?=	y
-APOPFILE?=	/etc/apop-secrets
+APOPFILE?=	/usr/local/vpopmail/etc/apop-secrets
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-send)
 QMAIL_DIR?=	${LOCALBASE}/qmail
@@ -80,6 +80,12 @@ CONFIGURE_ARGS+=	--enable-passwd=n
 .if defined(WITH_APOP)
 CONFIGURE_ARGS+=	--enable-apop=y \
 			--enable-apop-file=${APOPFILE}
+.else
+CONFIGURE_ARGS+=	--enable-apop=n
+.endif
+
+.if !defined(WITH_SQWEBMAIL)
+CONFIGURE_ARGS+=	--enable-sqwebmail-pass=n
 .endif
 
 .if !defined(WITHOUT_ROAMING)
@@ -89,9 +95,9 @@ CONFIGURE_ARGS+=	--enable-roaming-users=y \
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=	--with-mysql=y \
-			--with-sqlincdir=${LOCALBASE}/include/mysql \
-			--with-sqllibdir=${LOCALBASE}/lib/mysql
+CONFIGURE_ARGS+=	--enable-mysql=y \
+			--enable-sqlincdir=${LOCALBASE}/include/mysql \
+			--enable-sqllibdir=${LOCALBASE}/lib/mysql
 .endif
 
 .if defined(DEFAULT_DOMAIN)
