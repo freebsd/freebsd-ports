@@ -1,6 +1,14 @@
---- fping.c.orig	Wed Jan  8 12:29:43 1997
-+++ fping.c	Sat Apr 14 00:43:43 2001
-@@ -208,6 +208,10 @@
+--- fping.c.orig	Mon Jan 21 01:06:30 2002
++++ fping.c	Sun Jul  7 22:12:31 2002
+@@ -42,7 +42,6 @@
+  * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+  * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  */
+-#define IPV6 1						/* This should be a compiler option, or even better be done from the Makefile... ;) */
+ 
+ #ifndef _NO_PROTO
+ #if !__STDC__ && !defined( __cplusplus ) && !defined( FUNCPROTO ) \
+@@ -112,6 +111,10 @@
  #include <arpa/inet.h>
  #include <netdb.h>
  
@@ -11,17 +19,7 @@
  /* RS6000 has sys/select.h */
  #ifdef HAVE_SYS_SELECT_H
  #include <sys/select.h>
-@@ -219,7 +223,9 @@
- 
- extern char *optarg;
- extern int optind,opterr;
-+#if !(defined(BSD) && (BSD >= 199103))
- extern char *sys_errlist[];
-+#endif
- extern int h_errno;
- 
- #ifdef __cplusplus
-@@ -321,13 +327,13 @@
+@@ -246,13 +249,13 @@
       struct timeval       last_send_time;     /* time of last packet sent */
       int                  num_sent;           /* number of ping packets sent */
       int                  num_recv;           /* number of pings received */
@@ -38,77 +36,83 @@
 +     long                 min_reply_i;        /* shortest response time */
       int                  total_time_i;       /* sum of response times */
       int                  *resp_times;        /* individual response times */
- #ifdef DEBUG
-@@ -475,7 +481,7 @@
+ #if defined( DEBUG ) || defined( _DEBUG )
+@@ -482,7 +485,7 @@
  
-   /*seteuid(getuid());*/
+ 	}/* IF */
  
--  prog = argv[0];
-+  prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
-   ident = getpid() & 0xFFFF;
+-	prog = argv[0];
++	prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
+ 	ident = getpid() & 0xFFFF;
  
-   verbose_flag = 1;
-@@ -524,8 +530,8 @@
- 	               usage();                                   break;
- #endif
-            case 'v':
--                     printf("%s: Version %s $Date: 1997/01/08 20:29:33 $\n",argv[0], VERSION);
--                     printf("%s: comments to fping@networking.Stanford.EDU\n",argv[0]);
-+                     printf("%s: FreeBSD port based on Version %s $Date: 1997/01/08 20:29:33 $\n",argv[0], VERSION);
-+                     printf("%s: comments to fping@networking.Stanford.EDU\n",argv[0]);
-                      exit(0);
- 	   case 'f': 
- #ifdef ENABLE_F_OPTION
-@@ -671,6 +677,7 @@
-          }
-          if (!ping_file) errno_crash_and_burn("fopen");
-          while(fgets(line,132,ping_file)) {
-+           line[132-1] = '\0';
-            if (sscanf(line,"%s",host) != 1)
- 	     continue;
-               if ((!*host) || (host[0]=='#'))  /* magic to avoid comments */
-@@ -1033,7 +1040,6 @@
-   memset(buffer, 0, ping_pkt_size * sizeof(char));
-   icp = (struct icmp *) buffer;
+ 	verbose_flag = 1;
+@@ -823,6 +826,7 @@
  
--  gettimeofday(&h->last_send_time,&tz);
-   icp->icmp_type = ICMP_ECHO;
-   icp->icmp_code = 0;
-   icp->icmp_cksum = 0;
-@@ -1041,6 +1047,8 @@
-   icp->icmp_id = ident;
+ 		while( fgets( line, 132, ping_file ) )
+ 		{
++			line[132-1] = '\0';
+ 			if( sscanf( line, "%s", host ) != 1 )
+ 				continue;
+ 			
+@@ -1503,7 +1507,6 @@
+ 	memset( buffer, 0, ping_pkt_size * sizeof( char ) );
+ 	icp = ( FPING_ICMPHDR* )buffer;
  
-   pdp = (PING_DATA *) (buffer + SIZE_ICMP_HDR);
-+  /* set the time at the very last possible point */
-+  gettimeofday(&h->last_send_time,&tz);
-   pdp->ping_ts = h->last_send_time;
-   pdp->ping_count = h->num_sent;
+-	gettimeofday( &h->last_send_time, &tz );
+ #ifndef IPV6
+ 	icp->icmp_type = ICMP_ECHO;
+ 	icp->icmp_code = 0;
+@@ -1512,6 +1515,8 @@
+ 	icp->icmp_id = ident;
  
-@@ -1099,6 +1107,10 @@
+ 	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
++	/* set the time at the very last possible point */
++	gettimeofday(&h->last_send_time,&tz);
+ 	pdp->ping_ts = h->last_send_time;
+ 	pdp->ping_count = h->num_sent;
  
-   result=recvfrom_wto(s,buffer,4096,
-                      (struct sockaddr *)&response_addr,select_time);
+@@ -1523,6 +1528,8 @@
+ 	icp->icmp6_id = ident;
+ 
+ 	pdp = ( PING_DATA* )( buffer + SIZE_ICMP_HDR );
++	/* set the time at the very last possible point */
++	gettimeofday(&h->last_send_time,&tz);
+ 	pdp->ping_ts = h->last_send_time;
+ 	pdp->ping_count = h->num_sent;
+ 
+@@ -1611,6 +1618,9 @@
+ 
+ 	result = recvfrom_wto( s, buffer, sizeof(buffer), &response_addr, select_time );
+ 
++	/* get time of receipt as close to the real time as possible */
++	gettimeofday(&current_time,&tz);
 +
-+  /* get time of receipt as close to the real time as possible */
-+  gettimeofday(&current_time,&tz);
-+
-   if (result<0) { return 0; } /* timeout */
+ 	if( result < 0 )
+ 		return 0;	/* timeout */
    
- #ifdef DEBUG
-@@ -1107,7 +1119,7 @@
-       return 0;
- #endif
-   ip = (struct ip *) buffer;
--#if defined(__alpha__) && __STDC__
-+#if defined(__alpha__) && defined(__osf1__) && __STDC__
-   /* The alpha headers are decidedly broken.
-    * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
-    * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
-@@ -1144,7 +1156,6 @@
-   h=table[n];
+@@ -1625,7 +1635,7 @@
  
-   /* received ping is cool, so process it */
--  gettimeofday(&current_time,&tz);
-   h->waiting = 0;
-   h->timeout = timeout;
-   h->num_recv++;  h->num_recv_i++;
+ 	ip = ( struct ip* )buffer;
+ #ifndef IPV6
+-#if defined( __alpha__ ) && __STDC__ && !defined( __GLIBC__ )
++#if defined( __alpha__ ) && defined(__osf1__) && __STDC__ && !defined( __GLIBC__ )
+ 	/* The alpha headers are decidedly broken.
+ 	 * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
+ 	 * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
+@@ -1633,7 +1643,7 @@
+ 	hlen = ( ip->ip_vhl & 0x0F ) << 2;
+ #else
+ 	hlen = ip->ip_hl << 2;
+-#endif /* defined(__alpha__) && __STDC__ */
++#endif /* defined(__alpha__) && defined(__osf1__) && __STDC__ */
+ 	if( result < hlen + ICMP_MINLEN )
+ #else
+ 	if( result < sizeof(FPING_ICMPHDR) )
+@@ -1690,7 +1700,6 @@
+ 	h = table[n];
+ 
+ 	/* received ping is cool, so process it */
+-	gettimeofday( &current_time, &tz );
+ 	h->waiting = 0;
+ 	h->timeout = timeout;
+ 	h->num_recv++;

@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	fping
-PORTVERSION=	2.2b1
-CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.stanford.edu/dept/networking/pub/fping/  \
-		ftp://sntop.sourceforge.net/pub/sntop/
+PORTVERSION=	2.4b2
+CATEGORIES=	net ipv6
+MASTER_SITES=	http://www.fping.com/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}_to-ipv6
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,6 +18,11 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/sbin"
 MAN8=		fping.8
+
+.if defined(WITH_IPV6)
+# IPv6 not enabled by default, as it does not work together with IPv4.
+CFLAGS+=	-DIPV6
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/fping@/${MAINTAINER:S/@/\\@/g} or fping@/g' \

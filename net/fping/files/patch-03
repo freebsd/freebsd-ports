@@ -1,5 +1,5 @@
---- fping.8.orig	Wed Jan  8 10:48:49 1997
-+++ fping.8	Sat Aug 26 19:51:19 2000
+--- fping.8.orig	Mon Jan 21 01:05:48 2002
++++ fping.8	Sun Jul  7 22:03:43 2002
 @@ -1,4 +1,4 @@
 -.TH fping l
 +.TH fping 8
@@ -15,16 +15,16 @@
  with the "-" indicating that no response was received to the fourth
  request.
  .IP \fB-d\fR 5
-@@ -96,7 +96,7 @@
+@@ -107,7 +107,7 @@
  .IP \fB-h\fR 5
  Print usage message.
  .IP \fB-i\fIn\fR 5
 -The minimum amount of time (in milliseconds) between sending a ping packet to any target (default is 25).
-+ The minimum amount of time (in microseconds) between sending a ping packet to any host (default is 25).
++The minimum amount of time (in microseconds) between sending a ping packet to any target (default is 25).
  .IP \fB-l\fR 5
  Loop sending packets to each target indefinitely.  Can be interrupted
  with ctl-C; statistics about responses for each target are then displayed.
-@@ -106,7 +106,7 @@
+@@ -117,7 +117,7 @@
  Same as -d.
  .IP \fB-p\fR 5
  In looping or counting modes (-l, -c, or -C), this parameter sets the
@@ -33,7 +33,7 @@
  .B fping
  waits between successive packets to an individual target.  Default is
  1000.
-@@ -120,7 +120,7 @@
+@@ -131,7 +131,7 @@
  .IP \fB-s\fR 5
  Print cumulative statistics upon exit.
  .IP \fB-t\fIn\fR 5
@@ -42,7 +42,7 @@
  mode, this is the amount of time that 
  .B fping
  waits for a response to its first request.  Successive timeouts are
-@@ -141,12 +141,12 @@
+@@ -152,12 +152,12 @@
  example none the less. 
  .nf
  
@@ -57,7 +57,7 @@
  
  @check=("slapshot","foo","foobar");
  
-@@ -167,7 +167,7 @@
+@@ -178,7 +178,7 @@
  that are currently reachable.
  .nf
  
