@@ -4636,6 +4636,7 @@ opendx-samples	ports/graphics/opendx-samples
 opengatekeeper	ports/net/opengatekeeper
 opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
+openglad	ports/games/openglad
 openh323	ports/net/openh323
 openh323proxy	ports/net/openh323proxy
 openhbci	ports/finance/openhbci
