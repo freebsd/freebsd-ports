@@ -1,9 +1,9 @@
 # New ports collection makefile for:   	fltk
-# Version required:			1.0.1
+# Version required:			1.0.2
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: Makefile,v 1.4 1999/04/16 06:15:09 taoka Exp $
+# $Id: Makefile,v 1.5 1999/04/26 23:29:05 mharo Exp $
 #
 
 DISTNAME=	fltk-1.0.2-source
