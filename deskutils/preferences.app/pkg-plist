@@ -37,7 +37,7 @@ System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Headers
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Resources
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Versions/Current
-@unexec rm -f %D/System/Headers/PrefsModule
+@unexec rm -f %D/%%SYSTEMLIBRARY%%/Headers/PrefsModule
 System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
 System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
 System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Keyboard
