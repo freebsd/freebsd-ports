@@ -1,5 +1,7 @@
 bin/orbitcpp-config
+include/ORBitservices/CosNaming.hh
 include/orb/orbitcpp.hh
+include/orb/orbitcpp_any.hh
 include/orb/orbitcpp_config.hh
 include/orb/orbitcpp_constants.hh
 include/orb/orbitcpp_exception.hh
@@ -9,12 +11,10 @@ include/orb/orbitcpp_orb.hh
 include/orb/orbitcpp_poa.hh
 include/orb/orbitcpp_sequence.hh
 include/orb/orbitcpp_smartptr.hh
-include/orb/orbitcpp_var_smartptr.hh
 include/orb/orbitcpp_tools.hh
-include/orb/orbitcpp_types.hh
-include/orb/orbitcpp_any.hh
 include/orb/orbitcpp_typecode.hh
-include/ORBitservices/CosNaming.hh
+include/orb/orbitcpp_types.hh
+include/orb/orbitcpp_var_smartptr.hh
 lib/liborbitcpp.a
 lib/liborbitcpp.so
 lib/liborbitcpp.so.30
@@ -25,3 +25,6 @@ lib/orbit-idl/liborbit-idl-c++-backend.a
 lib/orbit-idl/liborbit-idl-c++-backend.so
 lib/orbit-idl/liborbit-idl-c++-backend.so.0
 share/aclocal/orbitcpp.m4
+@dirrm lib/orbit-idl
+@dirrm include/orb
+@dirrm include/ORBitservices

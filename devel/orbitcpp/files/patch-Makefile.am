@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Fri Feb  9 01:17:50 2001
++++ Makefile.am	Thu Nov 15 11:00:58 2001
+@@ -3,7 +3,7 @@
+ # remove tests from global 'make' target if we don't have
+ #                orbit-idl --backenddir=<foo>
+ if HAVE_ORBIT_IDL_BACKENDDIR
+-SUBDIRS=compiler orb services test 
++SUBDIRS=compiler orb services
+ else
+ SUBDIRS=compiler orb 
+ endif

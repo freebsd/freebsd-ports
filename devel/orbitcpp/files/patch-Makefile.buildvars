@@ -1,0 +1,8 @@
+--- Makefile.buildvars.orig	Thu Apr  5 11:57:48 2001
++++ Makefile.buildvars	Thu Nov 15 11:04:56 2001
+@@ -1,4 +1,4 @@
+-INCLUDES= -I$(top_builddir) -I$(top_srcdir) $(ORBIT_CFLAGS) 
++INCLUDES= -I$(top_builddir) -I$(top_srcdir) -I${LOCALBASE}/include $(ORBIT_CFLAGS) 
+ # -ansi and -pedantic suck because of many superfluous warnings.
+ FLAGS = -Wall
+ CFLAGS = -g -O0 $(FLAGS)
