@@ -1,6 +1,25 @@
 --- src/ftpd.c.orig	Sat Jul  1 22:17:39 2000
-+++ src/ftpd.c	Fri Sep 28 06:46:35 2001
-@@ -1662,9 +1662,9 @@
++++ src/ftpd.c	Sat Sep 29 22:49:41 2001
+@@ -447,7 +447,6 @@
+ #ifdef OPIE
+ #include <opie.h>
+ int pwok = 0;
+-int af_pwok = 0;
+ struct opie opiestate;
+ #endif
+ 
+@@ -1219,10 +1218,6 @@
+ 	exit(0);
+     }
+ 
+-#ifdef OPIE
+-    af_pwok = opieaccessfile(remotehost);
+-#endif
+-
+ #ifdef HAVE_LIBRESOLV
+     /* check permitted access based on remote host DNS information */
+     if (!check_reverse_dns()) {
+@@ -1662,9 +1657,9 @@
      /* Display s/key challenge where appropriate. */
  
      if (pwd == NULL || skeychallenge(&skey, pwd->pw_name, sbuf))
@@ -12,16 +31,33 @@
  		pwok ? "allowed" : "required", name);
      return (buf);
  }
-@@ -2107,7 +2107,7 @@
+@@ -2105,16 +2100,17 @@
+ #ifdef OPIE
+ 	{
  	    char prompt[OPIE_CHALLENGE_MAX + 1];
- 	    opiechallenge(&opiestate, name, prompt);
+-	    opiechallenge(&opiestate, name, prompt);
  
 -	    if (askpasswd == -1) {
-+	    if (pw == NULL) {
- 		syslog(LOG_WARNING, "Invalid FTP user name %s attempted from %s", name, remotehost);
- 		pwok = 0;
+-		syslog(LOG_WARNING, "Invalid FTP user name %s attempted from %s", name, remotehost);
+-		pwok = 0;
++	    if (opiechallenge(&opiestate, name, prompt) == 0) {
++		pwok = (pw != NULL) &&
++		       opieaccessfile(remotehost) &&
++		       opiealways(pw->pw_dir);
++		reply(331, "Response to %s %s for %s.",
++		      prompt, pwok ? "requested" : "required", name);
++	    } else {
++		pwok = 1;
++		reply(331, "Password required for %s.", name);
  	    }
-@@ -2572,7 +2572,7 @@
+-	    else
+-		pwok = af_pwok && opiealways(pw->pw_dir);
+-	    reply(331, "Response to %s %s for %s.",
+-		  prompt, pwok ? "requested" : "required", name);
+ 	}
+ #else
+ 	reply(331, "Password required for %s.", name);
+@@ -2572,7 +2568,7 @@
  #ifdef BSD_AUTH
  	if (ext_auth) {
  	    if ((salt = check_auth(the_user, passwd))) {
@@ -30,7 +66,7 @@
  #ifdef LOG_FAILED		/* 27-Apr-93      EHK/BM          */
  		syslog(LOG_INFO, "failed login from %s",
  		       remoteident);
-@@ -2593,8 +2593,8 @@
+@@ -2593,8 +2589,8 @@
  	    if (pw == NULL)
  		salt = "xx";
  	    else
@@ -40,7 +76,7 @@
  #ifdef SECUREOSF
  	    if ((pr = getprpwnam(pw->pw_name)) != NULL) {
  		if (pr->uflg.fg_newcrypt)
-@@ -2627,9 +2627,15 @@
+@@ -2627,9 +2623,15 @@
  	    xpasswd = crypt(passwd, salt);
  #endif /* SKEY */
  #else /* OPIE */
@@ -48,7 +84,7 @@
 -		rval = 0;
 -	    xpasswd = crypt(passwd, pw->pw_passwd);
 +	    if (pw != NULL) {
-+		if (!opieverify(&opiestate, passwd))
++		if (opieverify(&opiestate, passwd) == 0)
 +		    xpasswd = pw->pw_passwd;
 +		else if (pwok)
 +		    xpasswd = crypt(passwd, salt);
@@ -59,7 +95,7 @@
  #endif /* OPIE */
  #ifdef ULTRIX_AUTH
  	    if ((numfails = ultrix_check_pass(passwd, xpasswd)) >= 0) {
-@@ -6274,7 +6280,7 @@
+@@ -6274,7 +6276,7 @@
  	if (s) {
  	    int i = ntohs(pasv_addr.sin_port);
  	    sprintf(s, "PASV port %i assigned to %s", i, remoteident);
@@ -68,7 +104,7 @@
  	    free(s);
  	}
      }
-@@ -6289,7 +6295,7 @@
+@@ -6289,7 +6291,7 @@
  	char *s = calloc(128 + strlen(remoteident), sizeof(char));
  	if (s) {
  	    sprintf(s, "PASV port assignment assigned for %s", remoteident);
@@ -77,7 +113,7 @@
  	    free(s);
  	}
      }
-@@ -6435,7 +6441,7 @@
+@@ -6435,7 +6437,7 @@
  	dirlist = ftpglob(whichfiles);
  	sdirlist = dirlist;	/* save to free later */
  	if (globerr != NULL) {
@@ -86,7 +122,7 @@
  	    goto globfree;
  	}
  	else if (dirlist == NULL) {
-@@ -6486,7 +6492,6 @@
+@@ -6486,7 +6488,6 @@
  	    }
  	    goto globfree;
  	}
@@ -94,7 +130,7 @@
  	    if (dout == NULL) {
  		dout = dataconn("file list", (off_t) - 1, "w");
  		if (dout == NULL)
-@@ -6509,7 +6514,6 @@
+@@ -6509,7 +6510,6 @@
  		byte_count_out++;
  	    }
  #endif
@@ -102,7 +138,7 @@
      }
  
      if (dout != NULL) {
-@@ -7274,7 +7278,7 @@
+@@ -7274,7 +7274,7 @@
      int which;
      struct aclmember *entry = NULL;
      (void) acl_getclass(class);
