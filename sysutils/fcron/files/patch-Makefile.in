@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Tue Jul 10 23:59:49 2001
++++ Makefile.in	Sat Sep 22 00:35:39 2001
+@@ -108,8 +108,9 @@
+ 	$(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 110 -s fcron $(DESTSBIN)
+ 	$(INSTALL) -g $(GROUPNAME) -o $(USERNAME) -m 6111 -s fcrontab $(DESTBIN)
+ 	$(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 6111 -s fcronsighup $(DESTBIN)
+-	test -f $(ETC)/fcron.allow || test -f $(ETC)/fcron.deny || $(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.allow $(SRCDIR)/files/fcron.deny $(ETC)
+-	test -f $(ETC)/fcron.conf || $(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.conf $(ETC)
++	$(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.allow $(ETC)/fcron.allow.dist
++	$(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.deny $(ETC)/fcron.deny.dist
++	$(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.conf $(ETC)/fcron.conf.dist
+ 	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcron.8 $(DESTMAN)/man8
+ 	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcrontab.1 $(DESTMAN)/man1
+ 	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcrontab.5 $(DESTMAN)/man5
