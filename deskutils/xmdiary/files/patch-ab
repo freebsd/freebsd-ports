@@ -1,0 +1,29 @@
+--- XDiary.tmpl.orig	Mon Jun 26 15:57:52 1995
++++ XDiary.tmpl	Mon Sep 29 12:57:31 1997
+@@ -100,6 +100,6 @@
+ 
+-XDEXEDIR  = /usr/local/bin
+-XDDATADIR = /usr/local/lib/xdiary
+-XDAPPDIR  = /usr/lib/X11/app-defaults
+-XDMANDIR  = /usr/local/man/man1  
++XDEXEDIR  = $(X11BASE)/bin
++XDDATADIR = $(X11BASE)/lib/X11/xdiary
++XDAPPDIR  = $(X11BASE)/lib/X11/app-defaults
++XDMANDIR  = $(X11BASE)/man/man1  
+ 
+@@ -128,6 +128,6 @@
+ 
+-/* XDXTINC = */
+-/* XDXTLIB = */
+-/* XDXMINC = */
+-/* XDXMLIB = */
++XDXTINC = -I/usr/X11R6/include
++XDXTLIB = -L/usr/X11R6/lib
++XDXMINC = -I/usr/X11R6/include
++XDXMLIB = -L/usr/X11R6/lib
+ 
+@@ -157,3 +157,3 @@
+ 
+-/* XDEXTRALIBS = */
++XDEXTRALIBS = -lXext
+ 
