@@ -1,3 +1,7 @@
+bin/encode-base64
+bin/decode-qp
+bin/encode-qp
+bin/decode-base64
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
