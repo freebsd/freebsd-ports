@@ -5,9 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.34
+PORTVERSION=	2.36
 CATEGORIES=	graphics games
-MASTER_SITES=	http://download.blender.org/source/
+MASTER_SITES=	http://public.planetmirror.com/pub/blender/source/ \
+		http://download.blender.org/source/ \
+		ftp://ftp.cs.umn.edu/pub/blender.org/source/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	dyeske@yahoo.com
@@ -20,7 +22,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
-USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_SDL=	sdl
@@ -29,6 +30,8 @@ USE_GL=		yes
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
