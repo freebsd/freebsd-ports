@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.30
+PORTVERSION=	1.35
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
@@ -32,8 +32,8 @@ PLIST_SUB=	X11=''
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gifsicle
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/gifsicle
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
