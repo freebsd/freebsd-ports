@@ -419,6 +419,7 @@
     SUBDIR += libgetline
     SUBDIR += libghthash
     SUBDIR += libgii
+    SUBDIR += libgiigic
     SUBDIR += libglade
     SUBDIR += libglade-java
     SUBDIR += libglade2
