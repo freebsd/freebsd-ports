@@ -33,18 +33,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/2$//}
+
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-WITH_MYSQL3=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)
-WITH_MYSQL40=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-WITH_MYSQL41=	yes
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so)
+WITH_MYSQL=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libpq.so.3)
@@ -83,27 +77,13 @@ WITH_ODBC=	yes
 WITH_SQLITE=	yes
 .endif
 
-.if !defined(WITHOUT_MYSQL3) && defined(WITH_MYSQL3)
-LIB_DEPENDS+=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-PLIST_SUB=		MYSQL:=""
-.endif
-
-.if !defined(WITHOUT_MYSQL40) && defined(WITH_MYSQL40)
-LIB_DEPENDS+=		mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-PLIST_SUB=		MYSQL:=""
-.endif
-
-.if !defined(WITHOUT_MYSQL41) && defined(WITH_MYSQL41)
-LIB_DEPENDS+=		mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-PLIST_SUB=		MYSQL:=""
-.endif
-
-.if !defined(WITH_MYSQL3) && !defined(WITH_MYSQL40) && !defined(WITH_MYSQL41)
+.if !defined(WITH_MYSQL)
 PLIST_SUB+=		MYSQL:="@comment "
 CONFIGURE_ARGS+=	--without-mysql
+.else
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+PLIST_SUB+=		MYSQL:=""
 .endif
 
 .if !defined(WITHOUT_POSTGRES7) && defined(WITH_POSTGRES7)
@@ -189,15 +169,9 @@ PLIST_SUB+=		SQLITE:="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITH_MYSQL3)
-	@${ECHO_MSG} "You can enable support for MySQL 3 databases by defining WITH_MYSQL3."
+.if !defined(WITH_MYSQL)
+	@${ECHO_MSG} "You can enable support for MySQL databases by defining WITH_MYSQL."
 .endif
-.if !defined(WITH_MYSQL40)
-	@${ECHO_MSG} "You can enable support for MySQL 4.0 databases by defining WITH_MYSQL40."
-.endif
-.if !defined(WITH_MYSQL41)
-	@${ECHO_MSG} "You can enable support for MySQL 4.1 databases by defining WITH_MYSQL41."
-.endif 
 .if !defined(WITH_POSTGRES7)
 	@${ECHO_MSG} "You can enable support for Postgres 7.0 databases by defining WITH_POSTGRES7."
 .endif
