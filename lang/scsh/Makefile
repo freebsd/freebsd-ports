@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.3 1997/07/15 13:45:33 cracauer Exp $
+# $Id: Makefile,v 1.4 1997/07/15 15:00:30 cracauer Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	enough
 MAN1=		scsh.1
 STRIP=
+
+BROKEN_ELF=	build
 
 post-install:
 	@strip ${PREFIX}/bin/scsh
