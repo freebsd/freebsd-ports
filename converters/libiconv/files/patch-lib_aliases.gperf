@@ -1,5 +1,5 @@
 --- lib/aliases.gperf.orig	Wed May 29 10:16:47 2002
-+++ lib/liases.gperf	Mon Oct 14 12:31:58 2002
++++ lib/aliases.gperf	Mon Oct 14 12:31:58 2002
 @@ -12,6 +12,7 @@
  US, ei_ascii
  CSASCII, ei_ascii
