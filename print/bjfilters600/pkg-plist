@@ -1,0 +1,16 @@
+bin/bjs600ps
+bin/bjs600raw
+libexec/bjfilters600/filters600
+libexec/bjfilters600/filters600_gui
+libexec/bjfilters600/setup
+libexec/bjfilters600/scripts/en.lc
+libexec/bjfilters600/scripts/ja.lc
+@dirrm libexec/bjfilters600/scripts
+@dirrm libexec/bjfilters600
+@cwd /compat/linux
+usr/lib/bjlib/cnb_1040.tbl
+usr/lib/libcnbpo104.so
+usr/lib/libcnbpo104.so.1.0.0
+@dirrm usr/lib/bjlib
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true

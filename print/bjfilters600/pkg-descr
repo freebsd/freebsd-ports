@@ -1,0 +1,22 @@
+This port is for a printer filter of Canon BJ S600. The filter is
+called Canon Bubble Jet Print Filter for Linux and there exist the
+filters for other Canon bubble jet printers. By using this driver you
+can print out as high quality as you use the Windows driver. See the
+below URLs:
+
+WWW: http://www.canon-sales.co.jp/drv-upd/linux/bjlinux100.html
+     file:/usr/local/share/doc/bjfiltercom-1.3/html/README.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.3/html/INDEX.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.3/html/FAQ.HTM
+
+And then this port has filters filters600 and filters600_gui which are
+useful to print out more than one page. Then you execute the next
+command:
+
+/usr/local/libexec/bjfilters600/setup
+
+to setup /etc/printcap and make spools in /var/spool/lpd/.
+
+Notice: If you use filters600_gui in the printer server, for example
+hostA then you have to run X, execute "xhost hostA" and execute "lpr" on
+the host which you are using.

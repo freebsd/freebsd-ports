@@ -22,6 +22,7 @@
     SUBDIR += bjfilter860
     SUBDIR += bjfilter870
     SUBDIR += bjfiltercom
+    SUBDIR += bjfilters600
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
     SUBDIR += cdlabelgen
