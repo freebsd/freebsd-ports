@@ -1,9 +1,0 @@
-bin/licq
-share/licq-base.tar.gz
-share/licq/licq.javaconvert
-share/licq/licq.micqconvert
-share/licq/licq.winconvert
-share/licq/viewurl-lynx.sh
-share/licq/viewurl-ncftp.sh
-share/licq/viewurl-netscape.sh
-@dirrm share/licq

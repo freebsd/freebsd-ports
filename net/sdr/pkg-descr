@@ -1,4 +1,0 @@
-Sdr is a session directory tool designed to allow the advertisement
-and joining of multicast conferences on the Mbone.  It was originally
-based on sd written by Van Jacobson at LBNL, but implements a later
-version of the session description protocol than sd does.
