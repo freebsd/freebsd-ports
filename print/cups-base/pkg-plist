@@ -1,5 +1,4 @@
 bin/cups-config
-etc/cups/certs/0
 etc/cups/classes.conf.N
 etc/cups/client.conf.N
 etc/cups/cupsd.conf.N
