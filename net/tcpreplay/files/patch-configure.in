@@ -1,10 +1,25 @@
---- configure.in.orig	Thu Nov  2 16:18:38 2000
-+++ configure.in	Thu Nov  2 16:18:52 2000
-@@ -29,7 +29,5 @@
+--- configure.in.orig	Thu May 20 04:55:28 1999
++++ configure.in	Thu Jan 18 01:02:11 2001
+@@ -8,13 +8,6 @@
+ AC_PROG_INSTALL
+ AC_PROG_MAKE_SET
+ 
+-dnl Use these compiler flags if we have gcc.
+-dnl
+-if test $ac_cv_prog_gcc = yes; then
+-    CCOPTS='-O3 -pipe -Wall'
+-    CFLAGS="$CCOPTS"
+-fi
+-
+ dnl Checks for libraries.
+ AC_CHECK_LIB(socket, socket)
+ AC_CHECK_LIB(nsl, gethostbyname)
+@@ -28,8 +21,6 @@
+ 
  dnl Checks for library functions.
  AC_CHECK_FUNCS(gettimeofday)
- 
--AC_CONFIG_SUBDIRS(Libnet-0.99 libpcap-0.4)
 -
+-AC_CONFIG_SUBDIRS(Libnet-0.99 libpcap-0.4)
+ 
  AC_CONFIG_HEADER(config.h)
  AC_OUTPUT(Makefile)
