@@ -3,7 +3,7 @@
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
-# $Id: Makefile,v 1.5 1998/09/25 10:18:39 asami Exp $
+# $Id: Makefile,v 1.6 1998/10/13 01:25:32 jseger Exp $
 #
 
 DISTNAME=       jed0.98-7
@@ -14,8 +14,6 @@ MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/
 PATCH_SITES=   ftp://space.mit.edu/pub/davis/jed/
 PATCHFILES=    BUGS
 PATCH_DIST_STRIP=	-p1
-
-BROKEN_ELF=	libslang.so: undefined reference to tgetnum
 
 MAINTAINER=     eric@cybernut.com
 
