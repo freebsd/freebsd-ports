@@ -46,6 +46,7 @@ CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 # WITH_DRAC:			Build in DRAC support
 # WITH_TRASHQUOTA:		Include deleted mails in the quota
 # WITH_GDBM:			Use gdbm files instead of bdb
+# WITHOUT_IPV6			Don't build ipv6 support
 #
 
 CONFDIR?=	${PREFIX}/etc/${PORTNAME}
@@ -84,6 +85,10 @@ USE_OPENSSL=	YES
 PLIST_SUB+=	OPENSSLFLAG=
 .else
 PLIST_SUB+=	OPENSSLFLAG="@comment "
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--without-ipv6
 .endif
 
 .if defined(WITH_TRASHQUOTA)
