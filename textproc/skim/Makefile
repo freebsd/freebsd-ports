@@ -7,6 +7,7 @@
 
 PORTNAME=	skim
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~cougar/skim/downloads/
@@ -22,10 +23,21 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D__STDC_ISO_10646__" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+BUILD_DEPENDS+= ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=   ${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CONFIGURE_ENV+= CXXFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
+                LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
+.else
+CONFIGURE_ENV+=	CXXFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+.endif
 pre-configure:
 	${REINPLACE_CMD} "s,-pedantic,,g; \
 		s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
@@ -35,4 +47,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} To display this message again, type make post-install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
