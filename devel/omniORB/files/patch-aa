@@ -6,7 +6,7 @@ diff -rc ./Makefile ../omniORB_2.2.0.freebsd/Makefile
 --- 1,7 ----
 + # Makefile for omniORB2
 + #
-+ # $Id: patch-aa,v 1.3 1997/06/29 12:13:21 obrien Exp $
++ # $Id: patch-aa,v 1.4 1997/07/10 07:37:00 asami Exp $
 + 
 + SUBDIR=	src
 + 
@@ -139,7 +139,7 @@ diff -rc ./src/Makefile ../omniORB_2.2.0.freebsd/src/Makefile
 --- 1,7 ----
 ! # Makefile for omniORB2
 ! #
-! # $Id: patch-aa,v 1.3 1997/06/29 12:13:21 obrien Exp $
+! # $Id: patch-aa,v 1.4 1997/07/10 07:37:00 asami Exp $
   
 ! SUBDIR=	tool lib appl examples
   
@@ -1612,60 +1612,6 @@ diff -rc ./src/lib/omnithread/Makefile ../omniORB_2.2.0.freebsd/src/lib/omnithre
 ! 	install -c -o bin -g bin -m 0444 libomnithread.so.1.0 ${LIBDIR}
   
 + .include <bsd.lib.mk>
-diff -rc ./src/lib/omnithread/posix.cc ../omniORB_2.2.0.freebsd/src/lib/omnithread/posix.cc
-*** ./src/lib/omnithread/posix.cc	Tue May  6 11:58:40 1997
---- ../omniORB_2.2.0.freebsd/src/lib/omnithread/posix.cc	Wed May 14 16:25:16 1997
-***************
-*** 638,644 ****
-  
-      if (detached) {
-  
-! #if (PthreadDraftVersion <= 6)
-  	rc = ERRNO(pthread_detach(&posix_thread));
-  #else
-  	rc = ERRNO(pthread_detach(posix_thread));
---- 638,644 ----
-  
-      if (detached) {
-  
-! #if (PthreadDraftVersion <= 6) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-  	rc = ERRNO(pthread_detach(&posix_thread));
-  #else
-  	rc = ERRNO(pthread_detach(posix_thread));
-***************
-*** 902,908 ****
-  
-      pthread_yield(NULL);
-  
-! #elif (PthreadDraftVersion < 9)
-  
-      pthread_yield();
-  
---- 902,908 ----
-  
-      pthread_yield(NULL);
-  
-! #elif (PthreadDraftVersion < 9) || defined(__freebsd__)
-  
-      pthread_yield();
-  
-***************
-*** 1001,1007 ****
-  
-  int omni_thread::cancel(void)
-  {
-! #ifdef __linux__
-      cerr << "omni_thread::cancel: no pthread_cancel on this platform\n";
-      return ENOSYS;
-  #else
---- 1001,1007 ----
-  
-  int omni_thread::cancel(void)
-  {
-! #if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-      cerr << "omni_thread::cancel: no pthread_cancel on this platform\n";
-      return ENOSYS;
-  #else
 diff -rc ./src/tool/Makefile ../omniORB_2.2.0.freebsd/src/tool/Makefile
 *** ./src/tool/Makefile	Thu May  1 15:33:57 1997
 --- ../omniORB_2.2.0.freebsd/src/tool/Makefile	Tue May 13 11:00:38 1997
@@ -1744,7 +1690,7 @@ diff -rc ./src/tool/Makefile ../omniORB_2.2.0.freebsd/src/tool/Makefile
 --- 1,7 ----
 ! # Makefile for omniORB2
 ! #
-! # $Id: patch-aa,v 1.3 1997/06/29 12:13:21 obrien Exp $
+! # $Id: patch-aa,v 1.4 1997/07/10 07:37:00 asami Exp $
   
 ! SUBDIR=	omniidl2
   
