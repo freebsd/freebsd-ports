@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.139 1998/11/01 16:45:30 wosch Exp $
+# $Id: Makefile,v 1.140 1998/11/15 22:55:14 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -44,6 +44,7 @@
     SUBDIR += id-utils
     SUBDIR += ilu
     SUBDIR += jam
+    SUBDIR += libU77
     SUBDIR += lclint
     SUBDIR += libdlmalloc
     SUBDIR += libffi
