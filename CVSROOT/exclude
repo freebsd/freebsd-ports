@@ -48,3 +48,6 @@
 # longer on the vendor branch for historical reasons.
 # Exclude it so that we can use the vendor files verbatim.
 ^src/share/zoneinfo/[Ta-z]
+
+# Treat the TrustedBSD Web site just as the FreeBSD Web site.
+^projects/trustedbsd/www/
