@@ -19,4 +19,4 @@
 #
 # $FreeBSD$
 #
-^ports/	.*	(portmgr|portsmgr)
+#^ports/	.*	(portmgr|portsmgr)
