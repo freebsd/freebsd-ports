@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs \
-		PropList.1:${PORTSDIR}/devel/libPropList
+		PropList.2:${PORTSDIR}/devel/libPropList
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

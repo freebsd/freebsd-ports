@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		PropList.1:${PORTSDIR}/devel/libPropList
+		PropList.2:${PORTSDIR}/devel/libPropList
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-PL-libs="-L${LOCALBASE}/lib" \
