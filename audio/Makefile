@@ -71,7 +71,6 @@
     SUBDIR += festvox-tll
     SUBDIR += flac
     SUBDIR += fmio
-    SUBDIR += freeamp
     SUBDIR += freebirth
     SUBDIR += funktrackergold
     SUBDIR += gdcd
@@ -300,5 +299,6 @@
     SUBDIR += xtuner
     SUBDIR += xwave
     SUBDIR += yamt
+    SUBDIR += zinf
 
 .include <bsd.port.subdir.mk>
