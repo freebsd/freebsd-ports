@@ -193,6 +193,7 @@
     SUBDIR += mudix
     SUBDIR += naim
     SUBDIR += nam
+    SUBDIR += nat
     SUBDIR += ncat
     SUBDIR += ncplib
     SUBDIR += nemesis

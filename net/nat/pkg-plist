@@ -1,0 +1,4 @@
+bin/nat
+share/nat/passlist.txt
+share/nat/userlist.txt
+@dirrm %D/share/nat
