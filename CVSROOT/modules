@@ -1905,6 +1905,7 @@ fujiplay	ports/graphics/fujiplay
 fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
+fuse		ports/emulators/fuse
 fuzz		ports/security/fuzz
 fvcool		ports/sysutils/fvcool
 fvwm		ports/x11-wm/fvwm
