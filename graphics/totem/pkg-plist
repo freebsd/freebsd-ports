@@ -1,7 +1,9 @@
 bin/totem
+bin/totem-video-thumbnailer
 etc/gconf/gconf.xml.defaults/apps/totem/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/totem/%gconf.xml
 etc/gconf/schemas/totem.schemas
+etc/gconf/schemas/totem-video-thumbnail.schemas
 share/gnome/application-registry/totem.applications
 share/gnome/applications/totem.desktop
 share/gnome/mime-info/totem.keys
@@ -21,6 +23,7 @@ share/gnome/totem/rhythmbox-volume-zero.png
 share/gnome/totem/totem.glade
 share/gnome/totem/playlist.glade
 share/gnome/totem/totem_logo.mpv
+share/gnome/totem/properties.glade
 @dirrm share/gnome/totem
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/totem
 @dirrm etc/gconf/gconf.xml.defaults/apps/totem
