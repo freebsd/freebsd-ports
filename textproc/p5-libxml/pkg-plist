@@ -1,0 +1,21 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libxml-perl/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Data/Grove.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/Grove/Parent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Data/Grove/Visitor.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/ESISParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/CanonXMLWriter.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/Sample.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/Subs.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/XMLWriter.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Parser/PerlSAX.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/PatAct/ActionTempl.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/PatAct/Amsterdam.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/PatAct/MatchName.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/PatAct/PatternTempl.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/PatAct/ToObjects.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Perl2SAX.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/SAX2Perl.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Data/Grove
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libxml-perl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Data 2>/dev/null || true

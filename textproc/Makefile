@@ -119,6 +119,7 @@
     SUBDIR += p5-XML-Writer
     SUBDIR += p5-XML-XPath
     SUBDIR += p5-dTemplate
+    SUBDIR += p5-libxml
     SUBDIR += par
     SUBDIR += perl2html
     SUBDIR += pspell
