@@ -77,7 +77,6 @@ lib/gstreamer-%%VERSION%%/libgstgamma.so
 lib/gstreamer-%%VERSION%%/libgstgoom.so
 %%GSM%%lib/gstreamer-%%VERSION%%/libgstgsm.so
 %%HERMES%%lib/gstreamer-%%VERSION%%/libgsthermescolorspace.so
-%%HTTP%%lib/gstreamer-%%VERSION%%/libgsthttpsrc.so
 lib/gstreamer-%%VERSION%%/libgstidct.so
 lib/gstreamer-%%VERSION%%/libgstinterleave.so
 %%IVORBIS%%lib/gstreamer-%%VERSION%%/libgstivorbis.so
