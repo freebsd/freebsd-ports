@@ -41,3 +41,4 @@ man/man1/extractres.1.gz
 man/man1/includeres.1.gz
 share/psutils/md68_0.ps
 share/psutils/md71_0.ps
+@dirrm share/psutils

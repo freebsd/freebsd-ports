@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.14 1997/11/10 11:23:39 asami Exp $
+# $Id: Makefile,v 1.15 1998/01/08 18:52:13 fenner Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -57,10 +57,10 @@ pre-fetch:
 	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
 .elif defined(PAPERSIZE_INVALID)
-	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
+	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
 	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
-	@/usr/bin/false
+	@${FALSE}
 .endif
 
 .include <bsd.port.mk>
