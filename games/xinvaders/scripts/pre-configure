@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cp -f ${CURDIR}/files/Imakefile ${WRKSRC}
+cp -f ${CURDIR}/files/Vaders.ad ${WRKSRC}
+
+exit 0
