@@ -1,20 +1,20 @@
 # New ports collection makefile for:	x-files
 # Date created:		14 April 1998
-# Whom:			Donald J. Maddox <dmaddox@sc.rr.com>
+# Whom:			Donald J. Maddox <dmaddox099@yahoo.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	x-files
 PORTVERSION=	2.00b1
-CATEGORIES=	x11-fm tk82
+CATEGORIES=	x11-fm tk83
 MASTER_SITES=	http://www.hut.fi/~mkivinie/X-Files/data/
 DISTNAME=	X-Files-${PORTVERSION}
 
-MAINTAINER=	dmaddox@sc.rr.com
+MAINTAINER=	dmaddox099@yahoo.com
 
-BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/X-Files
 NO_BUILD=	yes
@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 MAN1=		X-Files.1x
 
 pre-install:
-	@tclsh8.2 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
+	@tclsh8.3 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
 	@${RM} -f ${WRKSRC}/xfinstall.tcl
 	@${SED} s#@X11BASE@#${X11BASE}# <${WRKSRC}/X-Files.tcl >${WRKSRC}/tmpfile
 	@${MV} ${WRKSRC}/tmpfile ${WRKSRC}/X-Files.tcl
