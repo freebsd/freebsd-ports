@@ -16,9 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
-MAN1PREFIX=	${PREFIX}
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		perlmake.1
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Make.3
 
 pre-configure:

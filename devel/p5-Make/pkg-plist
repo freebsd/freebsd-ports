@@ -1,5 +1,4 @@
 bin/perlmake
 lib/perl5/site_perl/%%PERL_VER%%/Make.pm
-lib/perl5/site_perl/%%PERL_VER%%/SOAP/EnvelopeMaker.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Make/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Make
