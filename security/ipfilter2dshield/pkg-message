@@ -1,0 +1,24 @@
+***************************************************************************
+
+Installer instructions.  This port has installed the
+%%DISTNAME%% script into %%PREFIX%%/sbin directory.
+
+You have to edit the script and change the default email address in
+the script source. Script contains comments explaining what needs to
+be changed. You also have to create an exclude file, follow
+instructions in the script about the syntax of the exclude file
+content.
+
+To receive feedback reports and see your submitted log data online
+at dshield.org you have to sign up for free membership. See
+www.dshield.org for details.
+
+This script is part of the "proactive probing abuse reporting
+system"  port ppars-1.0 which has scripts that report abuse to your
+ISP and to the owning ISP from which the probe packets came from.
+Also contained in the ppars-1.0 port is instructions on how to auto
+launch the scripts only when the ipfilter log is rotated by
+newsyslog, which you may find useful for launching the dshield
+script installed by this port.
+
+***************************************************************************
