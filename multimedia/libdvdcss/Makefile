@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -18,5 +18,8 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/ioctl.c
 
 .include <bsd.port.mk>
