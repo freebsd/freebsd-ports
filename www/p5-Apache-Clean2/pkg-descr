@@ -1,0 +1,3 @@
+Apache::Clean uses HTML::Clean to tidy up large, messy HTML, saving
+bandwidth.  It is particularly useful with Apache::Compress for
+ultimate savings.

@@ -290,6 +290,7 @@
     SUBDIR += p5-Apache-AuthenURL
     SUBDIR += p5-Apache-AutoIndex
     SUBDIR += p5-Apache-AxKit-Plugin-AddXSLParams-Request
+    SUBDIR += p5-Apache-Clean
     SUBDIR += p5-Apache-ConfigFile
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-DumpHeaders
