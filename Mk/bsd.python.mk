@@ -82,7 +82,7 @@ PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 # Python-2.0
 .if ${PYTHON_VERSION} == "python2.0"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYXML=			${PYTHON_LIBDIR}/xml/__init__.py:${PYTHON_PORTSDIR}
+PYXML=			${PYTHON_LIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	BeOpen-Python-2.0.tar.gz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
