@@ -55,6 +55,10 @@ CONFIGURE_ARGS+= --enable-use_mb
 CONFIGURE_ARGS+= --with-lang=${XLOCKMORE_LANG}
 .endif
 
+.if defined(WITH_SYSLOG)
+CONFIGURE_ARGS+= --enable-syslog
+.endif
+
 CONFIGURE_ENV+=		XLOCKLIBS="${KRB5LIB} ${KRB4LIB} ${MESALIB}"
 
 .include <bsd.port.pre.mk>
