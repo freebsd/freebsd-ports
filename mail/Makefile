@@ -482,7 +482,6 @@
     SUBDIR += xmailwatcher
     SUBDIR += xpbiff
     SUBDIR += yadda
-    SUBDIR += youbin
     SUBDIR += yuzu
     SUBDIR += zmailer
 #   SUBDIR += mailman-devel
