@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.78 1997/10/01 08:32:59 cracauer Exp $
+# $Id: Makefile,v 1.79 1997/10/03 22:19:29 andreas Exp $
 #
 
     SUBDIR += SWIG
@@ -37,6 +37,7 @@
     SUBDIR += makedepend
     SUBDIR += mkmf
     SUBDIR += mprof
+    SUBDIR += nana
     SUBDIR += noweb
     SUBDIR += omniBroker
     SUBDIR += omniORB
