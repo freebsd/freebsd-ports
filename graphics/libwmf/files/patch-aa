@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Dec 17 00:31:01 1999
-+++ Makefile.in	Tue May 30 19:21:49 2000
-@@ -17,6 +17,7 @@
+--- Makefile.in.orig	Wed Oct 11 04:16:15 2000
++++ Makefile.in	Sat Nov  4 19:52:07 2000
+@@ -19,6 +19,7 @@
  SHELL=/bin/sh
  
  INSTALL = @INSTALL@
@@ -8,7 +8,7 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  INCLUDEDIR = @includedir@
-@@ -28,13 +29,13 @@
+@@ -30,13 +31,13 @@
  libdir = @libdir@
  mandir = @mandir@
  
@@ -24,12 +24,12 @@
  
  WMFLIBOBJECTS =	\
  	wmfapi.o \
-@@ -53,35 +54,64 @@
+@@ -58,42 +59,77 @@
  	Xtext.o \
  	rotated.o
  
--TARGETS = wmftopng wmftofig xwmf
-+LIBRARIES=	\
+-TARGETS = wmftopng wmftofig wmftoeps xwmf
++LIBRARIES = 	\
 +	LIBXGD \
 +	LIBDIB \
 +	LIBXFIG \
@@ -37,12 +37,14 @@
 +	libgdwmf.a \
 +	libxfwmf.a \
 +	libXwmf.a \
++	libepswmf.a \
 +	libwmf.so.1 \
 +	libgdwmf.so.1 \
 +	libxfwmf.so.1 \
-+	libXwmf.so.1
++	libXwmf.so.1 \
++	libepswmf.so.1
 +
-+TARGETS = $(LIBRARIES) wmftopng wmftofig xwmf
++TARGETS = $(LIBRARIES) wmftopng wmftofig wmftoeps xwmf
  
  all: $(TARGETS)
  
@@ -58,43 +60,55 @@
 +wmftofig: libwmf.so.1 libxfwmf.so.1 wmftofig.o LIBXFIG
  	$(CC) $(LDFLAGS) -o wmftofig wmftofig.o -L. -lxfwmf -lwmf $(XFLIBS)
  
+-wmftoeps: libwmf.a libepswmf.a wmftoeps.o LIBXFIG
++wmftoeps: libwmf.so.1 libepswmf.so.1 wmftoeps.o LIBXFIG
+ 	$(CC) $(LDFLAGS) -o wmftoeps wmftoeps.o -L. -lepswmf -lwmf $(EPSLIBS)
+ 
  libwmf.a:	$(WMFLIBOBJECTS)
  	 $(AR) rc libwmf.a $(WMFLIBOBJECTS) 
  	 $(RANLIB) libwmf.a 
  
-+libwmf.so.1: 	$(WMFLIBOBJECTS:.o=.so)
++libwmf.so.1:	$(WMFLIBOBJECTS:.o=.so)
 +	$(CC) -shared -Wl,-soname,$@ -o $@ $(WMFLIBOBJECTS:.o=.so) $(LIBS)
 +	ln -sf libwmf.so.1 libwmf.so
 +
  libgdwmf.a:	$(GDLIBOBJECTS)
  	 $(AR) rc libgdwmf.a $(GDLIBOBJECTS) 
  	 $(RANLIB) libgdwmf.a
- 
-+libgdwmf.so.1:	$(GDLIBOBJECTS:.o=.so)
++ 
++libgdwmf.so.1: $(GDLIBOBJECTS:.o=.so)
 +	$(CC) -shared -Wl,-soname,$@ -o $@ $(GDLIBOBJECTS:.o=.so) $(LIBS)
 +	ln -sf libgdwmf.so.1 libgdwmf.so
-+
+ 
  libxfwmf.a:	$(XFLIBOBJECTS)
  	 $(AR) rc libxfwmf.a $(XFLIBOBJECTS) 
  	 $(RANLIB) libxfwmf.a
- 
-+libxfwmf.so.1:	$(XFLIBOBJECTS:.o=.so)
++ 
++libxfwmf.so.1: $(XFLIBOBJECTS:.o=.so)
 +	$(CC) -shared -Wl,-soname,$@ -o $@ $(XFLIBOBJECTS:.o=.so) $(LIBS)
 +	ln -sf libxfwmf.so.1 libxfwmf.so
+ 
+ libepswmf.a:	$(EPSLIBOBJECTS)
+ 	 $(AR) rc libepswmf.a $(EPSLIBOBJECTS) 
+ 	 $(RANLIB) libepswmf.a
+ 
++libepswmf.so.1:	$(EPSLIBOBJECTS:.o=.so)
++	$(CC) -shared -Wl,-soname,$@ -o $@ $(EPSLIBOBJECTS:.o=.so) $(LIBS)
++	ln -sf libepswmf.so.1 libepswmf.so
 +
  libXwmf.a:	$(XLIBOBJECTS)
  	 $(AR) rc libXwmf.a $(XLIBOBJECTS) 
  	 $(RANLIB) libXwmf.a
  
-+libXwmf.so.1:	$(XLIBOBJECTS:.o=.so)
++libXwmf.so.1:  $(XLIBOBJECTS:.o=.so)
 +	$(CC) -shared -Wl,-soname,$@ -o $@ $(XLIBOBJECTS:.o=.so) $(LIBS)
 +	ln -sf libXwmf.so.1 libXwmf.so
 +
  LIBDIB:
  	@echo making libdib in libdib
  	@(cd libdib && $(MAKE)) || exit 1
-@@ -94,8 +124,8 @@
- 	@echo making libxfig in libxfig
+@@ -106,8 +142,8 @@
+ 	@echo making libxfig, libeps in libxfig
  	@(cd libxfig && $(MAKE)) || exit 1
  
 -%.o: %.c 
@@ -103,21 +117,24 @@
 +	$(CC) $(CFLAGS) -fPIC -DPIC -o $@ -c $<
  
  clean: cleansub
- 	rm -rf *.o wmftopng wmftofig xwmf a.out core *.a .pure
-@@ -134,15 +164,24 @@
+ 	rm -rf *.o wmftopng wmftofig wmftoeps xwmf a.out core *.a .pure
+@@ -146,17 +182,28 @@
  	$(libdir)
  
  install: all installdirs installsub
 -	$(INSTALL) $(srcdir)/xwmf $(bindir)/xwmf
 -	$(INSTALL) $(srcdir)/wmftopng $(bindir)/wmftopng
 -	$(INSTALL) $(srcdir)/wmftofig $(bindir)/wmftofig
+-	$(INSTALL) $(srcdir)/wmftoeps $(bindir)/wmftoeps
 +	$(INSTALL_PROGRAM) $(srcdir)/xwmf $(bindir)/xwmf
 +	$(INSTALL_PROGRAM) $(srcdir)/wmftopng $(bindir)/wmftopng
 +	$(INSTALL_PROGRAM) $(srcdir)/wmftofig $(bindir)/wmftofig
++	$(INSTALL_PROGRAM) $(srcdir)/wmftoeps $(bindir)/wmftoeps
  	$(INSTALL_DATA) $(srcdir)/libwmf.a $(libdir)/libwmf.a
  	$(INSTALL_DATA) $(srcdir)/libgdwmf.a $(libdir)/libgdwmf.a
  	$(INSTALL_DATA) $(srcdir)/libXwmf.a $(libdir)/libXwmf.a
  	$(INSTALL_DATA) $(srcdir)/libxfwmf.a $(libdir)/libxfwmf.a
+ 	$(INSTALL_DATA) $(srcdir)/libepswmf.a $(libdir)/libepswmf.a
 +	$(INSTALL_DATA) $(srcdir)/libwmf.so.1 $(libdir)/libwmf.so.1
 +	ln -sf libwmf.so.1 $(libdir)/libwmf.so
 +	$(INSTALL_DATA) $(srcdir)/libgdwmf.so.1 $(libdir)/libgdwmf.so.1
@@ -126,6 +143,8 @@
 +	ln -sf libXwmf.so.1 $(libdir)/libXwmf.so
 +	$(INSTALL_DATA) $(srcdir)/libxfwmf.so.1 $(libdir)/libxfwmf.so.1
 +	ln -sf libxfwmf.so.1 $(libdir)/libxfwmf.so
++	$(INSTALL_DATA) $(srcdir)/libepswmf.so.1 $(libdir)/libepswmf.so.1
++	ln -sf libepswmf.so.1 $(libdir)/libepswmf.so
  	$(INSTALL_DATA) wmfapi.h $(INCLUDEDIR)/wmfapi.h
  	$(INSTALL_DATA) gdwmfapi.h $(INCLUDEDIR)/gdwmfapi.h
  	$(INSTALL_DATA) Xwmfapi.h $(INCLUDEDIR)/Xwmfapi.h

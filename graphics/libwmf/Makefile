@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libwmf
-PORTVERSION=	0.1.17
+PORTVERSION=	0.1.20
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/libwmf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	wvware
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -23,9 +24,10 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype \
 		          -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}"/lib
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	(cd ${WRKSRC}; ln -s xgd-1.7.3 xgd)
+	(cd ${WRKSRC}; ${LN} -s xgd-1.7.3 xgd)
+	(cd ${WRKSRC}/libdib; ${LN} -s ../bytelevel.c)
 
 .include <bsd.port.mk>
