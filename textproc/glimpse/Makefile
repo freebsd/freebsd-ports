@@ -16,14 +16,8 @@ COMMENT=	Text search engine
 
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DISO_CHAR_SET=1"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DISO_CHAR_SET=1 -D__STRICT_ANSI__"
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
 
 pre-configure:
 	${RM} ${WRKSRC}/config.cache
@@ -35,4 +29,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/glimpse
 	${INSTALL_PROGRAM} ${WRKSRC}/index/wgconvert ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
