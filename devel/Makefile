@@ -227,6 +227,7 @@
     SUBDIR += erlslang
     SUBDIR += error
     SUBDIR += esdl
+    SUBDIR += esvn
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fampp
