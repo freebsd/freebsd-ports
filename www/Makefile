@@ -328,6 +328,7 @@
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webrick
     SUBDIR += ruby-webunit
+    SUBDIR += scout
     SUBDIR += screem
     SUBDIR += sidplug
     SUBDIR += sitecopy
