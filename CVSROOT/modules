@@ -5455,6 +5455,7 @@ rcs		src/gnu/usr.bin/rcs
 rdate		ports/sysutils/rdate
 rdb		ports/databases/rdb
 rdesktop	ports/net/rdesktop
+rdesktop-devel	ports/net/rdesktop-devel
 rdist		src/usr.bin/rdist
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
