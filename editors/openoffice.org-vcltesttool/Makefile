@@ -7,8 +7,8 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	644
-PORTREVISION=	1
-SNAPDATE=	20030412
+PORTREVISION=	2
+SNAPDATE=	20030601
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
@@ -37,6 +37,7 @@ PASTE?=	/usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
+BROKEN=			"Does not work yet, installation problems"
 BUILD_NR=		${PORTVERSION}
 RELEASE_NR=		1.1
 INSTALLATION_BASEDIR=	OpenOffice.org-${BUILD_NR}
