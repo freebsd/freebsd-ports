@@ -116,11 +116,10 @@ csound/*		ports/audio/csound	Distribution prohibited; may be
 						is prohibited.
 csound/*		ports/audio/csound-manual ports/audio/same as csound
 cyberbit/*		ports/x11-fonts/cyberbit-ttfonts Not free for commercial use
-DansGuardian-2.6-*	ports/www/dansguardian	Not free for installation by
+DansGuardian-2.[678]-*	ports/www/dansguardian	Not free for installation by
 						3rd parties charging for
 						installation or support; not
 						free for commercial use.
-DansGuardian-2.7-*	ports/www/dansguardian-devel same as dansguardian
 DarwinStreamingSrc*.zip	ports/net/DarwinStreaming Server License rectrictions.
 						See http://www.opensource.apple.com/apsl/
 dat-*.tar		ports/security/uvscan-dat Restricted to the license
