@@ -1,5 +1,5 @@
---- plugins/qt-gui-1.0.2/src/Makefile.in.orig	Tue Jul 11 18:54:27 2000
-+++ plugins/qt-gui-1.0.2/src/Makefile.in	Mon Jul 24 03:12:25 2000
+--- plugins/qt-gui-1.0.3/src/Makefile.in.orig	Tue Jul 11 18:54:27 2000
++++ plugins/qt-gui-1.0.3/src/Makefile.in	Mon Jul 24 03:12:25 2000
 @@ -119,7 +119,7 @@
  
  licq_qt_gui_la_LDFLAGS = $(X_LIBS) $(QT_LDFLAGS) $(KDE_LDFLAGS) 	-module -avoid-version -rpath $(libdir) -R$(QT_LIBDIR)
