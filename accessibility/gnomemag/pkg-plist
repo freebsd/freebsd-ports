@@ -1,0 +1,36 @@
+bin/magnifier
+include/gnome-mag-1.0/magnifier/GNOME_Magnifier.h
+lib/libgnome-mag.a
+lib/libgnome-mag.so
+lib/libgnome-mag.so.1
+libdata/bonobo/servers/GNOME_Magnifier.server
+libdata/pkgconfig/gnome-mag-1.0.pc
+share/gnome/gnome-mag/crosshair-cursor.xpm
+share/gnome/gnome-mag/default-cursor.xpm
+share/gnome/idl/gnome-mag-1.0/GNOME_Magnifier.idl
+share/locale/az/LC_MESSAGES/gnome-mag.mo
+share/locale/be/LC_MESSAGES/gnome-mag.mo
+share/locale/bg/LC_MESSAGES/gnome-mag.mo
+share/locale/cs/LC_MESSAGES/gnome-mag.mo
+share/locale/da/LC_MESSAGES/gnome-mag.mo
+share/locale/de/LC_MESSAGES/gnome-mag.mo
+share/locale/el/LC_MESSAGES/gnome-mag.mo
+share/locale/es/LC_MESSAGES/gnome-mag.mo
+share/locale/fa/LC_MESSAGES/gnome-mag.mo
+share/locale/fi/LC_MESSAGES/gnome-mag.mo
+share/locale/fr/LC_MESSAGES/gnome-mag.mo
+share/locale/ga/LC_MESSAGES/gnome-mag.mo
+share/locale/he/LC_MESSAGES/gnome-mag.mo
+share/locale/ja/LC_MESSAGES/gnome-mag.mo
+share/locale/lv/LC_MESSAGES/gnome-mag.mo
+share/locale/ms/LC_MESSAGES/gnome-mag.mo
+share/locale/nl/LC_MESSAGES/gnome-mag.mo
+share/locale/no/LC_MESSAGES/gnome-mag.mo
+share/locale/pt/LC_MESSAGES/gnome-mag.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-mag.mo
+share/locale/sv/LC_MESSAGES/gnome-mag.mo
+share/locale/vi/LC_MESSAGES/gnome-mag.mo
+@dirrm share/gnome/idl/gnome-mag-1.0
+@dirrm share/gnome/gnome-mag
+@dirrm include/gnome-mag-1.0/magnifier
+@dirrm include/gnome-mag-1.0
