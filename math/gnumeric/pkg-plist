@@ -2,10 +2,12 @@ bin/gnumeric
 etc/CORBA/servers/gnumeric.gnorba
 share/gnome/apps/Applications/gnumeric.desktop
 share/gnome/gnumeric/glade/col-width.glade
+share/gnome/gnumeric/glade/delete-cells.glade
 share/gnome/gnumeric/glade/dialog-zoom.glade
 share/gnome/gnumeric/glade/font-sel.glade
 share/gnome/gnumeric/glade/hf-config.glade
 share/gnome/gnumeric/glade/import.glade
+share/gnome/gnumeric/glade/insert-cells.glade
 share/gnome/gnumeric/glade/names.glade
 share/gnome/gnumeric/glade/print.glade
 share/gnome/gnumeric/glade/row-height.glade
@@ -22,6 +24,7 @@ share/gnome/gnumeric/plugins/libtext.so
 share/gnome/gnumeric/plugins/libxbase.so
 share/gnome/gnumeric/python/gnumeric_startup.py
 share/gnome/idl/Gnumeric.idl
+share/gnome/idl/Gnumeric-value.idl
 share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
@@ -116,6 +119,7 @@ share/locale/es_MX/LC_MESSAGES/gnumeric.mo
 share/locale/es_PA/LC_MESSAGES/gnumeric.mo
 share/locale/es_PE/LC_MESSAGES/gnumeric.mo
 share/locale/es_SV/LC_MESSAGES/gnumeric.mo
+share/locale/et/LC_MESSAGES/gnumeric.mo
 share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
@@ -123,6 +127,7 @@ share/locale/hu/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric.mo
 share/locale/ko/LC_MESSAGES/gnumeric.mo
+share/locale/nl/LC_MESSAGES/gnumeric.mo
 share/locale/no/LC_MESSAGES/gnumeric.mo
 share/locale/pl/LC_MESSAGES/gnumeric.mo
 share/locale/pt/LC_MESSAGES/gnumeric.mo
