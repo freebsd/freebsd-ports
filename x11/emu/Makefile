@@ -3,7 +3,7 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1996/11/18 09:55:23 asami Exp $
+# $Id: Makefile,v 1.11 1997/03/06 04:50:09 asami Exp $
 #
 
 DISTNAME=	emu-1.31
@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	me@FreeBSD.org
 
+.if !defined(DISPLAY) 
+BROKEN=         Requires an X Display to build
+.endif
 USE_IMAKE=	yes
-# only needs to connect to X server to run xrdb
-#IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/emu
 
 pre-configure:
