@@ -9,9 +9,8 @@ PORTNAME=	helium
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://www.cs.uu.nl/~afie/helium/
-DISTNAME=	${PORTNAME}
-#DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.cs.uu.nl/~afie/helium/distr/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	obraun@FreeBSD.org
 
