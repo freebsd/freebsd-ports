@@ -1,15 +1,11 @@
-*** Makefile.orig	Fri Aug 11 15:57:26 1995
---- Makefile	Fri Aug 11 16:04:30 1995
+*** Makefile.orig	Fri Feb 11 10:13:45 2000
+--- Makefile	Fri Feb 11 10:16:11 2000
 ***************
 *** 0 ****
---- 1,10 ----
-+ 
-+ MAN=man
+--- 1,6 ----
 + all:
-+ 	(cd libtext; make)
-+ 	(cd 9term; make)
++ 	(cd libtext; ${MAKE})
++ 	(cd 9term; ${MAKE})
 + install:
-+ 	$(INSTALL) -c 9term/9term $(PREFIX)/bin/
-+ 	$(INSTALL) -c 9term/9term.1 $(PREFIX)/$(MAN)/man1/
-+ 	strip $(PREFIX)/bin/9term
-+ 	gzip -9nf $(PREFIX)/man/man1/9term.1
++ 	${BSD_INSTALL_PROGRAM} 9term/9term $(PREFIX)/bin
++ 	${BSD_INSTALL_MAN} 9term/9term.1 $(PREFIX)/man/man1

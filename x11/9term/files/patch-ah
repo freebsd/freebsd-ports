@@ -1,0 +1,29 @@
+--- 9term/display.c.orig	Thu Dec 15 23:48:28 1994
++++ 9term/display.c	Fri Feb 11 10:08:04 2000
+@@ -114,7 +114,7 @@
+ delwin(Widget w, XEvent *event, String *params, Cardinal *n)
+ {
+   if (w == _toplevel)
+-	killpg(SIGHUP);
++	O_killpg(SIGHUP);
+ }
+ 
+ /*
+@@ -185,7 +185,7 @@
+ 		else if (!strcasecmp(s, "plan9"))
+ 			kbdmode = PLAN9;
+ 	if (s = get_resource(resource, class, "p9font", "P9font"))
+-		setenv("font", s, 1);
++		O_setenv("font", s, 1);
+ 	if (s = get_resource(resource, class, "highwater", "Highwater"))
+ 		highwater = atoi(s);
+ 	if (s = get_resource(resource, class, "lowwater", "Lowwater"))
+@@ -230,7 +230,7 @@
+ #endif
+ 		/* export window id to environment */
+ 	sprintf(id, "%d", XtWindow(_toplevel));
+-	setenv("WINDOWID", id, 1);
++	O_setenv("WINDOWID", id, 1);
+ 
+ 		/* register mouse and keyboard events */
+ 	einit(Ekeyboard | Emouse);
