@@ -5511,6 +5511,7 @@ optipng		ports/graphics/optipng
 oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
 oracle7-client	ports/databases/oracle7-client
+orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
 orchard-c	ports/textproc/orchard-c
