@@ -4,7 +4,6 @@
     SUBDIR += 9e
     SUBDIR += arc
     SUBDIR += arj
-    SUBDIR += bitbox
     SUBDIR += bzip
     SUBDIR += bzip2
     SUBDIR += cabextract

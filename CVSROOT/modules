@@ -523,7 +523,6 @@ biosboot	src/sys/i386/boot/biosboot
 birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
-bitbox		ports/archivers/bitbox
 bitchx		ports/irc/bitchx
 bitmap		ports/editors/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
