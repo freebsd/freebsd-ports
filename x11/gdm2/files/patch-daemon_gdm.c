@@ -1,6 +1,6 @@
---- daemon/gdm.c.orig	Wed Jun 25 17:04:49 2003
-+++ daemon/gdm.c	Sat Jun 28 18:17:44 2003
-@@ -38,7 +38,7 @@
+--- daemon/gdm.c.orig	Mon Apr  5 03:11:28 2004
++++ daemon/gdm.c	Tue May 11 00:04:26 2004
+@@ -42,7 +42,7 @@
  #include <locale.h>
  
  /* This should be moved to auth.c I suppose */
@@ -9,3 +9,21 @@
  
  #include <vicious.h>
  
+@@ -3822,7 +3822,7 @@
+ 			return;
+ 		}
+ 
+-#ifdef __linux__
++#if defined  (__linux__) || defined (__FreeBSD__)
+ 		gdm_connection_printf (conn, "OK %d\n", gdm_get_cur_vt ());
+ #else
+ 		gdm_connection_write (conn, "ERROR 8 Virtual terminals not supported\n");
+@@ -3849,7 +3849,7 @@
+ 			return;
+ 		}
+ 
+-#ifdef __linux__
++#if defined (__linux__) || defined (__FreeBSD__)
+ 		gdm_change_vt (vt);
+ 		for (li = displays; li != NULL; li = li->next) {
+ 			GdmDisplay *disp = li->data;
