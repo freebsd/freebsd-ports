@@ -1,0 +1,19 @@
+*** src/gated/paths.h.in.orig	Sun May 14 14:58:50 2000
+--- src/gated/paths.h.in	Sun May 14 15:03:06 2000
+***************
+*** 35,41 ****
+   * __END_OF_COPYRIGHT__
+   */
+  
+! #define	_PATH_CONFIG	"/etc/%s.conf"
+  #define	_PATH_DEFS	"/usr/include/isode"
+  #define	_PATH_DUMP	"@DUMPDIR@/%s_dump"
+  #define	_PATH_DUMPDIR	"@DUMPDIR@"
+--- 35,41 ----
+   * __END_OF_COPYRIGHT__
+   */
+  
+! #define	_PATH_CONFIG	"@prefix@/etc/%s.conf"
+  #define	_PATH_DEFS	"/usr/include/isode"
+  #define	_PATH_DUMP	"@DUMPDIR@/%s_dump"
+  #define	_PATH_DUMPDIR	"@DUMPDIR@"
