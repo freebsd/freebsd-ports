@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Mon Aug 23 03:22:41 2004
-+++ Makefile.in	Sat Aug 28 13:50:52 2004
++++ Makefile.in	Mon Aug 30 00:39:45 2004
 @@ -424,7 +424,12 @@
  target_os = @target_os@
  target_vendor = @target_vendor@
@@ -14,6 +14,15 @@
  DIST_SUBDIRS = ${SUBDIRS} examples myspell lib5
  filterdir = ${pkglibdir}
  optdir = ${pkgdatadir}
+@@ -512,7 +517,7 @@
+ 	lib/string_list-c.cpp lib/find_speller.cpp lib/speller-c.cpp \
+ 	lib/string_pair_enumeration-c.cpp lib/new_checker.cpp \
+ 	modules/filter/url.cpp $(am__append_3)
+-libaspell_la_LIBADD = $(LIBINTL) $(PTHREAD_LIB)
++libaspell_la_LIBADD = $(LIBINTL) $(PTHREAD_LIB) $(LTLIBINTL)
+ @INCREMENTED_SONAME_FALSE@libaspell_la_LDFLAGS = -version-info 16:0:1
+ @INCREMENTED_SONAME_TRUE@libaspell_la_LDFLAGS = -version-info 16:0:0
+ @PSPELL_COMPATIBILITY_TRUE@libpspell_la_SOURCES = lib/dummy.cpp
 @@ -521,7 +526,7 @@
  @INCREMENTED_SONAME_TRUE@@PSPELL_COMPATIBILITY_TRUE@libpspell_la_LDFLAGS = -version-info 16:0:0
  word_list_compress_SOURCES = prog/compress.c
