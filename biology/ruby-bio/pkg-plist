@@ -1,3 +1,4 @@
+bin/biofetch
 bin/dbget
 %%RUBY_SITELIBDIR%%/bio.rb
 %%RUBY_SITELIBDIR%%/bio/appl/blast.rb
@@ -28,9 +29,15 @@ bin/dbget
 %%RUBY_SITELIBDIR%%/bio/db/swissprot.rb
 %%RUBY_SITELIBDIR%%/bio/db/transfac.rb
 %%RUBY_SITELIBDIR%%/bio/db/trembl.rb
+%%RUBY_SITELIBDIR%%/bio/feature.rb
+%%RUBY_SITELIBDIR%%/bio/id.rb
+%%RUBY_SITELIBDIR%%/bio/io/brdb.rb
 %%RUBY_SITELIBDIR%%/bio/io/dbget.rb
+%%RUBY_SITELIBDIR%%/bio/io/fetch.rb
 %%RUBY_SITELIBDIR%%/bio/io/flatfile.rb
 %%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
+%%RUBY_SITELIBDIR%%/bio/io/registry.rb
+%%RUBY_SITELIBDIR%%/bio/io/sql.rb
 %%RUBY_SITELIBDIR%%/bio/location.rb
 %%RUBY_SITELIBDIR%%/bio/matrix.rb
 %%RUBY_SITELIBDIR%%/bio/pathway.rb
@@ -45,6 +52,7 @@ bin/dbget
 @dirrm %%RUBY_SITELIBDIR%%/bio/io
 @dirrm %%RUBY_SITELIBDIR%%/bio/util
 @dirrm %%RUBY_SITELIBDIR%%/bio
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/biofetch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/fasta2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/fsplit.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gb2fasta.rb
@@ -52,12 +60,14 @@ bin/dbget
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2nuc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2pep.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genes2tab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genome2rb.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/genome2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/gt2fasta.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/ssearch2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/tfastx2tab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/vs-genes.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bio
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bio/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ja/BioRuby.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ja/Design.rd.ja

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	biology ruby
 MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/src/
 MASTER_SITE_SUBDIR=	knu
@@ -28,7 +28,7 @@ do-install:
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/sample/ ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-	${CP} -R ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.ja ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
