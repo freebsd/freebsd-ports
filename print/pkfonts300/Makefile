@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/02/07 16:33:22 max Exp $
+# $Id: Makefile,v 1.9 1998/08/10 12:14:50 steve Exp $
 #
 
 DISTNAME=	pkfonts
@@ -15,7 +15,8 @@ MASTER_SITES=	ftp://ftp.univ-evry.fr/.04/system/OpenBSD/distfiles/pkfonts/ \
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
-MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
+LOOP_VAR=	RESOLUTION
+LOOP_OPTIONS=	118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts
 EXTRACT_CMD=	/usr/bin/true # extracted directly in install target
 NO_BUILD=	yes

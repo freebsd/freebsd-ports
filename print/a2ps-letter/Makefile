@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.19 1998/07/21 13:48:19 asami Exp $
+# $Id: Makefile,v 1.20 1998/09/19 16:38:36 smace Exp $
 #
 
 DISTNAME=	a2ps-4.10.3
@@ -13,7 +13,8 @@ MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-MANUAL_PACKAGE_BUILD=  PAPERSIZE has to be set to Letter A4
+LOOP_VAR=	PAPERSIZE
+LOOP_OPTIONS=	Letter A4
 GNU_CONFIGURE=	yes
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
 

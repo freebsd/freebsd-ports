@@ -3,7 +3,7 @@
 # Date created:			24 Jul, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.3 1997/11/10 11:23:19 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/27 08:10:30 tg Exp $
 #
 
 DISTNAME=       enscript-1.5.0
@@ -13,7 +13,8 @@ MASTER_SITES=   ${MASTER_SITE_GNU}
 
 MAINTAINER=	kline@thought.org
 
-MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
+LOOP_VAR=	PAPERSIZE
+LOOP_OPTIONS=	A4 Letter Letterdj
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-nls --with-media=${PAPERSIZE}
