@@ -1,0 +1,7 @@
+bin/elmo
+bin/elmoconf.pl
+%%DATADIR%%/template
+%%DATADIR%%/tutorial
+share/locale/de/LC_MESSAGES/elmo.mo
+share/locale/pl/LC_MESSAGES/elmo.mo
+@dirrm %%DATADIR%%
