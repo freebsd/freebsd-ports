@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.4.2
+PORTVERSION=	4.5.1
 CATEGORIES=	www
-MASTER_SITES=	http://drupal.org/drupal/
+MASTER_SITES=	http://drupal.org/files/projects/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	esn@x123.info
 COMMENT=	CMS that supports pgsql and mysql
@@ -18,7 +17,7 @@ COMMENT=	CMS that supports pgsql and mysql
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libpq.so.3)
-RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 .endif
 
 NO_BUILD=	yes
