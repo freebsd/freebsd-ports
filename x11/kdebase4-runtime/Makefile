@@ -70,10 +70,6 @@ post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
-.if !defined(WITHOUT_KERAMIK)
-WITH_KERAMIK=	yes
-.endif # !defined(WITHOUT_KERAMIK)
-
 .if defined(WITH_KERAMIK)
 PLIST_SUB+=	KERAMIK=""
 KERAMIK_TARBALL=${PORTNAME}-keramik-${KERAMIK_DATE}.tar.bz2

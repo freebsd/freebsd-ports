@@ -77,10 +77,6 @@ pre-fetch: kde-version-check
 	@${ECHO}
 .endif
 
-.if !defined(WITHOUT_KERAMIK)
-WITH_KERAMIK=	yes
-.endif # !defined(WITHOUT_KERAMIK)
-
 .if defined(WITH_KERAMIK)
 PLIST_SUB+=	KERAMIK=""
 KERAMIK_TARBALL=${PORTNAME}-keramik-${KERAMIK_DATE}.tar.bz2
