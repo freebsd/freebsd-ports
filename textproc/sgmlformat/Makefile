@@ -3,10 +3,10 @@
 # Date created:		July 16, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.4 1997/08/05 06:41:54 asami Exp $
+# $Id: Makefile,v 1.6 1997/08/20 21:54:42 jfieber Exp $
 #
 
-DISTNAME=	sgmlformat-1.3
+DISTNAME=	sgmlformat-1.4
 CATEGORIES=	textproc print
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
