@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	john_m_cooper@yahoo.com
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv
