@@ -20,10 +20,6 @@ PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
 
-.if ${PKGNAMESUFFIX} != "-nocrypto"
-RESTRICTED=	"Contains cryptography"
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 USE_REINPLACE=	yes
