@@ -22,11 +22,12 @@ include/gaim/gtkcellrendererprogress.h
 include/gaim/gtkconn.h
 include/gaim/gtkconv.h
 include/gaim/gtkdebug.h
+include/gaim/gtkdialogs.h
 include/gaim/gtkeventloop.h
 include/gaim/gtkft.h
+include/gaim/gtkgaim.h
 include/gaim/gtkimhtml.h
 include/gaim/gtkimhtmltoolbar.h
-include/gaim/gtkinternal.h
 include/gaim/gtklog.h
 include/gaim/gtknotify.h
 include/gaim/gtkplugin.h
@@ -43,7 +44,6 @@ include/gaim/imgstore.h
 include/gaim/internal.h
 include/gaim/log.h
 include/gaim/md5.h
-include/gaim/multi.h
 include/gaim/network.h
 include/gaim/notify.h
 include/gaim/plugin.h
@@ -65,7 +65,6 @@ include/gaim/sslconn.h
 include/gaim/status.h
 include/gaim/stock.h
 include/gaim/stringref.h
-include/gaim/ui.h
 include/gaim/util.h
 include/gaim/value.h
 include/gaim/xmlnode.h
