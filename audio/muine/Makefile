@@ -36,7 +36,8 @@ OPTIONS=	GSTREAMER "Enable Gstreamer backend" off
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_GSTREAMER)
-CONFIGURE_ARGS+= --enable-gstreamer=yes
+IGNORE=		Doesn't run with recent gstreamer.
+CONFIGURE_ARGS+=--enable-gstreamer=yes
 USE_GSTREAMER+=	mad vorbis flac
 .else
 LIB_DEPENDS+=	xine.12:${PORTSDIR}/multimedia/libxine
