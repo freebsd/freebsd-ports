@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	mdcrack
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	http://mdcrack.multimania.com/
+MASTER_SITES=	http://mdcrack.multimania.com/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-ALL_TARGET=	# empth
+ALL_TARGET=	little
 
 .include <bsd.port.mk>
