@@ -5400,6 +5400,7 @@ p5-DBIx-Password	ports/databases/p5-DBIx-Password
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
 p5-DBIx-SearchBuilder	ports/databases/p5-DBIx-SearchBuilder
 p5-DBIx-Table	ports/databases/p5-DBIx-Table
+p5-DBIx-Tree	ports/databases/p5-DBIx-Tree
 p5-DBIx-XHTML_Table	ports/databases/p5-DBIx-XHTML_Table
 p5-DBIx-XML_RDB	ports/databases/p5-DBIx-XML_RDB
 p5-DBZ_File	ports/databases/p5-DBZ_File
