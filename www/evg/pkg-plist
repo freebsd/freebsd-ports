@@ -1,4 +1,4 @@
 bin/evg
 lib/%%PYTHON_VERSION%%/site-packages/eclipthtml.py
-share/doc/evg/README
-@dirrm share/doc/evg
+%%PORTDOCS%%share/doc/evg/README
+%%PORTDOCS%%@dirrm share/doc/evg
