@@ -105,6 +105,7 @@
     SUBDIR += hbiff
     SUBDIR += hotwayd
     SUBDIR += ifile
+    SUBDIR += ilohamail
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imapfilter
