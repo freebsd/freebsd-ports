@@ -54,6 +54,6 @@ do-install:
 		${PREFIX}/share/examples/xloadimage/xloadimagerc
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
