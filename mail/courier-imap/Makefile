@@ -7,7 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	1.5.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -126,6 +126,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/authlib/authtest ${PREFIX}/bin/
 	@${MKDIR} ${PREFIX}/share/doc/courier-imap
 	@${INSTALL_DATA} ${WRKSRC}/imap/imapd.cnf ${PREFIX}/etc/courier-imap/imapd.cnf.dist
 	@${INSTALL_DATA} ${WRKSRC}/imap/pop3d.cnf ${PREFIX}/etc/courier-imap/pop3d.cnf.dist

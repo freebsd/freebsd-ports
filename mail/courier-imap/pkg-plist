@@ -1,3 +1,4 @@
+bin/authtest
 %%OPENSSLFLAG%%bin/couriertls
 bin/deliverquota
 bin/imapd
