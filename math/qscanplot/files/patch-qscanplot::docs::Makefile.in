@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- qscanplot/docs/Makefile.in	2002/01/10 15:56:35	1.1
++++ qscanplot/docs/Makefile.in	2002/01/10 15:57:01
+@@ -19,7 +19,7 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+-prefix = @prefix@
++prefix = @prefix@/share
+ exec_prefix = @exec_prefix@
+ #>- 
+ bindir = @bindir@
