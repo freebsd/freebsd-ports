@@ -29,7 +29,10 @@ share/gnome/gnome-osd/xchatosd.py
 share/gnome/pixmaps/gnome-osd.png
 share/locale/ja/LC_MESSAGES/gnome-osd.mo
 share/locale/pt/LC_MESSAGES/gnome-osd.mo
+@dirrm share/gnome/gnome-osd
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeosd
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README

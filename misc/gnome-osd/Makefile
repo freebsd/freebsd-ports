@@ -7,13 +7,12 @@
 
 PORTNAME=	gnome-osd
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/
 
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
-
-BROKEN=		Incomplete pkg-plist
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
