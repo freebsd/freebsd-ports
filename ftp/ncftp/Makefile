@@ -6,14 +6,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ncftp
+PORTNAME=	ncftp1
 PORTVERSION=	1.9.5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
+DISTNAME=	ncftp-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-NO_LATEST_LINK=	yes
 MAN1=		ncftp.1
 
 do-install:
