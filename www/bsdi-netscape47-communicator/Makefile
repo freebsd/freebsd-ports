@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.28 1998/11/24 20:39:55 obrien Exp $
+# $Id: Makefile,v 1.29 1998/11/24 22:05:13 obrien Exp $
 #
 
 DISTNAME=	communicator-v45-export.x86-unknown-freebsd
@@ -51,9 +51,8 @@ do-install:
 	  yes "" | LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
 	${MV} -f ${NDIR}/netscape ${NDIR}/communicator-4.5.bin
 	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.5
-.if !defined(MULTIVERSION)
-	${LN} -sf ${BINDIR}/communicator-4.5 ${BINDIR}/netscape
-.endif
+	${LN} -sf communicator-4.5 ${BINDIR}/communicator-4
+	${LN} -sf communicator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	  ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
