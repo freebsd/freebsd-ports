@@ -22,11 +22,12 @@ PATCH_SITES+=	http://kva.paranoia.ru/~troff/
 PATCH_DIST_STRIP=	-p1
 .endif
 
-USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	${MACHINE_ARCH}-unknown-freebsd${OSREL}
+INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${X11BASE}
-INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I/usr/src/contrib/libstdc++" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

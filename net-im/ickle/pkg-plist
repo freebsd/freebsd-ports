@@ -12,7 +12,6 @@ include/ickle/events.h
 include/ickle/exceptions.h
 include/ickle/socket.h
 lib/libicq2000.a
-lib/libicq2000.la
 lib/libicq2000.so
 lib/libicq2000.so.1
 @dirrm include/ickle
