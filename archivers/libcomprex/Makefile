@@ -22,13 +22,20 @@ LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL_VER=	13
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 INSTALLS_SHLIB=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 .include "Makefile.man"
