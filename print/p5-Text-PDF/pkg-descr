@@ -1,10 +1,13 @@
-In summary, this module provides a strong (IMO) base for working with
-PDF files but lacks some finesse. Users should know their way around the
-PDF specification.
+In summary, this module provides a strong base for working with PDF
+files but lacks some finesse. Users should know their way around the PDF
+specification.
 
 Included in the examples directory are some example programs starting
 from very simple PDF creation programs and working up. More extensive
 samples are included as scripts.
+
+Author: Martin Hosken <martin_hosken@sil.org>
+WWW: http://search.cpan.org/search?dist=Text-PDF
 
 -Anton
 <tobez@FreeBSD.org>
