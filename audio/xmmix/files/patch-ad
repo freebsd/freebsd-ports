@@ -1,0 +1,11 @@
+--- appenv.h.orig	Mon Jul 15 02:48:59 1996
++++ appenv.h	Sat Nov 11 10:15:06 2000
+@@ -59,7 +59,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/ioctl.h>
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <errno.h>

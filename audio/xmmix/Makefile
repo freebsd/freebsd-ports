@@ -18,4 +18,7 @@ USE_MOTIF=	yes
 
 MAN1=		xmmix.1
 
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/XMmix.ad
+
 .include <bsd.port.mk>
