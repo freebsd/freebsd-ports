@@ -810,7 +810,6 @@
     SUBDIR += projectcenter.app
     SUBDIR += prototype
     SUBDIR += pth
-    SUBDIR += ptl
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += py-ansistyle
