@@ -732,7 +732,7 @@ lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
 
-# xterm workaround
+@comment xterm workaround
 bin/resize
 bin/uxterm
 bin/xterm
