@@ -33,16 +33,19 @@ BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 post-patch:
-	${PERL} -pi -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
+.for ii in Makefile.in PluginLink.sh
+	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${SED} -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in \
-				${WRKSRC}/PluginLink.sh
+			s|/usr/X11R6|${X11BASE}|g' < ${ii}.orig > ${ii}
+.endfor
 # Use as a plugin to SpiralLoops 2.0.0 results in "Can't open audio driver."
 .if defined(PLUGIN)
-	${PERL} -pi -e 's|^//#define PLUGIN|#define PLUGIN|g' \
-			${WRKSRC}/Synth.C
+	${MV} ${WRKSRC}/Synth.C ${WRKSRC}/Synth.C.orig
+	${SED} -e 's|^//#define PLUGIN|#define PLUGIN|g' \
+		< ${WRKSRC}/Synth.C.orig > ${WRKSRC}/Synth.C
 
 post-build:
 	cd ${WRKSRC}; ${SH} ./PluginLink.sh

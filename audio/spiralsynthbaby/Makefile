@@ -29,11 +29,13 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 DOC_FILES=	CHANGES COPYING README
 
 post-patch:
-	${PERL} -pi -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
+	${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.orig
+	${SED} -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
 			s|CFLAGS =|CFLAGS +=|g ; \
 			s|CXXFLAGS=|CXXFLAGS+=|g ; \
 			s|-lm|${PTHREAD_LIBS} -lm|g ; \
-			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
+			s|/usr/X11R6|${X11BASE}|g' > ${WRKSRC}/Makefile.in \
+			< ${WRKSRC}/Makefile.in.orig
 
 pre-install:
 	${ECHO_CMD} lib/SpiralSynthBaby.so > ${PLIST}
