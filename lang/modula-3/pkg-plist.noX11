@@ -1,8 +1,6 @@
 bin/analyze_coverage
 bin/m3browser
 bin/m3build
-bin/m3build-6
-bin/m3build-6.0
 bin/m3bundle
 bin/m3pp
 bin/m3ship
@@ -11,7 +9,7 @@ bin/m3totex
 bin/m3where
 bin/quake
 bin/recordheap
-lib/m3/FreeBSD2/libm3configvars.so.6.0
+lib/m3/FreeBSD2/libm3configvars.so
 lib/m3/FreeBSD2/m3
 lib/m3/FreeBSD2/m3cgc1
 lib/m3/FreeBSD2/m3mkdir
@@ -234,7 +232,7 @@ lib/m3/pkg/m3configvars/FreeBSD2/.M3IMPTAB
 lib/m3/pkg/m3configvars/FreeBSD2/.M3WEB
 lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.a
 lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.m3x
-lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.so.6.0
+lib/m3/pkg/m3configvars/FreeBSD2/libm3configvars.so
 lib/m3/pkg/m3configvars/src/M3ConfigVars.i3
 lib/m3/pkg/m3core/FreeBSD2/.M3EXPORTS
 lib/m3/pkg/m3core/FreeBSD2/.M3IMPTAB
@@ -480,5 +478,5 @@ lib/m3/pkg/web/FreeBSD2/libweb.m3x
 lib/m3/pkg/web/src/Web.i3
 lib/m3/www/m3tohtml.1.html
 share/modula-3/COPYRIGHT
-@exec /sbin/ldconfig -m %D/lib/m3/FreeBSD2
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/m3/FreeBSD2
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

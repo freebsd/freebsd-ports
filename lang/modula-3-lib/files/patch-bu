@@ -1,0 +1,29 @@
+--- m3/m3core/src/runtime/FreeBSD2/RTStackASM.s.orig	Mon Oct 17 09:50:40 1994
++++ m3/m3core/src/runtime/FreeBSD2/RTStackASM.s	Fri Aug 28 13:44:44 1998
+@@ -3,6 +3,8 @@
+ 
+ 	.globl _RTStack__CurrentFrame
+ _RTStack__CurrentFrame:
++	.globl RTStack__CurrentFrame
++RTStack__CurrentFrame:
+ 		                      # STACK = ret frame
+ 	popl %eax                     # STACK = frame
+ 	pushl %eax
+@@ -19,6 +21,8 @@
+ 
+ 	.globl _RTStack__PreviousFrame
+ _RTStack__PreviousFrame:
++	.globl RTStack__PreviousFrame
++RTStack__PreviousFrame:
+ 	movl 4(%esp), %eax            # eax = ^callee
+ 	movl 4(%eax), %eax            # eax = callee.ebp
+ 	pushl 0(%eax)                 # push bp of caller
+@@ -33,6 +37,8 @@
+ 
+ 	.globl _RTStack__Unwind
+ _RTStack__Unwind:
++	.globl RTStack__Unwind
++RTStack__Unwind:
+ 	movl 4(%esp), %eax            # eax = ^to
+ 	movl 8(%eax), %esp
+ 	movl 4(%eax), %ebp

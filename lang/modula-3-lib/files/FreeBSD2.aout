@@ -1,0 +1,337 @@
+% Copyright (C) 1989, 1992 Digital Equipment Corporation 
+% All rights reserved.
+% See the file COPYRIGHT for a full description.
+% 
+% Last Modified On Thu Jun 20 12:17:07 PDT 1996 By heydon  
+%      Modified On Wed Oct 11 13:31:43 PDT 1995 By najork  
+%      Modified On Wed Jun 14 13:34:49 PDT 1995 By kalsow  
+%      Modified On Thu Apr  8 13:45:49 PDT 1993 by muller
+%
+%      Sun Nov 27 20:19:31 MET 1994 by ow
+%      Fri Feb  2 15:04:50 PST 1996 by jdp@polstra.com
+%
+% FreeBSD 2.1 and 2.2 configuration, with shared library support
+%
+
+%-------------------------------------------------- compilation environment ---
+
+readonly TARGET = "FreeBSD2"
+readonly DEFAULT_BUILD_DIR = TARGET
+
+include ("PLATFORMS")  % get the target-dependent mappings
+include (OS_TYPE)      % get the OS-dependent functions
+
+readonly NAMING_CONVENTIONS = "0"
+%                                        object files       libraries
+%  0=Unix                          =>  .o   .io    .mo       libXX.a
+%  1=Unix with a grumpy C compiler =>  .o   _i.o   _m.o      libXX.a
+%  2=Windows/NT                    =>  .obj .io    .mo       XX.lib
+%
+
+%------------------------------------------------------------- export paths ---
+% During the installation, destination directories that do not exist
+% will be created.  You need the necessary permissions to do so; otherwise,
+% the installation will fail, but can be restarted after you have 
+% fixed the permissions.
+
+INSTALL_ROOT = "/usr/local/"
+%-- handy for installations that keep all M3 stuff together
+
+BIN_INSTALL   = INSTALL_ROOT & "bin"                % executables
+LIB_INSTALL   = INSTALL_ROOT & "lib/m3/" & TARGET   % libraries
+DOC_INSTALL   = INSTALL_ROOT & "lib/m3/doc"         % documents
+PKG_INSTALL   = INSTALL_ROOT & "lib/m3/pkg"         % packages
+EMACS_INSTALL = INSTALL_ROOT & "lib/elisp"          % emacs lisp code
+MAN_INSTALL   = INSTALL_ROOT & "man"                % man pages
+HTML_INSTALL  = INSTALL_ROOT & "lib/m3/www"         % public hypertext
+
+WDROOT = $HOME & "/m3/pkg"		% handy default for overrides
+
+% The manual pages normally go in subdirectories man{1,...8} of
+% the MAN_INSTALL directory.  If you prefer to have them all in
+% a single section, define MAN_SECTION to be that section's name.
+% MAN_SECTION = "l"
+
+% On some systems (e.g. AFS) you must install public files in a different
+% place from where you use them.  If that is the case for your system,
+% specify the "use" location here, otherwise leave them alone.
+BIN_USE   = BIN_INSTALL
+LIB_USE   = LIB_INSTALL
+PKG_USE   = PKG_INSTALL
+
+% This is a relative path from LIB_USE to PKG_USE, so that we can avoid
+% installing absolute symbolic links.  If you cannot support such relative
+% links, then make it the same as PKG_USE.
+LIB_TO_PKG = "../pkg"
+
+readonly INSTALL_IMPLS = ""
+% "TRUE"
+%    => save all source files during the install
+%    => makes debugging easier and browsing more fruitful
+% "" (i.e. FALSE)
+%    => save only the exported interfaces and templates 
+%    => makes the installed system slightly smaller.
+
+readonly NEED_OBJECTS = "TRUE"
+% "TRUE"
+%    => accumulate a list of derived objects in COMPILE_OBJECTS
+%    => for building shared libraries in the library_hooks function below
+% ""
+%    => don't bother
+
+%---------------------------------------------------------------------- X11 ---
+% If you have X11R4 installed and would like the X11R4 binding interfaces
+% to be built, define the procedure "import_X11R4" to import the libraries
+% that are needed.  Otherwise, define "import_X11R4" to be an empty procedure.
+%
+% If you use the MIT server with DECnet support, you need X11 and dnet,
+% otherwise X11 should be enough.
+% 
+% Since X11R5 is an extension of X11R4, you can use the X11R5 libraries
+% instead of X11R4.  However, the Modula-3 binding interfaces have not
+% yet been upgraded to X11R5.
+%
+% "import_X11R4" is called from the X11R4 package.
+% "import_Motif" is called from the motif package.
+% "import_DECPEX" is called from the PEX package.
+% "import_OpenGL" is called from the opengl package.
+% "import_TCP" is called from the tcp package.
+
+readonly proc import_X11R4() is
+  import_lib("Xaw",    "/usr/X11R6/lib")
+  import_lib("Xmu",    "/usr/X11R6/lib")
+  import_lib("Xt",     "/usr/X11R6/lib")
+  import_lib("SM",     "/usr/X11R6/lib")
+  import_lib("ICE",    "/usr/X11R6/lib")
+  import_lib("Xext",   "/usr/X11R6/lib")
+  import_lib("X11",    "/usr/X11R6/lib")
+end
+
+readonly proc import_Motif() is
+  import_lib("Xm",   "/usr/X11R6/lib")
+end
+
+readonly proc import_DECPEX() is
+  % DEC PEX differs from MIT PEX, and is only supported on Digital machines.  
+end
+
+readonly proc import_OpenGL() is
+  % import_lib (GLU,  "/usr/lib")
+  % import_lib (GL,   "/usr/lib")
+  % import_lib (Xext, "/usr/lib")
+end
+
+readonly proc import_TCP() is
+end
+
+readonly PLATFORM_SUPPORTS_X      = (not stale ("/usr/X11R6/lib/libX11.a",
+                                                "/usr/X11R6/lib/libX11.a"))
+readonly PLATFORM_SUPPORTS_MOTIF  = (not stale ("/usr/X11R6/lib/libXm.a",
+                                                "/usr/X11R6/lib/libXm.a"))
+readonly PLATFORM_SUPPORTS_DECPEX = ""
+readonly PLATFORM_SUPPORTS_OPENGL = ""
+
+% Does your X11 server have the shared memory extension?
+readonly X11_WITH_SHARED_MEM = "TRUE"
+
+%-------------------------------------------------------------------- emacs ---
+% If you have emacs and want to compile ".el" files to ".elc" files,
+% fill in the function below.  Otherwise, comment out or delete the
+% entire function.  Note, the distributed code assumes gnuemacs version 19
+% or later.
+
+%readonly proc emacs_compile (el) is
+%  exec ("emacs -batch -f batch-byte-compile", el)
+%end
+
+%---------------------------------------------------- C compiler and linker ---
+% The following definitions are used to compile and link C modules.
+% Note that these definitions can be overridden on the m3build command
+% line with "-D".  (e.g.  m3build -DCC=gcc)
+%
+% _ifdef(a,b,c) == if defined(a) return b else return c
+%
+% The actual definitions must be kept on one line due to finicky details
+% of the bootstrap process.
+
+CC = _ifdef ("CC", CC, [ "cc", "-fpic" ])
+%--- C compiler with flags for compiling a single ".c" file
+
+LINK = _ifdef ("LINK", LINK, [ "ld", "-e", "start", "-dc", "-dp", "-L/usr/lib/aout", "-R!PREFIX!/lib/m3/" & TARGET & ":!PREFIX!/lib:/usr/X11R6/lib", "/usr/lib/crt0.o" ])
+%--- C compiler with flags for linking
+
+MAKELIB = _ifdef ("MAKELIB", MAKELIB, [ "ar", "cru" ])
+%--- program to build library archives
+
+RANLIB = _ifdef ("RANLIB", RANLIB, [ "ranlib" ])
+%--- program to index libraries
+
+ASM = _ifdef ("ASM", ASM, [ "as", "-k" ])
+%--- assembler
+
+BOOT_LINK = _ifdef ("BOOT_LINK", BOOT_LINK, [ "cc" ])
+%--- C compiler with flags for linking, used during the bootstrap process.
+% We have to use "cc" for the bootstrap, because the "-z2" option
+% ("libraries systematically linked with all programs") doesn't get used
+% during the bootstrap process.  If we use "ld", then the C library isn't
+% linked in.
+
+%------------------------------------------------------------- GNU variants ---
+% The two large pieces of GNU software used by the Modula-3 system
+% gcc(=m3cc) and gdb(=m3gdb) often require slightly different C compilers
+% or flags.  They are specified here.  Note that they may be overridden
+% from the m3build command line.
+%
+% To use the GNU defaults for CC and CFLAGS, specify "*".
+%
+
+GNU_CC     = _ifdef ("GNU_CC",     GNU_CC,     "cc")
+GNU_CFLAGS = _ifdef ("GNU_CFLAGS", GNU_CFLAGS, "-O")
+GNU_MAKE   = _ifdef ("GNU_MAKE",   GNU_MAKE,   "make")
+
+%-------------------------------------------------------- Modula-3 compiler ---
+% The syntax for the values passed to most of the M3_CONFIG options is
+% "@pgm@arg1@...@argn@" where "@" is an arbitrary character.  The
+% separator character must begin and end the value.
+
+% Where is the driver?
+M3 = LIB_USE & "/m3"
+
+% What are the standard flags?
+M3OPTIONS = [ "-w1", "-why", "-O" ]
+% ------ FOR DEBUGGING INFO, add "-g"
+
+M3_CONFIG = [
+   "-Y1" & _pack_args (CC),
+   "-Y2" & _pack_args (LINK),
+   "-Y3" & _pack_args (MAKELIB),
+   "-Y4" & _pack_args (RANLIB),
+   "-Y7" & _pack_args (ASM),
+
+   "-Y6@" & LIB_USE & "/m3cgc1@-maout@-munderscores@-quiet@-fpic@",
+   % --- the Modula-3 IL to assembly language pass
+
+   "-z2@-lm@/usr/lib/libgcc.a@-lc@/usr/lib/libgcc.a@",
+   % --- libraries systematically linked with all programs
+
+   "-z3" & LIB_USE & SL & "report_coverage.o",
+   % --- library linked in programs compiled with "-Z" coverage option
+
+   "-z5" & NAMING_CONVENTIONS,
+   % Set the host naming conventions.
+
+   "-z60",
+   % Values of "-z6":
+   %   "0" => the m3 driver will split library names and pass -L/-l
+   %          arguments to the linker
+   %   "1" => the m3 driver will pass libraries with full path names
+   %   "2" => like "0" except that for shared libraries, the driver
+   %          passes -Rdir as well as -Ldir to the linker
+
+   "-zA0",
+   % The "-zA" option specifies the maximum size (in megabytes) that Pass0
+   % is allowed to reach as a persistent server before the driver kills it.
+   % Setting it to zero disables server mode.
+   % NOTE: the current compiler is buggy, leave "-zA" alone!
+
+   "-zB@-O@",  % --- pass 1 options implied by "-O"
+   "-zC@-O@",  % --- pass 6 options implied by "-O"
+   "-zD@@",    % --- pass 7 options implied by "-O"
+
+   "-zE@-g@",  % --- pass 1 options implied by "-g"
+   "-zF@-g@",  % --- pass 6 options implied by "-g"
+   "-zG@@",    % --- pass 7 options implied by "-g"
+
+   "-zH" & NAMING_CONVENTIONS,
+   % --- the target's naming conventions
+
+   "-zI" & TARGET,
+   % --- the target architecture
+
+   % "-zJ10",
+   % The option "-zJx1" specifies that pass "x" is "noisy", "-zJx0"
+   % specifices that it's not.  The default is to assume that passes
+   % are not noisy.  The driver collects the standard output of noisy
+   % passes in a file and then deletes the file, unless "-keep" or
+   % "-verbose" is specified.
+
+   "-zK1",
+   % --- Set the value of "-zK" to "1" if you want the m3 driver to
+   %     supply -Bdynamic/-Bstatic options to the linker, "0" otherwise.
+
+   "-Bdynamic",
+   % --- libraries are shared by default.  If you give -zK1 you should
+   %     also provide an initial -Bdynamic or -Bstatic.
+
+   "-zL0"
+   % --- Set the value of "-zL" to "1" if you want .M3LINK files produced
+   %     for a dynamic loader
+]
+
+proc build_standalone() is
+   % --- reset the linker to avoid shared libraries.
+   M3_CONFIG += "-Y6@" & LIB_USE & "/m3cgc1@-maout@-munderscores@-quiet@"
+   M3_CONFIG += "-Y7@as@"
+   M3_CONFIG += "-Bstatic"
+end
+
+proc build_shared() is
+   % --- reset the linker to use shared libraries.
+end
+
+%-------------------------------------------------------------------- hooks ---
+% These are the "last chance" hooks that are called each time a library
+% or program is built.  They might build shared libraries or strip
+% executables...
+
+proc before_library_hooks(x) is
+end
+
+proc after_library_hooks(x) is
+  local lib_a  = format ("lib%s.a", x)
+  local lib_so = format ("lib%s.so", x)
+  local lib_sox = format ("lib%s.so.6.0", x)
+  local link_so  = format ("%s%s%s%s%s%s%s", PKG_INSTALL, SL, BUILD_PACKAGE,
+			   SL, BUILD_DIR, SL, lib_so)
+
+  if defined ("_all")
+    if stale (lib_a, lib_a)
+      write ("missing ", lib_a, ": not building ", lib_sox, CR)
+    else
+      if stale (lib_sox, lib_a)
+        exec ("ld -Bshareable -assert pure-text -o",
+                 lib_sox, COMPILE_OBJECTS)
+      end
+      install_derived (lib_sox)
+      >> M3SHIP_FILE in 
+	write ("link_file(\"", escape(lib_sox), "\", \"", escape(link_so),
+	       "\")", CR)
+      end
+      install_link_to_derived (lib_sox, LIB_INSTALL)
+      install_link_to_derived (lib_so, LIB_INSTALL)
+    end
+  end
+  deriveds (lib_sox, no_extension)
+  deriveds (lib_so, no_extension)
+end
+
+proc before_program_hooks(x) is
+end
+
+proc after_program_hooks(x) is
+end
+
+%------------------------------------------------------------- installation ---
+% "install_file" is called during an "m3build install" for
+% each file that neededs to be externally exported.
+
+readonly proc install_file (src, dest, mode) is
+  Note_install (src, dest)
+  % exec ("@cp -p -f", src, dest)
+  exec ("@install -c -m", mode, src, dest)
+end
+
+%---------------------------------------------- the rest of the environment ---
+
+if defined("_bootstrap") include("COMMON.BOOT") end
+include ("COMMON")

@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.21 1998/06/27 05:19:10 asami Exp $
+# $Id: Makefile,v 1.22 1998/08/20 08:57:47 hoek Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -20,21 +20,22 @@ NO_BUILD=	yes
 MAN1=		analyze_coverage.1 m3browser.1 m3build.1 \
 		m3bundle.1 m3pp.1 m3ship.1 m3tohtml.1 \
 		m3totex.1 m3where.1 quake.1 recordheap.1
+SCRIPTS_ENV+=	MAJOR=${major} PKGDIR=${PKGDIR} PLIST=${PLIST}
 
 # Support building on systems with or without X11 installed.  The port
 # only supports X11R6 in the standard location, so we don't bother using
 # the X11BASE macro.  It's not defined yet at this point in the Makefile
 # anyway.
-.if !exists(/usr/X11R6/lib/libX11.a)
-PLIST=		${PKGDIR}/PLIST.noX11
-.else
+.if exists(/usr/X11R6/lib/libX11.a)
+PLIST=		${WRKDIR}/PLIST
 MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
+.else
+PLIST=		${WRKDIR}/PLIST.noX11
 .endif
 
-# Keep these in sync with the PLIST and with the library version numbers
-# in the modula-3-lib port (PLIST and patch-ah there).
+# Shared library major version number.  Keep this in sync with the
+# modula-3-lib port.
 major=		6
-minor=		0
 
 # The Modula-3 build process insists on installing each individual
 # component immediately after that component is built.  To avoid having
@@ -52,7 +53,7 @@ do-install:
 	@cd ${temp_prefix}; \
 	    umask 022; \
 	    sed -e "/^@/d" -e "/m3build-/d" -e "s/\.gz$$//" \
-		-e "/^share/d" ${PLIST} | \
+		-e "/^share/d" ${PLIST}.real | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${temp_prefix}/man/man1; \
 	    umask 022; \
@@ -95,17 +96,16 @@ do-install:
 	    find bin -type f ! -name recordheap | (cd ${PREFIX}; xargs strip)
 	@cd ${PREFIX}/lib/m3/FreeBSD2; strip m3 m3cgc1 m3mkdir
 	@cd ${PREFIX}/bin; \
-	    ln -f m3build m3build-${major}; \
-	    ln -f m3build m3build-${major}.${minor}
+	    ln -f m3build m3build-${major}
 	@echo "Fixing file permissions"
 	@cd ${PREFIX}; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST} |\
+	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
 		xargs chown ${BINOWN}.${BINGRP}; \
-	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST} |\
+	    sed -e "/^@/d" -e "s/\.gz$$//" ${PLIST}.real |\
 		xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755
 	@echo "Running ldconfig"
-	@${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
 .include <bsd.port.mk>

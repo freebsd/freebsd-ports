@@ -3,19 +3,22 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.9 1997/07/17 15:12:48 max Exp $
+# $Id: Makefile,v 1.10 1998/06/06 20:32:03 jdp Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTFILES=	m3-fbsd-src-3.6.tar.gz m3-fbsd-m3cc-3.6.tar.gz
+DISTFILES=	m3-fbsd-src-3.6.tar.gz \
+		m3-fbsd-m3cc-3.6.tar.gz \
+		m3-fbsd-m3ccelf-3.6.tar.gz
 # Note: Depending on what is already installed on the system, the code
 # below may add some more DISTFILES.
 
 MAINTAINER=	jdp@polstra.com
 
 NO_WRKSUBDIR=	yes
+SCRIPTS_ENV+=	MAJOR=${major} PKGDIR=${PKGDIR} PLIST=${PLIST}
 
 # There are two distfiles that may or may not be needed, depending on
 # what is already installed on the system.  First, we need an executable
@@ -52,8 +55,10 @@ DISTFILES+=	m3-fbsd-gcc-3.6.tar.gz
 # only supports X11R6 in the standard location, so we don't bother using
 # the X11BASE macro.  It's not defined yet at this point in the Makefile
 # anyway.
-.if !exists(/usr/X11R6/lib/libX11.a)
-PLIST=		${PKGDIR}/PLIST.noX11
+.if exists(/usr/X11R6/lib/libX11.a)
+PLIST=		${WRKDIR}/PLIST
+.else
+PLIST=		${WRKDIR}/PLIST.noX11
 .endif
 
 # Startup script, run at boot time
@@ -65,6 +70,12 @@ startup_script=	${startup_dir}/50.m3.sh
 # to do the entire build as root, we arrange for everything to first
 # be "installed" into the following directory, which we own.
 temp_prefix=	${WRKSRC}/installed
+
+# Where shared libraries are installed, relative to the PREFIX.
+libdir=		lib/m3/FreeBSD2
+
+# Shared library major version number
+major=		6
 
 post-extract:
 .if !empty(have_boot)
@@ -97,7 +108,7 @@ do-build:
 	    PATH=${temp_prefix}/bin:$$PATH ./build FreeBSD2; \
 	    ${CP} -p FreeBSD2/m3build FreeBSD2/m3ship FreeBSD2/m3where \
 		${temp_prefix}/bin; \
-	    ${CP} -p FreeBSD2/m3mkdir ${temp_prefix}/lib/m3/FreeBSD2; \
+	    ${CP} -p FreeBSD2/m3mkdir ${temp_prefix}/${libdir}; \
 	    ${CP} -p templates/CLEANUP templates/COMMON templates/COMMON.BOOT \
 		templates/FreeBSD2 templates/PLATFORMS templates/POSIX \
 		${temp_prefix}/lib/m3/pkg/m3build/templates; \
@@ -108,10 +119,10 @@ do-build:
 	@cd ${WRKSRC}/m3cc/FreeBSD2; \
 	    ../gcc/configure i486-unknown-freebsd; \
 	    make m3cgc1 CC="${CC}" CFLAGS="${CFLAGS}"; \
-	    ${CP} -p m3cgc1 ${temp_prefix}/lib/m3/FreeBSD2
+	    ${CP} -p m3cgc1 ${temp_prefix}/${libdir}
 	@echo "++++++++++ everything else ++++++++++"
 	@cd ${WRKSRC}/m3; \
-	    LD_LIBRARY_PATH=${temp_prefix}/lib/m3/FreeBSD2:$$LD_LIBRARY_PATH; \
+	    LD_LIBRARY_PATH=${temp_prefix}/${libdir}:$$LD_LIBRARY_PATH; \
 	    PATH=${temp_prefix}/bin:$$PATH; \
 	    export LD_LIBRARY_PATH PATH; \
 	    m3build
@@ -124,10 +135,10 @@ do-install:
 	@echo "Installing shared libraries"
 	@cd ${temp_prefix}; \
 	    umask 022; \
-	    grep '^lib/m3/' ${PLIST} | \
+	    grep '^lib/m3/' ${PLIST}.real | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
-	    grep '^lib/m3/' ${PLIST} | xargs chmod go=u-w; \
+	    grep '^lib/m3/' ${PLIST}.real | xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755
 	@echo "Installing copyright notice"
@@ -147,6 +158,6 @@ do-install:
 	    chmod 755 ${startup_script}; \
 	fi
 	@echo "Running ldconfig"
-	@${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/m3/FreeBSD2
 
 .include <bsd.port.mk>
