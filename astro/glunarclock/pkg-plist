@@ -11,6 +11,7 @@ share/gnome/pixmaps/glunarclock/cartoonmoon_12frames.png
 share/gnome/pixmaps/glunarclock/moon_56frames.png
 share/locale/ast_ES/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/br/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/es/LC_MESSAGES/glunarclock-%%VERSION%%.mo
@@ -25,6 +26,7 @@ share/locale/nl/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/no/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/ro/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/sk/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/glunarclock-%%VERSION%%.mo
