@@ -6,6 +6,6 @@
 	echo "CREATE DATABASE jffnms;
 		GRANT ALL PRIVILEGES ON jffnms.* TO jffnms@localhost
 		IDENTIFIED BY 'jffnms';
-		FLUSH PRIVILEGES;"
+		FLUSH PRIVILEGES; use jffnms;"
 	cat %JFFNMSDIR%/docs/%JFFNMS%.mysql
 } | mysql ${*}
