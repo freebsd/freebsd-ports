@@ -236,4 +236,6 @@ lib/gtk+hs-%%PORTVERSION%%/ghc5/include/GtkWindow.h
 @dirrm lib/gtk+hs-%%PORTVERSION%%/ghc5
 @dirrm lib/gtk+hs-%%PORTVERSION%%
 @exec %D/bin/gtkhs-config --package-conf | %D/bin/ghc-pkg -u -g
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg -r gtkhs
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
