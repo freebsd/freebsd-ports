@@ -14,6 +14,5 @@ MASTERDIR=	${.CURDIR}/../../irc/epic4
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
-PATCH_STRIP=	-p1
 
 .include "${MASTERDIR}/Makefile"

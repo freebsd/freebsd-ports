@@ -1,5 +1,5 @@
---- epic4-0.9.9/include/term.h.orig	Thu Feb 10 05:07:39 2000
-+++ epic4-0.9.9/include/term.h	Mon Dec  4 03:44:17 2000
+--- include/term.h.orig	Thu Feb 10 05:07:39 2000
++++ include/term.h	Mon Dec  4 03:44:17 2000
 @@ -30,6 +30,11 @@
  static int putchar_x (int c) { return fputc((int) c, current_ftarget ); }
  #endif

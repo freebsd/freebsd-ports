@@ -1,5 +1,5 @@
---- epic4-0.9.9/include/kanji.h.orig	Mon Dec  4 03:44:17 2000
-+++ epic4-0.9.9/include/kanji.h	Mon Dec  4 03:44:17 2000
+--- include/kanji.h.orig	Mon Dec  4 03:44:17 2000
++++ include/kanji.h	Mon Dec  4 03:44:17 2000
 @@ -0,0 +1,9 @@
 +/* kanji.h */
 +#ifndef __kanji_h__
