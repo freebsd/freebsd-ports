@@ -55,4 +55,11 @@ lib/camlp4/stdpp.cmi
 lib/camlp4/plexer.cmi
 lib/camlp4/grammar.cmi
 lib/camlp4/gramext.cmi
+lib/camlp4/gramext.cmx
+lib/camlp4/gramlib.a
+lib/camlp4/gramlib.cmxa
+lib/camlp4/grammar.cmx
+lib/camlp4/plexer.cmx
+lib/camlp4/stdpp.cmx
+lib/camlp4/token.cmx
 @dirrm lib/camlp4
