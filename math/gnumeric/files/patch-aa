@@ -1,5 +1,5 @@
---- configure.orig	Thu Sep 23 17:49:58 1999
-+++ configure	Fri Sep 24 15:00:53 1999
+--- configure.orig	Tue Oct 19 09:12:29 1999
++++ configure	Wed Oct 20 11:59:28 1999
 @@ -2788,7 +2788,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
@@ -27,7 +27,7 @@
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -5593,15 +5593,15 @@
+@@ -5600,15 +5600,15 @@
  fi
  
          
@@ -47,19 +47,19 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -6037,7 +6037,7 @@
- echo "configure:6038: checking for GnomePrint libraries" >&5
+@@ -6056,7 +6056,7 @@
+ echo "configure:6057: checking for GnomePrint libraries" >&5
  if gnome-config --libs print > /dev/null 2>&1; then 
      echo "$ac_t""found" 1>&6
 -    . `gnome-config --libdir`/printConf.sh
 +    . `gnome-config --sysconfdir`/printConf.sh
      echo $ac_n "checking for GnomePrint >= 0.8""... $ac_c" 1>&6
- echo "configure:6043: checking for GnomePrint >= 0.8" >&5
+ echo "configure:6062: checking for GnomePrint >= 0.8" >&5
      case x$MODULE_VERSION in
-@@ -6052,14 +6052,14 @@
+@@ -6071,14 +6071,14 @@
  
  echo $ac_n "checking for Glade libraries""... $ac_c" 1>&6
- echo "configure:6055: checking for Glade libraries" >&5
+ echo "configure:6074: checking for Glade libraries" >&5
 -if gnome-config --libs libglade > /dev/null 2>&1; then 
 +if libglade-config --libs > /dev/null 2>&1; then 
      echo "$ac_t""found" 1>&6
