@@ -7,6 +7,7 @@
 
 PORTNAME=	linphone
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://simon.morlat.free.fr/download/${PORTVERSION}/source/
 
@@ -22,6 +23,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure oRTP/configure speex/configure osipua/configure
 USE_GNOME=	gnomehack gnomeprefix
+CONFIGURE_ARGS=	--disable-ipv6
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
