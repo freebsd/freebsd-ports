@@ -1,0 +1,10 @@
+
+----------------------
+How To Use Math series
+----------------------
+
+dvips:
+	Add a line "p +mathabx.map" into
+	%%PREFIX%%/%%TEXMF%%/dvips/config/config.ps.
+
+(NOTE: This instruction depends on the directory layout of teTeX distribution.)

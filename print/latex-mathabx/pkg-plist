@@ -1,0 +1,87 @@
+@comment $FreeBSD$
+%%CLASSDIR%%/mathabx.dcl
+%%CLASSDIR%%/mathabx.sty
+%%CLASSDIR%%/mathabx.tex
+%%CLASSDIR%%/testmac.tex
+%%CLASSDIR%%/mathtest.tex
+@dirrm %%CLASSDIR%%
+%%MFDIR%%/matha10.mf
+%%MFDIR%%/matha12.mf
+%%MFDIR%%/matha5.mf
+%%MFDIR%%/matha6.mf
+%%MFDIR%%/matha7.mf
+%%MFDIR%%/matha8.mf
+%%MFDIR%%/matha9.mf
+%%MFDIR%%/mathacnt.mf
+%%MFDIR%%/mathadrv.mf
+%%MFDIR%%/matharrw.mf
+%%MFDIR%%/mathastr.mf
+%%MFDIR%%/mathasym.mf
+%%MFDIR%%/mathb10.mf
+%%MFDIR%%/mathb12.mf
+%%MFDIR%%/mathb5.mf
+%%MFDIR%%/mathb6.mf
+%%MFDIR%%/mathb7.mf
+%%MFDIR%%/mathb8.mf
+%%MFDIR%%/mathb9.mf
+%%MFDIR%%/mathbase.mf
+%%MFDIR%%/mathbdel.mf
+%%MFDIR%%/mathbdrv.mf
+%%MFDIR%%/mathbigs.mf
+%%MFDIR%%/mathbsym.mf
+%%MFDIR%%/mathcall.mf
+%%MFDIR%%/mathextr.mf
+%%MFDIR%%/mathfine.mf
+%%MFDIR%%/mathgrey.mf
+%%MFDIR%%/mathhbrw.mf
+%%MFDIR%%/mathineq.mf
+%%MFDIR%%/mathltlk.mf
+%%MFDIR%%/mathmbcb.mf
+%%MFDIR%%/mathprmt.mf
+%%MFDIR%%/mathsmsy.mf
+%%MFDIR%%/mathsubs.mf
+%%MFDIR%%/mathsymb.mf
+%%MFDIR%%/matht10.mf
+%%MFDIR%%/mathu10.mf
+%%MFDIR%%/mathudrv.mf
+%%MFDIR%%/mathusym.mf
+%%MFDIR%%/mathux10.mf
+%%MFDIR%%/mathuxdrv.mf
+%%MFDIR%%/mathx10.mf
+%%MFDIR%%/mathx12.mf
+%%MFDIR%%/mathx5.mf
+%%MFDIR%%/mathx6.mf
+%%MFDIR%%/mathx7.mf
+%%MFDIR%%/mathx8.mf
+%%MFDIR%%/mathx9.mf
+%%MFDIR%%/mathxdrv.mf
+%%MFDIR%%/maydigit.mf
+@dirrm %%MFDIR%%
+%%TYPE1DIR%%/matha10.pfb
+%%TYPE1DIR%%/matha12.pfb
+%%TYPE1DIR%%/matha5.pfb
+%%TYPE1DIR%%/matha6.pfb
+%%TYPE1DIR%%/matha7.pfb
+%%TYPE1DIR%%/matha8.pfb
+%%TYPE1DIR%%/matha9.pfb
+%%TYPE1DIR%%/mathb10.pfb
+%%TYPE1DIR%%/mathb12.pfb
+%%TYPE1DIR%%/mathb5.pfb
+%%TYPE1DIR%%/mathb6.pfb
+%%TYPE1DIR%%/mathb7.pfb
+%%TYPE1DIR%%/mathb8.pfb
+%%TYPE1DIR%%/mathb9.pfb
+%%TYPE1DIR%%/mathu10.pfb
+%%TYPE1DIR%%/mathux10.pfb
+%%TYPE1DIR%%/mathx10.pfb
+%%TYPE1DIR%%/mathx12.pfb
+%%TYPE1DIR%%/mathx5.pfb
+%%TYPE1DIR%%/mathx6.pfb
+%%TYPE1DIR%%/mathx7.pfb
+%%TYPE1DIR%%/mathx8.pfb
+%%TYPE1DIR%%/mathx9.pfb
+@dirrm %%TYPE1DIR%%
+%%DVIPSDIR%%/mathabx.map
+@dirrm %%DVIPSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

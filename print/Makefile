@@ -94,6 +94,7 @@
     SUBDIR += latex
     SUBDIR += latex-beamer
     SUBDIR += latex-keystroke
+    SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf
