@@ -1,1 +1,2 @@
-Convert::ASN1 encodes and decodes ASN.1 data structures using BER/DER rules.
+This is Convert::PEM, a module implementing read/write access
+to ASN.1-encoded PEM files (with optional encryption).

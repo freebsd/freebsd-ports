@@ -1,1 +1,1 @@
-ASN.1 Encode/Decode library
+Read/write access to ASN.1-encoded PEM files with optional encryption
