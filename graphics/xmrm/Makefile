@@ -17,8 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	treif@mayn.de
 COMMENT=	An image morphing/warping program
 
-RUN_DEPENDS=	mpeg:${PORTSDIR}/graphics/mpeg \
-		mpeg_play:${PORTSDIR}/graphics/mpeg_play
+RUN_DEPENDS=	mpeg:${PORTSDIR}/multimedia/mpeg \
+		mpeg_play:${PORTSDIR}/multimedia/mpeg_play
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

@@ -22,7 +22,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable
 .endif
 .if defined(WITH_XINE)
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine \
-		${X11BASE}/lib/xine/plugins/xineplug_inp_d4d.so:${PORTSDIR}/graphics/xine_d4d_plugin
+		${X11BASE}/lib/xine/plugins/xineplug_inp_d4d.so:${PORTSDIR}/multimedia/xine_d4d_plugin
 .endif
 RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools \
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		transcode:${PORTSDIR}/graphics/transcode \
+		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
 BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf

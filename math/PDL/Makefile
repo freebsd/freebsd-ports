@@ -31,7 +31,7 @@ SCRIPTS_ENV=	PERL=${PERL}
 LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw \
 		gsl.4:${PORTSDIR}/math/gsl
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
-		mpeg_encode:${PORTSDIR}/graphics/mpeg_encode \
+		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		saoimage:${PORTSDIR}/astro/saoimage
 .endif
 

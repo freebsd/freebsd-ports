@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		smpeg.1:${PORTSDIR}/graphics/smpeg
+		smpeg.1:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	${PYNUMERIC}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

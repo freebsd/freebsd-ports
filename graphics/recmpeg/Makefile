@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	fame
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple video encoder
 
-LIB_DEPENDS=	fame-0.9.0:${PORTSDIR}/graphics/libfame
+LIB_DEPENDS=	fame-0.9.0:${PORTSDIR}/multimedia/libfame
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

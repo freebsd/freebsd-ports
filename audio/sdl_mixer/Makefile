@@ -16,7 +16,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A sample multi-channel audio mixer library
 
 LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/graphics/smpeg \
+		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config

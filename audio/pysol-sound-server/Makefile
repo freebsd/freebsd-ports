@@ -15,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	Python extension module to play sounds and background music
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		smpeg.1:${PORTSDIR}/graphics/smpeg \
+		smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

@@ -15,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin using OpenDivX decoding engine from Project Mayo
 
 LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
-		xmps.0:${PORTSDIR}/graphics/xmps \
+		xmps.0:${PORTSDIR}/multimedia/xmps \
 		intl.4:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2

@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-mikmod
 .endif
 
 .if !defined(WITHOUT_SMPEG)
-LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/graphics/smpeg
+LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 .else
 CONFIGURE_ARGS+=	--disable-smpeg
 .endif

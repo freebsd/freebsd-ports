@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.xanadunet.net/ksmp3play/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An curses-based MP3 player
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 

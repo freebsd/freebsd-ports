@@ -17,7 +17,7 @@ COMMENT=	A slideshow presentation tool to write slides in Python or XML
 LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		smpeg.1:${PORTSDIR}/graphics/smpeg
+		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 INSTALLS_SHLIB=	yes

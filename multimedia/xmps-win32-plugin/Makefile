@@ -14,7 +14,7 @@ MASTER_SITES=	http://xmps.sourceforge.net/sources/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin for Win32 (TM) Codecs
 
-LIB_DEPENDS=	xmps.0:${PORTSDIR}/graphics/xmps \
+LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps \
 		intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 

@@ -397,7 +397,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fo
 .endif
 
 .if defined(WITH_XANIM)
-BUILD_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
+BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 
 CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
 .else

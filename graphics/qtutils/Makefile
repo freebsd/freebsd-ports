@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QuickTime Utilities
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
-		quicktime.0:${PORTSDIR}/graphics/libquicktime
+		quicktime.0:${PORTSDIR}/multimedia/libquicktime
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

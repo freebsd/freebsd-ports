@@ -16,7 +16,7 @@ MAINTAINER=	ports@freebsd.org
 COMMENT=	"Load a sequence of TIFF files and play them back at a target frame rate"
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/graphics/mpeg_encode
+RUN_DEPENDS=	mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
