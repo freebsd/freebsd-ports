@@ -19,8 +19,10 @@ COMMENT=	3D modeling environment for the RenderMan interface
 LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \
 		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		log4cpp.4:${PORTSDIR}/devel/log4cpp
 
+USE_GCC=	3.4
 USE_GL=		yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -30,12 +32,6 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 AYAM_PLUGINS=	csphere mfio
 PLUGINS_DIR=	${PREFIX}/lib/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/tcl/ayam.tcl
@@ -93,4 +89,4 @@ do-install:
 		${DOCSDIR}/html/pics
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
