@@ -9,7 +9,7 @@ PORTNAME=	aish
 PORTVERSION=	1.13
 CATEGORIES=	converters
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA004474/etc/
-DISTNAME=	aish113u
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}u
 
 MAINTAINER=	ports@FreeBSD.org
 
