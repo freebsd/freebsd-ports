@@ -13,6 +13,7 @@ MASTER_SITES=	http://gladstone.uoregon.edu/~eanholt/dri/
 
 MAINTAINER=	eanholt@gladstone.uoregon.edu
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE
@@ -36,7 +37,7 @@ pre-extract:
 .endif
 
 pre-patch:
-	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/drm.sh
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/drm.sh
 
 pre-install:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
