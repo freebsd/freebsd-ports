@@ -241,6 +241,13 @@ PLIST_SUB+=	MMX=""
 PLIST_SUB+=	MMX="@comment "
 .endif
 
+.if ${OSVERSION} >= 502010
+BROKEN=		"conflicts with new threads architecture"
+.endif
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Take a careful look into the Makefile in order"
