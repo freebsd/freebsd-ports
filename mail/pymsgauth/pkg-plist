@@ -1,15 +1,17 @@
+@comment $FreeBSD$
 bin/pymsgauth-clean
 bin/pymsgauth-confirm
 bin/pymsgauth-mail
-%%PYTHON_SITELIBDIR%%/ConfParser.py
-%%PYTHON_SITELIBDIR%%/pymsgauth.py
-%%PYTHON_SITELIBDIR%%/pymsgauth-clean
-%%PYTHON_SITELIBDIR%%/pymsgauth-confirm
-%%PYTHON_SITELIBDIR%%/pymsgauth-mail
-%%PORTDOCS%%share/doc/pymsgauth/BUGS
-%%PORTDOCS%%share/doc/pymsgauth/CHANGELOG
-%%PORTDOCS%%share/doc/pymsgauth/pymsgauth.html
-%%PORTDOCS%%share/doc/pymsgauth/pymsgauth.txt
-%%PORTDOCS%%@dirrm share/doc/pymsgauth
-share/examples/pymsgauth/pymsgauthrc-example
-@dirrm share/examples/pymsgauth
+%%DATADIR%%/ConfParser.py
+%%DATADIR%%/pymsgauth.py
+%%DATADIR%%/pymsgauth-clean
+%%DATADIR%%/pymsgauth-confirm
+%%DATADIR%%/pymsgauth-mail
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/pymsgauth.html
+%%PORTDOCS%%%%DOCSDIR%%/pymsgauth.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/pymsgauthrc-example
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
