@@ -141,7 +141,7 @@ post-install:
 	${PREFIX}/bin/ssh-keygen -t dsa -N "" -f ${ETCSSH}/ssh_host_dsa_key
 .endif
 .endif
-.if !exists(${ETCSSH}/moduli)  && !exists(${ETCOLD}/moduli)
+.if !exists(${ETCSSH}/moduli)
 	@${ECHO_MSG} ">> Installing moduli."
 	${INSTALL_DATA} -c ${FILESDIR}/moduli ${ETCSSH}/moduli
 .endif
