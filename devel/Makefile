@@ -13,6 +13,7 @@
     SUBDIR += autoconf
     SUBDIR += automake
     SUBDIR += bcc
+    SUBDIR += bison
     SUBDIR += boehm-gc
     SUBDIR += bonobo
     SUBDIR += cccc
