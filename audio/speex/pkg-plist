@@ -1,0 +1,9 @@
+bin/speexdec
+bin/speexenc
+bin/testenc
+bin/testenc_wb
+include/speex.h
+include/speex_bits.h
+include/speex_header.h
+lib/libspeex.a
+lib/libspeex.la
