@@ -1,6 +1,6 @@
---- Makefile.orig      Sun Nov 28 20:08:56 1999
-+++ Makefile   Sat Nov 11 14:14:53 2000
-@@ -5,24 +5,24 @@
+--- Makefile.orig	Sat Aug 25 11:09:00 2001
++++ Makefile	Mon Jun  3 19:55:53 2002
+@@ -5,43 +5,46 @@
  # very welcome).
  
  # for linux
@@ -32,16 +32,28 @@
 +#CC = gcc
  
  all:
-       make cd-console
-@@ -38,10 +38,13 @@
- 	$(CC) -c cd_ll_linux.cpp $(CFLAGS)
+ 	make cd-console
+ 	strip cd-console
+ 
+ cd-console: $(OBJS)
+-	$(CC) $(OBJS) $(LIBS) -o cd-console $(CFLAGS)
++	$(CXX) $(OBJS) $(LIBS) -o cd-console $(CFLAGS)
+ 
+ cd-console.o: cd.h cd-console.cpp
+-	$(CC) -c cd-console.cpp $(CFLAGS)
++	$(CXX) -c cd-console.cpp $(CFLAGS)
+ 
+ cd_ll_linux.o: cd_ll.h cd_ll_linux.h cd_ll_linux.cpp
+-	$(CC) -c cd_ll_linux.cpp $(CFLAGS)
++	$(CXX) -c cd_ll_linux.cpp $(CFLAGS)
  
  cd_ll_bsd.o: cd_ll.h cd_ll_bsd.h cd_ll_bsd.cpp
 -	$(CC) -c cd_ll_bsd.cpp $(CFLAGS)
-+	$(CC) -c -DDEVICE=$(CDDEVICE) cd_ll_bsd.cpp $(CFLAGS)
++	$(CXX) -c -DDEVICE=$(CDDEVICE) cd_ll_bsd.cpp $(CFLAGS)
  
  cd.o: cd.h cd.cpp
- 	$(CC) -c cd.cpp $(CFLAGS)
+-	$(CC) -c cd.cpp $(CFLAGS)
++	$(CXX) -c cd.cpp $(CFLAGS)
  
  clean:
  	rm -f $(OBJS) cd-console
