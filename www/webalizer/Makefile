@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -17,17 +17,13 @@ MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
 
 .if !defined(LIB_DEPENDS)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
-.if defined(WEBALIZER_WITH_GD2) 
-GD_PORT?=	graphics/gd2
-.endif
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 .endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-GD_PORT?=	graphics/gd-nox11
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
@@ -39,7 +35,7 @@ WEBALIZER_LANG?=english
 CONFIGURE_ARGS+=	--enable-dns \
 			--with-etcdir=${PREFIX}/etc \
 			--with-gdlib=${PREFIX}/lib \
-			--with-gd=${PREFIX}/include/gd
+			--with-gd=${PREFIX}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${PREFIX}/lib"
 CFLAGS+=	-DLINKLIST_MAX_STRING=256
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"

@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=nagios
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Extremely powerful network monitoring system
 
-.if defined(WITH_GD2)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+.if defined(WITH_GD1)
+LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
 .else
-LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 .endif
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
 
@@ -44,12 +44,12 @@ CONFIGURE_ARGS=	--with-command-user=nagios \
 		--localstatedir=/var/spool/nagios \
 		--prefix=${PREFIX}
 
-.if defined(WITH_GD2)
-INCGD=		-I${LOCALBASE}/include
-LIBGD=		-lgd
-.else
+.if defined(WITH_GD1)
 INCGD=		-I${LOCALBASE}/include/gd
 LIBGD=		-lgd1
+.else
+INCGD=		-I${LOCALBASE}/include
+LIBGD=		-lgd
 .endif
 
 .if defined(WITH_MYSQL)

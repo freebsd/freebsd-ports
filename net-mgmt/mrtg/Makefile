@@ -7,7 +7,7 @@
 
 PORTNAME=	mrtg
 PORTVERSION=	2.9.29
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
@@ -20,14 +20,14 @@ COMMENT=	The multi-router traffic grapher
 
 RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session
 
-.if defined(WITH_GD2)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
-CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
-		--with-gd-inc=${LOCALBASE}/include
-.else
-LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd
+.if defined(WITH_GD1)
+LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include/gd
+.else
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
+		--with-gd-inc=${LOCALBASE}/include
 .endif
 
 USE_PERL5=	YES
@@ -43,10 +43,10 @@ MAN1=		cfgmaker.1 contrib.1 faq.1 forum.1 indexmaker.1 logfile.1 \
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
-.if defined(WITH_GD2)
-	${PERL} -pi -e 's:%%GD%%:-lgd:g' ${WRKSRC}/configure
-.else
+.if defined(WITH_GD1)
 	${PERL} -pi -e 's:%%GD%%:-lgd1:g' ${WRKSRC}/configure
+.else
+	${PERL} -pi -e 's:%%GD%%:-lgd:g' ${WRKSRC}/configure
 .endif
 
 do-install:

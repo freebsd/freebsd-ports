@@ -7,7 +7,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	0.7.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.acc.ne.jp/~tam/GD/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,13 +30,13 @@ CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 		--with-freetype
 INSTALL_TARGET=	site-install
 
-.if defined(WITH_GD2)
-CONFIGURE_ARGS+=	----enable-gd2_0 \
-			--with-gd-include="${LOCALBASE}/include"
-LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
-.else
+.if defined(WITH_GD1)
 CONFIGURE_ARGS+=	--with-gd-include="${LOCALBASE}/include/gd"
-LIB_DEPENDS+=	gd1.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	gd1.2:${PORTSDIR}/graphics/gd1
+.else
+CONFIGURE_ARGS+=	----enable-gd2_0 \
+		--with-gd-include="${LOCALBASE}/include"
+LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 .endif
 
 .include <bsd.port.pre.mk>
@@ -70,10 +70,10 @@ DOCS_JA=	readme.ja	\
 
 post-patch:
 	${RUBY} -i -pe 'sub %r:/win98/windows/FONTS:, "${X11BASE}/lib/X11/fonts/TrueType"' ${WRKSRC}/sample/gdtestttf.rb
-.if defined(WITH_GD2)
-	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd"' ${WRKSRC}/extconf.rb
-.else
+.if defined(WITH_GD1)
 	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd1"' ${WRKSRC}/extconf.rb
+.else
+	${RUBY} -i -pe 'sub %r:%%GD%%:, "gd"' ${WRKSRC}/extconf.rb
 .endif
 
 post-install:

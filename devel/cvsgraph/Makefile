@@ -7,14 +7,14 @@
 
 PORTNAME=	cvsgraph
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Graph the life story of a file under CVS or RCS
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2 \
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
@@ -34,7 +34,7 @@ USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
 		--with-freetype2-lib=${X11BASE}/lib \
-		--with-gd-inc=${LOCALBASE}/include/gd \
+		--with-gd-inc=${LOCALBASE}/include \
 		--with-gd-lib=${LOCALBASE}/lib \
 		--with-jpeg-inc=${LOCALBASE}/include \
 		--with-jpeg-lib=${LOCALBASE}/lib \

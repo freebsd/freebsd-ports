@@ -7,7 +7,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +16,7 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
-		gd.4:${PORTSDIR}/graphics/gd2 \
+		gd.4:${PORTSDIR}/graphics/gd \
 		intl.4:${PORTSDIR}/devel/gettext \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		expat.4:${PORTSDIR}/textproc/expat2

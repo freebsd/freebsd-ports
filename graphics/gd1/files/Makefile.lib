@@ -22,13 +22,9 @@ SRCS=		gd.c gd_gd.c gd_gd2.c gd_io.c gd_io_dp.c gd_io_file.c gd_ss.c \
 
 CFLAGS+=	-I${.CURDIR} -I${LOCALBASE}/include/freetype2/freetype \
 		-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include \
-		-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE -DHAVE_LIBZ
-LDADD=		-L${LOCALBASE}/lib -lfreetype -ljpeg -lpng -lz
-
-.ifdef WITH_X11
-CFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
-LDADD+=		-L${X11BASE}/lib -lXpm -lX11
-.endif
+		-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE -DHAVE_LIBZ \
+		${CPPFLAGS}
+LDADD=		-L${LOCALBASE}/lib -lfreetype -ljpeg -lpng -lz ${LDFLAGS}
 
 beforeinstall:
 	mkdir -p ${INCSDIR}

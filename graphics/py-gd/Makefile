@@ -6,6 +6,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.42
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ DISTNAME=	gdmodule-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to the GD library
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 USE_XPM=	yes
 USE_REINPLACE=  yes

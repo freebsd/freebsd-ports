@@ -7,7 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

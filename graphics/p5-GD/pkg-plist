@@ -1,8 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GD.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/patch_gd.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/qd.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD
+%%SITE_PERL%%/%%PERL_ARCH%%/GD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GD/Polyline.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/qd.pl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GD

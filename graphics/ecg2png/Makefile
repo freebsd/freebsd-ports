@@ -7,14 +7,14 @@
 
 PORTNAME=	ecg2png
 PORTVERSION=	0.30
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cardiothink.com/downloads/ecg2png/
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	"Converts scanned 12-lead electrocardiograms into PNGs"
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-QTCPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/gd
+QTCPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lqt$$|-lqt-mt ${PTHREAD_LIBS}|g' ${WRKSRC}/ecg2png/Makefile.in

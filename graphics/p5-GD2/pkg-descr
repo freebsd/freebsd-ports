@@ -1,6 +1,0 @@
-GD.pm is a Perl interface to Thomas Boutell's gd graphics library
-(version 2.01 or higher). GD allows you to create color drawings
-using a large number of graphics primitives, and emit the drawings
-as PNG files.
-
-WWW: http://stein.cshl.org/WWW/software/GD/
