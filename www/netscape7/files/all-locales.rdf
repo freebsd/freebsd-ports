@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:c="http://www.mozilla.org/rdf/chrome#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description about="urn:mozilla:locale:GB:communicator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/GB.jar!/locale/GB/communicator-region/">
+    <c:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ES:editor-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ES.jar!/locale/ES/editor-region/">
+    <c:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:GB:editor-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/GB.jar!/locale/GB/editor-region/">
+    <c:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:necko"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/necko/">
+    <c:package resource="urn:mozilla:package:necko"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA:editor-region"
+                   c:baseURL="jar:resource:/chrome/CA.jar!/locale/CA/editor-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:global-platform"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-unix.jar!/locale/en-US/global-platform/">
+    <c:package resource="urn:mozilla:package:global-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:editor-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/editor-region/">
+    <c:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:CA:packages">
+    <RDF:li resource="urn:mozilla:locale:CA:aim-region"/>
+    <RDF:li resource="urn:mozilla:locale:CA:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:CA:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:CA:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:CA:messenger-region"/>
+    <RDF:li resource="urn:mozilla:locale:CA:navigator-region"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:en-US:cookie"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/cookie/">
+    <c:package resource="urn:mozilla:package:cookie"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:global"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/global/">
+    <c:package resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US"
+                   c:displayName="US Region"
+                   c:localeType="region"
+                   c:author="mozilla.org"
+                   c:name="US"
+                   c:previewURL="http://www.mozilla.org/locales/US.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:US:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:pippki"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/pippki/">
+    <c:package resource="urn:mozilla:package:pippki"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US"
+                   c:displayName="English (US)"
+                   c:author="mozilla.org"
+                   c:name="en-US"
+                   c:previewURL="http://www.mozilla.org/locales/en-US.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:en-US:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA:navigator-region"
+                   c:baseURL="jar:resource:/chrome/CA.jar!/locale/CA/navigator-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:help"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/help/">
+    <c:package resource="urn:mozilla:package:help"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:GB:global-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/GB.jar!/locale/GB/global-region/">
+    <c:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:global-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/global-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA:messenger-region"
+                   c:baseURL="jar:resource:/chrome/CA.jar!/locale/CA/messenger-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:messenger-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA:aim-region"
+                   c:baseURL="jar:resource:/chrome/CA.jar!/locale/CA/aim-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:aim-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:mozldap"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/mozldap/">
+    <c:package resource="urn:mozilla:package:mozldap"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ES:communicator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ES.jar!/locale/ES/communicator-region/">
+    <c:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:GB:aim-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/GB.jar!/locale/GB/aim-region/">
+    <c:package resource="urn:mozilla:package:aim-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:editor"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/editor/">
+    <c:package resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:messenger-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/messenger-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:messenger-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA:global-region"
+                   c:baseURL="jar:resource:/chrome/CA.jar!/locale/CA/global-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA"
+                   c:displayName="Canadian Region"
+                   c:localeType="region"
+                   c:author="mozilla.org"
+                   c:name="CA"
+                   c:previewURL="http://www.mozilla.org/locales/CA.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:CA:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ES:global-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ES.jar!/locale/ES/global-region/">
+    <c:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:navigator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/navigator-region/">
+    <c:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:communicator-platform"
+                   c:baseURL="jar:resource:/chrome/en-unix.jar!/locale/en-US/communicator-platform/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:GB:navigator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/GB.jar!/locale/GB/navigator-region/">
+    <c:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:pipnss"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/pipnss/">
+    <c:package resource="urn:mozilla:package:pipnss"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:CA:communicator-region"
+                   c:baseURL="jar:resource:/chrome/CA.jar!/locale/CA/communicator-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:wallet"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/wallet/">
+    <c:package resource="urn:mozilla:package:wallet"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:GB"
+                   c:displayName="UK Region"
+                   c:localeType="region"
+                   c:author="mozilla.org"
+                   c:name="GB"
+                   c:previewURL="http://www.mozilla.org/locales/GB.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:GB:packages"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:US:packages">
+    <RDF:li resource="urn:mozilla:locale:US:aim-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:messenger-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:navigator-region"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:GB:messenger-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/GB.jar!/locale/GB/messenger-region/">
+    <c:package resource="urn:mozilla:package:messenger-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:messenger"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/messenger/">
+    <c:package resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:aim"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/aim/">
+    <c:package resource="urn:mozilla:package:aim"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:communicator-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/communicator-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:root">
+    <RDF:li resource="urn:mozilla:locale:en-US"/>
+    <RDF:li resource="urn:mozilla:locale:US"/>
+    <RDF:li resource="urn:mozilla:locale:CA"/>
+    <RDF:li resource="urn:mozilla:locale:ES"/>
+    <RDF:li resource="urn:mozilla:locale:GB"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:US:aim-region"
+                   c:baseURL="jar:resource:/chrome/US.jar!/locale/US/aim-region/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:aim-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ES"
+                   c:displayName="Latin American Region"
+                   c:localeType="region"
+                   c:author="mozilla.org"
+                   c:name="ES"
+                   c:previewURL="http://www.mozilla.org/locales/ES.gif"
+                   c:locType="install">
+    <c:packages resource="urn:mozilla:locale:ES:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ES:navigator-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ES.jar!/locale/ES/navigator-region/">
+    <c:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:navigator"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/navigator/">
+    <c:package resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:navigator-platform"
+                   c:baseURL="jar:resource:/chrome/en-unix.jar!/locale/en-US/navigator-platform/"
+                   c:localeVersion="0.9.4">
+    <c:package resource="urn:mozilla:package:navigator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:content-packs"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/content-packs/">
+    <c:package resource="urn:mozilla:package:content-packs"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:ES:messenger-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ES.jar!/locale/ES/messenger-region/">
+    <c:package resource="urn:mozilla:package:messenger-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:communicator"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/en-US.jar!/locale/en-US/communicator/">
+    <c:package resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:en-US:packages">
+    <RDF:li resource="urn:mozilla:locale:en-US:global"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:communicator"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:messenger"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:editor"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:navigator"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:aim"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:mozldap"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:necko"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:cookie"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:wallet"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:content-packs"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:help"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:pipnss"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:pippki"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:global-platform"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:communicator-platform"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:navigator-platform"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:ES:aim-region"
+                   c:localeVersion="0.9.4"
+                   c:baseURL="jar:resource:/chrome/ES.jar!/locale/ES/aim-region/">
+    <c:package resource="urn:mozilla:package:aim-region"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:GB:packages">
+    <RDF:li resource="urn:mozilla:locale:GB:aim-region"/>
+    <RDF:li resource="urn:mozilla:locale:GB:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:GB:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:GB:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:GB:messenger-region"/>
+    <RDF:li resource="urn:mozilla:locale:GB:navigator-region"/>
+  </RDF:Seq>
+  <RDF:Seq about="urn:mozilla:locale:ES:packages">
+    <RDF:li resource="urn:mozilla:locale:ES:aim-region"/>
+    <RDF:li resource="urn:mozilla:locale:ES:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:ES:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:ES:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:ES:messenger-region"/>
+    <RDF:li resource="urn:mozilla:locale:ES:navigator-region"/>
+  </RDF:Seq>
+</RDF:RDF>
