@@ -1,0 +1,17 @@
+$FreeBSD$
+
+--- doc/Makefile	Sat Aug 10 17:45:46 2002
++++ doc/Makefile	Sat Aug 10 17:48:23 2002
+@@ -0,0 +1,12 @@
++FILES=	ERRORS FEATURES.NEW dragon.inf exp.doc faq history moria.ms moria.txt \
++	pronounc spells.doc where.inf
++
++moria.ms: moria1.ms moria2.ms
++	cat moria1.ms moria2.ms > moria.ms
++
++moria.txt: moria1.txt moria2.txt
++	cat moria1.txt moria2.txt > moria.txt
++
++install: moria.ms moria.txt
++	${MKDIR} ${DOCSDIR}
++	${BSD_INSTALL_DATA} ${FILES} ${DOCSDIR}

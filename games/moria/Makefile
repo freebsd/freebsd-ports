@@ -21,6 +21,7 @@ USE_REINPLACE=	yes
 MAN6=		moria.6
 WRKSRC=         ${WRKDIR}/umoria
 ALL_TARGET=	moria
+MAKE_ENV+=	DOCSDIR="${DOCSDIR}" MKDIR="${MKDIR}"
 
 do-configure:
 	for i in ${WRKSRC}/source/config.h ${WRKSRC}/unix/Makefile; do \
@@ -29,8 +30,14 @@ do-configure:
 	cd ${WRKSRC} && ${LN} -sf source/* unix/* .
 
 post-install:
+.if !defined(NO_INSTALL_MANPAGES)
 	for i in ${MAN6}; do \
 		${INSTALL_MAN} ${WRKSRC}/doc/$$i ${PREFIX}/man/man6; \
 	done
+.endif
+.if !defined(NOPORTDOCS)
+#	cd ${WRKSRC}/doc && $(MAKE) MKDIR="${MKDIR}" DOCSDIR="${DOCSDIR}" INSTALL_DATA="${INSTALL_DATA}" install
+	cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install
+.endif
 
 .include <bsd.port.mk>
