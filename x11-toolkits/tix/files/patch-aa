@@ -1,5 +1,26 @@
---- configure.orig	Sun Feb 14 21:20:06 1999
-+++ configure	Wed Nov  3 14:21:25 1999
+--- configure.orig	Mon Feb 15 04:20:06 1999
++++ configure	Sun Dec  5 07:03:17 1999
+@@ -14,9 +14,9 @@
+ ac_help="$ac_help
+   --enable-gcc            allow use of gcc if available"
+ ac_help="$ac_help
+-  --with-tcl=DIR           use Tcl 8.0 source from DIR"
++  --with-tcl=DIR           use Tcl 8.2 source from DIR"
+ ac_help="$ac_help
+-  --with-tk=DIR           use Tk 8.0 source from DIR"
++  --with-tk=DIR           use Tk 8.2 source from DIR"
+ ac_help="$ac_help
+   --enable-sam            build stand-alone modules"
+ ac_help="$ac_help
+@@ -512,7 +512,7 @@
+ TIX_MAJOR_VERSION=4
+ TIX_MINOR_VERSION=1
+ 
+-BIN_VERSION=${TIX_VERSION}.8.0
++BIN_VERSION=${TIX_VERSION}.8.2
+ 
+ 
+ VERSION=${BIN_VERSION}
 @@ -1006,13 +1006,14 @@
  
  if test "$val" != ""; then
@@ -17,7 +38,14 @@
      TCL_SRC_DIR="no-no"
      for i in $dirs; do
          if test -d $i; then
-@@ -1028,7 +1029,7 @@
+@@ -1022,13 +1023,13 @@
+ 
+     if test ! -d $TCL_SRC_DIR; then
+         { echo "configure: error: Cannot locate Tcl source directory in $dirs" 1>&2; exit 1; }
+-        { echo "configure: error: Please install the source code of Tcl 8.0" 1>&2; exit 1; }
++        { echo "configure: error: Please install the source code of Tcl 8.2" 1>&2; exit 1; }
+         exit 1
+     fi
  fi
  echo "$ac_t""$TCL_SRC_DIR" 1>&6
  
@@ -43,7 +71,14 @@
      TK_SRC_DIR="no-no"
      for i in $dirs; do
          if test -d $i; then
-@@ -1070,7 +1072,7 @@
+@@ -1064,13 +1066,13 @@
+ 
+     if test ! -d $TK_SRC_DIR; then
+         { echo "configure: error: Cannot locate Tk source directory in $dirs" 1>&2; exit 1; }
+-        { echo "configure: error: Please install the source code of Tk 8.0" 1>&2; exit 1; }
++        { echo "configure: error: Please install the source code of Tk 8.2" 1>&2; exit 1; }
+         exit 1
+     fi
  fi
  echo "$ac_t""$TK_SRC_DIR" 1>&6
  
@@ -62,7 +97,7 @@
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam${TCL_VERSION}"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam${TK_VERSION}"
      TIX_LIB_SPEC="-L${exec_prefix}/lib -ltix${VERSION}"
-+    LIBVERSION="${VERSION}"
++	LIB_VERSION="${VERSION}"
  else
 -    TIX_BUILD_LIB_SPEC="-L`pwd` -ltix`echo ${VERSION} | tr -d .`"
 +    TIX_BUILD_LIB_SPEC="`pwd`/libtix`echo ${VERSION} | tr -d .`.so.1"
@@ -70,11 +105,11 @@
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam`echo ${TCL_VERSION} | tr -d .`"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam`echo ${TK_VERSION} | tr -d .`"
      TIX_LIB_SPEC="-L${exec_prefix}/lib -ltix`echo ${VERSION} | tr -d .`"
-+    LIB_VERSION="`echo ${VERSION} | tr -d .`"
++	LIB_VERSION="`echo ${VERSION} | tr -d .`"
  fi
  
  #--------------------------------------------------------------------
-@@ -1173,7 +1177,7 @@
+@@ -1173,25 +1177,25 @@
  
      # The main Tix library
      #
@@ -83,7 +118,19 @@
      TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
  
      # The Tcl SAM library
-@@ -1191,7 +1195,7 @@
+     #
+-    VERSION=8.0
++    VERSION=8.2
+     eval "TCL_SAM_FILE=libtclsam${TCL_SHARED_LIB_SUFFIX}"
+     TCL_MAKE_SAM="\${SHLIB_LD} -o ${TCL_SAM_FILE} \${TCL_SAM_OBJS} ${SHLIB_LD_LIBS}"
+     
+     # The Tk SAM library
+     #
+-    VERSION=8.0
++    VERSION=8.2
+     eval "TK_SAM_FILE=libtksam${TCL_SHARED_LIB_SUFFIX}"
+     TK_MAKE_SAM="\${SHLIB_LD} -o ${TK_SAM_FILE} \${TK_SAM_OBJS} ${SHLIB_LD_LIBS}"
+     
      # The Tix SAM library
      #
      VERSION=${BIN_VERSION}
@@ -92,6 +139,22 @@
      TIX_MAKE_SAM="\${SHLIB_LD} -o ${TIX_SAM_FILE} \${TIX_SAM_OBJS} ${SHLIB_LD_LIBS}"
  
  else
+@@ -1204,13 +1208,13 @@
+ 
+     # The Tcl SAM library
+     
+-    VERSION=8.0
++    VERSION=8.2
+     eval "TCL_SAM_FILE=libtclsam${TCL_UNSHARED_LIB_SUFFIX}"
+     TCL_MAKE_SAM="ar cr ${TCL_SAM_FILE} \${TCL_SAM_OBJS}"
+     
+     # The Tk SAM library
+     #
+-    VERSION=8.0
++    VERSION=8.2
+     eval "TK_SAM_FILE=libtksam${TCL_UNSHARED_LIB_SUFFIX}"
+     TK_MAKE_SAM="ar cr ${TK_SAM_FILE} \${TK_SAM_OBJS}"
+     
 @@ -1653,15 +1657,15 @@
  s%@SHLIB_VERSION@%$SHLIB_VERSION%g
  s%@DL_LIBS@%$DL_LIBS%g

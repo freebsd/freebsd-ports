@@ -9,15 +9,13 @@
 DISTNAME=	Tix4.1.0.007
 PKGNAME=	tix-4.1.0.007
 CATEGORIES=	x11-toolkits tk82
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/%SUBDIR%/ \
+MASTER_SITES=   http://www.neosoft.com/tcl/ftparchive/%SUBDIR%/ \
 		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/%SUBDIR%/
 MASTER_SITE_SUBDIR= sorted/packages-8.0/x11/Tix/4.1.0.007
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
-BROKEN=	"Bus error (core dumped) with tk82"
 
 WRKSRC=		${WRKDIR}/Tix4.1.0.007/unix/tk8.0
 GNU_CONFIGURE=	yes
@@ -36,13 +34,11 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 		Select.n StdBBox.n TixIntro.n Tree.n Utils.n Wm.n compound.n \
 		pixmap.n tix.n
 
-TIX_LIB=	libtix4180.so
-TIXSAM_LIB=	libtixsam4180.so
+TIX_LIB=	libtix4182.so
+TIXSAM_LIB=	libtixsam4182.so
+CFLAGS+=	-fwritable-strings
 
 .include <bsd.port.pre.mk>
-
-TIX_LIB_FILE=	${TIX_LIB}.1
-TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
 
 pre-configure:
 	@(cd ${WRKSRC}/.. && \
@@ -54,7 +50,7 @@ pre-configure:
 post-install:
 	@(cd ${WRKSRC}/.. && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.0 ${PREFIX}/bin/tixwish
+	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.2 ${PREFIX}/bin/tixwish
 	${LN} -fs ${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
 	${LN} -fs ${TIXSAM_LIB_FILE} ${PREFIX}/lib/${TIXSAM_LIB}
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
