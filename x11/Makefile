@@ -112,6 +112,7 @@
     SUBDIR += libXxf86
     SUBDIR += libcapplet
     SUBDIR += libdnd
+    SUBDIR += libexo
     SUBDIR += libgnome
     SUBDIR += libgnome-java
     SUBDIR += libgnomemm
