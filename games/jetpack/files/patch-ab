@@ -1,0 +1,23 @@
+*** defs.h.orig	Tue Sep 20 01:12:40 1994
+--- defs.h	Tue Sep 20 01:13:15 1994
+***************
+*** 310,318 ****
+  #define	BONUSINCREMENT	10
+  #define	BONUSTIME		20
+  #define EXTRAMANSCORE	10000
+! #define USECDELAY		45000
+  
+! extern int	men, score, bonus, bonustimer, initbonus, level;
+  			oldscore, oldlevel, extramaninc;
+  
+  /*	game state
+--- 310,318 ----
+  #define	BONUSINCREMENT	10
+  #define	BONUSTIME		20
+  #define EXTRAMANSCORE	10000
+! #define USECDELAY		35000
+  
+! extern int	men, score, bonus, bonustimer, initbonus, level,
+  			oldscore, oldlevel, extramaninc;
+  
+  /*	game state

@@ -1,0 +1,25 @@
+*** main.c.orig	Wed Sep 21 00:33:35 1994
+--- main.c	Wed Sep 21 00:35:35 1994
+***************
+*** 1,5 ****
+--- 1,8 ----
+  /*	main.c : main loop of jetpack
+  */
++ #include <sys/time.h>
++ #include <sys/resource.h>
++ 
+  
+  #include "copyright.h"
+  #include "defs.h"
+***************
+*** 18,23 ****
+--- 21,29 ----
+  	int						seed;
+  	char					lev[20];
+  	register unsigned long	timer;
++ 	struct rlimit l = {0, 0};
++ 
++ 	setrlimit(RLIMIT_CORE, &l);
+  
+  	/*	randomize the random number generator by seeding it with the time
+  		in seconds

@@ -1,0 +1,64 @@
+From: dan@netlabs.com (Daniel Ketcham)
+Newsgroups: comp.sources.games.bugs
+Subject: Re: jetpack out of memory error with no -DBLIT
+Message-ID: <1992Mar27.010041.13217@netlabs.com>
+Date: 27 Mar 92 01:00:41 GMT
+
+In article <328@bain3.bain.oz.au>, callum@bain3.bain.oz.au (Callum Gibson) writes:
+> I compiled jetpack (which was just posted) in the default way with the -DBLIT
+> define in tact.  However, the response time was several seconds.  I thought
+> I'd try it without the -DBLIT to see if it would speed up.  It compiled okay
+> but when run it failed immediately with an out of memory error.  I knocked
+> up a little program to read the a.out header and discovered that with -DBLIT
+> the bss (uninitialised data segment) was around 344K but without the BLIT
+> it was 52Mb !!!!!  It was obvious now why it ran out.
+
+The problem seems to be in that there is an array of around 10,000 elements
+that has as one of its elements an array of (you guessed it) 10,000! ints.
+I looked at the code a little and came up with the following patch.
+Running with this patch I had no problem.
+
+Dan Ketcham
+
+*** erase.c.orig	Wed Mar 25 17:19:41 1992
+--- erase.c	Thu Mar 26 11:19:35 1992
+***************
+*** 11,16 ****
+--- 11,17 ----
+  
+  #ifndef BLIT
+  
++ #define MAXTOUCH 10
+  #define MAXOBJECTS 6+MAXLINES+MAXFIREBALLS+MAXSWEEPERS+MAXFUELPODS+MAXGUARDS+MAXHIGHSCORES/5
+  
+  /*	Structure for eraseable zones that minimize flicker
+***************
+*** 19,25 ****
+  	int	type, num;
+  	int	x, y, w, h;
+  	int	numtouch;
+! 	int	touch[MAXOBJECTS];
+  	int	erased, drawn;
+  };
+  
+--- 20,26 ----
+  	int	type, num;
+  	int	x, y, w, h;
+  	int	numtouch;
+! 	int	touch[MAXTOUCH];
+  	int	erased, drawn;
+  };
+  
+***************
+*** 57,62 ****
+--- 58,67 ----
+  		if(zone_intersect(numzones,j)) {
+  			zones[j].touch[zones[j].numtouch] = numzones;
+  			zones[j].numtouch++;
++ 			if (zones[j].numtouch == MAXTOUCH) {
++ 				zones[j].numtouch = -1;
++ 				printf("Reached maxtouch for zone %d\n", numzones);
++ 			}
+  			break;
+  		}
+  	}

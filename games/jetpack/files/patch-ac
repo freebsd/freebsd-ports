@@ -1,0 +1,84 @@
+*** Imakefile.orig	Mon Nov  8 15:16:05 1993
+--- Imakefile	Wed Sep 21 00:55:52 1994
+***************
+*** 7,22 ****
+  
+  	PROGRAMS = jetpack
+  
+! 	DESTDIR = /usrd/s/m/meb2
+  
+  # These defines override the template defaults. Trash em if you want to
+  # use the template locations
+! 	USRLIBDIR = $(DESTDIR)/lib/jetpack
+! 	BINDIR = $(DESTDIR)/bin
+! 	MANPATH = $(DESTDIR)/man
+! 	MANDIR = $(MANSOURCEPATH)1
+! 	TOP_INCLUDES =
+! 	DEPXLIB =
+  	EXTRA_LIBRARIES = $(XLIB)
+  
+  # I like my programs optimized, stripped, and setuid. Do what you like.
+--- 7,22 ----
+  
+  	PROGRAMS = jetpack
+  
+! 	BINDIR = /usr/local/bin
+! 	LIBDIR = /usr/local/lib/jetpack
+! 	MANDIR = /usr/local/man/man6
+  
+  # These defines override the template defaults. Trash em if you want to
+  # use the template locations
+! #	LIBDIR = $(DESTDIR)/lib/jetpack
+! #	BINDIR = $(DESTDIR)/bin
+! #	MANPATH = $(DESTDIR)/man
+! #	MANDIR = $(MANSOURCEPATH)1
+  	EXTRA_LIBRARIES = $(XLIB)
+  
+  # I like my programs optimized, stripped, and setuid. Do what you like.
+***************
+*** 30,44 ****
+  # the game to do all the drawing to an offscreen pixmap. (This is good for
+  # machines that don't have hardware blitting -- if you have an xterm or a
+  # graphics workhorse, leave it in, there will be no flicker)
+! 	DEFINES = -DBLIT -DSCOREPATH=\"$(SCOREFILE)\" -DLEVELPATH=\"$(LEVELFILE)\"
+  
+  # The score file can be any name you like, just make sure the directory
+  # it's supposed to reside in exists, or jetpack will start creating score
+  # files in the directories it is run from. Same for the level files, only
+  # the filename you give here is only a prefix -- the complete filename has
+  # the level number appended to it.
+! 	SCOREFILE = $(USRLIBDIR)/jetpack.scores
+! 	LEVELFILE = $(USRLIBDIR)/jetpack.lev
+  
+  ComplexProgramTarget(jetpack)
+  
+--- 30,45 ----
+  # the game to do all the drawing to an offscreen pixmap. (This is good for
+  # machines that don't have hardware blitting -- if you have an xterm or a
+  # graphics workhorse, leave it in, there will be no flicker)
+! #	DEFINES = -DBLIT -DSCOREPATH=\"$(SCOREFILE)\" -DLEVELPATH=\"$(LEVELFILE)\"
+! 	DEFINES = -DSCOREPATH=\"$(SCOREFILE)\" -DLEVELPATH=\"$(LEVELFILE)\"
+  
+  # The score file can be any name you like, just make sure the directory
+  # it's supposed to reside in exists, or jetpack will start creating score
+  # files in the directories it is run from. Same for the level files, only
+  # the filename you give here is only a prefix -- the complete filename has
+  # the level number appended to it.
+! 	SCOREFILE = $(LIBDIR)/jetpack.scores
+! 	LEVELFILE = $(LIBDIR)/jetpack.lev
+  
+  ComplexProgramTarget(jetpack)
+  
+***************
+*** 50,54 ****
+  # oops, I can't figure how to override the template default to install the
+  # man page as jetpack.1, so I install both and remove the bad one.
+  install.man:: jetpack.man
+! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.1
+! 	@rm -f $(MANDIR)/jetpack.n
+--- 51,55 ----
+  # oops, I can't figure how to override the template default to install the
+  # man page as jetpack.1, so I install both and remove the bad one.
+  install.man:: jetpack.man
+! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.6
+! 	@rm -f $(MANDIR)/jetpack.1x

@@ -1,0 +1,7 @@
+@cd /usr/local
+@mode 644
+man/man6/jetpack.6
+lib/jetpack/jetpack.lev000
+@owner bin
+@mode 4755
+bin/jetpack
