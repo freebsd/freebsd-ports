@@ -7,13 +7,18 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:modssl/}
 DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
+
+.if defined(APACHE_WITH_MODSNMP)
+PATCH_SITES=	http://www.simpleweb.org/software/packages/mod-snmp/distr/
+PATCHFILES=	mod_snmp_${VERSION_MODSNMP}.tar.gz
+EXTRA_PATCH=	${WRKSRC}/src/module/snmp_agt/mod_snmp.patch
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with SSL/TLS functionality
@@ -24,8 +29,9 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
-VERSION_APACHE=	1.3.28
-VERSION_MODSSL=	2.8.15
+VERSION_APACHE=	1.3.29
+VERSION_MODSSL=	2.8.16
+VERSION_MODSNMP=	1.3.14.12
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
@@ -115,6 +121,15 @@ OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O3
 .endif
 
+.if defined(APACHE_WITH_MODSNMP)
+CONFIGURE_ARGS+=	--activate-module=src/modules/snmp_agt/libsnmp_agt.a
+CFLAGS+=	-DSNMP -DUSE_DB -DSNMP_CONFIG_H -DHARD_VIRTUAL_HOST_MAX=1000 \
+		-DSNMPLOCALONLY
+PLIST_SUB+=	WITHSNMP=""
+.else
+PLIST_SUB+=	WITHSNMP="@comment "
+.endif
+
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \
 		SSL_BASE='${OPENSSLBASE}' \
@@ -173,6 +188,9 @@ pre-fetch:
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
 		> ${WRKSRC}/apache.sh
+.if defined(APACHE_WITH_MODSNMP)
+	(cd ${WRKSRC}; ${TAR} xfz  ${DISTDIR}/${PATCHFILES})
+.endif
 
 pre-patch:
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
@@ -207,5 +225,9 @@ post-install:
 		${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
+.if defined(APACHE_WITH_MODSNMP)
+	@${MKDIR} ${DATADIR}/buckets
+	@${CHOWN} www:www ${DATADIR}/buckets
+.endif
 
 .include <bsd.port.post.mk>
