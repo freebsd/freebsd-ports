@@ -7,43 +7,38 @@
 
 PORTNAME=	gtktalog
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTKtalog is a tool to make disk catalogs
+COMMENT=	A tool to make disk catalogs
 
 BUILD_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 
-USE_GNOME=	gnomeprefix gnomelibs gnometarget
-GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomelibs gnomeprefix gnometarget
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gtktalog.1
 
-DOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
-
-CONFIGURE_ENV=	XGETTEXT=${LOCALBASE}/bin/xgettext
-
-post-patch:
-	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -E "s@^(Applicationsdir = ).*@\1${PREFIX}/share/gnome/apps/Applications@" ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -E "s@^(localedir = ).*@\1${PREFIX}/share/locale@" \
-		${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -E "s@^(gtktalog_helpdir = ).*@\1${PREFIX}/share/gnome/help/gtktalog/C@" ${WRKSRC}/Docs/C/Makefile.in
-	@${REINPLACE_CMD} -E "s@^(gtktalog_helpdir = ).*@\1${PREFIX}/share/gnome/help/gtktalog/fr@" ${WRKSRC}/Docs/fr/Makefile.in
-	@${REINPLACE_CMD} -E "s@^(MountPoint ).*@\1/cdrom@" \
-		${WRKSRC}/src/gtktalog/gtktalog.cf.in.in
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
-	${RMDIR} ${PREFIX}/share/gnome/help/gtktalog/*/images 2>/dev/null || ${TRUE}
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
+	@${MKDIR} ${DOCSDIR}
+.for f in AUTHORS BUGS ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
