@@ -1,11 +1,14 @@
 # New ports collection makefile for:	XEmacs with Wnn4
-# Version required:	21.1.8
+# Version required:	21.1
 # Date created:		25 January 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-WNN4=		yes
+.include	<bsd.port.pre.mk>
 
-.include	"${.CURDIR}/../xemacs-canna/Makefile"
+XEMACS_MAJOR_VER=	${.CURDIR:S!^${PORTSDIR}/japanese/xemacs!!:S!-wnn4$!!}
+WNN4=			yes
+
+.include	"${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/Makefile"
