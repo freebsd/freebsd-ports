@@ -6,6 +6,7 @@ www/data/WebSVN/diff.php
 www/data/WebSVN/dl.php
 www/data/WebSVN/filedetails.php
 www/data/WebSVN/form.php
+www/data/WebSVN/include/bugtraq.inc
 www/data/WebSVN/include/command.inc
 www/data/WebSVN/include/configclass.inc
 www/data/WebSVN/include/distconfig.inc
@@ -28,6 +29,7 @@ www/data/WebSVN/languages/korean-euc.inc
 www/data/WebSVN/languages/korean-utf8.inc
 www/data/WebSVN/languages/portuguese.inc
 www/data/WebSVN/languages/russian.inc
+www/data/WebSVN/languages/spanish.inc
 www/data/WebSVN/languages/swedish.inc
 www/data/WebSVN/languages/tchinese-utf8.inc
 www/data/WebSVN/languages/tchinese.inc

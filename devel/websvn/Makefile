@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	websvn
-PORTVERSION=	1.60
+PORTVERSION=	1.61
 CATEGORIES=	devel www
 MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/14334/
 DISTNAME=	WebSVN_${PORTVERSION:S/.//}
