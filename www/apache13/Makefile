@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.27
+PORTREVISION=   1
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -39,6 +40,7 @@ DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
 
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
 APACHE_SUEXEC_USERDIR?=public_html
 
 SUEXEC_CONF= \
@@ -47,7 +49,7 @@ SUEXEC_CONF= \
 	--suexec-caller=www \
 	--suexec-uidmin=1000 \
 	--suexec-gidmin=1000 \
-	--suexec-logfile=/var/log/httpd-suexec.log \
+	--suexec-logfile=${APACHE_SUEXEC_LOG} \
 	--suexec-userdir=${APACHE_SUEXEC_USERDIR} \
 	--suexec-safepath=${DEFAULT_PATH}
 
