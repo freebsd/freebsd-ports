@@ -215,6 +215,7 @@
     SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libcache
+    SUBDIR += libcapsinetwork
     SUBDIR += libcii
     SUBDIR += libcoro
     SUBDIR += libdlmalloc
