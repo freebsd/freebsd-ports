@@ -9,7 +9,7 @@
 PORTNAME=	libntlm
 PORTVERSION=	0.3.2
 CATEGORIES=	security
-MASTER_SITES=	http://josefsson.org/${PORTNME}/releases/
+MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library that implement Microsoft's NTLM authentication
