@@ -45,6 +45,7 @@ REPLACE_FILES=	${FILESDIR}/daemonctl.c \
 JAR_FILE=	lib/${APP_SHORTNAME}.jar
 JAVA_ARGS=	'"-Dtomcat.install=${APP_HOME}"'
 JAR_ARGS=	'"run"'
+CONTROL_SCRIPT_MANPAGE_TITLE=	TOMCATCTL
 WRKDIR?=	work
 
 .include <bsd.port.pre.mk>
@@ -75,6 +76,7 @@ do-install:
 	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
 	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
 	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
+	-e "/%%CONTROL_SCRIPT_MANPAGE_TITLE%%/s//${CONTROL_SCRIPT_MANPAGE_TITLE}/g" \
 	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
 	-e "/%%GROUP%%/s//${GROUP}/g" \
 	-e "/%%HTTP_PORT%%/s//${HTTP_PORT}/g" \
