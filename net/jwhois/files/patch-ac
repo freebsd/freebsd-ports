@@ -1,0 +1,11 @@
+--- Makefile.in.dist	Thu Jan 10 03:50:32 2002
++++ Makefile.in	Sat Feb  9 18:07:56 2002
+@@ -99,7 +99,7 @@
+ sgid = @sgid@
+ 
+ EXTRA_DIST = include/*.h example/jwhois.conf macros/*.m4 jwhois.spec.in jwhois.spec
+-SUBDIRS = doc intl src example @POSUB@
++SUBDIRS = doc intl src @POSUB@
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwhois
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
@@ -22,6 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 
 INSTALL_TARGET=	install-strip
 
+MANLANG=	"" sv
 MAN1=	jwhois.1
 
 post-install:
