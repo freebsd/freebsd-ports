@@ -352,7 +352,7 @@
     SUBDIR += vje30-trial
     SUBDIR += w3
     SUBDIR += w3m
-    SUBDIR += w3m-ssl
+    SUBDIR += w3m-image
     SUBDIR += wdic-fpw
     SUBDIR += weather-emacs20
     SUBDIR += web1913-fpw
