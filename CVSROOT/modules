@@ -5660,6 +5660,7 @@ pd		ports/audio/pd
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
 pdflib3		ports/print/pdflib3
+pdflib4		ports/print/pdflib4
 pdfmap		ports/misc/pdfmap
 pdftohtml	ports/textproc/pdftohtml
 pdksh		ports/shells/pdksh
