@@ -8,10 +8,7 @@
 PORTNAME=	gtic
 PORTVERSION=	1.3.b
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.cracksoft.kiev.ua/pub/linux/gtic/ \
-		ftp://ftp.kspu.kr.ua/pub/unix/FIDO/gtic/ \
-		ftp://ftp.ns.burnet.ru/pub/fido/gtic/ \
-		ftp://ftp.3logic.net/pub/Linux/fido/ \
+MASTER_SITES=	ftp://ftp.kspu.kr.ua/pub/unix/FIDO/gtic/ \
 		ftp://ftp.braz.ru/pub/fido/gtic/
 DISTNAME=	${PORTNAME}-1.3b
 
