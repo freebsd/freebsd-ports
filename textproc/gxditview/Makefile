@@ -19,7 +19,9 @@ MAN1=		gxditview.1
 
 .if exists(/usr/src/contrib/groff/src/xditview)
 GXDVSRC=	/usr/src/contrib/groff/src/xditview
-PORTVERSION=	1.17
+GXDVVERSION!=	cat /usr/src/contrib/groff/VERSION
+GXDVREVISION!=	sed -e 's/^0$$//' -e 's/^[1-9].*$$/.&/' /usr/src/contrib/groff/REVISION
+PORTVERSION=	${GXDVVERSION}${GXDVREVISION}
 .else
 GXDVSRC=	/usr/src/contrib/groff/xditview
 PORTVERSION=	1.16.1
