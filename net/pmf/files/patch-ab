@@ -1,0 +1,68 @@
+--- Makefile.orig	Sun May 23 20:54:05 1993
++++ Makefile	Fri Feb 11 04:02:29 2000
+@@ -29,12 +29,13 @@
+ # pmf without GNU readline or without sound.
+ # Remove one (or both) of "-DGNU_READLINE" and "-DSOUND".
+ #
+-OPTIONS = -DGNU_READLINE -DSOUND
++#OPTIONS = -DGNU_READLINE -DSOUND
++OPTIONS = -DGNU_READLINE
+ 
+ # This variable, SOUND_OBJECT, should be changed if you want to
+ # compile pmf without sound: remove this definition of SOUND_OBJECT.
+ #
+-SOUND_OBJECT = sound.o
++#SOUND_OBJECT = sound.o
+ 
+ # This variable, HISTORY_OBJECT, should be changed if you want to
+ # compile pmf without GNU readline: define HISTORY_OBJECT as
+@@ -56,7 +57,7 @@
+ # If you want to use the GNU C compiler,
+ # change the variable CC to "gcc -traditional" instead:
+ #
+-CC = cc
++CC ?= cc
+ # CC = gcc -traditional
+ 
+ ######################################################################
+@@ -65,7 +66,7 @@
+ #	-- the Makefiles in the subdirs have to be changed separately.
+ # Distribution: CFLAGS = -O
+ # Maximum debug: CFLAGS = -g -pg -DDEBUG -pipe
+-CFLAGS = -O
++CFLAGS += -D_ANSI_SOURCE -DSYSTEM_DIR=\"${PREFIX}/libdata/pmf\"
+ 
+ ######################################################################
+ 
+@@ -104,7 +105,8 @@
+ READLINE_LIB = $(READLINE_DIR)/libreadline.a
+ C_PACKAGES_LIB = $(C_PACKAGES_DIR)/libc_packs.a
+ 
+-LIBS = $(READLINE_LIB) $(C_PACKAGES_LIB)
++#LIBS = $(READLINE_LIB) $(C_PACKAGES_LIB)
++LIBS = $(C_PACKAGES_LIB) -lreadline -lcompat
+ 
+ INCLUDEDIRS = -I$(C_PACKAGES_DIR)/safe_malloc \
+ 	-I$(C_PACKAGES_DIR)/generic_list \
+@@ -123,7 +125,7 @@
+ 
+ pmf: $(OBJECTS) $(LIBS)
+ 	rm -f compile_time.c
+-	$(CC) -o pmf $(CFLAGS) $(OBJECTS) $(LIBS) -ltermcap -lresolv
++	$(CC) -o pmf $(CFLAGS) $(OBJECTS) $(LIBS) -ltermcap
+ 	strip pmf
+ 	rm -f compile_time.o
+ 
+@@ -133,10 +135,10 @@
+ ######################################################################
+ 
+ $(READLINE_LIB):
+-	( cd $(READLINE_DIR); make )
++	( cd $(READLINE_DIR); $(MAKE) )
+ 
+ $(C_PACKAGES_LIB):
+-	( cd $(C_PACKAGES_DIR); make )
++	( cd $(C_PACKAGES_DIR); $(MAKE) 'CFLAGS=$(CFLAGS)')
+ 
+ READLINE_FILES = \
+ 	$(READLINE_DIR)/*

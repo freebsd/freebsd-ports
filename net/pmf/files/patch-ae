@@ -1,0 +1,11 @@
+--- c_packages/Makefile.orig	Sun Sep 22 12:13:58 1991
++++ c_packages/Makefile	Fri Feb 11 04:14:00 2000
+@@ -8,7 +8,7 @@
+ 	for i in $(PACKAGES) ; \
+ 	do \
+ 		echo Making $$i...; \
+-		( cd $$i; make ) \
++		( cd $$i; $(MAKE) 'CFLAGS=$(CFLAGS)') \
+ 	done
+ 	ln -s */*.o .
+ 	ar rv libc_packs.a *.o

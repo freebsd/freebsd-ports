@@ -1,0 +1,20 @@
+--- main.c.orig	Sun Sep 22 12:13:43 1991
++++ main.c	Fri Feb 11 04:14:00 2000
+@@ -37,7 +37,7 @@
+     extern int stop_printing();
+     extern int continue_printing();
+ 
+-    extern int last_c_pos;
++    extern int _rl_last_c_pos;
+ #endif
+ 
+ /* Longjmp buffer, jump there after error() or CTRL-C */
+@@ -58,7 +58,7 @@
+ 	ldisplay("\n");
+ 	ldisplay("%s", rl_line_buffer);
+ 	rl_redisplay(count, key);
+-	last_c_pos = rl_end;
++	_rl_last_c_pos = rl_end;
+     }
+ #endif
+ 
