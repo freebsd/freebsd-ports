@@ -2,6 +2,7 @@ bin/c2t
 bin/c2t.rb
 bin/runtest
 bin/runtest.rb
+%%RUBY_SITELIBDIR%%/rubyunit.rb
 %%RUBY_SITELIBDIR%%/runit/assert.rb
 %%RUBY_SITELIBDIR%%/runit/error.rb
 %%RUBY_SITELIBDIR%%/runit/cui/testrunner.rb
