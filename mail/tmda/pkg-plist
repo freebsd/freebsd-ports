@@ -1,3 +1,5 @@
+bin/tmda-gui
+bin/tmda-manager
 bin/tmda-address
 bin/tmda-check-address
 bin/tmda-filter
@@ -103,6 +105,54 @@ bin/tmda-sendmail
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
 %%PORTDOCS%%share/doc/tmda/contrib/def2html
 %%PORTDOCS%%share/doc/tmda/contrib/vadduser-tmda
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Authenticate.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Authenticate.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/CgiUtil.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/CgiUtil.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Login.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Login.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Pending.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Pending.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/README
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Release.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Release.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Session.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/Session.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/View.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/View.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/compile
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/genpass.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/genpass.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/paths.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/paths.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/tmda-cgi.c
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/tmda-cgi.conf
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/tmda-cgi.py
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/tmda-cgi.pyc
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/accept.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/actions.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/all.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/allhead.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/black.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/down.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/exe.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/first.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/image.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/kill.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/last.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/movie.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/next.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/prev.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/python.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/shorthead.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/smblack.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/smwhite.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/sound.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/styles.css
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/text.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/up.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/white.gif
+%%PORTDOCS%%share/doc/tmda/contrib/cgi/display/zip.gif
 %%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-filter.html
@@ -133,6 +183,8 @@ share/tmda/bounce.txt
 share/tmda/confirm_accept.txt
 share/tmda/confirm_request.txt
 @dirrm share/tmda
+%%PORTDOCS%%@dirrm share/doc/tmda/contrib/cgi/display
+%%PORTDOCS%%@dirrm share/doc/tmda/contrib/cgi
 %%PORTDOCS%%@dirrm share/doc/tmda/contrib
 %%PORTDOCS%%@dirrm share/doc/tmda/htdocs
 %%PORTDOCS%%@dirrm share/doc/tmda
