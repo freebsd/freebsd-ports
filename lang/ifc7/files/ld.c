@@ -28,143 +28,71 @@
  * Based on a shell-script written by Dan Nelson <dnelson@allantgroup.com>
  * with some modifications by Alexander Leidinger <netchild@FreeBSD.org>.
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc7/files/Attic/ld.c,v 1.3 2003-10-08 00:04:36 maho Exp $
  */
 
-/* Uses code marked: */
-
-/*	OpenBSD: mailwrapper.c,v 1.6 1999/12/17 05:06:28 mickey Exp	*/
-/*	NetBSD: mailwrapper.c,v 1.3 1999/05/29 18:18:15 christos Exp	*/
-/* FreeBSD: src/usr.sbin/mailwrapper/mailwrapper.c,v 1.8 2002/07/11 18:27:55 alfred Exp */
-
-/*
- * Copyright (c) 1998
- * 	Perry E. Metzger.  All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- * 1. Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- * 2. Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- * 3. All advertising materials mentioning features or use of this software
- *    must display the following acknowledgment:
- *	This product includes software developed for the NetBSD Project
- *	by Perry E. Metzger.
- * 4. The name of the author may not be used to endorse or promote products
- *    derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
- * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
- * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
- * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
- * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
- * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
- * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+#include <sys/cdefs.h>
+__FBSDID("$FreeBSD: /tmp/pcvs/ports/lang/ifc7/files/Attic/ld.c,v 1.4 2004-01-19 13:44:47 maho Exp $");
 
 #include <err.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
-#if defined (__FreeBSD__) && __FreeBSD__ >= 2
-	#include <osreldate.h>
-#else
-	#error "Won't work here."
-#endif
+#include <osreldate.h>
 
 #define	PATH_LD	"/usr/bin/ld"
 
+#define	LDW_CPP		(1<<0)
+#define	LDW_DYN		(1<<1)
+#define	LDW_GPROF	(1<<2)
+#define	LDW_PIC		(1<<3)
+#define	LDW_THR		(1<<4)
+#define	LDW_LGCC	(1<<5)
+
 struct arglist {
-	size_t argc, maxc;
-	char **argv;
+	size_t argc;
+	const char **argv;
 };
 
-static void initarg(struct arglist *al);
-static void addarg(struct arglist *al, const char *arg, int copy);
-static void freearg(struct arglist *al, int copy);
+static void addarg(struct arglist *al, const char *arg);
 int main(int argc, char *argv[], char *envp[]);
 
 static void
-initarg(struct arglist *al)
+addarg(struct arglist *al, const char *arg)
 {
+	const char **argv2;
 
-	al->argc = 0;
-	al->maxc = 10;
-	if ((al->argv = malloc(al->maxc * sizeof(char *))) == NULL)
+	argv2 = realloc(al->argv, (al->argc + 1) * sizeof(al->argv[0]));
+
+	if (argv2 == NULL)
 		err(1, NULL);
-}
 
-static void
-addarg(struct arglist *al, const char *arg, int copy)
-{
-	char **argv2;
+	al->argv = argv2;
 
-	if (al->argc == al->maxc) {
-		al->maxc <<= 1;
-
-		if ((argv2 = realloc(al->argv,
-		    al->maxc * sizeof(char *))) == NULL) {
-			if (al->argv)
-				free(al->argv);
-			al->argv = NULL;
-			err(1, NULL);
-		} else {
-			al->argv = argv2;
-		}
-	}
-	if (copy) {
-		if ((al->argv[al->argc++] = strdup(arg)) == NULL)
-			err(1, NULL);
-	} else {
-		al->argv[al->argc++] = (char *)arg;
-	}
-}
-
-static
-void freearg(struct arglist *al, int copy)
-{
-	size_t i;
-
-	if (copy)
-		for (i = 0; i < al->argc; i++)
-			free(al->argv[i]);
-	free(al->argv);
+	al->argv[al->argc++] = arg;
 }
 
 int
 main(int argc, char *argv[], char *envp[])
 {
 	size_t i;
-	int bootstrap, cpp, dynamic, pic, gprof, stlinserted, threaded;
-	int f90 = 0;
-	char *libc, *libc_r, *prefix;
-	struct arglist al;
+	u_int flags;
+	const char *libc, *libthr, *icc_localbase;
+	struct arglist al = { 0, NULL };
+
+	flags = 0;
 
 	if (argc == 1)
 		errx(1, "no input files");
 
-	if ((prefix = getenv("PREFIX")) == NULL)
-		errx(1, "can't get PREFIX");
-
-	initarg(&al);
-	bootstrap = cpp = dynamic = pic = gprof = stlinserted = threaded = 0;
+	if ((icc_localbase = getenv("ICC_LOCALBASE")) == NULL)
+		errx(1, "can't get ICC_LOCALBASE");
 
 #ifdef DEBUG
 	printf("input: ");
 #endif
 
-#define	ARGCMP(x)	!strcmp(argv[i], (x))
-#define	ARGCMPB(x, y)	(strlen(x) + strlen(y) == strlen(argv[i]) &&	       \
-	!strncmp(argv[i], (x), strlen(x)) &&				       \
-	!strncmp(argv[i] + strlen(x), (y), strlen(y)))
+#define	ARGCMP(i, x)	!strcmp(argv[i], (x))
 
 	/*
 	 * XXX This doesn't deal with whitespace but a) the output of the
@@ -176,56 +104,35 @@ main(int argc, char *argv[], char *envp[])
 		printf("%s ", argv[i]);
 #endif
 
-	 	if (ARGCMP("-CPLUSPLUS")) {
-			cpp++;
+	 	if (ARGCMP(i, "-CPLUSPLUS")) {
+			flags |= LDW_CPP;
 			continue;
 	    	}
 
-		if (ARGCMP("-BOOTSTRAPSTLPORT")) {
-			bootstrap++;
-			continue;
-		}
-
-	 	if (ARGCMP("-MT")) {
-			threaded++;
+	 	if (ARGCMP(i, "-MT")
+/* ifc8 */
+		 || ARGCMP(i, "-lpthread")) {
+/* ifc8 */
+			flags |= LDW_THR;
 			continue;
 	    	}
 
-	 	if (ARGCMP("-PIC")) {
-			pic++;
+	 	if (ARGCMP(i, "-PIC")) {
+			flags |= LDW_PIC;
 			continue;
 	    	}
 
 		/*
+		 * Check if the compiler wants us to do dynamic linking, i.e.
+		 * the compiler was called with -shared or without -static.
 		 * If the compiler was called with -static we shouldn't see
 		 * "--dynamic-linker" here.
 		 * Note: According to ld(1) this is "--dynamic-linker" but
 		 *	 ICC passes "-dynamic-linker" to it.
 		 */
-		if (ARGCMP("--dynamic-linker") || ARGCMP("-dynamic-linker")) {
-			dynamic++;
-			continue;
-		}
-		if (ARGCMP("-shared")) {
-			dynamic++;
-			continue;
-		}
-
-		/*
-		 * Just link libstlport_icc* once when compiling the stlport
-		 * tests.
-		 */
-		if (!strncmp(argv[i], "-lstlport_icc",
-		    strlen("-lstlport_icc"))) {
-			stlinserted++;
-			continue;
-		}
-
-		/*
-		 * If IFC, do not use libstlport_icc.
-		 */
-		if (!strcmp(argv[i], "-lF90")) {
-			f90++;
+		if (ARGCMP(i, "--dynamic-linker") ||
+		    ARGCMP(i, "-dynamic-linker") || ARGCMP(i, "-shared")) {
+			flags |= LDW_DYN;
 			continue;
 		}
 
@@ -233,66 +140,72 @@ main(int argc, char *argv[], char *envp[])
 		 * Link against libc_p when "-qp" or "-p" were given,
 		 * "/usr/lib/gcrt1.o" indicates this.
 		 */
-		if (ARGCMP("/usr/lib/gcrt1.o")) {
-			gprof++;
+		if (ARGCMP(i, "/usr/lib/gcrt1.o")) {
+			flags |= LDW_GPROF;
+			continue;
+		}
+
+		if (ARGCMP(i, "-lgcc")) {
+			flags |= LDW_LGCC;
 			continue;
 		}
 	}
 
 	/*
-	 * Use the appropriate libs for libc and libc_r when linking static
+	 * Allow the user to specify an alternative threads library
+	 * implementation, such as -lthr, or whatever.
+	 */
+#if __FreeBSD_version >= 500016
+	if ((libthr = getenv("PTHREAD_LIBS")) == NULL)
+#endif
+		libthr = "-lc_r";
+	/*
+	 * Use the appropriate libs for libc and libthr when linking static
 	 * and "-KPIC" or "-pg" where given.
 	 */
-	if (!dynamic && (pic || gprof)) {
+	if (!(flags & LDW_DYN) && flags & (LDW_PIC | LDW_GPROF)) {
 		/*
 		 * Let libc_p win above libc_pic when both, "-KPIC" and "-pg",
 		 * where given, GCC does the same.
 		 */
-		if (!gprof) {
-			libc = strdup("-lc_pic");
-			libc_r = strdup("-lc_r");
-		} else {
-			libc = strdup("-lc_p");
-			libc_r = strdup("-lc_r_p");
+		if (!(flags & LDW_GPROF))
+			libc = "-lc_pic";
+		else {
+			char	*p;
+			libc = "-lc_p";
+			asprintf(&p, "%s_p", libthr);
+			if (p == NULL)
+				err(1, NULL);
+			libthr = p;
 		}
-	} else {
-		libc = strdup("-lc");
-		libc_r = strdup("-lc_r");
-	}
+	} else
+		libc = "-lc";
 
 #ifdef DEBUG
-	printf("\ncpp: %s bootstrap: %s dynamic: %s gprof: %s pic: %s "
-	    "threaded: %s\n", cpp ? "YES" : "NO", bootstrap ? "YES" : "NO",
-	    dynamic ? "YES" : "NO", gprof ? "YES" : "NO", pic ? "YES" : "NO",
-	    threaded ? "YES" : "NO");
+	printf("\n");
 #endif
 
-	if (bootstrap && !cpp)
-		errx(1, "-BOOTSTRAPSTLPORT is only valid in combination with "
-		    "-CPLUSPLUS");
-
 	for (i = 0; i < argc; i++) {
-	 	if (ARGCMP("-CPLUSPLUS") || ARGCMP("-BOOTSTRAPSTLPORT") ||
-		    ARGCMP("-MT") || ARGCMP("-PIC"))
+	 	if (ARGCMP(i, "-CPLUSPLUS") || ARGCMP(i, "-MT") ||
+/* ifc8 */
+		    ARGCMP(i, "-lpthread") ||
+/* ifc8 */
+		    ARGCMP(i, "-PIC"))
 			continue;
 
 		/* prepend "-melf_i386" to the commandline */
 		if (i == 0) {
-			addarg(&al, argv[0], 1);
+			addarg(&al, argv[0]);
 #if __FreeBSD_version < 500042
-			addarg(&al, "-melf_i386", 1);
+			addarg(&al, "-melf_i386");
 #else
-			addarg(&al, "-melf_i386_fbsd", 1);
+			addarg(&al, "-melf_i386_fbsd");
 #endif
 			continue;
 		}
 
-		/* Don't add obsolete flag "-Qy". */
-		if (ARGCMP("-Qy"))
-			continue;
-
-		/* Libunwind is only needed when compiling C++ source. */
-		if (!cpp && !f90 && ARGCMP("-lunwind"))
+		/* Don't add obsolete flag "-Qy", don't add libgcc_s. */
+		if (ARGCMP(i, "-Qy") || ARGCMP(i, "-lgcc_s"))
 			continue;
 
 		/*
@@ -300,119 +213,107 @@ main(int argc, char *argv[], char *envp[])
 		 * shipping with ICC has unresolvable glibc dependencies
 		 * in both, the static and the dynamic, versions.
 		 */
-		if (ARGCMP("-lcprts")) {
-			if (cpp && !bootstrap && !stlinserted) {
+		if (ARGCMP(i, "-lcprts")) {
+			if (flags & LDW_CPP && !(flags & LDW_LGCC)) {
 				addarg(&al,
-				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
-				addarg(&al, "-lstlport_icc", 1);
-				stlinserted++;
+				    flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
+				addarg(&al, "-lstlport_icc");
 			}
 			continue;
 		}
 
 		/*
-		 * Link against libc_r when compiling multi-threaded or C++
-		 * code (libcxa and libunwind depend on libc_r when compiling
-		 * C++ source).
+		 * Link against libthr when compiling multi-threaded or C++
+		 * code (libcxa and libunwind depend on a threads library
+		 * when compiling C++ source).
 		 */
-		if (ARGCMP("-lc")) {
+		if (ARGCMP(i, "-lc")) {
 			if (al.argc > 0 &&
-			    strncmp(al.argv[al.argc - 1], "-B", strlen("-B")))
+			    strncmp(al.argv[al.argc - 1], "-B", 2))
 				addarg(&al,
-				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
-#if __FreeBSD_version < 500016
-			if (cpp || f90 || threaded) {
-				addarg(&al, libc_r, 0);
-#else
-			if (cpp || threaded) {
-				addarg(&al, libc, 0);
+				    flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
+			if (flags & (LDW_CPP | LDW_THR)) {
+				addarg(&al, libthr);
+#if __FreeBSD_version >= 500016
 				addarg(&al,
-				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
-				addarg(&al, libc_r, 0);
+				    flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
+				addarg(&al, libc);
 #endif
-			} else {
-				addarg(&al, libc, 0);
-			}
+			} else
+				addarg(&al, libc);
 			continue;
 		}
 
 		/* Switch Linux stuff to FreeBSD counterparts. */
-		if (ARGCMP("/lib/ld-linux.so.2")) {
+		if (ARGCMP(i, "/lib/ld-linux.so.2")) {
 #if __FreeBSD_version >= 501105
-			addarg(&al, "/libexec/ld-elf.so.1", 1);
+			addarg(&al, "/libexec/ld-elf.so.1");
 #else
-			addarg(&al, "/usr/libexec/ld-elf.so.1", 1);
+			addarg(&al, "/usr/libexec/ld-elf.so.1");
 #endif
 			continue;
 		}
-		if (ARGCMP("-L/usr/lib")) {
-			char *temp;
-
-			if ((temp = (char *) malloc(strlen("-L") +
-			    strlen(prefix) + strlen("/lib") + 1)) == NULL)
-				err(1, NULL);
-
-			addarg(&al, "-L/usr/libexec/elf", 1);
-			addarg(&al, "-L/usr/libexec", 1);
-			addarg(&al, "-L/usr/lib", 1);
-			snprintf(temp, strlen("-L") + strlen(prefix) +
-			    strlen("/lib") + 1, "-L%s/lib", prefix);
-			addarg(&al, temp, 1);
-			free(temp);
+		if (ARGCMP(i, "-L/usr/lib")) {
+			addarg(&al, "-L/usr/libexec/elf");
+			addarg(&al, "-L/usr/libexec");
+			addarg(&al, "-L/usr/lib");
+			if (flags & LDW_CPP && !(flags & LDW_LGCC)) {
+				char *p;
+				asprintf(&p, "-L%s/lib", icc_localbase);
+				if (p == NULL)
+					err(1, NULL);
+				addarg(&al, p);
+			}
 			continue;
 		}
 
 		/*
-		 * Force libcxa and libunwind to static linkage, since the
-		 * dynamic versions have glibc dependencies.
+		 * Force libcxa, libcxaguard and libunwind to static linkage,
+		 * since the dynamic versions have glibc dependencies.
 		 * Don't add superfluous -Bdynamic.
 		 */
-		if (ARGCMP("-Bdynamic") && i < argc - 1) {
-			if (!strcmp(argv[i + 1], "-lcxa") ||
-			    ((cpp || f90) && !strcmp(argv[i + 1], "-lunwind"))) {
-				addarg(&al, "-Bstatic", 1);
+		if (ARGCMP(i, "-Bdynamic") && i < argc - 1) {
+			if (ARGCMP(i + 1, "-lcxa") ||
+			    ARGCMP(i + 1, "-lcxaguard") ||
+			    ARGCMP(i + 1, "-lunwind")) {
+				addarg(&al, "-Bstatic");
 				continue;
 			}
 
-			if (!strcmp(argv[i + 1], "-lcprts") ||
-			    !strcmp(argv[i + 1], "-lunwind"))
+			if (ARGCMP(i + 1, "-lcprts") ||
+			    ARGCMP(i + 1, "-lgcc_s"))
 				continue;
 		}
 
 		/* Don't add superfluous -Bstatic. */
-		if (ARGCMP("-Bstatic") && i < argc - 1 &&
-		    (!strcmp(argv[i + 1], "-lcprts") ||
-		    (!cpp && !f90 && !strcmp(argv[i + 1], "-lunwind"))))
+		if (ARGCMP(i, "-Bstatic") && i < argc - 1 &&
+		    (ARGCMP(i + 1, "-lcprts") || ARGCMP(i + 1, "-lgcc_s") ||
+		    ARGCMP(i + 1, "-lunwind")))
 			continue;
 
 		/*
 		 * Sanity check if every lib is prepended by a linkage option,
 		 * add if missing.
 		 */
-		if (!strncmp(argv[i], "-l", strlen("-l")) && al.argc > 0 &&
-		    strncmp(al.argv[al.argc - 1], "-B", strlen("-B"))) {
-			if (!strcmp(argv[i], "-lcxa") ||
-			    !strcmp(argv[i], "-limf") ||
-			    !strcmp(argv[i], "-lirc") ||
-			    !strcmp(argv[i], "-lircmt") ||
-			    !strcmp(argv[i], "-lunwind"))
-				addarg(&al, "-Bstatic", 1);
+		if (!strncmp(argv[i], "-l", 2) && al.argc > 0 &&
+		    strncmp(al.argv[al.argc - 1], "-B", 2)) {
+			if (ARGCMP(i, "-lcxa") || ARGCMP(i, "-lcxaguard") ||
+			    ARGCMP(i, "-limf") || ARGCMP(i, "-lirc") ||
+			    ARGCMP(i, "-lircmt") || ARGCMP(i, "-lunwind"))
+				addarg(&al, "-Bstatic");
 			else
 				addarg(&al,
-				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
+ 				    flags & LDW_DYN ? "-Bdynamic" : "-Bstatic");
 
-			addarg(&al, argv[i], 1);
+			addarg(&al, argv[i]);
 			continue;
 	 	}
 
 		/* default */
-		addarg(&al, argv[i], 1);
+		addarg(&al, argv[i]);
 	}
 
-#undef	ARGCMP
-#undef	ARGCMPB
-
-	/* Still something to do ? */
+	/* Still something to do? */
 	if (al.argc == 1)
 		errx(1, "no input files");
 
@@ -425,13 +326,11 @@ main(int argc, char *argv[], char *envp[])
 	printf("\n");
 #endif
 
-	addarg(&al, NULL, 0);
+	addarg(&al, NULL);
 
-	/* Launch the real linker */
-	if (execve(PATH_LD, al.argv, envp) == -1)
-		err(1, "execing %s", PATH_LD);
-
-	freearg(&al, 1);
+	/* Launch the real linker. */
+	if (execve(PATH_LD, (char **)al.argv, envp) == -1)
+		err(1, "execing " PATH_LD);
 
 	exit (1);
 }
