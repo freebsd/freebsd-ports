@@ -16,8 +16,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/display.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/draw.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/event.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/font.so
-lib/%%PYTHON_VERSION%%/site-packages/pygame/helmetb.ttf
-lib/%%PYTHON_VERSION%%/site-packages/pygame/helmetb.txt
+lib/%%PYTHON_VERSION%%/site-packages/pygame/freesansbold.ttf
 lib/%%PYTHON_VERSION%%/site-packages/pygame/image.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/imageext.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/joystick.so
