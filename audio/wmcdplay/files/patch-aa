@@ -1,16 +1,17 @@
---- cdctl.h.orig	Sat Sep  5 10:11:26 1998
-+++ cdctl.h	Thu Dec 23 16:31:59 1999
-@@ -30,7 +30,8 @@
+--- cdctl.h.orig	Sat Sep  5 11:11:26 1998
++++ cdctl.h	Sun Mar 24 22:38:59 2002
+@@ -30,7 +30,9 @@
  #include <sys/stat.h>
  #include <fcntl.h>
  #include <unistd.h>
 -#include <linux/cdrom.h>
 +#include <sys/cdio.h>
++#include <arpa/inet.h>
 +#define CD_MSF_OFFSET	150
  
  // CD status values
  #define ssData     0
-@@ -113,10 +114,10 @@
+@@ -113,10 +115,10 @@
  	  case acStop:
  
               #ifdef _CDCTL_SOFT_STOP
@@ -23,7 +24,7 @@
               #endif
               tskOurPlay=false;
  
-@@ -127,10 +128,10 @@
+@@ -127,10 +129,10 @@
               tskOurPlay=true;
            break;
            case acPause:
@@ -36,7 +37,7 @@
            break;
  	  case acPrev:
               newtrk--;
-@@ -157,13 +158,13 @@
+@@ -157,13 +159,13 @@
              }
            break;
  	  case acEject:
@@ -52,7 +53,7 @@
               status_state=ssNoCD;
            break;
           }
-@@ -172,9 +173,14 @@
+@@ -172,9 +174,14 @@
     }
     void doStatus(){
        if(cdfdopen){
@@ -70,7 +71,7 @@
              if(status_state!=ssNoCD)
                 status_state=ssTrayOpen;
  	    status_track=0;
-@@ -185,18 +191,18 @@
+@@ -185,18 +192,18 @@
              if(status_state==ssNoCD || status_state==ssTrayOpen)
  	       readTOC();
              int start,now,stop;
@@ -93,7 +94,7 @@
  	        if(tskOurPlay){
                     status_state=ssPlaying;
  	           selecttrack();
-@@ -212,7 +218,7 @@
+@@ -212,7 +219,7 @@
                  if(tskOurPlay){
                     start = cd_trklist[status_track].track_start;
                     stop = start + cd_trklist[status_track].track_len - _CDCTL_SENSITIVITY;
@@ -102,7 +103,7 @@
  	           if(now>0 && (now<start || now>=stop)){
                        status_state=ssPlaying;
                        selecttrack();
-@@ -227,7 +233,7 @@
+@@ -227,7 +234,7 @@
  
                     status_state=ssStopped;
              }
@@ -111,7 +112,7 @@
              if(cd_trklist[status_track].track_data)
                 status_state=ssData;
           }
-@@ -235,19 +241,21 @@
+@@ -235,19 +242,21 @@
     }
     void setVolume(int l, int r){
        if(cdfdopen){
@@ -141,7 +142,7 @@
        }
     }
     int getVolumeL(){
-@@ -296,12 +304,30 @@
+@@ -296,12 +305,30 @@
     void readTOC(){
        if(cd_trklist!=NULL)
           free(cd_trklist);
@@ -175,7 +176,7 @@
        for(int i=0;i<=cd_tracks;i++){
           if(i==cd_tracks)
              te.cdte_track=CDROM_LEADOUT;
-@@ -320,35 +346,42 @@
+@@ -320,35 +347,42 @@
           else
              cd_len = this_addr;
        }
@@ -231,7 +232,7 @@
     }
     void select(int trk){
        status_track=trk;
-@@ -357,10 +390,10 @@
+@@ -357,10 +391,10 @@
           if(cd_trklist[status_track].track_data){
  
               #ifdef _CDCTL_HARD_STOP
