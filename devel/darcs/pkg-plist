@@ -1,8 +1,8 @@
 bin/darcs
+etc/bash_completion.d/darcs
 %%SERVER%%%%CGIDIR%%/darcs.cgi
 %%SERVER%%sbin/darcs-createrepo
-%%SERVER%%etc/darcs/cgi.conf.sample
-etc/darcs/bash_completion.d/darcs
+%%SERVER%%etc/cgi.conf.sample
 %%SERVER%%share/darcs/xslt/annotate.xslt
 %%SERVER%%share/darcs/xslt/browse.xslt
 %%SERVER%%share/darcs/xslt/common.xslt
@@ -66,8 +66,7 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/up.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/up_g.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/WARNINGS
-@dirrm etc/darcs/bash_completion.d
-@dirrm etc/darcs
+@dirrm etc/bash_completion.d
 %%SERVER%%@dirrm share/darcs/xslt
 %%SERVER%%@dirrm share/darcs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
