@@ -5,7 +5,6 @@ bin/heroeslvl
 info/heroes.info
 info/heroes.info-1
 info/heroes.info-2
-lib/charset.alias
 share/heroes/etc/heroesrc
 share/heroes/levels/level.lst
 share/heroes/levels/niv010.lvl
@@ -214,7 +213,6 @@ share/heroes/tilesets/level10.pie
 share/locale/de/LC_MESSAGES/heroes.mo
 share/locale/fr/LC_MESSAGES/heroes.mo
 share/locale/it/LC_MESSAGES/heroes.mo
-share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/heroes.mo
 share/locale/pt_BR/LC_MESSAGES/heroes.mo
 @dirrm share/heroes/tilesets
