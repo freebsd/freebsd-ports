@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipcheck
-PORTVERSION=	0.200
+PORTVERSION=	0.202
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
