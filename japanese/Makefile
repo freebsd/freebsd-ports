@@ -154,6 +154,7 @@
     SUBDIR += mule-wnn6
     SUBDIR += mutt
     SUBDIR += namazu
+    SUBDIR += namazu2
     SUBDIR += ndtpd
     SUBDIR += ne
     SUBDIR += nethack
