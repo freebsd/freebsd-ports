@@ -5,43 +5,51 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnushogi
-PORTVERSION=	1.2.3
+PORTNAME=	${GNUSHOGI_PORTNAME}
+PORTVERSION=	${GNUSHOGI_PORTVERSION}
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gnushogi
-DISTNAME=	gnushogi-1.2p03
+MASTER_SITES=	${GNUSHOGI_MASTER_SITES}
+MASTER_SITE_SUBDIR=	${GNUSHOGI_MASTER_SITE_SUBDIR}
+DISTNAME=	${GNUSHOGI_DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of Shogi
 
-DOCFILES=	BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
-	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-x --without-xshogi
+
 MAN6=		gnushogi.6
+INFO=		gnushogi
 
-post-configure:
-	${ECHO_CMD} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
-	${ECHO_CMD} "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
+.include "${.CURDIR}/../../games/gnushogi/Makefile.common"
+.include <bsd.port.pre.mk>
 
-do-build:
-	(cd ${WRKSRC}/src; \
-	${MAKE} gnushogir; \
-	${MAKE} gnushogi.bbk; \
-	${MAKE} gnushogi; \
-	${MAKE} gnushogix )
+post-extract:
+	-@${RM} ${WRKSRC}/doc/gnushogi.info*
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/lib/gnushogi|/share/gnushogi|g' \
+		${WRKSRC}/gnushogi/Makefile.in
+
+pre-build:
+	cd ${WRKSRC}/doc && makeinfo --no-split gnushogi
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gnushogi
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogi ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogir ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gnushogix ${PREFIX}/libexec
-	${INSTALL_DATA} ${WRKSRC}/src/gnushogi.bbk ${PREFIX}/share/gnushogi
-	${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.1 ${PREFIX}/man/man6/gnushogi.6
+	${INSTALL_PROGRAM} ${WRKSRC}/gnushogi/gnushogi ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.6 ${MANPREFIX}/man/man6
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/gnushogi.info ${PREFIX}/info
+	install-info ${PREFIX}/info/gnushogi.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gnushogi
-.for doc in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${PREFIX}/share/doc/gnushogi
-.endfor
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/BOOKFILES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/PORTING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.gam ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.ref ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.rules ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
