@@ -18,6 +18,8 @@ COMMENT=	CD player for X
 USE_IMAKE=	yes
 MAN1=		xcdplayer.1
 
+PLIST_FILES=	bin/xcdplayer lib/X11/app-defaults/XCdplayer
+
 post-extract:
 	${CP} ${FILESDIR}/cdrom_freebsd.[ch] ${FILESDIR}/app.h ${WRKSRC}
 	${CP} ${WRKSRC}/xcdplayer.1 ${WRKSRC}/xcdplayer.man

@@ -1,3 +1,0 @@
-@comment $FreeBSD$
-bin/xcdplayer
-lib/X11/app-defaults/XCdplayer
