@@ -3,12 +3,14 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.19 1997/05/28 02:21:43 fenner Exp $
+# $Id: Makefile,v 1.20 1997/07/02 21:06:15 adam Exp $
 #
 
 DISTNAME=       wn-1.16.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
+
+MAINTAINER=	adam@veda.is
 
 IS_INTERACTIVE=
 NO_PACKAGE=	"Hostname compiled in"
