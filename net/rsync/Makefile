@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1996/12/01 01:23:12 obrien Exp $
+# $Id: Makefile,v 1.6 1997/09/28 04:49:41 peter Exp $
 #
 
 DISTNAME=	rsync-1.6.2
@@ -26,6 +26,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/rsync
 	${INSTALL_DATA} ${WRKSRC}/tech_report.ps ${PREFIX}/share/doc/rsync
+	${INSTALL_DATA} ${FILESDIR}/README.daemon ${PREFIX}/share/doc/rsync
+	${INSTALL_DATA} ${FILESDIR}/rsyncd_trees.eg ${PREFIX}/share/doc/rsync
 .endif
 
 .include <bsd.port.mk>
