@@ -1,0 +1,11 @@
+--- html-table.cc.orig	Sat Jun 19 17:35:05 1999
++++ html-table.cc	Sat Jun 19 17:35:25 1999
+@@ -264,7 +264,7 @@
+ }
+ 
+ /* Destructor */
+-html_table::~html_table(int c, int r)
++html_table::~html_table()
+ {
+     int i;
+     struct col_info *col, *nxt;
