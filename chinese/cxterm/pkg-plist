@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/cxterm
 bin/tit2cit
 bin/cit2tit

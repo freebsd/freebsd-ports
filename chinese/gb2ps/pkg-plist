@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gb2ps
 share/chinese/cover.ps
 share/chinese/gb/csong24.ccf
