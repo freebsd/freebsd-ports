@@ -8,7 +8,8 @@
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/
+MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/ \
+		http://www.moo.cus.org.uk/~dom/distfiles/artwiz-fonts/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	d.marks@student.umist.ac.uk
