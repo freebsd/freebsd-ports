@@ -1,0 +1,11 @@
+--- configure.in.orig	Wed Sep 25 12:41:35 2002
++++ configure.in	Wed Sep 25 12:41:44 2002
+@@ -8,7 +8,7 @@
+ AC_PROG_LEX
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(pwdb, crypt)
++AC_CHECK_LIB(crypt, crypt)
+ AC_CHECK_LIB(socket, bind)
+ AC_CHECK_LIB(nsl, gethostbyname)
+ 
