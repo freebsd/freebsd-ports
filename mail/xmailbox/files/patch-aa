@@ -1,0 +1,29 @@
+--- Imakefile	Wed Jul 16 16:36:17 1997
++++ /home/andy/tmp/wrk/Imakefile	Sat May 23 23:17:12 1998
+@@ -5,7 +5,7 @@
+ # Note: you need to have XPM 3.4 or higher!
+ #------------------------------------------
+ #
+-XPMINCDIR = /usr/include/X11
++XPMINCDIR = $(X11BASE)/include/X11
+ XPMLIBDIR = /usr/X11/lib
+    XPMLIB = -L$(XPMLIBDIR) -lXpm
+ 
+@@ -20,7 +20,7 @@
+ # Comment the following define if you
+ # want audio support
+ #------------------------------------------
+-#define NO_AUDIO          /* */
++/* #define NO_AUDIO          /* */
+ 
+ #------------------------------------------
+ # Uncomment the following define if your
+@@ -42,7 +42,7 @@
+ #    uncomment the following define to
+ #    turn on sound support. 
+ #------------------------------------------
+-/* SUN_AUDIO = -DSUN_AUDIO   /* */
++SUN_AUDIO = -DSUN_AUDIO   /* */
+ 
+ #------------------------------------------
+ # Uncomment the following define if you

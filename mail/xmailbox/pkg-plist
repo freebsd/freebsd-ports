@@ -1,0 +1,9 @@
+bin/xmailbox
+lib/X11/app-defaults/XMailbox
+man/man1/xmailbox.1.gz
+share/doc/xmailbox/DISCLAIMER
+share/doc/xmailbox/README
+share/xmailbox/dingdong.au
+share/xmailbox/ugotmail.au
+@dirrm share/doc/xmailbox
+@dirrm share/xmailbox
