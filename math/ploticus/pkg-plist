@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/pl
 %%PORTDOCS%%share/doc/ploticus/Changelog.html
 %%PORTDOCS%%share/doc/ploticus/Contents.html
@@ -18,6 +19,7 @@ bin/pl
 %%PORTDOCS%%share/doc/ploticus/axis.html
 %%PORTDOCS%%share/doc/ploticus/bars.html
 %%PORTDOCS%%share/doc/ploticus/breakaxis.html
+%%PORTDOCS%%share/doc/ploticus/categories.html
 %%PORTDOCS%%share/doc/ploticus/catslide.html
 %%PORTDOCS%%share/doc/ploticus/cgi.html
 %%PORTDOCS%%share/doc/ploticus/changes20.html
@@ -87,6 +89,7 @@ bin/pl
 %%PORTDOCS%%share/doc/ploticus/specialchars.html
 %%PORTDOCS%%share/doc/ploticus/sql.html
 %%PORTDOCS%%share/doc/ploticus/svg.html
+%%PORTDOCS%%share/doc/ploticus/swf.html
 %%PORTDOCS%%share/doc/ploticus/symboldetails.html
 %%PORTDOCS%%share/doc/ploticus/tabulate.html
 %%PORTDOCS%%share/doc/ploticus/textdetails.html
