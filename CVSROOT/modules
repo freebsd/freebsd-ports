@@ -4224,6 +4224,7 @@ mingw32-bin-msvcrt	ports/devel/mingw32-bin-msvcrt
 mingw32-binutils	ports/devel/mingw32-binutils
 mingw32-gcc	ports/devel/mingw32-gcc
 mini_httpd	ports/www/mini_httpd
+mini_sendmail	ports/mail/mini_sendmail
 minicom		ports/comms/minicom
 minidom		ports/textproc/minidom
 minimalist	ports/mail/minimalist
