@@ -1,14 +1,19 @@
-#	Ports makefile for tkcvs and tkdiff
-#	Versions required: tkvcvs-6.0a1 and tkdiff-1.0b9
-#	Date created:	6 July 1996
-#	Whom:	Sander Vesik
-
+# Ports makefile for:	tkcvs and tkdiff
+# Versions required:	tkvcvs-6.0a1 and tkdiff-1.0b9
+# Date created:		6 July 1996
+# Whom:			Sander Vesik <sander@haldjas.folklore.ee>
+#
+# $Id$
+#
 
 DISTNAME=	tkcvs-6.0a1
-CATEGORIES+=	x11 utility
-RUN_DEPENDS=	wish4\.1:${PORTSDIR}/x11/tk41
+CATEGORIES+=	devel
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
+
 MAINTAINER=	sander@haldjas.folklore.ee
+
+RUN_DEPENDS=	wish4\.1:${PORTSDIR}/x11/tk41
+
 WRKSRC=		${WRKDIR}/tkCVS-r6.0a1
 
 post-extract:
