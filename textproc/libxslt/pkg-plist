@@ -31,7 +31,6 @@ lib/libxslt.so.1
 lib/libxsltbreakpoint.a
 lib/libxsltbreakpoint.so
 lib/libxsltbreakpoint.so.1
-%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.pyc
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxslt.py
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
 libdata/pkgconfig/libxslt.pc
