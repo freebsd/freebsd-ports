@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	yab
-PKGNAME=	yabasic-2.61
+PKGNAME=	yabasic-2.62
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 EXTRACT_SUFX=	.tar.Z
@@ -16,6 +16,6 @@ MAINTAINER=	elwood@mc5sys.in-berlin.de
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/yabasic-2.61
+WRKSRC=		${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
