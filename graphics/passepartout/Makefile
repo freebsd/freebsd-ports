@@ -7,7 +7,7 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
@@ -40,7 +40,8 @@ EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_cxx
 post-patch:
 	@${FIND} ${WRKSRC}/src/pptout -name *.cc \
 		| grep -v -E 'pagesel|undodialog' \
-		| ${XARGS} ${REINPLACE_CMD} -e \
-			's|add_attribute|set_attribute|'
+		| ${XARGS} ${REINPLACE_CMD} \
+			-e 's|add_attribute|set_attribute|' \
+			-e 's|add_content|add_child_text|'
 
 .include <bsd.port.post.mk>
