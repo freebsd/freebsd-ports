@@ -16,8 +16,6 @@ DISTNAME=	Period-${PORTVERSION}
 MAINTAINER=	nick@netdot.net
 COMMENT=	A perl module that contains code to deal with time periods
 
-BROKEN=		Incomplete pkg-plist
-
 PERL_CONFIGURE=	YES
 
 MAN3=		Time::Period.3
