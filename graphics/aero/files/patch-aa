@@ -1,0 +1,102 @@
+*** Makefile.orig	Fri Nov  4 06:06:34 1994
+--- Makefile	Mon Aug 28 07:34:47 1995
+***************
+*** 21,28 ****
+  # Set path where you want to install xaero and it's application-default
+  # file.
+  
+! XAEROBIN  = /usr/local/X11R5/bin                # or local: $HOME/bin
+! XAEROAPPL = /usr/local/X11R5/lib/app-defaults   # or local: $HOME/app-defaults
+  
+  
+  ###########################################################################
+--- 21,28 ----
+  # Set path where you want to install xaero and it's application-default
+  # file.
+  
+! XAEROBIN  = ${PREFIX}/bin                # or local: $HOME/bin
+! XAEROAPPL = ${PREFIX}/lib/X11/app-defaults   # or local: $HOME/app-defaults
+  
+  
+  ###########################################################################
+***************
+*** 39,55 ****
+  # 
+  RM   = rm -f
+  ECHO = echo
+! CP   = cp -i
+  
+  
+  ###########################################################################
+  # Path-definitons for X11R5 and FWF
+  
+! XINCLUDE = /usr/local/X11R5/include      
+! XLIB     = /usr/local/X11R5/lib 
+! FWFINCLUDE = ../../FWF/FWF/include
+! FWFLIB	= ../../FWF/FWF/lib.$(HOSTTYPE)
+! XPMLIB	= ../../FWF/xpm-3.4a/lib.$(HOSTTYPE)
+  
+  
+  ###########################################################################
+--- 39,55 ----
+  # 
+  RM   = rm -f
+  ECHO = echo
+! CP   = cp
+  
+  
+  ###########################################################################
+  # Path-definitons for X11R5 and FWF
+  
+! XINCLUDE = /usr/X11R6/include      
+! XLIB     = /usr/X11R6/lib 
+! FWFINCLUDE = . #../../FWF/FWF/include
+! FWFLIB	= -lfwf # ../../FWF/FWF/lib.$(HOSTTYPE)
+! XPMLIB	= -lXpm #../../FWF/xpm-3.4a/lib.$(HOSTTYPE)
+  
+  
+  ###########################################################################
+***************
+*** 92,99 ****
+  xaero: $(EDITOROBJS) $(ANZEIGEOBJS) $(FSBLIBNAME)
+  	$(CC) $(STATIC) $(DEBUG) -o xaero $(EDITOROBJS) $(ANZEIGEOBJS) \
+                -L. -L$(FWFLIB) -L$(XPMLIB) -L$(XLIB) \
+! 	      -lfwf -lXaw -lXmu -lXt -lXext -lXpm -lX11 -l$(FSBLIB) -lm 
+! 	
+  
+  ###########################################################################
+  # example files generation (optional)
+--- 92,98 ----
+  xaero: $(EDITOROBJS) $(ANZEIGEOBJS) $(FSBLIBNAME)
+  	$(CC) $(STATIC) $(DEBUG) -o xaero $(EDITOROBJS) $(ANZEIGEOBJS) \
+                -L. -L$(FWFLIB) -L$(XPMLIB) -L$(XLIB) \
+! 	      -lfwf -lXaw -lXmu -lXt -lXext -lXpm -lX11 -l$(FSBLIB) -lSM -lICE -lm 
+  
+  ###########################################################################
+  # example files generation (optional)
+***************
+*** 118,124 ****
+--- 117,139 ----
+  
+  copyFilesToDestination::
+  	$(CP) xaero $(XAEROBIN)
++ 	strip $(XAEROBIN)/xaero
++ 	[ -d $(XAEROAPPL) ] || mkdir -p $(XAEROAPPL)
++ 	[ -d ${PREFIX}/lib/X11/xaero ] || mkdir -p ${PREFIX}/lib/X11/xaero
+  	$(CP) ../app-defaults/XAero $(XAEROAPPL)
++ 	$(CP) ../scripts/povsubst $(XAEROBIN)
++ 	$(CP) ../scripts/rayclear $(XAEROBIN)
++ 	$(CP) ../scripts/raystart $(XAEROBIN)
++ 	$(CP) ../scripts/raystat $(XAEROBIN)
++ 	sed 's:__XAERO_LIB_PATH__:${PREFIX}/lib/X11/xaero:' ../scripts/raymany >$(XAEROBIN)/raymany
++ 	chmod +x $(XAEROBIN)/raymany
++ 	$(CP) ../povray-include/FILELIST.povray-include ${PREFIX}/lib/X11/xaero
++ 	$(CP) ../povray-include/aeromat2.inc ${PREFIX}/lib/X11/xaero
++ 	$(CP) ../povray-include/aerop1materials.inc ${PREFIX}/lib/X11/xaero
++ 	$(CP) ../povray-include/aeropov1.inc ${PREFIX}/lib/X11/xaero
++ 	$(CP) ../povray-include/aeropov2.inc ${PREFIX}/lib/X11/xaero
++ 	mkdir -p ${PREFIX}/lib/X11/xaero/examples
++ 	$(CP) ../examples/* ${PREFIX}/lib/X11/xaero/examples
+  
+  all::
+  	@make help

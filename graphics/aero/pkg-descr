@@ -1,0 +1,10 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++                         XAERO README       				 ++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+To render the written raytracer files, POVRAY1.0 or newer should be
+used. The included script files for automatic generation of readable
+picture files out of the raytracer files need the "tgatoppm" command
+out of the PBM+ distribution. A special text file called
+README.raytracer explains how to use AERO's raytracing feature.
+
