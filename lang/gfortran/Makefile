@@ -9,7 +9,8 @@
 PORTNAME=	g95
 PORTVERSION=	3.5.${SNAPDATE}
 CATEGORIES=	lang
-MASTER_SITES=	http://people.freebsd.org/~maho/tree-ssa/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	maho/tree-ssa
 #		http://people.redhat.com/dnovillo/pub/tree-ssa/snapshot/
 DISTNAME=	tree-ssa-${SNAPDATE}
 
@@ -45,6 +46,7 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=tree-ssa \
+		--disable-libmudflap \
 		--enable-languages=c,f95
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
