@@ -1,0 +1,16 @@
+--- ../tcl/generic/tclXsocket.c	Wed Mar 31 01:37:46 1999
++++ ../tcl/generic/tclXsocket.c	Mon Apr  5 17:14:32 2004
+@@ -166,5 +166,5 @@
+     char *command =    Tcl_GetStringFromObj (objv [0], NULL);
+     char *subCommand = Tcl_GetStringFromObj (objv [1], NULL);
+-    char *host       = Tcl_GetStringFromObj (objv [2], NULL);
++    char *host;
+ 
+     if (objc != 3) {
+@@ -173,4 +173,6 @@
+         return NULL;
+     }
++
++    host       = Tcl_GetStringFromObj (objv [2], NULL);
+ 
+     if (TclXOSInetAtoN (NULL, host, &address) == TCL_OK) {
