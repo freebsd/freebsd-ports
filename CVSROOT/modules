@@ -7121,6 +7121,7 @@ piewm		ports/x11-wm/piewm
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
 pike74		ports/lang/pike74
+pike75		ports/lang/pike75
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
 pilrc		ports/palm/pilrc
