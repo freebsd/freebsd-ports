@@ -551,28 +551,9 @@ MASTER_SITE_REDHAT_LINUX+= \
 # RingServers in Japan
 #
 #
-# Note: If you know which of the following RingServers is nearest to
-# you, please specify it in your /etc/make.conf.
-#
-#	ring.airnet.ne.jp		ring.asahi-net.or.jp
-#	ring.astem.or.jp		ring.atr.co.jp
-#	ring.crl.go.jp			ring.csi.ad.jp
-#	ring.data-hotel.net		ring.dcs.pref.mie.jp
-#	ring.edogawa-u.ac.jp		ring.etl.go.jp
-#	ring.exp.fujixerox.co.jp	ring.hosei.ac.jp
-#	ring.htcn.ne.jp			ring.ip-kyoto.ad.jp
-#	ring.iwate-pu.ac.jp		ring.jah.ne.jp
-#	ring.k-opti.com			ring.maffin.ad.jp
-#	ring.nihon-u.ac.jp		
-#	ring.ocn.ad.jp			ring.pwd.ne.jp
-#	ring.qgpop.net			ring.riken.go.jp
-#	ring.sbp-shimane.net		ring.shibaura-it.ac.jp
-#	ring.shizuoka.ac.jp		ring.so-net.ne.jp
-#	ring.tains.tohoku.ac.jp		ring.toyama-ix.net
-#	ring.toyama-u.ac.jp		ring.wakwak.com
-#	ring.yamanashi.ac.jp
-#
-# (The latest list is available at http://www.ring.gr.jp/)
+# Note: If you know which of the RingServers is nearest to you,
+# please specify it in your /etc/make.conf. (The server list is
+# available at http://www.ring.gr.jp/)
 #
 # You can choose either http or ftp to access to a server:
 #
