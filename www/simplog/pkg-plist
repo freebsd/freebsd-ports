@@ -1,11 +1,10 @@
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 www/simplog/CHANGES
 www/simplog/CREDITS
 www/simplog/LICENSE
 www/simplog/README
 www/simplog/admin.php
-www/simplog/adodb/CVS/Entries
-www/simplog/adodb/CVS/Repository
-www/simplog/adodb/CVS/Root
 www/simplog/adodb/adodb-csvlib.inc.php
 www/simplog/adodb/adodb-datadict.inc.php
 www/simplog/adodb/adodb-error.inc.php
@@ -23,18 +22,6 @@ www/simplog/adodb/adodb-time.zip
 www/simplog/adodb/adodb-xmlschema.inc.php
 www/simplog/adodb/adodb-xmlschema.zip
 www/simplog/adodb/adodb.inc.php
-www/simplog/adodb/contrib/CVS/Entries
-www/simplog/adodb/contrib/CVS/Repository
-www/simplog/adodb/contrib/CVS/Root
-www/simplog/adodb/contrib/toxmlrpc.inc.php
-www/simplog/adodb/cute_icons_for_site/CVS/Entries
-www/simplog/adodb/cute_icons_for_site/CVS/Repository
-www/simplog/adodb/cute_icons_for_site/CVS/Root
-www/simplog/adodb/cute_icons_for_site/adodb.gif
-www/simplog/adodb/cute_icons_for_site/adodb2.gif
-www/simplog/adodb/datadict/CVS/Entries
-www/simplog/adodb/datadict/CVS/Repository
-www/simplog/adodb/datadict/CVS/Root
 www/simplog/adodb/datadict/datadict-access.inc.php
 www/simplog/adodb/datadict/datadict-db2.inc.php
 www/simplog/adodb/datadict/datadict-generic.inc.php
@@ -44,14 +31,10 @@ www/simplog/adodb/datadict/datadict-mssql.inc.php
 www/simplog/adodb/datadict/datadict-mysql.inc.php
 www/simplog/adodb/datadict/datadict-oci8.inc.php
 www/simplog/adodb/datadict/datadict-postgres.inc.php
-www/simplog/adodb/datadict/datadict-sybase.inc.php
 www/simplog/adodb/docs-adodb.htm
 www/simplog/adodb/docs-datadict.htm
 www/simplog/adodb/docs-perf.htm
 www/simplog/adodb/docs-session.htm
-www/simplog/adodb/drivers/CVS/Entries
-www/simplog/adodb/drivers/CVS/Repository
-www/simplog/adodb/drivers/CVS/Root
 www/simplog/adodb/drivers/adodb-access.inc.php
 www/simplog/adodb/drivers/adodb-ado.inc.php
 www/simplog/adodb/drivers/adodb-ado_access.inc.php
@@ -67,7 +50,6 @@ www/simplog/adodb/drivers/adodb-informix72.inc.php
 www/simplog/adodb/drivers/adodb-mssql.inc.php
 www/simplog/adodb/drivers/adodb-mssqlpo.inc.php
 www/simplog/adodb/drivers/adodb-mysql.inc.php
-www/simplog/adodb/drivers/adodb-mysqli.inc.php
 www/simplog/adodb/drivers/adodb-mysqlt.inc.php
 www/simplog/adodb/drivers/adodb-oci8.inc.php
 www/simplog/adodb/drivers/adodb-oci805.inc.php
@@ -75,7 +57,6 @@ www/simplog/adodb/drivers/adodb-oci8po.inc.php
 www/simplog/adodb/drivers/adodb-odbc.inc.php
 www/simplog/adodb/drivers/adodb-odbc_mssql.inc.php
 www/simplog/adodb/drivers/adodb-odbc_oracle.inc.php
-www/simplog/adodb/drivers/adodb-odbtp.inc.php
 www/simplog/adodb/drivers/adodb-oracle.inc.php
 www/simplog/adodb/drivers/adodb-postgres.inc.php
 www/simplog/adodb/drivers/adodb-postgres64.inc.php
@@ -86,9 +67,6 @@ www/simplog/adodb/drivers/adodb-sqlanywhere.inc.php
 www/simplog/adodb/drivers/adodb-sqlite.inc.php
 www/simplog/adodb/drivers/adodb-sybase.inc.php
 www/simplog/adodb/drivers/adodb-vfp.inc.php
-www/simplog/adodb/lang/CVS/Entries
-www/simplog/adodb/lang/CVS/Repository
-www/simplog/adodb/lang/CVS/Root
 www/simplog/adodb/lang/adodb-ca.inc.php
 www/simplog/adodb/lang/adodb-cn.inc.php
 www/simplog/adodb/lang/adodb-cz.inc.php
@@ -97,15 +75,11 @@ www/simplog/adodb/lang/adodb-en.inc.php
 www/simplog/adodb/lang/adodb-es.inc.php
 www/simplog/adodb/lang/adodb-fr.inc.php
 www/simplog/adodb/lang/adodb-it.inc.php
-www/simplog/adodb/lang/adodb-nl.inc.php
 www/simplog/adodb/lang/adodb-pt-br.inc.php
 www/simplog/adodb/lang/adodb-ru1251.inc.php
 www/simplog/adodb/lang/adodb-sv.inc.php
 www/simplog/adodb/license.txt
 www/simplog/adodb/old-changelog.htm
-www/simplog/adodb/perf/CVS/Entries
-www/simplog/adodb/perf/CVS/Repository
-www/simplog/adodb/perf/CVS/Root
 www/simplog/adodb/perf/perf-db2.inc.php
 www/simplog/adodb/perf/perf-informix.inc.php
 www/simplog/adodb/perf/perf-mssql.inc.php
@@ -117,9 +91,6 @@ www/simplog/adodb/readme.htm
 www/simplog/adodb/readme.txt
 www/simplog/adodb/rsfilter.inc.php
 www/simplog/adodb/server.php
-www/simplog/adodb/session/CVS/Entries
-www/simplog/adodb/session/CVS/Repository
-www/simplog/adodb/session/CVS/Root
 www/simplog/adodb/session/adodb-compress-bzip2.php
 www/simplog/adodb/session/adodb-compress-gzip.php
 www/simplog/adodb/session/adodb-cryptsession.php
@@ -137,9 +108,6 @@ www/simplog/adodb/session/old/adodb-cryptsession.php
 www/simplog/adodb/session/old/adodb-session-clob.php
 www/simplog/adodb/session/old/adodb-session.php
 www/simplog/adodb/session/old/crypt.inc.php
-www/simplog/adodb/tests/CVS/Entries
-www/simplog/adodb/tests/CVS/Repository
-www/simplog/adodb/tests/CVS/Root
 www/simplog/adodb/tests/benchmark.php
 www/simplog/adodb/tests/client.php
 www/simplog/adodb/tests/test-datadict.php
@@ -170,11 +138,6 @@ www/simplog/adodb/toexport.inc.php
 www/simplog/adodb/tohtml.inc.php
 www/simplog/adodb/tute.htm
 www/simplog/adodb/xmlschema.dtd
-www/simplog/adodb/xsl/CVS/Entries
-www/simplog/adodb/xsl/CVS/Repository
-www/simplog/adodb/xsl/CVS/Root
-www/simplog/adodb/xsl/convert-0.1-0.2.xsl
-www/simplog/adodb/xsl/convert-0.2-0.1.xsl
 www/simplog/api.php
 www/simplog/archive.php
 www/simplog/atom.php
@@ -319,26 +282,12 @@ www/simplog/xmlrpcs.inc
 @dirrm www/simplog/images/smile
 @dirrm www/simplog/images
 @dirrm www/simplog/doc
-@dirrm www/simplog/adodb/xsl/CVS
-@dirrm www/simplog/adodb/xsl
-@dirrm www/simplog/adodb/tests/CVS
 @dirrm www/simplog/adodb/tests
 @dirrm www/simplog/adodb/session/old
-@dirrm www/simplog/adodb/session/CVS
 @dirrm www/simplog/adodb/session
-@dirrm www/simplog/adodb/perf/CVS
 @dirrm www/simplog/adodb/perf
-@dirrm www/simplog/adodb/lang/CVS
 @dirrm www/simplog/adodb/lang
-@dirrm www/simplog/adodb/drivers/CVS
 @dirrm www/simplog/adodb/drivers
-@dirrm www/simplog/adodb/datadict/CVS
 @dirrm www/simplog/adodb/datadict
-@dirrm www/simplog/adodb/cute_icons_for_site/CVS
-@dirrm www/simplog/adodb/cute_icons_for_site
-@dirrm www/simplog/adodb/contrib/CVS
-@dirrm www/simplog/adodb/contrib
-@dirrm www/simplog/adodb/CVS
 @dirrm www/simplog/adodb
-@unexec rmdir %D/www/simplog/cache 2>/dev/null || true
 @unexec rmdir %D/www/simplog 2>/dev/null || true
