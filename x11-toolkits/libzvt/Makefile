@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libzvt
-PORTVERSION=	1.113.0
+PORTVERSION=	1.114.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,7 +22,9 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
+		--datadir=${PREFIX}/share/gnome2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
@@ -31,7 +33,8 @@ pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
+		 s|\$\(datadir\)/gnome/|\$\(datadir\)/|g'
 	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
 		's|malloc\.h|stdlib.h|g'
 
