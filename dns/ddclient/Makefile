@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ddclient
-PORTVERSION=	3.6
+PORTVERSION=	3.6.2
 CATEGORIES=	net
 MASTER_SITES=	http://burry.ca:4141/ddclient/
 
