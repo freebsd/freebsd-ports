@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.17 2002-03-19 03:28:51 nobutaka Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.18 2002-07-14 13:49:20 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -163,12 +163,47 @@ DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
 PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .endif
 
+# XEmacs-21 development version
+.elif (${EMACS_PORT_NAME} == "xemacs-devel")
+EMACS_NAME=		xemacs
+EMACS_VER=		21.4.8
+EMACS_MAJOR_VER=	21
+EMACS_LIBDIR?=		lib/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs-devel
+EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		NO
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
+
+# XEmacs-21 development version with Mule
+.elif (${EMACS_PORT_NAME} == "xemacs-devel-mule")
+EMACS_NAME=		xemacs
+EMACS_VER=		21.4.8
+EMACS_MAJOR_VER=	21
+EMACS_LIBDIR?=		lib/${EMACS_NAME}
+EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs-devel-mule
+EMACS_COMMON_PORT=	NO
+EMACS_HAS_MULE=		YES
+EMACS_NO_SUBDIRSEL=	NO
+.if (${EMACS_MASTERDIR_PKGFILES} == "YES")
+COMMENT?=		${PKGDIR}/pkg-comment.${EMACS_PORT_NAME}
+DESCR?=                 ${PKGDIR}/pkg-descr.${EMACS_PORT_NAME}
+PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
+.endif
+
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad value of EMACS_PORT_NAME: ${EMACS_PORT_NAME}."
 	@${ECHO} "Valid values are:"
 	@${ECHO} "	Emacs  family: emacs mule emacs20"
 	@${ECHO} "	XEmacs family: xemacs xemacs20 xemacs21 xemacs21-mule"
+	@${ECHO} "	                xemacs-devel xemacs-devel-mule"
 	@${FALSE}
 .endif
 
