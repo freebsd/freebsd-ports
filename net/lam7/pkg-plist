@@ -3,6 +3,7 @@ bin/hcc
 bin/hcp
 bin/hf77
 bin/lamboot
+bin/lamcheckpoint
 bin/lamclean
 bin/lamd
 bin/lamexec
@@ -10,8 +11,10 @@ bin/lamgrow
 bin/lamhalt
 bin/laminfo
 bin/lamnodes
+bin/lamrestart
 bin/lamshrink
 bin/lamtrace
+bin/lamwipe
 bin/mpiCC
 bin/mpic++
 bin/mpicc
@@ -27,7 +30,10 @@ bin/wipe
 etc/lam-bhost.def
 etc/lam-conf.lamd
 etc/lam-helpfile
+etc/lam-hostmap.txt
 etc/lam-ssi-boot-globus-helpfile
+etc/lam-ssi-boot-slurm-helpfile
+etc/lam-ssi-crmpi-self-helpfile
 include/lam_config.h
 include/lam_config_bottom.h
 include/mpi.h
@@ -83,9 +89,6 @@ include/mpicxx.h
 include/mpif.h
 include/mpio.h
 include/mpiof.h
-lib/lam/liblam_totalview.la
-lib/lam/liblam_totalview.so
-lib/lam/liblam_totalview.so.0
 lib/liblam.a
 lib/liblam.la
 lib/liblamf77mpi.a
@@ -95,13 +98,13 @@ lib/liblammpi++.la
 lib/liblammpio.a
 lib/libmpi.a
 lib/libmpi.la
+share/lam/doc/APPLE_LICENSE
 share/lam/doc/ROMIO-COPYRIGHT
 share/lam/doc/ROMIO-README
 share/lam/doc/ROMIO-README_LAM
+share/lam/doc/ptmalloc-COPYRIGHT
+share/lam/doc/ptmalloc2-COPYRIGHT
 share/lam/doc/romio-users-guide.ps.gz
-share/lam/lam-shell-setup.csh
-share/lam/lam-shell-setup.sh
-share/lam/lam_module.tcl
 share/lam/mpi.share
 @dirrm include/mpi2cxx
 @dirrm lib/lam
