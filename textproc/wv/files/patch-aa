@@ -1,0 +1,79 @@
+--- support.c	Mon May 17 15:27:00 1999
++++ support.c.new	Sun Jul  2 22:24:08 2000
+@@ -36,6 +36,7 @@
+ #include "utf.h"
+ #ifdef HAVE_WMF
+ #include "gdwmfapi.h"
++#include "xgdttf.h"
+ 
+ #include <sys/mman.h>
+ 
+@@ -1195,7 +1196,7 @@
+     GDStruct gdstruct;
+ 	static int text;
+ 
+-	error(erroroutput,"1 converting wmf to gif, via libwmf\n");
++	error(erroroutput,"1 converting wmf to png, via libwmf\n");
+ #ifdef HAVE_TTF 
+ 	if (text == 0)
+ 		{
+@@ -1224,7 +1225,7 @@
+ 		}
+ #endif
+ 
+-	error(erroroutput,"2 converting wmf to gif, via libwmf\n");
++	error(erroroutput,"2 converting wmf to png, via libwmf\n");
+ 	wmfinit(cstruct);
+ 
+     wmffunctions = &gd_wmffunctions;
+@@ -1252,7 +1253,7 @@
+         return;
+         }
+ 
+-	error(erroroutput,"3 converting wmf to gif, via libwmf\n");
++	error(erroroutput,"3 converting wmf to png, via libwmf\n");
+ 
+     cstruct->preparse = 1;
+     PlayMetaFile((void *)cstruct,file);
+@@ -1263,7 +1264,7 @@
+     cstruct->preparse = 0;
+     PlayMetaFile((void *)cstruct,file);
+ 
+-	strcat(filename,".gif");
++	strcat(filename,".png");
+ 
+     out = fopen(filename, "wb");
+     if (out == NULL)
+@@ -1276,15 +1277,15 @@
+         return;
+         }
+ 
+-	error(erroroutput,"4 converting wmf to gif, via libwmf\n");
++	error(erroroutput,"4 converting wmf to png, via libwmf\n");
+ 
+-    /* write gif */
+-    gdImageGif(gdstruct.im_out, out);
++    /* write png */
++    gdImagePng(gdstruct.im_out, out);
+     fclose(out);
+ 
+     gdImageDestroy(gdstruct.im_out);
+ 
+-	error(erroroutput,"5 converting wmf to gif, via libwmf\n");
++	error(erroroutput,"5 converting wmf to png, via libwmf\n");
+ 
+     free(file->pmh);
+     free(file->wmfheader);
+@@ -1296,10 +1297,10 @@
+ 		ourlist = NULL;
+ 		}
+ 	*/
+-	error(erroroutput,"6 converting wmf to gif, via libwmf\n");
++	error(erroroutput,"6 converting wmf to png, via libwmf\n");
+ 	
+ #else
+-	fprintf(erroroutput,"unable to convert wmf to gif as mswordview \
++	fprintf(erroroutput,"unable to convert wmf to png as mswordview \
+ was compiled without libwmf support\n\
+ libwmf can be found at http://www.csn.ul.ie/~caolan/docs/libwmf.html\n");
+ #endif
