@@ -32,11 +32,11 @@ USE_BISON=	yes
 CONFIGURE_TARGET=
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	OSTYPE=${OPSYS} \
-		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
+		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PTLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib \
 		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323 \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl11-config \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 
 CONFIGURE_ARGS=	--with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib/include/ptlib \
 		--with-ptlib-libs=${WRKDIRPREFIX}${.CURDIR}/../../devel/pwlib/work/pwlib/lib \
