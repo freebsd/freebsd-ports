@@ -1,0 +1,25 @@
+--- src/kazehakase.in.orig	Thu Aug  7 07:23:09 2003
++++ src/kazehakase.in	Fri Aug 27 12:06:47 2004
+@@ -2,6 +2,11 @@
+ 
+ dist_bin=`dirname $0`
+ 
++if [ -z "$MOZ_PLUGIN_PATH" ]; then
++    MOZ_PLUGIN_PATH=%%X11BASE%%/lib/browser_plugins
++    export MOZ_PLUGIN_PATH
++fi
++
+ if test -n "$MOZILLA_FIVE_HOME"; then
+ 	MOZILLA_HOME=$MOZILLA_FIVE_HOME
+ elif [ -f @MOZILLA_HOME@/chrome/comm.jar ]; then
+@@ -17,4 +22,9 @@
+ MOZILLA_FIVE_HOME=$MOZILLA_HOME
+ export MOZILLA_FIVE_HOME
+ 
+-exec "$dist_bin/kz" "$@"
++if [ -f %%FLASHPLAYER%% ]; then
++    LD_PRELOAD=%%FLASHPLAYER%%
++    export LD_PRELOAD
++fi
++
++exec "%%PREFIX%%/bin/kz" "$@"
