@@ -46,7 +46,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.27
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -392,7 +392,11 @@ PLIST_SUB+=	SUB_ADD_G="@comment "
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-
+.if defined(MUTT_WITH_PGP_OUTLOOK_PATCH)
+PLIST_SUB+=	SUB_PGP=""
+.else
+PLIST_SUB+=	SUB_PGP="@comment "
+.endif
 .if ${SGML_USED} == yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 post-patch::

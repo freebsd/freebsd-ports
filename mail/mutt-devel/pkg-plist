@@ -346,6 +346,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_HTML%%share/doc/mutt/html/manual332.html
 %%SUB_HTML%%share/doc/mutt/html/manual333.html
 %%SUB_HTML%%share/doc/mutt/html/manual334.html
+%%SUB_HTML%%%%SUB_PGP%%share/doc/mutt/html/manual335.html
 %%SUB_HTML%%share/doc/mutt/html/manual34.html
 %%SUB_HTML%%share/doc/mutt/html/manual35.html
 %%SUB_HTML%%share/doc/mutt/html/manual36.html
@@ -420,11 +421,13 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_HTML%%share/doc/mutt/html/manual99.html
 %%SUB_ADD_A%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_A%%share/doc/mutt/html/manual336.html
+%%SUB_ADD_A%%%%SUB_PGP%%share/doc/mutt/html/manual337.html
 %%SUB_ADD_B%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_B%%share/doc/mutt/html/manual336.html
 %%SUB_ADD_B%%share/doc/mutt/html/manual337.html
 %%SUB_ADD_B%%share/doc/mutt/html/manual338.html
 %%SUB_ADD_B%%share/doc/mutt/html/manual339.html
+%%SUB_ADD_B%%%%SUB_PGP%%share/doc/mutt/html/manual340.html
 %%SUB_ADD_C%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_C%%share/doc/mutt/html/manual336.html
 %%SUB_ADD_C%%share/doc/mutt/html/manual337.html
@@ -432,6 +435,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_ADD_C%%share/doc/mutt/html/manual339.html
 %%SUB_ADD_C%%share/doc/mutt/html/manual340.html
 %%SUB_ADD_C%%share/doc/mutt/html/manual341.html
+%%SUB_ADD_C%%%%SUB_PGP%%share/doc/mutt/html/manual342.html
 %%SUB_ADD_D%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_D%%share/doc/mutt/html/manual336.html
 %%SUB_ADD_D%%share/doc/mutt/html/manual337.html
@@ -453,6 +457,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_ADD_D%%share/doc/mutt/html/manual353.html
 %%SUB_ADD_D%%share/doc/mutt/html/manual354.html
 %%SUB_ADD_D%%share/doc/mutt/html/manual355.html
+%%SUB_ADD_D%%%%SUB_PGP%%share/doc/mutt/html/manual356.html
 %%SUB_ADD_E%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_E%%share/doc/mutt/html/manual336.html
 %%SUB_ADD_E%%share/doc/mutt/html/manual337.html
@@ -476,6 +481,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_ADD_E%%share/doc/mutt/html/manual355.html
 %%SUB_ADD_E%%share/doc/mutt/html/manual356.html
 %%SUB_ADD_E%%share/doc/mutt/html/manual357.html
+%%SUB_ADD_E%%%%SUB_PGP%%share/doc/mutt/html/manual358.html
 %%SUB_ADD_F%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_F%%share/doc/mutt/html/manual336.html
 %%SUB_ADD_F%%share/doc/mutt/html/manual337.html
@@ -502,6 +508,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_ADD_F%%share/doc/mutt/html/manual358.html
 %%SUB_ADD_F%%share/doc/mutt/html/manual359.html
 %%SUB_ADD_F%%share/doc/mutt/html/manual360.html
+%%SUB_ADD_F%%%%SUB_PGP%%share/doc/mutt/html/manual361.html
 %%SUB_ADD_G%%share/doc/mutt/html/manual335.html
 %%SUB_ADD_G%%share/doc/mutt/html/manual336.html
 %%SUB_ADD_G%%share/doc/mutt/html/manual337.html
@@ -530,5 +537,6 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_ADD_G%%share/doc/mutt/html/manual360.html
 %%SUB_ADD_G%%share/doc/mutt/html/manual361.html
 %%SUB_ADD_G%%share/doc/mutt/html/manual362.html
+%%SUB_ADD_G%%%%SUB_PGP%%share/doc/mutt/html/manual363.html
 %%SUB_HTML%%@dirrm share/doc/mutt/html
 %%PORTDOCS%%@dirrm share/doc/mutt

@@ -14,18 +14,12 @@
    /* XXX Default values! */
    
    { "pgp_decode_command", 	DT_STR, R_NONE, UL &PgpDecodeCommand, 0},
---- mutt.h.orig	Mon Feb 12 08:52:29 2001
-+++ mutt.h	Sat Feb 24 18:05:56 2001
-@@ -249,7 +249,9 @@
- #ifdef HAVE_PGP
-   OPT_VERIFYSIG,      /* verify PGP signatures */
+--- mutt.h.orig	Tue Feb 26 22:40:16 2002
++++ mutt.h	Tue Feb 26 22:44:05 2002
+@@ -263,2 +263,3 @@
    OPT_PGPTRADITIONAL, /* create old-style PGP messages */
 +  OPT_PGPOUTLOOK,     /* Create even older broken outlook compatible messages */
  #endif
-+
- 
-   OPT_PRINT,
-   OPT_INCLUDE,
 --- pgp.c.orig	Mon Feb 12 08:55:21 2001
 +++ pgp.c	Sat Feb 24 18:11:40 2001
 @@ -1501,12 +1501,20 @@
