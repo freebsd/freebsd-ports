@@ -1,8 +1,8 @@
-This is a snapshot version of Clam Antivirus. Clam Antivirus
-is a command line virus scanner written entirely in C its 
-database is kept up to date. It also detects polymorphic
-viruses, scans compressed files and is supported by AMaViS.
+This is a snapshot version of Clam Antivirus.
+Clam Antivirus is command line virus scanner written entirely in C
+and its database is kept up to date. It also detects polymorphic
+viruses, scans compressed files and supported by AMaViS.
 Optionally you can use the clamav-milter interface to connect
 clamav with sendmail.
 
-WWW: http://clamav.net/
+WWW: http://www.clamav.net/

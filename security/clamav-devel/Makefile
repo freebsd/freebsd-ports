@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040419
+PORTVERSION=	20040503
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -31,9 +31,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOCONF_VER=257
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+USE_RC_SUBR=	yes
 
 CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
-		--disable-clamav --enable-bigstack
+		--disable-clamuko \
+		--disable-clamav \
+		--enable-bigstack \
+		--disable-dependency-tracking
+CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
@@ -65,6 +70,7 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(PidFile) .*$$|\1 /var/run/clamav/clamd.pid|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
+		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
 		-e 's|^\#?(Checks)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
@@ -72,9 +78,6 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|' \
 		-e 's|^\#?(FixStaleSocket)$$|\1|'
 
-.include <bsd.port.pre.mk>
-
-USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
@@ -83,21 +86,23 @@ SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
 PLIST_SUB+=	RC_DIR=${RC_DIR} \
 		RC_SUFX=${RC_SUFX}
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 501001
-# compiles only with optimizer
-CFLAGS+=	-O
+# compiles only with libcipher
 LDFLAGS+=	-lcipher
 .endif
 
 .if defined(WITH_MILTER)
-.if exists(${LOCALBASE}/lib/libmilter.a)
-CPPFLAGS+=     -I${LOCALBASE}/include
-CONFIGURE_ENV+=        CPPFLAGS="${CPPFLAGS}"
-.endif
+.if exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 CONFIGURE_ARGS+=	--enable-milter
-PLIST_SUB+=	CLAMAV-MILTER:=""
+PLIST_SUB+=	CLAMAV-MILTER=""
 .else
-PLIST_SUB+=	CLAMAV-MILTER:="@comment "
+BROKEN=		requires Sendmail 8.12
+PLIST_SUB+=	CLAMAV-MILTER="@comment "
+.endif
+.else
+PLIST_SUB+=	CLAMAV-MILTER="@comment "
 .endif
 
 post-patch:
@@ -121,7 +126,7 @@ post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/freshclam.sh > ${WRKDIR}/freshclam.sh
 
 pre-install:
-	 ${SETENV} PKG_PREFIX=${PREFIX} \
+	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
