@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	php_doc
-PORTVERSION=	1.1
+PORTVERSION=	1.20011122
 CATEGORIES?=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dirk/php/${PHP_LANG}
-DISTNAME=	manual
+MASTER_SITE_SUBDIR=	dirk
+DISTNAME=	php_manual_${PHP_LANG}
 
 MAINTAINER=	dirk@FreeBSD.org
 
-DIST_SUBDIR=	php/${PHP_LANG}
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 SLAVEDIRS=	french/php_doc german/php_doc
+USE_BZIP2=	YES
 
 PHP_LANG?=	en
 PHPDOCDIR=	${PREFIX}/share/doc/php
@@ -51,15 +51,16 @@ do-install:
 .if defined(MAINTAINER_MODE)
 LOCAL_DISTDIR?=	/var/tmp/php_doc/php
 LOCAL_TMPDIR?=	/var/tmp/php_doc/tmp
-DISTSITE?=	http://php.he.net/manual/
+DISTSITE?=	http://www.php.net/distributions/manual/
 
 localfetch:
 .for lang in de en es fr
-	${MKDIR} ${LOCAL_DISTDIR}/${lang}
-	${FETCH_CMD} -o ${LOCAL_DISTDIR}/${lang}/manual.tar.gz ${DISTSITE}/${lang}/manual.tar.gz
+	${MKDIR} ${LOCAL_DISTDIR}
+	[ -f ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ] || \
+	${FETCH_CMD} -o ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${DISTSITE}php_manual_${lang}${EXTRACT_SUFX}
 
 	${MKDIR} ${LOCAL_TMPDIR}/${lang}
-	${TAR} -C ${LOCAL_TMPDIR}/${lang} -xzf ${LOCAL_DISTDIR}/${lang}/manual.tar.gz
+	cd ${LOCAL_TMPDIR}/${lang} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${LOCAL_DISTDIR}/php_manual_${lang}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 	(cd ${LOCAL_TMPDIR}/${lang} && /bin/ls -1) | ${PERL} -pe 'print "%%PHPDOCDIR%%/$_";' > ${.CURDIR}/pkg-plist.${lang}
 	${ECHO} "@dirrm %%PHPDOCDIR%%" >> ${.CURDIR}/pkg-plist.${lang}
@@ -67,7 +68,7 @@ localfetch:
 .endfor
 
 	${MV} ${.CURDIR}/pkg-plist.en ${.CURDIR}/pkg-plist
-	cd ${LOCAL_DISTDIR}/.. && ${MD5} php/*/* > ${.CURDIR}/distinfo
+	cd ${LOCAL_DISTDIR} && ${MD5} php_manual_* > ${.CURDIR}/distinfo
 .endif
 
 .include <bsd.port.mk>
