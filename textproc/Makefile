@@ -514,6 +514,7 @@
     SUBDIR += sarep
     SUBDIR += sary
     SUBDIR += saxon
+    SUBDIR += saxon-devel
     SUBDIR += scim
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper
