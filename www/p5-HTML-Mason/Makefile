@@ -14,12 +14,13 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
 
-RUN_DEPENDS=	${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
+BUILD_DEPENDS=	${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
 		${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 IS_INTERACTIVE=	yes
 PERL_CONFIGURE=	yes
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Bundle::HTML::Mason.3 HTML::Mason.3 HTML::Mason::Admin.3 \
