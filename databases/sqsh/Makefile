@@ -17,6 +17,7 @@ LIB_DEPENDS=	tds.0:${PORTSDIR}/databases/freetds
 .ifndef WITHOUT_X11
 WITH_MOTIF=	yes
 CONFIGURE_ARGS+=--with-motif
+USE_XLIB=	yes
 .else
 PKGNAMESUFFIX+=	-nox11
 .endif
