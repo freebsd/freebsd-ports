@@ -122,7 +122,7 @@ pre-fetch:
 	@${ECHO} ""
 
 post-extract:
-	-@pw groupadd ${RTGROUP}
+	-@pw groupadd ${RT_GROUP}
 	-@cd ${WRKSRC} && chmod a+x configure
 
 do-build:
