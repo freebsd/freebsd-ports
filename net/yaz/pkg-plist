@@ -7,6 +7,7 @@ include/yaz/backend.h
 include/yaz/ccl.h
 include/yaz/charneg.h
 include/yaz/comstack.h
+include/yaz/cql.h
 include/yaz/diagbib1.h
 include/yaz/ill-core.h
 include/yaz/ill.h
@@ -23,7 +24,9 @@ include/yaz/pquery.h
 include/yaz/proto.h
 include/yaz/prt-ext.h
 include/yaz/readconf.h
+include/yaz/soap.h
 include/yaz/sortspec.h
+include/yaz/srw.h
 include/yaz/statserv.h
 include/yaz/tcpip.h
 include/yaz/tpath.h
@@ -31,6 +34,7 @@ include/yaz/unix.h
 include/yaz/wrbuf.h
 include/yaz/xmalloc.h
 include/yaz/yaz-ccl.h
+include/yaz/yaz-iconv.h
 include/yaz/yaz-util.h
 include/yaz/yaz-version.h
 include/yaz/yconfig.h
@@ -45,6 +49,7 @@ include/yaz/z-espec1.h
 include/yaz/z-estask.h
 include/yaz/z-exp.h
 include/yaz/z-grs.h
+include/yaz/z-mterm2.h
 include/yaz/z-opac.h
 include/yaz/z-rrf1.h
 include/yaz/z-rrf2.h
@@ -61,20 +66,22 @@ include/yaz/zes-psched.h
 include/yaz/zes-pset.h
 include/yaz/zes-update.h
 include/yaz/zes-update0.h
+include/yaz/zgdu.h
 include/yaz/zoom.h
 lib/libyaz.a
 lib/libyaz.la
 lib/libyaz.so
-lib/libyaz.so.1
+lib/libyaz.so.2
 lib/libyazmalloc.a
 lib/libyazmalloc.la
 lib/libyazmalloc.so
-lib/libyazmalloc.so.1
+lib/libyazmalloc.so.2
 lib/libyazthread.a
 lib/libyazthread.la
 lib/libyazthread.so
-lib/libyazthread.so.1
+lib/libyazthread.so.2
 share/aclocal/yaz.m4
+share/doc/yaz/apilayer.png
 share/doc/yaz/asn.external.html
 share/doc/yaz/asn.html
 share/doc/yaz/asn.oid.html
@@ -100,6 +107,7 @@ share/doc/yaz/installation.html
 share/doc/yaz/installation.unix.html
 share/doc/yaz/installation.win32.html
 share/doc/yaz/introduction.html
+share/doc/yaz/introduction.api.html
 share/doc/yaz/license.html
 share/doc/yaz/license.other.html
 share/doc/yaz/odr.debugging.html
@@ -112,6 +120,10 @@ share/doc/yaz/server.frontend.html
 share/doc/yaz/server.html
 share/doc/yaz/server.invocation.html
 share/doc/yaz/server.main.html
+share/doc/yaz/soap.html
+share/doc/yaz/soap.http.html
+share/doc/yaz/soap.srw.html
+share/doc/yaz/soap.xml.html
 share/doc/yaz/tools.html
 share/doc/yaz/tools.nmem.html
 share/doc/yaz/tools.oid.html
@@ -131,6 +143,7 @@ share/yaz/z39.50/charneg-3.asn
 share/yaz/z39.50/datetime.asn
 share/yaz/z39.50/esadmin.asn
 share/yaz/z39.50/esupdate.asn
+share/yaz/z39.50/mterm2.asn
 share/yaz/z39.50/univres.asn
 share/yaz/z39.50/z.tcl
 share/yaz/z39.50/z3950v3.asn
