@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlsec
-PORTVERSION=	0.0.12
+PORTVERSION=	0.0.14
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/
 
@@ -21,5 +21,11 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	xmlsec.1 xmlsec-config.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cp -R ${WRKSRC}/docs/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
