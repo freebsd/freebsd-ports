@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A file editor/viewer/analyzer for executables
 
 USE_BZIP2=	yes
+USE_XLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-release
+CONFIGURE_ENV=	CPPFLAGS+="-I${X11BASE}/include" \
+		LIBS+="-L${X11BASE}/lib"
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +33,8 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|$$FLAGS_PIPE $$FLAGS_ALL|$$CFLAGS|g' ${WRKSRC}/configure
+		's|$$FLAGS_PIPE $$FLAGS_ALL|$$CFLAGS|g' \
+			${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
