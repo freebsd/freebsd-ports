@@ -7,13 +7,13 @@
 
 PORTNAME=	jisx0213-fonts
 PORTVERSION=	1.03
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.mars.sphere.ne.jp/imamura/
 DISTFILES=	jiskan16-2000-1.bdf.gz jiskan16-2000-2.bdf.gz \
 		K14-1.bdf.gz K14-2.bdf.gz K12-1.bdf.gz K12-2.bdf.gz
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
 		mkitalic:${PORTSDIR}/x11-fonts/mkitalic
