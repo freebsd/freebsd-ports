@@ -1,7 +1,11 @@
-Jad is a Java decompiler, i.e. program that reads one or more Java class files 
-and converts them into Java source files which can be compiled again. 
+Jad, a Java decompiler. This program is able to reads one or more
+Java class files and convert them back into Java source files
+which can be recompiled. 
 
-Jad is a 100% pure C++ program and it generally works several times faster than 
-decompilers written in Java. Jad doesn't use the Java runtime for its 
-functioning, therefore no special setup is required (like changes to the 
-CLASSPATH variable). 
+Jad is a C++ program and it generally works several times faster
+than decompilers written in Java.
+
+No source code is available for this program. Jad is free for
+non-commercial use, but not for commercial use.
+
+WWW: http://www.geocities.com/SiliconValley/Bridge/8617/jad.html
