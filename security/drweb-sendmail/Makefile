@@ -59,10 +59,10 @@ post-configure:
 	${MKDIR} ${WRKSRC}/libmilter ${WRKSRC}/libsmutil
 	${CP} ${FILESDIR}/Makefile.libmilter ${WRKSRC}/libmilter/Makefile
 	${CP} ${FILESDIR}/Makefile.libsmutil ${WRKSRC}/libsmutil/Makefile
-.if ${SENDMAIL_VERSION} == "8.11.1"
+.if defined(SENDMAIL_VERSION) && ${SENDMAIL_VERSION} == "8.11.1"
 	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
 	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.11.1.patch
-.elif ${SENDMAIL_VERSION} == "8.12.0"
+.elif defined(SENDMAIL_VERSION) && ${SENDMAIL_VERSION} == "8.12.0"
 	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
 	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.12.0.patch
 .endif
