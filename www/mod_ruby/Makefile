@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -19,6 +19,7 @@ LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 USE_RUBY=	yes
+USE_REINPLACE=	yes
 
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
@@ -40,6 +41,11 @@ do-configure:
 
 post-install: doc-install
 	${INSTALL_DATA} ${WRKSRC}/examples/httpd.conf `${APXS} -q SYSCONFDIR`/httpd.conf.${PORTNAME}
+# Would be nice if we could use PLIST_SUB here..
+	${REINPLACE_CMD} \
+		-e 's,%%LIBEXECDIR%%,'`${APXS} -q LIBEXECDIR | ${SED} 's:${LOCALBASE}/::'`',g;' \
+		-e 's,%%SYSCONFDIR%%,'`${APXS} -q SYSCONFDIR | ${SED} 's:${LOCALBASE}/::'`',g;' \
+		${TMPPLIST}
 
 .include <bsd.port.mk>
 
