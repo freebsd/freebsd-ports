@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	termlog
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 MASTER_SITE_SUBDIR=	termlog
@@ -15,5 +14,6 @@ MASTER_SITE_SUBDIR=	termlog
 MAINTAINER=	maneo@bsdpro.com
 
 MAN1=		termlog.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
