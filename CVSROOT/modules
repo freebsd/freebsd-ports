@@ -10753,6 +10753,7 @@ xoids		ports/games/xoids
 xoj		ports/games/xoj
 xonix		ports/games/xonix
 xopps		ports/deskutils/xopps
+xorg-clients	ports/x11/xorg-clients
 xorg-fonts-100dpi	ports/x11-fonts/xorg-fonts-100dpi
 xorg-fonts-75dpi	ports/x11-fonts/xorg-fonts-75dpi
 xorg-fonts-cyrillic	ports/x11-fonts/xorg-fonts-cyrillic
