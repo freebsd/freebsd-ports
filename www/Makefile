@@ -273,6 +273,8 @@
     SUBDIR += mod_fcgid
     SUBDIR += mod_filter
     SUBDIR += mod_frontpage
+    SUBDIR += mod_frontpage2-rtr
+    SUBDIR += mod_frontpage-rtr
     SUBDIR += mod_geoip
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
