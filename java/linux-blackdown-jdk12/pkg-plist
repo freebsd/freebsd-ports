@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README
@@ -725,7 +726,6 @@
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec   %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Blackdown-JDK%%PORTVERSION%%"
-@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/lib/security
 @dirrm %%T%%/jre/lib/locale/ja_JP.UTF-8/app-defaults
