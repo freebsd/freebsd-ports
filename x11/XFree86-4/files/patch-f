@@ -1,0 +1,186 @@
+--- nls/compose.dir.orig	Sun Mar 19 23:18:49 2000
++++ nls/compose.dir	Sun Mar 19 23:19:10 2000
+@@ -179,7 +179,7 @@
+ vi_VN.tcvn/Compose	vi_VN.TCVN
+ iso8859-1/Compose	wa_BE.ISO8859-1
+ zh/Compose		zh_CN.eucCN
+-zh_TW.big5/Compose	zh_TW.big5
++zh_TW.Big5/Compose	zh_TW.Big5
+ zh_TW/Compose		zh_TW.eucTW
+ en_US.utf/Compose	en_US.utf
+ #endif /* R63_COMPAT */
+@@ -355,6 +355,6 @@
+ vi_VN.tcvn/Compose:	vi_VN.TCVN
+ iso8859-1/Compose:	wa_BE.ISO8859-1
+ zh/Compose:		zh_CN.eucCN
+-zh_TW.big5/Compose:	zh_TW.big5
++zh_TW.Big5/Compose:	zh_TW.Big5
+ zh_TW/Compose:		zh_TW.eucTW
+ en_US.utf/Compose:	en_US.utf
+--- nls/locale.alias.orig	Sun Mar 19 23:19:31 2000
++++ nls/locale.alias	Sun Mar 19 23:19:57 2000
+@@ -437,14 +437,14 @@
+ wa_BE.iso885915					wa_BE.ISO8859-15
+ zh						zh_CN.eucCN
+ zh_CN						zh_CN.eucCN
+-zh_CN.big5					zh_TW.big5
++zh_CN.Big5					zh_TW.Big5
+ zh_CN.EUC					zh_CN.eucCN
+ zh_CN.euc					zh_CN.eucCN
+ zh_CN.gb2312					zh_CN.eucCN
+-zh_TW						zh_TW.big5
++zh_TW						zh_TW.Big5
+ zh_TW.EUC					zh_TW.eucTW
+ zh_TW.euc					zh_TW.eucTW
+-zh_TW.big5					zh_TW.big5
++zh_TW.Big5					zh_TW.Big5
+ 
+ XCOMM The following locale names are used in SCO 3.0
+ english_uk.8859					en_GB.ISO8859-1
+@@ -933,14 +933,14 @@
+ wa_BE.iso885915:				wa_BE.ISO8859-15
+ zh:						zh_CN.eucCN
+ zh_CN:						zh_CN.eucCN
+-zh_CN.big5:					zh_TW.big5
++zh_CN.Big5:					zh_TW.Big5
+ zh_CN.EUC:					zh_CN.eucCN
+ zh_CN.euc:					zh_CN.eucCN
+ zh_CN.gb2312:					zh_CN.eucCN
+-zh_TW:						zh_TW.big5
++zh_TW:						zh_TW.Big5
+ zh_TW.EUC:					zh_TW.eucTW
+ zh_TW.euc:					zh_TW.eucTW
+-zh_TW.big5:					zh_TW.big5
++zh_TW.Big5:					zh_TW.Big5
+ 
+ XCOMM The following locale names are used in SCO 3.0
+ english_uk.8859:				en_GB.ISO8859-1
+--- nls/locale.dir.orig	Sun Mar 19 23:20:02 2000
++++ nls/locale.dir	Sun Mar 19 23:20:17 2000
+@@ -165,7 +165,7 @@
+ iso8859-1/XLC_LOCALE	wa_BE.ISO8859-1
+ iso8859-15/XLC_LOCALE	wa_BE.ISO8859-15
+ zh/XLC_LOCALE		zh_CN.eucCN
+-zh_TW.big5/XLC_LOCALE	zh_TW.big5
++zh_TW.Big5/XLC_LOCALE	zh_TW.Big5
+ zh_TW.cns11643/XLC_LOCALE	zh_TW.eucTW
+ en_US.utf/XLC_LOCALE	en_US.utf
+ XCOMM Note: The UTF-8 locales don't work correctly yet. Work in progress.
+@@ -447,7 +447,7 @@
+ iso8859-1/XLC_LOCALE:	wa_BE.ISO8859-1
+ iso8859-15/XLC_LOCALE:	wa_BE.ISO8859-15
+ zh/XLC_LOCALE:		zh_CN.eucCN
+-zh_TW.big5/XLC_LOCALE:	zh_TW.big5
++zh_TW.Big5/XLC_LOCALE:	zh_TW.Big5
+ zh_TW.cns11643/XLC_LOCALE:	zh_TW.eucTW
+ en_US.utf/XLC_LOCALE:	en_US.utf
+ XCOMM Note: The UTF-8 locales don't work correctly yet. Work in progress.
+--- nls/Compose/Imakefile.orig	Sun Aug 29 21:59:37 1999
++++ nls/Compose/Imakefile	Mon Mar 20 07:19:11 2000
+@@ -52,5 +52,5 @@
+ ComposeTarget(vi_VN.viscii)
+ ComposeTarget(zh)
+ ComposeTarget(zh_TW)
+-ComposeTarget(zh_TW.big5)
++ComposeTarget(zh_TW.Big5)
+ 
+--- nls/Compose/zh_TW.Big5.orig	Sun Mar 19 23:27:50 2000
++++ nls/Compose/zh_TW.Big5	Sat Aug 28 17:00:40 1999
+@@ -0,0 +1,15 @@
++#
++# zh_TW.big5 Compose Sequence
++#
++# Sequence Definition
++#
++# $XFree86: xc/nls/Compose/zh_TW.big5,v 1.1 1999/08/28 09:00:40 dawes Exp $
++#
++# This file currently has no entries.  It appears that a compose file (even
++# just an empty one) is required for the appropriate keysyms to work for
++# this encoding.
++#
++# <Multi_key> Means <Compose>
++# Special Character
++
++# End of Sequence Definition
+--- nls/XLC_LOCALE/Imakefile.orig	Sat Feb 12 14:28:24 2000
++++ nls/XLC_LOCALE/Imakefile	Mon Mar 20 07:21:26 2000
+@@ -76,6 +76,7 @@
+ LTarget(vi_VN.viscii)
+ LTarget(zh)
+ LTarget(zh_TW)
++LTarget(zh_TW.Big5)
+ LTarget(th_TH.TACTIS)
+ LTarget(en_US.utf)
+ LTarget(en_US.UTF-8)
+--- nls/XLC_LOCALE/zh_TW.Big5.orig	Sun Mar 19 23:27:55 2000
++++ nls/XLC_LOCALE/zh_TW.Big5	Sun Mar 19 23:27:33 2000
+@@ -0,0 +1,69 @@
++XCOMM
++XCOMM (c) 1996, X11R6 L10N for Taiwan and Big5 Encoding Project
++XCOMM
++XCOMM modified for X11R6.3 by Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw> 1998/01/10
++XCOMM
++XCOMM $XFree86: xc/nls/XLC_LOCALE/zh_TW.big5,v 1.1 1999/08/28 09:00:41 dawes Exp $
++XCOMM
++XCOMM	XLC_FONTSET category
++XCOMM
++XLC_FONTSET
++XCOMM       fs0 class (7 bit ASCII)
++fs0     {
++        charset {
++                name    ISO8859-1:GL
++        }
++        font    {
++                primary         ISO8859-1:GL
++                vertical_rotate all
++        }
++}
++XCOMM       fs1 class
++fs1     {
++        charset {
++                name    BIG5-0:GLGR
++        }
++        font    {
++                primary BIG5-0:GLGR
++        }
++}
++END XLC_FONTSET
++
++XCOMM
++XCOMM	XLC_XLOCALE category
++XCOMM
++XLC_XLOCALE
++
++encoding_name		zh_TW.big5
++mb_cur_max		2
++state_depend_encoding	False
++
++wc_encoding_mask	\x00008000
++wc_shift_bits		8
++
++XCOMMuse_stdc_env		False
++XCOMMforce_convert_to_mb	True
++
++XCOMM	cs0 class
++cs0	{
++	side		GL:Default
++	length		1
++	wc_encoding	\x00000000
++	ct_encoding	ISO8859-1:GL
++}
++
++XCOMM	cs1 class
++cs1	{
++	side		none
++	length		2
++	byte1		\xa1,\xf9
++	byte2		\x40,\x7e;\xa1,\xfe
++
++	wc_encoding	\x00008000
++	ct_encoding	BIG5-0:GLGR:\x1b\x25\x2f\x32\x80\x89\x42\x49\x47\x35\x2d\x30\x02
++
++	mb_conversion	[\xa140,\xf9fe]->\x2140
++	ct_conversion	[\x2140,\x79fe]->\xa140
++}
++
++END XLC_XLOCALE
