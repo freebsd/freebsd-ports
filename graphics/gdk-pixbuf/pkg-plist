@@ -24,12 +24,15 @@ lib/libgdk_pixbuf_xlib.so
 lib/libgdk_pixbuf_xlib.so.2
 share/aclocal/gdk-pixbuf.m4
 share/doc/gdk-pixbuf/a2605.html
+share/doc/gdk-pixbuf/a3401.html
 share/doc/gdk-pixbuf/a3640.html
 share/doc/gdk-pixbuf/a3652.html
 share/doc/gdk-pixbuf/a3657.html
 share/doc/gdk-pixbuf/a3694.html
 share/doc/gdk-pixbuf/a3696.html
 share/doc/gdk-pixbuf/a3716.html
+share/doc/gdk-pixbuf/x3420.html
+share/doc/gdk-pixbuf/x3472.html
 share/doc/gdk-pixbuf/x3715.html
 share/doc/gdk-pixbuf/x3767.html
 share/doc/gdk-pixbuf/book1.html
