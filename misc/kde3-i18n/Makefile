@@ -16,6 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE
 
 RUN_DEPENDS+=\
+	${LOCALBASE}/share/locale/ar/entry.desktop:${PORTSDIR}/arabic/kde3-i18n \
 	${LOCALBASE}/share/locale/ja/entry.desktop:${PORTSDIR}/japanese/kde3-i18n \
 	${LOCALBASE}/share/locale/fr/entry.desktop:${PORTSDIR}/french/kde3-i18n \
 	${LOCALBASE}/share/locale/de/entry.desktop:${PORTSDIR}/german/kde3-i18n \
@@ -26,7 +27,7 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/vi/entry.desktop:${PORTSDIR}/vietnamese/kde3-i18n \
 	${LOCALBASE}/share/locale/pl/entry.desktop:${PORTSDIR}/polish/kde3-i18n
 
-.for LANG in af ar bg bs ca cs da el en_GB eo es et fa fi hr is it \
+.for LANG in af bg bs ca cs da el en_GB eo es et fa fi hr is it \
 	lt mk mt nb nl nn nso ro sk sl sr sv ta th tr ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
