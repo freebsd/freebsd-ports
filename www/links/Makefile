@@ -43,7 +43,6 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 USE_XLIB=	yes
 CONFIGURE_ARGS+=	--enable-graphics --with-x
 .else
-USE_XLIB=	no
 CONFIGURE_ARGS+=	--without-x
 .endif
 
