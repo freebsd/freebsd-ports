@@ -50,4 +50,4 @@ bin/papercut
 @dirrm %%DATADIR%%/storage
 @unexec rmdir %D/%%DATADIR%%/cache || true
 @unexec rmdir %D/%%DATADIR%%/logs || true
-@unexec rmdir %D/%%DATADIR%% || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt
+@unexec rmdir %D/%%DATADIR%% 2> /dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf %D/%%DATADIR%%`` to remove any files left." | fmt
