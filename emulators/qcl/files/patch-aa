@@ -16,7 +16,7 @@
  
 -DEBUG = -g -DQCL_DEBUG -DQC_DEBUG
 -#DEBUG = -O2
-+DEBUG = -O2
++DEBUG = 
  
  # Comment out if you don't have GNU readline on your system
  # explicit linking against libtermcap or libncurses may be required

@@ -1,20 +1,28 @@
---- Makefile.orig	Wed Aug 29 19:07:24 2001
-+++ Makefile	Wed Aug 29 19:08:13 2001
-@@ -1,7 +1,7 @@
+--- Makefile.orig	Fri Aug 31 01:03:17 2001
++++ Makefile	Sun Jul  6 05:09:19 2003
+@@ -1,13 +1,13 @@
  # Makefile - makefile for lbrate
  
- CC=gcc
+-CC=gcc
 -CFLAGS=-O2 -Wall
-+CFLAGS+=-I%%LOCALBASE%%/include
++CC?=	gcc
++CFLAGS+=$(CPPFLAGS)
  
  # Set BINDIR to directory for binary,
  # MANDIR to directory for man page.
+ # Usually it will be simpler to just set PREFIX.
+ #
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/man/man1
+ 
 @@ -19,7 +19,7 @@
  all: lbrate
  
  lbrate: $(OBJ)
 -	$(CC) $(CFLAGS) -o lbrate $(OBJ)
-+	$(CC) $(CFLAGS) -o lbrate $(OBJ) -L%%LOCALBASE%%/lib -lgnugetopt
++	$(CC) $(CFLAGS) -o lbrate $(OBJ) $(LDFLAGS)
  
  installdirs:
  	/bin/sh ./mkinstalldirs $(BINDIR) $(MANDIR)

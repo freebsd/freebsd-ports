@@ -7,21 +7,19 @@
 
 PORTNAME=	lbrate
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/utils/compress/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Extract/decompress CP/M LBR archives
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		lbrate.1
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC|^PREFIX,#,g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)

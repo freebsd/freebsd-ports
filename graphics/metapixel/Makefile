@@ -6,6 +6,7 @@
 
 PORTNAME=	metapixel
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.complang.tuwien.ac.at/~schani/metapixel/
 
@@ -13,11 +14,13 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"Metapixel is a program for generating photomosaics"
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
