@@ -1,5 +1,5 @@
 # New ports collection makefile for: 	lua
-# Version required: 			3.1
+# Version required: 			3.2.2
 # Date created:				27 June 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
@@ -7,6 +7,7 @@
 #
 
 DISTNAME=	lua-3.2
+PKGNAME=	lua-3.2.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
