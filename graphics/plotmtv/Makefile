@@ -14,7 +14,7 @@ DISTNAME=	Plotmtv${PORTVERSION}
 MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 ALL_TARGET=	World

@@ -11,7 +11,7 @@ CATEGORIES=	misc cad
 MASTER_SITES=	http://www.ee.uwa.edu.au/~braunl/pns/ftp/
 DISTFILES=	pns_source.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

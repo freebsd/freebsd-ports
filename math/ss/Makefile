@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.irus.rri.on.ca/~amulder/ss/ \
 		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/spreadsheet/ualberta/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/ss_133
 MAN1=		ss.1 pss.1

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/misc/ \
 		ftp://ftp.vse.cz/pub/.ccd0c/SCO/ftp.sco.com/skunkware/src/misc/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fli2gif ${PREFIX}/bin

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://crusty.er.usgs.gov/pub/animation/fli/
 DISTNAME=	ppm2fli_b1.92
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=	ppm2fli.1 unflick.1
 

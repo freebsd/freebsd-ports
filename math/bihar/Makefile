@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/
 DISTNAME=	bihar
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	linpack.1:${PORTSDIR}/math/linpack
 

@@ -11,7 +11,7 @@ CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.etymon.com/pub/Isearch/
 DISTNAME=	Isearch-${PORTVERSION}
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE= yes
 
