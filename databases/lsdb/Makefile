@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lsdb
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	databases elisp
 MASTER_SITES=	http://downloads.sourceforge.jp/lsdb/${SFJP_RELEASE_ID}/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -22,12 +22,15 @@ DEPPORT_SUFFIX=
 DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
 
-SFJP_RELEASE_ID=	941	
+SFJP_RELEASE_ID=	1016
 FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-1.14.FreeBSD-packages
 
+USE_REINPLACE=	yes
 ALL_TARGET=	elc
 MAKE_ARGS=	LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 
+post-patch:
+	${REINPLACE_CMD} -e "s@ChangeLog:@ChangeLog:#@g" ${WRKSRC}/Makefile
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bbdb-to-lsdb.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 .if !defined(NOPORTDOCS)
