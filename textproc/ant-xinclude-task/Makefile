@@ -13,8 +13,8 @@ PKGNAMEPREFIX=	ant-
 
 MAINTAINER=	znerd@FreeBSD.org
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
-RUN_DEPENDS=	${JAVASHAREDIR}/classes/xincluder.jar:${PORTSDIR}/textproc/xincluder
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
+		${JAVASHAREDIR}/classes/xincluder.jar:${PORTSDIR}/textproc/xincluder
 
 USE_JAVA=	1.1+
 
