@@ -1,0 +1,9 @@
+bin/openobex-config
+include/openobex/obex.h
+include/openobex/obex_const.h
+lib/libopenobex-1.0.so
+lib/libopenobex-1.0.so.1
+lib/libopenobex.a
+lib/libopenobex.so
+share/aclocal/openobex.m4
+@dirrm include/openobex
