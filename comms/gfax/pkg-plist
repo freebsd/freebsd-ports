@@ -1,0 +1,19 @@
+bin/gfax
+bin/lpr.gfax
+bin/gfax.install-lpr
+bin/gfax.uninstall-lpr
+share/gnome/apps/Applications/gfax.desktop
+share/gnome/gfax/glade/gfax.glade
+share/gnome/gfax/glade/setup.glade
+share/gnome/gfax/glade/mgettydruid.glade
+share/gnome/gfax/glade/spool.glade
+share/gnome/help/gfax/C/gfax.html
+share/gnome/help/gfax/C/topic.dat
+share/gnome/help/gfax/C/index.html
+share/gnome/pixmaps/gfax.png
+@unexec /bin/sh %D/bin/gfax.uninstall-lpr
+@exec /bin/sh %D/bin/gfax.install-lpr
+@dirrm share/gnome/gfax/glade
+@dirrm share/gnome/gfax
+@dirrm share/gnome/help/gfax/C
+@dirrm share/gnome/help/gfax
