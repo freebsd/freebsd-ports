@@ -3453,6 +3453,7 @@ krb4		ports/security/krb4
 krb5		ports/security/krb5
 krb5-beta	ports/security/krb5-beta
 krdesktop	ports/net/krdesktop
+kripp		ports/security/kripp
 kronolith	ports/deskutils/kronolith
 krss		ports/deskutils/krss
 kseg		ports/math/kseg
