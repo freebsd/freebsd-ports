@@ -1,0 +1,19 @@
+Adopted from the documentation:
+
+The Element type is a flexible container object, designed to store hierarchical
+data structures in memory. The type can be described as a cross between a list
+and a dictionary.
+
+Each element has a number of properties associated with it:
+
+  * a tag. This is a string identifying what kind of data this element
+    represents (the element type, in other words).
+  * a number of attributes, stored in a Python dictionary.
+  * a text string.
+  * an optional tail string.
+  * a number of child elements, stored in a Python sequence
+
+The ElementTree class can be used to wrap an element structure, and convert it
+from and to XML.
+
+WWW: http://effbot.org/zone/element-index.htm
