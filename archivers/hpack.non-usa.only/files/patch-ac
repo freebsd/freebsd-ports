@@ -1,5 +1,14 @@
---- keycvt/makefile.orig	Mon May 17 16:43:30 1993
-+++ keycvt/makefile	Tue Dec 28 20:01:38 1999
+--- keycvt/makefile.orig	Tue May 18 01:43:30 1993
++++ keycvt/makefile	Sat Apr  7 05:29:54 2001
+@@ -48,7 +48,7 @@
+ 
+ PROJ	= keycvt
+ 
+-CFLAGS	= -c $(DEFINES) -O -I. $(CMDC)	# Flags for compiler
++CFLAGS  += -c $(DEFINES) -I. $(CMDC)  # Flags for compiler
+ 
+ LFLAGS	= -o $(PROJ) $(CMDL)			# Flags for linker
+ 
 @@ -60,6 +60,7 @@
  LS		= ls -l				# Directory command
  ECHO	= echo				# Echo to screen command
@@ -23,7 +32,7 @@
  		@$(MAKE) keycvt CC="cc"
 +
 +freebsd:
-+		@$(MAKE) $(PROJ) CMDC="-O2"
++		@$(MAKE) $(PROJ)
 +
 +freebsd.install:
 +		$(INSTALL) $(COPY) $(STRIP) -o $(BINOWN) -g $(BINGRP) $(PROJ) $(PREFIX)/bin

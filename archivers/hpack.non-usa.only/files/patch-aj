@@ -1,5 +1,14 @@
---- makefile.orig	Tue Aug 10 10:47:06 1993
-+++ makefile	Tue Dec 28 20:01:38 1999
+--- makefile.orig	Tue Aug 10 19:47:06 1993
++++ makefile	Sat Apr  7 05:32:44 2001
+@@ -42,7 +42,7 @@
+ 
+ PROJ	= hpack
+ 
+-CFLAGS	= -c -D__UNIX__ -O -I. $(CMDC)	# Flags for compiler
++CFLAGS  += -c -D__UNIX__ -I. $(CMDC)  # Flags for compiler
+ 
+ LFLAGS	= -o $(PROJ) -lcurses $(CMDL)	# Flags for linker
+ 
 @@ -55,6 +55,7 @@
  ECHO	= echo				# Echo to screen command
  MAKE	= make				# The make command
@@ -23,8 +32,8 @@
  		@$(MAKE) hpack CMDC="-DCONVEX" CC="cc"
 +
 +freebsd:
-+		@$(MAKE) $(PROJ) CMDC="-O2" LFLAGS="-o $(PROJ) -ltermcap"
-+		cd keycvt; $(MAKE) freebsd
++		@make $(PROJ) LFLAGS="-o $(PROJ) -ltermcap"
++		cd keycvt; make freebsd
 +
 +freebsd.install:
 +		-@mkdir -p ${PREFIX}/bin
