@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	audio python
 MASTER_SITES=	http://eyed3.nicfit.net/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
