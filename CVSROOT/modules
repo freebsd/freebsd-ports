@@ -7035,6 +7035,7 @@ tkinfo		ports/misc/tkinfo
 tkirc		ports/irc/tkirc
 tkman		ports/misc/tkman
 tkmoo		ports/games/tkmoo
+tkp4		ports/devel/tkp4
 tkrat2		ports/mail/tkrat2
 tkref		ports/devel/tkref
 tkregexp	ports/misc/tkregexp
