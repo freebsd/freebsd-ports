@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -21,7 +21,7 @@ NO_BUILD=	YES
 
 MAJOR_VER=	${PORTVERSION:R:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
 LOG_DIR=	${APP_HOME}/logs
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Jakarta Tomcat
