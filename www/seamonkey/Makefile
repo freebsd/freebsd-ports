@@ -3,11 +3,11 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.24 1998/04/17 21:52:17 asami Exp $
+# $Id: Makefile,v 1.25 1998/05/02 17:49:09 jseger Exp $
 #
 
 DISTNAME=	unix-19980429
-PKGNAME=	mozilla-1998-04-29
+PKGNAME=	mozilla-1998.04.29
 CATEGORIES=	www
 MASTER_SITES=	ftp://mirror.neosoft.com/pub/mozilla/mozilla/source/ \
 		ftp://ftp.bitcon.no/pub/www/mozilla/mozilla/source/ \
