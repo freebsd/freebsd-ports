@@ -7,6 +7,7 @@
 
 PORTNAME=	cclient
 PORTVERSION=	2004c1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -52,6 +53,8 @@ post-patch:
 .for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
+	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
+		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
 
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
