@@ -1,0 +1,11 @@
+cu-Prolog is an experimental constraint logic programming language.
+Unlike most conventional CLP systems, cu-Prolog allows user-defined 
+predicates as constraints and is suitable for implementing a natural 
+language processing system based on the unification-based 
+grammar. As an application of cu-Prolog, we developed 
+a JPSG (Japanese Phrase Structure Grammar) parser 
+with the JPSG Working Group (the chairman is Prof. GUNJI, Takao of
+Osaka University) at ICOT. 
+
+cu-Prolog is also the complete implementation of the constraint
+unification and its name (cu) comes from the technique.

@@ -1,0 +1,13 @@
+--- mainsub.c.old	Wed Jul  7 02:22:15 1999
++++ mainsub.c	Wed Jul  7 02:22:30 1999
+@@ -1238,8 +1238,8 @@
+ 	times(&TIMES);		/* get time */
+ 	ttemp = TIMES.tms_stime + TIMES.tms_utime;
+ 	tprint2 ("CPU time = %.3lf sec (Constraints Handling = %.3lf sec)\n", 
+-	     (ttemp - TIMESAVE) / CPUTIME.0,
+-	     (CONSTRAINT_HANDLING_TIME / CPUTIME.0));
++	     (ttemp - TIMESAVE) / (float)CPUTIME,
++	     (CONSTRAINT_HANDLING_TIME / (float)CPUTIME));
+ }
+ 
+ void settimer() {		/* set clock	 */

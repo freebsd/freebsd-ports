@@ -1,0 +1,28 @@
+--- include.h.orig	Fri Jan 27 16:38:48 1995
++++ include.h	Wed Jul  7 02:25:14 1999
+@@ -28,7 +28,11 @@
+ *		else         		      #define CPUTIME 0
+ */
+ 
++#ifdef __FreeBSD__
++#define CPUTIME 60
++#else
+ #define SUN4 1
++#endif
+ #define KANJI 1		/* 1: allow EUC Kanji for str functions */
+ 
+ /* Tee print macro */
+@@ -135,8 +139,13 @@
+ #define head_of_list(Term) (((struct clause *)Term)->c_form)
+ #define tail_of_list(Term) ((struct term *)((struct clause *)Term)->c_link)
+ 
++#ifdef __FreeBSD__
++#define is_readable(FP) (FP->_flags & __SRD)
++#define is_writable(FP) (FP->_flags & __SWR)
++#else
+ #define is_readable(FP) (FP->_flag & _IOREAD)
+ #define is_writable(FP) (FP->_flag & _IOWRT)
++#endif
+ 
+ #define is_functor(Term) ((Term)->type.ident > CONST_LIST_TYPE)
+ #define isconst_functor(Term)  ((Term)->t_arity <= 0)  

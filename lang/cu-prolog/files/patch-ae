@@ -1,0 +1,21 @@
+--- main.c.old	Wed Jul  7 02:26:00 1999
++++ main.c	Wed Jul  7 02:27:38 1999
+@@ -303,13 +303,16 @@
+ 
+ void heap_realloc()		/* reallocate system/user heaps */
+ {
++#if SUN4 == 1
+     cfree((char *)sheap); SHEAP_SIZE=SHEAP_SIZE*1.2; system_heap_alloc();
+-/*    free(heap);   HEAP_SIZE *= 1.2; 
++#else
++    free(heap);   HEAP_SIZE *= 1.2; 
+     free(cheap);   CHEAP_SIZE *= 1.2;
+     free(eheap);  ESP_SIZE *= 1.2;
+     free(ustack);  USTACK_SIZE *= 1.2;
+     free(nheap);   NAME_SIZE *= 1.2; 
+-    heap_alloc();  */
++    heap_alloc();
++#endif /* SUN4 */
+     init_status();
+ }
+ 
