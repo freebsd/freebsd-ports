@@ -1,6 +1,6 @@
---- src/dialogs/dialog-sheet-order.c.orig	Thu Sep 25 14:22:18 2003
-+++ src/dialogs/dialog-sheet-order.c	Thu Sep 25 14:25:48 2003
-@@ -106,12 +106,12 @@
+--- src/dialogs/dialog-sheet-order.c.orig	Mon Sep 15 01:40:38 2003
++++ src/dialogs/dialog-sheet-order.c	Thu Sep 25 17:27:10 2003
+@@ -106,6 +106,7 @@
  static gint
  location_of_iter (GtkTreeIter  *iter, GtkListStore *model)
  {
@@ -8,9 +8,12 @@
  	/* Note: in gtk 2.2 we could just do: */
  /* 	gchar* path = gtk_tree_model_get_string_from_iter */
  /* 		(GTK_TREE_MODEL (model), iter); */
+@@ -117,7 +118,7 @@
+ 	gtk_tree_path_free (treepath);
+ 	/* end of gtk 2.0 code */
  
- 	/* in gtk 2.0 we need: */
--	gint loc;
- 	GtkTreePath *treepath = gtk_tree_model_get_path 
- 		(GTK_TREE_MODEL (model), iter);
- 	gchar* path = gtk_tree_path_to_string (treepath);
+-	gint loc = atoi(path);
++	loc = atoi(path);
+ 	
+ 	g_free (path);
+ 
