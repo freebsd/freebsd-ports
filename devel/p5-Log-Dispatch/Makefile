@@ -7,6 +7,7 @@
 
 PORTNAME=	Log-Dispatch
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
@@ -18,11 +19,6 @@ COMMENT=	A suite of OO modules for logging messages to multiple outputs
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.if !defined(BATCH)
-IS_INTERACTIVE=	yes
-.endif
-
-USE_SUBMAKE=	yes
 PERL_MODBUILD=	yes
 
 MAN3=	Log::Dispatch.3 \
@@ -40,24 +36,45 @@ MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::Screen.3 \
 	Log::Dispatch::Syslog.3
 
-SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		MKDIR="${MKDIR}" \
-		REALCURDIR="${.CURDIR}"
+OPTIONS=	APACHELOG "Apache::Log support" off \
+		EMAIL_MIMELITE "MIME::Lite support" off \
+		EMAIL_MAILSEND "Mail::Send support" off \
+		EMAIL_MAILSENDMAIL "Mail::Sendmail support" on \
+		MAIL_SENDER "Mail::Sender support" off
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		Build fails
+.if defined(WITH_APACHELOG)
+.if defined(WITH_APACHE2)
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+.else
+BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
+.endif
 .endif
 
-pre-fetch:
-	@${SETENV} ${SCRIPTS_ENV} ${PERL} ${SCRIPTDIR}/configure.pl
+.if defined(WITH_EMAIL_MIMELITE)
+BUILD_DEPENDS+=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
+.endif
 
-post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+.if defined(WITH_EMAIL_MAILSEND)
+BUILD_DEPENDS+=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
+.endif
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if defined(WITH_EMAIL_MAILSENDMAIL)
+BUILD_DEPENDS+=	${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail
+.endif
+
+.if defined(WITH_MAIL_SENDER)
+BUILD_DEPENDS+=	${SITE_PERL}/Mail/Sender.pm:${PORTSDIR}/mail/p5-Mail-Sender
 .endif
 
 .include <bsd.port.post.mk>
