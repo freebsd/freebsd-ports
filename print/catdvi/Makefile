@@ -8,6 +8,7 @@
 
 PORTNAME=	catdvi
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +16,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 MAKEFILE=	GNUmakefile
-USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
 MAN1=	catdvi.1
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/catdvi
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/catdvi ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/catdvi.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
