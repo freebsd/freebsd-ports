@@ -1,0 +1,17 @@
+X Visualization System is a visualization plug-in for XMMS inspired by
+WinAmp's AVS. In xvs complex effects are built of many trivial ones put
+together. Such an approach provides an extreme flexibility. Once designed
+presets can be saved and later restored.
+
+Features:
+
+extreme customizability
+fast, 32bit display (currently only in windowed mode)
+semi-programmable blits & scopes
+easy to use, powerful user interface
+resizable window
+save & restore
+
+WWW: http://godot.tuniv.szczecin.pl/~jgregor/xvs/
+
+- Anders Nordby <anders@FreeBSD.org>
