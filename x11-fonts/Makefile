@@ -36,6 +36,7 @@
     SUBDIR += linux-fontconfig
     SUBDIR += linux-urw-fonts
     SUBDIR += mkbold
+    SUBDIR += mkbold-mkitalic
     SUBDIR += mkitalic
     SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel
