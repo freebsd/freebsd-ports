@@ -6,6 +6,10 @@ There is also a cute little Tcl/Tk program included called wordview, which
 is basically a small GUI frontend to catdoc for viewing word documents.
 The wordview program works with Tcl 7.6 and up, but uses Tk 8.0 by default.
 
+There are two more utilities, xls2csv and xlsview, for dealing with
+MS Excel spreadsheets.  xls2csv converts an Excel spreadsheet to a plain
+text file with CSV (comma-separated values) lines.
+
 WWW: http://www.ice.ru/~vitus/catdoc/
 
 - Brion

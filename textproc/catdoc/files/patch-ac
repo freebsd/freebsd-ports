@@ -1,0 +1,10 @@
+--- ../catdoc/doc/Makefile.in	Tue Oct 19 14:50:02 1999
++++ doc/Makefile.in	Fri Sep  8 14:42:09 2000
+@@ -21,6 +21,7 @@
+ install: catdoc.1 xls2csv.1
+ 	../mkinstalldirs $(installroot)$(mandir)
+ 	$(INSTALL) -m 644 catdoc.1 $(installroot)$(mandir)/catdoc$(manext)
++	$(INSTALL) -m 644 xls2csv.1 $(installroot)$(mandir)/xls2csv$(manext)
+ # Following rules are primarily for developers use. I doubt that you
+ # need to rebuild these versions of documentation
+ distclean: catdoc.1 catdoc.txt catdoc.ps xls2csv.1 xls2csv.txt xls2csv.ps
