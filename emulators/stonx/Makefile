@@ -6,25 +6,27 @@
 # $FreeBSD$
 #
 
-DISTNAME=       STonX-0.6.7-epsilon
+DISTNAME=	STonX-0.6.7-epsilon
 PKGNAME=	stonx-0.6.7e
-CATEGORIES=     emulators
-MASTER_SITES=   ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} tos.img
+CATEGORIES=	emulators
+MASTER_SITES=	ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
 
-MAINTAINER=     tr@freebsd.mayn.de
+MAINTAINER=	treif@mayn.de
 
-BROKEN="fetch"
-
-RESTRICTED=     "tos.img is Copyrighted"
+RESTRICTED=	"tos.img is copyrighted"
 NO_PACKAGE=	${RESTRICTED}
 
-IGNOREFILES=	tos.img
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+TOSIMG=		tos.img
+USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 
-# Source building
-#
+pre-fetch:
+	@if [ ! -f ${DISTDIR}/${TOSIMG} ]; then \
+		${ECHO} "Please get a ROM dump from your AtariST and"; \
+		${ECHO} "put it as \"${TOSIMG}\" in \"${DISTDIR}\" manually."; \
+		exit 1; \
+	fi
+
 pre-build:
 	${CP} ${DISTDIR}/tos.img ${WRKSRC}
 
@@ -34,8 +36,8 @@ post-build:
 # Installing
 #
 BINDIR=	${PREFIX}/bin
-LIBDIR=	${PREFIX}/lib/STonX
-FNTDIR= ${X11BASE}/lib/X11/fonts/misc
+LIBDIR=	${PREFIX}/lib/X11/STonX
+FNTDIR= ${PREFIX}/lib/X11/fonts/misc
 
 DATA=	tos.img cartridge.img Keysyms Keysyms.G atari/FLOPPY-4MB \
 	atari/bench1.pas atari/bench1.prg atari/final.tos
@@ -58,20 +60,25 @@ do-install:
 	@${ECHO_MSG} "===> Installing data"
 	@${MKDIR} ${LIBDIR}
 .for f in ${DATA}
-	@${INSTALL_DATA} ${WRKSRC}/$f ${LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/$f ${LIBDIR}
 .endfor
 
 	@${ECHO_MSG} "===> Installing fonts"
 .for f in ${FONTS}
-	@${INSTALL_DATA} ${WRKSRC}/data/$f ${FNTDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/$f ${FNTDIR}
 	@${GZIP_CMD} ${FNTDIR}/$f
 .endfor
 	@mkfontdir ${FNTDIR}
 
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===> Installing docs"
 	@${MKDIR} ${LIBDIR}/docs
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/$f ${LIBDIR}/docs
+	${INSTALL_DATA} ${WRKSRC}/docs/$f ${LIBDIR}/docs
 .endfor
+.endif
+
+post-install:
+	${X11BASE}/bin/mkfontdir ${FNTDIR}
 
 .include <bsd.port.mk>
