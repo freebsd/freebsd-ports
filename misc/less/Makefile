@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       less-346
+DISTNAME=       less-352
 CATEGORIES=	misc
 MASTER_SITES=   http://home.flash.net/~marknu/less/ \
 		${MASTER_SITE_GNU}
