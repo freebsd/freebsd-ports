@@ -9,7 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://libtiff.maptools.org/dl/
