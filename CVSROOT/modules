@@ -2097,6 +2097,7 @@ garlic		ports/biology/garlic
 garmin-utils	ports/comms/garmin-utils
 gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
+gatling		ports/www/gatling
 gauche		ports/lang/gauche
 gauche-gdbm	ports/databases/gauche-gdbm
 gauche-gl	ports/graphics/gauche-gl
