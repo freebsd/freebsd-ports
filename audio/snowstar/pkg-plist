@@ -1,6 +1,6 @@
 bin/snowstar
-share/doc/snowstar/README_Snowstar
-share/doc/snowstar/TODO
-share/doc/snowstar/LICENSE
-share/doc/snowstar/CHANGES
-@dirrm share/doc/snowstar
+%%PORTDOCS%%share/doc/snowstar/README_Snowstar
+%%PORTDOCS%%share/doc/snowstar/TODO
+%%PORTDOCS%%share/doc/snowstar/LICENSE
+%%PORTDOCS%%share/doc/snowstar/CHANGES
+%%PORTDOCS%%@dirrm share/doc/snowstar
