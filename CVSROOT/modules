@@ -1890,6 +1890,7 @@ freesci		ports/emulators/freesci
 freescope	ports/devel/freescope
 freesweep	ports/games/freesweep
 freetds		ports/databases/freetds
+freetxl		ports/lang/freetxl
 freetype	ports/print/freetype
 freetype2	ports/print/freetype2
 freevrrpd	ports/net/freevrrpd
