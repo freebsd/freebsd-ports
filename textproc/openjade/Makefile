@@ -1,24 +1,16 @@
-# New ports collection makefile for:	jade
-# Date created:		June 19, 1997
-# Whom:			jfieber
+# New ports collection makefile for:	OpenJade
+# Date created:		May 19, 2000
+# Whom:			kuriyama
 #
 # $FreeBSD$
 #
 
-PORTNAME=	jade
-PORTVERSION= 	1.2.1
+PORTNAME=	openjade
+PORTVERSION= 	1.3
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
+MASTER_SITES=	http://download.sourceforge.net/openjade/
 
-PATCH_SITES=	http://ftp.debian.org/debian/dists/unstable/main/source/text/
-PATCHFILES=	jade_1.2.1-13.diff.gz
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	jfieber@FreeBSD.org
-
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		nsgmls coredumps in static constructors
-.endif
+MAINTAINER=	kuriyama@FreeBSD.org
 
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
@@ -26,27 +18,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
 
-post-extract:
-	@${CHMOD} u+w ${WRKSRC}/configure
-
 pre-install:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 
 post-install:
-.for i in jade nsgmls sgmlnorm spam spent sx
-	strip ${PREFIX}/bin/$i
-.endfor
-	${MKDIR} ${PREFIX}/include/sp
-	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
-	${MKDIR} ${PREFIX}/share/doc/jade
-	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/jade
-	${MKDIR} ${PREFIX}/share/sgml/jade
-	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
+	${MKDIR} ${PREFIX}/share/sgml/openjade
+	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/openjade
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
-	@if [ ! -f ${PREFIX}/share/sgml/catalog ]; then \
-		${ECHO} "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"" > ${PREFIX}/share/sgml/catalog; \
-	else \
-		${SETENV} LANG=C ${PERL} -ni -e 'print if !m|${PREFIX}/share/sgml/jade/catalog|;print "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"\n" if eof;' ${PREFIX}/share/sgml/catalog; \
-	fi
 
 .include <bsd.port.mk>
