@@ -1,0 +1,9 @@
+etc/hdup/hdup.conf-dist
+sbin/hdup
+%%DOCSDIR%%/README
+%%DOCSDIR%%/FAQ.html
+%%EXAMPLESDIR%%/hdup.cron
+%%EXAMPLESDIR%%/no-history-post-run.sh
+@unexec rmdir %D/etc/hdup 2> /dev/null || true
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%

@@ -195,6 +195,7 @@
     SUBDIR += gtoaster
     SUBDIR += gupsc
     SUBDIR += hammerhead
+    SUBDIR += hdup
     SUBDIR += healthd
     SUBDIR += heirloom
     SUBDIR += hourglass
