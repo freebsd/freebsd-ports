@@ -3,10 +3,10 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.29 1999/01/18 02:34:03 hosokawa Exp $
+# $Id: Makefile,v 1.30 1999/01/18 09:28:29 foxfair Exp $
 #
 
-DISTNAME=	samba-2.0.0
+DISTNAME=	samba-2.0.2
 #PKGNAME=	samba-2.0.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitcon.no/.7/unix/networking/samba/   \
@@ -73,21 +73,24 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
 	for i in ${WRKDIR}/${DISTNAME}/README				\
 			${WRKDIR}/${DISTNAME}/COPYING			\
-			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
-			${WRKDIR}/${DISTNAME}/Roadmap			\
 			${WRKDIR}/${DISTNAME}/Manifest			\
+			${WRKDIR}/${DISTNAME}/Read-Manifest-Now		\
+			${WRKDIR}/${DISTNAME}/Roadmap			\
+			${WRKDIR}/${DISTNAME}/WHATSNEW.txt		\
 			${WRKDIR}/${DISTNAME}/docs/*.reg		\
 			${WRKDIR}/${DISTNAME}/docs/THANKS		\
 			${WRKDIR}/${DISTNAME}/docs/announce		\
-			${WRKDIR}/${DISTNAME}/docs/history		\
-			${WRKDIR}/${DISTNAME}/docs/textdocs/* ; do	\
+			${WRKDIR}/${DISTNAME}/docs/history ; do		\
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
 	done
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${PREFIX}/share/doc/samba/README.swat
-	${MKDIR} ${PREFIX}/share/doc/samba/faq
-	for i in ${WRKDIR}/${DISTNAME}/docs/faq/* ; do			\
-		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba/faq ;	\
+	for i in faq htmldocs manpages textdocs yodldocs ; do		\
+		${MKDIR} ${PREFIX}/share/doc/samba/$$i ;		\
+		for j in ${WRKDIR}/${DISTNAME}/docs/$$i/* ; do		\
+			${INSTALL_DATA} $$j ${PREFIX}/share/doc/samba/$$i ;\
+		done							\
 	done
+	${MKDIR} ${PREFIX}/share/doc/samba
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${PREFIX}/share/doc/samba/README.swat
 .endif
 
 .include <bsd.port.mk>
