@@ -36,8 +36,8 @@ NO_BUILD=	yes
 # By default, we don't install myhostinfo.cgi.  Install it if you wish; it'll
 # already be patched for you.
 post-extract:
-.for file in ${HINFO_SCRIPTS}
-	${REINPLACE_CMD} -E '1s|^#!.+|#!${PERL}|' ${WRKSRC}/${file}
+.for filename in ${HINFO_SCRIPTS}
+	${REINPLACE_CMD} -E '1s|^#!.+|#!${PERL}|' ${WRKSRC}/${filename}
 .endfor
 
 do-install:
@@ -52,8 +52,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/hinfo.conf.5 ${PREFIX}/man/man5/
 .endif
 	@${MKDIR} ${DATADIR}
-.for file in ${HINFO_DBFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+.for filename in ${HINFO_DBFILES}
+	${INSTALL_DATA} ${WRKSRC}/${filename} ${DATADIR}
 .endfor
 
 .include <bsd.port.mk>
