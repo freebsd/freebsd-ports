@@ -135,6 +135,7 @@
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_pam
     SUBDIR += mod_auth_pgsql
+    SUBDIR += mod_auth_pwcheck
     SUBDIR += mod_backhand
     SUBDIR += mod_bf
     SUBDIR += mod_cgi_debug

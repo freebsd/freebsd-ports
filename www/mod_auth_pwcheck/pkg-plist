@@ -1,0 +1,4 @@
+%%AP_LIBEXEC%%/mod_auth_pwcheck.so
+%%AUTH_PWCHECK_DOCS%%/index.html
+@unexec %%APXS%% -e -A -n auth_pwcheck mod_auth_pwcheck.so
+@dirrm %%AUTH_PWCHECK_DOCS%%
