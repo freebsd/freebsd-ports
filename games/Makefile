@@ -359,6 +359,7 @@
     SUBDIR += torcs
     SUBDIR += tornado
     SUBDIR += tractorgen
+    SUBDIR += traindirector
     SUBDIR += trojka
     SUBDIR += ttraffic
     SUBDIR += tux-aqfh
