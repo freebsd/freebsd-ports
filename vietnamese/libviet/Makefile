@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}/lib
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/lib
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libvntype.a ${WRKSRC}/libviqr.a  \
