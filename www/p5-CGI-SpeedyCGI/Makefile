@@ -7,6 +7,7 @@
 
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.21
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -15,7 +16,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lars@thegler.dk
 COMMENT=	Speed up perl CGI scripts by running them persistently
 
-#SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
+
+post-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/speedy/speedy ${PREFIX}/bin/speedy_suid
+	@${CHMOD} 4755 ${PREFIX}/bin/speedy_suid
 
 .include <bsd.port.mk>
