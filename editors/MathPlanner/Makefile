@@ -26,6 +26,10 @@ CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 BROKEN=		"Does not compile with gcc 2.95.x"
 .endif
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
 		-e "s|malloc\.h|stdlib.h|"
