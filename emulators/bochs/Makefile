@@ -3,7 +3,7 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.11 1998/09/11 15:40:16 alex Exp $
+# $Id: Makefile,v 1.12 1998/11/03 02:26:39 alex Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.20
@@ -16,6 +16,7 @@ MASTER_SITES= 	ftp://ftp.bochs.com/pub/
 
 MAINTAINER=	alex@FreeBSD.ORG
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-80386 --enable-memory=16 \
 	--enable-v8086-mode --enable-paging --enable-vga \
@@ -26,7 +27,6 @@ WRKSRC=		${WRKDIR}/bochs-${DATE}
 
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/bin
