@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041214:
+  AFFECTS: users of net/freenet6
+  AUTHOR: edwin@FreeBSD.org
+
+  The FreeNet6 Service must now be enabled / disabled in rc.conf:
+    freenet6_enable="YES"
+
 20041213:
   AFFECTS: users of security/cryptplug, deskutils/kdepim3
   AUTHOR: lofi@freebsd.org
