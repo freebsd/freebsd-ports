@@ -1,5 +1,5 @@
---- imap-4.6.BETA/src/osdep/unix/os_bsi.h.orig	Sat Oct 19 12:30:04 1996
-+++ imap-4.6.BETA/src/osdep/unix/os_bsi.h	Sun Feb 21 10:25:47 1999
+--- imap/src/osdep/unix/os_bsi.h.orig	Sat Oct 19 12:30:04 1996
++++ imap/src/osdep/unix/os_bsi.h	Sun Feb 21 10:25:47 1999
 @@ -37,7 +37,18 @@
  #include <unistd.h>
  #include <string.h>
