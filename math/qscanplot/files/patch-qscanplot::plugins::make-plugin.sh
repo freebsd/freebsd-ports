@@ -1,17 +1,26 @@
-
-$FreeBSD$
-
---- qscanplot/plugins/make-plugin.sh	2002/04/23 09:48:56	1.1
-+++ qscanplot/plugins/make-plugin.sh	2002/04/23 09:53:40
-@@ -1,6 +1,6 @@
+--- qscanplot/plugins/make-plugin.sh.orig	Sun Apr 14 11:42:17 2002
++++ qscanplot/plugins/make-plugin.sh	Tue Feb 17 14:12:11 2004
+@@ -1,14 +1,5 @@
  #! /bin/sh
  
 -TMAKEPATH=/usr/lib/tmake/linux-g++
-+TMAKEPATH=${LOCALBASE}/share/tmake/freebsd-g++
+-
+-export TMAKEPATH
+-
+-if [ ! -d $TMAKEPATH ]; then
+-  echo Directory $TMAKEPATH selected for TMAKEPATH does not exist 
+-  exit 1
+-fi
+-
+ plg=$1
  
- export TMAKEPATH
+ plgcpp=$plg.cpp
+@@ -34,11 +25,11 @@
  
-@@ -38,7 +38,7 @@
+ echo Generating makefile . . .
+ 
+-tmake -o $plgmak $plgpro
++qmake -o $plgmak $plgpro
  
  echo Building plugin $plg
  
