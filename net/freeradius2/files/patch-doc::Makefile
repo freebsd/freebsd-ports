@@ -1,0 +1,14 @@
+--- doc/Makefile.orig	Thu Nov 20 14:32:45 2003
++++ doc/Makefile	Thu Nov 20 14:33:01 2003
+@@ -21,9 +21,9 @@
+ 
+ install:
+ 	$(INSTALL) -d -m 755	$(R)$(datadir)/doc
+-	$(INSTALL) -d -m 755	$(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION)
++	$(INSTALL) -d -m 755	$(R)$(datadir)/doc/freeradius
+ 	for i in $(DOCS) rlm_*; do \
+-		$(INSTALL) -m 644 $$i $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION); \
++		$(INSTALL) -m 644 $$i $(R)$(datadir)/doc/freeradius; \
+ 	done
+ 	@$(MAKE) $(MFLAGS) WHAT_TO_MAKE=$@ common
+ 

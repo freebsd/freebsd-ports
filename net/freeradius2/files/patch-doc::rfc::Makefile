@@ -1,0 +1,12 @@
+--- doc/rfc/Makefile.orig	Thu Nov 20 14:42:52 2003
++++ doc/rfc/Makefile	Thu Nov 20 14:43:03 2003
+@@ -16,7 +16,7 @@
+ 	rm -f refs rfc*.html *~ .rewrite index.html
+ 
+ install:
+-	$(INSTALL) -d -m 755	$(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION)/rfc
++	$(INSTALL) -d -m 755	$(R)$(datadir)/doc/freeradius/rfc
+ 	for i in `ls -1 *.txt *.html`; do \
+-		$(INSTALL) -m 644 $$i $(R)$(datadir)/doc/freeradius-$(RADIUSD_VERSION)/rfc; \
++		$(INSTALL) -m 644 $$i $(R)$(datadir)/doc/freeradius/rfc; \
+ 	done
