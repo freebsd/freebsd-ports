@@ -20,6 +20,8 @@ COMMENT=	HTML editor designed for the experienced web designer
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 
+CONFLICTS=	bluefish-0.1*
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
