@@ -81,8 +81,12 @@ do-fetch:
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz
 	@${RM} ${WRKDIR}/${DISTNAME}.tar.gz ${WRKDIR}/${DISTNAME}.tar.gz.asc
-	@${CHMOD} -R ug-s,go-w ${WRKDIR}/${DISTNAME}
-	@${CHOWN} -R 0:0 ${WRKDIR}/${DISTNAME}
+.if !defined(EXTRACT_PRESERVE_OWNERSHIP)
+	@if [ `id -u` = 0 ]; then \
+		${CHMOD} -R ug-s,go-w ${WRKDIR}/${DISTNAME}; \
+		${CHOWN} -R 0:0 ${WRKDIR}/${DISTNAME}; \
+	fi
+.endif
 .endif
 
 pre-build:
