@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
 DISTNAME=	ircii-pana-1.0c19
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsdports@arved.de
 
 WRKSRC=		${WRKDIR}/BitchX
 
@@ -34,6 +34,7 @@ MAN1=		BitchX.1
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=--with-gtk
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${X11BASE}/include/gnome-1.0/"
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif
