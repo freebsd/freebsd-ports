@@ -1,0 +1,7 @@
+--- src/blacklist.c.orig	Sun Sep 10 03:49:23 2000
++++ src/blacklist.c	Sun Sep 10 03:49:31 2000
+@@ -1,3 +1,4 @@
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
