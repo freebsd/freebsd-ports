@@ -285,6 +285,7 @@
     SUBDIR += ruby-gdk_pixbuf
     SUBDIR += ruby-gimp
     SUBDIR += ruby-graph
+    SUBDIR += ruby-image_size
     SUBDIR += ruby-imlib2
     SUBDIR += ruby-libpng
     SUBDIR += ruby-ming
