@@ -320,6 +320,7 @@
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-DAV
     SUBDIR += p5-HTTP-GHTTP
+    SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
