@@ -20,6 +20,7 @@ lib/swig%%VER%%/guile/guile.swg
 lib/swig%%VER%%/guile/guiledec.swg
 lib/swig%%VER%%/guile/guilemain.i
 lib/swig%%VER%%/guile/interpreter.i
+lib/swig%%VER%%/guile/ports.i
 lib/swig%%VER%%/guile/typemaps.i
 lib/swig%%VER%%/java/java.swg
 lib/swig%%VER%%/java/typemaps.i
@@ -49,6 +50,7 @@ lib/swig%%VER%%/ruby/embed.i
 lib/swig%%VER%%/ruby/exception.i
 lib/swig%%VER%%/ruby/extconf.rb
 lib/swig%%VER%%/ruby/ptrlang.i
+lib/swig%%VER%%/ruby/ruby.i
 lib/swig%%VER%%/ruby/ruby.swg
 lib/swig%%VER%%/ruby/rubydec.swg
 lib/swig%%VER%%/ruby/rubydef.swg
