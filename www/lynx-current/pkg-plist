@@ -21,8 +21,9 @@ lib/lynx_help/keystrokes/bookmark_help.html
 lib/lynx_help/keystrokes/keystroke_help.html
 lib/lynx_help/keystrokes/follow_help.html
 lib/lynx_help/lynx-dev.html
-lib/lynx_help/CHANGES.configure
 lib/lynx_help/CHANGES.new
+lib/lynx_help/COPYHEADER
+lib/lynx_help/COPYING
 lib/lynx_help/PROBLEMS
 lib/lynx_help/README
 lib/lynx_help/samples/jumpsVMS.html
@@ -32,7 +33,6 @@ lib/lynx_help/samples/lynx.com
 lib/lynx_help/samples/mailcap
 lib/lynx_help/samples/lynx.cfg
 lib/lynx_help/samples/lynx.lss
-lib/lynx_help/samples/.nsconfig
 lib/lynx_help/test/tabtest.html
 lib/lynx_help/test/iso8859-1.html
 lib/lynx_help/test/TestComment.html
