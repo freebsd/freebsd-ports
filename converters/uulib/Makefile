@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/23 06:39:36 tg Exp $
 #
 
 DISTNAME=	uudeview-0.5.4
@@ -32,7 +32,7 @@ DOCFILES+=	porting.notes
 
 post-patch:
 	@for l in ${EXTRAFILES}; \
-	do; \
+	do \
 		cp ${FILESDIR}/$${l} ${WRKSRC}/$${l}; \
 	done
 
@@ -40,7 +40,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	mkdir -p ${PREFIX}/share/doc/uulib
 	for l in ${DOCFILES}; \
-	do; \
+	do \
 		cp ${WRKSRC}/$$l ${PREFIX}/share/doc/uulib; \
 	done
 .endif
