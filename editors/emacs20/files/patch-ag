@@ -1,0 +1,19 @@
+--- man/Makefile.in.orig	Sat May 16 15:00:22 1998
++++ man/Makefile.in	Sun Aug 23 00:27:15 1998
+@@ -11,7 +11,7 @@
+ 
+ 
+ # The makeinfo program is part of the Texinfo distribution.
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl ../info/customize \
+ 	        ../info/dired-x ../info/ediff ../info/forms ../info/gnus \
+ 		../info/info ../info/message ../info/mh-e ../info/reftex \
+@@ -70,6 +70,7 @@
+ 	${srcdir}/glossary.texi \
+ 	${srcdir}/ack.texi
+ 
++all: info
+ info: $(INFO_TARGETS)
+ 
+ dvi: $(DVI_TARGETS)

@@ -1,0 +1,20 @@
+--- lib-src/Makefile.in.orig	Sat Aug  1 20:22:55 1998
++++ lib-src/Makefile.in	Mon Aug 31 21:11:22 1998
+@@ -278,7 +278,7 @@
+         if [ `(cd ${archlibdir} && /bin/pwd)` \
+              != `(cd ${srcdir} && /bin/pwd)` ]; then \
+ 	  for file in ${SCRIPTS}; do \
+-	    $(INSTALL_PROGRAM) ${srcdir}/$$file ${archlibdir}/$$file; \
++	    $(INSTALL_SCRIPT) ${srcdir}/$$file ${archlibdir}/$$file; \
+ 	  done ; \
+ 	fi
+ 
+@@ -290,7 +290,7 @@
+ 	  chmod a+rx ${bindir}/$${file}; \
+ 	done
+ 	for file in ${INSTALLABLE_SCRIPTS} ; do \
+-	  $(INSTALL_PROGRAM) ${srcdir}/$${file} ${bindir}/$${file} ; \
++	  $(INSTALL_SCRIPT) ${srcdir}/$${file} ${bindir}/$${file} ; \
+ 	  chmod a+rx ${bindir}/$${file}; \
+ 	done
+ 
