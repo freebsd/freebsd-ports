@@ -21,7 +21,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

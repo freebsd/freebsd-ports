@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libpanel libcapplet libglade
 GNU_CONFIGURE=	yes

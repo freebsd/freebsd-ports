@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/LBreeder/LBreeder
 PATCH_WRKSRC=	${WRKDIR}/LBreeder
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_MESA=	yes
 USE_GMAKE=	yes

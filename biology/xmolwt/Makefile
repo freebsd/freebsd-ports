@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 MAKEFILE=	Makefile.gtk
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 do-install:
