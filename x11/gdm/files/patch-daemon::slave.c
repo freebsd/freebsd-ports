@@ -52,16 +52,6 @@ $FreeBSD$
  static char *
  dequote (const char *in)
  {
-@@ -1823,6 +1851,9 @@
- 	char *sesspath, *sessexec;
- 	gboolean need_config_sync = FALSE;
- 	const char *shell = NULL;
-+#ifdef HAVE_LOGINCAP
-+	char *lang = NULL;
-+#endif
- 
- 	ve_clearenv ();
- 
 @@ -1840,12 +1871,6 @@
  	if (gnome_session != NULL)
  		ve_setenv ("GDM_GNOME_SESSION", gnome_session, TRUE);
