@@ -1,0 +1,37 @@
+*** /dev/null	Fri Nov  8 21:17:53 1996
+--- lib/fontdesc	Fri Nov  8 21:18:34 1996
+***************
+*** 0 ****
+--- 1,32 ----
++ #
++ # dvi2ps fontdesc file for FreeBSD jtex209 and platex ports collection.
++ #  Print out Japanese by printer font and English by pk font.
++ #				Nov. 9 1996 MITA Yoshio <mita@jp.FreeBSD.org>
++ 
++ # change resolution below according to your site.
++ define	RESOLUTION	300
++ 
++ define	f		/usr/local/lib/fonts
++ define	af		/usr/local/share/tex/jfonts/jfms
++ define	pf		/usr/local/lib/texmf/fonts/public/ptex
++ define	nsf		/usr/local/share/tex/jfonts/
++ 
++ include		dvi2.ps
++ resolution	$RESOLUTION
++ 
++ # English font with pk fonts
++ font	pk	* 3	$f/pk$RESOLUTION/%f.%mpk
++ 
++ #  jstfm NTT JTeX with DNP font tfm
++ font    jstfm   * 0     $nsf/mincho/%f.tfm
++ font    jstfm   * 0     $nsf/gothic/%f.tfm
++ builtin dm%j    SINR    Ryumin-Light-H
++ builtin dg%j    SINR    GothicBBB-Medium-H
++ 
++ 
++ # built-in kanji for ASCII Nihongo TeX
++ include         fonts/ascfix-c.ps
++ font	jfm	* 0	$af/%f.tfm
++ font    jfm     * 0     $pf/tfm/%f.tfm
++ builtin	min	JINA	"/Ryumin-Light-H Ryumin-Metrics Set-New-Metrics"
++ builtin	goth	JINA	"/GothicBBB-Medium-H Gothic-Metrics Set-New-Metrics"
