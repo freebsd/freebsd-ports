@@ -1,0 +1,7 @@
+Bandwidth management module for the Apache webserver.
+mod_bandwidth is a module for the Apache webserver that 
+enable the setting of server-wide or per connection 
+bandwidth limits, based on the directory, size of files 
+and remote IP/domain. 
+
+WWW: http://www.cohprog.com/mod_bandwidth.html
