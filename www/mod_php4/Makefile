@@ -43,6 +43,8 @@ DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.org
 
+BROKEN=		"PHP-${VERSION_PHP} is beta. Beware the bugs. Enter at your own risk!"
+
 Y2K=		http://www.php.net/y2k.php3
 
 PHP_DISTDIR=	version4/downloads
