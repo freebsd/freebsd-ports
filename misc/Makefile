@@ -163,6 +163,7 @@
     SUBDIR += tkrunit
     SUBDIR += ttyrec
     SUBDIR += tvguide
+    SUBDIR += txt2regex
     SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
