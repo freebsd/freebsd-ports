@@ -1,15 +1,17 @@
 # New ports collection makefile for:	lyx
-# Version required:	0.10.6
+# Version required:	1.0.0
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.24 1998/12/28 21:18:04 dirk Exp $
+# $Id: Makefile,v 1.25 1999/01/07 08:19:48 simokawa Exp $
 #
 
-DISTNAME=	lyx-1.0.0pre6
+DISTNAME=	lyx-1.0.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/stable/ \
-		ftp://la1ad.uio.no/pub/lyx/                
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
+		ftp://la1ad.uio.no/pub/lyx/ \
+		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/stable/ \
+		ftp://ftp.sdsc.edu/pub/other/lyx/stable/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
