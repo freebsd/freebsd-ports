@@ -2619,6 +2619,7 @@ gkrellweather	ports/misc/gkrellweather
 gkrellweather2	ports/misc/gkrellweather2
 gksu		ports/sysutils/gksu
 gkx86info	ports/misc/gkx86info
+gkx86info2	ports/misc/gkx86info2
 gl-117		ports/games/gl-117
 gl-aspell	ports/textproc/gl-aspell
 gl2ps		ports/print/gl2ps
