@@ -20,7 +20,7 @@ LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -22,7 +22,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
