@@ -10,7 +10,8 @@ PORTVERSION=	0.0.7b6
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
-		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/dwcjr/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dwcjr
 
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
 
