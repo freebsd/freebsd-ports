@@ -6,6 +6,11 @@ the login data:
 
 * All databases supported by the PEAR database layer
 * Plaintext files
-* LDAP servers.
+* LDAP servers
+* POP3 servers
+* IMAP servers
+* vpopmail accounts
+* RADIUS
+* SOAP.
 
 WWW: http://pear.php.net/manual/en/packages.auth.auth.php

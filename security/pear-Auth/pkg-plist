@@ -1,6 +1,12 @@
-%%PEARDIR%%/Auth.php
-%%PEARDIR%%/Container.php
-%%PEARDIR%%/Container/DB.php
-%%PEARDIR%%/Container/File.php
-%%PEARDIR%%/Container/LDAP.php
-@dirrm %%PEARDIR%%/Container
+%%PEARDIR%%/Auth/Auth.php
+%%PEARDIR%%/Auth/Container.php
+%%PEARDIR%%/Auth/Container/DB.php
+%%PEARDIR%%/Auth/Container/File.php
+%%PEARDIR%%/Auth/Container/IMAP.php
+%%PEARDIR%%/Auth/Container/LDAP.php
+%%PEARDIR%%/Auth/Container/POP3.php
+%%PEARDIR%%/Auth/Container/RADIUS.php
+%%PEARDIR%%/Auth/Container/SOAP.php
+%%PEARDIR%%/Auth/Container/vpopmail.php
+@dirrm %%PEARDIR%%/Auth/Container
+@dirrm %%PEARDIR%%/Auth
