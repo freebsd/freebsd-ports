@@ -1,3 +1,2 @@
-lib/perl5/site_perl/Archie-1.5.pm
-lib/perl5/site_perl/Archie.pm
-lib/perl5/site_perl/archie_gateway
+lib/perl5/site_perl/%%PERL_VER%%/Archie.pm
+bin/archie_gateway

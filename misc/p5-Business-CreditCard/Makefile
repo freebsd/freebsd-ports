@@ -19,9 +19,7 @@ USE_PERL5=	YES
 NO_BUILD=	YES
 
 do-install:
-		@ ${CP} ${WRKSRC}/CreditCard.pm ${WRKSRC}/CreditCard-0.21.pm
-		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/Business/
-		@ ${INSTALL_DATA} ${WRKSRC}/CreditCard-0.21.pm ${PREFIX}/lib/perl5/site_perl/Business/
-		@ ${LN} -sf ${PREFIX}/lib/perl5/site_perl/Business/CreditCard-0.21.pm ${PREFIX}/lib/perl5/site_perl/Business/CreditCard.pm
+		@ ${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Business
+		@ ${INSTALL_DATA} ${WRKSRC}/CreditCard.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Business/
 
 .include <bsd.port.mk>

@@ -1,3 +1,2 @@
-lib/perl5/site_perl/Business/CreditCard-0.21.pm
-lib/perl5/site_perl/Business/CreditCard.pm
-@dirrm lib/perl5/site_perl/Business
+lib/perl5/site_perl/%%PERL_VER%%/Business/CreditCard.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business 2>/dev/null || true
