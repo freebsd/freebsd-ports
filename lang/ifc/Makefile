@@ -62,9 +62,10 @@ pre-patch:
 
 post-patch:
 # Correct some paths and patch some files
+	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/ifc.orig
 .for i in ia32/bin/ifcvars.csh ia32/bin/ifcvars.sh \
 	ia32/bin/ifc docs/fsupport
-	@${SED} 's+\<INSTALLDIR\>+${PREFIX}/intel+g; s+man -w+manpath+g; s+@LINUXBASE@+${LINUXBASE}+g; s+/bin/sh+${LINUXBASE}/bin/bash+g s+<INSTALLTIMECOMBOPACKAGEID>+${DISTNAME}+g' \
+	@${SED} 's+\<INSTALLDIR\>+${PREFIX}/intel+g; s+man -w+manpath+g; s+@LINUXBASE@+${LINUXBASE}+g; s+/bin/sh+${LINUXBASE}/bin/bash+g; s+\<INSTALLTIMECOMBOPACKAGEID\>+${DISTNAME}+g' \
 		${WRKSRC}/opt/intel/compiler60/${i} \
 		>${WRKSRC}/opt/intel/compiler60/${i}.seded
 	@${MV} -f ${WRKSRC}/opt/intel/compiler60/${i}.seded \
