@@ -1,0 +1,19 @@
+*** IniConf.pm.bak	Fri Jul 11 09:39:59 1997
+--- IniConf.pm	Thu Sep 10 01:15:26 1998
+***************
+*** 203,209 ****
+  	  \$SIG{$sig} = 'IGNORE';
+  	  \$${class}::instance[$instnum]->ReadConfig;
+  	  if (\$oldhandler[$instnum] && \$oldhandler[$instnum] ne 'IGNORE') {
+! 	    eval '&$oldhandler[$instnum];';
+  	  }
+  	  \$SIG{$sig} = '$newhandler'
+  	}
+--- 203,209 ----
+  	  \$SIG{$sig} = 'IGNORE';
+  	  \$${class}::instance[$instnum]->ReadConfig;
+  	  if (\$oldhandler[$instnum] && \$oldhandler[$instnum] ne 'IGNORE') {
+! 	    eval '&\$oldhandler[$instnum];';
+  	  }
+  	  \$SIG{$sig} = '$newhandler'
+  	}
