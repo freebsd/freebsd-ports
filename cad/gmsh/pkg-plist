@@ -24,11 +24,12 @@ bin/mshsort
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/cube.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/sphere.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/filter.geo
-%%PORTDOCS%%%%EXAMPLESDIR%%/demos/isosurf.scp
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/isosurf.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/lowmem-anim.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.i1
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.i2
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/multislice.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece-extr-rec.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece-extr.geo
 %%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece.geo
