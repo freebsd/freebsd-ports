@@ -15,6 +15,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/DBD.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/FAQ.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Profile.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProfileData.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProfileDumper.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProfileDumper/Apache.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/PurePerl.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Shell.pm
@@ -31,6 +34,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/dbi_sql.h
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/dbipport.h
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProfileDumper
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Const/GetInfo
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Const
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI
