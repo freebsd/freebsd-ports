@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
 
 USE_X_PREFIX=	yes
-PATCH_DIST_STRIP=-p1
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
