@@ -1,0 +1,19 @@
+duke3d/duke3d
+duke3d/duke.sh
+duke3d/build
+duke3d/fix.sh
+duke3d/testdata/defs.con
+duke3d/testdata/game.con
+duke3d/testdata/user.con
+bin/duke3d
+%%PORTDOCS%%%%DOCSDIR%%/README.bsd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/BUILDLIC.TXT
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIB
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/gnu.txt
+@dirrm share/doc/duke3d
+@dirrm duke3d/testdata
+@unexec rmdir duke3d 2> /dev/null || true

@@ -1,0 +1,24 @@
+--- source/buildengine/Makefile.orig	Sat Mar 13 22:12:13 2004
++++ source/buildengine/Makefile	Sat Mar 13 22:46:31 2004
+@@ -100,7 +100,7 @@
+   SDL_LDFLAGS := $(shell sdl-config --libs)
+ endif
+ 
+-CC = gcc
++#CC = gcc
+ 
+ # Uncomment to use the Intel compiler (v6.0)
+ # Note: Version 6.0   Build 020312Z fails to compile engine.c
+@@ -194,9 +194,9 @@
+ 
+ ENGINEDIR = .
+ ASMFLAGS = -f $(ASMOBJFMT) $(ASMDEFS)
+-LINKER = gcc
+-CFLAGS += $(USE_ASM) -funsigned-char -O2 -DPLATFORM_UNIX -g -Wall $(SDL_CFLAGS) -fno-omit-frame-pointer
+-LDFLAGS += -g $(SDL_LDFLAGS)
++LINKER = $(CC)
++CFLAGS += %%CFLAGS%% $(USE_ASM) -funsigned-char -DPLATFORM_UNIX -Wall $(SDL_CFLAGS) -fno-omit-frame-pointer
++LDFLAGS += -L%%X11BASE%%/lib $(SDL_LDFLAGS)
+ 
+ # Rules for turning source files into .o files
+ %.o: %.c

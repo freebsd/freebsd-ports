@@ -1,0 +1,19 @@
+Duke3D for Linux
+
+This port was done by Dan Olson, Steven Fuller, and Ryan C. Gordon, 
+with contributions from David Koenig, Dave Watson, among others.
+
+The real nasty part (porting the Build Engine) was the work of:
+
+    * Ryan C. Gordon
+    * Dan Olson
+    * Andrew Henderson
+    * Christian Zander
+    * Adrian Neill
+    * Matt Helsley
+    * Nicholas Vining
+    * Matt Saettler
+    * Steven Fuller
+    * A cast of thousands. 
+
+WWW:  http://www.icculus.org/duke3d/

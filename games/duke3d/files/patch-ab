@@ -1,0 +1,20 @@
+*** source/buildengine/mmulti.c.orig	Sat Jun  7 08:58:45 2003
+--- source/buildengine/mmulti.c	Thu Sep 18 02:24:25 2003
+***************
+*** 916,929 ****
+      if (!set_socket_blockmode(0))
+          return(0);
+  
+-     #if !PLATFORM_WIN32 && !PLATFORM_MACOSX
+-     {
+-         /* Linux-specific. */
+-         int flags = 1;
+-         setsockopt(udpsocket, SOL_IP, IP_RECVERR, &flags, sizeof (flags));
+-     }
+-     #endif
+- 
+      memset(&addr, '\0', sizeof (addr));
+      addr.sin_family = AF_INET;
+      addr.sin_addr.s_addr = htonl(ip);
+--- 916,921 ----
+

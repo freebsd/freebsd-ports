@@ -1,0 +1,30 @@
+--- source/Makefile.orig	Sat Mar 13 22:51:27 2004
++++ source/Makefile	Sat Mar 13 22:53:11 2004
+@@ -86,15 +86,14 @@
+ 	BUILDOBJS += buildengine/a.o
+ endif
+ 
+-CC = gcc
+-CFLAGS = -c -g $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -W -Wall -Wno-unused $(EXTRACFLAGS) -funsigned-char
+-OPTIMIZE = -O2
++#CC = gcc
++CFLAGS = -c %%CFLAGS%% $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -W -Wall -Wno-unused $(EXTRACFLAGS) -funsigned-char
+ 
+ # Uncomment this to compile with the Intel compiler (v6.0)
+ #CC = icc
+ #CFLAGS = -g $(SDL_CFLAGS) -DUSE_SDL=1 -DPLATFORM_UNIX=1 -DUSE_I386_ASM=1 $(EXTRACFLAGS) -O2
+ 
+-LDLIBS = $(SDL_LDFLAGS) -lSDL -lSDL_mixer $(EXTRALDFLAGS)
++LDLIBS = $(SDL_LDFLAGS) -lSDL_mixer $(EXTRALDFLAGS) -L%%X11BASE%%/lib
+ 
+ # !!! FIXME: Do we even need this? It doesn't fly on MacOS X.  --ryan.
+ #LDLIBS += -Wl,-E
+@@ -103,7 +102,7 @@
+ 
+ 
+ %.o : %.c
+-	$(CC) $(CFLAGS) $(OPTIMIZE) -o $@ $<
++	$(CC) $(CFLAGS) -o $@ $<
+ 
+ # Animation playback crashes due to optimization error on MacOS X. --ryan.
+ ifeq ($(strip $(macosx)),true)
