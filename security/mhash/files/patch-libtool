@@ -1,0 +1,16 @@
+--- libtool.orig	Wed Feb 20 12:43:25 2002
++++ libtool	Wed Feb 20 12:43:37 2002
+@@ -3723,11 +3723,13 @@
+ 	fi
+ 
+ 	# Install the pseudo-library for information purposes.
++	if /usr/bin/false; then
+ 	if test "$install_ltlibs" = yes; then
+ 	  name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+ 	  instname="$dir/$name"i
+ 	  $show "$install_prog $instname $destdir/$name"
+ 	  $run eval "$install_prog $instname $destdir/$name" || exit $?
++	fi
+ 	fi
+ 
+ 	# Maybe install the static library, too.
