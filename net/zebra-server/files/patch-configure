@@ -1,5 +1,5 @@
---- configure.orig	Sun Dec 23 14:38:47 2001
-+++ configure	Sun Dec 23 14:39:02 2001
+--- configure.orig	Thu Oct 25 17:24:18 2001
++++ configure	Wed Dec 26 11:41:58 2001
 @@ -794,7 +794,7 @@
  EOF
  
@@ -9,3 +9,11 @@
  
  VERSION=1.1
  
+@@ -2005,6 +2005,7 @@
+ s%@DEFS@%$DEFS%g
+ s%@LDFLAGS@%$LDFLAGS%g
+ s%@LIBS@%$LIBS%g
++s%@PTHREAD_LIBS@%$PTHREAD_LIBS%g
+ s%@exec_prefix@%$exec_prefix%g
+ s%@prefix@%$prefix%g
+ s%@program_transform_name@%$program_transform_name%g

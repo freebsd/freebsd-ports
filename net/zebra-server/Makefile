@@ -17,6 +17,7 @@ LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin
+CONFIGURE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-install:
 .if !defined(NOPORTDOCS)

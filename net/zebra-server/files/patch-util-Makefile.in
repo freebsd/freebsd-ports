@@ -1,0 +1,11 @@
+--- util/Makefile.in.orig	Wed Dec 26 11:42:17 2001
++++ util/Makefile.in	Wed Dec 26 11:42:51 2001
+@@ -108,7 +108,7 @@
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
++LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) @PTHREAD_LIBS@ -o $@
+ DIST_COMMON =  Makefile.am Makefile.in
+ 
+ 
