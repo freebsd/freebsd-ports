@@ -1,16 +1,28 @@
-*** psmget.c.orig	Wed Sep  1 23:04:53 1999
---- psmget.c	Wed Sep  1 23:06:41 1999
-***************
-*** 13,23 ****
-  #include <sys/poll.h>
-  #include <sys/ioctl.h>
-  
-- #ifdef PSM_GLIBC
-  #include <errno.h>
-- #include <termbits.h>
-  #include <termios.h>
-- #endif
-  
-  typedef unsigned char uchar;
-  
---- 13,20 ----
+--- Makefile.orig	Sun Jan 30 17:23:28 2000
++++ Makefile	Sun Jan 30 17:24:52 2000
+@@ -7,21 +7,20 @@
+ 
+ 
+ COPTS=-g $(ADDIT_DEFS) -Wall
+-CC=gcc $(COPTS)
+ 
+ .c.o:
+-	$(CC) -c $<
++	$(CC) $(COPTS) -c $<
+ 
+ DESTDIR=hppsmtools-$(PSM_VERSION)
+ 
+ psmget: psmget.o 
+-	$(CC) psmget.o -o psmget
++	$(CC) $(COPTS) psmget.o -o psmget
+ 
+ psmget.o: psmget.c psmget.h
+-	$(CC) -c psmget.c -DPSM_VERSION=\"$(PSM_VERSION)\"
++	$(CC) $(COPTS) -c psmget.c -DPSM_VERSION=\"$(PSM_VERSION)\"
+ 
+ crcguess: crcguess.o crc32.o
+-	gcc crcguess.o crc32.o -o crcguess
++	$(CC) crcguess.o crc32.o -o crcguess
+ 
+ distri:
+ 	-mkdir $(DESTDIR)
