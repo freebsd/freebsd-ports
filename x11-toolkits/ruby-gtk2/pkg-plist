@@ -10,10 +10,12 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dialog.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dialog2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dnd.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dndtreeview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/drawing.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/entry.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/fileselection.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/frame.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gc.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gnome-logo-icon.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/helloworld.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/image.rb
@@ -29,6 +31,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/t-gtkplug.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/t-gtksocket.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/test.xpm
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/to_drawable.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/togglebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/toolbar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/treeview.rb
