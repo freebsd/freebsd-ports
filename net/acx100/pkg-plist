@@ -1,10 +1,5 @@
 @comment $FreeBSD$
-@comment
-@comment Comment this out when headers will be up to date.
-@comment
-@comment include/acx/if_acxioctl.h
-@comment include/acx/if_acxpacket.h
-@comment @dirrm include/acx
-@comment
+include/acx/if_acxioctl.h
+@dirrm include/acx
 @cwd /boot/kernel
 if_acx.ko
