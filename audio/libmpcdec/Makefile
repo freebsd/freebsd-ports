@@ -8,7 +8,7 @@
 PORTNAME=	libmusepack
 PORTVERSION=	1.0.3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net/source/
+MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	High quality audio compression format
