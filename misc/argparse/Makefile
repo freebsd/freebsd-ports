@@ -9,7 +9,7 @@
 PORTNAME=	argparse
 PORTVERSION=	1.0.1
 CATEGORIES=	misc
-MASTER_SITES=	http://home.pages.at/kingleo/development/
+MASTER_SITES=	http://kingleo.home.pages.at/development/cpp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for commandline parsing for shell scripts
