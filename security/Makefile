@@ -329,6 +329,7 @@
     SUBDIR += py-pycrypto
     SUBDIR += py-rijndael
     SUBDIR += py-twofish
+    SUBDIR += py-xmlsec
     SUBDIR += qca-tls
     SUBDIR += qident
     SUBDIR += qtfw
