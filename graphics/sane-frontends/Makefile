@@ -26,6 +26,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		scanadf.1 xcam.1 xscanimage.1
 
+OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off \
+		GIMP "also build xscanimage as a GIMP plug-in" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GTK1)
 USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk2
@@ -45,15 +50,7 @@ CONFIGURE_ARGS+=	--disable-gimp
 .endif
 .endif
 
-pre-everything::
-.if !defined(WITH_GIMP)
-	@${ECHO_MSG} "*** Note: xscanimage can be built with a standalone"
-	@${ECHO_MSG} "*** X scanner interface as well as a GIMP plug-in."
-	@${ECHO_MSG} "*** If you wish to do this, hit Ctrl-C now and use"
-	@${ECHO_MSG} "*** \"WITH_GIMP=yes\""
-.endif
-
 post-install:
 	@${SED} 's:/usr/local:${PREFIX}:' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
