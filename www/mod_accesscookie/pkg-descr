@@ -1,0 +1,5 @@
+This module restricts access in the same way as an 'allow from'
+does (it is derived form this module :), by checking for the exinstence of
+a cookie. If a cookie is present it compares it to cookies found in a 
+mySQL database. If it can find a equivalent cookie there, access is 
+granted, else access is denied.

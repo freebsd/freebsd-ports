@@ -199,6 +199,7 @@
     SUBDIR += mnogosearch
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
+    SUBDIR += mod_accesscookie
     SUBDIR += mod_accounting
     SUBDIR += mod_auth_any
     SUBDIR += mod_auth_cookie_mysql
