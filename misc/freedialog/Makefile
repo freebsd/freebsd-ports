@@ -1,6 +1,6 @@
 # New ports collection makefile for:	freedialog
 # Date created:		30 October 1999
-# Whom:			James Howard <howardj@wam.umd.edu>
+# Whom:			James Howard <ports@vocito.com>
 #
 # $FreeBSD$
 #
@@ -8,14 +8,13 @@
 PORTNAME=	freedialog
 PORTVERSION=	0.3
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/dialog/ \
-		http://www.wam.umd.edu/~howardjp/software/dialog/ \
-		ftp://dragon.ham.muohio.edu/pub/howardjp/software/dialog/
+MASTER_SITES=	http://www.vocito.com/downloads/software/dialog/ \
+		ftp://ftp.vocito.com/pub/vocito.com/software/dialog/
 DISTNAME=	dialog-${PORTVERSION}
 
-MAINTAINER=	howardjp@wam.umd.edu
+MAINTAINER=	ports@vocito.com
 
-BUILD_DEPENDS=	${PREFIX}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty
+BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty
 
 MAN1=	dialog.1
 
