@@ -12,7 +12,7 @@
     SUBDIR += acroread4
     SUBDIR += afm
     SUBDIR += amspsfnt
-    SUBDIR += apsfilter6
+    SUBDIR += apsfilter
     SUBDIR += asprint
     SUBDIR += auctex
     SUBDIR += bibcard
