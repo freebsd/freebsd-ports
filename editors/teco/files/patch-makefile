@@ -1,0 +1,26 @@
+--- src/makefile.orig	Fri May 21 18:26:06 2004
++++ src/makefile	Tue Feb 15 03:20:32 2005
+@@ -23,11 +23,11 @@
+ # COMPILE.c macro so it doesn't stick in the -target option, which gcc
+ # doesn't understand.
+ 
+-CC= gcc
+ #CFLAGS= ${OSVERS} ${DEBG} ${CCHEK} -O -Wall -Wshadow -Wpointer-arith -Wcast-qual -DLINUX
+-CFLAGS= ${OSVERS} ${DEBG} ${CCHEK} -O  -DLINUX
++CFLAGS+= -DLINUX
+ #TERMOBJS = -ltermcap
+-COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) -c -g
++COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) -c
++LINK.c = $(CC) $(LDFLAGS)
+ 
+ #############################################################################
+ 
+@@ -56,7 +56,7 @@
+ tecoc.o: tecoc.c zport.h tecoc.h deferr.h dchars.h chmacs.h
+ 
+ clpars.h: genclp clpars.tec
+-	genclp
++	./genclp
+ 
+ genclp: genclp.o
+ 	${LINK.c} -o $@ genclp.o

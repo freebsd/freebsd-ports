@@ -1,0 +1,13 @@
+=============================================================================
+
+	Teco takes a first argument of mung, teco or make to control its
+operating mode. Also the name of the executable is tested to provide this
+first argument. The mapping is:
+	teco	 - tecoc teco
+	Make	 - tecoc make
+	mung	 - tecoc mung
+	inspect  - tecoc teco -inspect
+
+You can create symlinks for this to work.
+
+=============================================================================

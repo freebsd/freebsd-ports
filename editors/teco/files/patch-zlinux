@@ -1,0 +1,32 @@
+--- src/zlinux.c.orig	Tue Feb 15 20:15:29 2005
++++ src/zlinux.c	Tue Feb 15 20:22:42 2005
+@@ -10,7 +10,6 @@
+ 
+ #include <sys/types.h>		/* needed before sys/param.h is included */
+ #include <errno.h>		/* define errno */
+-#include <malloc.h>		/* malloc() and realloc() */
+ #include <signal.h>		/* to catch ^C and ^Z signals */
+ #include <stdio.h>		/* define stdin */
+ #include <string.h>		/* strncpy(), strlen(), etc. */
+@@ -50,8 +49,6 @@
+ 
+ static int vernum();		/* see bottom of this file */
+ 
+-extern	int sys_nerr;		/* number of system error messages */
+-
+ static	int SupGotCtC = 0;
+ 
+ static glob_t pglob;
+@@ -1057,9 +1054,9 @@
+  * execute imbedded command line-parsing macro directly from clpars[]
+  */
+ 
+-	CStBeg = clpars;		/* command string start */
+-	CBfPtr = clpars;		/* command string start */
+-	CStEnd = clpars + CLPARS_LEN;		/* command string end */
++	CStBeg = (charptr)clpars;		/* command string start */
++	CBfPtr = (charptr)clpars;		/* command string start */
++	CStEnd = (charptr)((unsigned int)clpars + CLPARS_LEN);		/* command string end */
+ 	EStTop = EStBot;			/* clear expression stack */
+ 	ExeCSt();				/* execute command string */
+ 
