@@ -23,7 +23,8 @@ MOZILLA=	mozilla-gtk1
 HEADERS_SUFX=	-gtk1
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs gnometarget
+USE_GNOME=	gnomeprefix intlhack gnomehack bonobo libglade gnomevfs \
+		gnometarget
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LIBTOOL_VER=13
