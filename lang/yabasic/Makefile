@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yabasic
-PORTVERSION=	2.744
+PORTVERSION=	2.751
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
 
@@ -26,6 +26,9 @@ PLIST_FILES=	bin/yabasic
 post-patch:
 	@${REINPLACE_CMD} -e "s|= -DUNIX|= @X_CFLAGS@ -DUNIX|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g" ${WRKSRC}/bison.c
+
+post-build test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 post-install:
 .if !defined(NOPORTDOCS)
