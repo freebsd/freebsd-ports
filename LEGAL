@@ -277,6 +277,7 @@ su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 swing11.tar.Z		ports/java/jfc		Don't distribute without
 						value-added application.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
+tinker-*		ports/biology/tinker	Distribution is prohibited
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 tkman-2.*		ports/misc/tkman	Don't sell for profit.
 tuc-*			ports/converters/tuc	Author does not allow
