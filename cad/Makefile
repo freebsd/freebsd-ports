@@ -4,6 +4,7 @@
     SUBDIR += atlc
     SUBDIR += cascade
     SUBDIR += chipmunk
+    SUBDIR += chipvault
     SUBDIR += cider
     SUBDIR += electric
     SUBDIR += felt
