@@ -3,7 +3,7 @@
 # Date created:		16 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/21 15:35:53 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/05/24 12:16:07 kuriyama Exp $
 #
 
 DISTNAME=	xml4j_2_0_9
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	_tar.gz
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
 RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/lang/jdk \
-		${PREFIX}/${JFCSUBDIR}/swing.jar:${PORTSDIR}/devel/jfc
+		${PREFIX}/${JFCSUBDIR}/swing.jar:${PORTSDIR}/lang/jfc
 
 RESTRICTED=	"License prohibites distribute."
 NO_BUILD=	YES
