@@ -7,7 +7,7 @@
 
 PORTNAME=	tclGetOpts
 PORTVERSION=	1.0
-CATEGORIES=	devel tcl76 tcl80 tcl82
+CATEGORIES=	devel tcl80 tcl82
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/ \
 		http://www.neosoft.com/tcl/ftparchive/alcatel/code/
 DISTNAME=	${PORTNAME}
