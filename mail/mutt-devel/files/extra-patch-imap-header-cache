@@ -871,3 +871,7 @@ diff -ruN old/imap/imap_headercache.h work/mutt-1.5.5.1/imap/imap_headercache.h
 +
 +#endif
 +
+--- PATCHES.orig    Tue Nov  6 19:59:33 2001
++++ PATCHES     Tue Nov  6 19:59:42 2001
+@@ -1,0 +1 @@
++imap-header-cache.1
