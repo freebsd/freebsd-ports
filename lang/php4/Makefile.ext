@@ -329,7 +329,10 @@ CONFIGURE_ARGS+=--enable-tokenizer
 .endif
 
 .if ${PHP_MODNAME} == "wddx"
-CONFIGURE_ARGS+=--enable-wddx
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
+
+CONFIGURE_ARGS+=--enable-wddx \
+		--with-expat-dir=${LOCALBASE}
 
 USE_PHP=	xml session
 USE_PHP_BUILD=	yes
