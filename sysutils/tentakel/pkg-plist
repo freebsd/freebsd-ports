@@ -1,1 +1,19 @@
 bin/tentakel
+%%PYTHON_SITELIBDIR%%/lekatnet/__init__.py
+%%PYTHON_SITELIBDIR%%/lekatnet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lekatnet/config.py
+%%PYTHON_SITELIBDIR%%/lekatnet/config.pyc
+%%PYTHON_SITELIBDIR%%/lekatnet/error.py
+%%PYTHON_SITELIBDIR%%/lekatnet/error.pyc
+%%PYTHON_SITELIBDIR%%/lekatnet/remote.py
+%%PYTHON_SITELIBDIR%%/lekatnet/remote.pyc
+%%PYTHON_SITELIBDIR%%/lekatnet/shell.py
+%%PYTHON_SITELIBDIR%%/lekatnet/shell.pyc
+%%PYTHON_SITELIBDIR%%/lekatnet/tpg.py
+%%PYTHON_SITELIBDIR%%/lekatnet/tpg.pyc
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/tentakel.1.html
+%%DOCSDIR%%/tentakel.conf.example
+@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/lekatnet
