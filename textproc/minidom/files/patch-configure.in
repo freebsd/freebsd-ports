@@ -1,0 +1,19 @@
+--- configure.in.orig	Sun May  6 20:34:59 2001
++++ configure.in	Tue Aug 14 01:09:25 2001
+@@ -27,7 +27,7 @@
+ AC_PROG_RANLIB
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(glib, g_malloc,
++AC_CHECK_LIB(glib12, g_malloc,
+ 	[
+ 		CFLAGS="$CFLAGS `glib-config --cflags`"
+ 		CXXFLAGS="$CXXFLAGS `glib-config --cflags`"
+@@ -38,7 +38,6 @@
+ )
+ 
+ AC_CHECK_PROG(XML_CONFIG, xml2-config, xml2-config)
+-AC_CHECK_PROG(XML_CONFIG, xml-config, xml-config, no)
+ AC_SUBST(XML_CONFIG)
+ 
+ if test $XML_CONFIG = "no"; then
