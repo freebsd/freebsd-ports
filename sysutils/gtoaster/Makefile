@@ -8,6 +8,7 @@
 PORTNAME=	gtoaster
 PORTVERSION=	1.0.Beta6
 PORTEPOCH=	1
+PORTCOMMENT=	Graphical cd cooking interface
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gnometoaster.rulez.org/archive/
 DISTNAME=	${PORTNAME}1.0Beta6
