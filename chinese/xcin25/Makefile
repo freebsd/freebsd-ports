@@ -3,7 +3,7 @@
 # Date created:		Nov 28 ,1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.6 1998/03/09 07:07:17 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/08/05 09:30:47 asami Exp $
 #
 
 DISTNAME=       xcin-2.3.02
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.freebsd.org/~vanilla/ \
 
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/chinese/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
