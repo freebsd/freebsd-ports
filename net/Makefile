@@ -199,6 +199,7 @@
     SUBDIR += grdesktop
     SUBDIR += gsk
     SUBDIR += gspoof
+    SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gtic
     SUBDIR += gtk-gnutella
     SUBDIR += gtkhx
