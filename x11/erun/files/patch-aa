@@ -1,0 +1,30 @@
+--- Makefile.orig	Tue Dec 14 11:14:20 1999
++++ Makefile	Sun Jun 18 01:38:17 2000
+@@ -1,12 +1,17 @@
+-CFLAGS = -O3 -g
+-LINKFLAGS = -lepplet
++CFLAGS ?= -O3 -g
++LINKFLAGS = -lepplet -L/usr/X11R6/lib
++INCLUDEDIRS = -I/usr/X11R6/include
+ 
+-CC = gcc
++CFLAGS += $(INCLUDEDIRS)
++
++CC ?= gcc
+ 
+ EXEC_NAME = E-Run.epplet
+ EXEC_OBJECTS = E-Run.o
+ 
+-INSTALL_DIR = /usr/local/bin
++PREFIX ?= /usr/local
++INSTALL_DIR = ${PREFIX}/bin
++INSTALL_PROGRAM ?= install -c -m 755
+ 
+ all: $(EXEC_OBJECTS)
+ 	$(CC) -o $(EXEC_NAME) $(EXEC_OBJECTS) $(LINKFLAGS)
+@@ -15,4 +20,4 @@
+ 	rm -f $(EXEC_OBJECTS) $(EXEC_NAME) *~
+ 
+ install:
+-	install -o root -m 0555 $(EXEC_NAME) $(INSTALL_DIR)
++	$(INSTALL_PROGRAM) $(EXEC_NAME) $(INSTALL_DIR)

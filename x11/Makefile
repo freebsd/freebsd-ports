@@ -19,6 +19,7 @@
     SUBDIR += ebuttons
     SUBDIR += efancylauncher
     SUBDIR += emu
+    SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += eweather
     SUBDIR += fbsd-icons
