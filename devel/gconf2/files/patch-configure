@@ -1,32 +1,14 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Aug  2 20:52:33 2001
-+++ configure	Thu Aug  2 20:53:12 2001
-@@ -6497,14 +6497,14 @@
- BDB_LIBS=
+--- configure.orig	Wed Nov  7 13:24:42 2001
++++ configure	Wed Nov  7 13:25:30 2001
+@@ -6627,7 +6627,7 @@
  BDB_CFLAGS=
  
--echo $ac_n "checking for db_env_create in -ldb-3""... $ac_c" 1>&6
--echo "configure:6502: checking for db_env_create in -ldb-3" >&5
-+echo $ac_n "checking for db_env_create in -ldb3""... $ac_c" 1>&6
-+echo "configure:6502: checking for db_env_create in -ldb3" >&5
- ac_lib_var=`echo db-3'_'db_env_create | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-ldb-3  $LIBS"
-+LIBS="-ldb3  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 6510 "configure"
- #include "confdefs.h"
-@@ -6532,7 +6532,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  BDB_LIBS=-ldb-3
-+  BDB_LIBS=-ldb3
- else
-   echo "$ac_t""no" 1>&6
- fi
+ 
+-for dblib in db-3.3 db-3.2 db-3.1 db-3; do
++for dblib in db-3.3 db-3.2 db-3.1 db-3 db3; do
+   echo $ac_n "checking for db_env_create in -l$dblib""... $ac_c" 1>&6
+ echo "configure:6633: checking for db_env_create in -l$dblib" >&5
+ ac_lib_var=`echo $dblib'_'db_env_create | sed 'y%./+-%__p_%'`
