@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netspeed_applet
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.10
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.wh-hms.uni-ulm.de/~mfcn/shared/netspeed/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
