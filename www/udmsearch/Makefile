@@ -37,8 +37,7 @@ CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 
 .else
 # default to mysql
-
-LIB_DEPENDS=		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
 .if !defined(WITH_MYSQL)

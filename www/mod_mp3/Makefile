@@ -27,7 +27,7 @@ APACHE_PORT?=	${PORTSDIR}/www/apache13
 DOCS=		ChangeLog README TODO faq.html
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client 
+USE_MYSQL=		YES
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 

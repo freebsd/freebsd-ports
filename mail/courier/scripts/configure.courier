@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.8 2003-08-15 00:49:28 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.9 2003-08-28 12:57:51 edwin Exp $
 
 [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
 
@@ -225,7 +225,7 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 				exit 1
 			else
-				echo "LIB_DEPENDS+=	mysqlclient.12:\${PORTSDIR}/databases/mysql40-client"
+				echo "USE_MYSQL=	YES"
 				WITH_MYSQL="--with-authmysql"
 				WITH_MYSQL="${WITH_MYSQL} --with-mysql-libs=\${LOCALBASE}/lib/mysql"
 				WITH_MYSQL="${WITH_MYSQL} --with-mysql-includes=\${LOCALBASE}/include/mysql"
