@@ -1,5 +1,5 @@
---- TclPrimGhc.hs.orig	Tue Oct 21 17:29:21 2003
-+++ TclPrimGhc.hs	Tue Oct 21 17:29:43 2003
+--- TclPrimGhc.hs.orig	Fri Feb 23 13:23:23 2001
++++ TclPrimGhc.hs	Thu Oct 23 09:11:54 2003
 @@ -42,7 +42,7 @@
   writeElt pstr 0 str
   return pstr
