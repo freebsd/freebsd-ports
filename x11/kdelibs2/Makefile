@@ -28,6 +28,9 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
+FORBIDDEN=	Security advisory on serious SSL bug. No fix is planned. \
+		Ask not for whom the bell tolls, it tolls for thee.
+
 USE_OPENSSL=	yes
 USE_QT_VER=	2
 SOMAJOR=	4
