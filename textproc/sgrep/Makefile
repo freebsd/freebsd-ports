@@ -7,11 +7,14 @@
 
 PORTNAME=	sgrep
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A `grep' for structured text like SGML and HTML
+
+CONFLICT=	sgrep2
 
 MAN1=		sgrep.1
 

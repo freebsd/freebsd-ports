@@ -1,2 +1,3 @@
 bin/sgrep
-share/sgreprc
+%%DATADIR%%/sample.sgreprc
+@dirrm %%DATADIR%%
