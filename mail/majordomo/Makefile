@@ -3,15 +3,14 @@
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1996/07/20 01:39:21 asami Exp $
+# $Id: Makefile,v 1.2 1996/10/26 18:21:06 jfitz Exp $
 #
 
 DISTNAME=	majordomo-1.94
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/ \
 		ftp://ftp.sgi.com/other/majordomo/ \
 		ftp://ftp-europe.sgi.com/other/majordomo/
-
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	jfitz@FreeBSD.ORG
@@ -19,7 +18,6 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 # Needs to create a user and group
 IS_INTERACTIVE= yes
 NO_PACKAGE=	yes
-
 ALL_TARGET=	wrapper
 INSTALL_TARGET=	install install-wrapper
 

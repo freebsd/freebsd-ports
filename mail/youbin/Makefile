@@ -3,11 +3,11 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1996/09/18 19:20:24 max Exp $
+# $Id: Makefile,v 1.6 1996/10/09 12:50:54 max Exp $
 #
 
 DISTNAME=	youbin-2.13
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://nuis.nuie.nagoya-u.ac.jp/info/nagoya-u/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/net/
 

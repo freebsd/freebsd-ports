@@ -3,12 +3,12 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/04/23 12:47:03 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/06 00:23:00 torstenb Exp $
 #
 
 DISTNAME=	mm2.7
 PKGNAME=	mm-2.7
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/
 EXTRACT_SUFX=	.tar.Z
 

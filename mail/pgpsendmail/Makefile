@@ -3,12 +3,12 @@
 # Date created:         20 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1995/07/13 00:55:38 asami Exp $
+# $Id: Makefile,v 1.8 1995/09/23 17:13:54 ache Exp $
 #
 
 DISTNAME=       PGPsendmail-v1.4
 PKGNAME=	pgpsendmail-1.4
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 
 MAINTAINER=     ache@FreeBSD.ORG

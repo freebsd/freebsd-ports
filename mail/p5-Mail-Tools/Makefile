@@ -3,12 +3,12 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:58:34 jfitz Exp $
+#   $Id: Makefile,v 1.1.1.1 1996/10/24 13:43:47 jfitz Exp $
 #
 
 DISTNAME=	MailTools-1.06
 PKGNAME=	p5-Mail-Tools-1.06
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/Mail/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/Mail/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/modules/by-module/Mail/ \
@@ -21,7 +21,6 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${PREFIX}/lib/perl5/site_perl/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 do-configure:

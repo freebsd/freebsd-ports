@@ -4,11 +4,11 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.30 1996/09/21 12:20:13 ache Exp $
+# $Id: Makefile,v 1.31 1996/10/03 19:07:54 ache Exp $
 #
 
 DISTNAME=       elm-2.4ME+28
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \
 		ftp://ftp.ibp.fr/pub/unix/mail/elm-me/
