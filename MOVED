@@ -976,3 +976,4 @@ mail/ksig|misc/ksig|2004-03-09|ksig is now a part of the kdeaddons ports
 mail/exim-old|mail/exim|2004-03-09|No security maintenance from author, successor is exim
 sysutils/xwatch||2004-03-09|obsolete-distfile deleted by author
 textproc/dico|french/dico|2004-03-14|better category
+x11-fonts/Xft|x11-fonts/libXft|2004-03-16|port renamed
