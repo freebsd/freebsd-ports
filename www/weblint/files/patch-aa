@@ -1,0 +1,51 @@
+*** Makefile	Fri Jul 28 01:08:16 1995
+--- Makefile	Sat Oct 14 16:07:49 1995
+***************
+*** 3,10 ****
+  #
+  VERSION	= 1.011
+  
+! BINDIR	= /usr/local/bin
+! MANDIR	= /usr/local/man/man1
+  PSROFF	= groff -Tps
+  PSVIEW	= ghostview
+  RM	= /bin/rm -f
+--- 3,12 ----
+  #
+  VERSION	= 1.011
+  
+! PREFIX ?= /usr/local
+! BINDIR	= ${PREFIX}/bin
+! MANDIR	= ${PREFIX}/man/man1
+! LIBDIR  = ${PREFIX}/lib
+  PSROFF	= groff -Tps
+  PSVIEW	= ghostview
+  RM	= /bin/rm -f
+***************
+*** 14,26 ****
+  TARFILE	= $(PROGRAM)-$(VERSION).tar
+  TGZ	= $(TARFILE).gz
+  
+! all: $(PROGRAM) $(PSFILE)
+  
+  install: $(PROGRAM)
+! 	-cp $(PROGRAM) $(BINDIR)
+! 	-chmod 755 $(BINDIR)/$(PROGRAM)
+! 	-cp $(PROGRAM).1 $(MANDIR)
+! 	-chmod 644 $(MANDIR)/$(PROGRAM).1
+  
+  test:
+  	@./test.pl
+--- 16,27 ----
+  TARFILE	= $(PROGRAM)-$(VERSION).tar
+  TGZ	= $(TARFILE).gz
+  
+! all: $(PROGRAM)
+  
+  install: $(PROGRAM)
+! 	install -c -m 755 -o bin -g bin $(PROGRAM)   $(BINDIR)
+! 	install -c -m 644 -o bin -g bin $(PROGRAM).1 $(MANDIR)
+! 	install -c -m 644 -o bin -g bin weblintrc    $(LIBDIR)
+  
+  test:
+  	@./test.pl
