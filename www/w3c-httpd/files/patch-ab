@@ -1,0 +1,19 @@
+*** Daemon/Implementation/CommonMakefile.DIST	Sat Oct 29 12:36:04 1994
+--- Daemon/Implementation/CommonMakefile	Sat Oct 29 12:36:21 1994
+***************
+*** 35,41 ****
+  #  If this env var is set to something else Some makes will use that instead
+  SHELL = /bin/sh
+  #  Rule file to be used by target daemon
+! RULE_FILE = "/etc/httpd.conf"
+  
+  CMN = $(WWW)/Library/Implementation
+  INC = $(WWW)/Library/Implementation
+--- 35,41 ----
+  #  If this env var is set to something else Some makes will use that instead
+  SHELL = /bin/sh
+  #  Rule file to be used by target daemon
+! RULE_FILE = "/usr/local/etc/httpd.conf"
+  
+  CMN = $(WWW)/Library/Implementation
+  INC = $(WWW)/Library/Implementation
