@@ -17,7 +17,7 @@ DISTFILES=	mupen64-0.3.tar.bz2:mupen mupen64linplugins1.tar.bz2:plugins
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	A Nintendo 64 emulator (Linux version)
 
-RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base-8 \
+RUN_DEPENDS=	${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8 \
 		${LINUXBASE}/usr/X11R6/lib/libXi.so.6:${PORTSDIR}/x11/linux-XFree86-libs \
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
