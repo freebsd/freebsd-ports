@@ -1,0 +1,56 @@
+Index: Include/abstract.h
+===================================================================
+RCS file: /home/python/cvs/python/dist/src/Include/abstract.h,v
+retrieving revision 2.42
+retrieving revision 2.43
+diff -u -r2.42 -r2.43
+--- Include/abstract.h	28 Nov 2001 16:20:07 -0000	2.42
++++ Include/abstract.h	5 Jan 2002 10:50:30 -0000	2.43
+@@ -445,6 +445,14 @@
+ 	 statement: o[key]=v.
+        */
+ 
++     DL_IMPORT(int) PyObject_DelItemString(PyObject *o, char *key);
++
++       /*
++         Remove the mapping for object, key, from the object *o.
++         Returns -1 on failure.  This is equivalent to
++         the Python statement: del o[key].
++       */
++
+      DL_IMPORT(int) PyObject_DelItem(PyObject *o, PyObject *key);
+ 
+        /*
+Index: Objects/abstract.c
+===================================================================
+RCS file: /home/python/cvs/python/dist/src/Objects/abstract.c,v
+retrieving revision 2.93
+retrieving revision 2.94
+diff -u -r2.93 -r2.94
+--- Objects/abstract.c	24 Nov 2001 18:24:47 -0000	2.93
++++ Objects/abstract.c	5 Jan 2002 10:50:30 -0000	2.94
+@@ -174,6 +174,24 @@
+ 	return -1;
+ }
+ 
++int
++PyObject_DelItemString(PyObject *o, char *key)
++{
++	PyObject *okey;
++	int ret;
++
++	if (o == NULL || key == NULL) {
++		null_error();
++		return -1;
++	}
++	okey = PyString_FromString(key);
++	if (okey == NULL)
++		return -1;
++	ret = PyObject_DelItem(o, okey);
++	Py_DECREF(okey);
++	return ret;
++}
++
+ int PyObject_AsCharBuffer(PyObject *obj,
+ 			  const char **buffer,
+ 			  int *buffer_len)
