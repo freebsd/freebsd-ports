@@ -119,3 +119,14 @@
  libdir = @Plugins_loader_dir@
  LIBS = 
  
+--- plugins/loader/p2/Makefile.in.orig	Mon May 29 04:36:40 2000
++++ plugins/loader/p2/Makefile.in	Wed Jun  7 23:41:10 2000
+@@ -90,7 +90,7 @@
+ saver_dirs = @saver_dirs@
+ 
+ lib_LTLIBRARIES = loader_p2.la
+-loader_p2_la_LDFLAGS = -module
++loader_p2_la_LDFLAGS = -module -version-info 1:0:0
+ libdir = @Plugins_loader_dir@
+ LIBS = 
+ 

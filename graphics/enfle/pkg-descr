@@ -1,16 +1,19 @@
     This program aims to view many variously formated pictures
 easily. So far, it can treat below formats:
 
-    - Archiver: BZ2 DRI GZ LIBARC (requires libarc) MISC PAK TAR
-    - Loader: ALD BMP GRP JPEG LFG MAG PIC PNG PNM XMB XPM
-    - Saver: JPEG PMS PNG
-   
-    It has been implemented plugin mechanism so that each user
+  - archivers: bz2 exe dri gz libarc(*) misc pak tar
+  - loaders: ald bmp grp jpeg lfg mag pic p2 png pms pnm xmb xpm
+  - savers: jpeg pms png
+
+    (*) libarc plug-in requires libarc library, so default is no.
+
+    It has been implemented plug-in mechanism so that each user
 can choose each format support linked in main program or separated
 as plugin. Moreover, you can make your own plugins to extend
 supported formats.
 
 WWW: http://enfle.fennel.org/
+WWW: http://www3.big.or.jp/~sian/linux/products/enfle/
 
 -- 
-Yuuki SAWADA <yuuki@goldmoon.org>
+Yuki Sawada <samy@goldmoon.org>
