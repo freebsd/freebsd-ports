@@ -46,7 +46,7 @@ post-install:
 .endfor
 .endfor
 .endif
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message >${PKGMESSAGE}
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${.CURDIR}/pkg-message >${PKGMESSAGE}
 .ifndef(BATCH)
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
