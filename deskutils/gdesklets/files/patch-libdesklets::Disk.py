@@ -1,14 +1,15 @@
---- libdesklets/Disk.py.orig	Mon Feb 23 10:52:50 2004
-+++ libdesklets/Disk.py	Mon Feb 23 10:54:31 2004
-@@ -1,6 +1,6 @@
+--- libdesklets/Disk.py.orig	Fri Feb 20 14:29:07 2004
++++ libdesklets/Disk.py	Fri Apr 30 15:50:42 2004
+@@ -1,6 +1,7 @@
  import glibtop
  import polling
 -
 +import os
++import statvfs
  
  class Disk:
  
-@@ -21,14 +21,19 @@
+@@ -21,14 +22,19 @@
      #
      def __poll_partitions(self):
  
@@ -35,3 +36,32 @@
  
          return partitions
              
+@@ -43,15 +49,19 @@
+     #:/function
+     #
+     def __poll_size(self, partition):
+-
+-        blocks, bfree, bavail, files, ffree = glibtop.get_fsusage(partition)
+-        free = float(bfree * 512)
+-        total = float(blocks * 512)
+-        used = total - free
+-
+-        return (total, used)#, free)
+-
+-
++                                                                                                                                
++          try:
++              statvfs_data = os.statvfs(partition)
++              free = float(statvfs_data[statvfs.F_BFREE] * statvfs_data[statvfs.F_FRSIZE])
++              total = float(statvfs_data[statvfs.F_BLOCKS] * statvfs_data[statvfs.F_FRSIZE])
++          except:
++              blocks, bfree, bavail, files, ffree = glibtop.get_fsusage(partition)
++              free = float(bfree * 512)
++              total = float(blocks * 512)
++                                                                                                                                
++          used = total - free
++                                                                                                                                
++          return (total, used)#, free)
+ 
+     #
+     #:function get_fs | partition | Returns the filesystem for the given
