@@ -24,7 +24,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.4+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
@@ -42,6 +42,19 @@ PLIST_DIRS=	%%DATADIR%%
 PORTDOCS=	LICENSE.txt api index.html jaxup_files xupdate-wd.html xupdate-wd_files
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if !defined(NOPORTDOCS)
+JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.[4-5] -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+.if ${JDK_API} != ""
+MAKE_ARGS+=	-Dj2se.apidocs="${JDK_API}"
+.endif
+JAXEN_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jaxen -maxdepth 1 -name javadoc -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
+.if ${JAXEN_API} != ""
+MAKE_ARGS+=	-Djaxen.apidocs="${JAXEN_API}"
+.endif
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/build.xml ${WRKSRC}/
 	@${CP} ${FILESDIR}/DOMXUpdater.java ${WRKDIR}/
@@ -55,7 +68,7 @@ post-build:
 	cd ${WRKDIR} && ${JAR} -cmf MANIFEST jaxup-xupdater.jar DOMXUpdater.class
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/build/lib/${PORTNAME}.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
@@ -74,4 +87,4 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
