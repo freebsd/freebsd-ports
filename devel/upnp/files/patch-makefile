@@ -1,0 +1,45 @@
+--- makefile.orig	Thu Aug 16 02:20:11 2001
++++ makefile	Sat Aug  3 17:22:35 2002
+@@ -29,11 +29,11 @@
+ ##
+ ###########################################################################
+ 
+-MAKE = make
++MAKE = gmake
+ UPNP = bin/libupnp.so
+ SUBDIRS = src
+ 
+-VERSION=1.0.4
++VERSION=1
+ 
+ ifeq ($(DEBUG),1)
+ STRIPU =
+@@ -102,17 +102,17 @@
+ 	@if [ -f "doc/upnpsdk.aux" ]; then rm doc/upnpsdk.aux; fi
+ 
+ install: upnp
+-	@install -d /usr/include/upnp
+-	@install -d /usr/include/upnp/upnpdom
+-	@install -d /usr/include/upnp/tools
+-	@install bin/libupnp.so /usr/lib/libupnp.so.$(VERSION)
+-	ln -s /usr/lib/libupnp.so.$(VERSION) /usr/lib/libupnp.so
+-	@install inc/*.h /usr/include/upnp
+-	@install inc/upnpdom/*.h /usr/include/upnp/upnpdom
+-	@install inc/tools/*.h /usr/include/upnp/tools
++	@install -d ${PREFIX}/include/upnp
++	@install -d ${PREFIX}/include/upnp/upnpdom
++	@install -d ${PREFIX}/include/upnp/tools
++	@install bin/libupnp.so ${PREFIX}/lib/libupnp.so.$(VERSION)
++	ln -fs ${PREFIX}/lib/libupnp.so.$(VERSION) ${PREFIX}/lib/libupnp.so
++	@install inc/*.h ${PREFIX}/include/upnp
++	@install inc/upnpdom/*.h ${PREFIX}/include/upnp/upnpdom
++	@install inc/tools/*.h ${PREFIX}/include/upnp/tools
+ 
+ uninstall:
+-	@if [ -d /usr/include/upnp ]; then rm -rf /usr/include/upnp; fi
+-	@if [ -f /usr/lib/libupnp.so ]; then rm /usr/lib/libupnp.so; fi
+-	@if [ -f /usr/lib/libupnp.so.$(VERSION) ]; then rm /usr/lib/libupnp.so.$(VERSION); fi
++	@if [ -d ${PREFIX}/include/upnp ]; then rm -rf ${PREFIX}/include/upnp; fi
++	@if [ -f ${PREFIX}/lib/libupnp.so ]; then rm ${PREFIX}/lib/libupnp.so; fi
++	@if [ -f ${PREFIX}/lib/libupnp.so.$(VERSION) ]; then rm ${PREFIX}/lib/libupnp.so.$(VERSION); fi
+ 	

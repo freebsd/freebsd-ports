@@ -1,0 +1,22 @@
+--- src/api/makefile.orig	Fri Jun 15 08:21:33 2001
++++ src/api/makefile	Sat Aug  3 16:29:38 2002
+@@ -34,15 +34,15 @@
+ CC = gcc
+ CFLAGS = -Wall -fpic $(DEFS) 
+ C2FLAGS = -Wall $(DEFS) -shared -Wl,-soname,libupnp.so
+-INCLUDES = -I ../inc -I ../../inc -I ../../inc/upnpdom  -I ../inc/tools
+-LIBS = -lpthread -luuid
++INCLUDES = -I ../inc -I ../../inc -I ../../inc/upnpdom  -I ../inc/tools -I $(PREFIX)/include
++LIBS = ${PTHREAD_LIBS} -luuid -L$(PREFIX)/lib
+ 
+ ifeq ($(DEBUG),1)
+ CFLAGS += -g -O -DDEBUG
+ C2FLAGS += -g -O -DDEBUG
+ else
+-CFLAGS += -O2
+-C2FLAGS += -O2
++CFLAGS += -g -ggdb
++C2FLAGS += -g -ggdb
+ endif
+ 
+ objects = upnpapi.o config.o ../lib/ssdp.o ../lib/soap.o \
