@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/INSTALL.tmpl,v 1.5 2005-02-13 17:35:35 leeym Exp $
+#	$FreeBSD: /tmp/pcvs/ports/security/amavisd-new/files/Attic/INSTALL.tmpl,v 1.6 2005-02-14 03:51:45 leeym Exp $
 #
 
 USER=%%AMAVISUSER%%
@@ -13,7 +13,7 @@ if [ "$2" = "PRE-INSTALL" ]; then
     if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
 	echo "You already have a group \"${GROUP}\", so I will use it."
     else
-	if /usr/sbin/pw groupadd ${GROUP} -h -g 110 -
+	if /usr/sbin/pw groupadd ${GROUP} -h - -g 110
 	then
 	    echo "Added group \"${GROUP}\"."
 	else
