@@ -45,6 +45,7 @@ libexec/cups/filter/imagetoraster
 libexec/cups/filter/pdftops
 libexec/cups/filter/pstops
 libexec/cups/filter/pstoraster
+libexec/cups/filter/rastertodymo
 libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
 libexec/cups/filter/texttops
@@ -132,13 +133,17 @@ share/cups/fonts/Utopia-Regular
 share/cups/fonts/ZapfChancery-MediumItalic
 share/cups/fonts/ZapfDingbats
 share/cups/model/deskjet.ppd
+share/cups/model/deskjet2.ppd
+share/cups/model/dymo.ppd
 share/cups/model/epson24.ppd
 share/cups/model/epson9.ppd
 share/cups/model/laserjet.ppd
 share/cups/model/okidat24.ppd
 share/cups/model/okidata9.ppd
 share/cups/model/stcolor.ppd
+share/cups/model/stcolor2.ppd
 share/cups/model/stphoto.ppd
+share/cups/model/stphoto2.ppd
 share/cups/pstoraster/Fontmap
 share/cups/pstoraster/gs_btokn.ps
 share/cups/pstoraster/gs_ccfnt.ps
@@ -292,6 +297,14 @@ share/locale/en/cups_en
 share/locale/es/cups_es
 share/locale/fr/cups_fr
 share/locale/it/cups_it
+@exec mkdir -p /var/log/cups
+@dirrm /var/log/cups
+@exec mkdir -p /var/spool/cups/tmp
+@dirrm /var/spool/cups/tmp
+@dirrm /var/spool/cups
+@exec mkdir -p %D/etc/cups/certs
+@exec mkdir -p %D/etc/cups/interfaces
+@exec mkdir -p %D/etc/cups/ppd
 @dirrm etc/cups/certs
 @dirrm etc/cups/interfaces
 @dirrm etc/cups/ppd
@@ -319,9 +332,3 @@ share/locale/it/cups_it
 @dirrm share/locale/fr
 @dirrm share/locale/it
 @dirrm share/locale
-@dirrm var/log/cups
-@dirrm var/log
-@dirrm var/spool/cups/tmp
-@dirrm var/spool/cups
-@dirrm var/spool
-@dirrm var

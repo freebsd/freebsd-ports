@@ -14,10 +14,10 @@ MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/${VERSION}/ \
 		ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${VERSION}/
 DISTNAME=	${PORTNAME}-${VERSION}-${REVISION}-source
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	jah4007@cs.rit.edu
 
-VERSION=	1.1.6
-REVISION=	2
+VERSION=	1.1.10
+REVISION=	1
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -25,9 +25,10 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= --localstatedir=/var
 
 MAN1=		backend.1 cancel.1 filter.1 lp.1 lpoptions.1 lpq.1 \
-		lpr.1 lprm.1 lpstat.1
+		lpr.1 lprm.1 lpstat.1 lppasswd.1
 MAN5=		classes.conf.5 cupsd.conf.5 mime.convs.5 mime.types.5 \
 		printers.conf.5
 MAN8=		accept.8 cups-lpd.8 cups-polld.8 cupsd.8 disable.8 \

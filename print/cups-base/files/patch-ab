@@ -1,39 +1,45 @@
---- man/Makefile.orig	Fri Jan  5 15:56:34 2001
-+++ man/Makefile	Fri Jan  5 15:59:31 2001
-@@ -82,21 +82,21 @@
- 	$(LN) accept.8 $(MANDIR)/man8/reject.8
- 	$(RM) $(MANDIR)/man8/disable.8
- 	$(LN) enable.8 $(MANDIR)/man8/disable.8
--	-$(MKDIR) $(MANDIR)/cat1
--	-$(CHMOD) ugo+rx $(MANDIR)/cat1
--	$(INSTALL_MAN) $(CAT1) $(MANDIR)/cat1
+--- man/Makefile.orig	Sat Aug 18 10:31:11 2001
++++ man/Makefile	Sat Aug 18 10:37:49 2001
+@@ -78,24 +78,24 @@
+ 	$(LN) accept.$(MAN8EXT) $(AMANDIR)/man$(MAN8EXT)/reject.$(MAN8EXT)
+ 	$(RM) $(AMANDIR)/man$(MAN8EXT)/disable.$(MAN8EXT)
+ 	$(LN) enable.$(MAN8EXT) $(AMANDIR)/man$(MAN8EXT)/disable.$(MAN8EXT)
+-	$(INSTALL_DIR) $(MANDIR)/cat1
+-	for file in $(CAT1); do \
+-		$(INSTALL_MAN) $$file $(MANDIR)/cat1; \
+-	done
 -	$(RM) $(MANDIR)/cat1/cancel.$(CAT1EXT)
 -	$(LN) lp.$(CAT1EXT) $(MANDIR)/cat1/cancel.$(CAT1EXT)
--	-$(MKDIR) $(MANDIR)/cat5
--	-$(CHMOD) ugo+rx $(MANDIR)/cat5
--	$(INSTALL_MAN) $(CAT5) $(MANDIR)/cat5
--	-$(MKDIR) $(MANDIR)/cat8
--	-$(CHMOD) ugo+rx $(MANDIR)/cat8
--	$(INSTALL_MAN) $(CAT8) $(MANDIR)/cat8
--	$(RM) $(MANDIR)/cat8/reject.$(CAT1EXT)
--	$(LN) accept.$(CAT1EXT) $(MANDIR)/cat8/reject.$(CAT1EXT)
--	$(RM) $(MANDIR)/cat8/disable.$(CAT1EXT)
--	$(LN) enable.$(CAT1EXT) $(MANDIR)/cat8/disable.$(CAT1EXT)
-+#	-$(MKDIR) $(MANDIR)/cat1
-+#	-$(CHMOD) ugo+rx $(MANDIR)/cat1
-+#	$(INSTALL_MAN) $(CAT1) $(MANDIR)/cat1
+-	$(INSTALL_DIR) $(MANDIR)/cat5
+-	for file in $(CAT5); do \
+-		$(INSTALL_MAN) $$file $(MANDIR)/cat5; \
+-	done
+-	$(INSTALL_DIR) $(AMANDIR)/cat$(MAN8EXT)
+-	for file in $(CAT8); do \
+-		$(INSTALL_MAN) $$file $(AMANDIR)/cat$(MAN8EXT); \
+-	done
+-	$(RM) $(AMANDIR)/cat$(MAN8EXT)/reject.$(CAT8EXT)
+-	$(LN) accept.$(CAT8EXT) $(AMANDIR)/cat$(MAN8EXT)/reject.$(CAT8EXT)
+-	$(RM) $(AMANDIR)/cat$(MAN8EXT)/disable.$(CAT8EXT)
+-	$(LN) enable.$(CAT8EXT) $(AMANDIR)/cat$(MAN8EXT)/disable.$(CAT8EXT)
++#	$(INSTALL_DIR) $(MANDIR)/cat1
++#	for file in $(CAT1); do \
++#		$(INSTALL_MAN) $$file $(MANDIR)/cat1; \
++#	done
 +#	$(RM) $(MANDIR)/cat1/cancel.$(CAT1EXT)
 +#	$(LN) lp.$(CAT1EXT) $(MANDIR)/cat1/cancel.$(CAT1EXT)
-+#	-$(MKDIR) $(MANDIR)/cat5
-+#	-$(CHMOD) ugo+rx $(MANDIR)/cat5
-+#	$(INSTALL_MAN) $(CAT5) $(MANDIR)/cat5
-+#	-$(MKDIR) $(MANDIR)/cat8
-+#	-$(CHMOD) ugo+rx $(MANDIR)/cat8
-+#	$(INSTALL_MAN) $(CAT8) $(MANDIR)/cat8
-+#	$(RM) $(MANDIR)/cat8/reject.$(CAT1EXT)
-+#	$(LN) accept.$(CAT1EXT) $(MANDIR)/cat8/reject.$(CAT1EXT)
-+#	$(RM) $(MANDIR)/cat8/disable.$(CAT1EXT)
-+#	$(LN) enable.$(CAT1EXT) $(MANDIR)/cat8/disable.$(CAT1EXT)
++#	$(INSTALL_DIR) $(MANDIR)/cat5
++#	for file in $(CAT5); do \
++#		$(INSTALL_MAN) $$file $(MANDIR)/cat5; \
++#	done
++#	$(INSTALL_DIR) $(AMANDIR)/cat$(MAN8EXT)
++#	for file in $(CAT8); do \
++#		$(INSTALL_MAN) $$file $(AMANDIR)/cat$(MAN8EXT); \
++#	done
++#	$(RM) $(AMANDIR)/cat$(MAN8EXT)/reject.$(CAT8EXT)
++#	$(LN) accept.$(CAT8EXT) $(AMANDIR)/cat$(MAN8EXT)/reject.$(CAT8EXT)
++#	$(RM) $(AMANDIR)/cat$(MAN8EXT)/disable.$(CAT8EXT)
++#	$(LN) enable.$(CAT8EXT) $(AMANDIR)/cat$(MAN8EXT)/disable.$(CAT8EXT)
  
  
  #
