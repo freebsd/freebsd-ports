@@ -1,6 +1,7 @@
 bin/screen-tick
 bin/screen-uim
 bin/uim-helper-server
+bin/uim-sh
 %%GTK%%bin/uim-helper-candwin-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk
 %%GTK%%bin/uim-helper-toolbar-gtk-systray
@@ -9,6 +10,7 @@ etc/backtick-setup
 etc/newscreen-bind
 etc/screenrc-uim
 include/uim/uim-helper.h
+include/uim/uim-scm.h
 include/uim/uim.h
 %%GNOME%%libdata/bonobo/servers/GNOME_UimApplet.server
 %%GTK%%lib/gtk-2.0/2.4.0/immodules/im-uim.so
@@ -56,6 +58,7 @@ share/uim/tables/korean-hangul2.table
 share/uim/tables/korean-hangul3.table
 share/uim/tcode.scm
 share/uim/tutcode.scm
+share/uim/uim-sh.scm
 share/uim/util.scm
 share/uim/viqr.scm
 share/uim/zaurus.scm
