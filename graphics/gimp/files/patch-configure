@@ -1,5 +1,5 @@
---- configure.orig	Tue Feb  3 20:25:57 2004
-+++ configure	Thu Feb  5 02:13:22 2004
+--- configure.orig	Fri Feb 27 18:09:19 2004
++++ configure	Fri Feb 27 18:10:20 2004
 @@ -1995,8 +1995,8 @@
  
  
@@ -11,7 +11,15 @@
  
  
  
-@@ -32842,8 +32842,8 @@
+@@ -31377,6 +31377,7 @@
+ #include <gimp-print/gimp-print.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ 
+ int
+ main ()
+@@ -32842,8 +32843,8 @@
  fi
  fi;
  
