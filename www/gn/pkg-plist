@@ -5,3 +5,6 @@ etc/sgn
 etc/waisgn
 bin/mkcache
 bin/uncache
+gnroot
+@cwd ./gnroot
+@exec ../bin/mkcache -r
