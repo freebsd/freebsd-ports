@@ -1,16 +1,16 @@
 
 $FreeBSD$
 
---- builds/unix/detect.mk.orig	Sun May  5 13:57:06 2002
-+++ builds/unix/detect.mk	Fri Jun 21 15:47:35 2002
+--- builds/unix/detect.mk.orig	Fri Jun 14 11:09:25 2002
++++ builds/unix/detect.mk	Fri Jun 28 13:35:48 2002
 @@ -76,10 +76,10 @@
    ifneq ($(have_mk),)
      # we are building FT2 not in the src tree
-     unix-def.mk: $(TOP)/builds/unix/unix-def.in
--	    $(TOP)/builds/unix/configure $(CFG)
-+#	    $(TOP)/builds/unix/configure $(CFG)
+     unix-def.mk: $(TOP_DIR)/builds/unix/unix-def.in
+-	    $(TOP_DIR)/builds/unix/configure $(CFG)
++#	    $(TOP_DIR)/builds/unix/configure $(CFG)
    else
-     unix-def.mk: $(TOP)/builds/unix/unix-def.in
+     unix-def.mk: $(TOP_DIR)/builds/unix/unix-def.in
 -	    cd builds/unix; ./configure $(CFG)
 +#	    cd builds/unix; ./configure $(CFG)
    endif
