@@ -1,3 +1,4 @@
 bin/normalize
 bin/normalize-mp3
+share/locale/en_GB/LC_MESSAGES/normalize.mo
 share/locale/fr/LC_MESSAGES/normalize.mo

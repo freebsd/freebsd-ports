@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	normalize
-PORTVERSION=	0.4
+PORTVERSION=	0.5.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.columbia.edu/~cvaill/normalize/
 
