@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+#
+# $Id$
+#
+
+#use strict;
+use lib '%PREFIX%/share/htmllint';
+use lib '%PREFIX%/share/htmllint/rule';
+
+$RULEDIR = '%PREFIX%/share/htmllint/rule/';
+
+require 'htmllint.pm';
+
+exit(&htmllint::HTMLlint(@ARGV));
