@@ -16,9 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to Google's SOAP-driven Web API
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/soap/wsdlDriver.rb:${PORTSDIR}/net/ruby-soap
-
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	soap
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 

@@ -19,12 +19,10 @@ COMMENT=	A Ruby/GTK graphical log viewer for log4r
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/log4r.rb:${PORTSDIR}/sysutils/ruby-log4r \
 		${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
-		${RUBY_SITEARCHLIBDIR}/lglade.so:${PORTSDIR}/devel/ruby-libglade \
-		${RUBY_SITELIBDIR}/drb.rb:${PORTSDIR}/net/ruby-drb
-# ROMP is the alternative method to DRb.
-#		${RUBY_SITELIBDIR}/romp.rb:${PORTSDIR}/net/ruby-romp
+		${RUBY_SITEARCHLIBDIR}/lglade.so:${PORTSDIR}/devel/ruby-libglade
 
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	drb
 
 NO_BUILD=	yes
 

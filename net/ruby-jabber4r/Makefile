@@ -15,9 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to connect to an existing Jabber account
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml
-
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	rexml
 USE_RUBY_RDOC=		yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
