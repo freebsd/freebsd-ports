@@ -1,0 +1,14 @@
+--- sim/log.c.orig	Tue Oct  6 20:52:51 1992
++++ sim/log.c	Mon Nov 18 21:18:07 1996
+@@ -80,7 +80,11 @@
+   /* Add the time */
+   fprintf(l, "%d ", ev_now());
+   va_start(p);
++#ifdef __FreeBSD__
++  vfprintf(l, format, p);
++#else
+   _doprnt(format, p, l);
++#endif
+   va_end(p);
+   fputs("\n\0", l);
+   fflush(l);

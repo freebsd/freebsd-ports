@@ -1,0 +1,207 @@
+--- X/Makefile.orig	Tue Mar 15 16:30:27 1994
++++ X/Makefile	Sun Nov 24 01:03:10 1996
+@@ -35,203 +35,5 @@
+ 
+ # make dependencies
+ depend:	${SRCS}
+-	for i in ${SRCS}; do \
+-	    cc -M ${CFLAGS} $$i | sort | uniq |\
+-	    awk ' { if ($$1 != prev) \
+-		{ if (rec != "") print rec; rec = $$0; prev = $$1; } \
+-		else { if (length(rec $$2) > 78) { print rec; rec = $$0; } \
+-		else rec = rec " " $$2 } } \
+-		END { print rec } ' >> makedep; done
+-	echo '/^# DO NOT DELETE THIS LINE/+1,$$d' >eddep
+-	echo '$$r makedep' >>eddep
+-	echo 'w' >>eddep
+-	cp Makefile Makefile.bak
+-	ed - Makefile < eddep
+-	rm eddep makedep
+-	echo '# DEPENDENCIES MUST END AT END OF FILE' >> Makefile
+-	echo '# IF YOU PUT STUFF HERE IT WILL GO AWAY' >> Makefile
+-	echo '# see make depend above' >> Makefile
++	mkdep $(CFLAGS) ${SRCS}
+ 
+-# DO NOT DELETE THIS LINE
+-IO.o: ./include/component.h ./include/controls.h ./include/event.h
+-IO.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-IO.o: ./include/mempool.h ./include/meters.h ./include/packet.h
+-IO.o: ./include/peer.h ./include/q.h ./include/sim.h ./include/simx.h
+-IO.o: ./include/simx1.h ./include/xtables.h /usr/include/floatingpoint.h
+-IO.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-IO.o: /usr/include/sys/fcntl.h /usr/include/sys/fcntlcom.h
+-IO.o: /usr/include/sys/file.h /usr/include/sys/ieeefp.h /usr/include/sys/stat.h
+-IO.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-IO.o: /usr/include/sys/types.h IO.c
+-clock.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-clock.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-clock.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-clock.o: ./include/simx1.h /usr/include/floatingpoint.h /usr/include/math.h
+-clock.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-clock.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-clock.o: /usr/include/sys/types.h clock.c
+-components.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-components.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-components.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-components.o: ./include/q.h ./include/sim.h ./include/simx.h ./include/simx1.h
+-components.o: ./include/xtables.h /usr/include/floatingpoint.h
+-components.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-components.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-components.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h
+-components.o: components.c
+-controls.o: ./include/component.h ./include/controls.h ./include/event.h
+-controls.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-controls.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-controls.o: ./include/q.h ./include/sim.h ./include/simx.h ./include/simx1.h
+-controls.o: ./include/xtables.h /usr/include/floatingpoint.h
+-controls.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-controls.o: /usr/include/sys/fcntl.h /usr/include/sys/fcntlcom.h
+-controls.o: /usr/include/sys/file.h /usr/include/sys/ieeefp.h
+-controls.o: /usr/include/sys/stat.h /usr/include/sys/stdtypes.h
+-controls.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h controls.c
+-IO.o: ./include/component.h ./include/controls.h ./include/event.h
+-IO.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-IO.o: ./include/mempool.h ./include/meters.h ./include/packet.h
+-IO.o: ./include/peer.h ./include/q.h ./include/sim.h ./include/simx.h
+-IO.o: ./include/simx1.h ./include/xtables.h /usr/include/floatingpoint.h
+-IO.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-IO.o: /usr/include/sys/fcntl.h /usr/include/sys/fcntlcom.h
+-IO.o: /usr/include/sys/file.h /usr/include/sys/ieeefp.h /usr/include/sys/stat.h
+-IO.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-IO.o: /usr/include/sys/types.h IO.c
+-clock.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-clock.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-clock.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-clock.o: ./include/simx1.h /usr/include/floatingpoint.h /usr/include/math.h
+-clock.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-clock.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-clock.o: /usr/include/sys/types.h clock.c
+-IO.o: ./include/component.h ./include/controls.h ./include/event.h
+-IO.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-IO.o: ./include/mempool.h ./include/meters.h ./include/packet.h
+-IO.o: ./include/peer.h ./include/q.h ./include/sim.h ./include/simx.h
+-IO.o: ./include/simx1.h ./include/xtables.h /usr/imports/include/X11/X.h
+-IO.o: /usr/imports/include/X11/Xfuncproto.h /usr/imports/include/X11/Xlib.h
+-IO.o: /usr/imports/include/X11/Xosdefs.h /usr/imports/include/X11/Xutil.h
+-IO.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stddef.h
+-IO.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/fcntl.h
+-IO.o: /usr/include/sys/fcntlcom.h /usr/include/sys/file.h
+-IO.o: /usr/include/sys/ieeefp.h /usr/include/sys/stat.h
+-IO.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-IO.o: /usr/include/sys/types.h IO.c
+-clock.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-clock.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-clock.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-clock.o: ./include/simx1.h /usr/imports/include/X11/X.h
+-clock.o: /usr/imports/include/X11/Xfuncproto.h /usr/imports/include/X11/Xlib.h
+-clock.o: /usr/imports/include/X11/Xosdefs.h /usr/imports/include/X11/Xutil.h
+-clock.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stddef.h
+-clock.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-clock.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-clock.o: /usr/include/sys/types.h clock.c
+-components.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-components.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-components.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-components.o: ./include/q.h ./include/sim.h ./include/simx.h ./include/simx1.h
+-components.o: ./include/xtables.h /usr/imports/include/X11/X.h
+-components.o: /usr/imports/include/X11/Xfuncproto.h
+-components.o: /usr/imports/include/X11/Xlib.h
+-components.o: /usr/imports/include/X11/Xosdefs.h
+-components.o: /usr/imports/include/X11/Xutil.h /usr/include/floatingpoint.h
+-components.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-components.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-components.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-components.o: /usr/include/sys/types.h components.c
+-controls.o: ./include/component.h ./include/controls.h ./include/event.h
+-controls.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-controls.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-controls.o: ./include/q.h ./include/sim.h ./include/simx.h ./include/simx1.h
+-controls.o: ./include/xtables.h /usr/imports/include/X11/X.h
+-controls.o: /usr/imports/include/X11/Xfuncproto.h
+-controls.o: /usr/imports/include/X11/Xlib.h /usr/imports/include/X11/Xosdefs.h
+-controls.o: /usr/imports/include/X11/Xutil.h /usr/include/floatingpoint.h
+-controls.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-controls.o: /usr/include/strings.h /usr/include/sys/fcntl.h
+-controls.o: /usr/include/sys/fcntlcom.h /usr/include/sys/file.h
+-controls.o: /usr/include/sys/ieeefp.h /usr/include/sys/stat.h
+-controls.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-controls.o: /usr/include/sys/types.h controls.c
+-infowindows.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-infowindows.o: ./include/heap.h ./include/list.h ./include/log.h
+-infowindows.o: ./include/mempool.h ./include/packet.h ./include/q.h
+-infowindows.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-infowindows.o: ./include/xtables.h /usr/imports/include/X11/X.h
+-infowindows.o: /usr/imports/include/X11/Xfuncproto.h
+-infowindows.o: /usr/imports/include/X11/Xlib.h
+-infowindows.o: /usr/imports/include/X11/Xosdefs.h
+-infowindows.o: /usr/imports/include/X11/Xutil.h /usr/include/floatingpoint.h
+-infowindows.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-infowindows.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-infowindows.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-infowindows.o: /usr/include/sys/types.h infowindows.c
+-lines.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-lines.o: ./include/hash.h ./include/heap.h ./include/list.h ./include/log.h
+-lines.o: ./include/mempool.h ./include/packet.h ./include/q.h ./include/sim.h
+-lines.o: ./include/simx.h ./include/simx1.h /usr/imports/include/X11/X.h
+-lines.o: /usr/imports/include/X11/Xfuncproto.h /usr/imports/include/X11/Xlib.h
+-lines.o: /usr/imports/include/X11/Xosdefs.h /usr/imports/include/X11/Xutil.h
+-lines.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stddef.h
+-lines.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-lines.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-lines.o: /usr/include/sys/types.h lines.c
+-meters.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-meters.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-meters.o: ./include/meters.h ./include/packet.h ./include/q.h ./include/sim.h
+-meters.o: ./include/simx.h ./include/simx1.h ./include/xtables.h
+-meters.o: /usr/imports/include/X11/X.h /usr/imports/include/X11/Xfuncproto.h
+-meters.o: /usr/imports/include/X11/Xlib.h /usr/imports/include/X11/Xosdefs.h
+-meters.o: /usr/imports/include/X11/Xutil.h /usr/include/floatingpoint.h
+-meters.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-meters.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-meters.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-meters.o: /usr/include/sys/types.h meters.c
+-update.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-update.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-update.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-update.o: ./include/simx1.h ./include/xtables.h /usr/imports/include/X11/X.h
+-update.o: /usr/imports/include/X11/Xfuncproto.h /usr/imports/include/X11/Xlib.h
+-update.o: /usr/imports/include/X11/Xosdefs.h /usr/imports/include/X11/Xutil.h
+-update.o: /usr/include/floatingpoint.h /usr/include/math.h
+-update.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/strings.h
+-update.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-update.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h update.c
+-xinit.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-xinit.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-xinit.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-xinit.o: ./include/sim.h ./include/simx.h ./include/simx1.h ./include/xtables.h
+-xinit.o: /usr/imports/include/X11/X.h /usr/imports/include/X11/Xfuncproto.h
+-xinit.o: /usr/imports/include/X11/Xlib.h /usr/imports/include/X11/Xosdefs.h
+-xinit.o: /usr/imports/include/X11/Xutil.h /usr/imports/include/X11/cursorfont.h
+-xinit.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stddef.h
+-xinit.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-xinit.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-xinit.o: /usr/include/sys/types.h xinit.c
+-edit.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-edit.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-edit.o: ./include/mempool.h ./include/meters.h ./include/packet.h ./include/q.h
+-edit.o: ./include/sim.h ./include/simx.h ./include/simx1.h ./include/xtables.h
+-edit.o: /usr/imports/include/X11/X.h /usr/imports/include/X11/Xfuncproto.h
+-edit.o: /usr/imports/include/X11/Xlib.h /usr/imports/include/X11/Xosdefs.h
+-edit.o: /usr/imports/include/X11/Xutil.h /usr/include/floatingpoint.h
+-edit.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-edit.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-edit.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-edit.o: /usr/include/sys/types.h edit.c
+-text.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-text.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-text.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-text.o: ./include/simx1.h /usr/imports/include/X11/X.h
+-text.o: /usr/imports/include/X11/Xfuncproto.h /usr/imports/include/X11/Xlib.h
+-text.o: /usr/imports/include/X11/Xosdefs.h /usr/imports/include/X11/Xutil.h
+-text.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stddef.h
+-text.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-text.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-text.o: /usr/include/sys/types.h text.c
+-# DEPENDENCIES MUST END AT END OF FILE
+-# IF YOU PUT STUFF HERE IT WILL GO AWAY
+-# see make depend above

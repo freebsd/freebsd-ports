@@ -1,0 +1,11 @@
+--- Makefile.NoX.orig	Tue Mar 15 16:33:55 1994
++++ Makefile.NoX	Thu Nov 21 23:05:55 1996
+@@ -48,7 +48,7 @@
+ 
+ 
+ install: depend mars
+-	cp $(MARSDIR)/mars $(MARSDIR)/bin
++	cp $(MARSDIR)/mars $(PREFIX)/bin
+ 
+ libs:
+ 	@ cd $(MARSDIR)/sim;   make lib $(EXPORT)
