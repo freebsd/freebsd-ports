@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--disable-foomatic-install
 CPPFLAGS=	`${IJS_CONFIG} --cflags`
 LDFLAGS=	`${IJS_CONFIG} --libs`
 
-CFLAGS+=	-DTRACE="printf"
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g ; \
