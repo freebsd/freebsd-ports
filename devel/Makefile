@@ -87,6 +87,7 @@
     SUBDIR += ccdoc
     SUBDIR += cdecl
     SUBDIR += cdk
+    SUBDIR += cdoc
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += chora

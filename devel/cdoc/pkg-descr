@@ -1,0 +1,6 @@
+Cdoc extracts documentation from C source code comments. It is used by
+c2lib. pthrlib, and other code by the same author.
+
+WWW: http://www.annexia.org/freeware/
+
+-- AlanE
