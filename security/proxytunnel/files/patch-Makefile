@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Nov 22 06:50:01 2001
++++ Makefile	Wed Dec  5 19:58:37 2001
+@@ -2,8 +2,6 @@
+ #
+ # Please uncomment the appropriate settings
+ 
+-CC = gcc
+-CFLAGS = -Wall -DHAVE_GETOPT_LONG
+ LDFLAGS =
+ 
+ # Solaris needs this (According to Martin Senft <martin@illicon.de>)
