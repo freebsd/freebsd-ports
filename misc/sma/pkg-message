@@ -1,0 +1,31 @@
+Scour is now successfully installed.
+
+You can use it either as a standalone program or as a browser plug-in.
+
+Standalone: 
+===========
+When you find a file you want to look at on the Scour site, click on it
+to download it.  Netscape will pop up a "save as" dialog to ask you where
+to save a file called "smadlc".  Save it anywhere, then from a command line
+type "sma /path/to/smadlc" (example: if you saved it as /tmp/smadlc, type
+"sma /tmp/smadlc")
+
+Netscape plug-in:
+=================
+In the Preferences dialog, click through to the "Navigator/Applications"
+hierarchy.  Click the "New" button and fill out the dialog as follows:
+
+Description: Scour Media Agent
+MIMEType: application/x-scour-directive
+Suffixes: sma
+Handled by: Check "Application", and in the box, enter "sma %s"
+
+Lynx plug-in:
+=============
+Add the following line to the lynx.cfg file:
+VIEWER:application/x-scour-directive:sma %s
+
+You will also need to install programs for whichever media type(s) you wish
+to be able to view.  Look around in the /usr/ports hierarchy.
+
+Now go on over to http://www.scour.net/ and use it!
