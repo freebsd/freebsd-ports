@@ -1,0 +1,21 @@
+--- Makefile.old	Mon Mar 18 19:22:59 2002
++++ Makefile	Mon Mar 18 19:22:25 2002
+@@ -167,15 +167,11 @@
+ 			 	if [ -d $(INIT) ]; then 		\
+ 			 		init=$(INIT);				\
+ 				fi;								\
+-			 elif [ -d /etc/init.d ]; then 				\
+-	 			init=/etc;					\
+-			 elif [ -d /etc/rc.d/init.d ]; then 			\
+-		 		init=/etc/rc.d;					\
++			 elif [ -d /usr/local/etc/rc.d ]; then 			\
++	 			init=/usr/local/etc/rc.d;					\
+ 			 fi;							\
+ 			 if [ $$init ]; then					\
+- 			 	$(INSTALL) utils/slash $$init/init.d/;		\
+-				ln -s -f ../init.d/slash $$init/rc3.d/S99slash;	\
+-				ln -s -f ../init.d/slash $$init/rc6.d/K99slash;	\
++ 			 	$(INSTALL) utils/slash $$init/slash.sh;		\
+ 			 else 							\
+ 				echo "*** Makefile can't determine where your init scripts live."; \
+ 				if [ $$init ]; then				\
