@@ -1,19 +1,19 @@
 bin/bluej
-bluej/examples/appletdemo/bluej.pkg
+bluej/bluej
 bluej/examples/appletdemo/CaseConverter.java
 bluej/examples/appletdemo/README.TXT
-bluej/examples/debugdemo/bluej.pkg
+bluej/examples/appletdemo/bluej.pkg
 bluej/examples/debugdemo/Car.java
 bluej/examples/debugdemo/Demo.java
 bluej/examples/debugdemo/README.TXT
-bluej/examples/file-reader/bluej.pkg
+bluej/examples/debugdemo/bluej.pkg
 bluej/examples/file-reader/FileReader.java
 bluej/examples/file-reader/README.TXT
+bluej/examples/file-reader/bluej.pkg
 bluej/examples/file-reader/test.txt
-bluej/examples/hello/bluej.pkg
 bluej/examples/hello/Hello.java
 bluej/examples/hello/README.TXT
-bluej/examples/people/bluej.pkg
+bluej/examples/hello/bluej.pkg
 bluej/examples/people/Database.class
 bluej/examples/people/Database.ctxt
 bluej/examples/people/Database.java
@@ -27,188 +27,200 @@ bluej/examples/people/Staff.java
 bluej/examples/people/Student.class
 bluej/examples/people/Student.ctxt
 bluej/examples/people/Student.java
+bluej/examples/people/bluej.pkg
 bluej/examples/people2/Address.java
-bluej/examples/people2/bluej.pkg
 bluej/examples/people2/Database.java
 bluej/examples/people2/Person.java
 bluej/examples/people2/README.TXT
 bluej/examples/people2/Staff.java
 bluej/examples/people2/Student.java
-bluej/examples/picture/bluej.pkg
+bluej/examples/people2/bluej.pkg
 bluej/examples/picture/Canvas.java
 bluej/examples/picture/Circle.java
 bluej/examples/picture/Picture.java
 bluej/examples/picture/README.TXT
 bluej/examples/picture/Square.java
 bluej/examples/picture/Triangle.java
-bluej/examples/shapes/bluej.pkg
+bluej/examples/picture/bluej.pkg
 bluej/examples/shapes/Canvas.java
 bluej/examples/shapes/Circle.java
 bluej/examples/shapes/README.TXT
 bluej/examples/shapes/Square.java
 bluej/examples/shapes/Triangle.java
-bluej/lib/afrikaans/templates/newclass/abstract.tmpl
-bluej/lib/afrikaans/templates/newclass/applet.tmpl
-bluej/lib/afrikaans/templates/newclass/interface.tmpl
-bluej/lib/afrikaans/templates/newclass/LEESMY.txt
-bluej/lib/afrikaans/templates/newclass/stdclass.tmpl
-bluej/lib/afrikaans/templates/newclass/unittest.tmpl
-bluej/lib/afrikaans/templates/appletj.tmpl
-bluej/lib/afrikaans/templates/html.tmpl
-bluej/lib/afrikaans/templates/LEESMY.txt
-bluej/lib/afrikaans/templates/method.tmpl
-bluej/lib/afrikaans/templates/readme.tmpl
-bluej/lib/afrikaans/templates/readmeexp.tmpl
+bluej/examples/shapes/bluej.pkg
+bluej/lib/MRJ141Stubs.jar
+bluej/lib/MRJToolkitStubs.zip
 bluej/lib/afrikaans/dialogues
 bluej/lib/afrikaans/exception.help
 bluej/lib/afrikaans/javac.help
 bluej/lib/afrikaans/jikes.help
 bluej/lib/afrikaans/labels
 bluej/lib/afrikaans/moe.help
-bluej/lib/chinese/templates/newclass/abstract.tmpl
-bluej/lib/chinese/templates/newclass/applet.tmpl
-bluej/lib/chinese/templates/newclass/interface.tmpl
-bluej/lib/chinese/templates/newclass/README
-bluej/lib/chinese/templates/newclass/stdclass.tmpl
-bluej/lib/chinese/templates/appletj.tmpl
-bluej/lib/chinese/templates/html.tmpl
-bluej/lib/chinese/templates/method.tmpl
-bluej/lib/chinese/templates/README
-bluej/lib/chinese/templates/readme.tmpl
-bluej/lib/chinese/templates/readmeexp.tmpl
+bluej/lib/afrikaans/templates/LEESMY.txt
+bluej/lib/afrikaans/templates/applet.tmpl
+bluej/lib/afrikaans/templates/html.tmpl
+bluej/lib/afrikaans/templates/method.tmpl
+bluej/lib/afrikaans/templates/newclass/LEESMY.txt
+bluej/lib/afrikaans/templates/newclass/abstract.tmpl
+bluej/lib/afrikaans/templates/newclass/appletj.tmpl
+bluej/lib/afrikaans/templates/newclass/interface.tmpl
+bluej/lib/afrikaans/templates/newclass/stdclass.tmpl
+bluej/lib/afrikaans/templates/newclass/unittest.tmpl
+bluej/lib/afrikaans/templates/readme.tmpl
+bluej/lib/afrikaans/templates/readmeexp.tmpl
+bluej/lib/antlr.jar
+bluej/lib/bluej.defs
+bluej/lib/bluej.jar
+bluej/lib/bluejcore.jar
+bluej/lib/bluejeditor.jar
+bluej/lib/bluejext.jar
 bluej/lib/chinese/dialogues
 bluej/lib/chinese/exception.help
 bluej/lib/chinese/javac.help
 bluej/lib/chinese/jikes.help
 bluej/lib/chinese/labels
 bluej/lib/chinese/moe.help
-bluej/lib/czech/templates/newclass/abstract.tmpl
-bluej/lib/czech/templates/newclass/applet.tmpl
-bluej/lib/czech/templates/newclass/interface.tmpl
-bluej/lib/czech/templates/newclass/README
-bluej/lib/czech/templates/newclass/stdclass.tmpl
-bluej/lib/czech/templates/appletj.tmpl
-bluej/lib/czech/templates/html.tmpl
-bluej/lib/czech/templates/method.tmpl
-bluej/lib/czech/templates/README
-bluej/lib/czech/templates/readme.tmpl
-bluej/lib/czech/templates/readmeexp.tmpl
+bluej/lib/chinese/templates/README
+bluej/lib/chinese/templates/applet.tmpl
+bluej/lib/chinese/templates/html.tmpl
+bluej/lib/chinese/templates/method.tmpl
+bluej/lib/chinese/templates/newclass/README
+bluej/lib/chinese/templates/newclass/abstract.tmpl
+bluej/lib/chinese/templates/newclass/appletj.tmpl
+bluej/lib/chinese/templates/newclass/interface.tmpl
+bluej/lib/chinese/templates/newclass/stdclass.tmpl
+bluej/lib/chinese/templates/newclass/unittest.tmpl
+bluej/lib/chinese/templates/readme.tmpl
+bluej/lib/chinese/templates/readmeexp.tmpl
 bluej/lib/czech/dialogues
 bluej/lib/czech/exception.help
 bluej/lib/czech/javac.help
 bluej/lib/czech/jikes.help
 bluej/lib/czech/labels
 bluej/lib/czech/moe.help
-bluej/lib/english/templates/newclass/abstract.tmpl
-bluej/lib/english/templates/newclass/applet.tmpl
-bluej/lib/english/templates/newclass/interface.tmpl
-bluej/lib/english/templates/newclass/README
-bluej/lib/english/templates/newclass/stdclass.tmpl
-bluej/lib/english/templates/appletj.tmpl
-bluej/lib/english/templates/html.tmpl
-bluej/lib/english/templates/method.tmpl
-bluej/lib/english/templates/README
-bluej/lib/english/templates/readme.tmpl
-bluej/lib/english/templates/readmeexp.tmpl
+bluej/lib/czech/readme.txt
+bluej/lib/czech/templates/README
+bluej/lib/czech/templates/applet.tmpl
+bluej/lib/czech/templates/html.tmpl
+bluej/lib/czech/templates/method.tmpl
+bluej/lib/czech/templates/newclass/README
+bluej/lib/czech/templates/newclass/abstract.tmpl
+bluej/lib/czech/templates/newclass/appletj.tmpl
+bluej/lib/czech/templates/newclass/interface.tmpl
+bluej/lib/czech/templates/newclass/stdclass.tmpl
+bluej/lib/czech/templates/newclass/unittest.tmpl
+bluej/lib/czech/templates/readme.tmpl
+bluej/lib/czech/templates/readmeexp.tmpl
 bluej/lib/english/dialogues
 bluej/lib/english/exception.help
 bluej/lib/english/javac.help
 bluej/lib/english/jikes.help
 bluej/lib/english/labels
 bluej/lib/english/moe.help
-bluej/lib/german/templates/newclass/abstract.tmpl
-bluej/lib/german/templates/newclass/applet.tmpl
-bluej/lib/german/templates/newclass/interface.tmpl
-bluej/lib/german/templates/newclass/README
-bluej/lib/german/templates/newclass/stdclass.tmpl
-bluej/lib/german/templates/appletj.tmpl
-bluej/lib/german/templates/html.tmpl
-bluej/lib/german/templates/method.tmpl
-bluej/lib/german/templates/README
-bluej/lib/german/templates/readme.tmpl
-bluej/lib/german/templates/readmeexp.tmpl
+bluej/lib/english/templates/README
+bluej/lib/english/templates/applet.tmpl
+bluej/lib/english/templates/html.tmpl
+bluej/lib/english/templates/method.tmpl
+bluej/lib/english/templates/newclass/README
+bluej/lib/english/templates/newclass/abstract.tmpl
+bluej/lib/english/templates/newclass/appletj.tmpl
+bluej/lib/english/templates/newclass/interface.tmpl
+bluej/lib/english/templates/newclass/stdclass.tmpl
+bluej/lib/english/templates/newclass/unittest.tmpl
+bluej/lib/english/templates/readme.tmpl
+bluej/lib/english/templates/readmeexp.tmpl
+bluej/lib/extensions/submitter.jar
+bluej/lib/french/dialogues
+bluej/lib/french/exception.help
+bluej/lib/french/javac.help
+bluej/lib/french/jikes.help
+bluej/lib/french/labels
+bluej/lib/french/lisezmoi
+bluej/lib/french/moe.help
+bluej/lib/french/templates/LisezMoi
+bluej/lib/french/templates/applet.tmpl
+bluej/lib/french/templates/html.tmpl
+bluej/lib/french/templates/method.tmpl
+bluej/lib/french/templates/newclass/LisezMoi
+bluej/lib/french/templates/newclass/abstract.tmpl
+bluej/lib/french/templates/newclass/appletj.tmpl
+bluej/lib/french/templates/newclass/interface.tmpl
+bluej/lib/french/templates/newclass/stdclass.tmpl
+bluej/lib/french/templates/newclass/unittest.tmpl
+bluej/lib/french/templates/readme.tmpl
+bluej/lib/french/templates/readmeexp.tmpl
 bluej/lib/german/dialogues
 bluej/lib/german/exception.help
 bluej/lib/german/javac.help
 bluej/lib/german/jikes.help
 bluej/lib/german/labels
 bluej/lib/german/moe.help
-bluej/lib/images/about16.gif
-bluej/lib/images/add16.gif
-bluej/lib/images/addclass16.gif
-bluej/lib/images/arrow_black.gif
+bluej/lib/german/templates/README
+bluej/lib/german/templates/applet.tmpl
+bluej/lib/german/templates/html.tmpl
+bluej/lib/german/templates/method.tmpl
+bluej/lib/german/templates/newclass/README
+bluej/lib/german/templates/newclass/abstract.tmpl
+bluej/lib/german/templates/newclass/appletj.tmpl
+bluej/lib/german/templates/newclass/interface.tmpl
+bluej/lib/german/templates/newclass/stdclass.tmpl
+bluej/lib/german/templates/newclass/unittest.tmpl
+bluej/lib/german/templates/readme.tmpl
+bluej/lib/german/templates/readmeexp.tmpl
 bluej/lib/images/arrow_black_uml.gif
-bluej/lib/images/arrow_red.gif
 bluej/lib/images/bluej-icon-edit.gif
 bluej/lib/images/bluej-icon-terminal.gif
 bluej/lib/images/bluej-icon.gif
 bluej/lib/images/bluej-logo.gif
 bluej/lib/images/break.gif
 bluej/lib/images/broken-arrow.gif
-bluej/lib/images/class16.gif
+bluej/lib/images/classIcon.gif
 bluej/lib/images/continue.gif
-bluej/lib/images/darrow_black.gif
+bluej/lib/images/corner_bottom_left.gif
+bluej/lib/images/corner_bottom_right.gif
+bluej/lib/images/corner_top_left.gif
+bluej/lib/images/corner_top_right.gif
 bluej/lib/images/darrow_black_uml.gif
-bluej/lib/images/darrow_red.gif
-bluej/lib/images/delete16.gif
-bluej/lib/images/edit16.gif
 bluej/lib/images/empty.gif
+bluej/lib/images/error.gif
+bluej/lib/images/extmgr-info.gif
+bluej/lib/images/failure.gif
 bluej/lib/images/help.gif
-bluej/lib/images/export16.gif
-bluej/lib/images/import16.gif
 bluej/lib/images/leftarrow.gif
-bluej/lib/images/new16.gif
-bluej/lib/images/newclass16.gif
-bluej/lib/images/newpackage16.gif
-bluej/lib/images/objectIcon.gif
-bluej/lib/images/objectIcon_blank.gif
-bluej/lib/images/open16.gif
-bluej/lib/images/package16.gif
+bluej/lib/images/objectref.gif
+bluej/lib/images/ok.gif
 bluej/lib/images/packageIcon.gif
-bluej/lib/images/pagesetup16.gif
-bluej/lib/images/preferences16.gif
-bluej/lib/images/print16.gif
-bluej/lib/images/remove16.gif
+bluej/lib/images/record.gif
 bluej/lib/images/rightarrow.gif
-bluej/lib/images/save16.gif
-bluej/lib/images/saveas16.gif
-bluej/lib/images/splash.jpg
 bluej/lib/images/step.gif
 bluej/lib/images/step_into.gif
 bluej/lib/images/stepbreak.gif
 bluej/lib/images/stepmark.gif
 bluej/lib/images/stop.gif
 bluej/lib/images/terminate.gif
+bluej/lib/images/vm.icns
 bluej/lib/images/working-disab.gif
+bluej/lib/images/working-idle.gif
 bluej/lib/images/working-stopped.gif
 bluej/lib/images/working.gif
-bluej/lib/italian/templates/newclass/abstract.tmpl
-bluej/lib/italian/templates/newclass/applet.tmpl
-bluej/lib/italian/templates/newclass/interface.tmpl
-bluej/lib/italian/templates/newclass/README
-bluej/lib/italian/templates/newclass/stdclass.tmpl
-bluej/lib/italian/templates/appletj.tmpl
-bluej/lib/italian/templates/html.tmpl
-bluej/lib/italian/templates/method.tmpl
-bluej/lib/italian/templates/README
-bluej/lib/italian/templates/readme.tmpl
-bluej/lib/italian/templates/readmeexp.tmpl
 bluej/lib/italian/dialogues
 bluej/lib/italian/exception.help
 bluej/lib/italian/javac.help
 bluej/lib/italian/jikes.help
 bluej/lib/italian/labels
 bluej/lib/italian/moe.help
-bluej/lib/japanese/templates/newclass/abstract.tmpl
-bluej/lib/japanese/templates/newclass/applet.tmpl
-bluej/lib/japanese/templates/newclass/interface.tmpl
-bluej/lib/japanese/templates/newclass/README
-bluej/lib/japanese/templates/newclass/stdclass.tmpl
-bluej/lib/japanese/templates/appletj.tmpl
-bluej/lib/japanese/templates/html.tmpl
-bluej/lib/japanese/templates/README
-bluej/lib/japanese/templates/readme.tmpl
-bluej/lib/japanese/templates/readmeexp.tmpl
+bluej/lib/italian/templates/README
+bluej/lib/italian/templates/applet.tmpl
+bluej/lib/italian/templates/html.tmpl
+bluej/lib/italian/templates/method.tmpl
+bluej/lib/italian/templates/newclass/README
+bluej/lib/italian/templates/newclass/abstract.tmpl
+bluej/lib/italian/templates/newclass/appletj.tmpl
+bluej/lib/italian/templates/newclass/interface.tmpl
+bluej/lib/italian/templates/newclass/stdclass.tmpl
+bluej/lib/italian/templates/newclass/unittest.tmpl
+bluej/lib/italian/templates/readme.tmpl
+bluej/lib/italian/templates/readmeexp.tmpl
 bluej/lib/japanese/dialogues
 bluej/lib/japanese/exception.help
 bluej/lib/japanese/javac.help
@@ -216,82 +228,138 @@ bluej/lib/japanese/jikes.help
 bluej/lib/japanese/labels
 bluej/lib/japanese/moe.help
 bluej/lib/japanese/readme.txt
-bluej/lib/spanish/templates/newclass/abstract.tmpl
-bluej/lib/spanish/templates/newclass/applet.tmpl
-bluej/lib/spanish/templates/newclass/interface.tmpl
-bluej/lib/spanish/templates/newclass/README
-bluej/lib/spanish/templates/newclass/stdclass.tmpl
-bluej/lib/spanish/templates/appletj.tmpl
-bluej/lib/spanish/templates/html.tmpl
-bluej/lib/spanish/templates/README
-bluej/lib/spanish/templates/readme.tmpl
-bluej/lib/spanish/templates/readmeexp.tmpl
+bluej/lib/japanese/templates/README
+bluej/lib/japanese/templates/applet.tmpl
+bluej/lib/japanese/templates/html.tmpl
+bluej/lib/japanese/templates/method.tmpl
+bluej/lib/japanese/templates/newclass/README
+bluej/lib/japanese/templates/newclass/abstract.tmpl
+bluej/lib/japanese/templates/newclass/appletj.tmpl
+bluej/lib/japanese/templates/newclass/interface.tmpl
+bluej/lib/japanese/templates/newclass/stdclass.tmpl
+bluej/lib/japanese/templates/newclass/unittest.tmpl
+bluej/lib/japanese/templates/readme.tmpl
+bluej/lib/japanese/templates/readmeexp.tmpl
+bluej/lib/junit.jar
+bluej/lib/korean/dialogues
+bluej/lib/korean/exception.help
+bluej/lib/korean/javac.help
+bluej/lib/korean/jikes.help
+bluej/lib/korean/labels
+bluej/lib/korean/moe.help
+bluej/lib/korean/templates/README
+bluej/lib/korean/templates/applet.tmpl
+bluej/lib/korean/templates/html.tmpl
+bluej/lib/korean/templates/method.tmpl
+bluej/lib/korean/templates/newclass/README
+bluej/lib/korean/templates/newclass/abstract.tmpl
+bluej/lib/korean/templates/newclass/appletj.tmpl
+bluej/lib/korean/templates/newclass/interface.tmpl
+bluej/lib/korean/templates/newclass/stdclass.tmpl
+bluej/lib/korean/templates/readme.tmpl
+bluej/lib/korean/templates/readmeexp.tmpl
+bluej/lib/moe.defs
+bluej/lib/portuguese/dialogues
+bluej/lib/portuguese/exception.help
+bluej/lib/portuguese/javac.help
+bluej/lib/portuguese/jikes.help
+bluej/lib/portuguese/labels
+bluej/lib/portuguese/moe.help
+bluej/lib/portuguese/templates/README
+bluej/lib/portuguese/templates/applet.tmpl
+bluej/lib/portuguese/templates/html.tmpl
+bluej/lib/portuguese/templates/method.tmpl
+bluej/lib/portuguese/templates/newclass/README
+bluej/lib/portuguese/templates/newclass/abstract.tmpl
+bluej/lib/portuguese/templates/newclass/appletj.tmpl
+bluej/lib/portuguese/templates/newclass/interface.tmpl
+bluej/lib/portuguese/templates/newclass/stdclass.tmpl
+bluej/lib/portuguese/templates/newclass/unittest.tmpl
+bluej/lib/portuguese/templates/readme.tmpl
+bluej/lib/portuguese/templates/readmeexp.tmpl
 bluej/lib/spanish/dialogues
 bluej/lib/spanish/exception.help
 bluej/lib/spanish/javac.help
 bluej/lib/spanish/jikes.help
 bluej/lib/spanish/labels
 bluej/lib/spanish/moe.help
-bluej/lib/swedish/templates/newclass/abstract.tmpl
-bluej/lib/swedish/templates/newclass/applet.tmpl
-bluej/lib/swedish/templates/newclass/interface.tmpl
-bluej/lib/swedish/templates/newclass/README
-bluej/lib/swedish/templates/newclass/stdclass.tmpl
-bluej/lib/swedish/templates/appletj.tmpl
-bluej/lib/swedish/templates/html.tmpl
-bluej/lib/swedish/templates/method.tmpl
-bluej/lib/swedish/templates/README
-bluej/lib/swedish/templates/readme.tmpl
-bluej/lib/swedish/templates/readmeexp.tmpl
+bluej/lib/spanish/templates/README
+bluej/lib/spanish/templates/applet.tmpl
+bluej/lib/spanish/templates/html.tmpl
+bluej/lib/spanish/templates/newclass/README
+bluej/lib/spanish/templates/newclass/abstract.tmpl
+bluej/lib/spanish/templates/newclass/appletj.tmpl
+bluej/lib/spanish/templates/newclass/interface.tmpl
+bluej/lib/spanish/templates/newclass/stdclass.tmpl
+bluej/lib/spanish/templates/newclass/unittest.tmpl
+bluej/lib/spanish/templates/readme.tmpl
+bluej/lib/spanish/templates/readmeexp.tmpl
 bluej/lib/swedish/dialogues
 bluej/lib/swedish/exception.help
 bluej/lib/swedish/javac.help
 bluej/lib/swedish/jikes.help
 bluej/lib/swedish/labels
 bluej/lib/swedish/moe.help
-bluej/lib/antlr.jar
-bluej/lib/bluej.defs
-bluej/lib/bluej.jar
-bluej/lib/editor.jar
-bluej/lib/moe.defs
-bluej/lib/MRJToolkitStubs.zip
-bluej/bluej
-@dirrm bluej/examples/appletdemo
-@dirrm bluej/examples/debugdemo
-@dirrm bluej/examples/file-reader
-@dirrm bluej/examples/hello
-@dirrm bluej/examples/people
-@dirrm bluej/examples/people2
-@dirrm bluej/examples/picture
-@dirrm bluej/examples/shapes
-@dirrm bluej/examples
-@dirrm bluej/lib/afrikaans/templates/newclass
-@dirrm bluej/lib/afrikaans/templates
-@dirrm bluej/lib/afrikaans
-@dirrm bluej/lib/chinese/templates/newclass
-@dirrm bluej/lib/chinese/templates
-@dirrm bluej/lib/chinese
-@dirrm bluej/lib/czech/templates/newclass
-@dirrm bluej/lib/czech/templates
-@dirrm bluej/lib/czech
-@dirrm bluej/lib/english/templates/newclass
-@dirrm bluej/lib/english/templates
-@dirrm bluej/lib/english
-@dirrm bluej/lib/german/templates/newclass
-@dirrm bluej/lib/german/templates
-@dirrm bluej/lib/german
-@dirrm bluej/lib/images
-@dirrm bluej/lib/italian/templates/newclass
-@dirrm bluej/lib/italian/templates
-@dirrm bluej/lib/italian
-@dirrm bluej/lib/japanese/templates/newclass
-@dirrm bluej/lib/japanese/templates
-@dirrm bluej/lib/japanese
-@dirrm bluej/lib/spanish/templates/newclass
-@dirrm bluej/lib/spanish/templates
-@dirrm bluej/lib/spanish
+bluej/lib/swedish/templates/README
+bluej/lib/swedish/templates/applet.tmpl
+bluej/lib/swedish/templates/html.tmpl
+bluej/lib/swedish/templates/method.tmpl
+bluej/lib/swedish/templates/newclass/README
+bluej/lib/swedish/templates/newclass/abstract.tmpl
+bluej/lib/swedish/templates/newclass/appletj.tmpl
+bluej/lib/swedish/templates/newclass/interface.tmpl
+bluej/lib/swedish/templates/newclass/stdclass.tmpl
+bluej/lib/swedish/templates/newclass/unittest.tmpl
+bluej/lib/swedish/templates/readme.tmpl
+bluej/lib/swedish/templates/readmeexp.tmpl
+bluej/lib/userlib/README.TXT
+@dirrm bluej/lib/userlib
 @dirrm bluej/lib/swedish/templates/newclass
 @dirrm bluej/lib/swedish/templates
 @dirrm bluej/lib/swedish
+@dirrm bluej/lib/spanish/templates/newclass
+@dirrm bluej/lib/spanish/templates
+@dirrm bluej/lib/spanish
+@dirrm bluej/lib/portuguese/templates/newclass
+@dirrm bluej/lib/portuguese/templates
+@dirrm bluej/lib/portuguese
+@dirrm bluej/lib/korean/templates/newclass
+@dirrm bluej/lib/korean/templates
+@dirrm bluej/lib/korean
+@dirrm bluej/lib/japanese/templates/newclass
+@dirrm bluej/lib/japanese/templates
+@dirrm bluej/lib/japanese
+@dirrm bluej/lib/italian/templates/newclass
+@dirrm bluej/lib/italian/templates
+@dirrm bluej/lib/italian
+@dirrm bluej/lib/images
+@dirrm bluej/lib/german/templates/newclass
+@dirrm bluej/lib/german/templates
+@dirrm bluej/lib/german
+@dirrm bluej/lib/french/templates/newclass
+@dirrm bluej/lib/french/templates
+@dirrm bluej/lib/french
+@dirrm bluej/lib/extensions
+@dirrm bluej/lib/english/templates/newclass
+@dirrm bluej/lib/english/templates
+@dirrm bluej/lib/english
+@dirrm bluej/lib/czech/templates/newclass
+@dirrm bluej/lib/czech/templates
+@dirrm bluej/lib/czech
+@dirrm bluej/lib/chinese/templates/newclass
+@dirrm bluej/lib/chinese/templates
+@dirrm bluej/lib/chinese
+@dirrm bluej/lib/afrikaans/templates/newclass
+@dirrm bluej/lib/afrikaans/templates
+@dirrm bluej/lib/afrikaans
 @dirrm bluej/lib
+@dirrm bluej/examples/shapes
+@dirrm bluej/examples/picture
+@dirrm bluej/examples/people2
+@dirrm bluej/examples/people
+@dirrm bluej/examples/hello
+@dirrm bluej/examples/file-reader
+@dirrm bluej/examples/debugdemo
+@dirrm bluej/examples/appletdemo
+@dirrm bluej/examples
 @dirrm bluej

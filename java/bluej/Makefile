@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	java editors
-MASTER_SITES=	ftp://ftp.bluej.org/pub/bluej/
+MASTER_SITES=	http://www.bluej.org/download/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
+EXTRACT_ONLY=
 
-MAINTAINER=	karlj000@unbc.ca
-COMMENT=	BlueJ is an integrated Java environment designed for introductory teaching
+MAINTAINER=	kij@imada.sdu.dk
+COMMENT=	BlueJ is a Java environment designed for introductory teaching
 
 IS_INTERACTIVE=	yes
-EXTRACT_ONLY=
 NO_BUILD=	yes
 
 USE_JAVA=	1.3+
