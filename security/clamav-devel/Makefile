@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20031222
+PORTVERSION=	20031229
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -96,12 +96,15 @@ post-patch:
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|clamav.conf|&.default|' \
+		-e 's|freshclam.conf|&.default|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
 		${CONFIGURE_WRKSRC}/etc/Makefile.in
 
 post-build:
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
 		> ${BUILD_WRKSRC}/etc/clamav.conf.default
+	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf \
+		> ${BUILD_WRKSRC}/etc/freshclam.conf.default
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
 		> ${WRKDIR}/clamav-clamd.sh
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
@@ -115,6 +118,9 @@ post-install:
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
 		${CP} ${PREFIX}/etc/clamav.conf.default \
 			${PREFIX}/etc/clamav.conf
+	@[ -f ${PREFIX}/etc/freshclam.conf ] || \
+		${CP} ${PREFIX}/etc/freshclam.conf.default \
+			${PREFIX}/etc/freshclam.conf
 	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
 		${RC_DIR}/clamav-clamd${RC_SUFX}
