@@ -1,5 +1,5 @@
 .\"-
-.\" Copyright (c) 2000 Dag-Erling Coïdan Smørgrav
+.\" Copyright (c) 2000-2004 Dag-Erling Coïdan Smørgrav
 .\" All rights reserved.
 .\"
 .\" Redistribution and use in source and binary forms, with or without
@@ -27,7 +27,7 @@
 .\"
 .\"	$FreeBSD$
 .\"
-.Dd October 1, 2003
+.Dd March 2, 2004
 .Dt PORTEASY 8
 .Os
 .Sh NAME
@@ -41,7 +41,7 @@
 .Op Fl p Ar dir
 .Op Fl r Ar dir
 .Op Fl t Ar tag
-.Op Ar port | VAR=VAL ...
+.Op Ar port | Fl D Ns Ar VAR | Fl D Ns Ar VAR Ns = Ns Ar VAL ...
 .Sh DESCRIPTION
 .Nm
 maintains an updated ports tree, and fetches and builds ports
@@ -109,7 +109,10 @@ description.
 .El
 .Ss Environment settings
 Any command line argument of the form
-.Ar VAR=VAL
+.Fl D Ns Ar VAR ,
+.Fl D Ns Ar VAR Ns = Ns Ar VAL
+or
+.Ar VAR Ns = Ns Ar VAL
 is interpreted as a variable assignment which will be exported into
 subprocesses' environments.
 Thus compile-time configuration options can be specified on the
