@@ -8,7 +8,7 @@
 PORTNAME=       chtml
 PORTVERSION=    0.0
 CATEGORIES=     www devel lang
-MASTER_SITES=   http://people.delphi.com/gjc/
+MASTER_SITES=   http://people.delphiforums.com/gjc/
 DISTNAME=       chtml
 EXTRACT_SUFX=   .tgz
 
