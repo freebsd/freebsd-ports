@@ -7,29 +7,31 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.2
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://gecko.cs.purdue.edu/gnunet/
-MASTER_SITE_SUBDIR=	gnunet
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	GNUnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
-		autoconf213:${PORTSDIR}/devel/autoconf213
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-do-configure:
-	@(cd ${WRKSRC} ; \
-	  ${ACLOCAL} ; \
-	  ${AUTOCONF} ; \
-	  ${AUTOHEADER} ; \
-	  ${AUTOMAKE} -a ; \
-	  ${CONFIGURE_SCRIPT})
+MAN1=		gnunet-download.1 gnunet-gtk.1 gnunet-insert-multi.1 \
+		gnunet-insert.1 gnunet-search.1 gnunetd.1
+MAN5=		gnunet.conf.5
+
+post-patch:
+	@${REINPLACE_CMD} 's|-pthread [\$$]CFLAGS|\$$CFLAGS|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

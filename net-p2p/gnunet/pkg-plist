@@ -1,8 +1,9 @@
 bin/gnunet-download
 bin/gnunet-gtk
 bin/gnunet-insert
-bin/gnunet-insert-mp3
+bin/gnunet-insert-multi
 bin/gnunet-search
+bin/gnunet-stats
 bin/gnunetd
 lib/libgnunetcommon.a
 lib/libgnunetfilesharing.a
