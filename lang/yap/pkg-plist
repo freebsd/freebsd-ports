@@ -1,6 +1,14 @@
 bin/yap
+include/Yap/YapInterface.h
 include/Yap/c_interface.h
 include/Yap/yap_structs.h
+lib/Yap/random.so
+lib/Yap/regexp.so
+lib/Yap/startup
+lib/Yap/sys.so
+lib/Yap/yap2swi.so
+lib/Yap/yap_tries.so
+lib/libYap.a
 share/Yap/CHR.LICENSE
 share/Yap/CLPQR.LICENSE
 share/Yap/apply_macros.yap
@@ -8,35 +16,9 @@ share/Yap/assoc.yap
 share/Yap/atts.yap
 share/Yap/avl.yap
 share/Yap/charsio.yap
-share/Yap/chr.yap
-share/Yap/clpq.yap
-share/Yap/clpr.yap
-share/Yap/heaps.yap
-share/Yap/icon_address.pl
-share/Yap/lists.yap
-share/Yap/logtalk.yap
-share/Yap/ordsets.yap
-share/Yap/pillow.pl
-share/Yap/prandom.yap
-share/Yap/queues.yap
-share/Yap/random.yap
-share/Yap/regexp.yap
-share/Yap/system.yap
-share/Yap/terms.yap
-share/Yap/timeout.yap
-share/Yap/trees.yap
-share/Yap/ugraphs.yap
 share/Yap/chr/chrcmp.pl
 share/Yap/chr/compenv.pl
 share/Yap/chr/concat.pl
-share/Yap/chr/getval.pl
-share/Yap/chr/matching.pl
-share/Yap/chr/operator.pl
-share/Yap/chr/ordering.pl
-share/Yap/chr/sbag.pl
-share/Yap/chr/sbag_a.pl
-share/Yap/chr/sbag_l.pl
-share/Yap/chr/trace.yap
 share/Yap/chr/examples/allentable.pl
 share/Yap/chr/examples/arc.pl
 share/Yap/chr/examples/bool.pl
@@ -83,35 +65,28 @@ share/Yap/chr/examples/time-rnd.pl
 share/Yap/chr/examples/time.pl
 share/Yap/chr/examples/tree.pl
 share/Yap/chr/examples/type.pl
+share/Yap/chr/getval.pl
+share/Yap/chr/matching.pl
+share/Yap/chr/operator.pl
+share/Yap/chr/ordering.pl
+share/Yap/chr/sbag.pl
+share/Yap/chr/sbag_a.pl
+share/Yap/chr/sbag_l.pl
+share/Yap/chr/trace.yap
+share/Yap/chr.yap
+share/Yap/cleanup.yap
 share/Yap/clpq/arith_q.yap
 share/Yap/clpq/class.yap
 share/Yap/clpq/geler.yap
 share/Yap/clpq/nf.yap
 share/Yap/clpq/nfq.yap
+share/Yap/clpq.yap
 share/Yap/clpqr/arith.pl
 share/Yap/clpqr/bb.yap
 share/Yap/clpqr/bv.yap
 share/Yap/clpqr/compenv.pl
 share/Yap/clpqr/dump.pl
-share/Yap/clpqr/expand.yap
-share/Yap/clpqr/fourmotz.pl
-share/Yap/clpqr/ineq.yap
-share/Yap/clpqr/itf3.pl
-share/Yap/clpqr/monash.pl
-share/Yap/clpqr/ordering.yap
-share/Yap/clpqr/printf.pl
-share/Yap/clpqr/project.pl
-share/Yap/clpqr/redund.pl
-share/Yap/clpqr/store.yap
 share/Yap/clpqr/examples/README
-share/Yap/clpqr/examples/caneghem.pl
-share/Yap/clpqr/examples/eliminat.pl
-share/Yap/clpqr/examples/matmul.pl
-share/Yap/clpqr/examples/mg.pl
-share/Yap/clpqr/examples/mip.pl
-share/Yap/clpqr/examples/root.pl
-share/Yap/clpqr/examples/simplex.pl
-share/Yap/clpqr/examples/squares.pl
 share/Yap/clpqr/examples/SESSION/010
 share/Yap/clpqr/examples/SESSION/011
 share/Yap/clpqr/examples/SESSION/012
@@ -153,6 +128,11 @@ share/Yap/clpqr/examples/SESSION/132
 share/Yap/clpqr/examples/SESSION/133
 share/Yap/clpqr/examples/SESSION/134
 share/Yap/clpqr/examples/SESSION/135
+share/Yap/clpqr/examples/caneghem.pl
+share/Yap/clpqr/examples/eliminat.pl
+share/Yap/clpqr/examples/matmul.pl
+share/Yap/clpqr/examples/mg.pl
+share/Yap/clpqr/examples/mip.pl
 share/Yap/clpqr/examples/monash/README
 share/Yap/clpqr/examples/monash/air
 share/Yap/clpqr/examples/monash/amplif
@@ -172,28 +152,52 @@ share/Yap/clpqr/examples/monash/rlc
 share/Yap/clpqr/examples/monash/smm
 share/Yap/clpqr/examples/monash/toolpath
 share/Yap/clpqr/examples/monash/zebra
+share/Yap/clpqr/examples/root.pl
+share/Yap/clpqr/examples/simplex.pl
+share/Yap/clpqr/examples/squares.pl
+share/Yap/clpqr/expand.yap
+share/Yap/clpqr/fourmotz.pl
+share/Yap/clpqr/ineq.yap
+share/Yap/clpqr/itf3.pl
+share/Yap/clpqr/monash.pl
+share/Yap/clpqr/ordering.yap
+share/Yap/clpqr/printf.pl
+share/Yap/clpqr/project.pl
+share/Yap/clpqr/redund.pl
+share/Yap/clpqr/store.yap
 share/Yap/clpr/arith_r.yap
 share/Yap/clpr/class.yap
 share/Yap/clpr/geler.yap
 share/Yap/clpr/nf.yap
 share/Yap/clpr/nfr.yap
+share/Yap/clpr.yap
+share/Yap/heaps.yap
+share/Yap/icon_address.pl
+share/Yap/lists.yap
 share/Yap/logtalk/logtalk.pl
 share/Yap/logtalk/yap430.config
-lib/Yap/random.so
-lib/Yap/regexp.so
-lib/Yap/startup
-lib/Yap/sys.so
-lib/Yap/yap2swi.so
-lib/libYap.a
-@dirrm include/Yap
-@dirrm share/Yap/chr/examples
-@dirrm share/Yap/chr
-@dirrm share/Yap/clpq
-@dirrm share/Yap/clpqr/examples/SESSION
+share/Yap/logtalk.yap
+share/Yap/ordsets.yap
+share/Yap/pillow.pl
+share/Yap/prandom.yap
+share/Yap/queues.yap
+share/Yap/random.yap
+share/Yap/regexp.yap
+share/Yap/system.yap
+share/Yap/terms.yap
+share/Yap/timeout.yap
+share/Yap/trees.yap
+share/Yap/tries.yap
+share/Yap/ugraphs.yap
+@dirrm share/Yap/logtalk
+@dirrm share/Yap/clpr
 @dirrm share/Yap/clpqr/examples/monash
+@dirrm share/Yap/clpqr/examples/SESSION
 @dirrm share/Yap/clpqr/examples
 @dirrm share/Yap/clpqr
-@dirrm share/Yap/clpr
-@dirrm share/Yap/logtalk
+@dirrm share/Yap/clpq
+@dirrm share/Yap/chr/examples
+@dirrm share/Yap/chr
 @dirrm share/Yap
 @dirrm lib/Yap
+@dirrm include/Yap
