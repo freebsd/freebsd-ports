@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
@@ -94,6 +94,7 @@ NO_BUILD=	yes
 USE_PHP=	ctype gettext session
 WANT_PHP_MOD=	yes
 USE_REINPLACE=	yes
+SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if !defined(WITHOUT_FILEINFO)
@@ -196,8 +197,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
-		docs/PERFORMANCE docs/RELEASE docs/RELEASE_NOTES docs/SECURITY \
-		docs/TODO docs/TRANSLATIONS docs/UPGRADING
+		docs/PERFORMANCE docs/RELEASE_NOTES docs/SECURITY docs/TODO \
+		docs/TRANSLATIONS docs/UPGRADING
 CONFFILE=	conf.php mime_drivers.php motd.php nls.php prefs.php registry.php
 SUB_DIRS=	admin config js lib locale po scripts services templates themes util
 
@@ -205,6 +206,7 @@ LHORDEDIR?=	www/horde
 LHORDESBIN?=	sbin
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}
+SUB_LIST=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF} HORDESBIN=${HORDESBIN}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 HORDESBIN=	${PREFIX}/${LHORDESBIN}
@@ -333,9 +335,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%HORDEDIR%%:${HORDEDIR}:g;s:%%APACHE_CONF%%:${APACHE_CONF}:g"	\
-		-e "s:%%HORDESBIN%%:${HORDESBIN}:;s:%%DOCSDIR%%:${DOCSDIR}:"		\
-		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

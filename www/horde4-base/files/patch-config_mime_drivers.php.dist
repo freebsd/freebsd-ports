@@ -1,31 +1,32 @@
---- config/mime_drivers.php.dist.orig	Mon Feb  7 23:17:54 2005
-+++ config/mime_drivers.php.dist	Fri Feb 11 21:37:05 2005
-@@ -37,10 +37,20 @@
+--- config/mime_drivers.php.dist.orig	Mon Mar 14 14:48:05 2005
++++ config/mime_drivers.php.dist	Wed Mar 30 00:41:34 2005
+@@ -37,10 +37,21 @@
   * zip            Zip files
   */
  $mime_drivers_map['horde']['registered'] = array(
--    'css', 'deb', 'enriched', 'enscript', 'html', 'images', 'msword', 'msexcel',
--    'mspowerpoint', 'ooo', 'pdf', 'php', 'plain', 'rar', 'report',
--    'richtext', 'rpm', 'security', 'simple', 'srchighlite', 'tgz', 'tnef',
--    'vcard', 'webcpp', 'zip');
+-    'css', 'deb', 'enriched', 'enscript', 'html', 'images', 'msword',
+-    'msexcel', 'mspowerpoint', 'ooo', 'pdf', 'php', 'plain', 'rar', 'report',
+-    'rfc822', 'richtext', 'rpm', 'security', 'simple', 'srchighlite', 'tgz',
+-    'tnef', 'vcard', 'webcpp', 'zip');
 +    'css'
 +//UNCOMMENTIFDEB , 'deb'
-+    , 'enriched'
++   , 'enriched'
 +//UNCOMMENTIFES , 'enscript'
-+    , 'html', 'images'
++   , 'html', 'images'
 +//UNCOMMENTIFWV , 'msword'
 +//UNCOMMENTIFXL , 'msexcel', 'mspowerpoint'
-+    , 'ooo', 'pdf', 'php', 'plain', 'rar', 'report', 'richtext'
++   , 'ooo', 'pdf', 'php', 'plain', 'rar', 'report',
++    'rfc822', 'richtext'
 +//UNCOMMENTIFRPM , 'rpm'
-+    , 'security', 'simple'
++   , 'security', 'simple'
 +//UNCOMMENTIFSRCHIGH , 'srchighlite'
-+    , 'tgz', 'tnef', 'vcard'
++   , 'tgz', 'tnef', 'vcard'
 +//UNCOMMENTIFWCPP , 'webcpp'
-+    , 'zip');
++   , 'zip');
  
  
  /**
-@@ -161,66 +171,66 @@
+@@ -161,66 +172,66 @@
   * Web C Plus Plus driver settings
   * http://webcpp.sourceforge.net/
   */
@@ -143,13 +144,14 @@
  
  
  /**
-@@ -272,14 +282,14 @@
+@@ -272,15 +283,15 @@
   * The 'location' entry should point to the 'wvHtml' program, NOT the
   * 'wvWare' program.
   */
 -$mime_drivers['horde']['msword']['location'] = '/usr/bin/wvHtml';
 -$mime_drivers['horde']['msword']['inline'] = false;
 -$mime_drivers['horde']['msword']['handles'] = array(
+-    'application/vnd.ms-word',
 -    'application/msword',
 -    'application/rtf',
 -    'text/rtf');
@@ -158,6 +160,7 @@
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['location'] = '%%LOCALBASE%%/bin/wvHtml';
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['inline'] = false;
 +//UNCOMMENTIFWV$mime_drivers['horde']['msword']['handles'] = array(
++//UNCOMMENTIFWV    'application/vnd.ms-word',
 +//UNCOMMENTIFWV    'application/msword',
 +//UNCOMMENTIFWV    'application/rtf',
 +//UNCOMMENTIFWV    'text/rtf');
@@ -166,7 +169,7 @@
  
  
  /**
-@@ -287,14 +297,14 @@
+@@ -288,14 +299,14 @@
   * This driver requires xlhtml to be installed.
   * xlhtml homepage: http://chicago.sourceforge.net/xlhtml/
   */
@@ -189,7 +192,7 @@
  
  
  /**
-@@ -302,13 +312,13 @@
+@@ -303,13 +314,13 @@
   * This driver requires ppthtml, included with xlhtml, to be installed.
   * xlhtml homepage: http://chicago.sourceforge.net/xlhtml/
   */
@@ -210,7 +213,7 @@
  
  
  /**
-@@ -324,24 +334,24 @@
+@@ -325,24 +336,24 @@
  /**
   * RPM driver settings
   */
