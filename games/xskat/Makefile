@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xskat
-# Version required:	xskat-2.3.1
+# Version required:	3.0
 # Date created:		27 Apr 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/09/28 02:25:26 steve Exp $
+# $Id: Makefile,v 1.9 1998/10/27 12:00:06 tg Exp $
 #
 
-DISTNAME=	xskat-2.3.1
+DISTNAME=	xskat-3.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.gulu.net/xskat/
 
