@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsidplay
-PORTVERSION=	1.6.2.1
+PORTVERSION=	1.6.3
 PORTEPOCH=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
@@ -18,7 +18,7 @@ LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 
 USE_QT_VER=	2
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt-binaries=${X11BASE}/bin
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
