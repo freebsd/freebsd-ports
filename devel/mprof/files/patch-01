@@ -78,25 +78,6 @@
 + #ifdef __FreeBSD__
 + #define CRT0_ADDRESS		0x10d3
   #endif
-*** ../m/mpgraph.c	Tue Apr 20 13:36:04 1993
---- mpgraph.c	Wed Sep 15 23:27:07 1993
-***************
-*** 114,120 ****
-      vertex	from, to;
-      mpdata	data;
-      int		mark;
-!     struct edge_struct *save
-  } *edge, edge_item;
-  
-  edge
---- 114,120 ----
-      vertex	from, to;
-      mpdata	data;
-      int		mark;
-!     struct edge_struct *save;
-  } *edge, edge_item;
-  
-  edge
 *** /dev/null	Tue Nov 22 00:34:22 1994
 --- Makefile.i386	Tue Nov 22 01:03:41 1994
 ***************
