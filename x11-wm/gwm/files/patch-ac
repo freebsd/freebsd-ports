@@ -1,0 +1,11 @@
+--- data/Imakefile.orig	Wed Sep 22 17:53:59 1999
++++ data/Imakefile	Thu Sep  7 23:22:25 2000
+@@ -30,7 +30,7 @@
+ XCOMM
+ 
+ XCOMM ************* WARNING: IF YOU CHANGE THIS CHANGE ALSO IN ../Imakefile
+-GWMDIR = /usr/local/lib/gwm
++GWMDIR = $(LIBDIR)/gwm
+ 
+ all::
+ 
