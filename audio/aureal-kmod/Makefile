@@ -83,6 +83,7 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .if ${OSVERSION} > 500000
 # FreeBSD 5-CURRENT
+DISTREVISION=	4
 .if ${VERSION_SOUND_C_MINOR} < 70
 IGNORE=		"Base system is outdated. This port needs -CURRENT after 2002-04-04."
 .endif
