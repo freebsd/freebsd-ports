@@ -2434,13 +2434,14 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0194</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1166</url>
     </references>
     <dates>
       <discovery>2004-12-21</discovery>
       <entry>2004-12-23</entry>
-      <modified>2005-01-13</modified>
+      <modified>2005-02-08</modified>
     </dates>
   </vuln>
 
