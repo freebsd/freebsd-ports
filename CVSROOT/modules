@@ -7245,6 +7245,7 @@ wmjupiter	ports/astro/wmjupiter
 wml		ports/www/wml
 wmlj		ports/net/wmlj
 wmlmmon		ports/sysutils/wmlmmon
+wmlongrun	ports/sysutils/wmlongrun
 wmlpq		ports/print/wmlpq
 wmmail		ports/mail/wmmail
 wmmand		ports/misc/wmmand
