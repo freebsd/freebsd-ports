@@ -9,8 +9,8 @@ PORTNAME=	squirm
 PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.senet.com.au/squirm/ \
-		http://www.elab.co.za/squirm/
+# this mastersite hosts an older version; mastersites with newer version have disappeared
+MASTER_SITES=	# http://squirm.foote.com.au/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
