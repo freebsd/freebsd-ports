@@ -24,7 +24,7 @@ MAKEFILE=	makefile
 ALL_TARGET=	linux
 
 do-build:
-	cd ${WRKSRC}/dev && ${GMAKE} -f ${MAKEFILE} CFLAGS="${CFLAGS}" ${ALL_TARGET}
+	cd ${WRKSRC}/dev && ${GMAKE} -f ${MAKEFILE} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" ${ALL_TARGET}
 
 do-install:
 	-${RM} ${WRKDIR}/uox/uox3.ini.orig
