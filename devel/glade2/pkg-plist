@@ -1,33 +1,32 @@
 bin/glade-2
 share/gnome/applications/glade-2.desktop
 share/gnome/glade-2/gtk/autogen.sh
-share/gnome/help/glade-faq/C/glade-faq.xml
-share/gnome/help/glade-faq/C/legal.xml
-share/gnome/help/glade-turbo-start/C/glade-turbo-start.xml
-share/gnome/help/glade-turbo-start/C/legal.xml
-share/gnome/help/glade-user-guide/C/figures/edit-menu.png
-share/gnome/help/glade-user-guide/C/figures/file-menu.png
-share/gnome/help/glade-user-guide/C/figures/grid-options.png
-share/gnome/help/glade-user-guide/C/figures/help-menu.png
-share/gnome/help/glade-user-guide/C/figures/menu.png
-share/gnome/help/glade-user-guide/C/figures/options-c.png
-share/gnome/help/glade-user-guide/C/figures/options-general.png
-share/gnome/help/glade-user-guide/C/figures/options-libglade.png
-share/gnome/help/glade-user-guide/C/figures/settings-menu.png
-share/gnome/help/glade-user-guide/C/figures/snap-options.png
-share/gnome/help/glade-user-guide/C/figures/toolbar.png
-share/gnome/help/glade-user-guide/C/figures/view-menu.png
-share/gnome/help/glade-user-guide/C/figures/window-main.png
-share/gnome/help/glade-user-guide/C/figures/window-palette-add.png
-share/gnome/help/glade-user-guide/C/figures/window-palette-basic.png
-share/gnome/help/glade-user-guide/C/figures/window-palette-gnome.png
-share/gnome/help/glade-user-guide/C/glade-user-guide.xml
-share/gnome/help/glade-user-guide/C/legal.xml
+share/gnome/help/glade-2/C/figures/edit-menu.png
+share/gnome/help/glade-2/C/figures/file-menu.png
+share/gnome/help/glade-2/C/figures/grid-options.png
+share/gnome/help/glade-2/C/figures/help-menu.png
+share/gnome/help/glade-2/C/figures/menu.png
+share/gnome/help/glade-2/C/figures/options-c.png
+share/gnome/help/glade-2/C/figures/options-general.png
+share/gnome/help/glade-2/C/figures/options-libglade.png
+share/gnome/help/glade-2/C/figures/settings-menu.png
+share/gnome/help/glade-2/C/figures/snap-options.png
+share/gnome/help/glade-2/C/figures/toolbar.png
+share/gnome/help/glade-2/C/figures/view-menu.png
+share/gnome/help/glade-2/C/figures/window-main.png
+share/gnome/help/glade-2/C/figures/window-palette-add.png
+share/gnome/help/glade-2/C/figures/window-palette-basic.png
+share/gnome/help/glade-2/C/figures/window-palette-gnome.png
+share/gnome/help/glade-2/C/glade-faq.xml
+share/gnome/help/glade-2/C/glade-turbo-start.xml
+share/gnome/help/glade-2/C/glade-user-guide.xml
+share/gnome/help/glade-2/C/legal.xml
 share/gnome/omf/glade-2/glade-faq-C.omf
 share/gnome/omf/glade-2/glade-turbo-start-C.omf
 share/gnome/omf/glade-2/glade-user-guide-C.omf
 share/gnome/pixmaps/glade-2.png
 share/gnome/pixmaps/glade-2/glade_logo.png
+share/locale/ar/LC_MESSAGES/glade-2.0.mo
 share/locale/az/LC_MESSAGES/glade-2.0.mo
 share/locale/ca/LC_MESSAGES/glade-2.0.mo
 share/locale/cs/LC_MESSAGES/glade-2.0.mo
@@ -59,14 +58,8 @@ share/locale/vi/LC_MESSAGES/glade-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/glade-2.0.mo
 @dirrm share/gnome/pixmaps/glade-2
 @dirrm share/gnome/omf/glade-2
-@dirrm share/gnome/help/glade-user-guide/C/figures
-@dirrm share/gnome/help/glade-user-guide/C
-@dirrm share/gnome/help/glade-user-guide
-@dirrm share/gnome/help/glade-turbo-start/C/figures
-@dirrm share/gnome/help/glade-turbo-start/C
-@dirrm share/gnome/help/glade-turbo-start
-@dirrm share/gnome/help/glade-faq/C/figures
-@dirrm share/gnome/help/glade-faq/C
-@dirrm share/gnome/help/glade-faq
+@dirrm share/gnome/help/glade-2/C/figures
+@dirrm share/gnome/help/glade-2/C
+@dirrm share/gnome/help/glade-2
 @dirrm share/gnome/glade-2/gtk
 @dirrm share/gnome/glade-2
