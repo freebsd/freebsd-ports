@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xemacs-devel
+PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -14,8 +14,8 @@ DISTNAME=	xemacs-${XEMACS_VER}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	gj@FreeBSD.org
-COMMENT=	This port tracks the development (GAMMA) version of the XEmacs text editor
+MAINTAINER?=	gj@FreeBSD.org
+COMMENT?=	This port tracks the stable version of the XEmacs text editor
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
 .if !defined(WITHOUT_X11)
