@@ -14,12 +14,10 @@ include/log4cpp/HierarchyMaintainer.hh
 include/log4cpp/IdsaAppender.hh
 include/log4cpp/Layout.hh
 include/log4cpp/LayoutAppender.hh
-include/log4cpp/Log4cppCleanup.hh
 include/log4cpp/LoggingEvent.hh
 include/log4cpp/NDC.hh
 include/log4cpp/NTEventLogAppender.hh
 include/log4cpp/OstreamAppender.hh
-include/log4cpp/OstringStream.hh
 include/log4cpp/PatternLayout.hh
 include/log4cpp/Portability.hh
 include/log4cpp/Priority.hh
