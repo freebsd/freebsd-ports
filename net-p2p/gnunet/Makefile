@@ -8,6 +8,7 @@
 
 PORTNAME=	gnunet
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -18,8 +19,6 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-
-BROKEN=		"Does not compile"
 
 USE_LIBLTDL=	yes
 USE_BZIP2=	yes
@@ -35,7 +34,7 @@ INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--disable-ltdl-install
+CONFIGURE_ARGS=	--disable-ltdl-install --with-crypto
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_GDBM)
@@ -103,5 +102,17 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		's|^#include <values.h>|#include <limits.h>|g' \
 		${WRKSRC}/src/applications/afs/module/manager.c
+	${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/src/include/gnunet_util.h
+
+post-install:
+	${INSTALL_DATA}	${WRKSRC}/contrib/gnunet.root ${PREFIX}/etc/gnunet.conf-dist
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/contrib/gnunet.user ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/ChangeLog ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
