@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.1a
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -37,7 +38,8 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
-		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE}
+		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
+		--with-pam
 
 .include <bsd.port.pre.mk>
 
