@@ -1,6 +1,14 @@
---- Makefile.in.orig	Fri Nov  9 00:27:10 2001
-+++ Makefile.in	Fri Nov  9 00:27:16 2001
-@@ -538,11 +538,6 @@
+--- Makefile.in.orig	Fri Nov  2 22:58:36 2001
++++ Makefile.in	Fri Nov  9 18:15:27 2001
+@@ -515,7 +515,6 @@
+ 	-mkdir -p $(modulesdir)
+ 	-mkdir -p $(helpdir)
+ 	-mkdir -p $(docdir)
+-	-mkdir -p $(logsdir)
+ 
+ generate-server-key:
+ 	-@if test '!' -f $(etcdir)/silcd.pub ; then \
+@@ -538,14 +537,9 @@
  	$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
  
  etc-install:
@@ -9,6 +17,11 @@
 -	  $(etcdir)/silcd.conf; \
 -          chmod go= $(etcdir)/silcd.conf; \
 -	fi
- 	-@if test '!' -f $(etcdir)/silc.conf ; then \
+-	-@if test '!' -f $(etcdir)/silc.conf ; then \
++	-@if test '!' -f $(etcdir)/silc.conf.sample ; then \
  	  $(INSTALL_DATA) $(srcdir)/doc/example_silc.conf \
- 	  $(etcdir)/silc.conf; \
+-	  $(etcdir)/silc.conf; \
++	  $(etcdir)/silc.conf.sample; \
+ 	fi
+ 
+ @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install

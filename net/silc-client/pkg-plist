@@ -1,7 +1,7 @@
 bin/silc
 etc/silc/config
 etc/silc/default.theme
-etc/silc/silc.conf
+etc/silc/silc.conf.sample
 %%PORTDOCS%%share/doc/silc/CHANGES
 %%PORTDOCS%%share/doc/silc/COPYING
 %%PORTDOCS%%share/doc/silc/CREDITS
@@ -92,13 +92,7 @@ share/silc/help/version
 share/silc/help/whois
 share/silc/help/whowas
 share/silc/help/window
-@dirrm silc/logs
-@dirrm silc
 @dirrm share/silc/help
 @dirrm share/silc
 %%PORTDOCS%%@dirrm share/doc/silc
-@dirrm libexec/silc/modules
-@dirrm libexec/silc
-@dirrm etc/silc
-@exec %%INSTALL_DIR%% %D/libexec/silc/modules
-@exec %%INSTALL_DIR%% %D/silc/logs
+@unexec rmdir %D/etc/silc 2>/dev/null || true
