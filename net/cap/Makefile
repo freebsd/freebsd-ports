@@ -7,6 +7,7 @@
 
 PORTNAME=	cap
 PORTVERSION=	6.0.198
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp-ns.rutgers.edu/pub/cap/ \
 		ftp://ftp-ns.rutgers.edu/pub/cap/cap.patches/ \
@@ -30,6 +31,8 @@ WRKSRC=		${WRKDIR}/cap60
 DIST_SUBDIR=	cap60
 ALL_TARGET=	libsmade dummy-libinstall programs
 INSTALL_TARGET=	include libinstall install
+
+CFLAGS+=	-traditional-cpp -DUSESTRINGDOTH
 
 USE_REINPLACE=	YES
 
