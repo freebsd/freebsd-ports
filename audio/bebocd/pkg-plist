@@ -1,10 +1,10 @@
 bin/bebocd
-share/gnome/bebocd/pixmaps/bebocd.xpm
-share/gnome/bebocd/pixmaps/eject.xpm
-share/gnome/bebocd/pixmaps/fleft.xpm
-share/gnome/bebocd/pixmaps/fright.xpm
-share/gnome/bebocd/pixmaps/pause.xpm
-share/gnome/bebocd/pixmaps/play.xpm
-share/gnome/bebocd/pixmaps/stop.xpm
-@dirrm share/gnome/bebocd/pixmaps
-@dirrm share/gnome/bebocd
+share/bebocd/pixmaps/bebocd.xpm
+share/bebocd/pixmaps/eject.xpm
+share/bebocd/pixmaps/fleft.xpm
+share/bebocd/pixmaps/fright.xpm
+share/bebocd/pixmaps/pause.xpm
+share/bebocd/pixmaps/play.xpm
+share/bebocd/pixmaps/stop.xpm
+@dirrm share/bebocd/pixmaps
+@dirrm share/bebocd

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bebocd
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,21 +17,20 @@ COMMENT=	GTK2 CD Player
 LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gtk20 gnomeprefix
+USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-CONFIGURE_ARGS=	CPPFLAGS=-I${LOCALBASE}/include \
-		LIBS=-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 .if defined(CDROM) && exists(${CDROM})
 	@${REINPLACE_CMD} -e "s|/dev/cdrom|${CDROM}|" ${WRKSRC}/src/main.h
 .else
-	@${ECHO} ""
-	@${ECHO} "You can specify the default CD-ROM device by defining CDROM."
-	@${ECHO} "For example, CDROM=\"/dev/acd0c\" make"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can specify the default CD-ROM device by defining CDROM."
+	@${ECHO_MSG} "For example, CDROM=\"/dev/acd0c\" make"
+	@${ECHO_MSG} ""
 .endif
 
 .include <bsd.port.mk>
