@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.3 1994/09/11 10:05:54 jkh Exp $
+# $Id: Makefile,v 1.4 1994/09/22 23:58:08 ache Exp $
 #
-SUBDIR= dgd irc sup
+SUBDIR= dgd gn irc sup
 
 .include <bsd.port.subdir.mk>
