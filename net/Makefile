@@ -208,6 +208,7 @@
     SUBDIR += netpipes
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins
+    SUBDIR += netscript
     SUBDIR += netsed
     SUBDIR += nettest
     SUBDIR += ngrep
