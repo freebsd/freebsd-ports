@@ -1,0 +1,6 @@
+Xdmx is proxy X server that provides multi-head support for multiple displays
+attached to different machines (each of which is running a typical X server).
+When Xinerama is used with Xdmx, the multiple displays on multiple machines
+are presented to the user as a single unified screen.
+
+WWW: http://www.x.org/
