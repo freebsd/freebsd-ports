@@ -30,8 +30,8 @@ DOCS=		BUGS COPYRIGHT HISTORY README DOC/manual.pdf
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Does not compile on !i386 and !amd64"
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
 .endif
 
 .if ${OSVERSION} < 501103
