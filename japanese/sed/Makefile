@@ -7,6 +7,7 @@
 
 PORTNAME=	sed
 PORTVERSION=	3.02
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +17,17 @@ MAINTAINER=	ports@FreeBSD.org
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PATCH_SITES=	http://member.nifty.ne.jp/wills/program/
-PATCHFILES=	${PORTNAME}mb108.diff.gz
+PATCH_SITES=	http://www.hinadori.dyn.to/~wills/program/
+PATCHFILES=	${PORTNAME}mb109.diff.gz
 PATCH_DIST_STRIP=	-p1
-FETCH_BEFORE_ARGS=	-b
 
 MAN1=		sed.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/${PKGBASE}
+	${INSTALL_DATA} ${WRKSRC}/OREADME.MB ${PREFIX}/share/doc/${PKGBASE}
+	${INSTALL_DATA} ${WRKSRC}/README.MB ${PREFIX}/share/doc/${PKGBASE}
+.endif
 
 .include <bsd.port.mk>
