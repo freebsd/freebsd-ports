@@ -3,11 +3,11 @@
 # Date created:			20 Jan 1999
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.5 1998/10/16 04:32:50 jseger Exp $
+# $Id: Makefile,v 1.1.1.1 1999/01/26 03:03:44 steve Exp $
 #
 
-DISTNAME=	eb-2.2
-PKGNAME=	ja-eb-2.2
+DISTNAME=	eb-2.2.2
+PKGNAME=	ja-eb-2.2.2
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/appendix/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/appendix/old/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/appendix/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/old/
 DISTFILES=	${EBFILES} ${APPENDIXFILES}
 
-MAINTAINER=	m-kasahr@sra.co.jp
+MAINTAINER=	takamune@avrl.mei.co.jp
 
 EBFILES=	${DISTNAME}.tar.gz
 APPENDIXFILES=	chujiten-2.3.tar.gz \
