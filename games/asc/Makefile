@@ -12,10 +12,6 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
-.if defined(WITH_MUSIC)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} frontiers.mp3 time_to_strike.mp3 machine_wars.mp3
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
@@ -35,7 +31,13 @@ CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 
 CONFIGURE_ARGS=	--disable-paraguitest
 
+OPTIONS=	MUSIC "Install extra music files" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MUSIC)
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} frontiers.mp3 time_to_strike.mp3 machine_wars.mp3
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB+=	MUSIC:=""
 .else
 PLIST_SUB+=	MUSIC:="@comment "
@@ -57,4 +59,4 @@ pre-build:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
