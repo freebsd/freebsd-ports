@@ -1,4 +1,4 @@
-# New ports collection makefile for:	M+ Fonts_J
+# New ports collection makefile for:	M+ Fonts
 # Date created:		July 17 2002
 # Whom:			The 244th namelessness at 2ch.net
 #
@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mplusfonts
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.2.0a
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/2050/ \
+MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/2464/ \
 		http://wids.net/archive/mplusfonts/distfiles/
-DISTNAME=	mplus_fonts_J-${PORTVERSION}
+DISTNAME=	mplus_bitmap_fonts-${PORTVERSION}
 
 MAINTAINER=	Ys@PixyGarden.net
 COMMENT=	12x13 dots X11 kanji fonts with simple and readable design
@@ -25,34 +24,33 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
-FONTNAME=	mplus_j12b mplus_j12b_iso8859 mplus_j12b_jisx0201 \
-		mplus_j12r mplus_j12r_iso8859 mplus_j12r_jisx0201
-DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
-DOCS=		LICENSE README_J
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+DOCS=		INSTALL_E LICENSE_E README_E \
+		INSTALL_J LICENSE_J README_J
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/local
 PLIST_SUB=	FONTSDIR=${FONTSDIR:S/${PREFIX}\///}
 
 do-build:
-.for file in ${FONTNAME}
-	cd ${WRKSRC} && \
-		bdftopcf ${file}.bdf | ${GZIP_CMD} > ${file}.pcf.gz
-.endfor
 
 pre-install:
+	@${MKDIR} ${DOCSDIR}
+.for i in e j
+	@${INSTALL_DATA} ${WRKSRC}/fonts_${i}/fonts.alias \
+		${DOCSDIR}/fonts.alias.${i}
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/fonts_e/euro/fonts.alias \
+		${DOCSDIR}/fonts.alias.euro
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTSDIR}
+	cd ${WRKSRC} && \
+		${WRKSRC}/install_mplus_fonts ${FONTSDIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-
-post-install:
-	@(cd ${FONTSDIR} ; mkfontdir)
 
 .include <bsd.port.post.mk>
