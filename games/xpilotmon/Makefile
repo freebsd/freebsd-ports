@@ -17,8 +17,10 @@ RUN_DEPENDS=		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 ALL_TARGET=		xpilotmon
 MAN6=			xpilotmon.6
 
+USE_REINPLACE=		yes
+
 post-patch:
-	@${PERL} -pi -e "s/exec wish/exec wish8.4/" ${WRKSRC}/xpilotmon.org
-	@${PERL} -pi -e "s/.\(INSTALL_DATA\)/${INSTALL_MAN}/" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/exec wish/exec wish8.4/" ${WRKSRC}/xpilotmon.org
+	@${REINPLACE_CMD} -e "s/\$$(INSTALL_DATA)/${INSTALL_MAN}/" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
