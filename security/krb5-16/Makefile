@@ -15,6 +15,7 @@ MAINTAINER=		cy@FreeBSD.org
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
+EXTRACT_SUFX=		.tar
 USE_GMAKE=		yes
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
@@ -75,6 +76,12 @@ do-fetch:
 	${FALSE};							\
 	fi
 .endif
+
+post-extract:
+	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz
+	@${RM} ${WRKDIR}/${DISTNAME}.tar.gz ${WRKDIR}/${DISTNAME}.tar.gz.asc
+	@${CHMOD} -R ug-s,go-w ${WRKDIR}/${DISTNAME}
+	@${CHOWN} -R 0:0 ${WRKDIR}/${DISTNAME}
 
 pre-build:
 .if !defined(KRB5_KRB4_COMPAT)
