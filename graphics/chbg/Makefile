@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	netchild@FreeBSD.org
 
+BROKEN=		"Incorrect pkg-plist"
+
 # GNOME parts aren't prefix safe, they install into "gnome-config --prefix"
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
