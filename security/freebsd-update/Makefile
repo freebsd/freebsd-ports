@@ -20,17 +20,23 @@ COMMENT=	Fetches and installs binary updates to FreeBSD
 # The RSA code has only been tested on i386; I don't *think* there are
 # any word-size or endian issues, but I'm not sure.  Since nobody is
 # building updates for non-i386 platforms anyway, this won't hurt anyone.
-ONLY_FOR_ARCHS=	i386
-
 RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
+
+ONLY_FOR_ARCHS=	i386
 
 MAN5=		freebsd-update.conf.5
 MAN8=		freebsd-update.8
+PLIST_FILES=	sbin/freebsd-update		\
+		sbin/freebsd-update-verify	\
+		etc/freebsd-update.conf.sample
+PLIST_DIRS=	freebsd-update
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .ifdef NOPORTDOCS
 MAKE_ENV+=	NODOCS=yes
+.else
+PORTDOCS=	LICENSE README VERSION
 .endif
 
 post-extract:
