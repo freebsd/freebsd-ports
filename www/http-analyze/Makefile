@@ -15,6 +15,8 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	todd@thisisa.com
 COMMENT=	A fast Log-Analyzer for web servers
 
+BROKEN=		"Attempts to use BUILD_DEPENDS in patch phase"
+
 BUILD_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
