@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.erikyyy.de/tempest/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
