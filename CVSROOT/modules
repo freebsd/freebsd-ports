@@ -2358,6 +2358,7 @@ genproto	ports/devel/genproto
 gensig		ports/mail/gensig
 gentium		ports/x11-fonts/gentium
 gentoo		ports/x11-fm/gentoo
+geolizer	ports/www/geolizer
 geomview	ports/graphics/geomview
 geos		ports/graphics/geos
 geotrace	ports/net/geotrace
