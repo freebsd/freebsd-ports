@@ -35,6 +35,50 @@ etc/DIR_COLORS
 etc/X11/wmconfig/info
 etc/bashrc
 etc/csh.login
+etc/gtk/gtkrc
+etc/gtk/gtkrc.bg
+etc/gtk/gtkrc.bg_BG.iso88595
+etc/gtk/gtkrc.cs
+etc/gtk/gtkrc.cy
+etc/gtk/gtkrc.el
+etc/gtk/gtkrc.eo
+etc/gtk/gtkrc.et
+etc/gtk/gtkrc.ga
+etc/gtk/gtkrc.he
+etc/gtk/gtkrc.hr
+etc/gtk/gtkrc.hu
+etc/gtk/gtkrc.hy
+etc/gtk/gtkrc.iso-8859-13
+etc/gtk/gtkrc.iso-8859-14
+etc/gtk/gtkrc.iso-8859-15
+etc/gtk/gtkrc.iso-8859-2
+etc/gtk/gtkrc.iso-8859-5
+etc/gtk/gtkrc.ja
+etc/gtk/gtkrc.ka
+etc/gtk/gtkrc.ka_GE.georgianacademy
+etc/gtk/gtkrc.ka_GE.georgianps
+etc/gtk/gtkrc.ko
+etc/gtk/gtkrc.lt
+etc/gtk/gtkrc.mk
+etc/gtk/gtkrc.pl
+etc/gtk/gtkrc.ro
+etc/gtk/gtkrc.ru
+etc/gtk/gtkrc.ru_RU.iso88595
+etc/gtk/gtkrc.sk
+etc/gtk/gtkrc.sl
+etc/gtk/gtkrc.sq
+etc/gtk/gtkrc.sr
+etc/gtk/gtkrc.sr.iso88595
+etc/gtk/gtkrc.th
+etc/gtk/gtkrc.tr
+etc/gtk/gtkrc.uk
+etc/gtk/gtkrc.vi
+etc/gtk/gtkrc.vi_VN.tcvn
+etc/gtk/gtkrc.vi_VN.tcvn5712
+etc/gtk/gtkrc.vi_VN.viscii
+etc/gtk/gtkrc.vi_VN.viscii111
+etc/gtk/gtkrc.zh_CN
+etc/gtk/gtkrc.zh_TW.Big5
 etc/host.conf
 etc/hosts.allow
 etc/hosts.deny
@@ -281,6 +325,12 @@ usr/doc/grep-2.3/NEWS
 usr/doc/grep-2.3/README
 usr/doc/grep-2.3/THANKS
 usr/doc/grep-2.3/TODO
+usr/doc/gtk+-1.2.6/AUTHORS
+usr/doc/gtk+-1.2.6/COPYING
+usr/doc/gtk+-1.2.6/ChangeLog
+usr/doc/gtk+-1.2.6/NEWS
+usr/doc/gtk+-1.2.6/README
+usr/doc/gtk+-1.2.6/TODO
 usr/doc/ldconfig-1.9.5/README
 usr/doc/ncurses-4.2/ANNOUNCE
 usr/doc/ncurses-4.2/README
@@ -518,12 +568,16 @@ usr/lib/libgd.so.1
 usr/lib/libgd.so.1.2
 usr/lib/libgdbm.so.2
 usr/lib/libgdbm.so.2.0.0
+usr/lib/libgdk-1.2.so.0
+usr/lib/libgdk-1.2.so.0.5.1
 usr/lib/libglib-1.2.so.0
 usr/lib/libglib-1.2.so.0.0.6
 usr/lib/libgmodule-1.2.so.0
 usr/lib/libgmodule-1.2.so.0.0.6
 usr/lib/libgthread-1.2.so.0
 usr/lib/libgthread-1.2.so.0.0.6
+usr/lib/libgtk-1.2.so.0
+usr/lib/libgtk-1.2.so.0.5.1
 usr/lib/libhistory.so.3
 usr/lib/libhistory.so.3.0
 usr/lib/libiberty.a
@@ -944,6 +998,7 @@ usr/share/locale/ar_SA/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/ar_SA/LC_MONETARY
 usr/share/locale/ar_SA/LC_NUMERIC
 usr/share/locale/ar_SA/LC_TIME
+usr/share/locale/ca/LC_MESSAGES/gtk+.mo
 usr/share/locale/ca_ES/LC_COLLATE
 usr/share/locale/ca_ES/LC_CTYPE
 usr/share/locale/ca_ES/LC_MESSAGES/SYS_LC_MESSAGES
@@ -951,6 +1006,7 @@ usr/share/locale/ca_ES/LC_MONETARY
 usr/share/locale/ca_ES/LC_NUMERIC
 usr/share/locale/ca_ES/LC_TIME
 usr/share/locale/cs/LC_MESSAGES/fileutils.mo
+usr/share/locale/cs/LC_MESSAGES/gtk+.mo
 usr/share/locale/cs/LC_MESSAGES/libc.mo
 usr/share/locale/cs/LC_MESSAGES/rpm.mo
 usr/share/locale/cs_CZ/LC_COLLATE
@@ -959,6 +1015,7 @@ usr/share/locale/cs_CZ/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/cs_CZ/LC_MONETARY
 usr/share/locale/cs_CZ/LC_NUMERIC
 usr/share/locale/cs_CZ/LC_TIME
+usr/share/locale/da/LC_MESSAGES/gtk+.mo
 usr/share/locale/da_DK/LC_COLLATE
 usr/share/locale/da_DK/LC_CTYPE
 usr/share/locale/da_DK/LC_MESSAGES/SYS_LC_MESSAGES
@@ -967,6 +1024,7 @@ usr/share/locale/da_DK/LC_NUMERIC
 usr/share/locale/da_DK/LC_TIME
 usr/share/locale/de/LC_MESSAGES/fileutils.mo
 usr/share/locale/de/LC_MESSAGES/grep.mo
+usr/share/locale/de/LC_MESSAGES/gtk+.mo
 usr/share/locale/de/LC_MESSAGES/libc.mo
 usr/share/locale/de/LC_MESSAGES/rpm.mo
 usr/share/locale/de_AT/LC_COLLATE
@@ -1001,6 +1059,7 @@ usr/share/locale/de_LU/LC_NUMERIC
 usr/share/locale/de_LU/LC_TIME
 usr/share/locale/el/LC_MESSAGES/fileutils.mo
 usr/share/locale/el/LC_MESSAGES/grep.mo
+usr/share/locale/el/LC_MESSAGES/gtk+.mo
 usr/share/locale/el/LC_MESSAGES/libc.mo
 usr/share/locale/el_GR/LC_COLLATE
 usr/share/locale/el_GR/LC_CTYPE
@@ -1058,6 +1117,7 @@ usr/share/locale/en_ZW/LC_NUMERIC
 usr/share/locale/en_ZW/LC_TIME
 usr/share/locale/es/LC_MESSAGES/fileutils.mo
 usr/share/locale/es/LC_MESSAGES/grep.mo
+usr/share/locale/es/LC_MESSAGES/gtk+.mo
 usr/share/locale/es/LC_MESSAGES/libc.mo
 usr/share/locale/es_ES/LC_COLLATE
 usr/share/locale/es_ES/LC_CTYPE
@@ -1065,18 +1125,21 @@ usr/share/locale/es_ES/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/es_ES/LC_MONETARY
 usr/share/locale/es_ES/LC_NUMERIC
 usr/share/locale/es_ES/LC_TIME
+usr/share/locale/et/LC_MESSAGES/gtk+.mo
 usr/share/locale/et_EE/LC_COLLATE
 usr/share/locale/et_EE/LC_CTYPE
 usr/share/locale/et_EE/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/et_EE/LC_MONETARY
 usr/share/locale/et_EE/LC_NUMERIC
 usr/share/locale/et_EE/LC_TIME
+usr/share/locale/eu/LC_MESSAGES/gtk+.mo
 usr/share/locale/eu_ES/LC_COLLATE
 usr/share/locale/eu_ES/LC_CTYPE
 usr/share/locale/eu_ES/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/eu_ES/LC_MONETARY
 usr/share/locale/eu_ES/LC_NUMERIC
 usr/share/locale/eu_ES/LC_TIME
+usr/share/locale/fi/LC_MESSAGES/gtk+.mo
 usr/share/locale/fi/LC_MESSAGES/rpm.mo
 usr/share/locale/fi_FI/LC_COLLATE
 usr/share/locale/fi_FI/LC_CTYPE
@@ -1092,6 +1155,7 @@ usr/share/locale/fo_FO/LC_NUMERIC
 usr/share/locale/fo_FO/LC_TIME
 usr/share/locale/fr/LC_MESSAGES/fileutils.mo
 usr/share/locale/fr/LC_MESSAGES/grep.mo
+usr/share/locale/fr/LC_MESSAGES/gtk+.mo
 usr/share/locale/fr/LC_MESSAGES/libc.mo
 usr/share/locale/fr/LC_MESSAGES/rpm.mo
 usr/share/locale/fr_BE/LC_COLLATE
@@ -1124,12 +1188,14 @@ usr/share/locale/fr_LU/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/fr_LU/LC_MONETARY
 usr/share/locale/fr_LU/LC_NUMERIC
 usr/share/locale/fr_LU/LC_TIME
+usr/share/locale/ga/LC_MESSAGES/gtk+.mo
 usr/share/locale/ga_IE/LC_COLLATE
 usr/share/locale/ga_IE/LC_CTYPE
 usr/share/locale/ga_IE/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/ga_IE/LC_MONETARY
 usr/share/locale/ga_IE/LC_NUMERIC
 usr/share/locale/ga_IE/LC_TIME
+usr/share/locale/gl/LC_MESSAGES/gtk+.mo
 usr/share/locale/gl/LC_MESSAGES/libc.mo
 usr/share/locale/gl_ES/LC_COLLATE
 usr/share/locale/gl_ES/LC_CTYPE
@@ -1137,12 +1203,14 @@ usr/share/locale/gl_ES/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/gl_ES/LC_MONETARY
 usr/share/locale/gl_ES/LC_NUMERIC
 usr/share/locale/gl_ES/LC_TIME
+usr/share/locale/hr/LC_MESSAGES/gtk+.mo
 usr/share/locale/hr_HR/LC_COLLATE
 usr/share/locale/hr_HR/LC_CTYPE
 usr/share/locale/hr_HR/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/hr_HR/LC_MONETARY
 usr/share/locale/hr_HR/LC_NUMERIC
 usr/share/locale/hr_HR/LC_TIME
+usr/share/locale/hu/LC_MESSAGES/gtk+.mo
 usr/share/locale/hu_HU/LC_COLLATE
 usr/share/locale/hu_HU/LC_CTYPE
 usr/share/locale/hu_HU/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1161,6 +1229,7 @@ usr/share/locale/is_IS/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/is_IS/LC_MONETARY
 usr/share/locale/is_IS/LC_NUMERIC
 usr/share/locale/is_IS/LC_TIME
+usr/share/locale/it/LC_MESSAGES/gtk+.mo
 usr/share/locale/it/LC_MESSAGES/libc.mo
 usr/share/locale/it_CH/LC_COLLATE
 usr/share/locale/it_CH/LC_CTYPE
@@ -1180,6 +1249,7 @@ usr/share/locale/iw_IL/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/iw_IL/LC_MONETARY
 usr/share/locale/iw_IL/LC_NUMERIC
 usr/share/locale/iw_IL/LC_TIME
+usr/share/locale/ja/LC_MESSAGES/gtk+.mo
 usr/share/locale/kl_GL/LC_COLLATE
 usr/share/locale/kl_GL/LC_CTYPE
 usr/share/locale/kl_GL/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1188,8 +1258,10 @@ usr/share/locale/kl_GL/LC_NUMERIC
 usr/share/locale/kl_GL/LC_TIME
 usr/share/locale/ko/LC_MESSAGES/fileutils.mo
 usr/share/locale/ko/LC_MESSAGES/grep.mo
+usr/share/locale/ko/LC_MESSAGES/gtk+.mo
 usr/share/locale/ko/LC_MESSAGES/libc.mo
 usr/share/locale/locale.alias
+usr/share/locale/lt/LC_MESSAGES/gtk+.mo
 usr/share/locale/lt_LT/LC_COLLATE
 usr/share/locale/lt_LT/LC_CTYPE
 usr/share/locale/lt_LT/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1210,6 +1282,7 @@ usr/share/locale/mk_MK/LC_NUMERIC
 usr/share/locale/mk_MK/LC_TIME
 usr/share/locale/nl/LC_MESSAGES/fileutils.mo
 usr/share/locale/nl/LC_MESSAGES/grep.mo
+usr/share/locale/nl/LC_MESSAGES/gtk+.mo
 usr/share/locale/nl/LC_MESSAGES/libc.mo
 usr/share/locale/nl_BE/LC_COLLATE
 usr/share/locale/nl_BE/LC_CTYPE
@@ -1225,6 +1298,7 @@ usr/share/locale/nl_NL/LC_NUMERIC
 usr/share/locale/nl_NL/LC_TIME
 usr/share/locale/no/LC_MESSAGES/fileutils.mo
 usr/share/locale/no/LC_MESSAGES/grep.mo
+usr/share/locale/no/LC_MESSAGES/gtk+.mo
 usr/share/locale/no/LC_MESSAGES/libc.mo
 usr/share/locale/no_NO/LC_COLLATE
 usr/share/locale/no_NO/LC_CTYPE
@@ -1234,6 +1308,7 @@ usr/share/locale/no_NO/LC_NUMERIC
 usr/share/locale/no_NO/LC_TIME
 usr/share/locale/pl/LC_MESSAGES/fileutils.mo
 usr/share/locale/pl/LC_MESSAGES/grep.mo
+usr/share/locale/pl/LC_MESSAGES/gtk+.mo
 usr/share/locale/pl/LC_MESSAGES/libc.mo
 usr/share/locale/pl/LC_MESSAGES/rpm.mo
 usr/share/locale/pl_PL/LC_COLLATE
@@ -1243,9 +1318,11 @@ usr/share/locale/pl_PL/LC_MONETARY
 usr/share/locale/pl_PL/LC_NUMERIC
 usr/share/locale/pl_PL/LC_TIME
 usr/share/locale/pt/LC_MESSAGES/fileutils.mo
+usr/share/locale/pt/LC_MESSAGES/gtk+.mo
 usr/share/locale/pt_BR/LC_COLLATE
 usr/share/locale/pt_BR/LC_CTYPE
 usr/share/locale/pt_BR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/share/locale/pt_BR/LC_MESSAGES/gtk+.mo
 usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
 usr/share/locale/pt_BR/LC_MESSAGES/rpm.mo
 usr/share/locale/pt_BR/LC_MONETARY
@@ -1257,6 +1334,7 @@ usr/share/locale/pt_PT/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/pt_PT/LC_MONETARY
 usr/share/locale/pt_PT/LC_NUMERIC
 usr/share/locale/pt_PT/LC_TIME
+usr/share/locale/ro/LC_MESSAGES/gtk+.mo
 usr/share/locale/ro_RO/LC_COLLATE
 usr/share/locale/ro_RO/LC_CTYPE
 usr/share/locale/ro_RO/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1265,6 +1343,7 @@ usr/share/locale/ro_RO/LC_NUMERIC
 usr/share/locale/ro_RO/LC_TIME
 usr/share/locale/ru/LC_MESSAGES/fileutils.mo
 usr/share/locale/ru/LC_MESSAGES/grep.mo
+usr/share/locale/ru/LC_MESSAGES/gtk+.mo
 usr/share/locale/ru/LC_MESSAGES/rpm.mo
 usr/share/locale/ru_RU.KOI8-R/LC_COLLATE
 usr/share/locale/ru_RU.KOI8-R/LC_CTYPE
@@ -1285,6 +1364,7 @@ usr/share/locale/ru_UA/LC_MONETARY
 usr/share/locale/ru_UA/LC_NUMERIC
 usr/share/locale/ru_UA/LC_TIME
 usr/share/locale/sk/LC_MESSAGES/fileutils.mo
+usr/share/locale/sk/LC_MESSAGES/gtk+.mo
 usr/share/locale/sk/LC_MESSAGES/libc.mo
 usr/share/locale/sk/LC_MESSAGES/rpm.mo
 usr/share/locale/sk_SK/LC_COLLATE
@@ -1295,6 +1375,7 @@ usr/share/locale/sk_SK/LC_NUMERIC
 usr/share/locale/sk_SK/LC_TIME
 usr/share/locale/sl/LC_MESSAGES/fileutils.mo
 usr/share/locale/sl/LC_MESSAGES/grep.mo
+usr/share/locale/sl/LC_MESSAGES/gtk+.mo
 usr/share/locale/sl_SI/LC_COLLATE
 usr/share/locale/sl_SI/LC_CTYPE
 usr/share/locale/sl_SI/LC_MESSAGES/SYS_LC_MESSAGES
@@ -1310,6 +1391,7 @@ usr/share/locale/sr_YU/LC_NUMERIC
 usr/share/locale/sr_YU/LC_TIME
 usr/share/locale/sv/LC_MESSAGES/fileutils.mo
 usr/share/locale/sv/LC_MESSAGES/grep.mo
+usr/share/locale/sv/LC_MESSAGES/gtk+.mo
 usr/share/locale/sv/LC_MESSAGES/libc.mo
 usr/share/locale/sv/LC_MESSAGES/rpm.mo
 usr/share/locale/sv_FI/LC_COLLATE
@@ -1337,12 +1419,15 @@ usr/share/locale/tr_TR/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/tr_TR/LC_MONETARY
 usr/share/locale/tr_TR/LC_NUMERIC
 usr/share/locale/tr_TR/LC_TIME
+usr/share/locale/uk/LC_MESSAGES/gtk+.mo
 usr/share/locale/uk_UA/LC_COLLATE
 usr/share/locale/uk_UA/LC_CTYPE
 usr/share/locale/uk_UA/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/uk_UA/LC_MONETARY
 usr/share/locale/uk_UA/LC_NUMERIC
 usr/share/locale/uk_UA/LC_TIME
+usr/share/locale/wa/LC_MESSAGES/gtk+.mo
+usr/share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 usr/share/tabset/std
 usr/share/tabset/stdcrt
 usr/share/tabset/vt100
@@ -3425,6 +3510,7 @@ usr/share/terminfo/z/zt-1
 usr/share/terminfo/z/ztx
 usr/share/terminfo/z/ztx-1-a
 usr/share/terminfo/z/ztx11
+usr/share/themes/Default/gtk/gtkrc
 usr/share/zoneinfo/Africa/Abidjan
 usr/share/zoneinfo/Africa/Accra
 usr/share/zoneinfo/Africa/Addis_Ababa
@@ -5116,6 +5202,9 @@ var/log/lastlog
 @dirrm usr/share/zoneinfo/America
 @dirrm usr/share/zoneinfo/Africa
 @dirrm usr/share/zoneinfo
+@dirrm usr/share/themes/Default/gtk
+@dirrm usr/share/themes/Default
+@dirrm usr/share/themes
 @dirrm usr/share/terminfo/z
 @dirrm usr/share/terminfo/x
 @dirrm usr/share/terminfo/w
@@ -5155,8 +5244,14 @@ var/log/lastlog
 @dirrm usr/share/terminfo/1
 @dirrm usr/share/terminfo
 @dirrm usr/share/tabset
+@dirrm usr/share/locale/zh_TW.Big5/LC_MESSAGES
+@dirrm usr/share/locale/zh_TW.Big5
+@dirrm usr/share/locale/wa/LC_MESSAGES
+@dirrm usr/share/locale/wa
 @dirrm usr/share/locale/uk_UA/LC_MESSAGES
 @dirrm usr/share/locale/uk_UA
+@dirrm usr/share/locale/uk/LC_MESSAGES
+@dirrm usr/share/locale/uk
 @dirrm usr/share/locale/tr_TR/LC_MESSAGES
 @dirrm usr/share/locale/tr_TR
 @dirrm usr/share/locale/tr/LC_MESSAGES
@@ -5191,6 +5286,8 @@ var/log/lastlog
 @dirrm usr/share/locale/ru
 @dirrm usr/share/locale/ro_RO/LC_MESSAGES
 @dirrm usr/share/locale/ro_RO
+@dirrm usr/share/locale/ro/LC_MESSAGES
+@dirrm usr/share/locale/ro
 @dirrm usr/share/locale/pt_PT/LC_MESSAGES
 @dirrm usr/share/locale/pt_PT
 @dirrm usr/share/locale/pt_BR/LC_MESSAGES
@@ -5217,10 +5314,14 @@ var/log/lastlog
 @dirrm usr/share/locale/lv_LV
 @dirrm usr/share/locale/lt_LT/LC_MESSAGES
 @dirrm usr/share/locale/lt_LT
+@dirrm usr/share/locale/lt/LC_MESSAGES
+@dirrm usr/share/locale/lt
 @dirrm usr/share/locale/ko/LC_MESSAGES
 @dirrm usr/share/locale/ko
 @dirrm usr/share/locale/kl_GL/LC_MESSAGES
 @dirrm usr/share/locale/kl_GL
+@dirrm usr/share/locale/ja/LC_MESSAGES
+@dirrm usr/share/locale/ja
 @dirrm usr/share/locale/iw_IL/LC_MESSAGES
 @dirrm usr/share/locale/iw_IL
 @dirrm usr/share/locale/it_IT/LC_MESSAGES
@@ -5235,14 +5336,20 @@ var/log/lastlog
 @dirrm usr/share/locale/in_ID
 @dirrm usr/share/locale/hu_HU/LC_MESSAGES
 @dirrm usr/share/locale/hu_HU
+@dirrm usr/share/locale/hu/LC_MESSAGES
+@dirrm usr/share/locale/hu
 @dirrm usr/share/locale/hr_HR/LC_MESSAGES
 @dirrm usr/share/locale/hr_HR
+@dirrm usr/share/locale/hr/LC_MESSAGES
+@dirrm usr/share/locale/hr
 @dirrm usr/share/locale/gl_ES/LC_MESSAGES
 @dirrm usr/share/locale/gl_ES
 @dirrm usr/share/locale/gl/LC_MESSAGES
 @dirrm usr/share/locale/gl
 @dirrm usr/share/locale/ga_IE/LC_MESSAGES
 @dirrm usr/share/locale/ga_IE
+@dirrm usr/share/locale/ga/LC_MESSAGES
+@dirrm usr/share/locale/ga
 @dirrm usr/share/locale/fr_LU/LC_MESSAGES
 @dirrm usr/share/locale/fr_LU
 @dirrm usr/share/locale/fr_FR/LC_MESSAGES
@@ -5263,8 +5370,12 @@ var/log/lastlog
 @dirrm usr/share/locale/fi
 @dirrm usr/share/locale/eu_ES/LC_MESSAGES
 @dirrm usr/share/locale/eu_ES
+@dirrm usr/share/locale/eu/LC_MESSAGES
+@dirrm usr/share/locale/eu
 @dirrm usr/share/locale/et_EE/LC_MESSAGES
 @dirrm usr/share/locale/et_EE
+@dirrm usr/share/locale/et/LC_MESSAGES
+@dirrm usr/share/locale/et
 @dirrm usr/share/locale/es_ES/LC_MESSAGES
 @dirrm usr/share/locale/es_ES
 @dirrm usr/share/locale/es/LC_MESSAGES
@@ -5303,12 +5414,16 @@ var/log/lastlog
 @dirrm usr/share/locale/de
 @dirrm usr/share/locale/da_DK/LC_MESSAGES
 @dirrm usr/share/locale/da_DK
+@dirrm usr/share/locale/da/LC_MESSAGES
+@dirrm usr/share/locale/da
 @dirrm usr/share/locale/cs_CZ/LC_MESSAGES
 @dirrm usr/share/locale/cs_CZ
 @dirrm usr/share/locale/cs/LC_MESSAGES
 @dirrm usr/share/locale/cs
 @dirrm usr/share/locale/ca_ES/LC_MESSAGES
 @dirrm usr/share/locale/ca_ES
+@dirrm usr/share/locale/ca/LC_MESSAGES
+@dirrm usr/share/locale/ca
 @dirrm usr/share/locale/ar_SA/LC_MESSAGES
 @dirrm usr/share/locale/ar_SA
 @dirrm usr/share/locale/af_ZA/LC_MESSAGES
@@ -5355,6 +5470,7 @@ var/log/lastlog
 @dirrm usr/doc/rpm-3.0.3
 @dirrm usr/doc/ncurses-4.2
 @dirrm usr/doc/ldconfig-1.9.5
+@dirrm usr/doc/gtk+-1.2.6
 @dirrm usr/doc/grep-2.3
 @dirrm usr/doc/glibc-2.1.3/examples.threads
 @dirrm usr/doc/glibc-2.1.3
@@ -5383,6 +5499,7 @@ var/log/lastlog
 @dirrm lib
 @dirrm etc/profile.d
 @dirrm etc/pam.d
+@dirrm etc/gtk
 @dirrm etc/X11/wmconfig
 @dirrm etc/X11
 @dirrm etc
