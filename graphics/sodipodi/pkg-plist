@@ -1,4 +1,5 @@
 bin/sodipodi
+etc/CORBA/servers/sodipodi.gnorba
 share/gnome/apps/Graphics/sodipodi.desktop
 share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/back.xpm
@@ -25,6 +26,9 @@ share/gnome/sodipodi/toback.xpm
 share/gnome/sodipodi/tofront.xpm
 share/gnome/sodipodi/unknown.xpm
 share/gnome/sodipodi/zoom.xpm
+share/locale/da/LC_MESSAGES/sodipodi.mo
 share/locale/et/LC_MESSAGES/sodipodi.mo
+share/locale/no/LC_MESSAGES/sodipodi.mo
+share/locale/ru/LC_MESSAGES/sodipodi.mo
 share/locale/uk/LC_MESSAGES/sodipodi.mo
 @dirrm share/gnome/sodipodi
