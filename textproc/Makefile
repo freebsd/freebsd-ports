@@ -24,6 +24,7 @@
     SUBDIR += cdiff
     SUBDIR += chpp
     SUBDIR += cl-meta
+    SUBDIR += cl-ppcre
     SUBDIR += coco
     SUBDIR += cocoon
     SUBDIR += code2html
