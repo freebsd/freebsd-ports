@@ -18,6 +18,8 @@ BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	simage.26:${PORTSDIR}/graphics/simage \
 		openal.0:${PORTSDIR}/audio/openal
 
+BROKEN=		"Incorrect pkg-plist (removes files not installed by this port)"
+
 USE_REINPLACE=	yes
 USE_GL=		yes
 USE_XLIB=	yes
