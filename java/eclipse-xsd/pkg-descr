@@ -1,5 +1,0 @@
-The XML Schema Infoset Model is a reference library for use with any
-code that examines, creates or modifies XML Schemas (standalone or as
-part of other artifacts, such as XForms or WSDL documents).
-
-WWW: http://www.eclipse.org/vep/
