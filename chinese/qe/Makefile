@@ -6,11 +6,18 @@
 #
 
 PORTNAME=	qe
-PORTVERSION=	0.0.34
+PORTVERSION=	0.1.1
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/ \
 		http://freebsd.sinica.edu.tw/~statue/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
+
+HAS_CONFIGURE= yes
+USE_GMAKE=     yes
+
+post-configure:
+	@(cd ${WRKSRC} && \
+	${PATCH} < ${FILESDIR}/post-patch-Makefile )
 
 .include <bsd.port.mk>
