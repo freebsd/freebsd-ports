@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openjade
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +23,9 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB=	MKCATALOG=${MKCATALOG}
 
 MKCATALOG=	${PREFIX}/sbin/mkcatalog
+
+post-patch:
+	@${CP} ${PREFIX}/bin/libtool ${WRKSRC}/libtool
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/sgml/openjade
