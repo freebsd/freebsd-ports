@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	oSIP is an implementation of SIP
+COMMENT=	A low layer of SIP implementation
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
