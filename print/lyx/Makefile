@@ -9,10 +9,9 @@
 DISTNAME=	lyx-1.1.4
 PKGNAME=	lyx-1.1.4.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/devel/ \
-		ftp://la1ad.uio.no/pub/lyx/ \
-		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/devel/ \
-		ftp://ftp.sdsc.edu/pub/other/lyx/devel/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
+		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
+		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-1.1.4fix1.gz
