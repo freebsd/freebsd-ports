@@ -14,12 +14,6 @@
  *         8      12            16        20  
  * _clone (__fn,  __childstack, __flags,  __arg);	
  *
- * I'm pretty shakey on assembly language, so someone else better
- * check this!  I don't even know what half this stuff means, its
- * just copied from somewhere else (rf.S).
- *
- * It seems to work though.
- *	
  * Here's the idea:
  *   __childstack is the TOS for the new rforked thread
  *   __flags are the rfork flags
@@ -42,14 +36,14 @@ ENTRY(_clone)
 	/*
 	 * Push thread info onto the new thread's stack
 	 */
-	movl	12(%ebp), %esi	/ get stack addr
+	movl	12(%ebp), %esi		/* get stack addr */
 
 	subl	$4, %esi
-	movl	20(%ebp), %eax	/ get __arg
+	movl	20(%ebp), %eax		/* get __arg */
 	movl	%eax, (%esi)
 
 	subl	$4, %esi
-	movl	8(%ebp), %eax	/ get __fn
+	movl	8(%ebp), %eax		/* get __fn */
 	movl	%eax, (%esi)
 
 	.stabd 68,0,2
@@ -97,7 +91,7 @@ ENTRY(_clone)
 #ifdef DEBUG
 	movl	%eax,_fcn
 #endif
-	call	%eax
+	call	*%eax
 	addl	$8, %esp
 
 	/*
