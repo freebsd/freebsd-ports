@@ -28,6 +28,7 @@
     SUBDIR += gnomeapplets
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
+    SUBDIR += gtk-theme-switch
     SUBDIR += gvid
     SUBDIR += gyroscope
     SUBDIR += imwheel
