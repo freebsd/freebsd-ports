@@ -1,0 +1,16 @@
+--- psgml-api.texi.orig	Mon Nov 16 06:45:06 1998
++++ psgml-api.texi	Sat Jan 23 21:11:18 1999
+@@ -8,10 +8,9 @@
+ 
+ @ifinfo
+-@format
+-START-INFO-DIR-ENTRY
++@dircategory The Emacs editor and associated tools
++@direntry
+ * PSGML-API: (psgml-api).  PSGML, the API documentation.
+-END-INFO-DIR-ENTRY
+-@end format
++@end direntry
+ @end ifinfo
+ 
+ @ifinfo
