@@ -99,7 +99,7 @@ TARGETS+=	tags
 .for __target in ${TARGETS}
 .if !target(${__target})
 .if defined(SUBDIR) && !empty(SUBDIR)
-${__target}: ${SUBDIR:S/$/.${__target}/}
+${__target}: ${SUBDIR:S/^/_/:S/$/.${__target}/}
 .else
 ${__target}:
 .endif
@@ -109,18 +109,18 @@ ${__target}:
 .if defined(SUBDIR) && !empty(SUBDIR)
 
 .for __target in ${TARGETS} checksubdirs readmes
-${SUBDIR:S/$/.${__target}/}: _SUBDIRUSE
+${SUBDIR:S/^/_/:S/$/.${__target}/}: _SUBDIRUSE
 .endfor
 
 _SUBDIRUSE: .USE
-	@OK=""; sub=${.TARGET:R}; \
+	@OK=""; sub=${.TARGET:S/^_//:R}; \
 	for dud in $$DUDS; do \
 		if [ $${dud} = $$sub ]; then \
 			OK="false"; \
 			${ECHO_MSG} "===> ${DIRPRFX}$$sub skipped"; \
 		fi; \
 	done; \
-	if test -d ${.CURDIR}/${.TARGET:R}.${MACHINE_ARCH}; then \
+	if test -d ${.CURDIR}/$${sub}.${MACHINE_ARCH}; then \
 		edir=$${sub}.${MACHINE_ARCH}; \
 	elif test -d ${.CURDIR}/$${sub}; then \
 		edir=$${sub}; \
@@ -135,7 +135,7 @@ _SUBDIRUSE: .USE
 			DIRPRFX=${DIRPRFX}$$edir/; \
 	fi
 
-.for _subdir in ${SUBDIR}
+.for _subdir in ${SUBDIR:S/^/_/}
 ${_subdir}::   ${_subdir:S/$/.all/}
 .endfor
 
@@ -150,14 +150,14 @@ afterinstall:
 .endif
 install: afterinstall
 afterinstall: realinstall
-realinstall: beforeinstall ${SUBDIR:S/$/.realinstall/}
+realinstall: beforeinstall ${SUBDIR:S/^/_/:S/$/.realinstall/}
 .endif
 
 IGNOREDIR=	CVS Mk Templates Tools distfiles packages pkg
 
 .if !target(checksubdirs)
 .if defined(PORTSTOP)
-checksubdirs: checksubdir ${SUBDIR:S/$/.checksubdirs/}
+checksubdirs: checksubdir ${SUBDIR:S/^/_/:S/$/.checksubdirs/}
 .else
 checksubdirs: checksubdir
 .endif
@@ -187,7 +187,7 @@ checksubdir:
 .endif
 
 .if !target(readmes)
-readmes: readme ${SUBDIR:S/$/.readmes/}
+readmes: readme ${SUBDIR:S/^/_/:S/$/.readmes/}
 .endif
 
 .if !target(readme)

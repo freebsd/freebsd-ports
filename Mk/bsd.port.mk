@@ -63,11 +63,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  numerically (e.g. if port-0.3 is newer than port-1998).
 #				  In this case, incrementing PORTEPOCH forces the revision.
 #				  Default: 0 (no effect).
+# PKGNAME		- Always defined as
+#				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.
 # PKGNAMEPREFIX	- Prefix to specify that port is language-specific, etc.
 #				  Optional.
 # PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
-# PKGNAME		- Always defined as
-#				  ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.
 #				  Do not define this in your Makefile.
 # DISTNAME		- Name of port or distribution used in generating
 #				  WRKSRC and DISTFILES below (default:
@@ -221,7 +221,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # WANT_AUTOCONF_VER (PORT MAY SET THIS VALUE)
 #				- Implies GNU_CONFIGURE=yes.
 #				- Says that the port wants autoconf; legal values
-#				  are: 213, 253, 254.
+#				  are: 213, 253, 257.
 #				- Each specify a version of autoconf to use
 #				  and appropriatly set AUTOCONF{,_DIR} and other
 #				  autoconf-related program paths.
@@ -336,7 +336,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_XLIB		- Says that the port uses the X libraries.
 #
 # USE_FREETYPE	- Says that the port uses the freetype print libraries.
-# USE_MESA		- Says that the port uses the Mesa libraries.
+# USE_GL		- Says that the port uses libGL.
+# USE_MESA		- Says that the port uses libGL/libglut (deprecated).
 # USE_MOTIF		- Says that the port uses a Motif toolkit.  Implies USE_XPM.
 # NO_OPENMOTIF		- Says that the port uses a custom Motif toolkit 
 #			  instead of Openmotif.
@@ -353,7 +354,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # USE_OPENLDAP		- Says that the port uses the OpenLDAP libraries
 #					  Implies: WANT_OPENLDAP_VER?=21
-# WANT_OPENLDAP_VER	- Legal values are: 12, 20, 21, and 22
+# WANT_OPENLDAP_VER	- Legal values are: 20, 21, and 22
 #					  If set to an unkown value, the port is marked BROKEN.
 #
 ##
@@ -422,6 +423,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				depend on the sysutils/rc_subr port.
 #
 # RC_SUBR		- Set to path of rc.subr, defaults to ${LOCALBASE}/etc/rc.subr.
+#
+# USE_APACHE		- Says that the port relies on an apache webserver.
+# APACHE_PORT		- CATEGORY and portname of the prefered port for apache.
+#					Default: www/apache13
+#					If WITH_APACHE2 is defined defaults to www/apache2
+# APXS			- Full path to the prefered apxs binary to configure
+#			  apache modules. Default: ${LOCALBASE}/sbin/apxs
 #				
 #
 #
@@ -590,6 +598,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # fetch-required - Retrieves ${DISTFILES} (and ${PATCHFILES} if defined),
 #				  for port and dependencies that are not already installed
 #				  into ${DISTDIR}.
+# all-depends-list - Show all directories which are dependencies
+#				for this port.
+# build-depends-list - Show all directories which are build-dependencies
+#				for this port.
+# package-depends-list - Show all directories which are
+#				package-dependencies for this port.
+# run-depends-list - Show all directories which are run-dependencies
+#				for this port.
+#
 # extract		- Unpacks ${DISTFILES} into ${WRKDIR}.
 # patch			- Apply any provided patches to the source.
 # configure		- Runs either GNU configure, one or more local configure
@@ -601,6 +618,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # deinstall		- Remove the installation.
 # deinstall-all	- Remove all installations with the same PKGORIGIN.
 # package		- Create a package from an _installed_ port.
+# package-recursive - Create a package for a port and _all_ of its dependancies.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
 # checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
@@ -935,6 +953,10 @@ USE_SUBMAKE=	yes
 	@${FALSE}
 .endif
 
+.if ${PORTVERSION:M*[-_,]*}x != x
+BROKEN=			"PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','"
+.endif
+
 PORTREVISION?=	0
 .if ${PORTREVISION} != 0
 _SUF1=	_${PORTREVISION}
@@ -945,7 +967,7 @@ PORTEPOCH?=		0
 _SUF2=	,${PORTEPOCH}
 .endif
 
-PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}${_SUF1}${_SUF2}
+PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 DISTNAME?=	${PORTNAME}-${PORTVERSION}
 
 # These need to be absolute since we don't know how deep in the ports
@@ -976,8 +998,7 @@ EXTRACT_SUFX?=			.tar.gz
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 
-.if (!defined(PATCHDIR) && exists(${MASTERDIR}/patches)) || \
-	(!defined(PKGDIR) && exists(${MASTERDIR}/pkg)) || \
+.if (!defined(PKGDIR) && exists(${MASTERDIR}/pkg/DESCR)) || \
 	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
 pre-everything::
 	@${ECHO_CMD} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
@@ -1009,6 +1030,19 @@ NO_MTREE=		yes
 PREFIX?=		${LOCALBASE}
 .endif
 
+PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
+
+.if defined(WITH_APACHE2)
+APACHE_PORT?=	www/apache2
+.else
+APACHE_PORT?=	www/apache13
+.endif
+APXS?=		${LOCALBASE}/sbin/apxs
+.if defined(USE_APACHE)
+BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
+.endif
+
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
 _perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
@@ -1025,25 +1059,44 @@ PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
 PERL_LEVEL=0
 .endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
 
+.if ${OSVERSION} >= 500032
+PERL_VERSION?=	5.6.1
+PERL_VER?=		5.6.1
+PERL_ARCH?=		mach
+.else
+.if ${OSVERSION} >= 500007
+PERL_VERSION?=	5.6.0
+PERL_VER?=		5.6.0
+PERL_ARCH?=		mach
+.else
+.if ${OSVERSION} >= 300000
+PERL_VERSION?=	5.00503
+.else
+PERL_VERSION?=	5.00502
+.endif
+PERL_VER?=		5.005
+PERL_ARCH?=		${ARCH}-freebsd
+.endif
+.endif
+
+.if ${PERL_LEVEL} >= 500800
+PERL_PORT?=	perl5.8
+.else
+PERL_PORT?=	perl5
+.endif
+
+SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
+.if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
+PERL5=		/usr/bin/perl${PERL_VERSION}
+PERL=		/usr/bin/perl
+.else
+PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
+PERL=		${LOCALBASE}/bin/perl
+.endif
+
 .if defined(USE_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-.endif
-
-.if defined(USE_OPENLDAP_VER)
-USE_OPENLDAP?=		yes
-WANT_OPENLDAP_VER=	${USE_OPENLDAP_VER}
-.endif
-
-.if defined(USE_OPENLDAP)
-WANT_OPENLDAP_VER?=	21
-.if ${WANT_OPENLDAP_VER} == 12
-LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
-.elif ${WANT_OPENLDAP_VER} == 20 || ${WANT_OPENLDAP_VER} == 21 || \
-		${WANT_OPENLDAP_VER} == 22
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
-.else
-BROKEN=		"unknown OpenLDAP version: ${WANT_OPENLDAP_VER}"
-.endif
 .endif
 
 .if defined(EMACS_PORT_NAME)
@@ -1081,6 +1134,12 @@ XFREE86_VERSION?=	3
 
 # Location of mounted CDROM(s) to search for files
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
+
+WANT_OPENLDAP_VER?=	21
+
+# Owner and group of the WWW user
+WWWOWN?=	www
+WWWGRP?=	www
 
 .endif
 # End of pre-makefile section.
@@ -1185,7 +1244,7 @@ cur_amver=	15
 dev_amver=	17
 old_acver=	213
 cur_acver=	253
-dev_acver=	254
+dev_acver=	257
 
 ########## automake setup
 .if defined(USE_AUTOMAKE_VER)
@@ -1207,16 +1266,17 @@ WANT_AUTOCONF_VER?=	${cur_acver}
 .elif ${use_amver} == ${old_amver} || ${use_amver} == ${dev_amver}
 ACLOCAL_DIR=	${LOCALBASE}/share/aclocal${use_amver}
 AUTOMAKE_DIR=	${LOCALBASE}/share/automake${use_amver}
+.if ${use_amver} == ${old_amver}
 ampath=			${LOCALBASE}/libexec/automake${use_amver}:
 BUILD_DEPENDS+=	${ampath:S/://}/automake:${PORTSDIR}/devel/automake${use_amver}
-.if ${use_amver} == ${old_amver}
 AUTOMAKE_ARGS+=	-i
 WANT_AUTOCONF_VER?=${old_acver}
 .else
+BUILD_DEPENDS+=         ${LOCALBASE}/bin/automake${dev_amver}:${PORTSDIR}/devel/automake{dev_amver}
 WANT_AUTOCONF_VER?=${dev_acver}
 .endif # ${use_amver} == ${old_amver}
 .else # bad automake version
-BROKEN="unknown AUTOMAKE version: ${USE_AUTOMAKE_VER}"
+BROKEN="unknown AUTOMAKE version: ${use_amver}"
 .endif # ${use_amver} == ${cur_amver}
 .endif # defined(WANT_AUTOMAKE_VER)
 
@@ -1237,12 +1297,15 @@ use_acver=			${WANT_AUTOCONF_VER:L}
 .if ${use_acver} == ${cur_acver}
 AUTOCONF_DIR=		${LOCALBASE}/share/autoconf
 BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf
-.elif ${use_acver} == ${old_acver} || ${use_acver} == ${dev_acver}
+.elif ${use_acver} == ${old_acver}
 AUTOCONF_DIR=	${LOCALBASE}/share/autoconf${use_acver}
 acpath=			${LOCALBASE}/libexec/autoconf${use_acver}
 BUILD_DEPENDS+=	${acpath}/autoconf:${PORTSDIR}/devel/autoconf${use_acver}
+.elif ${use_acver} == ${dev_acver}
+AUTOCONF_DIR=		${LOCALBASE}/share/autoconf${dev_acver}
+BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf${dev_acver}:${PORTSDIR}/devel/autoconf${dev_acver}
 .else # bad autoconf version
-BROKEN="unknown AUTOCONF version: ${USE_AUTOCONF_VER}"
+BROKEN="unknown AUTOCONF version: ${use_acver}"
 .endif # ${use_acver} == ${cur_acver}
 .endif # defined(WANT_AUTOCONF_VER)
 
@@ -1267,8 +1330,13 @@ AUTOTOOLS_ENV+=	PATH=${autotools_path}:${PATH}
 ########## set up automake "names"
 .if defined(use_amver)
 .if !defined(ampath)
+.if ${use_amver} == ${cur_amver}
 ACLOCAL?=	aclocal
 AUTOMAKE?=	automake
+.else
+ACLOCAL?=	aclocal${dev_amver}
+AUTOMAKE?=	automake${dev_amver}
+.endif
 .else # defined(ampath)
 ACLOCAL?=	${ampath:S/://}/aclocal
 AUTOMAKE?=	${ampath:S/://}/automake
@@ -1278,12 +1346,21 @@ AUTOMAKE?=	${ampath:S/://}/automake
 ########## set up autoconf "names"
 .if defined(use_acver)
 .if !defined(acpath)
+.if ${use_acver} == ${cur_acver}
 AUTOCONF?=		autoconf
 AUTOHEADER?=	autoheader
 AUTOIFNAMES?=	ifnames
 AUTORECONF?=	autoreconf
 AUTOSCAN?=		autoscan
 AUTOUPDATE?=	autoupdate
+.else
+AUTOCONF?=		autoconf${dev_acver}
+AUTOHEADER?=	autoheader${dev_acver}
+AUTOIFNAMES?=	ifnames${dev_acver}
+AUTORECONF?=	autoreconf${dev_acver}
+AUTOSCAN?=		autoscan${dev_acver}
+AUTOUPDATE?=	autoupdate${dev_acver}
+.endif
 .else # defined(acpath)
 AUTOCONF?=		${acpath}/autoconf
 AUTOHEADER?=	${acpath}/autoheader
@@ -1361,32 +1438,76 @@ LIBTOOLIZE?=	${LIBTOOL_LIBEXECDIR}/libtoolize
 # END LIBTOOL
 ######################################################################
 
+.if defined(USE_GCC)
+.if ${OSVERSION} < 400012
+GCCVERSION=		020702
+.endif
+.if ${OSVERSION} >= 400012 && ${OSVERSION} < 500035
+GCCVERSION=		029500
+.endif
+.if ${OSVERSION} >= 500035 && ${OSVERSION} < 500039
+GCCVERSION=		030100
+.endif
+.if ${OSVERSION} >= 500039 && ${OSVERSION} < 501103
+GCCVERSION=		030200
+.endif
+.if ${OSVERSION} >= 501103
+GCCVERSION=		030301
+.endif
+.if ${OSVERSION} >= 599999
+GCCVERSION=		030400
+.endif
+.endif
+
 .if defined(USE_GCC) && ${USE_GCC} == 2.95 && ( ${OSVERSION} < 400012 || ${OSVERSION} > 500034 )
 CC=				gcc295
 CXX=			g++295
 BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/gcc295
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
+GCCVERSION=		029500
 .endif
 .if defined(USE_GCC) && ${USE_GCC} == 3.1 && ( ${OSVERSION} < 500035 || ${OSVERSION} > 500038 )
 CC=				gcc31
 CXX=			g++31
+F77=			g77-31
 BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
+GCCVERSION=		030100
 .endif
 .if defined(USE_GCC) && ${USE_GCC} == 3.2 && ${OSVERSION} < 500039
 CC=				gcc32
 CXX=			g++32
+F77=			g77-32
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
+GCCVERSION=		030200
 .endif
 .if defined(USE_GCC) && ${USE_GCC} == 3.3 && ${OSVERSION} < 501103
 CC=				gcc33
 CXX=			g++33
+F77=			g77-33
 BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
+GCCVERSION=		030301
 .endif
 .if defined(USE_GCC) && ${USE_GCC} == 3.4 # Not yet available in any OSVERSION
 CC=				gcc34
 CXX=			g++34
+F77=			g77-34
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
+GCCVERSION=		030400
+.endif
+
+.if defined(USE_OPENLDAP_VER)
+USE_OPENLDAP?=		yes
+WANT_OPENLDAP_VER=	${USE_OPENLDAP_VER}
+.endif
+
+.if defined(USE_OPENLDAP)
+.if !empty(WANT_OPENLDAP_VER:M2[0-9]) && \
+	exists(${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client/Makefile)
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
+.else
+BROKEN=			"unknown OpenLDAP version: ${WANT_OPENLDAP_VER}"
+.endif
 .endif
 
 .if defined(USE_GETOPT_LONG)
@@ -1436,8 +1557,8 @@ BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
 .if defined(USE_XPM)
 LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
 .endif
-.if defined(USE_MESA)
-LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
+.if defined(USE_GL)
+LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/mesagl
 .endif
 XAWVER=					6
 PKG_IGNORE_DEPENDS?=	'^XFree86-3\.'
@@ -1446,50 +1567,23 @@ PKG_IGNORE_DEPENDS?=	'^XFree86-3\.'
 BUILD_DEPENDS+=			${X11BASE}/lib/X11/config/date.def:${PORTSDIR}/devel/imake-4
 RUN_DEPENDS+=			mkhtmlindex:${PORTSDIR}/devel/imake-4
 .endif
-.if defined(USE_XPM)
+.if defined(USE_XPM) || defined(USE_GL)
 USE_XLIB=				yes
-.endif
-.if defined(USE_MESA)
-LIB_DEPENDS+=			glut.3:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					7
 PKG_IGNORE_DEPENDS?=	'this_port_does_not_exist'
 .endif
 PLIST_SUB+=				XAWVER=${XAWVER}
 
+.if defined(USE_MESA)
+LIB_DEPENDS+=			glut.3:${PORTSDIR}/graphics/libglut
+.endif
+
 .if defined(USE_BISON)
 .if ${OSVERSION} >= 400014
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .endif
 .endif
-
-.if ${OSVERSION} >= 500032
-PERL_VERSION?=	5.6.1
-PERL_VER?=		5.6.1
-PERL_ARCH?=		mach
-.else
-.if ${OSVERSION} >= 500007
-PERL_VERSION?=	5.6.0
-PERL_VER?=		5.6.0
-PERL_ARCH?=		mach
-.else
-.if ${OSVERSION} >= 300000
-PERL_VERSION?=	5.00503
-.else
-PERL_VERSION?=	5.00502
-.endif
-PERL_VER?=		5.005
-PERL_ARCH?=		${ARCH}-freebsd
-.endif
-.endif
-
-.if ${PERL_LEVEL} >= 500800
-PERL_PORT?=	perl5.8
-.else
-PERL_PORT?=	perl5
-.endif
-
-SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 				PERL_VER=${PERL_VER} \
@@ -1508,11 +1602,7 @@ pre-everything::
 	@${ECHO_CMD} "Error: you don't have the right version of perl in /usr/bin."
 	@${FALSE}
 .endif
-PERL5=			/usr/bin/perl${PERL_VERSION}
-PERL=			/usr/bin/perl
 .else
-PERL5=			${LOCALBASE}/bin/perl${PERL_VERSION}
-PERL=			${LOCALBASE}/bin/perl
 .if defined(USE_PERL5) || defined(USE_PERL5_BUILD)
 BUILD_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
@@ -1650,6 +1740,23 @@ FETCH_REGET?=	1
 .else
 FETCH_CMD?=		/usr/bin/ftp
 FETCH_REGET?=	0
+.endif
+
+.if defined(RANDOMIZE_MASTER_SITES)
+.if exists(/usr/games/random)
+RANDOM_CMD?=	/usr/games/random
+RANDOM_ARGS?=	"-w -f -"
+.if ${OSVERSION} > 500100
+_RANDOMIZE_SITES=	" |${RANDOM_CMD} ${RANDOM_ARGS}"
+.else
+_RANDOMIZE_SITES=	''
+.endif
+.if ${OSVERSION} > 480000 && ${OSVERSION} < 500000
+_RANDOMIZE_SITES=	" |${RANDOM_CMD} ${RANDOM_ARGS}"
+.else
+_RANDOMIZE_SITES=	''
+.endif
+.endif
 .endif
 
 TOUCH?=			/usr/bin/touch
@@ -1803,19 +1910,7 @@ PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
 DISABLE_CONFLICTS=     YES
 .endif
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
-.if exists(${PKGINSTALL})
-PKG_ARGS+=		-i ${PKGINSTALL}
-.endif
-.if exists(${PKGDEINSTALL})
-PKG_ARGS+=		-k ${PKGDEINSTALL}
-.endif
-.if exists(${PKGREQ})
-PKG_ARGS+=		-r ${PKGREQ}
-.endif
-.if exists(${PKGMESSAGE})
-PKG_ARGS+=		-D ${PKGMESSAGE}
-.endif
+PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
 .if !defined(NO_MTREE)
 PKG_ARGS+=		-m ${MTREE_FILE}
 .endif
@@ -1851,7 +1946,7 @@ INSTALL_TARGET?=	install
 		@${ECHO_CMD} 'There is no COMMENT variable defined'
 		@${ECHO_CMD} 'for this port. Please, rectify this.'
 		@${FALSE}
-.endif
+.else
 .if exists(${COMMENTFILE})
 .BEGIN:
 		@${ECHO_CMD} 'There is a COMMENTFILE in this port.'
@@ -1859,6 +1954,7 @@ INSTALL_TARGET?=	install
 		@${ECHO_CMD} 'favor of COMMENT variables.'
 		@${ECHO_CMD} 'Please, rectify this.'
 		@${FALSE}
+.endif
 .endif
 
 # Popular master sites
@@ -2270,14 +2366,14 @@ maintainer:
 	@${FALSE}
 .else
 
-VALID_CATEGORIES+= accessibility afterstep archivers astro audio \
+VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	benchmarks biology cad chinese comms converters databases \
 	deskutils devel dns editors elisp emulators finance french ftp \
 	games german gnome graphics haskell hebrew hungarian \
-	ipv6 irc japanese java kde korean lang linux \
+	ipv6 irc japanese java kde korean lang linux lisp \
 	mail math mbone misc multimedia net news \
-	offix palm parallel perl5 picobsd plan9 polish portuguese print python \
-	ruby russian \
+	offix palm parallel pear perl5 picobsd plan9 polish portuguese print \
+	python ruby russian \
 	scheme science security shells sysutils \
 	tcl76 tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
 	tk42 tk80 tk82 tk83 tk84 tkstep80 \
@@ -2685,8 +2781,7 @@ describe:
 
 # Pre-everything
 
-.if !target(pre-everything)
-pre-everything:
+pre-everything::
 .if defined(TRYBROKEN)
 	@${ECHO_MSG} "Trying build of ${PKGNAME} even though it is marked BROKEN."
 .else
@@ -2698,7 +2793,6 @@ pre-everything:
 	done
 .else
 	@${DO_NADA}
-.endif
 .endif
 
 # Fetch
@@ -2752,7 +2846,7 @@ do-fetch:
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
-			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP`; do \
+			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
@@ -3039,6 +3133,19 @@ do-package: ${TMPPLIST}
 		fi; \
 	fi
 	@__softMAKEFLAGS='${__softMAKEFLAGS:S/'/'\''/g}'; \
+	_LATE_PKG_ARGS=""; \
+	if [ -f ${PKGINSTALL} ]; then \
+		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -i ${PKGINSTALL}"; \
+	fi; \
+	if [ -f ${PKGDEINSTALL} ]; then \
+		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -k ${PKGDEINSTALL}"; \
+	fi; \
+	if [ -f ${PKGREQ} ]; then \
+		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -r ${PKGREQ}"; \
+	fi; \
+	if [ -f ${PKGMESSAGE} ]; then \
+		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
+	fi; \
 	if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
 			eval ${MAKE} $${__softMAKEFLAGS} package-links; \
@@ -3110,7 +3217,7 @@ check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"
 		@${MKDIR} ${PKG_DBDIR}
-		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
+		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
 						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
@@ -3171,8 +3278,8 @@ install-mtree:
 			${MTREE_CMD} ${MTREE_ARGS} ${PREFIX}/ >/dev/null; \
 			if [ ${MTREE_FILE} = "/etc/mtree/BSD.local.dist" ]; then \
 				cd ${PREFIX}/share/nls; \
-				${LN} -sf C POSIX; \
-				${LN} -sf C en_US.US-ASCII; \
+				${LN} -shf C POSIX; \
+				${LN} -shf C en_US.US-ASCII; \
 			fi; \
 		fi; \
 	else \
@@ -3319,7 +3426,7 @@ _INSTALL_SEQ=	install-message check-categories check-conflicts \
 				generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script do-install add-plist-info post-install \
-				post-install-script compress-man run-ldconfig fake-pkg \
+				post-install-script add-plist-docs compress-man run-ldconfig fake-pkg \
 				security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
@@ -3504,8 +3611,14 @@ reinstall:
 
 .if !target(deinstall)
 deinstall:
+.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+	@echo "===>  Switching to root credentials for '${.TARGET}' target"
+	@cd ${.CURDIR} && \
+		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
+	@echo "===>  Returning to user credentials"
+.else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
+	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	for p in $${found_names}; do \
 			check_name=`${ECHO} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
@@ -3523,6 +3636,7 @@ deinstall:
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
 .endif
+.endif
 
 # Deinstall-all
 #
@@ -3530,8 +3644,14 @@ deinstall:
 
 .if !target(deinstall-all)
 deinstall-all:
+.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+	@echo "===>  Switching to root credentials for '${.TARGET}' target"
+	@cd ${.CURDIR} && \
+		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
+	@echo "===>  Returning to user credentials"
+.else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
-	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN} 2> /dev/null`; \
+	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	if [ -n "$${deinstall_names}" ]; then \
 		for d in $${deinstall_names}; do \
 			${ECHO_MSG} "===>   Deinstalling $${d}"; \
@@ -3541,6 +3661,7 @@ deinstall-all:
 		${ECHO_MSG} "===>   ${PKGORIGIN} not installed, skipping"; \
 	fi
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
+.endif
 .endif
 
 # Cleaning up
@@ -3640,7 +3761,7 @@ fetch-list:
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
-			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP`; do \
+			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
@@ -3672,7 +3793,7 @@ fetch-list:
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
-			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
+			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
@@ -3894,9 +4015,9 @@ lib-depends:
 	@for i in ${LIB_DEPENDS}; do \
 		lib=$${i%%:*}; \
 		case $$lib in \
-			*.*.*)	pattern=$$lib ;;\
+			*.*.*)	pattern="`${ECHO_CMD} $$lib | ${SED} -e 's/\./\\\\./g'`" ;;\
 			*.*)	pattern="$${lib%%.*}\.$${lib#*.}" ;;\
-			*)		pattern=$$lib ;;\
+			*)	pattern="$$lib" ;;\
 		esac; \
 		dir=$${i#*:}; \
 		target=$${i##*:}; \
@@ -3907,7 +4028,7 @@ lib-depends:
 			dir=$${dir%%:*}; \
 		fi; \
 		${ECHO_MSG} -n "===>   ${PKGNAME} depends on shared library: $$lib"; \
-		if ${LDCONFIG} -r | ${GREP} -qwE -e "-l$$pattern"; then \
+		if ${LDCONFIG} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
 			${ECHO_MSG} " - found"; \
 			if [ ${_DEPEND_ALWAYS} = 1 ]; then \
 				${ECHO_MSG} "       (but building it anyway)"; \
@@ -3936,7 +4057,7 @@ lib-depends:
 					(cd $$dir; ${MAKE} -DINSTALLS_DEPENDS $$target $$depends_args) ; \
 				fi ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
-				if ! ${LDCONFIG} -r | ${GREP} -qwE -e "-l$$pattern"; then \
+				if ! ${LDCONFIG} -r | ${GREP} -vwF -e "${PKGCOMPATDIR}" | ${GREP} -qwE -e "-l$$pattern"; then \
 					${ECHO_MSG} "Error: shared library \"$$lib\" does not exist"; \
 					${FALSE}; \
 				fi; \
@@ -4307,7 +4428,7 @@ generate-plist:
 	done
 .for _PREFIX in ${PREFIX}
 .if ${_TMLINKS:M${_PREFIX}*}x != x
-	@for i in ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,:S,//,/,g}; do \
+	@for i in ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||:S,//,/,g}; do \
 		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
 	done
 .endif
@@ -4318,7 +4439,7 @@ generate-plist:
 	done
 	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
-	@for i in $$(${ECHO} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,:S,//,/,g} ' ' | ${SED} -E -e 's,man([1-9ln])/([^/ ]+) ,cat\1/\2 ,g'); do \
+	@for i in $$(${ECHO} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||:S,//,/,g} ' ' | ${SED} -E -e 's,man([1-9ln])/([^/ ]+) ,cat\1/\2 ,g'); do \
 		${ECHO} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
 	done
 .if ${XFREE86_HTML_MAN:L} == "yes"
@@ -4357,6 +4478,22 @@ generate-plist:
 
 ${TMPPLIST}:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
+
+.if !target(add-plist-docs)
+add-plist-docs:
+.if defined(PORTDOCS)
+	@if [ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | tail -n 1`" != "${PREFIX}" ]; then \
+		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
+	fi
+	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} -not -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${PORTDOCS:S/^/${DOCSDIR}\//} -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${DOCSDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
+.else
+	@${DO_NADA}
+.endif
+.endif
 
 add-plist-info:
 # Process GNU INFO files at package install/deinstall time
