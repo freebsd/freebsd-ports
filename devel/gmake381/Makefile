@@ -3,7 +3,7 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.16 1997/06/13 20:00:47 max Exp $
+# $Id: Makefile,v 1.17 1997/10/15 17:14:52 max Exp $
 #
 
 DISTNAME=       make-3.76.1
@@ -19,8 +19,8 @@ MAN1=		gmake.1
 
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 post-install:
-	/bin/chmod g-s ${PREFIX}/bin/gmake
-	/usr/bin/chgrp ${BINGRP} ${PREFIX}/bin/gmake
+	chmod g-s ${PREFIX}/bin/gmake
+	chgrp ${BINGRP} ${PREFIX}/bin/gmake
 	${INSTALL_MAN} ${WRKSRC}/make.man ${PREFIX}/man/man1/gmake.1
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
