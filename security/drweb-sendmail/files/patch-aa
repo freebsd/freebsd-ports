@@ -1,6 +1,6 @@
---- configure.orig	Thu Sep 27 01:00:45 2001
-+++ configure	Wed Oct  3 07:59:17 2001
-@@ -105,6 +105,9 @@
+--- configure.orig	Tue Oct 16 19:28:21 2001
++++ configure	Sun Oct 21 00:00:54 2001
+@@ -138,6 +138,9 @@
      if [ $MILTER_VER = "STD" ] ; then
          SM_LIB="libsm"
          SM_LIB_CMD="-lsm"
@@ -10,7 +10,7 @@
      elif [ $OS = "Linux_DW" ] ; then
          SM_LIB="libsmutil"
          SM_LIB_CMD="-lsmutil"
-@@ -140,40 +143,13 @@
+@@ -173,40 +176,13 @@
      rm -f configure.cache
      echo $n "${SM_DIR}${c}" >> configure.cache
      
@@ -41,7 +41,7 @@
 -        echo "Please go to $SM_DIR and check it"
 -        exit 1    
 -    fi
-     rm -dfr include/libmilter
+     rm -fr include/libmilter
      rm -f lib/libmilter.a           
      ln -s "$SM_DIR/include/libmilter" include/libmilter
 -    ln -s "$SM_DIR/$OBJ_DIR/libmilter/libmilter.a" lib/libmilter.a           
