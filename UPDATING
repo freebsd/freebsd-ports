@@ -6,6 +6,25 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041205:
+  AFFECTS: users of multimedia/ffmpeg
+  AUTHOR: lioux@FreeBSD.org
+
+  multimedia/ffmpeg will not work if previous versions of the port
+  are installed. Also, there is a shared library version bump on
+  this update. Therefore:
+
+  1) Remove old ffmpeg 
+
+  pkg_delete -f /var/db/pkg/ffmpeg*
+
+  2) Install updated ffmpeg
+
+  3) Rebuild all ports that depend on ffmpeg due to the shared
+  library version bump
+
+  cd /var/db/pkg && portupgrade -rf ffmpeg* -x ffmpeg*
+
 20041202:
   AFFECTS: users of any ports which have dependency on lang/python
   AUTHOR: perky@FreeBSD.org
