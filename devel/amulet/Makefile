@@ -3,7 +3,7 @@
 # Date created:       26 July 1997
 # Whom:               Filip Bovyn (bovynf@awe.be)
 #
-# $Id: Makefile,v 1.3 1998/08/13 03:30:27 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/13 03:32:36 asami Exp $
 
 DISTNAME=	amulet
 PKGNAME=	amulet-3.0
@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.cs.cmu.edu/afs/cs/project/amulet/amulet3/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	bovynf@awe.be
+
+BROKEN_ELF=	libamulet.so: file not recognized: File truncated
 
 USE_X_PREFIX=	yes
 WRKSRC=		$(WRKDIR)/amulet
