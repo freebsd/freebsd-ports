@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwhois
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
@@ -28,6 +28,7 @@ post-install:
 	${MKDIR} ${PREFIX}/var/jwhois
 	${CHOWN} :nogroup ${PREFIX}/var/jwhois
 	${CHMOD} g+w ${PREFIX}/var/jwhois
-	${INSTALL_DATA} ${WRKSRC}/example/jwhois.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/example/jwhois.conf ${PREFIX}/etc/jwhois.conf.sample
+	[ ! -f ${PREFIX}/etc/jwhois.conf ] && ${INSTALL_DATA} ${PREFIX}/etc/jwhois.conf.sample ${PREFIX}/etc/jwhois.conf
 
 .include <bsd.port.mk>
