@@ -1,5 +1,5 @@
---- configure.orig	Wed Jan 12 04:32:17 2000
-+++ configure	Tue Jan 25 14:58:09 2000
+--- configure.orig	Sun Feb 13 03:46:09 2000
++++ configure	Wed May  3 12:20:25 2000
 @@ -2743,7 +2743,7 @@
    ;;
  esac
@@ -41,7 +41,7 @@
  echo "$ac_t"""$FIND_PROC"" 1>&6
  
  # Check if a pid is valid
-@@ -4614,8 +4591,6 @@
+@@ -4646,8 +4623,6 @@
  #define $ac_tr_lib 1
  EOF
  
@@ -50,7 +50,7 @@
  else
    echo "$ac_t""no" 1>&6
  fi
-@@ -4849,28 +4824,6 @@
+@@ -4881,28 +4856,6 @@
  fi
  
  
@@ -79,7 +79,40 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
-@@ -7973,7 +7926,7 @@
+@@ -5615,10 +5568,6 @@
+ ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ cross_compiling=$ac_cv_prog_cxx_cross
+ 
+-if test "$ac_cv_prog_gxx" = "yes"
+-then
+-  CXXFLAGS="$CXXFLAGS -Werror"
+-fi
+ mysql_cv_btype_last_arg_accept=none
+ cat > conftest.$ac_ext <<EOF
+ #line 5625 "configure"
+@@ -7655,10 +7604,6 @@
+ ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ cross_compiling=$ac_cv_prog_cxx_cross
+ 
+-if test "$ac_cv_prog_gxx" = "yes"
+-then
+-  CXXFLAGS="$CXXFLAGS -Werror"
+-fi
+ cat > conftest.$ac_ext <<EOF
+ #line 7664 "configure"
+ #include "confdefs.h"
+@@ -7721,10 +7666,6 @@
+ ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ cross_compiling=$ac_cv_prog_cxx_cross
+ 
+-if test "$ac_cv_prog_gxx" = "yes"
+-then
+-  CXXFLAGS="$CXXFLAGS -Werror"
+-fi
+ cat > conftest.$ac_ext <<EOF
+ #line 7730 "configure"
+ #include "confdefs.h"
+@@ -8005,7 +7946,7 @@
  #include <pthread.h>
  int main() {
  pthread_attr_t thr_attr;
@@ -87,8 +120,8 @@
 +XXXpthread_attr_setscope(&thr_attr,0);
  ; return 0; }
  EOF
- if { (eval echo configure:7980: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -8178,7 +8131,7 @@
+ if { (eval echo configure:8012: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -8210,7 +8151,7 @@
      echo ""
      echo "Configuring MIT Pthreads"
      # We will never install so installation paths are not needed.
