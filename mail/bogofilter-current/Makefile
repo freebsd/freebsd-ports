@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.92.7
+PORTVERSION=	0.92.8
 PORTREVISION=	0
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -88,7 +88,7 @@ post-install::
 	doc/README.validation TODO \
 	CHANGES-* RELEASE.NOTES-* \
 	doc/integrating-with-postfix doc/integrating-with-qmail \
-	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-2002-01 METHODS \
+	doc/bogofilter-tuning.HOWTO.html doc/bogofilter-SA-2002-01 \
 	doc/README.tdb
 	  ${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
