@@ -1,0 +1,13 @@
+--- docs/Makefile.in.orig	Sat Jul 28 21:17:13 2001
++++ docs/Makefile.in	Sat Jul 28 21:19:16 2001
+@@ -230,8 +230,8 @@
+ #index.html: DBTOHTML.html
+ #	cp -f DBTOHTML.html index.html
+ 
+-index/index.html: index.sgml
+-	db2html index.sgml
++#index/index.html: index.sgml
++#	db2html index.sgml
+ 
+ install-data-local: index/index.html
+ 	$(mkinstalldirs) $(htmldir)
