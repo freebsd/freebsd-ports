@@ -21,6 +21,14 @@ stop)
 	fi
 	rm -f /var/run/noattach.pid
 	;;
+reload)
+	if test -r /var/run/noattach.pid
+	then
+		kill `head -SIGUSR1 /var/run/noattach.pid`
+	else
+		echo " noattach: not running" 2>&1
+	fi
+	;;
 *)
 	echo "Usage: ${0##*/}: { start | stop }" 2>&1
 	exit 65
