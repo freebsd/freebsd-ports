@@ -1,23 +1,22 @@
-
 $FreeBSD$
 
---- ../pr/src/pthreads/ptio.c.orig	Fri Apr 12 03:14:39 2002
-+++ ../pr/src/pthreads/ptio.c	Tue Jul 30 18:52:11 2002
-@@ -3414,6 +3414,17 @@
-     if (osfd == -1) pt_MapError(_PR_MD_MAP_SOCKET_ERROR, errno);
-     else
-     {
+--- ../pr/src/pthreads/ptio.c.orig	Mon Feb  2 10:41:43 2004
++++ ../pr/src/pthreads/ptio.c	Mon Feb  2 10:44:49 2004
+@@ -3470,6 +3470,17 @@
+                     &on, sizeof(on));
+         }
+ #endif
 +#if (defined(_PR_INET6_PROBE) || defined(_PR_INET6)) && \
 +	defined(__FreeBSD__) && defined(IPV6_V6ONLY)
 +		if (domain == PR_AF_INET6) {
 +			int opt = 0;
 +			if (setsockopt(osfd, IPPROTO_IPV6, IPV6_V6ONLY,
-+                           &opt, sizeof(opt))) {
++			    &opt, sizeof(opt))) {
 +				close(osfd);
 +				return NULL;
 +			}
 +		}
-+#endif
++#endif  
          fd = pt_SetMethods(osfd, ftype, PR_FALSE, PR_FALSE);
          if (fd == NULL) close(osfd);
      }
