@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	openobex-1.0.1:${PORTSDIR}/comms/openobex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+USE_ICONV=	yes
 MAN1=		obexapp.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/obexapp
@@ -24,7 +25,7 @@ PLIST_FILES=	bin/obexapp
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502101
-IGNORE=		Needs -CURRENT from 20 Jan 2004 or later (sdpd)
+IGNORE=		Needs 5.x from 20 Jan 2004 or later (sdpd)
 .endif
 
 .if ${OSVERSION} < 502121
