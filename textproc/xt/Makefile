@@ -1,5 +1,5 @@
 # New ports collection makefile for:	XT
-# Version required:	19990822
+# Version required:	19991008
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	xt
-PKGNAME=	xt-19990822
+PKGNAME=	xt-19991008
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 EXTRACT_SUFX=	.zip
