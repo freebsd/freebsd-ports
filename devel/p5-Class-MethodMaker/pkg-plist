@@ -1,0 +1,36 @@
+lib/perl5/site_perl/%%PERL_VER%%/Class/MethodMaker.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/_ancestry.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/_make_get_set.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/abstract.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/boolean.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/builtin_class.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/code.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/copy.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/counter.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/forward.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/get_concat.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/get_set.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/grouped_fields.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/hash.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/hash_of_lists.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/key_attrib.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/key_with_create.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/list.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/listed_attrib.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/method.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/new.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/new_hash_init.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/new_with_init.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/object.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/object_list.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/static_get_set.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/static_hash.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/struct.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker/tie_hash.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Class/MethodMaker
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Class
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/MethodMaker
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class
