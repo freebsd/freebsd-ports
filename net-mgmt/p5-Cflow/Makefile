@@ -14,16 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
 
-.if exists(/usr/local/include/ftlib.h) && exists(/usr/local/lib/libft.a)
+.if exists(${PREFIX}/include/ftlib.h) && exists(${PREFIX}/lib/libft.a)
 CFLAGS+=	-I${PREFIX}/include -DOSU
 CONFIGURE_ARGS+=	\
-	"LDDLFLAGS= -Wl,-E -shared -lperl -lm -L${PREFIX}/lib -lft -lz" \
-	"INC= -I${PREFIX}/include" "LDLOADLIBS= -L${PREFIX}/lib -lft -lz"
+	"LDDLFLAGS= -shared -L${PREFIX}/lib -lft" \
+	"INC= -I${PREFIX}/include" "LDLOADLIBS= -L${PREFIX}/lib -lft"
 .endif
 PERL_CONFIGURE=	YES
 
 MAN1=		flowdumper.1
 MAN3=		Cflow.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
