@@ -4492,6 +4492,7 @@ mod_php4	ports/www/mod_php4
 mod_proxy_add_forward	ports/www/mod_proxy_add_forward
 mod_put		ports/www/mod_put
 mod_python	ports/www/mod_python
+mod_python3	ports/www/mod_python3
 mod_roaming	ports/www/mod_roaming
 mod_ruby	ports/www/mod_ruby
 mod_scgi	ports/www/mod_scgi
