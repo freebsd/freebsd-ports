@@ -7,7 +7,7 @@
 
 PORTNAME=	flashplugin-firefox
 PORTVERSION=	0.4.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.swift-tools.net/Flash/
 DISTNAME=	flash-${PORTVERSION}
@@ -22,7 +22,7 @@ RUN_DEPENDS?=	firefox:${PORTSDIR}/www/firefox
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Plugin
-PLUGIN_DIR?=	lib/firefox/lib/firefox-0.10.1/plugins
+PLUGIN_DIR?=	lib/firefox/lib/firefox-1.0/plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 
 do-install:
