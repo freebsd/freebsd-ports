@@ -4438,6 +4438,7 @@ lame		ports/audio/lame
 landscape	ports/graphics/landscape
 lapack		ports/math/lapack
 lapack++	ports/math/lapack++
+lapack95	ports/math/lapack95
 larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
 latd		ports/net/latd
