@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	razor-agents
-PORTVERSION=	2.14
-PORTREVISION=	2
+PORTVERSION=	2.20
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -20,6 +19,13 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDI
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/Nilsimsa.pm:${PORTSDIR}/security/p5-Digest-Nilsimsa \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.if exists(/usr/local/lib/perl5/${PERL_VER}/Test/More.pm)
+# Test::Simple is default module in perl-5.8.0 or above
+.else
+TEST_MORE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	${TEST_MORE}
+.endif
 
 PERL_CONFIGURE=	yes
 
