@@ -325,6 +325,7 @@
     SUBDIR += imake
     SUBDIR += imake-4
     SUBDIR += inilib
+    SUBDIR += initutil
     SUBDIR += invitation_to_ruby
     SUBDIR += ipython
     SUBDIR += ixlib
