@@ -9496,6 +9496,8 @@ ruby-gnome-all	ports/x11/ruby-gnome-all
 ruby-gnome2	ports/x11/ruby-gnome2
 ruby-gnome2-all	ports/x11/ruby-gnome2-all
 ruby-gnomecanvas2	ports/graphics/ruby-gnomecanvas2
+ruby-gnomeprint	ports/print/ruby-gnomeprint
+ruby-gnomeprintui	ports/x11-toolkits/ruby-gnomeprintui
 ruby-gnomevfs	ports/devel/ruby-gnomevfs
 ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
@@ -9615,6 +9617,7 @@ ruby-romp	ports/net/ruby-romp
 ruby-rreadline	ports/devel/ruby-rreadline
 ruby-rss	ports/textproc/ruby-rss
 ruby-rss.alt	ports/textproc/ruby-rss.alt
+ruby-rsvg2	ports/graphics/ruby-rsvg2
 ruby-rudl	ports/devel/ruby-rudl
 ruby-rwv2	ports/textproc/ruby-rwv2
 ruby-sablot	ports/textproc/ruby-sablot
