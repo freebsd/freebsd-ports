@@ -25,7 +25,7 @@ CONFIGURE_ARGS= --with-screen=ncurses --with-zlib \
 		--enable-nsl-fork --enable-defaults-colors --enable-prettysrc \
 		--enable-persistent-cookies --enable-gzip-help \
 		 --enable-cjk
-MAKEFILE=       makefile
+MAKEFILE=	makefile
 MAKE_ARGS=	DOCDIR=${PREFIX}/${L_DOCDIR} HELPDIR=${PREFIX}/${L_HELPDIR}
 PLIST_SUB=	DOCDIR=${L_DOCDIR} HELPDIR=${L_HELPDIR} \
 		HELPFILE_SUFFIX=${HELPFILE_SUFFIX}

@@ -29,13 +29,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${R
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=      yes
-XMKMF=          xmkmf
+XMKMF=	xmkmf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAN1=		xdvi.1
 
 .if !defined(RESOLUTION)
-RESOLUTION=     300
+RESOLUTION=	300
 .else
 .if ${RESOLUTION} != 118 && ${RESOLUTION} != 240 && \
 	${RESOLUTION} != 300 && ${RESOLUTION} != 360 && \

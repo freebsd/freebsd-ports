@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/tsuchiya/sdic/
 
-MAINTAINER=    	taoka@FreeBSD.org
+MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/dict/jedict.sdic:${PORTSDIR}/japanese/edict-sdic
 

@@ -8,15 +8,15 @@
 PORTNAME=	elvis
 PORTVERSION=	1.8.4
 PORTREVISION=	1
-CATEGORIES=    japanese editors
+CATEGORIES=	japanese editors
 MASTER_SITES=   ftp://ftp.cs.pdx.edu/pub/elvis/
 EXTRACT_SUFX=	.tgz
 DISTNAME=	${PORTNAME}-1.8
 
 PATCH_SITES=    ftp://ftp.foretune.co.jp/pub/tools/jelvis/
-PATCHFILES=     j${PORTNAME}1.8p4-j1.1.tar.Z
+PATCHFILES=	j${PORTNAME}1.8p4-j1.1.tar.Z
 
-MAINTAINER=     sanpei@FreeBSD.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 

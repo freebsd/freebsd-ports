@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DICTFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=    	taoka@FreeBSD.org
+MAINTAINER=	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
 		catdump:${PORTSDIR}/japanese/epwutil \
