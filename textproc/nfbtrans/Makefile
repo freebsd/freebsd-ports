@@ -22,6 +22,12 @@ NO_WRKSUBDIR=		yes
 ALL_TARGET=		freebsd
 MAKEFILE=		makefile
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not install on ia64 or amd64 (segfault during install)"
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/share/nfbtrans/tables
 	${INSTALL_PROGRAM} ${WRKSRC}/nfbtrans ${PREFIX}/bin
@@ -40,4 +46,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
