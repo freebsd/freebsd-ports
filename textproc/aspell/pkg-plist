@@ -1,22 +1,57 @@
 bin/aspell
 bin/run-with-aspell
+include/aspell/approx-t.hh
+include/aspell/approx.hh
 include/aspell/aspell.hh
 include/aspell/check-t.hh
 include/aspell/check.hh
+include/aspell/clone_ptr-t.hh
+include/aspell/clone_ptr.hh
+include/aspell/config.hh
+include/aspell/const_string.hh
 include/aspell/convert.hh
+include/aspell/copy_ptr-t.hh
+include/aspell/copy_ptr.hh
 include/aspell/data.hh
-include/aspell/i_data.hh
-include/aspell/i_error.hh
-include/aspell/i_iterator.hh
-include/aspell/i_object.hh
+include/aspell/data_base.hh
+include/aspell/error.hh
+include/aspell/hash-t.hh
+include/aspell/hash.hh
+include/aspell/hash_string.hh
+include/aspell/iterator.hh
 include/aspell/language.hh
+include/aspell/metaphone.hh
+include/aspell/object.hh
+include/aspell/phoneme.hh
+include/aspell/phonetic.hh
+include/aspell/popt.h
+include/aspell/prime.hh
+include/aspell/split.hh
+include/aspell/string_map.hh
+include/aspell/token-t.hh
+include/aspell/token.hh
+include/aspell/trim_space.hh
 lib/libaspell.a
-lib/libaspell.la
 lib/libaspell.so
-lib/libaspell.so.2
+lib/libaspell.so.3
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aspell/english.dat
 share/aspell/english.sl
 share/aspell/english.wrd
+share/aspell/iso8859-1.dat
+share/aspell/iso8859-10.dat
+share/aspell/iso8859-2.dat
+share/aspell/iso8859-3.dat
+share/aspell/iso8859-4.dat
+share/aspell/iso8859-5.dat
+share/aspell/iso8859-6.dat
+share/aspell/iso8859-7.dat
+share/aspell/iso8859-8.dat
+share/aspell/iso8859-9.dat
 share/aspell/ispell
+share/aspell/unicode.dat
+share/aspell/viscii.dat
 share/doc/aspell/man-html/1_Introduction.html
 share/doc/aspell/man-html/2_Getting.html
 share/doc/aspell/man-html/3_Aspell.html
@@ -31,9 +66,16 @@ share/doc/aspell/man-html/Contents.html
 share/doc/aspell/man-html/D_Credits.html
 share/doc/aspell/man-html/E_Glossary.html
 share/doc/aspell/man-html/F_Copyright.html
+share/doc/aspell/man-html/contents_motif.gif
 share/doc/aspell/man-html/index.html
 share/doc/aspell/man-html/manual.html
 share/doc/aspell/man-html/manual.css
+share/doc/aspell/man-html/next_motif.gif
+share/doc/aspell/man-html/next_motif_gr.gif
+share/doc/aspell/man-html/previous_motif.gif
+share/doc/aspell/man-html/previous_motif_gr.gif
+share/doc/aspell/man-html/up_motif.gif
+share/doc/aspell/man-html/up_motif_gr.gif
 share/doc/aspell/man-text/1_Introduction.txt
 share/doc/aspell/man-text/2_Getting.txt
 share/doc/aspell/man-text/3_Aspell.txt
@@ -54,6 +96,7 @@ share/doc/aspell/manual.aux
 share/doc/aspell/manual.dvi
 share/doc/aspell/manual.tex
 share/doc/aspell/manual2.lyx
+@dirrm include/aspell
 @dirrm share/aspell
 @dirrm share/doc/aspell/man-html
 @dirrm share/doc/aspell/man-text

@@ -1,15 +1,6 @@
---- manual/Makefile.in.orig	Mon Feb 22 22:47:08 1999
-+++ manual/Makefile.in	Sat Feb 27 20:23:24 1999
-@@ -70,7 +70,7 @@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
- 
--pkgdocdir = ${prefix}/doc/aspell
-+pkgdocdir = ${datadir}/doc/aspell
- 
- pkgdoc_DATA = manual.dvi manual.tex manual2.lyx manual.aux
- 
-@@ -78,7 +78,9 @@
+--- manual/Makefile.in.orig	Tue Jul 27 19:07:44 1999
++++ manual/Makefile.in	Thu Aug 19 11:03:13 1999
+@@ -85,7 +85,9 @@
  
  MAINTAINERCLEANFILES =  manual.dvi manual.log manual.aux
  
@@ -17,9 +8,9 @@
  SUBDIRS = man-html man-text
 +endif
  
- EXTRA_DIST = ${pkgdoc_DATA} html2txt.pl
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -252,7 +254,11 @@
+ EXTRA_DIST = ${pkgdoc_DATA}              html.sty html2txt.pl edit-man manual.per man-proc.pl
+ 
+@@ -260,7 +262,11 @@
  install-data: install-data-recursive
  
  install-am: all-am
