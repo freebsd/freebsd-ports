@@ -1,19 +1,24 @@
-*** tools/javastub/javastub.c.orig	Sun Aug 24 00:04:06 1997
---- tools/javastub/javastub.c	Sun Aug 24 00:04:49 1997
-***************
-*** 11,17 ****
-  #include <stdio.h>
-  #include <stdlib.h>
-  
-! #include "config.h"
-  
-  #include <ctype.h>
-  #include <string.h>
---- 11,17 ----
-  #include <stdio.h>
-  #include <stdlib.h>
-  
-! #include "../../config.h"
-  
-  #include <ctype.h>
-  #include <string.h>
+--- ../configure.orig	Wed Sep 22 00:01:33 1999
++++ ../configure	Wed Sep 22 00:04:04 1999
+@@ -5261,7 +5261,7 @@
+     build_amaya="no"
+ fi
+ 
+-if test ! -f $srcdir/thot/Makefile.in ; then
++if test ! -f $srcdir/Thot/Makefile.in ; then
+     echo "configure: warning: Thot editor sources not found" 1>&2
+     build_thot="no"
+ fi
+@@ -5594,10 +5594,10 @@
+ 
+ if test "$build_thot" = "yes" ; then
+ 
+-    make_output="$make_output thot/Makefile \
++    make_output="$make_output Thot/Makefile \
+ drawlib/Makefile indexlib/Makefile"
+     EXTRA_MAKEFILE_IN="$EXTRA_MAKEFILE_IN \
+-$srcdir/thot/Makefile.in \
++$srcdir/Thot/Makefile.in \
+ $srcdir/drawlib/Makefile.in \
+ $srcdir/indexlib/Makefile.in"
+ 

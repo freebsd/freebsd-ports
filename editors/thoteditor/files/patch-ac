@@ -1,5 +1,5 @@
---- makes/Makefile.template.orig	Tue May  6 23:55:03 1997
-+++ makes/Makefile.template	Fri Feb 12 15:06:58 1999
+--- ../makes/Makefile.template.orig	Tue May  6 23:55:03 1997
++++ ../makes/Makefile.template	Fri Feb 12 15:06:58 1999
 @@ -56,7 +56,7 @@
  # MOTIFLIBS : how to grab Motif at link time.
  #             X11R6 probably need -lSM -lICE
