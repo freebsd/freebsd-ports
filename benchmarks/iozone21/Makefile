@@ -3,7 +3,7 @@
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.11 1995/04/15 03:45:40 asami Exp $
 #
 
 DISTNAME=       iozone
@@ -19,7 +19,5 @@ EXEC_DEPENDS=   gunshar:${PORTSDIR}/archivers/gshar+gunshar
 EXTRACT_CMD=    ( gzcat | /usr/local/bin/gunshar )
 EXTRACT_ARGS=   <
 NO_WRKSUBDIR=   YES
-
-pre-extract: depends
 
 .include <bsd.port.mk>

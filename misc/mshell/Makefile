@@ -3,7 +3,7 @@
 # Date created:         24 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.5 1995/04/15 03:45:46 asami Exp $
 #
 
 DISTNAME=	mshell
@@ -16,16 +16,10 @@ MAINTAINER=	jmz@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 
-EXTRACT_COOKIE?=	${.CURDIR}/.extract_done
-
-extract: fetch pre-extract ${EXTRACT_COOKIE}
-
-${EXTRACT_COOKIE}:
-	@echo "===>  Extracting for ${DISTNAME}"
+do-extract:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	awk '{if (/^#!/) x++} {if(x) print $$0'}| /bin/sh)
-	@touch -f ${EXTRACT_COOKIE}
 
 .include <bsd.port.mk>
