@@ -7,7 +7,9 @@ bin/eid
 bin/aid
 bin/gid
 bin/defid
+@unexec install-info --delete %D/info/id-utils.info %D/info/dir
 info/id-utils.info
+@exec install-info %D/info/id-utils.info %D/info/dir
 share/emacs/site-lisp/id-utils.elc
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
