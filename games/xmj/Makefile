@@ -9,7 +9,7 @@ PORTNAME=	xmj
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://forte.mathematik.uni-bremen.de/pub/comp/X11/
-DISTNAME=       ${PORTVERSION}
+DISTNAME=       ${PORTNAME}
 
 MAINTAINER=	swallace@FreeBSD.org
 

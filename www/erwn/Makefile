@@ -9,7 +9,7 @@ PORTNAME=	erwn
 PORTVERSION= 	0.3.1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www-stud.fht-esslingen.de/erwin/
-DISTNAME=	erwin-${PORTNAME}
+DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 
