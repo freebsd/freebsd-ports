@@ -20,7 +20,7 @@ USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure c++/configure
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}"
 CONFIGURE_ARGS=	--enable-cxx --enable-production \
 		--enable-threadsafe --disable-debug \
 		--with-ssl --with-pthread
