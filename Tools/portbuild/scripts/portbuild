@@ -102,7 +102,7 @@ ulimit -f 524288
 ulimit -t 3600
 
 # directories to clean
-cleandirs="/usr/local /usr/X11R6 /compat"
+cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
 
 # 15 minutes
 export FTP_TIMEOUT=900
@@ -208,6 +208,14 @@ if [ ${arch} = "i386" ]; then
 	chroot ${chroot} /sbin/ldconfig -aout -R
 fi
 
+# Install packages
+for i in ${chroot}/packages/*.tgz; do
+	chroot ${chroot} pkg_add /packages/`basename $i`
+done
+
+# Don't record packages which will interfere with building versions of the
+# packages we just installed.
+rm -rf ${chroot}/var/db/pkg/*
 
 while [ $# -gt 0 ]; do
   if [ -f ${packages}/All/$1 ]; then
