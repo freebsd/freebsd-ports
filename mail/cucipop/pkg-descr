@@ -1,44 +1,8 @@
 A fast and robust implementation of the RFC1939 POP3 protocol.
 It supports both BSD-type and SysV-type mailbox formats. Cucipop
 assumes that the mailbox it serves is not simultaneously accessed
-by a mailreader.  Concurrency and locking issues are handled
+by a mailreader. Concurrency and locking issues are handled
 graciously if they restrict themselves to the mail delivery agent.
-
-Feature summary for cucipop:
-	+ It's fast (optimised for frequently polling POP3 clients)
-	+ It's less filling (i.e. small)
-	+ Does not use *any* temporary files (which also means that the
-	  startup time is spectacularly short, and there can never be
-	  any stale temporary files or doubled mailboxes)
-	+ It can therefore serve *any* size mailbox without requiring
-	  additional storage beyond what the file already occupies
-	+ A fully compliant, all frills attached, RFC1939 implementation of
-	  the POP3 protocol
-	+ This means that it supports APOP *and* UIDL
-	+ It includes the option to sabotage the UIDL command (to defeat
-	  undesirable "Leave mail on server" clients)
-	+ It also supports an optional autodelete mechanism, so that any
-	  RETReived message is automatically deleted
-	+ Autoadaptive, simply start it and it will know if it has been
-	  started from inetd or as a standalone daemon
-	+ Security conscious, i.e. the APOP support, already has hooks
-	  for shadowpasswords, and defeats password guessers by an adaptive
-	  verification delay
-	+ Supports both BSD and SysV (Content-Length) mailbox formats
-	+ Native support for /var/spool/mail/b/a/bar type mailspools
-	+ Is the only popd to perform reliable mailbox locking across
-	  NFS as well (it uses the same excellent and proven locking
-	  algorithms as does procmail)
-	+ Provides flexible logging of statistics and auditing events
-	+ Does not impose *any* limits on line lengths, mail length,
-	  or the use of any character (any 8-bit character, including '\0' is
-	  allowed) in the mail
-	+ Secure system mailbox handling
-	+ Has hooks to ease moving the mailboxes to any location you'd like
-	+ Has hooks for other authentication schemes (e.g. Radius)
-	+ Has hooks to virtualise the popserver
-	+ It runs on any POSIX and ANSI C compliant system
-	+ Is clock skew immune (e.g. in the case of NFS mounted mailboxes)
 
 - Igor
 igor@zynaps.ru
