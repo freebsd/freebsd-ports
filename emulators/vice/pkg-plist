@@ -61,7 +61,8 @@ lib/vice/C64/os2_sym.vkm
 lib/vice/C64/pc64.vpl
 lib/vice/C64/vice.vpl
 lib/vice/C64/win_pos.vkm
-lib/vice/C64/win_sym.vkm
+lib/vice/C64/win_sym_de.vkm
+lib/vice/C64/win_sym_us.vkm
 lib/vice/C64/x11_pos.vkm
 lib/vice/C64/x11_sym.vkm
 lib/vice/CBM-II/amber.vpl
@@ -92,8 +93,8 @@ lib/vice/CBM-II/rom256h.vrs
 lib/vice/CBM-II/rom256l.vrs
 lib/vice/CBM-II/rom500.vrs
 lib/vice/CBM-II/white.vpl
-lib/vice/CBM-II/win_bukp.vkm
-lib/vice/CBM-II/win_buks.vkm
+lib/vice/CBM-II/win_pos_uk.vkm
+lib/vice/CBM-II/win_sym_uk.vkm
 lib/vice/CBM-II/x11_buks.vkm
 lib/vice/DRIVES/d1541II
 lib/vice/DRIVES/dos1001
@@ -136,8 +137,8 @@ lib/vice/PET/rom4b40.vrs
 lib/vice/PET/rom4b80.vrs
 lib/vice/PET/rom4g40.vrs
 lib/vice/PET/white.vpl
-lib/vice/PET/win_bgrs.vkm
-lib/vice/PET/win_buks.vkm
+lib/vice/PET/win_sym_gr.vkm
+lib/vice/PET/win_sym_uk.vkm
 lib/vice/PET/x11_bdep.vkm
 lib/vice/PET/x11_bdes.vkm
 lib/vice/PET/x11_bgrs.vkm
