@@ -1,0 +1,6 @@
+This class implements a complete RFC 2822 parser that locates email
+addresses in strings and returns a list of Email::Address objects
+found. The goal of this software is to be correct, fast, and API
+compatible with the MailTools version.
+
+WWW: http://search.cpan.org/dist/Email-Address/
