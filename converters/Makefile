@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.10 1998/02/12 21:44:02 se Exp $
+# $Id: Makefile,v 1.11 1998/02/22 21:19:32 se Exp $
 #
 
+    SUBDIR += aish
     SUBDIR += btoa
     SUBDIR += ish
     SUBDIR += kdesupport
