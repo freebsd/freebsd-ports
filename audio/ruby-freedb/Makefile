@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freedb
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5
 CATEGORIES=	audio net ruby
-MASTER_SITES=	http://davedd.free.fr/%SUBDIR%/
+MASTER_SITES=	http://davedd.free.fr/%SUBDIR%/download/
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -21,7 +21,7 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		CHANGELOG	CONTRIBUTORS	README
+DOCS=		CHANGELOG	README	doc
 EXAMPLES=	examples/*.rb
 
 post-install:
@@ -32,7 +32,7 @@ post-install:
 .endfor
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
