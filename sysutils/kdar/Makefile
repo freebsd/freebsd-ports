@@ -17,6 +17,8 @@ COMMENT=	KDar is KDE-based backuptool using libdar
 
 LIB_DEPENDS=	dar.2:${PORTSDIR}/sysutils/dar
 
+BROKEN=		Configure fails
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
