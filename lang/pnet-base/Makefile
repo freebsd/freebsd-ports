@@ -49,6 +49,10 @@ MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 CONFIGURE_ARGS+=	--without-libffi
 .endif
 
+.if ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=	--without-libgc
+.endif
+
 post-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define optimized CFLAGS with"
