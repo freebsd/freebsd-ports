@@ -41,8 +41,10 @@ post-patch:
 		${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
+		${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 \
+		${PREFIX}/man/man8
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 .for doc in ${DOC_FILES}
