@@ -27,6 +27,7 @@ RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
 PLIST=		${PKGDIR}/pkg-plist
+RESTRICTED=	"binaries under GNU LGPL without accompanying source"
 RPM_SET=	gtk2-2.2.1-4.i386.rpm
 
 post-install:
