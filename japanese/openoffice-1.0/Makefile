@@ -14,4 +14,6 @@ MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 L10NHELP=       helpcontent_${LANG_EXT}_unix.tgz
+
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

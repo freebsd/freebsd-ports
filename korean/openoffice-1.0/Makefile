@@ -12,4 +12,5 @@ LANG_EXT=	82
 LANG_CONFIGURE_ARG=	KOREAN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"

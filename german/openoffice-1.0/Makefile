@@ -24,4 +24,5 @@ MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
 
+NO_LATEST_LINK=	yes
 .include "${MASTERDIR}/Makefile"
