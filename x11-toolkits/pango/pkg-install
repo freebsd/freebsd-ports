@@ -1,8 +1,0 @@
-#!/bin/sh
-
-PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/X11R6/bin:${PATH}
-export PATH
-
-if [ "$2" = "POST-INSTALL" ]; then
-    fc-cache -f >/dev/null 2>&1
-fi
