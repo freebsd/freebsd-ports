@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.0.p1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p1/p1/}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network tool to gather IP traffic information
 
+WRKSRC=		${WRKDIR}/pmacct-0.6.0
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
-		--with-mysql-includes=${LOCALBASE}/include/mysql \
-		--enable-mysql
-CFLAGS+=	"-I${LOCALBASE}/include"
+CONFIGURE_ARGS+=--enable-mysql
 PLIST_SUB+=	WITH_MYSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-mysql
@@ -40,12 +40,8 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@${REINPLACE_CMD} -e \
-	's,<mysql/mysql.h>,<mysql.h>,' \
-		${WRKSRC}/mysql_plugin.h
-	@${REINPLACE_CMD} -e \
-	's|-O2||g' ${WRKSRC}/configure
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
