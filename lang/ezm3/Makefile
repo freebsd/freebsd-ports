@@ -7,7 +7,7 @@
 
 PORTNAME=	ezm3
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=development/CVSup/ezm3
@@ -26,6 +26,7 @@ PLIST_SUB+=	ARCH=${ARCH} TARGET=${TARGET} WORDSIZE=${WORDSIZE} \
 SCRIPTS_ENV+=	TARGET=${TARGET}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 PROGS=		bin/m3build \
 		bin/m3bundle \
@@ -55,6 +56,12 @@ TARGET=		FBSD_SPARC64
 WORDSIZE=	64
 ENDIANESS=	be
 BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
+.endif
+
+post-patch:
+.if ${ARCH} == "sparc64" && ${OSVERSION} >= 502107
+	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int32_t;|\1int64_t;|' \
+		${WRKSRC}/libs/m3core/src/unix/freebsd-4.sparc64/Utypes.i3
 .endif
 
 do-build:
