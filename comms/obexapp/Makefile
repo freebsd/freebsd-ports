@@ -17,9 +17,6 @@ LIB_DEPENDS=	openobex-1.0.1:${PORTSDIR}/comms/openobex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-# libbluetooth is only installed on i386
-ONLY_FOR_ARCHS=	i386
-
 MAN1=		obexapp.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/obexapp
@@ -28,6 +25,11 @@ PLIST_FILES=	bin/obexapp
 
 .if ${OSVERSION} < 502101
 IGNORE=		Needs -CURRENT from 20 Jan 2004 or later (sdpd)
+.endif
+
+.if ${OSVERSION} < 502121
+# libbluetooth is only installed on i386 before this version
+ONLY_FOR_ARCHS=	i386
 .endif
 
 .include <bsd.port.post.mk>
