@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.14
+# Version required:	1.1.15
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.29 1997/07/01 21:05:22 peter Exp $
+# $Id: Makefile,v 1.30 1997/07/18 05:06:49 peter Exp $
 #
 
-DISTNAME=	squid-1.1.14
+DISTNAME=	squid-1.1.15
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1/ \
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.1.14
+DIST_SUBDIR=	squid1.1.15
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
@@ -41,6 +41,7 @@ MAKEFILE=	makefile
 # do NOT define both USE_SPLAY_TREE and USE_BIN_TREE at the same time!
 #MAKE_ENV+=	USE_SPLAY_TREE="-DUSE_SPLAY_TREE"
 #MAKE_ENV+=	USE_BIN_TREE="-DUSE_BIN_TREE"
+#MAKE_ENV+=	RELOAD_INTO_IMS="-DRELOAD_INTO_IMS"
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
