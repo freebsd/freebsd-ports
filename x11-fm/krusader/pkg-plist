@@ -112,7 +112,8 @@ share/locale/dk/LC_MESSAGES/krusader.mo
 share/locale/fr/LC_MESSAGES/krusader.mo
 share/locale/pl/LC_MESSAGES/krusader.mo
 share/locale/sv/LC_MESSAGES/krusader.mo
-share/locale/es/LC_MESSAGES/krusader.mo
+share/locale/it/LC_MESSAGES/krusader.mo
+share/locale/jp/LC_MESSAGES/krusader.mo
 @dirrm share/doc/HTML/en/krusader
 @dirrm share/apps/krusader/icons/hicolor/16x16/actions
 @dirrm share/apps/krusader/icons/hicolor/16x16
