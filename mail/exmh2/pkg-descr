@@ -1,134 +1,23 @@
-exmh version: 1.6.7
-Brent.Welch@eng.sun.com
-
 exmh is a TCL/TK based interface to the MH mail system.
 
-Version 1.6* is compatible with Tk 4.1, Tk4.0, Tk3.6, and Tk3.3
-    Some features (e.g., color face icons) only work with Tk 4.0 or greater.
-exmh is known to work with MH versions 6.7 and 6.8.*
+IMPORTANT: exmh depends on the TK send facility for its background
+processing.  With TK 3.3, send now uses xauthority mechanisms by default,
+unless you compile TK with -DTK_NO_SECURITY.  Generally, this means that
+you must run xdm to start your Xserver.
 
-**************************************************
-VERY IMPORTANT. PLEASE READ. SOURCE OF MANY PROBLEMS. READ THIS HERE :-)
-
-exmh depends on the TK send facility for its background processing.
-With TK 3.3, send now uses xauthority mechanisms by default, unless
-you compile TK with -DTK_NO_SECURITY.  A manifestation of problems are
-that background processing doesn't work: new messages are not scanned
-into the current folder, the flag icon doesn't behave, and so on.
-Similarly, use of the exmh-async wrapper script also fails.
-If you cannot recompile wish, then the trick is to get your X server process
-started with the right incantation.
-
-Generally, this means that you must run xdm to start your Xserver.
-**************************************************
-
-EXMH lives "high in the food chain".  You'll need some additional softare:
-**************************************************
-REQUIRED PACKAGES
-Find TCL and TK on
-    ftp.sunlabs.com:/pub/tcl
-    ftp.aud.alcatel.com:/tcl
-    ftp.cs.berkeley.edu:/ucb/tcl
-Find MH on
-    ftp.ics.uci.edu:/pub/mh
-Find Metamail (for MIME support, including 8-bit charsets) on
-    ftp.bellcore.com:/pub/nsb
-****************************************************
-OPTIONAL PACKAGES
-Find Faces on
-    cs.indiana.edu:/pub/faces
-Expect is available as
-    pub/expect/expect.tar.Z from ftp.cme.nist.gov
-Japanization patch for Tcl and Tk
-    srawgw.sra.co.jp:/pub/lang/tcl/jp
-    tcl7.3jp-patch.gz, tcl7.3jp-update1.gz, tcl7.3jp-update2.gz,
-    tk3.6jp-patch.gz, tk3.6jp-update1.gz, tk3.6jp-update2.gz.
-    It seems that they will move the archives to ftp.sra.co.jp near future.
-Find Glimpse, the full text search engine, at University of Arizona:
-    http://glimpse.cs.arizona.edu:1994/
-****************************************************
-
-FEATURES
-
-As well as providing the usual layer on top of MH commands, exmh
+FEATURES: As well as providing the usual layer on top of MH commands, exmh
 has a number of other features:
 
-    MIME support!  Displays richtext and enriched directly.  Parses
-    multipart messages.  A popup menu under the right button can invoke
-    external viewers (metamail) for things not directly supported.
-    Built-in editor allows simple composition of text/enriched format
-    and multipart messages (via Insert Part).
-
-    Color feedback in the scan listing so you can easily identify
-    unseen messages (blue), the current message (red), deleted
-    messages (gray background), and moved messages (yellow background).
-    Xresources control these color choices.
-
-    Monochrome displays highlight unseen messages with underline,
-    current message in reverse video, deleted messages with cross-hatching
-    background, and moved messages with stippled background.
-
-    A folder display with one label per folder.  Color highlights
-    indicate the current folder (red), folders with unseen messages
-    in them (blue), and the target folder for moves (yellow background).
-    Nested folders are highlighted by a shadow box.  A cache of
-    recently visted folder buttons is also maintained.  Monochrome
-    highlights are reverse video for the current folder, bold box
-    for folders with unseen messages, and stippled box for the
-    target of move operations.
-
-    Clever scan caching.  MH users know that scan is slow, so
-    exmh tries hard to cache the current state of the folder to
-    avoid scanning.  Moves and deletes within exmh do not
-    invalidate the cache, and background incs that add new messages
-    are handled by merging them into the scan listing.  The
-    scan cache is compatible with xmh.
-
-    Facesaver bitmap display.  If you have a facesaver database
-    on your system, exmh displays the bitmap face of the person
-    that sent the current message (or their organization).
-    Otherwise, it just displays a boring EXMH logo.
-
-    Background inc.  You can set exmh to run inc periodically,
-    or just to periodically count up the messages in your mail spool file.
-    (Depends on proper TK send functioning.  See notes below.)
-
-    Various inc styles.  Exmh knows about three styles of inc usage:
-    Inc from your spool file to your inbox folder.
-    Inc from your spool file or POP host to a set of dropboxes as specified
-    by your ~/.xmhcheck file.
-    Inc from your spool file directly into folders.  Exmh can run the MH
-    filtering program (slocal) for you, or you can let an external agent
-    presort mail into folders for you.
-
+    MIME support!  Displays richtext and enriched directly.
+    Color feedback in the scan listing.
+    A colour coded folder display with one label per folder.
+    Smart scan caching.
+    Facesaver bitmap display.
+    Background inc.  You can set exmh to run inc periodically.
     Searching over folder listing and message body.
-
     A dialog-box interface to MH pick.
-
-    A simple editor with emacs-like bindings is provided by default.
-    It has an interface that lets you tweak key bindings.
-
-    Editor interface.  You can hook up exmh to TCL based-editors
-    like mxedit quite easily.  A script is also provided, exmh-async,
-    for using terminal based editors like vi.  The emacsclient.README
-    file has hand-wavy instructions for using emacsclient to talk
-    to an emacs server.
-
+    A editor editor with emacs-like bindings with MIME support.
     Glimpse interface.  You can index all your mail with glimpse
-    and search for messages by content.  The search works across
-    all folders and runs quite fast. The indexes are only about 10%
-    of the space of your mail database.
-
-    User preferences.  You can tune exmh through a dialog box.  The settings
-    are saved in an Xresource-style file named .exmh-defaults.  You can
-    also put font and color resource specifications in this file, plus
-    there are a few random parameters not exposed via preferences.
-
+       and search for messages by content.
+    User preferences.  You can tune exmh through a dialog box.
     User hacking support.  A user library of TCL routines is supported.
-    The main implementation is chopped up into many smallish modules.
-    So, you can modify a copy of some module to put your favorite mail
-    reader hack in without affecting others (or convincing me to put
-    it into the main line).  There are also a number of places where
-    hook procedures are used so you can refine the behavior of things
-    like composing a reply message.  Details in the man page.
-
