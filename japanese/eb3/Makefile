@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/network/ndtp/eb/
 DISTFILES=	${EBFILES} \
 		${LISTFILES} \
 		${APPENDIXFILES}
@@ -35,6 +36,7 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 		appendix/daijirin-2.0.tar.gz \
 		appendix/dd75-2.0.tar.gz \
 		appendix/genius-1.0.tar.gz \
+		appendix/genius2-1.1.tar.gz \
 		appendix/global-2.0.tar.gz \
 		appendix/heritage-2.2.tar.gz \
 		appendix/izumi-2.0.tar.gz \
@@ -72,7 +74,8 @@ post-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${file} ${APPENDIXDIR}
 .endfor
 .for file in ${APPENDIXFILES}
-	${TAR} -C ${APPENDIXDIR} -zxmf ${DISTDIR}/${DIST_SUBDIR}/${file}
+	${TAR} --no-same-owner --exclude CVS -C ${APPENDIXDIR} -zxmf\
+	  ${DISTDIR}/${DIST_SUBDIR}/${file}
 .endfor
 
 .include <bsd.port.mk>

@@ -94,6 +94,10 @@ share/eb/appendix/genius-1.0/catalog
 share/eb/appendix/genius-1.0/catalog.app
 share/eb/appendix/genius-1.0/genius.app
 share/eb/appendix/genius-1.0/genius/appendix
+share/eb/appendix/genius2-1.1/catalogs
+share/eb/appendix/genius2-1.1/catalogs.app
+share/eb/appendix/genius2-1.1/genius.app
+share/eb/appendix/genius2-1.1/genius/data/furoku
 share/eb/appendix/global-2.0/catalogs
 share/eb/appendix/global-2.0/catalogs.app
 share/eb/appendix/global-2.0/gejcje.app
@@ -210,6 +214,9 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/cencro-1.0
 @dirrm share/eb/appendix/genius-1.0/genius
 @dirrm share/eb/appendix/genius-1.0
+@dirrm share/eb/appendix/genius2-1.1/genius/data
+@dirrm share/eb/appendix/genius2-1.1/genius
+@dirrm share/eb/appendix/genius2-1.1
 @dirrm share/eb/appendix/chujiten-2.3/eiwa
 @dirrm share/eb/appendix/chujiten-2.3/waei
 @dirrm share/eb/appendix/chujiten-2.3
