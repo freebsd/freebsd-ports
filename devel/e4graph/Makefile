@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		expat.4:${PORTSDIR}/textproc/expat2
