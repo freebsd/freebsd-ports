@@ -24,7 +24,7 @@ EXTRACT_AFTER_ARGS=	.
 NO_BUILD=	yes
 USE_JAVA=	1.3+
 
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DISTNAME}.jar \
+PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}.jar \
 		bin/tintfu
 
 post-patch:

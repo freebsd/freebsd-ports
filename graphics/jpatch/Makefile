@@ -19,7 +19,7 @@ COMMENT=	A spline based 3D modeling tool
 USE_JAVA=	1.4+
 NO_BUILD=	yes
 
-PLIST_FILES=	${JAVAJARDIR:S,^${PREFIX}/,,}/jpatch.jar \
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		bin/jpatch
 
 post-patch:
