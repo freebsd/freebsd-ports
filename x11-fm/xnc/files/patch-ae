@@ -1,0 +1,56 @@
+--- image/makefile.in.orig	Tue Jan 18 17:35:15 2000
++++ image/makefile.in	Sat Jun 24 15:56:50 2000
+@@ -31,31 +31,31 @@
+ all:: libie.a $(PNGDEP) $(ZDEP)
+ 
+ 24to8.o: 24to8.c
+-	 $(CC) -c 24to8.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c 24to8.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ jpeg.o: jpeg.c
+-	 $(CC) -c jpeg.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c jpeg.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ pcdr.o: pcdr.c
+-	 $(CC) -c pcdr.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c pcdr.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ inter.o: inter.c
+-	 $(CC) -c inter.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c inter.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ huff.o: huff.c
+-	 $(CC) -c huff.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c huff.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ file.o: file.c
+-	 $(CC) -c file.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c file.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ yuv2rgb.o: yuv2rgb.c
+-	 $(CC) -c yuv2rgb.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c yuv2rgb.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ tiffr.o: tiffr.c
+-	 $(CC) -c tiffr.c $(CXXOPT)  $(INCLUDES) -I/usr/local/include -I/usr/include/gr
++	 $(CC) -c tiffr.c $(CXXOPT)  $(INCLUDES) $(CPPFLAGS)
+ 
+ png.o: png.c
+-	 $(CC) -c png.c $(CXXOPT) $(INCLUDES) $(ZINC) $(PNGINC)
++	 $(CC) -c png.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS) $(ZINC) $(PNGINC)
+ 
+ ../zlib/libz.a:
+ 	cd ../zlib && make
+@@ -64,10 +64,10 @@
+ 	cd ../libpng && make
+ 
+ pcxr.o: pcxr.c
+-	 $(CC) -c pcxr.c $(CXXOPT) $(INCLUDES)
++	 $(CC) -c pcxr.c $(CXXOPT) $(INCLUDES) $(CPPFLAGS)
+ 
+ accel.o: accel.c
+-	 $(CC) -c accel.c $(CFLAGS)
++	 $(CC) -c accel.c $(CFLAGS) $(CPPFLAGS)
+ 
+ libie.a: $(IOBJS)
+ 	 $(RM) -f libie.a
