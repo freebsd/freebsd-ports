@@ -1,5 +1,9 @@
 bin/inews
 bin/rnews
+lib/libinn.a
+include/inndcomm.h
+include/libinn.h
+include/qio.h
 etc/innd
 etc/inndstart
 etc/in.nnrpd
