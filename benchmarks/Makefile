@@ -2,6 +2,7 @@
 #
 
     SUBDIR += bonnie
+    SUBDIR += bonnie++
     SUBDIR += bytebench
     SUBDIR += dbs
     SUBDIR += iozone
