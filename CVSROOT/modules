@@ -7745,6 +7745,8 @@ py-serial	ports/comms/py-serial
 py-sgflib	ports/games/py-sgflib
 py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
+py-shadow-bittorrent	ports/net/py-shadow-bittorrent
+py-shadow-bittorrent-core	ports/net/py-shadow-bittorrent-core
 py-simpleparse	ports/devel/py-simpleparse
 py-sip		ports/devel/py-sip
 py-ski		ports/games/py-ski
