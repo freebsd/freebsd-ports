@@ -20,6 +20,12 @@ USE_REINPLACE=	yes
 MAKE_ENV= 	MAKEOBJDIR=.
 MAN1=	o2b.1 o2c.1 o2ef.1 o2whereis.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/o2 ${WRKSRC}
 
@@ -31,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/system/o2c.red.template ${PREFIX}/lib/o2c-1.16
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
