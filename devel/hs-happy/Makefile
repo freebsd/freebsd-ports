@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.14
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/
 PKGNAMEPREFIX=	hs-

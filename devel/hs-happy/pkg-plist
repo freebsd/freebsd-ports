@@ -1,15 +1,15 @@
 bin/happy
 bin/happy-%%HAPPY_VERSION%%
 lib/happy-%%HAPPY_VERSION%%/happy.bin
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-coerce
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-coerce-debug
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-debug
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-ghc
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-ghc-debug
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-coerce
-lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-ghc
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-coerce
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-coerce-debug
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-debug
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-ghc
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-arrays-ghc-debug
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-coerce
+lib/happy-%%HAPPY_VERSION%%/HappyTemplate-ghc
 share/doc/happy/docbook.css
 share/doc/happy/happy-introduction.html
 share/doc/happy/happy.html
@@ -47,7 +47,6 @@ share/doc/happy/stylesheet-images/toc-minus.gif
 share/doc/happy/stylesheet-images/toc-plus.gif
 share/doc/happy/stylesheet-images/up.gif
 share/doc/happy/stylesheet-images/warning.gif
-@dirrm lib/happy-%%HAPPY_VERSION%%/happy
 @dirrm lib/happy-%%HAPPY_VERSION%%
 @dirrm share/doc/happy/stylesheet-images
 @dirrm share/doc/happy
