@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.162 1998/08/17 00:26:57 steve Exp $
+# $Id: Makefile,v 1.163 1998/08/25 16:11:35 kuriyama Exp $
 #
 
     SUBDIR += acron
@@ -9,6 +9,7 @@
     SUBDIR += chord
     SUBDIR += colorls
     SUBDIR += ctk
+    SUBDIR += cwish
     SUBDIR += deco
     SUBDIR += dejagnu
     SUBDIR += diction
