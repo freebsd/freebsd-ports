@@ -1,0 +1,12 @@
+ELF is a commandline based ELF header analyzer. This tool
+allows you to easily parse the ehdr of ELF object files
+into a human readable format (and various other formats).
+This is a very good source of both source code (for people
+learning the ELF) and information for developers that care
+about the internals of object files that is generated for
+them.
+
+WWW: http://www.kerneled.com/projects/elf/index.html
+
+- Samy
+samy@kerneled.com

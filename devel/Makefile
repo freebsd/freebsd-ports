@@ -157,6 +157,7 @@
     SUBDIR += ecgi
     SUBDIR += eieio
     SUBDIR += eieio-emacs20
+    SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elftoaout
     SUBDIR += elib
