@@ -210,6 +210,7 @@
     SUBDIR += platex209-jis
     SUBDIR += platex209-sjis
     SUBDIR += postgresql
+    SUBDIR += postgresql7
     SUBDIR += ppxp
     SUBDIR += prn
     SUBDIR += ptex-common
