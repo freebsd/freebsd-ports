@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdsar
-PORTVERSION=	1.00
+PORTVERSION=	1.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.googlebit.com/bsdsar/
 
