@@ -1,6 +1,10 @@
 DISTNAME=	linpack
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
+.if defined(MASTER_SITE_OVERRIDE)
+MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/linpack/
+.undef MASTER_SITE_OVERRIDE
+.endif
 EXTRACT_CMD=scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
