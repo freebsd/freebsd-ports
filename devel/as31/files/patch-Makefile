@@ -1,0 +1,13 @@
+--- Makefile.orig	Fri Nov 21 14:10:27 2003
++++ Makefile	Fri Nov 21 14:10:55 2003
+@@ -20,8 +20,8 @@
+ 
+ 
+ #Use this CFLAGS line with gcc on linux
+-CFLAGS=-O3 -Wall
+-CC=gcc
++#CFLAGS=-O3 -Wall
++#CC=gcc
+ 
+ #Use this CFLAGS line on solaris, etc
+ #CFLAGS=-O

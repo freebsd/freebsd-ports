@@ -38,6 +38,7 @@
     SUBDIR += arm-rtems-gcc
     SUBDIR += arm-rtems-gdb
     SUBDIR += arm-rtems-objc
+    SUBDIR += as31
     SUBDIR += as80
     SUBDIR += asis
     SUBDIR += asl

@@ -1,0 +1,7 @@
+AS31 is a free 8051 assembler originally written by Ken Stauffer.
+Versions of AS31 found here include important bug fixes and added
+features, such as standard intel-hex output format for use with
+PAULMON2 and EPROM programmers. AS31 is a good tool for building
+small 8051-based projects that are written in 100% 8051 assembly language.
+
+WWW: http://www.pjrc.com/tech/8051/
