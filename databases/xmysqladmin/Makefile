@@ -3,7 +3,7 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.13 1998/11/21 10:00:02 andreas Exp $
+# $Id: Makefile,v 1.14 1999/01/07 08:19:29 simokawa Exp $
 #
 
 DISTNAME=	xmysqladmin-0.4.4
@@ -15,9 +15,13 @@ MASTER_SITES=	http://www.tcx.se/Contrib/ \
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql321
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms
+.if !exists(${PREFIX}/lib/mysql/libmysqlclient.a) || exists(${PREFIX}/lib/mysql/libmysqlclient.so)
+LIB_DEPENDS+=	mysqlclient.5:${PORTSDIR}/databases/mysql322
+.else
+BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321
+.endif
 
 # depends on xforms
 ONLY_FOR_ARCHS=	i386
