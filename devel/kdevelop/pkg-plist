@@ -246,10 +246,8 @@ share/icons/hicolor/16x16/apps/kdevelop.png
 share/icons/hicolor/32x32/apps/kdevelop.png
 share/icons/hicolor/48x48/apps/kdevelop.png
 share/mimelnk/application/x-kdevelop-project.desktop
-@dirrm share/mimelnk/application
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/kdevelop/tutorial
 @dirrm share/doc/HTML/en/kdevelop/reference/C
 @dirrm share/doc/HTML/en/kdevelop/reference
@@ -257,7 +255,6 @@ share/mimelnk/application/x-kdevelop-project.desktop
 @dirrm share/doc/HTML/en/kdevelop/kde_libref
 @dirrm share/doc/HTML/en/kdevelop/about
 @dirrm share/doc/HTML/en/kdevelop
-@dirrm share/doc/HTML/en
 @dirrm share/apps/kdevelop/tools
 @dirrm share/apps/kdevelop/templates
 @dirrm share/apps/kdevelop/pics
@@ -268,5 +265,5 @@ share/mimelnk/application/x-kdevelop-project.desktop
 @dirrm share/apps/kdevelop/icons/hicolor
 @dirrm share/apps/kdevelop/icons
 @dirrm share/apps/kdevelop
-@dirrm share/apps/kconf_update
 @dirrm share/applnk/Development
+@dirrm share/applnk

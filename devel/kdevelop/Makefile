@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/2.2.1/src
+MASTER_SITE_SUBDIR=	stable/2.2.2/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
+		autoconf213:${PORTSDIR}/devel/autoconf213 \
+		automake14:${PORTSDIR}/devel/automake14 \
+		objprelink:${PORTSDIR}/devel/objprelink
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
@@ -33,9 +36,15 @@ RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt2/html
+CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt2/html \
+		--enable-objprelink
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)
@@ -44,6 +53,17 @@ pre-everything::
 	@${ECHO_MSG} "to automatically build the suggested programs to compliment kdevelop."
 	@${ECHO_MSG}
 .endif
+
+pre-configure:
+	${MKDIR} ${WRKSRC}/auto-bin
+.for AC in autoconf autoheader
+	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.endfor
+.for AM in automake aclocal
+	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.endfor
+	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+		${GMAKE} -f Makefile.cvs
 
 pre-build:
 	${PERL} -pi -e "s@libkdeui.so.3@libkdeui.so@g" ${WRKSRC}/kdevelop/main.cpp

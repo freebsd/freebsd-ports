@@ -251,7 +251,6 @@ share/services/arkpart.desktop
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/kpm
 @dirrm share/doc/HTML/en/knotes
 @dirrm share/doc/HTML/en/klprfax
@@ -308,7 +307,6 @@ share/services/arkpart.desktop
 @dirrm share/apps/ark/icons/hicolor
 @dirrm share/apps/ark/icons
 @dirrm share/apps/ark
-@dirrm share/apps
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/System
 @dirrm share/applnk/Settings/PowerControl
@@ -316,4 +314,3 @@ share/services/arkpart.desktop
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Editors
 @dirrm share/applnk
-@dirrm lib/kde2

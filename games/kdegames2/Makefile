@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdegames
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -14,9 +14,31 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
+BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
+		automake14:${PORTSDIR}/devel/automake14 \
+		objprelink:${PORTSDIR}/devel/objprelink
+
 USE_KDELIBS_VER=2
 USE_BZIP2=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-objprelink
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
 USE_GMAKE=	yes
+
+pre-configure:
+	${MKDIR} ${WRKSRC}/auto-bin
+.for AC in autoconf autoheader
+	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
+.endfor
+.for AM in automake aclocal
+	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
+.endfor
+	cd ${WRKSRC} && env PATH=$$PATH:${WRKSRC}/auto-bin \
+		${GMAKE} -f Makefile.cvs
 
 .include <bsd.port.mk>

@@ -63,17 +63,15 @@ share/icons/hicolor/32x32/apps/kcron.png
 share/icons/hicolor/32x32/apps/kpackage.png
 share/icons/hicolor/48x48/apps/kpackage.png
 share/mimelnk/application/x-debian-package.desktop
-@dirrm share/mimelnk/application
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/kwuftpd
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksysv
 @dirrm share/doc/HTML/en/kpackage
 @dirrm share/doc/HTML/en/kcron
-@dirrm share/doc/HTML/en
 @dirrm share/apps/kpackage/toolbar
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
 @dirrm share/applnk/System
+@dirrm share/applnk

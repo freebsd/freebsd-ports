@@ -531,7 +531,6 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/kworldclock
 @dirrm share/doc/HTML/en/kteatime
 @dirrm share/doc/HTML/en/kscore
@@ -564,3 +563,4 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/applnk/Toys
 @dirrm share/applnk/System/ScreenSavers
 @dirrm share/applnk/System
+@dirrm share/applnk

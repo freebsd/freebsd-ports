@@ -756,15 +756,9 @@ share/mimelnk/audio/x-karaoke.desktop
 share/mimelnk/text/xmcd.desktop
 share/services/kmixctrl_restore.desktop
 share/servicetypes/audiomidi.desktop
-@dirrm share/servicetypes
-@dirrm share/services
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/doc/HTML/en/noatun
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
@@ -773,8 +767,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/doc/HTML/en/artsbuilder/images
 @dirrm share/doc/HTML/en/artsbuilder
 @dirrm share/doc/HTML/en/aktion
-@dirrm share/doc/HTML/en
-@dirrm share/config
 @dirrm share/apps/noatun/skins/kaiman/k9
 @dirrm share/apps/noatun/skins/kaiman/circle
 @dirrm share/apps/noatun/skins/kaiman/car-preset
@@ -843,8 +835,6 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/applnk/Settings/Sound
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Multimedia
+@dirrm share/applnk
 @dirrm lib/mcop/Noatun
-@dirrm lib/mcop/Arts
-@dirrm lib/mcop
 @dirrm include/noatun
-@dirrm include/arts

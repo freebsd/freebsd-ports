@@ -1,4 +1,3 @@
-@exec %%LDCONFIG%% -m %D/lib/kde2
 bin/artsc-config
 bin/artscat
 bin/artsd
@@ -156,6 +155,7 @@ include/kallocator.h
 include/kalphapainter.h
 include/kanimwidget.h
 include/kapp.h
+include/kapplication.h
 include/karrowbutton.h
 include/kasyncio.h
 include/kaudioplayer.h
@@ -407,6 +407,7 @@ include/ksslpkcs12.h
 include/ksslsettings.h
 include/ksslutils.h
 include/ksslx509map.h
+include/kstandarddirs.h
 include/kstartupinfo.h
 include/kstaticdeleter.h
 include/kstatusbar.h
@@ -433,6 +434,7 @@ include/ktoolbarbutton.h
 include/ktoolbarradiogroup.h
 include/ktrader.h
 include/kuniqueapp.h
+include/kuniqueapplication.h
 include/kunload.h
 include/kurifilter.h
 include/kurl.h
@@ -578,6 +580,8 @@ lib/libkab.so.4
 lib/libkdecore.la
 lib/libkdecore.so
 lib/libkdecore.so.4
+lib/libkded_kssld.la
+lib/libkded_kssld.so
 lib/libkdefakes.la
 lib/libkdefakes.so
 lib/libkdefakes.so.4
@@ -596,7 +600,6 @@ lib/libkdeui.so.4
 lib/libkfile.la
 lib/libkfile.so
 lib/libkfile.so.4
-lib/libkformula.so
 lib/libkhtml.la
 lib/libkhtml.so
 lib/libkhtml.so.4
@@ -1009,20 +1012,6 @@ share/apps/ksgmltools2/customization/nl/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/nl/lang.entities
 share/apps/ksgmltools2/customization/nl/strings.entities
 share/apps/ksgmltools2/customization/nl/user.entities
-share/apps/ksgmltools2/customization/no/catalog
-share/apps/ksgmltools2/customization/no/entities/fdl-notice.docbook
-share/apps/ksgmltools2/customization/no/entities/gpl-notice.docbook
-share/apps/ksgmltools2/customization/no/entities/lgpl-notice.docbook
-share/apps/ksgmltools2/customization/no/entities/report-bugs.docbook
-share/apps/ksgmltools2/customization/no/entities/underArtisticLicense.docbook
-share/apps/ksgmltools2/customization/no/entities/underBSDLicense.docbook
-share/apps/ksgmltools2/customization/no/entities/underFDL.docbook
-share/apps/ksgmltools2/customization/no/entities/underGPL.docbook
-share/apps/ksgmltools2/customization/no/entities/underX11License.docbook
-share/apps/ksgmltools2/customization/no/entities/update-doc.docbook
-share/apps/ksgmltools2/customization/no/lang.entities
-share/apps/ksgmltools2/customization/no/strings.entities
-share/apps/ksgmltools2/customization/no/user.entities
 share/apps/ksgmltools2/customization/no-NY/catalog
 share/apps/ksgmltools2/customization/no-NY/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/no-NY/entities/gpl-notice.docbook
@@ -1037,6 +1026,20 @@ share/apps/ksgmltools2/customization/no-NY/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/no-NY/lang.entities
 share/apps/ksgmltools2/customization/no-NY/strings.entities
 share/apps/ksgmltools2/customization/no-NY/user.entities
+share/apps/ksgmltools2/customization/no/catalog
+share/apps/ksgmltools2/customization/no/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/no/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/no/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/no/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/no/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/no/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/no/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/no/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/no/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/no/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/no/lang.entities
+share/apps/ksgmltools2/customization/no/strings.entities
+share/apps/ksgmltools2/customization/no/user.entities
 share/apps/ksgmltools2/customization/pl/catalog
 share/apps/ksgmltools2/customization/pl/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/pl/entities/gpl-notice.docbook
@@ -1051,20 +1054,6 @@ share/apps/ksgmltools2/customization/pl/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/pl/lang.entities
 share/apps/ksgmltools2/customization/pl/strings.entities
 share/apps/ksgmltools2/customization/pl/user.entities
-share/apps/ksgmltools2/customization/pt/catalog
-share/apps/ksgmltools2/customization/pt/entities/fdl-notice.docbook
-share/apps/ksgmltools2/customization/pt/entities/gpl-notice.docbook
-share/apps/ksgmltools2/customization/pt/entities/lgpl-notice.docbook
-share/apps/ksgmltools2/customization/pt/entities/report-bugs.docbook
-share/apps/ksgmltools2/customization/pt/entities/underArtisticLicense.docbook
-share/apps/ksgmltools2/customization/pt/entities/underBSDLicense.docbook
-share/apps/ksgmltools2/customization/pt/entities/underFDL.docbook
-share/apps/ksgmltools2/customization/pt/entities/underGPL.docbook
-share/apps/ksgmltools2/customization/pt/entities/underX11License.docbook
-share/apps/ksgmltools2/customization/pt/entities/update-doc.docbook
-share/apps/ksgmltools2/customization/pt/lang.entities
-share/apps/ksgmltools2/customization/pt/strings.entities
-share/apps/ksgmltools2/customization/pt/user.entities
 share/apps/ksgmltools2/customization/pt-BR/catalog
 share/apps/ksgmltools2/customization/pt-BR/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/pt-BR/entities/gpl-notice.docbook
@@ -1079,6 +1068,20 @@ share/apps/ksgmltools2/customization/pt-BR/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/pt-BR/lang.entities
 share/apps/ksgmltools2/customization/pt-BR/strings.entities
 share/apps/ksgmltools2/customization/pt-BR/user.entities
+share/apps/ksgmltools2/customization/pt/catalog
+share/apps/ksgmltools2/customization/pt/entities/fdl-notice.docbook
+share/apps/ksgmltools2/customization/pt/entities/gpl-notice.docbook
+share/apps/ksgmltools2/customization/pt/entities/lgpl-notice.docbook
+share/apps/ksgmltools2/customization/pt/entities/report-bugs.docbook
+share/apps/ksgmltools2/customization/pt/entities/underArtisticLicense.docbook
+share/apps/ksgmltools2/customization/pt/entities/underBSDLicense.docbook
+share/apps/ksgmltools2/customization/pt/entities/underFDL.docbook
+share/apps/ksgmltools2/customization/pt/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/pt/entities/underX11License.docbook
+share/apps/ksgmltools2/customization/pt/entities/update-doc.docbook
+share/apps/ksgmltools2/customization/pt/lang.entities
+share/apps/ksgmltools2/customization/pt/strings.entities
+share/apps/ksgmltools2/customization/pt/user.entities
 share/apps/ksgmltools2/customization/ro/catalog
 share/apps/ksgmltools2/customization/ro/entities/fdl-notice.docbook
 share/apps/ksgmltools2/customization/ro/entities/gpl-notice.docbook
@@ -1295,6 +1298,7 @@ share/apps/ksgmltools2/docbook/xsl/common/subtitles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/sv.xml
 share/apps/ksgmltools2/docbook/xsl/common/titles.xsl
 share/apps/ksgmltools2/docbook/xsl/common/tr.xml
+share/apps/ksgmltools2/docbook/xsl/common/xh.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_cn.xml
 share/apps/ksgmltools2/docbook/xsl/common/zh_tw.xml
 share/apps/ksgmltools2/docbook/xsl/html/ChangeLog
@@ -2585,6 +2589,7 @@ share/services/kaclplugin.desktop
 share/services/kbzip2filter.desktop
 share/services/kcookiejar.desktop
 share/services/kded/kdeprintd.desktop
+share/services/kded/kssld.desktop
 share/services/kgzipfilter.desktop
 share/services/khtml.desktop
 share/services/khtmlimage.desktop
@@ -2687,15 +2692,15 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/apps/ksgmltools2/customization/ru
 @dirrm share/apps/ksgmltools2/customization/ro/entities
 @dirrm share/apps/ksgmltools2/customization/ro
+@dirrm share/apps/ksgmltools2/customization/pt/entities
 @dirrm share/apps/ksgmltools2/customization/pt-BR/entities
 @dirrm share/apps/ksgmltools2/customization/pt-BR
-@dirrm share/apps/ksgmltools2/customization/pt/entities
 @dirrm share/apps/ksgmltools2/customization/pt
 @dirrm share/apps/ksgmltools2/customization/pl/entities
 @dirrm share/apps/ksgmltools2/customization/pl
+@dirrm share/apps/ksgmltools2/customization/no/entities
 @dirrm share/apps/ksgmltools2/customization/no-NY/entities
 @dirrm share/apps/ksgmltools2/customization/no-NY
-@dirrm share/apps/ksgmltools2/customization/no/entities
 @dirrm share/apps/ksgmltools2/customization/no
 @dirrm share/apps/ksgmltools2/customization/nl/entities
 @dirrm share/apps/ksgmltools2/customization/nl

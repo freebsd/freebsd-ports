@@ -81,6 +81,7 @@ share/apps/kwin/icewm-themes/Model/titleIM.xpm
 share/apps/kwin/icewm-themes/Model/titleIT.xpm
 share/sounds/KDE_Logout_new.wav
 share/sounds/KDE_Startup_new.wav
+@dirrm share/sounds
 @dirrm share/apps/kwin/icewm-themes/Model
 @dirrm share/apps/kwin/icewm-themes/MenschMaschine
 @dirrm share/apps/kwin/icewm-themes

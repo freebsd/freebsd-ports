@@ -1,5 +1,5 @@
---- configs/freebsd-g++-shared	Sun Dec 24 02:41:35 2000
-+++ configs/freebsd-g++-shared.new	Sun Dec 24 02:42:49 2000
+--- configs/freebsd-g++-shared	Wed Jun 13 03:56:43 2001
++++ configs/freebsd-g++-shared.new	Sun Dec  2 19:22:52 2001
 @@ -6,7 +6,7 @@
  
  # Compiling with support libraries
@@ -18,6 +18,15 @@
  SYSCONF_LIBS_QT_OPENGL	= 
  # OpenGL
  SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
+@@ -32,7 +32,7 @@
+ SYSCONF_LIBS_YACC	= 
+ 
+ # Linking applications
+-SYSCONF_LINK		= g++
++SYSCONF_LINK		= objprelink $(OBJECTS) $(OBJMOC) && g++
+ SYSCONF_LFLAGS		= 
+ SYSCONF_LIBS		= 
+ 
 @@ -46,7 +46,7 @@
  SYSCONF_LIBS_THREAD	= 
  
@@ -27,10 +36,18 @@
  
  # UI compiler
  SYSCONF_UIC		= $(QTDIR)/bin/uic
-@@ -60,1 +60,1 @@
+@@ -57,16 +57,15 @@
+ #   - Usually needs to incorporate $(VER_MAJ), $(VER_MIN) and $(VER_PATCH)
+ #
+ SYSCONF_LINK_SHLIB	= g++
 -SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN).$(VER_PATCH)
+-SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared -Wl,-soname,lib$(TARGET).so.$(VER_MAJ) \
 +SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
-@@ -65,6 +65,4 @@
++SYSCONF_LINK_LIB_SHARED	=  objprelink $(OBJECTS) $(OBJMOC) && \
++	$(SYSCONF_LINK_SHLIB) -shared -Wl,-soname,lib$(TARGET).so.$(VER_MAJ) \
+ 				     $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
+ 				     $(OBJECTS) $(OBJMOC) $(LIBS) && \
+ 				 mv $(SYSCONF_LINK_TARGET_SHARED) $(DESTDIR); \
  				 cd $(DESTDIR) && \
 -				 rm -f lib$(TARGET).so lib$(TARGET).so.$(VER_MAJ) lib$(TARGET).so.$(VER_MAJ).$(VER_MIN); \
 -				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so; \
@@ -39,14 +56,16 @@
 +				 rm -f lib$(TARGET).so;\
 +				 ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so
  
-@@ -77,8 +75,8 @@
+ # Linking static libraries
+ #   - Build the $(TARGET) library, eg. lib$(TARGET).a
+@@ -77,8 +76,8 @@
  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) ; \
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC) 
  # Compiling application source
 -SYSCONF_CXXFLAGS	= -pipe -fno-exceptions -O2
 -SYSCONF_CFLAGS		= -pipe -fno-exceptions -O2
-+SYSCONF_CXXFLAGS	= -DQT_PREFIX=\"${PREFIX}\" -pipe -O -fno-exceptions
-+SYSCONF_CFLAGS		= -DQT_PREFIX=\"${PREFIX}\" -pipe -O -fno-exceptions
++SYSCONF_CXXFLAGS	= -DQT_PREFIX=\"${PREFIX}\" -pipe -fno-exceptions -O2
++SYSCONF_CFLAGS		= -DQT_PREFIX=\"${PREFIX}\" -pipe -fno-exceptions -O2
  # Default link type (static linking is still be used where required)
  SYSCONF_LINK_LIB	= $(SYSCONF_LINK_LIB_SHARED)
  SYSCONF_LINK_TARGET	= $(SYSCONF_LINK_TARGET_SHARED)
