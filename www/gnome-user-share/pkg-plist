@@ -2,4 +2,19 @@ bin/gnome-file-share-properties
 libexec/gnome-user-share
 share/gnome/gnome-user-share/dav_user.conf
 share/gnome/gnome-user-share/file-share-properties.glade
+share/locale/bg/LC_MESSAGES/gnome-user-share.mo
+share/locale/cs/LC_MESSAGES/gnome-user-share.mo
+share/locale/da/LC_MESSAGES/gnome-user-share.mo
+share/locale/de/LC_MESSAGES/gnome-user-share.mo
+share/locale/en_CA/LC_MESSAGES/gnome-user-share.mo
+share/locale/fi/LC_MESSAGES/gnome-user-share.mo
+share/locale/it/LC_MESSAGES/gnome-user-share.mo
+share/locale/ja/LC_MESSAGES/gnome-user-share.mo
+share/locale/ko/LC_MESSAGES/gnome-user-share.mo
+share/locale/lt/LC_MESSAGES/gnome-user-share.mo
+share/locale/nl/LC_MESSAGES/gnome-user-share.mo
+share/locale/pa/LC_MESSAGES/gnome-user-share.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-user-share.mo
+share/locale/sq/LC_MESSAGES/gnome-user-share.mo
+share/locale/sv/LC_MESSAGES/gnome-user-share.mo
 @dirrm share/gnome/gnome-user-share
