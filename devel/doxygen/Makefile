@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.3.6
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -27,7 +27,8 @@ BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 ALL_TARGET+=	pdf
 PLIST_SUB+=	HAVE_LATEX=""
 GSPORT?=	print/ghostscript-gnu
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS+=	dvips:${PORTSDIR}/print/dvipsk-tetex \
+		latex:${PORTSDIR}/print/teTeX \
 		gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 MAKE_ARGS+=	HAVE_LATEX=yes
 .else # !defined(WITHOUT_LATEX)
