@@ -68,6 +68,7 @@ share/sqwebmail/html/en-us/spellchk.html
 share/sqwebmail/ldapaddressbook.dist
 share/sqwebmail/ldapsearch
 share/sqwebmail/lib/charset.alias
+share/sqwebmail/nodsn
 share/sqwebmail/sbin/makeuserdb
 share/sqwebmail/sbin/pw2userdb
 share/sqwebmail/sbin/userdb
@@ -76,44 +77,6 @@ share/sqwebmail/sbin/vchkpw2userdb
 share/sqwebmail/sendit.sh
 share/sqwebmail/share/locale/locale.alias
 share/sqwebmail/webgpg
-www/cgi-bin.default/sqwebmail/sqwebmail
-www/data.default/sqwebmail/bg.gif
-www/data.default/sqwebmail/bluebottomleft.gif
-www/data.default/sqwebmail/bluebottomright.gif
-www/data.default/sqwebmail/bluetopleft.gif
-www/data.default/sqwebmail/bluetopright.gif
-www/data.default/sqwebmail/calendar.gif
-www/data.default/sqwebmail/cancel.gif
-www/data.default/sqwebmail/folder.gif
-www/data.default/sqwebmail/folder2.gif
-www/data.default/sqwebmail/folders.gif
-www/data.default/sqwebmail/forward.gif
-www/data.default/sqwebmail/forwardatt.gif
-www/data.default/sqwebmail/fullheaders.gif
-www/data.default/sqwebmail/graybottomleft.gif
-www/data.default/sqwebmail/graybottomright.gif
-www/data.default/sqwebmail/graytopleft.gif
-www/data.default/sqwebmail/graytopright.gif
-www/data.default/sqwebmail/left.gif
-www/data.default/sqwebmail/left2.gif
-www/data.default/sqwebmail/logo.gif
-www/data.default/sqwebmail/print.gif
-www/data.default/sqwebmail/reply.gif
-www/data.default/sqwebmail/replyall.gif
-www/data.default/sqwebmail/replylist.gif
-www/data.default/sqwebmail/right.gif
-www/data.default/sqwebmail/right2.gif
-www/data.default/sqwebmail/save.gif
-www/data.default/sqwebmail/sep.gif
-www/data.default/sqwebmail/signin.gif
-www/data.default/sqwebmail/sqwebmail.css
-www/data.default/sqwebmail/trash2.gif
-www/data.default/sqwebmail/uncancel.gif
-@dirrm www/data.default/sqwebmail
-@unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
-@dirrm www/cgi-bin.default/sqwebmail
-@unexec /bin/rmdir %D/www/cgi-bin.default 2> /dev/null || true
-@unexec /bin/rmdir %D/www 2> /dev/null || true
 @dirrm share/sqwebmail/var/calendar/public
 @dirrm share/sqwebmail/var/calendar/private
 @dirrm share/sqwebmail/var/calendar/localcache
@@ -136,3 +99,42 @@ www/data.default/sqwebmail/uncancel.gif
 @dirrm libexec/sqwebmail
 %%CACHE%%@unexec rmdir /var/sqwebmail/cache 2> /dev/null || true
 %%CACHE%%@unexec rmdir /var/sqwebmail 2> /dev/null || true
+@cwd %%CGIDIR%%
+sqwebmail/sqwebmail
+@dirrm sqwebmail
+@unexec cd .. && /bin/rmdir %%CGIDIR%% 2> /dev/null || true
+@cwd %%HTDOCSDIR%%
+sqwebmail/bg.gif
+sqwebmail/bluebottomleft.gif
+sqwebmail/bluebottomright.gif
+sqwebmail/bluetopleft.gif
+sqwebmail/bluetopright.gif
+sqwebmail/calendar.gif
+sqwebmail/cancel.gif
+sqwebmail/folder.gif
+sqwebmail/folder2.gif
+sqwebmail/folders.gif
+sqwebmail/forward.gif
+sqwebmail/forwardatt.gif
+sqwebmail/fullheaders.gif
+sqwebmail/graybottomleft.gif
+sqwebmail/graybottomright.gif
+sqwebmail/graytopleft.gif
+sqwebmail/graytopright.gif
+sqwebmail/left.gif
+sqwebmail/left2.gif
+sqwebmail/logo.gif
+sqwebmail/print.gif
+sqwebmail/reply.gif
+sqwebmail/replyall.gif
+sqwebmail/replylist.gif
+sqwebmail/right.gif
+sqwebmail/right2.gif
+sqwebmail/save.gif
+sqwebmail/sep.gif
+sqwebmail/signin.gif
+sqwebmail/sqwebmail.css
+sqwebmail/trash2.gif
+sqwebmail/uncancel.gif
+@dirrm sqwebmail
+@unexec cd .. && /bin/rmdir %%HTDOCSDIR%% 2> /dev/null || true
