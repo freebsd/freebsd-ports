@@ -18,6 +18,7 @@ share/amanda/COPYRIGHT
 share/amanda/COPYRIGHT-APACHE
 share/amanda/COPYRIGHT-REGEX
 share/amanda/DUMPER-API
+share/amanda/EXCLUDE
 share/amanda/FAQ
 share/amanda/INDEXING
 share/amanda/INSTALL
@@ -25,6 +26,7 @@ share/amanda/INTERNALS
 share/amanda/KERBEROS
 share/amanda/LABEL.PRINTING
 share/amanda/MULTITAPE
+share/amanda/PORT.USAGE
 share/amanda/RESTORE
 share/amanda/SAMBA
 share/amanda/SECURITY

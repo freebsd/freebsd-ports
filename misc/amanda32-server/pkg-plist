@@ -24,10 +24,12 @@ sbin/amadmin
 sbin/amcheck
 sbin/amcheckdb
 sbin/amcleanup
+sbin/amdd
 sbin/amdump
 sbin/amflush
 sbin/amgetconf
 sbin/amlabel
+sbin/ammt
 sbin/amoverview
 %%PLOT%%sbin/amplot
 sbin/amreport
