@@ -70,6 +70,101 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
+  <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
+    <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
+    <affects>
+      <package>
+        <name>mysql-client</name>
+	<range><ge>4.0</ge><lt>4.0.20</lt></range>
+	<range><ge>4.1</ge><lt>4.1.0_2</lt></range>
+	<range><ge>5.0</ge><lt>5.0.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+	 <p>Shaun Colley reports that the script `mysqlbug' included
+	   with MySQL sometimes creates temporary files in an unsafe
+	   manner.  As a result, an attacker may create a symlink in
+	   /tmp so that if another user invokes `mysqlbug' and <em>quits
+	   without making <strong>any</strong> changes</em>, an
+	   arbitrary file may be overwritten with the bug report
+	   template.</p>
+       </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
+      <url>http://bugs.mysql.com/bug.php?id=3284</url>
+      <bid>9976</bid>
+      <cvename>CAN-2004-0381</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-25</discovery>
+      <entry>2004-04-16</entry>
+      <modified>2004-05-18</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="20be2982-4aae-11d8-96f2-0020ed76ef5a">
+    <topic>fsp buffer overflow and directory traversal vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>fspd</name>
+        <range><lt>2.8.1.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The <a href="http://www.debian.org/security">Debian
+        security team</a> reported a pair of vulnerabilities in
+        fsp:</p>
+        <blockquote cite="http://www.debian.org/security/2004/dsa-416">
+          <p>A vulnerability was discovered in fsp, client utilities
+          for File Service Protocol (FSP), whereby a remote user could
+          both escape from the FSP root directory (CAN-2003-1022), and
+          also overflow a fixed-length buffer to execute arbitrary
+          code (CAN-2004-0011).</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-1022</cvename>
+      <cvename>CAN-2004-0011</cvename>
+      <url>http://www.debian.org/security/2004/dsa-416</url>
+    </references>
+    <dates>
+      <discovery>2004-01-06</discovery>
+      <entry>2004-01-19</entry>
+      <modified>2004-05-17</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="cb6c6c29-9c4f-11d8-9366-0020ed76ef5a">
+    <topic>proftpd IP address access control list breakage</topic>
+    <affects>
+      <package>
+	<name>proftpd</name>
+	<range><ge>1.2.9</ge><lt>1.2.10.r1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jindrich Makovicka reports a regression in proftpd's
+          handling of IP address access control lists (IP ACLs).  Due
+          to this regression, some IP ACLs are treated as ``allow
+          all''.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0432</cvename>
+      <url>http://bugs.proftpd.org/show_bug.cgi?id=2267</url>
+    </references>
+    <dates>
+      <discovery>2003-11-04</discovery>
+      <entry>2004-05-02</entry>
+      <modified>2004-05-15</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="700d43b4-a42a-11d8-9c6d-0020ed76ef5a">
     <topic>Cyrus IMSPd multiple vulnerabilities</topic>
     <affects>
@@ -82,8 +177,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Cyrus team reported multiple vulnerabilities in older
           versions of Cyrus IMSPd:</p>
-	<blockquote
-	  cite="http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926">
+	<blockquote cite="http://marc.theaimsgroup.com/?l=cyrus-announce&amp;m=107150355226926">
           <p>These releases correct a recently discovered buffer
             overflow vulnerability, as well as clean up a significant
 	    amount of buffer handling throughout the code.</p>
@@ -112,8 +206,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>In December 2002, Timo Sirainen reported:</p>
-	<blockquote
-	  cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605">
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605">
 	  <p>Cyrus IMAP server has a a remotely exploitable pre-login
 	    buffer overflow. [...] Note that you don't have to log in
 	    before exploiting this, and since Cyrus
@@ -132,6 +225,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2002-12-02</discovery>
       <entry>2004-05-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fde53204-7ea6-11d8-9645-0020ed76ef5a">
+    <topic>insecure temporary file creation in xine-check, xine-bugreport</topic>
+    <affects>
+      <package>
+	<name>xine</name>
+	<range><lt>0.9.23_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Some scripts installed with xine create temporary files
+	  insecurely.  It is recommended that these scripts (xine-check,
+	  xine-bugreport) not be used.  They are not needed for normal
+	  operation.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</url>
+      <bid>9939</bid>
+    </references>
+    <dates>
+      <discovery>2004-03-20</discovery>
+      <entry>2004-03-26</entry>
+      <modified>2004-05-09</modified>
     </dates>
   </vuln>
 
@@ -163,6 +283,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <entry>2004-05-06</entry>
     </dates>
   </vuln>
+
   <vuln vid="a56a72bb-9f72-11d8-9585-0020ed76ef5a">
     <topic>phpBB session table exhaustion</topic>
     <affects>
@@ -547,6 +668,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
+  <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
+    <topic>Incorrect cross-realm trust handling in Heimdal</topic>
+    <affects>
+      <package>
+	<name>heimdal</name>
+	<range><lt>0.6.1</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.0</ge><lt>5.2_6</lt></range>
+	<range><ge>4.9</ge><lt>4.9_6</lt></range>
+	<range><ge>4.0</ge><lt>4.8_19</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Heimdal does not correctly validate the `transited' field of
+	  Kerberos tickets when computing the authentication path.  This
+	  could allow a rogue KDC with which cross-realm relationships
+	  have been established to impersonate any KDC in the
+	  authentication path.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0371</cvename>
+      <freebsdsa>SA-04:08.heimdal</freebsdsa>
+      <url>http://www.pdc.kth.se/heimdal/advisory/2004-04-01/</url>
+    </references>
+    <dates>
+      <discovery>2004-04-01</discovery>
+      <entry>2004-04-02</entry>
+      <modified>2004-05-05</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="a2ffb627-9c53-11d8-9366-0020ed76ef5a">
     <topic>lha buffer overflows and path traversal issues</topic>
     <affects>
@@ -602,33 +758,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-04-29</discovery>
       <entry>2004-05-02</entry>
       <modified>2004-05-03</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="cb6c6c29-9c4f-11d8-9366-0020ed76ef5a">
-    <topic>proftpd IP address access control list breakage</topic>
-    <affects>
-      <package>
-	<name>proftpd</name>
-	<range><ge>1.2.9</ge><lt>1.2.10.r1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Jindrich Makovicka reports a regression in proftpd's
-          handling of IP address access control lists (IP ACLs).  Due
-          to this regression, some IP ACLs are treated as ``allow
-          all''.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0432</cvename>
-      <url>http://bugs.proftpd.org/show_bug.cgi?id=2267</url>
-    </references>
-    <dates>
-      <discovery>2003-11-04</discovery>
-      <entry>2004-05-02</entry>
-      <modified>2004-05-15</modified>
     </dates>
   </vuln>
 
@@ -779,40 +908,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2003-12-01</discovery>
       <entry>2004-05-02</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
-    <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
-    <affects>
-      <package>
-        <name>mysql-client</name>
-	<range><ge>4.0</ge><lt>4.0.20</lt></range>
-	<range><ge>4.1</ge><lt>4.1.0_2</lt></range>
-	<range><ge>5.0</ge><lt>5.0.0_2</lt></range>
-      </package>
-    </affects>
-    <description>
-       <body xmlns="http://www.w3.org/1999/xhtml">
-	 <p>Shaun Colley reports that the script `mysqlbug' included
-	   with MySQL sometimes creates temporary files in an unsafe
-	   manner.  As a result, an attacker may create a symlink in
-	   /tmp so that if another user invokes `mysqlbug' and <em>quits
-	   without making <strong>any</strong> changes</em>, an
-	   arbitrary file may be overwritten with the bug report
-	   template.</p>
-       </body>
-    </description>
-    <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
-      <url>http://bugs.mysql.com/bug.php?id=3284</url>
-      <bid>9976</bid>
-      <cvename>CAN-2004-0381</cvename>
-    </references>
-    <dates>
-      <discovery>2004-03-25</discovery>
-      <entry>2004-04-16</entry>
-      <modified>2004-05-18</modified>
     </dates>
   </vuln>
 
@@ -1245,41 +1340,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
-    <topic>Incorrect cross-realm trust handling in Heimdal</topic>
-    <affects>
-      <package>
-	<name>heimdal</name>
-	<range><lt>0.6.1</lt></range>
-      </package>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>5.0</ge><lt>5.2_6</lt></range>
-	<range><ge>4.9</ge><lt>4.9_6</lt></range>
-	<range><ge>4.0</ge><lt>4.8_19</lt></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Heimdal does not correctly validate the `transited' field of
-	  Kerberos tickets when computing the authentication path.  This
-	  could allow a rogue KDC with which cross-realm relationships
-	  have been established to impersonate any KDC in the
-	  authentication path.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0371</cvename>
-      <freebsdsa>SA-04:08.heimdal</freebsdsa>
-      <url>http://www.pdc.kth.se/heimdal/advisory/2004-04-01/</url>
-    </references>
-    <dates>
-      <discovery>2004-04-01</discovery>
-      <entry>2004-04-02</entry>
-      <modified>2004-05-05</modified>
-    </dates>
-  </vuln>
-
   <vuln vid="98bd69c3-834b-11d8-a41f-0020ed76ef5a">
     <topic>Courier mail services: remotely exploitable buffer overflows</topic>
     <affects>
@@ -1583,33 +1643,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-03-23</discovery>
       <entry>2004-03-26</entry>
       <modified>2004-03-29</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="fde53204-7ea6-11d8-9645-0020ed76ef5a">
-    <topic>insecure temporary file creation in xine-check, xine-bugreport</topic>
-    <affects>
-      <package>
-	<name>xine</name>
-	<range><lt>0.9.23_3</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Some scripts installed with xine create temporary files
-	  insecurely.  It is recommended that these scripts (xine-check,
-	  xine-bugreport) not be used.  They are not needed for normal
-	  operation.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</url>
-      <bid>9939</bid>
-    </references>
-    <dates>
-      <discovery>2004-03-20</discovery>
-      <entry>2004-03-26</entry>
-      <modified>2004-05-09</modified>
     </dates>
   </vuln>
 
@@ -2912,40 +2945,6 @@ misc.c:
     <dates>
       <discovery>2003-12-24</discovery>
       <entry>2004-01-19</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="20be2982-4aae-11d8-96f2-0020ed76ef5a">
-    <topic>fsp buffer overflow and directory traversal vulnerabilities</topic>
-    <affects>
-      <package>
-        <name>fspd</name>
-        <range><lt>2.8.1.19</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The <a href="http://www.debian.org/security">Debian
-        security team</a> reported a pair of vulnerabilities in
-        fsp:</p>
-        <blockquote cite="http://www.debian.org/security/2004/dsa-416">
-          <p>A vulnerability was discovered in fsp, client utilities
-          for File Service Protocol (FSP), whereby a remote user could
-          both escape from the FSP root directory (CAN-2003-1022), and
-          also overflow a fixed-length buffer to execute arbitrary
-          code (CAN-2004-0011).</p>
-        </blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-1022</cvename>
-      <cvename>CAN-2004-0011</cvename>
-      <url>http://www.debian.org/security/2004/dsa-416</url>
-    </references>
-    <dates>
-      <discovery>2004-01-06</discovery>
-      <entry>2004-01-19</entry>
-      <modified>2004-05-17</modified>
     </dates>
   </vuln>
 
