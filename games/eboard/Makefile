@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eboard
-PORTVERSION=	0.3.2pl1
+PORTVERSION=	0.3.3
 EXTRASVERSION=	1pl2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -39,11 +39,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/${file} ${DOCSDIR}
 .endfor
 .endif
-	${INSTALL_DATA} ${WRKDIR}/eboard-extras-pack${EXTRASVERSION}/*.png \
+	${INSTALL_DATA} ${WRKDIR}/eboard-extras-${EXTRASVERSION}/*.png \
 		${PREFIX}/share/eboard
-	${INSTALL_DATA} ${WRKDIR}/eboard-extras-pack${EXTRASVERSION}/*.wav \
+	${INSTALL_DATA} ${WRKDIR}/eboard-extras-${EXTRASVERSION}/*.wav \
 		${PREFIX}/share/eboard
-	@${CAT} ${WRKDIR}/eboard-extras-pack${EXTRASVERSION}/extras1.conf >> \
+	@${CAT} ${WRKDIR}/eboard-extras-${EXTRASVERSION}/extras1.conf >> \
 		${PREFIX}/share/eboard/eboard_themes.conf
 
 .include <bsd.port.mk>
