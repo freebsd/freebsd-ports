@@ -1,0 +1,22 @@
+--- vnpstext.c.orig	Wed Sep  2 14:01:59 1992
++++ vnpstext.c	Sun Dec  8 01:24:48 1996
+@@ -86,7 +86,8 @@
+ dofile(input)
+     FILE		*input;
+ {
+-    u_char		line[1024];
++#define LINESIZE 1024
++    u_char		line[LINESIZE];
+     register u_char	*s;
+     register int	pageno = 1;
+     register short	col = 0;
+@@ -95,7 +96,8 @@
+ 
+     printf("StartDoc\n");
+ 
+-    while (gets(line)) {
++    while (fgets(line, LINESIZE, stdin)) {
++	if (line[ strlen(line) - 1 ] == '\n') line[ strlen(line) - 1 ] = '\0';
+ 	if (!*line) printf("B\n");
+ 	else {
+ 

@@ -1,0 +1,12 @@
+--- Makefile.orig	Thu May 14 21:59:59 1992
++++ Makefile	Sat Dec  7 23:15:47 1996
+@@ -4,7 +4,8 @@
+ 
+ .SUFFIXES:	.src .ps .pro
+ 
+-DEFAULT_PSLIBDIR	= "\"/usr/local/lib/ps\""
++#DEFAULT_PSLIBDIR	= "\"/usr/local/lib/ps\""
++DEFAULT_PSLIBDIR	= "\"$(PREFIX)/share/vn-fonts\""
+ 
+ SHELL	= /bin/sh
+ VNLIBDIR= ../lib

@@ -1,0 +1,11 @@
+--- ../lib/vntype/Makefile.orig	Sat Jun  6 00:05:40 1992
++++ ../lib/vntype/Makefile	Sat Dec  7 23:17:27 1996
+@@ -15,7 +15,7 @@
+ #FLAGS	= -DNOANSI_C
+ CFLAGS	= $(FLAGS) $(INC)
+ CC	= cc
+-CPP	= /lib/cpp
++CPP	= cpp
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c $*.c
