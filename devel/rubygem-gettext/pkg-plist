@@ -1,13 +1,16 @@
 bin/rgettext
 bin/rmsgfmt
+%%RUBY_SITEARCHLIBDIR%%/gettext/_locale.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/gettext
 %%RUBY_SITELIBDIR%%/gettext.rb
 %%RUBY_SITELIBDIR%%/gettext/locale.rb
 %%RUBY_SITELIBDIR%%/gettext/locale_default.rb
 %%RUBY_SITELIBDIR%%/gettext/locale_table_win32.rb
-%%RUBY_SITEARCHLIBDIR%%/gettext/_locale.so
-@dirrm %%RUBY_SITEARCHLIBDIR%%/gettext
 %%RUBY_SITELIBDIR%%/gettext/locale_win32.rb
 %%RUBY_SITELIBDIR%%/gettext/mo.rb
+%%RUBY_SITELIBDIR%%/gettext/parser/glade.rb
+%%RUBY_SITELIBDIR%%/gettext/parser/ruby.rb
+@dirrm %%RUBY_SITELIBDIR%%/gettext/parser
 @dirrm %%RUBY_SITELIBDIR%%/gettext
 share/locale/ja/LC_MESSAGES/rgettext.mo
 share/locale/ja/LC_MESSAGES/rmsgfmt.mo
@@ -17,6 +20,8 @@ share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello_noop.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello_plural.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/helloglade2.glade
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/helloglade2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellotk.rb
@@ -24,6 +29,7 @@ share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello_noop.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello_plural.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/helloglade2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/makemo.rb
@@ -31,11 +37,13 @@ share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello2.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello_noop.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello_plural.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/helloglade2.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hellogtk.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello_noop.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello_plural.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/helloglade2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hellogtk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hellotk.po
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ja
@@ -44,15 +52,8 @@ share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/ja/ruby-gettext.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/style.css
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/makehtml.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/en/LANGUAGE
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/en/ruby-gettext.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ja/LANGUAGE
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ja/ruby-gettext.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd/en
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
