@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kf
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.habazie.rams.pl/kf/files/ \
 		http://www.jabberstudio.org/projects/kf/releases/
