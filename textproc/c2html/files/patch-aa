@@ -1,0 +1,18 @@
+--- Makefile.orig	Mon Sep  1 22:18:51 1997
++++ Makefile	Sun Nov 16 17:24:44 1997
+@@ -2,13 +2,13 @@
+ 
+ CC = gcc
+ FLEX = flex
+-CFLAGS = -O2 -Wall -pedantic -ansi
++CFLAGS+= -Wall -pedantic -ansi
+ 
+ all: c2html
+ 
+ c2html:	c2html.l
+ 	$(FLEX) c2html.l
+-	$(CC) $(CFLAGS) -o c2html lex.yy.c -static -lfl
++	$(CC) $(CFLAGS) -o c2html lex.yy.c -lfl
+ clean:
+ 	rm -rf *.o *~ c2html
+ 

@@ -1,0 +1,5 @@
+bin/c2html
+man/man1/c2html.1.gz
+share/doc/c2html/COPYING
+share/doc/c2html/README
+@dirrm share/doc/c2html
