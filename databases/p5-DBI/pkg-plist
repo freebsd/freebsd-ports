@@ -31,6 +31,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbd_xsh.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbi_sql.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbipport.h
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbivport.h
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileDumper
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD
