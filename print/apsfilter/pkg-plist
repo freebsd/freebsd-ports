@@ -8,9 +8,13 @@ share/apsfilter/setup/devices-6.50
 share/apsfilter/setup/printer-5.50
 share/apsfilter/setup/printer-6.01
 share/apsfilter/setup/printer-6.50
-share/apsfilter/setup/printer-addon
+share/apsfilter/setup/printer-cdj
+share/apsfilter/setup/printer-hpdj
+share/apsfilter/setup/printer-omni
 share/apsfilter/setup/printer-ppa
+share/apsfilter/setup/printer-pcl3
 share/apsfilter/setup/printer-ps
+share/apsfilter/setup/printer-stp
 share/apsfilter/setup/test.ps
 share/apsfilter/template/README
 share/apsfilter/template/apsfilterrc
@@ -20,6 +24,7 @@ share/doc/apsfilter/HOWTO-BUGREPORTS
 share/doc/apsfilter/LICENSE
 share/doc/apsfilter/README.TeX
 share/doc/apsfilter/TROUBLESHOOTING
+share/doc/apsfilter/handbook.html
 share/doc/apsfilter/paper
 @dirrm share/apsfilter/bin
 @dirrm share/apsfilter/setup
