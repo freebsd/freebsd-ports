@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jun  9 21:36:42 2003
-+++ Makefile	Thu Jul 10 13:27:09 2003
+--- Makefile.orig	Wed Aug 27 10:51:19 2003
++++ Makefile	Tue Sep  2 15:10:51 2003
 @@ -37,7 +37,7 @@
  #
  
@@ -9,7 +9,7 @@
  HTML_PATH ?= /zc
  
  LIBEXEC=$(PREFIX)/libexec
-@@ -83,7 +83,7 @@
+@@ -84,7 +84,7 @@
  	@echo "Not automatized yet"
  
  
@@ -18,7 +18,7 @@
  
  
  install-common:
-@@ -114,12 +114,11 @@
+@@ -115,12 +115,11 @@
  
  	@echo "==> Installing default configuration file"
  	$(INSTALL) -d $(ETCDIR)
@@ -35,12 +35,17 @@
  	@echo "** Don't forget to edit the zc.conf to reflect your system"
  	@echo "**   configuration"
  	@echo "*************************"
-@@ -141,7 +140,7 @@
+@@ -142,10 +141,10 @@
  install-cli:
  	@echo "==> Installing CLI"
  	$(INSTALL) -d $(BINDIR)
 -	$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
-+	$(LN) -s $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
+-	$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zonecheck
++	#$(LN) -f $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zc
++	$(LN) -s $(LIBEXEC)/zc/zc/zc.rb $(BINDIR)/zonecheck
+ 	$(INSTALL) -d $(MANDIR)/man1
+-	$(INSTALL) -m 0644 man/zonecheck.1 $(MANDIR)/man1/zc.1
++	#$(INSTALL) -m 0644 man/zonecheck.1 $(MANDIR)/man1/zc.1
+ 	$(INSTALL) -m 0644 man/zonecheck.1 $(MANDIR)/man1/zonecheck.1
  	@echo
  
- install-doc:

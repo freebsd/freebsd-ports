@@ -2,7 +2,7 @@ ZoneCheck is intended to help solving misconfigurations or inconsistencies
 of DNS zone files. 
 Features
 
-    * Powerfull configuration file 
+    * Powerful configuration file 
     * Does not depend on policies
     * Fine grained test selection (by test, by categories, by zones)
     * Full IPv6 support (connectivity and AAAA records)

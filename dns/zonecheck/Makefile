@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zonecheck
-PORTVERSION=	2.0.0b5
+PORTVERSION=	2.0.0b7
 CATEGORIES=	dns ipv6 ruby
 MASTER_SITES=	http://savannah.nongnu.org/download/zonecheck/
 EXTRACT_SUFX=	.tgz
@@ -21,5 +21,6 @@ USE_GMAKE=	yes
 USE_RUBY=	yes
 NO_BUILD=	yes
 RUBY_VER=	1.8
+MAN1=		zonecheck.1
 
 .include <bsd.port.mk>
