@@ -1,0 +1,9 @@
+istring is an interpolated string class, which means you can substitute
+variables into a string, like this:
+
+    >>> j = 3
+    >>> s = istring("j is $j")
+    >>> s
+    'j is 3'
+
+WWW: http://www.neosynapse.net/interpolated_string.htm

@@ -1,0 +1,13 @@
+lib/%%PYTHON_VERSION%%/site-packages/neo/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/neo/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/neo/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/neo/common_testing.py
+lib/%%PYTHON_VERSION%%/site-packages/neo/common_testing.pyc
+lib/%%PYTHON_VERSION%%/site-packages/neo/common_testing.pyo
+lib/%%PYTHON_VERSION%%/site-packages/neo/constants.py
+lib/%%PYTHON_VERSION%%/site-packages/neo/constants.pyc
+lib/%%PYTHON_VERSION%%/site-packages/neo/constants.pyo
+lib/%%PYTHON_VERSION%%/site-packages/neo/utilities.py
+lib/%%PYTHON_VERSION%%/site-packages/neo/utilities.pyc
+lib/%%PYTHON_VERSION%%/site-packages/neo/utilities.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/neo
