@@ -8,7 +8,9 @@
 PORTNAME=	glitz
 PORTVERSION=	0.2.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/snapshots/
+MASTER_SITES=	http://cairographics.org/snapshots/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	OpenGL image compositing library

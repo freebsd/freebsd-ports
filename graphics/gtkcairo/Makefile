@@ -8,7 +8,9 @@
 PORTNAME=	gtkcairo
 PORTVERSION=	0.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cairographics.org/snapshots/
+MASTER_SITES=	http://www.cairographics.org/snapshots/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Gtk+ bindings to cairo
