@@ -1,0 +1,24 @@
+The Numeric Extensions to Python (NumPy) give Python the number crunching
+power of numeric languages like Matlab and IDL while maintaining all of the
+advantages of the general-purpose programming language Python.
+
+These extensions add two new object types to Python, and then include a
+number of extensions that take advantage of these two new objects.
+
+  * Multidimensional Array Objects
+       + Efficient arrays of homogeneous machine types
+       + Arbitrary number of dimensions
+       + Sophisticated structural operations
+  * Universal Function Objects
+       + Supports mathematical functions on all python objects
+       + Very efficient for Array Objects
+  * Simple interfaces to existing numerical libraries:
+       + Linear Algebra (LAPACK)
+       + Fourier Transforms (FFTPACK)
+       + Random Numbers (RANLIB)
+
+To use the numeric extension, add /usr/local/share/python1.4/NumPy
+to your PYTHONPATH.
+
+For more information, see the NumPy home page at
+http://www.sls.lcs.mit.edu/~jjh/numeric
