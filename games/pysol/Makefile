@@ -3,7 +3,7 @@
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/09/21 07:50:43 tg Exp $
+# $Id: Makefile,v 1.4 1998/10/07 08:03:03 tg Exp $
 #
 
 DISTNAME=       pysol-1.10
@@ -13,6 +13,8 @@ MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/
 MAINTAINER=	tg@FreeBSD.ORG
 
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+
+BROKEN=		fetch
 
 do-build:
 
