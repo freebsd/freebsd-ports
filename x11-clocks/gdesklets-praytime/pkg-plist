@@ -1,0 +1,18 @@
+share/gnome/gdesklets/Displays/PrayerTime/README
+share/gnome/gdesklets/Displays/PrayerTime/gfx/bg-left.png
+share/gnome/gdesklets/Displays/PrayerTime/gfx/bg-right.png
+share/gnome/gdesklets/Displays/PrayerTime/gfx/bg-weather.png
+share/gnome/gdesklets/Displays/PrayerTime/icons/asr.png
+share/gnome/gdesklets/Displays/PrayerTime/icons/fajr.png
+share/gnome/gdesklets/Displays/PrayerTime/icons/isha.png
+share/gnome/gdesklets/Displays/PrayerTime/icons/maghrib.png
+share/gnome/gdesklets/Displays/PrayerTime/icons/zuhr.png
+share/gnome/gdesklets/Displays/PrayerTime/prayboard.display
+share/gnome/gdesklets/Displays/PrayerTime/praytime.display
+share/gnome/gdesklets/Sensors/PrayerTime/__init__.py
+share/gnome/gdesklets/Sensors/PrayerTime/__init__.pyc
+share/gnome/gdesklets/Sensors/PrayerTime/__init__.pyo
+@dirrm share/gnome/gdesklets/Sensors/PrayerTime
+@dirrm share/gnome/gdesklets/Displays/PrayerTime/icons
+@dirrm share/gnome/gdesklets/Displays/PrayerTime/gfx
+@dirrm share/gnome/gdesklets/Displays/PrayerTime
