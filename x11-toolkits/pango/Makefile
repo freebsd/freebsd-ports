@@ -21,6 +21,8 @@ LIB_DEPENDS=	glib-1.3.5:${PORTSDIR}/devel/glib13 \
 		freetype.7:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+BROKEN=		"uses some freetype2 internals and as a result was b0rken by freetype2 upgrade"
+
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
