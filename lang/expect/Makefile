@@ -6,17 +6,17 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.38.0
-PORTREVISION=	1
-CATEGORIES=	lang tcl83 tk83
+PORTREVISION=	2
+CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	http://expect.nist.gov/src/
 
 MAINTAINER=	jerry@thehutt.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS?=	tk83.1:${PORTSDIR}/x11-toolkits/tk84
 .else
-LIB_DEPENDS?=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS?=	tcl83.1:${PORTSDIR}/lang/tcl84
 .endif
 
 EXPECT_VER=	5.38
@@ -33,14 +33,14 @@ PLIST_SUB+=	LIBEXPECT_VER="${LIBEXPECT_VER}"
 TK_CONFIG_ARGS=
 PLIST_SUB+=	XFILES="@comment "
 .else
-TK_CONFIG_ARGS=	--with-tkconfig=${LOCALBASE}/lib/tk8.3 \
-		--with-tkinclude=${LOCALBASE}/include/tk8.3
+TK_CONFIG_ARGS=	--with-tkconfig=${LOCALBASE}/lib/tk8.4 \
+		--with-tkinclude=${LOCALBASE}/include/tk8.4
 PLIST_SUB+=	XFILES=""
 .endif
 
 CONFIGURE_ARGS?=--enable-shared \
-		--with-tclconfig=${LOCALBASE}/lib/tcl8.3 \
-		--with-tclinclude=${LOCALBASE}/include/tcl8.3 \
+		--with-tclconfig=${LOCALBASE}/lib/tcl8.4 \
+		--with-tclinclude=${LOCALBASE}/include/tcl8.4 \
 		${TK_CONFIG_ARGS}
 CONFIGURE_ENV=	LDFLAGS="-lutil"
 
