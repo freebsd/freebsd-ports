@@ -2607,6 +2607,7 @@ gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
 gkrellmbgchg	ports/misc/gkrellmbgchg
+gkrellmbgchg2	ports/misc/gkrellmbgchg2
 gkrellmearth	ports/astro/gkrellmearth
 gkrellmfmonitor	ports/misc/gkrellmfmonitor
 gkrellmfmonitor2	ports/misc/gkrellmfmonitor2
