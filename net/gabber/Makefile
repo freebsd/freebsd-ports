@@ -34,7 +34,13 @@ CONFIGURE_ARGS=	--disable-xmms
 
 MAN1=		gabber.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-build:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
