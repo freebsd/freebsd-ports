@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	3.3.7
+PORTVERSION=	3.5.1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	oliver@freebsd.org
 COMMENT=	CGI Webmail client for Maildirs
 
 #
@@ -37,18 +37,20 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set CACHEOWNER to who you'd like to own the cache files
 # set CACHEDIR to where you'd like your cache directory to be
 # set WITH_LDAP for LDAP authentication and addressbook support
+# set WITH_HTTPS to generate https:// URLs for all accesses
+# set WITH_HTTPS=login to generate https:// URLs for only password access
 # set WITH_VCHKPW for vpopmail authentication
 # set WITH_ISPELL to provide spell-checking
 # set WITH_MIMETYPES to enable the search for a mime.types file
 # set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
+# set WITHOUT_SENTRENAME to turn off periodic renaming of the Sent folder
 # set VCHKPW to the home of the vpopmail user, if necessary
 #
 # The following settings are in bytes:
 # set WITH_MAXMSGSIZE to max size of messages (including attachments)
 # set WITH_MAXARGSIZE to max size of a text message (excluding attachments)
 # set WITH_MAXFORMARGSIZE to max size of attachments
-
 
 CACHEDIR?=	/var/sqwebmail/cache
 CACHEOWNER?=	bin
@@ -58,6 +60,7 @@ VCHKPWLOC?=	${LOCALBASE}/vpopmail
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	YES
+USE_BZIP2=	YES
 
 CONFIGURE_ARGS= \
 	--enable-cgibindir=${CGIBINDIR}/${CGIBINSUBDIR} \
@@ -67,6 +70,8 @@ CONFIGURE_ARGS= \
 	--mandir=${PREFIX}/share/sqwebmail/man \
 	--prefix=${PREFIX}/share/sqwebmail \
 	--enable-imageurl=/${IMAGEURL}/
+
+PLIST_SUB+=	CGIDIR=${CGIBINDIR} HTDOCSDIR=${WEBDATADIR}
 
 .if defined(WITHOUT_CACHEDIR)
 PLIST_SUB+=		CACHE="@comment "
@@ -95,6 +100,18 @@ PLIST_SUB+=		VPOPMAILFLAG=""
 .else
 CONFIGURE_ARGS+=	--without-authvchkpw
 PLIST_SUB+=		VPOPMAILFLAG="@comment "
+.endif
+
+.if defined(WITH_HTTPS)
+.if ${WITH_HTTPS} == "login"
+CONFIGURE_ARGS+=	--enable-https=login
+.else
+CONFIGURE_ARGS+=	--enable-https
+.endif
+.endif
+
+.if defined(WITHOUT_SENTRENAME)
+CONFIGURE_ARGS+=	--disable-autorenamesent
 .endif
 
 .if defined(WITH_MYSQL)
@@ -160,6 +177,7 @@ MLINKS=		authlib.7 authcram.7 \
 		authlib.7 authshadow.7 \
 		authlib.7 authuserdb.7 \
 		authlib.7 authvchkpw.7 \
+		authlib.7 authmysql.7 \
 		makeuserdb.8 pw2userdb.8 \
 		makeuserdb.8 vchkpw2userdb.8
 
