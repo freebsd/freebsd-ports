@@ -21,4 +21,4 @@ cdb is designed to be used in mission-critical applications like e-mail.
 Database replacement is safe against system crashes. Readers don't have
 to pause during a rewrite.
 
-ftp://koobera.math.uic.edu/www/cdb.html
+http://pobox.com/~djb/cdb.html
