@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1996/11/11 10:13:07 max Exp $
+# $Id: Makefile,v 1.3 1996/12/03 04:07:10 asami Exp $
 #
 
 DISTNAME=	xdvi-17
@@ -61,7 +61,7 @@ pre-patch:
 	  ${PATCH} < ${FILESDIR}/xdvi18.vflib.patch.of.patch >/dev/null 2>&1; \
 	  gzip -d xdvi-17+ptex.fixed.patch.gz ; \
 	  ${PATCH} < ${FILESDIR}/xdvi-17+ptex.fixed.patch.of.patch >/dev/null 2>&1; \
-	  mkdir tmp; \
+	  ${MKDIR} tmp; \
 	  cd tmp; \
 	  ${PATCH} -f < ../xdvi18.vflib.patch >/dev/null 2>&1; \
 	  cd .. ; \

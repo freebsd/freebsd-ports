@@ -3,7 +3,7 @@
 # Date created:		5 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1996/09/28 16:19:47 max Exp $
+# $Id: Makefile,v 1.12 1996/11/11 10:12:36 max Exp $
 #
 
 DISTNAME=	nkf-1.62
@@ -15,6 +15,6 @@ MAINTAINER=	max@FreeBSD.ORG
 
 post-extract:
 	@echo "===>  Installing custom Makefile for ${DISTNAME}"
-	@(cp ${FILESDIR}/Makefile ${WRKSRC})
+	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.1.1.2 1996/11/10 12:40:13 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:30:48 asami Exp $
 #
 
 DISTNAME=	td210bs
@@ -44,6 +44,6 @@ post-extract:
 
 pre-patch:
 	@echo "===>  Installing custom Makefile for ${DISTNAME}"
-	@(cp ${FILESDIR}/Makefile ${WRKSRC})
+	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
 
 .include <bsd.port.mk>

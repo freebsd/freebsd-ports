@@ -3,7 +3,7 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/11 08:42:46 asami Exp $
 #
 
 DISTNAME?=	jp-jlatex209-a17-n152
@@ -26,7 +26,7 @@ BATCH_TEX?=	BOTH
 post-extract:
 	@(\
 	  cd ${WRKSRC} ; \
-	  if [ ! -d jtex1.7 ] ; then mkdir jtex1.7 ; fi ; \
+	  ${MKDIR} jtex1.7 ; \
 	  cd jtex1.7 ; \
 	  tar xzf ${DISTDIR}/jtex1.7.tar.gz ; \
 	  cd ptex/ptex ; \
