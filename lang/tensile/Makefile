@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 MAINTAINER=	chris@unixpages.org
 COMMENT=	The New Scripting Language
 
+BROKEN=		"Does not compile"
+
 LIB_DEPENDS=	utils:${PORTSDIR}/lang/libutils
 
 INSTALLS_SHLIB=	yes
