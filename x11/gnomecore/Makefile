@@ -3,7 +3,7 @@
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/06 06:37:58 vanilla Exp $
 #
 
 DISTNAME=	gnome-core-0.28.1
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnome\\.0:${PORTSDIR}/x11/gnomelibs
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome \
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I../intl \
