@@ -8,7 +8,8 @@
 PORTNAME=	fhttpd
 PORTVERSION=	0.4.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.fhttpd.org/
+MASTER_SITES=	http://www.fhttpd.org/ \
+		ftp://ftp.fhttpd.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
