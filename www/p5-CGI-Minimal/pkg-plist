@@ -1,6 +1,9 @@
 %%SITE_PERL%%/CGI/Minimal.pm
 %%SITE_PERL%%/CGI/Minimal.pod
+%%SITE_PERL%%/CGI/Minimal/Misc.pm
+%%SITE_PERL%%/CGI/Minimal/Multipart.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/CGI/Minimal
 @unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
