@@ -1,21 +1,22 @@
 # New ports collection makefile for:	iconv
-# Date created:		21 Sep 1999
-# Whom:			joy@urc.ac.ru
+# Date created:				21 September 1999
+# Whom:			Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	iconv
-PORTVERSION=	0.2
+PORTVERSION=	1.0
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ftp.urc.ac.ru/pub/OS/FreeBSD/converters/
+MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
-MAINTAINER=	joy@urc.ac.ru
+MAINTAINER=	Konstantin.Chuguev@dante.org.uk
 
+USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 
-MAN1=		iconv.1
-MAN3=		iconv.3 iconv_close.3 iconv_open.3
 MANCOMPRESSED=	yes
+MAN1=		iconv.1
+MAN3=		iconv.3 iconv_open.3 iconv_close.3
 
 .include <bsd.port.mk>
