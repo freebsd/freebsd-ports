@@ -85,6 +85,7 @@
     SUBDIR += logtool
     SUBDIR += lsmlib
     SUBDIR += lsof
+    SUBDIR += ltrace
     SUBDIR += maint
     SUBDIR += manck
     SUBDIR += medusa
