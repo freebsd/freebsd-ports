@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@altavista.net
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 do-build:
