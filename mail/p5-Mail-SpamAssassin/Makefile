@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.01
-PORTREVISION=   8
+PORTVERSION=    2.11
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=   http://www.spamassassin.org/released/ \
+		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
@@ -26,7 +26,7 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::PersistentAddrList.3 \
 		Mail::SpamAssassin::SMTP::SmartHost.3
 MAN1PREFIX=	${PREFIX}
-MAN1=		spamd.1 spamassassin.1 spamc.1
+MAN1=           spamd.1 spamassassin.1 spamc.1 spamproxyd.1
 
 post-patch:
 	@find ${WRKSRC} -type f -name "*.orig" -exec rm -f "{}" ";"
@@ -41,11 +41,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample-nonspam.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample-spam.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/spamd/README ${DOCSDIR}/spamd.README
-	${INSTALL_DATA} ${WRKSRC}/spamproxy/README ${DOCSDIR}/spamproxy.README
-	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/sql.README
-	${INSTALL_DATA} ${WRKSRC}/sql/spamassassin.sql ${DOCSDIR}/spamassassin.sql
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/spamd/README.spamd ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/spamproxy/README ${DOCSDIR}/README.spamproxy
+	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
+	${INSTALL_DATA} ${WRKSRC}/sql/spamassassin.sql ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
