@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/28 10:49:50 jfitz Exp $
+# $Id: Makefile,v 1.2 1996/10/28 19:16:36 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.01
@@ -29,7 +29,7 @@ FETCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
 
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
-		/compat/linux/lib/libc.so.5.0.9:${PORTSDIR}/emulators/linux_lib
+		/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
 
 # Uncomment the next line to include the QuakeC compiler port as well
 #RUN_DEPENDS+=	qcc:${PORTSDIR}/games/qcc
