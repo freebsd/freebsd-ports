@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.44 1996/12/03 13:36:06 obrien Exp $
+# $Id: Makefile,v 1.45 1996/12/04 02:08:06 obrien Exp $
 #
 
     SUBDIR += Canna
@@ -52,6 +52,7 @@
     SUBDIR += tk41
     SUBDIR += today
     SUBDIR += vfghostscript
+    SUBDIR += vfghostscript4
     SUBDIR += vflib
     SUBDIR += vfxdvi
     SUBDIR += xbakuzan
