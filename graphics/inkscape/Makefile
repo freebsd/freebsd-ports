@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.38.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,8 @@ RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack lthack intlhack libglade2 libartlgpl2 libgnomeprintui
+USE_GNOME=	gnomeprefix gnomehack lthack intlhack libglade2 libartlgpl2 \
+		desktopfileutils libgnomeprintui
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-popt \

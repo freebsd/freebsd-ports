@@ -7,6 +7,7 @@ lib/inkscape/extensions/roundhole
 lib/inkscape/extensions/svg_dropshadow
 lib/inkscape/extensions/txt2svg.pl
 share/gnome/applications/inkscape.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/inkscape/extensions/roundhole.xpm
 share/gnome/inkscape/icons/add.xpm
 share/gnome/inkscape/icons/add_xml_element_node.xpm
@@ -231,3 +232,4 @@ share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 @dirrm share/gnome/inkscape
 @dirrm lib/inkscape/extensions
 @dirrm lib/inkscape
+@unexec update-desktop-database > /dev/null || /usr/bin/true
