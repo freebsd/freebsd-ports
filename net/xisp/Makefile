@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xisp
-PORTVERSION=	2.7
+PORTVERSION=	2.7p1
 CATEGORIES=	net
 MASTER_SITES=	http://xisp.hellug.gr/release/
 
 PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
-PATCHFILES=	xisp-2.7-freebsd-patch-20030126.gz
 
 MAINTAINER=	tm@onepost.net
 COMMENT=	A user-friendly X interface to pppd/chat
@@ -22,10 +21,4 @@ USE_XPM=	yes
 
 MAN1=		xisp.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile due to deprecation of varargs.h"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Jun 10 13:24:04 2003
-+++ Makefile	Tue Jun 10 13:48:35 2003
-@@ -13,8 +13,8 @@
+--- Makefile.orig	Sun Mar  7 17:37:41 2004
++++ Makefile	Sun Feb 22 06:14:06 2004
+@@ -13,11 +13,11 @@
  #=====================================================================
  #
  CC         = gcc
@@ -10,15 +10,161 @@
 +X11PREFIX  = ${X11BASE}
  INCX11     = $(X11PREFIX)/include
  LIBX11     = $(X11PREFIX)/lib
- INCFORMS   = $(X11PREFIX)/include/X11
-@@ -223,8 +223,8 @@
- GROUP      = dialer
- CHAT_PATH  = /usr/bin
- PPPD_PATH  = /usr/sbin
+-INCFORMS   = $(X11PREFIX)/include
++INCFORMS   = $(X11PREFIX)/include/X11
+ LIBFORMS   = $(X11PREFIX)/lib
+ MODEM_DEV  = modem
+ MODEM_PATH = /dev/$(MODEM_DEV)
+@@ -29,26 +29,26 @@
+ # Normal (i.e. SuSE-[678].x) vars; for SuSE-5.x use the lines which
+ # DO NOT include -lcrypt for EXTRALIBS and -DGLIBC2 for EXTRADEFS.
+ #-------------------------------------------------------------------
+-BINX11     = $(X11PREFIX)/bin
+-USRLOCAL   = $(PREFIX)/bin
+-SBINDIR    = /usr/sbin
+-VARRUN     = /var/run
+-USRLIBPPP  = /etc/ppp
+-OPTSDIR    = /etc/ppp
+-MANDIR     = $(X11PREFIX)/man/man1
+-ETCPPP     = /etc/ppp
+-INSTPPPDIR = $(ETCPPP)
+-PPPDLCKDIR = /var/lock
+-DESTDIR    = 
+-GROUP      = uucp
 -CCFLAGS    = -Wall -O
--EXTRALIBS  = -lcipher
+-EXTRADEFS  = -DMODEM_DEVICE=\"$(MODEM_PATH)\" -DGLIBC2 -DHAVE_STRERROR
++#BINX11     = $(X11PREFIX)/bin
++#USRLOCAL   = $(PREFIX)/bin
++#SBINDIR    = /usr/sbin
++#VARRUN     = /var/run
++#USRLIBPPP  = /etc/ppp
++#OPTSDIR    = /etc/ppp
++#MANDIR     = $(X11PREFIX)/man/man1
++#ETCPPP     = /etc/ppp
++#INSTPPPDIR = $(ETCPPP)
++#PPPDLCKDIR = /var/lock
++#DESTDIR    = 
++#GROUP      = uucp
++#CCFLAGS    = -Wall -O
++#EXTRADEFS  = -DMODEM_DEVICE=\"$(MODEM_PATH)\" -DGLIBC2 -DHAVE_STRERROR
+ #EXTRADEFS  = -DMODEM_DEVICE=\"$(MODEM_PATH)\"
+-EXTRALIBS  = -lcrypt
++#EXTRALIBS  = -lcrypt
+ #EXTRALIBS  = 
+-LINKX11    = 
+-LINKFORMS  = -L$(LIBFORMS) -lforms
+-INSTALL    = install
++#LINKX11    = 
++#LINKFORMS  = -L$(LIBFORMS) -lforms
++#INSTALL    = install
+ #
+ # Debian vars (if your Debian distribution is relatively
+ # old and does not use glibc2, use the lines which DO NOT
+@@ -209,29 +209,29 @@
+ #
+ # FreeBSD vars
+ #-------------
+-#BINX11     = $(X11PREFIX)/bin
+-#USRLOCAL   = $(BINX11)
+-#SBINDIR    = /usr/sbin
+-#VARRUN     = /var/run
+-#USRLIBPPP  = $(PREFIX)/libexec
+-#MANDIR     = $(PREFIX)/man/man1
+-#ETCPPP     = /etc/ppp
+-#OPTSDIR    = $(ETCPPP)
+-#INSTPPPDIR = $(ETCPPP)
+-#PPPDLCKDIR = /var/spool/lock
+-#DESTDIR    = 
+-#NAMEFORMS  = xforms
+-#GROUP      = dialer
+-#CHAT_PATH  = /usr/bin
+-#PPPD_PATH  = /usr/sbin
+-#CCFLAGS    = -Wall -O
+-#EXTRALIBS  = -lcipher
+-#LINKX11    = -Wl,-R$(LIBX11)
+-#LINKFORMS  = -L$(LIBFORMS) -lxforms
+-#INSTALL    = /usr/bin/install
+-##MODEM_DEV  = cuaa0
+-#EXTRADEFS  = -DMODEM_DEVICE=\"$(MODEM_PATH)\" -DHAVE_STRERROR \
+-#	     -DCHAT_PATH=\"$(CHAT_PATH)\" -DPPPD_PATH=\"$(PPPD_PATH)\"
++BINX11     = $(X11PREFIX)/bin
++USRLOCAL   = $(BINX11)
++SBINDIR    = /usr/sbin
++VARRUN     = /var/run
++USRLIBPPP  = $(PREFIX)/libexec
++MANDIR     = $(PREFIX)/man/man1
++ETCPPP     = /etc/ppp
++OPTSDIR    = $(ETCPPP)
++INSTPPPDIR = $(ETCPPP)
++PPPDLCKDIR = /var/spool/lock
++DESTDIR    = 
++GROUP      = dialer
++CHAT_PATH  = /usr/bin
++PPPD_PATH  = /usr/sbin
 +CCFLAGS    = -Wall -O -DUSE_OPENSSL
 +EXTRALIBS  = -lcrypto
- LINKX11    = -Wl,-R$(LIBX11)
- LINKFORMS  = -L$(LIBFORMS) -lforms
- INSTALL    = /usr/bin/install
++LINKX11    = -Wl,-R$(LIBX11)
++LINKFORMS  = -L$(LIBFORMS) -lforms
++INSTALL    = /usr/bin/install
++MODEM_DEV  = cuaa0
++MODEM_DEVS = cuaa0 cuaa1 cuaa2 cuaa3 umodem
++EXTRADEFS  = -DMODEM_DEVICE=\"$(MODEM_PATH)\" -DHAVE_STRERROR \
++	     -DCHAT_PATH=\"$(CHAT_PATH)\" -DPPPD_PATH=\"$(PPPD_PATH)\"
+ #
+ #=====================================================================
+ #                    Program configuration options                   |
+@@ -407,23 +407,32 @@
+ 	$(INSTALL) -g $(GROUP) -m 750 -o root \
+ 	  ip-down.install $(DESTDIR)$(INSTPPPDIR)/ip-down
+ 	rm -f ip-up.install ip-down.install
+-	sed -e sM__DEVICEM$(MODEM_PATH)M \
+-	  < xisp.peers.device > xisp_$(MODEM_DEV)
++	for i in $(MODEM_DEVS); do \
++	sed -e sM__DEVICEM/dev/$${i}M \
++	  < xisp.peers.device > xisp_$${i}; \
++	done
+ 	sed -e sM__DIALER_PATHM$(DESTDIR)$(USRLIBPPP)M \
+ 	  < xisp.peers.dialer > xisp_dialer
+ 	if [ ! -d $(DESTDIR)$(INSTPPPDIR)/peers ]; then \
+ 	  $(INSTALL) -d $(DESTDIR)$(INSTPPPDIR)/peers; fi
+-	if [ -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV) ]; then \
+-	  mv -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV) \
+-	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV).bak; fi
++	for i in $(MODEM_DEVS); do \
++	if [ -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i} ]; then \
++	  mv -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i} \
++	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i}.bak; fi; \
++	done
++	for i in $(MODEM_DEVS); do \
+ 	$(INSTALL) -g $(GROUP) -m 640 -o root \
+-	  xisp_$(MODEM_DEV) $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV)
++	  xisp_$$i $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i}; \
++	done
+ 	if [ -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer ]; then \
+ 	  mv -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer \
+ 	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer.bak; fi
+ 	$(INSTALL) -g $(GROUP) -m 640 -o root \
+ 	  xisp_dialer $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer
+-	rm -f xisp_$(MODEM_DEV) xisp_dialer
++	for i in $(MODEM_DEVS); do \
++	rm -f xisp_$${i}; \
++	done
++	rm -f xisp_dialer
+ 
+ clean:
+ 	rm -f *.o xisp xispdial xisprccv xispterm xispid xisp.xpm xisp.1
+@@ -435,10 +444,12 @@
+ 	  $(DESTDIR)$(USRLOCAL)/xisprccv \
+ 	  $(DESTDIR)$(USRLOCAL)/xispid \
+ 	  $(DESTDIR)$(MANDIR)/xisp.1 \
+-	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV) \
+-	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$(MODEM_DEV).bak \
+ 	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer \
+ 	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_dialer.bak
++	for i in $(MODEM_DEVS); do \
++	rm -f $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i} \
++	  $(DESTDIR)$(INSTPPPDIR)/peers/xisp_$${i}.bak; \
++	done
+ 	mv -f $(DESTDIR)$(INSTPPPDIR)/ip-up \
+ 	  $(DESTDIR)$(INSTPPPDIR)/ip-up.xisp
+ 	if [ -f $(DESTDIR)$(INSTPPPDIR)/ip-up.bak ]; then \

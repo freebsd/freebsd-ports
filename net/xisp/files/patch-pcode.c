@@ -1,5 +1,5 @@
---- pcode.c.orig	Tue Jun 10 13:30:26 2003
-+++ pcode.c	Tue Jun 10 14:02:23 2003
+--- pcode.c.orig	Sun Mar  7 17:37:56 2004
++++ pcode.c	Sun Feb 22 06:14:06 2004
 @@ -21,10 +21,14 @@
  /* Password encryption/decryption data structures and routines */
  
