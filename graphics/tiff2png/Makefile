@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tiff2png
-PORTVERSION=	0.9
+PORTVERSION=	0.91
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.libpng.org/pub/png/src/ \
+MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
 
 MAINTAINER=	ports@FreeBSD.org
