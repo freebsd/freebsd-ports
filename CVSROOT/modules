@@ -5025,6 +5025,7 @@ oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
 oracle7-client	ports/databases/oracle7-client
 orbitcpp	ports/devel/orbitcpp
+orca		ports/graphics/orca
 orchard-c	ports/textproc/orchard-c
 oregano		ports/cad/oregano
 orion		ports/www/orion
