@@ -1714,6 +1714,7 @@ flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
 fltk		ports/x11-toolkits/fltk
 fluctuate	ports/biology/fluctuate
+fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-devel	ports/x11-wm/fluxbox-devel
 fluxconf	ports/x11-wm/fluxconf
