@@ -8291,6 +8291,7 @@ py-soapy	ports/net/py-soapy
 py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
 py-spreadmodule	ports/net/py-spreadmodule
+py-sqlobject	ports/databases/py-sqlobject
 py-sqlrelay	ports/databases/py-sqlrelay
 py-statgrab	ports/devel/py-statgrab
 py-supybot	ports/irc/py-supybot
