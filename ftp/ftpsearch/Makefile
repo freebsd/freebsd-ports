@@ -10,12 +10,8 @@ PORTVERSION=	1.0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftpsearch.ntnu.no/pub/ftpsearch/
 
-MAINTAINER=	Tor.Egge@idi.ntnu.no
-
-NO_PACKAGE=	"Hostname compiled in"
-
-PATCH_SITES =   ftp://ftpsearch.ntnu.no/pub/ftpsearch/
-PATCHFILES =	ftpsearch-1.0.patch1 \
+PATCH_SITES=	ftp://ftpsearch.ntnu.no/pub/ftpsearch/
+PATCHFILES=	ftpsearch-1.0.patch1 \
 		ftpsearch-1.0.patch2 \
 		ftpsearch-1.0.patch3 \
 		ftpsearch-1.0.patch4 \
@@ -24,14 +20,18 @@ PATCHFILES =	ftpsearch-1.0.patch1 \
 		ftpsearch-1.0.patch7 \
 		ftpsearch-1.0.patch8
 
+MAINTAINER=	Tor.Egge@idi.ntnu.no
+
+NO_PACKAGE=	"Hostname compiled in"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	FTPSEARCHROOT=${PREFIX}/ftpsearch
 
 MANPREFIX=${PREFIX}/ftpsearch
-MAN1 = ftpsearch.1
-MAN5 = cnames.5 ftpcli_config.5 sites.5 sites.alias.5 sites.skip.5
-MAN7 = datasets.7
-MAN8 =  astat.8 autoupdateconfig.pl.8 cardusage.8 checkenv.pl.8 chknavig.8 \
+MAN1=	ftpsearch.1
+MAN5=	cnames.5 ftpcli_config.5 sites.5 sites.alias.5 sites.skip.5
+MAN7=	datasets.7
+MAN8=	astat.8 autoupdateconfig.pl.8 cardusage.8 checkenv.pl.8 chknavig.8 \
 	chksites.pl.8 domainhelp.8 freq.8 ftpcli.8 \
 	ftpsearchshell.8 gateway.8 genaliases.8 gendataset.8 genit.pl.8 \
 	genmotd.pl.8 genspecter.8 genspecter2.8 listsite.8 load.8 \
