@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Sun May  2 10:12:56 1999
++++ lib/Makefile.in	Sun May  2 10:13:07 1999
+@@ -9,7 +9,7 @@
+ CXX                = @CXX@
+ CC                 = @CC@
+ CXX_OPTS           = -Wall @NO_EXCEPTIONS@ @NO_RTTI@
+-CXX_OPTIMIZATIONS  = -O2 
++CXX_OPTIMIZATIONS  = @CXXFLAGS@ 
+ CXX_LIBS 	   =
+ 
+ 
