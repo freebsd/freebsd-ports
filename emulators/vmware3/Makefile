@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	vmware3
-PORTVERSION=	3.2.1-2237
-PORTREVISION=	1
+PORTVERSION=	3.2.1
+PORTREVISION=	2242
 CATEGORIES=	emulators linux
-MASTER_SITES=	${FREEBSD_MODULE_SITES} \
+MASTER_SITES=	http://www4.vmware.com/software/ \
+		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
-DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
-		vmmon-only-3.2.1-20030514${EXTRACT_SUFX}:patch \
+DISTFILES=	VMware-workstation-${PORTVERSION}-${PORTREVISION}${EXTRACT_SUFX}:vmware \
+		vmmon-only-3.2.1-20031009${EXTRACT_SUFX}:patch \
 		vmnet-only-3.2.1-20030412${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
@@ -25,12 +26,11 @@ RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 RESTRICTED=	"Not sure if we can redistribute it"
 
 VMWARE_MIRROR_SITES=	\
-		ftp://ftp.hol.gr/pub/mirror/vmware/:vmware
-#		http://vmware-svca.www.conxion.com/software/:vmware \
-#		http://vmware-chil.www.conxion.com/software/:vmware \
-#		http://vmware-heva.www.conxion.com/software/:vmware \
-#		http://vmware.wespe.de/software/:vmware \
-#		ftp://vmware.wespe.de/pub/software:vmware
+		http://vmware-svca.www.conxion.com/software/:vmware \
+		http://vmware-chil.www.conxion.com/software/:vmware \
+		http://vmware-heva.www.conxion.com/software/:vmware \
+		http://vmware.wespe.de/software/:vmware \
+		ftp://vmware.wespe.de/pub/software:vmware
 FREEBSD_MODULE_SITES=	\
 		http://people.freebsd.org/~mbr/vmware/:patch \
 
@@ -98,8 +98,8 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}/vmnet-only/netbsd
 	@${MKDIR} ${WRKSRC}/vmmon-only/freebsd
 	@${MKDIR} ${WRKSRC}/vmmon-only/netbsd
+	@cd ${WRKSRC}/vmmon-only && patch -p1 < ${WRKDIR}/vmmon-only.diff
 	@cd ${WRKSRC} && patch < ${WRKDIR}/vmnet-only.diff
-	@cd ${WRKSRC} && patch < ${WRKDIR}/vmmon-only.diff
 
 .if exists(/sys/compat/linux/linux_ioctl.h)
 	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
