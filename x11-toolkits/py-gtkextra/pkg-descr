@@ -1,0 +1,5 @@
+Python language bindings for the GtkExtra widget set. GtkExtra is a useful
+set of widgets for the GIMP Toolkit, aka GTK+. It provides a spreadsheet-like
+matrix widget and widgets for 2-D and 3-D graphing.
+
+WWW: http://python-gtkextra.sourceforge.net/

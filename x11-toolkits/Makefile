@@ -137,6 +137,7 @@
     SUBDIR += py-gnome2
     SUBDIR += py-gtk
     SUBDIR += py-gtk2
+    SUBDIR += py-gtkextra
     SUBDIR += py-gtkglext
     SUBDIR += py-gtkscintilla
     SUBDIR += py-kde
