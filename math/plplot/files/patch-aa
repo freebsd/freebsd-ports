@@ -1,96 +1,69 @@
---- configure.orig	Wed Jun  7 04:58:50 1995
-+++ configure	Wed Jan  5 00:15:16 2000
-@@ -1175,10 +1175,10 @@
- # ----------------------------------------------------------------------------
+--- configure.orig	Fri Mar 30 04:55:57 2001
++++ configure	Sat Apr 28 11:41:53 2001
+@@ -1262,7 +1262,9 @@
  
- if test "$with_gcc" = "yes"; then
--    CC=gcc
--    CXX=gcc
--    OCC="gcc -traditional"
--    CPP="gcc -E"
-+    CC=$CC
-+    CXX=$CXX
-+    OCC="$CC -traditional"
-+    CPP="$CC -E"
+ # Defaults
  
-     if test "$with_warn" = "yes"; then
- 	SYS_FLAGS_C=-Wall
-@@ -1472,13 +1472,13 @@
- # ----------------------------------------------------------------------------
- 
- CC_FLAGS=\
--"-c $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $OPT_FLAG_C"
-+"-c $DBL_FLAG_C $DEBUG_FLAG_C $SYS_FLAGS_C $PROF_FLAG_C $CFLAGS"
- 
- CXX_FLAGS=\
--"-c $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $OPT_FLAG_CXX"
-+"-c $DBL_FLAG_CXX $DEBUG_FLAG_CXX $SYS_FLAGS_CXX $PROF_FLAG_CXX $CXXFLAGS"
- 
- F77_FLAGS=\
--"-c $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $OPT_FLAG_F"
-+"-c $DBL_FLAG_F $DEBUG_FLAG_F $SYS_FLAGS_F $PROF_FLAG_F $FFLAGS"
- 
- LDC_FLAGS=\
- "$PROF_FLAG_LC $SYS_FLAGS_LC $DEBUG_FLAG_LC"
-@@ -3062,6 +3062,20 @@
- 	# Hmm, would be good to replace that trailing .0 with the
- 	# compilation number or some such.  Have to think about that.
-     ;;
-+    FreeBSD*|NetBSD*|OpenBSD* )
-+	SHLIB_CCFLAGS="-fpic -DPIC"
-+	SHLIB_CXXFLAGS="-fpic -DPIC"
-+	if [ "${PORTOBJFORMAT}" = "elf" ]; then
-+	    SO='.so.$(MAJOR_VERSION)'
-+	    SHLIB_BUILD="ld -shared -soname \$@ -o"
-+	    SOVERSION='$(MAJOR_VERSION)'
-+	else
-+	    SO='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
-+	    SHLIB_BUILD="ld -Bshareable -o"
-+	    SOVERSION='$(MAJOR_VERSION).$(MINOR_VERSION)'
-+	fi
-+	echo "$ac_t""okay" 1>&6
-+    ;;
-     HP-UX-* )
- 	SO=".sl"
- 	SHLIB_F77FLAGS="+z"
-@@ -4192,16 +4206,19 @@
-     fi
- fi
- if test -z "$DOC_DIR"; then
--    DOC_DIR=$prefix/doc
-+    DOC_DIR=$prefix/share/doc/plplot
- fi
- if test -z "$INFO_DIR"; then
-     INFO_DIR=$prefix/info
- fi
- if test -z "$INCLUDE_DIR"; then
--    INCLUDE_DIR=$prefix/include
-+    INCLUDE_DIR=$prefix/include/plplot
- fi
- if test -z "$DEMOS_DIR"; then
--    DEMOS_DIR=$prefix/examples
-+    DEMOS_DIR=$prefix/share/examples/plplot
+-M4=m4
++if test -z "$M4"; then
++    M4=m4
 +fi
-+if test -z "$DATA_DIR"; then
-+    DATA_DIR=$prefix/share/plplot
+ 
+ # Double precision
+ # Note that because there is no standard way to invoke double
+@@ -1530,9 +1532,9 @@
+ # Optimization
+ 
+ if test "$with_opt" = "yes"; then
+-    OPT_FLAG_C=-O
+-    OPT_FLAG_CXX=-O
+-    OPT_FLAG_F=-O
++    OPT_FLAG_C="$CFLAGS"
++    OPT_FLAG_CXX="$CXXFLAGS"
++    OPT_FLAG_F="$FFLAGS"
  fi
  
- cat >> confdefs.h <<EOF
-@@ -4216,6 +4233,9 @@
- #define TCL_DIR "$TCL_DIR"
- EOF
- 
-+cat >> confdefs.h <<EOF
-+#define DATA_DIR "$DATA_DIR"
-+EOF
- 
- 
- 
-@@ -4449,6 +4469,7 @@
- s%@INFO_DIR@%$INFO_DIR%g
- s%@INCLUDE_DIR@%$INCLUDE_DIR%g
- s%@DEMOS_DIR@%$DEMOS_DIR%g
-+s%@DATA_DIR@%$DATA_DIR%g
- s%@SHARED@%$SHARED%g
- 
- CEOF
+ # ----------------------------------------------------------------------------
+@@ -4628,6 +4630,13 @@
+ 		EXTRA_LIBS="-ldl -lm"
+ 	    fi
+ 	;;
++	FreeBSD* )
++	    if test "$enable_f77" = "yes"; then
++		EXTRA_LIBS="$EXTRA_LIBS -lm -lg2c"
++	    else
++		EXTRA_LIBS="$EXTRA_LIBS -lm"
++	    fi
++	;;
+ 	* ) 	
+ 	    echo $ac_n "checking for main in -lXbsd""... $ac_c" 1>&6
+ echo "configure:4634: checking for main in -lXbsd" >&5
+@@ -4909,6 +4918,20 @@
+             # for Linux.)
+ 	    SHLIB_F77FLAGS=-fPIC
+ 	;;
++	FreeBSD* )
++	    SHLIB_CCFLAGS="-fpic -DPIC"
++	    SHLIB_CXXFLAGS="-fpic -DPIC"
++	    echo "$ac_t""okay" 1>&6
++	    if [ "${PORTOBJFORMAT}" = "elf" ]; then
++		SO='.so.$(MAJOR_VERSION)'
++		SHLIB_BUILD="$CC -shared -Wl,-soname -Wl,\$@ -o"
++		SOVERSION='$(MAJOR_VERSION)'
++	    else
++		SO='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
++		SHLIB_BUILD="ld -Bshareable -o"
++		SOVERSION='$(MAJOR_VERSION).$(MINOR_VERSION)'
++	    fi
++	;;
+ 	HP-UX-* )
+ 	    SO=".sl"
+ 	    SHLIB_F77FLAGS="+z"
+@@ -6600,6 +6623,7 @@
+ s%@LDCXX_FLAGS@%$LDCXX_FLAGS%g
+ s%@F77_FLAGS@%$F77_FLAGS%g
+ s%@LDF_FLAGS@%$LDF_FLAGS%g
++s%@M4@%$M4%g
+ s%@M4_FLAGS@%$M4_FLAGS%g
+ s%@CPP@%$CPP%g
+ s%@STUPIDTK_OBJ@%$STUPIDTK_OBJ%g
