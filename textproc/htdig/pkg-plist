@@ -1,3 +1,4 @@
+bin/HtFileType
 bin/htdb_dump
 bin/htdb_load
 bin/htdb_stat
