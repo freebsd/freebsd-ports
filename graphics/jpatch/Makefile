@@ -16,17 +16,19 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.b/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A spline based 3D modeling tool
 
-USE_JAVA=	1.4+
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		bin/jpatch
 
-post-patch:
-	@${SED} 's,%%JAVAJARDIR%%,${JAVAJARDIR},' ${FILESDIR}/jpatch > ${WRKSRC}/jpatch
+SUB_FILES=	jpatch.sh
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/jpatch.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/jpatch ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/jpatch.sh ${PREFIX}/bin/jpatch
 
 .include <bsd.port.mk>
