@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION=	1.4.1.2
-PORTREVISION=	2
+PORTVERSION=	1.4.1.3
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -26,22 +25,25 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
 USE_ESOUND=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFILES=	configure libart_lgpl/configure
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--disable-test-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		gnome.1 gnome-config.1
+MAN1=		dns-helper.1 gconfigger.1 gnome-config.1 gnome-doc.1 \
+		gnome-dump-metadata.1 gnome-gen-mimedb.1 gnome-mkstub.1 \
+		gnome-moz-remote.1 gnome-name-service.1 gnome-pty-helper.1 \
+		gnome.1 gnome_segv.1 goad-browser.1 libart-config.1 \
+		loadshlib.1 new-object.1
 MAN5=		gnome-mime.5
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 

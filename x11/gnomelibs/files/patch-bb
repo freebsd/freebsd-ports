@@ -1,16 +1,19 @@
---- gtk-xmhtml/Makefile.in.orig	Thu Oct  7 11:34:58 1999
-+++ gtk-xmhtml/Makefile.in	Wed Oct 13 21:15:01 1999
-@@ -147,7 +147,7 @@
+
+$FreeBSD$
+
+--- gtk-xmhtml/Makefile.in.orig	Mon Jan 14 12:02:33 2002
++++ gtk-xmhtml/Makefile.in	Mon Jan 14 12:03:13 2002
+@@ -151,7 +151,7 @@
+ libgtkxmhtmlincludedir = $(includedir)/gnome-1.0/gtk-xmhtml
  
- libgtkxmhtmlincludedir = $(includedir)/gtk-xmhtml
- 
--INCLUDES = -I.. -I$(srcdir)/.. -I$(includedir) @GTK_CFLAGS@            -DWITH_GTK -DDEBUG -DGNOME_LIB
-+INCLUDES = -I.. -I$(srcdir)/.. -I$(includedir) @GTK_CFLAGS@            -DWITH_GTK -DGNOME_LIB
+ INCLUDES = -I.. -I$(srcdir)/.. -I$(includedir) @GTK_CFLAGS@ \
+-           -DWITH_GTK -DDEBUG -DGNOME_LIB
++           -DWITH_GTK -DGNOME_LIB
  
  
  lib_LTLIBRARIES = libgtkxmhtml.la
-@@ -158,7 +158,7 @@
- libgtkxmhtmlinclude_HEADERS =  	miniparse.h			HTML.h				XmHTML.h			XmHTMLI.h			XmHTMLP.h			gtk-xmhtml-p.h			gtk-xmhtml.h			toolkit.h
+@@ -204,7 +204,7 @@
+ 	toolkit.h
  
  
 -libgtkxmhtml_la_LDFLAGS = -version-info 1:1:0 -rpath $(libdir)
@@ -18,7 +21,7 @@
  libgtkxmhtml_la_LIBADD = $(LIBGTKXMHTML_LIBS)
  
  noinst_PROGRAMS = htmltest
-@@ -463,7 +463,7 @@
+@@ -520,7 +520,7 @@
  uninstall-am: uninstall-libLTLIBRARIES \
  		uninstall-libgtkxmhtmlincludeHEADERS
  uninstall: uninstall-am
