@@ -17,15 +17,11 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	MSN Messenger
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		${LOCALBASE}/lib/tcllib1.3/base64/base64.tcl:${PORTSDIR}/devel/tcllib
-
+		${LOCALBASE}/lib/tcllib1.4/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/msn
-
-BROKEN=		"Broken dependencies"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-21
 
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
@@ -51,8 +47,8 @@ do-install:
 .endif
 
 post-install:
-	@sed -e "s=!!PREFIX!!=${PREFIX}=" < ${FILESDIR}/amsn \
-		> ${PREFIX}/bin/amsn
+	@${REINPLACE_CMD} -e "s=!!PREFIX!!=${PREFIX}=" ${FILESDIR}/amsn
+	@${INSTALL_SCRIPT} ${FILESDIR}/amsn ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
 	@uudecode -o ${PREFIX}/lib/msn/icons/logolinmsn.gif \
