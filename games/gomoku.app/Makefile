@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gomoku.app
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/nicola/Applications/Gomoku/
 DISTNAME=	Gomoku-${PORTVERSION}
@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/GNUstep/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep
-RUN_DEPENDS=	${LOCALBASE}/GNUstep/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep
+BUILD_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+RUN_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
 
 PREFIX=		${LOCALBASE}/GNUstep
 USE_NEWGCC=	yes
@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
+
+XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle
 
 .include <bsd.port.pre.mk>
 
@@ -32,7 +34,7 @@ GNU_ARCH=	ix86
 GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH}
+PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
 
 do-build:
 	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \

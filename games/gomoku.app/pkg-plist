@@ -1,14 +1,43 @@
-Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/Gomoku
-Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/library_paths.openapp
+Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Gomoku
+Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 Local/Apps/Gomoku.app/Gomoku
-Local/Apps/Gomoku.app/Resources/Gomoku.tiff
+Local/Apps/Gomoku.app/Resources/Computer.png
+Local/Apps/Gomoku.app/Resources/ComputerBottom.png
+Local/Apps/Gomoku.app/Resources/ComputerBottomLeft.png
+Local/Apps/Gomoku.app/Resources/ComputerBottomRight.png
+Local/Apps/Gomoku.app/Resources/ComputerLeft.png
+Local/Apps/Gomoku.app/Resources/ComputerRight.png
+Local/Apps/Gomoku.app/Resources/ComputerTop.png
+Local/Apps/Gomoku.app/Resources/ComputerTopLeft.png
+Local/Apps/Gomoku.app/Resources/ComputerTopRight.png
+Local/Apps/Gomoku.app/Resources/Empty.png
+Local/Apps/Gomoku.app/Resources/EmptyBottom.png
+Local/Apps/Gomoku.app/Resources/EmptyBottomLeft.png
+Local/Apps/Gomoku.app/Resources/EmptyBottomRight.png
+Local/Apps/Gomoku.app/Resources/EmptyLeft.png
+Local/Apps/Gomoku.app/Resources/EmptyRight.png
+Local/Apps/Gomoku.app/Resources/EmptyTop.png
+Local/Apps/Gomoku.app/Resources/EmptyTopLeft.png
+Local/Apps/Gomoku.app/Resources/EmptyTopRight.png
+Local/Apps/Gomoku.app/Resources/English.lproj/Localizable.strings
+Local/Apps/Gomoku.app/Resources/French.lproj/Localizable.strings
+Local/Apps/Gomoku.app/Resources/Gomoku.png
+Local/Apps/Gomoku.app/Resources/Human.png
+Local/Apps/Gomoku.app/Resources/HumanBottom.png
+Local/Apps/Gomoku.app/Resources/HumanBottomLeft.png
+Local/Apps/Gomoku.app/Resources/HumanBottomRight.png
+Local/Apps/Gomoku.app/Resources/HumanLeft.png
+Local/Apps/Gomoku.app/Resources/HumanRight.png
+Local/Apps/Gomoku.app/Resources/HumanTop.png
+Local/Apps/Gomoku.app/Resources/HumanTopLeft.png
+Local/Apps/Gomoku.app/Resources/HumanTopRight.png
 Local/Apps/Gomoku.app/Resources/Info-gnustep.plist
-Local/Apps/Gomoku.app/Resources/computer.png
-Local/Apps/Gomoku.app/Resources/human.png
-Local/Apps/Gomoku.app/Resources/nothing.png
-@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
-@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf
+Local/Apps/Gomoku.app/Resources/Italian.lproj/Localizable.strings
+@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%
+@dirrm Local/Apps/Gomoku.app/Resources/Italian.lproj
+@dirrm Local/Apps/Gomoku.app/Resources/French.lproj
+@dirrm Local/Apps/Gomoku.app/Resources/English.lproj
 @dirrm Local/Apps/Gomoku.app/Resources
 @dirrm Local/Apps/Gomoku.app
-@unexec rmdir %D/Local/Apps 2>/dev/null || true
