@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.17 1999/08/13 04:45:52 cpiazza Exp $
+# $Id: Makefile,v 1.18 1999/08/19 07:09:42 cpiazza Exp $
 #
 
     SUBDIR += 9menu
@@ -34,6 +34,7 @@
     SUBDIR += windowmaker
     SUBDIR += windowmaker-i18n
     SUBDIR += wm2
+    SUBDIR += wmakerconf
     SUBDIR += wmx
     SUBDIR += xfce
 
