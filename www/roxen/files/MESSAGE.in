@@ -1,11 +1,22 @@
 *****************************************************************************
-Installation of Roxen Challenger finished!
+Installation of Roxen WebServer 2.1 finished!
 
-Now perform the following steps to initialize the webserver.
+The next step is to create an administration interface server. If
+you are upgrading or reinstalling you do of course not need to, your
+old configuration will do. This is done by invoking the
+create_configinterface script located in the roxen/server/ directory.
 
 # cd %%PREFIX%%/roxen/server/
-# ./install
+# ./create_configinterface
 
-Then follow the instructions.  For further documentation read 
-%%PREFIX%%/roxen/server/manual/
+Then answer the questions.  The last step is to start the server.
+The following script will also be started at system startup, but
+now you have to run it manually.
+
+# %%PREFIX%%/etc/rc.d/roxen.sh
+
+For further instructions, please read the online documentation.
+
+http://docs.roxen.com/roxen/2.1/administrator/
+
 *****************************************************************************
