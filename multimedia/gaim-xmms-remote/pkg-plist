@@ -1,0 +1,8 @@
+lib/gaim/gxr.so
+share/gnome/pixmaps/gaim/gxr/next.png
+share/gnome/pixmaps/gaim/gxr/pause.png
+share/gnome/pixmaps/gaim/gxr/play.png
+share/gnome/pixmaps/gaim/gxr/previous.png
+share/gnome/pixmaps/gaim/gxr/stop.png
+share/gnome/pixmaps/gaim/gxr/xmms.png
+@dirrm share/gnome/pixmaps/gaim/gxr
