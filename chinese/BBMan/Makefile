@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_GCC=	3.3
 
-PLIST_FULES=	bin/BBMan
+PLIST_FILES=	bin/BBMan
 
 .include <bsd.port.pre.mk>
 
