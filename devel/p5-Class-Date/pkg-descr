@@ -1,0 +1,12 @@
+This module is intended to provide a general-purpose date and
+datetime type for perl. You have a Class::Date class for absolute
+date and datetime, and have a Class::Date::Rel class for relative
+dates.
+
+You can use ``+'', ``-'', ``<'' and ``>'' operators as with native
+perl data types.
+
+WWW: http://dlux.sch.bme.hu/Class-Date/
+
+- Pete
+petef@databits.net
