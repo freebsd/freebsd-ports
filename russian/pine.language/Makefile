@@ -10,7 +10,7 @@ PORTVERSION=	4.21
 CATEGORIES=	russian mail
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tune Pine for Russian (KOI8-R) defaults
 
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
