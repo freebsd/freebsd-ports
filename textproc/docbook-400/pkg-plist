@@ -1,0 +1,18 @@
+share/sgml/docbook/4.0/40chg.txt
+share/sgml/docbook/4.0/50issues.txt
+share/sgml/docbook/4.0/cals-tbl.dtd
+share/sgml/docbook/4.0/dbcent.mod
+share/sgml/docbook/4.0/dbgenent.mod
+share/sgml/docbook/4.0/dbhier.mod
+share/sgml/docbook/4.0/dbnotn.mod
+share/sgml/docbook/4.0/dbpool.mod
+share/sgml/docbook/4.0/docbook.cat
+share/sgml/docbook/4.0/docbook.dcl
+share/sgml/docbook/4.0/docbook.dtd
+@unexec %%MKCATALOG%% -q deinstall %%DTD_NAME%%/%%DTD_VERSION%%
+share/sgml/docbook/4.0/catalog
+@exec %%MKCATALOG%% -q install %%DTD_NAME%%/%%DTD_VERSION%%
+share/sgml/docbook/4.0/readme.txt
+@dirrm share/sgml/docbook/4.0
+@unexec rmdir %D/share/sgml/docbook 2>/dev/null || true
+@unexec rmdir %D/share/sgml 2>/dev/null || true
