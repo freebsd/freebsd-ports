@@ -20,7 +20,7 @@ MAINTAINER=	jmz@FreeBSD.org
 
 IS_INTERACTIVE=	yes	# configure script asks questions
 .if (${MACHINE} != "alpha")
-NO_PACKAGE=	package available from XFree86
+#NO_PACKAGE=	package available from XFree86
 .endif
 ALL_TARGET=	World
 INSTALL_TARGET=	install install.man

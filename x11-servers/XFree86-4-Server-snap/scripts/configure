@@ -354,47 +354,12 @@ if [ $cpwh != NO ]; then
   echo "#define	HasXdmAuth		$answ"	>> $F
 fi
 
-cat <<'END'
-
- XDM can be built so that it will get a KerberosIV TGT for your users
- when they log in. This requires that you have Kerberos on your system
- when you do this build.
-
- Source code for this authentication mechanism may not be exported from
- the United States, however, there are compatible replacements for this
- mechanism available elsewhere.  Also, while this scheme is not used for
- general purpose encryption,  some countries restrict the use of strong
- cryptography.
-
- Even if you answer YES to the following question, KerberosIV support
- will not be enabled if the kerberos libraries are unavailable.
-
-END
-yesno "Do you want to enable KerberosIV support?"
-cpkb=NO
+echo
+yesno "Do you want to compile with PAM support?"
 if [ $answ = YES ]; then
-    if [ $ELF = yes ]; then
-      LIBKRB=/usr/lib/libkrb.a
-    elif [ -d /usr/lib/aout ]; then
-      LIBKRB=/usr/lib/aout/libkrb.a
-    else
-      LIBKRB=/usr/lib/libkrb.a
-    fi
-    K4PATCH=$FILESDIR/kerberos4.diffs
-    K4XDM="$FILESDIR/krb4auth.c $FILESDIR/krb4auth.h"
-    XDMDIR=$WRKDIR/xc/programs/xdm/
-
-    if [ -f $LIBKRB ] ; then
-      echo "==> KerberosIV found in system libraries."
-      cpkb=YES
-    else
-      echo "==> Kerberos libraries not found on system."
-      echo "==> KerberosIV support NOT enabled."
-      cpkb=NO
-    fi
-fi
-if [ $cpkb != NO ]; then
-  echo "#define	HasKrb4		$answ"	>> $F
+  echo "#define	HasPam			YES"	>> $F
+else
+  echo "#define	HasPam			NO"	>> $F
 fi
 
 echo
@@ -415,11 +380,6 @@ if [ X$cpwh != XNO ]; then
   cp $cpwh $WH
 fi
 
-if [ X$cpkb != XNO ]; then
-  cp $K4XDM $XDMDIR
-  echo "===>  Applying KerberosIV patches"
-  patch -s -d $WRKDIR/xc -E -p0 < $K4PATCH
-fi
 if [ X$THREADS_PATCH != X ]; then
     echo "===>  Applying threads patches"
     patch -s -d $WRKDIR  -E -p0 <  $THREADS_PATCH
