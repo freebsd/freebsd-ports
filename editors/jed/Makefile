@@ -6,32 +6,28 @@
 #
 
 PORTNAME=	jed
-PORTVERSION=	0.98.7
+PORTVERSION=	0.99.14
 CATEGORIES=	editors
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v0.98/
-DISTNAME=	${PORTNAME}0.98-7
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/
+DISTNAME=	${PORTNAME}-B${PORTVERSION:R}-${PORTVERSION:E}
 
-PATCH_SITES=	ftp://space.mit.edu/pub/davis/jed/v0.98/
-PATCHFILES=	BUGS
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	eric@cybernut.com
+MAINTAINER=	s_bschmi@ira.uka.de
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-USE_XLIB=	yes
 
-.if !defined(NO_XJED)
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
 XJED=	xjed
+PLIST_SUB+=  	NOXJED=""
+.else
+PLIST_SUB+=		NOXJED="@comment "
 .endif
 
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
-PATCH_DIST_ARGS=	-d ${WRKSRC}/src --quiet -E ${PATCH_DIST_STRIP}
-CONFIGURE_ENV=	JED_ROOT=${PREFIX}/lib/jed
+CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
 ALL_TARGET=	all getmail ${XJED}
-INSTALL_TARGET=	install
-WRKSRC=		${WRKDIR}/jed
 MAN1=		jed.1 rgrep.1
 
 pre-install:
@@ -41,16 +37,19 @@ post-install:
 	strip ${PREFIX}/bin/jed
 	strip ${PREFIX}/bin/rgrep
 	strip ${PREFIX}/lib/jed/bin/getmail
-.if defined(XJED)
-	strip ${PREFIX}/bin/xjed
-.endif
+.for f in ${XJED}
+	strip ${PREFIX}/bin/$f
+.endfor
 	${CP} -R ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib
-	${INSTALL_DATA} ${WRKSRC}/info/jed.* ${PREFIX}/info
+	-${RM} ${PREFIX}/lib/jed/info/*
 	-${RMDIR} ${PREFIX}/lib/jed/info
+	-${RM} ${PREFIX}/lib/jed/doc/txt/*
+	-${RMDIR} ${PREFIX}/lib/jed/doc/txt
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/jed
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/*.txt \
+	${INSTALL_DATA} ${WRKSRC}/doc/txt/*.txt \
 		${PREFIX}/share/doc/jed
+	${INSTALL_DATA} ${WRKSRC}/info/jed.* ${PREFIX}/info
 	install-info --section="Miscellaneous" \
 		--entry="* JED: (jed).			JED editor documentation." \
 		${PREFIX}/info/jed.info ${PREFIX}/info/dir
