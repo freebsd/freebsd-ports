@@ -1,0 +1,14 @@
+Inti is a set of integrated C++ foundation classes for developing GTK+
+applications on UNIX-like systems.
+
+Inti combines the power of GTK+ and the power of C++ into a state-of-the-art
+GUI toolkit that makes developing applications easy, intuitive and efficient.
+There are more than 330 classes that wrap most of the objects found in the
+ATK, GDK, GDK-PIXBUF, GLib, GTK and Pango libraries. It has its own system
+of signals and slots which make using native GTK signals or creating your own
+signals easy. There is a standard string compatible UTF-8 string class, a full
+set of simple example programs, a GNU Autotools test project, a C++ version of
+the GTK+ demonstration program, extensive reference documentation and a
+tutorial.
+
+WWW: http://inti.sourceforge.net/

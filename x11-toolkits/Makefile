@@ -89,6 +89,7 @@
     SUBDIR += hs-gtk2hs
     SUBDIR += hs-port
     SUBDIR += icegradient
+    SUBDIR += inti
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += jx
