@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Capture your X display to individual frames or MPEG video
 
-LIB_DEPENDS=		avcodec.0:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=		yes
