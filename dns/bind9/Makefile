@@ -1,17 +1,15 @@
 # New ports collection makefile for:	bind
-# Version required:	8.2
+# Version required:	8.2.1
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.10 1999/05/31 17:36:25 jseger Exp $
+# $Id: Makefile,v 1.12 1999/06/28 21:25:07 billf Exp $
 #
 
-DISTNAME=	bind-8.2
+DISTNAME=	bind-8.2.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2/
-PATCH_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2/
-DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-doc.tar.gz
-PATCHFILES=	patch1
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.1/
+DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.org
 
