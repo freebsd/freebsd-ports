@@ -1,16 +1,22 @@
 ==========================================================================
+  Bugzilla has now been installed.  To quick setup you have to:
 
-  Bugzilla has now been installed.  To get it up and running you have to:
+  1. Create database user who has rights on bugs database manipulation
+     by following mysql commands:
 
-  1. Create bugs database at your MySQL server.
-  2. Run ${PREFIX}/www/data.default/checksetup.pl to create configuration
-     file (you need to do it at installation time only)
-  3. Edit newly created ${PREFIX}/www/data.default/localconfig file
-     to customize Bugzilla setup for your system
-  4. Run ${PREFIX}/www/data.default/checksetup.pl again to create required
-     Bugzilla data directories and fix files permissions.
+     GRANT SELECT,INSERT,UPDATE,DELETE,INDEX, ALTER,CREATE,DROP,REFERENCES \
+           ON <database>.* TO <dbuser>@<host> IDENTIFIED BY '<password>'; 
+     FLUSH PRIVILEGES;
 
-  For more complete instructions on installation, setup and security notes
-  read Bugzilla Guide in ${PREFIX}/share/doc/bugzilla (chapter 3: Installation)
+     where <database> is a bugs database name; <dbuser> is a bugs database
+           owner; <host> is a host there bugzilla is being setup;
+           <password> is a database owner's password;
 
+  2. Change working directory to ${PREFIX}/www/data.default
+  3. Run "./checksetup.pl" script as root user
+  4. Read output carefully and follow all instructions
+
+  For more complete database setup and post-installation instructions
+  and security tips/notes please read Bugzilla Guide in
+  ${PREFIX}/share/doc/bugzilla (chapter 3: Installation)
 ==========================================================================
