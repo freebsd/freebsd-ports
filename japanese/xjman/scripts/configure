@@ -11,7 +11,7 @@ for $sec (@MANSECS) {
     @manpages = ();
     @mlinks = ();
 
-    for $manpage (<*.${sec}x>) {
+    for $manpage (<*.${sec}>) {
 	open(F, $manpage) || die "cannot open $manpage: $!\n";
 	$_ = <F>;
 	chop;
