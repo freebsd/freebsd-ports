@@ -20,6 +20,8 @@ bin/gtee
 bin/gtest
 bin/gtrue
 bin/gtty
+bin/ggroups
+bin/gnohup
 bin/gusers
 bin/gwho
 bin/gwhoami

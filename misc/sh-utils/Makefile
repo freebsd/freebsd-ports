@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--program-prefix=g
 
+USE_GMAKE=	yes
+
 INSTALL_INFO?=	install-info
 
 MAN1=	gbasename.1 gchroot.1 gdate.1 gdirname.1 gecho.1 genv.1 \
