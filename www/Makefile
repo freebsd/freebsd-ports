@@ -211,7 +211,7 @@
     SUBDIR += mod_jk2
     SUBDIR += mod_layout
     SUBDIR += mod_limitipconn
-    SUBDIR += mod_log_mysql
+    SUBDIR += mod_log_sql
     SUBDIR += mod_mp3
     SUBDIR += mod_mylo
     SUBDIR += mod_mysqluserdir
