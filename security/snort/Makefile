@@ -26,21 +26,18 @@ LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
-		--with-mysql-libraries=${LOCALBASE}/lib/mysql
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .endif
 
 .if defined(WITH_ODBC)
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=--with-unixodbc-includes=${LOCALBASE}/include \
-		--with-unixodbc-libraries=${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-odbc=${LOCALBASE}
 LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql
-CONFIGURE_ARGS+=--with-libpq-includes=${LOCALBASE}/pgsql/include \
-		--with-libpq-libraries=${LOCALBASE}/pgsql/lib
+LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+CONFIGURE_ARGS+=--with-postgresql=${LOCALBASE}/pgsql
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
 LDFLAGS+=	-lssl -lcrypto
 .endif
