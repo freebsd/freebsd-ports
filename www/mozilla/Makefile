@@ -272,6 +272,8 @@ post-build:
 pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} install
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
@@ -289,7 +291,7 @@ pre-install:
 	fi
 	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
-	cd ${FAKEDIR}/lib/mozilla && ${FIND} -s * -type f -o -type l | \
+	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
 			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
@@ -297,7 +299,7 @@ pre-install:
 	for pcfile in ${PKGCONFIG_FILES}; do \
 		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
-	cd ${FAKEDIR}/include/mozilla && ${FIND} -s * -type f -o -type l | \
+	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/${MOZILLA}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's:^:@dirrm include/${MOZILLA}/:' >> ${PLIST}
@@ -311,7 +313,7 @@ do-install:
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 		${PREFIX}/lib/${MOZILLA}/mozilla \
 		${PREFIX}/lib/${MOZILLA}/mozilla-config
-	cd ${FAKEDIR}/lib/mozilla && ${FIND} . | \
+	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
@@ -338,7 +340,7 @@ do-install:
 	-${RM} -fr ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/include/${MOZILLA}
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
-	cd ${FAKEDIR}/include/mozilla && ${FIND} . | \
+	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
 
 post-install:
