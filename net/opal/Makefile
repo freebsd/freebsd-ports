@@ -28,7 +28,7 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 # If it is not present, extract it from the comms/ixj port
 .if !exists(/usr/include/sys/telephony.h)
 .if !exists(/usr/local/include/sys/telephony.h)
-PATCH_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
+PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
 .endif
 .endif
 .endif
@@ -42,11 +42,10 @@ USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_AUTOCONF_VER=	253
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIR}/openh323
+PWLIBDIR!=	cd ${PORTSDIR}/devel/pwlib && make -V WRKSRC
+CONFIGURE_ENV=	PWLIBDIR=${PWLIBDIR} OPENH323DIR=${WRKSRC}
 ALL_TARGET=	optnoshared
-MAKE_ENV=	PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
-		OPENH323DIR=${WRKDIR}/openh323
+MAKE_ENV=	PWLIBDIR=${PWLIBDIR} OPENH323DIR=${WRKSRC}
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
 
