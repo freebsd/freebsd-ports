@@ -1,0 +1,11 @@
+--- ./QwSpriteField/Makefile.in.org	Tue Sep  7 08:24:52 1999
++++ ./QwSpriteField/Makefile.in	Wed Feb 23 18:10:41 2000
+@@ -166,7 +166,7 @@
+ # the difference between the first and the last, is the major number
+ # the last is the minor number
+ # the number in the middle is the minor-minor number
+-libQwSpriteField_la_LDFLAGS = -version-info 6:0:5  -lXext  $(LIB_QT)
++libQwSpriteField_la_LDFLAGS = -version-info 7:0:5  -lXext  $(LIB_QT)
+ 
+ INCLUDES = $(QT_INCLUDES)
+ lib_LTLIBRARIES = libQwSpriteField.la

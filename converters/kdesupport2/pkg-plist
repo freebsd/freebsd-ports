@@ -45,13 +45,13 @@ include/rdb/hash.h
 include/rdb/rdb.h
 include/rdb/uint32.h
 lib/libQwSpriteField.a
-lib/libQwSpriteField.so.6
+lib/libQwSpriteField.so.7
 lib/libjs.a
-lib/libjs.so.2
+lib/libjs.so.3
 lib/libmimelib.a
-lib/libmimelib.so.1
+lib/libmimelib.so.2
 lib/librdb.a
-lib/librdb.so.55
+lib/librdb.so.56
 @exec ln -sf libQwSpriteField.so.6 %D/lib/libQwSpriteField.so
 @exec ln -sf libjs.so.2 %D/lib/libjs.so
 @exec ln -sf libmimelib.so.1 %D/lib/libmimelib.so

@@ -1,0 +1,11 @@
+--- ./mimelib/Makefile.in.org	Tue Sep  7 08:24:50 1999
++++ ./mimelib/Makefile.in	Wed Feb 23 18:14:27 2000
+@@ -191,7 +191,7 @@
+ 
+ DEFS = -D$(LIBVERSION) @DEFS@
+ 
+-libmimelib_la_LDFLAGS = -version-info 1:0
++libmimelib_la_LDFLAGS = -version-info 2:0
+ mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
