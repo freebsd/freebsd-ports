@@ -7,9 +7,9 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	21
+PATCHLEVEL=	61
 PORTVERSION=	6.2.${PATCHLEVEL}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	${MASTER_SITE_VIM}
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 PATCHFILES!=    /usr/bin/jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=	009 013 015 019
+BADPATCHES=	009 013 019 022 023 024 033 036 038 039 041 042 047 056 057 060
 .for p in ${BADPATCHES}
 PATCHFILES:=	${PATCHFILES:N6.2.${p}}
 .endfor
@@ -172,5 +172,9 @@ post-install:
 	${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-share-vim
 	cd ${WRKDIR} ; ex < ex.script
+
+cklatest:
+	@-ncftpls ftp://ftp.vim.org/pub/vim/patches/ \
+		| fgrep ${PORTVERSION:C/[0-9]*$//} | ${TAIL}
 
 .include <bsd.port.post.mk>
