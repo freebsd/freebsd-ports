@@ -1,0 +1,20 @@
+--- begin.cc.orig	Sun Dec 26 17:27:30 1999
++++ begin.cc	Sun Dec 26 17:27:56 1999
+@@ -27,7 +27,7 @@
+ #include "parts.h"
+ #include "common.h"
+ 
+-const ANGLE_TIME = 4*sysTimerRes,
++const int ANGLE_TIME = 4*sysTimerRes,
+       ALIGN_TIME = 2*sysTimerRes,
+       PAL_TIME = 5*sysTimerRes,
+       FLASH_TIME = 0.5*sysTimerRes;
+@@ -147,7 +147,7 @@
+       }
+ 
+ //	SmoothPage(bw,bw);
+-      static offset=0;
++      static int offset=0;
+       back->MapToPage2( u[0], v[0], u[1], v[1], u[2], v[2], u[3], v[3],
+ 			color+offset );
+       offset = 1-offset;

@@ -1,0 +1,10 @@
+--- mikmod/load_xm.c.orig	Thu Sep 11 13:24:30 1997
++++ mikmod/load_xm.c	Sun Oct 24 06:55:11 1999
+@@ -14,7 +14,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+-#include <malloc.h>
+ #include "mikmod.h"
+ 
+ /**************************************************************************

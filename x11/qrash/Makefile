@@ -1,0 +1,24 @@
+# New ports collection makefile for:	qrash
+# Version required:	1.0
+# Date created:		Oct 27, 1999
+# Whom:			Trevor Johnson <trevor@jpj.net>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	qrash
+PKGNAME=	qrash-1.0
+CATEGORIES=	x11
+MASTER_SITES=	http://metalab.unc.edu/pub/Linux/X11/demos/ \
+		ftp://metalab.unc.edu/pub/Linux/X11/demos/ \
+		ftp://qmg.rising.ru/pub/demos/qmg/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	trevor@jpj.net
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=      yes
+ALL_TARGET=	qrash
+USE_X_PREFIX=	yes
+
+.include <bsd.port.mk>

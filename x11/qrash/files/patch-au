@@ -1,0 +1,25 @@
+--- points.cc.orig	Sun Dec 26 17:32:08 1999
++++ points.cc	Sun Dec 26 17:32:34 1999
+@@ -95,7 +95,7 @@
+     }
+ 
+     case 1: {
+-      static old_row=-1, scale_timer = -1;
++      static int old_row=-1, scale_timer = -1;
+       if( row != old_row &&
+ 	  (row == 2 || row == 6 || row == 9 || row == 11 || row == 14) ) {
+ 	old_row = row;
+@@ -128,11 +128,11 @@
+     if( what == 4 ) {
+       vidCopyPage( color, pic->data );
+     }
+-    static offset = 0;
++    static int offset = 0;
+     static int old_row=-1;
+     if( row/6 != old_row && row > 18 ) {
+       old_row = row/6;
+-      static coord = 0;
++      static int coord = 0;
+       coord = (coord+1) % 4;
+       u[coord] *= 0.7; v[coord] *= 0.7;
+     }

@@ -1,0 +1,23 @@
+--- Makefile.in.orig	Wed Sep 24 09:49:16 1997
++++ Makefile.in	Sun Oct 24 06:59:51 1999
+@@ -1,5 +1,5 @@
+ # Maximum optimization
+-CXXFLAGS += -O6 -ffast-math -funroll-loops -w
++CXXFLAGS += -O6 -ffast-math -funroll-loops -w -I /usr/X11R6/include/
+ 
+ # Debugging options
+ #CXXFLAGS += -g
+@@ -49,6 +49,13 @@
+ 
+ parts.o:
+ 	$(CC) -c parts.cc
++
++install:
++	strip -s qrash
++	mkdir $(X11BASE)/share/qrash/
++	install -c -m 755 -o root -g wheel qrash $(X11BASE)/bin/
++	install -c -m 644 -o root -g wheel qrash.dat $(X11BASE)/share/qrash/
++	install -c -m 644 -o root -g wheel README $(X11BASE)/share/qrash/
+ 
+ DUMMY:
+ 
