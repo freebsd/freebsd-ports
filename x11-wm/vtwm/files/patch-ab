@@ -1,0 +1,13 @@
+--- Imakefile.orig	Sun Oct 21 04:41:58 2001
++++ Imakefile	Mon Nov  5 11:21:53 2001
+@@ -153,7 +153,9 @@
+ 	echo ' */' >>$@
+ 	echo '' >>$@
+ 	echo 'char *lastmake[] = {' >>lastmake.c
+-	echo '    "Platform:  '`uname -s`' Version '`uname -v`' Release '`uname -r`'",' >>$@
++	echo '    "Platform:  '`uname -s`' Version '`uname -v | cut -f 2 \
++	-d ' ' | cut -f 1 -d '-'`' Release '`uname -v | cut -f 2 -d '#' \
++	| cut -f 1 -d ':'`'",' >>$@
+ 	echo '    "Build:  '`date`'",' >>$@
+ 	echo '    "" };' >>$@
+ 
