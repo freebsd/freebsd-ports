@@ -22,6 +22,7 @@
 
 use vars qw/ $opt_a $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
 use Getopt::Std;
+use File::Find;
 use IPC::Open2;
 #use strict;
 
@@ -275,26 +276,56 @@ foreach my $i (@checker) {
 	} else {
 		my $proc = $checker{$i};
 		&$proc($i) || &perror("Cannot open the file $i\n");
-		if ($i !~ m@/files/patch-@) {
+		if ($proc ne 'checkpatch') {
 			&checklastline($i)
 				|| &perror("Cannot open the file $i\n");
 		}
 	}
 }
 if ($committer) {
-	if (scalar(@_ = <work/*>) || -d "work") {
-		&perror("FATAL: be sure to cleanup $portdir/work ".
-			"before committing the port.");
+	sub find_proc {
+		return if /^\.\.?$/;
+
+		(my $fullname = $File::Find::name) =~ s#^\./##;
+
+		print "OK: checking the file name of $fullname.\n" if ($verbose);
+
+		if ($fullname eq 'work') {
+			&perror("FATAL: $fullname: be sure to cleanup the working directory ".
+					"before committing the port.");
+
+			$File::Find::prune = 1;
+		} elsif (-l) {
+			&perror("Warning: $fullname: this is a symlink. ".
+					"CVS will ignore it.");
+		} elsif (-z) {
+			&perror("FATAL: $fullname: empty file and should be removed. ".
+				    "If it still needs to be there, put a dummy comment ".
+					"to state that the file is intentionally left empty.");
+			$problem = 1;
+		} elsif (-d && scalar(@x = <$_/{*,.?*}>) <= 1) { 
+			&perror("FATAL: $fullname: empty directory should be removed.");
+		} elsif (/^\./) {
+			&perror("Warning: $fullname: dotfiles are not preferred. ".
+					"If this file is a dotfile to be installed as an example, ".
+					"consider importing it as \"dot$_\".");
+		} elsif (/\.(orig|rej|bak)$/ || /~$/ || /^\#/) {
+			&perror("FATAL: $fullname: for safety, be sure to cleanup ".
+					"backup files before committing the port.");
+		} elsif (/(^|\.)core$/) {
+			&perror("FATAL: $fullname: for safety, be sure to cleanup ".
+					"core files before committing the port.");
+		} elsif ($_ eq 'CVS' && -d) {
+			if ($newport) {
+				&perror("FATAL: $fullname: for safety, be sure to cleanup ".
+						"CVS directories before importing the new port.");
+			}
+
+			$File::Find::prune = 1;
+		}
 	}
-	if (scalar(@_ = <*/*~>) || scalar(@_ = <*~>)) {
-		&perror("FATAL: for safety, be sure to cleanup ".
-			"editor backup files before committing the port.");
-	}
-	if (scalar(@_ = <*/*.orig>) || scalar(@_ = </*.orig>)
-	 || scalar(@_ = <*/*.rej>) || scalar(@_ = <*.rej>)) {
-		&perror("FATAL: for safety, be sure to cleanup ".
-			"patch backup files before committing the port.");
-	}
+
+	find(\&find_proc, '.');
 }
 if ($err || $warn) {
 	print "$err fatal errors and $warn warnings found.\n"
@@ -899,7 +930,7 @@ EOF
 	#
 	# section 2: PORTNAME/PORTVERSION/...
 	#
-	print "OK: checking first section of $file. (PORTNAME/...)\n"
+	print "OK: checking first section of $file (PORTNAME/...).\n"
 		if ($verbose);
 	$tmp = $sections[$idx++];
 
@@ -1123,7 +1154,7 @@ DISTFILES EXTRACT_ONLY
 	#
 	# section 3: PATCH_SITES/PATCHFILES(optional)
 	#
-	print "OK: checking second section of $file, (PATCH*: optinal).\n"
+	print "OK: checking second section of $file (PATCH*: optinal).\n"
 		if ($verbose);
 	$tmp = $sections[$idx];
 
@@ -1179,7 +1210,7 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 	#
 	# section 5: *_DEPENDS (may not be there)
 	#
-	print "OK: checking fourth section of $file(*_DEPENDS).\n"
+	print "OK: checking fourth section of $file (*_DEPENDS).\n"
 		if ($verbose);
 	$tmp = $sections[$idx];
 
