@@ -1,0 +1,15 @@
+WiStumbler2 is a fork of original wistumbler caused by the incommunication
+of the original author, because seems that development was getting stopped.
+
+In the fork of wistumbler I add some new features and bugfixes.
+
+Diff on wistumbler:
+ - gtk2 support.
+ - some gtk widgets wasn't correctly used.
+ - Support for console mode (no X needed).
+ - Allow log-saving on the fly (new button).
+ - Patches some GPS pointers that segfaults.
+ - 0 warnings with -Wall on gcc3.3 on NetBSD-current.
+ - Speaker beeps like windows-stumbler. (ear-wardriving)
+
+WWW: http://www.nopcode.org/?t=wistumbler2

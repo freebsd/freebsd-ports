@@ -754,6 +754,7 @@
     SUBDIR += whois
     SUBDIR += wide-dhcp
     SUBDIR += widentd
+    SUBDIR += wistumbler2
     SUBDIR += wmlj
     SUBDIR += wmnd
     SUBDIR += wmnet
