@@ -7868,7 +7868,6 @@ sigit		ports/mail/sigit
 sigrot		ports/mail/sigrot
 sigslot		ports/devel/sigslot
 silc-client	ports/net/silc-client
-silc-doc	ports/net/silc-doc
 silc-server	ports/net/silc-server
 silkymail	ports/mail/silkymail
 sim		ports/emulators/sim
