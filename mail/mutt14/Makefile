@@ -11,11 +11,10 @@ PORTVERSION=	1.4
 PORTREVISION=	0
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
-		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
 		ftp://ftp.gbnet.net/pub/mutt-international/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
-		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
-		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
+		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
+		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
+		ftp://ftp.parodius.com/pub/mutt/ \
 		ftp://pgp.rasip.fer.hr/pub/mutt/international/ \
 DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
