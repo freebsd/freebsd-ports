@@ -1,0 +1,74 @@
+Index: gkrellm.1
+diff -u gkrellm.1.orig gkrellm.1
+--- gkrellm.1.orig	Wed Mar 14 21:04:26 2001
++++ gkrellm.1	Thu Mar 15 00:12:14 2001
+@@ -1,4 +1,4 @@
+-.TH gkrellm 1 "Febuary 3, 2001" "Olympus GNU/Linux" "User's Manual"
++.TH gkrellm 1 "Febuary 3, 2001" "FreeBSD" "User's Manual"
+ 
+ .SH "NAME"
+ gkrellm \- The GNU Krell Monitors
+@@ -322,18 +322,18 @@
+ ppp is connecting, and the on state is the ppp link connected.
+ The phone line lock is determined by the existence of the modem
+ lock file
+-.IR /var/lock/LCK..modem.
++.IR /var/spool/lock/LCK..modem.
+ If your pppd setup does not use
+ .IR /dev/modem,
+ then you can configure an alternative with:
+ .PP
+ .RS
+ .nf
+-ln  -s  /var/lock/LCK..ttySx   ~/.gkrellm/LCK..modem
++ln  -s  /var/spool/lock/LCK..cuaaS   ~/.gkrellm/LCK..modem
+ .fi
+ .RE
+ .IP
+-where ttySx is the tty device your modem uses.  The ppp on
++where cuaaS is the tty device your modem uses.  The ppp on
+ state is detected by the existence of
+ .IR /var/run/pppX.pid
+ and the time stamp of this file is the base for the on line time.
+@@ -781,7 +781,7 @@
+ .PP
+ .B gkrellm
+ also searches
+-.IR /usr/share/gkrellm/themes
++.IR /usr/X11R6/share/gkrellm/themes
+ for any system wide themes installed as part of a distribution.
+ Finally, a theme you simply want to check out can be untarred anywhere and
+ used by running:
+@@ -806,12 +806,12 @@
+ The directories
+ .IR /usr/local/lib/gkrellm/plugins
+ and
+-.IR /usr/lib/gkrellm/plugins
++.IR /usr/X11R6/libexec/gkrellm/plugins
+ are also searched for plugins to install.
+ For compatibility with pre 1.0.6 versions, plugins from the directories
+ .IR /usr/local/share/gkrellm/plugins
+ and
+-.IR /usr/share/gkrellm/plugins
++.IR /usr/X11R6/libexec/gkrellm/plugins
+ are still installed, but this is not compatible with the FHS.
+ .PP
+ Some plugins may be available only as source files and they will
+@@ -832,7 +832,7 @@
+ .I ~/.gkrellm/plugins
+ User plugin directory.
+ .TP
+-.I /usr/lib/gkrellm/plugins
++.I /usr/X11R6/libexec/gkrellm/plugins
+ System wide plugin directory.
+ .TP
+ .I /usr/local/lib/gkrellm/plugins
+@@ -841,7 +841,7 @@
+ .I ~/.gkrellm/themes
+ User theme directory.
+ .TP
+-.I /usr/share/gkrellm/themes
++.I /usr/X11R6/share/gkrellm/themes
+ System wide theme directory.
+ .TP
+ .I /usr/local/share/gkrellm/themes
