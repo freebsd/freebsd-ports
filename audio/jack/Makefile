@@ -31,7 +31,7 @@ MAN1=	jackd.1 jackstart.1
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} > 500000) && (${OSVERSION} < 502102)
+.if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
 BROKEN=		"Does not compile"
 .endif
 
