@@ -6,33 +6,30 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	sysutils www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/lam/
 MASTER_SITE_SUBDIR=	lam
 DISTNAME=	${PORTNAME:L}_${PORTVERSION}
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
-RUN_DEPENDS=	${LOCALBASE}/${MOD_DIR}/libphp4.so:${PORTSDIR}/lang/php4-horde \
-		${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
+USE_PHP=	yes
+WANT_PHP_WEB=	yes
+PHP_PORT=	${PORTSDIR}/lang/php${PHP_VER}-horde
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
-.if defined(WITH_APACHE2)
-MOD_DIR=	libexec/apache2
-.else
-MOD_DIR=	libexec/apache
-.endif
-
 WWW_ROOT?=	www/lam
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
-WWW_DIR=	config graphics help lib locale sess style templates
-MYPORTDOCS=	HISTORY README TODO docs/README.fpdf.htm docs/README.openldap.txt \
-		docs/README.hosts.txt docs/README.security.txt docs/README.lamdaemon.txt
+WWW_DIR=	config graphics help lib locale sess style templates tmp
+MYPORTDOCS=	HISTORY README TODO docs/*
+PORTDOCS=	*
 WWW_OWNED=	sess tmp config config config/profiles config/profiles/groups \
 		config/profiles/groups/default.prg config/profiles/hosts \
 		config/profiles/hosts/default.prh config/profiles/users \
@@ -40,11 +37,6 @@ WWW_OWNED=	sess tmp config config config/profiles config/profiles/groups \
 		config/config.cfg config/lam.conf
 
 LAM_SCRIPTS=	lib/createntlm.pl lib/lamdaemon.pl
-
-#CVS_DIRS=	${WRKSRC}/lib/font/CVS ${WRKSRC}/lib/font/makefont/CVS
-
-#post-extract:
-#	@${RM} -fr ${CVS_DIRS}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}
