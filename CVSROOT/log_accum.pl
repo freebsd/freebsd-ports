@@ -128,7 +128,9 @@ sub cleanup_tmpfiles {
 
 # Append a line to a named file.
 sub append_line {
-	my ($filename, $line) = @_;
+	my $filename = shift;	# File to append to.
+	my $line = shift;	# Line to append.
+
 	open FILE, ">>$filename" or
 	    die "Cannot open for append file $filename.\n";
 	print FILE "$line\n";
@@ -171,91 +173,103 @@ sub read_logfile {
 }
 
 
+# Write a list to a file.
 sub write_logfile {
-    local($filename, @lines) = @_;
+	my $filename = shift;	# File to write to.
+	my @lines = @_;		# Contents to write to file.
 
-    open(FILE, ">$filename") || die("Cannot open for write log file $filename.\n");
-    print FILE join("\n", @lines), "\n";
-    close(FILE);
+	open FILE, ">$filename" or
+	    die "Cannot open for write log file $filename.";
+	print FILE join("\n", @lines), "\n";
+	close FILE;
 }
+
 
 sub format_names {
-    local($dir, @files) = @_;
-    local(@lines, $indent);
+	my $dir = shift;
+	my @files = @_;
 
-    $indent = length($dir);
-    if ($indent < 20) {
-      $indent = 20;
-    }
+	my $indent = length($dir);
+	$indent = 20 if $indent < 20;
 
-    $format = "    %-" . sprintf("%d", $indent) . "s ";
+	my $format = "    %-" . sprintf("%d", $indent) . "s ";
 
-    $lines[0] = sprintf($format, $dir);
+	my @lines = (sprintf($format, $dir));
 
-    if ($DEBUG) {
-	print STDERR "format_names(): dir = ", $dir, "; tag = ", $tag, "; files = ", join(":", @files), ".\n";
-    }
-    foreach $file (@files) {
-	if (length($lines[$#lines]) + length($file) > 66) {
-	    $lines[++$#lines] = sprintf($format, "", "");
+	if ($DEBUG) {
+		print STDERR "format_names(): dir = ", $dir;
+		#print STDERR "; tag = ", $tag;
+		print STDERR "; files = ", join(":", @files), ".\n";
 	}
-	$lines[$#lines] .= $file . " ";
-    }
 
-    @lines;
+	foreach $file (@files) {
+		if (length($lines[$#lines]) + length($file) > 66) {
+			$lines[++$#lines] = sprintf($format, "", "");
+		}
+		$lines[$#lines] .= $file . " ";
+	}
+
+	return @lines;
 }
+
 
 sub format_lists {
-    local($header, @lines) = @_;
-    local(@text, @files, $lastdir, $lastsep, $tag);
+	my $header = shift;
+	my @lines = @_;
 
-    if ($DEBUG) {
-	print STDERR "format_lists(): ", join(":", @lines), "\n";
-    }
-    @text = ();
-    @files = ();
+	my @text = ();
+	my @files = ();
+	my $lastdir = '';
+	my $lastsep = '';
 
-    $lastdir = '';
-    $lastsep = '';
-    foreach $line (@lines) {
-	if ($line =~ /.*\/$/) {
-	    if ($lastdir ne '') {
-	        push(@text, &format_names($lastdir, @files));
-	    }
-	    $lastdir = $line;
-	    $lastdir =~ s,/$,,;
-	    $tag = "";	# next thing is a tag
-	    @files = ();
-	} elsif ($tag eq '') {
-	    $tag = $line;
-	    next if ($header . $tag eq $lastsep);
-	    $lastsep = $header . $tag;
-	    if ($tag eq 'HEAD') {
-		push(@text, "  $header files:");
-	    } else {
-		push(@text, sprintf("  %-22s (Branch: %s)", "$header files:",
-			$tag));
-	    }
-	} else {
-	    push(@files, $line);
+	print STDERR "format_lists(): ", join(":", @lines), "\n" if $DEBUG;
+
+	foreach my $line (@lines) {
+		if ($line =~ /.*\/$/) {
+			if ($lastdir) {
+				push @text, &format_names($lastdir, @files);
+			}
+
+			$lastdir = $line;
+			$lastdir =~ s,/$,,;
+			$tag = "";	# next thing is a tag
+			@files = ();
+		} elsif (!$tag) {
+			$tag = $line;
+			next if ($header . $tag eq $lastsep);
+			$lastsep = $header . $tag;
+			if ($tag eq 'HEAD') {
+				push @text, "  $header files:";
+			} else {
+				push @text, sprintf("  %-22s (Branch: %s)",
+				    "$header files:", $tag);
+			}
+		} else {
+			push @files, $line;
+		}
 	}
-    }
-    push(@text, &format_names($lastdir, @files));
+	push @text, &format_names($lastdir, @files);
 
-    @text;
+	return @text;
 }
 
-sub append_names_to_file {
-    local($filename, $dir, $tag, @files) = @_;
 
-    if (@files) {
-	open(FILE, ">>$filename") || die("Cannot open for append file $filename.\n");
+sub append_names_to_file {
+	my $filename = shift;
+	my $dir = shift;
+	my $tag = shift;
+	my @files = @_;
+
+	return unless @files;
+
+	open FILE, ">>$filename" or die "Cannot append to file $filename.";
+
 	print FILE $dir, "\n";
 	print FILE $tag, "\n";
 	print FILE join("\n", @files), "\n";
-	close(FILE);
-    }
+	close FILE;
 }
+
 
 #
 # do an 'cvs -Qn status' on each file in the arguments, and extract info.
