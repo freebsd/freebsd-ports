@@ -24,7 +24,7 @@ while (<IN>) {
 	}
 }
 for (split(/\n/, <<"END"))
-alias-fixed-medium-r-normal--24-234-75-75-c-120-iso8859-1 -sony-fixed-medium-r-normal--24-230-75-75-c-120-iso8859-1
+-alias-fixed-medium-r-normal--24-234-75-75-c-120-iso8859-1 -sony-fixed-medium-r-normal--24-230-75-75-c-120-iso8859-1
 -alias-fixed-medium-r-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-medium-r-normal--20-190-75-75-c-100-iso8859-1
 -alias-fixed-medium-i-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-medium-i-normal--20-190-75-75-c-100-iso8859-1
 -alias-fixed-bold-r-normal--20-190-75-75-c-200-iso8859-1 -kappa-fixed-bold-r-normal--20-190-75-75-c-100-iso8859-1
