@@ -9,21 +9,16 @@ PORTNAME=	uri
 PORTVERSION=	4.22
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www02.so-net.ne.jp/%7Egreentea/ruby/uri/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
+USE_RUBY=	yes
 
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 MODULES=	uri.rb urireg.rb
 
@@ -32,17 +27,19 @@ EXAMPLES=	in-uri.txt test-uri.rb
 
 do-install:
 .for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/uri
+	${MKDIR} ${RUBY_EXAMPLESDIR}/uri
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/ruby/uri/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/uri/
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/ruby/uri
+	${MKDIR} ${RUBY_DOCDIR}/uri
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/uri/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/uri/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -1,27 +1,27 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/ClibPDF.so
-share/doc/ruby/clibpdf/README
-share/doc/ruby/clibpdf/ja/ChangeLog.ja
-share/doc/ruby/clibpdf/ja/README.ja
-share/doc/ruby/clibpdf/ja/TODO.ja
-@dirrm share/doc/ruby/clibpdf/ja
-@dirrm share/doc/ruby/clibpdf
-share/examples/ruby/clibpdf/Arcs.rb
-share/examples/ruby/clibpdf/DomainDemo.rb
-share/examples/ruby/clibpdf/MarkerTest.rb
-share/examples/ruby/clibpdf/Minimal.rb
-share/examples/ruby/clibpdf/beziertest.rb
-share/examples/ruby/clibpdf/charwidth.rb
-share/examples/ruby/clibpdf/cover.rb
-share/examples/ruby/clibpdf/dashtest.rb
-share/examples/ruby/clibpdf/filltest.rb
-share/examples/ruby/clibpdf/fontlist.rb
-share/examples/ruby/clibpdf/helloworld.rb
-share/examples/ruby/clibpdf/linkpdfpage.rb
-share/examples/ruby/clibpdf/outline.rb
-share/examples/ruby/clibpdf/textalign.rb
-share/examples/ruby/clibpdf/textboxfit.rb
-share/examples/ruby/clibpdf/timeaxis.rb
-share/examples/ruby/clibpdf/weather.rb
-share/examples/ruby/clibpdf/ja/jpntest.rb
-@dirrm share/examples/ruby/clibpdf/ja
-@dirrm share/examples/ruby/clibpdf
+%%RUBY_SITEARCHLIBDIR%%/ClibPDF.so
+%%RUBY_DOCDIR%%/clibpdf/README
+%%RUBY_DOCDIR%%/clibpdf/ja/ChangeLog.ja
+%%RUBY_DOCDIR%%/clibpdf/ja/README.ja
+%%RUBY_DOCDIR%%/clibpdf/ja/TODO.ja
+@dirrm %%RUBY_DOCDIR%%/clibpdf/ja
+@dirrm %%RUBY_DOCDIR%%/clibpdf
+%%RUBY_EXAMPLESDIR%%/clibpdf/Arcs.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/DomainDemo.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/MarkerTest.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/Minimal.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/beziertest.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/charwidth.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/cover.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/dashtest.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/filltest.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/fontlist.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/helloworld.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/linkpdfpage.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/outline.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/textalign.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/textboxfit.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/timeaxis.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/weather.rb
+%%RUBY_EXAMPLESDIR%%/clibpdf/ja/jpntest.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf

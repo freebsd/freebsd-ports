@@ -9,38 +9,30 @@ PORTNAME=	intl
 PORTVERSION=	0.11
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.page.sannet.ne.jp/hirata-naoto/
-PKGNAMEPREFIX=	ruby-
-DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
-INSTALL_TARGET=	site-install
-CONFIGURE_ARGS=	--with-opt-dir="${LOCALBASE}"
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
+INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/intl/po/
-	${INSTALL_DATA} ${WRKSRC}/hello.rb ${PREFIX}/share/examples/ruby/intl/
-	${INSTALL_DATA} ${WRKSRC}/ja.po ${PREFIX}/share/examples/ruby/intl/po/
-	${MKDIR} ${PREFIX}/share/doc/ruby/intl/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ruby/intl/
-	${INSTALL_DATA} ${WRKSRC}/README.jp ${PREFIX}/share/doc/ruby/intl/ja/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/intl/po/
+	${INSTALL_DATA} ${WRKSRC}/hello.rb ${RUBY_EXAMPLESDIR}/intl/
+	${INSTALL_DATA} ${WRKSRC}/ja.po ${RUBY_EXAMPLESDIR}/intl/po/
+	${MKDIR} ${RUBY_DOCDIR}/intl/ja
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/intl/
+	${INSTALL_DATA} ${WRKSRC}/README.jp ${RUBY_DOCDIR}/intl/ja/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

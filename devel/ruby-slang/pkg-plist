@@ -1,13 +1,13 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/slanglib.so
-lib/ruby/site_ruby/%%RUBY_VER%%/slang.rb
-share/examples/ruby/slang/fm.rb
-share/examples/ruby/slang/smgtest.rb
-share/examples/ruby/slang/urlview.rb
-share/examples/ruby/slang/ja/pager.rb
-@dirrm share/examples/ruby/slang/ja
-@dirrm share/examples/ruby/slang
-share/doc/ruby/slang/README
-share/doc/ruby/slang/changes.txt
-share/doc/ruby/slang/ja/README.euc
-@dirrm share/doc/ruby/slang/ja
-@dirrm share/doc/ruby/slang
+%%RUBY_SITEARCHLIBDIR%%/slanglib.so
+%%RUBY_SITELIBDIR%%/slang.rb
+%%RUBY_EXAMPLESDIR%%/slang/fm.rb
+%%RUBY_EXAMPLESDIR%%/slang/smgtest.rb
+%%RUBY_EXAMPLESDIR%%/slang/urlview.rb
+%%RUBY_EXAMPLESDIR%%/slang/ja/pager.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/slang/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/slang
+%%RUBY_DOCDIR%%/slang/README
+%%RUBY_DOCDIR%%/slang/changes.txt
+%%RUBY_DOCDIR%%/slang/ja/README.euc
+@dirrm %%RUBY_DOCDIR%%/slang/ja
+@dirrm %%RUBY_DOCDIR%%/slang

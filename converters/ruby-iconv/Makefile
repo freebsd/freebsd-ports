@@ -9,45 +9,36 @@ PORTNAME=	iconv
 PORTVERSION=	0.4.2.p3
 CATEGORIES=	converters ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	rd2:${PORTSDIR}/textproc/ruby-rdtool
+USE_RUBY_RD=	yes
 .endif
 
 INSTALL_TARGET=	site-install
-CONFIGURE_ARGS=	--with-opt-dir="${LOCALBASE}"
-
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 .if !defined(NOPORTDOCS)
 post-build:
 	@cd ${WRKSRC}; \
-	rd2 iconv.c > iconv.html
+	${RUBY_RD} iconv.c > iconv.html
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/iconv
+	${MKDIR} ${RUBY_DOCDIR}/iconv
 .for f in iconv.html rd.css
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/iconv/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/iconv/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -1,9 +1,9 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/intl.so
-share/examples/ruby/intl/hello.rb
-share/examples/ruby/intl/po/ja.po
-@dirrm share/examples/ruby/intl/po
-@dirrm share/examples/ruby/intl
-share/doc/ruby/intl/README
-share/doc/ruby/intl/ja/README.jp
-@dirrm share/doc/ruby/intl/ja
-@dirrm share/doc/ruby/intl
+%%RUBY_SITEARCHLIBDIR%%/intl.so
+%%RUBY_EXAMPLESDIR%%/intl/hello.rb
+%%RUBY_EXAMPLESDIR%%/intl/po/ja.po
+@dirrm %%RUBY_EXAMPLESDIR%%/intl/po
+@dirrm %%RUBY_EXAMPLESDIR%%/intl
+%%RUBY_DOCDIR%%/intl/README
+%%RUBY_DOCDIR%%/intl/ja/README.jp
+@dirrm %%RUBY_DOCDIR%%/intl/ja
+@dirrm %%RUBY_DOCDIR%%/intl

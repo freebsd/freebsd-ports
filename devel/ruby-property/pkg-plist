@@ -1,10 +1,10 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/property.rb
-share/doc/ruby/property/property-example.rb
-share/doc/ruby/property/test.default
-share/doc/ruby/property/property.README
-share/doc/ruby/property/Properties.html
-share/doc/ruby/property/rubyapi.css
-share/doc/ruby/property/ja/property.README.ja
-share/doc/ruby/property/ja/Properties-ja.html
-@dirrm share/doc/ruby/property/ja
-@dirrm share/doc/ruby/property
+%%RUBY_SITELIBDIR%%/property.rb
+%%RUBY_DOCDIR%%/property/property-example.rb
+%%RUBY_DOCDIR%%/property/test.default
+%%RUBY_DOCDIR%%/property/property.README
+%%RUBY_DOCDIR%%/property/Properties.html
+%%RUBY_DOCDIR%%/property/rubyapi.css
+%%RUBY_DOCDIR%%/property/ja/property.README.ja
+%%RUBY_DOCDIR%%/property/ja/Properties-ja.html
+@dirrm %%RUBY_DOCDIR%%/property/ja
+@dirrm %%RUBY_DOCDIR%%/property
