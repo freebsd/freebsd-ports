@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.20 1996/11/17 08:45:20 obrien Exp $
+# $Id: Makefile,v 1.21 1996/11/18 09:54:49 asami Exp $
 #
 
 DISTNAME=	xdvi-20
@@ -29,7 +29,7 @@ do-install:
 		MANDIR=${PREFIX}/man/man1 MANSUFFIX=1)
 	@(cd ${WRKSRC}; ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
 	@(cd ${WRKSRC}; ${GMAKE} -f Makefile install BINDIR=${PREFIX}/bin)
-	@(cd ${WRKSRC}; ${INSTALL_PROGRAM} MakeTeXPK ${PREFIX}/bin)
+	@(cd ${WRKSRC}; ${INSTALL_SCRIPT} MakeTeXPK ${PREFIX}/bin)
 
 pre-clean:
 	@rm -f ${SCRIPTDIR}/post-install
