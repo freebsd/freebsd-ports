@@ -1509,6 +1509,7 @@ eclipse-examples	ports/java/eclipse-examples
 eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
 eclipse-langpack	ports/java/eclipse-langpack
+eclipse-pmd	ports/java/eclipse-pmd
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
 ecu		ports/comms/ecu
