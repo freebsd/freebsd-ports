@@ -8,6 +8,7 @@
     SUBDIR += explorer
     SUBDIR += ezfm
     SUBDIR += filerunner
+    SUBDIR += fsv
     SUBDIR += gnomemc
     SUBDIR += jafm
     SUBDIR += mfm
