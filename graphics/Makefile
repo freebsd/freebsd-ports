@@ -164,6 +164,7 @@
     SUBDIR += kbarcode
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
+    SUBDIR += kimagemapeditor
     SUBDIR += kisomandel
     SUBDIR += kludge3d
     SUBDIR += kpovmodeler

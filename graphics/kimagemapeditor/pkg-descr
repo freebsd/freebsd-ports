@@ -1,0 +1,6 @@
+KImageMapEditor is a KDE-based editor for HTML image maps. It
+allows you to edit imagemaps of HTML files or create new ones.
+It can be fully integrated with Quanta since it is based on
+KParts technology.
+
+WWW: http://www.nongnu.org/kimagemap
