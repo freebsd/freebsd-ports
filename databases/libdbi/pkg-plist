@@ -1,42 +1,42 @@
+@comment $FreeBSD$
 include/dbi/dbd.h
 include/dbi/dbi-dev.h
 include/dbi/dbi.h
 lib/libdbi.a
 lib/libdbi.so
 lib/libdbi.so.0
-%%WITH_PQ%%lib/dbd/libpgsql.so
-%%WITH_MY%%lib/dbd/libmysql.so
-share/doc/libdbi-0.6.2/plugin-guide/contact.html
-share/doc/libdbi-0.6.2/plugin-guide/copying-fdl.html
-share/doc/libdbi-0.6.2/plugin-guide/description.html
-share/doc/libdbi-0.6.2/plugin-guide/gnugpl.html
-share/doc/libdbi-0.6.2/plugin-guide/helperfuncs.html
-share/doc/libdbi-0.6.2/plugin-guide/index.html
-share/doc/libdbi-0.6.2/plugin-guide/intro.html
-share/doc/libdbi-0.6.2/plugin-guide/pluginfuncs-dbquery.html
-share/doc/libdbi-0.6.2/plugin-guide/pluginfuncs-infrastructure.html
-share/doc/libdbi-0.6.2/plugin-guide/pluginfuncs.html
-share/doc/libdbi-0.6.2/plugin-guide/terminology.html
-share/doc/libdbi-0.6.2/plugin-guide.pdf
-share/doc/libdbi-0.6.2/programmers-guide/contact.html
-share/doc/libdbi-0.6.2/programmers-guide/copying-fdl.html
-share/doc/libdbi-0.6.2/programmers-guide/description.html
-share/doc/libdbi-0.6.2/programmers-guide/gnugpl.html
-share/doc/libdbi-0.6.2/programmers-guide/index.html
-share/doc/libdbi-0.6.2/programmers-guide/intro.html
-share/doc/libdbi-0.6.2/programmers-guide/quickstart-code.html
-share/doc/libdbi-0.6.2/programmers-guide/quickstart-debriefing.html
-share/doc/libdbi-0.6.2/programmers-guide/quickstart.html
-share/doc/libdbi-0.6.2/programmers-guide/reference-core.html
-share/doc/libdbi-0.6.2/programmers-guide/reference-database.html
-share/doc/libdbi-0.6.2/programmers-guide/reference-driver.html
-share/doc/libdbi-0.6.2/programmers-guide/reference-field.html
-share/doc/libdbi-0.6.2/programmers-guide/reference-plugin.html
-share/doc/libdbi-0.6.2/programmers-guide/reference.html
-share/doc/libdbi-0.6.2/programmers-guide/terminology.html
-share/doc/libdbi-0.6.2/programmers-guide.pdf
+%%MYSQL%%lib/dbd/libmysql.so
+%%PGSQL%%lib/dbd/libpgsql.so
+%%PORTDOCS%%share/doc/libdbi/driver-guide.pdf
+%%PORTDOCS%%share/doc/libdbi/driver-guide/contact.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/copying-fdl.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/description.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/driverfuncs-dbquery.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/driverfuncs-infrastructure.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/driverfuncs.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/gnugpl.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/helperfuncs.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/index.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/intro.html
+%%PORTDOCS%%share/doc/libdbi/driver-guide/terminology.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide.pdf
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/contact.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/copying-fdl.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/description.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/gnugpl.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/index.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/intro.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/quickstart-code.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/quickstart-debriefing.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/quickstart.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-conn.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-core.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-database.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-driver.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-field.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference.html
+%%PORTDOCS%%share/doc/libdbi/programmers-guide/terminology.html
+%%PORTDOCS%%@dirrm share/doc/libdbi/programmers-guide
+%%PORTDOCS%%@dirrm share/doc/libdbi/driver-guide
+%%PORTDOCS%%@dirrm share/doc/libdbi
 @dirrm include/dbi
-@dirrm lib/dbd
-@dirrm share/doc/libdbi-%%VERSION%%/plugin-guide
-@dirrm share/doc/libdbi-%%VERSION%%/programmers-guide
-@dirrm share/doc/libdbi-%%VERSION%%

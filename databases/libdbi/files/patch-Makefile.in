@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jun 15 09:45:17 2002
++++ Makefile.in	Sat Oct  5 21:18:07 2002
+@@ -92,7 +92,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ 
+-SUBDIRS = src include doc drivers tests
++SUBDIRS = src include drivers tests
+ 
+ 
+ #m4datadir = $(datadir)/aclocal
