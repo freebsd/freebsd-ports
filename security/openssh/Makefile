@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
 
 MAINTAINER=	green@FreeBSD.org
 
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
+USE_OPENSSL=	RSA
 
 .include <bsd.port.pre.mk>
 CAT?=		/bin/cat
@@ -29,13 +29,9 @@ SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
-CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
-.ifdef USA_RESIDENT
-.if ${USA_RESIDENT} == YES
-CRYPTOLIBS+=	-lRSAglue -lrsaref
-.endif
-.else
-.error "USA_RESIDENT must be set to 'YES' or 'NO' correctly!"
+CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
+.if defined(OPENSSL_RSAREF)
+CRYPTOLIBS+=	-lRSAglue -L${LOCALBASE}/lib -lrsaref
 .endif
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
