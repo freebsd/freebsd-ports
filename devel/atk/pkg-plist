@@ -1,8 +1,10 @@
+include/atk-1.0/atk/atk-enum-types.h
 include/atk-1.0/atk/atk.h
 include/atk-1.0/atk/atkaction.h
 include/atk-1.0/atk/atkcomponent.h
 include/atk-1.0/atk/atkdocument.h
 include/atk-1.0/atk/atkeditabletext.h
+include/atk-1.0/atk/atkgobjectaccessible.h
 include/atk-1.0/atk/atkhyperlink.h
 include/atk-1.0/atk/atkhypertext.h
 include/atk-1.0/atk/atkimage.h
@@ -22,7 +24,7 @@ include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
 lib/libatk.so
-lib/libatk.so.5
+lib/libatk.so.9
 libdata/pkgconfig/atk.pc
 @dirrm include/atk-1.0/atk
 @dirrm include/atk-1.0
