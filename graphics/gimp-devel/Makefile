@@ -28,6 +28,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		wmf.2:${PORTSDIR}/graphics/libwmf
 
 CONFLICTS=	gimp-1.*
+NO_LATEST_LINK=	yes
 
 SHLIBVER?=	200
 
