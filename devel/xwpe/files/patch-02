@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Apr  7 05:23:04 1995
++++ Makefile.in	Sat Jan 25 00:59:00 1997
+@@ -8,7 +8,7 @@
+ #Destination Directory
+ prefix=/usr/local
+ DESTDIR=	$(prefix)/bin
+-LIBDIR=		$(prefix)/lib
++LIBDIR=		$(prefix)/share
+ WPELIBDIR=	$(LIBDIR)/wpe
+ MANDIR=		$(prefix)/man
+ 
