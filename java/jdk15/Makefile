@@ -99,6 +99,8 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
 .if defined(MINIMAL)
 MAKE_ENV+=	NO_PLUGIN="YES" \
 		NO_JAVAWS="YES"
+.else
+FORBIDDEN=	Vulnerabilities in the browser plugin
 .endif
 ALL_TARGET=	all
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
