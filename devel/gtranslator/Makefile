@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	0.41
-PORTREVISION=	1
+PORTVERSION=	0.43
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,8 +16,9 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gnomevfs
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv -lgnuregex"
@@ -26,11 +26,8 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv -lgnuregex"
 MAN1=		gtranslator.1 pozilla.sh.1
 MANCOMPRESSED=	yes
 
-pre-patch:
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
