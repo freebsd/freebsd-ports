@@ -1,13 +1,11 @@
 bin/Magick++-config
 bin/Magick-config
 %%X11%%bin/animate
-bin/cgimagick
 bin/composite
 bin/convert
 %%X11%%bin/display
 bin/identify
 %%X11%%bin/import
-bin/iptcutil
 bin/mogrify
 bin/montage
 include/Magick++.h
@@ -38,7 +36,6 @@ include/magick/config.h
 include/magick/delegates.h
 include/magick/draw.h
 include/magick/error.h
-include/magick/fonts.h
 include/magick/gems.h
 include/magick/image.h
 include/magick/magic.h
