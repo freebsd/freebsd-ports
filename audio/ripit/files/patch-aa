@@ -1,5 +1,5 @@
 --- ripit.pl.orig	Sat Aug 25 18:20:06 2001
-+++ ripit.pl	Fri May 24 14:16:20 2002
++++ ripit.pl	Mon Nov 17 23:31:30 2003
 @@ -9,41 +9,47 @@
  #		Create an M3U file
  #
@@ -132,7 +132,15 @@
  #
  # Create the track selection from the parameters passed
  # on the command line
-@@ -280,7 +302,6 @@
+@@ -207,6 +229,7 @@
+   #Configure CDDB_get parameters
+   $config{CDDB_HOST} = $CDDB_HOST;      
+   $config{CDDB_PORT} = $CDDB_PORT;       
++  $config{HTTP_PROXY}= $ENV{HTTP_PROXY} if $ENV{HTTP_PROXY}; # Use proxy if available
+   $config{CDDB_MODE} = $CDDB_MODE; 
+   $config{CD_DEVICE} = $cddev;
+   $config{input} = $CDDB_INPUT;
+@@ -280,7 +303,6 @@
  #
  sub create_dirs {
    # Directory created will be: /outputdir/Artist - Album/
@@ -140,7 +148,7 @@
  
    $mp3dir = $outputdir.$artist." - ".$album."/";
  
-@@ -336,31 +357,37 @@
+@@ -336,31 +358,37 @@
      $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
      $riptrackno = $_;
  
@@ -182,7 +190,7 @@
        }
      }
      elsif ($cdripper == 4) {
-@@ -369,9 +396,37 @@
+@@ -369,9 +397,37 @@
        $cdd_dev =~ s/c$//;
        if (system("cdd -t $riptrackno -q -f $cdd_dev - 2>/dev/null | sox -t cdr -x - \"$riptrackname.rip\"")) {
          &printflush(RIPLOG,"cdd failed on $tracklist[$_ - 1]\n");
@@ -220,7 +228,7 @@
      else {
        die "No CD Ripper defined";
      }
-@@ -381,11 +436,13 @@
+@@ -381,11 +437,13 @@
      rename "$riptrackname.rip","$riptrackname.wav";
  
      &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
@@ -238,7 +246,7 @@
      }
  
    }
-@@ -407,24 +464,37 @@
+@@ -407,24 +465,37 @@
      $riptrackno = $_;
      $ncount++;
   
@@ -281,7 +289,7 @@
      }
  
      if ( ! system("$enc >$enclog 2>&1 </dev/null")) {
-@@ -438,7 +508,8 @@
+@@ -438,7 +509,8 @@
        &printflush(RIPLOG,"MP3 Encoder Failed on $tracklist[$_ - 1]\n");
        die "MP3 Encoder Failed on $tracklist[$_ - 1]";
      }
@@ -291,7 +299,7 @@
    }
    exit ;
  }
-@@ -452,10 +523,10 @@
+@@ -452,10 +524,10 @@
    $file="$artist.m3u";
    if ($use_underscore == 1) { $file =~ s/ /_/g; }
  
