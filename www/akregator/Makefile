@@ -5,10 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	akregator
-PORTVERSION=	1.0.b3
+PORTVERSION=	1.0.b4f
 CATEGORIES=	www kde
-MASTER_SITES=	http://akregator.upnet.ru/
-DISTNAME=	akregator-1.0_beta3
+#SF has some problem. This is a temporary mirror.
+MASTER_SITES=	http://berk.upnet.ru/projects/kde/akregator/download/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	akregator-1.0_beta4fixed
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS aggregator for KDE
