@@ -34,6 +34,10 @@
 %%FONTSDIR%%/monak16B.pcf.gz
 %%FONTSDIR%%/monak16BI.pcf.gz
 %%FONTSDIR%%/monak16I.pcf.gz
+%%FONTSDIR%%/monau16.pcf.gz
+%%FONTSDIR%%/monau16B.pcf.gz
+%%FONTSDIR%%/monau16BI.pcf.gz
+%%FONTSDIR%%/monau16I.pcf.gz
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monafonts
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 PORTEPOCH=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://members.tripod.co.jp/s42335/mona/dist/
@@ -18,6 +18,7 @@ FONTSDIR=	lib/X11/fonts/local
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	bdf
+MAKE_ARGS=	PREFIX=${PREFIX}
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
