@@ -59,7 +59,6 @@ saint/bin/showmount.saint
 saint/bin/smb.saint
 saint/bin/smurf.saint
 saint/bin/snmp.saint
-saint/bin/ssh.sara
 saint/bin/statd.saint
 saint/bin/sys_socket
 saint/bin/tcp_scan
@@ -73,6 +72,7 @@ saint/bin/xhost.saint
 saint/bin/yp-chk
 saint/bin/yp-chk.saint
 saint/bin/ypbind.saint
+saint/bin/ssh.saint
 saint/config/SNMP_communities.pl
 saint/config/passwd
 saint/config/paths.pl
@@ -307,6 +307,8 @@ saint/html/tutorials/vulnerability/unrestricted_modem.html
 saint/html/tutorials/vulnerability/winnuke.html
 saint/html/tutorials/vulnerability/writable_FTP_directory.html
 saint/html/tutorials/vulnerability_tutorials.pl
+saint/html/tutorials/vulnerability/LPRng_vulnerability.html
+saint/html/tutorials/vulnerability/tinyproxy_vulnerability.html
 saint/include/glibc21/arpa/inet.h
 saint/include/glibc21/rpc/auth.h
 saint/include/glibc21/rpc/auth_des.h
