@@ -2,8 +2,8 @@ Use mkfifo instead of mknod to create a FIFO.  Mknod require root
 privileges.
 
 Index: buildlectern/src/POSIX/OSUtilsPosix.m3
---- OSUtilsPosix.m3.orig	Mon May 20 13:04:46 1996
-+++ OSUtilsPosix.m3	Thu Jul 10 21:03:34 1997
+--- buildlectern/src/POSIX/OSUtilsPosix.m3.orig	Mon May 20 13:04:46 1996
++++ buildlectern/src/POSIX/OSUtilsPosix.m3	Thu Jul 10 21:03:34 1997
 @@ -32,10 +32,10 @@
  VAR pFifo: TEXT := NIL;
  
