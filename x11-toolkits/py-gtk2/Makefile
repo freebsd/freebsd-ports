@@ -3,11 +3,11 @@
 # Date created:				12/26/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.19 1999/02/22 21:59:15 nectar Exp $
+# $Id: Makefile,v 1.20 1999/02/28 09:28:34 obrien Exp $
 #
 
-DISTNAME=	pygtk-0.5.10
-PKGNAME=	py-gtk-0.5.10
+DISTNAME=	pygtk-0.5.11
+PKGNAME=	py-gtk-0.5.11
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://stef.u-picardie.fr/mirror/ftp.gimp.org/gtk/python/
 
 MAINTAINER=	nectar@FreeBSD.ORG
-
-BROKEN= 'sites either have much older than 0.5.10, or 0.5.11'
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
