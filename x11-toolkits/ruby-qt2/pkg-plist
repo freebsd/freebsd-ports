@@ -19,9 +19,15 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/classtree.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows3.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/classbrows/qt2brows5.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/codec/codec.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/codec/codec2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/colorButton/colorButton.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/colorButton/colorButton2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/cursor/cursor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/dclock/README.orig
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/dclock/dclock.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/dclock/dclock_lib.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/deleteQObj/test3.rb
@@ -42,6 +48,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/htmlviewer.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/helpviewer/htmlwindow_lib.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/layout/layout.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/listview/flag_ja.xpm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/listview/listview.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/document.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/fileopen.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/mdi/fileprint.xpm
@@ -53,8 +61,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/movies/movies.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/popup/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/popup/popup.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/test.ps
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/temp.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/editcopy.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/editcut.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/editpaste.xpm
@@ -62,14 +68,20 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/fileprint.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/filesave.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/kde2ps
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/readme.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/rubyedit2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/rubyedit/rubyedit2_lib.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/scribble2/qtscribble.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/scribble2/qtscribble_win.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/scribble2/qtscribble_ex.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/signal/hello_signal.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/signal/hello_signal_jp.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/dclock_lib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/dclock_sub.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/iqt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/iqt2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/thread/memoclock.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/translate/translate.po
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/translate/translate.qm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/translate/translate.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/README.orig
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/fileopen.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/aclock_lib.rb
@@ -82,10 +94,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/tt-logo.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/filesave.xpm
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/widgets.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/listview/flag_ja.xpm
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/listview/listview.cpp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/listview/listview.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/widgets/listview/listview2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xform/README.orig
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xform/image.any
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/qt2/xform/picture.any
@@ -95,20 +103,24 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/application_ruby
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/buttongroups
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/classbrows
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/codec
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/colorButton
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/cursor
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/dclock
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/deleteQObj
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/hello
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/hello_ruby
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/helpviewer
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/layout
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/listview
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/mdi
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/movies
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/popup
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/rubyedit
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/scribble2
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/signal
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/widgets/listview
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/thread
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/translate
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/widgets
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2/xform
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/qt2
