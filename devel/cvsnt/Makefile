@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsnt
-PORTVERSION=	2.0.26
+PORTVERSION=	2.0.34
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/ \
 		http://homepages.nildram.co.uk/~tmhoyle/
