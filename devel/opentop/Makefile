@@ -7,7 +7,7 @@
 
 PORTNAME=	opentop
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	open-top
@@ -93,7 +93,8 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}; \
-	cd ${WRKSRC}; ${FIND} ot -name *.h -print | ${TAR} cTf - - | \
+	cd ${WRKSRC}; ${FIND} ot \( -name "*.h" -o -name "*.inl" \) -print | \
+			${TAR} cTf - - | \
 			${TAR} xUCf ${PREFIX}/include/${PORTNAME} - ; \
 	${FIND} lib \( -name "*.so" -o -name "*.a" \) -exec \
 		${INSTALL_PROGRAM} \{\} ${PREFIX}/lib \;
