@@ -19,13 +19,18 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
+.if defined(INSTALL_AS_NCFTP)
+LATEST_LINK=	ncftp
+.else
 LATEST_LINK=	ncftp3
+.endif
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses
-MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
+PLIST_SUB=	NCFTP=${LATEST_LINK}
+MAN1=		${LATEST_LINK}.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 \
 		ncftpspooler.1
 MAN3=		Strn.3
 
@@ -33,13 +38,18 @@ LIBNCFTP=	libncftp.so.2
 LIBSIO=		libsio.so.5
 LIBSTRN=	libStrn.so.1
 
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "Use INSTALL_AS_NCFTP=yes to install ncftp3 as ${PREFIX}/bin/ncftp"
+	@${ECHO} ""
+
 pre-build:
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
 	cd ${WRKSRC}/sio; make so
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/ncftp ${PREFIX}/bin/ncftp3
+	@${INSTALL_PROGRAM} ${WRKSRC}/bin/ncftp ${PREFIX}/bin/${LATEST_LINK}
 	@cd ${WRKSRC}/bin ; ${INSTALL_PROGRAM} \
 		ncftpbatch ncftpget ncftpls ncftpput ncftpbookmarks \
 		${PREFIX}/bin
@@ -51,7 +61,8 @@ do-install:
 		&& ${LN} -sf ${LIBSTRN} libStrn.so \
 		&& ${LN} -sf ${LIBNCFTP} libncftp.so \
 		&& ${LN} -sf ${LIBSIO} libsio.so
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/ncftp.1 ${PREFIX}/man/man1/ncftp3.1
+	@${INSTALL_MAN} ${WRKSRC}/doc/man/ncftp.1 \
+		${PREFIX}/man/man1/${LATEST_LINK}.1
 	@cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} \
 		ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1 ncftpspooler.1 \
 		${PREFIX}/man/man1

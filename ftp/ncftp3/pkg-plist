@@ -5,9 +5,10 @@ lib/libncftp.so
 lib/libncftp.so.2
 lib/libsio.so
 lib/libsio.so.5
-bin/ncftp3
+bin/%%NCFTP%%
 bin/ncftpbatch
 bin/ncftpget
 bin/ncftpls
 bin/ncftpput
 bin/ncftpbookmarks
+bin/ncftpspooler
