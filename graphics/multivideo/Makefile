@@ -8,6 +8,7 @@
 
 PORTNAME=	multivideo
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lis.inpg.fr/scientifique/bonnaud/multivideo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image sequence viewer
 
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
