@@ -1,0 +1,20 @@
+--- kmud/cpluginmanager.cpp.orig	Sun Nov  5 07:55:13 2000
++++ kmud/cpluginmanager.cpp	Thu Jan 18 05:20:32 2001
+@@ -109,7 +109,7 @@
+ 	int i;
+ 	void* handle=NULL;
+ 	KmudPlugin* (*create_function)(void);
+-	char* error;
++	const char* error;
+ 	bool b;
+ 
+ 	// search plugin
+@@ -229,7 +229,7 @@
+ 	PluginInfo* info;
+ 	int i;
+ 	bool b;
+-	char* error;
++	const char* error;
+ 	QString name;
+ 
+ 	// search plugin
