@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# MAINTAINER= mharo@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+patch $@ < pr-patch
+find . -name '*.orig' -print -delete
+find . -name '*.rej'  -print

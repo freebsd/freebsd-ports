@@ -1,0 +1,81 @@
+#!/usr/bin/perl
+#
+# MAINTAINER= mharo@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+use strict; 
+
+my $pr = shift;
+
+if ($pr eq "") {
+	print STDERR "getpr prnum\n";
+	exit 1
+}
+
+# get the PR off of freefall
+
+open(D, "> $pr") or die "$pr: $!";
+open(PATCH, "> pr-patch") or die "pr-patch: $!";
+open(PR, " ssh freefall query-pr -F $pr | ") or die $!;
+
+my $fix = "";
+my $infix = 0;
+
+while(<PR>) {
+	print D;
+
+	if (m/^>Release-Note:/) {
+		$infix = 0;
+	}
+	if ($infix == 1) {
+		print PATCH;
+	}
+	if (m/^>Fix:/) {
+		$infix = 1;
+	}
+}
+close(D);
+close(PR);
+close(PATCH);
+
+# decode the submission attempting to find a file attachment by extension
+# .tar.gz, .shar or just .gz, if not found, display what we think of as
+# the file submission (probably just a patch)
+
+open(PATCH, "pr-patch");
+while(<PATCH>) {
+	if (m/^# This is a shell archive.  Save it in a file, remove anything before/) {
+		&shar;
+		exit;
+	}
+	if (m/^begin (\d+)? (.*)/) {
+		&uudecode($2);
+		close(PATCH);
+		exit;
+	}
+}
+
+close(PATCH);
+system("more pr-patch");
+
+exit;
+
+sub uudecode {
+	my ($fname) = @_;
+
+	$fname =~ s/\s+$//g;
+	print "$fname\n";
+
+	print `uudecode pr-patch`;
+	if (($fname =~ m/.tar.gz$/) || ($fname =~ m/.tgz$/)) {
+		print "you may extract this tarball by typing tar xvzf $fname\n";
+	} elsif ($fname =~ m/.gz$/) {
+		print `gunzip $fname`;
+	}
+}
+
+sub shar {
+	print "you may extract this shar archive by typing sh pr-patch\n";
+}

@@ -1,0 +1,56 @@
+#!/bin/sh
+#
+# MAINTAINER= mharo@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+# $Id: prdone,v 1.4 2000/04/22 21:48:53 mharo Exp $
+
+if [ $# -lt 1 ] ; then
+	echo "prdone prnumber [ci]"
+	exit 1
+fi
+
+file=$1; shift
+action=$1;
+
+if [ "X$file" = "Xci" ] ; then
+	echo "hey, dumbass, the PR number is not 'ci'"
+	exit 1
+fi
+
+rm -f pr-patch
+rm -f MAINTAINER_WAIT
+
+if [ "X$action" = "Xci" ] ; then
+	echo "preparing commit"
+cvsmsg=cvsmsg
+	cp /home/ncvs/CVSROOT/rcstemplate CVS/Template
+
+	from=`grep From: $file | sed -e 's/From: //' -e 's/\@/\\\@/g'`
+	name=`grep Originator: $file | sed -e 's/>Originator: //'`
+	synopsis=`grep Synopsis: $file | sed -e 's/>Synopsis: //'`
+	cp /home/ncvs/CVSROOT/rcstemplate $cvsmsg
+	chmod +w $cvsmsg
+	/usr/bin/perl -pi -e "s,^PR:,PR:\t\t$file," $cvsmsg
+	/usr/bin/perl -pi -e "s,^Submitted by:,Submitted by:\t$name <$from>," $cvsmsg
+	echo "$synopsis" > $cvsmsg.tmp
+	cat $cvsmsg >> $cvsmsg.tmp
+	mv $cvsmsg.tmp $cvsmsg
+	vi $cvsmsg
+
+	cvs -d mharo@freefall.freebsd.org:/home/ncvs ci -F $cvsmsg
+	rm -f $cvsmsg
+	echo "done"
+else
+	echo "PR: $file" > MAINTAINER_WAIT
+	echo ""
+	echo "Don't forget to email" `grep MAINTAINER Makefile`
+	echo ""
+fi
+
+# remove pr number after we commit as I always forget to track PR number
+rm -f $file
+
+ssh freefall.freebsd.org -t edit-pr $file
