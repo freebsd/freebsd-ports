@@ -19,7 +19,6 @@ share/doc/mutt/README.JA-PATCH.en
 share/doc/mutt/README.JA-PATCH.ja
 share/doc/mutt/README.SECURITY
 share/doc/mutt/README.SSL
-share/doc/mutt/README.UPGRADE
 share/doc/mutt/TODO
 share/doc/mutt/applying-patches.txt
 share/doc/mutt/devel-notes.txt
@@ -44,6 +43,7 @@ share/doc/mutt/samples/Mush.rc
 share/doc/mutt/samples/Pine.rc
 share/doc/mutt/samples/Tin.rc
 share/doc/mutt/samples/gpg.rc
+share/doc/mutt/samples/mutt-en.rc
 share/doc/mutt/samples/mutt-ja.rc
 share/doc/mutt/samples/pgp2.rc
 share/doc/mutt/samples/pgp5.rc

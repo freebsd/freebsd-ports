@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja${JP_VERSION}${EXTRACT_SUFX} \
-		manual_ja-${VERSION:R}i-0${EXTRACT_SUFX}
+		manual_ja-${MANUALVERSION}-0${EXTRACT_SUFX}
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
 
@@ -29,8 +29,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.20
+VERSION=	1.3.22.1
 JP_VERSION=	0
+MANUALVERSION=	1.3i
 
 DIST_SUBDIR=	mutt
 NO_LATEST_LINK=	yes
@@ -45,7 +46,8 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--enable-flock --disable-fcntl \
 		--sysconfdir=${PREFIX}/etc \
 		--with-docdir=${PREFIX}/share/doc/mutt \
-		--enable-pop --enable-imap
+		--enable-pop --enable-imap \
+		--enable-default-japanese
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
@@ -62,8 +64,7 @@ CONFIGURE_ARGS+=	--with-ssl
 
 DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}
 DIFFNAME=	${DISTNAME}-ja${JP_VERSION}.diff
-SRCDOCDIR=	${WRKDIR}/manual_ja-${VERSION:R}i
-DOCDIR=		${PREFIX}/share/doc/mutt
+SRCDOCSDIR=	${WRKDIR}/manual_ja-${MANUALVERSION}
 
 pre-patch:
 	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
@@ -72,19 +73,20 @@ pre-configure:
 	(cd ${WRKSRC}; aclocal -I m4)
 
 post-install:
-	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.en ${DOCDIR}
-	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.en ${DOCDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCDIR}
-	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.ja.html ${DOCDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.en.html ${DOCDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.ja.html ${DOCDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/sample/mutt-ja.rc ${DOCDIR}/samples
-	${INSTALL_DATA} ${DIFFDIR}/sample/sample.muttrc-tt ${DOCDIR}/samples
-	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.txt ${DOCDIR}
-	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.tex ${DOCDIR}
-	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.html ${DOCDIR}
-	${INSTALL_DATA} ${SRCDOCDIR}/manual_ja.sgml ${DOCDIR}
+	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.en ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.en ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.en.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.ja.html ${DOCSDIR}/html
+	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-en.rc ${DOCSDIR}/samples
+	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-ja.rc ${DOCSDIR}/samples
+	${INSTALL_DATA} ${DIFFDIR}/samples/sample.muttrc-tt ${DOCSDIR}/samples
+	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.tex ${DOCSDIR}
+	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.sgml ${DOCSDIR}
 
 .include <bsd.port.post.mk>
