@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.31a
-PORTREVISION=	1
+PORTVERSION=	2.32
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/
 PKGNAMESUFFIX=	-devel
