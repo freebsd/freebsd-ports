@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	206p1
-PORTREVISION=	1
+PORTVERSION=	208
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -15,7 +14,8 @@ MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/${PORTVERSION}/plt/ \
 		ftp://infogroep.be/pub/plt/bundles/${PORTVERSION}/plt/ \
 		ftp://morpheus.wish.com.mx/pub/plt/${PORTVERSION}/plt/
-DISTNAME=	plt-${PORTVERSION}-src-unix
+DISTFILES=	plt-${PORTVERSION}-src-unix.tgz ${PLTPATCHES}
+EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org
@@ -29,6 +29,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 
 PLTHOME=	${PREFIX}/drscheme
+PLTPATCHES=	plt-208-p1.plt
 DRS_B=		drscheme mred mzc mzscheme tex2page help-desk
 MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
 
@@ -36,6 +37,9 @@ ONLY_FOR_ARCHS=	i386
 
 post-install:
 	cd ${PLTHOME} && bin/setup-plt
+.for f in ${PLTPATCHES}
+	cd ${PLTHOME} && bin/setup-plt ${_DISTDIR}/${f}
+.endfor
 .for f in ${DRS_B}
 	${LN} -s ${PLTHOME}/bin/$f ${PREFIX}/bin/$f
 .endfor
