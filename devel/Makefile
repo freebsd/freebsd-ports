@@ -127,6 +127,7 @@
     SUBDIR += newlib-m68k
     SUBDIR += newt
     SUBDIR += noweb
+    SUBDIR += oaf
     SUBDIR += omniORB
     SUBDIR += p5-AppConfig
     SUBDIR += p5-BSD-Resource
