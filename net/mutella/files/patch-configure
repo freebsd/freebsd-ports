@@ -1,0 +1,51 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Feb  5 20:36:13 2003
++++ configure	Sat Feb 15 02:11:03 2003
+@@ -5098,16 +5098,16 @@
+ fi
+ 
+ if test $g_link_threads = no ; then
+-		echo "$as_me:$LINENO: checking for pthread_create with -pthread in CFLAGS" >&5
+-echo $ECHO_N "checking for pthread_create with -pthread in CFLAGS... $ECHO_C" >&6
++		echo "$as_me:$LINENO: checking for pthread_create with ${PTHREAD_CFLAGS} in CFLAGS" >&5
++echo $ECHO_N "checking for pthread_create with ${PTHREAD_CFLAGS} in CFLAGS... $ECHO_C" >&6
+ if test "${g_cv_pthread_flag+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+ 				save_LIBS="$LIBS"
+ 		save_CFLAGS="$CFLAGS"
+-		LIBS="-pthread $LIBS"
+-		CFLAGS="-pthread $CFLAGS"
++		LIBS="${PTHREAD_LIBS} $LIBS"
++		CFLAGS="${PTHREAD_CFLAGS} $CFLAGS"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
+@@ -5153,8 +5153,8 @@
+ echo "${ECHO_T}$g_cv_pthread_flag" >&6
+ 
+ 	if test $g_cv_pthread_flag=yes ; then
+-		LTHREAD_LIBS="$LTHREAD_LIBS -pthread"
+-		LTHREAD_CFLAGS="$LTHREAD_CFLAGS -pthread"
++		LTHREAD_LIBS="$LTHREAD_LIBS ${PTHREAD_LIBS}"
++		LTHREAD_CFLAGS="$LTHREAD_CFLAGS ${PTHREAD_CFLAGS}"
+ 		g_link_threads=posix
+ 	fi
+ fi
+@@ -6621,13 +6621,6 @@
+ else
+   optimisation=false
+ fi;
+-if test $optimisation = true; then
+-	CFLAGS="$CFLAGS -O2"
+-	CXXFLAGS="$CXXFLAGS -O2"
+-else
+-	CFLAGS="$CFLAGS -O0"
+-	CXXFLAGS="$CXXFLAGS -O0"
+-fi
+ 
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then

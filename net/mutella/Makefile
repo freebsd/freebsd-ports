@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	mutella
-PORTVERSION=	0.4.3rc2
+PORTVERSION=	0.4.3
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://mutella.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mutella
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	A command line Gnutella client
 
 MAN1=		mutella.1
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|ulong|u_long|' \
-		${WRKSRC}/mutella/asyncsocket.cpp \
-		${WRKSRC}/mutella/asyncsocket.h
+CONFIGURE_TARGET= --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
