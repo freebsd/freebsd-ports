@@ -7,7 +7,7 @@
 +#INCLS = -I$(LIBPCAPDIR) 
  DEFS = @DEFS@ -DNMAP_VERSION=\"$(NMAP_VERSION)\" -DNMAP_NAME=\"$(NMAP_NAME)\" -DNMAP_URL=\"$(NMAP_URL)\" -DNMAP_PLATFORM=\"$(NMAP_PLATFORM)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
  CFLAGS = -g @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
-@@ -171,9 +171,13 @@
+@@ -171,9 +171,12 @@
  	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
  
 -install: $(TARGET)
@@ -21,6 +21,5 @@
 +install: $(TARGET)
 +	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir)
 +	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
-+	-$(MAKE) install-nmapfe
  	$(INSTALL) -c -m 644 docs/$(TARGET).1 $(mandir)/man1/$(TARGET).1
  	$(INSTALL) -c -m 644 nmap-os-fingerprints  $(nmapdatadir)/nmap-os-fingerprints
