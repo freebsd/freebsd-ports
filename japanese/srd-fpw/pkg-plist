@@ -1,0 +1,17 @@
+share/dict/srd-fpw/srd-fpw/data/honmon
+share/dict/srd-fpw/srd-fpw/gaiji/gai16f
+share/dict/srd-fpw/srd-fpw/gaiji/gai16h
+share/dict/srd-fpw/catalogs
+share/doc/srd-fpw/AUTHORS
+share/doc/srd-fpw/COPYING
+share/doc/srd-fpw/ChangeLog
+share/doc/srd-fpw/GAIJI.TXT
+share/doc/srd-fpw/NEWS
+share/doc/srd-fpw/README.PKG
+share/doc/srd-fpw/README.TXT
+share/doc/srd-fpw/TOBEDONE
+@dirrm share/dict/srd-fpw/srd-fpw/data
+@dirrm share/dict/srd-fpw/srd-fpw/gaiji
+@dirrm share/dict/srd-fpw/srd-fpw
+@dirrm share/dict/srd-fpw
+@dirrm share/doc/srd-fpw
