@@ -1,52 +1,88 @@
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/.#HISTORY.txt.1.88.2.11
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/CREDITS.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/ChangeLog
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/CustomizationPolicy.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/CustomizationPolicy.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/Upgrade.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/migration.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/nonmigrationFixes.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/package_plone.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/tidy_up.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions/view_source.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FactoryTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FactoryTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FolderWorkflow.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FolderWorkflow.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FormTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FormTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FormulatorTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/FormulatorTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/HISTORY.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/INSTALL.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/LICENSE.GPL
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/LICENSE.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/MembershipTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/MembershipTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/MigrationTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/MigrationTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/NavigationTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/NavigationTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneBatch.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneBatch.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneFolder.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneFolder.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneInitialize.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneInitialize.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneUtilities.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneUtilities.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneWorkflow.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PloneWorkflow.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Portal.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Portal.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PrivateSitePolicy.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PrivateSitePolicy.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PropertiesTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/PropertiesTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/StatelessTreeNav.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/StatelessTreeNav.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/WorkflowTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/WorkflowTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/data/navigation_properties
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/docs/NavigationTool.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/docs/README.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/docs/SiteTypes.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/CustomizationPolicy.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/CustomizationPolicy.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/FormTool.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/FormTool.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/NavigationController.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/NavigationController.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/.#beta3_rc1.py.1.1.2.4
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/alpha_beta.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/alpha_beta.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/beta1_beta2.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/beta1_beta2.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/beta2_beta3.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/beta2_beta3.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/beta3_rc1.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/beta3_rc1.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/final_one_zero_one.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/final_one_zero_one.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/migration_util.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/migration_util.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/rc1_rc2.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/rc1_rc2.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/rc2_final.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations/rc2_final.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/refresh.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/calendar_popup.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar/calendar_support.pt
@@ -103,102 +139,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki/wikipage_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki/wikipage_toc.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki/wikipage_view.pt
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/asp.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/avi.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/bmp.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/chm.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/doc.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-8.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-ambivalent.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-b.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-c.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-cat.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-d.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-e.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-f.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-g.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-h.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-i.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-k.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-l.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-laugh.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-m.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-n.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-p.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-s.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-sad.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-smile.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-star.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-surprised.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-t.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-tongue-in-cheek.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-u.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-unsure.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-wink.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/emoticon-y.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/empty.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/gif.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/gz.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/htm.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/html.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/icon-error.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/icon-info.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/icon-warning.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/jpeg.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/jpg.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/mov.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/mp3.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/mpeg.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/mpg.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/pdf.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/png.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/ppt.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/txt.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wav.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wiki-ftp.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wiki-http.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wiki-mailto.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wiki-news.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wiki-telnet.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/wiki-wiki.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/xls.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/xml.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/xsl.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons/zip.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_bold.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_cancel.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_center.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_colorpicker.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_copy.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_cut.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_emoticon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_image.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_indent.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_italicize.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_justify.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_left.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_link.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_mode.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_olist.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_outdent.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_paste.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_preview.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_print.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_redo.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_rem_formatting.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_right.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_save.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_table.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_ulist.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_underline.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/icon_undo.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/XsDhtmlEditor.htc.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/XsDhtmlEditorToolbarButton.htc.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/colorPicker.html.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/dlg_ins_table.html.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/emoticons.htc.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/index.html.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/license.html.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/ratings/rate_content.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/ratings/ratings_box.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_content/data.xml.pt
@@ -324,8 +264,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/print_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/print_icon.gif.properties
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/required.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/select_all_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/select_none_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/shopping_cart.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/site_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images/topic_icon.gif
@@ -353,8 +291,11 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/change_ownership.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/change_password.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/content_status_modify.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/disableSyndication.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/discussion_reply.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/document_edit.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/editSynProperties.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/enableSyndication.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/file_edit.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/folder_edit.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/getFilenameFromRequest.py
@@ -380,6 +321,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_reconfig.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_registration.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_sendto.py
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts/validate_synPropertiesForm.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/fromPortalTime.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/generateId.py
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/getFolderContents.py
@@ -425,49 +367,72 @@
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core/bullet.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core/dump.txt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core/logo.jpg
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core/stylesheet_properties.props
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core/user.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/arrowDown.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/arrowUp.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/bullet.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/linkTransparent.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/logo.jpg
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/ploneCustom.css.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted/user.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/arrowDown.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/arrowUp.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/bullet.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/linkOpaque.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/linkTransparent.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/required.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/logo.jpg
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/stylesheet_properties.props
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate/user.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/addFavorite.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/arrowDown.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/arrowUp.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/greensleeves/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/greensleeves/linkTransparent.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/greensleeves/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/arrowDown.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/arrowUp.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/bullet.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/linkTransparent.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/logo.jpg
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty/user.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/bullet.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/collector_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/collector_issue_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/discussionitem_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/document_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/event_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/favorite_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/file_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/folder.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/folder_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/image_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/info.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/linkOpaque.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/linkTransparent.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/link_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/logo.png
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/newsitem_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/popup_calendar.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/logo.jpg
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/readme.txt
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/required.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/stylesheet_properties.props
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/topic_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/user.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/wiki_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla/wikipage_icon.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/arrowDown.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/arrowUp.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/bullet.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/logo.jpg
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new/user.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/plone.css.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/ploneNS4.css.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/plonePresentation.css.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/plonePrint.css.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/arrowDown.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/arrowUp.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/bullet.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/linkTransparent.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/logo.jpg
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime/user.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/arrowDown.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/arrowUp.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/bullet.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/linkOpaque.gif
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/logo.jpg
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/ploneCustom.css.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/stylesheet_properties.props
+%%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed/user.gif
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates/batch_macros.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates/default_error_message.pt
 %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates/default_error_message.pt.properties
@@ -645,71 +610,80 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/RangedIntegerField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/StringField.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www/TextAreaField.gif
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/.cvsignore
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/build.sh
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/i18n-history.txt
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-cs-cz.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-da-dk.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-ca.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-cs.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-da.po
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-de.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-es-es.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-eu-es.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-fr-fr.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-eo.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-es.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-eu.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-fr.po
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-hu.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-it-it.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-ja-jp.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-nl-nl.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-it.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-ja.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-ko.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-nl.po
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-no.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-pl.po
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-pt-br.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-pt-pt.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-sv-se.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-tr-tr.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-uk-ru.po
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-uk-ua.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-pt.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-ru.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-sv.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-tr.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-uk.po
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-zh-cn.po
+%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone-zh-tw.po
 %%ZOPEBASEDIR%%/lib/python/Products/i18n/plone.pot
-%%ZOPEBASEDIR%%/lib/python/Products/i18n/plone_ko_kr.po
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/i18n
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/images
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/help
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/data
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/docs
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCollector
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFTopic
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWeblog
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/ratings
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_content
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_ecmascript
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_forms
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/autumn
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core_inverted
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/greensleeves
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/kitty
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla_new
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/prime
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/zed
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates/ui_slots
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_wysiwyg
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples/staging
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc/examples
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/doc
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/help
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/images
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/DCWorkflow
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/www
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_wysiwyg
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates/ui_slots
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_templates
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/mozilla
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/corporate
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/core
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles/autumn
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_styles
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts/form_scripts
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_scripts
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_images
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_forms
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_ecmascript
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_content
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/ratings
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES/Emoticons
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor/IMAGES
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/XSDHTMLEditor
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWiki
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFWeblog
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFTopic
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCollector
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty/CMFCalendar
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins/plone_3rdParty
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/skins
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/migrations
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/interfaces
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/docs
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/data
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone/Extensions
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/CMFPlone
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/help
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator/www
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Formulator
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/i18n
