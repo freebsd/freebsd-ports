@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		pptpclient
-PORTVERSION=		1.3.1
+PORTVERSION=		1.5.0
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pptpclient
-DISTNAME=		pptp-linux-1.3.1
+DISTNAME=		pptp-linux-1.5.0
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server

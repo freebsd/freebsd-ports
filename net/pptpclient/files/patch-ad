@@ -1,0 +1,11 @@
+--- pptp_gre.c.orig	Tue Jun 22 15:10:30 2004
++++ pptp_gre.c	Tue Jun 22 15:10:38 2004
+@@ -200,7 +200,7 @@
+ 	    int optval, optlen = sizeof(optval);
+ 	    warn("transmitted GRE packet triggered an ICMP destination unreachable, fragmentation needed, or exceeds the MTU of the network interface");
+ #define IP_MTU 14
+-	    if(getsockopt(fd, SOL_IP, IP_MTU, &optval, &optlen) < 0)
++	    if(getsockopt(fd, IPPROTO_IP, IP_MTU, &optval, &optlen) < 0)
+ 	      warn("getsockopt: %s", strerror(errno));
+ 	    warn("getsockopt: IP_MTU: %d\n", optval);
+ 	    return 0;
