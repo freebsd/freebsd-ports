@@ -36,8 +36,9 @@ USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 .if !defined(WITHOUT_JAVA)
-USE_JAVA=	1.4+
-NO_RUN_DEPENDS_JAVA=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_BUILD=	jdk
 .endif
 
 .include <bsd.port.pre.mk>
@@ -72,8 +73,18 @@ RELEASE_NR=		1.1.4
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
+
+# FIXME (Somehow INDEX build fails)
+.if defined(LANG_PKGNAME)
+PKGNAMEPREFIX=          ${LANG_PKGNAME}-
+.endif
+.if defined(LANG_SUFFIX)
+PKGNAMESUFFIX?=         -${LANG_SUFFIX}
+.endif
+
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-# FIXME
+
+# FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CC=	ccache gcc32
