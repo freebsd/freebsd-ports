@@ -1,74 +1,6 @@
-From girgen@elbas.partitur.se Fri Jul  2 10:46:50 1999
-Return-Path: <girgen@elbas.partitur.se>
-Received: from elbas.partitur.se (www.cebox.se [193.219.246.222])
-	by hub.freebsd.org (Postfix) with ESMTP
-	id 7618914F0E; Fri,  2 Jul 1999 10:46:48 -0700 (PDT)
-	(envelope-from girgen@elbas.partitur.se)
-Received: (from girgen@localhost)
-	by elbas.partitur.se (8.9.3/8.9.2) id TAA98285;
-	Fri, 2 Jul 1999 19:46:46 +0200 (CEST)
-	(envelope-from girgen)
-Message-Id: <199907021746.TAA98285@elbas.partitur.se>
-Date: Fri, 2 Jul 1999 19:46:46 +0200 (CEST)
-From: girgen@partitur.se
-Sender: girgen@elbas.partitur.se
-Reply-To: girgen@partitur.se
-To: FreeBSD-gnats-submit@freebsd.org
-Cc: billf@freebsd.org
-Subject: htdig's db shall compile with -pthreads
-X-Send-Pr-Version: 3.2
-
->Number:         12488
->Category:       ports
->Synopsis:       textproc/htdig compiles with -lc_r, should be -pthreads
->Confidential:   no
->Severity:       non-critical
->Priority:       low
->Responsible:    billf
->State:          open
->Quarter:        
->Keywords:       
->Date-Required:  
->Class:          change-request
->Submitter-Id:   current-users
->Arrival-Date:   Fri Jul  2 10:50:00 PDT 1999
->Closed-Date:    
->Last-Modified:  Fri Jul  2 11:03:28 PDT 1999
->Originator:     Palle Girgensohn
->Release:        FreeBSD 3.2-STABLE i386
->Organization:
-Partitur
->Environment:
-FreeBSD 3.2-STABLE i386 - ELF
-	
-
->Description:
-the version of Berkeley DB (from www.sleepycat.com, I think), that
-comes with the htdig source, shall be compiled with -pthreads, at
-least on ELF (didn't check aout).
-
-	
-
->How-To-Repeat:
-cd /usr/ports/textproc/htdig && make
-	
-
->Fix:
-Put this this patch in the patches dir as patch-ab:
-
---- ../../../htdig.orig/work/htdig-3.1.1/db/dist/configure.in	Wed Feb 17 06:03:41 1999
-+++ db/dist/configure.in	Wed Feb 24 14:59:30 1999
-@@ -405,7 +405,7 @@
- dnl libraries for threaded applications
- case "$host_os" in
- freebsd*) CPPFLAGS="-D_THREAD_SAFE $CPPFLAGS"
--	  LIBS="-lc_r";;
-+	  LIBS="-pthread";;
- irix*)    CPPFLAGS="-D_SGI_MP_SOURCE $CPPFLAGS";;
- osf*)	  CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
- solaris*) CPPFLAGS="-D_REENTRANT $CPPFLAGS"
---- ../../../htdig.orig/work/htdig-3.1.1/db/dist/configure	Wed Feb 17 06:03:41 1999
-+++ db/dist/configure	Wed Feb 24 14:41:19 1999
+diff -ur ../htdig-3.1.3.Dist/db/dist/configure ./db/dist/configure
+--- ../htdig-3.1.3.Dist/db/dist/configure	Wed Sep 22 09:18:15 1999
++++ ./db/dist/configure	Tue Oct 26 18:06:57 1999
 @@ -3056,7 +3056,7 @@
  
  case "$host_os" in
@@ -78,13 +10,15 @@ Put this this patch in the patches dir as patch-ab:
  irix*)    CPPFLAGS="-D_SGI_MP_SOURCE $CPPFLAGS";;
  osf*)	  CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
  solaris*) CPPFLAGS="-D_REENTRANT $CPPFLAGS"
-
->Release-Note:
->Audit-Trail:
-Responsible-Changed-From-To: freebsd-ports->billf 
-Responsible-Changed-By: billf 
-Responsible-Changed-When: Fri Jul 2 11:03:17 PDT 1999 
-Responsible-Changed-Why:  
-My port, my PR. 
->Unformatted:
-
+diff -ur ../htdig-3.1.3.Dist/db/dist/configure.in ./db/dist/configure.in
+--- ../htdig-3.1.3.Dist/db/dist/configure.in	Wed Sep 22 09:18:15 1999
++++ ./db/dist/configure.in	Tue Oct 26 18:06:46 1999
+@@ -405,7 +405,7 @@
+ dnl libraries for threaded applications
+ case "$host_os" in
+ freebsd*) CPPFLAGS="-D_THREAD_SAFE $CPPFLAGS"
+-	  LIBS="-lc_r";;
++	  LIBS="-pthread";;
+ irix*)    CPPFLAGS="-D_SGI_MP_SOURCE $CPPFLAGS";;
+ osf*)	  CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
+ solaris*) CPPFLAGS="-D_REENTRANT $CPPFLAGS"
