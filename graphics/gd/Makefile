@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.22
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-MAKE_ENV=	WRKSRC="${WRKSRC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV=	WRKSRC="${WRKSRC}" CC=${CC} CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 INSTALLS_SHLIB=	yes
 SCRIPTDIR=	${FILESDIR}
@@ -64,6 +64,8 @@ post-extract:
 	@${CP} ${FILESDIR}/g* ${WRKSRC}
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/gdfx.h ${WRKSRC}/gdhelpers.h \
+		${PREFIX}/include/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}

@@ -18,6 +18,8 @@ include/gdfontl.h
 include/gdfontmb.h
 include/gdfonts.h
 include/gdfontt.h
+include/gdfx.h
+include/gdhelpers.h
 lib/libgd.a
 lib/libgd.so
 lib/libgd.so.4
