@@ -1,15 +1,14 @@
 # New ports collection makefile for:    kaffe
-# Version required:     0.7.0
-# Date created:         6 January 1997
+# Version required:     0.8.0
+# Date created:         10 February 1997
 # Whom:                 Mark Huizer <xaa@stack.nl>
 #
-# $Id: Makefile,v 1.16 1997/01/26 07:07:23 asami Exp $
+# $Id: Makefile,v 1.17 1997/02/18 11:36:08 obrien Exp $
 #
 
-DISTNAME=	kaffe-0.7.1
+DISTNAME=	kaffe-0.8.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/ \
-		ftp://alterego.stack.nl/pub/kaffe/
+MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	xaa@stack.nl
@@ -31,6 +30,6 @@ pre-install:
 post-install:
 	${MKDIR} ${PREFIX}/share/kaffe
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
