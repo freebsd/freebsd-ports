@@ -209,6 +209,7 @@
     SUBDIR += libcdio
     SUBDIR += libchk
     SUBDIR += libretto-config
+    SUBDIR += libutempter
     SUBDIR += lineakd
     SUBDIR += linneighborhood
     SUBDIR += linux-acu

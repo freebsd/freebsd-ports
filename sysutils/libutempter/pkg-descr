@@ -1,0 +1,12 @@
+The libutempter library provides interface for terminal emulators such as
+screen and xterm to record user sessions to utmp and wtmp files.
+
+The utempter is a privileged helper used by libutempter library to manipulate
+utmp and wtmp files.
+
+This implementation is based on ideas of RedHat's utempter by Erik Troan
+(version 0.5.2 at the moment of writing).
+
+There are two interfaces supported: old and new.
+New API is recommended for new applications, old - for compatibility with
+old software.

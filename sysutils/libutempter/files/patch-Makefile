@@ -1,0 +1,47 @@
+--- Makefile.orig	Tue Dec 24 12:25:11 2002
++++ Makefile	Wed Aug 18 15:54:06 2004
+@@ -30,12 +30,12 @@
+ TARGETS = $(PROJECT) $(SHAREDLIB) $(STATICLIB)
+ 
+ INSTALL = install
+-libdir = /usr/lib
+-libexecdir = /usr/lib
+-includedir = /usr/include
+-DESTDIR =
++libdir = /lib
++libexecdir = /libexec
++includedir = /include
++DESTDIR = $(PREFIX)
+ 
+-CFLAGS = $(RPM_OPT_FLAGS) -DLIBEXECDIR=\"$(libexecdir)\"
++CFLAGS+= -DLIBEXECDIR=\"$(PREFIX)$(libexecdir)\"
+ 
+ all: $(TARGETS)
+ 
+@@ -51,13 +51,21 @@
+ 
+ iface.o: iface.c utempter.h
+ 
++$(PROJECT).o: $(PROJECT).c
++
++$(PROJECT): $(PROJECT).o
++	$(LINK.o) $(PROJECT).o -o $(PROJECT) -lutil
++
++
+ install:
+-	$(INSTALL) -pD -m2711 $(PROJECT) $(DESTDIR)$(libexecdir)/$(PROJECT)/$(PROJECT)
+-	$(INSTALL) -pD -m644 $(PROJECT).h $(DESTDIR)$(includedir)/$(PROJECT).h
+-	$(INSTALL) -pD -m755 $(SHAREDLIB) $(DESTDIR)$(libdir)/$(SHAREDLIB).$(VERSION)
+-	$(INSTALL) -pD -m644 $(STATICLIB) $(DESTDIR)$(libdir)/$(STATICLIB)
++	mkdir -p $(DESTDIR)$(libexecdir)/$(PROJECT) $(DESTDIR)$(includedir) \
++		$(DESTDIR)$(libdir)
++	$(INSTALL) -m4711 $(PROJECT) $(DESTDIR)$(libexecdir)/$(PROJECT)/$(PROJECT)
++	$(INSTALL) -m644 $(PROJECT).h $(DESTDIR)$(includedir)/$(PROJECT).h
++	$(INSTALL) -m755 $(SHAREDLIB) $(DESTDIR)$(libdir)/$(SHAREDLIB).$(VERSION)
++	$(INSTALL) -m644 $(STATICLIB) $(DESTDIR)$(libdir)/$(STATICLIB)
+ 	ln -s $(SHAREDLIB).$(VERSION) $(DESTDIR)$(libdir)/$(SONAME)
+ 	ln -s $(SONAME) $(DESTDIR)$(libdir)/$(SHAREDLIB)
+ 
+ clean:
+-	$(RM) $(TARGETS) iface.o iface.os core *~
++	$(RM) $(TARGETS) $(PROJECT).o iface.o iface.os core *~

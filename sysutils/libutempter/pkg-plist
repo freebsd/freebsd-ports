@@ -1,0 +1,7 @@
+include/utempter.h
+lib/libutempter.a
+lib/libutempter.so
+lib/libutempter.so.0
+lib/libutempter.so.1.1.1
+libexec/utempter/utempter
+@dirrm libexec/utempter
