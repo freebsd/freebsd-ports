@@ -1,0 +1,11 @@
+bin/gtkicq
+share/gnome/apps/Network/GtkICQ.desktop
+share/gnome/pixmaps/gnome-gtkicq.xpm
+share/gnome/pixmaps/gtkicq-away.xpm
+share/gnome/pixmaps/gtkicq-dnd.xpm
+share/gnome/pixmaps/gtkicq-ffc.xpm
+share/gnome/pixmaps/gtkicq-inv.xpm
+share/gnome/pixmaps/gtkicq-na.xpm
+share/gnome/pixmaps/gtkicq-occ.xpm
+share/gnome/pixmaps/gtkicq-offline.xpm
+share/gnome/pixmaps/gtkicq-online.xpm

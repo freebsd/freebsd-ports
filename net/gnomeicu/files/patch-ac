@@ -1,0 +1,52 @@
+--- Makefile.in.orig	Thu Oct 15 22:47:41 1998
++++ Makefile.in	Thu Oct 15 22:47:50 1998
+@@ -79,7 +79,7 @@
+ VERSION = @VERSION@
+ need_gnome_support = @need_gnome_support@
+ 
+-SUBDIRS = macros support src
++SUBDIRS = macros src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+--- src/Makefile.in.orig	Thu Oct 15 22:47:55 1998
++++ src/Makefile.in	Thu Oct 15 22:58:23 1998
+@@ -74,7 +74,7 @@
+ AWK = @AWK@
+ CC = @CC@
+ CPP = @CPP@
+-GNOMEUI_LIBS = @GNOMEUI_LIBS@
++GNOMEUI_LIBS = @GNOMEUI_LIBS@ -lintl
+ GNOME_INCLUDEDIR = @GNOME_INCLUDEDIR@
+ GNOME_LIBDIR = @GNOME_LIBDIR@
+ GNOME_LIBS = @GNOME_LIBS@
+@@ -94,7 +94,7 @@
+ SUBDIRS = xpms
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir) $(GNOME_INCLUDEDIR)
+ 
+ bin_PROGRAMS = gtkicq
+@@ -491,16 +491,16 @@
+ maintainer-clean
+ 
+ 
+-CFLAGS += -DUSE_XSCREENSAVER
++CFLAGS += -DUSE_XSCREENSAVER -DGTK_VERSION_1_1_1
+ 
+-LIBS += -L/usr/local/lib `glib-config --libs gmodule glib`
++LIBS += -L/usr/local/lib `glib-config --libs gmodule`
+ 
+ CFLAGS += -Wall -DUNIX -DGNOME -ggdb
+-CFLAGS += -DINTEL_END -UMOTOR_END `gtk-config --cflags`
++CFLAGS += -DINTEL_END -UMOTOR_END `gtk11-config --cflags`
+ 
+ # To Add Support for Sound, uncomment the following lines, and change the
+ # Sound directory where "Online.au" and "Message.au" are located.
+-CFLAGS += -DSOUNDDIR="\"/usr/share/ICQ/Sounds\""
++CFLAGS += -DSOUNDDIR="\"${prefix}/share/gnome/gicq/sounds\""
+ CFLAGS += -DFORK_SOUND
+ 
+ CFLAGS += -DSOUND
