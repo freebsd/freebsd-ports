@@ -4957,6 +4957,7 @@ p5-Net-Patricia	ports/net/p5-Net-Patricia
 p5-Net-Pcap	ports/net/p5-Net-Pcap
 p5-Net-Radius	ports/net/p5-Net-Radius
 p5-Net-RawIP	ports/net/p5-Net-RawIP
+p5-Net-SMPP	ports/net/p5-Net-SMPP
 p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
 p5-Net-SNMP	ports/net/p5-Net-SNMP
 p5-Net-SSH	ports/net/p5-Net-SSH
