@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	1.31
+PORTVERSION=	2.0
 CATEGORIES=	net
-MASTER_SITES=	http://members.optushome.com.au/darkmoon7/net/
+MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/
 
 MAINTAINER=	emikulic@optushome.com.au
 
