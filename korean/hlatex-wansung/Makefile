@@ -8,7 +8,7 @@
 PORTNAME=	HLaTeX-wansung
 PORTVERSION=	0.991
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/unsupported/
+MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/hlatex/
 DISTNAME=	wansung
 DIST_SUBDIR=	hlatex
 
