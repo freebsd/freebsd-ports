@@ -12,6 +12,9 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} ${APPENDIXFILES}
 
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	eb-2.3.7+.diff
+
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 EBFILES=	${DISTNAME}.tar.gz
