@@ -317,6 +317,7 @@
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mldonkey
+    SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-perlreactor
     SUBDIR += mldonkey-serverspy
