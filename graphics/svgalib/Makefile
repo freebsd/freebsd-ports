@@ -18,6 +18,8 @@ INSTALLS_SHLIB=	yes
 
 ALL_TARGET=	shared static
 
+ONLY_FOR_ARCH=	i386
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
