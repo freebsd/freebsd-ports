@@ -1,2 +1,2 @@
 #!/bin/sh
-ln -sf ${PKG_PREFIX}/bin/XFree86 ${PKG_PREFIX}/bin/X
+mv -f ${PKG_PREFIX}/bin/X.bck ${PKG_PREFIX}/bin/X
