@@ -1,45 +1,39 @@
---- src/Makefile.orig	Tue May  1 03:38:33 2001
-+++ src/Makefile	Fri May  4 05:15:57 2001
-@@ -1,12 +1,14 @@
- # Makefile for analog 5.0
+--- src/Makefile.orig	Wed Jan  9 21:16:22 2002
++++ src/Makefile	Wed Jan  9 21:18:38 2002
+@@ -1,14 +1,20 @@
+ # Makefile for analog 5.1
  # Please read docs/Readme.html, or http://www.analog.cx/
 -CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
 +CC ?= gcc           # which compiler to use: eg cc, acc, gcc. NB Different
  #                    compilers need different CFLAGS, e.g., -O instead of -O2.
+ MAKE = make        # which "make" to use
 -CFLAGS = -O2    # options, e.g. for optimisation or ANSI compilation.
-+LOCALBASE?=/usr/local
 +CFLAGS += -I${LOCALBASE}/include -I${LOCALBASE}/include/gd
 +#CFLAGS = -O2    # options, e.g. for optimisation or ANSI compilation.
  #                 HP/UX cc needs CFLAGS = -Aa (HP/UX 9) or -Ae (HP/UX 10)
+ #                 BeOS needs CFLAGS = -O2 -Wl,-L/boot/home/config/lib
  #                 BS2000/OSD needs CFLAGS = -XLLML -XLLMK
  #                 NeXTSTEP needs CFLAGS = -O2 -pipe -no-precomp 
 -DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
++DEFS = -DLOGFILE=\"/var/log/httpd-access.log\" \
++       -DIMAGEDIR=\"/images/\" \
++       -DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\" \
++       -DLANGDIR=\"${PREFIX}/share/analog/lang/\" \
++       -DCONFIGDIR=\"$(PREFIX)/share/analog/\"
 +#DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
  #                 ... -DNOOPEN -DNOFOLLOW -DNOALARM -DNOGRAPHICS -DNOGMTIME ...
  #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP -DHAVE_GD -DHAVE_PCRE ...
  #                 ... -DNEED_STRCMP -DNEED_MEMMOVE -DNEED_STRTOUL ...
-@@ -19,10 +21,23 @@
- #                 64-bit Solaris needs -DHAVE_ADDR_T
- #                 DYNIX/ptx needs -D_SOCKET_VERSION=11
- #                 MPE/iX needs -D_POSIX_SOURCE -D_SOCKET_SOURCE
-+DEFS =	-DLOGFILE=\"/var/log/httpd-access.log\" \
-+	-DIMAGEDIR=\"/images/\" \
-+	-DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\" \
-+	-DLANGDIR=\"${PREFIX}/share/analog/lang/\" \
-+	-DCONFIGDIR=\"$(PREFIX)/share/analog/\"
-+	
- #
+@@ -25,6 +31,12 @@
  OS = UNIX         # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS
  #                   RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400, OS390
--LIBS = -lm  # extra libraries needed; almost all platforms (but not OS X)
-+LIBS = -lm
+ LIBS = -lm  # extra libraries needed; most platforms (but not OS X or BeOS)
 +
 +.if !defined(WITHOUT_GD)
-+DEFS+=	-DHAVE_GD
-+LIBS+=  -L${LOCALBASE}/lib -lgd -lpng -ljpeg -lz 
++DEFS+= -DHAVE_GD
++LIBS+=  -L${LOCALBASE}/lib -lgd -lpng -ljpeg -lz
 +.endif
 +
-+# extra libraries needed; almost all platforms (but not OS X)
  #               need -lm LAST
  #             if you defined HAVE_GD above you also need -lgd -lpng -ljpeg -lz
  #             if you defined HAVE_PCRE above you also need -lpcre

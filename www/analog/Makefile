@@ -7,6 +7,7 @@
 
 PORTNAME=	analog
 PORTVERSION=	5.1
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://www.monash.edu.au/mirror/analog/ \
@@ -23,6 +24,10 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+LIMGDIR?=	www/data/images
+IMGDIR=		${PREFIX}/${LIMGDIR}
+PLIST_SUB=	IMGDIR=${LIMGDIR}
+
 MAN1=		analog.1
 ALL_TARGET=	analog
 
@@ -30,8 +35,8 @@ ALL_TARGET=	analog
 
 do-install:
 	${MKDIR} ${PREFIX}/share/analog/lang
-	${MKDIR} ${PREFIX}/share/analog/images
-	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/share/analog/images
+	${MKDIR} ${IMGDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/* ${IMGDIR}
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/share/analog/lang
 	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
 .if !exists(${PREFIX}/etc/analog.cfg)

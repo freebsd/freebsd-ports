@@ -1,6 +1,6 @@
---- src/tree.c.orig	Thu May  3 19:31:50 2001
-+++ src/tree.c	Thu May  3 19:32:22 2001
-@@ -803,8 +803,16 @@
+--- src/tree.c.orig	Wed Jan  9 21:20:12 2002
++++ src/tree.c	Wed Jan  9 21:20:24 2002
+@@ -886,8 +886,16 @@
      }
      else if (strstr(whole, "Linux") != NULL || strstr(whole, "linux") != NULL)
        *name = "Unix:Linux";

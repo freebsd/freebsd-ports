@@ -1,9 +1,9 @@
---- analog.cfg.orig	Thu May  3 19:27:47 2001
-+++ analog.cfg	Thu May  3 19:27:15 2001
-@@ -9,7 +9,8 @@
- # There is a much more extensive configuration file in examples/big.cfg
+--- analog.cfg.orig	Wed Jan  9 21:21:05 2002
++++ analog.cfg	Wed Jan  9 21:21:22 2002
+@@ -10,7 +10,8 @@
  #
- # If you need a LOGFORMAT command it must go here, above the LOGFILE commands.
+ # If you need a LOGFORMAT command (most people don't -- try it without first!),
+ # it must go here, above the LOGFILE commands.
 -LOGFILE logfile.log
 +LOGFORMAT COMBINED
 +LOGFILE /var/log/httpd-access.log
