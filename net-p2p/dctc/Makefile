@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.74
+PORTVERSION=	0.77
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.0
@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.0
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gthread-2.0.0:${PORTSDIR}/devel/glib20
 
 GNU_CONFIGURE=	yes
@@ -28,8 +29,11 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
 DOC_DIRS=	Documentation Documentation/DCextensions
 DOC_FILES=      COPYING ChangeLog INSTALL README \
 		KNOWN_BUGS TODO \
+		Documentation/BerkeleyDB \
+		Documentation/BerkeleyDB.nl \
 		Documentation/DCextensions/p2p_capabilities \
 		Documentation/DCextensions/search_by_content \
+		Documentation/GDL.nl \
 		Documentation/GDL Documentation/VAR \
 		Documentation/commands \
 		Documentation/programs.nl \
@@ -44,8 +48,12 @@ post-patch:
 	@${PERL} -pi -e 's/(CK?\()inet_ntoa(\))/\1shared_info\2/' ${WRKSRC}/src/*
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${PERL} -pi -e \
 		's|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_CFLAGS} -lgthread-1.3 ${PTHREAD_LIBS}|' \
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_CFLAGS} -lgthread-1.3 ${PTHREAD_LIBS}|; \
+		s|ldb-4.0|ldb4|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.for file in bdb.c main.c user_manage.c
+	@${PERL} -pi -e 's|<(db.h>)|<db4/\1|' ${WRKSRC}/src/${file}
+.endfor
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
