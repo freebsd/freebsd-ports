@@ -1,0 +1,14 @@
+Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/Gomoku
+Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps/library_paths.openapp
+Local/Apps/Gomoku.app/Gomoku
+Local/Apps/Gomoku.app/Resources/Info-gnustep.plist
+Local/Apps/Gomoku.app/Resources/Gomoku.tiff
+Local/Apps/Gomoku.app/Resources/computer.tiff
+Local/Apps/Gomoku.app/Resources/human.tiff
+Local/Apps/Gomoku.app/Resources/nothing.tiff
+@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf/gnu-gnu-gnu-xgps
+@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/freebsdelf
+@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%
+@dirrm Local/Apps/Gomoku.app/Resources
+@dirrm Local/Apps/Gomoku.app
+@unexec rmdir %D/Local/Apps 2>/dev/null || true

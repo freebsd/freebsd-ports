@@ -76,6 +76,7 @@
     SUBDIR += gnugo
     SUBDIR += gnushogi
     SUBDIR += golddig
+    SUBDIR += gomoku.app
     SUBDIR += gracer
     SUBDIR += gru
     SUBDIR += gtetrinet
