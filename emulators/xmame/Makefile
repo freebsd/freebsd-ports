@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.37b13.1
+PORTVERSION?=	0.37b13.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -17,19 +17,13 @@ MASTER_SITES=	http://x.mame.net/download/ \
 DISTNAME=	xmame-${XMAMEVERSION:S/p/pre/}
 DIST_SUBDIR=	xmame
 XMAMEVERSION?=	${PORTVERSION}
-.if ${XMAMEVERSION} == "0.37b12.1"
-EXTRACT_SUFX=	.tgz
-.else
 USE_BZIP2=	yes
-EXTRACT_SUFX=	.tar.bz2
-.endif
 
 MAINTAINER?=	stijn@win.tue.nl
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKEFILE=	makefile.unix
 
 MAN6=		x${MAMEMESS}.6
 
@@ -57,6 +51,7 @@ SPOOLGAMES?=	/var/games
 # Docs list
 GENERALDOCS=	changes.unix \
 		liesmich.unix \
+		credits.txt \
 		multiplayer-readme.txt \
 		xmame-doc-1.html \
 		xmame-doc-2.html \
@@ -71,11 +66,9 @@ GENERALDOCS=	changes.unix \
 		xmame-doc.sgml \
 		xmame-doc.txt
 XMAMEDOCS=	changes.mame \
-		changes.opengl \
 		gamelist.mame \
 		readme.mame
 XMESSDOCS=	changes.mess \
-		credits.txt \
 		gamelist.mess \
 		readme.mess \
 		messold.txt \
@@ -86,6 +79,7 @@ PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/gamelist.txt \
 		pinmame/keys.txt \
 		pinmame/sounds.dat
+GLDOCS=		changes.opengl
 .if ${MAMEMESS} == "mame"
 ALLDOCS=	${GENERALDOCS} ${XMAMEDOCS}
 .else
@@ -99,7 +93,7 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 # CPS-2 patches - this enables extra games in MAME.
 .if ${MAMEMESS} == "mame"
 .if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
-CPS2VERSION=	20010330
+CPS2VERSION=	20010409
 
 PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
 PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
@@ -169,6 +163,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 USE_MESA=	yes
 DISPLAY_METHOD=	xgl
 PLIST_SUB+=	OPENGL=""
+ALL_DOCS+=	${GLDOCS}
 .else
 PLIST_SUB+=	OPENGL="@comment "
 .if !defined(WITH_SDL) || ${WITH_SDL} != "no"
@@ -188,15 +183,23 @@ DISPLAY_METHOD=	x11
 .endif
 .endif
 
+# Some simple patches that don't warrant a separate patch
+post-patch:
+	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
+	${PERL} -pi -e 's@png.h@../../png.h@' \
+				${WRKSRC}/src/unix/video-drivers/glexport.c
+	${PERL} -pi -e 's@malloc.h@stdlib.h@' \
+				${WRKSRC}/src/unix/video-drivers/gljpg.c
+
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
 do-configure:
-	@${CP} ${WRKSRC}/makefile.unix ${WRKSRC}/makefile.unix.sed
 	${SED} -e "s@= gcc@?=  ${CC}@g" \
 		-e "s@= -O2 -Wall@?=  ${CFLAGS}@g" \
 		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" \
 		-e "s@lib/x\$$(TARGET)@share/x\$$(TARGET)@g" \
 		-e "s@/usr/X11R6@${X11BASE}@g" \
+		-e "s@-g bin@-g wheel@g" \
 		-e "s@ARCH  = linux@ARCH  = freebsd@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
 		-e "s@# JOY_USB@JOY_USB@g" \
@@ -204,20 +207,13 @@ do-configure:
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
 		-e "s@GLLIBS=.-ldl@GLLIBS= ${PTHREAD_LIBS}@g" \
-			${WRKSRC}/makefile.unix.sed > ${WRKSRC}/makefile.unix
-	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
-.if ${XMAMEVERSION} != "0.37b12.1"
-	${PERL} -pi -e 's@png.h@../../png.h@' \
-				${WRKSRC}/src/unix/video-drivers/glexport.c
-	${PERL} -pi -e 's@malloc.h@stdlib.h@' \
-				${WRKSRC}/src/unix/video-drivers/gljpg.c
-.endif
+			${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
-		${GMAKE} -f ${MAKEFILE} doc/x${MAMEMESS}.6
+		${GMAKE} doc/x${MAMEMESS}.6
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
-		${GMAKE} -f ${MAKEFILE} doc/x${MAMEMESS}rc.dist
+		${GMAKE} doc/x${MAMEMESS}rc.dist
 	@${CP} ${WRKSRC}/doc/x${MAMEMESS}rc.dist \
 		${WRKSRC}/doc/x${MAMEMESS}rc.dist.sed
 	${SED} -e "s@^spooldir.*\$$@spooldir		${SPOOLGAMES}/x${MAMEMESS}@" \
@@ -242,6 +238,11 @@ post-install:
 .for file in ${ALLDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/x${MAMEMESS}
 .endfor
+.if ${MAMEMESS} == "mess"
+	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}/sysinfo
+	${INSTALL_DATA} ${WRKSRC}/doc/sysinfo/* \
+		${PREFIX}/share/doc/x${MAMEMESS}/sysinfo
+.endif
 .endif
 .if ${MAMEMESS} == "mame" && defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
 	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${PREFIX}/share/xmame
