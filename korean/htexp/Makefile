@@ -15,7 +15,7 @@ DISTFILES=	htexp-freebsd-3.2 tex.poo unpacked.tar.gz
 DIST_SUBDIR=	htex
 EXTRACT_ONLY=	unpacked.tar.gz
 
-MAINTAINER=     cjh@FreeBSD.org
+MAINTAINER=	cjh@FreeBSD.org
 
 # it depends teTeX.
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
@@ -25,7 +25,7 @@ TEXMF=		${PREFIX}/share/texmf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 320000
-BROKEN=         "Systems prior to 3.2-RELEASE is out of support"
+BROKEN=	"Systems prior to 3.2-RELEASE is out of support"
 .endif
 
 .if ${OSVERSION} > 400000 && !exists(/usr/lib/compat/libc.so.3)

@@ -10,7 +10,7 @@ PORTVERSION=	3.04
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/terminal/hanterm/hanterm304beta/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/terminal/hanterm/hanterm304beta/fonts/
-DISTNAME=       hanterm304fonts
+DISTNAME=	hanterm304fonts
 
 MAINTAINER=	cjh@FreeBSD.org
 
