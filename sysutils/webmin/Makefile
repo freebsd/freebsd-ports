@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.980
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -24,7 +24,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	passwd-0.980-1.wbm.gz cpan-0.980-1.wbm.gz
+WEBMIN_MODULES=	passwd-0.980-1.wbm.gz cpan-0.980-1.wbm.gz \
+		postgresql-0.980-1.wbm.gz lpadmin-0.980-2.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
