@@ -11,6 +11,7 @@ CATEGORIES=	japanese python converters
 MASTER_SITES=	http://www.asahi-net.or.jp/~rd6t-kjym/python/kanjilib/dist/
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Japanese text processing library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

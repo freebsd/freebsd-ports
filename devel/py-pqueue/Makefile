@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PQueue-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

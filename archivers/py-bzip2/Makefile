@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-bz2-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python Interface for bz2 Compression Library
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

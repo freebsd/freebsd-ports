@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python library for reading and writing tarballs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

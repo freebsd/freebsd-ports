@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygdchart-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to GDChart
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 

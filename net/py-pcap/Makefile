@@ -15,6 +15,7 @@ DISTNAME=	pylibpcap-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to LBL Packet Capture library (libpcap)
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11
 

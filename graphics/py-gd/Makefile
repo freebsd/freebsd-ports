@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gdmodule-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to the GD library
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 

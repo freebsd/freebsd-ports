@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-irclib-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	IRC protocol client library for Python
 
 USE_PYTHON=	yes
 

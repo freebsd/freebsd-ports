@@ -15,6 +15,7 @@ DISTNAME=	SOAPpy${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Web service libraries includes SOAP, WSDL, UDDI, etc
 
 USE_PYTHON=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}

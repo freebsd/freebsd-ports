@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pywordnet-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python Interface to WordNet
 
 RUN_DEPENDS=	${WORDNETBASE}/lexnames:${PORTSDIR}/textproc/wordnet
 

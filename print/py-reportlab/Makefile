@@ -14,6 +14,7 @@ DISTNAME=	ReportLab_${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Library to create PDF documents using the Python language
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

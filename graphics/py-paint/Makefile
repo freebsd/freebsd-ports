@@ -12,6 +12,7 @@ MASTER_SITES=	http://object-craft.com.au/projects/paint/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Simple and flexible painting adaptor to libart for Python
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

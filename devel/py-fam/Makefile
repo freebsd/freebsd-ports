@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-fam-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python Interface to the File Alteration Monitor
 
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 

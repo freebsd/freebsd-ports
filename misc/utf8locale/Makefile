@@ -13,6 +13,7 @@ MASTER_SITES= 	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	perky
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	UTF-8 locales support
 
 LANGS=		af_ZA bg_BG ca_ES cs_CZ da_DK de_AT de_CH de_DE el_GR en_AU \
 		en_CA en_GB en_NZ en_US es_ES et_EE fi_FI fr_BE fr_CA fr_CH \

@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	The Shakespeare programming language
 
 USE_BISON=	yes
 USE_GMAKE=	yes

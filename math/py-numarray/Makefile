@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	numpy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Numeric array manipulation extension module for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

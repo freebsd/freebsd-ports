@@ -18,6 +18,7 @@ DISTFILES=	${SUBFONT_DISTNAME}.tar.bz2 \
 EXTRACT_ONLY=	${SUBFONT_DISTNAME}.tar.bz2 mplayer-fontmap-euc-kr.tar.bz2
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Korean font pack for the mplayer OSD, SUB and SMI
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 		${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2 \

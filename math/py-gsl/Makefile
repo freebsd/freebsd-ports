@@ -15,6 +15,7 @@ DISTNAME=	pygsl-${PORTVERSION}
 DIST_SUBDIR=	python
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to GNU Scientific Library
 
 LIB_DEPENDS=	gsl.4:${PORTSDIR}/math/gsl
 

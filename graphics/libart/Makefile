@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.artofcode.com/${PORTNAME}/
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Library for high-performance 2D graphics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}
 GNU_CONFIGURE=	yes

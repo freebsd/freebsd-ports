@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	CDDB-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python module to fetch information on audio CDs from CDDB
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

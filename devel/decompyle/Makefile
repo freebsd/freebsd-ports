@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.goebel-consult.de/decompyle/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python byte-code decompiler
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

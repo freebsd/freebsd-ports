@@ -10,6 +10,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Fibonacci Heap Library
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

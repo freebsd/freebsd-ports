@@ -17,6 +17,7 @@ DISTFILES=	${DISTNAME}.tar.gz twikidraw.jar:twiki
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	A Python CGI clone of WikiWiki
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
