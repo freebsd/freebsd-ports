@@ -10,10 +10,6 @@ that you usually use. Then run "make install-user" and do
 a standard workstation Thereafter, OpenOffice can be started using the
 ${PREFIX}/bin/soffice command.
 
-Please note that this software should be considered alpha quality
-at the moment, i.e. take extra care when using it in production
-environments.
-
 If OO asks you to choose the Java JDK during user-installation, you
 must choose the linux jdk1.3.1. Native FreeBSD jdk1.3.1 does
 not work yet with FreeBSD openoffice and OO does ignore it.
