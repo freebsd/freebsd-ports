@@ -1,18 +1,13 @@
---- lib/pat.h~	Tue May 27 06:12:58 1997
-+++ lib/pat.h	Thu Oct 22 00:58:38 1998
-@@ -14,6 +14,7 @@
- #define OL(x)  /* */
- #endif
+--- dic/Makefile.orig	Sat Dec  4 02:41:42 1999
++++ dic/Makefile	Fri Dec 17 20:45:04 1999
+@@ -46,8 +46,8 @@
+ 	else exit 0; fi
  
-+#include <sys/types.h>
- #ifndef NO_MMAP
- #ifdef _WIN32
- #define ONMEM_DIC
-@@ -21,7 +22,6 @@
- #include <sys/mman.h>
- #endif
- #endif /* !NO_MMAP */
--#include <sys/types.h>
- #include <sys/stat.h>
- 
- #ifdef ONMEM_DIC
+ table.cha matrix.cha: $(CONNECT_VCHA)
+-	@if [ -f $< ]; then set -x; \
+-	  $(CP) $< $(CONNTMP2_VCHA); \
++	@if [ -f ${.ALLSRC} ]; then set -x; \
++	  $(CP) ${.ALLSRC} $(CONNTMP2_VCHA); \
+ 	  $(CC) -E $(CONNTMP2_VCHA) > $(CONNTMP_VCHA); \
+ 	  $(RM) $(CONNTMP2_VCHA); \
+ 	  $(MKDICDIR)/makemat; \
