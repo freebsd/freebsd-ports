@@ -17,7 +17,7 @@ DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1:S/$/:man/}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marshall@chezmarshall.com
 
 FORBIDDEN=	"doubt about changed checksum of p4"
 
