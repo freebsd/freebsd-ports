@@ -1,14 +1,15 @@
---- Makefile.orig	Sat Sep 11 01:49:18 1999
-+++ Makefile	Tue Oct 12 17:27:25 1999
+--- Makefile.orig	Fri Oct 29 15:18:48 1999
++++ Makefile	Tue Jul 18 21:10:50 2000
 @@ -8,15 +8,42 @@
  #	 c++ interface to gc.a
  # cord/de - builds dumb editor based on cords.
  ABI_FLAG= 
 -CC=cc $(ABI_FLAG)
 -CXX=g++ $(ABI_FLAG)
+-AS=as $(ABI_FLAG)
 +CC+= $(ABI_FLAG)
 +CXX+= $(ABI_FLAG)
- AS=as $(ABI_FLAG)
++AS=cc -c -x assembler-with-cpp $(ABI_FLAG)
  #  The above doesn't work with gas, which doesn't run cpp.
  #  Define AS as `gcc -c -x assembler-with-cpp' instead.
  #  Under Irix 6, you will have to specify the ABI (-o32, -n32, or -64)
@@ -46,7 +47,7 @@
  
  # For dynamic library builds, it may be necessary to add flags to generate
  # PIC code, e.g. -fPIC on Linux.
-@@ -138,7 +165,7 @@
+@@ -140,7 +167,7 @@
      -DDONT_ADD_BYTE_AT_END -DALL_INTERIOR_POINTERS
  #   Flags for building libgc.a -- the last two are required.
  
@@ -55,7 +56,7 @@
  AR= ar
  RANLIB= ranlib
  
-@@ -202,8 +229,6 @@
+@@ -204,8 +231,6 @@
  # not time-critical anyway.
  # Set SPECIALCFLAGS to -q nodirect_code on Encore.
  
@@ -64,8 +65,8 @@
  pcr: PCR-Makefile gc_private.h gc_hdrs.h gc.h gcconfig.h mach_dep.o $(SRCS)
  	make -f PCR-Makefile depend
  	make -f PCR-Makefile
-@@ -245,6 +270,12 @@
- 	./if_mach HP_PA "" $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -ldld
+@@ -247,6 +272,12 @@
+ 	./if_mach HP_PA HPUX $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a -ldld `./threadlibs`
  	./if_not_there test_cpp $(CXX) $(CXXFLAGS) -o test_cpp $(srcdir)/test_cpp.cc gc_cpp.o gc.a `./threadlibs`
  
 +c++-t: c++
@@ -77,7 +78,7 @@
  c++: gc_cpp.o $(srcdir)/gc_cpp.h test_cpp
  	rm -f dont_ar_4
  	./if_mach SPARC SUNOS5 touch dont_ar_4
-@@ -253,7 +284,6 @@
+@@ -255,7 +286,6 @@
  	./if_mach M68K AMIGA $(AR) -vrus gc.a gc_cpp.o
  	./if_not_there dont_ar_4 $(AR) ru gc.a gc_cpp.o
  	./if_not_there dont_ar_4 $(RANLIB) gc.a || cat /dev/null
