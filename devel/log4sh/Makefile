@@ -8,7 +8,8 @@
 PORTNAME=	log4sh
 PORTVERSION=	1.2.5
 CATEGORIES=	devel
-MASTER_SITES=	http://forestent.com/dist/log4sh/
+MASTER_SITES=	http://forestent.com/dist/log4sh/ \
+		http://darkambient.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lx@redundancy.redundancy.org
