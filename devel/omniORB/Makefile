@@ -19,6 +19,7 @@ BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
@@ -37,6 +38,10 @@ PLIST_SUB+=	STATIC=""
 .endif
 
 MAN1=		catior.1 genior.1 nameclt.1 omniNames.1 omniidl.1
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
+		${WRKSRC}/mk/beforeauto.mk.in
 
 pre-configure:
 	@ ${MKDIR} ${CONFIGURE_WRKSRC}
