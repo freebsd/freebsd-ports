@@ -15,12 +15,17 @@ COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
 
-NO_CDROM=	License problem
-NO_PACKAGE=	${NO_CDROM}
+RESTRICTED=	License problem
 
 MAN1=		pftpd.1 rpad.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 501000
+BROKEN=		"Does not compile"
+.endif
 
 post-install:
 	@${CAT} ${WRKSRC}/ISSUES
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
