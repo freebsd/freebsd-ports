@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.1.22
+PORTVERSION=	1.1.23
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${PORTVERSION}/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
@@ -27,8 +27,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
 		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		intl.1:${PORTSDIR}/devel/gettext
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
