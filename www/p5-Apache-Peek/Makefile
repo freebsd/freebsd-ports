@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/B/Graph.pm:${PORTSDIR}/devel/p5-B-Graph
+
 USE_PERL5=	YES
 MAN3=		Apache::Peek.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
