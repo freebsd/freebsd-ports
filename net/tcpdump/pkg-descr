@@ -1,0 +1,9 @@
+tcpdump is a ubiquitous network traffic capture tool available in a wide
+variety of BSD, Linux and UN*X distributions.
+
+Whilst FreeBSD has a vendor branch import of tcpdump in its source tree,
+the purpose of the port is to provide a means of offering additional,
+bleeding-edge features which might not make it into the tree.
+
+Bruce
+bms@FreeBSD.org
