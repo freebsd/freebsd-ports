@@ -168,6 +168,7 @@
     SUBDIR += ipcalc
     SUBDIR += ipcheck
     SUBDIR += iperf
+    SUBDIR += ipex
     SUBDIR += ipfm
     SUBDIR += ipfw-graph
     SUBDIR += iplog

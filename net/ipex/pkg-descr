@@ -1,0 +1,13 @@
+The ipex program is similar to ngrep or tcpdump. It
+allows you to dump packet contents in hexidecimal or
+plaintext. A very handy tool for debugging network proto-
+cols. ipex also gives you the option of running in daemon
+mode while dumping contents to a specified file. It also
+allows you to supply a regex RC pattern for printing pack-
+ets wich contain specific patterns. This man page comes
+with some fairly descriptive examples.
+
+WWW: http://ipex.sourceforge.net
+
+- C.S. Peron
+maneo@bsdpro.com
