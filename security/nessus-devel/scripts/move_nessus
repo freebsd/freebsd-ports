@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/nessus-devel/scripts/Attic/move_nessus,v 1.1 2004-02-25 21:18:25 obraun Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/nessus-devel/scripts/Attic/move_nessus,v 1.2 2004-08-13 14:15:25 vs Exp $
 #
 # set -x
 
@@ -25,16 +25,21 @@ if [ -f $PREFIX/etc/nessus/nessusd.conf ]; then
 	$PREFIX/etc/nessus/nessusd.conf.bak > $PREFIX/etc/nessus/nessusd.conf
 fi
 if [ -d $PREFIX/etc/nessus/var/nessus/users ]; then
-  printf "\n\nMigrating nessus to default directory scheme\n"
-  printf "============================================\n\n"
-  cd $PREFIX/etc/nessus/var/nessus/users
-  for i in *; do 
-    if [ $i != '*' ]; then 
-      mv $i $PREFIX/var/nessus/users
-      printf "Moving nessus user %s\n" $i
-    fi
-  done
-  printf "\n"
+  rmdir $PREFIX/etc/nessus/var/nessus/users > /dev/null 2>/dev/null
+  if [ $? -gt 0 ]; then
+    printf "\n\nMigrating nessus to default directory scheme\n"
+    printf "============================================\n\n"
+    cd $PREFIX/etc/nessus/var/nessus/users
+    for i in *; do 
+      if [ $i != '*' ]; then 
+        mv $i $PREFIX/var/nessus/users
+        printf "Moving nessus user %s\n" $i
+      fi
+    done
+    cd $PREFIX
+    rmdir $PREFIX/etc/nessus/var/nessus/users > /dev/null 2>/dev/null
+    printf "\n"
+  fi
 fi
 if [ ! -d $PREFIX/com/CA ]; then
   if [ -d $PREFIX/etc/nessus/com/CA ]; then
@@ -49,3 +54,7 @@ if [ ! -d $PREFIX/com/CA ]; then
     fi
   fi
 fi
+cd $PREFIX
+rmdir $PREFIX/etc/nessus/var > /dev/null 2>/dev/null
+rmdir $PREFIX/etc/nessus/com > /dev/null 2>/dev/null
+exit 0
