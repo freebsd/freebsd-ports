@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/osip/const.h
 include/osip/dialog.h
 include/osip/fifo.h
@@ -13,14 +14,10 @@ include/osip/smsg.h
 include/osip/smsgtypes.h
 include/osip/thread.h
 include/osip/urls.h
-@dirrm include/osip
-lib/libfsmtl-%%PORTVERSION%%.so
-lib/libfsmtl-%%PORTVERSION%%.so.0
 lib/libfsmtl.a
-lib/libfsmtl.la
 lib/libfsmtl.so
-lib/libosip-%%PORTVERSION%%.so
-lib/libosip-%%PORTVERSION%%.so.0
+lib/libfsmtl.so.0
 lib/libosip.a
-lib/libosip.la
 lib/libosip.so
+lib/libosip.so.0
+@dirrm include/osip
