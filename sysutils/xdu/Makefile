@@ -7,8 +7,9 @@
 
 PORTNAME=	xdu
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.arl.mil/pub/
+MASTER_SITES=	http://sd.wareonearth.com/~phil/xdu/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
