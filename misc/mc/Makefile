@@ -1,18 +1,21 @@
 # New ports collection makefile for:	mc
-# Version required:	2.1
+# Version required:	3.0
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/07/15 23:43:34 torstenb Exp $
 #
 
-DISTNAME=	mc-2.1
+DISTNAME=	mc-3.0
 CATEGORIES=	utilities
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-ncurses
+
+STRIP=
 
 post-install:
-	@gzip -9nf ${PREFIX}/man/man1/mc.1
+	@gzip -9nf ${PREFIX}/man/man1/mc.1 ${PREFIX}/man/man8/mc.8
 
 .include <bsd.port.mk>
