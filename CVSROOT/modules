@@ -1537,6 +1537,7 @@ es		ports/shells/es
 es-aspell	ports/textproc/es-aspell
 es-ooodict-ES	ports/editors/ooodict-es_ES
 es-openoffice	ports/editors/openoffice-es
+esdl		ports/devel/esdl
 esh		ports/shells/esh
 eshell-emacs20	ports/editors/eshell-emacs20
 esound		ports/audio/esound
