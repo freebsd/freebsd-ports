@@ -14,6 +14,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		GeoIP.1:${PORTSDIR}/net/GeoIP
+
 USE_BZIP2=      yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
