@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.51
+PORTVERSION=	1.9.52
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:sourceforge/} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
@@ -59,7 +59,6 @@ pre-configure:
 	@${ECHO_MSG}
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/quickmkdir ${PREFIX}/sbin/
 	${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${PREFIX}/sbin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

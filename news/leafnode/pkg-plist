@@ -14,7 +14,6 @@ sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
 sbin/setup-daemontools.sh
-sbin/quickmkdir
 %%PORTDOCS%%%%DOCSDIR%%/ADD-ONS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.old
