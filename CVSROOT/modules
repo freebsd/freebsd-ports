@@ -6833,6 +6833,7 @@ rascal		ports/math/rascal
 rasmol		ports/biology/rasmol
 rat		ports/mbone/rat
 rat30		ports/mbone/rat30
+rate		ports/net/rate
 ratfor		ports/lang/ratfor
 ratmenu		ports/x11-wm/ratmenu
 ratpoison	ports/x11-wm/ratpoison
