@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.1
-PORTREVISION=	4
+PORTVERSION=	5.1.1
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -146,7 +145,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		netsnmp_Container_iterator.3 netsnmp_baby_steps.3 \
 		netsnmp_cache_handler.3 netsnmp_container.3 \
 		netsnmp_deprecated.3 netsnmp_iterator_info_s.3 \
-		netsnmp_leaf.3 netsnmp_mfd_pdu_context_s.3 \
+		netsnmp_leaf.3 \
 		netsnmp_row_merge.3 netsnmp_scalar_group_group.3 \
 		netsnmp_stash_cache.3 netsnmp_utilities.3
 
