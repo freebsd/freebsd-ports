@@ -9,7 +9,7 @@ PORTNAME=	wmcube
 PORTVERSION=	0.98
 PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://boombox.campus.luth.se/files/
+MASTER_SITES=	http://kling.mine.nu/kling/files/
 
 MAINTAINER=	pat@FreeBSD.org
 
