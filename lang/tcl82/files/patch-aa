@@ -50,7 +50,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -429,14 +436,19 @@
+@@ -429,18 +436,23 @@
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -73,6 +73,11 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
+-		mkdir $$i; \
++		mkdir -p $$i; \
+ 		chmod 755 $$i; \
+ 		else true; \
+ 		fi; \
 @@ -454,8 +466,15 @@
  		else true; \
  		fi; \
