@@ -1,5 +1,5 @@
 *** examples/Makefile.orig	Tue Nov  2 14:18:49 1993
---- examples/Makefile	Wed Apr 30 00:42:39 1997
+--- examples/Makefile	Sat Mar  4 18:44:23 2000
 ***************
 *** 1,5 ****
    
@@ -106,8 +106,8 @@
   SSPKGLIB	= $(SSPKGHOME)/lib/libsspkg.a
   
   
-! DBXFLAGS	=  -O
-! CFLAGS		= $(DBXFLAGS) -I$(SSPKGHOME)/../include -I$(OPENWINHOME)/include 
+! #DBXFLAGS	=  -g
+! CFLAGS		+= $(DBXFLAGS) -I$(SSPKGHOME)/../include -I$(OPENWINHOME)/include 
   LDFLAGS		= -L$(LIBDIR) $(LIBS) $(SSPKGLIB) -lm
   
   all: icons array_tile clockobj color color2 \

@@ -1,5 +1,5 @@
-*** src/Makefile.orig	Mon Oct 25 13:37:43 1993
---- src/Makefile	Wed Apr 30 00:40:56 1997
+*** src/Makefile.orig	Tue Oct 26 03:37:43 1993
+--- src/Makefile	Sat Mar  4 04:17:50 2000
 ***************
 *** 15,22 ****
   
@@ -14,8 +14,27 @@
   
   INCDIR		= $(SSPKGHOME)/include/sspkg
   PRIVATEINCDIR	= $(SSPKGHOME)/src
-! CFLAGS 		= -O -DNO_SINCOS
+! CFLAGS 		+= -DNO_SINCOS
 ! #CFLAGS		= -g
   CPPFLAGS	= -I$(SSPKGHOME)/include -I$(PRIVATEINCDIR) -I$(OPENWINHOME)/include
+  
+  
+***************
+*** 112,119 ****
+  
+  
+  install: $(STATICLIBRARY) $(SHAREDLIB) FORCE
+! 	cp $(STATICLIBRARY) $(INSTALL_DIR)/lib
+! 	cp $(SHAREDLIB) $(INSTALL_DIR)/lib
+  	ln -s $(SHAREDLIB) $(INSTALLDIR)/libsspkg.so
+  
+  
+--- 112,119 ----
+  
+  
+  install: $(STATICLIBRARY) $(SHAREDLIB) FORCE
+! 	${BSD_INSTALL_DATA} $(STATICLIBRARY) $(INSTALL_DIR)/lib
+! 	${BSD_INSTALL_DATA} $(SHAREDLIB) $(INSTALL_DIR)/lib
+  	ln -s $(SHAREDLIB) $(INSTALLDIR)/libsspkg.so
   
   
