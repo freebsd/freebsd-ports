@@ -1,7 +1,7 @@
 include/xalanc/DOMSupport/DOMServices.hpp
 include/xalanc/DOMSupport/DOMSupport.hpp
-include/xalanc/DOMSupport/DOMSupportDefinitions.hpp
 include/xalanc/DOMSupport/DOMSupportDefault.hpp
+include/xalanc/DOMSupport/DOMSupportDefinitions.hpp
 include/xalanc/DOMSupport/DOMSupportException.hpp
 include/xalanc/DOMSupport/DOMSupportInit.hpp
 include/xalanc/DOMSupport/TreeWalker.hpp
@@ -11,28 +11,29 @@ include/xalanc/DOMSupport/XalanNamespacesStack.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridge.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCleanup.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCollationCompareFunctor.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeDefinitions.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCollationCompareFunctorImpl.hpp
+%%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeDefinitions.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatFactory.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatProxy.hpp
-include/xalanc/Include/PlatformDefinitions.hpp
 include/xalanc/Include/AIXDefinitions.hpp
 include/xalanc/Include/GCCDefinitions.hpp
 include/xalanc/Include/HPUXDefinitions.hpp
 include/xalanc/Include/IntelDefinitions.hpp
 include/xalanc/Include/OS390Definitions.hpp
-include/xalanc/Include/XalanAutoPtr.hpp
+include/xalanc/Include/OS400Definitions.hpp
+include/xalanc/Include/PlatformDefinitions.hpp
 include/xalanc/Include/STLHelper.hpp
 include/xalanc/Include/SolarisDefinitions.hpp
 include/xalanc/Include/TRU64Definitions.hpp
 include/xalanc/Include/VCPPDefinitions.hpp
 include/xalanc/Include/XalanArrayKeyMap.hpp
+include/xalanc/Include/XalanAutoPtr.hpp
 include/xalanc/Include/XalanObjectCache.hpp
 include/xalanc/Include/XalanVersion.hpp
 include/xalanc/PlatformSupport/ArenaAllocator.hpp
 include/xalanc/PlatformSupport/ArenaBlock.hpp
-include/xalanc/PlatformSupport/AttributeVectorEntry.hpp
 include/xalanc/PlatformSupport/AttributeListImpl.hpp
+include/xalanc/PlatformSupport/AttributeVectorEntry.hpp
 include/xalanc/PlatformSupport/AttributeVectorEntryExtended.hpp
 include/xalanc/PlatformSupport/AttributesImpl.hpp
 include/xalanc/PlatformSupport/DOMStringHelper.hpp
@@ -41,6 +42,7 @@ include/xalanc/PlatformSupport/DirectoryEnumerator.hpp
 include/xalanc/PlatformSupport/DoubleSupport.hpp
 include/xalanc/PlatformSupport/ExecutionContext.hpp
 include/xalanc/PlatformSupport/FormatterListener.hpp
+include/xalanc/PlatformSupport/LocalMsgIndex.hpp
 include/xalanc/PlatformSupport/NamedNodeMapAttributeList.hpp
 include/xalanc/PlatformSupport/NullPrintWriter.hpp
 include/xalanc/PlatformSupport/PlatformSupportDefinitions.hpp
@@ -54,10 +56,11 @@ include/xalanc/PlatformSupport/StdBinInputStream.hpp
 include/xalanc/PlatformSupport/StringTokenizer.hpp
 include/xalanc/PlatformSupport/URISupport.hpp
 include/xalanc/PlatformSupport/Writer.hpp
-include/xalanc/PlatformSupport/XalanAllocator.hpp
 include/xalanc/PlatformSupport/XSLException.hpp
+include/xalanc/PlatformSupport/XalanAllocator.hpp
 include/xalanc/PlatformSupport/XalanArrayAllocator.hpp
 include/xalanc/PlatformSupport/XalanBitmap.hpp
+include/xalanc/PlatformSupport/XalanCollationServices.hpp
 include/xalanc/PlatformSupport/XalanDOMStringAllocator.hpp
 include/xalanc/PlatformSupport/XalanDOMStringCache.hpp
 include/xalanc/PlatformSupport/XalanDOMStringHashTable.hpp
@@ -65,9 +68,13 @@ include/xalanc/PlatformSupport/XalanDOMStringPool.hpp
 include/xalanc/PlatformSupport/XalanDecimalFormat.hpp
 include/xalanc/PlatformSupport/XalanDecimalFormatSymbols.hpp
 include/xalanc/PlatformSupport/XalanEncodingPropertyCache.hpp
-include/xalanc/PlatformSupport/XalanFileOutputStream.hpp
 include/xalanc/PlatformSupport/XalanFStreamOutputStream.hpp
+include/xalanc/PlatformSupport/XalanFileOutputStream.hpp
+include/xalanc/PlatformSupport/XalanICUMessageLoader.hpp
+include/xalanc/PlatformSupport/XalanInMemoryMessageLoader.hpp
 include/xalanc/PlatformSupport/XalanLocator.hpp
+include/xalanc/PlatformSupport/XalanMessageLoader.hpp
+include/xalanc/PlatformSupport/XalanNLSMessageLoader.hpp
 include/xalanc/PlatformSupport/XalanNamespace.hpp
 include/xalanc/PlatformSupport/XalanNullOutputStream.hpp
 include/xalanc/PlatformSupport/XalanNumberFormat.hpp
@@ -82,13 +89,27 @@ include/xalanc/PlatformSupport/XalanTranscodingServices.hpp
 include/xalanc/PlatformSupport/XalanUTF16Transcoder.hpp
 include/xalanc/PlatformSupport/XalanUnicode.hpp
 include/xalanc/PlatformSupport/XalanXMLChar.hpp
+@comment include/xalanc/TestXPath/NodeNameTreeWalker.hpp
+@comment include/xalanc/Utils/MsgCreator/ICUResData.hpp
+@comment include/xalanc/Utils/MsgCreator/ICUResHandler.hpp
+@comment include/xalanc/Utils/MsgCreator/InMemData.hpp
+@comment include/xalanc/Utils/MsgCreator/InMemHandler.hpp
+@comment include/xalanc/Utils/MsgCreator/IndexFileData.hpp
+@comment include/xalanc/Utils/MsgCreator/MsgCreator.hpp
+@comment include/xalanc/Utils/MsgCreator/MsgFileOutputStream.hpp
+@comment include/xalanc/Utils/MsgCreator/NLSData.hpp
+@comment include/xalanc/Utils/MsgCreator/NLSHandler.hpp
+@comment include/xalanc/Utils/MsgCreator/SAX2Handler.hpp
+@comment include/xalanc/Utils/XalanMsgLib/XalanMsgLib.hpp
+@comment include/xalanc/Utils/XalanMsgLib/XalanMsgLibDefinitions.hpp
 include/xalanc/XMLSupport/FormatterToDOM.hpp
 include/xalanc/XMLSupport/FormatterToHTML.hpp
 include/xalanc/XMLSupport/FormatterToNull.hpp
 include/xalanc/XMLSupport/FormatterToText.hpp
 include/xalanc/XMLSupport/FormatterToXML.hpp
-include/xalanc/XMLSupport/FormatterToXML_UTF8.hpp
+include/xalanc/XMLSupport/FormatterToXMLBase.hpp
 include/xalanc/XMLSupport/FormatterToXML_UTF16.hpp
+include/xalanc/XMLSupport/FormatterToXML_UTF8.hpp
 include/xalanc/XMLSupport/FormatterTreeWalker.hpp
 include/xalanc/XMLSupport/XMLParserLiaison.hpp
 include/xalanc/XMLSupport/XMLSupportDefinitions.hpp
@@ -97,7 +118,6 @@ include/xalanc/XMLSupport/XMLSupportInit.hpp
 include/xalanc/XMLSupport/XalanHTMLElementsProperties.hpp
 include/xalanc/XPath/ElementPrefixResolverProxy.hpp
 include/xalanc/XPath/FormatterStringLengthCounter.hpp
-include/xalanc/XPath/FoundIndex.hpp
 include/xalanc/XPath/Function.hpp
 include/xalanc/XPath/FunctionConcat.hpp
 include/xalanc/XPath/FunctionContains.hpp
@@ -109,14 +129,12 @@ include/xalanc/XPath/FunctionStartsWith.hpp
 include/xalanc/XPath/FunctionString.hpp
 include/xalanc/XPath/FunctionSubstring.hpp
 include/xalanc/XPath/FunctionSubstringAfter.hpp
-include/xalanc/XPath/XNull.hpp
 include/xalanc/XPath/FunctionSubstringBefore.hpp
 include/xalanc/XPath/FunctionTranslate.hpp
 include/xalanc/XPath/MutableNodeRefList.hpp
 include/xalanc/XPath/NameSpace.hpp
 include/xalanc/XPath/NodeRefList.hpp
 include/xalanc/XPath/NodeRefListBase.hpp
-include/xalanc/XPath/ResultTreeFragBase.hpp
 include/xalanc/XPath/XBoolean.hpp
 include/xalanc/XPath/XNodeSet.hpp
 include/xalanc/XPath/XNodeSetAllocator.hpp
@@ -124,6 +142,7 @@ include/xalanc/XPath/XNodeSetBase.hpp
 include/xalanc/XPath/XNodeSetNodeProxy.hpp
 include/xalanc/XPath/XNodeSetNodeProxyAllocator.hpp
 include/xalanc/XPath/XNodeSetResultTreeFragProxy.hpp
+include/xalanc/XPath/XNull.hpp
 include/xalanc/XPath/XNumber.hpp
 include/xalanc/XPath/XNumberAllocator.hpp
 include/xalanc/XPath/XNumberBase.hpp
@@ -136,14 +155,13 @@ include/xalanc/XPath/XObjectResultTreeFragProxyText.hpp
 include/xalanc/XPath/XObjectTypeCallback.hpp
 include/xalanc/XPath/XPath.hpp
 include/xalanc/XPath/XPathAllocator.hpp
-include/xalanc/XPath/XPathDefinitions.hpp
 include/xalanc/XPath/XPathConstructionContext.hpp
 include/xalanc/XPath/XPathConstructionContextDefault.hpp
+include/xalanc/XPath/XPathDefinitions.hpp
 include/xalanc/XPath/XPathEnvSupport.hpp
 include/xalanc/XPath/XPathEnvSupportDefault.hpp
 include/xalanc/XPath/XPathEvaluator.hpp
 include/xalanc/XPath/XPathExecutionContext.hpp
-include/xalanc/XPath/XSpan.hpp
 include/xalanc/XPath/XPathExecutionContextDefault.hpp
 include/xalanc/XPath/XPathExpression.hpp
 include/xalanc/XPath/XPathFactory.hpp
@@ -154,6 +172,7 @@ include/xalanc/XPath/XPathInit.hpp
 include/xalanc/XPath/XPathParserException.hpp
 include/xalanc/XPath/XPathProcessor.hpp
 include/xalanc/XPath/XPathProcessorImpl.hpp
+include/xalanc/XPath/XSpan.hpp
 include/xalanc/XPath/XString.hpp
 include/xalanc/XPath/XStringAdapter.hpp
 include/xalanc/XPath/XStringAdapterAllocator.hpp
@@ -169,6 +188,7 @@ include/xalanc/XPath/XTokenNumberAdapterAllocator.hpp
 include/xalanc/XPath/XTokenStringAdapter.hpp
 include/xalanc/XPath/XTokenStringAdapterAllocator.hpp
 include/xalanc/XPath/XUnknown.hpp
+include/xalanc/XPath/XalanDocumentFragmentNodeRefListBaseProxy.hpp
 include/xalanc/XPath/XalanQName.hpp
 include/xalanc/XPath/XalanQNameByReference.hpp
 include/xalanc/XPath/XalanQNameByValue.hpp
@@ -177,11 +197,11 @@ include/xalanc/XPath/XalanXPathException.hpp
 include/xalanc/XPathCAPI/XPathCAPI.h
 include/xalanc/XSLT/AVT.hpp
 include/xalanc/XSLT/AVTPart.hpp
-include/xalanc/XSLT/DecimalToRoman.hpp
 include/xalanc/XSLT/AVTPartSimple.hpp
 include/xalanc/XSLT/AVTPartXPath.hpp
 include/xalanc/XSLT/Constants.hpp
 include/xalanc/XSLT/CountersTable.hpp
+include/xalanc/XSLT/DecimalToRoman.hpp
 include/xalanc/XSLT/ElemApplyImport.hpp
 include/xalanc/XSLT/ElemApplyTemplates.hpp
 include/xalanc/XSLT/ElemAttribute.hpp
@@ -197,6 +217,7 @@ include/xalanc/XSLT/ElemEmpty.hpp
 include/xalanc/XSLT/ElemExtensionCall.hpp
 include/xalanc/XSLT/ElemFallback.hpp
 include/xalanc/XSLT/ElemForEach.hpp
+include/xalanc/XSLT/ElemForwardCompatible.hpp
 include/xalanc/XSLT/ElemIf.hpp
 include/xalanc/XSLT/ElemLiteralResult.hpp
 include/xalanc/XSLT/ElemMessage.hpp
@@ -235,10 +256,7 @@ include/xalanc/XSLT/OutputContextStack.hpp
 include/xalanc/XSLT/ProblemListener.hpp
 include/xalanc/XSLT/ProblemListenerDefault.hpp
 include/xalanc/XSLT/ResultNamespacesStack.hpp
-include/xalanc/XSLT/ResultTreeFrag.hpp
-include/xalanc/XSLT/ResultTreeFragAllocator.hpp
 include/xalanc/XSLT/SelectionEvent.hpp
-include/xalanc/XSLT/ResultTreeFragBaseNodeRefListBaseProxy.hpp
 include/xalanc/XSLT/Stylesheet.hpp
 include/xalanc/XSLT/StylesheetConstructionContext.hpp
 include/xalanc/XSLT/StylesheetConstructionContextDefault.hpp
@@ -304,16 +322,19 @@ include/xalanc/XalanDOM/XalanNodeListSurrogate.hpp
 include/xalanc/XalanDOM/XalanNotation.hpp
 include/xalanc/XalanDOM/XalanProcessingInstruction.hpp
 include/xalanc/XalanDOM/XalanText.hpp
-include/xalanc/XalanEXSLT/XalanEXSLTCommonImpl.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTCommon.hpp
+include/xalanc/XalanEXSLT/XalanEXSLTCommonImpl.hpp
+include/xalanc/XalanEXSLT/XalanEXSLTDateTime.hpp
+include/xalanc/XalanEXSLT/XalanEXSLTDateTimeImpl.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTDefinitions.hpp
+include/xalanc/XalanEXSLT/XalanEXSLTDynamic.hpp
+include/xalanc/XalanEXSLT/XalanEXSLTDynamicImpl.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTMath.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTMathImpl.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTSet.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTSetImpl.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTString.hpp
 include/xalanc/XalanEXSLT/XalanEXSLTStringImpl.hpp
-include/xalanc/XalanExtensions/XalanExtensionsDefinitions.hpp
 include/xalanc/XalanExtensions/FunctionDifference.hpp
 include/xalanc/XalanExtensions/FunctionDistinct.hpp
 include/xalanc/XalanExtensions/FunctionEvaluate.hpp
@@ -321,6 +342,7 @@ include/xalanc/XalanExtensions/FunctionHasSameNodes.hpp
 include/xalanc/XalanExtensions/FunctionIntersection.hpp
 include/xalanc/XalanExtensions/FunctionNodeSet.hpp
 include/xalanc/XalanExtensions/XalanExtensions.hpp
+include/xalanc/XalanExtensions/XalanExtensionsDefinitions.hpp
 include/xalanc/XalanSourceTree/FormatterToSourceTree.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeAttr.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeAttrNS.hpp
@@ -345,9 +367,9 @@ include/xalanc/XalanSourceTree/XalanSourceTreeElementNANSAllocator.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeHelper.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeInit.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeParserLiaison.hpp
-include/xalanc/XalanSourceTree/XalanSourceTreeText.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeProcessingInstruction.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeProcessingInstructionAllocator.hpp
+include/xalanc/XalanSourceTree/XalanSourceTreeText.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeTextAllocator.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeTextIWS.hpp
 include/xalanc/XalanSourceTree/XalanSourceTreeTextIWSAllocator.hpp
@@ -365,61 +387,58 @@ include/xalanc/XalanTransformer/XalanTransformerOutputStream.hpp
 include/xalanc/XalanTransformer/XalanTransformerProblemListener.hpp
 include/xalanc/XalanTransformer/XercesDOMParsedSource.hpp
 include/xalanc/XalanTransformer/XercesDOMWrapperParsedSource.hpp
-include/xalanc/XercesParserLiaison/FormatterToDeprecatedXercesDOM.hpp
+include/xalanc/XercesParserLiaison/Deprecated/FormatterToDeprecatedXercesDOM.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesAttrBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesAttributeBridgeAllocator.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesBridgeHelper.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesBridgeNavigator.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesBridgeTypes.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesCDATASectionBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesCommentBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesDOMImplementationBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesDOM_NodeHack.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesDocumentBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesDocumentFragmentBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesDocumentTypeBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesElementBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesElementBridgeAllocator.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesEntityBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesEntityReferenceBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesNamedNodeMapBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesNodeListBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesNotationBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesProcessingInstructionBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesTextBridge.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesTextBridgeAllocator.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesToXalanNodeMap.hpp
+include/xalanc/XercesParserLiaison/Deprecated/XercesTreeWalker.hpp
 include/xalanc/XercesParserLiaison/FormatterToXercesDOM.hpp
-include/xalanc/XercesParserLiaison/XercesAttrBridge.hpp
 include/xalanc/XercesParserLiaison/XercesAttrWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesAttrWrapperAllocator.hpp
-include/xalanc/XercesParserLiaison/XercesAttributeBridgeAllocator.hpp
-include/xalanc/XercesParserLiaison/XercesBridgeHelper.hpp
-include/xalanc/XercesParserLiaison/XercesBridgeNavigator.hpp
-include/xalanc/XercesParserLiaison/XercesBridgeTypes.hpp
-include/xalanc/XercesParserLiaison/XercesCDATASectionBridge.hpp
 include/xalanc/XercesParserLiaison/XercesCDATASectionWrapper.hpp
-include/xalanc/XercesParserLiaison/XercesCommentBridge.hpp
 include/xalanc/XercesParserLiaison/XercesCommentWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesDOMException.hpp
 include/xalanc/XercesParserLiaison/XercesDOMFormatterWalker.hpp
-include/xalanc/XercesParserLiaison/XercesDOMImplementationBridge.hpp
 include/xalanc/XercesParserLiaison/XercesDOMImplementationWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesDOMSupport.hpp
 include/xalanc/XercesParserLiaison/XercesDOMWalker.hpp
 include/xalanc/XercesParserLiaison/XercesDOMWrapperException.hpp
-include/xalanc/XercesParserLiaison/XercesDOM_NodeHack.hpp
-include/xalanc/XercesParserLiaison/XercesDocumentBridge.hpp
-include/xalanc/XercesParserLiaison/XercesDocumentFragmentBridge.hpp
-include/xalanc/XercesParserLiaison/XercesDocumentNamedNodeListCache.hpp
-include/xalanc/XercesParserLiaison/XercesDocumentTypeBridge.hpp
 include/xalanc/XercesParserLiaison/XercesDocumentTypeWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesDocumentWrapper.hpp
-include/xalanc/XercesParserLiaison/XercesElementBridge.hpp
-include/xalanc/XercesParserLiaison/XercesElementBridgeAllocator.hpp
-include/xalanc/XercesParserLiaison/XercesElementNamedNodeListCache.hpp
 include/xalanc/XercesParserLiaison/XercesElementWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesElementWrapperAllocator.hpp
-include/xalanc/XercesParserLiaison/XercesEntityBridge.hpp
-include/xalanc/XercesParserLiaison/XercesEntityReferenceBridge.hpp
 include/xalanc/XercesParserLiaison/XercesEntityReferenceWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesEntityWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesLiaisonXalanDOMStringPool.hpp
-include/xalanc/XercesParserLiaison/XercesNamedNodeListCache.hpp
 include/xalanc/XercesParserLiaison/XercesNamedNodeMapAttributeList.hpp
-include/xalanc/XercesParserLiaison/XercesNamedNodeMapBridge.hpp
 include/xalanc/XercesParserLiaison/XercesNamedNodeMapWrapper.hpp
-include/xalanc/XercesParserLiaison/XercesNodeListBridge.hpp
 include/xalanc/XercesParserLiaison/XercesNodeListWrapper.hpp
-include/xalanc/XercesParserLiaison/XercesNotationBridge.hpp
 include/xalanc/XercesParserLiaison/XercesNotationWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesParserLiaison.hpp
 include/xalanc/XercesParserLiaison/XercesParserLiaisonDefinitions.hpp
-include/xalanc/XercesParserLiaison/XercesProcessingInstructionBridge.hpp
-include/xalanc/XercesParserLiaison/XercesTextBridge.hpp
 include/xalanc/XercesParserLiaison/XercesProcessingInstructionWrapper.hpp
-include/xalanc/XercesParserLiaison/XercesTextBridgeAllocator.hpp
 include/xalanc/XercesParserLiaison/XercesTextWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesTextWrapperAllocator.hpp
-include/xalanc/XercesParserLiaison/XercesToXalanNodeMap.hpp
-include/xalanc/XercesParserLiaison/XercesTreeWalker.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperHelper.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperNavigator.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperToXalanNodeMap.hpp
@@ -428,6 +447,9 @@ include/xalanc/XercesParserLiaison/XercesWrapperTypes.hpp
 %%ICUDEP%%@dirrm include/xalanc/ICUBridge
 @dirrm include/xalanc/Include
 @dirrm include/xalanc/PlatformSupport
+@comment @dirrm include/xalanc/TestXPath
+@comment @dirrm include/xalanc/Utils/MsgCreator
+@comment @dirrm include/xalanc/Utils/XalanMsgLib
 @dirrm include/xalanc/XMLSupport
 @dirrm include/xalanc/XPath
 @dirrm include/xalanc/XPathCAPI
@@ -437,17 +459,24 @@ include/xalanc/XercesParserLiaison/XercesWrapperTypes.hpp
 @dirrm include/xalanc/XalanExtensions
 @dirrm include/xalanc/XalanSourceTree
 @dirrm include/xalanc/XalanTransformer
+@dirrm include/xalanc/XercesParserLiaison/Deprecated
 @dirrm include/xalanc/XercesParserLiaison
 @dirrm include/xalanc
-bin/testXSLT
 bin/Xalan
+%%LOCALSYS_NLS%%lib/nls/msg/en_US/XalanMsg_en_US.cat
+%%LOCALSYS_NLS%%@dirrm lib/nls/msg/en_US
+%%LOCALSYS_NLS%%@dirrm lib/nls/msg
+%%LOCALSYS_NLS%%@dirrm lib/nls
 lib/%%XALANC_LIB%%
 @exec ln -fs %%XALANC_LIB%% %D/lib/libxalan-c.so
 @exec ln -fs %%XALANC_LIB%% %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%
-@comment @unexec if test ! -r %D/lib/libxalan-c.so; then rm -f %D/lib/libxalan-c.so; fi
-@comment @unexec if test ! -r %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%; fi
 @unexec if test -L %D/lib/libxalan-c.so; then rm -f %D/lib/libxalan-c.so; fi
 @unexec if test -L %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalan-c.so.%%XALANC_LIB_VERSION%%; fi
+lib/%%XALANMSG_LIB%%
+%%LOCALSYS_INMEM%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so
+%%LOCALSYS_INMEM%%@exec ln -fs %%XALANMSG_LIB%% %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%
+%%LOCALSYS_INMEM%%@unexec if test -L %D/lib/libxalanMsg.so; then rm -f %D/lib/libxalanMsg.so; fi
+%%LOCALSYS_INMEM%%@unexec if test -L %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; then rm -f %D/lib/libxalanMsg.so.%%XALANC_LIB_VERSION%%; fi
 @comment -----------------------------------------------------------------------
 @comment
 @comment SAMPLES
@@ -574,7 +603,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/readme.html
 %%NOPORTDOCS%%%%DOCSDIR%%/overview.html
 %%NOPORTDOCS%%%%DOCSDIR%%/images/options-sane.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/images/options-include.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/usagepatterns-label-3.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/usagepatterns-label-2.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/usagepatterns-label-1.jpg
@@ -607,18 +635,21 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/extensions-label-2.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/extensions-label-1.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/extensions-header.jpg
-%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-8-label-3.jpg
-%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-8-label-2.jpg
-%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-8-label-1.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-44-label-3.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-44-label-2.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-44-label-1.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-42-label-3.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-42-label-2.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-42-label-1.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-40-label-3.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-40-label-2.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-40-label-1.jpg
-%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-26-label-3.jpg
-%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-26-label-2.jpg
-%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-26-label-1.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-36-label-3.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-36-label-2.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-36-label-1.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-24-label-3.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-24-label-2.jpg
+%%NOPORTDOCS%%%%DOCSDIR%%/graphics/ext-24-label-1.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/commandline-label-3.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/commandline-label-2.jpg
 %%NOPORTDOCS%%%%DOCSDIR%%/graphics/commandline-label-1.jpg
@@ -654,8 +685,8 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontextdefault__contextnodelistpositioncache.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__prefixresolversetandrestore.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__getandreleasecachedstring.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__currentnodesetandrestore.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__contextnodelistsetandrestore.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__currentnodepushandpop.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__contextnodelistpushandpop.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathexecutioncontext__borrowreturnmutablenodereflist.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathevaluator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xpathenvsupportdefault__namespacefunctiontabledeletefunctor.gif
@@ -682,7 +713,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xercestextwrapperallocator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xercestextbridgeallocator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xercesparserliaison__documententry.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xercesnamednodelistcache.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xerceselementwrapperallocator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xerceselementbridgeallocator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xercesdomwalker.gif
@@ -735,6 +765,7 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalannamespacesstack__xalannamespacesstackentry.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalannamespacesstack.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalannamespace.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanmessageloader.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanhtmlelementsproperties__internalelementproperties.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanhtmlelementsproperties__internalattributeproperties.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanhtmlelementsproperties__elementproperties.gif
@@ -765,6 +796,8 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalandomexception.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalandecimalformatsymbols.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalancompiledstylesheet.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalancollationservices__collationcomparefunctor.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalancollationservices.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanbitmap.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanavtpartxpathallocator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_xalanavtpartsimpleallocator.gif
@@ -789,15 +822,13 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_toplevelarg.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontextdefault__xpathcachereturnfunctor.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontextdefault__xalannumberformatfactory.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontextdefault__collationcomparefunctor.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__xpathguard.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__setandrestorecurrenttemplate.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__setandrestorecurrentstackframeindex.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__setandrestorecopytextnodesonly.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__resolveandcleartoplevelparams.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__pushandpopelementframe.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__pushandpopcurrenttemplate.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__pushandpopcontextmarker.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__paramspushpop.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__outputcontextpushpop.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__elementrecursionstackpusher.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_stylesheetexecutioncontext__borrowreturnnodesorter.gif
@@ -807,7 +838,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_std__unary_function.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_std__binary_function.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_selectionevent.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_resulttreefragallocator.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_resultnamespacesstack.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_resettable.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/inherit_graph_class_problemlistener.gif
@@ -1056,12 +1086,12 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__getandreleasecachedstring_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__getandreleasecachedstring.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__getandreleasecachedstring-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__currentnodesetandrestore_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__currentnodesetandrestore.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__currentnodesetandrestore-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__contextnodelistsetandrestore_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__contextnodelistsetandrestore.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__contextnodelistsetandrestore-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__currentnodepushandpop_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__currentnodepushandpop.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__currentnodepushandpop-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__contextnodelistpushandpop_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__contextnodelistpushandpop.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__contextnodelistpushandpop-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__borrowreturnmutablenodereflist_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__borrowreturnmutablenodereflist.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xpathexecutioncontext__borrowreturnmutablenodereflist-members.html
@@ -1270,10 +1300,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodemapattributelist_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodemapattributelist.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodemapattributelist-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodelistcache_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodelistcache_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodelistcache.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesnamednodelistcache-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesliaisonxalandomstringpool_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesliaisonxalandomstringpool_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesliaisonxalandomstringpool.html
@@ -1301,10 +1327,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementwrapper_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementwrapper.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementwrapper-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementnamednodelistcache_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementnamednodelistcache_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementnamednodelistcache.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementnamednodelistcache-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementbridgeallocator_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementbridgeallocator.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xerceselementbridgeallocator-members.html
@@ -1386,10 +1408,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumenttypebridge_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumenttypebridge.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumenttypebridge-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentnamednodelistcache_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentnamednodelistcache_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentnamednodelistcache.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentnamednodelistcache-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentfragmentbridge_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentfragmentbridge_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xercesdocumentfragmentbridge.html
@@ -1642,6 +1660,10 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__prefixresolverproxy_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__prefixresolverproxy.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__prefixresolverproxy-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__invalidqnameexception_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__invalidqnameexception_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__invalidqnameexception.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname__invalidqnameexception-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanqname-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanprocessinginstruction_inherit_graph.gif
@@ -1740,10 +1762,18 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalannamednodemap_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalannamednodemap.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalannamednodemap-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanmessageloader_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanmessageloader_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanmessageloader.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanmessageloader-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanlocator_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanlocator_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanlocator.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanlocator-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalaninmemorymessageloader_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalaninmemorymessageloader_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalaninmemorymessageloader.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalaninmemorymessageloader-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanhtmlelementsproperties_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanhtmlelementsproperties__internalelementproperties.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanhtmlelementsproperties__internalelementproperties-members.html
@@ -1863,6 +1893,14 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionexp_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionexp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionexp-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionevaluate_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionevaluate_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionevaluate.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionevaluate-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionencodeuri_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionencodeuri_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionencodeuri.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionencodeuri-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondistinct_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondistinct_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondistinct.html
@@ -1871,6 +1909,14 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondifference_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondifference.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondifference-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondecodeuri_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondecodeuri_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondecodeuri.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondecodeuri-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondatetime_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondatetime_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondatetime.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctiondatetime-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctioncos_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctioncos_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctioncos.html
@@ -1907,6 +1953,14 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionabs_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionabs.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltfunctionabs-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdynamicfunctionsinstaller_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdynamicfunctionsinstaller_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdynamicfunctionsinstaller.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdynamicfunctionsinstaller-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdatetimefunctionsinstaller_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdatetimefunctionsinstaller_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdatetimefunctionsinstaller.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltdatetimefunctionsinstaller-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltcommonfunctionsinstaller_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltcommonfunctionsinstaller_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalanexsltcommonfunctionsinstaller.html
@@ -2007,6 +2061,10 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentprefixresolver__namespacenodestreewalker-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentprefixresolver.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentprefixresolver-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragmentnodereflistbaseproxy_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragmentnodereflistbaseproxy_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragmentnodereflistbaseproxy.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragmentnodereflistbaseproxy-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragment_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragment_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalandocumentfragment.html
@@ -2053,6 +2111,12 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancomment_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancomment.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancomment-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancollationservices_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancollationservices__collationcomparefunctor_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancollationservices__collationcomparefunctor.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancollationservices__collationcomparefunctor-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancollationservices.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancollationservices-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancharacterdata_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancharacterdata_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_xalancharacterdata.html
@@ -2155,9 +2219,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault__defaultcollationcomparefunctor_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault__defaultcollationcomparefunctor.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault__defaultcollationcomparefunctor-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault__collationcomparefunctor_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault__collationcomparefunctor.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault__collationcomparefunctor-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontextdefault-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext_inherit_graph.gif
@@ -2165,9 +2226,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__xpathguard_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__xpathguard.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__xpathguard-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__setandrestorecurrenttemplate_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__setandrestorecurrenttemplate.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__setandrestorecurrenttemplate-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__setandrestorecurrentstackframeindex_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__setandrestorecurrentstackframeindex.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__setandrestorecurrentstackframeindex-members.html
@@ -2180,9 +2238,14 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopelementframe_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopelementframe.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopelementframe-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcurrenttemplate_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcurrenttemplate.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcurrenttemplate-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcontextmarker_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcontextmarker_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcontextmarker.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__pushandpopcontextmarker-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__paramspushpop_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__paramspushpop_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__paramspushpop.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_stylesheetexecutioncontext__paramspushpop-members.html
@@ -2244,21 +2307,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_reusablearenaallocator_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_reusablearenaallocator.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_reusablearenaallocator-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbasenodereflistbaseproxy_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbasenodereflistbaseproxy_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbasenodereflistbaseproxy.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbasenodereflistbaseproxy-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbase_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbase_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbase.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragbase-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragallocator_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragallocator.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefragallocator-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefrag_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefrag_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefrag.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resulttreefrag-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resultnamespacesstack_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resultnamespacesstack.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_resultnamespacesstack-members.html
@@ -2518,14 +2566,14 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_function_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_function.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_function-members.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_foundindex_inherit_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_foundindex_coll_graph.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_foundindex.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_foundindex-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertreewalker_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertreewalker_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertreewalker.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertreewalker-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxmlbase_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxmlbase_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxmlbase.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxmlbase-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxml_utf8_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxml_utf8_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_formattertoxml_utf8.html
@@ -2676,6 +2724,10 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemif_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemif.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemif-members.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforwardcompatible_inherit_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforwardcompatible_coll_graph.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforwardcompatible.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforwardcompatible-members.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforeach_inherit_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforeach_coll_graph.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/class_elemforeach.html
@@ -3022,10 +3074,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeMapAttributeList.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeMapAttributeList.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeMapAttributeList.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeListCache.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeListCache.hpp_dep_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeListCache.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesNamedNodeListCache.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesLiaisonXalanDOMStringPool.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesLiaisonXalanDOMStringPool.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesLiaisonXalanDOMStringPool.hpp-source.html
@@ -3049,9 +3097,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementWrapper.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementWrapper.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementWrapper.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementNamedNodeListCache.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementNamedNodeListCache.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementNamedNodeListCache.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementBridgeAllocator.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementBridgeAllocator.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesElementBridgeAllocator.hpp.html
@@ -3069,9 +3114,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentTypeBridge.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentTypeBridge.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentTypeBridge.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentNamedNodeListCache.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentNamedNodeListCache.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentNamedNodeListCache.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentFragmentBridge.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentFragmentBridge.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XercesDocumentFragmentBridge.hpp-source.html
@@ -3401,10 +3443,19 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanNamedNodeMap.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanNamedNodeMap.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanNamedNodeMap.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanNLSMessageLoader.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanMessageLoader.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanMessageLoader.hpp_dep_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanMessageLoader.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanMessageLoader.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanLocator.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanLocator.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanLocator.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanLocator.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanInMemoryMessageLoader.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanInMemoryMessageLoader.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanInMemoryMessageLoader.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanICUMessageLoader.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanHTMLElementsProperties.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanHTMLElementsProperties.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanHTMLElementsProperties.hpp.html
@@ -3507,9 +3558,21 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTMath.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTMath.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTMath.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDynamicImpl.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDynamicImpl.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDynamicImpl.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDynamic.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDynamic.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDynamic.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDefinitions.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDefinitions.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDefinitions.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDateTimeImpl.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDateTimeImpl.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDateTimeImpl.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDateTime.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDateTime.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTDateTime.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTCommonImpl.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTCommonImpl.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanEXSLTCommonImpl.hpp-source.html
@@ -3523,6 +3586,9 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentPrefixResolver.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentPrefixResolver.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentPrefixResolver.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentFragmentNodeRefListBaseProxy.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentFragmentNodeRefListBaseProxy.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentFragmentNodeRefListBaseProxy.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentFragment.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentFragment.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanDocumentFragment.hpp.html
@@ -3594,6 +3660,10 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanComment.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanComment.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanComment.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCollationServices.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCollationServices.hpp_dep_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCollationServices.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCollationServices.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCharacterData.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCharacterData.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/XalanCharacterData.hpp.html
@@ -3984,21 +4054,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ReusableArenaAllocator.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ReusableArenaAllocator.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ReusableArenaAllocator.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBaseNodeRefListBaseProxy.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBaseNodeRefListBaseProxy.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBaseNodeRefListBaseProxy.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBase.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBase.hpp_dep_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBase.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragBase.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragAllocator.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragAllocator.hpp_dep_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragAllocator.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFragAllocator.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFrag.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFrag.hpp_dep_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFrag.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultTreeFrag.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultNamespacesStack.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultNamespacesStack.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ResultNamespacesStack.hpp.html
@@ -4036,6 +4091,8 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/OutputContextStack.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/OutputContextStack.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/OutputContextStack.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/OS400Definitions.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/OS400Definitions.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/OS390Definitions.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/NullPrintWriter.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/NullPrintWriter.hpp.html
@@ -4169,6 +4226,7 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionFormatNumber.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionFormatNumber.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionEvaluate.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionEvaluate.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionEvaluate.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionEvaluate.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FunctionElementAvailable.hpp_incl.gif
@@ -4198,9 +4256,6 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/Function.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/Function.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/Function.hpp-source.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FoundIndex.hpp_incl.gif
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FoundIndex.hpp.html
-%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FoundIndex.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterTreeWalker.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterTreeWalker.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterTreeWalker.hpp-source.html
@@ -4213,6 +4268,10 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXML_UTF16.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXML_UTF16.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXML_UTF16.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXMLBase.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXMLBase.hpp_dep_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXMLBase.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXMLBase.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXML.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXML.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/FormatterToXML.hpp.html
@@ -4317,6 +4376,9 @@ lib/%%XALANC_LIB%%
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemIf.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemIf.hpp.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemIf.hpp-source.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemForwardCompatible.hpp_incl.gif
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemForwardCompatible.hpp.html
+%%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemForwardCompatible.hpp-source.html
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemForEach.hpp_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemForEach.hpp_dep_incl.gif
 %%NOPORTDOCS%%%%DOCSDIR%%/apidocs/ElemForEach.hpp.html

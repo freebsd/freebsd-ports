@@ -1,0 +1,12 @@
+! taken from xalan-c CVS
+--- samples/ThreadSafe/ThreadSafe.cpp.orig	Sun Feb 29 21:07:39 2004
++++ samples/ThreadSafe/ThreadSafe.cpp	Sun Feb 29 21:07:55 2004
+@@ -95,7 +95,7 @@
+ #elif defined(XALAN_POSIX2_AVAILABLE)
+ #include <pthread.h>
+ #include <unistd.h>
+-    typedef   unsigned long     theThreadIDType;
++    typedef   pthread_t         theThreadIDType;
+     typedef   pthread_t         theThreadType;
+ 
+ #else
