@@ -11,6 +11,7 @@ etc/MailScanner/virus.scanners.conf.sample
 etc/rc.d/mailscanner.sh.sample
 etc/rc.d/mta.sh.sample
 lib/MailScanner/MailScanner.pm
+lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
 lib/MailScanner/MailScanner/CustomConfig.pm
@@ -42,6 +43,7 @@ lib/MailScanner/MailScanner/WorkArea.pm
 lib/MailScanner/MailScanner/ZMDiskStore.pm
 lib/MailScanner/MailScanner/ZMailer.pm
 lib/MailScanner/MailScanner/notes.txt
+lib/MailScanner/MailScanner/CustomFunctions/MyExample.pm
 libexec/MailScanner/MailScanner
 libexec/MailScanner/antivir-autoupdate.sample
 libexec/MailScanner/antivir-wrapper.sample
@@ -538,6 +540,7 @@ libexec/MailScanner/update_virus_scanners
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%
 @dirrm libexec/MailScanner
+@dirrm lib/MailScanner/MailScanner/CustomFunctions
 @dirrm lib/MailScanner/MailScanner
 @dirrm lib/MailScanner
 @dirrm etc/MailScanner/rules

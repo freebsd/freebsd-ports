@@ -1,8 +1,25 @@
---- ../MailScanner-4.29.2.orig/docs/man/MailScanner.conf.5	Thu Mar 18 13:51:47 2004
-+++ docs/man/MailScanner.conf.5	Thu Mar 18 13:53:42 2004
+--- ../MailScanner-4.29.5.orig/docs/man/MailScanner.conf.5	Tue Mar 23 14:41:54 2004
++++ docs/man/MailScanner.conf.5	Tue Mar 23 14:42:19 2004
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.28.5" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.28.6" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.29.5" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
+@@ -1739,6 +1739,16 @@
+ 
+ .br 
+ This is the directory in which lock files are placed to stop the virus scanners used while they are in the middle of updating themselves with new virus definitions. If you change this at all, you will need to edit the "autoupdate" scripts for all your virus scanners. 
++
++.TP 
++\fBCustom Functions Dir\fR
++Default: /opt/MailScanner/lib/MailScanner/CustomFunctions
++.br 
++Default FreeBSD: /usr/local/lib/MailScanner/MailScanner/CustomFunctions
++.br 
++
++.br 
++Where to put the code for your "Custom Functions". No code in this directory should be over\-written by the installation or upgrade process. All files starting with "." or ending with ".rpmnew" will be ignored, all other files will be compiled and may be used with Custom Functions.
+ 
+ .TP 
+ \fBLock Type\fR

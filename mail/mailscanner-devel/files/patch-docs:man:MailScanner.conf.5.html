@@ -1,0 +1,43 @@
+--- ../MailScanner-4.29.5.orig/docs/man/MailScanner.conf.5.html	Tue Mar 23 14:41:54 2004
++++ docs/man/MailScanner.conf.5.html	Tue Mar 23 14:42:22 2004
+@@ -1,5 +1,5 @@
+ <!-- Creator     : groff version 1.19 -->
+-<!-- CreationDate: Mon Mar  8 10:33:06 2004 -->
++<!-- CreationDate: Tue Mar 23 14:41:26 2004 -->
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+@@ -4701,6 +4701,33 @@
+ change this at all, you will need to edit the
+ &quot;autoupdate&quot; scripts for all your virus
+ scanners.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Custom Functions Dir</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++/opt/MailScanner/lib/MailScanner/CustomFunctions<br>
++Default FreeBSD:
++/usr/local/lib/MailScanner/MailScanner/CustomFunctions</p>
++<!-- INDENTATION -->
++<p>Where to put the code for your &quot;Custom
++Functions&quot;. No code in this directory should be
++over&minus;written by the installation or upgrade process.
++All files starting with &quot;.&quot; or ending with
++&quot;.rpmnew&quot; will be ignored, all other files will be
++compiled and may be used with Custom Functions.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
