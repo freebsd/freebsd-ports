@@ -1436,6 +1436,7 @@ evg		ports/www/evg
 evilbar		ports/audio/evilbar
 evilwm		ports/x11-wm/evilwm
 evolution	ports/mail/evolution
+evolution-devel	ports/mail/evolution-devel
 evolvotron	ports/graphics/evolvotron
 eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
@@ -2080,6 +2081,7 @@ gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespell	ports/textproc/gnomespell
+gnomespell-devel	ports/textproc/gnomespell-devel
 gnomesword	ports/misc/gnomesword
 gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnometelnet	ports/net/gnometelnet
@@ -2284,6 +2286,7 @@ gtkglextmm	ports/x11-toolkits/gtkglextmm
 gtkgraph	ports/graphics/gtkgraph
 gtkgrepmail	ports/mail/gtkgrepmail
 gtkhtml		ports/www/gtkhtml
+gtkhtml3	ports/www/gtkhtml3
 gtkhx		ports/net/gtkhx
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
@@ -3695,6 +3698,7 @@ libsmi		ports/net/libsmi
 libsndfile	ports/audio/libsndfile
 libsocket++	ports/net/libsocket++
 libsocketcpp	ports/net/libsocketcpp
+libsoup		ports/devel/libsoup
 libstocks	ports/devel/libstocks
 libstrfunc	ports/devel/libstrfunc
 libstroke	ports/devel/libstroke
