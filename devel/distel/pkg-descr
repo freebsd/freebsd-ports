@@ -1,0 +1,7 @@
+Distel extends Emacs Lisp with Erlang-style processes and message
+passing, and the Erlang distribution protocol. With this you can
+write Emacs Lisp processes and have them communicate with normal
+Erlang processes in real nodes. Includes some useful applications
+(Dynamic TAGS, debugger, process list, profiler and more).
+
+WWW: http://www.bluetail.com/~luke/distel/
