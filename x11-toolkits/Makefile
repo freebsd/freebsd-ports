@@ -84,7 +84,6 @@
     SUBDIR += hs-gtk2hs
     SUBDIR += icegradient
     SUBDIR += itk
-    SUBDIR += iv
     SUBDIR += iwidgets
     SUBDIR += jx
     SUBDIR += lesstif
