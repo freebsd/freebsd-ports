@@ -9,7 +9,7 @@ PORTNAME?=	bjfiltercom
 PORTVERSION?=	1.3
 #PORTREVISION=	1
 CATEGORIES=	print linux
-MASTER_SITES=	ftp://www.canon-sales.co.jp/pub/driver/printer/BJ/linux/
+MASTER_SITES=	ftp://download.canon.jp/pub/driver/bj/linux/
 DISTFILES=	${RPMFILE}
 .if !defined(SLAVE_PORT)
 DISTFILES+=	${DOC_DISTFILES}
@@ -64,9 +64,6 @@ PRMODEL=	F${PRTYPE}
 .else
 PRMODEL=	${PREFIX_PRTYPE:U}${PRTYPE}
 .endif
-
-t:
-	echo ${PRMODEL} ${RPMFILE}
 
 do-build:
 	${SED}	-e 's,%%PRMODEL%%,${PRMODEL},' \
