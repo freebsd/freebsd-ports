@@ -1,0 +1,12 @@
+Audacity is a program that lets you manipulate digital audio
+waveforms. In addition to letting you record sounds directly from
+within the program, it imports many sound file formats, including
+WAV, AIFF, AU, IRCAM, MP3, and Ogg Vorbis. It supports all
+common editing operations such as Cut, Copy, and Paste, plus it will
+mix tracks and let you apply plug-in effects to any part of a sound. It
+also has a built-in amplitude envelope editor, a customizable
+spectrogram mode and a frequency analysis window for audio
+analysis applications. 
+
+Author: Dominic Mazzoni dominic@minorninth.com
+WWW: http://audacity.sourceforge.net
