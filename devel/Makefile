@@ -529,6 +529,7 @@
     SUBDIR += p5-Date-Roman
     SUBDIR += p5-Date-Simple
     SUBDIR += p5-DateConvert
+    SUBDIR += p5-DateTime
     SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-TimeZone
     SUBDIR += p5-Devel-Constants
