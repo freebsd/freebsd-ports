@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.5
 CATEGORIES=	net security
 MASTER_SITES=   http://www.silcnet.org/download/server/sources/ \
 		ftp://ftp.silcnet.org/silc/server/sources/ \
@@ -37,10 +37,6 @@ PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
-
-.ifdef(WITHOUT_OPTIMIZED_ASM)
-CONFIGURE_ARGS+=	--disable-asm
-.endif
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--disable-threads
@@ -74,6 +70,10 @@ post-install:
 
 .if ${ARCH} != "i386"
 WITHOUT_OPTIMIZED_ASM=	yes
+.endif
+
+.ifdef(WITHOUT_OPTIMIZED_ASM)
+CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 .include <bsd.port.post.mk>

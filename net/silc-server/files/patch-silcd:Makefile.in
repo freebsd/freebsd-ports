@@ -1,5 +1,5 @@
---- silcd/Makefile.in.orig	Fri Dec 21 02:15:06 2001
-+++ silcd/Makefile.in	Fri Dec 21 02:16:08 2001
+--- silcd/Makefile.in.orig	Mon Jan 21 17:11:17 2002
++++ silcd/Makefile.in	Mon Jan 21 17:12:21 2002
 @@ -260,8 +260,8 @@
  	     || test -f $$p1 \
  	  ; then \
