@@ -1,3 +1,5 @@
 MD5 (webmin-1.030.tar.gz) = 52616747ec6aef3fff99887e84e196bf
-MD5 (firewall-1.030-1.wbm.gz) = f85c776ce3d7e4fe58186941605aee91
+MD5 (bind8-1.030-1.wbm.gz) = 39414a018bb7b49d7893df8ea4d6f3f9
+MD5 (firewall-1.030-2.wbm.gz) = 03b9e70600008bc28c17709c3f2a3148
+MD5 (squid-1.030-1.wbm.gz) = a16844985f08615a2bc29ae801fd7d56
 MD5 (sshd-1.030-1.wbm.gz) = db8c3c25b264e55ef57060cb1f66ed4a
