@@ -8,6 +8,15 @@ share/examples/slrn/slrnpull/score
 share/examples/slrn/slrnpull/slrn.rc
 share/examples/slrn/slrnpull/slrnpull.conf
 share/examples/slrn/slrnpull/slrnpull.sh
+share/locale/da/LC_MESSAGES/slrn.mo
+share/locale/de/LC_MESSAGES/slrn.mo
+share/locale/es/LC_MESSAGES/slrn.mo
+share/locale/fr/LC_MESSAGES/slrn.mo
+share/locale/it/LC_MESSAGES/slrn.mo
+share/locale/ko/LC_MESSAGES/slrn.mo
+share/locale/nl/LC_MESSAGES/slrn.mo
+share/locale/pl/LC_MESSAGES/slrn.mo
+share/locale/ru/LC_MESSAGES/slrn.mo
 %%PORTDOCS%%share/doc/slrn/FAQ
 %%PORTDOCS%%share/doc/slrn/README.GroupLens
 %%PORTDOCS%%share/doc/slrn/README.SSL
