@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.4
-PORTREVISION=	1
+PORTVERSION=	3.5
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ USE_QT_VER=	3
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 
-ALL_TARGET=	all install install-eric
+ALL_TARGET=	all install
 
 NO_FILTER_SHLIBS=	yes
 
@@ -40,8 +40,5 @@ do-install:
 	@${CP} ${WRKDIR}/binaries/* ${PREFIX}/bin/
 	@( cd ${WRKDIR}/modules/ && ${TAR} -cf - . ) | \
 		( cd ${PYTHONPREFIX_SITELIBDIR} && ${TAR} xf - )
-
-post-install:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PYTHONPREFIX_SITELIBDIR}/eric
 
 .include <bsd.port.mk>
