@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ccache
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
@@ -23,14 +22,62 @@ PLIST_FILES=	bin/ccache
 PORTDOCS=	index.html \
 		ccache-man.html
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
-.endfor
+.if !defined(WITHOUT_COMPILER_LINKS)
+PKGMESSAGE=	${WRKDIR}/pkg-message
+CCLINKDIR=	libexec/ccache/
+PLIST_DIRS=	libexec/ccache
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_COMPILER_LINKS)
+GNU_COMPILERS=		295 33 34 35
+CCACHE_COMPILERS=	cc c++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
+.if ${ARCH}=="i386"
+CCACHE_COMPILERS+=	icc icpc
+.endif
+.if defined(EXTRA_COMPILERS)
+CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
+.endif
+PLIST_FILES+=	${CCACHE_COMPILERS:S|^|${CCLINKDIR}|}
+PLIST_DIRTS+=	${CCLINKDIR}
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_COMPILER_LINKS)
+	@${ECHO_MSG} "===>  Ccache will install compiler links in ${PREFIX}/libexec/ccache"
+	@${ECHO_MSG} "===>  Links that will be created are"
+	@${ECHO_MSG} "===>  ${CCACHE_COMPILERS}"
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===>  You may add more by EXTRA_COMPILERS=\"Ccompiler1 C++compiler1 etc..\""
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===>  You can disable compiler links by defining"
+	@${ECHO_MSG} "===>  WITHOUT_COMPILER_LINKS"
+	@${ECHO_MSG} "===>"
+.endif
+
+post-extract:
+.if !defined(WITHOUT_COMPILER_LINKS)
+	@${SED} -e 's|%%CCACHE_COMPILERS%%|${CCACHE_COMPILERS}|; \
+		s|%%PREFIX%%|${PREFIX}|; s|%%CCLINKDIR%%|${CCLINKDIR}|; \
+		s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${FILESDIR}/pkg-message.in >${PKGMESSAGE}
+.endif
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+.if !defined(WITHOUT_COMPILER_LINKS)
+	@${MKDIR} ${PREFIX}/${CCLINKDIR}
+.for link in ${CCACHE_COMPILERS}
+	@${LN} -sf ${PREFIX}/bin/ccache ${PREFIX}/${CCLINKDIR}/${link}
+.endfor
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>IR}
