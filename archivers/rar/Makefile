@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=    3.0b5
+PORTVERSION=    3.0b6
 CATEGORIES=	archivers
-MASTER_SITES=   http://209.235.4.116/rar/ \
+MASTER_SITES=   http://rarlab.com/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
-DISTNAME=       rarbsd-3.0.b5
+DISTNAME=       rarbsd-3.0.b6
 
 MAINTAINER=	ache@FreeBSD.org
 
