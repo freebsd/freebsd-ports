@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.10 1998/08/18 08:53:30 asami Exp $
+# $Id: Makefile,v 1.11 1999/05/07 17:01:52 itojun Exp $
 #
 
 DISTNAME=	nvi-1.79
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 MAINTAINER=	itojun@itojun.org
-
-BROKEN=		original distribution is incompatible with perl5
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 GNU_CONFIGURE=	yes
