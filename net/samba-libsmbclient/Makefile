@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0.0.r4
+PORTVERSION=	3.0.0
 CATEGORIES=	net
-MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
-MASTER_SITE_SUBDIR=	rc
+MASTER_SITES=   http://us3.samba.org/samba/ftp/%SUBDIR%/ \
+                http://us4.samba.org/samba/ftp/%SUBDIR%/ \
+                http://us5.samba.org/samba/ftp/%SUBDIR%/
+MASTER_SITE_SUBDIR=     . old-versions
 PKGNAMESUFFIX=  -libsmbclient
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+DISTNAME=	${PORTNAME}-3.0.0
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	The shared lib from the samba packges
