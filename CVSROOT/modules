@@ -707,6 +707,7 @@ cdplayer.app	ports/audio/cdplayer.app
 cdrdao		ports/audio/cdrdao
 cdrtools	ports/sysutils/cdrtools
 cel		ports/lang/cel
+celestia	ports/astro/celestia
 centericq	ports/net/centericq
 cervisia	ports/devel/cervisia
 cfe		ports/misc/cfe
