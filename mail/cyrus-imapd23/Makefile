@@ -16,18 +16,18 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
-
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^2].*
+
 LATEST_LINK=	${PORTNAME}22
 
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	yes
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_REINPLACE=	YES
-GNU_CONFIGURE=	YES
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-user=${CYRUS_USER} \
@@ -44,19 +44,78 @@ USE_BDB_VER=	${WITH_BDB_VER}
 USE_BDB_VER=	3
 .endif
 .if ${USE_BDB_VER} == 3
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db3 --with-bdb=db3
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	on \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	off
 .elif ${USE_BDB_VER} == 4
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db4 --with-bdb=db4
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	on \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	off
 .elif ${USE_BDB_VER} == 41
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	on \
+		BDB_42		"Use BerkeleyDB v4.2"	off
 .elif ${USE_BDB_VER} == 42
-LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
-CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
+OPTIONS=	BDB_3		"Use BerkeleyDB v3"	off \
+		BDB_4		"Use BerkeleyDB v4"	off \
+		BDB_41		"Use BerkeleyDB v4.1"	off \
+		BDB_42		"Use BerkeleyDB v4.2"	on
 .else
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
+.endif
+
+OPTIONS+=	DRAC		"Enable DRAC support"			off
+OPTIONS+=	IDLE_IDLED	"Enable IMAP IDLE method idled"		off \
+		IDLE_POLL	"Enable IMAP IDLE method idle-polling"	on
+OPTIONS+=	LDAP_PTLOADER	"Enable LDAP ptloader (experimantal)"	off
+OPTIONS+=	LISTEXT		"Enable IMAP List extensions"		off
+OPTIONS+=	MURDER		"Enable IMAP Murder support"		off
+OPTIONS+=	NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off
+OPTIONS+=	NNTP		"Enable NNTP support"			off
+OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
+		SNMP_5		"Enable SNMP support using net-snmp v5"	off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_BDB_3) && !defined(WITH_BDB_4) && \
+	!defined(WITH_BDB_41) && !defined(WITH_BDB_42)
+.if defined(WITHOUT_BDB_3) && defined(WITHOUT_BDB_4) && \
+	defined(WITHOUT_BDB_41) && defined(WITHOUT_BDB_42)
+BROKEN=		"You need to select one BDB version.  Run 'make config' again!"
+.endif
+.if ${USE_BDB_VER} == 3
+WITH_BDB_3=	yes
+.elif ${USE_BDB_VER} == 4
+WITH_BDB_4=	yes
+.elif ${USE_BDB_VER} == 41
+WITH_BDB_41=	yes
+.elif ${USE_BDB_VER} == 42
+WITH_BDB_42=	yes
+.endif
+.endif
+.if (defined(WITH_BDB_3) && defined(WITH_BDB_4)) || \
+	(defined(WITH_BDB_3) && defined(WITH_BDB_41)) || \
+	(defined(WITH_BDB_3) && defined(WITH_BDB_42)) || \
+	(defined(WITH_BDB_4) && defined(WITH_BDB_41)) || \
+	(defined(WITH_BDB_4) && defined(WITH_BDB_42)) || \
+	(defined(WITH_BDB_41) && defined(WITH_BDB_42))
+BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
+.endif
+.if defined(WITH_BDB_3)
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db3 --with-bdb=db3
+.elif defined(WITH_BDB_4)
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db4 --with-bdb=db4
+.elif defined(WITH_BDB_41)
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db41 --with-bdb=db41
+.elif defined(WITH_BDB_42)
+LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
 .endif
 
 .if defined(WITH_NNTP)
@@ -75,17 +134,17 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
-.if defined(WITH_IDLE)
-.if ${WITH_IDLE} != poll && ${WITH_IDLE} != idled && ${WITH_IDLE} != no
-BROKEN=		"WITH_IDLE must be poll, idled or no"
+.if defined(WITH_IDLE_IDLED) && defined(WITH_IDLE_POLL)
+BROKEN=		"Multiple IDLE methods selected.  Run 'make config' again!"
 .endif
-CONFIGURE_ARGS+=--with-idle=${WITH_IDLE}
-.if ${WITH_IDLE} == idled
+.if defined(WITH_IDLE_IDLED)
+CONFIGURE_ARGS+=--with-idle=idled
 PLIST_SUB+=	IDLED=""
-.else
+.elif defined(WITH_IDLE_POLL)
+CONFIGURE_ARGS+=--with-idle=poll
 PLIST_SUB+=	IDLED="@comment "
-.endif
-.else
+.elif defined(WITHOUT_IDLE_IDLED) && defined(WITHOUT_IDLE_POLL)
+CONFIGURE_ARGS+=--with-idle=no
 PLIST_SUB+=	IDLED="@comment "
 .endif
 
@@ -107,25 +166,15 @@ CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if !defined(WITH_SNMP_VER) && defined(WITH_SNMP)
-.if exists(${LOCALBASE}/lib/libsnmp.so.6)
-WITH_SNMP_VER=	5
-.elif exists(${LOCALBASE}/lib/libsnmp.so.4)
-WITH_SNMP_VER=	4
-.else
-WITH_SNMP_VER=	5
+.if defined(WITH_SNMP_4) && defined(WITH_SNMP_5)
+BROKEN=		"Multiple net-snmp versions selected.  Run 'make config' again!"
 .endif
-.endif
-.if defined(WITH_SNMP_VER)
-.if ${WITH_SNMP_VER} == 4
+.if defined(WITH_SNMP_4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-.elif ${WITH_SNMP_VER} == 5
+.elif defined(WITH_SNMP_5)
 LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
-.else
-BROKEN=		"WITH_SNMP_VER must be 4 or 5"
 .endif
+.if defined(WITH_SNMP_4) || defined(WITH_SNMP_5)
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
@@ -176,18 +225,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
-
-pre-everything::
-.if !defined(WITH_BDB_VER)
-	@if ${LDCONFIG} -r | ${GREP} -qwE -e "-ldb(41|4)"; then \
-		${ECHO_MSG} ""; \
-		${ECHO_MSG} "It seems you have installed newer db than db3.  If"; \
-		${ECHO_MSG} "you are using newer db for cyrus-sasl2, you should"; \
-		${ECHO_MSG} "specify same version by WITH_BDB_VER.  For"; \
-		${ECHO_MSG} "exapmle, WITH_BDB_VER=4 for db4."; \
-		${ECHO_MSG} ""; \
-	fi
-.endif
 
 post-patch:
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
