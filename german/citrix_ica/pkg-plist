@@ -1,3 +1,5 @@
+@unexec if [ -f %D/lib/netscape/mime.types ]; then (cat %D/lib/netscape/mime.types | grep -v "application/x-ica" > %D/lib/netscape/mime.types.tmp; mv %D/lib/netscape/mime.types.tmp %D/lib/netscape/mime.types); fi
+@unexec if [ -f %D/lib/netscape/mailcap ]; then (cat %D/lib/netscape/mailcap | grep -v "application/x-ica" > %D/lib/netscape/mailcap.tmp; mv %D/lib/netscape/mailcap.tmp %D/lib/netscape/mailcap); fi
 bin/wfcmgr
 bin/wfica
 ICAClient/wfica
