@@ -1,0 +1,41 @@
+bin/gmsh
+bin/dxf2geo
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/bgmesh.pos
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t1.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t2.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t3.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t4.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t5.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t6.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t7.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t8.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t8.par
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/t9.geo
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/view1.pos
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/view2.pos
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/view3.pos
+%%PORTDOCS%%%%DOCSDIR%%/tutorial/view4.pos
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/anim-all.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/anim-seq.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/antenna.i1
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/filter.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.i1
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/machine.i2
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece-extr-rec.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece-extr.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/piece.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/primitives.pos
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/splines.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.geo
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i1
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i2
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i3
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i4
+%%PORTDOCS%%%%EXAMPLESDIR%%/demos/tower.i5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demos
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
