@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	penguin-command
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.linux-games.com/penguin-command/
 
