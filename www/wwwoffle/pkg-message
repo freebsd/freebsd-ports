@@ -12,4 +12,4 @@ the `upgrade-config.pl' script, so you will find a copy of this in
 configuration file, e.g.:
 
      $ perl /var/spool/wwwoffle/upgrade-config.pl \
-            /var/spool/wwwoffle/wwwoffle.conf
+            /usr/local/etc/wwwoffle.conf
