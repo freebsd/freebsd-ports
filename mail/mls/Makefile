@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mls
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://marki.host.sk/MLS/
 EXTRACT_SUFX=	.tgz
