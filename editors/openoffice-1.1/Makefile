@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
