@@ -1,36 +1,11 @@
---- configure.orig	Fri Dec 19 18:53:45 2003
-+++ configure	Fri Dec 19 18:57:16 2003
-@@ -12181,7 +12181,7 @@
- fi
- rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+--- configure.orig	Sat Feb  7 22:34:33 2004
++++ configure	Sat Feb  7 22:35:10 2004
+@@ -24017,7 +24017,7 @@
+ # Check whether --with-fftw-libraries or --without-fftw-libraries was given.
+ if test "${with_fftw_libraries+set}" = set; then
+   withval="$with_fftw_libraries"
+-  FFTW_LIBS="-L$withval -lfftw"
++  FFTW_LIBS="-L$withval -lfftw -lrfftw"
+ fi;
  
--	if test "$FFTW_LIBS" == "no"; then
-+	if test "$FFTW_LIBS" = "no"; then
- 		# Try the standard search path first
- 		LIBS="-lrfftw -lfftw -lm $fftw_save_LIBS"
- 		cat >conftest.$ac_ext <<_ACEOF
-@@ -12225,7 +12225,7 @@
- 				/usr/*/lib \
- 				"${prefix}"/lib/* /usr/lib/* \
- 				/usr/local/lib/* /*/lib; do
--				if test -d "$dir" && test "`ls $dir/libdfftw.* 2> /dev/null`" != ""; then
-+				if test -d "$dir" && test "`ls $dir/libfftw.* 2> /dev/null`" != ""; then
- 					FFTW_LIBS="-L$dir -lrfftw -lfftw -lm"
- 					break
- 				fi
-@@ -12693,13 +12693,12 @@
- 
- else
- 
--			echo "$as_me:12696: checking for dlopen in -l" >&5
--echo $ECHO_N "checking for dlopen in -l... $ECHO_C" >&6
-+			echo "$as_me:12696: checking for dlopen" >&5
-+echo $ECHO_N "checking for dlopen... $ECHO_C" >&6
- if test "${ac_cv_lib__dlopen+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-l  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line 12704 "configure"
- #include "confdefs.h"
+ echo "$as_me:$LINENO: checking for FFTW" >&5
