@@ -1,7 +1,7 @@
---- Makefile.orig	Wed May  1 17:52:04 1996
-+++ Makefile	Wed May  1 17:53:14 1996
+--- Makefile.orig	Fri May 24 10:45:36 1996
++++ Makefile	Wed May 29 13:21:40 1996
 @@ -21,8 +21,8 @@
- 	cd xpdf; make pdftops
+ 	cd xpdf; $(MAKE) pdftops
  
  install:
 -	install -c xpdf/xpdf $(PREFIX)/bin
@@ -10,4 +10,4 @@
 +	install -c xpdf/pdftops $(X11BASE)/bin
  
  clean:
- 	cd goo; make clean
+ 	cd goo; $(MAKE) clean
