@@ -1,0 +1,72 @@
+--- Makefile.orig	Sun Apr 11 01:00:23 2004
++++ Makefile	Mon May 24 00:35:57 2004
+@@ -15,9 +15,13 @@
+ #
+ # See INSTALL for details.
+ #
++PREFIX?= /usr/local
+ 
+ # Set the location of Perl.
+-PERL = /usr/bin/perl
++PERL = /usr/local/bin/perl
++
++# Blank by default, but set to QUIET to ask essential questions only
++INSTALL_VERBOSITY?= STANDARD
+ 
+ # can't load Bric since it loads Bric::Config which has dependencies
+ # that won't be solved till make install.
+@@ -31,13 +35,13 @@
+                   bconf/bricolage.conf build_done
+ 
+ required.db	: inst/required.pl
+-	$(PERL) inst/required.pl
++	$(PERL) inst/required.pl $(INSTALL_VERBOSITY)
+ 
+ modules.db 	: inst/modules.pl lib/Bric/Admin.pod
+-	$(PERL) inst/modules.pl
++	$(PERL) inst/modules.pl $(INSTALL_VERBOSITY)
+ 
+ apache.db	: inst/apache.pl required.db
+-	$(PERL) inst/apache.pl
++	$(PERL) inst/apache.pl $(INSTALL_VERBOSITY)
+ 
+ # This shoudl be updated to something more database-independent. In fact,
+ # what should happen is that a script should present a list of supported
+@@ -45,10 +49,10 @@
+ # driver, e.g., "Pg", "mysql", "Oracle", etc.), and then the rest of the
+ # work should just assume that database and do the work for that database.
+ postgres.db 	: inst/postgres.pl required.db
+-	$(PERL) inst/postgres.pl
++	$(PERL) inst/postgres.pl $(INSTALL_VERBOSITY)
+ 
+ config.db	: inst/config.pl required.db apache.db postgres.db
+-	$(PERL) inst/config.pl
++	$(PERL) inst/config.pl $(INSTALL_VERBOSITY)
+ 
+ bconf/bricolage.conf	:  required.db inst/conf.pl
+ 	$(PERL) inst/conf.pl INSTALL $(BRIC_VERSION)
+@@ -168,20 +172,20 @@
+ 
+ lib 		: 
+ 	-rm -f lib/Makefile
+-	cd lib; $(PERL) Makefile.PL; $(MAKE) install
++	cd lib; $(PERL) Makefile.PL PREFIX="${PREFIX}"; $(MAKE) install
+ 
+ bin 		:
+ 	-rm -f bin/Makefile
+-	cd bin; $(PERL) Makefile.PL; $(MAKE) install
++	cd bin; $(PERL) Makefile.PL PREFIX="${PREFIX}"; $(MAKE) install
+ 
+ files 		: config.db bconf/bricolage.conf
+ 	$(PERL) inst/files.pl
+ 
+ db    		: inst/db.pl postgres.db
+-	$(PERL) inst/db.pl
++# NOOP	$(PERL) inst/db.pl
+ 
+ db_grant	: inst/db.pl postgres.db
+-	$(PERL) inst/db_grant.pl
++# NOOP	$(PERL) inst/db_grant.pl
+ 
+ done		: bconf/bricolage.conf db files bin lib cpan
+ 	$(PERL) inst/done.pl
