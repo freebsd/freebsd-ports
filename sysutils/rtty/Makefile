@@ -8,7 +8,8 @@
 PORTNAME=	rtty
 PORTVERSION=	4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.vix.com/pub/vixie/
+MASTER_SITES=	ftp://ftp.vix.com/pub/vixie/ \
+		ftp://gatekeeper.research.compaq.com/pub/misc/vixie/
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
