@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/Read
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
 
 MAN1=		mytop.1
 POD2MAN?=	/usr/bin/pod2man
@@ -28,6 +27,8 @@ POD2MAN?=	/usr/bin/pod2man
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DISTFILES} > ${WRKDIR}/${PORTNAME}
+
+do-build:
 	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1
 
 do-install:
