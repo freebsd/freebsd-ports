@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.6
+PORTVERSION=	4.6.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ USE_PERL5=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gctags.1 global.1 gozilla.1 gtags.1 htags.1
+INFO=		global
 
 post-install:
 	install-info ${PREFIX}/info/global.info ${PREFIX}/info/dir
