@@ -1,0 +1,6 @@
+This port provides an Eclipse plugin to help develop J2ME code. 
+With the help of a J2ME Wireless Toolkit, users may develop MIDP 
+midlets within the Eclipse development environment. Future version 
+may provide supprt for other profiles and configurations.
+
+WWW: http://eclipseme.sourceforge.net/
