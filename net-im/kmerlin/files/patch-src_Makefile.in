@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Jun 22 19:41:52 2004
++++ src/Makefile.in	Tue Jun 22 19:42:18 2004
+@@ -251,7 +251,7 @@
+ kmerlin_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+ 
+ # the libraries to link against.
+-kmerlin_LDADD = ./setting/libsetting.a ./chat/libchat.a $(LIB_KFILE) $(compat_lib) 
++kmerlin_LDADD = ./setting/libsetting.a ./chat/libchat.a $(LIB_KFILE) $(compat_lib) $(LIBPTHREAD)
+ 
+ # which sources should be compiled for kmerlin
+ #>- kmerlin_SOURCES = main.cpp kmerlin.cpp kmerlinview.cpp kmerliniface.skel kmcontact.cpp kmcontact.h kmservice.h kmservice.cpp kmchatservice.h kmchatservice.cpp qcategorywidget.cpp qcategorywidget.h kmgroup.h kmgroup.cpp connectwidget.ui kmerlinprofile.cpp kmerlinprofile.h kmtextreplace.cpp kmtextreplace.h kmemotionicon.cpp kmemotionicon.h imchatservice.cpp imchatservice.h imfilereceive.cpp imfilereceive.h kmcontactaction.cpp kmcontactaction.h kmerlinnotify.cpp kmerlinnotify.h kmerlindock.h kmerlindock.cpp xautolock.cpp xautolock.h CContactWidget.cpp CContactWidget.h login.ui authdlg.ui authdlg.ui.h login.ui.h groupdlg.ui groupdlg.ui.h

@@ -29,7 +29,8 @@ post-extract:
 	@${TOUCH} ${WRKSRC}/config.h.in
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g' -e "s,-lpthread,${PTHREAD_LIBS},g" \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
 
@@ -38,5 +39,4 @@ LIB_DEPENDS+=	digikam:${PORTSDIR}/graphics/digikam
 CONFIGURE_ARGS+=	--enable-digiKam-plugin
 .endif
 
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
