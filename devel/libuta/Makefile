@@ -49,6 +49,7 @@ post-patch:
 .endfor
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|<freetype/freetype.h>|<freetype1/freetype/freetype.h>|g' \
+		${WRKSRC}/configure ${WRKSRC}/uta/font.h
 
 .include <bsd.port.post.mk>
