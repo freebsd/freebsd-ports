@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sparkling
-PORTVERSION=	0.4
-MASTER_SITES=	http://66.98.142.22/%7Edaflow/daflow/downloads/
-DISTNAME=	Sparkling%20Icons%20%5B${PORTVERSION}%5D%20by%20Da%20FloW
+PORTVERSION=	0.5
+MASTER_SITES=	http://da-flow.schaekel.org/da-flow/daten/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 COMMENT=	KDE Sparkling iconset
 
-WRKSRC=		${WRKDIR}/Sparkling
+WRKSRC=		${WRKDIR}/sparkling
 PORT_SHAREDIR?="${PORTNAME}-${PORTVERSION}"
-
-BROKEN=		"Unfetchable"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
