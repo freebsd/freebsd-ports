@@ -7,6 +7,7 @@
 
 PORTNAME=	ganglia-monitor-core
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
@@ -24,7 +25,7 @@ LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .if !defined (WITHOUT_GMETAD)
 CONFIGURE_ARGS+=	--with-gmetad
@@ -53,7 +54,7 @@ FIX_CONF_FILES=	${WRKSRC}/lib/ganglia/gmond_config.h \
 		${WRKSRC}/gmetad/cmdline.h \
 		${WRKSRC}/gmond/cmdline.c \
 		${WRKSRC}/gmond/cmdline.h
-FIX_DB_FILES=	${WRKSRC}/gmetad/gmetad.c \
+FIX_DB_FILES=	${WRKSRC}/gmetad/conf.c \
 		${WRKSRC}/gmetad/gmetad.conf
 
 post-patch:
@@ -62,6 +63,7 @@ post-patch:
 	${REINPLACE_CMD} -e "s|/var/lib/ganglia|/var/db/ganglia|g" \
 	    ${FIX_DB_FILES}
 	${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 # Post-install
 #
