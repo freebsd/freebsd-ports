@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.72 1999/03/22 05:36:57 asami Exp $
+# $Id: Makefile,v 1.73 1999/03/24 19:39:26 jseger Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -46,6 +46,7 @@
     SUBDIR += timidity
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += waveplay
     SUBDIR += wmcdplay
     SUBDIR += wmmixer
     SUBDIR += wmsound
