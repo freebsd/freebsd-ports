@@ -1,0 +1,11 @@
+--- bindings/tcl/Makefile.in.orig	Mon Apr 21 21:36:35 2003
++++ bindings/tcl/Makefile.in	Wed Apr 23 18:39:49 2003
+@@ -341,7 +341,7 @@
+ with_rpath_FALSE = @with_rpath_FALSE@
+ with_rpath_TRUE = @with_rpath_TRUE@
+ 
+-tcldir = ${prefix}/$(DATA_DIR)/../tcl
++@enable_tcl_TRUE@tcldir = ${prefix}/$(DATA_DIR)/../tcl
+ 
+ libplplot = ../../src/libplplot$(LIB_TAG).la
+ libmatrix = libtclmatrix$(LIB_TAG).la
