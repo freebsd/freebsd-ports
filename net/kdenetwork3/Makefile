@@ -7,6 +7,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -18,6 +19,7 @@ LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib
 
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -34,5 +36,10 @@ pre-configure:
 	@${ECHO_MSG} '===>  NOTE: The file ${UTMP} was not found.'
 	@${ECHO_MSG} '===>  NOTE: ktalkd and kotalkd, which require ${UTMP}, will not be built.'
 .endif
+
+post-patch:
+# XXX - remove at next port update
+	@${REINPLACE_CMD} -e 's|\$$KDEDIR|${PREFIX}|' \
+		${WRKSRC}/knewsticker/knewsticker-standalone.desktop
 
 .include <bsd.port.mk>
