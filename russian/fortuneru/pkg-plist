@@ -1,7 +1,6 @@
+@comment $FreeBSD$
 share/games/fortune/rus/4hf
 share/games/fortune/rus/4hf.dat
-share/games/fortune/rus/aphorizms
-share/games/fortune/rus/aphorizms.dat
 share/games/fortune/rus/beer-murphy
 share/games/fortune/rus/beer-murphy.dat
 share/games/fortune/rus/enciklopedy
@@ -30,6 +29,8 @@ share/games/fortune/rus/verse
 share/games/fortune/rus/verse.dat
 share/games/fortune/rus/windows_errors
 share/games/fortune/rus/windows_errors.dat
+share/games/fortune/rus/pavlenka
+share/games/fortune/rus/pavlenka.dat
 @dirrm share/games/fortune/rus
 @unexec rmdir %D/share/games/fortune 2>/dev/null || true
 @unexec rmdir %D/share/games 2>/dev/null || true
