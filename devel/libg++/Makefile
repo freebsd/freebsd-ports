@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.m-hollstein.de/libgxx/  \
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/infrastructure/  \
 		${MASTER_SITE_GNU}
 
-PATCH_SITES=	http://www.cygnus.com/~manfredh/libgxx/  \
+PATCH_SITES=	http://www.cygnus.com/~manfredh/libgxx/
 PATCHFILES=	${DISTNAME}-20000312.diff.gz  \
 		${DISTNAME}-20000419.diff.gz  \
 		${DISTNAME}-20000816.diff.gz  \
