@@ -1,26 +1,35 @@
---- Makefile.in.orig	Fri Mar  9 03:49:52 2001
-+++ Makefile.in	Fri Mar  9 22:45:22 2001
-@@ -12,7 +12,7 @@
- 
+--- Makefile.in.orig	Thu Apr  5 23:55:42 2001
++++ Makefile.in	Thu Apr  5 23:57:01 2001
+@@ -13,7 +13,7 @@
  BINDIR   = @bindir@
  MANDIR   = @mandir@
+ SHAREDIR = ${prefix}/share/@PROG@
 -DOCDIR   = ${prefix}/doc/@PROG@-@VERSION@
 +DOCDIR   = ${prefix}/share/doc/@PROG@-@VERSION@
  DOC      = COPYING README README.PLUGINS CHANGELOG HISTORY AUTHORS TODO THANKS KNOWN-BUGS PORTINGS
  
  DEBUG    = @DEBUG@
-@@ -39,11 +39,12 @@
- install: @PROG@ strip
- 	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+@@ -42,12 +42,15 @@
  	$(INSTALL) -m 700 $(PROG) $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(SHAREDIR)
+ 	$(INSTALL) -m 644 ./share/* $(DESTDIR)$(SHAREDIR)
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -m 644 $(PROG).8 $(DESTDIR)$(MANDIR)/man8/$(PROG).8
  
+ 
 +install-doc:
 +	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 +	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
- 
++
++
  plug-ins:
  	cd plugins && make && cd ..
+ 	cp -f ./plugins/*/ec_*.so ./
+@@ -98,4 +101,4 @@
+ 
+ targz: distro
+ 	mv $(PROG)-$(VERSION).tar.gz $(PROG)-$(VERSION)-@SERIAL@.tar.gz
+-	chmod 644 $(PROG)-$(VERSION)-@SERIAL@.tar.gz
++	chmod 644 $(PROG)-$(VERSION)-@SERIAL@.tar.gz

@@ -1,12 +1,15 @@
 bin/ettercap
-%%PORTDOCS%%share/doc/ettercap-0.2.4/AUTHORS
-%%PORTDOCS%%share/doc/ettercap-0.2.4/CHANGELOG
-%%PORTDOCS%%share/doc/ettercap-0.2.4/COPYING
-%%PORTDOCS%%share/doc/ettercap-0.2.4/HISTORY
-%%PORTDOCS%%share/doc/ettercap-0.2.4/KNOWN-BUGS
-%%PORTDOCS%%share/doc/ettercap-0.2.4/PORTINGS
-%%PORTDOCS%%share/doc/ettercap-0.2.4/README
-%%PORTDOCS%%share/doc/ettercap-0.2.4/README.PLUGINS
-%%PORTDOCS%%share/doc/ettercap-0.2.4/THANKS
-%%PORTDOCS%%share/doc/ettercap-0.2.4/TODO
-%%PORTDOCS%%@dirrm share/doc/ettercap-0.2.4
+share/ettercap/mac-fingerprints
+share/ettercap/nmap-os-fingerprints
+@dirrm share/ettercap
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/AUTHORS
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/CHANGELOG
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/COPYING
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/HISTORY
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/KNOWN-BUGS
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/PORTINGS
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/README.PLUGINS
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/THANKS
+%%PORTDOCS%%share/doc/ettercap-%%PORTVERSION%%/TODO
+%%PORTDOCS%%@dirrm share/doc/ettercap-%%PORTVERSION%%
