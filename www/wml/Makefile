@@ -1,18 +1,17 @@
 # New ports collection makefile for:	wml
-# Version required:	1.6.2
+# Version required:	1.6.5
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.18 1998/02/09 11:43:20 rse Exp $
+# $Id: Makefile,v 1.19 1998/02/19 10:45:29 rse Exp $
 #
 
-DISTNAME=	wml-1.6.2
+DISTNAME=	wml-1.6.5
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.ch.engelschall.com/sw/wml/ \
 		ftp://ftp.de.engelschall.com/sw/wml/ \
-		ftp://ftp.hyperreal.org/software/engelschall/wml/ \
-		ftp://ftp.dppl.com/pub/engelschall/wml/
+		ftp://ftp.hyperreal.org/software/engelschall/wml/
 
 MAINTAINER=	rse@engelschall.com
 
@@ -44,6 +43,10 @@ MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::std::toc.3 wml::sup::all.3 wml::sup::hextriple.3 \
 	wml::sup::path.3 wml::sys::all.3 wml::sys::boot.3
 
+CAT7=	wml_barebone.7 \
+	wml_std_css1.7 wml_std_css2.7 wml_std_csspos.7 \
+	wml_std_html20.7 wml_std_html32.7 wml_std_html40.7
+
 MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 #   catpages are usually not installed, so they are not compressed.
@@ -52,6 +55,9 @@ MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 post-install:
 .for page in ${CAT1}
 	@${GZIP_CMD} ${PREFIX}/man/cat1/${page}
+.endfor
+.for page in ${CAT7}
+	@${GZIP_CMD} ${PREFIX}/man/cat7/${page}
 .endfor
 .endif
 

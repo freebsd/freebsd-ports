@@ -180,6 +180,13 @@ man/man7/wml_intro.7.gz
 man/man7/wml_tutorial.7.gz
 man/man7/wml_faq.7.gz
 man/man7/wml_tags.7.gz
+man/cat7/wml_barebone.7.gz
+man/cat7/wml_std_css1.7.gz
+man/cat7/wml_std_css2.7.gz
+man/cat7/wml_std_csspos.7.gz
+man/cat7/wml_std_html20.7.gz
+man/cat7/wml_std_html32.7.gz
+man/cat7/wml_std_html40.7.gz
 @dirrm lib/wml/exec
 @dirrm lib/wml/aux/logos
 @dirrm lib/wml/aux
