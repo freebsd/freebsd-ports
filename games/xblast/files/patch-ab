@@ -1,0 +1,11 @@
+--- xbsndsrv.c.orig	Sat Sep  7 17:50:18 2002
++++ xbsndsrv.c	Sat Sep  7 17:50:25 2002
+@@ -110,7 +110,7 @@
+ #include <sys/ioctl.h>
+ #include <sys/time.h>
+ #ifdef __FreeBSD__
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #else
+ #include <linux/soundcard.h>
+ #endif
