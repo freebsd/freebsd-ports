@@ -15,18 +15,21 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
 
-RUN_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500802
+RUN_DEPENDS+=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
+		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+.endif
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail
-OWDATADIR=	${PREFIX}/www/data/openwebmail
+OWCGIDIR?=	${PREFIX}/www/cgi-bin/openwebmail
+OWDATADIR?=	${PREFIX}/www/data/openwebmail
 PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
 PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
