@@ -589,6 +589,7 @@
     SUBDIR += p5-App-Info
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
+    SUBDIR += p5-Array-Iterator
     SUBDIR += p5-Array-Window
     SUBDIR += p5-AtExit
     SUBDIR += p5-Attribute-Handlers
