@@ -21,6 +21,10 @@ LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/malsync/mal/client/unix
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/MAL31DBConfig.c
+
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} clean
 
