@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.208 1998/12/18 12:51:48 flathill Exp $
+# $Id: Makefile,v 1.209 1998/12/23 17:58:48 obrien Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -12,6 +12,7 @@
     SUBDIR += beroftpd
     SUBDIR += bind8
     SUBDIR += bing
+    SUBDIR += binkd
     SUBDIR += bitchx
     SUBDIR += bnc
     SUBDIR += boclient
