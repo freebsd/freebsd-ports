@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# $FreeBSD$
+# $Id$
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -39,6 +39,7 @@ $CHANGED_FILE  = "/tmp/#cvs.files.changed";
 $ADDED_FILE    = "/tmp/#cvs.files.added";
 $REMOVED_FILE  = "/tmp/#cvs.files.removed";
 $LOG_FILE      = "/tmp/#cvs.files.log";
+$BRANCH_FILE   = "/tmp/#cvs.files.branch";
 $FILE_PREFIX   = "#cvs.files";
 
 $AVAIL_FILE    = "$ENV{'CVSROOT'}/CVSROOT/avail";
@@ -318,6 +319,11 @@ if ($ARGV[0] =~ /New directory/) {
 #
 while (<STDIN>) {
     chop;			# Drop the newline
+    if (/^Revision\/Branch:/) {
+        s,^Revision/Branch:,,;
+        push (@branch_lines, split);
+        next;
+    }
     if (/^Modified Files/) { $state = $STATE_CHANGED; next; }
     if (/^Added Files/)    { $state = $STATE_ADDED;   next; }
     if (/^Removed Files/)  { $state = $STATE_REMOVED; next; }
@@ -363,6 +369,7 @@ for ($i = 0; ; $i++) {
 # Spit out the information gathered in this pass.
 #
 &write_logfile("$LOG_FILE.$i.$id", @log_lines);
+&append_to_file("$BRANCH_FILE.$i.$id",  $dir, @branch_lines);
 &append_to_file("$ADDED_FILE.$i.$id",   $dir, @added_files);
 &append_to_file("$CHANGED_FILE.$i.$id", $dir, @changed_files);
 &append_to_file("$REMOVED_FILE.$i.$id", $dir, @removed_files);
@@ -395,6 +402,7 @@ push(@text, $header);
 push(@text, "");
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$id");
+    push(@text, &read_file("$BRANCH_FILE.$i.$id", "Branch:"));
     push(@text, &read_file("$CHANGED_FILE.$i.$id", "Modified:"));
     push(@text, &read_file("$ADDED_FILE.$i.$id", "Added:"));
     push(@text, &read_file("$REMOVED_FILE.$i.$id", "Removed:"));
