@@ -4,11 +4,11 @@
 # Date created:         18 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/10/25 16:49:22 ache Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/11 23:17:38 ache Exp $
 #
 
 DISTNAME=       speak_freely-6.1b
-CATEGORIES+=    net audio security
+CATEGORIES=     mbone audio security
 MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/
 
 MAINTAINER=     ache@FreeBSD.ORG
