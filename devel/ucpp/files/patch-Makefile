@@ -1,20 +1,20 @@
---- Makefile.orig	Wed Feb 20 18:49:16 2002
-+++ Makefile	Sun Dec  1 09:01:06 2002
+--- Makefile.orig	Wed Jan 15 02:07:44 2003
++++ Makefile	Sun Jul 27 14:51:51 2003
 @@ -56,8 +56,8 @@
  #FLAGS = -O -m -DMEM_CHECK
  
  # for gcc
 -CC = gcc
--FLAGS = -g -Wall -ansi -pedantic -DAUDIT -DMEM_DEBUG
+-FLAGS = -g -W -Wall -ansi -DAUDIT -DMEM_DEBUG
 +CC ?= gcc
-+FLAGS = -ansi -pedantic -DAUDIT -DMEM_DEBUG
- #FLAGS = -O3 -Wall -ansi -pedantic -DMEM_CHECK
- 
- # for the Compaq C compiler on Alpha/Linux
-@@ -78,7 +78,7 @@
++FLAGS = -ansi -DAUDIT -DMEM_DEBUG
+ #FLAGS = -O3 -mcpu=pentiumpro -fomit-frame-pointer -W -Wall -ansi -DMEM_CHECK
+ #FLAGS = -O -pg -W -Wall -ansi -DMEM_CHECK
+ #LDFLAGS = -pg
+@@ -80,7 +80,7 @@
  # ----- nothing should be changed below this line -----
  
- COBJ = mem.o hash.o cpp.o lexer.o assert.o macro.o eval.o
+ COBJ = mem.o nhash.o cpp.o lexer.o assert.o macro.o eval.o
 -CFLAGS = $(FLAGS) -DSTAND_ALONE
 +CFLAGS += $(FLAGS) -DSTAND_ALONE
  
