@@ -34,6 +34,10 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #					  add the following to your Makefile:
 #					  "GCONF_SCHEMAS=foo.schemas bar.schemas".
 #
+# INSTALLS_OMF		- If set, bsd.gnome.mk will automatically scan pkg-plist
+#					  file and add apropriate @exec/@unexec directives for
+#					  each .omf file found to track OMF registration database.
+#
 
 # non-version specific components
 _USE_GNOME_ALL=	gnomehack lthack gnomeprefix gnomehier esound gnomemimedata \
@@ -641,17 +645,28 @@ gnome-pre-install:
 .  endif
 .endif
 
-.if defined(GCONF_SCHEMAS)
+.if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF)
 post-install: gnome-post-install
 
 gnome-post-install:
-.  for i in ${GCONF_SCHEMAS}
-	@${ECHO_CMD} "@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$i > /dev/null || /usr/bin/true" \
-		>> ${TMPPLIST}
-	@${ECHO_CMD} "etc/gconf/schemas/$i" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$i > /dev/null || /usr/bin/true" \
-		>> ${TMPPLIST}
-.  endfor
+.  if defined(GCONF_SCHEMAS)
+	@for i in ${GCONF_SCHEMAS}; do \
+		${ECHO_CMD} "@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+		${ECHO_CMD} "etc/gconf/schemas/$${i}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/$${i} > /dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+	done
+.  endif
+
+.  if defined(INSTALLS_OMF)
+	@for i in `${GREP} "\.omf$$" ${TMPPLIST}`; do \
+		${ECHO_CMD} "@exec scrollkeeper-install -q %D/$${i} 2>/dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec scrollkeeper-uninstall -q %D/$${i} 2>/dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+	done
+.  endif
 .endif
 
 .endif

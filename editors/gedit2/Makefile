@@ -21,6 +21,7 @@ LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
