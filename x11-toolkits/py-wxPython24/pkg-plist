@@ -1,5 +1,3 @@
-lib/libwxPyHelpers.so
-lib/libwxPyHelpers.so.1
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/__init__.pyo
@@ -450,6 +448,22 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/misc.pyo
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/misc2.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/misc2.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/misc2.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/ogl.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/ogl.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/ogl.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglbasic.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglbasic.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglbasic.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglcanvas.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglcanvas.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglcanvas.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglcmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglshapes.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglshapes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglshapes.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglshapes2.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglshapes2.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/oglshapes2.pyo
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/printfw.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/printfw.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/printfw.pyo
@@ -459,6 +473,13 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/sizers.pyo
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/stattool.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/stattool.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/stattool.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc_.py
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc_.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc_.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wxPython/stc_cmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/utils.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/utils.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/utils.pyo
@@ -475,6 +496,8 @@ lib/%%PYTHON_VERSION%%/site-packages/wxPython/wx.py
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/wx.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/wx.pyo
 lib/%%PYTHON_VERSION%%/site-packages/wxPython/wxcmodule.so
+lib/libwxPyHelpers.so
+lib/libwxPyHelpers.so.1
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/bitmaps
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo/data
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/wxPython/demo
