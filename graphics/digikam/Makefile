@@ -19,5 +19,6 @@ LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
+CONFIGURE_ENV=	XML2POT=${TRUE} PO2XML=${TRUE}
 
 .include <bsd.port.mk>
