@@ -1,0 +1,11 @@
+--- gcc/bounds/lib/Makefile.orig	Tue May 20 16:35:05 2003
++++ gcc/bounds/lib/Makefile	Tue May 20 16:35:19 2003
+@@ -14,7 +14,7 @@
+ SUBDIR_INCLUDES = -I../.. -I$(srcdir)/bounds/lib -I$(srcdir) -I$(srcdir)/config -I$(srcdir)/../include
+ 
+ # Use this on System V.
+-CPPFLAGS = -DUSG
++CPPFLAGS = -DBSD4_2
+ 
+ .c.o:
+ 	$(GCC_FOR_TARGET) -Wall $(OPTIMIZE) $(CPPFLAGS) \
