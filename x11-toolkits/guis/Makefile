@@ -26,6 +26,8 @@ MAKE_ENV=	PYTHONCFLAGS="-I${LOCALBASE}/include/python${USE_PYTHON} ${PTHREAD_CFL
 		RUBY="ruby18"
 ALL_TARGET=	prog
 
+BROKEN=		Broken dependency after python 2.4 update
+
 PLIST_FILES=	bin/pyguis bin/ruguis bin/pyguis-scripter bin/ruguis-scripter
 MAN1=	pyguis.1
 MLINKS=	pyguis.1 ruguis.1 \
