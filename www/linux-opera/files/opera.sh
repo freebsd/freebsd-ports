@@ -4,6 +4,7 @@ OPERA_PLUGIN_PATH="%%PREFIX%%/share/opera/plugins"
 for plugin_dir in \
     %%PREFIX%%/lib/netscape-linux/plugins \
     %%PREFIX%%/linux-jdk1.3.1/jre/plugin/i386/ns4 \
+    %%PREFIX%%/Acrobat4/Browsers/intellinux \
     ;
 do
     if [ -d "${plugin_dir}" ] ; then
