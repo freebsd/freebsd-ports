@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	Convert-UUlib
-PORTVERSION=	0.213
+PORTVERSION=	0.31
+PORTEPOCH=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
@@ -18,7 +19,5 @@ COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 PERL_CONFIGURE=	yes
 
 MAN3=		Convert::UUlib.3
-
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
