@@ -28,7 +28,6 @@
     SUBDIR += bksh
     SUBDIR += blimitd
     SUBDIR += bsdsar
-    SUBDIR += bubblemon
     SUBDIR += bubblemon-dockapp
     SUBDIR += ccze
     SUBDIR += cd-write
