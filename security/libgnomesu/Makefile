@@ -19,6 +19,8 @@ USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 
+CONFLICTS=	gnomesu-*
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
