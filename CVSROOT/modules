@@ -5889,6 +5889,7 @@ rboot		ports/net/rboot
 rbootd		src/libexec/rbootd
 rc		ports/shells/rc
 rcalc		ports/math/rcalc
+rclean		ports/sysutils/rclean
 rclock		ports/x11-clocks/rclock
 rcp		src/bin/rcp
 rcs		src/gnu/usr.bin/rcs
