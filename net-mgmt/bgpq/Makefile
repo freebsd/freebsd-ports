@@ -6,6 +6,7 @@
 
 PORTNAME=	bgpq
 PORTVERSION=	1.0.7.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
@@ -19,10 +20,4 @@ HAS_CONFIGURE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/bgpq
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
