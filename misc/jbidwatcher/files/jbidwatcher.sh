@@ -2,4 +2,4 @@
 #
 # $FreeBSD$
 
-javavm -jar %%JAVAJARDIR%%/jbidwatcher.jar $@
+"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/jbidwatcher.jar" "$@"
