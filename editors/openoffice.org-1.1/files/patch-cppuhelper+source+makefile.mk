@@ -1,11 +1,13 @@
---- ../cppuhelper/source/makefile.mk.orig	Sat Mar  2 21:08:19 2002
-+++ ../cppuhelper/source/makefile.mk	Sat Mar  2 21:08:08 2002
-@@ -174,6 +174,8 @@
- SHL1VERSIONMAP=cc5_solaris_sparc.map
- .ELIF "$(OS)$(CPU)$(COM)"=="LINUXIGCC"
+--- ../cppuhelper/source/makefile.mk.orig	Wed Nov 14 14:17:37 2001
++++ ../cppuhelper/source/makefile.mk	Sun Mar  3 17:40:47 2002
+@@ -173,6 +173,10 @@
  SHL1VERSIONMAP=gcc2_linux_intel.map
-+.ELIF "$(OS)$(CPU)"=="FREEBSDI"
+ .ELIF "$(OS)$(CPU)$(COMNAME)"=="LINUXIgcc3"
+ SHL1VERSIONMAP=gcc3_linux_intel.map
++.ELIF "$(OS)$(CPU)$(COMNAME)"=="FREEBSDIgcc2"
 +#SHL1VERSIONMAP=gcc2_freebsd_intel.map
++.ELIF "$(OS)$(CPU)$(COMNAME)"=="FREEBSDIgcc3"
++#SHL1VERSIONMAP=gcc3_freebsd_intel.map
  .ENDIF
  
  # --- Targets ------------------------------------------------------

@@ -1,11 +1,30 @@
---- ../sablot/Sablot-0.52.patch.orig	Sat Mar  2 22:30:15 2002
-+++ ../sablot/Sablot-0.52.patch	Sat Mar  2 22:30:42 2002
-@@ -85,7 +85,7 @@
+--- ../sablot/Sablot-0.52.patch.orig	Mon Mar  4 22:04:27 2002
++++ ../sablot/Sablot-0.52.patch	Mon Mar  4 22:05:40 2002
+@@ -3,7 +3,7 @@
+ ***************
+ *** 1 ****
+ ! dummy
+---- 1,147 ----
++--- 1,151 ----
+ ! #*************************************************************************
+ ! #
+ ! #   $RCSfile: makefile.mk,v $
+@@ -85,12 +85,17 @@
  ! CFLAGS+=     -DHAVE_IEEEFP_H
  ! .ENDIF
  ! 
--! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="IRIX"
-+! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD" || "$(OS)"=="IRIX"
+-! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX"
++! .IF "$(OS)"=="LINUX" || "$(OS)"=="MACOSX" || "$(OS)"=="NETBSD" || "$(OS)"=="FREEBSD"
  ! CFLAGS+=      -DHAVE_UNISTD_H
  ! .ENDIF
  ! 
+ ! .IF "$(GUI)"=="UNX"
++
++! .IF "$(OS)"=="MACOSX" || "$(OS)"=="NETBSD" || "$(OS)"=="FREEBSD"
++! CFLAGS+=     -DHAVE_SYS_TIMEB_H -DHAVE_GETTIMEOFDAY -DHAVE_ISNAN -DHAVE_FINITE
++! .ELSE
+ ! CFLAGS+=     -DHAVE_SYS_TIMEB_H -DHAVE_FTIME -DHAVE_ISNAN -DHAVE_FINITE
++! .ENDIF
+ ! .ENDIF
+ ! 
+ ! CFLAGS+=	-I$(SOLARINCDIR)$/external$/expat
