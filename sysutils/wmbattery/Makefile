@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmbattery
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/ \
 		http://kitenet.net/programs/code/debian/
