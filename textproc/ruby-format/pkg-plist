@@ -1,4 +1,13 @@
 %%RUBY_SITELIBDIR%%/format.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/format_test.pl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test_format.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/1
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/2
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/3
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/4
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/5
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/6
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/7
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/format/test/8
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/format/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/format
