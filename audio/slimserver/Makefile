@@ -17,12 +17,11 @@ COMMENT=	Slim Devices audio streaming server
 
 DISTVERSION?=	${PORTVERSION}
 
-
 RUN_DEPENDS+=	${LOCALBASE}/bin/mDNSResponderPosix:${PORTSDIR}/net/mDNSResponder
 
 .include <bsd.port.pre.mk>
 
-SLIM_CPAN_DEPS!= cut -f 2 -d, ${FILESDIR}/pm2port | grep -v ^_builtin
+SLIM_CPAN_DEPS!= cut -f 2 -d, ${FILESDIR}/pm2port | ${GREP} -v ^_builtin | ${XARGS} echo
 RUN_DEPENDS+=	${SLIM_CPAN_DEPS:S|^|${SITE_PERL}/|:S|:|:${PORTSDIR}/|}
 
 .if ${PERL_LEVEL} < 500800
@@ -72,16 +71,16 @@ do-build:
 	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
 	    ${CPIO} ${CPIOARGS} ${BINOWN}:${BINGRP} ${TMP_SLIMDIR}
 	@cd ${TMP_SLIMDIR}/CPAN && \
-	    for pm in `egrep -v ,$$ ${FILESDIR}/pm2port | cut -f 1 -d,`; do \
-		grep "$${pm}:" ${FILESDIR}/CPANfiles | cut -f2 -d: | xargs rm; \
+	    for pm in `${EGREP} -v ,$$ ${FILESDIR}/pm2port | cut -f 1 -d,`; do \
+		${GREP} "$${pm}:" ${FILESDIR}/CPANfiles | cut -f2 -d: | ${XARGS} rm; \
 	    done
-	@find ${TMP_SLIMDIR}/CPAN -depth -type d -empty -delete
+	@${FIND} ${TMP_SLIMDIR}/CPAN -depth -type d -empty -delete
 .if defined(PORTDEV)
 	@echo "Checking for unexpected files in CPAN"
 	@cd ${TMP_SLIMDIR}/CPAN && \
-	    for file in `find . -type f | sed -e 's|^\./||'`; do \
-		egrep -q ":$${file}\$$" ${FILESDIR}/CPANfiles || \
-		    echo $${file} ; \
+	    for _file in `${FIND} . -type f | ${SED} -e 's|^\./||'`; do \
+		${EGREP} -q ":$${_file}\$$" ${FILESDIR}/CPANfiles || \
+		    echo $${_file} ; \
 	    done
 	@echo
 .endif
