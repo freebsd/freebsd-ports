@@ -7,7 +7,7 @@
 
 PORTNAME=	ezmlm-idx
 PORTVERSION=	0.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/patches/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/qmail/ezmlm-patches/ \
