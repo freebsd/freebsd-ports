@@ -147,7 +147,7 @@ certificate:
 	&& ${MAKE} certificate TYPE=${TYPE} CRT=${CRT} KEY=${KEY}
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh-dist
