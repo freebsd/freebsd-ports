@@ -1,0 +1,24 @@
+--- configure.orig	Thu Oct 21 03:33:31 1999
++++ configure	Wed Oct 27 03:30:24 1999
+@@ -43,8 +43,8 @@
+ # work okay, usually.
+ 
+ # Set some defaults
+-XINCPATH="/usr/include /usr/include/X11 /usr/X11/include /usr/local/X11/include /usr/openwin/include /usr/X11R6/include"
+-XLIBPATH="/lib /usr/lib /usr/X11/lib /usr/local/X11/lib /usr/openwin/lib /usr/X11R6/lib /usr/ucblib /usr/ccs/lib /usr/local/lib "`echo "$LD_LIBRARY_PATH" | tr ':' ' '`
++XINCPATH="/usr/include /usr/include/X11 /usr/X11/include /usr/local/X11/include /usr/openwin/include %%X11BASE%%/include"
++XLIBPATH="/lib /usr/lib /usr/X11/lib /usr/local/X11/lib /usr/openwin/lib %%X11BASE%%/lib /usr/ucblib /usr/ccs/lib /usr/local/lib "`echo "$LD_LIBRARY_PATH" | tr ':' ' '`
+ GNUPATH=`echo "$PATH" | tr ':' ' '`
+ BINDIR=/usr/local/bin
+ LIBDIR=/usr/local/lib/elvis
+@@ -611,8 +611,8 @@
+ 	then
+ 		why "   To support X11, it also requires -lipc"
+ 		XLIBS=" -lipc"
+-		why "FreeBSD requires -I/usr/X11R6/include.  Should be harmless for other BSDs"
+-		CC="$CC -I/usr/X11R6/include"
++		why "FreeBSD requires -I%%X11BASE%%/include.  Should be harmless for other BSDs"
++		CC="$CC -I%%X11BASE%%/include"
+ 	fi
+ 	;;
+   *irix*)
