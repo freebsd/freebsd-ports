@@ -13,7 +13,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network data storage and analysis library from CAIDA
 
 GNU_CONFIGURE=	yes
