@@ -7,7 +7,7 @@
 
 PORTNAME=		xine
 PORTVERSION=		0.3.6
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics
 MASTER_SITES=		http://xine.sourceforge.net/files/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=		roman@xpert.com
 USE_LIBTOOL=		yes
 USE_X_PREFIX=		yes
 USE_IMLIB=		yes
-CONFIGURE_ARGS+=	--with-w32-path=${LOCALBASE}/lib/w32
+CONFIGURE_ARGS+=	--with-w32-path=${LOCALBASE}/lib/win32
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
