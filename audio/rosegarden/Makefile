@@ -3,7 +3,7 @@
 # Date created:		04 Aug 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.7 1998/12/09 22:35:04 billf Exp $
+# $Id: Makefile,v 1.8 1999/07/11 20:52:07 cpiazza Exp $
 #
 
 DISTNAME=	rosegarden-2.1
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	-sources.tar.gz
 MAINTAINER=	shanee@augusta.de
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:$(PORTSDIR)/audio/tclmidi
-RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:$(PORTSDIR)/audio/tclmidi	
+RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:$(PORTSDIR)/audio/tclmidi
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
