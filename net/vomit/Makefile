@@ -16,8 +16,6 @@ COMMENT=	Voice over misconfigured internet telephones
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
 		${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 
-BROKEN=		Broken by libevent update
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
