@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.25 1998/07/25 13:08:27 jseger Exp $
+# $Id: Makefile,v 1.26 1998/08/05 09:31:07 asami Exp $
 #
 
 DISTNAME=       MesaLib-3.0beta6
@@ -13,6 +13,8 @@ MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/beta/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0beta6.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.ORG
+
+MANUAL_PACKAGE_BUILD=	shlib version conflict
 
 WRKSRC=		${WRKDIR}/Mesa-3.0
 
