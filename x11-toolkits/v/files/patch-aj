@@ -1,0 +1,29 @@
+--- iconed/coldlg.cpp.orig	Sun Feb 27 13:21:21 2000
++++ iconed/coldlg.cpp	Sun Feb 27 13:22:42 2000
+@@ -114,7 +114,7 @@
+ 	frSliders,0,0, 0, "Click to enter Red value"},
+      {C_Slider, Rslider, 0, "", (void*)&sldR[0], CA_None, isSens, frSliders,
+         iRed, 0, 256, "Set Red Value"},
+-     {C_Text, Rtext, 0, "   ", "0  ", CA_None, isSens, frSliders, 
++     {C_Text, Rtext, 0, "   ", (void *)"0  ", CA_None, isSens, frSliders, 
+         Rslider, 0},
+ 
+      // add green slider
+@@ -122,7 +122,7 @@
+ 	frSliders,0,Rslider, 0, "Click to enter Green value"},
+      {C_Slider, Gslider, 0, "", (void*)&sldR[0], CA_None, isSens, frSliders,
+         iGreen, Rslider, 256, "Set Green Value"},
+-     {C_Text, Gtext, 0, "", "0  ", CA_None, isSens, frSliders, 
++     {C_Text, Gtext, 0, "", (void *)"0  ", CA_None, isSens, frSliders, 
+         Gslider, Rslider},
+ 
+      // add blue slider
+@@ -130,7 +130,7 @@
+ 	frSliders,0,Gslider, 0, "Click to enter Blue value"},
+      {C_Slider, Bslider, 0, "", (void*)&sldR[0], CA_None, isSens, frSliders,
+         iBlue, Gslider, 256, "Set Blue Value"},
+-     {C_Text, Btext, 0, "", "0  ", CA_None, isSens, frSliders, 
++     {C_Text, Btext, 0, "", (void *)"0  ", CA_None, isSens, frSliders, 
+         Bslider, Gslider},
+ 
+      {C_Button, btReset, 0, "Reset",NoList, CA_None, isSens, NoFrame,
