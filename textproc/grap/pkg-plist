@@ -1,4 +1,6 @@
 bin/grap
+share/grap/CHANGES
+share/grap/COPYRIGHT
 share/grap/README
 share/grap/grap.defines
 share/grap/examples/400mpairs.d

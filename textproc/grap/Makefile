@@ -3,10 +3,10 @@
 # Date created:        14 Jan 1999
 # Whom:                faber@lunabase.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/18 05:03:22 steve Exp $
 #
 
-DISTNAME=	grap-0.8a
+DISTNAME=	grap-0.9a
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
