@@ -15,6 +15,7 @@ A4		"A4 papersize"					ON	\
 LETTER		"letter papersize"				OFF	\
 LETTERDJ	"letter + special DeskJet adjustements"		OFF	\
 GS		"Postscript for non-PS printer, needs X11"	ON	\
+GS_NO_X11	"Postscript for non-PS printer, no X11"		OFF	\
 GS_PDF_CRYPT	"print encrypted PDF files using gs"		ON	\
 PSUTILS		"for pseudo duplex printing + paper handling"	ON	\
 A2PS		"ASCII files in different styles/orientation"	ON	\
@@ -66,6 +67,9 @@ while [ "$1" ]; do
 		;;
 	\"GS\")
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
+		;;
+	\"GS_NO_X11\")
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6-nox11
 		;;
 	\"GS_PDF_CRYPT\")
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
