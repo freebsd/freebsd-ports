@@ -19,3 +19,4 @@ share/shtool/sh.arx
 share/shtool/sh.slo
 share/shtool/sh.version
 share/shtool/sh.path
+@dirrm share/shtool
