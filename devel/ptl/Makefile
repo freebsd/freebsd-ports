@@ -31,6 +31,12 @@ DOCS=		COPYING		ChangeLog	FAQ		NEWS \
 		PROBLEMS	README		README.PDB	README.jp \
 		WISHLIST	doc/manual.ps.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=		"FreeBSD 5.x is not supported yet."
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-O[2-6]|${CFLAGS}|g' \
 		${WRKSRC}/Util/Makefile.in \
@@ -51,4 +57,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
