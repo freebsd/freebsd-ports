@@ -1,6 +1,8 @@
 bin/TclTutor.tcl
 bin/scaler.tcl
 bin/htmllib.tcl
+%%DOCSDIR%%/NOTICE
+%%DOCSDIR%%/README
 %%DOCSDIR%%/help.html
 %%DOCSDIR%%/about.html
 %%DOCSDIR%%/Tcl0.lsn
