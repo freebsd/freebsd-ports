@@ -1,0 +1,7 @@
+%%FONTSDIR%%/Kochi-Gothic
+%%FONTSDIR%%/Kochi-Gothic.afm
+%%FONTSDIR%%/Kochi-Mincho
+%%FONTSDIR%%/Kochi-Mincho.afm
+%%DOCSDIR%%/README-CID.sjis
+@dirrm %%DOCSDIR%%
+@dirrm %%FONTSDIR%%
