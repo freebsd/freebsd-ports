@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTVERSION=	0.32
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://www2.giganet.net/~yoshi/
+MASTER_SITES=	http://www.ruby-lang.org/~knu/
+#MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	rbogl
+DISTNAME=	rbogl-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
@@ -22,17 +22,17 @@ USE_RUBY_EXTCONF=	yes
 
 USE_MESA=	yes
 
-WRKSRC=		${WRKDIR}/oglmodule
+WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${X11BASE}"
 INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/opengl
-	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/opengl/
-	${MKDIR} ${RUBY_DOCDIR}/opengl/ja
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}/opengl/
-	${INSTALL_DATA} ${WRKSRC}/README.EUC ${RUBY_DOCDIR}/opengl/ja/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/README.EUC ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
 .include <bsd.port.mk>

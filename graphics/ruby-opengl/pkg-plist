@@ -29,7 +29,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/mipmap.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/model.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/movelight.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/nurbs.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/pickdepth.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/plane.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/planet.rb
@@ -43,7 +42,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/teaambient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/teapots.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/tess.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/texbind.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/texgen.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/opengl/texturesurf.rb
