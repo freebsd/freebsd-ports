@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION= 	1.6.5
+PORTVERSION= 	1.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
-DISTNAME=	iperf-1.6.5-source
+DISTNAME=	iperf-1.7.0-source
 
 MAINTAINER=	smace@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
