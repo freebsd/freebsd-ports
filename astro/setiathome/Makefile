@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	setiathome
-PORTVERSION?=	3.03
-PORTREVISION?=	7
+PORTVERSION?=	3.08
 CATEGORIES?=	astro
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
 		ftp://alien.ssl.berkeley.edu/pub/
@@ -15,10 +14,6 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER?=	cyrille.lefevre@laposte.net
 COMMENT?=	Donate idle cycles to the search for space aliens
-
-.if ${PORTVERSION} == "3.03"
-FORBIDDEN=	'Exploitable buffer overflow. http://spoor12.edup.tudelft.nl/'
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -34,8 +29,8 @@ ONLY_FOR_ARCHS?= alpha i386
 NO_BUILD=	binary distribution
 NO_CDROM=	interactive install
 
-.if ${OSVERSION} <= 226000
-BROKEN=		"currently supports only FreeBSD 2.2.6 and above"
+.if ${OSVERSION} < 400000
+BROKEN=		"currently supports only FreeBSD 4.0 and above"
 .endif
 
 EXTRACT_CMD=	${CAT}
@@ -63,7 +58,7 @@ PORT_OSREL=	v4.0d
 .else
 PORT_VENDOR?=	unknown
 PORT_OSNAME?=	freebsd
-PORT_OSREL?=	2.2.8
+PORT_OSREL?=	4.0
 .endif
 PORT_OS=	${PORT_OSNAME}${PORT_OSREL}
 PORT_HOST=	${PORT_CPU}-${PORT_VENDOR}-${PORT_OS}
@@ -82,15 +77,13 @@ DESCR=		${.CURDIR}/pkg-descr
 .if !exists(${LINUXBASE}/usr/X11R6/lib/libXaw.so.7)
 NO_XBIN=	libXaw.so.7 is missing from linux_base-6
 .endif
-NO_XBIN?=	xsetiathome is broken
 .endif
-.elif ${OSVERSION} >= 300000
-NO_XBIN=	xsetiathome is broken
 .endif
 
 # Local variables
 #
 
+LBIN_DIR=	${PREFIX}/libexec
 SBIN_DIR=	${PREFIX}/sbin
 CONF_DIR=	${PREFIX}/etc
 RC_DIR=		${PREFIX}/etc/rc.d
@@ -100,18 +93,8 @@ SAMP_SUFX=	.sample
 BIN_FILE=	setiathome
 RC_FILES=	setiathome
 
-# i386 NOTES:
-# xsetiathome is currently broken at 4.2. should work at 2.x,
-# don't know between 3.0 and 4.2 ? so, be conservative...
-# diagnostic messages are :
-#	Warning: Cannot convert string "doneB" to type Widget
-#	Floating point exception (core dumped)
 # Linux NOTES:
 # xsetiathome requires libXawk.so.7 which is missing from linux_base-6.
-# using linux_base-7, diagnostic messages are :
-#	Warning: Cannot convert string "doneB" to type Widget
-#	Shared memory segment doesn't exist. errno=2
-#	Couldn't attach to the science process!
 
 .if !defined(NO_XBIN)
 MAN1+=		x${PORTNAME}.1
@@ -125,13 +108,23 @@ X11PORTS=	"@comment "
 # Post-patch
 #
 
-post-patch: patch-pkgmessage
+post-patch: patch-pkgmessage patch-man
 
 patch-pkgmessage:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g; \
 		 s|%%PREFX%%|${PKGNAMEPREFIX}|g; \
 		 s|%%SUFX%%|${PKGNAMESUFFIX}|g' \
 		${MSG_FILE} > ${PKGMESSAGE}
+
+patch-man:
+.for mansect in 1
+.for man in ${MAN${mansect}}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g; \
+		 s|%%PREFX%%|${PKGNAMEPREFIX}|g; \
+		 s|%%SUFX%%|${PKGNAMESUFFIX}|g' \
+		${FILESDIR}/${man} > ${WRKDIR}/${man}
+.endfor
+.endfor
 
 # Install
 #
@@ -151,7 +144,7 @@ install-program:
 install-man:
 .for mansect in 1
 .for man in ${MAN${mansect}}
-	@${INSTALL_MAN} ${FILESDIR}/${man} \
+	@${INSTALL_MAN} ${WRKDIR}/${man} \
 		${MAN${mansect}PREFIX}/man/man${mansect}
 .endfor
 .endfor
@@ -177,6 +170,10 @@ install-startup-files:
 .if exists(${FILESDIR}/${file}.sh)
 	@${INSTALL_SCRIPT} ${FILESDIR}/${file}.sh \
 		${RC_DIR}/${PKGNAMEPREFIX}${file}${PKGNAMESUFFIX}.sh
+.endif
+.if exists(${FILESDIR}/${file}.bin)
+	@${INSTALL_SCRIPT} ${FILESDIR}/${file}.bin \
+		${LBIN_DIR}/${PKGNAMEPREFIX}${file}${PKGNAMESUFFIX}.bin
 .endif
 .endfor
 

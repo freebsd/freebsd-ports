@@ -1,3 +1,5 @@
+@comment $FreeBSD$
+libexec/%%PREFX%%setiathome%%SUFX%%.bin
 sbin/%%PREFX%%setiathome%%SUFX%%
 @unexec if cmp -s %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample; then rm -f %D/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf; fi
 etc/rc.%%PREFX%%setiathome%%SUFX%%.conf.sample
