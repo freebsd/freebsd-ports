@@ -2,40 +2,41 @@
 #
 # $FreeBSD$
 
-esecannaserver="!!PREFIX!!/sbin/esecannaserver"
-piddir="/var/run/esecanna"
+# PROVIDE: esecanna
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-case "$1" in
-start)
-	if [ -f !!PREFIX!!/vje30/.version ] \
-	 && grep -qw 'FREE TRIAL VERSION' !!PREFIX!!/vje30/.version; then
-	    echo ''
-	    echo 'esecanna:'
-	    echo '  Using VJE-Delta 3.0 trial, it is unable to connect to vjed on startup.'
-	    echo '  Please execute $esecannaserver manually after once you run vje.'
-	    exit 1
+. %%RC_SUBR%%
+
+name=esecanna
+rcvar=`set_rcvar`
+
+esecannaserver=%%PREFIX%%/sbin/esecannaserver
+
+# XXX
+command=/usr/bin/nohup
+command_args=">/dev/null $esecannaserver"
+procname=$esecannaserver
+
+pidfile=/var/run/esecanna/esecanna.pid
+esecanna_chdir="$(dirname $pidfile)"
+required_files=%%PREFIX%%/etc/esecannarc
+
+start_precmd="esecanna_prestart"
+
+[ -z "$esecanna_enable" ] && esecanna_enable=NO
+
+esecanna_prestart ()  {
+	if [ -f %%PREFIX%%/vje30/.version ] \
+	   && grep -qw 'FREE TRIAL VERSION' %%PREFIX%%/vje30/.version; then
+		echo '** Using VJE-Delta 3.0 trial, it is unable to connect to vjed on startup.'
+		echo '** Please execute $esecannaserver manually after once you run vje.'
+		exit 255
 	fi
 
-	if [ -x $esecannaserver ]; then
-	    rm -f /tmp/.iroha_unix/IROHA
-	    echo -n ' esecanna: '
-	    cd $piddir
-	    nohup $esecannaserver
-	fi
-	;;
-stop)
-	pidfile=$piddir/esecanna.pid
-	if [ -f $pidfile ]; then
-	    kill `cat $pidfile` && echo -n ' esecanna'
-	    rm $pidfile
-	else
-	    echo ' esecanna: not running'
-	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+	/bin/rm -f /tmp/.iroha_unix/IROHA
+}
 
-exit 0
+load_rc_config $name
+run_rc_command "$1"
