@@ -1,0 +1,7 @@
+GNU Network Object Model Environment
+
+This package does not contain anything by itself -- it is a
+"meta-port" that depends on other GNOME 2.0 packages.  Its sole purpose is
+to require dependencies so users can install this package only and
+have all the GNOME 2.0 development stuff pulled in by the port/package 
+dependency mechanism.
