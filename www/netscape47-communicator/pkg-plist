@@ -1,7 +1,7 @@
 bin/communicator-4.04         
-@exec ln -sf %f bin/communicator-4
-@exec ln -sf communicator-4 bin/netscape
-@unexec rm -f bin/netscape
+@exec ln -sf %f %B/communicator-4
+@exec ln -sf communicator-4 %B/netscape
+@unexec rm -f %B/netscape
 lib/netscape/README
 lib/netscape/LICENSE
 lib/netscape/Netscape.ad
