@@ -1,0 +1,19 @@
+*** blue.c	Thu Jun 29 14:30:45 1995
+--- /home/andy/tmp/wrk/blue.c	Fri Jun  6 07:13:40 1997
+***************
+*** 19,25 ****
+  #include <unistd.h>
+  #include <signal.h>
+  #include <time.h>
+! #include <curses.h>
+  #include <term.h>
+  
+  #define NOCARD		(-1)
+--- 19,25 ----
+  #include <unistd.h>
+  #include <signal.h>
+  #include <time.h>
+! #include <ncurses.h>
+  #include <term.h>
+  
+  #define NOCARD		(-1)
