@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	net-snmp
-PORTVERSION=	5.0.9
-PORTREVISION=	1
+PORTVERSION=	5.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -16,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=213
+USE_AUTOCONF_VER=257
 USE_LIBTOOL=	yes
 USE_RC_SUBR=	yes
 INSTALLS_SHLIB=	yes
@@ -26,7 +25,7 @@ NO_LATEST_LINK=	yes
 USE_PERL5=	yes
 .endif
 
-CONFIGURE_ARGS+=--enable-shared --with-mib-modules="host ucd-snmp/diskio" \
+CONFIGURE_ARGS+=--enable-shared --with-mib-modules="${NET_SNMP_MIB_MODULES}" \
 		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
 		--with-sys-contact="${NET_SNMP_SYS_CONTACT}" \
 		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
@@ -40,19 +39,13 @@ PLIST_SUB+=	WITHPERL="@comment "
 CONFIGURE_ARGS+=	--with-perl-modules
 PLIST_SUB+=	WITHPERL=""
 .endif
-.if defined(BATCH)
-CONFIGURE_ARGS+=--with-defaults
-.else
-IS_INTERACTIVE=	yes
-.endif
-_CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/bin/autoconf213 \
-	AUTOHEADER=${LOCALBASE}/bin/autoheader213
 
 DEFAULT_SNMP_VERSION?=	3
 NET_SNMP_SYS_CONTACT?=	nobody@no.where
 NET_SNMP_SYS_LOCATION?=
 NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
+NET_SNMP_MIB_MODULES?=	host smux ucd-snmp/diskio
 
 MAN1=		mib2c.1 \
 		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 \
@@ -108,7 +101,7 @@ CONFIGURE_ARGS+=--enable-ipv6 \
 		--with-transports="UDP UDPIPv6 TCP TCPIPv6 Unix"
 .endif
 
-SHLIB_VERSION=	5
+SHLIB_VERSION=	6
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
@@ -140,3 +133,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
+
+# Dependency:
+# lang/php4,net/braa,net/docsis,net/ethereal,net/mbrowse,net/tethereal,net/zabbix,security/libfwbuilder

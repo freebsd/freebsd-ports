@@ -1,5 +1,5 @@
---- agent/mibgroup/host/hr_storage.c.orig	Thu Jul  4 22:00:31 2002
-+++ agent/mibgroup/host/hr_storage.c	Mon Jul 22 14:38:58 2002
+--- agent/mibgroup/host/hr_storage.c.orig	Tue Feb 25 22:17:46 2003
++++ agent/mibgroup/host/hr_storage.c	Fri Nov 14 13:03:07 2003
 @@ -148,7 +148,7 @@
  #define HRFS_mount	mnt_mountp
  #define HRFS_statfs	statvfs
@@ -9,16 +9,16 @@
  
  extern struct mntent *HRFS_entry;
  extern int      fscount;
-@@ -563,7 +563,7 @@
+@@ -564,7 +564,7 @@
          }
      case HRSTORE_UNITS:
-         if (store_idx < HRS_TYPE_FS_MAX)
+         if (store_idx > HRS_TYPE_FIXED_MAX)
 -#if STRUCT_STATVFS_HAS_F_FRSIZE
 +#if defined(STRUCT_STATVFS_HAS_F_FRSIZE) && defined(HAVE_MNTENT)
              long_return = stat_buf.f_frsize;
  #else
              long_return = stat_buf.f_bsize;
-@@ -646,7 +646,15 @@
+@@ -647,7 +647,15 @@
                       i++)
                      long_return += mbstat.m_mtypes[i];
  #elif defined(MBSTAT_SYMBOL)
@@ -34,7 +34,7 @@
  #elif defined(NO_DUMMY_VALUES)
                  return NULL;
  #else
-@@ -704,7 +712,15 @@
+@@ -705,7 +713,15 @@
                      * mbpool.pr_size + (mclpool.pr_nget - mclpool.pr_nput)
                      * mclpool.pr_size;
  #elif defined(MBSTAT_SYMBOL)

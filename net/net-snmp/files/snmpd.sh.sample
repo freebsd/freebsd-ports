@@ -12,7 +12,7 @@
 #
 
 snmpd_enable="NO"
-snmpd_flags="-P /var/run/snmpd.pid"
+snmpd_flags="-p /var/run/snmpd.pid"
 
 . %%RC_SUBR%%
 

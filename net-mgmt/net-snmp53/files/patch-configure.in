@@ -1,0 +1,19 @@
+--- configure.in.orig	Fri Nov 14 13:32:10 2003
++++ configure.in	Fri Nov 14 13:36:27 2003
+@@ -1357,7 +1357,7 @@
+   # fall back
+   CFLAG="-f"
+ fi
+-for i in /vmunix /hp-ux /stand/vmunix /dev/ksyms /kernel/unix /kernel/genunix /netbsd /unix /kernel /bsd /mach_kernel
++for i in /vmunix /hp-ux /stand/vmunix /dev/ksyms /kernel/unix /kernel/genunix /netbsd /unix /kernel /bsd /mach_kernel /boot/kernel/kernel
+   do
+   if test -f $i -o $CFLAG $i; then
+     ac_cv_KERNEL_LOC="$i"
+@@ -1376,6 +1376,7 @@
+ # Check for mount table location
+ #
+ 
++# kuriyama: should /var/db/mounttab be used?
+ AC_CACHE_CHECK(for mount table location,ac_cv_ETC_MNTTAB,
+ [ac_cv_ETC_MNTTAB="unknown"
+ for i in /etc/mnttab /etc/mtab /etc/filesystems
