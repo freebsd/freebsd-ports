@@ -8,6 +8,7 @@
 
 PORTNAME=	kdeartwork
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -46,7 +47,7 @@ PLIST_APPEND+=	plist.xs
 .endif # defined(WITH_XS)
 
 .if defined(WITH_XSGNOME)
-BUILD_DEPENDS+= screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome
+BUILD_DEPENDS+=	screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome
 PLIST_APPEND+=	plist.xs
 .endif # defined(WITH_XSGNOME)
 
