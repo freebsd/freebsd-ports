@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += yawm
 
     SUBDIR += 9menu
     SUBDIR += 9wm
