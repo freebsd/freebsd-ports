@@ -17,6 +17,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 		http://analog.org/loganalysis/ \
 		http://www.skreamsoft.com/analogmirror/ \
 		http://sunsite.org.uk/packages/analog/ \
+		http://analog.tzone.it/
 
 MAINTAINER=	mharo@FreeBSD.org
 
