@@ -18,6 +18,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
 
+BROKEN=		Does not work with python 2.4
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
