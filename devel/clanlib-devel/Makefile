@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	clanlib
-PORTVERSION=	0.7.5.2
-PORTREVISION=	3
+PORTVERSION=	0.7.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://clanlib.org/~sphair/download/
+PKGNAMESUFFIX=  -devel
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \
@@ -36,8 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-clanJavaScript --disable-docs
 INSTALLS_SHLIB=	yes
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -66,7 +66,7 @@ PLIST_SUB+=	SDL=""
 CONFIGURE_ARGS+=	--disable-clanGL
 PLIST_SUB+=	OPENGL="@comment "
 .else
-USE_MESA=	yes
+USE_GL=	yes
 PLIST_SUB+=	OPENGL=""
 .endif
 
