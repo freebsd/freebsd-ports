@@ -54,6 +54,7 @@
     SUBDIR += crescendo
     SUBDIR += cricket
     SUBDIR += cryptcat
+    SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-devel
     SUBDIR += cvsup-mirror
