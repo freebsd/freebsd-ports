@@ -20,9 +20,15 @@ MAINTAINER=	anders@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	bsf
-.if defined(WITH_SSL)
-MAKE_ARGS+=	SSLTYPE=unix.nopwd
+.if defined(WITHOUT_SSL)
+MAKE_ARGS+=	SSLTYPE=none
+.else
 USE_OPENSSL=	yes
+.if defined(WITH_SSL_AND_PLAINTEXT)
+MAKE_ARGS+=	SSLTYPE=unix
+.else
+MAKE_ARGS+=	SSLTYPE=unix.nopwd
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -57,7 +63,7 @@ PORTREV_H=	${WRKDIR}/portrevision.h
 
 post-build:
 	@${ECHO_CMD} "#define CCLIENT_PORTVERSION \"${PORTVERSION}\"" >${PORTREV_H}
-.if defined(WITH_SSL)
+.if !defined(WITHOUT_SSL)
 	@${ECHO_CMD} "#define CCLIENT_SSLENABLED \"yes\"" >>${PORTREV_H}
 .else
 	@${ECHO_CMD} "#define CCLIENT_SSLENABLED \"no\"" >>${PORTREV_H}
@@ -76,11 +82,11 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${PORTREV_H} ${PREFIX}/include/c-client
-.if defined(WITH_SSL)
+.if !defined(WITHOUT_SSL)
 	@${ECHO} "================================================================================"
 	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
 	@${ECHO} "the cclient library but do not support SSL may stop working or have problems
-	@${ECHO} "linking. Linking explicitly with ssl (-lssl -lcrypto) may or may not help."
+	@${ECHO} "linking. Linking them explicitly with ssl (-lssl -lcrypto) may or may not help."
 	@${ECHO} "================================================================================"
 .endif
 

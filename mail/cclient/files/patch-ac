@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Nov  4 16:19:13 2002
-+++ Makefile	Tue Nov 26 01:18:50 2002
+--- Makefile.orig	Tue Nov  5 01:19:13 2002
++++ Makefile	Wed Nov 27 00:59:07 2002
 @@ -256,7 +256,7 @@
  
  # Make the IMAP Toolkit
@@ -9,7 +9,27 @@
  
  c-client:
  	@echo Not processed yet.  In a first-time build, you must specify
-@@ -434,7 +434,7 @@
+@@ -396,9 +396,6 @@
+ 	@echo + In order to rectify this problem, you MUST build with:
+ 	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	@echo
+-	@echo Do you want to continue this build anyway?  Type y or n please:
+-	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) exit 1;; esac'
+ 
+ sslnone:
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ -411,9 +408,6 @@
+ 	@echo ++ SSLTYPE=nopwd
+ 	@echo + You must also have OpenSSL or equivalent installed.
+ 	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-	@echo
+-	@echo Do you want to continue this build anyway?  Type y or n please:
+-	@$(SH) -c 'read x; case "$$x" in y) exit 0;; *) exit 1;; esac'
+ 
+ 
+ # C compiler types
+@@ -434,7 +428,7 @@
  	$(TOOLS)/$@ "$(LN)" src/tmail tmail
  	$(LN) $(TOOLS)/$@ .
  
@@ -18,7 +38,7 @@
  
  OSTYPE:
  	@echo Building c-client for $(BUILDTYPE)...
-@@ -453,8 +453,7 @@
+@@ -453,8 +447,7 @@
  	@$(SH) -c '(test $(BUILDTYPE) = rebuild -o $(BUILDTYPE) = `$(CAT) OSTYPE`) || (echo Already built for `$(CAT) OSTYPE` -- you must do \"make clean\" first && exit 1)'
  	@echo Rebuilding c-client for `$(CAT) OSTYPE`...
  	@$(TOUCH) SPECIALS
