@@ -1,0 +1,24 @@
+--- compiler.h.org	Fri Nov 14 14:04:42 1997
++++ compiler.h	Fri Nov 14 14:06:55 1997
+@@ -70,9 +70,11 @@
+ -----------------------------------------------------------------------------*/
+ #elif   defined(GCC_COMPILER)
+ 
++#ifndef __FreeBSD__
+ extern  char    *sys_errlist[];
+ 
+ #define strerror(x) sys_errlist[x]
++#endif
+ 
+ /*  Defines for fopen calls.    */
+ #define     TXT_APPEND  "a"
+@@ -82,7 +84,9 @@
+ #define     BIN_WRITE   "w"
+ #define     BIN_RD_WRT  "w+"
+ 
++#ifndef __FreeBSD__
+ #include    <malloc.h>
++#endif
+ #include    <unistd.h>
+ 
+ /*-----------------------------------------------------------------------------

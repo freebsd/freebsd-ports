@@ -1,0 +1,7 @@
+UNPOST is a tool designed primarily to extract binaries from USENET
+binaries postings such as those made to alt.binaries.pictures.misc
+and comp.binaries.ibm.pc.  As well as extracting binaries from USENET
+postings, UNPOST can extract binaries from multi-segment uuencoded
+mailings as well, however, to simplify this documentation only
+USENET article postings will be discussed.  The principles are the
+same for multi-segment mailings.
