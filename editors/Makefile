@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.72 1999/04/30 08:47:44 taoka Exp $
+# $Id: Makefile,v 1.73 1999/04/30 23:06:46 asami Exp $
 #
 
+    SUBDIR += AbiWord
     SUBDIR += apel-emacs
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
