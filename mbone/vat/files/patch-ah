@@ -1,5 +1,5 @@
---- audio-voxware.cc.dist	Fri Apr 26 05:22:37 1996
-+++ audio-voxware.cc	Mon Dec 18 18:18:31 2000
+--- audio-voxware.cc.orig	Fri Apr 26 05:22:37 1996
++++ audio-voxware.cc	Sat May 10 00:15:51 2003
 @@ -1,4 +1,6 @@
  /*
 + * Modifications (C) 1997-1998 by Luigi Rizzo and others.
@@ -44,7 +44,7 @@
 -#include <sys/soundcard.h>
 +#include <fcntl.h>
  #endif
-+#include <machine/soundcard.h>
++#include <sys/soundcard.h>
  #include "audio.h"
 +#include "mulaw.h"
  #include "Tcl.h"
