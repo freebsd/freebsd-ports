@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	apg
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.adel.nursat.kz/apg/download/
-DISTRELTAG=	final
-DISTNAME=	${PORTNAME}-${PORTVERSION}${DISTRELTAG}
 
 MAINTAINER=	roam@FreeBSD.org
 
