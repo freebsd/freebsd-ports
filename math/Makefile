@@ -159,7 +159,6 @@
     SUBDIR += scalapack
     SUBDIR += scigraphica
     SUBDIR += scilab
-    SUBDIR += siag
     SUBDIR += simpack
     SUBDIR += slsc
     SUBDIR += snns
