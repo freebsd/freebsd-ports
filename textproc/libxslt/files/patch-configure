@@ -1,13 +1,5 @@
 --- configure.orig	Fri Sep 12 08:23:19 2003
 +++ configure	Fri Sep 12 15:29:42 2003
-@@ -8644,6 +8644,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 @@ -10300,7 +10301,7 @@
      fi
      if test "$with_python" != ""

@@ -5,7 +5,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
 -EXAMPLE_DIR = $(datadir)/doc/libxslt-python-$(LIBXSLT_VERSION)/examples
-+EXAMPLE_DIR = $(datadir)/doc/libxslt-python/examples
++EXAMPLE_DIR = $(datadir)/examples/py-libxslt
  TESTSPY = \
      basic.py	\
      exslt.py	\
