@@ -22,7 +22,7 @@
   do
 !     mv lpmud.log lpmud.log.old
 !     date > lpmud.log
-!     $dgd/bin/hname 6047 $passwd &
+!     $dgd/bin/hname 2000 $passwd &
 !     $dgd/bin/driver $dgd/lpmud.dgd >> lpmud.log 2>&1
   done > /dev/null 2>&1
 *** lpmud.dgd.old	Thu Jan 16 03:10:34 1997
