@@ -1,0 +1,14 @@
+--- po/Makefile.in.in.orig	Mon Jan 10 00:47:34 2005
++++ po/Makefile.in.in	Mon Jan 10 00:47:55 2005
+@@ -150,11 +150,6 @@
+ 	      true; \
+ 	    fi; \
+ 	  fi; \
+-	  timedir=$$destdir/$$lang/LC_TIME; \
+-	  rm -fr $$timedir; \
+-	  ln -s LC_MESSAGES $$timedir \
+-	  || (mkdir $$timedir && ln $$dir/* $$timedir); \
+-	  echo "installing $$timedir as an alias for $$dir"; \
+ 	done
+ 	if test "$(PACKAGE)" = "gettext"; then \
+ 	  if test -x "$(MKINSTALLDIRS)"; then \

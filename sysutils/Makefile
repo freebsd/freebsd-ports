@@ -86,6 +86,7 @@
     SUBDIR += daemontools53
     SUBDIR += dar
     SUBDIR += dc42wrap
+    SUBDIR += dcfldd
     SUBDIR += deleted
     SUBDIR += detach
     SUBDIR += di

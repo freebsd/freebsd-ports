@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Mon Jan 10 01:54:04 2005
++++ lib/Makefile.in	Mon Jan 10 01:56:47 2005
+@@ -830,7 +830,7 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-exec-local
++install-exec-am:
+ 
+ install-info: install-info-am
+ 
