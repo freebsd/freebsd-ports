@@ -78,7 +78,7 @@ PLIST_SUB+=		BZ2ABW:=""
 PLIST_SUB+=		BZ2ABW:="@comment "
 .endif
 
-.if defined(WITH_CLARISWORKS) # Untest...
+.if defined(WITH_CLARISWORKS) # Need to be tested
 CONFIGURE_ARGS+=	--enable-clarisworks
 PLIST_SUB+=		CLARISWORKS:=""
 .else
@@ -92,14 +92,14 @@ PLIST_SUB+=		COMMAND:=""
 PLIST_SUB+=		COMMAND:="@comment "
 .endif
 
-.if defined(WITH_DOCBOOK) # Untest...
+.if defined(WITH_DOCBOOK) # Need to be tested
 CONFIGURE_ARGS+=	--enable-docbook
 PLIST_SUB+=		DOCBOOK:=""
 .else
 PLIST_SUB+=		DOCBOOK:="@comment "
 .endif
 
-.if defined(WITH_EML) # Untest...
+.if defined(WITH_EML) # Need to be tested
 CONFIGURE_ARGS+=	--enable-eml
 PLIST_SUB+=		EML:=""
 .else
@@ -128,14 +128,14 @@ PLIST_SUB+=		GOOGLE:=""
 PLIST_SUB+=		GOOGLE:="@comment "
 .endif
 
-.if defined(WITH_HANCOM) # Untest...
+.if defined(WITH_HANCOM) # Need to be tested
 CONFIGURE_ARGS+=	--enable-hancom
 PLIST_SUB+=		HANCOM:=""
 .else
 PLIST_SUB+=		HANCOM:="@comment "
 .endif
 
-.if defined(WITH_HRTEXT) # Untest...
+.if defined(WITH_HRTEXT) # Need to be tested
 CONFIGURE_ARGS+=	--enable-hrtext
 PLIST_SUB+=		HRTEXT:=""
 .else
@@ -149,7 +149,7 @@ PLIST_SUB+=		JPEG:=""
 PLIST_SUB+=		JPEG:="@comment "
 .endif
 
-.if defined(WITH_LATEX) # Untest...
+.if defined(WITH_LATEX) # Need to be tested
 CONFIGURE_ARGS+=	--enable-latex
 PLIST_SUB+=		LATEX:=""
 .else
@@ -163,7 +163,7 @@ PLIST_SUB+=		MSWRITE:=""
 PLIST_SUB+=		MSWRITE:="@comment "
 .endif
 
-.if defined(WITH_NROFF) # Untest...
+.if defined(WITH_NROFF) # Need to be tested
 CONFIGURE_ARGS+=	--enable-nroff
 PLIST_SUB+=		NROFF:=""
 .else
@@ -178,7 +178,7 @@ PLIST_SUB+=		OPENWRITER:=""
 PLIST_SUB+=		OPENWRITER:="@comment "
 .endif
 
-.if defined(WITH_PDB) # Untest...
+.if defined(WITH_PDB) # Need to be tested
 CONFIGURE_ARGS+=	--enable-pdb
 PLIST_SUB+=		PDB:=""
 .else
@@ -208,7 +208,7 @@ PLIST_SUB+=		SHELL:=""
 PLIST_SUB+=		SHELL:="@comment "
 .endif
 
-.if defined(WITH_T602) # Untest...
+.if defined(WITH_T602) # Need to be tested
 CONFIGURE_ARGS+=	--enable-t602
 PLIST_SUB+=		T602:=""
 .else
