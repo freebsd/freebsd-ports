@@ -6483,6 +6483,7 @@ ru-xcode	ports/russian/xcode
 ru-xcyrBGR	ports/russian/xcyrBGR
 ru-xruskb	ports/russian/xruskb
 ru-xxkb		ports/russian/xxkb
+rubber		ports/textproc/rubber
 rubix		ports/games/rubix
 ruboard		ports/www/ruboard
 rubrica		ports/deskutils/rubrica
