@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.5
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
@@ -17,10 +17,11 @@ MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 MAINTAINER=	billf@FreeBSD.org
 COMMENT?=	A powerful network analyzer/capture tool
 
+USE_PERL5_BUILD=yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--program-transform-name=""
+INSTALLS_SHLIB=	yes
 
 .for x in editcap idl2eth mergecap text2pcap
 .if defined(LITE)
@@ -41,23 +42,23 @@ USE_X_PREFIX=	yes
 .if !defined(WITHOUT_X11)
 MAN1+=		ethereal.1
 PLIST_SUB+=	ETHEREAL=bin/ethereal
-.if defined(WITH_GTK2) || (${HAVE_GNOME:Mgtk20}!="")
-USE_GNOME=	gtk20
-CONFIGURE_ARGS+=	--enable-gtk2=yes
-.else
+.if defined(WITHOUT_GTK2)
 USE_GNOME=	gtk12
+CONFIGURE_ARGS+=	--disable-gtk2
+.else
+USE_GNOME=	gtk20
 .endif
 .else
 PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
 USE_GNOME=	glib12
 CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtktest \
-			--with-gtk-prefix=/nonexistant \
-			--enable-gtk2=no
+			--with-gtk-prefix=/nonexistent \
+			--disable-gtk2
 .endif
 
-USE_LIBTOOL_VER=13
-LIBTOOLFILES=	configure epan/configure wiretap/configure doc/configure \
+USE_LIBTOOL_VER=15
+LIBTOOLFILES=	configure wiretap/configure doc/configure \
 	      	plugins/gryphon/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
