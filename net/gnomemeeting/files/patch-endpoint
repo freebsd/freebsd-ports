@@ -1,0 +1,37 @@
+*** src/endpoint.cpp.orig	Thu Jul 31 17:26:36 2003
+--- src/endpoint.cpp	Fri Sep  5 11:40:58 2003
+*************** GMH323EndPoint::GMH323EndPoint ()
+*** 176,183 ****
+  
+    /* Use IPv6 address family by default if available. */
+  #ifdef P_HAS_IPV6
+!   if (PIPSocket::IsIpAddressFamilyV6Supported())
+!     PIPSocket::SetDefaultIpAddressFamilyV6();
+  #endif
+    
+    rtp_port_range = 
+--- 176,185 ----
+  
+    /* Use IPv6 address family by default if available. */
+  #ifdef P_HAS_IPV6
+! // ENABLING THIS CAUSES PWLIB TO GIVE AN ASSERTION WHEN THERE IS AN
+! // INCOMING CALL
+! //  if (PIPSocket::IsIpAddressFamilyV6Supported())
+! //    PIPSocket::SetDefaultIpAddressFamilyV6();
+  #endif
+    
+    rtp_port_range = 
+*************** GMH323EndPoint::TranslateTCPAddress(PIPS
+*** 682,687 ****
+--- 684,694 ----
+  	 
+  	 && !((remoteAddr.Byte1() == 172) 
+  	      && ((remoteAddr.Byte2() >= 16)&&(remoteAddr.Byte2()<=31)))
++ 	 
++ 	 && !((remoteAddr.Byte1() == 127) 
++ 	      &&(remoteAddr.Byte2()== 0)
++ 	      &&(remoteAddr.Byte3()==0)
++ 	      &&(remoteAddr.Byte4()==1))
+  	 
+  	 && !(remoteAddr.Byte1() == 10)) {
+  
