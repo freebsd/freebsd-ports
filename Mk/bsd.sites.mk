@@ -60,8 +60,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/gnome/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
-	ftp://ftp.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/ \
-	ftp://gnome.eazel.com/pub/GNOME/%SUBDIR%/
+	ftp://ftp.sourceforge.net/pub/mirrors/gnome/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
@@ -218,8 +217,8 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
-	ftp://ftp3.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://prdownloads.sourceforge.net/%SUBDIR%/ \
+	ftp://ftp3.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp3.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp1.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp1.sourceforge.net/%SUBDIR%/ \
