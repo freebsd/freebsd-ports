@@ -1,0 +1,85 @@
+--- src/core/hashtable.h.orig	Fri Oct  8 10:37:06 2004
++++ src/core/hashtable.h	Fri Oct  8 10:37:16 2004
+@@ -2,7 +2,7 @@
+ * hashtable.h: Hashtable class definition
+ *-------------------------------------------------------------------------------
+ * (c)1999-2001 VideoLAN
+-* $Id: hashtable.h,v 1.1 2001/10/06 21:23:36 bozo Exp $
++* $Id$
+ *
+ * Authors: Benoit Steiner <benny@via.ecp.fr>
+ *
+@@ -63,7 +63,7 @@
+ };
+ 
+ 
+-class C_HashMethod<u32>
++template <> class C_HashMethod<u32>
+ {
+  public:
+   inline C_HashMethod(u32 uiMaxHash);
+@@ -76,7 +76,7 @@
+ };
+ 
+ 
+-class C_HashMethod<u16>
++template <> class C_HashMethod<u16>
+ {
+  public:
+   inline C_HashMethod(u32 uiMaxHash);
+@@ -89,7 +89,7 @@
+ };
+ 
+ 
+-class C_HashMethod<handle>
++template <> class C_HashMethod<handle>
+ {
+  public:
+   inline C_HashMethod(u32 uiMaxHash);
+--- src/core/library.cpp.orig	Fri Oct  8 10:49:59 2004
++++ src/core/library.cpp	Fri Oct  8 10:51:20 2004
+@@ -34,6 +34,7 @@
+ // use the template: look at vector.h for further explanation
+ 
+ 
++#define DL_LAZY 1
+ 
+ //******************************************************************************
+ // class C_Library
+--- src/core/stream.cpp.orig	Fri Oct  8 11:03:00 2004
++++ src/core/stream.cpp	Fri Oct  8 11:04:48 2004
+@@ -2,7 +2,7 @@
+ * stream.cpp: Stream class
+ *-------------------------------------------------------------------------------
+ * (c)1999-2001 VideoLAN
+-* $Id: stream.cpp,v 1.3 2002/09/04 10:56:34 jpsaman Exp $
++* $Id$
+ *
+ * Authors: Benoit Steiner <benny@via.ecp.fr>
+ *
+@@ -319,7 +319,7 @@
+ {
+   try
+   {
+-    u32 iByteCount = cSerializer.NextBytesCount();
++    u32 iByteCount = this->cSerializer.NextBytesCount();
+     while(iByteCount > 0)
+     {
+       const byte aBytes[iByteCount];
+@@ -332,13 +332,13 @@
+         ASSERT(iRc >= 0 || iRc == FILE_EOF);
+         iOffset += iRc;
+       }
+-      while(iByteCount > 0 && iRc != FILE_EOF);
++      while(iByteCount > 0 && this->iRc != FILE_EOF);
+ 
+       // Deserialize them
+-      cSerializer.SetNextBytes(&aBytes);
++      this->cSerializer.SetNextBytes(&aBytes);
+ 
+       // Next iteration
+-      iByteCount = cSerializer.NextBytesCount();
++      iByteCount = this->cSerializer.NextBytesCount();
+     }
+   }
+   catch(E_Exception e)

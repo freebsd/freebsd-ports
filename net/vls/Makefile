@@ -48,7 +48,8 @@ CONFIGURE_ENV+=		VLS_LIB="-L/usr/lib -lcipher"
 .endif
 
 .if ${OSVERSION} >= 502122
-BROKEN=		new gcc: an explicit specialization must be preceded by template
+# allow nonconforming code to compile
+CFLAGS+=	-fpermissive
 .endif
 
 .include <bsd.port.post.mk>
