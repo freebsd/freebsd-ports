@@ -1,4 +1,3 @@
-www/data/mantis/README
 www/data/mantis/account_delete.php
 www/data/mantis/account_page.php
 www/data/mantis/account_prefs_inc.php
@@ -14,9 +13,6 @@ www/data/mantis/account_prof_update.php
 www/data/mantis/account_update.php
 www/data/mantis/admin/admin.css
 www/data/mantis/admin/check.php
-www/data/mantis/admin/css/CVS/Entries
-www/data/mantis/admin/css/CVS/Repository
-www/data/mantis/admin/css/CVS/Root
 www/data/mantis/admin/css/core.php
 www/data/mantis/admin/css/css_download.php
 www/data/mantis/admin/css/css_inc.php
@@ -37,12 +33,11 @@ www/data/mantis/admin/upgrades/0_15_inc.php
 www/data/mantis/admin/upgrades/0_16_inc.php
 www/data/mantis/admin/upgrades/0_17_escaping_fixes_inc.php
 www/data/mantis/admin/upgrades/0_17_inc.php
-www/data/mantis/admin/upgrades/CVS/Entries
-www/data/mantis/admin/upgrades/CVS/Repository
-www/data/mantis/admin/upgrades/CVS/Root
+www/data/mantis/admin/upgrades/0_18_inc.php
 www/data/mantis/bug_actiongroup.php
 www/data/mantis/bug_actiongroup_page.php
 www/data/mantis/bug_assign.php
+www/data/mantis/bug_assign_reporter.php
 www/data/mantis/bug_close.php
 www/data/mantis/bug_close_page.php
 www/data/mantis/bug_delete.php
@@ -76,11 +71,13 @@ www/data/mantis/bugnote_view_inc.php
 www/data/mantis/config_defaults_inc.php
 www/data/mantis/config_inc.php
 www/data/mantis/core.php
+www/data/mantis/core/.cvsignore
 www/data/mantis/core/access_api.php
 www/data/mantis/core/authentication_api.php
 www/data/mantis/core/bug_api.php
 www/data/mantis/core/bugnote_api.php
 www/data/mantis/core/category_api.php
+www/data/mantis/core/class.RSSBuilder.inc.php
 www/data/mantis/core/compress_api.php
 www/data/mantis/core/config_api.php
 www/data/mantis/core/constant_inc.php
@@ -127,7 +124,6 @@ www/data/mantis/doc/UPGRADING
 www/data/mantis/doc/documentation.html
 www/data/mantis/doc/faq.css
 www/data/mantis/doc/faq.html
-www/data/mantis/doc/installation.html
 www/data/mantis/documentation_page.php
 www/data/mantis/file_download.php
 www/data/mantis/graphs/graph_assigned_to_me.php
@@ -195,6 +191,7 @@ www/data/mantis/lang/strings_japanese_euc.txt
 www/data/mantis/lang/strings_japanese_sjis.txt
 www/data/mantis/lang/strings_korean.txt
 www/data/mantis/lang/strings_latvian.txt
+www/data/mantis/lang/strings_lithuanian.txt
 www/data/mantis/lang/strings_norwegian.txt
 www/data/mantis/lang/strings_polish.txt
 www/data/mantis/lang/strings_portuguese_brazil.txt
@@ -202,6 +199,7 @@ www/data/mantis/lang/strings_portuguese_standard.txt
 www/data/mantis/lang/strings_romanian.txt
 www/data/mantis/lang/strings_russian.txt
 www/data/mantis/lang/strings_russian_koi8.txt
+www/data/mantis/lang/strings_serbian.txt
 www/data/mantis/lang/strings_slovak.txt
 www/data/mantis/lang/strings_spanish.txt
 www/data/mantis/lang/strings_swedish.txt
@@ -254,8 +252,10 @@ www/data/mantis/meta_inc.php
 www/data/mantis/news_add.php
 www/data/mantis/news_delete.php
 www/data/mantis/news_edit_page.php
+www/data/mantis/news_inc.php
 www/data/mantis/news_list_page.php
 www/data/mantis/news_menu_page.php
+www/data/mantis/news_rss.php
 www/data/mantis/news_update.php
 www/data/mantis/news_view_page.php
 www/data/mantis/packages/mantis.spec
@@ -304,17 +304,15 @@ www/data/mantis/summary_page.php
 www/data/mantis/view_all_bug_page.php
 www/data/mantis/view_all_inc.php
 www/data/mantis/view_all_set.php
-@dirrm www/data/mantis/sql
-@dirrm www/data/mantis/packages
-@dirrm www/data/mantis/lang
-@dirrm www/data/mantis/images
-@dirrm www/data/mantis/graphs
-@dirrm www/data/mantis/doc
-@dirrm www/data/mantis/css
-@dirrm www/data/mantis/core
-@dirrm www/data/mantis/admin/upgrades/CVS
-@dirrm www/data/mantis/admin/upgrades
-@dirrm www/data/mantis/admin/css/CVS
 @dirrm www/data/mantis/admin/css
+@dirrm www/data/mantis/admin/upgrades
 @dirrm www/data/mantis/admin
+@dirrm www/data/mantis/core
+@dirrm www/data/mantis/css
+@dirrm www/data/mantis/doc
+@dirrm www/data/mantis/graphs
+@dirrm www/data/mantis/images
+@dirrm www/data/mantis/lang
+@dirrm www/data/mantis/packages
+@dirrm www/data/mantis/sql
 @dirrm www/data/mantis
