@@ -59,6 +59,10 @@ QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
 
+.if ${MACHINE_ARCH:L} == alpha
+CONFIGURE_ARGS+=	--english-only
+.endif
+
 pre-configure:
 	@${PERL} -pi -e "s:gcc:${CC}:g;		\
 		s:g\+\+:${CXX}:g;		\
