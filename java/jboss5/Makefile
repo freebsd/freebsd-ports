@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	JBoss 3.x, an open-source J2EE application server
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
+
 LATEST_LINK=	jboss3
 USE_JAVA=	1.4+
 
@@ -101,7 +103,7 @@ do-build:
 	(cd ${WRKSRC}/build && ${SETENV} JAVA_HOME=${JAVA_HOME} PATH=${PATH}:${JAVA_HOME}/bin ${SH} build.sh)
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${MKDIR} ${APP_HOME} && ${CHOWN} ${USER}:${GROUP} ${APP_HOME}
