@@ -65,6 +65,7 @@
     SUBDIR += openoffice-1.1
     SUBDIR += pgp.language
     SUBDIR += pinetreefonts
+    SUBDIR += scim-tables
     SUBDIR += texinfo
     SUBDIR += unfonts-ttf
     SUBDIR += uniksc
