@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silky
-PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTVERSION=	0.5.2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -25,8 +24,9 @@ CONFIGURE_ARGS=	--with-silc-includes=${LOCALBASE}/include/silc \
 		--with-silc-libs=${LOCALBASE}/lib \
 		--with-docdir=${DOCSDIR} \
 		--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${FILESDIR}
 
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 libglade2 gnomelibs
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
