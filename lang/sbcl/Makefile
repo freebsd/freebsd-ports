@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -34,16 +34,17 @@ USE_GMAKE=	yes
 # Can currently only bootstrap using cmucl, which is i386-only
 ONLY_FOR_ARCHS=	i386
 
-MAN1=		sbcl.1
+MAN1=		sbcl.1 sbcl-asdf-install.1
+
+post-extract:
+	(${FIND} ${WRKSRC} -type d -name CVS -print0 | ${XARGS} -0 ${RM} -rf)
 
 do-build:
 	(cd ${WRKSRC} && ${SH} make.sh ${LISP_CMD})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/runtime/sbcl ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/lib/sbcl
-	${INSTALL_DATA} ${WRKSRC}/output/sbcl.core ${PREFIX}/lib/sbcl
-	${INSTALL_MAN} ${WRKSRC}/doc/sbcl.1 ${PREFIX}/man/man1/
+	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
+	    MAN_DIR=${PREFIX}/man ${SH} install.sh)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} BUGS COPYING CREDITS ${DOCSDIR})
 .if !defined(NOPORTDOCS)

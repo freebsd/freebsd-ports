@@ -1,29 +1,199 @@
 bin/sbcl
+lib/sbcl/asdf/asdf.fasl
+lib/sbcl/sb-aclrepl/.cvsignore
+lib/sbcl/sb-aclrepl/Makefile
+lib/sbcl/sb-aclrepl/README
+lib/sbcl/sb-aclrepl/debug.fasl
+lib/sbcl/sb-aclrepl/debug.lisp
+lib/sbcl/sb-aclrepl/inspect.fasl
+lib/sbcl/sb-aclrepl/inspect.lisp
+lib/sbcl/sb-aclrepl/repl.fasl
+lib/sbcl/sb-aclrepl/repl.lisp
+lib/sbcl/sb-aclrepl/sb-aclrepl.asd
+lib/sbcl/sb-aclrepl/sb-aclrepl.fasl
+lib/sbcl/sb-aclrepl/test-passed
+lib/sbcl/sb-aclrepl/tests.fasl
+lib/sbcl/sb-aclrepl/tests.lisp
+lib/sbcl/sb-aclrepl/toplevel.fasl
+lib/sbcl/sb-aclrepl/toplevel.lisp
+lib/sbcl/sb-cltl2/.cvsignore
+lib/sbcl/sb-cltl2/Makefile
+lib/sbcl/sb-cltl2/compiler-let.fasl
+lib/sbcl/sb-cltl2/compiler-let.lisp
+lib/sbcl/sb-cltl2/defpackage.fasl
+lib/sbcl/sb-cltl2/defpackage.lisp
+lib/sbcl/sb-cltl2/env.fasl
+lib/sbcl/sb-cltl2/env.lisp
+lib/sbcl/sb-cltl2/macroexpand.fasl
+lib/sbcl/sb-cltl2/macroexpand.lisp
+lib/sbcl/sb-cltl2/sb-cltl2.asd
+lib/sbcl/sb-cltl2/sb-cltl2.fasl
+lib/sbcl/sb-cltl2/test-passed
+lib/sbcl/sb-cltl2/tests.fasl
+lib/sbcl/sb-cltl2/tests.lisp
+lib/sbcl/sb-executable/sb-executable.fasl
+lib/sbcl/sb-grovel/.cvsignore
+lib/sbcl/sb-grovel/Makefile
+lib/sbcl/sb-grovel/README
+lib/sbcl/sb-grovel/array-data.fasl
+lib/sbcl/sb-grovel/array-data.lisp
+lib/sbcl/sb-grovel/def-to-lisp.fasl
+lib/sbcl/sb-grovel/def-to-lisp.lisp
+lib/sbcl/sb-grovel/defpackage.fasl
+lib/sbcl/sb-grovel/defpackage.lisp
+lib/sbcl/sb-grovel/example-constants.lisp
+lib/sbcl/sb-grovel/foreign-glue.fasl
+lib/sbcl/sb-grovel/foreign-glue.lisp
+lib/sbcl/sb-grovel/sb-grovel.asd
+lib/sbcl/sb-grovel/sb-grovel.fasl
+lib/sbcl/sb-grovel/test-passed
+lib/sbcl/sb-introspect/sb-introspect.fasl
+lib/sbcl/sb-md5/.cvsignore
+lib/sbcl/sb-md5/Makefile
+lib/sbcl/sb-md5/README
+lib/sbcl/sb-md5/md5-tests.fasl
+lib/sbcl/sb-md5/md5-tests.lisp
+lib/sbcl/sb-md5/md5.fasl
+lib/sbcl/sb-md5/md5.lisp
+lib/sbcl/sb-md5/sb-md5.asd
+lib/sbcl/sb-md5/sb-md5.fasl
+lib/sbcl/sb-md5/test-passed
+lib/sbcl/sb-posix/.cvsignore
+lib/sbcl/sb-posix/Makefile
+lib/sbcl/sb-posix/README
+lib/sbcl/sb-posix/TODO
+lib/sbcl/sb-posix/a.out
+lib/sbcl/sb-posix/alien.so
+lib/sbcl/sb-posix/alien/stat-macros.c
+lib/sbcl/sb-posix/alien/stat-macros.o
+lib/sbcl/sb-posix/constants.fasl
+lib/sbcl/sb-posix/constants.lisp
+lib/sbcl/sb-posix/constants.lisp-temp
+lib/sbcl/sb-posix/defpackage.fasl
+lib/sbcl/sb-posix/defpackage.lisp
+lib/sbcl/sb-posix/designator.fasl
+lib/sbcl/sb-posix/designator.lisp
+lib/sbcl/sb-posix/foo.c
+lib/sbcl/sb-posix/interface.fasl
+lib/sbcl/sb-posix/interface.lisp
+lib/sbcl/sb-posix/macros.fasl
+lib/sbcl/sb-posix/macros.lisp
+lib/sbcl/sb-posix/posix-tests.fasl
+lib/sbcl/sb-posix/posix-tests.lisp
+lib/sbcl/sb-posix/sb-posix.asd
+lib/sbcl/sb-posix/sb-posix.fasl
+lib/sbcl/sb-posix/test-lab/stat.error.2/unstatable
+lib/sbcl/sb-posix/test-passed
+lib/sbcl/sb-rotate-byte/.cvsignore
+lib/sbcl/sb-rotate-byte/Makefile
+lib/sbcl/sb-rotate-byte/README
+lib/sbcl/sb-rotate-byte/compiler.fasl
+lib/sbcl/sb-rotate-byte/compiler.lisp
+lib/sbcl/sb-rotate-byte/package.fasl
+lib/sbcl/sb-rotate-byte/package.lisp
+lib/sbcl/sb-rotate-byte/ppc-vm.lisp
+lib/sbcl/sb-rotate-byte/rotate-byte-tests.fasl
+lib/sbcl/sb-rotate-byte/rotate-byte-tests.lisp
+lib/sbcl/sb-rotate-byte/rotate-byte.fasl
+lib/sbcl/sb-rotate-byte/rotate-byte.lisp
+lib/sbcl/sb-rotate-byte/sb-rotate-byte.asd
+lib/sbcl/sb-rotate-byte/sb-rotate-byte.fasl
+lib/sbcl/sb-rotate-byte/test-passed
+lib/sbcl/sb-rotate-byte/x86-vm.fasl
+lib/sbcl/sb-rotate-byte/x86-vm.lisp
+lib/sbcl/sb-rt/.cvsignore
+lib/sbcl/sb-rt/Makefile
+lib/sbcl/sb-rt/rt.fasl
+lib/sbcl/sb-rt/rt.lisp
+lib/sbcl/sb-rt/sb-rt.asd
+lib/sbcl/sb-rt/sb-rt.fasl
+lib/sbcl/sb-rt/test-passed
+lib/sbcl/sb-simple-streams/.cvsignore
+lib/sbcl/sb-simple-streams/Makefile
+lib/sbcl/sb-simple-streams/README
+lib/sbcl/sb-simple-streams/TODO
+lib/sbcl/sb-simple-streams/classes.fasl
+lib/sbcl/sb-simple-streams/classes.lisp
+lib/sbcl/sb-simple-streams/direct.fasl
+lib/sbcl/sb-simple-streams/direct.lisp
+lib/sbcl/sb-simple-streams/file.fasl
+lib/sbcl/sb-simple-streams/file.lisp
+lib/sbcl/sb-simple-streams/fndb.fasl
+lib/sbcl/sb-simple-streams/fndb.lisp
+lib/sbcl/sb-simple-streams/impl.fasl
+lib/sbcl/sb-simple-streams/impl.lisp
+lib/sbcl/sb-simple-streams/internal.fasl
+lib/sbcl/sb-simple-streams/internal.lisp
+lib/sbcl/sb-simple-streams/iodefs.fasl
+lib/sbcl/sb-simple-streams/iodefs.lisp
+lib/sbcl/sb-simple-streams/null.fasl
+lib/sbcl/sb-simple-streams/null.lisp
+lib/sbcl/sb-simple-streams/package.fasl
+lib/sbcl/sb-simple-streams/package.lisp
+lib/sbcl/sb-simple-streams/sb-simple-streams.asd
+lib/sbcl/sb-simple-streams/sb-simple-streams.fasl
+lib/sbcl/sb-simple-streams/simple-stream-tests.fasl
+lib/sbcl/sb-simple-streams/simple-stream-tests.lisp
+lib/sbcl/sb-simple-streams/socket.fasl
+lib/sbcl/sb-simple-streams/socket.lisp
+lib/sbcl/sb-simple-streams/strategy.fasl
+lib/sbcl/sb-simple-streams/strategy.lisp
+lib/sbcl/sb-simple-streams/string.fasl
+lib/sbcl/sb-simple-streams/string.lisp
+lib/sbcl/sb-simple-streams/terminal.fasl
+lib/sbcl/sb-simple-streams/terminal.lisp
+lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sbcl.core
+lib/sbcl/systems/sb-aclrepl.asd
+lib/sbcl/systems/sb-cltl2.asd
+lib/sbcl/systems/sb-grovel.asd
+lib/sbcl/systems/sb-md5.asd
+lib/sbcl/systems/sb-posix.asd
+lib/sbcl/systems/sb-rotate-byte.asd
+lib/sbcl/systems/sb-rt.asd
+lib/sbcl/systems/sb-simple-streams.asd
 %%DOCSDIR%%/BUGS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/html/beyond-ansi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/colophon.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler-policy.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compiler-types.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/html/efficiency.html
 %%PORTDOCS%%%%DOCSDIR%%/html/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ffi-example.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ffi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/foreign-data-structure.html
+%%PORTDOCS%%%%DOCSDIR%%/html/foreign-function-calls.html
+%%PORTDOCS%%%%DOCSDIR%%/html/foreign-types.html
+%%PORTDOCS%%%%DOCSDIR%%/html/foreign-values.html
+%%PORTDOCS%%%%DOCSDIR%%/html/foreign-variables.html
 %%PORTDOCS%%%%DOCSDIR%%/html/idiosyncrasies.html
 %%PORTDOCS%%%%DOCSDIR%%/html/implementation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1099.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1158.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1170.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1193.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x1297.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x280.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x40.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x450.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x829.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x994.html
-%%PORTDOCS%%%%DOCSDIR%%/html/z1322.html
+%%PORTDOCS%%%%DOCSDIR%%/html/load-object.html
+%%PORTDOCS%%%%DOCSDIR%%/html/open-coding.html
+%%PORTDOCS%%%%DOCSDIR%%/html/where-more.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
+@dirrm lib/sbcl/systems
+@dirrm lib/sbcl/site-systems
+@dirrm lib/sbcl/sb-simple-streams
+@dirrm lib/sbcl/sb-rt
+@dirrm lib/sbcl/sb-rotate-byte
+@dirrm lib/sbcl/sb-posix/test-lab/stat.error.2
+@dirrm lib/sbcl/sb-posix/test-lab/rmdir.error.5
+@dirrm lib/sbcl/sb-posix/test-lab
+@dirrm lib/sbcl/sb-posix/alien
+@dirrm lib/sbcl/sb-posix
+@dirrm lib/sbcl/sb-md5
+@dirrm lib/sbcl/sb-introspect
+@dirrm lib/sbcl/sb-grovel
+@dirrm lib/sbcl/sb-executable
+@dirrm lib/sbcl/sb-cltl2
+@dirrm lib/sbcl/sb-aclrepl
+@dirrm lib/sbcl/asdf-install
+@dirrm lib/sbcl/asdf
 @dirrm lib/sbcl
