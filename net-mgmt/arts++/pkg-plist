@@ -94,5 +94,3 @@ lib/libArts.a
 lib/libArts.la
 lib/libArts.so
 lib/libArts.so.0
-@unexec /usr/bin/env /sbin/ldconfig -R
-@exec /usr/bin/env /sbin/ldconfig -m %B

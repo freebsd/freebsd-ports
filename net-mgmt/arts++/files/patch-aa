@@ -1,0 +1,3243 @@
+--- ./apps/artsasagg/artsasagg.cc.orig	Mon Oct  2 13:05:10 2000
++++ ./apps/artsasagg/artsasagg.cc	Wed Sep 25 16:38:09 2002
+@@ -50,15 +50,21 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-#include <map>
+-
+ #include "ArtsFileUtil.hh"
+ #include "ArtsPackageVersion.hh"
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+ #endif
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
++#endif
++#include <string>
++#include <map>
+ 
+ extern int   errno;
+ 
+--- ./apps/artsintfms/artsintfms.cc.orig	Mon Oct  2 13:05:11 2000
++++ ./apps/artsintfms/artsintfms.cc	Wed Sep 25 16:38:09 2002
+@@ -51,13 +51,21 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsInterfaceMatrix.hh"
+ #include "ArtsIfIndexSelectionSet.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else 
++# include <fstream.h>
++#endif
++
++#include <string>
++
+ 
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+--- ./apps/artsnetagg/artsnetagg.cc.orig	Mon Oct  2 13:05:11 2000
++++ ./apps/artsnetagg/artsnetagg.cc	Wed Sep 25 16:38:09 2002
+@@ -50,13 +50,18 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsFileUtil.hh"
+ #include "ArtsPackageVersion.hh"
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
++#endif
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
+ #endif
+ 
+ extern int   errno;
+--- ./apps/artsnets/artsnets.cc.orig	Mon Oct  2 13:05:12 2000
++++ ./apps/artsnets/artsnets.cc	Wed Sep 25 16:38:09 2002
+@@ -51,14 +51,22 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsNetMatrix.hh"
+ #include "ArtsIfIndexSelectionSet.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
+ 
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
++#endif
++
++#include <string>
++
++
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+ #endif
+@@ -160,7 +168,7 @@
+     }
+   }
+   
+-  if (hostAttribute) {
++  if (hostAttribute != arts.Attributes().end() ) {
+     inAddr.s_addr = hostAttribute->Host();
+     cout << "router:  " << inet_ntoa(inAddr) << endl;
+   }
+--- ./apps/artsnexthopagg/artsnexthopagg.cc.orig	Mon Oct  2 13:05:12 2000
++++ ./apps/artsnexthopagg/artsnexthopagg.cc	Wed Sep 25 16:38:09 2002
+@@ -50,14 +50,21 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsFileUtil.hh"
+ #include "ArtsPackageVersion.hh"
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+ #endif
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
++#endif
++
++#include <string>
+ 
+ extern char *tzname[2];
+ extern int   errno;
+--- ./apps/artsnexthops/artsnexthops.cc.orig	Mon Oct  2 13:05:12 2000
++++ ./apps/artsnexthops/artsnexthops.cc	Wed Sep 25 16:38:09 2002
+@@ -51,14 +51,21 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsNextHopTable.hh"
+ #include "ArtsIfIndexSelectionSet.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
+ 
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
++#endif
++
++#include <string>
++
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+ #endif
+@@ -116,7 +123,7 @@
+     }
+   }
+   
+-  if (hostAttribute) {
++  if (hostAttribute != arts.Attributes().end()) {
+     inAddr.s_addr = hostAttribute->Host();
+     cout << "router:  " << inet_ntoa(inAddr) << endl;
+   }
+@@ -135,7 +142,7 @@
+   cout << endl;
+   
+   periodAttribute = arts.FindPeriodAttribute();
+-  if (periodAttribute) {
++  if (periodAttribute != arts.Attributes().end() ) {
+     periodTimes[0] = periodAttribute->Period()[0];
+     periodTimes[1] = periodAttribute->Period()[1];
+     localTm = localtime(&(periodTimes[0]));
+--- ./apps/artsportagg/artsportagg.cc.orig	Mon Oct  2 13:05:12 2000
++++ ./apps/artsportagg/artsportagg.cc	Wed Sep 25 16:38:09 2002
+@@ -50,14 +50,19 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsPortTableAggregator.hh"
+ #include "Arts.hh"
+ #include "ArtsPortTableAggregatorMapKey.hh"
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
++#endif
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
+ #endif
+ 
+ extern char *tzname[2];
+--- ./apps/artsportms/artsportms.cc.orig	Mon Oct  2 13:05:12 2000
++++ ./apps/artsportms/artsportms.cc	Wed Sep 25 16:38:09 2002
+@@ -51,13 +51,21 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsPortMatrix.hh"
+ #include "ArtsIfIndexSelectionSet.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
++#endif
++
++#include <string>
++
+ 
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+--- ./apps/artsprotoagg/artsprotoagg.cc.orig	Mon Oct  2 13:05:13 2000
++++ ./apps/artsprotoagg/artsprotoagg.cc	Wed Sep 25 16:38:09 2002
+@@ -50,13 +50,18 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsFileUtil.hh"
+ #include "ArtsPackageVersion.hh"
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
++#endif
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
+ #endif
+ 
+ extern char *tzname[2];
+--- ./apps/artsprotos/artsprotos.cc.orig	Mon Oct  2 13:05:13 2000
++++ ./apps/artsprotos/artsprotos.cc	Wed Sep 25 16:38:09 2002
+@@ -52,14 +52,22 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsProtocolTable.hh"
+ #include "ArtsIfIndexSelectionSet.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
+ 
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++#else
++# include <fstream.h>
++#endif 
++
++#include <string>
++using namespace std;
++
++
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+ #endif
+@@ -118,7 +126,7 @@
+     }
+   }
+   
+-  if (hostAttribute) {
++  if (hostAttribute != arts.Attributes().end() ) {
+     inAddr.s_addr = hostAttribute->Host();
+     cout << "router:  " << inet_ntoa(inAddr) << endl;
+   }
+--- ./apps/artstoc/artstoc.cc.orig	Mon Oct  2 13:05:13 2000
++++ ./apps/artstoc/artstoc.cc	Wed Sep 25 16:38:09 2002
+@@ -49,14 +49,19 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "Arts.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
++#endif
++
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
+ #endif
+ 
+ extern char *tzname[2];
+--- ./apps/artstos/artstos.cc.orig	Mon Oct  2 13:05:13 2000
++++ ./apps/artstos/artstos.cc	Wed Sep 25 16:38:09 2002
+@@ -52,14 +52,19 @@
+ #include <errno.h>
+ }
+ 
+-#include <fstream.h>
+-#include <string>
+-
+ #include "ArtsTosTable.hh"
+ #include "ArtsIfIndexSelectionSet.hh"
+ #include "ArtsTimeIntervalSelectionSet.hh"
+ #include "ArtsPackageVersion.hh"
+ 
++#ifdef HAVE_FSTREAM
++# include <fstream>
++# include <iterator>
++  using namespace std;
++#else
++# include <fstream.h>
++#endif
++
+ #ifndef NDEBUG
+   #include "ArtsDebug.hh"
+ #endif
+@@ -108,7 +113,7 @@
+     }
+   }
+ 
+-  if (hostAttribute) {
++  if (hostAttribute != arts.Attributes().end()) {
+     inAddr.s_addr = hostAttribute->Host();
+     cout << "router:  " << inet_ntoa(inAddr) << endl;
+   }
+@@ -126,7 +131,7 @@
+   }
+   cout << endl;
+   
+-  if (periodAttribute) {
++  if (periodAttribute != arts.Attributes().end() ) {
+     periodTimes[0] = periodAttribute->Period()[0];
+     periodTimes[1] = periodAttribute->Period()[1];
+     localTm = localtime(&(periodTimes[0]));
+--- ./classes/include/ArtsAttributeVector.hh.orig	Mon Oct  2 13:05:14 2000
++++ ./classes/include/ArtsAttributeVector.hh	Wed Sep 25 16:38:09 2002
+@@ -44,6 +44,7 @@
+ #define _ARTSATTRIBUTEVECTOR_HH_
+ 
+ #include <vector>
++using namespace std;
+ 
+ #include "ArtsAttribute.hh"
+ 
+--- ./classes/include/Ipv4Network.hh.orig	Tue Sep 12 14:26:26 2000
++++ ./classes/include/Ipv4Network.hh	Wed Sep 25 16:38:10 2002
+@@ -20,7 +20,8 @@
+ }
+ 
+ #ifdef HAVE_IOSTREAM
+-  #include <iostream.h>
++  #include <iostream>
++  using namespace std;
+ #else
+   #include <iostream.h>
+ #endif
+@@ -39,7 +40,7 @@
+ {
+ public:
+   ipv4addr_t   net;
+-  uint8_t      maskLen;
++  char      maskLen;
+   
+   //--------------------------------------------------------------------------
+   //                              Ipv4Network()                              
+@@ -181,10 +182,10 @@
+   istream & read(istream & is)
+   {
+     is.read(&this->maskLen,sizeof(this->maskLen));
+-    uint8_t  octet1  = 0;
+-    uint8_t  octet2  = 0;
+-    uint8_t  octet3  = 0;
+-    uint8_t  netSize = (this->maskLen + 7) / 8;
++    char  octet1  = 0;
++    char  octet2  = 0;
++    char  octet3  = 0;
++    char  netSize = (this->maskLen + 7) / 8;
+     
+     switch (netSize) {
+       case 1:
+@@ -206,7 +207,7 @@
+                           ((ipv4addr_t)octet3 << 8));
+         break;
+       case 4:
+-        is.read(&this->net,sizeof(this->net));
++        is.read((char *)&this->net,sizeof(this->net));
+         break;
+       default:
+         break;
+@@ -295,11 +296,11 @@
+     //  first we write the netmask length
+     os.write(&this->maskLen,sizeof(this->maskLen));
+     
+-    uint8_t  octet1 = 0;
+-    uint8_t  octet2 = 0;
+-    uint8_t  octet3 = 0;
++    char  octet1 = 0;
++    char  octet2 = 0;
++    char  octet3 = 0;
+     ipv4addr_t  netaddr;
+-    uint8_t  netSize = (this->maskLen + 7) / 8;
++    char  netSize = (this->maskLen + 7) / 8;
+ 
+     // and then write the network prefix
+     switch (netSize) {
+@@ -324,7 +325,7 @@
+         os.write(&octet3,sizeof(octet3));
+         break;
+       case 4:
+-        os.write(&this->net,sizeof(this->net));
++        os.write((char *)&this->net,sizeof(this->net));
+         break;
+       default:
+         break;
+--- ./classes/include/Ipv4PrefixPatricia.hh.in.orig	Fri Jan 21 07:21:59 2000
++++ ./classes/include/Ipv4PrefixPatricia.hh.in	Wed Sep 25 16:38:10 2002
+@@ -80,6 +80,9 @@
+  *  December 1998
+  */
+ //----------------------------------------------------------------------------
++
++template <class Type> class Ipv4PrefixPatricia;
++
+ template <class Type>
+ class Ipv4PrefixPatricia
+ {
+@@ -215,7 +218,7 @@
+     //  class variables
+     //------------------------------------------------------------------------
+     Ipv4PrefixPatricia<Type>            *nodePtr;
+-    vector<VlsmListEntry>::iterator    vlsmIter;
++    typename vector<VlsmListEntry>::iterator    vlsmIter;
+     bool                               wentLeft;
+     bool                               wentRight;
+     
+@@ -227,7 +230,7 @@
+     StackEntry()
+     {
+       this->nodePtr = (Ipv4PrefixPatricia<Type> *)0;
+-      this->vlsmIter = (vector<VlsmListEntry>::iterator)0;
++      this->vlsmIter = (typename vector<VlsmListEntry>::iterator)0;
+       this->wentLeft = false;
+       this->wentRight = false;
+     }
+@@ -253,7 +256,7 @@
+     ~StackEntry()
+     {
+       this->nodePtr = (Ipv4PrefixPatricia<Type> *)0;
+-      this->vlsmIter = (vector<VlsmListEntry>::iterator)0;
++      this->vlsmIter = (typename vector<VlsmListEntry>::iterator)0;
+     }
+     
+     //-------------------------------------------------------------------------
+@@ -297,7 +300,7 @@
+     vector<StackEntry>            nodeStack;
+     Ipv4PrefixPatricia<Type>     *nodePtr;
+     bool                          end;
+-    VlsmList::iterator            vlsmIter;
++    typename VlsmList::iterator            vlsmIter;
+     
+     //------------------------------------------------------------------------
+     //                                iterator()                               
+@@ -366,7 +369,7 @@
+     //------------------------------------------------------------------------
+     iterator & operator ++ (int foo)
+     {
+-      vector<StackEntry>::iterator       stackIter;
++      typename vector<StackEntry>::iterator       stackIter;
+       uint32_t                           bitNum;
+       Ipv4PrefixPatricia<Type>          *leftNode;
+       Ipv4PrefixPatricia<Type>          *rightNode;
+@@ -501,7 +504,7 @@
+   public:
+     vector<StackEntry>           nodeStack;
+     Ipv4PrefixPatricia<Type>    *nodePtr;
+-    VlsmList::reverse_iterator   vlsmIter;
++    typename VlsmList::reverse_iterator   vlsmIter;
+     bool                         end;
+     
+     //------------------------------------------------------------------------
+@@ -556,7 +559,7 @@
+     //------------------------------------------------------------------------
+     reverse_iterator & operator ++ (int foo)
+     {
+-      vector<StackEntry>::iterator       stackIter;
++      typename vector<StackEntry>::iterator       stackIter;
+       uint32_t                           bitNum;
+       Ipv4PrefixPatricia<Type>          *leftNode;
+       Ipv4PrefixPatricia<Type>          *rightNode;
+@@ -721,7 +724,7 @@
+   {
+     StackEntry                        stackEntry;
+     iterator                          retIter;
+-    vector<StackEntry>::iterator      stackIter;
++    typename vector<StackEntry>::iterator      stackIter;
+     Ipv4PrefixPatricia<Type>         *leftNode;
+     Ipv4PrefixPatricia<Type>         *rightNode;
+     uint32_t                          bitNum;
+@@ -799,7 +802,7 @@
+   {
+     StackEntry                        stackEntry;
+     reverse_iterator                  retIter;
+-    vector<StackEntry>::iterator      stackIter;
++    typename vector<StackEntry>::iterator      stackIter;
+     Ipv4PrefixPatricia<Type>         *leftNode;
+     Ipv4PrefixPatricia<Type>         *rightNode;
+     uint32_t                          bitNum;
+@@ -912,7 +915,7 @@
+   {
+     iterator                          retIter;
+     Ipv4PrefixPatricia<Type>           *treeNode, *nextNode;
+-    vector<VlsmListEntry>::iterator   vlsmIter;
++    typename vector<VlsmListEntry>::iterator   vlsmIter;
+     
+     treeNode = this;
+     nextNode = treeNode->lft;
+@@ -955,7 +958,7 @@
+   {
+     iterator                          retIter;
+     Ipv4PrefixPatricia<Type>           *treeNode, *nextNode;
+-    vector<VlsmListEntry>::iterator   vlsmIter;
++    typename vector<VlsmListEntry>::iterator   vlsmIter;
+     
+     treeNode = this;
+     nextNode = treeNode->lft;
+@@ -1026,7 +1029,7 @@
+   //--------------------------------------------------------------------------
+   pair<iterator,bool> & insert(const value_type & value)
+   {
+-    static pair<Ipv4PrefixPatricia<Type>::iterator,bool>  retVal;
++    static pair<typename Ipv4PrefixPatricia<Type>::iterator,bool>  retVal;
+     
+     retVal = _insert(value);
+     if (retVal.second) {
+@@ -1043,7 +1046,7 @@
+   //  
+   //--------------------------------------------------------------------------
+   inline void
+-  visit(void (*visitFunc)(VlsmList::iterator & value, void *),
++  visit(void (*visitFunc)(typename VlsmList::iterator & value, void *),
+         void *other)
+   {
+     _visit(this->lft,visitFunc,other,33);
+@@ -1078,7 +1081,7 @@
+     }
+ 
+     bool                  foundVlsmEntry = false;
+-    VlsmList::iterator    vlsmDeleteIter;
++    typename VlsmList::iterator    vlsmDeleteIter;
+     
+     for (vlsmDeleteIter = dnode->vlsmVect.begin();
+          vlsmDeleteIter != dnode->vlsmVect.end(); vlsmDeleteIter++) {
+@@ -1231,7 +1234,7 @@
+     }
+ 
+     bool                  foundVlsmEntry = false;
+-    VlsmList::iterator    vlsmDeleteIter;
++    typename VlsmList::iterator    vlsmDeleteIter;
+     
+     for (vlsmDeleteIter = dnode->vlsmVect.begin();
+          vlsmDeleteIter != dnode->vlsmVect.end(); vlsmDeleteIter++) {
+@@ -1361,7 +1364,7 @@
+   uint32_t erase(const iterator & start, const iterator & finish)
+   {
+     vector<key_type>             keyVector;
+-    vector<key_type>::iterator   keyVectorIter;
++    typename vector<key_type>::iterator   keyVectorIter;
+     iterator                     iter;
+     uint32_t                     numErased = 0;
+     
+@@ -1455,7 +1458,7 @@
+   {
+     Ipv4PrefixPatricia<Type> *p, *t, *x;
+     uint32_t                  i = 32;
+-    VlsmList::iterator        vlsmIter;
++    typename VlsmList::iterator        vlsmIter;
+     
+     p = this;
+     t = lft;
+@@ -1553,13 +1556,13 @@
+   //--------------------------------------------------------------------------
+   inline void
+   _visit(Ipv4PrefixPatricia<Type> *head,
+-         void (*visitFunc)(VlsmList::iterator & value, void *),
++         void (*visitFunc)(typename VlsmList::iterator & value, void *),
+          void *other, uint32_t bitNum)
+   {
+     Ipv4PrefixPatricia<Type> *p;
+     Ipv4PrefixPatricia<Type> *leftNode;
+     Ipv4PrefixPatricia<Type> *rightNode;
+-    VlsmList::iterator        vlsmIter;
++    typename VlsmList::iterator        vlsmIter;
+     
+     p = head;
+     leftNode = head->lft;
+--- ./classes/include/ArtsHeader.hh.orig	Mon Oct  2 13:05:15 2000
++++ ./classes/include/ArtsHeader.hh	Wed Sep 25 16:46:54 2002
+@@ -50,11 +50,13 @@
+ #include "caida_t.h"
+ }
+ 
+-#include <ostream.h>
+-#ifdef HAVE_IOMANIP
+-  #include <iomanip>
++#ifdef HAVE_OSTREAM
++#  include <ostream>
++#  include <iomanip>
++   using namespace std;
+ #else
+-  #include <iomanip.h>
++#  include <ostream.h>
++#  include <iomanip.h>
+ #endif
+ 
+ //---------------------------------------------------------------------------
+--- ./classes/include/ArtsAttribute.hh.orig	Mon Oct  2 13:05:14 2000
++++ ./classes/include/ArtsAttribute.hh	Wed Sep 25 16:38:10 2002
+@@ -44,6 +44,7 @@
+ #define _ARTSATTRIBUTE_HH_
+ 
+ extern "C" {
++#include "artslocal.h"
+ #include <sys/types.h>
+ #include <assert.h>
+   
+@@ -51,7 +52,13 @@
+ }
+ 
+ #include <string>
+-#include <istream.h>
++
++#ifdef HAVE_IOSTREAM
++# include <iostream>
++using namespace std;
++#else
++# include <istream.h>
++#endif
+ 
+ //---------------------------------------------------------------------------
+ //                 Object Attribute Identifiers               
+--- ./classes/include/ArtsAsMatrixData.hh.orig	Mon Oct  2 13:05:14 2000
++++ ./classes/include/ArtsAsMatrixData.hh	Wed Sep 25 16:38:10 2002
+@@ -52,11 +52,10 @@
+ 
+ #ifdef HAVE_IOSTREAM
+   #include <iostream>
++  using namespace std;
+ #else
+   #include <iostream.h>
+ #endif
+-// #include <istream.h>
+-// #include <ostream.h>
+ #include <algorithm>
+ 
+ #include "ArtsAsMatrixEntry.hh"
+--- ./classes/include/ArtsAsMatrixEntry.hh.orig	Mon Oct  2 13:05:14 2000
++++ ./classes/include/ArtsAsMatrixEntry.hh	Wed Sep 25 16:38:10 2002
+@@ -50,7 +50,12 @@
+ #include "caida_t.h"
+ }
+ 
+-#include <ostream.h>
++#ifdef HAVE_IOSTREAM
++# include <iostream>
++  using namespace std;
++#else
++# include <iostream.h>
++#endif
+ 
+ #ifdef HAVE_IOMANIP
+   #include <iomanip>
+--- ./classes/include/ArtsNetMatrixData.hh.orig	Mon Oct  2 13:05:17 2000
++++ ./classes/include/ArtsNetMatrixData.hh	Wed Sep 25 16:38:10 2002
+@@ -44,12 +44,19 @@
+ #define ARTSNETMATRIXDATA_HH_
+ 
+ extern "C" {
++#include "artslocal.h"
+ #include "caida_t.h"
+ }
+ 
+ #include <vector>
+-#include <istream.h>
+-#include <ostream.h>
++
++#ifdef HAVE_IOSTREAM
++# include <iostream>
++using namespace std;
++#else
++# include <istream.h>
++# include <ostream.h>
++#endif
+ 
+ #include "ArtsNetMatrixEntry.hh"
+ 
+--- ./classes/include/ArtsPrimitive.hh.orig	Mon Oct  2 13:05:19 2000
++++ ./classes/include/ArtsPrimitive.hh	Wed Sep 25 16:38:10 2002
+@@ -43,13 +43,19 @@
+ #ifndef _ARTSPRIMITIVE_HH_
+ #define _ARTSPRIMITIVE_HH_
+ 
+-#include <iostream.h>
+ 
+ extern "C" {
++#include "artslocal.h"
+ #include "caida_t.h"
+ #include <unistd.h>
+ }
+ 
++#ifdef HAVE_IOSTREAM
++# include <iostream>
++ using namespace std;
++#else
++# include <iostream.h>
++#endif
+ //---------------------------------------------------------------------------
+ //  class ArtsPrimitive
+ //---------------------------------------------------------------------------
+--- ./classes/include/ArtsIpPathEntry.hh.orig	Mon Oct  2 13:05:16 2000
++++ ./classes/include/ArtsIpPathEntry.hh	Wed Sep 25 16:38:10 2002
+@@ -54,6 +54,7 @@
+ 
+ #ifdef HAVE_IOSTREAM
+   #include <iostream>
++  using namespace std;
+ #else
+   #include <iostream.h>
+ #endif
+--- ./classes/include/ArtsCflowdCustomData.hh.orig	Tue Nov  9 05:39:42 1999
++++ ./classes/include/ArtsCflowdCustomData.hh	Wed Sep 25 16:38:10 2002
+@@ -20,6 +20,7 @@
+ }
+ 
+ #include <map>
++using namespace std;
+ 
+ //----------------------------------------------------------------------------
+ //                      class ArtsCflowdCustomDataKey 
+@@ -145,4 +146,5 @@
+ };
+ 
+ 
+-#endif  // _ARTSCFLOWDCUSTOMDATA_HH_
++#endif  /* _ARTSCFLOWDCUSTOMDATA_HH_ */
++
+--- ./classes/include/ArtsFileUtil.hh.orig	Mon Oct  2 13:05:15 2000
++++ ./classes/include/ArtsFileUtil.hh	Wed Sep 25 16:38:10 2002
+@@ -43,9 +43,16 @@
+ #ifndef _ARTSFILEUTIL_HH_
+ #define _ARTSFILEUTIL_HH_
+ 
++#include "artslocal.h"
++
+ #include <string>
+ #include <vector>
+-#include <fstream.h>
++
++#ifdef HAVE_FSTREAM
++# include <fstream> 
++#else
++# include <fstream.h>
++#endif
+ 
+ #include "ArtsProtocolTableAggregatorMap.hh"
+ #include "ArtsInterfaceMatrixAggregatorMap.hh"
+--- ./classes/include/ArtsSelectionSet.hh.orig	Mon Oct  2 13:05:20 2000
++++ ./classes/include/ArtsSelectionSet.hh	Wed Sep 25 16:38:10 2002
+@@ -49,6 +49,7 @@
+ 
+ #include <vector>
+ #include <algorithm>
++using namespace std;
+ 
+ #include "ArtsSelection.hh"
+ 
+@@ -96,7 +97,7 @@
+   //-------------------------------------------------------------------------
+   bool Matches(const Type & value) const
+   {
+-    const_iterator  selectionIter;
++    typename ArtsSelectionSet<Type>::const_iterator  selectionIter;
+     bool            rc = false;
+ 
+     for (selectionIter = this->begin(); selectionIter != this->end();
+--- ./classes/include/ArtsInterfaceMatrixData.hh.orig	Mon Oct  2 13:05:16 2000
++++ ./classes/include/ArtsInterfaceMatrixData.hh	Wed Sep 25 16:38:10 2002
+@@ -44,15 +44,17 @@
+ #define ARTSINTERFACEMATRIXDATA_HH_
+ 
+ extern "C" {
++#include "artslocal.h"
+ #include "caida_t.h"
+ }
+ 
+ #include <vector>
+ 
+ #ifdef HAVE_IOSTREAM
+-  #include <iostream>
++#  include <iostream>
++   using namespace std;
+ #else
+-  #include <iostream.h>
++#  include <iostream.h>
+ #endif
+ #include <algorithm>
+ 
+--- ./classes/include/ArtsNetMatrixEntry.hh.orig	Mon Oct  2 13:05:17 2000
++++ ./classes/include/ArtsNetMatrixEntry.hh	Wed Sep 25 16:38:10 2002
+@@ -51,9 +51,10 @@
+ }
+ 
+ #ifdef HAVE_IOSTREAM
+-  #include <iostream>
++# include <iostream>
++  using namespace std;
+ #else
+-  #include <iostream.h>
++# include <iostream.h>
+ #endif
+ 
+ #ifdef HAVE_IOMANIP
+--- ./classes/include/ArtsPackageVersion.hh.orig	Mon Oct  2 13:05:18 2000
++++ ./classes/include/ArtsPackageVersion.hh	Wed Sep 25 16:38:10 2002
+@@ -44,6 +44,7 @@
+ #define _ARTSPACKAGEVERSION_HH_
+ 
+ #include <string>
++using namespace std;
+ 
+ //---------------------------------------------------------------------------
+ //  class ArtsPackageVersion
+--- ./classes/include/ArtsPortMatrixEntry.hh.orig	Mon Oct  2 13:05:18 2000
++++ ./classes/include/ArtsPortMatrixEntry.hh	Wed Sep 25 16:38:10 2002
+@@ -50,15 +50,16 @@
+ }
+ 
+ #ifdef HAVE_IOSTREAM
+-  #include <iostream>
++#  include <iostream>
++   using namespace std;
+ #else
+-  #include <iostream.h>
++#  include <iostream.h>
+ #endif
+ 
+ #ifdef HAVE_IOMANIP
+-  #include <iomanip>
++#  include <iomanip>
+ #else
+-  #include <iomanip.h>
++#  include <iomanip.h>
+ #endif
+ 
+ //---------------------------------------------------------------------------
+--- ./classes/include/ArtsRttTimeSeriesTableData.hh.orig	Thu Oct 19 19:37:14 2000
++++ ./classes/include/ArtsRttTimeSeriesTableData.hh	Wed Sep 25 16:38:10 2002
+@@ -47,7 +47,15 @@
+ #include <sys/time.h>
+ 
+ #include "caida_t.h"
++#include "artslocal.h"
+ }
++
++#ifdef HAVE_IOSTREAM
++# include <iostream>
++  using namespace std;
++#else
++# include <iostream.h>
++#endif
+ 
+ #include <vector>
+ 
+--- ./classes/include/artslocal.h.in.orig	Wed Sep 25 16:48:31 2002
++++ ./classes/include/artslocal.h.in	Wed Sep 25 16:49:06 2002
+@@ -90,4 +90,10 @@
+ //---------------------------------------------------------------------------
+ #undef HAVE_STRSTREAM
+ 
++//---------------------------------------------------------------------------
++//  If <ostream> exists, HAVE_OSTREAM should be non-zero.  Else
++//  HAVE_OSTREAM should be zero and our source will use <ostream.h>
++//---------------------------------------------------------------------------
++#undef HAVE_OSTREAM
++
+ 
+--- ./classes/src/ArtsHeader.cc.orig	Mon Oct  2 13:05:24 2000
++++ ./classes/src/ArtsHeader.cc	Wed Sep 25 16:38:10 2002
+@@ -135,23 +135,23 @@
+   uint32_t  uIntDatum, idAndVersion;
+   
+   uShortDatum = htons(this->_magic);
+-  os.write(&uShortDatum,sizeof(uShortDatum));
++  os.write((char *)&uShortDatum,sizeof(uShortDatum));
+ 
+   idAndVersion = (this->_identifier << 4) | this->_version;
+   uIntDatum = htonl(idAndVersion);
+-  os.write(&uIntDatum,sizeof(uIntDatum));
++  os.write((char *)&uIntDatum,sizeof(uIntDatum));
+   
+   uIntDatum = htonl(this->_flags);
+-  os.write(&uIntDatum,sizeof(uIntDatum));
++  os.write((char *)&uIntDatum,sizeof(uIntDatum));
+   
+   uShortDatum = htons(this->_numAttributes);
+-  os.write(&uShortDatum,sizeof(uShortDatum));
++  os.write((char *)&uShortDatum,sizeof(uShortDatum));
+   
+   uIntDatum = htonl(this->_attrLength);
+-  os.write(&uIntDatum,sizeof(uIntDatum));
++  os.write((char *)&uIntDatum,sizeof(uIntDatum));
+   
+   uIntDatum = htonl(this->_dataLength);
+-  os.write(&uIntDatum,sizeof(uIntDatum));
++  os.write((char *)&uIntDatum,sizeof(uIntDatum));
+ 
+   return(os);
+ }
+@@ -225,13 +225,13 @@
+   uint32_t  uIntDatum;
+   uint32_t  idAndVersion;
+   
+-  is.read(&uShortDatum,sizeof(uShortDatum));
++  is.read((char *)&uShortDatum,sizeof(uShortDatum));
+   if (is.eof())
+     return(is);
+   
+   this->_magic = ntohs(uShortDatum);
+ 
+-  is.read(&uIntDatum,sizeof(uIntDatum));
++  is.read((char *)&uIntDatum,sizeof(uIntDatum));
+   if (is.eof())
+     return(is);
+   
+@@ -239,22 +239,22 @@
+   this->_identifier = idAndVersion >> 4;
+   this->_version    = idAndVersion & 0x0f;
+ 
+-  is.read(&uIntDatum,sizeof(uIntDatum));
++  is.read((char *)&uIntDatum,sizeof(uIntDatum));
+   if (is.eof())
+     return(is);  
+   this->_flags = ntohl(uIntDatum);
+ 
+-  is.read(&uShortDatum,sizeof(uShortDatum));
++  is.read((char *)&uShortDatum,sizeof(uShortDatum));
+   if (is.eof())
+     return(is);
+   this->_numAttributes = ntohs(uShortDatum);
+ 
+-  is.read(&uIntDatum,sizeof(uIntDatum));
++  is.read((char *)&uIntDatum,sizeof(uIntDatum));
+   if (is.eof())
+     return(is);
+   this->_attrLength = ntohl(uIntDatum);
+ 
+-  is.read(&uIntDatum,sizeof(uIntDatum));
++  is.read((char *)&uIntDatum,sizeof(uIntDatum));
+   if (is.eof())
+     return(is);
+   this->_dataLength = ntohl(uIntDatum);
+--- ./classes/src/ArtsAttribute.cc.orig	Mon Oct  2 13:05:22 2000
++++ ./classes/src/ArtsAttribute.cc	Wed Sep 25 16:38:10 2002
+@@ -41,6 +41,7 @@
+ //===========================================================================
+ 
+ extern "C" {
++#include "artslocal.h"
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+@@ -51,7 +52,12 @@
+ }
+ 
+ #include <string>
+-#include <iomanip.h>
++#if HAVE_IOMANIP
++# include <iomanip>
++  using namespace std;
++#else
++# include <iomanip.h>
++#endif
+ 
+ #include "ArtsAttribute.hh"
+ #include "ArtsPrimitive.hh"
+@@ -487,10 +493,10 @@
+ 
+   idAndFormat = (this->_identifier << 8) | this->_format;
+   uIntDatum = htonl(idAndFormat);
+-  os.write(&uIntDatum,sizeof(uIntDatum));
++  os.write((char *)&uIntDatum,sizeof(uIntDatum));
+ 
+   uIntDatum = htonl(this->_length);
+-  os.write(&uIntDatum,sizeof(uIntDatum));
++  os.write((char *)&uIntDatum,sizeof(uIntDatum));
+ 
+   switch (this->_identifier) {
+     case artsC_ATTR_COMMENT:
+@@ -499,16 +505,16 @@
+       break;
+     case artsC_ATTR_CREATION:
+       uIntDatum = htonl(this->_value.creation);
+-      os.write(&uIntDatum,sizeof(uIntDatum));
++      os.write((char *)&uIntDatum,sizeof(uIntDatum));
+       break;
+     case artsC_ATTR_PERIOD:
+       uIntDatum = htonl(this->_value.period[0]);
+-      os.write(&uIntDatum,sizeof(uIntDatum));
++      os.write((char *)&uIntDatum,sizeof(uIntDatum));
+       uIntDatum = htonl(this->_value.period[1]);
+-      os.write(&uIntDatum,sizeof(uIntDatum));
++      os.write((char *)&uIntDatum,sizeof(uIntDatum));
+       break;
+     case artsC_ATTR_HOST:
+-      os.write(&this->_value.host,sizeof(this->_value.host));
++      os.write((char *)&this->_value.host,sizeof(this->_value.host));
+       break;
+     case artsC_ATTR_IFDESCR:
+       ptr = this->_value.ifDescr->c_str();
+@@ -516,14 +522,14 @@
+       break;
+     case artsC_ATTR_IFINDEX:
+       uShortDatum = htons(this->_value.ifIndex);
+-      os.write(&uShortDatum,sizeof(uShortDatum));
++      os.write((char *)&uShortDatum,sizeof(uShortDatum));
+       break;
+     case artsC_ATTR_IFIPADDR:
+-      os.write(&this->_value.ifIpAddr,sizeof(this->_value.ifIpAddr));
++      os.write((char *)&this->_value.ifIpAddr,sizeof(this->_value.ifIpAddr));
+       break;
+     case artsC_ATTR_HOSTPAIR:
+-      os.write(&(this->_value.hostPair[0]),sizeof(ipv4addr_t));
+-      os.write(&(this->_value.hostPair[1]),sizeof(ipv4addr_t));
++      os.write((char *)&(this->_value.hostPair[0]),sizeof(ipv4addr_t));
++      os.write((char *)&(this->_value.hostPair[1]),sizeof(ipv4addr_t));
+       break;
+     default:
+       break;
+@@ -675,12 +681,12 @@
+       break;
+   }
+   
+-  is.read(&uIntDatum,sizeof(uIntDatum));
++  is.read((char *)&uIntDatum,sizeof(uIntDatum));
+   idAndFormat = ntohl(uIntDatum);
+   this->_identifier = idAndFormat >> 8;
+   this->_format = idAndFormat & 0xff;
+ 
+-  is.read(&uIntDatum,sizeof(uIntDatum));
++  is.read((char *)&uIntDatum,sizeof(uIntDatum));
+   this->_length = ntohl(uIntDatum);
+ 
+   switch (this->_identifier) {
+@@ -693,17 +699,17 @@
+       free(ptr);
+       break;
+     case artsC_ATTR_CREATION:
+-      is.read(&uIntDatum,sizeof(uIntDatum));
++      is.read((char *)&uIntDatum,sizeof(uIntDatum));
+       this->_value.creation = ntohl(uIntDatum);
+       break;
+     case artsC_ATTR_PERIOD:
+-      is.read(&uIntDatum,sizeof(uIntDatum));
++      is.read((char *)&uIntDatum,sizeof(uIntDatum));
+       this->_value.period[0] = htonl(uIntDatum);
+-      is.read(&uIntDatum,sizeof(uIntDatum));
++      is.read((char *)&uIntDatum,sizeof(uIntDatum));
+       this->_value.period[1] = htonl(uIntDatum);
+       break;
+     case artsC_ATTR_HOST:
+-      is.read(&this->_value.host,sizeof(this->_value.host));
++      is.read((char *)&this->_value.host,sizeof(this->_value.host));
+       break;
+     case artsC_ATTR_IFDESCR:
+       ptr = (char *)malloc(this->_length - (sizeof(uint32_t) * 2));
+@@ -714,15 +720,15 @@
+       free(ptr);
+       break;
+     case artsC_ATTR_IFINDEX:
+-      is.read(&this->_value.ifIndex,sizeof(this->_value.ifIndex));
++      is.read((char *)&this->_value.ifIndex,sizeof(this->_value.ifIndex));
+       this->_value.ifIndex = ntohs(this->_value.ifIndex);
+       break;
+     case artsC_ATTR_IFIPADDR:
+-      is.read(&this->_value.ifIpAddr,sizeof(this->_value.ifIpAddr));
++      is.read((char *)&this->_value.ifIpAddr,sizeof(this->_value.ifIpAddr));
+       break;
+     case artsC_ATTR_HOSTPAIR:
+-      is.read(&(this->_value.hostPair[0]),sizeof(ipv4addr_t));
+-      is.read(&(this->_value.hostPair[1]),sizeof(ipv4addr_t));
++      is.read((char *)&(this->_value.hostPair[0]),sizeof(ipv4addr_t));
++      is.read((char *)&(this->_value.hostPair[1]),sizeof(ipv4addr_t));
+       break;
+     default:
+       break;
+--- ./classes/src/ArtsIpPathEntry.cc.orig	Mon Oct  2 13:05:25 2000
++++ ./classes/src/ArtsIpPathEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -111,13 +111,13 @@
+ //------------------------------------------------------------------------
+ //    istream& ArtsIpPathEntry::read(istream& is, uint8_t version = 0)
+ //------------------------------------------------------------------------
+-istream& ArtsIpPathEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsIpPathEntry::read(istream& is, uint8_t version)
+ {
+-  is.read(&this->_hopNum,sizeof(this->_hopNum));
++  is.read((char *)&this->_hopNum,sizeof(this->_hopNum));
+   if (! is)
+     return(is);
+ 
+-  is.read(&this->_ipAddr,sizeof(this->_ipAddr));
++  is.read((char *)&this->_ipAddr,sizeof(this->_ipAddr));
+   if (! is)
+     return(is);
+ 
+@@ -130,7 +130,7 @@
+     this->_rtt.tv_sec = fourBytes / 1000000;
+     this->_rtt.tv_usec = fourBytes % 1000000;
+ 
+-    is.read(&this->_numTries,sizeof(this->_numTries));
++    is.read((char *)&this->_numTries,sizeof(this->_numTries));
+   }
+   
+   return(is);
+@@ -141,7 +141,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsIpPathEntry::read(int fd, uint8_t version = 0)
++int ArtsIpPathEntry::read(int fd, uint8_t version)
+ {
+   int rc;
+   int bytesRead = 0;
+@@ -182,15 +182,15 @@
+ //------------------------------------------------------------------------
+ // ostream& ArtsIpPathEntry::write(ostream& os, uint8_t version = 0) const
+ //------------------------------------------------------------------------
+-ostream& ArtsIpPathEntry::write(ostream& os, uint8_t version = 0) const
++ostream& ArtsIpPathEntry::write(ostream& os, uint8_t version) const
+ {
+-  os.write(&this->_hopNum,sizeof(this->_hopNum));
+-  os.write(&this->_ipAddr,sizeof(this->_ipAddr));
++  os.write((char *)&this->_hopNum,sizeof(this->_hopNum));
++  os.write((char *)&this->_ipAddr,sizeof(this->_ipAddr));
+ 
+   if (version == 1) {
+     uint32_t  fourBytes = (this->_rtt.tv_sec * 1000000) + this->_rtt.tv_usec;
+     g_ArtsLibInternal_Primitive.WriteUint32(os,fourBytes,4);
+-    os.write(&this->_numTries,sizeof(this->_numTries));
++    os.write((char *)&this->_numTries,sizeof(this->_numTries));
+   }
+ 
+   return(os);
+@@ -201,7 +201,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsIpPathEntry::write(int fd, uint8_t version = 0) const
++int ArtsIpPathEntry::write(int fd, uint8_t version) const
+ {
+   int  rc;
+   int  bytesWritten = 0;
+--- ./classes/src/ArtsIpPathData.cc.orig	Mon Oct  2 13:05:25 2000
++++ ./classes/src/ArtsIpPathData.cc	Wed Sep 25 16:38:10 2002
+@@ -187,7 +187,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsIpPathData::Length(uint8_t version = 0) const
++uint32_t ArtsIpPathData::Length(uint8_t version) const
+ {
+   uint32_t len =  sizeof(this->_src) + sizeof(this->_dst) +
+     sizeof(this->_rtt) + sizeof(this->_hopDistance) + sizeof(this->_numHops);
+@@ -209,28 +209,28 @@
+ //------------------------------------------------------------------------
+ //   ostream& ArtsIpPathData::write(ostream& os, uint8_t version = 0)
+ //------------------------------------------------------------------------
+-ostream& ArtsIpPathData::write(ostream& os, uint8_t version = 0)
++ostream& ArtsIpPathData::write(ostream& os, uint8_t version)
+ {
+   uint32_t  timeDatum;
+   uint8_t   completeAndNumHops;
+ 
+-  os.write(&this->_src,sizeof(this->_src));
+-  os.write(&this->_dst,sizeof(this->_dst));
++  os.write((char *)&this->_src,sizeof(this->_src));
++  os.write((char *)&this->_dst,sizeof(this->_dst));
+ 
+   timeDatum = htonl(this->_rtt.tv_sec);
+-  os.write(&timeDatum,sizeof(timeDatum));
++  os.write((char *)&timeDatum,sizeof(timeDatum));
+   timeDatum = htonl(this->_rtt.tv_usec);
+-  os.write(&timeDatum,sizeof(timeDatum));
++  os.write((char *)&timeDatum,sizeof(timeDatum));
+ 
+-  os.write(&this->_hopDistance,sizeof(this->_hopDistance));
++  os.write((char *)&this->_hopDistance,sizeof(this->_hopDistance));
+   
+   completeAndNumHops = (this->_isComplete << 7) | this->_numHops;
+-  os.write(&completeAndNumHops,sizeof(completeAndNumHops));
++  os.write((char *)&completeAndNumHops,sizeof(completeAndNumHops));
+ 
+   if (version == 1) {
+     if (! this->_isComplete) {
+-      os.write(&this->_incompleteReason,sizeof(this->_incompleteReason));
+-      os.write(&this->_incompleteFlags,sizeof(this->_incompleteFlags));
++      os.write((char *)&this->_incompleteReason,sizeof(this->_incompleteReason));
++      os.write((char *)&this->_incompleteFlags,sizeof(this->_incompleteFlags));
+     }
+   }
+ 
+@@ -251,7 +251,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsIpPathData::write(int fd, uint8_t version = 0)
++int ArtsIpPathData::write(int fd, uint8_t version)
+ {
+   uint32_t  timeDatum;
+   uint8_t   completeAndNumHops;
+@@ -334,30 +334,30 @@
+ //------------------------------------------------------------------------
+ //    istream& ArtsIpPathData::read(istream& is, uint8_t version = 0)
+ //------------------------------------------------------------------------
+-istream& ArtsIpPathData::read(istream& is, uint8_t version = 0)
++istream& ArtsIpPathData::read(istream& is, uint8_t version)
+ {
+   uint32_t  timeDatum;
+   uint8_t   completeAndNumHops;
+   size_t    hopNum;
+   
+-  is.read(&this->_src,sizeof(this->_src));
+-  is.read(&this->_dst,sizeof(this->_dst));
++  is.read((char *)&this->_src,sizeof(this->_src));
++  is.read((char *)&this->_dst,sizeof(this->_dst));
+ 
+-  is.read(&timeDatum,sizeof(timeDatum));
++  is.read((char *)&timeDatum,sizeof(timeDatum));
+   this->_rtt.tv_sec = ntohl(timeDatum);
+-  is.read(&timeDatum,sizeof(timeDatum));
++  is.read((char *)&timeDatum,sizeof(timeDatum));
+   this->_rtt.tv_usec = ntohl(timeDatum);
+ 
+-  is.read(&this->_hopDistance,sizeof(this->_hopDistance));
++  is.read((char *)&this->_hopDistance,sizeof(this->_hopDistance));
+   
+-  is.read(&completeAndNumHops,sizeof(completeAndNumHops));
++  is.read((char *)&completeAndNumHops,sizeof(completeAndNumHops));
+   this->_isComplete = completeAndNumHops >> 7;
+   this->_numHops = completeAndNumHops & 0x7f;
+ 
+   if (version == 1) {
+     if (! this->_isComplete) {
+-      is.read(&this->_incompleteReason,sizeof(this->_incompleteReason));
+-      is.read(&this->_incompleteFlags,sizeof(this->_incompleteFlags));
++      is.read((char *)&this->_incompleteReason,sizeof(this->_incompleteReason));
++      is.read((char *)&this->_incompleteFlags,sizeof(this->_incompleteFlags));
+     }
+   }
+   
+@@ -384,7 +384,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsIpPathData::read(int fd, uint8_t version = 0)
++int ArtsIpPathData::read(int fd, uint8_t version)
+ {
+   uint32_t  timeDatum;
+   uint8_t   completeAndNumHops;
+--- ./classes/src/ArtsAsMatrixEntry.cc.orig	Mon Oct  2 13:05:22 2000
++++ ./classes/src/ArtsAsMatrixEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -180,7 +180,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsAsMatrixEntry::Length(uint8_t version = 0) const
++uint32_t ArtsAsMatrixEntry::Length(uint8_t version) const
+ {
+   uint32_t   length;
+ 
+@@ -197,14 +197,14 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream& ArtsAsMatrixEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsAsMatrixEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t        bytesize,
+                  pktsize,
+                  srcsize,
+                  dstsize;
+   
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   srcsize = (this->_descriptor & 0x01) + 1;
+   dstsize  = ((this->_descriptor >> 1) & 0x01) + 1;
+@@ -224,7 +224,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsAsMatrixEntry::read(int fd, uint8_t version = 0)
++int ArtsAsMatrixEntry::read(int fd, uint8_t version)
+ {
+   uint8_t        bytesize,
+                  pktsize,
+@@ -277,14 +277,14 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-ostream & ArtsAsMatrixEntry::write(ostream & os, uint8_t version = 0) const
++ostream & ArtsAsMatrixEntry::write(ostream & os, uint8_t version) const
+ {
+   uint8_t        bytesize,
+                  pktsize,
+                  srcsize,
+                  dstsize;
+ 
+-  os.write(&this->_descriptor,sizeof(this->_descriptor));
++  os.write((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   srcsize = (this->_descriptor & 0x01) + 1;
+   dstsize  = ((this->_descriptor >> 1) & 0x01) + 1;
+@@ -304,7 +304,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsAsMatrixEntry::write(int fd, uint8_t version = 0) const
++int ArtsAsMatrixEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t        bytesize,
+                  pktsize,
+--- ./classes/src/ArtsAsMatrixData.cc.orig	Mon Oct  2 13:05:22 2000
++++ ./classes/src/ArtsAsMatrixData.cc	Wed Sep 25 16:38:10 2002
+@@ -81,7 +81,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream & ArtsAsMatrixData::read(istream& is, uint8_t version = 0)
++istream & ArtsAsMatrixData::read(istream& is, uint8_t version)
+ {
+   uint32_t           entryNum;
+   ArtsAsMatrixEntry  asEntry;
+@@ -106,7 +106,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsAsMatrixData::read(int fd, uint8_t version = 0)
++int ArtsAsMatrixData::read(int fd, uint8_t version)
+ {
+   uint32_t           entryNum;
+   ArtsAsMatrixEntry  asEntry;
+@@ -161,7 +161,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-ostream & ArtsAsMatrixData::write(ostream& os, uint8_t version = 0)
++ostream & ArtsAsMatrixData::write(ostream& os, uint8_t version)
+ {
+   uint32_t       entryNum;
+ 
+@@ -183,7 +183,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsAsMatrixData::write(int fd, uint8_t version = 0)
++int ArtsAsMatrixData::write(int fd, uint8_t version)
+ {
+   uint32_t       entryNum;
+   int            rc;
+@@ -235,7 +235,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsAsMatrixData::Length(uint8_t version = 0) const
++uint32_t ArtsAsMatrixData::Length(uint8_t version) const
+ {
+   uint32_t  length = 0;
+ 
+--- ./classes/src/ArtsAsMatrixAggregatorMap.cc.orig	Mon Oct  2 13:05:22 2000
++++ ./classes/src/ArtsAsMatrixAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,9 +46,11 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++#  include <fstream>
++#  include <iterator>
++  using namespace std;
+ #else
+-  #include <fstream.h>
++#  include <fstream.h>
+ #endif
+ 
+ #include "ArtsAsMatrixAggregatorMap.hh"
+--- ./classes/src/ArtsBgp4AggregatorAttribute.cc.orig	Mon Oct  2 13:05:22 2000
++++ ./classes/src/ArtsBgp4AggregatorAttribute.cc	Wed Sep 25 16:38:10 2002
+@@ -154,10 +154,10 @@
+ //  
+ //----------------------------------------------------------------------------
+ istream & ArtsBgp4AggregatorAttribute::read(istream & is,
+-                                            uint8_t version = 0)
++                                            uint8_t version)
+ {
+   g_ArtsLibInternal_Primitive.ReadUint16(is,this->_AS,sizeof(this->_AS));
+-  is.read(&this->_ipAddr,sizeof(this->_ipAddr));
++  is.read((char *)&this->_ipAddr,sizeof(this->_ipAddr));
+   return(is);
+ }
+ 
+@@ -166,7 +166,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4AggregatorAttribute::read(int fd, uint8_t version = 0)
++int ArtsBgp4AggregatorAttribute::read(int fd, uint8_t version)
+ {
+   int  rc;
+   int  bytesRead = 0;
+@@ -190,10 +190,10 @@
+ //
+ //----------------------------------------------------------------------------
+ ostream & ArtsBgp4AggregatorAttribute::write(ostream & os,
+-                                             uint8_t version = 0) const
++                                             uint8_t version) const
+ {
+   g_ArtsLibInternal_Primitive.WriteUint16(os,this->_AS,sizeof(this->_AS));
+-  os.write(&this->_ipAddr,sizeof(this->_ipAddr));
++  os.write((char *)&this->_ipAddr,sizeof(this->_ipAddr));
+   return(os);
+ }
+ 
+@@ -202,7 +202,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4AggregatorAttribute::write(int fd, uint8_t version = 0) const
++int ArtsBgp4AggregatorAttribute::write(int fd, uint8_t version) const
+ {
+   int  rc;
+   int  bytesWritten = 0;
+@@ -225,7 +225,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsBgp4AggregatorAttribute::Length(uint8_t version = 0) const
++uint32_t ArtsBgp4AggregatorAttribute::Length(uint8_t version) const
+ {
+   return(sizeof(this->_AS) + sizeof(this->_ipAddr));
+ }
+--- ./classes/src/ArtsBgp4AsPathAttribute.cc.orig	Mon Oct  2 13:05:22 2000
++++ ./classes/src/ArtsBgp4AsPathAttribute.cc	Wed Sep 25 16:38:10 2002
+@@ -117,7 +117,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsBgp4AsPathAttribute::read(istream & is, uint8_t version = 0)
++istream & ArtsBgp4AsPathAttribute::read(istream & is, uint8_t version)
+ {
+   ArtsBgp4AsPathSegment  asPathSegment;
+   uint8_t                numSegments;
+@@ -125,7 +125,7 @@
+   if (this->_segments.size() > 0)
+     this->_segments.erase(this->_segments.begin(),this->_segments.end());
+   
+-  is.read(&numSegments,sizeof(numSegments));
++  is.read((char *)&numSegments,sizeof(numSegments));
+   if (numSegments > 0) {
+     this->_segments.reserve(numSegments);
+     for (uint8_t segmentNum = 0; segmentNum < numSegments; segmentNum++) {
+@@ -144,7 +144,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4AsPathAttribute::read(int fd, uint8_t version = 0)
++int ArtsBgp4AsPathAttribute::read(int fd, uint8_t version)
+ {
+   int                    rc;
+   int                    bytesRead = 0;
+@@ -175,10 +175,10 @@
+ //  
+ //----------------------------------------------------------------------------
+ ostream & ArtsBgp4AsPathAttribute::write(ostream & os,
+-                                         uint8_t version = 0) const
++                                         uint8_t version) const
+ {
+   uint8_t                numSegments = this->_segments.size();
+-  os.write(&numSegments,sizeof(numSegments));
++  os.write((char *)&numSegments,sizeof(numSegments));
+   for (uint8_t segmentNum = 0; segmentNum < numSegments; segmentNum++) {
+     this->_segments[segmentNum].write(os,version);
+   }
+@@ -190,7 +190,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4AsPathAttribute::write(int fd, uint8_t version = 0) const
++int ArtsBgp4AsPathAttribute::write(int fd, uint8_t version) const
+ {
+   int        rc;
+   int        bytesWritten = 0;
+@@ -232,7 +232,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsBgp4AsPathAttribute::Length(uint8_t version = 0) const
++uint32_t ArtsBgp4AsPathAttribute::Length(uint8_t version) const
+ {
+   uint32_t  length = sizeof(uint8_t);
+ 
+--- ./classes/src/ArtsBgp4AsPathSegment.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBgp4AsPathSegment.cc	Wed Sep 25 16:38:10 2002
+@@ -137,13 +137,13 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsBgp4AsPathSegment::read(istream & is, uint8_t version = 0)
++istream & ArtsBgp4AsPathSegment::read(istream & is, uint8_t version)
+ {
+   uint8_t   numAses;
+   uint16_t  as;
+ 
+-  is.read(&this->_type,sizeof(this->_type));
+-  is.read(&numAses,sizeof(numAses));
++  is.read((char *)&this->_type,sizeof(this->_type));
++  is.read((char *)&numAses,sizeof(numAses));
+   if (numAses > 0) {
+     this->_AS.reserve(numAses);
+     for (int asNum = 0; asNum < numAses; asNum++) {
+@@ -160,7 +160,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4AsPathSegment::read(int fd, uint8_t version = 0)
++int ArtsBgp4AsPathSegment::read(int fd, uint8_t version)
+ {
+   int       rc;
+   uint8_t   numAses;
+@@ -196,12 +196,12 @@
+ //  
+ //----------------------------------------------------------------------------
+ ostream & ArtsBgp4AsPathSegment::write(ostream & os,
+-                                       uint8_t version = 0) const
++                                       uint8_t version) const
+ {
+-  os.write(&this->_type,sizeof(this->_type));
++  os.write((char *)&this->_type,sizeof(this->_type));
+   
+   uint8_t   numAses = this->_AS.size();
+-  os.write(&numAses,sizeof(numAses));
++  os.write((char *)&numAses,sizeof(numAses));
+   
+   for (int asNum = 0; asNum < numAses; asNum++) {
+     g_ArtsLibInternal_Primitive.WriteUint16(os,this->_AS[asNum],
+@@ -215,7 +215,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4AsPathSegment::write(int fd, uint8_t version = 0) const
++int ArtsBgp4AsPathSegment::write(int fd, uint8_t version) const
+ {
+   int       rc;
+   uint8_t   numAses;
+@@ -246,7 +246,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsBgp4AsPathSegment::Length(uint8_t version = 0) const
++uint32_t ArtsBgp4AsPathSegment::Length(uint8_t version) const
+ {
+   return(sizeof(this->_type) + sizeof(uint8_t) +
+          (sizeof(uint16_t) * this->_AS.size()));
+--- ./classes/src/ArtsBgp4Attribute.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBgp4Attribute.cc	Wed Sep 25 16:38:10 2002
+@@ -444,26 +444,26 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsBgp4Attribute::read(istream & is, uint8_t version = 0)
++istream & ArtsBgp4Attribute::read(istream & is, uint8_t version)
+ {
+   uint8_t      numCommunities;
+   uint32_t     community;
+ 
+   this->DeleteValue();
+   
+-  is.read(&this->_flags,sizeof(this->_flags));
+-  is.read(&this->_type,sizeof(this->_type));
++  is.read((char *)&this->_flags,sizeof(this->_flags));
++  is.read((char *)&this->_type,sizeof(this->_type));
+   
+   switch (this->_type) {
+     case Bgp4_Attribute_Origin:
+-      is.read(&this->_value._origin,sizeof(this->_value._origin));
++      is.read((char *)&this->_value._origin,sizeof(this->_value._origin));
+       break;
+     case Bgp4_Attribute_AsPath:
+       this->_value._asPath = new ArtsBgp4AsPathAttribute;
+       this->_value._asPath->read(is,version);
+       break;
+     case Bgp4_Attribute_NextHop:
+-      is.read(&this->_value._nextHop,sizeof(this->_value._nextHop));
++      is.read((char *)&this->_value._nextHop,sizeof(this->_value._nextHop));
+       break;
+     case Bgp4_Attribute_MultiExitDisc:
+       g_ArtsLibInternal_Primitive.ReadUint32(is,this->_value._MED,
+@@ -480,7 +480,7 @@
+       this->_value._aggregator->read(is,version);
+       break;
+     case Bgp4_Attribute_Community:
+-      is.read(&numCommunities,sizeof(numCommunities));
++      is.read((char *)&numCommunities,sizeof(numCommunities));
+       this->_value._community = new vector<uint32_t>;
+       this->_value._community->reserve((int)numCommunities);
+       for (int commNum = 0; commNum < numCommunities; commNum++) {
+@@ -507,7 +507,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4Attribute::read(int fd, uint8_t version = 0)
++int ArtsBgp4Attribute::read(int fd, uint8_t version)
+ {
+   uint8_t      numCommunities;
+   uint32_t     community;
+@@ -622,22 +622,22 @@
+ //  
+ //----------------------------------------------------------------------------
+ ostream & ArtsBgp4Attribute::write(ostream & os,
+-                                   uint8_t version = 0) const
++                                   uint8_t version) const
+ {
+   uint8_t  numCommunities;
+   
+-  os.write(&this->_flags,sizeof(this->_flags));
+-  os.write(&this->_type,sizeof(this->_type));
++  os.write((char *)&this->_flags,sizeof(this->_flags));
++  os.write((char *)&this->_type,sizeof(this->_type));
+ 
+     switch (this->_type) {
+     case Bgp4_Attribute_Origin:
+-      os.write(&this->_value._origin,sizeof(this->_value._origin));
++      os.write((char *)&this->_value._origin,sizeof(this->_value._origin));
+       break;
+     case Bgp4_Attribute_AsPath:
+       this->_value._asPath->write(os,version);
+       break;
+     case Bgp4_Attribute_NextHop:
+-      os.write(&this->_value._nextHop,sizeof(this->_value._nextHop));
++      os.write((char *)&this->_value._nextHop,sizeof(this->_value._nextHop));
+       break;
+     case Bgp4_Attribute_MultiExitDisc:
+       g_ArtsLibInternal_Primitive.WriteUint32(os,this->_value._MED,
+@@ -654,7 +654,7 @@
+       break;
+     case Bgp4_Attribute_Community:
+       numCommunities = this->_value._community->size();
+-      os.write(&numCommunities,sizeof(numCommunities));
++      os.write((char *)&numCommunities,sizeof(numCommunities));
+       for (int commNum = 0; commNum < numCommunities; commNum++) {
+         g_ArtsLibInternal_Primitive.WriteUint32(os,
+                                         (*(this->_value._community))[commNum],
+@@ -680,7 +680,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4Attribute::write(int fd, uint8_t version = 0) const
++int ArtsBgp4Attribute::write(int fd, uint8_t version) const
+ {
+   uint8_t  numCommunities;
+   int      rc;
+@@ -855,7 +855,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint16_t ArtsBgp4Attribute::Length(uint8_t version = 0) const
++uint16_t ArtsBgp4Attribute::Length(uint8_t version) const
+ {
+   uint16_t  length = sizeof(this->_flags) + sizeof(this->_type);
+   switch (this->_type) {
+--- ./classes/src/ArtsBgp4DPAttribute.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBgp4DPAttribute.cc	Wed Sep 25 16:38:10 2002
+@@ -132,7 +132,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsBgp4DPAttribute::read(istream & is, uint8_t version = 0)
++istream & ArtsBgp4DPAttribute::read(istream & is, uint8_t version)
+ {
+   g_ArtsLibInternal_Primitive.ReadUint16(is,this->_as,sizeof(this->_as));
+   g_ArtsLibInternal_Primitive.ReadUint32(is,this->_value,
+@@ -145,7 +145,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4DPAttribute::read(int fd, uint8_t version = 0)
++int ArtsBgp4DPAttribute::read(int fd, uint8_t version)
+ {
+   int   rc;
+   int   bytesRead = 0;
+@@ -169,7 +169,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-ostream & ArtsBgp4DPAttribute::write(ostream & os, uint8_t version = 0) const
++ostream & ArtsBgp4DPAttribute::write(ostream & os, uint8_t version) const
+ {
+   g_ArtsLibInternal_Primitive.WriteUint16(os,this->_as,sizeof(this->_as));
+   g_ArtsLibInternal_Primitive.WriteUint32(os,this->_value,
+@@ -182,7 +182,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4DPAttribute::write(int fd, uint8_t version = 0) const
++int ArtsBgp4DPAttribute::write(int fd, uint8_t version) const
+ {
+   int   rc;
+   int   bytesWritten = 0;
+--- ./classes/src/ArtsBgp4Prefix.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBgp4Prefix.cc	Wed Sep 25 16:38:10 2002
+@@ -48,7 +48,7 @@
+ 
+ #include "ArtsBgp4Prefix.hh"
+ 
+-static const string rcsid = "@(#) $Name: arts++-1-1-a8 $ $Id: ArtsBgp4Prefix.cc,v 1.4 2000/10/02 17:05:23 dwm Exp $";
++static const char *rcsid = "@(#) $Name: arts++-1-1-a8 $ $Id: ArtsBgp4Prefix.cc,v 1.4 2000/10/02 17:05:23 dwm Exp $";
+ 
+ //-------------------------------------------------------------------------
+ //              uint8_t ArtsBgp4Prefix::AddressFamily() const              
+--- ./classes/src/ArtsBgp4RouteEntry.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBgp4RouteEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -122,7 +122,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsBgp4RouteEntry::read(istream & is, uint8_t version = 0)
++istream & ArtsBgp4RouteEntry::read(istream & is, uint8_t version)
+ {
+   ArtsBgp4Attribute  bgp4Attribute;
+ 
+@@ -186,7 +186,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4RouteEntry::read(int fd, uint8_t version = 0)
++int ArtsBgp4RouteEntry::read(int fd, uint8_t version)
+ {
+   int                rc;
+   ArtsBgp4Attribute  bgp4Attribute;
+@@ -291,7 +291,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-ostream & ArtsBgp4RouteEntry::write(ostream & os, uint8_t version = 0) const
++ostream & ArtsBgp4RouteEntry::write(ostream & os, uint8_t version) const
+ {
+   g_ArtsLibInternal_Primitive.WriteUint32(os,this->_attrIndex,
+                                           sizeof(this->_attrIndex));
+@@ -309,7 +309,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4RouteEntry::write(int fd, uint8_t version = 0) const
++int ArtsBgp4RouteEntry::write(int fd, uint8_t version) const
+ {
+   int   rc;
+   int   bytesWritten = 0;
+@@ -337,7 +337,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsBgp4RouteEntry::Length(uint8_t version = 0) const
++uint32_t ArtsBgp4RouteEntry::Length(uint8_t version) const
+ {
+   uint32_t  length = sizeof(this->_attrIndex);
+   vector<ArtsBgp4Attribute>::const_iterator  bgp4AttrIter;
+--- ./classes/src/ArtsBgp4RouteTableData.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBgp4RouteTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -114,7 +114,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsBgp4RouteTableData::read(istream & is, uint8_t version = 0)
++istream & ArtsBgp4RouteTableData::read(istream & is, uint8_t version)
+ {
+   uint32_t            numRoutes;
+   ArtsBgp4RouteEntry  routeEntry;
+@@ -134,7 +134,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4RouteTableData::read(int fd, uint8_t version = 0)
++int ArtsBgp4RouteTableData::read(int fd, uint8_t version)
+ {
+   uint32_t            numRoutes;
+   ArtsBgp4RouteEntry  routeEntry;
+@@ -165,7 +165,7 @@
+ //  
+ //----------------------------------------------------------------------------
+ ostream & ArtsBgp4RouteTableData::write(ostream & os,
+-                                        uint8_t version = 0) const
++                                        uint8_t version) const
+ {
+   Ipv4PrefixPatricia<ArtsBgp4RouteEntry>::iterator  routeIter;
+ 
+@@ -185,7 +185,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsBgp4RouteTableData::write(int fd, uint8_t version = 0) const
++int ArtsBgp4RouteTableData::write(int fd, uint8_t version) const
+ {
+   Ipv4PrefixPatricia<ArtsBgp4RouteEntry>::iterator  routeIter;
+   int    rc;
+@@ -216,7 +216,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsBgp4RouteTableData::Length(uint8_t version = 0) const
++uint32_t ArtsBgp4RouteTableData::Length(uint8_t version) const
+ {
+   uint32_t  length = sizeof(uint32_t);
+   Ipv4PrefixPatricia<ArtsBgp4RouteEntry>::iterator  routeIter;
+--- ./classes/src/ArtsBitString.cc.orig	Mon Oct  2 13:05:23 2000
++++ ./classes/src/ArtsBitString.cc	Wed Sep 25 16:38:10 2002
+@@ -48,7 +48,7 @@
+ 
+ #include "ArtsBitString.hh"
+ 
+-static const string rcsid = "@(#) $Name: arts++-1-1-a8 $ $Id: ArtsBitString.cc,v 1.7 2000/10/02 17:05:23 dwm Exp $";
++static const char *rcsid = "@(#) $Name: arts++-1-1-a8 $ $Id: ArtsBitString.cc,v 1.7 2000/10/02 17:05:23 dwm Exp $";
+ 
+ //-------------------------------------------------------------------------
+ //              ArtsBitString::ArtsBitString(uint32_t numBits)             
+--- ./classes/src/ArtsFileUtil.cc.orig	Mon Oct  2 13:05:24 2000
++++ ./classes/src/ArtsFileUtil.cc	Wed Sep 25 16:38:10 2002
+@@ -53,6 +53,7 @@
+ 
+ #ifdef HAVE_FSTREAM
+   #include <fstream>
++  #include <iterator>
+ #else
+   #include <fstream.h>
+ #endif
+@@ -69,7 +70,7 @@
+ extern char *tzname[2];
+ extern int   errno;
+ 
+-const string rcsid = "@(#) $Name: arts++-1-1-a8 $ $Id: ArtsFileUtil.cc,v 1.14 2000/10/02 17:05:24 dwm Exp $";
++const char *rcsid = "@(#) $Name: arts++-1-1-a8 $ $Id: ArtsFileUtil.cc,v 1.14 2000/10/02 17:05:24 dwm Exp $";
+ static const ArtsPackageVersion  k_artsVersion = ArtsPackageVersion(rcsid);
+ 
+ //----------------------------------------------------------------------------
+--- ./classes/src/ArtsIfIndexSelectionSet.lex.orig	Mon Oct  2 13:05:24 2000
++++ ./classes/src/ArtsIfIndexSelectionSet.lex	Wed Sep 25 16:38:10 2002
+@@ -48,6 +48,7 @@
+ }
+ 
+ #include <string>
++using namespace std;
+ 
+ #ifdef HAVE_STRSTREAM
+   #include <strstream>
+--- ./classes/src/ArtsInterfaceMatrixEntry.cc.orig	Mon Oct  2 13:05:25 2000
++++ ./classes/src/ArtsInterfaceMatrixEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -214,7 +214,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsInterfaceMatrixEntry::Length(uint8_t version = 0) const
++uint32_t ArtsInterfaceMatrixEntry::Length(uint8_t version) const
+ {
+   uint32_t   length;
+   length = (sizeof(this->_descriptor) +
+@@ -231,11 +231,11 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-istream & ArtsInterfaceMatrixEntry::read(istream& is, uint8_t version = 0)
++istream & ArtsInterfaceMatrixEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t        bytesize, pktsize, srcsize, dstsize;
+ 
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+   
+   srcsize = (this->_descriptor & 0x01) + 1;
+   dstsize  = ((this->_descriptor >> 1) & 0x01) + 1;
+@@ -255,7 +255,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsInterfaceMatrixEntry::read(int fd, uint8_t version = 0)
++int ArtsInterfaceMatrixEntry::read(int fd, uint8_t version)
+ {
+   uint8_t        bytesize, pktsize, srcsize, dstsize;
+   int            rc;
+@@ -307,11 +307,11 @@
+ //  
+ //-------------------------------------------------------------------------
+ ostream & ArtsInterfaceMatrixEntry::write(ostream& os,
+-                                          uint8_t version = 0) const
++                                          uint8_t version) const
+ {
+   uint8_t        bytesize, pktsize, srcsize, dstsize;
+ 
+-  os.write(&this->_descriptor,sizeof(this->_descriptor));
++  os.write((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   srcsize = (this->_descriptor & 0x01) + 1;
+   dstsize  = ((this->_descriptor >> 1) & 0x01) + 1;
+@@ -331,7 +331,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsInterfaceMatrixEntry::write(int fd, uint8_t version = 0) const
++int ArtsInterfaceMatrixEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t        bytesize, pktsize, srcsize, dstsize;
+   int            rc;
+--- ./classes/src/ArtsInterfaceMatrixData.cc.orig	Mon Oct  2 13:05:24 2000
++++ ./classes/src/ArtsInterfaceMatrixData.cc	Wed Sep 25 16:38:10 2002
+@@ -81,7 +81,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream & ArtsInterfaceMatrixData::read(istream& is, uint8_t version = 0)
++istream & ArtsInterfaceMatrixData::read(istream& is, uint8_t version)
+ {
+   uint32_t                  entryNum;
+   ArtsInterfaceMatrixEntry  interfaceEntry;
+@@ -106,7 +106,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsInterfaceMatrixData::read(int fd, uint8_t version = 0)
++int ArtsInterfaceMatrixData::read(int fd, uint8_t version)
+ {
+   uint32_t                  entryNum;
+   //  ArtsPrimitive             ioHelper;
+@@ -163,7 +163,7 @@
+ //                                                                         
+ //-------------------------------------------------------------------------
+ ostream & ArtsInterfaceMatrixData::write(ostream& os,
+-                                         uint8_t version = 0)
++                                         uint8_t version)
+ {
+   uint32_t       entryNum;
+ 
+@@ -185,7 +185,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsInterfaceMatrixData::write(int fd, uint8_t version = 0)
++int ArtsInterfaceMatrixData::write(int fd, uint8_t version)
+ {
+   uint32_t       entryNum;
+   int            rc;
+@@ -237,7 +237,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsInterfaceMatrixData::Length(uint8_t version = 0) const
++uint32_t ArtsInterfaceMatrixData::Length(uint8_t version) const
+ {
+   uint32_t  length = 0;
+ 
+--- ./classes/src/ArtsInterfaceMatrixAggregatorMap.cc.orig	Mon Oct  2 13:05:24 2000
++++ ./classes/src/ArtsInterfaceMatrixAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,7 +46,9 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++# include <fstream>
++# include <iterator>
++  using namespace std;
+ #else
+   #include <fstream.h>
+ #endif
+--- ./classes/src/ArtsNetMatrixEntry.cc.orig	Mon Oct  2 13:05:25 2000
++++ ./classes/src/ArtsNetMatrixEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -186,7 +186,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsNetMatrixEntry::Length(uint8_t version = 2) const
++uint32_t ArtsNetMatrixEntry::Length(uint8_t version) const
+ {
+   uint32_t   length;
+ 
+@@ -203,7 +203,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream& ArtsNetMatrixEntry::read(istream& is, uint8_t version = 2)
++istream& ArtsNetMatrixEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t        bytesize,
+                  pktsize,
+@@ -212,7 +212,7 @@
+                  dstsize,
+                  dstmasklen;
+   
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+   this->_descriptor = ntohs(this->_descriptor);
+   
+   srcmasklen = ((this->_descriptor >> 5) & 0x1f) + 1;
+@@ -237,7 +237,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsNetMatrixEntry::read(int fd, uint8_t version = 2)
++int ArtsNetMatrixEntry::read(int fd, uint8_t version)
+ {
+   uint8_t        bytesize,
+                  pktsize,
+@@ -298,7 +298,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-ostream & ArtsNetMatrixEntry::write(ostream & os, uint8_t version = 2) const
++ostream & ArtsNetMatrixEntry::write(ostream & os, uint8_t version) const
+ {
+   uint8_t        bytesize,
+                  pktsize,
+@@ -309,7 +309,7 @@
+   uint16_t       tmpDescriptor;
+ 
+   tmpDescriptor = htons(this->_descriptor);
+-  os.write(&tmpDescriptor,sizeof(tmpDescriptor));
++  os.write((char *)&tmpDescriptor,sizeof(tmpDescriptor));
+ 
+   srcmasklen = ((this->_descriptor >> 5) & 0x1f) + 1;
+   srcsize = (srcmasklen + 7) / 8;
+@@ -333,7 +333,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsNetMatrixEntry::write(int fd, uint8_t version = 2) const
++int ArtsNetMatrixEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t        bytesize,
+                  pktsize,
+--- ./classes/src/ArtsNetMatrixData.cc.orig	Mon Oct  2 13:05:25 2000
++++ ./classes/src/ArtsNetMatrixData.cc	Wed Sep 25 16:38:10 2002
+@@ -83,7 +83,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream & ArtsNetMatrixData::read(istream& is, uint8_t version = 2)
++istream & ArtsNetMatrixData::read(istream& is, uint8_t version)
+ {
+   uint32_t           entryNum;
+   ArtsNetMatrixEntry  netEntry;
+@@ -108,7 +108,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsNetMatrixData::read(int fd, uint8_t version = 2)
++int ArtsNetMatrixData::read(int fd, uint8_t version)
+ {
+   uint32_t           entryNum;
+   ArtsNetMatrixEntry  netEntry;
+@@ -163,7 +163,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-ostream & ArtsNetMatrixData::write(ostream& os, uint8_t version = 2)
++ostream & ArtsNetMatrixData::write(ostream& os, uint8_t version)
+ {
+   uint32_t       entryNum;
+ 
+@@ -185,7 +185,7 @@
+ //.........................................................................
+ //
+ //-------------------------------------------------------------------------
+-int ArtsNetMatrixData::write(int fd, uint8_t version = 2)
++int ArtsNetMatrixData::write(int fd, uint8_t version)
+ {
+   uint32_t       entryNum;
+   int            rc;
+@@ -237,7 +237,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsNetMatrixData::Length(uint8_t version = 2) const
++uint32_t ArtsNetMatrixData::Length(uint8_t version) const
+ {
+   uint32_t  length = 0;
+ 
+--- ./classes/src/ArtsNextHopTableEntry.cc.orig	Mon Oct  2 13:05:26 2000
++++ ./classes/src/ArtsNextHopTableEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -192,7 +192,7 @@
+ //-------------------------------------------------------------------------
+ //   uint32_t ArtsNextHopTableEntry::Length(uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-uint32_t ArtsNextHopTableEntry::Length(uint8_t version = 0) const
++uint32_t ArtsNextHopTableEntry::Length(uint8_t version) const
+ {
+   uint32_t  len = 0;
+ 
+@@ -207,15 +207,15 @@
+ //-------------------------------------------------------------------------
+ // istream& ArtsNextHopTableEntry::read(istream& is, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-istream& ArtsNextHopTableEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsNextHopTableEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t  fieldLen;
+ 
+   //  IP address
+-  is.read(&this->_ipAddr,sizeof(this->_ipAddr));
++  is.read((char *)&this->_ipAddr,sizeof(this->_ipAddr));
+   
+   //  descriptor
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   //  pkts
+   fieldLen = (this->_descriptor >> 3) + 1;
+@@ -231,7 +231,7 @@
+ //-------------------------------------------------------------------------
+ //      int ArtsNextHopTableEntry::read(int fd, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-int ArtsNextHopTableEntry::read(int fd, uint8_t version = 0)
++int ArtsNextHopTableEntry::read(int fd, uint8_t version)
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+@@ -262,15 +262,15 @@
+ //                                           uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+ ostream& ArtsNextHopTableEntry::write(ostream& os,
+-                                       uint8_t version = 0) const
++                                       uint8_t version) const
+ {
+   uint8_t  fieldLen;
+ 
+   //  IP address
+-  os.write(&this->_ipAddr,sizeof(this->_ipAddr));
++  os.write((char *)&this->_ipAddr,sizeof(this->_ipAddr));
+   
+   //  descriptor
+-  os.write(&this->_descriptor,1);
++  os.write((char *)&this->_descriptor,1);
+   
+   //  pkts
+   fieldLen = (this->_descriptor >> 3) + 1;
+@@ -286,7 +286,7 @@
+ //-------------------------------------------------------------------------
+ //  int ArtsNextHopTableEntry::write(int fd, uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-int ArtsNextHopTableEntry::write(int fd, uint8_t version = 0) const
++int ArtsNextHopTableEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+--- ./classes/src/ArtsNextHopTableData.cc.orig	Mon Oct  2 13:05:26 2000
++++ ./classes/src/ArtsNextHopTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -182,7 +182,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsNextHopTableData::ComputeLength(uint8_t version = 0) const
++uint32_t ArtsNextHopTableData::ComputeLength(uint8_t version) const
+ {
+   this->_length = 0;
+   
+@@ -205,7 +205,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsNextHopTableData::Length(uint8_t version = 0) const
++uint32_t ArtsNextHopTableData::Length(uint8_t version) const
+ {
+   this->ComputeLength(version);
+   return(this->_length);
+@@ -216,7 +216,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-istream& ArtsNextHopTableData::read(istream& is, uint8_t version = 0)
++istream& ArtsNextHopTableData::read(istream& is, uint8_t version)
+ {
+   uint32_t            numNextHops;
+   uint32_t            NextHopNum;
+@@ -239,7 +239,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsNextHopTableData::read(int fd, uint8_t version = 0)
++int ArtsNextHopTableData::read(int fd, uint8_t version)
+ {
+   uint32_t            numNextHops;
+   uint32_t            NextHopNum;
+@@ -281,7 +281,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ ostream& ArtsNextHopTableData::write(ostream& os,
+-                                      uint8_t version = 0) const
++                                      uint8_t version) const
+ {
+   uint32_t            numNextHops;
+   
+@@ -306,7 +306,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsNextHopTableData::write(int fd, uint8_t version = 0) const
++int ArtsNextHopTableData::write(int fd, uint8_t version) const
+ {
+   uint32_t      numNextHops;
+   int           rc;
+--- ./classes/src/ArtsPortChoice.cc.orig	Mon Oct  2 13:05:26 2000
++++ ./classes/src/ArtsPortChoice.cc	Wed Sep 25 16:38:10 2002
+@@ -293,7 +293,7 @@
+ {
+   uint8_t   portLength;
+ 
+-  is.read(&this->_flags,sizeof(this->_flags));
++  is.read((char *)&this->_flags,sizeof(this->_flags));
+   if (!is)
+     return(is);
+   
+@@ -364,7 +364,7 @@
+ {
+   uint8_t  portLength;
+   
+-  os.write(&this->_flags,sizeof(this->_flags));
++  os.write((char *)&this->_flags,sizeof(this->_flags));
+ 
+   portLength = 1;
+   if (this->_flags & this->k_firstPortLengthMask)
+--- ./classes/src/ArtsPortChooser.lex.orig	Mon Oct  2 13:05:27 2000
++++ ./classes/src/ArtsPortChooser.lex	Wed Sep 25 16:38:10 2002
+@@ -233,7 +233,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsPortChooser::Length(uint8_t version = 0) const
++uint32_t ArtsPortChooser::Length(uint8_t version) const
+ {
+   uint32_t                                length = 0;
+   vector<ArtsPortChoice>::const_iterator  choiceIter;
+--- ./classes/src/ArtsPortMatrixAggregator.cc.orig	Mon Oct  2 13:05:27 2000
++++ ./classes/src/ArtsPortMatrixAggregator.cc	Wed Sep 25 16:38:10 2002
+@@ -327,7 +327,7 @@
+ //----------------------------------------------------------------------------
+ ArtsSelectedPortTable *
+ ArtsPortMatrixAggregator::
+-ConvertToArtsSelectedPortTable(int numTopPorts, bool byPkts = false) const
++ConvertToArtsSelectedPortTable(int numTopPorts, bool byPkts) const
+ {
+   ArtsPortTableEntry  portEntry;
+   map<ArtsPortMatrixKeyValue,counter_t,less<ArtsPortMatrixKeyValue> >::const_iterator  portCounter;
+--- ./classes/src/ArtsPortMatrixAggregatorMap.cc.orig	Mon Oct  2 13:05:27 2000
++++ ./classes/src/ArtsPortMatrixAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,9 +46,11 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++# include <fstream>
++# include <iterator>
++  using namespace std;
+ #else
+-  #include <fstream.h>
++# include <fstream.h>
+ #endif
+ 
+ #include "ArtsPortMatrixAggregatorMap.hh"
+--- ./classes/src/ArtsPortMatrixEntry.cc.orig	Mon Oct  2 13:05:27 2000
++++ ./classes/src/ArtsPortMatrixEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -176,7 +176,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsPortMatrixEntry::Length(uint8_t version = 0) const
++uint32_t ArtsPortMatrixEntry::Length(uint8_t version) const
+ {
+   uint32_t   length;
+ 
+@@ -189,18 +189,18 @@
+ }
+ 
+ //-------------------------------------------------------------------------
+-//   istream& ArtsPortMatrixEntry::read(istream& is, uint8_t version = 0)
++//   istream& ArtsPortMatrixEntry::read(istream& is, uint8_t version)
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream& ArtsPortMatrixEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsPortMatrixEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t        bytesize,
+                  pktsize,
+                  srcsize,
+                  dstsize;
+   
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   srcsize = (this->_descriptor & 0x01) + 1;
+   dstsize  = ((this->_descriptor >> 1) & 0x01) + 1;
+@@ -220,7 +220,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsPortMatrixEntry::read(int fd, uint8_t version = 0)
++int ArtsPortMatrixEntry::read(int fd, uint8_t version)
+ {
+   uint8_t        bytesize,
+                  pktsize,
+@@ -273,14 +273,14 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-ostream & ArtsPortMatrixEntry::write(ostream & os, uint8_t version = 0) const
++ostream & ArtsPortMatrixEntry::write(ostream & os, uint8_t version) const
+ {
+   uint8_t        bytesize,
+                  pktsize,
+                  srcsize,
+                  dstsize;
+ 
+-  os.write(&this->_descriptor,sizeof(this->_descriptor));
++  os.write((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   srcsize = (this->_descriptor & 0x01) + 1;
+   dstsize  = ((this->_descriptor >> 1) & 0x01) + 1;
+@@ -300,7 +300,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsPortMatrixEntry::write(int fd, uint8_t version = 0) const
++int ArtsPortMatrixEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t        bytesize,
+                  pktsize,
+--- ./classes/src/ArtsPortMatrixData.cc.orig	Mon Oct  2 13:05:27 2000
++++ ./classes/src/ArtsPortMatrixData.cc	Wed Sep 25 16:38:10 2002
+@@ -82,7 +82,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-istream & ArtsPortMatrixData::read(istream& is, uint8_t version = 0)
++istream & ArtsPortMatrixData::read(istream& is, uint8_t version)
+ {
+   uint32_t             entryNum;
+   ArtsPortMatrixEntry  portEntry;
+@@ -107,7 +107,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsPortMatrixData::read(int fd, uint8_t version = 0)
++int ArtsPortMatrixData::read(int fd, uint8_t version)
+ {
+   uint32_t             entryNum;
+   ArtsPortMatrixEntry  portEntry;
+@@ -162,7 +162,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-ostream & ArtsPortMatrixData::write(ostream& os, uint8_t version = 0)
++ostream & ArtsPortMatrixData::write(ostream& os, uint8_t version)
+ {
+   uint32_t       entryNum;
+ 
+@@ -180,11 +180,11 @@
+ }
+ 
+ //-------------------------------------------------------------------------
+-//       int ArtsPortMatrixData::write(int fd, uint8_t version = 0)
++//       int ArtsPortMatrixData::write(int fd, uint8_t version)
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-int ArtsPortMatrixData::write(int fd, uint8_t version = 0)
++int ArtsPortMatrixData::write(int fd, uint8_t version)
+ {
+   uint32_t       entryNum;
+   int            rc;
+@@ -236,7 +236,7 @@
+ //.........................................................................
+ //                                                                         
+ //-------------------------------------------------------------------------
+-uint32_t ArtsPortMatrixData::Length(uint8_t version = 0) const
++uint32_t ArtsPortMatrixData::Length(uint8_t version) const
+ {
+   uint32_t  length = 0;
+ 
+--- ./classes/src/ArtsPortTableEntry.cc.orig	Mon Oct  2 13:05:28 2000
++++ ./classes/src/ArtsPortTableEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -332,7 +332,7 @@
+ //-------------------------------------------------------------------------
+ //      uint32_t ArtsPortTableEntry::Length(uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-uint32_t ArtsPortTableEntry::Length(uint8_t version = 0) const
++uint32_t ArtsPortTableEntry::Length(uint8_t version) const
+ {
+   uint32_t  len = 0;
+ 
+@@ -349,7 +349,7 @@
+ //-------------------------------------------------------------------------
+ //   istream& ArtsPortTableEntry::read(istream& is, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-istream& ArtsPortTableEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsPortTableEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t  fieldLen;
+ 
+@@ -358,7 +358,7 @@
+                                          sizeof(this->_portNum));
+   
+   //  descriptor
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   //  inPkts
+   fieldLen = 1 << (this->_descriptor >> 6);
+@@ -382,7 +382,7 @@
+ //-------------------------------------------------------------------------
+ //        int ArtsPortTableEntry::read(int fd, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-int ArtsPortTableEntry::read(int fd, uint8_t version = 0)
++int ArtsPortTableEntry::read(int fd, uint8_t version)
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+@@ -421,7 +421,7 @@
+ //                                        uint8_t version = 0) const          
+ //-------------------------------------------------------------------------
+ ostream& ArtsPortTableEntry::write(ostream& os,
+-                                   uint8_t version = 0) const
++                                   uint8_t version) const
+ {
+   uint8_t  fieldLen;
+ 
+@@ -430,7 +430,7 @@
+                                           sizeof(this->_portNum));
+   
+   //  descriptor
+-  os.write(&this->_descriptor,1);
++  os.write((char *)&this->_descriptor,1);
+   
+   //  inPkts
+   fieldLen = 1 << (this->_descriptor >> 6);
+@@ -454,7 +454,7 @@
+ //-------------------------------------------------------------------------
+ //    int ArtsPortTableEntry::write(int fd, uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-int ArtsPortTableEntry::write(int fd, uint8_t version = 0) const
++int ArtsPortTableEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+--- ./classes/src/ArtsPortTableData.cc.orig	Mon Oct  2 13:05:28 2000
++++ ./classes/src/ArtsPortTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -182,7 +182,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsPortTableData::ComputeLength(uint8_t version = 0) const
++uint32_t ArtsPortTableData::ComputeLength(uint8_t version) const
+ {
+   this->_length = 0;
+   
+@@ -205,7 +205,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsPortTableData::Length(uint8_t version = 0) const
++uint32_t ArtsPortTableData::Length(uint8_t version) const
+ {
+   this->ComputeLength(version);
+   return(this->_length);
+@@ -216,7 +216,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-istream& ArtsPortTableData::read(istream& is, uint8_t version = 0)
++istream& ArtsPortTableData::read(istream& is, uint8_t version)
+ {
+   uint32_t            numPorts;
+   uint32_t            portNum;
+@@ -239,7 +239,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsPortTableData::read(int fd, uint8_t version = 0)
++int ArtsPortTableData::read(int fd, uint8_t version)
+ {
+   uint32_t            numPorts;
+   uint32_t            portNum;
+@@ -281,7 +281,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ ostream& ArtsPortTableData::write(ostream& os,
+-                                  uint8_t version = 0) const
++                                  uint8_t version) const
+ {
+   uint32_t                                    numPorts;
+   vector<ArtsPortTableEntry>::const_iterator  portEntry;
+@@ -305,7 +305,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsPortTableData::write(int fd, uint8_t version = 0) const
++int ArtsPortTableData::write(int fd, uint8_t version) const
+ {
+   uint32_t      numPorts;
+   int           rc;
+--- ./classes/src/ArtsProtocolTableEntry.cc.orig	Mon Oct  2 13:05:28 2000
++++ ./classes/src/ArtsProtocolTableEntry.cc	Wed Sep 25 16:38:10 2002
+@@ -189,7 +189,7 @@
+ //-------------------------------------------------------------------------
+ //   uint32_t ArtsProtocolTableEntry::Length(uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-uint32_t ArtsProtocolTableEntry::Length(uint8_t version = 0) const
++uint32_t ArtsProtocolTableEntry::Length(uint8_t version) const
+ {
+   uint32_t  len = 0;
+ 
+@@ -204,15 +204,15 @@
+ //-------------------------------------------------------------------------
+ // istream& ArtsProtocolTableEntry::read(istream& is, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-istream& ArtsProtocolTableEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsProtocolTableEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t  fieldLen;
+ 
+   //  protocol number
+-  is.read(&this->_protocolNum,sizeof(this->_protocolNum));
++  is.read((char *)&this->_protocolNum,sizeof(this->_protocolNum));
+   
+   //  descriptor
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   //  pkts
+   fieldLen = (this->_descriptor >> 3) + 1;
+@@ -228,7 +228,7 @@
+ //-------------------------------------------------------------------------
+ //      int ArtsProtocolTableEntry::read(int fd, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-int ArtsProtocolTableEntry::read(int fd, uint8_t version = 0)
++int ArtsProtocolTableEntry::read(int fd, uint8_t version)
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+@@ -259,15 +259,15 @@
+ //                                           uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+ ostream& ArtsProtocolTableEntry::write(ostream& os,
+-                                       uint8_t version = 0) const
++                                       uint8_t version) const
+ {
+   uint8_t  fieldLen;
+ 
+   //  protocol number
+-  os.write(&this->_protocolNum,sizeof(this->_protocolNum));
++  os.write((char *)&this->_protocolNum,sizeof(this->_protocolNum));
+   
+   //  descriptor
+-  os.write(&this->_descriptor,1);
++  os.write((char *)&this->_descriptor,1);
+   
+   //  pkts
+   fieldLen = (this->_descriptor >> 3) + 1;
+@@ -283,7 +283,7 @@
+ //-------------------------------------------------------------------------
+ //  int ArtsProtocolTableEntry::write(int fd, uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-int ArtsProtocolTableEntry::write(int fd, uint8_t version = 0) const
++int ArtsProtocolTableEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+--- ./classes/src/ArtsProtocolTableData.cc.orig	Mon Oct  2 13:05:28 2000
++++ ./classes/src/ArtsProtocolTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -182,7 +182,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsProtocolTableData::ComputeLength(uint8_t version = 0) const
++uint32_t ArtsProtocolTableData::ComputeLength(uint8_t version) const
+ {
+   this->_length = 0;
+   
+@@ -205,18 +205,18 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsProtocolTableData::Length(uint8_t version = 0) const
++uint32_t ArtsProtocolTableData::Length(uint8_t version) const
+ {
+   this->ComputeLength(version);
+   return(this->_length);
+ }
+ 
+ //-------------------------------------------------------------------------
+-// istream& ArtsProtocolTableData::read(istream& is, uint8_t version = 0)
++// istream& ArtsProtocolTableData::read(istream& is, uint8_t version)
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-istream& ArtsProtocolTableData::read(istream& is, uint8_t version = 0)
++istream& ArtsProtocolTableData::read(istream& is, uint8_t version)
+ {
+   uint32_t            numProtocols;
+   uint32_t            protocolNum;
+@@ -239,7 +239,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsProtocolTableData::read(int fd, uint8_t version = 0)
++int ArtsProtocolTableData::read(int fd, uint8_t version)
+ {
+   uint32_t            numProtocols;
+   uint32_t            protocolNum;
+@@ -281,7 +281,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ ostream& ArtsProtocolTableData::write(ostream& os,
+-                                      uint8_t version = 0) const
++                                      uint8_t version) const
+ {
+   uint32_t            numProtocols;
+   
+@@ -306,7 +306,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsProtocolTableData::write(int fd, uint8_t version = 0) const
++int ArtsProtocolTableData::write(int fd, uint8_t version) const
+ {
+   uint32_t      numProtocols;
+   int           rc;
+--- ./classes/src/ArtsProtocolTableAggregatorMap.cc.orig	Mon Oct  2 13:05:28 2000
++++ ./classes/src/ArtsProtocolTableAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,9 +46,11 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++# include <fstream>
++# include <iterator>
++  using namespace std;
+ #else
+-  #include <fstream.h>
++# include <fstream.h>
+ #endif
+ 
+ #include "ArtsProtocolTableAggregatorMap.hh"
+--- ./classes/src/ArtsPrimitive.cc.orig	Mon Oct  2 13:05:28 2000
++++ ./classes/src/ArtsPrimitive.cc	Wed Sep 25 16:38:10 2002
+@@ -150,11 +150,11 @@
+   switch (len) {
+     case 1:
+       val8 = value;
+-      os.write(&val8,sizeof(val8));
++      os.write((char *)&val8,sizeof(val8));
+       break;
+     case 2:
+       val16 = htons(value);
+-      os.write(&val16,sizeof(val16));
++      os.write((char *)&val16,sizeof(val16));
+       break;
+     default:
+       #ifdef ARTS_DEBUG_DO_ASSERTIONS
+@@ -218,11 +218,11 @@
+ 
+   switch (len) {
+     case 1:
+-      is.read(&val8,sizeof(val8));
++      is.read((char *)&val8,sizeof(val8));
+       value = val8;
+       break;
+     case 2:
+-      is.read(&val16,sizeof(val16));
++      is.read((char *)&val16,sizeof(val16));
+       value = ntohs(val16);
+       break;
+     default:
+@@ -289,23 +289,23 @@
+   switch (len) {
+     case 1:
+       val8 = value;
+-      os.write(&val8,sizeof(val8));
++      os.write((char *)&val8,sizeof(val8));
+       break;
+     case 2:
+       val16 = value;
+       val16 = htons(val16);
+-      os.write(&val16,sizeof(val16));
++      os.write((char *)&val16,sizeof(val16));
+       break;
+     case 3:
+       val8 = (value >> 16);
+-      os.write(&val8,sizeof(val8));
++      os.write((char *)&val8,sizeof(val8));
+       val16 = htons((value & 0x0000ffff));
+-      os.write(&val16,sizeof(val16));
++      os.write((char *)&val16,sizeof(val16));
+       break;
+     case 4:
+       val32 = value;
+       val32 = htonl(value);
+-      os.write(&val32,sizeof(val32));
++      os.write((char *)&val32,sizeof(val32));
+       break;
+     default:
+       #ifdef ARTS_DEBUG_DO_ASSERTIONS
+@@ -384,21 +384,21 @@
+ 
+   switch (len) {
+     case 1:
+-      is.read(&val8,sizeof(val8));
++      is.read((char *)&val8,sizeof(val8));
+       value = val8;
+       break;
+     case 2:
+-      is.read(&val16,sizeof(val16));
++      is.read((char *)&val16,sizeof(val16));
+       value = ntohs(val16);
+       break;
+     case 3:
+-      is.read(&val8,sizeof(val8));
++      is.read((char *)&val8,sizeof(val8));
+       value = ((uint32_t)val8) << 16;
+-      is.read(&val16,sizeof(val16));
++      is.read((char *)&val16,sizeof(val16));
+       value |= ntohs(val16);
+       break;
+     case 4:
+-      is.read(&val32,sizeof(val32));
++      is.read((char *)&val32,sizeof(val32));
+       value = ntohl(val32);
+       break;
+     default:
+@@ -483,22 +483,22 @@
+   switch (len) {
+     case 1:
+       val8 = value;
+-      os.write(&val8,sizeof(val8));
++      os.write((char *)&val8,sizeof(val8));
+       break;
+     case 2:
+       val16 = value;
+       val16 = htons(val16);
+-      os.write(&val16,sizeof(val16));
++      os.write((char *)&val16,sizeof(val16));
+       break;
+     case 4:
+       valuePart[0] = value;
+       valuePart[0] = htonl(value);
+-      os.write(&valuePart[0],sizeof(uint32_t));
++      os.write((char *)&valuePart[0],sizeof(uint32_t));
+       break;
+     case 8:
+       valuePart[0] = htonl(value >> 32);
+       valuePart[1] = htonl(value & 0xffffffff);
+-      os.write(valuePart,sizeof(valuePart));
++      os.write((char *)valuePart,sizeof(valuePart));
+       break;
+     default:
+       #ifdef ARTS_DEBUG_DO_ASSERTIONS
+@@ -575,19 +575,19 @@
+ 
+   switch (len) {
+     case 1:
+-      is.read(&val8,sizeof(val8));
++      is.read((char *)&val8,sizeof(val8));
+       value = val8;
+       break;
+     case 2:
+-      is.read(&val16,sizeof(val16));
++      is.read((char *)&val16,sizeof(val16));
+       value = ntohs(val16);
+       break;
+     case 4:
+-      is.read(&valuePart[0],sizeof(uint32_t));
++      is.read((char *)&valuePart[0],sizeof(uint32_t));
+       value = ntohl(valuePart[0]);
+       break;
+     case 8:
+-      is.read(valuePart,sizeof(valuePart));
++      is.read((char *)valuePart,sizeof(valuePart));
+       value = ((uint64_t)ntohl(valuePart[0])) << 32;
+       value += ntohl(valuePart[1]);
+       break;
+@@ -667,24 +667,24 @@
+   
+   switch (len) {
+     case 1:
+-      is.read(&octet1,sizeof(octet1));
++      is.read((char *)&octet1,sizeof(octet1));
+       value = htonl((ipv4addr_t)octet1 << 24);
+       break;
+     case 2:
+-      is.read(&octet1,sizeof(octet1));
+-      is.read(&octet2,sizeof(octet2));
++      is.read((char *)&octet1,sizeof(octet1));
++      is.read((char *)&octet2,sizeof(octet2));
+       value = htonl(((ipv4addr_t)octet1 << 24) | ((ipv4addr_t)octet2 << 16));
+       break;
+     case 3:
+-      is.read(&octet1,sizeof(octet1));
+-      is.read(&octet2,sizeof(octet2));
+-      is.read(&octet3,sizeof(octet3));
++      is.read((char *)&octet1,sizeof(octet1));
++      is.read((char *)&octet2,sizeof(octet2));
++      is.read((char *)&octet3,sizeof(octet3));
+       value = htonl(((ipv4addr_t)octet1 << 24) |
+                     ((ipv4addr_t)octet2 << 16) |
+                     ((ipv4addr_t)octet3 << 8));
+       break;
+     case 4:
+-      is.read(&ipAddr,sizeof(ipAddr));
++      is.read((char *)&ipAddr,sizeof(ipAddr));
+       value = ipAddr;
+       break;
+     default:
+@@ -766,26 +766,26 @@
+   switch (len) {
+     case 1:
+       octet1 = ntohl(value) >> 24;
+-      os.write(&octet1,sizeof(octet1));
++      os.write((char *)&octet1,sizeof(octet1));
+       break;
+     case 2:
+       netaddr = ntohl(value);
+       octet1 = (ipv4addr_t)(netaddr >> 24) & 0xff;
+       octet2 = (ipv4addr_t)(netaddr >> 16) & 0xff;
+-      os.write(&octet1,sizeof(octet1));
+-      os.write(&octet2,sizeof(octet2));
++      os.write((char *)&octet1,sizeof(octet1));
++      os.write((char *)&octet2,sizeof(octet2));
+       break;
+     case 3:
+       netaddr = ntohl(value);
+       octet1 = (ipv4addr_t)(netaddr >> 24) & 0xff;
+       octet2 = (ipv4addr_t)(netaddr >> 16) & 0xff;
+       octet3 = (ipv4addr_t)(netaddr >> 8) & 0xff;
+-      os.write(&octet1,sizeof(octet1));
+-      os.write(&octet2,sizeof(octet2));
+-      os.write(&octet3,sizeof(octet3));
++      os.write((char *)&octet1,sizeof(octet1));
++      os.write((char *)&octet2,sizeof(octet2));
++      os.write((char *)&octet3,sizeof(octet3));
+       break;
+     case 4:
+-      os.write(&value,4);
++      os.write((char *)&value,4);
+       break;
+     default:
+       #ifdef ARTS_DEBUG_DO_ASSERTIONS
+--- ./classes/src/ArtsSelectedPortTableData.cc.orig	Mon Oct  2 13:05:29 2000
++++ ./classes/src/ArtsSelectedPortTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -188,7 +188,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ uint32_t
+-ArtsSelectedPortTableData::ComputeLength(uint8_t version = 0) const
++ArtsSelectedPortTableData::ComputeLength(uint8_t version) const
+ {
+   this->_length = 0;
+   
+@@ -214,7 +214,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsSelectedPortTableData::Length(uint8_t version = 0) const
++uint32_t ArtsSelectedPortTableData::Length(uint8_t version) const
+ {
+   this->ComputeLength(version);
+   return(this->_length);
+@@ -227,7 +227,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ istream& ArtsSelectedPortTableData::read(istream& is,
+-                                         uint8_t version = 0)
++                                         uint8_t version)
+ {
+   uint32_t            numPorts;
+   uint32_t            portNum;
+@@ -251,7 +251,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsSelectedPortTableData::read(int fd, uint8_t version = 0)
++int ArtsSelectedPortTableData::read(int fd, uint8_t version)
+ {
+   uint32_t            numPorts;
+   uint32_t            portNum;
+@@ -298,7 +298,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ ostream& ArtsSelectedPortTableData::write(ostream& os,
+-                                  uint8_t version = 0) const
++                                  uint8_t version) const
+ {
+   uint32_t                                    numPorts;
+   vector<ArtsPortTableEntry>::const_iterator  portEntry;
+@@ -323,7 +323,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsSelectedPortTableData::write(int fd, uint8_t version = 0) const
++int ArtsSelectedPortTableData::write(int fd, uint8_t version) const
+ {
+   uint32_t      numPorts;
+   int           rc;
+--- ./classes/src/ArtsTosTableData.cc.orig	Mon Oct  2 13:05:29 2000
++++ ./classes/src/ArtsTosTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -166,7 +166,7 @@
+ //-------------------------------------------------------------------------
+ //   uint32_t ArtsTosTableEntry::Length(uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-uint32_t ArtsTosTableEntry::Length(uint8_t version = 0) const
++uint32_t ArtsTosTableEntry::Length(uint8_t version) const
+ {
+   uint32_t  len = 0;
+ 
+@@ -181,15 +181,15 @@
+ //-------------------------------------------------------------------------
+ // istream& ArtsTosTableEntry::read(istream& is, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-istream& ArtsTosTableEntry::read(istream& is, uint8_t version = 0)
++istream& ArtsTosTableEntry::read(istream& is, uint8_t version)
+ {
+   uint8_t  fieldLen;
+ 
+   //  tos number
+-  is.read(&this->_tosNum,sizeof(this->_tosNum));
++  is.read((char *)&this->_tosNum,sizeof(this->_tosNum));
+   
+   //  descriptor
+-  is.read(&this->_descriptor,sizeof(this->_descriptor));
++  is.read((char *)&this->_descriptor,sizeof(this->_descriptor));
+ 
+   //  pkts
+   fieldLen = (this->_descriptor >> 3) + 1;
+@@ -205,7 +205,7 @@
+ //-------------------------------------------------------------------------
+ //      int ArtsTosTableEntry::read(int fd, uint8_t version = 0)
+ //-------------------------------------------------------------------------
+-int ArtsTosTableEntry::read(int fd, uint8_t version = 0)
++int ArtsTosTableEntry::read(int fd, uint8_t version)
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+@@ -236,15 +236,15 @@
+ //                                           uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+ ostream& ArtsTosTableEntry::write(ostream& os,
+-                                       uint8_t version = 0) const
++                                       uint8_t version) const
+ {
+   uint8_t  fieldLen;
+ 
+   //  tos number
+-  os.write(&this->_tosNum,sizeof(this->_tosNum));
++  os.write((char *)&this->_tosNum,sizeof(this->_tosNum));
+   
+   //  descriptor
+-  os.write(&this->_descriptor,1);
++  os.write((char *)&this->_descriptor,1);
+   
+   //  pkts
+   fieldLen = (this->_descriptor >> 3) + 1;
+@@ -260,7 +260,7 @@
+ //-------------------------------------------------------------------------
+ //  int ArtsTosTableEntry::write(int fd, uint8_t version = 0) const
+ //-------------------------------------------------------------------------
+-int ArtsTosTableEntry::write(int fd, uint8_t version = 0) const
++int ArtsTosTableEntry::write(int fd, uint8_t version) const
+ {
+   uint8_t  fieldLen;
+   int      rc = 0;
+@@ -482,7 +482,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsTosTableData::ComputeLength(uint8_t version = 0) const
++uint32_t ArtsTosTableData::ComputeLength(uint8_t version) const
+ {
+   this->_length = 0;
+   
+@@ -505,7 +505,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-uint32_t ArtsTosTableData::Length(uint8_t version = 0) const
++uint32_t ArtsTosTableData::Length(uint8_t version) const
+ {
+   this->ComputeLength(version);
+   return(this->_length);
+@@ -516,7 +516,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-istream& ArtsTosTableData::read(istream& is, uint8_t version = 0)
++istream& ArtsTosTableData::read(istream& is, uint8_t version)
+ {
+   uint32_t            numToss;
+   uint32_t            tosNum;
+@@ -539,7 +539,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsTosTableData::read(int fd, uint8_t version = 0)
++int ArtsTosTableData::read(int fd, uint8_t version)
+ {
+   uint32_t            numToss;
+   uint32_t            tosNum;
+@@ -581,7 +581,7 @@
+ //  
+ //-------------------------------------------------------------------------
+ ostream& ArtsTosTableData::write(ostream& os,
+-                                      uint8_t version = 0) const
++                                      uint8_t version) const
+ {
+   uint32_t            numToss;
+   
+@@ -606,7 +606,7 @@
+ //.........................................................................
+ //  
+ //-------------------------------------------------------------------------
+-int ArtsTosTableData::write(int fd, uint8_t version = 0) const
++int ArtsTosTableData::write(int fd, uint8_t version) const
+ {
+   uint32_t      numToss;
+   int           rc;
+--- ./classes/src/ArtsTosTableAggregatorMap.cc.orig	Mon Oct  2 13:05:29 2000
++++ ./classes/src/ArtsTosTableAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,9 +46,11 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++# include <fstream>
++# include <iterator>
++  using namespace std;
+ #else
+-  #include <fstream.h>
++# include <fstream.h>
+ #endif
+ 
+ #include "ArtsTosTableAggregatorMap.hh"
+--- ./classes/src/ArtsNetMatrixAggregatorMap.cc.orig	Mon Oct  2 13:05:25 2000
++++ ./classes/src/ArtsNetMatrixAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,9 +46,11 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++#  include <fstream>
++#  include <iterator>
++   using namespace std;
+ #else
+-  #include <fstream.h>
++#  include <fstream.h>
+ #endif
+ 
+ #include "ArtsNetMatrixAggregatorMap.hh"
+--- ./classes/src/ArtsNextHopTableAggregatorMap.cc.orig	Mon Oct  2 13:05:26 2000
++++ ./classes/src/ArtsNextHopTableAggregatorMap.cc	Wed Sep 25 16:38:10 2002
+@@ -46,9 +46,11 @@
+ 
+ #include <string>
+ #ifdef HAVE_FSTREAM
+-  #include <fstream>
++#  include <fstream>
++#  include <iterator>
++   using namespace std;
+ #else
+-  #include <fstream.h>
++#  include <fstream.h>
+ #endif
+ 
+ #include "ArtsNextHopTableAggregatorMap.hh"
+--- ./classes/src/ArtsRttTimeSeriesTableData.cc.orig	Thu Oct 19 19:37:14 2000
++++ ./classes/src/ArtsRttTimeSeriesTableData.cc	Wed Sep 25 16:38:10 2002
+@@ -192,7 +192,7 @@
+ ostream & ArtsRttTimeSeriesTableEntry::write(ostream & os,
+                                              uint32_t timeBase,
+                                              uint32_t prevSecsOffset,
+-                                             uint8_t version = 0) const
++                                             uint8_t version) const
+ {
+   uint8_t         rleFlags = 0;
+   uint8_t         timestampSecsLength = 0;
+@@ -217,7 +217,7 @@
+ 
+   timestampUsecsLength = BytesNeededForUint32(this->_timestamp.tv_usec);
+   rleFlags |= (timestampUsecsLength - 1);
+-  os.write(&rleFlags,sizeof(rleFlags));
++  os.write((char *)&rleFlags,sizeof(rleFlags));
+   if (rttLength > 0)
+     g_ArtsLibInternal_Primitive.WriteUint32(os,this->_rtt,rttLength);
+   if (timestampSecsLength > 0)
+@@ -232,14 +232,14 @@
+ //     int ArtsRttTimeSeriesTableEntry::write(int fd, 
+ //                                            uint32_t timeBase, 
+ //                                            uint32_t prevSecsOffset, 
+-//                                            uint8_t version = 0) const 
++//                                            uint8_t version) const 
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+ int ArtsRttTimeSeriesTableEntry::write(int fd,
+                                        uint32_t timeBase,
+                                        uint32_t prevSecsOffset,
+-                                       uint8_t version = 0) const
++                                       uint8_t version) const
+ {
+   uint8_t         rleFlags = 0;
+   uint8_t         timestampSecsLength = 0;
+@@ -302,7 +302,7 @@
+ //----------------------------------------------------------------------------
+ uint32_t ArtsRttTimeSeriesTableEntry::Length(uint32_t timeBase,
+                                              uint32_t prevSecsOffset,
+-                                             uint8_t version = 0) const
++                                             uint8_t version) const
+ {
+   uint32_t length = sizeof(uint8_t);  // always have rleFlags
+   if (this->_rtt != k_droppedPacketRtt) {
+@@ -330,13 +330,13 @@
+ istream & ArtsRttTimeSeriesTableEntry::read(istream & is,
+                                             uint32_t timeBase,
+                                             uint32_t prevSecsOffset,
+-                                            uint8_t version = 0)
++                                            uint8_t version)
+ {
+   uint8_t         rleFlags = 0;
+   uint8_t         timestampUsecsLength = 0;
+   uint32_t        timeVal;
+   
+-  is.read(&rleFlags,sizeof(rleFlags));
++  is.read((char *)&rleFlags,sizeof(rleFlags));
+ 
+   if (rleFlags & 0x80) {
+     //  it's a dropped packet; RTT length is 0
+@@ -374,7 +374,7 @@
+ //----------------------------------------------------------------------------
+ int ArtsRttTimeSeriesTableEntry::read(int fd, uint32_t timeBase,
+                                       uint32_t prevSecsOffset,
+-                                      uint8_t version = 0)
++                                      uint8_t version)
+ {
+   uint8_t         rleFlags = 0;
+   uint8_t         timestampUsecsLength = 0;
+@@ -594,7 +594,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-istream & ArtsRttTimeSeriesTableData::read(istream& is, uint8_t version = 0)
++istream & ArtsRttTimeSeriesTableData::read(istream& is, uint8_t version)
+ {
+   uint32_t numRttEntries, rttEntryNum;
+   ArtsRttTimeSeriesTableEntry  rttEntry;
+@@ -623,7 +623,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsRttTimeSeriesTableData::read(int fd, uint8_t version = 0)
++int ArtsRttTimeSeriesTableData::read(int fd, uint8_t version)
+ {
+   uint32_t numRttEntries, rttEntryNum;
+   ArtsRttTimeSeriesTableEntry  rttEntry;
+@@ -664,7 +664,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-uint32_t ArtsRttTimeSeriesTableData::Length(uint8_t version = 0) const
++uint32_t ArtsRttTimeSeriesTableData::Length(uint8_t version) const
+ {
+   uint32_t    length = 0;
+   uint32_t    rttEntryNum, numRttEntries;
+@@ -693,7 +693,7 @@
+ //  
+ //----------------------------------------------------------------------------
+ ostream & ArtsRttTimeSeriesTableData::write(ostream & os,
+-                                            uint8_t version = 0) const
++                                            uint8_t version) const
+ {
+   uint32_t             numRttEntries, rttEntryNum;
+   uint32_t             rttUsecs;
+@@ -729,7 +729,7 @@
+ //............................................................................
+ //  
+ //----------------------------------------------------------------------------
+-int ArtsRttTimeSeriesTableData::write(int fd, uint8_t version = 0) const
++int ArtsRttTimeSeriesTableData::write(int fd, uint8_t version) const
+ {
+   uint32_t             numRttEntries, rttEntryNum;
+   uint32_t             rttUsecs;
+--- ./configure.in.orig	Wed Sep 25 16:45:26 2002
++++ ./configure.in	Wed Sep 25 16:45:55 2002
+@@ -240,6 +240,7 @@
+ AC_TRY_CPP([#include <iostream>],AC_DEFINE(HAVE_IOSTREAM))
+ AC_TRY_CPP([#include <iomanip>],AC_DEFINE(HAVE_IOMANIP))
+ AC_TRY_CPP([#include <strstream>],AC_DEFINE(HAVE_STRSTREAM))
++AC_TRY_CPP([#include <ostream>],AC_DEFINE(HAVE_OSTREAM))
+ 
+ AC_CHECK_LIB(nsl, inet_ntoa)
+ AC_CHECK_LIB(socket, socket)
