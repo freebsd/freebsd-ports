@@ -1,14 +1,17 @@
+include/Hapy/Action.h
 include/Hapy/Algorithm.h
 include/Hapy/Algorithms.h
 include/Hapy/Area.h
 include/Hapy/Assert.h
 include/Hapy/Buffer.h
+include/Hapy/FunAction.h
 include/Hapy/IoStream.h
 include/Hapy/IosFwd.h
 include/Hapy/NumericLimits.h
 include/Hapy/Parser.h
 include/Hapy/Pree.h
 include/Hapy/PreeKids.h
+include/Hapy/PrettyPrint.h
 include/Hapy/Result.h
 include/Hapy/Rule.h
 include/Hapy/RuleBase.h
