@@ -1,4 +1,5 @@
 #include <sys/param.h>
+#if __FreeBSD_version >= 500112
 #include <pwd.h>
 #include <grp.h>
 #include <nss.h>
@@ -57,3 +58,4 @@ nss_module_register(const char *source, unsigned int *mtabsize,
 	*unreg = NULL;
 	return (methods);
 }
+#endif
