@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.comimpex.cz/support/LINUX/Programs/monitor/gkrellm/
 DISTNAME=	fmonitor-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM FMonitor plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
