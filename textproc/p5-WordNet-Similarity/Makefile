@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -26,6 +26,15 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
 USE_REINPLACE=	yes
 
+MAN1=		rawtextFreq.pl.1 \
+		BNCFreq.pl.1 \
+		similarity.pl.1 \
+		wordVectors.pl.1 \
+		compounds.pl.1 \
+		readDB.pl.1 \
+		brownFreq.pl.1 \
+		treebankFreq.pl.1 \
+		wnDepths.pl.1
 MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::hso.3 WordNet::Similarity::vector.3 \
 		WordNet::Similarity::random.3 WordNet::Similarity::res.3 \
