@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--disable-oss --enable-shared
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-.ifndef(WITHOUT_DJBFFT)
+.if !defined(WITHOUT_DJBFFT) && !defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 RUN_DEPENDS+=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 
