@@ -4346,6 +4346,7 @@ mplayer-skins	ports/graphics/mplayer-skins
 mplex		ports/graphics/mplex
 mpmf20		ports/audio/mpmf20
 mpqc		ports/science/mpqc
+mpqc-mpich	ports/science/mpqc-mpich
 mprof		ports/devel/mprof
 mpt		ports/audio/mpt
 mptable		src/usr.sbin/mptable
