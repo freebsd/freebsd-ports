@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	radiusd-cistron
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/
-DISTNAME=	radiusd-cistron-1.6.3-stable
 
 MAINTAINER=	john@nlc.net.au
 
