@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
@@ -22,8 +22,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X. + freetype support
 
-.include <bsd.port.pre.mk>
-
 BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
@@ -33,7 +31,6 @@ RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
 		${X11BASE}/${TTFMINCHO}:${PORTSDIR}/japanese/kochi-ttfonts \
 		${X11BASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/kochi-ttfonts
-
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -90,6 +87,8 @@ PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
 		MKTEXLSR=${MKTEXLSR}
 
 PLIST_SUB=	TEXMF=${TEXMF}
+
+.include <bsd.port.pre.mk>
 
 BDPI?=		600
 SHRINK?=	6
