@@ -1,0 +1,5 @@
+libmcrypt is a cryptographic library that conveniently brings together
+a variety of ciphers for convenient use. libcrypt-nm is the latest version
+that does not attempt to use loadable modules.
+
+WWW: http://mcrypt.hellug.gr/lib/
