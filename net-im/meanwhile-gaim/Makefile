@@ -7,6 +7,7 @@
 
 PORTNAME=	meanwhile
 PORTVERSION=	0.78
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Provides Lotus Sametime support for Gaim
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/gaim:configure
+BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
 LIB_DEPENDS=	meanwhile.0:${PORTSDIR}/net/meanwhile
 RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
 
@@ -24,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack lthack gtk20
 USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	--with-gaim-source=${WRKDIRPREFIX}${.CURDIR}/../../net/gaim/work/gaim-${PORTVERSION}/src
+CONFIGURE_ARGS=	--with-gaim-source=${X11BASE}/include/gaim
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
