@@ -1,22 +1,22 @@
 # New ports collection makefile for:	gnomecore
-# Version required:			1.0.9
+# Version required:			1.0.53
 # Date created:				17 March 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-core-1.0.9
-PKGNAME=	gnomecore-1.0.9
+DISTNAME=	gnome-core-1.0.53
+PKGNAME=	gnomecore-1.0.53
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-core
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		gnomeprint.1:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.2:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
