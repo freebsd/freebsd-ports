@@ -11,10 +11,19 @@ share/locale/it/LC_MESSAGES/xMule.mo
 share/locale/ko/LC_MESSAGES/xMule.mo
 share/locale/pl/LC_MESSAGES/xMule.mo
 share/locale/tr/LC_MESSAGES/xMule.mo
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
 @unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ko 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ee 2>/dev/null || true
-@unexec rmdir %D/share/gnome/locale 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
