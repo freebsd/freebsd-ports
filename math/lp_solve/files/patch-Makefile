@@ -1,0 +1,26 @@
+--- Makefile.orig	Sat Jun  7 14:05:47 2003
++++ Makefile	Sat Jun  7 14:37:17 2003
+@@ -1,4 +1,4 @@
+-CC= gcc
++CC= %%CC%%
+ 
+ #should be OK in most situations:
+ #CFLAGS= -O
+@@ -9,7 +9,7 @@
+ #CFLAGS= -g -Aa -D_POSIX_SOURCE -DCHECK +FP VZOUiD
+ 
+ # nice for gcc
+-CFLAGS= -O3 -Wall -pedantic -ansi
++CFLAGS= %%CFLAGS%% -DCHECK
+ #CFLAGS= -g -Wall -pedantic -ansi
+ 
+ # Option -DCHECK checks for numerical problems during rounding of numbers.
+@@ -39,7 +39,7 @@
+ #ANSI math lib
+ #MATHLIB= -lM
+ #non-ANSI math lib, should also work
+-MATHLIB= -lm
++MATHLIB= -lm -lcompat
+ 
+ LPKSRC.c= lpkit.c solve.c debug.c read.c readmps.c hash.c presolve.c
+ LEXFILE.l= lex.l
