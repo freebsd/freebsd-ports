@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DANKOGAI
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+
 USE_PERL5=	YES
 USE_ZIP=	YES
 
