@@ -1,0 +1,19 @@
+*** bsd.c~	Wed Aug  7 23:34:07 1991
+--- bsd.c	Mon Oct 17 16:41:17 1994
+***************
+*** 98,104 ****
+  /* Truncate a file. */
+  int zootrunc(f) FILE *f;
+  {
+! 	extern long lseek();
+  	long seekpos;
+  	int fd = fileno(f);
+  	seekpos = lseek(fd, 0L, SEEK_CUR);
+--- 98,104 ----
+  /* Truncate a file. */
+  int zootrunc(f) FILE *f;
+  {
+! 	extern off_t lseek();
+  	long seekpos;
+  	int fd = fileno(f);
+  	seekpos = lseek(fd, 0L, SEEK_CUR);

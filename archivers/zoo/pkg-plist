@@ -1,0 +1,8 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/fiz
+bin/zoo
+@mode 644
+man/man1/fiz.1
+man/man1/zoo.1
