@@ -79,9 +79,16 @@ my $useindex = !-w "$versiondir";
 
 my $versionfile =
   $useindex
-  ? "$portsdir/".`cd $portsdir; make -VINDEXFILE`
+  ? "$portsdir/".`cd $portsdir; /usr/bin/make -VINDEXFILE`
   : "$versiondir/VERSIONS";
 chomp $versionfile;
+
+my %cachedenv = ('WITH_OPENSSL_BASE' => 'yes');
+foreach (qw(ARCH OPSYS OSREL OSVERSION PKGINSTALLVER PORTOBJFORMAT UID)) {
+    $cachedenv{$_} = `cd $portsdir; /usr/bin/make -V$_`;
+    chomp $cachedenv{$_};
+}
+my $makeenv = join ' ', '/usr/bin/env', map { "$_='$cachedenv{$_}'" } keys %cachedenv;
 
 my %pkgname;
 
@@ -96,7 +103,8 @@ sub wanted {
     || $File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os
       && ($File::Find::prune = 1)
       && (
-        $pkgname{$1} = `cd "$File::Find::name"; make -VPKGNAME 2>/dev/null`,
+        $pkgname{$1} =
+          `cd "$File::Find::name"; $makeenv /usr/bin/make -VPKGNAME 2>/dev/null`,
         chomp $pkgname{$1}
       );
 }
@@ -152,7 +160,8 @@ if (%backwards) {
     foreach (sort keys %backwards) {
         print " - $_: $backwards{$_}\n";
         if ($cvsblame && -d "$portsdir/$_/CVS") {
-            my @cvslog = `cd "$portsdir/$_"; cvs -R log -N -r. Makefile`;
+            my @cvslog =
+              `cd "$portsdir/$_"; /usr/bin/cvs -R log -N -r. Makefile`;
             print map "\t" . $_, grep /^-/ .. /^=/, @cvslog;
             print "\n";
         }
