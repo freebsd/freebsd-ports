@@ -21,7 +21,7 @@ LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
 		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
 		unicode.0:${PORTSDIR}/devel/libunicode \
-		gtkhtml.5:${PORTSDIR}/www/gtkhtml \
+		gtkhtml.6:${PORTSDIR}/www/gtkhtml \
 		ldap.1:${PORTSDIR}/net/openldap \
 		gpilotd.0:${PORTSDIR}/palm/gnomepilot
 
