@@ -6,7 +6,6 @@
     SUBDIR += 6to4
     SUBDIR += GeoIP
     SUBDIR += NeTraMet
-    SUBDIR += SSLtelnet
     SUBDIR += adasockets
     SUBDIR += adns
     SUBDIR += aggregate
