@@ -8,7 +8,8 @@
 PORTNAME=	wdic001-fpw
 PORTVERSION=	0.11
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.wdic.org/file/ \
+MASTER_SITES=	http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/ports/ \
+		http://www.wdic.org/file/ \
 		http://www.geocities.co.jp/SiliconValley-Bay/2872/
 DISTFILES=	${DICTFILES} wdc001fpw-${PORTVERSION}.tar.gz
 EXTRACT_ONLY=	wdc001fpw-${PORTVERSION}.tar.gz
