@@ -251,6 +251,12 @@ PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			${PLIST_RUBY_DIRS:S,DIR="${LOCALBASE}/,DIR=",}
 
+.if ${RUBY_VER} >= 1.8
+PLIST_SUB+=		RUBY18_ONLY=""
+.else
+PLIST_SUB+=		RUBY18_ONLY="@comment "
+.endif
+
 # require check
 .if defined(RUBY_REQUIRE)
 USE_RUBY=		yes
