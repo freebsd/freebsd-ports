@@ -136,6 +136,6 @@ fi
 
 echo "# Automatically generated file - manual changes may be lost" >${MODFILE}
 for module in $selbibles $sellexicons $selcomments $selcults $seldevotionals; do
-	echo "MODULE_FILES  = ${module}.zip " >>${MODFILE}
+	echo "MODULE_FILES += ${module}.zip " >>${MODFILE}
 done
 
