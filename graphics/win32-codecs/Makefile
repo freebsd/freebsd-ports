@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.49
+PORTVERSION=	0.50
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
@@ -27,6 +27,7 @@ ONLY_FOR_ARCHS= i386
 USE_QT2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 
 HAS_CONFIGURE=	yes
