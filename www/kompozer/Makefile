@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nvu
-DISTVERSION=	0.90rc1
+PORTVERSION=	0.90
 CATEGORIES=	www
-MASTER_SITES=	http://nvu.viapanda.com/0.90RC1/source/
-#MASTER_SITES=	http://cvs.nvu.com/download/
-DISTNAME=	${PORTNAME}-${DISTVERSION}-sources
+MASTER_SITES=	http://cvs.nvu.com/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
@@ -35,8 +34,7 @@ OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-#NVU=		${PORTNAME}-${PORTVERSION}
-NVU=		${PORTNAME}-0.90-RC1
+NVU=		${PORTNAME}-${PORTVERSION}
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
@@ -139,7 +137,7 @@ do-install:
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INST.endif
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.post.mk>
