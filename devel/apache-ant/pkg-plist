@@ -1,53 +1,8 @@
-ant/bin/antRun
-ant/lib/README
-ant/lib/ant-antlr.jar
-ant/lib/ant-apache-bsf.jar
-ant/lib/ant-apache-resolver.jar
-ant/lib/ant-commons-logging.jar
-ant/lib/ant-commons-net.jar
-ant/lib/ant-icontract.jar
-ant/lib/ant-jai.jar
-ant/lib/ant-jakarta-bcel.jar
-ant/lib/ant-jakarta-log4j.jar
-ant/lib/ant-jakarta-oro.jar
-ant/lib/ant-jakarta-regexp.jar
-ant/lib/ant-javamail.jar
-ant/lib/ant-jdepend.jar
-ant/lib/ant-jmf.jar
-ant/lib/ant-jsch.jar
-ant/lib/ant-junit.jar
-ant/lib/ant-launcher.jar
-ant/lib/ant-netrexx.jar
-ant/lib/ant-nodeps.jar
-ant/lib/ant-starteam.jar
-ant/lib/ant-stylebook.jar
-ant/lib/ant-swing.jar
-ant/lib/ant-trax.jar
-ant/lib/ant-vaj.jar
-ant/lib/ant-weblogic.jar
-ant/lib/ant-xalan1.jar
-ant/lib/ant-xalan2.jar
-ant/lib/ant-xslp.jar
-ant/lib/ant.jar
-ant/lib/xercesImpl.jar
-ant/lib/xml-apis.jar
 ant/LICENSE
 ant/README
 ant/WHATSNEW
-ant/etc/checkstyle/checkstyle-frames.xsl
-ant/etc/checkstyle/checkstyle-text.xsl
-ant/etc/checkstyle/checkstyle-xdoc.xsl
-ant/etc/ant-bootstrap.jar
-ant/etc/changelog.xsl
-ant/etc/coverage-frames.xsl
-ant/etc/jdepend-frames.xsl
-ant/etc/jdepend.xsl
-ant/etc/junit-frames.xsl
-ant/etc/junit-noframes.xsl
-ant/etc/log.xsl
-ant/etc/maudit-frames.xsl
-ant/etc/mmetrics-frames.xsl
-ant/etc/tagdiff.xsl
+ant/bin/antRun
+ant/docs/LICENSE
 ant/docs/ant2/FunctionalRequirements.html
 ant/docs/ant2/VFS.txt
 ant/docs/ant2/actionlist.html
@@ -55,6 +10,17 @@ ant/docs/ant2/features.html
 ant/docs/ant2/original-specification.html
 ant/docs/ant2/requested-features.html
 ant/docs/ant2/requested-features.txt
+ant/docs/ant_in_anger.html
+ant/docs/ant_task_guidelines.html
+ant/docs/antnews.html
+ant/docs/appendix_e.pdf
+ant/docs/breadcrumbs.js
+ant/docs/bylaws.html
+ant/docs/contributors.html
+ant/docs/cvs.html
+ant/docs/external.html
+ant/docs/faq.html
+ant/docs/favicon.ico
 ant/docs/images/JDJEditorsChoiceAward.jpg
 ant/docs/images/ant_logo.ico
 ant/docs/images/ant_logo_large.gif
@@ -80,6 +46,10 @@ ant/docs/images/tab-left.gif
 ant/docs/images/tab-right.gif
 ant/docs/images/tabSel-left.gif
 ant/docs/images/tabSel-right.gif
+ant/docs/index.html
+ant/docs/legal.html
+ant/docs/license.html
+ant/docs/mail.html
 ant/docs/manual/CoreTasks/ant.html
 ant/docs/manual/CoreTasks/antcall.html
 ant/docs/manual/CoreTasks/antstructure.html
@@ -101,8 +71,8 @@ ant/docs/manual/CoreTasks/cvs.html
 ant/docs/manual/CoreTasks/cvspass.html
 ant/docs/manual/CoreTasks/cvstagdiff.html
 ant/docs/manual/CoreTasks/cvsversion.html
-ant/docs/manual/CoreTasks/delete.html
 ant/docs/manual/CoreTasks/defaultexcludes.html
+ant/docs/manual/CoreTasks/delete.html
 ant/docs/manual/CoreTasks/deltree.html
 ant/docs/manual/CoreTasks/dependset.html
 ant/docs/manual/CoreTasks/dirname.html
@@ -129,6 +99,7 @@ ant/docs/manual/CoreTasks/mail.html
 ant/docs/manual/CoreTasks/manifest.html
 ant/docs/manual/CoreTasks/mkdir.html
 ant/docs/manual/CoreTasks/move.html
+ant/docs/manual/CoreTasks/nice.html
 ant/docs/manual/CoreTasks/pack.html
 ant/docs/manual/CoreTasks/parallel.html
 ant/docs/manual/CoreTasks/patch.html
@@ -175,6 +146,7 @@ ant/docs/manual/CoreTypes/namespace.html
 ant/docs/manual/CoreTypes/patternset.html
 ant/docs/manual/CoreTypes/permissions.html
 ant/docs/manual/CoreTypes/propertyset.html
+ant/docs/manual/CoreTypes/redirector.html
 ant/docs/manual/CoreTypes/selectors-program.html
 ant/docs/manual/CoreTypes/selectors.html
 ant/docs/manual/CoreTypes/xmlcatalog.html
@@ -185,6 +157,7 @@ ant/docs/manual/Integration/anttool1.gif
 ant/docs/manual/Integration/jext-plugin.html
 ant/docs/manual/Integration/remacc.gif
 ant/docs/manual/Integration/toolmenu.gif
+ant/docs/manual/LICENSE
 ant/docs/manual/OptionalTasks/BorlandEJBTasks.html
 ant/docs/manual/OptionalTasks/BorlandGenerateClient.html
 ant/docs/manual/OptionalTasks/antlr.html
@@ -257,11 +230,56 @@ ant/docs/manual/OptionalTasks/xmlvalidate.html
 ant/docs/manual/OptionalTypes/classfileset.html
 ant/docs/manual/OptionalTypes/extension.html
 ant/docs/manual/OptionalTypes/extensionset.html
-ant/docs/manual/api/org/apache/tools/ant/filters/util/ChainReaderHelper.html
-ant/docs/manual/api/org/apache/tools/ant/filters/util/JavaClassHelper.html
-ant/docs/manual/api/org/apache/tools/ant/filters/util/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/filters/util/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/filters/util/package-tree.html
+ant/docs/manual/antexternal.html
+ant/docs/manual/anttaskslist.html
+ant/docs/manual/api/allclasses-frame.html
+ant/docs/manual/api/allclasses-noframe.html
+ant/docs/manual/api/constant-values.html
+ant/docs/manual/api/deprecated-list.html
+ant/docs/manual/api/help-doc.html
+ant/docs/manual/api/index-all.html
+ant/docs/manual/api/index.html
+ant/docs/manual/api/org/apache/tools/ant/AntClassLoader.html
+ant/docs/manual/api/org/apache/tools/ant/AntTypeDefinition.html
+ant/docs/manual/api/org/apache/tools/ant/BuildEvent.html
+ant/docs/manual/api/org/apache/tools/ant/BuildException.html
+ant/docs/manual/api/org/apache/tools/ant/BuildListener.html
+ant/docs/manual/api/org/apache/tools/ant/BuildLogger.html
+ant/docs/manual/api/org/apache/tools/ant/ComponentHelper.html
+ant/docs/manual/api/org/apache/tools/ant/DefaultLogger.html
+ant/docs/manual/api/org/apache/tools/ant/DemuxInputStream.html
+ant/docs/manual/api/org/apache/tools/ant/DemuxOutputStream.html
+ant/docs/manual/api/org/apache/tools/ant/Diagnostics.html
+ant/docs/manual/api/org/apache/tools/ant/DirectoryScanner.html
+ant/docs/manual/api/org/apache/tools/ant/DynamicAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/DynamicAttributeNS.html
+ant/docs/manual/api/org/apache/tools/ant/DynamicConfigurator.html
+ant/docs/manual/api/org/apache/tools/ant/DynamicConfiguratorNS.html
+ant/docs/manual/api/org/apache/tools/ant/DynamicElement.html
+ant/docs/manual/api/org/apache/tools/ant/DynamicElementNS.html
+ant/docs/manual/api/org/apache/tools/ant/ExitException.html
+ant/docs/manual/api/org/apache/tools/ant/ExitStatusException.html
+ant/docs/manual/api/org/apache/tools/ant/FileScanner.html
+ant/docs/manual/api/org/apache/tools/ant/IntrospectionHelper.Creator.html
+ant/docs/manual/api/org/apache/tools/ant/IntrospectionHelper.html
+ant/docs/manual/api/org/apache/tools/ant/Location.html
+ant/docs/manual/api/org/apache/tools/ant/MagicNames.html
+ant/docs/manual/api/org/apache/tools/ant/Main.html
+ant/docs/manual/api/org/apache/tools/ant/NoBannerLogger.html
+ant/docs/manual/api/org/apache/tools/ant/PathTokenizer.html
+ant/docs/manual/api/org/apache/tools/ant/Project.html
+ant/docs/manual/api/org/apache/tools/ant/ProjectComponent.html
+ant/docs/manual/api/org/apache/tools/ant/ProjectHelper.html
+ant/docs/manual/api/org/apache/tools/ant/PropertyHelper.html
+ant/docs/manual/api/org/apache/tools/ant/RuntimeConfigurable.html
+ant/docs/manual/api/org/apache/tools/ant/SubBuildListener.html
+ant/docs/manual/api/org/apache/tools/ant/Target.html
+ant/docs/manual/api/org/apache/tools/ant/Task.html
+ant/docs/manual/api/org/apache/tools/ant/TaskAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/TaskContainer.html
+ant/docs/manual/api/org/apache/tools/ant/TypeAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/UnknownElement.html
+ant/docs/manual/api/org/apache/tools/ant/XmlLogger.html
 ant/docs/manual/api/org/apache/tools/ant/filters/BaseFilterReader.html
 ant/docs/manual/api/org/apache/tools/ant/filters/BaseParamFilterReader.html
 ant/docs/manual/api/org/apache/tools/ant/filters/ChainableReader.html
@@ -298,6 +316,11 @@ ant/docs/manual/api/org/apache/tools/ant/filters/TokenFilter.html
 ant/docs/manual/api/org/apache/tools/ant/filters/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/filters/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/filters/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/filters/util/ChainReaderHelper.html
+ant/docs/manual/api/org/apache/tools/ant/filters/util/JavaClassHelper.html
+ant/docs/manual/api/org/apache/tools/ant/filters/util/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/filters/util/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/filters/util/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/helper/AntXMLContext.html
 ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.AntHandler.html
 ant/docs/manual/api/org/apache/tools/ant/helper/ProjectHelper2.ElementHandler.html
@@ -336,490 +359,9 @@ ant/docs/manual/api/org/apache/tools/ant/loader/AntClassLoader2.html
 ant/docs/manual/api/org/apache/tools/ant/loader/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/loader/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/loader/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/CompilerAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/CompilerAdapterFactory.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Gcj.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Javac12.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Javac13.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/JavacExternal.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Jikes.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Jvc.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Kjc.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Sj.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/And.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Condition.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/ConditionBase.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Contains.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Equals.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/FilesMatch.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Http.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsFalse.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsReference.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsSet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsTrue.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Not.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Or.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Os.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Socket.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/ChangeLogTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsUser.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsVersion.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/EmailAddress.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/EmailTask.Encoding.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/EmailTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/Mailer.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/Message.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/MimeMailer.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheck.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckin.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckinDefault.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckout.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCreateTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMReconfigure.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/Continuus.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkdir.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnCheckout.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnlock.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCUpdate.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/ClearCase.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ClassCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPoolEntry.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/DoubleCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/FieldRefCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/FloatCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/IntegerCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/InterfaceMethodRefCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/LongCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/MethodRefCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/NameAndTypeCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/StringCPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/Utf8CPInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/AntAnalyzer.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFileIterator.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFileUtils.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/Depend.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/DirectoryIterator.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/JarFileIterator.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/CSharp.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetBaseMatchingTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetCompile.TargetTypes.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetCompile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetDefine.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetResource.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ilasm.TargetTypes.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ilasm.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ildasm.EncodingTypes.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ildasm.VisibilityOptions.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ildasm.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/ImportTypelib.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/JSharp.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/NetCommand.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/VisualBasicCompile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/WsdlToDotnet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/BorlandDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DDCreator.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DDCreatorHelper.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DescriptorHandler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EJBDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.CMPVersion.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.DTDLocation.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.NamingScheme.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/Ejbc.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbcHelper.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/GenericDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbc.EjbcException.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WLRun.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbc.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbcTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/InnerClassFilenameFilter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/JbossDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/JonasDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WLStop.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicTOPLinkDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.DBVendor.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/AntResolver.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/LocationResolver.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/URLResolver.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Compatability.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Compatibility.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/DeweyDecimal.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Extension.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionResolver.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionSet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionUtil.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtraAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibAvailableTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibDisplayTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibManifestTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibResolveTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/LibFileSet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Specification.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/Translate.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJAntTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJAntToolGUI.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJBuildInfo.BuildInterruptedException.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJExport.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJExportServlet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJImport.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJImportServlet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJLoad.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJLoadProjects.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJLoadServlet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJProjectDescription.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJToolsServlet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/Image.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/AbstractHotDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/GenericHotDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/HotDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/JonasHotDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/ServerDeploy.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/WebLogicHotDeploymentTool.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JJDoc.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JJTree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JavaCC.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.FormatAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/ClassNameReader.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/JlinkTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/jlink.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/DefaultJspCompilerAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JasperC.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JspCompilerAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JspCompilerAdapterFactory.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/Jasper41Mangler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.WebAppParameter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspMangler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspNameMangler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/WLJspc.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/AggregateTransformer.Format.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/AggregateTransformer.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BaseTest.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BatchTest.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/DOMUtil.NodeFilter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/DOMUtil.NodeListImpl.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/DOMUtil.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Enumerations.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/FormatterElement.TypeAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/FormatterElement.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitResultFormatter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.SummaryAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTest.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTestRunner.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitVersionHelper.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/SummaryJUnitResultFormatter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/XMLConstants.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/XMLJUnitResultFormatter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/XMLResultAggregator.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Xalan1Executor.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Xalan2Executor.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/AbstractMetamataTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MAudit.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetrics.GranularityAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetrics.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetricsStreamHandler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MParse.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.Action.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPFile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPRootFile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/MimeMail.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.AntRExecClient.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.RExecRead.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.RExecSubTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.RExecWrite.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/SetProxy.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.AntTelnetClient.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.TelnetRead.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.TelnetSubTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.TelnetWrite.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Add.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Base.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Change.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Counter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Delete.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Edit.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Fstat.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Handler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4HandlerAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Have.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Integrate.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Label.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Labelsync.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4OutputHandler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4OutputStream.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Reopen.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Resolve.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Revert.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Submit.P4SubmitAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Submit.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Sync.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/SimpleP4OutputHandler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/Pvcs.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/PvcsProject.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/AntStarTeamCheckOut.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.Attribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.NestedElement.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDefBase.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/AttributeInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassFile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassPathLoader.FileLoader.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassPathLoader.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/MethodInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/Utils.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovBase.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovMerge.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.Reference.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.ReportFormat.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.ReportType.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.Finalsnapshot.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.Javavm.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.Recordfromstart.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.Exclude.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.FilterElement.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.Include.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.Exclude.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.FilterElement.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.Include.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Socket.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/StringUtil.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Triggers.Method.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Triggers.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/XMLReport.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOS.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckin.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckout.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCmd.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSGet.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSLabel.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/AntSoundPlayer.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/SoundTask.BuildAlert.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/SoundTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/SplashTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/AbstractSshMessage.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/Directory.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/LogListener.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/SSHBase.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/SSHExec.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/SSHUserInfo.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/Scp.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/ScpFromMessage.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamCheckin.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamCheckout.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamLabel.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamList.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/TreeBasedTask.UnmatchedFileMap.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/TreeBasedTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/AbstractAccessTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Chgrp.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Chown.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Symlink.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.CurrentModUpdated.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.WritableFiles.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSADD.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKIN.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKOUT.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCP.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCREATE.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSConstants.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSGET.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSHISTORY.BriefCodediffNofile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSHISTORY.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSLABEL.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/Attrib.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ANTLR.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Cab.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/EchoProperties.FormatAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/EchoProperties.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/IContract.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Javah.ClassArgument.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Javah.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Native2Ascii.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/NetRexxC.TraceAttr.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/NetRexxC.VerboseAttr.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/NetRexxC.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Entry.Operation.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Entry.Type.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Entry.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Unit.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/RenameExtensions.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ReplaceRegExp.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Rpm.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Script.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/StyleBook.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Test.TestletEntry.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Test.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/TraXLiaison.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.Attribute.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.ValidatorErrorHandler.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XalanLiaison.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XslpLiaison.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/DefaultRmicAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/KaffeRmic.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/RmicAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/RmicAdapterFactory.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/SunRmic.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/WLRmic.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/AbstractCvsTask.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Ant.Reference.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Ant.html
@@ -834,8 +376,8 @@ ant/docs/manual/api/org/apache/tools/ant/taskdefs/Basename.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/BuildNumber.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/CVSPass.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/CallTarget.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/Chmod.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Checksum.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/Chmod.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Concat.TextElement.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Concat.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/ConditionTask.html
@@ -908,15 +450,16 @@ ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.Text.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroDef.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroInstance.Element.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MacroInstance.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.Attribute.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.Section.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/Manifest.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/ManifestException.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/ManifestTask.Mode.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/ManifestTask.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/MatchingTask.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Mkdir.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Move.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/Nice.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Pack.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Parallel.TaskList.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Parallel.html
@@ -979,16 +522,553 @@ ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTLoggerAware.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.Factory.Attribute.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.Factory.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.OutputProperty.html
-ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.Param.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/XSLTProcess.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/XmlProperty.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.ArchiveState.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.Duplicate.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.WhenEmpty.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/Zip.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/CompilerAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/CompilerAdapterFactory.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/DefaultCompilerAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Gcj.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Javac12.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Javac13.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/JavacExternal.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Jikes.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Jvc.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Kjc.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/Sj.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/And.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Condition.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/ConditionBase.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Contains.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Equals.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/FilesMatch.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Http.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsFalse.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsReference.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsSet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/IsTrue.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Not.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Or.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Os.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/Socket.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/ChangeLogTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsTagDiff.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsUser.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/CvsVersion.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/EmailAddress.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/EmailTask.Encoding.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/EmailTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/Mailer.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/Message.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/MimeMailer.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/email/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ANTLR.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Cab.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/EchoProperties.FormatAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/EchoProperties.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/IContract.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Javah.ClassArgument.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Javah.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Native2Ascii.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/NetRexxC.TraceAttr.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/NetRexxC.VerboseAttr.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/NetRexxC.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Entry.Operation.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Entry.Type.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Entry.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.Unit.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/PropertyFile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/RenameExtensions.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ReplaceRegExp.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Rpm.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Script.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/StyleBook.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Test.TestletEntry.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/Test.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/TraXLiaison.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.Attribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.Property.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.ValidatorErrorHandler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XMLValidateTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XalanLiaison.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/XslpLiaison.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheck.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckin.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckinDefault.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCheckout.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMCreateTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/CCMReconfigure.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/Continuus.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckin.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCCheckout.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCLock.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkattr.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkbl.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkdir.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMkelem.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklabel.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCMklbtype.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCRmtype.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnCheckout.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCUnlock.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/CCUpdate.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/ClearCase.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/AntAnalyzer.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFileIterator.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/ClassFileUtils.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/Depend.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/DirectoryIterator.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/JarFileIterator.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ClassCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/ConstantPoolEntry.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/DoubleCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/FieldRefCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/FloatCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/IntegerCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/InterfaceMethodRefCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/LongCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/MethodRefCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/NameAndTypeCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/StringCPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/Utf8CPInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/CSharp.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetBaseMatchingTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetCompile.TargetTypes.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetCompile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetDefine.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/DotnetResource.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ilasm.TargetTypes.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ilasm.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ildasm.EncodingTypes.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ildasm.VisibilityOptions.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/Ildasm.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/ImportTypelib.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/JSharp.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/NetCommand.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/VisualBasicCompile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/WsdlToDotnet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/BorlandDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/BorlandGenerateClient.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DDCreator.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DDCreatorHelper.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/DescriptorHandler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EJBDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.CMPVersion.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.DTDLocation.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.NamingScheme.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbJar.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/Ejbc.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/EjbcHelper.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/GenericDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbc.EjbcException.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbc.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/IPlanetEjbcTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/InnerClassFilenameFilter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/JbossDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/JonasDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WLRun.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WLStop.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WeblogicTOPLinkDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.DBVendor.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/WebsphereDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Compatability.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Compatibility.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/DeweyDecimal.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Extension.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionResolver.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionSet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtensionUtil.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/ExtraAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibAvailableTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibDisplayTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibManifestTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/JarLibResolveTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/LibFileSet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/Specification.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/AntResolver.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/LocationResolver.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/URLResolver.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/Translate.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJAntTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJAntToolGUI.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJBuildInfo.BuildInterruptedException.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJExport.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJExportServlet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJImport.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJImportServlet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJLoad.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJLoadProjects.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJLoadServlet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJProjectDescription.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/VAJToolsServlet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/Image.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/AbstractHotDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/GenericHotDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/HotDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/JonasHotDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/ServerDeploy.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/WebLogicHotDeploymentTool.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JJDoc.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JJTree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/JavaCC.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.FormatAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/JDependTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/ClassNameReader.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/JlinkTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/jlink.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/Jasper41Mangler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.WebAppParameter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspMangler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspNameMangler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/WLJspc.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/DefaultJspCompilerAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JasperC.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JspCompilerAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/JspCompilerAdapterFactory.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/AggregateTransformer.Format.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/AggregateTransformer.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BaseTest.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BatchTest.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/BriefJUnitResultFormatter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/DOMUtil.NodeFilter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/DOMUtil.NodeListImpl.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/DOMUtil.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Enumerations.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/FormatterElement.TypeAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/FormatterElement.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitResultFormatter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.ForkMode.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.SummaryAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTest.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitTestRunner.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/JUnitVersionHelper.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/PlainJUnitResultFormatter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/SummaryJUnitResultFormatter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/XMLConstants.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/XMLJUnitResultFormatter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/XMLResultAggregator.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Xalan1Executor.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/Xalan2Executor.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/AbstractMetamataTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MAudit.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetrics.GranularityAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetrics.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MMetricsStreamHandler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/MParse.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.Action.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPFile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.AntFTPRootFile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.FTPDirectoryScanner.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/FTP.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/MimeMail.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.AntRExecClient.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.RExecRead.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.RExecSubTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.RExecWrite.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/RExecTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/SetProxy.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.AntTelnetClient.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.TelnetRead.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.TelnetSubTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.TelnetWrite.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/TelnetTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Add.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Base.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Change.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Counter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Delete.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Edit.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Fstat.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Handler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4HandlerAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Have.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Integrate.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Label.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Labelsync.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4OutputHandler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4OutputStream.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Reopen.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Resolve.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Revert.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Submit.P4SubmitAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Submit.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Sync.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/SimpleP4OutputHandler.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/Pvcs.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/PvcsProject.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/AntStarTeamCheckOut.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.Attribute.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.NestedElement.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDef.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/ScriptDefBase.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovBase.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovMerge.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.Reference.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.ReportFormat.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.ReportType.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/CovReport.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.Finalsnapshot.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.Javavm.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.Recordfromstart.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Coverage.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.Exclude.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.FilterElement.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.Include.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Filters.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.Exclude.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.FilterElement.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.Include.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/ReportFilters.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Socket.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/StringUtil.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Triggers.Method.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/Triggers.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/XMLReport.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassFile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassPathLoader.FileLoader.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/ClassPathLoader.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/MethodInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/Utils.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/AttributeInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOS.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckin.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCheckout.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSCmd.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSGet.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/SOSLabel.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/AntSoundPlayer.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/SoundTask.BuildAlert.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/SoundTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/SplashTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/AbstractSshMessage.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/Directory.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/LogListener.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/SSHBase.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/SSHExec.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/SSHUserInfo.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/Scp.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/ScpFromMessage.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/ScpToMessage.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamCheckin.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamCheckout.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamLabel.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamList.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/TreeBasedTask.UnmatchedFileMap.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/TreeBasedTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/AbstractAccessTask.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Chgrp.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Chown.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/Symlink.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.CurrentModUpdated.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.WritableFiles.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSADD.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKIN.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKOUT.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCP.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCREATE.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSConstants.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSGET.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSHISTORY.BriefCodediffNofile.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSHISTORY.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSLABEL.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/Attrib.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/taskdefs/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/DefaultRmicAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/KaffeRmic.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/RmicAdapter.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/RmicAdapterFactory.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/SunRmic.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/WLRmic.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/types/AbstractFileSet.html
+ant/docs/manual/api/org/apache/tools/ant/types/AntFilterReader.html
+ant/docs/manual/api/org/apache/tools/ant/types/Assertions.BaseAssertion.html
+ant/docs/manual/api/org/apache/tools/ant/types/Assertions.DisabledAssertion.html
+ant/docs/manual/api/org/apache/tools/ant/types/Assertions.EnabledAssertion.html
+ant/docs/manual/api/org/apache/tools/ant/types/Assertions.html
+ant/docs/manual/api/org/apache/tools/ant/types/Commandline.Argument.html
+ant/docs/manual/api/org/apache/tools/ant/types/Commandline.Marker.html
+ant/docs/manual/api/org/apache/tools/ant/types/Commandline.html
+ant/docs/manual/api/org/apache/tools/ant/types/CommandlineJava.SysProperties.html
+ant/docs/manual/api/org/apache/tools/ant/types/CommandlineJava.html
+ant/docs/manual/api/org/apache/tools/ant/types/DTDLocation.html
+ant/docs/manual/api/org/apache/tools/ant/types/DataType.html
+ant/docs/manual/api/org/apache/tools/ant/types/Description.html
+ant/docs/manual/api/org/apache/tools/ant/types/DirSet.html
+ant/docs/manual/api/org/apache/tools/ant/types/EnumeratedAttribute.html
+ant/docs/manual/api/org/apache/tools/ant/types/Environment.Variable.html
+ant/docs/manual/api/org/apache/tools/ant/types/Environment.html
+ant/docs/manual/api/org/apache/tools/ant/types/FileList.FileName.html
+ant/docs/manual/api/org/apache/tools/ant/types/FileList.html
+ant/docs/manual/api/org/apache/tools/ant/types/FileSet.html
+ant/docs/manual/api/org/apache/tools/ant/types/FilterChain.html
+ant/docs/manual/api/org/apache/tools/ant/types/FilterSet.Filter.html
+ant/docs/manual/api/org/apache/tools/ant/types/FilterSet.FiltersFile.html
+ant/docs/manual/api/org/apache/tools/ant/types/FilterSet.html
+ant/docs/manual/api/org/apache/tools/ant/types/FilterSetCollection.html
+ant/docs/manual/api/org/apache/tools/ant/types/FlexInteger.html
+ant/docs/manual/api/org/apache/tools/ant/types/Mapper.MapperType.html
+ant/docs/manual/api/org/apache/tools/ant/types/Mapper.html
+ant/docs/manual/api/org/apache/tools/ant/types/Parameter.html
+ant/docs/manual/api/org/apache/tools/ant/types/Parameterizable.html
+ant/docs/manual/api/org/apache/tools/ant/types/Path.PathElement.html
+ant/docs/manual/api/org/apache/tools/ant/types/Path.html
+ant/docs/manual/api/org/apache/tools/ant/types/PatternSet.NameEntry.html
+ant/docs/manual/api/org/apache/tools/ant/types/PatternSet.html
+ant/docs/manual/api/org/apache/tools/ant/types/Permissions.Permission.html
+ant/docs/manual/api/org/apache/tools/ant/types/Permissions.html
+ant/docs/manual/api/org/apache/tools/ant/types/PropertySet.BuiltinPropertySetName.html
+ant/docs/manual/api/org/apache/tools/ant/types/PropertySet.PropertyRef.html
+ant/docs/manual/api/org/apache/tools/ant/types/PropertySet.html
+ant/docs/manual/api/org/apache/tools/ant/types/RedirectorElement.html
+ant/docs/manual/api/org/apache/tools/ant/types/Reference.html
+ant/docs/manual/api/org/apache/tools/ant/types/RegularExpression.html
+ant/docs/manual/api/org/apache/tools/ant/types/Resource.html
+ant/docs/manual/api/org/apache/tools/ant/types/ResourceFactory.html
+ant/docs/manual/api/org/apache/tools/ant/types/ResourceLocation.html
+ant/docs/manual/api/org/apache/tools/ant/types/Substitution.html
+ant/docs/manual/api/org/apache/tools/ant/types/XMLCatalog.html
+ant/docs/manual/api/org/apache/tools/ant/types/ZipFileSet.html
+ant/docs/manual/api/org/apache/tools/ant/types/ZipScanner.html
+ant/docs/manual/api/org/apache/tools/ant/types/optional/ScriptFilter.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/depend/ClassfileSet.ClassRoot.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/depend/ClassfileSet.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/depend/DependScanner.html
@@ -1011,28 +1091,17 @@ ant/docs/manual/api/org/apache/tools/ant/types/optional/image/TransformOperation
 ant/docs/manual/api/org/apache/tools/ant/types/optional/image/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/image/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/image/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/types/optional/ScriptFilter.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/types/optional/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/types/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/types/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/types/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/types/resolver/ApacheCatalog.html
 ant/docs/manual/api/org/apache/tools/ant/types/resolver/ApacheCatalogResolver.html
 ant/docs/manual/api/org/apache/tools/ant/types/resolver/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/types/resolver/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/types/resolver/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/Algorithm.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/Cache.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/DigestAlgorithm.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/EqualComparator.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/HashvalueAlgorithm.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.AlgorithmName.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.CacheName.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.ComparatorName.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/PropertiesfileCache.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/AndSelector.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/BaseExtendSelector.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/BaseSelector.html
@@ -1062,70 +1131,73 @@ ant/docs/manual/api/org/apache/tools/ant/types/selectors/SelectorUtils.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/SizeSelector.ByteUnits.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/SizeSelector.SizeComparisons.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/SizeSelector.html
-ant/docs/manual/api/org/apache/tools/ant/types/selectors/TypeSelector.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/TypeSelector.FileType.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/TypeSelector.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/Algorithm.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/Cache.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/DigestAlgorithm.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/EqualComparator.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/HashvalueAlgorithm.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.AlgorithmName.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.CacheName.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.ComparatorName.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/ModifiedSelector.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/PropertiesfileCache.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/types/selectors/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/types/AbstractFileSet.html
-ant/docs/manual/api/org/apache/tools/ant/types/AntFilterReader.html
-ant/docs/manual/api/org/apache/tools/ant/types/Assertions.BaseAssertion.html
-ant/docs/manual/api/org/apache/tools/ant/types/Assertions.DisabledAssertion.html
-ant/docs/manual/api/org/apache/tools/ant/types/Assertions.EnabledAssertion.html
-ant/docs/manual/api/org/apache/tools/ant/types/Assertions.html
-ant/docs/manual/api/org/apache/tools/ant/types/Commandline.Argument.html
-ant/docs/manual/api/org/apache/tools/ant/types/Commandline.Marker.html
-ant/docs/manual/api/org/apache/tools/ant/types/Commandline.html
-ant/docs/manual/api/org/apache/tools/ant/types/CommandlineJava.SysProperties.html
-ant/docs/manual/api/org/apache/tools/ant/types/CommandlineJava.html
-ant/docs/manual/api/org/apache/tools/ant/types/DTDLocation.html
-ant/docs/manual/api/org/apache/tools/ant/types/DataType.html
-ant/docs/manual/api/org/apache/tools/ant/types/Description.html
-ant/docs/manual/api/org/apache/tools/ant/types/DirSet.html
-ant/docs/manual/api/org/apache/tools/ant/types/EnumeratedAttribute.html
-ant/docs/manual/api/org/apache/tools/ant/types/Environment.Variable.html
-ant/docs/manual/api/org/apache/tools/ant/types/Environment.html
-ant/docs/manual/api/org/apache/tools/ant/types/FileList.html
-ant/docs/manual/api/org/apache/tools/ant/types/FileSet.html
-ant/docs/manual/api/org/apache/tools/ant/types/FilterChain.html
-ant/docs/manual/api/org/apache/tools/ant/types/FilterSet.Filter.html
-ant/docs/manual/api/org/apache/tools/ant/types/FilterSet.FiltersFile.html
-ant/docs/manual/api/org/apache/tools/ant/types/FilterSet.html
-ant/docs/manual/api/org/apache/tools/ant/types/FilterSetCollection.html
-ant/docs/manual/api/org/apache/tools/ant/types/FlexInteger.html
-ant/docs/manual/api/org/apache/tools/ant/types/Mapper.MapperType.html
-ant/docs/manual/api/org/apache/tools/ant/types/Mapper.html
-ant/docs/manual/api/org/apache/tools/ant/types/Parameter.html
-ant/docs/manual/api/org/apache/tools/ant/types/Parameterizable.html
-ant/docs/manual/api/org/apache/tools/ant/types/Path.PathElement.html
-ant/docs/manual/api/org/apache/tools/ant/types/Path.html
-ant/docs/manual/api/org/apache/tools/ant/types/PatternSet.NameEntry.html
-ant/docs/manual/api/org/apache/tools/ant/types/PatternSet.html
-ant/docs/manual/api/org/apache/tools/ant/types/Permissions.Permission.html
-ant/docs/manual/api/org/apache/tools/ant/types/Permissions.html
-ant/docs/manual/api/org/apache/tools/ant/types/PropertySet.BuiltinPropertySetName.html
-ant/docs/manual/api/org/apache/tools/ant/types/PropertySet.PropertyRef.html
-ant/docs/manual/api/org/apache/tools/ant/types/PropertySet.html
-ant/docs/manual/api/org/apache/tools/ant/types/Reference.html
-ant/docs/manual/api/org/apache/tools/ant/types/RegularExpression.html
-ant/docs/manual/api/org/apache/tools/ant/types/Resource.html
-ant/docs/manual/api/org/apache/tools/ant/types/ResourceFactory.html
-ant/docs/manual/api/org/apache/tools/ant/types/ResourceLocation.html
-ant/docs/manual/api/org/apache/tools/ant/types/Substitution.html
-ant/docs/manual/api/org/apache/tools/ant/types/XMLCatalog.html
-ant/docs/manual/api/org/apache/tools/ant/types/ZipFileSet.html
-ant/docs/manual/api/org/apache/tools/ant/types/ZipScanner.html
-ant/docs/manual/api/org/apache/tools/ant/types/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/types/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/types/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/util/ChainedMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/ClasspathUtils.Delegate.html
+ant/docs/manual/api/org/apache/tools/ant/util/ClasspathUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/CollectionUtils.EmptyEnumeration.html
+ant/docs/manual/api/org/apache/tools/ant/util/CollectionUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/CompositeMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/ConcatFileInputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/ContainerMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/DOMElementWriter.html
+ant/docs/manual/api/org/apache/tools/ant/util/DateUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/FileNameMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/FileUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/FlatFileNameMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/GlobPatternMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/IdentityMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/JAXPUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/JavaEnvUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/KeepAliveInputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/KeepAliveOutputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/LazyFileOutputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/LazyHashtable.html
+ant/docs/manual/api/org/apache/tools/ant/util/LeadPipeInputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/LineTokenizer.html
+ant/docs/manual/api/org/apache/tools/ant/util/LoaderUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/MergingMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/OutputStreamFunneler.html
+ant/docs/manual/api/org/apache/tools/ant/util/PackageNameMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/ReaderInputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/RegexpPatternMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/ResourceUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/ScriptRunner.html
+ant/docs/manual/api/org/apache/tools/ant/util/SourceFileScanner.html
+ant/docs/manual/api/org/apache/tools/ant/util/StringUtils.html
+ant/docs/manual/api/org/apache/tools/ant/util/TaskLogger.html
+ant/docs/manual/api/org/apache/tools/ant/util/TeeOutputStream.html
+ant/docs/manual/api/org/apache/tools/ant/util/TimeoutObserver.html
+ant/docs/manual/api/org/apache/tools/ant/util/Tokenizer.html
+ant/docs/manual/api/org/apache/tools/ant/util/UnPackageNameMapper.html
+ant/docs/manual/api/org/apache/tools/ant/util/Watchdog.html
+ant/docs/manual/api/org/apache/tools/ant/util/WeakishReference.HardReference.html
+ant/docs/manual/api/org/apache/tools/ant/util/WeakishReference.html
+ant/docs/manual/api/org/apache/tools/ant/util/depend/AbstractAnalyzer.html
+ant/docs/manual/api/org/apache/tools/ant/util/depend/DependencyAnalyzer.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel/AncestorAnalyzer.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel/DependencyVisitor.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel/FullAnalyzer.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/util/depend/AbstractAnalyzer.html
-ant/docs/manual/api/org/apache/tools/ant/util/depend/DependencyAnalyzer.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/util/depend/package-tree.html
@@ -1139,6 +1211,9 @@ ant/docs/manual/api/org/apache/tools/ant/util/optional/WeakishReference12.html
 ant/docs/manual/api/org/apache/tools/ant/util/optional/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/util/optional/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/util/optional/package-tree.html
+ant/docs/manual/api/org/apache/tools/ant/util/package-frame.html
+ant/docs/manual/api/org/apache/tools/ant/util/package-summary.html
+ant/docs/manual/api/org/apache/tools/ant/util/package-tree.html
 ant/docs/manual/api/org/apache/tools/ant/util/regexp/JakartaOroMatcher.html
 ant/docs/manual/api/org/apache/tools/ant/util/regexp/JakartaOroRegexp.html
 ant/docs/manual/api/org/apache/tools/ant/util/regexp/JakartaRegexpMatcher.html
@@ -1153,80 +1228,6 @@ ant/docs/manual/api/org/apache/tools/ant/util/regexp/RegexpUtil.html
 ant/docs/manual/api/org/apache/tools/ant/util/regexp/package-frame.html
 ant/docs/manual/api/org/apache/tools/ant/util/regexp/package-summary.html
 ant/docs/manual/api/org/apache/tools/ant/util/regexp/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/util/ClasspathUtils.Delegate.html
-ant/docs/manual/api/org/apache/tools/ant/util/ClasspathUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/CollectionUtils.EmptyEnumeration.html
-ant/docs/manual/api/org/apache/tools/ant/util/CollectionUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/DOMElementWriter.html
-ant/docs/manual/api/org/apache/tools/ant/util/DateUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/FileNameMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/FileUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/FlatFileNameMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/GlobPatternMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/IdentityMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/JAXPUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/JavaEnvUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/KeepAliveInputStream.html
-ant/docs/manual/api/org/apache/tools/ant/util/KeepAliveOutputStream.html
-ant/docs/manual/api/org/apache/tools/ant/util/LazyFileOutputStream.html
-ant/docs/manual/api/org/apache/tools/ant/util/LazyHashtable.html
-ant/docs/manual/api/org/apache/tools/ant/util/LineTokenizer.html
-ant/docs/manual/api/org/apache/tools/ant/util/LoaderUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/MergingMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/PackageNameMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/RegexpPatternMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/ResourceUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/ScriptRunner.html
-ant/docs/manual/api/org/apache/tools/ant/util/SourceFileScanner.html
-ant/docs/manual/api/org/apache/tools/ant/util/StringUtils.html
-ant/docs/manual/api/org/apache/tools/ant/util/TaskLogger.html
-ant/docs/manual/api/org/apache/tools/ant/util/TeeOutputStream.html
-ant/docs/manual/api/org/apache/tools/ant/util/TimeoutObserver.html
-ant/docs/manual/api/org/apache/tools/ant/util/Tokenizer.html
-ant/docs/manual/api/org/apache/tools/ant/util/UnPackageNameMapper.html
-ant/docs/manual/api/org/apache/tools/ant/util/Watchdog.html
-ant/docs/manual/api/org/apache/tools/ant/util/WeakishReference.HardReference.html
-ant/docs/manual/api/org/apache/tools/ant/util/WeakishReference.html
-ant/docs/manual/api/org/apache/tools/ant/util/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/util/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/util/package-tree.html
-ant/docs/manual/api/org/apache/tools/ant/AntClassLoader.html
-ant/docs/manual/api/org/apache/tools/ant/AntTypeDefinition.html
-ant/docs/manual/api/org/apache/tools/ant/BuildEvent.html
-ant/docs/manual/api/org/apache/tools/ant/BuildException.html
-ant/docs/manual/api/org/apache/tools/ant/BuildListener.html
-ant/docs/manual/api/org/apache/tools/ant/BuildLogger.html
-ant/docs/manual/api/org/apache/tools/ant/ComponentHelper.html
-ant/docs/manual/api/org/apache/tools/ant/DefaultLogger.html
-ant/docs/manual/api/org/apache/tools/ant/DemuxInputStream.html
-ant/docs/manual/api/org/apache/tools/ant/DemuxOutputStream.html
-ant/docs/manual/api/org/apache/tools/ant/Diagnostics.html
-ant/docs/manual/api/org/apache/tools/ant/DirectoryScanner.html
-ant/docs/manual/api/org/apache/tools/ant/DynamicConfigurator.html
-ant/docs/manual/api/org/apache/tools/ant/ExitException.html
-ant/docs/manual/api/org/apache/tools/ant/FileScanner.html
-ant/docs/manual/api/org/apache/tools/ant/IntrospectionHelper.Creator.html
-ant/docs/manual/api/org/apache/tools/ant/IntrospectionHelper.html
-ant/docs/manual/api/org/apache/tools/ant/Location.html
-ant/docs/manual/api/org/apache/tools/ant/MagicNames.html
-ant/docs/manual/api/org/apache/tools/ant/Main.html
-ant/docs/manual/api/org/apache/tools/ant/NoBannerLogger.html
-ant/docs/manual/api/org/apache/tools/ant/PathTokenizer.html
-ant/docs/manual/api/org/apache/tools/ant/Project.html
-ant/docs/manual/api/org/apache/tools/ant/ProjectComponent.html
-ant/docs/manual/api/org/apache/tools/ant/ProjectHelper.html
-ant/docs/manual/api/org/apache/tools/ant/PropertyHelper.html
-ant/docs/manual/api/org/apache/tools/ant/RuntimeConfigurable.html
-ant/docs/manual/api/org/apache/tools/ant/Target.html
-ant/docs/manual/api/org/apache/tools/ant/Task.html
-ant/docs/manual/api/org/apache/tools/ant/TaskAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/TaskContainer.html
-ant/docs/manual/api/org/apache/tools/ant/TypeAdapter.html
-ant/docs/manual/api/org/apache/tools/ant/UnknownElement.html
-ant/docs/manual/api/org/apache/tools/ant/XmlLogger.html
-ant/docs/manual/api/org/apache/tools/ant/package-frame.html
-ant/docs/manual/api/org/apache/tools/ant/package-summary.html
-ant/docs/manual/api/org/apache/tools/ant/package-tree.html
 ant/docs/manual/api/org/apache/tools/bzip2/BZip2Constants.html
 ant/docs/manual/api/org/apache/tools/bzip2/CBZip2InputStream.html
 ant/docs/manual/api/org/apache/tools/bzip2/CBZip2OutputStream.html
@@ -1261,13 +1262,6 @@ ant/docs/manual/api/org/apache/tools/zip/ZipShort.html
 ant/docs/manual/api/org/apache/tools/zip/package-frame.html
 ant/docs/manual/api/org/apache/tools/zip/package-summary.html
 ant/docs/manual/api/org/apache/tools/zip/package-tree.html
-ant/docs/manual/api/allclasses-frame.html
-ant/docs/manual/api/allclasses-noframe.html
-ant/docs/manual/api/constant-values.html
-ant/docs/manual/api/deprecated-list.html
-ant/docs/manual/api/help-doc.html
-ant/docs/manual/api/index-all.html
-ant/docs/manual/api/index.html
 ant/docs/manual/api/overview-frame.html
 ant/docs/manual/api/overview-summary.html
 ant/docs/manual/api/overview-tree.html
@@ -1275,10 +1269,6 @@ ant/docs/manual/api/package-list
 ant/docs/manual/api/packages.html
 ant/docs/manual/api/serialized-form.html
 ant/docs/manual/api/stylesheet.css
-ant/docs/manual/stylesheets/antmanual.css
-ant/docs/manual/LICENSE
-ant/docs/manual/antexternal.html
-ant/docs/manual/anttaskslist.html
 ant/docs/manual/base_task_classes.html
 ant/docs/manual/conceptstypeslist.html
 ant/docs/manual/coretasklist.html
@@ -1300,6 +1290,7 @@ ant/docs/manual/optionaltasklist.html
 ant/docs/manual/platform.html
 ant/docs/manual/running.html
 ant/docs/manual/runninglist.html
+ant/docs/manual/stylesheets/antmanual.css
 ant/docs/manual/sysclasspath.html
 ant/docs/manual/tasksoverview.html
 ant/docs/manual/toc.html
@@ -1307,8 +1298,12 @@ ant/docs/manual/tutorial-writing-tasks-src.zip
 ant/docs/manual/tutorial-writing-tasks.html
 ant/docs/manual/using.html
 ant/docs/manual/usinglist.html
-ant/docs/projects/antidote/images/screenshot.jpg
+ant/docs/mission.html
+ant/docs/page.css
+ant/docs/problems.html
+ant/docs/projects.html
 ant/docs/projects/antidote/design.html
+ant/docs/projects/antidote/images/screenshot.jpg
 ant/docs/projects/antidote/index.html
 ant/docs/projects/antidote/module.html
 ant/docs/projects/antlib/antlib_classloaders.html
@@ -1319,117 +1314,141 @@ ant/docs/projects/antlib/antlib_roadmap.html
 ant/docs/projects/antlib/index.html
 ant/docs/projects/antlib/roles.html
 ant/docs/projects/index.html
-ant/docs/LICENSE
-ant/docs/ant_in_anger.html
-ant/docs/ant_task_guidelines.html
-ant/docs/antnews.html
-ant/docs/appendix_e.pdf
-ant/docs/breadcrumbs.js
-ant/docs/bylaws.html
-ant/docs/contributors.html
-ant/docs/cvs.html
-ant/docs/external.html
-ant/docs/faq.html
-ant/docs/favicon.ico
-ant/docs/index.html
-ant/docs/legal.html
-ant/docs/license.html
-ant/docs/mail.html
-ant/docs/mission.html
-ant/docs/page.css
-ant/docs/problems.html
-ant/docs/projects.html
 ant/docs/resources.html
+ant/etc/ant-bootstrap.jar
+ant/etc/changelog.xsl
+ant/etc/checkstyle/checkstyle-frames.xsl
+ant/etc/checkstyle/checkstyle-text.xsl
+ant/etc/checkstyle/checkstyle-xdoc.xsl
+ant/etc/coverage-frames.xsl
+ant/etc/jdepend-frames.xsl
+ant/etc/jdepend.xsl
+ant/etc/junit-frames-xalan1.xsl
+ant/etc/junit-frames.xsl
+ant/etc/junit-noframes.xsl
+ant/etc/log.xsl
+ant/etc/maudit-frames.xsl
+ant/etc/mmetrics-frames.xsl
+ant/etc/tagdiff.xsl
+ant/lib/README
+ant/lib/ant-antlr.jar
+ant/lib/ant-apache-bcel.jar
+ant/lib/ant-apache-bsf.jar
+ant/lib/ant-apache-log4j.jar
+ant/lib/ant-apache-oro.jar
+ant/lib/ant-apache-regexp.jar
+ant/lib/ant-apache-resolver.jar
+ant/lib/ant-commons-logging.jar
+ant/lib/ant-commons-net.jar
+ant/lib/ant-icontract.jar
+ant/lib/ant-jai.jar
+ant/lib/ant-javamail.jar
+ant/lib/ant-jdepend.jar
+ant/lib/ant-jmf.jar
+ant/lib/ant-jsch.jar
+ant/lib/ant-junit.jar
+ant/lib/ant-launcher.jar
+ant/lib/ant-netrexx.jar
+ant/lib/ant-nodeps.jar
+ant/lib/ant-starteam.jar
+ant/lib/ant-stylebook.jar
+ant/lib/ant-swing.jar
+ant/lib/ant-trax.jar
+ant/lib/ant-vaj.jar
+ant/lib/ant-weblogic.jar
+ant/lib/ant-xalan1.jar
+ant/lib/ant-xslp.jar
+ant/lib/ant.jar
+ant/lib/xercesImpl.jar
+ant/lib/xml-apis.jar
 bin/ant
-share/nls/POSIX
-share/nls/en_US.US-ASCII
-@dirrm ant/bin
 @dirrm ant/lib
 @dirrm ant/etc/checkstyle
 @dirrm ant/etc
-@dirrm ant/docs/ant2
-@dirrm ant/docs/images
-@dirrm ant/docs/manual/CoreTasks
-@dirrm ant/docs/manual/CoreTypes
-@dirrm ant/docs/manual/Integration
-@dirrm ant/docs/manual/OptionalTasks
-@dirrm ant/docs/manual/OptionalTypes
-@dirrm ant/docs/manual/api/org/apache/tools/ant/filters/util
-@dirrm ant/docs/manual/api/org/apache/tools/ant/filters
-@dirrm ant/docs/manual/api/org/apache/tools/ant/helper
-@dirrm ant/docs/manual/api/org/apache/tools/ant/input
-@dirrm ant/docs/manual/api/org/apache/tools/ant/launch
-@dirrm ant/docs/manual/api/org/apache/tools/ant/listener
-@dirrm ant/docs/manual/api/org/apache/tools/ant/loader
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/email
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script
+@dirrm ant/docs/projects/antlib
+@dirrm ant/docs/projects/antidote/images
+@dirrm ant/docs/projects/antidote
+@dirrm ant/docs/projects
+@dirrm ant/docs/manual/stylesheets
+@dirrm ant/docs/manual/api/org/apache/tools/zip
+@dirrm ant/docs/manual/api/org/apache/tools/tar
+@dirrm ant/docs/manual/api/org/apache/tools/mail
+@dirrm ant/docs/manual/api/org/apache/tools/bzip2
+@dirrm ant/docs/manual/api/org/apache/tools/ant/util/regexp
+@dirrm ant/docs/manual/api/org/apache/tools/ant/util/optional
+@dirrm ant/docs/manual/api/org/apache/tools/ant/util/facade
+@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel
+@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend
+@dirrm ant/docs/manual/api/org/apache/tools/ant/util
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types/resolver
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/image
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/depend
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional
+@dirrm ant/docs/manual/api/org/apache/tools/ant/types
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos
 @dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode/attributes
 @dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka/bytecode
 @dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sitraka
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sos
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/sound
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/splash
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ssh
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/unix
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/windows
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/script
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/scm
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/pvcs
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/net
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/metamata
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/junit
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jlink
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jdepend
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/javacc
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/j2ee
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/image
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ide
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/i18n
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension/resolvers
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/extension
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ejb
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/dotnet
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend/constantpool
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/depend
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/clearcase
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional/ccm
 @dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/optional
-@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/rmic
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/email
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/cvslib
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/condition
+@dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs/compilers
 @dirrm ant/docs/manual/api/org/apache/tools/ant/taskdefs
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/depend
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional/image
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types/optional
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types/resolver
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors/modifiedselector
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types/selectors
-@dirrm ant/docs/manual/api/org/apache/tools/ant/types
-@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend/bcel
-@dirrm ant/docs/manual/api/org/apache/tools/ant/util/depend
-@dirrm ant/docs/manual/api/org/apache/tools/ant/util/facade
-@dirrm ant/docs/manual/api/org/apache/tools/ant/util/optional
-@dirrm ant/docs/manual/api/org/apache/tools/ant/util/regexp
-@dirrm ant/docs/manual/api/org/apache/tools/ant/util
+@dirrm ant/docs/manual/api/org/apache/tools/ant/loader
+@dirrm ant/docs/manual/api/org/apache/tools/ant/listener
+@dirrm ant/docs/manual/api/org/apache/tools/ant/launch
+@dirrm ant/docs/manual/api/org/apache/tools/ant/input
+@dirrm ant/docs/manual/api/org/apache/tools/ant/helper
+@dirrm ant/docs/manual/api/org/apache/tools/ant/filters/util
+@dirrm ant/docs/manual/api/org/apache/tools/ant/filters
 @dirrm ant/docs/manual/api/org/apache/tools/ant
-@dirrm ant/docs/manual/api/org/apache/tools/bzip2
-@dirrm ant/docs/manual/api/org/apache/tools/mail
-@dirrm ant/docs/manual/api/org/apache/tools/tar
-@dirrm ant/docs/manual/api/org/apache/tools/zip
 @dirrm ant/docs/manual/api/org/apache/tools
 @dirrm ant/docs/manual/api/org/apache
 @dirrm ant/docs/manual/api/org
 @dirrm ant/docs/manual/api
-@dirrm ant/docs/manual/stylesheets
+@dirrm ant/docs/manual/OptionalTypes
+@dirrm ant/docs/manual/OptionalTasks
+@dirrm ant/docs/manual/Integration
+@dirrm ant/docs/manual/CoreTypes
+@dirrm ant/docs/manual/CoreTasks
 @dirrm ant/docs/manual
-@dirrm ant/docs/projects/antidote/images
-@dirrm ant/docs/projects/antidote
-@dirrm ant/docs/projects/antlib
-@dirrm ant/docs/projects
+@dirrm ant/docs/images
+@dirrm ant/docs/ant2
 @dirrm ant/docs
+@dirrm ant/bin
 @dirrm ant
