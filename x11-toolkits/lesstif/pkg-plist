@@ -146,46 +146,45 @@ share/doc/LessTif/AUTHORS
 share/doc/LessTif/BUG-REPORTING
 share/doc/LessTif/COPYING
 share/doc/LessTif/COPYING.LIB
+share/doc/LessTif/COPYING.LIB.html
 share/doc/LessTif/CREDITS
+share/doc/LessTif/FAQ.html
 share/doc/LessTif/INSTALL
+share/doc/LessTif/INSTALL.html
 share/doc/LessTif/KNOWN_BUGS
 share/doc/LessTif/NEWS
 share/doc/LessTif/README
 share/doc/LessTif/RELEASE-POLICY
 share/doc/LessTif/TODO
-share/doc/LessTif/doc/INSTALL.html
-share/doc/LessTif/doc/COPYING.LIB.html
-share/doc/LessTif/doc/FAQ.html
-share/doc/LessTif/doc/apps.html
-share/doc/LessTif/doc/bug-reporting.html
-share/doc/LessTif/doc/bugs.html
-share/doc/LessTif/doc/button.html
-share/doc/LessTif/doc/cdrom.html
-share/doc/LessTif/doc/core.html
-share/doc/LessTif/doc/current.html
-share/doc/LessTif/doc/cvs.html
-share/doc/LessTif/doc/download.html
-share/doc/LessTif/doc/images/hungry.gif
-share/doc/LessTif/doc/images/lesstif-realsmall.gif
-share/doc/LessTif/doc/images/lesstif-small.gif
-share/doc/LessTif/doc/images/lesstif.gif
-share/doc/LessTif/doc/images/lesstif.jpg
-share/doc/LessTif/doc/images/ltsunlogo.gif
-share/doc/LessTif/doc/index.html
-share/doc/LessTif/doc/links.html
-share/doc/LessTif/doc/lists.html
-share/doc/LessTif/doc/mirrors.html
-share/doc/LessTif/doc/platforms.html
-share/doc/LessTif/doc/release-policy.html
-share/doc/LessTif/doc/test_policy.html
-share/doc/LessTif/doc/test_summary.html
-share/doc/LessTif/doc/testers.html
-share/doc/LessTif/doc/web_button.html
-share/doc/LessTif/doc/versions.html
+share/doc/LessTif/apps.html
+share/doc/LessTif/bug-reporting.html
+share/doc/LessTif/bugs.html
+share/doc/LessTif/button.html
+share/doc/LessTif/cdrom.html
+share/doc/LessTif/core.html
+share/doc/LessTif/current.html
+share/doc/LessTif/cvs.html
+share/doc/LessTif/download.html
+share/doc/LessTif/images/hungry.gif
+share/doc/LessTif/images/lesstif-realsmall.gif
+share/doc/LessTif/images/lesstif-small.gif
+share/doc/LessTif/images/lesstif.gif
+share/doc/LessTif/images/lesstif.jpg
+share/doc/LessTif/images/ltsunlogo.gif
+share/doc/LessTif/index.html
+share/doc/LessTif/links.html
+share/doc/LessTif/lists.html
+share/doc/LessTif/mirrors.html
+share/doc/LessTif/platforms.html
+share/doc/LessTif/release-policy.html
+share/doc/LessTif/test_policy.html
+share/doc/LessTif/test_summary.html
+share/doc/LessTif/testers.html
+share/doc/LessTif/versions.html
+share/doc/LessTif/web_button.html
 @dirrm lib/X11/mwm
 @dirrm lib/X11/lesstif
 @dirrm include/Xm
 @dirrm include/Mrm
-@dirrm share/doc/LessTif/doc/images
-@dirrm share/doc/LessTif/doc
+@dirrm share/doc/LessTif/images
 @dirrm share/doc/LessTif
