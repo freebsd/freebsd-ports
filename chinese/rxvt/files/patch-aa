@@ -1,0 +1,60 @@
+--- Makefile.in.orig	Mon Nov  3 02:00:52 1997
++++ Makefile.in	Sat Nov 29 00:58:47 1997
+@@ -7,7 +7,7 @@
+ first_rule: all
+ dummy:
+ 
+-subdirs = src doc rclock src/graphics
++subdirs = src doc src/graphics
+ 
+ DIST =	INSTALL configure Makefile Makefile.in
+ 
+--- configure.orig	Mon Nov  3 02:00:52 1997
++++ configure	Sat Nov 29 00:58:47 1997
+@@ -26,6 +26,8 @@
+ ac_help="$ac_help
+   --enable-big5           enable big5 support"
+ ac_help="$ac_help
++  --enable-xcin           enable Chinese XCIN input support"
++ac_help="$ac_help
+   --enable-greek          enable greek keyboard support"
+ ac_help="$ac_help
+   --with-term=NAME        set the terminal to NAME (default "xterm")"
+@@ -651,6 +653,17 @@
+   if test x$enableval = xyes; then
+     cat >> confdefs.h <<\EOF
+ #define BIG5 1
++EOF
++
++  fi
++fi
++
++# Check whether --enable-xcin or --disable-xcin was given.
++if test "${enable_xcin+set}" = set; then
++  enableval="$enable_xcin"
++  if test x$enableval = xyes; then
++    cat >> confdefs.h <<\EOF
++#define XCIN 1
+ EOF
+ 
+   fi
+--- doc/Makefile.in.orig	Mon Nov  3 02:00:52 1997
++++ doc/Makefile.in	Sat Nov 29 01:02:43 1997
+@@ -53,7 +53,7 @@
+ 
+ tags allbin:
+ 
+-alldoc:	lsm rxvt.1
++alldoc:	rxvt.1
+ 
+ clean:
+ 	$(RMF) $(VERNAME).lsm rxvt.1 *~
+@@ -66,7 +66,7 @@
+ 	(cd $(srcdir); $(RMF) Makefile)
+ 
+ install: alldoc
+-	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
++	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt.$(manext)
+ 
+ uninstall:
+ 	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)
