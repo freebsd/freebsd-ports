@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.4.16
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -44,6 +45,10 @@ CONFIGURE_ARGS+=	--disable-sm
 
 .if defined(WITHOUT_SHAPE)
 CONFIGURE_ARGS+=	--disable-shape
+.endif
+
+.if defined(WITH_MULTIBYTE)
+CONFIGURE_ARGS+=	--enable-multibyte
 .endif
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
