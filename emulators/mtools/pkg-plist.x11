@@ -1,3 +1,5 @@
+bin/floppyd
+bin/floppyd_installtest
 bin/mattrib
 bin/mbadblocks
 bin/mcat
