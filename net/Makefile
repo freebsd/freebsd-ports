@@ -133,7 +133,6 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fugu
-    SUBDIR += gabber
     SUBDIR += gaim
     SUBDIR += gaim-openq
     SUBDIR += gaim-rss-reader
