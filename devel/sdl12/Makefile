@@ -44,6 +44,12 @@ OPTIONS=	NAS	"Include support for the Network Audio System" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_audio_SDL__mixer__MMX.c \
+		${FILESDIR}/extra-patch-src_cpuinfo_SDL__cpuinfo.c \
+		${FILESDIR}/extra-patch-src_video_SDL__yuv__mmx.c
+.endif
+
 .if exists(/usr/lib/libvgl.so.3)
 CONFIGURE_ARGS+=--enable-video-vgl
 DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
