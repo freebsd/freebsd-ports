@@ -1,0 +1,24 @@
+share/gnome/themes/Iridium-Rounded/ChangeLog
+share/gnome/themes/Iridium-Rounded/metacity-1/backup/left-side (Kopie).png
+share/gnome/themes/Iridium-Rounded/metacity-1/backup/right-side (Kopie).png
+share/gnome/themes/Iridium-Rounded/metacity-1/bottom-left.png
+share/gnome/themes/Iridium-Rounded/metacity-1/bottom-right.png
+share/gnome/themes/Iridium-Rounded/metacity-1/bottom.png
+share/gnome/themes/Iridium-Rounded/metacity-1/button-active.png
+share/gnome/themes/Iridium-Rounded/metacity-1/button-close.png
+share/gnome/themes/Iridium-Rounded/metacity-1/button-inactive.png
+share/gnome/themes/Iridium-Rounded/metacity-1/button-max.png
+share/gnome/themes/Iridium-Rounded/metacity-1/button-min.png
+share/gnome/themes/Iridium-Rounded/metacity-1/left-edge.png
+share/gnome/themes/Iridium-Rounded/metacity-1/left-shade.png
+share/gnome/themes/Iridium-Rounded/metacity-1/left-side.png
+share/gnome/themes/Iridium-Rounded/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Iridium-Rounded/metacity-1/metacity-theme-1.xml~
+share/gnome/themes/Iridium-Rounded/metacity-1/right-edge.png
+share/gnome/themes/Iridium-Rounded/metacity-1/right-shade.png
+share/gnome/themes/Iridium-Rounded/metacity-1/right-side.png
+share/gnome/themes/Iridium-Rounded/metacity-1/shade-bar.png
+share/gnome/themes/Iridium-Rounded/metacity-1/title-bar.png
+@dirrm share/gnome/themes/Iridium-Rounded/metacity-1/backup
+@dirrm share/gnome/themes/Iridium-Rounded/metacity-1
+@unexec /bin/rmdir %D/share/gnome/themes/Iridium-Rounded 2>/dev/null || /usr/bin/true
