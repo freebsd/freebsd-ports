@@ -154,6 +154,7 @@
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += sphinx
+    SUBDIR += spiralloops
     SUBDIR += spiralsynth
     SUBDIR += splay
     SUBDIR += splaytk
