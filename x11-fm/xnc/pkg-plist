@@ -6,6 +6,7 @@ bin/iedit
 bin/iview
 bin/rpm.xnc
 bin/users.xnc
+bin/view.xnc
 bin/xjpegroot
 bin/xnc
 bin/xncloader
@@ -14,14 +15,23 @@ bin/xnlaunch
 bin/zips.xnc
 lib/xnc/libxncaqua.so
 lib/xnc/libxncfive.so
-%%PORTDOCS%%share/doc/xnc/doc1.html
-%%PORTDOCS%%share/doc/xnc/doc2.html
-%%PORTDOCS%%share/doc/xnc/doc3.html
-%%PORTDOCS%%share/doc/xnc/doc4.html
-%%PORTDOCS%%share/doc/xnc/doc5.html
-%%PORTDOCS%%share/doc/xnc/doc6.html
-%%PORTDOCS%%share/doc/xnc/doc7.html
-%%PORTDOCS%%share/doc/xnc/doc8.html
-%%PORTDOCS%%share/doc/xnc/index.html
-%%PORTDOCS%%@dirrm share/doc/xnc
+share/locale/fr/LC_MESSAGES/xnc.mo
+share/locale/pl/LC_MESSAGES/xnc.mo
+share/locale/pt/LC_MESSAGES/xnc.mo
+share/locale/ru/LC_MESSAGES/xnc.mo
+share/pixmaps/xnc.png
+share/pixmaps/xnc.xpm
+share/gnome/apps/Applications/xnc.desktop
+share/applnk/System/X_Northern_Captain.desktop
+share/applications/xnc-gnome2.desktop
+share/doc/xnc/doc1.html
+share/doc/xnc/doc2.html
+share/doc/xnc/doc3.html
+share/doc/xnc/doc4.html
+share/doc/xnc/doc5.html
+share/doc/xnc/doc6.html
+share/doc/xnc/doc7.html
+share/doc/xnc/doc8.html
+share/doc/xnc/index.html
+@dirrm share/doc/xnc
 @dirrm lib/xnc

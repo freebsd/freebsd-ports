@@ -1,11 +1,11 @@
---- filedir/makefile.in.orig	Wed Apr 25 20:11:20 2001
-+++ filedir/makefile.in	Wed Apr 25 20:11:28 2001
-@@ -34,7 +34,7 @@
- @MCOMMON@
+--- src/lib/filedir/makefile.in.orig	Thu Jan  9 12:17:27 2003
++++ src/lib/filedir/makefile.in	Thu Jan  9 12:17:45 2003
+@@ -33,7 +33,7 @@
+            PROGRAM = $(MYLIBDIR)/libxncfiledir.a
  
- VERSION	= 3.20.1
--MAGIC	= /usr/share/magic
-+MAGIC	= /usr/share/misc/magic
- #MAGIC	= /usr/local/etc/magic
+ VERSION = 3.20.1
+-MAGIC   = /usr/share/magic
++MAGIC   = /usr/share/misc/magic
  
- MAGDEFS	= -DMAGIC='"$(MAGIC)"' -DMAGIC_FOR_XNC $(DEFS)# -Dvoid=int
+ CINCLUDES=-DMAGIC='"$(MAGIC)"' -DMAGIC_FOR_XNC $(DEFS) $(DEB) $(STRIPPING)
+ 
