@@ -28,6 +28,7 @@
 %%IMPDIR%%/config/trailer.txt
 %%IMPDIR%%/config/trailer.txt.dist
 %%IMPDIR%%/contacts.php
+%%IMPDIR%%/download/index.php
 %%IMPDIR%%/filters.php
 %%IMPDIR%%/folders.php
 %%IMPDIR%%/graphics/addressbook-blue.gif
@@ -44,6 +45,7 @@
 %%IMPDIR%%/graphics/draft.gif
 %%IMPDIR%%/graphics/empty_trash.gif
 %%IMPDIR%%/graphics/expand.gif
+%%IMPDIR%%/graphics/favicon.ico
 %%IMPDIR%%/graphics/fetchmail.gif
 %%IMPDIR%%/graphics/filters.gif
 %%IMPDIR%%/graphics/first-grey.gif
@@ -68,6 +70,7 @@
 %%IMPDIR%%/graphics/lock.gif
 %%IMPDIR%%/graphics/manage_attachments.gif
 %%IMPDIR%%/graphics/mime/html.gif
+%%IMPDIR%%/graphics/mime/image.gif
 %%IMPDIR%%/graphics/mime/text.gif
 %%IMPDIR%%/graphics/next-grey.gif
 %%IMPDIR%%/graphics/next.gif
@@ -86,6 +89,7 @@
 %%IMPDIR%%/identities.php
 %%IMPDIR%%/index.php
 %%IMPDIR%%/lib/.htaccess
+%%IMPDIR%%/lib/Browser.php
 %%IMPDIR%%/lib/Folder.php
 %%IMPDIR%%/lib/IMP.php
 %%IMPDIR%%/lib/Identity/IMP.php
@@ -95,6 +99,7 @@
 %%IMPDIR%%/lib/Maintenance/imp.php
 %%IMPDIR%%/lib/MIME/Viewer/html.php
 %%IMPDIR%%/lib/MIME/Viewer/enriched.php
+%%IMPDIR%%/lib/MIME/Viewer/images.php
 %%IMPDIR%%/lib/MIME/Viewer/text.php
 %%IMPDIR%%/lib/Message.php
 %%IMPDIR%%/lib/Tree.php
@@ -103,6 +108,9 @@
 %%IMPDIR%%/lib/constants.php
 %%IMPDIR%%/lib/version.php
 %%IMPDIR%%/locale/.htaccess
+%%IMPDIR%%/locale/bg_BG/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/ca_ES/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/ca_ES/help.xml
 %%IMPDIR%%/locale/cs_CZ/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/cs_CZ/help.xml
 %%IMPDIR%%/locale/da_DK/LC_MESSAGES/imp.mo
@@ -127,6 +135,8 @@
 %%IMPDIR%%/locale/ja_JP/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ko_KR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ko_KR/help.xml
+%%IMPDIR%%/locale/lt_LT/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/lv_LV/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/nb_NO/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/nb_NO/help.xml
 %%IMPDIR%%/locale/nl_NL/LC_MESSAGES/imp.mo
@@ -138,6 +148,7 @@
 %%IMPDIR%%/locale/pt_BR/help.xml
 %%IMPDIR%%/locale/pt_PT/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/pt_PT/help.xml
+%%IMPDIR%%/locale/ro_RO/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ru_RU/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/ru_RU/help.xml
 %%IMPDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/imp.mo
@@ -145,6 +156,7 @@
 %%IMPDIR%%/locale/sk_SK/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/sk_SK/help.xml
 %%IMPDIR%%/locale/sl_SI/LC_MESSAGES/imp.mo
+%%IMPDIR%%/locale/sr_YU/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/sv_SE/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/sv_SE/help.xml
 %%IMPDIR%%/locale/uk_UA/LC_MESSAGES/imp.mo
@@ -160,6 +172,8 @@
 %%IMPDIR%%/po/.htaccess
 %%IMPDIR%%/po/Makefile
 %%IMPDIR%%/po/README
+%%IMPDIR%%/po/bg_BG.po
+%%IMPDIR%%/po/ca_ES.po
 %%IMPDIR%%/po/cs_CZ.po
 %%IMPDIR%%/po/da_DK.po
 %%IMPDIR%%/po/de_DE.po
@@ -170,20 +184,25 @@
 %%IMPDIR%%/po/fi_FI.po
 %%IMPDIR%%/po/fr_FR.po
 %%IMPDIR%%/po/hu_HU.po
+%%IMPDIR%%/po/imp.pot
 %%IMPDIR%%/po/it_IT.po
 %%IMPDIR%%/po/ja_JP.po
 %%IMPDIR%%/po/ko_KR.po
+%%IMPDIR%%/po/lt_LT.po
+%%IMPDIR%%/po/lv_LV.po
 %%IMPDIR%%/po/nb_NO.po
 %%IMPDIR%%/po/nl_NL.po
 %%IMPDIR%%/po/nn_NO.po
 %%IMPDIR%%/po/pl_PL.po
 %%IMPDIR%%/po/pt_BR.po
 %%IMPDIR%%/po/pt_PT.po
+%%IMPDIR%%/po/ro_RO.po
 %%IMPDIR%%/po/ru_RU.po
 %%IMPDIR%%/po/ru_RU.KOI8-R.po
 %%IMPDIR%%/po/shtool
 %%IMPDIR%%/po/sk_SK.po
 %%IMPDIR%%/po/sl_SI.po
+%%IMPDIR%%/po/sr_YU.po
 %%IMPDIR%%/po/sv_SE.po
 %%IMPDIR%%/po/uk_UA.po
 %%IMPDIR%%/po/xgettext.sh
@@ -197,6 +216,7 @@
 %%IMPDIR%%/scripts/imp-cleanup.cron
 %%IMPDIR%%/scripts/imp2horde.pl
 %%IMPDIR%%/scripts/imp2turba.pl
+%%IMPDIR%%/scripts/singlescript.php
 %%IMPDIR%%/search.php
 %%IMPDIR%%/spelling.php
 %%IMPDIR%%/status.php
@@ -258,6 +278,7 @@
 %%PORTDOCS%%@dirrm share/doc/imp
 etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/config
+@dirrm %%IMPDIR%%/download
 @dirrm %%IMPDIR%%/graphics/folders
 @dirrm %%IMPDIR%%/graphics/mime
 @dirrm %%IMPDIR%%/graphics
@@ -267,6 +288,10 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/lib/Maintenance/Task
 @dirrm %%IMPDIR%%/lib/Maintenance
 @dirrm %%IMPDIR%%/lib
+@dirrm %%IMPDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/bg_BG
+@dirrm %%IMPDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/ca_ES
 @dirrm %%IMPDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/cs_CZ
 @dirrm %%IMPDIR%%/locale/da_DK/LC_MESSAGES
@@ -293,6 +318,10 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/ja_JP
 @dirrm %%IMPDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ko_KR
+@dirrm %%IMPDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/lt_LT
+@dirrm %%IMPDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/lv_LV
 @dirrm %%IMPDIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/nb_NO
 @dirrm %%IMPDIR%%/locale/nl_NL/LC_MESSAGES
@@ -305,6 +334,8 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/pt_BR
 @dirrm %%IMPDIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/pt_PT
+@dirrm %%IMPDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/ro_RO
 @dirrm %%IMPDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/ru_RU
 @dirrm %%IMPDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
@@ -313,6 +344,8 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/sk_SK
 @dirrm %%IMPDIR%%/locale/sl_SI/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/sl_SI
+@dirrm %%IMPDIR%%/locale/sr_YU/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/sr_YU
 @dirrm %%IMPDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/sv_SE
 @dirrm %%IMPDIR%%/locale/uk_UA/LC_MESSAGES

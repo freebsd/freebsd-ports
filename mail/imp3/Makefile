@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	3.1
-PORTREVISION=	3
+PORTVERSION=	3.2.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.au.horde.org/pub/horde/imp/			\
@@ -18,8 +17,6 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A webmail system which accesses mail over IMAP
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -128,12 +125,14 @@ IS_INTERACTIVE=	'need to build mod_php4 with mcrypt, cclient with SSL.'
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
+LDD=		/usr/bin/ldd
+
 REINPLACE_ARGS=	-i.beforeIMP
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php filter.txt header.txt html.php menu.php \
 		mime_drivers.php motd.php prefs.php servers.php \
 		trailer.txt
-SUB_DIRS=	config graphics lib locale scripts templates po
+SUB_DIRS=	config download graphics lib locale po scripts templates
 
 LHORDEDIR?=	www/horde
 LIMPDIR?=	${LHORDEDIR}/imp
@@ -148,6 +147,7 @@ CONFDIR=	${IMPDIR}/config
 HCONFDIR=	${HORDEDIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
+PHPSO?=		${LOCALBASE}/libexec/apache/libphp4.so
 
 HOSTNAME?=	`/bin/hostname`
 SERVOS?=	${OPSYS}-${OSREL}
@@ -174,7 +174,7 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "c-client4.8"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libc-client4"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with IMAP or IMAP-SSL support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -192,14 +192,14 @@ pre-install:
 .endif
 .if !defined(WITHOUT_LDAP)
 .if defined(WITH_LDAP1)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.1"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.1"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
 .else
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.2"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.2"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP2 support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -208,7 +208,7 @@ pre-install:
 .endif
 .endif
 .if !defined(NOCRYPT)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mcrypt.8"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmcrypt.so.8"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with mcrypt support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -216,10 +216,10 @@ pre-install:
 	fi
 .endif
 .if !defined(WITHOUT_SUPPORTED_DB)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mysqlclient.10" ; then \
-	 if ! ${LDCONFIG} -r | ${GREP} -q -e "pq.3" ; then \
-	  if ! ${LDCONFIG} -r | ${GREP} -q -e "sybdb.1" ; then \
-	   if ! ${LDCONFIG} -r | ${GREP} -q -e "ct.0" ; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient.so.10"; then \
+	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so.3" ; then \
+	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so.1" ; then \
+	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so.0" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
 	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
