@@ -9,53 +9,43 @@ bin/bomberclone
 %%DOCSDIR%%/TODO
 @dirrm %%DOCSDIR%%
 
-share/bomberclone/tileset/zbb_frog/background.png
-share/bomberclone/tileset/zbb_frog/block.png
 share/bomberclone/tileset/zbb_frog/stone.png
-@dirrm share/bomberclone/tileset/zbb_frog
+share/bomberclone/tileset/zbb_frog/block.png
+share/bomberclone/tileset/zbb_frog/background.png
 share/bomberclone/tileset/uccia_garbage/stone.png
 share/bomberclone/tileset/uccia_garbage/dead.wav
 share/bomberclone/tileset/uccia_garbage/block.png
 share/bomberclone/tileset/uccia_garbage/background.png
-@dirrm share/bomberclone/tileset/uccia_garbage
 share/bomberclone/tileset/tricked/stone.png
 share/bomberclone/tileset/tricked/dead.wav
 share/bomberclone/tileset/tricked/block.png
 share/bomberclone/tileset/tricked/background.png
-@dirrm share/bomberclone/tileset/tricked
 share/bomberclone/tileset/supermario/stonebackup.png
 share/bomberclone/tileset/supermario/stone.png
 share/bomberclone/tileset/supermario/block.png
 share/bomberclone/tileset/supermario/background.png
-@dirrm share/bomberclone/tileset/supermario
 share/bomberclone/tileset/sheep/stone.png
 share/bomberclone/tileset/sheep/map.nfo
 share/bomberclone/tileset/sheep/block.png
 share/bomberclone/tileset/sheep/background.png
-@dirrm share/bomberclone/tileset/sheep
 share/bomberclone/tileset/radioactive/stone.png
 share/bomberclone/tileset/radioactive/block.png
 share/bomberclone/tileset/radioactive/background.png
-@dirrm share/bomberclone/tileset/radioactive
 share/bomberclone/tileset/modern/stone.png
 share/bomberclone/tileset/modern/dead.wav
 share/bomberclone/tileset/modern/block.png
 share/bomberclone/tileset/modern/background.png
-@dirrm share/bomberclone/tileset/modern
 share/bomberclone/tileset/jungle/stone.png
 share/bomberclone/tileset/jungle/block.png
 share/bomberclone/tileset/jungle/background.png
-@dirrm share/bomberclone/tileset/jungle
 share/bomberclone/tileset/hell/stone.png
 share/bomberclone/tileset/hell/map.nfo
 share/bomberclone/tileset/hell/block.png
 share/bomberclone/tileset/hell/background.png
-@dirrm share/bomberclone/tileset/hell
 share/bomberclone/tileset/farm/stone.png
 share/bomberclone/tileset/farm/map.nfo
 share/bomberclone/tileset/farm/block96.png
 share/bomberclone/tileset/farm/background.png
-@dirrm share/bomberclone/tileset/farm
 share/bomberclone/tileset/default/tunnel.png
 share/bomberclone/tileset/default/stone.png
 share/bomberclone/tileset/default/sptrigger.png
@@ -78,7 +68,6 @@ share/bomberclone/tileset/default/dead.wav
 share/bomberclone/tileset/default/bomb.png
 share/bomberclone/tileset/default/block.png
 share/bomberclone/tileset/default/background.png
-@dirrm share/bomberclone/tileset/default
 share/bomberclone/tileset/cucumber/stone.png
 share/bomberclone/tileset/cucumber/powerup.png
 share/bomberclone/tileset/cucumber/powersp.png
@@ -88,17 +77,13 @@ share/bomberclone/tileset/cucumber/drop.wav
 share/bomberclone/tileset/cucumber/dead.wav
 share/bomberclone/tileset/cucumber/block.png
 share/bomberclone/tileset/cucumber/background.png
-@dirrm share/bomberclone/tileset/cucumber
 share/bomberclone/tileset/classic/stone.png
 share/bomberclone/tileset/classic/block.png
 share/bomberclone/tileset/classic/background.png
-@dirrm share/bomberclone/tileset/classic
 share/bomberclone/tileset/cemetery/stone96.png
 share/bomberclone/tileset/cemetery/map.nfo
 share/bomberclone/tileset/cemetery/block96.png
 share/bomberclone/tileset/cemetery/background.png
-@dirrm share/bomberclone/tileset/cemetery
-@dirrm share/bomberclone/tileset
 share/bomberclone/player/respawn.png
 share/bomberclone/player/playersick.png
 share/bomberclone/player/player7.png
@@ -110,7 +95,12 @@ share/bomberclone/player/player2.png
 share/bomberclone/player/player1.png
 share/bomberclone/player/player0.png
 share/bomberclone/player/dead0.png
-@dirrm share/bomberclone/player
+share/bomberclone/music/zb-tnt.xm
+share/bomberclone/music/slice_me_nice.xm
+share/bomberclone/music/mario_is_a_weenie.xm
+share/bomberclone/music/cinderella_clown.mod
+share/bomberclone/music/cerror-bomberclone_numero_2.xm
+share/bomberclone/music/cerror-bobmberclone.xm
 share/bomberclone/maps/third.map
 share/bomberclone/maps/smalfull.map
 share/bomberclone/maps/smal.map
@@ -120,7 +110,6 @@ share/bomberclone/maps/kitutou1.map
 share/bomberclone/maps/fourth.map
 share/bomberclone/maps/firstmap.map
 share/bomberclone/maps/first.map
-@dirrm share/bomberclone/maps
 share/bomberclone/gfx/menuselect.png
 share/bomberclone/gfx/menulist1_8.png
 share/bomberclone/gfx/menulist1_7.png
@@ -169,5 +158,23 @@ share/bomberclone/gfx/logo.png
 share/bomberclone/gfx/font2.png
 share/bomberclone/gfx/font1.png
 share/bomberclone/gfx/font0.png
+@dirrm share/bomberclone/tileset/zbb_frog
+@dirrm share/bomberclone/tileset/uccia_garbage
+@dirrm share/bomberclone/tileset/tricked
+@dirrm share/bomberclone/tileset/supermario
+@dirrm share/bomberclone/tileset/sheep
+@dirrm share/bomberclone/tileset/radioactive
+@dirrm share/bomberclone/tileset/modern
+@dirrm share/bomberclone/tileset/jungle
+@dirrm share/bomberclone/tileset/hell
+@dirrm share/bomberclone/tileset/farm
+@dirrm share/bomberclone/tileset/default
+@dirrm share/bomberclone/tileset/cucumber
+@dirrm share/bomberclone/tileset/classic
+@dirrm share/bomberclone/tileset/cemetery
+@dirrm share/bomberclone/tileset
+@dirrm share/bomberclone/player
+@dirrm share/bomberclone/music
+@dirrm share/bomberclone/maps
 @dirrm share/bomberclone/gfx
 @dirrm share/bomberclone
