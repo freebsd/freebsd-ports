@@ -14,8 +14,11 @@ MAINTAINER=	DougB@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
+		--localstatedir=/var/db/nut \
 		--with-modelpath=${PREFIX}/libexec/nut \
-		--with-statepath=/var/db
+		--with-statepath=/var/db/nut \
+		--with-altpidpath=/var/db/nut \
+		--with-pidpath=/var/db/nut
 
 MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
@@ -48,6 +51,8 @@ pre-fetch:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/libexec/nut
+	@${MKDIR} /var/db/nut
+	@${CHOWN} uucp /var/db/nut
 
 NDOCDIR=	${PREFIX}/share/doc/nut
 
