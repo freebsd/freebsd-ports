@@ -1,0 +1,11 @@
+--- config.h~	Tue Jun  6 23:35:58 2000
++++ config.h	Wed Jun  7 09:56:31 2000
+@@ -124,7 +124,7 @@
+ 
+ #define XKEYS		/* use numelic keypad (by Gen.KUROKI) */
+ 
+-#define CANNA		/* use CANNA kana-kanji server (by Endo) */
++#undef CANNA		/* use CANNA kana-kanji server (by Endo) */
+ 
+ /*................................................*/
+ #endif			/* Do not edit this line. */

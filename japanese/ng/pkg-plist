@@ -1,5 +1,10 @@
 bin/ng
+share/doc/ja/ng/Ng.FAQ.euc-jp
 share/doc/ja/ng/Ng.doc.euc-jp
 share/doc/ja/ng/Ng.ref.euc-jp
 share/doc/ja/ng/Ng.tut.euc-jp
+share/doc/ja/ng/README.Ng.euc-jp
+share/doc/ja/ng/README.SKG.euc-jp
+share/doc/ja/ng/CHANGES.new.euc-jp
+share/doc/ja/ng/CHANGES.doc.euc-jp
 @dirrm share/doc/ja/ng
