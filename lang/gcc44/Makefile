@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-12-31
+SNAPDATE=	2004-01-07
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
@@ -153,37 +153,25 @@ post-install:
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in ${INFO}
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
-.endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
 # perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
 .for mp in ${_MANPAGES}
 	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
 .endfor
-	cd ${PREFIX} ;\
-	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>${WRKDIR}/PLIST.lib
-	cd ${PREFIX} ;\
-	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
-	# Handle GCJ include files.
-	${RM} -f ${WRKDIR}/PLIST.gcj-inc
-.for inc in ${PREFIX}/include/gcj ${PREFIX}/include/gnu ${PREFIX}/include/java ${PREFIX}/include/javax
+	# Handle target libraries and GCJ include files.
+	${RM} -f ${WRKDIR}/PLIST.lib
+.for inc in ${TARGLIB} include/gcj include/gnu include/java include/javax
 	cd ${PREFIX} ;\
 	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc ;\
+	    	>>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
 .endfor
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "r ${WRKDIR}/PLIST.lib"	>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "/Insert PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
 	cd ${WRKDIR} ; ex < ex.script
