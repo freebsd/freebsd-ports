@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pike74
-PORTVERSION=	7.4.28
-PORTREVISION=	1
+PORTVERSION=	7.4.31
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -36,9 +35,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 WANT_MESA=	yes
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+= --without-debug \
+CONFIGURE_ARGS+=	--without-debug \
 		 --with-double-precision \
 		 --with-long-double-precision \
 		 --disable-rpath \
@@ -75,10 +74,10 @@ LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 
 # Allow building Embeded perl when >= 5.6
 .if ${PERL_LEVEL} > 500600
-CONFIGURE_ARGS+= --with-perl
+CONFIGURE_ARGS+=	--with-perl
 USE_PERL5=	YES
 .else
-CONFIGURE_ARGS+= --without-perl
+CONFIGURE_ARGS+=	--without-perl
 .endif
 
 .if exists(${LOCALBASE}/lib/libavcodec.so.0)
@@ -143,9 +142,9 @@ WITH_FREETYPE=	yes
 .endif
 
 .if defined(WITHOUT_RELOCATABLE_DUMPED_MODULES)
-CONFIGURE_ARGS+= --without-relocatable-dumped-modules
+CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
 .else
-CONFIGURE_ARGS+= --with-relocatable-dumped-modules
+CONFIGURE_ARGS+=	--with-relocatable-dumped-modules
 .endif
 
 .if defined(WITH_EXPIREMENTAL_FEATURES)
