@@ -142,6 +142,7 @@
     SUBDIR += jam
     SUBDIR += kdbg
     SUBDIR += kdelibdocs
+    SUBDIR += kdesdk
     SUBDIR += kdesdk2
     SUBDIR += kdevelop
     SUBDIR += kelp
