@@ -42,7 +42,7 @@
 -	cp $v -iup opera.adr $share_dir/
 +	cp $v -fp opera.xpm opera.wmconfig opera.desktop opera_*.png $share_dir/
 +	cp $v -ip opera.adr $share_dir/
- 	
+ 
  
  	icons
 @@ -193,11 +193,11 @@
