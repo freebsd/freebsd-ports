@@ -119,7 +119,7 @@ PLIST_SUB+=	IA64_NA=""
 .endif
 
 .if ${ARCH} == sparc64
-PLIST_SUB	SPARC64_NA="@comment "
+PLIST_SUB+=	SPARC64_NA="@comment "
 PLIST_SUB+=	SPARC64=""
 MAN4+=		sunffb.4
 .else
