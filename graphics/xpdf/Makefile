@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	2.02
+PORTVERSION=	2.02.1
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
@@ -24,6 +25,7 @@ USE_MOTIF=	yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gzip --enable-opi --with-x \
