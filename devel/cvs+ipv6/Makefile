@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
+INFO=		cvs cvsclient
 
 CVS_SITE?=	:pserver:anoncvs@anoncvs.FreeBSD.org:/home/ncvs
 CVS_VER?=	v${PORTVERSION:S/./_/g}
