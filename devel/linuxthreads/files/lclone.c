@@ -48,10 +48,10 @@ extern int __clone __P ((int (*__fn) (void *), void *__child_stack,
 
 	/* We don't have qn equivalent to CLONE_PID yet */
 	if (__flags & CLONE_PID)
-		return (EINVAL);
+		return (-1);
 
 	if (__child_stack == (void *)0)
-		return (EINVAL);
+		return (-1);
 
 	/* RFTHREAD probably not necessary here, but it shouldn't hurt either */
 	bsd_flags = RFPROC | RFTHREAD;
@@ -72,11 +72,11 @@ extern int __clone __P ((int (*__fn) (void *), void *__child_stack,
 		 * to do anything special in this case.
 		 */
 		break;
-	case SIGUSR1:
+	case SIGUSR2:
 		bsd_flags |= RFLINUXTHPN;
 		break;
 	default:
-		return (EINVAL);
+		return (-1);
 	}
 
 	if (__flags & CLONE_VM)

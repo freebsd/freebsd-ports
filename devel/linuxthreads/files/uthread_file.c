@@ -42,6 +42,7 @@
 #include "pthread.h"
 #include "internals.h"
 #include "restart.h"
+#include "libc_spinlock.h"
 
 /*
  * Weak symbols for externally visible functions in this file:

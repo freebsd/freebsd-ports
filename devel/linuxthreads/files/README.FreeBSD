@@ -8,138 +8,110 @@ be using FreeBSD 4.0-current only.
 Compile your applications that use Linux Threads with the following
 command line options:
 
-	-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread -llgcc_r
+  -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread -llgcc_r
 
-Note that the include (-I..) directive shown here should appear before any other include
-directive that would cause the compiler to find the FreeBSD file /usr/include/pthread.h.
-Using the FreeBSD pthread.h instead of the linuxthreads pthread.h will result in an app 
-fails fails in many odd and maybe spectacular ways.
+Note that the include (-I<path>) directive shown here should appear before any
+other include directive that would cause the compiler to find the FreeBSD file
+/usr/include/pthread.h.  Using the FreeBSD pthread.h instead of the linuxthreads
+pthread.h will result in an app fails fails in many odd and maybe spectacular
+ways.
 
-In order to facilitate porting applications which expect a libpthread, you can create
-the following symlinks if you want:
+In order to facilitate porting applications which expect a libpthread, you can
+create the following symlinks if you want:
 
-	ln -s /usr/local/lib/liblthread.a /usr/lib/libpthread.a
-	ln -s /usr/local/lib/liblthread_p.a /usr/lib/libpthread_p.a
-	ln -s /usr/local/lib/liblthread.so.0 /usr/lib/libpthread.so.0
-	ln -s /usr/local/lib/liblthread.so.0 /usr/lib/libpthread.so
-	/sbin/ldconfig -m /usr/lib
+  ln -s /usr/local/lib/liblthread.a /usr/lib/libpthread.a
+  ln -s /usr/local/lib/liblthread_p.a /usr/lib/libpthread_p.a
+  ln -s /usr/local/lib/liblthread.so.2 /usr/lib/libpthread.so.2
+  ln -s /usr/local/lib/liblthread.so.0 /usr/lib/libpthread.so
+  /sbin/ldconfig -m /usr/lib
 
 If you do this, you can instead use:
 
-	-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread -llgcc_r
+  -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread -llgcc_r
 or      
-	-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -kthread -llgcc_r
+  -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -kthread -llgcc_r
 
-DO NOT use libc_r with Linux Threads, and do not compile/link with
-the -pthread option (which pulls in libc_r).  DO link with libc
-(which you will get by default).
+Do not use libc_r with Linux Threads, and do not compile/link with the -pthread
+option (which pulls in libc_r).  Rather, link with libc (which you will get by
+default).
 
-2) You should consider enabling the posix priority extensions
-in your kernel.  Adding the following to your kernel config
-file before you execute config and before you remake the kernel
-should suffice.
+2) You should consider enabling the posix priority extensions in your kernel.
+Adding the following to your kernel config file before you execute config and
+before you re-make the kernel should suffice.
 
 options		"P1003_1B"
 options		"_KPOSIX_PRIORITY_SCHEDULING"
 options		"_KPOSIX_VERSION=199309L"
 
-These options are not manditory.
+These options are not mandatory.
 
-3) If you plan on having lots of threads, check the sysctl value
-of kern.maxproc.  Each kernel thread counts against maxproc.  You
-can increase maxproc by changing the MAXUSERS value in your kernel
-config file.  maxproc is set at 20 + 16 * MAXUSERS.
+3) If you plan on having lots of threads, check the sysctl value of
+kern.maxproc.  Each kernel thread counts against maxproc.  You can increase
+maxproc by changing the MAXUSERS value in your kernel config file.  maxproc is
+set at 20 + 16 * MAXUSERS.
 
 4) Be aware of the following libc issues:
 
-	a) Not all libc calls are thread safe.  Many are.
-	In particular gmtime, localtime, etc are not thread
-	safe. In general, where the pthreads spec calls for "_r"
-	functions, these are either not provided, or if provided
-	are not thread safe (in most cases)  and the related 
-	libc calls are not thread safe.  This differs somewhat
-	from the FreeBSD libc_r library, where some, but not
-	all, of these functions are both thread safe and have
-	"_r" versions.
+  a) Not all libc calls are thread safe.  In particular gmtime, localtime, etc
+  are not thread safe.  In general, where the pthreads spec calls for "_r"
+  functions, these are either not provided, or if provided are not thread safe
+  (in most cases) and the related libc calls are not thread safe.  This differs
+  somewhat from the FreeBSD libc_r library, where some, but not all, of these
+  functions are both thread safe and have "_r" versions.
 
-	b) None of the libc calls that are supposed to be
-	cancellation points are implemented as such.  There
-	is a lot of work that needs to be done on libc before
-	cancellation points will work correctly.  Therefore,
-	while linux threads has the cancel functions implemented,
-	deferred cancellation will not really do anything, since
-	the co-operation needed from libc is not there.
+  b) Not all of the libc calls that are supposed to be cancellation points are
+  implemented as such.  There is a lot of work that needs to be done on libc
+  before cancellation points will work correctly.  Therefore, while linux
+  threads has the cancel functions implemented, deferred cancellation will not
+  work as required by POSIX 1003.1c-1995, since the co-operation needed from
+  libc is not complete.
 
-5) There is a call implemented for FreeBSD (see stack.c):
- 
-int _pthread_setstackspacing(size_t spacing, size_t guardsize)
+5) Known problems and issues:
 
-By default, Linux Threads spaces thread stacks 2MB apart, and
-makes each thread stack an "autogrow" stack.  If you know that
-your maximum stack for any thread can be less than that, you
-can decrease the spacing by calling this function.  It must
-be called before any other pthreads function calls, and it
-will only succeed the first time its called.  Note that the
-pthread TLS and the guardsize will be included in the spacing.
-ie. maximum stack size = spacing - TLSpagesize - guardsize.
+  a) It is possible that the instructions given above for including liblgcc_r
+  are not sufficent.  liblgcc_r is a version of libgcc_r linked against this
+  linuxthreads package.  It is intended that applications link against this,
+  rather than libgcc_r (which is linked against libc_r) or libgcc (which is not
+  thread safe).
 
-The spacing must be a power of 2 times the pagesize (and if its
-not, it will be rounded up to the next highest value that is).
+  The normal gcc link options cause libgcc to be included twice in the link line
+  (and libgcc_r twice when linking with the -pthread option). It is therefore
+  possible that a custom link line needs to be generated that specifically
+  excludes the default libgcc and which includes liblgcc_r twice.  There are no
+  known problems resulting from the link procedure suggested above.  However,
+  compiling/linking with the "-v" option will illustrate the issue, where lihgcc
+  is included twice in addition to liblgcc_r.
 
-6) Note that this is an older version of linuxthreads.  More current
-versions are at http://www.kernel.org/pub/linux/libs/glibc.
+  b) Since some point around Auguest 30 or later, dynamically linked SMP
+  applications have experienced problems with the dynamic linker.  Statically
+  linked applications appear fine.
 
-7) Known problems and issues:
+  Specifically, some applications are not able to resolve dynamic links as in
+  this sample output:
 
-a) It is possible that the instructions given above for including
-liblgcc_r are not sufficent.  liblgcc_r is a version of libgcc_r
-linked against this linuxthreads package.  It is intended that
-applications link against this, rather than libgcc_r (which is 
-linked against libc_r) or libgcc (which is not thread safe).
+  root@chiricahua:/usr/ports/devel/linuxthreads/work/linuxthreads-0.71/Examples [119] ./ex4
+  Thread 400: allocated key 0
+  Thread 400: allocating buffer at 0x804b400
+  /usr/libexec/ld-elf.so.1: /usr/local/lib/liblthread.so.0: Undefined symbol "sigfillset"
 
-The normal gcc link options cause libgcc to be included twice
-in the link line (and libgcc_r twice when linking with the
--pthread option). It is therefore possible that a custom link
-line needs to be generated that specifically excludes the
-default libgcc and which includes liblgcc_r twice.  There are
-no known problems resulting from the link procedure suggested
-above.  However, compiling/linking with the "-v" option will
-illustrate the issue, where lihgcc is included twice in
-addition to liblgcc_r.
+  The problem does not occur on every run, but rather intermittently, and the
+  undefined symbol is not always "sigfillset", thought this is common.
 
-b) Since some point around Auguest 30 or later, dynamically linked
-SMP applications have experienced problems with the dynamic linker.
-Statically linked applications appear fine.
+  It is possible that ld-elf.so needs to be made thread safe, and that the
+  problem is not unique to SMP but only exposed by the higher concurrency of SMP
+  threads.  However, the problem has not been fully diagnosed.
 
-Specifically, some applications are not able to resolve dynamic
-links as in this sample output:
+  c) Since August 30 or maybe later, neither this version of FreeBSD
+  linuxthreads nor FreeBSD user threads (libc_r) have been able to pass the ACE
+  Reactor_Exception_Test using FreeBSD-current.  See http://www.pinyon.org/ace
+  for information about ACE and compiling it under FreeBSD.  It is possible that
+  PR/15228 is another illustration of the same problem. In both cases the app
+  aborts at line 3314 in libgcc2.c in the __sjthrow function, because there is
+  no exception handler registered at that point.
 
-root@chiricahua:/usr/ports/devel/linuxthreads/work/linuxthreads-0.71/Examples [119] ./ex4
-Thread 400: allocated key 0
-Thread 400: allocating buffer at 0x804b400
-/usr/libexec/ld-elf.so.1: /usr/local/lib/liblthread.so.0: Undefined symbol "sigfillset"
+  Earlier, before August 30, both this version of linuxthreads as well] as
+  libc_r passed all the ACE thread tests.  The cutoff date for the onset of the
+  problem could be later than August 30.
 
-The problem does not occur on every run, but rather intermittently,
-and the undefined symbol is not always "sigfillset", thought
-this is common.
-
-It is possible that ld-elf.so needs to be made thread safe, and that
-the problem is not unique to SMP but only exposed by the higher
-concurrency of SMP threads.  However, the problem has not been
-fully diagnosed.
-
-c) Since August 30 or maybe later, neither this version of FreeBSD
-linuxthreads nor FreeBSD user threads (libc_r) have been able to
-pass the ACE Reactor_Exception_Test using FreeBSD-current.  See
-http://www.pinyon.org/ace for information about ACE and compiling
-it under FreeBSD.  It is possible that PR/15228 is another illustration
-of the same problem. In both cases the app aborts at line 3314 in
-libgcc2.c in the __sjthrow function, because there is no exception
-handler registered at that point.
-
-Earlier, before August 30, both this version of linuxthreads as well]
-as libc_r passed all the ACE thread tests.  The cutoff date for the
-onset of the problem could be later than August 30.
-
-There has not been time to fully diagnose this problem.  It occurs
-on both SMP and UP systems.
+  There has not been time to fully diagnose this problem.  It occurs on both SMP
+  and UP systems.
