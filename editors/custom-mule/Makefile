@@ -8,10 +8,6 @@
 
 MAINTAINER=	shige@FreeBSD.org
 
-PATCHFILES=	custom-1.9962.patch
-PATCH_SITES=	ftp://ftp.jpl.org/pub/elisp/semi-gnus-mule23@1934/
-PATCH_DIST_STRIP= -p1
-
 # This is a slave port.
 PORTCLASS=	slave
 
@@ -26,6 +22,7 @@ HAVE_COMMON_PORT= YES
 
 # pkg/* files but PLIST are used in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg
+PATCHDIR=	${.CURDIR}/patches
 PLIST=		${MASTERDIR}/pkg/PLIST
 
 .include <${MASTERDIR}/Makefile>
