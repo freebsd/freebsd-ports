@@ -1,43 +1,25 @@
 # New ports collection makefile for:	jp-groff
-# Version required:	1.09+0.98
+# Version required:	1.10+0.99
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.4 1995/05/29 08:39:34 asami Exp $
+# $Id$
 #
 
-DISTNAME=	groff-1.09
-PKGNAME=	jp-groff-0.98
+DISTNAME=	groff-1.10
+PKGNAME=	jp-groff-0.99
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
+		ftp://prep.ai.mit.edu/pub/gnu/
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	graphite@taurus.bekkoame.or.jp
 
-PATCH_SITES=	ftp://ftp.iij.ad.jp/pub/NetNews/fj.sources/volume95/Apr/
-PATCHFILES=	jgroff-0.98.diff.gz
-DISTPATCHES=	950414.01.Z 950414.02.Z
+PATCH_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
+		ftp://ftp.iij.ad.jp/pub/linux-j/JF/misc/
+PATCHFILES=	jgroff-0.99.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=/usr/local
-
-.if !defined(MASTER_SITE_OVERRIDE)
-pre-fetch: 
-	@(cd ${DISTDIR}; \
-	 if [ ! -f ${PATCHFILES} ]; then \
-	    ${ECHO_MSG} ">> ${PATCHFILES} doesn't seem to exist on this system."; \
-	    for file in ${DISTPATCHES} ; do \
-		for site in ${PATCH_SITES} ; do \
-		    if ${NCFTP} ${NCFTPFLAGS} $${site}$${file}; then \
-			break; \
-		    fi \
-		done; \
-	    done; \
-	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
-		sed '/^END -----/,/^BEGIN ----/d' | uudecode; \
-	    rm -f ${DISTPATCHES};\
-	 fi)
-.endif
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
