@@ -5,7 +5,7 @@
 # by MANTANI Nobutaka <nobutaka@nobutaka.com>
 
 $progname = "gimp.setfont";
-$version = "Version 0.1 Mar 1 1999";
+$version = "Version 0.2 Aug 1 1999";
 
 # Show usage
 sub usage() {
@@ -26,6 +26,7 @@ Usage: gimp.setfont <language>
  polish              -*-helvetica-(iso8859-2)
  russian             -*-helvetica-(koi8-r)
  swedish             -*-helvetica-(iso8859-1)
+ norwegian           -*-helvetica-(iso8859-1)
 ----------------------------------------------------------------
 
 EOF
@@ -73,7 +74,6 @@ EOF
     exit;
     }
 }
-
 
 $lang = $ARGV[0];
 $fontset = "";
@@ -241,6 +241,19 @@ if ($lang eq "swedish") {
 
     print <<EOF;
 Please set "LANG" environment variable to "sv_SE.ISO_8859-1" and execute "gimp".
+
+EOF
+    exit;
+}
+
+if ($lang eq "norwegian") {
+    $fontset = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+    print "Setting for Norwegian language...\n\n";
+
+    write_gtkrc($fontset);
+
+    print <<EOF;
+Please set "LANG" environment variable to "no_NO.ISO_8859-1" and execute "gimp".
 
 EOF
     exit;
