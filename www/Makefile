@@ -21,6 +21,7 @@
     SUBDIR += aswedit
     SUBDIR += august
     SUBDIR += bacon
+    SUBDIR += barque
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
