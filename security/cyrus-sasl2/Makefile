@@ -38,6 +38,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_auxprop.3 \
 		sasl_user_exists.3 sasl_verifyfile_t.3
 MAN8=		sasldblistusers2.8 saslpasswd2.8
 
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -48,6 +49,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-static \
 		--enable-login \
 		--enable-auth-sasldb \
+		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
 		--with-saslauthd
 
@@ -140,11 +142,6 @@ CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=--disable-krb4
 EBONES=	"@comment "
-.endif
-
-USE_OPENSSL=	yes
-.if !defined(WITH_OPENSSL_BASE)
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \

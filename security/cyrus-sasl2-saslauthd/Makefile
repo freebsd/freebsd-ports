@@ -29,6 +29,7 @@ DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
 USE_RC_SUBR=	YES
 
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	YES
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -39,6 +40,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-static \
 		--enable-login \
 		--enable-auth-sasldb \
+		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
 		--with-saslauthd
 
@@ -99,11 +101,6 @@ LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
 CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=--disable-krb4
-.endif
-
-USE_OPENSSL=	yes
-.if !defined(WITH_OPENSSL_BASE)
-CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \

@@ -26,6 +26,7 @@ LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl \
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 
+USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	YES
 GNU_CONFIGURE=	YES
@@ -35,6 +36,7 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-dbdir=${LOCALBASE} \
 		--with-auth=unix \
 		--with-com_err \
+		--with-openssl=${OPENSSLBASE} \
 		--with-perl=${PERL5}
 
 .if defined(WITH_SNMP)
@@ -65,11 +67,6 @@ HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 		notes os overview questions readme sieve-protocol sieve specs
 
 .include <bsd.port.pre.mk>
-
-USE_OPENSSL=	yes
-.if !defined(WITH_OPENSSL_BASE)
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-.endif
 
 post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
