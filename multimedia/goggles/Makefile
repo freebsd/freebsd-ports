@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	goggles
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1//}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
@@ -21,6 +20,7 @@ RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_XLIB=	yes
 
 pre-everything::
 .ifndef(WITH_DVD_DEVICE)
@@ -57,31 +57,51 @@ PLIST_DOCS=	\
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e 's|make|${GMAKE}|g' \
+		-e 's|/bin/bash|${SH}|' \
+		-e 's|^(MAKE=).*$$|\1${GMAKE}|' \
 		-e 's|function print_help|print_help|' \
 		${WRKSRC}/gb
 
 do-configure:
-	@${REINPLACE_CMD} -e 's|%%DVDDEVICE%%|${DEFAULT_DVD_DEVICE}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%X11BASE%%|${X11BASE}|g' \
-		-e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%PTHREADLIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/build/config.linux
-# uphold C{,XX}FLAGS
+# fix dvd device
+# correct applnk location
 	@${REINPLACE_CMD} -E \
+		-e 's|^(CONFIG_DVD_DEVICE=).+$$|\1"${DEFAULT_DVD_DEVICE}"|' \
+		-e 's|applnk-mdk|applnk|' \
+		${WRKSRC}/build/config.linux
+# uphold PREFIX
+# uphold C{,XX}FLAGS
+# uphold C{C,XX}
+	@${REINPLACE_CMD} -E \
+		-e 's|/usr/share/|${PREFIX}/share/|' \
+		-e 's|^(export[[:space:]]+CC=).+$$|\1"${CC}"|' \
+		-e 's|^(export[[:space:]]+CXX=).+$$|\1"${CXX}"|' \
 		-e 's|^(export[[:space:]]+CFLAGS=).+$$|\1"${CFLAGS}"|' \
 		-e 's|^(export[[:space:]]+CXXFLAGS=).+$$|\1"${CXXFLAGS}"|' \
+		-e 's|^(export[[:space:]]+LIBLINK=)"ar (.+)$$|\1"${AR} \2|' \
 		${WRKSRC}/build/config.linux
 
 do-build:
-	@cd ${WRKSRC} && ./gb
+	@cd ${WRKSRC} && ./gb \
+		--prefix=${PREFIX} \
+		--fox-prefix=${LOCALBASE} \
+		--ogle-prefix=${LOCALBASE} \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib \
+		--with-xv=yes
+
+post-build:
+	@${SED} -E \
+		-e 's|@prefix@|${PREFIX}|' \
+		${WRKSRC}/scripts/goggles.in > \
+			${WRKDIR}/goggles
 
 do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/desktop/goggles_manual.pdf ${DOCSDIR}
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/goggles ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/goggles ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/ogle_gui_goggles ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

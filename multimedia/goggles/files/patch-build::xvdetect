@@ -1,0 +1,11 @@
+--- build/xvdetect.orig	Tue Dec 14 09:37:27 2004
++++ build/xvdetect	Tue Dec 14 09:37:39 2004
+@@ -30,7 +30,7 @@
+ 	if [ -f ${XLIBDIR}/libXv.a ] || [ -f ${XLIBDIR}/libXv.so ] ; then
+ 		echo -e " Check XVideo Library: \033[32mFOUND\033[0m"
+     LIBS="${LIBS} -L${XLIBDIR} -lXext -lXv"
+-    DEFS="${DEFS} -DHAVE_XV" 
++    DEFS="${DEFS} -I${XINCLUDEDIR} -DHAVE_XV" 
+ 	else
+ 		echo -e " Check XVideo Library: \033[31mNot Found\033[0m"
+ 		exit -1
