@@ -1001,6 +1001,7 @@ bin/ant
 %%T%%/docs/antnews.html
 %%T%%/docs/ant_in_anger.html
 %%T%%/docs/ant_task_guidelines.html
+%%T%%/docs/appendix_e.pdf
 %%T%%/docs/external.html
 %%T%%/docs/faq.html
 %%T%%/docs/index.html
