@@ -30,7 +30,7 @@ EXTRACT_ONLY+=	# Empty, needed for PDF-only install
 EXTRACT_ONLY+=	teip3p3x.tar.gz
 .endif
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
 NO_BUILD=	yes
