@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -56,7 +57,11 @@ post-install:
 .if defined(WITH_SUID_GPG)
 	${CHMOD} u+s ${PREFIX}/bin/gpg
 .endif
+.if ${OSVERSION} < 500019
 	@${CAT} ${PKGMESSAGE}
+.else
+PKGMESSAGE=	/nonexistent
+.endif
 
 check:
 	(cd ${WRKSRC}; ${MAKE} check)
