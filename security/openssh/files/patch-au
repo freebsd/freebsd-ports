@@ -1,5 +1,5 @@
 --- session.c.orig	Tue Apr 17 21:34:25 2001
-+++ session.c	Sat May 26 15:45:15 2001
++++ session.c	Sun Jun 10 19:42:13 2001
 @@ -58,6 +58,12 @@
  #include "canohost.h"
  #include "session.h"
@@ -84,7 +84,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -1051,6 +1091,26 @@
+@@ -1051,6 +1091,28 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
@@ -103,8 +103,10 @@
 +				syslog(LOG_INFO,
 +				    "%s Password expired - forcing change",
 +				    pw->pw_name);
-+				if (system("/usr/bin/passwd") != 0)
++				if (system("/usr/bin/passwd") != 0) {
 +					perror("/usr/bin/passwd");
++					exit(1);
++				}
 +			}
 +		}
 +#endif /* __FreeBSD__ */
