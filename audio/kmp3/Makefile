@@ -1,24 +1,27 @@
 # New ports collection makefile for:   kmpg
-# Version required:    0.2.2
+# Version required:    1.0
 # Date created:        24 May 1999
 # Whom:                Oscar Bonilla <obonilla@fisicc-ufm.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kmp3-0.2.2
+DISTNAME=	kmp3-1.0
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/1.1/apps/multimedia/sound
+MASTER_SITES=	http://www.kmp3.org/tarballs/
 
-MAINTAINER=	obonilla@fisicc-ufm.edu
+MAINTAINER=	mb@imp.ch
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.3:${PORTSDIR}/x11/kdelibs11
+		QwSpriteField.7:${PORTSDIR}/converters/kdesupport11
 
+FETCH_BEFORE_ARGS+= -b
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kmp3
+
+pre-configure:
+	${PERL} -pi.orig -e 's|-O4 -m486|${CFLAGS}|' ${WRKSRC}/src/mpeg/configure
 
 .include <bsd.port.mk>
