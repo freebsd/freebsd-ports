@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20010118
+PORTVERSION=	20010310
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/
 DISTFILES=	spambnc.tar.Z index.shtml
@@ -32,6 +32,6 @@ do-install:
 .endif
 
 post-install:
-	${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}
+	@${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -6,6 +6,6 @@ share/spambnc/sb-new.rc
 share/spambnc/sb-old.rc
 share/spambnc/sb.rc
 share/spambnc/spam
-share/doc/spambnc/documentation.html
+%%PORTDOCS%%share/doc/spambnc/documentation.html
 @dirrm share/spambnc
-@dirrm share/doc/spambnc
+%%PORTDOCS%%@dirrm share/doc/spambnc
