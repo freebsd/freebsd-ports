@@ -65,8 +65,8 @@ while [ "$1" ]; do
 			SUB_FPING=""
 			;;
 		\"NetSNMP\")
-			echo "BUILD_DEPENDS+=	snmpcheck:\${PORTSDIR}/net/net-snmp"
-			echo "RUN_DEPENDS+=	snmpcheck:\${PORTSDIR}/net/net-snmp"
+			echo "BUILD_DEPENDS+=	snmpcheck:\${PORTSDIR}/net-mgmt/net-snmp"
+			echo "RUN_DEPENDS+=	snmpcheck:\${PORTSDIR}/net-mgmt/net-snmp"
 			echo "CONFIGURE_ARGS+=	--enable-snmp"
 			SUB_SNMP=""
 			;;
@@ -87,7 +87,7 @@ while [ "$1" ]; do
 			SUB_PGSQL=""
 			;;
 		\"OpenLDAP\")
-			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap20-client"
+			echo "LIB_DEPENDS+=	ldap:\${PORTSDIR}/net/openldap22-client"
 			echo "CONFIGURE_ARGS+=	--enable-ldap"
 			SUB_LDAP=""
 			;;
