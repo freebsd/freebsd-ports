@@ -9,7 +9,7 @@ PORTNAME=	gpasman
 PORTVERSION=	1.3.0
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://gpasman.nl.linux.org/
+MASTER_SITES=	http://gpasman.sourceforge.net/files/
 
 MAINTAINER=	domi@saargate.de
 COMMENT=	A password manager that stores password information encrypted
