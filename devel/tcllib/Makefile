@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	tcllib
 
 MAINTAINER=	mi@aldan.algebra.com
 
+BROKEN=		"Creates /root/foo at install-time"
+
 BUILD_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl83
 GNU_CONFIGURE=	yes
 ALL_TARGET=	test
