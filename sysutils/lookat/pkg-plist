@@ -1,0 +1,4 @@
+bin/lookat
+etc/lookat.conf
+share/doc/lookat/README
+@dirrm share/doc/lookat
