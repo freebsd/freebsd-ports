@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glame
-PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTVERSION=	1.0.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,15 +18,13 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libglade
+USE_GNOME=	gnomehack gnomeprefix gnometarget libglade lthack
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -lltdl ${PTHREAD_LIBS}" \
 		MAKEINFO="makeinfo --no-split"
-INSTALLS_SHLIB=	yes
 
 INFO=		glame glame-dev
 
@@ -41,9 +38,9 @@ post-extract:
 	@cd ${WRKSRC}/doc && ${RM} -f *.info*
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g'
-	@${GREP} -lR "<values\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<values\.h>|<limits.h>|'
+	@${REINPLACE_CMD} -e 's| libltdl||g ; \
+		 s|,$$LIBLTDL,|,,|g ; \
+		 s|,$$LTDLINCL,|,,|g ; \
+		 s|,$$LTLIBOBJS,|,,|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
