@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.4,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.3/ \
@@ -27,7 +27,7 @@ USE_GETTEXT=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack lthack gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
