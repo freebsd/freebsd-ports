@@ -1,0 +1,5 @@
+bin/background.sh
+bin/bgrandom.pl
+bin/createlist.sh
+bin/masterlistgen.sh
+bin/bgrotman.pl
