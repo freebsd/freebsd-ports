@@ -3,13 +3,13 @@
 # Date created:		18 November 1998
 # Whom:			smace@freebsd.org
 #
-# $Id: Makefile,v 1.2 1998/11/23 08:52:12 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/23 08:54:39 asami Exp $
 #
 
 DISTNAME=	ppa-0.8.6
 PKGNAME=	pbm2ppa-0.8.6
 CATEGORIES=	print
-MASTER_SITES=	http://www.rpi.edu/~normat/technical/ppa/files/
+MASTER_SITES=	http://www.httptech.com/ppa/files/
 
 MAINTAINER=	smace@freebsd.org
 
