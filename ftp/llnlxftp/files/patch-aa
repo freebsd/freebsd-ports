@@ -1,5 +1,14 @@
---- Imakefile.orig	Sun May  2 05:05:41 1999
-+++ Imakefile	Sun May  2 05:05:53 1999
+--- Imakefile.orig	Thu Oct 19 10:20:26 1995
++++ Imakefile	Sat Aug 28 11:36:12 1999
+@@ -79,7 +79,7 @@
+ OS_LIBRARIES = -lgen
+ #endif
+ 
+-#if defined(BSDIArchitecture) || defined(i386BsdArchitecture) || defined(TENONArchitecture)
++#if defined(BSDIArchitecture) || defined(i386BsdArchitecture) || defined(TENONArchitecture) || defined(FreeBSDArchitecture)
+ EXTRA_LIBRARIES = -lcompat
+ #endif
+ 
 @@ -98,7 +98,7 @@
  #ifdef XmClientLibs
  LOCAL_LIBRARIES = XmClientLibs $(SOCKS_LIBS)
