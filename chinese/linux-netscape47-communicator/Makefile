@@ -13,6 +13,8 @@ DISTNAME=	${REGION}-nskit-${BROWSER_VERSION}
 
 MAINTAINER=	keith@FreeBSD.org
 
+BROKEN=		"Broken by upgrade to linux-netscape47-communicator 4.79"
+
 # ?= is for ports that include this Makefile.
 # We need Arphic because there's no font with all sizes to deal with Java.
 RUN_DEPENDS?=	\
