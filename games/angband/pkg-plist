@@ -107,3 +107,4 @@ share/games/angband/lib/xtra/font/16x16.txt
 @dirrm share/games/angband/lib/xtra
 @dirrm share/games/angband/lib
 @dirrm share/games/angband
+@unexec rmdir %D/share/games 2>/dev/null || true
