@@ -18,13 +18,14 @@ COMMENT=	SpaceChart is a star chart viewer for GNOME
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--without-included-gettext --datadir=${PREFIX}/share
 
 # trick it into using ports installed gettext
 post-patch:
-	@${PERL} -pi -ne "s|(INTLLIBS =).*$$|\1-I${LOCALBASE}/lib -lintl|" \
+	@${REINPLACE_CMD} -e 's|\(INTLLIBS =\).*$$|\1-I${LOCALBASE}/lib -lintl|' \
 		${WRKSRC}/src/Makefile.in
 
 pre-build:
