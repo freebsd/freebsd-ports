@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fasta
-PORTVERSION=	20.u66
+PORTVERSION=	21.u1.d0
 CATEGORIES=	biology
 MASTER_SITES=	http://ftp.virginia.edu/pub/fasta/
 DISTNAME=	fasta${PORTVERSION:S/.//g}
@@ -18,7 +18,6 @@ COMMENT=	A collection of programs for searching DNA and protein databases
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta
 PKGMESSAGE=	${WRKDIR}/pkg-message
-FASTA_DOCDIR=	${PREFIX}/share/doc/fasta
 FASTA_DOCS=	COPYRIGHT README.versions fasta20.doc fasta20.me format.doc \
 		readme.*
 
@@ -39,9 +38,9 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/${manpage} ${MAN1PREFIX}/man/man1/
 .endfor
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${FASTA_DOCDIR}
+	@ ${MKDIR} ${DOCSDIR}
 .for docfile in ${FASTA_DOCS}
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${FASTA_DOCDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
 
