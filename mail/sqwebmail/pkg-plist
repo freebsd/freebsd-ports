@@ -1,34 +1,18 @@
-%%AUTHDFLAG%%etc/rc.d/sqwebmail-authdaemond.sh
+etc/sqwebmail/ldapaddressbook.dist
+etc/sqwebmail/sqwebmaild.dist
+etc/sqwebmail/nodsn
 etc/rc.d/sqwebmail-sqwebmaild.sh
-libexec/sqwebmail/authlib/authcram
-libexec/sqwebmail/authlib/authcustom
-%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon
-%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon.passwd
-%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond
-%%LDAPFLAG%%libexec/sqwebmail/authlib/authdaemond.ldap
-%%LDAPFLAG%%libexec/sqwebmail/authlib/authldap
-%%PGSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.pgsql
-%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond.plain
-%%MYSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.mysql
-%%MYSQLFLAG%%libexec/sqwebmail/authlib/authmysql
-%%VPOPMAILFLAG%%libexec/sqwebmail/authlib/authvchkpw
-libexec/sqwebmail/authlib/authpam
-libexec/sqwebmail/authlib/authsystem.passwd
-libexec/sqwebmail/authlib/authuserdb
-libexec/sqwebmail/sqwebmail/authenumerate
-libexec/sqwebmail/sqwebmail/deliverquota
-libexec/sqwebmail/sqwebmail/maildirmake
-libexec/sqwebmail/sqwebmail/makedatprog
-libexec/sqwebmail/sqwebmail/makemime
-libexec/sqwebmail/sqwebmail/pcpd
-libexec/sqwebmail/sqwebmail/reformime
-libexec/sqwebmail/sqwebmail/sqwebmaild
-libexec/sqwebmail/sqwebmaild.rc
-%%AUTHDFLAG%%share/sqwebmail/authdaemonrc.dist
-%%LDAPFLAG%%share/sqwebmail/authldaprc.dist
-%%MYSQLFLAG%%share/sqwebmail/authmysqlrc.dist
-%%PGSQLFLAG%%share/sqwebmail/authpgsqlrc.dist
+libexec/sqwebmail/deliverquota
+libexec/sqwebmail/maildirmake
+libexec/sqwebmail/makemime
+libexec/sqwebmail/pcpd
+libexec/sqwebmail/reformime
+libexec/sqwebmail/sqwebmaild
+libexec/sqwebmail/sqwebpasswd
+libexec/sqwebmaild.rc
 %%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
+sbin/sharedindexinstall
+sbin/sharedindexsplit
 share/sqwebmail/cleancache.pl
 share/sqwebmail/html/en
 share/sqwebmail/html/en-us/CHARSET
@@ -79,36 +63,28 @@ share/sqwebmail/html/en-us/readmsg.html
 share/sqwebmail/html/en-us/redirect.html
 share/sqwebmail/html/en-us/smileys.txt
 share/sqwebmail/html/en-us/spellchk.html
-share/sqwebmail/ldapaddressbook.dist
 share/sqwebmail/ldapsearch
-share/sqwebmail/nodsn
-share/sqwebmail/sbin/courierlogger
-share/sqwebmail/sbin/makeuserdb
-share/sqwebmail/sbin/pw2userdb
-share/sqwebmail/sbin/sharedindexinstall
-share/sqwebmail/sbin/sharedindexsplit
-share/sqwebmail/sbin/userdb
-share/sqwebmail/sbin/userdbpw
-share/sqwebmail/sbin/vchkpw2userdb
 share/sqwebmail/sendit.sh
-share/sqwebmail/sqwebmaild.dist
 share/sqwebmail/webgpg
-@dirrm share/sqwebmail/var/calendar/public
-@dirrm share/sqwebmail/var/calendar/private
-@dirrm share/sqwebmail/var/calendar/localcache
-@dirrm share/sqwebmail/var/calendar
-%%AUTHDFLAG%%@dirrm share/sqwebmail/var/authdaemon
-@dirrm share/sqwebmail/var
-@dirrm share/sqwebmail/share
-@dirrm share/sqwebmail/sbin
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.logindomainlist.html
+%%PORTDOCS%%%%DOCSDIR%%/README.pam
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/sqwebmail
+%%CACHE%%@dirrm var/sqwebmail/cache
+@dirrm var/sqwebmail/calendar/public
+@dirrm var/sqwebmail/calendar/private
+@dirrm var/sqwebmail/calendar/localcache
+@dirrm var/sqwebmail/calendar
+@dirrm var/sqwebmail/run
+@dirrm var/sqwebmail
 @dirrm share/sqwebmail/html/en-us
 @dirrm share/sqwebmail/html
 @dirrm share/sqwebmail
-@dirrm libexec/sqwebmail/sqwebmail
-@dirrm libexec/sqwebmail/authlib
 @dirrm libexec/sqwebmail
-%%CACHE%%@unexec rmdir /var/sqwebmail/cache 2> /dev/null || true
-%%CACHE%%@unexec rmdir /var/sqwebmail 2> /dev/null || true
 %%CGIBINDIR%%/%%CGIBINSUBDIR%%/sqwebmail
 @unexec /bin/rmdir %D/%%CGIBINDIR%%/%%CGIBINSUBDIR%% 2> /dev/null || true
 @unexec /bin/rmdir %D/%%CGIBINDIR%% 2> /dev/null || true

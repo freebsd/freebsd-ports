@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	mail
-MASTER_SITES=	http://www.courier-mta.org/beta/courier-authlib/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Authentication library used by courier ports
@@ -41,6 +42,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-authshadow \
+		--without-authcustom \
 		--enable-unicode \
 		--enable-ltdl-install=no
 
@@ -108,7 +110,10 @@ MAN3=		authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
 
 MAN8=		makeuserdb.8 userdb.8 userdbpw.8
 
-EXTRA_DOCS=	README INSTALL AUTHORS ChangeLog
+EXTRA_DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
+		README.authdebug.html README.authmysql.html \
+		README.authmysql.myownquery README.authpostgres.html \
+		README.ldap README_authlib.html
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g ; \
@@ -116,6 +121,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in \
 		${WRKSRC}/liblog/Makefile.in ${WRKSRC}/userdb/Makefile.in
+	@${REINPLACE_CMD} -e 's|DEFAULTOPTIONS=""|DEFAULTOPTIONS="wbnodsn=1"|' \
+		${WRKSRC}/authdaemonrc.in
 
 post-install:
 	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \

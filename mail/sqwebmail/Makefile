@@ -6,14 +6,19 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	4.0.7
-PORTREVISION=	1
+PORTVERSION=	5.0.0
+PORTREVISION=	0
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
+RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
+
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 #
 # User-serviceable variables
@@ -25,6 +30,8 @@ COMMENT=	CGI Webmail client for Maildirs
 # set WEBDATADIR to where you'd like web pages to be placed
 # set WEBDATASUBDIR to where you'd like web pages to be placed
 # set IMAGEURL to where on the web server URL the images are found
+# set CACHEOWNER to who you'd like to own the cache files
+# set CACHEDIR to where you'd like your cache directory to be
 #
 
 CGIBINDIR?=	www/cgi-bin-dist
@@ -32,23 +39,21 @@ CGIBINSUBDIR?=	sqwebmail
 WEBDATADIR?=	www/data-dist
 WEBDATASUBDIR?=	sqwebmail
 IMAGEURL?=	${WEBDATASUBDIR}
+RCDIR?=		${PREFIX}/etc/rc.d
+CACHEDIR?=	${PREFIX}/var/sqwebmail/cache
+CACHEOWNER?=	bin
 
 #
-# set WITHOUT_CACHEDIR to disable the cache dir (can't set it with WITH_LDAP)
-# set WITHOUT_AUTHDAEMON to disable the usage of authdaemond
-# set CACHEOWNER to who you'd like to own the cache files
-# set CACHEDIR to where you'd like your cache directory to be
-# set WITH_LDAP for LDAP authentication and addressbook support
+# set WITHOUT_CACHEDIR to disable the cache dir
 # set WITH_HTTPS to generate https:// URLs for all accesses
 # set WITH_HTTPS=login to generate https:// URLs for only password access
-# set WITH_VCHKPW for vpopmail authentication
 # set WITH_ISPELL to provide spell-checking
 # set WITH_MIMETYPES to enable the search for a mime.types file
 # set WITH_TIMEOUTHARD to something other than 7200 seconds (2hr)
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
 # set WITHOUT_SENTRENAME to turn off periodic renaming of the Sent folder
 # set WITHOUT_IMAP if you don't use the Courier IMAP server
-# set VCHKPWLOC to the home of the vpopmail user, if necessary
+# set WITHOUT_GZIP for not using gzip to compress messages
 #
 # The following settings are in bytes:
 # set WITH_MAXMSGSIZE to max size of messages (including attachments)
@@ -57,11 +62,11 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # 
 # set WITH_CHARSET=chset,chset,... to enable charsets.
 # Set it to "all" will enable all unicode charset mappings.
-# For available charsets just type "iconv -l"
-
-CACHEDIR?=	/var/sqwebmail/cache
-CACHEOWNER?=	bin
-VCHKPWLOC?=	${LOCALBASE}/vpopmail
+# "iconv -l" may give you an idea of some usable character sets, although
+# this is not exactly the same as the set which sqwebmail provides.
+# Do not forget the template character set and UTF-8. For example, to be
+# able to read ISO-8859-15 correctly, you need at least
+# WITH_CHARSET=ISO-8859-15,ISO-8859-1,UTF-8
 
 # End of user variables
 
@@ -71,19 +76,24 @@ HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
 USE_REINPLACE=	YES
 USE_GETTEXT=	YES
-USE_LIBTOOL_VER=13
+USE_GMAKE=	YES
+USE_RC_SUBR=	YES
+USE_LIBTOOL_VER=15
 
-CONFIGURE_ARGS=	\
-	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
-	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
-	--libexecdir=${PREFIX}/libexec/sqwebmail \
-	--mandir=${PREFIX}/man \
-	--enable-imageurl=/${IMAGEURL} \
-	--with-locking-method=fcntl \
-	--with-libintl-prefix=${LOCALBASE} \
-	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
+		--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
+		--localstatedir=${PREFIX}/var/sqwebmail \
+		--sysconfdir=${PREFIX}/etc/sqwebmail \
+		--mandir=${PREFIX}/man \
+		--enable-imageurl=/${IMAGEURL} \
+		--with-locking-method=fcntl \
+		--with-libintl-prefix=${LOCALBASE} \
+		--with-libiconv-prefix=${LOCALBASE}
 
-PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} CGIBINSUBDIR=${CGIBINSUBDIR} WEBDATADIR=${WEBDATADIR} WEBDATASUBDIR=${WEBDATASUBDIR}
+PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} \
+		CGIBINSUBDIR=${CGIBINSUBDIR} \
+		WEBDATADIR=${WEBDATADIR} \
+		WEBDATASUBDIR=${WEBDATASUBDIR}
 
 .if defined(WITHOUT_CACHEDIR)
 PLIST_SUB+=		CACHE="@comment "
@@ -92,36 +102,6 @@ CONFIGURE_ARGS+=	--without-cachedir
 PLIST_SUB+=		CACHE=""
 CONFIGURE_ARGS+=	--with-cachedir=${CACHEDIR} \
 			--with-cacheowner=${CACHEOWNER}
-
-.endif
-.if !defined(WITHOUT_AUTHDAEMON)
-CONFIGURE_ARGS+=	--with-authdaemon
-PLIST_SUB+=		AUTHDFLAG=""
-.else
-CONFIGURE_ARGS+=	--without-authdaemon
-PLIST_SUB+=		AUTHDFLAG="@comment "
-.endif
-
-.if defined(WITH_LDAP)
-USE_OPENLDAP=		YES
-CONFIGURE_ARGS+=	--with-authldap
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-PLIST_SUB+=		LDAPFLAG=""
-.else
-CONFIGURE_ARGS+=	--without-authldap
-PLIST_SUB+=		LDAPFLAG="@comment "
-.endif
-
-.if defined(WITH_VCHKPW)
-BUILD_DEPENDS+=	${VCHKPWLOC}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS+=	${VCHKPWLOC}/bin/vchkpw:${PORTSDIR}/mail/vpopmail
-
-CONFIGURE_ARGS+=	--with-authvchkpw
-PLIST_SUB+=		VPOPMAILFLAG=""
-.else
-CONFIGURE_ARGS+=	--without-authvchkpw
-PLIST_SUB+=		VPOPMAILFLAG="@comment "
 .endif
 
 .if defined(WITH_HTTPS)
@@ -140,26 +120,13 @@ CONFIGURE_ARGS+=	--disable-autorenamesent
 CONFIGURE_ARGS+=	--disable-utf7-folder-encoding
 .endif
 
-.if defined(WITH_MYSQL)
-CONFIGURE_ARGS+=	--with-authmysql
-PLIST_SUB+=		MYSQLFLAG=""
-.else
-CONFIGURE_ARGS+=	--without-authmysql
-PLIST_SUB+=		MYSQLFLAG="@comment "
-.endif
-
-.if defined(WITH_POSTGRESQL)
-CONFIGURE_ARGS+=	--with-authpgsql
-PLIST_SUB+=		PGSQLFLAG=""
-.else
-CONFIGURE_ARGS+=	--without-authpgsql
-PLIST_SUB+=		PGSQLFLAG="@comment "
+.if defined(WITHOUT_GZIP)
+CONFIGURE_ARGS+=	--without-gzip
 .endif
 
 .if defined(WITH_ISPELL)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=	--without-ispell
@@ -197,34 +164,20 @@ CONFIGURE_ARGS+=	--enable-unicode=${WITH_CHARSET}
 .endif
 .endif
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 MAN1=		maildirmake.1
-MAN7=		authlib.7
-MAN8=		deliverquota.8 makeuserdb.8 userdb.8 userdbpw.8
+MAN8=		deliverquota.8
 
-MLINKS=		authlib.7 authcram.7 \
-		authlib.7 authdaemon.7 \
-		authlib.7 authdaemond.7 \
-		authlib.7 authldap.7 \
-		authlib.7 authpam.7 \
-		authlib.7 authpwd.7 \
-		authlib.7 authshadow.7 \
-		authlib.7 authuserdb.7 \
-		authlib.7 authvchkpw.7 \
-		authlib.7 authmysql.7 \
-		makeuserdb.8 pw2userdb.8 \
-		makeuserdb.8 vchkpw2userdb.8
-
-CONFIGURE_ARGS+=	${CONFIGURE_TARGET}
+EXTRA_DOCS=	README README.logindomainlist.html README.pam sqwebmail/ChangeLog \
+		maildir/README.maildirquota.txt maildir/README.sharedfolders.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
-		${WRKSRC}/authlib/installlist.in
-
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
 		${WRKSRC}/liblock/configure
 
-	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|prefix=\$$ac_optarg|&/share/sqwebmail|g'
+	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ -rpath=:${LOCALBASE}/lib/courier-authlib|' \
+		${WRKSRC}/sqwebmail/Makefile.in
 
 	@${REINPLACE_CMD} -e 's|mkdir -p|${MKDIR}|g' ${WRKSRC}/pcp/configure
 
@@ -233,19 +186,22 @@ post-patch:
 		${WRKSRC}/pcp/intl/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-sqwebmaild.sh \
-		${PREFIX}/etc/rc.d/
-.if !defined(WITHOUT_AUTHDAEMON)
-	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-authdaemond.sh \
-		${PREFIX}/etc/rc.d/
-.endif
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "*************************************************************************"
-	@${ECHO_MSG} "*******      Make shure to run 'make install-configure' now!      *******"
-	@${ECHO_MSG} "*************************************************************************"
-	@${ECHO_MSG} ""
+	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/sqwebmail-sqwebmaild.sh > ${WRKDIR}/sqwebmail-sqwebmaild.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/sqwebmail-sqwebmaild.sh ${RCDIR}/sqwebmail-sqwebmaild.sh
 
-install-configure:
-	cd ${WRKSRC} && ${GMAKE} install-configure
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for a in ${EXTRA_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
+.endfor
+.endif
+	cd ${WRKSRC} && ( ${MAKE} install-configure ; cd - )
+
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Add the following line to your /etc/crontab to make shure the"
+	@${ECHO_MSG} "sqwebmail cache directory gets cleaned up."
+	@${ECHO_MSG} "0 * * * * ${CACHEOWNER} ${PREFIX}/share/sqwebmail/cleancache.pl"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

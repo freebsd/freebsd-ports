@@ -3,7 +3,7 @@
 # An rc.subr-style startup script for Courier-IMAP's IMAP service.
 
 # PROVIDE: courier_imap_imapd
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN courier_authdaemond
 # KEYWORD: FreeBSD shutdown
 
 # Define these courier_imap_imapd_* variables in one of these files:
@@ -20,6 +20,8 @@ courier_imap_imapd_enable=${courier_imap_imapd_enable-"NO"}
 name="courier_imap_imapd"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/libexec/courier-imap/imapd.rc"
+pidfile="/var/run/imapd.pid"
+procname="%%PREFIX%%/libexec/courier-imap/couriertcpd"
 
 start_cmd="imapd_cmd start"
 stop_cmd="imapd_cmd stop"

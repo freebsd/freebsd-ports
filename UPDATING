@@ -6,6 +6,40 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050108:
+  AFFECTS: users of mail/courier-imap, mail/sqwebmail
+  AUTHOR: oliver@FreeBSD.org
+
+  Courier-imap and sqwebmail are now dependent on courier-authlib. If
+  you've changed the default authentication config for courier-imap or
+  sqwebmail, you will have to redo the changes for courier-authlib.
+  You may wish to deinstall courier-imap and/or sqwebmail before you
+  install courier-authlib. Since courier-authlib replaces parts of both
+  ports, some of courier-authlib's files are listed as sqwebmail and
+  courier-imap files and deinstalling old courier-imap and/or sqwebmail
+  port may cause the deinstallation of the freshly installed
+  courier-authlib files.
+
+20050108:
+  AFFECTS: users of mail/sqwebmail
+  AUTHOR: oliver@FreeBSD.org
+
+  Sqwebmail now installs it's files directly under PREFIX. That means for
+  instance that files that were formerly found under
+  PREFIX/share/sqwebmail/etc/ are now located under PREFIX/etc/sqwebmail.
+  Furthermore you need to set sqwebmaild_enable=YES in your rc.conf 
+  because
+  the rc.d script has been migrated to use the rc.sub Subsystem
+
+20050108:
+  AFFECTS: users of mail/courier-imap
+  AUTHOR: oliver@FreeBSD.org
+
+  The variable courier_imap_imapdssl_enable have been renamed to
+  courier_imap_imapd_ssl_enable.
+  The variable courier_imap_pop3dssl_enable have been renamed to
+  courier_imap_pop3d_ssl_enable.
+
 20041231:
   AFFECTS: users of www/awstats
   AUTHOR: webmaster@lightningfire.net

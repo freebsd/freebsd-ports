@@ -21,8 +21,6 @@ lib/courier-authlib/libcourierauthsaslclient.a
 lib/courier-authlib/libcourierauthcommon.so.0
 lib/courier-authlib/libcourierauthcommon.so
 lib/courier-authlib/libcourierauthcommon.a
-lib/courier-authlib/libauthcustom.so.0
-lib/courier-authlib/libauthcustom.so
 lib/courier-authlib/libauthuserdb.so.0
 lib/courier-authlib/libauthuserdb.so
 %%PAMFLAG%%lib/courier-authlib/libauthpam.so.0
@@ -48,9 +46,17 @@ sbin/userdb-test-cram-md5
 sbin/userdbpw
 sbin/vchkpw2userdb
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.authdebug.html
+%%PORTDOCS%%%%DOCSDIR%%/README.authmysql.html
+%%PORTDOCS%%%%DOCSDIR%%/README.authmysql.myownquery
+%%PORTDOCS%%%%DOCSDIR%%/README.authpostgres.html
+%%PORTDOCS%%%%DOCSDIR%%/README.ldap
+%%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/var/authdaemon 2>/dev/null || true
 @unexec rmdir %D/var 2>/dev/null || true

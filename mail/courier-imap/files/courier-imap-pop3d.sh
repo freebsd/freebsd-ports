@@ -3,7 +3,7 @@
 # An rc.subr-style startup script for Courier-IMAP's POP3 service.
 
 # PROVIDE: courier_imap_pop3d
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN courier_authdaemond
 # KEYWORD: FreeBSD shutdown
 
 # Define these courier_imap_pop3d_* variables in one of these files:
@@ -20,6 +20,8 @@ courier_imap_pop3d_enable=${courier_imap_pop3d_enable-"NO"}
 name="courier_imap_pop3d"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/libexec/courier-imap/pop3d.rc"
+pidfile="/var/run/pop3d.pid"
+procname="%%PREFIX%%/libexec/courier-imap/couriertcpd"
 
 start_cmd="pop3d_cmd start"
 stop_cmd="pop3d_cmd stop"

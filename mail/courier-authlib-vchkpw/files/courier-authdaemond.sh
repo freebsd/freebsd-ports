@@ -24,6 +24,8 @@ command="%%PREFIX%%/sbin/authdaemond"
 start_cmd="authdaemond_cmd start"
 stop_cmd="authdaemond_cmd stop"
 restart_cmd="authdaemond_cmd stop && authdaemond_cmd start"
+pidfile="%%PREFIX%%/var/spool/authdaemon/pid"
+procname="%%PREFIX%%/sbin/courierlogger"
 
 load_rc_config $name
 
@@ -36,6 +38,12 @@ authdaemond_cmd () {
 	stop)
 		echo "Stopping ${name}."
 		${command} stop
+		if [ $? -eq 0 ] ; then
+			[ -f "$pidfile" ] && rm -f "$pidfile"
+			[ -f "$pidfile".lock ] && rm -f "$pidfile".lock
+			[ -S %%PREFIX%%/var/spool/authdaemon/socket ] && rm -f %%PREFIX%%/var/spool/authdaemon/socket
+			return 0
+		fi
 		;;
 	esac
 }
