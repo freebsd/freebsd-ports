@@ -9405,6 +9405,7 @@ qtorrent	ports/net/qtorrent
 qtpcr		ports/comms/qtpcr
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/sysutils/qtpkg
+qtstalker	ports/finance/qtstalker
 qtutils		ports/graphics/qtutils
 qu-aspell	ports/textproc/qu-aspell
 quack		ports/lang/quack
