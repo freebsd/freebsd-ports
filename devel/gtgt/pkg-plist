@@ -1,13 +1,13 @@
 bin/gcng
 bin/gptg
 bin/gscg
-share/doc/gtgt/autoconf.html
-share/doc/gtgt/automake.html
-share/doc/gtgt/company-license.long
-share/doc/gtgt/company-license.short
-share/doc/gtgt/gtgt.gif
-share/doc/gtgt/gtgt.html
-share/doc/gtgt/gtgt.txt
-share/doc/gtgt/index.html
-share/doc/gtgt/libtool.html
-@dirrm share/doc/gtgt
+%%PORTDOCS%%%%DOCSDIR%%/autoconf.html
+%%PORTDOCS%%%%DOCSDIR%%/automake.html
+%%PORTDOCS%%%%DOCSDIR%%/company-license.long
+%%PORTDOCS%%%%DOCSDIR%%/company-license.short
+%%PORTDOCS%%%%DOCSDIR%%/gtgt.gif
+%%PORTDOCS%%%%DOCSDIR%%/gtgt.html
+%%PORTDOCS%%%%DOCSDIR%%/gtgt.txt
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libtool.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
