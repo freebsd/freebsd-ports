@@ -7,6 +7,7 @@
 
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,11 +40,15 @@ MAN1=		dvd-slideshow.1 \
 		gallery2slideshow.1 \
 		jigl2slideshow.1
 
-PORTDOCS=	README.html examples.html changelog.html \
+.if !defined(NOPORTDOCS)
+DOC_FILES=	README.html examples.html changelog.html \
 		gallery2slideshow.html dir2slideshow.html \
 		jigl2slideshow.html dvd-encode.html \
 		test_with_background.html dvd-menu.html \
-		test_with_background.txt dvd-slideshow.html \
+		test_with_background.txt dvd-slideshow.html
+PLIST_FILES+=   ${DOC_FILES:S,^,%%DOCSDIR%%/,}
+PLIST_DIRS+=    %%DOCSDIR%%
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -81,7 +86,7 @@ do-install:
 .endfor
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${PORTDOCS}
+.for FILE in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 .endif
