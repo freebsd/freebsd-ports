@@ -10,13 +10,10 @@ PORTVERSION= 	1.03
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
-		ftp://ftp.pipex.net/mirrors/qmail/ \
 		ftp://ftp.jp.qmail.org/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
-		ftp://ftp.mira.net.au/unix/mail/qmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
-		ftp://ftp.id.wustl.edu/pub/qmail/ \
-		ftp://koobera.math.uic.edu/www/
+		ftp://ftp.id.wustl.edu/pub/qmail/
 
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
@@ -172,7 +169,7 @@ ${WRKDIR}/.thereal_disable_sendmail_done:
 # I would like some input on the targets below. Only constructive ones
 # please. :)
 # based on shells/pdksh /etc/shells update PLIST.
-thereal-disable-sendmail: ${WRKDIR}/.thereal_disable_sendmail_done /etc/rc.conf 
+thereal-disable-sendmail: ${WRKDIR}/.thereal_disable_sendmail_done /etc/rc.conf
 	@if [ -f /etc/rc.conf ]; \
 	then \
 		${CP} /etc/rc.conf /etc/rc.conf.bak && \
@@ -220,7 +217,6 @@ enable-qmail: install disable-sendmail
 	@${ECHO} "===> and copy the chosen script as ${PREFIX}/rc"
 	@${ECHO} "===> For example, \¨cp ${PREFIX}/boot/proc+df ${PREFIX}/rc\¨"
 
-
 # taken from mail/postfix idea
 force-enable-qmail: install disable-sendmail
 	@${ECHO_MSG} "===> Replacing sendmail"
@@ -235,7 +231,7 @@ force-enable-qmail: install disable-sendmail
 	@if [ -e /usr/bin/mailq ]; then \
 		${MV} -f /usr/bin/mailq /usr/bin/mailq.OFF && \
 		${CHMOD} 0 /usr/bin/mailq.OFF; \
-	fi  
+	fi
 	@if [ -e ${PREFIX}/bin/qmail-qread ]; then \
 		${LN} -s ${PREFIX}/bin/qmail-qread /usr/bin/mailq; \
 	fi
