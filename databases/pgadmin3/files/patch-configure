@@ -1,17 +1,18 @@
---- configure.orig	Fri Sep 26 16:14:11 2003
-+++ configure	Tue Nov  4 03:24:50 2003
-@@ -5033,13 +5033,17 @@
+--- configure.orig	Tue Oct 14 20:10:14 2003
++++ configure	Wed Nov  5 03:55:28 2003
+@@ -5033,13 +5033,18 @@
                  LIBS="$LIBS -lwx_gtk_stc-${WX_VERSION} -lwx_gtk_xrc-${WX_VERSION}"
                  LIBS="$LIBS $WX_NEW_LDFLAGS"
                  ;;
-+            *wx_gtk*)
-+                LIBS="$LIBS -lwx_gtk_stc -lwx_gtk_xrc"
-+                LIBS="$LIBS $WX_NEW_LDFLAGS $PTHREAD_LIBS"
-+                ;;
++            *wx_gtk2-*)
++                LIBS="$LIBS -lwx_gtk2_stc-${WX_VERSION} -lwx_gtk2_xrc-${WX_VERSION}"
++                LIBS="$LIBS $WX_NEW_LDFLAGS"
++		;;
              *)
                  ;;
          esac
      fi
++    LIBS="$LIBS $PTHREAD_LIBS"
  
      WX_NEW_CPPFLAGS=`${WX_CONFIG} --cxxflags`
 -    CPPFLAGS="$CPPFLAGS $WX_NEW_CPPFLAGS -I${WX_HOME}/include"
