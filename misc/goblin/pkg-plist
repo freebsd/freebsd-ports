@@ -24,6 +24,7 @@ bin/goblin.%%VERSION%%/editConstants.tk
 bin/goblin.%%VERSION%%/editDelete.gif
 bin/goblin.%%VERSION%%/editDelete.tk
 bin/goblin.%%VERSION%%/editExtract.tk
+bin/goblin.%%VERSION%%/editIncidences.gif
 bin/goblin.%%VERSION%%/editLabel.gif
 bin/goblin.%%VERSION%%/editMetrics.tk
 bin/goblin.%%VERSION%%/editMove.gif
@@ -48,6 +49,9 @@ bin/goblin.%%VERSION%%/fileSaveAs.tk
 bin/goblin.%%VERSION%%/foldClose.gif
 bin/goblin.%%VERSION%%/foldOpen.gif
 bin/goblin.%%VERSION%%/gobletTitle.gif
+bin/goblin.%%VERSION%%/infoAuthors.tk
+bin/goblin.%%VERSION%%/infoBibliography.tk
+bin/goblin.%%VERSION%%/infoModules.tk
 bin/goblin.%%VERSION%%/infoRessources.tk
 bin/goblin.%%VERSION%%/infoStatistics.tk
 bin/goblin.%%VERSION%%/infoTimers.tk
@@ -55,7 +59,6 @@ bin/goblin.%%VERSION%%/layoutArcs.tk
 bin/goblin.%%VERSION%%/layoutLPOpt.tk
 bin/goblin.%%VERSION%%/layoutMeasures.tk
 bin/goblin.%%VERSION%%/layoutNodes.tk
-bin/goblin.%%VERSION%%/layoutStyle.tk
 bin/goblin.%%VERSION%%/lightsGreen.gif
 bin/goblin.%%VERSION%%/lightsRed.gif
 bin/goblin.%%VERSION%%/lightsYellow.gif
@@ -84,6 +87,8 @@ bin/goblin.%%VERSION%%/msgWarn.gif
 bin/goblin.%%VERSION%%/optimizeDataStruct.tk
 bin/goblin.%%VERSION%%/optimizeLevel.tk
 bin/goblin.%%VERSION%%/optimizeMethods.tk
+bin/goblin.%%VERSION%%/placeNodes.tk
+bin/goblin.%%VERSION%%/planarity.tk
 bin/goblin.%%VERSION%%/samples/acyclic.gob
 bin/goblin.%%VERSION%%/samples/adlittle.gob
 bin/goblin.%%VERSION%%/samples/afiro.gob
@@ -193,6 +198,8 @@ bin/goblin.%%VERSION%%/samples/optmatch8.gob
 bin/goblin.%%VERSION%%/samples/optmatch9.gob
 bin/goblin.%%VERSION%%/samples/petersen.gob
 bin/goblin.%%VERSION%%/samples/planar1.gob
+bin/goblin.%%VERSION%%/samples/planar2.gob
+bin/goblin.%%VERSION%%/samples/planar3.gob
 bin/goblin.%%VERSION%%/samples/postman1.gob
 bin/goblin.%%VERSION%%/samples/postman2.gob
 bin/goblin.%%VERSION%%/samples/postman3.gob
@@ -220,6 +227,7 @@ bin/goblin.%%VERSION%%/samples/tile3.gob
 bin/goblin.%%VERSION%%/samples/tile4.gob
 bin/goblin.%%VERSION%%/samples/tile5.gob
 bin/goblin.%%VERSION%%/samples/tile6.gob
+bin/goblin.%%VERSION%%/samples/tile7.gob
 bin/goblin.%%VERSION%%/samples/tjoin1.gob
 bin/goblin.%%VERSION%%/samples/tjoin2.gob
 bin/goblin.%%VERSION%%/samples/tjoin3.gob
@@ -247,6 +255,7 @@ bin/goblin.%%VERSION%%/tclLogo.gif
 bin/goblin.%%VERSION%%/toggleBrowser.gif
 bin/goblin.%%VERSION%%/toggleEditor.gif
 bin/goblin.%%VERSION%%/toggleScript.gif
+bin/goblin.%%VERSION%%/~optimizeMethods.tk
 bin/gosh
 include/goblin.%%VERSION%%/absbal.h
 include/goblin.%%VERSION%%/absbig.h
@@ -255,6 +264,7 @@ include/goblin.%%VERSION%%/absfam.h
 include/goblin.%%VERSION%%/absgra.h
 include/goblin.%%VERSION%%/absmix.h
 include/goblin.%%VERSION%%/absobj.h
+include/goblin.%%VERSION%%/abstractSubgraph.h
 include/goblin.%%VERSION%%/auxnet.h
 include/goblin.%%VERSION%%/bal2bal.h
 include/goblin.%%VERSION%%/basheap.h
@@ -265,8 +275,10 @@ include/goblin.%%VERSION%%/bbstable.h
 include/goblin.%%VERSION%%/bbstsp.h
 include/goblin.%%VERSION%%/big2fnw.h
 include/goblin.%%VERSION%%/binheap.h
+include/goblin.%%VERSION%%/complement.h
 include/goblin.%%VERSION%%/config.h
 include/goblin.%%VERSION%%/context.h
+include/goblin.%%VERSION%%/deleteNode.h
 include/goblin.%%VERSION%%/dictionary.h
 include/goblin.%%VERSION%%/display.h
 include/goblin.%%VERSION%%/dnsbig.h
@@ -284,6 +296,7 @@ include/goblin.%%VERSION%%/fnw2fnw.h
 include/goblin.%%VERSION%%/genincl.h
 include/goblin.%%VERSION%%/genstruc.h
 include/goblin.%%VERSION%%/globals.h
+include/goblin.%%VERSION%%/glpkWrap.h
 include/goblin.%%VERSION%%/goblin.h
 include/goblin.%%VERSION%%/gosh.h
 include/goblin.%%VERSION%%/gra2bal.h
@@ -295,6 +308,7 @@ include/goblin.%%VERSION%%/lpSolve.h
 include/goblin.%%VERSION%%/matrix.h
 include/goblin.%%VERSION%%/messenger.h
 include/goblin.%%VERSION%%/queue.h
+include/goblin.%%VERSION%%/segment.h
 include/goblin.%%VERSION%%/setfam.h
 include/goblin.%%VERSION%%/shrfam.h
 include/goblin.%%VERSION%%/shrnet.h
@@ -307,9 +321,11 @@ include/goblin.%%VERSION%%/spsmix.h
 include/goblin.%%VERSION%%/spsstruc.h
 include/goblin.%%VERSION%%/statq.h
 include/goblin.%%VERSION%%/statstaq.h
+include/goblin.%%VERSION%%/subgraph.h
 include/goblin.%%VERSION%%/surgra.h
 include/goblin.%%VERSION%%/timers.h
 include/goblin.%%VERSION%%/treeView.h
+lib/libglpk.a
 lib/libgoblin%%VERSION%%.a
 @dirrm include/goblin.%%VERSION%%
 @dirrm bin/goblin.%%VERSION%%/samples
