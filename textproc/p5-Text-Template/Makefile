@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Text-Template
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://perl.plover.com/Template/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 COMMENT=	Expand template text with embedded Perl
 
 PERL_CONFIGURE=	YES
