@@ -1,0 +1,15 @@
+--- tools/testdeps	Thu Feb 28 14:38:10 2002
++++ tools/testdeps	Thu Aug 15 16:43:45 2002
+@@ -107,7 +107,11 @@
+ 	$module = "DBD::mysql::Install" if ($module =~ /DBD::mysql/);
+ 	
+         print "Installing with CPAN...";
+-        CPAN::install($module);
++	require CPAN::FirstTime;  # shut up configuration
++	no strict 'refs';
++	local $^W;
++	*{'ExtUtils::MakeMaker::prompt'} = sub ($;$) { '' };
++        CPAN::force('install', $module);
+      }
+      print "\n";
+ 	exit(1) if ($mode =~ /-q/);

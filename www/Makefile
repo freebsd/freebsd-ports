@@ -359,6 +359,7 @@
     SUBDIR += reportmagic
     SUBDIR += retawq
     SUBDIR += roxen
+    SUBDIR += rt2
     SUBDIR += ruboard
     SUBDIR += ruby-google
     SUBDIR += ruby-http-access
