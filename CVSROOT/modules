@@ -5593,6 +5593,7 @@ newsfetch	ports/news/newsfetch
 newsfish	ports/news/newsfish
 newsgrab	ports/news/newsgrab
 newspost	ports/news/newspost
+newsstar	ports/news/newsstar
 newsx		ports/news/newsx
 newt		ports/devel/newt
 newvox		ports/games/newvox
