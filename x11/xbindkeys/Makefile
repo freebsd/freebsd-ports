@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 PORTREVISION=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
@@ -17,7 +17,6 @@ COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALL_TARGET=	install-binPROGRAMS
 
 MAN1=	xbindkeys.1

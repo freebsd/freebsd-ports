@@ -1,4 +1,4 @@
 bin/xbindkeys
 %%WITH_GUI%%bin/xbindkeys_show
-%%PORTDOCS%%share/examples/xbindkeys/xbindkeysrc
-%%PORTDOCS%%@dirrm share/examples/xbindkeys
+%%PORTDOCS%%%%EXAMPLESDIR%%/xbindkeysrc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
