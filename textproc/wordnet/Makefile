@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet
-PORTVERSION=	1.7.1
+PORTVERSION=	2.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${PORTVERSION}/
@@ -24,13 +24,11 @@ EXTRACT_AFTER_ARGS= | ${TAR} -xf - --exclude '*/bin/*' \
 		--exclude '*/lib/irix/*' \
 		--exclude '*/*.[ao]'
 
-TCL_DVER?=	8.3
+TCL_DVER?=	8.4
 TCL_VER=	${TCL_DVER:C/\.//}
 SCRIPTS_ENV+=	TCL_DVER=${TCL_DVER} VER=${PORTVERSION}
 MAKE_ENV+=	TCL_DVER=${TCL_DVER} VER=${PORTVERSION}
 PLIST_SUB+=	TCL_DVER=${TCL_DVER} VER=${PORTVERSION}
-# Parallel build is faster even on a single cpu machine:
-MAKE_ARGS=	-j 2
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 INSTALLS_SHLIB=	yes

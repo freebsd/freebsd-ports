@@ -1,9 +1,37 @@
---- src/lib/search.c	Tue Jun 19 11:02:47 2001
-+++ src/lib/search.c	Tue Oct 30 23:11:26 2001
-@@ -2051,5 +2051,5 @@
-    passed and return bit mask. */
-   
--unsigned int is_defined(char *searchstr, int dbase)
-+unsigned long is_defined(char *searchstr, int dbase)
- {
-     IndexPtr index;
+--- src/lib/search.c	Tue Jul 15 10:41:55 2003
++++ src/lib/search.c	Tue Feb 17 15:59:53 2004
+@@ -331,5 +331,5 @@
+     /* sanity check - make sure starting file offset matches first field */
+     if (synptr->hereiam != loc) {
+-	sprintf(msgbuf, "WordNet library error: no synset at location %d\n",
++	sprintf(msgbuf, "WordNet library error: no synset at location %ld\n",
+ 		loc);
+ 	display_message(msgbuf);
+@@ -464,5 +464,5 @@
+     if (ptrtok) {
+ 	ptrtok = strtok(NULL," \n");
+-	sprintf(tbuf, "");
++	tbuf[0] = '\0';
+ 	while (ptrtok != NULL) {
+ 	    strcat(tbuf,ptrtok);
+@@ -478,5 +478,5 @@
+ 
+     if (keyindexfp) { 		/* we have unique keys */
+-	sprintf(tmpbuf, "%c:%8.8d", partchars[dbase], synptr->hereiam);
++	sprintf(tmpbuf, "%c:%8.8ld", partchars[dbase], synptr->hereiam);
+ 	synptr->key = GetKeyForOffset(tmpbuf);
+     }
+@@ -2350,5 +2350,5 @@
+ 
+     if (offsetflag)		/* print synset offset */
+-	sprintf(tbuf + strlen(tbuf),"{%8.8d} ", synptr->hereiam);
++	sprintf(tbuf + strlen(tbuf),"{%8.8ld} ", synptr->hereiam);
+     if (fileinfoflag) {		/* print lexicographer file information */
+ 	sprintf(tbuf + strlen(tbuf), "<%s> ", lexfiles[synptr->fnum]);
+@@ -2385,5 +2385,5 @@
+ 
+     if (offsetflag)
+-	sprintf(tbuf,"{%8.8d} ", synptr->hereiam);
++	sprintf(tbuf,"{%8.8ld} ", synptr->hereiam);
+     if (fileinfoflag) {
+ 	sprintf(tbuf + strlen(tbuf),"<%s> ", lexfiles[synptr->fnum]);

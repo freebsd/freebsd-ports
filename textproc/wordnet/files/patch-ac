@@ -64,5 +64,5 @@
 @@ -295,3 +290,3 @@
        (ClientData) NULL, (Tcl_CmdDeleteProc *) NULL);
 -   return TCL_OK;
-+   return Tcl_PkgProvide(interp, "Wordnet", "1.7");
++   return Tcl_PkgProvide(interp, "Wordnet", "2.0");
  }
