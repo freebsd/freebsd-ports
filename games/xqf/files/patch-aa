@@ -1,30 +1,27 @@
---- Makefile.orig	Fri May  7 11:03:16 1999
-+++ Makefile	Sat May  8 17:26:49 1999
-@@ -17,13 +17,13 @@
- #     -DDEBUG
- #
+--- Makefile.orig	Sat Jul 31 14:33:44 1999
++++ Makefile	Sun Aug  1 22:21:37 1999
+@@ -19,11 +19,11 @@
  
--EXTRA_CFLAGS =  # -DQSTAT23 -DCOMPRESSOR_BZIP2  # -DDEBUG
-+EXTRA_CFLAGS =  -DQSTAT23 #-DCOMPRESSOR_BZIP2  # -DDEBUG
+ EXTRA_CFLAGS = -DQSTAT23  # -DCOMPRESSOR_BZIP2 -DDEBUG
  
 -CC	= gcc
 -CFLAGS	= -O2 -g -Wall `gtk-config --cflags` $(EXTRA_CFLAGS)
 -LDFLAGS	= `gtk-config --libs`
 +CC	?= gcc
-+CFLAGS	+= `gtk12-config --cflags` $(EXTRA_CFLAGS)
++CFLAGS	+= -Wall `gtk12-config --cflags` $(EXTRA_CFLAGS)
 +LDFLAGS	= `gtk12-config --libs`
  
 -INSTALL_ROOT = /usr/local
 +INSTALL_ROOT = ${PREFIX}
  
  TARGET	= xqf
- OBJS	= xqf.o xqf-ui.o game.o pref.o server.o stat.o rc.o dialogs.o \
-@@ -43,7 +43,7 @@
+ 
+@@ -46,7 +46,7 @@
  	    $(CC) $(CFLAGS) $(CPPFLAGS) -MM $$i; done) > Makefile
  
  install:
 -	install -s -m 755 -g root -o root $(TARGET) $(INSTALL_ROOT)/bin
-+	install -c -s -m 755 -g wheel -o root $(TARGET) $(INSTALL_ROOT)/bin
++	${INSTALL_PROGRAM} $(TARGET) $(INSTALL_ROOT)/bin
  
- clean:
+ dist-clean clean:
  	rm -f *.[oasi] *~ core $(TARGET) Makefile.old
