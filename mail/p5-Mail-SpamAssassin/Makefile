@@ -36,7 +36,7 @@ post-patch:
 
 post-install:
 	@strip ${PREFIX}/bin/spamc
-	${INSTALL_DATA} ${FILESDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh-dist
+	${INSTALL_SCRIPT} ${FILESDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh-dist
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
