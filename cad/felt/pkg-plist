@@ -5,11 +5,13 @@ bin/loom
 bin/patchwork
 bin/velvet
 bin/yardstick
-lib/X11/app-defaults/Velvet.ad
 share/doc/FElt/FAQ.html
 @dirrm share/doc/FElt
 share/examples/FElt/frame3.flt
 share/examples/FElt/beam3d_b.flt
+share/examples/FElt/brick_ring.flt
+share/examples/FElt/brick_cap.flt
+share/examples/FElt/brick_beam.flt
 share/examples/FElt/bridge.flt
 share/examples/FElt/cube.flt
 share/examples/FElt/iso.flt
@@ -103,4 +105,3 @@ share/felt/german.trn
 share/felt/german_new.trn
 share/felt/spanish.trn
 @dirrm share/felt
-
