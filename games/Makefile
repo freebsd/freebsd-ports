@@ -68,6 +68,7 @@
     SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += digger-vgl
+    SUBDIR += dmjava
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += doomlegacy
