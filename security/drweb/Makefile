@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=	4.31.3
-PORTREVISION=	1
+PORTVERSION=	4.31.4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/ \
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/generic/ \
 		ftp://ftp.drweb.ru/pub/unix/archive/ \
 		ftp://ftp.drweb.ru/pub/unix/archive/${PORTNAME}-${PORTVERSION}/
 
@@ -44,32 +43,32 @@ do-install:
 		${TAR} -xf - -C ${DRWEB_PREFIX}
 	${CHMOD} 755 ${DRWEB_PREFIX}/bases ${DRWEB_PREFIX}/doc \
 		${DRWEB_PREFIX}/lib ${DRWEB_PREFIX}/updates
-	${INSTALL_DATA} ${WRKSRC}/usr/local/drweb/drweb.key \
-		${DRWEB_PREFIX}/drweb.key-dist
-	${INSTALL_DATA} ${WRKSRC}/usr/local/drweb/drwebd.key \
-		${DRWEB_PREFIX}/drwebd.key-dist
+	${INSTALL_DATA} ${WRKSRC}/usr/local/drweb/drweb.key-distr \
+		${DRWEB_PREFIX}/drweb.key-distr
+	${INSTALL_DATA} ${WRKSRC}/usr/local/drweb/drwebd.key-distr \
+		${DRWEB_PREFIX}/drwebd.key-distr
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
 		< ${WRKSRC}/usr/local/drweb/update/update.pl \
 		> ${DRWEB_PREFIX}/update/update.pl
 	${CHMOD} 750 ${DRWEB_PREFIX}/update/update.pl
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
 		< ${WRKSRC}/usr/local/etc/drweb/drweb32.ini \
-		> ${PREFIX}/drweb/drweb32.ini-dist
+		> ${PREFIX}/drweb/drweb32.ini-distr
 	${RM} -f ${PREFIX}/bin/drweb
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
 		< ${WRKSRC}/usr/local/etc/rc.d/00drwebd.sh \
 		> ${PREFIX}/etc/rc.d/00drwebd.sh
 	${CHMOD} 755 ${PREFIX}/etc/rc.d/00drwebd.sh
 	if [ ! -f ${PREFIX}/drweb/drweb32.ini ] ; then \
-		${CP} ${PREFIX}/drweb/drweb32.ini-dist \
+		${CP} ${PREFIX}/drweb/drweb32.ini-distr \
 		      ${PREFIX}/drweb/drweb32.ini; \
 	fi
 	if [ ! -f ${DRWEB_PREFIX}/drweb.key ] ; then \
-		${CP} ${DRWEB_PREFIX}/drweb.key-dist \
+		${CP} ${DRWEB_PREFIX}/drweb.key-distr \
 		      ${DRWEB_PREFIX}/drweb.key; \
 	fi
 	if [ ! -f ${DRWEB_PREFIX}/drwebd.key ] ; then \
-		${CP} ${DRWEB_PREFIX}/drwebd.key-dist \
+		${CP} ${DRWEB_PREFIX}/drwebd.key-distr \
 		      ${DRWEB_PREFIX}/drwebd.key; \
 	fi
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
