@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.40 1998/11/25 09:01:24 asami Exp $
+# $Id: Makefile,v 1.41 1998/12/04 07:53:41 tg Exp $
 
 DISTNAME=	WindowMaker-0.20.3
 PKGNAME=	windowmaker-0.20.3
@@ -27,7 +27,7 @@ CONFIGURE_ENV=	X11BASE=${X11BASE}
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${LOCALBASE}/lib/locale \
 	--with-gfx-libs="-L${LOCALBASE}/lib" \
-	--with-gfx-incs="-I${LOCALBASE}/include -I${LOCALBASE}/include" \
+	--with-gfx-incs="-I${LOCALBASE}/include -I${LOCALBASE}/include/giflib" \
 	--disable-debug
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
