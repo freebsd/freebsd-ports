@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.12
 CATEGORIES=	devel
 MASTER_SITES=	http://www.azzit.de/dotconf/download/v1.0/
 
