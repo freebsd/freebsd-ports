@@ -53,6 +53,9 @@ BUILD_DEPENDS+=	bdftopcf:${X_CLIENTS_PORT}
 # ../src/resid/libresid.a(wave.o)(.rodata+0x0): relocation truncated to fit: GPREL32 *UND*
 BROKEN=		"GPREL relocation truncated"
 .endif
+.if ${OSVERSION} >= 502122
+BROKEN=		gcc34: conflicting types
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/vice.info*
