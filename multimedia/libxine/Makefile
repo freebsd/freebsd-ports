@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		mad.2:${PORTSDIR}/audio/libmad \

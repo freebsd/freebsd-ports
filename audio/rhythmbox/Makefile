@@ -40,7 +40,7 @@ OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
 
 .ifdef (WITH_XINE)
 LIB_DEPENDS+=		xine.12:${PORTSDIR}/multimedia/libxine \
-			FLAC.5:${PORTSDIR}/audio/flac \
+			FLAC.7:${PORTSDIR}/audio/flac \
 			mad.2:${PORTSDIR}/audio/libmad
 CONFIGURE_ARGS+=	--with-player=xine
 WITH_MONKEYMEDIA=	yes
