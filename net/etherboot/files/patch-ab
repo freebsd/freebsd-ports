@@ -1,14 +1,19 @@
-*** linux-asm-string.h.orig	Sat Mar 18 20:15:54 2000
---- linux-asm-string.h	Sat Mar 18 20:40:49 2000
+*** Config.orig	Mon May 15 10:15:18 2000
+--- Config	Mon May 15 10:16:04 2000
 ***************
-*** 19,27 ****
-   *		consider these trivial functions to be PD.
-   */
+*** 143,149 ****
+  # CFLAGS32+=	-DCONSOLE_DUAL -DCOMCONSOLE=0x3f8 -DCONSPEED=9600
   
-- #ifndef		__FreeBSD__
-  typedef int	size_t;
-- #endif
+  # Enable generic ELF, Multiboot ELF or FreeBSD ELF/a.out boot image support
+! # CFLAGS32+=	-DELF_IMAGE -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
   
-  extern void *__memcpy(void * to, const void * from, size_t n);
-  extern void *__constant_memcpy(void * to, const void * from, size_t n);
---- 19,25 ----
+  # Change download protocol to NFS.  Only available for Etherboot/32 for now.
+  # CFLAGS32+=	-DDOWNLOAD_PROTO_NFS
+--- 143,149 ----
+  # CFLAGS32+=	-DCONSOLE_DUAL -DCOMCONSOLE=0x3f8 -DCONSPEED=9600
+  
+  # Enable generic ELF, Multiboot ELF or FreeBSD ELF/a.out boot image support
+! CFLAGS32+=	-DELF_IMAGE -DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
+  
+  # Change download protocol to NFS.  Only available for Etherboot/32 for now.
+  # CFLAGS32+=	-DDOWNLOAD_PROTO_NFS

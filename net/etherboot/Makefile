@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	etherboot
-PORTVERSION=	4.5.5
+PORTVERSION=	4.6.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.slug.org.au/etherboot/ \
+MASTER_SITES=	http://etherboot.sourceforge.net/ \
 		http://www.us.kernel.org/pub/linux/devel/gcc/ \
 		http://www.ambrisko.com/doug/
 DISTFILES=	${DISTNAME}.tar.gz ${BINUTILS_VER}.tar.gz
