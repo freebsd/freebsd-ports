@@ -17,13 +17,19 @@ COMMENT=	CGI program for administering Qmail with vchkpw/vpopmail
 BUILD_DEPENDS= \
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
-	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
 	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS= \
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 	autorespond:${PORTSDIR}/mail/autorespond \
-	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
 	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+
+.if defined(WITHOUT_IDX)
+BUILD_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
+RUN_DEPENDS+=	ezmlm-send:${PORTSDIR}/mail/ezmlm
+.else
+BUILD_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
+RUN_DEPENDS+=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
+.endif
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
