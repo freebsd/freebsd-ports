@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/macro-language.c.orig	Fri Jul 27 05:16:16 2001
-+++ src/macro-language.c	Fri Jul 27 15:59:02 2001
-@@ -174,7 +174,7 @@
- void build_scripts_menu(void)
+--- src/macro-language.c.orig	Thu Jan 10 19:53:09 2002
++++ src/macro-language.c	Fri Jan 11 14:22:51 2002
+@@ -185,7 +185,7 @@
  {
-    gchar path[384];
--   g_snprintf(path, sizeof(path), PREFIX "/share/" PACKAGE "/scripts");
-+   g_snprintf(path, sizeof(path), PREFIX "/share/gnome/" PACKAGE "/scripts");
-    build_menu_from_scripts_dir(path, "_Scripts/");
-    g_snprintf(path, sizeof(path), "%s/." PACKAGE "/scripts", getenv("HOME"));
-    build_menu_from_scripts_dir(path, "_Scripts/");
+     gchar path[384];
+ 
+-    g_snprintf (path, sizeof (path), PREFIX "/share/" PACKAGE "/scripts");
++    g_snprintf (path, sizeof (path), PREFIX "/share/gnome/" PACKAGE "/scripts");
+     build_menu_from_scripts_dir (path, "_Scripts/");
+     g_snprintf (path, sizeof (path), "%s/." PACKAGE "/scripts",
+                 g_get_home_dir ());
