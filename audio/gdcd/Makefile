@@ -12,11 +12,10 @@ MASTER_SITES=	http://cdcd.undergrid.net/gdcd/source_archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOME=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE=	automake -a -i
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
