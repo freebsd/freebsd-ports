@@ -1,0 +1,27 @@
+--- xmakefile.orig	Wed Jan 26 12:30:07 2000
++++ xmakefile	Wed Jan 26 12:47:18 2000
+@@ -103,12 +103,15 @@
+ MAIL = nnmail.o reroute.o hostname.o global.o options.o
+ 
+ 
+-all:	$(BIN_PROG) $(LIB_PROG) $(MASTER_PROG) inst
++all:	$(BIN_PROG) $(LIB_PROG) $(MASTER_PROG) inst inews
+ 
+ client: $(BIN_PROG) $(LIB_PROG) inst
+ 
+ master: $(MASTER_PROG) inst
+ 
++inews::
++	@cd inews && $(MAKE) all
++
+ nn:	PARALLEL $(NN) $(NOVOBJ)
+ 	@echo linking nn
+ 	@$(CC) -o nn $(CFLAGS) $(NN) $(NOVOBJ) $(LDFLAGS) TERMLIB NNTP_EXTRA_LIB
+@@ -195,6 +198,7 @@
+ 	rm -f $(BIN_PROG) $(LIB_PROG) $(MASTER_PROG) cvt-help usercheck
+ 	rm -f prefix mkprefix inst
+ 	rm -f man/nn.1 man/nn.1~
++	cd inews && $(MAKE) clean
+ 
+ *
+ * dependencies

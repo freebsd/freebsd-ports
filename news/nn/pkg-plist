@@ -10,6 +10,7 @@ bin/nnstats
 bin/nntidy
 bin/nnusage
 bin/nnview
+bin/nn-inews
 lib/nn/aux
 lib/nn/conf
 lib/nn/help/Manual
@@ -33,4 +34,3 @@ lib/nn/help/help.variables
 lib/nn/upgrade_rc
 @dirrm lib/nn/help
 @dirrm lib/nn
-@unexec echo "Be sure to remove %D/news/lib/inews if you no longer need it."

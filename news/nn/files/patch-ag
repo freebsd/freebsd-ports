@@ -1,16 +1,12 @@
---- Makefile.orig	Mon Aug 19 17:28:12 1996
-+++ Makefile	Fri Apr 16 01:28:02 1999
-@@ -19,15 +19,15 @@
- # Use /lib/cpp or /usr/ccs/lib/cpp for CPP on Solaris or SVR4 machines.
- 
+--- Makefile.orig	Sat Jun  5 00:07:14 1999
++++ Makefile	Thu Jan 27 01:56:38 2000
+@@ -21,13 +21,13 @@
  CC =		cc
--#CPP =		$(CC) -E
--CPP =		/lib/cpp
+ CPP =		$(CC) -E
+ #CPP =		/lib/cpp
 -#CFLAGS =	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
 -CFLAGS =	-O
-+CPP =		$(CC) -E
-+#CPP =		/lib/cpp
-+CFLAGS +=	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
++CFLAGS =	-O2 # -g # -I/usr/local/lib/malloc-debug -DMALLOC_FUNC_CHECK
 +#CFLAGS =	-O
  #-Wall -Wcomment \
  #-Wtraditional -Wshadow \
@@ -21,7 +17,16 @@
  MAKE =		make
  
  
-@@ -97,3 +97,5 @@
+@@ -36,6 +36,8 @@
+ all: ymakefile
+ 	$(MAKE) $(MFLAGS) -f ymakefile all
+ 
++inews: ymakefile
++	$(MAKE) $(MFLAGS) -f ymakefile inews
+ touch: ymakefile
+ 	$(MAKE) -f ymakefile -t all
+ 
+@@ -97,3 +99,5 @@
  man/nn.1.D: man/nn.1
  	sh SPLITNN1
  
