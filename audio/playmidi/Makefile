@@ -11,7 +11,7 @@ CATEGORIES=     audio
 MASTER_SITES=   ${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 IS_INTERACTIVE= YES	# asks what devices you want to support
 HAS_CONFIGURE=  YES
