@@ -3,3 +3,4 @@ include/unp/config.h
 include/unp/addrinfo.h
 lib/libunp.a
 lib/libunp_r.a
+@dirrm include/unp
