@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION?=	1.0.46
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_MESA=	yes
+USE_GL=		yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -88,6 +88,9 @@ post-patch:
 		's|-O2|-O2 ${CXXFLAGS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+	@${REINPLACE_CMD} -E -e \
+		's|lMesaGL|lGL|g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # doc prefix safeness
 	@${REINPLACE_CMD} -E -e \
 		's|^(htmldir).*$$|\1=${DOCSDIR}/html|' \
