@@ -5,10 +5,10 @@
  .SUFFIXES:	.cxx .o
  
 -DDEBUG      = -DDEBUG
-+DDEBUG      =
++DDEBUG      = $(DEBUG_FLAGS)
  INCDIR      = ../include
 -CXXOPTS     = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall -O2
-+CXXOPTS     = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall $(CFLAGS)
++CXXOPTS     = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall $(PTYPES_CFLAGS)
  LDLIBS      = $(OS_LDLIBS)
  
  BINDEST     = ../bin
