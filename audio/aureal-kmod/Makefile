@@ -7,12 +7,12 @@
 
 PORTNAME=	aureal-kmod
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cis.ohio-state.edu/~matey/au88x0/
+MASTER_SITES=	http://home.columbus.rr.com/amatey/au88x0/
 DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
 
-MAINTAINER=	matey@cis.ohio-state.edu
+MAINTAINER=	lx@matey.org
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
@@ -64,8 +64,8 @@ MAKE_ENV+=	HAVE_KOBJ_PCM=1
 
 .if ${OSVERSION} > 500000
 # FreeBSD 5-CURRENT
-.if ${VERSION_SOUND_C_CURRENT} < 40
-BROKEN=		"Base system is outdated. This port needs -CURRENT after newpcm megacommit (built after 3/24/2001)"
+.if ${VERSION_SOUND_C_CURRENT} < 52
+BROKEN=		"Base system is outdated. This port needs -CURRENT after 6/17/2001."
 .endif
 .endif
 

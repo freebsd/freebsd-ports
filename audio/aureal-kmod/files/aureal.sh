@@ -38,13 +38,11 @@ case "$1" in
 			echo ""
 			exit 64
 		fi
-		/sbin/kldload snd_pcm.ko
 		/sbin/kldload ${LIBDIR}/${DRIVERFILE}
 		echo -n " aureal-kmod"
 		;;
 	stop)
 		/sbin/kldunload ${DRIVERFILE}
-		/sbin/kldunload snd_pcm.ko
 		echo -n " aureal-kmod"
 		;;
 	*)
