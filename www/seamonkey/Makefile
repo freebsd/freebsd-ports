@@ -89,9 +89,9 @@ CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 
 ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
-PKGCONFIG_FILES=mozilla-gtkmozembed-devel mozilla-js-devel \
-		mozilla-xpcom-devel mozilla-nspr-devel \
-		mozilla-nss-devel mozilla-plugin-devel
+PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js \
+		mozilla-xpcom mozilla-nspr \
+		mozilla-nss mozilla-plugin
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST?=\
