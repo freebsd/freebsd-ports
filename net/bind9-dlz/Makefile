@@ -23,7 +23,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
 ISCVERSION=	9.2.2
-DLZVERSION=	0.4.3
+DLZVERSION=	0.5.0
 USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
@@ -78,7 +78,8 @@ EXTRA_FIX=	${WRKSRC}/configure
 DOCS=		README.txt bind_dlz.txt changelog.txt \
 		dlz_bdb_driver.txt dlz_filesystem_driver.txt \
 		dlz_interface.txt dlz_mysql_driver.txt \
-		dlz_postgres_driver.txt dlz_stub_driver.txt \
+		dlz_odbc_driver.txt dlz_postgres_driver.txt \
+		dlz_stub_driver.txt \
 		sdlz_helper.txt sdlz_interface.txt
 
 MAN1=	dig.1 host.1
