@@ -86,6 +86,9 @@ post-install:
 .if ${ARCH} == "amd64"
 PROGS=	bin/cvsup sbin/cvsupd bin/cvpasswd
 
+do-patch:
+	@${TRUE}
+
 do-configure:
 	@${TOUCH} ${WRKSRC}/License
 	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
