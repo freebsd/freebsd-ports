@@ -1,6 +1,6 @@
---- configure.in.orig	Sat Apr 14 02:44:47 2001
-+++ configure.in	Mon Jul  2 21:43:50 2001
-@@ -174,8 +174,8 @@
+--- configure.in.orig	Tue Dec 11 06:42:31 2001
++++ configure.in	Sun Dec 16 23:03:03 2001
+@@ -179,8 +179,8 @@
      ;;
    freebsd*)
      host_os="freebsd"
@@ -11,7 +11,7 @@
      ;;
    netbsd*)
      host_os="freebsd"
-@@ -326,9 +326,9 @@
+@@ -331,9 +331,9 @@
             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\2/'`
       esd_micro_version=`$ESD_CONFIG $esd_config_args --version | \
             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
@@ -23,7 +23,7 @@
       LIBS="$LIBS $ESD_LIBS"
       rm -f conf.esdtest
       AC_MSG_CHECKING(for ESD - version >= $min_esd_version)
-@@ -387,7 +387,7 @@
+@@ -392,7 +392,7 @@
  }
  
  ],, have_esound=false, have_esound=false)
@@ -32,7 +32,16 @@
       LIBS="$ac_save_LIBS"
       AC_LANG_RESTORE
       rm -f conf.esdtest
-@@ -460,9 +460,9 @@
+@@ -419,7 +419,7 @@
+ 
+ dnl optional freetype support..
+ save_CPPFLAGS="$CPPFLAGS"
+-CPPFLAGS="$CPPFLAGS -I/usr/local/include"
++CPPFLAGS="$CPPFLAGS"
+ AC_LANG_SAVE
+ AC_LANG_C
+ AC_CHECK_HEADERS(freetype.h, have_freetype="true", have_freetype="false")
+@@ -465,9 +465,9 @@
       gtk_config_major=`$GTK_CONFIG --version | sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\1/'`
       gtk_config_minor=`$GTK_CONFIG --version | sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\2/'`
       gtk_config_micro=`$GTK_CONFIG --version | sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
@@ -44,7 +53,7 @@
       LIBS="$GTK_LIBS $LIBS"
  
       AC_TRY_RUN([
-@@ -489,7 +489,7 @@
+@@ -494,7 +494,7 @@
           gtk_major_version, gtk_minor_version, gtk_micro_version);
    return 1;
  }], , have_gtk=false, have_gtk=false])
@@ -53,7 +62,7 @@
      LIBS="$ac_save_LIBS" 
      if test "$have_gtk" = "false"; then
         AC_MSG_RESULT(no)
-@@ -510,7 +510,7 @@
+@@ -515,7 +515,7 @@
    OSINC="$OSINC -I$srcdir/ui/download/unix/include"
    OSINC="$OSINC -I$srcdir/ui/musicbrowser/include"
    OSINC="$OSINC -I$srcdir/ftc/kjofol"
@@ -62,7 +71,7 @@
    AC_DEFINE(HAVE_GTK)
  elif test "$host_os" = "beos"; then
    OSDEPPLUGINS="$OSDEPPLUGINS plugins/musicbrowser.ui"
-@@ -536,7 +536,7 @@
+@@ -541,7 +541,7 @@
  AC_SUBST(GTK_LIBS)
  AC_SUBST(EXTRALIBS)
  
@@ -71,7 +80,7 @@
  
  dnl orbit crap
  save_CPPFLAGS="$CPPFLAGS"
-@@ -656,7 +656,7 @@
+@@ -661,7 +661,7 @@
    alsa_min_major_version=0
    alsa_min_minor_version=5
    alsa_min_micro_version=0
@@ -80,7 +89,7 @@
    ac_save_LIBS="$LIBS"
  
    LIBS="$LIBS -lasound"
-@@ -701,7 +701,7 @@
+@@ -706,7 +706,7 @@
  ], , have_alsa=false, have_alsa=false
  )
     AC_LANG_RESTORE
@@ -89,35 +98,44 @@
     LIBS="$ac_save_LIBS"
     if test "$have_alsa" = "false"; then
        AC_MSG_RESULT(no)
-@@ -748,13 +748,21 @@
-                     have_arts="false")
+@@ -726,6 +726,10 @@
+   AC_MSG_RESULT([compiling alsa pmo plugin])
  fi
+ 
++
++AC_ARG_ENABLE(vorbis, [  --disable-vorbis        Don't compile the Vorbis output plugin], enable_vorbis=no, enable_vorbis=yes)
++
++if test "x$enable_vorbis" = "xyes"; then
+ AC_CHECK_LIB(ogg, ogg_sync_init, have_ogg="yes",)
+ AC_CHECK_LIB(vorbisfile, ov_info, have_vorbis="yes",, -lvorbis -logg)
+ 
+@@ -736,6 +740,7 @@
+      OSDEPPLUGINS="$OSDEPPLUGINS plugins/vorbis.mdf";
+      AC_MSG_RESULT([compiling vorbis codec plugin])
+   fi 
++fi
+ fi 
+ 
+ ID3_LIBS=""
+@@ -749,6 +754,9 @@
+ dnl Partly taken from SDL's configure.in
+ dnl -------------------------------------------------------------
  
 +AC_ARG_ENABLE(arts, [  --disable-arts          Don't compile the libArts output plugin], enable_arts=no, enable_arts=yes)
 +
-+if test "x$enable_arts" = "xno"; then
-+  have_arts="false";
-+fi
-+
- ARTS_LIBS=""
--AC_CHECK_LIB(artsc, arts_init, 
--  OSDEPPLUGINS="$OSDEPPLUGINS plugins/arts.pmo";
--  OSINC="$OSINC -I$srcdir/io/arts/include"
--  ARTS_LIBS="-lartsc -laudiofile"
--  AC_MSG_RESULT([compiling arts pmo plugin])
--)
-+if test "$have_arts" = "true"; then
-+  AC_CHECK_LIB(artsc, arts_init, 
-+    OSDEPPLUGINS="$OSDEPPLUGINS plugins/arts.pmo";
-+    OSINC="$OSINC -I$srcdir/io/arts/include"
-+    ARTS_LIBS="-lartsc -laudiofile"
-+    AC_MSG_RESULT([compiling arts pmo plugin])
-+  )
++if test "x$enable_arts" = "xyes"; then
+ AC_PATH_PROG(ARTSCCONFIG, artsc-config)
+ if test x$ARTSCCONFIG = x -o x$ARTSCCONFIG = x'"$ARTSCCONFIG"'; then
+ : # arts isn't installed
+@@ -765,6 +773,7 @@
+      AC_MSG_RESULT([compiling arts pmo plugin])
+     ])
+ fi
 +fi
  
  AC_SUBST(ARTS_LIBS)
  AC_SUBST(EXTRALIBS)
-@@ -808,9 +816,9 @@
+@@ -819,9 +828,9 @@
    gdk_pixbuf_micro_version=`$GDK_PIXBUF_CONFIG $gdk_pixbuf_config_args --version | \
           sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
    if test "x$enable_gdk_pixbuftest" = "xyes" ; then
@@ -129,7 +147,7 @@
      LIBS="$LIBS $GDK_PIXBUF_LIBS"
  dnl
  dnl Now check if the installed GDK_PIXBUF is sufficiently new. (Also sanity
-@@ -872,7 +880,7 @@
+@@ -883,7 +892,7 @@
  }
  
  ],, no_gdk_pixbuf=yes,[echo $ac_n "cross compiling; assumed OK... $ac_c"])
@@ -138,7 +156,7 @@
       LIBS="$ac_save_LIBS"
     fi
  fi
-@@ -891,7 +899,7 @@
+@@ -902,7 +911,7 @@
        :
       else
          echo "*** Could not run GDK_PIXBUF test program, checking why..."
@@ -147,7 +165,7 @@
          LIBS="$LIBS $GDK_PIXBUF_LIBS"
          AC_TRY_LINK([
  #include <stdio.h>
-@@ -910,7 +918,7 @@
+@@ -921,7 +930,7 @@
          echo "*** exact error that occured. This usually means GDK_PIXBUF was incorrectly installed"
          echo "*** or that you have moved GDK_PIXBUF since it was installed. In the latter case, you"
          echo "*** may want to edit the gdk-pixbuf-config script: $GDK_PIXBUF_CONFIG" ])
@@ -156,7 +174,7 @@
          LIBS="$ac_save_LIBS"
       fi
     fi
-@@ -922,13 +930,13 @@
+@@ -933,8 +942,8 @@
  AC_SUBST(GDK_PIXBUF_LIBS)
  rm -f conf.gdk_pixbuftest
  
@@ -167,9 +185,12 @@
  
  AC_LANG_SAVE
  AC_LANG_CPLUSPLUS
- AC_CHECK_LIB(musicbrainz, mb_New, ,
--  AC_MSG_ERROR([FreeAmp requires that the MusicBrainz client library be installed.]),-ldl)
-+  AC_MSG_ERROR([FreeAmp requires that the MusicBrainz client library be installed.]))
+@@ -944,7 +953,7 @@
+     echo "*** Download the library from "
+     echo "***     http://www.musicbrainz.org/download.html"
+     echo "***"
+-  AC_MSG_ERROR(Cannot continue.)],-ldl -lm -lstdc++)
++  AC_MSG_ERROR(Cannot continue.)],-lm -lstdc++)
  AC_LANG_RESTORE
  
  AC_CONFIG_HEADER(config/config.h)
