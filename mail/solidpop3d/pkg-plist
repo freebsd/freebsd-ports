@@ -1,2 +1,3 @@
+bin/pop_auth
 etc/spop3d.conf.sample
 libexec/spop3d

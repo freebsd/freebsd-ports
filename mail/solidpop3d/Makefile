@@ -35,6 +35,7 @@ post-extract:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spop3d ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/src/pop_auth ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/pop_auth.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/spop3d.conf.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/man/dot-spop3d.5 ${PREFIX}/man/man5
