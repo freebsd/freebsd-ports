@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
