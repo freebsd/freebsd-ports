@@ -27,6 +27,7 @@ share/icons/gnome/48x48/devices/gnome-dev-floppy.png
 share/icons/gnome/48x48/devices/gnome-dev-harddisk.png
 share/icons/gnome/48x48/devices/gnome-dev-jazdisk.png
 share/icons/gnome/48x48/devices/gnome-dev-memory.png
+share/icons/gnome/48x48/devices/gnome-dev-printer.png
 share/icons/gnome/48x48/devices/gnome-dev-zipdisk.png
 share/icons/gnome/48x48/emblems/emblem-art.icon
 share/icons/gnome/48x48/emblems/emblem-art.png
@@ -53,6 +54,7 @@ share/icons/gnome/48x48/filesystems/gnome-fs-blockdev.png
 share/icons/gnome/48x48/filesystems/gnome-fs-bookmark-missing.png
 share/icons/gnome/48x48/filesystems/gnome-fs-bookmark.png
 share/icons/gnome/48x48/filesystems/gnome-fs-chardev.png
+share/icons/gnome/48x48/filesystems/gnome-fs-desktop.png
 share/icons/gnome/48x48/filesystems/gnome-fs-directory-accept.icon
 share/icons/gnome/48x48/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/48x48/filesystems/gnome-fs-directory.icon
@@ -101,10 +103,12 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-arj.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-backup.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-compress.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-compressed-tar.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-core-file.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dc-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-deb.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dia-diagram.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dvi.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-e-theme.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-font-afm.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-font-bdf.png
@@ -132,6 +136,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-object-file.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ogg.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-php.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-python-bytecode.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-qw.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-reject.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-rpm.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-scheme.png
@@ -140,6 +145,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-sms-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-sql.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-stuffit.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-tex.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-zip.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-audio-ac3.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-audio-basic.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-audio-x-aiff.png
@@ -202,10 +208,12 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-python.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-readme.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-sh.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-sql.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-tex.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-troff-man.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-zsh.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-xml.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-video.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-video-mpeg.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-video-quicktime.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-video-x-ms-asf.png
