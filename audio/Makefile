@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1996/11/17 11:13:28 ache Exp $
+# $Id: Makefile,v 1.31 1997/03/26 02:15:30 jfitz Exp $
 #
 
     SUBDIR += cam
@@ -6,6 +6,7 @@
     SUBDIR += gsm
     SUBDIR += maplay
     SUBDIR += mpegaudio
+    SUBDIR += mxv
     SUBDIR += nas
     SUBDIR += playmidi
     SUBDIR += radio
