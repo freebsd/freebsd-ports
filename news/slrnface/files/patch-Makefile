@@ -13,7 +13,7 @@
  X_LIBS = -lXt -lX11 # X libs
 -XF_LIB = -L/usr/local/lib -lcompface # compface library
 -C_FLAGS = -O
-+XF_LIB = -L${X11BASE}/lib -lcompface # compface library
++XF_LIB = -L${X11BASE}/lib -L${LOCALBASE}/lib -lcompface # compface library
 +C_FLAGS = #-O
  
  prefix = /usr/local
