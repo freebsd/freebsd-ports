@@ -1,29 +1,72 @@
---- Makefile.in.orig	Fri Jul 24 00:45:32 1998
-+++ Makefile.in	Sun Jul 26 13:13:07 1998
-@@ -6,7 +6,7 @@
- ############################################################################
- 
- # Step1: Define the location of the History file(s)
--HISTORYF=/usr/news/db/history
-+HISTORYF=/usr/local/news/lib/history
- 
- # Step 2: Define ONE of the CHKHISTORY 
- CHKHISTORY=chkhistory.o		# use flat file history routine
-@@ -131,7 +131,7 @@
- 
- install_bin: suck rpost testhost lmove
- 	- mkdir -p $(bindir)
--	- strip -s suck rpost testhost lmove
-+	- strip -x suck rpost testhost lmove
- 	$(INSTALL_PROGRAM) suck $(bindir)/suck
- 	$(INSTALL_PROGRAM) rpost $(bindir)/rpost
- 	$(INSTALL_PROGRAM) testhost $(bindir)/testhost
-@@ -149,7 +149,7 @@
- #	$(MAKE) -C $(SMAN)
- 
- install_lpost: lpost $(MAN)/lpost.1
--	- strip -s lpost
-+	- strip -x lpost
- 	$(INSTALL_PROGRAM) lpost $(bindir)/lpost
- 	$(INSTALL_DATA) $(MAN)/lpost.1 $(mandir)/lpost.$(manext)
- 
+*** Makefile.in.orig	Tue Jan 26 07:45:27 1999
+--- Makefile.in	Tue Feb  9 23:47:19 1999
+***************
+*** 6,12 ****
+  ############################################################################
+  
+  # Step1: Define the location of the History file(s)
+! HISTORYF=/usr/news/db/history
+  
+  # Step 2: Define ONE of the CHKHISTORY 
+  CHKHISTORY=chkhistory.o		# use flat file history routine
+--- 6,12 ----
+  ############################################################################
+  
+  # Step1: Define the location of the History file(s)
+! HISTORYF=/usr/local/news/lib/history
+  
+  # Step 2: Define ONE of the CHKHISTORY 
+  CHKHISTORY=chkhistory.o		# use flat file history routine
+***************
+*** 50,57 ****
+  # If your compile fails with refs to missing symbols like pow() and floor(),
+  # add -lm to the PERL_LIB line.
+  # The rest of these should be left alone (except to remove the #).
+! PERL_CORE=/usr/lib/perl5/lib/5.00502/i586-linux/CORE
+! PERL_LIB=-lperl -lcrypt
+  PERL_DEFS=-DPERL_EMBED -Dbool=char -DHAS_BOOL
+  PERL_INC_LOC=-I$(PERL_CORE)
+  PERL_LIB_LOC=-L$(PERL_CORE)
+--- 50,57 ----
+  # If your compile fails with refs to missing symbols like pow() and floor(),
+  # add -lm to the PERL_LIB line.
+  # The rest of these should be left alone (except to remove the #).
+! PERL_CORE=/usr/libdata/perl/5.00502/mach/CORE
+! PERL_LIB=-lperl -lcrypt -lm
+  PERL_DEFS=-DPERL_EMBED -Dbool=char -DHAS_BOOL
+  PERL_INC_LOC=-I$(PERL_CORE)
+  PERL_LIB_LOC=-L$(PERL_CORE)
+***************
+*** 152,158 ****
+  
+  install_bin: suck rpost testhost lmove
+  	- mkdir -p $(bindir)
+! 	- strip -s suck rpost testhost lmove
+  	$(INSTALL_PROGRAM) suck $(bindir)/suck
+  	$(INSTALL_PROGRAM) rpost $(bindir)/rpost
+  	$(INSTALL_PROGRAM) testhost $(bindir)/testhost
+--- 152,158 ----
+  
+  install_bin: suck rpost testhost lmove
+  	- mkdir -p $(bindir)
+! 	- strip -x suck rpost testhost lmove
+  	$(INSTALL_PROGRAM) suck $(bindir)/suck
+  	$(INSTALL_PROGRAM) rpost $(bindir)/rpost
+  	$(INSTALL_PROGRAM) testhost $(bindir)/testhost
+***************
+*** 170,176 ****
+  #	$(MAKE) -C $(SMAN)
+  
+  install_lpost: lpost $(MAN)/lpost.1
+! 	- strip -s lpost
+  	$(INSTALL_PROGRAM) lpost $(bindir)/lpost
+  	$(INSTALL_DATA) $(MAN)/lpost.1 $(mandir)/lpost.$(manext)
+  
+--- 170,176 ----
+  #	$(MAKE) -C $(SMAN)
+  
+  install_lpost: lpost $(MAN)/lpost.1
+! 	- strip -x lpost
+  	$(INSTALL_PROGRAM) lpost $(bindir)/lpost
+  	$(INSTALL_DATA) $(MAN)/lpost.1 $(mandir)/lpost.$(manext)
+  
