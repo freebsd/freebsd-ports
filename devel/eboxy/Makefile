@@ -16,9 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create simple GUI interfaces for entertainment PC
 
-LIB_DEPENDS=	SDL_gui.0:${PORTSDIR}/x11-toolkits/sdl_gui
-
-USE_SDL=	yes
+USE_SDL=	sdl gui 
 USE_GNOME=	gnometarget libxml2
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes

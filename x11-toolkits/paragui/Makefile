@@ -17,14 +17,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
 LIB_DEPENDS=	physfs-0.1.9:${PORTSDIR}/devel/physfs \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		expat.4:${PORTSDIR}/textproc/expat2
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-USE_SDL=	yes
+USE_SDL=	sdl image ttf
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"

@@ -16,10 +16,7 @@ DISTNAME=	SDL_gui-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf
-
-USE_SDL=	yes
+USE_SDL=	sdl image ttf
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

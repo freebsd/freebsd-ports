@@ -14,10 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A SDL Linux Developer's BandAiD
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	sdl
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

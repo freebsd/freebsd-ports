@@ -16,11 +16,8 @@ DISTNAME=	SDLmm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 INSTALLS_SHLIB=	yes
 
 MAN3=	SDLmm.3 SDLmm_Audio.3 SDLmm_BaseSurface.3 SDLmm_CD.3 SDLmm_ColorRGB.3 \
