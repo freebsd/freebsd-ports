@@ -7,7 +7,7 @@
 
 PORTNAME=	xscreensaver
 PORTVERSION=	4.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -31,8 +31,10 @@ CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 CONFIGURE_ARGS+=	--with-gnome
+PLIST_SUB+=	CONFIGDIR="share/gnome/control-center/screensavers"
 .else
 CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	CONFIGDIR="share/xscreensaver/config"
 .endif
 
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
@@ -56,13 +58,8 @@ MAN1=		attraction.1 blitspin.1 bouboule.1 braid.1 \
 		speedmine.1 whirlygig.1 penetrate.1
 
 post-patch:
-	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
-	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
-		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-.for file in pulsar.c extrusion.c
-	@ ${CP} ${WRKSRC}/hacks/glx/${file} ${WRKSRC}/hacks/glx/${file}.Dist
-	@ ${SED} -e 's/malloc.h/stdlib.h/g' ${WRKSRC}/hacks/glx/${file}.Dist > \
-		${WRKSRC}/hacks/glx/${file}
-.endfor
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.post.mk>
