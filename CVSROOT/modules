@@ -3058,6 +3058,7 @@ gtklife		ports/games/gtklife
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
 gtkmm24		ports/x11-toolkits/gtkmm24
+gtkpasman	ports/security/gtkpasman
 gtkpod		ports/audio/gtkpod
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
