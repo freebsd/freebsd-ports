@@ -74,3 +74,29 @@ share/locale/xh/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/locale/zu/LC_MESSAGES/gwenview.mo
+@dirrm share/apps/gwenview/icons/hicolor/16x16/actions
+@dirrm share/apps/gwenview/icons/hicolor/16x16
+@dirrm share/apps/gwenview/icons/hicolor/22x22/actions
+@dirrm share/apps/gwenview/icons/hicolor/22x22
+@dirrm share/apps/gwenview/icons/hicolor/32x32/actions
+@dirrm share/apps/gwenview/icons/hicolor/32x32
+@dirrm share/apps/gwenview/icons/hicolor
+@dirrm share/apps/gwenview/icons
+@dirrm share/apps/gwenview
+@unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
+@unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
