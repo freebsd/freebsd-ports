@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/Attic/pkg-plist,v 1.4 2001-10-03 12:45:31 dinoex Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail-old/Attic/pkg-plist,v 1.5 2001-10-09 19:16:58 dinoex Exp $
 bin/hoststat
 bin/mailq
 bin/newaliases
@@ -15,4 +15,3 @@ sbin/sendmail
 %%PORTDOCS%%share/doc/sendmail/SENDMAIL
 %%PORTDOCS%%share/doc/sendmail/MAIL.LOCAL
 %%PORTDOCS%%share/doc/sendmail/SMRSH
-%%PORTDOCS%%@dirrm share/doc/sendmail
