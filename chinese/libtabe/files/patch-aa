@@ -1,26 +1,25 @@
---- src/Makefile.in.orig	Mon Jul 24 08:10:05 2000
-+++ src/Makefile.in	Sat Aug 12 15:07:23 2000
-@@ -29,8 +29,8 @@
- bindir	    = @bindir@
- includedir  = @includedir@
+--- src/Makefile.in.orig	Thu Jun  7 00:26:26 2001
++++ src/Makefile.in	Sun Jun 17 09:49:05 2001
+@@ -60,8 +60,7 @@
  
--version	    = 0.1.9
--major_ver   = 0.1
-+version	    = 0.1
-+major_ver   = 0
+ $(LIBNAME): $(LIBOBJS)
+ 	$(LIBTOOL) --mode=link $(CC) -o $@ $(LIBOBJS) -rpath $(libdir) \
+-		-version-info $(CURRENT_VER):$(REVISION_VER):$(AGE_VER) \
+-		-release $(RELEASE_VER)
++		-version-info $(CURRENT_VER):$(REVISION_VER):$(AGE_VER)
  
- #
- # libtabe main makefile.
-@@ -162,7 +162,7 @@
+ subsys:
+ 	(cd supports/bims; $(MAKE))
+@@ -110,7 +109,7 @@
  
  install: install_binary install_data
  
 -install_binary: binary
 +install_binary:
  	if [ ! -d $(libdir) ]; then $(INSTALL) -d $(libdir); fi
- 	$(INSTALL_DATA) $(unsharelib) $(libdir)
- 	if [ -f $(sharelib) ]; then \
-@@ -178,6 +178,6 @@
+ 	if [ ! -d $(includedir) ]; then $(INSTALL) -d $(includedir); fi
+ 	$(LIBTOOL) --mode=install $(INSTALL_DATA) $(LIBNAME) $(libdir)
+@@ -118,6 +117,6 @@
  	(cd supports/bims; $(MAKE) install)
  	(cd util; $(MAKE) install)
  
