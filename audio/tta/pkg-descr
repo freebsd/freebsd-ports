@@ -1,0 +1,15 @@
+
+TTA is a simple lossless audio compressor.
+
+TTA performs lossless compression on multichannel 8,16,24 bit's
+integer and 32 bit's IEEE floating-point data of the Wav audio
+files. 
+
+The compression size will generally range between 30% - 70% of the
+original. TTA format supports both of ID3v1 and ID3v2 information
+tags.
+
+WWW: http://tta.iszf.irk.ru/
+
+- dieringe
+dieringe@zedat.fu-berlin.de

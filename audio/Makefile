@@ -395,6 +395,7 @@
     SUBDIR += trm
     SUBDIR += trommler
     SUBDIR += tse3
+    SUBDIR += tta
     SUBDIR += tuneradio
     SUBDIR += tunesbrowser
     SUBDIR += ufmcontrol-i18n
