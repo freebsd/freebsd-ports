@@ -1,0 +1,14 @@
+--- indent.texinfo.orig	Wed Feb  2 15:07:25 1994
++++ indent.texinfo	Fri Nov 28 09:17:03 1997
+@@ -19,6 +19,11 @@
+ @setchapternewpage odd
+ 
+ @ifinfo
++@dircategory GNU indent
++@direntry
++* GNU indent: (indent).		GNU indent changes the appareance of a C program
++				by inserting or deleting whitespace.
++@end direntry
+ Copyright (C) 1989, 1992, 1993, 1994 Free Software Foundation, Inc.
+ 
+ @c !!set edition, date, version
