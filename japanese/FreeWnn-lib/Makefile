@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.freewnn.org/pub/FreeWnn/alpha/
 PKGNAMESUFFIX?=	-lib
 DISTNAME=	${PORTNAME}-${WMMVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 
 WRKSRC=	${WRKDIR}/FreeWnn-1.10-pl020

@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/lookup/dist/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
 
 RUN_DEPENDS+=	eblook:${PORTSDIR}/japanese/eblook
