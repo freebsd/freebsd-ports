@@ -3,13 +3,13 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.15 1998/12/23 01:27:41 steve Exp $
+# $Id: Makefile,v 1.17 1999/01/21 06:32:50 asami Exp $
 #
 
 DISTNAME=	xdvi-17
 PKGNAME=	ja-vfxdvi${RESOLUTION}-17
 CATEGORIES=	japanese print
-MASTER_SITES=	http://www.jp.FreeBSD.org/~mita/LOCAL_PORTS/ \
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Sep/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Oct/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Nov/

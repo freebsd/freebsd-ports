@@ -3,17 +3,16 @@
 # Date created:		24 December 1997
 # Whom:			Tatsumi Hosokawa
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/07/12 22:54:06 steve Exp $
 #
 
 DISTNAME=	kb2mb2-1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.jp.FreeBSD.org/~hosokawa/XFree86/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	sada@e-mail.ne.jp
+MAINTAINER=	sada@FreeBSD.ORG
 
 USE_IMAKE=	yes
-#XMKMF=		xmkmf
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.29 1999/02/13 00:34:47 asami Exp $
+# $Id: Makefile,v 1.30 1999/03/15 12:37:41 taoka Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		http://www.bukka.p.chiba-u.ac.jp/~ohmori/gs/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/ \
 		${MASTER_SITE_LOCAL} \
-		http://www.jp.FreeBSD.org/~mita/LOCAL_PORTS/ \
+		${MASTER_SITE_PORTS_JP} \
 		http://www.ldl.jaist.ac.jp/~akr/nonresearch/free-software/ghostscript/ \
 		http://www.jaist.ac.jp/~daisuke/Linux/gs/gs5/Original-sources/OLD/ \
 		http://www.rd.nacsis.ac.jp/~katayama/homepage/ghostscript/jpdf/ \
