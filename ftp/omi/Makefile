@@ -1,5 +1,4 @@
 # New ports collection makefile for:    omi
-# http://fromme.com/omi/
 # Date created:		19 August 1995
 # Whom:                 ache
 #
