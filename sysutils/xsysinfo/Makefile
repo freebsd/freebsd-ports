@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/jdli/source/
 MAINTAINER=	jdli@csie.nctu.edu.tw
 COMMENT=	A system information display tool
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_IMAKE=	yes
 MANCOMPRESSED=	yes
 MAN1=		xsysinfo.1
@@ -25,4 +31,4 @@ pre-configure:
 		${SED} -e "s:-lkvm:-lkvm -ldevstat:" Imakefile.i1 > Imakefile ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

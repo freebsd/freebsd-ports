@@ -18,6 +18,12 @@ COMMENT=	Moscow ML, a lightweight implementation of Standard ML
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 MOSMLHOME=	$(PREFIX)/moscow_ml
 
 ALL_TARGET=	world MOSMLHOME=$(MOSMLHOME)
@@ -39,4 +45,4 @@ post-install:
 	if [ -f $${file} ]; then \
 	$(LN) -sf $${file} $(PREFIX)/bin; fi; done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

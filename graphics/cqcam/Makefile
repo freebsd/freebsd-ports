@@ -16,6 +16,12 @@ COMMENT=	Color Quickcam control program
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
@@ -48,4 +54,4 @@ post-install:
 .endif
 	@${SED} -e "s:/usr/local:${PREFIX}:" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

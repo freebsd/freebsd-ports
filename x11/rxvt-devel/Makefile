@@ -24,6 +24,12 @@ COMMENT=	A low memory usage xterm replacement that supports color
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -128,4 +134,4 @@ post-patch:
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
