@@ -8,8 +8,8 @@
 
 DISTNAME=		ytree-1.65
 CATEGORIES=		misc
-MASTER_SITES=		http://www.han.de/~werner/ \
-			${MASTER_SITE_SUNSITE}
+MASTER_SITES=		${MASTER_SITE_SUNSITE} \
+			http://www.han.de/~werner/
 MASTER_SITE_SUBDIR=	utils/file/managers
 
 MAINTAINER=		andy@icc.surw.chel.su
