@@ -1,5 +1,5 @@
 # New ports collection makefile for:    XFree86
-# Version required:     3.1.1
+# Version required:     3.1.2
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
@@ -29,8 +29,7 @@ X11FIXES = /usr/ports/distfiles/xc
 NO_PACKAGE	=	yes
 #######################################################################
 DISTNAME	=	xc
-PKGNAME		= 	XFree86-3.1.1
-CATEGORIES	=	x11
+PKGNAME		= 	XFree86-3.1.2
 IS_INTERACTIVE=		yes
 
 MAINTAINER=		jmz@FreeBSD.ORG
@@ -91,3 +90,4 @@ post-install:
 	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
