@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	asfrecorder
-PORTVERSION=	1.1.20001218
+PORTVERSION=	1.1.20010307
 CATEGORIES=	net audio
-MASTER_SITES=	http://diddl.firehead.org/censor/asf_recorder/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	asfrecorder
 DISTNAME=	ASFRecorder
 
 MAINTAINER=	roman@xpert.com
