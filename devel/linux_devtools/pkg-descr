@@ -1,4 +1,2 @@
-This is a binary port of the Linux development environment.
-It is the actual linux binaries which  runs under the
-binary compatibility options in the kernel.
-
+This is a binary port of the Linux development environment.  It unpacks
+unpacks actual Linux binaries which run under the binary emulation.
