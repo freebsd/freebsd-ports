@@ -1,0 +1,4 @@
+#!/bin/sh
+
+export HELIX_LIBS="/usr/local/lib/RealPlayer"
+exec "$HELIX_LIBS/realplay.bin" "$@"

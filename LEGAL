@@ -467,7 +467,7 @@ robocode-*		ports/games/robocode	Restrictive license. Particularly,
 						redistribution isn't permitted
 						and user should delete software
 						after 60 days.
-rp*_linux20_libc6_i386_*_rpm ports/audio/linux-realplayer Redistribution not allowed.
+linux-realplayer-*.rpm	ports/audio/linux-realplayer Redistribution not allowed.
 rpm/i386/8.0/*		ports/emulators/linux_base-8 binaries under GNU GPL
 						without accompanying source
 rtplib-*		ports/devel/rtplib	Limited use license.
