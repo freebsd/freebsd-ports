@@ -3,7 +3,7 @@
 # Date Created:				28 April 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/06/24 15:56:17 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/07/27 00:03:10 steve Exp $
 #
 
 DISTNAME=	HTML-Parser-2.20
@@ -23,7 +23,7 @@ MAN3=		HTML::Entities.3 \
 		HTML::Parser.3 \
 		HTML::TokeParser.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5/5.00501
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

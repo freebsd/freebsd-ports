@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.8 1998/05/23 10:08:32 vanilla Exp $
+# $Id: Makefile,v 1.9 1998/06/01 23:32:50 vanilla Exp $
 #
 
 DISTNAME=	Gtk-0.2.2
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11/gtk
 USE_PERL5=	YES
 
 MAN3=		GtkColorSelectButton.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/5.00501
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

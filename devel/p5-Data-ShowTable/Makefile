@@ -3,7 +3,7 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/09/13 17:46:55 jfitz Exp $
+# $Id: Makefile,v 1.2 1998/04/19 10:43:52 asami Exp $
 #
 
 DISTNAME=	Data-ShowTable-3.3
@@ -18,7 +18,7 @@ USE_PERL5=	YES
 
 MAN1=		showtable.1
 MAN3=		Data::ShowTable.3
-MAN3PREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5/5.00501
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL

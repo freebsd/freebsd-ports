@@ -1,22 +1,22 @@
-lib/perl5/man/man3/DBI.3.gz
-lib/perl5/man/man3/DBI::DBD.3.gz
-lib/perl5/man/man3/DBI::FAQ.3.gz
-lib/perl5/man/man3/DBI::W32ODBC.3.gz
-lib/perl5/site_perl/DBD/ExampleP.pm
-lib/perl5/site_perl/DBD/NullP.pm
-lib/perl5/site_perl/DBD/Sponge.pm
-lib/perl5/site_perl/DBI.pm
-lib/perl5/site_perl/DBI/DBD.pm
-lib/perl5/site_perl/DBI/FAQ.pm
-lib/perl5/site_perl/DBI/W32ODBC.pm
-lib/perl5/site_perl/i386-freebsd/auto/DBI/DBI.bs
-lib/perl5/site_perl/i386-freebsd/auto/DBI/DBI.so
-lib/perl5/site_perl/i386-freebsd/auto/DBI/DBIXS.h
-lib/perl5/site_perl/i386-freebsd/auto/DBI/Driver.xst
-lib/perl5/site_perl/i386-freebsd/auto/DBI/DriverDB.xst
-lib/perl5/site_perl/i386-freebsd/auto/DBI/DriverST.xst
-lib/perl5/site_perl/i386-freebsd/auto/DBI/dbd_xsh.h
-lib/perl5/site_perl/i386-freebsd/auto/DBI/dbi_sql.h
-lib/perl5/site_perl/i386-freebsd/auto/DBI/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/DBI
-@dirrm lib/perl5/site_perl/DBI
+lib/perl5/5.00501/man/man3/DBI.3.gz
+lib/perl5/5.00501/man/man3/DBI::DBD.3.gz
+lib/perl5/5.00501/man/man3/DBI::FAQ.3.gz
+lib/perl5/5.00501/man/man3/DBI::W32ODBC.3.gz
+lib/perl5/site_perl/5.005/i386-freebsd/DBI.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBD/ExampleP.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBD/NullP.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBD/Sponge.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBI/DBD.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBI/FAQ.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBI/W32ODBC.pm
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/DBI.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/DBI.so
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/DBIXS.h
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/Driver.xst
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/DriverDB.xst
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/DriverST.xst
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/dbd_xsh.h
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/dbi_sql.h
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI/.packlist
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/DBI
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/DBI

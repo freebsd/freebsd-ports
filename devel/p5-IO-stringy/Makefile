@@ -3,7 +3,7 @@
 # Date created:				April 27 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 21:42:17 eivind Exp $
+# $Id: Makefile,v 1.2 1998/05/13 17:25:36 vanilla Exp $
 #
 
 DISTNAME=	IO-stringy-1.203
@@ -20,7 +20,7 @@ MAN3=		IO::AtomicFile.3 IO::Lines.3 IO::Scalar.3 \
 		IO::ScalarArray.3 IO::Stringy.3 \
 		IO::Wrap.3 IO::WrapTie.3
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/5.00501
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

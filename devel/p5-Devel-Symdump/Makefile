@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/06/16 02:49:26 jfitz Exp $
+# $Id: Makefile,v 1.2 1997/06/24 18:43:17 jfitz Exp $
 #
 
 DISTNAME=	Devel-Symdump-2.00
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/5.00501
 MAN3=		Devel::Symdump.3
 
 do-configure:

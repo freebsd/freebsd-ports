@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.11 1998/01/27 16:18:56 jfitz Exp $
+# $Id: Makefile,v 1.12 1998/02/18 18:17:21 vanilla Exp $
 #
 
 DISTNAME=	DBI-0.93
@@ -17,7 +17,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 USE_PERL5=	YES
 
 MAN3=		DBI.3 DBI::W32ODBC.3 DBI::FAQ.3 DBI::DBD.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/5.00501
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

@@ -1,14 +1,14 @@
-lib/perl5/man/man3/HTML::Entities.3.gz
-lib/perl5/man/man3/HTML::Filter.3.gz
-lib/perl5/man/man3/HTML::HeadParser.3.gz
-lib/perl5/man/man3/HTML::LinkExtor.3.gz
-lib/perl5/man/man3/HTML::Parser.3.gz
-lib/perl5/man/man3/HTML::TokeParser.3.gz
-lib/perl5/site_perl/HTML/Entities.pm
-lib/perl5/site_perl/HTML/Filter.pm
-lib/perl5/site_perl/HTML/HeadParser.pm
-lib/perl5/site_perl/HTML/LinkExtor.pm
-lib/perl5/site_perl/HTML/Parser.pm
-lib/perl5/site_perl/HTML/TokeParser.pm
-lib/perl5/site_perl/i386-freebsd/auto/HTML/Parser/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/HTML/Parser
+lib/perl5/5.00501/man/man3/HTML::Entities.3.gz
+lib/perl5/5.00501/man/man3/HTML::Filter.3.gz
+lib/perl5/5.00501/man/man3/HTML::HeadParser.3.gz
+lib/perl5/5.00501/man/man3/HTML::LinkExtor.3.gz
+lib/perl5/5.00501/man/man3/HTML::Parser.3.gz
+lib/perl5/5.00501/man/man3/HTML::TokeParser.3.gz
+lib/perl5/site_perl/5.005/HTML/Entities.pm
+lib/perl5/site_perl/5.005/HTML/Filter.pm
+lib/perl5/site_perl/5.005/HTML/HeadParser.pm
+lib/perl5/site_perl/5.005/HTML/LinkExtor.pm
+lib/perl5/site_perl/5.005/HTML/Parser.pm
+lib/perl5/site_perl/5.005/HTML/TokeParser.pm
+lib/perl5/site_perl/5.005/i386-freebsd/auto/HTML/Parser/.packlist
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/HTML/Parser

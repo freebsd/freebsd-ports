@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1 1997/07/01 17:52:15 jfitz Exp $
+# $Id: Makefile,v 1.2 1998/03/11 03:09:46 vanilla Exp $
 #
 
 DISTNAME=	GD-1.18
@@ -16,7 +16,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/5.00501
 MAN3=		GD.3
 
 do-configure:
