@@ -1,0 +1,19 @@
+iSilo converts text or HTML documents to the Palm Pilot .pdb format.  These
+can then be installed on a Palm Pilot, using tools in the palm/pilot-link
+port.
+
+These files are only readable using the iSilo reader, available from the
+web site.  A free reader exists, as does a more featureful shareware 
+reader.  Their primary advantages over other Palm Pilot DOC readers are
+
+  1.  Internal links in the original HTML are maintained.
+
+  2.  A reasonable facsimile of the original HTML formatting is maintained.
+
+  3.  Images in the original HTML file are dithered and scaled, for viewing
+      on the Pilot.
+
+WWW: http://www.iSilo.com/
+
+- Nik
+nik@FreeBSD.org
