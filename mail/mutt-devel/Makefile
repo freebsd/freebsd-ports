@@ -6,8 +6,8 @@
 #
 # $FreeBSD$
 
-DISTNAME=	mutt-1.0i
-PKGNAME=	mutt-1.0
+DISTNAME=	mutt-1.0.1i
+PKGNAME=	mutt-1.0.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
 		ftp://ftp.uib.no/pub/mutt/  \
