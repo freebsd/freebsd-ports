@@ -19,7 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-T
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/sbin/lsof:${PORTSDIR}/sysutils/lsof
 
-CONFLICTS?=	${PORTNAME}-[0-9].[0-9][0-9].[0-9]*
+CONFLICTS?=	${PORTNAME}-devel-[0-9]*
 
 USE_PERL5=	yes
 NO_BUILD=	yes
