@@ -1,10 +1,11 @@
---- ddd/Ddd.in.orig	Wed Sep 25 06:27:33 1996
-+++ ddd/Ddd.in	Sun May  4 12:49:05 1997
-@@ -167,7 +167,7 @@
+--- ddd/Ddd.in.orig	Wed May  7 05:19:43 1997
++++ ddd/Ddd.in	Thu May 22 19:49:46 1997
+@@ -167,7 +167,8 @@
  
  
- ! Paper size, in format WIDTH x HEIGHT.	 (Default: A4).
+ ! Paper size, in format WIDTH x HEIGHT.  (Default: A4).
 -Ddd*paperSize: 210mm x 297mm
++!Ddd*paperSize: 210mm x 297mm
 +Ddd*paperSize: 8.5" x 11"
  
  
