@@ -1,7 +1,7 @@
 bin/qemu
-bin/qemu-mkcow
+bin/qemu-img
 bin/qemu-system-ppc
-bin/vmdk2raw
+bin/qemu-system-sparc
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 share/qemu/bios.bin
@@ -9,5 +9,6 @@ share/qemu/linux_boot.bin
 share/qemu/vgabios.bin
 share/qemu/vgabios-cirrus.bin
 share/qemu/ppc_rom.bin
+share/qemu/proll.bin
 @dirrm share/qemu
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,40 +1,25 @@
-Index: qemu/qemu-mkcow.c
-@@ -21,6 +21,8 @@
-  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-  * THE SOFTWARE.
-  */
-+#include "config-host.h"
-+ 
- #include <stdlib.h>
- #include <stdio.h>
- #include <stdarg.h>
-@@ -36,6 +38,13 @@
- #include <sys/stat.h>
- #include <netinet/in.h>
+Index: qemu/Makefile.target
+@@ -179,7 +179,7 @@
  
-+#ifdef _BSD
-+#include <sys/types.h>
-+#include <sys/ioctl.h>
-+#include <sys/queue.h>
-+#include <sys/disk.h>
-+#endif
-+
- #include "cow.h"
+ #########################################################
  
- #include "bswap.h"
-@@ -56,6 +64,15 @@ int cow_create(int cow_fd, const char *i
-             perror(image_filename);
-             exit(1);
-         }
-+#ifdef _BSD
-+        struct stat sb;
-+        if (!fstat(fd,&sb) && (S_IFCHR & sb.st_mode)) {
-+#ifdef DIOCGMEDIASIZE
-+            if (ioctl(fd, DIOCGMEDIASIZE, (off_t *)&image_sectors))
+-DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++DEFINES+=-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DSMBD=\"${LOCALBASE}/sbin/smbd\"
+ LIBS+=-lm
+ ifndef CONFIG_USER_ONLY
+ LIBS+=-lz
+Index: qemu/vl.c
+@@ -1560,8 +1560,13 @@
+     fclose(f);
+     atexit(smb_exit);
+ 
++#ifdef __FreeBSD__
++    snprintf(smb_cmdline, sizeof(smb_cmdline), SMBD " -s %s",
++             smb_conf);
++#else
+     snprintf(smb_cmdline, sizeof(smb_cmdline), "/usr/sbin/smbd -s %s",
+              smb_conf);
 +#endif
-+                image_sectors = lseek(fd, 0LL, SEEK_END);
-+        } else
-+#endif                      
-         image_sectors = lseek64(fd, 0, SEEK_END);
-         if (fstat(fd, &st) != 0) {
-             close(fd);
+     
+     slirp_add_exec(0, smb_cmdline, 4, 139);
+ }
