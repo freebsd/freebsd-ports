@@ -7828,6 +7828,7 @@ rep-gtk		ports/x11-toolkits/rep-gtk
 rep-gtk2	ports/x11-toolkits/rep-gtk2
 replaceit	ports/textproc/replaceit
 replay		ports/audio/replay
+replex		ports/multimedia/replex
 reportmagic	ports/www/reportmagic
 resid		ports/audio/resid
 resin2		ports/www/resin2
