@@ -26,14 +26,8 @@ LIBTOOLFILES=	builders/hardsid-builder/configure \
 		resid/configure
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' \
 		${WRKSRC}/libsidutils/src/ini/ini.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
