@@ -1,1 +1,1 @@
-Apache module that allows seamless redirection of HTTP requests
+Apache module that allows seamless redirection and load balancing of HTTP requests

@@ -1,7 +1,7 @@
-mod_backhand is project that allows seamless redirection
-of HTTP requests from one web server to another. This
-redirection can be used to target machines with under-utilized
-resources, thus providing fine-grained, per-request load balancing
-of web requests. 
+mod_backhand is a project that allows load balancing through seemless
+HTTP proxying from one web server to another.  This proxying is used
+to evenly distribute the load of a site across multiple machines to
+that way under-utilized resources are utilized to their fullest, thus
+providing fine-grained, per-request HTTP load balancing for a cluster.
 
 WWW: http://www.backhand.org/mod_backhand/
