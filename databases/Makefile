@@ -343,6 +343,7 @@
     SUBDIR += useracc
     SUBDIR += usogres
     SUBDIR += wfb2sql
+    SUBDIR += wmjsql
     SUBDIR += xbase
     SUBDIR += xbsql
     SUBDIR += xmbase-grok
