@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.20 1997/10/04 17:13:37 max Exp $
+# $Id: Makefile,v 1.21 1997/10/04 17:58:42 max Exp $
 #
 
 DISTNAME=	web2c-7.0
@@ -46,6 +46,6 @@ post-install:
 .for bin in ${BINARIES}
 	@strip ${PREFIX}/bin/${bin}
 .endfor
-	@/bin/ln -fs ${PREFIX}/bin/tex ${PREFIX}/bin/ptex-common
+	@/bin/ln -fs tex ${PREFIX}/bin/ptex-common
 
 .include <bsd.port.mk>
