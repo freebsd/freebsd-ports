@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	4.3.99.12.20031111
+PORTVERSION=	5.1.p1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt/dri-devel
-DISTNAME=	${PORTNAME}-20031111
+DISTFILES=	${PORTNAME}-20031209.tar.bz2	\
+		Mesa-newtree-20031209.tar.bz2
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers snapshot for XFree86
@@ -25,6 +26,8 @@ MAKE_ENV=	FBSDCFLAGS="${CFLAGS}" FBSDCC="${CC}" FBSDCXX="${CXX}"
 DRILIST=	gamma/gamma_dri.so i810/i810_dri.so i830/i830_dri.so \
 		mga/mga_dri.so r128/r128_dri.so r200/r200_dri.so \
 		radeon/radeon_dri.so sis/sis_dri.so tdfx/tdfx_dri.so
+
+ONLY_FOR_ARCHS=	alpha i386
 
 do-configure:
 	@${RM} -f  ${WRKSRC}/config/cf/version.def
@@ -42,7 +45,7 @@ pre-build:
 
 do-install:
 .for i in ${DRILIST}
-	${INSTALL_DATA} ${WRKSRC}/lib/GL/mesa/src/drv/${i} \
+	${INSTALL_DATA} ${WRKSRC}/lib/GL/mesa/drivers/dri/${i} \
 		${PREFIX}/lib/modules/dri
 .endfor
 

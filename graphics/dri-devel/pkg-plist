@@ -1,3 +1,4 @@
+lib/modules/dri/fb_dri.so
 lib/modules/dri/gamma_dri.so
 lib/modules/dri/i810_dri.so
 lib/modules/dri/i830_dri.so

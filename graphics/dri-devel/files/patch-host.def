@@ -1,29 +1,29 @@
---- config/cf/host.def.orig	Wed Oct 22 16:15:12 2003
-+++ config/cf/host.def	Tue Nov 11 17:48:48 2003
-@@ -8,18 +8,10 @@
+--- config/cf/host.def.orig	Tue Dec  9 17:50:12 2003
++++ config/cf/host.def	Tue Dec  9 23:06:33 2003
+@@ -5,7 +5,7 @@
+ #define XFree86CustomVersion "DRI trunk"
+ 
+ /* You need this now */
+-#define MesaSrcDir /X11R6/SourceForge/Mesanew/Mesa-newtree
++#define MesaSrcDir $(TOP)/../Mesa-newtree
+ 
+ 
  /* Don't use any special flags by default, but leave this here commented out
-  * so people see how to if they want
-  */
--/*
--#define DefaultGcc2AxpOpt -O2 -mcpu=ev6
--#define DefaultGcc2PpcOpt -O2 -mcpu=750
--#define DefaultGcc2i386Opt -O2
--#if defined(AlphaArchitecture)
--#  define LibraryCDebugFlags -O2 -mcpu=ev6
--#elif defined(PpcArchitecture)
--#  define LibraryCDebugFlags -O2 -mcpu=750
--#else
--#  define LibraryCDebugFlags -O2
--#endif
--*/
+@@ -24,6 +24,13 @@
+ #endif
+ */
+ 
 +#define DefaultGcc2AxpOpt ${FBSDCFLAGS}
 +#define DefaultGcc2PpcOpt ${FBSDCFLAGS}
 +#define DefaultGcc2i386Opt ${FBSDCFLAGS}
 +#define LibraryCDebugFlags ${FBSDCFLAGS}
- 
++
++#define CcCmd ${FBSDCC}
++#define CplusplusCmd ${FBSDCXX}
  
  #define BuildXFree86ConfigTools YES
-@@ -43,15 +35,17 @@
+ 
+@@ -46,15 +53,17 @@
  
  #if defined(FreeBSDArchitecture) && defined(HasGcc3) && HasGcc3
  #define NoSystemWarn		-Wno-system-headers
