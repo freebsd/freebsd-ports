@@ -211,7 +211,7 @@ libexec/gimp/1.2/plug-ins/plugindetails
 libexec/gimp/1.2/plug-ins/png
 libexec/gimp/1.2/plug-ins/pnm
 libexec/gimp/1.2/plug-ins/polar
-libexec/gimp/1.2/plug-ins/print
+%%PRINT%%libexec/gimp/1.2/plug-ins/print
 libexec/gimp/1.2/plug-ins/ps
 libexec/gimp/1.2/plug-ins/psd
 libexec/gimp/1.2/plug-ins/psp

@@ -57,8 +57,10 @@ MAN5=		gimprc.5 gimprc-1.2.5
 
 .if defined(WITHOUT_PRINT)
 CONFIGURE_ARGS+=	--disable-print
+PLIST_SUB+=		PRINT="@comment "
 .else
 LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
+PLIST_SUB+=		PRINT=""
 .endif
 
 pre-everything::
