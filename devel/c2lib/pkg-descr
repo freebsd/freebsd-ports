@@ -1,5 +1,10 @@
-c2lib is a library of basic structures and memory allocators for C.
-It is designed to look similar to C++ STL with many powerful string
-features borrowed also from Perl. 
+c2lib is a library of basic tools for use by C programmers.
+It contains a pool allocator, many string functions, STL-like
+vector and hash types and miscellaneous utilities.
 
-WWW: http://www.annexia.org/freeware/c2lib/
+Its features were heavily influenced by both Perl's string handling
+and C++'s Standard Template Library (STL). The library has been designed
+to be very easy to use and is fully documented in manual pages.
+
+Author:	Richard W.M. Jones <rich@annexia.org>
+WWW:	http://www.annexia.org/freeware/c2lib/

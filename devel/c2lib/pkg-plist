@@ -5,11 +5,11 @@ include/c2lib/pre.h
 include/c2lib/pstring.h
 include/c2lib/tree.h
 include/c2lib/vector.h
+@dirrm include/c2lib
 lib/libc2lib.a
 lib/libc2lib.so
 lib/libc2lib.so.1
-lib/libc2lib.so.1.4.1
+lib/libc2lib.so.%%VERSION%%
 share/rws/symtabs/libc2lib.syms
-@dirrm share/rws/symtabs
-@dirrm share/rws
-@dirrm include/c2lib
+@unexec rmdir share/rws/symtabs 2>/dev/null || true
+@unexec rmdir share/rws 2>/dev/null || true
