@@ -1,9 +1,11 @@
---- Makefile.in.orig	Thu Sep  7 08:36:00 2000
-+++ Makefile.in	Fri Sep  8 02:58:02 2000
-@@ -1,5 +1,5 @@
- # Thanks for Dug Song for configure magic.
+--- Makefile.in.orig	Thu Sep 28 08:02:38 2000
++++ Makefile.in	Sat Oct 14 16:25:24 2000
+@@ -6,7 +6,7 @@
+ VPATH= @srcdir@
+ 
+ CC= @CC@
 -CFLAGS= @CFLAGS@ @DEFS@ @PCAPINC@ -Imissing -D_BSD_SOURCE
 +CFLAGS= @CFLAGS@ @DEFS@ @PCAPINC@ -Imissing -D_BSD_SOURCE -DPREFIX=\"@prefix@\"
- CC= @CC@
- PROG=	scanssh
- BINOWN=	root
+ LDFLAGS= @LDFLAGS@
+ 
+ prefix= @prefix@
