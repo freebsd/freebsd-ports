@@ -7,7 +7,7 @@
 
 PORTNAME=	eel
 PORTVERSION=	1.0
-CATEGORIES=	graphics gnome
+CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/eel
 
