@@ -6,18 +6,24 @@
 #
 
 PORTNAME=	duhdraw
-PORTVERSION=	2.6.96
+PORTVERSION=	2.7.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.wwco.com/~wls/opensource/
-DISTNAME=	duhdraw-2.7.1
+MASTER_SITES=	http://www.cs.helsinki.fi/u/penberg/duhdraw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI graphic drawing program
 
-WRKSRC=		${WRKDIR}/duhdraw-2.7.1
+USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC} ${CFLAGS}"
+
+PLIST_FILES=	bin/ansi bin/ansitoc bin/duhdraw
+
+post-patch:
+	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/duhdraw.c
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ansi ${PREFIX}/bin/ansi
-	${INSTALL_SCRIPT} ${WRKSRC}/ansitoc ${PREFIX}/bin/ansitoc
-	${INSTALL_SCRIPT} ${WRKSRC}/duhdraw ${PREFIX}/bin/duhdraw
+	${INSTALL_PROGRAM} ${WRKSRC}/ansi ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ansitoc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/duhdraw ${PREFIX}/bin
 
 .include <bsd.port.mk>
