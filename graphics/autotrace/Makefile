@@ -7,6 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.27a
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://homepage.go.com/~martweb/
@@ -20,8 +21,8 @@ LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		ming.2:${PORTSDIR}/graphics/ming \
-		wmf.1:${PORTSDIR}/graphics/libwmf \
+		ming.3:${PORTSDIR}/graphics/ming \
+		wmf.2:${PORTSDIR}/graphics/libwmf \
 		Magick.5:${PORTSDIR}/graphics/ImageMagick
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
