@@ -1,0 +1,4 @@
+Template::Plugin::MP3 is a plugin for TT, which provides a simple
+wrapper for using "MP3::Info" in object oriented mode.
+
+WWW: http://search.cpan.org/search?dist=Template-Plugin-MP3
