@@ -186,6 +186,7 @@
     SUBDIR += transfig
     SUBDIR += trueprint
     SUBDIR += ttf2pt1
+    SUBDIR += ttfquery
     SUBDIR += ttftot42
     SUBDIR += txfonts
     SUBDIR += txtbdf2ps
