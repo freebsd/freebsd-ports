@@ -6,34 +6,60 @@
 #
 
 PORTNAME=	0verkill
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-HAS_CONFIGURE=	YES
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
+.if defined(WITHOUT_X11)
+PLIST_SUB=	X11="@comment "
+.else
+USE_XPM=	yes
+CONFIGURE_ARGS+=	--with-x
+PLIST_SUB=	X11=""
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile without X11 support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_X11=yes\""
+	@${ECHO_MSG}
+.endif
 
 post-patch:
-	${SED} "s|@PREFIX@|${PREFIX}|g" ${WRKSRC}/cfg.h > ${WRKSRC}/cfg.h.done
-	${MV} ${WRKSRC}/cfg.h.done ${WRKSRC}/cfg.h
-	${SED} "s|grx/|${PREFIX}/share/0verkill/grx/|g" ${WRKSRC}/data/sprites.dat \
-		> ${WRKSRC}/data/sprites.dat.done
-	${MV} ${WRKSRC}/data/sprites.dat.done ${WRKSRC}/data/sprites.dat
+	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data|g' ${WRKSRC}/cfg.h
+	@${REINPLACE_CMD} -e 's|grx/|${DATADIR}/grx/|g' ${WRKSRC}/data/sprites.dat
+	@${REINPLACE_CMD} -e 's|-O3 ||g ; \
+		 s|gcc |\$$\(CC\) |g' ${WRKSRC}/Makefile.in
 
 do-install:
-	${MKDIR} ${PREFIX}/share/0verkill \
-		${PREFIX}/share/doc/0verkill ${PREFIX}/share/0verkill/data \
-		${PREFIX}/share/0verkill/grx
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} 0verkill ${PREFIX}/bin
-	cd ${WRKSRC} && for f in avi bot editor server test_server; do \
-		${INSTALL_PROGRAM} $$f ${PREFIX}/bin/0verkill-$$f; \
-	done
-	cd ${WRKSRC}/data && ${INSTALL_DATA} banner.dat dynamic.dat room.dat \
-		sprites.dat ${PREFIX}/share/0verkill/data
-	${INSTALL_DATA} ${WRKSRC}/grx/* ${PREFIX}/share/0verkill/grx
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} AUTHORS README.html avi.txt \
-		bot.txt doc.html ${PREFIX}/share/doc/0verkill
+	${INSTALL_PROGRAM} ${WRKSRC}/0verkill ${PREFIX}/bin
+.for file in avi bot editor server test_server
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin/0verkill-${file}
+.endfor
+.if !defined(WITHOUT_X11)
+	${INSTALL_PROGRAM} ${WRKSRC}/x0verkill ${PREFIX}/bin
+.for file in avi editor
+	${INSTALL_PROGRAM} ${WRKSRC}/x${file} ${PREFIX}/bin/x0verkill-${file}
+.endfor
+.endif
+	@${MKDIR} ${DATADIR}/data
+.for file in banner.dat level.dat sprites.dat
+	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}/data
+.endfor
+	@${MKDIR} ${DATADIR}/grx
+	${INSTALL_DATA} ${WRKSRC}/grx/* ${DATADIR}/grx
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS README.html avi.txt bot.txt doc.html 
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
