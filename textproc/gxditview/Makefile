@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	gxditview
-PORTVERSION=	1.16.1
 CATEGORIES=	textproc
 DISTFILES=	# none
 
@@ -17,7 +16,13 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_IMAKE=	yes
 MAN1=		gxditview.1
 
-GXDVSRC?=	/usr/src/contrib/groff/xditview
+.if exists(/usr/src/contrib/groff/src/xditview)
+GXDVSRC=	/usr/src/contrib/groff/src/xditview
+PORTVERSION=	1.17
+.else
+GXDVSRC=	/usr/src/contrib/groff/xditview
+PORTVERSION=	1.16.1
+.endif
 
 do-extract:
 	@if [ ! -d ${GXDVSRC} ]; then \
