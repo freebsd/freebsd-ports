@@ -1,26 +1,34 @@
-*** imap/Makefile.orig	Mon Jul  2 23:25:17 2001
---- imap/Makefile	Fri Sep 28 00:19:45 2001
+*** imap/Makefile.orig	Mon Nov  4 16:21:06 2002
+--- imap/Makefile	Tue Nov 26 03:08:33 2002
 ***************
-*** 362,373 ****
+*** 425,440 ****
   	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
 ! 	$(TOOLS)/$@ "$(LN)" src/mtest mtest
 ! 	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
 ! 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+  	$(TOOLS)/$@ "$(LN)" src/mailutil mailutil
+  	$(TOOLS)/$@ "$(LN)" src/mlock mlock
+  	$(TOOLS)/$@ "$(LN)" src/dmail dmail
+  	$(TOOLS)/$@ "$(LN)" src/tmail tmail
   	$(LN) $(TOOLS)/$@ .
   
 ! build:	OSTYPE rebuild rebuildclean bundled
   
   OSTYPE:
   	@echo Building c-client for $(BUILDTYPE)...
---- 362,373 ----
+--- 425,440 ----
   	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
   	$(TOOLS)/$@ "$(LN)" src/charset c-client
   	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
 ! #	$(TOOLS)/$@ "$(LN)" src/mtest mtest
 ! #	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
 ! #	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+  	$(TOOLS)/$@ "$(LN)" src/mailutil mailutil
+  	$(TOOLS)/$@ "$(LN)" src/mlock mlock
+  	$(TOOLS)/$@ "$(LN)" src/dmail dmail
+  	$(TOOLS)/$@ "$(LN)" src/tmail tmail
   	$(LN) $(TOOLS)/$@ .
   
 ! build:	OSTYPE rebuild rebuildclean # bundled

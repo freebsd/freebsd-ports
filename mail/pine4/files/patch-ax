@@ -1,9 +1,9 @@
-*** pine/makefile.bsf.orig	Tue Oct 23 15:24:45 2001
---- pine/makefile.bsf	Sun Dec  2 23:20:33 2001
+*** pine/makefile.bsf.orig	Tue Sep 10 14:39:21 2002
+--- pine/makefile.bsf	Tue Nov 26 03:26:41 2002
 ***************
 *** 50,56 ****
   PROFILE=     # -pg
-  DEBUG=       -DDEBUG # -g
+  DEBUG=       -g -DDEBUG -DDEBUGJOURNAL
   
 ! CCLIENTDIR=  ../c-client
   PICODIR=     ../pico
@@ -11,7 +11,7 @@
   # Only need to uncomment next two lines if you run make from this directory
 --- 50,56 ----
   PROFILE=     # -pg
-  DEBUG=       -DDEBUG # -g
+  DEBUG=       -g -DDEBUG -DDEBUGJOURNAL
   
 ! CCLIENTDIR=  $(PREFIX)/include/c-client
   PICODIR=     ../pico
@@ -40,7 +40,7 @@
 ! LOCLIBS=     $(PICODIR)/libpico.a
 ! LIBS=        $(EXTRALIBES) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
   
-! STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE -I/usr/local/include
+! STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE -I/usr/local/include -I$(PREFIX)/include/c-client
 ! CFLAGS+=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
   	     $(STDCFLAGS)
   
