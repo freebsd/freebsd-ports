@@ -4,7 +4,7 @@ PREFIX="%%PREFIX%%"
 PROGRAM="${0}"
 DIRNAME="${HOME}/.mute-net/%%INTERFACE%%"
 DIR_FILES="${DIRNAME}/files"
-DIR_SETTINGS_ORIGINAL="%%DATADIR%%/%%INTERFACE%%_settings"
+DIR_SETTINGS_ORIGINAL="%%DATADIR%%/settings"
 DIR_SETTINGS="${DIRNAME}/settings"
 
 if [ ! -d ${DIRNAME} ]

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mute
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-net
@@ -22,7 +22,7 @@ HAS_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
 
-RELEASE_DIRECTORY=	MUTE_fileSharing-0.2-rc1_UnixSource
+RELEASE_DIRECTORY=	MUTE_fileSharing-${PORTVERSION}-rc1_UnixSource
 
 WRKSRC=		${WRKDIR}/${RELEASE_DIRECTORY}/MUTE
 PATCH_WRKSRC=	${WRKDIR}/${RELEASE_DIRECTORY}
@@ -34,13 +34,12 @@ WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 .endif
 
 #
+MUTE_SETTINGS=		otherApps/fileSharing/userInterface/settings/
 MUTE_CORE_GUI=		otherApps/fileSharing/userInterface/wxWindows/fileSharingMUTE
 MUTE_CORE_GUI_FILE=	fileSharingMUTE
-MUTE_SETTINGS_GUI=	otherApps/fileSharing/userInterface/wxWindows/settings/
 #
 MUTE_CORE_TEXT=		otherApps/fileSharing/userInterface/textBased/textFileSharingMUTE
 MUTE_CORE_TEXT_FILE=	textFileSharingMUTE
-MUTE_SETTINGS_TEXT=	otherApps/fileSharing/userInterface/textBased/settings/
 
 pre-everything::
 #
@@ -110,6 +109,10 @@ post-build:
 .endif
 
 do-install:
+# install initial settings
+	@${MKDIR} ${DATADIR}/settings/
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${MUTE_SETTINGS}/* \
+		${DATADIR}/settings/
 # gui interface
 .ifndef(WITHOUT_GUI)
 # install binary
@@ -118,10 +121,6 @@ do-install:
 # install wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper-gui.sh \
 		${PREFIX}/bin/${MUTE_CORE_GUI_FILE}
-# install initial settings
-	@${MKDIR} ${DATADIR}/gui_settings/
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${MUTE_SETTINGS_GUI}/* \
-		${DATADIR}/gui_settings/
 .endif
 # text interface
 .ifndef(WITHOUT_TEXT)
@@ -131,10 +130,6 @@ do-install:
 # install wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper-text.sh \
 		${PREFIX}/bin/${MUTE_CORE_TEXT_FILE}
-# install initial settings
-	@${MKDIR} ${DATADIR}/text_settings/
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/${MUTE_SETTINGS_TEXT}/* \
-		${DATADIR}/text_settings/
 .endif
 
 post-install:
