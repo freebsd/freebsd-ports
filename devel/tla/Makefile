@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tla
-PORTVERSION=	1.1.pre5
-PORTREVISION=	1
+PORTVERSION=	1.1.pre7
 CATEGORIES=	devel
-MASTER_SITES=	http://regexps.srparish.net/src/tla/
-DISTNAME=	tla-1.1pre5
+MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
+		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
+DISTNAME=	tla-1.1pre7
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
