@@ -203,6 +203,7 @@ libpanel_GNOME_DESKTOP_VERSION=1
 
 glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
+glib20_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 atk_LIB_DEPENDS=	atk-1.0.200:${PORTSDIR}/devel/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
@@ -452,9 +453,6 @@ USE_GNOME+=	imlib
 USE_GNOME+=gnomeprefix gnomehack gtkhtml libpanel
 . endif
 
-# Set a reasonable (overrideable) configure target for GNOME apps.
-CONFIGURE_TARGET?=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
 # First of all expand all USE_GNOME_IMPL recursively
 . for component in ${_USE_GNOME_ALL}
 .  for subcomponent in ${${component}_USE_GNOME_IMPL}
@@ -493,6 +491,10 @@ RUN_DEPENDS+=	${${component}_RUN_DEPENDS}
 CONFIGURE_ARGS+=${${component}_CONFIGURE_ARGS}
 CONFIGURE_ENV+=	${${component}_CONFIGURE_ENV}
 MAKE_ENV+=	${${component}_MAKE_ENV}
+
+.    if !defined(CONFIGURE_TARGET) && defined(${component}_CONFIGURE_TARGET)
+CONFIGURE_TARGET=	${${component}_CONFIGURE_TARGET}
+.    endif
 
 .    if defined(${component}_PRE_PATCH)
 GNOME_PRE_PATCH+=	${${component}_PRE_PATCH}
