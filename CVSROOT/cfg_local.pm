@@ -30,6 +30,10 @@ $MAILCMD = "/usr/local/bin/mailsend -H";
 $MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
 $ADD_TO_LINE = 0;
 $MAILBANNER = "FreeBSD ports repository";
+if (defined $ENV{'CVS_COMMIT_ATTRIB'}) {
+  my $attrib = $ENV{'CVS_COMMIT_ATTRIB'};
+  $MAILBANNER .= " ($attrib committer)";
+}
 
 # Sanity check to make sure we've been run through the wrapper and are
 # now primary group 'pcvs'.
