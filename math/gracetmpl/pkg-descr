@@ -1,0 +1,22 @@
+The GraceTMPL classes provide an easy way to use existing grace-files as a
+template to format any number of graphs in a predefined way and save them as
+grace-files. This way you can apply the same graphical appearance to all of
+your data. In case your preferences change, you just alter the template and
+reformat your complete set of data within the shortest amount of time.
+
+The capabilities of GraceTMPL include:
+    * The application using the GraceTMPL classes can define environment
+      variables for the sheet, each graph and each dataset. The variables can
+      be used in the template for dynamic string replacement. Even output
+      filenames can be templated using variable substitution.
+    * Datasets in the template file can be marked to be included in the
+      destination files for easy reference.
+    * Datasets can be tagged with arbitrary information strings to be
+      interpreted by the application using GraceTMPL. This way information can
+      be passed to the application on how to create the datasets and what kind
+      of information is intended by the template author.
+    * In case no template file is loaded by the application, GraceTMPL::Save
+      will output plain sets of data tables which can easily be imported by
+      XmGrace or other applications.
+
+WWW: http://gracetmpl.sourceforge.net/
