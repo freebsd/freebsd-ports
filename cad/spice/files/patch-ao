@@ -1,0 +1,11 @@
+--- src/lib/hlp/readhelp.c.orig	Wed Apr 21 03:56:00 1993
++++ src/lib/hlp/readhelp.c	Thu Sep 30 10:06:32 1999
+@@ -42,6 +42,6 @@
+ static char *getsubject();
+ static toplink *getsubtoplink();
+-extern void sortlist(), tlfree();
+-extern int sortcmp();
++static void sortlist(), tlfree();
++static int sortcmp();
+ 
+ static topic *alltopics = NULL;

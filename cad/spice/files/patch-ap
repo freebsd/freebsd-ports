@@ -1,0 +1,20 @@
+--- src/lib/fte/aspice.c.orig	Sun Apr 25 20:57:55 1993
++++ src/lib/fte/aspice.c	Thu Sep 30 11:42:40 1999
+@@ -175,4 +175,10 @@
+     FILE *fp;
+     int pid;
++#ifdef HAS_INTWAITSTATUS
++    int status;
++#else
++    union wait status;
++#endif
++
+     static bool here = false;   /* Don't want to be re-entrant. */
+ 
+@@ -183,5 +189,5 @@
+ 
+     while (numchanged > 0) {
+-        pid = wait((union wait *) NULL);
++        pid = wait(&status);
+         if (pid == -1) {
+             fprintf(cp_err, 

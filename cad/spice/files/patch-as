@@ -1,0 +1,19 @@
+*** util/skeleton/make_def.bd.orig	Thu Jul 29 16:35:18 1993
+--- util/skeleton/make_def.bd	Fri Oct  1 01:47:31 1999
+***************
+*** 8,14 ****
+  PATH_SEP	= /
+  PS		= /
+  REVISION	=
+! VERSION		= 3f4
+  VERSION_REVISION= $(VERSION)$(REVISION)
+  NOTICE		=
+  TOP		= /projects/spice3/spice$(VERSION)
+--- 8,14 ----
+  PATH_SEP	= /
+  PS		= /
+  REVISION	=
+! VERSION		= 3f5
+  VERSION_REVISION= $(VERSION)$(REVISION)
+  NOTICE		=
+  TOP		= /projects/spice3/spice$(VERSION)

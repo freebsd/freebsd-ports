@@ -65,7 +65,7 @@
   
   #	CC_OPT: Default compile options (optimization/debug level, other)
   
-! CC_OPT		= -O2 -pipe
+! CC_OPT		= -O -Os
   
   #	CC_OPT_SAFE: Special compile options to override CC_OPT for code
   #	which typically causes problems for most compilers (bsim1 and bsim2).
