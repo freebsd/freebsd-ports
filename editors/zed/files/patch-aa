@@ -1,5 +1,5 @@
---- Makefile	Tue Jun  4 15:01:04 2002
-+++ Makefile	Tue Jun  4 16:26:14 2002
+--- Makefile.orig	Wed Apr  5 19:49:16 2000
++++ Makefile	Sun Nov 17 22:41:13 2002
 @@ -5,7 +5,7 @@
  PREFIX=/usr/local
  
@@ -9,7 +9,7 @@
  
  # i486 Linux
  #CFLAGS=-pipe -Wall -fomit-frame-pointer -m486 -O2
-@@ -16,7 +16,7 @@
+@@ -16,18 +16,18 @@
  #CFLAGS=-pipe -Wall -mpa-risc-1-1 -O2
  
  # RS6000 AIX
@@ -18,6 +18,19 @@
  
  # Sun
  #ILIBS=-lm
+ #IXLIBS=-lm
+ #CFLAGS=-pipe -Wall -O2 -msupersparc
+ 
+-COMPILER=gcc
++COMPILER=${CXX}
+ # someone needs this:
+ #COMPILER=g++
+ 
+-LINKER=gcc
++LINKER=${CXX}
+ 
+ ###############################################
+ 
 @@ -45,7 +45,7 @@
  
  ###############################################
