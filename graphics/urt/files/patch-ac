@@ -1,0 +1,34 @@
+--- man/makefile.src.orig	Thu Feb 27 22:26:52 1992
++++ man/makefile.src	Wed Feb 11 09:22:16 1998
+@@ -211,7 +211,6 @@
+ 
+ # Put the manual pages into a global location
+ install: install-1 install-3 install-5
+-	touch install
+ 
+ install-1: $(PAGES1)
+ 	@-sh -c "if test '$(DEST)X' != X ; then \
+@@ -223,7 +222,6 @@
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install-1
+ 
+ install-3: $(PAGES3)
+ 	@-sh -c "if test '$(DEST)X' != X ; then \
+@@ -235,7 +233,6 @@
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install-3
+ 
+ install-5: man5/*.5
+ 	@-sh -c "if test $(DEST)X != X; then \
+@@ -243,7 +240,6 @@
+ 		cp $? $(DEST5); \
+ 	else true; \
+ 	fi"
+-	touch install-5
+ 
+ # Clean up installed man pages
+ pristine:

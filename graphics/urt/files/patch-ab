@@ -1,0 +1,226 @@
+diff -ur ../urt-3.1b-orig/get/getx11/in_cmap.c ./get/getx11/in_cmap.c
+--- ../urt-3.1b-orig/get/getx11/in_cmap.c	Thu Apr 30 10:17:16 1992
++++ ./get/getx11/in_cmap.c	Sat Sep 16 11:16:59 1995
+@@ -70,10 +70,10 @@
+     if ( img->sep_colors ||
+ 	 (img->img_channels == 1 && img->ncmap == 3 && img->cmlen) )
+ 	/* If using color map directly, apply display gamma, too. */
+-	img->in_cmap = buildmap( img_hdr, 3, img->gamma,
++	img->in_cmap = buildmap( img_hdr, 3, (double) img->gamma,
+ 				 display_gamma );
+     else
+-	img->in_cmap = buildmap( img_hdr, 3, img->gamma, 1.0 );
++	img->in_cmap = buildmap( img_hdr, 3, (double) img->gamma, 1.0 );
+     
+     for (i = 0; i < 3; i++ ) {
+ 	for (j = 0; j < 256; j++)
+diff -ur ../urt-3.1b-orig/include/rle_config.tlr ./include/rle_config.tlr
+--- ../urt-3.1b-orig/include/rle_config.tlr	Thu Apr 30 10:06:23 1992
++++ ./include/rle_config.tlr	Sat Sep 16 11:31:57 1995
+@@ -48,7 +48,7 @@
+ #endif /* NO_DECLARE_MALLOC */
+ 
+ #ifdef USE_PROTOTYPES
+-extern char *getenv( CONST_DECL char *name );
++extern char *getenv( CONST_DECL char *CONST_DECL name);
+ #else
+ extern char *getenv();
+ #endif
+diff -ur ../urt-3.1b-orig/lib/buildmap.c ./lib/buildmap.c
+--- ../urt-3.1b-orig/lib/buildmap.c	Thu Feb 27 18:17:01 1992
++++ ./lib/buildmap.c	Sat Sep 16 12:11:12 1995
+@@ -26,6 +26,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "rle.h"
+ #include <math.h>
+ 
+diff -ur ../urt-3.1b-orig/lib/makefile.src ./lib/makefile.src
+--- ../urt-3.1b-orig/lib/makefile.src	Wed Mar  4 16:32:53 1992
++++ ./lib/makefile.src	Sat Sep 16 10:44:35 1995
+@@ -26,7 +26,10 @@
+ 	vaxshort.o \
+ 	$(OPT_OBJS)
+ 
+-LIBNAME = librle.a
++SOOBJS = $(OBJS:.o=.so)
++
++LIBANAME = librle.a
++LIBSONAME = librle.so.1.0
+ 
+ # Just rebuild the object files.
+ objs: $(OBJS)
+@@ -37,23 +40,13 @@
+ # Do nothing if $(DEST) is empty (or not defined)
+ install: buildlib
+ 	@sh -c "if test '$(DEST)x' != x ; then \
+-		echo cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
+-		cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
++		echo cp $(LIBANAME) $(DEST)/$(LIBANAME) ; \
++		cp $(LIBANAME) $(DEST)/$(LIBANAME) ; \
++		echo cp $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
++		cp $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
+ 		if test x$(RANLIB) != x ; then \
+-			echo ranlib $(DEST)/$(LIBNAME) ; \
+-			ranlib $(DEST)/$(LIBNAME) ; \
+-		else \
+-			true ; \
+-		fi ; \
+-		if test -d $(DEST)/debug ; then \
+-			echo cp $(LIBNAME) $(DEST)/debug/$(LIBNAME) ; \
+-			if test x$(RANLIB) != x ; then \
+-				cp $(LIBNAME) $(DEST)/debug/$(LIBNAME) ; \
+-				echo ranlib $(DEST)/debug/$(LIBNAME) ; \
+-			else \
+-				true ; \
+-			fi ; \
+-			ranlib $(DEST)/debug/$(LIBNAME) ; \
++			echo ranlib $(DEST)/$(LIBANAME) ; \
++			ranlib $(DEST)/$(LIBANAME) ; \
+ 		else \
+ 			true ; \
+ 		fi ; \
+@@ -63,14 +56,24 @@
+ 	touch install
+ 
+ # Rebuild the library from all the .o files.
+-buildlib: $(OBJS)
+-	-rm -f $(LIBNAME)
+-	ar rc $(LIBNAME)
+-	ar q $(LIBNAME) $(OBJS)
++buildlib: $(LIBANAME) $(LIBSONAME)
++
++$(LIBANAME): $(OBJS)
++	-rm -f $@
++	ar rc $@ $?
+ #ifndef NO_RANLIB
+-	ranlib $(LIBNAME)
++	ranlib $@
+ #endif
+-	touch buildlib
++
++.SUFFIXES: .so .o
++
++.c.so:
++	$(CC) -fPIC -DPIC $(CFLAGS) -c $*.c -o $*.so
++	$(LD) -X -r $*.so
++
++$(LIBSONAME): $(SOOBJS)
++	-rm -f $@
++	ld -Bshareable -o $@ $>
+ 
+ # Clean up installed stuff and binaries
+ pristine: clean
+@@ -86,9 +89,12 @@
+ # Get rid of everything which must be recompiled on a different computer.
+ clean:
+ 	-rm -f *.o
++	-rm -f *.so
+ 	-@if test x$(DEST) != x ; then \
+-		echo rm -f $(LIBNAME) ; \
+-		rm -f $(LIBNAME) ; \
++		echo rm -f $(LIBANAME) ; \
++		rm -f $(LIBANAME) ; \
++		echo rm -f $(LIBSONAME) ; \
++		rm -f $(LIBSONAME) ; \
+ 	else \
+ 		true ; \
+ 	fi
+diff -ur ../urt-3.1b-orig/makefile.src ./makefile.src
+--- ../urt-3.1b-orig/makefile.src	Fri Jun  7 11:58:13 1991
++++ ./makefile.src	Fri Sep 15 22:09:01 1995
+@@ -17,7 +17,7 @@
+ # clean deletes all but source, pristine (below) deletes installed stuff, too
+ default clean: doit
+ 	@for d in $(DIRS) ; do \
+-		( cd $$d ; echo make $@ on $$d ; make $(MFLAGS) $@ ) ; \
++		( cd $$d ; echo make $@ on $$d ; $(MAKE) $(MFLAGS) $@ ) ; \
+ 	done
+ 
+ # install puts library, binaries and documentation into global location
+@@ -29,7 +29,7 @@
+ 
+ install $(MAKE_TARGET) pristine depend:: doit
+ 	@for d in $(ALLDIRS) ; do \
+-		( cd $$d ; echo make $@ on $$d ; make $(MFLAGS) $@ ) ; \
++		( cd $$d ; echo make $@ on $$d ; $(MAKE) $(MFLAGS) $@ ) ; \
+ 	done
+ 
+ 
+diff -ur ../urt-3.1b-orig/makefile.tlr ./makefile.tlr
+--- ../urt-3.1b-orig/makefile.tlr	Tue Aug  4 13:17:57 1992
++++ ./makefile.tlr	Sat Sep 16 10:35:58 1995
+@@ -7,7 +7,7 @@
+ 	@sh -c "if test 'x$(DIRS)' != x ; then eval \
+ 		'set -e ; for dir in $(DIRS) ; do \
+ 			(cd \$$dir ; echo Make ${HERE}\$$dir ; \
+-			 	make $(MFLAGS) $(DIRMFLAGS) ) ; \
++			 	$(MAKE) $(MFLAGS) $(DIRMFLAGS) ) ; \
+ 		done' ; \
+ 	  else \
+ 		true ; \
+@@ -46,7 +46,7 @@
+ 	@sh -c "if test 'x$(DIRS)' != x  ; then eval \
+ 		'for dir in $(DIRS) ; do \
+ 			(cd \$$dir ; echo Install ${HERE}\$$dir ; \
+-			 make $(MFLAGS) $(DIRMFLAGS) install) ; \
++			 $(MAKE) $(MFLAGS) $(DIRMFLAGS) install) ; \
+ 		done' ; \
+ 	  else \
+ 		true ; \
+@@ -105,7 +105,7 @@
+ 	    'for dir in $(ALLDIRS); do \
+ 		if test -d $$dir ; then \
+ 			(cd $$dir; echo Make ${HERE}$$dir pristine ; \
+-			 make $(MFLAGS) pristine); \
++			 $(MAKE) $(MFLAGS) pristine); \
+ 		else \
+ 			true; \
+ 		fi; \
+@@ -124,7 +124,7 @@
+ 	    'for dir in $(ALLDIRS); do \
+ 		if test -d $$dir ; then \
+ 			(cd $$dir; echo Clean ${HERE}$$dir ; \
+-			 make $(MFLAGS) clean); \
++			$(MAKE) $(MFLAGS) clean); \
+ 		else \
+ 			true; \
+ 		fi; \
+diff -ur ../urt-3.1b-orig/tools/into.c ./tools/into.c
+--- ../urt-3.1b-orig/tools/into.c	Thu Apr 30 10:10:15 1992
++++ ./tools/into.c	Sat Sep 16 10:32:26 1995
+@@ -41,7 +41,10 @@
+ short forceflg;				/* overwrite an unwritable file?
+ */
+ 
+ extern int errno;
++
++#ifndef BSD
+ extern char *sys_errlist[];
++#endif
+ 
+ void
+ main(argc, argv)
+diff -ur ../urt-3.1b-orig/tools/makefile.src ./tools/makefile.src
+--- ../urt-3.1b-orig/tools/makefile.src	Tue Jan 28 15:47:42 1992
++++ ./tools/makefile.src	Sat Sep 16 10:33:14 1995
+@@ -68,7 +68,7 @@
+ fant.out: fant.o mallocNd.o
+ 	$(CC) $(CFLAGS) -I$(RI) fant.o mallocNd.o $(LIBS) -lm -o fant.new
+ 	mv fant.new fant.out
+-	
++
+ # rlebox and crop use some common code.
+ rle_box.o: $(RI)/rle.h $(RI)/rle_config.h $(RI)/rle_raw.h
+ 
+@@ -82,7 +82,7 @@
+ # rleClock has it's own directory, must be built special
+ 
+ rleClock.out: clock/font.c clock/font.h clock/font.src clock/rleClock.c
+-	(cd clock ; make)
++	(cd clock ; $(MAKE))
+ 
+ # Incremental install, copies everything ("$?") since last install to DEST dir.
+ install: $(PGMS) install-pgm
