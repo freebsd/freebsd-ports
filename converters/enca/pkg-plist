@@ -8,12 +8,12 @@ include/enca.h
 lib/libenca.a
 lib/libenca.so
 lib/libenca.so.2
-share/doc/enca/libenca/c4.html
-share/doc/enca/libenca/index.html
-share/doc/enca/libenca/index.sgml
-share/doc/enca/libenca/libenca-analyser.html
-share/doc/enca/libenca/libenca-auxiliary-functions.html
-share/doc/enca/libenca/libenca-charsets-and-surfaces.html
-share/doc/enca/libenca/libenca-typedefs-and-constants.html
-@dirrm share/doc/enca/libenca
-@dirrm share/doc/enca
+%%PORTDOCS%%share/doc/enca/libenca/c4.html
+%%PORTDOCS%%share/doc/enca/libenca/index.html
+%%PORTDOCS%%share/doc/enca/libenca/index.sgml
+%%PORTDOCS%%share/doc/enca/libenca/libenca-analyser.html
+%%PORTDOCS%%share/doc/enca/libenca/libenca-auxiliary-functions.html
+%%PORTDOCS%%share/doc/enca/libenca/libenca-charsets-and-surfaces.html
+%%PORTDOCS%%share/doc/enca/libenca/libenca-typedefs-and-constants.html
+%%PORTDOCS%%@dirrm share/doc/enca/libenca
+%%PORTDOCS%%@dirrm share/doc/enca
