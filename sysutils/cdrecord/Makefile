@@ -6,18 +6,18 @@
 # $FreeBSD$
 #
 
-DISTNAME=	cdrecord-1.8a22
+DISTNAME=	cdrecord-1.8a28
 CATEGORIES=	sysutils audio
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/
 
 MAINTAINER=	dirk@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/cdrecord-1.8
 MAN1=		cdrecord.1 cdda2wav.1
 USE_GMAKE=	yes
-
-do-build:
-	@cd ${WRKSRC} && ${GMAKE} COPTX=-DBSD_SCSI_SENSE_BUG
+MAKE_ENV=	COPTX=-DBSD_SCSI_SENSE_BUG
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/i386-freebsd-cc/cdrecord \
