@@ -28,12 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 INFO=		glame glame-dev
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
-.endif
-
 post-extract:
 	@cd ${WRKSRC}/doc && ${RM} -f *.info*
 
@@ -43,4 +37,4 @@ post-patch:
 		 s|,$$LTDLINCL,|,,|g ; \
 		 s|,$$LTLIBOBJS,|,,|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
