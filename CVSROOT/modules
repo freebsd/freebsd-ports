@@ -657,6 +657,7 @@ btc		ports/audio/btc
 btoa		ports/converters/btoa
 btx		src/sys/boot/i386/btx
 btxld		src/usr.sbin/btxld
+bubblegum	ports/security/bubblegum
 bubblemon	ports/sysutils/bubblemon
 bubblemon-dockapp	ports/sysutils/bubblemon-dockapp
 buffer		ports/misc/buffer
