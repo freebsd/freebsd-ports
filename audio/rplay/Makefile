@@ -3,12 +3,12 @@
 # Date created:		16 March 1995  
 # Whom:			rmallory@csusb.edu
 #
-# $Id: Makefile,v 1.7 1996/11/18 13:56:44 asami Exp $
+# $Id: Makefile,v 1.8 1997/06/13 16:17:01 ache Exp $
 #
 
 DISTNAME=       rplay-3.2.0b6
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.sdsu.edu/pub/rplay/
+MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	rmallory@csusb.edu
 
