@@ -154,29 +154,31 @@ System/share/config.site
 @dirrm System
 @dirrm Network
 @dirrm Local
+@unexec rmdir %D
 @exec mkdir -p %D/Local
 @exec mkdir -p %D/Network
 @exec mkdir -p %D/System/Applications
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/ApplicationSupport
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Bundles
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/ColorPickers
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Colors
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/DocTemplates
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/ApplicationSupport
+@exec mkdir -p %D/System/Library/Bundles
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/ColorPickers
+@exec mkdir -p %D/System/Library/Colors
+%%GNUSTEP_STABLE%%@exec mkdir -p %D/System/Developer/Palettes
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/DocTemplates
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/Developer
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/User
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/info
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/man
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Fonts
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Frameworks
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Fonts
+@exec mkdir -p %D/System/Library/Frameworks
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Headers
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Images
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/KeyBindings
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Images
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/KeyBindings
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Java
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Resources
 @comment @exec mkdir -p %D/System/Library/Makefiles
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/PostScript
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Sounds
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Services
+@exec mkdir -p %D/System/Library/PostScript
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Sounds
+@exec mkdir -p %D/System/Library/Services
 @exec mkdir -p %D/System/Makefiles/Additional
 @exec mkdir -p %D/System/Makefiles/Auxiliary
 @exec mkdir -p %D/System/Tools/Java
