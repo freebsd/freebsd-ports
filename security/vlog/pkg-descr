@@ -1,4 +1,5 @@
-vlog is a curses based real-time logfile viewer. It was designed
+vlog is a curses based real-time logfile viewer with some additional
+features for viewing IP-Filter logs. It was designed
 to meet the following needs:
 
 ipmon viewer   display IP-Filter log lines in a scrollable window
