@@ -1,0 +1,9 @@
+DAR is a command-line backup tool, that uses compression,
+makes differential or full backups, which can be split over
+several files or disks. Dar saves *all* UNIX inode types,
+hard links, as well as Extended Attributes.
+And many other features ...
+
+WWW: http://dar.linux.free.fr/
+
+Author: Denis Corbin <edrusb@users.sourceforge.net>
