@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1998/09/06 19:28:04 andreas Exp $
+# $Id: Makefile,v 1.10 1998/09/15 21:31:32 asami Exp $
 #
 
 DISTNAME=	Msql-Mysql-modules-1.2003
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 
 MAINTAINER=	vanilla@FreeBSD.ORG
+
+BROKEN_ELF=	depends on mysql-3.21.33
 
 BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321/ \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable/ \
