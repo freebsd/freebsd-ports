@@ -1,0 +1,44 @@
+--- Makefile.in.orig	Sat Mar  4 06:54:37 2000
++++ Makefile.in	Mon Apr 24 12:39:34 2000
+@@ -91,15 +91,15 @@
+ lib_LTLIBRARIES = libSDL_mixer.la
+ 
+ SUBDIRS = @MUSIC_SUBDIRS@
+-DIST_SUBIDRS = mikmod timidity
++DIST_SUBIDRS = timidity
+ 
+-libSDL_mixerincludedir = $(includedir)/SDL
++libSDL_mixerincludedir = $(includedir)/SDL11
+ libSDL_mixerinclude_HEADERS =  	SDL_mixer.h
+ 
+ 
+ libSDL_mixer_la_SOURCES =  	mixer.c				music.c				music_cmd.c			music_cmd.h			wave.h				wavestream.c			wavestream.h
+ 
+-@USE_MIKMOD_TRUE@MIKMOD_LIB = mikmod/libmikmod.la
++@USE_MIKMOD_TRUE@MIKMOD_LIB = -lmikmod
+ @USE_MIKMOD_FALSE@MIKMOD_LIB = 
+ @USE_TIMIDITY_TRUE@TIMIDITY_LIB = timidity/libtimidity.la
+ @USE_TIMIDITY_FALSE@TIMIDITY_LIB = 
+@@ -107,7 +107,7 @@
+ EXTRA_DIST =  	CHANGES				VisualC.zip			MPWmake.sea.hqx			autogen.sh
+ 
+ 
+-libSDL_mixer_la_LDFLAGS =          -release $(LT_RELEASE)		-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libSDL_mixer_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libSDL_mixer_la_LIBADD = $(MIKMOD_LIB) $(TIMIDITY_LIB)
+ 
+@@ -127,12 +127,10 @@
+ LIBS = @LIBS@
+ @USE_TIMIDITY_FALSE@@USE_MIKMOD_FALSE@libSDL_mixer_la_DEPENDENCIES = 
+ @USE_TIMIDITY_TRUE@@USE_MIKMOD_TRUE@libSDL_mixer_la_DEPENDENCIES =  \
+-@USE_TIMIDITY_TRUE@@USE_MIKMOD_TRUE@mikmod/libmikmod.la \
+ @USE_TIMIDITY_TRUE@@USE_MIKMOD_TRUE@timidity/libtimidity.la
+ @USE_TIMIDITY_TRUE@@USE_MIKMOD_FALSE@libSDL_mixer_la_DEPENDENCIES =  \
+ @USE_TIMIDITY_TRUE@@USE_MIKMOD_FALSE@timidity/libtimidity.la
+-@USE_TIMIDITY_FALSE@@USE_MIKMOD_TRUE@libSDL_mixer_la_DEPENDENCIES =  \
+-@USE_TIMIDITY_FALSE@@USE_MIKMOD_TRUE@mikmod/libmikmod.la
++@USE_TIMIDITY_FALSE@@USE_MIKMOD_TRUE@libSDL_mixer_la_DEPENDENCIES =
+ libSDL_mixer_la_OBJECTS =  mixer.lo music.lo music_cmd.lo wavestream.lo
+ PROGRAMS =  $(bin_PROGRAMS)
+ 

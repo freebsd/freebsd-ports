@@ -1,0 +1,14 @@
+--- timidity/resample.c.orig	Tue Feb  1 23:16:29 2000
++++ timidity/resample.c	Mon Apr 24 12:53:27 2000
+@@ -22,7 +22,11 @@
+ 
+ #include <math.h>
+ #include <stdio.h>
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ 
+ #include "config.h"
+ #include "common.h"
