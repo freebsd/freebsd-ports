@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/ \
 		http://www.ewtoo.org/~astyanax/nano/dist/v1.2/
@@ -28,7 +27,7 @@ MAN5=		nanorc.5
 
 post-build:
 	${REINPLACE_CMD} 's:\$$SYSCONFDIR:${PREFIX}/etc:g' \
-		${WRKSRC}/${MAN1} ${WRKSRC}/${MAN5}
+		${WRKSRC}/${MAN1} ${WRKSRC}/${MAN5} ${WRKSRC}/${INFO:=.info}
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
