@@ -27,9 +27,12 @@ include/gsl/gsl_combination.h
 include/gsl/gsl_complex.h
 include/gsl/gsl_complex_math.h
 include/gsl/gsl_const.h
+include/gsl/gsl_const_cgs.h
 include/gsl/gsl_const_cgsm.h
+include/gsl/gsl_const_mks.h
 include/gsl/gsl_const_mksa.h
 include/gsl/gsl_const_num.h
+include/gsl/gsl_deriv.h
 include/gsl/gsl_dft_complex.h
 include/gsl/gsl_dft_complex_float.h
 include/gsl/gsl_dht.h
@@ -212,13 +215,13 @@ include/gsl/gsl_vector_ushort.h
 include/gsl/gsl_version.h
 lib/libgsl.a
 lib/libgsl.so
-lib/libgsl.so.5
+lib/libgsl.so.6
 lib/libgslcblas.a
 lib/libgslcblas.so
 lib/libgslcblas.so.0
 libdata/pkgconfig/gsl.pc
 share/aclocal/gsl.m4
 %%PORTDOCS%%%%DOCSDIR%%/gsl-ref.ps
-%%PORTDOCS%%@dirrm share/doc/gsl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/gsl
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
