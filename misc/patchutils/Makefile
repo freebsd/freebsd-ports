@@ -8,6 +8,7 @@
 
 PORTNAME=	patchutils
 PORTVERSION=	0.2.16
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
