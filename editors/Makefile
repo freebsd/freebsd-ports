@@ -97,6 +97,7 @@
     SUBDIR += openoffice-gr
     SUBDIR += openoffice-nl
     SUBDIR += openoffice-pt
+    SUBDIR += openoffice-tr
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
