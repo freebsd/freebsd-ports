@@ -121,6 +121,7 @@
     SUBDIR += linux-sun-jdk15
     SUBDIR += mmake
     SUBDIR += netbeans
+    SUBDIR += netbeans3
     SUBDIR += netcomponents
     SUBDIR += netrexx
     SUBDIR += openjit
