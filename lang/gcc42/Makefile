@@ -4,10 +4,10 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.67 1999/07/04 21:49:26 steve Exp $
+# $Id: Makefile,v 1.68 1999/07/06 07:29:37 obrien Exp $
 #
 
-SNAPDATE=	1999-06-29
+SNAPDATE=	1999-07-12
 SNAPVER=	${SNAPDATE:S/-//g}
 
 DISTNAME=	egcs-${SNAPVER}
