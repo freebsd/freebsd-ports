@@ -24,10 +24,16 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e "s,-lqt,-lqt2,g"
 	@${REINPLACE_CMD} -e "s,malloc.h,stdlib.h,g" ${WRKSRC}/kisomandel/fractal.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

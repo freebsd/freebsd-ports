@@ -34,6 +34,12 @@ WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-build:
 	@${ECHO_CMD} '*shared*' > ${WRKSRC}/src/Setup
 	@${ECHO_CMD} '' >> ${WRKSRC}/src/Setup
@@ -51,4 +57,4 @@ do-install:
 	@${CP} -Rf ${WRKSRC}/* \
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

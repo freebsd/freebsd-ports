@@ -39,6 +39,10 @@ MAKE_ENV+=	CC=${CC} CXX=${CXX}
 
 MAN1=		filmgimp.1 filmgimptool.1
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-configure:
 # this must be done to avoid conflicts with ${X11BASE}/include/libgimp/
 	@${FIND} ${WRKSRC} -name "Makefile" | \

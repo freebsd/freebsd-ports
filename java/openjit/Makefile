@@ -29,6 +29,12 @@ JAVADIR=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/OpenJIT
 DOCDIR=		${PREFIX}/share/OpenJIT
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/INSTALL
 
@@ -44,4 +50,4 @@ post-install:
 	@${ECHO_MSG} "See ${DOCDIR}/README for usage instructions."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

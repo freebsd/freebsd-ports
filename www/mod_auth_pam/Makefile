@@ -19,6 +19,12 @@ RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 APXS?=		${LOCALBASE}/sbin/apxs
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-build:
 	@cd ${WRKSRC} && \
 	${APXS} -c -lpam mod_auth_pam.c
@@ -35,4 +41,4 @@ do-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

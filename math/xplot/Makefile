@@ -19,6 +19,12 @@ GNU_CONFIGURE=	yes
 
 XPLOT_DEMOS=	demo.0 demo.1 demo.2 demo.3 demo.4 demo.5 demo.6 demo.7
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tcpdump2xplot.pl ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -31,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/xplot
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

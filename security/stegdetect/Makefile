@@ -32,6 +32,12 @@ CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}"
 PLIST_SUB+=	X11=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's/$$(JPEGLIB)/$$(JPEGLIB) -lcrypto/' \
 		${WRKSRC}/Makefile.in
@@ -39,4 +45,4 @@ post-patch:
 	${REINPLACE_CMD} 's/gtk-config//g' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

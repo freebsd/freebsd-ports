@@ -19,6 +19,12 @@ COMMENT=	SONY VAIO camera capture utility
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GNOME=	imlib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-build:
 	cd ${WRKSRC}; \
 	${CC} ${CFLAGS} -o setbrightness setbrightness.c; \
@@ -33,4 +39,4 @@ do-install:
 .if!defined(NOPORTDOCS)
 	${INSTALL_MAN} ${PATCHDIR}/README.FreeBSD ${DOCSDIR}/README.FreeBSD
 .endif
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
