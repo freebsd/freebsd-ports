@@ -1,4 +1,4 @@
-Ant is a Java-based build tool, conceptually similar to make.
+Apache Ant, a Java-based build tool, conceptually similar to make.
 
 Ant uses XML build files that defines a set of targets. Each target
 has dependencies (other targets) and contains a set of tasks to
@@ -9,4 +9,4 @@ copying ("copy"), deleting ("delete"), executing other programs
 ("java", "exec", "execon", etc.), stylesheet transformations
 ("style") and so on.
 
-WWW: http://jakarta.apache.org/ant/
+WWW: http://ant.apache.org/
