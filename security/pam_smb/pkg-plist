@@ -1,0 +1,2 @@
+lib/pam_smb_auth.so
+etc/pam_smb.conf.sample

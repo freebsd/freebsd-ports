@@ -120,6 +120,7 @@
     SUBDIR += pam-pgsql
     SUBDIR += pam_krb5
     SUBDIR += pam_ldap
+    SUBDIR += pam_smb
     SUBDIR += pam_ssh
     SUBDIR += pgp
     SUBDIR += pgp5

@@ -1,0 +1,13 @@
+--- smbval/smbencrypt.c.orig	Wed Jun 20 05:43:48 2001
++++ smbval/smbencrypt.c	Wed Jun 20 05:44:20 2001
+@@ -24,7 +24,10 @@
+ #include <arpa/inet.h>
+ #include <dirent.h>
+ #include <string.h>
++#include <sys/param.h>
++#ifndef BSD
+ #include <sys/vfs.h>
++#endif
+ #include <netinet/in.h>
+ 
+ #include "smblib-priv.h"
