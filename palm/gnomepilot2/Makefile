@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomepilot
 PORTVERSION=	0.1.69
+PORTREVISION=	1
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.eskil.org/gnome-pilot/download/tarballs/
@@ -18,6 +19,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
+RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
