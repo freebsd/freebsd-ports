@@ -8,7 +8,8 @@
 PORTNAME=	gno3dtet
 PORTVERSION=	1.6.4
 CATEGORIES=	games gnome
-MASTER_SITES=	http://12.252.48.14/ftp/gno3dtet/
+MASTER_SITES=	ftp://12.206.131.3/pub/gno3dtet/ \
+		http://www.eseb.net/ftp/gno3dtet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
