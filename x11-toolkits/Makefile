@@ -7,6 +7,7 @@
     SUBDIR += XawPlus
     SUBDIR += at-spi
     SUBDIR += bakery
+    SUBDIR += bakery_gnomeui
     SUBDIR += blt
     SUBDIR += buffy
     SUBDIR += bwidget
