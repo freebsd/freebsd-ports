@@ -590,7 +590,7 @@ PLIST_SUB+=	VORBIS=""
 CONFIGURE_ARGS+=	--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .else
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 CONFIGURE_ARGS+=	--with-xmms-prefix=${X11BASE} \
 			--with-xmms-exec-prefix=${X11BASE}

@@ -25,7 +25,7 @@ MAINTAINER?=	arved@FreeBSD.org
 COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
 
 .if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
 WRKSRC=		${WRKDIR}/BitchX

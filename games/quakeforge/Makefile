@@ -63,7 +63,7 @@ WITH_SDL=	yes
 WITH_SVGALIB=	yes
 .endif
 
-.if exists(${X11BASE}/lib/libxmms.so.3)
+.if exists(${X11BASE}/lib/libxmms.so.4)
 WITH_XMMS=	yes
 .endif
 
@@ -117,7 +117,7 @@ PLIST_SUB+=	VORBIS:="@comment "
 .endif
 
 .if !defined(WITHOUT_XMMS) && defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-xmms-prefix=${X11BASE}
 PLIST_SUB+=	XMMS:=""
 .else
