@@ -1,13 +1,8 @@
 bin/mbchk
-@unexec install-info --delete %D/info/grub.info %D/info/dir
-@unexec install-info --delete %D/info/multiboot.info %D/info/dir
-info/grub.info
-info/multiboot.info
-@exec install-info %D/info/multiboot.info %D/info/dir
-@exec install-info %D/info/grub.info %D/info/dir
 sbin/grub
 sbin/grub-install
 sbin/grub-md5-crypt
+sbin/grub-terminfo
 share/grub/i386-freebsd/e2fs_stage1_5
 share/grub/i386-freebsd/fat_stage1_5
 share/grub/i386-freebsd/ffs_stage1_5
