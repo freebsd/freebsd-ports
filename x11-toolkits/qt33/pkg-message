@@ -1,0 +1,4 @@
+===> *****************************************************************
+===> This version of QT has been built with OpenGL graphics support.
+===> It may not function correctly with versions of XFree86 < 4.2.0.
+===> *****************************************************************
