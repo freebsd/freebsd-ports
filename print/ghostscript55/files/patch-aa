@@ -1,6 +1,6 @@
---- unix-gcc.mak.orig	Thu Sep 17 08:06:06 1998
-+++ unix-gcc.mak	Mon Nov 30 13:11:05 1998
-@@ -48,12 +48,10 @@
+--- unix-gcc.mak.orig	Mon Feb 14 11:28:41 2000
++++ unix-gcc.mak	Sat Jul 29 00:40:45 2000
+@@ -54,12 +54,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
@@ -16,7 +16,15 @@
  exec_prefix = $(prefix)
  bindir = $(exec_prefix)/bin
  scriptdir = $(bindir)
-@@ -141,7 +139,7 @@
+@@ -140,14 +138,14 @@
+ # You may need to change this if the libpng version changes.
+ # See libpng.mak for more information.
+ 
+-PSRCDIR=libpng
++PSRCDIR=${LOCALBASE}/include
+ PVERSION=96
+ 
+ # Choose whether to use a shared version of the PNG library, and if so,
  # what its name is.
  # See gs.mak and Make.htm for more information.
  
@@ -25,7 +33,7 @@
  LIBPNG_NAME=png
  
  # Define the directory where the zlib sources are stored.
-@@ -153,7 +151,7 @@
+@@ -159,7 +157,7 @@
  # what its name is (usually libz, but sometimes libgz).
  # See gs.mak and Make.htm for more information.
  
@@ -34,16 +42,16 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -172,7 +170,7 @@
+@@ -178,7 +176,7 @@
  
  # Define the name of the C compiler.
  
 -CC=gcc
-+CC=cc
++#CC=cc
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -205,7 +203,7 @@
+@@ -211,7 +209,7 @@
  #   gcc to accept ANSI-style function prototypes and function definitions.
  XCFLAGS=
  
@@ -52,16 +60,16 @@
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.
-@@ -214,7 +212,7 @@
+@@ -220,7 +218,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
 -XLDFLAGS=
-+XLDFLAGS=-L$(prefix)/lib
++XLDFLAGS=-L${LOCALBASE}/lib
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
-@@ -234,7 +232,7 @@
+@@ -240,7 +238,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -70,7 +78,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -246,12 +244,12 @@
+@@ -252,12 +250,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -86,7 +94,7 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -292,27 +290,6 @@
+@@ -298,27 +296,6 @@
  
  FILE_IMPLEMENTATION=stdio
  
@@ -114,7 +122,7 @@
  # ---------------------------- End of options --------------------------- #
  
  # Define the name of the partial makefile that specifies options --
-@@ -320,16 +297,10 @@
+@@ -326,16 +303,10 @@
  
  MAKEFILE=$(GLSRC)unix-gcc.mak
  
@@ -132,7 +140,7 @@
  CCAUX=$(CC)
  #We can't use -fomit-frame-pointer with -pg....
  #CC_LEAF=$(CC_)
-@@ -350,7 +321,3 @@
+@@ -356,7 +327,3 @@
  include $(GLSRC)unixtail.mak
  include $(GLSRC)unix-end.mak
  include $(GLSRC)unixinst.mak

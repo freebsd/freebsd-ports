@@ -47,7 +47,6 @@ share/ghostscript/5.50/decrypt.ps
 share/ghostscript/5.50/doc/Bug-form.htm
 share/ghostscript/5.50/doc/C-style.htm
 share/ghostscript/5.50/doc/Commprod.htm
-share/ghostscript/5.50/doc/Copying.htm
 share/ghostscript/5.50/doc/Current.htm
 share/ghostscript/5.50/doc/DLL.htm
 share/ghostscript/5.50/doc/Devices.htm
@@ -67,10 +66,8 @@ share/ghostscript/5.50/doc/Lib.htm
 share/ghostscript/5.50/doc/Make.htm
 share/ghostscript/5.50/doc/New-user.htm
 share/ghostscript/5.50/doc/News.htm
-share/ghostscript/5.50/doc/PUBLIC
 share/ghostscript/5.50/doc/Ps2pdf.htm
 share/ghostscript/5.50/doc/Psfiles.htm
-share/ghostscript/5.50/doc/Public.htm
 share/ghostscript/5.50/doc/Readme.htm
 share/ghostscript/5.50/doc/Source.htm
 share/ghostscript/5.50/doc/Unix-lpr.htm
@@ -252,6 +249,8 @@ share/ghostscript/fonts/fhirw.gsf
 share/ghostscript/fonts/fhirw.pfm
 share/ghostscript/fonts/fkarw.gsf
 share/ghostscript/fonts/fkarw.pfm
+share/ghostscript/fonts/fonts.dir
+share/ghostscript/fonts/fonts.scale
 share/ghostscript/fonts/hrger.pfa
 share/ghostscript/fonts/hrgerb.gsf
 share/ghostscript/fonts/hrgerd.gsf

@@ -1,0 +1,34 @@
+--- gp_unifs.c.orig	Mon Feb 14 11:28:25 2000
++++ gp_unifs.c	Fri Jul 28 23:53:04 2000
+@@ -33,6 +33,7 @@
+ #include "stat_.h"
+ #include "dirent_.h"
+ #include <sys/param.h>		/* for MAXPATHLEN */
++#include <unistd.h>
+ 
+ /* Some systems (Interactive for example) don't define MAXPATHLEN,
+  * so we define it here.  (This probably should be done via a Config-Script.)
+@@ -63,6 +64,8 @@
+ 		     const char *mode)
+ {				/* The -8 is for XXXXXX plus a possible final / and -. */
+     int len = gp_file_name_sizeof - strlen(prefix) - 8;
++    int fd;
++    FILE *f;
+ 
+     if (gp_getenv("TEMP", fname, &len) != 0)
+ 	strcpy(fname, "/tmp/");
+@@ -75,8 +78,12 @@
+     if (*fname != 0 && fname[strlen(fname) - 1] == 'X')
+ 	strcat(fname, "-");
+     strcat(fname, "XXXXXX");
+-    mktemp(fname);
+-    return fopen(fname, mode);
++    fd = mkstemp(fname);
++    if (fd == -1)
++    	return NULL;
++    if ((f = fdopen(fd, mode)) == NULL)
++    	close(fd);
++    return f;
+ }
+ 
+ /* Open a file with the given name, as a stream of uninterpreted bytes. */
