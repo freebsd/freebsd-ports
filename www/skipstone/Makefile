@@ -13,13 +13,13 @@ MASTER_SITES=	http://www.muhri.net/skipstone/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web browser that uses the mozilla-embedded renderer
 
-BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
-		${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded
-RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded \
+BUILD_DEPENDS=	${X11BASE}/include/mozilla-vendor/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers-vendor \
+		${X11BASE}/lib/mozilla-embedded-vendor/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded-vendor
+RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded-vendor/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded-vendor \
 		wget:${PORTSDIR}/ftp/wget
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mozilla-includes=${X11BASE}/include/mozilla --with-mozilla-libs=${X11BASE}/lib/mozilla-embedded
+CONFIGURE_ARGS=	--with-mozilla-includes=${X11BASE}/include/mozilla-vendor --with-mozilla-libs=${X11BASE}/lib/mozilla-embedded-vendor
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
