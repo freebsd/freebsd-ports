@@ -1,0 +1,44 @@
+--- /tmp/qpopper/work/qpopper3.1b5/man/popauth.8	Sat Jul 15 00:51:58 2000
++++ man/popauth.8	Wed Jul 19 10:04:19 2000
+@@ -4,25 +4,25 @@
+ .\" @(#)$Id: popauth.8,v 3.1b1 2000/06/07 05:01:06 qpop Exp $
+ .TH POPAUTH 8
+ .SH NAME
+-popauth -- manipulate POP authorization DB
++qpopauth -- manipulate POP authorization DB
+ .SH SYNOPSIS
+-popauth
++qpopauth
+ \%[\-init] \%[\-list] \%[\-delete\ name] \%[\-user\ name [password]]
+ 
+ popauth
+ \%[/help]
+ .SH DESCRIPTION
+-The \fIpopauth\fR program allows a POP-subscriber to change the secret
++The \fIqpopauth\fR program allows a POP-subscriber to change the secret
+ value used to generate their authentication credentials.
+ In addition,
+ the super\-user or master POP user may use this program to either
+ add or remove a user, or to print public information from it.  Only the
+-super\-user may initialize the database.  \fIpopauth\fR is useful only when
++super\-user may initialize the database.  \fIqpopauth\fR is useful only when
+ the APOP configuration option is defined.  (This configuration option defines
+ the name of the POP authorization DB.)
+ 
+ Under normal usage,
+-\fIpopauth\fR prompts for a new secret,
++\fIqpopauth\fR prompts for a new secret,
+ just like the \fIpasswd\fR program.
+ It then updates the POP authorization DB accordingly.
+ 
+@@ -36,8 +36,8 @@
+ With the `\-delete' switch, the super-user or master POP user can remove
+ a user entry from the authorization DB.
+ .SH FILES
+-/etc/pop.auth.* POP authorization DB
++/usr/local/etc/qpopper/pop.auth.* POP authorization DB
+ .SH ACKNOWLEDGEMENTS
+ This program was derived from MH 6.8.3
+ .SH SEE ALSO
+-popper(8)
++qpopper(8)
