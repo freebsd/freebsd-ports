@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.21 1998/09/25 10:05:13 asami Exp $
+# $Id: Makefile,v 1.22 1998/10/14 03:00:44 jseger Exp $
 #
 
 DISTNAME=	BLT2.4f
@@ -12,8 +12,6 @@ CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
 MAINTAINER=	kjc@csl.sony.co.jp
-
-BROKEN_ELF=	library version numbers
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
@@ -25,6 +23,13 @@ MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
 		beep.n cutbuffer.n
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${LN} -sf libBLT.so.${SO_VERSION} ${PREFIX}/lib/libBLT.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+SO_VERSION=	2
+.else
+SO_VERSION=	2.4
+.endif
