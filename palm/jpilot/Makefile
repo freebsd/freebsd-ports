@@ -21,6 +21,7 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/jpilot/plugins
+CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
 
 MAN1=		jpilot-sync.1 jpilot-upgrade-99.1 jpilot.1
 
