@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.14 2000/04/16 19:58:15 mharo Exp $
+# $Id: portlint.pl,v 1.16 2000/04/16 22:39:57 mharo Exp $
 #
 
 use vars qw/ $opt_a $opt_b $opt_c $opt_h $opt_v $opt_N $opt_B $opt_V /;
@@ -460,10 +460,10 @@ sub checkplist {
 	}
 
 # check that every infofile has an exec install-info and unexec install-info
-	my $exec_install = join(/ /, @exec_info);
-	my $exec_install .= ' ';
-	my $unexec_install = join(/ /, @unexec_info);
-	my $unexec_install .= ' ';
+	my $exec_install = join(" ", @exec_info);
+	$exec_install .= ' ';
+	my $unexec_install = join(" ", @unexec_info);
+	$unexec_install .= ' ';
 
 	foreach my $if (@infofile) {
 		next if ($if =~ m/info-/);
@@ -637,8 +637,9 @@ sub checkmakefile {
 		if ($verbose);
 	$i = "\n" x ($contblank + 2);
 	if ($whole =~ /$i/) {
+		my @linesbefore = split(/\n/, $`);
 		&perror("FATAL: contiguous blank lines (> $contblank lines) found ".
-			"in $file at line " . int(split(/\n/, $`)) . ".");
+			"in $file at line " . ($#linesbefore + 1) . ".");
 	}
 
 	#
@@ -667,7 +668,7 @@ sub checkmakefile {
 	# whole file: PKGNAME
 	#
 	print "OK: checking PKGNAME.\n" if ($verbose);
-	if ($whole =~ /\nPKGNAME/) {
+	if ($whole =~ /\nPKGNAME.?=/) {
 		&perror("FATAL: PKGNAME is obsoleted by PORTNAME, ".
 			"PORTVERSION, PKGNAMEPREFIX and PKGNAMESUFFIX.");
 	}
@@ -756,9 +757,9 @@ EOF
 	#
 	$tmp = $rawwhole;
 	# keep comment, blank line, comment in the same section
-	$tmp =~ s/(#.+\n)\n(#.+)/$1$2/g;
+	$tmp =~ s/(#.*\n)\n+(#.*)/$1$2/g;
 	@sections = split(/\n\n+/, $tmp);
-	for ($i = 0; $i < scalar(@sections); $i++) {
+	for ($i = 0; $i <= $#sections; $i++) {
 		if ($sections[$i] !~ /\n$/) {
 			$sections[$i] .= "\n";
 		}
@@ -846,21 +847,25 @@ EOF
 	# check the order of items.
 	&checkorder('PORTNAME', $tmp, split(/\s+/, <<EOF));
 PORTNAME PORTVERSION CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES EXTRACT_ONLY
 EOF
 
 	# check the items that has to be there.
 	$tmp = "\n" . $tmp;
 	print "OK: checking PORTNAME/PORTVERSION.\n" if ($verbose);
-	if ($tmp !~ /\nPORTNAME=/) {
+	if ($tmp !~ /\nPORTNAME(.)?=/) {
 		&perror("FATAL: PORTNAME has to be there.");
 	}
-	if ($tmp =~ /\nPORTNAME(\?=)/) {
-		&perror("FATAL: PORTNAME has be set by \"=\", ".
-			"not by \"$1\".");
+	if ($1 ne '') {
+		&perror("WARN: PORTNAME has be set by \"=\", ".
+			"not by \"$1=\".");
 	}
-	if ($tmp !~ /\nPORTVERSION=/) {
+	if ($tmp !~ /\nPORTVERSION(.)?=/) {
 		&perror("FATAL: PORTVERSION has to be there.");
+	}
+	if ($1 ne '') {
+		&perror("WARN: PORTVERSION has be set by \"=\", ".
+			"not by \"$1=\".");
 	}
 	print "OK: checking CATEGORIES.\n" if ($verbose);
 #MICHAEL: do we want to use [^\n] here?
@@ -871,7 +876,7 @@ EOF
 	$i = $1;
 	if ($i ne '' && $i =~ /[^?+]/) {
 		&perror("WARN: CATEGORIES should be set by \"=\", \"?=\", or \"+=\", ".
-			"not by \"$i\".");
+			"not by \"$i=\".");
 	}
 
 	if (@cat == 0) {
@@ -1053,7 +1058,7 @@ EOF
 			if (@tgz) {
 				my $tgz = (2 <= @tgz)
 				? '{' . join(',', @tgz) . '}'
-				: @tgz[0];
+				: $tgz[0];
 				
 				&perror("WARN: be sure to remove $portdir/$tgz ".
 				"before committing the port.");
@@ -1063,7 +1068,7 @@ EOF
 
 	push(@varnames, split(/\s+/, <<EOF));
 PORTNAME PORTVERSION CATEGORIES MASTER_SITES MASTER_SITE_SUBDIR
-PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES
+PKGNAMEPREFIX PKGNAMESUFFIX DISTNAME EXTRACT_SUFX DISTFILES EXTRACT_ONLY
 EOF
 
 	#
@@ -1459,7 +1464,7 @@ sub checkorder {
 		while ($k < scalar(@order) && $order[$k] ne $i) {
 			$k++;
 		}
-		if (@order[$k] eq $i) {
+		if ($order[$k] eq $i) {
 			if ($k < $j) {
 				&perror("FATAL: $i appears out-of-order.");
 				$invalidorder++;
