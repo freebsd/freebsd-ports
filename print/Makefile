@@ -165,6 +165,7 @@
     SUBDIR += pclprint
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
+    SUBDIR += pdfmerge
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += pecl-panda

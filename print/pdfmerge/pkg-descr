@@ -1,0 +1,10 @@
+A small tool to merge several PDF files into one PDF file
+(based on Ghostscript).
+
+It has the following features:
+
+  * Add/Remove PDF files; 
+  * Adjust the order of the PDF files; 
+  * Merge the PDF file based on ps2pdf.
+
+WWW: http://web.hku.hk/~kangsg/freeware/
