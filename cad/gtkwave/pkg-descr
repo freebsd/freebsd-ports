@@ -1,0 +1,5 @@
+GTKWave is VCD/EVCD/LXT/Synopsis .out format electronic waveform viewer built
+using the GTK+ toolkit. GTKWave will hopefully also form the basis of some new
+visualisation tools for LARD.
+
+WWW: http://www.cs.man.ac.uk/amulet/tools/gtkwave/
