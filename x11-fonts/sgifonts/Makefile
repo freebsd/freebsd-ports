@@ -14,12 +14,13 @@ DISTNAME=	sgi-fonts-1.0-1.src
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	Fonts from the SGI ProPack 1.4 for Linux
+COMMENT=	Fonts from the SGI ProPack 1.4 (originally for Linux)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 
 PLIST=		${WRKDIR}/pkg-plist
+PLIST_DIRS=	lib/X11/fonts/local/sgi
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/sgi-fonts
@@ -33,10 +34,9 @@ do-extract:
 
 pre-install:
 	@${RM} -f ${PLIST}
-	@cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir | sort`; do \
+	@cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir|${SORT}`; do \
 		${ECHO_CMD} lib/X11/fonts/local/sgi/$${ii} >> ${PLIST}; \
 	done
-	@${ECHO_CMD} @dirrm lib/X11/fonts/local/sgi >> ${PLIST}
 	@${ECHO_CMD} "******************************************" >${PKGMESSAGE}
 	@${ECHO_CMD} "Add a line" >> ${PKGMESSAGE}
 	@${ECHO_CMD} "FontPath \"${PREFIX}/lib/X11/fonts/local/sgi\"" \
