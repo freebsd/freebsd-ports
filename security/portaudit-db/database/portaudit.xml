@@ -10,10 +10,7 @@ This file is in the public domain.
     <topic>MPlayer remotely exploitable buffer overflow in the ASX parser</topic>
     <affects>
       <package>
-        <name>mplayer</name>
-        <name>mplayer-esound</name>
-        <name>mplayer-gtk</name>
-        <name>mplayer-gtk-esound</name>
+        <name>mplayer{,-gtk}{,-esound}</name>
         <range><lt>0.92</lt></range>
       </package>
     </affects>
@@ -41,10 +38,7 @@ This file is in the public domain.
     <topic>MPlayer remotely exploitable buffer overflow in the HTTP parser</topic>
     <affects>
       <package>
-        <name>mplayer</name>
-        <name>mplayer-esound</name>
-        <name>mplayer-gtk</name>
-        <name>mplayer-gtk-esound</name>
+        <name>mplayer{,-gtk}{,-esound}</name>
         <range><lt>0.92.1</lt></range>
       </package>
     </affects>
@@ -139,6 +133,7 @@ This file is in the public domain.
       <cvename>CAN-2004-0630</cvename>
       <cvename>CAN-2004-0631</cvename>
       <url>http://secunia.com/advisories/12285</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16972</url>
       <url>http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities&amp;flashstatus=false</url>
       <url>http://www.idefense.com/application/poi/display?id=125&amp;type=vulnerabilities&amp;flashstatus=false</url>
     </references>
@@ -803,4 +798,36 @@ This file is in the public domain.
     </dates>
   </vuln>
 
+  <vuln vid="e811aaf1-f015-11d8-876f-00902714cc7c">
+    <cancelled superseded="a800386e-ef7e-11d8-81b0-000347a4fa7d"/>
+  </vuln>
+
+  <vuln vid="a800386e-ef7e-11d8-81b0-000347a4fa7d">
+    <topic>ruby CGI::Session insecure file creation</topic>
+    <affects>
+      <package>
+        <name>ruby{,_r,_static}</name>
+        <range><lt>1.6.8.2004.07.28</lt></range>
+        <range><ge>1.8.*</ge><lt>1.8.2.p2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Rubys CGI session management store session information insecurely,
+          which can be exploited by a local attacker to take over a session.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0755</cvename>
+      <url>http://secunia.com/advisories/12290</url>
+      <url>http://www.debian.org/security/2004/dsa-537</url>
+      <url>http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/ChangeLog?rev=1.2673.2.410</url>
+      <url>http://www.osvdb.org/8845</url>
+    </references>
+    <dates>
+      <discovery>2004-07-22</discovery>
+      <entry>2004-08-16</entry>
+      <modified>2004-08-16</modified>
+    </dates>
+  </vuln>
 </vuxml>
