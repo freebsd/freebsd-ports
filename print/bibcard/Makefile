@@ -14,7 +14,7 @@ DISTNAME=	bibcard.6.4
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	X11 interface for ediing BibTeX files
+COMMENT=	X11 interface for editing BibTeX files
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
