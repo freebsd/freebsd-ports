@@ -3,7 +3,7 @@
 # Date created:		21 July 1998
 # Whom:			jkoshy
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/28 06:25:41 jkoshy Exp $
+# $Id: Makefile,v 1.2 1998/09/07 02:50:09 jkoshy Exp $
 #
 
 DISTNAME=	cl74unix
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 	http://wwwfun.kurims.kyoto-u.ac.jp/soft/caml-light/
 
 MAINTAINER=	jkoshy@freebsd.org
+
+BROKEN_ELF=	cp: bignum/libbignum.a: No such file or directory
 
 WRKSRC=		${WRKDIR}/cl74
 ALL_TARGET=	configure world bootstrap
