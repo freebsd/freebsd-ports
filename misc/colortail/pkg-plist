@@ -1,5 +1,5 @@
 bin/colortail
-%%PORTDOCS%%%%EXAMPLESDIR%%/conf.daemn
+%%PORTDOCS%%%%EXAMPLESDIR%%/conf.daemon
 %%PORTDOCS%%%%EXAMPLESDIR%%/conf.kernel
 %%PORTDOCS%%%%EXAMPLESDIR%%/conf.messages
 %%PORTDOCS%%%%EXAMPLESDIR%%/conf.secure
