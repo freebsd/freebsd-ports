@@ -16,8 +16,6 @@ COMMENT=	Another gtk2-based graphic file viewer
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-CONFLICTS=	gqview-devel-*
-
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gtk20
 GNU_CONFIGURE=	yes
@@ -25,6 +23,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gqview.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
