@@ -1,0 +1,15 @@
+$FreeBSD$
+
+diff -u -r1.8 GNUmakefile
+--- ../ext/plugin/build/solaris/GNUmakefile	15 Mar 2002 06:08:52 -0000	1.8
++++ ../ext/plugin/build/solaris/GNUmakefile	23 Aug 2002 08:01:28 -0000
+@@ -636,7 +636,8 @@
+ $(PLUGIN): $(COMMON_OFILES)
+ ifeq ($(findstring BSD,$(OS)), BSD)
+ 	export LD_LIBRARY_PATH; LD_LIBRARY_PATH=$(X11_LIB); \
+-	$(CXX) $(LD_SHARELIB_FLAG) $(LDFLAGS) -o $(@) $(COMMON_OFILES)
++	$(CXX) $(LD_SHARELIB_FLAG) $(LDFLAGS) -o $(@) $(COMMON_OFILES) \
++	-L$(INTL_LIB) -lintl
+ else
+ 	export LD_LIBRARY_PATH; LD_LIBRARY_PATH=$(X11_LIB); \
+ 	$(CXX) $(LD_SHARELIB_FLAG) $(LDFLAGS) -o $(@) $(COMMON_OFILES)
