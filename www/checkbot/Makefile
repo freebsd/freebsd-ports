@@ -3,7 +3,7 @@
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1998/03/07 15:24:20 wosch Exp $
+# $Id: Makefile,v 1.5 1998/09/15 21:31:54 asami Exp $
 #
 
 DISTNAME=	checkbot-1.51
@@ -11,6 +11,8 @@ CATEGORIES=	www perl5
 MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/
 
 MAINTAINER=	wosch@FreeBSD.ORG
+
+BROKEN=		manpage gets installed in /usr/share/ in -current
 
 site_perl=${PREFIX}/lib/perl5/site_perl
 BUILD_DEPENDS=  \
