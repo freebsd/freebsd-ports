@@ -23,7 +23,8 @@ USE_GNOME=	pkgconfig libxml2 libgnomeui
 USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+		CFLAGS="${PTHREAD_FLAGS}" \
+		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-vflow
 USE_GMAKE=	yes
 
