@@ -9,8 +9,7 @@ PORTNAME=	ding
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	german tk84
-MASTER_SITES=	http://cgi.tu-chemnitz.de/ftp-home/pub/Local/urz/ding/ \
-		ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
+MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/old-releases/
 
 MAINTAINER=	nectar@FreeBSD.ORG
 COMMENT=	A German-English dictionary program for X windows/Unix
