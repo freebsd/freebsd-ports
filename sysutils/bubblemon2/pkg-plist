@@ -2,31 +2,22 @@ libdata/bonobo/servers/GNOME_BubblemonApplet.server
 libexec/bubblemon-gnome2
 share/gnome/gnome-2.0/ui/GNOME_BubblemonApplet.xml
 share/gnome/pixmaps/bubblemon.png
-share/locale/sv/LC_MESSAGES/bubblemon.mo
-share/locale/fr/LC_MESSAGES/bubblemon.mo
-share/locale/pl/LC_MESSAGES/bubblemon.mo
-share/locale/de/LC_MESSAGES/bubblemon.mo
-share/locale/ko/LC_MESSAGES/bubblemon.mo
-share/locale/fi/LC_MESSAGES/bubblemon.mo
+share/locale/ca/LC_MESSAGES/bubblemon.mo
 share/locale/da/LC_MESSAGES/bubblemon.mo
-share/locale/sh/LC_MESSAGES/bubblemon.mo
+share/locale/de/LC_MESSAGES/bubblemon.mo
+share/locale/es/LC_MESSAGES/bubblemon.mo
+share/locale/fi/LC_MESSAGES/bubblemon.mo
+share/locale/fr/LC_MESSAGES/bubblemon.mo
+share/locale/hu/LC_MESSAGES/bubblemon.mo
+share/locale/is/LC_MESSAGES/bubblemon.mo
+share/locale/it/LC_MESSAGES/bubblemon.mo
+share/locale/ko/LC_MESSAGES/bubblemon.mo
+share/locale/no/LC_MESSAGES/bubblemon.mo
+share/locale/pl/LC_MESSAGES/bubblemon.mo
 share/locale/pt/LC_MESSAGES/bubblemon.mo
 share/locale/ro/LC_MESSAGES/bubblemon.mo
-share/locale/es/LC_MESSAGES/bubblemon.mo
-share/locale/no/LC_MESSAGES/bubblemon.mo
-share/locale/hu/LC_MESSAGES/bubblemon.mo
-share/locale/it/LC_MESSAGES/bubblemon.mo
-share/locale/is/LC_MESSAGES/bubblemon.mo
 share/locale/ru/LC_MESSAGES/bubblemon.mo
-%%PORTDOCS%%share/doc/bubblemon2/AUTHORS
-%%PORTDOCS%%share/doc/bubblemon2/COPYING
-%%PORTDOCS%%share/doc/bubblemon2/ChangeLog
-%%PORTDOCS%%share/doc/bubblemon2/FAQ
-%%PORTDOCS%%share/doc/bubblemon2/NEWS
-%%PORTDOCS%%share/doc/bubblemon2/PROFILING
-%%PORTDOCS%%share/doc/bubblemon2/README
-%%PORTDOCS%%share/doc/bubblemon2/TODO
-%%PORTDOCS%%share/doc/bubblemon2/TRANSLATIONS
-%%PORTDOCS%%@dirrm share/doc/bubblemon2
+share/locale/sh/LC_MESSAGES/bubblemon.mo
+share/locale/sv/LC_MESSAGES/bubblemon.mo
 @unexec rmdir %D/share/locale/sh/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sh 2> /dev/null || true
