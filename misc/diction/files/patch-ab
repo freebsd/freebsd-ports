@@ -1,12 +1,12 @@
---- configure.in.orig	Tue May 16 03:08:09 2000
-+++ configure.in	Tue Dec 19 00:26:35 2000
+--- configure.in.orig	Tue Aug  7 02:12:03 2001
++++ configure.in	Fri Aug 24 21:09:23 2001
 @@ -19,11 +19,6 @@
  fi
  
  AC_PROG_CC
 -if test "$GCC" = yes
 -then
--  CFLAGS="${CFLAGS} ${PIPE}-Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common"
+-  CFLAGS="${CFLAGS} ${PIPE}-Wno-unused -Wshadow -Wbad-function-cast -Wmissing-prototypes -Wstrict-prototypes -Wcast-align -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common"
 -  LDFLAGS='-g'
 -fi
  
