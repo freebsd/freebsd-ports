@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pan2
-PORTVERSION=	0.14.0.94
+PORTVERSION=	0.14.0.95
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/
@@ -27,6 +27,5 @@ USE_GNOME=	gnomeprefix gnomehack gnometarget libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
-CONFIGURE_ARGS=	--enable-html
 
 .include <bsd.port.mk>
