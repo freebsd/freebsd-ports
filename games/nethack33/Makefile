@@ -27,6 +27,8 @@ MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
 
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GNOME_GRAPHICS)
 CATEGORIES=	games gnome
 PKGNAMESUFFIX=	-gnome
@@ -34,6 +36,9 @@ LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 USE_GNOME=	yes
 GRAPHICS=	GNOME_GRAPHICS
 .elif defined(WITH_QT_GRAPHICS)
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not build"
+.endif
 PKGNAMESUFFIX=	-qt
 USE_QT_VER=	2
 MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" \
@@ -83,4 +88,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
