@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pidentd
-# Version required:     2.8a4
+# Version required:     2.8.1
 # Date created:		19 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.21 1997/03/02 03:09:12 peter Exp $
+# $Id: Makefile,v 1.22 1997/08/10 14:50:58 ache Exp $
 #
 
-DISTNAME=       pidentd-2.8a4
+DISTNAME=       pidentd-2.8.1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
