@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += texinfo
 
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
