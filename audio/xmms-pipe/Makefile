@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-pipe
-PORTVERSION=	0.4.5
+PORTVERSION=	0.5.2
 CATEGORIES=	audio
 MASTER_SITES=	http://rooster.stanford.edu/~ben/xmmspipe/
 DISTNAME=	xmmspipe-${PORTVERSION}
@@ -31,7 +31,7 @@ post-patch:
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/xmmspipe.so \
-		${PREFIX}/lib/xmms/Effect/
+		${PREFIX}/lib/xmms/General/
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
