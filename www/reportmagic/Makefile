@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	reportmagic
-PORTVERSION=	2.05
+PORTVERSION=	2.10
 CATEGORIES=	www
-MASTER_SITES=	http://www.reportmagic.com/
+MASTER_SITES=	http://www.reportmagic.com/	\
+		http://www.reportmagic.org.uk/	\
+		http://www.reportmagic.de/	\
+		http://be.reportmagic.org/
 DISTNAME=	rmagic-${PORTVERSION}
 
 MAINTAINER=	jeremy@external.org
@@ -17,8 +20,6 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
-
-BROKEN=		"Not compatible with Analog 5.0."
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	YES

@@ -33,13 +33,13 @@ reportmagic/lang/it/cdata.ini
 reportmagic/lang/it/lang.ini
 reportmagic/lang/it/rdata.ini
 reportmagic/lang/it/rmagic.ini
+reportmagic/lang/pt/cdata.ini
+reportmagic/lang/pt/lang.ini
+reportmagic/lang/pt/rdata.ini
 reportmagic/lang/sv/cdata.ini
 reportmagic/lang/sv/lang.ini
 reportmagic/lang/sv/rdata.ini
 reportmagic/lang/sv/rmagic.ini
-reportmagic/lang/zh/cdata.ini
-reportmagic/lang/zh/lang.ini
-reportmagic/lang/zh/rdata.ini
 reportmagic/samples/corpimg.ini
 reportmagic/samples/fineprint.html
 reportmagic/samples/images/back.jpg
@@ -75,6 +75,7 @@ share/doc/reportmagic/faq.html
 share/doc/reportmagic/filefmts.html
 share/doc/reportmagic/index.html
 share/doc/reportmagic/inst_mac.html
+share/doc/reportmagic/inst_osx.html
 share/doc/reportmagic/inst_src.html
 share/doc/reportmagic/inst_win.html
 share/doc/reportmagic/license.html
@@ -90,15 +91,14 @@ share/doc/reportmagic/images/logo.gif
 share/doc/reportmagic/images/title.gif
 @dirrm reportmagic/samples/images
 @dirrm reportmagic/samples
-@dirrm reportmagic/lang/zh
-@dirrm reportmagic/lang/sv
-@dirrm reportmagic/lang/it
-@dirrm reportmagic/lang/hu
-@dirrm reportmagic/lang/fr
-@dirrm reportmagic/lang/es
-@dirrm reportmagic/lang/en
-@dirrm reportmagic/lang/de
 @dirrm reportmagic/lang/ca
+@dirrm reportmagic/lang/de
+@dirrm reportmagic/lang/en
+@dirrm reportmagic/lang/es
+@dirrm reportmagic/lang/fr
+@dirrm reportmagic/lang/hu
+@dirrm reportmagic/lang/it
+@dirrm reportmagic/lang/sv
 @dirrm reportmagic/lang
 @dirrm reportmagic/wadg/rm/Report
 @dirrm reportmagic/wadg/rm
