@@ -15,6 +15,7 @@ lib/vlc/access/libaccess_file_plugin.so
 lib/vlc/access/libaccess_ftp_plugin.so
 lib/vlc/access/libaccess_http_plugin.so
 lib/vlc/access/libaccess_mms_plugin.so
+lib/vlc/access/libaccess_tcp_plugin.so
 lib/vlc/access/libaccess_udp_plugin.so
 lib/vlc/access/libcdda_plugin.so
 lib/vlc/access/libdvd_plugin.so
@@ -58,6 +59,7 @@ lib/vlc/codec/libadpcm_plugin.so
 lib/vlc/codec/libaraw_plugin.so
 lib/vlc/codec/libcinepak_plugin.so
 lib/vlc/codec/libdts_plugin.so
+lib/vlc/codec/libdvbsub_plugin.so
 lib/vlc/codec/liblpcm_plugin.so
 lib/vlc/codec/libmpeg_audio_plugin.so
 lib/vlc/codec/librawvideo_plugin.so
@@ -65,6 +67,7 @@ lib/vlc/codec/libspudec_plugin.so
 lib/vlc/codec/libsubsdec_plugin.so
 lib/vlc/codec/libvorbis_plugin.so
 lib/vlc/control/libgestures_plugin.so
+lib/vlc/control/libhotkeys_plugin.so
 lib/vlc/control/libhttp_plugin.so
 lib/vlc/control/librc_plugin.so
 lib/vlc/demux/liba52sys_plugin.so
@@ -74,7 +77,7 @@ lib/vlc/demux/libau_plugin.so
 lib/vlc/demux/libavi_plugin.so
 lib/vlc/demux/libdemuxdump_plugin.so
 lib/vlc/demux/libdemuxsub_plugin.so
-lib/vlc/demux/libes_plugin.so
+lib/vlc/demux/libdtssys_plugin.so
 lib/vlc/demux/libid3_plugin.so
 lib/vlc/demux/libid3tag_plugin.so
 lib/vlc/demux/libm3u_plugin.so
@@ -82,6 +85,7 @@ lib/vlc/demux/libm4v_plugin.so
 lib/vlc/demux/libmp4_plugin.so
 lib/vlc/demux/libmpeg_system_plugin.so
 lib/vlc/demux/libmpga_plugin.so
+lib/vlc/demux/libmpgv_plugin.so
 lib/vlc/demux/libogg_plugin.so
 lib/vlc/demux/libps_plugin.so
 lib/vlc/demux/librawdv_plugin.so
@@ -109,6 +113,7 @@ lib/vlc/misc/liblogger_plugin.so
 lib/vlc/misc/libmemcpy_plugin.so
 lib/vlc/misc/libsap_plugin.so
 lib/vlc/misc/libscreensaver_plugin.so
+lib/vlc/mux/libmux_asf_plugin.so
 lib/vlc/mux/libmux_avi_plugin.so
 lib/vlc/mux/libmux_dummy_plugin.so
 lib/vlc/mux/libmux_mp4_plugin.so
@@ -116,18 +121,17 @@ lib/vlc/mux/libmux_ogg_plugin.so
 lib/vlc/mux/libmux_ps_plugin.so
 %%LIBDVBPSI%%lib/vlc/mux/libmux_ts_dvbpsi_plugin.so
 lib/vlc/mux/libmux_ts_plugin.so
-lib/vlc/packetizer/libpacketizer_a52_plugin.so
 lib/vlc/packetizer/libpacketizer_copy_plugin.so
 lib/vlc/packetizer/libpacketizer_mpeg4audio_plugin.so
 lib/vlc/packetizer/libpacketizer_mpeg4video_plugin.so
-lib/vlc/packetizer/libpacketizer_mpegaudio_plugin.so
 lib/vlc/packetizer/libpacketizer_mpegvideo_plugin.so
-lib/vlc/packetizer/libpacketizer_vorbis_plugin.so
 lib/vlc/stream_out/libstream_out_display_plugin.so
 lib/vlc/stream_out/libstream_out_dummy_plugin.so
 lib/vlc/stream_out/libstream_out_duplicate_plugin.so
 lib/vlc/stream_out/libstream_out_es_plugin.so
+lib/vlc/stream_out/libstream_out_gather_plugin.so
 lib/vlc/stream_out/libstream_out_standard_plugin.so
+lib/vlc/stream_out/libstream_out_rtp_plugin.so
 lib/vlc/video_chroma/libi420_rgb_plugin.so
 lib/vlc/video_chroma/libi420_ymga_plugin.so
 lib/vlc/video_chroma/libi420_yuy2_plugin.so
@@ -145,14 +149,24 @@ lib/vlc/video_filter/libwall_plugin.so
 lib/vlc/video_output/libvout_sdl_plugin.so
 lib/vlc/video_output/libx11_plugin.so
 lib/vlc/video_output/libxvideo_plugin.so
+lib/vlc/visualization/libvisual_plugin.so
+share/doc/vlc/bugreport-howto.txt
+share/doc/vlc/fortunes.txt
+share/doc/vlc/intf-cdda.txt
+share/doc/vlc/intf-vcd.txt
+share/doc/vlc/web-streaming.html
+share/doc/vlc/vlc-howto.sgml
 share/locale/de/LC_MESSAGES/vlc.mo
 share/locale/en_GB/LC_MESSAGES/vlc.mo
+share/locale/es/LC_MESSAGES/vlc.mo
 share/locale/fr/LC_MESSAGES/vlc.mo
+share/locale/hu/LC_MESSAGES/vlc.mo
 share/locale/it/LC_MESSAGES/vlc.mo
 share/locale/ja/LC_MESSAGES/vlc.mo
 share/locale/nl/LC_MESSAGES/vlc.mo
 share/locale/no/LC_MESSAGES/vlc.mo
 share/locale/pl/LC_MESSAGES/vlc.mo
+share/locale/pt_BR/LC_MESSAGES/vlc.mo
 share/locale/ru/LC_MESSAGES/vlc.mo
 share/locale/sv/LC_MESSAGES/vlc.mo
 share/vlc/familiar-forwardb16x16.xpm
@@ -173,10 +187,12 @@ share/vlc/gvlc32x32.xpm
 share/vlc/gvlc48x48.ico
 share/vlc/gvlc48x48.png
 share/vlc/http/admin/browse.html
+share/vlc/http/admin/dboxfiles.html
 share/vlc/http/admin/index.html
 share/vlc/http/admin/.access
 share/vlc/http/index.html
 share/vlc/http/info.html
+share/vlc/http/style.css
 share/vlc/kvlc16x16.png
 share/vlc/kvlc32x32.png
 share/vlc/kvlc32x32.xpm
@@ -243,6 +259,7 @@ share/vlc/vlc32x32.png
 share/vlc/vlc32x32.xpm
 share/vlc/vlc48x48.ico
 share/vlc/vlc48x48.png
+@dirrm share/doc/vlc
 @dirrm share/vlc/skins/default
 @dirrm share/vlc/skins
 @dirrm share/vlc/http/admin
@@ -257,7 +274,6 @@ share/vlc/vlc48x48.png
 @dirrm lib/vlc/mux
 @dirrm lib/vlc/misc
 @dirrm lib/vlc/gui
-@dirrm lib/vlc/encoder
 @dirrm lib/vlc/demux
 @dirrm lib/vlc/control
 @dirrm lib/vlc/codec

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -39,6 +38,7 @@ USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_SDL=	yes
 USE_XLIB=	yes
+USE_GCC=	3.2
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
@@ -53,6 +53,8 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--enable-ffmpeg \
 		--with-ffmpeg=${LOCALBASE} \
 		--disable-libmpeg2 \
+		--disable-libcdio \
+		--disable-libcddb \
 		--program-prefix="" \
 		--without-libintl-prefix \
 		--without-libiconv-prefix \
