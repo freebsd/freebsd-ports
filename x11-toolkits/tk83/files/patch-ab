@@ -16,7 +16,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
 -LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
-+LIBS = -L${PREFIX}/lib -ltcl80 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++LIBS = -L${PREFIX}/lib -ltcl81 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
  # To change the compiler switches, for example to change from -O
  # to -g, change the following line:
@@ -38,10 +38,10 @@
  	@MAKE_LIB@
  	$(RANLIB) @TK_LIB_FILE@
  
-+libtk80.a: ${OBJS}
-+	rm -f libtk80.a
-+	ar cr libtk80.a ${OBJS}
-+	$(RANLIB) libtk80.a
++libtk81.a: ${OBJS}
++	rm -f libtk81.a
++	ar cr libtk81.a ${OBJS}
++	$(RANLIB) libtk81.a
 +
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
@@ -51,7 +51,7 @@
  # possible (e.g. if installing as root).
  
 -install-binaries: $(TK_LIB_FILE) wish
-+install-binaries: $(TK_LIB_FILE) libtk80.a wish
++install-binaries: $(TK_LIB_FILE) libtk81.a wish
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
@@ -59,10 +59,10 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
-+	@echo "Installing libtk80.a"
-+	@$(INSTALL_DATA) libtk80.a $(LIB_INSTALL_DIR)/libtk80.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk80.a)
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtk80.a
++	@echo "Installing libtk81.a"
++	@$(INSTALL_DATA) libtk81.a $(LIB_INSTALL_DIR)/libtk81.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk81.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk81.a
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
  	@echo "Installing tkConfig.sh"
