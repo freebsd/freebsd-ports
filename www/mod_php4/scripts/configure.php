@@ -35,6 +35,7 @@ OpenSSL		"OpenSSL support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 XSLT		"Sablotron support (implies XML and iconv)" OFF \
+DOMXML		"DOM support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 CURL		"CURL support" OFF \
 gettext		"gettext library support" OFF \
@@ -211,6 +212,10 @@ while [ "$1" ]; do
 			if [ -z "$ICONV" ]; then
 				set $* \"iconv\"
 			fi
+			;;
+		\"DOMXML\")
+			echo "LIB_DEPENDS+=	xml2.5:\${PORTSDIR}/textproc/libxml2"
+			echo "CONFIGURE_ARGS+=--with-dom=\${PREFIX}"
 			;;
 		\"FTP\")
 			echo "CONFIGURE_ARGS+=--enable-ftp"
