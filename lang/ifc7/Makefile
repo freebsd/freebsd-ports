@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc7
-PORTVERSION=	7.1.038
+PORTVERSION=	7.1.040
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION}
@@ -40,16 +40,17 @@ IFC_SITE=	http://www.intel.com/software/products/compilers/
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	| tar -xf - \
+			--exclude intel-iidb\*.rpm \
 			--exclude \*ia64.rpm \
 			--exclude flexlm64
 
 IFCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-OBJCOPY?=	/usr/bin/objcopy
-
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE= "Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
+.for file in ${DISTNAME}
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${file}${EXTRACT_SUFX})
+IGNORE=	"Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
 .endif
+.endfor
 
 .if exists(${LINUXBASE}/boot/kernel.h) #|| \
 #	exists(${PREFIX}/intel/compiler60/bin/icc) || \
@@ -64,12 +65,8 @@ post-extract:
 	@${SED} 's:%%COMPILERDIR%%:${COMPILERDIR}:' \
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
-.for i in \
-	intel-ifc7-7.1-40.i386.rpm
-#	intel-iidb7-7.2.2-78.i386.rpm
-	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | \
+	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null *.rpm | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
-.endfor
 
 pre-patch:
 # Allow everyone to use it
@@ -82,7 +79,7 @@ pre-patch:
 	@${FIND} ${WRKSRC}/opt -type d -print0 | ${XARGS} -0 ${CHMOD} go-w
 # Use the Linux ABI for the binaries
 .for i in ifcbin fpp icid f90com profmerge proforder xiar xild
-	@brandelf -t Linux ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${BRANDELF} -t Linux ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endfor
 
 post-patch:
@@ -103,9 +100,9 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
 		-e 's@\<INSTALLDIR\>@${PREFIX}/intel@g;' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${IFCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${IFCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .if ${OSVERSION} < 500016
-	@${ECHO} -e "-Qoption,ld,-MT\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO_CMD} -e "-Qoption,ld,-MT\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endfor
@@ -126,8 +123,7 @@ do-build:
 		${FILESDIR}/sysconf.c    \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
 .if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
-		${FILESDIR}/cxa_finalize.c
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
 .if ( ${OSVERSION} < 470101 ) || \
 	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
@@ -169,20 +165,20 @@ do-install:
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
 
 post-install:
-	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/intel, to use it you have to"
-	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
-	@${ECHO_CMD} "${PREFIX}/intel/licenses) directory and add"
-	@${ECHO_CMD} "${PREFIX}/intel/${COMPILERDIR}/ia32/bin to your PATH."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you use ifc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
-	@${ECHO_CMD} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
-	@${ECHO_CMD} "if you do not know how to do this), else ifc will hang forever."
-	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: If you use ifc while having linux_devtools installed, ifc will use"
-	@${ECHO_CMD} "the wrong includes and therefore will generate bogus (not working) binaries!"
-	@${ECHO_CMD}
-	@${ECHO_CMD} "If you encounter further problems with ifc please consult the errata at"
-	@${ECHO_CMD} "http://support.intel.com/support/performancetools/fortran/Fortran_Compiler_Errata.htm"
-	@${ECHO_CMD} "first."
+	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/intel, to use it you have to"
+	@${ECHO} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
+	@${ECHO} "${PREFIX}/intel/licenses) directory and add"
+	@${ECHO} "${PREFIX}/intel/${COMPILERDIR}/ia32/bin to your PATH."
+	@${ECHO}
+	@${ECHO} "If you use ifc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
+	@${ECHO} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
+	@${ECHO} "if you do not know how to do this), else ifc will hang forever."
+	@${ECHO}
+	@${ECHO} "WARNING: If you use ifc while having linux_devtools installed, ifc will use"
+	@${ECHO} "the wrong includes and therefore will generate bogus (not working) binaries!"
+	@${ECHO}
+	@${ECHO} "If you encounter further problems with ifc please consult the errata at"
+	@${ECHO} "http://support.intel.com/support/performancetools/fortran/linux/"
+	@${ECHO} "first."
 
 .include <bsd.port.post.mk>

@@ -1300,5 +1300,5 @@ intel/%%COMPILERDIR%%/ia32/lib/libunwind.a
 %%PORTDOCS%%@dirrm intel/%%COMPILERDIR%%/training/templ_im
 %%PORTDOCS%%@dirrm intel/%%COMPILERDIR%%/training
 @dirrm intel/%%COMPILERDIR%%
-@unexec rmdir %D/intel/licenses >/dev/null 2>&1 || echo '*** license directory (%D/intel/licenses/) not removed, it may contain a license'
+@unexec rmdir %D/intel/licenses >/dev/null 2>&1 || echo '*** License directory (%D/intel/licenses/) not removed, it may contain a license.'
 @unexec rmdir %D/intel >/dev/null 2>&1 || true
