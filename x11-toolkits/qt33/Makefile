@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-verbose -docdir ${DOCSDIR} -tablet -ipv6 \
 		-plugindir ${PREFIX}/lib/plugins
 
-CONFIGURE_ENV?=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
+CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} \
 		LD_LIBRARY_PATH=${WRKSRC}/lib \
 		PATH=${WRKSRC}/bin:$$PATH

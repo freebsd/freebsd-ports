@@ -46,4 +46,15 @@
 -    QMAKE_VARS="$QMAKE_VARS \"QMAKE_CXXFLAGS+=$I_FLAGS\""
 +    QMAKE_VARS="$QMAKE_VARS \"INCPATH+=`echo $I_FLAGS | sed s,-I,,g`\""
  fi
- 
+
+--- configure.orig	Tue May 25 17:07:32 2004
++++ configure	Tue May 25 17:12:24 2004
+@@ -2305,7 +2305,7 @@
+ 	else
+ 	    echo "Do you accept the terms of $affix license? \c"
+ 	fi
+-	read acceptance
++	acceptance=yes
+ 	echo
+ 	if [ "$acceptance" = "yes" ]; then
+ 	    break
