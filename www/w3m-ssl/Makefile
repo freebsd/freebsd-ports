@@ -5,8 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	w3m-ssl
-PORTVERSION= 	${W3m_VER}
+PKGNAMESUFFIX=	-ssl
 CATEGORIES=	www ipv6
 
 MASTERDIR=     ${.CURDIR}/../../www/w3m
