@@ -18,7 +18,7 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		xml.5:${PORTSDIR}/textproc/libxml \
 		glade.4:${PORTSDIR}/devel/libglade \
-		guile.6:${PORTSDIR}/lang/guile \
+		guile.9:${PORTSDIR}/lang/guile \
 		wwwcore.1:${PORTSDIR}/www/libwww
 RUN_DEPENDS=    gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 

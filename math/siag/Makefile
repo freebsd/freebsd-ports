@@ -26,7 +26,7 @@ MAKE_ARGS=	"-j 2"
 CPPFLAGS+=	-I${LOCALBASE}/include -DX11BASE='\"${X11BASE}\"'
 
 .if defined(GUILE)
-LIB_DEPENDS+=	guile.6:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.9:${PORTSDIR}/lang/guile
 .endif
 
 .if !defined(NOGDBM)

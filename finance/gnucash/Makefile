@@ -26,7 +26,7 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		glib12.3:${PORTSDIR}/devel/glib12 \
 		gnome.4:${PORTSDIR}/x11/gnomelibs \
-		guile.6:${PORTSDIR}/lang/guile \
+		guile.9:${PORTSDIR}/lang/guile \
 		xml.5:${PORTSDIR}/textproc/libxml
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 RUN_DEPENDS=	slib48:${PORTSDIR}/lang/slib \
