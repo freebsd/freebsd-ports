@@ -52,6 +52,7 @@
     SUBDIR += gnotepad+
     SUBDIR += gxedit
     SUBDIR += hexedit
+    SUBDIR += hexpert
     SUBDIR += iiimecf
     SUBDIR += jed
     SUBDIR += jedit
