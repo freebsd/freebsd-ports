@@ -1,0 +1,17 @@
+lib/xmms/General/libstatusdocklet.so
+share/locale/de/LC_MESSAGES/xmms-status-plugin.mo
+share/locale/fr/LC_MESSAGES/xmms-status-plugin.mo
+share/locale/nl/LC_MESSAGES/xmms-status-plugin.mo
+share/xmms/status_docklet/joost-idle.xpm
+share/xmms/status_docklet/joost-paused-anim.xpm
+share/xmms/status_docklet/joost-playing-anim.xpm
+share/xmms/status_docklet/rest.xpm
+share/xmms/status_docklet/stave-anim.xpm
+share/xmms/status_docklet/stave-anim2.xpm
+share/xmms/status_docklet/stave-anim3.xpm
+share/xmms/status_docklet/stave-anim4.xpm
+share/xmms/status_docklet/stave-anim5.xpm
+share/xmms/status_docklet/timetre-idle.xpm
+share/xmms/status_docklet/timetre-paused-anim.xpm
+share/xmms/status_docklet/timetre-playing-anim.xpm
+@dirrm share/xmms/status_docklet

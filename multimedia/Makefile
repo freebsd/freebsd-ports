@@ -107,6 +107,7 @@
     SUBDIR += xine_d5d_plugin
     SUBDIR += xmms
     SUBDIR += xmms-avi
+    SUBDIR += xmms-status-plugin
     SUBDIR += xmps
     SUBDIR += xmps-opendivx-plugin
     SUBDIR += xmps-win32-plugin
