@@ -19,6 +19,7 @@ bin/jruby
 %%PORTDOCS%%share/doc/jruby/README.test
 %%PORTDOCS%%share/doc/jruby/TODO
 %%PORTDOCS%%share/doc/jruby/changelog.xml
+%%PORTDOCS%%share/doc/jruby/release-checklist.txt
 %%PORTDOCS%%@dirrm share/doc/jruby
 %%PORTDOCS%%share/examples/jruby/beer.rb
 %%PORTDOCS%%share/examples/jruby/error.rb
