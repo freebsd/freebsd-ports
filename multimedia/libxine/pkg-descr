@@ -1,8 +1,0 @@
-xine is a free gpl-licensed video player for unix-like systems.
-We support mpeg-2 and mpeg-1 system (audio + video multiplexed) streams,
-mpeg elementary streams (audio/video only, e.g. mp3 files) and
-AVI files (using win32 codec dlls).
-
-These are the libraries for the xine.
-
-WWW: http://xine.sourceforge.net/

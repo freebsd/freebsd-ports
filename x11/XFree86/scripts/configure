@@ -158,7 +158,9 @@ elif [ X"${MACHINE}" = X"alpha" ]; then
 # force the compilation of the SVGA server.
     echo "#undef XF86SVGAServer"           >>$F
     echo "#define XF86SVGAServer     YES"  >>$F
-    servers="Mono S3 S3V Mach64 P9000 I128 GLINT TGA"
+    echo "#undef XF86I128Server"           >>$F
+    echo "#define XF86I128Server     NO"   >>$F
+    servers="Mono S3 S3V Mach64 P9000 GLINT TGA"
     selected=SVGA
     for i in $servers; do
 	yesno "Do you want to build the $i server?"

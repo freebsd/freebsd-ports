@@ -1,8 +1,0 @@
-#!/bin/sh
-PID_FILE=/var/run/orion.pid
-if [ -e ${PID_FILE} ]; then
-	echo -n "Orion is still running."
-	/bin/kill `cat ${PID_FILE}`
-	rm -f ${PID_FILE}
-	echo " Stopped."
-fi

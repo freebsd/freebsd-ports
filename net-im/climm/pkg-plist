@@ -1,4 +1,0 @@
-bin/micq
-%%PORTDOCS%%share/doc/micq/CHANGELOG
-%%PORTDOCS%%share/doc/micq/README
-%%PORTDOCS%%@dirrm share/doc/micq

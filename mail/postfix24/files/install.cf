@@ -1,6 +1,0 @@
-sendmail_path=/usr/sbin/sendmail
-newaliases_path=/usr/bin/newaliases
-mailq_path=/usr/bin/mailq
-setgid=maildrop
-manpages=!!PREFIX!!/man
-sendmail_path=/usr/sbin/sendmail

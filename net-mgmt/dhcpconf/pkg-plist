@@ -1,3 +1,0 @@
-sbin/dhcpconf
-%%PORTDOCS%%share/doc/dhcpconf/README
-%%PORTDOCS%%@dirrm share/doc/dhcpconf

@@ -1,7 +1,0 @@
---- applet-docs.make.orig	Mon Feb 26 10:31:11 2001
-+++ applet-docs.make	Thu Mar  1 17:58:21 2001
-@@ -11,3 +11,3 @@
- 
--helpdir = $(datadir)/gnome/help/$(applet)_applet/$(lang)
-+helpdir = $(datadir)/help/$(applet)_applet/$(lang)
- help_DATA =	\
