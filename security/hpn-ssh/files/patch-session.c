@@ -1,6 +1,6 @@
---- session.c.orig	Mon Sep 17 00:17:15 2001
-+++ session.c	Wed Oct  3 14:18:36 2001
-@@ -437,6 +437,13 @@
+--- session.c.orig	Mon Feb 25 16:48:03 2002
++++ session.c	Fri Mar  8 06:28:38 2002
+@@ -423,6 +423,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -14,7 +14,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -551,6 +558,14 @@
+@@ -537,6 +544,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -29,7 +29,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -682,6 +697,11 @@
+@@ -665,6 +680,11 @@
  	time_t last_login_time;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -41,7 +41,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -742,6 +762,21 @@
+@@ -725,6 +745,21 @@
  			printf("Last login: %s from %s\r\n", time_string, hostname);
  	}
  
@@ -63,7 +63,7 @@
  	do_motd();
  }
  
-@@ -1340,7 +1375,7 @@
+@@ -1241,7 +1276,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -71,12 +71,14 @@
 +	for (i = 3; i < getdtablesize(); i++)
  		close(i);
  
- 	/* Change current directory to the user\'s home directory. */
-@@ -1376,6 +1411,28 @@
- 	 * in this order).
- 	 */
- 	if (!options.use_login) {
+ 	/*
+@@ -1271,6 +1306,31 @@
+ 			exit(1);
+ #endif
+ 	}
++
 +#ifdef __FreeBSD__
++  	if (!options.use_login) {
 +		/*
 +		 * If the password change time is set and has passed, give the
 +		 * user a password expiry notice and chance to change it.
@@ -97,7 +99,8 @@
 +				}
 +			}
 +		}
++	}
 +#endif /* __FreeBSD__ */
- 		/* ignore _PATH_SSH_USER_RC for subsystems */
- 		if (!s->is_subsystem && (stat(_PATH_SSH_USER_RC, &st) >= 0)) {
- 			snprintf(cmd, sizeof cmd, "%s -c '%s %s'",
+ 
+ 	if (!options.use_login)
+ 		do_rc_files(s, shell);

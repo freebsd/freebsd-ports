@@ -1,24 +1,23 @@
---- sshd_config.orig	Thu Sep 20 22:57:51 2001
-+++ sshd_config	Wed Oct  3 12:37:28 2001
-@@ -25,8 +25,8 @@
+--- sshd_config.orig	Fri Mar  8 06:01:02 2002
++++ sshd_config	Fri Mar  8 06:03:06 2002
+@@ -30,8 +30,10 @@
  
  # Authentication:
  
--LoginGraceTime 600
--PermitRootLogin yes
-+LoginGraceTime 120
-+PermitRootLogin no
- StrictModes yes
+-#LoginGraceTime 600
+-#PermitRootLogin yes
++#LoginGraceTime 300
++LoginGraceTime 600
++#PermitRootLogin no
++PermitRootLogin yes
+ #StrictModes yes
  
- RSAAuthentication yes
-@@ -66,8 +66,9 @@
- #PrintLastLog no
- KeepAlive yes
+ #RSAAuthentication yes
+@@ -76,6 +78,7 @@
+ #PrintLastLog yes
+ #KeepAlive yes
  #UseLogin no
 +UseLogin yes
  
--#MaxStartups 10:30:60
-+MaxStartups 10:30:60
- #Banner /etc/issue.net
- #ReverseMappingCheck yes
- 
+ #MaxStartups 10
+ # no default banner path

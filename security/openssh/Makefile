@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -16,7 +15,7 @@ DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	openbsd28_3.0.2.patch
+PATCHFILES=	openbsd28_3.1.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -70,8 +69,6 @@ MAKE_ENV+=	SKEY=yes
 WRKSRC=		${WRKDIR}/ssh
 
 post-extract:
-	@${PERL5} -pi -e "s=/etc/ssh=${PREFIX}/etc/ssh=" ${WRKSRC}/sshd_config
-	@${PERL5} -pi -e "s=/usr/libex=${PREFIX}/libex=" ${WRKSRC}/sshd_config
 	@${CP} ${FILESDIR}/strlcat.c ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
 	@${CP} ${FILESDIR}/sshd.sh ${WRKSRC}/
 .if ${OSVERSION} < 400014
@@ -82,7 +79,9 @@ post-extract:
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h	\
+	@${PERL5} -pi -e "s=/etc/ssh=${PREFIX}/etc/ssh=" ${WRKSRC}/sshd_config
+	@${PERL5} -pi -e "s=/usr/libex=${PREFIX}/libex=" ${WRKSRC}/sshd_config
+	@${PERL5} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h	\
 		${WRKSRC}/sshd_config ${WRKSRC}/sshd.sh \
 		${WRKSRC}/pathnames.h
 
