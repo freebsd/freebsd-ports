@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.219 1999/06/30 05:35:25 cpiazza Exp $
+# $Id: Makefile,v 1.220 1999/06/30 07:14:46 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -16,6 +16,7 @@
     SUBDIR += asbutton
     SUBDIR += bb
     SUBDIR += bbjd
+    SUBDIR += bottlerocket
     SUBDIR += buffer
     SUBDIR += chord
     SUBDIR += cmatrix
