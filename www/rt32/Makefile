@@ -9,14 +9,12 @@ PORTNAME=	rt3
 PORTVERSION=    3.0.1
 CATEGORIES=     www
 MASTER_SITES=   http://www.fsck.com/pub/rt/release/
-WRKSRC=         ${WRKDIR}/rt-3-0-1
 DISTFILES=      rt-3-0-1.tar.gz
 
 MAINTAINER=     autrijus@autrijus.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
-		${ARCH_PERL}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
@@ -28,7 +26,6 @@ BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/DBIx/DataSource.pm:${PORTSDIR}/databases/p5-DBIx-DataSource \
 		${SITE_PERL}/DBIx/SearchBuilder.pm:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 		${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
@@ -58,6 +55,7 @@ BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 
+WRKSRC=         ${WRKDIR}/rt-3-0-1
 HAS_CONFIGURE=  yes
 
 CONFIGURE_ARGS= --prefix=${RT_PATH} \
@@ -104,7 +102,7 @@ LAYOUT?=	RT3
 
 DB_DBA_USER?=	root
 DB_HOST?=	localhost
-DB_DBA_PASSWORD?=	
+DB_DBA_PASSWORD?=
 
 WEB_USER?=	nobody
 WEB_GROUP?=	nogroup
@@ -142,4 +140,14 @@ post-install:
 	@${SED} s!%%RT_PATH%%!${RT_PATH}!g ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This program only support perl 5.6.1 or above
+.endif
+
+.if ${PERL_LEVEL} == 500601
+BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat
+.endif
+
+.include <bsd.port.post.mk>
