@@ -8,6 +8,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/item_factory.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/keyboard_grab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/pointer_grab.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/t-gtkplug.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/t-gtksocket.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/gtkbrows.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/rbbr_gtk.rb

@@ -6,6 +6,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbbr_gnome.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbbr_rb.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/browser/rbdump.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-init-popt.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/README.ja
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnoconfig.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-0-basic.rb
@@ -14,11 +15,17 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/gnome-hello/gnome-hello-4-SM.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/app-helper.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/calculator.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/canvas-arrowhead.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/canvas-features.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/canvas-fifteen.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/canvas-primitives.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/canvas.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/clock.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/color-picker.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/dateedit.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/dialog.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/file-entry.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/flower.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/font-picker.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/href.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/icon-entry.rb
@@ -28,6 +35,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/pixmap-entry.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/sample.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gnome/test-gnome/test-gnome.rb
++./gnome/sample/test-gnome/toroid.png
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/test-gnome
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/gnome-hello
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gnome/browser
