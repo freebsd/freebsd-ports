@@ -1,9 +1,9 @@
-include/jbig.h
-bin/pbmtojbg
 bin/jbgtopbm
+bin/pbmtojbg
+include/jbig.h
 lib/libjbig.a
-lib/libjbig.so.1
 lib/libjbig.so
+lib/libjbig.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/jbig/jbig.doc
