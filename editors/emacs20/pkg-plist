@@ -7,7 +7,6 @@ bin/etags
 bin/rcs-checkin
 @unexec install-info --delete %D/info/ccmode %D/info/dir
 @unexec install-info --delete %D/info/cl %D/info/dir
-@unexec install-info --delete %D/info/customize %D/info/dir
 @unexec install-info --delete %D/info/dired-x %D/info/dir
 @unexec install-info --delete %D/info/ediff %D/info/dir
 @unexec install-info --delete %D/info/emacs %D/info/dir
@@ -16,13 +15,13 @@ bin/rcs-checkin
 @unexec install-info --delete %D/info/info %D/info/dir
 @unexec install-info --delete %D/info/message %D/info/dir
 @unexec install-info --delete %D/info/mh-e %D/info/dir
+@unexec install-info --delete %D/info/reftex %D/info/dir
 @unexec install-info --delete %D/info/sc %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
 @unexec install-info --delete %D/info/viper %D/info/dir
 @unexec install-info --delete %D/info/widget %D/info/dir
 info/ccmode
 info/cl
-info/customize
 info/dired-x
 info/ediff
 info/emacs
@@ -31,13 +30,13 @@ info/gnus
 info/info
 info/message
 info/mh-e
+info/reftex
 info/sc
 info/vip
 info/viper
 info/widget
 @exec install-info %D/info/ccmode %D/info/dir
 @exec install-info %D/info/cl %D/info/dir
-@exec install-info %D/info/customize %D/info/dir
 @exec install-info %D/info/dired-x %D/info/dir
 @exec install-info %D/info/ediff %D/info/dir
 @exec install-info %D/info/emacs %D/info/dir
@@ -46,6 +45,7 @@ info/widget
 @exec install-info %D/info/info %D/info/dir
 @exec install-info %D/info/message %D/info/dir
 @exec install-info %D/info/mh-e %D/info/dir
+@exec install-info %D/info/reftex %D/info/dir
 @exec install-info %D/info/sc %D/info/dir
 @exec install-info %D/info/vip %D/info/dir
 @exec install-info %D/info/viper %D/info/dir
@@ -54,6 +54,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/cvtmail
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/digest-doc
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/emacsserver
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/fakemail
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/fns-%%EMACS_VER%%.1.el
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/hexl
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/movemail
 libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/profile
@@ -71,7 +72,7 @@ share/emacs/%%EMACS_VER%%/etc/COOKIES
 share/emacs/%%EMACS_VER%%/etc/COPYING
 share/emacs/%%EMACS_VER%%/etc/DEBUG
 share/emacs/%%EMACS_VER%%/etc/DISTRIB
-share/emacs/%%EMACS_VER%%/etc/DOC-20.3.1
+share/emacs/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.1
 share/emacs/%%EMACS_VER%%/etc/FAQ
 share/emacs/%%EMACS_VER%%/etc/FTP
 share/emacs/%%EMACS_VER%%/etc/GNU
@@ -132,7 +133,6 @@ share/emacs/%%EMACS_VER%%/etc/emacs.xbm
 share/emacs/%%EMACS_VER%%/etc/emacstool.1
 share/emacs/%%EMACS_VER%%/etc/enriched.doc
 share/emacs/%%EMACS_VER%%/etc/etags.1
-share/emacs/%%EMACS_VER%%/etc/foo.el
 share/emacs/%%EMACS_VER%%/etc/future-bug
 share/emacs/%%EMACS_VER%%/etc/gnu.xpm
 share/emacs/%%EMACS_VER%%/etc/gnus-tut.txt
@@ -508,6 +508,8 @@ share/emacs/%%EMACS_VER%%/lisp/generic.el
 share/emacs/%%EMACS_VER%%/lisp/generic.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/earcon.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/earcon.elc
+share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-agent.el
+share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-agent.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-art.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-art.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-async.el
@@ -524,6 +526,8 @@ share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-cus.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-cus.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-demon.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-demon.elc
+share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-draft.el
+share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-draft.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-dup.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-dup.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/gnus-eform.el
@@ -588,6 +592,8 @@ share/emacs/%%EMACS_VER%%/lisp/gnus/message.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/message.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/messcompat.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/messcompat.elc
+share/emacs/%%EMACS_VER%%/lisp/gnus/nnagent.el
+share/emacs/%%EMACS_VER%%/lisp/gnus/nnagent.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnbabyl.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnbabyl.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/nndir.el
@@ -606,6 +612,7 @@ share/emacs/%%EMACS_VER%%/lisp/gnus/nnheader.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnheader.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnkiboze.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnkiboze.elc
+share/emacs/%%EMACS_VER%%/lisp/gnus/nnlistserv.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnmail.el
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnmail.elc
 share/emacs/%%EMACS_VER%%/lisp/gnus/nnmbox.el
@@ -670,6 +677,8 @@ share/emacs/%%EMACS_VER%%/lisp/international/ccl.el
 share/emacs/%%EMACS_VER%%/lisp/international/ccl.elc
 share/emacs/%%EMACS_VER%%/lisp/international/characters.el
 share/emacs/%%EMACS_VER%%/lisp/international/characters.elc
+share/emacs/%%EMACS_VER%%/lisp/international/codepage.el
+share/emacs/%%EMACS_VER%%/lisp/international/codepage.elc
 share/emacs/%%EMACS_VER%%/lisp/international/encoded-kb.el
 share/emacs/%%EMACS_VER%%/lisp/international/encoded-kb.elc
 share/emacs/%%EMACS_VER%%/lisp/international/fontset.el
@@ -722,8 +731,6 @@ share/emacs/%%EMACS_VER%%/lisp/isearch.el
 share/emacs/%%EMACS_VER%%/lisp/isearch.elc
 share/emacs/%%EMACS_VER%%/lisp/ispell.el
 share/emacs/%%EMACS_VER%%/lisp/ispell.elc
-share/emacs/%%EMACS_VER%%/lisp/ispell4.el
-share/emacs/%%EMACS_VER%%/lisp/ispell4.elc
 share/emacs/%%EMACS_VER%%/lisp/iswitchb.el
 share/emacs/%%EMACS_VER%%/lisp/iswitchb.elc
 share/emacs/%%EMACS_VER%%/lisp/jka-compr.el
@@ -983,6 +990,8 @@ share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-langs.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-langs.elc
 share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-menus.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-menus.elc
+share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-make.el
+share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-make.elc
 share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-mode.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-mode.elc
 share/emacs/%%EMACS_VER%%/lisp/progmodes/cc-styles.el
@@ -1043,10 +1052,16 @@ share/emacs/%%EMACS_VER%%/lisp/progmodes/sh-script.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/sh-script.elc
 share/emacs/%%EMACS_VER%%/lisp/progmodes/simula.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/simula.elc
+share/emacs/%%EMACS_VER%%/lisp/progmodes/sql.el
+share/emacs/%%EMACS_VER%%/lisp/progmodes/sql.elc
 share/emacs/%%EMACS_VER%%/lisp/progmodes/tcl-mode.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/tcl-mode.elc
 share/emacs/%%EMACS_VER%%/lisp/progmodes/vhdl-mode.el
 share/emacs/%%EMACS_VER%%/lisp/progmodes/vhdl-mode.elc
+share/emacs/%%EMACS_VER%%/lisp/ps-bdf.el
+share/emacs/%%EMACS_VER%%/lisp/ps-bdf.elc
+share/emacs/%%EMACS_VER%%/lisp/ps-mule.el
+share/emacs/%%EMACS_VER%%/lisp/ps-mule.elc
 share/emacs/%%EMACS_VER%%/lisp/ps-print.el
 share/emacs/%%EMACS_VER%%/lisp/ps-print.elc
 share/emacs/%%EMACS_VER%%/lisp/rcompile.el
@@ -1091,6 +1106,8 @@ share/emacs/%%EMACS_VER%%/lisp/simple.el
 share/emacs/%%EMACS_VER%%/lisp/simple.elc
 share/emacs/%%EMACS_VER%%/lisp/skeleton.el
 share/emacs/%%EMACS_VER%%/lisp/skeleton.elc
+share/emacs/%%EMACS_VER%%/lisp/snmp-mode.el
+share/emacs/%%EMACS_VER%%/lisp/snmp-mode.elc
 share/emacs/%%EMACS_VER%%/lisp/sort.el
 share/emacs/%%EMACS_VER%%/lisp/sort.elc
 share/emacs/%%EMACS_VER%%/lisp/soundex.el

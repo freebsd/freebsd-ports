@@ -1,0 +1,21 @@
+--- man/message.texi.orig	Wed Apr  7 07:48:28 1999
++++ man/message.texi	Sat Jul 24 01:23:30 1999
+@@ -5,15 +5,15 @@
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
++@ifinfo
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Message: (message).   Mail and news composition mode that goes with Gnus.
++* Message: (message).		Message, the Emacs message composition mode.
+ @end direntry
+ @iftex
+ @finalout
+ @end iftex
+ @setchapternewpage odd
+-
+-@ifinfo
+ 
+ This file documents Message, the Emacs message composition mode.
+ 

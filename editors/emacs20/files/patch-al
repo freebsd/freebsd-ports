@@ -1,0 +1,17 @@
+--- man/cc-mode.texi.orig	Sun May 17 03:55:23 1998
++++ man/cc-mode.texi	Sat Jul 24 01:03:42 1999
+@@ -8,10 +8,10 @@
+ @settitle     CC MODE Version 5 Documentation
+ @footnotestyle end
+ 
+-@dircategory Editors
+-@direntry
+-* CC mode: (ccmode).	The GNU Emacs mode for editing C, C++, Objective-C
+-			  and Java code.
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* CC mode: (ccmode).		The GNU Emacs mode for editing C, C++,
++				Objective-C and Java code.
+ @end direntry
+ 
+ @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
