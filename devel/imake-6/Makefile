@@ -60,4 +60,8 @@ pre-configure:
 post-install:
 	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 
+.if ${X_WINDOW_SYSTEM:L} != xorg
+IGNORE=		is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
+.endif
+
 .include <bsd.port.post.mk>
