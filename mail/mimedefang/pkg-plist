@@ -1,17 +1,19 @@
 bin/mimedefang-multiplexor
 bin/mimedefang
 bin/mimedefang.pl
+bin/md-mx-ctrl
+bin/watch-mimedefang
 etc/rc.d/mimedefang.sh-dist
 @unexec if cmp -s %D/etc/mimedefang/mimedefang-filter %D/etc/mimedefang/mimedefang-filter.example; then rm -f %D/etc/mimedefang/mimedefang-filter; fi
 etc/mimedefang/mimedefang-filter.example
 @unexec if cmp -s %D/etc/mimedefang/spamassassin/sa-mimedefang.cf %D/etc/mimedefang/spamassassin/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/spamassassin/sa-mimedefang.cf; fi
 etc/mimedefang/spamassassin/sa-mimedefang.cf.example
-etc/mimedefang/mimedefang-ip-key
 %%PORTDOCS%%share/doc/mimedefang/README
 %%PORTDOCS%%share/doc/mimedefang/README.ANOMY
 %%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
 %%PORTDOCS%%share/doc/mimedefang/README.NONROOT
 %%PORTDOCS%%share/doc/mimedefang/README.SECURITY
+%%PORTDOCS%%share/doc/mimedefang/README.IRIX
 %%PORTDOCS%%share/examples/mimedefang/suggested-minimum-filter-for-windows-clients
 %%PORTDOCS%%share/examples/mimedefang/stream-by-domain-filter
 %%PORTDOCS%%share/examples/mimedefang/README
