@@ -12,7 +12,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

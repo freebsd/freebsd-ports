@@ -11,7 +11,7 @@ PORTVERSION=	2.2.7
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 #-----------------------------------------------------------------------
 # You may define these options:

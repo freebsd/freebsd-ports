@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://pompo.net/horde/kronolith/
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp-devel
 

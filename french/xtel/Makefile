@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

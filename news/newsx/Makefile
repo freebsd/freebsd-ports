@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 
