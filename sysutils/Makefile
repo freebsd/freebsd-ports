@@ -128,6 +128,7 @@
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += skill
+    SUBDIR += slay
     SUBDIR += socket
     SUBDIR += star
     SUBDIR += stat
