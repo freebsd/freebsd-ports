@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/05/27 03:44:31 asami Exp $
+# $Id: Makefile,v 1.5 1996/09/06 14:18:10 ache Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -30,8 +30,11 @@ post-build:
 do-install:
 	cd ${WRKSRC}; yes "" | ./Count-install
 	cd ${WRKSRC}/utils; \
-		${INSTALL} -s -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} mkstrip ${PREFIX}/bin; \
-		${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} mkstrip.1 ${PREFIX}/man/man1; \
-		${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} mkstrip.sh ${PREFIX}/lib/Counter/digits
+		${INSTALL_PROGRAM} mkstrip ${PREFIX}/bin; \
+		${INSTALL_MAN} mkstrip.1 ${PREFIX}/man/man1; \
+		${INSTALL_SCRIPT} mkstrip.sh ${PREFIX}/lib/Counter/digits
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf ${PREFIX}/man/man1/mkstrip.1
+.endif
 
 .include <bsd.port.mk>
