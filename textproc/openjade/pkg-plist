@@ -1,8 +1,12 @@
+@comment $FreeBSD$
 bin/openjade
+lib/libogrove.a
 lib/libogrove.so
 lib/libogrove.so.0
+lib/libospgrove.a
 lib/libospgrove.so
 lib/libospgrove.so.0
+lib/libostyle.a
 lib/libostyle.so
 lib/libostyle.so.0
 @unexec %%MKCATALOG%% -q deinstall openjade

@@ -1,6 +1,9 @@
---- configure.orig	Sat Sep 14 13:56:38 2002
-+++ configure	Sat Sep 14 13:59:07 2002
-@@ -4864,6 +4864,8 @@
+
+$FreeBSD$
+
+--- configure.orig	Sun Dec  1 17:18:40 2002
++++ configure	Fri Feb 28 03:26:00 2003
+@@ -4899,6 +4899,8 @@
  
  fi
  
@@ -9,12 +12,20 @@
  echo "$as_me:$LINENO: checking for towupper" >&5
  echo $ECHO_N "checking for towupper... $ECHO_C" >&6
  if test "${ac_cv_func_towupper+set}" = set; then
-@@ -4934,6 +4936,8 @@
- _ACEOF
+@@ -4970,6 +4972,8 @@
  
  fi
-+
-+fi # end <wchar.h>-disabling hack
  
++fi # end <wchar.h>-disabling hack
++
  echo "$as_me:$LINENO: checking for gettext" >&5
  echo $ECHO_N "checking for gettext... $ECHO_C" >&6
+ if test "${ac_cv_func_gettext+set}" = set; then
+@@ -9792,6 +9796,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
