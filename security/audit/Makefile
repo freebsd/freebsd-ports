@@ -24,6 +24,7 @@ LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}beta
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-audit-libdir=${PREFIX}/lib/alat
@@ -54,13 +55,14 @@ FIXPREFIX_CONF=	src/include/audconf.h src/auditd/auditd.8
 LIBVERSION=	1
 
 post-patch:
-	${PERL} -pi -e "s@Linux@FreeBSD@g" ${WRKSRC}/configure
-	(${FIND} ${WRKSRC}/src/modules -name Makefile.in -exec ${PERL} -pi -e \
+	${REINPLACE_CMD} -e "s@Linux@FreeBSD@g" ${WRKSRC}/configure
+	(${FIND} ${WRKSRC}/src/modules -name Makefile.in -exec \
+		${REINPLACE_CMD} -e \
 		"s@^LIB=(.*){VERSION}@SOVERSION=\t${LIBVERSION}\nLIB=\1\{SOVERSION\}@" {} \;)
-	${PERL} -pi -e "s@AUDIT_VERSION@\"${LIBVERSION}\"@g" \
+	${REINPLACE_CMD} -e "s@AUDIT_VERSION@\"${LIBVERSION}\"@g" \
 		${WRKSRC}/src/lib/modules.c
 .for f in ${FIXPREFIX_CONF}
-	${PERL} -pi -e "s@/etc/auditd.conf@${PREFIX}/etc/auditd.conf@g" \
+	${REINPLACE_CMD} -e "s@/etc/auditd.conf@${PREFIX}/etc/auditd.conf@g" \
 		${WRKSRC}/${f}
 .endfor
 
