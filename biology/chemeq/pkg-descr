@@ -1,0 +1,8 @@
+`chemeq' outputs code, and checks the equilibrium of a chemical
+reaction. For example, 
+
+  IN: 2H2 + O2 ---> 2 H2O
+  OUT: 2\,H_{2}\,+\,O_{2}\,\rightarrow\,2\,H_{2}O
+
+--
+rmiya

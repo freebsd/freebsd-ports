@@ -1,0 +1,12 @@
+bin/chemeq
+share/doc/chemeq/COPYING
+share/doc/chemeq/LISEZMOI
+share/doc/chemeq/README
+share/examples/chemeq/TODO
+share/examples/chemeq/test.1
+share/examples/chemeq/chemreport
+share/examples/chemeq/chemreport.pl
+share/examples/chemeq/chemtest
+share/examples/chemeq/chemtest.pl
+@dirrm share/doc/chemeq
+@dirrm share/examples/chemeq
