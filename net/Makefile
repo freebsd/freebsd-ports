@@ -285,6 +285,7 @@
     SUBDIR += proxy-suite
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += py-soap
     SUBDIR += py-xmlrpc
     SUBDIR += queso
     SUBDIR += radius
