@@ -71,6 +71,8 @@
     SUBDIR += jam
     SUBDIR += kdbg
     SUBDIR += kdbg-i18n
+    SUBDIR += kdelibdocs
+    SUBDIR += kdelibdocs-i18n
     SUBDIR += kdevelop-i18n
     SUBDIR += ktranslator
     SUBDIR += lclint
