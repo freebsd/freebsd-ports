@@ -1,6 +1,6 @@
 # New ports collection makefile for: mailmgr
 # Date created:         14 August 2003
-# Whom:                 Hsin-HSIUNG CHANG
+# Whom:                 Hsin-Hsiung Chang
 #
 # $FreeBSD$
 #
@@ -14,9 +14,13 @@ MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Sendmail Analisys Report Generator
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 do-install:
-		@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf ${PREFIX}/etc/mailmgr.conf.default
+.if !exists(${PREFIX}/etc/mailmgr.conf)
+	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf ${PREFIX}/etc/mailmgr.conf
+.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mailmgr ${PREFIX}/bin
+	@${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
