@@ -7,6 +7,15 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20050324:
+  AFFECTS: users of net/mDNSResponder,
+  AUTHOR: brooks@FreeBSD.org
+
+  In mDNSResponder 98_1, mdnsd is no longer started by default due to a
+  switch to an rc.subr startup script.  To start it, you must add add
+  mdnsd_enable="YES" to your /etc/rc.conf or other suitable
+  configuration file.
+
 20050320:
   AFFECTS: users of x11/kde3, x11/kdelibs3, x11/kdebase3, x11-themes/kdeartwork3, www/akregator, x11-themes/phase, multimedia/kdemultimedia3
   AUTHOR: kde@freebsd.org
