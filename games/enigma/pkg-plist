@@ -1,29 +1,5 @@
 bin/enigma
 
-include/zipios++/basicentry.h
-include/zipios++/filepath.h
-include/zipios++/collcoll.h
-include/zipios++/inflateinputstreambuf.h
-include/zipios++/dircoll.h
-include/zipios++/simplesmartptr.h
-include/zipios++/fcoll.h
-include/zipios++/zipfile.h
-include/zipios++/ziphead.h
-include/zipios++/zipheadio.h
-include/zipios++/fcollexceptions.h
-include/zipios++/zipinputstream.h
-include/zipios++/fileentry.h
-include/zipios++/zipinputstreambuf.h
-include/zipios++/filterinputstreambuf.h
-include/zipios++/virtualseeker.h
-include/zipios++/meta-iostreams.h
-include/zipios++/zipios-config.h
-include/zipios++/filteroutputstreambuf.h
-include/zipios++/zipios_defs.h
-include/zipios++/deflateoutputstreambuf.h
-include/zipios++/zipoutputstreambuf.h
-include/zipios++/zipoutputstream.h
-
 share/enigma/startup.lua
 share/enigma/models.lua
 share/enigma/models-oxyd.lua
@@ -1309,6 +1285,7 @@ share/enigma/gfx/st-scissors-snip.png
 share/enigma/gfx/st-rubberband.png
 share/enigma/gfx/st-rotator-right.png
 share/enigma/gfx/st-rotator-left.png
+share/enigma/gfx/st-rock9.png
 share/enigma/gfx/st-rock8.png
 share/enigma/gfx/st-rock7.png
 share/enigma/gfx/st-rock6.png
@@ -1322,6 +1299,7 @@ share/enigma/gfx/st-puzzle.png
 share/enigma/gfx/st-pull.png
 share/enigma/gfx/st-plain.png
 share/enigma/gfx/st-oxydd.png
+share/enigma/gfx/st-oxyd-symbols.png
 share/enigma/gfx/st-oxydd-opening.png
 share/enigma/gfx/st-oxydd-open.png
 share/enigma/gfx/st-oxydc.png
@@ -1661,12 +1639,55 @@ share/enigma/fonts/dreamorp24.png
 share/enigma/fonts/dreamorp24.bmf
 share/enigma/fonts/dreamorp.txt
 
+%%DOCSDIR%%/images/intro-inventory.png
+%%DOCSDIR%%/images/intro-meditation.png
+%%DOCSDIR%%/images/intro-oxyd.png
+%%DOCSDIR%%/images/intro-plank.png
+%%DOCSDIR%%/images/intro-twoplayer.png
+%%DOCSDIR%%/images/it-explosives.png
+%%DOCSDIR%%/images/it-flags.png
+%%DOCSDIR%%/images/it-umbrella.png
+%%DOCSDIR%%/images/levelmenu.png
+%%DOCSDIR%%/images/logo.png
+%%DOCSDIR%%/images/st-lethal.png
+%%DOCSDIR%%/images/st-magic.png
+%%DOCSDIR%%/images/st-mail.png
+%%DOCSDIR%%/images/st-mirrors.png
+%%DOCSDIR%%/images/st-oxyds.png
+%%DOCSDIR%%/images/st-shogun.png
+%%DOCSDIR%%/images/st-swap.png
+%%DOCSDIR%%/enigma_1.html
+%%DOCSDIR%%/enigma_2.html
+%%DOCSDIR%%/enigma_3.html
+%%DOCSDIR%%/enigma_4.html
+%%DOCSDIR%%/enigma_5.html
+%%DOCSDIR%%/enigma_abt.html
+%%DOCSDIR%%/enigma_ovr.html
+%%DOCSDIR%%/enigma.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/reference/enigma-ref.html
+%%DOCSDIR%%/reference/functions.html
+%%DOCSDIR%%/reference/functions.css
+%%DOCSDIR%%/reference/ant_lua.txt
+%%DOCSDIR%%/reference/CREATING-LEVELS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYING
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/reference
+@dirrm %%DOCSDIR%%
+
 share/applications/enigma.desktop
 share/icons/hicolor/48x48/apps/enigma.png
 share/pixmaps/enigma.png
 @unexec rmdir %D/share/applications/ 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 
-@dirrm include/zipios++
 @dirrm share/enigma/levels/Sokoban
 @dirrm share/enigma/levels
 @dirrm share/enigma/gfx
