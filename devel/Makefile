@@ -324,7 +324,6 @@
     SUBDIR += id-utils
     SUBDIR += idlefork
     SUBDIR += ifd-test
-    SUBDIR += imake
     SUBDIR += imake-4
     SUBDIR += inilib
     SUBDIR += initutil
