@@ -1,0 +1,8 @@
+MIME::Fast is a perl module for creating, editing and parsing MIME
+messages.  This module is based on the very good C library called gmime
+(currently in development).  MIME::Fast outght to be faster and should
+use less memory and CPU resources than standard MIME (perl module),
+because MIME::Fast is the wrapper for C functions (calling C function is
+much, much less expensive than calling perl function).
+
+WWW: http://search.cpan.org/dist/MIME-Fast/
