@@ -118,6 +118,7 @@ share/gnome/pixmaps/gnocatan/trade.png
 share/locale/de/LC_MESSAGES/gnocatan.mo
 share/locale/es/LC_MESSAGES/gnocatan.mo
 share/locale/fr/LC_MESSAGES/gnocatan.mo
+share/locale/it/LC_MESSAGES/gnocatan.mo
 share/locale/nl/LC_MESSAGES/gnocatan.mo
 @dirrm share/gnome/help/gnocatan/C/images
 @dirrm share/gnome/help/gnocatan/C
@@ -129,5 +130,3 @@ share/locale/nl/LC_MESSAGES/gnocatan.mo
 @dirrm share/gnome/games/gnocatan/themes
 @dirrm share/gnome/games/gnocatan
 @dirrm share/gnome/pixmaps/gnocatan
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnocatan/gnocatan-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnocatan/gnocatan-C.omf 2>/dev/null || /usr/bin/true
