@@ -1,0 +1,16 @@
+LIB=	mng
+
+NOPROFILE=	yes
+SHLIB_MAJOR?=	1
+SHLIB_MINOR?=	0
+
+LOBJS!=		make -f ${.CURDIR}/Makefile.in -V libmng_la_OBJECTS
+SRCS=		${LOBJS:.lo=.c}
+
+CFLAGS+=	-I${INCDIR}
+
+INCS=		libmng.h libmng_conf.h libmng_types.h
+INCDIR=		${LOCALBASE}/include
+LIBDIR=		${LOCALBASE}/lib
+
+.include <bsd.lib.mk>

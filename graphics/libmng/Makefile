@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmng
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.3-t.com/libmng/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -18,16 +18,10 @@ MAINTAINER=	mi@aldan.algebra.com
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		lcms:${PORTSDIR}/graphics/lcms
 
-SHLIB_VER=	0
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ARGS+=	-j2
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
-		--with-lcms=${LOCALBASE}
-
-PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 MAN3=		libmng.3
 MAN5=		mng.5 jng.5
