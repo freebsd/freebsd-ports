@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Mar 10 20:37:18 2000
-+++ Makefile	Thu Jun  1 10:48:07 2000
++++ Makefile	Thu Jun  1 11:18:35 2000
 @@ -4,12 +4,12 @@
  # Edit the entries below for your system:
  # In most cases you don't have to
@@ -7,14 +7,14 @@
 -PREFIX		= `gtk-config --prefix`
 -FONTDIR		= /usr/lib/X11/fonts/misc
 +#PREFIX		= `gtk-config --prefix`
-+FONTDIR		= ${X11BASE}/lib/X11/fonts/misc
++FONTDIR		= $(X11BASE)/lib/X11/fonts/misc
  
 -CC		= gcc
 -CFLAGS		= `gtk-config --cflags`
 -LIBS		= `gtk-config --libs`
 +CC		?= gcc
-+CFLAGS		+= `gtk12-config --cflags` -fPIC -DPIC
-+LIBS		+= `gtk12-config --libs`
++CFLAGS		+= `$(X11BASE)/bin/gtk12-config --cflags` -fPIC -DPIC
++LIBS		+= `$(X11BASE)/bin/gtk12-config --libs`
  
  #Use these for FreeBSD:
  #PREFIX		= `gtk12-config --prefix`
