@@ -8,6 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	20040701
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
@@ -94,19 +95,11 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 .endif
 
 pre-build:
-.if ${PERL_LEVEL} < 500802
-# add warning to greeting message when running perl older than 5.8.2
-	${SED} -e 's,%%PERLVERSION%%,${PERL_VERSION},g' < ${FILESDIR}/perlwarning.tmpl > ${WRKDIR}/MESSAGE
-.endif
-.if ${PERL_LEVEL} < 500600
-# remove taint checks when running under perl 5.00503
-	${SED} -e 's,^\#\!/usr/bin/perl -T,\#\!/usr/bin/perl,' < ${WRKSRC}/amavisd > ${WRKDIR}/amavisd
-.endif
 	for f in amavisd.sh amavis-milter.sh INSTALL DEINSTALL MESSAGE; do \
-		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl >> ${WRKDIR}/$${f}; \
+		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl > ${WRKDIR}/$${f}; \
 	done
 	for f in amavisd.conf amavisd.conf-sample amavisd; do \
-		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} >> ${WRKDIR}/$${f}; \
+		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} > ${WRKDIR}/$${f}; \
 	done
 
 pre-install:
@@ -120,6 +113,9 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
+.if !exists(${PREFIX}/etc/amavisd.conf)
+	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf ${PREFIX}/etc
+.endif
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.conf-sample ${PREFIX}/etc/amavisd.conf-sample
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${PREFIX}/etc/amavisd.conf-default
 	${INSTALL_SCRIPT} ${WRKDIR}/amavisd.sh ${PREFIX}/etc/rc.d
@@ -133,13 +129,8 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
+.if ${PERL_LEVEL} < 500802
+IGNORE=         "requires perl 5.8.2 or higher"
 .endif
 
 .include <bsd.port.post.mk>
