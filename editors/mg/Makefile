@@ -39,10 +39,15 @@ do-install:
 		${PREFIX}/share/doc/mg
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 #
 # Ports build/install stuff stops here.  Tarball creation stuff begins here.
 #
-.include <bsd.port.pre.mk>
 CVS_CMD?=	cvs -z3
 CVS_DATE=	Mon May 14 17:41:46 PDT 2001
 CVS_SITES?=	anoncvs@anoncvs3.usa.openbsd.org:/cvs \
