@@ -11,28 +11,25 @@ CATEGORIES=	mail security
 MASTER_SITES=	http://www.unicom.com/sw/rlytest/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
-EXTRACT_ONLY=   # defined
+EXTRACT_ONLY=	# defined
 
-MAINTAINER=	paul@it.ca
-COMMENT=	Test an SMTP host for third-party relay
+MAINTAINER=	paul+ports@it.ca
+COMMENT=	Test remote system for unsecured mail relay
 
 USE_PERL5=	yes
 
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=	yes
 
-MAN1=           rlytest.1
+MAN1=		rlytest.1
 
 pre-patch:
-	perl -pe 's,^#!/usr/local/bin/perl$$,#!/usr/bin/perl,' < ${_DISTDIR}${DISTFILES} > ${WRKSRC}/rlytest
+	@${SED} '1s:^#!/usr/local/bin/perl:#!${PERL}:' < ${_DISTDIR}${DISTFILES} > ${WRKSRC}/rlytest
 
 do-build:
-	pod2man ${WRKSRC}/rlytest > ${WRKSRC}/rlytest.1
+	@pod2man ${WRKSRC}/rlytest > ${WRKSRC}/rlytest.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rlytest ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/rlytest.1 ${PREFIX}/man/man1/
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/rlytest ${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKSRC}/rlytest.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
