@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	hping
-PORTVERSION=	2.0.0r2
-PORTREVISION=	3
+PORTVERSION=	2.0.0r3
 PORTEPOCH=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.hping.org/
-DISTNAME=	hping2.0.0-rc2
+DISTNAME=	hping2.0.0-rc3
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Network auditing tool
 
-WRKSRC=		${WRKDIR}/hping2-rc2
+WRKSRC=		${WRKDIR}/hping2-rc3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--force-libpcap
 USE_GMAKE=	yes
 
 PLIST_FILES=	sbin/hping
 PORTDOCS=	AS-BACKDOOR HPING2-HOWTO.txt HPING2-IS-OPEN \
-		MORE-FUN-WITH-IPID SPOOFED_SCAN.txt
+		MORE-FUN-WITH-IPID SPOOFED_SCAN.txt APD.txt
 
 MAN8=	hping.8
 
