@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -15,7 +15,7 @@ DISTNAME=	emacs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.ki.nu/pub/emcws/ \
 		ftp://ftp.jpl.org/pub/misc/
-PATCHFILES=	emcws-${EMACS_VER}-20030323.gz
+PATCHFILES=	emcws-${EMACS_VER}-20030507.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nakaji@jp.freebsd.org
