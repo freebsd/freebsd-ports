@@ -1,0 +1,4 @@
+This port is the ircII-2.8.2-EPIC3.004 Internet Relay Chat client.
+It is an enhanced version of ircII.  This port is not intended for
+installation simultaneously with the regular ircII port; they
+share filenames.
