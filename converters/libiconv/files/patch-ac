@@ -12,26 +12,3 @@ $FreeBSD$
  htmldir = $(docdir)
  
  # Programs used by "make":
-@@ -32,9 +32,8 @@
- 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
- 	if [ ! -d $(DESTDIR)$(mandir) ] ; then mkdir $(DESTDIR)$(mandir) ; fi
- 	if [ ! -d $(DESTDIR)$(mandir)/man1 ] ; then mkdir $(DESTDIR)$(mandir)/man1 ; fi
--	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; done
-+	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/g$$f ; done
- 	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
--	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; done
-+	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; done
--	if [ ! -d $(DESTDIR)$(prefix)/doc ] ; then mkdir $(DESTDIR)$(prefix)/doc ; fi
- 	if [ ! -d $(DESTDIR)$(docdir) ] ; then mkdir $(DESTDIR)$(docdir) ; fi
- 	if [ ! -d $(DESTDIR)$(htmldir) ] ; then mkdir $(DESTDIR)$(htmldir) ; fi
-@@ -50,8 +50,8 @@
- 	if [ ! -d $(DESTDIR)$(htmldir) ] ; then mkdir $(DESTDIR)$(htmldir) ; fi
- 
- uninstall : force
--	cd $(srcdir) && for f in *.1 ; do echo $(RM) $(DESTDIR)$(mandir)/man1/$$f ; $(RM) $(DESTDIR)$(mandir)/man1/$$f ; done
--	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/$$f ; done
-+	cd $(srcdir) && for f in *.1 ; do echo $(RM) $(DESTDIR)$(mandir)/man1/$$f ; $(RM) $(DESTDIR)$(mandir)/man1/g$$f ; done
-+	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; done
- 	cd $(srcdir) && for f in *.html ; do echo $(RM) $(DESTDIR)$(htmldir)/$$f ; $(RM) $(DESTDIR)$(htmldir)/$$f ; done
- 
- check :

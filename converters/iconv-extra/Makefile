@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
 MAINTAINER=	Konstantin.Chuguev@dante.org.uk
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	biconv.2:${PORTSDIR}/converters/iconv
 
 USE_PERL5=	yes
 

@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- util/Makefile.orig	Sun Sep  3 22:33:15 2000
++++ util/Makefile	Sun Mar 17 13:08:59 2002
+@@ -1,11 +1,14 @@
+-PROG=		iconv
++PROG=		biconv
+ SRCS=		iconv.c iconv_stream.c
+ 
+-LDADD=		-L../lib -liconv
+-DPADD+=		../lib/libiconv.a
++LDADD=		-L../lib -lbiconv
++DPADD+=		../lib/libbiconv.a
+ 
+ BINDIR=		${PREFIX}/bin
+ 
+-MAN1=		iconv.1
++MAN1=		biconv.1
++
++biconv.1: iconv.1
++	cp ${.ALLSRC} ${.TARGET}
+ 
+ .include <bsd.prog.mk>
