@@ -1,78 +1,106 @@
-*** configure.in.orig	Sat Aug 18 00:20:58 2001
---- configure.in	Mon Aug 20 14:50:48 2001
-*************** AC_HEADER_STDC
-*** 27,38 ****
-  AC_ARG_PROGRAM
+*** configure.in.orig	Fri Dec  7 06:35:07 2001
+--- configure.in	Fri Dec  7 07:24:28 2001
+*************** fi
+*** 58,64 ****
+  AC_ARG_WITH(ptlib-libs, [  --with-ptlib-libs=PFX       Location of PTLib libs.],
+  	with_ptlib_libs="$withval", with_ptlib_libs="/usr/lib")
+  if test "x${with_ptlib_libs}" != "xno" -a "x${have_ptlib_includes}" != "xno"; then
+! 	AC_CHECK_FILE(${with_ptlib_libs}/libpt.so, ptlib_libs="yes", ptlib_libs="no")
+  	
+  	if test "x${ptlib_libs}" != "xno"; then
+  		PTLIB_LDFLAGS="-L${with_ptlib_libs} ${H323_LIBS}"
+--- 58,64 ----
+  AC_ARG_WITH(ptlib-libs, [  --with-ptlib-libs=PFX       Location of PTLib libs.],
+  	with_ptlib_libs="$withval", with_ptlib_libs="/usr/lib")
+  if test "x${with_ptlib_libs}" != "xno" -a "x${have_ptlib_includes}" != "xno"; then
+! 	AC_CHECK_FILE(${with_ptlib_libs}/libpt_FreeBSD_x86_r.a, ptlib_libs="yes", ptlib_libs="no")
+  	
+  	if test "x${ptlib_libs}" != "xno"; then
+  		PTLIB_LDFLAGS="-L${with_ptlib_libs} ${H323_LIBS}"
+*************** else
+*** 70,76 ****
+  	AC_MSG_ERROR([You need PTLib to enjoy GnomeMeeting])
+  fi
   
+! H323_LIBS="-lopenh323 -ldl -lpt -lpthread -lssl -lcrypto"
   
-! H323_INCLUDES="-I$PTLIB_INCLUDE_DIR/unix -I$PTLIB_INCLUDE_DIR/.. -I$PTLIB_INCLUDE_DIR/../ptclib -I/usr/include -I$OPENH323_INCLUDE_DIR"
-! H323_LIBS="-lh323_linux_x86_r -ldl -lpt_linux_x86_r -lpthread"
+  dnl ***************************************
+  dnl OpenH323
+--- 70,77 ----
+  	AC_MSG_ERROR([You need PTLib to enjoy GnomeMeeting])
+  fi
   
+! dnl H323_LIBS="-lopenh323 -ldl -lpt -lpthread -lssl -lcrypto"
+! H323_LIBS="-lh323_FreeBSD_x86_r -lpt_FreeBSD_x86_r -pthread -lssl -lcrypto"
   
-! LDAP_INCLUDES="-I/usr/local/include"
+  dnl ***************************************
+  dnl OpenH323
+*************** AC_ARG_WITH(openh323-libs, [  --with-ope
+*** 104,110 ****
+  	with_openh323_libs="$withval", with_openh323_libs="/usr/lib")
+  msg_openh323="no"
+  if test "x${with_openh323_libs}" != "xno" -a "x${have_openh323_includes}" != "xno"; then
+! 	AC_CHECK_FILE(${with_openh323_libs}/libopenh323.so, openh323_libs="yes", openh323_libs="no")
+  	if test "x${openh323_libs}" != "xno"; then
+  		msg_openh323="yes"
+  		OPENH323_LDFLAGS="-L${with_openh323_libs} ${H323_LIBS}"
+--- 105,111 ----
+  	with_openh323_libs="$withval", with_openh323_libs="/usr/lib")
+  msg_openh323="no"
+  if test "x${with_openh323_libs}" != "xno" -a "x${have_openh323_includes}" != "xno"; then
+! 	AC_CHECK_FILE(${with_openh323_libs}/libh323_FreeBSD_x86_r.a, openh323_libs="yes", openh323_libs="no")
+  	if test "x${openh323_libs}" != "xno"; then
+  		msg_openh323="yes"
+  		OPENH323_LDFLAGS="-L${with_openh323_libs} ${H323_LIBS}"
+*************** fi
+*** 164,170 ****
+  dnl *****************************
+  
+  LDAP_INCLUDES=""
 ! LDAP_LIBS="-lldap -llber -lresolv"
   
-  GNOMEMEETING_INCLUDES=""
-  GNOMEMEETING_LDADD=""
---- 27,38 ----
-  AC_ARG_PROGRAM
+  
+  AC_ARG_WITH(ldap, [  --with-ldap=PFX       Location of ldap.],
+--- 165,171 ----
+  dnl *****************************
+  
+  LDAP_INCLUDES=""
+! LDAP_LIBS="-lldap -llber"
   
   
-! H323_INCLUDES="-I$PWLIBDIR/include/ptlib/unix -I$PWLIBDIR/include -I$OPENH323DIR/include"
-! H323_LIBS="-L$PWLIBDIR/lib -L$OPENH323DIR/lib -lh323_FreeBSD_x86_r -lpt_FreeBSD_x86_r -pthread -lssl -lcrypto -DP_SSL"
-  
-  
-! LDAP_INCLUDES="-I/usr/include -I/usr/local/include"
-! LDAP_LIBS="-L/usr/local/lib -lldap -llber"
-  
-  GNOMEMEETING_INCLUDES=""
-  GNOMEMEETING_LDADD=""
+  AC_ARG_WITH(ldap, [  --with-ldap=PFX       Location of ldap.],
 *************** dnl * -D_DEBUG -DPMEMORY_CHECK=1 -DPTRAC
-*** 46,60 ****
+*** 197,203 ****
   dnl *************************************************************************
   
   
-! H323_CFLAGS="-DP_LINUX -m486 -D_REENTRANT -DP_HAS_SEMAPHORES -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DHAS_OSS -O2"
-! 
+! H323_CFLAGS="-DP_LINUX -D_REENTRANT -DP_HAS_SEMAPHORES -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DHAS_OSS -O2"
   
   dnl *********************************************************************
-  dnl ** GNOME ************************************************************
-  dnl *********************************************************************
-  
-! GNOMEMEETING_INCLUDES="$H323_INCLUDES $H323_CFLAGS"
-! GNOMEMEETING_LDADD="$GNOME_LIBDIR $GTK_LIBS $GNOMEGNORBA_LIBS $GNOME_APPLETS_LIBS $LDAP_LIBS $H323_LIBS `gtk-config --libs gthread`"
-  
-  GNOME_COMPILE_WARNINGS
-  GNOME_X_CHECKS
---- 46,59 ----
+  dnl * Gdk-pixbuf ********************************************************
+--- 198,205 ----
   dnl *************************************************************************
   
   
-! H323_CFLAGS="-DP_FREEBSD=400001 -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DPTRACING -02 -DNDEBUG"
+! dnl H323_CFLAGS="-DP_LINUX -D_REENTRANT -DP_HAS_SEMAPHORES -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -DHAS_OSS -O2"
+! H323_CFLAGS="-DP_FREEBSD=400001 -DP_SSL -DP_PTHREADS -DPBYTE_ORDER=PLITTLE_ENDIAN -O2"
   
   dnl *********************************************************************
-  dnl ** GNOME ************************************************************
-  dnl *********************************************************************
-  
-! GNOMEMEETING_INCLUDES="$LDAP_INCLUDES $H323_INCLUDES $H323_CFLAGS"
-! GNOMEMEETING_LDADD="$GNOME_LIBDIR $GTK_LIBS $GNOMEGNORBA_LIBS $GNOME_APPLETS_LIBS $LDAP_LIBS $H323_LIBS `gtk12-config --libs gthread`"
-  
-  GNOME_COMPILE_WARNINGS
-  GNOME_X_CHECKS
-*************** AM_PROG_LIBTOOL
-*** 64,70 ****
-  dnl #########################################################################
+  dnl * Gdk-pixbuf ********************************************************
+*************** dnl ####################################
+*** 236,242 ****
   dnl  Check for LDAP if available.
   dnl ########################################################################
+  
 ! AC_CHECK_LIB(resolv, res_gethostbyaddr, [LIBS="-lresolv $LIBS"], AC_MSG_ERROR([*** libresolv not found.]), -lresolv)
   
-  AC_CHECK_LIB(ldap, ldap_simple_bind, LIBS="-lldap -llber $LIBS", AC_MSG_ERROR([*** LDAP library is not found.]), -llber)
   
---- 63,69 ----
-  dnl #########################################################################
+  LIBS="$LDAP_LIBS $LIBS"
+--- 238,244 ----
   dnl  Check for LDAP if available.
   dnl ########################################################################
+  
 ! dnl AC_CHECK_LIB(resolv, res_gethostbyaddr, [LIBS="-lresolv $LIBS"], AC_MSG_ERROR([*** libresolv not found.]), -lresolv)
   
-  AC_CHECK_LIB(ldap, ldap_simple_bind, LIBS="-lldap -llber $LIBS", AC_MSG_ERROR([*** LDAP library is not found.]), -llber)
   
+  LIBS="$LDAP_LIBS $LIBS"

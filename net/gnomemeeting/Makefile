@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomemeeting
-PORTVERSION=	0.10
+PORTVERSION=	0.12.2
 CATEGORIES=	net gnome
-MASTER_SITES=	http://130.104.229.225/gnomemeeting/downloads/0.10/sources/ \
-		ftp://telepresence.dmem.strath.ac.uk/pub/openh323/
+MASTER_SITES=	http://www.gnomemeeting.org/downloads/latest/sources/
+DISTNAME=	GnomeMeeting-0.12.2
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -27,8 +27,13 @@ USE_GNOME=	yes
 USE_AUTOCONF=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	 --with-ptlib-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib/include/ptlib \
+		 --with-ptlib-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib/lib \
+		 --with-openh323-includes=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/include \
+		 --with-openh323-libs=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323/lib \
+		--with-ldap=/usr/local
 CONFIGURE_ENV=	LIBS=-L${PREFIX}/lib \
-		PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
+		PTLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
 		OPENH323DIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/openh323 \
 
 .include <bsd.port.mk>
