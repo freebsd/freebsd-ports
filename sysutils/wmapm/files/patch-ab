@@ -1,0 +1,19 @@
+--- wmapm.c.orig	Tue Jan 11 17:37:25 2000
++++ wmapm.c	Sun Nov 12 16:23:51 2000
+@@ -672,7 +672,7 @@
+ 	copyXPMArea(5, 106, 13, 11, 5, 48);
+ 	RedrawWindow();
+ #ifndef SunOS
+-  	system("apm -S");
++  	system("apm -Z");
+ #endif
+ 	usleep(2000000L);
+ 
+@@ -689,7 +689,7 @@
+ 	copyXPMArea(21, 106, 13, 11, 46, 48);
+ 	RedrawWindow();
+ #ifndef SunOS
+-  	system("apm -s");
++  	system("apm -z");
+ #endif
+ 	usleep(2000000L);
