@@ -1,6 +1,14 @@
---- xgal.sndsrv.freebsd.c.orig	Wed Mar 31 11:48:40 1999
-+++ xgal.sndsrv.freebsd.c	Wed Mar 31 11:48:40 1999
-@@ -19,13 +19,17 @@
+--- xgal.sndsrv.freebsd.c.orig	Sun Apr 12 08:03:21 1998
++++ xgal.sndsrv.freebsd.c	Sun Jul 21 19:10:18 2002
+@@ -12,20 +12,24 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #include <sys/time.h>
+ #include <signal.h>
+ #include <string.h>
  
  
  
