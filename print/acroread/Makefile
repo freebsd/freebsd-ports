@@ -4,13 +4,13 @@
 #
 # $FreeBSD$
 #
-.include <bsd.port.pre.mk>
 
 PORTNAME=	acroread
 PORTVERSION=	3.02
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/3.x/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/acrobatreader/unix/3.x/
+.include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
 DISTNAME=	ar302lin
 .elif ${ARCH} == "alpha"
