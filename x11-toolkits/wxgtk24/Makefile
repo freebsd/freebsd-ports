@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	wxGTK-2.1.0-b9
-PKGNAME=	wxgtk-2.1.0b9
+DISTNAME=	wxGTK-2.1.11
+PKGNAME=	wxgtk-2.1.11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
 		http://www.nectar.com/distfiles/
