@@ -9,6 +9,7 @@
 %%RUBY_SITELIBDIR%%/xmlrpc/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/xmlrpc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/multicall.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_test.rb
