@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_QT=		yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --x-includes="$(X11BASE)/include" \
 		--x-libraries="$(X11BASE)/lib" --disable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
