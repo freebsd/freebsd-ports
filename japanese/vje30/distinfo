@@ -1,2 +1,4 @@
-MD5 (vje-delta-3.0-AOUT.tgz) = 81634ed63ed22d2e3f450f0241ef74ff
-MD5 (vje-delta-3.0-ELF.tgz) = 04b59e749950032159d7357f7844fadb
+MD5 (vje30-AOUT/vje-delta-3.0-AOUT.tgz) = 81634ed63ed22d2e3f450f0241ef74ff
+MD5 (vje30-AOUT/update.tgz) = 18b4b622350103b21a1c3165d9a124c1
+MD5 (vje30-ELF/vje-delta-3.0-ELF.tgz) = 04b59e749950032159d7357f7844fadb
+MD5 (vje30-ELF/update.tgz) = 7e829a8d4df3a61228b8a55ed497ac68

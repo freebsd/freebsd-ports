@@ -1,4 +1,4 @@
-# New ports collection makefile for:	VJE-Delta 3.0
+# New ports collection makefile for:	VJE-Delta 3.0 + update
 # Date created:		29 January 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
@@ -8,9 +8,13 @@
 PORTNAME=	vje
 PORTVERSION=	3.0
 CATEGORIES=	japanese
-MASTER_SITES=	file:${MOUNT_PT}/freebsd/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	file:${MOUNT_PT}/freebsd/ \
+		ftp://ftp.vacs.co.jp/pub/unix/vje30/Update/FreeBSD-${DISTOBJFORMAT}/bin/
 DISTNAME=	${PORTNAME}-delta-${PORTVERSION}-${DISTOBJFORMAT}
+EXTRACT_SUFX=	.tgz
+DISTFILES=	${MAINDIST} \
+		${UPDATEDIST}
+DIST_SUBDIR=	vje30-${DISTOBJFORMAT}
 
 MAINTAINER=	knu@FreeBSD.org
 
@@ -36,6 +40,9 @@ DISTOBJFORMAT=	AOUT
 .else
 DISTOBJFORMAT=	ELF
 .endif
+
+MAINDIST=	${DISTNAME}${EXTRACT_SUFX}
+UPDATEDIST=	update${EXTRACT_SUFX}
 
 BINSTUFF=	vje	\
 		vjed	\
@@ -65,11 +72,12 @@ pre-fetch:
 	)
 
 post-extract:
-	@${RM} ${DISTDIR}/${DISTFILES}
+	@${RM} ${_DISTDIR}/${MAINDIST}
 
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
+	@${MV} ${WRKDIR}/vje ${WRKSRC}/vje30/bin/
 
 do-install:
 	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}
@@ -79,6 +87,9 @@ do-install:
 	@${CHMOD} a+x ${PREFIX}/etc/rc.d/vje.sh
 	@${CHMOD} a+w ${PREFIX}/vje30/dic/vjed95m.dic
 	@[ X${PREFIX} = X"/usr/local" ] || (${LN} -s ${PREFIX}/vje30 /usr/local/; ${LN} -s ${PREFIX}/etc/vje30 /usr/local/etc/)
+	@${CP} ${WRKDIR}/vjed.bin /tmp/
+	@${ECHO} '' | ${WRKDIR}/vjesetup
+	@${RM} /tmp/vjed.bin
 	@${CP} -Pp /etc/services /etc/services.bak
 	@${GREP} -qw '^vjed' /etc/services || ${ECHO} "vjed		11493/tcp		# VJE-Delta Server" >> /etc/services
 
