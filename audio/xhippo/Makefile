@@ -1,25 +1,33 @@
-# New ports collection makefile for:   xhippo
-# Version required:                    0.8
-# Date created:                                16 March 1999
-# Whom:                                        Rod Taylor <tr49986@rcc.on.ca>
+# New ports collection makefile for:	xhippo
+# Version required:			0.85
+# Date created:				16 March 1999
+# Whom:					Rod Taylor <tr49986@rcc.on.ca>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/16 06:43:57 flathill Exp $
 #
 
-DISTNAME=      xhippo-0.8
-CATEGORIES=    audio
-MASTER_SITES=  http://zenchaos.netpedia.net/software/
+DISTNAME=	xhippo-0.85
+CATEGORIES=	audio
+MASTER_SITES=	http://zenchaos.netpedia.net/software/
 
-MAINTAINER=    tr49986@rcc.on.ca
+MAINTAINER=	tr49986@rcc.on.ca
 
-RUN_DEPENDS=   mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=   gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-GNU_CONFIGURE= yes
-CONFIGURE_ENV= GTK_CONFIG="${X11BASE}/bin/gtk12-config"
-USE_XLIB=      yes
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_XLIB=	yes
 
 post-install:
+	@if [ ! -f ${PREFIX}/etc/xhippo.config ]; then \
+		${INSTALL_SCRIPT} ${WRKSRC}/xhippo.config \
+		    ${PREFIX}/etc ; \
+	fi
+	${INSTALL_SCRIPT} ${WRKSRC}/xhippo.config \
+		${PREFIX}/etc/xhippo.config.default
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

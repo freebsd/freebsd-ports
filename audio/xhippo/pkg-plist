@@ -1,1 +1,3 @@
 bin/xhippo
+etc/xhippo.config.default
+@exec if [ ! -f %D/etc/xhippo.config ] ; then cp -p %D/%F %B/xhippo.config; fi
