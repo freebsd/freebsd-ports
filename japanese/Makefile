@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.198 1999/05/10 17:10:22 flathill Exp $
+# $Id: Makefile,v 1.199 1999/05/11 01:48:04 taoka Exp $
 #
 
     SUBDIR += Canna
@@ -80,6 +80,7 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
+    SUBDIR += kdelocale
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+sj3
     SUBDIR += kinput2-canna+sj3+wnn4
