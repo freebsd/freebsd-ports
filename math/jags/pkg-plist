@@ -1,0 +1,362 @@
+bin/jags
+include/JAGS/Console.h
+include/JAGS/JAGSVersion.h
+include/JAGS/distributions/DistDiscrete.h
+include/JAGS/distributions/DistFinite.h
+include/JAGS/distributions/DistReal.h
+include/JAGS/distributions/DistTab.h
+include/JAGS/distributions/Distribution.h
+include/JAGS/functions/FuncTab.h
+include/JAGS/functions/Function.h
+include/JAGS/functions/InverseLinkFunc.h
+include/JAGS/functions/ScalarArgScalarFunc.h
+include/JAGS/functions/ScalarFunc.h
+include/JAGS/graph/AggNode.h
+include/JAGS/graph/ConstantNode.h
+include/JAGS/graph/DeterministicNode.h
+include/JAGS/graph/Graph.h
+include/JAGS/graph/GraphMarks.h
+include/JAGS/graph/LogicalNode.h
+include/JAGS/graph/MixtureNode.h
+include/JAGS/graph/Node.h
+include/JAGS/graph/NodeError.h
+include/JAGS/graph/OffsetNode.h
+include/JAGS/graph/StochasticNode.h
+include/JAGS/graph/SubSetIndex.h
+include/JAGS/graph/SubSetNode.h
+include/JAGS/matrix/lapack.h
+include/JAGS/matrix/matexp.h
+include/JAGS/matrix/matrix.h
+include/JAGS/model/Compiler.h
+include/JAGS/model/Counter.h
+include/JAGS/model/CounterTab.h
+include/JAGS/model/LogicalFactory.h
+include/JAGS/model/Model.h
+include/JAGS/model/NodeArray.h
+include/JAGS/model/ParseTree.h
+include/JAGS/model/SymTab.h
+include/JAGS/model/TraceMonitor.h
+include/JAGS/model/parser.h
+include/JAGS/model/parser_extra.h
+include/JAGS/sampler/ConjugateBeta.h
+include/JAGS/sampler/ConjugateDirichlet.h
+include/JAGS/sampler/ConjugateFactory.h
+include/JAGS/sampler/ConjugateGamma.h
+include/JAGS/sampler/ConjugateMNormal.h
+include/JAGS/sampler/ConjugateNormal.h
+include/JAGS/sampler/ConjugateSampler.h
+include/JAGS/sampler/ConjugateWishart.h
+include/JAGS/sampler/FiniteFactory.h
+include/JAGS/sampler/FiniteSampler.h
+include/JAGS/sampler/GibbsFactory.h
+include/JAGS/sampler/GibbsSampler.h
+include/JAGS/sampler/Sampler.h
+include/JAGS/sampler/SamplerFactory.h
+include/JAGS/sampler/SliceFactory.h
+include/JAGS/sampler/SliceSampler.h
+include/JAGS/sarray/Index.h
+include/JAGS/sarray/LeftRangeIterator.h
+include/JAGS/sarray/Range.h
+include/JAGS/sarray/RightRangeIterator.h
+include/JAGS/sarray/SArray.h
+lib/libjags.a
+lib/libjags.la
+%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/R/bench.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/R/check.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/bench-test3.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blocker-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blocker-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blocker.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blockert-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blockert.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blockht-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/blockht.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/notest2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/notest3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/blocker/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bones-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bones-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/bones.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/bones/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/dyes-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/dyes-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/dyes.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/dyes/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/BT-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/bench.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/epil-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/epil-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/epil2.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/epil3.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/make-BT.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/notest1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/epil/notest2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equiv-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equiv-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equiv.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/equivmiss-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/equiv/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/bench-test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/kidney-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/kidney-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/kidney.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/kidney.bug.new
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/kidney/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/data-transform.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk-data2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk-poisson.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk-s.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leuk.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr-s.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/leukfr.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/leuk/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/line-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/line-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/line.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/line/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/litters-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/litters-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/litters.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/litters/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat-data-transformed.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat2-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/lsat2.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/notest2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/lsat/transform-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/mice-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/mice-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/mice.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/mice/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/old/oxford.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/old/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/oxford.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/oxford/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/pump-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/pump-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/pump.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/pump/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/rats-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/rats-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/rats.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/ratsmiss-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/rats/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm-pareto.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/salm.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/salm/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test3.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test4.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/bench-test5.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seeds-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seeds-init.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seeds.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedspar.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedssig.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedsuni.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/seedszro.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test4.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol1/seeds/test5.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/air/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/air/air-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/air/air-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/air/air.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/air/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/alli-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/alli-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/alli.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/alli/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/asia-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/asia.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/asia2-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/asia2.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/asia/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/beetles-cloglog.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/beetles-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/beetles-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/beetles-logit.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/beetles-probit.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/beetles/test3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/biops-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/biops-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/biops.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/biops/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/birats-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/birats-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/birats1.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/birats2.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/birats3.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/birats4.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/test3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/birats/test4.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/cervix-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/cervix-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/cervix.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/cervix/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/dugongs/dugongs.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/dugongs/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/eyes-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/eyes-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/eyes.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/eyes.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/eyes2.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/notest1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/eyes/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/hearts/hearts-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/hearts/hearts-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/hearts/hearts.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/hearts/hearts.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/hearts/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/ice/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/ice/ice-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/ice/ice-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/ice/icear.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/ice/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/jaw-constant.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/jaw-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/jaw-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/jaw-linear.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/jaw-quadratic.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/test2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/jaw/test3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/mvotree-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/mvotree-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/mvotree.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/orange-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/orange-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/otree.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/otree.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/otree.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/orange/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/pigs-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/pigs-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/pigs.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/pigs/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/schools/schools-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/schools/schools-inits.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/schools/schools.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/schools/schools.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/schools/test.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/schools/test1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/ReadMe
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/notest1.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/notest2.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant-data.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant-inits1.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant-inits2.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant-inits3.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant-inits4.R
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/stagnant2.bug
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/test3.cmd
+%%PORTDOCS%%%%EXAMPLESDIR%%/vol2/stagnant/test4.cmd
+@dirrm include/JAGS/sarray
+@dirrm include/JAGS/sampler
+@dirrm include/JAGS/model
+@dirrm include/JAGS/matrix
+@dirrm include/JAGS/graph
+@dirrm include/JAGS/functions
+@dirrm include/JAGS/distributions
+@dirrm include/JAGS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/stagnant
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/schools
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/pigs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/orange
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/jaw
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/ice
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/hearts
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/eyes
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/dugongs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/cervix
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/birats
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/biops
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/beetles
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/asia
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/alli
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2/air
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/seeds
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/salm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/rats
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/pump
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/oxford/old
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/oxford
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/mice
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/lsat
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/litters
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/line
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/leuk
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/kidney
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/equiv
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/epil
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/dyes
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/bones
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1/blocker
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/vol1
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/R
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

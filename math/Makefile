@@ -72,6 +72,7 @@
     SUBDIR += it++
     SUBDIR += itl
     SUBDIR += jacal
+    SUBDIR += jags
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += kaskade
