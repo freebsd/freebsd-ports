@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+export J2SE_PREEMPTCLOSE=1
+export JAVA_VERSION="1.3+"
+
+cd "%%DATADIR%%" && "%%LOCALBASE%%/bin/java" -jar LimeWire.jar
