@@ -17,6 +17,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
 
+BROKEN=		developer is shifting from one gaming platform to\
+		another. development has been halted for a while
 NO_PACKAGE=	the software terms do not allow non-standard\
 		${PORTNAME} distributions
 
