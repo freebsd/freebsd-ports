@@ -8,36 +8,36 @@
 PORTNAME=	jdk-doc
 PORTVERSION=	1.1.8
 CATEGORIES=	java
+MASTER_SITES=	#
 DISTNAME=	jdk-1_1_8_003-doc
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ernst@jollem.com
 
+NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This software is under license and export control."
-IS_INTERACTIVE=	"Requires manual fetch"
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+IGNORE=	"You can not legally distribute packages"
+.endif
+
+PLIST_SUB+=	JDK_HOME=${JDK_HOME:S/^${PREFIX}\///}
+JDK_HOME?=	${PREFIX}/jdk${PORTVERSION}
+
 WRKSRC=		${WRKDIR}/jdk${PORTVERSION}
+
 NO_BUILD=	yes
-PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-do-fetch:
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	@${ECHO_MSG} ''
-	@${ECHO_MSG} 'You have to fetch the documentation from'
-	@${ECHO_MSG} '    http://java.sun.com/products/jdk/1.1/docs.html'
-	@${ECHO_MSG} ''
-	@${ECHO_MSG} 'Put ${DISTNAME}${EXTRACT_SUFX} in in ${DISTDIR}/ and run make again.'
-	@${ECHO_MSG} ''
-	@${ECHO_MSG} 'All this hassle is because of the license and export restrictions'
-	@${ECHO_MSG} 'as described in'
-	@${ECHO_MSG} '    http://java.sun.com/feedback/faq/downloading.html'
-	@${ECHO_MSG} ''
-	@${FALSE}
+.for file in ${DISTFILES}
+.if !exists(${DISTDIR}/${file})
+IGNORE=You must manually fetch ${file} from http://java.sun.com/jdk/1.1/docs.html, place it in ${DISTDIR} and then run make again.
 .endif
+.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${PORTVERSION}
 	${CP} -R ${WRKSRC}/docs ${PREFIX}/jdk${PORTVERSION}/
-	@${SED} 's+\$${PREFIX}+${PREFIX}+g' ${PKGMESSAGE}
+	@${SED} "/%%JDK_HOME%%/s//${JDK_HOME:S/\//\\\//g}/" < ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

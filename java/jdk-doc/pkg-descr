@@ -1,4 +1,7 @@
-Documentation for Sun's Java Developers Kit (JDK). For more information about
-the JDK for FreeBSD see http://www.freebsd.org/java/
+Documentation for Sun's Java Development Kit (JDK) version 1.1. It contains
+release information, API documentation, guides to new features and tool
+documentation.
+
+The documentation will be installed in ${PREFIX}/jdk1.1.8/docs/.
 
 WWW: http://www.freebsd.org/java/
