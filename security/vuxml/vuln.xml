@@ -32,6 +32,56 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="96df5fd0-8900-11d9-aa18-0001020eed82">
+    <topic>curl -- authentication buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.13.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Two iDEFENSE Security Advisories reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902601221592">
+	  <p>An exploitable stack-based buffer overflow condition
+	    exists when using NT Lan Manager (NTLM)
+	    authentication. The problem specifically exists within
+	    <code>Curl_input_ntlm()</code> defined in
+	    lib/http_ntlm.c.</p>
+	  <p>Successful exploitation allows remote attackers to
+	    execute arbitrary code under the privileges of the target
+	    user. Exploitation requires that an attacker either coerce
+	    or force a target to connect to a malicious server using
+	    NTLM authentication.</p>
+	</blockquote>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902850731457">
+	  <p>An exploitable stack-based buffer overflow condition
+	    exists when using Kerberos authentication. The problem
+	    specifically exists within the functions
+	    <code>Curl_krb_kauth()</code> and <code>krb4_auth()</code>
+	    defined in lib/krb4.c.</p>
+	  <p>Successful exploitation allows remote attackers to
+	    execute arbitrary code under the privileges of the target
+	    user. Exploitation requires that an attacker either coerce
+	    or force a target to connect to a malicious server using
+	    Kerberos authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12615</bid>
+      <bid>12616</bid>
+      <cvename>CAN-2005-0490</cvename>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E2462D@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902850731457</mlist>
+      <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503E2462E@idserv04.idef.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110902601221592</mlist>
+    </references>
+    <dates>
+      <discovery>2004-12-21</discovery>
+      <entry>2005-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2d248ad-88f6-11d9-aa18-0001020eed82">
     <topic>cyrus-imapd -- multiple buffer overflow vulnerabilities</topic>
     <affects>
