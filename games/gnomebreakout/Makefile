@@ -11,7 +11,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	http://linux.tucows.com/files/gnome/entertain/
 DISTNAME=	gnome-breakout-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore

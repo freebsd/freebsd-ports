@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	gLife-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
 		glade.4:${PORTSDIR}/devel/libglade
