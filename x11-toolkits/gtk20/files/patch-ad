@@ -1,56 +1,45 @@
---- gtk/gtkrc.c.orig	Fri Dec 18 10:47:54 1998
-+++ gtk/gtkrc.c	Fri Jan  1 02:30:53 1999
-@@ -229,13 +229,13 @@
+--- gtk/gtkrc.c.orig	Mon Jan  4 17:33:28 1999
++++ gtk/gtkrc.c	Tue Jan  5 07:41:04 1999
+@@ -223,9 +223,9 @@
+ 
    var = getenv("GTK_EXE_PREFIX");
    if (var)
-     {
--      path = g_malloc(strlen(var) + strlen("/lib/gtk/themes/engines") +1);
--      sprintf(path, "%s%s", var, "/lib/gtk/themes/engines");
-+      path = g_malloc(strlen(var) + strlen("/share/themes/engines") +1);
-+      sprintf(path, "%s%s", var, "/share/themes/engines");
-     }
+-    path = g_strdup_printf("%s%s", var, "/lib/gtk/themes/engines");
++    path = g_strdup_printf("%s%s", var, "/share/themes/engines");
    else
-     {
--      path = g_malloc(strlen(GTK_EXE_PREFIX) + strlen("/lib/gtk/themes/engines") +1);
--      sprintf(path, "%s%s", GTK_EXE_PREFIX, "/lib/gtk/themes/engines");
-+      path = g_malloc(strlen(GTK_EXE_PREFIX) + strlen("/share/themes/engines") +1);
-+      sprintf(path, "%s%s", GTK_EXE_PREFIX, "/share/themes/engines");
-     }
+-    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/lib/gtk/themes/engines");
++    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/share/themes/engines");
+ 
    return path;
  }
-@@ -249,13 +249,13 @@
+@@ -238,9 +238,9 @@
+ 
    var = getenv("GTK_DATA_PREFIX");
    if (var)
-     {
--      path = g_malloc(strlen(var) + strlen("/share/gtk/themes") +1);
--      sprintf(path, "%s%s", var, "/share/gtk/themes");
-+      path = g_malloc(strlen(var) + strlen("/share/themes") +1);
-+      sprintf(path, "%s%s", var, "/share/themes");
-     }
+-    path = g_strdup_printf("%s%s", var, "/share/gtk/themes");
++    path = g_strdup_printf("%s%s", var, "/share/themes");
    else
-     {
--      path = g_malloc(strlen(GTK_DATA_PREFIX) + strlen("/share/gtk/themes") +1);
--      sprintf(path, "%s%s", GTK_DATA_PREFIX, "/share/gtk/themes");
-+      path = g_malloc(strlen(GTK_DATA_PREFIX) + strlen("/share/themes") +1);
-+      sprintf(path, "%s%s", GTK_DATA_PREFIX, "/share/themes");
-     }
+-    path = g_strdup_printf("%s%s", GTK_DATA_PREFIX, "/share/gtk/themes");
++    path = g_strdup_printf("%s%s", GTK_DATA_PREFIX, "/share/themes");
    
    for (n = 0; pixmap_path[n]; n++) ;
-@@ -291,13 +291,13 @@
+   if (n >= GTK_RC_MAX_PIXMAP_PATHS - 1)
+@@ -274,15 +274,15 @@
+   
    var = getenv("GTK_EXE_PREFIX");
    if (var)
-     {
--      path = g_malloc(strlen(var) + strlen("/lib/gtk/themes/engines") +1);
--      sprintf(path, "%s%s", var, "/lib/gtk/themes/engines");
-+      path = g_malloc(strlen(var) + strlen("/share/themes/engines") +1);
-+      sprintf(path, "%s%s", var, "/share/themes/engines");
-     }
+-    path = g_strdup_printf("%s%s", var, "/lib/gtk/themes/engines");
++    path = g_strdup_printf("%s%s", var, "/share/themes/engines");
    else
-     {
--      path = g_malloc(strlen(GTK_EXE_PREFIX) + strlen("/lib/gtk/themes/engines") +1);
--      sprintf(path, "%s%s", GTK_EXE_PREFIX, "/lib/gtk/themes/engines");
-+      path = g_malloc(strlen(GTK_EXE_PREFIX) + strlen("/share/themes/engines") +1);
-+      sprintf(path, "%s%s", GTK_EXE_PREFIX, "/share/themes/engines");
-     }
+-    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/lib/gtk/themes/engines");
++    path = g_strdup_printf("%s%s", GTK_EXE_PREFIX, "/share/themes/engines");
    module_path[n++] = g_strdup(path);
+   g_free(path);
+ 
+   var = getenv("HOME");
+   if (var)
+-    path = g_strdup_printf("%s%s", var, ".gtk/lib/themes/engines");
++    path = g_strdup_printf("%s%s", var, ".gtk/themes/engines");
+   module_path[n++] = g_strdup(path);
+   module_path[n] = NULL;
    g_free(path);
