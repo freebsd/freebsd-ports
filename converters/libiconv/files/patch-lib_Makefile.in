@@ -1,10 +1,10 @@
---- lib/Makefile.in.orig	Sat Jun 15 14:42:20 2002
-+++ lib/Makefile.in	Sat Jun 15 14:42:27 2002
-@@ -39,7 +39,7 @@
+--- lib/Makefile.in.orig	Wed Jun 11 13:05:08 2003
++++ lib/Makefile.in	Wed Jun 11 13:05:15 2003
+@@ -44,7 +44,7 @@
  
  # Before making a release, change this according to the libtool documentation,
  # section "Library interface versions".
--LIBICONV_VERSION_INFO = 3:0:1
+-LIBICONV_VERSION_INFO = 4:0:2
 +LIBICONV_VERSION_INFO = 3
  
  # Needed by $(LIBTOOL).
