@@ -1,11 +1,11 @@
---- server/Makefile.in.orig	Wed Jul 24 16:56:33 2002
-+++ server/Makefile.in	Wed Jul 24 16:56:52 2002
-@@ -147,7 +147,7 @@
- bin_PROGRAMS = activation-client
- libexec_PROGRAMS = bonobo-activation-server
- 
--INCLUDES =  	-I$(top_srcdir) 				-I$(top_builddir) 				-I$(top_builddir)/bonobo-activation		-I$(top_srcdir)/bonobo-activation		-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers\"         -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" 	$(SERVER_CFLAGS)				-DSERVER_CONFDIR=\"$(sysconfdir)\"		-DG_DISABLE_DEPRECATED				$(NULL)
-+INCLUDES =  	-I$(top_srcdir) 				-I$(top_builddir) 				-I$(top_builddir)/bonobo-activation		-I$(top_srcdir)/bonobo-activation		-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers:${X11BASE}/libdata/bonobo/servers:${LOCALBASE}/libdata/bonobo/servers\"         -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" 	$(SERVER_CFLAGS)				-DSERVER_CONFDIR=\"$(sysconfdir)\"		-DG_DISABLE_DEPRECATED				$(NULL)
- 
- 
- bonobo_activation_server_SOURCES =  	activation-server-corba-extensions.c				activation-server-corba-extensions.h				activation-context-query.h					activation-context-query.c					activation-context-query-lexer.c				activation-context-query-parser.c				activation-context-query-parser.h				activation-context-corba.c					object-directory-corba.c					object-directory-load.c						object-directory-activate.c					object-directory-config-file.c					object-directory-config-file.h					activation-server-main.c					server.h
+--- server/Makefile.in.orig	Tue Oct 29 19:25:02 2002
++++ server/Makefile.in	Tue Oct 29 19:27:21 2002
+@@ -154,7 +154,7 @@
+ 	-I$(top_builddir) 			\
+ 	-I$(top_builddir)/bonobo-activation	\
+ 	-I$(top_srcdir)/bonobo-activation	\
+-	-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers\" \
++	-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers:${X11BASE}/libdata/bonobo/servers:${LOCALBASE}/libdata/bonobo/servers\" \
+         -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" \
+ 	$(SERVER_CFLAGS)			\
+ 	-DSERVER_CONFDIR=\"$(sysconfdir)\"	\
