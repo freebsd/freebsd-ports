@@ -56,6 +56,7 @@
     SUBDIR += btqueue
     SUBDIR += c3270
     SUBDIR += cacti
+    SUBDIR += cactid
     SUBDIR += callgen
     SUBDIR += cap
     SUBDIR += ccmsn
