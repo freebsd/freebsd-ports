@@ -7,6 +7,7 @@ System/Library/Bundles/libgnustep-%%BACK%%.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/gnustep/gsc/gscolors.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/x11/XGServer.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/x11/XGServerWindow.h
+%%USE_ART%%%%SYSTEMLIBRARY%%/Headers/gnustep/art/ARTContext.h
 %%USE_XDPS%%%%SYSTEMLIBRARY%%/Headers/gnustep/xdps/NSDPSContext.h
 %%USE_XLIB%%%%SYSTEMLIBRARY%%/Headers/gnustep/xlib/XGContext.h
 %%USE_XLIB%%%%SYSTEMLIBRARY%%/Headers/gnustep/xlib/XGGState.h
@@ -15,6 +16,7 @@ System/Library/Bundles/libgnustep-%%BACK%%.bundle/stamp.make
 %%USE_XLIB%%System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/font_cacher
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gpbs
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/x11
+%%USE_ART%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/art
 %%USE_XDPS%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/xdps
 %%USE_XLIB%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/xlib
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/gsc
