@@ -4250,6 +4250,7 @@ p5-AppConfig	ports/devel/p5-AppConfig
 p5-Archie	ports/net/p5-Archie
 p5-Archive-Tar	ports/archivers/p5-Archive-Tar
 p5-Archive-Zip	ports/archivers/p5-Archive-Zip
+p5-Array-Compare	ports/misc/p5-Array-Compare
 p5-Array-PrintCols	ports/misc/p5-Array-PrintCols
 p5-AsciiDB-TagFile	ports/databases/p5-AsciiDB-TagFile
 p5-Astro-MoonPhase	ports/astro/p5-Astro-MoonPhase
