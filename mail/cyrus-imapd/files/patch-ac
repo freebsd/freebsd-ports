@@ -1,8 +1,17 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Thu Dec 21 06:39:31 2000
-+++ configure	Thu Jan  4 23:22:47 2001
-@@ -4178,7 +4178,7 @@
+--- configure.orig	Mon Mar  8 02:25:08 2004
++++ configure	Mon Mar  8 02:26:39 2004
+@@ -2286,6 +2286,8 @@
+ else
+     EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
+     PERL_SUBDIRS="imap"
++    eval `${PERL} -V:cccdlflags`
++    PERL_CCCDLFLAGS="$cccdlflags"
+ fi
+ 
+ if test "$sievedir" != "no"; then
+@@ -4187,7 +4189,7 @@
  	cmu_saved_LIBS=$LIBS
  	if test -d ${with_sasl}; then
            ac_cv_sasl_where_lib=${with_sasl}/lib
@@ -11,3 +20,11 @@ diff -u configure.orig configure
  
  	  SASLFLAGS="-I$ac_cv_sasl_where_inc"
  	  LIB_SASL="-L$ac_cv_sasl_where_lib"
+@@ -5300,6 +5302,7 @@
+ s%@LEX@%$LEX%g
+ s%@LEXLIB@%$LEXLIB%g
+ s%@PERL@%$PERL%g
++s%@PERL_CCCDLFLAGS@%$PERL_CCCDLFLAGS%g
+ s%@WITH_NONBLOCK@%$WITH_NONBLOCK%g
+ s%@WITH_GMTOFF@%$WITH_GMTOFF%g
+ s%@WITH_MAP@%$WITH_MAP%g

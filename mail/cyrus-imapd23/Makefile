@@ -105,7 +105,8 @@ CONFIGURE_ARGS+=--enable-netscapehack
 
 .if defined(WITH_DRAC)
 EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aclocal.m4 \
+		${FILESDIR}/extra-patch-configure.in
 USE_AUTOHEADER=	YES
 USE_AUTOCONF=	YES
 WANT_AUTOCONF_VER=257

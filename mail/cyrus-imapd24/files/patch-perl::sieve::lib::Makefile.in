@@ -1,0 +1,13 @@
+Index: perl/sieve/lib/Makefile.in
+diff -u perl/sieve/lib/Makefile.in.orig perl/sieve/lib/Makefile.in
+--- perl/sieve/lib/Makefile.in.orig	Sun Jan  4 00:16:45 2004
++++ perl/sieve/lib/Makefile.in	Sun Mar  7 23:42:37 2004
+@@ -55,7 +55,7 @@
+ IMAP_LIBS = @IMAP_LIBS@
+ DEPLIBS = ../../../lib/libcyrus.a ../../../lib/libcyrus_min.a @DEPLIBS@
+ 
+-CFLAGS = -g
++CFLAGS = -g @PERL_CCCDLFLAGS@
+ LDFLAGS = -g @LDFLAGS@
+ 
+ SHELL = /bin/sh

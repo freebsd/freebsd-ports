@@ -1,8 +1,8 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Tue Feb  4 16:05:15 2003
-+++ configure	Tue Feb  4 16:08:25 2003
-@@ -2760,7 +2760,7 @@
+--- configure.orig	Mon Mar  8 01:36:22 2004
++++ configure	Mon Mar  8 01:44:26 2004
+@@ -3023,7 +3023,7 @@
  	    BDB_LIBADD=""
  	fi
  
@@ -10,13 +10,30 @@ diff -u configure.orig configure
 +        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:2767: checking for db_create in -l$dbname" >&5
-@@ -6757,7 +6757,7 @@
+ echo "configure:3030: checking for db_create in -l$dbname" >&5
+@@ -6950,6 +6950,8 @@
+     EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
+     PERL_SUBDIRS="imap"
+     PERL="${with_perl}"
++    eval `${PERL} -V:cccdlflags`
++    PERL_CCCDLFLAGS="$cccdlflags"
+ fi
+ 
+ if test "$sievedir" != "no"; then
+@@ -7305,7 +7307,7 @@
  #define HAVE_UCDSNMP 1
  EOF
  
 -    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
 +    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
      echo $ac_n "checking for rpmdbOpen in -lrpm""... $ac_c" 1>&6
- echo "configure:6763: checking for rpmdbOpen in -lrpm" >&5
+ echo "configure:7311: checking for rpmdbOpen in -lrpm" >&5
  ac_lib_var=`echo rpm'_'rpmdbOpen | sed 'y%./+-%__p_%'`
+@@ -7579,6 +7581,7 @@
+ s%@LIB_SASL@%$LIB_SASL%g
+ s%@SASLFLAGS@%$SASLFLAGS%g
+ s%@PERL@%$PERL%g
++s%@PERL_CCCDLFLAGS@%$PERL_CCCDLFLAGS%g
+ s%@MD5OBJ@%$MD5OBJ%g
+ s%@SNMP_SUBDIRS@%$SNMP_SUBDIRS%g
+ s%@LIB_WRAP@%$LIB_WRAP%g
