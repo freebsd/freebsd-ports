@@ -9312,6 +9312,7 @@ simgear		ports/devel/simgear
 simicq		ports/net/simicq
 simplemod	ports/audio/simplemod
 simplicity	ports/java/simplicity
+simplog		ports/www/simplog
 simulavr	ports/devel/simulavr
 since		ports/misc/since
 sing		ports/net-mgmt/sing
