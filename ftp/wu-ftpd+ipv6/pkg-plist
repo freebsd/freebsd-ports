@@ -1,8 +1,10 @@
+bin/ftpckconfig
+bin/ftpcount
+bin/ftpshut
+bin/ftpwho
 etc/ftpaccess.example
 etc/ftpconversions.example
+etc/ftpgroups.example
+etc/ftphosts.example
 etc/ftpusers.example
 libexec/ftpd
-bin/ftpshut
-bin/ftpcount
-bin/ftpwho
-bin/ftpckconfig
