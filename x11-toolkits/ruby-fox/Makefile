@@ -21,9 +21,7 @@ LIB_DEPENDS=	FOX.1:${PORTSDIR}/x11-toolkits/fox \
 		png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-BROKEN=		"Out of sync with FOX"
-
-FOX_VERSION=	0.99.173
+FOX_VERSION=	0.99.174
 #FXRUBY_REVISION=	
 .if defined(FXRUBY_REVISION) && !empty(FXRUBY_REVISION)
 FXRUBY_PORTVERSION=	${FOX_VERSION}.${FXRUBY_REVISION}

@@ -1,4 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/fox.so
+%%RUBY_SITELIBDIR%%/fox/aliases.rb
+%%RUBY_SITELIBDIR%%/fox/iterators.rb
+%%RUBY_SITELIBDIR%%/fox/keys.rb
 %%RUBY_SITELIBDIR%%/fox/responder.rb
 %%RUBY_SITELIBDIR%%/fox/undolist.rb
 @dirrm %%RUBY_SITELIBDIR%%/fox
@@ -19,6 +22,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/hello2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/image.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/imageviewer.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/inputs.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/mditest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/scribble.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/shutter.rb
@@ -28,6 +32,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/textedit/commands.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/textedit/helpwindow.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/textedit/prefdialog.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/textedit/textedit.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/icons/backview.gif
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/icons/big_gif.gif
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fox/icons/bigfolder.gif
@@ -92,6 +97,7 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/glviewer.gif
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/goals.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/imageviewer.png
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/library.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/opengl.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/screenshots.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fox/doc/todo.html
