@@ -14,7 +14,7 @@ Your output will look similar to the following:
 
 <CREATIVE CD5233E-N 0.20>          at scbus1 target 0 lun 0 (cd0,pass0)
 
-The devices in parantheses at the end are important.  You must make sure
+The devices in parenthesis at the end are important.  You must make sure
 the /dev entries for those devices are writable by the users that will
 be using nautilus-cd-burner.  In addition to those devices, /dev/xpt*
 must also be writable to your nautilus-cd-burner users.
