@@ -25,9 +25,9 @@ lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Request.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Request.pod
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Tests.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Tools.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Utils.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/makeconfig.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component
