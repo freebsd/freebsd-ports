@@ -7,16 +7,14 @@
 #
 
 PORTNAME=	isc-dhcp3
-PORTVERSION=	3.0.b1.14
+PORTVERSION=	3.0.b1.17
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
-DISTNAME=	dhcp-3.0b1pl14
+DISTNAME=	dhcp-3.0b1pl17
 
 MAINTAINER=	obrien@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/bind/res_update.h:${PORTSDIR}/net/bind8
-
-FORBIDDEN=	security hole found
 
 Y2K=		http://www.isc.org/y2k.html
 
