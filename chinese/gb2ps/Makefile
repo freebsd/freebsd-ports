@@ -34,7 +34,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gb2ps
-	${INSTALL_MAN} ${WRKSRC}/gb2ps.help ${PREFIX}/share/doc/gb2ps
+	${INSTALL_DATA} ${WRKSRC}/gb2ps.help ${PREFIX}/share/doc/gb2ps
 .endif
 
 .include <bsd.port.mk>
