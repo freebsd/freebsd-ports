@@ -1,0 +1,23 @@
+This is a Ruby library for mathematical (algebraic) computations.  Our
+purpose is to express mathematical objects naturally in Ruby.  Though
+it does not operate fast, we can see the algorithm of the mathematical
+processing not in a black box but in scripts.
+
+Things Ruby/Algebra offers include the following:
+
+- One-variate polynomial
+	o Fundamental operations (addition, multiplication,
+	  quotient/remainder, ...)
+	o Factorization
+
+- Multi-variate polynomial
+	o Fundamental operations (addition, multiplication, ...)
+	o Creating Groebner-basis, quotient/remainder by Groebner-basis.
+
+- Algebraic systems
+	o Creating quotient fields
+	o Creating residue class fields
+	o Operating matrices
+
+Author:	Shin-ichiro HARA <sinara@blade.nagaokaut.ac.jp>
+WWW:	http://blade.nagaokaut.ac.jp/~sinara/ruby/math/
