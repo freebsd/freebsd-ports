@@ -3,10 +3,10 @@
 # Date created:         27  Dec 1996
 # Whom:                 proff@iq.org
 #
-# $Id: Makefile,v 1.3 1997/02/19 04:58:23 asami Exp $
+# $Id: Makefile,v 1.4 1998/12/28 21:44:40 dirk Exp $
 #
 
-DISTNAME=       sced-1.01
+DISTNAME=       sced-1.02
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cs.berkeley.edu/~schenney/sced/src/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
