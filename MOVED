@@ -1045,3 +1045,5 @@ games/neverputt|games/neverball|2004-04-19|merged into neverball
 emulators/linux-ePSXe||2004-04-19|removed port with broken dependencies
 net/papaya||2004-04-19|removed broken port
 www/scoop||2004-04-19|removed port with broken dependencies
+math/R-letter|math/R-project|2004-04-20|renamed
+math/R-a4|math/R-project|2004-04-20|slave port removed
