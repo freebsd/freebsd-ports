@@ -1,0 +1,33 @@
+bin/aft
+share/aft/AFT.pm
+share/aft/aft-dbarticle.pm
+share/aft/aft-fhtml.pm
+share/aft/aft-html.pm
+share/aft/aft-htmlc.pm
+share/aft/aft-lout.pm
+share/aft/aft-rtf.pm
+share/aft/aft-tex.pm
+share/aft/aft-xhtml.pm
+share/aft/aft.pl
+share/aft/compile.pl
+share/aft/postrtf.pl
+%%DOCSDIR%%/ChangeLog.aft
+%%DOCSDIR%%/aft2rtf-doc.rtf
+%%DOCSDIR%%/aft-refman.html
+%%DOCSDIR%%/aft.gif
+%%DOCSDIR%%/aft.eps
+%%DOCSDIR%%/backends/aft-dbarticle.dat
+%%DOCSDIR%%/backends/aft-fhtml.dat
+%%DOCSDIR%%/backends/aft-html.dat
+%%DOCSDIR%%/backends/aft-htmlc.dat
+%%DOCSDIR%%/backends/aft-lout.dat
+%%DOCSDIR%%/backends/aft-rtf.dat
+%%DOCSDIR%%/backends/aft-tex.dat
+%%DOCSDIR%%/backends/aft-xhtml.dat
+%%DOCSDIR%%/examples/aft.aft
+%%DOCSDIR%%/examples/aft-refman.aft
+%%DOCSDIR%%/examples/aft2rtf-doc.aft
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%/backends
+@dirrm %%DOCSDIR%%
+@dirrm share/aft

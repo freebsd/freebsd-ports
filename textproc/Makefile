@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += aft
     SUBDIR += agrep
     SUBDIR += align
     SUBDIR += antiword
