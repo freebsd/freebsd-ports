@@ -1,4 +1,3 @@
-
 PostgreSQL is a robust, next-generation, Object-Relational DBMS (ORDBMS), 
 derived from the Berkeley Postgres database management system.  While 
 PostgreSQL retains the powerful object-relational data model, rich data types 
@@ -16,12 +15,10 @@ memory, PostgreSQL was born.
 
 PostgreSQL development is presently being performed by a team of Internet 
 developers who are now responsible for all current and future development. The 
-development team coordinator is Marc G. Fournier (scrappy@PostgreSQL.Org). 
+development team coordinator is Marc G. Fournier (scrappy@PostgreSQL.ORG). 
 Support is available from the PostgreSQL developer/user community through the 
-support mailing list (questions@PostgreSQL.Org).
+support mailing list (questions@PostgreSQL.ORG).
 
 PostgreSQL is free and the complete source is available.
 
-More information and documentation can be found on the PostgreSQL website,
-at: http://www.PostgreSQL.Org
-
+More information and documentation, visit:	http://www.PostgreSQL.ORG/
