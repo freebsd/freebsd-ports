@@ -8,7 +8,8 @@
 PORTNAME=	faad2
 PORTVERSION=	1.1
 CATEGORIES=	audio
-MASTER_SITES=	http://faac.sourceforge.net/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	faac
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	dyeske@yahoo.com
