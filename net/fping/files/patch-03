@@ -1,11 +1,31 @@
---- fping.man.orig	Tue Mar 25 01:24:16 1997
-+++ fping.man	Tue Mar 25 01:25:33 1997
+--- fping.man.orig	Sat Jan 22 15:46:58 2000
++++ fping.man	Sat Jan 22 15:47:38 2000
 @@ -1,4 +1,4 @@
 -.TH fping l
 +.TH fping 8
  .SH NAME
  fping \- send ICMP ECHO_REQUEST packets to network hosts
  .SH SYNOPSIS
+@@ -45,7 +45,7 @@
+ .IP \fB-f\fR 5
+ Read list of system from a file.
+ .IP \fB-i\fIn\fR 5
+-The minimum amount of time (in milliseconds) between sending a ping packet to any host (default is 25).
++The minimum amount of time (in microseconds) between sending a ping packet to any host (default is 25).
+ .IP \fB-q\fR 5
+ Quiet. Don't show per host results, just set final exit status.
+ .IP \fB-r\fIn\fR 5
+@@ -54,8 +54,8 @@
+ .IP \fB-s\fR 5
+ Dump final statistics.
+ .IP \fB-t\fIn\fR 5
+-Individual host timeout in milliseconds (default 2500). This is the 
+-minimum number of milliseconds between ping packets directed towards a given
++Individual host timeout in microseconds (default 2500). This is the 
++minimum number of microseconds between ping packets directed towards a given
+ host.
+ .IP \fB-u\fR 5
+ Show systems that are unreachable.
 @@ -70,12 +70,12 @@
  example none the less. 
  .nf
