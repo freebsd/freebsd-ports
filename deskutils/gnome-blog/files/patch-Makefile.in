@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat May 15 14:18:59 2004
++++ Makefile.in	Sat May 15 14:20:07 2004
+@@ -794,6 +794,8 @@
+ @INTLTOOL_DESKTOP_RULE@
+ 
+ install-data-local:
++	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
++			    gconftool-2 --makefile-install-rule $(schema_DATA)
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
