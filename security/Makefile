@@ -44,7 +44,6 @@
     SUBDIR += libmcrypt
     SUBDIR += libmcrypt-nm
     SUBDIR += libparanoia
-    SUBDIR += librsaintl
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb
