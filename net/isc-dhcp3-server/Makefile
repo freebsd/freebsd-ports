@@ -3,7 +3,7 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.16 1997/12/09 03:40:33 jseger Exp $
+# $Id: Makefile,v 1.17 1998/05/23 20:03:52 jseger Exp $
 #
 
 DISTNAME=       dhcp-2.0b1pl1
@@ -24,5 +24,10 @@ _MANPAGES+=	${CAT8:S%^%${MANPREFIX}/man/cat8/%}
 
 post-install:
 	${TOUCH} /var/db/dhcpd.leases
+.for file in dhclient dhcpd dhcrelay
+	if [ -f ${PREFIX}/sbin/${file} ]; then \
+		strip ${PREFIX}/sbin/${file}; \
+	fi
+.endfor
 
 .include <bsd.port.mk>
