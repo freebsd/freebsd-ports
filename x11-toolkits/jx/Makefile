@@ -112,7 +112,7 @@ makemake-extract-wrapper:
 
 # have all relevant places point to location of the makemake wrapper
 makemake-patch-path:
-	@${FIND} ${WRKSRC}/libjx ${WRKSRC}/libjcore
+	@${FIND} ${WRKSRC}/libjx ${WRKSRC}/libjcore \
 		-name "Make*" \
 		-exec ${REINPLACE_CMD} -E \
 		-e 's|makemake;|${WRKDIR}/makemake;|' \
