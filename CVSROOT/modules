@@ -8823,6 +8823,7 @@ xchain		ports/games/xchain
 xchat		ports/irc/xchat
 xchat2		ports/irc/xchat2
 xcheckers	ports/games/xcheckers
+xchm		ports/deskutils/xchm
 xchomp		ports/games/xchomp
 xcircuit	ports/cad/xcircuit
 xclasses	ports/x11-toolkits/xclasses
