@@ -4,5 +4,6 @@ etc/rc.d/sentinel.sh-dist
 @exec mkdir /var/sentinel
 @exec chown smmsp:smmsp /var/sentinel
 @unexec rm -rf /var/sentinel
-%%PORTDOCS%%share/doc/sentinel/README
-%%PORTDOCS%%@dirrm share/doc/sentinel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
