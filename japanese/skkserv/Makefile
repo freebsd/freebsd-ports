@@ -8,7 +8,7 @@
 PORTNAME=	skkserv
 PORTVERSION=	9.6
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/${PORTVERSION}/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	skk${PORTVERSION}
 
 MAINTAINER=	matusita@jp.FreeBSD.org
@@ -22,7 +22,7 @@ SKK_MASTERDIR=	${.CURDIR}/../../japanese/skk-jisyo
 WRKSRC=		${WRKDIRPREFIX}${SKK_MASTERDIR}/work/skk-${PORTVERSION}
 MAKE_ARGS=	SUBDIRS='skkserv'
 
-STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/skkserv.sh
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/skkserv.sh
 
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
