@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		enscribe
-PORTVERSION=		0.0.3
+PORTVERSION=		0.0.4
 CATEGORIES=		audio graphics
-MASTER_SITES=		http://jbd.zayda.net/enscribe/
+MASTER_SITES=		http://www.coppercloudmusic.com/enscribe/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		jylefort@brutele.be
