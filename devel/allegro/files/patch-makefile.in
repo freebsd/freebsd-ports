@@ -1,14 +1,5 @@
 --- makefile.in.orig	Wed Jan 24 00:15:20 2001
 +++ makefile.in	Sat Dec 15 13:24:16 2001
-@@ -29,7 +29,7 @@
- ACLOCAL = aclocal
- ACLOCAL_M4 = $(srcdir)/aclocal.m4
- AUTOCONF = autoconf
--AUTOHEADER = autoheader
-+AUTOHEADER = autoheader213
- 
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
 @@ -279,7 +279,7 @@
  	done
  	$(mkinstalldirs) $(bindir)
