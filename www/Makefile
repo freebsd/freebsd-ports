@@ -62,6 +62,7 @@
     SUBDIR += httptunnel
     SUBDIR += hypermail
     SUBDIR += indexme
+    SUBDIR += jakarta-tomcat
     SUBDIR += jesred
     SUBDIR += jetty
     SUBDIR += junkbuster
