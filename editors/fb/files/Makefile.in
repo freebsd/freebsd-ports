@@ -1,0 +1,8 @@
+PROG=fb
+
+CFLAGS+=-Dstrtoull=strtoul
+
+BINDIR=UL/bin
+MANDIR=UL/man/man
+
+.include <bsd.prog.mk>
