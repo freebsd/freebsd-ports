@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-client
 
 COMMENT=	Multithreaded SQL database (client)
 
-MASTERDIR=	${.CURDIR}/../mysql41-server
+MASTERDIR=	${.CURDIR}/../mysql50-server
 
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
