@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	slurpie
-PORTVERSION= 	2.0b
+PORTVERSION=	2.0b
 CATEGORIES=	security
 MASTER_SITES=	http://www.jps.net/coati/archives/
 DISTNAME=	${PORTNAME}

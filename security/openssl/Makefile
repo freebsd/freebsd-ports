@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION= 	0.9.5a
+PORTVERSION=	0.9.5a
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \

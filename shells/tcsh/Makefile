@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	tcsh
-PORTVERSION= 	6.09.00
+PORTVERSION=	6.09.00
 CATEGORIES=	shells
-MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 DISTNAME=	tcsh-6.09
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500001
-FORBIDDEN=      "tcsh is already in the base system"
+FORBIDDEN=	"tcsh is already in the base system"
 .endif
 
 Y2K=		ftp://ftp.astron.com/pub/tcsh/Y2K
 
-GNU_CONFIGURE=  yes
-WRKSRC=         ${WRKDIR}/${PKGNAME}
-ALL_TARGET=     all catalogs
-INSTALL_TARGET= install install.man
+GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PKGNAME}
+ALL_TARGET=	all catalogs
+INSTALL_TARGET=	install install.man
 MAN1=		tcsh.1
 
 post-install:

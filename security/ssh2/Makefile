@@ -8,7 +8,7 @@
 # WITH_SSH1, WITH_TCPWRAP
 
 PORTNAME=	ssh2
-PORTVERSION= 	2.0.13
+PORTVERSION=	2.0.13
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
@@ -25,7 +25,7 @@ RESTRICTED=	"Crypto; export-controlled"
 
 GNU_CONFIGURE=	YES
 
-CONFIGURE_ARGS= --with-etcdir=${PREFIX}/etc --enable-debug
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --enable-debug
 #Uncomment if all your users are in their own group and their homedir
 #is writeable by that group.  Beware the security implications!
 #CONFIGURE_ARGS+= --enable-group-writeability
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+= --with-tis
 CONFIGURE_ARGS+= --with-libwrap
 .elif defined(WITH_TCPWRAP)
 CONFIGURE_ARGS+= --with-libwrap="-L ${PREFIX}/lib -lwrap"
-LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
+LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
 MAN1=	ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 \

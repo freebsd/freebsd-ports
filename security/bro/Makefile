@@ -25,7 +25,7 @@ IGNORE=is still in alpha test.  Please contact Vern Paxson <vern@ee.lbl.gov> to 
 
 IS_INTERACTIVE=	"manual fetch"
 WRKSRC=		${WRKDIR}/bro-pub-0.5a1
-CONFIGURE_ARGS= --libdir=${PREFIX}/share
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 GNU_CONFIGURE=	yes
 
 post-patch:

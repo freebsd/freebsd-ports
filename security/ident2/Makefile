@@ -12,9 +12,9 @@ MASTER_SITES=	http://www.nyct.net/~defile/programs/ident2/ \
 		http://www.oscentral.org/files/software/
 DISTNAME=	ident2-v1.0_FINAL
 
-MAINTAINER=    rod@zort.on.ca
+MAINTAINER=	rod@zort.on.ca
 
-GNU_CONFIGURE= yes
-MAN8=          ident2.8
+GNU_CONFIGURE=	yes
+MAN8=		ident2.8
 
 .include <bsd.port.mk>

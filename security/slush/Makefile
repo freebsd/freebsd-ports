@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slush
-PORTVERSION= 	0.1.1
+PORTVERSION=	0.1.1
 CATEGORIES=	security net
 MASTER_SITES=	http://violet.ibs.com.au/slush/files/ \
 		ftp://www.dis.org/pub/Security/

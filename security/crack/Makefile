@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	crack
-PORTVERSION= 	5.0
+PORTVERSION=	5.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \

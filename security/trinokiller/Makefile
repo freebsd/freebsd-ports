@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	trinokiller
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.afro-productions.com/
 DISTNAME=	trinokiller
 EXTRACT_SUFX=	.c
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	find_ddos
-PORTVERSION= 	3.1
+PORTVERSION=	3.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.fbi.gov/nipc/
 DISTNAME=	find_ddos_v31_linux

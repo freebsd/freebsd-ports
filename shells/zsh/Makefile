@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION= 	3.0.7
+PORTVERSION=	3.0.7
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \

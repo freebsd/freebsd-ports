@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fragrouter
-PORTVERSION= 	1.6
+PORTVERSION=	1.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.anzen.com/research/nidsbench/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsaref
-PORTVERSION= 	2.0
+PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/crypto/ \
 		ftp://ftp.kddlabs.co.jp/.7/inet/caida/bmwt/ \

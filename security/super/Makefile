@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	super
-PORTVERSION= 	3.12.1
+PORTVERSION=	3.12.1
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://phobos.caltech.edu/users/will/  \
 		ftp://ftp.ucolick.org/pub/users/will/  \

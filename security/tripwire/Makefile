@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tripwire
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	security net
-MASTER_SITES=   ftp://coast.cs.purdue.edu/pub/COAST/Tripwire/
+MASTER_SITES=	ftp://coast.cs.purdue.edu/pub/COAST/Tripwire/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jgreco@ns.sol.net

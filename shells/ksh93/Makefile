@@ -8,7 +8,7 @@
 
 PORTNAME=		ksh
 PORTVERSION=		19931228
-CATEGORIES=     	shells
+CATEGORIES=		shells
 # Users must register with AT&T before downloading tarball.
 #MASTER_SITES=		http://www.research.att.com/sw/tools/reuse/
 DISTNAME=		ast-base-98.bsd.i386

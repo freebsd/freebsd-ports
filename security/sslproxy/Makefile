@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sslproxy
-PORTVERSION= 	20000129
+PORTVERSION=	20000129
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/sslproxy/
 DISTNAME=	sslproxy.2000_Jan_29

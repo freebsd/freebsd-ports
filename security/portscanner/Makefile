@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portscanner
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	security net
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
 		http://people.FreeBSD.org/~billf/

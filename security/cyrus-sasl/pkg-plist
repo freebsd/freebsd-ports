@@ -42,4 +42,4 @@ sbin/pwcheck
 @exec chmod go= /var/pwcheck
 @comment This file gets create by the pwcheck program
 @unexec rm -f /var/pwcheck/pwcheck
-@unexec rmdir /var/pwcheck
+@dirrm /var/pwcheck

@@ -12,12 +12,11 @@ MASTER_SITES=	http://www.mu.org/~dave/
 
 MAINTAINER=	dave@mu.org
 
-GNU_CONFIGURE=  yes
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	gnupg-1.0.1:${PORTSDIR}/security/gnupg
-MAN1=           seahorse.1
 
-WRKSRC=		${WRKDIR}/seahorse-0.3.6
+GNU_CONFIGURE=	yes
+MAN1=		seahorse.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/seahorse ${PREFIX}/bin/

@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sniff
-PORTVERSION= 	1.0
-CATEGORIES=	security
-MASTER_SITES=   http://people.FreeBSD.org/~fenner/distfiles/
+PORTNAME=		sniff
+PORTVERSION=		1.0
+CATEGORIES=		security
+MASTER_SITES=		http://people.FreeBSD.org/~fenner/distfiles/
 
-MAINTAINER=	veraldi@cs.unibo.it
+MAINTAINER=		veraldi@cs.unibo.it
 
-MAN1=		sniff.1
-HAS_CONFIGURE=          yes
-CONFIGURE_SCRIPT=       configure
+MAN1=			sniff.1
+HAS_CONFIGURE=		yes
+CONFIGURE_SCRIPT=	configure
 
 .include <bsd.port.mk>
