@@ -1,7 +1,13 @@
-*** scripts/makefile.std.orig	Wed Apr  1 04:49:34 1998
---- scripts/makefile.std	Fri Jul 10 03:34:22 1998
+*** scripts/makefile.std.orig	Fri Jul 31 17:15:22 1998
+--- scripts/makefile.std	Tue Jan 19 15:53:48 1999
 ***************
-*** 5,33 ****
+*** 2,19 ****
+  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
+  # For conditions of distribution and use, see copyright notice in png.h
+  
+  # where make install puts libpng.a and png.h
+! prefix=/usr/local
+  
   # Where the zlib library and include files are located
   #ZLIBLIB=/usr/local/lib
   #ZLIBINC=/usr/local/include
@@ -14,36 +20,9 @@
   
   #RANLIB=echo
   RANLIB=ranlib
-  
-  # where make install puts libpng.a and png.h
-! prefix=/usr/local
-  
-  OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
-  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
-  	pngwtran.o pngmem.o pngerror.o pngpread.o
-  
-! all: libpng.a pngtest
-  
-  libpng.a: $(OBJS)
-  	ar rc $@  $(OBJS)
-  	$(RANLIB) $@
-  
-  pngtest: pngtest.o libpng.a
-  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
-  
---- 5,55 ----
-  # Where the zlib library and include files are located
-  #ZLIBLIB=/usr/local/lib
-  #ZLIBINC=/usr/local/include
-! #ZLIBLIB=../zlib
-! #ZLIBINC=../zlib
-  
-! #CC=cc
-! CFLAGS+=-I.
-! LDFLAGS+=-L. -lpng -lz -lm -static
-  
-  #RANLIB=echo
-  RANLIB=ranlib
+--- 2,29 ----
+  # Copyright (C) 1995 Guy Eric Schalnat, Group 42, Inc.
+  # For conditions of distribution and use, see copyright notice in png.h
   
 + # read libpng.txt or png.h to see why PNGMAJ is 2.  You should not
 + # have to change it.
@@ -58,7 +37,33 @@
   # where make install puts libpng.a and png.h
 ! prefix=${PREFIX}
   
-  OBJS = png.o pngset.o pngget.o pngrutil.o pngtrans.o pngwutil.o \
+  # Where the zlib library and include files are located
+  #ZLIBLIB=/usr/local/lib
+  #ZLIBINC=/usr/local/include
+! #ZLIBLIB=../zlib
+! #ZLIBINC=../zlib
+  
+! #CC=cc
+! CFLAGS+=-I.
+! LDFLAGS+=-L. -lpng -lz -lm -static
+  
+  #RANLIB=echo
+  RANLIB=ranlib
+***************
+*** 22,33 ****
+  	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
+  	pngwtran.o pngmem.o pngerror.o pngpread.o
+  
+! all: libpng.a pngtest
+  
+  libpng.a: $(OBJS)
+  	ar rc $@  $(OBJS)
+  	$(RANLIB) $@
+  
+  pngtest: pngtest.o libpng.a
+  	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
+  
+--- 32,55 ----
   	pngread.o pngrio.o pngwio.o pngwrite.o pngrtran.o \
   	pngwtran.o pngmem.o pngerror.o pngpread.o
   

@@ -3,11 +3,11 @@
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1998/09/17 00:50:48 asami Exp $
+# $Id: Makefile,v 1.16 1998/09/17 06:30:34 tg Exp $
 #
 
-DISTNAME=       libpng-1.0.2
-PKGNAME=        png-1.0.2
+DISTNAME=       libpng-1.0.3
+PKGNAME=        png-1.0.3
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
 
