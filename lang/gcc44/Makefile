@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.45 1999/02/09 22:17:21 obrien Exp $
+# $Id: Makefile,v 1.46 1999/02/28 10:50:50 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.2-pre2
@@ -41,6 +41,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld ${GNUHOST} \
 		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}/include/g++
+.if defined(WANT_SHAREDLIBS)
+CONFIGURE_ARGS+= --enable-shared
+.endif
 ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
@@ -89,6 +92,10 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
 	${MV} -f ${PREFIX}/lib/libstdc++.a  \
 		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}/libstdc++.a
+.if defined(WANT_SHAREDLIBS)
+	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
+		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
+.endif
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
