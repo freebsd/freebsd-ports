@@ -7,7 +7,7 @@
 
 PORTNAME=	majordomo
 PORTVERSION=	1.94.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/
@@ -21,7 +21,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Di
 .else
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .endif
+
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes
@@ -36,20 +38,28 @@ post-patch:
 	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/postfix-approve-patch 2>/dev/null
 .endif
 .if defined(WITH_SHA1_COOKIES)
-	${SED} <${WRKSRC}/majordomo >${WRKSRC}/majordomo.temp \
-		"{s/md5_hex/sha1_hex/g;s/Digest::MD5/Digest::SHA1/g;}"
-	${MV} ${WRKSRC}/majordomo.temp ${WRKSRC}/majordomo
+	${REINPLACE_CMD} \
+		-e 's,md5_hex,sha1_hex,g' \
+		-e 's,Digest::MD5,Digest::SHA1,g' \
+		${WRKSRC}/majordomo
 .endif
+	${FIND} ${WRKSRC} -type f \
+	    -exec ${REINPLACE_CMD} \
+		-e 's,/etc/majordomo.cf,${PREFIX}/etc/majordomo.cf,g' {} \;
+	${FIND} ${WRKSRC} -name *.orig -delete
+	${FIND} ${WRKSRC} -name *.bak -delete
+
 
 pre-configure:
-		@ ${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/createuser
-		@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
+	@ ${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/createuser
+	@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
 
 pre-install:
-		@ if test -f ${WRKSRC}/majordomo.cf; then :; else \
-			${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf; \
-			${PERL} ${SCRIPTDIR}/makeseed ${WRKSRC}/majordomo.cf; \
-		fi
+	@ if ${TEST} -f ${WRKSRC}/majordomo.cf; then :; else \
+		${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf; \
+		${PERL} ${SCRIPTDIR}/makeseed ${WRKSRC}/majordomo.cf; \
+	fi
+
 post-install:
 .for file in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/Doc/man/${file} ${PREFIX}/man/man1
@@ -70,19 +80,19 @@ post-install:
 			${CHMOD} 775 ${PREFIX}/majordomo/$$dir; \
 		done
 .if !defined(NOPORTDOCS)
-		@ for file in Changelog FUTURE INSTALL LICENSE NEWLIST README; do \
-			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/majordomo/doc; \
+		@ for f in Changelog FUTURE INSTALL LICENSE NEWLIST README; do \
+			${INSTALL_DATA} ${WRKSRC}/$$f ${PREFIX}/majordomo/doc; \
 		done
-		@ for file in FAQ README.sequencer list-owner-info majordomo-faq.html majordomo.lisa6.ps majordomo.ora; do \
-			${INSTALL_DATA} ${WRKSRC}/Doc/$$file ${PREFIX}/majordomo/doc; \
+		@ for f in FAQ README.sequencer list-owner-info majordomo-faq.html majordomo.lisa6.ps majordomo.ora; do \
+			${INSTALL_DATA} ${WRKSRC}/Doc/$$f ${PREFIX}/majordomo/doc; \
 		done
 		@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/majordomo/doc
 .endif
 		@ if test -f ${PREFIX}/majordomo/aliases.majordomo; then :; \
 			else ${INSTALL_DATA} ${WRKSRC}/aliases.majordomo \
 			${PREFIX}/majordomo; fi
-		@ for file in test-l test-l-digest test-l.passwd test-l.info; do \
-			${INSTALL_DATA} ${FILESDIR}/$$file ${PREFIX}/majordomo/lists; \
+		@ for f in test-l test-l-digest test-l.passwd test-l.info; do \
+			${INSTALL_DATA} ${FILESDIR}/$$f ${PREFIX}/majordomo/lists; \
 		done
 		@ ${LN} -sf test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
 		@ ${LN} -sf test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
