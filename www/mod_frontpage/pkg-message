@@ -1,34 +1,58 @@
 ************************************************************************
 
+1.)
+
 Check your httpd.conf, if you have included a ResourceConfig and
 AccessConfig. If you do not have these files, you'll have to add
-these lines to make frontpage extensions working properly:
+these lines to make frontpage extensions working properly. These
+lines are commented out in a default config, so you'll have to
+activate them again. If you have some real ResourceConfig and
+AccessConfig, you can skip this part.
 
 ResourceConfig /dev/null
 AccessConfig /dev/null
 
 
+2.)
+
 You'll also need to change AllowOverride under
-<Directory "/usr/local/www/data"> ( or the place where you
+<Directory "%%PREFIX%%/www/data"> ( or the place where you
 moved your webservers ) from None to at least:
 
 AllowOverride AuthConfig Limit Indexes Options
 
+Don't use "AllowOverride All" if you have a server environment
+with customers, since this can be a security risk If you use
+this, they can enable mod_php4 etc. themself with .htaccess files.
+
+
+3.)
 
 You can turn off/on the extensions and the frontpage administration
 per site in httpd.conf and per virtual server. FrontPageAdminDisable
 is the default if no option is given.
 
-FrontPageEnable		# Enable Frontpage Extensions
-FrontPageDisable	# Disable Frontpage Extensions
-FrontPageAdminEnable	# Enable Frontpage Extensions fpadmcgi.exe
-FrontPageAdminDisable	# Disable Frontpage Extensions fpadmcgi.exe
+FrontPageEnable         # Enable FP Extensions Client publish
+FrontPageDisable        # Disable FP Extensions Client publish
+FrontPageAdminEnable    # Enable FP Extensions Admin web site
+FrontPageAdminDisable   # Disable FP Extensions Admin web site
 
+If no key word options are present in the httpd.conf file the default of
+FrontPageDisable and FrontPageAdminDisable is used resulting in a working
+Apache environment where the complete frontpage environment is disabled.
+
+
+4.)
 
 After you have made these changes, you'll have to execute:
 
-%%PREFIX%%/frontpage/version5.0/fp_install.sh
+%%PREFIX%%/frontpage/version5.0/fp_install.sh to build the base
+apache/frontpage web site and to setup frontpage users and admins.
+You can also run this to add virtual hosts to the apache/frontpage
+system.
 
+
+5.)
 
 If you have installed the port in another PREFIX than "/usr/local"
 you have to create a symlink. Microsoft has hardcoded the local
