@@ -1,0 +1,8 @@
+PEAR class for generating Excel spreadsheets. It was born as a port of the
+Spreadsheet::WriteExcel Perl module to PHP. It allows writing of Excel
+spreadsheets without the need for COM objects.  It supports formulas, images
+(BMP) and all kinds of formatting for text and cells.  It currently supports
+the BIFF5 format (Excel 5.0), so functionality appeared in the latest Excel
+versions is not yet available.
+
+WWW: http://pear.php.net/package/Spreadsheet_Excel_Writer
