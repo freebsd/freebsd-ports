@@ -46,8 +46,8 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/tuning/mkdb
 %%PORTDOCS%%%%DOCSDIR%%/tuning/setR
 %%PORTDOCS%%%%DOCSDIR%%/tuning/sizes
-%%PORTDOCS%%%%DOCSDIR%%/tuning/smindev.R
-%%PORTDOCS%%%%DOCSDIR%%/tuning/smindev.sh
+%%PORTDOCS%%%%DOCSDIR%%/tuning/tuning.R
+%%PORTDOCS%%%%DOCSDIR%%/tuning/tuning.sh
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogofilter.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogolexer.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoupgrade.xml
