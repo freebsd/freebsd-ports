@@ -28,6 +28,9 @@ SLEEP=		/bin/sleep
 
 pre-build:
 	${PERL} -pi.orig -e "s@ /modules@ ${PREFIX}/share/mwavem@g" ${WRKSRC}/src/drivers/Makefile
+	${PERL} -pi.orig -e "s@#include <malloc.h>\n@@g" \
+		${WRKSRC}/src/mwmbl/mwblapi.c \
+		${WRKSRC}/src/mwwtt32/mwwttbl.c
 
 pre-install:
 	${MKDIR} ${DATADIR}
