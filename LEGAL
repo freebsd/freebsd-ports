@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.103 1998/03/23 13:00:40 asami Exp $
+# $Id: LEGAL,v 1.104 1998/04/24 02:09:31 mph Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -74,7 +74,7 @@ mmv/*			ports/misc/mmv		Restrictive/unclear copyright
 msql-*			ports/databases/msql	Not free for commercial org.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
-pgp262s.zip		ports/security/pgp*	Various locality restrictions
+pgp*			ports/security/pgp*	Various locality restrictions
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
@@ -91,7 +91,7 @@ sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
 sim-2.3.tar.gz		ports/emulators/sim	No commercial use
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
-SSLeay-0.5.1b.tar.gz	ports/security/SSLeay	Crypto; export-controlled
+SSLeay-*		ports/security/SSLeay	Crypto; export-controlled
 stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 taipei16.bdf.gz		ports/chinese/big5con	font is transformed from
