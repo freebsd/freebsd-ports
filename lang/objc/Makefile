@@ -3,7 +3,7 @@
 # Date created:         14 March 1997
 # Whom:                 chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.2 1997/03/25 08:17:43 obrien Exp $
+# $Id: Makefile,v 1.3 1997/03/25 10:32:44 obrien Exp $
 #
 
 DISTNAME=       objc
@@ -20,7 +20,7 @@ SYSNAME!=	uname -r | /usr/bin/sed -e 's/-.*$$//g'
 .if ${SYSNAME} == "3.0"
 DISTFILES=	objc1.1.12-i386-unknown-freebsd3.0.tar.gz
 WRKSRC=		$(WRKDIR)/objc1.1.12-i386-unknown-freebsd3.0
-.elif ${SYSNAME} == "2.2"
+.elif (${SYSNAME} == "2.2" || ${SYSNAME} == "2.2.1")
 DISTFILES=	objc1.1.12-i386-unknown-freebsd2.2.tar.gz
 WRKSRC=		$(WRKDIR)/objc1.1.12-i386-unknown-freebsd2.2
 .elif (${SYSNAME} == "2.1.7" || ${SYSNAME} == "2.1.6" || ${SYSNAME} == "2.1.5")
