@@ -17,7 +17,7 @@ Choose which components of Mozilla to download and install. \n\
 Press the space bar to toggle selections." -1 -1 6 \
 "chatzilla"	"IRC client (160 kB)"					ON \
 "inspector"	"DOM inspector (124 kB)"				ON \
-"mail"		"mail and news client (1904 kB)"			ON \
+"mail"		"mail and news client (1920 kB)"			ON \
 "spellcheck"	"Spelling checker for mail and news (304 kB)"		ON \
 "venkman"	"JavaScript debugger (224 kB)"				ON \
 2>> /tmp/checklist.tmp.$$
