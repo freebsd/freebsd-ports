@@ -34,7 +34,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/tmda
 	${MKDIR} ${PREFIX}/share/doc/tmda/contrib
 	${MKDIR} ${PREFIX}/share/doc/tmda/htdocs
-.for f in ChangeLog CRYPTO INSTALL README THANKS UPGRADE
+.for f in COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/tmda
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${PREFIX}/share/doc/tmda/contrib

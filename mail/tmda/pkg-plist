@@ -26,6 +26,7 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/Version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
+%%PORTDOCS%%share/doc/tmda/COPYING
 %%PORTDOCS%%share/doc/tmda/CRYPTO
 %%PORTDOCS%%share/doc/tmda/ChangeLog
 %%PORTDOCS%%share/doc/tmda/INSTALL
