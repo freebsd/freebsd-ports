@@ -21,7 +21,7 @@ COMMENT?=	RPM of the Gtk lib
 BUILD_DEPENDS?=	rpm:${PORTSDIR}/archivers/rpm
 USE_LINUX_PREFIX=	yes
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS?=	i386 alpha
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
 NO_BUILD=	yes
