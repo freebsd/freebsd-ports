@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	everybuddy
-PORTVERSION=	0.1.4.2
-PORTREVISION=	1
+PORTVERSION=	0.1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2/-2/}
 
 MAINTAINER=	jim@FreeBSD.org
 

@@ -1,9 +1,10 @@
---- src/main.c.orig	Mon Jan 31 19:49:57 2000
-+++ src/main.c	Wed May  3 17:18:11 2000
-@@ -123,6 +123,7 @@
+--- src/main.c.orig	Mon Nov 13 22:28:40 2000
++++ src/main.c	Mon Nov 13 22:29:36 2000
+@@ -166,6 +166,7 @@
+     } 
  
  #endif
-    	gtk_init(&argc, &argv);
 +	gtk_set_locale ();
  	g_snprintf(buff, 1024, "%s/.everybuddy",getenv("HOME"));
  	services_init();
+ 		
