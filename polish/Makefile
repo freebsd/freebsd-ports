@@ -3,6 +3,7 @@
     SUBDIR += aspell
     SUBDIR += ekg
     SUBDIR += gnugadu
+    SUBDIR += kadu
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
     SUBDIR += ooodict_PL
