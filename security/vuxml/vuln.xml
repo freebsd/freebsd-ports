@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2001103a-6bbd-11d9-851d-000a95bc6fae">
+    <topic>imlib -- xpm heap buffer overflows and integer overflows</topic>
+    <affects>
+      <package>
+	<name>imlib</name>
+	<range><lt>1.9.15</lt></range>
+      </package>
+      <package>
+	<name>imlib2</name>
+	<range><lt>1.1.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pavel Kankovsky reports:</p>
+	<blockquote cite="https://bugzilla.fedora.us/show_bug.cgi?id=2051#c11">
+	  <p>Imlib affected by a variant of CAN-2004-0782 too.</p>
+	  <p>I've discovered more vulnerabilities in Imlib
+	    (1.9.13). In particular, it appears to be affected by a
+	    variant of Chris Evans' libXpm flaw #1 (CAN-2004-0782, see
+	    http://scary.beasts.org/security/CESA-2004-003.txt). Look
+	    at the attached image, it kills ee on my 7.3.</p>
+	</blockquote>
+	<p>The flaws also affect imlib2.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1025</cvename>
+      <cvename>CAN-2004-1026</cvename>
+      <bid>11830</bid>
+      <url>https://bugzilla.fedora.us/show_bug.cgi?id=2051#c11</url>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=138516</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/enlightenment/e17/libs/imlib2/src/modules/loaders/loader_xpm.c#rev1.3</url>
+    </references>
+    <dates>
+      <discovery>2004-12-06</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="39953788-6bbb-11d9-8bc9-000a95bc6fae">
     <topic>egroupware -- arbitrary file download in JiNN</topic>
     <affects>
