@@ -28,7 +28,9 @@
 %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so
 %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.%%VERSION%%
 %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_base.so.1
+%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so
 %%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.%%VERSION%%
+%%USEX11%%%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgg_gui.so.1
 %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so
 %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.%%VERSION%%
 %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgstep_guile.so.1
@@ -59,6 +61,11 @@ lib/libgreg.so.1
 @dirrm %%SYSTEMLIBRARY%%/Libraries/Guile
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/guile
 @dirrm %%SYSTEMLIBRARY%%/Headers/ScriptKit
+@dirrm man/man1
+@dirrm man
+@dirrm lib
+@dirrm info
+@dirrm bin
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Guile/languages/gstep-guile
 @cwd %%LOCALBASE%%
 share/guile/%%GUILE_VER%%/ice-9/greg.scm

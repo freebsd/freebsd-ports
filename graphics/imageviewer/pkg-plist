@@ -18,3 +18,9 @@ Local/Applications/ImageViewer.app/stamp.make
 @dirrm Local/Applications/ImageViewer.app/%%GNU_ARCH%%
 @dirrm Local/Applications/ImageViewer.app/Resources
 @dirrm Local/Applications/ImageViewer.app
+@dirrm Local/Applications
+@cwd /root
+GNUstep/Defaults/.GNUstepDefaults
+@dirrm GNUstep/Defaults
+@dirrm GNUstep/Library
+@dirrm GNUstep
