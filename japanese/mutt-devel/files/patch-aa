@@ -1,0 +1,34 @@
+*** configure.in.orig	Sun Sep  5 05:36:22 1999
+--- configure.in	Sun Sep  5 05:41:07 1999
+***************
+*** 107,124 ****
+  	
+  	AC_MSG_CHECKING(for S-Lang)
+  	if test $withval = yes; then
+! 		if test -d $srcdir/../slang; then
+! 			mutt_cv_slang=$srcdir/../slang/src
+! 			CPPFLAGS="$CPPFLAGS -I${mutt_cv_slang}"
+! 			LDFLAGS="$LDFLAGS -L${mutt_cv_slang}/objs"
+! 		else
+! 			if test -d $mutt_cv_prefix/include/slang; then
+! 				CPPFLAGS="$CPPFLAGS -I$mutt_cv_prefix/include/slang"
+! 			elif test -d /usr/include/slang; then
+! 				CPPFLAGS="$CPPFLAGS -I/usr/include/slang"
+! 			fi
+! 			mutt_cv_slang=yes
+  		fi
+  	else
+  		dnl ---Check to see if $withval is a source directory
+  		if test -f $withval/src/slang.h; then
+--- 107,117 ----
+  	
+  	AC_MSG_CHECKING(for S-Lang)
+  	if test $withval = yes; then
+! 		if test -d $mutt_cv_prefix/include/slang; then
+! 			CPPFLAGS="$CPPFLAGS -I$mutt_cv_prefix/include/slang"
+! 			LDFLAGS="$LDFLAGS -L$mutt_cv_prefix/lib"
+  		fi
++ 		mutt_cv_slang=yes
+  	else
+  		dnl ---Check to see if $withval is a source directory
+  		if test -f $withval/src/slang.h; then
