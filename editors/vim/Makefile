@@ -26,6 +26,7 @@ PATCHFILES+=	5.6.0${p}
 MAINTAINER=	obrien@FreeBSD.org
 
 Y2K=		http://www.vim.org/y2k.html
+SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
