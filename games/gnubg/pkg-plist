@@ -1,12 +1,19 @@
 bin/gnubg
 bin/makebearoff
+bin/makehyper
 share/gnubg/annealing.png
+share/gnubg/boards.xml
 share/gnubg/gnubg.gtkrc
 share/gnubg/gnubg.wd
 share/gnubg/gnubg.xml
 share/gnubg/gnubg_os0.bd
 share/gnubg/gnubg_ts0.bd
-share/gnubg/boards.xml
+share/gnubg/rulfig1.png
+share/gnubg/rulfig2.png
+share/gnubg/rulfig3.png
+share/gnubg/rulfig4.png
+share/gnubg/rulfig5.png
+share/gnubg/texinfo.dtd
 share/gnubg/met/catalog
 share/gnubg/met/jacobs.xml
 share/gnubg/met/met.dtd
@@ -14,11 +21,6 @@ share/gnubg/met/met.xsl
 share/gnubg/met/snowie.xml
 share/gnubg/met/woolsey.xml
 share/gnubg/met/zadeh.xml
-share/gnubg/rulfig1.png
-share/gnubg/rulfig2.png
-share/gnubg/rulfig3.png
-share/gnubg/rulfig4.png
-share/gnubg/rulfig5.png
 share/gnubg/sounds/chequer.wav
 share/gnubg/sounds/dance.wav
 share/gnubg/sounds/double.wav
@@ -31,10 +33,15 @@ share/gnubg/sounds/move.wav
 share/gnubg/sounds/resign.wav
 share/gnubg/sounds/roll.wav
 share/gnubg/sounds/take.wav
-share/gnubg/texinfo.dtd
 @dirrm share/gnubg/met
 @dirrm share/gnubg/sounds
 @dirrm share/gnubg
 share/locale/da/LC_MESSAGES/gnubg.mo
 share/locale/de/LC_MESSAGES/gnubg.mo
+share/locale/en_US/LC_MESSAGES/gnubg.mo
+share/locale/en@quot/LC_MESSAGES/gnubg.mo
+share/locale/fr/LC_MESSAGES/gnubg.mo
+share/locale/is/LC_MESSAGES/gnubg.mo
+share/locale/it/LC_MESSAGES/gnubg.mo
 share/locale/ja/LC_MESSAGES/gnubg.mo
+share/locale/tr/LC_MESSAGES/gnubg.mo
