@@ -4,6 +4,7 @@ bin/pdvitype
 bin/platex
 bin/pltotf
 bin/ptex
+bin/tftopl
 bin/virptex
 share/texmf/web2c/platex-euc.fmt
 share/texmf/web2c/platex-jis.fmt
@@ -16,3 +17,6 @@ share/texmf/web2c/ptex.fmt
 share/texmf/web2c/ptex.pool
 share/texmf/web2c/texmf.cnf
 @exec %D/bin/mktexlsr %D/share/texmf
+@unexec %D/bin/mktexlsr %D/share/texmf
+@exec if [ -L %D/share/texmf/web2c/texmf.cnf ]; then /bin/rm %D/share/texmf/web2c/texmf.cnf ; fi
+@unexec if [ ! -e %D/share/texmf/web2c/texmf.cnf -a -f %D/share/texmf/web2c/texmf.cnf-teTeX-dist ]; then /bin/ln -fs %D/share/texmf/web2c/texmf.cnf-teTeX-dist %D/share/texmf/web2c/texmf.cnf ; fi
