@@ -3,12 +3,15 @@
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.15 1998/09/17 00:32:43 asami Exp $
+# $Id: Makefile,v 1.16 1998/12/06 17:08:46 vanilla Exp $
 #
 
 DISTNAME=       xpdf-0.80
 CATEGORIES=	graphics print
-MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
+MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/  \
+		ftp://ftp.duke.edu/pub/X11/contrib/applications/  \
+		ftp://ftp.cdrom.com/pub/tex/ctan/support/xpdf/
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chuckr@glue.umd.edu
