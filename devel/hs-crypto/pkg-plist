@@ -4,23 +4,35 @@ lib/imports/HScrypto/Codec/Encryption/Blowfish.hi
 lib/imports/HScrypto/Codec/Encryption/BlowfishAux.hi
 lib/imports/HScrypto/Codec/Encryption/DES.hi
 lib/imports/HScrypto/Codec/Encryption/DESAux.hi
+lib/imports/HScrypto/Codec/Encryption/EMEOAEP.hi
+lib/imports/HScrypto/Codec/Encryption/MGF.hi
 lib/imports/HScrypto/Codec/Encryption/Modes.hi
+lib/imports/HScrypto/Codec/Encryption/NumberTheory.hi
 lib/imports/HScrypto/Codec/Encryption/Padding.hi
+lib/imports/HScrypto/Codec/Encryption/RSA.hi
+lib/imports/HScrypto/Codec/Encryption/SHA1.hi
+lib/imports/HScrypto/Codec/Encryption/SHA1Aux.hi
 lib/imports/HScrypto/Codec/Encryption/Utils.hi
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Blowfish.html
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.BlowfishAux.html
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.DES.html
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.DESAux.html
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Modes.html
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Padding.html
-%%PORTDOCS%%share/doc/crypto/Codec.Encryption.Utils.html
-%%PORTDOCS%%share/doc/crypto/ReadMe.html
-%%PORTDOCS%%share/doc/crypto/ReadMe.txt
-%%PORTDOCS%%share/doc/crypto/doc-index.html
-%%PORTDOCS%%share/doc/crypto/haddock.css
-%%PORTDOCS%%share/doc/crypto/haskell_icon.gif
-%%PORTDOCS%%share/doc/crypto/index.html
-%%PORTDOCS%%@dirrm share/doc/crypto
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.Blowfish.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.BlowfishAux.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.DES.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.DESAux.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.Modes.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.Padding.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.Utils.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.EMEOAEP.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.MGF.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.NumberTheory.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.RSA.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.SHA1.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.SHA1Aux.html
+%%PORTDOCS%%%%DOCSDIR%%/Codec.Encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc-index.html
+%%PORTDOCS%%%%DOCSDIR%%/haddock.css
+%%PORTDOCS%%%%DOCSDIR%%/haskell_icon.gif
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/imports/HScrypto/Codec/Encryption
 @dirrm lib/imports/HScrypto/Codec
 @dirrm lib/imports/HScrypto

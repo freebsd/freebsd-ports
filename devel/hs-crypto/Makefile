@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crypto
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.3
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://haskell.cs.yale.edu/packages/downloads/
 PKGNAMEPREFIX=	hs-
@@ -22,7 +22,7 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 BUILD_DEPENDS=	haddock:${PORTSDIR}/devel/hs-haddock
 .endif
 
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
@@ -30,8 +30,8 @@ ALL_TARGET=	# empty
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/Makefile ${WRKSRC}/package.conf
-	@${REINPLACE_CMD} -e 's|PKCS#5|PKCS\\#5|' \
-		${WRKSRC}/Codec/Encryption/Padding.hs
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		${WRKSRC}/Makefile ${WRKSRC}/package.conf
 
 do-configure:
 	@(cd ${WRKSRC} && ${GMAKE} depend)
@@ -39,6 +39,7 @@ do-configure:
 .if !defined(NOPORTDOCS)
 post-build:
 	@(cd ${WRKSRC} && ${GMAKE} doc)
+
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} && \
