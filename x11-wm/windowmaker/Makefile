@@ -13,15 +13,12 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.org
 COMMENT=	GNUStep-compliant NeXTStep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-.if !defined(WITHOUT_HERMES)
-LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
-.endif
 
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
@@ -45,7 +42,14 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-appspath="${PREFIX}/GNUstep/Apps" \
 		--disable-debug
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+WITHOUT_HERMES=	yes
+.endif
+
 .if !defined(WITHOUT_HERMES)
+LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
 CONFIGURE_ARGS+=	--enable-hermes
 .else
 CONFIGURE_ARGS+=	--disable-hermes
@@ -100,4 +104,4 @@ update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
 		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
