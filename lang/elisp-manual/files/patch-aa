@@ -1,21 +1,21 @@
---- Makefile.in.orig	Sun Aug 30 02:38:17 1998
-+++ Makefile.in	Fri Sep 18 22:36:14 1998
-@@ -47,7 +47,7 @@
+--- Makefile.in.orig	Tue Oct 23 19:53:21 2001
++++ Makefile.in	Mon Dec 17 23:28:20 2001
+@@ -13,7 +13,7 @@
+ MAKE=make
+ SHELL=/bin/sh
+ INSTALL_INFO = install-info
+-MAKEINFO=makeinfo
++MAKEINFO=makeinfo --no-split
  
- elisp: $(srcs) index.texi
- 	rm -f elisp-*
--	makeinfo elisp.texi
-+	makeinfo --no-split elisp.texi
- 
- elisp.dvi: $(srcs) index.texi
- 	# Avoid losing old contents of aux file entirely.
-@@ -73,8 +73,7 @@
+ # Where the TeX macros are kept:
+ texmacrodir = /usr/local/lib/tex/macros
+@@ -120,8 +120,7 @@
  	fi
  
  install: elisp
--	./mkinstalldirs $(infodir)
+-	$(srcdir)/mkinstalldirs $(infodir)
 -	cp elisp elisp-* $(infodir)
 +	cp elisp $(infodir)
- 	${INSTALL_INFO} --dir-file=${infodir}/dir --info-file=${infodir}/elisp
+ 	${INSTALL_INFO} --info-dir=${infodir} ${infodir}/elisp
  
  installall: install
