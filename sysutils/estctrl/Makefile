@@ -7,6 +7,7 @@
 
 PORTNAME=	estctrl
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/freebsd-est/
 
@@ -25,6 +26,12 @@ PLIST_FILES=	sbin/estctrl		\
 
 MAKE_ENV=	BINDIR=${PREFIX}/sbin
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500101
+EXTRA_PATCHES=	${FILESDIR}/estctrl.c.diff.fbsd4
+.endif
+
 post-extract:
 	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
 		${FILESDIR}/estctrl.sh > ${WRKDIR}/estctrl.sh
@@ -33,4 +40,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/estctrl.sh ${PREFIX}/etc/rc.d/estctrl.sh
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
