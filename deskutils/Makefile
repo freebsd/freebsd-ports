@@ -21,6 +21,7 @@
     SUBDIR += korganizer
     SUBDIR += kproject
     SUBDIR += loserjabber
+    SUBDIR += mhc-emacs20
     SUBDIR += moneydance
     SUBDIR += notebook
     SUBDIR += offix-trash

@@ -1,0 +1,22 @@
+MHC is designed to help those who receive most appointments via email.
+Using MHC, you can easily import schedule articles from emails.
+
+To use mhc, you must install some of the supported MUA.
+The supported MUA are Mew, Wanderlust and Gnus.
+Minimum setup:
+
+for Mew user:
+  (autoload 'mhc-mew-setup "mhc-mew")
+  (add-hook 'mew-init-hook 'mhc-mew-setup)
+ optional setting for Mew-1.94 (Raw JIS header decoding)
+ (add-hook 'mew-message-hook 'mhc-mew-decode-header)
+
+for Wanderlust user:
+  (autoload 'mhc-wl-setup "mhc-wl")
+  (add-hook 'wl-init-hook 'mhc-wl-setup)
+
+for Gnus user:
+  (autoload 'mhc-gnus-setup "mhc-gnus")
+  (add-hook 'gnus-startup-hook 'mhc-gnus-setup)
+
+WWW: http://www.quickhack.net/mhc/
