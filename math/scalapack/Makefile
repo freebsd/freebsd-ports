@@ -32,10 +32,20 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 F77?=	f77
 USE_REINPLACE=	yes
 
+ARCH2FIX=	PBLAS/SRC PBLAS/SRC/PBBLAS PBLAS/SRC/PTOOLS PBLAS/SRC/PTZBLAS \
+		REDIST/SRC SRC TOOLS TOOLS/LAPACK
+
+DATADIR=	${PREFIX}/share/${PORTNAME:U}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:U}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 .include "files/manpages"
 
 post-patch:
-	${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g' ${WRKSRC}/SLmake.inc
+	${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@PREFIX@,${PREFIX},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
+.for mkf in ${ARCH2FIX}
+	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${mkf}/Makefile
+.endfor
 
 do-build:
 	(cd ${WRKSRC}; make ; make exe)
@@ -72,6 +82,8 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}
+	@${SED} -e 's,/usr/local,${PREFIX},g' ${FILESDIR}/pkg-message.in \
+		> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
