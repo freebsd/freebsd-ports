@@ -1,0 +1,11 @@
+--- ./plain/Makefile.in	Fri Jul  6 15:01:14 2001
++++ ./plain/Makefile.in.new	Fri Jul 13 13:53:39 2001
+@@ -78,7 +78,7 @@
+ LIBESMTP_VERSION = @LIBESMTP_VERSION@
+ LIBLTDL = @LIBLTDL@
+ LIBS = @LIBS@
+-LIBTOOL = @LIBTOOL@
++LIBTOOL = ${SHELL} ${top_builddir}/libltdl/libtool
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ LIB_AGE = @LIB_AGE@
+ LIB_CURRENT = @LIB_CURRENT@
