@@ -61,6 +61,7 @@
     SUBDIR += gpgme
     SUBDIR += gtk-knocker
     SUBDIR += gtkportscan
+    SUBDIR += hashish
     SUBDIR += heimdal
     SUBDIR += hlfl
     SUBDIR += hping
