@@ -35,7 +35,9 @@ PLIST=		${PKGDIR}/pkg-plist.with_patented
 .endif
 
 post-patch:
-	${PERL} -pi -e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
+	${PERL} -pi -e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g; \
+		s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/user.make
 
 post-install:
