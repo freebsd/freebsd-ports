@@ -75,7 +75,7 @@ PLIST_SUB+=	SUEXEC="@comment "
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 CONFIGURE_ARGS+= --with-ldap \
 		--enable-ldap --enable-auth-ldap \
 		--with-ldap-lib="${LOCALBASE}/lib" \

@@ -424,7 +424,7 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .if exists(${LOCALBASE}/lib/libldap.so.1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 .endif
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif

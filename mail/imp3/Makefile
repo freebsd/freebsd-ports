@@ -68,7 +68,7 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 .if exists(${LOCALBASE}/lib/libldap.so.1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 .endif
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2

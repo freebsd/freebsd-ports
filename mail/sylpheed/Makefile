@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--enable-jpilot
 CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_ARGS+=--enable-ldap
 .else
 CONFIGURE_ARGS+=--disable-ldap

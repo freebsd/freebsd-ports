@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--with-included-gettext=no
 # OpenLDAP 2.1.* if they want.
 
 .if defined(WITH_LDAP21)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21-client
 .else
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
 .endif

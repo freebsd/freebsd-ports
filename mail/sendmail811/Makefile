@@ -37,8 +37,8 @@ MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20-client
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl

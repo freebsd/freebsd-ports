@@ -69,7 +69,7 @@ RUN_DEPENDS+=		jpilot:${PORTSDIR}/palm/jpilot
 CONFIGURE_ARGS+=	--enable-jpilot
 .endif
 .if defined(WITH_LDAP) || defined(WITH_ALL)
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV+=		PTHREAD_LIBS=${PTHREAD_LIBS:S/"//g}
 .endif
