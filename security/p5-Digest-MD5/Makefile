@@ -3,11 +3,11 @@
 # Date created:				1999/04/07
 # Whom:					ache
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/07 20:20:33 ache Exp $
+# $Id: Makefile,v 1.2 1999/04/12 08:24:16 asami Exp $
 #
 
-DISTNAME=       Digest-MD5-2.06
-PKGNAME=        p5-Digest-MD5-2.06
+DISTNAME=       Digest-MD5-2.08
+PKGNAME=        p5-Digest-MD5-2.08
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MD5
