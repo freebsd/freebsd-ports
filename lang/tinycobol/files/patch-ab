@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Sun Oct 20 04:37:38 2002
++++ lib/Makefile.in	Tue Nov  5 16:29:57 2002
+@@ -28,7 +28,7 @@
+ GREP = grep -v
+ 
+ MAKEDEPEND=@MAKEDEPEND@
+-LIBS=-ldl @htg_ld_args_m@ @htg_ld_args_db@ -lncurses
++LIBS=-L/usr/local/lib @htg_ld_args_m@ @htg_ld_args_db@ -lncurses
+ #
+ # Default install directory is set in htconfig.h
+ #
