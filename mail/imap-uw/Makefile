@@ -38,6 +38,7 @@ USE_OPENSSL=	yes
 # RFC 1730 (IMAP4 as opposed to IMAP4rev1) support
 .if defined(WITH_RFC1730)
 MAKE_ARGS+=	RFC1730="-DRFC1730"
+FORBIDDEN=	"RFC 1730 support enables remote buffer overflow."
 .endif
 # Define this to get somewhat better interoperability with Netscape.
 .if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
