@@ -18,18 +18,82 @@ share/gnome/help/gnome-terminal/C/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/C/figures/terminal_window.png
 share/gnome/help/gnome-terminal/C/gnome-terminal.xml
 share/gnome/help/gnome-terminal/C/legal.xml
+share/gnome/help/gnome-terminal/de/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/de/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/de/figures/terminal_window.png
+share/gnome/help/gnome-terminal/de/gnome-terminal.xml
+share/gnome/help/gnome-terminal/de/legal.xml
+share/gnome/help/gnome-terminal/es/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/es/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/es/figures/terminal_window.png
+share/gnome/help/gnome-terminal/es/gnome-terminal.xml
+share/gnome/help/gnome-terminal/es/legal.xml
+share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/fr/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/fr/figures/terminal_window.png
+share/gnome/help/gnome-terminal/fr/gnome-terminal.xml
+share/gnome/help/gnome-terminal/fr/legal.xml
+share/gnome/help/gnome-terminal/it/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/it/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/it/figures/terminal_window.png
+share/gnome/help/gnome-terminal/it/gnome-terminal.xml
+share/gnome/help/gnome-terminal/it/legal.xml
+share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/ja/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/ja/figures/terminal_window.png
+share/gnome/help/gnome-terminal/ja/gnome-terminal.xml
+share/gnome/help/gnome-terminal/ja/legal.xml
+share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/ko/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/ko/figures/terminal_window.png
+share/gnome/help/gnome-terminal/ko/gnome-terminal.xml
+share/gnome/help/gnome-terminal/ko/legal.xml
 share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/ro/figures/terminal_window.png
 share/gnome/help/gnome-terminal/ro/gnome-terminal.xml
 share/gnome/help/gnome-terminal/ro/legal.xml
+share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/sv/figures/terminal_window.png
+share/gnome/help/gnome-terminal/sv/gnome-terminal.xml
+share/gnome/help/gnome-terminal/sv/legal.xml
+share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/zh_CN/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/zh_CN/figures/terminal_window.png
+share/gnome/help/gnome-terminal/zh_CN/gnome-terminal.xml
+share/gnome/help/gnome-terminal/zh_CN/legal.xml
+share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/zh_TW/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/zh_TW/figures/terminal_window.png
+share/gnome/help/gnome-terminal/zh_TW/gnome-terminal.xml
+share/gnome/help/gnome-terminal/zh_TW/legal.xml
 share/gnome/omf/gnome-terminal/gnome-terminal-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-fr.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-fr.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-it.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ja.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-ko.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-sv.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-sv.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_CN.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-zh_TW.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-terminal.png
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
+share/locale/az/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
 share/locale/bg/LC_MESSAGES/gnome-terminal.mo
 share/locale/ca/LC_MESSAGES/gnome-terminal.mo
@@ -40,6 +104,7 @@ share/locale/el/LC_MESSAGES/gnome-terminal.mo
 share/locale/en_GB/LC_MESSAGES/gnome-terminal.mo
 share/locale/es/LC_MESSAGES/gnome-terminal.mo
 share/locale/et/LC_MESSAGES/gnome-terminal.mo
+share/locale/fa/LC_MESSAGES/gnome-terminal.mo
 share/locale/fi/LC_MESSAGES/gnome-terminal.mo
 share/locale/fr/LC_MESSAGES/gnome-terminal.mo
 share/locale/gl/LC_MESSAGES/gnome-terminal.mo
@@ -51,6 +116,7 @@ share/locale/ko/LC_MESSAGES/gnome-terminal.mo
 share/locale/lt/LC_MESSAGES/gnome-terminal.mo
 share/locale/lv/LC_MESSAGES/gnome-terminal.mo
 share/locale/mk/LC_MESSAGES/gnome-terminal.mo
+share/locale/ml/LC_MESSAGES/gnome-terminal.mo
 share/locale/mn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ms/LC_MESSAGES/gnome-terminal.mo
 share/locale/nl/LC_MESSAGES/gnome-terminal.mo
@@ -63,15 +129,38 @@ share/locale/ru/LC_MESSAGES/gnome-terminal.mo
 share/locale/sk/LC_MESSAGES/gnome-terminal.mo
 share/locale/sl/LC_MESSAGES/gnome-terminal.mo
 share/locale/sq/LC_MESSAGES/gnome-terminal.mo
+share/locale/sr/LC_MESSAGES/gnome-terminal.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
+share/locale/ta/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
 share/locale/vi/LC_MESSAGES/gnome-terminal.mo
 share/locale/wa/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
+@dirrm share/gnome/omf/gnome-terminal
+@dirrm share/gnome/help/gnome-terminal/zh_TW/figures
+@dirrm share/gnome/help/gnome-terminal/zh_TW
+@dirrm share/gnome/help/gnome-terminal/zh_CN/figures
+@dirrm share/gnome/help/gnome-terminal/zh_CN
+@dirrm share/gnome/help/gnome-terminal/sv/figures
+@dirrm share/gnome/help/gnome-terminal/sv
 @dirrm share/gnome/help/gnome-terminal/ro/figures
 @dirrm share/gnome/help/gnome-terminal/ro
+@dirrm share/gnome/help/gnome-terminal/ko/figures
+@dirrm share/gnome/help/gnome-terminal/ko
+@dirrm share/gnome/help/gnome-terminal/ja/figures
+@dirrm share/gnome/help/gnome-terminal/ja
+@dirrm share/gnome/help/gnome-terminal/it/figures
+@dirrm share/gnome/help/gnome-terminal/it
+@dirrm share/gnome/help/gnome-terminal/fr/figures
+@dirrm share/gnome/help/gnome-terminal/fr
+@dirrm share/gnome/help/gnome-terminal/es/figures
+@dirrm share/gnome/help/gnome-terminal/es
+@dirrm share/gnome/help/gnome-terminal/de/figures
+@dirrm share/gnome/help/gnome-terminal/de
+@dirrm share/gnome/help/gnome-terminal/C/figures
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings
@@ -83,4 +172,13 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/global
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-es.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-fr.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ja.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-sv.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-zh_TW.omf 2>/dev/null || /usr/bin/true
