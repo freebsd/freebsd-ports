@@ -3741,6 +3741,7 @@ libdvbpsi	ports/graphics/libdvbpsi
 libdvdcss	ports/graphics/libdvdcss
 libdvdnav	ports/graphics/libdvdnav
 libdvdread	ports/graphics/libdvdread
+libecc		ports/security/libecc
 libedit		src/lib/libedit
 libelf		ports/devel/libelf
 libelysium	ports/misc/libelysium
