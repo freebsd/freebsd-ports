@@ -8,17 +8,18 @@
 
 PORTNAME=	xautomation
 PORTVERSION=	0.86
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
-	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
