@@ -1,0 +1,48 @@
+*** gopherd/error.c.ORIG	Tue Jul 19 22:27:54 1994
+--- gopherd/error.c	Sun Dec 11 19:44:34 1994
+***************
+*** 287,293 ****
+  
+  extern int errno;		/* UNIX error number */
+  extern int sys_nerr;		/* # of error message strings in sys table */
+- extern char *sys_errlist[];	/* the system error message table */
+  
+  #ifdef SYS5
+  int t_errno;
+--- 287,292 ----
+*** gopher/globals.h.ORIG	Wed Jul  6 17:38:40 1994
+--- gopher/globals.h	Sun Dec 11 19:50:17 1994
+***************
+*** 120,126 ****
+  
+  #ifndef VMS
+  extern char **environ;                  /* User environment array */
+- extern char *sys_errlist[];
+  #endif
+  
+  /*** VMS needs special interrupt and subprocess handling ***/
+--- 120,125 ----
+*** gopher/gopher.c.ORIG	Fri Nov 25 18:40:21 1994
+--- gopher/gopher.c	Sun Dec 11 19:51:49 1994
+***************
+*** 1149,1155 ****
+  #else
+  extern int h_errno;
+  extern int sys_nerr;
+- extern char *sys_errlist[];
+  extern int  errno;
+  #endif
+  
+--- 1149,1154 ----
+*** Makefile.config.ORIG	Wed Nov 30 01:12:16 1994
+--- Makefile.config	Sun Dec 11 19:57:37 1994
+***************
+*** 304,309 ****
+--- 304,310 ----
+  
+  OTHERLIBS	=  $(UMAXLIBS) $(SEQLIBS) $(PTXLIBS) $(SCOLIBS) \
+  		   $(SVR4LIBS) $(AUXLIBS) $(DGUXLIBS)
++ OTHERLIBS	= -lcompat -lcrypt
+  
+  CLIENTLIBS 	= -lcurses -ltermcap -lgopher $(OTHERLIBS)
+  SERVERLIBS 	= -lm -lgopher $(OTHERLIBS) $(LOADLIBS)
