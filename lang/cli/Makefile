@@ -18,7 +18,7 @@ COMMENT=	An implementation of the ECMA CLI and the ECMA C\# language
 WRKSRC=		${WRKDIR}/sscli
 
 RESTRICTED=	"license terms need to be reviewed"
-IGNORE=		"license terms need to be agreed prior install"
+IGNORE=		cannot be installed until you read and agree to the license terms
 ONLY_FOR_ARCHS=	i386
 
 USE_PERL5=	yes
