@@ -1,17 +1,19 @@
+bin/radclient
 bin/radlast
 bin/radtest
 bin/raduse
 bin/radwho
 bin/radzap
-sbin/checkrad
-sbin/radiusd
-sbin/radrelay
 etc/raddb/clients.sample
 etc/raddb/dictionary
 etc/raddb/dictionary.ascend
+etc/raddb/dictionary.bay
 etc/raddb/dictionary.cisco
+etc/raddb/dictionary.cistron
 etc/raddb/dictionary.compat
+etc/raddb/dictionary.erx
 etc/raddb/dictionary.livingston
+etc/raddb/dictionary.redback
 etc/raddb/dictionary.shiva
 etc/raddb/dictionary.tunnel
 etc/raddb/dictionary.usr
@@ -22,6 +24,10 @@ etc/raddb/naslist.sample
 etc/raddb/naspasswd.sample
 etc/raddb/realms.sample
 etc/raddb/users.sample
+etc/rc.d/radiusd.sh
+sbin/checkrad
+sbin/radiusd
+sbin/radrelay
 share/doc/radiusd-cistron/COPYRIGHT
 share/doc/radiusd-cistron/ChangeLog
 share/doc/radiusd-cistron/INSTALL
@@ -32,7 +38,6 @@ share/doc/radiusd-cistron/README.pam
 share/doc/radiusd-cistron/README.proxy
 share/doc/radiusd-cistron/README.simul
 share/doc/radiusd-cistron/README.usersfile
-etc/rc.d/radiusd.sh
 @dirrm etc/raddb
 @dirrm share/doc/radiusd-cistron
 @unexec rm -f /var/log/radius.log
