@@ -1,1 +1,1 @@
-lib/%%PYTHON_VERSION%%/site-packages/libsip.so
+%%PYTHON_SITELIBDIR%%/libsip.so
