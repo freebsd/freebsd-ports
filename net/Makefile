@@ -190,6 +190,7 @@
     SUBDIR += tn3270
     SUBDIR += tn5250
     SUBDIR += traceroute
+    SUBDIR += trafd
     SUBDIR += trafshow
     SUBDIR += ttcp
     SUBDIR += ttt

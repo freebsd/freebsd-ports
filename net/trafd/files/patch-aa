@@ -1,0 +1,21 @@
+--- Makefile.orig	Sun Jan 23 16:02:11 2000
++++ Makefile	Sun Jan 23 16:02:35 2000
+@@ -64,14 +64,14 @@
+ 	@echo "Done."
+ 
+ install: all
+-	install -s -o root -g ${GROUP} -m ${MODE} trafd/trafd ${PATH_BINDIR}
++	install -c -s -o root -g ${GROUP} -m ${MODE} trafd/trafd ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafstart ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafstop ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafsave ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} trafd/trafdump ${PATH_BINDIR}
+-	install -s -o root -g ${GROUP} -m ${MODE} trafstat/trafstat ${PATH_BINDIR}
+-	install -s -o root -g ${GROUP} -m ${MODE} trafstatd/trafstatd ${PATH_BINDIR}
+-	install -s -o root -g ${GROUP} -m ${MODE} traflog/traflog ${PATH_BINDIR}
++	install -c -s -o root -g ${GROUP} -m ${MODE} trafstat/trafstat ${PATH_BINDIR}
++	install -c -s -o root -g ${GROUP} -m ${MODE} trafstatd/trafstatd ${PATH_BINDIR}
++	install -c -s -o root -g ${GROUP} -m ${MODE} traflog/traflog ${PATH_BINDIR}
+ 	install -c -o root -g ${GROUP} -m ${MODE} traflog/traflog.format ${PATH_TRAFLOG_FMT}
+ 	@echo Done.
+ 
