@@ -1,0 +1,20 @@
+xpad is a sticky note application written using GTK+ 2.0 that strives to be
+simple, fault-tolerant, and customizable. xpad consists of independent pad
+windows; each is basically a text box in which notes can be written. Despite
+being called xpad, all that is needed to run or compile it is the GTK+ 2.0
+libraries. Here is a list of major features in the current xpad stable
+release:
+
+  * GTK+ 2.0 powered text view.
+  * Fault tolerant. All information is kept on the hard drive, not memory.
+  * xpad is very customizable. The color scheme (text, background, and window
+    borders) and the font can be changed.
+  * A customizable toolbar puts the most frequently used commands at your
+    fingertips.
+  * Support for the X session management protocol.
+  * Support for the www.freedesktop.org system tray proposal.
+
+WWW: http://xpad.sourceforge.net/
+
+- Guillaume
+amyfoub@videotron.ca
