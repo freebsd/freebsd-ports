@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Mar  1 01:57:31 2003
++++ Makefile.in	Sat May 10 00:46:55 2003
+@@ -87,7 +87,7 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-SUBDIRS = dvsend dvrecv dvplay dvsave
++SUBDIRS = dvsend dvrecv
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

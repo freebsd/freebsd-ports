@@ -11,6 +11,7 @@
     SUBDIR += dv2jpg
     SUBDIR += dvdauthor
     SUBDIR += dvdrip
+    SUBDIR += dvts
     SUBDIR += enjoympeg
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg045
