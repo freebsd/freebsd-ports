@@ -1,4 +1,5 @@
 bin/openttd
+%%DATADIR%%/data/autorail.grf
 %%DATADIR%%/data/canalsw.grf
 %%DATADIR%%/data/openttd.grf
 %%DATADIR%%/data/opntitle.dat
@@ -18,17 +19,14 @@ bin/openttd
 %%DATADIR%%/lang/hungarian.lng
 %%DATADIR%%/lang/icelandic.lng
 %%DATADIR%%/lang/italian.lng
-%%DATADIR%%/lang/latvian.lng
 %%DATADIR%%/lang/norwegian.lng
 %%DATADIR%%/lang/origveh.lng
 %%DATADIR%%/lang/polish.lng
 %%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
-%%DATADIR%%/lang/russian.lng
 %%DATADIR%%/lang/slovak.lng
 %%DATADIR%%/lang/spanish.lng
 %%DATADIR%%/lang/swedish.lng
-%%DATADIR%%/lang/turkish.lng
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/Howto_compile_lng_files_from_CLI.txt
