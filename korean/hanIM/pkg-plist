@@ -17,22 +17,4 @@ share/doc/hanIM/XLC_LOCALE
 @exec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE %D/lib/X11/locale/ko/XLC_LOCALE.orig; fi
 @exec cp %D/share/doc/hanIM/XLC_LOCALE %D/lib/X11/locale/ko/
 @unexec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE.orig ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE.orig %D/lib/X11/locale/ko/XLC_LOCALE; fi
-share/doc/hanIM/samples/CVS/Entries
-share/doc/hanIM/samples/CVS/Repository
-share/doc/hanIM/samples/CVS/Root
-share/doc/hanIM/samples/IMDemo
-share/doc/hanIM/samples/Makefile
-share/doc/hanIM/samples/asample.c
-share/doc/hanIM/samples/geticval.c
-share/doc/hanIM/samples/getimval.c
-share/doc/hanIM/samples/gtkimtest.c
-share/doc/hanIM/samples/gtkimtest.rc
-share/doc/hanIM/samples/i18n.c
-share/doc/hanIM/samples/msample.c
-share/doc/hanIM/samples/offspot.c
-share/doc/hanIM/samples/onspot.c
-share/doc/hanIM/samples/overspot.c
-share/doc/hanIM/samples/rootwin.c
-@dirrm share/doc/hanIM/samples/CVS
-@dirrm share/doc/hanIM/samples
 @dirrm share/doc/hanIM

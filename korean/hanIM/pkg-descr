@@ -6,7 +6,6 @@ hanIM is Mizi Research's Korean X11 Input Method for UNIX/X11R6.
 This is not a free software. Please read copyright message in
 /usr/X11R6/share/doc/hanIM/LICENSE
 
-For more information, go to http://www.mizi.co.kr
-
 --
 Ports by CHOI Junho <cjh@kr.freebsd.org>
+WWW: http://www.mizi.com/ko/prod/app/app-mim.htm
