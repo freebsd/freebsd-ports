@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	kbilliards
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	games kde
-MASTER_SITES=	http://xoomer.virgilio.it/samuele_c/kbilliards/
+MASTER_SITES=	http://www.hostnotfound.it/kbilliards/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Funny billiards simulator game for KDE
