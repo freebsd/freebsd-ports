@@ -114,7 +114,7 @@ pre-extract:
 	@${ECHO_MSG}
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
-	@${ECHO_MSG} "Make sure that all commiters are its members."
+	@${ECHO_MSG} "Make sure that all committers are its members."
 .else
 	@${ECHO_MSG} "You can have the repository created for you by defining"
 	@${ECHO_MSG} "WITH_REPOSITORY_CREATION."
@@ -126,7 +126,7 @@ pre-extract:
 	@${ECHO_MSG} "* the above subdirectories are writable by this group"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Repository will be created at '${SVNREPOS}' with group '${SVNGROUP}'"
-	@${ECHO_MSG} "You could change tese settings by defining SVNREPOS and SVNGROUP"
+	@${ECHO_MSG} "You could change these settings by defining SVNREPOS and SVNGROUP"
 	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG}
