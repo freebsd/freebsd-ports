@@ -38,7 +38,6 @@
     SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ggv
-    SUBDIR += ghostscript5
     SUBDIR += ghostscript55
     SUBDIR += ghostscript6
     SUBDIR += ghostview
