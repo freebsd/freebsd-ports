@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rexml
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.germane-software.com/software/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ MAINTAINER=	knu@FreeBSD.org
 USE_RUBY=	yes
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}_stable
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		README *.html docs/tutorial.html
 

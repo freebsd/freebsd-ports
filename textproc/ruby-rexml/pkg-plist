@@ -32,6 +32,7 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/credits.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/faq.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/screenshots.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/docs/tutorial.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/docs
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml
