@@ -181,6 +181,7 @@
     SUBDIR += xmmix
     SUBDIR += xmms
     SUBDIR += xmms-liveice
+    SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
     SUBDIR += xmms-tfmx
     SUBDIR += xmp
