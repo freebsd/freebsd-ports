@@ -1,0 +1,11 @@
+--- Makefile.old	Wed Jul 19 12:44:39 2000
++++ Makefile	Sat Jun 17 14:26:22 2000
+@@ -4,7 +4,7 @@
+ OBJS = cidr.o
+ 
+ cidr: $(OBJS)
+-	gcc -Wall -o cidr cidr.c
++	gcc -Wall -o cidr $(OBJS)
+ 
+ clean:
+ 	rm $(OBJS) cidr
