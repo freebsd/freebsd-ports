@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.7.9
+PORTVERSION=	0.8.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
 MAINTAINER=	krion@FreeBSD.org
-COMMENT=	IP accounting and aggregation tool
+COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
