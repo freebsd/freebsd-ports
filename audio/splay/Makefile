@@ -8,9 +8,9 @@
 #
 
 PORTNAME=		splay
-PORTVERSION=		0.9.5.1
+PORTVERSION=		0.9.5.2
 CATEGORIES=		audio
-MASTER_SITES=		ftp://splay.sourceforge.net/pub/splay/
+MASTER_SITES=		http://splay.sourceforge.net/tgz/
 
 MAINTAINER=		cjh@FreeBSD.org
 
