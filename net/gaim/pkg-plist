@@ -212,7 +212,9 @@ share/gnome/sounds/gaim/leave.wav
 share/gnome/sounds/gaim/receive.wav
 share/gnome/sounds/gaim/redalert.wav
 share/gnome/sounds/gaim/send.wav
+share/locale/am/LC_MESSAGES/gaim.mo
 share/locale/bg/LC_MESSAGES/gaim.mo
+share/locale/ca/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
 share/locale/de/LC_MESSAGES/gaim.mo
