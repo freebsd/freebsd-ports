@@ -18,4 +18,6 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 
+CONFLICTS=	intltool-*
+
 .include <bsd.port.mk>
