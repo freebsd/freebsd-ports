@@ -216,7 +216,6 @@
 @exec chmod 2775 %B
 %%MMDIR%%/cgi-bin/admin
 %%MMDIR%%/cgi-bin/admindb
-%%MMDIR%%/cgi-bin/archives
 %%MMDIR%%/cgi-bin/edithtml
 %%MMDIR%%/cgi-bin/handle_opts
 %%MMDIR%%/cgi-bin/listinfo
