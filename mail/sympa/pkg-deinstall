@@ -9,7 +9,7 @@ fi
 USER=simpa
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	echo "To delete Simpa user permanently, use 'pw userdel ${USER}'"
+	echo "To delete Sympa user permanently, use 'pw userdel ${USER}'"
 fi
 
 exit 0
