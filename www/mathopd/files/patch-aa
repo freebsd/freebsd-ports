@@ -1,32 +1,48 @@
---- Makefile.orig	Fri Dec 17 11:09:22 1999
-+++ Makefile	Fri Dec 17 11:09:08 1999
-@@ -1,23 +1,7 @@
--BIN=mathopd
--CC=gcc
--CFLAGS=-O -Wall
--CPPFLAGS=
--LDFLAGS=
--LDLIBS=
--PREFIX=/usr/local
--SBINDIR=$(PREFIX)/sbin
+--- src/Makefile.orig	Fri Dec  5 00:20:58 2003
++++ src/Makefile	Fri Dec  5 00:23:13 2003
+@@ -1,38 +1,8 @@
+-BIN = mathopd
+-CC = gcc
+-CFLAGS = -O -Wall
+-CPPFLAGS = 
+-LDFLAGS = 
+-LIBS = -lcrypt
+-PREFIX = /usr/local
+-SBINDIR = $(PREFIX)/sbin
 +PROG=	mathopd
-+SRCS=	base64.c cgi.c config.c core.c dummy.c dump.c imap.c log.c \
++SRCS=	base64.c cgi.c config.c core.c dump.c imap.c log.c \
 +	main.c redirect.c request.c util.c
 +BINDIR?=${PREFIX}/sbin
 +NOMAN=	yes
++LDADD=	-lcrypt
  
--OBJS=	base64.o cgi.o config.o core.o dummy.o dump.o imap.o log.o main.o \
+-# On Solaris, uncomment the following
+-# CPPFLAGS = -DNEED_INET_ATON -DHAVE_CRYPT_H
+-# LIBS = -lsocket -lnsl
+-
+-# On Linux, uncomment the following
+-# CPPFLAGS = -DHAVE_CRYPT_H
+-
+-OBJS = base64.o cgi.o config.o core.o dump.o imap.o log.o main.o \
 -	redirect.o request.o util.o
--DEPENDS=mathopd.h Makefile
+-DEPENDS = mathopd.h Makefile
+-
+-# Uncomment the following if your system does not support the poll() function
+-# CPPFLAGS += -DPOLL_EMULATION
+-# OBJS += poll-emul.o
+-
+-# Uncomment the following if your system does not have the socklen_t type
+-# CPPFLAGS += -DNEED_SOCKLEN_T
 -
 -all: $(BIN)
 -install: $(BIN)
 -	install -c $(BIN) $(SBINDIR)
 -$(BIN): $(OBJS)
--	$(CC) $(LDFLAGS) -o $(BIN) $(OBJS) $(LDLIBS)
+-	$(CC) $(LDFLAGS) -o $(BIN) $(OBJS) $(LIBS)
 -$(OBJS): $(DEPENDS)
 -.c.o:
 -	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 -clean:
 -	rm -f $(BIN) $(OBJS)
+-.PHONY: install clean
 +.include <bsd.prog.mk>

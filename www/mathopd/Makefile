@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	mathopd
-PORTVERSION=	1.3p7
+PORTVERSION=	1.4p2
 CATEGORIES=	www
 MASTER_SITES=	http://www.mathopd.org/dist/ \
-		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/ \
 		http://www.tobez.org/download/port-mirrors/www/mathopd/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pl/}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A very small, yet very fast HTTP server
 
+DOCS=	CHANGES cgi.txt config.txt processing.txt running.txt sample.cfg syntax.txt
+
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/mathopd.conf.sample ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/doc/sample.cfg ${PREFIX}/etc/mathopd.conf.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/mathopd
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/mathopd
 	@${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/mathopd
 	@${INSTALL_DATA} ${WRKSRC}/README  ${PREFIX}/share/doc/mathopd
+.for df in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${df}  ${PREFIX}/share/doc/mathopd
+.endfor
 .endif
-	@if [ ! -f ${PREFIX}/etc/rc.d/mathopd.sh ]; then \
-		${INSTALL_SCRIPT} ${FILESDIR}/mathopd.sh ${PREFIX}/etc/rc.d/mathopd.sh; \
-	fi
+	${INSTALL_SCRIPT} ${FILESDIR}/mathopd.sh ${PREFIX}/etc/rc.d/mathopd.sh-dist
 	@${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
