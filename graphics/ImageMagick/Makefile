@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.13 1996/12/03 09:07:00 asami Exp $
+# $Id: Makefile,v 1.14 1996/12/17 07:32:08 tg Exp $
 #
 
 DISTNAME=	ImageMagick-3.7.9
@@ -18,13 +18,13 @@ MAINTAINER=	ports@freebsd.org
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		mpeg\\.1\\.:${PORTSDIR}/graphics/mpeg-lib \
 		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
-		png\\.0\\.:${PORTSDIR}/graphics/png
+		png\\.0\\.:${PORTSDIR}/graphics/png \
+		jbig\\.0\\.:${PORTSDIR}/graphics/jbigkit
 
 PREFIX=		${LOCALBASE}
 WRKSRC=		${WRKDIR}/ImageMagick
 USE_IMAKE=	YES
 
-# Yuck. Somehow, $LOCALBASE isn't expanded in the Makefiles...
 post-patch:
 	@mv ${WRKSRC}/Magick.tmpl ${WRKSRC}/Magick.tmpl.tmp
 	@sed -e "s|!!LOCALBASE!!|${LOCALBASE}|g" <${WRKSRC}/Magick.tmpl.tmp >${WRKSRC}/Magick.tmpl
