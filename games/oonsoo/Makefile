@@ -1,7 +1,7 @@
 # New ports collection makefile for:  oonsoo 
 # Version required:	1.1
 # Date created:		23rd June, 1997
-# Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
+# Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/rohan/
 EXTRACT_SUFX=	.tar.z
 
-MAINTAINER=	sutton@aardvark.apana.org.au
+MAINTAINER=	jsutton@bbcon.com.au
 
 USE_XLIB=	yes
 
