@@ -5,7 +5,7 @@
  char * __get_help_name(void)
  {
 -	return "/usr/lib/biew/biew.hlp";
-+	return "/usr/local/share/biew/biew.hlp";
++	return "%%PREFIX%%/share/biew/biew.hlp";
  }
  
  static void cleanup(int sig)
