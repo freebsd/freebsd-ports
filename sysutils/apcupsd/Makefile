@@ -28,6 +28,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
 		--with-serial-dev=/dev/usv
 
+OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off
+OPTIONS+=       CGI "Compile with CGI programms to show status" off
+
+.include <bsd.port.pre.mk>
+
 # We need this below
 CONF_FILES=apcupsd.conf
 
@@ -49,8 +54,6 @@ CONFIGURE_ARGS+=--enable-master-slave
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"   \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-.include <bsd.port.pre.mk>
 
 # Cause FreeBSD 3.X misses libmenu, libforms and libpanel (curses)
 .if ${OSVERSION} > 400000
