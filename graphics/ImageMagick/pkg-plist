@@ -11,14 +11,15 @@ include/magick/PreRvIcccm.h
 include/magick/X.h
 include/magick/compress.h
 include/magick/config.h
+include/magick/delegates.h
 include/magick/error.h
 include/magick/gems.h
 include/magick/image.h
 include/magick/magick.h
 include/magick/memory.h
 include/magick/monitor.h
-include/magick/plug-ins.h
 include/magick/utility.h
+include/magick/version.h
 include/magick/widget.h
 lib/libMagick.a
 lib/libMagick.la
@@ -29,6 +30,7 @@ lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/Magick.bs
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/Magick.so
 lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/autosplit.ix
+share/ImageMagick/delegates.mgk
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick
@@ -36,3 +38,4 @@ lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Magick/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Image
 @dirrm include/magick
+@dirrm share/ImageMagick
