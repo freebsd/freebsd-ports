@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,12 +26,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		gnunet-download.1 gnunet-gtk.1 gnunet-insert-multi.1 \
-		gnunet-insert.1 gnunet-search.1 gnunetd.1 gnunet-check.1
+MAN1=		gnunet-check.1 gnunet-download.1 gnunet-gtk.1 \
+		gnunet-insert-multi.1 gnunet-insert.1 gnunet-search.1 gnunetd.1
 MAN5=		gnunet.conf.5
 
 post-patch:
-	@${REINPLACE_CMD} 's|-pthread [\$$]CFLAGS|\$$CFLAGS|g ; \
+	@${REINPLACE_CMD} -e \
+		's|-pthread [\$$]CFLAGS|${PTHREAD_CFLAGS} \$$CFLAGS|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 .for file in src/include/server/startup.h src/server/startup.c \
 	src/textui/gnunetdownload.c src/textui/insertmain.c \
