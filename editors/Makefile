@@ -99,6 +99,7 @@
     SUBDIR += openoffice-gr
     SUBDIR += openoffice-it
     SUBDIR += openoffice-nl
+    SUBDIR += openoffice-pl
     SUBDIR += openoffice-pt
     SUBDIR += openoffice-tr
     SUBDIR += pico
