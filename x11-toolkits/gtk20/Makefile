@@ -15,6 +15,8 @@ DISTNAME=	gtk+-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
+NO_LATEST_LINK=	"Unstable, development version."
+
 LIB_DEPENDS=	glib-1.3.1:${PORTSDIR}/devel/glib13 \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \
 		png.4:${PORTSDIR}/graphics/png \

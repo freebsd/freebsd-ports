@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.3/ \
 
 MAINTAINER=	vanilla@FreeBSD.org
 
+NO_LATEST_LINK=	"Unstable, development version."
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
