@@ -7,7 +7,8 @@
 PORTNAME=	gtetrinet
 PORTVERSION=	0.4
 CATEGORIES=	games
-MASTER_SITES=	http://gtetrinet.netpedia.net/cgi-bin/download.cgi/
+MASTER_SITES=	ftp://ftp.netis.com/pub/mirrors1/linuxberg/files/gnome/entertain/ \
+		ftp://ftp.sunsite.auc.dk/disk1/linuxberg.com/files/gnome/entertain/
 
 MAINTAINER=	bugg@bugg.strangled.net
 
