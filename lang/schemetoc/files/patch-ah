@@ -1,0 +1,126 @@
+--- scsc/main.sc.orig	Tue Feb 23 00:59:07 1993
++++ scsc/main.sc	Wed Feb  2 22:22:22 2000
+@@ -59,7 +59,9 @@
+ 	  readtext
+ 	  transform))
+ 
+-(define SCC-VERSION "15mar93jfb")
++(define scheme_dir "%%PREFIX%%/lib/schemetoc/")
++
++(define SCC-VERSION "15mar93-FreeBSD")
+ 				; Compiler version string.
+ 
+ (define FORCE-LD-OF-REP read-eval-print)
+@@ -69,23 +71,28 @@
+ ;;; The following top-level variables define the implementation dependent
+ ;;; information:
+ 
+-(define PREDEF-DEFAULT "../scrt/predef.sc")
++(define PREDEF-DEFAULT (string-append scheme_dir "predef.sc"))
++
+ 				; File holding the declarations for predefined
+ 				; functions.
+ 
+ (define C-INCLUDE-FILE "objects.h")
+ 				; #include file for the predefined functions.
+ 
+-(define C-INCLUDE-DIR "../scrt")
++(define C-INCLUDE-DIR scheme_dir)
+     				; directory containing #include file for
+ 				; predefined functions.
+ 
+-(define SC-LIBRARY "../scrt/libsc.a")
++(define SC-LIBRARY (string-append scheme_dir "libsc.a"))
+ 				; Scheme->C library file.
+ 
+-(define SC-LIBRARY_P "../scrt/libsc_p.a")
++(define SCXL-LIBRARY (string-append scheme_dir "scxl.a"))
++
++(define SC-LIBRARY_P (string-append scheme_dir "libsc_p.a"))
+ 				; Scheme->C profiled library file.
+ 
++(define compile-static #f)
++
+ ;;; When the compiler is invoked directly from the shell, the following
+ ;;; function is invoked to control compilation.  It will interprete the flags,
+ ;;; invoke the compiler and then exit.  Any compilation errors or Scheme errors
+@@ -123,6 +130,8 @@
+ ;;;
+ ;;;	-Ot		optimize C code by omitting type checks.
+ ;;; 
++;;;	-static		compile static executable.
++;;;
+ ;;;	-pg		compile for gprof profiling.
+ ;;;
+ ;;;	-LIBDIR directory
+@@ -161,13 +170,9 @@
+ 	  (c-flags '())
+ 	  (sc-to-c.c "SC-TO-C.c")
+ 	  (sc-to-c.o "SC-TO-C.o")
+-	  (directory-separator
+-	      (if (equal? (list-ref (implementation-information) 5)
+-			  "Microsoft Windows 3.x")
+-		  "\\"
+-		  "/"))
++	  (directory-separator "/")
+ 	  (log '())
+-	  (cc "cc"))
++	  (cc "gcc"))
+ 	 
+ 	 ;;; 1. Pick up the command line arguments.
+ 	 
+@@ -233,6 +238,9 @@
+ 				    (cons "(define-constant *type-check* #f)"
+ 					  flags))
+ 			      (loop (cdr args)))
++			     ((equal? arg "-static")
++			      (set! compile-static #t)
++			      (loop (cdr args)))
+ 			     ((equal? arg "-Ob")
+ 			      (set! flags
+ 				    (cons "(define-constant *bounds-check* #f)"
+@@ -295,20 +303,27 @@
+ 	 ;;; C compiler to do the rest.
+ 
+ 	 (unless (eq? 0
+-		      (system (apply string-append
+-			             `(,cc " -I" ,c-include-dir
+-			               ,@(map (lambda (x)
+-						      (string-append " " x))
+-			                      (append (reverse c-flags)
+-						      (if (member "-pg"
+-								  c-flags)
+-							  `(,sc-library_p
+-							    "-lm")
+-							  `(,sc-library
+-							    "-lm"))))))))
++	    (system (apply string-append
++	       `(,cc " -I" ,c-include-dir
++		     ,@(map (lambda (x)
++			      (string-append " " x))
++			    (append (reverse c-flags)
++				    (if compile-static
++					(if (member "-pg" c-flags)
++					    (list sc-library_p "-lm")
++					    (if (member "-c" c-flags)
++						'()
++						(if (member "xlib" with-modules)
++						    (list "-lm" sc-library scxl-library "-L%%X11BASE%%/lib -lX11")
++						    (list "-lm" sc-library))))
++					(if (member "-c" c-flags)
++					    '()
++					    (if (member "xlib" with-modules)
++						(list "-L%%X11BASE%%/lib -lm -lsc -lscxl -lX11")
++						(list "-lm -lsc"))))))))))
+ 		 (reset))
+ 	 (catch-error
+-	     (lambda ()
++	  (lambda ()
+ 	 	     (remove-file sc-to-c.c)
+ 	 	     (remove-file sc-to-c.o)))))
+ 	   
+@@ -351,3 +366,4 @@
+ 		 root.c)
+ 		;;; Pass argument to C.
+ 		(else arg))))
++

@@ -1,25 +1,38 @@
-# New ports collection makefile for:    Scheme-to-C
-# Version required:     15mar93
-# Date created:         28 Dec 1994
-# Whom:                 jmacd@uclink.berkeley.edu
+# New ports collection makefile for:	Scheme-to-C
+# Version required:	15mar93
+# Date created:		28 Dec 1994
+# Whom:			jmacd@uclink.berkeley.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME= 	schemetoc-93.3.15
-PKGNAME=	schemetoc-93.3.15
+DISTNAME=	15mar93
+PKGNAME= 	schemetoc-93.3.15
 CATEGORIES=	lang
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Scheme-to-C/
-DISTFILES=      15mar93.tar.Z
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmacd@FreeBSD.org
 
-BROKEN_ELF=	yes
-
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
+MAN1=		scc.1 sci.1
+
+post-extract:
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${CP} ${FILESDIR}/README.FreeBSD ${WRKSRC}
+	@${MV} ${WRKDIR}/scsc/main.c ${WRKSRC}/scsc/main.c.orig
+	@${CP} ${FILESDIR}/main.c ${WRKSRC}/scsc/main.c
+	@${MKDIR} ${WRKDIR}/ports/FREEBSD
+.for file in makefile-head options-server.h options.h x86.s
+	@${CP} ${FILESDIR}/${file} ${WRKSRC}/ports/FREEBSD
+.endfor
+
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/scsc/*.sc
+	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/scsc/*.sc
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ The documentation provided on the X library interface for Scheme-to-C
 was very limited and as a result I'm not sure if I've got it right.
 Instead of using having the compiler link the library archives libsc.a
 (the standard schemetoc library) or scxl.a (the x library), two shared
-libraries are included, libsc.so.1.0 and libscxl.so.1.0.  
+libraries are included, libsc.so.1 and libscxl.so.1.  
 
 The syntax of the scc compiler has been extended to automatically
 use dynamic linking unless the -static flag is specified on the scc
@@ -22,8 +22,8 @@ include -lX11.
 Those not wishing to use the X library support can delete the following
 files:  
 
-libscxl.so.1.0 		The shared lib.
-schemetoc/scxl.a	The library archive.
+libscxl.so.1 		The shared lib.
+schemetoc/libscxl.a	The library archive.
 bin/scixl		The X lib interpreter.
 
 Each is about 1.4 megabytes.

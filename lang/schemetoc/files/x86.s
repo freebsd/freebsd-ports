@@ -13,9 +13,9 @@
 #else
 	.align 2
 #endif
-.globl	_sc_geti386regs
+.globl	sc_geti386regs
 
-_sc_geti386regs:
+sc_geti386regs:
 	pushl %ebp
 	movl %esp,%ebp
 	pushl %ecx
