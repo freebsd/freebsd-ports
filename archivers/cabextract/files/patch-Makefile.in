@@ -1,24 +1,13 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Sun Aug  5 21:39:14 2001
-+++ Makefile.in	Tue Aug  7 14:55:10 2001
-@@ -68,7 +68,7 @@
- 
- bin_PROGRAMS = cabextract
- man_MANS = cabextract.1
--cabextract_SOURCES = cabextract.c getopt.c getopt1.c
-+cabextract_SOURCES = cabextract.c
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h
-@@ -81,8 +81,8 @@
- CPPFLAGS = @CPPFLAGS@
+--- Makefile.in	2001/08/20 08:11:20	1.1
++++ Makefile.in	2001/08/20 08:11:40
+@@ -83,7 +83,7 @@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
--cabextract_OBJECTS =  cabextract.o getopt.o getopt1.o
+ cabextract_OBJECTS =  cabextract.o
 -cabextract_LDADD = $(LDADD)
-+cabextract_OBJECTS =  cabextract.o
 +cabextract_LDADD = $(LDADD) -lgnugetopt
  cabextract_DEPENDENCIES = 
  cabextract_LDFLAGS = 
