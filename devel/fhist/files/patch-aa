@@ -1,24 +1,57 @@
---- common/compare.c--	Fri Oct  7 18:05:04 1994
-+++ common/compare.c	Thu Apr 23 12:53:41 1998
-@@ -326,10 +326,10 @@
- }
+--- Makefile.in--	Wed Jan  5 21:12:04 2000
++++ Makefile.in	Wed Jan  5 21:13:41 2000
+@@ -715,46 +715,46 @@
+ 	$(INSTALL_DATA) lib/en/building.txt $@
  
+ $(datadir)/en/man1/fcomp.1: lib/en/man1/fcomp.1 lib/en/man1/.datadir
+-	$(SOELIM) -Ilib/en/man1 -Ietc lib/en/man1/fcomp.1 > tmp
++	$(SOELIM) lib/en/man1/fcomp.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
  
--static int isblank _((char *s));
-+static int isblank_ _((char *s));
+ $(mandir)/man1/fcomp.1: lib/$(MANLANG)/man1/fcomp.1  lib/en/man1/.mandir
+-	$(SOELIM) -Ilib/$(MANLANG)/man1 -Ietc lib/$(MANLANG)/man1/fcomp.1 > tmp
++	$(SOELIM) lib/$(MANLANG)/man1/fcomp.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
  
- static int
--isblank(s)
-+isblank_(s)
- 	char	*s;
- {
- 	while (*s)
-@@ -387,7 +387,7 @@
- 			((linenumber % READBLABINTERVAL) == 0)
- 		)
- 			error("[%ld lines]", linenumber);
--		if (fc.blankflag && isblank(cp))
-+		if (fc.blankflag && isblank_(cp))
- 			continue;
- 		if (linecount >= linesavail)
- 		{
+ $(datadir)/en/man1/fhist.1: lib/en/man1/fhist.1 lib/en/man1/.datadir
+-	$(SOELIM) -Ilib/en/man1 -Ietc lib/en/man1/fhist.1 > tmp
++	$(SOELIM) lib/en/man1/fhist.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
+ 
+ $(mandir)/man1/fhist.1: lib/$(MANLANG)/man1/fhist.1  lib/en/man1/.mandir
+-	$(SOELIM) -Ilib/$(MANLANG)/man1 -Ietc lib/$(MANLANG)/man1/fhist.1 > tmp
++	$(SOELIM) lib/$(MANLANG)/man1/fhist.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
+ 
+ $(datadir)/en/man1/fhist_lic.1: lib/en/man1/fhist_lic.1 \
+ 		lib/en/man1/.datadir
+-	$(SOELIM) -Ilib/en/man1 -Ietc lib/en/man1/fhist_lic.1 > tmp
++	$(SOELIM) lib/en/man1/fhist_lic.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
+ 
+ $(mandir)/man1/fhist_lic.1: lib/$(MANLANG)/man1/fhist_lic.1 \
+ 		lib/en/man1/.mandir
+-	$(SOELIM) -Ilib/$(MANLANG)/man1 -Ietc \
++	$(SOELIM) \
+ 		lib/$(MANLANG)/man1/fhist_lic.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
+ 
+ $(datadir)/en/man1/fmerge.1: lib/en/man1/fmerge.1 lib/en/man1/.datadir
+-	$(SOELIM) -Ilib/en/man1 -Ietc lib/en/man1/fmerge.1 > tmp
++	$(SOELIM) lib/en/man1/fmerge.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp
+ 
+ $(mandir)/man1/fmerge.1: lib/$(MANLANG)/man1/fmerge.1 \
+ 		lib/en/man1/.mandir
+-	$(SOELIM) -Ilib/$(MANLANG)/man1 -Ietc \
++	$(SOELIM) \
+ 		lib/$(MANLANG)/man1/fmerge.1 > tmp
+ 	$(INSTALL_DATA) tmp $@
+ 	@rm -f tmp

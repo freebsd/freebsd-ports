@@ -1,29 +1,35 @@
 # New ports collection makefile for: 	fhist
-# Version required: 			1.1
-# Date created:    			Apr 23 1998
-# Whom: 				<koshy@india.hp.com>
+# Version required: 			1.6
+# Date created:				Jan 05 2000
+# Whom: 				<jkoshy@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fhist.1.1
-PKGNAME=	fhist-1.1
+DISTNAME=	fhist-1.6
 CATEGORIES=	devel
-MASTER_SITES=	ftp://archie.au/unix/Aegis/			\
-		http://www.canb.auug.org.au/~millerp/		\
+MASTER_SITES=	http://www.canb.auug.org.au/~millerp/		\
 		ftp://ftp.agso.gov.au/pub/Aegis/ 		\
 		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/Aegis/	\
 		http://gd.tuwien.ac.at/softeng/Aegis/
 
-MAINTAINER=	koshy@india.hp.com
+MAINTAINER=	jkoshy@freebsd.org
 
 MAN1=		fcomp.1 fhist.1 fmerge.1
+ALL_TARGET=	binaries
+INSTALL_TARGET=	install-bin
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --includedir=${PREFIX}/include
+
+post-extract:
+	cd ${WRKSRC}/lib/en/man1 && ${LN} -s ${WRKSRC}/etc/*.so .
 
 post-install:
 .for file in fhist fcomp fmerge
 	strip ${PREFIX}/bin/${file}
+	(cd ${WRKSRC}/lib/en/man1; soelim ${file}.1 > tmp; \
+	${INSTALL_MAN} tmp ${PREFIX}/man/man1/${file}.1)
 .endfor
 
 .include <bsd.port.mk>
