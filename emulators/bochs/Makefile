@@ -7,14 +7,18 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	1.4.1
+PORTVERSION=	2.0.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.bochs.com/bochs/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:bochs/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	${PORTNAME}:bochs \
+			anholt/:local
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:bochs \
+		BIOS-bochs-1.4.1.gz:local
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anholt@FreeBSD.org
 
 # Global variables
 #
@@ -23,15 +27,15 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
-USE_AUTOCONF_VER=	213
-CONFIGURE_ARGS=	--disable-split-hd
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--disable-split-hd \
+		--enable-all-optimizations
 
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix=${PREFIX}
-
-MAN1=		bochs.1 bochsrc.1 bximage.1
+MAN1=		bochs.1 bximage.1
+MAN5=		bochsrc.5
 
 .include <bsd.port.pre.mk>
 
@@ -68,7 +72,7 @@ CONFIGURE_ARGS+=	--enable-ne2000
 .endif
 
 .if defined(WITH_SOUND)
-CONFIGURE_ARGS+=	--enable-sb16=linux
+CONFIGURE_ARGS+=	--enable-sb16=freebsd
 .endif
 
 MSG_FILE=	${PKGDIR}/pkg-message
@@ -126,19 +130,22 @@ pre-everything::
 # Post-configure
 #
 
+post-extract:
+	@${GZIP_CMD} -dc ${DISTDIR}/BIOS-bochs-1.4.1.gz > \
+		${WRKDIR}/BIOS-bochs-1.4.1
+
 post-patch: patch-bochsrc patch-mans patch-wrapper patch-pkgmessage
 
 patch-bochsrc:
 	@${REINPLACE_CMD} -E ' \
-		s|^vgaromimage:\sbios/|vgaromimage: ${BIOS_DIR}/|; \
-		s|^romimage:\sfile=bios/|romimage: file=${BIOS_DIR}/|; \
+		s|^vgaromimage: bios/|vgaromimage: ${BIOS_DIR}/|; \
+		s|^romimage: file=bios/|romimage: file=${BIOS_DIR}/|; \
 		' ${WRKSRC}/.bochsrc
 
 patch-mans:
 	@${REINPLACE_CMD} -e ' \
-		s|/usr/local/bochs|${DATADIR}|; \
-		s|\@VERSION\@|${PORTVERSION}|; \
-		' ${WRKSRC}/doc/man/*.1
+		s|/usr/local/share/doc/bochs|${DOCSDIR}|; \
+		' ${WRKSRC}/doc/man/*.1 ${WRKSRC}/doc/man/*.5
 
 patch-wrapper:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|;s|%%X11BASE%%|${X11BASE}|; \
@@ -167,7 +174,7 @@ install-bins:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bximage ${PREFIX}/bin
 
 install-mans:
-.for mansect in 1
+.for mansect in 1 5
 .for man in ${MAN${mansect}}
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} \
 		${MAN${mansect}PREFIX}/man/man${mansect}
@@ -182,6 +189,7 @@ install-bios:
 	@${MKDIR} ${BIOS_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-* ${BIOS_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/bios/BIOS-* ${BIOS_DIR}
+	@${INSTALL_DATA} ${WRKDIR}/BIOS-bochs-1.4.1 ${BIOS_DIR}
 
 install-fonts:
 	@${MKDIR} ${FONT_DIR}

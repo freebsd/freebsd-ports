@@ -2,12 +2,14 @@
 bin/bochs
 bin/bximage
 libexec/bochs.bin
+share/bochs/bios/BIOS-bochs-1.4.1
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
+share/bochs/bios/BIOS-bochs-8-processors
 share/bochs/bios/BIOS-bochs-latest
 share/bochs/bios/VGABIOS-elpin-2.40
 share/bochs/bios/VGABIOS-elpin-LICENSE
-share/bochs/bios/VGABIOS-lgpl-0.3a
+share/bochs/bios/VGABIOS-lgpl-latest
 share/bochs/bios/VGABIOS-lgpl-README
 share/bochs/bochsrc.sample
 share/bochs/font/fonts.dir
@@ -24,7 +26,6 @@ share/bochs/font/vga.pcf.gz
 %%PORTDOCS%%share/doc/bochs/html/construction.html
 %%PORTDOCS%%share/doc/bochs/html/cosimulation.html
 %%PORTDOCS%%share/doc/bochs/html/cvs-status.html
-%%PORTDOCS%%share/doc/bochs/html/debugger.html
 %%PORTDOCS%%share/doc/bochs/html/developers.html
 %%PORTDOCS%%share/doc/bochs/html/faq.html
 %%PORTDOCS%%share/doc/bochs/html/features.html

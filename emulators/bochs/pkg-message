@@ -1,3 +1,6 @@
 ****  Bochs requires a .bochsrc file to be present in either your current
       directory or your home directory before starting.  A sample of the
       .bochsrc file can be found in %%DATADIR%%/bochsrc.sample.
+
+If you have problems with the default BIOS, you may want to try the BIOS
+from 1.4.1 at %%DATADIR%%/bios/BIOS-bochs-1.4.1
