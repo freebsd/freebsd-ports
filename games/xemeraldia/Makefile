@@ -8,10 +8,10 @@
 PORTNAME=	xemeraldia
 PORTVERSION=	0.31
 CATEGORIES=	games
-MASTER_SITES=	http://gluon.ph.sophia.ac.jp/~ftp/UNIX/src/games/
+MASTER_SITES=	http://www.rarf.riken.go.jp/archives/Linux/jg/JG-1.0/other-sources/jp/
 DISTNAME=	xemeraldia-0.3
 
-PATCH_SITES=	http://gluon.ph.sophia.ac.jp/~ftp/UNIX/src/games/
+PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	xemeraldia-0.3to0.31.patch.gz
 PATCH_DIST_STRIP=	-p1
 
