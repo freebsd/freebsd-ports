@@ -22,7 +22,7 @@
 +Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 +*/
 +
-+/* $FreeBSD: /tmp/pcvs/ports/devel/gdb6/files/Attic/patch-gdb_kvm-fbsd.c,v 1.4 2003-01-04 20:19:55 mp Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/devel/gdb6/files/Attic/patch-gdb_kvm-fbsd.c,v 1.5 2003-04-08 08:37:55 jake Exp $ */
 +
 +/*
 + * This works like "remote" but, you use it like this:
@@ -526,9 +526,9 @@
 +   *     the last context switch to the debugger.
 +   * XXX do something with the floating-point registers?
 +   */
-+  supply_register (SP_REGNUM, &pcbp->pcb_fp);
++  supply_register (SP_REGNUM, &pcbp->pcb_sp);
 +  supply_register (PC_REGNUM, &pcbp->pcb_pc);
-+  f_addr = extract_address (&pcbp->pcb_fp, SPARC_INTREG_SIZE);
++  f_addr = extract_address (&pcbp->pcb_sp, SPARC_INTREG_SIZE);
 +  /* Load the previous frame by hand (XXX) and supply it. */
 +  read_memory (f_addr + SPOFF, (char *)&top, sizeof (top));
 +  for (i = 0; i < 8; i++)
