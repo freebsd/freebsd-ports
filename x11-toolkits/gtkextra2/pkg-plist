@@ -20,6 +20,7 @@ include/gtkextra/gtkplotbox.h
 include/gtkextra/gtkplotcanvas.h
 include/gtkextra/gtkplotcsurface.h
 include/gtkextra/gtkplotdata.h
+include/gtkextra/gtkplotdt.h
 include/gtkextra/gtkplotflux.h
 include/gtkextra/gtkplotgdk.h
 include/gtkextra/gtkplotpc.h
@@ -33,6 +34,6 @@ include/gtkextra/gtksheet.h
 include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
 lib/libgtkextra.so
-lib/libgtkextra.so.16
+lib/libgtkextra.so.17
 share/aclocal/gtkextra.m4
 @dirrm include/gtkextra
