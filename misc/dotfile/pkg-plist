@@ -83,7 +83,6 @@ lib/dotfile-2.2/fvwm2/exports/distrib.export
 lib/dotfile-2.2/fvwm2/exports/imada.export
 lib/dotfile-2.2/fvwm2/save-files/distrib.save
 lib/dotfile-2.2/fvwm2/save-files/imada.save
-lib/dotfile-2.2/fvwm2/bytecompile
 lib/dotfile-2.2/fvwm2/style.template
 lib/dotfile-2.2/fvwm2/paths.template
 lib/dotfile-2.2/fvwm2/patch
@@ -248,7 +247,6 @@ lib/dotfile-2.2/elm/bytecompile
 lib/dotfile-2.2/fvwm1/save-files/system.save
 lib/dotfile-2.2/fvwm1/exports/contents
 lib/dotfile-2.2/fvwm1/exports/system.export
-lib/dotfile-2.2/fvwm1/bytecompile
 lib/dotfile-2.2/fvwm1/ressources.template
 lib/dotfile-2.2/fvwm1/paths.template
 lib/dotfile-2.2/fvwm1/modes.template
