@@ -739,6 +739,7 @@ cd-write	ports/sysutils/cd-write
 cd2mp3		ports/audio/cd2mp3
 cd9660_unicode	ports/sysutils/cd9660_unicode
 cdb		ports/databases/cdb
+cdbakeoven	ports/sysutils/cdbakeoven
 cdboot		src/sys/i386/boot/cdboot
 cdcontrol	src/usr.sbin/cdcontrol
 cdd		ports/audio/cdd
