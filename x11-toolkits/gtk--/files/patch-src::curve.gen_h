@@ -1,0 +1,13 @@
+--- src/curve.gen_h.orig	Sun Sep  5 05:44:36 2004
++++ src/curve.gen_h	Sun Sep  5 05:51:36 2004
+@@ -143,8 +143,8 @@
+       int i;
+       Iterator iter;
+       for (iter=b,i=0;iter!=e;++iter,i++);
+-      gfloat data[]=new gfloat[i];
+-      get_vector(n,data);
++      gfloat* data=new gfloat[i];
++      get_vector(i,data);
+       for (iter=b,i=0;iter!=e;++iter,i++)
+         (*iter)=data[i];
+       delete [] data;
