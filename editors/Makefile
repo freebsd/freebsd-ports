@@ -105,7 +105,6 @@
     SUBDIR += xed
     SUBDIR += xemacs
     SUBDIR += xemacs-mule-packages
-    SUBDIR += xemacs-mule-sumo
     SUBDIR += xemacs-mule-sumo-packages
     SUBDIR += xemacs-packages
     SUBDIR += xemacs-sumo-packages
