@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	ddd
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= ddd
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergio@softshark.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
 LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
@@ -26,7 +26,7 @@ USE_LIBTOOL_VER=13
 CFLAGS+=	-Wno-deprecated
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include/freelibiberty ${CPPFLAGS} -fpermissive' \
+CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include/freelibiberty ${CPPFLAGS}' \
 		LDFLAGS='${LDFLAGS}'
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
@@ -39,6 +39,7 @@ DOCS=		AUTHORS INSTALL PROBLEMS README TIPS TODO \
 		doc/html/ddd.html doc/ddd-paper.ps \
 		doc/ddd-themes.ps doc/ddd.ps \
 		doc/ddd-themes.pdf doc/ddd.pdf
+INFO=		ddd ddd-themes
 
 .if defined(MOTIFLIB)
 .if defined(MOTIF_STATIC)
@@ -52,16 +53,8 @@ LIBXMDIR=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 
-# DDD builds with either GCC 3.1, GCC 3.2 or GCC 3.3
-# Use 3.1 or 3.2 if it is available with base system
-# Otherwise, default to 3.3
-.if ${OSVERSION} >= 500035 && ${OSVERSION} <= 500038
-USE_GCC=3.1
-.elif ${OSVERSION} > 500038 && ${OSVERSION} < 501103
-USE_GCC=3.2
-.else
-USE_GCC=3.3
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure-gcc33
+.if ${OSVERSION} < 500000
+USE_GCC=	3.3
 .endif
 
 pre-patch:

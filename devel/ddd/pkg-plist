@@ -1,15 +1,10 @@
 bin/ddd
-info/ddd.info
-@exec install-info %D/info/ddd.info %D/info/dir
-@unexec install-info --delete %D/info/ddd.info %D/info/dir
-info/ddd-themes.info
-@exec install-info %D/info/ddd-themes.info %D/info/dir
-@unexec install-info --delete %D/info/ddd-themes.info %D/info/dir
 share/ddd-%%VERSION%%/COPYING
 share/ddd-%%VERSION%%/NEWS
 share/ddd-%%VERSION%%/ddd/Ddd
 share/ddd-%%VERSION%%/themes/green.vsl
 share/ddd-%%VERSION%%/themes/red.vsl
+share/ddd-%%VERSION%%/themes/rednil.vsl
 share/ddd-%%VERSION%%/themes/smalltitles.vsl
 share/ddd-%%VERSION%%/themes/smallvalues.vsl
 share/ddd-%%VERSION%%/themes/suppress.vsl
