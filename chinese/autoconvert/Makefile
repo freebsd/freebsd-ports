@@ -15,15 +15,13 @@ COMMENT=	Intelligent Chinese encoding converter
 
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
-CFLAGS+=	${CPPFLAGS} -fPIC
 MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
-.for dir in hzconvert contrib/xchat-plugins
-	@${REINPLACE_CMD} -e "s|^CFLAGS|#CLFAGS|" ${WRKSRC}/${dir}/Makefile
-.endfor
+	@${REINPLACE_CMD} -e "s|^CFLAGS|#CFLAGS|" \
+		${WRKSRC}/contrib/xchat-plugins/Makefile
 
 pre-install:
 	@${MKDIR} ${DATADIR}
