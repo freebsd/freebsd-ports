@@ -1,0 +1,12 @@
+Perl's chdir() has the unfortunate problem of being very, very, very
+global.  If any part of your program calls chdir() or if any library you
+use calls chdir(), it changes the current working directory for the
+whole program.
+
+File::chdir gives you an alternative, $CWD and @CWD.  These two
+variables combine all the power of chdir(), File::Spec and Cwd.
+
+WWW: http://search.cpan.org/dist/File-chdir/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

@@ -679,6 +679,7 @@
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Temp
+    SUBDIR += p5-File-chdir
     SUBDIR += p5-FileHandle-Unget
     SUBDIR += p5-Filter
     SUBDIR += p5-Filter-CBC
