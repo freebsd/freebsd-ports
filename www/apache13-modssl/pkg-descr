@@ -1,0 +1,15 @@
+Apache 1.3 + mod_ssl 2.0
+========================
+
+Apache is an HTTP server designed as a plug-in replacement for the NCSA server
+version 1.3 (or 1.4). It fixes numerous bugs in the NCSA server and includes
+many frequently requested new features, and has an API which allows it to be
+extended to meet users' needs more easily. This version is also SSL-aware by
+the help of the mod_ssl module which interfaces Apache to the SSLeay
+encryption library.
+
+All the documentation can be found on-line on the Web:
+
+  o  Apache:  http://www.apache.org/
+  o  mod_ssl: http://www.engelschall.com/sw/mod_ssl/
+  o  SSLeay:  http://www.ssleay.org/
