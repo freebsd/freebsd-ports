@@ -1,3 +1,0 @@
-bin/uplog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
