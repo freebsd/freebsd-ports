@@ -78,6 +78,11 @@ UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .include <bsd.port.pre.mk>
 
+.if (${ARCH} == "amd64")
+LATEST_LINK=		linux32_base
+MACHINE_ARCH=		i386
+.endif
+
 .if (${MACHINE_ARCH} == "i386")
 PORTREVISION=		7
 RPM_BZIP2=		bzip2-1.0.1-3.i386.rpm
