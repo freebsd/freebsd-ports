@@ -87,6 +87,7 @@
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics11
     SUBDIR += kdegraphics11-i18n
+    SUBDIR += kdegraphics2
     SUBDIR += killustrator
     SUBDIR += kplot3d
     SUBDIR += lfview
