@@ -5,6 +5,7 @@ bin/sqlsh.rb
 %%RUBY_SITELIBDIR%%/dbi/row.rb
 %%RUBY_SITELIBDIR%%/dbi/sql.rb
 %%RUBY_SITELIBDIR%%/dbi/trace.rb
+%%RUBY_SITELIBDIR%%/dbi/version.rb
 %%RUBY_SITELIBDIR%%/dbi/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/dbi
 @dirrm %%RUBY_SITELIBDIR%%/DBD
@@ -15,6 +16,7 @@ bin/sqlsh.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test1.pl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/test_blob.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/trace_test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmlgen.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/xmltest.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi
