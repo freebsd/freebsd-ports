@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtkstep
-# Version required:			1.6
+# Version required:			1.8
 # Date Created:				7 nov 98
 # Whom:				 	Gilad Rom
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkstep-1.6
+DISTNAME=	gtkstep-1.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www-info2.informatik.uni-wuerzburg.de/mitarbeiter/ulli/gtkstep/ \
 		ftp://sunshine.informatik.uni-wuerzburg.de/pub/wmaker/gtkstep/
