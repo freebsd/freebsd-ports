@@ -17,7 +17,7 @@ DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${GCCNAME}.tar.gz:gcc
 PATCHFILES=	${GCCNAME}-rtems-20021209.diff \
 		${NEWLIBNAME}-rtems-20030120.diff
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org

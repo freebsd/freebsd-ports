@@ -18,7 +18,7 @@ COMMENT=	FSF gdb-5.2 base-port for RTEMS development
 PATCHFILES=	${GDBNAME}-rtems-base-20020612.diff \
 		${GDBNAME}-rtems-cg-20020612.diff \
 		${GDBNAME}-rtems-rdbg-20020612.diff
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 LCLTARGET?=	i386-rtems
