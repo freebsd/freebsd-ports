@@ -18,20 +18,19 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
 
-MGDOCDIR=	${PREFIX}/share/doc/mgstat
+PORTDOCS=	Copyright README USAGE
+PLIST_FILES=	bin/mgstat
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
+USE_GCC=	3.3
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@if ! [ -d ${MGDOCDIR} ]; then ${MKDIR} ${MGDOCDIR}; fi
-	${INSTALL_DATA} ${WRKSRC}/Copyright ${MGDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${MGDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/USAGE ${MGDOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
