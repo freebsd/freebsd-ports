@@ -104,25 +104,25 @@ share/dfm/icons/icon_settings.xpm
 share/dfm/icons/icon_text.xpm
 share/dfm/icons/icon_video.xpm
 share/dfm/icons/icon_xterm.xpm
-share/doc/dfm/ANNOUNCE
-share/doc/dfm/BUGS
-share/doc/dfm/COPYRIGHT
-share/doc/dfm/CREDITS
-share/doc/dfm/ChangeLog
-share/doc/dfm/DOWNLOAD
-share/doc/dfm/HELP.ERROR
-share/doc/dfm/NO_WARRANTY
-share/doc/dfm/README
-share/doc/dfm/START
-share/doc/dfm/TESTED
-share/doc/dfm/TODO
+%%PORTDOCS%%share/doc/dfm/ANNOUNCE
+%%PORTDOCS%%share/doc/dfm/BUGS
+%%PORTDOCS%%share/doc/dfm/COPYRIGHT
+%%PORTDOCS%%share/doc/dfm/CREDITS
+%%PORTDOCS%%share/doc/dfm/ChangeLog
+%%PORTDOCS%%share/doc/dfm/DOWNLOAD
+%%PORTDOCS%%share/doc/dfm/HELP.ERROR
+%%PORTDOCS%%share/doc/dfm/NO_WARRANTY
+%%PORTDOCS%%share/doc/dfm/README
+%%PORTDOCS%%share/doc/dfm/START
+%%PORTDOCS%%share/doc/dfm/TESTED
+%%PORTDOCS%%share/doc/dfm/TODO
 share/examples/dfm/dfmext.sample.local
 share/examples/dfm/dfmext.sample.normal
 share/examples/dfm/dfmext.sample.user
 share/locale/da/LC_MESSAGES/dfm.mo
 share/locale/de/LC_MESSAGES/dfm.mo
 @dirrm share/examples/dfm
-@dirrm share/doc/dfm
+%%PORTDOCS%%@dirrm share/doc/dfm
 @dirrm share/dfm/icons/Moreicons
 @dirrm share/dfm/icons/FileManagerIcons
 @dirrm share/dfm/icons/Appicons
