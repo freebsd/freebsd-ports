@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libslang
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/
 DISTNAME=	slang-${PORTVERSION}
