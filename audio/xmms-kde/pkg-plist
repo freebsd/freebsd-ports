@@ -65,4 +65,7 @@ share/doc/HTML/en/xmmskde/index.cache.bz2
 share/doc/HTML/en/xmmskde/index.docbook
 share/doc/HTML/en/xmmskde/themes.txt
 share/doc/HTML/en/xmmskde/common
+@dirrm share/doc/HTML/en/xmmskde
 @dirrm share/apps/xmms-kde
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
