@@ -22,6 +22,7 @@ MAINTAINER=	torstenb@FreeBSD.org
 GNU_CONFIGURE=	yes
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 		zshoptions.1 zshall.1 zshparam.1 zshzle.1
+PLIST_SUB=	ZSH_VERSION=3.0.6
 
 # If you want to build a static binary, uncomment the following line
 #CONFIGURE_ENV+=	"LDFLAGS=-static"
