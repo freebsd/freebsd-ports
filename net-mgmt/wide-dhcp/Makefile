@@ -3,11 +3,11 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.12 1998/05/02 15:14:30 max Exp $
+# $Id: Makefile,v 1.13 1998/08/10 09:07:55 obrien Exp $
 #
 
-DISTNAME=       dhcp-1.4.0p1
-PKGNAME=        wide-dhcp-1.4.0p1
+DISTNAME=       dhcp-1.4.0p3
+PKGNAME=        wide-dhcp-1.4.0p3
 CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/
 

@@ -1,33 +1,22 @@
---- relay/Makefile.FreeBSD.orig	Tue Feb 25 17:48:32 1997
-+++ relay/Makefile.FreeBSD	Wed Apr 22 01:46:06 1998
-@@ -1,12 +1,12 @@
- OBJ = relay.o getmac.o common_subr.o interface.o
--CC = gcc
--CFLAGS = -g -Wall -I. -I../server
--#CC = cc
--#CFLAGS = -g -I. -I../server
+--- relay/Makefile.FreeBSD.orig	Wed Sep 10 18:10:42 1997
++++ relay/Makefile.FreeBSD	Sat Dec  5 03:08:30 1998
+@@ -2,13 +2,14 @@
+ 
+ CC = cc
+ CFLAGS += -O -I. -I../server
 -LDFLAGS = -lkvm
 -SBIN =		/usr/local/sbin
 -LIBEXEC = 	/usr/local/libexec
 -MAN =		/usr/local/man
-+#CC = gcc
-+#CFLAGS = -g -Wall -I. -I../server
-+CC = cc
-+CFLAGS += -Wall -I. -I../server
-+LDFLAGS =
++#LDFLAGS = -lkvm
++#PREFIX =	/usr/local
 +SBIN =		${PREFIX}/sbin
 +LIBEXEC = 	${PREFIX}/libexec
 +MAN =		${PREFIX}/man
+ CP =		/bin/cp
+ RM =		/bin/rm
+-GZIP =		/usr/bin/gzip
++GZIP =		/usr/bin/touch	# don't `gzip' anything for FreeBSD
  
  relay: ${OBJ}
  	${CC} ${CFLAGS} -o relay ${OBJ} ${LDFLAGS}
-@@ -14,9 +14,7 @@
- install: relay
- 	${INSTALL} -m 755 -s relay ${SBIN}/relay
- 	cp relay.8 ${MAN}/man8/relay.8
--	gzip ${MAN}/man8/relay.8
- 	cp dhcpdb.server.5 ${MAN}/man5/dhcpdb.server.5
--	gzip ${MAN}/man5/dhcpdb.server.5
- 
- relay.o:	relay.c common.h ../server/dhcp.h ../server/common_subr.h
- common_subr.o:	../server/common_subr.c ../server/dhcp.h common.h ../server/common_subr.h

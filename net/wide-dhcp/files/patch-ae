@@ -1,36 +1,20 @@
---- server/Makefile.FreeBSD.orig	Tue Jun 11 13:05:48 1996
-+++ server/Makefile.FreeBSD	Wed Apr 22 01:46:55 1998
-@@ -1,13 +1,13 @@
- OBJ = dhcps.o database.o hash.o getmac.o common_subr.o \
-       interface.o delarp.o
--LDFLAGS = -lkvm
--CC = gcc
--CFLAGS = -g -Wall -I. #-DCOMPAT_RFC1541 #-DNOICMPCHK
--#CC = cc
--#CFLAGS = -g -I. #-DCOMPAT_RFC1541 #-DNOICMPCHK
+--- server/Makefile.FreeBSD.orig	Fri Jan 30 01:03:57 1998
++++ server/Makefile.FreeBSD	Sat Dec  5 03:04:13 1998
+@@ -4,12 +4,13 @@
+ CC = cc
+ CFLAGS += -O -I. #-DMAC_FILTER #-DCOMPAT_RFC1541 #-DNOICMPCHK
+ LDFLAGS = -lkvm
 -SBIN =		/usr/local/sbin
 -LIBEXEC =	/usr/local/libexec
 -MAN =		/usr/local/man
-+LDFLAGS =
-+#CC = gcc
-+#CFLAGS = -g -Wall -I. #-DCOMPAT_RFC1541 #-DNOICMPCHK
-+CC = cc
-+CFLAGS += -Wall -I. #-DCOMPAT_RFC1541 #-DNOICMPCHK
++#PREFIX =	/usr/local
 +SBIN =		${PREFIX}/sbin
 +LIBEXEC =	${PREFIX}/libexec
 +MAN =		${PREFIX}/man
+ CP =		/bin/cp
+ RM =		/bin/rm
+-GZIP =		/usr/bin/gzip
++GZIP =		/usr/bin/touch	# don't `gzip' anything for FreeBSD
  
  dhcps: ${OBJ}
  	${CC} ${CFLAGS} -o dhcps ${OBJ} ${LDFLAGS}
-@@ -15,11 +15,8 @@
- install: dhcps
- 	${INSTALL} -m 755 -s dhcps ${SBIN}/dhcps
- 	cp dhcpdb.pool.5 ${MAN}/man5/dhcpdb.pool.5
--	gzip ${MAN}/man5/dhcpdb.pool.5
- 	cp dhcpdb.relay.5 ${MAN}/man5/dhcpdb.relay.5
--	gzip ${MAN}/man5/dhcpdb.relay.5
- 	cp dhcps.8 ${MAN}/man8/dhcps.8
--	gzip ${MAN}/man8/dhcps.8
- 
- clean:
- 	rm -f *~ *.o *core* dhcps
