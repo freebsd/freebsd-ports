@@ -15,6 +15,10 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 
 MAINTAINER=	dirk@FreeBSD.org
 
+.if exists(/usr/bin/openssl) && exists(/usr/lib/libcrypto.so) && exists(/usr/lib/libssl.so)
+FORBIDDEN=	"OpenSSL is already in the base system"
+.endif
+
 RESTRICTED=	"Cryptography"
 USE_PERL5=	yes
 ALL_TARGET=	freebsd-shared all
