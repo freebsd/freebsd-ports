@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtksamba
-PORTVERSION=	0.3.2.p1
+PORTVERSION=	0.3.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.open-systems.com/gtksamba/
 
