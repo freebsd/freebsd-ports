@@ -23,6 +23,8 @@
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-mona.elc
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-net.el
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-net.elc
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-popup-article.el
+%%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-popup-article.elc
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-search.el
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-search.elc
 %%EMACS_LIBDIR%%/site-lisp/navi2ch/navi2ch-util.el
