@@ -1,0 +1,33 @@
+# New ports collection makefile for:	xmms-infinity
+# Date created:				14 Dec 2001
+# Whom:					David Yeske <dyeske@yahoo.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xmms-infinity
+PORTVERSION=	0.2
+CATEGORIES=	graphics
+MASTER_SITES=	http://julien.carme.free.fr/
+DISTNAME=	infinity-${PORTVERSION}
+
+MAINTAINER=	dyeske@yahoo.com
+
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GTK=	yes
+USE_X_PREFIX=	yes
+
+pre-patch:
+	@${PERL} -pi -e 's|SDL/|SDL11/|g;' \
+		${WRKSRC}/*.[ch] ${WRKSRC}/configure
+
+.include <bsd.port.mk>
