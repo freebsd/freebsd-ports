@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 DISTFILES=	#empty
 
-MAINTAINER=	jasone@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print the contents of a procfs map file
 
 WRKSRC=		${WRKDIR}
