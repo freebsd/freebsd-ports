@@ -13,7 +13,7 @@ DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
