@@ -12,7 +12,7 @@ PORTEPOCH=	${MAKE} -V PORTEPOCH -f ${MAINDIR}/${MKFILE}
 CATEGORIES=	www
 DISTFILES=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Header files for mozilla communicator web-surfboard
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:configure
