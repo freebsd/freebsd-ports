@@ -27,6 +27,8 @@ CONFLICTS+=	sendmail-8.11.* sendmail-*-8.11.* sendmail+*-8.11.*
 CONFLICTS+=	sendmail-8.13.* sendmail-*-8.13.* sendmail+*-8.13.*
 
 NO_CDROM=	please update to a newer version
+DEPRECATED=	please update to a newer version
+EXPIRATION_DATE=	2005-04-01
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
