@@ -1,0 +1,50 @@
+--- drweb32.ini-tmpl.orig	Wed Oct  3 10:27:06 2001
++++ drweb32.ini-tmpl	Wed Oct  3 10:31:53 2001
+@@ -5,7 +5,7 @@
+ 
+ [BSD]
+ Key = "__INSTALL_DIR__/drweb.key"
+-LogFileName = "/var/log/drweb.log"
++LogFileName = "/dev/null"
+ RenameFilesTo = #??
+ FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
+ FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
+@@ -37,7 +37,7 @@
+ PromptOnAction = No
+ PromptFloppy = No
+ LimitLog = No
+-MaxLogSize = 512
++;MaxLogSize = 512
+ OutputMode = Color
+ FollowLinks = No
+ 
+@@ -47,22 +47,23 @@
+ FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
+ FilesTypes = INI,MBR,IMG,CSC,CPL,MBP,SHS,SHB,PIF
+ LogTime = Yes
+-LogFileName = "syslog"
++LogFileName = "/var/log/drwebd.log"
+ ;BusyFile = "/var/run/drwebd.bsy"
+-SocketMode = TCP
+-;SocketMode = Unix
++;SocketMode = TCP
++SocketMode = Unix
++SocketFile = "/var/run/drwebd.sock"
+ DaemonPort = 3000
+ SocketTimeout = 40
+ SocketReuseAddr = Yes
+ FileTimeout = 40
+-OutputMode = Terminal
+-LimitLog = No
++OutputMode = Quiet
++LimitLog = Yes
+ MaxLogSize = 512
+ LogScanned = Yes
+ LogInfo = Yes
+ LogPacked = Yes
+ Interfaces = "localhost"
+-;User = drweb
++User = root
+ ;UserID = 
+ ;GroupID = 
+ ScanFiles = All

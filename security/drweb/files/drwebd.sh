@@ -9,11 +9,12 @@ start)
 	if [ -x $drwebd ]; then
 	    echo -n ' drwebd'
 	    $drwebd
+	    /bin/chmod 660 /var/run/drwebd.sock
 	fi
 	;;
 stop)
 	/usr/bin/killall drwebd
-	/bin/rm -f /var/run/drwebd
+	/bin/rm -f /var/run/drwebd.sock
 	echo -n ' drwebd'
 	;;
 *)
