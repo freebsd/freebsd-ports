@@ -18,6 +18,7 @@
     SUBDIR += cole
     SUBDIR += cost
     SUBDIR += crimson
+    SUBDIR += dadadodo
     SUBDIR += dico
     SUBDIR += dict
     SUBDIR += diff-mode.el
