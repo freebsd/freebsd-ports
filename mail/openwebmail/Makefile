@@ -77,7 +77,7 @@ pre-fetch:
 .if ${PERL_LEVEL} > 500800
 	@${ECHO} ""
 	@${ECHO} "WARNING:"
-	@${ECHO} "Please make sure that your PERL is built with -DSUIDPERL_ENABLED,"
+	@${ECHO} "Please make sure that your PERL is built with -DENABLE_SUIDPERL,"
 	@${ECHO} "otherwise please build openwebmail with WITHOUT_SPEEDYCGI=yes"
 	@${ECHO} ""
 .endif
