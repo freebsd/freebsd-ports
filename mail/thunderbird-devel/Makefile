@@ -41,7 +41,7 @@ WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 
-NOT_FOR_ARCHS=		amd64
+NOT_FOR_ARCHS=		amd64 ia64
 
 .include <bsd.port.pre.mk>
 
