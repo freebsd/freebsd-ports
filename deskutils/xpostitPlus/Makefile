@@ -12,7 +12,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@freebsd.org
 
 USE_IMAKE=	yes
 MAN1=		xpostit+.1
