@@ -24,41 +24,20 @@ MAN1=		cdrdao.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/include/gtk--.h)
-XCDRDAO=		yes
-.endif
-
-.if defined(PACKAGE_BUILDING)
-XCDRDAO=		yes
-.endif
-
-.if defined(XCDRDAO)
-USE_NEWGCC=	yes
-LIB_DEPENDS+=		gtkmm-1.2:${PORTSDIR}/x11-toolkits/gtk--
-MAN1+=		xcdrdao.1
-PLIST=${PKGDIR}/PLIST.xcdrdao
-.else
 CONFIGURE_ARGS= 	--disable-gtkmmtest
-.endif
 
 .if defined(WITHOUT_SCGLIB) && ${OSVERSION} > 300000
 CONFIGURE_ARGS+= 	--without-scglib
 .endif
 
-.if defined(WITHOUT_PTHREADS) && ${OSVERSION} > 320000
+.if !defined(WITH_PTHREADS) && ${OSVERSION} > 320000
 CONFIGURE_ARGS+=	--without-posix-threads
 .endif
 
 pre-fetch:
 	@${ECHO_MSG} "If you don't want to use Joerg Schilling's SCSI library,"
 	@${ECHO_MSG} "set WITHOUT_SCGLIB=yes."
-	@${ECHO_MSG} "If you don't want to use pthreads, set WITHOUT_PTHREADS=yes."
-.if !defined(XCDRDAO)
-	@${ECHO_MSG} "To build the graphical X toc file editor, xcdrdao, type:"
-	@${ECHO_MSG} "    make XCDRDAO=yes."
-.else
-	@${ECHO_MSG} "Building with xcdrdao"
-.endif
+	@${ECHO_MSG} "If you want to use pthreads, set WITH_PTHREADS=yes."
 
 .if ${MACHINE_ARCH} == "alpha"
 post-extract:
@@ -68,9 +47,6 @@ post-extract:
 
 post-install:
 	strip $(PREFIX)/bin/cdrdao
-.if defined(XCDRDAO)
-	strip $(PREFIX)/bin/xcdrdao
-.endif
 	@${MKDIR} ${PREFIX}/share/doc/cdrdao
 .for i in COPYING CREDITS INSTALL README README.FreeBSD README.PlexDAE \
 	Release-1.1.0 Release-1.1.2 Release-1.1.3

@@ -1,6 +1,44 @@
 --- configure.orig	Wed Oct 27 01:13:45 1999
-+++ configure	Wed Oct 27 03:29:33 1999
-@@ -2945,7 +2945,7 @@
++++ configure	Fri Jun 23 08:40:42 2000
+@@ -2592,6 +2592,8 @@
+   { echo "configure: error: No PCCTS installation detected." 1>&2; exit 1; }
+ fi
+ 
++# Disable xcdrdao feature (temporary)
++if false ; then
+ # Check whether --with-gtkmm-prefix or --without-gtkmm-prefix was given.
+ if test "${with_gtkmm_prefix+set}" = set; then
+   withval="$with_gtkmm_prefix"
+@@ -2869,8 +2871,8 @@
+   
+   
+   rm -f conf.gtkmmtest
+-
+-
++# End Disable xcdrdao feature (temporary)
++fi
+ 
+ 
+ if test "$use_scglib" = default; then
+@@ -2897,7 +2899,7 @@
+   scsi_if_src=ScsiIf-lib.cc
+   
+   case "$host" in
+-    *-freebsd3* | *-freebsd4*)
++    *-freebsd3* | *-freebsd4* | *-freebsd5*)
+ 			       scsilib_libs="$scsilib_libs -lcam"
+ 			       ;;
+   esac
+@@ -2913,7 +2915,7 @@
+ 	       scsi_if_src="ScsiIf-linux.cc sg_err.cc"
+ 	       ;;
+     
+-    *-freebsd3* | *-freebsd4*)
++    *-freebsd3* | *-freebsd4* | *-freebsd5*)
+ 			       scsi_if_src="ScsiIf-freebsd-cam.cc"
+ 			       scsilib_libs="-lcam"
+ 			       ;;
+@@ -2945,7 +2947,7 @@
  esac
  
  case "$host" in
