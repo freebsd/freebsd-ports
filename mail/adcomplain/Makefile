@@ -4,10 +4,10 @@
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.24 1999/05/09 21:47:22 obrien Exp $
+# $Id: Makefile,v 1.25 1999/05/11 14:16:43 ache Exp $
 #
 
-DISTNAME=       adcomplain-3.52
+DISTNAME=       adcomplain-3.51
 CATEGORIES=     mail news
 MASTER_SITES=   http://www.rdrop.com/users/billmc/
 DISTFILES=      adcomplain.pl.uu
