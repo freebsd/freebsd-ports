@@ -114,6 +114,13 @@ CONFIGURE_ARGS+=	--enable-gcc3
 .endif
 
 pre-fetch:
+	@${ECHO}
+	@${ECHO} OO setup is currently broken on STABLE and
+	@${ECHO} CURRENT. You'll need a system patch to solve
+	@${ECHO} this problem:
+	@${ECHO}
+	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf.diff
+	@${ECHO}
 .if !defined(USE_GCC) || !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} OPTIONS:
