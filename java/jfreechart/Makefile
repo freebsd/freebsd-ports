@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jfreechart
-PORTVERSION=	0.9.18
+PORTVERSION=	0.9.20
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,7 @@ COMMENT=	A free Java class library for generating charts
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
 
-RUN_DEPENDS=	${JAVAJARDIR}/log4j.jar:${PORTSDIR}/java/jakarta-log4j \
-		${JAVAJARDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
+RUN_DEPENDS=	${JAVAJARDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
 
 .if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)
 BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
@@ -41,8 +40,9 @@ PORTDOCS=	*
 
 EXTRAJARS=	gnujaxp.jar
 
-PLIST_FILES=	share/java/classes/jfreechart.jar \
-		share/java/classes/gnujaxp.jar
+PLIST_SUB+=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||}
+PLIST_FILES=	%%JAVAJARDIR%%/jfreechart.jar \
+		%%JAVAJARDIR%%/gnujaxp.jar
 
 pre-fetch:
 	@${ECHO_MSG} ""
