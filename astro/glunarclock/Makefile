@@ -33,5 +33,7 @@ GCONF_SCHEMAS=	glunarclock.schemas
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|$${prefix}/share|$${datadir}|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-DGNOME_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>
