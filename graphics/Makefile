@@ -50,6 +50,7 @@
     SUBDIR += gtkfig
     SUBDIR += gtksee
     SUBDIR += gview
+    SUBDIR += gxanim
     SUBDIR += gyvefigs
     SUBDIR += gyvegui
     SUBDIR += gyvekernel
