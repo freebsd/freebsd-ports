@@ -26,10 +26,3 @@
 +			sunos*|*bsd*)
  				SYBASE_OS="-lm";;
  			solaris*)
-@@ -2691,5 +2690,5 @@
- cat >> $CONFIG_STATUS <<EOF
- 
--CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile scripts/install.sh scripts/make_wrapper.sh"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile src/Makefile scripts/install.sh scripts/make_wrapper.sh doc/global.sqshrc"}
- EOF
- cat >> $CONFIG_STATUS <<\EOF

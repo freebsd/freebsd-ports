@@ -6,7 +6,7 @@
 +
 +#	DO NOT EDIT -- the changes will be lost if you reinstall
 +#	or upgrade sqsh port/package. Instead, create your own
-+#		@prefix@/etc/sqshrc
++#		%%LOCALBASE%%/etc/sqshrc
 +#	if you wish to make system-wide customizations.
 +#	User-specific customizations can be made in ~/.sqshrc files.
  
