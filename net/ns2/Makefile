@@ -13,8 +13,10 @@ DISTNAME=	ns-src-2.1b7
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
+BROKEN=		"Checksum is incorrect"
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
-RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 
 MAN1=		ns.1
 MANCOMPRESSED=	no
@@ -22,7 +24,7 @@ MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/ns-2.1b7
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2
+CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
 ALL_TARGET=
 
