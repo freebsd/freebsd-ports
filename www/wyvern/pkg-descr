@@ -1,7 +1,18 @@
-Wivern is a lightweight HTTP server with the simple design, easy setup
-and small size.
+Wyvern is a lightweight HTTP server of simple design, easy setup /
+administration, and a small server run-time.  The goal of the Wyvern
+development is to provide a secure and stable web server for embedded
+appliances.  Here is a feature list of Wyvern:
 
-There is a web site in Japanese:
-http://www.MysticWALL.com/software/wyvern/wyvern.html
+  o  single-process server using select(2) and non-blocking I/O,
+  o  HTTP/1.1 support (not fully implemented),
+  o  host name based virtual hosting,
+  o  customizable error pages,
+  o  IPv6 communication (experimental),
+  o  Secure Socket Layer (SSL) communication,
+  o  highly secure implementation,
+  o  MD5 encrypted password management with dbm,
+  o  ErrorLog logging with syslogd(8), and
+  o  extensible plug-in modules.
 
 Author:	Kouichi ABE (WALL) <kouichi@MysticWALL.COM>
+WWW:	http://www.MysticWALL.COM/software/wyvern/wyvern.html
