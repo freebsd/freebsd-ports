@@ -1,40 +1,28 @@
 # ex:ts=8
-# Ports collection makefile for:  mutt w/pgp hooks
-# Date created:			  Thur July 25, 1996
-# Whom:				  David O'Brien (obrien@NUXI.com)
+# Ports collection makefile for:  mutt development
+# Date created:			  Fri June 8, 2001
+# Whom:				  David W. Chapman Jr. (dwcjr@inethouston.net)
 #
 # $FreeBSD$
 #
 
-PORTNAME=	mutt
-PORTVERSION=	1.2.5
-CATEGORIES+=	mail
-MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
-		ftp://ftp.uib.no/pub/mutt/ \
-		ftp://pgp.rasip.fer.hr/pub/mutt/international/ \
-		ftp://ftp.gbnet.net/pub/mutt-international/ \
-		ftp://riemann.iam.uni-bonn.de/pub/mutt/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
-		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/ \
-		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
-DISTNAME=	${PORTNAME}-${PORTVERSION}i
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
+PORTNAME=	mutt-devel
+PORTVERSION=	1.3.19
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel \
+		ftp://ftp.parodius.com/pub/mutt/devel/
+DISTNAME=	mutt-${PORTVERSION}i
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/ \
-		http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
-		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/ \
-		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/ \
-		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/ \
-		ftp://riemann.iam.uni-bonn.de/pub/mutt/
-PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz
-PATCH_DIST_STRIP=	-p1
+MAINTAINER=	ust@cert.siemens.de
 
-MAINTAINER?=	obrien@FreeBSD.org
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 
 .if defined(PACKAGE_BUILDING)
 WITH_SLANG=	yes
-BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .if ${MACHINE_ARCH} != "alpha"
@@ -43,7 +31,9 @@ WITH_DOCS=	yes
 .endif
 .endif
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		giconv.2:${PORTSDIR}/converters/libiconv
+
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
@@ -57,14 +47,18 @@ USE_OPENSSL=	yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 
+
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
-		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps \
+		--with-docdir=${PREFIX}/share/doc/mutt \
+		--sysconfdir=${PREFIX}/etc \
+		--with-iconv=${PREFIX} \
 		--enable-compressed
+
 .if defined(WITH_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
@@ -77,15 +71,11 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-MAN1=		mutt.1 mutt_dotlock.1
-MAN5=		muttrc.5
-
-pre-patch:
-	(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/charmaps-0.0.tar.gz)
+MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
+MAN5=		muttrc.5 mbox.5
 
 pre-configure:
-	cd ${WRKSRC}/charmaps/maps; ${LN} CP1251 WINDOWS-1251
-	cd ${WRKSRC}/charmaps/maps; ${RM} -f *.orig
+	(cd ${WRKSRC}; aclocal -I m4)
 
 .if !defined(NOPORTDOCS)
 post-build:
@@ -109,8 +99,7 @@ post-install:
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${PREFIX}/share/doc/mutt
 .if defined(WITH_DOCS)
-	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m 0755 \
-	    -d ${PREFIX}/share/doc/mutt/html
+	env MANMODE=0755 ${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
