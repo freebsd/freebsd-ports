@@ -1,0 +1,43 @@
+Un*x filenames can easily contain spaces ... Don't trim the filename.
+
+diff -ur tvision-0.8-orig/lib/TFileDialog.cc lib/TFileDialog.cc
+--- tvision-0.8-orig/lib/TFileDialog.cc	Thu Jul 26 09:59:20 2001
++++ lib/TFileDialog.cc	Wed Sep  8 14:14:15 2004
+@@ -162,6 +162,7 @@
+ 
+ /* 'src' is cast to unsigned char * so that isspace sign extends it
+    correctly. */
++/* Function defined but not used
+ static void trim( char *dest, const char *src )
+ {
+     while( *src != EOS && isspace( * (const unsigned char *) src ) )
+@@ -170,11 +171,13 @@
+         *dest++ = *src++;
+     *dest = EOS;
+ }
++*/
+ 
+ void TFileDialog::getFileName( char *s )
+ {
+     /* SS: changed */
+ 
++#if 0
+     char buf[PATH_MAX];
+ 
+     trim( buf, fileName->data );
+@@ -185,6 +188,15 @@
+         }
+     fexpand( buf );
+     strcpy( s, buf );
++#else
++    strcpy( s, fileName->data );
++    if( relativePath( s ) == True )
++        {
++        strcpy( s, directory );
++        strcat( s, fileName->data );
++        }
++    fexpand( s );
++#endif
+ }
+ 
+ void TFileDialog::handleEvent(TEvent& event)

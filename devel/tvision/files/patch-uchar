@@ -1,0 +1,161 @@
+Avoid possible problems with signed/unsigned char comparisons. And
+functions like toupper must be called with an unsigned char.
+
+
+diff -ur tvision-0.8-orig/lib/TButton.cc lib/TButton.cc
+--- tvision-0.8-orig/lib/TButton.cc	Thu Jul 26 09:59:19 2001
++++ lib/TButton.cc	Wed Jul 28 20:44:03 2004
+@@ -202,7 +202,7 @@
+             if( event.keyDown.keyCode == getAltCode(c) ||
+                 ( owner->phase == phPostProcess &&
+                   c != 0 &&
+-                  toupper(event.keyDown.charScan.charCode) == c
++                  toupper(event.keyDown.charScan.charCode) == (uchar)c
+                 ) ||
+                 ( (state & sfFocused) != 0 &&
+                   event.keyDown.charScan.charCode == ' '
+diff -ur tvision-0.8-orig/lib/TCluster.cc lib/TCluster.cc
+--- tvision-0.8-orig/lib/TCluster.cc	Thu Jul 26 09:59:19 2001
++++ lib/TCluster.cc	Wed Jul 28 20:44:16 2004
+@@ -271,7 +271,7 @@
+                             (state & sfFocused) != 0
+                           ) &&
+                           c != 0 &&
+-                          toupper(event.keyDown.charScan.charCode) == c
++                          toupper(event.keyDown.charScan.charCode) == (uchar)c
+                         )
+                       )
+                         {
+diff -ur tvision-0.8-orig/lib/TFileList.cc lib/TFileList.cc
+--- tvision-0.8-orig/lib/TFileList.cc	Wed Jul 28 18:52:17 2004
++++ lib/TFileList.cc	Wed Jul 28 20:45:21 2004
+@@ -80,7 +80,7 @@
+ 
+     /* SS: changed */
+ 
+-    for (char *p = sR.name; *p != '\0'; p++) *p = toupper(*p);
++    for (unsigned char *p = (unsigned char *)sR.name; *p != '\0'; p++) *p = toupper(*p);
+     return &sR;
+ }
+ 
+diff -ur tvision-0.8-orig/lib/TInputLine.cc lib/TInputLine.cc
+--- tvision-0.8-orig/lib/TInputLine.cc	Thu Jul 26 09:59:20 2001
++++ lib/TInputLine.cc	Wed Jul 28 20:45:56 2004
+@@ -29,7 +29,7 @@
+     char *p;
+ 
+     if( (p = strchr( (char *) s, '~' )) != 0 )
+-        return toupper(p[1]);
++        return toupper((uchar)(p[1]));
+     else
+         return 0;
+ }
+diff -ur tvision-0.8-orig/lib/TLabel.cc lib/TLabel.cc
+--- tvision-0.8-orig/lib/TLabel.cc	Thu Jul 26 09:59:20 2001
++++ lib/TLabel.cc	Wed Jul 28 20:46:18 2004
+@@ -86,7 +86,7 @@
+         char c = hotKey( text );
+         if( getAltCode(c) == event.keyDown.keyCode ||
+                 ( c != 0 && owner->phase == TGroup::phPostProcess &&
+-                toupper(event.keyDown.charScan.charCode) ==  c )
++                toupper(event.keyDown.charScan.charCode) ==  (uchar)c )
+           )
+ 	    focusLink(event);
+         }
+diff -ur tvision-0.8-orig/lib/TMenuView.cc lib/TMenuView.cc
+--- tvision-0.8-orig/lib/TMenuView.cc	Wed Jul 28 18:52:17 2004
++++ lib/TMenuView.cc	Wed Jul 28 20:47:15 2004
+@@ -339,14 +339,14 @@
+ 
+ TMenuItem *TMenuView::findItem( char ch )
+ {
+-    ch = toupper(ch);
++    ch = toupper((uchar)ch);
+     TMenuItem *p = menu->items;
+     while( p != 0 )
+         {
+         if( p->name != 0 && !p->disabled )
+             {
+             char *loc = strchr( (char *) p->name, '~' );
+-            if( loc != 0 && (uchar)ch == toupper( loc[1] ) )
++            if( loc != 0 && (uchar)ch == toupper( (uchar)(loc[1]) ) )
+                 return p;
+             }
+         p =  p->next;
+diff -ur tvision-0.8-orig/lib/TValidator.cc lib/TValidator.cc
+--- tvision-0.8-orig/lib/TValidator.cc	Thu Jul 26 09:59:22 2001
++++ lib/TValidator.cc	Wed Jul 28 20:49:31 2004
+@@ -388,10 +388,10 @@
+         if (! isLetter(ch))
+             return prError;
+                 else 
+-            consume(toupper(ch), input);
++            consume(toupper((uchar)ch), input);
+         break;
+         case  '!': 
+-        consume(toupper(ch), input);
++        consume(toupper((uchar)ch), input);
+         break;
+         case  '@':
+         consume(ch, input);
+@@ -427,7 +427,7 @@
+ 
+           if (pic[index] == ';')
+           index++;
+-          if (toupper(pic[index]) != toupper(ch))
++          if (toupper((uchar)(pic[index])) != toupper((uchar)ch))
+ #ifndef __UNPATCHED
+ 	if (ch != ' ')
+ 	    return rScan;
+diff -ur tvision-0.8-orig/lib/asm.cc lib/asm.cc
+--- tvision-0.8-orig/lib/asm.cc	Wed Jul 28 18:52:18 2004
++++ lib/asm.cc	Wed Jul 28 20:51:59 2004
+@@ -137,8 +137,8 @@
+   long	patternHash	= 0;
+   long	testHash	= 0;
+ 
+-  register const char*  testP= (const char*)block;
+-  register const char*  patP = str;
++  register const unsigned char*  testP= (const unsigned char*)block;
++  register const unsigned char*  patP = (const unsigned char*)str;
+   register long   x = 1;
+   int             i = patternLength-1;
+   while(i--) x =  (x<<5)%q;
+@@ -148,13 +148,13 @@
+     testHash    = ( (testHash   <<5) + toupper(*testP++) ) % q;
+   }
+ 
+-  testP = (const char*)block;
+-  const char* end = testP + testLength - patternLength;
++  testP = (const unsigned char*)block;
++  const unsigned char* end = testP + testLength - patternLength;
+ 
+   while (1) {
+ 
+      if(testHash == patternHash)
+-	 return testP-(const char*)block;
++	 return testP-(const unsigned char*)block;
+ 
+      if (testP >= end) break;
+ 
+diff -ur tvision-0.8-orig/lib/tvtext.cc lib/tvtext.cc
+--- tvision-0.8-orig/lib/tvtext.cc	Thu Jul 26 09:59:22 2001
++++ lib/tvtext.cc	Wed Jul 28 20:40:13 2004
+@@ -64,7 +64,7 @@
+             return '\xF0';      // special case to handle alt-Space
+ 
+         else if( tmp >= 0x10 && tmp <= 0x32 )
+-            return altCodes1[tmp-0x10];     // alt-letter
++            return altCodes1[tmp - 0x10];     // alt-letter
+ 
+         else if( tmp >= 0x78 && tmp <= 0x83 )
+             return altCodes2[tmp - 0x78];   // alt-number
+@@ -78,7 +78,7 @@
+     if( c == 0 )
+         return 0;
+ 
+-    c = toupper(c);
++    c = toupper((unsigned char) c);
+ 
+     /* SS: this makes g++ happy */
+ 

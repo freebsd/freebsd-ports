@@ -1,0 +1,41 @@
+ntohs() won't work, because it converts from bigendian to native
+byteorder, and the format used in TVision streams is littleendian.
+Conversion must be done explicitly, by calling readByte() several
+times, in consecutive statements !
+
+
+diff -ur -orig/lib/tobjstrm.cc lib/tobjstrm.cc
+--- -orig/lib/tobjstrm.cc	Tue Sep  7 17:31:19 2004
++++ lib/tobjstrm.cc	Tue Sep  7 17:34:15 2004
+@@ -295,11 +295,9 @@
+ ipstream::readWord()
+ {
+     /* SS: words are stored in little endian format (LSB first) */
+-    ushort val;
+-
+-    read((char *)&val, 2);
+-    val = ntohs(val);
+-    return val;
++    ushort ret = readByte();
++    ret = ret | (readByte() << 8);
++    return ret;
+ }
+ 
+ /**
+@@ -309,11 +307,11 @@
+ ipstream::readLong()
+ {
+     /* SS: ints are stored in little endian format (LSB first) */
+-    ulong val;
+-
+-    read((char *)&val, 4);
+-    val = ntohl(val);
+-    return val;
++    ulong ret = readByte();
++    ret = ret | (readByte() << 8);
++    ret = ret | (readByte() << 16);
++    ret = ret | (readByte() << 24);
++    return ret;
+ }
+ 
+ /**
