@@ -7618,6 +7618,7 @@ zpygresqlda	ports/databases/zpygresqlda
 zsh		ports/shells/zsh
 zsh-devel	ports/shells/zsh-devel
 zsnes		ports/emulators/zsnes
+zssh		ports/comms/zssh
 ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
