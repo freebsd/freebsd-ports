@@ -55,7 +55,6 @@
     SUBDIR += fpc
     SUBDIR += fpc-devel
     SUBDIR += freetxl
-    SUBDIR += g95
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc27
@@ -69,6 +68,7 @@
     SUBDIR += gcl
     SUBDIR += generic-haskell
     SUBDIR += gforth
+    SUBDIR += gfortran
     SUBDIR += ghc
     SUBDIR += ghc-doc
     SUBDIR += ghc5
