@@ -7,7 +7,8 @@
 
 PORTNAME=	apache
 PKGNAMESUFFIX=	_fp
-PORTVERSION=	1.3.23
+PORTVERSION=	1.3.26
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.freebsd.org/gifs/ \
@@ -30,9 +31,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${APACHE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
-
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
 
 #PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
@@ -71,7 +69,8 @@ CONFIGURE_ARGS=	 \
 		  --prefix=${PREFIX} \
 		  --server-gid=nogroup \
 		  --with-perl=${PERL} \
-		  --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		  --with-layout=FreeBSD \
+		  --manualdir=${DOCSDIR}/manual \
 		  --server-uid=${HTTPD_USER} \
 		  --server-gid=${HTTPD_GROUP} \
 		  --without-confadjust \
