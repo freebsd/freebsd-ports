@@ -1,0 +1,18 @@
+Index: bin/pkgdb
+===================================================================
+RCS file: /home/cvs/pkgtools/bin/pkgdb,v
+retrieving revision 1.64
+retrieving revision 1.65
+diff -u -1 -r1.64 -r1.65
+--- bin/pkgdb	16 Feb 2003 15:11:32 -0000	1.64
++++ bin/pkgdb	18 Feb 2003 02:33:59 -0000	1.65
+@@ -29,3 +29,3 @@
+ 
+-RCS_ID = %q$Idaemons: /home/cvs/pkgtools/bin/pkgdb,v 1.64 2003/02/16 15:11:32 knu Exp $
++RCS_ID = %q$Idaemons: /home/cvs/pkgtools/bin/pkgdb,v 1.65 2003/02/18 02:33:59 knu Exp $
+ RCS_REVISION = RCS_ID.split[2]
+@@ -392,3 +392,3 @@
+   if !origin && /^bsdpan-(.*)/ =~ pkg.name and
+-      ports = $portsdb.glob("p5-#{$1}")
++      ports = $portsdb.glob("p5-#{$1}") and !ports.empty?
+     special_guess = ports.first.origin
