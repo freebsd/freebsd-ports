@@ -10,14 +10,14 @@ PORTVERSION=	1.1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.quietsche-entchen.de/download/
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 
 MAN1=		smtp.proxy.1
 
 post-patch:
-	@${PERL} -pi -e 's,CC =,CC ?=,; s,CFLAGS =,CFLAGS +=,; \
+	@${REINPLACE_CMD} -e 's,CC =,CC ?=,; s,CFLAGS =,CFLAGS +=,; \
 		s,/usr/local/sbin,${PREFIX}/libexec,; s,/usr/local,${PREFIX},' \
 		${WRKSRC}/makefile
 

@@ -4,6 +4,3 @@ protocol is accomplished. If commands outside the specification are
 sent they are not forwarded to the server.
 
 WWW: http://www.quietsche-entchen.de/software/smtp.proxy.html
-
-- Kimura Fuyuki
-fuyuki@mj.0038.net
