@@ -1,7 +1,3 @@
-Namazu is a full-text search system intended for easy use. Not only it works
-as a CGI program for a small or medium scale Web search engine, but also works
-as a personal use search system for your pile of emails. 
-
-(The Japanese word `Namazu' means `catfish' in English) 
+This is a meta-port of Namazu and Japanese support modules.
 
 WWW: http://www.namazu.org/
