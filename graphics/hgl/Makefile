@@ -17,6 +17,7 @@ RUN_DEPENDS=	hugs:${PORTSDIR}/lang/hugs
 
 WRKSRC=		${WRKDIR}/graphics-${PORTVERSION}
 USE_GMAKE=	yes
+USE_XLIB=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/lib/x11
 MAKE_ENV=	system=FreeBSD \
