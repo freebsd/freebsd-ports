@@ -1,0 +1,12 @@
+--- src/mail_class.cxx.orig	Mon Jun  5 12:11:04 2000
++++ src/mail_class.cxx	Sun Oct  1 05:07:19 2000
+@@ -12,8 +12,8 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <errno.h>
+-#include <utime.h>
+ #include <sys/types.h>
++#include <utime.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <ctype.h>

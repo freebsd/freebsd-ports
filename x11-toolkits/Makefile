@@ -83,6 +83,7 @@
     SUBDIR += vdkbuilder
     SUBDIR += wxgtk
     SUBDIR += xbae
+    SUBDIR += xclasses
     SUBDIR += xenophilia
     SUBDIR += xforms
     SUBDIR += xg

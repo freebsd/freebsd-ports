@@ -1,0 +1,11 @@
+--- code/code.rule.orig	Thu Jul 16 19:29:27 1998
++++ code/code.rule	Sun Oct  1 02:46:19 2000
+@@ -13,7 +13,7 @@
+ 
+ compile: .depend $(ALL)
+ 	@rm -f ../$(DIRNAME).arc
+-	@(for N in $(ALL); do echo >>../$(DIRNAME).arc "$(DIRNAME)/`basename $$N .o`.lo"; done)
++	@(for N in $(ALL); do echo >>../$(DIRNAME).arc "$(DIRNAME)/`basename $$N .o`.o"; done)
+ 
+ install: 
+ 	$(MAKE) -C ../ install

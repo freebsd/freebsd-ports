@@ -1,0 +1,20 @@
+--- System/ARules.FreeBSD.orig	Thu Sep 10 19:12:51 1998
++++ System/ARules.FreeBSD	Sun Oct  1 02:15:35 2000
+@@ -34,7 +34,7 @@
+ CPU=$(CPU$(CPUm))
+ 
+ ## additional include paths
+-INCLUDES=-I$(TOPDIR)/include -I/usr/openwin/include -I/usr/local/include -I$(INCLUDESDIR)
++INCLUDES=-I$(TOPDIR)/include -I/usr/openwin/include -IX11BASE/include -I$(INCLUDESDIR)
+ 
+ ## Flags for compiler AND linker
+ BOTH=
+@@ -48,7 +48,7 @@
+ CC_OPTIONS=$(CPU) $(WARNS) $(INCLUDES) $(DEFINES)
+ 
+ ## linker flags
+-LD_OPTIONS=-L/usr/X11/lib -L/usr/lib -L$(LIBSDIR)
++LD_OPTIONS=-LX11BASE/lib -L/usr/lib -L$(LIBSDIR)
+ 
+ ## linker libraries
+ SHLIBS=-lX11 -lm
