@@ -1,4 +1,3 @@
-bin/linc-cleanup-sockets
 bin/linc-config
 include/linc-1.0/linc/linc-config.h
 include/linc-1.0/linc/linc-connection.h
