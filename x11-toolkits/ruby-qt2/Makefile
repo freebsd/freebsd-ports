@@ -17,7 +17,6 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
-USE_MESA=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
