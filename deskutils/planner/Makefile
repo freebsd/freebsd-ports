@@ -14,13 +14,11 @@ MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Project management application for Gnome 2
 
-LIB_DEPENDS=	mrproject.0:${PORTSDIR}/deskutils/libmrproject \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	mrproject.0:${PORTSDIR}/deskutils/libmrproject
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui libgnomeprintui
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

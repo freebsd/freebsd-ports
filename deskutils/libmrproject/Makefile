@@ -18,7 +18,7 @@ LIB_DEPENDS=	gsf-1.8:${PORTSDIR}/devel/libgsf
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack gnometarget
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

@@ -18,8 +18,6 @@ COMMENT=	Provides uniform access to different kinds of data sources
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-		glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		xslt.1:${PORTSDIR}/textproc/libxslt \
 		popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
@@ -27,12 +25,11 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier glib20 libxslt
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lgdbm"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		gda-config-tool.1
 MAN5=		gda-config.5
