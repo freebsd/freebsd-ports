@@ -36,6 +36,11 @@
     SUBDIR += corewars
     SUBDIR += cosmo
     SUBDIR += cowsay
+    SUBDIR += crafty
+    SUBDIR += crafty-open-large
+    SUBDIR += crafty-open-medium
+    SUBDIR += crafty-open-rock
+    SUBDIR += crafty-open-small
     SUBDIR += crossfire
     SUBDIR += cursive
     SUBDIR += digger-vgl
