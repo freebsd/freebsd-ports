@@ -1,14 +1,19 @@
---- src/s/freebsd.h.orig	Sun Oct 31 15:51:09 1999
-+++ src/s/freebsd.h	Sun Oct 31 15:52:57 1999
-@@ -43,7 +43,11 @@
+--- src/s/freebsd.h.~1~	Tue Jan 25 16:40:44 2000
++++ src/s/freebsd.h	Tue Jan 25 16:45:23 2000
+@@ -43,7 +43,16 @@
  
  #define LIBS_DEBUG
  #define LIBS_SYSTEM -lutil -lcrypt -lxpg4
--#define LIBS_TERMCAP -ltermcap
-+
++#if __FreeBSD_version < 400000
+ #define LIBS_TERMCAP -ltermcap
++#else
 +#ifdef HAVE_LIBNCURSES
 +#define TERMINFO
 +#define LIBS_TERMCAP -lncurses
++#else
++#define LIBS_TERMCAP -ltermcap
++#endif
 +#endif
  
  #define SYSV_SYSTEM_DIR
+ 
