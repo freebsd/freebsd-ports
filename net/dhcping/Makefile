@@ -16,6 +16,7 @@ MAN8=		dhcping.8
 
 pre-build:
 	${PERL} -pi.orig -e "s@gcc@${CC}@g; \
-			s@-Wall -g@-Wall ${CFLAGS}@g" ${WRKSRC}/Makefile
+			s@-Wall -g@-Wall ${CFLAGS}@g; \
+			s@/usr/local/@${PREFIX}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
