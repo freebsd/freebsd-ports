@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.7
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.dhis.org/download/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A programming text editor
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
