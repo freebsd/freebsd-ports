@@ -1,5 +1,5 @@
 --- Makefile.orig	Wed Oct 28 12:30:03 1998
-+++ Makefile	Tue Mar  9 03:10:00 1999
++++ Makefile	Fri Jun  7 00:23:28 2002
 @@ -17,7 +17,7 @@
  
  # You probably want to change this:
@@ -23,10 +23,19 @@
  
  # FreeBSD
 -#CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
-+CFLAGS = -DPOSIX_SIG $(CDEBUGFLAGS)
++CFLAGS += -DPOSIX_SIG $(CDEBUGFLAGS)
  
  # AIX 4.1.4 and 3.2.5
  #CFLAGS = -DPOSIX_SIG -DAIX $(CDEBUGFLAGS)
+@@ -86,7 +86,7 @@
+ 
+ # gcc can handle both -O and -g at once
+ #CDEBUGFLAGS = -g # -Wall -DDEBUG
+-CDEBUGFLAGS = -O
++#CDEBUGFLAGS = -O
+ 
+ ######################################################################
+ 
 @@ -104,8 +104,7 @@
  SSLLIB = -L../SSLeay-0.8.1 -lssl -lcrypto
  
