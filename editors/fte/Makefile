@@ -21,8 +21,27 @@ EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=
 USE_NEWGCC=		yes
+USE_XLIB=		yes
 
-.include "${.CURDIR}/files/conffiles"
+ADDITIONAL_DOCS=	about.html \
+			cfgfiles.html \
+			cmdopt.html \
+			colorize.html \
+			colors.html \
+			command.html \
+			contents.html \
+			events.html \
+			global.html \
+			index.html \
+			install.html \
+			modes.html \
+			perftips.html \
+			regexp.html \
+			status.html
+
+.include <bsd.port.pre.mk>
+
+.include "${FILESDIR}/conffiles"
 
 do-build:
 	(cd ${WRKSRC}/src ; ${MAKE} -f fte-unix.mak)
@@ -31,18 +50,26 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/etc/fte
-	${MKDIR} ${PREFIX}/lib/fte/etc/kbd
-	${MKDIR} ${PREFIX}/lib/fte/etc/menu
+	${MKDIR} ${PREFIX}/etc/fte/kbd
+	${MKDIR} ${PREFIX}/etc/fte/menu
 
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xfte ${PREFIX}/bin/fte
+	${LN} -sf ${PREFIX}/bin/fte ${PREFIX}/bin/xfte
+	${INSTALL_PROGRAM} ${WRKSRC}/src/cfte ${PREFIX}/bin/cfte
 	${INSTALL_DATA} ${WRKSRC}/config/fte-new.cnf ${PREFIX}/etc/fte/system.fterc
 .for CONFFILE in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/config/${CONFFILE} ${PREFIX}/lib/fte/etc
+	${INSTALL_DATA} ${WRKSRC}/config/${CONFFILE} ${PREFIX}/etc/fte
 .endfor
 .for KBDFILE in ${KBDFILES}
-	${INSTALL_DATA} ${WRKSRC}/config/kbd/${KBDFILE} ${PREFIX}/lib/fte/etc/kbd
+	${INSTALL_DATA} ${WRKSRC}/config/kbd/${KBDFILE} ${PREFIX}/etc/fte/kbd
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/config/menu/m_c.fte ${PREFIX}/lib/fte/etc/menu
-	${INSTALL_DATA} ${WRKSRC}/config/menu/m_html.fte ${PREFIX}/lib/fte/etc/menu
+	${INSTALL_DATA} ${WRKSRC}/config/menu/m_c.fte ${PREFIX}/etc/fte/menu
+	${INSTALL_DATA} ${WRKSRC}/config/menu/m_html.fte ${PREFIX}/etc/fte/menu
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/fte
+	for i in $(ADDITIONAL_DOCS); do \
+	    ${INSTALL_MAN} ${WRKSRC}/doc/$$i ${PREFIX}/share/doc/fte; \
+	done
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
