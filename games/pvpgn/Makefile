@@ -7,6 +7,7 @@
 
 PORTNAME=	pvpgn
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://download.berlios.de/pvpgn/
 DISTFILES=	${EXTRACT_ONLY} pvpgn-support-1.0.tar.gz

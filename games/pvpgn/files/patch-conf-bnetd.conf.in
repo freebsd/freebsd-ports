@@ -16,7 +16,7 @@
  helpfile    = /usr/local/etc/bnhelp.conf
  mpqfile     = /usr/local/etc/autoupdate.conf
 -logfile     = /usr/local/var/bnetd.log
-+logfile     = /var/log/bnetd/bnetd.log
++logfile     = /var/log/pvpgn/bnetd.log
  realmfile   = /usr/local/etc/realm.conf
  maildir     = /usr/local/var/bnmail
  versioncheck_file = /usr/local/etc/versioncheck.conf
@@ -24,7 +24,7 @@
  xplevelfile = /usr/local/etc/bnxplevel.conf
  xpcalcfile  = /usr/local/etc/bnxpcalc.conf
 -#pidfile    = /usr/local/var/bnetd.pid
-+pidfile    = /var/run/bnetd/bnetd.pid
++pidfile    = /var/run/pvpgn/bnetd.pid
  ladderdir   = /usr/local/var/ladders
  command_groups_file = /usr/local/etc/command_groups.conf
  tournament_file = /usr/local/etc/tournament.conf
