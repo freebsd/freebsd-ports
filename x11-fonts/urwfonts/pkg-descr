@@ -7,4 +7,4 @@ $ xset fp+ /usr/X11R6/lib/X11/fonts/URW
 $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually
-/etc/XF86Config or /etc/Xaccel.ini) and restarting the X-server.
+/etc/X11/XF86Config) and restarting the X-server.
