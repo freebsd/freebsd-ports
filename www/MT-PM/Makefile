@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	MT-PM
-PORTVERSION=	0.1
+PORTVERSION=	0.1.8
 CATEGORIES=	www
 MASTER_SITES=	http://manager.mt-plugins.org/ \
   		http://mt-plugins.org/
@@ -16,7 +16,7 @@ DISTFILES=	PluginManager-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	PluginManager-${PORTVERSION}${EXTRACT_SUFX}
 IGNOREFILES=	archives.xml
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rayners@rayners.org
 COMMENT=	Movable Type Plugin Manager
 
 RUN_DEPENDS=	${CGIDIR}/mt.cgi:${PORTSDIR}/www/MT \
