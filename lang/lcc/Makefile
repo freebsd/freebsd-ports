@@ -49,5 +49,4 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/lcc.1 ${WRKSRC}/doc/bprint.1 \
 		${PREFIX}/man/man1
 
-
 .include <bsd.port.mk>
