@@ -23,8 +23,8 @@ MAN1=		algae.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} > 502102
-BROKEN=		"Configure fails"
+.if (${ARCH} == "alpha" && ${OSVERSION} > 502102) || ${ARCH} == "sparc64"
+BROKEN=		"Configure fails on alpha 5.x and sparc64"
 .endif
 
 .include <bsd.port.post.mk>
