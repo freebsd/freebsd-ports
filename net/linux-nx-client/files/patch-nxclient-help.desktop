@@ -1,0 +1,12 @@
+--- nxclient-help.desktop.orig	Wed Sep  1 18:18:13 2004
++++ nxclient-help.desktop	Wed Sep  1 18:18:34 2004
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Comment=Help online
+-Exec=konqueror http://www.nomachine.com/help
+-Icon=konqueror
++URL=http://www.nomachine.com/help
+ Name=NX Help on the Web
+-Type=Application
++Type=Link
++Categories=Application;Network;
