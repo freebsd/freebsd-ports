@@ -1,22 +1,23 @@
 # New ports collection makefile for:	HDF_lib
-# Version required:	4.1r1
+# Version required:	4.1r2
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.2 1998/04/01 02:04:04 asami Exp $
+# $Id: Makefile,v 1.3 1998/04/08 12:53:43 tg Exp $
 #
 
-DISTNAME=	HDF4.1r1
-PKGNAME=	hdf-4.1r1
+DISTNAME=	HDF4.1r2
+PKGNAME=	hdf-4.1r2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF4.1r1/tar/
+MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF4.1r2/tar/
 
 MAINTAINER=	mi@aldan.ziplink.net
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-MAKE_FLAGS=	CC="$(CC)" -f
+FC?=		f77 # Can also be g77 for the newer one
+MAKE_FLAGS=	CC="$(CC)" FC="${FC}" -f
 
 # This will create dummy Makefiles and some links in the jpeg and libz
 # subdirectories. This way, we do not need to hunt all the dependencies
@@ -49,7 +50,7 @@ pre-build:
 	printf '\nclean:\n\ttrue\n' >> ${WRKSRC}/hdf/zlib/Makefile
 	printf '\ninstall-lib:\n\ttrue\n' >> ${WRKSRC}/hdf/zlib/Makefile
 	printf '\ninstall:\n\ttrue\n' >> ${WRKSRC}/hdf/zlib/Makefile
-	-ln -s /usr/lib/libz* ${WRKSRC}/hdf/zlib/
+	-ln -s /usr/lib/${BINFORMAT}/libz* ${WRKSRC}/hdf/zlib/
 	-ln -s /usr/include/zconf.h /usr/include/zlib.h ${WRKSRC}/hdf/zlib/
 
 post-install:
@@ -63,6 +64,6 @@ post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 
 test:
-	cd ${WRKSRC}; make $@
+	cd ${WRKSRC}; make ${MAKE_FLAGS} ${MAKEFILE} test
 
 .include <bsd.port.mk>
