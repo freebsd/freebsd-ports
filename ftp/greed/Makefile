@@ -11,7 +11,7 @@ CATEGORIES=	ftp www
 MASTER_SITES=	http://www.public.asu.edu/~arturner/greed/
 DISTNAME=	greed.81p
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	freebsd
 WRKSRC=		${WRKDIR}/greed.81p

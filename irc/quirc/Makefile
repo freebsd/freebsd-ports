@@ -10,7 +10,7 @@ PORTVERSION=	0.9.79
 CATEGORIES=	irc tk82
 MASTER_SITES=	http://patearl.powersurfr.com/quirc/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://mayer.physto.se/pub/yafc/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

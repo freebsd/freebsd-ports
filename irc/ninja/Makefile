@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/unstable/
 DISTNAME= 	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"

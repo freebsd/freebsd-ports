@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.xtorshun.org/spruce/v0.6/ \
 		http://fundy.linuxberg.com/files/x11/network/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

@@ -12,9 +12,9 @@ MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/cpiazza/
 # commented out until I upgrade to 0.3.0
 # MASTER_SITES=	http://www.student.hk-r.se/~pt98jan/
 
-MAINTAINER=    cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE= YES
+GNU_CONFIGURE=	yes
 
 MAN1=		colortail.1
 
