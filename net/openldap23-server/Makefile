@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.5
+PORTVERSION=		2.2.6
 PORTREVISION=		${OPENLDAP_PORTVERSION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -52,7 +52,7 @@ PORTDOCS=		drafts rfc
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	1
+OPENLDAP_PORTVERSION=	0
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
