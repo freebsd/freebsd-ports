@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	panda
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -27,9 +27,11 @@ RUBY_WITH_PTHREAD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	README
-DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja
-EXAMPLES_EN=	circles.rb	main.rb
+DOCS_EN=	README	\
+		doc/ref_en.html	doc/ref_en.rd
+DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja	\
+		doc/ref_ja.html	doc/ref_ja.rd
+EXAMPLES_EN=	circles.rb	main.rb		morecircles.rb	template.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
