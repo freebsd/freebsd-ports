@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	www devel pear
 
 MAINTAINER=	ports@FreeBSD.org
