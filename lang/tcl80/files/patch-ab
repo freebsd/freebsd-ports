@@ -1,11 +1,15 @@
 --- configure.orig	Tue Nov 25 10:31:42 1997
-+++ configure	Wed Sep 16 21:30:16 1998
-@@ -3782,14 +3782,18 @@
++++ configure	Tue Sep 22 13:29:15 1998
+@@ -3782,14 +3782,22 @@
    echo "$ac_t""yes" 1>&6
    
  	    SHLIB_CFLAGS="-fpic"
 -	    SHLIB_LD="ld -Bshareable -x"
-+	    SHLIB_LD="ld -Bshareable -x -soname \$@"
++	    if [ "$PORTOBJFORMAT" = "elf" ]; then
++		SHLIB_LD="ld -shared -x -soname \$@"
++	    else
++		SHLIB_LD="ld -Bshareable -x"
++	    fi
  	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
