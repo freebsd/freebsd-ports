@@ -3,10 +3,10 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.10 1996/04/01 07:11:29 asami Exp $
+# $Id: Makefile,v 1.11 1996/06/17 22:24:20 torstenb Exp $
 #
 
-DISTNAME=	ircii-2.9-base
+DISTNAME=	ircii-2.9-roof
 PKGNAME=	ircii-2.9
 CATEGORIES+=	net
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/
 MAINTAINER=	torstenb@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS= --with-default-server="irc.FreeBSD.ORG"
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
