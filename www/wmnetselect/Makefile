@@ -14,7 +14,6 @@ MAINTAINER=	nugget@slacker.com
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmnetselect ${X11BASE}/bin

@@ -1,0 +1,8 @@
+--- Imakefile.orig	Sat Apr 17 23:10:44 1999
++++ Imakefile	Wed Nov  1 09:06:49 2000
+@@ -9,4 +9,4 @@
+ SRCS = wmnetselect.c
+ OBJS = wmnetselect.o
+ 
+-ComplexProgramTarget(wmnetselect)
++ComplexProgramTargetNoMan(wmnetselect)
