@@ -147,10 +147,10 @@ lib/ocaml/gdome2/tProcessingInstruction.cmi
 lib/ocaml/gdome2/tProcessingInstruction.mli
 lib/ocaml/gdome2/tText.cmi
 lib/ocaml/gdome2/tText.mli
-lib/ocaml/stublibs/dllmlgdome.so.owner
 lib/ocaml/stublibs/dllmlgdome.so
+lib/ocaml/stublibs/dllmlgdome.so.owner
 lib/ocaml/stublibs/libmlgdome.so
-lib/pkgconfig/gdome2-cpp-smart.pc
+libdata/pkgconfig/gdome2-cpp-smart.pc
 @dirrm include/gmetadom/gdome_cpp_smart
 @dirrm include/gmetadom
 @dirrm lib/ocaml/gdome2
