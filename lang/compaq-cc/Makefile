@@ -23,6 +23,7 @@ MAINTAINER=	obrien@FreeBSD.org
 RESTRICTED=	"Distribution not allowed"
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	alpha
 
