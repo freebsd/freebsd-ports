@@ -17,7 +17,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		${GNOME_DEPENDS}
 
 .if !defined(WITHOUT_GNOME)
-GNOME_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+GNOME_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
+		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
 .endif
 
 USE_X_PREFIX=	yes
