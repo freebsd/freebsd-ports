@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION?=	3.0.8
+PORTVERSION?=	3.0.9
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		http://www.fsck.com/pub/rt/devel/ \
@@ -76,12 +76,14 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_f
 .endif
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
+DEPENDS_ARGS+=	BATCH=yes
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
 DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
 DEPENDS_ARGS+=	WITH_MODPERL2=yes
+DEPENDS_ARGS+=	BATCH=yes
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 .endif
@@ -123,7 +125,7 @@ pre-fetch:
 	@${ECHO} "      DB_TYPE=type                    mysql, Oracle, Pg or SQLite (mysql)"
 	@${ECHO} "      DB_HOST=hostname                The database host (localhost)"
 	@${ECHO} "      DB_PORT=port                    The database port"
-	@${ECHO} "      DB_DBA_USER=password            Name of database administrator (root)"
+	@${ECHO} "      DB_DBA_USER=username            Name of database administrator (root)"
 	@${ECHO} "      DB_DBA_PASSWORD=password        Password of database administrator"
 	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of mod_perl"
 	@${ECHO} "      WITH_APACHE2                    Use Apache2 as the web server"
