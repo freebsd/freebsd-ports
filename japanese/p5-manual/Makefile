@@ -8,7 +8,8 @@
 PORTNAME=	man
 PORTVERSION=	5.000
 CATEGORIES=	japanese perl5
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/lang/perl/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 DISTNAME=	perl${PORTVERSION}${PORTNAME}-j
 
 MAINTAINER=	sada@FreeBSD.org
