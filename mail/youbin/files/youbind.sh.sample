@@ -5,6 +5,8 @@
 #   If this program is used on your system, great care must be taken
 #   to avoid any security problem.
 #
+# Copy this script into /usr/local/etc/rc.d/youbind.sh to start yubind
+# automatically at boot time.
 
 case "$1" in
 start)
