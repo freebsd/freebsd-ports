@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-pool
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/commons/pool/source/
 PKGNAMEPREFIX=	jakarta-
@@ -30,8 +30,6 @@ ANT_TARGET=	build-jar
 ANT_TARGET=	build-jar javadoc
 PORTDOCS=	*
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}.jar
 DESTJARFILE=	${PORTNAME}.jar
 
@@ -40,8 +38,8 @@ do-build:
 		${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/${DESTJARFILE}
+	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${CP} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
 	@${ECHO} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
