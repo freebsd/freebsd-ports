@@ -8,7 +8,7 @@
 PORTNAME=	comclear
 PORTVERSION=	1.1
 PORTREVISION=	1
-CATEGORIES=	www gtk
+CATEGORIES=	www
 MASTER_SITES=	http://www.neuro-tech.net/files/
 
 MAINTAINER=	roam@FreeBSD.org
