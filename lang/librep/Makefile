@@ -42,4 +42,7 @@ MTREE_FILE=	/etc/mtree/BSD.x11.dist
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .endif
 
+post-extract:
+	@${RM} ${WRKSRC}/test
+
 .include <bsd.port.post.mk>
