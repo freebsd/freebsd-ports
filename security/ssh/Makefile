@@ -6,19 +6,16 @@
 # $FreeBSD$
 #
 # Maximal ssh package requires YES values for
-# USE_PERL, USE_TCPWRAP
+# USE_PERL, USE_TCPWRAP, USE_INET6
 #
 
 DISTNAME=       ssh-1.2.27
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
-PATCH_SITES=	http://www.ssh.org/patches/ \
-		ftp://ftp2.inch.com/pub/FreeBSD/
-PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
-PATCH_DIST_STRIP= -p1
-
 MAINTAINER=	torstenb@FreeBSD.org
+
+USE_AUTOCONF=	YES	# unfortunately... see comments in patch-xa for details
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
@@ -137,6 +134,14 @@ CONFIGURE_ENV+= LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ARGS+= --with-libwrap
 LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
+.endif
+
+# Original IPv6 patches were obtained from ftp://ftp.kyoto.wide.ad.jp/IPv6/ssh/
+# ssh-1.2.27-IPv6-1.5-patch.gz
+.if defined(USE_INET6) && ${USE_INET6} == YES
+CONFIGURE_ARGS+=	--enable-ipv6
+.else
+CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 # Include SOCKS firewall support

@@ -1,0 +1,94 @@
+*** ssh.h.orig	Wed May 12 13:19:28 1999
+--- ssh.h	Mon Jan 10 22:56:13 2000
+***************
+*** 430,436 ****
+  /* Records that the user has logged in.  This does many things normally
+     done by login(1). */
+  void record_login(int pid, const char *ttyname, const char *user, uid_t uid,
+!                   const char *host, struct sockaddr_in *addr);
+  
+  /* Records that the user has logged out.  This does many thigs normally
+     done by login(1) or init. */
+--- 430,436 ----
+  /* Records that the user has logged in.  This does many things normally
+     done by login(1). */
+  void record_login(int pid, const char *ttyname, const char *user, uid_t uid,
+! 		  const char *host, struct sockaddr *addr);
+  
+  /* Records that the user has logged out.  This does many thigs normally
+     done by login(1) or init. */
+***************
+*** 447,452 ****
+--- 447,455 ----
+     connection is successful, this calls packet_set_connection for the
+     connection. */
+  int ssh_connect(const char *host, int port, int connection_attempts,
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++ 		int another_port,
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+                  int anonymous, uid_t original_real_uid,
+                  const char *proxy_command, RandomState *random_state);
+  
+***************
+*** 872,876 ****
+--- 875,934 ----
+  #else
+  #define UID_ROOT 0
+  #endif
++ 
++ #ifdef HAVE_SOCKADDR_STORAGE
++ #ifndef HAVE_NEW_SS_FAMILY
++ #define	__ss_len	ss_len
++ #define	__ss_family	ss_family
++ #endif
++ #else
++ #define	_SS_MAXSIZE	128	/* Implementation specific max size */
++ #define	_SS_ALIGNSIZE	(sizeof(int))
++ #define	_SS_PAD1SIZE	(_SS_ALIGNSIZE - sizeof(u_short))
++ #define	_SS_PAD2SIZE	(_SS_MAXSIZE - (sizeof(u_short) + \
++ 					_SS_PAD1SIZE + _SS_ALIGNSIZE))
++ struct sockaddr_storage {
++ #ifdef HAVE_SOCKADDR_LEN
++   u_char	__ss_len;
++   u_char	__ss_family;
++ #else
++   u_short	__ss_family;
++ #endif
++   char		__ss_pad1[_SS_PAD1SIZE];
++   int		__ss_align;
++   char		__ss_pad2[_SS_PAD2SIZE];
++ };
++ #endif
++ 
++ #ifdef INET6_ADDRSTRLEN
++ #define ADDRSTRLEN	INET6_ADDRSTRLEN
++ #else
++ #define ADDRSTRLEN	46
++ #endif
++ 
++ #define	PORTSTRLEN	16
++ 
++ /* AF_UNSPEC or AF_INET or AF_INET6 */
++ extern int IPv4or6;
++ 
++ #ifndef ENABLE_IPV6
++ /* dummy value for old netdb.h */
++ #ifndef AI_PASSIVE
++ #define AI_PASSIVE	1
++ #define NI_NUMERICHOST	2
++ #define NI_NAMEREQD	4
++ #define NI_NUMERICSERV	8
++ struct addrinfo {
++ 	int	ai_flags;	/* AI_PASSIVE, AI_CANONNAME */
++ 	int	ai_family;	/* PF_xxx */
++ 	int	ai_socktype;	/* SOCK_xxx */
++ 	int	ai_protocol;	/* 0 or IPPROTO_xxx for IPv4 and IPv6 */
++ 	size_t	ai_addrlen;	/* length of ai_addr */
++ 	char	*ai_canonname;	/* canonical name for hostname */
++ 	struct sockaddr *ai_addr;	/* binary address */
++ 	struct addrinfo *ai_next;	/* next structure in linked list */
++ };
++ #endif
++ #endif /* not ENABLE_IPV6 */
+  
+  #endif /* SSH_H */
