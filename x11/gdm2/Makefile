@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gdm2
-PORTVERSION=	2.4.0.0
+PORTVERSION=	2.4.0.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=		2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=		2.0.0/sources/${PORTNAME:S/2$//}
 DISTNAME=	gdm-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
@@ -40,11 +41,11 @@ pre-fetch:
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
+		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 post-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
