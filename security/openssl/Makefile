@@ -3,7 +3,8 @@
 # Date created:		15 Aug 1997
 # Whom:			markm@freebsd.org
 #
-# $Id: Makefile,v 1.17 1998/07/06 04:55:30 itojun Exp $
+# $Id: Makefile,v 1.18 1998/07/11 17:42:30 steve Exp $
+#
 
 DISTNAME=		SSLeay-0.8.1b
 CATEGORIES=		devel security
