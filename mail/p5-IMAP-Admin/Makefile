@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IMAP-Admin
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IMAP
@@ -18,15 +18,16 @@ COMMENT=	Perl module for basic IMAP server administration
 PERL_CONFIGURE=	YES
 
 MAN3=		IMAP::Admin.3
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/p5-IMAP-Admin
+	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/create.pl \
 		${WRKSRC}/examples/delete.pl \
-		${PREFIX}/share/examples/p5-IMAP-Admin
+		${EXAMPLESDIR}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*******************************************************************************"
-	@${ECHO_MSG} "See ${PREFIX}/share/examples/p5-IMAP-Admin for some examples..."
+	@${ECHO_MSG} "See ${EXAMPLESDIR} for some examples..."
 	@${ECHO_MSG} "*******************************************************************************"
 	@${ECHO_MSG} ""
 
