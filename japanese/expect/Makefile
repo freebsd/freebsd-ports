@@ -3,21 +3,19 @@
 # Date created:		17 Oct 1997
 # Whom:			taguchi
 #
-# $Id: Makefile,v 1.9 1998/07/21 13:26:01 asami Exp $
+# $Id: Makefile,v 1.10 1998/07/27 00:12:13 steve Exp $
 #
 
 DISTNAME=	expect-5.26
 PKGNAME=	ja-expect-5.26
 CATEGORIES=	japanese lang tk80
+MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-LIB_DEPENDS=	tk80jp\\.1\\.:${PORTSDIR}/japanese/tk80
+LIB_DEPENDS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 
-FILESDIR=	${.CURDIR}/../../lang/expect/files
-GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
-CFLAGS=		-DKANJI -DKINPUT2
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 		--with-tkconfig=${PREFIX}/lib/tk8.0jp \
@@ -26,4 +24,10 @@ CONFIGURE_ARGS=	--enable-shared --with-tclconfig=${PREFIX}/lib/tcl8.0jp \
 
 NO_MAN_INSTALL=	yes
 
-.include "${.CURDIR}/../../lang/expect/Makefile"
+post-install:
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libexpect526jp.so.1.2 ${PREFIX}/lib/libexpect526jp.so; \
+	fi
+
+.include <bsd.port.mk>

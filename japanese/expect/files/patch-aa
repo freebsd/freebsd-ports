@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Mon Jun 29 10:12:36 1998
-+++ Makefile.in	Mon Jun 29 10:12:54 1998
+--- Makefile.in.ORIG	Fri Sep 25 15:07:28 1998
++++ Makefile.in	Fri Sep 25 15:31:01 1998
 @@ -30,7 +30,7 @@
  TCL_LIBRARY = @TCL_LIBRARY@
  
@@ -18,6 +18,15 @@
  TKLIB_INSTALLED = @TK_LIB_SPEC@
  # X11 include files and other flags to compiler
  X11_CFLAGS = @TK_XINCLUDES@
+@@ -63,7 +63,7 @@
+ # your Expect scripts.
+ # Note: On Linux systems which only have dynamic X libraries, the -g prevents
+ # the linker from using them.  So do not use -g on such systems.
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -DKANJI -DBUGFIX -DKINPUT2 -DXIM_IMPROVE -DCHECK_XTT
+ #XCFLAGS = @CFLAGS@ @EXP_CFLAGS@ @EXP_SHLIB_CFLAGS@ 
+ XCFLAGS = @CFLAGS@ @EXP_CFLAGS@
+ 
 @@ -174,7 +174,7 @@
  man1dir = $(mandir)/man1
  man3dir = $(mandir)/man3
@@ -84,7 +93,7 @@
  
  # install Expect library
  # This is done before the install target because the libraries have to be
-@@ -341,21 +343,22 @@
+@@ -341,21 +343,25 @@
  #   Local copy is pkgIndex rather than pkgIndex.tcl because pkgIndex.tcl.in
  #   is too long for some filesystems, sigh.
  install_shared_lib: $(EXP_LIB_FILES)
@@ -104,6 +113,9 @@
 -	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
 -	  $(INSTALL_PROGRAM) pkgIndex $(libdir)/pkgIndex.tcl ; \
 +	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(LIB_INSTALL_DIR)/$(EXP_SHARED_LIB_FILE) ; \
++	  if [ "${PORTOBJFORMAT}X" = "elfX" ] ; then \
++	    (cd $(LIB_INSTALL_DIR) ; ln -sf $(EXP_SHARED_LIB_FILE) `echo $(EXP_SHARED_LIB_FILE) | sed 's/\.so.*$$/.so/'`) \
++	  fi; \
 +	  $(INSTALL_SCRIPT) pkgIndex $(libdir)/pkgIndex.tcl ; \
  	else true; fi
  
@@ -116,7 +128,7 @@
  
  # Build Expect with TestCenter
  expect.tc: exp_main_exp.o $(OFILES) 
-@@ -368,13 +371,13 @@
+@@ -368,13 +374,13 @@
  # together.  I could fix it by testing all the libraries (again, in Expect's
  # configure) separately for Expectk, but as far as I know, it doesn't hurt
  # anything here, so I'm not worrying about it.
@@ -137,7 +149,14 @@
  
  # Build Expectk with TestCenter
  expectk.tc: exp_main_tk.o $(OFILES) 
-@@ -397,19 +400,14 @@
+@@ -392,24 +398,20 @@
+ # rule out for each file, sigh).
+ $(EXP_SHARED_LIB_FILE): $(OFILES)
+ 	-rm -f $(EXP_SHARED_LIB_FILE)
+-	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
++	@TCL_SHLIB_LD@ -o $(EXP_SHARED_LIB_FILE) -Wl,-soname,$(EXP_SHARED_LIB_FILE) $(SHARED_OFILES) @EXP_LD_SEARCH_FLAGS@ @EXP_SHLIB_LD_LIBS@
++	ln -sf $(EXP_SHARED_LIB_FILE) `echo $(EXP_SHARED_LIB_FILE) | sed 's/\.so.*$$/.so/'`
+ 
  .PHONY: install-info install info
  install-info:
  
@@ -162,7 +181,7 @@
  # install Expect's public include files
  #	$(INSTALL_DATA) expect_cf.h $(includedir)
  	$(INSTALL_DATA) $(srcdir)/expect.h $(includedir)
-@@ -430,15 +428,10 @@
+@@ -430,15 +432,10 @@
  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
@@ -179,7 +198,7 @@
  
  $(SCRIPT_LIST):
  	TCL_LIBRARY=$(TCL_LIBRARY) ; \
-@@ -448,14 +441,11 @@
+@@ -448,14 +445,11 @@
  # Delete all the installed files that the `install' target creates
  # (but not the noninstalled files such as `make all' creates)
  uninstall:
@@ -197,7 +216,7 @@
  		$(includedir)/expect_cf.h \
  		$(includedir)/expect.h \
  		$(includedir)/expect_tcl.h \
-@@ -464,10 +454,7 @@
+@@ -464,10 +458,7 @@
  # debugger is not removed, since other things could depend on it
  # remove standalone scripts and man pages
  	-for i in $(SCRIPT_LIST) ; do \
@@ -209,7 +228,7 @@
  	done
  
  ###################################
-@@ -514,7 +501,7 @@
+@@ -514,7 +505,7 @@
  # delete all files from current directory that are created by "make"
  clean:
  	-rm -rf *~ *.o shared core \
@@ -218,7 +237,7 @@
  		dumb exho devtty \
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE) \
  		$(SCRIPT_LIST)
-@@ -530,7 +517,7 @@
+@@ -530,7 +521,7 @@
  # because most people don't have to worry about them
  mostlyclean:
  	-rm -rf *~ *.o shared core \
@@ -227,7 +246,7 @@
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE)
  	@$(MAKE) subdir_do DO=$@ $(FLAGS_TO_PASS)
  
-@@ -680,7 +667,7 @@
+@@ -680,7 +671,7 @@
  expect-$(VERSION).tar.gz:	expect-$(VERSION).tar
  	gzip -fc expect-$(VERSION).tar > $@
  
@@ -236,7 +255,7 @@
  	rm -f .tmp
  	echo "set objdir" `pwd` > .tmp
  	if [ "$(srcdir)" = "." ] ; then \
-@@ -690,7 +677,7 @@
+@@ -690,7 +681,7 @@
  	echo "source all" >> .tmp
  	rootme=`pwd`; export rootme; \
  	srcdir=${srcdir} ; export srcdir ; \
