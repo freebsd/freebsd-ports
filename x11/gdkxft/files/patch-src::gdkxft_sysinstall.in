@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- src/gdkxft_sysinstall.in	2001/09/03 16:29:51	1.1
-+++ src/gdkxft_sysinstall.in	2001/09/03 16:30:09
+--- src/gdkxft_sysinstall.in.orig	Sat Sep  1 23:39:20 2001
++++ src/gdkxft_sysinstall.in	Tue Sep  4 14:29:30 2001
 @@ -276,7 +276,7 @@
  
  # create a theme to show off anti-aliased fonts
@@ -12,6 +12,17 @@ $FreeBSD$
      chomp $themedir;
      $themedir.="/share/themes";
  
+@@ -285,8 +285,8 @@
+ 	return 0;
+     };
+ 
+-    mkdir "$themedir/Gdkxft";
+-    mkdir "$themedir/Gdkxft/gtk";
++    mkdir "$themedir/Gdkxft", 0755;
++    mkdir "$themedir/Gdkxft/gtk", 0755;
+     my $file = "$themedir/Gdkxft/gtk/gtkrc";
+ 
+     print STDERR "Creating $file\n";
 @@ -342,7 +342,7 @@
      return 1;
  }
