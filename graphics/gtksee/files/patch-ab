@@ -1,0 +1,20 @@
+--- src/gtksee.c.orig	Sat Sep 25 01:27:40 1999
++++ src/gtksee.c	Sun May  6 13:25:31 2001
+@@ -322,13 +322,13 @@
+ 	}
+ 	if (hour == 0)
+ 	{
+-		sprintf(buffer, "%s, %02i/%02i/%02i 12:%02i AM",
+-			text, time->tm_year, time->tm_mon+1, time->tm_mday,
++		sprintf(buffer, "%s, %04i/%02i/%02i 12:%02i AM",
++			text, time->tm_year + 1900, time->tm_mon+1, time->tm_mday,
+ 			time->tm_min);
+ 	} else
+ 	{
+-		sprintf(buffer, "%s, %02i/%02i/%02i %02i:%02i %s",
+-			text, time->tm_year, time->tm_mon+1, time->tm_mday,
++		sprintf(buffer, "%s, %04i/%02i/%02i %02i:%02i %s",
++			text, time->tm_year + 1900, time->tm_mon+1, time->tm_mday,
+ 			hour, time->tm_min, (time->tm_hour<12)?"AM":"PM");
+ 	}
+ 	g_free(text);
