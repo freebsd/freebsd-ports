@@ -907,6 +907,7 @@
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Test-Builder-Tester
     SUBDIR += p5-Test-Class
+    SUBDIR += p5-Test-Cmd
     SUBDIR += p5-Test-Differences
     SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Harness
