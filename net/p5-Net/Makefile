@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-Net
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS= INSTALLDIRS=site < /dev/null
+CONFIGURE_ARGS=	INSTALLDIRS=site < /dev/null
 
 MAN3=		Net::Cmd.3 \
 		Net::Config.3 \
