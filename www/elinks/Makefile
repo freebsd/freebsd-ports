@@ -5,19 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	links
-PORTVERSION=	0.96
-PORTEPOCH=	1
+PORTNAME=	elinks
+PORTVERSION=	0.2.3
 CATEGORIES=	www
-MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
-		http://www.add.com.pl/links/download/ \
-		http://ice.dammit.lt/links/download/ \
-		http://links.sourceforge.net/download/
+MASTER_SITES=	http://pasky.ji.cz/elinks/
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--program-prefix=e
+USE_GMAKE=	yes
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/elinks-20020208
 
-MAN1=		links.1
+MAN1=		elinks.1
 
 .include <bsd.port.mk>
