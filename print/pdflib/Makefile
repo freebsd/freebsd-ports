@@ -7,6 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
@@ -16,12 +17,26 @@ COMMENT=	A C library for dynamically generating PDF
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cxx --prefix=${PREFIX} --with-perl=${PERL}
+CONFIGURE_ARGS=	--enable-cxx \
+		--with-java=no \
+		--with-py=no \
+		--with-tcl=no
+
+.if defined(WITH_PERL)
+USE_PERL5=	yes
+PLIST_SUB=	PERL=""
+CONFIGURE_ARGS+=--with-perl=${PERL}
+.else
+CONFIGURE_ARGS+=--with-perl=no
+PLIST_SUB=	PERL="@comment "
+.endif
 
 post-install:
+	${MKDIR} ${DATADIR}/fonts
+	${INSTALL_DATA} ${WRKSRC}/fonts/* ${DATADIR}/fonts
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
