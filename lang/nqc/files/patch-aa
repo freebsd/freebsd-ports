@@ -1,0 +1,38 @@
+--- Makefile.orig	Wed Apr 28 09:27:59 1999
++++ Makefile	Sat Aug 14 14:56:31 1999
+@@ -27,14 +27,14 @@
+ #
+ # Pick your C++ compiler. 
+ #
+-CC=g++
++#CC=g++
+ #CC=gcc
+ 
+ #
+ # Pick your YACC processor
+ #
+-YACC = bison -y
+-# YACC = yacc
++#YACC = bison -y
++YACC = yacc
+ 
+ #
+ # Define the FLEX processor
+@@ -46,7 +46,7 @@
+ # Use this to define the default device driver name
+ # for serial port connections.
+ #
+-DEFAULT_SERIAL_NAME = "/dev/ttyS0"
++DEFAULT_SERIAL_NAME = "/dev/cuaa0"
+ 
+ 
+ # other commands
+@@ -58,7 +58,7 @@
+ 
+ IFLAGS=-Iplatform -Ircxlib -Inqc
+ WFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes
+-CFLAGS = -O6 -pipe $(IFLAGS) $(WFLAGS) -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
++CFLAGS += $(IFLAGS) $(WFLAGS) -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
+ 
+ OBJ = $(NQCOBJ) $(RCXOBJ) $(POBJ)
+ 
