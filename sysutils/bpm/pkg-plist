@@ -1,0 +1,14 @@
+bin/bpm
+bin/gtk-su
+libexec/bpm/term
+libexec/bpm/fetch-wrapper
+%%DATADIR%%/pixmaps/term_16.png
+%%DATADIR%%/pixmaps/term_24.png
+%%DATADIR%%/pixmaps/pkg_16.png
+%%DATADIR%%/pixmaps/pkg_24.png
+%%DATADIR%%/pixmaps/pkg_48.png
+%%DATADIR%%/pixmaps/lock_48.png
+share/locale/en_CA/LC_MESSAGES/bpm.mo
+@dirrm libexec/bpm
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
