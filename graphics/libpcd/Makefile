@@ -22,7 +22,9 @@ MAKEFILE=	${WRKSRC}/GNUmakefile
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
+USE_REINPLACE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e 's/uint_fast16_t/uint32_t/' ${WRKSRC}/yuv2rgb.c
 .endif
 
 .include <bsd.port.post.mk>
