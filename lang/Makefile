@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.136 1999/06/10 08:11:07 steve Exp $
+# $Id: Makefile,v 1.137 1999/06/10 23:58:03 steve Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -37,6 +37,7 @@
     SUBDIR += hugs
     SUBDIR += ici
     SUBDIR += icon
+    SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += itcl
     SUBDIR += javac_netscape
