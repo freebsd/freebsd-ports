@@ -1,22 +1,10 @@
-Excerpts from the README:
+This is a reimplementation for Unix, by Byron Rakitzis, of the Plan
+9 shell. rc offers much the same capabilities as a traditional
+Bourne shell, but with a much cleaner syntax.
 
-  This is release 1.5 of rc.
+See the end of the man page, under "INCOMPATABILITIES" for (known?)
+differences from the "real" rc.
 
-  A unix version of the Plan-9 Shell.
+WWW: http://www.star.le.ac.uk/~tjg/rc/
 
-  FEEPING CREATURISM
-
-  See the end of the man page, under "INCOMPATABILITIES" for (known?)
-  differences from the "real" rc. Most of these changes were necessary
-  to get rc to work in a reasonable fashion on a real (i.e., commercial,
-  non-Labs) UNIX system; a few were changes motivated by concern
-  about some inadequacies in the original design.
-
-  CREDITS
-
-  This shell was written by Byron Rakitzis, but kudos go to Paul
-  Haahr for letting me know what a shell should do and for contributing
-  certain bits and pieces to rc (notably the limits code, print.c,
-  most of which.c and the backquote redirection code).
-
-eric.
+Scott Kenney <saken@hotel.rmta.org>

@@ -1,19 +1,20 @@
-# New ports collection makefile for:    rc
-# Version required:     1.5b1
-# Date created:         Sun Aug 13 12:36:14 CDT 1995
-# Whom:                 erich@rrnet.com
+# New ports collection makefile for:	rc
+# Version required:	1.6
+# Date created:		Sun Aug 13 12:36:14 CDT 1995
+# Whom:			erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1999/01/09 03:19:39 asami Exp $
+# $Id: Makefile,v 1.7 1999/03/15 04:34:14 steve Exp $
 #
 
-DISTNAME=	rc-1.5b2
+DISTNAME=	rc-1.6
 CATEGORIES=	shells plan9
-MASTER_SITES=   ftp://ftp.sys.toronto.edu/pub/rc/
+MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
+		ftp://ftp.sys.utoronto.ca/pub/rc/
 
-MAINTAINER=	erich@FreeBSD.org
+MAINTAINER=	saken@hotel.rmta.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-history
+CONFIGURE_ARGS=	--with-history
 MAN1=		history.1 rc.1
 
 .include <bsd.port.mk>
