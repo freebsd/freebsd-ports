@@ -1,0 +1,7 @@
+Apache::AuthenCache is a perl module that implements authentication caching
+to be used in conjunction with a primary authentication module, e.g.
+Apache::AuthenDBI and others.
+
+Author: Jason Bodnar <jcbodnar@mail.utexas.edu>
+
+--will
