@@ -73,8 +73,7 @@
 #     about how to do transparent proxying with ipfw)
 
 PORTNAME=	squid
-PORTVERSION=	2.5.7
-PORTREVISION=	13
+PORTVERSION=	2.5.8
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -83,39 +82,11 @@ MASTER_SITES=	\
 		ftp://ftp.leo.org/pub/comp/general/infosys/www/servers/squid/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE7
+DISTNAME=	squid-2.5.STABLE8
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE7-half_closed_POST.patch \
-		squid-2.5.STABLE7-LDAP_version_documentation.patch \
-		squid-2.5.STABLE7_req_resp_header.patch \
-		squid-2.5.STABLE7-helper_shutdown.patch \
-		squid-2.5.STABLE7-blank_response.patch \
-		squid-2.5.STABLE7-dothost.patch \
-		squid-2.5.STABLE7-PURGE_internal.patch \
-		squid-2.5.STABLE7-httpd_accel_vport.patch \
-		squid-2.5.STABLE7-cachemgr_vmobjects.patch \
-		squid-2.5.STABLE7-empty_acls.patch \
-		squid-2.5.STABLE7-close_other.patch \
-		squid-2.5.STABLE7-fakeauth_auth.patch \
-		squid-2.5.STABLE7-gopher_html_parsing.patch \
-		squid-2.5.STABLE7-wccp_denial_of_service.patch \
-		squid-2.5.STABLE7-dns_memleak.patch \
-		squid-2.5.STABLE7-fqdn_truncated.patch \
-		squid-2.5.STABLE7-ldap_spaces.patch \
-		squid-2.5.STABLE7-header_parsing.patch \
-		squid-2.5.STABLE7-httpd_accel_no_pmtu_disc.patch \
-		squid-2.5.STABLE7-ftp_datachannel.patch \
-		squid-2.5.STABLE7-short_icons_urls.patch \
-		squid-2.5.STABLE7-response_splitting.patch \
-		squid-2.5.STABLE7-wccp_buffer_overflow.patch \
-		squid-2.5.STABLE7-oversize_reply_headers.patch \
-		squid-2.5.STABLE7-ldap_search.patch \
-		squid-2.5.STABLE7-ntlm_segfault.patch \
-		squid-2.5.STABLE7-post.patch \
-		squid-2.5.STABLE7-server_post.patch \
-		squid-2.5.STABLE7-wccp_disturb.patch
+PATCHFILES=	squid-2.5.STABLE8-dns_assert.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
