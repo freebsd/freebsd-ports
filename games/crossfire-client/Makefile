@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.23 1998/09/15 11:13:08 asami Exp $
+# $Id: Makefile,v 1.24 1998/09/17 00:32:32 asami Exp $
 #
 
 DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
@@ -27,6 +27,7 @@ EXTRACT_ONLY=	${CF_SOURCES} ${CF_DOC}
 USE_PERL5=	yes
 USE_IMAKE=	yes
 PREFIX=		${LOCALBASE}
+MAN6=		crossfire.6 crossedit.6
 
 # Do you want to be able to rebuild documentation after installing the game
 # to produce Postscript documentation with colored icons ?! You have to go
