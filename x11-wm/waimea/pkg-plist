@@ -1,13 +1,18 @@
 bin/waimea
-share/Waimea/actions/action
-share/Waimea/actions/action.click-to-focus
-share/Waimea/actions/action.non-opaque
-share/Waimea/actions/action.no-mouse
-share/Waimea/actions/action.sloppy-focus
-share/Waimea/backgrounds/waimea.png
-share/Waimea/menu
-share/Waimea/styles/Default
-@dirrm share/Waimea/actions
-@dirrm share/Waimea/backgrounds
-@dirrm share/Waimea/styles
-@dirrm share/Waimea
+share/waimea/actions/action
+share/waimea/actions/action.click-to-focus
+share/waimea/actions/action.no-mouse
+share/waimea/actions/action.non-opaque
+share/waimea/actions/action.sloppy-focus
+share/waimea/backgrounds/waimea.png
+share/waimea/config
+share/waimea/menu
+share/waimea/scripts/filelist.pl
+share/waimea/scripts/procinfo.pl
+share/waimea/scripts/stylesdir.pl
+share/waimea/styles/Default.style
+@dirrm share/waimea/actions
+@dirrm share/waimea/backgrounds
+@dirrm share/waimea/scripts
+@dirrm share/waimea/styles
+@dirrm share/waimea
