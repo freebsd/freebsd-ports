@@ -3,7 +3,7 @@
 # Date created:         07 Sep 1998
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/24 10:24:26 stb Exp $
+# $Id: Makefile,v 1.2 1998/11/29 22:40:15 asami Exp $
 #
 
 DISTNAME=       netatalk-1.4b2+asun2.1.0
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.u.washington.edu/public/asun/
 
 MAINTAINER=	stb@freebsd.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libwrap.a:${PORTSDIR}/security/tcp_wrappers
+BUILD_DEPENDS=	${PREFIX}/lib/libwrap.a:${PORTSDIR}/security/tcp_wrapper
 
 MAN1=		aecho.1 getzones.1 megatron.1 nbp.1 pap.1 psorder.1
 MAN3=		atalk_aton.3 nbp_name.3
