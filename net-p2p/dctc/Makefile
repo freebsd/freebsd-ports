@@ -15,7 +15,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		glib-1.3.13:${PORTSDIR}/devel/glib13
+		glib-1.3.14:${PORTSDIR}/devel/glib13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
