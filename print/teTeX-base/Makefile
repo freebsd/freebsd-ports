@@ -1,15 +1,15 @@
 # New ports collection makefile for:	teTeX
-# Version required:	1.0.5
+# Version required:	1.0.6
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.30 1999/07/07 16:31:41 obrien Exp $
+# $Id: Makefile,v 1.31 1999/07/07 19:04:10 obrien Exp $
 #
 
-DISTNAME=	teTeX-1.0.5
+DISTNAME=	teTeX-1.0.6
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/
+MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
+		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=     systems/unix/teTeX/1.0/distrib/sources/
 DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
@@ -50,7 +50,7 @@ NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
 		tftopl.1 tie.1 vftovp.1 virmf.1 virmpost.1 viromega.1 \
 		virtex.1 vptovf.1 weave.1 xdvi.1
 
-TETEX_SRC=	teTeX-src-1.0.5.tar.gz
+TETEX_SRC=	teTeX-src-1.0.6.tar.gz
 TETEX_TEXMF=	teTeX-texmf-1.0.tar.gz
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
@@ -69,6 +69,7 @@ post-install:
 	@${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
 		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
 		> ${TEXMF_TREE}/web2c/texmf.cnf
+	@${CHMOD} 644 ${TEXMF_TREE}/web2c/texmf.cnf
 	@${SETENV} TEXMFMAIN=${TEXMF_TREE} \
 		${PREFIX}/bin/texconfig font ro > /dev/null 2>&1
 	@${SETENV} TEXMFMAIN=${TEXMF_TREE} \
