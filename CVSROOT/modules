@@ -3193,6 +3193,7 @@ identify	ports/security/identify
 idesk		ports/x11/idesk
 idled		ports/sysutils/idled
 idlefork	ports/devel/idlefork
+idnits		ports/textproc/idnits
 idnkit		ports/dns/idnkit
 ifc		ports/lang/ifc
 ifc7		ports/lang/ifc7
