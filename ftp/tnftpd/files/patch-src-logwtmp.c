@@ -1,12 +1,13 @@
---- src/logwtmp.c-orig	Mon Feb 24 07:38:44 2003
-+++ src/logwtmp.c	Thu Jan 22 12:05:36 2004
-@@ -46,10 +46,12 @@
+--- src/logwtmp.c-orig	Thu Jan 29 15:45:32 2004
++++ src/logwtmp.c	Thu Jan 29 15:47:34 2004
+@@ -42,11 +42,13 @@
  
  #include <sys/types.h>
  #include <sys/param.h>
 +#include <sys/socket.h>
  #include <sys/time.h>
  #include <sys/stat.h>
+ #include <sys/wait.h>
  
  #include <fcntl.h>
 +#include <netdb.h>
@@ -14,14 +15,14 @@
  #include <signal.h>
  #include <stdio.h>
 @@ -57,7 +59,6 @@
- #include <time.h>
- #include <unistd.h>
- #include <utmp.h>
+ #ifdef SUPPORT_UTMPX
+ #include <utmpx.h>
+ #endif
 -#include <util.h>
  
  #ifdef KERBEROS5
  #include <krb5/krb5.h>
-@@ -77,6 +78,26 @@
+@@ -80,6 +81,26 @@
  {
  	struct utmp ut;
  	struct stat buf;
