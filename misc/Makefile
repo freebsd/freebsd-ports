@@ -79,6 +79,7 @@
     SUBDIR += qclock
     SUBDIR += quotes
     SUBDIR += rc5des
+    SUBDIR += rfc
     SUBDIR += rpm
     SUBDIR += rpm2cpio
     SUBDIR += rtfm
