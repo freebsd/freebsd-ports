@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://ftp.op.net/pub/OpenBSD/OpenSSH/portable/ \
@@ -24,10 +24,11 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
-CLEAN=		etc/ssh_config etc/sshd_config etc/moduli \
-		etc/ssh_host_key etc/ssh_host_key.pub \
-		etc/ssh_host_dsa_key etc/ssh_host_dsa_key.pub \
-		etc/ssh_host_rsa_key etc/ssh_host_rsa_key.pub
+PRECIOUS=	ssh_config sshd_config \
+		ssh_host_key ssh_host_key.pub \
+		ssh_host_rsa_key ssh_host_rsa_key.pub \
+		ssh_host_dsa_key ssh_host_dsa_key.pub
+ETCOLD=		${PREFIX}/etc
 
 .if exists(/usr/include/security/pam_modules.h)
 CONFIGURE_ARGS+=	--with-pam
@@ -46,12 +47,19 @@ USE_OPENSSL_BASE=	yes
 PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
 MANPREFIX=	${PREFIX}/share
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
-		--sysconfdir=/etc/ssh --localstatedir=/var
-EMPTYDIR=	${PREFIX}/empty
-.else
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man --localstatedir=/var
 EMPTYDIR=	/var/empty
+ETCSSH=		/etc/ssh
+.else
+.if exists(/var/empty)
+EMPTYDIR=	/var/empty
+.else
+EMPTYDIR=	${PREFIX}/empty
 .endif
+ETCSSH=		${PREFIX}/etc/ssh
+.endif
+PLIST_SUB+=	EMPTYDIR=${EMPTYDIR}
+CONFIGURE_ARGS+=	--sysconfdir=${ETCSSH}
 CONFIGURE_ARGS+=	--with-privsep-path=${EMPTYDIR}
 
 .if defined(BATCH)
@@ -79,17 +87,30 @@ post-patch:
 pre-configure:
 	@${ECHO_MSG} !!!! Warning this option uses autoconf/autoheader !!!
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
-                ${AUTOCONF_ARGS})
+		${AUTOCONF_ARGS})
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTOHEADER})
 .endif
 
+post-configure:
+	${SED} -e 's:__PREFIX__:${PREFIX}:g' \
+		${FILESDIR}/sshd.sh > ${WRKSRC}/sshd.sh
+
 pre-install:
-	-${MKDIR} ${EMPTYDIR}
+	-${MKDIR} ${PREFIX}/empty
 	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
 	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
 		-h - -d ${EMPTYDIR} -s /nonexistent -c "sshd privilege separation"; fi
+	-@[ ! -d ${ETCSSH} ] && ${MKDIR} ${ETCSSH}
+.for i in ${PRECIOUS}
+	-@[ -f ${ETCOLD}/${i} ] && [ ! -f ${ETCSSH}/${i} ] && \
+		${ECHO_MSG} ">> Linking ${ETCSSH}/${i} from old layout." && \
+		${LN} ${ETCOLD}/${i} ${ETCSSH}/${i}
+.endfor
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
+	${INSTALL_DATA} -c ${WRKSRC}/ssh_config.out ${ETCSSH}/ssh_config-dist
+	${INSTALL_DATA} -c ${WRKSRC}/sshd_config.out ${ETCSSH}/sshd_config-dist
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
