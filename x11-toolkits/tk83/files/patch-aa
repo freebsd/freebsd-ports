@@ -1,15 +1,6 @@
---- configure.orig	Sun Feb 20 06:30:02 2000
-+++ configure	Mon May  1 11:21:14 2000
-@@ -1763,7 +1763,7 @@
- 	    LDFLAGS="-Wl,-Bexport"
- 	    LD_SEARCH_FLAGS=""
- 	    ;;
--	NetBSD-*|FreeBSD-[1-2].*|OpenBSD-*)
-+	NetBSD-*|FreeBSD-*|OpenBSD-*)
- 	    # Not available on all versions:  check for include file.
- 	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
- echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -1847,6 +1847,7 @@
+--- configure.orig	Sat Oct 20 02:24:40 2001
++++ configure	Sat Nov 10 21:53:28 2001
+@@ -2351,21 +2351,22 @@
  	    # FreeBSD doesn't handle version numbers with dots.
  
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
@@ -17,7 +8,26 @@
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
  	FreeBSD-*)
-@@ -2303,6 +2304,7 @@
+ 	    # FreeBSD 3.* and greater have ELF.
+ 	    SHLIB_CFLAGS="-fPIC"
+-	    SHLIB_LD="ld -Bshareable -x"
+-	    SHLIB_LD_LIBS=""
++	    SHLIB_LD="ld -shared -x -soname \$@"
++	    SHLIB_LD_LIBS='${LIBS}'
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""
+-	    LDFLAGS="-export-dynamic"
++	    LDFLAGS=""
+ 	    LD_SEARCH_FLAGS=""
+ 	    # FreeBSD doesn't handle version numbers with dots.
+ 	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+-	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
+ 	    TCL_LIB_VERSIONS_OK=nodots
+ 	    ;;
+ 	Rhapsody-*|Darwin-*)
+@@ -2882,6 +2883,7 @@
  	echo "$ac_t""no" 1>&6
      fi
  
@@ -25,12 +35,3 @@
  
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
-@@ -4005,7 +4007,7 @@
- eval eval "TK_UNSHARED_LIB_SUFFIX=${UNSHARED_LIB_SUFFIX}"
- 
- TCL_LIB_SPEC='-L$(TCL_BIN_DIR) $(TCL_LIB_FLAG)'
--TCL_STUB_LIB_SPEC='-L$(TCL_BIN_DIR) $(TCL_STUB_LIB_FLAG)'
-+TCL_STUB_LIB_SPEC='$(LOCALBASE)/lib/libtclstub83.a'
- 
- if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
-     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
