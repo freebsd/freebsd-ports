@@ -1,12 +1,12 @@
 --- makefile.orig	Fri Mar 23 02:44:58 2001
-+++ makefile	Sun Dec  8 09:39:12 2002
++++ makefile	Sun Dec  8 11:18:52 2002
 @@ -79,7 +79,8 @@
  	@echo "where <system> can be:"
  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
  	@echo "	apollo-gcc, atari,aux(*), aux-gcc, bsd, bsdgcc, convexos,"
 -	@echo "	dgux, djgpp, encore, freebsd, hpux-68k(*), hpux-68k-ansi,"
 +	@echo "	dgux, djgpp, encore, freebsd-{alpha,i386,sparc64},"
-+	@echo " hpux-68k(*), hpux-68k-ansi,"
++	@echo "	hpux-68k(*), hpux-68k-ansi,"
  	@echo "	hpux-68k-gcc, hpux-pa(*), hpux-pa-ansi, hpux-pa-gcc, hpux9-pa-ansi,"
  	@echo "	irix, irix_asm, isc, isc_asm, linux, linux-aout, linux-68k,"
  	@echo "	machten, mach_386, mips-ultrix, netbsd, netbsd_68k, newsasm,"
@@ -29,7 +29,7 @@
 +freebsd-sparc64:
 +	$(MAKE) all LD="$(CC) -s" \
 +	CFLAGS="$(RSAINCDIR) $(OS_CFLAGS) -DPORTABLE -DUNIX -DIDEA32 \
-+	-DHIGHFIRST -DMAX_NAMELEN=255"
++	-DHIGHFIRST -DMERRITT -DMAX_NAMELEN=255"
  
  386bsd:
  	$(MAKE) all CC=gcc LD=gcc OBJS_EXT="_80386.o _zmatch.o" \
