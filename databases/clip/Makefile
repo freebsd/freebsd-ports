@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
 
+BROKEN=		Does not install
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
