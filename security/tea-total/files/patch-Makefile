@@ -13,19 +13,17 @@
  MKDIR = mkdir -p
  CMP = cmp
 -CFLAGS = -O2 -Wall -DARCH_$(ARCH)
-+CFLAGS += -DARCH_$(ARCH)
++CFLAGS += -DARCH_FREEBSD
  LDFLAGS =
  BINDIR = $(PREFIX)/bin
  TEATOTAL = teatotal
-@@ -26,6 +26,11 @@
+@@ -26,6 +26,9 @@
  ifeq ($(ARCH), OPENBSD)
  MANDIR = $(PREFIX)/share/man/man1
  RANDOM_DEVICE = \"/dev/srandom\"
 +else
-+ifeq ($(ARCH), FREEBSD)
 +MANDIR = $(PREFIX)/man/man1
 +RANDOM_DEVICE = \"/dev/random\"
-+endif
  endif
  endif
  

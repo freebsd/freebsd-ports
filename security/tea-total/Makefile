@@ -7,7 +7,7 @@
 
 PORTNAME=	tea-total
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.alexholden.net/pub/${PORTNAME}/
 
@@ -20,10 +20,4 @@ ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
 MAN1=		teatotal.1 tea.1 untea.1 tea-kgen.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
