@@ -19,7 +19,7 @@
              ;;
          *)
 -            pthread_lib="-lpthread"
-+            pthread_lib="-L""$LOCALBASE""/lib -llthread"
++            pthread_lib="-L""$LOCALBASE""/lib -llthread -llgcc_r"
              ;;
      esac
      LIBS="$LIBS $pthread_lib"
@@ -28,7 +28,7 @@
          if test x$use_pthreads = xyes; then
              CFLAGS="$CFLAGS -D_REENTRANT -DSDL_USE_PTHREADS"
 -            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT"
-+            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT -I""$LOCALBASE""/include/pthread/linuxthreads"
++            SDL_CFLAGS="$SDL_CFLAGS -D_REENTRANT -D_THREAD_SAFE -I""$LOCALBASE""/include/pthread/linuxthreads"
              SDL_LIBS="$SDL_LIBS $pthread_lib"
          fi
      fi
