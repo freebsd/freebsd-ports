@@ -8623,6 +8623,7 @@ pkill		ports/sysutils/pkill
 pks		ports/security/pks
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
+pl-fortunepl	ports/polish/fortunepl
 pl-openoffice-1.0	ports/polish/openoffice-1.0
 pl-openoffice-1.1	ports/polish/openoffice-1.1
 pl-sap		ports/polish/sap
