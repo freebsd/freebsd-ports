@@ -3,6 +3,7 @@ share/locale/de/LC_MESSAGES/Xdialog.mo
 share/locale/es/LC_MESSAGES/Xdialog.mo
 share/locale/fr/LC_MESSAGES/Xdialog.mo
 share/locale/hu/LC_MESSAGES/Xdialog.mo
+share/locale/pt_BR/LC_MESSAGES/Xdialog.mo
 share/locale/ru/LC_MESSAGES/Xdialog.mo
 %%PORTDOCS%%share/xdialog/2ranges.png
 %%PORTDOCS%%share/xdialog/authors.html
@@ -23,6 +24,7 @@ share/locale/ru/LC_MESSAGES/Xdialog.mo
 %%PORTDOCS%%share/xdialog/fixedfont.png
 %%PORTDOCS%%share/xdialog/fselect.png
 %%PORTDOCS%%share/xdialog/gauge.png
+%%PORTDOCS%%share/xdialog/gtk.html
 %%PORTDOCS%%share/xdialog/icon.png
 %%PORTDOCS%%share/xdialog/index.html
 %%PORTDOCS%%share/xdialog/infobox.png
