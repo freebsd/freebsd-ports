@@ -8,25 +8,23 @@
 PORTNAME=	rogue_s
 PORTVERSION=	1.3a
 CATEGORIES=	japanese games
-MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~sada/distfiles/ \
-		ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1992/sep/ \
-		ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1992/nov/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		${MASTER_SITE_PORTS_JP:S,/%SUBDIR%/,/,}
+MASTER_SITE_SUBDIR=	knu
 DISTFILES=	rogue_s.tar.z rogue_s.patch02.z rogue_s.patch03.z \
 		rogue_s.message.z
 EXTRACT_ONLY=	rogue_s.tar.z
 
-PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~sada/distfiles/ \
-		ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1992/sep/ \
-		ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1992/oct/
+PATCH_SITES=	${MASTER_SITE_LOCAL} \
+		${MASTER_SITE_PORTS_JP:S,/%SUBDIR%/,/,}
+PATCH_SITE_SUBDIR=	knu
 PATCHFILES=	rogue_s.patch04
 
 MAINTAINER=	mistral@imasy.or.jp
 
 BUILD_DEPENDS=  nkf:${PORTSDIR}/japanese/nkf
 
-WRKSRC=		${WRKDIR}/rogue_s
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.nix
 ALL_TARGET=	rogue
 
