@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/${PORTNAME}/} \
 PATCHFILES=	blt2.4z-patch-2
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	kjc@csl.sony.co.jp
+MAINTAINER=	kjc@iijlab.net
 COMMENT=	A Tk extension (with shared libs)
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
@@ -34,16 +34,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tclincls=${LOCALBASE}/include/tcl${TK_VER} \
 		--with-tkincls=${LOCALBASE}/include/tk${TK_VER}
 INSTALLS_SHLIB=	yes
-
-MANN=		BLT.n barchart.n beep.n bgexec.n bitmap.n \
-		bltdebug.n busy.n container.n cutbuffer.n dragdrop.n eps.n \
-		graph.n hierbox.n hiertable.n htext.n spline.n \
-		stripchart.n table.n tabset.n tree.n treeview.n tile.n \
-		vector.n watch.n winop.n
-MAN3=		Blt_Tree.3 Blt_TreeCreate.3 Blt_TreeCreateNode.3 \
-		Blt_TreeDeleteNode.3 Blt_TreeExists.3 Blt_TreeGetNode.3 \
-		Blt_TreeGetToken.3 Blt_TreeName.3 Blt_TreeNodeId.3 \
-		Blt_TreeReleaseToken.3
 
 TK_VER?=	8.4
 

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Feb 23 18:28:23 2005
++++ Makefile.in	Wed Feb 23 18:32:19 2005
+@@ -45,7 +45,7 @@
+ install-all:
+ 	(cd src; $(MAKE) install)
+ 	(cd library; $(MAKE) install)
+-	(cd man; $(MAKE) install)
++##	(cd man; $(MAKE) install)
+ 	(cd demos; $(MAKE) install)
+ 	$(INSTALL_DATA) $(srcdir)/README $(INSTALL_DIR)$(scriptdir)
+ 	$(INSTALL_DATA) $(srcdir)/PROBLEMS $(INSTALL_DIR)$(scriptdir)
