@@ -156,6 +156,7 @@
     SUBDIR += mmc
     SUBDIR += mmr
     SUBDIR += movemail
+    SUBDIR += mozilla-thunderbird
     SUBDIR += mreport
     SUBDIR += msgconvert
     SUBDIR += msmtp
