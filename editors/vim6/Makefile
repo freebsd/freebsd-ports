@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.25 1998/09/03 11:35:11 obrien Exp $
+# $Id: Makefile,v 1.26 1998/09/05 02:48:13 obrien Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --enable-max-features" -f
 ALL_TARGET=	#
-MAN1=		vim.1 xxd.1 ctags.1
+MAN1=		vim.1 xxd.1 ectags.1
 
 
 .if defined(HAVE_MOTIF)
@@ -51,6 +51,7 @@ pre-build:
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || ${LN} -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
 	@${RM} -f ${PREFIX}/man/man1/etags.1
-	@${LN} -sf ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/etags.1.gz
+	@${MV} ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/ectags.1.gz
+	@${LN} -sf ${PREFIX}/man/man1/ectags.1.gz ${PREFIX}/man/man1/etags.1.gz
 
 .include <bsd.port.mk>
