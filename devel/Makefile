@@ -406,7 +406,7 @@
     SUBDIR += libhoard
     SUBDIR += libical
     SUBDIR += libidn
-    SUBDIR += libltdl
+    SUBDIR += libltdl15
     SUBDIR += libmba
     SUBDIR += libmcve
     SUBDIR += libmimedir
