@@ -1,0 +1,54 @@
+--- ./unix/configure.ORIG	Tue Feb 11 18:36:42 1997
++++ ./unix/configure	Tue Feb 11 18:40:37 1997
+@@ -660,14 +660,14 @@
+ if test -n "$withval"; then
+   TCL_BIN_DIR=$withval
+ else
+-  TCL_BIN_DIR=`cd ../../tcl7.6/unix; pwd`
++  TCL_BIN_DIR=${prefix}/lib/tcl7.6jp
+ fi
+ 
+ if test ! -d $TCL_BIN_DIR; then
+     { echo "configure: error: Tcl directory $TCL_BIN_DIR doesn't exist" 1>&2; exit 1; }
+ fi
+-if test ! -f $TCL_BIN_DIR/Makefile; then
+-    { echo "configure: error: There's no Makefile in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
++if test ! -f $TCL_BIN_DIR/tclConfig.sh; then
++    { echo "configure: error: There's no tclConfig.sh in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl, or you did not use ports?" 1>&2; exit 1; }
+ fi
+ 
+ #--------------------------------------------------------------------
+@@ -2115,6 +2115,7 @@
+ s%@SHLIB_VERSION@%$SHLIB_VERSION%g
+ s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
+ s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g
++s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
+ s%@TCL_VERSION@%$TCL_VERSION%g
+ s%@TK_BUILD_LIB_SPEC@%$TK_BUILD_LIB_SPEC%g
+--- ./unix/configure.in.ORIG	Tue Feb 11 18:36:43 1997
++++ ./unix/configure.in	Tue Feb 11 18:40:56 1997
+@@ -34,12 +34,12 @@
+ #--------------------------------------------------------------------
+ 
+ AC_ARG_WITH(tcl, [  --with-tcl=DIR          use Tcl 7.6 binaries from DIR],
+-	TCL_BIN_DIR=$withval, TCL_BIN_DIR=`cd ../../tcl7.6/unix; pwd`)
++	TCL_BIN_DIR=$withval, TCL_BIN_DIR=${prefix}/lib/tcl7.6jp)
+ if test ! -d $TCL_BIN_DIR; then
+     AC_MSG_ERROR(Tcl directory $TCL_BIN_DIR doesn't exist)
+ fi
+-if test ! -f $TCL_BIN_DIR/Makefile; then
+-    AC_MSG_ERROR(There's no Makefile in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?)
++if test ! -f $TCL_BIN_DIR/tclConfig.sh; then
++    AC_MSG_ERROR(There's no tclConfig.sh in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl, or you did not use ports?)
+ fi
+ 
+ #--------------------------------------------------------------------
+@@ -330,6 +330,7 @@
+ AC_SUBST(SHLIB_VERSION)
+ AC_SUBST(TCL_BIN_DIR)
+ AC_SUBST(TCL_BUILD_LIB_SPEC)
++AC_SUBST(TCL_LIB_SPEC)
+ AC_SUBST(TCL_SRC_DIR)
+ AC_SUBST(TCL_VERSION)
+ AC_SUBST(TK_BUILD_LIB_SPEC)

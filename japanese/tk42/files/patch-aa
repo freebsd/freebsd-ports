@@ -1,0 +1,12 @@
+--- ./generic/tkTextDisp.c.ORIG	Mon Feb 10 16:10:21 1997
++++ ./generic/tkTextDisp.c	Mon Feb 10 16:12:52 1997
+@@ -4380,7 +4380,8 @@
+ 	for (count = charsThatFit, p += charsThatFit-1; count > 0;
+ 		count--, p--) {
+ #ifdef KANJI
+-	    if (ISWSPACE(*p)) {
++	    /* following is by Mr.Furuse(Jun.Furuse@inria.fr) */
++	    if (ISWSPACE(*p) || ISWKANJI(*p)) {
+ #else
+ 	    if (isspace(UCHAR(*p))) {
+ #endif /* KANJI */

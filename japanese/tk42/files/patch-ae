@@ -1,0 +1,11 @@
+--- ./unix/tkConfig.sh.in.ORIG	Mon Feb 10 15:44:47 1997
++++ ./unix/tkConfig.sh.in	Mon Feb 10 15:45:10 1997
+@@ -19,7 +19,7 @@
+ TK_MINOR_VERSION='@TK_MINOR_VERSION@'
+ 
+ # -D flags for use with the C compiler.
+-TK_DEFS='@DEFS@'
++TK_DEFS='@DEFS@ -DKANJI -DKINPUT2'
+ 
+ # The name of the Tk library (may be either a .a file or a shared library):
+ TK_LIB_FILE=@TK_LIB_FILE@
