@@ -11,6 +11,22 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.4.r1.20050216.0945
+#
+
+- if dspam --daemon SIGBUS please send your sources date, CFLAGS and other
+relevant information; this version is believed to be working; tested on:
+i386 5.2.1-RELEASE-p1, i386 5.3-STABLE, amd64 5.3-RELEASE with help from Erwin Lansing <erwin@lansing.dk>, 
+"Daniel S. Haischt" <me@daniel.stefan.haischt.name> and Joey Freeland <joeyfreeland@gmail.com>
+- patch dspam.c for bug causing signature to not get written to message
+body (obtained from dspam cvs)
+- patch dspam.c to write X-DSPAM-User also in innocent messages headers
+- drop WITH_WHITELIST, it's not supported by ./configure but by dspam.conf
+- (added post-factum) change POSTGRESQL* to POSTGRESQL because of "Split the
+postgresql ports into a server and a client part"
+
+
+###########################################################################
 # dspam-devel-3.3.4
 #
 
