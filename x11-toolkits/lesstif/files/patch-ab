@@ -1,22 +1,22 @@
---- lib/config/Makefile.in.orig	Wed Feb 19 20:53:21 1997
-+++ lib/config/Makefile.in	Tue Feb 25 11:11:27 1997
+--- lib/config/Makefile.in.orig	Mon Apr 21 19:23:32 1997
++++ lib/config/Makefile.in	Tue Apr 22 08:59:14 1997
 @@ -28,7 +28,7 @@
  INSTALL=@INSTALL@
  INSTALL_PROGRAM=@INSTALL_PROGRAM@
  
--x_config_path=@prefix@/lib/config
+-x_config_path=@libdir@/config
 +x_config_path=@prefix@/lib/X11/lesstif
  
- STUFF=	Motif.tmpl Motif.rules # not yet Imake.tmpl
+ STUFF=	Motif.tmpl Motif.rules Imake.tmpl
  
 @@ -47,10 +47,10 @@
  install: $(STUFF)
- 	mkdir -p ${x_config_path}
+ 	-mkdir -p ${x_config_path}
  	for i in ${STUFF} ; do \
 -	  ${INSTALL_PROGRAM} $$i ${x_config_path} ; \
 +	  ${INSTALL} -m 644 $$i ${x_config_path} ; \
  	done
- 	mkdir -p ${bin_dir}
+ 	-mkdir -p ${bin_dir}
 -	${INSTALL_PROGRAM} mxmkmf ${bin_dir}
 +	${INSTALL} mxmkmf ${bin_dir}
  
