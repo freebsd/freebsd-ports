@@ -5,7 +5,7 @@ include/libpool.h
 lib/libdotconf.a
 lib/libdotconf.so
 lib/libdotconf.so.10
-lib/pkgconfig/dotconf.pc
+libdata/pkgconfig/dotconf.pc
 lib/libpool.a
 share/aclocal/dotconf.m4
 %%PORTDOCS%%%%DOCSDIR%%/dotconf-api.txt
