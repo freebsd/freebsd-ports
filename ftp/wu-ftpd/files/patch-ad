@@ -1,5 +1,5 @@
-*** src/ftpd.c.orig	Wed Apr 13 22:17:18 1994
---- src/ftpd.c	Wed Jan 25 21:51:50 1995
+*** src/ftpd.c.orig	Wed Apr 13 23:17:18 1994
+--- src/ftpd.c	Tue May 30 00:17:25 1995
 ***************
 *** 139,146 ****
    *freopen(const char *, const char *, FILE *);
@@ -428,8 +428,26 @@
   {
       char path[MAXPATHLEN + 1];
 ***************
+*** 2312,2318 ****
+  #else
+      if (getwd(path) == (char *) NULL)
+  #endif
+!         reply(550, "%s.", path);
+      else
+          reply(257, "\"%s\" is current directory.", path);
+  }
+--- 2386,2393 ----
+  #else
+      if (getwd(path) == (char *) NULL)
+  #endif
+! /*        reply(550, "%s.", path); */
+! 	reply(550, "Permission denied.");
+      else
+          reply(257, "\"%s\" is current directory.", path);
+  }
+***************
 *** 2342,2347 ****
---- 2416,2422 ----
+--- 2417,2423 ----
       return (name);
   }
   
@@ -439,7 +457,7 @@
   
 ***************
 *** 2357,2362 ****
---- 2432,2438 ----
+--- 2433,2439 ----
           ack("RNTO");
   }
   
@@ -449,7 +467,7 @@
       struct hostent *hp;
 ***************
 *** 2412,2417 ****
---- 2488,2494 ----
+--- 2489,2495 ----
   }
   
   /* Record logout in wtmp file and exit with supplied status. */
@@ -459,7 +477,7 @@
       if (logged_in) {
 ***************
 *** 2459,2464 ****
---- 2536,2542 ----
+--- 2537,2543 ----
    * PASV command in RFC959. However, it has been blessed as a legitimate
    * response by Jon Postel in a telephone conversation with Rick Adams on 25
    * Jan 89. */
@@ -469,7 +487,7 @@
       int len;
 ***************
 *** 2530,2535 ****
---- 2608,2614 ----
+--- 2609,2615 ----
   }
   
   /* Format and send reply containing system error number. */
@@ -479,7 +497,7 @@
       reply(code, "%s: %s.", string, strerror(errno));
 ***************
 *** 2538,2543 ****
---- 2617,2623 ----
+--- 2618,2624 ----
   static char *onefile[] =
   {"", 0};
   
