@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs2html
-PORTVERSION=	1.67
+PORTVERSION=	1.68
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.sslug.dk/cvs2html/utils/
 DISTNAME=	${PORTNAME}
