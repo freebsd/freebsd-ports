@@ -21,6 +21,7 @@ PATCHFILES=	openbsd28_${PORTVERSION}.patch
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	OpenBSD's secure shell client and server (remote login program)
 
+CONFLICTS?=	openssh-portable-* openssh--gssapi-* ssh-1.* ssh2-3.*
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/ssh
 

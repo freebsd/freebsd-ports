@@ -20,6 +20,7 @@ MLINKS=	ssh.1 slogin.1
 MAN5=	ssh_config.5 sshd_config.5
 MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 
+CONFLICTS?=	openssh-3.* ssh-1.* ssh2-3.*
 USE_OPENSSL=	yes
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
@@ -74,6 +75,7 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PKGNAMESUFFIX=	-gssapi
+CONFILCTS+=	openssh-portable-*
 BUILD_DEPENDS+=		autoreconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
@@ -90,9 +92,11 @@ pre-configure:
 		${AUTOCONF_ARGS})
 .else
 .if exists(/usr/include/krb5.h)
-CONFIGURE_ARGS+=        --with-kerberos5
-EXTRA_PATCHES+=         ${FILESDIR}/gss-serv.c.patch
+CONFIGURE_ARGS+=	--with-kerberos5
+EXTRA_PATCHES+=	${FILESDIR}/gss-serv.c.patch
 .endif
+.else
+CONFILCTS+=	openssh-gssapi-*
 .endif
 
 post-configure:
