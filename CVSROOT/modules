@@ -7411,6 +7411,7 @@ pnet		ports/lang/pnet
 pnet-base	ports/lang/pnet-base
 pnetc		ports/lang/pnetc
 pnetlib		ports/lang/pnetlib
+pnetmark	ports/benchmark/pnetmark
 pnews		ports/www/pnews
 png		ports/graphics/png
 png2html	ports/graphics/png2html
