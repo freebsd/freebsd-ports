@@ -63,6 +63,16 @@ CONFIGURE_ARGS+=	--disable-otp
 OTP=	"@comment "
 .endif
 
+.if defined(WITHOUT_CRAM)
+CONFIGURE_ARGS+=	--disable-cram
+CRAM=	"@comment "
+.endif
+
+.if defined(WITHOUT_DIGEST)
+CONFIGURE_ARGS+=	--disable-digest
+DIGEST=	"@comment "
+.endif
+
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
@@ -108,6 +118,8 @@ HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
 
 PLIST_SUB=	PREFIX=${PREFIX} \
 		OTP=${OTP} \
+		CRAM=${CRAM} \
+		DIGEST=${DIGEST} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
