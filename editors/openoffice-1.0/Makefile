@@ -9,11 +9,12 @@ PORTNAME=	openoffice
 PORTVERSION=	1.0.3
 PORTREVISION=	3
 CATEGORIES+=	editors
-MASTER_SITES+=	http://openofficeorg.secsup.org/%SUBDIR%/ \
-		http://mirrors.sunsite.dk/openoffice/%SUBDIR%/ \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
+		ftp://ftp.kddlabs.co.jp/office/openoffice/%SUBDIR%/ \
+		ftp://ftp.tu-chemnitz.de/pub/openoffice/%SUBDIR%/ \
+		http://ftp.stardiv.de/pub/OpenOffice.org/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
-		ftp://ftp.chg.ru/pub/OpenOffice.org/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		ftp://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent-1.0/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
