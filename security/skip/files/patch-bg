@@ -1,0 +1,176 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skipsrc-1.0/skip/freebsd/skip_os.h
+--- skipsrc-1.0.orig/skip/freebsd/skip_os.h	Fri Oct 25 13:12:43 1996
++++ skipsrc-1.0/skip/freebsd/skip_os.h	Mon Dec 15 17:44:31 1997
+@@ -54,7 +54,6 @@
+ #ifndef KERNEL
+ #include <stdio.h>
+ #include <string.h>
+-#include <strings.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+@@ -69,6 +68,12 @@
+ #include <dirent.h>
+ #endif
+ 
++#include <osreldate.h>
++
++#ifdef KERNEL
++#include <sys/cdefs.h>
++#endif
++
+ #include <sys/types.h>
+ #include <sys/errno.h>
+ #include <sys/time.h>
+@@ -83,10 +88,14 @@
+ #include <sys/file.h>
+ #include <sys/sockio.h>
+ #include <sys/wait.h>
++#include <sys/fcntl.h>
+ 
+ #ifndef  __cplusplus
+ #include <machine/cpu.h>
+ #include <net/if.h>
++#if __FreeBSD_version >= 300000
++#include <net/if_var.h>
++#endif
+ #include <netinet/in_systm.h>
+ #endif
+ #include <netinet/in.h>
+@@ -94,8 +103,8 @@
+ #include <netinet/ip.h>
+ #include <netinet/udp.h>
+ #include <netinet/in_var.h>
+-#include <arpa/inet.h>
+ #endif
++#include <arpa/inet.h>
+ 
+ /* 
+  * Basic required types and constants
+@@ -116,6 +125,7 @@
+ #include <sys/sysent.h>
+ #include <sys/exec.h>
+ #include <sys/lkm.h>
++#include <sys/sysproto.h>
+ #include <sys/protosw.h>
+ #include <net/route.h>
+ #include <sys/kernel.h>
+@@ -123,6 +133,7 @@
+ #include <net/netisr.h>
+ #include <sys/proc.h>
+ #include <sys/device.h>
++#include <sys/libkern.h>
+ 
+ #define	PANIC(s)		panic(s)
+ 
+@@ -131,11 +142,17 @@
+  */
+ #define	SYSMEM_ALLOC(size)	malloc((u_long)size, M_PCB, M_NOWAIT) 
+ #define	SYSMEM_FREE(m, n)	free(m, M_PCB)
+-#define	BCOPY(s, d, n)		bcopy((caddr_t) s, (caddr_t) d, n)
+-#define	BZERO(s, n)		bzero((caddr_t) s, n)
+-#define	BCMP(s, d, n)		bcmp((caddr_t) s, (caddr_t) d, n)
+ #define	STATIC			static
+ 
++/*
++ * The kernel doesn't have memcpy() or memcmp(), but gcc will inline them
++ */
++#ifdef KERNEL
++extern int	memcmp(const void *, const void *, size_t);
++#endif
++#define	BCOPY(s, d, n)		memcpy((caddr_t) (d), (caddr_t) (s), n)
++#define	BCMP(s, d, n)		memcmp((caddr_t) (d), (caddr_t) (s), n)
++#define	BZERO(s, n)		bzero((caddr_t) (s), n)
+ 
+ #define ALIGNED(x)		(((unsigned int)(x)&(skip_alignment - 1)) == 0)
+ 
+@@ -205,26 +222,21 @@
+ }
+ 
+ /*
++ * Whether to use old or new timeout()/untimeout() interface
++ */
++#if __FreeBSD_version >= 300001
++#define NEW_TIMEOUT_INTERFACE
++#endif
++
++/*
+  * ANSI prototypes for system routines
+  */
++#if __FreeBSD_version < 300000
+ extern int			splimp();
+ extern int			splnet();
+-extern void			splx(int);
+-extern void			m_freem(struct mbuf *);
+-extern void			panic(const char *, ...);
+-extern int			tsleep(void *, int, char *, int);
+-extern void			wakeup(void *);
+-extern int			uiomove(caddr_t, int, struct uio *);
+-extern int     			copyin(void *, void *, u_int );
+-extern int			copyout(void *, void *, u_int);
+-extern int			mclget(struct mbuf *);
+-extern int			m_cpytoc(struct mbuf *, int, int, caddr_t);
+-
+-extern void 			log(int, const char *, ...);
+-
+-extern char			*strncpy(char *, const char *, size_t);
++extern void			splx(int s);
++#endif
+ 
+-extern void			printf(const char *, ...);
+ #else /* KERNEL */
+ 
+ /*
+@@ -251,37 +263,12 @@
+ #endif
+ #define	STATIC
+ 
+-/*
+- * ANSI prototypes for C library routines and syscalls
+- */
+-extern int			gethostname(char *, int);
+-extern int			fprintf(FILE *, const char *, ...);
+-extern int			fflush(FILE *);
+-extern int			fgetc(FILE *);
+-extern int			fseek(FILE *, long, int);
+-extern size_t			fread(void *, size_t, size_t, FILE *);
+-extern int			fclose(FILE *);
+-extern int			socket(int, int, int);
+-extern int			ioctl(int, int, ...);
+-extern int			pclose(FILE *);
+-/*extern int			getrlimit(int, struct rlimit *); */
+-extern void			perror(const char *);
+-extern time_t			time(time_t *);
+-extern int			getopt(int, char * const *, const char *);
+-extern int			sscanf(const char *, const char *, ...);
+-
+ #endif /* KERNEL */
+ 
+-/* XXX Bad IPPROTO_ENCAP define  ? */
+-#ifdef IPPROTO_ENCAP
+-#undef IPPROTO_ENCAP
+-#endif
+-#define IPPROTO_ENCAP		4
+-
+ /* SKIP specific */
+ 
+-#define SKIP_DIR		"/etc/skip/"
+-#define SKIP_BIN		"/usr/skip/bin"
++#define SKIP_DIR		"@@PREFIX@@/etc/skip/"
++#define SKIP_BIN		"@@PREFIX@@/bin"
+ #define KEYMGR			"/dev/skip_key"
+ 
+ /*
+@@ -306,12 +293,6 @@
+ /* General purpose */
+ 
+ typedef unsigned char byte;
+-
+-#if 0
+-extern void			bcopy(void *, void *, int);
+-extern void			bzero(void *, int);
+-extern int			bcmp(void *, void *, int);
+-#endif
+ 
+ #define	SKIP_IFCMP(if1, if2)    strcmp(if1, if2)
+ 

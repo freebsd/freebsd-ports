@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/include/skip_conf.h skipsrc-1.0/skip/include/skip_conf.h
+--- skipsrc-1.0.orig/skip/include/skip_conf.h	Fri Oct 25 13:12:44 1996
++++ skipsrc-1.0/skip/include/skip_conf.h	Wed Nov 26 20:13:42 1997
+@@ -58,7 +58,7 @@
+ #define SKIP_CERTSBASE			SKIP_DIR"certdb"
+ #define SKIP_SECRET_CACHE		SKIP_DIR"secret_cache"
+ #define SKIP_RAW_FILE			SKIP_DIR"raw_keys"
+-#define SKIP_PID			SKIP_DIR"skipd.pid"
++#define SKIP_PID			"/var/run/skipd.pid"
+ 
+ /* 
+  * Key manager Crypt algorithms supported

@@ -1,0 +1,46 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/mkpkgs/freebsd/Makefile skipsrc-1.0/mkpkgs/freebsd/Makefile
+--- skipsrc-1.0.orig/mkpkgs/freebsd/Makefile	Fri Oct 25 13:12:32 1996
++++ skipsrc-1.0/mkpkgs/freebsd/Makefile	Mon Dec  8 16:34:23 1997
+@@ -64,6 +64,7 @@
+ 	$(BLD_DIR)/doc/SKIP_SOFTWARE_LICENSE \
+ 	$(BLD_DIR)/doc/BN_SOFTWARE_LICENSE \
+ 	$(BLD_DIR)/doc/README.PATENT \
++	$(BLD_DIR)/doc/README.FreeBSD \
+ 	$(BLD_DIR)/doc/00README \
+ 	$(BLD_DIR)/doc/INSTALL \
+ 	$(BLD_DIR)/doc/advanced.TOPICS \
+@@ -104,10 +105,10 @@
+ 	$(MKDIR) $(BSDPROTO)/bin
+ 	$(MKDIR) $(BSDPROTO)/doc
+ 
+-	$(INSTALL) -m 0555 $(BLD_DIR)/skip/freebsd/install.skip \
+-					$(BSDPROTO)/install.skip
+-	$(INSTALL) -m 0555 $(BLD_DIR)/admin/remove.skip	 \
+-					$(BSDPROTO)/remove.skip
++#	$(INSTALL) -m 0555 $(BLD_DIR)/skip/freebsd/install.skip \
++#					$(BSDPROTO)/install.skip
++#	$(INSTALL) -m 0555 $(BLD_DIR)/admin/remove.skip	 \
++#					$(BSDPROTO)/remove.skip
+ 
+ 	@echo "Initializing skip/etc directory"
+ 	$(INSTALL) -m 0444 $(BLD_DIR)/admin/SunICG_CA_selfcert \
+@@ -191,6 +192,8 @@
+ 		$(BSDPROTO)/doc/BN_SOFTWARE_LICENSE
+ 	$(INSTALL) -m 0644 $(BLD_DIR)/doc/README.PATENT \
+ 		$(BSDPROTO)/doc/README.PATENT
++	$(INSTALL) -m 0644 $(BLD_DIR)/doc/README.FreeBSD \
++		$(BSDPROTO)/doc/README.FreeBSD
+ 	$(INSTALL) -m 0644 $(BLD_DIR)/doc/00README \
+ 		$(BSDPROTO)/doc/00README
+ 	$(INSTALL) -m 0644 $(BLD_DIR)/doc/INSTALL \
+@@ -239,8 +242,8 @@
+ 		$(BSDPROTO)/man/man4/raw_keys.4
+ 	$(INSTALL) -m 0644 $(BLD_DIR)/certs/man/print_cert.1m \
+ 		$(BSDPROTO)/man/man1/print_cert.1
+-	(cd $(BSDBIN); tar cvf skip.tar skip)
+-	(cd $(BSDBIN); compress skip.tar)
++#	(cd $(BSDBIN); tar cvf skip.tar skip)
++#	(cd $(BSDBIN); compress skip.tar)
+ 
+ clean:
+ 	@-$(RM) -rf $(BSDBIN)

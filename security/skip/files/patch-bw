@@ -1,0 +1,14 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skip_conf.1m skipsrc-1.0/skip/man/skip_conf.1m
+--- skipsrc-1.0.orig/skip/man/skip_conf.1m	Fri Oct 25 13:12:56 1996
++++ skipsrc-1.0/skip/man/skip_conf.1m	Wed Nov 26 20:08:31 1997
+@@ -28,9 +28,4 @@
+ and remove any max_certdb_size lines from \fIskipd.conf\fP.
+ .SH FILES
+ .P
+-.SH Solaris 2.x systems:
+-/etc/opt/SUNWicg/skip/skipd.conf
+-.P
+-.SH Other systems:
+-.P
+-/etc/skip/skipd.conf
++@@PREFIX@@/etc/skip/skipd.conf

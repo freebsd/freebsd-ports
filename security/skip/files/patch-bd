@@ -1,0 +1,137 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc skipsrc-1.0/skip/freebsd/rc
+--- skipsrc-1.0.orig/skip/freebsd/rc	Fri Oct 25 13:13:19 1996
++++ skipsrc-1.0/skip/freebsd/rc	Thu Dec 18 10:50:34 1997
+@@ -44,22 +44,30 @@
+  
+ #pragma ident "@(#)rc	1.5 96/10/08 Sun Microsystems"
+ #
+-PATH=/bin:/usr/bin:/sbin:/usr/ucb:/usr/etc
+-SKIP_PATH=${SKIP_PATH-/usr/skip}
+-SKIPD=/usr/skip/bin/skipd
+-SKIP_HOST=/usr/skip/bin/skiphost
+-SKIP_VAR_CMD=/usr/skip/bin/skipvar
+-SKIP_SECURE_HOSTS=/etc/skip/hosts
+-SKIP_ETC=/etc/skip
+-SKIP_VAR=/var/skip
++
++PATH=/bin:/usr/bin:/sbin:/usr/sbin
++PREFIX=@@PREFIX@@
++
++SKIP_BIN=${PREFIX}/bin
++SKIP_ETC=${PREFIX}/etc/skip
++SKIP_LKM=${PREFIX}/lkm
++
++SKIPD=${SKIP_BIN}/skipd
++SKIP_HOST=${SKIP_BIN}/skiphost
++SKIP_MKDEV=${SKIP_ETC}/skip.mkdev
++SKIP_SECURE_HOSTS=${SKIP_ETC}/hosts
++
++SKIP_VAR=/var/tmp
+ VAR_SIZE=830
+-SKIP_REQ_FILES="$SKIP_PATH/drv/skip.o $SKIP_ETC/skip.mkdev"
+-PSEUDO_DRVS="skip"
++
++SKIP_REQ_FILES="${SKIP_LKM}/skip.o ${SKIP_ETC}/skip.mkdev"
++SKIP_MOD="skip_mod"
+ 
+ verify_owner()
+ {
+ 	me=`whoami`
+ 	if [ $me != "root" ]; then
++		echo ""
+ 		echo "skip: this script must be run as root ... fatal error"
+ 		exit 1
+ 	fi
+@@ -68,6 +76,7 @@
+ pre_checks() {
+ 	for FILE in $SKIP_REQ_FILES; do
+ 	if [ ! -f $FILE ]; then
++		echo ""
+ 		echo "skip: installation problem detected"
+ 		echo "skip: $FILE not found"
+ 		echo "skip: please refer to installation guide"
+@@ -76,6 +85,7 @@
+ 	done
+ 
+ 	if [ ! -w $SKIP_VAR ]; then
++		echo ""
+ 		echo "skip: can not write to $SKIP_VAR"
+ 		exit 1
+ 	fi
+@@ -85,11 +95,12 @@
+ 
+ 	sync
+ 
+-	DISK_AVAIL=`df $SKIP_VAR | awk 'NR==2 {x=$4}
++	DISK_AVAIL=`df -k $SKIP_VAR | awk 'NR==2 {x=$4}
+ 		NR==3 {x=$3}
+ 		END  {print x}'`
+ 
+ 	if [ $DISK_AVAIL -lt $VAR_SIZE ]; then
++		echo ""
+ 		echo "skip: not enough space available in $SKIP_VAR"
+ 		echo "skip: $VAR_SIZE kbytes will be required to run the product"
+ 	exit 1
+@@ -98,45 +109,37 @@
+ 
+ load_driver()
+ {
+-	modstat > $SKIP_VAR/modules
+-
+-	# load pseudo-drivers
+-	for driver in $PSEUDO_DRVS; do
++	modstat | awk '{ print $8 }' | grep ${SKIP_MOD} > /dev/null 2>&1
+ 
+-		awk '{ print $8 }' $SKIP_VAR/modules | grep $driver > /dev/null 2>&1
++	if [ $? -ne 0 ]; then
++		modload -q -o ${SKIP_VAR}/${SKIP_MOD}.out \
++			-p ${SKIP_MKDEV} ${SKIP_LKM}/skip.o > /dev/null
++		if [ $? -ne 0 ]; then
++			echo ""
++			echo "skip: failed to load driver"
++			echo "skip: perhaps too many drivers are loaded?"
++			exit 1
++		fi
+ 
+-		if [ $? -eq 0 ]; then
+-			echo "skip: driver already loaded"
+-		else
+-			echo "skip: loading driver"
+-			modload -o $SKIP_VAR/$driver \
+-				-p $SKIP_ETC/$driver.mkdev \
+-				$SKIP_PATH/drv/$driver.o> /dev/null
+-
+-
+-			if [ $? -ne 0 ]; then
+-				echo "skip: failed to load driver"
+-				echo "skip: perhaps too many drivers are loaded?"
+-				exit 1
+-			fi
++	fi
+ 
+-		fi
+-	done
+ }
+ 
+ start_daemons() {
+ 	if [ -x $SKIPD ]; then
+-		echo -n "starting skip key manager daemon"
+-		$SKIPD > /var/log/skipd.log &
+-		echo "."
++		$SKIPD
+ 	fi
+ 
+ 	if [ -x $SKIP_SECURE_HOSTS -a -x $SKIP_HOST ]; then
+-		$SKIP_SECURE_HOSTS >> /var/log/skipd.log 2>&1 &
++		$SKIP_SECURE_HOSTS >> /var/log/skiphost.log 2>&1 &
+ 	fi
+ }
+ 
+ # main
++
++# keep console output pretty
++echo -n " skip"
++
+ verify_owner
+ pre_checks
+ load_driver

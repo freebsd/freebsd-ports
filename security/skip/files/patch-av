@@ -1,0 +1,19 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/doc/ROADMAP skipsrc-1.0/doc/ROADMAP
+--- skipsrc-1.0.orig/doc/ROADMAP	Fri Oct 25 13:11:55 1996
++++ skipsrc-1.0/doc/ROADMAP	Mon Dec  8 13:00:51 1997
+@@ -1,6 +1,10 @@
+ This directory contains documentation and legal statements for this
+ release.
+ 
++README.FreeBSD			- Notes on the FreeBSD port of SKIP.
++				  All of the other documentation is NOT
++				  specific to FreeBSD.
++
+ 00README		        - Introduction, Release notes and Build 
+ 			          Instructions.  Read this first.  You
+ 				  should read this if only for the 
+@@ -24,3 +28,4 @@
+ 				  architecture and performance.
+ 
+ usersguide.*			- User's guide in various formats
++

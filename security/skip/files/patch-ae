@@ -1,0 +1,21 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/skip_conf.sh skipsrc-1.0/admin/skip_conf.sh
+--- skipsrc-1.0.orig/admin/skip_conf.sh	Fri Oct 25 13:11:19 1996
++++ skipsrc-1.0/admin/skip_conf.sh	Wed Nov 26 18:39:02 1997
+@@ -8,14 +8,9 @@
+ 	exit 1
+ fi
+ 
+-SUNOS=`/bin/uname -r | /bin/sed 's/\..*//g'`
+-if [ $SUNOS = 5 ]; then
+-	SKIP_BIN=/opt/SUNWicg/bin
+-	SKIP_ETC=/etc/opt/SUNWicg/skip
+-else
+-	SKIP_BIN=/usr/skip/bin
+-	SKIP_ETC=/etc/skip
+-fi
++PREFIX=@@PREFIX@@
++SKIP_BIN=${PREFIX}/bin
++SKIP_ETC=${PREFIX}/etc/skip
+ 
+ VARIABLE=$1
+ shift

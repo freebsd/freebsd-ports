@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip.mkdev skipsrc-1.0/skip/freebsd/skip.mkdev
+--- skipsrc-1.0.orig/skip/freebsd/skip.mkdev	Fri Oct 25 13:13:20 1996
++++ skipsrc-1.0/skip/freebsd/skip.mkdev	Thu Dec  4 17:53:18 1997
+@@ -48,7 +48,7 @@
+ SKIP_KEYMGRD_MINOR=0
+ SKIP_ACL_NODE=/dev/skip
+ SKIP_MAX_OPENS=16
+-PATH=/bin:/usr/ucb:/sbin:
++PATH=/bin:/usr/bin:/sbin:/usr/sbin
+ 
+ if [ $# != 3 ]; then
+ 	exit

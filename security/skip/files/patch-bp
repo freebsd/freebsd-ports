@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skipca.C skipsrc-1.0/skip/keymgrd/skipca.C
+--- skipsrc-1.0.orig/skip/keymgrd/skipca.C	Fri Oct 25 13:12:53 1996
++++ skipsrc-1.0/skip/keymgrd/skipca.C	Fri Dec  5 15:26:53 1997
+@@ -307,7 +307,7 @@
+ 	}
+ 	if (overwrite) {
+ 		int ret;
+-		sprintf(buf,"/usr/bin/rm -rf %s", CA_PATH);
++		sprintf(buf,"/bin/rm -rf %s", CA_PATH);
+ 		ret = system(buf);
+ 		if (ret) {
+ 			fprintf(stderr,"Unable to Clean old directory %s \n",

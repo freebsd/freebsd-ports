@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/common/skip_keystore.c skipsrc-1.0/skip/common/skip_keystore.c
+--- skipsrc-1.0.orig/skip/common/skip_keystore.c	Fri Oct 25 13:12:41 1996
++++ skipsrc-1.0/skip/common/skip_keystore.c	Mon Dec 15 17:41:20 1997
+@@ -308,7 +308,7 @@
+ 		/*
+ 	 	 * SKIP tunneling mode
+ 	 	 */
+-		params->payload_type = IPPROTO_ENCAP;
++		params->payload_type = IPPROTO_IPIP;
+ 	}
+ 	/*
+ 	 * Return offset of data to decrypt

@@ -1,0 +1,14 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skipd.conf.4 skipsrc-1.0/skip/man/skipd.conf.4
+--- skipsrc-1.0.orig/skip/man/skipd.conf.4	Fri Oct 25 13:12:57 1996
++++ skipsrc-1.0/skip/man/skipd.conf.4	Wed Nov 26 20:10:30 1997
+@@ -85,9 +85,4 @@
+ \fIskipd.conf\fP options may be set with the \fIskip_conf\fP command.
+ .SH FILES
+ .P
+-.SH Solaris 2.x systems:
+-/etc/opt/SUNWicg/skip/skipd.conf
+-.P
+-.SH Other systems:
+-.P
+-/etc/skip/skipd.conf
++@@PREFIX@@/etc/skip/skipd.conf

@@ -1,0 +1,14 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/raw_keys.4 skipsrc-1.0/skip/man/raw_keys.4
+--- skipsrc-1.0.orig/skip/man/raw_keys.4	Fri Oct 25 13:12:56 1996
++++ skipsrc-1.0/skip/man/raw_keys.4	Wed Nov 26 20:04:19 1997
+@@ -42,9 +42,4 @@
+ link.
+ .SH FILES
+ .P
+-.SH Solaris 2.x systems:
+-/etc/opt/SUNWicg/skip/raw_keys
+-.P
+-.SH Other systems:
+-.P
+-/etc/skip/raw_keys
++@@PREFIX@@/etc/skip/raw_keys

@@ -1,0 +1,98 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c skipsrc-1.0/skip/freebsd/skip_es.c
+--- skipsrc-1.0.orig/skip/freebsd/skip_es.c	Fri Oct 25 13:12:42 1996
++++ skipsrc-1.0/skip/freebsd/skip_es.c	Mon Dec 15 17:41:37 1997
+@@ -81,6 +81,11 @@
+ static unsigned short	skip_pktid;
+ static skip_softc_t	skip_softc[SKIP_MAX_OPENS];
+ 
++#ifdef NEW_TIMEOUT_INTERFACE
++static struct callout_handle
++	skip_timeout_handle = CALLOUT_HANDLE_INITIALIZER(&skip_timeout_handle);
++#endif
++
+ /*
+  * statistics
+  */
+@@ -252,7 +257,8 @@
+ 		for (pr = inetdomain.dom_protosw;
+ 			pr < inetdomain.dom_protoswNPROTOSW; pr++) {
+ 
+-			pr->pr_input = skip_ifinput;
++			pr->pr_input =
++				(void (*)(struct mbuf *, int)) skip_ifinput;
+ 		}
+ 		splx(s);
+ 	}
+@@ -788,7 +794,11 @@
+ static void
+ skip_inittimers()
+ {
++#ifdef NEW_TIMEOUT_INTERFACE
++	skip_timeout_handle = timeout(skip_timer, NULL, skip_key_tick * hz);
++#else
+ 	timeout(skip_timer, NULL, skip_key_tick * hz);
++#endif
+ }
+  
+ /* skip_uninittimers()
+@@ -800,7 +810,12 @@
+ static void
+ skip_uninittimers()
+ {
++#ifdef NEW_TIMEOUT_INTERFACE
++	untimeout(skip_timer, NULL, skip_timeout_handle);
++	callout_handle_init(&skip_timeout_handle);
++#else
+ 	untimeout(skip_timer, NULL);
++#endif
+ }
+  
+ /* skip_timer()
+@@ -819,7 +834,11 @@
+ 	 * run through the key store
+ 	 */
+ 	skip_key_iterate(skip_key_check, NULL);
++#ifdef NEW_TIMEOUT_INTERFACE
++	skip_timeout_handle = timeout(skip_timer, NULL, skip_key_tick * hz);
++#else
+ 	timeout(skip_timer, NULL, skip_key_tick * hz);
++#endif
+ }
+ 
+ #ifdef notdef
+@@ -1718,7 +1737,7 @@
+ 		 */
+ 		decryptbuf->m_data += iphlen;
+ 	
+-                SKIP_DEBUG2("skip_ifinput: decryptbuf m_len=%d m_data=%d\n",
++                SKIP_DEBUG2("skip_ifinput: decryptbuf m_len=%d m_data=%p\n",
+                                         decryptbuf->m_len, decryptbuf->m_data);
+ 
+ 	} 
+@@ -2005,7 +2024,7 @@
+ 			if (params.kp_alg) {
+ 				newip->ip_p = SKIP_NEXT_ESP;
+ 			} else {
+-				newip->ip_p = IPPROTO_ENCAP;
++				newip->ip_p = IPPROTO_IPIP;
+ 			}
+ 		}
+ 		skip_if->stats.skip_if_raw_out++;
+@@ -2097,7 +2116,7 @@
+ 	register skip_param_t   *params = &res->params;
+ 	register struct ip      *ip = mtod(original, struct ip *);
+ 	int                     rc, s, iphlen;
+-	struct mbuf             *outbuf, *new_hdr;
++	struct mbuf             *outbuf;
+ 
+ 	SKIP_PRINT("skip_decrypt_done", params);
+ 
+@@ -2125,7 +2144,7 @@
+ 	 */
+ 	outbuf = (res->modes & SKIP_CRYPT_ON) ? m : original;
+ 
+-	if (res->proto != IPPROTO_ENCAP) {
++	if (res->proto != IPPROTO_IPIP) {
+ 		/*
+ 		 * transport mode, need to copy original IP header
+ 		 */

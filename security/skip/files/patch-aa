@@ -1,0 +1,12 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/Configure skipsrc-1.0/Configure
+--- skipsrc-1.0.orig/Configure	Fri Oct 25 13:13:15 1996
++++ skipsrc-1.0/Configure	Wed Dec 10 15:10:41 1997
+@@ -103,8 +103,6 @@
+ 		echo "$0: failed to install skip/freebsd/Makefile.defs"
+ 		exit 1
+ 	fi
+-	echo "Configured to build on freebsd"
+-	echo "Don't forget to use gmake to compile"
+ 	exit 0
+ fi
+ if [ "$system" = "sunos" ]
