@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bash
-PORTVERSION=	2.05a
+PORTVERSION=	2.05b
 CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
@@ -17,6 +17,8 @@ DISTFILES=	bash-${PORTVERSION}.tar.gz bash-doc-${PORTVERSION}.tar.gz
 .endif
 
 MAINTAINER=	obrien@FreeBSD.org
+
+.include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-installed-readline
@@ -28,15 +30,17 @@ post-install:
 	(${GREP} -v ${PREFIX}/bin/bash /etc/shells.bak; ${ECHO_CMD} ${PREFIX}/bin/bash) >/etc/shells
 	${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/bash
+	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN}  \
 		${WRKDIR}/doc/article.ps  \
 		${WRKDIR}/doc/bashref.ps  \
-		${PREFIX}/share/doc/bash
+		${DOCSDIR}
 	${INSTALL_MAN}  \
 		${WRKDIR}/doc/article.txt  \
-		${PREFIX}/share/doc/bash
-	${GZIP_CMD} ${PREFIX}/share/doc/bash/*.ps
+		${DOCSDIR}
+	${BZIP2_CMD} ${DOCSDIR}/*.ps
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
+
+CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
