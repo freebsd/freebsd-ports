@@ -19,7 +19,9 @@
     SUBDIR += jmk-x11-fonts
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
+    SUBDIR += mkbold
     SUBDIR += mkfontalias
+    SUBDIR += mkitalic
     SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel
     SUBDIR += nucleus
