@@ -3,13 +3,13 @@
 # Date created:         10 March 1998
 # Whom:                 rantapaa@uswest.net
 #
-# $Id: Makefile,v 1.2 1998/03/10 21:36:52 rantapaa Exp $
+# $Id: Makefile,v 1.1.1.1 1998/12/20 03:55:54 jseger Exp $
 #
 
 DISTNAME=       psmisc-17
 CATEGORIES=     sysutils
-MASTER_SITES=   ftp://ftp.cdrom.com/pub/NetBSD/packages/distfiles/ \
-		ftp://ftp.bitcon.no/pub/NetBSD/packages/distfiles/
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/linux/slackware-3.6/source/a/procps/ \
+		ftp://ftp.bitcon.no/pub/linux/slackware/source/a/procps/
 
 MAINTAINER=     rantapaa@uswest.net
 
