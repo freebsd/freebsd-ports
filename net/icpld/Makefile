@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	icpld
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internet connection performance logging daemon
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -24,13 +23,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/icpld.conf.sample ${PREFIX}/etc
-	@${ECHO_MSG} "#####################################################################"
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/icpld.conf.sample file."
-	@${ECHO_MSG} "#####################################################################"
+	@${ECHO_MSG} '===> Installing ${PREFIX}/etc/icpld.conf.sample file.'
+
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/icpld.sh.sample ${PREFIX}/etc/rc.d
-	@${ECHO_MSG} "#####################################################################"
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/icpld.sh.sample"
-	@${ECHO_MSG} "#####################################################################"
+	@${ECHO_MSG} '===> Installing ${PREFIX}/etc/rc.d/icpld.sh.sample'
 
 post-install:
 .if !defined(NOPORTDOCS)
