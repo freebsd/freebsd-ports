@@ -15,20 +15,17 @@ DISTNAME=	gnome-python-1.4.2
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		glade.4:${PORTSDIR}/devel/libglade
+LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 
 USE_GMAKE=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs gdkpixbuf libglade
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
-		--datadir=${PREFIX}/share
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 EG_SRC_DIR=	${WRKSRC}/examples
