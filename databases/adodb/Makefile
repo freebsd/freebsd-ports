@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.51
+PORTVERSION=	1.54
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
-DISTNAME=	${PORTNAME}151
+DISTNAME=	${PORTNAME}154
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	abgoeree@wish.net
@@ -20,9 +20,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
 ADODB_DIR=	www/data.default/adodb
-ADODB_TEST=	share/examples/adodb/test
+ADODB_TEST=	share/examples/adodb
 PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
-		ADODB_TEST=${ADODB_TEST}
+		ADODB_TEST=${ADODB_TEST} \
+		DOCSDIR=share/doc/adodb
 
 DOCS=	readme.htm tute.htm readme.txt
 LIBS=	adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
@@ -34,16 +35,17 @@ LIBS=	adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
 	adodb-oracle.inc.php adodb-pear.inc.php adodb-postgres.inc.php \
 	adodb-postgres7.inc.php adodb-proxy.inc.php adodb-sybase.inc.php \
 	adodb.inc.php adodb-vfp.inc.php crypt.inc.php tohtml.inc.php
+PICS=	adodb.gif adodb.png
 SAMPLES=adodb-cryptsession.php adodb-session.php server.php
 TESTS=	benchmark.php client.php test.php test2.php test3.php test4.php \
 	test5.php testcache.php testdatabases.inc.php testoci8.php \
-	testpear.php testsessions.php
+	testpaging.php testpear.php testsessions.php
 
 post-patch:
 .for FILE in adodb-session.php benchmark.php client.php server.php test.php \
 	test2.php test3.php test4.php test5.php testcache.php testoci8.php \
-	testpear.php testsessions.php
-	${PERL} -pi -e "s#(\./)?(adodb(-session)?|tohtml)+(\.inc)?\.php#${PREFIX}/${ADODB_DIR}/\2\4\.php#" ${WRKSRC}/${FILE}
+	testpaging.php testpear.php testsessions.php
+	${PERL} -pi -e "s#(\./)?(adodb(-session|-pear)?|tohtml)+(\.inc)?\.php#${PREFIX}/${ADODB_DIR}/\2\4\.php#" ${WRKSRC}/${FILE}
 .endfor
 
 do-install:
@@ -52,7 +54,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${FILE} \
 		${PREFIX}/${ADODB_DIR}/${FILE}.sample
 .endfor
-.for FILE in ${LIBS}
+.for FILE in ${LIBS} ${PICS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}
 .endfor
 	@${MKDIR} ${PREFIX}/${ADODB_TEST}
@@ -62,9 +64,9 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/adodb
+	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${PREFIX}/share/doc/adodb
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
