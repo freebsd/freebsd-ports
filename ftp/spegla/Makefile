@@ -31,5 +31,7 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/freebsd.org ${PREFIX}/share/examples/spegla
+	${INSTALL_DATA} ${WRKSRC}/spegla.conf ${PREFIX}/share/examples/spegla
+	${INSTALL_SCRIPT} ${WRKSRC}/spegla.conf ${PREFIX}/share/examples/spegla
 
 .include <bsd.port.mk>
