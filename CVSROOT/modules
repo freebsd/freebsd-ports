@@ -2930,6 +2930,7 @@ gputils		ports/devel/gputils
 gq		ports/net/gq
 gqlplus		ports/databases/gqlplus
 gqmpeg		ports/audio/gqmpeg
+gqmpeg-devel	ports/audio/gqmpeg-devel
 gqradio		ports/audio/gqradio
 gqview		ports/graphics/gqview
 gqview-devel	ports/graphics/gqview-devel
