@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zope-ptk
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
@@ -196,5 +195,6 @@
     SUBDIR += xswallow
     SUBDIR += znavigator
     SUBDIR += zope
+    SUBDIR += zope-ptk
 
 .include <bsd.port.subdir.mk>
