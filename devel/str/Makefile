@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	str
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/str/
 
