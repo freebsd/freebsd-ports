@@ -1,3 +1,4 @@
+@cwd /usr/X11R6
 bin/pcb
 lib/X11/pcb/default_font
 lib/X11/pcb/circuits/connectors/64-a-b
@@ -105,3 +106,24 @@ lib/X11/pcb/packages/plcc68.pkg
 lib/X11/pcb/packages/plcc84.pkg
 lib/X11/pcb/packages/to3.pkg
 lib/X11/app-defaults/Pcb
+man/man1/pcb.1.gz
+@dirrm lib/X11/pcb/packages
+@dirrm lib/X11/pcb/circuits/linear
+@dirrm lib/X11/pcb/circuits/memory
+@dirrm lib/X11/pcb/circuits/generics
+@dirrm lib/X11/pcb/circuits/lsi
+@dirrm lib/X11/pcb/circuits/connectors
+@dirrm lib/X11/pcb/circuits/discrete
+@dirrm lib/X11/pcb/circuits/ttl
+@dirrm lib/X11/pcb/circuits
+@dirrm lib/X11/pcb
+@cwd /usr/local
+share/doc/pcb/pcb.ps.gz
+share/doc/pcb/refcard.ps.gz
+share/doc/pcb/texinfo.tex.gz
+share/doc/pcb/INSTALL
+share/doc/pcb/LICENSE
+share/doc/pcb/MAILING
+share/doc/pcb/README
+share/doc/pcb/Whats_new_in_1.4
+@dirrm share/doc/pcb
