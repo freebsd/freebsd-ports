@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -16,7 +15,7 @@ DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	corecode@corecode.ath.cx
+MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
@@ -33,7 +32,15 @@ USE_REINPLACE=	yes
 
 MAN1=		sylpheed-claws.1
 
-CONFIGURE_ARGS=	--program-suffix="-claws" --enable-ipv6
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=		yes
+CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
+			--with-openssl-libs=${OPENSSLLIB}
+.endif
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--program-suffix="-claws" --enable-ipv6
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
@@ -81,10 +88,6 @@ PLIST_SUB+=		SA_PLUG=""
 .else
 PLIST_SUB+=		SA_PLUG="@comment "
 .endif
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=		yes
-CONFIGURE_ARGS+=	--enable-openssl
-.endif
 .if defined(WITHOUT_THEMES)
 PLIST_SUB+=	THEMES="@comment "
 .else
@@ -129,6 +132,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
 	@for f in ${WRKSRC}/tools/*; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
+	#@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
@@ -160,4 +164,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/sylpheed-claws.png
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
