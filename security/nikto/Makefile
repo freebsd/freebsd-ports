@@ -14,7 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 MASTER_SITES=	http://www.cirt.net/nikto/ \
-		http://packetstormsecurity.org/UNIX/cgi-scanners/
+		ftp://ftp.bay13.net/pub/wiretapped/vulnerability-assessment/nikto/ \
+		http://mirror1.internap.com/pub/localareasecurity/wiretapped/vulnerability-assessment/nikto/ \
+		ftp://ftp.localareasecurity.com/pub/wiretapped/vulnerability-assessment/nikto/ \
+		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/nikto/
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/libwhisker/LW.pm:${PORTSDIR}/security/libwhisker
