@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	kopete
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-USE_BZIP2=      yes
-
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	KDE instant messaging system (ICQ, AIM, MSN, Jabber, Yahoo, IRC)
 
+USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
