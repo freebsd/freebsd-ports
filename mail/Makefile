@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.79 1999/01/01 14:19:58 kuriyama Exp $
+# $Id: Makefile,v 1.80 1999/01/02 19:55:52 steve Exp $
 #
 
     SUBDIR += adcomplain
@@ -36,6 +36,7 @@
     SUBDIR += mew-xemacs20
     SUBDIR += mew-xemacs-mule
     SUBDIR += mh
+    SUBDIR += ml
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mutt
