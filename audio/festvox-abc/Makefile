@@ -1,6 +1,6 @@
 # New ports collection makefile for:	festvox-abc
 # Date created:        			2000-06-12
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 # based on the NetBSD port
 #
 # $NetBSD: Makefile,v 1.10 2000/02/15 09:26:13 agc Exp $

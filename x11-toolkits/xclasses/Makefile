@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xclasses
 # Date created:		2000-10-01
-# Whom:			Trevor Johnson <trevor@freebsd.org>
+# Whom:			trevor
 #
 # $FreeBSD$
 #

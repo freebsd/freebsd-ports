@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Class-MethodMaker
 # Date created:				2000-07-09
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

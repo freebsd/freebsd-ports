@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xc-mail
 # Date created:		2000-10-01
-# Whom:			Trevor Johnson <trevor@freebsd.org>
+# Whom:			trevor
 #
 # $FreeBSD$
 #

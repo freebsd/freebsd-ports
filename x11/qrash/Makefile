@@ -1,6 +1,6 @@
 # New ports collection makefile for:	qrash
 # Date created:		Oct 27, 1999
-# Whom:			Trevor Johnson <trevor@jpj.net>
+# Whom:			Trevor Johnson
 #
 # $FreeBSD$
 #

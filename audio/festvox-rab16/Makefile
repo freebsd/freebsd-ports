@@ -1,6 +1,6 @@
 # New ports collection makefile for:	festvox-rab16
 # Date created:        			2000-06-12
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 # based on the NetBSD port
 #
 # $NetBSD: Makefile,v 1.8 1999/12/28 04:20:01 wiz Exp $

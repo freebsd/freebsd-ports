@@ -1,6 +1,6 @@
 # New ports collection makefile for:	oidentd
 # Date created:		29 Mar 2000
-# Whom:			trevor@jpj.net
+# Whom:			Trevor Johnson
 #
 # $FreeBSD$
 #
