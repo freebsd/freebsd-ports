@@ -5,6 +5,7 @@ lib/gauche/%%VERSION%%/include/gauche/math3d.h
 share/gauche/%%VERSION%%/lib/gl.scm
 share/gauche/%%VERSION%%/lib/gl/glut.scm
 share/gauche/%%VERSION%%/lib/gl/math3d.scm
+@dirrm share/gauche/%%VERSION%%/lib/gl/
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-2.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/glbook/example1-3.scm
