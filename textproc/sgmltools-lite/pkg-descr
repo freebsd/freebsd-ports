@@ -1,0 +1,7 @@
+SGMLtools is a text-formatting package based on SGML (Standard Generalized
+Markup Language), which allows you to produce TeX/DVI/PS/PDF, HTML, and RTF
+from a single source; due to the flexible nature of SGML many other target
+formats are possible.  As the front-end is written in Python, it is relatively
+easy to adapt to your needs. 
+
+WWW: http://www.sgmltools.org/

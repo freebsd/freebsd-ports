@@ -1,0 +1,11 @@
+--- python/backends/Dvi.py	Fri Mar 24 20:25:06 2000
++++ python/backends/Dvi.py.new	Sat Jun 17 20:19:30 2000
+@@ -50,7 +50,7 @@
+ 	    #
+ 	    (dvibase, junk) = os.path.splitext(outfile)
+ 	    destfile = dvibase + '.dvi'
+-	    cmdline = 'jadetex ' + outfile
++	    cmdline = 'tex "&jadetex" ' + outfile
+ 	    for run in range(3):
+ 		try:
+ 		    os.unlink(destfile)
