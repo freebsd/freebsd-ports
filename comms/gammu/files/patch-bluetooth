@@ -1,0 +1,77 @@
+diff -ur orig/bluetoth.c patched/bluetoth.c
+--- common/device/bluetoth/bluetoth.c	Thu Nov 25 12:36:26 2004
++++ common/device/bluetoth/bluetoth.c	Thu Nov 25 12:46:22 2004
+@@ -30,9 +30,6 @@
+ {
+ 	GSM_Error error;
+ 
+-#ifdef BLUETOOTH_RF_SEARCHING
+-	if (!mystrncasecmp(s->CurrentConfig->Connection, "bluerf", 6)) return bluetooth_findchannel(s);
+-#endif
+ 	
+ 	switch (s->ConnectionType) {
+ 	case GCT_BLUEAT:
+diff -ur common/device/bluetoth/bluez.c common/device/bluetoth/bluez.c
+--- common/device/bluetoth/bluez.c	Thu Nov 25 12:36:26 2004
++++ common/device/bluetoth/bluez.c	Thu Nov 25 12:46:56 2004
+@@ -14,6 +14,8 @@
+ #ifdef GSM_ENABLE_BLUETOOTHDEVICE
+ #ifdef GSM_ENABLE_BLUEZ
+ 
++#define BDADDR_ANY NG_HCI_BDADDR_ANY
++
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <fcntl.h>
+@@ -22,10 +24,7 @@
+ #include <sys/socket.h>
+ #include <sys/time.h>
+ #include <unistd.h>
+-#include <bluetooth/bluetooth.h>
+-#include <bluetooth/rfcomm.h>
+-#include <bluetooth/sdp.h>
+-#include <bluetooth/sdp_lib.h>
++#include <bluetooth.h>
+ 
+ #include "../../gsmcomon.h"
+ #include "../devfunc.h"
+@@ -34,21 +33,21 @@
+ GSM_Error bluetooth_connect(GSM_StateMachine *s, int port, char *device)
+ {
+ 	GSM_Device_BlueToothData 	*d = &s->Device.Data.BlueTooth;
+-	struct sockaddr_rc 		laddr, raddr;
++	struct sockaddr_rfcomm 		laddr, raddr;
+ 	bdaddr_t			bdaddr;
+ 	int 				fd;
+ 
+ 	smprintf(s, "Connecting to RF channel %i\n",port);
+ 
+-	fd = socket(PF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
++	fd = socket(PF_BLUETOOTH, SOCK_STREAM, BLUETOOTH_PROTO_RFCOMM);
+ 	if (fd < 0) {
+ 		dbgprintf("Can't create socket\n");
+ 		return ERR_DEVICENODRIVER;
+ 	}
+ 
+-	bacpy(&laddr.rc_bdaddr, BDADDR_ANY);
+-	laddr.rc_family 	= AF_BLUETOOTH;
+-	laddr.rc_channel 	= 0;
++	bacpy(&laddr.rfcomm_bdaddr, BDADDR_ANY);
++	laddr.rfcomm_family 	= AF_BLUETOOTH;
++	laddr.rfcomm_channel 	= 0;
+ 
+ 	if (bind(fd, (struct sockaddr *)&laddr, sizeof(laddr)) < 0) {
+ 		dbgprintf("Can't bind socket\n");
+@@ -57,9 +56,9 @@
+ 	}
+ 
+ 	str2ba(device, &bdaddr);
+-	bacpy(&raddr.rc_bdaddr, &bdaddr);
+-	raddr.rc_family 	= AF_BLUETOOTH;
+-	raddr.rc_channel 	= port;
++	bacpy(&raddr.rfcomm_bdaddr, &bdaddr);
++	raddr.rfcomm_family 	= AF_BLUETOOTH;
++	raddr.rfcomm_channel 	= port;
+ 
+ 	if (connect(fd, (struct sockaddr *)&raddr, sizeof(raddr)) < 0) {
+ 		dbgprintf("Can't connect\n");

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	0.94.0
+PORTVERSION=	0.98.0
 CATEGORIES=	comms
 MASTER_SITES=	http://www.mwiacek.com/zips/gsm/gammu/older/ \
 		http://www.kirill.spb.ru/gammu/
@@ -19,6 +19,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 WANT_AUTOCONF_VER=253
 
-CONFIGURE_ARGS=	--disable-fbuspl2303
+CONFIGURE_ARGS=	--disable-bluerfsearch
 
 .include <bsd.port.mk>
