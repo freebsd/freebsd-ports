@@ -12,6 +12,7 @@
     SUBDIR += dumpasn1
     SUBDIR += enca
     SUBDIR += fconv
+    SUBDIR += fix-mime-charset
     SUBDIR += fribidi
     SUBDIR += gbase
     SUBDIR += i18ntools
