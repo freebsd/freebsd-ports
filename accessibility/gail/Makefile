@@ -7,6 +7,7 @@
 
 PORTNAME=	gail
 PORTVERSION=	0.13
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020525
@@ -17,6 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 LIB_DEPENDS=	gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas
 
 USE_BZIP2=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
