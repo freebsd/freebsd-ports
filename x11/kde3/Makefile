@@ -8,6 +8,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -16,12 +17,23 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The "meta-port" for KDE
 
+.if !defined(MINIMAL_KDE)
 RUN_DEPENDS+=	kjumpingcube:${PORTSDIR}/games/kdegames3 \
 		kdessh:${PORTSDIR}/misc/kdeutils3 \
 		kword:${PORTSDIR}/editors/koffice-kde3 \
 		kppp:${PORTSDIR}/net/kdenetwork3 \
 		kview:${PORTSDIR}/graphics/kdegraphics3 \
-		kmix:${PORTSDIR}/multimedia/kdemultimedia3
+		kmix:${PORTSDIR}/multimedia/kdemultimedia3 \
+		korganizer:${PORTSDIR}/deskutils/kdepim3 \
+		cervisia:${PORTSDIR}/devel/kdesdk3 \
+		kdevelop:${PORTSDIR}/devel/kdevelop \
+		atlantikdesigner:${PORTSDIR}/misc/kdeaddons3 \
+		khangman:${PORTSDIR}/misc/kdeedu3 \
+		kcron:${PORTSDIR}/sysutils/kdeadmin3 \
+		quanta:${PORTSDIR}/www/quanta \
+		kmoon:${PORTSDIR}/x11-clocks/kdetoys3 \
+		kmatrix.kss:${PORTSDIR}/x11-wm/kdeartwork3
+.endif
 
 .if make(package)
 DEPENDS_TARGET="package"
