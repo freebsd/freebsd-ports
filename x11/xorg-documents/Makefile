@@ -23,7 +23,7 @@ XBUILD_DIRS=	doc/specs
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE= is part of X.Org
+IGNORE=	is part of X.Org
 .endif
 
 .include <bsd.port.post.mk>
