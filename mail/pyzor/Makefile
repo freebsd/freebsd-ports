@@ -8,7 +8,7 @@
 
 PORTNAME=	pyzor
 PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,5 +24,9 @@ USE_REINPLACE=		yes
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/bin/python2,${PYTHON_CMD}," \
 		${WRKSRC}/scripts/pyzor ${WRKSRC}/scripts/pyzord
+
+post-install:
+	${CHOWN} ${SHAREMODE} ${DOCSDIR}/usage.html
+	${CHOWN} ${BINMODE} ${PREFIX}/bin/pyzor ${PREFIX}/bin/pyzord
 
 .include <bsd.port.mk>
