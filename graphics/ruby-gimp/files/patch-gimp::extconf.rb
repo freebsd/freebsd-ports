@@ -1,12 +1,15 @@
---- gimp/extconf.rb.orig	Fri Feb 23 04:53:23 2001
-+++ gimp/extconf.rb	Wed Feb 28 22:43:04 2001
-@@ -2,8 +2,8 @@
- require '../mkmf_gimp.rb'
- 
+--- gimp/extconf.rb.orig	Thu Mar 15 03:50:32 2001
++++ gimp/extconf.rb	Sun Mar 18 04:55:15 2001
+@@ -4,9 +4,9 @@
  $CFLAGS  += ' ' + GimpConfig::CFLAGS
-+$LDFLAGS += ' ' + GimpConfig::LDFLAGS
+ $LDFLAGS += ' ' + GimpConfig::LDFLAGS
  
- if have_gimp_library("gimp", "gimp_main") and have_header("libgimp/gimp.h")
--#  $LDFLAGS += ' ' + GimpConfig::LDFLAGS
-   create_makefile("gimp")
- end
+-if have_library(GimpConfig::LIBGLIB, "g_print") and
+-   have_library(GimpConfig::LIBGTK, "gtk_init") and
+-   have_library(GimpConfig::LIBGIMP, "gimp_main") and
++if have_func("g_print") and
++   have_func("gtk_init") and
++   have_func("gimp_main") and
+    have_header("libgimp/gimp.h")
+   have_func("gimp_sysconf_directory")
+ 
