@@ -245,6 +245,7 @@
     SUBDIR += nil
     SUBDIR += nonsense
     SUBDIR += nwnusers
+    SUBDIR += oilwar
     SUBDIR += omega
     SUBDIR += oneko
     SUBDIR += oneko-sakura
