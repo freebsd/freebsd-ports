@@ -7,6 +7,7 @@
 
 PORTNAME=	xcut
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.sourceforge.net/xcut/ \
 		http://acsys.anu.edu.au/~tpot/xcut/
