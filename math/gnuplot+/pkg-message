@@ -1,9 +1,25 @@
-*************************************************************************
-* Notices								*
-*									*
-* The author does not want these patches to be used by ones who misuse	*
-* a word Hacker for a cracker and crackers who call themselves Hackers.	*
-*									*
-* If you use these patches against the above, please make contact with	*
-* Yamaga (yamaga@ipc.chiba-u.ac.jp).					*
-*************************************************************************
+************************************************************************
+* Wishes from The Author
+*
+* The author wishes many people to use a word `Hacker' and a `Cracker'
+* correctly. This is just a WISH, not obligation, of course.
+*
+* The thought is based on
+*
+*     RFC (Request For Comments) 1983 "Internet Users' Glossary",
+*
+* from which the sections about Hacker and Cracker are quoted below.
+*
+*  cracker
+*     A cracker is an individual who attempts to access computer systems
+*     without authorization.  These individuals are often malicious, as
+*     opposed to hackers, and have many means at their disposal for
+*     breaking into a system.  See also: hacker, Computer Emergency
+*     Response Team, Trojan Horse, virus, worm.
+*
+*  hacker
+*     A person who delights in having an intimate understanding of the
+*     internal workings of a system, computers and computer networks in
+*     particular.  The term is often misused in a pejorative context,
+*     where "cracker" would be the correct term.  See also: cracker.
+************************************************************************
