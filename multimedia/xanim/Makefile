@@ -20,7 +20,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Play most popular animation formats and show pictures
 
-.if (${MACHINE_ARCH} == "i386")
+USE_IMAKE=	yes
+MAN1=		xanim.1
+MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
+DLLDIR=		${PREFIX}/lib/X11/xanim
+PLIST_FILES+=	bin/xanim
+
+post-extract:
+	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
+
+.include <bsd.port.pre.mk>
+
+.if (${ARCH} == "i386")
 EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_cyuv_1.0_freebsdELFx86.tgz \
 		vid_h261_1.0_freebsdELFx86.tgz \
@@ -28,30 +39,23 @@ EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \
 		vid_iv32_2.1_freebsdELFx86.tgz \
 		vid_iv41_1.1_freebsdELFx86.tgz \
 		vid_iv50_1.0_freebsdELFx86.tgz
+PLIST_FILES+=	lib/X11/xanim/cvid.readme lib/X11/xanim/cyuv.readme \
+		lib/X11/xanim/h261.readme lib/X11/xanim/h263.readme \
+		lib/X11/xanim/iv32.readme lib/X11/xanim/iv41.readme \
+		lib/X11/xanim/iv50.readme \
+		lib/X11/xanim/vid_cvid_2.1_freebsdELFx86.xa \
+		lib/X11/xanim/vid_cyuv_1.0_freebsdELFx86.xa \
+		lib/X11/xanim/vid_h261_1.0_freebsdELFx86.xa \
+		lib/X11/xanim/vid_h263_1.0_freebsdELFx86.xa \
+		lib/X11/xanim/vid_iv32_2.1_freebsdELFx86.xa \
+		lib/X11/xanim/vid_iv41_1.1_freebsdELFx86.xa \
+		lib/X11/xanim/vid_iv50_1.0_freebsdELFx86.xa
+PLIST_DIRS+=	lib/X11/xanim
 
-DLLDIR=		${PREFIX}/lib/X11/xanim
-
-PLIST_SUB+=	CODECS=""
-
-.else
-
-PLIST_SUB+=	CODECS="@comment "
-
-.endif
-
-USE_IMAKE=	yes
-MAN1=		xanim.1
-
-MAKE_ARGS+=	-j 2 # safe and helps even the single-CPU machines
-
-post-extract:
-	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
-
-.if (${MACHINE_ARCH} == "i386")
 post-install:
 	@${MKDIR} ${DLLDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.readme ${DLLDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.xa ${DLLDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
