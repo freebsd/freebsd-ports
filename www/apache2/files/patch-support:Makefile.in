@@ -1,0 +1,14 @@
+--- support/Makefile.in.orig	Fri Dec 17 17:03:38 2004
++++ support/Makefile.in	Fri Dec 17 17:01:44 2004
+@@ -23,10 +23,7 @@
+ 	    fi ; \
+ 	done
+ 	@if test -f "$(builddir)/envvars-std"; then \
+-	    cp -p envvars-std $(DESTDIR)$(sbindir); \
+-	    if test ! -f $(DESTDIR)$(sbindir)/envvars; then \
+-	        cp -p envvars-std $(DESTDIR)$(sbindir)/envvars ; \
+-	    fi ; \
++	    cp -p envvars-std $(DESTDIR)$(sbindir)/envvars; \
+ 	fi
+ 
+ htpasswd_OBJECTS = htpasswd.lo

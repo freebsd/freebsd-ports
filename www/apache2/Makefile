@@ -213,17 +213,18 @@ post-configure:
 			s,%%WWWGRP%%,${WWWGRP}, ; \
 			s,%%WWWBASEDIR%%,${PREFIX}/www," \
 			${WRKSRC}/docs/conf/httpd-std.conf
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
+			${WRKSRC}/support/envvars-std
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${MKDIR} ${PREFIX}/etc/apache2/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
-.if !defined(WITH_APR_FROM_PORTS)
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup script."
+	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup script."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
-.endif
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
+	@${ECHO_CMD} "=> Installing ${PREFIX}/etc/rc.d/apache2.sh startup script."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
 	@${ECHO_CMD} ""
 	@${CAT} ${PKGMESSAGE}
