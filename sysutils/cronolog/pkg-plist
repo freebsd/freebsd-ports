@@ -1,3 +1,5 @@
+@unexec install-info --delete %D/info/cronolog %D/info/dir
 info/cronolog.info
+@exec install-info %D/info/cronolog %D/info/dir
 sbin/cronolog
 sbin/cronosplit
