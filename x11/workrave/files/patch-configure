@@ -1,0 +1,10 @@
+--- configure.orig	Tue Aug 26 23:50:00 2003
++++ configure	Tue Aug 26 23:50:32 2003
+@@ -8571,7 +8571,6 @@
+ 
+ 
+ LIBS_save=$LIBS
+-LIBS="$LIBS -L $ac_x_libraries"
+ echo "$as_me:$LINENO: checking for XRecordEnableContext in -lXtst" >&5
+ echo $ECHO_N "checking for XRecordEnableContext in -lXtst... $ECHO_C" >&6
+ if test "${ac_cv_lib_Xtst_XRecordEnableContext+set}" = set; then
