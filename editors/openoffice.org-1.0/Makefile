@@ -23,7 +23,9 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 #
 # OO is still broken with the system gcc on CURRENT.
 #
+.if !defined(USE_GCC)
 USE_GCC=3.1
+.endif
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
 #
 # We depend on the port. System g++ is broken at the moment.
