@@ -8309,6 +8309,7 @@ ttyload		ports/sysutils/ttyload
 ttyrec		ports/misc/ttyrec
 tua		ports/sysutils/tua
 tuc		ports/converters/tuc
+tulip		ports/graphics/tulip
 tund		ports/net/tund
 tunefs		src/sbin/tunefs
 turba		ports/mail/turba
