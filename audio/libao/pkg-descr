@@ -1,7 +1,9 @@
-Libao is a cross-platform audio library that allows programs to output
-audio using a simple API on a wide variety of platforms.  It currently
-supports:
-   * Open Sound System (Linux, *BSD)
-   * ESounD
-   * Advanced Linux Sound Architecture
+libao is a cross-platform audio library that allows programs to
+output audio using a simple API on a wide variety of platforms.
+On FreeBSD, it currently supports:
+   * Null output
    * WAV files
+   * OSS (Open Sound System)
+   * ESD (ESounD or Enlightened Sound Daemon)
+
+WWW: http://www.vorbis.com/
