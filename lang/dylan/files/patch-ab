@@ -1,0 +1,11 @@
+--- mindy/comp/Makefile.in.orig	Fri May  9 20:45:36 1997
++++ mindy/comp/Makefile.in	Sun Jul 12 00:32:35 1998
+@@ -147,7 +147,7 @@
+ 
+ lexer-tab.o:  ${SRCDIR}/lexer-tab.c ${SRCDIR}/lexer.h ${SRCDIR}/src.h \
+                 ${SRCDIR}/parser-tab.h
+-	${CC} -c ${CFLAGS} ${SRCDIR}/lexer-tab.c
++	${CC} -c -D_ANSI_SOURCE ${CFLAGS} ${SRCDIR}/lexer-tab.c
+ 
+ literal.o:  ${SRCDIR}/literal.c ${SRCDIR}/../compat/std-c.h ${SRCDIR}/mindycomp.h \
+               ${SRCDIR}/literal.h ${SRCDIR}/lose.h

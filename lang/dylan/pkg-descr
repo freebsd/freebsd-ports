@@ -1,0 +1,39 @@
+This is a port of the CMU Gwydion project's implementation of the
+Dylan programming language.  Dylan is an object-oriented language with
+many powerful features, including automatic memory management (garbage
+collection), generic functions (also known as multiple dispatch or
+multi-methods), multiple inheritance, a powerful and safe macro
+facility for extending the language's syntax, and a powerful class and
+function library.  Though it is a DYnamic LANguage, it includes
+facilities for making compiled programs more efficient than many other
+dynamic languages.
+
+The Dylan language was originally developed by Apple, but the project
+was dropped just as the language definition was being finished and
+before a production-quality compiler was complete.  The CMU Gwydion
+project and Harlequin have continued use and development of the
+language.  For more information about the Dylan language, see the
+Dylan World site (http://www-dylan.uchicago.edu/).
+
+Gwydion Dylan actually contains two implementations of the language.
+One, called Mindy (Mindy Is Not Dylan Yet), is a bytecode compiler and
+interpreter that implements most of the language except for the macro
+facility.  The other, d2c, is a compiler for the full language that
+uses C as its target "assembly language".  The d2c compiler was
+written in Dylan and bootstrapped using Mindy.
+
+A copy of the d2c compiler binary is included with the port to
+bootstrap the entire system.  As the Gwydion documentation says,
+
+	Recompiling the entire system takes over an hour on 64meg 200mhz
+ 	Pentium Pro running Windows/NT. This is almost all for the
+ 	compilation of the d2c runtime and compiler; compiling just Mindy
+ 	takes only a few minutes. d2c also uses lots of memory, especially
+ 	when compiling itself: you want at least 48 meg, and more is
+ 	better.
+
+For more information about building Gwydion dylan, see
+http://legend.gwydion.cs.cmu.edu/gwydion/dylan/docs/htdocs/unix-build.html.
+The Gwydion project home page is at http://legend.gwydion.cs.cmu.edu/gwydion/
+
+-Peter S. Housel- housel@acm.org
