@@ -3,7 +3,7 @@
 # Date created:         Jul 7, 1999
 # Whom:                 marcel@FreeBSD.org
 #
-# $Id: Makefile,v 1.26 1999/07/21 10:41:35 marcel Exp $
+# $Id: Makefile,v 1.27 1999/08/06 15:13:17 billf Exp $
 #
 
 DISTNAME=		linux_base
@@ -18,11 +18,10 @@ MASTER_SITES=		\
 	ftp://mirror.nucba.ac.jp/mirror/redhat/${STDDIR}/ \
 	ftp://ftp.is.co.za/linux/distributions/redhat/${STDDIR}/ \
 	ftp://mirror.aarnet.edu.au/pub/linux/redhat/${STDDIR}/
-DISTFILES=		${RPMSET1} ${RPMSET2} ${RPMSET3}
+DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_SET2} \
+			${RPM_RPM} ${RPM_SET3}
 
 MAINTAINER=		marcel@FreeBSD.org
-
-BROKEN=		'ldconfig does not install properly'
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
@@ -51,11 +50,11 @@ LIBC5_COMPAT=
 # The file files/pkg-list lists all rpms that are installed by this port
 # versus all rpms installed by a minimal Redhat installation.
 #
-RPMSET1=		setup-1.9.2-1.noarch.rpm \
+RPM_SET1=		setup-1.9.2-1.noarch.rpm \
 			filesystem-1.3.2-3.noarch.rpm \
-			basesystem-4.9-3.noarch.rpm \
-			ldconfig-1.9.5-8.${ARCH}.rpm
-RPMSET2=		glibc-2.0.7-29.${ARCH}.rpm \
+			basesystem-4.9-3.noarch.rpm
+RPM_LDCONFIG=		ldconfig-1.9.5-8.${ARCH}.rpm
+RPM_SET2=		glibc-2.0.7-29.${ARCH}.rpm \
 			termcap-9.12.6-11.noarch.rpm \
 			libtermcap-2.0.8-10.${ARCH}.rpm \
 			bash-1.14.7-13.${ARCH}.rpm \
@@ -72,23 +71,24 @@ RPMSET2=		glibc-2.0.7-29.${ARCH}.rpm \
 			libstdc++-2.8.0-14.${ARCH}.rpm \
 			sh-utils-1.16-14.${ARCH}.rpm \
 			readline-2.2.1-1.${ARCH}.rpm \
-			redhat-release-5.2-1.noarch.rpm \
-			rpm-2.5.5-5.2.${ARCH}.rpm
-RPMSET3=		setserial-2.14-4.${ARCH}.rpm \
+			redhat-release-5.2-1.noarch.rpm
+RPM_RPM=		rpm-2.5.5-5.2.${ARCH}.rpm
+RPM_SET3=		setserial-2.14-4.${ARCH}.rpm \
 			slang-0.99.38-8.${ARCH}.rpm \
 			stat-1.5-8.${ARCH}.rpm \
 			tcsh-6.07.09-1.${ARCH}.rpm \
 			XFree86-libs-3.3.2.3-25.${ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH}
+RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
+			--nodeps --replacepkgs
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
 REMOVE_DIRS=		/dev /home /root /tmp /var/tmp /usr/local /usr/tmp
 REMOVE_FILES=		/bin/df /bin/su /etc/exports /etc/group /etc/motd \
 			/etc/passwd /etc/printcap /etc/services /etc/protocols
 
-.if ${OSVERSION} < 320001
+.if ${OSVERSION} <= 320001
 #
 # Hack to let the rpm installer run.  The actual kernel change occurred after
 # 400008 on 4.0-current and well after 320001, but we'll assume people running
@@ -117,7 +117,7 @@ do-install:
 	fi
 	@${MKDIR} ${PREFIX}/${DBPATH}
 	@${MKDIR} ${PREFIX}/var/tmp
-	rpm --initdb --root ${PREFIX} --dbpath ${DBPATH}
+	@rpm --initdb --root ${PREFIX} --dbpath ${DBPATH}
 #
 # Make sure we have a /dev/null in the chrooted environment.
 #
@@ -133,22 +133,25 @@ do-install:
 # Install all packages. Ignore dependencies just
 # like the Red Hat installer.
 #
-	@for R in ${RPMSET1}; do \
+	@for R in ${RPM_SET1}; do \
 		${ECHO} $$R; \
-		rpm -i ${RPMFLAGS} --nodeps --replacepkgs ${RPMDIR}/$$R || \
-			${TRUE}; \
+		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	brandelf -t Linux ${PREFIX}/sbin/ldconfig
+	@${ECHO} ${RPM_LDCONFIG}
+	@rpm -i ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_LDCONFIG}
+	@brandelf -t Linux ${PREFIX}/sbin/ldconfig
 	@${PREFIX}/sbin/ldconfig
-	@for R in ${RPMSET2}; do \
+	@${TOUCH} ${PREFIX}/etc/ld.so.conf
+	@for R in ${RPM_SET2}; do \
 		${ECHO} $$R; \
-		rpm -i ${RPMFLAGS} --nodeps --replacepkgs ${RPMDIR}/$$R || \
-			${TRUE}; \
+		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	brandelf -t Linux ${PREFIX}/bin/rpm
-	@for R in ${RPMSET3}; do \
+	@${ECHO} ${RPM_RPM}
+	@rpm -i ${RPMFLAGS} --noscripts ${RPMDIR}/${RPM_RPM}
+	@brandelf -t Linux ${PREFIX}/bin/rpm
+	@for R in ${RPM_SET3}; do \
 		${ECHO} $$R; \
-		rpm -i ${RPMFLAGS} --nodeps --replacepkgs ${RPMDIR}/$$R; \
+		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Finish
