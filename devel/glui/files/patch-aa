@@ -1,0 +1,32 @@
+--- algebra3.cpp.orig	Fri Jul  9 22:38:46 1999
++++ algebra3.cpp	Tue Sep 25 21:50:30 2001
+@@ -505,8 +505,7 @@
+ { return a*d; }
+ 
+ vec4 operator * (const mat4& a, const vec4& v) {
+-    #define ROWCOL(i) a.v[i].n[0]*v.n[VX] + a.v[i].n[1]*v.n[VY] \
+-    + a.v[i].n[2]*v.n[VZ] + a.v[i].n[3]*v.n[VW]
++    #define ROWCOL(i) a.v[i].n[0]*v.n[VX] + a.v[i].n[1]*v.n[VY]  + a.v[i].n[2]*v.n[VZ] + a.v[i].n[3]*v.n[VW]
+     return vec4(ROWCOL(0), ROWCOL(1), ROWCOL(2), ROWCOL(3));
+     #undef ROWCOL
+ }
+@@ -680,8 +679,7 @@
+ { return mat3(a.v[0] - b.v[0], a.v[1] - b.v[1], a.v[2] - b.v[2]); }
+ 
+ mat3 operator * (mat3& a, mat3& b) {
+-    #define ROWCOL(i, j) \
+-    a.v[i].n[0]*b.v[0][j] + a.v[i].n[1]*b.v[1][j] + a.v[i].n[2]*b.v[2][j]
++    #define ROWCOL(i, j) a.v[i].n[0]*b.v[0][j] + a.v[i].n[1]*b.v[1][j] + a.v[i].n[2]*b.v[2][j]
+     return mat3(vec3(ROWCOL(0,0), ROWCOL(0,1), ROWCOL(0,2)),
+ 		vec3(ROWCOL(1,0), ROWCOL(1,1), ROWCOL(1,2)),
+ 		vec3(ROWCOL(2,0), ROWCOL(2,1), ROWCOL(2,2)));
+@@ -895,8 +893,7 @@
+ { return mat4(a.v[0] - b.v[0], a.v[1] - b.v[1], a.v[2] - b.v[2], a.v[3] - b.v[3]); }
+ 
+ mat4 operator * (mat4& a, mat4& b) {
+-    #define ROWCOL(i, j) a.v[i].n[0]*b.v[0][j] + a.v[i].n[1]*b.v[1][j] + \
+-    a.v[i].n[2]*b.v[2][j] + a.v[i].n[3]*b.v[3][j]
++    #define ROWCOL(i, j) a.v[i].n[0]*b.v[0][j] + a.v[i].n[1]*b.v[1][j] + a.v[i].n[2]*b.v[2][j] + a.v[i].n[3]*b.v[3][j]
+     return mat4(
+     vec4(ROWCOL(0,0), ROWCOL(0,1), ROWCOL(0,2), ROWCOL(0,3)),
+     vec4(ROWCOL(1,0), ROWCOL(1,1), ROWCOL(1,2), ROWCOL(1,3)),

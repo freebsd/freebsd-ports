@@ -1,0 +1,12 @@
+--- stdinc.h.orig	Fri Jul  9 22:38:46 1999
++++ stdinc.h	Tue Sep 25 21:50:32 2001
+@@ -99,8 +99,7 @@
+ 
+ /************ check if a 2D point lies within a 2D box ***************/
+ #ifndef PT_IN_BOX
+-#define PT_IN_BOX( x, y, lo_x, hi_x, lo_y, hi_y ) \
+-( IN_BOUNDS(x,lo_x,hi_x) AND IN_BOUNDS(y,lo_y,hi_y) )
++#define PT_IN_BOX( x, y, lo_x, hi_x, lo_y, hi_y ) ( IN_BOUNDS(x,lo_x,hi_x) AND IN_BOUNDS(y,lo_y,hi_y) )
+ #endif
+ 
+      /****** check if value lies on proper side of another value     *****/
