@@ -20,7 +20,7 @@ PATCH_SITES=	http://www.erlang.org/download/patches/
 PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sam@inf.enst.fr
+MAINTAINER=	olgeni@FreeBSD.org
 
 BUILD_DEPENDS=  ${JAVAPORT}
 
