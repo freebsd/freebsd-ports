@@ -1,0 +1,4 @@
+etc/gnome-vfs-2.0/modules/synce-module.conf
+lib/gnome-vfs-2.0/modules/libsyncevfs.a
+lib/gnome-vfs-2.0/modules/libsyncevfs.la
+lib/gnome-vfs-2.0/modules/libsyncevfs.so

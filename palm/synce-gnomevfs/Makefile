@@ -1,0 +1,25 @@
+# New ports collection makefile for:   synce-gnomevfs
+# Date created:                28 August 2003
+# Whom:                        Sam Lawrance <boris@brooknet.com.au>
+#
+# $FreeBSD$
+
+PORTNAME=	synce-gnomevfs
+PORTVERSION=	0.8
+CATEGORIES=	palm
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	synce
+
+MAINTAINER=	boris@brooknet.com.au
+COMMENT=	Gnome VFS module for WinCE devices
+
+LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
+
+USE_GNOME=	gnomeprefix gnometarget gnomevfs2
+USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE}
+
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.mk>
