@@ -7,7 +7,7 @@
 
 PORTNAME=	xmrm
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cg.tuwien.ac.at/pub/linux/xmrm/ \
 		ftp://ftp.uni-passau.de/mount/common.lib.archive.unix/Graphic/xmrm/
@@ -16,10 +16,12 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	treif@mayn.de
 
-RUN_DEPENDS=	mpeg:${PORTSDIR}/graphics/mpeg
+RUN_DEPENDS=	mpeg:${PORTSDIR}/graphics/mpeg \
+		mpeg_play:${PORTSDIR}/graphics/mpeg_play
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_X_PREFIX=	yes
 USE_XPM=	yes
 NO_WRKSUBDIR=	yes
 
