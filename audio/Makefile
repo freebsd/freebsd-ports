@@ -24,6 +24,7 @@
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
     SUBDIR += cdrdao
+    SUBDIR += cheesetracker
     SUBDIR += chordpack
     SUBDIR += cmp3
     SUBDIR += csound
