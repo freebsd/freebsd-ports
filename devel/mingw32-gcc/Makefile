@@ -69,6 +69,12 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 
 BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "ia64"
+BROKEN=		"Does not compile on !i386 and !ia64"
+.endif
+
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=\s*).+$$,\1libstdc++-v3 libf2c libobjc mingw,' ${WRKSRC}/Makefile
 	@${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,' ${WRKSRC}/gcc/Makefile
@@ -80,4 +86,4 @@ post-install:
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
