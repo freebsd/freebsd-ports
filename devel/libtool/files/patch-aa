@@ -1,0 +1,11 @@
+--- doc/libtool.texi.orig	Wed Mar 11 02:04:36 1998
++++ doc/libtool.texi	Mon Apr 27 16:57:24 1998
+@@ -10,7 +10,7 @@
+ @set BUGADDR the libtool mailing list @email{<bug-libtool@@gnu.org>}
+ @set objdir .libs
+ 
+-@dircategory GNU programming tools
++@dircategory Programming & development tools
+ @direntry
+ * Libtool: (libtool).           Generic shared library support script.
+ @end direntry

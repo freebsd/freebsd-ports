@@ -1,0 +1,13 @@
+bin/libtool
+bin/libtoolize
+@unexec install-info --delete %D/info/libtool.info %D/info/dir
+info/libtool.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/libtool.info %D/info/dir
+share/aclocal/libtool.m4
+share/libtool/config.guess
+share/libtool/config.sub
+share/libtool/ltconfig
+share/libtool/ltmain.sh
+@dirrm share/libtool
+@unexec rmdir %D/share/aclocal 2>/dev/null || true
