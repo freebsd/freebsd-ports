@@ -4808,6 +4808,7 @@ libsx		ports/x11/libsx
 libtai		ports/devel/libtai
 libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
+libtcp4u	ports/net/libtcp4u
 libtecla	ports/devel/libtecla
 libtheora	ports/graphics/libtheora
 libticables	ports/comms/libticables
