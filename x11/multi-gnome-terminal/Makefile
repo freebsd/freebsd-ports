@@ -17,7 +17,7 @@ MAINTAINER=	fdubuy@free.fr
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomecanvas
+USE_GNOME=	gnomeprefix gnomehack gnomecanvas libglade
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
