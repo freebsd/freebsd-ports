@@ -1,7 +1,5 @@
 ############################################################
-If you want to use Egg key binding on kinput2, then
-you should run
-
-kinput2 -ccdef ccdef.kinput2.egg
-
+Default key-binding is changed to "egg" key-binding by defining
+*CcWnn.ccdef:           ccdef.kinput2.egg
+in ${X11BASE}/lib/X11/app-defaults/Kinput2.
 ############################################################"

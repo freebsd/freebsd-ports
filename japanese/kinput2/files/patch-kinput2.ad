@@ -1,0 +1,14 @@
+--- cmd/Kinput2.ad.orig	Tue May 20 14:13:43 2003
++++ cmd/Kinput2.ad	Tue May 20 14:14:46 2003
+@@ -34,7 +34,10 @@
+ !!
+ !*CcWnn.Jserver:	"primary-jserver-host"
+ !*CcWnn.jserver2nd:	"secondary-jserver-host-if-any"
+-*CcWnn.ccdef:		ccdef.kinput2
++!!! Uncomment below if you like legacy key bindings
++!*CcWnn.ccdef:		ccdef.kinput2
++!!! Anc comment below if you like legacy key bindings
++*CcWnn.ccdef:		ccdef.kinput2.egg
+ !*CcWnn.wnnEnvrc4:	"wnenvrc-file-for-Wnn4"
+ !*CcWnn.wnnEnvrc6:	"wnenvrc-file-for-Wnn6"
+ !!
