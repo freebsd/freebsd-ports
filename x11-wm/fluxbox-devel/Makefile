@@ -11,6 +11,8 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
 PKGNAMESUFFIX=	-devel
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://fluxbox.org/download/
 PATCHFILES=	fluxbox-0.9.9-gcc3.4.patch
@@ -25,7 +27,6 @@ RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
 
 CONFLICTS=	fluxbox-0.1.*
 
-USE_BZIP2=	yes
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -51,13 +52,30 @@ CONFIGURE_ARGS+=	--enable-kde
 CONFIGURE_ARGS+=	--disable-kde
 .endif
 
+.if defined(WITH_DOCPDF)
+MASTER_SITES+=		http://fluxbox.org/docbook/en/pdf/:pdf
+DISTFILES+=		fluxbook.pdf:pdf
+PLIST_SUB+=		DOCPDF:=""
+.else
+PLIST_SUB+=		DOCPDF:="@comment "
+.endif
+
+.if defined(WITH_DOCHTML)
+MASTER_SITES+=		http://fluxbox.org/docbook/en/tarballs/:html
+DISTFILES+=		fb-doc-mfhtml.tgz:html
+EXTRACT_ONLY+=		fb-doc-mfhtml.tgz
+PLIST_SUB+=		DOCHTML:=""
+.else
+PLIST_SUB+=		DOCHTML:="@comment "
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB=		NLS:=""
+PLIST_SUB+=		NLS:=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB=		NLS:="@comment "
+PLIST_SUB+=		NLS:="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -84,8 +102,14 @@ pre-everything::
 .if !defined(WITH_GNOME)
 	@${ECHO_CMD} "WITH_GNOME=yes		Enable GNOME support"
 .endif
+.if !defined(WITH_DOCPDF)
+	@${ECHO_CMD} "WITH_DOCPDF=yes		Install the PDF documentation"
+.endif
+.if !defined(WITH_DOCHTML)
+	@${ECHO_CMD} "WITH_DOCHTML=yes	Install the HTML documentation"
+.endif
 .if !defined(WITHOUT_NLS)
-	@${ECHO_CMD} "WITH_NLS=yes		Enable NLS support"
+	@${ECHO_CMD} "WITHOUT_NLS=yes		Disable NLS support"
 .endif
 
 post-patch:
@@ -98,6 +122,15 @@ post-patch:
 .endif
 
 post-install:
+.if defined(WITH_DOCPDF)
+	@${MKDIR} ${DOCSDIR}/pdf
+	@${INSTALL_DATA} ${DISTDIR}/fluxbook.pdf ${DOCSDIR}/pdf/
+.endif
+.if defined(WITH_DOCHTML)
+	@${MKDIR} ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKDIR}/html/*.css ${DOCSDIR}/html/
+	@${INSTALL_DATA} ${WRKDIR}/html/*.html ${DOCSDIR}/html/
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
