@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Jul 26 14:35:29 2000
++++ Makefile.in	Wed Jul 26 14:40:27 2000
+@@ -105,7 +105,7 @@
+ cflags_set = @cflags_set@
+ cxxflags_set = @cxxflags_set@
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = glibwwwConf.sh
+ 
+ SUBDIRS = macros src
