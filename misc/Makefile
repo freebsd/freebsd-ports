@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.8 1994/10/06 23:43:08 ache Exp $
+# $Id: Makefile,v 1.9 1994/10/07 09:09:38 ache Exp $
 #
-SUBDIR= calc dialog mshell iozone
+SUBDIR= calc mshell iozone
 
 .include <bsd.port.subdir.mk>
