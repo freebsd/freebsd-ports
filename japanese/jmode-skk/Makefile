@@ -14,7 +14,7 @@ MASTERDIR=	${.CURDIR}/../../japanese/jmode
 DESCR=		${.CURDIR}/pkg-descr
 
 LIB_DEPENDS=	# empty
-RUN_DEPENDS=	skkserv:${PORTSDIR}/japanese/skkserv
+RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skkserv
 
 CONFIGURE_ARGS=	--with-skk
 
