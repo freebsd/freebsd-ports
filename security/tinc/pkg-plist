@@ -1,7 +1,5 @@
 sbin/tincd
 @unexec install-info --delete %D/info/tinc.info %D/info/dir
 info/tinc.info
-info/tinc.info-1
-info/tinc.info-2
 @exec install-info %D/info/tinc.info %D/info/dir
 share/locale/nl/LC_MESSAGES/tinc.mo
