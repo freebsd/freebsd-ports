@@ -16,6 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
+LIB_DEPENDS=	glut:${PORTSDIR}/graphics/libglut
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 KDE_BUILD_PLIST=yes
