@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.1.5
-PORTREVISION=	0
+PORTVERSION=	0.1.7
 CATEGORIES=	misc python gnome
 MASTER_SITES=	http://www.unihedron.com/projects/gonvert/downloads/
 
@@ -17,16 +16,27 @@ COMMENT=	A conversion utility that allows conversion between many units
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
-USE_REINPLACE=	yes
-USE_PYTHON=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehier
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/${PORTNAME}
-	@${REINPLACE_CMD} -e "s,gnome-config,${GNOME_CONFIG},g ; \
-		s,--directory,-d --mode=755,g ; \
-		s,install ,install -c ,g" ${WRKSRC}/Makefile
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/gonvert ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/gonvert.desktop \
+		${PREFIX}/share/gnome/apps/Utilities
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/gonvert_icon.png \
+		${PREFIX}/share/gnome/pixmaps
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gonvert.glade ${DATADIR}
+	@${MKDIR} ${DATADIR}/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}/pixmaps
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in README CHANGELOG FAQ README THANKS TODO
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

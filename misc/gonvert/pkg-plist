@@ -1,8 +1,14 @@
 bin/gonvert
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/gnome/apps/Utilities/gonvert.desktop
-share/gnome/gonvert/gonvert.glade
-share/gnome/gonvert/pixmaps/gonvert.png
-share/gnome/gonvert/pixmaps/gonvert_icon.png
 share/gnome/pixmaps/gonvert_icon.png
-@dirrm share/gnome/gonvert/pixmaps
-@dirrm share/gnome/gonvert
+%%DATADIR%%/gonvert.glade
+%%DATADIR%%/pixmaps/gonvert.png
+%%DATADIR%%/pixmaps/gonvert_icon.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
