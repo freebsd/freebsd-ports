@@ -39,7 +39,8 @@ post-patch:
 	@${CP} ${WRKSRC}/LICENSE.txt ${WRKSRC}/../LICENSE
 
 do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+	@cd ${WRKSRC} && \
+		${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
 
 do-install:
 	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
