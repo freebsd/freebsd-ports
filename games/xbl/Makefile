@@ -15,6 +15,8 @@ COMMENT=	A 3D block-dropping game
 
 BROKEN=		Missing dependency
 
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MANN=		xbl.n
