@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	deischen@freebsd.org
 
 USE_MOTIF=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	freebsd
 MAN1=		netplan.1 plan.1
 MAN4=		plan.4
