@@ -1,0 +1,7 @@
+bin/mp3c
+bin/cdrip.sh
+share/locale/de/LC_MESSAGES/mp3c.mo
+share/locale/es/LC_MESSAGES/mp3c.mo
+share/locale/it/LC_MESSAGES/mp3c.mo
+share/locale/pl/LC_MESSAGES/mp3c.mo
+share/locale/pt/LC_MESSAGES/mp3c.mo

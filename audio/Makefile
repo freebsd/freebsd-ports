@@ -143,6 +143,7 @@
     SUBDIR += mp3asm
     SUBDIR += mp3blaster
     SUBDIR += mp3butler
+    SUBDIR += mp3c
     SUBDIR += mp3check
     SUBDIR += mp3chew
     SUBDIR += mp3ck
