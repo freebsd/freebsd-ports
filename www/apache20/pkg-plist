@@ -203,14 +203,14 @@ sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
 %%SUEXEC%%sbin/suexec
-share/apache2/config_vars.mk
-share/apache2/instdso.sh
-share/apache2/library.mk
-share/apache2/libtool
-share/apache2/ltlib.mk
-share/apache2/program.mk
-share/apache2/rules.mk
-share/apache2/special.mk
+share/apache2/build/config_vars.mk
+share/apache2/build/instdso.sh
+share/apache2/build/library.mk
+share/apache2/build/libtool
+share/apache2/build/ltlib.mk
+share/apache2/build/program.mk
+share/apache2/build/rules.mk
+share/apache2/build/special.mk
 %%PORTDOCS%%share/doc/apache2/LICENSE
 %%PORTDOCS%%share/doc/apache2/bind.html.en
 %%PORTDOCS%%share/doc/apache2/bind.html.ja.jis
@@ -989,6 +989,7 @@ www/icons-dist/world2.png
 %%PORTDOCS%%@dirrm share/doc/apache2/faq
 %%PORTDOCS%%@dirrm share/doc/apache2/developer
 %%PORTDOCS%%@dirrm share/doc/apache2
+@dirrm share/apache2/build
 @dirrm share/apache2
 @dirrm libexec/apache2
 @dirrm lib/apache2

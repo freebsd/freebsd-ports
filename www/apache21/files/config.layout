@@ -7,7 +7,7 @@
   mandir:        ${prefix}/man
   sysconfdir:    ${prefix}/etc/apache2
   datadir:       ${prefix}/www
-  installbuilddir: ${prefix}/share/apache2
+  installbuilddir: ${prefix}/share/apache2/build
   errordir:      ${datadir}/error
   iconsdir:      ${datadir}/icons
   htdocsdir:     ${datadir}/data
