@@ -1,0 +1,11 @@
+--- config.h.orig	Sat Sep 27 14:21:58 2003
++++ config.h	Sat Sep 27 14:22:21 2003
+@@ -24,7 +24,7 @@
+ #if OS_LEVEL > 32
+ #define HAVE_ADDR_MASK
+ #define HAVE_ADDR_TYPE
+-#define HAVE_ALTQ
++/* #define HAVE_ALTQ */
+ #define HAVE_RULE_ANCHOR
+ #define HAVE_RULE_TOS
+ #endif
