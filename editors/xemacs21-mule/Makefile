@@ -7,7 +7,6 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
 .if defined(WNN6)
 .endif
 CATEGORIES+=	editors
@@ -18,7 +17,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
 		${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anray@inet.ua
 COMMENT?=	XEmacs(stable version) text editor with mule(Only the executables)
 
 USE_GNOME=	#
@@ -39,7 +38,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 XEMACS_MAJOR_VER?=	21
 XEMACS_REL=		${XEMACS_MAJOR_VER}.4
-XEMACS_VER=		${XEMACS_MAJOR_VER}.4.14
+XEMACS_VER=		${XEMACS_MAJOR_VER}.4.16
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 USE_GETTEXT=	yes
@@ -91,7 +90,7 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
-CONFIGURE_ARGS+= --with-system-malloc --pdump 
+CONFIGURE_ARGS+= --with-system-malloc --pdump
 .endif
 
 pre-fetch:
@@ -171,9 +170,9 @@ WITH_INPUT_METHOD?=	--with-canna=no --with-wnn=no --with-wnn6=no
 
 # fix .so references in a few man pages
 pre-configure::
-.for file in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
-	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${file} > ${WRKDIR}/tmp_zot
-	@${MV} ${WRKDIR}/tmp_zot ${WRKSRC}/${file}
+.for f in etc/ctags.1 etc/gnuattach.1 etc/gnuclient.1 etc/gnudoit.1
+	@${SED} -e 's/\.1/&.gz/' ${WRKSRC}/${f} > ${WRKDIR}/tmp_zot
+	@${MV} ${WRKDIR}/tmp_zot ${WRKSRC}/${f}
 .endfor
 
 pre-build:
@@ -182,8 +181,8 @@ pre-build:
 	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 
 post-install::
-.for file in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
-	${STRIP_CMD} ${PREFIX}/bin/${file}
+.for f in b2m ctags ellcc etags gnuclient xemacs-${XEMACS_VER}
+	${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 # For some reason install no longer makes ${PREFIX}/lib/xemacs/site-lisp.
 # Do what PLIST does for pkg_add.
