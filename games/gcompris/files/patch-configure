@@ -1,17 +1,30 @@
---- configure.orig	Thu Dec 28 13:35:34 2000
-+++ configure	Thu Dec 28 13:36:02 2000
-@@ -4368,12 +4368,12 @@
+
+$FreeBSD$
+
+--- configure.orig	Tue Apr 17 11:15:52 2001
++++ configure	Tue Apr 17 11:16:39 2001
+@@ -4463,21 +4463,21 @@
+ PACKAGE_SOUNDS_DIR="sounds"
  
- if test "x${prefix}" = "xNONE"; then
-   cat >> confdefs.h <<EOF
--#define PACKAGE_DATA_DIR "${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/data"
-+#define PACKAGE_DATA_DIR "${ac_default_prefix}/${DATADIRNAME}/gnome/${PACKAGE}/data"
+ cat >> confdefs.h <<EOF
+-#define PACKAGE_SOUNDS_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/sounds"
++#define PACKAGE_SOUNDS_DIR "${myprefix}/${DATADIRNAME}/gnome/${PACKAGE}/sounds"
  EOF
  
- else
-   cat >> confdefs.h <<EOF
--#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}/${PACKAGE}/data"
-+#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}/gnome/${PACKAGE}/data"
+ 
+ PACKAGE_DATA_DIR="data"
+ 
+ cat >> confdefs.h <<EOF
+-#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/data"
++#define PACKAGE_DATA_DIR "${myprefix}/${DATADIRNAME}/gnome/${PACKAGE}/data"
  EOF
  
- fi
+ 
+ PACKAGE_PIXMAPS_DIR="pixmaps"
+ 
+ cat >> confdefs.h <<EOF
+-#define PACKAGE_PIXMAPS_DIR "${myprefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++#define PACKAGE_PIXMAPS_DIR "${myprefix}/${DATADIRNAME}/gnome/${PACKAGE}/pixmaps"
+ EOF
+ 
+ 
