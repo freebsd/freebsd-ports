@@ -2505,7 +2505,6 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde2		ports/www/horde2
 hostsentry	ports/security/hostsentry
-host		ports/dns/host
 hotjava		ports/www/hotjava
 hotkeys		ports/misc/hotkeys
 hotwayd		ports/mail/hotwayd
@@ -6388,7 +6387,7 @@ ports_gperf	ports/devel/gperf
 ports_graphics	ports/graphics
 ports_gzip	ports/archivers/gzip
 ports_hebrew	ports/hebrew
-ports_host	ports/net/host
+ports_host	ports/dns/host
 ports_hungarian	ports/hungarian
 ports_irc	ports/irc
 ports_japanese	ports/japanese
