@@ -14,6 +14,8 @@ MAINTAINER=	petef@FreeBSD.org
 
 ALL_TARGET=	tdl
 
+MAN1=	tdl.1
+
 post-patch:
 	@${PERL} -pi -e 's,/usr/local,${PREFIX},; s,gcc,${CC},; \
 		s,-O2,${CFLAGS},' ${WRKSRC}/Makefile
