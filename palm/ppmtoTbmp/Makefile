@@ -16,6 +16,8 @@ COMMENT=	PPM to Pilot bitmap converter
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_REINPLACE=	yes
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-lm
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CFLAGS =.*|CFLAGS += -I${LOCALBASE}/include|g; \
