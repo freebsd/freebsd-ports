@@ -19,6 +19,8 @@ COMMENT=	The Cisco remote authentication/authorization/accounting server
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1
 
+CONFLICTS=	ru-tac+ia-* tac_plus-libradius-*
+
 # To change the text displayed when users are prompted to enter
 # a username, set appropriately TAC_CHANGE_PROMPT variable.
 .if defined(TAC_CHANGE_PROMPT) && ${TAC_CHANGE_PROMPT} == YES
