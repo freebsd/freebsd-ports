@@ -1,9 +1,12 @@
---- Makefile.in.orig	Fri Jun 13 22:24:04 2003
-+++ Makefile.in	Fri Jun 13 22:24:17 2003
+
+$FreeBSD$
+
+--- Makefile.in.orig	Thu May 27 10:12:14 2004
++++ Makefile.in	Thu May 27 10:12:34 2004
 @@ -22,7 +22,7 @@
  install: all
  	$(INSTALL) -o root -m 555 tacshell $(PREFIX)/bin/tacshell
- 	mkdir -p -m 755 /usr/local/etc
+ 	mkdir -p -m 755 $(PREFIX)/etc
 -	$(INSTALL_DATA) -o root tacshell.conf-example $(PREFIX)/etc/tacshell.conf-example
 +	$(INSTALL_DATA) -o root tacshell.conf-example $(PREFIX)/etc/tacshell.conf.sample
  

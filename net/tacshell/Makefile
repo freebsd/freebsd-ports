@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tacshell
-PORTVERSION=	0.9
+PORTVERSION=	0.91
 CATEGORIES=	net
 MASTER_SITES=	http://www.rezrov.net/software/
 
