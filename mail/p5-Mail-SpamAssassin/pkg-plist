@@ -1,0 +1,27 @@
+bin/spamassassin
+bin/spamc
+bin/spamd
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Conf.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Dns.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EncappedMessage.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EvalTests.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/ExposedMessage.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PerMsgStatus.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Replier.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Reporter.pm
+lib/perl5/site_perl/%%PERL_VER%%/spamassassin.cf
+lib/perl5/site_perl/%%PERL_VER%%/spamassassin.prefs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/README
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/spamd.README
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-nonspam.txt
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-spam.txt
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/spamassassin.cf
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/spamassassin.prefs
+%%PORTDOCS%%@dirrm share/doc/Mail-SpamAssassin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
