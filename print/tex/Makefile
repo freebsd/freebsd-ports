@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.20 1996/03/02 02:08:23 jmz Exp $
+# $Id: Makefile,v 1.21 1996/03/19 00:20:44 jmz Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -17,8 +17,6 @@ MAINTAINER=	jmz@FreeBSD.org
 EXTRACT_ONLY=	web2c-6.1.tar.gz web-6.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 
-FTPGET=		${FILESDIR}/ftpget
-
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN?=		ftp.tex.ac.uk
 
@@ -30,31 +28,28 @@ CFLAGS+=	-L${X11BASE}/lib
 
 
 web2c-6.1.tar.gz: 
-	@${FTPGET} ${CTAN} /tex-archive/systems/web2c web2c-6.1.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/systems/web2c -f web2c-6.1.tar.gz -o ${DISTDIR}/$@
 web-6.1.tar.gz: 
-	@${FTPGET} ${CTAN} /tex-archive/systems/web2c web-6.1.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/systems/web2c -f web-6.1.tar.gz -o ${DISTDIR}/$@
 cm_mf.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts cm/mf.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/fonts -f cm/mf.tar.gz -o ${DISTDIR}/$@
 cm_tfm.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts cm/tfm.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/fonts -f cm/tfm.tar.gz -o ${DISTDIR}/$@
 mf_lib.tar.gz: 
-	@${FTPGET} ${CTAN} /tex-archive/systems/knuth lib.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/systems/knuth -f lib.tar.gz -o ${DISTDIR}/$@
 modes.mf:
-	@${FTPGET} ${CTAN} /tex-archive/fonts/modes modes.mf ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/fonts/modes -f modes.mf -o ${DISTDIR}/$@
 tex_base.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/macros plain/base.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/macros -f plain/base.tar.gz -o ${DISTDIR}/$@
 
-pre-fetch:
-	@chmod +x ${FTPGET}
+pre-configure:
+	(cd ${WRKDIR}/lib; gunzip *.gz)
 
 do-build: 
-	@(cd ${WRKSRC}/web2c; make triptrap)
-	@(cd ${WRKSRC}/web2c; make run-triptrap)
-	@(cd ${WRKSRC}/web2c; make clean-triptrap)
-	@(cd ${WRKSRC}; make CFLAGS="${CFLAGS}" programs)
-	@(cd ${WRKSRC}; MFINPUTS=${WRKDIR}/mf; export MFINPUTS;\
+	(cd ${WRKSRC}; make CFLAGS="${CFLAGS}" programs)
+	(cd ${WRKSRC}; MFINPUTS=${WRKDIR}/mf; export MFINPUTS;\
 		make bases="${BASES}" bases)
-	@(cd ${WRKSRC}/web2c; TEXINPUTS=${WRKDIR}/lib:${WRKSRC}; export TEXINPUTS;\
+	(cd ${WRKSRC}/web2c; TEXINPUTS=${WRKDIR}/lib:${WRKSRC}; export TEXINPUTS;\
 	  TEXFONTS=${WRKDIR}/cm/tfm:${WRKDIR}/latex/tfm; export TEXFONTS; \
 		make fmts="${FORMATS}" fmts)
 
