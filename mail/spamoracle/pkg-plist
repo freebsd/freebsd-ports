@@ -1,0 +1,3 @@
+bin/spamoracle
+%%PORTDOCS%%share/doc/spamoracle/README
+%%PORTDOCS%%@dirrm share/doc/spamoracle
