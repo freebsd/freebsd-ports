@@ -1,5 +1,5 @@
---- Makefile.old	Mon Nov 20 16:35:16 2000
-+++ Makefile	Sun Jan 14 20:06:47 2001
+--- Makefile.orig	Mon Nov 20 16:35:16 2000
++++ Makefile	Sun Apr 29 20:38:47 2001
 @@ -5,9 +5,10 @@
  
  # Paths
@@ -14,17 +14,23 @@
  
  # OS-Dependant settings
  
-@@ -33,20 +34,26 @@
+@@ -33,20 +34,32 @@
  # -DCIDR_KEY	# keys in CIDR format
  # -DTERM_KD	# keys and data nul-terminated
  
 -DEFS = -DTI_RPC -DFCNTL_LOCK -DSYSINFO
-+.if defined(WITH_POSTFIX)
-+DEFS=	-DSOCK_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD
-+.elif defined(WITH_EXIM)
-+DEFS=	-DSOCK_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
++.if defined(WITH_TI_RPC)
++RPCFLAGS=	-DTI_RPC
 +.else
-+DEFS=	-DSOCK_RPC -DFLOCK_LOCK -DGETHOST -DDASH_C 
++RPCFLAGS=	-DSOCK_RPC
++.endif
++
++.if defined(WITH_POSTFIX)
++DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD
++.elif defined(WITH_EXIM)
++DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
++.else
++DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C 
 +.endif
  
  # Compiler flags 

@@ -22,13 +22,12 @@ MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500018
+MAKE_ARGS+=	-DWITH_TI_RPC
+.endif
 
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
-.if ${OSVERSION} >= 500018
-	@${PERL} -pi -e "s|^RPCGENFLAGS.*|RPCGENFLAGS = -C -b|g" \
-		${WRKSRC}/Makefile
-.endif
 	@${ECHO} "================================================================================"
 	@${ECHO} "Use make -DWITH_POSTFIX or -DWITH_EXIM with this port for databases compatible"
 	@${ECHO} "with those MTAs."
