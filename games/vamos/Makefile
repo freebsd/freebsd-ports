@@ -39,12 +39,6 @@ CPPFLAGS=	-I${LOCALBASE}/include/libpng -I${X11BASE}/include \
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU -lglut \
 		${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
@@ -53,4 +47,4 @@ post-patch:
 		's|-lsgxml -lsgmisc|-lsgxml -lsgstructure -lsgmisc|g ; \
 		 s|-pedantic||g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
