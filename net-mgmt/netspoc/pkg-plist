@@ -1,0 +1,6 @@
+bin/netspoc
+%%PORTDOCS%%share/doc/netspoc/CSPM.html
+%%PORTDOCS%%share/doc/netspoc/index.html
+%%PORTDOCS%%share/doc/netspoc/language.html
+%%PORTDOCS%%share/doc/netspoc/netspoc.html
+%%PORTDOCS%%@dirrm share/doc/netspoc

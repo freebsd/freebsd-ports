@@ -309,6 +309,7 @@
     SUBDIR += netsaint-plugins
     SUBDIR += netscript
     SUBDIR += netsed
+    SUBDIR += netspoc
     SUBDIR += nettest
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
