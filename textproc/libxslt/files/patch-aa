@@ -1,15 +1,20 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Sat Nov 10 15:52:02 2001
-+++ Makefile.in	Tue Nov 13 12:31:22 2001
-@@ -108,11 +108,10 @@
- 	breakpoint \
- 	libexslt \
- 	xsltproc \
--	tests \
- 	doc
- 
+--- Makefile.in.orig	Mon Nov 26 14:20:21 2001
++++ Makefile.in	Thu Dec  6 10:27:59 2001
+@@ -108,16 +108,14 @@
+ @WITH_DEBUGGER_TRUE@  	libxslt \
+ @WITH_DEBUGGER_TRUE@  	libexslt \
+ @WITH_DEBUGGER_TRUE@  	xsltproc \
+-@WITH_DEBUGGER_TRUE@  	tests \
+ @WITH_DEBUGGER_TRUE@  	doc
+ @WITH_DEBUGGER_FALSE@SUBDIRS = @WITH_DEBUGGER_FALSE@\
+ @WITH_DEBUGGER_FALSE@	libxslt \
+ @WITH_DEBUGGER_FALSE@	libexslt \
+ @WITH_DEBUGGER_FALSE@	xsltproc \
+-@WITH_DEBUGGER_FALSE@	tests \
+ @WITH_DEBUGGER_FALSE@	doc
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
