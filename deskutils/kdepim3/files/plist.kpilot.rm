@@ -1,0 +1,9 @@
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html || true
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/doc/HTML/en/kdepim-apidocs/kpilot
+@dirrm share/apps/kpilot/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kpilot/icons/crystalsvg/16x16
+@dirrm share/apps/kpilot/icons/crystalsvg
+@dirrm share/apps/kpilot/icons
+@dirrm share/apps/kpilot
+@dirrm include/kpilot
