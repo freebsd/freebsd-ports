@@ -1,0 +1,5 @@
+****************************************************************************
+  Please read documentation located in %%PREFIX%%/share/doc/AquaGatekeeper
+  You will need to write configuration file to run the Gatekeeper.
+  Some examples are in %%PREFIX%%/share/examples/AquaGatekeeper
+****************************************************************************

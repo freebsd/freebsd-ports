@@ -1,0 +1,15 @@
+bin/AquaGatekeeper
+etc/rc.d/agk.sh.sample
+etc/AquaGatekeeper.cfg.sample
+%%PORTDOCS%%%%DOCSDIR%%/AquaGatekeeper.htm
+%%PORTDOCS%%%%DOCSDIR%%/AquaGatekeeperMonitor.chm
+%%PORTDOCS%%%%DOCSDIR%%/CommandLineOptions.htm
+%%PORTDOCS%%%%DOCSDIR%%/ConfigSyntax.htm
+%%PORTDOCS%%%%DOCSDIR%%/License.rtf
+%%PORTDOCS%%%%DOCSDIR%%/LicenseRus.rtf
+%%PORTDOCS%%%%DOCSDIR%%/OperationPrinciples.htm
+%%PORTDOCS%%%%DOCSDIR%%/RevisionHistory.htm
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%EXAMPLESDIR%%/Example.cfg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
