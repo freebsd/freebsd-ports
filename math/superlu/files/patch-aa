@@ -1,0 +1,84 @@
+*** make.inc.orig	Sat Nov 22 22:55:01 1997
+--- make.inc	Sat Nov 22 23:36:10 1997
+***************
+*** 14,33 ****
+  #
+  #  The machine (platform) identifier to append to the library names
+  #
+! PLAT = _rs6k
+  
+  #
+  #  The name of the libraries to be created/linked to
+  #
+  TMGLIB       = tmglib$(PLAT).a
+! SUPERLULIB   = superlu$(PLAT).a
+! # 
+! # If you don't have ESSL, you can use the following blaslib instead:
+! #           BLASLIB = -lblas -lxlf -lxlf90
+! # which may be slower than ESSL
+! #
+! BLASDEF	     = -DUSE_VENDOR_BLAS
+! BLASLIB      = -lessl
+  
+  #
+  #  The archiver and the flag(s) to use when building archive (library)
+--- 14,29 ----
+  #
+  #  The machine (platform) identifier to append to the library names
+  #
+! #PLAT =
+  
+  #
+  #  The name of the libraries to be created/linked to
+  #
+  TMGLIB       = tmglib$(PLAT).a
+! SUPERLULIB   = libsuperlu$(PLAT).a
+! 
+! BLASDEF	= -DUSE_VENDOR_BLAS
+! BLASLIB	= $(PREFIX)/lib/libblas$(PLAT).a
+  
+  #
+  #  The archiver and the flag(s) to use when building archive (library)
+***************
+*** 36,53 ****
+  ARCH         = ar
+  ARCHFLAGS    = cr
+  RANLIB       = ranlib
+! 
+! CC           = xlc
+  CFLAGS       = -O3
+! LOADER       = xlc
+! LOADOPTS     = -bmaxdata:0x80000000
+  #
+  #  C preprocessor defs for compilation (-DNoChange, -DAdd_, or -DUpCase)
+  #
+! CDEFS        = -DNoChange
+  #
+  # The directory in which Matlab is installed
+  #
+! MATLAB	     = /usr/local/matlab
+  
+  
+--- 32,53 ----
+  ARCH         = ar
+  ARCHFLAGS    = cr
+  RANLIB       = ranlib
+! # 
+! # Compiler and optimization
+! #
+! CC           = gcc
+  CFLAGS       = -O3
+! LOADER       = gcc
+! LOADOPTS     = -O3
+! 
+  #
+  #  C preprocessor defs for compilation (-DNoChange, -DAdd_, or -DUpCase)
+  #
+! CDEFS        = -DAdd_
+  #
+  # The directory in which Matlab is installed
+  #
+! MATLAB	     = $(PREFIX)/matlab
+! 
+  
+  
