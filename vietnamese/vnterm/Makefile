@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1996/12/09 00:14:54 obrien Exp $
+# $Id: Makefile,v 1.4 1996/12/09 00:53:13 obrien Exp $
 #
 
 DISTNAME=	vnterm3.3
@@ -32,7 +32,7 @@ post-install:
 		${PREFIX}/lib/X11/fonts/vietnamese ; \
 	)
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} INSTALL
+		/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/vnterm \
 		&& chmod a+rx ${PREFIX}/share/doc/vnterm
