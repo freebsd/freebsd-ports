@@ -14,6 +14,10 @@ case $2 in
 	echo "      configuring your WWW Navigator (Netscape, Mosaic,...)"
 	echo "      to use it as a proxy server."
 	echo ""
+	echo "    o Note that before you can run ${PKGNAME} you will"
+	echo "      need to initialise the cache directory."
+	echo "      You can do this by typing \"squid -z\"."
+	echo ""
 	echo "==> Press Enter to edit the ${PKGNAME} config file."
 	echo "    (The defaults are reasonable; and the file is well commented)"
 	tput md
