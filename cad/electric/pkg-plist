@@ -1,40 +1,40 @@
 bin/electric
-share/electric/lib/.cadrc
-share/electric/lib/ALS.help
-share/electric/lib/AllDialogs.c
-share/electric/lib/CL.help
-share/electric/lib/EVE.help
-share/electric/lib/QUISC.help
-share/electric/lib/bsim3.spi
-share/electric/lib/cadrc
-share/electric/lib/click.wav
-share/electric/lib/evemenus.mac
-share/electric/lib/evetutor.mac
-share/electric/lib/international/fr/LC_MESSAGES/electric.mo
-share/electric/lib/international/fr/LC_MESSAGES/license.txt
-share/electric/lib/international/messages.po
-share/electric/lib/java/romgen.java
-share/electric/lib/leparts.txt
-share/electric/lib/pads4u.txt
-share/electric/lib/pla_mocmos.txt
-share/electric/lib/sclib.txt
-share/electric/lib/spiceparts.mac
-share/electric/lib/spiceparts.txt
-share/electric/lib/spicepartsS3.mac
-share/electric/lib/spicepartsS3.txt
-share/electric/lib/t22t_param.spi
-share/electric/lib/tsmc25.txt
-share/electric/lib/ui/README
-share/electric/lib/ui/electric.cw
-share/electric/lib/ui/nccpre.ui
-share/electric/lib/ui/shownode.ui
-share/electric/lib/ui/shownode_ext.ui
-share/electric/lib/ui/visiblelay.ui
-share/electric/lib/umc18.txt
-@dirrm share/electric/lib/ui
-@dirrm share/electric/lib/java
-@dirrm share/electric/lib/international/fr/LC_MESSAGES
-@dirrm share/electric/lib/international/fr
-@dirrm share/electric/lib/international
-@dirrm share/electric/lib
-@dirrm share/electric
+%%DATADIR%%/lib/.cadrc
+%%DATADIR%%/lib/ALS.help
+%%DATADIR%%/lib/AllDialogs.c
+%%DATADIR%%/lib/CL.help
+%%DATADIR%%/lib/EVE.help
+%%DATADIR%%/lib/QUISC.help
+%%DATADIR%%/lib/bsim3.spi
+%%DATADIR%%/lib/cadrc
+%%DATADIR%%/lib/click.wav
+%%DATADIR%%/lib/evemenus.mac
+%%DATADIR%%/lib/evetutor.mac
+%%DATADIR%%/lib/international/fr/LC_MESSAGES/electric.mo
+%%DATADIR%%/lib/international/fr/LC_MESSAGES/license.txt
+%%DATADIR%%/lib/international/messages.po
+%%DATADIR%%/lib/java/romgen.java
+%%DATADIR%%/lib/leparts.txt
+%%DATADIR%%/lib/pads4u.txt
+%%DATADIR%%/lib/pla_mocmos.txt
+%%DATADIR%%/lib/sclib.txt
+%%DATADIR%%/lib/spiceparts.mac
+%%DATADIR%%/lib/spiceparts.txt
+%%DATADIR%%/lib/spicepartsS3.mac
+%%DATADIR%%/lib/spicepartsS3.txt
+%%DATADIR%%/lib/t22t_param.spi
+%%DATADIR%%/lib/tsmc25.txt
+%%DATADIR%%/lib/ui/README
+%%DATADIR%%/lib/ui/electric.cw
+%%DATADIR%%/lib/ui/nccpre.ui
+%%DATADIR%%/lib/ui/shownode.ui
+%%DATADIR%%/lib/ui/shownode_ext.ui
+%%DATADIR%%/lib/ui/visiblelay.ui
+%%DATADIR%%/lib/umc18.txt
+@dirrm %%DATADIR%%/lib/ui
+@dirrm %%DATADIR%%/lib/java
+@dirrm %%DATADIR%%/lib/international/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/lib/international/fr
+@dirrm %%DATADIR%%/lib/international
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/
