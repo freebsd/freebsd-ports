@@ -1,10 +1,7 @@
 bin/scrollkeeper-config
-bin/scrollkeeper-extract
-bin/scrollkeeper-gen-seriesid
 bin/scrollkeeper-get-cl
 bin/scrollkeeper-get-content-list
 bin/scrollkeeper-get-extended-content-list
-bin/scrollkeeper-get-index-from-docpath
 bin/scrollkeeper-get-toc-from-docpath
 bin/scrollkeeper-get-toc-from-id
 bin/scrollkeeper-install
@@ -12,45 +9,129 @@ bin/scrollkeeper-preinstall
 bin/scrollkeeper-rebuilddb
 bin/scrollkeeper-uninstall
 bin/scrollkeeper-update
-etc/scrollkeeper.conf
+bin/scrollkeeper_toc
 lib/libscrollkeeper.a
 lib/libscrollkeeper.so
 lib/libscrollkeeper.so.0
-share/gnome/omf/scrollkeeper/writing_scrollkeeper_omf_files-C.omf
+share/gnome/omf/scrollkeeper/scrollkeeper_manual-C.omf
 share/gnome/scrollkeeper/Templates/C/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/af/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/ar/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/az/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/bg/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/bo/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/br/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/bs/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ca/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/cs/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/cy/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/da/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/de/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/el/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/eo/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/es/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/et/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/eu/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/fi/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/fr/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/ga/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/gd/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/gl/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/gu/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/gv/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/he/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/hi/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/hr/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/hs/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/hu/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/id/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/is/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/it/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ja/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/km/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ko/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/kw/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/li/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/lt/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/mi/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/mk/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/mr/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/nb/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/nl/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/nn/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/oc/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/pl/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/pt/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/pt_BR/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/ro/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/ru/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/se/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sk/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/sl/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/sp/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/sr/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/sv/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/ta/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/th/scrollkeeper_cl.xml
 share/gnome/scrollkeeper/Templates/tr/scrollkeeper_cl.xml
-share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files/C/legal.xml
-share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files/C/writing_scrollkeeper_omf_files.xml
-share/gnome/scrollkeeper/stylesheets/index.xsl
-share/gnome/scrollkeeper/stylesheets/toc.xsl
-share/locale/az/LC_MESSAGES/scrollkeeper.mo
-share/locale/ca/LC_MESSAGES/scrollkeeper.mo
+share/gnome/scrollkeeper/Templates/uk/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/wa/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/Templates/zh/scrollkeeper_cl.xml
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/aboutthisdoc.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/administration.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/authors.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/contents-tree.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/docbook.css
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/exampleomffiles.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/fdl.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/glossary.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/index.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/indexapi.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/installbyhand.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/installingdocsandomf.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/intro.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/ln15.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/makingthingseasier.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/packaging.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/packagingdeb.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/packagingrpm.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/postinstallationscript.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper-contents-list.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper-docs.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper-extended-contents-list.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeper_manual.sgml
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeperapi.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeperfiles.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/scrollkeeperlicense.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/caution.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/home.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/important.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/next.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/note.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/prev.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/tip.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/toc-blank.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/toc-minus.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/toc-plus.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/up.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images/warning.gif
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/tableofcontentsapi.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/theomf.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/theomfspecification.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/toc-file.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/uninstallbyhand.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/uninstalling.html
+share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/writingomffiles.html
 share/locale/da/LC_MESSAGES/scrollkeeper.mo
 share/locale/de/LC_MESSAGES/scrollkeeper.mo
 share/locale/el/LC_MESSAGES/scrollkeeper.mo
 share/locale/es/LC_MESSAGES/scrollkeeper.mo
 share/locale/fr/LC_MESSAGES/scrollkeeper.mo
 share/locale/hu/LC_MESSAGES/scrollkeeper.mo
-share/locale/it/LC_MESSAGES/scrollkeeper.mo
 share/locale/ja/LC_MESSAGES/scrollkeeper.mo
 share/locale/ko/LC_MESSAGES/scrollkeeper.mo
-share/locale/nb/LC_MESSAGES/scrollkeeper.mo
 share/locale/nl/LC_MESSAGES/scrollkeeper.mo
 share/locale/no/LC_MESSAGES/scrollkeeper.mo
-share/locale/pl/LC_MESSAGES/scrollkeeper.mo
 share/locale/pt_BR/LC_MESSAGES/scrollkeeper.mo
 share/locale/ru/LC_MESSAGES/scrollkeeper.mo
 share/locale/sk/LC_MESSAGES/scrollkeeper.mo
@@ -58,35 +139,111 @@ share/locale/sl/LC_MESSAGES/scrollkeeper.mo
 share/locale/sv/LC_MESSAGES/scrollkeeper.mo
 share/locale/tr/LC_MESSAGES/scrollkeeper.mo
 share/locale/uk/LC_MESSAGES/scrollkeeper.mo
-share/locale/zh_TW/LC_MESSAGES/scrollkeeper.mo
-@dirrm share/gnome/scrollkeeper/stylesheets
-@dirrm share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files/C
-@dirrm share/gnome/scrollkeeper/doc/writing_scrollkeeper_omf_files
-@dirrm share/gnome/scrollkeeper/doc
+@comment These are all symlinks which have to be removed
+@comment "specially", or they will fail the pkg_delete MD5
+@comment check.  Don't just sort this plist :)
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/bg_BG
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/bg_BG.cp1251
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/de_AT
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_AU
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_GB
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_SE
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_UK
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/en_US
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_DO
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_ES
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_GT
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_HN
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_MX
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_PA
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_PE
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/es_SV
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/ja_JP.eucJP
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/no
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/no_NY
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/pt_PT
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/sr_YU
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/sv_SE
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_CN
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_CN.GB2312
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_TW
+@unexec /bin/rm -f %D/share/gnome/scrollkeeper/Templates/zh_TW.Big5
+@comment Here endeth the dragons
+@dirrm share/gnome/scrollkeeper/TOC
+@dirrm share/gnome/scrollkeeper/Templates/zh
+@dirrm share/gnome/scrollkeeper/Templates/wa
+@dirrm share/gnome/scrollkeeper/Templates/uk
 @dirrm share/gnome/scrollkeeper/Templates/tr
+@dirrm share/gnome/scrollkeeper/Templates/th
+@dirrm share/gnome/scrollkeeper/Templates/ta
 @dirrm share/gnome/scrollkeeper/Templates/sv
+@dirrm share/gnome/scrollkeeper/Templates/sr
+@dirrm share/gnome/scrollkeeper/Templates/sp
 @dirrm share/gnome/scrollkeeper/Templates/sl
 @dirrm share/gnome/scrollkeeper/Templates/sk
+@dirrm share/gnome/scrollkeeper/Templates/se
 @dirrm share/gnome/scrollkeeper/Templates/ru
+@dirrm share/gnome/scrollkeeper/Templates/ro
 @dirrm share/gnome/scrollkeeper/Templates/pt_BR
+@dirrm share/gnome/scrollkeeper/Templates/pt
+@dirrm share/gnome/scrollkeeper/Templates/pl
+@dirrm share/gnome/scrollkeeper/Templates/oc
+@dirrm share/gnome/scrollkeeper/Templates/nn
 @dirrm share/gnome/scrollkeeper/Templates/nl
 @dirrm share/gnome/scrollkeeper/Templates/nb
+@dirrm share/gnome/scrollkeeper/Templates/mr
+@dirrm share/gnome/scrollkeeper/Templates/mk
+@dirrm share/gnome/scrollkeeper/Templates/mi
+@dirrm share/gnome/scrollkeeper/Templates/lt
+@dirrm share/gnome/scrollkeeper/Templates/li
+@dirrm share/gnome/scrollkeeper/Templates/kw
 @dirrm share/gnome/scrollkeeper/Templates/ko
+@dirrm share/gnome/scrollkeeper/Templates/km
 @dirrm share/gnome/scrollkeeper/Templates/ja
 @dirrm share/gnome/scrollkeeper/Templates/it
+@dirrm share/gnome/scrollkeeper/Templates/is
+@dirrm share/gnome/scrollkeeper/Templates/id
 @dirrm share/gnome/scrollkeeper/Templates/hu
+@dirrm share/gnome/scrollkeeper/Templates/hs
+@dirrm share/gnome/scrollkeeper/Templates/hr
+@dirrm share/gnome/scrollkeeper/Templates/hi
+@dirrm share/gnome/scrollkeeper/Templates/he
+@dirrm share/gnome/scrollkeeper/Templates/gv
+@dirrm share/gnome/scrollkeeper/Templates/gu
+@dirrm share/gnome/scrollkeeper/Templates/gl
+@dirrm share/gnome/scrollkeeper/Templates/gd
+@dirrm share/gnome/scrollkeeper/Templates/ga
 @dirrm share/gnome/scrollkeeper/Templates/fr
+@dirrm share/gnome/scrollkeeper/Templates/fi
+@dirrm share/gnome/scrollkeeper/Templates/eu
+@dirrm share/gnome/scrollkeeper/Templates/et
 @dirrm share/gnome/scrollkeeper/Templates/es
+@dirrm share/gnome/scrollkeeper/Templates/eo
 @dirrm share/gnome/scrollkeeper/Templates/el
 @dirrm share/gnome/scrollkeeper/Templates/de
 @dirrm share/gnome/scrollkeeper/Templates/da
+@dirrm share/gnome/scrollkeeper/Templates/cy
+@dirrm share/gnome/scrollkeeper/Templates/cs
 @dirrm share/gnome/scrollkeeper/Templates/ca
+@dirrm share/gnome/scrollkeeper/Templates/bs
+@dirrm share/gnome/scrollkeeper/Templates/br
+@dirrm share/gnome/scrollkeeper/Templates/bo
+@dirrm share/gnome/scrollkeeper/Templates/bg
+@dirrm share/gnome/scrollkeeper/Templates/az
+@dirrm share/gnome/scrollkeeper/Templates/ar
+@dirrm share/gnome/scrollkeeper/Templates/af
 @dirrm share/gnome/scrollkeeper/Templates/C
 @dirrm share/gnome/scrollkeeper/Templates
-@dirrm share/gnome/scrollkeeper/TOC
+@dirrm share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/stylesheet-images
+@dirrm share/gnome/scrollkeeper/doc/scrollkeeper_manual/C/figures
+@dirrm share/gnome/scrollkeeper/doc/scrollkeeper_manual/C
+@dirrm share/gnome/scrollkeeper/doc/scrollkeeper_manual
+@dirrm share/gnome/scrollkeeper/doc
 @dirrm share/gnome/scrollkeeper
 @dirrm share/gnome/omf/scrollkeeper
-@unexec rm -f /var/log/scrollkeeper.log 2>/dev/null || true
+@dirrm share/gnome/omf
+@dirrm share/gnome
 @unexec rm -rf /var/db/scrollkeeper 2>/dev/null || true
 @exec mkdir -p /var/db/scrollkeeper
 @exec mkdir -p %D/share/gnome/scrollkeeper/TOC
