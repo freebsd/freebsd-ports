@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ $# != 1 ]; then
+  echo "usage: $0 branch"
+  exit 1
+fi
+
 # configurable variables
 pb=/var/portbuild
 
@@ -7,21 +12,24 @@ pb=/var/portbuild
 
 unset DISPLAY
 
+branch=$1
+shift
+
 # copy one distfile to remote host
 cpdistfile () {
-  tar -C distfiles -cf - $1 | ssh $ftpsite -l $user tar -C $distfiledir -xvf -
+  tar -C distfiles -cf - $1 | ssh $ftpsite -l $user tar -C $distfiledir --unlink -xvf -
 }
 
 echo "================================================"
 echo "md5 generation started at $(date)"
 
-cd $pb/bak/distfiles
+cd $pb/${branch}/bak/distfiles
 find . -type f | sort | xargs md5 > ../../md5-2
 
 echo "================================================"
 echo "copying started at $(date)"
 
-cd $pb/bak
+cd $pb/${branch}/bak
 for i in $(diff ../md5 ../md5-2 | grep '^>' | sed -e 's^.*(\./^^' -e 's/).*//'); do
   cpdistfile $i
 done
