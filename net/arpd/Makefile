@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	yb@sainte-barbe.org
+MAINTAINER=	yb@bashibuzuk.net
 COMMENT=	A daemon to service arp replies
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \

@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdude
 
-MAINTAINER=	yb@sainte-barbe.org
+MAINTAINER=	yb@bashibuzuk.net
 COMMENT=	A library for manipulating libpcap/tcpdump trace files
 
 LIB_DEPENDS=	pcapnav.0:${PORTSDIR}/net/libpcapnav

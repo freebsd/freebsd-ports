@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
 
-MAINTAINER=	yb@sainte-barbe.org
+MAINTAINER=	yb@bashibuzuk.net
 COMMENT=	Simulate virtual network hosts (honeypots)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
