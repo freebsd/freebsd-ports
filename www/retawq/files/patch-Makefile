@@ -1,26 +1,66 @@
---- Makefile.orig	Sat Jan 26 18:10:22 2002
-+++ Makefile	Sat Jan 26 18:11:38 2002
-@@ -16,11 +16,11 @@
- CONFIG_CED = 1
+--- Makefile.orig	Wed Aug 28 19:28:25 2002
++++ Makefile	Wed Nov 13 09:33:04 2002
+@@ -16,24 +16,24 @@
+ OPTION_CED = 1
  
  # i18n (internationalization)
--CONFIG_I18N = 0
--CONFIG_I18N_PATH = \"/usr/share/locale\"
-+CONFIG_I18N = 1
-+CONFIG_I18N_PATH = \"%%LOCALBASE%%/share/locale\"
+-OPTION_I18N = 0
+-PATH_INSTALL_LOCALE = \"/usr/local/share/locale\"
++OPTION_I18N = 1
++PATH_INSTALL_LOCALE = \"${PREFIX}/share/locale\"
  
- # path for "make install"; don't forget the trailing "/"!
--INSTALL_BINPREFIX = /usr/bin/
-+INSTALL_BINPREFIX = %%PREFIX%%/bin/
+ # path for "make install"; don't add a trailing "/"!
+-PATH_INSTALL_BIN = /usr/local/bin
++PATH_INSTALL_BIN = ${PREFIX}/bin
  
  # put your favourite C compiler here; mine is "gcc"
- CC = gcc
-@@ -145,7 +145,7 @@
- 	@echo "#define HAVE_MMAP 1" >> .config
+-CC = gcc
++CC ?= gcc
  
- retawq: $(OBJS)
--	$(CC) $(OBJS) $(LCLT) $(LCLC) $(LCLM) -o retawq
-+	$(CC) $(OBJS) $(LCLT) $(LCLC) $(LCLM) -o retawq ${LDFLAGS}
+ # compiler flags; "-O2" is the code-optimization level for gcc
+ ifeq ($(CC), gcc)
+-CFLAGS = -O2
++CFLAGS ?= -O2
+ else
+ CFLAGS =
+ endif
  
- stripsyms:
- 	-strip --strip-unneeded retawq
+ # libc library flags for multi-threading
+-CFLAGS += -D_REENTRANT
++CFLAGS += -D_REENTRANT ${THREAD_CFLAGS} -I${LOCALBASE}/include
+ 
+ 
+ # Part B. Don't change any of the following!
+@@ -75,7 +75,7 @@
+ 
+ # add GTK flags
+ ifeq ($(OPTION_GRAPHICS), 1)
+-CFLAGS += $(shell gtk-config --cflags)
++CFLAGS += $(shell ${GTKCONFIG} --cflags)
+ endif
+ 
+ # object files
+@@ -89,20 +89,20 @@
+ endif
+ 
+ ifeq ($(CONFIG_THREADING), 2)
+-PTHREAD_LIBS = -lpthread
++PTHREAD_LIBS = ${THREAD_LIBS}
+ else
+ PTHREAD_LIBS =
+ endif
+ 
+ ifeq ($(OPTION_GRAPHICS), 1)
+-LCLC = $(shell gtk-config --libs)
++LCLC = $(shell ${GTKCONFIG} --libs)
+ else
+ ifeq ($(OPTION_NCURSES), 1)
+ CLC = ncurses
+ else
+ CLC = curses
+ endif
+-LCLC = -l$(CLC)
++LCLC = -l$(CLC) -lintl -L${LOCALBASE}/lib
+ endif
+ 
+ ifeq ($(OPTION_GRAPHICS), 1)
