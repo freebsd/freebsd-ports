@@ -3,13 +3,15 @@
 # Date created:		23 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1998/10/13 04:21:00 jseger Exp $
+# $Id: Makefile,v 1.16 1998/10/28 12:06:26 tg Exp $
 #
 
 DISTNAME=	rpm-2.5.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/code/rpm/ \
-		ftp://ftp.gwdg.de/pub/linux/redhat/code/rpm/
+		ftp://ftp.uni-bayreuth.de/pub/linux/redhat/code/rpm/ \
+		ftp://mirror.nucba.ac.jp/mirror/redhat/code/rpm/ \
+		ftp://ftp.cdrom.com/pub/linux/redhat/code/rpm/
 
 MAINTAINER=	tg@FreeBSD.ORG
 
