@@ -1,41 +1,33 @@
-# New ports collection makefile for:	docbook
-# Version required:	3.0
-# Date created:		June 19, 1997
-# Whom:			jfieber
+# New ports collection makefile for:   docbook
+# Version required:    N/A
+# Date created:        7 April 1999
+# Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1997/07/10 02:41:08 jfieber Exp $
+# Based heavily on work by jfieber
+#
+# $Id$
 #
 
-DISTNAME=	docbook-3.0
-CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
-DISTFILES=	docbk241.tar.Z docbk30.tar.Z
+DISTNAME=       docbook
+PKGNAME=        docbook
+CATEGORIES=     textproc
+MASTER_SITES=   # empty
+DISTFILES=      # empty
 
-MAINTAINER=	jfieber@FreeBSD.ORG
+MAINTAINER=     nik@freebsd.org
 
-RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
+BUILD_DEPENDS=  ${PREFIX}/share/sgml/docbook/2.4.1:${PORTSDIR}/textproc/docbook-241 \
+                ${PREFIX}/share/sgml/docbook/3.0:${PORTSDIR}/textproc/docbook-300 \
+		${PREFIX}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310
 
-NO_MTREE=       yes
-EXTRACT_ONLY=	# empty
+EXTRACT_ONLY=   # empty
 NO_BUILD=       yes
-NO_WRKSUBDIR=	yes
 
-INSTDIR=	${PREFIX}/share/sgml/docbook
-ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
+do-install:     # empty
 
-pre-install:
-	@[ -d ${INSTDIR}/2.4.1 ] || ${MKDIR} ${INSTDIR}/2.4.1
-	@[ -d ${INSTDIR}/3.0 ] || ${MKDIR} ${INSTDIR}/3.0
-
-do-install:
-	@zcat ${DISTDIR}/docbk241.tar.Z |(cd ${INSTDIR}/2.4.1; pax -r)
-	@${INSTALL_DATA} ${FILESDIR}/catalog241 ${INSTDIR}/2.4.1/catalog
-	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/2.4.1/catalog
-	@zcat ${DISTDIR}/docbk30.tar.Z |(cd ${INSTDIR}/3.0; pax -r)
-	@${INSTALL_DATA} ${FILESDIR}/catalog30 ${INSTDIR}/3.0/catalog
-	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/3.0/catalog
-	@chmod ${SHAREMODE} ${INSTDIR}/2.4.1/*
-	@chmod ${SHAREMODE} ${INSTDIR}/3.0/*
-	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+post-install:
+	echo 'CATALOG "2.4.1/catalog"' >  ${PREFIX}/share/sgml/docbook/catalog
+	echo 'CATALOG "3.0/catalog"'   >> ${PREFIX}/share/sgml/docbook/catalog
+	echo 'CATALOG "3.1/catalog"'   >> ${PREFIX}/share/sgml/docbook/catalog
 
 .include <bsd.port.mk>
