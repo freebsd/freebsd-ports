@@ -1,0 +1,6 @@
+Replex was created to remultiplex transport stream (TS) data taken from a DVB
+source. The result is supposed to be a program stream (PS) that can be
+used to be burned to a DVD (with dvdauthor).
+Replex can also remultiplex other PSs and AVIs with MPEG2 content.
+
+WWW: http://www.metzlerbros.org/dvb/

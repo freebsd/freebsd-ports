@@ -88,6 +88,7 @@
     SUBDIR += ppm2fli
     SUBDIR += quark
     SUBDIR += recmpeg
+    SUBDIR += replex
     SUBDIR += ruby-gst
     SUBDIR += slideshow
     SUBDIR += smpeg
