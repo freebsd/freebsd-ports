@@ -83,7 +83,3 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/blwm.1x ${MANPREFIX}/man/man1/
 
 .include <bsd.port.mk>
-
-    SUBDIR += blwm
-
-.include <bsd.port.subdir.mk>
