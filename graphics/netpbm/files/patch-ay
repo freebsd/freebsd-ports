@@ -1,12 +1,15 @@
---- pnm/pnmtotiffcmyk.c.orig	Wed Apr 26 13:25:15 2000
-+++ pnm/pnmtotiffcmyk.c	Mon May  8 00:00:00 2000
-@@ -71,7 +71,9 @@
+--- pnm/pnmtotiffcmyk.c.orig	Sat May 13 09:29:45 2000
++++ pnm/pnmtotiffcmyk.c	Fri Dec  8 00:00:00 2000
+@@ -71,8 +71,12 @@
  #define VERSION 1.01
  
  /* beware - these evaluate more than once */
-+#undef MAX
++#ifndef MAX
  #define MAX(x, y) ( ( x ) > ( y ) ? ( x ) : ( y ) )
-+#undef MIN
++#endif
++#ifndef MIN
  #define MIN(x, y) ( ( x ) < ( y ) ? ( x ) : ( y ) )
++#endif
  
  /* only support 8 bit values */
+ #define MAXTIFFBITS 8

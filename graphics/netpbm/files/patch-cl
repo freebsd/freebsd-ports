@@ -1,0 +1,12 @@
+--- ppm/ppmtompeg/parallel.c.orig	Sat Jul  1 16:51:53 2000
++++ ppm/ppmtompeg/parallel.c	Fri Dec  8 00:00:00 2000
+@@ -70,9 +70,6 @@
+  *
+  */
+ 
+-#define _POSIX_SOURCE
+-#define _POSIX_C_SOURCE 2
+-    /* This makes sure pclose() is in stdio.h */
+ /* On SunOS 5.6, netinet/in.h, via sys/vnode.h uses non-POSIX
+    typedefs, but when _POSIX_SOURCE is defined, it doesn't cause those
+    typedefs to be defined.  In later releases, this is fixed.  If we

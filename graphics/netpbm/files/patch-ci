@@ -1,0 +1,41 @@
+--- ppm/ppmhist.c.orig	Mon Sep 18 15:11:07 2000
++++ ppm/ppmhist.c	Fri Dec  8 00:00:00 2000
+@@ -12,6 +12,7 @@
+ 
+ #include "ppm.h"
+ #include "ppmcmap.h"
++#include "shhopt.h"
+ 
+ #define MAXCOLORS 100000
+ 
+@@ -43,11 +44,21 @@
+     
+     int nomap;  /* dummy option for backward compatibility */
+ 
++    /* Create the OptStruct structure describing our options */
++    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
++      option_def[option_def_index].shortName = (shortvalue); \
++      option_def[option_def_index].longName = (longvalue); \
++      option_def[option_def_index].type = (typevalue); \
++      option_def[option_def_index].arg = (outputvalue); \
++      option_def[option_def_index].flags = (flagvalue); \
++      option_def_index++; \
++      }
+     option_def_index = 0;   /* incremented by OPTENTRY */
+     OPTENTRY(0,   "map",         OPT_FLAG,   &cmdline_p->map,         0);
+     OPTENTRY(0,   "nomap",       OPT_FLAG,   &nomap,                  0);
+     OPTENTRY(0,   "noheader",    OPT_FLAG,   &cmdline_p->noheader,    0);
+     OPTENTRY(0,   "hexcolor",    OPT_FLAG,   &cmdline_p->hexcolor,    0);
++    option_def[option_def_index].type = OPT_END;
+ 
+     /* Set the defaults */
+     cmdline_p->map = FALSE;
+@@ -58,7 +69,7 @@
+     opt.short_allowed = FALSE;  /* We have no short (old-fashioned) options */
+     opt.allowNegNum = FALSE;  /* We may have parms that are negative numbers */
+ 
+-    pm_optParseOptions2(&argc, argv, opt, 0);
++    optParseOptions2(&argc, argv, opt, 0);
+         /* Uses and sets argc, argv, and some of *cmdline_p and others. */
+ 
+     if (argc-1 == 0) 

@@ -1,22 +1,23 @@
---- ppm/Makefile.orig	Fri Aug  4 08:45:03 2000
-+++ ppm/Makefile	Sat Aug  5 00:00:00 2000
-@@ -21,26 +21,30 @@
+--- ppm/Makefile.orig	Sun Dec  3 07:41:51 2000
++++ ppm/Makefile	Fri Dec  8 00:00:00 2000
+@@ -22,26 +22,31 @@
  NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  
 +SOVER = 1
 +
- PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
+ PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
  		leaftoppm mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
 -		ppm3d ppmbrighten ppmchange ppmcolormask \
 +		ppm3d ppmbrighten \
  		ppmdim ppmdist ppmdither \
- 		ppmflash ppmhist ppmmake ppmmix ppmnorm \
+-		ppmflash ppmhist ppmmake ppmmix ppmnorm \
++		ppmflash ppmmake ppmmix ppmnorm \
  		ppmquant ppmrelief ppmshift ppmspread ppmtoacad \
 -		ppmtobmp ppmtoeyuv ppmtogif ppmtoleaf \
 +		ppmtoeyuv ppmtogif ppmtoleaf \
- 		ppmtoicr ppmtoilbm ppmtomitsu \
+ 		ppmtoicr ppmtoilbm ppmtolj ppmtomitsu \
  		ppmtopcx ppmtopgm ppmtopi1 ppmtopict ppmtopj \
  		ppmtopjxl ppmtopuzz ppmtorgb3 ppmtosixel \
  		ppmtotga ppmtouil ppmtowinicon ppmtoxpm ppmtoyuv \
@@ -25,7 +26,8 @@
 -		sputoppm tgatoppm winicontoppm ximtoppm xpmtoppm xvminitoppm \
 +		sputoppm winicontoppm xpmtoppm xvminitoppm \
  		yuvtoppm yuvsplittoppm
-+SHHOPTBINARIES =	ppmchange ppmcolormask ppmtobmp tgatoppm ximtoppm
++SHHOPTBINARIES =	ppmchange ppmcolormask ppmhist ppmtobmp tgatoppm \
++			ximtoppm 
  
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.
@@ -34,7 +36,7 @@
  ifneq ($(JPEGLIB_DIR), NONE)
    ifneq ($(JPEGHDR_DIR), NONE)
        NOMERGEBINARIES += ppmtojpeg
-@@ -49,7 +53,7 @@
+@@ -50,7 +55,7 @@
  
  MERGEBINARIES = $(PORTBINARIES) $(MATHBINARIES)
  
@@ -43,7 +45,7 @@
  BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES) 
  SCRIPTS = ppmquantall ppmshadow ppmfade
  
-@@ -58,6 +62,8 @@
+@@ -59,6 +64,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
@@ -52,7 +54,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -65,18 +71,24 @@
+@@ -66,7 +73,7 @@
  
  MERGENAME= ppmmerge
  
@@ -61,10 +63,9 @@
  
  .PHONY: all
  all:        $(BINARIES)
--	$(MAKE) -C ppmtompeg all
- .PHONY: merge
- merge:      $(MERGENAME) $(NOMERGEBINARIES)
--	$(MAKE) -C ppmtompeg all
+@@ -77,9 +84,17 @@
+ 	$(MAKE) -C ppmtompeg all
+ 	$(MAKE) -C hpcdtoppm all
  
 -ppmtojpeg: %: %.o $(NETPBMLIBS) $(LIBOPT)
 +$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
@@ -82,26 +83,13 @@
  
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
-@@ -89,19 +101,19 @@
- 
- .PHONY: install.merge
- install.merge: install.merge.common
--	$(MAKE) -C ppmtompeg install.bin
- 
- .PHONY: install.lib
- install.lib: install.lib.common
- 
- .PHONY: install.man
- install.man: install.man.common
--	$(MAKE) -C ppmtompeg install.man
+@@ -106,6 +121,9 @@
+ 	$(MAKE) -C hpcdtoppm install.man
  
  include $(SRCDIR)/Makefile.common
- 
++
 +$(SRCDIR)/shhopt/libshhopt.a:
 +	cd ../shhopt; $(MAKE) libshhopt.a
-+
+ 
  .PHONY: clean
  clean: clean.common
--	$(MAKE) -C ppmtompeg clean
- 
- FORCE:
