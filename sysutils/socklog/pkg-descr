@@ -1,4 +1,4 @@
-socklog in cooperation with djb's daemontools is a small and secure replacement
+socklog in cooperation with the runit package is a small and secure replacement
 for syslogd. There are three main features, syslogd provides:
 
 - receiving syslog messages from an unix domain socket (/dev/log) or UDP socket
@@ -6,11 +6,11 @@ for syslogd. There are three main features, syslogd provides:
   and priority.  
 - writing received syslog messages to an udp socket (a.b.c.d:514)
 
-socklog provides the first two features with the help of daemontools svscan,
-supervise and multilog, provides a different network logging concept and
+socklog provides these features with the help of runit's runsvdir,
+runsv, and svlogd, provides a different network logging concept, and
 additionally does log event notification.
 
-multilog has a built in logfile rotation based on file size, so there is no
+svlogd has a built in log file rotation based on file size, so there is no
 need for any cron jobs or similar to rotate the logs. Log partitions can be
 calculated properly.
 	
