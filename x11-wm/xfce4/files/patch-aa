@@ -74,20 +74,20 @@
   	@if [ -d $(XBINDIR) ]; then set +x; \
   	else (set -x; $(MKDIRHIER) $(XBINDIR)); fi
 ! 	@cp -R XFCE $(XBINDIR);
-! 	ln -s $(XBINDIR)/XFCE $(XBINDIR)/xfce;
+! 	ln -sf $(XBINDIR)/XFCE $(XBINDIR)/xfce;
   	@chmod 0755 $(XBINDIR)/XFCE;
   	@if [ -d $(FVWM_MODULES) ]; then \
-! 	ln -s $(XBINDIR)/XFCE $(FVWM_MODULES); fi
+! 	ln -sf $(XBINDIR)/XFCE $(FVWM_MODULES); fi
   	@if [ -d $(FVWM2_MODULES) ]; then \
-! 	ln -s $(XBINDIR)/XFCE $(FVWM2_MODULES); fi
+! 	ln -sf $(XBINDIR)/XFCE $(FVWM2_MODULES); fi
   	mkdir -p $(XFCE_DIR)
   	mkdir -p $(XFCE_DIR)/doc
 ! 	@cp -R sample.* $(XFCE_DIR)/;
 ! 	@cp -R INSTALL MANUAL README COPYRIGHT $(XFCE_DIR)/doc/
-! 	ln -s $(XFCE_DIR)/sample.fvwmrc $(XFCE_DIR)/.fvwmrc;
-! 	ln -s $(XFCE_DIR)/sample.fvwm2rc $(XFCE_DIR)/.fvwm2rc;
-! 	ln -s $(XFCE_DIR)/sample.xfcerc $(XFCE_DIR)/.xfcerc;
-! 	ln -s $(XFCE_DIR)/sample.xinitrc $(XFCE_DIR)/.xinitrc;
+! 	ln -sf $(XFCE_DIR)/sample.fvwmrc $(XFCE_DIR)/.fvwmrc;
+! 	ln -sf $(XFCE_DIR)/sample.fvwm2rc $(XFCE_DIR)/.fvwm2rc;
+! 	ln -sf $(XFCE_DIR)/sample.xfcerc $(XFCE_DIR)/.xfcerc;
+! 	ln -sf $(XFCE_DIR)/sample.xinitrc $(XFCE_DIR)/.xinitrc;
   	@if [ -d $(DESTDIR)$(XAPPLOADDIR) ]; then set +x; \
   	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XAPPLOADDIR)); fi
   	$(INSTALL) $(INSTALLFLAGS) $(INSTAPPFLAGS) ./XFce-en.ad \
@@ -131,26 +131,26 @@
 ! 	@cp -R XFCE_dithered.logo $(XFCE_DIR);
   
   install_full::		install_logo
-! 	ln -s $(XFCE_DIR)/XFCE_full.logo $(XFCE_DIR)/XFCE.logo;
+! 	ln -sf $(XFCE_DIR)/XFCE_full.logo $(XFCE_DIR)/XFCE.logo;
   
   install_dithered::	install_logo
-! 	ln -s $(XFCE_DIR)/XFCE_dithered.logo $(XFCE_DIR)/XFCE.logo;
+! 	ln -sf $(XFCE_DIR)/XFCE_dithered.logo $(XFCE_DIR)/XFCE.logo;
   
   install::		install_full
   
   francais::
-! 	ln -s $(DESTDIR)$(XAPPLOADDIR)/XFce-fr \
+! 	ln -sf $(DESTDIR)$(XAPPLOADDIR)/XFce-fr \
   	       $(DESTDIR)$(XAPPLOADDIR)/XFce
   
   english::
-! 	ln -s $(DESTDIR)$(XAPPLOADDIR)/XFce-en \
+! 	ln -sf $(DESTDIR)$(XAPPLOADDIR)/XFce-en \
   	       $(DESTDIR)$(XAPPLOADDIR)/XFce
   
   italiano::
-! 	ln -s $(DESTDIR)$(XAPPLOADDIR)/XFce-it \
+! 	ln -sf $(DESTDIR)$(XAPPLOADDIR)/XFce-it \
   	       $(DESTDIR)$(XAPPLOADDIR)/XFce
   
   deutsch::
-! 	ln -s $(DESTDIR)$(XAPPLOADDIR)/XFce-de \
+! 	ln -sf $(DESTDIR)$(XAPPLOADDIR)/XFce-de \
   	       $(DESTDIR)$(XAPPLOADDIR)/XFce
   
