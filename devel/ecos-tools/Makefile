@@ -8,7 +8,8 @@
 PORTNAME=	ecos-tools
 PORTVERSION=	0.0.${SNAPDATE}
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ecoscentric.com/snapshots/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tg
 DISTNAME=	ecos-tools.${SNAPDATE}
 
 MAINTAINER=	tg@FreeBSD.org
