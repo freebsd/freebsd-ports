@@ -1,0 +1,9 @@
+%%RUBY_SITEARCHLIBDIR%%/gdk_pixbuf.so
+%%RUBY_SITELIBDIR%%/gdk_pixbuf.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_pixbuf/scale.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_pixbuf/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gdk_pixbuf/to_drawable.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gdk_pixbuf
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gdk_pixbuf/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gdk_pixbuf/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gdk_pixbuf
