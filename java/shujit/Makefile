@@ -3,7 +3,7 @@
 # Date created:		30 April 1999
 # Whom:			jake@checker.org
 #
-# $Id: Makefile,v 1.2 1999/06/14 16:57:33 steve Exp $
+# $Id: Makefile,v 1.3 1999/06/28 02:22:34 billf Exp $
 #
 
 DISTNAME=	shujit-0.2.10
@@ -13,9 +13,9 @@ MASTER_SITES=	http://www.shudo.net/jit/dist/
 MAINTAINER=	jake@checker.org
 
 BUILD_DEPENDS=	${PREFIX}/bin/ruby:${PORTSDIR}/lang/ruby \
-		${PREFIX}/jdk1.1.8/bin/javac:${PORTSDIR}/lang/jdk \
+		${PREFIX}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk \
 		${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
-RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/lang/jdk
+RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400002

@@ -3,7 +3,7 @@
 # Date created:		1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
-# $Id: Makefile,v 1.2 1999/06/28 02:22:25 billf Exp $
+# $Id: Makefile,v 1.3 1999/06/28 15:58:33 shige Exp $
 #
 
 DISTNAME=	jsdk20-solaris2-sparc
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	greg@greg.rim.or.jp
 
-RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/lang/jdk
+RUN_DEPENDS=	${PREFIX}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
 NO_CDROM=	"Sun has a funky license for this software"
 RESTRICTED=	"no commercial use"
