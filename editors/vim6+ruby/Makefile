@@ -16,7 +16,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 COMMENT=	${.CURDIR}/pkg-comment
 
-EXTRA_PATCHES=	${.CURDIR}/files/patch-*
+#EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 USE_RUBY=	yes
 
