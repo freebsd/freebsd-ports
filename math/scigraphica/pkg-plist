@@ -5,6 +5,7 @@ share/gnome/examples/sg/multicolumn.sg
 share/gnome/examples/sg/polar.sg
 share/gnome/examples/sg/simpletest.sg
 share/gnome/examples/sg/test.dat
+share/gnome/examples/sg/ticks.sg
 share/gnome/examples/sg/trigonometric.sg
 share/gnome/examples/sg/vectors.sg
 share/gnome/pixmaps/sg/2d_small.xpm
