@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.enteract.com/~tqbf/
 DISTFILES=	nsping.tar.gz
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 MAN8=		nsping.8
 

@@ -12,7 +12,7 @@ CATEGORIES=	net security
 # The newest version is temporarily available at..
 MASTER_SITES=  http://www.avet.com.pl/libnids/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
