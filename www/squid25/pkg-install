@@ -7,8 +7,8 @@ PATH=/bin:/usr/bin:/usr/sbin
 pkgname=$1
 squid_base=${PKG_PREFIX:-/usr/local}/squid
 squid_confdir=${PKG_PREFIX:-/usr/local}/etc/squid
-squid_user=${SQUID_USER:=squid}
-squid_group=${SQUID_GROUP:=squid}
+: ${squid_user:=squid}
+: ${squid_group:=squid}
 squid_gid=100
 squid_uid=100
 # Try to catch the case where the $squid_user might have been created with an
