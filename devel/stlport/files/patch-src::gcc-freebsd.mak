@@ -6,8 +6,8 @@
  #
 -CC = gcc -pthread
 -CXX = c++ -pthread -fexceptions
-+CC+= ${PTHREAD_CFLAGS}
-+CXX+= ${PTHREAD_CFLAGS} -fexceptions
++CC+= ${PTHREAD_CFLAGS} -D_REENTRANT
++CXX+= ${PTHREAD_CFLAGS} -D_REENTRANT -fexceptions
  
  #
  # Basename for libraries
