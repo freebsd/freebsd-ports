@@ -11157,6 +11157,7 @@ vecfem		ports/math/vecfem
 vectoroids	ports/games/vectoroids
 ved		ports/editors/ved
 velocity	ports/x11-fm/velocity
+venice		ports/finance/venice
 vera		ports/misc/vera
 verlihub	ports/net/verlihub
 verlihub-plugins	ports/net/verlihub-plugins
