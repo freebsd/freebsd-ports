@@ -15,6 +15,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+post-patch:
+.for file in src/Make2.g++ src/Make.aux modelgen/Make.aux
+	@${PERL} -pi -e 's|g\+\+|\$$\{CXX\}|g ; \
+		 s|-O2|\$$\{CXXFLAGS\}|g' ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/modelgen/O/modelgen ${PREFIX}/bin
