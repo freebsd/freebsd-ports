@@ -7,6 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.0.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,8 +30,32 @@ CONFIGURE_ENV=	F77="${FC}" FFLAGS="${FFLAGS}" \
 		DEMOS_DIR="${PREFIX}/share/examples/plplot" \
 		INFO_DIR="${PREFIX}/info" \
 		M4="${LOCALBASE}/bin/gm4"
-CONFIGURE_ARGS=	--disable-tk --disable-tcl --disable-itcl --disable-python \
-		--with-double
+CONFIGURE_ARGS=	--disable-python --with-double
 INSTALLS_SHLIB=	yes
+
+.if defined(WITH_TCLTK)
+LIB_DEPENDS+=	itk32.1:${PORTSDIR}/x11-toolkits/itk
+CONFIGURE_ENV+=	ITCLINCDIR="${LOCALBASE}/include/itcl3.2" \
+		ITCLLIBDIR="${LOCALBASE}/lib" \
+		ITCLLIBSTR="-litcl32" \
+		ITKINCDIR="${LOCALBASE}/include/itk3.2" \
+		ITKLIBDIR="${LOCALBASE}/lib" \
+		ITKLIBSTR="-litk32" \
+		TCLINCDIR="${LOCALBASE}/include/tcl8.3" \
+		TCLLIBDIR="${LOCALBASE}/lib" \
+		TCLLIBSTR="-ltcl83" \
+		TKINCDIR="${LOCALBASE}/include/tk8.3" \
+		TKLIBDIR="${LOCALBASE}/lib" \
+		TKLIBSTR="-ltk83"
+PLIST_SUB+=	TCLTK=""
+.else
+CONFIGURE_ARGS+=	--disable-itcl --disable-tcl --disable-tk
+PLIST_SUB+=	TCLTK="@comment "
+.endif
+
+post-patch:
+.for file in scripts/mktclIndex
+	@${PERL} -pi -e 's|tclsh|${LOCALBASE}/bin/tclsh8.3|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
