@@ -1,0 +1,22 @@
+--- xcyrBGR.cc.orig    Sat Feb 17 12:32:23 2001
++++ xcyrBGR.cc Thu Mar 22 14:09:55 2001
+@@ -1,8 +1,6 @@
+ /*
+ Pached for Bulgarian Cyrilic keyboard 
+-supported BSD and Phonetic
+-
+-
++supported BDS and Phonetic
+ */
+ #include <X11/Xlib.h>
+ #include <X11/xpm.h>
+@@ -43,8 +41,7 @@
+ };
+ 
+ AuxLayout auxlayout[]={
+-//  {XK_slash, XK_question, XK_period, XK_comma},
+-  {XK_1, XK_exclam, XK_1, XK_exclam}
++  {XK_z, XK_Z, 0xE7, 0xC7}
+ };
+ 
+ AuxLayout auxlayout1[]={
