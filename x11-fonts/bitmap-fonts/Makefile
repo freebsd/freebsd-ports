@@ -31,8 +31,10 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${XFREE86_VERSION} == 4
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.if ${XFREE86_VERSION} == 3
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
+.elif ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 do-build:
