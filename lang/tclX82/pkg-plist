@@ -263,11 +263,7 @@ lib/tkX8.0.2/pkgIndex.tcl
 lib/tkX8.0.2/tkXAppInit.c
 lib/tkX8.0.2/tkx.tcl
 lib/tkxConfig.sh
-man/man3/CmdWrite.3.gz
-man/man3/Handles.3.gz
-man/man3/Keylist.3.gz
 man/man3/TclCommandWriting.3.gz
-man/man3/TclXInit.3.gz
 man/man3/TclX_KeyedListDelete.3
 man/man3/TclX_KeyedListGet.3
 man/man3/TclX_KeyedListGetKeys.3
@@ -285,8 +281,6 @@ man/man3/Tclx_Init.3.gz
 man/man3/Tclxcmd_Init.3.gz
 man/man3/TkX_Main.3.gz
 man/man3/Tkx_Init.3.gz
-man/mann/Memory.n.gz
-man/mann/TclX.n.gz
 man/mann/Tcl_DisplayMemory.n.gz
 man/mann/Tcl_InitMemory.n.gz
 man/mann/Tcl_ValidateAllMemory.n.gz

@@ -187,16 +187,6 @@ lib/caml-light/camlinstr
 lib/caml-light/profiler.zi
 lib/caml-light/prodump.zo
 lib/caml-light/stdlibp.zo
-man/man1/camlc.1.gz
-man/man1/camllex.1.gz
-man/man1/camllibr.1.gz
-man/man1/camllight.1.gz
-man/man1/camlmktop.1.gz
-man/man1/camlrun.1.gz
-man/man1/camlyacc.1.gz
-man/man1/mletags.1.gz
-man/man1/camllorder.1.gz
-man/man1/camlsearch.1.gz
 share/emacs/site-lisp/camldebug.el
 share/emacs/site-lisp/inf-caml.el
 share/emacs/site-lisp/caml.el

@@ -69,7 +69,4 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/SYSCALLS.c.X
 lib/gcc-lib/%%GNUHOST%%/2.8.1/cpp
 lib/gcc-lib/%%GNUHOST%%/2.8.1/libgcc.a
 lib/gcc-lib/%%GNUHOST%%/2.8.1/libobjc.a
-man/man1/cccp28.1.gz
-man/man1/g++28.1.gz
-man/man1/gcc28.1.gz
 %%GNUHOST%%/include/assert.h

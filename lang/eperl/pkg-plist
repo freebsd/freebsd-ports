@@ -1,6 +1,5 @@
 bin/eperl
 @comment www/cgi-bin/nph-eperl
-man/man1/eperl.1.gz
 @exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
 @exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
 @unexec grep -v "application/x-httpd-eperl" %D/etc/apache/srm.conf >%D/etc/apache/srm.conf.bak; mv %D/etc/apache/srm.conf.bak %D/etc/apache/srm.conf

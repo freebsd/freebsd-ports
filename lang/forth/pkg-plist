@@ -1,7 +1,6 @@
 bin/pfe
 lib/pfe/help/showhelp
 lib/pfe/help/helpidx
-man/man1/pfe.1.gz
 lib/pfe/help/floating.hlp
 lib/pfe/help/forth-83.hlp
 lib/pfe/help/index

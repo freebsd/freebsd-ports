@@ -36,8 +36,6 @@ lib/yorick/1.4/lib/libgist.a
 lib/yorick/1.4/lib/libyor.a
 lib/yorick/1.4/lib/libyorm.a
 lib/yorick/1.4/lib/main.o
-man/man1/gist.1.gz
-man/man1/yorick.1.gz
 share/yorick/1.4/doc/FILE_FORMATS
 share/yorick/1.4/doc/README
 share/yorick/1.4/doc/drat.doc

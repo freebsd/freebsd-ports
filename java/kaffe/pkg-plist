@@ -44,7 +44,6 @@ share/kaffe/ENVIRONMENT
 share/kaffe/Klasses.jar
 share/kaffe/license.terms
 share/kaffe/pizza.jar
-man/man1/kaffe.1.gz
 @exec /sbin/ldconfig -m %B
 @dirrm include/kaffe
 @dirrm share/kaffe

@@ -1,6 +1,4 @@
 bin/lisp
-man/man1/cmucl.1.gz
-man/man1/lisp.1.gz
 lib/cmucl/lib/lisp.core
 lib/cmucl/lib/site-init.lisp
 lib/cmucl/lib/load-foreign.csh

@@ -93,7 +93,6 @@ lib/ruby/sample/tktimer.rb
 lib/ruby/sample/trojan.rb
 lib/ruby/sample/tsvr.rb
 lib/ruby/sample/uumerge.rb
-man/man1/ruby.1.gz
 @dirrm lib/ruby/i386-freebsd
 @dirrm lib/ruby/sample
 @dirrm lib/ruby

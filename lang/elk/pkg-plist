@@ -81,4 +81,3 @@ share/elk/runtime/scm/unix.scm
 share/elk/runtime/scm/xlib.scm
 share/elk/runtime/scm/xt.scm
 share/elk/runtime/scm/xwidgets.scm
-man/man1/elk.1.gz
