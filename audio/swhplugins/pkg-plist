@@ -26,6 +26,7 @@ lib/ladspa/dj_eq_1901.so
 lib/ladspa/dj_flanger_1438.so
 lib/ladspa/dyson_compress_1403.so
 lib/ladspa/fad_delay_1192.so
+lib/ladspa/fast_lookahead_limiter_1913.so
 lib/ladspa/flanger_1191.so
 lib/ladspa/fm_osc_1415.so
 lib/ladspa/foldover_1213.so
@@ -47,8 +48,6 @@ lib/ladspa/impulse_1885.so
 lib/ladspa/inv_1429.so
 lib/ladspa/karaoke_1409.so
 lib/ladspa/lcr_delay_1436.so
-lib/ladspa/lookahead_limiter_1435.so
-lib/ladspa/lookahead_limiter_const_1906.so
 lib/ladspa/lowpass_iir_1891.so
 lib/ladspa/ls_filter_1908.so
 lib/ladspa/matrix_ms_st_1421.so
@@ -91,7 +90,6 @@ lib/ladspa/valve_rect_1405.so
 lib/ladspa/vynil_1905.so
 lib/ladspa/wave_terrain_1412.so
 lib/ladspa/zm1_1428.so
-share/ladspa/rdf/swh-aux.rdf
 share/ladspa/rdf/swh-plugins.rdf
 share/ladspa/rdf/swh-scales.rdf
 %%NLS%%share/locale/en_GB/LC_MESSAGES/swh-plugins.mo

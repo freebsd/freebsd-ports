@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.7
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -28,6 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
+CFLAGS+=	-fPIC -DPIC
+
 .if defined(WITH_3DNOW)
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
@@ -41,17 +43,12 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 .*"|-lm"|g ; \
-		 s|-O6 .*"|-fPIC -DPIC"|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| metadata||g ; \
-		 s|gcc |$$(CC) |g ; \
+	@${REINPLACE_CMD} -e \
+		's|$$CFLAGS.*$${USE_SSE}|$$CFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gcc |$$(CC) |g ; \
 		 s| -lc| $$(LDFLAGS)|g ; \
 		 s|-lrt||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|g ; \
 		 s|ls_pcast |ls_pcast32 |g' ${WRKSRC}/ladspa-util.h
-
-post-install:
-	@${MKDIR} ${PREFIX}/share/ladspa/rdf
-	${INSTALL_DATA} ${WRKSRC}/metadata/*.rdf ${PREFIX}/share/ladspa/rdf
 
 .include <bsd.port.mk>
