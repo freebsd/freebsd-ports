@@ -100,7 +100,7 @@
 -AQSISLIBDIR = $(AQSISDIR)/lib
 +AQSISDIR = ${LOCALBASE}
 +AQSISINCDIR = $(AQSISDIR)/include/aqsis
-+AQSISLIBDIR = $(AQSISDIR)/lib/aqsis
++AQSISLIBDIR = $(AQSISDIR)/lib
  # if you do not use Aqsis libslxargs as libslcargs replacement:
 -AQSISOBJS = 
 +#AQSISOBJS = 
