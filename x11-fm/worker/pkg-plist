@@ -13,6 +13,9 @@ share/worker/config-deutsch
 share/worker/config-english
 share/worker/config-francais
 share/pixmaps/WorkerIcon.xpm
+share/pixmaps/WorkerIcon16.xpm
+share/pixmaps/WorkerIcon32.xpm
+share/pixmaps/WorkerIcon48.xpm
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/worker/catalogs
 @dirrm share/worker
