@@ -1,17 +1,8 @@
---- history.c.orig	Sun Dec 16 23:42:47 2001
-+++ history.c	Tue Jul 16 20:14:38 2002
-@@ -123,12 +123,13 @@
- 			break;
- 		}
+--- history.c.orig	Thu Jun  5 19:11:21 2003
++++ history.c	Thu Jun  5 19:11:17 2003
+@@ -1,3 +1,5 @@
++#include <sys/types.h>
++#include <sys/stat.h>
+ #include <wmcliphist.h>
  
--		buf = g_new0(gchar, len);
-+		buf = g_new0(gchar, len + 1);
- 		if (fread(buf, len, 1, f) != 1) {
- 			g_free(buf);
- 			tmp_errno = E_INVALID;
- 			break;
- 		}
-+		buf[len] = '\0';
  
- 		if (fread(&locked, sizeof(gint), 1, f) != 1) {
- 			g_free(buf);

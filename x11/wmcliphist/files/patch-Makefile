@@ -1,9 +1,9 @@
---- Makefile.orig	Thu Dec 20 11:31:46 2001
-+++ Makefile	Sat Feb 16 22:24:52 2002
+--- Makefile.orig	Sat Nov 16 05:57:01 2002
++++ Makefile	Thu Jun  5 19:05:41 2003
 @@ -1,6 +1,4 @@
 -CC = gcc
 -
--INCLUDES = `gtk-config --cflags` -I. -Ifoodock
+-INCLUDES = `gtk-config --cflags` -I. -Ifoodock -g
 +INCLUDES = `${GTK_CONFIG} --cflags` -I. -Ifoodock
  
  # choose icon
@@ -26,12 +26,3 @@
  
  
  OBJECTS = wmcliphist.o clipboard.o gui.o rcconfig.o history.o hotkeys.o $(DEBUG)
-@@ -33,7 +31,7 @@
- 	lclint $(INCLUDES) +posixlib *.c >lclint.log
- 
- wmcliphist: $(OBJECTS) foodock/foodock.o
--	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock/foodock.o
-+	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock.o
- 
- wmcliphist.o: wmcliphist.c wmcliphist.h icon/wmcliphist_ico_mask.xbm \
- 	icon/wmcliphist_ico_dark.xpm icon/wmcliphist_ico_mid.xpm \
