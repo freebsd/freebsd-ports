@@ -7,6 +7,7 @@
 
 PORTNAME=	qsa
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qsa/source/  \
 		ftp://ftp.trolltech.com/qsa/source/
