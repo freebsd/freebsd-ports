@@ -44,28 +44,11 @@
   
   /*
    * C Source files
-*** ./cda_d/Imakefile.orig	Thu Apr  4 21:43:05 1996
---- ./cda_d/Imakefile	Thu Apr  4 23:32:25 1996
+*** cda_d/Imakefile.orig	Mon Jan 20 10:13:51 1997
+--- cda_d/Imakefile	Sat Apr 26 07:12:09 1997
 ***************
-*** 90,96 ****
-  #if defined(SNIArchitecture) 
-  LOCAL_LIBRARIES=/usr/ccs/lib/libcurses.a
-  #else
-! LOCAL_LIBRARIES=-lcurses
-  #endif	/* SINIX */
-  #endif	/* ultrix */
-  #endif	/* NetBSDArchitecture __bsdi__ */
---- 90,96 ----
-  #if defined(SNIArchitecture) 
-  LOCAL_LIBRARIES=/usr/ccs/lib/libcurses.a
-  #else
-! LOCAL_LIBRARIES=-lncurses -lmytinfo
-  #endif	/* SINIX */
-  #endif	/* ultrix */
-  #endif	/* NetBSDArchitecture __bsdi__ */
-***************
-*** 98,103 ****
---- 98,104 ----
+*** 102,107 ****
+--- 102,108 ----
   #endif	/* LinuxArchitecture */
   #endif	/* SunArchitecture */
   
