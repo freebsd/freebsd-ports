@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pircbot
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	irc java
 MASTER_SITES=	http://www.jibble.org/files/ \
 		ftp://ftp.i-scream.org/pub/www.jibble.org/files/ \
@@ -28,14 +28,14 @@ do-install:
 .endif
 
 post-install:
-	@echo "    ---------------------------------------------------------------"
-	@echo "    To use pircbot add ${JAVAJARDIR}/pircbot.jar to"
-	@echo "    your classpath. A short tutorial can be found here:"
-	@echo "        http://www.jibble.org/pircbot.php"
+	@${ECHO_MSG} "    ---------------------------------------------------------------"
+	@${ECHO_MSG} "    To use pircbot add ${JAVAJARDIR}/pircbot.jar to"
+	@${ECHO_MSG} "    your classpath. A short tutorial can be found here:"
+	@${ECHO_MSG} "        http://www.jibble.org/pircbot.php"
 .if !defined(NOPORTDOCS)
-	@echo "    pircbot javadoc documentation has also been installed in:"
-	@echo "        ${DOCSDIR}"
+	@${ECHO_MSG} "    pircbot javadoc documentation has also been installed in:"
+	@${ECHO_MSG} "        ${DOCSDIR}"
 .endif
-	@echo "    ---------------------------------------------------------------"
+	@${ECHO_MSG} "    ---------------------------------------------------------------"
 
 .include <bsd.port.mk>
