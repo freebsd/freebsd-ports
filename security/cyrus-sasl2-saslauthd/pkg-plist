@@ -1,0 +1,19 @@
+etc/rc.d/saslauthd.sh
+man/cat8/saslauthd.8.gz
+sbin/saslauthd
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/LDAP_SASLAUTHD
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/saslauthd
+@mode ug=rwx,o=
+@exec mkdir -p /var/state/saslauthd
+@exec chown -R cyrus:cyrus /var/state
+@exec chmod -R o= /var/state
+@comment This file gets created by the state/saslauthd program
+@unexec rm -fr /var/state/saslauthd
+@unexec rmdir /var/state
+@cwd %%PREFIX%%
