@@ -9127,6 +9127,11 @@
 %%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/lcmssi8.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/line10.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/linew10.pfb
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logo10.pfb
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logo8.pfb
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logo9.pfb
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logobf10.pfb
+%%TEXMFDISTDIR%%/fonts/type1/bluesky/latex/logosl10.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msam10.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msam5.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bluesky/symbols/msam7.pfb
@@ -14829,5 +14834,5 @@
 @exec echo './:' >> %D/%%TEXMFDISTDIR%%/ls-R
 @exec echo 'ls-R' >> %D/%%TEXMFDISTDIR%%/ls-R
 @exec echo '' >> %D/%%TEXMFDISTDIR%%/ls-R
-@exec if [ -x %%MKTEXLSR%% ]; then %%MKTEXLSR%%; fi
+@exec if [ -x %%MKTEXLSR%% ]; then %%MKTEXLSR%% %D/%%TEXMFDISTDIR%%; fi
 @dirrm %%TEXMFDISTDIR%%
