@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	autotrace
-PORTVERSION=	0.30
-PORTREVISION=	2
+PORTVERSION=	0.30.5
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://autotrace.sourceforge.net/snapshots/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
@@ -22,12 +22,14 @@ LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		png.5:${PORTSDIR}/graphics/png \
 		ming.3:${PORTSDIR}/graphics/ming \
 		wmf.2:${PORTSDIR}/graphics/libwmf \
-		Magick.5:${PORTSDIR}/graphics/ImageMagick
+		Magick.5:${PORTSDIR}/graphics/ImageMagick \
+		pstoedit.0:${PORTSDIR}/graphics/pstoedit
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
 USE_XLIB=	yes

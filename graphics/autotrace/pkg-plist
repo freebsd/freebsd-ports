@@ -3,8 +3,11 @@ bin/autotrace-config
 include/autotrace/autotrace.h
 include/autotrace/exception.h
 include/autotrace/input.h
+include/autotrace/output.h
 include/autotrace/types.h
 lib/libautotrace.a
+lib/libautotrace.so
+lib/libautotrace.so.1
 libdata/pkgconfig/autotrace.pc
 share/aclocal/autotrace.m4
 @dirrm include/autotrace
