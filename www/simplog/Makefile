@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simplog
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	www
 MASTER_SITES=	http://simplog.jose.idv.tw/download/
 
@@ -22,7 +22,7 @@ do-install:
 	@${ECHO} ""
 	@${ECHO} "===> Installing simplog"
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -R adodb cache doc images install templates * \
+	cd ${WRKSRC} && ${CP} -R adodb doc images install templates * \
 	${DATADIR}
 
 post-install:
