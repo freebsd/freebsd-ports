@@ -1,0 +1,12 @@
+fuse is a free version of a ZX Spectrum emulator. It emulates
+the 48K/128K/+2/+2A/+3 Speccy and Timex TC2048 machine, supports
+loading from .tzx files, has sound and kempston joystick emulation,
+and emulates various printers you could attach to the Spectrum.
+It supports the new RZX input recording file format.
+
+Author:	Philip Kendall <pak21-spectrum@srcf.ucam.org>
+WWW:	http://www.srcf.ucam.org/~pak21/spectrum/fuse.html
+
+-- 
+Alexey V. Antipovsky
+kemm@in-line.ru

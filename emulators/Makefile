@@ -21,6 +21,7 @@
     SUBDIR += fmsx
     SUBDIR += freesci
     SUBDIR += frodo
+    SUBDIR += fuse
     SUBDIR += gbe
     SUBDIR += generator
     SUBDIR += gngb
