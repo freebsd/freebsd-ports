@@ -21,6 +21,12 @@ sendmail_flags="-L sm-msp-queue -Ac -q1m"
 
 To update your configuration look at %%PREFIX%%/share/sendmail/cf/README.
 ---------------------------------------------------
+To use the ports versions you may add to your sendmail.mc file:
+
+define(`confEBINDIR', `/usr/local/libexec')dnl
+define(`UUCP_MAILER_PATH', `/usr/local/bin/uux')dnl
+
+---------------------------------------------------
 To activate sendmail as your default mailer, call the target 'mailer.conf':
 /usr/ports/mail/sendmail$ make mailer.conf
 
