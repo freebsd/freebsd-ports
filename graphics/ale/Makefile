@@ -7,29 +7,28 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
-PLIST_FILES=	bin/ale
-USE_GMAKE=	yes
+USE_GCC=	3.3
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-OPTIONS=	IMAGEMAGICK "ImageMagick Support" on \
-		FFTW3 "FFTW3 Support" on
+PLIST_FILES=	bin/ale
+
+OPTIONS=	DOUBLE "64bit Data Precision Support" off \
+		FFTW3 "FFTW3 Support" on \
+		IMAGEMAGICK "ImageMagick Support" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.3
-.endif
-
-.if !defined(WITHOUT_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.6:${PORTSDIR}/graphics/ImageMagick
-MAKE_ARGS+=	IMAGEMAGICK=1
+.if defined(WITH_DOUBLE)
+MAKE_ARGS+=	COLORS=DOUBLE COORDINATES=DOUBLE
 .endif
 
 .if !defined(WITHOUT_FFTW3)
@@ -37,15 +36,17 @@ LIB_DEPENDS+=	fftw3.3:${PORTSDIR}/math/fftw3
 MAKE_ARGS+=	FFTW=1
 .endif
 
+.if !defined(WITHOUT_IMAGEMAGICK)
+LIB_DEPENDS+=	Magick.6:${PORTSDIR}/graphics/ImageMagick
+MAKE_ARGS+=	IMAGEMAGICK=1
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|; \
-		s|g++|${CXX}|'	${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
-		${WRKSRC}/*.h ${WRKSRC}/*/*.h
+	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/d2.h
 .if ${OSVERSION} < 502114
-	@${REINPLACE_CMD} -e 's|round|rint|' \
-		${WRKSRC}/d2/image_rw.h \
-		${WRKSRC}/d2/ppm.h
+.for file in d2/image_rw.h d2/ppm.h
+	@${REINPLACE_CMD} -e 's|round|rint|g' ${WRKSRC}/${file}
+.endfor
 .endif
 
 do-install:

@@ -1,11 +1,11 @@
---- Makefile.orig	Wed Aug  4 16:46:34 2004
-+++ Makefile	Sat Aug  7 13:11:43 2004
-@@ -41,14 +41,14 @@
+--- Makefile.orig	Mon Aug 23 15:08:16 2004
++++ Makefile	Sat Aug 28 07:38:03 2004
+@@ -41,17 +41,17 @@
  DEBUG_CFLAGS:=$(if $(subst 0,,$(DEBUG)),-DDEBUG,-DNDEBUG)
  IMAGEMAGICK_CFLAGS:=$(if $(use_imagemagick),-DUSE_MAGICK $(shell Magick-config --cflags --cppflags),)
  IMAGEMAGICK_LDFLAGS:=$(if $(use_imagemagick),$(shell Magick-config --ldflags --libs),)
 -FFTW_CFLAGS:=$(if $(subst 0,,$(FFTW)),-DUSE_FFTW,)
-+FFTW_CFLAGS:=-I%%LOCALBASE%%/include -DUSE_FFTW
++FFTW_CFLAGS:=$(if $(subst 0,,$(FFTW)),-DUSE_FFTW $(shell pkg-config --cflags fftw3),)
  POSIX_CFLAGS:=$(if $(subst 0,,$(POSIX)),-DUSE_UNIX,)
  PRECISION_CFLAGS:=$(if $(subst SINGLE,,$(COLORS)),,-DALE_COLORS=SINGLE)\
                    $(if $(subst DOUBLE,,$(COLORS)),,-DALE_COLORS=DOUBLE)\
@@ -13,7 +13,20 @@
                    $(if $(subst SINGLE,,$(COORDINATES)),,-DALE_COORDINATES=SINGLE)\
                    $(if $(subst DOUBLE,,$(COORDINATES)),,-DALE_COORDINATES=DOUBLE)
 -FFTW_LDFLAGS:=$(if $(subst 0,,$(FFTW)),-lfftw3,)
-+FFTW_LDFLAGS:=-L%%LOCALBASE%%/lib -lfftw3
++FFTW_LDFLAGS:=$(if $(subst 0,,$(FFTW)),$(shell pkg-config --libs fftw3),)
  
  CFLAGS:= $(POSIX_CFLAGS) $(DEBUG_CFLAGS) $(FFTW_CFLAGS) $(PRECISION_CFLAGS) \
-          $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS),-Wall -O2) 
+-         $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS),-Wall -O2) 
++         $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS)) $(CXXFLAGS)
+ LDFLAGS:=$(if $(use_imagemagick),$(IMAGEMAGICK_LDFLAGS)) $(FFTW_LDFLAGS) -lm
+ 
+ #
+@@ -68,7 +68,7 @@
+ 	rm -f ale
+ 
+ ale-phony: ale.cc d2.cc *.h d2/*.h d2/render/*.h d2/render/psf/*.h
+-	g++ -o ale $(CFLAGS) ale.cc d2.cc $(LDFLAGS)
++	$(CXX) -o ale $(CFLAGS) ale.cc d2.cc $(LDFLAGS)
+ 
+ # The following approach to building a Windows binary is probably very
+ # dependent on the host platform configuration.  The above target may be a
