@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id$
+# $Id: Makefile,v 1.3 1995/04/15 05:41:24 asami Exp $
 #
 
 DISTNAME=	dgd-lpmud
@@ -15,7 +15,6 @@ DISTFILES=	sim-2.4.5.tar.gz 2.4.5.tar.gz
 
 DEPENDS=	${PORTSDIR}/net/dgd
 
-NCFTPFLAGS=	-P
 NO_WRKSUBDIR=
 PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
 		-r ${PKGDIR}/REQ

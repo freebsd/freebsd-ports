@@ -13,7 +13,6 @@ PATCH_FILES=	1.0.9-1.0.9.1.gz
 PATCHSITE:=	${MASTER_SITE_OVERRIDE}
 .else
 PATCHSITE=	epsilon.me.chalmers.se:
-NCFTPFLAGS=	-P -V2
 .endif
 _PATCH_COOKIE=	${.CURDIR}/work/._patch_done
 PATCHLIST=	${.CURDIR}/work/.patchlist
