@@ -7,7 +7,7 @@
 
 PORTNAME=		openldap
 PORTVERSION=		2.1.28
-PORTREVISION=		${OPENLDAP_PORTVERSION}
+PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			http://public.planetmirror.com/pub/openldap/%SUBDIR%/ \
@@ -15,6 +15,7 @@ MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
 			ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
 			ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
+			ftp://ftp.shellhung.org/pub/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
 			ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
 			ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/ \
@@ -40,7 +41,7 @@ BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
 .if defined(CLIENT_ONLY)
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTREVISION=	1
 OPENLDAP_PKGNAMESUFFIX?=-client
 OPENLDAP_PKGFILESUFX?=	.client
 
@@ -52,7 +53,7 @@ PORTDOCS=		drafts rfc
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTREVISION=	1
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
@@ -88,7 +89,7 @@ SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%DATABASEDIR%%,${DATABASEDIR},g' \
 			-e 's,%%SLURPDIR%%,${SLURPDIR},g'
 
-CONFIGURE_ARGS=		--with-threads \
+CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
 			--enable-dynamic
 
@@ -191,6 +192,7 @@ CONFIGURE_ARGS+=	--enable-wrappers
 CPPFLAGS+=		${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
+LIBS+=			${PTHREAD_LIBS}
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
