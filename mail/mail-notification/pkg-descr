@@ -1,0 +1,17 @@
+Mail Notification is an icon for the GNOME Notification Area that
+informs users if they have new mail.
+
+Features:
+
+	* multiple folder support
+	* mbox, MH, Maildir and Sylpheed support
+	* POP3 support (if the GNet library is available)
+	* automatic folder format detection
+	* responsive UI (multi-threaded application)
+	* HIG-compliant user interface
+	* themeable stock icons
+
+WWW: http://www.nongnu.org/mailnotify/
+
+- Jean-Yves Lefort
+jylefort@brutele.be
