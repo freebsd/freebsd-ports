@@ -1,0 +1,14 @@
+bin/pclock
+share/pclock/pixmaps/green.xpm
+share/pclock/pixmaps/oclock.xpm
+share/pclock/pixmaps/radar.xpm
+share/pclock/pixmaps/round-3d.xpm
+share/pclock/pixmaps/square.xpm
+share/pclock/pixmaps/time-icon.xpm
+share/pclock/pixmaps/will-return.xpm
+share/pclock/pixmaps/wmaker-tile.xpm
+share/pclock/pixmaps/wood-tile.xpm
+share/pclock/pixmaps/wristwatch.xpm
+share/pclock/pixmaps/yellow-diamond.xpm
+@dirrm share/pclock/pixmaps
+@dirrm share/pclock
