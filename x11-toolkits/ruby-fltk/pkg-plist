@@ -1,7 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/fltk.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/adjuster.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/pack.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fltk
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/README.euc.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/README.utf8
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk
