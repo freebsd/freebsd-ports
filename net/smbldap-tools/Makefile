@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.idealx.org/prj/samba/dist/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-0.8.5-3.tgz
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	Useful package for managing users and groups in a LDAP directory
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Crypt/SmbHash.pm:${PORTSDIR}/security/p5-Crypt-SmbHash
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5
 USE_PERL5=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
@@ -37,9 +38,11 @@ do-install:
 .for i in smbldap.conf smbldap_bind.conf
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/${PORTNAME}/$i.default
 .endfor
-.for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-usermod smbldap-usershow smbldap-migrate-accounts smbldap-migrate-groups smbldap-passwd smbldap-populate
+.for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-usermod smbldap-usershow smbldap-passwd smbldap-populate
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/sbin
 .endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/smbldap-migrate-accounts ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/smbldap-migrate-groups ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/
 	${INSTALL_DATA} ${WRKSRC}/smb.conf ${EXAMPLESDIR}/
 
