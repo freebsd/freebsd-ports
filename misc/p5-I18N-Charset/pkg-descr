@@ -1,0 +1,11 @@
+
+This distribution contains a module I18N::Charset which maps Character
+Set names to the names officially registered with IANA.  For example,
+'Shift_JIS' is the official name of 'x-sjis'.
+
+It also maps character set names to Unicode::Map8 conversion scheme
+names (if Unicode::Map8 is installed).  For example, the Unicode::Map8
+scheme name for 'windows-1251' is 'cp1251'.
+
+--dima
+dima@Chg.RU
