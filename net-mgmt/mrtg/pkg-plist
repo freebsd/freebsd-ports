@@ -7,6 +7,7 @@ etc/mrtg/sample-mrtg.cfg
 lib/perl5/site_perl/%%PERL_VER%%/BER.pm
 lib/perl5/site_perl/%%PERL_VER%%/SNMP_Session.pm
 lib/perl5/site_perl/%%PERL_VER%%/SNMP_util.pm
+lib/perl5/site_perl/%%PERL_VER%%/locales_mrtg.pm
 share/mrtg/mrtg-l.gif
 share/mrtg/mrtg-m.gif
 share/mrtg/mrtg-r.gif
