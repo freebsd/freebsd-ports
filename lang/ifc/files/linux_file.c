@@ -25,111 +25,61 @@
  *
  * $FreeBSD$
  */
-
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdarg.h>
 
-/* This matches struct stat64 in glibc2.1, hence the absolutely
- * insane amounts of padding around dev_t's.
- */
-struct stat64 {
-    unsigned short	st_dev;
-    unsigned char	__pad0[10];
+#define	LINUX_O_RDONLY		00
+#define	LINUX_O_WRONLY		01
+#define	LINUX_O_RDWR		02
+#define	LINUX_O_CREAT		0100
+#define	LINUX_O_EXCL		0200
+#define	LINUX_O_NOCTTY		0400
+#define	LINUX_O_TRUNC		01000
+#define	LINUX_O_APPEND		02000
+#define	LINUX_O_NONBLOCK	04000
+#define	LINUX_O_NDELAY		LINUX_O_NONBLOCK
+#define	LINUX_O_SYNC		010000
+#define LINUX_FASYNC            020000
 
-#define STAT64_HAS_BROKEN_ST_INO	1
-    unsigned long	__st_ino;
+int l_open(const char *path, int flags, ...) {
+    va_list args;
+    mode_t mode;
+    int bsd_flags, error;
 
-    unsigned int	st_mode;
-    unsigned int	st_nlink;
+    bsd_flags = 0;
 
-    unsigned long	st_uid;
-    unsigned long	st_gid;
+    if (flags & LINUX_O_RDONLY  ) bsd_flags |= O_RDONLY;
+    if (flags & LINUX_O_WRONLY  ) bsd_flags |= O_WRONLY;
+    if (flags & LINUX_O_RDWR    ) bsd_flags |= O_RDWR;
+    if (flags & LINUX_O_NDELAY  ) bsd_flags |= O_NONBLOCK;
+    if (flags & LINUX_O_APPEND  ) bsd_flags |= O_APPEND;
+    if (flags & LINUX_O_SYNC    ) bsd_flags |= O_FSYNC;
+    if (flags & LINUX_O_NONBLOCK) bsd_flags |= O_NONBLOCK;
+    if (flags & LINUX_FASYNC    ) bsd_flags |= O_ASYNC;
+    if (flags & LINUX_O_CREAT   ) bsd_flags |= O_CREAT;
+    if (flags & LINUX_O_TRUNC   ) bsd_flags |= O_TRUNC;
+    if (flags & LINUX_O_EXCL    ) bsd_flags |= O_EXCL;
+    if (flags & LINUX_O_NOCTTY  ) bsd_flags |= O_NOCTTY;
 
-    unsigned short	st_rdev;
-    unsigned char	__pad3[10];
-
-    long long	st_size;
-    unsigned long	st_blksize;
-
-    unsigned long	st_blocks;	/* Number 512-byte blocks allocated. */
-    unsigned long	__pad4;		/* future possible st_blocks high bits */
-
-    unsigned long	st_atime_;
-    unsigned long	__pad5;
-
-    unsigned long	st_mtime_;
-    unsigned long	__pad6;
-
-    unsigned long	st_ctime_;
-    unsigned long	__pad7;		/* will be high 32 bits of ctime someday */
-
-    unsigned long long	st_ino;
-};
-
-
-struct stat64 stat2stat64(struct stat sb) {
-    static struct stat64 sb64;
-
-    sb64.st_dev     = sb.st_dev;
-    sb64.st_ino     = sb.st_ino; 
-    sb64.st_mode    = sb.st_mode; 
-    sb64.st_nlink   = sb.st_nlink;
-    sb64.st_uid     = sb.st_uid; 
-    sb64.st_gid     = sb.st_gid; 
-    sb64.st_rdev    = sb.st_rdev; 
-    sb64.st_size    = sb.st_size; 
-    sb64.st_blksize = sb.st_blksize;
-    sb64.st_blocks  = sb.st_blocks;
-    sb64.st_atime_  = sb.st_atime;
-    sb64.st_mtime_  = sb.st_mtime;
-    sb64.st_ctime_  = sb.st_ctime;
-
-    return sb64;
+    if (bsd_flags & O_CREAT) {
+	va_start (args, flags);
+	mode = (mode_t) va_arg(args, int);
+	return open(path, bsd_flags, mode);
+	va_end (args);
+    } else
+	return open(path, bsd_flags);
 }
-
-
-int __fxstat64 (int __ver, int __fildes, struct stat64 *__stat_buf) {
-    struct stat sb;
-    int result;
-
-    result = fstat (__fildes, &sb);
-    *__stat_buf = stat2stat64(sb);
-    return result;
-}
-
-
-int __xstat64 (int __ver, __const char *__filename,
-	       struct stat64 *__stat_buf) {
-    struct stat sb;
-    int result;
-
-    result = stat (__filename, &sb);
-    *__stat_buf = stat2stat64(sb);
-    return result;
-}
-
-
-#include <stdio.h>
-
-void __xstat() {
-    fprintf(stderr, __FILE__ ": __xstat() is dummy.\n");
-};
-void __fxstat() {
-    fprintf(stderr, __FILE__ ": __fxstat() is dummy.\n");
-};
-void __lxstat() {
-    fprintf(stderr, __FILE__ ": __lxstat() is dummy.\n");
-};
-void __lxstat64() {
-    fprintf(stderr, __FILE__ ": __lxstat64() is dummy.\n");
-};
-
 
 typedef int32_t         l_long;
 typedef l_long          l_off_t;
 
-l_off_t Lseek(int fildes, l_off_t offset, int whence)
+l_off_t l_lseek(int fildes, l_off_t offset, int whence)
 {
     return (l_off_t) lseek(fildes, (off_t) offset, whence);
+}
+
+int l_ftruncate(int fildes, l_off_t length)
+{
+    return ftruncate(fildes, (off_t) length);
 }
