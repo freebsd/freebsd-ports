@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-mak
 		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
-		${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+		${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps \
 		${SYSLIBDIR}/lib:${PORTSDIR}/lang/gnustep-guile
 
 PREFIX=		${LOCALBASE}/GNUstep
