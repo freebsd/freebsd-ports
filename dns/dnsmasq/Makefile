@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.11
+PORTVERSION=	2.13
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
 MAINTAINER=	steven@honson.org
-COMMENT=	A caching DNS forwarder
+COMMENT=	Lightweight, easy to configure DNS forwarder and DHCP server
 
 USE_REINPLACE=	yes
 
