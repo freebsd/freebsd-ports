@@ -28,6 +28,10 @@ WANT_GNOME=	yes
 OPTIONS=	X11 "Build with X11 frontend" on \
 		GTK2 "gtk2 instead of gtk12" off
 
+.if !defined(WITHOUT_X11)
+USE_X_PREFIX=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 USE_GNOME+=	gnomehack
@@ -37,7 +41,6 @@ CONFIGURE_ARGS+=--disable-gtkport --disable-gtk20
 PKGNAMESUFFIX=	-nox11
 USE_GNOME+=	glib12
 .else
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
