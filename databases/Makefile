@@ -86,6 +86,7 @@
     SUBDIR += py-SQLDict
     SUBDIR += py-bsddb3
     SUBDIR += py-gdbm
+    SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlrelay
     SUBDIR += rdb
     SUBDIR += ruby-bdb

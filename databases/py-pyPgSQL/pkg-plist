@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/libpqmodule.so
+%%PYTHON_SITELIBDIR%%/PgSQL.py
+%%PYTHON_SITELIBDIR%%/PgSQL.pyc
+%%PORTDOCS%%share/doc/py-pyPgSQL/README
+@dirrm %%PORTDOCS%%share/doc/py-pyPgSQL
+
