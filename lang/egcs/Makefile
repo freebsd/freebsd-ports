@@ -52,7 +52,7 @@ pre-configure:
 	@# configure.in by patching it.
 	@touch ${WRKSRC}/gcc/configure
 	@touch ${WRKSRC}/gcc/cstamp-h.in
-	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	@(MAJ=`/sbin/sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
 		>${WRKSRC}/gcc/config/freebsd.h )
 

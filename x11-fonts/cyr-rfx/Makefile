@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients \
 CYR_RFX_ENCODING?=	koi8-o
 
 WRKSRC=		${WRKDIR}/${CYR_RFX_ENCODING}
-NCPUS!=		sysctl -n hw.ncpu 2> /dev/null || echo 1
+NCPUS!=		/sbin/sysctl -n hw.ncpu 2> /dev/null || echo 1
 MAKE_ARGS+=	-j ${NCPUS}
 MAKEFILE=	${FILESDIR}/Makefile.bdf2pcf
 INST_DIR=	"lib/X11/fonts/${PORTNAME}"

@@ -30,7 +30,7 @@ post-patch:
 
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
-	@ ${SED} s%/kernel%`sysctl -bn kern.bootfile`% \
+	@ ${SED} s%/kernel%`/sbin/sysctl -bn kern.bootfile`% \
 		< ${TWCONFIG} \
 		> ${WRKSRC}/configs/tw.conf.freebsd2
 

@@ -51,7 +51,7 @@ pre-configure:
 	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/configure
 	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/cstamp-h.in
 	@(cd ${WRKSRC}/config/${ARCH}/ ; \
-	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	MAJ=`/sbin/sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd-aout.h freebsd-aout.h.in ; \
 	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" \
 		freebsd-aout.h.in >freebsd-aout.h ; \
