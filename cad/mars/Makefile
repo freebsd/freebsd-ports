@@ -18,6 +18,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maryland Routing Simulator
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 NO_WRKSUBDIR=	yes
 FETCH_ENV=	"FTP_PASSIVE_MODE=no"
 .if defined(WITHOUT_X11)
@@ -41,4 +47,4 @@ do-install:
 		${MV} doc mars )
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
