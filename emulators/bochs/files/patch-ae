@@ -1,0 +1,11 @@
+--- debug/lexer.c.orig	Wed Feb  2 17:00:44 2000
++++ debug/lexer.c	Wed Feb  2 17:00:02 2000
+@@ -1272,7 +1272,7 @@
+ case 92:
+ YY_RULE_SETUP
+ #line 108 "lexer.l"
+-{ bxlval.ulval = strtoull(bxtext, NULL, 10); return(BX_TOKEN_LONG_NUMERIC); }
++{ bxlval.ulval = strtouq(bxtext, NULL, 10); return(BX_TOKEN_LONG_NUMERIC); }
+ 	YY_BREAK
+ case 93:
+ YY_RULE_SETUP

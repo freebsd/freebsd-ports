@@ -22,6 +22,10 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-cpu-level=4 --enable-vga \
 		--with-x11 --prefix=${PREFIX}
 
+.ifdef(WANT_DEBUGGER)
+CONFIGURE_ARGS+= --enable-debugger --enable-disasm
+.endif
+
 WRKSRC=		${WRKDIR}/bochs-${DATE}a
 
 RESTRICTED=	"Commercial software"
