@@ -1,0 +1,10 @@
+--- gnome-spell/Makefile.in.orig	Tue Dec  9 15:48:14 2003
++++ gnome-spell/Makefile.in	Tue Dec  9 15:48:18 2003
+@@ -138,7 +138,6 @@
+         -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"        \
+ 	-DGLADE_DATADIR=\"$(gladedir)\"			\
+ 	-DPLUGIN_DIR=\""$(PLUGIN_DIR)"\"		\
+-	-DGTK_DISABLE_DEPRECATED=1			\
+ 	-DASPELL_DICT=\""$(ASPELL_DICT)"\"		\
+ 	$(GNOME_SPELL_CFLAGS)				\
+ 	$(END)

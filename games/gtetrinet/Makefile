@@ -6,7 +6,7 @@
 
 PORTNAME=	gtetrinet
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -29,6 +29,6 @@ MAN6=		gtetrinet.6
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]prefix[)]/games|{bindir}|g'
+		's|[(]prefix[)]/games|{bindir}|g; /_DISABLE_DEPRECATED/d'
 
 .include <bsd.port.mk>

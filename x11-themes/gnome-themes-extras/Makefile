@@ -21,11 +21,13 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgnomeui
+USE_GNOME=	gnomehack libgnomeui lthack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFLICTS=	gtk-smooth-engine-*
+
+PLIST_SUB=	GTK_VERSION="2.4.0"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
