@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-15
+SNAPDATE=	2002-03-25
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	psim-freebsd
