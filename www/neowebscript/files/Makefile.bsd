@@ -1,0 +1,18 @@
+MODULES=neoscript neo_userdir log_neo auth_tcl # neo_include
+
+.SUFFIXES:
+.SUFFIXES:	.so .c
+
+.c.so:
+	${MAKE} -f ${FILESDIR}/Makefile.lib SRCS=${.ALLSRC}
+
+all: ${MODULES:%=mod_%.so}
+
+SYSCONFDIR!=	${PREFIX}/sbin/apxs -q SYSCONFDIR
+
+install:
+	${INSTALL_DATA} ${MODULES:%=mod_%.so} ${PREFIX}/libexec/apache/
+#.for m in ${MODULES}
+#	${PREFIX}/sbin/apxs -e -A -n $m ${PREFIX}/libexec/apache/mod_$m.so
+#.endfor
+	cp -Rp ${.CURDIR}/../neowebscript ${PREFIX}/share/

@@ -1,0 +1,9 @@
+--- ../htdocs/index.nhtml	Tue Jul 25 00:12:50 2000
++++ ../htdocs/index.nhtml	Mon Sep  3 13:04:23 2001
+@@ -36,4 +36,4 @@
+ 
+-if {[file exists manual]} {
+-    html "Local Apache <a href=manual/>Documentation</a><p>"
++if {[file isdirectory $webenv(DOCUMENT_ROOT)/manual]} {
++    html "Local Apache <a href=/manual/>Documentation</a><p>"
+ }

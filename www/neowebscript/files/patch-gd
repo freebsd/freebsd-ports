@@ -1,0 +1,12 @@
+--- ../neowebscript/image.tcl	Fri Nov 19 19:36:10 1999
++++ ../neowebscript/image.tcl	Mon Sep  3 14:22:03 2001
+@@ -8,4 +8,6 @@
+ #
+ 
++package require Gdtclft
++
+ proc send_image_request {safeInterp} {
+     global webenv imageInfo
+@@ -25,1 +27,1 @@
+-    load {} Gd $safeInterp
++    load {} Gdtclft $safeInterp

@@ -1,0 +1,29 @@
+--- ../neowebscript/db.tcl	Fri Nov 19 19:36:10 1999
++++ ../neowebscript/db.tcl	Mon Sep  3 14:02:50 2001
+@@ -6,6 +6,8 @@
+ # for the trusted interp
+ #
+ 
++package require Neo
++
+ proc dbtransaction {code args} {
+     global errorCode parallelDir webenv
+ 
+@@ -115,7 +117,7 @@
+     if {[catch {db open $dbFileName hash cl 0664} db] == 1} {
+       create_user_dir db
+       if {[catch {db open $dbFileName hash cl 0664} db] == 1} {
+-	    return -code error "$dbFileName: $errorCode" $errorInfo
++	    return -code error "$dbFileName: $errorCode $errorInfo"
+       }
+     }
+ 
+@@ -271,7 +273,7 @@
+     if {[catch {db open $dbFileName hash cl 0664} db] == 1} {
+ 	create_user_dir db
+ 	if {[catch {db open $dbFileName hash cl 0664} db] == 1} {
+-	    return -code error "$dbFileName: $errorCode" $errorInfo
++	    return -code error "$dbFileName: $errorCode $errorInfo"
+ 	}
+     }
+ 

@@ -1,0 +1,19 @@
+--- ../neowebscript/common.tcl	Fri Nov 19 19:36:10 1999
++++ ../neowebscript/common.tcl	Mon Sep  3 13:32:49 2001
+@@ -31,7 +31,7 @@
+ 
+     if {[catch {mkdir -path $parallelDir$plusSubDir} result] == 1} {
+ 	if {[lrange $errorCode 0 1] != "POSIX EEXIST"} {
+-	    error "$errorCode"
++	    error "can not create $parallelDir $plusSubDir: $errorCode"
+ 	}
+     }
+ }
+@@ -512 +512,7 @@
+ }
++
++proc emit_full_header {title} {
++	html <HTML><HEAD><TITLE>
++ 	html $title
++	html </TITLE><HEAD>
++}
