@@ -8,6 +8,7 @@
 
 PORTNAME=	twofish
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	twofish-py
@@ -20,12 +21,6 @@ COMMENT=	Twofish cryptographic module for Python
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/_twofish.so ${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}
@@ -34,4 +29,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
