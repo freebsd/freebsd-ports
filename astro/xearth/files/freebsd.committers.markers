@@ -25,15 +25,15 @@
  52.14,		21.03,		"abial"				# Warsaw, Poland
 -34,		18,		"markm, sheldonh"		# Cape Town, South Africa
  52.0,		13.8,		"joerg"				# Germany
- 52.51,		13.33,		"dirk"				# Berlin, Germany
- 52.56,		13.27,		"    ,chm"			# Berlin, Germany
+ 52.51,		13.33,		" dirk"				# Berlin, Germany
+ 52.56,		13.27,		"chm"		align=left	# Berlin, Germany
  55.411822290,	11.336162915,	"phk"				# Slagelse, Denmark
  59.92,		10.75,		"eivind,des,tegge"		# Oslo, Norway
  43.71,		10.40,		"luigi"				# Pisa, Italy
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
  56.107165,	10.194201,	"jesper"			# Aarhus, Denmark
- 53.56,		10.02,		"   ,cracauer"			# Hamburg, Germany
- 53.64,		9.84,		"            ,hm"		# Rellingen, Germany
+ 53.56,		10.02,		"cracauer"			# Hamburg, Germany
+ 53.64,		9.84,		"hm"		align=left	# Rellingen, Germany
  53.33,		9.59		"stb"				# Hamburg, Germany
  49.00,     9.5         "schweikh"          # Weinstadt, Germany
  51.20,		9.20		"dinoex"			# Habichtswald, Germany
@@ -41,22 +41,22 @@
  50.1025,	8.6841,		"tomsoft"			# Frankfurt, Hessen, Germany
  51.32,		7.27,		"ue"				# Dortmund, Germany
  50.92,		6.95,		"se"				# Cologne, Germany
- 51.3,		6.75		"alex"				# Meerbusch, Germany
+ 51.3,		6.75		"alex"		align=left	# Meerbusch, Germany
  50.70,		6.2,		"tg"				# Aachen, Germany
  51.98,		5.96,		"wilko"				# Arnhem, The Netherlands
- 51.25,		5.30,		"guido"				# Eindhoven, the Netherlands
+ 51.25,		5.30,		"guido"		align=left	# Eindhoven, the Netherlands
  48.36,		2.99		"charnier"	align=left	# Cannes Ecluse, France
  48.7,		2.17,		"roberto"			# Les Ulis, France
- 51.67,		0.61,		"brian"				# Amersham, Bucks, UK
+ 51.67,		0.61,		" brian"			# Amersham, Bucks, UK
  50.84121667,	0.128383333,	"joe"				# Brighton, East Sussex, UK
- 51.5,		0.0,		"dfr"				# (CORE) London, UK
- 51.0,		0.0,		"   ,greid"			# Farnborough, Hampshire, UK
- 51.53,		-0.18,		"n_hibma"			# London, UK
- 51.50,		-0.48,		"nik"				# West Drayton, Middx., UK
+ 51.5,		0.0,		" dfr"				# (CORE) London, UK
+ 51.0,		0.0,		"greid"		align=left	# Farnborough, Hampshire, UK
+ 51.53,		-0.18,		"n_hibma"	align=above	# London, UK
+ 51.50,		-0.48,		"nik"		align=left	# West Drayton, Middx., UK
  53.22,		-1.29,		"ben"				# Sheffield, Yorkshire, UK
  51.44,		-2.06,		"marko"		align=left	# Chippenham, Wiltshire, UK
- 55.87,		-4.26,		"      ,roger"			# Glasgow, UK
- 56.0,		-4.5,		"gary"				# Glasgow, UK
+ 55.87,		-4.26,		"roger"				# Glasgow, UK
+ 56.0,		-4.5,		"gary"		align=left	# Glasgow, UK
  53.20,		-6.15,		"dwmalone"	align=left	# Dublin, Ireland
 -15.8,		-47.9,		"lioux"				# Brasilia, DF, Brazil
  42.1411,	-70.8453,	"jeh"				# Hanover, MA, USA
