@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.15 1999/04/08 19:05:42 billf Exp $
+# $Id: Makefile,v 1.16 1999/04/20 22:54:02 stb Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.14
@@ -16,7 +16,6 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 MAINTAINER=	stb@FreeBSD.ORG
 
 Y2K=		http://andrew2.andrew.cmu.edu/cyrus/imapd/y2k.html
-WWW_SITE=	http://andrew2.andrew.cmu.edu/cyrus/imapd/
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
