@@ -4,12 +4,14 @@
 #
 # $FreeBSD$
 
-PORTNAME=	jabber-msn
-PORTVERSION=	1.2.8.rc1
-PORTREVISION=	2
+PORTNAME=	msn
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://msn-transport.jabberstudio.org/
-DISTNAME=	msn-transport-${PORTVERSION:S/.rc/rc/}
+PKGNAMEPREFIX=	jabber-
+PKGNAMESUFFIX=	-transport
+DISTNAME=	msn-transport-1.3-cvs3
+DIST_SUBDIR=	jabber
 
 MAINTAINER=	martijn@pacno.net
 COMMENT=	Jabber MSN-Transport module
@@ -20,13 +22,16 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-jabberd=${PREFIX}/include/jabber \
-		--with-pth=${PREFIX}/include/jabber
+		--with-pth=${LOCALBASE}/include/pth
 CONFIGURE_ENV=  LDFLAGS=-L${LOCALBASE}/lib
+
+PORTDOCS=	README
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/msntrans.so ${PREFIX}/lib/jabber/
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
