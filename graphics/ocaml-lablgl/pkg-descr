@@ -1,0 +1,10 @@
+LablGL is an OpenGL interface for Objective Caml. Since it includes
+support for the Togl widget, you can comfortably use it with LablTk.
+
+All of the GL and GLU libraries are available. Read a good book
+about how to use these. Translating from OpenGL to LablGL is rather
+straitforward: there is a LablGL function for each OpenGL one.  For
+ease of retrieving, both GL and GLU are cut in smaller modules of
+related functions.
+
+Please see ${PREFIX}/share/doc/ocaml/lablgl/README for further information.

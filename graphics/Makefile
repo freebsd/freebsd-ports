@@ -151,6 +151,7 @@
     SUBDIR += kisomandel
     SUBDIR += kludge3d
     SUBDIR += kuickshow
+    SUBDIR += lablgl
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
