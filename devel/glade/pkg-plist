@@ -27,7 +27,13 @@ share/gnome/glade/gnome/gperf-check.m4
 share/gnome/glade/gnome/linger.m4
 share/gnome/glade/gnome/need-declaration.m4
 share/gnome/glade/gtk/autogen.sh
+share/gnome/help/glade/C/faq/faq.sgml
+share/gnome/help/glade/C/faq/index.html
+share/gnome/help/glade/C/faq/ln7.html
 share/gnome/help/glade/C/topic.dat
+share/gnome/help/glade/C/turbo-start/index.html
+share/gnome/help/glade/C/turbo-start/ln7.html
+share/gnome/help/glade/C/turbo-start/turbo-start.sgml
 share/gnome/help/glade/C/user-guide/authors.html
 share/gnome/help/glade/C/user-guide/edit-menu.html
 share/gnome/help/glade/C/user-guide/helloworld.html
@@ -68,7 +74,13 @@ share/gnome/help/glade/C/user-guide/windows-tree.html
 share/gnome/help/glade/C/user-guide/windows.html
 share/gnome/help/glade/C/user-guide/x225.html
 share/gnome/help/glade/C/user-guide/x324.html
+share/gnome/help/glade/it/faq/faq.sgml
+share/gnome/help/glade/it/faq/index.html
+share/gnome/help/glade/it/faq/ln10.html
 share/gnome/help/glade/it/topic.dat
+share/gnome/help/glade/it/turbo-start/index.html
+share/gnome/help/glade/it/turbo-start/ln10.html
+share/gnome/help/glade/it/turbo-start/turbo-start.sgml
 share/gnome/help/glade/it/user-guide/authors.html
 share/gnome/help/glade/it/user-guide/edit-menu.html
 share/gnome/help/glade/it/user-guide/helloworld.html
@@ -150,9 +162,13 @@ share/locale/zh_CN/LC_MESSAGES/glade.mo
 @dirrm share/gnome/omf/glade
 @dirrm share/gnome/help/glade/it/user-guide/user-guide-images
 @dirrm share/gnome/help/glade/it/user-guide
+@dirrm share/gnome/help/glade/it/turbo-start
+@dirrm share/gnome/help/glade/it/faq
 @dirrm share/gnome/help/glade/it
 @dirrm share/gnome/help/glade/C/user-guide/user-guide-images
 @dirrm share/gnome/help/glade/C/user-guide
+@dirrm share/gnome/help/glade/C/turbo-start
+@dirrm share/gnome/help/glade/C/faq
 @dirrm share/gnome/help/glade/C
 @dirrm share/gnome/help/glade
 @dirrm share/gnome/glade/gtk
