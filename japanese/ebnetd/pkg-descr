@@ -1,18 +1,25 @@
-NDTPD is a server for accessing CD-ROM books with NDTP (Network
-Dictionary Transfer Protocol) on TCP.  You can replace dserver with
-NDTPD.  NDTPD can run on UNIX derived systems.  It supports CD-ROM
-books of EB, EBG, EBXA, EBXA-C, S-EBXA and EPWING formats.  CD-ROM
-books of those formats are popular in Japan.  Since CD-ROM books
-themseves are stands on the ISO 9660 format, you can mount the discs
-by the same way as other ISO 9660 discs.
+This EBNETD distribution contains three server commands: ebnetd, ndtpd
+and ebhttpd. They are servers for accessing CD-ROM book on remote host
+via TCP/IP.
 
--- Motoyuki Kasahara <m-kasahr@sra.co.jp>
+ebnetd:  ebnetd is a server of EBNET protocol which is designed to
+	 communicate with EB Library. For more details about EB
+	 Library, see http://www.sra.co.jp/m-kasahr/eb/.
 
-In addition, you must follow the licenses of your CD-ROM books.
-Though NDTPD is free software, your books may not be free.  Don't
-open your books to unlicensed hosts nor users.
+ndtpd:   ndtpd is an NDTP (Network Dictionary Transfer Protocol)
+	 server. The first implementation of the NDTP esrver is
+	 `dserver'. ndtpd has upper compatibility with dserver-2.2.
 
-You can get information about NDTPD from their website.
-WWW: http://www.sra.co.jp/people/m-kasahr/ndtpd/
+ebhttpd: ebhttpd is a WWW (World Wide Web) server. It supprts HTTP/1.0
+	 and HTTP/1.1 (Hypertext Transfer Protocol version 1.0 and 1.1).
 
--- Kazu TAKAMUNE <takamune2004@yahoo.co.jp>
+The servers support CD-ROM books of EB, EBG, EBXA, EBXA-C, S-EBXA and
+EPWING formats. The servers can run as a standalone daemons by
+default, but can also run as children of `inetd'.
+
+In addition, you must follow the licenses of your CD-ROM books. Though
+EBNETD is free software, your books may not be free. Don't open your
+books to unlicensed hosts nor users.
+
+Author:	Motoyuki Kasahara <m-kasahr@sra.co.jp>
+WWW:	http://www.sra.co.jp/people/m-kasahr/ebnetd/

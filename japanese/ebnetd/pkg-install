@@ -1,5 +1,8 @@
 #!/bin/sh -
-# an installation script for ndtpd
+# an installation script for ebnetd
+
+BATCH=${BATCH:=no}
+basename=`basename $0`
 
 ask() {
     local question default answer
@@ -7,7 +10,7 @@ ask() {
     question=$1
     default=$2
 
-    if [ -z "${PACKAGE_BUILDING}" ]; then
+    if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
 	read -p "${question} (y/n) [${default}]? " answer
         [ "${answer}" ] && default=${answer}
     fi
@@ -29,31 +32,86 @@ yesno() {
     done
 }
 
+check() {
+    local file entry
+
+    file=$1
+    entry=$2
+
+    sed 's/#.*//' ${file} | grep -qw ${entry}
+}
+
+checkall() {
+    local file list item
+
+    file=$1
+    shift
+    list=$*
+
+    for item in $list; do
+	if check ${file} ${item}; then
+	    :
+	else
+	    return 1
+	fi
+    done
+    return 0
+}
+
+add() {
+    local oldfile newfile entry port comment
+
+    file=$1
+    entry=$2
+    port=$3
+    comment=$4
+
+    if check ${file} ${entry}; then
+	:
+    elif sed 's/#.*//' ${file} | grep -qw ${port} ; then
+	oldumask=`umask`
+	umask 0077
+	tmpfile=`mktemp -q /tmp/${basename}.XXXXXX`
+	if [ $? -ne 0 ]; then
+	    echo "Can't create temp file" 1>&2
+	    exit 1
+	fi
+	cp $file $tmpfile
+	trap '' 1 2 15
+	sed 's,^\([^#]*[ 	]'${port}'\),\1	'${entry}, ${tmpfile} > ${file}
+	trap 1 2 15
+	rm $tmpfile
+	umask $oldumask
+    else
+	echo "${entry}		${port}   #${comment}" >> ${file}
+    fi
+}
+
 [ "$2" = POST-INSTALL ] || exit 0
 
 #
-# Add an entry for `ndtp' to /etc/services.
+# Add entries for EBNETD (`ebnet' and `ndtp') to /etc/services.
 #
 file=/etc/services
 back=${file}.bak
-name=ndtp
-port=2010/tcp
-comment="Network Dictionary Transfer Protocol"
+entrylist='ebnet ndtp'
+entry_ebnet=ebnet
+port_ebnet=22010/tcp
+comment_ebnet='EBNET Protocol'
+entry_ndtp=ndtp
+port_ndtp=2010/tcp
+comment_ndtp='Network Dictionary Transfer Protocol'
 
 echo "************************************************************************"
-if sed 's/#.*//' ${file} | grep -qw ${name}; then
-    echo "This system has already an entry for ${name} in ${file}."
+if checkall ${file} ${entrylist}; then
+    echo "This system has already all entries for EBNETD in ${file}."
 else
-    echo "This system has no entry for ${name} in ${file}."
-    if yesno "  Would you like to add it automatically?" y; then
+    echo "This system doesn't have some of entries for EBNETD in ${file}."
+    if yesno "  Would you like to add them automatically?" y; then
 	cp -f ${file} ${back}
 	echo "    The original file is saved as ${back}."
-
-	if sed 's/#.*//' ${file} | grep -qw ${port}; then
-	    sed 's,^\([^#]*[ 	]'${port}'\),\1	'${name}, ${back} > ${file}
-	else
-	    echo "${name}		${port}   #${comment}" >> ${file}
-	fi
+	add ${file} ${entry_ebnet} ${port_ebnet} ${comment_ebnet}
+	add ${file} ${entry_ndtp} ${port_ndtp} ${comment_ndtp}
     fi
 fi
 echo "************************************************************************"

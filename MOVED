@@ -1297,3 +1297,4 @@ www/p5-HTTPD-Tools|www/p5-HTTPD-User-Manage|2004-10-29|module was renamed
 irc/liece|irc/riece|2004-10-31|Upgrade to irc/riece
 irc/liece-dcc|irc/riece|2004-10-31|Integrated into irc/riece
 irc/liece-emacs20|irc/rieceemacs20|2004-10-31|Upgrade to irc/riece-emacs20
+japanese/ndtpd|japanese/ebnetd|2004-10-31|successor project

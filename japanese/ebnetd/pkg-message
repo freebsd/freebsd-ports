@@ -1,19 +1,32 @@
-************************************************************************
-You'll need manual configurations to actually activate `ndtpd'.
+**********************************************************************
+You'll need manual configurations to actually activate EBNETD servers.
 
-**** IF YOU WANT TO SETUP PRIVATE SYSLOG, edit /etc/syslog.conf.
+Step 0(optional):
+If you want to setup private syslog, edit /etc/syslog.conf.
 
-1st) Copy a sample configuration file `ndtpd.conf.sample' to `ndtpd.conf'
-     in `${PREFIX}/etc' directory, and edit it.
-     Consult the "Configuration File" section of info file.
+Step 1:
+Copy a sample configuration file `ebnetd.conf.sample' to `ebnetd.conf'
+in `${PREFIX}/etc' directory, and edit it. Consult the "Configuration
+File" section of info file.
 
-2nd) Copy a sample startup script `ndtpd.sh.sample' to `ndtpd.sh'
-     in `${PREFIX}/etc/rc.d' directory, and edit it.
+Step 2a:
+To start EBNETD servers as standalone daemons, add the following lines
+to /etc/rc.conf:
+ebhttpd_enable (bool): Set to "NO" by default.
+                       Set it to "YES" to enable ebhttpd.
+ebhttpd_flags (str):   Set to "" by default.
+                       Extra flags passed to start ebhttpd.
+ebnetd_enable (bool):  Set to "NO" by default.
+                       Set it to "YES" to enable ebnetd.
+ebnetd_flags (str):    Set to "" by default.
+                       Extra flags passed to start ebnetd.
+ndtpd_enable (bool):   Set to "NO" by default.
+                       Set it to "YES" to enable ndtpd.
+ndtpd_flags (str):     Set to "" by default.
+                       Extra flags passed to start ndtpd.
 
-     a) To start `ndtpd' as a standalone daemon, set the variable
-	`standalone' in the script to `YES', and exec it.
-
-     b) Otherwise, to start as a child process of `inetd',
-	set `standalone' to `NO', and edit the file `/etc/inetd.conf'.
-	Consult the "Run as a Child of inetd" section of info file.
-************************************************************************
+Step 2b:
+To start EBNETD servers as child processes of 'inetd', edit
+/etc/inetd.conf. Consult the "Run `xxxx' as a child of `inetd'"
+sections of info file.
+**********************************************************************
