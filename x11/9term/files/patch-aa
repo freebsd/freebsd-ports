@@ -1,0 +1,45 @@
+*** libtext/Makefile.orig	Wed Jun  1 21:01:19 1994
+--- libtext/Makefile	Mon Jul 31 11:34:06 1995
+***************
+*** 5,18 ****
+  #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DSOLARIS
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files
+! INCS=-I. -I../include
+  
+  #	add name of library orderer - use ":" if none exists
+! RANLIB=:
+  
+  #	add name of library
+  AR=ar
+--- 5,19 ----
+  #	
+  #	Additionally, -D_POSIX_SOURCE (or its equivalent) may be specified
+  #	if your compiler supports posix-compatible compilation
+! OS=-DSUNOS -O2
+! SAMDIR=../../../sam/work
+  
+  #	add -Iincludedir for any include directories that need to be searched
+  #	for posix header files
+! INCS=-I. -I$(SAMDIR)/include
+  
+  #	add name of library orderer - use ":" if none exists
+! RANLIB=ranlib
+  
+  #	add name of library
+  AR=ar
+***************
+*** 38,41 ****
+  
+  install:	$(LIB)
+  
+! $(OBJ):	../include/u.h ../include/libc.h ../include/libg.h ../include/frame.h ../include/text.h
+--- 39,42 ----
+  
+  install:	$(LIB)
+  
+! $(OBJ):	$(SAMDIR)/include/u.h $(SAMDIR)/include/libc.h $(SAMDIR)/include/libg.h $(SAMDIR)/include/frame.h text.h

@@ -1,0 +1,20 @@
+*** Makefile~	Sun Aug 13 13:55:37 1995
+--- Makefile	Sun Aug 13 13:56:11 1995
+***************
+*** 0 ****
+--- 1,15 ----
++  
++ DESTDIR=$(PREFIX)/lib/X11/fonts/Xg
++  
++ all:
++ 	@echo nothing to be done for \`$@\'
++ 	@echo this is an install-only target.
++  
++ install:
++ 	[ -d $(DESTDIR) ] || mkdir -p $(DESTDIR)
++ 	for i in Xg/bdf/*.bdf; do b=$$(basename $$i .bdf); \
++ 	  rm -f $(DESTDIR)/$$b.pcf.Z; \
++ 	  bdftopcf -o $(DESTDIR)/$$b.pcf $$i; \
++ 	  compress $(DESTDIR)/$$b.pcf; \
++ 	  done; mkfontdir $(DESTDIR); \
++ 	  cp Xg/matty/unicode.9.font $(DESTDIR)

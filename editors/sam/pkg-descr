@@ -1,0 +1,17 @@
+This is an X11 version of Rob Pike's editor, sam.  Documentation describing
+its use and construction are provided in subdirectory doc.  The file doc/sam.1
+contains the manual page; doc/sam.tut.ms is a tutorial that can be
+formatted with troff -ms.  It substitutes Bold and Italics for the
+fonts named CW and CS; if your system has these fonts, remove the
+CW and CS macros at the beginning of the file. The files doc/sam.ps
+and doc/se.ps are postscript versions of published papers describing
+sam and structural regular expressions.  These papers reflect sam's
+capabilities at the time of publication several years ago; while the
+general description remains accurate, some functions may have changed
+or been removed.  Other files in the doc directory contain manual pages
+for the library packages used by sam.
+
+Sam is composed of two programs: sam itself, which does the command processing
+and file manipulation; and samterm, which controls the display and 
+interacts with the user.  You can run sam on one machine and samterm on another
+connected via remote execution.

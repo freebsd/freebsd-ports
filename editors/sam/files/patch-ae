@@ -1,0 +1,23 @@
+*** include/u.h~	Fri Jul 21 15:01:18 1995
+--- include/u.h	Fri Jul 21 16:47:00 1995
+***************
+*** 46,53 ****
+  #define	NOFIFO			/* turn off exstart in samterm/unix.c */
+  #endif	/* UMIPS */
+  
+! #ifdef	SUNOS
+  typedef	unsigned short	ushort;
+  typedef unsigned long	ulong;
+  extern	char *strerror(int);
+  extern	void *memmove(void*, const void*, size_t);
+--- 46,55 ----
+  #define	NOFIFO			/* turn off exstart in samterm/unix.c */
+  #endif	/* UMIPS */
+  
+! #if defined(SUNOS)
+! #ifndef __FreeBSD__
+  typedef	unsigned short	ushort;
++ #endif
+  typedef unsigned long	ulong;
+  extern	char *strerror(int);
+  extern	void *memmove(void*, const void*, size_t);

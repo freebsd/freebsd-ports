@@ -1,0 +1,20 @@
+                        9wm Version 1.1
+                   Copyright 1994 David Hogan.
+
+What is 9wm?
+============
+
+9wm is an X window manager which attempts to emulate the Plan 9 window
+manager 8-1/2 as far as possible within the constraints imposed by X.
+It provides a simple yet comfortable user interface, without garish
+decorations or title-bars. Or icons.  And it's click-to-type.  This
+will not appeal to everybody, but if you're not put off yet then read
+on.  (And don't knock it until you've tried it).
+
+One major difference between 9wm and 8-1/2 is that the latter provides
+windows of text with a typescript interface, and doesn't need to run a
+separate program to emulate a terminal.  9wm, as an X window manager,
+does require a separate program.  For better 8-1/2 emulation, you should
+obtain Matthew Farrow's "9term" program (ftp://ftp.cs.su.oz.au/matty/unicode),
+version 1.6 or later (earlier versions don't cooperate with 9wm in
+implementing "hold mode").  Of course, you can run xterm under 9wm as well.
