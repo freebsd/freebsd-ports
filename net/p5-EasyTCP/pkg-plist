@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/EasyTCP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Net/EasyTCP.pm
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/addclientip.al
@@ -9,6 +10,7 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/compression.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/data.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/deleteclientip.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/disconnect.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/do_one_loop.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/encryption.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/mode.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Net/EasyTCP/new.al
