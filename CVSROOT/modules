@@ -6226,6 +6226,7 @@ stuphead	ports/mail/stuphead
 styx		ports/devel/styx
 su		src/usr.bin/su
 su2		ports/sysutils/su2
+subweb		ports/security/subweb
 suck		ports/news/suck
 suck-cnews	ports/news/suck-cnews
 suckblow	ports/net/suckblow
