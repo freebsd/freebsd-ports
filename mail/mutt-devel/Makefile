@@ -47,6 +47,9 @@
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #
+# If you want to make SMIME outlook compatible define:
+#  WITH_MUTT_SMIME_OUTLOOK_COMPAT
+#
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
 #
@@ -97,14 +100,23 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MUTT_COMPRESSED_FOLDERS)
-PATCH_SITES+=	http://www.spinnaker.de/mutt/compressed/:spinnaker
+CD_PATCH_VERSION=	1.5.3
+.if !defined(VVV_PATCH_VERSION)
+VVV_PATCH_VERSION=	${PORTVERSION}
 .endif
-.if defined(WITH_MUTT_NNTP) || defined(WITH_MUTT_QUOTE_PATCH)
-PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${PATCH_VERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/:vvv \
-		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/:vvv
+.if !defined(CD_PATCH_VERSION)
+CD_PATCH_VERSION=	${PORTVERSION}
+.endif
+.if !defined(DW_PATCH_VERSION)
+DW_PATCH_VERSION=	${PORTVERSION}
+.endif
+
+.if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
+	defined(WITH_MUTT_QUOTE_PATCH)
+PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
+		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv
 .endif
 
 .if defined(WITH_MUTT_EDIT_THREADS) || defined(WITH_MUTT_SIGNATURE_MENU) || \
@@ -125,15 +137,14 @@ pre-build:
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
 
-PATCH_VERSION=	1.5.3
-.if !defined(PATCH_VERSION)
-PATCH_VERSION=	${PORTVERSION}
-.endif
-
 .if defined(PACKAGE_BUILDING)
-WITH_MUTT_SSL=		yes
-WITH_MUTT_NCURSES=	yes
-WITH_MUTT_HTML=		yes
+WITH_MUTT_SSL=			yes
+WITH_MUTT_NCURSES=		yes
+WITH_MUTT_HTML=			yes
+WITH_MUTT_COMPRESSED_FOLDERS=	yes
+WITH_MUTT_QUOTE_PATCH=		yes
+WITH_MUTT_SMIME_OUTLOOK_COMPAT=	yes
+WITH_MUTT_PGP_PATCH=		yes
 BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
@@ -178,6 +189,11 @@ USE_OPENSSL=	yes
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
+.if defined(WITH_MUTT_SMIME_OUTLOOK_COMPAT)
+pre-configure::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
+.endif
+
 .if defined(WITH_MUTT_PGP_PATCH)
 SGML_NEEDED=	yes
 pre-configure::
@@ -202,37 +218,36 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 PATCH_DIST_STRIP=	-p1
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
-PATCHFILES+=	patch-${PORTVERSION}.rr.compressed.1.gz:spinnaker
+PATCHFILES+=	patch-${VVV_PATCH_VERSION}.rr.compressed.gz:vvv
 CONFIGURE_ARGS+=	--enable-compressed
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_NNTP)
-.error The WITH_MUTT_NNTP is not available at the moment.
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz:vvv
+PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_QUOTE_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz:vvv \
-		patch-${PATCH_VERSION}.vvv.quote.gz:vvv
+PATCHFILES+=	patch-${VVV_PATCH_VERSION}.vvv.initials.gz:vvv \
+		patch-${VVV_PATCH_VERSION}.vvv.quote.gz:vvv
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.3:cd
+PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.edit_threads.9.3:cd
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 .error The WITH_MUTT_SIGNATURE_MENU is not available at the moment.
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1:cd
+PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.signatures_menu.2.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1:cd
+PATCHFILES+=	patch-${CD_PATCH_VERSION}.cd.ifdef.1:cd
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
-PATCHFILES+=	p0-patch-${PATCH_VERSION}.dw.mbox-hook.1:dw
+PATCHFILES+=	p0-patch-${DW_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
