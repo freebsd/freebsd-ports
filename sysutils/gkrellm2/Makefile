@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.1.9
+PORTVERSION=	2.1.12
 #PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
@@ -49,9 +49,8 @@ ALL_TARGET=	freebsd
 .endif
 INSTALL_TARGET=	install_netbsd
 
-MAKE_ENV+=	LOCALEDIR=${X11BASE}/share/locale \
-		INCLUDEDIR=${X11BASE}/include \
-		INSTALLDIR=${X11BASE}/bin SINSTALLDIR=${PREFIX}/sbin \
+MAKE_ENV+=	INSTALLROOT=${X11BASE} SINSTALLDIR=${PREFIX}/sbin \
+		PKGCONFIGDIR=${X11BASE}/libdata/pkgconfig \
 		MANDIR=${MAN1PREFIX}/man/man1 SMANDIR=${MANPREFIX}/man/man8
 .if defined(GKRELLM_SERVER_ONLY)
 MAKE_ENV+=	glib12=1
