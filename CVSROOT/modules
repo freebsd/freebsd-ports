@@ -1245,6 +1245,7 @@ diff-mode.el	ports/textproc/diff-mode.el
 diff3		src/gnu/usr.bin/diff3
 diffburst	src/tools/tools/diffburst
 diffconvert	ports/devel/diffconvert
+diffsplit	ports/textproc/diffsplit
 diffstat	ports/textproc/diffstat
 diffutils	ports/textproc/diffutils
 dig		src/usr.bin/dig
