@@ -1,21 +1,21 @@
 # New ports collection makefile for:	logo
-# Version required:	3.3
+# Version required:	4.6
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1998/11/28 05:39:01 asami Exp $
+# $Id: Makefile,v 1.13 1999/01/27 07:41:21 fenner Exp $
 #
 
-DISTNAME=	ucblogo-3.3
+DISTNAME=	ucblogo-4.6
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://anarres.cs.berkeley.edu/pub/ucblogo/
 MASTER_SITE_SUBDIR=	ucblogo
 
 MAINTAINER=	jmacd@FreeBSD.ORG
 
 USE_XLIB=	yes
 MAKEFILE=	makefile
-MAKE_FLAGS+=	"LIBLOC = ${PREFIX}/lib/logo"
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.mk>
