@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	math
-MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.1/
+MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.1/ \
+		http://www.gn-50uma.de/ftp/pari-2.1/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
@@ -17,12 +18,12 @@ ONLY_FOR_ARCHS=	i386
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --share-prefix=${PREFIX}/share
 
 USE_GMAKE=	yes
 MAKE_ARGS=	gp
 
-MAN1=		gp.1 gphelp.1
+MAN1=		gp.1 gphelp.1 tex2mail.1
 MLINKS=		gp.1 pari.1
 
 HAVE_EMACS!=	which emacs || echo nope
