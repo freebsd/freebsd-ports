@@ -1,0 +1,24 @@
+PRISS -- The Portable RT[S]P Internet Streaming Server
+
+This is a port of Apple Computer's open source rtsp/rtp server which
+streams live content.
+
+With the advent of free, standards based media servers, the industry
+is poised to take off. RTP/RTSP are two standards based protocols
+which allow many vendors to interoperate. Apple Computer has released
+an Open Source server based upon these protocols to support QuickTime 4
+streaming media and other RTP/RTSP clients. This server is known as
+the Darwin Streaming Server which currently runs on the MacOS X Server
+platform. PRISS is a project which is based upon the Darwin source and
+provides a Un*x-based server. 
+
+Apple's QuickTime client can use a variety of high-quality new codecs
+such as the Sorensen Video codec and the QDesign audio codec. To use these
+new codecs, you will need to use a server that supports their use such as
+Darwin or PRISS. 
+
+For more information on the RTP and RTSP internet standards:
+- RTSP: http://info.internet.isi.edu:80/in-notes/rfc/files/rfc2326.txt 
+- RTP: http://info.internet.isi.edu:80/in-notes/rfc/files/rfc1889.txt 
+
+WWW: http://www.streamingserver.org/

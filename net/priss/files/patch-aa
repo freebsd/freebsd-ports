@@ -1,0 +1,17 @@
+--- ./doit	Tue Sep  7 23:33:46 1999
++++ ./doit	Thu Aug 26 01:41:04 1999
+@@ -24,9 +24,9 @@
+ 		;;
+ 	FreeBSD.i386)
+ 		echo "Configuring for a FreeBSD platform"
+-		CPLUS=gcc
+-		CCOMP=gcc
+-		LINKER="gcc"
++		CPLUS=cc
++		CCOMP=cc
++		LINKER="cc"
+ 		THREADLIBS=-pthread
+-               MACHDEFINES="-D__FreeBSD__ -fhandle-exceptions"
++               MACHDEFINES="-fhandle-exceptions"
+ 		;;
+
