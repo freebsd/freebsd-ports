@@ -1070,6 +1070,7 @@
     SUBDIR += showgrammar
     SUBDIR += shtool
     SUBDIR += sigslot
+    SUBDIR += silc-toolkit
     SUBDIR += simgear
     SUBDIR += simulavr
     SUBDIR += skalibs
