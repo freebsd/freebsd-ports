@@ -20,6 +20,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
 
+FORBIDDEN=	Remote exploit published and no official patch available
+
 # Besides the required dependencies listed here, this port can optionally
 # make use of sysutils/lsof and security/nmap if installed.
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdchart.a:${PORTSDIR}/graphics/gdchart
