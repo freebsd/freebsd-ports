@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -28,7 +29,7 @@ MODIFY=		ssh.h sshd_config sshd.sh pathnames.h
 FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
 		ssh/Makefile ssh-add/Makefile ssh-agent/Makefile \
 		ssh-keygen/Makefile ssh-keyscan/Makefile sshd/Makefile
-ADDME+=		netdb.h auth-pam.c auth-pam.h auth2-pam.c
+ADDME+=		auth-pam.c auth-pam.h auth2-pam.c
 ADDLIB+=	strlcat.c strlcpy.c \
 		getaddrinfo.c name6.c bindresvport.c rcmd.c getnameinfo.c
 PRECIOUS=	ssh_config sshd_config \
@@ -46,6 +47,7 @@ CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 MAKE_ENV+=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 .if ${OSVERSION} < 400014
 MAKE_ENV+=	COMPAT_GETADDRINFO=yes
+ADDME+=		netdb.h
 .else
 MAKE_ENV+=	INET6FLAGS=-DINET6
 .endif

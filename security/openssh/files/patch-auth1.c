@@ -1,21 +1,21 @@
 --- auth1.c.orig	Wed Jun 19 02:27:55 2002
-+++ auth1.c	Wed Jun 26 18:05:48 2002
-@@ -27,6 +27,15 @@
++++ auth1.c	Fri Jun 28 06:45:24 2002
+@@ -26,6 +26,15 @@
+ #include "session.h"
  #include "uidswap.h"
  #include "monitor_wrap.h"
- 
++#include "canohost.h"
++
 +#ifdef HAVE_LOGIN_CAP
 +#include <login_cap.h>
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef USE_PAM
-+#include "canohost.h"
 +#include "auth-pam.h"
 +#include <security/pam_appl.h>
 +#endif /* USE_PAM */
-+
+ 
  /* import */
  extern ServerOptions options;
- 
 @@ -75,6 +84,16 @@
  	u_int ulen;
  	int type = 0;
