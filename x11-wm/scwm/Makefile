@@ -1,12 +1,12 @@
 # New ports collection makefile for:   scwm
-# Version required:    0.8a
+# Version required:    0.9
 # Date created:        26 December 1997
 # Whom:                Yukihiro Nakai <nacai@iname.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:12:14 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/03 02:47:24 taoka Exp $
 #
 
-DISTNAME=	scwm-0.8a
+DISTNAME=	scwm-0.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://huis-clos.mit.edu/pub/scwm/
 
@@ -18,17 +18,14 @@ RUN_DEPENDS=	${X11BASE}/include/X11/pixmaps/Animator.xpm:${PORTSDIR}/graphics/sc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-guile-prefix=${LOCALBASE}
-#CONFIGURE_ARGS+=	--enable-multibyte=yes
+.if defined(MULTIBYTE)
+CONFIGURE_ARGS+=	--enable-multibyte=yes
+CONFIGURE_ENV+= LIBS="-lxpg4"
+.endif
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 MAN1=		scwm.1 scwmexec.1 scwmrepl.1
-
-pre-patch:
-.if defined(I18N)
-	${CP} ${FILESDIR}/patch-ab ${PATCHDIR}
-	${CP} ${FILESDIR}/patch-ac ${PATCHDIR}
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.scwmrc/*.scwmrc \
