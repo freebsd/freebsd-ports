@@ -1,8 +1,0 @@
-bin/gfaim
-bin/imprec
-lib/gfaim/cuisine.dat
-lib/gfaim/cuisine.idx
-share/doc/gfaim/legal.txt
-share/doc/gfaim/lisezmoi.txt
-@dirrm lib/gfaim
-@dirrm share/doc/gfaim
