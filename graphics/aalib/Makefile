@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--with-x=no
 .endif
 
 post-patch:
+	@${RM} -f ${WRKSRC}/config.cache
 	@${PERL} -pi -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
 		's|<malloc.h>|<stdlib.h>|g'
