@@ -7,7 +7,7 @@
 
 PORTNAME=	zebra
 PORTVERSION=	0.93b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
@@ -21,7 +21,7 @@ MAINTAINER=	sumikawa@FreeBSD.org
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra --enable-vtysh
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
 MAN1=		vtysh.1
