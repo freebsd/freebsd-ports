@@ -1,0 +1,14 @@
+lib/giFT/libFastTrack.la
+lib/giFT/libFastTrack.so
+share/giFT/FastTrack/FastTrack.conf
+share/giFT/FastTrack/nodes
+%%PORTDOCS%%share/doc/giFT-FastTrack/AUTHORS
+%%PORTDOCS%%share/doc/giFT-FastTrack/COPYING
+%%PORTDOCS%%share/doc/giFT-FastTrack/ChangeLog
+%%PORTDOCS%%share/doc/giFT-FastTrack/INSTALL
+%%PORTDOCS%%share/doc/giFT-FastTrack/NEWS
+%%PORTDOCS%%share/doc/giFT-FastTrack/README
+%%PORTDOCS%%share/doc/giFT-FastTrack/TODO
+@dirrm lib/giFT
+@dirrm share/giFT/FastTrack
+@dirrm %%PORTDOCS%%share/doc/giFT-FastTrack
