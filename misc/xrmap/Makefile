@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/xrmap/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_XPM=	yes
