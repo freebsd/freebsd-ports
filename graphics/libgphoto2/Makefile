@@ -16,7 +16,7 @@ COMMENT=	A universal digital camera picture control tool
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		usb-0.1.7:${PORTSDIR}/devel/libusb \
-		exif.9:${PORTSDIR}/graphics/libexif
+		exif.10:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

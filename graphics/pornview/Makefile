@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p./pre/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PornView is an image viewer/manager
 
-LIB_DEPENDS=	exif.9:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf gnomehack gnomeprefix
