@@ -33,7 +33,7 @@ MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.0"
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-embedded-devel"
 MOZILLA=	${WITH_MOZILLA}
 HEADERS_SUFX=	-devel
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.4a"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
 .else
 .if ${WITH_MOZILLA}=="mozilla-embedded"
 MOZILLA=	mozilla-embedded
