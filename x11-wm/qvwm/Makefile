@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qvwm
-PORTVERSION= 	1.1.7
+PORTVERSION= 	1.1.8
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://www.qvwm.org/pub/qvwm/
 
