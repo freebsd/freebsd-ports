@@ -3,7 +3,7 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.11 1996/12/08 09:48:58 max Exp $
+# $Id: Makefile,v 1.12 1997/05/04 16:55:37 max Exp $
 #
 
 DISTNAME=	socks5-beta-0.17.2-exportable
@@ -15,7 +15,6 @@ MAINTAINER=	ambrisko@ambrisko.roble.com
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
-NO_PACKAGE=	"put an extra slug in to make sure he's dead"
 
 # here are some extra configure args you may wish to use
 # see the readme file before screwing with them
