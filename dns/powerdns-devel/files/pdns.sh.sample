@@ -1,0 +1,34 @@
+#!/bin/sh
+
+rc_file=${0##*/}
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
+        echo "${rc_file}: Cannot determine PREFIX." >&2
+        echo "Please use the complete pathname." >&2
+        exit 64
+fi
+
+pdns=${PREFIX}/sbin/pdns_server
+pdnscontrol=${PREFIX}/bin/pdns_control
+pdnsrecursor=${PREFIX}/sbin/pdns_recursor
+recursorpid=/var/run/pdns_recursor.pid
+
+# start
+if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
+ if [ -f $pdns ]; then
+  echo -n ' PowerDNS'
+  if [ -f $pdnsrecursor ]; then
+   $pdnsrecursor >/dev/null 2>&1
+  fi
+  $pdns
+ fi
+
+# stop
+elif [ "x$1" = "xstop" ]; then
+ if [ -f $pdnscontrol ]; then
+  $pdnscontrol quit
+ fi
+ if [ -r $recursorpid ]; then
+  kill `cat $recursorpid` >/dev/null
+ fi
+fi

@@ -6,7 +6,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -27,6 +27,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		DISTNAME="${DISTNAME}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
 MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/pdns.sh.sample
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -124,6 +125,10 @@ post-install:
 .for i in pdns.conf pdns_mysql.sql pdns_postgresql.sql
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
 .endfor
+.endif
+.if !exists(${STARTUP_SCRIPT})
+	${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file."
+	${INSTALL_SCRIPT} ${FILESDIR}/pdns.sh.sample ${STARTUP_SCRIPT}
 .endif
 
 .include <bsd.port.post.mk>
