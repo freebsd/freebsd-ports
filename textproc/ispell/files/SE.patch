@@ -1,0 +1,17 @@
+--- iswedish-1.2.1/Makefile.orig	Fri Dec 31 11:32:49 1999
++++ iswedish-1.2.1/Makefile	Fri Dec 31 11:33:14 1999
+@@ -1,4 +1,5 @@
+ installdir=/usr/lib/ispell
++BUILDHASH=../ispell-3.1/buildhash
+ 
+ all: svenska.hash
+ 
+@@ -7,7 +8,7 @@
+ 	install -o root -g root -m 0644 svenska.aff $(installdir)
+ 
+ svenska.hash: svenska.aff svenska.datalista
+-	buildhash svenska.datalista svenska.aff svenska.hash
++	${BUILDHASH} svenska.datalista svenska.aff svenska.hash
+ 
+ clean:
+ 	rm -f svenska.datalista.stat svenska.hash svenska.datalista.cnt *~

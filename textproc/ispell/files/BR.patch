@@ -1,0 +1,8 @@
+--- br.ispell-2.3/conjugue.old	Sun Feb 21 13:39:02 1999
++++ br.ispell-2.3/conjugue	Sat Nov  6 01:02:55 1999
+@@ -1,4 +1,4 @@
+-#!/usr/bin/gawk -f
++#!/usr/bin/awk -f
+ #
+ 
+ #

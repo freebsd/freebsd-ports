@@ -1,0 +1,26 @@
+--- francais-IREQ/Makefile.old	Fri Dec 31 10:23:00 1999
++++ francais-IREQ/Makefile	Fri Dec 31 10:27:35 1999
+@@ -13,10 +13,10 @@
+ #------------------------------------------------------------------------------
+ 
+ # Prendre soin de bien définir cette variable:
+-LIBDIR	= /depot/public/lib/ispell
++LIBDIR	= ${PREFIX}/lib
+ 
+ # Il peut être requis de changer celle-ci aussi:
+-HASH = $(LIBDIR)/buildhash
++HASH=${BUILDHASH}
+ 
+ # buildict n'est pas requis pour l'utilisation de francais-IREQ,
+ # mais si vous décidez de modifier le dictionnaire, la variable suivante
+@@ -48,8 +48,8 @@
+ 		 > $@'
+ 
+ francais.hash: francais.dico
+-	$(RM) francais.dico.cnt francais.dico.stat
+-	$(HASH) francais.dico $(AFFIXES) francais.hash
++	@rm -f francais.dico.cnt francais.dico.stat
++	@${HASH} francais.dico $(AFFIXES) francais.hash
+ 
+ install: francais.hash
+ 	install francais.hash $(LIBDIR)
