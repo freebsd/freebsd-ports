@@ -1,18 +1,19 @@
-# New ports collection makefile for:	mailutils
-# Date created:				26 May 2004
-# Whom:					Oliver Eikemeier
+# New ports collection makefile for:	libspf-alt
+# Date created:				28 February 2004
+# Whom:					Daniel Roethlisberger <daniel@roe.ch>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		libspf-alt
 PORTVERSION=		0.4.0
-CATEGORIES=		mail devel
+PORTREVISION=		1
+CATEGORIES=		mail
 MASTER_SITES=		http://www.midwestcs.com/spf/%SUBDIR%/
 MASTER_SITE_SUBDIR=	libspf-alt
 DISTNAME=		libspf_alt-${PORTVERSION}
 
-MAINTAINER=		eik@FreeBSD.org
+MAINTAINER=		daniel@roe.ch
 COMMENT=		Library that allows email systems such as Exim to check SPF records
 
 GNU_CONFIGURE=		yes
@@ -27,5 +28,6 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=		--program-transform-name=s,^spf,spf_alt,
 
 .include <bsd.port.mk>
