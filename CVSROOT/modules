@@ -5625,6 +5625,7 @@ periodic	src/usr.sbin/periodic
 perl		src/gnu/usr.bin/perl
 perl2html	ports/textproc/perl2html
 perl5		ports/lang/perl5
+perl5.8		ports/lang/perl5.8
 perldap		ports/net/perldap
 perlftlib	ports/print/perlftlib
 perlsh		ports/shells/perlsh
