@@ -1,6 +1,16 @@
 lmmon
 
-This program displays information gathered from LM78/79 chipsets
-onboard many motherboard.  Displayed values include fan speeds,
-motherboard temperature, and various voltages.  Currently, this
-is only supported in FreeBSD 4.0.
+This program displays information gathered from a motherboard
+power management controller (e.g. LM78/79).  Displayed values
+include fan speeds, motherboard temperature, and various
+voltages.  By default it cycles once per second using a curses-
+based display.
+
+Currently, the /dev/smb0 interface is only supported in FreeBSD
+4.0; however, the /dev/io interface may work with many
+motherboards in FreeBSD 3.x and some non-LM78/79 motherboards.
+
+WWW: http://www.fxp.org/~jedgar/
+
+- Chris D. Faulhaber
+jedgar@fxp.org
