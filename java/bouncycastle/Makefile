@@ -11,7 +11,7 @@ CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/
 DISTNAME=	jce-jdk13-${PORTVERSION:S/.//}
 
-MAINTAINER=	rara.rasputin@virgin.net
+MAINTAINER=	rasputin@idoru.mine.nu
 COMMENT=	Cleanroom build of Java Cryptography Extensions
 
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk13
