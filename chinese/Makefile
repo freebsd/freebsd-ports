@@ -34,6 +34,7 @@
     SUBDIR += hztty
     SUBDIR += joe
     SUBDIR += kcfonts
+    SUBDIR += kde2-i18n
     SUBDIR += libtabe
     SUBDIR += linux-gtk
     SUBDIR += linux-netscape47-communicator
