@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Thu Mar  7 00:13:23 2002
++++ Makefile.in	Thu Mar  7 00:14:30 2002
+@@ -348,14 +348,6 @@
+ ## as a workaround for a bug in tar on Ultrix 4.2.
+ install-arch-indep: mkdir info
+ 	-set ${COPYDESTS} ; \
+-	unset CDPATH; \
+-	for dir in ${COPYDIR} ; do \
+-	  if [ `(cd $$1 && /bin/pwd)` != `(cd $${dir} && /bin/pwd)` ] ; then \
+-	    rm -rf $$1 ; \
+-	  fi ; \
+-	  shift ; \
+-	done
+-	-set ${COPYDESTS} ; \
+ 	mkdir ${COPYDESTS} ; \
+ 	chmod ugo+rx ${COPYDESTS} ; \
+ 	unset CDPATH; \
