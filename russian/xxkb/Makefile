@@ -11,7 +11,7 @@ CATEGORIES=	russian ukrainian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xxkb
 
-MAINTAINER=	ports@matey.org
+MAINTAINER=	alexander.pohoyda@gmx.net
 COMMENT=	An XKB keyboard layout switcher and indicator
 
 MAN1=		xxkb.1
