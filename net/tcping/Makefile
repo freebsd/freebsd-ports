@@ -9,12 +9,14 @@ PORTNAME=	tcping
 PORTVERSION=	1.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://stud.fh-heilbronn.de/~kirchner/tcping/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dryice@liu.com.cn
-COMMENT=	Do a TCP connect to the given ip/port combination
+COMMENT=	Do a TCP connect to the given IP/port combination
 
-BROKEN=		"Checksum mismatch"
-
+USE_GPG?=	yes
+SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 DOCS=		README
 
 do-build:
