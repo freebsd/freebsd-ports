@@ -47,7 +47,7 @@ PLIST_SUB+=	VPOPMAILFLAG=""
 
 .if !defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	\
-		--without-authmysql \
+		--without-authmysql
 PLIST_SUB+=	MYSQLFLAG="@comment "
 .else
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
