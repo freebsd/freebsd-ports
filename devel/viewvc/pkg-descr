@@ -5,7 +5,7 @@ selections of files based on tags or branches. In addition,
 ViewCVS has "annotation" or "blame" support, and the
 beginnings of Bonsai-like query facilities. 
 
-WWW: http://www.lyra.org/viewcvs/ 
+WWW: http://viewcvs.sourceforge.net/
 Author: Greg Stein <gstein@lyra.org>
 
 - Will <andrews@technologist.com>

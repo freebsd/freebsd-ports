@@ -16,10 +16,14 @@ share/viewcvs/lib/cvsdbapi.py
 share/viewcvs/lib/cvsdbapi.pyc
 share/viewcvs/lib/database.py
 share/viewcvs/lib/database.pyc
+share/viewcvs/lib/dbi.py
+share/viewcvs/lib/dbi.pyc
 share/viewcvs/lib/popen.py
 share/viewcvs/lib/popen.pyc
 share/viewcvs/lib/py2html.py
 share/viewcvs/lib/py2html.pyc
+share/viewcvs/lib/query.py
+share/viewcvs/lib/query.pyc
 share/viewcvs/lib/rlog.py
 share/viewcvs/lib/rlog.pyc
 share/viewcvs/loginfo-handler

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	viewcvs
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.lyra.org/viewcvs/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 NO_BUILD=	yes
 
 pre-install:
-	${PERL} -pi -e "s:/usr/local/viewcvs:${PREFIX}/share/viewcvs:g" ${WRKSRC}/viewcvs-install
+	${PERL} -pi -e "s:/usr/local/viewcvs-dev:${PREFIX}/share/viewcvs:g" ${WRKSRC}/viewcvs-install
 
 do-install:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/python ${WRKSRC}/viewcvs-install)
