@@ -4111,6 +4111,7 @@ kisomandel	ports/graphics/kisomandel
 kix-kmod	ports/graphics/kix-kmod
 kkbswitch	ports/sysutils/kkbswitch
 kkeyled		ports/sysutils/kkeyled
+klassmodeler	ports/devel/klassmodeler
 klh10		ports/emulators/klh10
 klogoturtle	ports/lang/klogoturtle
 klondike	ports/games/klondike
