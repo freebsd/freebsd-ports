@@ -1,0 +1,62 @@
+bin/gst-thumbnail
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
+etc/gconf/schemas/gst-thumbnail.schemas
+lib/bonobo/libnautilus-audio-properties-view.so
+libdata/bonobo/servers/Nautilus_View_audio.server
+libdata/bonobo/servers/Nautilus_View_audio_properties.server
+libexec/nautilus-audio-view
+share/gnome/gnome-2.0/ui/nautilus-audio-view-ui.xml
+share/gnome/nautilus/glade/audio-properties-view.glade
+share/gnome/pixmaps/nautilus-media/next.png
+share/gnome/pixmaps/nautilus-media/pause.png
+share/gnome/pixmaps/nautilus-media/play.png
+share/gnome/pixmaps/nautilus-media/prev.png
+share/gnome/pixmaps/nautilus-media/scan.png
+share/gnome/pixmaps/nautilus-media/stop.png
+share/locale/am/LC_MESSAGES/nautilus-media.mo
+share/locale/bg/LC_MESSAGES/nautilus-media.mo
+share/locale/ca/LC_MESSAGES/nautilus-media.mo
+share/locale/cs/LC_MESSAGES/nautilus-media.mo
+share/locale/de/LC_MESSAGES/nautilus-media.mo
+share/locale/da/LC_MESSAGES/nautilus-media.mo
+share/locale/el/LC_MESSAGES/nautilus-media.mo
+share/locale/es/LC_MESSAGES/nautilus-media.mo
+share/locale/et/LC_MESSAGES/nautilus-media.mo
+share/locale/fi/LC_MESSAGES/nautilus-media.mo
+share/locale/fr/LC_MESSAGES/nautilus-media.mo
+share/locale/he/LC_MESSAGES/nautilus-media.mo
+share/locale/hu/LC_MESSAGES/nautilus-media.mo
+share/locale/it/LC_MESSAGES/nautilus-media.mo
+share/locale/ko/LC_MESSAGES/nautilus-media.mo
+share/locale/lv/LC_MESSAGES/nautilus-media.mo
+share/locale/mk/LC_MESSAGES/nautilus-media.mo
+share/locale/mn/LC_MESSAGES/nautilus-media.mo
+share/locale/ms/LC_MESSAGES/nautilus-media.mo
+share/locale/nl/LC_MESSAGES/nautilus-media.mo
+share/locale/no/LC_MESSAGES/nautilus-media.mo
+share/locale/pl/LC_MESSAGES/nautilus-media.mo
+share/locale/pt/LC_MESSAGES/nautilus-media.mo
+share/locale/pt_BR/LC_MESSAGES/nautilus-media.mo
+share/locale/ro/LC_MESSAGES/nautilus-media.mo
+share/locale/ru/LC_MESSAGES/nautilus-media.mo
+share/locale/sk/LC_MESSAGES/nautilus-media.mo
+share/locale/sl/LC_MESSAGES/nautilus-media.mo
+share/locale/sq/LC_MESSAGES/nautilus-media.mo
+share/locale/sv/LC_MESSAGES/nautilus-media.mo
+share/locale/tr/LC_MESSAGES/nautilus-media.mo
+share/locale/uk/LC_MESSAGES/nautilus-media.mo
+share/locale/vi/LC_MESSAGES/nautilus-media.mo
+share/locale/zh_CN/LC_MESSAGES/nautilus-media.mo
+share/locale/zh_TW/LC_MESSAGES/nautilus-media.mo
+@dirrm share/gnome/pixmaps/nautilus-media
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg
