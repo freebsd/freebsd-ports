@@ -24,7 +24,7 @@ APXS?=		${LOCALBASE}/sbin/apxs
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.c
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.c
 
 do-build:
 	@(cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c)
