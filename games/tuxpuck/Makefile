@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	tuxpuck
-PORTVERSION=	0.7.116
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/tuxpuck/
 
@@ -22,6 +21,7 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+ALL_TARGET=	tuxpuck
 
 MANCOMPRESSED=	yes
 MAN6=	tuxpuck.6
