@@ -1,0 +1,10 @@
+Orion is a J2EE (Java 2 Enterprise Edition) compliant Application Server. It
+supports all major standards including HTTP/1.1, JSP 1.1, EJB 1.1, Servlet
+2.2, JNDI 1.2 and others. It also offers clustering support and some unique
+auto-deployment features.
+
+This version is only for development use or for non-commercial
+use. You need to purchase a license from http://www.orionserver.com/
+to be able to use this server commercially.
+
+	WWW: http://www.orionserver.com/
