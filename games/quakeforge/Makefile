@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	QuakeForge
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:qf/} \
 		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw
@@ -41,11 +40,20 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
-		--with-sharepath=${PREFIX}/share/quakeforge
+		--with-sharepath=${PREFIX}/share/quakeforge \
+		--disable-optimize
 
 CONFIGURE_TARGET=
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
+
+.if defined(WITH_OPTIMIZED_CFLAGS) && !defined(WITHOUT_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -funroll-loops -fomit-frame-pointer -fno-common \
+		-fexpensive-optimizations -fstrict-aliasing
+.if ${ARCH} != "alpha"
+CFLAGS+=	-ffast-math
+.endif
+.endif
 
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
 WITH_SDL=	yes
@@ -147,6 +155,12 @@ pre-everything::
 .if !defined(NO_SKINS)
 	@${ECHO_MSG} "Define NO_SKINS to stop from installing skins"
 .endif
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to opimize for speed"
+.endif
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to opimize for speed"
+.endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "Define WITH_SVGALIB to use svgalib"
 .endif
@@ -170,9 +184,7 @@ pre-everything::
 .endif
 
 post-patch:
-.if (${ARCH} == "alpha")
-	@${REINPLACE_CMD} -e 's/-ffast-math//' ${WRKSRC}/configure
-.endif
+	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 do-install:
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
@@ -203,6 +215,6 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE} 
+	@${SED} -e 's#$${PREFIX}#${PREFIX}#g' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
