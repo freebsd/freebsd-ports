@@ -20,6 +20,7 @@ DISTFILES=	devils-dict-pre.tar.gz \
 		dict-vera_1.8.tar.gz \
 		dict-web1913-1.4-pre.tar.gz \
 		dict-wn_1.7.tar.gz \
+		dict-world02-20030215.tar.gz \
 		elements-20001107-pre.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -34,5 +35,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/dict
 	@${INSTALL_DATA} ${WRKDIR}/*.index ${PREFIX}/lib/dict
 	@${INSTALL_DATA} ${WRKDIR}/*.dict* ${PREFIX}/lib/dict
+	cd ${WRKDIR}/world02-2003-02-15/ && dictzip world02.dict
+	@${INSTALL_DATA} ${WRKDIR}/world02-2003-02-15/*.index ${PREFIX}/lib/dict
+	@${INSTALL_DATA} ${WRKDIR}/world02-2003-02-15/*.dict* ${PREFIX}/lib/dict
 
 .include <bsd.port.mk>

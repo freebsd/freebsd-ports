@@ -20,6 +20,8 @@ lib/dict/web1913.dict.dz
 lib/dict/web1913.index
 lib/dict/wn.dict.dz
 lib/dict/wn.index
+lib/dict/world02.dict.dz
+lib/dict/world02.index
 lib/dict/world95.dict.dz
 lib/dict/world95.index
 @dirrm lib/dict
