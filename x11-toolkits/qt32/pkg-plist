@@ -10,12 +10,9 @@ bin/moc
 bin/msg2qm
 bin/qembed
 bin/qm2ts
-bin/qmake
 bin/qtconfig
 bin/qvfb
 bin/uic
-etc/settings/.qt_plugins_3.2rc.lock
-etc/settings/qt_plugins_3.2rc
 include/private/qapplication_p.h
 include/private/qcolor_p.h
 include/private/qcom_p.h
@@ -414,7 +411,7 @@ lib/libqt-mt.prl
 lib/libqt-mt.so
 lib/libqt-mt.so.3
 lib/libqt-mt.so.3.2
-lib/libqt-mt.so.3.2.1
+lib/libqt-mt.so.3.2.3
 lib/libqui.prl
 lib/libqui.so
 lib/libqui.so.1
@@ -629,6 +626,7 @@ share/doc/qt/html/images.html
 share/doc/qt/html/index
 share/doc/qt/html/index.html
 share/doc/qt/html/inputdialogs.png
+share/doc/qt/html/install-mac.html
 share/doc/qt/html/install-win.html
 share/doc/qt/html/install-x11.html
 share/doc/qt/html/installation.html
@@ -656,7 +654,6 @@ share/doc/qt/html/listviews-example.html
 share/doc/qt/html/logo32.png
 share/doc/qt/html/mac-differences.html
 share/doc/qt/html/mail-example.html
-share/doc/qt/html/mailinglists.html
 share/doc/qt/html/mainclasses.html
 share/doc/qt/html/mainwindow-w.png
 share/doc/qt/html/makeqpf.html
@@ -1026,6 +1023,8 @@ share/doc/qt/html/qdatetime.html
 share/doc/qt/html/qdatetimeedit-h.html
 share/doc/qt/html/qdatetimeedit-members.html
 share/doc/qt/html/qdatetimeedit.html
+share/doc/qt/html/qdatetimeeditbase-members.html
+share/doc/qt/html/qdatetimeeditbase.html
 share/doc/qt/html/qdeepcopy-h.html
 share/doc/qt/html/qdeepcopy-members.html
 share/doc/qt/html/qdeepcopy.html
@@ -2128,7 +2127,6 @@ share/doc/qt/html/runion.png
 share/doc/qt/html/rxor.png
 share/doc/qt/html/scaling.png
 share/doc/qt/html/scribble-example.html
-share/doc/qt/html/scripts.html
 share/doc/qt/html/scrollview-example.html
 share/doc/qt/html/search.png
 share/doc/qt/html/session.html
@@ -2340,120 +2338,6 @@ share/doc/qt/html/xml-sax-walkthrough.html
 share/doc/qt/html/xml-tools.html
 share/doc/qt/html/xml.html
 share/doc/qt/html/y2k.html
-share/qt/mkspecs/aix-g++/qmake.conf
-share/qt/mkspecs/aix-g++/qplatformdefs.h
-share/qt/mkspecs/aix-xlc-64/qmake.conf
-share/qt/mkspecs/aix-xlc-64/qplatformdefs.h
-share/qt/mkspecs/aix-xlc/qmake.conf
-share/qt/mkspecs/aix-xlc/qplatformdefs.h
-share/qt/mkspecs/bsdi-g++/qmake.conf
-share/qt/mkspecs/bsdi-g++/qplatformdefs.h
-share/qt/mkspecs/cygwin-g++/qmake.conf
-share/qt/mkspecs/cygwin-g++/qplatformdefs.h
-share/qt/mkspecs/darwin-g++/qmake.conf
-share/qt/mkspecs/darwin-g++/qplatformdefs.h
-share/qt/mkspecs/default/qmake.conf
-share/qt/mkspecs/default/qplatformdefs.h
-share/qt/mkspecs/dgux-g++/qmake.conf
-share/qt/mkspecs/dgux-g++/qplatformdefs.h
-share/qt/mkspecs/freebsd-g++/qmake.conf
-share/qt/mkspecs/freebsd-g++/qplatformdefs.h
-share/qt/mkspecs/hpux-acc-64/qmake.conf
-share/qt/mkspecs/hpux-acc-64/qplatformdefs.h
-share/qt/mkspecs/hpux-acc-o64/qmake.conf
-share/qt/mkspecs/hpux-acc-o64/qplatformdefs.h
-share/qt/mkspecs/hpux-acc/qmake.conf
-share/qt/mkspecs/hpux-acc/qplatformdefs.h
-share/qt/mkspecs/hpux-cc/qmake.conf
-share/qt/mkspecs/hpux-cc/qplatformdefs.h
-share/qt/mkspecs/hpux-g++-64/qmake.conf
-share/qt/mkspecs/hpux-g++-64/qplatformdefs.h
-share/qt/mkspecs/hpux-g++/qmake.conf
-share/qt/mkspecs/hpux-g++/qplatformdefs.h
-share/qt/mkspecs/hpuxi-acc-32/qmake.conf
-share/qt/mkspecs/hpuxi-acc-32/qplatformdefs.h
-share/qt/mkspecs/hpuxi-acc-64/qmake.conf
-share/qt/mkspecs/hpuxi-acc-64/qplatformdefs.h
-share/qt/mkspecs/hurd-g++/qmake.conf
-share/qt/mkspecs/hurd-g++/qplatformdefs.h
-share/qt/mkspecs/irix-cc-64/qmake.conf
-share/qt/mkspecs/irix-cc-64/qplatformdefs.h
-share/qt/mkspecs/irix-cc-o32/qmake.conf
-share/qt/mkspecs/irix-cc-o32/qplatformdefs.h
-share/qt/mkspecs/irix-cc/qmake.conf
-share/qt/mkspecs/irix-cc/qplatformdefs.h
-share/qt/mkspecs/irix-g++/qmake.conf
-share/qt/mkspecs/irix-g++/qplatformdefs.h
-share/qt/mkspecs/linux-cxx/qmake.conf
-share/qt/mkspecs/linux-cxx/qplatformdefs.h
-share/qt/mkspecs/linux-g++/qmake.conf
-share/qt/mkspecs/linux-g++/qplatformdefs.h
-share/qt/mkspecs/linux-icc/qmake.conf
-share/qt/mkspecs/linux-icc/qplatformdefs.h
-share/qt/mkspecs/linux-kcc/qmake.conf
-share/qt/mkspecs/linux-kcc/qplatformdefs.h
-share/qt/mkspecs/linux-kylix/qmake.conf
-share/qt/mkspecs/linux-kylix/qplatformdefs.h
-share/qt/mkspecs/linux-pgcc/qmake.conf
-share/qt/mkspecs/linux-pgcc/qplatformdefs.h
-share/qt/mkspecs/lynxos-g++/qmake.conf
-share/qt/mkspecs/lynxos-g++/qplatformdefs.h
-share/qt/mkspecs/macx-g++/Info.plist.app
-share/qt/mkspecs/macx-g++/qmake.conf
-share/qt/mkspecs/macx-g++/qplatformdefs.h
-share/qt/mkspecs/macx-mwerks/mwerkstmpl.xml
-share/qt/mkspecs/macx-mwerks/qmake.conf
-share/qt/mkspecs/macx-mwerks/qplatformdefs.h
-share/qt/mkspecs/macx-pbuilder/Info.plist.app
-share/qt/mkspecs/macx-pbuilder/qmake.conf
-share/qt/mkspecs/macx-pbuilder/qplatformdefs.h
-share/qt/mkspecs/netbsd-g++/qmake.conf
-share/qt/mkspecs/netbsd-g++/qplatformdefs.h
-share/qt/mkspecs/openbsd-g++/qmake.conf
-share/qt/mkspecs/openbsd-g++/qplatformdefs.h
-share/qt/mkspecs/qnx-g++/qmake.conf
-share/qt/mkspecs/qnx-g++/qplatformdefs.h
-share/qt/mkspecs/reliant-cds-64/qmake.conf
-share/qt/mkspecs/reliant-cds-64/qplatformdefs.h
-share/qt/mkspecs/reliant-cds/qmake.conf
-share/qt/mkspecs/reliant-cds/qplatformdefs.h
-share/qt/mkspecs/sco-cc/qmake.conf
-share/qt/mkspecs/sco-cc/qplatformdefs.h
-share/qt/mkspecs/sco-g++/qmake.conf
-share/qt/mkspecs/sco-g++/qplatformdefs.h
-share/qt/mkspecs/solaris-cc-64/qmake.conf
-share/qt/mkspecs/solaris-cc-64/qplatformdefs.h
-share/qt/mkspecs/solaris-cc/qmake.conf
-share/qt/mkspecs/solaris-cc/qplatformdefs.h
-share/qt/mkspecs/solaris-g++-64/qmake.conf
-share/qt/mkspecs/solaris-g++-64/qplatformdefs.h
-share/qt/mkspecs/solaris-g++/qmake.conf
-share/qt/mkspecs/solaris-g++/qplatformdefs.h
-share/qt/mkspecs/tru64-cxx/qmake.conf
-share/qt/mkspecs/tru64-cxx/qplatformdefs.h
-share/qt/mkspecs/tru64-g++/qmake.conf
-share/qt/mkspecs/tru64-g++/qplatformdefs.h
-share/qt/mkspecs/unixware-cc/qmake.conf
-share/qt/mkspecs/unixware-cc/qplatformdefs.h
-share/qt/mkspecs/unixware-g++/qmake.conf
-share/qt/mkspecs/unixware-g++/qplatformdefs.h
-share/qt/mkspecs/win32-borland/qmake.conf
-share/qt/mkspecs/win32-borland/qplatformdefs.h
-share/qt/mkspecs/win32-g++/qmake.conf
-share/qt/mkspecs/win32-g++/qplatformdefs.h
-share/qt/mkspecs/win32-icc/qmake.conf
-share/qt/mkspecs/win32-icc/qplatformdefs.h
-share/qt/mkspecs/win32-icc/win32app.dsp
-share/qt/mkspecs/win32-icc/win32dll.dsp
-share/qt/mkspecs/win32-icc/win32lib.dsp
-share/qt/mkspecs/win32-msvc.net/qmake.conf
-share/qt/mkspecs/win32-msvc.net/qplatformdefs.h
-share/qt/mkspecs/win32-msvc/qmake.conf
-share/qt/mkspecs/win32-msvc/qplatformdefs.h
-share/qt/mkspecs/win32-msvc/win32app.dsp
-share/qt/mkspecs/win32-msvc/win32dll.dsp
-share/qt/mkspecs/win32-msvc/win32lib.dsp
-share/qt/mkspecs/win32-watcom/qmake.conf
 share/qt/phrasebooks/danish.qph
 share/qt/phrasebooks/dutch.qph
 share/qt/phrasebooks/finnish.qph
@@ -2477,65 +2361,10 @@ translations/qt_ru.qm
 @dirrm translations
 @dirrm share/qt/templates
 @dirrm share/qt/phrasebooks
-@dirrm share/qt/mkspecs/win32-watcom
-@dirrm share/qt/mkspecs/win32-msvc.net
-@dirrm share/qt/mkspecs/win32-msvc
-@dirrm share/qt/mkspecs/win32-icc
-@dirrm share/qt/mkspecs/win32-g++
-@dirrm share/qt/mkspecs/win32-borland
-@dirrm share/qt/mkspecs/unixware-g++
-@dirrm share/qt/mkspecs/unixware-cc
-@dirrm share/qt/mkspecs/tru64-g++
-@dirrm share/qt/mkspecs/tru64-cxx
-@dirrm share/qt/mkspecs/solaris-g++-64
-@dirrm share/qt/mkspecs/solaris-g++
-@dirrm share/qt/mkspecs/solaris-cc-64
-@dirrm share/qt/mkspecs/solaris-cc
-@dirrm share/qt/mkspecs/sco-g++
-@dirrm share/qt/mkspecs/sco-cc
-@dirrm share/qt/mkspecs/reliant-cds-64
-@dirrm share/qt/mkspecs/reliant-cds
-@dirrm share/qt/mkspecs/qnx-g++
-@dirrm share/qt/mkspecs/openbsd-g++
-@dirrm share/qt/mkspecs/netbsd-g++
-@dirrm share/qt/mkspecs/macx-pbuilder
-@dirrm share/qt/mkspecs/macx-mwerks
-@dirrm share/qt/mkspecs/macx-g++
-@dirrm share/qt/mkspecs/lynxos-g++
-@dirrm share/qt/mkspecs/linux-pgcc
-@dirrm share/qt/mkspecs/linux-kylix
-@dirrm share/qt/mkspecs/linux-kcc
-@dirrm share/qt/mkspecs/linux-icc
-@dirrm share/qt/mkspecs/linux-g++
-@dirrm share/qt/mkspecs/linux-cxx
-@dirrm share/qt/mkspecs/irix-g++
-@dirrm share/qt/mkspecs/irix-cc-o32
-@dirrm share/qt/mkspecs/irix-cc-64
-@dirrm share/qt/mkspecs/irix-cc
-@dirrm share/qt/mkspecs/hurd-g++
-@dirrm share/qt/mkspecs/hpuxi-acc-64
-@dirrm share/qt/mkspecs/hpuxi-acc-32
-@dirrm share/qt/mkspecs/hpux-g++-64
-@dirrm share/qt/mkspecs/hpux-g++
-@dirrm share/qt/mkspecs/hpux-cc
-@dirrm share/qt/mkspecs/hpux-acc-o64
-@dirrm share/qt/mkspecs/hpux-acc-64
-@dirrm share/qt/mkspecs/hpux-acc
-@dirrm share/qt/mkspecs/freebsd-g++
-@dirrm share/qt/mkspecs/dgux-g++
-@dirrm share/qt/mkspecs/default
-@dirrm share/qt/mkspecs/darwin-g++
-@dirrm share/qt/mkspecs/cygwin-g++
-@dirrm share/qt/mkspecs/bsdi-g++
-@dirrm share/qt/mkspecs/aix-xlc-64
-@dirrm share/qt/mkspecs/aix-xlc
-@dirrm share/qt/mkspecs/aix-g++
-@dirrm share/qt/mkspecs
 @dirrm share/qt
 @dirrm share/doc/qt/html
 @dirrm share/doc/qt
 @dirrm lib/plugins/designer
 @dirrm lib/plugins
-@dirrm lib/pkgconfig
+@unexec rmdir %D/lib/pkgconfig
 @dirrm include/private
-@dirrm etc/settings
