@@ -1,0 +1,8 @@
+This module provides a few convenience methods for testing
+exception based code. It is built with Test::Builder and
+plays happily with Test::Simple, Test::More and friends.
+
+If you are not familiar with Test::Simple or Test::More
+now would be the time to go take a look.
+
+WWW: http://search.cpan.org/dist/Test-Exception/

@@ -617,6 +617,7 @@
     SUBDIR += p5-Term-Screen
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Test-Builder-Tester
+    SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Harness
     SUBDIR += p5-Test-Inline
     SUBDIR += p5-Test-Simple

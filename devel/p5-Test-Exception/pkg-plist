@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Test/Exception/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Test/Exception.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Test/Exception
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Test 2>/dev/null || true
