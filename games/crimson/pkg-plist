@@ -1,7 +1,15 @@
 bin/crimson
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/Uprising.lev
+share/crimson/sound/ask.wav
+share/crimson/sound/clicked.wav
+share/crimson/sound/confirm.wav
+share/crimson/sound/error.wav
+share/crimson/sound/menu.wav
+share/crimson/sound/repair.wav
+share/crimson/sound/select.wav
 share/crimson/cf.dat
 share/crimson/default.set
 @dirrm share/crimson/levels
+@dirrm share/crimson/sound
 @dirrm share/crimson
