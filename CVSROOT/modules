@@ -1883,6 +1883,7 @@ gnu_pr		src/gnu/usr.bin/pr
 gnu_usr.bin	src/gnu/usr.bin
 gnu_usr.sbin	src/gnu/usr.sbin
 gnuboy		ports/emulators/gnuboy
+gnucap		ports/cad/gnucap
 gnucash		ports/deskutils/gnucash
 gnuchess	ports/games/gnuchess
 gnugadu		ports/net/gnugadu
