@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sash
-PORTVERSION=	3.4
+PORTVERSION=	3.7
 CATEGORIES=	shells
-MASTER_SITES=	http://www.pcug.org.au/~dbell/programs/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	patrick
+MASTER_SITES=	http://www.canb.auug.org.au/%SUBDIR%/
+MASTER_SITE_SUBDIR=	~dbell/programs
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	A Stand-Alone shell combining many common utilities
@@ -19,7 +18,7 @@ MAN1=		sash.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sash ${PREFIX}/bin/sash
-	${INSTALL_MAN} ${WRKSRC}/sash.1 ${PREFIX}/man/man1/sash.1
+	${INSTALL_MAN} ${WRKSRC}/sash.1 ${MAN1PREFIX}/man/man1/sash.1
 	@${ECHO_MSG} "------------------"
 	@${ECHO_MSG} "Installing into ${PREFIX}/bin"
 	@${ECHO_MSG} "If you want this installed elsewhere, "
