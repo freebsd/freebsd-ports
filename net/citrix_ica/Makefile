@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	6.0.908
+PORTVERSION=	6.20.973
 CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	linuxx86
 
-MAINTAINER=	mb@imp.ch
+MAINTAINER=	mbr@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
@@ -33,8 +33,24 @@ IGNORE='The distribution file for this port may not be automatically fetched due
 .endif
 
 do-install:
-	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/response \
-		> ${WRKSRC}/response
+	@if (test -d "${CDIR}") ; \
+	then \
+		${ECHO} "-----------------------------------------------------------" ; \
+		${ECHO} "" ; \
+		${ECHO} "A ${CDIR} installation does already exist." ; \
+		${ECHO} "Please move it away or delete the old port" ; \
+		${ECHO} "" ; \
+		${ECHO} "-----------------------------------------------------------" ; \
+		${FALSE} ; \
+	fi
+	@if (test -d "/usr/lib/netscape"\
+	    || test -d "/usr/local/netscape"\
+	    || test -d "/usr/local/lib/netscape") ; \
+	then \
+		${ECHO} -e "1\n${CDIR}\ny\ny\ny\n3" > ${WRKSRC}/response ; \
+	else \
+		${ECHO} -e "1\n${CDIR}\ny\ny\ny\ny\n3" > ${WRKSRC}/response ; \
+	fi
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfcmgr \
 		> ${WRKSRC}/wfcmgr.x
 	${SED} s%DESTINATION%${CDIR}% < ${FILESDIR}/wfica \
