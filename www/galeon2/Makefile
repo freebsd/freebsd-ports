@@ -41,6 +41,14 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		galeon.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+# Galeon does not build correctly in -CURRENT if -Werror is passed
+# to the compiler.
+CONFIGURE_ARGS+=	--disable-werror
+.endif
+
 post-extract:
 .if !defined(WITH_FULL_MOZILLA)
 	@${ECHO_MSG}
@@ -69,4 +77,4 @@ post-configure:
 pre-install:
 	@-${X11BASE}/bin/gconftool --shutdown
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
