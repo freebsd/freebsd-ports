@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTVERSION=	1.0.13
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -25,11 +24,11 @@ LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
 
 CONFLICTS=	gnutls-devel-*
 
-#USE_GPG?=	yes
+USE_GPG?=	yes
 SIG_SUFFIX=	.sig.asc
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
