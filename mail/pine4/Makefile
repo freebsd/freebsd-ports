@@ -1,9 +1,10 @@
 # New ports collection makefile for:	pine
+# http://www.washington.edu/pine/
 # Version required:	3.95
 # Date created:		03 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.13 1996/11/10 21:32:21 obrien Exp $
+# $Id: Makefile,v 1.14 1996/11/17 07:42:50 obrien Exp $
 #
 
 DISTNAME=	pine3.95
