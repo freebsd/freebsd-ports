@@ -6,6 +6,7 @@
     SUBDIR += SETIsupport
     SUBDIR += accrete
     SUBDIR += celestia
+    SUBDIR += cfitsio
     SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += fooseti
