@@ -1,15 +1,15 @@
---- Makefile.PL.orig	Sat Feb 12 06:18:23 2000
-+++ Makefile.PL	Sun Mar 19 13:19:43 2000
-@@ -24,7 +24,7 @@
+--- Makefile.PL.orig	Mon Nov 13 10:14:28 2000
++++ Makefile.PL	Tue Dec 19 12:09:13 2000
+@@ -26,7 +26,7 @@
  %neededmodules =
      ( 
        'mod_perl.c' => { name	    => 'perl_module', 
--			path	    => ['$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so'],
-+			path	    => ['/usr/local/libexec/apache/libperl.so', '$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so'],
- 			win32path   => ['$EPBINDIR/modules/apachemoduleperl.dll'],
- 			win32path   => ['$mpdll'],
+-			path	    => ['$apache_src/modules/perl/libperl.so', '$EPBINDIR/modules/libperl.so', '$apache_src/mod_perl.so'],
++			path	    => ['/usr/local/libexec/apache/libperl.so', '$EPBINDIR/modules/libperl.so', '$apache_src/mod_perl.so'],
+ 			win32path   => ['$mpdll', '$mpdll/apachemoduleperl.dll', '$EPBINDIR/modules/apachemoduleperl.dll'],
  			file	    => 'libperl.so',
-@@ -385,18 +385,7 @@
+ 			win32file   => 'apachemoduleperl.dll',
+@@ -468,23 +468,7 @@
  
      #### look in which subdir the include files resides ####
      
@@ -25,7 +25,12 @@
 -         {
 -         $inc_dir = "$apache_src/include" ;
 -         }
-+    $inc_dir = "/usr/local/include/apache";
-         
+-    elsif (-e "$ENV{APACHE_HDR}/httpd.h")
+-         {
+-         $inc_dir = "$ENV{APACHE_HDR}" ;
+-         }
+-        
++	$inc_dir = "/usr/local/include/apache";
  
      if ($win32)
+ 	{ 
