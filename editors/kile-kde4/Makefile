@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,5 +26,6 @@ USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| syntax||g' ${WRKSRC}/kile/Makefile.in
 
 .include <bsd.port.mk>

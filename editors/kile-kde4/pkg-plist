@@ -1,7 +1,7 @@
 bin/kile
 share/applications/kde/kile.desktop
-share/apps/katepart/syntax/bibtex.xml
-share/apps/katepart/syntax/latex.xml
+share/apps/kconf_update/kile.upd
+share/apps/kconf_update/kile1.6_upd.pl
 share/apps/kile/complete/abbreviation/example.cwl
 share/apps/kile/complete/dictionary/example.cwl
 share/apps/kile/complete/tex/Common.cwl
@@ -630,6 +630,9 @@ share/icons/hicolor/22x22/apps/kile.png
 share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
+share/mimelnk/text/x-kilepr.desktop
+@unexec rmdir %D/share/mimelnk/text 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
@@ -680,8 +683,7 @@ share/icons/hicolor/64x64/apps/kile.png
 @dirrm share/apps/kile/complete/abbreviation
 @dirrm share/apps/kile/complete
 @dirrm share/apps/kile
-@unexec rmdir %D/share/apps/katepart/syntax 2>/dev/null || true
-@unexec rmdir %D/share/apps/katepart 2>/dev/null || true
+@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applications/kde 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
