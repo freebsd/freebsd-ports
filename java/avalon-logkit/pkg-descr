@@ -1,0 +1,22 @@
+LogKit is a logging toolkit designed for secure performance oriented logging in
+applications.
+
+The LogKit provides the following features:
+  - Decouples LogEvent generation from LogEvent handling.
+  - Is simple to use and simple to configure.
+  - Designed with security in mind.
+  - Allow users fine control of logging based on priority and/or category.
+  - Has hierarchical logging namespace to enable inheritance of LogTargets and
+    Priorities.
+  - Lightweight.
+  - Designed to be integrated into existing products.
+  - Performance oriented.
+  - Enables users to plug in filters to filter out or modify LogEvents before
+    they are written out.
+  - Allow users to specify the serialization format of LogEvents via
+    Formatters.
+  - Comes with a number of existing LogTargets to ease integration.
+  - The LogKit has existed for a number years and been used in a number of
+    different environments which demonstrates it's reliability and stability.
+
+WWW: http://avalon.apache.org/logkit/index.html
