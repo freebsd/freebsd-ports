@@ -1,38 +1,41 @@
 --- src/msql/table.c	Fri Feb  7 10:06:42 1997
 +++ src/msql/table.c	Fri Feb  7 10:16:35 1997
-@@ -100,7 +100,7 @@
+@@ -100,8 +100,7 @@
  {
  	char	path[MAXPATHLEN];
  
--	(void)sprintf(path,"%s/msqldb/%s/%s.dat",msqlHomeDir,db,table);
-+	(void)sprintf(path,"/var/db/msqldb/%s/%s.dat",db,table);
+-	(void)snprintf(path, MAXPATHLEN, "%s/msqldb/%s/%s.dat",msqlHomeDir,db,
+-		table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.dat",db,table);
  #ifdef OS2
-         return(_sopen(path,O_RDWR | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE));
+         return(_sopen(path, MAXPATHLEN, O_RDWR | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE));
  #else
-@@ -115,7 +115,7 @@
+@@ -115,8 +115,7 @@
  {
  	char	path[MAXPATHLEN];
  
--	(void)sprintf(path,"%s/msqldb/%s/%s.ofl",msqlHomeDir,db,table);
-+	(void)sprintf(path,"/var/db/msqldb/%s/%s.ofl",db,table);
+-	(void)snprintf(path, MAXPATHLEN,"%s/msqldb/%s/%s.ofl",msqlHomeDir,db,
+-		table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.ofl",db,table);
  #ifdef OS2
-         return(_sopen(path,O_RDWR | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE));
+         return(_sopen(path, MAXPATHLEN, O_RDWR | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE));
  #else
-@@ -300,7 +300,7 @@
+@@ -300,8 +300,7 @@
  	static	char buf[MAX_FIELDS * sizeof(field_t)];
  
  	msqlTrace(TRACE_IN,"readTableDef()");
--	(void)sprintf(path,"%s/msqldb/%s/%s.def",msqlHomeDir,db,table);
-+	(void)sprintf(path,"/var/db/msqldb/%s/%s.def",db,table);
+-	(void)snprintf(path, MAXPATHLEN, "%s/msqldb/%s/%s.def",msqlHomeDir,
+-		db,table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.def",db,table);
  #ifdef OS2
-         fd = _sopen(path, O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
+         fd = _sopen(path, MAXPATHLEN,  O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
  #else
 @@ -367,7 +367,7 @@
  	DIR	*dirp;
  	char	path[MAXPATHLEN];
  
--	(void)sprintf(path,"%s/msqldb/.tmp",msqlHomeDir);
-+	(void)sprintf(path,"/var/db/msqldb/.tmp");
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/.tmp",msqlHomeDir);
++	(void)strcpy(path, "/var/db/msqldb/.tmp");
  	dirp = opendir(path);
  	if (!dirp)
  	{
@@ -40,26 +43,29 @@
  			cur = readdir(dirp);
  			continue;
  		}
--		(void)sprintf(path,"%s/msqldb/.tmp/%s",msqlHomeDir,
-+		(void)sprintf(path,"/var/db/msqldb/.tmp/%s",
+-		(void)snprintf(path,MAXPATHLEN,"%s/msqldb/.tmp/%s",msqlHomeDir,
++		(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/.tmp/%s",
  			cur->d_name);
  		unlink(path);
  		cur = readdir(dirp);
-@@ -434,7 +434,7 @@
+@@ -434,8 +434,7 @@
  	{
  		tmpfile = cp+1;
  	}
--	(void)sprintf(path,"%s/msqldb/.tmp/%s.dat",msqlHomeDir,tmpfile);
-+	(void)sprintf(path,"/var/db/msqldb/.tmp/%s.dat",tmpfile);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/.tmp/%s.dat",msqlHomeDir,
+-		tmpfile);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/.tmp/%s.dat",tmpfile);
  
  
  	/*
-@@ -642,7 +642,7 @@
+@@ -642,8 +642,8 @@
  	char	path[MAXPATHLEN];
  
          msqlTrace(TRACE_IN,"freeTmpTable()");
--	(void)sprintf(path,"%s/msqldb/.tmp/%s.dat",msqlHomeDir,entry->table);
-+	(void)sprintf(path,"/var/db/msqldb/.tmp/%s.dat",entry->table);
+-	(void)snprintf(path,MAXPATHLEN, "%s/msqldb/.tmp/%s.dat",msqlHomeDir,
+-		entry->table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/.tmp/%s.dat",
++		entry->table);
  	freeTableDef(entry->def);
  	entry->def = NULL;
  	*(entry->db) = 0;

@@ -4,17 +4,18 @@
  
  	if (*confFile == 0)
  	{
--		sprintf(confFile,"%s/msql.conf", INST_DIR);
-+		sprintf(confFile,"%s/etc/msql2/msql.conf", INST_DIR);
+-		snprintf(confFile,sizeof(confFile),"%s/msql.conf", INST_DIR);
++		snprintf(confFile,sizeof(confFile),"%s/etc/msql2/msql.conf", INST_DIR);
  	}
  	printf("\tLoading configuration from '%s'.\n",confFile);
  	msqlLoadConfigFile(confFile);
-@@ -687,7 +687,7 @@
+@@ -687,8 +687,7 @@
  	/*
  	** Ensure that the correct user owns the database files
  	*/
--	sprintf(path,"%s/msqldb",(char *)msqlGetCharConf("general","inst_dir"));
-+	sprintf(path,"/var/db/msqldb");
+-	snprintf(path,MAXPATHLEN, "%s/msqldb",
+-		(char *)msqlGetCharConf("general","inst_dir"));
++	strcpy(path, "/var/db/msqldb");
  	if (stat(path,&sbuf) < 0)
  	{
  		printf("\nError!  Can't stat '%s'\n\n",path);
