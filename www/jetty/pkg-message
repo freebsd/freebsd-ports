@@ -1,0 +1,35 @@
+
+- The environment variable JETTY_HOME should be set to the installation
+  directory. Typically :
+
+	JETTY_HOME=%%PREFIX%%/share/java/jetty
+        export JETTY_HOME
+
+- Make sure your CLASSPATH includes all the jar files in the $JETTY_HOME/lib
+  directory :
+
+	CLASSPATH=$CLASSPATH:$JETTY_HOME/lib/javax.servlet.jar
+        CLASSPATH=$CLASSPATH:$JETTY_HOME/lib/com.mortbay.Jetty.jar
+        CLASSPATH=$CLASSPATH:$JETTY_HOME/lib/gnujsp.jar
+	export CLASSPATH
+
+  The jsse.jar, jnet.jar and jcert.jar are only required if you
+  intend to run or compile the SSL classes.
+
+- Running the Demo :
+
+  The demonstration server has relative paths configured, so
+  it must be run from the $JETTY_HOME directory. Users should
+  consider using absolute file path names in their configurations
+  if they wish to run Jetty from any directory.
+
+  The demo server can be run with the following commands:
+
+	cd $JETTY_HOME
+	javavm com.mortbay.Jetty.Demo
+
+  Use a browser to access the Jetty demo site at:
+
+	http://hostname:8080
+  or
+	http://127.0.0.1:8080  (if the browser is running on the same machine)

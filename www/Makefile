@@ -63,6 +63,7 @@
     SUBDIR += hypermail
     SUBDIR += indexme
     SUBDIR += jesred
+    SUBDIR += jetty
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += kdreamsite
