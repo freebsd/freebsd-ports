@@ -21,7 +21,8 @@ MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 EXTRA_PATCHES+=	${FILESDIR}/cnews.patch
 .else
 EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/news/inn:configure
+BUILD_DEPENDS+=	/nonexistent:${PORTSDIR}/news/inn:configure
+BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
 post-patch:
@@ -32,10 +33,12 @@ post-patch:
 		${WRKSRC}/suck_config.h
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/suck
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.inn ${PREFIX}/share/examples/suck
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.generic ${PREFIX}/share/examples/suck
 	${INSTALL_SCRIPT} ${WRKSRC}/sample/put.news ${PREFIX}/share/examples/suck
 	${INSTALL_DATA} ${WRKSRC}/sample/*.sample ${PREFIX}/share/examples/suck
+.endif
 
 .include <bsd.port.mk>
