@@ -24,10 +24,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 do-build:
 	cd ${WRKSRC} && make
 
 do-install:
 	cd ${WRKSRC} && make install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -21,8 +21,14 @@ USE_GNOME=	gtk12 imlib
 MSG_FILE=	${.CURDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 post-install:
 	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' ${MSG_FILE} > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
