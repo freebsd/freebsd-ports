@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1998/06/25 22:26:26 asami Exp $
+# $Id: Makefile,v 1.15 1998/12/07 02:22:12 asami Exp $
 #
 
     SUBDIR += bash1
@@ -8,5 +8,6 @@
     SUBDIR += scsh
     SUBDIR += tcsh
     SUBDIR += zsh
+    SUBDIR += zsh-devel
 
 .include <bsd.port.subdir.mk>
