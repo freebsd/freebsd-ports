@@ -15,9 +15,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A benchmarking tool for Web proxies
 
+
 IS_INTERACTIVE=	yes
 
 GNU_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
