@@ -85,6 +85,7 @@
     SUBDIR += semi-xemacs20
     SUBDIR += semi-xemacs20-current
     SUBDIR += staroffice5
+    SUBDIR += staroffice52
     SUBDIR += sted
     SUBDIR += tamago
     SUBDIR += textedit
