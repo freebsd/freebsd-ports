@@ -18,8 +18,8 @@ COMMENT=	Interactive (dynamic) elementary Geometry Software
 
 WRKSRC=		${WRKDIR}/geonext_install
 NO_BUILD=	yes
-#USE_JAVA=	1.4
-#JAVA=		${JAVA_HOME}/bin/java
+USE_JAVA=	1.4
+JAVA=		${JAVA_HOME}/bin/java
 GNAME=		geonext-de
 GLOCATE=	${PREFIX}/share/${GNAME}
 DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html
