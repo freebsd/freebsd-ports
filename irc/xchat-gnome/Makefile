@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://navi.cx/releases/ \
 		http://members.chello.nl/~g.mast/distfiles/
@@ -20,10 +21,9 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${XCHAT_VER}
 XCHAT_VER=	2.0.8
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
-USE_GNOME=	gnomeprefix gnomehack lthack libgnomeui
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_REINPLACE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-nls \

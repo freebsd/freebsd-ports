@@ -47,5 +47,6 @@ share/locale/sv/LC_MESSAGES/xchat.mo
 share/locale/uk/LC_MESSAGES/xchat.mo
 share/locale/zh_CN/LC_MESSAGES/xchat.mo
 @exec mkdir -p %D/lib/xchat/plugins
+@dirrm share/gnome/xchat
 @dirrm lib/xchat/plugins
 @dirrm lib/xchat
