@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	Wingz-142
-CATEGORIES=	math
+CATEGORIES=	math linux
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 EXTRACT_SUFX=	.tgz

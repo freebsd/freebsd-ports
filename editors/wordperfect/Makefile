@@ -9,7 +9,7 @@
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0
-CATEGORIES=     editors
+CATEGORIES=     editors linux
 MASTER_SITES=	
 EXTRACT_SUFX=	.GZ
 

@@ -8,7 +8,7 @@
 
 DISTNAME=	linux-ar-40
 PKGNAME=	acroread-4.0
-CATEGORIES=	print
+CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 
 MAINTAINER=	dima@FreeBSD.org

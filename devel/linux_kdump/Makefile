@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	linux_kdump-1.4
-CATEGORIES=	devel
+CATEGORIES=	devel linux
 MASTER_SITES=	http://people.FreeBSD.org/~marcel/			\
 		ftp://ftp.scc.nl/pub/FreeBSD/distfiles/
 

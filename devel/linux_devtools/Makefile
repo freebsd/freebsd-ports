@@ -8,7 +8,7 @@
 
 DISTNAME=		linux_devtools
 PKGNAME=		linux_devtools-6.1
-CATEGORIES=		emulators devel
+CATEGORIES=		devel emulators linux
 MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 DISTFILES=		${RPM_KERNEL_HEADERS} \
 			${RPM_GLIBC_DEVEL} \

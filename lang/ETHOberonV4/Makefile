@@ -8,7 +8,7 @@
 
 DISTNAME=	ETHLinuxOberon
 PKGNAME=	ETHOberonV4-0.9
-CATEGORIES=	lang
+CATEGORIES=	lang linux
 MASTER_SITES=	ftp://ftp.inf.ethz.ch/pub/Oberon/OberonV4/Linux/latest/
 EXTRACT_SUFX=	.tgz
 

@@ -8,7 +8,7 @@
 
 DISTNAME=       linux
 PKGNAME=	citrix_ica-3.0.15
-CATEGORIES=	comms
+CATEGORIES=	comms linux
 MASTER_SITES=   
 EXTRACT_SUFX=	.tar.Z
 

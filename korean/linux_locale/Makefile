@@ -8,7 +8,7 @@
 
 DISTNAME=	linux_locale-ko-1.0
 PKGNAME=	ko-linux_locale-1.0
-CATEGORIES=	korean emulators
+CATEGORIES=	korean emulators linux
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@kr.freebsd.org

@@ -8,7 +8,7 @@
 
 DISTNAME=	so51a_lnx_01
 PKGNAME=	staroffice-5.1a
-CATEGORIES=	editors
+CATEGORIES=	editors linux
 MASTER_SITES=	http://afug.hypermart.net/files/ \
 		http://www.hagenhomes.com/freebsd/files/  \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
