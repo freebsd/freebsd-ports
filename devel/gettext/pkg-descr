@@ -3,3 +3,5 @@ maintainers of other packages or programs which they want to see
 internationalized.  As one step the handling of messages in different
 languages should be implemented.  For this task GNU gettext provides
 the needed tools and library functions.
+
+WWW: http://www.gnu.org/software/gettext/

@@ -1,7 +1,0 @@
---- man/Makefile.in.orig	Tue Mar 12 13:04:22 2002
-+++ man/Makefile.in	Fri Mar 15 17:41:43 2002
-@@ -144,3 +144,3 @@
- VERSION = @VERSION@
--docdir = $(prefix)/doc/@PACKAGE@
-+docdir = $(prefix)/share/doc/@PACKAGE@
- htmldir = $(docdir)
