@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	saxon
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT processor for Java
 
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
@@ -29,14 +29,19 @@ CONFLICTS=	saxon-devel-8.*
 JARFILES=	saxon-jdom.jar saxon.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon
 .if !defined(NOPORTDOCS)
-PORTDOCS=	api api-guide.html changes.html changes5.html conditions.html conformance.html dtdgen.html expressions.html extensibility.html extensions.html history.html index.html instant.html patterns.html samples.html saxon-style.css using-xsl.html xsl-elements.html
+PORTDOCS=	api api-guide.html changes.html changes5.html conditions.html \
+		conformance.html dtdgen.html expressions.html \
+		extensibility.html extensions.html history.html index.html \
+		instant.html patterns.html samples.html saxon-style.css \
+		using-xsl.html xsl-elements.html
 .endif
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/samples/ot
 
 do-configure:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
+		s|%%SAXON_JARS%%|${JARFILES:S,^,${JAVAJARDIR}/,}|' \
 		${FILESDIR}/saxon.sh >${WRKSRC}/saxon
 
 do-install:
@@ -48,18 +53,15 @@ do-install:
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}/
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/samples/ && \
+	  ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; && \
+	  ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-.for DOCFILE in ${PORTDOCS}
-	@${ECHO_MSG} -n " ${DOCFILE}"
-	@${CP} -R ${WRKSRC}/doc/${DOCFILE} ${DOCSDIR}/
-.endfor
-	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/doc/ && \
+	  ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
+	  ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin..."
