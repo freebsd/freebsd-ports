@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+  exit 0
+fi
+
+AOUTLIBSDIR=${PKG_PREFIX}/lib/aout
+
+mkdir -p ${AOUTLIBSDIR}/X333
+
+for old in libX11.so.6.1 liboldX.so.6.0 libICE.so.6.3 libSM.so.6.0 \
+		libXext.so.6.3 libXt.so.6.0 libXmu.so.6.0 libXaw.so.6.1 \
+		libXIE.so.6.0 libXi.so.6.0 libXtst.so.6.1 libPEX5.so.6.0 \
+		libXp.so.6.2; do
+	mv -f ${AOUTLIBSDIR}/${old} ${AOUTLIBSDIR}/X333
+done
