@@ -1,0 +1,11 @@
+--- src/doc/Makefile.in.orig	Tue Feb  4 23:55:03 2003
++++ src/doc/Makefile.in	Tue Feb  4 23:58:49 2003
+@@ -492,7 +492,7 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)/html
+ 	mkdir -p html #Workaround to allow libofx-cvs user to install without doc.
+ #	cp -rp $(srcdir)/html ${docdir}
+-	cp -rp html $(DESTDIR)$(docdir)/html
++	cp -rp html/* $(DESTDIR)$(docdir)/html
+ 
+ uninstall-hook:
+ 	rm -rf ${docdir}/html
