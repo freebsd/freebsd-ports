@@ -1,15 +1,15 @@
---- Makefile.in.orig	Tue Jun 13 14:01:41 2000
-+++ Makefile.in	Wed Jul  5 16:20:04 2000
+--- Makefile.in.orig	Fri Sep 27 07:04:59 2002
++++ Makefile.in	Thu Nov 21 22:28:50 2002
 @@ -7,7 +7,7 @@
  LDFLAGS=@LDFLAGS@
  CPPFLAGS=	@CPPFLAGS@
  OPTFLAG=@OPTFLAG@
--CFLAGS=	@CFLAGS@ $(CPPFLAGS) @DEFS@ $(CPPFLAGS) $(OPTFLAG) -DIPSEC -I. -I$(srcdir) -Dss_family=__ss_family -Dss_len=__ss_len -DSYSCONFDIR=\"${sysconfdir}\"
-+CFLAGS=	@CFLAGS@ $(CPPFLAGS) @DEFS@ $(CPPFLAGS) $(OPTFLAG) -DIPSEC -I. -I$(srcdir) -Dss_family=__ss_family -Dss_len=__ss_len -DSYSCONFDIR=\"${sysconfdir}/racoon\"
+-CFLAGS=	@CFLAGS@ $(CPPFLAGS) @DEFS@ $(CPPFLAGS) $(OPTFLAG) -DIPSEC -I. -I$(srcdir) -DSYSCONFDIR=\"${sysconfdir}\"
++CFLAGS=	@CFLAGS@ $(CPPFLAGS) @DEFS@ $(CPPFLAGS) $(OPTFLAG) -DIPSEC -I. -I$(srcdir) -DSYSCONFDIR=\"${sysconfdir}/racoon\"
  CFLAGS+=-DYY_NO_UNPUT
  CFLAGS+=-I${srcdir}/../libipsec
  LIBS=	@LIBS@
-@@ -79,10 +79,6 @@
+@@ -88,10 +88,6 @@
  	$(INSTALL) -o bin -g bin -m 444 racoon.conf.5 $(mandir)/man5
  	-mkdir -p ${sysconfdir}/racoon
  	for i in $(CONF); do \
