@@ -1,0 +1,26 @@
+bin/gtkatlantic
+%%DATADIR%%/board.png
+%%DATADIR%%/cards.png
+%%DATADIR%%/commands.png
+%%DATADIR%%/default.conf
+%%DATADIR%%/help.index
+%%DATADIR%%/houses.png
+%%DATADIR%%/icon16x16.xpm
+%%DATADIR%%/icon32x32.xpm
+%%DATADIR%%/interface.xml
+%%DATADIR%%/logo.png
+%%DATADIR%%/stars.png
+%%DATADIR%%/stars_m.png
+%%DATADIR%%/themes/generic_gradient/cards.png
+%%DATADIR%%/themes/generic_gradient/estates.png
+%%DATADIR%%/themes/generic_gradient/houses.png
+%%DATADIR%%/themes/generic_gradient/pattern.png
+%%DATADIR%%/themes/generic_gradient/preview.png
+%%DATADIR%%/themes/generic_gradient/stars.png
+%%DATADIR%%/themes/generic_gradient/stars_m.png
+%%DATADIR%%/themes/generic_gradient/theme.conf
+%%DATADIR%%/themes/generic_gradient/tokens.png
+%%DATADIR%%/tokens.png
+@dirrm %%DATADIR%%/themes/generic_gradient
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%

@@ -199,6 +199,7 @@
     SUBDIR += gshisen
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
+    SUBDIR += gtkatlantic
     SUBDIR += gtkballs
     SUBDIR += gtklife
     SUBDIR += gtktetcolor
