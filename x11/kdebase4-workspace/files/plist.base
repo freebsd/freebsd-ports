@@ -1,3 +1,13 @@
+@unexec if cmp -s %D/share/config/kdm/README %D/share/config/kdm/default/README; then rm -f %D/share/config/kdm/README; fi
+@unexec if cmp -s %D/share/config/kdm/Xaccess %D/share/config/kdm/default/Xaccess; then rm -f %D/share/config/kdm/Xaccess; fi
+@unexec if cmp -s %D/share/config/kdm/Xreset %D/share/config/kdm/default/Xreset; then rm -f %D/share/config/kdm/Xreset; fi
+@unexec if cmp -s %D/share/config/kdm/Xservers %D/share/config/kdm/default/Xservers; then rm -f %D/share/config/kdm/Xservers; fi
+@unexec if cmp -s %D/share/config/kdm/Xsession %D/share/config/kdm/default/Xsession; then rm -f %D/share/config/kdm/Xsession; fi
+@unexec if cmp -s %D/share/config/kdm/Xsetup %D/share/config/kdm/default/Xsetup; then rm -f %D/share/config/kdm/Xsetup; fi
+@unexec if cmp -s %D/share/config/kdm/Xstartup %D/share/config/kdm/default/Xstartup; then rm -f %D/share/config/kdm/Xstartup; fi
+@unexec if cmp -s %D/share/config/kdm/Xwilling %D/share/config/kdm/default/Xwilling; then rm -f %D/share/config/kdm/Xwilling; fi
+@unexec if cmp -s %D/share/config/kdm/backgroundrc %D/share/config/kdm/default/backgroundrc; then rm -f %D/share/config/kdm/backgroundrc; fi
+@unexec if cmp -s %D/share/config/kdm/kdmrc %D/share/config/kdm/default/kdmrc; then rm -f %D/share/config/kdm/kdmrc; fi
 bin/appletproxy
 bin/drkonqi
 bin/extensionproxy
@@ -136,7 +146,6 @@ lib/kde3/appletproxy.la
 lib/kde3/appletproxy.so
 lib/kde3/childpanel_panelextension.la
 lib/kde3/childpanel_panelextension.so
-lib/kde3/childpanel_panelextension.so.0
 lib/kde3/clock_panelapplet.la
 lib/kde3/clock_panelapplet.so
 lib/kde3/cursorthumbnail.la
@@ -435,7 +444,6 @@ lib/kde3/kxkb.la
 lib/kde3/kxkb.so
 lib/kde3/launcher_panelapplet.la
 lib/kde3/launcher_panelapplet.so
-lib/kde3/launcher_panelapplet.so.0
 lib/kde3/libkdeprint_part.la
 lib/kde3/libkdeprint_part.so
 lib/kde3/libkfindpart.la
@@ -828,6 +836,7 @@ share/apps/kappfinder/apps/Internet/knews.desktop
 share/apps/kappfinder/apps/Internet/licq.desktop
 share/apps/kappfinder/apps/Internet/mldonkey_gui.desktop
 share/apps/kappfinder/apps/Internet/mozilla-firebird.desktop
+share/apps/kappfinder/apps/Internet/mozilla-firefox.desktop
 share/apps/kappfinder/apps/Internet/mozilla-thunderbird.desktop
 share/apps/kappfinder/apps/Internet/mozilla.desktop
 share/apps/kappfinder/apps/Internet/netscape.desktop
@@ -960,6 +969,7 @@ share/apps/kconf_update/klipper-1-2.pl
 share/apps/kconf_update/klipper-kde31.sh
 share/apps/kconf_update/klipperrc.upd
 share/apps/kconf_update/klippershortcuts.upd
+share/apps/kconf_update/konqueror_gestures_kde321_update.upd
 share/apps/kconf_update/konsole.upd
 share/apps/kconf_update/ksmserver.upd
 share/apps/kconf_update/kuriikwsfilter.upd
@@ -1177,6 +1187,7 @@ share/apps/khelpcenter/plugins/userguide.desktop
 share/apps/khelpcenter/plugins/welcome.desktop
 share/apps/khelpcenter/table-of-contents.xslt
 share/apps/khotkeys/kde32b1.khotkeys
+share/apps/khotkeys/konqueror_gestures_kde321.khotkeys
 share/apps/kicker/applets/clockapplet.desktop
 share/apps/kicker/applets/devicesapplet.desktop
 share/apps/kicker/applets/klipper.desktop
@@ -1582,16 +1593,16 @@ share/autostart/kwrited.desktop
 share/autostart/panel.desktop
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
-share/config/kdm/README
-share/config/kdm/Xaccess
-share/config/kdm/Xreset
-share/config/kdm/Xservers
-share/config/kdm/Xsession
-share/config/kdm/Xsetup
-share/config/kdm/Xstartup
-share/config/kdm/Xwilling
-share/config/kdm/backgroundrc
-share/config/kdm/kdmrc
+share/config/kdm/default/README
+share/config/kdm/default/Xaccess
+share/config/kdm/default/Xreset
+share/config/kdm/default/Xservers
+share/config/kdm/default/Xsession
+share/config/kdm/default/Xsetup
+share/config/kdm/default/Xstartup
+share/config/kdm/default/Xwilling
+share/config/kdm/default/backgroundrc
+share/config/kdm/default/kdmrc
 share/config/klipperrc
 share/config/konqsidebartng.rc
 share/config/kshorturifilterrc

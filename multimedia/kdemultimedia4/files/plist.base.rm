@@ -5,6 +5,11 @@
 @dirrm share/mimelnk/audio
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/crystalsvg/scalable/apps
 @dirrm share/icons/crystalsvg/scalable/actions
 @dirrm share/icons/crystalsvg/scalable

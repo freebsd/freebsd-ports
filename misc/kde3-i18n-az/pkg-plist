@@ -139,7 +139,6 @@ share/locale/az/LC_MESSAGES/kdesktop.mo
 share/locale/az/LC_MESSAGES/kdessh.mo
 share/locale/az/LC_MESSAGES/kdesu.mo
 share/locale/az/LC_MESSAGES/kdesud.mo
-share/locale/az/LC_MESSAGES/kdevelop.mo
 share/locale/az/LC_MESSAGES/kdevtipofday.mo
 share/locale/az/LC_MESSAGES/kdf.mo
 share/locale/az/LC_MESSAGES/kdialog.mo
@@ -326,5 +325,3 @@ share/locale/az/LC_MESSAGES/webarchiver.mo
 share/locale/az/charset
 share/locale/az/entry.desktop
 share/locale/az/flag.png
-@dirrm share/locale/az/LC_MESSAGES
-@dirrm share/locale/az

@@ -461,7 +461,5 @@ share/locale/bg/LC_MESSAGES/webarchiver.mo
 share/locale/bg/charset
 share/locale/bg/entry.desktop
 share/locale/bg/flag.png
-@dirrm share/locale/bg/LC_MESSAGES
-@dirrm share/locale/bg
 @dirrm share/doc/HTML/bg/kcalc
 @dirrm share/doc/HTML/bg

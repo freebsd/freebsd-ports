@@ -1,0 +1,12 @@
+--- kdm/kfrontend/Makefile.in.orig	Wed Feb 25 14:57:47 2004
++++ kdm/kfrontend/Makefile.in	Wed Feb 25 14:58:17 2004
+@@ -1149,9 +1149,6 @@
+ 	uninstall-kde_moduleLTLIBRARIES uninstall-recursive
+ 
+ 
+-install-data-local: genkdmconf
+-	./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm --face-src $(srcdir)/pics $(GENKDMCONF_FLAGS)
+-
+ messages:
+ 	$(XGETTEXT) $(kdm_greet_SOURCES) -o $(podir)/kdmgreet.pot
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

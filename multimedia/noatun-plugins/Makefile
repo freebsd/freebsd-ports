@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Various plugins for Noatun
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
 
 KDE_SPLIT=	${NOATUNPLUG_PORTNAME:S/${KDE_SPLIT_DIST}-//}

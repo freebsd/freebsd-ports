@@ -15,6 +15,7 @@ include/kdevelop/catalog/tag.h
 include/kdevelop/codemodel.h
 include/kdevelop/codemodel_treeparser.h
 include/kdevelop/codemodel_utils.h
+include/kdevelop/configwidgetproxy.h
 include/kdevelop/cppparser/ast.h
 include/kdevelop/cppparser/driver.h
 include/kdevelop/cppparser/errors.h
@@ -162,6 +163,8 @@ lib/kde3/libkdevghcoptions.la
 lib/kde3/libkdevghcoptions.so
 lib/kde3/libkdevgrepview.la
 lib/kde3/libkdevgrepview.so
+lib/kde3/libkdevhaskellproject.la
+lib/kde3/libkdevhaskellproject.so
 lib/kde3/libkdevhaskellsupport.la
 lib/kde3/libkdevhaskellsupport.so
 lib/kde3/libkdevhistory.la
@@ -516,6 +519,7 @@ share/apps/kdevappwizard/template-kdedcop/mainclass.h
 share/apps/kdevappwizard/template-kdedcop/script
 share/apps/kdevappwizard/template-kdedcop/src-Makefile.am
 share/apps/kdevappwizard/template-kdedcop/subdirs
+share/apps/kdevappwizard/template-kdevlang/README.dox
 share/apps/kdevappwizard/template-kdevlang/app.kdevelop
 share/apps/kdevappwizard/template-kdevlang/kdevlang-configure.in.in
 share/apps/kdevappwizard/template-kdevlang/kdevlang.desktop
@@ -534,6 +538,7 @@ share/apps/kdevappwizard/template-kdevpart/kdevpart_widget.cpp
 share/apps/kdevappwizard/template-kdevpart/kdevpart_widget.h
 share/apps/kdevappwizard/template-kdevpart/script
 share/apps/kdevappwizard/template-kdevpart/src-Makefile.am
+share/apps/kdevappwizard/template-kdevpart2/README.dox
 share/apps/kdevappwizard/template-kdevpart2/app.kdevelop
 share/apps/kdevappwizard/template-kdevpart2/kdevpart-configure.in.in
 share/apps/kdevappwizard/template-kdevpart2/kdevpart.desktop
@@ -945,6 +950,7 @@ share/apps/kdevfortransupport/kdevfortransupport.rc
 share/apps/kdevfullscreen/kdevpart_fullscreen.rc
 share/apps/kdevgenericproject/kdevgenericproject.rc
 share/apps/kdevgrepview/kdevgrepview.rc
+share/apps/kdevhaskellproject/kdevhaskellproject.rc
 share/apps/kdevhaskellsupport/kdevhaskellsupport.rc
 share/apps/kdevhistory/kdevhistory.rc
 share/apps/kdevjavadebugger/kdevjavadebugger.rc
@@ -982,23 +988,37 @@ share/doc/HTML/en/kde_app_devel/common
 share/doc/HTML/en/kde_app_devel/index.cache.bz2
 share/doc/HTML/en/kde_app_devel/index.docbook
 share/doc/HTML/en/kde_app_devel/kscribblefiles.png
+share/doc/HTML/en/kdevelop/SF-general.png
+share/doc/HTML/en/kdevelop/SF-indent.png
+share/doc/HTML/en/kdevelop/SF-other.png
 share/doc/HTML/en/kdevelop/automake-file-popup.png
 share/doc/HTML/en/kdevelop/automake-subproject-popup.png
 share/doc/HTML/en/kdevelop/automake-target-popup.png
 share/doc/HTML/en/kdevelop/automakemanager.png
 share/doc/HTML/en/kdevelop/classview.png
 share/doc/HTML/en/kdevelop/common
+share/doc/HTML/en/kdevelop/configure-editor.png
+share/doc/HTML/en/kdevelop/configure-file-selector.png
+share/doc/HTML/en/kdevelop/configure-general.png
+share/doc/HTML/en/kdevelop/configure-select.png
+share/doc/HTML/en/kdevelop/configure-snippets.png
 share/doc/HTML/en/kdevelop/create-new-project-cvs.png
 share/doc/HTML/en/kdevelop/createnewproject.png
 share/doc/HTML/en/kdevelop/doctreeview.png
+share/doc/HTML/en/kdevelop/file-selector.png
 share/doc/HTML/en/kdevelop/filetree.png
-share/doc/HTML/en/kdevelop/gideon-ideal-mode.png
-share/doc/HTML/en/kdevelop/gideon-mdi-mode.png
-share/doc/HTML/en/kdevelop/gideon-tabbed-mode.png
-share/doc/HTML/en/kdevelop/gideon-toplevel-mode.png
 share/doc/HTML/en/kdevelop/importdirectory.png
 share/doc/HTML/en/kdevelop/index.cache.bz2
 share/doc/HTML/en/kdevelop/index.docbook
+share/doc/HTML/en/kdevelop/kdevelop-ideal-mode-0.png
+share/doc/HTML/en/kdevelop/kdevelop-ideal-mode.png
+share/doc/HTML/en/kdevelop/kdevelop-mdi-mode.png
+share/doc/HTML/en/kdevelop/kdevelop-tabbed-mode.png
+share/doc/HTML/en/kdevelop/kdevelop-toplevel-mode.png
+share/doc/HTML/en/kdevelop/loading-progress-bar.png
+share/doc/HTML/en/kdevelop/open-project.png
+share/doc/HTML/en/kdevelop/open-recent-project.png
+share/doc/HTML/en/kdevelop/select-user-interface-0.png
 share/doc/HTML/en/kdevelop/select-user-interface.png
 share/doc/HTML/en/kdevelop/wrong-project-location.png
 share/icons/hicolor/16x16/actions/breakpoint_add.png
@@ -1103,6 +1123,7 @@ share/services/kdevgenericproject.desktop
 share/services/kdevghcoptions.desktop
 share/services/kdevgppoptions.desktop
 share/services/kdevgrepview.desktop
+share/services/kdevhaskellproject.desktop
 share/services/kdevhaskellsupport.desktop
 share/services/kdevhistory.desktop
 share/services/kdevjavadebugger.desktop
@@ -1159,35 +1180,15 @@ share/servicetypes/kdevelopplugin.desktop
 share/servicetypes/kdevelopproject.desktop
 share/servicetypes/kdevelopsourceformatter.desktop
 share/servicetypes/kdevelopversioncontrol.desktop
-@dirrm share/servicetypes
-@dirrm share/services
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/actions
-@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48/actions
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/actions
 @dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kdevelop
 @dirrm share/doc/HTML/en/kde_app_devel
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/config
 @dirrm share/apps/qeditorpart/highlight
 @dirrm share/apps/qeditorpart
 @dirrm share/apps/manager
@@ -1215,6 +1216,7 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevjavadebugger
 @dirrm share/apps/kdevhistory
 @dirrm share/apps/kdevhaskellsupport
+@dirrm share/apps/kdevhaskellproject
 @dirrm share/apps/kdevgrepview
 @dirrm share/apps/kdevgenericproject
 @dirrm share/apps/kdevfullscreen
@@ -1311,10 +1313,7 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevabbrev
 @dirrm share/apps/devdoctreeview/indices
 @dirrm share/apps/devdoctreeview
-@dirrm share/apps
 @dirrm share/applnk/Development
-@dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kdevelop/cppparser
 @dirrm include/kdevelop/catalog
 @dirrm include/kdevelop

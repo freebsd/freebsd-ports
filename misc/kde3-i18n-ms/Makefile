@@ -1,4 +1,4 @@
-# New ports collection makefile for:    kde3-i18n-ms	
+# New ports collection makefile for:    kde3-i18n-ms
 # Date created:                         20 January 2004
 # Whom:                                 Lauri Watts <lauri@kde.org>
 #
@@ -9,7 +9,7 @@ PORTNAME=	kde-i18n
 PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	misc kde
 MASTER_SITES=   ${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src/kde-i18n
 PKGNAMEPREFIX=	ms-
 DIST_SUBDIR=	KDE
 

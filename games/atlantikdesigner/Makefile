@@ -15,8 +15,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Editor for Atlantik
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
-
 LIB_DEPENDS=	atlantic:${PORTSDIR}/games/kdegames3
 
 KDE_SPLIT=	${ATLANTIKDESIGNER_PORTNAME:S/${KDE_SPLIT_DIST}-//}

@@ -443,6 +443,7 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.metu.edu.tr/pub/mirrors/ftp.isc.org/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
+	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ibiblio.org/pub/packages/desktops/kde/%SUBDIR%/ \

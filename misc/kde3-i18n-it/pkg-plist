@@ -98,6 +98,12 @@ share/doc/HTML/it/kamera/index.docbook
 share/doc/HTML/it/kasteroids/common
 share/doc/HTML/it/kasteroids/index.cache.bz2
 share/doc/HTML/it/kasteroids/index.docbook
+share/doc/HTML/it/kate-plugins/htmltools.docbook
+share/doc/HTML/it/kate-plugins/insertcommand.docbook
+share/doc/HTML/it/kate-plugins/openheader.docbook
+share/doc/HTML/it/kate-plugins/textfilter.docbook
+share/doc/HTML/it/kate-plugins/xmlcheck.docbook
+share/doc/HTML/it/kate-plugins/xmltools.docbook
 share/doc/HTML/it/katomic/common
 share/doc/HTML/it/katomic/index.cache.bz2
 share/doc/HTML/it/katomic/index.docbook
@@ -506,6 +512,7 @@ share/doc/HTML/it/kpercentage/using.docbook
 share/doc/HTML/it/kpoker/common
 share/doc/HTML/it/kpoker/index.cache.bz2
 share/doc/HTML/it/kpoker/index.docbook
+share/doc/HTML/it/kppp/global-settings.docbook
 share/doc/HTML/it/krec/common
 share/doc/HTML/it/krec/index.cache.bz2
 share/doc/HTML/it/krec/index.docbook
@@ -728,6 +735,9 @@ share/doc/HTML/it/lskat/index.docbook
 share/doc/HTML/it/megami/common
 share/doc/HTML/it/megami/index.cache.bz2
 share/doc/HTML/it/megami/index.docbook
+share/doc/HTML/it/mouse/common
+share/doc/HTML/it/mouse/index.cache.bz2
+share/doc/HTML/it/mouse/index.docbook
 share/doc/HTML/it/noatun/common
 share/doc/HTML/it/noatun/index.cache.bz2
 share/doc/HTML/it/noatun/index.docbook
@@ -1178,8 +1188,6 @@ share/locale/it/LC_MESSAGES/kwin_quartz_config.mo
 share/locale/it/LC_MESSAGES/kwireless.mo
 share/locale/it/LC_MESSAGES/kworldclock.mo
 share/locale/it/LC_MESSAGES/kwriteconfig.mo
-share/locale/it/LC_MESSAGES/kwuftpd.mo
-share/locale/it/LC_MESSAGES/kxconfig.mo
 share/locale/it/LC_MESSAGES/kxkb.mo
 share/locale/it/LC_MESSAGES/kxmlrpcd.mo
 share/locale/it/LC_MESSAGES/kxsconfig.mo
@@ -1242,6 +1250,7 @@ share/locale/it/charset
 share/locale/it/entry.desktop
 share/locale/it/flag.png
 @dirrm share/doc/HTML/it/noatun
+@dirrm share/doc/HTML/it/mouse
 @dirrm share/doc/HTML/it/megami
 @dirrm share/doc/HTML/it/lskat
 @dirrm share/doc/HTML/it/lisa
@@ -1273,6 +1282,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kruler
 @dirrm share/doc/HTML/it/kreversi
 @dirrm share/doc/HTML/it/krec
+@dirrm share/doc/HTML/it/kppp
 @dirrm share/doc/HTML/it/kpoker
 @dirrm share/doc/HTML/it/kpercentage
 @dirrm share/doc/HTML/it/kpat
@@ -1374,6 +1384,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kbattleship
 @dirrm share/doc/HTML/it/kbackgammon
 @dirrm share/doc/HTML/it/katomic
+@dirrm share/doc/HTML/it/kate-plugins
 @dirrm share/doc/HTML/it/kasteroids
 @dirrm share/doc/HTML/it/kamera
 @dirrm share/doc/HTML/it/kalzium

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -18,11 +18,11 @@ DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A C++ X GUI toolkit
-IGNORE=	This will become the port of QT 3.3.1. Right now it's just a placeholder.
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
+		audio:${PORTSDIR}/audio/nas \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
@@ -38,10 +38,10 @@ NO_FILTER_SHLIBS=yes
 
 CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
-		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
-		-fast -xinerama -no-g++-exceptions -no-stl	\
+		-system-zlib -sm -qt-gif -thread -system-nas-sound \
+		-fast -xinerama -no-g++-exceptions -stl -no-nis \
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
-		-verbose -docdir ${DOCSDIR} \
+		-verbose -docdir ${DOCSDIR} -tablet -ipv6 \
 		-plugindir ${PREFIX}/lib/plugins
 
 CONFIGURE_ENV?=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -80,7 +80,7 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 CONFIGURE_ARGS+=-no-xft
 .endif
 
-.if defined(DEBUG)
+.if defined(WANT_QT_DEBUG)
 CONFIGURE_ARGS+=-debug
 .endif
 
@@ -123,9 +123,17 @@ post-patch:
 .if defined(PLATFORM)
 	@${REINPLACE_CMD} -e 's|$$outpath/bin/qmake|${QTBASE}/bin/qmake|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$OUTDIR/bin/qmake|${QTBASE}/bin/qmake|g' \
+		${WRKSRC}/config.tests/unix/endian.test \
+		${WRKSRC}/config.tests/unix/largefile.test \
+		${WRKSRC}/config.tests/unix/ptrsize.test
 .else
 	@${REINPLACE_CMD} -e 's|$$outpath/bin/qmake|${LOCALBASE}/bin/qmake|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$OUTDIR/bin/qmake|${LOCALBASE}/bin/qmake|g' \
+		${WRKSRC}/config.tests/unix/endian.test \
+		${WRKSRC}/config.tests/unix/largefile.test \
+		${WRKSRC}/config.tests/unix/ptrsize.test
 .endif
 	@${REINPLACE_CMD} -e 's|^	cd qmake.*||' ${WRKSRC}/Makefile
 

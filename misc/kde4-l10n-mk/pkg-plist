@@ -311,5 +311,3 @@ share/locale/mk/LC_MESSAGES/timezones.mo
 share/locale/mk/charset
 share/locale/mk/entry.desktop
 share/locale/mk/flag.png
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk

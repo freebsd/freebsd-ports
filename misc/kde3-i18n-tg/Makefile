@@ -16,8 +16,6 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE3
 
-IGNORE=		This port is part of KDE 3.2.1 and is not yet active
-
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
 USE_KDELIBS_VER=3

@@ -8,31 +8,36 @@
 PORTNAME=	kdeaddons
 PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	misc kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
-DIST_SUBDIR=	KDE
+MASTER_SITES=	# none
+DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Additional plugins and scripts for some KDE applications
 
-LIB_DEPENDS+=	noatun:${PORTSDIR}/multimedia/kdemultimedia3 \
-		kdegames:${PORTSDIR}/games/kdegames3
+RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
+		${KADDRESSBOOKPLUG_DEP}:${PORTSDIR}/misc/kaddressbook-plugins \
+		${KATEPLUGINS_DEP}:${PORTSDIR}/editors/kate-plugins \
+		${KFILEPLUGINS_DEP}:${PORTSDIR}/misc/kfile-plugins \
+		${KICKERAPPLETS_DEP}:${PORTSDIR}/misc/kicker-applets \
+		${KNEWSTICKERAPP_DEP}:${PORTSDIR}/misc/knewsticker-scripts \
+		${KONQPLUGINS_DEP}:${PORTSDIR}/misc/konq-plugins \
+		${KONTACTPLUG_DEP}:${PORTSDIR}/net/kontact-plugins \
+		${KSIG_DEP}:${PORTSDIR}/misc/ksig \
+		${NOATUNPLUG_DEP}:${PORTSDIR}/multimedia/noatun-plugins \
+		${RENAMEDLGPLUG_DEP}:${PORTSDIR}/misc/renamedlgplugins \
+		${KVIM_DEP}:${PORTSDIR}/editors/vimpart
 
-USE_KDEBASE_VER=3
-PREFIX=		${KDE_PREFIX}
+NO_BUILD=	yes
+USE_KDELIBS_VER=3
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_SDL=	sdl
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+.if make(package)
+DEPENDS_TARGET="package"
+.endif # .if make(package)
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+do-install:	# empty
+	${DO_NADA}
 
-post-configure:
-	@ ${TOUCH} ${WRKSRC}/configure ${WRKSRC}/config.status \
-		${WRKSRC}/config.h.in
+.include "${.CURDIR}/Makefile.split"
 
 .include <bsd.port.mk>

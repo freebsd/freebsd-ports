@@ -6,6 +6,39 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040309:
+  AFFECTS: users of x11/kdelibs and x11/kdebase
+
+  If you update kdelibs from version 3.2.0 to version 3.2.1 while running
+  a KDE 3.2.0 session, newly opened instances of Konqueror will silently
+  crash as soon as the new version of kdelibs has been installed, due to
+  mismatching linker symbols.
+
+  It is recommended you quit your KDE session at that point and update
+  kdebase to version 3.2.1, then restart KDE.
+
+20040309:
+  AFFECTS: users of audio/arts and x11/kdebase
+
+  The arts port, PORTVERSION 1.2.1 does not include artswrapper anymore.
+  Instead, artswrapper is now installed by a new port audio/artswrapper.
+
+  Installation of artswrapper is optional, however:
+
+  If you presently run KDE and you have "Run with the highest possible
+  priority (realtime priority)" checked in Control Center/Sound & Multimedia/
+  Sound System and you choose to NOT install audio/artswrapper, you need to
+
+  - Uncheck "Run with the highest possible priority (realtime priority)"
+    in Control Center/Sound & Multimedia/Sound System BEFORE updating arts
+
+  OR
+
+  - AFTER updating arts and kdebase, go to Control Center/Sound & Multimedia/
+    Sound System, click on the unchecked "Run with the highest possible priority
+    (realtime priority)", dismiss the message telling you that realtime is un-
+    available or artswrapper is missing and then click Apply.
+
 20040305:
   AFFECTS: users of security/antivir-milter
 

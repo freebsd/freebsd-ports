@@ -257,6 +257,9 @@ lib/libkdeinit_kview.la
 lib/libkdeinit_kview.so
 lib/libkdeinit_mrmlsearch.la
 lib/libkdeinit_mrmlsearch.so
+lib/libkghostviewlib.la
+lib/libkghostviewlib.so
+lib/libkghostviewlib.so.0
 lib/libkimageviewer.la
 lib/libkimageviewer.so
 lib/libkimageviewer.so.0

@@ -169,7 +169,7 @@
     SUBDIR += qt145
     SUBDIR += qt2-static
     SUBDIR += qt23
-    SUBDIR += qt32
+    SUBDIR += qt33
     SUBDIR += qtpixmap
     SUBDIR += qwt
     SUBDIR += rep-gtk

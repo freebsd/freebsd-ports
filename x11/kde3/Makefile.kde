@@ -92,6 +92,34 @@ CONFIGURE_ARGS+=	--with-xinerama
 .endif
 .endif # !defined(_NO_KDE_XINERAMA)
 
+.if defined(KDE_SPLIT)
+KDE_SPLIT_VER?=	${KDE_VERSION}
+# needed for case where src dir name != doc dir name
+KDE_DOC_SPLIT?=	${KDE_SPLIT}
+DISTNAME?=	${KDE_SPLIT_DIST}-${KDE_SPLIT_VER}
+USE_REINPLACE=	yes
+.endif
+# This must always be defined.
+SPLITDEP_PREFIX?=	${PREFIX}/share/applications
+
+# Targets section
+.if defined(KDE_SPLIT)
+kde-split:
+	${ECHO} "${KDE_SPLIT} doc" > ${WRKSRC}/inst-apps
+	${REINPLACE_CMD} \
+	"s,^SUBDIRS =.*${KDE_DOC_SPLIT}.*$$,SUBDIRS =\. ${KDE_DOC_SPLIT},g" \
+		${WRKSRC}/doc/Makefile.in
+
+kde-split-postinstall:
+	${TOUCH} ${SPLITDEP_PREFIX}/${PKGNAME}
+
+.if !defined(KDE_SPLIT_NONSTANDARD)
+pre-configure: kde-split
+post-install: kde-split-postinstall
+.endif
+.endif
+
+
 .if defined(KDE_I18N)
 _NO_KDE_FIXPTHREAD=	yes
 .endif

@@ -279,6 +279,9 @@ lib/libkdeinit_krec.la
 lib/libkdeinit_krec.so
 lib/libkdeinit_noatun.la
 lib/libkdeinit_noatun.so
+lib/libkmidlib.la
+lib/libkmidlib.so
+lib/libkmidlib.so.0
 lib/libmpeg-0.3.0.so
 lib/libmpeg.la
 lib/libmpeg.so
@@ -298,7 +301,6 @@ lib/libwinskinvis.so
 lib/libworkman.la
 lib/libworkman.so
 lib/libworkman.so.6
-lib/libworkmanaudio.a
 lib/libyafcore.la
 lib/libyafcore.so
 lib/libyafcore.so.0
@@ -963,6 +965,7 @@ share/icons/crystalsvg/16x16/apps/artsbuilder.png
 share/icons/crystalsvg/16x16/apps/artscontrol.png
 share/icons/crystalsvg/16x16/apps/juk.png
 share/icons/crystalsvg/16x16/apps/kaboodle.png
+share/icons/crystalsvg/16x16/apps/kaudiocreator.png
 share/icons/crystalsvg/16x16/apps/kmid.png
 share/icons/crystalsvg/16x16/apps/kmix.png
 share/icons/crystalsvg/16x16/apps/krec.png
@@ -987,6 +990,7 @@ share/icons/crystalsvg/32x32/actions/artsmidimanager.png
 share/icons/crystalsvg/32x32/apps/artscontrol.png
 share/icons/crystalsvg/32x32/apps/juk.png
 share/icons/crystalsvg/32x32/apps/kaboodle.png
+share/icons/crystalsvg/32x32/apps/kaudiocreator.png
 share/icons/crystalsvg/32x32/apps/kmid.png
 share/icons/crystalsvg/32x32/apps/kmix.png
 share/icons/crystalsvg/32x32/apps/krec.png
@@ -1000,7 +1004,6 @@ share/icons/crystalsvg/48x48/actions/artsmidimanager.png
 share/icons/crystalsvg/48x48/apps/artscontrol.png
 share/icons/crystalsvg/48x48/apps/juk.png
 share/icons/crystalsvg/48x48/apps/kaboodle.png
-share/icons/crystalsvg/32x32/apps/kaudiocreator.png
 share/icons/crystalsvg/48x48/apps/kmid.png
 share/icons/crystalsvg/48x48/apps/kmix.png
 share/icons/crystalsvg/48x48/apps/krec.png

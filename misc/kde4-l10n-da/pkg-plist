@@ -37,6 +37,22 @@ share/doc/HTML/da/amor/index.docbook
 share/doc/HTML/da/ark/common
 share/doc/HTML/da/ark/index.cache.bz2
 share/doc/HTML/da/ark/index.docbook
+share/doc/HTML/da/artsbuilder/apis.docbook
+share/doc/HTML/da/artsbuilder/artsbuilder.docbook
+share/doc/HTML/da/artsbuilder/detail.docbook
+share/doc/HTML/da/artsbuilder/digitalaudio.docbook
+share/doc/HTML/da/artsbuilder/faq.docbook
+share/doc/HTML/da/artsbuilder/future.docbook
+share/doc/HTML/da/artsbuilder/glossary.docbook
+share/doc/HTML/da/artsbuilder/gui.docbook
+share/doc/HTML/da/artsbuilder/helping.docbook
+share/doc/HTML/da/artsbuilder/mcop.docbook
+share/doc/HTML/da/artsbuilder/midi.docbook
+share/doc/HTML/da/artsbuilder/midiintro.docbook
+share/doc/HTML/da/artsbuilder/modules.docbook
+share/doc/HTML/da/artsbuilder/porting.docbook
+share/doc/HTML/da/artsbuilder/references.docbook
+share/doc/HTML/da/artsbuilder/tools.docbook
 share/doc/HTML/da/atlantik/common
 share/doc/HTML/da/atlantik/index.cache.bz2
 share/doc/HTML/da/atlantik/index.docbook
@@ -853,6 +869,7 @@ share/doc/HTML/da/kooka/index.docbook
 share/doc/HTML/da/kopete/common
 share/doc/HTML/da/kopete/index.cache.bz2
 share/doc/HTML/da/kopete/index.docbook
+share/doc/HTML/da/kopete/menus.docbook
 share/doc/HTML/da/korganizer/common
 share/doc/HTML/da/korganizer/exchange-plugin.docbook
 share/doc/HTML/da/korganizer/group-scheduling.docbook
@@ -1937,6 +1954,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/common
 @dirrm share/doc/HTML/da/cervisia
 @dirrm share/doc/HTML/da/atlantik
+@dirrm share/doc/HTML/da/artsbuilder
 @dirrm share/doc/HTML/da/ark
 @dirrm share/doc/HTML/da/amor
 @dirrm share/doc/HTML/da/KRegExpEditor

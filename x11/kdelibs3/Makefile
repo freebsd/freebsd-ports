@@ -10,7 +10,7 @@ PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -47,8 +47,6 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-mt
-
-KDE_BUILD_PLIST=	yes
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc

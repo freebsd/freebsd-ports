@@ -6,6 +6,7 @@ bin/kdepasswd
 bin/kdessh
 bin/kdf
 bin/kedit
+bin/kfloppy
 bin/kgpg
 bin/khexedit
 bin/kjots
@@ -58,6 +59,8 @@ lib/kde3/ksim_panelextension.la
 lib/kde3/ksim_panelextension.so
 lib/kde3/ksim_sensors.la
 lib/kde3/ksim_sensors.so
+lib/kde3/ksim_snmp.la
+lib/kde3/ksim_snmp.so
 lib/kde3/libarkpart.la
 lib/kde3/libarkpart.so
 lib/kde3/libkbyteseditwidget.la
@@ -80,6 +83,7 @@ lib/libksimcore.so
 lib/libksimcore.so.1
 share/applications/kde/KCharSelect.desktop
 share/applications/kde/KEdit.desktop
+share/applications/kde/KFloppy.desktop
 share/applications/kde/Kjots.desktop
 share/applications/kde/ark.desktop
 share/applications/kde/irkick.desktop
@@ -252,6 +256,7 @@ share/apps/kregexpeditor/predefined/general/spaces.regexp
 share/apps/ksim/monitors/DFree.desktop
 share/apps/ksim/monitors/Lm_sensors.desktop
 share/apps/ksim/monitors/Net.desktop
+share/apps/ksim/monitors/Snmp.desktop
 share/apps/ksim/monitors/cpu.desktop
 share/apps/ksim/monitors/disk.desktop
 share/apps/ksim/pics/clock.png
@@ -392,6 +397,7 @@ share/doc/HTML/en/kwallet/index.cache.bz2
 share/doc/HTML/en/kwallet/index.docbook
 share/icons/crystalsvg/128x128/apps/ark.png
 share/icons/crystalsvg/128x128/apps/kdf.png
+share/icons/crystalsvg/128x128/apps/kfloppy.png
 share/icons/crystalsvg/128x128/apps/ktimer.png
 share/icons/crystalsvg/128x128/apps/kwalletmanager.png
 share/icons/crystalsvg/128x128/apps/kwikdisk.png
@@ -401,6 +407,7 @@ share/icons/crystalsvg/16x16/apps/kcharselect.png
 share/icons/crystalsvg/16x16/apps/kcmdf.png
 share/icons/crystalsvg/16x16/apps/kdf.png
 share/icons/crystalsvg/16x16/apps/kedit.png
+share/icons/crystalsvg/16x16/apps/kfloppy.png
 share/icons/crystalsvg/16x16/apps/kgpg.png
 share/icons/crystalsvg/16x16/apps/khexedit.png
 share/icons/crystalsvg/16x16/apps/kjots.png
@@ -416,6 +423,7 @@ share/icons/crystalsvg/32x32/apps/kcalc.png
 share/icons/crystalsvg/32x32/apps/kcmdf.png
 share/icons/crystalsvg/32x32/apps/kdf.png
 share/icons/crystalsvg/32x32/apps/kedit.png
+share/icons/crystalsvg/32x32/apps/kfloppy.png
 share/icons/crystalsvg/32x32/apps/kgpg.png
 share/icons/crystalsvg/32x32/apps/khexedit.png
 share/icons/crystalsvg/32x32/apps/kjots.png
@@ -428,6 +436,7 @@ share/icons/crystalsvg/48x48/apps/kcalc.png
 share/icons/crystalsvg/48x48/apps/kcharselect.png
 share/icons/crystalsvg/48x48/apps/kdf.png
 share/icons/crystalsvg/48x48/apps/kedit.png
+share/icons/crystalsvg/48x48/apps/kfloppy.png
 share/icons/crystalsvg/48x48/apps/kgpg.png
 share/icons/crystalsvg/48x48/apps/khexedit.png
 share/icons/crystalsvg/48x48/apps/kjots.png
@@ -439,6 +448,7 @@ share/icons/crystalsvg/64x64/apps/ark.png
 share/icons/crystalsvg/64x64/apps/kcalc.png
 share/icons/crystalsvg/64x64/apps/kdf.png
 share/icons/crystalsvg/64x64/apps/kedit.png
+share/icons/crystalsvg/64x64/apps/kfloppy.png
 share/icons/crystalsvg/64x64/apps/kjots.png
 share/icons/crystalsvg/64x64/apps/kwalletmanager.png
 share/icons/crystalsvg/64x64/apps/kwikdisk.png

@@ -189,5 +189,3 @@ share/locale/fa/LC_MESSAGES/timezones.mo
 share/locale/fa/charset
 share/locale/fa/entry.desktop
 share/locale/fa/flag.png
-@dirrm share/locale/fa/LC_MESSAGES
-@dirrm share/locale/fa
