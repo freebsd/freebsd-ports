@@ -7,7 +7,7 @@
 
 PORTNAME=	a2ps
 PORTVERSION=	4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.enst.fr/pub/unix/a2ps/ \
 		${MASTER_SITE_GNU}
@@ -39,12 +39,21 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=$(PREFIX)/share -
 	@${FALSE}
 .endif
 
+.if defined(WITH_EMACS)
+PLIST_SUB+=	WITHEMACS=""
+.else
+PLIST_SUB+=	WITHEMACS="@comment "
+.endif
+
 post-extract:
 	$(CP) $(DISTDIR)/sheets.map $(WRKSRC)/sheets/sheets.map
 
 post-install:
-	strip ${PREFIX}/bin/a2ps
+	${STRIP_CMD} ${PREFIX}/bin/a2ps
 	(cd ${WRKSRC}/doc; ${MAKE} install)
-	$(RM) -f $(PREFIX)/lib/liba2ps.la
+	install-info ${PREFIX}/info/a2ps.info ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/ogonkify.info ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/regex.info ${PREFIX}/info/dir
+	${RM} -f ${PREFIX}/lib/liba2ps.la
 
 .include <bsd.port.mk>
