@@ -237,6 +237,10 @@ post-install:
 .endfor
 	@(cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
 	${MKDIR} ${SITE_PERL}/${PERL_ARCH}/auto
+.if ${OSVERSION} < 502100
 	@fmt ${PKGMESSAGE}
+.else
+	@${PREFIX}/bin/use.perl port
+.endif
 
 .include <bsd.port.post.mk>
