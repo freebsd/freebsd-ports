@@ -2,5 +2,4 @@
 %%SITE_PERL%%/Hook/LexWrap.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hook/LexWrap
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Hook 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Hook 2>/dev/null || true
