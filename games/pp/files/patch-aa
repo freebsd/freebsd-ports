@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Apr  5 11:08:26 1997
-+++ Makefile	Sun Sep 27 15:25:36 1998
+--- Makefile	Sat Apr  5 21:08:26 1997
++++ /home/andy/tmp/wrk/Makefile	Sat May  1 14:30:37 1999
 @@ -1,10 +1,13 @@
  ####### This section was automatically generated from
  
@@ -16,3 +16,20 @@
  CC = gcc
  MOC = moc
  SHELL =	/bin/sh
+@@ -30,14 +33,14 @@
+ .SUFFIXES: .cpp
+ 
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) -I$(INCDIR) $<
++	$(CXX) -c $(CFLAGS) -I$(INCDIR) $<
+ 
+ ####### Build rules
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(OBJECTS) $(OBJMETA)
+-	$(CC) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS) -lm
++	$(CXX) $(OBJECTS) $(OBJMETA) -o $(TARGET) $(LFLAGS) -lm
+ 
+ depend:
+ 	@makedepend -I$(INCDIR) $(SOURCES) 2> /dev/null
