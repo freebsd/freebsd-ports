@@ -146,24 +146,16 @@ POST-INSTALL)
 	echo "       initialize the cache directory by running \"squid -z\""
 	echo "       as 'root' or '${squid_user}' before starting squid."
 	echo ""
-	tput md
-	echo "     *** UPDATE NOTICE ***"
+	echo "     Please note that ${PKG_PREFIX}/etc/rc.d/squid.sh"
+	echo "     will not start squid automatically anymore unless you"
+	echo "     explicitly configured the port not to install an rcNG"
+	echo "     style startup script via 'make config'."
 	echo ""
-	echo "     Starting with version 2.5.4_6, all helper applications are"
-	echo "     installed to ${PKG_PREFIX}/libexec/squid instead of"
-	echo "     ${PKG_PREFIX}/libexec."
-	echo "     Please check your squid.conf and update it if necessary."
-	tput me
+	echo "     To enable squid, set squid_enable=yes in either"
+	echo "     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid"
+	echo "     See ${PKG_PREFIX}/etc/rc.d/squid.sh for more"
+	echo "     configuration options."
 	echo ""
-	if [ -f /etc/rc.subr ]; then
-		echo "     Please note that ${PKG_PREFIX}/etc/rc.d/squid.sh"
-		echo "     will not start squid automatically on this system."
-		echo "     You need to set squid_enable=yes in either"
-		echo "     /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/squid"
-		echo "     See ${PKG_PREFIX}/etc/rc.d/squid.sh for more"
-		echo "     configuration options."
-		echo ""
-	fi
 	;;
 *)
 	exit 64
