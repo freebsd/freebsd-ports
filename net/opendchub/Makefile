@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
+FORBIDDEN=	"http://vuxml.freebsd.org/cdf14b68-3ff9-11d9-8405-00065be4b5b6.html"
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
