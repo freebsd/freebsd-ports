@@ -1,6 +1,16 @@
---- Makefile.orig	Sun Mar 23 04:02:53 1997
-+++ Makefile	Fri May  1 22:29:34 1998
-@@ -8,7 +8,7 @@
+--- Makefile.orig	Sun Mar 23 03:02:53 1997
++++ Makefile	Sun Sep 27 16:54:55 1998
+@@ -3,12 +3,16 @@
+ VERMAJ		= 1
+ VERMIN		= 0
+ VERPAT		= 3
+-VERSION		= $(VERMAJ).$(VERMIN).$(VERPAT)
++ifeq ($(PORTOBJFORMAT),elf)
++VERSION		= $(VERMAJ)
++else
++VERSION		= $(VERMAJ).$(VERMIN)
++endif
+ 
  ###########################################################################
  
  # Define SHARED as 1 for Linux shared ELF library
@@ -9,7 +19,7 @@
  
  ifeq ($(SHARED),1)
  LIBTARGET	= lib$(DIST).so.$(VERSION)
-@@ -28,8 +28,8 @@
+@@ -28,8 +32,8 @@
  INSTALL		= install -m 644
  MKDIRP		= install -d -m 755
  
@@ -20,12 +30,16 @@
  
  ###########################################################################
  
-@@ -87,7 +87,7 @@
+@@ -87,7 +91,11 @@
  
  $(LIBTARGET): $(LIBOBJS)
  ifeq ($(SHARED),1)
 -	$(CC) -shared -Wl,-soname,$(LIBTARGETSOMAJ) -o $(LIBTARGET) $(LIBOBJS)
++ifeq ($(PORTOBJFORMAT),elf)
++	$(CC) -shared -soname $(LIBTARGET) -o $(LIBTARGET) $(LIBOBJS)
++else
 +	$(CC) -shared -o $(LIBTARGET) $(LIBOBJS)
++endif
  else
  	ar rcs $(LIBTARGET) $(LIBOBJS)
  endif
