@@ -48,6 +48,7 @@
     SUBDIR += p5-MIME-Base64
     SUBDIR += p5-String-Multibyte
     SUBDIR += p5-Text-Iconv
+    SUBDIR += p5-Text-Unidecode
     SUBDIR += p5-Unicode-IMAPUtf7
     SUBDIR += p5-Unicode-Lite
     SUBDIR += p5-Unicode-Map
