@@ -21,6 +21,7 @@ RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
 		normalize:${PORTSDIR}/audio/normalize \
 		oggenc:${PORTSDIR}/audio/vorbis-tools
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		abcde.1 cddb-tool.1
@@ -66,6 +67,12 @@ pre-fetch:
 	@${ECHO_MSG} ${FLAC_MSG}
 	@${ECHO_MSG} ""
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
+		${WRKSRC}/abcde.1
+	@${REINPLACE_CMD} -e 's#/etc/#${PREFIX}/etc/#g' \
+		${WRKSRC}/abcde
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abcde ${PREFIX}/bin
