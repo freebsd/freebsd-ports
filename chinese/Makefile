@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.17 1997/11/28 14:55:21 vanilla Exp $
+# $Id: Makefile,v 1.18 1997/12/01 19:50:27 vanilla Exp $
 #
 
     SUBDIR += Wnn
@@ -23,5 +23,6 @@
     SUBDIR += samba
     SUBDIR += samba-des
     SUBDIR += ted
+    SUBDIR += tin
 
 .include <bsd.port.subdir.mk>
