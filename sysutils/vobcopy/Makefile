@@ -7,6 +7,7 @@
 
 PORTNAME=	vobcopy
 PORTVERSION=	0.5.14
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -48,6 +49,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|#include <stdint.h>||' \
 		${WRKSRC}/vobcopy.c
 .endif
+# fix typo
+	@${REINPLACE_CMD} -E \
+		-e 's|FreeBSD_Version|FreeBSD_version|' \
+		${WRKSRC}/dvd.c
 
 post-configure:
 	@${REINPLACE_CMD} -E -e 's|^CC.+||; s|^PREFIX.+||; \
