@@ -1,0 +1,11 @@
+--- parse/Makefile.am.orig	Fri May  2 02:24:05 2003
++++ parse/Makefile.am	Fri May  2 02:24:23 2003
+@@ -3,7 +3,7 @@
+ incdir      = ${prefix}/include/asir
+ inc_HEADERS = comp.h cpp.h parse.h w_stdio.h
+ 
+-asirdir  = ${prefix}/lib/asir
++asirdir  = ${prefix}/share/asir
+ DEFS     = @DEFS@ -DASIR_LIBDIR=\"${asirdir}\"
+ INCLUDES = -I${top_srcdir}/include -I${top_srcdir}/parse -I${top_srcdir}/io \
+            -I${top_srcdir}/gc/include \

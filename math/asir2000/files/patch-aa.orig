@@ -1,0 +1,45 @@
+--- include/Risa.tmpl.orig	Sat Oct  6 01:24:22 2001
++++ include/Risa.tmpl	Tue Oct 23 02:44:17 2001
+@@ -11,7 +11,7 @@
+ /* #define USE_FFT_FLOAT */
+ /* #define USE_LAPACK */
+ /* #define USE_FEP */
+-/* #undef OpenXM_HOME */
++#undef OpenXM_HOME
+ /* #define USE_INTERVAL */
+ 
+ #if defined(LinuxArchitecture)
+@@ -38,7 +38,7 @@
+ #endif
+ 
+ ASIR_BINDIR=$(ROOTDIR)/bin
+-ASIR_LIBDIR=$(ROOTDIR)/lib/asir
++ASIR_LIBDIR=$(ROOTDIR)/share/asir
+ ASIR_INCDIR=$(ROOTDIR)/include/asir
+ GC_INCDIR=$(ROOTDIR)/include/gc
+ 
+@@ -48,8 +48,6 @@
+ CC= cc
+ #endif
+ 
+-CDEBUGFLAGS= -g -O
+-
+ #if defined(SunArchitecture)
+ #if SystemV4
+ #if defined(SparcArchitecture)
+@@ -114,7 +112,15 @@
+ 
+ #ifdef USE_LAPACK
+ LAPACK=1
++#if defined(OpenXM_HOME)
+ LAPACKLIB = -llapack -lblas -lI77 -lF77
++#else
++#ifdef FreeBSDArchitecture && OSMajorVersion >= 4
++LAPACKLIB = -L/usr/local/lib -lg2c -llapack -lblas
++#else
++LAPACKLIB = -L/usr/local/lib -lf2c -llapack -lblas
++#endif
++#endif
+ #else
+ LAPACK=0
+ LAPACKLIB =

@@ -1,0 +1,10 @@
+--- asm/Makefile.am.orig	Fri May  2 02:18:28 2003
++++ asm/Makefile.am	Fri May  2 02:18:50 2003
+@@ -1,6 +1,6 @@
+ ## $OpenXM: OpenXM_contrib2/asir2000/asm/Makefile.am,v 1.3 2003/03/20 07:34:08 ohara Exp $
+ 
+-asirdir    = ${prefix}/lib/asir
++asirdir    = ${prefix}/share/asir
+ DEFS       = @DEFS@ -DASIR_LIBDIR=\"${asirdir}\"
+ INCLUDES   = -I${top_srcdir}/include -I${top_srcdir}/parse -I${top_srcdir}/io \
+               -I${top_srcdir}/gc/include \

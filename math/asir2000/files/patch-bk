@@ -1,0 +1,10 @@
+--- lib/Makefile.am.orig	Fri May  2 02:30:42 2003
++++ lib/Makefile.am	Fri May  2 02:30:57 2003
+@@ -1,6 +1,6 @@
+ ## $OpenXM: OpenXM_contrib2/asir2000/lib/Makefile.am,v 1.7 2003/04/20 07:15:35 noro Exp $
+ 
+-asirdir = ${libdir}/asir
++asirdir = ${datadir}/asir
+ RR      = alpi bfct bgk const cyclic defs.h dfff dmul fctrdata fctrtest \
+           fff glib gr ifplot katsura mat nf num primdec primdec_lex \
+           ratint robot solve sp sturm sym xm primdec_mod

@@ -1,4 +1,21 @@
 bin/asir
+include/asir/al.h
+include/asir/b.h
+include/asir/base.h
+include/asir/bf.h
+include/asir/ca-27.h
+include/asir/ca.h
+include/asir/com.h
+include/asir/comp.h
+include/asir/cpp.h
+include/asir/inline.h
+include/asir/interval.h
+include/asir/ox.h
+include/asir/parse.h
+include/asir/prime.h
+include/asir/version.h
+include/asir/w_stdio.h
+include/asir/wsio.h
 share/asir/alpi
 share/asir/bfct
 share/asir/bgk
@@ -27,17 +44,22 @@ share/asir/xm
 share/asir/ox_asir
 share/asir/ox_plot
 share/asir/ox_launch
+share/asir/help
 share/asir/help-eg/%
 share/asir/help-eg/af
 share/asir/help-eg/af_noalg
 share/asir/help-eg/alg
 share/asir/help-eg/algptorat
 share/asir/help-eg/algv
+share/asir/help-eg/ann
+share/asir/help-eg/ann0
 share/asir/help-eg/append
 share/asir/help-eg/arfreg
 share/asir/help-eg/args
 share/asir/help-eg/asciitostr
 share/asir/help-eg/asq
+share/asir/help-eg/bfct
+share/asir/help-eg/bfunction
 share/asir/help-eg/bload
 share/asir/help-eg/bload27
 share/asir/help-eg/break
@@ -67,6 +89,7 @@ share/asir/help-eg/deval
 share/asir/help-eg/dgr
 share/asir/help-eg/diff
 share/asir/help-eg/dn
+share/asir/help-eg/dp_gr_f_main
 share/asir/help-eg/dp_dehomo
 share/asir/help-eg/dp_dtop
 share/asir/help-eg/dp_etov
@@ -103,6 +126,11 @@ share/asir/help-eg/dp_td
 share/asir/help-eg/dp_true_nf
 share/asir/help-eg/dp_true_nf_mod
 share/asir/help-eg/dp_vtoe
+share/asir/help-eg/dp_weyl_f4_main
+share/asir/help-eg/dp_weyl_f4_mod_main
+share/asir/help-eg/dp_weyl_gr_f_main
+share/asir/help-eg/dp_weyl_gr_main
+share/asir/help-eg/dp_weyl_gr_mod_main
 share/asir/help-eg/draw_obj
 share/asir/help-eg/draw_string
 share/asir/help-eg/ecm_add_ff
@@ -125,6 +153,7 @@ share/asir/help-eg/gb_comp
 share/asir/help-eg/gcd
 share/asir/help-eg/gcdz
 share/asir/help-eg/generate_port
+share/asir/help-eg/generic_bfct
 share/asir/help-eg/get_byte
 share/asir/help-eg/get_line
 share/asir/help-eg/get_rootdir
@@ -223,6 +252,9 @@ share/asir/help-eg/primadec
 share/asir/help-eg/prime
 share/asir/help-eg/primedec
 share/asir/help-eg/print
+share/asir/help-eg/polarplot
+share/asir/help-eg/primedec_mod
+share/asir/help-eg/ptosfp
 share/asir/help-eg/psubst
 share/asir/help-eg/ptogf2n
 share/asir/help-eg/ptozp
@@ -250,6 +282,8 @@ share/asir/help-eg/set_uptkara
 share/asir/help-eg/setmod
 share/asir/help-eg/setmod_ff
 share/asir/help-eg/setprec
+share/asir/help-eg/sffctr
+share/asir/help-eg/sfptop
 share/asir/help-eg/shell
 share/asir/help-eg/simp_ff
 share/asir/help-eg/simpalg
@@ -313,11 +347,15 @@ share/asir/help-jp/af_noalg
 share/asir/help-jp/alg
 share/asir/help-jp/algptorat
 share/asir/help-jp/algv
+share/asir/help-jp/ann
+share/asir/help-jp/ann0
 share/asir/help-jp/append
 share/asir/help-jp/arfreg
 share/asir/help-jp/args
 share/asir/help-jp/asciitostr
 share/asir/help-jp/asq
+share/asir/help-jp/bfct
+share/asir/help-jp/bfunction
 share/asir/help-jp/bload
 share/asir/help-jp/bload27
 share/asir/help-jp/bsave
@@ -351,6 +389,7 @@ share/asir/help-jp/dp_etov
 share/asir/help-jp/dp_f4_main
 share/asir/help-jp/dp_f4_mod_main
 share/asir/help-jp/dp_gr_flags
+share/asir/help-jp/dp_gr_f_main
 share/asir/help-jp/dp_gr_main
 share/asir/help-jp/dp_gr_mod_main
 share/asir/help-jp/dp_gr_print
@@ -381,6 +420,11 @@ share/asir/help-jp/dp_td
 share/asir/help-jp/dp_true_nf
 share/asir/help-jp/dp_true_nf_mod
 share/asir/help-jp/dp_vtoe
+share/asir/help-jp/dp_weyl_f4_main
+share/asir/help-jp/dp_weyl_f4_mod_main
+share/asir/help-jp/dp_weyl_gr_f_main
+share/asir/help-jp/dp_weyl_gr_main
+share/asir/help-jp/dp_weyl_gr_mod_main
 share/asir/help-jp/draw_obj
 share/asir/help-jp/draw_string
 share/asir/help-jp/ecm_add_ff
@@ -403,6 +447,7 @@ share/asir/help-jp/gb_comp
 share/asir/help-jp/gcd
 share/asir/help-jp/gcdz
 share/asir/help-jp/generate_port
+share/asir/help-jp/generic_bfct
 share/asir/help-jp/get_byte
 share/asir/help-jp/get_line
 share/asir/help-jp/get_rootdir
@@ -500,6 +545,9 @@ share/asir/help-jp/primadec
 share/asir/help-jp/prime
 share/asir/help-jp/primedec
 share/asir/help-jp/print
+share/asir/help-jp/polarplot
+share/asir/help-jp/primedec_mod
+share/asir/help-jp/ptosfp
 share/asir/help-jp/psubst
 share/asir/help-jp/ptogf2n
 share/asir/help-jp/ptozp
@@ -526,6 +574,8 @@ share/asir/help-jp/set_uptkara
 share/asir/help-jp/setmod
 share/asir/help-jp/setmod_ff
 share/asir/help-jp/setprec
+share/asir/help-jp/sffctr
+share/asir/help-jp/sfptop
 share/asir/help-jp/shell
 share/asir/help-jp/simp_ff
 share/asir/help-jp/simpalg
@@ -583,8 +633,8 @@ share/asir/help-jp/version
 share/asir/help-jp/vtol
 share/asir/help-jp/vtype
 share/asir/help-jp/which
-share/doc/asir/man-eg.ps
-share/doc/asir/man-jp.ps
+share/doc/asir/man-eg.pdf
+share/doc/asir/man-jp.pdf
 share/doc/asir/html-eg/man_1.html
 share/doc/asir/html-eg/man_10.html
 share/doc/asir/html-eg/man_100.html
@@ -768,6 +818,12 @@ share/doc/asir/html-eg/man_260.html
 share/doc/asir/html-eg/man_261.html
 share/doc/asir/html-eg/man_262.html
 share/doc/asir/html-eg/man_263.html
+share/doc/asir/html-eg/man_264.html
+share/doc/asir/html-eg/man_265.html
+share/doc/asir/html-eg/man_266.html
+share/doc/asir/html-eg/man_267.html
+share/doc/asir/html-eg/man_268.html
+share/doc/asir/html-eg/man_269.html
 share/doc/asir/html-eg/man_27.html
 share/doc/asir/html-eg/man_28.html
 share/doc/asir/html-eg/man_29.html
@@ -1032,6 +1088,12 @@ share/doc/asir/html-jp/man_260.html
 share/doc/asir/html-jp/man_261.html
 share/doc/asir/html-jp/man_262.html
 share/doc/asir/html-jp/man_263.html
+share/doc/asir/html-jp/man_264.html
+share/doc/asir/html-jp/man_265.html
+share/doc/asir/html-jp/man_266.html
+share/doc/asir/html-jp/man_267.html
+share/doc/asir/html-jp/man_268.html
+share/doc/asir/html-jp/man_269.html
 share/doc/asir/html-jp/man_27.html
 share/doc/asir/html-jp/man_28.html
 share/doc/asir/html-jp/man_29.html
@@ -1115,8 +1177,9 @@ share/doc/asir/html-jp/man_99.html
 share/doc/asir/html-jp/man_toc.html
 share/doc/asir/html-internal-ja/internal.html
 share/doc/asir/html-internal-ja/internal_toc.html
-share/doc/asir/internal.ps
+share/doc/asir/internal-jp.pdf
 share/doc/asir/asir.1
+@dirrm include/asir
 @dirrm share/asir/help-jp
 @dirrm share/asir/help-eg
 @dirrm share/asir
