@@ -55,6 +55,7 @@
     SUBDIR += fpc
     SUBDIR += fpc-devel
     SUBDIR += freetxl
+    SUBDIR += g95
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc27

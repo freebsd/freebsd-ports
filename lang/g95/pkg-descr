@@ -1,0 +1,10 @@
+GNU Fortran90/95 compiler (gfortran)
+from tree-ssa-20020619-branch
+you can invoke Fortran by gfortran or g95.
+
+WWW: http://g95.sourceforge.net/
+     http://gcc.gnu.org/fortran/
+     http://gcc.gnu.org/projects/tree-ssa/
+
+--
+ NAKATA Maho (maho@FreeBSD.org)
