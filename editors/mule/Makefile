@@ -1,23 +1,17 @@
 # New ports collection makefile for:	mule
-# Version required:	2.2.2
+# Version required:	2.3
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.20 1995/07/20 00:25:14 asami Exp $
+# $Id: Makefile,v 1.21 1995/07/23 22:32:38 asami Exp $
 #
 
-DISTNAME=	mule-2.2
-PKGNAME=	mule-2.2.2
+DISTNAME=	mule-2.3
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://ftp.cs.buffalo.edu/pub/mule/ \
 		ftp://etlport.etl.go.jp/pub/mule/ \
-		ftp://sh.wide.ad.jp/JAPAN/mule/
-
-PATCH_SITES=	ftp://ftp.cs.buffalo.edu/pub/mule/ \
-		ftp://etlport.etl.go.jp/pub/mule/ \
-		ftp://sh.wide.ad.jp/JAPAN/mule/
-PATCHFILES=	patch-2.2.1.gz patch-2.2.2.gz
-PATCH_DIST_STRIP=	-p1
+		ftp://sh.wide.ad.jp/JAPAN/mule/ \
+		ftp://ftp.funet.fi/pub/gnu/emacs/mule/
 
 MAINTAINER=	asami@FreeBSD.ORG
 
@@ -26,7 +20,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		--terminal-face \
 		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
-
 STRIP=
 
 pre-build:
