@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dxpc
-PORTVERSION=	3.8.0
+PORTVERSION=	3.8.2
 CATEGORIES=	x11
-MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
+MASTER_SITES=	http://www.vigor.nu/dxpc/${PORTVERSION}/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
