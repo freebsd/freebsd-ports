@@ -608,6 +608,7 @@
     SUBDIR += p5-Exception-Class
     SUBDIR += p5-Exporter-Lite
     SUBDIR += p5-ExtUtils-ParseXS
+    SUBDIR += p5-ExtUtils-XSBuilder
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Binary
     SUBDIR += p5-File-Cache
