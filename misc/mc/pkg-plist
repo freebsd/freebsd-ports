@@ -33,8 +33,6 @@ share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
-share/mc/FAQ
-share/mc/bin/mcfn_install
 share/mc/cedit.menu
 share/mc/edit.indent.rc
 share/mc/edit.spell.rc
@@ -107,5 +105,4 @@ share/mc/syntax/texinfo.syntax
 share/mc/syntax/unknown.syntax
 @dirrm share/mc/syntax
 @dirrm share/mc/extfs
-@dirrm share/mc/bin
 @dirrm share/mc
