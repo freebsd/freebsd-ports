@@ -62,7 +62,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/test/* ${WRKSRC}/example/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${LN} -s . ${RUBY_EXAMPLESDIR}/${PORTNAME}/test
+	${LN} -fs . ${RUBY_EXAMPLESDIR}/${PORTNAME}/test
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
