@@ -65,7 +65,8 @@ pre-build:
 
 do-install:
 	${MKDIR} ${DOC_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/drweb/
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail.rus ${DOC_DIR}
 	${SED} 's#!!PREFIX!!#${PREFIX}#' < ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drweb-smf.sh
