@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdl
-PORTVERSION=	0.6
+PORTVERSION=	0.7.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rrbcurnow.freeuk.com/tdl/
 
