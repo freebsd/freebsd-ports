@@ -1,8 +1,6 @@
-$FreeBSD$
-
---- Makefile.orig	Mon Dec 11 14:43:23 2000
-+++ Makefile	Mon Dec 24 08:17:21 2001
-@@ -6,15 +6,16 @@
+--- Makefile.orig	Mon Feb 15 11:54:06 1999
++++ Makefile	Wed Mar 13 23:41:36 2002
+@@ -6,15 +6,15 @@
  # warranties, including, without limitation, the implied warranties
  # of merchant-ability and fitness for a particular purpose.
  
@@ -12,7 +10,6 @@ $FreeBSD$
 +CC?=		gcc
 +CFLAGS?=	-O2 -Wall
 +LDFLAGS?=
-+PREFIX?=	/usr/local
 +BINDIR=		${PREFIX}/bin
 +MANDIR=		${PREFIX}/man/man1
  
@@ -24,13 +21,12 @@ $FreeBSD$
  
  all:	tree
  
-@@ -28,18 +29,15 @@
- 	if [ -f tree.o ]; then rm *.o; fi
+@@ -28,17 +28,15 @@
+ 	if [ -e tree.o ]; then rm *.o; fi
  	rm -f *~
  
 -install:
--	install -d $(BINDIR)
--	install -d $(MANDIR)
+-	install -d $(BINDIR) $(MANDIR)
 -	if [ -e $(TREE_DEST) ]; then \
 -		install -s $(TREE_DEST) $(BINDIR)/$(TREE_DEST); \
 -	fi
@@ -42,7 +38,7 @@ $FreeBSD$
 +	${BSD_INSTALL_MAN} $(MAN) $(MANDIR)
  
  distclean:
- 	if [ -f tree.o ]; then rm *.o; fi
+ 	if [ -e tree.o ]; then rm *.o; fi
  	rm -f *~
 -	
  
