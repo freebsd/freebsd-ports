@@ -5673,27 +5673,43 @@ misc.c:
   </vuln>
 
   <vuln vid="d2102505-f03d-11d8-81b0-000347a4fa7d">
-    <topic>multiple CVS vulnerabilities</topic>
+    <topic>cvs --- numerous vulnerabilities</topic>
     <affects>
       <package>
 	<name>cvs+ipv6</name>
 	<range><lt>1.11.17</lt></range>
       </package>
-<!--
-      <system>
-	<name>FreeBSD</name>
-	<range><lt>491101</lt></range>
-	<range><ge>500000</ge><lt>502114</lt></range>
-      </system>
--->
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Stefan Esser reports multiple remote exploitable vulnerabilites
-          in the cvs code base.</p>
-        <p>Additionaly there exists an undocumented switch to the history
-          command allows an attacker to determine whether arbitrary files
-          exist and whether the CVS process can access them.</p>
+        <p>A number of vulnerabilities were discovered in CVS by
+	  Stefan Esser, Sebastian Krahmer, and Derek Price.</p>
+	<ul>
+          <li>Insufficient input validation while processing "Entry"
+	    lines.  (CAN-2004-0414)</li>
+	  <li>A double-free resulting from erroneous state handling while
+	    processing "Argumentx" commands. (CAN-2004-0416)</li>
+	  <li>Integer overflow while processing "Max-dotdot" commands.
+	    (CAN-2004-0417)</li>
+	  <li>Erroneous handling of empty entries handled while processing
+	    "Notify" commands. (CAN-2004-0418)</li>
+	  <li>A format string bug while processing CVS wrappers.</li>
+	  <li>Single-byte buffer underflows while processing configuration files
+	    from CVSROOT.</li>
+	  <li>Various other integer overflows.</li>
+	</ul>
+        <p>Additionally, iDEFENSE reports an undocumented command-line
+          flag used in debugging does not perform input validation on
+          the given path names.</p>
+        <p>CVS servers ("cvs server" or :pserver: modes) are
+          affected by these vulnerabilities.  They vary in impact
+          but include information disclosure (the iDEFENSE-reported
+          bug), denial-of-service (CAN-2004-0414, CAN-2004-0416,
+          CAN-2004-0417 and other bugs), or possibly arbitrary code
+          execution (CAN-2004-0418).  In very special situations where
+          the attacker may somehow influence the contents of CVS
+          configuration files in CVSROOT, additional attacks may be
+          possible.</p>
       </body>
     </description>
     <references>
@@ -5716,10 +5732,12 @@ misc.c:
       <url>http://www.osvdb.org/6836</url>
       <url>http://www.packetstormsecurity.org/0405-exploits/cvs_linux_freebsd_HEAP.c</url>
       <bid>10499</bid>
+      <freebsdsa>SA-04:14.cvs</freebsdsa>
     </references>
     <dates>
       <discovery>2004-05-20</discovery>
       <entry>2004-08-17</entry>
+      <modified>2004-09-19</modified>
     </dates>
   </vuln>
 </vuxml>
