@@ -1,8 +1,20 @@
---- setup.py.orig	Sun Mar 30 17:01:05 2003
-+++ setup.py	Sun Mar 30 17:01:20 2003
-@@ -18,9 +18,9 @@
+--- setup.py.orig	Fri Jan 14 22:12:02 2005
++++ setup.py	Fri Jan 14 22:12:54 2005
+@@ -9,18 +9,19 @@
+ import BitTorrent
+ 
+ setup(
+-    name = "BitTorrent",
+-    version = BitTorrent.version,
++    name = "%%KENOSIS-BITTORRENT%%",
++    version = %%KENOSIS-BITTORRENT%%.version,
+     author = "Bram Cohen",
+     author_email = "<bram@bitconjurer.org>",
+     url = "http://www.bitconjurer.org/BitTorrent/",
+     license = "MIT",
      
-     packages = ["BitTorrent"],
+-    packages = ["BitTorrent"],
++    packages = ["%%KENOSIS-BITTORRENT%%"],
  
 -    scripts = ["btdownloadgui.py", "btdownloadheadless.py", "btdownloadlibrary.py", 
 +    scripts = ["btdownloadheadless.py", "btdownloadlibrary.py", 
@@ -10,5 +22,6 @@
 -        "btdownloadcurses.py", "btcompletedirgui.py", "btlaunchmanycurses.py", 
 +        "btdownloadcurses.py", "btlaunchmanycurses.py", 
          "btmakemetafile.py", "btreannounce.py", "btrename.py", "btshowmetainfo.py",
++	"btunittest.py",
          "bttest.py"]
      )
