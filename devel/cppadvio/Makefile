@@ -8,8 +8,9 @@
 PORTNAME=	cppadvio
 PORTVERSION=	2.6
 CATEGORIES=	devel net
-MASTER_SITES=	http://www.lh.com/~oleg/ftp/packages/ \
+MASTER_SITES=	http://okmij.org/ftp/packages/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ijliao
 
 MAINTAINER=	oleg@pobox.com
 
