@@ -7308,6 +7308,7 @@ xtail		ports/misc/xtail
 xtar		ports/misc/xtar
 xtattr		ports/x11/xtattr
 xteddy		ports/games/xteddy
+xtel		ports/french/xtel
 xtem		ports/print/xtem
 xten		src/usr.sbin/xten
 xtend		src/libexec/xtend
