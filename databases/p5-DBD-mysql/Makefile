@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Mysql-modules
-PORTVERSION=	1.2214
+PORTVERSION=	1.2215
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
-DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
+DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
@@ -34,6 +34,7 @@ MAN3=		Bundle::DBD::mysql.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
+		@${PERL} -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PERL5} Makefile.PL ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

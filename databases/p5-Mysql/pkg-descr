@@ -11,3 +11,5 @@ pretty stable. It's also more complete than DBD::mysql.
 Some day in the future DBD::mysql will probably be the clearly superior
 competitor in this package. Today you have to decide on your own about
 the trade-offs.
+
+WWW: http://www.symbolstone.org/technology/perl/DBI/

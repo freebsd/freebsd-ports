@@ -6,6 +6,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mysql/Statement.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/mysql/mysql.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/mysql/mysql.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Msql-Mysql-modules/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/mysql
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/mysql
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Msql-Mysql-modules
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mysql
