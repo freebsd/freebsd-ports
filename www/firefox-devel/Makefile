@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	firefox
-PORTVERSION=	0.8
-PORTREVISION=	5
+PORTVERSION=	0.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
@@ -25,8 +24,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
 ALL_TARGET=	default
-CONFIGURE_ENV=	WITH_GTK2=yes \
-		LOCALBASE=${LOCALBASE}
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 FAKEDIR=	${WRKDIR}/fake
 FAKESUBDIR=	${FAKEDIR}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
@@ -42,6 +40,7 @@ USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 JPI_LIST?=\
 	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
@@ -56,6 +55,10 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 		XFT "Enable support for anti-aliased fonts" on
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CONFIGURE_ENV+=		WITH_REORDER=yes
+.endif # ${ARCH} == "i386"
 
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
@@ -117,10 +120,10 @@ post-patch:
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
-	@${PERL} -pi -e 's|libesd\.so\.0|${ESD_LIB}|g' \
+	@${PERL} -pi -e 's|libesd\.so\.\d+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
-.for ii in modules/libpref/src/init browser/app/profile \
-	calendar/sunbird/app/profile
+.for ii in modules/libpref/src/init extensions/sroaming/resources/content/prefs \
+	embedding/minimo
 	${MV} ${WRKSRC}/${ii}/all.js ${WRKSRC}/${ii}/all.js.bak
 	${SED} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 	< ${WRKSRC}/${ii}/all.js.bak > ${WRKSRC}/${ii}/all.js
@@ -132,6 +135,12 @@ pre-configure:
 		${FALSE}; \
 	fi
 
+post-build:
+	# XXX This works around an install problem that is triggered when
+	# toolkit/profile/src is built after profile/src.
+	@(cd ${WRKSRC}/dist/lib && ${LN} -sf ../../profile/src/libprofile_s.a \
+		.)
+
 pre-install:
 # Overview:  the program installs itself in FAKEDIR, then a list is made of the
 # files and directories in there.  This is the PLIST (packing list) for the
@@ -142,9 +151,11 @@ pre-install:
 		Makefile ${MAKE_ARGS} install
 .for ii in mac win
 .for jj in / .jar
-	@${RM} -rf ${FAKEDIR}/lib/mozilla-1.6/chrome/en-${ii}${jj}
+	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 
 .if !defined (WITH_HEADERS)
 	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
@@ -166,6 +177,7 @@ do-install:
 	cd ${FAKEDIR} && ${FIND} * | ${CPIO} -dmp --quiet ${PREFIX}
 
 post-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .for i in ${EXTRA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor

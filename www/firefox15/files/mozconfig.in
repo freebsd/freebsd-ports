@@ -9,6 +9,7 @@ ac_add_options --disable-tests
 ac_add_options --disable-debug
 ac_add_options --disable-mailnews
 ac_add_options --disable-composer
+ac_add_options --enable-default-toolkit=gtk2
 ######################################################################
 # FBSD specific
 export CPPFLAGS="@CPPFLAGS@"
@@ -31,7 +32,6 @@ ac_add_options --with-system-mng=@LOCALBASE@
 ######################################################################
 # set compile/link features
 ac_add_options --with-pthreads
-ac_add_options --enable-reorder
 ######################################################################
 # disable unneeded/unavailable
 ac_add_options --disable-auto-deps
@@ -45,6 +45,11 @@ ac_add_options --disable-installer
 ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices,inspector
 ######################################################################
 # conditional from port Makefile
+if test -n "$WITH_REORDER"; then
+    ac_add_options --enable-reorder
+else
+    ac_add_options --disable-reorder
+fi # test -n "$WITH_REORDER"
 if test -n "$WITH_DEBUG"; then
     ac_add_options --enable-debug
     ac_add_options --disable-strip
@@ -52,6 +57,10 @@ else
     ac_add_options --disable-debug
     ac_add_options --enable-optimize
     ac_add_options --enable-strip
+    export BUILD_OFFICIAL=1
+    export MOZILLA_OFFICIAL=1
+    mk_add_options BUILD_OFFICIAL=1
+    mk_add_options MOZILLA_OFFICIAL=1
 fi # test -n "$WITH_DEBUG"
 if test -n "$WITH_LOGGING"; then
     ac_add_options --enable-logging
@@ -63,9 +72,4 @@ if test -z "$WITHOUT_XFT"; then
 else
     ac_add_options --disable-xft
 fi # test -z "$WITHOUT_XFT"
-if test -n "$WITH_GTK2"; then
-    ac_add_options --enable-default-toolkit=gtk2
-else
-    ac_add_options --enable-default-toolkit=gtk
-fi # test -n "$WITH_GTK2"
 ######################################################################
