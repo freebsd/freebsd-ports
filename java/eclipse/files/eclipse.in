@@ -44,4 +44,4 @@ if [ ! -x "${ECLIPSE_HOME}/eclipse" ]; then
 	exit 1
 fi
 
-PATH=${JAVA_HOME}/bin:$PATH "${ECLIPSE_HOME}/eclipse" $@
+PATH=${JAVA_HOME}/bin:$PATH exec "${ECLIPSE_HOME}/eclipse" $@
