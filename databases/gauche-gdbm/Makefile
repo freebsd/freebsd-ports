@@ -35,7 +35,7 @@ do-extract:
 
 do-configure:
 	cd `cd ${PORTSDIR}/${GAUCHE_PORT} && ${MAKE} -V WRKSRC` && ./configure --with-local=${LOCALBASE} --prefix=${LOCALBASE} --target=${CONFIGURE_TARGET} --host=${CONFIGURE_HOST} --build=${CONFIGURE_BUILD} && cd ext && ${REINPLACE_CMD} -e "s/archdir/&|sed 's,unknown-freebsd,portbld-freebsd,'/" Makefile.ext
-	cd ${WRKSRC} && make clean && ${REINPLACE_CMD} -e 's/^LIBFILES.*/LIBFILES = gdbm.la/' -e 's/^SCMFILES.*/SCMFILES = gdbm.scm/' Makefile
+	cd ${WRKSRC} && make clean && ${REINPLACE_CMD} -e 's/^LIBFILES.*/LIBFILES = gdbm.so/' -e 's/^SCMFILES.*/SCMFILES = gdbm.scm/' Makefile
 
 do-install:
 	cd ${WRKSRC} && make install-std
