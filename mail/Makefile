@@ -278,6 +278,7 @@
     SUBDIR += spambnc
     SUBDIR += spamoracle
     SUBDIR += spamprobe
+    SUBDIR += spamstats
     SUBDIR += spruce
     SUBDIR += squirrelmail
     SUBDIR += sqwebmail
