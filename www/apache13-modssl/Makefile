@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.3 + 2.1.3
+# Version required:	1.3.3 + 2.1.4
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.10 1998/12/03 09:37:05 rse Exp $
+# $Id: Makefile,v 1.11 1998/12/05 17:51:34 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 
 VERSION_APACHE=	1.3.3
-VERSION_MODSSL=	2.1.3
+VERSION_MODSSL=	2.1.4
 
 RESTRICTED=	"Contains cryptography"
 
