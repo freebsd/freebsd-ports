@@ -16,14 +16,14 @@ for i in ${APP_HOME}/lib/* ; do
 		CLASSPATH=$i
 	fi
 done
-if [ -f ${JAVA_HOME}/lib/tools.jar ] ; then
-	CLASSPATH=${CLASSPATH}:${JAVA_HOME}/lib/tools.jar
-fi
 
 # Check if the JAVA_HOME directory is defined, otherwise set it to the
 # fallback default
 if [ "${JAVA_HOME}a" = "a" ]; then
 	JAVA_HOME=%%JAVA_HOME%%
+fi
+if [ -f ${JAVA_HOME}/lib/tools.jar ] ; then
+	CLASSPATH=${CLASSPATH}:${JAVA_HOME}/lib/tools.jar
 fi
 JAVA_CMD=${JAVA_HOME}/bin/java
 
