@@ -1,5 +1,6 @@
-share/a2ps/README
 etc/a2ps.cfg
+etc/a2ps-site.cfg
+share/a2ps/README
 share/a2ps/ps/bw.pro
 share/a2ps/ps/bold.pro
 share/a2ps/ps/gray.pro
@@ -11,34 +12,34 @@ share/a2ps/ps/base.ps
 share/a2ps/ps/ehandler.ps
 share/a2ps/ps/a2ps.hdr
 share/a2ps/ps/color.hdr
-share/a2ps/afm/pcrr-o.afm
-share/a2ps/afm/pcrro-o.afm
-share/a2ps/afm/pcrb-o.afm
-share/a2ps/afm/pcrbo-o.afm
-share/a2ps/afm/ptmr-o.afm
-share/a2ps/afm/ptmri-o.afm
-share/a2ps/afm/ptmb-o.afm
-share/a2ps/afm/ptmbi-o.afm
-share/a2ps/afm/phvr-o.afm
-share/a2ps/afm/phvro-o.afm
-share/a2ps/afm/phvb-o.afm
-share/a2ps/afm/phvbo-o.afm
 share/a2ps/afm/pcfont.afm
 share/a2ps/fonts/pcfont.pfa
-share/a2ps/fonts/pcrr-o.pfa
-share/a2ps/fonts/pcrro-o.pfa
-share/a2ps/fonts/pcrb-o.pfa
-share/a2ps/fonts/pcrbo-o.pfa
-share/a2ps/fonts/ptmr-o.pfa
-share/a2ps/fonts/ptmri-o.pfa
-share/a2ps/fonts/ptmb-o.pfa
-share/a2ps/fonts/ptmbi-o.pfa
-share/a2ps/fonts/phvr-o.pfa
-share/a2ps/fonts/phvro-o.pfa
-share/a2ps/fonts/phvb-o.pfa
-share/a2ps/fonts/phvbo-o.pfa
+share/a2ps/ogonkify/afm/pcrr-o.afm
+share/a2ps/ogonkify/afm/pcrro-o.afm
+share/a2ps/ogonkify/afm/pcrb-o.afm
+share/a2ps/ogonkify/afm/pcrbo-o.afm
+share/a2ps/ogonkify/afm/ptmr-o.afm
+share/a2ps/ogonkify/afm/ptmri-o.afm
+share/a2ps/ogonkify/afm/ptmb-o.afm
+share/a2ps/ogonkify/afm/ptmbi-o.afm
+share/a2ps/ogonkify/afm/phvr-o.afm
+share/a2ps/ogonkify/afm/phvro-o.afm
+share/a2ps/ogonkify/afm/phvb-o.afm
+share/a2ps/ogonkify/afm/phvbo-o.afm
 share/a2ps/ogonkify/ascii.enc
 share/a2ps/ogonkify/adobe.enc
+share/a2ps/ogonkify/fonts/pcrb-o.pfa
+share/a2ps/ogonkify/fonts/pcrbo-o.pfa
+share/a2ps/ogonkify/fonts/pcrr-o.pfa
+share/a2ps/ogonkify/fonts/pcrro-o.pfa
+share/a2ps/ogonkify/fonts/phvb-o.pfa
+share/a2ps/ogonkify/fonts/phvbo-o.pfa
+share/a2ps/ogonkify/fonts/phvr-o.pfa
+share/a2ps/ogonkify/fonts/phvro-o.pfa
+share/a2ps/ogonkify/fonts/ptmb-o.pfa
+share/a2ps/ogonkify/fonts/ptmbi-o.pfa
+share/a2ps/ogonkify/fonts/ptmr-o.pfa
+share/a2ps/ogonkify/fonts/ptmri-o.pfa
 share/a2ps/ogonkify/latin1.enc
 share/a2ps/ogonkify/latin2.enc
 share/a2ps/ogonkify/latin3.enc
@@ -76,6 +77,7 @@ share/locale/fr/LC_MESSAGES/a2ps.mo
 share/locale/it/LC_MESSAGES/a2ps.mo
 share/locale/ko/LC_MESSAGES/a2ps.mo
 share/locale/nl/LC_MESSAGES/a2ps.mo
+share/locale/no/LC_MESSAGES/a2ps.mo
 share/locale/pl/LC_MESSAGES/a2ps.mo
 share/locale/pt/LC_MESSAGES/a2ps.mo
 share/locale/ru/LC_MESSAGES/a2ps.mo
@@ -90,6 +92,7 @@ share/a2ps/sheets/card.ssh
 share/a2ps/sheets/clisp.ssh
 share/a2ps/sheets/cpp.ssh
 share/a2ps/sheets/csh.ssh
+share/a2ps/sheets/dc_shell.ssh
 share/a2ps/sheets/eiffel.ssh
 share/a2ps/sheets/elisp.ssh
 share/a2ps/sheets/fortran.ssh
@@ -111,9 +114,12 @@ share/a2ps/sheets/scheme.ssh
 share/a2ps/sheets/ssh.ssh
 share/a2ps/sheets/symbols.ssh
 share/a2ps/sheets/tcl.ssh
+share/a2ps/sheets/tclx.ssh
+share/a2ps/sheets/tcsh.ssh
 share/a2ps/sheets/texscript.ssh
 share/a2ps/sheets/tk.ssh
 share/a2ps/sheets/udiff.ssh
+share/a2ps/sheets/vtcl.ssh
 share/a2ps/sheets/wdiff.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/68000.ssh
@@ -122,6 +128,15 @@ share/a2ps/sheets/chlog.ssh
 share/a2ps/sheets/claire.ssh
 share/a2ps/sheets/coqv.ssh
 share/a2ps/sheets/eps.ssh
+share/a2ps/sheets/for-fixed.ssh
+share/a2ps/sheets/for-free.ssh
+share/a2ps/sheets/for77-fixed.ssh
+share/a2ps/sheets/for77-free.ssh
+share/a2ps/sheets/for77kwds.ssh
+share/a2ps/sheets/for90-fixed.ssh
+share/a2ps/sheets/for90-free.ssh
+share/a2ps/sheets/for90kwds.ssh
+share/a2ps/sheets/gmake.ssh
 share/a2ps/sheets/idl.ssh
 share/a2ps/sheets/initora.ssh
 share/a2ps/sheets/is5rul.ssh
@@ -130,7 +145,6 @@ share/a2ps/sheets/matlab4.ssh
 share/a2ps/sheets/mib.ssh
 share/a2ps/sheets/o2c.ssh
 share/a2ps/sheets/octave.ssh
-share/a2ps/sheets/oldperl.ssh
 share/a2ps/sheets/oracle.ssh
 share/a2ps/sheets/plsql.ssh
 share/a2ps/sheets/ppd.ssh
@@ -138,6 +152,7 @@ share/a2ps/sheets/ps.ssh
 share/a2ps/sheets/prolog.ssh
 share/a2ps/sheets/promela.ssh
 share/a2ps/sheets/python.ssh
+share/a2ps/sheets/rexx.ssh
 share/a2ps/sheets/sather.ssh
 share/a2ps/sheets/sdl88.ssh
 share/a2ps/sheets/sh.ssh
@@ -169,13 +184,6 @@ share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/mac.edf
 share/a2ps/afm/make_fonts_map.sh
 share/a2ps/afm/fonts.map
-share/a2ps/afm/colle10.afm
-share/a2ps/afm/colle8.afm
-share/a2ps/afm/colle9.afm
-share/a2ps/afm/crr35__i.afm
-share/a2ps/afm/crr36__i.afm
-share/a2ps/afm/crr55__i.afm
-share/a2ps/afm/crr56__i.afm
 share/a2ps/afm/pbkd.afm
 share/a2ps/afm/pbkdi.afm
 share/a2ps/afm/pbkl.afm
@@ -207,34 +215,19 @@ share/a2ps/afm/ptmi.afm
 share/a2ps/afm/ptmr.afm
 share/a2ps/afm/pzcmi.afm
 share/a2ps/afm/pzdr.afm
-share/a2ps/afm/textb18.afm
-share/a2ps/afm/textb19.afm
-share/a2ps/afm/textb20.afm
-share/a2ps/fonts/crr35__i.pfb
-share/a2ps/fonts/crr36__i.pfb
-share/a2ps/fonts/crr55__i.pfb
-share/a2ps/fonts/crr56__i.pfb
-share/a2ps/fonts/colle10.pfb
-share/a2ps/fonts/colle8.pfb
-share/a2ps/fonts/colle9.pfb
-share/a2ps/fonts/textb18.pfb
-share/a2ps/fonts/textb19.pfb
-share/a2ps/fonts/textb20.pfb
 share/a2ps/ppd/README
 share/a2ps/ppd/level1.ppd
 share/a2ps/ppd/level2.ppd
-share/emacs/site-lisp/make-regexp.el
-share/emacs/site-lisp/a2ps.el
-share/emacs/site-lisp/a2ps-print.el
 bin/a2ps
 bin/ogonkify
 bin/composeglyphs
 bin/fixnt
 bin/texi2dvi4a2ps
 bin/card
-bin/psmandup
 bin/fixps
 bin/pdiff
+bin/psmandup
+bin/psset
 @unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
 info/ogonkify.info
@@ -244,6 +237,7 @@ info/a2ps.info-2
 info/a2ps.info-3
 info/a2ps.info-4
 info/a2ps.info-5
+info/a2ps.info-6
 info/regex.info
 info/regex.info-1
 info/regex.info-2
@@ -251,14 +245,48 @@ info/regex.info-3
 @exec install-info --info-dir=%D/info %D/info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/ogonkify.info
 include/liba2ps.h
-lib/liba2ps.so.1
-lib/liba2ps.so
 lib/liba2ps.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm share/a2ps/ppd
 @dirrm share/a2ps/ps
 @dirrm share/a2ps/afm
 @dirrm share/a2ps/fonts
+@dirrm share/a2ps/ogonkify/afm
+@dirrm share/a2ps/ogonkify/fonts
 @dirrm share/a2ps/ogonkify
 @dirrm share/a2ps/sheets
 @dirrm share/a2ps/encoding
+@dirrm share/a2ps
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
