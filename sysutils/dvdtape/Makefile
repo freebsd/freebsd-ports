@@ -17,7 +17,8 @@ MASTER_SITE_SUBDIR=	utils/disk-management
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create DVD master filesystems on DLT media
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		dvdtape.1
 
