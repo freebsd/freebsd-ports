@@ -6,19 +6,13 @@ bin/kmailcvt
 bin/knewstickerstub
 bin/knode
 bin/korn
-bin/kotalkd
 bin/kppp
 bin/kppplogview
 bin/ksirc
 bin/ksticker
-bin/ktalkd
-bin/ktalkdlg
 bin/lisa
-bin/mail.local
 bin/reslisa
 include/kmailIface.h
-lib/kde2/libkcm_ktalkd.la
-lib/kde2/libkcm_ktalkd.so
 lib/kio_lan.la
 lib/kio_lan.so
 lib/ksirc.la
@@ -39,7 +33,6 @@ share/applnk/Internet/keystone.desktop
 share/applnk/Internet/kit.desktop
 share/applnk/Internet/kppplogview.desktop
 share/applnk/Internet/ksirc.desktop
-share/applnk/Settings/Network/kcmktalkd.desktop
 share/applnk/Settings/Network/lanbrowser.desktop
 share/applnk/Settings/Personalization/kcmnewsticker.desktop
 share/applnk/Utilities/kmailcvt.desktop
@@ -465,7 +458,6 @@ share/apps/ksirc/test.pl
 share/apps/ksirc/tester.pl
 share/apps/lisa/README
 share/config/ksircrc
-share/config/ktalkdrc
 share/config/protocols/vnc.desktop
 share/doc/HTML/en/keystone/.anchors
 share/doc/HTML/en/keystone/common
@@ -677,7 +669,6 @@ share/icons/hicolor/32x32/apps/knode.png
 share/icons/hicolor/32x32/apps/korn.png
 share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/32x32/apps/ksirc.png
-share/icons/hicolor/32x32/apps/ktalkd.png
 share/icons/hicolor/48x48/apps/keystone.png
 share/icons/hicolor/48x48/apps/kit.png
 share/icons/hicolor/48x48/apps/kmail.png
@@ -687,7 +678,6 @@ share/icons/hicolor/48x48/apps/knode.png
 share/icons/hicolor/48x48/apps/korn.png
 share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/48x48/apps/ksirc.png
-share/icons/hicolor/48x48/apps/ktalkd.png
 share/icons/locolor/16x16/apps/keystone.png
 share/icons/locolor/16x16/apps/kit.png
 share/icons/locolor/16x16/apps/kmail.png
@@ -698,7 +688,6 @@ share/icons/locolor/16x16/apps/knode.png
 share/icons/locolor/16x16/apps/korn.png
 share/icons/locolor/16x16/apps/kppp.png
 share/icons/locolor/16x16/apps/ksirc.png
-share/icons/locolor/16x16/apps/ktalkd.png
 share/icons/locolor/32x32/apps/keystone.png
 share/icons/locolor/32x32/apps/kit.png
 share/icons/locolor/32x32/apps/kmail.png
@@ -708,11 +697,9 @@ share/icons/locolor/32x32/apps/knode.png
 share/icons/locolor/32x32/apps/korn.png
 share/icons/locolor/32x32/apps/kppp.png
 share/icons/locolor/32x32/apps/ksirc.png
-share/icons/locolor/32x32/apps/ktalkd.png
 share/services/knewsservice.protocol
 share/services/lan.protocol
 share/services/rlan.protocol
-share/sounds/ktalkd.wav
 @dirrm share/sounds
 @dirrm share/services
 @dirrm share/icons/locolor/32x32/apps
