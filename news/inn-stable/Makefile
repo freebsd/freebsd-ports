@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.19 1996/12/08 01:45:08 max Exp $
+# $Id: Makefile,v 1.20 1996/12/08 05:08:58 max Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -26,7 +26,7 @@ MAN5=	active.5 control.ctl.5 expire.ctl.5 history.5 hosts.nntp.5 \
 	inn.conf.5 innwatch.ctl.5 moderators.5 newsfeeds.5 newslog.5 \
 	nnrp.access.5 nntpsend.ctl.5 overview.fmt.5 distrib.pats.5 \
 	passwd.nntp.5 
-MAN8=	archive.8 batcher.8 buffchan.8 ctlinnd.8 cvtbatch.8 expire.8 
+MAN8=	archive.8 batcher.8 buffchan.8 ctlinnd.8 cvtbatch.8 expire.8  \
 	expireover.8 fastrm.8 filechan.8 innd.8 innxmit.8 news-recovery.8 \
 	news.daily.8 newslog.8 nnrpd.8 nntpsend.8 overchan.8 prunehistory.8
 
