@@ -1,61 +1,78 @@
-lib/libonyx.so.6
-lib/libonyx.so
-lib/libonyx.a
-include/libonyx/libonyx.h
+bin/onyx
+bin/onyx-%%ONYX_VERSION%%
+bin/onyx_config
+bin/onyx_config-%%ONYX_VERSION%%
 include/libonyx/ch.h
+include/libonyx/cnd.h
 include/libonyx/dch.h
 include/libonyx/gcdict.h
+include/libonyx/libonyx.h
+include/libonyx/libonyx_defs.h
 include/libonyx/mb.h
 include/libonyx/mem.h
+include/libonyx/mq.h
+include/libonyx/mtx.h
 include/libonyx/nx.h
 include/libonyx/nxa.h
 include/libonyx/nxn.h
 include/libonyx/nxo.h
 include/libonyx/nxo_array.h
 include/libonyx/nxo_boolean.h
+include/libonyx/nxo_condition.h
 include/libonyx/nxo_dict.h
 include/libonyx/nxo_file.h
 include/libonyx/nxo_fino.h
 include/libonyx/nxo_hook.h
 include/libonyx/nxo_integer.h
 include/libonyx/nxo_mark.h
+include/libonyx/nxo_mutex.h
 include/libonyx/nxo_name.h
 include/libonyx/nxo_no.h
 include/libonyx/nxo_null.h
 include/libonyx/nxo_operator.h
 include/libonyx/nxo_pmark.h
+include/libonyx/nxo_real.h
 include/libonyx/nxo_stack.h
 include/libonyx/nxo_string.h
-include/libonyx/ql.h
 include/libonyx/nxo_thread.h
+include/libonyx/ql.h
 include/libonyx/qr.h
 include/libonyx/qs.h
 include/libonyx/systemdict.h
-include/libonyx/xep.h
-include/libonyx/cnd.h
-include/libonyx/mq.h
-include/libonyx/mtx.h
-include/libonyx/nxo_condition.h
-include/libonyx/nxo_mutex.h
 include/libonyx/thd.h
 include/libonyx/tsd.h
-include/libonyx/nxo_real.h
-include/libonyx/libonyx_defs.h
-share/onyx-%%ONYX_VERSION%%/doc/ps/onyx.ps
-share/onyx-%%ONYX_VERSION%%/doc/pdf/onyx.pdf
+include/libonyx/xep.h
+lib/libonyx.a
+lib/libonyx.so
+lib/libonyx.so.7
+share/onyx
 share/onyx-%%ONYX_VERSION%%/doc/html/contents.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img1.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img10.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img11.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img12.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img13.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img2.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img3.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img4.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img5.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img6.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img7.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img8.png
+share/onyx-%%ONYX_VERSION%%/doc/html/img9.png
 share/onyx-%%ONYX_VERSION%%/doc/html/index.html
 share/onyx-%%ONYX_VERSION%%/doc/html/index.png
 share/onyx-%%ONYX_VERSION%%/doc/html/next.png
 share/onyx-%%ONYX_VERSION%%/doc/html/next_g.png
 share/onyx-%%ONYX_VERSION%%/doc/html/node1.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node10.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node100.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node101.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node102.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node103.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node104.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node105.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node106.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node11.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node12.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node13.html
@@ -135,25 +152,41 @@ share/onyx-%%ONYX_VERSION%%/doc/html/node8.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node80.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node81.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node82.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node83.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node84.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node85.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node86.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node87.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node88.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node89.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node9.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node90.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node91.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node92.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node93.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node94.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node95.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node96.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node97.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node98.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node99.html
 share/onyx-%%ONYX_VERSION%%/doc/html/onyx.css
 share/onyx-%%ONYX_VERSION%%/doc/html/onyx.html
 share/onyx-%%ONYX_VERSION%%/doc/html/prev.png
 share/onyx-%%ONYX_VERSION%%/doc/html/prev_g.png
 share/onyx-%%ONYX_VERSION%%/doc/html/up.png
 share/onyx-%%ONYX_VERSION%%/doc/html/up_g.png
-share/onyx-%%ONYX_VERSION%%/nxm/modprompt.nxm
+share/onyx-%%ONYX_VERSION%%/doc/pdf/onyx.pdf
+share/onyx-%%ONYX_VERSION%%/doc/ps/onyx.ps
 share/onyx-%%ONYX_VERSION%%/nx/modprompt/modprompt.nx
 share/onyx-%%ONYX_VERSION%%/nx/modprompt/modprompt_defs.nx
-share/onyx
-bin/onyx-%%ONYX_VERSION%%
-bin/onyx
-@dirrm include/libonyx
+share/onyx-%%ONYX_VERSION%%/nxm/modprompt.nxm
+@dirrm share/onyx-%%ONYX_VERSION%%/nxm
+@dirrm share/onyx-%%ONYX_VERSION%%/nx/modprompt
+@dirrm share/onyx-%%ONYX_VERSION%%/nx
 @dirrm share/onyx-%%ONYX_VERSION%%/doc/ps
 @dirrm share/onyx-%%ONYX_VERSION%%/doc/pdf
 @dirrm share/onyx-%%ONYX_VERSION%%/doc/html
 @dirrm share/onyx-%%ONYX_VERSION%%/doc
-@dirrm share/onyx-%%ONYX_VERSION%%/nxm
-@dirrm share/onyx-%%ONYX_VERSION%%/nx/modprompt
-@dirrm share/onyx-%%ONYX_VERSION%%/nx
 @dirrm share/onyx-%%ONYX_VERSION%%
+@dirrm include/libonyx
