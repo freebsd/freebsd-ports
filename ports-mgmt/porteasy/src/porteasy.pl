@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.7";
+my $VERSION	= "2.7.8";
 my $COPYRIGHT	= "Copyright (c) 2000-2003 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -611,6 +611,8 @@ sub find_dependencies($) {
 	    or bsd::errx(1, "failed to obtain dependency list");
 	add_dependencies($port, \&find_library, split(' ', $dependvars));
 	$dependvars = capture(\&make, ($port,
+				       "-VEXTRACT_DEPENDS",
+				       "-VPATCH_DEPENDS",
 				       "-VFETCH_DEPENDS",
 				       "-VBUILD_DEPENDS",
 				       "-VRUN_DEPENDS",
