@@ -9,6 +9,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Copyright.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWUtils.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Heading.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/KeyWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Menu.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Text.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Word2.pm
@@ -16,6 +17,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FullUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/HalfUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Heading.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Index.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/KeyWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Link.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/RefUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Reference.pm
