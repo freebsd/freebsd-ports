@@ -15,6 +15,7 @@
     SUBDIR += ksocrat
     SUBDIR += messarge
     SUBDIR += mtc
+    SUBDIR += ooodict-ru_RU
     SUBDIR += openoffice
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += p5-XML-Parser-encodings
