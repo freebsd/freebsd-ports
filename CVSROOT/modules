@@ -781,6 +781,7 @@ chipvault	ports/cad/chipvault
 chk4mail	ports/mail/chk4mail
 chkrootkit	ports/security/chkrootkit
 chmlib		ports/misc/chmlib
+chmview		ports/converters/chmview
 choparp		ports/net/choparp
 chora		ports/devel/chora
 chord		ports/misc/chord
@@ -1709,6 +1710,7 @@ fte		ports/editors/fte
 ftimes		ports/security/ftimes
 ftnchek		ports/devel/ftnchek
 ftp-tls		ports/ftp/ftp-tls
+ftp4all		ports/ftp/ftp4all
 ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
 ftpfind		ports/ftp/ftpfind
@@ -3530,6 +3532,7 @@ libconnect	ports/net/libconnect
 libcoro		ports/devel/libcoro
 libctl		ports/science/libctl
 libdbi		ports/databases/libdbi
+libdict		ports/devel/libdict
 libdivxdecore	ports/multimedia/libdivxdecore
 libdivxdecore-devel	ports/multimedia/libdivxdecore-devel
 libdivxencore	ports/multimedia/libdivxencore
@@ -6070,6 +6073,7 @@ procmap		ports/sysutils/procmap
 prodosemu	ports/emulators/prodosemu
 proftpd		ports/ftp/proftpd
 profxp		ports/ftp/profxp
+proguard	ports/java/proguard
 proj		ports/graphics/proj
 projectcenter.app	ports/devel/projectcenter.app
 projectionlib	ports/misc/projectionlib
