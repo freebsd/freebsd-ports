@@ -346,6 +346,7 @@ apache13-modssl	ports/www/apache13-modssl
 apache13-modssl+ipv6	ports/www/apache13-modssl+ipv6
 apache13-ssl	ports/www/apache13-ssl
 apache2		ports/www/apache2
+apache21	ports/www/apache21
 apachetop	ports/sysutils/apachetop
 apan		ports/net-mgmt/apan
 apc		ports/math/apc

@@ -1,0 +1,35 @@
+--- configure.in.orig	Thu Mar 18 08:36:52 2004
++++ configure.in	Fri Jul  2 11:44:25 2004
+@@ -69,7 +69,7 @@
+ 
+ if test "$apr_found" = "reconfig"; then
+   APR_SUBDIR_CONFIG(srclib/apr,
+-                    [$apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir --datadir=$datadir --with-installbuilddir=$installbuilddir],
++                    [$apache_apr_flags --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir --datadir=$datadir --with-installbuilddir=$installbuilddir],
+                     [--enable-layout=*|\'--enable-layout=*])
+   dnl We must be the first to build and the last to be cleaned
+   AP_BUILD_SRCLIB_DIRS="apr $AP_BUILD_SRCLIB_DIRS"
+@@ -96,7 +96,7 @@
+ 
+ if test "$apu_found" = "reconfig"; then
+   APR_SUBDIR_CONFIG(srclib/apr-util,
+-                    [--with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$bindir],
++                    [--with-apr=../apr --prefix=$prefix --exec-prefix=$exec_prefix --libdir=$libdir --includedir=$includedir --bindir=$libdir],
+                     [--enable-layout=*|\'--enable-layout=*])
+   dnl We must be the last to build and the first to be cleaned
+   AP_BUILD_SRCLIB_DIRS="$AP_BUILD_SRCLIB_DIRS apr-util"
+@@ -545,8 +545,14 @@
+ 	[Root directory of the Apache install area])
+ AC_DEFINE_UNQUOTED(SERVER_CONFIG_FILE, "${rel_sysconfdir}/${progname}.conf",
+ 	[Location of the config file, relative to the Apache root directory])
++AC_DEFINE_UNQUOTED(DEFAULT_ERRORLOG, "${rel_logfiledir}/httpd-error.log",
++	[Location of error log file])
++AC_DEFINE_UNQUOTED(DEFAULT_SCOREBOARD, "${rel_runtimedir}/apache_runtime_status",
++	[Location of ScoreBoard file])
+ AC_DEFINE_UNQUOTED(AP_TYPES_CONFIG_FILE, "${rel_sysconfdir}/mime.types",
+ 	[Location of the MIME types config file, relative to the Apache root directory])
++AC_DEFINE_UNQUOTED(DOCUMENT_LOCATION, "${rel_htdocsdir}",
++	[Location of document root])
+ AC_DEFINE_UNQUOTED(APACHE_MPM_DIR, "$MPM_DIR",
+ 	[Location of the source for the current MPM])
+ 

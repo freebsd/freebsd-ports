@@ -1,0 +1,16 @@
+--- srclib/apr/Makefile.in.orig	Wed Nov 17 02:07:02 2004
++++ srclib/apr/Makefile.in	Sat Dec 11 18:19:36 2004
+@@ -67,12 +67,11 @@
+ 
+ install: $(TARGET_LIB) apr-config.out build/apr_rules.out
+ 	$(APR_MKDIR) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(installbuilddir) \
+-		     $(DESTDIR)$(libdir)/pkgconfig $(DESTDIR)$(includedir)
++		     $(DESTDIR)$(includedir)
+ 	$(INSTALL_DATA) $(top_blddir)/include/apr.h $(DESTDIR)$(includedir)
+ 	$(INSTALL_DATA) $(top_srcdir)/include/apr_*.h $(DESTDIR)$(includedir)
+ 	$(LIBTOOL) --mode=install $(INSTALL) -m 755 $(TARGET_LIB) $(DESTDIR)$(libdir)
+ 	$(INSTALL_DATA) apr.exp $(DESTDIR)$(libdir)/apr.exp
+-	$(INSTALL_DATA) apr.pc $(DESTDIR)$(libdir)/pkgconfig/$(APR_PCFILE)
+ 	for f in libtool shlibtool; do \
+ 	    if test -f $${f}; then $(INSTALL) -m 755 $${f} $(DESTDIR)$(installbuilddir); fi; \
+ 	done

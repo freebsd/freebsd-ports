@@ -1,0 +1,25 @@
+--- config.layout.orig	Sun Nov 21 19:50:36 2004
++++ config.layout	Sat Dec 11 17:56:14 2004
+@@ -281,17 +281,17 @@
+   bindir:        ${exec_prefix}/bin
+   sbindir:       ${exec_prefix}/sbin
+   libdir:        ${exec_prefix}/lib
+-  libexecdir:    ${exec_prefix}/libexec/apache2
++  libexecdir:    ${exec_prefix}/libexec/apache21
+   mandir:        ${prefix}/man
+-  sysconfdir:    ${prefix}/etc/apache2
++  sysconfdir:    ${prefix}/etc/apache21
+   datadir:       ${prefix}/www
+-  installbuilddir: ${prefix}/share/apache2/build
++  installbuilddir: ${prefix}/share/apache21/build
+   errordir:      ${datadir}/error
+   iconsdir:      ${datadir}/icons
+   htdocsdir:     ${datadir}/data
+-  manualdir:     ${prefix}/share/doc/apache2
++  manualdir:     ${prefix}/share/doc/apache21
+   cgidir:        ${datadir}/cgi-bin
+-  includedir:    ${prefix}/include/apache2
++  includedir:    ${prefix}/include/apache21
+   localstatedir: /var
+   runtimedir:    ${localstatedir}/run
+   logfiledir:    ${localstatedir}/log
