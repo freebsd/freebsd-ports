@@ -22,7 +22,7 @@ PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.gz
 MAINTAINER=	trevor@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.9.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
