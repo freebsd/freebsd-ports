@@ -1,0 +1,19 @@
+From the README:
+
+        xmfract version 1.4 - a freeware fractal generation program.
+          Copyright (C) 1995 Darryl House and the Stone Soup Group.
+
+  This is xmfract 1.4, an X11R[5/6] Motif program based upon a
+  popular DOS freeware program named Fractint. It is a true graphic
+  user interface quite different from that program.
+
+  The program will calculate, display and manipulate over 90 discrete
+  fractal types with very fast algorithms. Other features include zooming,
+  animation (color cycling), color editing, spherical projection, and an
+  amazing wealth of parameters. There are too many features to list here.
+
+  Also included are dozens of ancillary files such as color map files,
+  parameter files, formula files, and an extensive on-line help system.
+
+eric.
+erich@FreeBSD.org
