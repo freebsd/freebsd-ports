@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.182 1999/05/09 17:39:48 steve Exp $
+# $Id: Makefile,v 1.183 1999/05/10 11:34:09 tg Exp $
 #
 
     SUBDIR += ElectricFence
@@ -44,7 +44,6 @@
     SUBDIR += ftnchek
     SUBDIR += gaa
     SUBDIR += gcc11
-    SUBDIR += gdb
     SUBDIR += gdbtk
     SUBDIR += gettext
     SUBDIR += gide
