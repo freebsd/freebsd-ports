@@ -1,0 +1,45 @@
+--- extconf.rb.orig	Mon Jul 10 19:18:51 2000
++++ extconf.rb	Fri Sep  1 01:53:44 2000
+@@ -1,15 +1,11 @@
+-require './mkmf.rb'
++require 'mkmf.rb'
+ 
+ def crash(str)
+   printf " extconf failure:%s\n", str
+   exit 1
+ end
+ 
+-if /linux/ =~ RUBY_PLATFORM
+-  $LDFLAGS = "-L/usr/lib"
+-else
+-  $LDFLAGS = "-L/usr/local/lib"
+-end
++dir_config('snmp')
+ 
+ # Headers
+ ruby_h = have_header("ruby.h")
+@@ -35,8 +31,10 @@
+ EOF
+ 
+ # Libraies
++have_library("crypto") if test(?e, "/usr/lib/libcrypto.so");
++
+ snmpsessinit = have_library("snmp", "snmp_sess_init")
+-unless snmpsessinit or snmpsessopen or snmpsessclose or snmpsessread or snmpsesssend
++unless snmpsessinit # or snmpsessopen or snmpsessclose or snmpsessread or snmpsesssend
+   crash "This module require snmp_sess_(init|open|close|read|send) functions."
+ end
+ 
+@@ -51,10 +49,10 @@
+   $CFLAGS = "-DNO_SNMP_FREE " + $CFLAGS
+ end
+ 
+-unless try_link(header+<<EOF, "-lsnmp")
++if try_link(header+<<EOF, "-lsnmp")
+ 
+ void main() {
+-    init_snmp("snmpapp");
++    init_snmp();
+ }
+ EOF
+   $CFLAGS = "-DVOID_INIT_SNMP " + $CFLAGS
