@@ -1,0 +1,13 @@
+PCGen is a Java-based RPG character generator and maintenance program
+that works on all platforms (Windows, Mac OS X, Linux, BSD, etc).
+It currently is aimed at supporting as many rpgs as humanly possible.
+Currently our focus is on OGL games (OGL = the Open Gaming License
+crafted by Wizards of the Coast).
+
+All datafiles are ASCII so they can be modified by users, and are
+available through the pcgendm project. An XML conversion is underway.
+
+WWW: http://pcgen.sourceforge.net
+
+- Herve Quiroz
+herve.quiroz@esil.univ-mrs.fr
