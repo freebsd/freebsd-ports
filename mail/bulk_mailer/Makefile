@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bulk_mailer
-# Version required:	1.10
+# Version required:	1.11
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
-# $Id: Makefile,v 1.2 1997/03/28 10:10:05 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/10 00:05:45 steve Exp $
 #
 
-DISTNAME=	bulk_mailer-1.10
+DISTNAME=	bulk_mailer-1.11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 
@@ -28,6 +28,6 @@ do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/bulk_mailer.1 ${PREFIX}/man/man1/bulk_mailer.1
 
 post-install:
-	@ /usr/bin/strip ${PREFIX}/bin/bulk_mailer
+	@ ${STRIP} ${PREFIX}/bin/bulk_mailer
 
 .include <bsd.port.mk>
