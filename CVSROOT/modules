@@ -7266,6 +7266,7 @@ slrnface	ports/news/slrnface
 sls		ports/misc/sls
 slsc		ports/math/slsc
 slstat		src/usr.sbin/slstat
+slurm		ports/net/slurm
 slurp		ports/news/slurp
 slurpie		ports/security/slurpie
 slush		ports/security/slush
