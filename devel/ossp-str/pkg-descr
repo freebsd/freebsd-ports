@@ -1,0 +1,7 @@
+OSSP str is a generic string library written in ISO-C which provides
+functions for handling, matching, parsing, searching and formatting of
+ISO-C strings.  So it can be considered as a superset of POSIX
+string(3), but its main intention is to provide a more convenient and
+compact API plus a more generalized functionality.
+
+WWW: http://www.ossp.org/pkg/lib/str/
