@@ -1,0 +1,8 @@
+Perl module for TrueType font hacking. Supports reading, processing and
+writing of the following tables: GDEF, GPOS, GSUB, LTSH, OS/2, PCLT,
+bsln, cmap, cvt, fdsc, feat, fpgm, glyf, hdmx, head, hhea, hmtx, kern,
+loca, maxp, mort, name, post, prep, prop, vhea, vmtx and the reading and
+writing of all other table types.
+
+In short, you can do almost anything with a standard TrueType font with
+this module.
