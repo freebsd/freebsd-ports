@@ -3,47 +3,34 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -143,6 +143,26 @@
- 
- else
+@@ -121,17 +121,17 @@
  # ----------------------------------------------------------------------------
-+# FreeBSD
-+# ----------------------------------------------------------------------------
-+ifeq ($(patsubst FreeBSD%,FreeBSD,$(SYSTEM)), FreeBSD)
-+NAME = GLEW
-+CC ?= gcc
+ ifeq ($(patsubst FreeBSD%,FreeBSD,$(SYSTEM)), FreeBSD)
+ NAME = GLEW
+-CC = cc
+-LD = ld
++CC ?= cc
 +LD ?= ld
-+CFLAGS.EXTRA = -fPIC -I${X11BASE}/include
-+LDFLAGS.SO = -shared -soname $(LIB.SONAME)
+ ifneq (undefined, $(origin GLEW_MX))
+ CFLAGS.EXTRA = -DGLEW_MX
+ endif
+ LDFLAGS.SO = -shared -soname $(LIB.SONAME)
+-LDFLAGS.EXTRA = -L/usr/X11R6/lib
 +LDFLAGS.EXTRA = -L${X11BASE}/lib
-+LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
-+GLEW_DEST = ${X11BASE}
-+WARN = -Wall -W
-+BIN.SUFFIX =
-+LIB.SONAME = lib$(NAME).so.$(GLEW_MAJOR)
-+LIB.DEVLNK = lib$(NAME).so
-+LIB.SHARED = lib$(NAME).so.$(GLEW_VERSION)
-+LIB.STATIC = lib$(NAME).a
-+
-+else
-+# ----------------------------------------------------------------------------
- # Irix
- # ----------------------------------------------------------------------------
- ifeq ($(patsubst IRIX%,IRIX,$(SYSTEM)), IRIX)
-@@ -228,6 +248,7 @@
- endif
- endif
- endif
-+endif
- 
- ifeq (undefined, $(origin SHARED_OBJ_EXT))
- SHARED_OBJ_EXT = o
-@@ -245,7 +266,7 @@
+ LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
+ LDFLAGS.STATIC = -Wl,-Bstatic
+ LDFLAGS.DYNAMIC = -Wl,-Bdynamic
+-CFLAGS.EXTRA += -I/usr/X11R6/include
++CFLAGS.EXTRA += -I${X11BASE}/include -fPIC
+ NAME = GLEW
+ WARN = -Wall -W
+ POPT = -O2
+@@ -245,7 +245,7 @@
  STRIP = -s
  endif
  INCLUDE = -Iinclude
 -CFLAGS = $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA)
-+CFLAGS += $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA) -fPIC
++CFLAGS += $(OPT) $(WARN) $(INCLUDE) $(CFLAGS.EXTRA)
  
  LIB.SRCS = src/glew.c
  LIB.OBJS = $(LIB.SRCS:.c=.o)
