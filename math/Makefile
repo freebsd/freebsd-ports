@@ -96,6 +96,7 @@
     SUBDIR += pari-devel
     SUBDIR += parmetis
     SUBDIR += physcalc
+    SUBDIR += ploticus
     SUBDIR += plplot
     SUBDIR += pspp
     SUBDIR += py-gato
