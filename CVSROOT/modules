@@ -7163,6 +7163,7 @@ pcre		ports/devel/pcre
 pcre++		ports/devel/pcre++
 pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
+pdbar		ports/palm/pdbar
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
 pdfmap		ports/misc/pdfmap
