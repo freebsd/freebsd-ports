@@ -4733,6 +4733,7 @@ libparanoia	ports/security/libparanoia
 libparsifal	ports/textproc/libparsifal
 libpathan	ports/textproc/libpathan
 libpcapnav	ports/net/libpcapnav
+libpcd		ports/graphics/libpcd
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdtp		ports/net/libpdtp
