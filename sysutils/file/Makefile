@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.netsw.org/system/tools/fileutils/find/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5
