@@ -8,7 +8,8 @@
 PORTNAME=	E-Run
 PORTVERSION=	1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://void.mapopolis.com/~jacob/c0de/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR = kbyanc
 
 MAINTAINER=	kbyanc@posi.net
 
