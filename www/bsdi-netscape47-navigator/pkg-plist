@@ -122,10 +122,23 @@ lib/netscape/nethelp/netscape/navigatr/navigatr.gif
 lib/netscape/nethelp/netscape/navigatr/nav.htm
 lib/netscape/nethelp/netscape/navigatr/navHdr.htm
 lib/netscape/nethelp/netscape/navigatr/help.hpf
+lib/netscape/nethelp/netscape/shared/NetHelpm.css
+lib/netscape/nethelp/netscape/shared/NetHelpu.css
+lib/netscape/nethelp/netscape/shared/NetHelpw.css
+lib/netscape/nethelp/netscape/shared/admnIcon.gif
 lib/netscape/nethelp/netscape/shared/collIcon.gif
 lib/netscape/nethelp/netscape/shared/commIcon.gif
+lib/netscape/nethelp/netscape/shared/compIcon.gif
+lib/netscape/nethelp/netscape/shared/confIcon.gif
+lib/netscape/nethelp/netscape/shared/ibmIcon.gif
+lib/netscape/nethelp/netscape/shared/messIcon.gif
 lib/netscape/nethelp/netscape/shared/navIcon.gif
 lib/netscape/nethelp/netscape/shared/netIcon.gif
+lib/netscape/nethelp/netscape/shared/calIcon.gif
+lib/netscape/nethelp/netwatch.gif
+lib/netscape/nethelp/picsfail.htm
+lib/netscape/nethelp/picsfail.jar
+lib/netscape/plugins/cpPack1.jar
 @dirrm lib/netscape/plugins
 @dirrm lib/netscape/nethelp/netscape/shared
 @dirrm lib/netscape/nethelp/netscape/navigatr

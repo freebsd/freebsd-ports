@@ -3,7 +3,7 @@
 # Date created:         20 Sept 1998
 # Whom:                 brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.30 1998/11/24 20:41:02 obrien Exp $
+# $Id: Makefile,v 1.31 1998/12/19 11:20:14 markm Exp $
 #
 
 DISTNAME=       netscape-navigator-4.5
@@ -42,7 +42,7 @@ do-install:
 	fi
 .if defined(USE_128BIT)
 	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.5.bin
+		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.5.bin
 .endif
 	chown -R ${BINOWN}.${BINGRP} ${NDIR}
 
