@@ -1014,6 +1014,7 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-2
 lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-3
 lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-4
 lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-5
+lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-6
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-1
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-10
@@ -1142,4 +1143,7 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-9
 @dirrm lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%
 @dirrm lib/xemacs-%%XEMACS_VER%%/info
 @dirrm lib/xemacs-%%XEMACS_VER%%
+@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
+@unexec rmdir %D/share/emacs 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs 2>/dev/null || true
