@@ -2197,6 +2197,7 @@ gnustep-make	ports/devel/gnustep-make
 gnustep-objc	ports/lang/gnustep-objc
 gnustep-xdps	ports/x11-toolkits/gnustep-xdps
 gnutls		ports/security/gnutls
+goats		ports/deskutils/goats
 gob		ports/x11-toolkits/gob
 gob2		ports/devel/gob2
 goblin		ports/misc/goblin
