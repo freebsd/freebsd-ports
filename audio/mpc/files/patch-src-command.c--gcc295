@@ -1,0 +1,16 @@
+--- src/command.c	Sat Mar 12 22:32:11 2005
++++ src/command.c	Sat Mar 12 22:32:43 2005
+@@ -183,10 +183,12 @@
+ int cmd_crop( int argc, char ** argv, mpd_Connection * conn )
+ {
+ 
++	int length;
++
+ 	mpd_Status *status;
+ 	status = getStatus( conn );
+ 
+-	int length = ( status->playlistLength - 1 );
++	length = ( status->playlistLength - 1 );
+ 
+ 	if( status->playlistLength == 0 ) {
+ 

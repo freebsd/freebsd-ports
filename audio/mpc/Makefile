@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mpc
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.2
 CATEGORIES=	audio ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	musicpd
+MASTER_SITES=	http://mercury.chem.pitt.edu/~shank/
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Command line client for the musicpd
@@ -31,6 +30,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=--disable-iconv
 .else
 USE_ICONV=	yes
+.endif
+PLIST_FILES=bin/mpc
+PLIST_DIRS=%%EXAMPLESDIR%%
+PLIST_FILES+=%%EXAMPLESDIR%%/mpc-bashrc
+.ifndef(NOPORTDOCS)
+PLIST_DIRS+=%%DOCSDIR%%
+PLIST_FILES+=%%DOCSDIR%%/AUTHORS
+PLIST_FILES+=%%DOCSDIR%%/README
 .endif
 
 do-install:
