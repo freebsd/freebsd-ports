@@ -18,12 +18,15 @@ COMMENT=	A free (GPL) encoder and decoder for the yEnc Usenet file format
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
-USE_GETOPT_LONG=yes
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS=	${CXXFLAGS} -I${LOCALBASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=	ydecode.1 yencode.1 ypost.1
 MAN5=	ypostrc.5
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
