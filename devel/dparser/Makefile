@@ -17,12 +17,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple but powerful tool for parsing
 
 WRKSRC=		${WRKDIR}/d
+
 USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" D_OPTIMIZE=
 
 MAN1=	make_dparser.1
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
