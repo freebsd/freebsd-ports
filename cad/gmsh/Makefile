@@ -8,14 +8,9 @@
 PORTNAME=	gmsh
 PORTVERSION=	1.56.2
 CATEGORIES=	cad
-MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
-		http://cm.bell-labs.com/netlib/voronoi/:triangle
+MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
-.if defined(WITH_TRIANGLE)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} triangle.shar.gz:triangle
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic 3D finite element mesh generator
@@ -23,7 +18,12 @@ COMMENT=	An automatic 3D finite element mesh generator
 LIB_DEPENDS=	gsl.6:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+.if defined(WITH_TRIANGLE)
+EXTRACT_DEPENDS+=	${NONEXISTENT}:${TRIANGLE_PORTDIR}:patch
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+TRIANGLE_PORTDIR=	${PORTSDIR}/cad/triangle
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -36,8 +36,8 @@ ALL_TARGET=	all utils
 
 MAN1=		gmsh.1
 
-.if !defined(WITH_TRIANGLE)
-NO_CDROM=	"Triangle must not be sold for profit"
+.if defined(WITH_TRIANGLE)
+NO_CDROM=	Triangle must not be sold for profit
 .endif
 
 pre-everything::
@@ -49,10 +49,7 @@ pre-everything::
 
 post-extract:
 .if defined(WITH_TRIANGLE)
-	@(cd ${WRKSRC}/Triangle; \
-	${GUNZIP_CMD} < ${DISTDIR}/${DIST_SUBDIR}/triangle.shar.gz | \
-	${SED} 's:/ \*:/* :g' | ${SH})
-	${RM} ${WRKSRC}/Triangle/makefile
+	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.* ${WRKSRC}/Triangle
 .endif
 
 post-patch:
