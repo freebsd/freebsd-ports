@@ -8,8 +8,7 @@
 PORTNAME=	portindex
 PORTVERSION=	12
 CATEGORIES=	sysutils
-MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/ \
-		http://www.oook.cz/bsd/distfiles/
+MASTER_SITES=	http://www.oook.cz/bsd/distfiles/
 DISTNAME=	bsdportsutils-${PORTVERSION}
 
 MAINTAINER=	hsn@netmag.cz
