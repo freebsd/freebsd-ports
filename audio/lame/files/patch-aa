@@ -1,11 +1,22 @@
---- Makefile.orig	Wed Jun  2 15:59:37 1999
-+++ Makefile	Wed Jun  9 01:19:47 1999
-@@ -10,7 +10,7 @@
+--- Makefile.orig	Fri Nov 12 01:28:34 1999
++++ Makefile	Fri Nov 12 01:39:22 1999
+@@ -12,7 +12,7 @@
  # defaults:
  PGM = lame
  CC = gcc
--CC_OPTS = -O 	
-+CC_OPTS =  ${CFLAGS}	
+-CC_OPTS = -O   	
++CC_OPTS = ${CFLAGS}
  GTK = 
  GTKLIBS = 
- LIBS = -lm
+ SNDLIB = 
+@@ -106,8 +106,10 @@
+ ##########################################################################
+ ifeq ($(UNAME),FreeBSD)
+ #  remove if you do not have GTK or do not want the GTK frame analyzer
++ifndef NO_X11
+    GTK = -DHAVEGTK `gtk12-config --cflags`
+    GTKLIBS = `gtk12-config --libs` 
++endif
+ # Comment out next 2 lines if you want to remove VBR histogram capability
+    BRHIST_SWITCH = -DBRHIST
+    LIBTERMCAP = -lncurses

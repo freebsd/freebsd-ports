@@ -1,11 +1,11 @@
---- musicin.c.orig	Sat Sep 18 14:46:40 1999
-+++ musicin.c	Sat Sep 18 14:47:01 1999
-@@ -1067,7 +1067,7 @@
-     int model, stereo;
-     layer info;
+--- lame.c.orig	Fri Nov 12 01:44:46 1999
++++ lame.c	Fri Nov 12 01:44:35 1999
+@@ -1288,7 +1288,7 @@
+ void lame_init(int nowrite)
+ {
  
 -#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) && !defined(__alpha__)
++#if defined (__FreeBSD__) && !defined(__alpha__)
+ #include <floatingpoint.h>
    {
-   fp_except_t mask;
-   mask=fpgetmask();
+   /* seet floating point mask to the Linux default */
