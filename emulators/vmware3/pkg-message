@@ -8,6 +8,20 @@ then you'll be ready to start vmware.
 Don't forget to load the kernel module aio.ko, or
 options VFS_AIO in the kernel.  Otherwise expect problems.
 
+If you have fairly recent 5.x system or running vmware3
+on FreeBSD 4.x, make sure that you have sysctl
+kern.ipc.shm_allow_removed set to 1, otherwise you will get
+
+Cannot attach shared memory segment: Invalid argument.
+Failed to initialize SVGA device.
+
+errors on "Power On".
+
+You can add the following to /etc/sysctl.conf:
+--- cut here ---
+kern.ipc.shm_allow_removed=1
+--- cut here ---
+
 Don't miss the documents installed:
 
 	vmware(1) ${PREFIX}/share/doc/vmware/*
