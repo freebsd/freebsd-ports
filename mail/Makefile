@@ -361,6 +361,7 @@
     SUBDIR += relay-ctrl
     SUBDIR += relaydb
     SUBDIR += renattach
+    SUBDIR += reply-o-matic
     SUBDIR += rftp
     SUBDIR += ricochet
     SUBDIR += ripmime

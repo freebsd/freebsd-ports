@@ -1,0 +1,3 @@
+sbin/rom
+@dirrm etc/rom/.rates
+@dirrm etc/rom

@@ -1,0 +1,25 @@
+--- Makefile.orig	Tue Nov 25 18:41:39 2003
++++ Makefile	Thu May 13 19:34:50 2004
+@@ -1,7 +1,5 @@
+-INSTALL_PREFIX=
+-MAN1=/usr/share/man/man1/
+-
+-CFLAGS=-g -O2
++INSTALL_PREFIX=${PREFIX}
++MAN1=/man/man1/
+ 
+ all: main.o base64.o
+ 	$(CC) $(CFLAGS) -o rom main.o base64.o
+@@ -9,10 +7,10 @@
+ clean:
+ 	@rm -f rom *.o core
+ install:
+-	install -d -m 755 $(INSTALL_PREFIX)/usr/sbin
++	install -d -m 755 $(INSTALL_PREFIX)/sbin
+ 	install -d -m 755 $(INSTALL_PREFIX)/etc/rom
+ 	install -d -m 1755 $(INSTALL_PREFIX)/etc/rom/.rates
+-	install -m 755 rom $(INSTALL_PREFIX)/usr/sbin/
++	install -m 755 rom $(INSTALL_PREFIX)/sbin
+ 	install -d -m 755 $(INSTALL_PREFIX)$(MAN1)
+ 	install -m 755 rom.1 $(INSTALL_PREFIX)$(MAN1)
+ 
