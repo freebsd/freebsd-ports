@@ -9,14 +9,14 @@
 DISTNAME=	so51a_lnx_01
 PKGNAME=	staroffice-5.1a
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \
+MASTER_SITES=	ftp://ftp.hagenhomes.com/freebsd/files/  \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
 		ftp://ftp.stardivision.de/pub/support/so51a/nwspatch/unxlnxi/  \
 		ftp://ftp.stardivision.de/pub/support/so51a/db/unxlnxi/
 EXTRACT_SUFX=	.tar
 DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
 
-MAINTAINER=	dkiwebe@hagenhomes.com
+MAINTAINER=	dkwiebe@hagenhomes.com
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
@@ -30,7 +30,7 @@ EXTRACT_BEFORE_ARGS=	-u
 NO_BUILD=	yes
 DIST_SUBDIR=	staroffice5
 WRKSRC=		${WRKDIR}/so51inst
-TEMPDIR=	${WRKDIR}/tmp
+TMPDIR=		${WRKDIR}/tmp
 
 .include <bsd.port.pre.mk>
 
@@ -62,12 +62,12 @@ post-configure:
 do-install:
 	@${CP} /compat/linux/etc/ld.so.conf ${TMPDIR}/ld.so.conf.tmp
 	@${ECHO} "${WRKDIR}/tmp" >> ${TMPDIR}/ld.so.conf.tmp
-	@${ECHO} "${TEMPDIR}/sv001.tmp" >> ${TMPDIR}/ld.so.conf.tmp
-	@PATH=${PATH}:${TEMPDIR}/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TEMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
+	@${ECHO} "${TMPDIR}/sv001.tmp" >> ${TMPDIR}/ld.so.conf.tmp
+	@PATH=${PATH}:${TMPDIR}/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
+	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
 	@/usr/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-TEMP=${TEMPDIR} ${WRKDIR}/so51inst/office51/setup /net
+	@-TEMP=${TMPDIR} ${WRKDIR}/so51inst/office51/setup /net
 
 # A seperate target as we need to be able to run this stuff independantly.
 post-install:
