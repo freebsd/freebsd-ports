@@ -1,0 +1,25 @@
+*** Imakefile.orig	Mon Dec  5 14:47:52 1994
+--- Imakefile	Mon Dec  5 14:49:04 1994
+***************
+*** 106,115 ****
+  XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
+  
+  #if (ProjectX < 5)
+! InstallNonExec(system.twmrc,$(TWMDIR))
+  /* InstallProgram(ssetroot,$(BINDIR)/xsetroot) */
+  #else
+! InstallNonExecFile(system.twmrc,$(TWMDIR))
+  /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
+  #endif
+  
+--- 106,115 ----
+  XCOMM	ln $(BINDIR)/tvtwm $(BINDIR)/twm
+  
+  #if (ProjectX < 5)
+! /* InstallNonExec(system.twmrc,$(TWMDIR))*/
+  /* InstallProgram(ssetroot,$(BINDIR)/xsetroot) */
+  #else
+! /* InstallNonExecFile(system.twmrc,$(TWMDIR)) */
+  /* InstallNamedProg(ssetroot,xsetroot,$(BINDIR)) */
+  #endif
+  
