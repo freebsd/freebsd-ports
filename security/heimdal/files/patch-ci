@@ -1,0 +1,11 @@
+--- appl/ftp/ftp/security.c.orig	Sun Feb  6 21:11:43 2000
++++ appl/ftp/ftp/security.c	Fri Nov  3 10:11:47 2000
+@@ -237,7 +237,7 @@
+ 	ret = sec_get_data(fd, &in_buffer, data_prot);
+ 	if (ret < 0)
+ 	    return -1;
+-	if(ret == 0 || in_buffer.size == 0) {
++	if(ret == 0 && in_buffer.size == 0) {
+ 	    if(rx)
+ 		in_buffer.eof_flag = 1;
+ 	    return rx;
