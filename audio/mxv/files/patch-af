@@ -1,0 +1,40 @@
+*** settergetter.h.orig	Thu Apr 17 15:07:13 1997
+--- settergetter.h	Thu Apr 17 15:17:30 1997
+***************
+*** 64,69 ****
+--- 64,70 ----
+  			     Status (Object::*setfunc)(Type),
+  			     Type (Object::*getfunc)() const)
+  		: obj(objptr), setter(setfunc), getter(getfunc) {}
++ 	~MethodSetterGetter() {}
+  	redefined boolean set(Type value) {
+  		return boolean((obj->*setter)(value));
+  	}
+***************
+*** 82,94 ****
+  	return new MethodSetterGetter<Object, Status, Type>(objptr, setfunc, getfunc);
+  }
+  
+- //********
+- 
+  template <class Status, class Type>
+  class FunctionSetterGetter : public SetterGetter<Type> {
+  public:
+          FunctionSetterGetter(Status (*setfunc)(Type), Type (*getfunc)())
+  		: setter(setfunc), getter(getfunc) {}
+  	redefined boolean set(Type value) { (*setter)(value);  return true; }
+  	redefined Type get() const { return (*getter)(); }
+  private:
+--- 83,94 ----
+  	return new MethodSetterGetter<Object, Status, Type>(objptr, setfunc, getfunc);
+  }
+  
+  template <class Status, class Type>
+  class FunctionSetterGetter : public SetterGetter<Type> {
+  public:
+          FunctionSetterGetter(Status (*setfunc)(Type), Type (*getfunc)())
+  		: setter(setfunc), getter(getfunc) {}
++ 	~FunctionSetterGetter() {}
+  	redefined boolean set(Type value) { (*setter)(value);  return true; }
+  	redefined Type get() const { return (*getter)(); }
+  private:

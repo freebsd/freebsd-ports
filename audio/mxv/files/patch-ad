@@ -1,0 +1,19 @@
+*** device.h.orig	Thu Apr 17 14:53:39 1997
+--- device.h	Thu Apr 17 14:57:57 1997
+***************
+*** 33,39 ****
+  #include "InterViews/resource.h"
+  #include "localdefs.h"
+  
+! #ifndef sgi
+  extern "C" int ioctl(int, unsigned long, char*);
+  #endif
+  
+--- 33,39 ----
+  #include "InterViews/resource.h"
+  #include "localdefs.h"
+  
+! #if !defined( sgi ) && !defined( __FreeBSD__ )
+  extern "C" int ioctl(int, unsigned long, char*);
+  #endif
+  

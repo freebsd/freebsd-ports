@@ -1,0 +1,16 @@
+*** vw_converter.C.orig	Thu Apr 17 14:49:48 1997
+--- vw_converter.C	Thu Apr 17 14:50:17 1997
+***************
+*** 27,33 ****
+--- 27,37 ----
+  #pragma implementation
+  #endif
+  
++ #ifdef __FreeBSD__
++ #include <machine/soundcard.h>
++ #else
+  #include <sys/soundcard.h>
++ #endif
+  #include "localdefs.h"
+  #include "application.h"
+  #include "vw_converter.h"
