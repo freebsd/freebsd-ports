@@ -7,7 +7,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -38,10 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-IGNORE=	"Crashes when trying to build a project"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
