@@ -10,6 +10,28 @@ libexec/apache/mod_ruby.so
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/COPYING
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/classes.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/classes.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/default.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/directives.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/directives.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/faq.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/faq.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/index.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/index.en.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/install.en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/install.en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/README.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/classes.ja.euc.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/classes.ja.jis.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/default.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/directives.ja.euc.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/directives.ja.jis.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/faq.ja.euc.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/faq.ja.jis.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/index.ja.euc.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/index.ja.jis.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/install.ja.euc.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/install.ja.jis.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mod_ruby/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mod_ruby

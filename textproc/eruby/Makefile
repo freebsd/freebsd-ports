@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eruby
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
