@@ -6,44 +6,40 @@
 #
 
 PORTNAME=	lavaps
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lava lamp of currently running processes
 
-OPTIONS=	GTK2 "Use GTK2 instead of TCL/TK for GUI (untested!)" off
+WANT_GNOME=	yes
+USE_GNOME=	gnometarget
+USE_PERL5_BUILD=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+MAN1=		lavaps.1
+ 
 TCL_VER?=	8.4
-.ifdef WITH_GTK2
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext	\
-		iconv:${PORTSDIR}/converters/libiconv
-USE_GNOME=	gtk2
-CONFIGURE_ARGS+=--with-gtk
-PLIST_SUB+=	MO=''
 
-post-configure:
-	${MV} ${WRKSRC}/po/Makefile.in ${WRKSRC}/po/Makefile
-.else
-LIB_DEPENDS+=	tk${TCL_VER:S/.//}:${PORTSDIR}/x11-toolkits/tk${TCL_VER:S/.//}
-CONFIGURE_ARGS+=--with-tcltk
-USE_REINPLACE=	yes
-PLIST_SUB+=	MO='@comment '
-
-post-configure:
-	${REINPLACE_CMD} -e 's/ po / /' ${WRKSRC}/Makefile
-.endif
-
-USE_PERL5_BUILD=yes, for documentation
+CPPFLAGS=	-I${LOCALBASE}/include/tcl${TCL_VER} \
+		-I${LOCALBASE}/include/tk${TCL_VER} \
+		-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" USE_NLS=yes
-CONFIGURE_ENV+=	TK_DOTTED_HI_VERS=${TCL_VER} TCL_DOTTED_HI_VERS=${TCL_VER}
-CONFIGURE_ARGS+=--with-tcl-ver=${TCL_VER} --with-tk-ver=${TCL_VER}
-CONFIGURE_ARGS+=--with-libintl --with-libiconv
-MAN1=		lavaps.1
+.if ${HAVE_GNOME:Mgtk20}!=""
+PKGNAMESUFFIX=	-gtk2
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=	--with-gtk
+PLIST_SUB+=	NLS=""
+.else
+LIB_DEPENDS+=	tk${TCL_VER:S/.//}:${PORTSDIR}/x11-toolkits/tk${TCL_VER:S/.//}
+CONFIGURE_ARGS+=	--with-tcltk --disable-nls \
+			--with-tcl-ver=${TCL_VER} --with-tk-ver=${TCL_VER}
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.post.mk>
