@@ -64,6 +64,10 @@ CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -z -I${LOCALBASE}/include -C --pr
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=		"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 .if defined(DEBUG)
 CONFIGURE_ARGS+=	-d
 STRIP=
