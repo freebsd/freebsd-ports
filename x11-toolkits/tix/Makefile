@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1997/08/20 12:12:15 tg Exp $
+# $Id: Makefile,v 1.12 1997/10/01 12:19:40 tg Exp $
 #
 
 DISTNAME=	Tix4.1.0.006
@@ -44,7 +44,7 @@ post-install:
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
-	@ln -sf ${PREFIX}/bin/tixwish8.0.8.0 ${PREFIX}/bin/tixwish
+	@ln -sf ${PREFIX}/bin/tixwish4.1.8.0 ${PREFIX}/bin/tixwish
 	${LDCONFIG} -m ${PREFIX}/lib
 .for dir in generic unix
 	@${MKDIR} ${PREFIX}/include/tix/${dir}
