@@ -1,4 +1,4 @@
-Squeak is a new implementation of the Smalltalk programming
+Squeak is an implementation of the Smalltalk programming
 environment; it includes among other things:
     * a rapid-turn-around Smalltalk-80 compiler,
     * a caching-JIT run-time virtual machine (with full source in
