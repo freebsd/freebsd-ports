@@ -27,14 +27,19 @@ do-build:	# empty, but needs to be there for the python dependency.
 # there, too. I don't know whether this still applies to current apache
 # releases, though. I still run 2.2.8-STABLE.
 
-WEBBASEDIR?=	${PREFIX}/www
-ZOPEBASEDIR?=	${WEBBASEDIR}/Zope
-CGIBINDIR?=	${PREFIX}/www/cgi-bin.default
+# Change these, if you like, via the environment.
+WEBBASEDIR?=	www
+SZOPEBASEDIR?=	${WEBBASEDIR}/Zope
+SCGIBINDIR?=	${WEBBASEDIR}/cgi-bin.default
 APACHE_CONFDIR?=	${PREFIX}/etc/apache
 PYTHON15?=	${LOCALBASE}/bin/python1.5
 
-PLIST_SUB=	ZOPEBASEDIR=${ZOPEBASEDIR} \
-		CGIBINDIR=${CGIBINDIR} \
+# Don't change these.
+ZOPEBASEDIR=	${PREFIX}/${SZOPEBASEDIR}
+CGIBINDIR=	${PREFIX}/${SCGIBINDIR}
+
+PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR} \
+		CGIBINDIR=${SCGIBINDIR} \
 		VERSION=${PORTVERSION}
 
 # I decided to consider the whole souce tree to be part of the package
@@ -45,25 +50,29 @@ do-install:	#
 		${ECHO} "Saving existing Database to /tmp/Data.fs.BAK." ; \
 		${MV} ${ZOPEBASEDIR}/var/Data.fs /tmp/Data.fs.BAK ; \
 		fi
+	#
 	@${MKDIR} ${ZOPEBASEDIR}
 	@${ECHO} "===>   Please be patient, some builds need their time."
 	@${ECHO} "===>   Copying..."
 	@${CP} -Rp ${WRKSRC}/* ${ZOPEBASEDIR}/
+	#
 	@(cd ${ZOPEBASEDIR} ; \
 		${PYTHON15} w_pcgi.py ; \
 		${PYTHON15} wo_pcgi.py ; \
 		${MV} Zope.cgi Zope.cgi.orig ; \
 		${ECHO} "#! ${CGIBINDIR}/pcgi-wrapper" > Zope.cgi ; \
 		${CAT} Zope.cgi.orig >> Zope.cgi )
+	#
 	@${MKDIR} ${CGIBINDIR}
 	@(cd ${ZOPEBASEDIR} ; \
 		${INSTALL} -o nobody -m 555 Zope.cgi \
 			pcgi/pcgi-wrapper \
 			${CGIBINDIR} )
+	#
 	@${ECHO} "===>   Fixing permissions of Zope's own var directory..."
-	@${CHMOD} ugo+rwt ${ZOPEBASDIR}/var
-	@${CHOWN} nobody ${ZOPEBASDIR}/var
-	@${CHOWN} nobody ${ZOPEBASDIR}/var/*
+	@${CHMOD} ugo+rwt ${ZOPEBASEDIR}/var
+	@${CHOWN} nobody ${ZOPEBASEDIR}/var
+	@${CHOWN} nobody ${ZOPEBASEDIR}/var/*
 	#
 	@${ECHO} "===>   Setting user/password to zopemaster/test..."
 	@(cd ${ZOPEBASEDIR} && \
