@@ -4251,7 +4251,6 @@ mille		src/games/mille
 mime		ports/devel/mime
 mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
-mimepp		ports/converters/mimepp
 mindfocus	ports/games/mindfocus
 mindguard	ports/games/mindguard
 mindterm-binary	ports/security/mindterm-binary
