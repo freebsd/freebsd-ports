@@ -1,0 +1,9 @@
+--- configure.in.orig	Fri Feb  9 23:52:19 2001
++++ configure.in	Fri Feb  9 23:53:32 2001
+@@ -233,4 +233,6 @@
+ AC_OUTPUT([Makefile intl/Makefile po/Makefile.in],
+ [sed -e "/POTFILES =/r po/POTFILES" po/Makefile.in > po/Makefile])
+ 
++AC_OUTPUT_SUBDIRS(Expense)
++AC_OUTPUT_SUBDIRS(SyncTime)
+ dnl AC_OUTPUT(Makefile)

@@ -1,30 +1,56 @@
 bin/jpilot
+bin/jpilot-dump
+bin/jpilot-sync
+bin/jpilot-upgrade-99
+lib/jpilot/plugins/libexpense.a
+lib/jpilot/plugins/libexpense.so
+lib/jpilot/plugins/libexpense.so.1
+lib/jpilot/plugins/libsynctime.a
+lib/jpilot/plugins/libsynctime.so
+lib/jpilot/plugins/libsynctime.so.1
+%%PORTDOCS%%share/doc/jpilot/manual.html
+%%PORTDOCS%%share/doc/jpilot/plugin.html
+share/jpilot/AddressDB.pdb
+share/jpilot/DatebookDB.pdb
+share/jpilot/MemoDB.pdb
+share/jpilot/ToDoDB.pdb
 share/jpilot/jpilotrc.blue
 share/jpilot/jpilotrc.default
 share/jpilot/jpilotrc.green
 share/jpilot/jpilotrc.purple
 share/jpilot/jpilotrc.steel
-share/jpilot/DatebookDB.pdb
-share/jpilot/AddressDB.pdb
-share/jpilot/ToDoDB.pdb
-share/jpilot/MemoDB.pdb
-lib/libplugin.a
-share/doc/jpilot/plugin.html
+share/locale/ca/LC_MESSAGES/jpilot.mo
+share/locale/cs/LC_MESSAGES/jpilot.mo
 share/locale/da/LC_MESSAGES/jpilot.mo
 share/locale/de/LC_MESSAGES/jpilot.mo
+share/locale/es/LC_MESSAGES/jpilot.mo
 share/locale/fr/LC_MESSAGES/jpilot.mo
 share/locale/ja/LC_MESSAGES/jpilot.mo
+share/locale/nl/LC_MESSAGES/jpilot.mo
+share/locale/no/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 @dirrm share/jpilot
-@dirrm share/doc/jpilot
+%%PORTDOCS%%@dirrm share/doc/jpilot
+@dirrm lib/jpilot/plugins
+@dirrm lib/jpilot
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/da 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ja 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true

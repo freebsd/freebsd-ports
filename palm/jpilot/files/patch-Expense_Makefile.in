@@ -1,0 +1,18 @@
+--- Expense/Makefile.in.orig	Fri Dec  8 06:44:26 2000
++++ Expense/Makefile.in	Fri Feb  9 23:46:37 2001
+@@ -52,13 +52,13 @@
+ install:
+ 	./install-sh -d -m 755 $(prefix)/lib/jpilot; \
+ 	./install-sh -d -m 755 $(prefix)/lib/jpilot/plugins; \
+-	../libtool --mode=install ./install-sh \
++	../libtool --mode=install ./install-sh -c \
+ 	libexpense.la $(prefix)/lib/jpilot/plugins
+ 
+ local_install:
+ 	./install-sh -d -m 755 $(HOME)/.jpilot; \
+ 	./install-sh -d -m 755 $(HOME)/.jpilot/plugins; \
+-	../libtool --mode=install ./install-sh \
++	../libtool --mode=install ./install-sh -c \
+ 	libexpense.la $(HOME)/.jpilot/plugins
+ 
+ uninstall:

@@ -1,20 +1,33 @@
---- Makefile.in.orig	Wed Mar  1 18:00:14 2000
-+++ Makefile.in	Sun Mar 12 11:37:58 2000
+--- Makefile.in.orig	Mon Dec 18 16:53:30 2000
++++ Makefile.in	Thu Dec 21 21:22:37 2000
 @@ -43,7 +43,7 @@
  INTLLIBS = @INTLLIBS@
  
  # Targets
--all: po_dir intl_dir jpilot
-+all: po_dir intl_dir jpilot libplugin
+-all: po_dir intl_dir jpilot jpilot-sync jpilot-dump
++all: po_dir intl_dir jpilot jpilot-sync jpilot-dump synctime expense
  
  jpilot: jpilot.o datebook.o address.o todo.o memo.o \
  	utils.o sync.o prefs.o log.o plugins.o \
-@@ -192,6 +192,8 @@
- 	./install-sh -c -m 755 empty/AddressDB.pdb $(prefix)/share/jpilot/
- 	./install-sh -c -m 755 empty/ToDoDB.pdb $(prefix)/share/jpilot/
- 	./install-sh -c -m 755 empty/MemoDB.pdb $(prefix)/share/jpilot/
-+	./install-sh -c -m 644 libplugin.a $(prefix)/lib/
-+	./install-sh -c -m 644 docs/plugin.html $(prefix)/share/doc/jpilot/plugin.html
- 	cd intl; make install
- 	cd po; make install
+@@ -210,6 +210,12 @@
+ intl_dir:
+ 	cd intl; $(MAKE)
  
++synctime:
++	cd SyncTime; $(MAKE)
++
++expense:
++	cd Expense; $(MAKE)
++
+ clean:
+ 	rm -f *.o *~ config.cache
+ 
+@@ -236,6 +242,8 @@
+ 	./install-sh -c -m 755 empty/MemoDB.pdb $(prefix)/share/jpilot/
+ 	cd intl; $(MAKE) install
+ 	cd po; $(MAKE) install
++	cd SyncTime; $(MAKE) install
++	cd Expense; $(MAKE) install
+ 
+ uninstall:
+ 	rm $(prefix)/share/jpilot/*
