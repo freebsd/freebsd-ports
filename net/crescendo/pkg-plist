@@ -1,9 +1,9 @@
 bin/crescendo
-share/crescendo/cr-about.jpg
-share/crescendo/cr-splash1.jpg
-share/crescendo/startup2.wav
-share/gnome/gnome/apps/Internet/crescendo.desktop
-share/pixmaps/crescendo.png
+share/gnome/crescendo/cr-about.jpg
+share/gnome/crescendo/cr-splash1.jpg
+share/gnome/crescendo/startup2.wav
+share/gnome/apps/Internet/crescendo.desktop
+share/gnome/pixmaps/crescendo.png
 %%DOCDIR%%/AUTHORS
 %%DOCDIR%%/COPYING
 %%DOCDIR%%/ChangeLog
@@ -14,4 +14,4 @@ share/pixmaps/crescendo.png
 %%DOCDIR%%/README.BINARY
 %%DOCDIR%%/TODO
 @dirrm %%DOCDIR%%
-@dirrm share/crescendo
+@dirrm share/gnome/crescendo
