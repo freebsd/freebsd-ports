@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	png
-PORTVERSION=    1.2.2
-PORTREVISION=   4
+PORTVERSION=    1.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/src/ \
@@ -36,9 +35,6 @@ MANCOMPRESSED=	maybe
 post-extract:
 # Please don't delete the following line - this link used by ghostscript* ports
 	@${LN} -sf ${WRKSRC} ${WRKDIR}/libpng
-
-post-patch:
-	${CP} ${FILESDIR}/makefile.freebsd ${WRKSRC}/scripts/
 
 pre-install:
 	@[ -d ${PREFIX}/include/libpng ] || ${MKDIR} ${PREFIX}/include/libpng

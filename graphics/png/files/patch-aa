@@ -1,0 +1,11 @@
+--- scripts/makefile.freebsd.bak	Sat May 18 18:46:45 2002
++++ scripts/makefile.freebsd	Thu May 30 08:55:41 2002
+@@ -25,7 +25,7 @@
+ DPADD+=         ${LIBM} ${LIBZ}
+ 
+ CFLAGS+= -I. -DPNG_USE_PNGGCCRD
+-.if (${MACHINE_ARCH} != "i386")
++.if (${ARCH} != "i386")
+ CFLAGS+= -DPNG_NO_ASSEMBLER_CODE
+ .endif
+ 
