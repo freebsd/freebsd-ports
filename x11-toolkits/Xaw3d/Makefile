@@ -3,7 +3,7 @@
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1996/10/16 09:11:58 asami Exp $
+# $Id: Makefile,v 1.12 1996/11/18 09:55:01 asami Exp $
 #
 
 DISTNAME=	Xaw3d-1.3
@@ -16,7 +16,10 @@ MAINTAINER=	asami@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 
+post-extract:
+	/bin/ln -sf export/include ${WRKSRC}/X11
+
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
