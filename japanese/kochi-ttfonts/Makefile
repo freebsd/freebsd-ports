@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kochi-ttfonts
-PORTVERSION=	20030628
+PORTVERSION=	20030809
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://downloads.sourceforge.jp/efont/4845/ \
+MASTER_SITES=	http://downloads.sourceforge.jp/efont/5411/ \
 		${MASTER_SITE_PORTS_JP}
 DISTFILES=	kochi-substitute-${PORTVERSION}.tar.bz2
 
