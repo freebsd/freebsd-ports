@@ -18,8 +18,10 @@ NO_BUILD=	yes
 
 USE_REINPLACE=	yes
 
+REINPLACE_ARGS=	-i.beforeNic
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php html.php menu.php
+SUB_DIRS=	config graphics lib templates
 
 LHORDEDIR?=	www/horde
 LNICDIR?=	${LHORDEDIR}/nic
@@ -34,8 +36,9 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 
 do-install:
 	@${MKDIR}  ${NICDIR}
-	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${NICDIR}
-	@${CP} -Rp ${WRKSRC}/templates ${NICDIR}
+.for REP in ${SUB_DIRS}
+	@${CP} -Rp ${WRKSRC}/${REP} ${NICDIR}
+.endfor
 	@${CP} -p  ${WRKSRC}/*.php ${NICDIR}
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
@@ -47,8 +50,11 @@ do-install:
 	@${CP} -p ${FILESDIR}/httpd.conf.nic ${HORDE_INC}
 	@${REINPLACE_CMD} -e "s:/home/httpd/html/horde/nic:${NICDIR}:g" \
 		${HORDE_INC}/httpd.conf.nic
+	@${RM} ${HORDE_INC}/httpd.conf.nic.beforeNic
 	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTNIC::" \
 		${HORDEDIR}/config/registry.php
+	@${CP} -p ${HORDEDIR}/config/registry.php \
+		${HORDEDIR}/config/registry.php.afterNic
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
