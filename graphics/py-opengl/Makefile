@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	1.5.6.a2
+PORTVERSION=	1.5.6.b1
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	py${PORTNAME}
 PKGNAMEPREFIX=	py-
-DISTNAME=	PyOpenGL-${PORTVERSION:S/.a/a/}
+DISTNAME=	PyOpenGL-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
@@ -32,7 +32,7 @@ SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
 do-configure:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/setup.py ${WRKSRC}/togl_setup.py ${WRKSRC}/Tkinter.py
+		${WRKSRC}/config.py ${WRKSRC}/Tkinter.py
 
 do-build:
 	${SETUP_CMD} build
