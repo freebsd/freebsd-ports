@@ -5057,6 +5057,7 @@ p5-Class-Container	ports/devel/p5-Class-Container
 p5-Class-Contract	ports/devel/p5-Class-Contract
 p5-Class-DBI	ports/databases/p5-Class-DBI
 p5-Class-DBI-AbstractSearch	ports/databases/p5-Class-DBI-AbstractSearch
+p5-Class-DBI-BaseDSN	ports/databases/p5-Class-DBI-BaseDSN
 p5-Class-DBI-Oracle	ports/databases/p5-Class-DBI-Oracle
 p5-Class-DBI-Pager	ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-Pg		ports/databases/p5-Class-DBI-Pg
