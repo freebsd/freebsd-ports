@@ -19,6 +19,8 @@ COMMENT=	Perl5 modules to access to SQL Relay, including a DBD interface
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
+BROKEN=		"Build fails"
+
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
