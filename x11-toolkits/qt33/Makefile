@@ -60,6 +60,13 @@ OPTIONS=	CUPS "Enable CUPS support" on \
 		OPENGL "Enable OpenGL support" on \
 		XFT "Enable Xft support" on
 
+EXTRACT_COOKIE=	${WRKDIR}/.extract_done.${PORTNAME}.${PREFIX:S/\//_/g}
+CONFIGURE_COOKIE=${WRKDIR}/.configure_done.${PORTNAME}.${PREFIX:S/\//_/g}
+INSTALL_COOKIE=	${WRKDIR}/.install_done.${PORTNAME}.${PREFIX:S/\//_/g}
+BUILD_COOKIE=	${WRKDIR}/.build_done.${PORTNAME}.${PREFIX:S/\//_/g}
+PATCH_COOKIE=	${WRKDIR}/.patch_done.${PORTNAME}.${PREFIX:S/\//_/g}
+PACKAGE_COOKIE=	${WRKDIR}/.package_done.${PORTNAME}.${PREFIX:S/\//_/g}
+
 .include <bsd.port.pre.mk>
 
 # The previous Qt port versions installed qmake and qmake's specs under X11BASE
