@@ -9,14 +9,15 @@ PORTNAME=	db41
 PORTVERSION=	4.1.25
 PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+#MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
 PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 PATCH_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1
-PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
+PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4.1
@@ -34,6 +35,7 @@ INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_docs
+PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
