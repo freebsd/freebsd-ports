@@ -212,6 +212,7 @@ lib/libmicoaux.%%MICOVER%%.so
 lib/libmicoaux%%MICOVER%%.a
 lib/libmicoaux%%MICOVER%%.so.1
 lib/libmicocoss%%MICOVER%%.a
+lib/libmicocoss%%MICOVER%%.so.1
 lib/libmicogtk.%%MICOVER%%.so
 lib/libmicogtk%%MICOVER%%.a
 lib/libmicogtk%%MICOVER%%.so.1
