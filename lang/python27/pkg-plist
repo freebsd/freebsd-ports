@@ -1491,10 +1491,6 @@ lib/%%PYTHON_VERSION%%/pipes.pyo
 lib/%%PYTHON_VERSION%%/pkgutil.py
 lib/%%PYTHON_VERSION%%/pkgutil.pyc
 lib/%%PYTHON_VERSION%%/pkgutil.pyo
-lib/%%PYTHON_VERSION%%/plat-freebsd2/IN.py
-lib/%%PYTHON_VERSION%%/plat-freebsd2/IN.pyc
-lib/%%PYTHON_VERSION%%/plat-freebsd2/IN.pyo
-lib/%%PYTHON_VERSION%%/plat-freebsd2/regen
 lib/%%PYTHON_VERSION%%/plat-freebsd3/IN.py
 lib/%%PYTHON_VERSION%%/plat-freebsd3/IN.pyc
 lib/%%PYTHON_VERSION%%/plat-freebsd3/IN.pyo
@@ -1507,6 +1503,10 @@ lib/%%PYTHON_VERSION%%/plat-freebsd5/IN.py
 lib/%%PYTHON_VERSION%%/plat-freebsd5/IN.pyc
 lib/%%PYTHON_VERSION%%/plat-freebsd5/IN.pyo
 lib/%%PYTHON_VERSION%%/plat-freebsd5/regen
+lib/%%PYTHON_VERSION%%/plat-freebsd6/IN.py
+lib/%%PYTHON_VERSION%%/plat-freebsd6/IN.pyc
+lib/%%PYTHON_VERSION%%/plat-freebsd6/IN.pyo
+lib/%%PYTHON_VERSION%%/plat-freebsd6/regen
 lib/%%PYTHON_VERSION%%/platform.py
 lib/%%PYTHON_VERSION%%/platform.pyc
 lib/%%PYTHON_VERSION%%/platform.pyo
@@ -3315,10 +3315,10 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 @dirrm lib/%%PYTHON_VERSION%%/test/decimaltestdata
 @dirrm lib/%%PYTHON_VERSION%%/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages
+@dirrm lib/%%PYTHON_VERSION%%/plat-freebsd6
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd5
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd4
 @dirrm lib/%%PYTHON_VERSION%%/plat-freebsd3
-@dirrm lib/%%PYTHON_VERSION%%/plat-freebsd2
 @dirrm lib/%%PYTHON_VERSION%%/logging
 @dirrm lib/%%PYTHON_VERSION%%/lib-tk
 @dirrm lib/%%PYTHON_VERSION%%/lib-old
