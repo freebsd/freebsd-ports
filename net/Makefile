@@ -60,6 +60,7 @@
     SUBDIR += dhid
     SUBDIR += dhcpconf
     SUBDIR += dictd
+    SUBDIR += dictd-database
     SUBDIR += djbdns
     SUBDIR += dlint
     SUBDIR += dnsutl
