@@ -1,0 +1,9 @@
+A set of two tools to URL encode and URL decode any stream of data, either
+from the command line or from standard input.
+
+See RFC 1738, section 2.2, for an eplanation of URL encoding.
+
+WWW: http://www.whizkidtech.net/urlendec/
+
+G. Adam Stanislav
+adam@whizkidtech.net
