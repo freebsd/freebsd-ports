@@ -73,11 +73,9 @@ CONFIGURE_ARGS= --prefix=${RT_PATH} \
 .if defined(WITH_APACHE2)
 APACHE_PORT?=   ${PORTSDIR}/www/apache2
 BUILD_DEPENDS+= ${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
-TESTDEPS_ARGS+=	--with-MODPERL2
 .else
 APACHE_PORT?=   ${PORTSDIR}/www/apache13
 BUILD_DEPENDS+= ${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
-TESTDEPS_ARGS+=	--with-MODPERL1
 .endif
 
 APXS?=          ${LOCALBASE}/sbin/apxs
@@ -86,12 +84,10 @@ DB_TYPE?=  mysql
 
 .if ${DB_TYPE} == "Pg"
 BUILD_DEPENDS+= ${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7
-TESTDEPS_ARGS+=	--with-POSTGRESQL
 .else
 DB_TYPE=        mysql
 BUILD_DEPENDS+= ${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server \
 		${ARCH_PERL}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-TESTDEPS_ARGS+=	--with-MYSQL
 .endif
 
 SITE_PERL:=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
