@@ -6,26 +6,20 @@
 #
 
 PORTNAME=	zebra
-PORTVERSION=	${ZEBRAVERSION}.${ZEBRADATE}
-PORTREVISION?=	1
+PORTVERSION=	0.94
+PORTREVISION?=	2
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp7.ua.freebsd.org/pub/local-distfiles/ \
-		http://uafug.org.ua/~never/zebra-devel/
-MASTER_SITE_SUBDIR=	osa
+MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
+		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/
 
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
-ZEBRAVERSION=	0.94
-ZEBRADATE=	20030620
-
 LATEST_LINK=	${PORTNAME}-devel
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${ZEBRAVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_SUBMAKE=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
@@ -74,6 +68,13 @@ PLIST_SUB+=	RIPNGD=""
 .else
 CONFIGURE_ARGS+=--disable-ripngd
 PLIST_SUB+=	RIPNGD="@comment "
+.endif
+
+.if !defined(WITHOUT_VTYSH)
+PLIST_SUB+=	VTYSH=""
+CONFIGURE_ARGS+=--enable-vtysh
+.else
+PLIST_SUB+=	VTYSH="@comment "
 .endif
 
 .if !defined(BATCH)
