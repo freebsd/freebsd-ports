@@ -1,0 +1,11 @@
+--- ld/writebin.c.orig	Sun Mar 14 13:07:12 1999
++++ ld/writebin.c	Thu Oct 19 16:52:50 2000
+@@ -3,7 +3,7 @@
+ 
+ /* Copyright (C) 1994 Bruce Evans */
+ 
+-#ifndef NO_AOUT
++#if 0
+ #ifndef A_OUT_INCL
+ #define A_OUT_INCL <a.out.h>
+ #endif

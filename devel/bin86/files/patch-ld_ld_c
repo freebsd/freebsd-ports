@@ -1,0 +1,10 @@
+--- ld/ld.c.orig	Wed Dec 30 12:20:50 1998
++++ ld/ld.c	Thu Oct 19 17:04:00 2000
+@@ -2,6 +2,7 @@
+ 
+ /* Copyright (C) 1994 Bruce Evans */
+ 
++#undef BUGCOMPAT
+ #include "syshead.h"
+ #include "const.h"
+ #include "byteord.h"

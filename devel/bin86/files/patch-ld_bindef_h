@@ -1,0 +1,10 @@
+--- ld/bindef.h.orig	Tue Mar 30 10:58:34 1999
++++ ld/bindef.h	Thu Oct 19 16:52:33 2000
+@@ -1,6 +1,6 @@
+ 
+ #ifndef MSDOS
+-#ifndef NO_AOUT
++#if 0
+ /* Ok, I'm just gonna make it simple ... override this if you like. */
+ #ifndef A_OUT_INCL
+ #define A_OUT_INCL	"a.out.h"

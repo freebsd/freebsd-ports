@@ -1,0 +1,15 @@
+--- man/as86.1.orig	Tue Sep 26 13:18:31 2000
++++ man/as86.1	Thu Nov  2 16:10:08 2000
+@@ -20,8 +20,8 @@
+ 
+ .SH DESCRIPTION
+ .B as86
+-is an assembler for the 8086..80386 processors, it's syntax is closer
+-to the intel/microsoft form rather than the more normal generic form of
+-the unix system assembler.
++is an assembler for the 8086..80386 processors.  Its syntax is closer
++to the Intel/Microsoft form rather than the more normal generic form of
++the Unix system assembler.
+ 
+ The
+ .B src
