@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tcpsocketpipe
-PORTVERSION=	1.8
+PORTVERSION=	1.8.1
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/TCPSocketPipe/
+MASTER_SITES=	http://www.ruby-lang.org/~nahi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	TCPSocketPipe-${PORTVERSION:S/./_/g}
 DIST_SUBDIR=	ruby
