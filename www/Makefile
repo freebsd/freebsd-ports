@@ -19,7 +19,6 @@
     SUBDIR += ashe           # requires Motif
     SUBDIR += aswedit
     SUBDIR += bacon
-    SUBDIR += bkmrkconv
     SUBDIR += bluefish
     SUBDIR += boa
     SUBDIR += cadaver
