@@ -8375,6 +8375,7 @@ pear-File	ports/sysutils/pear-File
 pear-File_Find	ports/sysutils/pear-File_Find
 pear-File_Fstab	ports/sysutils/pear-File_Fstab
 pear-File_Gettext	ports/sysutils/pear-File_Gettext
+pear-File_HtAccess	ports/security/pear-File_HtAccess
 pear-File_Passwd	ports/security/pear-File_Passwd
 pear-FSM	ports/devel/pear-FSM
 pear-HTML_BBCodeParser	ports/devel/pear-HTML_BBCodeParser
