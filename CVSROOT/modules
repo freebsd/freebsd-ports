@@ -7094,6 +7094,7 @@ py-bzip2	ports/archivers/py-bzip2
 py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
 py-chart	ports/graphics/py-chart
+py-cheetah	ports/devel/py-cheetah
 py-ciphon	ports/devel/py-ciphon
 py-cjkcodecs	ports/converters/py-cjkcodecs
 py-clientcookie	ports/devel/py-clientcookie
