@@ -1,18 +1,22 @@
+# ex:ts=8
 # New ports collection makefile for:    celvis
 # Version required:     1.3
 # Date created:         Thur Aug 15, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1996/11/12 02:16:27 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:22:12 asami Exp $
 #
 
 DISTNAME=	celvis
 PKGNAME=	cn-celvis-1.3
 CATEGORIES=	chinese editors
-MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/ygz/  \
-		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/
+MASTER_SITES=	ftp://ftp.edu.cn/PUB/Chinese/
+#
+# switch to http://www.ifcss.org/ftp-pub/software/unix/editor/celvis-1.3.tar.gz
+#	if the distfile becomes unfetchable again.  Note this ver is slightly
+#	different.
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@NUXI.com
 
 MAN1=		celvis.1
 
