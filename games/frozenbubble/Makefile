@@ -70,7 +70,7 @@ do-install:
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/snd/*.xm  ${PREFIX}/share/frozen-bubble/snd/
 	@${INSTALL_DATA} ${BUILD_WRKSRC}/highscores.default  ${PREFIX}/share/frozen-bubble/
 
-	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl' > ${WRKSRC}/frozen-bubble
+	@printf '#!/bin/sh\nLD_PRELOAD=/usr/lib/libc_r.so perl ${PREFIX}/bin/frozen-bubble.pl $@' > ${WRKSRC}/frozen-bubble
 	@${INSTALL_SCRIPT} ${WRKSRC}/frozen-bubble ${PREFIX}/bin
 
 .include <bsd.port.mk>
