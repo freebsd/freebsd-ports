@@ -27,8 +27,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/guile/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote \
-		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/misc/p5-Finance-QuoteHist \
+		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
+		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${X11BASE}/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
 USE_X_PREFIX=	yes

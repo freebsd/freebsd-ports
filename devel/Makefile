@@ -395,7 +395,6 @@
     SUBDIR += libslang
     SUBDIR += libsoup
     SUBDIR += libstatgrab
-    SUBDIR += libstocks
     SUBDIR += libstrfunc
     SUBDIR += libstroke
     SUBDIR += libtai

@@ -8,7 +8,6 @@
     SUBDIR += basket
     SUBDIR += bigyear
     SUBDIR += cal
-    SUBDIR += cbb
     SUBDIR += checkrdf
     SUBDIR += dailystrips
     SUBDIR += dlume
@@ -34,7 +33,6 @@
     SUBDIR += genius
     SUBDIR += glabels
     SUBDIR += gmcal
-    SUBDIR += gnofin
     SUBDIR += gnomeblog
     SUBDIR += gnomepim
     SUBDIR += gnomeutils2
@@ -70,7 +68,6 @@
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
     SUBDIR += mnemo
-    SUBDIR += moneydance
     SUBDIR += moregroupware
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
@@ -98,7 +95,6 @@
     SUBDIR += xchm
     SUBDIR += xfce4-calendar
     SUBDIR += xfce4-notes-plugin
-    SUBDIR += xinvest
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xopps

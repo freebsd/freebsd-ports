@@ -768,3 +768,16 @@ x11/gnomemag|accessibility/gnomemag|2004-01-22|Category change
 x11/gnopernicus|accessibility/gnopernicus|2004-01-22|Category change
 sysutils/gok|accessibility/gok|2004-01-22|Category change
 audio/gnomespeech|accessibility/gnomespeech|2004-01-22|Category change
+deskutils/cbb|finance/cbb|2004-01-22|moved to finance category
+deskutils/gnofin|finance/gnofin|2004-01-22|moved to finance category
+deskutils/moneydance|finance/moneydance|2004-01-22|moved to finance category
+deskutils/xinvest|finance/xinvest|2004-01-22|moved to finance category
+devel/libstocks|finance/libstocks|2004-01-22|moved to finance category
+misc/emma|finance/emma|2004-01-22|moved to finance category
+misc/gnomepm|finance/gnomepm|2004-01-22|moved to finance category
+misc/p5-Finance-Currency-Convert|finance/p5-Finance-Currency-Convert|2004-01-22|moved to finance category
+misc/p5-Finance-Quote|finance/p5-Finance-Quote|2004-01-22|moved to finance category
+misc/p5-Finance-QuoteHist|finance/p5-Finance-QuoteHist|2004-01-22|moved to finance category
+misc/quantlib|finance/quantlib|2004-01-22|moved to finance category
+misc/wmstock|finance/wmstock|2004-01-22|moved to finance category
+misc/xquote|finance/xquote|2004-01-22|moved to finance category

@@ -1,13 +1,20 @@
 # $FreeBSD$
 #
     SUBDIR += aqmoney
+    SUBDIR += cbb
+    SUBDIR += emma
+    SUBDIR += gnofin
+    SUBDIR += gnomepm
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
     SUBDIR += kexchange
     SUBDIR += khacc
     SUBDIR += ktoblzcheck
+    SUBDIR += ktoblzcheck
     SUBDIR += libofx
+    SUBDIR += libstocks
+    SUBDIR += moneydance
     SUBDIR += myphpmoney
     SUBDIR += openhbci
     SUBDIR += p5-Business-CreditCard
@@ -31,7 +38,14 @@
     SUBDIR += p5-Business-OnlinePayment-eSec
     SUBDIR += p5-Business-OnlinePayment-iAuthorizer
     SUBDIR += p5-Business-WorldPay-Junior
+    SUBDIR += p5-Finance-Currency-Convert
+    SUBDIR += p5-Finance-Quote
+    SUBDIR += p5-Finance-QuoteHist
     SUBDIR += p5-Math-Financial
     SUBDIR += qhacc
+    SUBDIR += quantlib
+    SUBDIR += wmstock
+    SUBDIR += xinvest
+    SUBDIR += xquote
 
 .include <bsd.port.subdir.mk>
