@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ooodict
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.20050221
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ftp.gwdg.de/pub/misc/openoffice/contrib/dictionaries/
 DISTFILES+=	${LANGDIST}
@@ -19,10 +18,6 @@ COMMENT?=	MySpell dictionaries for OpenOffice.org
 USE_ZIP=	yes
 EXTRACT_ONLY=
 
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 .if !defined(LANGDIST)
 DICTMETAPORT=	yes
 LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
@@ -30,7 +25,7 @@ LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
 		fr_FR.zip de_DE.zip de_CH.zip hu_HU.zip \
 		it_IT.zip pl_PL.zip pt_PT.zip pt_BR.zip \
 		es_ES.zip sk_SK.zip sv_SE.zip el_GR.zip \
-		ru_RU_io.zip uk_UA.zip
+		ru_RU_yo.zip uk_UA.zip
 
 HYPHDIST?=	hyph_cs_CZ.zip hyph_da_DK.zip hyph_de_DE.zip \
 		hyph_en_CA.zip hyph_en_GB.zip hyph_es_ES.zip \
@@ -38,20 +33,20 @@ HYPHDIST?=	hyph_cs_CZ.zip hyph_da_DK.zip hyph_de_DE.zip \
 		hyph_pt_BR.zip hyph_pt_PT.zip hyph_ru_RU.zip \
 		hyph_sk_SK.zip hyph_sl_SI.zip hyph_uk_UA.zip
 .endif
-
+IGNOREFILES=	${DISTFILES}
 CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .if !defined(INSTALLATION_BASEDIR)
-INSTALLATION_BASEDIR=	OpenOffice.org1.0
+INSTALLATION_BASEDIR=	OpenOffice.org1.1.4
 .if defined(RDEP)
 BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 .else
-BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.0
-RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.0
+BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.1
+RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.1
 .endif
 .endif
 
