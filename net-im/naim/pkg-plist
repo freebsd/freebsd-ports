@@ -7,7 +7,6 @@ include/firetalk.h
 include/naim/modutil.h
 include/naim/naim.h
 include/naim/secs.h
-share/doc/naim/COLORS
 share/doc/naim/FAQ
 share/doc/naim/README
 share/doc/naim/commands.txt
