@@ -3,7 +3,7 @@
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.7 1999/01/15 00:43:24 sada Exp $
+# $Id: Makefile,v 1.8 1999/01/15 03:12:36 asami Exp $
 #
 
 DISTNAME=	gn-1.40
@@ -11,7 +11,7 @@ PKGNAME=	ja-gn-gnspool-1.40
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 
-MAINTAINER=	kiroh@kh.rim.or.jp
+MAINTAINER=	seiken@os.rim.or.jp
 
 # The program ``configur'' sometimes issue questions and
 # batch-mode build would fail.

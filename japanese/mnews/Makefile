@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1998/06/06 03:44:56 itojun Exp $
+# $Id: Makefile,v 1.12 1998/08/24 01:30:35 steve Exp $
 #
 
 DISTNAME=	mnews121
@@ -11,7 +11,7 @@ PKGNAME?=	ja-mnews-1.21
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.mei.co.jp/free/Network/news/readers/
 
-MAINTAINER=	kiroh@kh.rim.or.jp
+MAINTAINER=	seiken@os.rim.or.jp
 
 WRKSRC=		${WRKDIR}/mnews-1.21/build
 MAN1=		mnews.1

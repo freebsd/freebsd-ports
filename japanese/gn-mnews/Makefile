@@ -3,7 +3,7 @@
 # Date created:			7 Feb 1997
 # Whom:				Kiroh HARADA <kiroh@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/15 20:25:45 max Exp $
+# $Id: Makefile,v 1.2 1997/12/17 01:27:48 asami Exp $
 #
 
 DISTNAME=	mnews120
@@ -11,7 +11,7 @@ PKGNAME=	ja-gn-mnews-1.20
 CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.mei.co.jp/free/Network/news/readers/
 
-MAINTAINER=	kiroh@kh.rim.or.jp
+MAINTAINER=	seiken@os.rim.or.jp
 
 RUN_DEPENDS=	gninews:${PORTSDIR}/japanese/gn-gnspool \
 		mnews:${PORTSDIR}/japanese/mnews
