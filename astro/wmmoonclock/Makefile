@@ -3,10 +3,10 @@
 # Date created:        14 March 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.2 1999/04/19 13:56:27 kris Exp $
+# $Id: Makefile,v 1.3 1999/04/21 16:08:34 mharo Exp $
 #
 
-DISTNAME=	wmMoonClock-1.25
+DISTNAME=	wmMoonClock-1.26
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
