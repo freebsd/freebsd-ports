@@ -15,9 +15,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Enlightenment Database Library
 
 USE_LIBTOOL_VER=	15
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig gnometarget
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
-
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
