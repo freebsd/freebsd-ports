@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	narray
-PORTVERSION=	0.5.6p2
+PORTVERSION=	0.5.7
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www.ir.isas.ac.jp/~masa/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ USE_RUBY_EXTCONF=	yes
 INSTALL_TARGET=	site-install
 
 DOC_EN=		ChangeLog	README.en	SPEC.en
-DOC_JA=		README.jp	SPEC.jp
+DOC_JA=		README.ja	SPEC.ja
 
 post-install:
 .if !defined(NOPORTDOCS)
