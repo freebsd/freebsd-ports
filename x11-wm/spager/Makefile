@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spager
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.stanford.edu/~satyakid/
 
@@ -28,12 +27,12 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spager ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/share/spager
-	${INSTALL_SCRIPT} ${WRKSRC}/spager.jl ${PREFIX}/share/spager
-	${MKDIR} ${PREFIX}/share/spager/merlin
-	${INSTALL_SCRIPT} ${WRKSRC}/merlin/message.jl ${PREFIX}/share/spager/merlin
-	${INSTALL_SCRIPT} ${WRKSRC}/merlin/util.jl ${PREFIX}/share/spager/merlin
-	${INSTALL_DATA} ${WRKSRC}/sample.rc ${PREFIX}/share/spager
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/spager.jl ${DATADIR}
+	${MKDIR} ${DATADIR}/merlin
+	${INSTALL_SCRIPT} ${WRKSRC}/merlin/message.jl ${DATADIR}/merlin
+	${INSTALL_SCRIPT} ${WRKSRC}/merlin/util.jl ${DATADIR}/merlin
+	${INSTALL_DATA} ${WRKSRC}/sample.rc ${DATADIR}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
