@@ -5,20 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wmbiff
-PORTVERSION=	0.4.5
-CATEGORIES=	mail windowmaker afterstep
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		wmbiff
+PORTVERSION=		0.4.6
+CATEGORIES=		mail windowmaker afterstep
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=		jim@FreeBSD.org
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-GNU_CONFIGURE=	yes
+USE_X_PREFIX=		yes
+USE_XPM=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-MAN1=		wmbiff.1
-MAN5=		wmbiffrc.5
+MAN1=			wmbiff.1
+MAN5=			wmbiffrc.5
 
 post-install:
 	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
