@@ -284,6 +284,7 @@
     SUBDIR += phplot
     SUBDIR += picturebook
     SUBDIR += piddle
+    SUBDIR += pixelize
     SUBDIR += pixmap
     SUBDIR += plasma-kmod
     SUBDIR += plotmtv
