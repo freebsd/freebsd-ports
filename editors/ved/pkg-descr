@@ -1,0 +1,7 @@
+Ved (visual editor) is a small and very fast screen-oriented editor
+that implements a user interface somewhere between vi and Emacs. It is
+powerful and easy to learn, and has no limitations on line length,
+file size, or the types of characters that may appear in a file.
+
+- George Reid
+greid@ukug.uk.freebsd.org
