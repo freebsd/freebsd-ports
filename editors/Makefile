@@ -63,6 +63,7 @@
     SUBDIR += jedit
     SUBDIR += jext
     SUBDIR += joe
+    SUBDIR += joe-devel
     SUBDIR += jove
     SUBDIR += koffice
     SUBDIR += le
