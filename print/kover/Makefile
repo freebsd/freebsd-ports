@@ -6,7 +6,7 @@
 
 PORTNAME=		kover
 PORTVERSION=		2.9.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		print kde
 MASTER_SITES=		http://lisas.de/kover/
 
@@ -19,6 +19,8 @@ USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
+
+MAN1=	kover.1 cddb-id.1
 
 post-extract:
 	@${TOUCH} -t 200404270000 ${WRKSRC}/Makefile.am.in
