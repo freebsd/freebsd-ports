@@ -31,6 +31,9 @@ start)
 	'')
 		if [ -x "$PREFIX"/sbin/arpwatch -a -d "$PREFIX"/arpwatch ]; then
 			"$PREFIX"/sbin/arpwatch && echo -n ' arpwatch'
+		else
+			echo "Error: Cannot find $PREFIX/sbin/arpwatch" >&2
+			exit 1
 		fi
 		;;
 	*)
