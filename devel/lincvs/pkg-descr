@@ -6,7 +6,7 @@ or single files and common operations like add, remove and commit,
 diff against the repository or view of the log messages in list
 form.
 
-WWW: http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/lincvsen.html
+WWW: http://www.lincvs.org/
 
 - Chris D. Faulhaber
-jedgar@FreeBSD.org
+ <jedgar@FreeBSD.org>
