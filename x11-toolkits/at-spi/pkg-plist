@@ -28,10 +28,10 @@ include/at-spi-1.0/libspi/text.h
 include/at-spi-1.0/libspi/value.h
 lib/libcspi.a
 lib/libcspi.so
-lib/libcspi.so.8
+lib/libcspi.so.0
 lib/libspi.a
 lib/libspi.so
-lib/libspi.so.8
+lib/libspi.so.0
 lib/gtk-2.0/modules/libatk-bridge.so
 lib/orbit-2.0/Accessibility_module.so
 libdata/bonobo/servers/Accessibility_Registry.server
@@ -57,6 +57,7 @@ share/doc/at-spi-cspi/at-spi-cspi-spi-main-loop-and-initialization.html
 share/doc/at-spi-cspi/at-spi-cspi-state-and-statesets.html
 share/doc/at-spi-cspi/book1.html
 share/doc/at-spi-cspi/c5968.html
+share/doc/at-spi-cspi/c7152.html
 share/doc/at-spi-cspi/index.sgml
 share/doc/at-spi-cspi/spi-accessible.html
 share/doc/at-spi-cspi/spi-application.html
