@@ -1,10 +1,10 @@
---- Makefile.orig	Thu May 31 15:51:08 2001
-+++ Makefile	Wed Oct 10 20:16:14 2001
-@@ -46,7 +46,6 @@
+--- Makefile.orig	Tue Jan 21 15:25:01 2003
++++ Makefile	Wed Jan 22 08:40:19 2003
+@@ -51,7 +51,6 @@
  	cd libhosts_gatherer && ${MAKE} install
- 	cd libpcap-nessus && ${MAKE} install 
  
--	$(INSTALL) -m 0444 include/includes.h ${includedir}/nessus
- 	$(INSTALL) -m 0444 include/libnessus.h ${includedir}/nessus
- 	$(INSTALL) -m 0444 include/harglists.h ${includedir}/nessus
- 	$(INSTALL) -m 0444 include/libvers.h   ${includedir}/nessus
+ 
+-	$(INSTALL) -m 0444 include/includes.h $(DESTDIR)${includedir}/nessus
+ 	$(INSTALL) -m 0444 include/libnessus.h $(DESTDIR)${includedir}/nessus
+ 	$(INSTALL) -m 0444 include/harglists.h $(DESTDIR)${includedir}/nessus
+ 	$(INSTALL) -m 0444 include/libvers.h   $(DESTDIR)${includedir}/nessus
