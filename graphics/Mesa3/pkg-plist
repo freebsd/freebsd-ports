@@ -1,7 +1,4 @@
-include/GL/dosmesa.h
-include/GL/foomesa.h
-include/GL/fxmesa.h
-include/GL/ggimesa.h
+etc/mesa.conf
 include/GL/gl.h
 include/GL/gl_mangle.h
 include/GL/glu.h
@@ -9,27 +6,18 @@ include/GL/glu_mangle.h
 include/GL/glut.h
 include/GL/glx.h
 include/GL/glx_mangle.h
-include/GL/mglmesa.h
 include/GL/osmesa.h
-include/GL/osmesa3.h
-include/GL/svgamesa.h
-include/GL/wmesa.h
 include/GL/xmesa.h
-lib/libGL.a
+include/GL/xmesa_x.h
+include/GL/xmesa_xf86.h
 lib/libGL.so
-lib/libGL.so.14
-lib/libGLU.a
+lib/libGL.so.%%GLVER%%
 lib/libGLU.so
-lib/libGLU.so.14
-lib/libMesaGL.a
+lib/libGLU.so.%%GLVER%%
 lib/libMesaGL.so
-lib/libMesaGL.so.14
-lib/libMesaGLU.a
 lib/libMesaGLU.so
-lib/libMesaGLU.so.14
-lib/libglut.a
 lib/libglut.so
-lib/libglut.so.3.7
+lib/libglut.so.%%GLUTVER%%
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/GL
