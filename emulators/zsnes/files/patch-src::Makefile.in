@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Oct 29 15:11:59 2001
++++ Makefile.in	Mon Oct 29 15:12:11 2001
+@@ -170,7 +170,7 @@
+ 
+ install:
+ 	@INSTALL@ -m 0755 @ZSNESEXE@ @prefix@/bin
+-	@INSTALL@ -m 0644 linux/zsnes.man @prefix@/man
++	@INSTALL@ -m 0644 linux/zsnes.man @prefix@/man/man1/zsnes.1
+ 
+ clean:
+ 	rm -f ${CHIPDIR}/*.o  ${CPUDIR}/*.o  ${VIDEODIR}/*.o  ${GUIDIR}/*.o  ${DOSDIR}/*.o  ${WINDIR}/*.o  ${ZIPDIR}/*.o  *.o  @ZSNESEXE@
