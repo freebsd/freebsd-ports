@@ -1,17 +1,13 @@
-This is the open source web browser, which forms the basis for
-Netscape Navigator 6.  It should be fully compliant with all W3C
-standards, including HTML, CSS, XML, XSL, JavaScript, MathML,
-SVG and RDF.  This version also supports SSL encryption, but
-does not yet support Java.
+This is the current release of the Mozilla open source web browser. It should 
+be fully compliant with all W3C standards, including HTML, CSS, XML, XSL, 
+JavaScript, MathML, SVG and RDF.  This version also supports SSL encryption, 
+and Java with the use of the FreeBSD native Java plug-in.
 
-While the code is officially still in pre-release, the browser
-is mostly stable, and does a good job displaying most pages on
-the web.  Mail and News also work, and provide some interesting
-features, such as the ability to check multiple POP3 servers.
+This version is described by mozilla.org as a "bleeding edge release" which
+incoporates changes that occurred after the Mozilla 1.0 branch.
 
 Testers are most welcome, but should submit bug reports about
 the browser itself to mozilla.org (http://bugzilla.mozilla.org/)
 rather than via FreeBSD.
-
 
 WWW: http://www.mozilla.org/
