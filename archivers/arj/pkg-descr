@@ -1,0 +1,13 @@
+This  product is an  implementation of ARJ v 2.7x  for DOS on UNIX  and
+UNIX-like  systems. It is  assumed that the  user is familiar  with ARJ
+operation on DOS before using this package.
+
+New ARJ features on UNIX and UNIX-like platforms:
+
+ - Support for symbolic and hard links
+ - Archiving of special entities: pipes and devices
+ - Support for UID/GID storage in a variety of methods
+ - World's smallest native self-extracting modules
+ - Outstanding interoperability with ARJ for DOS, Windows and OS/2 Warp
+
+WWW: http://arj.sourceforge.net/
