@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Nov 26 21:09:14 2001
-+++ Makefile	Mon Nov 26 21:11:59 2001
+--- Makefile.orig	Fri Jun 14 09:51:39 2002
++++ Makefile	Sun Jul 21 19:58:47 2002
 @@ -20,7 +20,7 @@
  #
  # Default
@@ -24,13 +24,13 @@
  
  # To enable use of the FreeType-2 library
  # (if the include and lib directory do not match your installation,
-@@ -87,17 +87,17 @@
+@@ -114,17 +114,17 @@
  CFLAGS_EXTT1ASM=
  #CFLAGS_EXTT1ASM= -DEXTERNAL_T1ASM
  
--CFLAGS= $(CFLAGS_SYS) $(CFLAGS_FT) $(CFLAGS_PREF)
-+CFLAGS+= $(CFLAGS_SYS) $(CFLAGS_FT) $(CFLAGS_PREF)
- LIBS= $(LIBS_SYS) $(LIBS_FT)
+-CFLAGS= $(CFLAGS_SYS) $(CFLAGS_FT) $(CFLAGS_AT) $(CFLAGS_PREF)
++CFLAGS+= $(CFLAGS_SYS) $(CFLAGS_FT) $(CFLAGS_AT) $(CFLAGS_PREF)
+ LIBS= $(LIBS_SYS) $(LIBS_FT) $(LIBS_AT)
  
  # Installation-related stuff
  # 
