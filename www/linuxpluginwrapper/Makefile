@@ -18,12 +18,13 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS=	lthread.${LTHREAD_MAJOR}:${PORTSDIR}/devel/linuxthreads
-RUN_DEPENDS=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread5
-RUN_DEPENDS+=	${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+RUN_DEPENDS=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread5 \
+		${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+
+ONLY_FOR_ARCHS=	i386
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes
-ONLY_FOR_ARCHS=	i386
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	flashpluginwrapper-*
 
@@ -43,19 +44,19 @@ LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5.x
 LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD4.x
 .endif
 
-.if		${OSVERSION} >= 501105
-RTLD=		/libexec/ld-elf.so.1
-.else
+.if		${OSVERSION} < 501105
 RTLD=		/usr/libexec/ld-elf.so.1
+.else
+RTLD=		/libexec/ld-elf.so.1
 .endif
 
 .if		defined(WITH_DEBUG)
 CFLAGS+=	-DDEBUG=1
 .endif
 
-.if		!defined(PACKAGE_BUILDING)
+.if		(${OSVERSION} < 501107) && !defined(PACKAGE_BUILDING)
 pre-everything::
-	@if ! ${GREP} libmap.conf ${RTLD} > /dev/null 2>&1; then \
+	if ! strings ${RTLD} | ${GREP} libmap.conf > /dev/null 2>&1; then \
 		${ECHO_MSG} 'Please enable libmap.conf(5) feature for rtld(1).'; \
 		${ECHO_MSG} '4-stable user:'; \
 		${ECHO_MSG} '	You can get a following patch.'; \
@@ -78,9 +79,12 @@ post-build:
 
 pre-install:
 	@${MKDIR} ${X11BASE}/lib/browser_plugins
-	@${LN} -sf ${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so    ${X11BASE}/lib/browser_plugins/
-	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/flashplayer.xpt   ${X11BASE}/lib/browser_plugins/
-	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so ${X11BASE}/lib/browser_plugins/
+	@${LN} -sf ${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so \
+		${X11BASE}/lib/browser_plugins/
+	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/flashplayer.xpt \
+		${X11BASE}/lib/browser_plugins/
+	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so \
+		${X11BASE}/lib/browser_plugins/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
