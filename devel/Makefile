@@ -117,6 +117,7 @@
     SUBDIR += crossgo32-djgpp2-pdcurses
     SUBDIR += crystal
     SUBDIR += cscope
+    SUBDIR += cscout
     SUBDIR += cssc
     SUBDIR += ctags
     SUBDIR += cutils
