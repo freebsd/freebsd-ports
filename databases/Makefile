@@ -94,6 +94,7 @@
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
     SUBDIR += p5-Data-Page
+    SUBDIR += p5-Class-DBI-mysql
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-InterBase
