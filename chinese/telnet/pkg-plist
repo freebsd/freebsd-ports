@@ -1,1 +1,2 @@
-bin/telnet
+@comment $FreeBSD$
+bin/zh-telnet
