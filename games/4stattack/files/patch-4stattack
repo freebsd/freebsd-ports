@@ -1,0 +1,15 @@
+--- 4stattack.orig	Mon Jan 26 08:08:08 2004
++++ 4stattack	Mon Jan 26 08:28:42 2004
+@@ -1,9 +1,6 @@
+ #!/bin/sh
+-FAHOME=/usr/share/forcedattack2
++FAHOME=%%DATADIR%%
+ if [ ! -f ~/.4stattackrc ]; then
+-	cp $FAHOME/settings.ini ~/.4stattackrc
++	install -m 644 $FAHOME/settings.ini ~/.4stattackrc
+ fi
+-if [ -x $FAHOME/4stattack.py ]; then
+-	$FAHOME/4stattack.py -ini ~/.4stattackrc
+-fi
+-
++cd $FAHOME && %%PYTHON%% 4stattack.py -ini ~/.4stattackrc
