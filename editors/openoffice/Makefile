@@ -16,9 +16,6 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		http://people.freebsd.org/~mbr/distfiles/
 DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
 
-BROKEN=		"Compiles and installs ok. Gcc bugs and a system rtld-elf bug make it coredumping." \
-		"We have to fix that first. Please be patient.";
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
