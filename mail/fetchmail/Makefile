@@ -10,10 +10,11 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.2.0
+PORTVERSION=	6.2.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
-		ftp://ftp.ccil.org/pub/esr/fetchmail/
+		ftp://ftp.ccil.org/pub/esr/fetchmail/ \
+		ftp://ftp.win.ne.jp/pub/network/mail/fetchmail/
 
 MAINTAINER=	ve@sci.fi
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
