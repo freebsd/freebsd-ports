@@ -285,6 +285,7 @@ allegrogl	ports/graphics/allegrogl
 alliance	ports/cad/alliance
 alloywm		ports/x11-wm/alloywm
 alltraxclock	ports/x11-clocks/alltraxclock
+alphabet_sounds_fr	ports/games/alphabet_sounds_fr
 alsaplayer	ports/audio/alsaplayer
 althea		ports/mail/althea
 altivore	ports/security/altivore
