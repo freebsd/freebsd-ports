@@ -99,7 +99,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
 		${PREFIX}/lib/python1.5/${platform}/
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_TK} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_V6} ${PKGDIR}/pkg-plist
+	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PLIST_V6} ${PKGDIR}/pkg-plist
 
 post-install:
 	strip ${PREFIX}/bin/python
