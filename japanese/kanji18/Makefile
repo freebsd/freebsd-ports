@@ -7,7 +7,7 @@
 
 PORTNAME=	kanji
 PORTVERSION?=	1.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	${DISTNAME}
@@ -19,8 +19,7 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	X11 ${PKGNAMESUFFIX}-dot kanji font
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
-BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
-		mkitalic:${PORTSDIR}/x11-fonts/mkitalic \
+BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 		bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
 
