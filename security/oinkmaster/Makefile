@@ -9,7 +9,8 @@
 PORTNAME=	oinkmaster
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.it.su.se/pub/users/andreas/oinkmaster/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Help you update your snort rules after each update
