@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	finance
 MASTER_SITES=	http://grisbi.org/download/packages/${PORTVERSION}/sources/		\
 		http://cedricauger.free.fr/download/packages/${PORTVERSION}/sources/	\
@@ -26,10 +26,9 @@ USE_BISON=	yes
 USE_BZIP2=	yes
 USE_AUTOCONF=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"	\
-		LDFLAGS="-L${LOCALBASE}/lib"		\
-		AUTOHEADER="${AUTOHEADER}"		\
-		AUTOCONF="${AUTOCONF}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"		\
+		AUTOHEADER="${AUTOHEADER}" AUTOCONF="${AUTOCONF}"
 
 post-install:
 	@${ECHO_MSG}
