@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
 
+BROKEN=		Checksum mismatch
+
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 WRKSRC=		${WRKDIR}/tinker/source
