@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 do-fetch:
 
 do-build:
-	${CC} ${CFLAGS} -o ${WRKSRC}/Xwrapper-4 ${FILESDIR}/wrapper.c
+	${CC} ${CFLAGS} -DXSERVER_PATH=\"${X11BASE}/bin/XFree86\" -o ${WRKSRC}/Xwrapper-4 ${FILESDIR}/wrapper.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper-4 ${PREFIX}/bin
