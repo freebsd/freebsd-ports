@@ -7,7 +7,7 @@
 
 PORTNAME=	ispell-uk
 PORTVERSION=	0.7
-CATEGORIES=     textproc ukrainian
+CATEGORIES=	ukrainian textproc
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ispell-uk
 

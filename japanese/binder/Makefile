@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	japanese
+
 LANGUAGE=	Japanese
 MASTERDIR=	${.CURDIR}/../../x11-fm/binder
 

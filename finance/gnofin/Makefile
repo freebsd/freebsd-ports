@@ -7,7 +7,7 @@
 
 PORTNAME=	gnofin
 PORTVERSION=	0.8.4
-CATEGORIES=	deskutils gnome finance
+CATEGORIES=	finance deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 

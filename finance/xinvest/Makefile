@@ -7,7 +7,7 @@
 
 PORTNAME=	xinvest
 PORTVERSION=	2.6
-CATEGORIES=	deskutils finance
+CATEGORIES=	finance deskutils
 MASTER_SITES=	http://sunsite.dk/xinvest/
 
 MAINTAINER=	ports@FreeBSD.org
