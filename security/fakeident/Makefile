@@ -7,6 +7,7 @@
 
 PORTNAME=	fakeident
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.wa.apana.org.au/~dean/sources/ \
 		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
@@ -26,7 +27,7 @@ do-build:
 	@echo ""
 
 do-install:
-	$(INSTALL) -m 755 -o root -g wheel $(WRKSRC)/identd $(PREFIX)/sbin
-	$(INSTALL) -m 755 -o root -g wheel $(WRKSRC)/fakeident.sh $(PREFIX)/etc/rc.d
+	$(INSTALL_SCRIPT) $(WRKSRC)/identd $(PREFIX)/sbin
+	$(INSTALL_SCRIPT) $(FILESDIR)/fakeident.sh $(PREFIX)/etc/rc.d
 
 .include <bsd.port.mk>
