@@ -2,7 +2,7 @@
 
 case "$1" in
 	start)
-		/sbin/ldconfig -m %%PREFIX%%/pilot/lib
+		/sbin/ldconfig -m %%PREFIX%%/lib
 		;;
 	stop)
 		;;
