@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	q-audio
+PORTNAME=	audio
 PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
+PKGNAMEPREFIX=	q-
 
 MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
 COMMENT=	Q-Audio -- digital audio interface for the Q language
