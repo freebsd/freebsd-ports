@@ -28,11 +28,13 @@ USE_PERL5=	yes
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# Uncomment the WITH_LDAP, WITH_MYSQL, and WITH_PGSQL definitions
-# to link against libmysqlclient and libpq respectively.
-#WITH_LDAP=	yes
-#WITH_MYSQL=	yes
-#WITH_PGSQL=	yes
+# Define WITH_TCP_WRAPPERS, WITH_LDAP, WITH_MYSQL, and WITH_PGSQL to
+# link against libwrap, an LDAP library (see below), liblibmysqlclient
+# and libpq respectively.
+#WITH_TCP_WRAPPERS=	yes
+#WITH_LDAP=		yes
+#WITH_MYSQL=		yes
+#WITH_PGSQL=		yes
 
 # Link against OpenSSL in the base system for STARTTLS support.
 WITH_TLS?=	yes
@@ -75,6 +77,11 @@ SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
 
 .if !defined(WITH_PERL) && ${WITH_PERL} == "yes"
 SEDLIST+=	-e 's,^EXIM_PERL,\#EXIM_PERL,'
+.endif
+
+.if defined(WITH_TCP_WRAPPERS) && ${WITH_TCP_WRAPPERS} == "yes"
+SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
+		-e 's,^\# USE_TCP_WRAPPERS,USE_TCP_WRAPPERS,'
 .endif
 
 .if defined(WITH_LDAP)
