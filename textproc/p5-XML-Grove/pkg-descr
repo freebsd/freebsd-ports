@@ -1,0 +1,8 @@
+XML::Grove is a tree-based object model for accessing the information
+set of parsed or stored XML, HTML, or SGML instances. XML::Grove
+objects are Perl hashes and arrays where you access the properties
+of the objects using normal Perl syntax.
+
+WWW: http://search.cpan.org/search?dist=XML-Grove
+
+Seamus Venasse <svenasse@polaris.ca>

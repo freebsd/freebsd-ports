@@ -201,6 +201,7 @@
     SUBDIR += p5-XML-Filter-XInclude
     SUBDIR += p5-XML-Filter-XSLT
     SUBDIR += p5-XML-Generator-DBI
+    SUBDIR += p5-XML-Grove
     SUBDIR += p5-XML-Handler-Trees
     SUBDIR += p5-XML-Handler-YAWriter
     SUBDIR += p5-XML-LibRSVG
