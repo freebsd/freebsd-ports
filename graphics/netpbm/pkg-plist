@@ -89,6 +89,7 @@ bin/pnmdepth
 bin/pnmenlarge
 bin/pnmfile
 bin/pnmflip
+bin/pnmgamma
 bin/pnmhistmap
 bin/pnmindex
 bin/pnminvert
@@ -97,7 +98,9 @@ bin/pnmnlfilt
 bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
+bin/pnmrotate
 bin/pnmscale
+bin/pnmshear
 bin/pnmsmooth
 bin/pnmtile
 bin/pnmtoddif
@@ -183,7 +186,6 @@ lib/libpbm.a
 lib/libpgm.a
 lib/libpnm.a
 lib/libppm.a
-lib/libtiff.a
 man/man1/anytopnm.1.gz
 man/man1/asciitopgm.1.gz
 man/man1/atktopbm.1.gz
