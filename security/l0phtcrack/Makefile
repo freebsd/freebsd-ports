@@ -13,7 +13,7 @@ DISTNAME=	lcsrc
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=	L0pht Heavy Industries' cracker for SAMBA or Windows NT passwords
+COMMENT=	Cracks SAMBA or Windows NT passwords
 
 DOCDIR=		share/doc/${PORTNAME}
 NO_PACKAGE=	"uses GNU getopt with BSDish-licensed code from OpenSSL"
