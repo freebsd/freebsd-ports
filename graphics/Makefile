@@ -120,6 +120,7 @@
     SUBDIR += jbigkit
     SUBDIR += jgraph
     SUBDIR += jgv
+    SUBDIR += jhead
     SUBDIR += jpeg
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter
