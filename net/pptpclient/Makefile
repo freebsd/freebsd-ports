@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pptpclient
-PORTVERSION=	1.0.3
-CATEGORIES=	net
-MASTER_SITES=	http://prdownloads.sourceforge.net/pptpclient/
-DISTNAME=	pptp-linux-1.0.3
-DISTFILES=	pptp-linux-1.0.3-1.tar.gz
+PORTNAME=		pptpclient
+PORTVERSION=		1.1.0
+CATEGORIES=		net
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pptpclient
+DISTNAME=		pptp-linux-1.1.0
+DISTFILES=		pptp-linux-1.1.0-1.tar.gz
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 MAKE_ARGS=	DEBUG="" \
 		INCLUDE="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnugetopt" \
-		pptp
+		all
 
 GUNZIP_CMD=		${GZIP_CMD} ${EXTRACT_BEFORE_ARGS}
 
