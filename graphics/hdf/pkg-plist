@@ -20,7 +20,11 @@ bin/vcompat
 bin/vmake
 bin/vshow
 lib/libmfhdf.a
+lib/libmfhdf.so.2
+lib/libmfhdf.so
 lib/libdf.a
+lib/libdf.so
+lib/libdf.so.1
 include/atom.h
 include/bitvect.h
 include/cdeflate.h
@@ -30,7 +34,6 @@ include/crle.h
 include/cskphuff.h
 include/df.h
 include/dfan.h
-include/dffunc.f90
 include/dffunc.inc
 include/dfgr.h
 include/dfi.h
@@ -45,7 +48,6 @@ include/hcomp.h
 include/hcompi.h
 include/hconv.h
 include/hdf.h
-include/hdf.f90
 include/hdf.inc
 include/hdf2netcdf.h
 include/hdfi.h
@@ -63,7 +65,6 @@ include/mfgr.h
 include/mfhdf.h
 include/mstdio.h
 include/netcdf.h
-include/netcdf.f90
 include/netcdf.inc
 include/tbbt.h
 include/vattr.h
