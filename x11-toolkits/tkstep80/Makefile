@@ -1,18 +1,19 @@
 # New ports collection makefile for:	TkStep
-# Version required:	8.0
+# Version required:	8.0p2
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1997/11/27 08:07:25 tg Exp $
+# $Id: Makefile,v 1.4 1997/12/01 12:41:44 tg Exp $
 #
 
-DISTNAME=	tk8.0
-PKGNAME=	tkstep-8.0
+DISTNAME=	tk8.0p2
+PKGNAME=	tkstep-8.0p2
 CATEGORIES=	x11 tk80
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 
-PATCH_SITES=	http://rhein-zeitung.de/~ograf/files/
-PATCHFILES=	tk8.0-to-TkStep8.0-2.patch.gz
+PATCH_SITES=	http://rhein-zeitung.de/~ograf/files/ \
+		http://www.uni-koblenz.de/~ograf/files/
+PATCHFILES=	tk8.0p2-to-TkStep8.0p2-1.patch.gz
 
 MAINTAINER=	tg@FreeBSD.ORG
 
@@ -22,8 +23,8 @@ LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 
 FETCH_BEFORE_ARGS=	-b
-PATCH_DIST_ARGS=	-p -d ${WRKDIR} -E --quiet
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0 -E --quiet
+WRKSRC=		${WRKDIR}/tk8.0/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --enable-shared --enable-xpm --enable-step --enable-dnd \
 		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include -I${PREFIX}/include/tiff34"
@@ -34,7 +35,7 @@ post-install:
 	strip ${PREFIX}/bin/wishstep8.0
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tkstep
-	${INSTALL_DATA}	${WRKDIR}/${DISTNAME}/README.TkStep \
+	${INSTALL_DATA}	${WRKDIR}/tk8.0/README.TkStep \
 		${PREFIX}/share/doc/tkstep
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
