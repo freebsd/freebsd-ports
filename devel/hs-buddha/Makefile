@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buddha
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cs.mu.oz.au/~bjpop/buddha/download/
 PKGNAMEPREFIX=	hs-
@@ -22,6 +22,12 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
 PLIST_SUB+=	BUDDHA_VERSION=${PORTVERSION}
+
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "You need the profiling versions of GHC's libraries to build buddha."
+	@${ECHO_CMD} "They are available, unless your GHC has been built with WITHOUT_PROFILE=yes."
+	@${ECHO_CMD} ""
 
 pre-build:
 	@(cd ${WRKSRC} && ${GMAKE} depend)
