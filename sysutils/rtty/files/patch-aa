@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Aug 24 08:46:42 1996
-+++ Makefile	Fri Jan 21 23:09:45 2000
+--- Makefile.orig	Fri Nov  9 15:30:45 2001
++++ Makefile	Fri Nov  9 15:32:24 2001
 @@ -19,12 +19,12 @@
  
  VPATH = ../src
@@ -10,25 +10,22 @@
 +DESTPATH = $(DESTROOT)/rtty
  DESTBIN = $(DESTPATH)/bin
  
--CC = cc
--CDEBUG = -O -g
-+CC ?= cc
-+#CDEBUG = -O -g
+ #CC = cc
+-CDEBUG = -O
++#CDEBUG = -O
  #
  # use -U to undefine, -D to define
  #	DEBUG		include code to help debug this software
-@@ -38,8 +38,8 @@
- CDEFS = -DDEBUG -UWANT_TCPIP -UNEED_BITYPES_H -UNEED_STRDUP -UNEED_INET_ATON \
+@@ -37,7 +37,7 @@
+ CDEFS = -DDEBUG -UWANT_TCPIP -UNEED_BITYPES_H -UNEED_INET_ATON \
  	-UNO_SOCKADDR_LEN -UNO_HSTRERROR
  #
 -CFLAGS = $(CDEBUG) $(CDEFS) -I/usr/local/include
--LIBS = 
 +CFLAGS += $(CDEBUG) $(CDEFS)
-+LIBS = -lcrypt
+ LIBS = -lcrypt
  #(if WANT_TCPIP defined and this isn't in your libc)
  # -lresolv
- #(if the resolver needs it, which BIND>=4.9's will on BSD>=4.4 systems)
-@@ -63,7 +63,7 @@
+@@ -64,7 +64,7 @@
  		test -d $(DESTPATH)/$$x || mkdir $(DESTPATH)/$$x; \
  	done
  	set -x; for x in $(BINARY); do \
