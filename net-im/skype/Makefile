@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	0.92.0.12
-PORTREVISION=	1
+PORTVERSION=	0.93.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_staticQT-${PORTVERSION}
@@ -48,8 +47,8 @@ do-install:
 .endif
 	${MKDIR} ${DATADIR}/icons ${DATADIR}/lang
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
-	${INSTALL_DATA} ${WRKSRC}/*.qm ${DATADIR}/lang/
-	${INSTALL_DATA} ${WRKSRC}/call_in.wav ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/lang/*.qm ${DATADIR}/lang/
+	${INSTALL_DATA} ${WRKSRC}/sound/*.wav ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
 
 post-install:
