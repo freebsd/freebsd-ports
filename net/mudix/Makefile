@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	mudix
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	net
 MASTER_SITES=	http://dwizardry.dhs.org/mudix/
 
-MAINTAINER=	will@FreeBSD.org
-
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+MAKE_ARGS=	CC="${CC}" O_FLAGS="${CFLAGS}"
 ALL_TARGET=	mudix
 
 do-install:
