@@ -1,13 +1,13 @@
 # New ports collection makefile for:	portlint
-# Version required:     1.9
+# Version required:     1.26
 # Date created:		13 Jun 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/15 14:12:38 max Exp $
 #
 
-DISTNAME=       portlint.pl-1.9
-PKGNAME=        portlint-1.9
+DISTNAME=       portlint.pl-1.26
+PKGNAME=        portlint-1.26
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/tools/portlint/
 EXTRACT_SUFX=
