@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.vrrp.net/pub/vrrpd/ \
 
 MAINTAINER=	minosh@engineer.com
 
+BROKEN=		"The maintainer considers this an incomplete implementation of RFC2338"
+
 .if	!defined(NOPORTDOCS)
 post-install:
 		${MKDIR} ${PREFIX}/share/doc/vrrp
