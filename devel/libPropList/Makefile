@@ -3,7 +3,7 @@
 # Date Created:				6 December 1998
 # Whom:					Glenn Johnson
 #
-# $Id: Makefile,v 1.3 1999/02/02 14:30:27 vanilla Exp $
+# $Id: Makefile,v 1.4 1999/03/12 00:43:24 nectar Exp $
 #
 
 DISTNAME=	libPropList-0.8.3
@@ -14,9 +14,6 @@ MASTER_SITE_SUBDIR=	sources/libPropList
 
 MAINTAINER=    gljohns@bellsouth.net
 
-GNU_CONFIGURE=	yes
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
