@@ -1,4 +1,4 @@
-%%PREFIX%%/share/java/jedit
+%%DATADIR%%
 %%WRKDIR%%
 %%PREFIX%%/man/man1
 Y

@@ -1,0 +1,7 @@
+#!/bin/sh
+# $FreeBSD$
+
+# Java heap size, in megabytes
+JAVA_HEAP_SIZE=32
+
+JAVA_VERSION="1.4+" "%%LOCALBASE%%/bin/java" -mx${JAVA_HEAP_SIZE}m ${JEDIT} -jar "%%DATADIR%%/jedit.jar" "$@"
