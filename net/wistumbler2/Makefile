@@ -34,8 +34,8 @@ MAKE_ENV=	PREFIX=${LOCALBASE} USE_GTK=0
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" || ${OSVERSION} < 500000
-BROKEN=		"Does not compile on !i386 or 4.x"
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
 .endif
 
 pre-everything::
