@@ -10,7 +10,8 @@ PORTVERSION=	4.1.42
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		http://groups.yahoo.com/group/tgif4-announce/files/ \
-		http://prdownloads.sourceforge.net/tgif/
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=tgif
 DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	bmc@WillsCreek.COM
