@@ -2029,6 +2029,7 @@ gnomedesktop	ports/x11/gnomedesktop
 gnomefind	ports/sysutils/gnomefind
 gnomegames	ports/games/gnomegames
 gnomegames2	ports/games/gnomegames2
+gnomehier	ports/misc/gnomehier
 gnomeiconedit	ports/graphics/gnomeiconedit
 gnomeicu	ports/net/gnomeicu
 gnomekiss	ports/games/gnomekiss
