@@ -20,6 +20,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Preproc/deNewline.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Preproc/deQP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Preproc/enBase64.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Signature/Ephemeral.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Signature/Ephemeral.pm.orig
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Razor2/Syslog.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Razor2/Preproc/deHTMLxs/autosplit.ix
