@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/nautilus
@@ -19,11 +19,9 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
-WITHOUT_MOZILLA=	"Doesn't build with recent Mozilla"
-
 .if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla-embedded
-BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
+BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 .endif
@@ -31,10 +29,10 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
-		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -lgiconv" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
                 XGETTEXT=${LOCALBASE}/bin/xgettext-new
