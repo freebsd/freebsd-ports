@@ -1,0 +1,13 @@
+--- READMEJP.dist	Fri Apr 28 22:06:12 2000
++++ READMEJP	Fri Oct 29 16:13:21 2004
+@@ -49,8 +49,8 @@
+ 
+ 4. 添付のmakeskkcdb.shを実行する。このスクリプトでは
+    辞書ファイルはskktocdbm.shの標準入力に与えるようになっている。
+-   デフォルトは /usr/local/share/skk/SKK-JISYO.Lを指定している。
+-   また、デフォルトではカレントディレクトリにSKK-JISYO.L.cdbが作られる。
++   デフォルトは %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%%を指定している。
++   また、デフォルトではカレントディレクトリに%%JISYONAME%%.cdbが作られる。
+    この辞書ファイルはインストールの際 dbskkd-cdb が chroot する
+    ディレクトリに置く。
+ 
