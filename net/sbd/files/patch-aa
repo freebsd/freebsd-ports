@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Jul 10 18:52:02 2004
++++ Makefile	Sat Jul 10 18:53:56 2004
+@@ -1,15 +1,13 @@
+-CC = gcc
+ MAKE = make
+ 
+ # extra flags
+-CFLAGS=
+ LDFLAGS=
+ 
+ # cflags
+ 
+ WIN_CFLAGS 	= -Wall -Wshadow -O2 -DWIN32
+ WINMAIN_CFLAGS	= -mwindows -Wall -Wshadow -O2 -DWIN32 -DWINMAIN
+-UNIX_CFLAGS	= -Wall -Wshadow -O2
++UNIX_CFLAGS	= -Wall -Wshadow
+ 
+ # ldflags
+ 
