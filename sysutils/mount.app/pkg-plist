@@ -1,0 +1,16 @@
+bin/mount.app
+bin/mount.conf
+share/mount.app/cdrom.xpm
+share/mount.app/floppy.xpm
+share/mount.app/zip.xpm
+share/mount.app/blank.xpm
+share/mount.app/dosdisk.xpm
+share/mount.app/macdisk.xpm
+share/mount.app/harddisk.xpm
+share/mount.app/noperms.txt
+share/mount.app/devicebusy.txt
+share/mount.app/notmountable.txt
+share/mount.app/online-help.txt
+share/mount.app/zip_ext.xpm
+share/mount.app/slotin.xpm
+@dirrm share/mount.app
