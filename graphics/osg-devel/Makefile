@@ -26,6 +26,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+BROKEN=		"Does not compile"
+
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
@@ -40,10 +42,6 @@ WRKSRC=		${WRKDIR}/OpenSceneGraph-${PORTVERSION:R}-${PORTVERSION:E}
 ALL_TARGET=	opt
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
- BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
