@@ -1,0 +1,23 @@
+# New ports collection makefile for:	flite
+# Date created:				18 December 2004
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	flite
+PORTVERSION=	1.2
+CATEGORIES=	audio
+MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
+DISTNAME=	${PKGNAME}-release
+
+MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A small run-time speech synthesis engine
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared=yes
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.mk>

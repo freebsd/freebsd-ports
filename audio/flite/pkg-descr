@@ -1,0 +1,11 @@
+Flite is a small fast run-time speech synthesis engine.  It is the
+latest addition to the suite of free software synthesis tools
+including University of Edinburgh's Festival Speech Synthesis System
+and Carnegie Mellon University's FestVox project, tools, scripts and
+documentation for building synthetic voices.  However, flite itself
+does not require either of these systems to compile and run.
+
+Flite is the answer to the complaint that Festival is too big, too slow,
+and not portable enough.
+
+WWW: http://cmuflite.org

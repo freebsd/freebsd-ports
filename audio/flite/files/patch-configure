@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -1113,6 +1113,9 @@
+ OTHERLIBS=
+ if test "$shared" = true; then
+    case "$host_os" in
++	*bsd*)
++		SHFLAGS="-fPIC"
++	;;
+ 	linux*)
+ 		SHFLAGS="-fPIC"
+         ;;
+@@ -1498,7 +1501,7 @@
+ 	    AUDIODRIVER=oss
+ 	    AUDIODEFS=-DCST_AUDIO_LINUX
+ 	    ;;
+-	*bsd)
++	*bsd*)
+ 	    AUDIODRIVER=oss
+ 	    AUDIODEFS=-DCST_AUDIO_FREEBSD
+ 	    ;;

@@ -109,6 +109,7 @@
     SUBDIR += festvox-tll
     SUBDIR += flac
     SUBDIR += flac123
+    SUBDIR += flite
     SUBDIR += fluidsynth
     SUBDIR += fmio
     SUBDIR += freebirth
