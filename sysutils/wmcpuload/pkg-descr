@@ -1,0 +1,7 @@
+This is a port of wmcpuload, which displays the current cpu-load in a 
+simulated lcd-display, which supports background lighting.
+
+WWW: http://www.sh.rim.or.jp/~ssato/wmcpuload-e.html
+
+- Soeren Boll Overgaard
+boll@tolkien.dk 
