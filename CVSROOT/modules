@@ -1900,6 +1900,7 @@ ggsd		ports/net/ggsd
 ggv		ports/print/ggv
 ggv2		ports/print/ggv2
 ghc		ports/lang/ghc
+ghc6		ports/lang/ghc6
 ghc-doc		ports/lang/ghc-doc
 ghemical	ports/science/ghemical
 ghex		ports/editors/ghex
