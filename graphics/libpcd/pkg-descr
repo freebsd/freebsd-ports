@@ -1,0 +1,6 @@
+This is a tiny library for decoding PhotoCD images.  Its not exactly
+new, it exists for years.  I've just released it separately for the
+first time now.  It used to come bundled with xpcd.
+
+Author:	Gerd Knorr <kraxel@bytesex.org>
+WWW:	http://linux.bytesex.org/fbida/libpcd.html

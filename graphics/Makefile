@@ -241,6 +241,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libpcd
     SUBDIR += libqglviewer
     SUBDIR += librsvg
     SUBDIR += librsvg2
