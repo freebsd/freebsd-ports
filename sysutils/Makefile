@@ -204,6 +204,7 @@
     SUBDIR += msyslog
     SUBDIR += multitail
     SUBDIR += muse
+    SUBDIR += nagios-statd
     SUBDIR += nautilus-cd-burner
     SUBDIR += ndir
     SUBDIR += no-login
