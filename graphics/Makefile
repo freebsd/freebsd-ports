@@ -196,6 +196,7 @@
     SUBDIR += xfpovray
     SUBDIR += xfractint
     SUBDIR += xgrasp
+    SUBDIR += xine
     SUBDIR += xli
     SUBDIR += xmagv
     SUBDIR += xmandel
