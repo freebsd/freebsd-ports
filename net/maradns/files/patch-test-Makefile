@@ -1,5 +1,5 @@
---- test/Makefile.orig	Wed Jun 20 19:33:02 2001
-+++ test/Makefile	Mon Jun 25 00:44:46 2001
+--- test/Makefile.orig	Sun Jul 22 21:23:40 2001
++++ test/Makefile	Sun Jul 22 21:23:47 2001
 @@ -6,7 +6,7 @@
  EXECS=rtest csv1test compress.test show.charnum ipacltest
  
@@ -8,27 +8,4 @@
 +FLAGS = -g $(CFLAGS)
  
  all: $(EXECS)
- 
-@@ -17,17 +17,17 @@
- 	cd libs ; make
- 
- rtest: rtest.c $(OBJECTS)
--	gcc $(FLAGS) -o rtest rtest.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o rtest rtest.c $(OBJECTS)
- 
- csv1test: csv1test.c $(OBJECTS) 
--	gcc $(FLAGS) -o csv1test csv1test.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o csv1test csv1test.c $(OBJECTS)
- 
- compress.test: compress.test.c $(OBJECTS)
--	gcc $(FLAGS) -o compress.test compress.test.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o compress.test compress.test.c $(OBJECTS)
- 
- show.charnum: show.charnum.c 
--	gcc $(FLAGS) -o show.charnum show.charnum.c 
-+	$(CC) $(FLAGS) -o show.charnum show.charnum.c 
- 
- ipacltest: ipacltest.c $(OBJECTS)
--	gcc $(FLAGS) -o ipacltest ipacltest.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o ipacltest ipacltest.c $(OBJECTS)
  

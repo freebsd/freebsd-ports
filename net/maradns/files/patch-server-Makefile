@@ -1,26 +1,18 @@
---- server/Makefile.orig	Wed Jul  4 12:09:16 2001
-+++ server/Makefile	Sun Jul  8 15:45:17 2001
-@@ -10,7 +10,7 @@
- 
- #FLAGS = -O2 -Wall
+--- server/Makefile.orig	Sun Jul 22 21:22:38 2001
++++ server/Makefile	Sun Jul 22 21:23:17 2001
+@@ -12,7 +12,7 @@
  #FLAGS = -g -DDEBUG -DCALL_LOCKS
--FLAGS = -g -DDEBUG 
-+FLAGS = -g -DDEBUG $(CFLAGS)
+ #FLAGS = -g -DDEBUG 
  #FLAGS = -g -DDEBUG -DNOTHREAD
- #FLAGS = -g
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
  
-@@ -23,11 +23,11 @@
- 	cd libs ; make
+ all: $(EXECS)
  
- MaraBigHash.o: MaraBigHash.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
--	gcc -c $(FLAGS) -o MaraBigHash.o MaraBigHash.c 
-+	$(CC) -c $(FLAGS) -o MaraBigHash.o MaraBigHash.c 
- 
- recursive.o: recursive.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
--	gcc -c $(FLAGS) -o recursive.o recursive.c 
-+	$(CC) -c $(FLAGS) -o recursive.o recursive.c 
+@@ -29,5 +29,5 @@
+ 	$(CC) -c $(FLAGS) -o recursive.o recursive.c 
  
  maradns: MaraDNS.c $(OBJECTS) 
--	gcc $(FLAGS) -DVERSION=\"$(VERSION)\" -o maradns MaraDNS.c $(OBJECTS) -lpthread
+-	$(CC) $(FLAGS) -DVERSION=\"$(VERSION)\" -o maradns MaraDNS.c $(OBJECTS) -lpthread
 +	$(CC) $(FLAGS) -DVERSION=\"$(VERSION)\" -o maradns MaraDNS.c $(OBJECTS) -pthread
  

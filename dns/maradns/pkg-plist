@@ -18,7 +18,7 @@ etc/mararc.sample
 %%PORTDOCS%%share/doc/maradns/rfc2044.txt
 %%PORTDOCS%%share/doc/maradns/rtest.output
 %%PORTDOCS%%share/doc/maradns/www.monty.de
-%%PORTDOCS%%share/doc/maradns/00QuickStart
+%%PORTDOCS%%share/doc/maradns/0QuickStart
 %%PORTDOCS%%share/doc/maradns/CHANGELOG.html
 %%PORTDOCS%%share/doc/maradns/CREDITS
 %%PORTDOCS%%share/doc/maradns/ROADMAP
