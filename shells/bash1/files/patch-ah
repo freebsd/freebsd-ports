@@ -1,0 +1,19 @@
+*** machines.h.orig	Fri Jun 27 10:54:20 1997
+--- machines.h	Fri Jun 27 10:54:22 1997
+***************
+*** 63,69 ****
+     some machines, our malloc () cannot be used (because of library
+     conflicts, for example), and for those, you should specifically
+     #undef USE_GNU_MALLOC in the machine description. */
+! #define USE_GNU_MALLOC
+  
+  /* This causes the Gnu malloc library (from glibc) to be used. */
+  /* #define USE_GNU_MALLOC_LIBRARY */
+--- 63,69 ----
+     some machines, our malloc () cannot be used (because of library
+     conflicts, for example), and for those, you should specifically
+     #undef USE_GNU_MALLOC in the machine description. */
+! #undef USE_GNU_MALLOC
+  
+  /* This causes the Gnu malloc library (from glibc) to be used. */
+  /* #define USE_GNU_MALLOC_LIBRARY */
