@@ -1,17 +1,15 @@
+etc/boa.conf.sample
 sbin/boa
-share/doc/boa/Changelog
-share/doc/boa/Gnu_License
-share/doc/boa/README
-share/doc/boa/biblio.html
-share/doc/boa/details.html
-share/doc/boa/details.txt
-share/doc/boa/logos.html
-share/doc/boa/newboa7.gif
-share/doc/boa/poweredbyboa.gif
-share/doc/boa/readme.html
-share/doc/boa/readme.txt
-share/doc/boa/todo.txt
-share/examples/boa/boa.conf
-share/examples/boa/mime.types
-@dirrm share/doc/boa
+share/doc/boa/boa-1.html
+share/doc/boa/boa-2.html
+share/doc/boa/boa-3.html
+share/doc/boa/boa-4.html
+share/doc/boa/boa.html
+share/doc/boa/boa.ps
+share/doc/boa/boa.txt
+share/doc/boa/boa_banner.png
+share/examples/boa/cgi-test.cgi
+share/examples/boa/nph-test.cgi
+share/examples/boa/resolver.pl
 @dirrm share/examples/boa
+@dirrm share/doc/boa

@@ -1,19 +1,13 @@
---- src/Makefile.orig	Fri Dec 20 20:45:00 1996
-+++ src/Makefile	Fri Jan 21 01:42:21 2000
-@@ -9,13 +9,13 @@
+--- Makefile.in.orig	Sun Feb 13 06:52:45 2000
++++ Makefile.in	Thu Mar 30 20:22:55 2000
+@@ -12,8 +12,8 @@
+ # Add -lefence to LDFLAGS to link with ElectricFence
+ # Add -pg to CFLAGS and LDFLAGS to get profiling output with gcc/gprof
  
- # Add -DVERBOSE_CGI_LOGS if you want logs of CGI program start and stop times
- 
--CMDARGS = -c -O2
-+CMDARGS = -c ${CFLAGS}
+-LDFLAGS = @LIBS@ -g 
+-CFLAGS = -O -Wall -g
++LDFLAGS = @LIBS@
++CFLAGS = @CFLAGS@
  
  # Change these if necessary
- 
--YACC = bison -y
-+YACC = yacc
- LEX = flex
--CC = gcc
-+#CC = gcc
- 
- all:	boa
  
