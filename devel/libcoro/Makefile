@@ -23,6 +23,8 @@ NOPRECIOUSMAKEVARS=	yes
 
 MAN2=			coro.2
 
+PLIST_FILES=		lib/libcoro.a include/coro.h
+
 post-extract:
 	${CP} -r ${WRKSRC}/arch/x86-linux ${WRKSRC}/arch/x86-freebsd
 	${SED} -e '43,43s/$$/ __attribute__((noreturn,regparm(1)))/' \
