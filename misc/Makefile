@@ -140,6 +140,7 @@
     SUBDIR += numchar
     SUBDIR += nwrite
     SUBDIR += orville-write
+    SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-ISBN
