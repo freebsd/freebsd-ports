@@ -56,7 +56,7 @@
 ! TBLDIR=${PREFIX}/share/cyrproxy
   
   # config file location
-! CONF_FILE=${PREFIX}/etc/cyrproxy/cyrproxy.conf
+! CONF_FILE=${PREFIX}/etc/cyrproxy.conf
   
   # Subdirs for make
   # cyrcoder - filter-like cyrillic recoder
