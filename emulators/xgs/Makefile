@@ -22,7 +22,6 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	xgs
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
-NO_PACKAGE=	${RESTRICTED}
 
 # Source building
 #
