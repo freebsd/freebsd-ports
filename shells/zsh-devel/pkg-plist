@@ -1,9 +1,8 @@
 bin/zsh
 @exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
 @unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
-bin/zsh-3.0.5
+bin/zsh-3.1.5
 @unexec install-info --delete %D/info/zsh.info %D/info/dir
 info/zsh.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/zsh.info %D/info/dir
-info/dir

@@ -1,21 +1,13 @@
---- Doc/Makefile.in.orig	Wed Dec 18 05:14:11 1996
-+++ Doc/Makefile.in	Mon Jun 16 20:40:29 1997
-@@ -93,7 +93,8 @@
- everything: all zsh_us.ps zsh_a4.ps zsh_toc.html
+--- Doc/zsh.texi.orig	Sun Nov  1 01:01:48 1998
++++ Doc/zsh.texi	Sun Nov  1 01:02:17 1998
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename zsh.info
+ @settitle zsh
++@dircategory Shells
++@direntry
++* Zsh: (zsh).			The Z shell.
++@end direntry
+ @c %**end of header
  
- zsh.info: zsh.texi
--	@$(MAKEINFO) -I$(srcdir) $(srcdir)/zsh.texi || { \
-+	@rm -f zsh.info*
-+	@$(MAKEINFO) --no-split -I$(srcdir) $(srcdir)/zsh.texi || { \
- 	echo Info documentation cannot be compiled without $(MAKEINFO). ; \
- 	echo You can find precompiled info files in zsh-doc.tar.gz. ; }
- 
-@@ -127,7 +128,7 @@
- # install info pages, creating install directory if necessary
- install.info: zsh.info
- 	$(top_srcdir)/mkinstalldirs $(infodir)
--	for file in zsh.info zsh.info-[1-9]; do \
-+	for file in zsh.info*; do \
- 	  [ -f "$$file" ] && $(INSTALL_DATA) $$file $(infodir) ; \
- 	done
- 
+ @ifinfo
