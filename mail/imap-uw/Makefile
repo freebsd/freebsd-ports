@@ -41,6 +41,11 @@ PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}.0
 .endif
 
+pre-extract:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	@${SH} ${PKGDIR}/INSTALL foo PRE-INSTALL || ${FALSE}
+.endif
+
 post-configure:
 	@${ECHO_MSG} ">> The c-client shared library will be named ${SHLIBNAME}"
 .if ${PAMAUTH} != "no"
