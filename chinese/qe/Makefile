@@ -13,11 +13,11 @@ MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/ \
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
-HAS_CONFIGURE= yes
-USE_GMAKE=     yes
+HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 post-configure:
-	@(cd ${WRKSRC} && \
-	${PATCH} < ${FILESDIR}/post-patch-Makefile )
+	@${REINPLACE_CMD} -e '49s,-s,,' ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>
