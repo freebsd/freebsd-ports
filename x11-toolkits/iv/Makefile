@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.12 1996/11/13 12:41:37 asami Exp $
+# $Id: Makefile,v 1.13 1997/01/24 10:39:20 asami Exp $
 #
 
 VERSION=	3.1
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://interviews.stanford.edu/pub/
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-BROKEN=		"ibuild doesn't build (how ironic)"
 WRKSRC=		${WRKDIR}/iv
 MAKEFILE=	makefile
 
