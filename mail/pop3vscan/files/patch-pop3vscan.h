@@ -3,15 +3,8 @@
 @@ -28,6 +28,7 @@
  /* includes {{{1 */
  #include <syslog.h>	    /* do_log */
- #include <arpa/inet.h>	    /* config */
 +#include <netinet/in.h>
+ #include <arpa/inet.h>	    /* config */
  
  /* definitions {{{1 */
  #define PROGNAME		"POP3VScan"
-@@ -129,5 +130,5 @@
- extern void do_log(int level, const char *fmt,...);
- 
- /* }}} */
--#endif _POP3VSCAN_H
-+#endif
- /* vim:set fdm=marker: */
