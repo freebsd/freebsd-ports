@@ -1,19 +1,19 @@
 # New ports collection makefile for:	squid
-# Version required:	1.2-beta22
+# Version required:	2.0.RELEASE
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.50 1998/04/26 07:57:20 peter Exp $
+# $Id: Makefile,v 1.51 1998/06/09 15:08:06 peter Exp $
 #
 
-DISTNAME=	squid-1.2.beta22
-PKGNAME=	squid-1.2b22
+DISTNAME=	squid-2.0.RELEASE
+PKGNAME=	squid-2.0
 CATEGORIES=	www
 MASTER_SITES=  \
-	ftp://squid.nlanr.net/pub/squid-1.2.beta/ \
-	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-1.2.beta/ \
-	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-1.2.beta/ \
-	ftp://ftp.net.lut.ac.uk/squid/squid-1.2.beta/
+	ftp://squid.nlanr.net/pub/squid-2/ \
+	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/ \
+	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/ \
+	ftp://ftp.net.lut.ac.uk/squid/squid-2/
 EXTRACT_SUFX=	-src.tar.gz
 
 #PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
@@ -21,7 +21,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.2b22
+DIST_SUBDIR=	squid2.0
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
@@ -35,26 +35,26 @@ NO_LATEST_LINK=	yes
 #CONFIGURE_ARGS+= --enable-dlmalloc
 #  - Compile and use the supplied GNUregex routines instead of BSD regex.
 #CONFIGURE_ARGS+= --enable-gnuregex
-#  - Use tree function to store ACL lists
-#CONFIGURE_ARGS+= --enable-splaytree
 #  - Enable simple malloc debugging
 #CONFIGURE_ARGS+= --enable-xmalloc-debug
 #  - Detailed trace of memory allocations
 #CONFIGURE_ARGS+= --enable-xmalloc-debug-count
 #  - Show malloc statistics in cachemgr status pages
 #CONFIGURE_ARGS+= --enable-xmalloc-statistics
+#  - Enable CARP support
+#CONFIGURE_ARGS+= --enable-carp
 #  - Use ASYNC disk I/O (Requires real pthreads)
 #CONFIGURE_ARGS+= --enable-async-io
 #  - Enable ICMP pinging for heirarchy stats and selection
 #CONFIGURE_ARGS+= --enable-icmp
-#  - Enable delay hack to limit bandwidth usage
-#CONFIGURE_ARGS+= --enable-delay-hack
+#  - Enable delay pools to limit bandwidth usage
+#CONFIGURE_ARGS+= --enable-delay-pools
 #  - Enable generic memory use tracing
 #CONFIGURE+ARGS+= --enable-mem-gen-trace
 #  - Enable logging of the User-Agent header
 #CONFIGURE_ARGS+= --enable-useragent-log
 #  - Kill parent (eg: RunCache) on shutdown (use with great care!!)
-#CONFIGURE_ARGS+= --enable-kill-parent
+#CONFIGURE_ARGS+= --enable-kill-parent-hack
 #  - Turn on SNMP server support
 #CONFIGURE_ARGS+= --enable-snmp
 #  - Optimize time updates to one per second rather than calling gettimeofday()
@@ -64,6 +64,19 @@ NO_LATEST_LINK=	yes
 #  - Enable ACL based on ethernet address (eg: for machines with dynamic DHCP 
 #    assigned IP addresses)
 #CONFIGURE_ARGS+= --enable-arp-acl
+#  - Enable HTCP protocol
+#CONFIGURE_ARGS+= --enable-htcp
+#  - Enable Forw/Via database
+#CONFIGURE_ARGS+= --enable-forw-via-db
+#  - Use Cache Digests - see http://squid.nlanr.net/Squid/FAQ/FAQ-16.html
+#CONFIGURE_ARGS+= --enable-cache-digests
+#  - Select language for Error pages (see errors dir)
+#CONFIGURE_ARGS+= --enable-err-language=lang
+#  (--enable-poll is not needed, it's detected correctly on 3.0)
+#  - Strict HTTP compliance
+#CONFIGURE_ARGS+= --disable-http-violations
+#  - Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
+#CONFIGURE_ARGS+= --enable-ipf-transparent
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
