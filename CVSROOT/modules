@@ -5878,6 +5878,7 @@ ruby-xmlparser	ports/textproc/ruby-xmlparser
 ruby-xmlrpc	ports/net/ruby-xmlrpc
 ruby-xmlscan	ports/textproc/ruby-xmlscan
 ruby-xslt	ports/textproc/ruby-xslt
+ruby-zip	ports/archivers/ruby-zip
 ruby-zlib	ports/archivers/ruby-zlib
 ruby_r		ports/lang/ruby_r
 ruby_r-devel	ports/lang/ruby_r-devel
