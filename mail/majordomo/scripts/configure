@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+#
+
+eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
+& eval 'exec /usr/bin/perl -S $0 $argv:q'
+if 0;
+
+chop( $HOSTNAME=`hostname` );
+@files = ( "$ENV{'WRKSRC'}/Makefile", "$ENV{'WRKSRC'}/sample.cf", "$ENV{'FILESDIR'}/aliases.majordomo" );
+
+( $null, $null, $mjUID, $mjGID ) = getpwnam( "majordom" );
+system( "perl -pi -e 's|@@PREFIX@@|$ENV{'PREFIX'}|g' @files" );
+system( "perl -pi -e 's|@@HOSTNAME@@|$HOSTNAME|g' @files" );
+system( "perl -pi -e 's|@@UID@@|$mjUID|g' @files" );
+system( "perl -pi -e 's|@@GID@@|$mjGID|g' @files" );
