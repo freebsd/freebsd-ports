@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-netscape
 PORTVERSION=	6.2
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
@@ -45,16 +46,23 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/l
 DISTFILES=	browser.xpi \
 		deflenus.xpi \
 		langenus.xpi \
+		flash.xpi \
+		jre.xpi \
+		langenus.xpi \
 		mail.xpi \
 		psm.xpi \
+		regca.xpi \
+		reges.xpi \
+		reggb.xpi \
+		regus.xpi \
 		spellchecker.xpi \
+		talkback.xpi \
 		xpcom.xpi
-# langende.xpi langenfr.xpi langengb.xpi langenjp.xpi talkback.xpi jre.xpi AIM.xpi
 DIST_SUBDIR=	netscape6/english/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files.tar.gz
+PATCHFILES=	linux-netscape6-${PORTVERSION}-generated-files-v2.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
@@ -63,12 +71,14 @@ RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUX_BASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
 
-BROKEN=		"menus do not display correctly"
 LATEST_LINK=	linux-netscape6
 LINUX_BASE=	/compat/linux
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
+RESTRICTED=	"license for Java plugin allows `internal use only'"
+NO_PACKAGE=	${RESTRICTED}
+NO_CDROM=	${RESTRICTED}
 USE_XLIB=	yes
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
 INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
@@ -80,8 +90,8 @@ do-extract:
 .for i in ${DISTFILES}
 	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
 .endfor
-#	${MV} ${WRKSRC}/jre-image-i386 ${WRKSRC}/bin/plugins/java2
-#	cd ${WRKSRC}/bin/plugins && ${LN} -s java2/plugin/i386/ns600/libjavaplugin_oji.so;
+	${MV} ${WRKSRC}/jre-image-i386 ${WRKSRC}/bin/plugins/java2
+	cd ${WRKSRC}/bin/plugins && ${LN} -s java2/plugin/i386/ns600/libjavaplugin_oji.so;
 
 do-patch:
 	${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/bin/chrome/user-skins.rdf ${WRKSRC}/bin/chrome/user-locales.rdf
@@ -100,6 +110,9 @@ pre-install:
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
 		${ECHO} lib/linux-netscape6/$${i} >> ${PLIST}; \
 	done
+	cd ${WRKSRC}/plugins; for i in `find * \! -type d | sort`; do \
+		${ECHO} lib/linux-netscape6/plugins/$${i} >> ${PLIST}; \
+	done
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
 		${ECHO} @dirrm lib/linux-netscape6/$${i} >> ${PLIST}; \
@@ -108,7 +121,7 @@ pre-install:
 
 do-install:
 	${MKDIR} ${INSTALL_DIR}
-	${CP} -Rp ${WRKSRC}/bin/* ${INSTALL_DIR}
+	${CP} -Rp ${WRKSRC}/bin/* ${WRKSRC}/plugins ${INSTALL_DIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${STARTUP_CMD} ${PREFIX}/bin
 
 post-install:
