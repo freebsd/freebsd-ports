@@ -1,7 +1,7 @@
 English abstract:
-It is an german communication-protocol over modem lines,
-a gateway for mail and news, complient to the german "GATEBAU" regulations.
-It is the native protocol for the z-netz newsgroups.
+It is a German communication protocol used over modem lines,
+a mail and news gateway compliant with the German "GATEBAU" regulations.
+It is the native protocol for z-netz newsgroups.
 
 UNIX-Connect kann sehr vielseitig eingesetzt werden. Entwickelt wurde
 es, um ein Unix-System als Server im Z-NETZ (im alten Sinne) einsetzen
@@ -16,7 +16,6 @@ zu lesen. Dieser Einsatzmoeglichkeit widmet die Dokumentation ein eigenes
 Kapitel, da hierbei sehr viele Konfigurationsprobleme von vornherein 
 vermieden werden koennen.
 
-FTP: ftp://ftp.sf.net/pub/sourceforge/unix-connect/
 FTP: ftp://unix-connect.sf.net/pub/unix-connect/
 FTP: ftp://ftp.dinoex.org/pub/unix-connenct/
 WWW: http://www.dinoex.de/unix-connect.html 
