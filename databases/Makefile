@@ -65,7 +65,6 @@
     SUBDIR += ruby-cdb
     SUBDIR += ruby-gdbm
     SUBDIR += ruby-rdbc1
-    SUBDIR += ruby14-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
     SUBDIR += ruby-postgres
