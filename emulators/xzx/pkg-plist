@@ -1,13 +1,15 @@
 bin/xzx
-lib/xzx/spectrum.rom
+lib/X11/app-defaults/Xzx
 lib/xzx/128.rom
-lib/xzx/plus2.rom
-lib/xzx/plus3.rom
 lib/xzx/if1-v1.rom
 lib/xzx/if1-v2.rom
-lib/X11/app-defaults/Xzx
+lib/xzx/plus2.rom
+lib/xzx/plus3.rom
+lib/xzx/spectrum.rom
 share/doc/xzx/COPYRIGHT
-share/doc/xzx/README
 share/doc/xzx/FAQ
+share/doc/xzx/README
+@exec ln -f %D/lib/xzx/if1-v2.rom %D/lib/xzx/if1.rom
+@unexec rm -f %D/lib/xzx/if1.rom
 @dirrm lib/xzx
 @dirrm share/doc/xzx

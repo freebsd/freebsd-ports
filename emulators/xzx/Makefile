@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xzx
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.3
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= system/emulators/zx
+MASTER_SITES=	ftp://ftp.void.jump.org/pub/sinclair/emulators/unix/
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
