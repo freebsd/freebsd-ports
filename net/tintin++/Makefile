@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.walrus.com/pub/avatar/clients/ \
 		ftp://iclub.nsu.ru/pub/mud/clients/tintin++/
 DISTNAME=	tintin++v1.5pl9
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhp@cocoja.holywar.net
 
 WRKSRC=         ${WRKDIR}/tintin++/v1.5/src
 GNU_CONFIGURE=	yes
