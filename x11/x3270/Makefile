@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	volf@oasis.IAEhv.nl
+MAINTAINER=	ports@freebsd.org
 COMMENT=	3270 Terminal emulator
 
 USE_IMAKE=	yes
