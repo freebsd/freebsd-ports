@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnetc
-PORTVERSION=	2.9005.484
+PORTVERSION=	2.9007.489
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -18,7 +18,7 @@ DISTFILES=	dnetc${PORTVERSION:E}-freebsd-x86-elf.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed.net distributed computing project client
 
-WRKSRC=		${WRKDIR}/dnetc484-freebsd-x86-elf
+WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-x86-elf
 
 ONLY_FOR_ARCHS=	i386
 
