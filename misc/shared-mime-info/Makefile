@@ -18,4 +18,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 
 GNU_CONFIGURE=	yes
 
+MAN1=		update-mime-database.1
+
 .include <bsd.port.mk>
