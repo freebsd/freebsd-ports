@@ -27,7 +27,7 @@ include/bakery-%%API_VERSION%%/bakery/bakery.h
 include/bakery-%%API_VERSION%%/bakery/init.h
 lib/libbakery-%%VERSION%%.a
 lib/libbakery-%%VERSION%%.so
-lib/libbakery-%%VERSION%%.so.11
+lib/libbakery-%%VERSION%%.so.12
 libdata/pkgconfig/bakery-%%API_VERSION%%.pc
 share/locale/de/LC_MESSAGES/bakery.mo
 @dirrm include/bakery-%%API_VERSION%%/bakery/View
