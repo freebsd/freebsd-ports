@@ -3,7 +3,7 @@
 # Date created:				6/25/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/06 17:45:34 nectar Exp $
+# $Id: Makefile,v 1.2 1998/07/06 17:47:33 nectar Exp $
 #
 
 DISTNAME=		PyGreSQL-2.1
@@ -47,7 +47,7 @@ do-configure:
 	exit 1;                                                            \
 	fi)
 .endif
-.for f in Makefile Makefile.in configure.in 
+.for f in Makefile Makefile.in configure.in
 	${CP} ${SCRIPTDIR}/${f} ${WRKSRC}
 .endfor
 	${INSTALL} -c -m 0555 ${SCRIPTDIR}/install-sh ${WRKSRC}
@@ -61,7 +61,6 @@ do-configure:
 		PY_EXEC_PREFIX=`${PY_EXEC_PREFIX}` \
 		PY_SITE_PYTHON=`${PY_SITE_PYTHON}` \
 		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
-
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.PyGreSQL
