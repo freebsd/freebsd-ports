@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+bin/crm
+bin/cssdiff
+bin/cssmerge
+bin/cssutil
+%%PORTDOCS%%%%DOCSDIR%%/CRM114_Mailfilter_HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/INTRO.txt
+%%PORTDOCS%%%%DOCSDIR%%/QUICKREF.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
