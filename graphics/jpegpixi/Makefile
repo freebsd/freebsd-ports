@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jpegpixi
-PORTVERSION=	0.14
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
-MASTER_SITE_SUBDIR=	jpegpixi
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful to correct images from digtal camera with CCD defects
@@ -17,9 +16,19 @@ COMMENT=	Useful to correct images from digtal camera with CCD defects
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-jpeglib-include=${LOCALBASE}/include \
-		--with-jpeglib-lib=${LOCALBASE}/lib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		jpegpixi.1 jpeghotp.1
+MANLANG=	"" de fi fr
+MAN1=		jpeghotp.1 jpegpixi.1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include <bsd.port.mk>
