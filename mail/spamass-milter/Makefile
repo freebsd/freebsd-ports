@@ -7,7 +7,7 @@
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	spamass-milt
@@ -57,17 +57,19 @@ LDFLAGS+=	-L${MILTERLIB}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 MAN1=		spamass-milter.1
 
 post-patch:
-.for f in spamass-milter.sh.dist activation.txt
-	${SED} -e 's|/usr/local|${PREFIX}|g' \
-		${FILESDIR}/${f} > ${WRKDIR}/${f}
-.endfor
+	@${SED} -e 's|/usr/local|${PREFIX}|g' \
+		${FILESDIR}/activation.txt > ${WRKDIR}/activation.txt
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/spamass-milter.sh > ${WRKDIR}/spamass-milter.sh
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/spamass-milter.sh.dist \
-		${PREFIX}/etc/rc.d/spamass-milter.sh.dist
+	@${INSTALL_SCRIPT} ${WRKDIR}/spamass-milter.sh ${PREFIX}/etc/rc.d/spamass-milter.sh
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/activation.txt ${DOCSDIR}/activation.txt
