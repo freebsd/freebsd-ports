@@ -33,7 +33,7 @@ IGNORE=	"You can not legally distribute binaries"
 .endif
 
 APP_HOME=	${PREFIX}/${PKGNAME}
-DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=jdk-1_2_2_011.config&platform=linux-i386
+DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSION:S/./_/g}.config&platform=linux-${ARCH}
 
 .include <bsd.port.pre.mk>
 
