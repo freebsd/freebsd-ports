@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.20
+PORTVERSION=	0.9.21
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -50,7 +50,7 @@ MAN1=	darcs.1
 post-patch:
 .if defined(WITH_SERVER)
 	@${REINPLACE_CMD} -e 's|$$(libexecdir)/cgi-bin|${PREFIX}/${CGIDIR}| ; \
-		s|darcs/cgi.conf|cgi.conf.sample|' \
+		s|darcs/cgi.conf|cgi.conf.sample| ; /ln/d' \
 		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e '/$$(sysconfdir)\/darcs/d' ${WRKSRC}/${MAKEFILE}
 .endif
