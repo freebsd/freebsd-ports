@@ -7,7 +7,7 @@
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.11
 CATEGORIES=	misc
-MASTER_SITES=	http://www.freedesktop.org/standards/shared-mime-info/
+MASTER_SITES=	http://www.freedesktop.org/software/shared-mime-info/releases/
 DISTNAME=	shared-mime-info-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
