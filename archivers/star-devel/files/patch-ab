@@ -1,6 +1,6 @@
---- star/star.c.orig	Fri May 17 19:26:31 2002
-+++ star/star.c	Tue Jun 11 22:27:46 2002
-@@ -485,14 +485,16 @@
+--- star/star.c.orig	Fri Nov 15 19:39:13 2002
++++ star/star.c	Tue Nov 26 03:03:34 2002
+@@ -500,14 +500,16 @@
  susage(ret)
  	int	ret;
  {
@@ -25,11 +25,11 @@
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -501,48 +503,50 @@
+@@ -516,48 +518,50 @@
  usage(ret)
  	int	ret;
  {
--	error("Usage:\tstar cmd [options] file1 ... filen\n");
+-	error("Usage:\t%s cmd [options] file1 ... filen\n", get_progname());
 -	error("Cmd:\n");
 -	error("\t-c/-u/-r\tcreate/update/replace named files to tape\n");
 -	error("\t-x/-t/-n\textract/list/trace named files from tape\n");
@@ -43,7 +43,7 @@
 -	error("\t-T\t\tuse $TAPE as tape instead of stdin/stdout\n");
 +	FILE *fp = ret ? stderr : stdout;
 +
-+	fprintf(fp, "Usage:\tstar cmd [options] file1 ... filen\n");
++	fprintf(fp, "Usage:\t%s cmd [options] file1 ... filen\n", get_progname());
 +	fprintf(fp, "Cmd:\n");
 +	fprintf(fp, "\t-c/-u/-r\tcreate/update/replace named files to tape\n");
 +	fprintf(fp, "\t-x/-t/-n\textract/list/trace named files from tape\n");
@@ -114,11 +114,11 @@
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -551,69 +555,71 @@
+@@ -566,69 +570,71 @@
  xusage(ret)
  	int	ret;
  {
--	error("Usage:\tstar cmd [options] file1 ... filen\n");
+-	error("Usage:\t%s cmd [options] file1 ... filen\n", get_progname());
 -	error("Extended options:\n");
 -	error("\tdiffopts=optlst\tcomma separated list of diffopts (see diffopts=help)\n");
 -	error("\t-debug\t\tprint additional debug messages\n");
@@ -147,7 +147,7 @@
 -	error("\tbs=#\t\tset (output) block size to #\n");
 +	FILE *fp = ret ? stderr : stdout;
 +
-+	fprintf(fp, "Usage:\tstar cmd [options] file1 ... filen\n");
++	fprintf(fp, "Usage:\t%s cmd [options] file1 ... filen\n", get_progname());
 +	fprintf(fp, "Extended options:\n");
 +	fprintf(fp, "\tdiffopts=optlst\tcomma separated list of diffopts (see diffopts=help)\n");
 +	fprintf(fp, "\t-debug\t\tprint additional debug messages\n");
@@ -241,12 +241,14 @@
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -622,27 +628,29 @@
+@@ -637,31 +643,33 @@
  dusage(ret)
  	int	ret;
  {
 -	error("Diff options:\n");
 -	error("\tnot\t\tif this option is present, exclude listed options\n");
+-	error("\t!\t\tif this option is present, exclude listed options\n");
+-	error("\tall\t\tcompare everything\n");
 -	error("\tperm\t\tcompare file permissions\n");
 -	error("\tmode\t\tcompare file permissions\n");
 -	error("\ttype\t\tcompare file type\n");
@@ -266,10 +268,14 @@
 -	error("\tmtime\t\tcompare modification time of file\n");
 -	error("\tctime\t\tcompare creation time of file (only star)\n");
 -	error("\ttimes\t\tcompare all times of file\n");
+-	error("\n");
+-	error("Default is to compare everything except atime.\n");
 +	FILE *fp = ret ? stderr : stdout;
 +
 +	fprintf(fp, "Diff options:\n");
 +	fprintf(fp, "\tnot\t\tif this option is present, exclude listed options\n");
++	fprintf(fp, "\t!\t\tif this option is present, exclude listed options\n");
++	fprintf(fp, "\tall\t\tcompare everything\n");
 +	fprintf(fp, "\tperm\t\tcompare file permissions\n");
 +	fprintf(fp, "\tmode\t\tcompare file permissions\n");
 +	fprintf(fp, "\ttype\t\tcompare file type\n");
@@ -289,10 +295,12 @@
 +	fprintf(fp, "\tmtime\t\tcompare modification time of file\n");
 +	fprintf(fp, "\tctime\t\tcompare creation time of file (only star)\n");
 +	fprintf(fp, "\ttimes\t\tcompare all times of file\n");
++	fprintf(fp, "\n");
++	fprintf(fp, "Default is to compare everything except atime.\n");
  	exit(ret);
  	/* NOTREACHED */
  }
-@@ -651,16 +659,18 @@
+@@ -670,16 +678,18 @@
  husage(ret)
  	int	ret;
  {
