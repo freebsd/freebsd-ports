@@ -1,6 +1,7 @@
 .if defined(WITH_AUTHENTICATION_FW)
 BLOCKS+=	authentication-fw
 BLOCKS+=	session-fw
+WITH_SESSION_FW=	YES
 .endif
 
 .if defined(WITH_BATIK)
@@ -14,21 +15,25 @@ BLOCKS+=	bsf
 .if defined(WITH_CHAPERON)
 BLOCKS+=	chaperon
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_DATABASES)
 BLOCKS+=	databases
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_FOP)
 BLOCKS+=	fop
 BLOCKS+=	batik
+WITH_BATIK=	YES
 .endif
 
 .if defined(WITH_HSQLDB)
 BLOCKS+=	hsqldb
 BLOCKS+=	databases
+WITH_DATABASES=	YES
 .endif
 
 .if defined(WITH_HTML)
@@ -50,6 +55,7 @@ BLOCKS+=	jsp
 .if defined(WITH_LINKREWRITER)
 BLOCKS+=	linkrewriter
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_LUCENE)
@@ -75,7 +81,9 @@ BLOCKS+=	poi
 .if defined(WITH_PORTAL_FW)
 BLOCKS+=	portal-fw
 BLOCKS+=	authentication-fw
+WITH_AUTHENTICATION_FW=	YES
 BLOCKS+=	session-fw
+WITH_SESSION_FW=	YES
 .endif
 
 .if defined(WITH_PROFILER)
@@ -85,11 +93,13 @@ BLOCKS+=	profiler
 .if defined(WITH_PYTHON)
 BLOCKS+=	python
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_SESSION_FW)
 BLOCKS+=	session-fw
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_SWF)
@@ -107,6 +117,7 @@ BLOCKS+=	web3
 .if defined(WITH_XMLDB)
 BLOCKS+=	xmldb
 BLOCKS+=	databases
+WITH_DATABASES=	YES
 .endif
 
 .if defined(WITH_XSP)
@@ -116,6 +127,7 @@ BLOCKS+=	xsp
 .if defined(WITH_APPLES)
 BLOCKS+=	apples
 BLOCKS+=	forms
+WITH_FORMS=	YES
 .endif
 
 .if defined(WITH_ASCIIART)
@@ -137,24 +149,31 @@ BLOCKS+=	deli
 .if defined(WITH_EVENTCACHE)
 BLOCKS+=	eventcache
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_FORMS)
 BLOCKS+=	forms
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_JAVAFLOW)
 BLOCKS+=	javaflow
 BLOCKS+=	forms
+WITH_FORMS=	YES
 BLOCKS+=	ojb
+WITH_OJB=	YES
 .endif
 
 .if defined(WITH_JMS)
 BLOCKS+=	jms
 BLOCKS+=	databases
+WITH_DATABASES=	YES
 BLOCKS+=	eventcache
+WITH_EVENTCACHE=	YES
 BLOCKS+=	hsqldb
+WITH_HSQLDB=	YES
 .endif
 
 .if defined(WITH_LINOTYPE)
@@ -164,7 +183,9 @@ BLOCKS+=	linotype
 .if defined(WITH_MAIL)
 BLOCKS+=	mail
 BLOCKS+=	asciiart
+WITH_ASCIIART=	YES
 BLOCKS+=	scratchpad
+WITH_SCRATCHPAD=	YES
 .endif
 
 .if defined(WITH_MIDI)
@@ -174,22 +195,31 @@ BLOCKS+=	midi
 .if defined(WITH_OJB)
 BLOCKS+=	ojb
 BLOCKS+=	databases
+WITH_DATABASES=	YES
 BLOCKS+=	forms
+WITH_FORMS=	YES
 .endif
 
 .if defined(WITH_PETSTORE)
 BLOCKS+=	petstore
 BLOCKS+=	databases
+WITH_DATABASES=	YES
 BLOCKS+=	forms
+WITH_FORMS=	YES
 BLOCKS+=	hsqldb
+WITH_HSQLDB=	YES
 BLOCKS+=	velocity
+WITH_VELOCITY=	YES
 .endif
 
 .if defined(WITH_PORTAL)
 BLOCKS+=	portal
 BLOCKS+=	authentication-fw
+WITH_AUTHENTICATION_FW=	YES
 BLOCKS+=	html
+WITH_HTML=	YES
 BLOCKS+=	session-fw
+WITH_SESSION_FW=	YES
 .endif
 
 .if defined(WITH_PROXY)
@@ -203,15 +233,21 @@ BLOCKS+=	qdox
 .if defined(WITH_REPOSITORY)
 BLOCKS+=	repository
 BLOCKS+=	databases
+WITH_DATABASES=	YES
 BLOCKS+=	eventcache
+WITH_EVENTCACHE=	YES
 .endif
 
 .if defined(WITH_SCRATCHPAD)
 BLOCKS+=	scratchpad
 BLOCKS+=	batik
+WITH_BATIK=	YES
 BLOCKS+=	cron
+WITH_CRON=	YES
 BLOCKS+=	velocity
+WITH_VELOCITY=	YES
 BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 
 .if defined(WITH_SERIALIZERS)
@@ -221,7 +257,9 @@ BLOCKS+=	serializers
 .if defined(WITH_SLIDE)
 BLOCKS+=	slide
 BLOCKS+=	jms
+WITH_JMS=	YES
 BLOCKS+=	repository
+WITH_REPOSITORY=	YES
 .endif
 
 .if defined(WITH_SLOP)
@@ -239,12 +277,22 @@ BLOCKS+=	taglib
 .if defined(WITH_TOUR)
 BLOCKS+=	tour
 BLOCKS+=	batik
+WITH_BATIK=	YES
 BLOCKS+=	fop
+WITH_FOP=	YES
 BLOCKS+=	forms
+WITH_FORMS=	YES
 .endif
 
 .if defined(WITH_WEBDAV)
 BLOCKS+=	webdav
 BLOCKS+=	repository
+WITH_REPOSITORY=	YES
+.endif
+
+.if defined(WITH_WOODY)
+BLOCKS+=	woody
+BLOCKS+=	xsp
+WITH_XSP=	YES
 .endif
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	cocoon
 PORTVERSION=	2.1.5.1
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,${PORTNAME},}
 DISTNAME=	${PDISTNAME}-src
@@ -66,12 +67,12 @@ SUBSTITUTIONS=	\
 .include "${MASTERDIR}/Makefile.test-options"
 
 .for BLOCK in ${BLOCKS}
-BLOCKSEXP+=	-e 's/^include.block.${BLOCK}/\#include.block.${BLOCK}/'
+BLOCKSEXP+=	-e 's/^include.block.${BLOCK}=.*$$/include.block.${BLOCK}=true/'
 .endfor
 
 post-patch:
 	@${ECHO_MSG} "===> Configuring blocks: ${BLOCKS}"
-	${SED} -e 's/^#include.block/include.block/' < ${WRKSRC}/blocks.properties | \
+	${SED} -e 's/.*include.block\(.*\)=.*$$/include.block\1=false/' < ${WRKSRC}/blocks.properties | \
 	${SED} ${BLOCKSEXP} > ${WRKSRC}/local.blocks.properties
 .if (! defined(WITH_DOCS))
 	${SED} -e 's/^#exclude/exclude/' < ${WRKSRC}/build.properties \
