@@ -6,6 +6,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://members.chello.at/kaffeine/download/
 
