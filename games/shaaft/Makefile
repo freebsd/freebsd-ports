@@ -19,7 +19,6 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_SDL=	yes
 GNU_CONFIGURE=	yes
 
