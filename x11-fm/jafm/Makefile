@@ -1,7 +1,7 @@
-# New ports collection makefile for:   jafm
+# New ports collection makefile for:	jafm
 # Version required:		0.5
-# Date created:                31 August 1998
-# Whom:                        brett@peloton.physics.montana.edu
+# Date created:			31 August 1998
+# Whom:				brett@peloton.physics.montana.edu
 #
 # $FreeBSD$
 #
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	X11/desktop
 MAINTAINER=	brett@peloton.runet.edu
 
 USE_QT=		yes
-USE_GMAKE=	yes
+USE_BISON=	yes
+MAKE_ENV=	Cxx="${CXX}" CxxFLAGS="${CXXFLAGS}"
 ALL_TARGET=	jafm
 
 MAN8=	jafm.8
