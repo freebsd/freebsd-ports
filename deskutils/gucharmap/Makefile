@@ -7,6 +7,7 @@
 
 PORTNAME=	gucharmap
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gucharmap
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gucharmap
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
-LIB_DEPEND=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
