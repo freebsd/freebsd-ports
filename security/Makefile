@@ -150,6 +150,7 @@
     SUBDIR += libident
     SUBDIR += libksba
     SUBDIR += libmcrypt
+    SUBDIR += libntlm
     SUBDIR += libparanoia
     SUBDIR += libprelude
     SUBDIR += libsectok
