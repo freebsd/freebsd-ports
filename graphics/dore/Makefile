@@ -23,12 +23,9 @@ WRKSRC=		${WRKDIR}/dore
 EXTRACT_CMD=	${MKDIR} ${WRKSRC}; cd ${WRKSRC}; ${GZIP_CMD}
 MAKEFILE=	mk.stdx
 MAKE_ENV=	DORE_LOC=${WRKDIR}
+NOPRECIOUSMAKEVARS=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
