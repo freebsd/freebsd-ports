@@ -1,0 +1,11 @@
+--- modules/gsqlitebackend/Makefile.in	Fri Mar  5 09:59:34 2004
++++ modules/gsqlitebackend/Makefile.in	Fri Mar  5 10:00:54 2004
+@@ -193,7 +193,7 @@
+ clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+ libgsqlitebackend.la: $(libgsqlitebackend_la_OBJECTS) $(libgsqlitebackend_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libgsqlitebackend_la_LDFLAGS) $(libgsqlitebackend_la_OBJECTS) $(libgsqlitebackend_la_LIBADD) $(LIBS)
++#	$(CXXLINK) -rpath $(libdir) $(libgsqlitebackend_la_LDFLAGS) $(libgsqlitebackend_la_OBJECTS) $(libgsqlitebackend_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

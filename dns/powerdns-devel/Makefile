@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -73,6 +73,15 @@ PLIST_SUB+=		WITHLDAP=""
 PLIST_SUB+=		WITHLDAP="@comment "
 .endif
 
+.if defined(WITH_SQLITE)
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/${SQLITE_PORT}
+SQLITE_PORT?=	databases/sqlite
+CONFIGURE_ARGS+=	--enable-sqlite
+CONFIGURE_MODULES+=	"gsqlite"
+.else
+CONFIGURE_ARGS+=	--disable-sqlite
+.endif
+
 .if defined(POWERDNS_WITH_RECURSOR)
 USE_GCC=3.2
 CONFIGURE_ARGS+=	--enable-recursor
@@ -123,7 +132,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in pdns.conf pdns_mysql.sql pdns_postgresql.sql
+.for i in pdns.conf pdns_mysql.sql pdns_postgresql.sql pdns_sqlite.sql
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
 .endfor
 .endif

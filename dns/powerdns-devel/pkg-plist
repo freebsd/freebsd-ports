@@ -15,4 +15,5 @@ etc/rc.d/pdns.sh.sample
 %%PORTDOCS%%share/examples/powerdns/pdns.conf
 %%PORTDOCS%%share/examples/powerdns/pdns_mysql.sql
 %%PORTDOCS%%share/examples/powerdns/pdns_postgresql.sql
+%%PORTDOCS%%share/examples/powerdns/pdns_sqlite.sql
 %%PORTDOCS%%@dirrm share/examples/powerdns
