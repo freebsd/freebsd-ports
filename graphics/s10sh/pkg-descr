@@ -8,6 +8,7 @@ S10sh supports the following PowerShot models:
       S10 (serial and USB) 
       S20 (serial and USB) 
       S100 aka Digital Ixus (USB only, since it lacks the serial interface) 
+      A20 (needs testing)
       A50 (serial only, supported with problems) 
       Pro70 (serial only, supported with problems) 
 
