@@ -7,6 +7,7 @@
 
 PORTNAME=	listmanager
 PORTVERSION=	2.108
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.listmanager.org/
 DISTNAME=	${PORTNAME}
@@ -22,29 +23,34 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}
+PKGMESSAGE=	${WRKSRC}/pkg-message
 MAN8=		listmanager.8
+
+LISTMANAGER_HOME?=/var/listmanager
 
 pre-patch:
 	(cd ${WRKSRC} && ${TAR} xfz help.tar.gz)
 
+post-patch:
+	@ for file in listmanager.cf pkg-message setup; do \
+		${SED}	-e "s|@@VARPREFIX@@|${LISTMANAGER_HOME}|g" \
+			-e "s|@@INSPREFIX@@|${PREFIX}|g" \
+			 < ${FILESDIR}/$$file.in > ${WRKSRC}/$$file; \
+	done
+
 do-install:
 	@${MKDIR} ${PREFIX}/etc
-	@${MKDIR} ${PREFIX}/share/listmanager/db
-	@${MKDIR} ${PREFIX}/share/listmanager/files
 	@${MKDIR} ${PREFIX}/share/listmanager/help
-	@${MKDIR} ${PREFIX}/share/listmanager/synchfiles
-	${TOUCH} ${PREFIX}/etc/listmanager.cf
-	${INSTALL_DATA} ${WRKSRC}/help/* ${PREFIX}/share/listmanager/help
+	${INSTALL_DATA} ${WRKSRC}/listmanager.cf ${PREFIX}/etc/listmanager.cf.sample
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/listmanager
+	${INSTALL_DATA} ${WRKSRC}/ack ${PREFIX}/share/listmanager
+	${INSTALL_DATA} ${WRKSRC}/help/* ${PREFIX}/share/listmanager/help
+	${INSTALL_SCRIPT} ${WRKSRC}/setup ${PREFIX}/share/listmanager
 	${INSTALL_MAN} ${WRKSRC}/listmanager.8 ${PREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/sbin/listmanager
 	${CHMOD} 4510 ${PREFIX}/sbin/listmanager
 
 post-install:
-	@${ECHO} "************************************************************"
-	@${ECHO} "*  Please read ${PREFIX}/share/listmanager/INSTALL for      "
-	@${ECHO} "*  information on installing listmanager without using a    "
-	@${ECHO} "*  set-user-id root binary.                                 "
-	@${ECHO} "************************************************************"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

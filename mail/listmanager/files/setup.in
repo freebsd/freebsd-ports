@@ -1,0 +1,39 @@
+#!/bin/sh
+
+CHMOD=/bin/chmod
+CP=/bin/cp
+MKDIR="/bin/mkdir -p"
+TOUCH=/usr/bin/touch
+
+LISTMGR_HOME=@@VARPREFIX@@
+PREFIX=@@INSPREFIX@@
+
+SUBDIRS="archives backup db files lists responses storage tmp"
+
+if [ ! -d ${LISTMGR_HOME} ]; then
+	${MKDIR} ${LISTMGR_HOME}
+	${CHMOD} 0751 ${LISTMGR_HOME}
+fi
+
+for dir in ${SUBDIRS}; do
+	if [ ! -d ${LISTMGR_HOME}/${dir} ]; then
+		${MKDIR} ${LISTMGR_HOME}/${dir}
+		${CHMOD} 0750 ${LISTMGR_HOME}/${dir}
+	fi
+done
+${CHMOD} 0751 ${LISTMGR_HOME}/lists
+
+if [ ! -e ${LISTMGR_HOME}/ignore ]; then
+	${TOUCH} ${LISTMGR_HOME}/ignore
+	${CHMOD} 0640 ${LISTMGR_HOME}/ignore
+fi
+
+if [ ! -e ${LISTMGR_HOME}/responses/ack ]; then
+	${CP} ${PREFIX}/share/listmanager/ack ${LISTMGR_HOME}/responses/ack
+	${CHMOD} 0640 ${LISTMGR_HOME}/responses/ack
+fi
+
+if [ ! -e ${PREFIX}/etc/listmanager.cf ]; then
+	${CP} ${PREFIX}/etc/listmanager.cf.sample ${PREFIX}/etc/listmanager.cf
+	${CHMOD} 0644 ${PREFIX}/etc/listmanager.cf
+fi

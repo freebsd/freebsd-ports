@@ -1,6 +1,7 @@
-etc/listmanager.cf
+etc/listmanager.cf.sample
 sbin/listmanager
 share/listmanager/INSTALL
+share/listmanager/ack
 share/listmanager/help/ACLs
 share/listmanager/help/Addresses
 share/listmanager/help/Archiving
@@ -166,8 +167,6 @@ share/listmanager/help/validfreq
 share/listmanager/help/verbose
 share/listmanager/help/verify
 share/listmanager/help/version
-@dirrm share/listmanager/db
-@dirrm share/listmanager/files
+share/listmanager/setup
 @dirrm share/listmanager/help
-@dirrm share/listmanager/synchfiles
 @dirrm share/listmanager

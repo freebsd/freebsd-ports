@@ -1,0 +1,10 @@
+************************************************************
+*  Use @@INSPREFIX@@/share/listmanager/setup to setup the
+*  required configuration and directory structure for
+*  listmanager.  Note that this only has to be done on new
+*  installations.
+*
+*  Please read @@INSPREFIX@@/share/listmanager/INSTALL for
+*  information on installing listmanager without using a
+*  set-user-id root binary.
+************************************************************
