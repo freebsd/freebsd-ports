@@ -22,7 +22,7 @@ NO_BUILD=	yes
 DOCS=		ChangeLog README Credits TODO
 
 do-install:
-	cd ${WRKSRC} && ${RUBY} install.rb
+	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/dispatcher
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/

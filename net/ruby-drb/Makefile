@@ -24,13 +24,13 @@ USE_RUBY_RD=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}/acl/doc ${WRKSRC}/acl/lib ${WRKSRC}/acl/runit
-	cd ${WRKSRC} && for f in */acl*; do ${MV} $$f ${WRKSRC}/acl/$$f; done
+	cd ${WRKSRC}; for f in */acl*; do ${MV} $$f ${WRKSRC}/acl/$$f; done
 	${MKDIR} ${WRKSRC}/sample/ja
 	${MV} ${WRKSRC}/sample/*.ja ${WRKSRC}/sample/ja/
 
 post-patch:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && for f in drb-ref.rd*; do \
+	cd ${WRKSRC}/doc; for f in drb-ref.rd*; do \
 		${MV} $$f $$f.orig; \
 		( ${ECHO_CMD} '=begin'; ${CAT} $$f.orig; ${ECHO_CMD} '=end' ) > $$f; \
 		${RM} $$f.orig; \
@@ -39,14 +39,14 @@ post-patch:
 
 do-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && for f in *.rd; do \
+	cd ${WRKSRC}/doc; for f in *.rd; do \
 		${RUBY_RD} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd$$/.html/'`; \
 	done
-	cd ${WRKSRC}/doc && for f in *.rd.ja; do \
+	cd ${WRKSRC}/doc; for f in *.rd.ja; do \
 		${RUBY_RD} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd.ja$$/.ja.html/'`; \
 	done
 	${MKDIR} ${WRKSRC}/doc/ja
-	cd ${WRKSRC}/doc && ${MV} *.rd.ja *.ja.html ja/
+	cd ${WRKSRC}/doc; ${MV} *.rd.ja *.ja.html ja/
 .endif
 
 do-install:

@@ -46,7 +46,7 @@ pre-build:
 .if !defined(NOPORTDOCS)
 post-build:
 .for f in README.rd.ja doc/rd-draft.rd doc/rd-draft.rd.ja
-	cd ${WRKSRC} && ${RUBY} -I. rd2 -r rd/rd2html-lib.rb ${f} \
+	cd ${WRKSRC}; ${RUBY} -I. rd2 -r rd/rd2html-lib.rb ${f} \
 		> ${f:S/.rd.ja$/.ja.html/:S/.rd$/.html/}
 .endfor
 .endif
