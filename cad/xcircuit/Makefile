@@ -19,12 +19,13 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_BZIP2=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 XMKMF=		xmkmf
 
 MAN1=		xcircuit.1
 
 post-patch:
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 post-install:

@@ -14,13 +14,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 post-patch:
 .for file in src/Make2.g++ src/Make.aux modelgen/Make.aux
-	@printf ',s|g\+\+|\$$\{CXX\}|g\n,s|-O2|\$$\{CXXFLAGS\}|g\nwq\n' | \
-		ed -s ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|g\+\+|\$$\{CXX\}|g" \
+		-e "s|-O2|\$$\{CXXFLAGS\}|g" ${WRKSRC}/${file}
 .endfor
 
 do-install:

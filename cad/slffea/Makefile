@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_MESA=	yes
 CFLAGS+=	-I${X11BASE}/include ${PTHREAD_CFLAGS}
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.3
@@ -38,7 +39,7 @@ EXEC=	beam/beam/bm \
 
 post-patch:
 	@(find ${WRKSRC} -name Makefile | xargs \
-	  ${PERL} -pi -e "s,^CC = (.*),CC = ${CC} ${CFLAGS},g ; \
+	  ${REINPLACE_CMD} -E -e "s,^CC = (.*),CC = ${CC} ${CFLAGS},g ; \
 	    s,-lglut,-lglut ${PTHREAD_LIBS},g")
 
 do-install:
