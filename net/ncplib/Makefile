@@ -18,7 +18,6 @@ COMMENT=	Client for Novell NetWare servers
 BROKEN=		requires kernel source
 .endif
 
-NO_PACKAGE=	is interactive
 IS_INTERACTIVE=	true
 
 MANCOMPRESSED=	yes
