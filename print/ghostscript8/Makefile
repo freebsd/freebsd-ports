@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.27 1998/12/03 08:38:56 andreas Exp $
+# $Id: Makefile,v 1.28 1998/12/27 22:31:29 asami Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -21,8 +21,6 @@ BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.2:${PORTSDIR}/graphics/png
 
-BROKEN=		upgrade
-
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES}
 WRKSRC=		${WRKDIR}/gs5.50
@@ -37,7 +35,7 @@ GS_SOURCES+=	ghostscript-5.50gnu.tar.gz
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-5.50.tar.gz
 
 # Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
 HP850_DRV=	hp8xxs13.zip
