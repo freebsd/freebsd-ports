@@ -18,7 +18,6 @@
     SUBDIR += ksnes9x
     SUBDIR += linux_base
     SUBDIR += kmamerun
-    SUBDIR += macutils
     SUBDIR += mastergear
     SUBDIR += mtools
     SUBDIR += osf1_base
