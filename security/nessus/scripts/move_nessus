@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/security/nessus/scripts/move_nessus,v 1.1 2004-04-10 20:42:56 linimon Exp $
+#
+# set -x
+
+trap ' cleanup ' 0
+trap ' echo_signal; exit 1' 1 2 3 15
+
+cleanup() {
+	# No tmp file to remove up to now ;-)
+}
+
+echo_signal() {
+  echo "Got Signal -- aborting `basename $0`"
+}
+
+PATH=/bin:/usr/bin
+
+
+if [ -f $PREFIX/etc/nessus/nessusd.conf ]; then
+  mv $PREFIX/etc/nessus/nessusd.conf $PREFIX/etc/nessus/nessusd.conf.bak
+  sed	-e "s,/usr/local/etc/nessus/var,/usr/local/var,g" \
+	-e "s,/usr/local/etc/nessus/com,/usr/local/com,g" \
+	$PREFIX/etc/nessus/nessusd.conf.bak > $PREFIX/etc/nessus/nessusd.conf
+fi
+if [ -d $PREFIX/etc/nessus/var/nessus/users ]; then
+  printf "\n\nMigrating nessus to default directory scheme\n"
+  printf "============================================\n\n"
+  cd $PREFIX/etc/nessus/var/nessus/users
+  for i in *; do 
+    if [ $i != '*' ]; then 
+      mv $i $PREFIX/var/nessus/users
+      printf "Moving nessus user %s\n" $i
+    fi
+  done
+  printf "\n"
+fi
+if [ ! -d $PREFIX/com/CA ]; then
+  if [ -d $PREFIX/etc/nessus/com/CA ]; then
+    if [ ! -d $PREFIX/com ]; then
+      mkdir -m 755 $PREFIX/com
+    fi
+    mv $PREFIX/etc/nessus/com/CA $PREFIX/com/CA
+  fi
+  if [ -d $PREFIX/etc/nessus/var/CA ]; then
+    if [ ! -d $PREFIX/var/CA ]; then
+      mv $PREFIX/etc/nessus/var/CA $PREFIX/var/CA
+    fi
+  fi
+fi
