@@ -20,7 +20,7 @@ COMMENT?=	The most advanced open-source database available anywhere
 
 # XXX: this will eventually go away
 .if !defined(PGSQL_WORK_IN_PROGRESS)
-BROKEN=	You almost certainly do not want to be here right now
+BROKEN=	Work in progress, please use databases/postgresql7 until further notice
 .endif
 
 CONFLICTS?=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-35-9]* \
