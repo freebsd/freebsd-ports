@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.170 1997/11/05 04:19:43 asami Exp $
+# $Id: Makefile,v 1.171 1997/11/05 10:37:33 asami Exp $
 #
 
     SUBDIR += FWF
@@ -62,6 +62,7 @@
     SUBDIR += tk80
     SUBDIR += tkdesk
     SUBDIR += tkgoodstuff
+    SUBDIR += tkstep80
     SUBDIR += tvtwm
     SUBDIR += viewfax
     SUBDIR += windowmaker
