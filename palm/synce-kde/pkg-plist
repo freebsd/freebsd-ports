@@ -1,9 +1,19 @@
 bin/raki
+bin/vdccm
+include/rakiapi.h
+include/rakisyncfactory.h
+include/rakisyncplugin.h
+include/rapiwrapper.h
+include/rra.h
 lib/kde3/kio_rapip.la
 lib/kde3/kio_rapip.so
 share/applnk/Utilities/raki.desktop
-share/doc/HTML/en/raki/index.cache.bz2
-share/doc/HTML/en/raki/index.docbook
+share/apps/konqueror/servicemenus/cab_install.desktop
+share/apps/raki/Infbeg.wav
+share/apps/raki/Infend.wav
+share/apps/raki/scripts/dccm.sh
+share/apps/raki/scripts/vdccm.sh
+share/apps/raki/tips
 share/icons/hicolor/16x16/apps/raki.png
 share/icons/hicolor/16x16/apps/raki_bw.png
 share/icons/hicolor/16x16/apps/rapip.png
@@ -24,6 +34,10 @@ share/icons/hicolor/64x64/apps/raki.png
 share/icons/hicolor/64x64/apps/raki_bw.png
 share/icons/hicolor/64x64/apps/rapip.png
 share/icons/hicolor/64x64/apps/rapip_bw.png
+share/locale/de/LC_MESSAGES/synce-kde.mo
+share/locale/fr/LC_MESSAGES/synce-kde.mo
+share/mimelnk/application/x-raki.desktop
 share/services/rapip.protocol
-@dirrm share/doc/HTML/en/raki/common
-@dirrm share/doc/HTML/en/raki
+share/servicetypes/rakisynchronizer.desktop
+@dirrm share/apps/raki/scripts
+@dirrm share/apps/raki
