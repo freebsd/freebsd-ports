@@ -1,57 +1,57 @@
-*** Makefile.in.orig	Wed Oct 30 15:27:56 1996
---- Makefile.in	Thu Jan 30 23:00:03 1997
+*** Makefile.in.orig	Thu Mar 27 09:04:06 1997
+--- Makefile.in	Fri Mar 28 15:36:08 1997
 ***************
-*** 188,199 ****
+*** 225,236 ****
   SHELL = /bin/sh
   
   GMPDIR 		= gmp-2.0.2-ssh-2
 ! GMPLIBS 	= -L$(GMPDIR) -lgmp
 ! GMPDEP 		= $(GMPDIR)/gmp.h $(GMPDIR)/libgmp.a
   
-  ZLIBDIR		= zlib-1.0.3
+  ZLIBDIR		= zlib-1.0.4
 ! ZLIBDEP		= $(ZLIBDIR)/libz.a
 ! ZLIBLIBS	= -L$(ZLIBDIR) -lz
   
   RSAREFDIR	= rsaref2
   RSAREFSRCDIR 	= $(RSAREFDIR)/source
---- 188,205 ----
+--- 225,242 ----
   SHELL = /bin/sh
   
   GMPDIR 		= gmp-2.0.2-ssh-2
 ! # We have the same libgmp in the system, so use it instead
 ! GMPINCDIR       = /usr/include
 ! GMPLIBDIR       = /usr/lib
-! GMPDEP		= $(GMPINCDIR)/gmp.h $(GMPLIBDIR)/libgmp.a
-! GMPLIBS		= -L$(GMPLIBDIR) -lgmp
+! GMPDEP          = $(GMPINCDIR)/gmp.h $(GMPLIBDIR)/libgmp.a
+! GMPLIBS         = -L$(GMPLIBDIR) -lgmp
   
-  ZLIBDIR		= zlib-1.0.3
-! # We have newer libz in the system, so use it instead
-! ZLIBINCDIR	= /usr/include
-! ZLIBLIBDIR	= /usr/lib
-! ZLIBDEP		= $(ZLIBINCDIR)/zlib.h $(ZLIBLIBDIR)/libz.a
-! ZLIBLIBS	= -L$(ZLIBLIBDIR) -lz
+  ZLIBDIR		= zlib-1.0.4
+! # We have the same libz in the system, so use it instead
+! ZLIBINCDIR      = /usr/include
+! ZLIBLIBDIR      = /usr/lib
+! ZLIBDEP         = $(ZLIBINCDIR)/zlib.h $(ZLIBLIBDIR)/libz.a
+! ZLIBLIBS        = -L$(ZLIBLIBDIR) -lz
   
   RSAREFDIR	= rsaref2
   RSAREFSRCDIR 	= $(RSAREFDIR)/source
 ***************
-*** 275,281 ****
-  	$(CC) -o rfc-pg rfc-pg.c
+*** 324,330 ****
+  	$(CC) -o rfc-pg rfc-pg.o
   
   .c.o:
-! 	$(CC) -c -I. -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
+! 	$(CC) -c -I. $(KERBEROS_INCS) -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
   
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
---- 281,287 ----
-  	$(CC) -o rfc-pg rfc-pg.c
+--- 330,336 ----
+  	$(CC) -o rfc-pg rfc-pg.o
   
   .c.o:
-! 	$(CC) -c -I. -I$(GMPINCDIR) -I$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
+! 	$(CC) -c -I. $(KERBEROS_INCS) -I$(GMPINCDIR) -I$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
   
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
 ***************
-*** 310,328 ****
+*** 361,379 ****
   	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
   	chmod +x make-ssh-known-hosts
   
@@ -71,7 +71,7 @@
   
   $(RSAREFSRCDIR)/librsaref.a:
   	-if test '!' -d $(RSAREFDIR); then \
---- 316,334 ----
+--- 367,385 ----
   	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
   	chmod +x make-ssh-known-hosts
   
@@ -92,24 +92,24 @@
   $(RSAREFSRCDIR)/librsaref.a:
   	-if test '!' -d $(RSAREFDIR); then \
 ***************
-*** 379,385 ****
+*** 430,436 ****
   # (otherwise it can only log in as the user it runs as, and must be
   # bound to a non-privileged port).  Also, password authentication may
   # not be available if non-root and using shadow passwords.
 ! install: $(PROGRAMS) make-dirs generate-host-key install-configs
-  	$(INSTALL_PROGRAM) -o root -m 04711 ssh $(install_prefix)$(bindir)/ssh
+  	$(INSTALL_PROGRAM) -o root -m $(SSH_INSTALL_MODE) ssh $(install_prefix)$(bindir)/ssh
   	-if test "`echo ssh | sed '$(transform)'`" '!=' ssh; then \
   	  rm -f $(install_prefix)$(bindir)/`echo ssh | sed '$(transform)'`; \
---- 385,391 ----
+--- 436,442 ----
   # (otherwise it can only log in as the user it runs as, and must be
   # bound to a non-privileged port).  Also, password authentication may
   # not be available if non-root and using shadow passwords.
 ! install: $(PROGRAMS) make-dirs install-configs
-  	$(INSTALL_PROGRAM) -o root -m 04711 ssh $(install_prefix)$(bindir)/ssh
+  	$(INSTALL_PROGRAM) -o root -m $(SSH_INSTALL_MODE) ssh $(install_prefix)$(bindir)/ssh
   	-if test "`echo ssh | sed '$(transform)'`" '!=' ssh; then \
   	  rm -f $(install_prefix)$(bindir)/`echo ssh | sed '$(transform)'`; \
 ***************
-*** 480,506 ****
+*** 531,557 ****
   
   clean:
   	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
@@ -127,58 +127,58 @@
   	-rm -rf $(DISTNAME)
   	-mkdir $(DISTNAME)
   	cp $(DISTFILES) $(DISTNAME)
-  	-rm $(DISTNAME)/config.h
-! 	tar pcf - $(GMPDIR) | (cd $(DISTNAME); tar pxf -)
-! 	cd $(DISTNAME)/$(GMPDIR); $(MAKE) distclean
+  	for i in $(DISTSRCS); do cp $(srcdir)/$$i $(DISTNAME); done
+! 	(cd $(GMPDIR); make dist)
+! 	gzip -cd $(GMPDIR)/$(GMPDIR).tar.gz | (cd $(DISTNAME); tar pxf - )
   #	tar cf - $(RSAREFDIR) | (cd $(DISTNAME); tar xf -)
   #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
-! 	tar pcf - $(ZLIBDIR) | (cd $(DISTNAME); tar pxf -)
-! 	cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
+! 	(cd  $(srcdir); tar pcf - $(ZLIBDIR) )| (cd $(DISTNAME); tar pxf -)
+! 	cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a; rm -rf CVS
   	tar pcf $(DISTNAME).tar $(DISTNAME)
   	-rm -f $(DISTNAME).tar.gz
   	gzip $(DISTNAME).tar
---- 486,512 ----
+--- 537,563 ----
   
   clean:
   	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
-! #	cd $(GMPDIR); $(MAKE) clean
+! #       cd $(GMPDIR); $(MAKE) clean
   #	cd $(RSAREFSRCDIR); rm -f *.o *.a
 ! #       cd $(ZLIBDIR); $(MAKE) clean
   
   distclean: clean
   	-rm -f Makefile config.status config.cache config.log config.h
   	-rm -f ssh.1 sshd.8 make-ssh-known-hosts.1
-! #	cd $(GMPDIR); $(MAKE) distclean
+! #       cd $(GMPDIR); $(MAKE) distclean
 ! #       cd $(ZLIBDIR); $(MAKE) distclean
   
   dist:
   	-rm -rf $(DISTNAME)
   	-mkdir $(DISTNAME)
   	cp $(DISTFILES) $(DISTNAME)
-  	-rm $(DISTNAME)/config.h
-! #       tar pcf - $(GMPDIR) | (cd $(DISTNAME); tar pxf -)
-! #	cd $(DISTNAME)/$(GMPDIR); $(MAKE) distclean
+  	for i in $(DISTSRCS); do cp $(srcdir)/$$i $(DISTNAME); done
+! #       (cd $(GMPDIR); make dist)
+! #       gzip -cd $(GMPDIR)/$(GMPDIR).tar.gz | (cd $(DISTNAME); tar pxf - )
   #	tar cf - $(RSAREFDIR) | (cd $(DISTNAME); tar xf -)
   #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
-! #       tar pcf - $(ZLIBDIR) | (cd $(DISTNAME); tar pxf -)
-! #       cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
+! #       (cd  $(srcdir); tar pcf - $(ZLIBDIR) )| (cd $(DISTNAME); tar pxf -)
+! #       cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a; rm -rf CVS
   	tar pcf $(DISTNAME).tar $(DISTNAME)
   	-rm -f $(DISTNAME).tar.gz
   	gzip $(DISTNAME).tar
 ***************
-*** 512,518 ****
-  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed version.h >/dev/null
+*** 563,569 ****
+  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed $(srcdir)/version.h >/dev/null
   
   depend:
 ! 	$(MAKEDEP) -I$(srcdir) -I. -I$(GMPDIR) -I$(ZLIBDIR) $(DEFS) $(SRCS)
   
   tags:
-  	find config.h $(srcdir) -name '*.[chly]' -print | xargs etags -a
---- 518,524 ----
-  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed version.h >/dev/null
+  	-rm -f TAGS
+--- 569,575 ----
+  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed $(srcdir)/version.h >/dev/null
   
   depend:
 ! 	$(MAKEDEP) -I$(srcdir) -I. $(DEFS) $(SRCS)
   
   tags:
-  	find config.h $(srcdir) -name '*.[chly]' -print | xargs etags -a
+  	-rm -f TAGS

@@ -1,7 +1,7 @@
-*** configure.in.orig	Wed Oct 30 15:27:56 1996
---- configure.in	Thu Jan 30 23:00:38 1997
+*** configure.in.orig	Thu Mar 27 09:04:06 1997
+--- configure.in	Sat Mar 29 01:16:51 1997
 ***************
-*** 469,477 ****
+*** 574,582 ****
   
   export CFLAGS CC
   
@@ -11,7 +11,7 @@
   
   AC_MSG_CHECKING([that the compiler works])
   AC_TRY_RUN([ main(int ac, char **av) { return 0; } ],
---- 469,477 ----
+--- 574,582 ----
   
   export CFLAGS CC
   
@@ -22,7 +22,7 @@
   AC_MSG_CHECKING([that the compiler works])
   AC_TRY_RUN([ main(int ac, char **av) { return 0; } ],
 ***************
-*** 523,529 ****
+*** 628,634 ****
   
   AC_HEADER_STDC
   AC_HEADER_SYS_WAIT
@@ -30,7 +30,7 @@
   AC_CHECK_HEADERS(sgtty.h sys/select.h sys/ioctl.h machine/endian.h)
   AC_CHECK_HEADERS(paths.h usersec.h utime.h netinet/in_systm.h netinet/in_system.h netinet/ip.h netinet/tcp.h ulimit.h)
   AC_HEADER_TIME
---- 523,529 ----
+--- 628,634 ----
   
   AC_HEADER_STDC
   AC_HEADER_SYS_WAIT
