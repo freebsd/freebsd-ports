@@ -5,6 +5,8 @@ bin/nmap
 %%DATADIR%%/nmap-rpc
 %%DATADIR%%/nmap-service-probes
 %%DATADIR%%/nmap-services
+%%DATADIR%%/nmap.dtd
+%%DATADIR%%/nmap.xsl
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
