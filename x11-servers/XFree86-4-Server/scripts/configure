@@ -35,6 +35,11 @@ echo "#define BuildXF86DRM NO"			>> $LOCALDEF
 echo "#define InstSrcDir $WRKDIR/drmsource"	>> $LOCALDEF
 echo "#define HasGlide3 YES"			>> $LOCALDEF
 
+# Install driver manpages as foo.4x so they can easily be accesed by
+# 'man 4x foo'
+echo "#define DriverManSuffix 4x"		>> $LOCALDEF
+echo "#define DriverManDir \$(MANSOURCEPATH)4"	>> $LOCALDEF
+
 # disable some options
 for i in \
 	BuildFonts \

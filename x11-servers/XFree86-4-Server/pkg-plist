@@ -119,6 +119,8 @@ lib/modules/drivers/atimisc_drv.o
 %%SPARC64_NA%%lib/modules/drivers/cirrus_drv.o
 %%SPARC64_NA%%lib/modules/drivers/cirrus_laguna.o
 %%AMD64_I386%%lib/modules/drivers/cyrix_drv.o
+%%AMD64%%lib/modules/drivers/dummy_drv.o
+%%AMD64%%lib/modules/drivers/fbdev_drv.o
 %%SPARC64_NA%%lib/modules/drivers/glint_drv.o
 %%AMD64_I386%%lib/modules/drivers/i128_drv.o
 %%I386%%lib/modules/drivers/i740_drv.o
@@ -200,3 +202,5 @@ lib/modules/libxf8_32bpp.a
 %%SPARC64%%lib/modules/libxf8_32wid.a
 %%SPARC64_NA%%lib/modules/v10002d.uc
 %%SPARC64_NA%%lib/modules/v20002d.uc
+@dirrm lib/X11/getconfig
+@unexec rmdir %D/lib/X11/doc/Japanese 2>/dev/null || true
