@@ -1,0 +1,35 @@
+--- bin/coverhunter.orig	Wed Jul 14 14:57:49 2004
++++ bin/coverhunter	Wed Jul 14 15:01:58 2004
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#! @PYTHON_CMD@
+ # Copyright (c) 2003,2004 Guilherme Salgado
+ # All rights reserved.
+ #
+@@ -22,15 +22,8 @@
+ #
+ 
+ import os, sys, tempfile, threading, traceback, urllib2
+-if os.path.exists('CVS'):
+-    # developer mode, coverhunter hasn't been installed
+-    prefix = '.'
+-    DEBUG = True
+-else:
+-    base_dir = os.path.split(os.path.dirname(sys.argv[0]))[0]
+-    prefix = os.path.join(base_dir, 'lib', 'coverhunter')
+-    DEBUG = False
+-sys.path.append(os.path.join(prefix, 'lib'))
++DEBUG = False
++sys.path.append('@PKGLIBDIR@')
+ 
+ import Image
+ import pygtk ; pygtk.require('2.0')
+@@ -440,7 +433,7 @@
+ 
+ 
+ def find_datafile(filename):
+-    return os.path.join(prefix, 'data', filename)
++    return os.path.join('@DATADIR@', filename)
+ 
+ 
+ if __name__ == "__main__":
