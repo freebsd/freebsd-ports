@@ -409,6 +409,7 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
+    SUBDIR += uds
     SUBDIR += ups-debug
     SUBDIR += veepee
     SUBDIR += viewcvs
