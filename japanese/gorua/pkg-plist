@@ -16,3 +16,4 @@ share/examples/goRua/dot.goRua_2ch/gtkrc
 @dirrm share/examples/goRua/dot.goRua_2ch/subject
 @dirrm share/examples/goRua/dot.goRua_2ch/thread
 @dirrm share/examples/goRua/dot.goRua_2ch
+@dirrm share/examples/goRua
