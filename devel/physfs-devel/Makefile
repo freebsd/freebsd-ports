@@ -7,16 +7,15 @@
 
 PORTNAME=	physfs
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://icculus.org/${PORTNAME}/downloads/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
 
+USE_GNOME=	gnometarget
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-CONFIGURE_ARGS=	--program-transform-name=''
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

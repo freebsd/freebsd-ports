@@ -1,0 +1,19 @@
+--- configure.orig	Sat Sep 13 11:29:31 2003
++++ configure	Mon Sep 29 18:37:43 2003
+@@ -7357,6 +7357,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7420,7 +7421,7 @@
+ EOF
+ 
+ else
+-  PHYSFSCFLAGS="-O2"
++  PHYSFSCFLAGS=""
+ 
+ cat >>confdefs.h <<\EOF
+ #define NDEBUG 1
