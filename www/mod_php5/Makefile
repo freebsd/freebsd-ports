@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.50 1998/08/27 14:08:20 kuriyama Exp $
+# $Id: Makefile,v 1.52 1998/09/01 18:38:05 andreas Exp $
 #
 
 DISTNAME=	apache_${APACHE_VER}
@@ -18,7 +18,7 @@ MAINTAINER=	ibex@physik.TU-Berlin.DE
 APACHE_VER=	1.3.1
 PHP3_VER=	3.0.3
 
-#USE_PERL5=	yes
+USE_PERL5=	yes
 
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	Support for different databases
