@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.84
+PORTVERSION=	0.85a
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
 MAINTAINER=	peter@dataloss.nl
 COMMENT=	An IRC to other chat networks gateway
 
+MAN5=		bitlbee.conf.5
 MAN8=		bitlbee.8
 
 GNU_CONFIGURE=	yes
