@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmlmmon
-# Version required:			0.52
+# Version required:			0.55
 # Date created:				24 September 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmlmmon-0.52
+DISTNAME=	wmlmmon-0.55
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/
 
@@ -19,10 +19,16 @@ USE_X_PREFIX=	yes
 MAN8=		wmlmmon.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-FORBIDDEN=	"This port uses the intpm controller which is only available in FreeBSD 4.0+"
+pre-configure:
+.if !defined (IO_ONLY)
+	@${ECHO}
+	@${ECHO} "Define IO_ONLY (make IO_ONLY=yes) to build with"
+	@${ECHO} "/dev/io support only."
+	@${ECHO}
+.else
+	@${ECHO}
+	@${ECHO} "Building with only /dev/io interface support.
+	@${ECHO}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
