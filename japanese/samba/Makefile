@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	samba-2.0.5a-JP2
-PKGNAME=	ja-samba-2.0.5a-2
+DISTNAME=	samba-2.0.5a-JP2-1.3
+PKGNAME=	ja-samba-2.0.5a.2
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/samba-2.0.5a-JP2/ \
 		http://www3.osk.3web.ne.jp/~pcmaster/network/samba/
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
+#WRKSRC=		${WRKDIR}/samba-2.0.5a-JP2/source
 
 MANLANG=	"" ja
 MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
@@ -44,6 +45,9 @@ MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
 MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 \
 		smbmount.8 smbumount.8 smbmnt.8
+
+post-extract:
+	${MV} ${WRKDIR}/samba-2.0.5a-JP2 ${WRKDIR}/${DISTNAME}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
