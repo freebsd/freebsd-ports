@@ -30,7 +30,7 @@
  
  TCL_LIB_SPEC='-L$(TCL_BIN_DIR) $(TCL_LIB_FLAG)'
 -TCL_STUB_LIB_SPEC='-L$(TCL_BIN_DIR) $(TCL_STUB_LIB_FLAG)'
-+TCL_STUB_LIB_SPEC='/usr/local/lib/libtclstub83.a'
++TCL_STUB_LIB_SPEC='$(LOCALBASE)/lib/libtclstub83.a'
  
  if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
