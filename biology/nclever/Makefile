@@ -17,6 +17,8 @@ COMMENT=	NClever is a character-based version of NCBI's Entrez program
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ncbi/libncbi.a:${PORTSDIR}/biology/ncbi-toolkit
 
+BROKEN=		Unfetchable
+
 do-install:
 	@${MKDIR} ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/nclever ${PREFIX}/bin
