@@ -8,7 +8,7 @@
 PORTNAME=	id-utils
 PORTVERSION=	3.2d
 CATEGORIES=	devel
-MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/
+MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/id-utils/
 
 MAINTAINER=	ports@FreeBSD.org
 
