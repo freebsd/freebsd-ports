@@ -5,15 +5,13 @@
 %%T%%/build/apidocs/index-all.html
 %%T%%/build/apidocs/index.html
 %%T%%/build/apidocs/org/znerd/math/AbstractCompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/BasicIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/BasicRationalNumber.html
+%%T%%/build/apidocs/org/znerd/math/BigIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/CanNotCompareException.html
 %%T%%/build/apidocs/org/znerd/math/CompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/DefaultNumberFactory.html
 %%T%%/build/apidocs/org/znerd/math/DigitSet.html
 %%T%%/build/apidocs/org/znerd/math/IntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/NumberCentral.html
-%%T%%/build/apidocs/org/znerd/math/NumberFactory.html
 %%T%%/build/apidocs/org/znerd/math/Power.html
 %%T%%/build/apidocs/org/znerd/math/Product.html
 %%T%%/build/apidocs/org/znerd/math/RationalNumber.html
@@ -23,15 +21,13 @@
 %%T%%/build/apidocs/org/znerd/math/SmallIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/Sum.html
 %%T%%/build/apidocs/org/znerd/math/class-use/AbstractCompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/BasicIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/class-use/BasicRationalNumber.html
+%%T%%/build/apidocs/org/znerd/math/class-use/BigIntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/class-use/CanNotCompareException.html
 %%T%%/build/apidocs/org/znerd/math/class-use/CompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/DefaultNumberFactory.html
 %%T%%/build/apidocs/org/znerd/math/class-use/DigitSet.html
 %%T%%/build/apidocs/org/znerd/math/class-use/IntegerNumber.html
 %%T%%/build/apidocs/org/znerd/math/class-use/NumberCentral.html
-%%T%%/build/apidocs/org/znerd/math/class-use/NumberFactory.html
 %%T%%/build/apidocs/org/znerd/math/class-use/Power.html
 %%T%%/build/apidocs/org/znerd/math/class-use/Product.html
 %%T%%/build/apidocs/org/znerd/math/class-use/RationalNumber.html
@@ -49,43 +45,58 @@
 %%T%%/build/apidocs/packages.html
 %%T%%/build/apidocs/serialized-form.html
 %%T%%/build/apidocs/stylesheet.css
-%%T%%/build/classes/org/znerd/math/AbstractCompositeNumber.class
-%%T%%/build/classes/org/znerd/math/BasicIntegerNumber.class
-%%T%%/build/classes/org/znerd/math/BasicRationalNumber.class
-%%T%%/build/classes/org/znerd/math/BasicRoundingMode.class
-%%T%%/build/classes/org/znerd/math/CanNotCompareException.class
-%%T%%/build/classes/org/znerd/math/CompositeNumber.class
-%%T%%/build/classes/org/znerd/math/DefaultNumberFactory.class
-%%T%%/build/classes/org/znerd/math/DigitSet.class
-%%T%%/build/classes/org/znerd/math/IntegerNumber.class
-%%T%%/build/classes/org/znerd/math/MandatoryArgumentChecker.class
-%%T%%/build/classes/org/znerd/math/MissingArgumentException.class
-%%T%%/build/classes/org/znerd/math/NumberCentral.class
-%%T%%/build/classes/org/znerd/math/NumberFactory.class
-%%T%%/build/classes/org/znerd/math/Power.class
-%%T%%/build/classes/org/znerd/math/Product.class
-%%T%%/build/classes/org/znerd/math/RationalNumber.class
-%%T%%/build/classes/org/znerd/math/RealNumber.class
-%%T%%/build/classes/org/znerd/math/RoundingMode.class
-%%T%%/build/classes/org/znerd/math/RoundingModes.class
-%%T%%/build/classes/org/znerd/math/SmallIntegerNumber.class
-%%T%%/build/classes/org/znerd/math/Sum.class
-%%T%%/build/classes/org/znerd/math/examples/simple/SimpleExample.class
+%%T%%/build/classes/examples/org/znerd/math/examples/simple/SimpleExample.class
+%%T%%/build/classes/main/org/znerd/math/AbstractCompositeNumber.class
+%%T%%/build/classes/main/org/znerd/math/BasicRationalNumber.class
+%%T%%/build/classes/main/org/znerd/math/BasicRoundingMode.class
+%%T%%/build/classes/main/org/znerd/math/BigIntegerNumber.class
+%%T%%/build/classes/main/org/znerd/math/CanNotCompareException.class
+%%T%%/build/classes/main/org/znerd/math/CompositeNumber.class
+%%T%%/build/classes/main/org/znerd/math/DigitSet.class
+%%T%%/build/classes/main/org/znerd/math/IntegerNumber.class
+%%T%%/build/classes/main/org/znerd/math/MandatoryArgumentChecker.class
+%%T%%/build/classes/main/org/znerd/math/MissingArgumentException.class
+%%T%%/build/classes/main/org/znerd/math/NumberCentral.class
+%%T%%/build/classes/main/org/znerd/math/Power.class
+%%T%%/build/classes/main/org/znerd/math/Product.class
+%%T%%/build/classes/main/org/znerd/math/RationalNumber.class
+%%T%%/build/classes/main/org/znerd/math/RealNumber.class
+%%T%%/build/classes/main/org/znerd/math/RoundingMode.class
+%%T%%/build/classes/main/org/znerd/math/RoundingModes.class
+%%T%%/build/classes/main/org/znerd/math/SmallIntegerNumber.class
+%%T%%/build/classes/main/org/znerd/math/Sum.class
 %%T%%/build/jump.jar
+%%T%%/build/src/main/org/znerd/math/AbstractCompositeNumber.java
+%%T%%/build/src/main/org/znerd/math/BasicRationalNumber.java
+%%T%%/build/src/main/org/znerd/math/BasicRoundingMode.java
+%%T%%/build/src/main/org/znerd/math/BigIntegerNumber.java
+%%T%%/build/src/main/org/znerd/math/CanNotCompareException.java
+%%T%%/build/src/main/org/znerd/math/CompositeNumber.java
+%%T%%/build/src/main/org/znerd/math/DigitSet.java
+%%T%%/build/src/main/org/znerd/math/IntegerNumber.java
+%%T%%/build/src/main/org/znerd/math/MandatoryArgumentChecker.java
+%%T%%/build/src/main/org/znerd/math/MissingArgumentException.java
+%%T%%/build/src/main/org/znerd/math/NumberCentral.java
+%%T%%/build/src/main/org/znerd/math/Power.java
+%%T%%/build/src/main/org/znerd/math/Product.java
+%%T%%/build/src/main/org/znerd/math/RationalNumber.java
+%%T%%/build/src/main/org/znerd/math/RealNumber.java
+%%T%%/build/src/main/org/znerd/math/RoundingMode.java
+%%T%%/build/src/main/org/znerd/math/RoundingModes.java
+%%T%%/build/src/main/org/znerd/math/SmallIntegerNumber.java
+%%T%%/build/src/main/org/znerd/math/Sum.java
 %%T%%/src/examples/org/znerd/math/examples/simple/SimpleExample.java
 %%T%%/src/main/org/znerd/math/AbstractCompositeNumber.java
-%%T%%/src/main/org/znerd/math/BasicIntegerNumber.java
 %%T%%/src/main/org/znerd/math/BasicRationalNumber.java
 %%T%%/src/main/org/znerd/math/BasicRoundingMode.java
+%%T%%/src/main/org/znerd/math/BigIntegerNumber.java
 %%T%%/src/main/org/znerd/math/CanNotCompareException.java
 %%T%%/src/main/org/znerd/math/CompositeNumber.java
-%%T%%/src/main/org/znerd/math/DefaultNumberFactory.java
 %%T%%/src/main/org/znerd/math/DigitSet.java
 %%T%%/src/main/org/znerd/math/IntegerNumber.java
 %%T%%/src/main/org/znerd/math/MandatoryArgumentChecker.java
 %%T%%/src/main/org/znerd/math/MissingArgumentException.java
 %%T%%/src/main/org/znerd/math/NumberCentral.java
-%%T%%/src/main/org/znerd/math/NumberFactory.java
 %%T%%/src/main/org/znerd/math/Power.java
 %%T%%/src/main/org/znerd/math/Product.java
 %%T%%/src/main/org/znerd/math/RationalNumber.java
@@ -94,28 +105,42 @@
 %%T%%/src/main/org/znerd/math/RoundingModes.java
 %%T%%/src/main/org/znerd/math/SmallIntegerNumber.java
 %%T%%/src/main/org/znerd/math/Sum.java
+@dirrm %%T%%/src/main/org/znerd/math
+@dirrm %%T%%/src/main/org/znerd
+@dirrm %%T%%/src/main/org
+@dirrm %%T%%/src/main
 @dirrm %%T%%/src/examples/org/znerd/math/examples/simple
 @dirrm %%T%%/src/examples/org/znerd/math/examples
 @dirrm %%T%%/src/examples/org/znerd/math
 @dirrm %%T%%/src/examples/org/znerd
 @dirrm %%T%%/src/examples/org
 @dirrm %%T%%/src/examples
-@dirrm %%T%%/src/main/org/znerd/math
-@dirrm %%T%%/src/main/org/znerd
-@dirrm %%T%%/src/main/org
-@dirrm %%T%%/src/main
 @dirrm %%T%%/src
 @dirrm %%T%%/build/apidocs/org/znerd/math/class-use
 @dirrm %%T%%/build/apidocs/org/znerd/math
 @dirrm %%T%%/build/apidocs/org/znerd
 @dirrm %%T%%/build/apidocs/org
 @dirrm %%T%%/build/apidocs
-@dirrm %%T%%/build/classes/org/znerd/math/examples/simple
-@dirrm %%T%%/build/classes/org/znerd/math/examples
-@dirrm %%T%%/build/classes/org/znerd/math
-@dirrm %%T%%/build/classes/org/znerd
-@dirrm %%T%%/build/classes/org
+@dirrm %%T%%/build/src/main/org/znerd/math
+@dirrm %%T%%/build/src/main/org/znerd
+@dirrm %%T%%/build/src/main/org
+@dirrm %%T%%/build/src/main
+@dirrm %%T%%/build/src
+@dirrm %%T%%/build/classes/main/org/znerd/math
+@dirrm %%T%%/build/classes/main/org/znerd
+@dirrm %%T%%/build/classes/main/org
+@dirrm %%T%%/build/classes/main
+@dirrm %%T%%/build/classes/examples/org/znerd/math/examples/simple
+@dirrm %%T%%/build/classes/examples/org/znerd/math/examples
+@dirrm %%T%%/build/classes/examples/org/znerd/math
+@dirrm %%T%%/build/classes/examples/org/znerd
+@dirrm %%T%%/build/classes/examples/org
+@dirrm %%T%%/build/classes/examples
 @dirrm %%T%%/build/classes
+@dirrm %%T%%/build/web/homepage
+@dirrm %%T%%/build/web/apidocs
+@dirrm %%T%%/build/web/apidocs-current-redirect
+@dirrm %%T%%/build/web/apidocs-release-redirect
+@dirrm %%T%%/build/web
 @dirrm %%T%%/build
 @dirrm %%T%%
-@unexec rmdir share/java 2> /dev/null || true
