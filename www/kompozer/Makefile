@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	nvu
-PORTVERSION=	0.50
-PORTREVISION=	1
+PORTVERSION=	0.60
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A complete Web Authoring System similar to Dreamweaver or Frontpage
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
@@ -23,6 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		nspr4.1:${PORTSDIR}/devel/nspr
 
+USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GNOME=	gtk20 libidl
@@ -33,7 +33,7 @@ OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-NVU=		${PORTNAME}-0.17+
+NVU=		Nvu-0.60
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
@@ -41,8 +41,8 @@ PLIST=		${WRKDIR}/plist
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
 
-PKG_CONFIGS=	nvu-gtkmozembed.pc nvu-js.pc nvu-nspr.pc \
-		nvu-nss.pc nvu-plugin.pc nvu-xpcom.pc
+PKG_CONFIGS=	Nvu-gtkmozembed.pc Nvu-js.pc Nvu-nspr.pc \
+		Nvu-nss.pc Nvu-plugin.pc Nvu-xpcom.pc
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +51,8 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 .endif
 
 post-patch:
+# Remove so we can actaully find programs that are not in /usr/bin
+	@${RM} -f ${WRKSRC}/config.status ${WRKSRC}/config.cache
 	@${SED} -e 's|%%CC%%|${CC}|; s|%%CXX%%|${CXX}|; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
 		s|%%CFLAGS%%|${CFLAGS}|; \
@@ -89,7 +91,7 @@ pre-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		 ${MAKEFILE} ${MAKE_ARGS} install
 	${ECHO_CMD} bin/nvu >> ${PLIST}
-	${ECHO_CMD} bin/nvu-config >> ${PLIST}
+	${ECHO_CMD} bin/Nvu-config >> ${PLIST}
 	cd ${FAKEDIR}/lib/${NVU} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|lib/${NVU}/|' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
