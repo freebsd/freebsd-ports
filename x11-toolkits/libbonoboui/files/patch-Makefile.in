@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Apr  3 14:15:20 2002
-+++ Makefile.in	Wed Apr  3 14:15:25 2002
-@@ -118,7 +118,7 @@
- YACC = @YACC@
+--- Makefile.in.orig	Tue Jul 29 21:56:19 2003
++++ Makefile.in	Tue Jul 29 21:56:48 2003
+@@ -133,7 +133,7 @@
  cxxflags_set = @cxxflags_set@
- 
+ gnomelocaledir = @gnomelocaledir@
+ install_sh = @install_sh@
 -SUBDIRS = bonobo glade samples tests po doc
 +SUBDIRS = bonobo glade samples po doc
  
  libincludedir = $(includedir)/libbonoboui-2.0
- libinclude_HEADERS =  	bonobo.h		libbonoboui.h
+ libinclude_HEADERS = \
