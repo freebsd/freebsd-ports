@@ -3097,6 +3097,7 @@ kpropd		src/eBones/kpropd
 kpuzzle		ports/games/kpuzzle
 krb		src/eBones/krb
 krb5		ports/security/krb5
+krb5-beta	ports/security/krb5-beta
 krbinclude	src/eBones/include
 krbman		src/eBones/man
 krio		ports/audio/krio
