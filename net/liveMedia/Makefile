@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.03.25
+PORTVERSION=	2003.03.28
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -56,6 +56,7 @@ groupsock=		\
 		groupsock/include/groupsock_version.hh
 
 liveMedia=		\
+		liveMedia/include/AC3AudioRTPSink.hh \
 		liveMedia/include/AC3AudioStreamFramer.hh \
 		liveMedia/include/BasicUDPSource.hh \
 		liveMedia/include/ByteStreamFileSource.hh \
