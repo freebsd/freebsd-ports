@@ -12,7 +12,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	diacanvas
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rehsack@liwing.de
 COMMENT=	A general drawing canvas from dia dialog editor
 
 USE_GNOME=	gnomehack gnometarget pygnome2
