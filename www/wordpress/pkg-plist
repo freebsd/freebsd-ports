@@ -143,7 +143,6 @@
 %%WORDPRESS%%/wp-rss2.php
 %%WORDPRESS%%/wp-settings.php
 %%WORDPRESS%%/wp-trackback.php
-%%WORDPRESS%%/xmlrpc.php
 %%WORDPRESS%%/print.css
 %%WORDPRESS%%/license.txt
 %%WORDPRESS%%/readme.html
