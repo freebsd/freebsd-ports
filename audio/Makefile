@@ -21,6 +21,7 @@
     SUBDIR += gnomemedia
     SUBDIR += gogo
     SUBDIR += gqmpeg
+    SUBDIR += gramofile
     SUBDIR += gsm
     SUBDIR += icecast
     SUBDIR += id3ed

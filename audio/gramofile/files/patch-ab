@@ -1,0 +1,19 @@
+--- bplaysrc/Makefile.orig	Mon Mar 27 23:24:46 2000
++++ bplaysrc/Makefile	Fri Apr  7 12:22:05 2000
+@@ -12,12 +12,12 @@
+ ########## CHOOSE YOUR ARCHITECTURE:    (NOTE: also see ../Makefile!)
+ 
+ # For Linux (and maybe others), use these:
+-CFLAGS = -Wall -O2 -DUSEBUFFLOCK -DREDHAT50 -DLP2CD -DVUMETER # -DDEBUG
+-LIBS = -lncurses
++#CFLAGS = -Wall -O2 -DUSEBUFFLOCK -DREDHAT50 -DLP2CD -DVUMETER # -DDEBUG
++#LIBS = -lncurses
+ 
+ # For FreeBSD (and maybe others), use these:
+-#CFLAGS = -Wall -O2 -DLP2CD -DVUMETER # -DDEBUG
+-#LIBS = -lncurses
++CFLAGS += -Wall -DLP2CD -DVUMETER # -DDEBUG
++LIBS = -lncurses
+ 
+ # -DOLD_CURSES can be used here, too.
+ 

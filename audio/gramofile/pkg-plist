@@ -1,0 +1,5 @@
+bin/gramofile
+bin/bplay_gramo
+bin/brec_gramo
+share/doc/gramofile/README
+@dirrm share/doc/gramofile
