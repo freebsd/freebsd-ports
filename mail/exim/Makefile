@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTVERSION=	4.22
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
-DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
-		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	exim
 
 .if !defined(WITHOUT_EXISCAN)
 PATCH_SITES=	http://duncanthrax.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	exiscan-acl
 PATCHFILES=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2
+PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
@@ -29,19 +28,14 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN8=		exim.8
-INFO=		exim exim_filter
 
-EXIM_VERSION=		4.22
-EXIM_DOCVERSION=	4.20
-EXISCAN_ACL_VERSION=	${EXIM_VERSION}-10
+EXISCAN_ACL_VERSION=	${PORTVERSION}-11
 
-PLIST_SUB+=	EXIM_VERSION="${EXIM_VERSION}"
+PLIST_SUB+=	EXIM_VERSION="${PORTVERSION}"
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 .endif
-
-PATCH_DIST_STRIP=	-p1
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
 
@@ -244,7 +238,7 @@ SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 
 .if defined(WITH_SASLAUTHD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
-SEDLIST+=     -e 's,^\# CYRUS_SASLAUTHD_SOCKET=,CYRUS_SASLAUTHD_SOCKET=,'
+SEDLIST+=	-e 's,^\# CYRUS_SASLAUTHD_SOCKET=,CYRUS_SASLAUTHD_SOCKET=,'
 .endif
 
 .if defined(WITH_PWCHECK)
@@ -343,10 +337,6 @@ post-patch:
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
-	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-${EXIM_DOCVERSION}/doc/* ; do \
-		${LN} -sf $$i ; \
-	done
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -359,11 +349,11 @@ post-install:
 .if !defined(WITHOUT_EXISCAN)
 	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
 .endif
-.for file in ${PORTDOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.for docfile in ${PORTDOC_FILES}
+	${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
 .endfor
-.for file in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MAN8PREFIX}/man/man8
+.for manfile in ${MAN8}
+	${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${MAN8PREFIX}/man/man8
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}

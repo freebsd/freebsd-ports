@@ -5,32 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=	exim-doc-${DOCFORMAT}
+PORTNAME=	exim
 PORTVERSION=	4.20
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
-DISTNAME=	exim-${DOCFORMAT}-${PORTVERSION}
+PKGNAMESUFFIX=	-doc-${DOCFORMAT}
+DISTNAME=	exim-${DISTDOCFORMAT}-${PORTVERSION}
 DIST_SUBDIR=	exim
 
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
-NO_BUILD=	yes
-DOCSDIR=	${PREFIX}/share/doc/exim
-PLIST=		${WRKDIR}/pkg-plist
+PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
 DOCFORMAT?=	html
-.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf" && ${DOCFORMAT} != "postscript"
+DISTDOCFORMAT?=	${DOCFORMAT}
+.if ${DOCFORMAT} != "html" && ${DOCFORMAT} != "pdf" && ${DOCFORMAT} != "postscript" && ${DOCFORMAT} != "info"
 .BEGIN:
 	@ ${ECHO} 'ERROR: invalid value for DOCFORMAT: "${DOCFORMAT}"'
-	@ ${ECHO} 'Possible values are "html", "pdf" and "postscript".'
+	@ ${ECHO} 'Possible values are "html", "pdf", "postscript" and "info".'
 	@ ${FALSE}
 .endif
 
-pre-install:
-	@ ${CP} ${PKGDIR}/pkg-plist_${DOCFORMAT} ${PLIST}
+do-build:
+.if ${DOCFORMAT} == "info"
+	@ cd ${WRKSRC}/doc; \
+		makeinfo --no-split --output exim.info spec.texinfo; \
+		makeinfo --no-split --output exim_filter.info filter.texinfo
+.else
+	@ ${DO_NADA}
+.endif
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -43,6 +49,15 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCSDIR}
 .elif ${DOCFORMAT} == "postscript"
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCSDIR}
+.elif ${DOCFORMAT} == "info"
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/exim.info ${PREFIX}/info
+	@ install-info --section="Exim" \
+		--entry "* User guide: (exim).           Exim manual" \
+		${PREFIX}/info/exim.info ${PREFIX}/info/dir
+	@ ${INSTALL_DATA} ${WRKSRC}/doc/exim_filter.info ${PREFIX}/info
+	@ install-info --section="Exim" \
+		--entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
+		${PREFIX}/info/exim_filter.info ${PREFIX}/info/dir
 .endif
 .endif
 
