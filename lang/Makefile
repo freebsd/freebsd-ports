@@ -114,6 +114,7 @@
     SUBDIR += pm3-netobj
     SUBDIR += pnet
     SUBDIR += ptoc
+    SUBDIR += py-compiler
     SUBDIR += py-mx-base
     SUBDIR += python
     SUBDIR += python+ipv6
