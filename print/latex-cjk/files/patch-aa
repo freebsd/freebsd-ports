@@ -1,0 +1,21 @@
+--- Makefile.orig	Fri Oct  2 17:33:23 1998
++++ Makefile	Fri Oct  2 17:33:23 1998
+@@ -0,0 +1,18 @@
++#
++# Makefile for CJK to apply on Unix systems more smoothly.
++#
++# keith@email.gcn.net.tw
++#
++
++all:
++	$(MAKE) -C 4_1.3 $@
++
++install: all
++	$(MAKE) -C 4_1.3 $@
++
++test-teTeX-patch:
++	$(MAKE) -C 4_1.3 test-teTeX-patch
++
++clean:
++	$(MAKE) -C 4_1.3 $@
++

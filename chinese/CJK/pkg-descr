@@ -1,0 +1,9 @@
+Welcome to the CJK version 4.1.3 (20-Jun-1997), a LaTeX2e macro package
+which enables the use of CJK scripts (Chinese/Japanese/Korean) in various
+encodings.
+
+=====
+This port only adds Chinese support. To support other Asian languages, see
+CJK documents for details.
+
+J.T. Jang <keith@email.gcn.net.tw>

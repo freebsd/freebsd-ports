@@ -1,0 +1,21 @@
+#!/bin/sh
+PATH=/bin:/usr/bin
+
+TeX_FONT_PATH=${PREFIX}/share/texmf/fonts
+export TeX_FONT_PATH
+
+#
+# Creating Chinese TTF & HBF font directories
+#
+if [ ! -d ${TeX_FONT_PATH}/truetype/chinese ];
+then mkdir -p ${TeX_FONT_PATH}/truetype/chinese; fi
+if [ ! -d ${TeX_FONT_PATH}/hbf/chinese ];
+then mkdir -p ${TeX_FONT_PATH}/hbf/chinese; fi
+
+#
+# Install ntu_kai.ttf if USE_NTUTTF is defined.
+#
+if [ ${USE_NTUTTF} ]
+then
+    install -o root -g wheel -m 644 ${WRKDIR}/ntu_kai.ttf ${TeX_FONT_PATH}/truetype/chinese
+fi
