@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/28 10:14:24 asami Exp $
+# $Id: Makefile,v 1.4 1999/02/22 02:48:42 steve Exp $
 #
 
 DISTNAME=	flim-${FLIM_VER}
@@ -11,7 +11,7 @@ PKGNAME=	flim-${EMACS_PORT}-${FLIM_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/flim/flim-1.09/
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT} \
 		nkf:${PORTSDIR}/japanese/nkf \

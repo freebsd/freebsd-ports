@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/05 05:35:47 flathill Exp $
+# $Id: Makefile,v 1.2 1999/01/06 05:16:28 simokawa Exp $
 #
 
 DISTNAME=	libapm-linux-1.0beta5
@@ -11,7 +11,7 @@ PKGNAME=	${PROGRAM_NAME}-1.0b5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 ONLY_FOR_ARCHS=	i386
 

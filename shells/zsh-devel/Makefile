@@ -3,7 +3,7 @@
 # Date created:			31 October 1998
 # Whom:				shige
 #
-# $Id: Makefile,v 1.28 1998/12/24 07:42:53 asami Exp $
+# $Id: Makefile,v 1.29 1998/12/24 08:01:22 steve Exp $
 #
 
 DISTNAME=	zsh-3.1.5
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.zsh.org/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
