@@ -9,7 +9,11 @@
 
 PORTNAME=	ppxp
 PORTVERSION=	0.99120923
-CATEGORIES+=	net tk82
+.if defined(WITH_TCLJP)
+CATEGORIES+=	net tk80
+.else
+CATEGORIES+=	net tk83
+.endif
 MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
 		http://www.linet.gr.jp/~manabe/PPxP/packages/	\
 		http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/
@@ -43,11 +47,11 @@ CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.0jp \
 		--with-tcl-config=${PREFIX}/lib/tcl8.0jp/tclConfig.sh \
 		--with-tk-config=${PREFIX}/lib/tk8.0jp/tkConfig.sh
 .else
-CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.2 \
-		--with-wish=${PREFIX}/bin/wish8.2 \
-		--with-tcl-includes=${PREFIX}/include/tcl8.2 \
-		--with-tcl-config=${PREFIX}/lib/tcl8.2/tclConfig.sh \
-		--with-tk-config=${PREFIX}/lib/tk8.2/tkConfig.sh
+CONFIGURE_ARGS+= --with-tclsh=${PREFIX}/bin/tclsh8.3 \
+		--with-wish=${PREFIX}/bin/wish8.3 \
+		--with-tcl-includes=${PREFIX}/include/tcl8.3 \
+		--with-tcl-config=${PREFIX}/lib/tcl8.3/tclConfig.sh \
+		--with-tk-config=${PREFIX}/lib/tk8.3/tkConfig.sh
 .endif
 MAN1=		PPxP.1 plast.1
 MAN5=		ppxp-files.5
