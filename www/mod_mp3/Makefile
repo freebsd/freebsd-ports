@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_mp3
-PORTVERSION=	0.19
+PORTVERSION=	0.22
 CATEGORIES=	www audio
 MASTER_SITES=	http://media.tangent.org/ \
 		ftp://ftp.tangent.org/pub/apache/ \
@@ -25,7 +25,7 @@ DOCS=		ChangeLog README TODO faq.html
 do-install:
 	${APXS} -i -A -n mp3 ${WRKSRC}/mod_mp3.so
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/mod_mp3
+	@${INSTALL} -d -m 0755 ${PREFIX}/share/doc/mod_mp3
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/mod_mp3/
 .endfor
