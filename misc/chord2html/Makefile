@@ -22,7 +22,7 @@ NO_BUILD=	yes
 MAN1=	chord2html.1
 
 PLIST_FILES=	bin/chord2html share/chord2html/chord2html.css
-PLIST_DIR=	share/chord2html
+PLIST_DIRS=	share/chord2html
 
 post-patch:
 	@${PERL} -pi -e "s,/usr/bin/perl,${PERL},g ; \
