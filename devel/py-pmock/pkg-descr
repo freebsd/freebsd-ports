@@ -1,0 +1,5 @@
+Inspired by the Java jMock library, pMock makes the writing of unit tests
+using mock object techniques easier.
+
+Author:	Graham Carlyle (grahamcarlyle@users.sourceforge.net)
+WWW:    http://pmock.sourceforge.net/
