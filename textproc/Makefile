@@ -223,6 +223,7 @@
     SUBDIR += py-martel
     SUBDIR += py-sgrep
     SUBDIR += py-trex
+    SUBDIR += py-wordnet
     SUBDIR += py-xml
     SUBDIR += py-xmltools
     SUBDIR += py2html

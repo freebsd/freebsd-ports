@@ -1,0 +1,6 @@
+lib/%%PYTHON_VERSION%%/site-packages/wordnet.py
+lib/%%PYTHON_VERSION%%/site-packages/wordnet.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wordnet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/wntools.py
+lib/%%PYTHON_VERSION%%/site-packages/wntools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/wntools.pyo
