@@ -1,0 +1,253 @@
+#!/usr/local/bin/ruby
+#
+# tdiaryinstall.rb - tDiary user directory copy script
+# Date created:			13 July 2003
+# Whom:				KAMIYA Satosi  <mimoriso@anet.ne.jp>
+#
+# $FreeBSD$
+#
+
+require 'getoptlong'
+require 'etc.so'
+require 'fileutils'
+require 'find'
+require 'tempfile'
+
+# make install時に置換されるグローバル変数 --tdiarymaster, --lang オプションで上書き可能
+$OPT_TDIARYMASTER = "@@@@PREFIX@@@@/share/examples/tdiary"
+$OPT_LANG         = '@@@@LANG@@@@'
+
+def usage
+  STDERR.print "Usage: #{File.basename($0)} [options]\n"
+  STDERR.print "Options:\n"
+  STDERR.print "    --help                    Display this information\n"
+  STDERR.print "    --user=<username>         Specify user's login name\n"
+  STDERR.print "    --diarydir=<diarydir>     Specify tDiary data directory default: diary\n"
+  STDERR.print "    --httpdir=<httpdir>       Specify apache UserDirectory  default: public_html\n"
+  STDERR.print "    --name=<author_name>      Specify author name\n"
+  STDERR.print "    --mail=<author_mail>      Specify author mail address\n"
+  STDERR.print "    --tdiarymaster=<dir>      Specify tDiary master directory default: @@@@PREFIX@@@@/share/examples/tdiary\n"
+  STDERR.print "    --lang=<language>         Specify your language ('en' or 'ja') default: @@@@LANG@@@@\n"
+  STDERR.print "    --suexec                  Use suExec for CGI execution\n"
+  STDERR.print "    --symlink                 Use symbolic link for tDiary master files\n"
+  STDERR.print "    --quiet                   Do not display any information\n"
+  STDERR.print "    --noop                    Do not install any file. Use this option with --verbose\n"
+  STDERR.print "    --verbose                 Verbose; display verbose debugging messages.\n"
+  exit 1
+end
+
+# 引数の解析
+parser = GetoptLong.new
+parser.set_options(
+  ['--user',    '-u', GetoptLong::REQUIRED_ARGUMENT],
+  ['--diarydir','-d', GetoptLong::REQUIRED_ARGUMENT],
+  ['--httpdir' ,'-h', GetoptLong::REQUIRED_ARGUMENT],
+  ['--name',    '-n', GetoptLong::REQUIRED_ARGUMENT],
+  ['--mail',    '-m', GetoptLong::REQUIRED_ARGUMENT],
+  ['--tdiarymaster' , GetoptLong::REQUIRED_ARGUMENT],
+  ['--lang'         , GetoptLong::REQUIRED_ARGUMENT],
+  ['--suexec'       , GetoptLong::NO_ARGUMENT],
+  ['--symlink', '-l', GetoptLong::NO_ARGUMENT],
+  ['--quiet',   '-q', GetoptLong::NO_ARGUMENT],
+  ['--noop'         , GetoptLong::NO_ARGUMENT],
+  ['--verbose'      , GetoptLong::NO_ARGUMENT],
+  ['--help'         , GetoptLong::NO_ARGUMENT])
+begin
+  parser.each_option do |name, arg|
+    eval "$OPT_#{name.sub(/^--/, '').gsub(/-/, '_').upcase} = '#{arg}'"
+  end
+rescue
+  raise "getoptlong"
+end
+usage() if defined?($OPT_HELP)
+
+class TdiaryInstall
+  attr_accessor :tdiarymaster
+  attr_accessor :tdconfig
+  attr_accessor :lang
+  attr_reader   :euid # tdiaryinstallを実行しているユーザID
+  attr_accessor :username
+  attr_accessor :diarydir
+  attr_accessor :httpdir
+  attr_reader   :passwd
+  attr_accessor :fileutilOptions
+  attr_accessor :author_name
+  attr_accessor :author_mail
+  attr_accessor :author_host
+  def initialize # 初期値の設定
+    @passwd   = Etc.getpwuid() # 初期値はログインユーザ
+    @euid     = @passwd.uid
+    @username = (@passwd.name) # username=(value) メソッドで再定義している
+    @diarydir = 'diary'
+    @httpdir  = 'public_html'
+    @fileutilOptions = []
+    @author_name = @passwd.gecos # F.Kimura
+    @author_host = "#{`hostname`.chomp}" # F.Kimura
+    @author_mail = "#{@username}@#{`hostname`.chomp}"
+  end
+
+  def username=(value) # username を代入する際に passwdメンバ変数も更新する
+    @username = value
+    @passwd = Etc.getpwnam(@username) # getpwnam(3) により passwd 構造体を取得する
+    # ユーザ名が存在しなかった場合、Etc.getpwnam() は例外を発生する。
+    @author_name = @passwd.gecos
+    @author_mail = "#{@username}@#{`hostname`.chomp}"
+  end
+
+  def lang=(value)
+    case value
+    when 'tdiary.conf-en' , 'en'
+      @lang = 'en'
+      @tdconfig = 'tdiary.conf-en'
+    when 'tdiary.conf-ja' , 'ja'
+      @lang = 'ja'
+      @tdconfig = 'tdiary.conf-ja'
+    else
+      raise "Unknown Language : #{value}"
+    end
+  end
+
+  def installAll
+    raise "You can not use tDiary for superuser." if @passwd.uid == 0
+
+    echo "************************************************************\n"
+    echo "Starting tDiary for FreeBSD  user directory installation ...\n"
+    prepareDirs()
+
+    echo "Copy tDiary ...\n"
+    if $OPT_SYMLINK then
+      linkBaseFile()
+    else
+      copyBaseFile()
+    end
+
+    installConfig()
+    setPermissions() if ! defined?($OPT_NOOP)
+
+    echo "***\n"
+    echo "You have to execute the following commands:\n"
+    echo "    % /usr/local/sbin/htpasswd -c #{@passwd.dir}/.htpasswd #{@username}\n\n"
+    echo "Please read #{@tdiarymaster}/README\n"
+    echo "    for additional information.\n"
+    echo "************************************************************\n"
+  end
+
+  def prepareDirs
+    # インストール先ディレクトリの用意
+    if ! FileTest.exist?("#{@passwd.dir}/#{@diarydir}")
+      FileUtils.mkdir_p("#{@passwd.dir}/#{@diarydir}", *@fileutilOptions)
+    end
+    if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}")
+      FileUtils.mkdir_p("#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    end
+  end
+
+  def linkBaseFile # tDiaryの配布ファイルはコピーしない
+    FileUtils.cp_r("#{@tdiarymaster}/plugin", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
+    FileUtils.ln_s("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    FileUtils.ln_s("#{@tdiarymaster}/doc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions)
+    tempfile = Tempfile.new("index.rb")
+    tempfile.write "#!/usr/local/bin/ruby\nrequire '#{@tdiarymaster}/index'\n"
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
+    FileUtils.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", *@fileutilOptions)
+    tempfile = Tempfile.new("update.rb")
+    tempfile.write "#!/usr/local/bin/ruby\nrequire '#{@tdiarymaster}/update'\n"
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
+    FileUtils.chmod(0755, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/update.rb", *@fileutilOptions)
+  end
+
+  def copyBaseFile # tDiaryの配布ファイルをすべてコピー
+    FileUtils.cp_r("#{@tdiarymaster}/", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", :preserve, *@fileutilOptions)
+  end
+
+  def installConfig
+    # 設定ファイルを生成してインストール
+    tempfile = Tempfile.new("tdiary.conf-ja") # 日本語環境サンプル
+    tempfile.write tdiaryConfReplace("#{@tdiarymaster}/tdiary.conf.sample")
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-ja", *@fileutilOptions)
+
+    tempfile = Tempfile.new("tdiary.conf-en") # sample configuration for English Environment
+    tempfile.write tdiaryConfReplace("#{@tdiarymaster}/misc/i18n/tdiary.conf.sample-en")
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-en", *@fileutilOptions)
+
+    if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf") # tdiary.conf がなければ設置
+      FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/#{@tdconfig}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf", *@fileutilOptions)
+    end
+    # TODO: @langの値によって plugin/00lang.en.rb コピー/削除の制御もしたい
+
+    tempfile = Tempfile.new("dot.htaccess")
+    tempfile.write dothtaccessReplace("#{@tdiarymaster}/dot.htaccess")
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/dot.htaccess", *@fileutilOptions)
+    if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/.htaccess")
+      FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/dot.htaccess", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/.htaccess", *@fileutilOptions)
+    end
+  end
+
+  def setPermissions # ファイルコピー・生成以外の処理
+    FileUtils.chmod(0777, "#{@passwd.dir}/#{@diarydir}", *@fileutilOptions) if ! defined?($OPT_SUEXEC)
+    FileUtils.chmod(0777, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", *@fileutilOptions) if ! defined?($OPT_SUEXEC)
+    FileUtils.rm("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary-FreeBSD.sh", :force, *@fileutilOptions)
+
+    if @euid == 0 then # superuser 権限でこのインストーラを実行している場合
+      # すべてのディレクトリ・ファイルに chown で所有者変更
+      Find.find("#{@passwd.dir}/#{@diarydir}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}") do |f|
+        File.chown(@passwd.uid, @passwd.gid, f)
+      end
+      if File::Stat.new("#{@passwd.dir}/#{@httpdir}").uid == 0 # ~/public_html のオーナーがsuperuser
+        File.chown(@passwd.uid, @passwd.gid, "#{@passwd.dir}/#{@httpdir}")
+      end
+    end
+  end
+
+  def echo(s) # --quiet が指定されていなかった場合にメッセージを出力する
+    STDOUT.print s if ! defined?($OPT_QUIET)
+  end
+
+  def tdiaryConfReplace(filename) # サンプル tdiary.conf を書き換えるメソッド
+    s = ''
+    File.open(filename) { |fp|
+      fp.each { |line|
+        line = "@data_path = '#{@passwd.dir}/#{@diarydir}'\n" if line =~ /^\@data_path\s/
+        line = "@author_name = '#{@author_name}'\n" if line =~ /^\@author_name\s/
+        line = "@author_mail = '#{@author_mail}'\n" if line =~ /^\@author_mail\s/
+        line = "@html_title = '#{@author_name} diary'\n" if line =~ /^\@html_title\s/
+        line = "@index_page = 'http://#{@author_host}/~#{@username}\/'" if line =~ /^\@index_page\s/ # F.Kimura
+        s += line
+      }
+    }
+    s
+  end
+
+  def dothtaccessReplace(filename) # サンプル dot.htaccess を書き換えるメソッド
+    s = ''
+    File.open(filename) { |fp|
+      fp.each { |line|
+        line = "\tAuthUserFile  #{@passwd.dir}/.htpasswd\n" if line =~ /^\s*AuthUserFile\s/
+        line = "\tRequire user  #{@username}\n" if line =~ /^\s*Require user\s/
+        line = "Options +FollowSymLinks\n" if line =~ /^\#Options \+FollowSymLinks/ && $OPT_SYMLINK
+        s += line
+      }
+    }
+    s
+  end
+end
+
+tdiaryinst = TdiaryInstall.new
+tdiaryinst.tdiarymaster = $OPT_TDIARYMASTER
+tdiaryinst.lang = $OPT_LANG
+tdiaryinst.username = $OPT_USER if defined?($OPT_USER) # $OPT_NAMEの設定より前でないといけない
+tdiaryinst.diarydir = $OPT_DIARYDIR if defined?($OPT_DIARYDIR)
+tdiaryinst.httpdir = $OPT_HTTPDIR if defined?($OPT_HTTPDIR)
+tdiaryinst.author_name = $OPT_NAME if defined?($OPT_NAME)
+tdiaryinst.author_mail = $OPT_MAIL if defined?($OPT_MAIL)
+tdiaryinst.fileutilOptions.push(:noop) if defined?($OPT_NOOP)
+tdiaryinst.fileutilOptions.push(:verbose) if defined?($OPT_VERBOSE)
+
+tdiaryinst.installAll
+
+exit 0
