@@ -11,10 +11,14 @@ bin/y2racc
 %%RUBY_SITELIBDIR%%/racc/raccs.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
 %%RUBY_SITELIBDIR%%/racc/ucodep.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/array.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/array2.y
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/calc-ja.y
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/calc.y
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/conflict.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/hash.y
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/lalr.y
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/lists.y
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/syntax.y
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/racc/yyerr.y
 %%PORTDOCS%%%%RUBY_DOCDIR%%/racc/ja/changes.html
