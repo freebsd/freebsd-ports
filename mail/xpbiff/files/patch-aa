@@ -1,5 +1,5 @@
---- config.h.orig	Wed Oct 19 14:56:25 1994
-+++ config.h	Mon Jul 14 23:11:10 1997
+--- config.h.orig	Wed Oct 19 00:56:25 1994
++++ config.h	Sun May 30 21:19:39 1999
 @@ -8,7 +8,7 @@
  /*
   *	For X11R6
@@ -102,15 +102,17 @@
  
  /*
   *	For SUN Audio
-@@ -88,9 +120,17 @@
+@@ -88,9 +120,19 @@
  #undef SUN_AUDIO
  #undef AudioIncDir /usr/demo/SOUND
  
 +/*
 + * For BSD Audio (FreeBSD)
 + */
++#ifndef __alpha
 +#define BSD_AUDIO
-+			
++#endif
++
  /* 
   * For YOUBIN Service
  */
