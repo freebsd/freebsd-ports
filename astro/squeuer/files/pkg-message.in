@@ -2,7 +2,7 @@
 =============================================================
 To use SQueuer with the setiathome port, the file 
 
-	/usr/local/etc/rc.setiathome.conf
+	%%LOCALBASE%%/etc/rc.setiathome.conf
 
 must be modified (specifically the seti_proxy_server setting)
 and setiathome restarted.
