@@ -121,14 +121,15 @@ yesno "Do you want to enable XDM-AUTHORIZATION-1 support? [YES] "
 if [ $answ = YES ]; then
     WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
 
+    cpwh=NO
     if [ -f $WH ] ; then
 	echo "==> $WH found in source distribution."
     elif [ -f $X11FIXES/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in fix directory, copying to source tree."
-	cp $X11FIXES/Wraphelp.c $WH
+	cpwh=$X11FIXES/Wraphelp.c
     elif [ -f $FILESDIR/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in files directory, copying to source tree."
-	cp $FILESDIR/Wraphelp.c $WH
+	cpwh=$FILESDIR/Wraphelp.c
     else
 	echo "==> Wraphelp.c not found, DES support NOT enabled."
 	answ=NO
@@ -220,6 +221,10 @@ else
   X11FIXES=`cat $WRKDIR/.ftp`
   pl=12
   configure
+fi
+
+if [ $cpwh != NO ]; then
+  cp $cpwh $WH
 fi
 
 echo -n "==> applying XC patches"
