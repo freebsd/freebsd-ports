@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Duel in the universe
 
 USE_REINPLACE=	yes
-USE_SDL=	sdl
+USE_SDL=	sdl mixer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
