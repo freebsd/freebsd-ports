@@ -182,5 +182,7 @@ pre-install:
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
+	@${CAT} ${PKGMESSAGE}
+
 
 .include <bsd.port.mk>

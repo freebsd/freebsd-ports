@@ -57,7 +57,7 @@ This patch makes three changes to the exim_install script:
  
  # Install info files if the directory is defined and the Texinfo
  # source documentation is present.
-@@ -239,19 +234,21 @@
+@@ -239,23 +234,25 @@
    echo $com Info installation directory is ${INFO_DIRECTORY}
    echo $com ""
  
@@ -67,14 +67,16 @@ This patch makes three changes to the exim_install script:
    echo ${CP} exim_overview.info ${INFO_DIRECTORY}
    ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
    install-info --section="Exim" \
-       --entry "* Overview: (exim_overview).    Overview of the Exim system" \
+-      --entry "* Overview: (exim_overview).    Overview of the Exim system" \
++      --entry "* Exim Overview: (exim_overview).   Overview of the Exim system" \
        ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
 -  makeinfo --no-split --output exim.info ../doc/spec.texinfo
 +  makeinfo --no-validate --no-split --output exim.info ../doc/spec.texinfo
    echo ${CP} exim.info ${INFO_DIRECTORY}
    ${real} ${CP} exim.info ${INFO_DIRECTORY}
    install-info --section="Exim" \
-       --entry "* User guide: (exim).           Exim manual" \
+-      --entry "* User guide: (exim).           Exim manual" \
++      --entry "* Exim Specification: (exim).       Exim manual" \
        ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
 -  makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
 +  makeinfo --no-validate --no-split --output exim_filter.info \
@@ -82,3 +84,8 @@ This patch makes three changes to the exim_install script:
    echo ${CP} exim_filter.info ${INFO_DIRECTORY}
    ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
    install-info --section="Exim" \
+-      --entry "* Filtering: (exim_filter).     Filtering mail with Exim" \
++      --entry "* Exim Filtering: (exim_filter).    Filtering mail with Exim" \
+       ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
+ fi
+ 
