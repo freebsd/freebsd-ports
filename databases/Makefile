@@ -136,6 +136,7 @@
     SUBDIR += py-psycopg
     SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlrelay
+    SUBDIR += pydbdesigner
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += ruby-bdb
