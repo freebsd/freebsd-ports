@@ -12,6 +12,7 @@ CATEGORIES=	security
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	fwtk2.1${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
+DIST_SUBDIR=	fwtk
 
 .if defined(WITH_JUMBO_PATCH)
 PATCHFILES=	trg-jumbo-20001114.diff
@@ -45,9 +46,9 @@ MAN8+=		x-gw.8
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/fwtk2.1${EXTRACT_SUFX}) \
-	&& !exists(${DISTDIR}/fwtk-doc-only${EXTRACT_SUFX})
-IGNORE='Please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again'
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/fwtk2.1${EXTRACT_SUFX}) \
+	&& !exists(${DISTDIR}/${DIST_SUBDIR}fwtk-doc-only${EXTRACT_SUFX})
+IGNORE='Please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/dist/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR}/${DIST_SUBDIR} and run make again'
 .endif
 
 pre-patch:
