@@ -1,9 +1,9 @@
---- etc/drweb_postfix.conf.orig	Wed Dec  4 16:17:33 2002
-+++ etc/drweb_postfix.conf	Wed Dec  4 16:56:36 2002
-@@ -14,14 +14,14 @@
- #   Address = inet:3000@localhost
+--- etc/drweb_postfix.conf.orig	Sat Mar  1 00:19:10 2003
++++ etc/drweb_postfix.conf	Sat Mar  1 00:28:41 2003
+@@ -17,14 +17,14 @@
  #   Address = local:/usr/local/drweb/run/drwebd.skt
  #   Address = pid:/usr/local/drweb/run/drwebd.pid
+ #   Address = pid:/var/drweb/run/drwebd.pid, inet:3000@backup_server.example.com
 -Address = inet:3000@localhost
 +Address = local:%PREFIX%/drweb/run/drwebd.sock
  
@@ -17,7 +17,7 @@
  
  ########################
  # Scan options section #
-@@ -58,10 +58,10 @@
+@@ -69,10 +69,10 @@
  DenyOnOne = yes
  
  # List with rules for users or domains to block scanning 
@@ -30,16 +30,24 @@
  
  # Permissions for created spool files
  SpoolFilesMode = 0600
-@@ -144,16 +144,16 @@
+@@ -176,22 +176,22 @@
  ProcessingErrors = reject
  
  # Admin mail address (may be unix-local address)
--AdminMail = av-admin@example.com
+-AdminMail = av-master@example.com
 +AdminMail = postmaster
  
  # Filter address, that be used in From:
--FilterMail = DrWeb-DAEMON@example.com
-+FilterMail = DrWeb-DAEMON@%HOSTNAME%
+-FilterMail = DrWEB-DAEMON@example.com
++FilterMail = DrWEB-DAEMON@%HOSTNAME%
+ 
+ # List of unnotificable viruses
+-UnnotificableVirusesList = /etc/drweb/viruses.conf
++UnnotificableVirusesList = %PREFIX%/etc/drweb/viruses.conf
+ 
+ # List of unnotificable addresses
+-UnnotificableAddressesList = /etc/drweb/addresses.conf
++UnnotificableAddressesList = %PREFIX%/etc/drweb/addresses.conf
  
  # Quarantine directory. 
  # The infected files could be moved in that dir 
@@ -50,44 +58,45 @@
  
  # Permissions for quarantined files
  QuarantineFilesMode = 0660
-@@ -168,32 +168,32 @@
+@@ -206,9 +206,9 @@
  RcptsNotify = yes
  
  # Files with notification templates
 -AdminTemplate = /etc/drweb/templates/en-ru/postfix/virus-admin.msg
--SenderTemplate = /etc/drweb/templates/en-ru/postfix/virus-sender.msg
 -RcptsTemplate = /etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/virus-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-sender.msg
 +RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-sender.msg
  
  [SkipNotifications]
- AdminNotify = no
  SenderNotify = yes
+@@ -216,23 +216,23 @@
  RcptsNotify = no
  AdminTemplate = 
+ RcptsTemplate = 
 -SenderTemplate = /etc/drweb/templates/en-ru/postfix/skip-sender.msg
 +SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/skip-sender.msg
- RcptsTemplate = 
  
- [MailbombNotifications]
- AdminNotify = yes
+ [ArchiveRestrictionNotifications]
  SenderNotify = yes
+ AdminNotify = yes
  RcptsNotify = no
--AdminTemplate = /etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg
--SenderTemplate = /etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg
-+AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg
+-AdminTemplate = /etc/drweb/templates/en-ru/postfix/archive-admin.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/archive-admin.msg
  RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/archive-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/archive-sender.msg
  
  [ErrorNotifications]
- AdminNotify = yes
  SenderNotify = yes
+ AdminNotify = yes
  RcptsNotify = no
 -AdminTemplate = /etc/drweb/templates/en-ru/postfix/error-admin.msg
--SenderTemplate = /etc/drweb/templates/en-ru/postfix/error-sender.msg
 +AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-admin.msg
-+SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-sender.msg
  RcptsTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/error-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-sender.msg
  
  ###################
+ # Logging section #
