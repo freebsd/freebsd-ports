@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-PKGNAME=	setiathome-1.2
+PORTNAME=	setiathome
+PORTVERSION=	1.2
 CATEGORIES=	astro
 MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
 		ftp://ftp.cdrom.com/pub/setiathome/ \
