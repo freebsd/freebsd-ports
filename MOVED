@@ -423,3 +423,4 @@ chinese/acroread-chtfont|chinese/acroread5-chtfont|2003-07-24|security vulnerabi
 x11-wm/xfwm4|x11-wm/xfce4-wm|2003-07-27|rename it to be consistent with other xfce4 ports
 misc/shc||2003-07-30|broken for nearly a year
 mail/icqmail||2003-07-30|port no longer works, and is no longer developed
+games/bnetd||2003-07-30|project was abandoned for legal reasons

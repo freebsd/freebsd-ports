@@ -40,7 +40,6 @@
     SUBDIR += block
     SUBDIR += blockade
     SUBDIR += blue
-    SUBDIR += bnetd
     SUBDIR += bogged
     SUBDIR += bomb
     SUBDIR += bomberclone
