@@ -7,22 +7,18 @@
 #
 
 PORTNAME=	tinycdb
-PORTVERSION=	0.72
+PORTVERSION=	0.73
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.corpit.ru/pub/tinycdb/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analogous to cdb, but faster
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}"
 
 MAN1=	cdb.1
 MAN3=	cdb.3
 MAN5=	cdb.5
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
-		-e "s|^CC|#CC|" -e "s|^CFLAGS|#CFLAGS|" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
