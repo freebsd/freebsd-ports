@@ -1,0 +1,12 @@
+Napster is a MP3 file sharing, search, and chat client, all rolled
+into one.  With it, you can join a global community of MP3 enthusiasts,
+sharing your MP3 collection with them and downloading from their shared
+MP3 collections.
+
+For more info on Napster, please visit http://www.napster.com/ and
+http://www.napster.com/FAQ/.
+
+This is a Linux binary port (sorry, no source is available) and requires
+the linux_base port to be installed.
+
+Donald Burr <dburr@FreeBSD.ORG>

@@ -1,0 +1,5 @@
+bin/nap
+share/nap/nap.conf
+@dirrm share/nap
+share/doc/nap/README
+@dirrm share/doc/nap
