@@ -1,0 +1,6 @@
+%%SITE_PERL%%/P4.pm
+%%SITE_PERL%%/auto/P4/autosplit.ix
+%%SITE_PERL%%/example.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/P4/.packlist
+@unexec rmdir %%SITE_PERL%%/%%PERL_ARCH%%/auto/P4 2>/dev/null || true
+@unexec rmdir %%SITE_PERL%%/auto/P4 2>/dev/null || true
