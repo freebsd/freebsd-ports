@@ -1,0 +1,42 @@
+--- Makefile	Tue Nov 26 20:56:14 2002
++++ Makefile	Sun Dec  1 23:15:33 2002
+@@ -1,29 +1,13 @@
+-all:
+-	@echo "wmShutdown version 0.1 - Rafael V. Aroca <rafael@linuxqos.cjb.net>"
+-	@echo "Order of makes to install: dock, shutdown, install"
+-
+-clean:
+-	rm -f wmShutdown.o  
+-	rm -f wmShutdown
+-	rm -f Shutdown
++GTK-CONFIG=	gtk-config
++GTKCFLAGS=	`$(GTK-CONFIG) --cflags`
++GTKLIBS=	`$(GTK-CONFIG) --libs`
+ 
+-install:
+-	install wmShutdown /usr/local/bin
+-	install wmShutdown.xpm /usr/share/pixmaps/
+-	install -g root -o root Shutdown /usr/local/bin
+-	chmod +s /sbin/shutdown
+-	chmod +s /usr/local/bin/Shutdown
+-	@echo Installed. Just type wmShutdown to use it
+-
+-uninstall:
+-	rm -f /usr/local/bin/wmShutdown
+-	rm -f /usr/local/bin/Shutdown
+-	rm -f /usr/share/pixmaps/wmShutdown.xpm
+-	@echo ":-( Uninstalled."
++all: wmShutdown Shutdown
++	@echo "wmShutdown version 0.1 - Rafael V. Aroca <rafael@linuxqos.cjb.net>"
+ 
+-dock: wmShutdown.c
+-	$(CC) -c -o wmShutdown.o wmShutdown.c `gtk-config --cflags` 
+-	$(CC) -o wmShutdown wmShutdown.o `gtk-config --libs` 
++wmShutdown: wmShutdown.c
++	$(CC) -c -o wmShutdown.o wmShutdown.c $(GTKCFLAGS) 
++	$(CC) -o wmShutdown wmShutdown.o $(GTKLIBS)
+ 
+-shutdown: shutdown.c
+-	$(CC) -o Shutdown shutdown.c 
++Shutdown: shutdown.c
++	$(CC) -o Shutdown shutdown.c

@@ -1,0 +1,29 @@
+--- wmShutdown.c.orig	Sun Dec  1 23:53:12 2002
++++ wmShutdown.c	Mon Dec  2 00:03:42 2002
+@@ -57,7 +57,7 @@
+ 	FILE *output;
+ 	char *teste;
+ 
+-	output = popen("/usr/local/bin/Shutdown -h", "r");
++	output = popen("/usr/X11R6/bin/Shutdown -h", "r");
+ 	teste = (char*) fgetc(output);
+ 	while ((int)teste != EOF) {
+ 		g_print("%c", teste);
+@@ -70,7 +70,7 @@
+ 	FILE *output;
+ 	char *teste;
+ 
+-	output = popen("/usr/local/bin/Shutdown -r", "r");
++	output = popen("/usr/X11R6/bin/Shutdown -r", "r");
+ 	teste = (char*) fgetc(output);
+ 	while ((int)teste != EOF) {
+ 		g_print("%c", teste);
+@@ -148,7 +148,7 @@
+ 	gtk_widget_realize(dockArea);	    
+ 
+         icon = (gpointer) gdk_pixmap_create_from_xpm (gtkiw->window, &mask,
+-                	NULL, "/usr/share/pixmaps/wmShutdown.xpm");
++                	NULL, "/usr/X11R6/share/wmShutdown/pixmaps/wmShutdown.xpm");
+ 
+         pixmap = gtk_pixmap_new((gpointer) icon, mask);
+         gtk_widget_show(pixmap);
