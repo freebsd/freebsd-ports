@@ -5,7 +5,7 @@
           HPDEFS = -D_HPUX_SOURCE
           HPINCS = -I/usr/include/Motif1.2 
 -       MOTIFLIB = -L/usr/lib/Motif1.2 -lXm
-+       MOTIFLIB = -L/usr/lib/Motif1.2 -lXm ${MOTIFLIB}
++       MOTIFLIB ?= -L/usr/lib/Motif1.2 -lXm
  #endif
  
          SYSINCS = -I/usr/local/X11R5/include $(SUNINCS) $(HPINCS)
