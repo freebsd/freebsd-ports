@@ -1,0 +1,20 @@
+bin/krss
+share/applnk/Applications/krss.desktop
+share/apps/krss/krssui.rc
+share/apps/krss/services-channels-complete.xml
+share/apps/krss/tempimage.png
+share/apps/krss/tips
+@dirrm share/apps/krss
+share/doc/HTML/en/krss/common
+share/doc/HTML/en/krss/index.docbook
+@dirrm share/doc/HTML/en/krss
+share/icons/hicolor/16x16/actions/autoupdaterssfeeds.png
+share/icons/hicolor/16x16/actions/editrssfeeds.png
+share/icons/hicolor/16x16/actions/getrssfeeds.png
+share/icons/hicolor/16x16/apps/krss.png
+share/icons/hicolor/32x32/actions/autoupdaterssfeeds.png
+share/icons/hicolor/32x32/actions/editrssfeeds.png
+share/icons/hicolor/32x32/actions/getrssfeeds.png
+share/icons/hicolor/32x32/apps/krss.png
+share/icons/locolor/16x16/apps/krss.png
+share/icons/locolor/32x32/apps/krss.png
