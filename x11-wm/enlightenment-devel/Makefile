@@ -7,15 +7,15 @@
 
 PORTNAME=	enlightenment
 PORTVERSION= 	0.16.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/enlightenment/ \
 		ftp://ftp.enlighte.nu/pub/Enlightenment/Enlightenment/ \
 		ftp://beaver.its.vu.edu.au/pub/enlightenment/ \
-		ftp://freebsd.sinica.edu.tw/pub/clive/
-#		${MASTER_SITE_LOCAL}
-#MASTER_SITE_SUBDIR=	vanilla
+		ftp://freebsd.sinica.edu.tw/pub/clive/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vanilla
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		Aqua.etheme \
 		BlueSteel.etheme.zh_TW.Big5 \
@@ -41,7 +41,9 @@ CONFIGURE_ARGS=	--enable-fsstd --with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
 
-.if (${MACHINE} == "alpha")
+.include <bsd.port.pre.mk>
+
+.if (${MACHINE} == "alpha") && (${XFREE86_VERSION} == 3)
 CONFIGURE_ARS+=	--disable-zoom
 .endif
 
@@ -56,4 +58,4 @@ post-install:
 	${CHOWN} -R root:wheel ${PREFIX}/share/enlightenment/themes
 	${CHMOD} -R a+rX ${PREFIX}/share/enlightenment/themes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
