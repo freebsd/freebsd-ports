@@ -1,0 +1,113 @@
+#! /bin/sh
+
+destdir=%%MOINDEST%%
+sharedir=%%MOINDIR%%
+
+case "x$2" in
+
+"xINSTANCE")
+
+	echo "************************************************************"
+
+	case "x$3" in
+
+	"xMOD_PYTHON")
+
+		echo "Since you chose MOINTYPE=MOD_PYTHON, you may want to"
+		echo "add something like that to your Apache configuration."
+		echo ""
+		echo ",-----"
+		echo " Alias /mywiki $destdir"
+		echo " <Location \"/mywiki\">"
+        	echo "     SetHandler python-program"
+        	echo "     PythonPath \"['$destdir'] + sys.path\""
+        	echo "     PythonHandler MoinMoin.request::RequestModPy.run"
+        	echo "     PythonAutoReload On"
+        	echo "     PythonDebug On"
+		echo " </Location>"
+		echo "\`-----"
+		echo ""
+
+		;;
+
+	"xCGI")
+
+		echo "Since you chose MOINTYPE=CGI, you may want to"
+		echo "add something like that to your Apache configuration."
+		echo ""
+
+		echo ",-----"
+		echo " Alias /wiki/ \"$sharedir/htdocs/\""
+		echo " ScriptAlias /mywiki \"$destdir/moin.cgi\""
+		echo " <Directory \"$sharedir/htdocs/\">"
+		echo "     Allow from all"
+		echo " </Directory>"
+		echo "\`-----"
+		echo ""
+
+		;;
+
+	*)
+	
+		;;
+
+	esac
+
+	echo "You may need to modify wikiconfig.py in your wiki instance"
+	echo "directory (eg. $destdir)."
+	echo ""
+	echo "If you want to install additional wiki instances"
+	echo "call 'make instance' with appriopriate arguments."
+	echo "E.g.: make MOINTYPE=FCGI MOINDEST=/usr/local/www/wiki instance"
+	echo "************************************************************"
+
+	;;
+
+"xPOST-INSTALL")
+
+	echo "************************************************************"
+	echo "Important: You have currently no wiki instance installed."
+	echo ""
+	echo "If you're installing from ports, just run 'make instance'"
+	echo "with appriopriate arguments."
+	echo "eg. make MOINTYPE=FCGI MOINDEST=/usr/local/www/wiki instance"
+	echo ""
+	echo "If you're installing from package, run these commands."
+	echo ""
+	echo "# Choose here one script depending on the type of wiki you"
+	echo "# want : moin.py (standalone), moin.fcg (FCGI) or moin.cgi."
+	echo 'export MOINSCRIPT="moin.cgi"'
+	echo '# Defaults should be fine but you may want to modify these.'
+	echo 'export MOINDIR="%%MOINDIR%%"'
+	echo 'export MOINDEST="%%MOINDEST%%"'
+	echo '# Set this to your apache user and group.'
+	echo 'export CGIUSER="www"'
+	echo 'export CGIGROUP="www"'
+	echo ''
+	echo 'mkdir -p ${MOINDEST}/data'
+	echo 'mkdir -p ${MOINDEST}/underlay'
+	echo 'cp -R ${MOINDIR}/data ${MOINDEST}'
+	echo 'cp -R ${MOINDIR}/underlay ${MOINDEST}'
+	echo 'chmod -R u+rw,go-ws ${MOINDEST}/data'
+	echo 'install -m 0555 ${MOINDIR}/config/wikiconfig.py ${MOINDEST}'
+	echo 'test -z "${MOINSCRIPT}" || \'
+	echo '	install -m 0555 ${MOINDIR}/server/${MOINSCRIPT} ${MOINDEST}'
+	echo 'chown -R ${CGIUSER}:${CGIGROUP} ${MOINDEST}'
+	echo ""
+	echo "Note: export might not work with your shell, use"
+	echo "# setenv VAR 'value' instead"
+	echo "************************************************************"
+
+	;;
+
+"xDEINSTALL")
+
+	echo "************************************************************"
+	echo "All shared files have been removed."
+	echo "To complete deinstallation, please remove all the wiki"
+	echo "instances you have created."
+	echo "************************************************************"
+
+	;;
+
+esac

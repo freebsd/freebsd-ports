@@ -6,63 +6,72 @@
 #
 
 PORTNAME=	moinmoin
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moin
 DISTNAME=	moin-${PORTVERSION}
 
 MAINTAINER=	josef@FreeBSD.org
-COMMENT=	A Python CGI clone of WikiWiki
+COMMENT=	A Python clone of WikiWiki
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||} \
-		CGIUSER=${CGIUSER} CGIROOT=${CGIROOT}
 
-CGIUSER=	moinmoin
-CGIUSERID?=	192
-CGIROOT=	${PREFIX}/www/cgi-bin
-HTDOCSROOT=	${PREFIX}/www/data
+PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
+SUB_FILES=	pkg-install
+SUB_LIST=	MOINDIR=${MOINDIR} MOINDEST=${MOINDEST}
+
+CGIUSER?=	www
+CGIGROUP?=	www
 MOINDIR=	${PREFIX}/share/moin
+MOINDEST?=	${PREFIX}/www/wiki
+MOINTYPE?=	CGI
 
-post-patch:
-	@# Tweak configuration
-	${SED} -e 's|^url_prefix =.*$$|url_prefix="/moin"|g' \
-		${WRKSRC}/wiki/cgi-bin/moin_config.py > \
-		${WRKSRC}/wiki/cgi-bin/moin_config.py.default
+PKGDEINSTALL=	${PKGINSTALL}
 
-post-build:
-	@# Compile setuid wrapper
-	${CC} ${CFLAGS} -o ${WRKDIR}/moin \
-		-DPYTHON_PATH='"${PYTHON_CMD}"' \
-		-DMOIN_PREFIX='"${MOINDIR}"' \
-		${FILESDIR}/wrapper.c
+.if ${MOINTYPE} == "STANDALONE"
+MOINSCRIPT=	${MOINDIR}/server/moin.py
+.elif ${MOINTYPE} == "FCGI"
+MOINSCRIPT=	${MOINDIR}/server/moin.fcg
+.elif ${MOINTYPE} == "MOD_PYTHON"
+.elif ${MOINTYPE} == "CGI"
+MOINSCRIPT=	${MOINDIR}/server/moin.cgi
+.else
+IGNORE=		"MOINTYPE must be a STANDALONE, FCGI, MOD_PYTHON or CGI."
+.endif
 
-pre-install:
-	PKG_PREFIX=${PREFIX} INST_UID="${CGIUSERID}" \
-	${SH} pkg-install ${PKGNAME} PRE-INSTALL
+pre-everything::
+	@${ECHO}
+	@${ECHO} "Set MOINTYPE=(CGI|FCGI|STANDALONE) to define"
+	@${ECHO} "type of installation. Default is CGI."
+	@${ECHO} "Use MOINDEST=/path to modify installation destination."
+	@${ECHO} "Default value for MOINDEST is ${PREFIX}/www/wiki."
+	@${ECHO}
+	@${ECHO} "To get correct permissions, please set CGIUSER, CGIGROUP"
+	@${ECHO} "per default it is set to www:www."
+	@${ECHO}
+	@${MKDIR} ${WRKDIR}
 
 post-install:
-	@# Install Wrapper
-	${MKDIR} ${CGIROOT}
-	${INSTALL_PROGRAM} ${WRKDIR}/moin ${CGIROOT}/
-	${CHMOD} 4555 ${CGIROOT}/moin
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-	@# Arrange Permissions
-	${MKDIR} ${MOINDIR}/data/backup
-	${CHMOD} -R u+rw,go-wxs ${MOINDIR}/data
-	${CHOWN} -R ${CGIUSER}:${CGIUSER} ${CGIROOT}/moin ${MOINDIR}/data
-
-	@# Create symbolic links and copy defaults
-	${TEST} -f ${MOINDIR}/cgi-bin/moin_config.py || \
-		${CP} ${MOINDIR}/cgi-bin/moin_config.py.default \
-			${MOINDIR}/cgi-bin/moin_config.py
-	${TEST} -d ${MOINDIR}/data/text || \
-		${LN} -sf ${MOINDIR}/data/text.default ${MOINDIR}/data/text
-	-${MKDIR} ${HTDOCSROOT}
-	-${LN} -sf ${MOINDIR}/htdocs ${HTDOCSROOT}/moin
-
-	@${CAT} ${PKGMESSAGE}
+instance: pre-everything apply-slist
+	@${ECHO_CMD} "Creating a new wiki instance in ${MOINDEST}."; \
+	if [ -f ${MOINDIR}/config/wikiconfig.py ]; then \
+		${MKDIR} ${MOINDEST}; \
+		${CP} -R ${MOINDIR}/data ${MOINDEST}; \
+		${CP} -R ${MOINDIR}/underlay ${MOINDEST}; \
+		${CHMOD} -R u+rw,go-ws ${MOINDEST}/data; \
+		${INSTALL_SCRIPT} ${MOINDIR}/config/wikiconfig.py ${MOINDEST}; \
+		if [ ! -z ${MOINSCRIPT} ]; then \
+			${INSTALL_SCRIPT} ${MOINSCRIPT} ${MOINDEST}; \
+		fi; \
+		${CHOWN} -R ${CGIUSER}:${CGIGROUP} ${MOINDEST}; \
+		${SH} ${PKGINSTALL} ${PKGNAME} INSTANCE ${MOINTYPE}; \
+	else \
+		${ECHO_CMD} "You need to install moinmoin first before trying"; \
+		${ECHO_CMD} "to add a new wiki instance."; \
+	fi
 
 .include <bsd.port.mk>
