@@ -110,8 +110,6 @@
     SUBDIR += ooodict-it_IT
     SUBDIR += ooodict-nl_NL
     SUBDIR += ooodict-pl_PL
-    SUBDIR += ooodict-pt_BR
-    SUBDIR += ooodict-pt_PT
     SUBDIR += ooodict-sk_SK
     SUBDIR += ooodict-sv_SE
     SUBDIR += openoffice
@@ -123,7 +121,6 @@
     SUBDIR += openoffice-it
     SUBDIR += openoffice-nl
     SUBDIR += openoffice-pl
-    SUBDIR += openoffice-pt
     SUBDIR += openoffice-se
     SUBDIR += openoffice-tr
     SUBDIR += pico
@@ -148,7 +145,6 @@
     SUBDIR += ssed
     SUBDIR += staroffice5
     SUBDIR += staroffice52
-    SUBDIR += staroffice52-pt
     SUBDIR += staroffice60
     SUBDIR += sted
     SUBDIR += tamago
