@@ -20,6 +20,7 @@
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += buttonbox
+    SUBDIR += chameleon
     SUBDIR += cnslock
     SUBDIR += decurs
     SUBDIR += deskmenu
