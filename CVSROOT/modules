@@ -4824,9 +4824,12 @@ openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
 openldap12	ports/net/openldap12
-openldap20	ports/net/openldap20
-openldap21	ports/net/openldap21
-openldap22	ports/net/openldap22
+openldap20-client	ports/net/openldap20-client
+openldap21-client	ports/net/openldap21-client
+openldap22-client	ports/net/openldap22-client
+openldap20-server	ports/net/openldap20-server
+openldap21-server	ports/net/openldap21-server
+openldap22-server	ports/net/openldap22-server
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
