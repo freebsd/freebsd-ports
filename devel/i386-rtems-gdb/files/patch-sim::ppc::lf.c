@@ -1,5 +1,5 @@
---- gdb-5.2/sim/ppc/lf.c.orig	Thu Apr 15 21:35:11 1999
-+++ gdb-5.2/sim/ppc/lf.c	Mon Feb 16 08:09:23 2004
+--- sim/ppc/lf.c.orig	Thu Apr 15 21:35:11 1999
++++ sim/ppc/lf.c	Mon Feb 16 08:09:23 2004
 @@ -274,27 +274,27 @@
    case lf_is_c:
    case lf_is_h:

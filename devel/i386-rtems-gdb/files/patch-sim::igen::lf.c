@@ -1,5 +1,5 @@
---- gdb-5.2/sim/igen/lf.c.orig	Thu Apr 15 21:35:05 1999
-+++ gdb-5.2/sim/igen/lf.c	Mon Feb 16 08:13:36 2004
+--- sim/igen/lf.c.orig	Thu Apr 15 21:35:05 1999
++++ sim/igen/lf.c	Mon Feb 16 08:13:36 2004
 @@ -259,27 +259,27 @@
    case lf_is_c:
    case lf_is_h:
