@@ -1,0 +1,16 @@
+This port tries to follow numerous  suggestions and HOWTOs posted on the
+web  about  printing and  viewing  PostScript  files containing  Russian
+characters (in KOI8 encoding, are there others?).
+
+In installs the fonts taken from
+	ftp://ftp.kapella.gpi.ru/pub/cyrillic/psfonts/
+
+into   their    own   ${PREFIX}/CyrPS   directory,   and    places   the
+infonts.dir/fonts.scale there for your X-server's perusal.
+
+If you  happen to have  ghostscript installed,  it will also  append its
+Fontmap file to print/display with this fonts by default.
+
+Note, however, that this will NOT make your PostScript printers print in
+Russian, since they have their own PostScript interpreters built in. Use
+`koify' port for to deal with those.
