@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.42
+PORTVERSION=	0.44
 CATEGORIES=	dns net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -19,7 +19,7 @@ COMMENT=	Perl5 interface to the DNS resolver, and dymanic updates
 RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=--pm
+CONFIGURE_ARGS+=	--online-tests
 
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::Question.3 Net::DNS::RR.3 Net::DNS::RR::A.3 \
@@ -38,7 +38,8 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3 \
 		Net::DNS::Select.3 Net::DNS::Resolver::Win32.3 \
 		Net::DNS::Resolver::Base.3 Net::DNS::Resolver::UNIX.3 \
-		Net::DNS::Resolver::Recurse.3
+		Net::DNS::RR::Unknown.3 Net::DNS::Resolver::Recurse.3 \
+		Net::DNS::Resolver::Cygwin.3
 
 .include <bsd.port.pre.mk>
 
@@ -50,8 +51,8 @@ DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in Changes README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for doc in Changes README TODO
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
