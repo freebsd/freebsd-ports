@@ -64,6 +64,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Fails testsuite during build"
+.endif
+
 SHLIB_NAME=	libTrf2.so.1
 SHLIB_LINK=	${SHLIB_NAME:C/\.so\..*/.so/}
 
