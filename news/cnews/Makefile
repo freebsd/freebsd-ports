@@ -31,7 +31,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namecheck.awk \
 		c-news-patch-y2k-2 \
 		c-news-patch-pgpverify-1.12-perl4
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes

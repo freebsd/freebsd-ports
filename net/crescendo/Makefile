@@ -9,7 +9,7 @@ PORTVERSION=	1.1.6
 CATEGORIES=	net gnome
 MASTER_SITES=	http://crescendo.lyrical.net/files/
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 

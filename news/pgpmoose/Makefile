@@ -13,7 +13,7 @@ MASTER_SITES=	http://people.qualcomm.com/ggr/ \
 DISTNAME=	PGPMoose
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 MAN1=		pmapp.1 pmcanon.1 pmcheck.1 pmnewsgroups.1 \
 		pmdaemon.1 pmcancel.1

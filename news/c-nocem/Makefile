@@ -10,7 +10,7 @@ CATEGORIES=	news security
 MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${WRKDIRPREFIX}${CNEWSSRC}/conf/substitutions:${PORTSDIR}/news/cnews:configure
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews \

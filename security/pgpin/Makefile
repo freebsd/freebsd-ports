@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.fu-berlin.de/doc/IN/IN-CA/pgp/pgp263in/
 DISTNAME=	pgp263in010322
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/pgp263in/src
 

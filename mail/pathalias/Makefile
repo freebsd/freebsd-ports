@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lan-ks.de/pub/approved/ \
 DISTNAME=	${PORTNAME}11
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 ALL_TARGET=	pathalias
 
