@@ -33,7 +33,6 @@ PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 TCL82_PORT?=	lang/tcl82
 USE_REINPLACE=	YES
-
 MANCOMPRESSED=	no
 
 MAN1=	wish.1
@@ -302,11 +301,11 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	palette.n tk_bisque.n \
 	popup.n tk_popup.n
 
+.include <bsd.port.pre.mk>
+
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tkConfig.sh
-
-.include <bsd.port.pre.mk>
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
