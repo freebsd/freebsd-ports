@@ -22,6 +22,7 @@ post-install:
 	@${CHOWN} root:games ${PREFIX}/bin/jetpack
 	@${CHMOD} g+s,u-s ${PREFIX}/bin/jetpack
 	@${CHOWN} root:games ${PREFIX}/lib/X11/jetpack
+	@${CHMOD} g+w  ${PREFIX}/lib/X11/jetpack
 	@${CHMOD} go+r ${PREFIX}/lib/X11/jetpack/jetpack.lev000
 
 .include <bsd.port.mk>
