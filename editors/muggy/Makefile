@@ -1,15 +1,16 @@
 # New ports collection makefile for:	Muggy
-# Version required:	1.2b
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Muggy-1.2b
-PKGNAME=	${LANGPREFIX}muggy-1.2b
-CATEGORIES=	${CATEGORY_LIST}
+PORTNAME=	muggy
+PORTVERSION=	1.2b
+CATEGORIES+=	editors windowmaker tkstep80
+
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+DISTNAME=	Muggy-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
@@ -29,12 +30,9 @@ TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
-LANGPREFIX=	ja-
-CATEGORY_LIST=	editors windowmaker tkstep80 japanese
 RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg \
 		${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
 .else
-CATEGORY_LIST=	editors windowmaker tkstep80
 RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/graphics/libimg \
 		${LOCALBASE}/share/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 .endif
