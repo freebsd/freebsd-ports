@@ -15,7 +15,6 @@ DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 
 MAINTAINER=	znerd@FreeBSD.org
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION:C/_.*\$//g}/docs
