@@ -19,13 +19,13 @@ RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
-		ktranslator:${PORTSDIR}/devel/ktranslator \
 		kdoc:${PORTSDIR}/textproc/kdoc \
 		kiconedit:${PORTSDIR}/graphics/kdegraphics2 \
 		ark:${PORTSDIR}/misc/kdeutils2 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
 		designer:${PORTSDIR}/devel/qt-designer \
 		linguist:${PORTSDIR}/devel/linguist \
+		kdbg:${PORTSDIR}/devel/kdbg \
 		kbabel:${PORTSDIR}/devel/kdesdk \
 		a2ps:${PORTSDIR}/print/a2ps43-letter
 .endif
