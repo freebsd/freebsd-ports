@@ -15,12 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 USE_GMAKE=	yes
+USE_SDL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games
 USE_REINPLACE=	yes
