@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1996/12/08 01:44:51 max Exp $
+# $Id: Makefile,v 1.6 1997/01/16 09:53:21 max Exp $
 #
 
 DISTNAME=	mailagent-3.0pl53
@@ -20,9 +20,8 @@ MAINTAINER=	max@FreeBSD.ORG
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 BUILD_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
-WRKSRC=		${WRKDIR}/mailagent-3.0
-
 NO_PACKAGE=	"Correct FQDN needs to be hardcoded"
+WRKSRC=		${WRKDIR}/mailagent-3.0
 IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
@@ -39,5 +38,11 @@ MAN1=			edusers.1 mailagent.1 maildist.1  \
 # Note that mailhelp.1 is intentionally left uncompressed as it is referred
 # from several other man pages with .so macro.
 PERLPATH!=	dirname `which perl5.003`
+
+pre-extract:
+	@if [ `/bin/sh -c umask` != 022 ]; then \
+	  echo "Please set umask to 022 before running make,"; \
+	  echo "or mailagent will not build successfully."; \
+	  false; fi
 
 .include <bsd.port.mk>
