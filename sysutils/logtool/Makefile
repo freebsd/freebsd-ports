@@ -7,24 +7,18 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://users.digitex.net/~max/
+MASTER_SITES=	http://users.digitex.net/~max/logtool/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= default
+CONFIGURE_ARGS=	default
 
 ALL_TARGET=	build
-
-.if defined(NOPORTDOCS)
-NODOCS=		"@comment "
-.endif
-
-PLIST_SUB=	NOPORTDOCS=${NODOCS}
 
 post-patch:
 .for file in logtool/Makefile logtail/Makefile

@@ -7,10 +7,10 @@ etc/logtool/include
 etc/logtool/logtool.conf
 etc/logtool/yellow
 @dirrm etc/logtool
-%%NOPORTDOCS%%share/doc/logtool/examples/README
-%%NOPORTDOCS%%share/doc/logtool/examples/cronjob.genwebpage.sh
-%%NOPORTDOCS%%share/doc/logtool/examples/cronjob.emailreport.sh
-%%NOPORTDOCS%%share/doc/logtool/examples/monitor.logs.sh
-%%NOPORTDOCS%%share/doc/logtool/logtool.txt
-%%NOPORTDOCS%%@dirrm share/doc/logtool/examples
-%%NOPORTDOCS%%@dirrm share/doc/logtool
+%%PORTDOCS%%share/doc/logtool/examples/README
+%%PORTDOCS%%share/doc/logtool/examples/cronjob.genwebpage.sh
+%%PORTDOCS%%share/doc/logtool/examples/cronjob.emailreport.sh
+%%PORTDOCS%%share/doc/logtool/examples/monitor.logs.sh
+%%PORTDOCS%%share/doc/logtool/logtool.txt
+%%PORTDOCS%%@dirrm share/doc/logtool/examples
+%%PORTDOCS%%@dirrm share/doc/logtool
