@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libopendaap
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	devel net
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 
