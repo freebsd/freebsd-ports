@@ -1,0 +1,10 @@
+--- config.c.orig	Sat Feb  2 11:57:44 2002
++++ config.c	Sun Mar  3 16:28:41 2002
+@@ -2050,6 +2050,7 @@
+          if (!CmndOneLine(targ, "sysctl hw.model", ln))
+          {
+             if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
++            else if (strstr(ln, "Pentium 4")) mach = IntP4;
+             else if (strstr(ln, "Pentium III")) mach = IntPIII;
+             else if (strstr(ln, "Pentium II ")) mach = IntPII;
+             else if (strstr(ln, "Athlon")) mach = AmdAthlon;
