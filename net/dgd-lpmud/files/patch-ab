@@ -1,0 +1,51 @@
+*** 2.4.5/lpmud.old	Fri Oct 20 19:09:05 1995
+--- 2.4.5/lpmud	Fri Oct 20 19:09:49 1995
+***************
+*** 1,6 ****
+  telnet_port	= 6047;			/* telnet port number */
+  binary_port	= 6048;			/* binary port number */
+! directory	= "/usr/local/mud/lib";	/* base directory (MUST be absolute) */
+  users		= 40;			/* max # of users */
+  editors		= 41;			/* max # of editor sessions */
+  ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
+--- 1,6 ----
+  telnet_port	= 6047;			/* telnet port number */
+  binary_port	= 6048;			/* binary port number */
+! directory	= "/usr/local/dgd/lpmud-2.4.5";	/* base directory (MUST be absolute) */
+  users		= 40;			/* max # of users */
+  editors		= 41;			/* max # of editor sessions */
+  ed_tmpfile	= "../tmp/ed";		/* proto editor tmpfile */
+*** 2.4.5/rundgd.old	Fri Oct 20 21:42:34 1995
+--- 2.4.5/rundgd	Fri Oct 20 21:48:49 1995
+***************
+*** 1,10 ****
+  #!/bin/sh
+  
+  passwd=HNAMEPASS
+  while true
+  do
+!     mv 2.4.5/lpmud.log 2.4.5/lpmud.log.old
+!     date > 2.4.5/lpmud.log
+!     hname 6047 $passwd &
+!     src/a.out src/lpmud >> 2.4.5/lpmud.log 2>&1
+  done > /dev/null 2>&1
+--- 1,11 ----
+  #!/bin/sh
+  
+  passwd=HNAMEPASS
++ cd /usr/local/dgd
+  while true
+  do
+!     mv lpmud-2.4.5/lpmud.log lpmud-2.4.5/lpmud.log.old
+!     date > lpmud-2.4.5/lpmud.log
+!     ./bin/hname 6047 $passwd &
+!     ./bin/driver lpmud >> lpmud-2.4.5/lpmud.log 2>&1
+  done > /dev/null 2>&1
+*** 2.4.5/Copyright.old	Fri Oct 20 22:40:15 1995
+--- 2.4.5/Copyright	Fri Oct 20 22:41:47 1995
+***************
+*** 1 ****
+! The 2.4.5 simulation is released into the public domain.
+--- 1,2 ----
+! The 2.4.5 simulation is released into the public domain by author,
+! Felix A. Croes.
