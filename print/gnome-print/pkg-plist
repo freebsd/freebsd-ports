@@ -1,30 +1,32 @@
 bin/gnome-font-install
+etc/gnome/fonts/gnome-print-ghostscript.fontmap
 etc/printConf.sh
-include/libgnomeprint/gnome-font-dialog.h
-include/libgnomeprint/gnome-font-face.h
-include/libgnomeprint/gnome-font.h
-include/libgnomeprint/gnome-glyphlist.h
-include/libgnomeprint/gnome-pgl.h
-include/libgnomeprint/gnome-print-copies.h
-include/libgnomeprint/gnome-print-dialog.h
-include/libgnomeprint/gnome-print-encode.h
-include/libgnomeprint/gnome-print-frgba.h
-include/libgnomeprint/gnome-print-master-preview.h
-include/libgnomeprint/gnome-print-master.h
-include/libgnomeprint/gnome-print-meta.h
-include/libgnomeprint/gnome-print-multipage.h
-include/libgnomeprint/gnome-print-pdf.h
-include/libgnomeprint/gnome-print-pixbuf.h
-include/libgnomeprint/gnome-print-preview.h
-include/libgnomeprint/gnome-print-rbuf.h
-include/libgnomeprint/gnome-print.h
-include/libgnomeprint/gnome-printer-dialog.h
-include/libgnomeprint/gnome-printer.h
-include/libgnomeprint/gnome-rfont.h
-include/libgnomeprint/gnome-text.h
+include/gnome-1.0/libgnomeprint/gnome-font-dialog.h
+include/gnome-1.0/libgnomeprint/gnome-font-face.h
+include/gnome-1.0/libgnomeprint/gnome-font.h
+include/gnome-1.0/libgnomeprint/gnome-glyphlist.h
+include/gnome-1.0/libgnomeprint/gnome-pgl.h
+include/gnome-1.0/libgnomeprint/gnome-print-copies.h
+include/gnome-1.0/libgnomeprint/gnome-print-dialog.h
+include/gnome-1.0/libgnomeprint/gnome-print-encode.h
+include/gnome-1.0/libgnomeprint/gnome-print-frgba.h
+include/gnome-1.0/libgnomeprint/gnome-print-master-preview.h
+include/gnome-1.0/libgnomeprint/gnome-print-master.h
+include/gnome-1.0/libgnomeprint/gnome-print-meta.h
+include/gnome-1.0/libgnomeprint/gnome-print-multipage.h
+include/gnome-1.0/libgnomeprint/gnome-print-pdf.h
+include/gnome-1.0/libgnomeprint/gnome-print-pixbuf.h
+include/gnome-1.0/libgnomeprint/gnome-print-preview.h
+include/gnome-1.0/libgnomeprint/gnome-print-rbuf.h
+include/gnome-1.0/libgnomeprint/gnome-print.h
+include/gnome-1.0/libgnomeprint/gnome-printer-dialog.h
+include/gnome-1.0/libgnomeprint/gnome-printer.h
+include/gnome-1.0/libgnomeprint/gnome-rfont.h
+include/gnome-1.0/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
 lib/libgnomeprint.so.16
+share/gnome/fonts/README.binaries
 share/gnome/fonts/README.installer
 share/gnome/fonts/afms/adobe/pagd8a.afm
 share/gnome/fonts/afms/adobe/pagdo8a.afm
@@ -67,7 +69,6 @@ share/gnome/fonts/afms/adobe/putr8a.afm
 share/gnome/fonts/afms/adobe/putri8a.afm
 share/gnome/fonts/afms/adobe/pzcmi8a.afm
 share/gnome/fonts/afms/adobe/pzdr.afm
-share/gnome/fonts/fontmap2
 share/gnome/gnome-print/%%VERSION%%/profiles/PostscriptOptimized.profile
 share/gnome/gnome-print/%%VERSION%%/profiles/fax-g3.profile
 share/gnome/gnome-print/%%VERSION%%/profiles/pdf.profile
@@ -88,6 +89,7 @@ share/locale/ja/LC_MESSAGES/gnome-print.mo
 share/locale/ko/LC_MESSAGES/gnome-print.mo
 share/locale/lt/LC_MESSAGES/gnome-print.mo
 share/locale/nl/LC_MESSAGES/gnome-print.mo
+share/locale/nn/LC_MESSAGES/gnome-print.mo
 share/locale/no/LC_MESSAGES/gnome-print.mo
 share/locale/pl/LC_MESSAGES/gnome-print.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-print.mo
@@ -99,10 +101,14 @@ share/locale/sv/LC_MESSAGES/gnome-print.mo
 share/locale/tr/LC_MESSAGES/gnome-print.mo
 share/locale/uk/LC_MESSAGES/gnome-print.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-print.mo
-@dirrm share/gnome/fonts/afms/adobe
-@dirrm share/gnome/fonts/afms
-@dirrm share/gnome/fonts
+share/locale/zh_TW/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/gnome-print/%%VERSION%%/profiles
 @dirrm share/gnome/gnome-print/%%VERSION%%
 @dirrm share/gnome/gnome-print
-@dirrm include/libgnomeprint
+@dirrm share/gnome/fonts/afms/adobe
+@dirrm share/gnome/fonts/afms
+@dirrm share/gnome/fonts
+@dirrm include/gnome-1.0/libgnomeprint
+@dirrm include/gnome-1.0
+@dirrm etc/gnome/fonts
+@dirrm etc/gnome
