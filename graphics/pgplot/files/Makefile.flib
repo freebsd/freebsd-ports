@@ -15,7 +15,6 @@ DRIVERS=gidriv.f gldriv.f hgdriv.f lxdriv.f nudriv.f ppdriv.f psdriv.f ttdriv.f 
 SRCS= ${PG_ROUTINES} ${PG_NON_STANDARD} ${GR_ROUTINES} ${SYSTEM_ROUTINES} \
 	${DRIVERS} grexec.f
 
-FC = ./xf77
 CFLAGS+=-DPG_PPU -I/usr/X11R6/include
 
 .include <bsd.lib.mk>

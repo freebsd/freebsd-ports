@@ -3,7 +3,7 @@
 # Date created:		21 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.8 1998/12/05 02:25:45 jmz Exp $
+# $Id: Makefile,v 1.9 1998/12/22 08:22:54 asami Exp $
 #
 
 DISTNAME=       pgplot5.2
@@ -23,6 +23,14 @@ VERSION=	5
 .else
 VERSION=	5.2
 .endif
+
+.if ${OSVERSION} < 400004
+FC=	./xf77
+.else
+FC=	f77
+.endif
+
+MAKE_ENV+=	FC=${FC}
 
 post-install:
 .for f in libcpgplot.so libpgplot.so
