@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +18,10 @@ COMMENT=	A GTK2 Binding for Haskell
 BUILD_DEPENDS=	ghc-6.2.2:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc-6.2.2:${PORTSDIR}/lang/ghc
 
-USE_GNOME=	gtk20 libglade gtksourceview
+USE_GNOME=	gtk20 libglade2 gtksourceview
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-c2hs=no
 USE_GMAKE=	yes
-MAKE_ENV+=	BUILDDOCS=no
 
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
