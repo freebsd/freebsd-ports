@@ -1,0 +1,17 @@
+--- theme/plans.template.orig	Fri Dec 17 15:38:40 2004
++++ theme/plans.template	Sun Dec 19 15:10:00 2004
+@@ -51,10 +51,10 @@
+ powered by <a class=info_box_link href="http://www.planscalendar.com">Plans.</a> (V ###version###)
+ </div>
+ <div style="width:45%;float:left;text-align:center;">
+-<img src="theme/graphics/linux.gif" alt="LINUX">
+-<br/>Plans is powered by Linux.<br/><br/>
+-<p style="font-size:10px;font-style:italic;">(plans also runs on Windows, <br>
+-but this particular installation is on Linux.)</p>
++<img src="theme/graphics/freebsd.gif" alt="FreeBSD">
++<br/>Plans is powered by FreeBSD.<br/><br/>
++<p style="font-size:10px;font-style:italic;">(plans also runs on Linux and Windows, <br>
++but this particular installation is on FreeBSD.)</p>
+ </div>
+ <br style="clear:both;"/>&nbsp;
+ </div>
