@@ -14,7 +14,8 @@ DISTNAME=	tipa-${PORTVERSION}
 MAINTAINER=	a.strich.b@web.de
 COMMENT=	Package which provides T3-encoded fonts to be used with LaTeX2e
 
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_INSTALL_MANPAGES=	yes
 NO_BUILD=	yes
