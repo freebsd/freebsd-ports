@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	PS font collection of HLaTeX-wansung
 
 FONT_TYPE=		ps
 HLATEX_FONTS_BASE=	pkmj.tar.bz2 pkgt.tar.bz2 \

@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.gigabell.net/pub/exp/q3/mod/excessive/ \
 		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/q3/mod/excessive/
 DISTNAME=	${PORTNAME}_q3_server_${PORTVERSION}
 
+COMMENT=	Quake III Arena Excessive Mod for Linux
+
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
 
 .include "${Q3_MOD_MASTER}/Makefile"

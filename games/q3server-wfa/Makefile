@@ -17,6 +17,8 @@ MASTER_SITES=	ftp://ftp.ogl.org/pub/q3/wfa/ \
 DISTFILES=	WFA_Media_v33.zip WFA_MapPack1_v33.zip \
 		WFA_MapPack2_v33.zip
 
+COMMENT=	Quake III Arena Mod: Weapons Factory Arena for Linux
+
 EXTRACT_BEFORE_ARGS=	-o -qq
 NO_WRKSUBDIR=	yes
 

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-COMMENT=		${.CURDIR}/pkg-comment
+COMMENT=	XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and FreeWnn support
 
 XEMACS_MAJOR_VER=	21
 FREEWNN=		yes

@@ -19,6 +19,7 @@ DISTNAME?=	${PORTNAME}_${PORTVERSION:S/.//}_full
 .endif
 
 MAINTAINER?=	pat@FreeBSD.org
+COMMENT?=	Half-Life mod Counter-Strike full server package for Linux
 
 RUN_DEPENDS=	${LINUXBASE}${HLDSDIR}${HL_PROGRAM}:${HALFLIFESERVER_PORT}
 

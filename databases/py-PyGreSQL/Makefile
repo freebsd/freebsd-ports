@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 POSTGRESQL_SUBPORT=	YES
 .include <${.CURDIR}/../postgresql7/Makefile>
+COMMENT=	A Python interface to PostgreSQL, including a DP-API 2.0 wrapper
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base

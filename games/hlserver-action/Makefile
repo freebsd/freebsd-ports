@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://ftp.wanadoo.nl/pub/wanadoo/games/HalfLife/Action-Halflife/ \
 		ftp://ftp.exp-network.de/hl/mod/ahl/
 DISTNAME=	action50
 
+COMMENT=	Action Half-Life mod full server package for Linux
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

@@ -16,6 +16,8 @@ DISTFILES=	halflife-admin-2.50.50.tgz \
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
+COMMENT=	Popular Half-Life mod server administration tool for Linux
+
 WRKSRC=		${WRKDIR}/Adminmod
 
 slaveport-post-extract:
