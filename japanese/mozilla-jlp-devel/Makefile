@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.8.a4
-PORTREVISION=	1
+PORTVERSION=	1.8.a6
+PORTREVISION=	0
 CATEGORIES=	japanese www
-MASTER_SITES=	http://n.jpn.ph/mozilla/download/jlp/
+MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla-japan/mozilla/development/1.8a6/
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	moz1.8a4-langjajp-tm0.1
+DISTNAME=	mozilla-1.8a6-langjajp0.6
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	fortune@n.jpn.ph
@@ -58,8 +58,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${MOZILLA} ${PREFIX}/bin
 	(cd ${WRKDIR}/sp; ${TAR} -cf - *) | \
 	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}/searchplugins
-	(cd ${WRKDIR}/sp_nomac; ${TAR} -cf - *) | \
-	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}/searchplugins
+#	(cd ${WRKDIR}/sp_nomac; ${TAR} -cf - *) | \
+#	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}/searchplugins
 	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults) | \
 	${TAR} -xf - -C ${PREFIX}/lib/${MOZILLA}
 	(cd ${PREFIX}/lib/${MOZILLA}/chrome; \
