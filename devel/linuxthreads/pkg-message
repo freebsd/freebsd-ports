@@ -1,35 +1,5 @@
+Please see the README.FreeBSD file in the work directory for
+instructions on how to compile with linuxthreads, and for other
+issues and problems.
 
-
-NOTES:  This package is intended to run on FreeBSD 4.0-current or
-FreeBSD 3.X, with sources more recent than March 1, 1999, i386 processors
-only.
-
-Compile your applications that use Linux Threads with the following
-command line options:
-
-	-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread
-
-Note that the include (-I..) directive shown here should appear before any other include
-directive that would cause the compiler to find the FreeBSD file /usr/include/pthread.h.
-Using the FreeBSD pthread.h instead of the linuxthreads pthread.h will result in an app 
-fails in many odd and maybe spectacular ways.
-
-In order to facilitate porting applications witch expect a libpthread, you can create
-the following symlinks if you want:
-
-	ln -s /usr/local/lib/liblthread.a /usr/lib/libpthread.a
-	ln -s /usr/local/lib/liblthread_p.a /usr/lib/libpthread_p.a
-	ln -s /usr/local/lib/liblthread.so.0 /usr/lib/libpthread.so.0
-	ln -s /usr/local/lib/liblthread.so.0 /usr/lib/libpthread.so
-	/sbin/ldconfig -m /usr/lib
-
-If you do this, you can instead use:
-
-	-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread
-or      
-	-D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -kthread
-
-DO NOT use libc_r with Linux Threads, and do not compile/link with
-the -pthread option (which pulls in libc_r).  DO link with libc
-(which you will get by default).
 

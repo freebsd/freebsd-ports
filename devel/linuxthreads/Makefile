@@ -12,7 +12,8 @@ CATEGORIES=    devel
 MASTER_SITES=  ftp://ftp.inria.fr/INRIA/Projects/cristal/Xavier.Leroy/
 ONLY_FOR_ARCHS= i386
 
-MAINTAINER=    dick@tar.com
+#MAINTAINER=    dick@tar.com
+MAINTAINER=    jasone@freebsd.org
 
 threads_files=	_atomic_lock.S  libc_spinlock.h   uthread_rwlock.c \
 		uthread_rwlockattr.c libc_private.h uthread_file.c \
