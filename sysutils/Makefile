@@ -78,8 +78,8 @@
     SUBDIR += socket
     SUBDIR += star
     SUBDIR += stat
-    SUBDIR += stow
     SUBDIR += stmpclean
+    SUBDIR += stow
     SUBDIR += su2
     SUBDIR += symlinks
     SUBDIR += syslog-ng
