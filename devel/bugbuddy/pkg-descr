@@ -1,0 +1,7 @@
+This is a bug reporting tool.  It pops up automatically when a GNOME
+app crashes under the GNOME desktop (via gnome_segv), and allows
+the crash information to be sent to the app's developers.
+
+Jacob Berkman  <jberkman@andrew.cmu.edu>
+
+WWW: http://www.gnome.org/

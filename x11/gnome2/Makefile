@@ -25,7 +25,7 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gedit:${PORTSDIR}/editors/gedit2 \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
-		bug-buddy:${PORTSDIR}/devel/bugbuddy2 \
+		bug-buddy:${PORTSDIR}/devel/bugbuddy \
 		gnome-system-monitor:${PORTSDIR}/sysutils/gnomesystemmonitor \
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
 		yelp:${PORTSDIR}/x11/yelp \
