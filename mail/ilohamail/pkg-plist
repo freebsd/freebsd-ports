@@ -66,6 +66,7 @@
 %%ILOHADIR%%/include/main.inc
 %%ILOHADIR%%/include/main_tools.inc
 %%ILOHADIR%%/include/mime.inc
+%%ILOHADIR%%/include/mod_base64.inc
 %%ILOHADIR%%/include/nocache.inc
 %%ILOHADIR%%/include/pop3.inc
 %%ILOHADIR%%/include/pref_header.inc
@@ -108,11 +109,34 @@
 %%ILOHADIR%%/lang/GB2312.inc
 %%ILOHADIR%%/lang/ISO-8859-1.inc
 %%ILOHADIR%%/lang/ISO-8859-2.inc
+%%ILOHADIR%%/lang/ISO-8859-9.inc
 %%ILOHADIR%%/lang/US-ASCII.inc
 %%ILOHADIR%%/lang/UTF-8.inc
 %%ILOHADIR%%/lang/Windows-1251.inc
 %%ILOHADIR%%/lang/Windows-1255.inc
+%%ILOHADIR%%/lang/Windows-1256.inc
 %%ILOHADIR%%/lang/X-EUC-JP.inc
+%%ILOHADIR%%/lang/ar/bookmarks.inc
+%%ILOHADIR%%/lang/ar/calendar.inc
+%%ILOHADIR%%/lang/ar/compose.inc
+%%ILOHADIR%%/lang/ar/contacts.inc
+%%ILOHADIR%%/lang/ar/cp.inc
+%%ILOHADIR%%/lang/ar/dates.inc
+%%ILOHADIR%%/lang/ar/defaultFolders.inc
+%%ILOHADIR%%/lang/ar/edit_contact.inc
+%%ILOHADIR%%/lang/ar/edit_folders.inc
+%%ILOHADIR%%/lang/ar/folders.inc
+%%ILOHADIR%%/lang/ar/init.inc
+%%ILOHADIR%%/lang/ar/login.inc
+%%ILOHADIR%%/lang/ar/main.inc
+%%ILOHADIR%%/lang/ar/pref_colors.inc
+%%ILOHADIR%%/lang/ar/pref_identities.inc
+%%ILOHADIR%%/lang/ar/prefs.inc
+%%ILOHADIR%%/lang/ar/quota.inc
+%%ILOHADIR%%/lang/ar/read_message.inc
+%%ILOHADIR%%/lang/ar/search.inc
+%%ILOHADIR%%/lang/ar/search_errors.inc
+%%ILOHADIR%%/lang/ar/tool.inc
 %%ILOHADIR%%/lang/bg/bookmarks.inc
 %%ILOHADIR%%/lang/bg/calendar.inc
 %%ILOHADIR%%/lang/bg/compose.inc
@@ -620,6 +644,48 @@
 %%ILOHADIR%%/lang/se/search.inc
 %%ILOHADIR%%/lang/se/search_errors.inc
 %%ILOHADIR%%/lang/se/tool.inc
+%%ILOHADIR%%/lang/si/bookmarks.inc
+%%ILOHADIR%%/lang/si/calendar.inc
+%%ILOHADIR%%/lang/si/compose.inc
+%%ILOHADIR%%/lang/si/contacts.inc
+%%ILOHADIR%%/lang/si/cp.inc
+%%ILOHADIR%%/lang/si/dates.inc
+%%ILOHADIR%%/lang/si/defaultFolders.inc
+%%ILOHADIR%%/lang/si/edit_contact.inc
+%%ILOHADIR%%/lang/si/edit_folders.inc
+%%ILOHADIR%%/lang/si/folders.inc
+%%ILOHADIR%%/lang/si/init.inc
+%%ILOHADIR%%/lang/si/login.inc
+%%ILOHADIR%%/lang/si/main.inc
+%%ILOHADIR%%/lang/si/pref_colors.inc
+%%ILOHADIR%%/lang/si/pref_identities.inc
+%%ILOHADIR%%/lang/si/prefs.inc
+%%ILOHADIR%%/lang/si/quota.inc
+%%ILOHADIR%%/lang/si/read_message.inc
+%%ILOHADIR%%/lang/si/search.inc
+%%ILOHADIR%%/lang/si/search_errors.inc
+%%ILOHADIR%%/lang/si/tool.inc
+%%ILOHADIR%%/lang/tr/bookmarks.inc
+%%ILOHADIR%%/lang/tr/calendar.inc
+%%ILOHADIR%%/lang/tr/compose.inc
+%%ILOHADIR%%/lang/tr/contacts.inc
+%%ILOHADIR%%/lang/tr/cp.inc
+%%ILOHADIR%%/lang/tr/dates.inc
+%%ILOHADIR%%/lang/tr/defaultFolders.inc
+%%ILOHADIR%%/lang/tr/edit_contact.inc
+%%ILOHADIR%%/lang/tr/edit_folders.inc
+%%ILOHADIR%%/lang/tr/folders.inc
+%%ILOHADIR%%/lang/tr/init.inc
+%%ILOHADIR%%/lang/tr/login.inc
+%%ILOHADIR%%/lang/tr/main.inc
+%%ILOHADIR%%/lang/tr/pref_colors.inc
+%%ILOHADIR%%/lang/tr/pref_identities.inc
+%%ILOHADIR%%/lang/tr/prefs.inc
+%%ILOHADIR%%/lang/tr/quota.inc
+%%ILOHADIR%%/lang/tr/read_message.inc
+%%ILOHADIR%%/lang/tr/search.inc
+%%ILOHADIR%%/lang/tr/search_errors.inc
+%%ILOHADIR%%/lang/tr/tool.inc
 %%ILOHADIR%%/lang/tw/bookmarks.inc
 %%ILOHADIR%%/lang/tw/calendar.inc
 %%ILOHADIR%%/lang/tw/compose.inc
@@ -724,6 +790,8 @@
 @dirrm %%ILOHADIR%%/source
 @dirrm %%ILOHADIR%%/lang/vn
 @dirrm %%ILOHADIR%%/lang/tw
+@dirrm %%ILOHADIR%%/lang/tr
+@dirrm %%ILOHADIR%%/lang/si
 @dirrm %%ILOHADIR%%/lang/se
 @dirrm %%ILOHADIR%%/lang/ru
 @dirrm %%ILOHADIR%%/lang/ro
@@ -748,6 +816,7 @@
 @dirrm %%ILOHADIR%%/lang/cat
 @dirrm %%ILOHADIR%%/lang/br
 @dirrm %%ILOHADIR%%/lang/bg
+@dirrm %%ILOHADIR%%/lang/ar
 @dirrm %%ILOHADIR%%/lang
 @dirrm %%ILOHADIR%%/include
 @dirrm %%ILOHADIR%%/data/users
