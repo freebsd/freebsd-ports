@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.1.28
-PORTREVISION=	2
+PORTVERSION=	2.2.0
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -25,8 +25,6 @@ LATEST_LINK=	${PORTNAME}2
 USE_RC_SUBR=	YES
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
-
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-property
 
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
@@ -72,7 +70,8 @@ MAKE_ENV+=	glib12=1
 
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${X11BASE}/share/gkrellm2/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${X11BASE}/libexec/gkrellm2/plugins\"' \
-		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"'
+		-DGKRELLMD_SYS_ETC='\"${PREFIX}/etc\"' \
+		-DGKRELLMD_SYSTEM_PLUGINS_DIR='\"${PREFIX}/libexec/gkrellm2/plugins-gkrellmd\"'
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
@@ -92,6 +91,7 @@ post-install:
 	@${CHMOD} 2511 ${X11BASE}/bin/gkrellm
 .endif
 	@${CHMOD} 2511 ${PREFIX}/sbin/gkrellmd
+	@${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/gkrellmd.sh > ${PREFIX}/etc/rc.d/gkrellmd.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/gkrellmd.sh
@@ -103,8 +103,8 @@ post-install:
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
