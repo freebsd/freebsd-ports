@@ -7,6 +7,7 @@
 
 PORTNAME=	statgrab
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
