@@ -1,0 +1,38 @@
+--- su2.c.orig	Thu Dec 19 20:41:50 1996
++++ su2.c	Thu Dec 19 20:41:50 1996
+@@ -113,7 +113,7 @@
+ #ifndef NOSU2RC
+ char   *UsersNameFile = ".su2rc";
+ #endif NOSU2RC
+-char   *SULog = "/usr/adm/sulog";
++char   *SULog = SU2LOGFILE;
+ 
+ char   *UtmpFile = "/etc/utmp";
+ 
+@@ -182,13 +182,15 @@
+ 
+ char   *malloc ();
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+ #ifdef OSF
+ int    setpwent ();
+-#else
++#elseif !(defined(BSD) && (BSD >= 199306))
+ void   setpwent ();
+ #endif
++#endif
+ 
+-#ifndef sgi
++#if !defined(sgi) && !(defined(BSD) && (BSD >= 199306))
+ struct passwd  *getpwuid ();
+ struct passwd  *getpwnam ();
+ void    endpwent ();
+@@ -570,7 +572,7 @@
+ 	}
+     }
+ 
+-#ifndef sgi
++#if !(defined(sgi) && (defined(BSD) && (BSD >= 199306)))
+     setpwent ();
+ #endif
+ 
