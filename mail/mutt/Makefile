@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.13 1996/12/25 13:58:58 obrien Exp $
+# $Id: Makefile,v 1.14 1996/12/31 15:00:05 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.55
@@ -28,6 +28,11 @@ PATCHFILES=	02.externally.PATCH  \
 		08.keypad.PATCH  \
 		09.quote_regexp.PATCH  \
 		10.mark-as-new.PATCH  \
+		11.postponed.PATCH  \
+		12.postponed.PATCH  \
+		13.wait.PATCH  \
+		14.addrfwd.PATCH  \
+		15.flagmessage.PATCH  \
 		06.buffy.PATCH	# other patches need to be before this one
 
 MAINTAINER=     obrien@FreeBSD.org
