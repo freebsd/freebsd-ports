@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.4.4
+PORTVERSION=	5.4.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU}
@@ -28,5 +28,9 @@ INSTALLS_SHLIB=	yes
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	optionFree.3 optionLoadLine.3 optionProcess.3 optionRestore.3 \
 	optionSaveFile.3 optionSaveState.3 optionVersion.3
+
+pre-build:
+	@cd ${WRKSRC}/snprintfv && ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 
 .include <bsd.port.mk>
