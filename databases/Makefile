@@ -164,6 +164,7 @@
     SUBDIR += sqsh
     SUBDIR += sybase-ocsd
     SUBDIR += tcl-Mysql
+    SUBDIR += tdb
     SUBDIR += tkgnats
     SUBDIR += tora
     SUBDIR += typhoon
