@@ -1,0 +1,17 @@
+The standard UNIX debugger, gdb, is extremely powerful, but its
+command line interface can be quite intimidating and painful to
+use.
+
+Code Medic provides an elegant free graphical interface to gdb's
+most important features. Unlike most interfaces to gdb, Code Medic
+aims to remove the need for the command line.
+
+It provides access to the power of gdb with an intuitive front end.
+It currently supports opening multiple source windows at once,
+setting/clearing breakpoints while the program is running, watching
+variables change in the variable tree as you step through code
+(even with nested structs), text searching through source, and
+integration with Code Crusader to provide a rapid, efficient
+develop-debug cycle.
+
+WWW: http://www.newplanetsoftware.com/medic/
