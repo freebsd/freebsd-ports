@@ -1,0 +1,7 @@
+Arena's primary purpose is to be a testbed for new features of the
+web. In the past, we have implemented HTML3 features including tables
+and math. Currently, style sheets are in focus along with new graphics
+formats such as PNG. Also, Arena is a testing tool for the W3C
+Reference Library. The library provides a common platform which
+will ensure future compatibility on the web. If you are a
+browser vendor, it will save you time.
