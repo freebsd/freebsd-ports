@@ -1,0 +1,18 @@
+--- Makefile.orig	Sat Sep  2 17:47:37 2000
++++ Makefile	Sat Sep  2 17:48:38 2000
+@@ -13,11 +13,14 @@
+ #CC=gcc -Wall -g
+ #LEX=flex
+ 
++CC ?= gcc
++CFLAGS ?= -O -pipe
++
+ pscan: scanner.yy.o pscan.o
+ 	$(CC) scanner.yy.o pscan.o -o pscan
+ 
+ scanner.yy.o: scanner.yy.c
+-	$(CC) -c scanner.yy.c -o scanner.yy.o
++	$(CC) $(CFLAGS) -c scanner.yy.c -o scanner.yy.o
+ 
+ scanner.yy.c: scanner.l
+ 	$(LEX) -t scanner.l > scanner.yy.c
