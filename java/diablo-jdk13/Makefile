@@ -50,6 +50,9 @@ NO_BUILD=	yes
 
 INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
 .if defined(WITHOUT_PLUGIN)
 PLIST_SUB+=	PLUGIN:="@comment "
 PKGNAMESUFFIX=	-noplugin
@@ -99,10 +102,16 @@ do-install:
 
 post-install:
 	# Register the VM
-	${LOCALBASE}/bin/registervm "${INSTALL_DIR}/bin/java # DiabloCaffe${JDK_VERSION}"
+	${LOCALBASE}/bin/registervm \
+	  "${INSTALL_DIR}/bin/java # DiabloCaffe${JDK_VERSION}"
 .if !defined(WITHOUT_PLUGIN)
+	# Create pkg-(de)install
+	${SED} -e "s:%%X11BASE%%:${X11BASE}:g" < ${FILESDIR}/pkg-install.in \
+	  > ${PKGINSTALL}
+	${SED} -e "s:%%X11BASE%%:${X11BASE}:g" < ${FILESDIR}/pkg-deinstall.in \
+	  > ${PKGDEINSTALL}
 	# Install the plugin
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/java/diablo-jdk13/Attic/pkg-install,v 1.2 2004-03-17 16:44:11 glewis Exp $
+# $FreeBSD$
 
 # Set up a standard path
 PATH=/usr/bin:/bin
@@ -12,7 +12,7 @@ fi
 # Attempt to install a link for the browser plugin during post-install
 if [ "$2" = "POST-INSTALL" ]; then
 	# Plugin location variables
-	MOZILLAPLUGINDIR=/usr/X11R6/lib/mozilla/plugins
+	BROWSERPLUGINDIR=%%X11BASE%%/lib/browser_plugins
 	if [ `echo "$1" | grep jdk` ]; then
 		DIABLOPLUGINDIR=${PKG_PREFIX}/diablo-jdk1.3.1/jre/plugin/i386/ns600
 	else
@@ -26,25 +26,25 @@ if [ "$2" = "POST-INSTALL" ]; then
 	fi
 
 	# Check if the plugin directory exists.
-	if [ ! -d "${MOZILLAPLUGINDIR}" ]; then
+	if [ ! -d "${BROWSERPLUGINDIR}" ]; then
 		exit 0
 	fi
 
 	# Check if the browser plugin currently exists
-	if [ ! -e "${MOZILLAPLUGINDIR}/${PLUGIN}" ]; then
+	if [ ! -e "${BROWSERPLUGINDIR}/${PLUGIN}" ]; then
 		# Create symbolic link
 		ln -sf "${DIABLOPLUGINDIR}/${PLUGIN}" \
-			"${MOZILLAPLUGINDIR}/${PLUGIN}"
+			"${BROWSERPLUGINDIR}/${PLUGIN}"
 		exit 0
 	fi
 
 	# If the browser plugin exists and is a symlink, but the link
 	# doesn't exist, then overwrite with the diablo plugin.
-	if [ -L "${MOZILLAPLUGINDIR}/${PLUGIN}" ]; then
+	if [ -L "${BROWSERPLUGINDIR}/${PLUGIN}" ]; then
 		# Check if the linked to file exists.
-		if [ ! -e `ls -l "${MOZILLAPLUGINDIR}/${PLUGIN}" 2>/dev/null | awk '/->/{print $NF;exit 0}END{exit 1}'` ]; then
+		if [ ! -e `ls -l "${BROWSERPLUGINDIR}/${PLUGIN}" 2>/dev/null | awk '/->/{print $NF;exit 0}END{exit 1}'` ]; then
 			ln -sf "${DIABLOPLUGINDIR}/${PLUGIN}" \
-				"${MOZILLAPLUGINDIR}/${PLUGIN}"
+				"${BROWSERPLUGINDIR}/${PLUGIN}"
 			exit 0
 		fi
 	fi
@@ -58,7 +58,7 @@ if [ "$2" = "POST-INSTALL" ]; then
 	case $ANSWER in
 		[yY]|[yY][eE][sS])
 			ln -sf "${DIABLOPLUGINDIR}/${PLUGIN}" \
-				"${MOZILLAPLUGINDIR}/${PLUGIN}"
+				"${BROWSERPLUGINDIR}/${PLUGIN}"
 			;;
 		*)
 			;;
