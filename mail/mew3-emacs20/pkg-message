@@ -1,0 +1,9 @@
+*************************************************************************
+* You must set at least following elisps to your own dot.emacs file:    *
+*                                                                       *
+*       (require 'mew-setup)                                  *
+*       (autoload 'mew "mew" nil t)                                     *
+*       (autoload 'mew-send "mew" nil t)                                *
+*       (setq mew-mail-domain-list '("Name_Server_Domain_Name"))        *
+*                                                                       *
+*************************************************************************

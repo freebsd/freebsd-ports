@@ -1,0 +1,5 @@
+(setq load-path (append '(
+	"%%LOCALBASE%%/%%EMACS_LIBDIR%%/site-lisp/mew"
+ ) load-path))
+(setq mew-icon-directory "%%LOCALBASE%%/%%EMACS_LIBDIR%%/etc/mew")
+(provide '%%EMACS_SETUPEL%%)
