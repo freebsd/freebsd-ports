@@ -1,0 +1,20 @@
+--- Make/makedefs.orig	Sat Apr 19 01:07:23 2003
++++ Make/makedefs	Mon Jul 21 18:15:32 2003
+@@ -239,8 +239,15 @@
+   SHARED            = -shared
+   ARCH              = 32
+   ARCHARGS          = 
+-  INST_SYS_PREFIX   = /opt/X11R6
+-  INST_SHARE_PREFIX = /usr/share/Producer
++  INST_SYS_PREFIX   = $(PREFIX)
++  INST_SHARE_PREFIX = $(INST_SYS_PREFIX)/share/openproducer
++  LINKARGS          = -L/usr/X11R6/lib -L/usr/local/lib -rpath /usr/local/lib -rpath /usr/X11R6/lib
++  INST_LOCATION     = $(INST_SYS_PREFIX)
++  INST_SHARE        = $(INST_SHARE_PREFIX)
++  INST_DEMOS        = $(INST_LOCATION)/openproducer/bin
++  INST_SRC          = $(INST_LOCATION)/openproducer/src
++  INST_DOC          = $(INST_LOCATION)/openproducer/doc
++  INST_DATA         = $(INST_SHARE)/openproducer/data
+ endif
+ 
+ #### MacOS X specific definitions

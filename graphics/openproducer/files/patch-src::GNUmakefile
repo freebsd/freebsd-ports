@@ -1,0 +1,11 @@
+--- src/GNUmakefile.orig	Thu Apr 10 04:16:47 2003
++++ src/GNUmakefile	Mon Jul 21 14:03:29 2003
+@@ -27,7 +27,7 @@
+ ## LIBS  =   -lGL -lXmu -lXmu -lX11 -lpthread -ll
+ 
+ INC  += -I$(TOPDIR)/include -I$(THISDIR)
+-LIBS  =   -lGL -lXmu -lXmu -lX11 -lpthread
++LIBS  =   -lGL -lXmu -lXmu -lX11 $(PTHREAD_LIBS)
+ LIB   = libProducer
+ 
+ include $(TOPDIR)/Make/makerules
