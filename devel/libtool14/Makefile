@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Generic shared library support script
 
 # This port has not been upgraded to 1.4 because it is used by about 30% of
