@@ -28,6 +28,10 @@ PLIST_SUB+=	WANT_GTK=""
 PLIST_SUB+=	WANT_GTK="@comment "
 .endif
 
+post-patch:
+	@${PERL} -pi -e 's,strcasestr,strcasestr_,' ${WRKSRC}/functions.h \
+		${WRKSRC}/general.c
+
 pre-build:
 	${PERL} -pi -e "s:gtk-config:${GTK_CONFIG}:g" ${WRKSRC}/Makefile
 
