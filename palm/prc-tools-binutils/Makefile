@@ -1,17 +1,17 @@
 # New ports collection makefile for:	Palm OS PRC-tools (binutils part)
-# Version required:	2.0
 # Date created:		Mar 22 2000
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	prc-tools-2.0
-PKGNAME=	prc-tools-binutils-2.0
+PORTNAME=	prc-tools-binutils
+PORTVERSION= 	2.0
 CATEGORIES=	palm
 MASTER_SITES=	http://www.palm.com/devzone/tools/gcc/dist/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	binutils
+DISTNAME=	prc-tools-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} binutils-2.9.1.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org

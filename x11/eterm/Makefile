@@ -1,19 +1,19 @@
 # New ports collection makefile for:	eterm
-# Version required:    0.8.10
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Eterm-0.8.10
-PKGNAME=	eterm-0.8.10
+PORTNAME=	eterm
+PORTVERSION= 	0.8.10
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
 		http://eterm.is.nontoxic.org/download/ \
 		ftp://ftp.livewire.com.au/pub/linuxberg/files/x11/system/ \
 		ftp://ftp.c-com.net/pub/.30/LinuxBerg/files/x11/system/ \
 		ftp://ftp.sunsite.auc.dk/disk6/linuxberg.com/files/x11/system/
+DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	murray@cdrom.com
 

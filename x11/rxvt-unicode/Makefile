@@ -1,5 +1,4 @@
 # New ports collection Makefile for: rxvt
-# Version required:	2.7.3
 # Date created:         5th December 1994
 # Whom:                 gpalmer@FreeBSD.org
 #
@@ -9,7 +8,8 @@
 # (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
 # the same distfile.
 
-DISTNAME=	rxvt-2.7.3
+PORTNAME=	rxvt
+PORTVERSION= 	2.7.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \

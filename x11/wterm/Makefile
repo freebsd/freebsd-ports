@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wterm
-# Version required: 	6.2.6
 # Date created:		25 February 1999
 # Whom:		 	Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wterm-6.2.6
+PORTNAME=	wterm
+PORTVERSION= 	6.2.6
 CATEGORIES=	x11
 MASTER_SITES= 	http://wm.current.nu/files/
 

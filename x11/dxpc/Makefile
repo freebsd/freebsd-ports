@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dxpc
-# Version required:     3.8.0
 # Date created:		2 May 1998
 # Whom:			Bruce A. Mah <bmah@ca.sandia.gov>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dxpc-3.8.0
+PORTNAME=	dxpc
+PORTVERSION= 	3.8.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
 

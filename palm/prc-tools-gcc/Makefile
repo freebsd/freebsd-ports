@@ -1,16 +1,16 @@
 # New ports collection makefile for:	Palm OS PRC-Tools (gcc part)
-# Version required:	2.0
 # Date created:		Mar 22 2000
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	prc-tools-2.0
-PKGNAME=	prc-tools-gcc-2.0
+PORTNAME=	prc-tools-gcc
+PORTVERSION= 	2.0
 CATEGORIES=	palm
 MASTER_SITES=	http://www.palm.com/devzone/tools/gcc/dist/ \
 		${MASTER_SITE_GNU}
+DISTNAME=	prc-tools-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		gdb/gdb-4.18.tar.gz gcc/gcc-2.95.2.tar.gz
 

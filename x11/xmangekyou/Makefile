@@ -1,12 +1,12 @@
 # New ports collection makefile for:	XMangekyou
-# Version required:    2.0
 # Date created:		30 October 1998
 # Whom:			Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmangekyou-2.0
+PORTNAME=	xmangekyou
+PORTVERSION=	2.0
 CATEGORIES=	x11
 MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
 

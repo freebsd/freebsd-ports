@@ -1,15 +1,13 @@
 # New ports collection makefile for:    apache HTTPD
-# Version required:     1.3*
 # Date created:         Sat Apr 10 22:30:36 EEST 1999
 # Whom:                 vns@delta.odessa.ua
 #
 # $FreeBSD$
 #
 
-VERSION=	1.3.11
+PORTNAME=	apache
+PORTVERSION= 	1.3.11
 RA_VERSION=	29.3
-DISTNAME=       apache_${VERSION}
-PKGNAME=        ru-apache-${VERSION}
 CATEGORIES=	www russian
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -26,10 +24,11 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
+DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
-PATCHFILES=	patches_${VERSION}rusPL${RA_VERSION}.tar.gz
+PATCHFILES=	patches_${PORTVERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	vns@delta.odessa.ua
 

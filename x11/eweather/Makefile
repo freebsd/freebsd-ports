@@ -1,11 +1,12 @@
 # New ports collection makefile for:	E-Weather 0.2
-# Version required:     0.2
 # Date created:		30 March 2000
 # Whom:			jhb
 #
 # $FreeBSD$
+#
 
-DISTNAME=	E-Weather-0.2
+PORTNAME=	E-Weather
+PORTVERSION= 	0.2
 CATEGORIES=	x11
 MASTER_SITES= 	http://pfnet.org/~cy/
 

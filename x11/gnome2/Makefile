@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnome
-# Version required:	1.0.53
 # Date created:		17 Aug 1998
 # Whom:			Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-1.0.53
+PORTNAME=	gnome
+PORTVERSION= 	1.0.53
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   aterm
-# Version required:	0.3.6
 # Date created:		17 January 1999
 # Whom:			Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	aterm-0.3.6
+PORTNAME=	aterm
+PORTVERSION= 	0.3.6
 CATEGORIES=	x11
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 		http://www.tigr.net/afterstep/as-apps/download/aterm/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   kdebase
-# Version required:    1.1.2
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kdebase-1.1.2
+PORTNAME=	kdebase
+PORTVERSION= 	1.1.2
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2

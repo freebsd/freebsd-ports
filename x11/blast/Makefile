@@ -1,17 +1,17 @@
 # New ports collection makefile for:   blast-1.0
-# Version required:       1.0
 # Date created:         9 Jul 1996
 # Whom:            searle
 #
 # $FreeBSD$
 #
 
-DISTNAME=	blast-1.0-ss-10.20
-PKGNAME=	blast-1.0
+PORTNAME=	blast
+PORTVERSION= 	1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://ftp.univie.ac.at/systems/hpux/hpux/X11/Demos/blast-1.0/ \
 		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
+DISTNAME=	${PKGNAME}-ss-10.20
 
 MAINTAINER=	jseger@FreeBSD.org
 

@@ -1,11 +1,12 @@
 # New ports collection makefile for:	E-FancyLauncher
-# Version required:     0.7
 # Date created:		30 March 2000
 # Whom:			jhb
 #
 # $FreeBSD$
+#
 
-DISTNAME=	E-FancyLauncher-0.7
+PORTNAME=	E-FancyLauncher
+PORTVERSION= 	0.7
 CATEGORIES=	x11
 MASTER_SITES= 	http://www.docs.uu.se/~adavid/Epplets/
 EXTRACT_SUFX=	.tgz

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	libsx
-# Version required:	1.1
 # Date created:			5 December 1996
 # Whom:				Pedro Giffuni
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libsx
-PKGNAME=	libsx-1.1
+PORTNAME=	libsx
+PORTVERSION= 	1.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	libraries
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org

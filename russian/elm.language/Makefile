@@ -1,11 +1,11 @@
 # New ports collection makefile for:    ru-elm
-# Date created:         2 Dec 1995
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-PKGNAME=        ru-elm-2.4ME
+PORTNAME=	elm
+PORTVERSION= 	2.4ME
 CATEGORIES=     russian mail
 
 RUN_DEPENDS+=   elm:${PORTSDIR}/mail/elm

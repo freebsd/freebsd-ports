@@ -1,12 +1,12 @@
 # New ports collection makefile for:   XStarRoll
-# Version required:    1.04
 # Date created:        14 January 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xstarroll-1.04
+PORTNAME=	xstarroll
+PORTVERSION= 	1.04
 CATEGORIES=	x11
 MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
 

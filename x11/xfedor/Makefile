@@ -1,5 +1,4 @@
 # New ports collection makefile for:    xfedor
-# Version required:     1994 year version with Imakefile
 # Date created:         3 Sep 1996
 # Whom:                 ache
 #
@@ -9,10 +8,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=       xfedor
-PKGNAME=        xfedor-1.0
+PORTNAME=	xfedor
+PORTVERSION= 	1.0
 CATEGORIES=	x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/x11/util/
+DISTNAME=	${PORTNAME}
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

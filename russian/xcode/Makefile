@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xcode
-# Version required:	1.0
 # Date created:		13 January 2000
 # Whom:			Michael Vasilenko <acid@stu.cn.ua>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcode
-PKGNAME=	xcode-1.0
+PORTNAME=	xcode
+PORTVERSION= 	1.0
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/util/text/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 

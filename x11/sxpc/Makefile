@@ -1,12 +1,12 @@
 # New ports collection Makefile for:	sxpc
-# Version required:	1.4
 # Date created:		22nd March 1995
 # Whom:			jkh@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sxpc-1.4
+PORTNAME=	sxpc
+PORTVERSION= 	1.4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities

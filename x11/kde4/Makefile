@@ -1,12 +1,12 @@
 # New ports collection makefile for:   kde
-# Version required:    around November 1997
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kde-1.1.2
+PORTNAME=	kde
+PORTVERSION= 	1.1.2
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# empty
