@@ -2,9 +2,13 @@ bin/fd2ps
 bin/fdesign
 include/X11/flimage.h
 include/X11/forms.h
+include/X11/glcanvas.h
 lib/libflimage.a
 lib/libflimage.so
 lib/libflimage.so.1
 lib/libforms.a
 lib/libforms.so
 lib/libforms.so.1
+lib/libformsGL.a
+lib/libformsGL.so
+lib/libformsGL.so.1
