@@ -9,8 +9,7 @@ PORTNAME=	astime
 PORTVERSION=	2.8
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/astime/ \
-		http://www.tigr.net/afterstep/as-apps/download/astime/ \
-		ftp://ftp.tux.org/pub/x/afterstep/apps/astime/
+		http://www.tigr.net/afterstep/download/astime/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
