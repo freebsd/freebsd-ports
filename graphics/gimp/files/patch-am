@@ -1,19 +1,20 @@
---- libgimp/gimp.c.orig	Tue Sep 29 22:35:20 1998
-+++ libgimp/gimp.c	Tue Sep 29 22:36:00 1998
-@@ -19,6 +19,7 @@
- #include "config.h"
- 
- #include <errno.h>
+--- libgimp/gimp.c.orig	Mon Dec  6 14:44:39 1999
++++ libgimp/gimp.c	Sat Feb 19 13:51:36 2000
+@@ -26,6 +26,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/types.h>
 +#include <floatingpoint.h>
- #include <signal.h>
- #include <stdarg.h>
- #include <stdio.h>
-@@ -95,6 +96,8 @@
+ #ifdef HAVE_SYS_TIME_H
+ #include <sys/time.h>
+ #endif
+@@ -186,6 +187,9 @@
      }
  
    progname = argv[0];
 +
++  /* Ignore floating point exceptions */
 +  fpsetmask(0);
  
-   signal (SIGHUP, gimp_signal);
-   signal (SIGINT, gimp_signal);
+ #ifndef G_OS_WIN32
+   /* No use catching these on Win32, the user won't get any meaningful

@@ -17,3 +17,5 @@ major features:
    *  Plug-ins which allow for the easy addition of new file formats and
       new effect filters.
    *  Multiple undo/redo.
+
+To enable I18N extensions, execute "gimp.setfont" before you use GIMP.

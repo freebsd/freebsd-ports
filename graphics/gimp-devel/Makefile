@@ -1,5 +1,5 @@
-# New ports collection makefile for:    Gimp
-# Version required:     1.1.15
+# New ports collection makefile for:    The GIMP
+# Version required:     1.1.17
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
@@ -9,21 +9,26 @@
 DISTNAME=	gimp-${VERSION}
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${VERSION}/ \
-		ftp://ftp.cs.umn.edu/pub/gimp/gimp/unstable/v${VERSION}/ \
-		http://www.ameth.org/gimp/pub/gimp/unstable/v${VERSION}/ \
-		ftp://ftp.gimp.org/pub/gimp/unstable/old/v${VERSION}/
+		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${VERSION}/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/unstable/v${VERSION}/
 
 MAINTAINER=	erich@FreeBSD.org
 
+BUILD_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+RUN_DEPENDS=	perldl:${PORTSDIR}/math/PDL \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
 		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		intl.1:${PORTSDIR}/devel/gettext
 
-VERSION=	1.1.15
+VERSION=	1.1.17
+
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -31,7 +36,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--disable-perl
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
@@ -39,5 +44,21 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gimp.1 gimptool.1
 MAN5=		gimprc.5
+
+.if !defined(WITH_GNOME) && exists(${X11BASE}/bin/gnome-config)
+WITH_GNOME=	yes
+.endif
+
+.if defined(WITH_GNOME) && ${WITH_GNOME} == yes
+LIB_DEPENDS+=	gtkxmhtml.3:${PORTSDIR}/x11/gnomelibs
+.else
+PLIST=		${WRKDIR}/PLIST
+pre-install:
+	@${SED} -e '/helpbrowser/d' ${PKGDIR}/PLIST > ${PLIST}
+.endif
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/gimp.setfont ${PREFIX}/bin
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
