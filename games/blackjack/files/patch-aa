@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Feb 11 19:42:00 1998
-+++ Makefile	Sat Jan  8 23:59:30 2000
-@@ -1,9 +1,11 @@
+--- Makefile.orig	Thu Jun  3 11:28:44 1999
++++ Makefile	Sat Jun  3 01:28:49 2000
+@@ -1,9 +1,8 @@
  
 -CC=gcc
 -CXX=g++
@@ -11,22 +11,19 @@
 +CXX?=g++
 +INCLUDES=-I$(X11BASE)/include/X11/qt
 +LDFLAGS=-L$(X11BASE)/lib -lqt
-+.if $(PORTOBJFORMAT) == "elf"
-+LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
-+.endif
- VERSION=1.1
+ VERSION=1.2
  
  # For systems that don't have install, use this
-@@ -25,7 +27,7 @@
- 	blackjack/*.cpp			\
- 	blackjack/*.bm
- 
--INSTALL=install
-+INSTALL=install -c
+@@ -28,7 +27,7 @@
+ INSTALL=install
  INSTALL_BIN_FLAGS=-s
  
- INSTALL_ROOT=/usr/local
-@@ -39,12 +41,14 @@
+-INSTALL_ROOT=/usr/local
++INSTALL_ROOT=${PREFIX}
+ INSTALL_BIN=$(INSTALL_ROOT)/bin
+ INSTALL_MAN=$(INSTALL_ROOT)/man
+ 
+@@ -39,19 +38,21 @@
       user_input.o dollar_scroll_bar.o bet_option.o table_option.o \
       insurance_window.o $(METAOBJS)
  
@@ -43,3 +40,12 @@
  
  blackjack: main.o $(OBJS) 
  	$(CXX) -o $@ $(LDFLAGS) main.o $(OBJS) 
+ 
+ install:
+-	$(INSTALL) $(INSTALL_BIN_FLAGS) blackjack $(INSTALL_BIN)
+-	$(INSTALL) blackjack.1 $(INSTALL_MAN)/man1
++	${BSD_INSTALL_PROGRAM} blackjack $(INSTALL_BIN)
++	${BSD_INSTALL_MAN} blackjack.1 $(INSTALL_MAN)/man1
+ 
+ mblackjack.cpp: blackjack.h
+ 	$(MOC) -o mblackjack.cpp blackjack.h
