@@ -1,0 +1,315 @@
+Index: exclude.c
+diff -u exclude.c:1.38 exclude.c:1.39
+--- exclude.c:1.38	Wed Jun 20 23:15:34 2001
++++ exclude.c	Tue Jan 22 20:57:18 2002
+@@ -299,7 +299,8 @@
+ void recv_exclude_list(int f)
+ {
+ 	char line[MAXPATHLEN];
+-	int l;
++	unsigned int l;
++
+ 	while ((l=read_int(f))) {
+ 		if (l >= MAXPATHLEN) overflow("recv_exclude_list");
+ 		read_sbuf(f,line,l);
+Index: fileio.c
+diff -u fileio.c:1.3 fileio.c:1.4
+--- fileio.c:1.3	Wed Dec 30 06:48:45 1998
++++ fileio.c	Tue Jan 22 20:57:18 2002
+@@ -36,7 +36,7 @@
+ }
+ 
+ 
+-static int write_sparse(int f,char *buf,int len)
++static int write_sparse(int f,char *buf,size_t len)
+ {
+ 	int l1=0,l2=0;
+ 	int ret;
+@@ -69,7 +69,7 @@
+ 
+ 
+ 
+-int write_file(int f,char *buf,int len)
++int write_file(int f,char *buf,size_t len)
+ {
+ 	int ret = 0;
+ 
+Index: flist.c
+diff -u flist.c:1.102 flist.c:1.103
+--- flist.c:1.102	Tue Jan 15 03:50:32 2002
++++ flist.c	Tue Jan 22 20:57:18 2002
+@@ -375,7 +375,7 @@
+ 	static gid_t last_gid;
+ 	static char lastname[MAXPATHLEN];
+ 	char thisname[MAXPATHLEN];
+-	int l1=0,l2=0;
++	unsigned int l1=0,l2=0;
+ 	char *p;
+ 	struct file_struct *file;
+ 
+@@ -442,6 +442,10 @@
+ 
+ 	if (preserve_links && S_ISLNK(file->mode)) {
+ 		int l = read_int(f);
++		if (l < 0) {
++			rprintf(FERROR,"overflow: l=%d\n", l);
++			overflow("receive_file_entry");
++		}
+ 		file->link = (char *)malloc(l+1);
+ 		if (!file->link) out_of_memory("receive_file_entry 2");
+ 		read_sbuf(f,file->link,l);
+Index: io.c
+diff -u io.c:1.87 io.c:1.88
+--- io.c:1.87	Sat Sep  8 21:42:09 2001
++++ io.c	Tue Jan 22 20:57:18 2002
+@@ -49,7 +49,7 @@
+ 
+ static int io_error_fd = -1;
+ 
+-static void read_loop(int fd, char *buf, int len);
++static void read_loop(int fd, char *buf, size_t len);
+ 
+ static void check_timeout(void)
+ {
+@@ -163,7 +163,7 @@
+  * give a better explanation.  We can tell whether the connection has
+  * started by looking e.g. at whether the remote version is known yet.
+  */
+-static int read_timeout (int fd, char *buf, int len)
++static int read_timeout (int fd, char *buf, size_t len)
+ {
+ 	int n, ret=0;
+ 
+@@ -236,7 +236,7 @@
+ 
+ /*! Continue trying to read len bytes - don't return until len has
+   been read.   */
+-static void read_loop (int fd, char *buf, int len)
++static void read_loop (int fd, char *buf, size_t len)
+ {
+ 	while (len) {
+ 		int n = read_timeout(fd, buf, len);
+@@ -253,7 +253,7 @@
+  * 
+  * Never returns <= 0. 
+  */
+-static int read_unbuffered(int fd, char *buf, int len)
++static int read_unbuffered(int fd, char *buf, size_t len)
+ {
+ 	static int remaining;
+ 	int tag, ret=0;
+@@ -305,7 +305,7 @@
+ 
+ /* do a buffered read from fd. don't return until all N bytes
+    have been read. If all N can't be read then exit with an error */
+-static void readfd (int fd, char *buffer, int N)
++static void readfd (int fd, char *buffer, size_t N)
+ {
+ 	int  ret;
+ 	int total=0;  
+@@ -356,12 +356,12 @@
+ 	return ret;
+ }
+ 
+-void read_buf(int f,char *buf,int len)
++void read_buf(int f,char *buf,size_t len)
+ {
+ 	readfd(f,buf,len);
+ }
+ 
+-void read_sbuf(int f,char *buf,int len)
++void read_sbuf(int f,char *buf,size_t len)
+ {
+ 	read_buf (f,buf,len);
+ 	buf[len] = 0;
+@@ -375,7 +375,7 @@
+ }
+ 
+ /* write len bytes to fd */
+-static void writefd_unbuffered(int fd,char *buf,int len)
++static void writefd_unbuffered(int fd,char *buf,size_t len)
+ {
+ 	int total = 0;
+ 	fd_set w_fds, r_fds;
+@@ -483,7 +483,7 @@
+ 
+ /* write an message to a multiplexed stream. If this fails then rsync
+    exits */
+-static void mplex_write(int fd, enum logcode code, char *buf, int len)
++static void mplex_write(int fd, enum logcode code, char *buf, size_t len)
+ {
+ 	char buffer[4096];
+ 	int n = len;
+@@ -533,7 +533,7 @@
+ 	}
+ }
+ 
+-static void writefd(int fd,char *buf,int len)
++static void writefd(int fd,char *buf,size_t len)
+ {
+ 	stats.total_written += len;
+ 
+@@ -587,7 +587,7 @@
+ 	writefd(f,b,8);
+ }
+ 
+-void write_buf(int f,char *buf,int len)
++void write_buf(int f,char *buf,size_t len)
+ {
+ 	writefd(f,buf,len);
+ }
+@@ -606,7 +606,7 @@
+ 
+ 
+ 
+-int read_line(int f, char *buf, int maxlen)
++int read_line(int f, char *buf, size_t maxlen)
+ {
+ 	while (maxlen) {
+ 		buf[0] = 0;
+@@ -664,7 +664,7 @@
+ }
+ 
+ /* write an message to the multiplexed error stream */
+-int io_multiplex_write(enum logcode code, char *buf, int len)
++int io_multiplex_write(enum logcode code, char *buf, size_t len)
+ {
+ 	if (!io_multiplexing_out) return 0;
+ 
+Index: log.c
+diff -u log.c:1.53 log.c:1.54
+--- log.c:1.53	Mon Sep  3 20:12:55 2001
++++ log.c	Tue Jan 22 20:57:18 2002
+@@ -466,7 +466,7 @@
+ 
+ 		l = strlen(n);
+ 
+-		if ((l-1) + ((int)(s - &buf[0])) > sizeof(buf)) {
++		if (l + ((int)(s - &buf[0])) >= sizeof(buf)) {
+ 			rprintf(FERROR,"buffer overflow expanding %%%c - exiting\n",
+ 				p[0]);
+ 			exit_cleanup(RERR_MESSAGEIO);
+Index: proto.h
+diff -u proto.h:1.133 proto.h:1.134
+--- proto.h:1.133	Sun Nov 25 23:18:09 2001
++++ proto.h	Tue Jan 22 20:57:18 2002
+@@ -15,10 +15,12 @@
+ unsigned char read_batch_flags();
+ void read_batch_flist_info(struct file_struct **fptr);
+ void write_batch_csums_file(char *buff, int bytes_to_write);
+-void close_batch_csums_file() ;
+-void write_batch_csum_info(int *flist_entry, int flist_count, struct sum_struct *s);
++void close_batch_csums_file();
++void write_batch_csum_info(int *flist_entry, int flist_count,
++			   struct sum_struct *s);
+ int read_batch_csums_file(char *buff, int len);
+-void read_batch_csum_info(int flist_entry, struct sum_struct *s, int *checksums_match);
++void read_batch_csum_info(int flist_entry, struct sum_struct *s,
++			  int *checksums_match);
+ void write_batch_delta_file(char *buff, int bytes_to_write);
+ void close_batch_delta_file();
+ int read_batch_delta_file(char *buff, int len);
+@@ -55,7 +57,7 @@
+ void add_include_line(char *p);
+ void add_cvs_excludes(void);
+ int sparse_end(int f);
+-int write_file(int f,char *buf,int len);
++int write_file(int f,char *buf,size_t len);
+ struct map_struct *map_file(int fd,OFF_T len);
+ char *map_ptr(struct map_struct *map,OFF_T offset,int len);
+ void unmap_file(struct map_struct *map);
+@@ -81,21 +83,21 @@
+ void io_set_error_fd(int fd);
+ int32 read_int(int f);
+ int64 read_longint(int f);
+-void read_buf(int f,char *buf,int len);
+-void read_sbuf(int f,char *buf,int len);
++void read_buf(int f,char *buf,size_t len);
++void read_sbuf(int f,char *buf,size_t len);
+ unsigned char read_byte(int f);
+ void io_start_buffering(int fd);
+ void io_flush(void);
+ void io_end_buffering(int fd);
+ void write_int(int f,int32 x);
+ void write_longint(int f, int64 x);
+-void write_buf(int f,char *buf,int len);
++void write_buf(int f,char *buf,size_t len);
+ void write_byte(int f,unsigned char c);
+-int read_line(int f, char *buf, int maxlen);
++int read_line(int f, char *buf, size_t maxlen);
+ void io_printf(int fd, const char *format, ...);
+ void io_start_multiplex_out(int fd);
+ void io_start_multiplex_in(int fd);
+-int io_multiplex_write(enum logcode code, char *buf, int len);
++int io_multiplex_write(enum logcode code, char *buf, size_t len);
+ void io_multiplexing_close(void);
+ char *lp_motd_file(void);
+ char *lp_log_file(void);
+@@ -166,6 +168,9 @@
+ void sig_int(void);
+ void finish_transfer(char *fname, char *fnametmp, struct file_struct *file);
+ void send_files(struct file_list *flist,int f_out,int f_in);
++int try_bind_local(int s,
++		   int ai_family, int ai_socktype,
++		   const char *bind_address);
+ int open_socket_out(char *host, int port, const char *bind_address,
+ 		    int af_hint);
+ int open_socket_out_wrapped (char *host,
+Index: receiver.c
+diff -u receiver.c:1.34 receiver.c:1.35
+--- receiver.c:1.34	Fri Jan 11 00:25:33 2002
++++ receiver.c	Tue Jan 22 20:57:18 2002
+@@ -206,7 +206,8 @@
+ static int receive_data(int f_in,struct map_struct *buf,int fd,char *fname,
+ 			OFF_T total_size)
+ {
+-	int i,n,remainder,len,count;
++	int i;
++	unsigned int n,remainder,len,count;
+ 	OFF_T offset = 0;
+ 	OFF_T offset2;
+ 	char *data;
+Index: rsync.h
+diff -u rsync.h:1.116 rsync.h:1.117
+--- rsync.h:1.116	Fri Jan 11 00:37:42 2002
++++ rsync.h	Tue Jan 22 20:57:19 2002
+@@ -374,9 +374,9 @@
+ 
+ struct sum_struct {
+   OFF_T flength;		/* total file length */
+-  int count;			/* how many chunks */
+-  int remainder;		/* flength % block_length */
+-  int n;			/* block_length */
++  size_t count;			/* how many chunks */
++  size_t remainder;		/* flength % block_length */
++  size_t n;			/* block_length */
+   struct sum_buf *sums;		/* points to info for each chunk */
+ };
+ 
+Index: util.c
+diff -u util.c:1.98 util.c:1.99
+--- util.c:1.98	Tue Jan 15 02:05:28 2002
++++ util.c	Tue Jan 22 20:57:19 2002
+@@ -275,7 +275,7 @@
+ 
+    derived from GNU C's cccp.c.
+ */
+-static int full_write(int desc, char *ptr, int len)
++static int full_write(int desc, char *ptr, size_t len)
+ {
+ 	int total_written;
+ 	
+@@ -301,11 +301,11 @@
+    for an error.  
+ 
+    derived from GNU C's cccp.c. */
+-static int safe_read(int desc, char *ptr, int len)
++static int safe_read(int desc, char *ptr, size_t len)
+ {
+ 	int n_chars;
+  
+-	if (len <= 0)
++	if (len == 0)
+ 		return len;
+  
+ #ifdef EINTR
