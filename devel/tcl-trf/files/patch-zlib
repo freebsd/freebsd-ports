@@ -1,0 +1,100 @@
+--- generic/adler.c	Wed Aug  9 15:13:17 2000
++++ generic/adler.c	Fri Feb 15 15:09:44 2002
+@@ -63,5 +63,5 @@
+   MDAdler_UpdateBuf,
+   MDAdler_Final,
+-  MDAdler_Check
++  NULL
+ };
+ 
+@@ -222,36 +222,2 @@
+   out [3] = (char) ((adler >>  0) & 0xff);
+ }
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDAdler_Check --
+- *
+- *	------------------------------------------------*
+- *	Check for existence of libz, load it.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDAdler_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  int res;
+-
+-  START (MDAdler_Check);
+-
+-  res = TrfLoadZlib (interp);
+-
+-  PRINT ("res = %d\n", res);
+-  DONE (MDAdler_Check);
+-  return res;
+-}
+-
+--- generic/crc_zlib.c	Wed Aug  9 15:13:17 2000
++++ generic/crc_zlib.c	Fri Feb 15 15:11:49 2002
+@@ -63,5 +63,5 @@
+   MDcrcz_UpdateBuf,
+   MDcrcz_Final,
+-  MDcrcz_Check
++  NULL
+ };
+ 
+@@ -217,28 +217,2 @@
+   out [0] = (char) ((crc >>  0) & 0xff);
+ }
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDcrcz_Check --
+- *
+- *	------------------------------------------------*
+- *	Check for existence of libz, load it.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDcrcz_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  return TrfLoadZlib (interp);
+-}
+-
+--- generic/zip_opt.c	Sat Nov 18 17:42:32 2000
++++ generic/zip_opt.c	Fri Feb 15 15:13:22 2002
+@@ -183,13 +183,4 @@
+ 
+   /*
+-   * 'zip' is used, therefore load the required library.
+-   * And bail out if it is not available.
+-   */
+-
+-  if (TCL_OK != TrfLoadZlib (interp)) {
+-    return TCL_ERROR;
+-  }
+-
+-  /*
+    * Now perform the real option check.
+    */

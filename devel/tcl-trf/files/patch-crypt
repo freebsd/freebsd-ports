@@ -3,7 +3,7 @@
 @@ -112,4 +112,6 @@
   */
  
-+char *crypt_md5(const char *pw, const char *salt); /* Live in -lscrypt */
++char *crypt_md5(const char *pw, const char *salt); /* Lives in -lcrypt */
 +
  static int
  TrfMd5CryptObjCmd (notUsed, interp, objc, objv)
