@@ -7,5 +7,6 @@ include/nist_curves.h
 include/rijndael-alg-fst.h
 include/rng.h
 lib/libborzoi.a
+lib/libborzoi.la
 lib/libborzoi.so
 lib/libborzoi.so.0
