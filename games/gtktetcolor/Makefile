@@ -9,8 +9,8 @@ PORTNAME=	gtktetcolor
 PORTVERSION=	0.5.0
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://canopus.iacp.dvo.ru/pub/Games/gtktetcolor/ \
-		http://www.dvgu.ru/ifit/~panov/gtktetcolor/ \
-		http://metalab.unc.edu/pub/Linux/games/
+ 		http://www.dvgu.ru/ifit/~panov/gtktetcolor/ \
+		http://ibilbio.org/pub/Linux/games/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for GNOME that resembles well-known tetris and columns
