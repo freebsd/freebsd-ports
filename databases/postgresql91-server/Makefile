@@ -3,9 +3,8 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.23 1998/03/22 16:45:18 andreas Exp $
-
-PATCH_DEBUG=	yes
+# $Id: Makefile,v 1.24 1998/04/21 21:51:51 andreas Exp $
+#
 
 DISTNAME=	postgresql-6.3.2
 CATEGORIES=	databases
