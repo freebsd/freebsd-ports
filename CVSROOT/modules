@@ -7761,6 +7761,7 @@ texmacs		ports/editors/texmacs
 textedit	ports/editors/textedit
 textmaze	ports/games/textmaze
 textutils	ports/textproc/textutils
+tftp-hpa	ports/ftp/tftp-hpa
 tgif		ports/graphics/tgif
 tgif-nls	ports/graphics/tgif-nls
 tgif2tex	ports/print/tgif2tex
