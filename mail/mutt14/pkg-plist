@@ -49,6 +49,7 @@ share/examples/mutt/pgp6.rc
 share/examples/mutt/sample.mailcap
 share/examples/mutt/sample.muttrc
 share/examples/mutt/sample.muttrc-tlr
+share/locale/bg/LC_MESSAGES/mutt.mo
 share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
