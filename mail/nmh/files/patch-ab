@@ -1,23 +1,7 @@
-diff -udr ../nmh-0.19.ORIG/Makefile.in ./Makefile.in
---- ../nmh-0.19.ORIG/Makefile.in	Sat Jul 26 06:38:35 1997
-+++ ./Makefile.in	Mon Jan  5 20:29:42 1998
-@@ -26,7 +26,7 @@
- bindir      = @bindir@
- 
- # location of support binaries and scripts
--libdir      = @libdir@
-+libexecdir  = @libexecdir@
- 
- # location of nmh configuration and formats files
- etcdir      = @sysconfdir@
-@@ -59,12 +59,13 @@
- MAKEDEFS = CC='$(CC)' CPPFLAGS='$(CPPFLAGS)' DEFS='$(DEFS)' \
- CFLAGS='$(CFLAGS)' LDFLAGS='$(LDFLAGS)' LIBS='$(LIBS)' \
- prefix='$(prefix)' exec_prefix='$(exec_prefix)' bindir='$(bindir)' \
--etcdir='$(etcdir)' libdir='$(libdir)' mandir='$(mandir)' \
-+etcdir='$(etcdir)' libexecdir='$(libexecdir)' mandir='$(mandir)' \
- mailspool='$(mailspool)' sendmailpath='$(sendmailpath)' \
- default_editor='$(default_editor)' default_pager='$(default_pager)'
+diff -ur ../../nmh-1.0.2-DIST/Makefile.in ./Makefile.in
+--- ../../nmh-1.0.2-DIST/Makefile.in	Sun Sep 26 12:43:15 1999
++++ ./Makefile.in	Sat Dec 11 11:54:28 1999
+@@ -65,6 +65,7 @@
  
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -25,117 +9,38 @@ diff -udr ../nmh-0.19.ORIG/Makefile.in ./Makefile.in
  INSTALL_DATA    = @INSTALL_DATA@
  
  .SUFFIXES:
-diff -udr ../nmh-0.19.ORIG/configure.in ./configure.in
---- ../nmh-0.19.ORIG/configure.in	Wed Dec 17 01:18:12 1997
-+++ ./configure.in	Mon Jan  5 20:20:08 1998
-@@ -400,7 +400,7 @@
- 
- eval "nmhbin=${bindir}";         eval "nmhbin2=${nmhbin}"
- eval "nmhsysconf=${sysconfdir}"; eval "nmhsysconf2=${nmhsysconf}"
--eval "nmhlib=${libdir}";         eval "nmhlib2=${nmhlib}"
-+eval "nmhlib=${libexecdir}";     eval "nmhlib2=${nmhlib}"
- eval "nmhman=${mandir}"
- 
- echo "
-@@ -413,7 +413,7 @@
- linker flags              : ${LDFLAGS}
- source code location      : ${srcdir}
- binary install path       : ${nmhbin2}
--libary install path       : ${nmhlib2}
-+libexec install path      : ${nmhlib2}
- config files install path : ${nmhsysconf2}
- man page install path     : ${nmhman}"
- echo ""
-diff -udr ../nmh-0.26.ORIG/etc/Makefile.in ./etc/Makefile.in
---- ../nmh-0.26.ORIG/etc/Makefile.in	Sat May 16 21:05:03 1998
-+++ ./etc/Makefile.in	Mon Jun  1 21:05:45 1998
-@@ -13,13 +13,14 @@
- prefix      = @prefix@
- exec_prefix = @exec_prefix@
- bindir      = @bindir@
--libdir      = @libdir@
-+libexecdir  = @libexecdir@
- etcdir      = @sysconfdir@
- 
- mailspool    = @mailspool@
+diff -ur ../../nmh-1.0.2-DIST/etc/Makefile.in ./etc/Makefile.in
+--- ../../nmh-1.0.2-DIST/etc/Makefile.in	Thu Jul 15 17:43:04 1999
++++ ./etc/Makefile.in	Sat Dec 11 12:12:53 1999
+@@ -20,6 +20,7 @@
  
  INSTALL         = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_SCRIPT  = @INSTALL_SCRIPT@
  INSTALL_DATA    = @INSTALL_DATA@
  
- # Path to search for programs to display content
-@@ -86,9 +87,9 @@
- 	done
- 
+ # Path to search for programs to handle MIME
+@@ -89,7 +90,7 @@
  install-scripts:
--	$(top_srcdir)/mkinstalldirs $(libdir)
-+	$(top_srcdir)/mkinstalldirs $(libexecdir)
+ 	$(top_srcdir)/mkinstalldirs $(libdir)
  	for script in $(SCRIPTS); do \
 -	  $(INSTALL_PROGRAM) $(srcdir)/$$script $(libdir)/$$script; \
-+	  $(INSTALL_SCRIPT) $(srcdir)/$$script $(libexecdir)/$$script; \
++	  $(INSTALL_SCRIPT) $(srcdir)/$$script $(libdir)/$$script; \
  	done
  
  uninstall: uninstall-files uninstall-scripts
-@@ -100,7 +101,7 @@
- 
- uninstall-scripts:
- 	for script in $(SCRIPTS); do \
--	  rm -f $(libdir)/$$script; \
-+	  rm -f $(libexecdir)/$$script; \
+diff -ur ../../nmh-1.0.2-DIST/man/Makefile.in ./man/Makefile.in
+--- ../../nmh-1.0.2-DIST/man/Makefile.in	Wed Oct 13 07:56:41 1999
++++ ./man/Makefile.in	Sat Dec 11 11:52:33 1999
+@@ -146,8 +146,9 @@
+ 	  $(INSTALL_DATA) $$file $(mandir)/man$(manext5) ; \
  	done
+ 	if [ ! -f mh_profile.$(manext5) ] ; then \
+-	  ( cd $(mandir)/man$(manext5) ; ln mh-profile.$(manext5) \
+-            mh_profile.$(manext5) ) \
++	  ( cd $(mandir)/man$(manext5) ; \
++	    rm -f mh_profile.$(manext5) ; \
++	    ln mh-profile.$(manext5) mh_profile.$(manext5) ) \
+ 	fi
  
- # ========== DEPENDENCIES FOR CLEANUP ==========
-diff -udr ../nmh-0.19.ORIG/uip/Makefile.in ./uip/Makefile.in
---- ../nmh-0.19.ORIG/uip/Makefile.in	Thu Dec  4 02:16:04 1997
-+++ ./uip/Makefile.in	Mon Jan  5 20:29:16 1998
-@@ -13,7 +13,7 @@
- prefix      = @prefix@
- exec_prefix = @exec_prefix@
- bindir      = @bindir@
--libdir      = @libdir@
-+libexecdir  = @libexecdir@
- etcdir      = @sysconfdir@
- 
- CC       = @CC@
-@@ -235,9 +235,9 @@
- 
- # install misc support binaries
- install-misc:
--	$(top_srcdir)/mkinstalldirs $(libdir)
-+	$(top_srcdir)/mkinstalldirs $(libexecdir)
- 	for misc in $(MISC); do \
--	  $(INSTALL_PROGRAM) $$misc $(libdir)/$$misc; \
-+	  $(INSTALL_PROGRAM) $$misc $(libexecdir)/$$misc; \
- 	done
- 
- uninstall:
-@@ -248,7 +248,7 @@
- 	  rm -f $(bindir)/$$lcmd; \
- 	done
- 	for misc in $(MISC); do \
--	  rm -f $(libdir)/$$misc; \
-+	  rm -f $(libexecdir)/$$misc; \
- 	done
- 
- # ========== DEPENDENCIES FOR CLEANUP ==========
-diff -udr ../nmh-0.19.ORIG/config/Makefile.in ./config/Makefile.in
---- ../nmh-0.19.ORIG/config/Makefile.in	Sat Jul 26 06:38:57 1997
-+++ ./config/Makefile.in	Mon Jan  5 22:02:45 1998
-@@ -17,6 +17,7 @@
- exec_prefix = @exec_prefix@
- bindir      = @bindir@
- libdir      = @libdir@
-+libexecdir  = @libexecdir@
- etcdir      = @sysconfdir@
- 
- default_editor = @vipath@
-@@ -26,7 +27,7 @@
- CFLAGS     = @CFLAGS@
- DEFS       = @DEFS@
- INCLUDES   = -I.. -I$(top_srcdir)
--CONFIGDEFS = -DNMHBINDIR='"$(bindir)"' -DNMHETCDIR='"$(etcdir)"' -DNMHLIBDIR='"$(libdir)"' \
-+CONFIGDEFS = -DNMHBINDIR='"$(bindir)"' -DNMHETCDIR='"$(etcdir)"' -DNMHLIBDIR='"$(libdir)"' -DNMHLIBEXECDIR='"$(libexecdir)"' \
-              -DDEFAULT_EDITOR='"$(default_editor)"' -DDEFAULT_PAGER='"$(default_pager)"'
- 
- COMPILE  = $(CC) -c $(DEFS) $(INCLUDES) $(CFLAGS)
+ # install the man pages in man8

@@ -51,6 +51,7 @@ etc/nmh/mhl.reply
 etc/nmh/mhn.defaults
 etc/nmh/mts.conf
 etc/nmh/rcvdistcomps
+etc/nmh/rcvdistcomps.outbox
 etc/nmh/replcomps
 etc/nmh/replgroupcomps
 etc/nmh/scan.default
