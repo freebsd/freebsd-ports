@@ -6,3 +6,6 @@ Edit the file "${HOME}/.mozilla/${USER}/*.slt/user.js" (per user)
 If need printing, go /usr/ports/chinese/arphicttf to make WANT_GS=yes
 For detail: http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html
 ***********************************************************************
+After all, remember that mozilla-tclp highly depends on Mozilla. If you 
+     upgrade Mozilla, remember to reinstall mozilla-tclp. It will
+     try to automatically detect and match your Mozilla version.

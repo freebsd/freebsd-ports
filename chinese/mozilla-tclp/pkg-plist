@@ -31,6 +31,8 @@ lib/mozilla/searchplugins/google_en.gif
 lib/mozilla/searchplugins/google_en.src
 lib/mozilla/searchplugins/google_tw.gif
 lib/mozilla/searchplugins/google_tw.src
+lib/mozilla/searchplugins/openfind.gif
+lib/mozilla/searchplugins/openfind.src
 @exec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regxpcom
 @exec env HOME=/tmp LD_LIBRARY_PATH=%D/lib/mozilla MOZILLA_FIVE_HOME=%D/lib/mozilla %D/lib/mozilla/regchrome
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
