@@ -4,6 +4,7 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation/Random.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Branch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_and_2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_and_3.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_or_2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_or_3.pm
