@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@freebsd.org
 COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
-EXTRA_PATCHES=	${WRKDIR}/extra-patch-localIP
-
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
