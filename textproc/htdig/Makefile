@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	apps/www/indexing
 
 MAINTAINER=	billf@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/share/apache:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/www/apache13
 
 Y2K=		http://www.htdig.org/FAQ.html#q1.7
 
