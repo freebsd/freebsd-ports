@@ -3,6 +3,7 @@ include/pop3lite/alias.h
 include/pop3lite/apop.h
 include/pop3lite/mailbox.h
 include/pop3lite/userconf.h
+info/pop3lite-admin.info
 lib/pop3lite/alias.so
 lib/pop3lite/apop.so
 lib/pop3lite/capa.so
