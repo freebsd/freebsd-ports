@@ -1,0 +1,59 @@
+*** analhead.h.orig	Thu Apr 11 09:09:52 1996
+--- analhead.h	Sun Jun  9 12:45:17 1996
+***************
+*** 17,27 ****
+  /* the URL of your host's home page, for linking to at the top of the
+     output; use "-" for no linking. */
+  
+! #define DOMAINSFILE "/usr/local/etc/httpd/analog/domains.tab"
+  /* the name of the file where the domain definitions live; see README.html
+     for the format of this file */
+  
+! #define LOGFILE "/usr/local/etc/httpd/logs/access_log"
+  /* The name of the default logfile; use "stdin" for stdin.
+     Can be a list, separated by commas (but no spaces). */
+  
+--- 17,27 ----
+  /* the URL of your host's home page, for linking to at the top of the
+     output; use "-" for no linking. */
+  
+! #define DOMAINSFILE "/usr/local/share/analog/domains.tab"
+  /* the name of the file where the domain definitions live; see README.html
+     for the format of this file */
+  
+! #define LOGFILE "/usr/local/www/logs/access_log"
+  /* The name of the default logfile; use "stdin" for stdin.
+     Can be a list, separated by commas (but no spaces). */
+  
+***************
+*** 113,126 ****
+  #define CACHEFILE "none"
+  /* The default file of cached time info. Use "none" for none. */
+  
+! #define REFERER_LOG "/usr/local/etc/httpd/logs/referer_log"
+  /* The name of the default referer_log. Use "none" for none.
+     Can be a list, separated by commas. */
+  
+! #define BROWSER_LOG "/usr/local/etc/httpd/logs/agent_log"
+  /* The name of the default browser log (= agent_log) similarly. */
+  
+! #define ERROR_LOG "/usr/local/etc/httpd/logs/error_log"
+  /* The name of the default error_log similarly. */
+  
+  #define REPORTORDER "mWdDhHoSirfbBce"
+--- 113,126 ----
+  #define CACHEFILE "none"
+  /* The default file of cached time info. Use "none" for none. */
+  
+! #define REFERER_LOG "/usr/local/www/logs/referer_log"
+  /* The name of the default referer_log. Use "none" for none.
+     Can be a list, separated by commas. */
+  
+! #define BROWSER_LOG "/usr/local/www/logs/agent_log"
+  /* The name of the default browser log (= agent_log) similarly. */
+  
+! #define ERROR_LOG "/usr/local/www/logs/error_log"
+  /* The name of the default error_log similarly. */
+  
+  #define REPORTORDER "mWdDhHoSirfbBce"
+

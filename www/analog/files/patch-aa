@@ -1,0 +1,51 @@
+*** Makefile.orig	Wed Mar  6 15:12:05 1996
+--- Makefile	Sun Jun  9 12:27:55 1996
+***************
+*** 2,8 ****
+  # Please read Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+  CC = gcc           # which compiler to use. NB Different compilers need
+                     # different CFLAGS, e.g., -O instead of -O2.
+! CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
+  LIBS = -lm         # extra libraries needed
+  PAGER = less       # Your favourite pager program, e.g. more
+  
+--- 2,8 ----
+  # Please read Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
+  CC = gcc           # which compiler to use. NB Different compilers need
+                     # different CFLAGS, e.g., -O instead of -O2.
+! #CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
+  LIBS = -lm         # extra libraries needed
+  PAGER = less       # Your favourite pager program, e.g. more
+  
+***************
+*** 16,21 ****
+--- 16,23 ----
+  FORMSRC = analform.c        # The source code for that program
+  FORMHTML = analogform.html  # Where the form itself will go
+  FORMOPTS =                  # Extra analog options when constructing the form
++ 
++ all: $(PROGRAM)
+  
+  $(PROGRAM): $(OBJS) $(HEADERS) Makefile
+  	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
+
+*** analform.c.orig	Wed Apr 10 08:57:01 1996
+--- analform.c	Sun Jun  9 12:45:57 1996
+***************
+*** 6,12 ****
+  
+  /* You must change the next line to indicate where the analog program lives */
+  
+! #define COMMAND "/usr/local/etc/httpd/analog/analog"
+  #define MAXARGLENGTH (2048)   /* should be plenty */
+  #define OK (0)
+  #define ERR (-1)
+--- 6,12 ----
+  
+  /* You must change the next line to indicate where the analog program lives */
+  
+! #define COMMAND "/usr/local/bin/analog"
+  #define MAXARGLENGTH (2048)   /* should be plenty */
+  #define OK (0)
+  #define ERR (-1)
+
