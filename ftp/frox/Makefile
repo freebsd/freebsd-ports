@@ -47,6 +47,8 @@ OPTIONS=	IPFILTER "Use ipfilter instead of ipfw" off \
 		LOCAL_CACHE "Enable use of local cache" off \
 		CCP "Ftp-proxy style command control programs" on \
 		ROOT_RUN "Allow frox running as root (not recomended)" off
+WITH_HTTP_CACHE?=	yes
+WITH_CCP?=	yes
 
 .include <bsd.port.pre.mk>
 
