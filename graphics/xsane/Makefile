@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsane
-PORTVERSION=	0.93
+PORTVERSION=	0.96
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -43,6 +43,12 @@ USE_GNOME=	gtk12
 CONFIGURE_ARGS+=	--disable-gtk2
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS:C/-O[0-9]*//g}"
+.endif
+
 pre-everything::
 .if !defined(WITH_GIMP)
 	@${ECHO_MSG} "*** Note: XSane can be built with a standalone"
@@ -58,4 +64,4 @@ pre-patch:
 post-install:
 	@${SED} 's:/usr/X11R6:${PREFIX}:' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
