@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pptpd
+PORTNAME=	poptop
 PORTVERSION=	1.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.moretonbay.com/vpn/releases/
