@@ -5976,6 +5976,7 @@ smtpd		ports/mail/smtpd
 smtpfeed	ports/mail/smtpfeed
 smunge		ports/mail/smunge
 smurflog	ports/security/smurflog
+snack		ports/audio/snack
 snake		src/games/snake
 snarf		ports/www/snarf
 snd		src/sys/i386/isa/snd
