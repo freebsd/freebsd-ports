@@ -9,7 +9,11 @@
 @dirrm %%RUBY_SITELIBDIR%%/xmlrpc
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_tk.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/validator/validator1.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/raa
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/validator
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog
