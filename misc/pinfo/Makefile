@@ -13,7 +13,7 @@ MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		ncurses.4:${PORTSDIR}/devel/ncurses
+		ncurses.5:${PORTSDIR}/devel/ncurses
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-gettext --with-readline \

@@ -14,7 +14,7 @@ DISTFILES=	topaz-3_25-src.tar.gz
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		ncurses.4:${PORTSDIR}/devel/ncurses
+		ncurses.5:${PORTSDIR}/devel/ncurses
 
 CXX?=		c++
 MAKEFILE=	Makefile.freebsd
