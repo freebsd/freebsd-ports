@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTML/TableTiler.pm
+%%SITE_PERL%%/HTML/TableTiler.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableTiler/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/TableTiler
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/HTML/TableTiler 2>/dev/null || true
