@@ -32,6 +32,12 @@ BROKEN=		"Does not compile on FreeBSD-4.x/Alpha"
 BROKEN=		"Does not compile on amd64 (needs -fPIC)"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/extern int ForwardEvent();/d' \
+		${WRKSRC}/src/Chinput-*/src/*.c
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} ${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g'
+
 pre-build:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|'
