@@ -1,0 +1,9 @@
+POE::Component::JobQueue manages a finite pool of worker sessions as
+they handle an arbitrarily large number of tasks.  It often is used as
+a form of flow control, preventing a large group of tasks from
+exhausting some sort of resource.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-JobQueue
+
+-- Sergey Skvortsov
+skv@protey.ru
