@@ -3453,11 +3453,13 @@ ksh93		ports/shells/ksh93
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
 ksubeditor	ports/multimedia/ksubeditor
+ktextdecode	ports/converters/ktextdecode
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kxicq-devel		ports/net/kxicq-devel
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
+kyra		ports/devel/kyra
 l0pht-watch	ports/security/l0pht-watch
 l0phtcrack	ports/security/l0phtcrack
 l2a		ports/textproc/l2a
@@ -5917,6 +5919,7 @@ pm3-gui		ports/lang/pm3-gui
 pm3-m3tk	ports/lang/pm3-m3tk
 pm3-net		ports/lang/pm3-net
 pm3-netobj	ports/lang/pm3-netobj
+pmacct		ports/net/pmacct
 pmail		ports/mail/pmail
 pmake		ports/devel/pmake
 pmap		ports/sysutils/pmap
