@@ -6,6 +6,7 @@
 
 PORTNAME=	howl
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES?=	net devel
 MASTER_SITES=	http://www.porchdogsoft.com/download/
 
@@ -34,7 +35,5 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
-		-E -e '/^library_includedir[[:space:]]*=/s^\$$[(]includedir[)]/howl^$$(includedir)/howl-${PORTVERSION}^g'
 
 .include <bsd.port.post.mk>
