@@ -35,8 +35,8 @@ do-install:
 .endif
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/tcsh /etc/shells.bak; \
-		${ECHO} ${PREFIX}/bin/tcsh) > /etc/shells
+	@(${GREP} -v ${PREFIX}/bin/44bsd-csh /etc/shells.bak; \
+		${ECHO} ${PREFIX}/bin/44bsd-csh) > /etc/shells
 	@${RM} /etc/shells.bak
 
 tarup:
