@@ -1,0 +1,20 @@
+--- cfs_fh.c.orig	Sat Jul 15 01:26:30 2000
++++ cfs_fh.c	Sat Jul 15 01:24:02 2000
+@@ -908,7 +908,7 @@
+ 			f->name=NULL;
+ 		}
+ 	} else {
+-		if ((f=(cfs_fileid *)malloc(sizeof(cfs_fileid)))==NULL) {
++		if ((f=(cfs_fileid *)calloc(1, sizeof(cfs_fileid)))==NULL) {
+ 			fprintf(stderr,"cfsd: out of memory\n");
+ 			cfserrno=NFSERR_STALE;	/* bad news */
+ 			return -2;
+@@ -1198,7 +1198,7 @@
+ #endif /* SHORTLINKS */
+ 					)) == NULL) {
+ 				if ((f=(cfs_fileid *)
+-				     malloc(sizeof(cfs_fileid)))==NULL) {
++				     calloc(1, sizeof(cfs_fileid)))==NULL) {
+ 					fprintf(stderr,"cfsd: no memory\n");
+ 					cfserrno=NFSERR_STALE;	/* bad news */
+ 					return -2;
