@@ -5,36 +5,58 @@
 # $FreeBSD$
 #
 
-PORTNAME=	elisp-info
-PORTVERSION=	2.11
-CATEGORIES=	japanese elisp
+PORTNAME=	mode-info
+PORTVERSION=	0.1.3
+CATEGORIES=	elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.el
 
 MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/info/elisp-ja:${PORTSDIR}/japanese/elisp-manual
-RUN_DEPENDS=	${LOCALBASE}/info/elisp-ja:${PORTSDIR}/japanese/elisp-manual
+MI_INDEX+=	mi-emacs.idx
+MI_WITH_ELISP?=	yes
+MI_ELISP_LANG?=	en
 
-NO_WRKSUBDIR=	yes
-EXTRACT_CMD=	${CP}
-EXTRACT_BEFORE_ARGS=	-p
-EXTRACT_AFTER_ARGS=	./
+.if (${MI_WITH_ELISP} == "yes")
+.if (${MI_ELISP_LANG} == "en")
+BUILD_DEPENDS+=	${LOCALBASE}/info/elisp:${PORTSDIR}/lang/elisp-manual
+RUN_DEPENDS+=	${LOCALBASE}/info/elisp:${PORTSDIR}/lang/elisp-manual
+.elif (${MI_ELISP_LANG} == "ja")
+BUILD_DEPENDS+=	${LOCALBASE}/info/elisp-ja:${PORTSDIR}/japanese/elisp-manual
+RUN_DEPENDS+=	${LOCALBASE}/info/elisp-ja:${PORTSDIR}/japanese/elisp-manual
+.else
+.error MI_ELISP_LANG should be "en" or "ja".
+.endif
+MI_INDEX+=	mi-elisp.idx
+PLIST_SUB+=	MI_WITH_ELISP=""
+.else
+PLIST_SUB+=	MI_WITH_ELISP="@comment "
+.endif
 
 EMACS_PORT_NAME?=	emacs21
 EMACS_NO_RUN_DEPENDS=	yes
 LISPDIR?=	${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mode-info
+ALL_TARGET=	default index
+#INSTALL_TARGET=	install install-index
 
-post-extract:
-	${CP} ${FILESDIR}/ELISP_CFG ${WRKDIR}
-do-build:
-	(cd ${WRKDIR}; \
-	${EMACS_CMD} -batch -l ./ELISP_CFG -l ./${PORTNAME}.el -f ${PORTNAME}-make-index)
-do-install:
-	${MKDIR} ${LISPDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.el ${LISPDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-index.el ${LISPDIR}
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}-setup.el ${LISPDIR}
-
+post-configure:
+.if (${MI_ELISP_LANG} == "en")
+	${ECHO_CMD} "(setq mode-info-elisp-titles (list \"elisp\"))" >> ${WRKSRC}/elisp-comp
+.elif (${MI_ELISP_LANG} == "ja")
+	${ECHO_CMD} "(setq mode-info-elisp-titles (list \"elisp-ja\"))" >> ${WRKSRC}/elisp-comp
+.endif
+post-install:
+.for i in ${MI_INDEX}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mode-info/
+.endfor
+	${RM} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mode-info/ChangeLog
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README README.ja ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
 .include <bsd.port.mk>

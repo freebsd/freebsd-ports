@@ -1,0 +1,8 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  You should add following lines into your ~/.emacs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'mi-config)
+(global-set-key "\C-hf" 'mode-info-describe-function)
+(global-set-key "\C-hv" 'mode-info-describe-variable)
+(global-set-key "\M-." 'mode-info-find-tag)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
