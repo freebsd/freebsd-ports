@@ -7631,6 +7631,7 @@ toolbox		ports/x11-wm/toolbox
 topaz		ports/math/topaz
 toppler		ports/games/toppler
 tora		ports/databases/tora
+torcs		ports/games/torcs
 tornado		ports/games/tornado
 tosha		ports/audio/tosha
 tosvcd		ports/multimedia/tosvcd
