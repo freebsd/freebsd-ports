@@ -8,6 +8,7 @@ bin/wcmd
 bin/widl
 bin/wine
 bin/wineboot
+bin/winebrowser
 bin/winebuild
 bin/winecfg
 bin/wineclipsrv
@@ -99,6 +100,7 @@ include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx8core.h
 include/wine/windows/dbghelp.h
+include/wine/windows/dbt.h
 include/wine/windows/dde.h
 include/wine/windows/ddeml.h
 include/wine/windows/ddraw.h
@@ -109,6 +111,7 @@ include/wine/windows/dinput.h
 include/wine/windows/dispdib.h
 include/wine/windows/dlgs.h
 include/wine/windows/dls1.h
+include/wine/windows/dls2.h
 include/wine/windows/dmdls.h
 include/wine/windows/dmerror.h
 include/wine/windows/dmo.h
@@ -137,6 +140,7 @@ include/wine/windows/exdisp.idl
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
 include/wine/windows/guiddef.h
+include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
@@ -168,6 +172,7 @@ include/wine/windows/mmreg.h
 include/wine/windows/mmsystem.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
+include/wine/windows/msacmdrv.h
 include/wine/windows/msi.h
 include/wine/windows/msiquery.h
 include/wine/windows/mssip.h
@@ -331,10 +336,12 @@ lib/wine/dpnhpast.dll.so
 lib/wine/dplay.dll.so
 lib/wine/dplayx.dll.so
 lib/wine/dsound.dll.so
+lib/wine/dswave.dll.so
 lib/wine/expand.exe.so
 lib/wine/gdi.exe.so
 lib/wine/gdi32.dll.so
 lib/wine/glut32.dll.so
+lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
 lib/wine/imaadp32.acm.so
@@ -383,8 +390,10 @@ lib/wine/libmsvcrtd.def
 lib/wine/libdplay.def
 lib/wine/libdplayx.def
 lib/wine/libdsound.def
+lib/wine/libdswave.def
 lib/wine/libgdi32.def
 lib/wine/libglu32.def
+lib/wine/libiccvid.def
 lib/wine/libicmp.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def
@@ -401,9 +410,11 @@ lib/wine/libmsnet32.def
 lib/wine/libmsrle32.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
+lib/wine/libmsvcrt40.def
 lib/wine/libmsvfw32.def
 lib/wine/libmswsock.def
 lib/wine/libnetapi32.def
+lib/wine/libnewdev.def
 lib/wine/libntdll.def
 lib/wine/libodbc32.def
 lib/wine/libole32.def
@@ -478,11 +489,13 @@ lib/wine/msnet32.dll.so
 lib/wine/msrle32.dll.so
 lib/wine/msvcrt.dll.so
 lib/wine/msvcrt20.dll.so
+lib/wine/msvcrt40.dll.so
 lib/wine/msvcrtd.dll.so
 lib/wine/msvfw32.dll.so
 lib/wine/msvideo.dll.so
 lib/wine/mswsock.dll.so
 lib/wine/netapi32.dll.so
+lib/wine/newdev.dll.so
 lib/wine/notepad.exe.so
 lib/wine/ntdll.dll.so
 lib/wine/odbc32.dll.so
@@ -553,6 +566,7 @@ lib/wine/winealsa.drv.so
 lib/wine/winearts.drv.so
 lib/wine/wineaudioio.drv.so
 lib/wine/wineboot.exe.so
+lib/wine/winebrowser.exe.so
 lib/wine/winecfg.exe.so
 lib/wine/wineconsole.exe.so
 lib/wine/wined3d.dll.so
