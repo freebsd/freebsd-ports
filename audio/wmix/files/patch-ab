@@ -1,14 +1,12 @@
-*** mix.c.orig	Fri Mar 30 00:38:55 2001
---- mix.c	Sun Apr  1 22:54:26 2001
+*** mix.c.orig	Fri Apr 20 11:52:28 2001
+--- mix.c	Sun Jul 22 12:19:34 2001
 ***************
 *** 20,26 ****
---- 20,30 ----
+--- 20,28 ----
   #include <stdlib.h>
   #include <string.h>
   #include <ctype.h>
-+ #ifdef __FreeBSD__
-+ #include <popt.h>
-+ #else
++ #ifdef linux
   #include <getopt.h>
 + #endif
   #include <time.h>
@@ -29,7 +27,7 @@
   
       if ((mixer_fd = open(value("mixerdev"), O_RDWR)) == -1) {
   	printf("error: cannot open mixer device %s\n", value("mixerdev"));
---- 891,905 ----
+--- 889,903 ----
   #ifdef CUSTOM
   #undef SOUND_DEVICE_NAMES
   
@@ -59,7 +57,7 @@
       for (count = 0; count < SOUND_MIXER_NRDEVICES; count++) {
   	if ((1 << count) & devmask) {
   	    strcpy(mixer[nchannels].name, names[count]);
---- 927,942 ----
+--- 925,940 ----
   	exit(1);
       }
   
@@ -78,7 +76,7 @@
   	    strcpy(mixer[nchannels].name, names[count]);
 ***************
 *** 946,951 ****
---- 956,962 ----
+--- 954,960 ----
   	    printf("0");
   	}
       }
@@ -107,7 +105,7 @@
   	i = 0;
   	/* this happens if mixer was changed by another program,
   	 * so we need to update the values.  We do not know, under OSS,
---- 964,989 ----
+--- 962,987 ----
   {
       int i;
       int left, right, foo;
@@ -136,7 +134,7 @@
   	 * so we need to update the values.  We do not know, under OSS,
 ***************
 *** 1022,1028 ****
---- 1040,1048 ----
+--- 1038,1046 ----
   	    }
   	}
       }
