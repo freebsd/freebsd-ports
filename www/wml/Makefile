@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wml
-PORTVERSION= 	2.0.2
+PORTVERSION= 	2.0.3
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.engelschall.com/sw/wml/
