@@ -1,0 +1,22 @@
+--- stat.fmt.c.orig	Sun Feb 16 08:12:33 1997
++++ stat.fmt.c	Wed Nov 17 14:57:30 1999
+@@ -279,6 +279,8 @@
+ 					break;
+ 		case	S_IFSOCK:	buf[5 + 0] = 's';
+ 					break;
++		case	S_IFIFO:	buf[5 + 0] = 'p';
++					break;
+ 		default		:	buf[5 + 0] = '?';
+ 	}
+ }
+@@ -328,6 +330,10 @@
+ 
+ 		case	S_IFSOCK:
+ 			strcpy(buf, "Socket");
++			break;
++
++		case	S_IFIFO:
++			strcpy(buf, "FIFO");
+ 			break;
+ 
+ 		default:
