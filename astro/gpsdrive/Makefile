@@ -30,7 +30,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_LIBTOOL_VER=	13
-USE_GCC=	3.2
+
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-garmin --disable-mysql
@@ -39,7 +39,15 @@ INSTALLS_SHLIB=	yes
 MAN1=		gpsdrive.1
 MANLANG=	"" de es
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501103 && ${OSVERSION} >= 500000
+USE_GCC=3.2
+.else
+USE_GCC=3.3
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
