@@ -3,5 +3,5 @@
 @@ -1,3 +1,3 @@
  <configuration>
 -  <dllmap dll="rsvg-2" target="librsvg-2@LIB_PREFIX@.2@LIB_SUFFIX@"/>
-+  <dllmap dll="rsvg-2" target="librsvg-2@LIB_PREFIX@.8@LIB_SUFFIX@"/>
++  <dllmap dll="rsvg-2" target="librsvg-2@LIB_PREFIX@@LIB_SUFFIX@"/>
  </configuration>
