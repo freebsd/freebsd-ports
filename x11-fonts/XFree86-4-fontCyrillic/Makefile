@@ -7,16 +7,13 @@
 
 PORTNAME=	fontCyrillic
 PORTVERSION=	4.2.0
-PORTREVISION=	3
+PORTREVISION=   4
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITES=   ${MASTER_SITE_XFREE} \
+		http://koi8.pp.ru/dist/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
-
-# koi8-u commented out until will be implemented as addition, not replacement
-#PATCHFILES=	cronyx-4.2.0.koi8-u.diff.gz
-#PATCH_SITES=	http://people.FreeBSD.org/~sobomax/
+DISTFILES=      X${PORTVERSION:S/.//g}src-2.tgz xrus-2.3.1-xf4-bdf.tgz
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -27,8 +24,13 @@ XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
 DIST_SUBDIR=		xc
+EXTRACT_ONLY=           X${PORTVERSION:S/.//g}src-2.tgz
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/fonts
 WRKSRC=			${WRKDIR}/xc/fonts/bdf/cyrillic
+
+post-extract:
+	cd ${WRKSRC} && \
+	    ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/xrus-2.3.1-xf4-bdf.tgz
 
 do-configure:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
@@ -47,11 +49,5 @@ do-configure:
 pre-build:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
 	 ${MAKE} all)
-
-#post-build:
-#	@for line in `${TAIL} -n +2 ${WRKSRC}/fonts.dir | ${AWK} '{print $$2}'`; do \
-#		${ECHO_CMD} `${ECHO_CMD} $$line | ${SED} 's|koi8-r|koi8-u|'` $$line >> \
-#			${WRKSRC}/fonts.alias; \
-#	done
 
 .include <bsd.port.mk>
