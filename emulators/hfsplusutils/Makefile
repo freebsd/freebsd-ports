@@ -42,7 +42,7 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL} && ${AUTOHEADER}
-	@${MAKE} patch-libtool
+#	@${MAKE} patch-libtool
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/hfsp.man ${MAN1PREFIX}/man/man1/hfsp.1
