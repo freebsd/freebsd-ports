@@ -1,13 +1,13 @@
---- manifest.inc.orig	Wed Nov 26 08:06:54 2003
-+++ manifest.inc	Mon Jan 12 18:08:37 2004
+--- manifest.inc.orig	Sat Jan 24 22:45:58 2004
++++ manifest.inc	Sun Jan 25 11:25:43 2004
 @@ -28,9 +28,6 @@
   */
  
  $versions=array();
 -$versions['AUTHORS']='1.16';
 -$versions['LICENSE.txt']='1.2';
--$versions['README']='1.28';
- $versions['Version.php']='1.496.2.38';
+-$versions['README']='1.28.6.1';
+ $versions['Version.php']='1.496.2.40';
  $versions['add_comment.php']='1.26.2.1';
  $versions['add_photo.php']='1.18';
 @@ -39,7 +36,6 @@
