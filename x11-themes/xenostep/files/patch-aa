@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Oct 23 14:21:41 2000
-+++ Makefile	Tue Nov 14 10:43:17 2000
++++ Makefile	Thu Nov 16 11:12:35 2000
 @@ -4,11 +4,13 @@
  # Edit the entries below for your system:
  # In most cases you don't have to
@@ -11,8 +11,8 @@
 -CFLAGS		= `gtk-config --cflags`
 -LIBS		= `gtk-config --libs`
 +CC		?= gcc
-+_CFLAGS		!= `$(GTK_CONFIG) --cflags`
-+_LIBS		!= `$(GTK_CONFIG) --libs`
++_CFLAGS		!= $(GTK_CONFIG) --cflags
++_LIBS		!= $(GTK_CONFIG) --libs
 +CFLAGS		+= $(_CFLAGS)
 +LIBS		+= $(_LIBS)
  
