@@ -1,0 +1,20 @@
+--- db_sample.bak/dhcpdb.pool	Thu Jul 21 19:39:46 1994
++++ db_sample/dhcpdb.pool	Sun Mar 23 00:07:21 1997
+@@ -2,12 +2,14 @@
+ global:!snmk=255.255.255.224:tmof=32400:
+ 
+ # define different master entries for each subnet. . .
++# `dnsv' is IP address of DNS server.
++# `dnsd' is domain name of your domain.
+ subnet30:tblc=global:rout=133.4.30.1:dht1=500:dht2=850:\
+-	:brda=133.4.30.31:
++	:brda=133.4.30.31:dnsv=133.4.30.10:dnsd=you.domain.name:
+ 
+ # entries for manual allocation (DHCP, BOOTP)
+-3001:	:ipad=133.4.30.1:tblc=subnet30:clid="1:0x0080c75fdc03":
+-3002:	:ipad=133.4.30.2:tblc=subnet30:clid="1:0x08004600e5d5":
++3001:	:ipad=133.4.30.1:hstn="yourclient1.host.name":tblc=subnet30:clid="1:0x0080c75fdc03":
++3002:	:ipad=133.4.30.2:hstn="yourclient2.host.name":tblc=subnet30:clid="1:0x08004600e5d5":
+ 
+ # entries for dynamic allocation (DHCP)
+ 3003:	:ipad=133.4.30.3:dfll=3600:maxl=7200:tblc=subnet30:
