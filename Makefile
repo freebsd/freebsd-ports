@@ -99,10 +99,11 @@ ${.CURDIR}/${INDEXFILE}:
 			echo "********************************************************************"; \
 			echo "Before reporting this error, verify that you are running a supported"; \
 			echo "version of FreeBSD (see http://www.FreeBSD.org/ports/) and that you"; \
-			echo "have a complete and up-to-date ports collection.  If so, then report"; \
-			echo "the failure to ports@FreeBSD.org together with relevant details of"; \
-			echo "your ports configuration (including FreeBSD version, environment and"; \
-			echo "/etc/make.conf settings)."; \
+			echo "have a complete and up-to-date ports collection (INDEX builds are"; \
+			echo "not supported with partial or out-of-date ports collections).  If"; \
+			echo "so, then report the failure to ports@FreeBSD.org together with"; \
+			echo "relevant details of your ports configuration (including FreeBSD"; \
+			echo "version, environment and /etc/make.conf settings)."; \
 			echo "********************************************************************"; \
 			echo; \
 		fi; \
