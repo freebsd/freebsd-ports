@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Sat Dec  4 06:48:54 1999
++++ Makefile.in	Sat Apr  8 18:00:00 2000
+@@ -25,11 +25,11 @@
+ 
+ all shared static:
+ 	@for I in ${subdirs}; do (cd $$I; ${MAKE} $@ || exit 1); done
+-	@for I in ${sampledirs}; do (cd $$I; ${MAKE}); done
++#	@for I in ${sampledirs}; do (cd $$I; ${MAKE}); done
+ 
+ 
+ install install-shared install-static:
+-	@for I in $(subdirs); do (cd $$I; $(MAKE) DESTDIR=/usr/local \
++	@for I in $(subdirs); do (cd $$I; $(MAKE) DESTDIR=$(prefix) \
+ 		 $@ || exit 1); done
+ 
+ clean:

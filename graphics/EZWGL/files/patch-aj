@@ -1,0 +1,11 @@
+--- configure.orig	Sat Dec  4 06:48:55 1999
++++ configure	Sat Apr  8 18:00:00 2000
+@@ -1008,7 +1008,7 @@
+     fi
+     CFLAGS="$CCOPTS"
+ fi
+-CFLAGS="${CFLAGS} -fpic"
++CFLAGS="${CFLAGS}"
+ 
+ # Extract the first word of "gcc", so it can be a program name with args.
+ set dummy gcc; ac_word=$2
