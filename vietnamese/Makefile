@@ -2,6 +2,7 @@
 #
 
     SUBDIR += vn7to8
+    SUBDIR += vnconvert
     SUBDIR += vnelvis
     SUBDIR += vnless
     SUBDIR += vnlpr
