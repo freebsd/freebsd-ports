@@ -18,9 +18,8 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-BROKEN=		"Does not compile"
-
 USE_REINPLACE=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
