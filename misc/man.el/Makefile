@@ -13,16 +13,29 @@ MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
+# If you use Japanese manuals, install japanese/man as well.
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
+PKGMODULES=	i18n-man-de i18n-man-en i18n-man-ja
 
 do-install:
-	@${MKDIR} ${ELISPDIR}
+	@${MKDIR} ${ELISPDIR} ${PREFIX}/share/doc/i18n-man
 	@cd ${WRKSRC}; \
 	${INSTALL_DATA} `${TAR} tzf ${DISTDIR}/${DISTFILES}` ${ELISPDIR}
+# For xemacs package install configuration
+	${MKDIR}  ${SITEPKGDIR}/pkginfo
+.for f in ${PKGMODULES}
+	${MKDIR} ${SITEPKGDIR}/lisp/${f}
+	${LN} -sf ${ELISPDIR}/${f}.el ${SITEPKGDIR}/lisp/${f}/${f}.el
+	${LN} -sf ${ELISPDIR}/i18n-man.el ${SITEPKGDIR}/lisp/${f}/i18n-man.el
+	${ECHO} "pkginfo/MANIFEST.${f}" > ${SITEPKGDIR}/pkginfo/MANIFEST.${f}
+	${ECHO} "lisp/${f}/${f}.el" >> ${SITEPKGDIR}/pkginfo/MANIFEST.${f}
+	${ECHO} "lisp/${f}/i18n-man.el" >> ${SITEPKGDIR}/pkginfo/MANIFEST.${f}
+.endfor
+	${INSTALL_SCRIPT} ${FILESDIR}/byte-compile ${PREFIX}/share/doc/i18n-man
 
 .include <bsd.port.mk>
