@@ -50,7 +50,7 @@
   INCDIR =#			# extra cc options, e.g. "-I/var/include"
 ! NOB_UID = 65534#		# numerical user ID of <nobody> account
 ! NOB_GID = 65534#		# default numerical group ID of <nobody> account
-! CPP_PATH="/usr/bin -P -I$(HELP)"# used by plan to pre-process holiday files,
+! CPP_PATH="/usr/bin/cpp -P -I$(HELP)"# used by plan to pre-process holiday files,
   #				# plan will check if this file really exists
   ESCTOISOLATIN=\"\\033\(B\"#	# switching to ISO8859-1
   ESCTOJISLATIN=\"\\033\(J\"#	# switching to JIS X0201-1976 roman
