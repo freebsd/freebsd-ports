@@ -1,0 +1,12 @@
+--- Make.conf	Tue Nov  9 17:26:55 1993
++++ Make.conf	Sun Jul  2 10:57:03 2000
+@@ -12,5 +12,8 @@
+ 
+ # Optimization flags for C compiler.
+-OPT_FLAGS=
++# A comment inside autoconfig.c recommends the two extra options:
++#	-fstrength-reduce and -finline-functions
++# Unfortunately, strength-reduce triggers a bug in the gcc-2.95.2.
++OPT_FLAGS:=-fno-strength-reduce -finline-functions ${CFLAGS}
+ 
+ # Miscellaneous system libraries.

@@ -1,0 +1,11 @@
+--- Makefile	Tue Nov  9 17:25:12 1993
++++ Makefile	Sun Jul  2 10:56:48 2000
+@@ -24,5 +24,7 @@
+ 
+ autoconfig: autoconfig.c
+-	$(CC) -g -o autoconfig autoconfig.c
++	$(CC) -o autoconfig autoconfig.c -DDEF_CC='"${CC}"' \
++		-DDEF_OPT_FLAGS='"${OPT_FLAGS}"' \
++		-DDEF_INSTALL_DIR='"${PREFIX}/bin"'
+ 
+ # manual configuration target
