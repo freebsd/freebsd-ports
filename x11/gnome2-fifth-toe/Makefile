@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -39,6 +39,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
 		mrproject:${PORTSDIR}/deskutils/mrproject \
 		${X11BASE}/libexec/stickynotes_applet:${PORTSDIR}/misc/stickynotes_applet \
+		tsclient:${PORTSDIR}/net/tsclient \
+		zenity:${PORTSDIR}/x11/zenity \
 		galeon:${PORTSDIR}/www/galeon2
 
 NO_BUILD=	yes
