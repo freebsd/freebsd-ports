@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -38,6 +37,9 @@ PLIST_SUB=	NLS="@comment "
 .endif
 MAN1=		gpg.1 gpgv.1
 MAN7=		gnupg.7
+# Workaround for 1.2.5 distribution.
+# Refer: http://lists.gnupg.org/pipermail/gnupg-announce/2004q3/000173.html
+INSTALL_TARGET=	install mkinstalldirs=`pwd`/scripts/mkinstalldirs
 
 .include <bsd.port.pre.mk>
 
