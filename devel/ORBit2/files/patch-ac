@@ -1,14 +1,53 @@
---- src/ORBitutil/machine_endian.awk.orig	Thu Aug 20 09:50:40 1998
-+++ src/ORBitutil/machine_endian.awk	Thu Aug 20 09:51:22 1998
-@@ -10,8 +10,10 @@
-   if (def["HAVE_MACHINE_ENDIAN_H"] || def["HAVE_ENDIAN_H"] || def["HAVE_SYS_MACHINE_H"] || def["HAVE_SYS_ENDIAN_H"]) {
-     if (def["HAVE_MACHINE_ENDIAN_H"])
-       print "#include <machine/endian.h>";
--    if (def["HAVE_MACHINE_TYPES_H"])
-+    if (def["HAVE_MACHINE_TYPES_H"]) {
-+      print "#include <sys/types.h>";
-       print "#include <machine/types.h>";
-+    }
-     if (def["HAVE_SYS_MACHINE_H"])
-       print "#include <sys/machine.h>";
-     if (def["HAVE_SYS_ENDIAN_H"])
+--- libIDL/Makefile.in.orig	Mon Sep 21 13:50:12 1998
++++ libIDL/Makefile.in	Wed Sep 23 23:18:22 1998
+@@ -95,7 +95,7 @@
+ noinst_PROGRAMS		= tstidl
+ 
+ libIDL_la_SOURCES	= parser.c parser.h lexer.c ns.c util.c util.h rename.h
+-libIDL_la_LDFLAGS	= -version-info 5:0:5
++libIDL_la_LDFLAGS	= -version-info 0:3:0
+ 
+ tstidl_SOURCES		= tstidl.c
+ tstidl_LDADD		= libIDL.la
+@@ -446,7 +446,7 @@
+ install-exec: install-libLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+ 
+-install-data: install-info-am install-pkgincludeHEADERS
++install-data: install-pkgincludeHEADERS
+ 	@$(NORMAL_INSTALL)
+ 
+ install: install-exec install-data all
+--- src/IIOP/Makefile.in.orig	Wed Sep 23 21:35:34 1998
++++ src/IIOP/Makefile.in	Wed Sep 23 21:35:48 1998
+@@ -117,7 +117,7 @@
+ 	iiop-encoders.h \
+ 	iiop-endian.h
+ 
+-libIIOP_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libIIOP_la_LDFLAGS = -version-info 0:3:0
+ 
+ EXTRA_DIST = IIOP-design.txt
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+--- src/ORBitutil/Makefile.in.orig	Wed Sep 23 21:35:00 1998
++++ src/ORBitutil/Makefile.in	Wed Sep 23 21:35:14 1998
+@@ -110,7 +110,7 @@
+ 	util.h \
+ 	compat.h
+ 
+-libORBitutil_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBitutil_la_LDFLAGS = -version-info 0:3:0
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
+--- src/orb/Makefile.in.orig	Wed Sep 23 21:36:05 1998
++++ src/orb/Makefile.in	Wed Sep 23 21:36:21 1998
+@@ -190,7 +190,7 @@
+ 	orbit_poa_type.h \
+ 	orbit_types.h
+ 
+-libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++libORBit_la_LDFLAGS = -version-info 0:3:0
+ libORBit_la_LIBADD = $(GLIB_LIBS) -lm
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   orbit
-# Version required:		0.2.1
+# Version required:		0.3.0
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.3 1998/08/20 02:32:50 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/22 23:31:11 asami Exp $
 #
 
-DISTNAME=	ORBit-0.2.1
+DISTNAME=	ORBit-0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnome.org/pub/ORBit/
 
@@ -21,6 +21,6 @@ CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS= --disable-indent
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,5 +1,7 @@
+bin/naming-client
 bin/orbit-config
 bin/orbit-idl
+bin/orbit-naming-server
 include/IIOP/IIOP-config.h
 include/IIOP/IIOP-types.h
 include/IIOP/IIOP.h
@@ -8,7 +10,6 @@ include/IIOP/iiop-encoders.h
 include/IIOP/iiop-endian.h
 include/ORBitutil/basic_types.h
 include/ORBitutil/compat.h
-include/ORBitutil/machine_endian.h
 include/ORBitutil/thread-safety.h
 include/ORBitutil/trace.h
 include/ORBitutil/util.h
@@ -51,18 +52,23 @@ include/orb/poa.h
 include/orb/sequences.h
 include/orb/typecode.h
 lib/libIDL.a
+lib/libIDL.la
+lib/libIDL.so
+lib/libIDL.so.0.3
 lib/libIIOP.a
 lib/libIIOP.la
 lib/libIIOP.so
-lib/libIIOP.so.2.1
+lib/libIIOP.so.0.3
 lib/libORBit.a
 lib/libORBit.la
 lib/libORBit.so
-lib/libORBit.so.2.1
+lib/libORBit.so.0.3
 lib/libORBitutil.a
 lib/libORBitutil.la
 lib/libORBitutil.so
-lib/libORBitutil.so.2.1
+lib/libORBitutil.so.0.3
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm include/IIOP
 @dirrm include/ORBitutil
 @dirrm include/libIDL
