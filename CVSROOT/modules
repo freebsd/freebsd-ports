@@ -1605,6 +1605,7 @@ echat		ports/net/echat
 echolinux	ports/comms/echolinux
 echolot		ports/net-mgmt/echolot
 echoping	ports/net/echoping
+ecl		ports/lang/ecl
 eclipse		ports/java/eclipse
 eclipse-emf	ports/java/eclipse-emf
 eclipse-examples	ports/java/eclipse-examples
