@@ -360,6 +360,7 @@
     SUBDIR += ngrep
     SUBDIR += ngrep-lib
     SUBDIR += nic
+    SUBDIR += nitpicker
     SUBDIR += nload
     SUBDIR += nocol
     SUBDIR += noip
