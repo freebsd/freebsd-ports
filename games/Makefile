@@ -241,6 +241,7 @@
     SUBDIR += kcheckers
     SUBDIR += kdegames3
     SUBDIR += kfreerings
+    SUBDIR += kgeography
     SUBDIR += klondike
     SUBDIR += knights
     SUBDIR += kobodeluxe

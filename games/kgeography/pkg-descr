@@ -1,0 +1,11 @@
+KGeography is a geography learning tool. Right now it has six usage modes:
+*	Browse the maps clicking in a map division to see it's name
+*	The game tells you a map division name and you have to click on it
+*	The game tells you a capital and you have to guess the division it
+	belongs to
+*	The game tells you a division and you have to guess its capital
+*	The game shows you a map division flag and you have to guess its name
+*	The game tells you a map division name and you have to guess its flag
+
+WWW:	http://kgeography.berlios.de/
+Author:	Albert Astals Cid.
