@@ -1,0 +1,4 @@
+This program provides a TCP SYN and UDP port scanning detection and blocking
+facility for use with divert(4) sockets under FreeBSD.
+
+WWW: http://www.duty.ru/~sand/scand/ 
