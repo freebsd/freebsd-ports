@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Palm/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Palm/Address.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/Datebook.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/Mail.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/Memo.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/PDB.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/Raw.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/StdAppInfo.pm
+lib/perl5/site_perl/%%PERL_VER%%/Palm/ToDo.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Palm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Palm
