@@ -7,8 +7,8 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTREVISION=	${GS_REVISION}
+PORTEPOCH=	${GS_EPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
@@ -115,10 +115,6 @@ PLIST_SUB+=	SHLIB="@comment "
 .endif
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
-#  Note: the following two are real files that have symlinks with
-#  later version numbers pointing to them.  To avoid unnecessarily
-#  downloading distfiles, do not change these when upgrading the port
-#  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-8.11.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 
@@ -218,6 +214,7 @@ LEX7000_SRCS=	gs6.0.lexmark7000.patch
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
 
+.include "Makefile.inc"
 .include <bsd.port.pre.mk>
 .SILENT:
 
@@ -231,9 +228,8 @@ pre-everything::
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
 # ** 3rd party driver **
-# Note: don't forget to add those devices in scripts/configure and
-# configure.batch, which update unix-gcc.mak to build gs with these
-# new devices !
+# Note: don't forget to add those devices in scripts/configure,
+# which update unix-gcc.mak to build gs with these new devices !
 #
 # for HP8XX driver
 	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
@@ -540,5 +536,4 @@ post-install:
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."
 
-.include "Makefile.inc"
 .include <bsd.port.post.mk>
