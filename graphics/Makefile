@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.44 1997/02/28 10:54:04 tg Exp $
+# $Id: Makefile,v 1.45 1997/05/05 12:38:30 tg Exp $
 #
 
     SUBDIR += ImageMagick
     SUBDIR += Mesa
     SUBDIR += aero
+    SUBDIR += camediaplay
     SUBDIR += dore
     SUBDIR += geomview
     SUBDIR += gd
@@ -33,6 +34,7 @@
     SUBDIR += plotmtv
     SUBDIR += png
     SUBDIR += povray
+    SUBDIR += qvplay
     SUBDIR += sced
     SUBDIR += spigot
     SUBDIR += splitmpg
