@@ -1,0 +1,51 @@
+bin/glmaze
+share/glmaze/data/Font.bmp
+share/glmaze/data/Star.bmp
+share/glmaze/data/bar.bmp
+share/glmaze/data/crosshair.bmp
+share/glmaze/data/hit1.bmp
+share/glmaze/data/hit2.bmp
+share/glmaze/data/hit3.bmp
+share/glmaze/data/hit4.bmp
+share/glmaze/data/hit5.bmp
+share/glmaze/data/master.bmp
+share/glmaze/data/paused.bmp
+share/glmaze/data/radar.bmp
+share/glmaze/data/shield.bmp
+share/glmaze/data/slave.bmp
+share/glmaze/data/smiley_b.bmp
+share/glmaze/data/smiley_b_icon.bmp
+share/glmaze/data/smiley_c.bmp
+share/glmaze/data/smiley_c_icon.bmp
+share/glmaze/data/smiley_g.bmp
+share/glmaze/data/smiley_g_icon.bmp
+share/glmaze/data/smiley_m.bmp
+share/glmaze/data/smiley_m_icon.bmp
+share/glmaze/data/smiley_r.bmp
+share/glmaze/data/smiley_r_icon.bmp
+share/glmaze/data/smiley_y.bmp
+share/glmaze/data/smiley_y_icon.bmp
+share/glmaze/levels/369.maz
+share/glmaze/levels/brick_b.bmp
+share/glmaze/levels/brick_c.bmp
+share/glmaze/levels/brick_d.bmp
+share/glmaze/levels/brick_g.bmp
+share/glmaze/levels/brick_m.bmp
+share/glmaze/levels/brick_r.bmp
+share/glmaze/levels/brick_y.bmp
+share/glmaze/levels/bricks.bmp
+share/glmaze/levels/complex.maz
+share/glmaze/levels/crate.bmp
+share/glmaze/levels/empty.maz
+share/glmaze/levels/floor1.bmp
+share/glmaze/levels/maze.maz
+share/glmaze/sounds/button.wav
+share/glmaze/sounds/hit.wav
+share/glmaze/sounds/kill.wav
+share/glmaze/sounds/music.mod
+share/glmaze/sounds/shot.wav
+share/glmaze/sounds/wall.wav
+@dirrm share/glmaze/sounds
+@dirrm share/glmaze/levels
+@dirrm share/glmaze/data
+@dirrm share/glmaze
