@@ -1,16 +1,16 @@
-# New ports collection makefile for:	hanterm304fonts
-# Version required:     none
-# Date created:		22 Mar 1997
-# Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
+# New ports collection makefile for:	johabfonts
+# Version required:     3.04
+# Date created:		15 Mar 1998
+# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/18 08:45:51 asami Exp $
+# $Id$
 #
 
 DISTNAME=       hanterm304fonts
-PKGNAME=	ko-johabfonts-304
+PKGNAME=	ko-johabfonts-3.04
 CATEGORIES=	korean x11
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/terminal/hanterm/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/terminal/hanterm/
+MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/terminal/hanterm/hanterm304beta/fonts/ \
+		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/terminal/hanterm/hanterm304beta/fonts/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
