@@ -1,4 +1,9 @@
-etc/cvsweb.conf.sample
+etc/cvsweb/cvsweb.conf.dist
+etc/cvsweb/cvsweb.conf-freebsd.dist
+etc/cvsweb/cvsweb.conf-openbsd.dist
+etc/cvsweb/cvsweb.conf-netbsd.dist
+etc/cvsweb/cvsweb.conf-ruby.dist
+@dirrm etc/cvsweb
 share/doc/cvsweb/ChangeLog
 share/doc/cvsweb/INSTALL
 share/doc/cvsweb/README
