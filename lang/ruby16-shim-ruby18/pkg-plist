@@ -33,6 +33,12 @@
 %%RUBY_SITELIBDIR%%/dl/types.rb
 %%RUBY_SITELIBDIR%%/dl/win32.rb
 @dirrm %%RUBY_SITELIBDIR%%/dl
+@comment optparse
+%%RUBY_SITELIBDIR%%/optparse.rb
+%%RUBY_SITELIBDIR%%/optparse/shellwords.rb
+%%RUBY_SITELIBDIR%%/optparse/time.rb
+%%RUBY_SITELIBDIR%%/optparse/uri.rb
+@dirrm %%RUBY_SITELIBDIR%%/optparse
 @comment racc-runtime
 %%RUBY_SITEARCHLIBDIR%%/racc/cparse.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/racc

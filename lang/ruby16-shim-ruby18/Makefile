@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.7.2.2002.05.21
+PORTVERSION=	1.7.2.2002.07.31
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	http://www.ruby-lang.org/~knu/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
