@@ -1,0 +1,19 @@
+--- source/support/genesis.orig	Thu Oct 16 02:45:16 2003
++++ source/support/genesis	Sun May  9 23:40:24 2004
+@@ -22,11 +22,11 @@
+ 
+ ### Configuration Files ###
+ DEFAULT_DIR ../work/              # Directory in which config files are found
+-INST_SET inst_set.default         # File containing instruction set
+-EVENT_FILE events.cfg             # File containing list of events during run
+-ANALYZE_FILE analyze.cfg          # File used for analysis mode
+-ENVIRONMENT_FILE environment.cfg  # File that describes the environment
+-START_CREATURE organism.default   # Organism to seed the soup
++INST_SET ../work/inst_set.default         # File containing instruction set
++EVENT_FILE ../work/events.cfg             # File containing list of events during run
++ANALYZE_FILE ../work/analyze.cfg          # File used for analysis mode
++ENVIRONMENT_FILE ../work/environment.cfg  # File that describes the environment
++START_CREATURE ../work/organism.default   # Organism to seed the soup
+ 
+ ### Reproduction ###
+ BIRTH_METHOD 4    # 0 = Replace random organism in neighborhood
