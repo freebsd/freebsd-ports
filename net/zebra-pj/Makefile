@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zebra
-PORTVERSION=	0.91a
+PORTVERSION=	0.92a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
