@@ -1,7 +1,7 @@
---- autoconf/fbsd.in.orig	Wed May 22 10:25:23 2002
-+++ autoconf/fbsd.in	Wed May 22 10:25:28 2002
-@@ -18,7 +18,7 @@
-                  dansguardian.conf config.cache Makefile logrotation weightedphraselist
+--- autoconf/fbsd.in-orig	Mon Oct 21 15:01:20 2002
++++ autoconf/fbsd.in	Mon Oct 21 15:04:42 2002
+@@ -19,7 +19,7 @@
+                  bannedphraselist exceptionphraselist
  
  PASSVARS = -DPROXYUSER=\"${PROXYUSER}\"
 -PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}access.log\"
@@ -9,8 +9,33 @@
  PASSVARS += -DCONFFILELOCATION=\"${CONFFILELOCATION}dansguardian.conf\"
  PASSVARS += -DPIDDIR=\"${PIDDIR}\"
  
-@@ -43,39 +43,36 @@
+@@ -36,44 +36,74 @@
+ .cpp.o:
+ 	$(CPP) $(DEBUG) $(CFLAGS) -c $<
+ 
+-all:	$(OBJ) 
++all:	$(OBJ)
+ 	$(CPP) -o dansguardian $(DGCFLAGS) $(DEBUG) $(OBJ) $(LIBS) dansguardian.cpp
+ 
+ install:
+ 	@test -d $I$(SYSVLOCATION) || install -d $I$(SYSVLOCATION)
  	@test -d $I$(CONFFILELOCATION) || install -d $I$(CONFFILELOCATION)
+ 	@test -d $I$(CONFFILELOCATION)phraselists || install -d $I$(CONFFILELOCATION)phraselists
++	@test -d $I$(CONFFILELOCATION)phraselists/chat || install -d $I$(CONFFILELOCATION)phraselists/chat
++	@test -d $I$(CONFFILELOCATION)phraselists/drugadvocasy || install -d $I$(CONFFILELOCATION)phraselists/drugadvocasy
++	@test -d $I$(CONFFILELOCATION)phraselists/dutchbadwords || install -d $I$(CONFFILELOCATION)phraselists/dutchbadwords
++	@test -d $I$(CONFFILELOCATION)phraselists/frenchbadwords || install -d $I$(CONFFILELOCATION)phraselists/frenchbadwords
++	@test -d $I$(CONFFILELOCATION)phraselists/gambling || install -d $I$(CONFFILELOCATION)phraselists/gambling
++	@test -d $I$(CONFFILELOCATION)phraselists/goodphrases || install -d $I$(CONFFILELOCATION)phraselists/goodphrases
++	@test -d $I$(CONFFILELOCATION)phraselists/gore || install -d $I$(CONFFILELOCATION)phraselists/gore
++	@test -d $I$(CONFFILELOCATION)phraselists/illegaldrugs || install -d $I$(CONFFILELOCATION)phraselists/illegaldrugs
++	@test -d $I$(CONFFILELOCATION)phraselists/intolerance || install -d $I$(CONFFILELOCATION)phraselists/intolerance
++	@test -d $I$(CONFFILELOCATION)phraselists/legaldrugs || install -d $I$(CONFFILELOCATION)phraselists/legaldrugs
++	@test -d $I$(CONFFILELOCATION)phraselists/personals || install -d $I$(CONFFILELOCATION)phraselists/personals
++	@test -d $I$(CONFFILELOCATION)phraselists/pornography || install -d $I$(CONFFILELOCATION)phraselists/pornography
++	@test -d $I$(CONFFILELOCATION)phraselists/violence || install -d $I$(CONFFILELOCATION)phraselists/violence/
++	@test -d $I$(CONFFILELOCATION)phraselists/warezhacking || install -d $I$(CONFFILELOCATION)phraselists/warezhacking
++	@test -d $I$(CONFFILELOCATION)phraselists/weapons || install -d $I$(CONFFILELOCATION)phraselists/weapons
  	@test -d $I$(CGIBINLOCATION) || install -d $I$(CGIBINLOCATION)
  	@test -d $I$(MANUALFILES)man8/ || install -d $I$(MANUALFILES)man8/
 -	@test -d $I$(LOGLOCATION) || install -d $I$(LOGLOCATION)
@@ -20,11 +45,7 @@
 -	cp -f ./bannedphraselist $I$(CONFFILELOCATION)bannedphraselist
 -	cp -f ./exceptionphraselist $I$(CONFFILELOCATION)exceptionphraselist
 -	cp -f ./weightedphraselist $I$(CONFFILELOCATION)weightedphraselist
--	cp -f ./weightedphraselist.goodwords $I$(CONFFILELOCATION)weightedphraselist.goodwords
--	cp -f ./weightedphraselist.personals $I$(CONFFILELOCATION)weightedphraselist.personals
--	cp -f ./weightedphraselist.pornsites $I$(CONFFILELOCATION)weightedphraselist.pornsites
--	cp -f ./weightedphraselist.pornwords $I$(CONFFILELOCATION)weightedphraselist.pornwords
--	cp -f ./weightedphraselist.warez $I$(CONFFILELOCATION)weightedphraselist.warez
+-	cp -f -R ./phraselists/* $I$(CONFFILELOCATION)phraselists/
 -	cp -f ./bannediplist $I$(CONFFILELOCATION)bannediplist
 -	cp -f ./banneduserlist $I$(CONFFILELOCATION)banneduserlist
 -	cp -f ./bannedextensionlist $I$(CONFFILELOCATION)bannedextensionlist
@@ -41,17 +62,31 @@
 -	cp -f ./logrotation $I$(CONFFILELOCATION)logrotation
 -	cp -f ./dansguardian.bsdv $I$(SYSVLOCATION)dansguardian.sh
 -	cp -f ./dansguardian.pl $I$(CGIBINLOCATION)dansguardian.pl
-+	@test -d $I$(BINARYLOCATION) || install -d $I$(BINARYLOCATION)
 +	install -o root -g wheel -m 755 ./dansguardian $I$(BINARYLOCATION)dansguardian
 +	install -o root -g wheel -m 644 ./dansguardian.conf $I$(CONFFILELOCATION)dansguardian.conf
 +	install -o root -g wheel -m 644 ./bannedphraselist $I$(CONFFILELOCATION)bannedphraselist
 +	install -o root -g wheel -m 644 ./exceptionphraselist $I$(CONFFILELOCATION)exceptionphraselist
 +	install -o root -g wheel -m 644 ./weightedphraselist $I$(CONFFILELOCATION)weightedphraselist
-+	install -o root -g wheel -m 644 ./weightedphraselist.goodwords $I$(CONFFILELOCATION)weightedphraselist.goodwords
-+	install -o root -g wheel -m 644 ./weightedphraselist.personals $I$(CONFFILELOCATION)weightedphraselist.personals
-+	install -o root -g wheel -m 644 ./weightedphraselist.pornsites $I$(CONFFILELOCATION)weightedphraselist.pornsites
-+	install -o root -g wheel -m 644 ./weightedphraselist.pornwords $I$(CONFFILELOCATION)weightedphraselist.pornwords
-+	install -o root -g wheel -m 644 ./weightedphraselist.warez $I$(CONFFILELOCATION)weightedphraselist.warez
++	install -o root -g wheel -m 644 ./phraselists/chat/weighted $I$(CONFFILELOCATION)phraselists/chat/weighted
++	install -o root -g wheel -m 644 ./phraselists/drugadvocasy/weighted $I$(CONFFILELOCATION)phraselists/drugadvocasy/weighted
++	install -o root -g wheel -m 644 ./phraselists/dutchbadwords/weighted $I$(CONFFILELOCATION)phraselists/dutchbadwords/weighted
++	install -o root -g wheel -m 644 ./phraselists/frenchbadwords/weighted $I$(CONFFILELOCATION)phraselists/frenchbadwords/weighted
++	install -o root -g wheel -m 644 ./phraselists/gambling/banned $I$(CONFFILELOCATION)phraselists/gambling/banned
++	install -o root -g wheel -m 644 ./phraselists/gambling/weighted $I$(CONFFILELOCATION)phraselists/gambling/weighted
++	install -o root -g wheel -m 644 ./phraselists/goodphrases/exception $I$(CONFFILELOCATION)phraselists/goodphrases/exception
++	install -o root -g wheel -m 644 ./phraselists/goodphrases/weighted $I$(CONFFILELOCATION)phraselists/goodphrases/weighted
++	install -o root -g wheel -m 644 ./phraselists/gore/weighted $I$(CONFFILELOCATION)phraselists/gore/weighted
++	install -o root -g wheel -m 644 ./phraselists/illegaldrugs/banned $I$(CONFFILELOCATION)phraselists/illegaldrugs/banned
++	install -o root -g wheel -m 644 ./phraselists/illegaldrugs/weighted $I$(CONFFILELOCATION)phraselists/illegaldrugs/weighted
++	install -o root -g wheel -m 644 ./phraselists/intolerance/banned $I$(CONFFILELOCATION)phraselists/intolerance/banned
++	install -o root -g wheel -m 644 ./phraselists/intolerance/weighted $I$(CONFFILELOCATION)phraselists/intolerance/weighted
++	install -o root -g wheel -m 644 ./phraselists/legaldrugs/weighted $I$(CONFFILELOCATION)phraselists/legaldrugs/weighted
++	install -o root -g wheel -m 644 ./phraselists/personals/weighted $I$(CONFFILELOCATION)phraselists/personals/weighted
++	install -o root -g wheel -m 644 ./phraselists/pornography/banned $I$(CONFFILELOCATION)phraselists/pornography/banned
++	install -o root -g wheel -m 644 ./phraselists/pornography/weighted $I$(CONFFILELOCATION)phraselists/pornography/weighted
++	install -o root -g wheel -m 644 ./phraselists/violence/weighted $I$(CONFFILELOCATION)phraselists/violence/weighted
++	install -o root -g wheel -m 644 ./phraselists/warezhacking/weighted $I$(CONFFILELOCATION)phraselists/warezhacking/weighted
++	install -o root -g wheel -m 644 ./phraselists/weapons/weighted $I$(CONFFILELOCATION)phraselists/weapons/weighted
 +	install -o root -g wheel -m 644 ./bannediplist $I$(CONFFILELOCATION)bannediplist
 +	install -o root -g wheel -m 644 ./banneduserlist $I$(CONFFILELOCATION)banneduserlist
 +	install -o root -g wheel -m 644 ./bannedextensionlist $I$(CONFFILELOCATION)bannedextensionlist
@@ -65,7 +100,7 @@
 +	install -o root -g wheel -m 644 ./exceptioniplist $I$(CONFFILELOCATION)exceptioniplist
 +	install -o root -g wheel -m 644 ./pics $I$(CONFFILELOCATION)pics
 +	install -o root -g wheel -m 644 ./template.html $I$(CONFFILELOCATION)template.html
-+	install -o root -g wheel -m 755 ./dansguardian.bsdv $I$(SYSVLOCATION)dansguardian.sh
++	install -o root -g wheel -m 755 ./dansguardian.bsdv $I$(SYSVLOCATION)start-dg.sh
 +	install -o root -g wheel -m 755 ./dansguardian.pl $I$(CGIBINLOCATION)dansguardian.pl
  	chmod o+x $I$(CGIBINLOCATION)dansguardian.pl
 -	cp -f ./dansguardian.8.gz $I$(MANUALFILES)man8/dansguardian.8.gz
@@ -73,12 +108,12 @@
 -	chmod -R u+wr $I$(LOGLOCATION)
 -	chmod u+wrx $I$(LOGLOCATION)
 +	install -o root -g wheel -m 644 ./dansguardian.8 $I$(MANUALFILES)man8/dansguardian.8
-+	touch $I$(LOGLOCATION)/dansguardian.log
-+	chown $(PROXYUSER):$(PROXYGROUP) $I$(LOGLOCATION)/dansguardian.log
++	touch $I$(LOGLOCATION)dansguardian.log
++	chown $(PROXYUSER):$(PROXYGROUP) $I$(LOGLOCATION)dansguardian.log
  
  uninstall:
  	rm -f $(BINARYLOCATION)dansguardian
-@@ -83,7 +80,7 @@
+@@ -81,7 +111,7 @@
  	rm -f $(CGIBINLOCATION)dansguardian.pl
  	rm -f $(MANUALFILES)man8/dansguardian.8.gz
  	rm -fr $(CONFFILELOCATION)
