@@ -10,6 +10,8 @@ share/sawfish/themes/Eazel/i-bottom-teal-right-grow.png
 share/sawfish/themes/Eazel/i-close.png
 share/sawfish/themes/Eazel/i-left-repeat.png
 share/sawfish/themes/Eazel/i-left-teal-bottom-grow.png
+share/sawfish/themes/Eazel/i-left-teal-hangdown-end.png
+share/sawfish/themes/Eazel/i-left-teal-hangdown-stretch.png
 share/sawfish/themes/Eazel/i-left-teal-hangdown.png
 share/sawfish/themes/Eazel/i-left-title-text-end-cap.png
 share/sawfish/themes/Eazel/i-max.png
@@ -19,12 +21,16 @@ share/sawfish/themes/Eazel/i-p-max.png
 share/sawfish/themes/Eazel/i-p-min.png
 share/sawfish/themes/Eazel/i-right-teal-bottom-grow.png
 share/sawfish/themes/Eazel/i-right-title-text-end-cap.png
+share/sawfish/themes/Eazel/i-s-top-left-corner.png
+share/sawfish/themes/Eazel/i-s-top-right-corner.png
 share/sawfish/themes/Eazel/i-top-left-corner.png
 share/sawfish/themes/Eazel/i-top-right-corner.png
 share/sawfish/themes/Eazel/i-top-teal-repeat.png
 share/sawfish/themes/Eazel/i-top-title-text-repeat.png
 share/sawfish/themes/Eazel/left-repeat.png
 share/sawfish/themes/Eazel/left-teal-bottom-grow.png
+share/sawfish/themes/Eazel/left-teal-hangdown-end.png
+share/sawfish/themes/Eazel/left-teal-hangdown-stretch.png
 share/sawfish/themes/Eazel/left-teal-hangdown.png
 share/sawfish/themes/Eazel/left-title-text-end-cap.png
 share/sawfish/themes/Eazel/max.png
@@ -35,6 +41,8 @@ share/sawfish/themes/Eazel/p-min.png
 share/sawfish/themes/Eazel/right-teal-bottom-grow.png
 share/sawfish/themes/Eazel/right-title-text-end-cap.png
 share/sawfish/themes/Eazel/right-title-text-repeat.png
+share/sawfish/themes/Eazel/s-top-left-corner.png
+share/sawfish/themes/Eazel/s-top-right-corner.png
 share/sawfish/themes/Eazel/theme.jl
 share/sawfish/themes/Eazel/top-left-corner.png
 share/sawfish/themes/Eazel/top-right-corner.png
@@ -87,6 +95,7 @@ share/themes/Eazel/gtk/arrow_up.png
 share/themes/Eazel/gtk/border.png
 share/themes/Eazel/gtk/button-dark.png
 share/themes/Eazel/gtk/button-disabled.png
+share/themes/Eazel/gtk/button-focus.png
 share/themes/Eazel/gtk/button-hilight.png
 share/themes/Eazel/gtk/button-outline.png
 share/themes/Eazel/gtk/button-pressed.png
