@@ -23,7 +23,6 @@ MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 .if defined(WITH_VORBIS)
 LIB_DEPENDS=	vorbis.1:${PORTSDIR}/audio/libvorbis
 MAKE_ENV+=	WITH_VORBIS="${WITH_VORBIS}"
-.endif
 
 pre-everything::
 	@${ECHO_MSG}
