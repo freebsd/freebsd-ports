@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 etc/rc.d/runsvdir.sh.sample
 etc/runit/1.sample
 etc/runit/2.sample
