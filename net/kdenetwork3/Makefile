@@ -22,6 +22,10 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
+.if ${MACHINE_ARCH} == "alpha"
+_NO_KDE_FINAL= yes
+.endif
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 UTMP?=	/var/run/utmp
