@@ -77,7 +77,8 @@ dnews3			ports/news/dnews	Only free for schools and
 						free trial for everybody.
 						We currently ask for permission
 						to put a package on the CD-ROM.
-eijiro*.txt		ports/japanes/eijiro-fpw The original dictionary is not free
+eijiro*.txt		ports/japanese/eijiro-fpw The original dictionary is not
+						free
 fasta2*			ports/biology/fasta	May not be sold or incorporated
 						into a commercial product
 fasta3*			ports/biology/fasta3	May not be sold or incorporated
@@ -101,7 +102,6 @@ freefonts		ports/x11-fonts/freefonts	Some of the fonts are
 ftree			ports/misc/ftree	Can't distribute commercially.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
-gforce-1.*		ports/games/xmms-gforce	Non-commercial use only
 glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
@@ -109,12 +109,6 @@ gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-1.*		ports/graphics/graphviz	Needs license before fetching
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
-inn2-*			ports/news/inn2		Copyright file in package
-						Need to name Rich Salz (done
-						in DESCR). Need to name changes
-						done in inn2 sources, which are
-						now maintained by ISC. Otherwise
-						no usage restriction.
 jce-aba-*		ports/java/jce-aba	Crypto; export-controlled
 john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/java/jdk		Put copyright on packaging!
@@ -123,7 +117,6 @@ jdk*-src.tar.gz		ports/java/jdk12-beta	Redistribution of sources and pre-compile
 jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and export control.
 JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
-librc4-*		ports/security/librc4	Crypto; export-controlled
 l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
 						binaries should not be
 						distributed.  Contains crypto
@@ -163,7 +156,6 @@ qmail-*			ports/mail/qmail-*	Restricted binary distribution
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake106.zip		ports/games/quakeserver	Shareware
-quakesw-*		ports/games/quakesw	Shareware
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
@@ -171,9 +163,8 @@ rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rp7_linux20_libc6_i386_*_rpm	ports/audio/linux-realplayer	Redistribution not allowed.
-rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 Scilab-*		ports/math/Scilab	Don't sell for profit.
-sdr-2.7*		ports/mbone/sdr{,-current}	Crypto; export-controlled
+sdr-2.7*		ports/mbone/sdr		Crypto; export-controlled
 sharefonts-*		ports/x11-fonts/sharefonts	Shareware.  Cannot be
 						distributed w/o prior
 						authorization.
@@ -184,8 +175,7 @@ socks5-*		ports/net/socks5	No commercial use
 srd			ports/japanese/srd-fpw	The original dictionary is not free
 ssh-*			ports/security/ssh*	Crypto; export-controlled
 *mod_ssl*		ports/www/apache13-modssl Crypto; export-controlled
-apache*-ssl		ports/www/apache12-ssl	
-			ports/www/apache13-ssl	Crypto; export-controlled
+apache*-ssl		ports/www/apache13-ssl	Crypto; export-controlled
 so51a_lnx_01.tar	ports/editors/staroffice5	May not be distributed.
 stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
@@ -216,7 +206,7 @@ xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xhime*.tgz		ports/games/xhime	Contains commercial character
 						data
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
-xmdiary-*		ports/misc/xmdiary	Don't sell for profit
+xmdiary-*		ports/deskutils/xmdiary	Don't sell for profit
 xothello-*		ports/games/xothello	Possible trademark infringement
 xrisk-*			ports/games/xrisk	Copyright/trademark violation?
 xsmbrowser-*		ports/net/xsmbrowser	Commercial software
