@@ -7,6 +7,7 @@
 
 PORTNAME=	siproxd
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	siproxd
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	siproxd
 MAINTAINER=	frank@dynamical-systems.org
 COMMENT=	A proxy/masquerading daemon for the SIP protocol
 
-LIB_DEPENDS=	osip2.2:${PORTSDIR}/net/libosip2
+LIB_DEPENDS=	osip2.3:${PORTSDIR}/net/libosip2
 
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
