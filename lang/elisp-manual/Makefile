@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	elisp-manual
-PORTVERSION=	20-2.5
+PORTVERSION=	21-2.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
-MAINTAINER=	croyle@gelemna.org
+MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
 
