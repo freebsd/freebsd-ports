@@ -1,0 +1,74 @@
+--- vfs/extfs/dpkg.in.orig	Tue Dec 24 12:33:46 2002
++++ vfs/extfs/dpkg.in	Fri Sep 10 16:09:30 2004
+@@ -6,6 +6,12 @@
+ #
+ # dpkg
+ 
++sub quote {
++    $_ = shift(@_);
++    s/([^\w\/.+-])/\\$1/g;
++    return($_);
++}
++
+ sub bt
+ {
+     my ($dt) = @_;
+@@ -183,20 +189,21 @@
+ sub copyout
+ {
+     my($archive,$filename) = @_;
++    my $qfilename = quote($filename);
+     if( $archive eq 'DIVERSIONS' ) {
+-       system("dpkg-divert --list > $filename 2>/dev/null");
++       system("dpkg-divert --list > $qfilename 2>/dev/null");
+     } elsif( $archive eq 'ARCHITECTURE' ) {
+-       system("dpkg-architecture > $filename 2>/dev/null");
++       system("dpkg-architecture > $qfilename 2>/dev/null");
+     } elsif( $archive eq 'LIST' ) {
+-       system("dpkg -l '*' > $filename 2>/dev/null");
++       system("dpkg -l '*' > $qfilename 2>/dev/null");
+     } elsif( $archive eq 'AUDIT' ) {
+-       system("dpkg --audit > $filename 2>/dev/null");
++       system("dpkg --audit > $qfilename 2>/dev/null");
+     } elsif( $archive eq 'GET-SELECTIONS' ) {
+-       system("dpkg --get-selections > $filename 2>/dev/null");
++       system("dpkg --get-selections > $qfilename 2>/dev/null");
+     } elsif( $archive eq 'STATUS' ) {
+-       system("cp /var/lib/dpkg/status $filename");
++       system("cp /var/lib/dpkg/status $qfilename");
+     } elsif( $archive eq 'AVAILABLE' ) {
+-       system("cp /var/lib/dpkg/available $filename");
++       system("cp /var/lib/dpkg/available $qfilename");
+     } elsif( $archive eq 'CONFIGURE' ) {
+        open O, ">$filename";
+        print O $pressconfigure;
+@@ -224,8 +231,9 @@
+ sub copyin
+ {
+     my($archive,$filename) = @_;
++    my $qfilename = quote($filename);
+     if( $archive =~ /\.deb$/ ) {
+-       system("dpkg -i $filename>/dev/null");
++       system("dpkg -i $qfilename>/dev/null");
+     } else {
+        die "extfs: cannot create regular file \`$archive\': Permission denied\n";
+     }
+@@ -252,12 +260,12 @@
+ {
+     my($archive) = @_;
+     if( $archive =~ /\.debd?$/ ) {
+-       my $name = $archive;
+-       $name =~ s%.*/%%g;
+-       $name =~ s%_.*%%g;
+-       system("if dpkg -s $name | grep ^Status | grep -qs config-files; \
+-           then dpkg --purge $name>/dev/null; \
+-           else dpkg --remove $name>/dev/null; fi");
++       my $qname = quote($archive);
++       $qname =~ s%.*/%%g;
++       $qname =~ s%_.*%%g;
++       system("if dpkg -s $qname | grep ^Status | grep -qs config-files; \
++           then dpkg --purge $qname>/dev/null; \
++           else dpkg --remove $qname>/dev/null; fi");
+        die("extfs: $archive: Operation not permitted\n") if $? != 0;
+     } else {
+        die "extfs: $archive: Operation not permitted\n";

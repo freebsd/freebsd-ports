@@ -1,0 +1,165 @@
+--- vfs/extfs/deba.in.orig	Thu Dec 12 22:15:30 2002
++++ vfs/extfs/deba.in	Fri Sep 10 16:09:30 2004
+@@ -6,111 +6,25 @@
+ #
+ # deba
+ 
+-sub bt
+-{
+-    my ($dt) = @_;
+-    my (@time);
+-    @time = localtime($dt);
+-    $bt = sprintf "%02d-%02d-%d %02d:%02d", $time[4] + 1, $time[3],
+-		  $time[5] + 1900, $time[2], $time[1];
+-    return $bt;
+-}
+-
+-
+-sub ft
+-{
+-    my ($f) = @_;
+-    return "d" if -d $f;
+-    return "l" if -l $f;
+-    return "p" if -p $f;
+-    return "S" if -S $f;
+-    return "b" if -b $f;
+-    return "c" if -c $f;
+-    return "-";
+-}
+-
+-sub fm
+-{
+-    my ($n) = @_;
+-    my ($m);
+-
+-    if( $n & 0400 ) {
+-       $m .= "r";
+-    } else {
+-       $m .= "-";
+-    }
+-    if( $n & 0200 ) {
+-       $m .= "w";
+-    } else {
+-       $m .= "-";
+-    }
+-    if( $n & 04000 ) {
+-       $m .= "s";
+-    } elsif( $n & 0100 ) {
+-       $m .= "x";
+-    } else {
+-       $m .= "-";
+-    }
+-
+-    if( $n & 0040 ) {
+-       $m .= "r";
+-    } else {
+-       $m .= "-";
+-    }
+-    if( $n & 0020 ) {
+-       $m .= "w";
+-    } else {
+-       $m .= "-";
+-    }
+-    if( $n & 02000 ) {
+-       $m .= "s";
+-    } elsif( $n & 0010 ) {
+-       $m .= "x";
+-    } else {
+-       $m .= "-";
+-    }
+-
+-    if( $n & 0004 ) {
+-       $m .= "r";
+-    } else {
+-       $m .= "-";
+-    }
+-    if( $n & 0002 ) {
+-       $m .= "w";
+-    } else {
+-       $m .= "-";
+-    }
+-    if( $n & 01000 ) {
+-       $m .= "t";
+-    } elsif( $n & 0001 ) {
+-       $m .= "x";
+-    } else {
+-       $m .= "-";
+-    }
+-
+-    return $m;
+-}
+-
+-sub ls {
+-    my ($file) = @_;
+-    my @stat = stat($file);
+-    # mode, nlink, uid, gid, size, mtime, filename
+-    printf "%s%s %d %d %d %d %s CONTENTS%s\n", ft($file), fm($stat[2] & 07777),
+-    $stat[3], $stat[4], $stat[5], $stat[7], bt($stat[9]), $file;
++sub quote {
++    $_ = shift(@_);
++    s/([^\w\/.+-])/\\$1/g;
++    return($_);
+ }
+ 
+ sub list
+ {
+-       my($archive)=@_;
++       my($qarchive)=@_;
++       $qarchive = quote($qarchive);
+        chop($date=`LC_ALL=C date "+%b %d %Y %H:%M"`);
+-       chop($info_size=`apt-cache show $archive | wc -c`);
++       chop($info_size=`apt-cache show $qarchive | wc -c`);
+        $install_size=length($pressinstall);
+        $upgrade_size=length($pressupgrade);
+ 
+        print "-r--r--r--   1 root     root     $info_size $date INFO\n";
+ 
+-       chop($debd = `dpkg -s $archive | grep -i ^Version | sed 's/^version: //i'`);
+-       chop($deba = `apt-cache show $archive | grep -i ^Version | sed 's/^version: //i'`);
++       chop($debd = `dpkg -s $qarchive | grep -i ^Version | sed 's/^version: //i'`);
++       chop($deba = `apt-cache show $qarchive | grep -i ^Version | sed 's/^version: //i'`);
+        if( ! $debd ) {
+            print "-r-xr--r--   1 root     root     $install_size $date INSTALL\n";
+        } elsif( $debd ne $deba ) {
+@@ -121,20 +35,21 @@
+ sub copyout
+ {
+        my($archive,$filename,$destfile)=@_;
+-
++       my $qarchive = quote($archive);
++       my $qdestfile = quote($destfile);
+        if($filename eq "INFO") {
+-           system("apt-cache show $archive > $destfile");
++           system("apt-cache show $qarchive > $qdestfile");
+         } elsif($filename eq "INSTALL")        {
+-           if ( open(FILEOUT,">$destfile") ) {
++           if ( open(FILEOUT, "> $destfile") ) {
+                print FILEOUT $pressinstall;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+        } elsif($filename eq "UPGRADE") {
+-           if ( open(FILEOUT,">$destfile") ) {
++           if ( open(FILEOUT, ">, $destfile") ) {
+                print FILEOUT $pressupgrade;
+                close FILEOUT;
+-               system("chmod a+x $destfile");
++               system("chmod a+x $qdestfile");
+            }
+        } else {
+            die "extfs: $filename: No such file or directory\n";
+@@ -144,10 +59,11 @@
+ sub run
+ {
+        my($archive,$filename)=@_;
++       my $qarchive = quote($archive);
+        if($filename eq "INSTALL") {
+-           system("apt-get install $archive");
++           system("apt-get install $qarchive");
+        } elsif($filename eq "UPGRADE") {
+-           system("apt-get install $archive");
++           system("apt-get install $qarchive");
+        } else {
+            die "extfs: $filename: Permission denied\n";
+        }

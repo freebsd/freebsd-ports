@@ -1,0 +1,113 @@
+--- vfs/extfs/deb.in.orig	Fri Sep 10 16:22:18 2004
++++ vfs/extfs/deb.in	Fri Sep 10 16:22:25 2004
+@@ -19,6 +19,12 @@
+ # Copyright (C) 1997 Free Software Foundation
+ #
+ 
++sub quote {
++    $_ = shift(@_);
++    s/([^\w\/.+-])/\\$1/g;
++    return($_);
++}
++
+ sub mcdebfs_list
+ {
+ #
+@@ -26,8 +32,9 @@
+ #		Empty directories do not appear at all
+ #
+ 	local($archivename)=@_;
++	local $qarchivename = quote($archivename);
+ 	chop($date=`LC_ALL=C date "+%b %d %Y %H:%M"`);
+-	chop($info_size=`dpkg -I $archivename | wc -c`);
++	chop($info_size=`dpkg -I $qarchivename | wc -c`);
+ 	$install_size=length($pressinstall);
+ 
+ 	print "dr-xr-xr-x   1 root     root     0 $date CONTENTS\n";
+@@ -36,7 +43,7 @@
+ 	print "-r--r--r--   1 root     root     $info_size $date INFO\n";
+ 	print "-r-xr--r--   1 root     root     $install_size $date INSTALL\n";
+ 
+-	if ( open(PIPEIN, "dpkg-deb -c $archivename |") )
++	if ( open(PIPEIN, "dpkg-deb -c $qarchivename |") )
+ 	{
+ 		while(<PIPEIN>)
+ 		{
+@@ -81,7 +88,7 @@
+ 		}
+ 	}
+         # begin from Patrik Rak
+-        if ( open(PIPEIN, "dpkg-deb -I $archivename |") )
++        if ( open(PIPEIN, "dpkg-deb -I $qarchivename |") )
+         {
+                while(<PIPEIN>)
+                {
+@@ -109,16 +116,19 @@
+ sub mcdebfs_copyout
+ {
+ 	local($archive,$filename,$destfile)=@_;
++	local $qarchive = quote($archive);
++	local $qfilename = quote($filename);
++	local $qdestfile = quote($destfile);
+ 
+ 	if($filename eq "INFO")
+ 	{
+-		system("dpkg-deb -I $archive > $destfile");
++		system("dpkg-deb -I $qarchive > $qdestfile");
+         # begin from Patrik Rak
+         }
+         elsif($filename =~ /^DEBIAN/)
+         {
+-               $filename=~s!^DEBIAN/!!;
+-               system("dpkg-deb -I $archive $filename > $destfile");
++               $qfilename=~s!^DEBIAN/!!;
++               system("dpkg-deb -I $qarchive $qfilename > $qdestfile");
+         # end from Patrik Rak
+ 
+ 	}
+@@ -128,36 +138,32 @@
+ 		{
+ 			print FILEOUT $pressinstall;
+ 			close FILEOUT;
+-			system("chmod a+x $destfile");
++			system("chmod a+x $qdestfile");
+ 		}
+ 	}
+ 	else
+ 	{
+ 	# files can be prepended with ./ or not, depending on the version of tar
+-		$filename=~s!^CONTENTS/!!;
+-		system("dpkg-deb --fsys-tarfile $archive | tar xOf - $filename ./$filename > $destfile 2>/dev/null");
++		$qfilename=~s!^CONTENTS/!!;
++		system("dpkg-deb --fsys-tarfile $qarchive | tar xOf - $qfilename ./$qfilename > $qdestfile 2>/dev/null");
+ 	}
+ }
+ 
+ sub mcdebfs_run
+ {
+ 	local($archive,$filename)=@_;
++	local $qarchive = quote($archive);
+ 	if($filename eq "INSTALL")
+ 	{
+ 		print "Installing $archive\n";
+-		system("dpkg -i $archive");
++		system("dpkg -i $qarchive");
+ 	}
+ 	else
+ 	{
+-	        $suffix = "aaa";
+-		while (1) {
+-		    $tmpdir = "/tmp/mcdebfs.run".$$.$suffix;
+-		    last if mkdir $tmpdir, 0700;
+-		    $suffix++;
+-		    # Somebody is being really nasty, give up
+-		    exit 1 if $suffix eq "zzz";
+-		}
+-		
++		use File::Temp qw(mkdtemp);
++		my $template = "/tmp/mcdebfs.run.XXXXXX";
++		$template="$ENV{MC_TMPDIR}/mcdebfs.XXXXXX" if ($ENV{MC_TMPDIR});
++		$tmpdir = mkdtemp($template);
+ 		$tmpcmd="$tmpdir/run";
+ 		&mcdebfs_copyout($archive, $filename, $tmpcmd);
+ 		system("chmod u+x $tmpcmd");

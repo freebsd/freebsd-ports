@@ -1,0 +1,83 @@
+--- vfs/extfs/a.in.orig	Thu Dec 12 02:57:00 2002
++++ vfs/extfs/a.in	Fri Sep 10 16:09:30 2004
+@@ -8,6 +8,13 @@
+ # 
+ 
+ # These mtools components must be in PATH for this to work
++
++sub quote {
++    $_ = shift(@_);
++    s/([^\w\/.+-])/\\$1/g;
++    return($_);
++}
++
+ $mmd = "mmd";
+ $mrd = "mrd";
+ $mdel = "mdel";
+@@ -15,7 +22,7 @@
+ $mcopy = "mcopy -noQ";
+ 
+ $0 =~ s|.*/||;
+-$disk = $0;
++$qdisk = quote($0);
+ 
+ $ENV{MTOOLS_DATE_STRING} = "mm-dd-yyyy";
+ $ENV{MTOOLS_TWENTY_FOUR_HOUR_CLOCK} = "1";
+@@ -29,29 +36,36 @@
+   /mkdir/ && do {
+     shift; shift;
+     exit 1 if scalar(@ARGV) != 1;
+-    system("$mmd $disk:/$ARGV[0] >/dev/null");
++    $qname = quote($ARGV[0]);
++    system("$mmd $qdisk:/$qname >/dev/null");
+     exit 0; };
+   /rmdir/ && do {
+     shift; shift;
+     exit 1 if scalar(@ARGV) != 1;
+-    system("$mrd $disk:/$ARGV[0] >/dev/null");
++    $qname = quote($ARGV[0]);
++    system("$mrd $qdisk:/$qname >/dev/null");
+     exit 0; };
+   /rm/ && do {
+     shift; shift;
+     exit 1 if scalar(@ARGV) != 1;
+-    system("$mdel $disk:/$ARGV[0] >/dev/null");
++    $qname = quote($ARGV[0]);
++    system("$mdel $qdisk:/$qname >/dev/null");
+     exit 0; };
+   /copyout/ && do {
+     shift; shift;
+     exit 1 if scalar(@ARGV) != 2;
+-    ( $src, $dest ) = @ARGV;
+-    system("$mcopy $disk:/$src $dest >/dev/null");
++    ( $qsrc, $qdest ) = @ARGV;
++    $qsrc = quote($qsrc);
++    $qdest = quote($qdest);
++    system("$mcopy $qdisk:/$qsrc $qdest >/dev/null");
+     exit 0; };
+   /copyin/ && do {
+     shift; shift;
+     exit 1 if scalar(@ARGV) != 2;
+-    ( $dest, $src ) = @ARGV;
+-    system("$mcopy $src $disk:/$dest >/dev/null");
++    ( $qdest, $qsrc ) = @ARGV;
++    $qsrc = quote($qsrc);
++    $qdest = quote($qdest);
++    system("$mcopy $qsrc $qdisk:/$qdest >/dev/null");
+     exit 0; };
+   /.*/ && do {                               # an unfamiliar command
+     exit 1; };
+@@ -59,11 +73,11 @@
+ 
+ sub get_dirs {
+   my ($path, $name, $size, $date, $time, $longname, @lst, @rv);
+-
+   $path = shift(@_);
++  my $qpath = quote($path);
+   @rv = ();
+ 
+-  open(FILE,"$mdir $disk:/$path |");
++  open(FILE,"$mdir $qdisk:/$qpath |");
+   while ( <FILE> ) {
+     chomp();
+     /^ / && next;                            # ignore `non-file' lines
