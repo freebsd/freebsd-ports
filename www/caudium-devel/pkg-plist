@@ -18,6 +18,7 @@ caudium/readme/README.FreeBSD
 caudium/readme/README.PHP4
 caudium/readme/README.Perl
 caudium/readme/README.cvs
+caudium/readme/README.Lucene
 caudium/readme/INSTALLING
 caudium/readme/License-Boilerplate-MPL-LGPL.txt
 caudium/server/more_modules/configure.pike
@@ -198,6 +199,7 @@ caudium/server/modules/filters/redirect.pike
 caudium/server/modules/filters/relay.pike
 caudium/server/modules/filters/auto_gzip.pike
 caudium/server/modules/filters/deepimage.pike
+caudium/server/modules/filters/ssl_auth.pike
 caudium/server/modules/graphics/rimage/plugins/.no_modules
 caudium/server/modules/graphics/rimage/plugins/autocrop.pike
 caudium/server/modules/graphics/rimage/plugins/color.pike
@@ -264,6 +266,7 @@ caudium/server/modules/misc/cookieauth.pike
 caudium/server/modules/misc/gsession.pike
 caudium/server/modules/misc/robot_trap.pike
 caudium/server/modules/misc/robots.txt.pike
+caudium/server/modules/misc/chase.pike
 caudium/server/modules/proxies/ftpgateway.pike
 caudium/server/modules/proxies/connect.pike
 caudium/server/modules/proxies/port_forwarder.pike
@@ -432,6 +435,8 @@ caudium/server/modules/tags/mailit.pike
 caudium/server/modules/tags/mnogosearch.pike
 caudium/server/modules/tags/sscanf.pike
 caudium/server/modules/tags/ssi_compat.pike
+caudium/server/modules/tags/navbar.pike
+caudium/server/modules/tags/tablesort.pike
 caudium/server/modules/tags/.exclude_files
 caudium/server/modules/ultralog/longterm_hits.pike
 caudium/server/modules/ultralog/ultraparse.pike
@@ -459,6 +464,8 @@ caudium/server/bin/pixsl.pike
 caudium/server/bin/sqladduser.pike
 caudium/server/bin/ultrasum.pike
 caudium/server/bin/caudium
+caudium/server/bin/indexer.pike
+caudium/server/bin/searcher.pike
 caudium/server/caudium-images/auto/.cvsignore
 caudium/server/caudium-images/auto/README
 caudium/server/caudium-images/dir/unknown.gif
@@ -584,6 +591,8 @@ caudium/server/caudium-images/.cvsignore
 caudium/server/caudium-images/back.gif
 caudium/server/caudium-images/caudium-small.gif
 caudium/server/caudium-images/favicon.ico
+caudium/server/caudium-images/lucene-large-outline.gif
+caudium/server/caudium-images/lucene-small-outline.gif
 caudium/server/lib/%%PIKEVERSION%%/_Caudium.so
 caudium/server/lib/%%PIKEVERSION%%/PiXSL.so
 caudium/server/lib/%%PIKEVERSION%%/UltraLog.so
@@ -630,11 +639,13 @@ caudium/server/etc/error_templates/default.html
 caudium/server/etc/classes/jsdk.jar
 caudium/server/etc/classes/caudium_module.jar
 caudium/server/etc/classes/caudium_servlet.jar
+caudium/server/etc/classes/caudium_search.jar
 caudium/server/etc/classes/servlet.jar
 caudium/server/etc/classes/activation.jar
 caudium/server/etc/classes/mail.jar
 caudium/server/etc/classes/soap.jar
 caudium/server/etc/classes/xerces.jar
+caudium/server/etc/classes/lucene-1.2.jar
 caudium/server/etc/internal/html/no_internal_image.html
 caudium/server/etc/internal/html/restart-caudiumnet.html
 caudium/server/etc/internal/html/restart-caudiumorg.html
@@ -642,6 +653,10 @@ caudium/server/etc/internal/html/restart-default.html
 caudium/server/etc/internal/html/shutdown-caudiumnet.html
 caudium/server/etc/internal/html/shutdown-caudiumorg.html
 caudium/server/etc/internal/html/shutdown-default.html
+caudium/server/etc/internal/html/restart-caudium1.3.html
+caudium/server/etc/internal/html/shutdown-caudium1.3.html
+caudium/server/etc/internal/html/restart-caudium.net.html
+caudium/server/etc/internal/html/shutdown-caudium.net.html
 caudium/server/etc/modules/.autodoc
 caudium/server/etc/modules/Protocols.pmod/NNTPClient.pmod
 caudium/server/etc/modules/Protocols.pmod/ESMTP.pmod
@@ -676,6 +691,8 @@ caudium/server/etc/modules/Caudium.pmod/Scopes.pmod
 caudium/server/etc/modules/Caudium.pmod/module.pmod
 caudium/server/etc/modules/Caudium.pmod/Sql.pike
 caudium/server/etc/modules/Caudium.pmod/Const.pmod
+caudium/server/etc/modules/Caudium.pmod/SNMP.pmod/module.pmod
+caudium/server/etc/modules/Lucene.pmod
 caudium/server/etc/modules/UltraSupport.pmod/Period.pmod/Day.pike
 caudium/server/etc/modules/UltraSupport.pmod/Period.pmod/Month.pike
 caudium/server/etc/modules/UltraSupport.pmod/Period.pmod/Week.pike
@@ -854,6 +871,7 @@ caudium/server/.cvsignore
 @dirrm caudium/server/etc/modules/Cache.pmod
 @dirrm caudium/server/etc/modules/Config.pmod
 @dirrm caudium/server/etc/modules/Caudium.pmod/HighLight.pmod
+@dirrm caudium/server/etc/modules/Caudium.pmod/SNMP.pmod
 @dirrm caudium/server/etc/modules/Caudium.pmod
 @dirrm caudium/server/etc/modules/UltraSupport.pmod/Period.pmod
 @dirrm caudium/server/etc/modules/UltraSupport.pmod/Storage.pmod
@@ -873,4 +891,6 @@ caudium/server/.cvsignore
 @dirrm caudium/server/perl/lib
 @dirrm caudium/server/perl
 @dirrm caudium/server
+@dirrm caudium/local/pmods
+@dirrm caudium/local
 @dirrm caudium

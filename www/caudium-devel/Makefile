@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	caudium-devel
-PORTVERSION=	1.3.18.20030711
+PORTVERSION=	1.3.19-20030917
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/caudium/source/ \
@@ -20,8 +20,6 @@ DISTNAME=	caudium-${PORTVERSION:S/.20/-20/}-cvs
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base (development branch)
 
-BROKEN=		Does not build, will be removed after Feb 2
-
 USE_OPENSSL=	YES
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike74/
@@ -32,7 +30,7 @@ RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof/
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-PIKEVERSION=	7.4.25
+PIKEVERSION=	7.4.28
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+= --without-debug --with-PiXSL --prefix=${PREFIX} \
