@@ -1,0 +1,12 @@
+diff -ruN src.bak/greencard/Makefile src/greencard/Makefile
+--- src.bak/greencard/Makefile	Tue May 29 16:22:46 2001
++++ src/greencard/Makefile	Mon Jun 18 16:31:45 2001
+@@ -34,7 +34,7 @@
+ 
+ 
+ $(OBJDIR):
+-	mkdir -p $(OBJDIR) || /bin/true
++	mkdir -p $(OBJDIR) || /usr/bin/true
+ $(TARGET): $(OBJDIR) $(OBJDIR)/GreenCard$(EXE)
+ 	mv $(OBJDIR)/GreenCard$(EXE) $(TARGET)
+ 	strip $(TARGET)
