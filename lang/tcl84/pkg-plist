@@ -17,6 +17,7 @@ include/tcl%%TCL_VER%%/generic/tclRegexp.h
 include/tcl%%TCL_VER%%/generic/tclIO.h
 include/tcl%%TCL_VER%%/tcl.h
 include/tcl%%TCL_VER%%/tclDecls.h
+include/tcl%%TCL_VER%%/tclPlatDecls.h
 include/tcl%%TCL_VER%%/unix/tclUnixPort.h
 include/tcl%%TCL_VER%%/unix/tclUnixThrd.h
 lib/libtcl%%SHORT_TCL_VER%%.a
