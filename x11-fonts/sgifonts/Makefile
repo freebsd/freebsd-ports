@@ -22,36 +22,36 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/sgi-fonts
 
 do-extract:
-	${MKDIR} ${WRKDIR}
-	rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
+	@${MKDIR} ${WRKDIR}
+	@rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
 		> ${WRKDIR}/sgifonts.cpio
-	cd ${WRKDIR}; \
+	@cd ${WRKDIR}; \
 		cpio --extract --no-preserve-owner \
-		--preserve-modification-time --unconditional --verbose \
+		--preserve-modification-time --unconditional --quiet \
 		< ${WRKDIR}/sgifonts.cpio
-	${TAR} -C ${WRKDIR} -xf ${WRKDIR}/sgi-fonts.tar.gz
+	@${TAR} -C ${WRKDIR} -xf ${WRKDIR}/sgi-fonts.tar.gz
 
 pre-install:
-	${RM} -f ${PLIST}
-	cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir | sort`; do \
+	@${RM} -f ${PLIST}
+	@cd ${WRKSRC}; for ii in `${LS} *gz fonts.alias fonts.dir | sort`; do \
 		${ECHO_CMD} lib/X11/fonts/local/sgi/$${ii} >> ${PLIST}; \
 	done
-	${ECHO_CMD} @dirrm lib/X11/fonts/local/sgi >> ${PLIST}
-	${ECHO_CMD} "******************************************" > ${PKGMESSAGE}
-	${ECHO_CMD} "Add a line" >> ${PKGMESSAGE}
-	${ECHO_CMD} "FontPath \"${PREFIX}/lib/X11/fonts/local/sgi\"" \
+	@${ECHO_CMD} @dirrm lib/X11/fonts/local/sgi >> ${PLIST}
+	@${ECHO_CMD} "******************************************" >${PKGMESSAGE}
+	@${ECHO_CMD} "Add a line" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "FontPath \"${PREFIX}/lib/X11/fonts/local/sgi\"" \
 		>> ${PKGMESSAGE}
-	${ECHO_CMD} \
+	@${ECHO_CMD} \
 	"to your XF86Config." >> ${PKGMESSAGE}
-	${ECHO_CMD} "Then, restart the X server or do \"xset fp rehash\"."\
+	@${ECHO_CMD} "Then, restart the X server or do \"xset fp rehash\"."\
 		>> ${PKGMESSAGE}
-	${ECHO_CMD} "*****************************************" >> ${PKGMESSAGE}
+	@${ECHO_CMD} "*****************************************" >>${PKGMESSAGE}
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/fonts/local/sgi
 	cd ${WRKSRC}; \
 		${INSTALL_DATA} *gz fonts.alias fonts.dir \
 		${PREFIX}/lib/X11/fonts/local/sgi
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
