@@ -71,6 +71,7 @@
     SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += metis
+    SUBDIR += mprime
     SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += mupad
