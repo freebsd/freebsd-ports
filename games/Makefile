@@ -367,6 +367,7 @@
     SUBDIR += senso
     SUBDIR += sex
     SUBDIR += shaaft
+    SUBDIR += six
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += smacx

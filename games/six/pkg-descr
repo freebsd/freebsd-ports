@@ -1,0 +1,8 @@
+Six plays Hex, a game with very simple rules and deep tactical complexity. 
+Two players, one with black and one with white pieces, alternate
+placing marks on a rhombic board of hexagonal cells. Black's goal is to 
+connect the two opposite black sides of the board with black pieces. 
+White's goal is to connect the white sides of the board with white pieces.
+
+WWW:	http://six.retes.hu/
+Author:	Gabor Melis
