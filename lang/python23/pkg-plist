@@ -1,9 +1,11 @@
 bin/idle
-bin/idle2.3
+bin/idle%%PYVER%%
 bin/pydoc
-bin/pydoc2.3
+bin/pydoc%%PYVER%%
 bin/python
-bin/%%PYTHON_VERSION%%
+bin/python%%PYVER%%
+bin/python-shared
+bin/python-shared%%PYVER%%
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
 include/%%PYTHON_VERSION%%/bitset.h
@@ -75,8 +77,8 @@ include/%%PYTHON_VERSION%%/tupleobject.h
 include/%%PYTHON_VERSION%%/ucnhash.h
 include/%%PYTHON_VERSION%%/unicodeobject.h
 include/%%PYTHON_VERSION%%/weakrefobject.h
-%%SHARED_ONLY%%lib/lib%%PYTHON_VERSION%%.so
-%%SHARED_ONLY%%lib/lib%%PYTHON_VERSION%%.so.1
+lib/lib%%PYTHON_VERSION%%.so
+lib/lib%%PYTHON_VERSION%%.so.1
 lib/%%PYTHON_VERSION%%/BaseHTTPServer.py
 lib/%%PYTHON_VERSION%%/BaseHTTPServer.pyc
 lib/%%PYTHON_VERSION%%/BaseHTTPServer.pyo
