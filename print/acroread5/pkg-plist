@@ -25,15 +25,13 @@ Acrobat3/Reader/License.pdf
 Acrobat3/Reader/MapTypes.pdf
 Acrobat3/Reader/ReadMe
 Acrobat3/Reader/help/reader.pdf
-Acrobat3/Reader/intellinux/fonts
-Acrobat3/Reader/intellinux/res
 Acrobat3/Reader/intellinux/app-defaults/AcroRead
 Acrobat3/Reader/intellinux/bin/acroread
 Acrobat3/Reader/intellinux/lib/XKeysymDB
 Acrobat3/Reader/intellinux/lib/libagm.so
 Acrobat3/Reader/intellinux/lib/libagm.so.2.0
 Acrobat3/Reader/intellinux/lib/libpfs.so
-Acrobat3/Reader/intellinux/lib/libpfs.so.2.4
+Acrobat3/Reader/intellinux/lib/libpfs.so.2.5
 Acrobat3/Reader/intellinux/lib/libreadcore.so
 Acrobat3/Reader/intellinux/lib/libreadcore.so.3.0
 Acrobat3/Reader/intellinux/plug_ins/Highlight.api
@@ -45,5 +43,22 @@ Acrobat3/Reader/res/splashScreen21.xbm
 Acrobat3/Reader/res/splashScreen28.xpm
 Acrobat3/bin/acroread
 bin/acroread
+@exec ln -sf ../../Fonts %D/Acrobat3/Reader/intellinux/fonts
+@unexec rm -f %D/Acrobat3/Reader/intellinux/fonts
+@exec ln -sf ../../res %D/Acrobat3/Reader/intellinux/res
+@unexec rm -f %D/Acrobat3/Reader/intellinux/res
 @exec echo "Be sure to read the license agreement in"
 @exec echo "%D/Acrobat3/Reader/License.pdf"
+@dirrm Acrobat3/bin
+@dirrm Acrobat3/Reader/res
+@dirrm Acrobat3/Reader/intellinux/plug_ins
+@dirrm Acrobat3/Reader/intellinux/lib
+@dirrm Acrobat3/Reader/intellinux/bin
+@dirrm Acrobat3/Reader/intellinux/app-defaults
+@dirrm Acrobat3/Reader/intellinux
+@dirrm Acrobat3/Reader/help
+@dirrm Acrobat3/Reader
+@dirrm Acrobat3/Fonts
+@dirrm Acrobat3/Browsers/intellinux
+@dirrm Acrobat3/Browsers
+@dirrm Acrobat3
