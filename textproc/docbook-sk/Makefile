@@ -1,29 +1,25 @@
-# New ports collection makefile for:	DocBook XML DTD
-# Date created:		28 March 1999
-# Whom:			kuriyama
+# New ports collection makefile for:	DocBook XML for ScrollKeeper
+# Date created:		16 January 2003
+# Whom:			marcus@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	docbook-xml
-PORTVERSION=	4.2
+PORTNAME=	docbook-sk
+PORTVERSION=	4.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/ \
 		http://www.oasis-open.org/committees/docbook/xml/${PORTVERSION}/
+DISTNAME=	docbkx${PORTVERSION:S/.//g}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
-RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
+USE_ZIP=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+PLIST_SUB=	DTD_VERSION=${PORTVERSION}
 
-USE_ZIP=	YES
-NO_BUILD=	YES
-NO_WRKSUBDIR=	YES
-PLIST_SUB=	DTD_VERSION=${PORTVERSION} \
-		MKCATALOG=${MKCATALOG} CATALOG=${CATALOG}
-
-DOCBOOKDIR=	${PREFIX}/share/xml/${PORTNAME:S/-xml//}/${PORTVERSION}
-MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
-CATALOG=	${PREFIX}/share/xml/catalog
+DOCBOOKDIR=	${PREFIX}/share/sk/${PORTNAME:S/-sk//}/${PORTVERSION}
 
 pre-install:
 	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
@@ -32,8 +28,5 @@ do-install:
 	for file in `unzip -l ${DISTDIR}/${DISTFILES}|${AWK} '/:[0-9].*[^\/]$$/{print $$4}'`; do \
 		${INSTALL_DATA} ${WRKSRC}/$$file ${DOCBOOKDIR}/$$file; \
 	done
-
-post-install:
-	${MKCATALOG} -q -c ${CATALOG} install docbook/${PORTVERSION} docbook.cat
 
 .include <bsd.port.mk>
