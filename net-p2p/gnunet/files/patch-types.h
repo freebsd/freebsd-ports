@@ -1,5 +1,5 @@
---- src/include/util/gcry/types.h.orig	Fri Aug 22 09:57:16 2003
-+++ src/include/util/gcry/types.h	Fri Aug 22 09:57:24 2003
+--- src/util/gcry/types.h.orig	Mon Oct  6 20:17:50 2003
++++ src/util/gcry/types.h	Mon Oct  6 20:18:10 2003
 @@ -48,12 +48,6 @@
    #define HAVE_BYTE_TYPEDEF
  #endif
