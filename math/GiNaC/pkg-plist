@@ -13,6 +13,7 @@ include/ginac/expair.h
 include/ginac/expairseq.h
 include/ginac/exprseq.h
 include/ginac/fail.h
+include/ginac/fderivative.h
 include/ginac/flags.h
 include/ginac/function.h
 include/ginac/ginac.h
@@ -33,6 +34,7 @@ include/ginac/registrar.h
 include/ginac/relational.h
 include/ginac/structure.h
 include/ginac/symbol.h
+include/ginac/symmetry.h
 include/ginac/tensor.h
 include/ginac/tinfos.h
 include/ginac/version.h
@@ -48,8 +50,5 @@ info/ginac.info-5
 @exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
 lib/libginac.so
-lib/libginac-0.9.so.0
+lib/libginac-1.0.so.0
 share/aclocal/ginac.m4
-@dirrm share/doc/GiNaC/reference
-@dirrm share/doc/GiNaC/tutorial
-@dirrm share/doc/GiNaC
