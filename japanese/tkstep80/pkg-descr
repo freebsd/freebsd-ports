@@ -1,0 +1,14 @@
+This is Tk 8.0  with some modifications to make it look like N*XTSTEP's 
+interface, plus some new widgets inspirated on N*XTSTEP. 
+It also incorporates the DND drag and drop patches (see README.TkDND)
+
+You can use TkSTEP with WindowMaker or AfterStep to make your desktop look
+more consistent. BowMan is a window manager that emulates the look and feel
+of the N*XTSTEP user interface. AfterStep is a continuation of BowMan with
+many enhancements and is event better looking. WindowMaker is a even better
+WindowManager by Alfredo Kojima.
+
+Japanese modification has been done by IWAYA Jyun<jfactory@aaa-int.or.jp>.
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>
