@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 CONTROL_FILES=	scp.c scp_tty.c
 
 I1401_FILES=	i1401_cd.c i1401_cpu.c i1401_iq.c i1401_lp.c \
@@ -7,7 +9,8 @@ NOVA_FILES=	nova_clk.c nova_cpu.c nova_dkp.c nova_dsk.c \
 		nova_lp.c nova_mta.c nova_pt.c nova_sys.c nova_tt.c
 
 PDP11_FILES=	pdp11_cpu.c pdp11_fp.c pdp11_lp.c pdp11_rk.c pdp11_rl.c \
-		pdp11_rp.c pdp11_rx.c pdp11_stddev.c pdp11_sys.c pdp11_tm.c
+		pdp11_rp.c pdp11_rx.c pdp11_stddev.c pdp11_sys.c pdp11_tm.c \
+		pdp11_cis.c
 
 PDP18B_FILES=	pdp18b_cpu.c pdp18b_drm.c pdp18b_lp.c pdp18b_mt.c \
 		pdp18b_rf.c pdp18b_rp.c pdp18b_stddev.c pdp18b_sys.c
