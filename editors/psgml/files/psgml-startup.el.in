@@ -3,7 +3,7 @@
 ;;                                            --  by shige@FreeBSD.ORG
 
 ;; setup load-path
-(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+(if (not (fboundp 'normal-top-level-add-subdirs-to-load-path))
     (setq load-path (append '(
 	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/psgml"
     ) load-path)))
