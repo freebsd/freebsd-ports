@@ -6272,6 +6272,7 @@ ruby-gemfinder	ports/devel/ruby-gemfinder
 ruby-gettext	ports/devel/ruby-gettext
 ruby-gimp	ports/graphics/ruby-gimp
 ruby-gnome	ports/x11/ruby-gnome
+ruby-gnome-all	ports/x11/ruby-gnome-all
 ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
 ruby-google	ports/www/ruby-google
