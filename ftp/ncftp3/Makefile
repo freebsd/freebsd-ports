@@ -4,15 +4,15 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.39 1997/12/14 16:45:22 obrien Exp $
+# $Id: Makefile,v 1.40 1997/12/17 16:52:45 ache Exp $
 #
 
-DISTNAME=	ncftp-3.0beta6-src
-PKGNAME=	ncftp-3.0b6
+DISTNAME=	ncftp-3.0beta7-src
+PKGNAME=	ncftp-3.0b7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.probe.net/pub/ncftp/3.0BETA/
 
-MAINTAINER=	ache@FreeBSD.ORG
+MAINTAINER=	obrien@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 GNU_CONFIGURE=	yes
