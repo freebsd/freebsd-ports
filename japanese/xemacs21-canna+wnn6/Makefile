@@ -5,8 +5,12 @@
 # $FreeBSD$
 #
 
-XEMACS_MAJOR_VER=	21
-CANNA=			yes
-WNN6=			yes
+CATEGORIES=	japanese
 
-.include	"${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/Makefile"
+MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
+COMMENT=	XEmacs(gamma version) text editor, with SJ3, SKK, Canna and Wnn6 support
+
+CANNA=		yes
+WNN6=		yes
+
+.include	"${MASTERDIR}/Makefile"
