@@ -1,11 +1,11 @@
 --- dao/cdrdao.man.orig	Sat Dec 28 03:05:59 2002
 +++ dao/cdrdao.man	Sat Dec 28 03:08:17 2002
-@@ -762,11 +762,9 @@
+@@ -764,11 +764,9 @@
  .I cdrdao
  in that order:
  
 -1. /etc/cdrdao.conf
-+1. %%LOCALBASE%%/etc/cdrdao.conf
++1. %%PREFIX%%/etc/cdrdao.conf
  
 -2. /etc/defaults/cdrdao
 -
@@ -14,3 +14,14 @@
  
  
  Command line options will overwrite the loaded settings.
+@@ -831,8 +829,8 @@
+ 
+ .SH BUGS
+ If the program is terminated during the write/simulation process used IPC
+-resources may not be released. Use ipcs(8) and ipcrm(8) to delete them.
++resources may not be released. Use ipcs(1) and ipcrm(1) to delete them.
+ .SH AUTHOR
+ Andreas Mueller mueller@daneb.ping.de
+ .SH SEE ALSO
+-.BR gcdmaster "(1), "cdrecord "(1), "cdda2wav "(1), "cdparanoia "(1), " sox "(1), "ipcs "(8), " ipcrm (8) 
++.BR gcdmaster "(1), "cdrecord "(1), "cdda2wav "(1), "cdparanoia "(1), " sox "(1), "ipcs "(1), " ipcrm (1) 
