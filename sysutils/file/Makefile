@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	3.41
+PORTVERSION=	4.02
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
-		ftp://ftp.netsw.org/system/tools/fileutils/find/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
+#		ftp://ftp.netsw.org/system/tools/fileutils/find/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	File - determine file type
@@ -19,6 +19,7 @@ COMMENT=	File - determine file type
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5
 MAN1=		file.1
+MAN3=		libmagic.3
 MAN5=		magic.5
 
 # The rules below are required to suppress invocations of aclocal, automake,
