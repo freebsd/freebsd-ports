@@ -9,7 +9,7 @@ PORTNAME=	nocol
 PORTVERSION=	4.3
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.netplex-tech.com/software/nocol/downloads/
+MASTER_SITES=	http://www.netplex-tech.com/software/downloads/nocol/
 
 MAINTAINER=	bradh@uunet.co.za
 COMMENT=	Network/Service monitoring software
