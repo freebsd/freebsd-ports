@@ -1,0 +1,29 @@
+--- configure.orig	Mon Aug 25 00:07:09 2003
++++ configure	Wed Nov 12 22:50:24 2003
+@@ -13,7 +13,7 @@
+ while true ; do
+ 
+ 	# Break out if there are no more args
+-	if [ $# == 0 ]; then break ; fi
++	if [ $# = 0 ]; then break ; fi
+ 
+ 	# Get the first arg, and shuffle
+ 	option=$1
+@@ -48,7 +48,7 @@
+ 
+ # Find the source files, if location was not specified.
+ srcdirtext=
+-if [ x${srcdir} == x ]; then
++if [ x${srcdir} = x ]; then
+ 	srcdirtext="or . or .." ; srcdir=.
+ 	if [ ! -r ${srcdir}/${srctrigger} ] ; then srcdir=.. ; fi
+ 	if [ ! -r ${srcdir}/${srctrigger} ] ; then
+@@ -65,7 +65,7 @@
+ fi
+ 
+ # Set srcdir to . if that's what it is.
+-if [ $(pwd) == $(cd ${srcdir} ; pwd) ] ; then srcdir=. ; fi
++if [ $(pwd) = $(cd ${srcdir} ; pwd) ] ; then srcdir=. ; fi
+ 
+ # write variables to config file.
+ rm -f Makefile

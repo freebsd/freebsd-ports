@@ -238,6 +238,7 @@
     SUBDIR += nurbs++
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
+    SUBDIR += ocrad
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opendx-samples
