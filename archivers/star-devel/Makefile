@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	star
-PORTVERSION=	1.5.a.54
+PORTVERSION=	1.5.a.58
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
@@ -14,28 +14,22 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 MAINTAINER=	martin@matuska.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/smake:${PORTSDIR}/devel/smake
+
 CONFLICTS=	star-1.4*
 LATEST_LINK=	star-devel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC} LANG=C
 MAN1=		star.1
 MLINKS=		star.1 ustar.1
+MAKE_ENV=	MAKEFLAGS=${MAKEFLAGS}
 
-post-extract:
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
-	@${LN} -sf i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
-.endif
+do-build:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
 
 do-install:
-	@${INSTALL_PROGRAM} \
-		${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-${CC}/star \
-		${PREFIX}/bin
-	@cd ${PREFIX}/bin ; ${LN} -f star ustar
-	@${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake install SYMLINKS="star ustar" INS_BASE=${PREFIX}
 
 .include <bsd.port.mk>

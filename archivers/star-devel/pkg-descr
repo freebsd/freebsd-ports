@@ -1,6 +1,6 @@
-star is the fastest known implementation of a tar archiver. star
-development started 1982, development is still in progress. The
-current version is stable.
+Star is the fastest known implementation of a tar archiver.
+
+This is the development version of star.
 
 Main advantages over other tar implementations:
 	fifo			- Keeps the tape streaming.
@@ -16,7 +16,7 @@ Main advantages over other tar implementations:
 				  old tar, gnu tar, ansi tar, star.
 	fully ansi compatible	- star is fully ANSI/Posix 1003.1 compatible.
 
-WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/star.html
+WWW: http://cdrecord.berlios.de/old/private/star.html
 
 Author: Joerg Schilling <js@cs.tu-berlin.de>
 Please mail bugs and suggestions to him.
