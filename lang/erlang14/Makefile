@@ -32,6 +32,7 @@ EXTRACT_ONLY=	otp_src_R6B-0.tar.gz
 ERLANG_MAN=     otp_src_doc_man_R6B-0.tar.gz
 ERLANG_DOCS=	otp_src_doc_html_R6B-0.tar.gz
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
