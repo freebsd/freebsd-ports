@@ -11,15 +11,16 @@ CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/ \
+		http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
 		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${HP850_DRV}
+		${DECRYPT_PDF} ${HP850_DRV}
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	andreas@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
@@ -40,6 +41,9 @@ GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
 # Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
 HP850_DRV=	hp8xxs13.zip
+
+# replacement for pdf_sec.ps, that allows you to read encrypted PDF files
+DECRYPT_PDF=	pdf_sec.ps
 
 .if defined(A4)
 CFLAGS+=	-DA4
@@ -76,19 +80,11 @@ post-install:
 	strip ${PREFIX}/bin/gs
 	${INSTALL_SCRIPT} ${WRKSRC}/unix-lpr.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/lprsetup.sh ${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps \
+		${PREFIX}/share/ghostscript/5.50
 	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
 		${PREFIX}/share/ghostscript/5.50/doc
 	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
 		${PREFIX}/share/ghostscript/5.50/doc
-.if defined(PDFENCRYPT)
-	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${PREFIX}/share/ghostscript/5.50
-.endif
-
-# encrypted PDF support.  can't be packaged due to export control issues.
-.if defined(PDFENCRYPT)
-MASTER_SITES+=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
-DISTFILES+=	pdf_sec.ps
-RESTRICTED=	"Crypto; export controlled, RC4 in PostScript code included"
-.endif
 
 .include <bsd.port.mk>
