@@ -15,4 +15,10 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 MAINTAINER=	nakai@FreeBSD.org
 
+PLIST=		${.CURDIR}/pkg-plist
+
+post-install:
+	${TOUCH} ${PREFIX}/bin/gnome-libs-jp
+	${CHMOD} 755 ${PREFIX}/bin/gnome-libs-jp
+
 .include "${MASTERDIR}/Makefile"
