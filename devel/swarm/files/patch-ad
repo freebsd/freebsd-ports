@@ -1,5 +1,5 @@
---- configure.orig	Sun May 30 22:01:25 1999
-+++ configure	Sun May 30 22:01:47 1999
+--- configure.orig	Mon Feb  8 13:59:28 1999
++++ configure	Thu Nov  4 12:42:01 1999
 @@ -1105,7 +1105,7 @@
  test -n "$OBJC" || OBJC="$CC"
  
@@ -9,3 +9,70 @@
  
  
  # Check whether --enable-shared or --disable-shared was given.
+@@ -1394,8 +1394,8 @@
+ # Actually configure libtool.  ac_aux_dir is where install-sh is found.
+ CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
+ LD="$LD" NM="$NM" RANLIB="$RANLIB" LN_S="$LN_S" \
+-${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
++${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig --no-reexec \
++$libtool_flags --no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $host \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Redirect the config.log output again, so that the ltconfig log is not
+@@ -2647,8 +2647,8 @@
+ if test -n "$with_tcldir" ; then               
+   PATH=${with_tcldir}/bin:$PATH
+ fi
+-# Extract the first word of "tclsh8.0", so it can be a program name with args.
+-set dummy tclsh8.0; ac_word=$2
++# Extract the first word of "tclsh8.2", so it can be a program name with args.
++set dummy tclsh8.2; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:2654: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_tclsh8_found'+set}'`\" = set"; then
+@@ -2711,7 +2711,7 @@
+ fi
+ tclLibrary=''
+ if test $tclsh8_found = yes; then
+-  tclLibrary=`echo "puts [info library]" | tclsh8.0`
++  tclLibrary=`echo "puts [info library]" | tclsh8.2`
+ else
+   if test $tclsh_found = yes; then
+     tclLibrary=`echo "puts [info library]" | tclsh`
+@@ -2814,7 +2814,7 @@
+         break
+       fi
+     else
+-      for version in 81 8.1 80 8.0 76 7.6 7.5 7.4 ''; do
++      for version in 82 8.2 80 8.0 76 7.6 7.5 7.4 ''; do
+         if test -r $expand_dir/libtcl${version}${suffix}; then
+           tcllibdir=$dir  
+           tcllibname=tcl$version
+@@ -2901,7 +2901,7 @@
+ POTENTIALINCDIR=`dirname $POTENTIALINCDIR`
+ INCPLACES="$INCPLACES \
+ 	$tclincludedir \ 
+-        $POTENTIALINCDIR/tk8.1/include \
++        $POTENTIALINCDIR/tk8.2/include \
+ 	$POTENTIALINCDIR/tk8.0/include \
+ 	$POTENTIALINCDIR/tk4.2/include \
+ 	$POTENTIALINCDIR/tk4.1/include \
+@@ -2939,7 +2939,7 @@
+ POTENTIALLIBDIR=`dirname $tcllibdir`
+ POTENTIALLIBDIR=`dirname $POTENTIALLIBDIR`
+ LIBPLACES="`dirname $tkincludedir`/lib $tcllibdir $POTENTIALLIBDIR/tk/lib \
+-        $POTENTIALLIBDIR/tk8.1/lib \
++        $POTENTIALLIBDIR/tk8.2/lib \
+ 	$POTENTIALLIBDIR/tk8.0/lib \
+ 	$POTENTIALLIBDIR/tk4.2/lib \
+ 	$POTENTIALLIBDIR/tk4.1/lib \
+@@ -2960,7 +2960,7 @@
+         break
+       fi
+     else
+-      for version in 81 8.1 80 8.0 42 4.2 4.1 4.0 ''; do
++      for version in 82 8.2 80 8.0 42 4.2 4.1 4.0 ''; do
+         if test -r $expand_dir/libtk${version}${suffix}; then
+           tklibdir=$dir
+           tklibname=tk${version}

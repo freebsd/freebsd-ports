@@ -4,7 +4,7 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish "$0" ${1+"$@"}
-+exec wish8.0 "$0" ${1+"$@"}
++exec wish8.2 "$0" ${1+"$@"}
  #############################################################################
  # Visual Tcl v1.20 Project
  #

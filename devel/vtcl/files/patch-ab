@@ -5,7 +5,7 @@
  
 -PATH_TO_WISH=/usr/bin/wish
 -VTCL_HOME=/usr/local/vt
-+PATH_TO_WISH=/usr/local/bin/wish8.0
++PATH_TO_WISH=/usr/local/bin/wish8.2
 +VTCL_HOME=/usr/local/lib/vtcl
  
  export PATH_TO_WISH

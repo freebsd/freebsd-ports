@@ -6,6 +6,6 @@
  	      DISTNAME => "TclTk",
 -	      LIBS => ["-ltk -ltcl -L/usr/X11R6/lib -lX11 -lm"],
 -	      INC => "-I/usr/local/include -I/usr/include/tcl");
-+	      LIBS => ["-L$ENV{PREFIX}/lib -L$ENV{X11BASE}/lib -ltk80 -ltcl80 -lX11 -lm"],
-+	      INC => "-I$ENV{PREFIX}/include -I$ENV{PREFIX}/include/tcl8.0 -I$ENV{PREFIX}/include/tk8.0 -I$ENV{X11BASE}/include");
++	      LIBS => ["-L$ENV{PREFIX}/lib -L$ENV{X11BASE}/lib -ltk82 -ltcl82 -lX11 -lm"],
++	      INC => "-I$ENV{PREFIX}/include -I$ENV{PREFIX}/include/tcl8.2 -I$ENV{PREFIX}/include/tk8.2 -I$ENV{X11BASE}/include");
  #sub MY::tool_autosplit { "AUTOSPLITFILE = :" }

@@ -5,7 +5,7 @@
  # The directory containing the Tcl library archive file appropriate
  # for this version of Tk:
 -TCL_BIN_DIR = @TCL_BIN_DIR@
-+TCL_BIN_DIR = ${LOCALBASE}/lib/tcl8.0
++TCL_BIN_DIR = ${LOCALBASE}/lib/tcl8.2
  
  #----------------------------------------------------------------
  # The information below is modified by the configure script when

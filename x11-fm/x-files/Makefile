@@ -8,20 +8,20 @@
 
 DISTNAME=       X-Files-2.00b1
 PKGNAME=	x-files-2.00b1
-CATEGORIES=	x11-fm tk80
+CATEGORIES=	x11-fm tk82
 MASTER_SITES=   http://www.hut.fi/~mkivinie/X-Files/data/
 
 MAINTAINER=     dmaddox@conterra.com
 
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/X-Files
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 
 pre-install:
-	@tclsh8.0 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
+	@tclsh8.2 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
 	@${RM} -f ${WRKSRC}/xfinstall.tcl
 	@${SED} s#@X11BASE@#${X11BASE}# <${WRKSRC}/X-Files.tcl >${WRKSRC}/tmpfile
 	@${MV} ${WRKSRC}/tmpfile ${WRKSRC}/X-Files.tcl

@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	tkinfo-2.4
-CATEGORIES=	misc tk80
+CATEGORIES=	misc tk82
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
 MAINTAINER=	tg@FreeBSD.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
 MAN1=		tkinfo.1

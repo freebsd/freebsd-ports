@@ -7,14 +7,14 @@
 #
 
 DISTNAME=	tik-0.59
-CATEGORIES=	net tk80
+CATEGORIES=	net tk82
 MASTER_SITES=	http://www.aim.aol.com/tik/ \
 		http://www.nectar.com/distfiles/
 
 MAINTAINER=	astralblue@usa.net
 
-RUN_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
-		wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
+		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tik

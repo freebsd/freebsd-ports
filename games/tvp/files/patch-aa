@@ -1,20 +1,38 @@
---- configure.orig	Thu Oct 23 08:34:26 1997
-+++ configure	Thu Oct 23 08:36:34 1997
-@@ -1306,7 +1306,7 @@
+--- configure.orig	Tue Aug 19 20:57:12 1997
++++ configure	Wed Nov  3 17:33:31 1999
+@@ -1306,10 +1306,10 @@
  
  WINDLL=true
  TCLTK=""
 -for tkver in 42 4.2 41 4.1 80 8.0
-+for tkver in 80 8.0 42 4.2 41 4.1
++for tkver in 82
  do
- 	echo $ac_n "checking for Tk_Main in -ltk${tkver}""... $ac_c" 1>&6
- echo "configure:1313: checking for Tk_Main in -ltk${tkver}" >&5
+-	echo $ac_n "checking for Tk_Main in -ltk${tkver}""... $ac_c" 1>&6
+-echo "configure:1313: checking for Tk_Main in -ltk${tkver}" >&5
++	echo $ac_n "checking for Tk_MainEx in -ltk${tkver}""... $ac_c" 1>&6
++echo "configure:1313: checking for Tk_MainEx in -ltk${tkver}" >&5
+ ac_lib_var=`echo tk${tkver}'_'Tk_Main | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -1322,10 +1322,10 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char Tk_Main();
++char Tx_MainEx();
+ 
+ int main() {
+-Tk_Main()
++Tk_MainEx()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:1332: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
 @@ -1345,7 +1345,7 @@
    echo "$ac_t""yes" 1>&6
    
  		WINDLL=false
 -		for tclver in 76 7.6 75 7.5 80 8.0
-+		for tclver in 80 8.0 76 7.6 75 7.5
++		for tclver in 82
  		do
  			echo $ac_n "checking for Tcl_Main in -ltcl${tclver}""... $ac_c" 1>&6
  echo "configure:1352: checking for Tcl_Main in -ltcl${tclver}" >&5

@@ -45,8 +45,8 @@ EXAMPLESDIR=	${PREFIX}/share/examples/ruby
 # Set these vars as the version numbers (without decimal points) of Tcl/Tk
 # you want to use with Ruby/Tk.
 # e.g.: make TCL_VERSION=42 TK_VERSION=76 WITH_TCL_JP=yes build
-TCL_VERSION?=	80
-TK_VERSION?=	80
+TCL_VERSION?=	82
+TK_VERSION?=	82
 .if defined(WITH_TCL_JP)
 TCL_CATEGORY=	japanese
 TK_CATEGORY=	japanese

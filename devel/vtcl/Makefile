@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	vtcl-1.2.0
-CATEGORIES=	devel tk80
+CATEGORIES=	devel tk82
 MASTER_SITES=	ftp://ftp.neuron.com/pub/vtcl/development/1.2/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
 

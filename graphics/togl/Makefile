@@ -8,19 +8,19 @@
 
 DISTNAME=	Togl-1.5
 PKGNAME=	togl-1.5
-CATEGORIES=	graphics tk80
+CATEGORIES=	graphics tk82
 MASTER_SITES=	ftp://ftp.mesa3d.org/mesa/misc/ \
 		ftp://ftp.cs.umd.edu/pub/faculty/bederson/
 
 MAINTAINER=	aa8vb@ipass.net
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
-		tcl80.1:${PORTSDIR}/lang/tcl80 \
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
+		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
 ALL_TARGET=	default
 
-TOGL_INSTDIR=	${PREFIX}/lib/tk8.0/${DISTNAME}
+TOGL_INSTDIR=	${PREFIX}/lib/tk8.2/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -28,6 +28,6 @@ do-install:
 	${MKDIR} ${TOGL_INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/libtogl.so.1.3 ${TOGL_INSTDIR}/Togl.so
 	${ECHO} 'package ifneeded Togl 1.5 [list load [file join $$dir Togl.so]]'\
-	  > ${PREFIX}/lib/tk8.0/${DISTNAME}/pkgIndex.tcl
+	  > ${PREFIX}/lib/tk8.2/${DISTNAME}/pkgIndex.tcl
 
 .include <bsd.port.post.mk>

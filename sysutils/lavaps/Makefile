@@ -4,7 +4,6 @@
 # Date created:         11-Oct-99
 # Whom:                 johnh@isi.edu
 #
-# $Id: Makefile,v 1.4 1997/05/06 22:47:03 johnh Exp johnh $
 # $FreeBSD$
 #
 
@@ -14,10 +13,11 @@ MASTER_SITES=   http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
 MAINTAINER=     johnh@isi.edu
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2
 USE_NEWGCC=	yes
 MAN1=           lavaps.1
 

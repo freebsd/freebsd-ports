@@ -8,18 +8,18 @@
 
 DISTNAME=	itcl3.0.1
 PKGNAME=	iwidgets-3.0.0
-CATEGORIES=	x11-toolkits tk80
+CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
 
 MAINTAINER=	dmlb@ragnet.demon.co.uk
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		itcl30.1:${PORTSDIR}/lang/itcl \
 		itk30.1:${PORTSDIR}/x11-toolkits/itk
 
 WRKSRC=		${WRKDIR}/itcl3.0.1/iwidgets3.0.0/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.0 --with-itcl=${PREFIX}/lib/itcl3.0 --with-tk=${PREFIX}/lib/tk8.0 --with-itk=${PREFIX}/lib/itk3.0
+CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.2 --with-itcl=${PREFIX}/lib/itcl3.0 --with-tk=${PREFIX}/lib/tk8.2 --with-itk=${PREFIX}/lib/itk3.0
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
 MANN=		buttonbox.n calendar.n canvasprintbox.n canvasprintdialog.n \

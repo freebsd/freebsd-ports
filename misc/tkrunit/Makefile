@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.cs.columbia.edu/~etgold/software/tkRunIt/
 
 MAINTAINER=	steve@farrell.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
 

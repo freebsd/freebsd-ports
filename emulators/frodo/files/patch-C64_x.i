@@ -5,7 +5,7 @@
  #else
  	// try to start up Tk gui.
 -	gui = new CmdPipe("wish", "TkGui.tcl");
-+	gui = new CmdPipe("wish8.0", "TkGui.tcl");
++	gui = new CmdPipe("wish8.2", "TkGui.tcl");
  	if (gui) {
  		if (gui->fail) {
  			delete gui; gui = 0;

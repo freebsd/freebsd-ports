@@ -7,20 +7,20 @@
 #
 
 DISTNAME=	clig-1.1.3
-CATEGORIES=	devel tcl80
+CATEGORIES=	devel tcl82
 MASTER_SITES=	http://wsd.iitb.fhg.de/~kir/clighome/
 
 MAINTAINER=	billf@FreeBSD.org
 
 # This should work with any version of tcl.  See also ${MAKE_ENV}.
-BUILD_DEPENDS=	${PREFIX}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80
-RUN_DEPENDS=	${PREFIX}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80
+BUILD_DEPENDS=	${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+RUN_DEPENDS=	${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
 MAN1=		clig.1
 
 NO_BUILD=	yes
 MAKEFILE=	makefile
-MAKE_ENV=	tclsh=${PREFIX}/bin/tclsh8.0
+MAKE_ENV=	tclsh=${PREFIX}/bin/tclsh8.2
 PLIST_SUB=	VERSION=${DISTNAME}
 
 do-patch:

@@ -51,7 +51,7 @@ Index: do-install
  $install -c ./petal/petalmidi/PetalMidi.tcl $ROSELIBDIR/petal
  
 -( cd $ROSELIBDIR/petal ; echo "pkg_mkIndex . Petal.so *.tcl" | tclsh )
-+( cd $ROSELIBDIR/petal ; echo "pkg_mkIndex . Petal.so *.tcl" | tclsh8.0 )
++( cd $ROSELIBDIR/petal ; echo "pkg_mkIndex . Petal.so *.tcl" | tclsh8.2 )
  
  $install -d $ROSELIBDIR/rosepetal-filters
  $install -c ./petal/harmonizer.tcl $ROSELIBDIR/rosepetal-filters

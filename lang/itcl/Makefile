@@ -13,11 +13,11 @@ MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
 
 MAINTAINER=	dmlb@ragnet.demon.co.uk
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
 WRKSRC=		${WRKDIR}/itcl3.0.1/itcl/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.0
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} ITCL_LIB_FILE=${ITCL_LIB_FILE}
 
 SHLIB_MAJOR=	1
@@ -32,11 +32,7 @@ MANN+=		itcl.n itcl_class.n itcl_info.n itclvars.n local.n scope.n
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
 ITCL_LIB_FILE=	${ITCL_LIB}.${SHLIB_MAJOR}
-.else
-ITCL_LIB_FILE=	${ITCL_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
-.endif
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
@@ -48,6 +44,7 @@ pre-build:
 	   TCL_PREFIX=${PREFIX}
 
 post-install:
+	${LN} -sf ${PREFIX}/bin/itclsh3.0 ${PREFIX}/bin/itclsh
 	${LN} -sf ${ITCL_LIB_FILE} ${PREFIX}/lib/${ITCL_LIB}
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 

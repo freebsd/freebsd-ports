@@ -20,9 +20,9 @@
 -# Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
 -INCLUDES = -I/usr/local/include -I/usr/include/tcl
 +# Where to find tc.hl, tk.h, OpenGL/Mesa headers, etc:
-+INCLUDES = -I/usr/local/include/tcl8.0 \
-+           -I/usr/local/include/tk8.0 \
-+           -I/usr/local/include/tk8.0/generic \
++INCLUDES = -I/usr/local/include/tcl8.2 \
++           -I/usr/local/include/tk8.2 \
++           -I/usr/local/include/tk8.2/generic \
 +           -I/usr/X11R6/include \
 +           -I/usr/include/tcl
  
@@ -33,7 +33,7 @@
  
  # Libraries to link with (-ldl for Linux only?):
 -LIBS = -ltk -ltcl -lGLU -lGL -L/usr/X11/lib -lX11 -lXmu -lXext -lXt -lm -ldl
-+LIBS = -ltk80 -ltcl80 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm
++LIBS = -ltk82 -ltcl82 -lGLU -lGL -lX11 -lXmu -lXext -lXt -lm
  
  TK_FLAGS =
  

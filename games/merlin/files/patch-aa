@@ -2,7 +2,7 @@
 +++ merlin	Sun Aug 23 18:09:17 1998
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/wish4.1
-+#!/usr/local/bin/wish8.0
++#!/usr/local/bin/wish8.2
  # 
  # Merlin - a pointless puzzle game
  #

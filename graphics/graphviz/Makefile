@@ -8,13 +8,13 @@
 
 DISTNAME=       gviz15
 PKGNAME=	graphviz-1.5
-CATEGORIES=	graphics tk80
+CATEGORIES=	graphics tk82
 MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 FETCH_ARGS=	-b
 WRKSRC=		${WRKDIR}/gv1.5

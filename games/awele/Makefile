@@ -8,13 +8,13 @@
 
 DISTNAME=	awele
 PKGNAME=	awele-1.0
-CATEGORIES=	games tk80
-MASTER_SITES=	http://www-rocq.inria.fr/air/ftp/Jean-Paul/
+CATEGORIES=	games tk82
+MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/
 EXTRACT_SUFX=	1.0.tgz
 
 MAINTAINER=	tg@FreeBSD.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

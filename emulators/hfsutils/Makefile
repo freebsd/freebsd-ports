@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	hfsutils-3.2.6
-CATEGORIES=	emulators tk80
+CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl --with-tk

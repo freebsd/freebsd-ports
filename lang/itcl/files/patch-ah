@@ -1,0 +1,11 @@
+--- ../generic/itcl_ensemble.c.orig	Sat Aug  8 16:38:24 1998
++++ ../generic/itcl_ensemble.c	Wed Nov  3 15:05:39 1999
+@@ -1626,7 +1626,7 @@
+      *  another "ensemble" command.  Use the current ensemble as
+      *  the parent, and find or create an ensemble part within it.
+      */
+-    ensName = TclGetStringFromObj(objv[1], (int*)NULL);
++    ensName = Tcl_GetStringFromObj(objv[1], (int*)NULL);
+ 
+     if (ensData) {
+         if (FindEnsemblePart(interp, ensData, ensName, &ensPart) != TCL_OK) {

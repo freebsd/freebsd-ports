@@ -1,0 +1,23 @@
+--- tcl/uuwish.c.orig	Thu Jun  6 14:41:11 1996
++++ tcl/uuwish.c	Thu Nov  4 11:34:43 1999
+@@ -78,19 +78,7 @@
+ int
+ main (int argc, char *argv[])
+ {
+-#ifdef HAVE_TK
+-  Tk_Main
+-#else
+-#ifdef HAVE_TCL
+-  Tcl_Main
+-#endif
+-#endif
+-    (argc, argv
+-#ifdef TMAIN_THREE
+-     , Tcl_AppInit
+-#endif
+-     );
+-
++  Tk_MainEx( argc, argv, Tcl_AppInit, Tcl_CreateInterp() );
+   return 0;
+ }
+ 

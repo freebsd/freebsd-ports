@@ -57,8 +57,8 @@ _glutmodule.c  # putting this at the end for \ reasons
 ## # This must match the name of the Togl source directory
 ##         -I./Togl-1.5 \
 ## # These must match the version you have installed
-##         -ILOCALBASE/include/tcl8.0 -ILOCALBASE/include/tk8.0 \
-##         -LLOCALBASE/lib -ltk80 -ltcl80 \
+##         -ILOCALBASE/include/tcl8.2 -ILOCALBASE/include/tk8.2 \
+##         -LLOCALBASE/lib -ltk82 -ltcl82 \
 ## # You'll definitely need these (or maybe edit them for MesaGL/MesaGLU:
 ##         -IX11BASE/include -LX11BASE/lib \
 ##         -lGLU -lGL \
