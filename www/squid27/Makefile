@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -65,7 +65,8 @@ PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
 		squid-2.5.STABLE5-dns_localhost.patch \
 		squid-2.5.STABLE5-msnt_auth_doc.patch \
 		squid-2.5.STABLE5-CONNECT_log_size.patch \
-		squid-2.5.STABLE5-proxy_abuse.patch
+		squid-2.5.STABLE5-proxy_abuse.patch \
+		squid-2.5.STABLE5-ntlm_auth_overflow.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -123,7 +124,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 
 # Authentication methods and modules:
 
-basic_auth=	NCSA PAM YP MSNT winbind
+basic_auth=	NCSA PAM YP MSNT SMB winbind
 external_acl=	ip_user unix_group wbinfo_group winbind_group
 MAN8+=		pam_auth.8 squid_unix_group.8
 .if defined(WITH_SQUID_LDAP_AUTH)

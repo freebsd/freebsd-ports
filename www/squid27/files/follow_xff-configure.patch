@@ -1,10 +1,23 @@
-!Patch configure directly to enable testing for the
-!--enable-follow-x-forwarding-for configuration option
-!instead of running configure.in through autoconf as in the
-!original follow-XFF patchset from devel.squid-cache.org.
+!Simulate the autotools bootstrap of the follow-x-forwarded-for patchset.
+!
 !Beware that all line number informations in configure.log greater
-!than 2972 are offset by -29 (correcting all line numbers would have
+!than 2972 are offset by at least -29 (correcting all line numbers would have
 !bloated the patch by 92kB!)
+--- include/autoconf.h.in.orig	Sat Jan 18 02:46:11 2003
++++ include/autoconf.h.in	Thu Jun 24 13:19:07 2004
+@@ -291,6 +291,12 @@
+ #define USE_IDENT 1
+ 
+ /*
++ * Compile in support for following X-Forwarded-For headers?
++ * Enabled by default.
++ */
++#define FOLLOW_X_FORWARDED_FOR 1
++
++/*
+  * If your system has statvfs(), and if it actually works!
+  */
+ #undef HAVE_STATVFS
 --- configure.orig	Tue Mar  2 10:18:14 2004
 +++ configure	Tue Mar  2 10:18:56 2004
 @@ -222,6 +222,12 @@
