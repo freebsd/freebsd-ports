@@ -7,4 +7,4 @@ bin/TestEmu
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-@dirrm share/doc/vba
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
