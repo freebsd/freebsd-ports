@@ -31,7 +31,7 @@ my ($user, $origdir, $portname, $tmpdir, $wdpdir, $predir, $hmake);
 chomp ($user = `logname`);
 chomp ($origdir = `pwd`);
 chomp ($portname = `basename $origdir`);
-$tmpdir = "/usr/tmp/$user.$portname";
+$tmpdir = "/tmp/$user.$portname";
 $wdpdir = "$tmpdir/wdp";
 $predir = "$tmpdir/prefix";
 
