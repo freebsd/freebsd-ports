@@ -1,3 +1,4 @@
+etc/dhclient-script
 sbin/dhclient
 sbin/dhcpd
 sbin/dhcrelay
