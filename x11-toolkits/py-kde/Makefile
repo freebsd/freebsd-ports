@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	py-kde
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	PyKDE-${PORTVERSION}
