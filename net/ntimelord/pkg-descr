@@ -1,0 +1,6 @@
+A time server daemon for Macintoshes running 'tardis' for netatalk
+
+timelord provides the equivalent of the Macintosh cdev 'Timelord'
+for a network of Macintoshes. Timelord is a time server that can 
+be used to set the Macintosh time at boot or from the Chooser 
+using the rdev 'tardis'.

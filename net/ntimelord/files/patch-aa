@@ -1,0 +1,38 @@
+--- Makefile.orig	Tue Jan  4 08:32:39 1994
++++ Makefile	Wed Oct 29 20:39:54 1997
+@@ -1,5 +1,5 @@
+ # Set DESTDIR to the root of the netatalk installation:
+-DESTDIR=/usr/local/atalk
++DESTDIR=$(PREFIX)
+ 
+ SRC = timelord.c
+ OBJ = timelord.o
+@@ -18,7 +18,7 @@
+ 	${CC} ${CFLAGS} -o timelord ${OBJ} ${LIBDIRS} ${LIBS}
+ 
+ install : all
+-	${INSTALL} -c timelord ${DESTDIR}/etc
++	${INSTALL} -c timelord ${DESTDIR}/libexec
+ 
+ clean :
+ 	rm -f a.out core* *.o *.bak *[Ee]rrs tags
+--- timelord.c.orig	Tue Jan  4 08:38:34 1994
++++ timelord.c	Wed Oct 29 16:44:14 1997
+@@ -215,7 +215,7 @@
+ 	    mtime = tv.tv_sec + tm->tm_gmtoff + EPOCH;
+ 	    mtime = htonl( mtime );
+ 
+-	    resp = TL_OK;
++	    resp = htonl(TL_OK);
+ 	    bcopy( &resp, buf, sizeof( long ));
+ 	    bcopy( &mtime, buf + sizeof( long ), sizeof( long ));
+ 	    iov.iov_len = sizeof( long ) + sizeof( long );
+@@ -224,7 +224,7 @@
+ 	default :
+ 	    syslog( LOG_ERR, bad );
+ 
+-	    resp = TL_BAD;
++	    resp = htonl(TL_BAD);
+ 	    bcopy( &resp, buf, sizeof( long ));
+ 	    *( buf + 4 ) = (unsigned char)strlen( bad );
+ 	    strcpy( buf + 5, bad );
