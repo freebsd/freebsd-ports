@@ -70,5 +70,3 @@ share/locale/zh_TW/LC_MESSAGES/gtm.mo
 @dirrm share/gnome/help/gtm/C/images
 @dirrm share/gnome/help/gtm/C
 @dirrm share/gnome/help/gtm
-@dirrm etc/sound/events
-@dirrm etc/CORBA/servers
