@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.2.19
+PORTVERSION=	0.2.20
 CATEGORIES=	net
-MASTER_SITES=	http://download.berlios.de/dcgui/ \
-		http://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
-		ftp://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/
+MASTER_SITES=	http://download.berlios.de/dcgui/
 
 MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	Direct connect interface library for dcgui
