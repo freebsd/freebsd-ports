@@ -167,7 +167,6 @@
     SUBDIR += tracker
     SUBDIR += vorbis
     SUBDIR += vorbis-tools
-    SUBDIR += vorbis-xmms
     SUBDIR += waveplay
     SUBDIR += wavplay
     SUBDIR += wmcdplay
