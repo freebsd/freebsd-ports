@@ -12,6 +12,7 @@
     SUBDIR += aiksaurus
     SUBDIR += aiksaurus-gtk
     SUBDIR += align
+    SUBDIR += am-aspell
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
     SUBDIR += ascii2pdf
@@ -100,8 +101,8 @@
     SUBDIR += eo-aspell
     SUBDIR += eruby
     SUBDIR += es-aspell
-    SUBDIR += et-aspell
     SUBDIR += estraier
+    SUBDIR += et-aspell
     SUBDIR += expat2
     SUBDIR += exslt
     SUBDIR += fa-aspell
@@ -232,6 +233,7 @@
     SUBDIR += ms-aspell
     SUBDIR += mt-aspell
     SUBDIR += nb-aspell
+    SUBDIR += nds-aspell
     SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += nl-aspell
@@ -248,6 +250,7 @@
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
+    SUBDIR += or-aspell
     SUBDIR += p5-Apache-ParseLog
     SUBDIR += p5-Apache-XBEL
     SUBDIR += p5-CSS-SAC
