@@ -8,9 +8,7 @@
 PORTNAME=	sshbuddy
 PORTVERSION=	1.05
 CATEGORIES=	misc
-MASTER_SITES=	http://topcu.linux.tucows.com/files/x11/network/ \
-		http://www.linuxmafia.com/pub/linux/security/sshbuddy/ \
-		http://www.linuxberg.at/files/x11/network/
+MASTER_SITES=	http://www.linuxmafia.com/pub/linux/security/sshbuddy/
 
 MAINTAINER=	ports@freebsd.org
 
