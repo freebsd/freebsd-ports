@@ -1981,6 +1981,7 @@ gale		ports/net/gale
 galeon		ports/www/galeon
 galeon2		ports/www/galeon2
 gallery		ports/www/gallery
+gambit		ports/misc/gambit
 games		src/games
 games_crimson	ports/games/crimson
 gap		ports/math/gap
