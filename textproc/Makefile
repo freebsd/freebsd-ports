@@ -153,6 +153,7 @@
     SUBDIR += tkdiff
     SUBDIR += tth
     SUBDIR += txt2html
+    SUBDIR += ua-ispell
     SUBDIR += unroff
     SUBDIR += urlview
     SUBDIR += wdiff
