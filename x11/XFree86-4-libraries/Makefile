@@ -28,10 +28,12 @@ COMMENT=	XFree86-4 libraries and headers
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-CONFLICTS=	libICE-* libSM-* libX11-* libXau-* libXcursor-* libXdmcp-* \
-		libXext-* libXfont-* libXi-* libXpm-* libXrandr-* \
-		libXrender-* libXres-* libXt-* libXv-* randrext-* renderext-* \
-		resourceext-* xextensions-* xproto-*
+CONFLICTS=	libX11-* libGL-* libGLU-* libICE-* libSM-* libXau-* libXaw-* \
+		libXcursor-* libXdmcp-* libXext-* libXfont-* libXi-* \
+		libXinerama-* libXmu-* libXp-* libXpm-* libXrandr-* \
+		libXrender-* libXres-* libXt-* libXv-* libXxf86-* libxkbfile-* \
+		panoramixext-* printext-* randrext-* renderext-* resourceext-* \
+		xextensions-* xf86ext-* xlibs-* xproto-*
 
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
