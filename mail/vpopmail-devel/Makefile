@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/devel/
 
@@ -261,60 +261,60 @@ pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
 .if defined(WITH_MYSQL)
 .if defined(WITH_MYSQL_UPDATE_SERVER)
-	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_UPDATE_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E -e "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\1${WITH_MYSQL_UPDATE_SERVER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_SERVER)
-	${REINPLACE_CMD} "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_READ_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E -e "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\1${WITH_MYSQL_READ_SERVER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_UPDATE_USER)
-	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\$$1${WITH_MYSQL_UPDATE_USER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\1${WITH_MYSQL_UPDATE_USER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_USER)
-	${REINPLACE_CMD} "s/(#define MYSQL_READ_USER.*)root(.*)/\$$1${WITH_MYSQL_READ_USER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E -e "s/(#define MYSQL_READ_USER.*)root(.*)/\1${WITH_MYSQL_READ_USER}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_UPDATE_PASSWD)
-	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_UPDATE_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E -e "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\1${WITH_MYSQL_UPDATE_PASSWD}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_PASSWD)
-	${REINPLACE_CMD} "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_READ_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E -e "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\1${WITH_MYSQL_READ_PASSWD}\2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_DB)
-	${REINPLACE_CMD} "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} -E -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\1${WITH_MYSQL_DB}\2/" ${WRKSRC}/vmysql.h
 .endif
 .endif
 .if defined(WITH_ORACLE)
 .if defined(WITH_ORACLE_SERVICE)
-	${REINPLACE_CMD} "s/(#define ORACLE_SERVICE.*)jimmy(.*)/\$$1${WITH_ORACLE_SERVICE}\$$2/" ${WRKSRC}/voracle.h
+	${REINPLACE_CMD} -E -e "s/(#define ORACLE_SERVICE.*)jimmy(.*)/\1${WITH_ORACLE_SERVICE}\2/" ${WRKSRC}/voracle.h
 .endif
 .if defined(WITH_ORACLE_USER)
-	${REINPLACE_CMD} "s/(#define ORACLE_USER.*)system(.*)/\$$1${WITH_ORACLE_USER}\$$2/" ${WRKSRC}/voracle.h
+	${REINPLACE_CMD} -E -e "s/(#define ORACLE_USER.*)system(.*)/\1${WITH_ORACLE_USER}\2/" ${WRKSRC}/voracle.h
 .endif
 .if defined(WITH_ORACLE_PASSWD)
-	${REINPLACE_CMD} "s/(#define ORACLE_PASSWD.*)manager(.*)/\$$1${WITH_ORACLE_PASSWD}\$$2/" ${WRKSRC}/voracle.h
+	${REINPLACE_CMD} -E -e "s/(#define ORACLE_PASSWD.*)manager(.*)/\1${WITH_ORACLE_PASSWD}\2/" ${WRKSRC}/voracle.h
 .endif
 .if defined(WITH_ORACLE_HOME)
-	${REINPLACE_CMD} "s@(#define ORACLE_HOME.*)/export/home/oracle(.*)@\$$1${WITH_ORACLE_HOME}\$$2@" ${WRKSRC}/voracle.h
+	${REINPLACE_CMD} -E -e "s@(#define ORACLE_HOME.*)/export/home/oracle(.*)@\1${WITH_ORACLE_HOME}\2@" ${WRKSRC}/voracle.h
 .endif
 .if defined(WITH_ORACLE_DB)
-	${REINPLACE_CMD} "s/(#define ORACLE_DATABASE.*)orcl1(.*)/\$$1${WITH_ORACLE_DB}\$$2/" ${WRKSRC}/voracle.h
+	${REINPLACE_CMD} -E -e "s/(#define ORACLE_DATABASE.*)orcl1(.*)/\1${WITH_ORACLE_DB}\2/" ${WRKSRC}/voracle.h
 .endif
 	cd ${WRKSRC} && ${WITH_ORACLE_PROC} voracle.pc
 .endif
 .if defined(WITH_SYBASE)
 .if defined(WITH_SYBASE_SERVER)
-	${REINPLACE_CMD} "s/(#define SYBASE_SERVER.*)\"\"(.*)/\$$1\"${WITH_SYBASE_SERVER}\"\$$2/" ${WRKSRC}/vsybase.h
+	${REINPLACE_CMD} -E -e "s/(#define SYBASE_SERVER.*)\"\"(.*)/\1\"${WITH_SYBASE_SERVER}\"\2/" ${WRKSRC}/vsybase.h
 .endif
 .if defined(WITH_SYBASE_USER)
-	${REINPLACE_CMD} "s/(#define SYBASE_USER.*)sa(.*)/\$$1${WITH_SYBASE_USER}\$$2/" ${WRKSRC}/vsybase.h
+	${REINPLACE_CMD} -E -e "s/(#define SYBASE_USER.*)sa(.*)/\1${WITH_SYBASE_USER}\2/" ${WRKSRC}/vsybase.h
 .endif
 .if defined(WITH_SYBASE_PASSWD)
-	${REINPLACE_CMD} "s/(#define SYBASE_PASSWD.*)\"\"(.*)/\$$1\"${WITH_SYBASE_PASSWD}\"\$$2/" ${WRKSRC}/vsybase.h
+	${REINPLACE_CMD} -E -e "s/(#define SYBASE_PASSWD.*)\"\"(.*)/\1\"${WITH_SYBASE_PASSWD}\"\2/" ${WRKSRC}/vsybase.h
 .endif
 .if defined(WITH_SYBASE_APP)
-	${REINPLACE_CMD} "s@(#define SYBASE_APP.*)vpopmail(.*)@\$$1${WITH_SYBASE_APP}\$$2@" ${WRKSRC}/vsybase.h
+	${REINPLACE_CMD} -E -e "s@(#define SYBASE_APP.*)vpopmail(.*)@\1${WITH_SYBASE_APP}\2@" ${WRKSRC}/vsybase.h
 .endif
 .if defined(WITH_SYBASE_DB)
-	${REINPLACE_CMD} "s/(#define SYBASE_DATABASE.*)vpopmail(.*)/\$$1${WITH_SYBASE_DB}\$$2/" ${WRKSRC}/vsybase.h
+	${REINPLACE_CMD} -E -e "s/(#define SYBASE_DATABASE.*)vpopmail(.*)/\1${WITH_SYBASE_DB}\2/" ${WRKSRC}/vsybase.h
 .endif
 .endif
 	${MKDIR} ${VCFGDIR}
