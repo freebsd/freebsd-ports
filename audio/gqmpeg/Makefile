@@ -39,7 +39,7 @@ MAN1=		gqmpeg.1
 USE_GNOME+=	gnomeprefix gnomelibs
 PKGNAMESUFFIX=	-gnome
 CONFIGURE_ENV+=	USE_GNOME="yes"
-PLIST_SUB+=	DATATDIR="share/gnome"
+PLIST_SUB+=	DATADIR="share/gnome"
 .else
 CONFIGURE_ENV+=	USE_GNOME=""
 PLIST_SUB+=	DATADIR="share"
