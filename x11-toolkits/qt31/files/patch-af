@@ -1,0 +1,20 @@
+--- configs/freebsd-g++-static	Sat Sep 16 14:47:56 2000
++++ configs/freebsd-g++-static.new	Sat Sep 16 14:48:06 2000
+@@ -21,7 +21,7 @@
+ SYSCONF_LIBS_X11	= -lXext -lX11 -lm
+ # Qt, Qt+OpenGL
+ SYSCONF_LFLAGS_QT	= -L$(QTDIR)/lib
+-SYSCONF_LIBS_QT		= -lqt$(QT_THREAD_SUFFIX)
++SYSCONF_LIBS_QT		= -lqt2$(QT_THREAD_SUFFIX)
+ SYSCONF_LIBS_QT_OPENGL	= 
+ # OpenGL
+ SYSCONF_LFLAGS_OPENGL	= -L/usr/X11R6/lib
+@@ -44,7 +44,7 @@
+ SYSCONF_LIBS_THREAD	= 
+ 
+ # Meta-object compiler
+-SYSCONF_MOC		= $(QTDIR)/bin/moc
++SYSCONF_MOC		= $(QTDIR)/bin/moc2
+ 
+ # UI compiler
+ SYSCONF_UIC		= $(QTDIR)/bin/uic
