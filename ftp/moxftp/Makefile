@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.8 1995/11/27 04:05:17 asami Exp $
+# $Id: Makefile,v 1.9 1996/10/11 20:35:59 erich Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -20,7 +20,7 @@ STRIP=
 #	athena - for athena version,
 #	athena3d - for athena 3 d version, (you should have installed Xaw3d!!!)
 #	openlook - for open look version - (not tested!!!)
-# If you use athena3d uncomment DEPENDS !!!
+# If you use athena3d uncomment LIB_DEPENDS !!!
 .if defined(HAVE_MOTIF)
 CONFIGURE_ARGS=	motif
 PROGRAM_NAME=mftp
@@ -30,6 +30,8 @@ CONFIGURE_ARGS=	athena
 PROGRAM_NAME=xftp
 RESOURCE_NAME=Xftp
 .endif
+
+#LIB_DEPENDS=	Xaw3d\\.6:${PORTSDIR}/x11/Xaw3d
 
 .if !defined (NOMANCOMPRESS)
   GZIP_EXT=.gz
