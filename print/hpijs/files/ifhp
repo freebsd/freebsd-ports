@@ -33,6 +33,7 @@ case "${first_line}" in
 \%\!*)
     #
     # PostScript input, so use ghostscript and hpijs
+    # http://hpinkjet.sourceforge.net/printmodedescr.php#DJ9xxVIP
     #
     /usr/local/bin/gs -q -dNOPAUSE -dSAFER -r600x600 \
     -sDEVICE=ijs -sIjsServer=/usr/local/bin/hpijs -dIjsUseOutputFD \
@@ -53,7 +54,7 @@ esac
 exit 2
 
 
-# Copyright (c) 2003 The FreeBSD Project
+# Copyright (c) 2003 Doug Barton
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
