@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	heyu
-PORTVERSION=	1.29
+PORTVERSION=	1.31.3
 CATEGORIES=	misc
 MASTER_SITES=	http://heyu.tanj.com/
 DISTNAME=	x10_heyu
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	plambert@plambert.net
+
+BROKEN=		"Patches need to be upgraded."
 
 ALL_TARGET=	heyu
 WRKSRC=		${WRKDIR}/heyu.dir
