@@ -182,7 +182,7 @@ post-install:
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
 		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
-			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.sample; \
+			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.conf.sample; \
 			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
 		fi \
 	done; \
