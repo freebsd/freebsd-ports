@@ -7,8 +7,8 @@
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
     SUBDIR += apel-xemacs
-    SUBDIR += apel-xemacs21-mule
     SUBDIR += apel-xemacs20
+    SUBDIR += apel-xemacs21-mule
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
@@ -43,10 +43,10 @@
     SUBDIR += flim-mule-current
     SUBDIR += flim-xemacs
     SUBDIR += flim-xemacs-current
-    SUBDIR += flim-xemacs21-mule
-    SUBDIR += flim-xemacs21-mule-current
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
+    SUBDIR += flim-xemacs21-mule
+    SUBDIR += flim-xemacs21-mule-current
     SUBDIR += fte
     SUBDIR += gate
     SUBDIR += gedit
@@ -54,7 +54,6 @@
     SUBDIR += glimmer
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
-    SUBDIR += gnuserv-emacs20
     SUBDIR += gxedit
     SUBDIR += hexcurse
     SUBDIR += hexedit
@@ -106,10 +105,10 @@
     SUBDIR += semi-mule-current
     SUBDIR += semi-xemacs
     SUBDIR += semi-xemacs-current
-    SUBDIR += semi-xemacs21-mule
-    SUBDIR += semi-xemacs21-mule-current
     SUBDIR += semi-xemacs20
     SUBDIR += semi-xemacs20-current
+    SUBDIR += semi-xemacs21-mule
+    SUBDIR += semi-xemacs21-mule-current
     SUBDIR += staroffice5
     SUBDIR += staroffice52
     SUBDIR += sted
@@ -136,10 +135,10 @@
     SUBDIR += wemi-mule-current
     SUBDIR += wemi-xemacs
     SUBDIR += wemi-xemacs-current
-    SUBDIR += wemi-xemacs21-mule
-    SUBDIR += wemi-xemacs21-mule-current
     SUBDIR += wemi-xemacs20
     SUBDIR += wemi-xemacs20-current
+    SUBDIR += wemi-xemacs21-mule
+    SUBDIR += wemi-xemacs21-mule-current
     SUBDIR += wily
     SUBDIR += wordperfect
     SUBDIR += xcoral
