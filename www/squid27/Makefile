@@ -63,18 +63,10 @@
 #    --with-coss-membuf-size
 #     COSS membuf size (default: 1048576 bytes)
 #
-#    This option does not work on FreeBSD at the moment:
-#
-#    --enable-ipf-transparent
-#     Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
-#     (IPFilter headers are not currently installed to the base system,
-#     PRs ports/60700 and misc/44148 describe the problem; see
-#     http://www.squid-cache.org/Doc/FAQ/FAQ-17.html for information
-#     about how to do transparent proxying with ipfw)
 
 PORTNAME=	squid
 PORTVERSION=	2.5.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -90,7 +82,17 @@ PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
 PATCHFILES=	squid-2.5.STABLE9-setcookie.patch \
 		squid-2.5.STABLE9-ftp_EPLF.patch \
 		squid-2.5.STABLE9-ftp_base_href.patch \
-		squid-2.5.STABLE9-acl_error.patch
+		squid-2.5.STABLE9-acl_error.patch \
+		squid-2.5.STABLE9-date.patch \
+		squid-2.5.STABLE9-reload_into_ims.patch \
+		squid-2.5.STABLE9-delay_access_doc.patch \
+		squid-2.5.STABLE9-config_overflow.patch \
+		squid-2.5.STABLE9-bzero.patch \
+		squid-2.5.STABLE9-pid_t.patch \
+		squid-2.5.STABLE9-ctype.patch \
+		squid-2.5.STABLE9-defer_digest_fetch.patch \
+		squid-2.5.STABLE9-dup_content_length.patch \
+		squid-2.5.STABLE9-excess_data.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -128,7 +130,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_IDENT "Enable ident (RFC 931) lookups" on \
 		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off \
 		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
-		SQUID_PF "Enable transp. proxy support using PF" off \
+		SQUID_PF "Enable transparent proxying with PF" off \
+		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
@@ -284,6 +287,19 @@ pf_includedir=	${LOCALBASE}/include/pf
 BUILD_DEPENDS+=	${pf_includedir}/net/pfvar.h:${PORTSDIR}/security/pf
 CFLAGS+=	-I${pf_includedir}
 EXTRA_PATCHES+=	${WRKDIR}/pf_from_ports.patch
+.endif
+.endif
+# IPFilter-headers are not installed on FreeBSD 4 since 4.7-RELEASE,
+# they were not installed on FreeBSD 5 from 2002-03-26 (OSVERSION > 500032) to
+# 2003-06-27 (OSVERSION < 501101).
+#
+# Please see PR misc/44148 and the CVS log of src/include/Makefile for further
+# information.
+.if defined(WITH_SQUID_IPFILTER)
+.if (${OSVERSION} >= 470000 && ${OSVERSION} < 500000) || (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
+IGNORE=		"IPFilter headers are not part of the base system"
+.else
+CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
 .endif
 .if defined(WITH_SQUID_FOLLOW_XFF)
