@@ -6075,6 +6075,7 @@ razor-agents	ports/mail/razor-agents
 rblcheck	ports/mail/rblcheck
 rboot		ports/net/rboot
 rbootd		src/libexec/rbootd
+rbot		ports/irc/rbot
 rc		ports/shells/rc
 rcalc		ports/math/rcalc
 rclean		ports/sysutils/rclean
