@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	libformat
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://members.chello.at/oberzalek/development/
+MASTER_SITES=	http://home.pages.at/kingleo/development/
 DISTNAME=	Format-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
