@@ -3,12 +3,12 @@
 # Date created:		9 Aug 1995
 # Whom:			msmith@atrad.adelaide.edu.au
 #
-# $Id: Makefile,v 1.3 1995/11/22 13:12:28 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/12 02:18:04 obrien Exp $
 #
 
 DISTNAME=	bwbasic-2.10
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.eng.umd.edu/pub/basic/
+MASTER_SITES=	ftp://locke.ccil.org/pub/retro/bwbasic-2.10.tar.gz
 
 MAINTAINER=	msmith@atrad.adelaide.edu.au
 
