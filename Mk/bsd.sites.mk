@@ -1221,9 +1221,36 @@ MASTER_SITE_XCONTRIB+=	\
 
 MASTER_SITE_XEMACS+= \
 	ftp://ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
+	ftp://ftp.at.xemacs.org/editors/xemacs/%SUBDIR%/ \
+	ftp://ftp.au.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.be.xemacs.org/xemacs/%SUBDIR%/ \
+	ftp://ftp.br.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.ca.xemacs.org/pub/Mirror/xemacs/%SUBDIR%/ \
+	ftp://ftp.ch.xemacs.org/mirror/xemacs/%SUBDIR%/ \
+	ftp://ftp.cz.xemacs.org/MIRRORS/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.de.xemacs.org/pub/ftp.xemacs.org/tux/xemacs/%SUBDIR%/ \
+	ftp://ftp.dk.xemacs.org/pub/emacs/xemacs/%SUBDIR%/ \
+	ftp://ftp.fi.xemacs.org/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/%SUBDIR%/ \
+	ftp://ftp.fr.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.is.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.ie.xemacs.org/mirrors/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.it.xemacs.org/unix/packages/XEMACS/%SUBDIR%/ \
+	ftp://ftp.jp.xemacs.org/pub/GNU/xemacs/%SUBDIR%/ \
+	ftp://ftp.kr.xemacs.org/pub/tools/emacs/xemacs/%SUBDIR%/ \
+	ftp://ftp.no.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.pl.xemacs.org/pub/unix/editors/xemacs/%SUBDIR%/ \
+	ftp://ftp.pt.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.ru.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.se.xemacs.org/pub/gnu/xemacs/%SUBDIR%/ \
+	ftp://ftp.tw.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.uk.xemacs.org/sites/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.us.xemacs.org/pub/xemacs/%SUBDIR%/ \
+	ftp://ftp.nz.xemacs.org/mirror/ftp.xemacs.org/%SUBDIR%/ \
+	ftp://ftp.za.xemacs.org/mirrorsites/ftp.xemacs.org/%SUBDIR%/ \
+	ftp://xemacs.xmundo.net/pub/mirrors/xemacs/%SUBDIR%/ \
 	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
+	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/%SUBDIR%/ \
 	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 
