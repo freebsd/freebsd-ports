@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A low level console graphics library
 
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.andreasen.org/LeakTracer/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	LeakTracer
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Trace and analyze memory leaks in C++ programs
 
 INSTALLS_SHLIB=	yes

@@ -23,7 +23,7 @@ DISTFILES+=	pak0.pak:pak \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cleaned up copy of the original Quake II source code
 
 USE_GMAKE=	yes

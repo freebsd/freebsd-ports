@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ct0.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Cross-assembler for 680x, 68hc11, 6502, Sunplus, 8051, Z80, PIC, AVR
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

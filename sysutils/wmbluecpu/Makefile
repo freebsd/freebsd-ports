@@ -11,7 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://ibiblio.org/pub/linux/X11/xutils/ \
 		ftp://ftp.ibiblio.org/pub/linux/X11/xutils/
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CPU monitoring dockapp
 
 USE_BZIP2=	yes

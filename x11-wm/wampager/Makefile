@@ -10,7 +10,7 @@ PORTVERSION=	0.9.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.waimea.org/wampager/
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A mini pager for the waimea window manager
 
 PLIST_FILES=	bin/wampager

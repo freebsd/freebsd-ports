@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.helsinki.fi/~sandvik/qwdlinux/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	${PORTNAME}-unix-source-${PORTVERSION}
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Converts QuakeWorld demos from QWD format to MVD format
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-unix

@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.research.att.com/~mff/XMILL/
 DISTNAME=	xmill-0-7
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An efficient compressor for XML
 
 NO_WRKSUBDIR=	yes

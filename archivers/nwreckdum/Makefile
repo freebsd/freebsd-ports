@@ -10,7 +10,7 @@ PORTVERSION=	0.0.6
 CATEGORIES=	archivers games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility for extracting/creating Quake PAK files
 
 PLIST_FILES=	bin/nwreckdum

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.users.bigpond.net.au/gavindi/
 DISTNAME=	ttf-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Arkpandora TrueType fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \

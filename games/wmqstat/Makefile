@@ -11,7 +11,7 @@ CATEGORIES=	games windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dockapp for monitoring of various Internet game servers
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat

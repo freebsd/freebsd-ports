@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/majormms/ \
 		http://inet.ssc.nsu.ru/~danfe/
 DISTNAME=	mms_client-${PORTVERSION}
 
-MAINTAINER=	danfe@regency.nsu.ru
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Download Microsoft Media streams
 
 GNU_CONFIGURE=	yes
