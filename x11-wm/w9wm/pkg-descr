@@ -1,0 +1,16 @@
+w9wm is a quick & dirty hack based on 9wm, the wonderful "template"
+window manager made by David Hogan.
+
+9wm is really nice for all day use (I mean, a large Emacs window
+covering the whole screen and a terminal to use Lynx and browse the
+web ;-)) provided that you do not have a large number of windows on
+your screen.  But in some occasions it is not the case (ie. you have
+to telnet to 4-5 remote machines), which is painful with 9wm.
+
+This need for virtual screens motivated this about 50 lines hack.
+w9wm brings support for virtual screens (provided you use the second
+button, aka middle button to select one virtual screen) as well as for
+key bindings (to switch from one window to another).
+
+- George Reid
+greid@ukug.uk.freebsd.org

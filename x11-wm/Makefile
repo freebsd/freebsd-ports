@@ -51,6 +51,7 @@
     SUBDIR += ude
     SUBDIR += uwm
     SUBDIR += vtwm
+    SUBDIR += w9wm
     SUBDIR += windowmaker
     SUBDIR += windowmaker-i18n
     SUBDIR += wm2
