@@ -10,6 +10,8 @@ libdata/bonobo/servers/Totem_properties.server
 libexec/totem-properties-page
 share/gnome/application-registry/totem.applications
 share/gnome/applications/totem.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/totem/C/figures/totem_next_button.png
 share/gnome/help/totem/C/figures/totem_pause_button.png
 share/gnome/help/totem/C/figures/totem_play_button.png
@@ -50,6 +52,8 @@ share/gnome/omf/totem/totem-es.omf
 share/gnome/pixmaps/media-player-48.png
 share/gnome/pixmaps/vanity.png
 share/gnome/totem/filmholes.png
+share/gnome/totem/filmholes-big-left.png
+share/gnome/totem/filmholes-big-right.png
 share/gnome/totem/media-player-48.png
 share/gnome/totem/mozilla-viewer.glade
 share/gnome/totem/playlist-16.png
