@@ -1,26 +1,46 @@
---- configure.orig	Sun Apr 28 09:44:55 2002
-+++ configure	Tue Apr 30 14:53:48 2002
-@@ -758,7 +758,7 @@
- fi
- 
+--- configure.orig	Sat Jun 15 10:50:09 2002
++++ configure	Sun Jun 16 18:02:59 2002
+@@ -1172,7 +1172,7 @@
+ PATH_SEPARATOR="$ac_path_separator"
+ rm -f conftest.sh
  
 -PACKAGE=sylpheed
 +PACKAGE=sylpheed-claws
  
  MAJOR_VERSION=0
  MINOR_VERSION=7
-@@ -1148,7 +1148,7 @@
- fi
+@@ -1612,7 +1612,7 @@
  
+ fi
  
 -if test -d "$gnomedir"; then
 +if false; then
    SYLPHEED_GNOME_TRUE=
    SYLPHEED_GNOME_FALSE='#'
  else
-@@ -7479,9 +7479,9 @@
- localedir='${prefix}/${DATADIRNAME}/locale'
+@@ -7019,7 +7019,7 @@
+ fi
  
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool/ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9932,8 +9932,8 @@
+                 INTLOBJS="\$(GETTOBJS)"
+         BUILD_INCLUDED_LIBINTL=yes
+         USE_INCLUDED_LIBINTL=yes
+-        LIBINTL="\${top_builddir}/intl/libintl.a $LIBICONV"
+-        LTLIBINTL="\${top_builddir}/intl/libintl.a $LTLIBICONV"
++        LIBINTL="$LIBICONV"
++        LTLIBINTL="$LTLIBICONV"
+         LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
+       fi
+ 
+@@ -10019,9 +10019,9 @@
+ 
+ localedir='${prefix}/${DATADIRNAME}/locale'
  
 -manualdir='${prefix}/${DATADIRNAME}/${PACKAGE}/manual'
 +manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
@@ -28,9 +48,9 @@
 -faqdir='${prefix}/${DATADIRNAME}/${PACKAGE}/faq'
 +faqdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/faq'
  
- 
  if test "x${datadir}" = 'x${prefix}/share'; then
-@@ -8948,7 +8948,7 @@
+   if test "x${prefix}" = "xNONE"; then
+@@ -11633,7 +11633,7 @@
  
  	if test "$ac_cv_enable_ldap" = yes; then
  		CFLAGS="$CFLAGS `$GLIB_CONFIG --cflags gthread`"
@@ -38,4 +58,21 @@
 +		LIBS="$LIBS -lldap -llber ${PTHREAD_LIBS} `$GLIB_CONFIG --libs gthread`"
  	fi
  else
- 	echo "$ac_t""no" 1>&6
+ 	echo "$as_me:11639: result: no" >&5
+@@ -14194,7 +14194,7 @@
+ fi
+ done
+ 
+-ac_config_files="$ac_config_files Makefile sylpheed.spec ac/Makefile libkcc/Makefile src/version.h src/Makefile faq/Makefile faq/de/Makefile faq/en/Makefile faq/es/Makefile faq/fr/Makefile faq/it/Makefile manual/Makefile manual/de/Makefile manual/en/Makefile manual/es/Makefile manual/fr/Makefile manual/ja/Makefile tools/Makefile intl/Makefile po/Makefile.in"
++ac_config_files="$ac_config_files Makefile sylpheed.spec ac/Makefile libkcc/Makefile src/version.h src/Makefile faq/Makefile faq/de/Makefile faq/en/Makefile faq/es/Makefile faq/fr/Makefile faq/it/Makefile manual/Makefile manual/de/Makefile manual/en/Makefile manual/es/Makefile manual/fr/Makefile manual/ja/Makefile tools/Makefile po/Makefile.in"
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+ # tests run on this system so they can be shared between configure
+@@ -14539,7 +14539,6 @@
+   "manual/fr/Makefile" ) CONFIG_FILES="$CONFIG_FILES manual/fr/Makefile" ;;
+   "manual/ja/Makefile" ) CONFIG_FILES="$CONFIG_FILES manual/ja/Makefile" ;;
+   "tools/Makefile" ) CONFIG_FILES="$CONFIG_FILES tools/Makefile" ;;
+-  "intl/Makefile" ) CONFIG_FILES="$CONFIG_FILES intl/Makefile" ;;
+   "po/Makefile.in" ) CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
+   "default-1" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default-1" ;;
+   "default-2" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default-2" ;;
