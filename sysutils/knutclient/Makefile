@@ -17,7 +17,6 @@ COMMENT=	A visual client for UPS system NUT
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mt \
 		--program-transform-name=''

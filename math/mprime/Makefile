@@ -24,7 +24,6 @@ USE_REINPLACE=	yes
 USE_ZIP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
 WRKSRC=		${WRKDIR}/source/linux
 MAKEFILE=	makebsd
 ALL_TARGET=	clean mprime

@@ -22,7 +22,6 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	yes
-USE_SIZE=	yes
 NO_BUILD=	yes
 
 BINARY_NAME=	mlservspy.pl

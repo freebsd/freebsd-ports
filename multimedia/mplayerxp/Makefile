@@ -27,7 +27,6 @@ USE_ICONV=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 WANT_SDL=	yes
 

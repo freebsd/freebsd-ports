@@ -19,7 +19,6 @@ COMMENT=	eDonkey2000 'core' command line client
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-USE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=

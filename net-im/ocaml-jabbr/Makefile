@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/cryptokit.cma:${PORTSDIR}/security/ocaml-cry
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 DATE_VERSION=	20021124
 
