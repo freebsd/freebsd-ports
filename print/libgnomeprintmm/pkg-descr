@@ -1,0 +1,2 @@
+This is a set of thin C++ wrappers around the libgnomeprint printing support
+system.
