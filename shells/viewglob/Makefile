@@ -20,6 +20,7 @@ RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20
 GNU_CONFIGURE=		yes
+USE_GCC=		3.4
 
 MAN1=			gviewglob.1 viewglob.1
 
