@@ -21,6 +21,6 @@ NO_BUILD=	yes
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/texmf/tex/latex/${PORTNAME}
-	cd ${WRKSRC} && ${INSTALL_DATA} *..sty *.cls *.cfg ${PREFIX}/share/texmf/tex/latex/${PORTNAME}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.sty *.cls *.cfg ${PREFIX}/share/texmf/tex/latex/${PORTNAME}
 
 .include <bsd.port.mk>
