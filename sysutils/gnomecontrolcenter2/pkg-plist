@@ -40,16 +40,6 @@ share/gnome/control-center-2.0/capplets/keybinding.desktop
 share/gnome/control-center-2.0/capplets/keyboard.desktop
 share/gnome/control-center-2.0/capplets/mouse.desktop
 share/gnome/control-center-2.0/capplets/sound.desktop
-share/gnome/control-center-2.0/icons/accessibility-directory.png
-share/gnome/control-center-2.0/icons/accessibility-keyboard-capplet.png
-share/gnome/control-center-2.0/icons/advanced-directory.png
-share/gnome/control-center-2.0/icons/background-capplet.png
-share/gnome/control-center-2.0/icons/behavior-capplet.png
-share/gnome/control-center-2.0/icons/control-center.png
-share/gnome/control-center-2.0/icons/default-applications-capplet.png
-share/gnome/control-center-2.0/icons/font-capplet.png
-share/gnome/control-center-2.0/icons/mouse-capplet.png
-share/gnome/control-center-2.0/icons/sound-capplet.png
 share/gnome/control-center-2.0/interfaces/background-properties.glade
 share/gnome/control-center-2.0/interfaces/file-types-properties.glade
 share/gnome/control-center-2.0/interfaces/font-properties.glade
@@ -88,9 +78,12 @@ share/gnome/cursor-fonts/cursor-white.pcf
 share/gnome/gnome-2.0/ui/gnomecc-ui.xml
 share/gnome/idl/ConfigArchiver.idl
 share/gnome/idl/GNOME_SettingsDaemon.idl
+share/gnome/pixmaps/accessibility-directory.png
 share/gnome/pixmaps/accessibility-keyboard-capplet.png
+share/gnome/pixmaps/advanced-directory.png
 share/gnome/pixmaps/background-capplet.png
 share/gnome/pixmaps/behavior-capplet.png
+share/gnome/pixmaps/control-center.png
 share/gnome/pixmaps/control-center2.png
 share/gnome/pixmaps/default-applications-capplet.png
 share/gnome/pixmaps/font-capplet.png
@@ -148,7 +141,6 @@ share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/cursor-fonts
 @dirrm share/gnome/control-center-2.0/pixmaps
 @dirrm share/gnome/control-center-2.0/interfaces
-@dirrm share/gnome/control-center-2.0/icons
 @dirrm share/gnome/applications
 @dirrm include/gnome-window-settings-2.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver
