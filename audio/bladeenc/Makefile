@@ -15,6 +15,12 @@ EXTRACT_SUFX=	-src-stable.tar.gz
 MAINTAINER=	dirk@FreeBSD.org
 COMMENT=	MP3 encoder
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

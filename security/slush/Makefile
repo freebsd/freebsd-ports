@@ -24,6 +24,10 @@ USE_OPENSSL=	YES
 BROKEN=		does not build
 .endif
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/slush

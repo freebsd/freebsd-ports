@@ -19,6 +19,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dosrel-1.0${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross Development Environment for 32-bit DOS
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${TARGET}
 USE_GMAKE=	yes
@@ -57,4 +63,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/go32.exe ${GO32DIR}
 	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/emu387 ${GO32DIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -22,6 +22,10 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 EGCS_REV=	egcs-2.91.66
 
 .if ${PORTOBJFORMAT} == "elf"

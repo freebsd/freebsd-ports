@@ -15,7 +15,13 @@ DISTNAME=	tintin++v1.5pl9
 MAINTAINER=	jhp@cocoja.holywar.net
 COMMENT=	A client program to help playing muds
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 WRKSRC=		${WRKDIR}/tintin++/v1.5/src
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
