@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.phreax.net/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	SDL-1.0.0:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
 ALL_TARGET=
 
