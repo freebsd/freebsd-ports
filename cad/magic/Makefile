@@ -3,12 +3,13 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1994/10/06 07:52:04 swallace Exp $
+# $Id: Makefile,v 1.1.1.1 1994/12/18 21:12:08 swallace Exp $
 #
 
 DISTNAME=       magic-6.4.4
 EXTRACT_SUFX=   .tar.Z
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
+USE_GMAKE=	yes
 
 install:
 	@echo "===>  Installing for ${DISTNAME}"
