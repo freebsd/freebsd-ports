@@ -1,0 +1,2 @@
+#!/bin/sh
+rm -fr ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/sessions/*
