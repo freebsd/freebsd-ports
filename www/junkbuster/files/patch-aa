@@ -1,6 +1,7 @@
---- Makefile.orig	Fri Feb  5 22:52:56 1999
-+++ Makefile	Fri Feb  5 22:53:25 1999
-@@ -8,7 +8,7 @@
+diff -ruN /usr/ports/www/ijb/work/ijb20/Makefile ./Makefile
+--- /usr/ports/www/ijb/work/ijb20/Makefile	Mon Feb 28 02:35:10 2000
++++ ./Makefile	Mon Feb 28 02:37:39 2000
+@@ -8,10 +8,11 @@
  PROG   = junkbuster
  O      = o
  RM     = rm -f
@@ -9,7 +10,11 @@
  
  # use this for Solaris 2.x
  #LDFLAGS = -lnsl -lsocket 
-@@ -47,7 +47,7 @@
++LDFLAGS += -lgnuregex
+ 
+ # use these for SunOS 4.x
+ #LDFLAGS = -nsl
+@@ -47,10 +48,10 @@
  #MORE_CFLAGS = -relax_pointers
  #LDFLAGS = -map junkbuster.xMAP
  
@@ -17,4 +22,8 @@
 +CFLAGS  += $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
  
  OBJS =	jcc.$(O) parsers.$(O) filters.$(O) loaders.$(O) bind.$(O) conn.$(O) \
- 	encode.$(O) ssplit.$(O) socks4.$(O) acl.$(O) gnu_regex.$(O) win32.$(O)
+-	encode.$(O) ssplit.$(O) socks4.$(O) acl.$(O) gnu_regex.$(O) win32.$(O)
++	encode.$(O) ssplit.$(O) socks4.$(O) acl.$(O) win32.$(O)
+ 
+ $(PROG): $(OBJS)
+ 	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)

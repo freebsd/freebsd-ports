@@ -1,0 +1,12 @@
+diff -ruN /usr/ports/www/ijb/work/ijb20/encode.c ./encode.c
+--- /usr/ports/www/ijb/work/ijb20/encode.c	Mon Feb 28 02:35:10 2000
++++ ./encode.c	Mon Feb 28 02:31:06 2000
+@@ -9,7 +9,7 @@
+ #include <ctype.h>
+ 
+ #ifdef REGEX
+-#include "gnu_regex.h"
++#include "gnuregex.h"
+ #endif
+ 
+ #include "jcc.h"

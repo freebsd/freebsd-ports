@@ -1,0 +1,12 @@
+diff -ruN /usr/ports/www/ijb/work/ijb20/ssplit.c ./ssplit.c
+--- /usr/ports/www/ijb/work/ijb20/ssplit.c	Mon Feb 28 02:35:10 2000
++++ ./ssplit.c	Mon Feb 28 02:31:06 2000
+@@ -18,6 +18,8 @@
+  *      l = flag indicating whether to ignore leading field separators
+  */
+ 
++#include "loaders.h"
++#include <stdlib.h>
+ #include <string.h>
+ 
+ int ssplit(char *s, char *c, char *v[], int n, int m, int l)
