@@ -6,6 +6,7 @@
     SUBDIR += LPRngTool
     SUBDIR += Tee
     SUBDIR += abck
+    SUBDIR += acidlaunch
     SUBDIR += afio
     SUBDIR += ah-tty
     SUBDIR += and

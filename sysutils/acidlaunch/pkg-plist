@@ -1,0 +1,4 @@
+bin/acidlaunch
+share/acidlaunch/config.xml
+share/acidlaunch/default.png
+@dirrm share/acidlaunch
