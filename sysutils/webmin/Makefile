@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.130
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -27,15 +27,17 @@ USE_SIZE=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	apache-1.130-1.wbm.gz \
-		dhcpd-1.130-3.wbm.gz \
+		bind8-1.130-3.wbm.gz \
+		dhcpd-1.130-5.wbm.gz \
 		fdisk-1.130-2.wbm.gz \
 		firewall-1.130-1.wbm.gz \
 		htaccess-htpasswd-1.130-1.wbm.gz \
 		logrotate-1.130-3.wbm.gz \
 		postfix-1.130-3.wbm.gz \
-		quota-1.130-1.wbm.gz \
+		quota-1.130-5.wbm.gz \
 		shorewall-1.130-1.wbm.gz \
-		software-1.130-2.wbm.gz \
+		software-1.130-5.wbm.gz \
+		useradmin-1.130-5.wbm.gz \
 		webmin-1.130-1.wbm.gz
 
 WEBMIN_THEMES=
