@@ -3,7 +3,7 @@
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1997/04/27 15:59:09 ache Exp $
+# $Id: Makefile,v 1.8 1997/01/06 21:43:22 ache Exp $
 #
 
 DISTNAME=       unzip-5.3
@@ -27,5 +27,8 @@ do-install:
 		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
 	cd ${WRKSRC}/unix && \
 		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	install -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} README Where COPYING ${PREFIX}/share/doc/unzip
 
 .include <bsd.port.mk>
