@@ -1266,7 +1266,7 @@ distcc		ports/devel/distcc
 distrib		distrib
 distrib_cvsup	distrib/cvsup
 distrib_cvsup_sup	distrib/cvsup/sup
-distribfold	ports/misc/distribfold
+distribfold	ports/biology/distribfold
 distribute	ports/mail/distribute
 diveintopython	ports/lang/diveintopython
 divx4linux	ports/graphics/divx4linux
