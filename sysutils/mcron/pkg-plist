@@ -1,0 +1,12 @@
+bin/cron
+bin/crontab
+bin/mcron
+share/guile/site/mcron/config.scm
+share/guile/site/mcron/core.scm
+share/guile/site/mcron/environment.scm
+share/guile/site/mcron/job-specifier.scm
+share/guile/site/mcron/redirect.scm
+share/guile/site/mcron/vixie-specification.scm
+share/guile/site/mcron/vixie-time.scm
+@dirrm share/guile/site/mcron
+@unexec rmdir %D/share/guile/site 2>/dev/null || true

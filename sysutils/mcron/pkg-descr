@@ -1,0 +1,15 @@
+The mcron program represents a complete re-think of the cron concept originally
+found in the Berkeley and AT&T unices, and subsequently rationalized by Paul
+Vixie. The original idea was to have a daemon that wakes up every minute, scans
+a set of files under a special directory, and determines from those files if
+any shell commands should be executed in this minute.
+
+The new idea is to read the required command instructions, work out which
+command needs to be executed next, and then sleep until the inferred time has
+arrived. On waking the commands are run, and the time of the next command is
+computed. Furthermore, the specifications are written in scheme, allowing at
+the same time simple command execution instructions and very much more flexible
+ones to be composed than the original Vixie format. This has several useful
+advantages over the original idea.
+
+WWW: http://rdmp.org/mcron/ 
