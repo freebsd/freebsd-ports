@@ -201,6 +201,7 @@
     SUBDIR += menushki
     SUBDIR += metatheme2
     SUBDIR += mgp-mode.el
+    SUBDIR += mime-support
     SUBDIR += misterproper
     SUBDIR += mmv
     SUBDIR += most
