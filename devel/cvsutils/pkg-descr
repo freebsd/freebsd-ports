@@ -1,0 +1,20 @@
+CVSU: CVS Utilites
+
+The idea of CVS Utilities is to facilitate working with the files in
+the working directory of a developer using CVS.
+
+cvsu:       cvs update offline
+cvsco:      cruel checkout
+cvsdiscard: discard local changes
+cvspurge:   make maintainer-clean
+cvsdiff:    cvs diff offline
+cvschroot:  change CVS/Root recursively
+cvsrmadm:   remove all CVS directories recursively
+
+The original author of CVSU is:
+	Tom Tromey <tromey@cygnus.com>
+
+Currently CVSU is maintained by:
+	Pavel Roskin <pavel_roskin@geocities.com>
+
+WWW:	http://www.red-bean.com/~kfogel/cvs2cl.shtml
