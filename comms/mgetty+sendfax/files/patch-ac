@@ -1,0 +1,19 @@
+--- voice/Makefile.orig	Mon Dec 29 23:06:36 1997
++++ voice/Makefile	Mon Dec 29 23:07:18 1997
+@@ -89,11 +89,11 @@
+ 	done
+ 	$(INSTALL) -m 644 man/man1/zplay.1 $(MAN1DIR)
+ 	$(INSTALL) -m 644 man/man1/pvf.1 $(MAN1DIR)
+-	cd $(MAN1DIR); \
+-	for i in $(PVFTOOLS); \
+-	do \
+-	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \
+-	done
++#	cd $(MAN1DIR); \
++#	for i in $(PVFTOOLS); \
++#	do \
++#	     $(RM) -f $$i.1; $(LN) -s pvf.1 $$i.1; \
++#	done
+ #	[ -d $(VOICE_DIR) ] || mkdir $(VOICE_DIR)
+ #	[ -d $(VOICE_DIR)/incoming ] || mkdir $(VOICE_DIR)/incoming
+ #	chown 0 $(VOICE_DIR)/incoming
