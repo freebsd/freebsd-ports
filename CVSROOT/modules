@@ -4251,6 +4251,7 @@ p5-DBZ_File	ports/databases/p5-DBZ_File
 p5-Data-Buffer	ports/misc/p5-Data-Buffer
 p5-Data-Compare	ports/devel/p5-Data-Compare
 p5-Data-Flow	ports/devel/p5-Data-Flow
+p5-Data-FormValidator	ports/textproc/p5-Data-FormValidator
 p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-JavaScript	ports/lang/p5-Data-JavaScript
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
