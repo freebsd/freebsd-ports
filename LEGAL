@@ -127,7 +127,6 @@ ftree			ports/misc/ftree	Can't distribute commercially.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
 gap/*			ports/math/gap		Don't sell for profit
-gated-pub.tar.gz	ports/net/gated		License required.
 glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
