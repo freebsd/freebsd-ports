@@ -18,7 +18,7 @@ COMMENT=	A client for managing and downloading certificate revocation lists
 BUILD_DEPENDS=	${LOCALBASE}/lib/libassuan.a:${PORTSDIR}/security/libassuan
 LIB_DEPENDS=	gcrypt.12:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
-		ksba.11:${PORTSDIR}/security/libksba
+		ksba.13:${PORTSDIR}/security/libksba
 
 USE_OPENLDAP=	yes
 USE_GETOPT_LONG=yes
