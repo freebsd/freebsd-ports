@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# $FreeBSD$
 # $OpenBSD: update-patches,v 1.3 2000/06/09 17:08:37 espie Exp $
 # Copyright (c) 2000
 # Marc Espie.  All rights reserved.
@@ -24,26 +25,8 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-if test -z $WRKSRC; then
-	if test -d `pwd`/work; then
-		WRKSRC=`pwd`/work
-	fi
-fi
-
-if test -z $PATCHDIR; then
-	if test -d `pwd`/files; then
-		PATCHDIR=`pwd`/files
-	fi
-fi
-
-if test -z $PATCH_LIST; then
-	if test -d $PATCHDIR; then
-		PATCH_LIST=$PATCHDIR/patch-*
-	fi
-fi
-
 # Find out all .orig files and strip the name to what diff will use
-cd $WRKSRC && find . -type f -name '*.orig' | fgrep -v $WRKSRC | \
+cd $WRKSRC && find . -type f -name '*.orig' | fgrep -v $DISTORIG | \
 sed -e "s,^./\(.*\)\.orig\$,\1," | {
 while read file 
 do
@@ -81,15 +64,15 @@ do
 	esac
     done
     # Build a sensible name for the patch file
-    patchname=patch-`echo $file|sed -e s,[/.],_,g`
+    patchname=patch-`echo $file|sed -e s,/,_,g`
     echo 1>&2 "No patch-* found for $file, creating $patchname"
-    { (cd $WRKSRC && diff ${DIFF_ARGS} -u $file.orig $file) } >$patchname
+    (cd $WRKSRC && diff -p ${DIFF_ARGS} -u $file.orig $file) >$patchname
     edit="$edit $patchname"
     accounted="$accounted $patchname"
 done
 
 # Verify all patches accounted for
-for i in *
+for i in ${PATCHDIR}/*
 do
     [ -f $i ] || continue
     case $i in \
@@ -106,10 +89,10 @@ do
     esac
 done
 
-# Check for $Id: update-patches,v 1.3 2000/06/09 17:08:37 espie Exp $ and similar bugs in all those patch files.
+# Check for $Id and similar bugs in all those patch files.
 for i in $accounted
 do
-    if sed -e '/1,^---/ d' $i|grep '$(Id|FreeBSD'
+    if sed -e '/1,^---/ d' $i|egrep '$(Id|FreeBSD)'
     then
 	    echo 1>&2 "Problem with $i: CVS tag found in patch"
     fi
