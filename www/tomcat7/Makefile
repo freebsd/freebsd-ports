@@ -8,9 +8,8 @@
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	5.0.19
 CATEGORIES=	www java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
-		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
-		http://distfiles.coredump.cn/
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin 
 
 MAINTAINER=	liukang@bjpu.edu.cn
 COMMENT=	Open-source Java web server by Apache, 5.0.x branch
