@@ -7,6 +7,7 @@
 
 PORTNAME=		qtella
 PORTVERSION=		0.5.3
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qtella
@@ -19,14 +20,6 @@ CONFIGURE_ARGS+=	--with-qt-dir=${X11BASE} --with-qt-moc=${X11BASE}/bin
 CONFIGURE_ENV+=		LDFLAGS=-pthread CXXFLAGS="${CXXFLAGS} -pthread"
 MAKE_ARGS+=		-j2
 
-.if defined(USE_KDE2)
-USE_KDELIBS_VER=	2
-MAKE_ENV+=		MOC=${X11BASE}/bin/moc2
-pre-patch:
-	@${PERL} -pi.orig -e 's|/moc(\W)|/moc2\1|g' \
-		${WRKSRC}/configure ${WRKSRC}/src/Makefile.in
-.else
 USE_KDELIBS_VER=3
-.endif
 
 .include <bsd.port.mk>
