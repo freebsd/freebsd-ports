@@ -11,10 +11,8 @@ include/libcroco/parser/cr-declaration.h
 include/libcroco/parser/cr-doc-handler.h
 include/libcroco/parser/cr-enc-handler.h
 include/libcroco/parser/cr-input.h
-include/libcroco/parser/cr-layout-eng.h
 include/libcroco/parser/cr-num.h
 include/libcroco/parser/cr-om-parser.h
-include/libcroco/parser/cr-parser-input.h
 include/libcroco/parser/cr-parser.h
 include/libcroco/parser/cr-pseudo.h
 include/libcroco/parser/cr-rgb.h
@@ -27,19 +25,18 @@ include/libcroco/parser/cr-tknzr.h
 include/libcroco/parser/cr-token.h
 include/libcroco/parser/cr-utils.h
 include/libcroco/parser/libcroco-config.h
-include/libcroco/seleng/cr-font-sel.h
 include/libcroco/seleng/cr-fonts.h
 include/libcroco/seleng/cr-sel-eng.h
 include/libcroco/seleng/cr-style.h
 lib/libcrlayeng.a
 lib/libcrlayeng.so
-lib/libcrlayeng.so.1
+lib/libcrlayeng.so.2
 lib/libcroco.a
 lib/libcroco.so
 lib/libcroco.so.1
 lib/libcrseleng.a
 lib/libcrseleng.so
-lib/libcrseleng.so.1
+lib/libcrseleng.so.2
 libdata/pkgconfig/libcroco.pc
 @dirrm include/libcroco/seleng
 @dirrm include/libcroco/parser
