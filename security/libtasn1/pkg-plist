@@ -9,7 +9,8 @@ share/aclocal/libtasn1.m4
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/asn1.ps
-%%PORTDOCS%%%%DOCSDIR%%/asn1.tex
-%%PORTDOCS%%%%DOCSDIR%%/fdl.tex
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/libtasn1.html
+%%PORTDOCS%%%%DOCSDIR%%/libtasn1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libtasn1.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
