@@ -1,0 +1,18 @@
+--- ./src/gnome-hamlib-rig.c.orig	Mon Sep 20 15:35:02 2004
++++ ./src/gnome-hamlib-rig.c	Mon Sep 20 15:38:35 2004
+@@ -495,6 +495,7 @@
+ 		case 2: pbwidth = rig_passband_narrow (GNOME_HAMLIB_RIG (ghr)->rig, mode);
+ 			break;
+ 		default: /* THIS SHOULD NEVER HAVE HAPPENED ERROR */
++			break;
+ 		}
+ 		retcode = rig_set_mode (GNOME_HAMLIB_RIG (ghr)->rig, RIG_VFO_CURR, mode, pbwidth);
+ 		if (retcode != RIG_OK) {
+@@ -1367,6 +1368,7 @@
+ 	case 2: pbwidth = rig_passband_narrow (ghr->rig, mode);
+ 		break;
+ 	default: /* THIS SHOULD NEVER HAVE HAPPENED ERROR */
++		break;
+ 	}
+ 	retcode = rig_set_mode (ghr->rig, RIG_VFO_CURR, mode, pbwidth);
+ 	if (retcode == RIG_OK) {
