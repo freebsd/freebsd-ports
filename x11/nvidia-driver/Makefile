@@ -7,6 +7,7 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.3203
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-3203/
 DISTNAME=	NVIDIA_FreeBSD-${PORTVERSION:S/0./0-/}
@@ -53,12 +54,14 @@ pre-install:
 .endif
 
 post-install:
+.if ${OSVERSION} < 500000
 .for dev in 0 1 2 3
 	@mknod /dev/nvidia${dev} c 180 ${dev}
 	@${CHMOD} 0666 /dev/nvidia${dev}
 .endfor
 	@mknod /dev/nvidiactl c 180 255
 	@${CHMOD} 0666 /dev/nvidiactl
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,29 @@
 --- src/nvidia_subr.c.orig	Wed Oct 30 15:30:58 2002
-+++ src/nvidia_subr.c	Thu Mar  6 01:25:20 2003
++++ src/nvidia_subr.c	Fri Mar 14 20:47:44 2003
+@@ -130,7 +130,7 @@
+     sc = device_get_softc(dev);
+     sc->dev = dev;
+ 
+-    sc->nv_state = malloc(sizeof(nv_state_t), M_DEVBUF, M_ZERO);
++    sc->nv_state = malloc(sizeof(nv_state_t), M_DEVBUF, M_WAITOK | M_ZERO);
+     if (sc->nv_state == NULL) {
+         error = ENOMEM;
+         goto fail;
+@@ -901,12 +901,12 @@
+     void *vm;
+     u_int32_t i, size = count * PAGE_SIZE;
+ 
+-    at = malloc(sizeof(nv_alloc_t), M_NVIDIA, M_ZERO);
++    at = malloc(sizeof(nv_alloc_t), M_NVIDIA, M_WAITOK | M_ZERO);
+     if (!at) {
+         return -ENOMEM;
+     }
+ 
+-    vm = malloc(size, M_NVIDIA, M_ZERO);
++    vm = malloc(size, M_NVIDIA, M_WAITOK | M_ZERO);
+     if (!vm) {
+         /*
+          * This error condition is not unlikely to occur. We allocate our
 @@ -925,7 +925,9 @@
           * prevent random crashes.
           */
@@ -26,6 +50,15 @@
  
      free(at, M_NVIDIA);
      free(address, M_NVIDIA);
+@@ -993,7 +997,7 @@
+     vm_page_t m;
+     vm_object_t object;
+ 
+-    at = malloc(sizeof(nv_alloc_t), M_NVIDIA, M_ZERO);
++    at = malloc(sizeof(nv_alloc_t), M_NVIDIA, M_WAITOK | M_ZERO);
+     if (!at) {
+         return -ENOMEM;
+     }
 @@ -1007,13 +1011,19 @@
           * will be allocated.
           */
