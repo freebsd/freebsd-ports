@@ -59,22 +59,11 @@ do-fetch:
 		if [ -n "${PORTS_CVS_SERVER}" ]; then \
 			export CVS_SERVER="${PORTS_CVS_SERVER}"; \
 		fi; \
+		export CVS_PASSFILE="${FILESDIR}/cvspass"; \
 		${MKDIR} ${DISTDIR}/${PKGNAME} && \
 		cd ${DISTDIR}/${PKGNAME}; \
 		for CVS_SITE in ${CVS_SITES}; do \
 			${ECHO_MSG} ">> Attempting to CVS cvs checkout from $${CVS_SITE}."; \
-			case "$${CVS_SITE}" in \
-			:pserver:*) \
-				CVS_LOGIN=yes; \
-				;; \
-			*) \
-				CVS_LOGIN=no; \
-				;; \
-			esac; \
-			if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
-				${ECHO_MSG} ">> *** Please hit enter here for the password."; \
-				${CVS_CMD} -d $${CVS_SITE} login < /dev/null; \
-			fi ; \
 			if ${CVS_CMD} -d $${CVS_SITE} co -r '${CVS_TAG}' ${PORTNAME}; then \
 				if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
 					${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
@@ -83,9 +72,6 @@ do-fetch:
 				${ECHO_MSG} ">> CVS checkout successful." ;\
 				exit; \
 			fi ;\
-			if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
-				${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
-			fi; \
 		done; \
 		${ECHO_MSG} ">> Couldn't CVS checkout ${PORTNAME}." ;\
 		exit 1; \
