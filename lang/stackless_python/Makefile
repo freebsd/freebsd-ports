@@ -20,7 +20,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	perky@python.or.kr
 
-MASTERDIR=	${.CURDIR}/../../lang/python
+MASTERDIR=	${.CURDIR}/../../lang/python20
 
 # stackless python port infoes
 COMMENT=	${.CURDIR}/pkg-comment
