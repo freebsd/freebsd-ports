@@ -37,6 +37,12 @@ SLAVEDIRS=	lang/php4
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 USE_AUTOCONF_VER=213
+
+.include <bsd.port.pre.mk>
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+WITH_APACHE2=	yes
+.endif
+
 .if defined(WITH_APACHE2)
 APACHE_PORT?=	${PORTSDIR}/www/apache2
 .else
@@ -85,9 +91,14 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
-.if !defined(STANDALONE) && !defined(WITH_APACHE2)
+.if !defined(STANDALONE)
+.if !defined(WITH_APACHE2)
 	@${ECHO_CMD} "Define WITH_APACHE2 to build mod_php4 as an apache2 module."
 	@${ECHO_CMD} ""
+.else
+	@${ECHO_CMD} "Building mod_php4 as an apache2 module."
+	@${ECHO_CMD} ""
+.endif
 .endif
 
 post-install:
@@ -120,4 +131,4 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
