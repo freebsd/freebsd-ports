@@ -1,0 +1,11 @@
+--- lib/cedit.menu.orig	Sun Aug 25 00:39:08 2002
++++ lib/cedit.menu	Tue Jun 15 03:15:09 2004
+@@ -449,7 +449,7 @@
+ 
+ m       view `man'
+         MAN=%{Enter name of man:}
+-        TMPFILE=/tmp/mcview.$MAN.$$
++        TMPFILE=`mktemp ${MC_TMPDIR:-/tmp}/mcview.$MAN.$$` || exit 1
+         man -Pcat $MAN >$TMPFILE
+         mcview $TMPFILE
+         rm -f $TMPFILE

@@ -1,11 +1,5 @@
-Index: cons.handler.c
-===================================================================
-RCS file: /cvs/gnome/mc/src/cons.handler.c,v
-retrieving revision 1.13
-retrieving revision 1.17
-diff -u -p -r1.13 -r1.17
---- src/cons.handler.c	23 Sep 2002 06:43:23 -0000	1.13
-+++ src/cons.handler.c	5 Mar 2003 09:29:31 -0000	1.17
+--- src/cons.handler.c.orig	Mon Sep 23 13:43:23 2002
++++ src/cons.handler.c	Tue Jun 15 03:14:17 2004
 @@ -15,8 +15,6 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
@@ -79,7 +73,7 @@ diff -u -p -r1.13 -r1.17
  	cons_saver_pid = 0;
  	console_flag = 0;
  	return;
-@@ -75,9 +86,9 @@ void show_console_contents (int starty, 
+@@ -75,9 +86,9 @@
      read (pipefd2[0], &bytes, 2);
  
      /* Read the bytes and output them */
@@ -91,7 +85,7 @@ diff -u -p -r1.13 -r1.17
  	read (pipefd2[0], &message, 1);
  	addch (message);
      }
-@@ -86,16 +97,15 @@ void show_console_contents (int starty, 
+@@ -86,16 +97,15 @@
      read (pipefd2[0], &message, 1);
  }
  
@@ -111,7 +105,7 @@ diff -u -p -r1.13 -r1.17
  	/* Close old pipe ends in case it is the 2nd time we run cons.saver */
  	close (pipefd1[1]);
  	close (pipefd2[0]);
-@@ -104,7 +114,7 @@ void handle_console (unsigned char actio
+@@ -104,7 +114,7 @@
  	pipe (pipefd2);
  	/* Get the console saver running */
  	cons_saver_pid = fork ();
@@ -120,7 +114,7 @@ diff -u -p -r1.13 -r1.17
  	    /* Cannot fork */
  	    /* Delete pipes */
  	    close (pipefd1[1]);
-@@ -112,14 +122,14 @@ void handle_console (unsigned char actio
+@@ -112,14 +122,14 @@
  	    close (pipefd2[1]);
  	    close (pipefd2[0]);
  	    console_flag = 0;
@@ -137,7 +131,7 @@ diff -u -p -r1.13 -r1.17
  		close (pipefd1[1]);
  		close (pipefd2[0]);
  		waitpid (cons_saver_pid, &status, 0);
-@@ -152,33 +162,31 @@ void handle_console (unsigned char actio
+@@ -152,33 +162,31 @@
  	    close (1);
  	    close (0);
  	    _exit (3);
@@ -177,7 +171,7 @@ diff -u -p -r1.13 -r1.17
  	    waitpid (cons_saver_pid, &status, 0);
  	    console_flag = 0;
  	}
-@@ -186,221 +194,371 @@ void handle_console (unsigned char actio
+@@ -186,221 +194,371 @@
      }
  }
  
@@ -393,13 +387,11 @@ diff -u -p -r1.13 -r1.17
 +    case CONSOLE_DONE:
 +	console_shutdown ();
 +	break;
- 
--	saved_attr = ioctl(FD_OUT, GIO_ATTR, 0);
++
 +    case CONSOLE_SAVE:
 +	console_save ();
 +	break;
- 
--	vidbuf = (unsigned short*) ioctl(FD_OUT, MAPCONS, 0);
++
 +    case CONSOLE_RESTORE:
 +	console_restore ();
 +	break;
@@ -408,18 +400,14 @@ diff -u -p -r1.13 -r1.17
 +    }
 +}
  
--	mi.size = sizeof(struct m6845_info);
--	ioctl(FD_OUT, CONS_6845INFO, &mi);
+-	saved_attr = ioctl(FD_OUT, GIO_ATTR, 0);
 +static void
 +show_console_contents_sco (int starty, unsigned char begin_line,
 +			   unsigned char end_line)
 +{
 +    register int i, len = (end_line - begin_line) * width;
  
--	{
--		unsigned short* start = vidbuf + mi.screen_top;
--		memcpy(screen, start, width * height * 2);
--	}
+-	vidbuf = (unsigned short*) ioctl(FD_OUT, MAPCONS, 0);
 +    attrset (DEFAULT_COLOR);
 +    for (i = 0; i < len; i++) {
 +	if ((i % width) == 0)
@@ -427,9 +415,15 @@ diff -u -p -r1.13 -r1.17
 +	addch ((unsigned char) screen[width * starty + i]);
 +    }
 +}
-+
+ 
+-	mi.size = sizeof(struct m6845_info);
+-	ioctl(FD_OUT, CONS_6845INFO, &mi);
 +#elif defined(__FreeBSD__)
-+
+ 
+-	{
+-		unsigned short* start = vidbuf + mi.screen_top;
+-		memcpy(screen, start, width * height * 2);
+-	}
 +/*
 + * FreeBSD support copyright (C) 2003 Alexander Serkov <serkov@ukrpost.net>.
 + * Support for screenmaps by Max Khon <fjoe@FreeBSD.org>
@@ -694,7 +688,7 @@ diff -u -p -r1.13 -r1.17
  {
      standend ();
  
-@@ -408,14 +566,28 @@ void show_console_contents (int starty, 
+@@ -408,14 +566,28 @@
  	show_rxvt_contents (starty, begin_line, end_line);
  	return;
      }

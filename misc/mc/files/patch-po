@@ -1,0 +1,1021 @@
+--- po/az.po.orig	Thu Feb  6 00:09:44 2003
++++ po/az.po	Tue Jun 15 03:15:09 2004
+@@ -2411,13 +2411,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " ( %d blok )"
++msgid " (%ld block)"
++msgstr " ( %ld blok )"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " ( %d blok )"
++msgid " (%ld blocks)"
++msgstr " ( %ld blok )"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3656,8 +3656,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/be.po.orig	Thu Feb  6 00:09:44 2003
++++ po/be.po	Tue Jun 15 03:15:09 2004
+@@ -2404,13 +2404,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d ·Î∏Í‡¢)"
++msgid " (%ld block)"
++msgstr " (%ld ·Î∏Í‡¢)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d ·Î∏Í‡¢)"
++msgid " (%ld blocks)"
++msgstr " (%ld ·Î∏Í‡¢)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3630,8 +3630,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "«Ûı 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "«Ûı 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/bg.po.orig	Thu Feb  6 00:09:45 2003
++++ po/bg.po	Tue Jun 15 03:15:09 2004
+@@ -2406,13 +2406,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d –±–ª–æ–∫)"
++msgid " (%ld block)"
++msgstr " (%ld –±–ª–æ–∫)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d –±–ª–æ–∫–∞)"
++msgid " (%ld blocks)"
++msgstr " (%ld –±–ª–æ–∫–∞)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3649,8 +3649,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "–û—Ç–º–µ—Å—Ç–≤–∞–Ω–µ 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "–û—Ç–º–µ—Å—Ç–≤–∞–Ω–µ 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/ca.po.orig	Thu Feb  6 00:09:45 2003
++++ po/ca.po	Tue Jun 15 03:15:09 2004
+@@ -2416,13 +2416,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d bloc)"
++msgid " (%ld block)"
++msgstr " (%ld bloc)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blocs)"
++msgid " (%ld blocks)"
++msgstr " (%ld blocs)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3670,8 +3670,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "DesplaÁament 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "DesplaÁament 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/cs.po.orig	Thu Feb  6 00:09:45 2003
++++ po/cs.po	Tue Jun 15 03:15:09 2004
+@@ -2407,13 +2407,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blok)"
++msgid " (%ld block)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blok˘)"
++msgid " (%ld blocks)"
++msgstr " (%ld blok˘)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3643,8 +3643,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Posun 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Posun 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/da.po.orig	Thu Feb  6 00:09:46 2003
++++ po/da.po	Tue Jun 15 03:15:09 2004
+@@ -1,8 +1,7 @@
+-# Danish translation of Midnight Commander
+-# Copyright (C) 1998 Free Software Foundation, Inc.
+-# Kenneth Christiansen <kenneth@ripen.dk>, 1999-2000
+-# Birger Langkjer <birger.langkjer@image.dk>, 1999.
+-# Keld Simonsen <keld@dkuug.dk>, 2000.
++# Danish translation of Midnight Commander Copyright (C) 1998 Free Software
++# Foundation, Inc. Kenneth Christiansen <kenneth@ripen.dk>, 1999-2000 Birger
++# Langkjer <birger.langkjer@image.dk>, 1999. Keld Simonsen <keld@dkuug.dk>,
++# 2000.
+ #
+ # Note: MC bestÂr af konsol- (mc) og gtkdel (gmc)
+ # Genveje i konsolen er '&+stort bogstav', resten
+@@ -2416,13 +2415,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blok)"
++msgid " (%ld block)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blokke)"
++msgid " (%ld blocks)"
++msgstr " (%ld blokke)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3661,8 +3660,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Afstand 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Afstand 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/de.po.orig	Thu Feb  6 00:09:46 2003
++++ po/de.po	Tue Jun 15 03:15:09 2004
+@@ -2415,13 +2415,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d Block)"
++msgid " (%ld block)"
++msgstr " (%ld Block)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr "(%d Blˆcke)"
++msgid " (%ld blocks)"
++msgstr "(%ld Blˆcke)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3664,8 +3664,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/el.po.orig	Thu Feb  6 00:09:46 2003
++++ po/el.po	Tue Jun 15 03:15:09 2004
+@@ -2304,12 +2304,12 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
++msgid " (%ld block)"
+ msgstr ""
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
++msgid " (%ld blocks)"
+ msgstr ""
+ 
+ #: src/info.c:179
+@@ -3480,7 +3480,7 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
++msgid "Offset 0x%08lx"
+ msgstr ""
+ 
+ #: src/view.c:826
+--- po/es.po.orig	Thu Feb  6 00:09:46 2003
++++ po/es.po	Tue Jun 15 03:15:09 2004
+@@ -2403,13 +2403,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d bloque)"
++msgid " (%ld block)"
++msgstr " (%ld bloque)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d bloques)"
++msgid " (%ld blocks)"
++msgstr " (%ld bloques)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3638,8 +3638,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/eu.po.orig	Thu Feb  6 00:09:46 2003
++++ po/eu.po	Tue Jun 15 03:15:09 2004
+@@ -2415,13 +2415,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d bloke)"
++msgid " (%ld block)"
++msgstr " (%ld bloke)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr "(%d bloke)"
++msgid " (%ld blocks)"
++msgstr "(%ld bloke)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3665,8 +3665,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Desplazamendua 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Desplazamendua 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/fi.po.orig	Thu Feb  6 00:09:47 2003
++++ po/fi.po	Tue Jun 15 03:15:09 2004
+@@ -2364,12 +2364,12 @@
+ 
+ #: src/info.c:173
+ #, fuzzy, c-format
+-msgid " (%d block)"
++msgid " (%ld block)"
+ msgstr " J‰rjest‰ valinta "
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
++msgid " (%ld blocks)"
+ msgstr ""
+ 
+ #: src/info.c:179
+@@ -3556,8 +3556,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Siirros 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Siirros 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/fr.po.orig	Thu Feb  6 00:09:47 2003
++++ po/fr.po	Tue Jun 15 03:15:09 2004
+@@ -2411,13 +2411,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d bloc)"
++msgid " (%ld block)"
++msgstr " (%ld bloc)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blocs)"
++msgid " (%ld blocks)"
++msgstr " (%ld blocs)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3663,8 +3663,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "DÈcalage 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "DÈcalage 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/hu.po.orig	Thu Feb  6 00:09:47 2003
++++ po/hu.po	Tue Jun 15 03:15:09 2004
+@@ -2444,13 +2444,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blokk)"
++msgid " (%ld block)"
++msgstr " (%ld blokk)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blokk)"
++msgid " (%ld blocks)"
++msgstr " (%ld blokk)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3685,8 +3685,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "PozÌciÛ: 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "PozÌciÛ: 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/it.po.orig	Thu Feb  6 00:09:47 2003
++++ po/it.po	Tue Jun 15 03:15:09 2004
+@@ -2409,13 +2409,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blocchi)"
++msgid " (%ld block)"
++msgstr " (%ld blocchi)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blocchi)"
++msgid " (%ld blocks)"
++msgstr " (%ld blocchi)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3644,8 +3644,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset: 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset: 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/ja.po.orig	Thu Feb  6 00:09:48 2003
++++ po/ja.po	Tue Jun 15 03:15:09 2004
+@@ -2410,13 +2410,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d•÷•Ì•√•Ø)"
++msgid " (%ld block)"
++msgstr " (%ld•÷•Ì•√•Ø)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d•÷•Ì•√•Ø)"
++msgid " (%ld blocks)"
++msgstr " (%ld•÷•Ì•√•Ø)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3654,8 +3654,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "•™•’•ª•√•» 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "•™•’•ª•√•» 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/ko.po.orig	Thu Feb  6 00:09:48 2003
++++ po/ko.po	Tue Jun 15 03:15:09 2004
+@@ -2399,13 +2399,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d ±∏ø™)"
++msgid " (%ld block)"
++msgstr " (%ld ±∏ø™)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d ±∏ø™)"
++msgid " (%ld blocks)"
++msgstr " (%ld ±∏ø™)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3631,8 +3631,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "ø…º¬ 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "ø…º¬ 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/lv.po.orig	Thu Feb  6 00:09:48 2003
++++ po/lv.po	Tue Jun 15 03:15:09 2004
+@@ -2411,13 +2411,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d bloks)"
++msgid " (%ld block)"
++msgstr " (%ld bloks)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d bloki)"
++msgid " (%ld blocks)"
++msgstr " (%ld bloki)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3661,8 +3661,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "NobÓde 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "NobÓde 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/nl.po.orig	Thu Feb  6 00:09:48 2003
++++ po/nl.po	Tue Jun 15 03:15:09 2004
+@@ -2406,13 +2406,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blokken)"
++msgid " (%ld block)"
++msgstr " (%ld blokken)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr "(%d blokken)"
++msgid " (%ld blocks)"
++msgstr "(%ld blokken)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3640,8 +3640,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/no.po.orig	Thu Feb  6 00:09:49 2003
++++ po/no.po	Tue Jun 15 03:15:09 2004
+@@ -2405,13 +2405,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blokk)"
++msgid " (%ld block)"
++msgstr " (%ld blokk)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blokker)"
++msgid " (%ld blocks)"
++msgstr " (%ld blokker)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3640,8 +3640,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/pl.po.orig	Thu Feb  6 00:09:49 2003
++++ po/pl.po	Tue Jun 15 03:15:09 2004
+@@ -2410,13 +2410,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blok)"
++msgid " (%ld block)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blokÛw)"
++msgid " (%ld blocks)"
++msgstr " (%ld blokÛw)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3642,8 +3642,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "PrzesuniÍcie 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "PrzesuniÍcie 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/pt.po.orig	Thu Feb  6 00:09:49 2003
++++ po/pt.po	Tue Jun 15 03:15:09 2004
+@@ -2410,13 +2410,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d bloco)"
++msgid " (%ld block)"
++msgstr " (%ld bloco)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blocos)"
++msgid " (%ld blocks)"
++msgstr " (%ld blocos)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3657,8 +3657,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/pt_BR.po.orig	Thu Feb  6 00:09:49 2003
++++ po/pt_BR.po	Tue Jun 15 03:15:09 2004
+@@ -2429,13 +2429,13 @@
+ 
+ #: src/info.c:173
+ #, fuzzy, c-format
+-msgid " (%d block)"
+-msgstr " (%d blocos)"
++msgid " (%ld block)"
++msgstr " (%ld blocos)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blocos)"
++msgid " (%ld blocks)"
++msgstr " (%ld blocos)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3691,8 +3691,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Deslocamento 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Deslocamento 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/ro.po.orig	Thu Feb  6 00:09:50 2003
++++ po/ro.po	Tue Jun 15 03:15:09 2004
+@@ -2403,13 +2403,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blocuri)"
++msgid " (%ld block)"
++msgstr " (%ld blocuri)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blocuri)"
++msgid " (%ld blocks)"
++msgstr " (%ld blocuri)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3638,8 +3638,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/ru.po.orig	Thu Feb  6 00:09:50 2003
++++ po/ru.po	Tue Jun 15 03:15:09 2004
+@@ -2411,13 +2411,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d ¬ÃœÀ)"
++msgid " (%ld block)"
++msgstr " (%ld ¬ÃœÀ)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d ¬ÃœÀœ◊)"
++msgid " (%ld blocks)"
++msgstr " (%ld ¬ÃœÀœ◊)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3644,8 +3644,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "ÛÕ≈›≈Œ…≈ 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "ÛÕ≈›≈Œ…≈ 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/sk.po.orig	Thu Feb  6 00:09:50 2003
++++ po/sk.po	Tue Jun 15 03:15:09 2004
+@@ -2402,13 +2402,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blok)"
++msgid " (%ld block)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blokov)"
++msgid " (%ld blocks)"
++msgstr " (%ld blokov)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3634,8 +3634,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/sl.po.orig	Thu Feb  6 00:09:50 2003
++++ po/sl.po	Tue Jun 15 03:15:09 2004
+@@ -2405,13 +2405,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blokov)"
++msgid " (%ld block)"
++msgstr " (%ld blokov)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blokov)"
++msgid " (%ld blocks)"
++msgstr " (%ld blokov)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3640,8 +3640,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/sv.po.orig	Thu Feb  6 00:09:51 2003
++++ po/sv.po	Tue Jun 15 03:15:09 2004
+@@ -2434,13 +2434,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d block)"
++msgid " (%ld block)"
++msgstr " (%ld block)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d block)"
++msgid " (%ld blocks)"
++msgstr " (%ld block)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3678,8 +3678,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ # sv‰ngelska?
+ #: src/view.c:826
+--- po/ta.po.orig	Thu Feb  6 00:09:51 2003
++++ po/ta.po	Tue Jun 15 03:15:09 2004
+@@ -2307,12 +2307,12 @@
+ 
+ #: src/info.c:173
+ #, fuzzy, c-format
+-msgid " (%d block)"
++msgid " (%ld block)"
+ msgstr " ¶æ°Ãæ¢®¬ ≈°¢®∫¬°ÏÃ "
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
++msgid " (%ld blocks)"
+ msgstr ""
+ 
+ #: src/info.c:179
+@@ -3483,7 +3483,7 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
++msgid "Offset 0x%08lx"
+ msgstr ""
+ 
+ #: src/view.c:826
+--- po/tr.po.orig	Thu Feb  6 00:09:51 2003
++++ po/tr.po	Tue Jun 15 03:15:09 2004
+@@ -2409,13 +2409,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blok)"
++msgid " (%ld block)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d blok)"
++msgid " (%ld blocks)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3655,8 +3655,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "Offset 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "Offset 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/uk.po.orig	Thu Feb  6 00:09:51 2003
++++ po/uk.po	Tue Jun 15 03:15:09 2004
+@@ -2399,13 +2399,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d ¬ÃœÀ)"
++msgid " (%ld block)"
++msgstr " (%ld ¬ÃœÀ)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d ¬ÃœÀ¶◊)"
++msgid " (%ld blocks)"
++msgstr " (%ld ¬ÃœÀ¶◊)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3632,8 +3632,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "˙Õ¶›≈ŒŒ— 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "˙Õ¶›≈ŒŒ— 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/wa.po.orig	Thu Feb  6 00:09:52 2003
++++ po/wa.po	Tue Jun 15 03:15:09 2004
+@@ -2425,13 +2425,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d blok)"
++msgid " (%ld block)"
++msgstr " (%ld blok)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d bloks)"
++msgid " (%ld blocks)"
++msgstr " (%ld bloks)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3650,7 +3650,7 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
++msgid "Offset 0x%08lx"
+ msgstr ""
+ 
+ #: src/view.c:826
+--- po/zh_CN.po.orig	Thu Feb  6 00:09:52 2003
++++ po/zh_CN.po	Tue Jun 15 03:15:09 2004
+@@ -2396,13 +2396,13 @@
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d block)"
+-msgstr " (%d ‰∏™Âùó)"
++msgid " (%ld block)"
++msgstr " (%ld ‰∏™Âùó)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d ‰∏™Âùó)"
++msgid " (%ld blocks)"
++msgstr " (%ld ‰∏™Âùó)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3629,8 +3629,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "ÂÅèÁßª 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "ÂÅèÁßª 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format
+--- po/zh_TW.po.orig	Thu Feb  6 00:09:52 2003
++++ po/zh_TW.po	Tue Jun 15 03:15:09 2004
+@@ -2407,13 +2407,13 @@
+ 
+ #: src/info.c:173
+ #, fuzzy, c-format
+-msgid " (%d block)"
+-msgstr " (%d ≠”∞œ∂Ù)"
++msgid " (%ld block)"
++msgstr " (%ld ≠”∞œ∂Ù)"
+ 
+ #: src/info.c:173
+ #, c-format
+-msgid " (%d blocks)"
+-msgstr " (%d ≠”∞œ∂Ù)"
++msgid " (%ld blocks)"
++msgstr " (%ld ≠”∞œ∂Ù)"
+ 
+ #: src/info.c:179
+ #, c-format
+@@ -3655,8 +3655,8 @@
+ 
+ #: src/view.c:824
+ #, c-format
+-msgid "Offset 0x%08x"
+-msgstr "∞æ≤æ≠» 0x%08x"
++msgid "Offset 0x%08lx"
++msgstr "∞æ≤æ≠» 0x%08lx"
+ 
+ #: src/view.c:826
+ #, c-format

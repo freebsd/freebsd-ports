@@ -1,0 +1,37 @@
+--- lib/mc.menu.orig	Sun Dec  8 07:12:19 2002
++++ lib/mc.menu	Tue Jun 15 03:15:09 2004
+@@ -14,9 +14,10 @@
+ 	
+ 
+ 0       Edit a bug report and send it to root
+-        ${EDITOR-vi} /tmp/mail.$$
+-	test -r /tmp/mail.$$ && mail root < /tmp/mail.$$
+-	rm -f /tmp/mail.$$
++	I=`mktemp ${MC_TMPDIR:-/tmp}/mail.XXXXXX` || exit 1
++	${EDITOR-vi} $I
++	test -r $I && mail root < $I
++	rm -f $I
+ 
+ =+ f \.1$ | f \.3$ | f \.4$ | f \.5$ | f \.6$ | f \.7$ | f \.8$ | f \.man$ & t r
+ 1       Display the file with roff -man
+@@ -112,8 +113,9 @@
+ 	CHECK=`awk '{print $1 ; exit}' %f` 2>/dev/null
+ 	case $CHECK in
+ 	  Newsgroups:|Path:)
+-	      cp %f /tmp/%f.$$ && sed '/^'"$CHECK"' /,/^$/d' /tmp/%f.$$ > %f
+-              [ "$?" = "0" ] && rm /tmp/%f.$$
++	      I=`mktemp ${MC_TMPDIR:-/tmp}/news.XXXXXX` || exit 1
++	      cp %f $I && sed '/^'"$CHECK"' /,/^$/d' $I > %f
++              [ "$?" = "0" ] && rm $I
+ 	      echo %f: header removed
+ 		;;
+ 	  *)
+@@ -126,7 +128,7 @@
+ 	set %t
+ 	while [ -n "$1" ]; do
+ 	  CHECK=`awk '{print $1 ; exit}' $1` 2>/dev/null
+-	  WFILE=/tmp/${1}.$$
++	  WFILE=`mktemp ${MC_TMPDIR:-/tmp}/news.XXXXXX` || exit 1
+ 	  case $CHECK in
+ 	    Newsgroups:|Path:)
+ 	      cp $1 $WFILE && sed '/^'"$CHECK"' /,/^$/d' $WFILE > $1
