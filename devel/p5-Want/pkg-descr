@@ -3,6 +3,3 @@ allowing a function to determine in some detail how its return value is
 going to be immediately used.
 
 WWW: http://search.cpan.org/dist/Want/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
