@@ -2599,3 +2599,6 @@ share/wallpapers/vegetative_fog.jpg
 @dirrm lib/kde2
 @dirrm include/kwin
 @dirrm include/kate
+@exec mkdir %D/share/templates/.source/emptydir
+@exec chmod 644 %D/share/templates/.source/emptydir
+@unexec rmdir %D/share/templates/.source/emptydir
