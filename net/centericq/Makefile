@@ -10,7 +10,7 @@ PORTNAME=	centericq
 PORTVERSION=	4.9.7
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://konst.org.ua/download/
+MASTER_SITES=	http://centericq.de/archive/source/releases/
 
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A text mode menu- and window-driven IM interface
