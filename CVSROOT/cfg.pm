@@ -95,7 +95,12 @@ $AVAIL_FILE = "$CVSROOT/CVSROOT/avail";
 # make their usage clear to committers.
 #
 # In addition any of these entries that are left blank are removed
-# from the commit message at commit time.
+# from the log at commit time.  [Please note that for them to be
+# removed from the rcslog in the repository you need to be running
+# the version of cvs in the FreeBSD source tree.  We've got a local
+# patch that causes cvs to read back the commit message after the
+# commit_prep.pl script has had a chance to modify it (via the
+# 'commitinfo' hook). ]
 %TEMPLATE_HEADERS = (
 #	"Reviewed by"		=> '.*',
 #	"Submitted by"		=> '.*',
