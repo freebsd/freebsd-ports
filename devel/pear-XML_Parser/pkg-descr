@@ -4,4 +4,4 @@ mode, it will look for a function named after each element
 (xmltag_ELEMENT for start tags and xmltag_ELEMENT_ for end tags), and
 in "event" mode it uses a set of generic callbacks.
 
-WWW: http://pear.php.net/package-info.php?package=XML_Parser
+WWW: http://pear.php.net/package/XML_Parser
