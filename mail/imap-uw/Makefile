@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	0104241750
+PORTVERSION=	0106191041
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
@@ -38,15 +38,55 @@ MAKE_ARGS+=	SSLTYPE=unix
 USE_OPENSSL=	yes
 .endif
 
+# RFC 1730 (IMAP4 as opposed to IMAP4rev1) support
+.if defined(WITH_RFC1730)
+MAKE_ARGS+=	RFC1730="-DRFC1730"
+.endif
+# Define this to get somewhat better interoperability with Netscape.
+.if defined(WITH_NETSCAPE_BRAIN_DAMAGE)
+MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
+.endif
+# Define this to get somewhat better interoperability with Microsoft
+# Outlook and Outlook Express.
+.if defined(WITH_MICROSOFT_BRAIN_DAMAGE)
+MAKE_ARGS+=	MSBD="-DMICROSOFT_BRAIN_DAMAGE"
+.endif
+# See src/imapd/Makefile for more information about these three options.
+
+SOURCEDIRS_IMAPUTILS=	chkmail dmail icat ifrom imapcopy imapxfer mbxcopy \
+			mbxcreat mbxcvt tmail
+.if defined(WITH_ALL_IMAPUTILS)
+MAN1=	chkmail.1 dmail.1 icat.1 ifrom.1 imapcopy.1 imapxfer.1 mbxcopy.1 \
+	mbxcreat.1 mbxcvt.1 tmail.1
+PLIST_SUB+=	IMAPUTILS=''
+.else
+PLIST_SUB+=	IMAPUTILS='@comment '
+.endif
+
 .include <bsd.port.pre.mk>
 
 pre-extract:
+	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} foo PRE-INSTALL || ${FALSE}
 .endif
 
+pre-build:
+.if defined(WITH_SSL)
+	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
+.else
+	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h no
+.endif
+
 post-build:
 	@(cd ${WRKDIR}/mlock; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
+.if defined(WITH_ALL_IMAPUTILS)
+.for d in ${SOURCEDIRS_IMAPUTILS}
+	@${ECHO} "Building ${d}."
+	(cd ${WRKDIR}/${d}; ${CC} ${CFLAGS} -I${LOCALBASE}/include/c-client \
+	-o ${d} ${d}.c -L${LOCALBASE}/lib -lc-client4 -lssl -lcrypto)
+.endfor
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/imapd/imapd ${PREFIX}/libexec
@@ -59,6 +99,15 @@ do-install:
 		${WRKSRC}/src/imapd/imapd.8c ${PREFIX}/man/man8/imapd.8
 	${INSTALL_MAN} \
 		${WRKSRC}/src/ipopd/ipopd.8c ${PREFIX}/man/man8/ipopd.8
+.if defined(WITH_ALL_IMAPUTILS)
+.for d in ${SOURCEDIRS_IMAPUTILS}
+	@${ECHO} "Installing ${d}."
+	${INSTALL_PROGRAM} ${WRKDIR}/${d}/${d} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${d}/${d}.1 ${PREFIX}/man/man1
+.endfor
+	(cd ${PREFIX}/bin; ${LN} -s imapcopy imapmove)
+	(cd ${PREFIX}/bin; ${LN} -s mbxcopy mbxmove)
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

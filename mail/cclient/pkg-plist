@@ -19,6 +19,7 @@ include/c-client/rfc822.h
 include/c-client/smtp.h
 include/c-client/tcp.h
 include/c-client/utf8.h
+include/c-client/portrevision.h
 lib/%%SHLIBNAME%%
 lib/libc-client4.a
 lib/libc-client4.so
