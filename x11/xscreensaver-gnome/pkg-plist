@@ -55,6 +55,7 @@ bin/xscreensaver-hacks/eruption
 bin/xscreensaver-hacks/euler2d
 bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
+bin/xscreensaver-hacks/fireworkx
 bin/xscreensaver-hacks/flag
 bin/xscreensaver-hacks/flame
 bin/xscreensaver-hacks/flipflop
@@ -91,6 +92,7 @@ bin/xscreensaver-hacks/hypertorus
 bin/xscreensaver-hacks/ifs
 bin/xscreensaver-hacks/imsmap
 bin/xscreensaver-hacks/interference
+bin/xscreensaver-hacks/intermomentary
 bin/xscreensaver-hacks/jigglypuff
 bin/xscreensaver-hacks/jigsaw
 bin/xscreensaver-hacks/juggle
@@ -130,6 +132,7 @@ bin/xscreensaver-hacks/penrose
 bin/xscreensaver-hacks/petri
 bin/xscreensaver-hacks/phosphor
 bin/xscreensaver-hacks/piecewise
+bin/xscreensaver-hacks/pinion
 bin/xscreensaver-hacks/pipes
 bin/xscreensaver-hacks/polyhedra
 bin/xscreensaver-hacks/polyominoes
@@ -167,6 +170,7 @@ bin/xscreensaver-hacks/starfish
 bin/xscreensaver-hacks/starwars
 bin/xscreensaver-hacks/stonerview
 bin/xscreensaver-hacks/strange
+bin/xscreensaver-hacks/substrate
 bin/xscreensaver-hacks/superquadrics
 bin/xscreensaver-hacks/swirl
 bin/xscreensaver-hacks/t3d
@@ -276,6 +280,7 @@ share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fireflies.xml
+share/xscreensaver/config/fireworkx.xml
 share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
 share/xscreensaver/config/flipflop.xml
@@ -313,6 +318,7 @@ share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/ifs.xml
 share/xscreensaver/config/imsmap.xml
 share/xscreensaver/config/interference.xml
+share/xscreensaver/config/intermomentary.xml
 share/xscreensaver/config/jigglypuff.xml
 share/xscreensaver/config/jigsaw.xml
 share/xscreensaver/config/juggle.xml
@@ -351,6 +357,7 @@ share/xscreensaver/config/penrose.xml
 share/xscreensaver/config/petri.xml
 share/xscreensaver/config/phosphor.xml
 share/xscreensaver/config/piecewise.xml
+share/xscreensaver/config/pinion.xml
 share/xscreensaver/config/pipes.xml
 share/xscreensaver/config/polyhedra.xml
 share/xscreensaver/config/polyominoes.xml
@@ -390,6 +397,7 @@ share/xscreensaver/config/starfish.xml
 share/xscreensaver/config/starwars.xml
 share/xscreensaver/config/stonerview.xml
 share/xscreensaver/config/strange.xml
+share/xscreensaver/config/substrate.xml
 share/xscreensaver/config/superquadrics.xml
 share/xscreensaver/config/swirl.xml
 share/xscreensaver/config/t3d.xml
