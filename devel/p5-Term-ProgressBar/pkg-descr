@@ -1,0 +1,10 @@
+A really simple progress bar for things that take a while.
+
+Doing something: ###########
+
+The bar grows as things done.  Fifty hash marks are printed
+altogether.
+
+WWW: http://search.cpan.org/search?dist=Term-ProgressBar
+
+Seamus Venasse <svenasse@polaris.ca>
