@@ -28,7 +28,7 @@ NO_BUILD=	yes
 
 XEMACS_MAJOR_VER=	21
 XEMACS_REL=		21.1
-XEMACS_VER=		21.1.11
+XEMACS_VER=		21.1.12
 XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
 
 do-install:		# empty
