@@ -5712,6 +5712,7 @@ mupen64-gln64	ports/emulators/mupen64-gln64
 mupen64-input	ports/emulators/mupen64-input
 mupen64-rice	ports/emulators/mupen64-rice
 mupen64-rsp	ports/emulators/mupen64-rsp
+mupen64-sdlaudio	ports/emulators/mupen64-sdlaudio
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
 musicbox	ports/audio/musicbox
