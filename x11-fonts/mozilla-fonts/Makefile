@@ -1,6 +1,6 @@
 # Ports collection makefile for:	mozilla-fonts
 # Date created:				10 Mar 2000
-# Whom:					dom@myrddin.demon.co.uk
+# Whom:					dom@happygiraffe.net
 #
 # $FreeBSD$
 #

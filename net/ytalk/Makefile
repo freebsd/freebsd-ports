@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ytalk
 # Date created:		18 March 1995
-# Whom:			dom@myrddin.demon.co.uk
+# Whom:			dom@happygiraffe.net
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/network/chat
 
-MAINTAINER=	dom@myrddin.demon.co.uk
+MAINTAINER=	dom@happygiraffe.net
 
 MAN1=		ytalk.1
 

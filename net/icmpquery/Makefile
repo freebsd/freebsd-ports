@@ -1,6 +1,6 @@
 # New ports collection makefile for:	icmpquery
 # Date created:				Jan 7 1999
-# Whom:					dom@myrddin.demon.co.uk
+# Whom:					dom@happygiraffe.net
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.angio.net/security/
 DISTNAME=	icmpquery
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	dom@myrddin.demon.co.uk
+MAINTAINER=	dom@happygiraffe.net
 
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	icmpquery
