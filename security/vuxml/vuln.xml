@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e480ccb2-6bc8-11d9-8dbe-000a95bc6fae">
+    <topic>fcron -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>fcron</name>
+	<range><lt>2.9.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE Security Advisory states:</p>
+	<blockquote cite="http://www.idefense.com/application/poi/display?id=157&amp;type=vulnerabilities&amp;flashstatus=false">
+	  <p>Multiple vulnerabilities have been found in Fcron.</p>
+	  <ol>
+	    <li>File contents disclosure</li>
+	    <li>Configuration Bypass Vulnerability</li>
+	    <li>File Removal and Empty File Creation Vulnerability</li>
+	    <li>Information Disclosure Vulnerability</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.idefense.com/application/poi/display?id=157&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <cvename>CAN-2004-1030</cvename>
+      <cvename>CAN-2004-1031</cvename>
+      <cvename>CAN-2004-1032</cvename>
+      <cvename>CAN-2004-1033</cvename>
+    </references>
+    <dates>
+      <discovery>2004-11-15</discovery>
+      <entry>2005-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="02274fd9-6bc5-11d9-8edb-000a95bc6fae">
     <topic>realplayer -- arbitrary file deletion and other vulnerabilities</topic>
     <affects>
