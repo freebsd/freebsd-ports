@@ -5,6 +5,7 @@ bin/yaz-ztest
 bin/zoomsh
 include/yaz/backend.h
 include/yaz/ccl.h
+include/yaz/charneg.h
 include/yaz/comstack.h
 include/yaz/d1_attset.h
 include/yaz/d1_map.h
@@ -32,7 +33,6 @@ include/yaz/tpath.h
 include/yaz/wrbuf.h
 include/yaz/xmalloc.h
 include/yaz/yaz-ccl.h
-include/yaz/yaz-date.h
 include/yaz/yaz-util.h
 include/yaz/yaz-version.h
 include/yaz/yconfig.h
