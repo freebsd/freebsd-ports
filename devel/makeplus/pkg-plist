@@ -1,6 +1,12 @@
 bin/make+
 bin/make+-skeleton
 etc/make+.conf
+share/doc/makeplus-0.1.2/README
+share/doc/makeplus-0.1.2/ch01.html
+share/doc/makeplus-0.1.2/ch02.html
+share/doc/makeplus-0.1.2/ch03.html
+share/doc/makeplus-0.1.2/ch04.html
+share/doc/makeplus-0.1.2/index.html
 share/makeplus/c.mk
 share/makeplus/check_funcs.sh
 share/makeplus/check_headers.sh
@@ -23,3 +29,4 @@ share/makeplus/run_tests.sh
 share/makeplus/test.mk
 share/makeplus/website.mk
 @dirrm share/makeplus
+@dirrm share/doc/makeplus-0.1.2
