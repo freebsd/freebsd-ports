@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME GUI for configuring a users crontab
 
+BUILD_DEPENDS=	yelp:${PORTSDIR}/x11/yelp
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix pygnome2
 USE_X_PREFIX=	yes
