@@ -1,18 +1,18 @@
 # New ports collection makefile for:	nethack-qt
-# Version required:	3.2.2
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nethack-3.2.2
-PKGNAME=	qt-nethack-1.0.1
+PORTNAME=	qt-nethack
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://trolls.troll.no/warwick/nethack/ \
 		ftp://ftp.troll.no/contrib/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	nethack
+DISTNAME=	nethack-3.2.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${QT_PATCH} ${QT_SOUND}
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,18 +1,18 @@
 # New ports collection makefile for:	libshhcards
-# Version required:			1.0.4
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		shhcards-1.0.4
-PKGNAME=		libshhcards-1.0.4
+PORTNAME=		libshhcards
+PORTVERSION=		1.0.4
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://home.sol.no/~sverrehu/pub-unix/files/ \
 			http://people.FreeBSD.org/~mph/distfiles/
 MASTER_SITE_SUBDIR=	libs/ui
+DISTNAME=		shhcards-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:  oonsoo
-# Version required:	1.2
 # Date created:		23rd June, 1997
 # Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	oonsoo-1.2
+PORTNAME=	oonsoo
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/rohan/
 EXTRACT_SUFX=	.tgz

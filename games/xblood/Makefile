@@ -1,12 +1,12 @@
 # New ports collection makefile for:   XBlood
-# Version required:    1.0
 # Date created:        27 Jun 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xblood-1.0
+PORTNAME=	xblood
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xjewel
-# Version required:     1.6
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xjewel-1.6
+PORTNAME=	xjewel
+PORTVERSION=	1.6
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
 		ftp://ftp.x.org/R5contrib/ \

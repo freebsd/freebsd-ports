@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ztrack
-# Version required:			1.0
 # Date created:				1 May 1997
 # Whom: Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ztrack-1.0
+PORTNAME=	ztrack
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade

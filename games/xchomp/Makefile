@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xchomp
-# Version required:     pl1
 # Date created:         4 Jan 1995
 # Whom:                 swallace
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xchomp-pl1
+PORTNAME=       xchomp
+PORTVERSION=	pl1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	../R5contrib

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	QuakeForge
-# Version required:	0.10.0
 # Date created:		4 January 2000
 # Whom:			darius@dons.net.au
 #
 # $FreeBSD$
 #
 
-DISTNAME=	quakeforge
-PKGNAME=	QuakeForge-0.10.0pre
+PORTNAME=	QuakeForge
+PORTVERSION=	0.10.0p
 CATEGORIES=	games
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	http://www.gsoft.com.au/~doconnor/
+DISTNAME=	quakeforge
 
 MAINTAINER=	darius@dons.net.au
 

@@ -1,16 +1,15 @@
 # New ports collection makefile for:   xmulti
-# Version required:    2.00b4
 # Date created:        4 Jun 1998
 # Whom:                Toru YANO <toru@s-fine.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmul200b4
-PKGNAME=	xmulti-2.00b4
+PORTNAME=	xmulti
+PORTVERSION=	2.00b4
 CATEGORIES=	games
 MASTER_SITES=	http://www.denpa.org/~go/xmulti/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	xmul200b4.tgz
 
 MAINTAINER=	toru@tenchi.ne.jp
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xpuyopuyo
-# Version required:	0.2.7
 # Date created:		19 Sep 1999
 # Whom:			Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xpuyopuyo-0.3.4
+PORTNAME=	xpuyopuyo
+PORTVERSION=	0.3.4
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xpuyopuyo/ \
 		http://lenin.dabney.caltech.edu/~justins/xpuyopuyo/

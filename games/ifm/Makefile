@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	ifm
+PORTNAME=	ifm
 PORTVERSION=	4.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.gmd.de/if-archive/mapping-tools/

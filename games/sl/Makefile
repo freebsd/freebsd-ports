@@ -1,16 +1,16 @@
 # New ports collection makefile for:    sl
-# Version required:    3.03
 # Date created:                17 Sep 1999
 # Whom:                        HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=      sl
-PKGNAME=       sl-3.03
-CATEGORIES=    games
-MASTER_SITES=  http://www.is.titech.ac.jp/~toyoda/sl/
-EXTRACT_SUFX=  .tar
+PORTNAME=	sl
+PORTVERSION=	3.03
+CATEGORIES=	games
+MASTER_SITES=	http://www.is.titech.ac.jp/~toyoda/sl/
+DISTNAME=	${PORTNAME}
+EXTRACT_SUFX=	.tar
 
 MAINTAINER=    th@cis.ibaraki.ac.jp
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xabacus
-# Version required:			5.5.2
 # Date created:				3 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xabacus-5.5.2
+PORTNAME=	xabacus
+PORTVERSION=	5.5.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.tux.org/pub/tux/bagleyd/xabacus/

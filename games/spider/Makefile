@@ -1,16 +1,16 @@
 # New ports collection makefile for:    spider
-# Version required:     1.1
 # Date created:         2 Oct 1995
 # Whom:                 se
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spider
-PKGNAME=	spider-1.1
+PORTNAME=	spider
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/solitaires
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xothello
-# Version required:			0.01
 # Date created:				31 March 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xothello
-PKGNAME=	xothello-0.01
+PORTNAME=	xothello
+PORTVERSION=	0.01
 CATEGORIES=	games
 MASTER_SITES=	http://makosteszta.sote.hu/linux/othello/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

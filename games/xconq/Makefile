@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xconq
-# Version required:     7.2.2
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xconq-7.2.2
+PORTNAME=	xconq
+PORTVERSION=	7.2.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://sourceware.cygnus.com/pub/xconq/
 

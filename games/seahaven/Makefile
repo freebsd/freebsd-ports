@@ -1,12 +1,12 @@
 # New ports collection makefile for:    seahaven
-# Version required:     1.04
 # Date created:         23 Dec 1998
 # Whom:                 imp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	seahaven-1.41
+PORTNAME=	seahaven
+PORTVERSION=	1.41
 CATEGORIES=	games
 MASTER_SITES=	http://www.cinenet.net/users/spitzak/seahaven/
 EXTRACT_SUFX=	.tgz

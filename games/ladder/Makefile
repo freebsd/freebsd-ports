@@ -1,17 +1,16 @@
 # New ports collection makefile for:   ladder
-# Version required:    1
 # Date created:        18 Feb 1998
 # Whom:                Stefan Zehl <sec@42.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ladder
-PKGNAME=	ladder-1.00
+PORTNAME=	ladder
+PORTVERSION=	1.00
 CATEGORIES=	games
 MASTER_SITES=	http://www.srv.net/~kth/ \
 		ftp://ftp.42.org/pub/unix/games/
-EXTRACT_SUFX=	.tar
+DISTFILES=	ladder.tar
 
 MAINTAINER=	sec@42.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	spellcast
-# Version required:			1.1
 # Date created:				28 June 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spellcast-1.1
+PORTNAME=	spellcast
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.macula.net/lightside/

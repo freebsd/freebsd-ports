@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xhexagons
-# Version required:			5.5.2
 # Date created:				20 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xhexagons-5.5.2
+PORTNAME=	xhexagons
+PORTVERSION=	5.5.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles

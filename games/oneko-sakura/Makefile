@@ -1,16 +1,16 @@
 # New ports collection makefile for:	oneko-sakura
-# Version required:	1.2
 # Date created:		25 May 1999
 # Whom:			HOTARU-YA <hotaru@tail.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	oneko-1.2
-PKGNAME=	oneko-sakura3-1.2
+PORTNAME=	oneko
+PORTVERSION=	1.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cin.nihon-u.ac.jp/pub/Linux/PJE/PJE-0.1.2/sources/xclt/ \
 		http://hp.vector.co.jp/authors/VA004959/oneko/
+PKGNAMESUFFIX=	-sakura3
 
 PATCH_SITES=	ftp://aptiva.mp.es.osaka-u.ac.jp/pub/oneko-sakura/
 PATCHFILES=	oneko-1.2.sakura.3.diff.gz

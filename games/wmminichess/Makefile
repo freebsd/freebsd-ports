@@ -1,15 +1,15 @@
 # New ports collection makefile for:	(wm)miniCHESS
-# Version required:	0.8
 # Date created:		24 Sep 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	miniCHESS-0.8
-PKGNAME=	wmminichess-0.8
+PORTNAME=	wmminichess
+PORTVERSION=	0.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.electricrain.com/edavis/miniCHESS/
+DISTNAME=	miniCHESS-${PORTVERSION}
 
 MAINTAINER=	will@FreeBSD.org
 

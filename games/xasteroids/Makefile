@@ -1,17 +1,16 @@
 # New ports collection makefile for:    xasteroids
-# Version required:	5
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xasteroids
-PKGNAME=	xasteroids-5.0
+PORTNAME=	xasteroids
+PORTVERSION=	5.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/ \
 		ftp://ftp.belgium.eu.net/pub/X11/R5contrib/
-EXTRACT_SUFX=	.sh.Z
+DISTFILES=       xasteroids.sh.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 

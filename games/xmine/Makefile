@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xmine-1.0.3-Xaw
-PKGNAME=	xmine-1.0.3
+PORTNAME=	xmine
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sw.ru/pub/x11/ \
 		${MASTER_SITE_LOCAL}
+DISTNAME=	${PKGNAME}-Xaw
 
 MAINTAINER=	joerg@FreeBSD.org
 

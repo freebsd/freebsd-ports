@@ -1,12 +1,12 @@
 # New ports collection makefile for:	seabattle
-# Version required:			1.0
 # Date created:				6 June 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		seabattle-1.0
+PORTNAME=		seabattle
+PORTVERSION=		1.0
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy

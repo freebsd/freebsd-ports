@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xemeraldia
-# Version required:	0.31
 # Date created:		22 Mar 1995
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xemeraldia-0.3
-PKGNAME=	xemeraldia-0.31
+PORTNAME=	xemeraldia
+PORTVERSION=	0.31
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/mar/
+DISTNAME=	xemeraldia-0.3
 
 PATCH_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/apr/
 PATCHFILES=	xemeraldia-0.3to0.31.patch.gz

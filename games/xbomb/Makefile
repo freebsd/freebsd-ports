@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xbomb
-# Version required:     2.1a
 # Date created:         20 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xbomb-2.1a
+PORTNAME=       xbomb
+PORTVERSION=	2.1a
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-xbomb/
 EXTRACT_SUFX=	.tgz

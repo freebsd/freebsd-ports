@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmahjongg
-# Version required:	3.2
 # Date created:		16 Aug 1996
 # Whom:			joerg@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmahjongg-3.2
+PORTNAME=	xmahjongg
+PORTVERSION=	3.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.lcdf.org/xmahjongg/
 

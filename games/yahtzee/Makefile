@@ -1,5 +1,4 @@
 # New ports collection makefile for:  yahtzee 
-# Version required:	1.0
 # Date created:		Friday 4th July, 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.2.1-RELEASE
@@ -7,12 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=		yahtzee-src
-PKGNAME=		yahtzee-1.0
+PORTNAME=		yahtzee
+PORTVERSION=		1.0
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
-EXTRACT_SUFX=		.tar.Z
+DISTFILES=		yahtzee-src.tar.Z
 
 MAINTAINER=	jsutton@bbcon.com.au
 

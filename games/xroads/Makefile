@@ -1,17 +1,17 @@
 # New ports collection makefile for:	xroads
-# Version required:			0.3
 # Date created:				21 June 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xroads-v0.3
-PKGNAME=	xroads-0.3
+PORTNAME=	xroads
+PORTVERSION=	0.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/1795/ \
 		http://www.autobahn.mb.ca/~foxtrot/ \
 		http://supernova.dyn.ml.org/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	will@FreeBSD.org
 

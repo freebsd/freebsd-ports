@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xjumpjump
-# Version required:			0.12
 # Date created:				9 April 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xjumpjump
-PKGNAME=	xjumpjump-0.12
+PORTNAME=	xjumpjump
+PORTVERSION=	0.12
 CATEGORIES=	games
 MASTER_SITES=	http://makosteszta.sote.hu/linux/jumpjump/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xmris
-# Version required:     4.02
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 
-DISTNAME=	xmris.4.04
-PKGNAME=	xmris-4.04
+PORTNAME=	xmris
+PORTVERSION=	4.04
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmz@FreeBSD.org

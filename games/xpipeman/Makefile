@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=       xpipeman
-PKGNAME=        xpipeman-1.0
+PORTNAME=       xpipeman
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
+DISTNAME=       ${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jseger@FreeBSD.org

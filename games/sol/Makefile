@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sol
-# Version required:			1.0.6
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sol-1.0.6
+PORTNAME=	sol
+PORTVERSION=	1.0.6
 CATEGORIES=	games
 MASTER_SITES=	http://home.sol.no/~sverrehu/pub-unix/files/
 

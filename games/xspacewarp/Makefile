@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xspacewarp
-# Version required:			1.2
 # Date created:				16 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xspacewarp-1.2
+PORTNAME=		xspacewarp
+PORTVERSION=		1.2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games

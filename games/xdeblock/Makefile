@@ -1,16 +1,15 @@
 # New ports collection makefile for:	xdeblock
-# Version required:	1.0
 # Date created:		28 December 1996
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdeblock
-PKGNAME=	xdeblock-1.0
+PORTNAME=	xdeblock
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/game/action/block/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
 

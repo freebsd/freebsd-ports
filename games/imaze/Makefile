@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	imaze
+PORTNAME=	imaze
 PORTVERSION=	1.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/ \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xpacman
-# Version required:     1.0
 # Date created:         19 Aug 1995
 # Whom:                 joerg
 #
 # $FreeBSD$
 #
 
-DISTNAME=       pacman10
-PKGNAME=	xpacman-1.0
+PORTNAME=	xpacman
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.nvg.unit.no/pub/pacman/
+DISTNAME=       pacman10
 
 MAINTAINER=	joerg@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for: wmeyes
-# Version required:    1.0
 # Date created:        18 March 1999
 # Whom:                Zenin <zenin@archive.rhps.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmeyes-1.0
+PORTNAME=	wmeyes
+PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://thrush.omix.com/pub/misc/
 
