@@ -39,6 +39,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 INSTALLS_SHLIB=	yes
 
+# mpeg4ip is broke for now, disable it.
+WITHOUT_MPEG4IP=yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_MPEG4IP)
