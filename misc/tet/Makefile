@@ -11,21 +11,20 @@ CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3/ \
 			${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jkoshy
-DISTFILES=		${PORTNAME}${PORTVERSION}-unsup.src.tgz
+DISTNAME=		${PORTNAME}${PORTVERSION}-unsup.src
+EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		jkoshy@freebsd.org
 COMMENT=		An test execution framework from the Open Group
-BROKEN=			"Installs/removes files outside of the install/deinstall phases"
 
 NO_WRKSUBDIR=		yes
 NO_PACKAGE=		TET_ROOT needs to be set at compile time
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		-t ${TET_CONFIG_TARGET}
+NO_BUILD=		yes
+PLIST=			${WRKDIR}/PLIST
 
 TET_CONFIG_TARGET?=	inet	# options are `lite', `xti' and `inet'
-
-do-build:
-	cd ${WRKDIR}/src && ${MAKE} ${ALL_TARGET}
 
 pre-extract:
 .if !defined(TET_ROOT)
@@ -39,21 +38,27 @@ pre-extract:
 	@${TRUE}
 .endif
 
-# remove the TET_ROOT directory if it exists
-pre-clean:
-.if defined(TET_ROOT)
-	${RM} -rf ${TET_ROOT}
-.endif
-	${RM} -rf ${WRKDIR}
-
-# move the work directory to $TET_ROOT after extraction
-post-extract:
+# fix permissions
+pre-configure:
 	${CHMOD} +x ${WRKDIR}/configure
+
+# move the work directory to $TET_ROOT after extraction, and build
+# TET inside of $TET_ROOT
+pre-install:
 	${MKDIR} ${TET_ROOT}
-	cd ${WRKDIR} && tar cf - . | (cd ${TET_ROOT} && tar xf -)
-	${RM} -rf ${WRKDIR} && ${LN} -s ${TET_ROOT} ${WRKDIR}
+	cd ${WRKDIR} && ${TAR} -cf - * | \
+		(cd ${TET_ROOT} && ${TAR} xf -)
+	cd ${TET_ROOT}/src && ${MAKE} ${ALL_TARGET}
+	cd ${TET_ROOT}/src && ${MAKE} ${INSTALL_TARGET}
+	${ECHO} "@cwd ${TET_ROOT}" > ${PLIST}
+	cd ${TET_ROOT} && ${FIND} . ! -type d | \
+		${SED} -e 's,^\./,,' >> ${PLIST}
+	cd ${TET_ROOT} && ${FIND} -d . -type d -print | ${SORT} -ru | \
+		${SED} -e 's,^\./,,' -e '/^\.$$/d' -e 's/^/@dirrm /' \
+		>> ${PLIST}
+	${ECHO} "@unexec ${RMDIR} ${TET_ROOT}" >> ${PLIST}
 
 do-install:
-	cd ${WRKDIR}/src && ${MAKE} ${INSTALL_TARGET}
+	@${TRUE}
 
 .include	<bsd.port.mk>
