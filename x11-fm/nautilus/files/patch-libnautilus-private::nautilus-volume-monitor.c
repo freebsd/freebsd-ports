@@ -1,5 +1,5 @@
---- libnautilus-private/nautilus-volume-monitor.c.orig	Tue Oct  9 20:16:39 2001
-+++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 10 16:17:51 2002
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Tue Sep 10 23:39:55 2002
++++ libnautilus-private/nautilus-volume-monitor.c	Wed Sep 11 00:04:24 2002
 @@ -60,6 +60,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -28,19 +28,30 @@
  #define setmntent(f,m) fopen(f,m)
  #endif
  
-@@ -495,6 +507,11 @@
+@@ -481,6 +493,9 @@
+ static gboolean
+ has_removable_mntent_options (MountTableEntry *ent)
+ {
++#ifdef __FreeBSD__
++    	struct fstab *fsent;
++#endif
+ #ifdef HAVE_HASMNTOPT
+ 	/* Use "owner" or "user" or "users" as our way of determining a removable volume */
+ 	if (hasmntopt (ent, "user") != NULL
+@@ -495,6 +510,12 @@
  		return TRUE;
  	}
  #endif
 +#ifdef __FreeBSD__
-+	if (eel_str_has_prefix (ent->f_mntonname, "/mnt/")) {
++	fsent = getfsspec(ent->f_mntfromname);
++	if (fsent !=  NULL && strstr (fsent->fs_mntops, "noauto")) {
 +		return TRUE;
 +	}
 +#endif
  	
  	return FALSE;
  }
-@@ -510,35 +527,42 @@
+@@ -510,35 +531,42 @@
  static GList *
  get_removable_volumes (NautilusVolumeMonitor *monitor)
  {
@@ -92,7 +103,7 @@
  		return NULL;
  	}
  	
-@@ -560,9 +584,21 @@
+@@ -560,9 +588,21 @@
  				(monitor, volume, ent->mnt_type, volumes);
  		}
  	}
@@ -114,7 +125,7 @@
  	
  #ifdef HAVE_CDDA
  	volume = create_volume (CD_AUDIO_PATH, CD_AUDIO_PATH);
-@@ -575,7 +611,7 @@
+@@ -575,7 +615,7 @@
  	return g_list_sort (g_list_reverse (volumes), (GCompareFunc) floppy_sort);
  }
  
@@ -123,7 +134,7 @@
  
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
-@@ -907,23 +943,35 @@
+@@ -907,23 +947,35 @@
  
  
  
@@ -161,7 +172,7 @@
          while (! getmntent(fh, &ent)) {
                  volume = create_volume (ent.mnt_special, ent.mnt_mountp);
                  volume->is_removable = has_removable_mntent_options (&ent);
-@@ -932,6 +980,16 @@
+@@ -932,6 +984,16 @@
          }
  
  	fclose (fh);
@@ -178,7 +189,49 @@
  
          return volumes;
  }
-@@ -1668,7 +1726,7 @@
+@@ -1144,10 +1206,40 @@
+ static int
+ get_cdrom_type (const char *vol_dev_path, int* fd)
+ {
+-#ifndef SOLARIS_MNT
++#if !defined(SOLARIS_MNT) && !defined(FREEBSD_MNT)
+ 	*fd = open (vol_dev_path, O_RDONLY|O_NONBLOCK);
+ 	return ioctl (*fd, CDROM_DISC_STATUS, CDSL_CURRENT);
++#elif defined(FREEBSD_MNT)
++	struct ioc_toc_header header;
++	struct ioc_read_toc_single_entry entry;
++	int type;
++
++	*fd = open (vol_dev_path, O_RDONLY|O_NONBLOCK);
++	if (*fd < 0) {
++	    	return CDS_DATA_1;
++	}
++
++	if ( ioctl(*fd, CDIOREADTOCHEADER, &header) == 0) {
++	    	return CDS_DATA_1;
++	}
++
++	type = CDS_DATA_1;
++
++	for (entry.track = header.starting_track;
++	     entry.track <= header.ending_track;
++	     entry.track++) {
++	    entry.address_format = CD_LBA_FORMAT;
++	    if (ioctl (*fd, CDIOREADTOCENTRY, &entry) == 0) {
++		    if (entry.entry.control & CDROM_DATA_TRACK) {
++			type = CDS_AUDIO;
++			break;
++		    }
++	    }
++	}
++
++	return type;
+ #else
++
+ 	GString *new_dev_path;
+ 	struct cdrom_tocentry entry;
+ 	struct cdrom_tochdr header;
+@@ -1668,7 +1760,7 @@
  	for (node = volume_list; node != NULL; node = node->next) {
  		volume = node->data;
  		
@@ -187,7 +240,7 @@
  		/* These are set up by get_current_mount_list for Solaris. */
  		volume->is_removable = volume_is_removable (volume);
  #endif
-@@ -1692,7 +1750,7 @@
+@@ -1692,7 +1784,7 @@
  		ok = mount_volume_auto_add (volume);
  	} else if (strcmp (file_system_type_name, "cdda") == 0) {		
  		ok = mount_volume_cdda_add (volume);
@@ -196,7 +249,7 @@
  		ok = mount_volume_iso9660_add (volume);
  	} else if (strcmp (file_system_type_name, "nfs") == 0) {		
  		ok = mount_volume_nfs_add (volume);
-@@ -1709,8 +1767,8 @@
+@@ -1709,8 +1801,8 @@
  	}
  
  	/* Identify device type */
