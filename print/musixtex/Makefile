@@ -3,7 +3,7 @@
 # Date created:         9 july 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1997/08/25 00:26:59 jmz Exp $
+# $Id: Makefile,v 1.10 1997/09/11 21:38:01 jmz Exp $
 #
 
 DISTNAME=       musixtex-T77
@@ -20,5 +20,6 @@ NO_WRKSUBDIR=	yes
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/texmf/documentation
+	${MKDIR} ${PREFIX}/share/texmf/mf
 
 .include <bsd.port.mk>
