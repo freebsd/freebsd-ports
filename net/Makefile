@@ -332,6 +332,7 @@
     SUBDIR += meanwhile
     SUBDIR += meanwhile-gaim
     SUBDIR += merlinmon
+    SUBDIR += mgen
     SUBDIR += micq
     SUBDIR += minisapserver
     SUBDIR += mldonkey
