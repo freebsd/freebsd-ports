@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.176 1999/05/01 01:15:40 taoka Exp $
+# $Id: Makefile,v 1.177 1999/05/01 03:36:27 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -13,6 +13,7 @@
     SUBDIR += autoconf
     SUBDIR += automake
     SUBDIR += bcc
+    SUBDIR += bison
     SUBDIR += boehm-gc
     SUBDIR += cccc
     SUBDIR += cflow
@@ -64,6 +65,7 @@
     SUBDIR += libdlmalloc
     SUBDIR += libffi
     SUBDIR += libgetline
+    SUBDIR += libgnugetopt
     SUBDIR += libgtop
     SUBDIR += libicq
     SUBDIR += libmalloc
@@ -145,6 +147,7 @@
     SUBDIR += swarm
     SUBDIR += tclcheck
     SUBDIR += tclcl
+    SUBDIR += tclgetopts
     SUBDIR += tkcvs
     SUBDIR += tkref
     SUBDIR += tvision
