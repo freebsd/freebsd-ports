@@ -118,6 +118,7 @@
     SUBDIR += leafpak
     SUBDIR += lfview
     SUBDIR += lib3ds
+    SUBDIR += libart
     SUBDIR += libaux
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
