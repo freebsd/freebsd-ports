@@ -3,6 +3,7 @@ bin/aviindex
 bin/avimerge
 bin/avisplit
 bin/avisync
+%%WITH_SUBRIP%%bin/pgm2txt
 %%WITH_SUBRIP%%bin/srttool
 %%WITH_SUBRIP%%bin/subtitle2pgm
 %%WITH_SUBRIP%%bin/subtitle2vobsub

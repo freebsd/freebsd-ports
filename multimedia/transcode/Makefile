@@ -367,7 +367,8 @@ post-install:
 
 .if defined(WITH_SUBRIP)
 	@cd ${WRKSRC}/contrib/subrip; \
-		${INSTALL_PROGRAM} srttool subtitle2pgm subtitle2vobsub ${PREFIX}/bin
+		${INSTALL_PROGRAM} srttool subtitle2pgm subtitle2vobsub ${PREFIX}/bin; \
+		${INSTALL_SCRIPT} pgm2txt ${PREFIX}/bin
 .endif
 
 	@${RM} ${PREFIX}/lib/transcode/*.la
