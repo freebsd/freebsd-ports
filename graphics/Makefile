@@ -112,6 +112,7 @@
     SUBDIR += tgif-nls
     SUBDIR += tiff
     SUBDIR += tifmerge
+    SUBDIR += togl
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += vcg
