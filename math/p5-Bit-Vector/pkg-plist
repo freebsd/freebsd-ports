@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector/Overload.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector/Overload.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector

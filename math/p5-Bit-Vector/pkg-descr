@@ -1,0 +1,17 @@
+Bit::Vector is an efficient C library which allows you to handle
+bit vectors, sets (of integers), "big integer arithmetic" and
+boolean matrices, all of arbitrary sizes.
+
+The library is efficient (in terms of algorithmical complexity)
+and therefore fast (in terms of execution speed) for instance
+through the widespread use of divide-and-conquer algorithms.
+
+The package also includes an object-oriented Perl module for
+accessing the C library from Perl, and optionally features
+overloaded operators for maximum ease of use.
+
+The C library can nevertheless be used stand-alone, without Perl.
+
+Author: Steffen Beyer <sb@engelschall.com>
+
+--will
