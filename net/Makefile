@@ -293,6 +293,7 @@
     SUBDIR += xicq
     SUBDIR += xipmsg
     SUBDIR += xisp
+    SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xtradius
     SUBDIR += xwhois

@@ -1,0 +1,8 @@
+xSMBrowser is a Gui over the Samba utilities that allows users to easily
+browse Microsoft networks.  It was designed using Linux, but, because it
+does not use smbfs to view files, it runs on almost all Unix (Solaris, OSF1,
+NetBSD ... )
+
+WWW: http://www2.iastate.edu/~chadspen/
+
+Roman Shterenzon <roman@xpert.com>
