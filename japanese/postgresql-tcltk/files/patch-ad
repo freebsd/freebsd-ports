@@ -5,8 +5,8 @@
  SHARED_LIB:-fpic -DPIC
 -CFLAGS:-O2 -m486 -pipe
 +CFLAGS:-pipe -O2
- SRCH_INC:/usr/local/include
- SRCH_LIB:/usr/local/lib
+ SRCH_INC:
+ SRCH_LIB:
 -USE_LOCALE:no
 +USE_LOCALE:yes
  DLSUFFIX:.so

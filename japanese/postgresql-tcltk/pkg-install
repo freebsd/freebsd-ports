@@ -1,0 +1,98 @@
+#!/bin/sh
+# an installation script for postgresql
+
+check_pw()
+{
+    if which -s pw; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  We see that it
+is missing the "pw" utility.  We need this utility.  Please get and
+install it, and try again.  You can get the source from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+}
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} (y/n) [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+case $1 in
+PRE-INSTALL)
+
+    ## Hack /etc/master.passwd ##
+    # check
+    id_70=`id -nu 70 2> /dev/null`
+    id_pgsql=`id -u ${PGSQL_UID} 2> /dev/null`
+    if [ X"$id_pgsql" != X ]; then
+	exit 0
+    elif [ X"$id_70" != X ]; then
+	cat <<EOF
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This system already has an account whose name is '$id_70' and ID number is 70.
+
+   '`id $id_70`'
+
+For PostgreSQL in this port or package, UID:GID of '${PGSQL_UID}' has to be 70:70.
+Please try again after you delete the account.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EOF
+	exit 1
+    fi
+
+    # add an account of PostgreSQL to this system
+    echo ""
+    echo "You need a group '${PGSQL_GID}' whose ID number is 70"
+    if yesno "Would you like to create it automatically?" y; then
+	# We need a command 'pw(8)'
+	check_pw
+	pw groupadd ${PGSQL_GID} -g 70 || exit
+    else
+	echo "Please create it, and try again."
+	exit 1
+    fi
+    echo ""
+    echo "You need an account '${PGSQL_UID}' whose ID number is 70"
+    if yesno "Would you like to create it automatically?" y; then
+	# We need a command 'pw(8)'
+	check_pw
+	pw useradd ${PGSQL_UID} -u 70 -g ${PGSQL_GID} -h - -d /usr/local/${INSTALL_DIR} \
+		-s /bin/sh -c "PostgreSQL pseudo-user" || exit
+    else
+	echo "Please create it, and try again."
+	exit 1
+    fi
+    ;;
+esac
