@@ -1,0 +1,5 @@
+This is an early version of a basic time period checking libary for Python.
+It is in part inspired by perl's Time::Period module and the time class
+mechanism of Cfengine.
+
+WWW: http://www.biostat.wisc.edu/~annis/creations/period.py.html

@@ -548,6 +548,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
+    SUBDIR += py-period
     SUBDIR += py-pqueue
     SUBDIR += py-twisted
     SUBDIR += py-unit
