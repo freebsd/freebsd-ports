@@ -1,20 +1,20 @@
 # New ports collection makefile for:   gifsicle
-# Version required:    1.8
-# Date created:                5 December 1998
+# Version required:    1.9.1
+# Date created:                19 December 1998
 # Whom:                        Brad Hendrickse <bradh@iafrica.com>
 #
-# $Id:$
+# $Id$
 #
 
-DISTNAME=      gifsicle-1.8
-CATEGORIES=    graphics
-MASTER_SITES=  http://www.lcdf.org/gifsicle/
+DISTNAME=	gifsicle-1.9.1
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
-MAINTAINER=    bradh@iafrica.com
+MAINTAINER=	bradh@iafrica.com
 
-MAN1=          gifsicle.1
+MAN1=		gifsicle.1
 
-GNU_CONFIGURE= yes
+GNU_CONFIGURE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
