@@ -24,7 +24,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
+MAKE_ENV=	CC="${CC}" LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 INSTALLS_SHLIB=	yes
@@ -37,6 +37,11 @@ MAN1=		netpbm.1
 .if ${ARCH} == "sparc64"
 # -O causes an ICE in converter/other/exif.c with gcc 3.3.3 on sparc64.
 CFLAGS+=	-O0
+.endif
+.if ${ARCH} == "alpha"
+.if ${OSVERSION} < 500000
+CFLAGS+=	-O0
+.endif
 .endif
 
 post-patch:
