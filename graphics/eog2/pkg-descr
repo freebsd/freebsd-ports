@@ -1,0 +1,8 @@
+This is the Eye of Gnome, an image viewer program.  It is meant to be
+a fast and functional image viewer as well as an image cataloging
+program.
+
+This package requires the stable gnome-libs package and the
+development gdk-pixbuf library.
+
+WWW: http://www.gnome.org/
