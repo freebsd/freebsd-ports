@@ -13,19 +13,12 @@ fi
 
 # Install ttf2pk binary in ${PORTSDIR}/print/freetype, data in ${TEXMF}/ttf2pk,
 # and link ${TEXMF}/ttf2tfm to ${TEXMF}/ttf2pk.
-(cd ${PORTSDIR}/print/freetype/work/freetype-1.3/contrib/ttf2pk;
+(cd ${PORTSDIR}/print/freetype/work/freetype-1.3.1/contrib/ttf2pk;
  ./configure --prefix=${PREFIX} --with-kpathsea-dir=${PREFIX};
  make depend all install;
  rm -fr ${TEXMFMAIN}/ttf2pk ${TEXMFMAIN}/ttf2tfm;
  cp -R data ${TEXMFMAIN}/ttf2pk;
- cd ${TEXMFMAIN}; ln -s ttf2pk ttf2tfm; )
-
-# Install Arphic TTF fonts
-mkdir -p ${TEXMFMAIN}/fonts/truetype/arphic
-ln -s ${X11BASE}/lib/X11/fonts/TrueType/bkai00mp.ttf ${TEXMFMAIN}/fonts/truetype/arphic/arb5_kai.ttf
-ln -s ${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf ${TEXMFMAIN}/fonts/truetype/arphic/arb5_sung.ttf
-ln -s ${X11BASE}/lib/X11/fonts/TrueType/gbsn00lp.ttf ${TEXMFMAIN}/fonts/truetype/arphic/argb_sung.ttf
-ln -s ${X11BASE}/lib/X11/fonts/TrueType/gkai00mp.ttf ${TEXMFMAIN}/fonts/truetype/arphic/argb_kai.ttf
+ cd ${TEXMFMAIN}; )
 
 # fontname/special.map: add arb5kai/arb5sung/argbkai/argbsung entries.
 if [ -n "`grep arb5kai ${TEXMFMAIN}/fontname/special.map`" ]

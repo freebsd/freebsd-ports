@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# Run just once.
+if [ "x$2" != "xDEINSTALL" ]; then
+  exit 0
+fi
+
+TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
+TEXMFCNF=${TEXMFMAIN}/web2c/texmf.cnf
+SPECIALMAP=${TEXMFMAIN}/fontname/special.map
+
+# Edit web2c/texmf.cnf
+sed -e "/ttf2pk/d" ${TEXMFCNF} > ${TEXMFCNF}.tmp
+sed -e "/ttf2tfm/d" ${TEXMFCNF}.tmp > ${TEXMFCNF}
+rm -f ${TEXMFCNF}.tmp
+
+# Edit fontname/special.map
+sed -e "/Arphic/d" ${SPECIALMAP} > ${SPECIALMAP}.tmp
+sed -e "/^arb5/d" ${SPECIALMAP}.tmp > ${SPECIALMAP}
+sed -e "/^argb/d" ${SPECIALMAP} > ${SPECIALMAP}.tmp
+mv -f ${SPECIALMAP}.tmp ${SPECIALMAP}
+
+# Delete symbolic links
+rm -f ${TEXMFMAIN}/ttf2tfm
+rm -f ${TEXMFMAIN}/fonts/truetype/arphic/arb5_kai.ttf
+rm -f ${TEXMFMAIN}/fonts/truetype/arphic/arb5_sung.ttf
+rm -f ${TEXMFMAIN}/fonts/truetype/arphic/argb_kai.ttf
+rm -f ${TEXMFMAIN}/fonts/truetype/arphic/argb_sung.ttf
+
+#
+# Update ls-R.  We have to run twice to get correct result.
+# Strange bug of texconfig.
+#
+texconfig rehash
+texconfig rehash
