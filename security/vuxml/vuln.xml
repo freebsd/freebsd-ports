@@ -61,7 +61,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<range><ge>2.0</ge><lt>2.0.51</lt></range>
+	<range><ge>2.0</ge><lt>2.0.50_3</lt></range>
       </package>
     </affects>
     <description>
@@ -135,7 +135,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<range><ge>2.0</ge><lt>2.0.51</lt></range>
+	<range><ge>2.0</ge><lt>2.0.50_3</lt></range>
       </package>
       <package>
 	<name>mod_dav</name>
@@ -164,7 +164,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<range><ge>2.0</ge><lt>2.0.51</lt></range>
+	<range><ge>2.0</ge><lt>2.0.50_3</lt></range>
       </package>
     </affects>
     <description>
