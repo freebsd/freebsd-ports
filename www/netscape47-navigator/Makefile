@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	netscape-${BROWSER_ARC}
-PORTVERSION=	${BROWSER_VER}
+PORTNAME?=	netscape-${BROWSER_ARC}
+PORTVERSION?=	${BROWSER_VER}
 
 .include <bsd.port.pre.mk>
 
