@@ -1,7 +1,7 @@
---- aisleriot/Makefile.in.orig	Sun Sep  6 00:33:23 1998
-+++ aisleriot/Makefile.in	Sun Sep  6 00:33:57 1998
-@@ -116,7 +116,7 @@
- typesdir  = $(datadir)/sol-games
+--- aisleriot/Makefile.in.orig	Fri Dec 18 01:55:08 1998
++++ aisleriot/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -128,7 +128,7 @@
+ SUBDIRS=docs pixmaps
  
  INCLUDES = \
 -	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
@@ -9,9 +9,20 @@
  	-I$(includedir)				 \
  	$(GNOME_INCLUDEDIR)
  
---- freecell/src/Makefile.in.orig	Sun Sep  6 00:34:28 1998
-+++ freecell/src/Makefile.in	Sun Sep  6 00:34:40 1998
-@@ -115,7 +115,7 @@
+--- aisleriot/docs/Makefile.in.orig	Fri Jan  1 16:30:30 1999
++++ aisleriot/docs/Makefile.in	Fri Jan  1 16:30:40 1999
+@@ -125,7 +125,7 @@
+ XPM_LIBS = @XPM_LIBS@
+ l = @l@
+ 
+-helpdir = $(datadir)/gnome/help/aisleriot/C
++helpdir = $(datadir)/help/aisleriot/C
+ 
+ help_DATA = index.html intro.html glossary.html gpl.html \
+ 	camelot.html canfield.html clock.html doublets.html \
+--- freecell/src/Makefile.in.orig	Fri Dec 18 01:54:30 1998
++++ freecell/src/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -122,7 +122,7 @@
  Gamesdir = $(datadir)/apps/Games
  
  INCLUDES = \
@@ -20,9 +31,9 @@
  	-I$(includedir)					\
  	$(GNOME_INCLUDEDIR)				\
  	-I$(srcdir)/../gdk-card-image
---- gnobots/Makefile.in.orig	Sun Sep  6 00:35:02 1998
-+++ gnobots/Makefile.in	Sun Sep  6 00:45:40 1998
-@@ -116,10 +116,10 @@
+--- gnobots/Makefile.in.orig	Fri Dec 18 01:54:54 1998
++++ gnobots/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -123,10 +123,10 @@
  pixmapdir=$(datadir)/pixmaps/gnobots
  appicondir=$(datadir)/pixmaps
  Gamesdir = $(datadir)/apps/Games
@@ -35,9 +46,9 @@
  	-I$(includedir)				 \
  	$(GNOME_INCLUDEDIR)
  
---- gnome-stones/Makefile.in.orig	Fri Oct  2 07:01:39 1998
-+++ gnome-stones/Makefile.in	Fri Oct  2 07:01:59 1998
-@@ -122,7 +122,7 @@
+--- gnome-stones/Makefile.in.orig	Fri Dec 18 01:55:01 1998
++++ gnome-stones/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -127,7 +127,7 @@
  Cavesdir = $(datadir)/gnome-stones
  
  INCLUDES =					\
@@ -46,9 +57,25 @@
  	-DGNOMEPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
  	-DCAVESDIR=\""$(Cavesdir)"\"			\
  	-I$(includedir)					\
---- gnomine/Makefile.in.orig	Sun Sep  6 00:35:31 1998
-+++ gnomine/Makefile.in	Sun Sep  6 00:35:41 1998
-@@ -116,7 +116,7 @@
+--- gnome-stones/objects/Makefile.in.orig	Fri Dec 18 01:55:04 1998
++++ gnome-stones/objects/Makefile.in	Fri Jan  1 15:33:20 1999
+@@ -121,11 +121,11 @@
+ 
+ GSTONES_SRC_DIR = $(srcdir)/../
+ 
+-objectdir= $(libdir)/gnome-stones/objects
++objectdir= $(datadir)/gnome-stones/objects
+ 
+ INCLUDES = 						\
+ 	-I$(GSTONES_SRC_DIR)				\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	\
+ 	-I$(includedir)					\
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- gnomine/Makefile.in.orig	Fri Dec 18 01:54:32 1998
++++ gnomine/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -123,7 +123,7 @@
  Gamesdir = $(datadir)/apps/Games
  
  INCLUDES = 			\
@@ -57,31 +84,31 @@
  	-I$(includedir)				 \
  	$(GNOME_INCLUDEDIR)
  
---- gnothello/Makefile.in.orig	Sun Sep  6 00:35:54 1998
-+++ gnothello/Makefile.in	Sun Sep  6 00:46:34 1998
-@@ -116,7 +116,7 @@
+--- gnothello/Makefile.in.orig	Fri Dec 18 01:54:58 1998
++++ gnothello/Makefile.in	Fri Jan  1 15:10:26 1999
+@@ -126,7 +126,7 @@
+ 
+ INCLUDES = 			\
+ 	-DHAVE_ORBIT \
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)				 \
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- gturing/Makefile.in.orig	Fri Dec 18 01:54:44 1998
++++ gturing/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -122,7 +122,7 @@
  Gamesdir = $(datadir)/apps/Games
  
  INCLUDES = 			\
 -	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 +	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
  	-I$(includedir)				 \
- 	$(GNOME_INCLUDEDIR)
- 
---- gturing/Makefile.in.orig	Sun Sep  6 00:36:17 1998
-+++ gturing/Makefile.in	Sun Sep  6 00:36:31 1998
-@@ -115,7 +115,7 @@
- Gamesdir = $(datadir)/apps/Games
- 
- INCLUDES = 			\
--	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
-+	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
- 	-I$(includedir)				 \
- 	$(GNOME_INCLUDEDIR)
- 
---- gyahtzee/Makefile.in.orig	Sun Sep  6 00:36:39 1998
-+++ gyahtzee/Makefile.in	Sun Sep  6 00:42:46 1998
-@@ -118,7 +118,7 @@
+ 	$(GNOME_INCLUDEDIR)			 \
+ 	-DVERSION=\""$(VERSION)"\"
+--- gyahtzee/Makefile.in.orig	Fri Dec 18 01:54:49 1998
++++ gyahtzee/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -125,7 +125,7 @@
  SUBDIRS = pix
  
  INCLUDES =					\
@@ -90,7 +117,7 @@
  	-DGNOMEPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
  	-I$(includedir)					\
  	$(GNOME_INCLUDEDIR)				\
-@@ -126,7 +126,7 @@
+@@ -133,7 +133,7 @@
  
  @HAS_CURSES_TRUE@CYAHTZEE=cyahtzee
  
@@ -99,9 +126,20 @@
  
  gyahtzee_SOURCES =       \
          gyahtzee.c       \
---- mahjongg/Makefile.in.orig	Sun Sep  6 00:37:08 1998
-+++ mahjongg/Makefile.in	Sun Sep  6 00:37:20 1998
-@@ -117,7 +117,7 @@
+--- mahjongg/Makefile.in.orig	Fri Dec 18 01:54:41 1998
++++ mahjongg/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -125,7 +125,7 @@
+ appicondir=$(datadir)/pixmaps
+ 
+ INCLUDES = -I.. -I$(srcdir)/..		\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)			\
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- same-gnome/Makefile.in.orig	Fri Dec 18 01:54:36 1998
++++ same-gnome/Makefile.in	Fri Jan  1 15:08:49 1999
+@@ -124,7 +124,7 @@
  Gamesdir = $(datadir)/apps/Games
  
  INCLUDES = -I.. -I$(srcdir)/..		\
@@ -110,14 +148,25 @@
  	-I$(includedir)			\
  	$(GNOME_INCLUDEDIR)
  
---- same-gnome/Makefile.in.orig	Sun Sep  6 00:37:32 1998
-+++ same-gnome/Makefile.in	Sun Sep  6 00:47:03 1998
-@@ -117,7 +117,7 @@
- Gamesdir = $(datadir)/apps/Games
+--- scottfree/Makefile.in.orig	Fri Dec 18 01:54:39 1998
++++ scottfree/Makefile.in	Fri Jan  1 15:11:32 1999
+@@ -120,7 +120,7 @@
+ l = @l@
  
- INCLUDES = -I.. -I$(srcdir)/..		\
+ INCLUDES = 			\
 -	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 +	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
- 	-I$(includedir)			\
+ 	-I$(includedir)		\
  	$(GNOME_INCLUDEDIR)
  
+--- po/Makefile.in.in.orig	Fri Jan  1 15:19:04 1999
++++ po/Makefile.in.in	Fri Jan  1 15:19:15 1999
+@@ -18,7 +18,7 @@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
