@@ -33,7 +33,6 @@ MASTER_SITES=	http://www.zsh.org/zsh/ \
 		http://archive.progeny.com/zsh/ \
 		ftp://archive.progeny.com/zsh/ \
 		http://mirrors.theonlinerecordstore.com/zsh/ \
-		ftp://uiarchive.uiuc.edu/mirrors/ftp/ftp.zsh.org/pub/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \
 		ftp://sunsite.org.uk/packages/zsh/ \
 		ftp://ftp.net.lut.ac.uk/zsh/ \
