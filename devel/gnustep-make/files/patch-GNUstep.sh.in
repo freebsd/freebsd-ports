@@ -1,0 +1,22 @@
+--- GNUstep.sh.in~	Mon Mar 11 09:06:16 2002
++++ GNUstep.sh.in	Wed Mar 20 15:58:45 2002
+@@ -136,14 +136,14 @@
+ if [ "$convert_win_paths" = "yes" ]; then
+   # FIXME - G_U_R might not have been defined
+   gnustep_class_path="$G_U_R/Libraries/Java:$G_L_R/Libraries/Java:$G_N_R/Libraries/Java:$G_S_R/Libraries/Java"
++  unset convert_win_paths
++  unset G_U_R
++  unset G_L_R
++  unset G_N_R
++  unset G_S_R
+ else
+   gnustep_class_path="$GNUSTEP_USER_ROOT/Libraries/Java:$GNUSTEP_LOCAL_ROOT/Libraries/Java:$GNUSTEP_NETWORK_ROOT/Libraries/Java:$GNUSTEP_SYSTEM_ROOT/Libraries/Java"
+ fi
+-unset convert_win_paths
+-unset G_U_R
+-unset G_L_R
+-unset G_N_R
+-unset G_S_R
+ 
+ if [ -z "$CLASSPATH" ]; then
+   CLASSPATH="$gnustep_class_path"

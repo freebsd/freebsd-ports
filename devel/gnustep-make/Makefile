@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-make
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 		http://ftp.codefactory.se/pub/gnu/gstep/ \
