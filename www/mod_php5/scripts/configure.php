@@ -240,9 +240,7 @@ POSTEXTRACT+=	post-extract-mbregex
 post-extract-mbregex:
 	[ -d \${WRKDIR}/mbregex ] && \\
 	(cd \${WRKSRC}; \\
-	 \${MV} ${WRKDIR}/mbregex ext; \\
-	 \${RM} configure; \\
-	 ./buildconf)
+	 \${MV} ${WRKDIR}/mbregex ext)
 
 EOF
 			;;
