@@ -809,7 +809,6 @@ carthage	ports/textproc/carthage
 cascade		ports/cad/cascade
 catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
-caudium-devel	ports/www/caudium-devel
 caudium10	ports/www/caudium10
 caudium12	ports/www/caudium12
 cave		ports/misc/cave
@@ -7488,7 +7487,6 @@ pidentd		ports/security/pidentd
 piewm		ports/x11-wm/piewm
 pike70		ports/lang/pike70
 pike72		ports/lang/pike72
-pike74		ports/lang/pike74
 pike76		ports/lang/pike76
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
