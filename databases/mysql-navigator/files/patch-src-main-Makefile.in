@@ -1,11 +1,11 @@
---- src/main/Makefile.in.orig	Tue Jan  1 03:23:14 2002
-+++ src/main/Makefile.in	Tue Jan  1 03:25:07 2002
-@@ -95,7 +95,7 @@
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../..
- CPPFLAGS = @CPPFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ $(LDFLAGS) -lqt2 -lmysqlclient
- mysqlnavigator_OBJECTS =  main.$(OBJEXT)
- mysqlnavigator_LDADD = $(LDADD)
- mysqlnavigator_DEPENDENCIES = 
+--- src/main/Makefile.in.orig	Sun Jan 27 00:19:49 2002
++++ src/main/Makefile.in	Sun Jan 27 00:20:00 2002
+@@ -85,7 +85,7 @@
+ INCLUDES = -I$(top_srcdir)/pics -I$(top_srcdir)/include @MYSQL_INCLUDES@ @QT_INCLUDES@
+ mysqlnavigator_SOURCES = main.cxx 
+ LDFLAGS = @MYSQL_LDFLAGS@ @QT_LDFLAGS@ -L../mysql 
+-LDADD = -lmysqlui -lmysqlclient -lqt
++LDADD = -lmysqlui -lmysqlclient -lqt2
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
