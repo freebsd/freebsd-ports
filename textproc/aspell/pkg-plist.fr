@@ -7,7 +7,7 @@ share/aspell/fr-80.multi
 share/aspell/fr-lrg.alias
 share/aspell/fr-med.alias
 share/aspell/fr-sml.alias
-share/aspell/fr.alias
+share/aspell/fr.multi
 share/aspell/fr.dat
 share/aspell/fr_CH-40.multi
 share/aspell/fr_CH-60.multi
@@ -16,14 +16,14 @@ share/aspell/fr_CH-lrg.alias
 share/aspell/fr_CH-med.alias
 share/aspell/fr_CH-only.rws
 share/aspell/fr_CH-sml.alias
-share/aspell/fr_CH.alias
+share/aspell/fr_CH.multi
 share/aspell/fr_FR-40.multi
 share/aspell/fr_FR-60.multi
 share/aspell/fr_FR-80.multi
 share/aspell/fr_FR-lrg.alias
 share/aspell/fr_FR-med.alias
 share/aspell/fr_FR-sml.alias
-share/aspell/fr_FR.alias
+share/aspell/fr_FR.multi
 share/aspell/fr_phonet.dat
 share/aspell/francais-40.alias
 share/aspell/francais-60.alias
