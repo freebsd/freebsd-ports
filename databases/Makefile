@@ -29,6 +29,7 @@
     SUBDIR += firebird
     SUBDIR += firebird-devel
     SUBDIR += fireprofile
+    SUBDIR += fpc-odbc
     SUBDIR += freetds
     SUBDIR += freetds-msdblib
     SUBDIR += gadfly
