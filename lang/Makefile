@@ -58,6 +58,7 @@
     SUBDIR += gprolog
     SUBDIR += guile
     SUBDIR += guileobjc
+    SUBDIR += hope
     SUBDIR += hugs
     SUBDIR += ici
     SUBDIR += icon

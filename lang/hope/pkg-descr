@@ -1,0 +1,8 @@
+HOPE is simple applicative (functional) language.
+It was been used in "Functional Programming" book by Anthony J. Field and
+Peter G. Harrison.
+
+This port installs simple lazy interpreter of hope.
+Author of this interpiter is Ross Paterson <ross@soi.city.ac.uk>. 
+
+WWW: http://www.soi.city.ac.uk/~ross/Hope/
