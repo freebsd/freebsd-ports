@@ -1,5 +1,5 @@
---- parser/python/PyPlucker/Writer.py.bak	Tue Oct 15 14:47:39 2002
-+++ parser/python/PyPlucker/Writer.py	Fri Jan 31 15:18:09 2003
+--- parser/PyPlucker/Writer.py.bak	Tue Oct 15 14:47:39 2002
++++ parser/PyPlucker/Writer.py	Fri Jan 31 15:18:09 2003
 @@ -81,7 +81,7 @@
          self._current_id = 11
  
