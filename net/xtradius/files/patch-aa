@@ -1,0 +1,25 @@
+--- src/Makefile.BSD.orig	Fri Aug 25 16:30:17 2000
++++ src/Makefile.BSD	Fri Aug 25 16:32:14 2000
+@@ -3,9 +3,9 @@
+ #
+ #
+ 
+-CC	= gcc
+-CFLAGS	= -Wall -g -DNOSHADOW -DXTRADIUS
+-LDFLAGS	= # -s #tatic
++#CC	= gcc
++CFLAGS	= -DNOSHADOW -DXTRADIUS 
++LDFLAGS	= -s #static
+ LIBS	=
+ LCRYPT	= -lcrypt
+ 
+@@ -15,7 +15,7 @@
+ #PAM	= -DPAM
+ #PAMLIB	= -lpam
+ 
+-BINDIR  = /usr/local/bin
+-SBINDIR = /usr/local/sbin
++BINDIR  = $(PREFIX)/bin
++SBINDIR = $(PREFIX)/sbin
+ 
+ .include "Make.inc"

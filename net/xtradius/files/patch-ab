@@ -1,0 +1,53 @@
+--- src/Make.inc.orig	Mon Apr  3 11:00:59 2000
++++ src/Make.inc	Wed May  3 18:56:35 2000
+@@ -4,7 +4,7 @@
+ #
+ #
+ 
+-RADIUS_DIR     = /etc/raddb
++RADIUS_DIR     = ${PREFIX}/etc/raddb
+ 
+ SERVER_OBJS    = radiusd.o dict.o files.o util.o md5.o attrprint.o \
+ 			acct.o radius.o pam.o log.o version.o proxy.o \
+@@ -111,21 +111,20 @@
+ 
+ install:
+ 	# Install the binaries
+-	install -d $(SBINDIR)
+-	install -d $(BINDIR)
+-	install -d $(RADIUS_DIR)
+-	install -m 755 -s radiusd $(SBINDIR)/radiusd
+-	install -m 755 -s radwho  $(BINDIR)
+-	install -m 755 -s raduse  $(BINDIR)
+-	install -m 755 -s radzap  $(BINDIR)
+-	install -m 755 -s radtest $(BINDIR)
+-	install -m 755    checkrad.pl $(SBINDIR)/checkrad
+-	install -m 755    radlast $(BINDIR)
++	${INSTALL} -d $(RADIUS_DIR)
++	${BSD_INSTALL_PROGRAM} radiusd $(SBINDIR)/radiusd
++	${BSD_INSTALL_PROGRAM} radwho  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} raduse  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radzap  $(BINDIR)
++	${BSD_INSTALL_PROGRAM} radtest $(BINDIR)
++	${BSD_INSTALL_SCRIPT} ../scripts/radwatch ${SBINDIR}/radwatch
++	${BSD_INSTALL_SCRIPT} checkrad.pl $(SBINDIR)/checkrad
++	${BSD_INSTALL_SCRIPT} radlast $(BINDIR)
+ 	# Install the config files
+ 	@echo "Creating/updating files in $(RADIUS_DIR)"; \
+ 	cd ../raddb; \
+ 	for i in [a-c]* [e-z]*; do \
+-		[ ! -f $(RADIUS_DIR)/$$i ] && cp $$i $(RADIUS_DIR)/$$i; \
++		[ ! -f $(RADIUS_DIR)/$$i ] && cp $$i $(RADIUS_DIR)/$$i; \
+ 	done; \
+ 	for i in dictionary*; do \
+ 		[ ! -f $(RADIUS_DIR)/$$i ] && cp $$i $(RADIUS_DIR)/$$i; \
+@@ -133,8 +132,4 @@
+ 			echo "** $(RADIUS_DIR)/$$i"; \
+ 			nt=1; \
+ 		fi; \
+-	done; \
+-	if [ "$$nt" ]; then \
+-		echo "** The samples in ../raddb are newer than these files";\
+-		echo "** Please investigate and copy manually if appropriate";\
+-	fi
++	done;
