@@ -3,7 +3,7 @@
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
-# $Id: Makefile,v 1.4 1998/10/30 11:21:54 asami Exp $
+# $Id: Makefile,v 1.5 1998/11/20 04:14:18 asami Exp $
 #
 
 DISTNAME=	GimpUserManual-1.0.0
@@ -57,9 +57,6 @@ DISTFILES=	GimpUserManual-1.0.0-pdf
 EXTRACT_ONLY=	#empty
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-
-post-fetch:
-	@${MKDIR} ${WRKDIR}
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gimp
