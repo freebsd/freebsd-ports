@@ -16,7 +16,7 @@ COMMENT=	Fast user switching applet for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gtk20 gnomepanel
+USE_GNOME=	gnomehack intlhack gtk20 gnomepanel
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
