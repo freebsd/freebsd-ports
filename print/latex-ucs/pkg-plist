@@ -3,7 +3,9 @@ bin/latexout.pl
 bin/makeunidef.pl
 %%CLASSDIR%%/ucs.sty
 %%CLASSDIR%%/ucsencs.def
-%%CLASSDIR%%/utf8.def
+%%CLASSDIR%%/ucsutils.sty
+%%CLASSDIR%%/ucshyper.sty
+%%CLASSDIR%%/utf8x.def
 %%CJK%%%%CLASSDIR%%/c00enc.def
 %%CJK%%%%CLASSDIR%%/c10enc.def
 %%CJK%%%%CLASSDIR%%/c40enc.def
