@@ -1,0 +1,35 @@
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/bg.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-bottom.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-bottomleft.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-bottomright.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-left.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-right.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-top.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-topleft.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/border-topright.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/email.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/error.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx/nonewmail.png
+share/gnome/gdesklets/Displays/imapmail/dark-theme/imapmail.display
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/bg.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-bottom.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-bottomleft.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-bottomright.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-left.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-right.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-top.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-topleft.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/border-topright.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/email.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/error.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/gfx/nonewmail.png
+share/gnome/gdesklets/Displays/imapmail/light-theme/imapmail.display
+share/gnome/gdesklets/Sensors/imapmail/__init__.py
+share/gnome/gdesklets/Sensors/imapmail/__init__.pyc
+share/gnome/gdesklets/Sensors/imapmail/__init__.pyo
+@dirrm share/gnome/gdesklets/Displays/imapmail/dark-theme/gfx
+@dirrm share/gnome/gdesklets/Displays/imapmail/dark-theme
+@dirrm share/gnome/gdesklets/Displays/imapmail/light-theme/gfx
+@dirrm share/gnome/gdesklets/Displays/imapmail/light-theme
+@dirrm share/gnome/gdesklets/Displays/imapmail
+@dirrm share/gnome/gdesklets/Sensors/imapmail
