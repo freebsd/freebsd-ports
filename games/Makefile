@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.157 1998/07/14 01:17:07 dburr Exp $
+# $Id: Makefile,v 1.158 1998/07/31 19:34:14 nectar Exp $
 #
 
     SUBDIR += 3dc
@@ -55,6 +55,7 @@
     SUBDIR += oneko
     SUBDIR += oonsoo
     SUBDIR += pente
+    SUBDIR += pp
     SUBDIR += qcc
     SUBDIR += quakeserver
     SUBDIR += seabattle
