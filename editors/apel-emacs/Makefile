@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/05/09 16:14:10 shige Exp $
+# $Id: Makefile,v 1.7 1999/05/12 23:05:14 asami Exp $
 #
 
 DISTNAME=	apel-${APEL_VER}
@@ -14,7 +14,7 @@ MAINTAINER?=	shige@FreeBSD.ORG
 
 # distfile version
 APEL_VER=	9.18
-APEL_SETUPEL=	apel-setup.el
+APEL_SETUPEL=	apel-setupel.el
 APELDOCDIR=	share/doc/apel
 
 # This is a master port.
@@ -26,7 +26,7 @@ EMACS_NAME=	emacs
 EMACS_PORT=	emacs
 EMACS_VER=	19.34
 EMACS_LIBDIR=	share/${EMACS_NAME}
-# emacs requires *-setup.el
+# emacs requires *-setupel.el
 REQUIRE_SETUPEL=  YES
 .endif
 
@@ -51,9 +51,10 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
 .else
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
+SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
+		TARGETS="${APEL_SETUPEL}"
 PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		APELDOCDIR=${APELDOCDIR}
+		APELDOCDIR=${APELDOCDIR} APEL_SETUPEL=${APEL_SETUPEL}
 MAKE_FLAGS=	EMACS=${EMACS_CMD}
 .else
 .BEGIN:

@@ -1,0 +1,9 @@
+;;
+;; @(#)apel-setupel.el -- apel emacs load-path setup elisp file.
+;;                                            --  by shige@FreeBSD.ORG
+
+(setq load-path (append '(
+	"@@PREFIX@@/@@EMACS_LIBDIR@@/site-lisp/apel"
+	"@@PREFIX@@/@@EMACS_LIBDIR@@/@@EMACS_VER@@/site-lisp/emu"
+ ) load-path))
+(provide 'apel-setupel)
