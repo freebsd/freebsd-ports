@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hsftp
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/ \
 		${MASTER_SITE_SUNSITE}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	ssh:${PORTSDIR}/security/openssh
 CONFIGURE_ARGS+=	--with-openssh
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_OPENSSH)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you would like build hsftp with OpenSSH support"
