@@ -7308,6 +7308,7 @@ transcode	ports/graphics/transcode
 transfig	ports/print/transfig
 transpec	src/share/sgml/transpec
 transproxy	ports/www/transproxy
+translate	ports/misc/translate
 tree		ports/sysutils/tree
 treecc		ports/lang/treecc
 treeviewx	ports/biology/treeviewx
