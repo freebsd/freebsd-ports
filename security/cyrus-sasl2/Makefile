@@ -111,6 +111,10 @@ CONFIGURE_ARGS+=--enable-sql
 SQL=	"@comment "
 .endif
 
+.if defined(WITH_AUTHDAEMON)
+CONFIGURE_ARGS+=--with-authdaemond
+.endif
+
 .if defined(WITH_DEV_URANDOM)
 CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
 .endif
