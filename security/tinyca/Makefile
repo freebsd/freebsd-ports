@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/
 
@@ -23,12 +23,17 @@ USE_PERL5=	yes
 USE_OPENSSL=	yes
 NO_BUILD=	yes
 DOC_FILES=	INSTALL
-LIB_FILES=	CA.pm CERT.pm GUI.pm KEY.pm OpenSSL.pm REQ.pm TCONFIG.pm
+LIB_FILES=	CA.pm CERT.pm GUI.pm HELPERS.pm KEY.pm OpenSSL.pm REQ.pm TCONFIG.pm
+LIB2_FILES=	TCONFIG.pm HELPERS.pm CALLBACK.pm X509_infobox.pm WORDS.pm
 
 do-install:
 	@${MKDIR} ${SITE_PERL}/${PORTNAME}/
+	@${MKDIR} ${SITE_PERL}/${PORTNAME}/GUI
 .for file in ${LIB_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/lib/${file} ${SITE_PERL}/${PORTNAME}
+.endfor
+.for file in ${LIB2_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/lib/GUI/${file} ${SITE_PERL}/${PORTNAME}/GUI
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/templates/openssl.cnf ${PREFIX}/etc/tinyca.cnf
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" -e "s:%%SITE_PERL%%:${SITE_PERL}:g" \
