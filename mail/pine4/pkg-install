@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+if [ "$2" = "POST-INSTALL" -o -n "${BATCH}" -o -n "${PACKAGE_BUILDING}" ]; then
   exit 0
 fi
 
