@@ -116,6 +116,12 @@ post-patch:
 		-e 's|api.mpt||' \
 		-e 's|^(install-man.*)install-manm|\1|' \
 		${WRKSRC}/doc/mp4v2/Makefile.in
+# Disable xvid support - mpep4ip doesn't support xvid 1.0.x, but tries
+# to use it anyway.
+	@${REINPLACE_CMD} -e 's|use_mpeg4ip_xvid=false|use_mpeg4ip_xvid=true|g' \
+		-e 's|#define HAVE_XVID_H 1||g'	\
+		${WRKSRC}/configure
+
 .if ${ARCH} != "i386"
 # emms opcode should be noop in non-i386 non-MMX ARCH
 	@${ECHO_CMD} '#define EMMS()' \
