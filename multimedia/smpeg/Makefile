@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free MPEG1 video player library with sound support
 
+USE_GNOME=
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
