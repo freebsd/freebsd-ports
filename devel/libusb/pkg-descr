@@ -1,0 +1,8 @@
+A library originally developed under Linux to give userland programs
+an API to access to USB hardware. The FreeBSD port was originally
+done by Richard Tobin <richard@cogsci.ed.ac.uk> and should still
+be considered "beta" (not all calls implemented in the Linux port
+are available).  Allows gPhoto, gPhoto2, s10sh and others to access
+USB under FreeBSD successfully.
+
+WWW: http://sourceforge.net/projects/libusb/
