@@ -21,10 +21,16 @@ USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=	linux-mesa-elf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=i	"does not build on FreeBSD ${OSVERSION}"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tank ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/tank
 	${INSTALL_DATA} ${WRKSRC}/*.tga ${PREFIX}/share/tank
 	${INSTALL_DATA} ${WRKSRC}/*.au ${PREFIX}/share/tank
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
