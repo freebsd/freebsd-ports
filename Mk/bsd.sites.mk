@@ -90,6 +90,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
+	ftp://ftp.shellhung.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/
 
@@ -164,6 +165,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
+	http://cpan.shellhung.org/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/
 
