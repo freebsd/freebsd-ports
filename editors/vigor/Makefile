@@ -22,8 +22,6 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 WRKSRC= 	${WRKDIR}/${DISTNAME}/build
 CFLAGS+= 	-I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
 
-MAN1=		ex.1 vi.1 view.1
-
 # Uglyness. So is "-ltcl -ltk -ltcl", so I don't feel bad.
 post-patch:
 	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.orig
