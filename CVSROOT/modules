@@ -6544,7 +6544,7 @@ qdraw		ports/graphics/qdraw
 qfsm		ports/cad/qfsm
 qglviewer	ports/graphics/qglviewer
 qgo		ports/games/qgo
-qhacc		ports/misc/qhacc
+qhacc		ports/finance/qhacc
 qico		ports/comms/qico
 qident		ports/security/qident
 qinx		ports/x11-wm/qinx
