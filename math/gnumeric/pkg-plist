@@ -955,6 +955,7 @@ share/locale/uk/LC_MESSAGES/gnumeric.mo
 share/locale/zh_CN/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/pixmaps/gnumeric
+@dirrm share/gnome/omf/gnumeric
 @dirrm share/gnome/help/gnumeric/C/stylesheet-images
 @dirrm share/gnome/help/gnumeric/C/figures
 @dirrm share/gnome/help/gnumeric/C
