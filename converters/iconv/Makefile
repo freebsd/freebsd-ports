@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iconv
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	converters
 MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 

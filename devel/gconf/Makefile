@@ -17,7 +17,7 @@ MAINTAINER=	ade@FreeBSD.org
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		guile.9:${PORTSDIR}/lang/guile \
 		oaf.0:${PORTSDIR}/devel/oaf \
-		iconv.1:${PORTSDIR}/converters/iconv
+		iconv.2:${PORTSDIR}/converters/iconv
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
