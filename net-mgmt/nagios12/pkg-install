@@ -5,8 +5,8 @@
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
-user=netsaint
-group=netsaint
+user=nagios
+group=nagios
 
 ask() {
     local question default answer
@@ -56,8 +56,8 @@ if [ x"$2" = xPRE-INSTALL ]; then
     else
         echo "You need a user \"${user}\"."
         if yesno "Would you like me to create it" y; then
-            /usr/sbin/pw useradd ${user} -g ${group} -h - -d ${PKG_PREFIX}/var/netsaint \
-                -s /nonexistent -c "Netsaint pseudo-user" || exit
+            /usr/sbin/pw useradd ${user} -g ${group} -h - -d ${PKG_PREFIX}/var/nagios \
+                -s /nonexistent -c "Nagios pseudo-user" || exit
             echo "Done."
         else
             echo "Please create it, and try again."

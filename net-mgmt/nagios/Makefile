@@ -1,18 +1,16 @@
-# New ports collection makefile for:	netsaint
-# Date created:				Wed 12 Jul 2000
-# Whom:					will
+# New ports collection makefile for:	nagios
+# Date created:				19 May 2002
+# Whom:					Blaz Zupan <blaz@si.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	netsaint
-PORTVERSION=	0.0.7
-PORTEPOCH=	1
+PORTNAME=	nagios
+PORTVERSION=	1.0.b1
 CATEGORIES=	net
-MASTER_SITES=	http://netsaint.sourceforge.net/download/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=dwcjr
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=nagios
+DISTNAME=	nagios-1.0b1
 
 MAINTAINER=	blaz@si.FreeBSD.org
 
@@ -24,15 +22,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
-CONFIGURE_ARGS=	--with-command-user=netsaint \
+CONFIGURE_ARGS=	--with-command-user=nagios \
 		--with-command-grp=nogroup \
-		--with-netsaint-user=netsaint \
-		--with-netsaint-grp=netsaint \
-		--sbindir=${PREFIX}/share/netsaint/sbin \
+		--with-nagios-user=nagios \
+		--with-nagios-grp=nagios \
+		--with-template-objects \
+		--with-template-extinfo \
+		--with-init-dir=${PREFIX}/etc/rc.d \
+		--sbindir=${PREFIX}/share/nagios/sbin \
 		--libexecdir=${PREFIX}/libexec/netsaint \
-		--datadir=${PREFIX}/share/netsaint \
-		--sysconfdir=${PREFIX}/etc/netsaint \
-		--localstatedir=${PREFIX}/var/netsaint
+		--datadir=${PREFIX}/share/nagios \
+		--sysconfdir=${PREFIX}/etc/nagios \
+		--localstatedir=${PREFIX}/var/nagios \
+		--prefix=${PREFIX}
 
 INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
 
@@ -41,12 +43,5 @@ pre-fetch:
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
-BSDIMAGES=	bsd_logofullsize.gif bsd_sblogo.gif
-
-post-install:
-.for i in ${BSDIMAGES}
-	${INSTALL_DATA} ${WRKDIR}/netsaint-0.0.7b6/html/images/$i ${PREFIX}/share/${PORTNAME}/images/
-.endfor
 
 .include <bsd.port.mk>
