@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Aug 22 18:31:55 2001
-+++ Makefile	Fri May 10 11:04:48 2002
-@@ -31,24 +31,6 @@
+--- Makefile.orig	Fri Jul 12 20:44:01 2002
++++ Makefile	Sat Aug 31 17:54:01 2002
+@@ -31,33 +31,6 @@
  			$(INSTALL) -m 644 $$p $(R)$(mandir)/man$$i; \
  		done \
  	done
@@ -19,8 +19,17 @@
 -		fi; \
 -	done; \
 -	if [ "$$nt" ]; then \
--		echo "** The samples in ../raddb are newer than these files";\
--		echo "** Please investigate and copy manually if appropriate";\
+-		echo "**";\
+-		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
+-		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
+-		echo "**";\
+-		echo "** The sample configuration files in `pwd`";\
+-		echo "** are newer than those in $(R)$(raddbdir)";\
+-		echo "**";\
+-		echo "** Please investigate and manually copy (if appropriate) the files listed above.";\
+-		echo "**";\
+-		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
+-		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
 -	fi
  
  common:
