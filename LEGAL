@@ -145,6 +145,7 @@ mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
 mindfocus-*		ports/games/mindfocus	contains commercial
 						character data
 mindtermbin-*		ports/security/mindterm-binary	Do not sell for profit.
+mingw/opengl95.exe	ports/devel/mingw-opengl-headers	Not sure if we can redistribute it freely
 mmv/*			ports/misc/mmv		Restrictive/unclear copyright
 molden			ports/biology/molden	free for academic,
 						non profit usage
