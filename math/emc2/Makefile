@@ -9,12 +9,11 @@ PORTNAME=	emc2
 PORTVERSION=	2.15
 PORTREVISION=	1
 CATEGORIES=	math science
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/emc2/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}c
+MASTER_SITES=	http://www-rocq1.inria.fr/gamma/cdrom/ftp/emc2/
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	\
-		${PORTNAME}.doc.en.ps.gz ${PORTNAME}.doc.fr.ps.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}${EXTRACT_SUFX}	\
+		${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
+EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
