@@ -22,6 +22,7 @@
     SUBDIR += dnsdoctor
     SUBDIR += dnsflood
     SUBDIR += dnshijacker
+    SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsproxy
     SUBDIR += dnssecwalker

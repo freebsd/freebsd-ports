@@ -1,0 +1,54 @@
+# New ports collection makefile for:	dnsjava
+# Date created:				2004-11-19
+# Whom:					Herve Quiroz <hq@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dnsjava
+PORTVERSION=	1.6.4
+CATEGORIES=	dns java
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	hq@FreeBSD.org
+COMMENT=	Implementation of DNS in Java
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+
+USE_ANT=	yes
+ALL_TARGET=	jar
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	docsclean docs
+.endif
+
+SAMPLE_FILES=	examples.html USAGE dig.java jnamed.java lookup.java update.java
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar ${SAMPLE_FILES:S,^,%%EXAMPLESDIR%%/,}
+PLIST_DIRS=	%%EXAMPLESDIR%%
+.if !defined(NOPORTDOCS)
+OTHERDOCS=	README Changelog
+PORTDOCS=	apidocs ${OTHERDOCS}
+.endif
+
+.include <bsd.port.pre.mk>
+
+do-install:
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO_MSG} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}/..."
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${SAMPLE_FILES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}/
+	@${ECHO_MSG} " [ DONE ]"
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+	@cd ${WRKSRC}/doc \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/apidocs/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} ${WRKSRC}/doc/{} ${DOCSDIR}/apidocs/{} \;
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${ECHO_MSG} " [ DONE ]"
+.endif
+
+.include <bsd.port.post.mk>
