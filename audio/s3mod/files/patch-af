@@ -1,0 +1,20 @@
+--- gus.h.orig	Sun Oct 22 05:06:38 1995
++++ gus.h	Sat Jan 27 15:21:29 2001
+@@ -26,7 +26,7 @@
+ #ifndef _GUS_H
+ #define _GUS_H 
+ 
+-#include <sys/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ #define ERR_SEQUENCER    51
+ #define ERR_NOGUS        53
+@@ -41,7 +41,7 @@
+ 
+ extern unsigned char _seqbuf[];
+ extern int _seqbuflen, _seqbufptr;
+-unsigned short base_freq_table[];
++unsigned short base_freq_table[16];
+ extern unsigned int gus_total_mem;
+ 
+ int gus_mem_free(int dev);

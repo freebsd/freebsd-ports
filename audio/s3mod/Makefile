@@ -7,6 +7,7 @@
 
 PORTNAME=	s3mod
 PORTVERSION=	1.09
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
@@ -19,7 +20,7 @@ ALL_TARGET=	freebsd
 pre-patch:
 	@${CP} ${WRKSRC}/DspDrivers/linux_dsp.c ${WRKSRC}/dsp.c
 
-post-install:
-	@strip ${PREFIX}/bin/s3mod
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/s3mod ${PREFIX}/bin
 
 .include <bsd.port.mk>
