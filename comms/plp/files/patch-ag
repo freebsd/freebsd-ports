@@ -1,0 +1,11 @@
+--- rfsv/rfsv32.cc.orig	Sat Feb 19 21:12:22 2000
++++ rfsv/rfsv32.cc	Sat Feb 19 21:12:35 2000
+@@ -186,7 +186,7 @@
+ 	  long date = us;
+ 	  char dateBuff[100];
+ 	  struct tm *t;
+-	  t = gmtime(&date);
++	  t = gmtime((time_t *)&date);
+ 	  strftime(dateBuff, 100, "%d/%m/%y %H:%M:%S", t);
+ 	  cout << " " << dateBuff;
+ 	}
