@@ -1,0 +1,11 @@
+--- firemake/libraries.orig	Tue Jan 27 02:20:13 2004
++++ firemake/libraries	Tue Jan 27 02:20:35 2004
+@@ -96,7 +96,7 @@ case $PHASE in
+ 			dispn "	$LIBRARY..."
+ 			$ECHO "	$INSTALL ${LIBRARY}.a \$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
+ 			$ECHO "	$INSTALL ${LIBRARY}.so.$VERSION \$(LIBDIR) $INSTALL_USER $INSTALL_GROUP 0755"
+-			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so.$VERSION2"
++			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so.0"
+ 			$ECHO "	ln -sf ${LIBRARY}.so.$VERSION \$(LIBDIR)/${LIBRARY}.so"
+ 			disp "done"
+ 		done

@@ -1,8 +1,11 @@
 @comment $FreeBSD$
+bin/fdnsip
+bin/fdnsmx
+bin/fdnsmxlist
+bin/fdnsname
+bin/fdnstxt
 include/firedns.h
+lib/libfiredns.a
 lib/libfiredns.so
 lib/libfiredns.so.0
-lib/libfiredns.a
-bin/fdnsip
-bin/fdnstxt
-bin/fdnsname
+lib/libfiredns.so.0.9.7
