@@ -14,3 +14,7 @@ and %%DVIPDFMDIR%%:
 	kozukax.map
 	morisawax.map
 	cid-otf-noembed.map (for Ryumin/GothicBBB)
+
+ To enable these maps, use the following command:
+
+ # updmap-sys-ptex --enable Map=mapname.map

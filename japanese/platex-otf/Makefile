@@ -7,16 +7,13 @@
 PORTNAME=	platex-otf
 PORTVERSION=	1.2.4
 CATEGORIES=	japanese print
-MASTER_SITES=	http://psitau.at.infoseek.co.jp/
-DISTFILES=	otfstable${EXTRACT_SUFX} otfmanual.pdf
-EXTRACT_ONLY=	otfstable${EXTRACT_SUFX}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	hrs
+DISTFILES=	platex-otf-${PORTVERSION}${EXTRACT_SUFX} \
+		platex-otf-manual-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A pLaTeX package for OpenType font support
-
-BROKEN=		Unfetchable
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		mktexlsr:${PORTSDIR}/japanese/ptex-tetex \
@@ -27,7 +24,6 @@ RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		udvips:${PORTSDIR}/japanese/dvipsk \
 		dvipdfmx:${PORTSDIR}/print/dvipdfmx
 
-USE_ZIP=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} CLASSDIR=${CLASSDIR} \
 		VFDIR=${VFDIR} TFMDIR=${TFMDIR} \
 		DVIPSDIR=${DVIPSDIR} DVIPDFMDIR=${DVIPDFMDIR}
@@ -37,16 +33,17 @@ PKGMESSAGE_SUB=	DVIPSDIR=${DVIPSDIR_DST} \
 		DVIPDFMDIR=${DVIPDFMDIR_DST}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
 CLASSDIR_SRC=	${WRKSRC}/sty
-CLASSDIR_DST=	${TEXMFLOCAL}/ptex/platex/otf
+CLASSDIR_DST=	${TEXMFDIR}/ptex/platex/otf
 CLASSFILES=	ajmacros.sty mlcid.sty mlutf.sty otf.sty redeffont.sty
 
 OFMDIR_SRC=	${WRKSRC}/ofm
-OFMDIR_DST=	${TEXMFLOCAL}/fonts/ofm/otf
+OFMDIR_DST=	${TEXMFDIR}/fonts/ofm/otf
 OFMFILES=	otf-cjmr-h.ofm otf-cjgr-h.ofm otf-cjmb-h.ofm otf-cjgb-h.ofm \
 		otf-cjmgr-h.ofm otf-cjml-h.ofm otf-cjmr-v.ofm otf-cjgr-v.ofm \
 		otf-cjmb-v.ofm otf-cjgb-v.ofm otf-cjmgr-v.ofm otf-cjml-v.ofm \
@@ -57,7 +54,7 @@ OFMFILES=	otf-cjmr-h.ofm otf-cjgr-h.ofm otf-cjmb-h.ofm otf-cjgb-h.ofm \
 		hiramaru-w4-h.ofm hiramaru-w4-v.ofm
 
 TFMDIR_SRC=	${WRKSRC}/tfm
-TFMDIR_DST=	${TEXMFLOCAL}/fonts/tfm/otf
+TFMDIR_DST=	${TEXMFDIR}/fonts/tfm/otf
 TFMFILES=	cidcgr0-h.tfm cidcgr0-v.tfm cidcgr1-h.tfm \
 		cidcgr1-v.tfm cidcgr2-h.tfm cidcgr2-v.tfm \
 		cidcgr3-h.tfm cidcgr3-v.tfm cidcgr4-h.tfm \
@@ -294,7 +291,7 @@ TFMFILES=	cidcgr0-h.tfm cidcgr0-v.tfm cidcgr1-h.tfm \
 		utftmrf-v.tfm
 
 VFDIR_SRC=	${WRKSRC}/vf
-VFDIR_DST=	${TEXMFLOCAL}/fonts/vf/otf
+VFDIR_DST=	${TEXMFDIR}/fonts/vf/otf
 VFFILES=	cidcgr0-h.vf cidcgr0-v.vf cidcgr1-h.vf \
 		cidcgr1-v.vf cidcgr2-h.vf cidcgr2-v.vf \
 		cidcgr3-h.vf cidcgr3-v.vf cidcgr4-h.vf \
@@ -507,7 +504,7 @@ VFFILES=	cidcgr0-h.vf cidcgr0-v.vf cidcgr1-h.vf \
 		utftmrf-v.vf
 
 DVIPDFMDIR_SRC=	${WRKSRC}/fontmap/dvipdfm
-DVIPDFMDIR_DST=	${TEXMFLOCAL}/dvipdfm/otf
+DVIPDFMDIR_DST=	${TEXMFDIR}/fonts/map/ptex/dvipdfm/otf
 DVIPDFMFILES=	cktx.map hiraginox.map kozukax.map morisawax.map
 DVIPDFMFILES_O=	"cktx.map(for dvipdfmx)" \
 		"hiraginox.map(for dvipdfmx)" \
@@ -515,7 +512,7 @@ DVIPDFMFILES_O=	"cktx.map(for dvipdfmx)" \
 		"morisawax.map(for dvipdfmx)"
 
 DVIPSDIR_SRC=	${WRKSRC}/fontmap/dvips
-DVIPSDIR_DST=	${TEXMFLOCAL}/dvips/ptex/otf
+DVIPSDIR_DST=	${TEXMFDIR}/fonts/map/ptex/dvips/otf
 DVIPSFILES=	ckt.map hiragino.map kozuka.map morisawa.map
 DVIPSFILES_O=	"ckt.map(for udvips)" \
 		"hiragino.map(for udvips)"\
@@ -570,7 +567,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fontmap/vfontmap.txt  \
 			${DOCSDIR}/vfontmap.platex-otf
-	${INSTALL_DATA} ${DISTDIR}/otfmanual.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/otfmanual.pdf ${DOCSDIR}
 .endif
 
 post-install:
