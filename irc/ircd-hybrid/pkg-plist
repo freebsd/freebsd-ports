@@ -1,5 +1,5 @@
 sbin/ircd
-man/man8/ircd.8
+man/man8/ircd.8.gz
 etc/ircd/ircd.conf
 etc/ircd/ircd.motd
 etc/ircd/kline.conf
