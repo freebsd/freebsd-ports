@@ -1,0 +1,8 @@
+MuSE is an application for the mixing, encoding, and network streaming of
+sound. MuSE can simultaniously mix up to 6 encoded audio bitstreams (from
+files or network) plus a soundcard input signal. The resulting stream can
+be played locally on the sound card and/or encoded as an mp3 bitstream sent
+to a broadcast server. MuSE offers an intuitive interface to be operated
+realtime and can run in "slick" mode from commandline.
+
+WWW: http://muse.dyne.org/

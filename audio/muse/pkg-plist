@@ -1,0 +1,10 @@
+bin/muse
+share/doc/MuSE/AUTHORS
+share/doc/MuSE/COPYING
+share/doc/MuSE/ChangeLog
+share/doc/MuSE/KNOWN-BUGS
+share/doc/MuSE/NEWS
+share/doc/MuSE/README
+share/doc/MuSE/TODO
+share/doc/MuSE/USAGE
+@dirrm share/doc/MuSE
