@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnometerminal
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-terminal/2.2
@@ -14,7 +14,7 @@ DISTNAME=	gnome-terminal-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Terminal component for the GNOME 2.0 Desktop
+COMMENT=	Terminal component for the GNOME 2 Desktop
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_ZVT)
 CONFIGURE_ARGS=	--with-widget=zvt
@@ -32,9 +32,5 @@ USE_GNOME+=	libzvt
 CONFIGURE_ARGS=	--with-widget=vte
 USE_GNOME+=	vte
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
