@@ -24,16 +24,19 @@ RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 NO_BUILD=		yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
-PREFIX=			${X11BASE}/share/doc/csound
-WRKSRC=			${WRKDIR}/csound-${PORTVERSION}
+PREFIX=			${X11BASE}
+WRKSRC=			${WRKDIR}/csound-${PORTVERSION}/manual
 
 pre-install:
-	${RM} -f ${PLIST}
-	cd ${WRKSRC} && ${FIND} -s . -type f | \
-		${CUT} -c3-999 >> ${PLIST} \
-		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+	@${RM} -f ${PLIST}
+	cd ${WRKSRC} && ${FIND} -s * -type f | \
+		${SED} -e 's:^:share/doc/csound/:' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's:^:@dirrm share/doc/csound/:' >> ${PLIST}
+		${ECHO_CMD} @dirrm share/doc/csound >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}
+	@${MKDIR} ${PREFIX}/share/doc/csound
+	cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}/share/doc/csound
 
 .include <bsd.port.mk>
