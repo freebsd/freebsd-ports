@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adobe-cmaps
-PORTVERSION=	200109
+PORTVERSION=	200204
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.gyve.org/pub/gs-cjk/ \
 		http://www.matsusaka-u.ac.jp/mirror/gs-cjk/
@@ -21,8 +21,7 @@ RESOURCE=	${PREFIX}/share/ghostscript/Resource
 do-install:
 	@${MKDIR} ${RESOURCE}/CIDFont
 	@${MKDIR} ${RESOURCE}/Font
-.for i in CMap ac14 ag14 ai0 aj14 aj20 ak12 pdfcorefont rksj-cmaps
-	${TAR} -C ${WRKSRC} -cf - ${i} | ${TAR} -C ${RESOURCE} -xf -
-.endfor
+	@cd ${WRKSRC} && find . \! -name '.*' \
+		| cpio --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${RESOURCE}
 
 .include <bsd.port.mk>
