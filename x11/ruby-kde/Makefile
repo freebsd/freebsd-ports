@@ -15,9 +15,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/qt.rb:${PORTSDIR}/x11-toolkits/ruby-qt
 
+USE_KDELIBS_VER=	1
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
