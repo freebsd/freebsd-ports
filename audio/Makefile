@@ -48,6 +48,7 @@
     SUBDIR += crip
     SUBDIR += csound
     SUBDIR += csound-manual
+    SUBDIR += cue2toc
     SUBDIR += cymbaline
     SUBDIR += dagrab
     SUBDIR += dap

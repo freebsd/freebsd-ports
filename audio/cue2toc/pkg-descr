@@ -1,0 +1,4 @@
+Cue2Toc is a perl script that will convert CUE file into a cdrdao TOC file.
+The script can handle audio CUE files only.
+
+WWW: http://www.tuxcoder.com/cue2toc/
