@@ -1,0 +1,14 @@
+--- stlport/stdexcept.orig	Thu Jun  6 23:31:29 2002
++++ stlport/stdexcept	Thu Jun  6 23:31:57 2002
+@@ -49,6 +49,11 @@
+ 
+ _STLP_BEGIN_NAMESPACE
+ 
++/* maybe limit to gcc 3.x */
++#if defined( __GNUC__)
++#define _STLP_NOTHROW_INHERENTLY throw()
++#endif
++
+ class _STLP_CLASS_DECLSPEC __Named_exception : public _STLP_EXCEPTION_BASE {
+ public:
+   __Named_exception(const string& __str) 

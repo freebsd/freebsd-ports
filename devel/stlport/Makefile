@@ -24,7 +24,9 @@ WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes
 MAKEFILE=	gcc-freebsd.mak
-MAKE_ARGS=	INSTALLDIR=${PREFIX}
+MAKE_ARGS+=	INSTALLDIR=${PREFIX} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+		PTHREAD_LIBS=${PTHREAD_LIBS}
+
 INSTALL_TARGET=	install_unix
 INSTALLS_SHLIB=	yes
 
@@ -41,6 +43,9 @@ post-install:
 .endif
 
 post-build test:
-	cd ${WRKSRC}/../test/eh && ${GMAKE} -f ${MAKEFILE}
+	cd ${WRKSRC}/../test/eh && ${SETENV} CC=${CC} CXX=${CXX} \
+	${GMAKE} -f ${MAKEFILE} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+	PTHREAD_LIBS=${PTHREAD_LIBS} CC=${CC} CXX=${CXX}
 
 .include <bsd.port.post.mk>
