@@ -18,7 +18,7 @@ AP_SHARE=${PKG_PREFIX}/share/doc/apache
 
 FPINSTALL=${PKG_PREFIX}/frontpage/version4.0/fp_install.sh
 CHANGESERVER=${PKG_PREFIX}/frontpage/version4.0/change_server.sh
-FPDOCDIR=${AP_SHARE}/manual/mod/mod_frontpage
+FPDOCDIR=${AP_SHARE}/manual/frontpage
 IMAGES_DIR=${AP_SHARE}/manual/images
 IMAGES_VTI=${PKG_PREFIX}/www/data/images/_vti_cnf
 
@@ -67,13 +67,6 @@ create_user()
 	fi
 }
 		
-create_apache_lang_doc ()
-{
-	/bin/cat ${AP_SHARE}/index.html.en-dist | \
-	   /usr/bin/sed -e 's;@@HOSTNAME@@;'${HOST_NAME}';' \
-	   > ${AP_SHARE}/index.html.en
-}
-
 create_apache_doc_root ()
 {
     if [ ! -d ${AP_CGI} ]; then
@@ -145,7 +138,6 @@ case $2 in
     POST-INSTALL)
 	# If we are not in batch mode then run the FP install script.
         if [ "${PKG_BATCH}" = "NO" ]; then
-	    create_apache_lang_doc
 	    create_apache_doc_root
 	    fix_frontpage_scripts
 	    fix_httpd_conf

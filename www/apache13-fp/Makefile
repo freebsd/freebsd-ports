@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	apache_fp
-PORTVERSION=	1.3.20
+PORTNAME=	apache
+PKGNAMESUFFIX=	_fp
+PORTVERSION=	1.3.22
 #PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
@@ -28,7 +29,7 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/
-DISTNAME=	apache_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${APACHE} ${FRONTPAGE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
@@ -43,16 +44,19 @@ APACHE=		${DISTNAME}${EXTRACT_SUFX}
 ONLY_FOR_ARCHS=	i386 alpha
 
 .if ${ARCH} == i386
-.ifdef WANT_FREEBSD_EXT
-FRONTPAGE=	fp40.freebsd.tar.Z
-.if ${OSVERSION} < 500016
-PKGMESSAGE=	pkg-message.freebsd
-.endif
-.else
+.ifdef WANT_BSDI_EXT
 FRONTPAGE=	fp40.bsdi.tar.Z
 EXTRA_PATCHES=	${FILESDIR}/change_server.bsdi ${FILESDIR}/fp_install.bsdi
-.if ${OSVERSION} < 500016
+.if ${OSVERSION} < 4300001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
 PKGMESSAGE=	pkg-message.bsdi
+.endif
+.else
+.if (defined(BATCH) && ${BATCH} == YES ) || !exists(/usr/lib/compat/libc.so.3)
+LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
+.endif
+FRONTPAGE=	fp40.freebsd.tar.Z
+.if ${OSVERSION} < 4300001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
+PKGMESSAGE=	pkg-message.freebsd
 .endif
 .endif
 .elif ${ARCH} == alpha
@@ -71,10 +75,9 @@ FPSETPERM=	frontpage/${FP_REV}/set_default_perms.sh
 README=		frontpage/${FP_REV}/readme.htm
 SERK=		frontpage/${FP_REV}/serk
 FPHTTPD=	${PREFIX}/frontpage/${FP_REV}/apache-fp
-AP_SHARE=	${PREFIX}/share/doc/apache
-MOD_FPDOCDIR=	${AP_SHARE}/manual/mod/mod_frontpage
+MOD_FPDOCDIR=	${DOCSDIR}/manual/frontpage
 MOD_FP=		${FILESDIR}/mod_frontpage.c
-IMAGES_DIR=	${AP_SHARE}/manual/images
+IMAGES_DIR=	${DOCSDIR}/manual/images
 
 INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
 
@@ -140,7 +143,7 @@ CONFIGURE_ARGS+=	--enable-suexec \
 MAN8+=	suexec.8
 .endif
 
-.if ${OSVERSION} < 500016
+.if ${OSVERSION} < 430001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
 pre-extract:
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
 	   ${ECHO} ; \
@@ -154,15 +157,6 @@ pre-extract:
 	   ${ECHO} ; \
 	   ${FALSE} ; \
 	fi
-.if defined(WANT_FREEBSD_EXT) && ${ARCH} == i386
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "libc.so.3"; then \
-	   ${ECHO} ; \
-	   ${ECHO} "WARNING: MS FrontPage Extentions requires the COMPAT3X Libraries"; \
-	   ${ECHO} "  Install the COMPAT3X Libraries, then build apache-fp"; \
-	   ${ECHO} ; \
-	   ${FALSE} ; \
-	fi
-.endif
 .endif
 
 post-extract:
@@ -202,8 +196,8 @@ post-install:
 	fi
 	@${INSTALL} -c -m 644 ${DISTDIR}/powerlogo.gif ${IMAGES_DIR}
 	@${INSTALL} -c -m 644 ${DISTDIR}/fplogo.gif ${IMAGES_DIR}
-	@${INSTALL} -c -m 644 ${AP_SHARE}/apache_pb.gif ${IMAGES_DIR}
-	@( cd ${PREFIX}/share/doc/apache ; if [ -h images ] ; then ${RM} -f images ; fi ; ln -fs manual/images images)
+	@${INSTALL} -c -m 644 ${DOCSDIR}/apache_pb.gif ${IMAGES_DIR}
+	@( cd ${DOCSDIR} ; if [ -h images ] ; then ${RM} -f images ; fi ; ln -fs manual/images images)
 	# Untar frontpage extentions
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
 	@${RM} ${FPHTTPD}/httpd ${FPHTTPD}/httpd.Compat
@@ -214,7 +208,7 @@ post-install:
 	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}-dist
 	@${INSTALL_FILE} ${WRKSRC}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if ${OSVERSION} < 500016
+.if ${OSVERSION} < 430001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
 .if ${ARCH} == i386
 	@${CAT} ${PKGMESSAGE}
 .endif
