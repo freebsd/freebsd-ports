@@ -39,10 +39,6 @@ pre-everything::
 BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
 		${XARGS} ${REINPLACE_CMD} -E -e \
