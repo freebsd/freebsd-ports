@@ -17,50 +17,49 @@
 @exec mkdir -p etc/dansguardian/phraselists/violence
 @exec mkdir -p etc/dansguardian/phraselists/warezhacking
 @exec mkdir -p etc/dansguardian/phraselists/weapons
-etc/dansguardian/bannedextensionlist
-etc/dansguardian/bannediplist
-etc/dansguardian/bannedmimetypelist
-etc/dansguardian/bannedphraselist
-etc/dansguardian/bannedregexpurllist
-etc/dansguardian/bannedsitelist
-etc/dansguardian/bannedurllist
-etc/dansguardian/banneduserlist
-etc/dansguardian/contentregexplist
-etc/dansguardian/dansguardian.conf
-etc/dansguardian/exceptioniplist
-etc/dansguardian/exceptionphraselist
-etc/dansguardian/exceptionsitelist
-etc/dansguardian/exceptionurllist
-etc/dansguardian/exceptionuserlist
-etc/dansguardian/messages
-etc/dansguardian/phraselists/chat/weighted
-etc/dansguardian/phraselists/drugadvocacy/weighted
-etc/dansguardian/phraselists/dutchbadwords/weighted
-etc/dansguardian/phraselists/frenchbadwords/weighted
-etc/dansguardian/phraselists/gambling/banned
-etc/dansguardian/phraselists/gambling/weighted
-etc/dansguardian/phraselists/germanpornography/weighted
-etc/dansguardian/phraselists/goodphrases/exception
-etc/dansguardian/phraselists/goodphrases/weighted
-etc/dansguardian/phraselists/gore/weighted
-etc/dansguardian/phraselists/illegaldrugs/banned
-etc/dansguardian/phraselists/illegaldrugs/weighted
-etc/dansguardian/phraselists/intolerance/banned
-etc/dansguardian/phraselists/intolerance/weighted
-etc/dansguardian/phraselists/italianbadwords/weighted
-etc/dansguardian/phraselists/legaldrugs/weighted
-etc/dansguardian/phraselists/personals/weighted
-etc/dansguardian/phraselists/pornography/banned
-etc/dansguardian/phraselists/pornography/weighted
-etc/dansguardian/phraselists/violence/weighted
-etc/dansguardian/phraselists/warezhacking/weighted
-etc/dansguardian/phraselists/weapons/weighted
-etc/dansguardian/pics
-etc/dansguardian/template.html
-etc/dansguardian/weightedphraselist
+etc/dansguardian/bannedextensionlist.dist
+etc/dansguardian/bannediplist.dist
+etc/dansguardian/bannedmimetypelist.dist
+etc/dansguardian/bannedphraselist.dist
+etc/dansguardian/bannedregexpurllist.dist
+etc/dansguardian/bannedsitelist.dist
+etc/dansguardian/bannedurllist.dist
+etc/dansguardian/banneduserlist.dist
+etc/dansguardian/contentregexplist.dist
+etc/dansguardian/dansguardian.conf.dist
+etc/dansguardian/exceptioniplist.dist
+etc/dansguardian/exceptionphraselist.dist
+etc/dansguardian/exceptionurllist.dist
+etc/dansguardian/exceptionuserlist.dist
+etc/dansguardian/exceptionsitelist.dist
+etc/dansguardian/messages.dist
+etc/dansguardian/phraselists/chat/weighted.dist
+etc/dansguardian/phraselists/drugadvocacy/weighted.dist
+etc/dansguardian/phraselists/dutchbadwords/weighted.dist
+etc/dansguardian/phraselists/frenchbadwords/weighted.dist
+etc/dansguardian/phraselists/gambling/banned.dist
+etc/dansguardian/phraselists/gambling/weighted.dist
+etc/dansguardian/phraselists/germanpornography/weighted.dist
+etc/dansguardian/phraselists/goodphrases/exception.dist
+etc/dansguardian/phraselists/goodphrases/weighted.dist
+etc/dansguardian/phraselists/gore/weighted.dist
+etc/dansguardian/phraselists/illegaldrugs/banned.dist
+etc/dansguardian/phraselists/illegaldrugs/weighted.dist
+etc/dansguardian/phraselists/intolerance/weighted.dist
+etc/dansguardian/phraselists/italianbadwords/weighted.dist
+etc/dansguardian/phraselists/legaldrugs/weighted.dist
+etc/dansguardian/phraselists/personals/weighted.dist
+etc/dansguardian/phraselists/pornography/banned.dist
+etc/dansguardian/phraselists/pornography/weighted.dist
+etc/dansguardian/phraselists/violence/weighted.dist
+etc/dansguardian/phraselists/warezhacking/weighted.dist
+etc/dansguardian/phraselists/weapons/weighted.dist
+etc/dansguardian/pics.dist
+etc/dansguardian/template.html.dist
+etc/dansguardian/weightedphraselist.dist
 etc/rc.d/start-dg.sh
 sbin/dansguardian
-www/cgi-bin/dansguardian.pl
+www/cgi-bin/dansguardian.pl.dist
 @dirrm etc/dansguardian/phraselists/chat
 @dirrm etc/dansguardian/phraselists/drugadvocacy
 @dirrm etc/dansguardian/phraselists/dutchbadwords
@@ -81,3 +80,4 @@ www/cgi-bin/dansguardian.pl
 @dirrm etc/dansguardian/phraselists
 @dirrm etc/dansguardian
 @unexec echo If permanently deleting this package, /var/log/dansguardian.log must be removed manually
+@unexec echo If permanently deleting this package, custom configuration files must be removed manually

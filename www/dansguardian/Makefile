@@ -17,7 +17,7 @@ COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid:install \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}:install
 
-CONFLICTS=	dansguardian-devel
+CONFLICTS=	dansguardian*
 
 WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}
 GNU_CONFIGURE=	yes
