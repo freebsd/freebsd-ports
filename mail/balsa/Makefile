@@ -37,4 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 MAN1=		balsa.1
 
+CONFLICTS=	balsa2-*
+
 .include <bsd.port.mk>
