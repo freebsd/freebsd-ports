@@ -1,5 +1,5 @@
---- configure.orig	Thu Jul 25 17:53:13 2002
-+++ configure	Thu Oct 17 11:18:59 2002
+--- configure.orig	Wed Jan 15 22:51:27 2003
++++ configure	Thu Jan 16 01:43:33 2003
 @@ -4,6 +4,7 @@
  use_plot=0
  use_pari=0
@@ -46,9 +46,3 @@
  if [ $use_fep != 0 ]; then
  echo "#define USE_FEP" >> include/config.h
  fi
-@@ -68,4 +80,4 @@
- echo LIBPARI=$libpari >> include/config.h
- echo LIBASIR=$libname.a >> include/config.h
- 
--(cd gc; ./configure)
-+(cd gc; ./configure --disable-threads)
