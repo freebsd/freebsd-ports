@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION= 	1.7.4
+PORTVERSION= 	1.8
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://xml.apache.org/cocoon/dist/
 DISTNAME=	Cocoon-${PORTVERSION}
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 JDK_VERSION=	1.1.8
 CLASSPATH=	${LOCALBASE}/jdk${JDK_VERSION}/lib/classes.zip
-LIBS=		fop_0_12_1.jar xalan_1_0_1.jar xerces_1_0_3.jar
+LIBS=		fop_0_13_0.jar xalan_1_2_D02.jar xerces_1_2.jar
 JDIR=		${PREFIX}/share/java/classes
 CDIR=		${PREFIX}/etc/apache/cocoon
 SDIR=		${PREFIX}/share/java/cocoon

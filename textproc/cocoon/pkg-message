@@ -7,9 +7,9 @@ To activate Cocoon:
 (2) Add following lines into jserv.properties.
 
 	"wrapper.classpath=/usr/local/share/java/classes/cocoon.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/xerces_1_0_3.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/xalan_1_0_1.jar"
-	"wrapper.classpath=/usr/local/share/java/classes/fop_0_12_1.jar"
+	"wrapper.classpath=/usr/local/share/java/classes/xerces_1_2.jar"
+	"wrapper.classpath=/usr/local/share/java/classes/xalan_1_2_D02.jar"
+	"wrapper.classpath=/usr/local/share/java/classes/fop_0_13_0.jar"
 
 (3) Add following line into zone.properties.
 
