@@ -1,0 +1,5 @@
+lib/libXpm.a
+lib/libXpm.la
+lib/libXpm.so
+lib/libXpm.so.3
+libdata/pkgconfig/xpm.pc
