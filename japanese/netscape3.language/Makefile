@@ -27,6 +27,7 @@ NO_BUILD=	YES
 LIBDIR=		${PREFIX}/lib/netscape
 
 BINDIR=		${PREFIX}/bin
+DOCDIR=		${PREFIX}/share/doc/ja/${DISTNAME}
 NLSDIR=		${LIBDIR}/nls
 RESSUB=		ja_JP.EUC
 RESDIR=		${LIBDIR}/${RESSUB}
@@ -34,43 +35,34 @@ RESDIR=		${LIBDIR}/${RESSUB}
 STARTFILE=	netscape.sh
 STARTFILE_SRC=	${FILESDIR}/netscape.sh
 
-# no distfile to fetch
-#do-fetch:
-
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/NLS.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/Netscape-JPfont ${WRKDIR}
-	@${CAT} ${DISTDIR}/${DIST_SUBDIR}/Netscape-v301-ja_euc.ad.gz \
+	${MKDIR} ${WRKDIR}
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/NLS.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKDIR}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Netscape-JPfont ${WRKDIR}
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/Netscape-v301-ja_euc.ad.gz \
 		| ${GUNZIP_CMD} > ${WRKDIR}/Netscape.jp.ad
 
 do-configure:
-	@${SED} -e "s;@X11BASE@;${X11BASE};g" -e "s;@PREFIX@;${PREFIX};g" \
+	${SED} -e "s;@X11BASE@;${X11BASE};g" -e "s;@PREFIX@;${PREFIX};g" \
 		${STARTFILE_SRC} >${WRKDIR}/${STARTFILE}
 
-NO_BUILD=	yes
-
 do-install:
-	-@${MV} ${BINDIR}/netscape ${BINDIR}/netscape.orig
-	@${INSTALL_SCRIPT} ${WRKDIR}/${STARTFILE} ${BINDIR}/netscape
-	@${MKDIR} ${NLSDIR}/local_im_tbl
-	@${INSTALL_DATA} ${WRKDIR}/nls/*.*  ${LIBDIR}/nls
-	@${INSTALL_DATA} ${WRKDIR}/nls/C  ${LIBDIR}/nls
-	@${RM} -f ${LIBDIR}/nls/*.orig
-	@${INSTALL_DATA} ${WRKDIR}/nls/local_im_tbl/* ${LIBDIR}/nls/local_im_tbl
-	@${MKDIR} ${RESDIR}
+	-${MV} ${BINDIR}/netscape ${BINDIR}/netscape.orig
+	${INSTALL_SCRIPT} ${WRKDIR}/${STARTFILE} ${BINDIR}/netscape
+	${MKDIR} ${NLSDIR}/local_im_tbl
+	${INSTALL_DATA} ${WRKDIR}/nls/*.*  ${LIBDIR}/nls
+	${INSTALL_DATA} ${WRKDIR}/nls/C  ${LIBDIR}/nls
+	${RM} -f ${LIBDIR}/nls/*.orig
+	${INSTALL_DATA} ${WRKDIR}/nls/local_im_tbl/* ${LIBDIR}/nls/local_im_tbl
+	${MKDIR} ${RESDIR}
 .if defined(ENGLISH)
-	@${INSTALL_DATA} ${WRKSRC}/Netscape.ad ${RESDIR}/Netscape
-	@${CAT} ${WRKSRC}/Netscape-JPfont >> ${RESDIR}/Netscape
+	${INSTALL_DATA} ${WRKSRC}/Netscape.ad ${RESDIR}/Netscape
+	${CAT} ${WRKSRC}/Netscape-JPfont >> ${RESDIR}/Netscape
 .else
-	@${INSTALL_DATA} ${WRKSRC}/Netscape.jp.ad ${RESDIR}/Netscape
+	${INSTALL_DATA} ${WRKSRC}/Netscape.jp.ad ${RESDIR}/Netscape
 .endif
 
-DOCDIR=		${PREFIX}/share/doc/${DISTNAME}
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/${PKGNAME}
-	@${INSTALL_DATA} ${FILESDIR}/setup.doc ${PREFIX}/share/doc/${PKGNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${FILESDIR}/setup.doc ${DOCDIR}
@@ -78,10 +70,6 @@ post-install:
 	@${CAT} ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
-
-.SILENT:
-
-# cf.	<http://www.bpel.tutics.tut.ac.jp/~take/>
 
 # This port is based on 'russian/netscape3.language(ru-netscape-3.01)'
 # by asami@FreeBSD.org
