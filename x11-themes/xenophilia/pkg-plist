@@ -1,12 +1,50 @@
 lib/gtk/themes/engines/libxeno.so
-share/themes/XenoBuffed/README.html
-share/themes/XenoBuffed/gtk/gtkrc
-share/themes/XenoGradient/README.html
-share/themes/XenoGradient/gtk/gtkrc
-share/themes/XenoHelix/README.html
-share/themes/XenoHelix/gtk/gtkrc
-share/themes/XenoThin/README.html
-share/themes/XenoThin/gtk/gtkrc
+share/themes/Xeno Buffed/README.css
+share/themes/Xeno Buffed/README.html
+share/themes/Xeno Buffed/arrows.png
+share/themes/Xeno Buffed/buds.png
+share/themes/Xeno Buffed/buttons.png
+share/themes/Xeno Buffed/dimple.png
+share/themes/Xeno Buffed/gtk/gtkrc
+share/themes/Xeno Buffed/holes.png
+share/themes/Xeno Buffed/lines.png
+share/themes/Xeno Gradient/README.css
+share/themes/Xeno Gradient/README.html
+share/themes/Xeno Gradient/arrows.png
+share/themes/Xeno Gradient/buds.png
+share/themes/Xeno Gradient/buttons.png
+share/themes/Xeno Gradient/dimple.png
+share/themes/Xeno Gradient/gtk/gtkrc
+share/themes/Xeno Gradient/holes.png
+share/themes/Xeno Gradient/lines.png
+share/themes/Xeno Helix/README.css
+share/themes/Xeno Helix/README.html
+share/themes/Xeno Helix/arrows.png
+share/themes/Xeno Helix/buds.png
+share/themes/Xeno Helix/buttons.png
+share/themes/Xeno Helix/dimple.png
+share/themes/Xeno Helix/gtk/gtkrc
+share/themes/Xeno Helix/holes.png
+share/themes/Xeno Helix/lines.png
+share/themes/Xeno Perkele/README.css
+share/themes/Xeno Perkele/README.html
+share/themes/Xeno Perkele/arrows.png
+share/themes/Xeno Perkele/buds.png
+share/themes/Xeno Perkele/buttons.png
+share/themes/Xeno Perkele/dimple.png
+share/themes/Xeno Perkele/gtk/gtkrc
+share/themes/Xeno Perkele/holes.png
+share/themes/Xeno Perkele/lines.png
+share/themes/Xeno Thin/README.css
+share/themes/Xeno Thin/README.html
+share/themes/Xeno Thin/arrows.png
+share/themes/Xeno Thin/buds.png
+share/themes/Xeno Thin/buttons.png
+share/themes/Xeno Thin/dimple.png
+share/themes/Xeno Thin/gtk/gtkrc
+share/themes/Xeno Thin/holes.png
+share/themes/Xeno Thin/lines.png
+share/themes/Xenophilia/README.css
 share/themes/Xenophilia/README.html
 share/themes/Xenophilia/arrows.png
 share/themes/Xenophilia/buds.png
@@ -15,14 +53,15 @@ share/themes/Xenophilia/dimple.png
 share/themes/Xenophilia/gtk/gtkrc
 share/themes/Xenophilia/holes.png
 share/themes/Xenophilia/lines.png
-share/themes/Xenophilia/xeno.css
 @dirrm share/themes/Xenophilia/gtk
 @dirrm share/themes/Xenophilia
-@dirrm share/themes/XenoThin/gtk
-@dirrm share/themes/XenoThin
-@dirrm share/themes/XenoHelix/gtk
-@dirrm share/themes/XenoHelix
-@dirrm share/themes/XenoGradient/gtk
-@dirrm share/themes/XenoGradient
-@dirrm share/themes/XenoBuffed/gtk
-@dirrm share/themes/XenoBuffed
+@dirrm share/themes/Xeno Thin/gtk
+@dirrm share/themes/Xeno Thin
+@dirrm share/themes/Xeno Perkele/gtk
+@dirrm share/themes/Xeno Perkele
+@dirrm share/themes/Xeno Helix/gtk
+@dirrm share/themes/Xeno Helix
+@dirrm share/themes/Xeno Gradient/gtk
+@dirrm share/themes/Xeno Gradient
+@dirrm share/themes/Xeno Buffed/gtk
+@dirrm share/themes/Xeno Buffed
