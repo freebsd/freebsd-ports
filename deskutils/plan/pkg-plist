@@ -20,6 +20,7 @@ share/doc/plan/examples/holiday_finnish
 share/doc/plan/examples/holiday_french
 share/doc/plan/examples/holiday_frswiss
 share/doc/plan/examples/holiday_german
+share/doc/plan/examples/holiday_greek
 share/doc/plan/examples/holiday_hungary
 share/doc/plan/examples/holiday_italy
 share/doc/plan/examples/holiday_japan
@@ -33,7 +34,12 @@ share/doc/plan/examples/holiday_us
 share/doc/plan/BlackWhite
 share/doc/plan/Monochrome
 share/doc/plan/README
-@exec /bin/mkdir -p share/netplan.dir
+share/doc/plan/plan.lang.dutch
+share/doc/plan/plan.lang.english
+share/doc/plan/plan.lang.french
+share/doc/plan/plan.lang.german
+share/doc/plan/plan.lang.spanish
+@exec /bin/mkdir -p %D/share/netplan.dir
 @dirrm share/netplan.dir
 @dirrm share/doc/plan/examples
 @dirrm share/doc/plan
