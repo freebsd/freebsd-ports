@@ -8,8 +8,7 @@
 PORTNAME=	stella
 PORTVERSION=	1.1
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/stella/1.1/ \
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/stella/1.1/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	nectar@FreeBSD.org

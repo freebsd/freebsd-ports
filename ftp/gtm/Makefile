@@ -8,8 +8,7 @@
 PORTNAME=	gtm
 PORTVERSION=	0.3.1
 CATEGORIES=	ftp gnome
-MASTER_SITES=	http://www.rnl.ist.utl.pt/~bapm/gtm/files/     \
-		http://www.nectar.cc/distfiles/
+MASTER_SITES=	http://www.rnl.ist.utl.pt/~bapm/gtm/files/
 
 MAINTAINER=	nectar@FreeBSD.org
 

@@ -8,8 +8,7 @@
 PORTNAME=		py-PyGreSQL
 PORTVERSION=		2.4
 CATEGORIES=		databases python
-MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/               \
-			http://www.nectar.cc/distfiles/
+MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/
 DISTNAME=		PyGreSQL-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 

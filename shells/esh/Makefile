@@ -8,8 +8,7 @@
 PORTNAME=	esh
 PORTVERSION=	0.8
 CATEGORIES=	shells
-MASTER_SITES=	http://esh.netpedia.net/ \
-		http://www.nectar.cc/distfiles/
+MASTER_SITES=	http://esh.netpedia.net/
 
 MAINTAINER=	nectar@FreeBSD.org
 

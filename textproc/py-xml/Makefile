@@ -11,8 +11,7 @@ CATEGORIES=		textproc python
 MASTER_SITES=		http://www.python.org/sigs/xml-sig/files/      \
 			ftp://ftp.cdrom.com/pub/python/www.python.org/sigs/xml-sig/files/ \
 			ftp://ftp.kddlabs.co.jp/pub/lang/python/www.python.org/sigs/xml-sig/files/ \
-			ftp://unix.hensa.ac.uk/mirrors/ftp.python.org/pub/www.python.org/sigs/xml-sig/files/ \
-			http://www.nectar.cc/distfiles/
+			ftp://unix.hensa.ac.uk/mirrors/ftp.python.org/pub/www.python.org/sigs/xml-sig/files/
 DISTNAME=		PyXML-${PORTVERSION}
 
 MAINTAINER=		nectar@FreeBSD.org

@@ -8,8 +8,7 @@
 PORTNAME=	pp
 PORTVERSION=	0.01
 CATEGORIES=	games
-MASTER_SITES=	ftp://www.mps.de/pub/unix/ \
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	ftp://www.mps.de/pub/unix/
 DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org

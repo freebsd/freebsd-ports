@@ -9,14 +9,13 @@ PORTNAME=	squeak
 PORTVERSION=	2.7
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/SOR/users/piumarta/squeak/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/ \
-		http://www.nectar.com/distfiles/squeak/
+		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/
 DISTNAME=	Squeak${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

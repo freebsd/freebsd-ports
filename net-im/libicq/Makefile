@@ -8,8 +8,7 @@
 PORTNAME=	libicq
 PORTVERSION=	0.33
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/ \
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 MAINTAINER=	flathill@FreeBSD.org
 

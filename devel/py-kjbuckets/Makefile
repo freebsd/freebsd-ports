@@ -8,8 +8,7 @@
 PORTNAME=		kjbuckets
 PORTVERSION=		2.2
 CATEGORIES=		devel python
-MASTER_SITES=		http://www.chordate.com/kjbuckets/             \
-			http://www.nectar.com/distfiles/
+MASTER_SITES=		http://www.chordate.com/kjbuckets/
 PKGNAMEPREFIX=		py-
 DISTNAME=		kjb
 

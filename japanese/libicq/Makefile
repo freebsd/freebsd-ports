@@ -8,8 +8,7 @@
 PORTNAME=	libicq
 PORTVERSION=	0.33
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/ \
-		http://www.nectar.com/distfiles/
+MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
 
 PATCH_SITES=	http://people.FreeBSD.org/~flathill/distfiles/ \
 		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/
