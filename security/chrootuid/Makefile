@@ -7,8 +7,6 @@
 
 PORTNAME=	chrootuid
 PORTVERSION=	1.2
-DISTNAME=	chrootuid1.2
-PKGNAME=	chrootuid-1.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/ \
 		ftp://coast.cs.purdue.edu/pub/tools/unix/chrootuid/
