@@ -3,12 +3,12 @@
 # Date created:         1 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/11/10 21:31:57 obrien Exp $
+# $Id: Makefile,v 1.6 1996/11/18 14:04:07 asami Exp $
 #
 
 DISTNAME=       mpack-1.5-src
 PKGNAME=        mpack-1.5
-CATEGORIES=     mail news
+CATEGORIES=     converters mail news
 MASTER_SITES=   ftp://ftp.andrew.cmu.edu/pub/mpack/
 EXTRACT_SUFX=   .tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:                      4 Apr 1996
 # Whom:                              Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.3 1996/11/17 09:04:39 obrien Exp $
+# $Id: Makefile,v 1.4 1997/01/28 08:11:09 asami Exp $
 #
 
 DISTNAME=          btoa-5.2
 PKGNAME=           btoa-5.2.1
-CATEGORIES=        misc
+CATEGORIES=        converters
 MASTER_SITES=      ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 PATCH_SITES=       ${MASTER_SITES}
