@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grepmail
-PORTVERSION= 	4.22
+PORTVERSION= 	4.23
 CATEGORIES=	mail
 MASTER_SITES=	http://download.sourceforge.net/grepmail/
 
