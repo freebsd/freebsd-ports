@@ -1,6 +1,6 @@
---- gladesig.c.orig	Fri May  7 04:51:52 1999
-+++ gladesig.c	Fri Jul 23 11:09:45 1999
-@@ -171,7 +171,7 @@
+--- gladesig.c.orig	Mon Aug 30 11:27:21 1999
++++ gladesig.c	Sun Apr  1 22:31:42 2001
+@@ -163,7 +163,7 @@
  on_Get_Nmap_Version_activate           (GtkMenuItem    *menuitem,
                                          gpointer        user_data)
  {
@@ -9,7 +9,7 @@
  }
  
  
-@@ -296,7 +296,8 @@
+@@ -467,7 +467,8 @@
  if (size > command_size)
    command = realloc(command, size);
  
@@ -19,3 +19,12 @@
   /*Uhm... yeah.. Spit out which scan to perform based
     on the which_scan variable */
   
+@@ -487,7 +488,7 @@
+  	strncat(command, " -sR ", 5);
+    
+  if (GTK_TOGGLE_BUTTON(MW->fast_check)->active)
+-   strncat(command, " -F ", 3);
++   strncat(command, " -F ", 4);
+  
+  if (GTK_TOGGLE_BUTTON(MW->range_check)->active) {
+    val = gtk_entry_get_text(GTK_ENTRY(MW->range_text));
