@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 15 13:17:51 1997
-+++ Makefile.in	Wed Aug 20 11:35:31 1997
+--- Makefile.in.orig	Fri Aug 15 16:17:51 1997
++++ Makefile.in	Sun Aug 31 21:36:30 1997
 @@ -56,7 +56,7 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -32,7 +32,35 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -357,7 +357,8 @@
+@@ -290,6 +290,11 @@
+ 	@MAKE_LIB@
+ 	$(RANLIB) @TK_LIB_FILE@
+ 
++libtk80.a: ${OBJS}
++	rm -f libtk80.a
++	ar cr libtk80.a ${OBJS}
++	$(RANLIB) libtk80.a
++
+ # Make target which outputs the list of the .o contained in the Tk lib
+ # usefull to build a single big shared library containing Tcl/Tk and other
+ # extensions.  used for the Tcl Plugin.  -- dl
+@@ -340,7 +345,7 @@
+ # some ranlibs write to current directory, and this might not always be
+ # possible (e.g. if installing as root).
+ 
+-install-binaries: $(TK_LIB_FILE) wish
++install-binaries: $(TK_LIB_FILE) libtk80.a wish
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -354,10 +359,15 @@
+ 	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@echo "Installing libtk80.a"
++	@$(INSTALL_DATA) libtk80.a $(LIB_INSTALL_DIR)/libtk80.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk80.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk80.a
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
  	@echo "Installing tkConfig.sh"
@@ -42,7 +70,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
-@@ -430,28 +431,28 @@
+@@ -430,28 +440,28 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
