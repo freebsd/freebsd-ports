@@ -17,4 +17,6 @@ COMMENT=	A program for matching star lists
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+PLIST_FILES=	bin/apply_match bin/match bin/project_coords
+
 .include <bsd.port.mk>
