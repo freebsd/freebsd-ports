@@ -8,7 +8,8 @@
 
 DISTNAME=	imlib-1.9.8
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	${MASTER_SITE_GNOME} \
+		ftp://ftp.enlightenment.org/enlightenment/enlightenment/libs/
 MASTER_SITE_SUBDIR=	sources/imlib
 
 MAINTAINER=	vanilla@FreeBSD.org
