@@ -6,4 +6,4 @@ The library "libotf" provides the following facilites.
     o Convert a Unicode character sequence to a glyph code sequence by
       using the above tables.
 
-WWW: http://tsukuba.m17n.org/libotf/
+WWW: http://www.m17n.org/libotf/
