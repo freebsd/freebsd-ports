@@ -31,6 +31,7 @@ fi
 
 if [ -n "${INLINE_IMAGE}" ] ; then
     echo use_image=y >> ${WRKSRC}/config.param
+    echo use_w3mimg_x11=y >> ${WRKSRC}/config.param
 fi
 
 if [ -n "${M17N}" ] ; then

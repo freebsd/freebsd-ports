@@ -10,7 +10,6 @@ libexec/w3m/w3mman2html.cgi
 libexec/w3m/w3mhelperpanel
 libexec/w3m/xface2xpm
 %%INLINE_IMAGE%%libexec/w3m/w3mimgdisplay
-%%INLINE_IMAGE%%libexec/w3m/w3mimgsize
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/FAQ.html
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/HISTORY
 %%PORTDOCS%%%%JAPANESE%%share/doc/ja/w3m/MANUAL.html
