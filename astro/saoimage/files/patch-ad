@@ -1,0 +1,22 @@
+*** ctrldisk.c.orig	Fri Feb 20 00:37:18 1998
+--- ctrldisk.c	Fri Feb 20 00:38:56 1998
+***************
+*** 157,164 ****
+       int nbytes;
+       char *filename;		/* [i]: name of file being accessed */
+  {
+    long lseek();			/* type not declared in <sys/file.h> */
+! 
+    if( lseek(fd, (long)nbytes, L_SET) < 0 ) {
+      perror("lseek");
+      (void)fprintf(stderr, "Can't lseek %d bytes", nbytes);
+--- 157,165 ----
+       int nbytes;
+       char *filename;		/* [i]: name of file being accessed */
+  {
++ #ifndef __FreeBSD__
+    long lseek();			/* type not declared in <sys/file.h> */
+! #endif
+    if( lseek(fd, (long)nbytes, L_SET) < 0 ) {
+      perror("lseek");
+      (void)fprintf(stderr, "Can't lseek %d bytes", nbytes);
