@@ -7,7 +7,7 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/bin/socks5 ] && ${PREFIX}/bin/socks5 && echo -n ' socks5'
+	[ -x ${PREFIX}/bin/socks5 -a -f ${PREFIX}/etc/socks5.conf ] && ${PREFIX}/bin/socks5 && echo -n ' socks5'
 	;;
 stop)
 	killall socks5 && echo -n ' socks5'
