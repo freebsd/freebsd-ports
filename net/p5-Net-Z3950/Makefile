@@ -24,6 +24,7 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 MAN3=		Net::Z3950::ResultSet.3 Net::Z3950::Manager.3 \
 		Net::Z3950::Tutorial.3 Net::Z3950::Record.3 \
-		Net::Z3950::Connection.3 Net::Z3950::APDU.3 Net::Z3950.3
+		Net::Z3950::Connection.3 Net::Z3950::APDU.3 Net::Z3950.3 \
+		Net::Z3950::ScanSet.3
 
 .include <bsd.port.mk>
