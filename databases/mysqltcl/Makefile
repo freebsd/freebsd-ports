@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	2.40
-CATEGORIES=	databases tcl83
+PORTVERSION=	2.50
+CATEGORIES=	databases tcl83 tcl84
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
 MAINTAINER=	mi@aldan.algebra.com
