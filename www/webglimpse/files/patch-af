@@ -22,7 +22,7 @@
     
     # if the protocol isn't http, assume it's good
 -   if($prot!~/http/i){
-+   if(defined($prot) && $prot!~/http/i){
++   if(!defined($prot) || $prot!~/http/i){
        return 1;
     }
     
