@@ -1,5 +1,5 @@
 --- scripts/exim_install.orig	Fri Nov 23 17:31:15 2001
-+++ scripts/exim_install	Tue Dec 18 22:23:28 2001
++++ scripts/exim_install	Wed Dec 19 14:38:06 2001
 @@ -293,30 +293,15 @@
  
  echo $com ""
@@ -35,3 +35,16 @@
  
  # Install info files if the directory is defined and the Texinfo
  # source documentation is present.
+@@ -338,12 +323,6 @@
+   echo $com Info installation directory is ${INFO_DIRECTORY}
+   echo $com ""
+ 
+-  makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
+-  echo ${CP} exim_overview.info ${INFO_DIRECTORY}
+-  ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
+-  install-info --section="Exim" \
+-      --entry "* Overview: (exim_overview).    Overview of the Exim system" \
+-      ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
+   makeinfo --no-split --output exim.info ../doc/spec.texinfo
+   echo ${CP} exim.info ${INFO_DIRECTORY}
+   ${real} ${CP} exim.info ${INFO_DIRECTORY}
