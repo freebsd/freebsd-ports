@@ -9,7 +9,8 @@
 DISTNAME=       hanIM-${HANIM_VER}-${HANIM_VER_PL}.i386
 PKGNAME=        ko-hanIM-${HANIM_VER}
 CATEGORIES=     korean x11
-MASTER_SITES=   http://www.mizi.co.kr/packages/hanIM/
+MASTER_SITES=   ftp://www.mizi.co.kr/pub/hanIM/ \
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 EXTRACT_SUFX=   .rpm
 
 MAINTAINER=     cjh@kr.freebsd.org
