@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.2.10
+PORTVERSION=	4.2.11
 CATEGORIES=	games
 MASTER_SITES=	http://www.empire.cx/Downloads/server/
 DISTNAME=	empire${PORTVERSION}
