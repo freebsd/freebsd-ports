@@ -12,6 +12,8 @@ MASTER_SITES=	http://cr.yp.to/djbfft/
 
 MAINTAINER=	lioux@FreeBSD.org
 
+NO_PACKAGE=	Forbidden - we have patches to the distribution.
+
 ALL_TARGET=
 INSTALL_TARGET=setup check
 
