@@ -1,16 +1,17 @@
---- src/gtkhtml.c.orig	Sat Mar 25 21:24:55 2000
-+++ src/gtkhtml.c	Sat Mar 25 21:23:28 2000
-@@ -494,7 +494,7 @@
- {
- 	char buf[256];
- 	g_snprintf(buf, sizeof(buf), fmt, font_sizes[size]);
--	return gdk_font_load(buf);
-+	return gdk_fontset_load(buf);
- }
- 
- 
---- src/main.c.orig	Sat Mar 25 21:33:08 2000
-+++ src/main.c	Sat Mar 25 21:32:11 2000
+--- src/gtkhtml.c.orig	Wed May  3 17:19:38 2000
++++ src/gtkhtml.c	Wed May  3 17:20:13 2000
+@@ -528,7 +528,7 @@
+ 	{
+ 		return my_font;
+ 	}
+-	my_font = gdk_font_load(font_name);
++	my_font = gdk_fontset_load(font_name);
+ 	if( !my_font )
+ 	{
+ 		if( italic == 1 )
+
+--- src/main.c.orig	Mon Jan 31 19:49:57 2000
++++ src/main.c	Wed May  3 17:18:11 2000
 @@ -123,6 +123,7 @@
  
  #endif
@@ -18,4 +19,3 @@
 +	gtk_set_locale ();
  	g_snprintf(buff, 1024, "%s/.everybuddy",getenv("HOME"));
  	services_init();
- 		
