@@ -8,6 +8,6 @@ file.  Audio data may be in WAVE or raw format.
 Note:
 Cdrdao requires kernel with "options SYSVSHM" and "options SYSVMSG". 
 
-WWW: http://www.ping.de/sites/daneb/cdrdao.html
+WWW: http://cdrdao.sourceforge.net/
 
  -- Yasuhito FUTATSUKI <futatuki@debug.gr.jp>
