@@ -23,6 +23,12 @@ do-extract:
 BROKEN=	"You need to build this port with ${SRCDIR}"
 .endif
 
-MAN1=		telnet.1
+MAN1=		zh-telnet.1
+
+do-install:
+	@cd ${WRKSRC}; \
+	${CP} telnet.1 ${MAN1}; \
+	${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet; \
+	${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
