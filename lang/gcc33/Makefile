@@ -60,10 +60,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
+		--with-system-zlib \
+		--program-suffix=33 \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
-#CONFIGURE_ARGS+=	--program-suffix=33
-#	Java
-CONFIGURE_ARGS+=	--with-system-zlib
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
@@ -122,37 +121,29 @@ check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
 
 post-install:
-	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
 	@(for prog in \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
 		${STRIP_CMD} $$prog ; \
 	done )
-.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+.for f in c++ f77 gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	# gij and jv-convert, for example, are not built on all platforms.
-	if [ -e ${PREFIX}/bin/${f} ]; then \
-	  ${STRIP_CMD} ${PREFIX}/bin/${f}; \
+	if [ -e ${PREFIX}/bin/${f}33 ]; then \
+	  ${STRIP_CMD} ${PREFIX}/bin/${f}33; \
+	  ( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
+		${PREFIX}/man/man1/${f}33.1 ); \
 	fi
-	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}33
-	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}33.1 )
 .endfor
-.for f in g77
-	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}-33
-	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
-		${PREFIX}/man/man1/${f}-33.1 )
-.endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug33
+	${MV} -f ${PREFIX}/bin/g7733 ${PREFIX}/bin/g77-33
+	${MV} -f ${PREFIX}/man/man1/g7733.1 ${PREFIX}/man/man1/g77-33.1
 	# These libraries are moved from PREFIX/lib to avoid conflicts with
 	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	# Java
 	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
