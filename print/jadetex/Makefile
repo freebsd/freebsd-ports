@@ -11,29 +11,42 @@ CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jadetex
 
-MAINTAINER=		nik
+MAINTAINER=		nik@FreeBSD.org
 
 BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
-MAKE_ENV=		TEXMFCNF=${FILESDIR}:${PREFIX}/share/texmf/web2c
+MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-MESSAGE=		${WRKDIR}/pkg-message
 
-post-extract:
+MESSAGE=		${PKGDIR}/pkg-message
+PKGMESSAGE=		${WRKDIR}/pkg-message
+
+post-patch: patch-makefile patch-message
+
+patch-makefile:
 	@${ECHO} all: betterdefault > ${WRKSRC}/Makefile.tmp
 	@${ECHO} betterdefault: jadetex.fmt pdfjadetex.fmt >> ${WRKSRC}/Makefile.tmp
 	@${CAT} ${WRKSRC}/Makefile >> ${WRKSRC}/Makefile.tmp
 	@${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
 
-do-install:
-	@(cd ${WRKSRC} && ${INSTALL_DATA} jadetex.fmt pdfjadetex.fmt `kpsewhich -expand-var '$$TEXMFMAIN'`/web2c && ${MKDIR} -m 555 `kpsewhich -expand-var '$$TEXMFMAIN'`/tex/jadetex && ${INSTALL_DATA} dsssl.def jadetex.ltx `kpsewhich -expand-var '$$TEXMFMAIN'`/tex/jadetex)
+patch-message:
+	@${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${MESSAGE} > ${PKGMESSAGE}
 
-post-install:
-	${PREFIX}/bin/mktexlsr
-	@${SED} -e 's,/usr/local,${PREFIX},' ${PKGMESSAGE} > ${MESSAGE}
-	@${CAT} ${MESSAGE}
+do-install:
+	@cd ${WRKSRC}; TEXMFMAIN=$$(kpsewhich -expand-var '$$TEXMFMAIN'); \
+	 ${INSTALL_DATA} jadetex.fmt pdfjadetex.fmt $$TEXMFMAIN/web2c; \
+	 ${MKDIR} -m 555 $$TEXMFMAIN/tex/jadetex; \
+	 ${INSTALL_DATA} dsssl.def jadetex.ltx $$TEXMFMAIN/tex/jadetex
+
+post-install: rebuild-tex-database display-message
+
+rebuild-tex-database:
+	${LOCALBASE}/bin/mktexlsr
+
+display-message:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
