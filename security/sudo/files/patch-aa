@@ -1,6 +1,15 @@
---- configure.dist	Mon Feb  5 10:32:17 1996
-+++ configure	Mon Feb  5 10:32:37 1996
-@@ -551,8 +551,8 @@
+--- configure.orig	Sun Aug 25 12:32:03 1996
++++ configure	Thu Aug 29 10:26:50 1996
+@@ -37,6 +37,8 @@
+   --with-libraries        additional libraries to link with"
+ ac_help="$ac_help
+   --with-csops            add CSOps standard options"
++ac_help="$ac_help
++  --with-fbsdops          add FreeBSD standard options"
+ 
+ # Initialize some variables set by options.
+ # The variables have the same names as the options, with
+@@ -557,8 +559,8 @@
  
  test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
  test "$bindir" = '${exec_prefix}/bin' && bindir='$(exec_prefix)/bin'
@@ -10,4 +19,25 @@
 +test "$sysconfdir" = '${prefix}/etc' || sysconfdir='/etc'
  
  
- # Check whether --with-getpass or --without-getpass was given.
+ # Check whether --with-CC or --without-CC was given.
+@@ -784,6 +786,20 @@
+     yes)	OPTIONS="${OPTIONS} -DIGNORE_DOT_PATH -DUSE_INSULTS -DCLASSIC_INSULTS -DCSOPS_INSULTS -DENV_EDITOR"
+ 		sbindir='$(exec_prefix)/sbin'
+ 		echo 'CSOps--adding options: IGNORE_DOT_PATH USE_INSULTS CLASSIC_INSULTS CSOPS_INSULTS ENV_EDITOR'
++		;;
++    no)		;;
++    *)		echo "Ignoring unknown argument to --with-csops: $with_csops"
++		;;
++esac
++fi
++
++# Check whether --with-fbsdops or --without-fbsdops was given.
++if test "${with_fbsdops+set}" = set; then
++  withval="$with_fbsdops"
++  case $with_fbsdops in  
++    yes)	OPTIONS="${OPTIONS} -DIGNORE_DOT_PATH -DENV_EDITOR -DUSE_TTY_TICKETS"
++		sbindir='$(exec_prefix)/sbin'
++		echo 'fbsdops--adding options: IGNORE_DOT_PATH ENV_EDITOR USE_TTY_TICKETS'
+ 		;;
+     no)		;;
+     *)		echo "Ignoring unknown argument to --with-csops: $with_csops"
