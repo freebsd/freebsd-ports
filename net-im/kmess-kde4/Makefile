@@ -12,7 +12,7 @@ CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	perky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MSN Messenger Client for KDE3
 
 LIB_DEPENDS=	mimelib.1:${PORTSDIR}/deskutils/kdepim3
