@@ -7,6 +7,7 @@
     SUBDIR += EZWGL
     SUBDIR += GIFgraph
     SUBDIR += Hermes
+    SUBDIR += IPA
     SUBDIR += ImageMagick
     SUBDIR += Mesa3
     SUBDIR += aalib
