@@ -314,6 +314,7 @@ amp		ports/audio/amp
 amphetadesk	ports/www/amphetadesk
 amphetamine	ports/games/amphetamine
 ample		ports/audio/ample
+amrcoder	ports/audio/amrcoder
 amsn		ports/net/amsn
 amspsfnt	ports/print/amspsfnt
 amule		ports/net/amule
