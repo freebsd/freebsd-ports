@@ -1,0 +1,41 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
+USER=jabber
+GROUP=${USER}
+UID=93
+GID=${UID}
+SPOOLDIR="/var/spool/jit"
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "Jabber Daemon"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+if [ ! -d ${SPOOLDIR} ]; then
+	echo "Creating \"${SPOOLDIR}\"."
+	mkdir -p ${SPOOLDIR}
+fi
+
+echo "Fixing ownerships and modes in \"${SPOOLDIR}\"."
+chown -R ${USER}:${GROUP} ${SPOOLDIR}
+chmod -R go= ${SPOOLDIR}

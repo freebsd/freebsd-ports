@@ -1,0 +1,10 @@
+--- Makefile.orig	Tue Jul  6 19:11:02 2004
++++ Makefile	Tue Jul  6 19:10:53 2004
+@@ -2,6 +2,7 @@
+ all:
+ 	(cd jit && $(MAKE))
+ 	(cd jabberd && $(MAKE))
++	(cd xdb_file && $(MAKE))
+ 
+ clean:
+ 	(cd jit && $(MAKE) clean)

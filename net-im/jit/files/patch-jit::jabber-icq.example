@@ -1,0 +1,48 @@
+--- jit/jabber-icq.example.orig	Tue Jul 20 16:54:23 2004
++++ jit/jabber-icq.example	Tue Jul 20 16:59:10 2004
+@@ -23,16 +23,16 @@
+      XDB requests. This is strongly recommended if
+      you use xdb_ldap, xdb_sql or other non-file XDB
+      implementations, too.
+-     See xdb_file directory for more information.
++     See xdb_file directory for more information. -->
+   <xdb id="xdb">
+     <host/>
+     <load>
+-      <xdb_file>xdb_file/xdb_file.so</xdb_file>
++      <xdb_file>%%PREFIX%%/lib/jabber/jit/xdb_file.so</xdb_file>
+     </load>
+     <xdb_file xmlns="jabber:config:xdb_file">
+       <spool><jabberd:cmdline flag='s'>./spool</jabberd:cmdline></spool>
+     </xdb_file>
+-  </xdb> -->
++  </xdb>
+ 
+   <!--
+      localhost is your jabber host.
+@@ -102,22 +102,21 @@
+       <session_timeout>18000</session_timeout>
+ 
+       <!-- Charset -->
+-      <charset>windows-1252</charset>
++      <charset>windows-1251</charset>
+ 
+       <!-- These IP is login.icq.com 
+            Use only IPs here, no host names. 
+ 	   You can use hostnames but this will slow down JIT due to DNS resoling
+ 	   -->
+       <server>
+-	 <host port="5190">205.188.179.233</host>
+-	 <host port="5190">64.12.200.89</host>
++	 <host port="5190">login.icq.com</host>
+       </server>
+ 
+     </icqtrans>
+ 
+     <!-- JIT module -->
+     <load>
+-      <icqtrans>jit/jit.so</icqtrans>
++      <icqtrans>%%PREFIX%%/lib/jabber/jit/jit.so</icqtrans>
+     </load>
+ 
+   </service>

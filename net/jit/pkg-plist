@@ -1,0 +1,6 @@
+lib/jabber/jit/jit.so
+lib/jabber/jit/xdb_file.so
+sbin/jit
+etc/jabber-icq.example
+etc/rc.d/jit.sh
+@dirrm lib/jabber/jit
