@@ -26,9 +26,9 @@
 pref("network.search.url","http://cgi.netscape.com/cgi-bin/url_search.cgi?search=");
 
 pref("keyword.URL", "http://keyword.netscape.com/keyword/");
-pref("keyword.enabled", false);
+pref("keyword.enabled", true);
 pref("general.useragent.locale", "chrome://navigator/locale/navigator.properties");
-pref("general.useragent.misc", "m18");
+pref("general.useragent.misc", "0.7");
 
 pref("general.startup.browser",             true);
 pref("general.startup.mail",                false);
@@ -47,6 +47,8 @@ pref("general.help_source.url",             "");
 
 pref("general.fullcircle_enable",           true);
 pref("general.fullcircle_collect_ns_data",  false);
+
+pref("general.open_location.last_url",      "");
 
 pref("browser.enable_style_sheets",         true);
 // 0 = blank, 1 = home (browser.startup.homepage), 2 = last
@@ -127,6 +129,7 @@ localDefPref("browser.socksfile_location",      "");
 localDefPref("browser.ldapfile_location",       "");
 
 pref("browser.history.last_page_visited", "");
+pref("browser.history_expire_days", 9);
 
 pref("browser.url_history.URL_1", "");
 pref("browser.url_history.URL_2", "");
@@ -166,6 +169,9 @@ pref("nglayout.view.useViewManager2", true);
 // css2 hover pref
 pref("nglayout.events.showHierarchicalHover", false);
 
+// whether or not to use xbl form controls
+pref("nglayout.debug.enable_xbl_forms", false);
+
 // Smart Browsing prefs
 pref("browser.related.enabled", true);
 pref("browser.related.autoload", 1);  // 0 = Always, 1 = After first use, 2 = Never
@@ -182,17 +188,41 @@ localDefPref("browser.navcenter.docked.selector.visible", true);
 localDefPref("browser.navcenter.docked.tree.width", 250); // Percent of parent window consumed by docked nav center
 localDefPref("browser.navcenter.floating.rect", "20, 20, 400, 600"); // Window dimensions when floating
 
+// Default Capability Preferences: Security-Critical! 
+// Editing these may create a security risk - be sure you know what you're doing
 pref("capability.policy.default.barprop.visible.write", "UniversalBrowserWrite");
+
+pref("capability.policy.default.domexception.code", "allAccess");
+pref("capability.policy.default.domexception.message", "allAccess");
+pref("capability.policy.default.domexception.name", "allAccess");
+pref("capability.policy.default.domexception.result", "allAccess");
+pref("capability.policy.default.domexception.tostring", "allAccess");
 
 pref("capability.policy.default.history.current.read", "UniversalBrowserRead");
 pref("capability.policy.default.history.next.read", "UniversalBrowserRead");
 pref("capability.policy.default.history.previous.read", "UniversalBrowserRead");
 pref("capability.policy.default.history.item.read", "UniversalBrowserRead");
 
+pref("capability.policy.default.location.hash.write", "allAccess");
+pref("capability.policy.default.location.host.write", "allAccess");
+pref("capability.policy.default.location.hostname.write", "allAccess");
+pref("capability.policy.default.location.href.write", "allAccess");
+pref("capability.policy.default.location.pathname.write", "allAccess");
+pref("capability.policy.default.location.port.write", "allAccess");
+pref("capability.policy.default.location.protocol.write", "allAccess");
+pref("capability.policy.default.location.search.write", "allAccess");
+
 pref("capability.policy.default.navigator.preference.read", "UniversalPreferencesRead");
 pref("capability.policy.default.navigator.preference.write", "UniversalPreferencesWrite");
+
+pref("capability.policy.default.windowinternal.close", "allAccess");
 pref("capability.policy.default.windowinternal.location.write", "allAccess");
 
+// window.openDialog is insecure and must be made inaccessible from web scripts - see bug 56009
+pref("capability.policy.default.windowinternal.opendialog", "noAccess");
+
+pref("capability.policy.mailnews.sites", "mailbox: imap: news: pop: pop3:");
+pref("capability.policy.mailnews.window.name", "noAccess");
 
 localDefPref("ghist.expires.pos",          4);
 localDefPref("ghist.expires.width",        1400);
@@ -349,7 +379,7 @@ pref("intl.charsetmenu.browser.cache.size", 5);
 pref("intl.charset.detector",                "chrome://navigator/locale/navigator.properties");
 pref("intl.charset.default",                "chrome://navigator/locale/navigator.properties");
 
-pref("font.default", "sans-serif");
+pref("font.default", "serif");
 pref("font.size.variable.ar", 16);
 pref("font.size.fixed.ar", 13);
 
@@ -384,7 +414,7 @@ pref("font.size.variable.x-unicode", 16);
 pref("font.size.fixed.x-unicode", 13);
 
 pref("font.size.variable.x-western", 14);
-pref("font.size.fixed.x-western", 14);
+pref("font.size.fixed.x-western", 13);
 
 pref("font.size.variable.zh-CN", 16);
 pref("font.size.fixed.zh-CN", 16);
@@ -426,8 +456,7 @@ pref("imap.io.mac.logging", false);
 
 pref("browser.editor.disabled", false);
 
-pref("SpellChecker.DefaultLanguage", 0);
-pref("SpellChecker.DefaultDialect", 0);
+pref("spellchecker.dictionary", "");
 
 pref("mime.table.allow_add", true);
 pref("mime.table.allow_edit", true);
@@ -445,7 +474,7 @@ pref("ui.key.menuAccessKeyFocuses", false);
 
 // Middle-mouse handling
 pref("middlemouse.paste", false);
-pref("middlemouse.openNewWindow", false);
+pref("middlemouse.openNewWindow", true);
 
 // Clipboard behavior
 pref("clipboard.autocopy", false);
