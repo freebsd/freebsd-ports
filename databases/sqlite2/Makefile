@@ -8,6 +8,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -45,10 +46,10 @@ post-build:
 	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} doc
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/
+	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-#	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${DOCSDIR}
 .for file in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc//${file} ${DOCSDIR}
 .endfor
