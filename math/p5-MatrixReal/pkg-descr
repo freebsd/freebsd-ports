@@ -1,0 +1,20 @@
+p5-MatrixReal is port of the perl module Math::MatrixReal, implementing a
+matrix of Reals.
+
+Math::MatrixReal needs support for operator overloading to support
+operations on matrixes as though they were just another basic perl type.
+
+In addition to the basics (+, -, *) also supported are:
+
+matrix norm, matrix transposition, matrix inverse, determinant of a
+matrix, order and numerical condition of a matrix, scalar product of
+vectors, vector product of vectors, vector length, projection of row and
+column vectors, a comfortable way for reading in a matrix from a file, the
+keyboard or your code, solving linear equations, etc.
+
+It also has an implementation of Kleene's algorithm for finding minimal
+costs for paths in a graph.
+
+This is Math:MatrixReal version 1.2
+
+-- sander
