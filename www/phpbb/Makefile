@@ -16,6 +16,11 @@ MAINTAINER=	wjv@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4
 
+FORBIDDEN=	"Multiple security vulnerabilities in current version: " \
+		http://online.securityfocus.com/archive/1/307212 \
+		http://online.securityfocus.com/bid/6634 \
+		http://online.securityfocus.com/archive/1/302199
+
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
 #
