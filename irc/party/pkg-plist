@@ -1,0 +1,9 @@
+@owner nobody
+@group nobody
+bin/party
+lib/party/chantab
+lib/party/partytab
+lib/party/partytmp
+lib/party/log/party.log
+@dirrm lib/party/log
+@dirrm lib/party
