@@ -534,6 +534,7 @@ bonnie		ports/benchmarks/bonnie
 bonnie++	ports/benchmarks/bonnie++
 bonobo		ports/devel/bonobo
 bonobo-conf	ports/devel/bonobo-conf
+boost		ports/devel/boost
 boot		src/sys/boot
 boot0		src/sys/boot/i386/boot0
 boot0cfg	src/usr.sbin/boot0cfg
