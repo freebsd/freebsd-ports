@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demime
-PORTVERSION= 	0.99d.1
+PORTVERSION= 	1.01a
 CATEGORIES=	mail textproc
 MASTER_SITES=	http://scifi.squawk.com/
 DISTFILES=	${PORTNAME}.stable demime_junkmail.cf
