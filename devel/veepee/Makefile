@@ -19,9 +19,12 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	LDFLAGS="-pthread"
+CONFIGURE_ENV=	LDFLAGS="-pthread ${PYTHON_LIBS}"
 CONFIGURE_ARGS=	--with-gd-includes=${LOCALBASE}/include/gd \
 		--disable-kde
+.if exists(/usr/lib/libcrypto.a)
+PYTHON_LIBS+=	-lcrypto
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g' \
