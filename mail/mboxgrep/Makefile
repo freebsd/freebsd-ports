@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mboxgrep
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,8 @@ COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 .if defined(WITH_PCRE)
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
