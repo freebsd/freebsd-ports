@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1998/02/26 07:24:19 tg Exp $
+# $Id: Makefile,v 1.4 1998/03/02 09:45:55 tg Exp $
 
 DISTNAME=	WindowMaker-0.14.0
 PKGNAME=	windowmaker-0.14.0
@@ -17,7 +17,7 @@ MAINTAINER=	handy@physics.montana.edu
 BUILD_DEPENDS=	${PREFIX}/lib/libPropList.a:${PORTSDIR}/devel/libproplist
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
-		png\\.0\\.:${PORTSDIR}/graphics/png \
+		png\\.2\\.:${PORTSDIR}/graphics/png \
 		tiff34\\.1:${PORTSDIR}/graphics/tiff34
 
 USE_X11=	yes
