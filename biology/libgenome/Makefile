@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.libgenome.org/releases/
 DISTNAME=	libGenome-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Toolkit for developing bioinformatic related software in C++
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
@@ -26,7 +27,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/html/*.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.png ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}
 .endif
 
