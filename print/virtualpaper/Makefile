@@ -3,7 +3,7 @@
 # Date created:		13 June 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.3 1996/11/17 08:45:19 obrien Exp $
+# $Id: Makefile,v 1.4 1996/11/27 12:08:48 asami Exp $
 #
 
 DISTNAME=	virtualpaper-1.4
@@ -47,7 +47,12 @@ do-install:
 		lectern/FreeBSD2/Lectern.1.html \
 		buildlectern/FreeBSD2/BuildLectern.1.html \
 		editlectern/FreeBSD2/EditLectern.1.html \
-		${PREFIX}/lib/m3/www
+		${PREFIX}/lib/m3/www; \
+	    if [ ! -d ${PREFIX}/share/virtualpaper ]; then \
+		${MKDIR} ${PREFIX}/share/virtualpaper; \
+		chmod 755 ${PREFIX}/share/virtualpaper; \
+	    fi; \
+	    ${INSTALL_DATA} COPYRIGHT ${PREFIX}/share/virtualpaper
 	@echo "Stripping programs"
 	@cd ${PREFIX}/bin; \
 	    strip LecternClient Lectern BuildLectern EditLectern
