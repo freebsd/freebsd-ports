@@ -1,5 +1,6 @@
 bin/pspell-config
 include/pspell/app_string.hh
+include/pspell/conf.h
 include/pspell/config.h
 include/pspell/config_impl.hh
 include/pspell/convert.hh
@@ -25,7 +26,7 @@ include/pspell/string_pair_emulation.h
 include/pspell/wordlist.h
 lib/libpspell-impl.a
 lib/libpspell-impl.so
-lib/libpspell-impl.so.2
+lib/libpspell-impl.so.3
 lib/libpspell-modules.a
 lib/libpspell-modules.so
 lib/libpspell-modules.so.1
@@ -38,7 +39,6 @@ share/doc/pspell/man-html/3_Library.html
 share/doc/pspell/man-html/4_Status.html
 share/doc/pspell/man-html/5_Feedback.html
 share/doc/pspell/man-html/6_Changelog.html
-share/doc/pspell/man-html/6_Copyright.html
 share/doc/pspell/man-html/7_Copyright.html
 share/doc/pspell/man-html/About_this.html
 share/doc/pspell/man-html/Contents.html
@@ -58,7 +58,6 @@ share/doc/pspell/man-text/3_Library.txt
 share/doc/pspell/man-text/4_Status.txt
 share/doc/pspell/man-text/5_Feedback.txt
 share/doc/pspell/man-text/6_Changelog.txt
-share/doc/pspell/man-text/6_Copyright.txt
 share/doc/pspell/man-text/7_Copyright.txt
 share/doc/pspell/man-text/About_this.txt
 share/doc/pspell/man-text/Contents.txt
