@@ -7,6 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	2.64
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -33,6 +34,7 @@ PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
+NO_PACKAGE=	"not yet"
 
 .include <bsd.port.pre.mk>
 
