@@ -7,13 +7,11 @@
 
 PORTNAME=	keychain
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.ibiblio.org/pub/Linux/distributions/gentoo/distfiles/ \
-		ftp://sunsite.dk/mirrors/gentoo/distfiles/ \
-		ftp://ftp.gtlib.cc.gatech.edu/pub/gentoo/distfiles/ \
-		ftp://ftp.gentoo.no/pub/linux/distributions/gentoo/distfiles/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 
-MAINTAINER=	info@volginfo.ru
+MAINTAINER=	olive@oban.frmug.org
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -24,8 +22,15 @@ NO_BUILD=	yes
 RUN_DEPENDS=	ssh-agent:${PORTSDIR}/security/openssh
 .endif
 
+DOCS=		ChangeLog README
+
 do-install:
-	@ ${MKDIR} ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/keychain ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
