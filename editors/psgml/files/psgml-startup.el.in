@@ -12,6 +12,10 @@
 (autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
 (autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
 
+(setq auto-mode-alist
+      (append (list '("\\.s?html?\\'" . sgml-mode))
+	auto-mode-alist))
+
 (setq sgml-custom-dtd
   '(("HTML" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML//EN\">")
     ("HTML 2.0" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">")
@@ -65,5 +69,46 @@
     ("Serial"
      "<!DOCTYPE Serial PUBLIC \"ISO 12083:1993//DTD Serial//EN\">")
     ))
+
+(setq-default sgml-auto-activate-dtd t)
+(setq-default sgml-set-face t)
+
+(make-face 'sgml-comment-face)
+(make-face 'sgml-doctype-face)
+(make-face 'sgml-end-tag-face)
+(make-face 'sgml-entity-face)
+(make-face 'sgml-ignored-face)
+(make-face 'sgml-ms-end-face)
+(make-face 'sgml-ms-start-face)
+(make-face 'sgml-pi-face)
+(make-face 'sgml-sgml-face)
+(make-face 'sgml-short-ref-face)
+(make-face 'sgml-start-tag-face)
+
+(set-face-foreground 'sgml-comment-face   "dark green")
+(set-face-foreground 'sgml-doctype-face   "maroon")
+(set-face-foreground 'sgml-end-tag-face   "SlateBlue")
+(set-face-foreground 'sgml-entity-face    "OrangeRed4")
+(set-face-foreground 'sgml-ignored-face   "maroon")
+(set-face-background 'sgml-ignored-face   "gray90")
+(set-face-foreground 'sgml-ms-end-face    "maroon")
+(set-face-foreground 'sgml-ms-start-face  "maroon")
+(set-face-foreground 'sgml-pi-face        "maroon")
+(set-face-foreground 'sgml-sgml-face      "maroon")
+(set-face-foreground 'sgml-short-ref-face "goldenrod")
+(set-face-foreground 'sgml-start-tag-face "SlateBlue")
+
+(setq-default sgml-markup-faces
+	      '((comment   . sgml-comment-face)
+		(doctype   . sgml-doctype-face)
+		(end-tag   . sgml-end-tag-face)
+		(entity    . sgml-entity-face)
+		(ignored   . sgml-ignored-face)
+		(ms-end    . sgml-ms-end-face)
+		(ms-start  . sgml-ms-start-face)
+		(pi        . sgml-pi-face)
+		(sgml      . sgml-sgml-face)
+		(short-ref . sgml-short-ref-face)
+		(start-tag . sgml-start-tag-face)))
 
 (provide 'psgml-startup)

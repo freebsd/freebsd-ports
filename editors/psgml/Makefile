@@ -7,6 +7,7 @@
 
 PORTNAME=	psgml
 PORTVERSION=	${PSGML_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
