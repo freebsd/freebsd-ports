@@ -67,7 +67,7 @@ OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV=	OPTIM='${OPTIM}'
+CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}'
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
