@@ -5,6 +5,7 @@ include/libxml++-1.0/libxml++/dtd.h
 include/libxml++-1.0/libxml++/exceptions/exception.h
 include/libxml++-1.0/libxml++/exceptions/internal_error.h
 include/libxml++-1.0/libxml++/exceptions/parse_error.h
+include/libxml++-1.0/libxml++/exceptions/validity_error.h
 include/libxml++-1.0/libxml++/libxml++.h
 include/libxml++-1.0/libxml++/nodes/commentnode.h
 include/libxml++-1.0/libxml++/nodes/element.h
@@ -15,7 +16,7 @@ include/libxml++-1.0/libxml++/parsers/parser.h
 include/libxml++-1.0/libxml++/parsers/saxparser.h
 lib/libxml++-0.1.a
 lib/libxml++-0.1.so
-lib/libxml++-0.1.so.5
+lib/libxml++-0.1.so.7
 libdata/pkgconfig/libxml++-1.0.pc
 share/aclocal/libxml++.m4
 @dirrm include/libxml++-1.0/libxml++/exceptions
