@@ -22,4 +22,4 @@ WRKSRC=		${WRKDIR}/t2ps-dir
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/t2ps ${PREFIX}/bin
 
-.include<bsd.port.mk>
+.include <bsd.port.mk>
