@@ -1,0 +1,61 @@
+--- ups/xc_builtins.c.orig	Fri Jun 19 11:10:51 1998
++++ ups/xc_builtins.c	Tue Jun 23 18:32:04 1998
+@@ -121,8 +121,8 @@
+ static int builtin_write PROTO((int fd, const void *buf, size_t nbytes));
+ extern int pipe PROTO((int *fds));
+ static int builtin_pipe PROTO((int *fds));
+-extern int lseek PROTO((int fd, off_t offset, int whence));
+-static int builtin_lseek PROTO((int fd, off_t offset, int whence));
++extern off_t lseek PROTO((int fd, off_t offset, int whence));
++static off_t builtin_lseek PROTO((int fd, off_t offset, int whence));
+ /*extern int fcntl PROTO((int fd, int cmd, char *arg));*/
+ static int builtin_fcntl PROTO((int fd, int cmd, char *arg));
+ extern int dup2 PROTO((int fd, int newfd));
+@@ -139,8 +139,8 @@
+ extern int flock PROTO((int fd, int op));
+ static int builtin_flock PROTO((int fd, int op));
+ #endif
+-extern int ftruncate PROTO((int fd, long length));
+-static int builtin_ftruncate PROTO((int fd, long length));
++extern int ftruncate PROTO((int fd, off_t length));
++static int builtin_ftruncate PROTO((int fd, off_t length));
+ extern int ioctl PROTO((int fd, unsigned cmd, caddr_t arg));
+ static int builtin_ioctl PROTO((int fd, unsigned cmd, caddr_t arg));
+ extern int fstat PROTO((int fd, struct stat *stbuf));
+@@ -173,7 +173,7 @@
+ 
+ static bool fd_ok PROTO((int fd));
+ 
+-#ifndef __FreeBSD__
++#ifndef OS_BSD44
+ #ifdef OS_LINUX
+ extern const char *const sys_errlist[];
+ extern int sys_nerr;
+@@ -319,7 +319,8 @@
+ int utimes(), atoi(), rand(), system(), abs();
+ int getuid(), geteuid(), getgid(), getegid(), setreuid(), setregid();
+ int setgroups(), getgroups();
+-int rename(), read(), write(), pipe(), lseek(), fcntl(), close(), dup(), dup2();
++int rename(), read(), write(), pipe(), fcntl(), close(), dup(), dup2();
++off_t lseek();
+ int getdtablesize(), fchown(), flock(), fsync(), ftruncate();
+ int ioctl(), select(), open(), creat(), link(), unlink(), chown(), chmod();
+ int mkdir(), symlink(), readlink(), rmdir(), access(), chdir(), chroot();
+@@ -508,7 +509,7 @@
+ static int
+ builtin_ftruncate(fd, length)
+ int fd;
+-long length;
++off_t length;
+ {
+ 	return fd_ok(fd) ? ftruncate(fd, length) : -1;
+ }
+@@ -531,7 +532,7 @@
+ 	return res;
+ }
+ 
+-static int
++static off_t
+ builtin_lseek(fd, offset, whence)
+ int fd;
+ off_t offset;

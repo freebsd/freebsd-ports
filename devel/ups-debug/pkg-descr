@@ -1,0 +1,19 @@
+Ups is a source level C debugger that runs under X11.
+
+It runs in a window with two major regions: one showing the
+current state of the target program data and the other showing
+the currently executing source code.  A key feature of ups is
+that the variables display is persistent: when you add a variable
+to the display it stays there as you step through the code.  The
+current stack trace (which function called which) is always visible.
+
+Ups includes a C interpreter which allows you to add fragments
+of code simply by editing them into the source window (the source
+file itself is not modified).  This lets you add debugging printf
+calls without recompiling, relinking (or even restarting) the
+target program.  You can also add conditional breakpoints in a
+natural way - you just add a statement like "if (i == 73) #stop"
+at the appropriate place in the source window.
+
+-- David
+   obrien@NUXI.com
