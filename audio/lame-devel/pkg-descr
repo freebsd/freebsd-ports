@@ -1,0 +1,11 @@
+LAME stands for LAME Ain't an Mp3 Encoder. 
+
+This is a patch agains the ISO MPEG1 demonstration source.  The
+modifications are distributed under the GNU GENERAL PUBLIC LICENSE
+(see the file COPYING for details).
+
+The graphical frame analyzer uses the MPGLIB decoding engine, written by:
+Michael Hipp (email: Michael.Hipp@student.uni-tuebingen.de) 
+and released under a more restrictive agreement.  
+
+WWW: http://lame.sourceforge.net/

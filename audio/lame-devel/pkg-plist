@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+bin/lame
+bin/mp3rtp
+bin/mp3x
+include/lame/lame.h
+lib/libmp3lame.a
+lib/libmp3lame.so.0
+@exec ln -fs %F %B/libmp3lame.so
+@unexec rm -f %B/libmp3lame.so
+%%PORTDOCS%%share/doc/lame/API
+%%PORTDOCS%%share/doc/lame/PRESETS.draft
+%%PORTDOCS%%share/doc/lame/README
+%%PORTDOCS%%share/doc/lame/TODO
+%%PORTDOCS%%share/doc/lame/USAGE
+%%PORTDOCS%%share/doc/lame/html/basic.html
+%%PORTDOCS%%share/doc/lame/html/contributors.html
+%%PORTDOCS%%share/doc/lame/html/examples.html
+%%PORTDOCS%%share/doc/lame/html/history.html
+%%PORTDOCS%%share/doc/lame/html/id3.html
+%%PORTDOCS%%share/doc/lame/html/index.html
+%%PORTDOCS%%share/doc/lame/html/lame.css
+%%PORTDOCS%%share/doc/lame/html/modes.html
+%%PORTDOCS%%share/doc/lame/html/node6.html
+%%PORTDOCS%%share/doc/lame/html/switchs.html
+%%PORTDOCS%%@dirrm share/doc/lame/html
+%%PORTDOCS%%@dirrm share/doc/lame
+@dirrm include/lame
