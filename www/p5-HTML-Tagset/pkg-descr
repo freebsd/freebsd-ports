@@ -1,0 +1,12 @@
+This module contains several data tables useful in various kinds of
+HTML parsing operations.
+
+Note that all tag names used are lowercase.
+
+In the following documentation, a "hashset" is a hash being used as a
+set -- the hash conveys that its keys are there, and the actual values
+associated with the keys are not significant.  (But what values are
+there, are always true.)
+
+- Vanilla
+vanilla@FreeBSD.ORG

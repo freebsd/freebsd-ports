@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Tagset.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Tagset/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Tagset
