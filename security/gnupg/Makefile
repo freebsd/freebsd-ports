@@ -43,7 +43,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/gnupg
 .endfor
 .endif
-#	${CHMOD} u+s ${PREFIX}/bin/gpg
+.if defined(WITH_SUID_GPG)
+	${CHMOD} u+s ${PREFIX}/bin/gpg
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 check:
