@@ -1,19 +1,11 @@
-*** src/xresources.h.orig	Wed Oct 25 10:40:00 1995
---- src/xresources.h	Tue Dec  5 06:11:22 1995
-***************
-*** 95,101 ****
-        offset (confirm_exit), XtRString, "True" },
-    /* THIS USED TO BE mailCommand BUT IS NOW sendmailCommand. */
-    { "sendmailCommand", "SendmailCommand", XtRString, sizeof (char *),
-!       offset (sendmail_command), XtRString, "/usr/lib/sendmail -t" },
-    /* Ignore this.  Stealth feature. */
-    { "mailFilterCommand", "MailFilterCommand", XtRString, sizeof (char *),
-        offset (mail_filter_command), XtRString, NULL },
---- 95,101 ----
-        offset (confirm_exit), XtRString, "True" },
-    /* THIS USED TO BE mailCommand BUT IS NOW sendmailCommand. */
-    { "sendmailCommand", "SendmailCommand", XtRString, sizeof (char *),
-!       offset (sendmail_command), XtRString, "/usr/sbin/sendmail -t" },
-    /* Ignore this.  Stealth feature. */
-    { "mailFilterCommand", "MailFilterCommand", XtRString, sizeof (char *),
-        offset (mail_filter_command), XtRString, NULL },
+--- ./src/xresources.h.org	Tue Apr  9 21:41:26 1996
++++ ./src/xresources.h	Tue Apr  9 21:43:12 1996
+@@ -94,7 +94,7 @@
+   { "confirmExit", "ConfirmExit", XtRBoolean, sizeof (Boolean),
+       offset (confirm_exit), XtRString, "True" },
+   /* THIS USED TO BE mailCommand BUT IS NOW sendmailCommand. */
+-#ifdef __bsdi__
++#if defined(__bsdi__) || defined(__FreeBSD__)
+   { "sendmailCommand", "SendmailCommand", XtRString, sizeof (char *),
+       offset (sendmail_command), XtRString, "/usr/sbin/sendmail -t" },
+ #else
