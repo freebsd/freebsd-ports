@@ -11,11 +11,9 @@ PKGNAME=	glasteroids-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
-		GLU.14:${PORTSDIR}/graphics/Mesa3 \
-		glut.3:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 MAKEFILE=	Makefile.FreeBSD
 
