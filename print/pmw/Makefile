@@ -7,15 +7,13 @@
 
 PORTNAME=	pmw
 PORTVERSION=	4.06
+PORTREVISION=	1
 CATEGORIES=	print audio
-MASTER_SITES=	http://www.quercite.com/
+MASTER_SITES=	ftp://ftp.at.freebsd.org/pub/mirrors/www.quercite.com/ \
+		http://www.quercite.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	g.gonter@ieee.org
 COMMENT=	High quality music typesetting program
-
-BROKEN=		Unfetchable
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
