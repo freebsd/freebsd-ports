@@ -1,0 +1,9 @@
+--- Makefile.orig	Mon Aug 27 15:03:28 2001
++++ Makefile	Tue Oct  9 13:18:10 2001
+@@ -24,5 +24,5 @@
+ 	if [ -f examples/d5.o ]; then $(MAKE) -C examples clean; fi
+ 
+ .c.o:
+-	gcc -Wall -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
++	gcc %%CFLAGS%% -Wall -Iinclude -Llib -fPIC -DPIC -c -o $*.o $<
+ 
