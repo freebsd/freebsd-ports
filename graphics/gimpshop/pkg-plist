@@ -23,11 +23,11 @@ lib/libgck.so.1
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.1.1
+lib/libgimp.so.1.2
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.1.1
+lib/libgimpui.so.1.2
 lib/libgpc.a
 lib/libmegawidget.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
