@@ -19,7 +19,12 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" CXXFLAGS="${CFLAGS}"
 
-post-patch:
-	${REINPLACE_CMD} -e 's|-O6 -s|${CFLAGS}|' ${WRKSRC}/src/Makefile.in
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O6 -s|${CFLAGS}|' ${WRKSRC}/src/Makefile.in
+.if ${OSVERSION} >= 502126
+	@${REINPLACE_CMD} -e 's|#ifndef max|#if 0|' ${WRKSRC}/src/Game.h
+.endif
+
+.include <bsd.port.post.mk>
