@@ -723,6 +723,7 @@
     SUBDIR += zope-silvaviews
     SUBDIR += zope-soapmethod
     SUBDIR += zope-ttwtype
+    SUBDIR += zope-xmlmethods
     SUBDIR += zope-xmlwidgets
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
