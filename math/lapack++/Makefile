@@ -27,8 +27,8 @@ WRKSRC=		${WRKDIR}/Lapackpp1.1a
 USE_REINPLACE=	yes
 
 #ATLAS_BLAS
-#BLAS_LIB=	-lf77blas -latlas
-#LAPACK_LIB=	-lalapack -lcblas
+BLAS_LIB=	-lf77blas -latlas
+LAPACK_LIB=	-lalapack -lcblas
 
 #Vanilla BLAS
 #BLAS_LIB=	-lblas
