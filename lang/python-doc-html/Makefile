@@ -1,5 +1,5 @@
 # New ports collection makefile for:    python-doc
-# Version required:     1.5.2
+# Version required:     1.5.2p2
 # Date created:         12 May 1999
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
@@ -9,8 +9,8 @@
 DISTNAME=	${DOCFORMAT}-${VERSION}
 PKGNAME=        python-doc-${DOCFORMAT}-${VERSION}
 CATEGORIES=	lang python
-MASTER_SITES=	ftp://www.python.org/pub/python/doc/1.5.2/ \
-		ftp://ftp.cwi.nl/pub/python/doc/1.5.2/
+MASTER_SITES=	http://www.python.org/ftp/python/doc/ \
+		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/doc/1.5.2p2/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tg@FreeBSD.org
@@ -19,7 +19,7 @@ DIST_SUBDIR=	python
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/PLIST_${DOCFORMAT}
 
-VERSION=	1.5.2
+VERSION=	1.5.2p2
 DOCDIR=		${PREFIX}/share/doc/python
 
 DOCFORMAT?=	html
