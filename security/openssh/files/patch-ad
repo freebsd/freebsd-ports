@@ -1,0 +1,35 @@
+--- readconf.c.dist	Fri Nov 19 23:32:48 1999
++++ readconf.c	Fri Nov 19 23:41:27 1999
+@@ -369,13 +369,8 @@
+       goto parse_int;
+       
+     case oTISAuthentication:
+-      cp = strtok(NULL, WHITESPACE);
+-      if (cp != 0 && (strcmp(cp, "yes") == 0 || strcmp(cp, "true") == 0))
+-	fprintf(stderr,
+-		"%.99s line %d: Warning, TIS is not supported.\n",
+-		filename,
+-		linenum);
+-      break;
++      intptr = &options->tis_authentication;
++      goto parse_flag;
+ 
+     case oCompressionLevel:
+       intptr = &options->compression_level;
+@@ -655,6 +650,7 @@
+   options->num_local_forwards = 0;
+   options->num_remote_forwards = 0;
+   options->log_level = (LogLevel)-1;
++  options->tis_authentication = -1;
+ }
+ 
+ /* Called after processing other sources of option data, this fills those
+@@ -727,6 +723,8 @@
+     options->user_hostfile = SSH_USER_HOSTFILE;
+   if (options->log_level == (LogLevel)-1)
+     options->log_level = SYSLOG_LEVEL_INFO;
++  if (options->tis_authentication == -1)
++    options->tis_authentication = 0;
+   /* options->proxy_command should not be set by default */
+   /* options->user will be set in the main program if appropriate */
+   /* options->hostname will be set in the main program if appropriate */
