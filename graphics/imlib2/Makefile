@@ -1,12 +1,12 @@
 # New ports collection makefile for:	imlib
-# Version required:	1.9.4
+# Version required:	1.9.7
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	imlib-1.9.4
+DISTNAME=	imlib-1.9.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/imlib

@@ -1,5 +1,7 @@
 bin/imlib-config
 bin/imlib_config
+etc/imlib/im_palette-small.pal
+etc/imlib/im_palette-tiny.pal
 etc/imlib/im_palette.pal
 etc/imlib/imrc
 include/Imlib.h
@@ -10,34 +12,18 @@ include/gdk_imlib_private.h
 include/gdk_imlib_types.h
 lib/libImlib.a
 lib/libImlib.so
-lib/libImlib.so.4
+lib/libImlib.so.5
 lib/libgdk_imlib.a
 lib/libgdk_imlib.so
-lib/libgdk_imlib.so.4
-lib/libimlib-bmp.a
+lib/libgdk_imlib.so.5
 lib/libimlib-bmp.so
-lib/libimlib-bmp.so.0
-lib/libimlib-gif.a
 lib/libimlib-gif.so
-lib/libimlib-gif.so.0
-lib/libimlib-jpeg.a
 lib/libimlib-jpeg.so
-lib/libimlib-jpeg.so.0
-lib/libimlib-png.a
 lib/libimlib-png.so
-lib/libimlib-png.so.0
-lib/libimlib-ppm.a
 lib/libimlib-ppm.so
-lib/libimlib-ppm.so.0
-lib/libimlib-ps.a
 lib/libimlib-ps.so
-lib/libimlib-ps.so.0
-lib/libimlib-tiff.a
 lib/libimlib-tiff.so
-lib/libimlib-tiff.so.0
-lib/libimlib-xpm.a
 lib/libimlib-xpm.so
-lib/libimlib-xpm.so.0
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/imlib.m4
