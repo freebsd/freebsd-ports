@@ -12,12 +12,32 @@ PORTVERSION?=	${BROWSER_VER}
 .include <bsd.port.pre.mk>
 .endif
 
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.spin.ad.jp/pub/WWW/netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://ftp.unicamp.br/pub6/netscape/communicator/english/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://the.ausmac.net/wd2a/security/cryptography/128bit-browsers/Netscape/${NETSCAPE_DIST_SUBDIR}/
+MASTER_SITES=	ftp://ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.cuhk.edu.hk/pub/www/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.spin.ad.jp/pub/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.sut.ac.jp/pub/archives/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.kmitl.ac.th/pub/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.tuwien.ac.at/z134/infosys/browsers/netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.euronet.be/pub/mirror/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.uni-heidelberg.de/pub/Netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.darenet.dk/mirrors/ftp2.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.cica.es/pub5/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.calvacom.fr/pub1/browser/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.ciril.fr/pub1/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.uniroma2.it/%7bC/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.nluug.nl/vol/2/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.ntnu.no/pub/www/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.uio.no/pub/network/web/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.man.poznan.pl/vols/vol1/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.uakom.sk/pub/WWW/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.unicamp.br/pub6/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.mox.uniandes.edu.co/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.nsu.ru/pub/mirrors/ftp-de.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.curtin.edu.au/pub/internet/netscape/${NETSCAPE_DIST_SUBDIR}/
 DISTFILES=	${BROWSER}-v475-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
@@ -39,7 +59,7 @@ NETSCAPE_DIST_GRADE=	navigator_standalone
 
 NETSCAPE_DIST_ARCH?=	unsupported/freebsd # | supported/dec_unix40 | supported/linux22 | unsupported/bsdi21
 NETSCAPE_DIST_GRADE?=	complete_install # | navigator_standalone
-NETSCAPE_DIST_SUBDIR?=	${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
+NETSCAPE_DIST_SUBDIR?=	communicator/english/${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
 NETSCAPE_DIST_TAG?=	x86-unknown-freebsd # | x86-unknown-linux2.2 | x86-bsdi-bsd2 | alpha-dec-osf4.0
 
 BROWSER_VER=	4.75
