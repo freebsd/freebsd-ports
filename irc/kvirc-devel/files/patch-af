@@ -1,0 +1,11 @@
+--- src/kvirc/kvi_frame.cpp	Mon Dec 20 19:07:31 1999
++++ src/kvirc/kvi_frame.cpp.new	Sat Jan 29 17:58:45 2000
+@@ -80,6 +80,8 @@
+ 
+ #include "kvi_asyncwhois.h"
+ 
++#undef accept
++
+ #include <qcursor.h>
+ #include <qclipboard.h>
+ #include <qobjcoll.h>

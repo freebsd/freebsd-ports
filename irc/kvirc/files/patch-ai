@@ -1,0 +1,11 @@
+--- src/kvirc/kvi_listbox.cpp	Sat Dec 18 08:40:17 1999
++++ src/kvirc/kvi_listbox.cpp.new	Sat Jan 29 18:22:23 2000
+@@ -38,6 +38,8 @@
+ #include "kvi_query.h"
+ #include "kvi_event.h"
+ 
++#undef accept
++
+ #include <qbitmap.h>
+ 
+ #include <X11/Xlib.h>

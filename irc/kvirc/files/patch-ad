@@ -1,0 +1,11 @@
+--- src/kvirc/kvi_dcc_send.cpp	Sat Dec 18 08:29:12 1999
++++ src/kvirc/kvi_dcc_send.cpp.new	Sat Jan 29 17:47:32 2000
+@@ -770,7 +770,7 @@
+ 	kvi_threadTestCancel();
+ 
+ 	dcc->tmpBuffer.sprintf(__tr("Connected to %s on port %u"),dcc->szAddress.ptr(),dcc->uPort);
+-	KviDccEvent * e = new KviDccEvent(KVI_DCC_EVENT_MSG,dcc->tmpBuffer.ptr());
++	e = new KviDccEvent(KVI_DCC_EVENT_MSG,dcc->tmpBuffer.ptr());
+ 	g_pThreadEventDispatcher->postEvent(e,dcc->dccSendParent);
+ 
+ 	kvi_threadTestCancel();

@@ -1,0 +1,11 @@
+--- src/kvirc/kvi_dlgscript.cpp	Mon Dec 20 19:19:22 1999
++++ src/kvirc/kvi_dlgscript.cpp.new	Sat Jan 29 17:56:01 2000
+@@ -45,6 +45,8 @@
+ #include "kvi_varcache.h"
+ #include "kvi_style.h"
+ 
++#undef accept
++
+ #include <qlayout.h>
+ #include <qevent.h>
+ #include <qsplitter.h>

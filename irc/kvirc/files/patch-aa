@@ -1,19 +1,13 @@
-*** kvirc/kvi_support.cpp.orig	Mon Jan 25 00:32:30 1999
---- kvirc/kvi_support.cpp	Mon Feb 15 02:10:42 1999
-***************
-*** 21,27 ****
-  
-  //#include "kvi_app.h"
-  #include <ctype.h>
-! #include <netinet/in.h>
-  #include <sys/types.h>
-  #include <sys/socket.h>      
-  #include <qstring.h> //includes <string.h> too
---- 21,27 ----
-  
-  //#include "kvi_app.h"
-  #include <ctype.h>
-! // #include <netinet/in.h>
-  #include <sys/types.h>
-  #include <sys/socket.h>      
-  #include <qstring.h> //includes <string.h> too
+--- src/kvilib/kvi_thread.h	Sat Oct 30 20:18:28 1999
++++ src/kvilib/kvi_thread.h.new	Sat Jan 29 18:29:32 2000
+@@ -24,7 +24,9 @@
+ //
+ 
+ #include <pthread.h>
+-
++#undef connect
++#undef read
++#undef write
+ #include <qsocketnotifier.h>
+ #include <qlist.h>
+ #include <qobject.h>

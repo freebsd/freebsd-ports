@@ -1,0 +1,12 @@
+--- src/kvirc/kvi_input.cpp	Sat Dec 11 08:09:57 1999
++++ src/kvirc/kvi_input.cpp.new	Sat Jan 29 18:02:53 2000
+@@ -43,8 +43,8 @@
+ #include "kvi_strsub.h"
+ 
+ #include <X11/Xlib.h>
+-
+ #include <ctype.h>
++#undef accept
+ 
+ #include <qnamespace.h>
+ #include <qpopupmenu.h>
