@@ -210,7 +210,8 @@ post-install:
 .endfor
 .for i in imapd imapd-ssl pop3d pop3d-ssl
 	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/courier-imap-${i}.sh > ${PREFIX}/etc/rc.d/courier-imap-${i}.sh
+		${FILESDIR}/courier-imap-${i}.sh > ${WRKDIR}/courier-imap-${i}.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/courier-imap-${i}.sh ${PREFIX}/etc/rc.d/courier-imap-${i}.sh
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
