@@ -8829,6 +8829,7 @@ py-HTMLgen	ports/www/py-HTMLgen
 py-HyperText	ports/textproc/py-HyperText
 py-MySQL	ports/databases/py-MySQL
 py-MySQLdb	ports/databases/py-MySQLdb
+py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
 py-PyGreSQL	ports/databases/py-PyGreSQL
 py-PySQLite	ports/databases/py-PySQLite
 py-PyX		ports/graphics/py-PyX

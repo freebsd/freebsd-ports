@@ -268,6 +268,7 @@
     SUBDIR += pxtools
     SUBDIR += py-MySQL
     SUBDIR += py-MySQLdb
+    SUBDIR += py-MySQLdb-devel
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PySQLite
     SUBDIR += py-SQLDict
