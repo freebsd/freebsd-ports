@@ -3,7 +3,7 @@
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.5 1995/05/09 05:41:41 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/29 08:39:27 asami Exp $
 #
 
 DISTNAME=	gawk-2.15.6
@@ -32,7 +32,7 @@ pre-fetch:
 	    ${ECHO_MSG} ">> ${PATCHFILES} doesn't seem to exist on this system."; \
 	    for file in ${DISTPATCHES} ; do \
 		for site in ${PATCH_SITES} ; do \
-		    if ${NCFTP} ${NCFTPFLAGS} $${site}$${file}; then \
+		    if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 			break; \
 		    fi \
 		done; \
