@@ -1,8 +1,12 @@
 bin/filepp
+share/filepp/modules/bigdef.pm
 share/filepp/modules/c-comment.pm
 share/filepp/modules/for.pm
+share/filepp/modules/format.pm
+share/filepp/modules/function.pm
 share/filepp/modules/hash-comment.pm
 share/filepp/modules/literal.pm
+share/filepp/modules/maths.pm
 share/filepp/modules/tolower.pm
 share/filepp/modules/toupper.pm
 @dirrm share/filepp/modules
