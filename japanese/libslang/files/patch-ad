@@ -1,43 +1,31 @@
-*** src/Makefile.in.orig	Thu Feb  3 03:25:50 2000
---- src/Makefile.in	Thu Feb  3 04:15:43 2000
-***************
-*** 36,42 ****
-  exec_prefix = @exec_prefix@
-  install_lib_dir = @libdir@
-  install_include_dir = @includedir@
-! install_doc_dir = $(prefix)/doc/slang/@slang_version@
-  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
-  #---------------------------------------------------------------------------
-  # Misc commands (safe to leave these untouched)
---- 36,42 ----
-  exec_prefix = @exec_prefix@
-  install_lib_dir = @libdir@
-  install_include_dir = @includedir@
-! install_doc_dir = $(prefix)/share/doc/slang
-  DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
-  #---------------------------------------------------------------------------
-  # Misc commands (safe to leave these untouched)
-***************
-*** 74,80 ****
---- 74,84 ----
-  
-  ELFLIB = lib$(THIS_LIB).so#
-  ELFLIB_MAJOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
-+ .if ( ${PORTOBJFORMAT} == "aout" )
-  ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION)#
-+ .else
-+ ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION)
-+ .endif
-  
-  ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
-  
-***************
-*** 107,112 ****
---- 111,117 ----
-  $(ELFDIR_ELF_LIB): $(ELFDIR) $(CONFIG_H) $(ELFOBJS)
-  	-$(RM) $(ELFDIR_ELF_LIB)
-  	cd $(ELFDIR); $(ELF_LINK_CMD) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
-+ 	cd $(ELFDIR); strip $(ELFLIB_MAJOR_MINOR)
-  	cd $(ELFDIR); $(RM) $(ELFLIB); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB)
-  	@echo ""
-  	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
+--- src/Makefile.in.orig	Thu Apr 27 22:32:56 2000
++++ src/Makefile.in	Tue Jul 18 04:54:20 2000
+@@ -36,7 +36,7 @@
+ exec_prefix = @exec_prefix@
+ install_lib_dir = @libdir@
+ install_include_dir = @includedir@
+-install_doc_dir = $(prefix)/doc/slang/@slang_version@
++install_doc_dir = $(prefix)/share/doc/slang
+ DOC_FILES = ../changes.txt ../COPY* ../doc/slangdoc.html ../doc/text/*.txt
+ #---------------------------------------------------------------------------
+ # Misc commands (safe to leave these untouched)
+@@ -74,7 +74,11 @@
+ 
+ ELFLIB = lib$(THIS_LIB).so#
+ ELFLIB_MAJOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
++.if ( ${PORTOBJFORMAT} == "aout" )
+ ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION)#
++.else
++ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION)
++.endif
+ 
+ ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
+ 
+@@ -107,6 +111,7 @@
+ $(ELFDIR_ELF_LIB): $(ELFDIR) $(CONFIG_H) $(ELFOBJS)
+ 	-$(RM) $(ELFDIR_ELF_LIB)
+ 	cd $(ELFDIR); $(ELF_LINK_CMD) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
++	cd $(ELFDIR); strip $(ELFLIB_MAJOR_MINOR)
+ 	cd $(ELFDIR); $(RM) $(ELFLIB); $(LN) $(ELFLIB_MAJOR_MINOR) $(ELFLIB)
+ 	@echo ""
+ 	@echo $(ELFLIB_MAJOR_MINOR) created in $(ELFDIR).
