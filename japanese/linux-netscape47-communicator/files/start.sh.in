@@ -4,7 +4,7 @@ if [ ! -d $HOME/.netscape ]; then
 	cp @RDIR@/preferences.js $HOME/.netscape
 	chmod 644 $HOME/.netscape/preferences.js
 fi
-export LANG=ja_JP.EUC
+export LANG=@LANG@
 export LC_ALL=${LANG}
 export LC_CTYPE=${LANG}
 export MOZILLA_HOME=@NDIR@
@@ -15,4 +15,9 @@ export XAPPLRESDIR=@RDIR@
 export TIMID_DIR=/usr/local/lib/timidity
 export XCMSDB=/dev/null
 ulimit -c 0
-exec ${MOZILLA_HOME}/@BROWSER_BIN@ "$@"
+if [ -x /compat/linux/usr/X11R6/lib/libXm-ns.so.1.0.2 ]; then
+	export LD_PRELOAD=/usr/compat/linux/usr/lib/libg++.so.2.7.2
+	exec ${MOZILLA_HOME}/netscape-dynMotif "$@"
+else
+	exec ${MOZILLA_HOME}/@BROWSER_BIN@ "$@"
+fi
