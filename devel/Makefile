@@ -229,6 +229,7 @@
     SUBDIR += hs-hdoc
     SUBDIR += hs-hmake
     SUBDIR += hs-hpl
+    SUBDIR += hs-idoc
     SUBDIR += hs-popenhs
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils

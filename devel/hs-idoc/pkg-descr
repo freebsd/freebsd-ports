@@ -1,0 +1,11 @@
+IDoc extracts interface documentation and declarations from Haskell modules
+based on standard Haskell layout rules and a small number of clues that the
+programmer embeds in interface comments. These clues have been designed to be
+visually non-imposing when displaying the source in a text editor. Interface
+documentation is rendered in standard markup languages (currently, only HTML is
+supported). IDoc has been designed to be simple to use and install.
+
+WWW:	http://www.cse.unsw.edu.au/~chak/haskell/idoc/
+
+-- Oliver Braun
+obraun@FreeBSD.org
