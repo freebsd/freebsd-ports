@@ -23,8 +23,14 @@ DISTNAME=	php-${PORTVERSION}
 MAINTAINER=	dirk@FreeBSD.org
 
 .if !defined(STANDALONE)
+.if defined(WITH_APACHE2)
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
+LIB_DEPENDS=	pth.14:${PORTSDIR}/devel/pth
+.else
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+.endif
 .endif
 
 PHP_DISTDIR=	distributions
@@ -46,8 +52,15 @@ CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone \
 
 MAKE_ENV=	STANDALONE="${STANDALONE}"
 .else
-CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
-		--with-config-file-path=${PREFIX}/etc
+.if defined(WITH_APACHE2)
+CONFIGURE_ARGS=	--with-apxs2=${PREFIX}/sbin/apxs \
+		--with-tsrm-pth
+PLIST_SUB=	MOD_DIR=libexec/apache2
+.else
+CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs
+.endif
+CONFIGURE_ARGS+=--with-config-file-path=${PREFIX}/etc
+PLIST_SUB=	MOD_DIR=libexec/apache
 .endif
 
 CONFIGURE_ARGS+=--enable-versioning \
@@ -70,6 +83,10 @@ PLIST_SUB=	AP_LIBEXEC=${AP_LIBEXEC:S/^${PREFIX}\///}
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
+.if !defined(STANDALONE) && !defined(WITH_APACHE2)
+	@${ECHO_CMD} "Define WITH_APACHE2 to build mod_php4 as an apache2 module."
+	@${ECHO_CMD} ""
+.endif
 
 post-install:
 .if !defined(STANDALONE)
