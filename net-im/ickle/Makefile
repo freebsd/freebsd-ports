@@ -18,6 +18,7 @@ LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		icq2000.5:${PORTSDIR}/net/libicq2000
 
+USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GTK=	yes
 USE_REINPLACE=	yes
