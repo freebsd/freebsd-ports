@@ -70,6 +70,6 @@ share/smssend/vlf.sms
 share/smssend/w777.sms
 share/smssend/w777f.sms
 share/smssend/yab.sms
-@unexec rmdir man/fr/man1 2>/dev/null || true
-@unexec rmdir man/fr 2>/dev/null || true
+@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+@unexec rmdir %D/man/fr 2>/dev/null || true
 @dirrm share/smssend
