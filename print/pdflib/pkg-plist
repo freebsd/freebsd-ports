@@ -2,7 +2,7 @@ bin/pdflib-config
 include/pdflib.h
 lib/libpdf.a
 lib/libpdf.so
-lib/libpdf.so.5
+lib/libpdf.so.6
 %%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.a
 %%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.pm
 %%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so
