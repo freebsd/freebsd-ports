@@ -135,6 +135,7 @@
     SUBDIR += isc-dhcp3
     SUBDIR += isic
     SUBDIR += jabber
+    SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork2
     SUBDIR += kdetelnet
