@@ -23,7 +23,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/lighttpd
 pidfile=/var/run/lighttpd.pid
-required_files=%%PREFIX%%/etc/lighttpd.conf
+required_files=${lighttpd_conf}
 
 stop_postcmd=stop_postcmd
 
@@ -35,7 +35,9 @@ stop_postcmd()
 # set defaults
 
 lighttpd_enable=${lighttpd_enable:-"NO"}
-lighttpd_flags=${lighttpd_flags:-""}
+lighttpd_conf=${lighttpd_conf:-"%%PREFIX%%/etc/lighttpd.conf"}
+
+command_args="-f ${lighttpd_conf}"
 
 load_rc_config $name
 run_rc_command "$1"
