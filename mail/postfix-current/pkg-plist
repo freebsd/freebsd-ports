@@ -105,6 +105,7 @@ sbin/sendmail
 %%SUB_DOCS%%share/doc/postfix/postmap.1.html
 %%SUB_DOCS%%share/doc/postfix/postsuper.1.html
 %%SUB_DOCS%%share/doc/postfix/qmgr.8.html
+%%SUB_DOCS%%share/doc/postfix/qmqpd.8.html
 %%SUB_DOCS%%share/doc/postfix/queuing.html
 %%SUB_DOCS%%share/doc/postfix/rate.html
 %%SUB_DOCS%%share/doc/postfix/receiving.html

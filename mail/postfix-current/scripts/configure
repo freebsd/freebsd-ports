@@ -2,7 +2,4 @@
 #
 # $FreeBSD$
 
-for f in `find ${WRKSRC} | xargs grep -l '\!\!PREFIX\!\!' ` ; do \
-	mv $f $f.orig && sed s+!!PREFIX!!+$PREFIX+g < $f.orig > $f && \
-		rm $f.orig
-done
+find ${WRKSRC} -type f | xargs grep -l '\!\!PREFIX\!\!' | xargs perl -pi.fbsd -e 's+!!PREFIX!!+$PREFIX+g'
