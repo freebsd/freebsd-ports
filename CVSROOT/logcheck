@@ -30,7 +30,7 @@ my %HEADERS = (
 	"Obtained from"		=> '.*',
 	"Approved by"		=> '.*',
 	"PR"			=> '.*',
-	"MFC after"		=> '[\d]+( (days|weeks))?'
+	"MFC after"		=> '\d+(?:\s+(?:days?|weeks?|months?))?'
 );
 
 
