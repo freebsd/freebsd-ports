@@ -1,9 +1,15 @@
-===========================================================================
-Please set the folloing variables in /etc/rc.conf according to your needs:
+To use pf, please follow these steps:
 
-pf_enable 	= "Yes"
-pf_logd	  	= "Yes"
-pf_conf		= "%%PREFIX%%/etc/pf.conf"
+1. Add kernel options into your kernel config file and recompile kernel:
 
-They are used within %%PREFIX%%/etc/rc.d/pf.sh to bring pf up!
-===========================================================================
+device          bpf
+options         PFIL_HOOKS
+options         RANDOM_IP_ID
+
+2. Please set the following variables in /etc/rc.conf according to your needs:
+
+pf_enable="Yes"
+pf_logd="Yes"
+pf_conf="%%PREFIX%%/etc/pf.conf"
+
+3. Check %%PREFIX%%/etc/rc.d/pf.sh, it is the startup script for pf!
