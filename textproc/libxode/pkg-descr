@@ -1,0 +1,4 @@
+libxode is an XML library which wraps expat. it offers a very flexable DOM,
+and uses Memory Pools (which can also be created/used from this library).
+
+WWW: http://libxode.sourceforge.net/
