@@ -21,10 +21,6 @@ USE_GMAKE=		yes
 
 # No Manual page
 
-# Cryptography = be extra careful...
-NO_CDROM=	may contain export-restricted material
-NO_PACKAGE=	may contain export-restricted material
-
 post-configure:
 	(cd ${WRKSRC}; ${MAKE} bsd)
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
