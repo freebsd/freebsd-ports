@@ -8,7 +8,8 @@
 PORTNAME=	xosmulti
 PORTVERSION=	1.00
 CATEGORIES=	games
-MASTER_SITES=	http://www01.u-page.so-net.ne.jp/ka2/nakanita/multi/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	flathill
 DISTNAME=	${PORTNAME}_${PORTVERSION}_tar
 EXTRACT_SUFX=	.gz
 
