@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz++/
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	A C++ programmer's toolkit for the development of Z39.50v3 clients and servers
+COMMENT=	C++ toolkit for development of Z39.50v3 clients and servers
 
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
 
@@ -21,4 +21,10 @@ INSTALLS_SHLIB=	yes
 
 MAN8=		yaz-proxy.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
