@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.45 1998/09/22 16:19:14 asami Exp $
+# $Id: Makefile,v 1.46 1998/09/22 22:55:52 asami Exp $
 #
 
 DISTNAME=	gimp-1.0.0
@@ -22,7 +22,7 @@ LIB_DEPENDS+=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 LIB_DEPENDS+=	mpeg.1:${PORTSDIR}/graphics/mpeg-lib
 LIB_DEPENDS+=	png.2:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	tiff34.1:${PORTSDIR}/graphics/tiff34
-#LIB_DEPENDS+=	xdelta\\.0\\.18:${PORTSDIR}/misc/xdelta
+LIB_DEPENDS+=	xdelta.0:${PORTSDIR}/misc/xdelta
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -42,5 +42,6 @@ post-install:
 	cd ${WRKDIR}/gimp-data-extras-1.0.0; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
 	(cd ${PREFIX}/share/gimp/; tar -xvf -)
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
