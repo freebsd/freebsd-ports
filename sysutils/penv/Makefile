@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	penv
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.b1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/penv/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
