@@ -14,6 +14,8 @@ DISTNAME=	source_${PORTVERSION}
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Java SNMP protocol implementation
 
+BROKEN=		Incorrect pkg-plist
+
 USE_JAVA=	yes
 USE_ZIP=	yes
 
