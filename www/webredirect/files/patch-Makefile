@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile	2001/03/14 15:12:36	1.1
++++ Makefile	2001/03/14 15:12:46
+@@ -1,7 +1,7 @@
+ SRC	= webredirect.cc
+ OBJ	= ${SRC:.cc=.o}
+ INCLUDES = -Iincu
+-CXXFLAGS = -pipe -Wall -O2 ${INCLUDES}
++CXXFLAGS += -pipe -Wall ${INCLUDES}
+ PROG	= webredirect
+ 
+ all: ${PROG}

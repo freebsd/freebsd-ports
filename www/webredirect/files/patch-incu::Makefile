@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- incu/Makefile	2001/03/14 15:13:51	1.1
++++ incu/Makefile	2001/03/14 15:14:08
+@@ -1,6 +1,6 @@
+ SRC	= error.cc socket.cc log.cc system.cc time.cc pipe.cc
+ OBJS	= ${SRC:.cc=.o}
+-CXXFLAGS = -I. -pipe -Wall -O2
++CXXFLAGS += -I. -pipe -Wall
+ RANLIB	= ranlib
+ 
+ all: libincu.a depend.mk .cvsignore
+@@ -9,7 +9,7 @@
+ 	rm -f ${OBJS}
+ 
+ libincu.a: ${OBJS}
+-	-rm $@
++	rm -f $@
+ 	${AR} cq $@ ${OBJS} ${ARADD}
+ 	${RANLIB} $@
+ 
