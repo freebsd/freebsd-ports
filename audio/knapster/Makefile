@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	knapster
-PORTVERSION=	0.8
+PORTVERSION=	0.10
 CATEGORIES=	audio kde
-MASTER_SITES=	http://knapster.netpedia.net/packages/
+MASTER_SITES=	http://download.sourceforge.net/knapster/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
