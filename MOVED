@@ -978,3 +978,4 @@ sysutils/xwatch||2004-03-09|obsolete-distfile deleted by author
 textproc/dico|french/dico|2004-03-14|better category
 x11-fonts/Xft|x11-fonts/libXft|2004-03-16|port renamed
 devel/ulex|devel/ocaml-ulex|2004-03-19|port renamed
+textproc/yaxi|textproc/ocaml-yaxi|2004-03-19|port renamed
