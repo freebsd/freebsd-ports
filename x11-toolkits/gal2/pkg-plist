@@ -128,7 +128,8 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.11
+lib/libgal.so.12
+share/gnome/etable/%%VERSION%%/glade/e-table-config-no-group.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
@@ -186,7 +187,7 @@ share/locale/sv/LC_MESSAGES/gal.mo
 share/locale/ta/LC_MESSAGES/gal.mo
 share/locale/tr/LC_MESSAGES/gal.mo
 share/locale/uk/LC_MESSAGES/gal.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gal.mo
+share/locale/zh_TW/LC_MESSAGES/gal.mo
 @dirrm share/gnome/pixmaps/gal/categories
 @dirrm share/gnome/pixmaps/gal
 @dirrm share/gnome/gal/html/gal

@@ -1,6 +1,11 @@
---- configure.orig	Mon May 21 11:10:07 2001
-+++ configure	Mon May 21 11:10:59 2001
-@@ -5017,5 +5017,5 @@
+
+$FreeBSD$
+
+--- configure.orig	Wed Sep 26 11:16:25 2001
++++ configure	Wed Sep 26 11:16:25 2001
+@@ -5075,9 +5075,9 @@
+ save_CFLAGS="$CFLAGS"
+ save_LDFLAGS="$LDFLAGS"
  CFLAGS="$CFLAGS $ICONV_CFLAGS"
 -LDFLAGS="$LDFLAGS $ICONV_LIBS -liconv"
 -echo $ac_n "checking for iconv in -liconv""... $ac_c" 1>&6
@@ -9,25 +14,32 @@
 +echo $ac_n "checking for iconv in -lgiconv""... $ac_c" 1>&6
 +echo "configure:5081: checking for iconv in -lgiconv" >&5
  if eval "test \"`echo '$''{'ac_cv_libiconv'+set}'`\" = set"; then
-@@ -5027,3 +5027,3 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -5085,7 +5085,7 @@
+ #line 5086 "configure"
+ #include "confdefs.h"
  
 -#include <iconv.h>
 +#include <giconv.h>
  
-@@ -5050,3 +5050,3 @@
+ int main() {
+ 
+@@ -5108,7 +5108,7 @@
+ 
+ echo "$ac_t""$ac_cv_libiconv" 1>&6
  if test $ac_cv_libiconv = yes; then
 -	ICONV_LIBS="$ICONV_LIBS -liconv"
 +	ICONV_LIBS="$ICONV_LIBS -lgiconv"
  	have_iconv=yes
-@@ -5176,3 +5176,3 @@
+ else
+ 	CFLAGS="$save_CFLAGS"
+@@ -5234,7 +5234,7 @@
+ #line 5235 "configure"
+ #include "confdefs.h"
  
 -#include <iconv.h>
 +#include <giconv.h>
  #include <stdlib.h>
-@@ -5290,4 +5290,4 @@
- echo "configure:5291: checking for GTK >= 1.2.7" >&5
--if gtk-config --version > /dev/null 2>&1; then 
--        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
-+if $GTK_CONFIG --version > /dev/null 2>&1; then 
-+        vers=`$GTK_CONFIG --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
-     if test "$vers" -ge 1002007; then
+ #include <string.h>
+ #ifdef HAVE_GNU_GET_LIBC_VERSION
