@@ -347,6 +347,7 @@
     SUBDIR += streamtuner-local
     SUBDIR += streamtuner-python
     SUBDIR += streamtuner-xiph
+    SUBDIR += swami
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += taglib

@@ -1,0 +1,16 @@
+bin/swami
+lib/swami/samplelib_audiofile.a
+lib/swami/samplelib_audiofile.la
+lib/swami/samplelib_audiofile.so
+lib/swami/samplelib_libsndfile.a
+lib/swami/samplelib_libsndfile.la
+lib/swami/samplelib_libsndfile.so
+lib/swami/wavetbl_fluidsynth.a
+lib/swami/wavetbl_fluidsynth.la
+lib/swami/wavetbl_fluidsynth.so
+share/locale/de/LC_MESSAGES/swami.mo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm lib/swami
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
