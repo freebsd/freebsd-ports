@@ -1,5 +1,5 @@
 bin/scponly
-sbin/scponlyc
+%%SCPONLY_CHROOT%%sbin/scponlyc
 etc/scponly/debuglevel
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

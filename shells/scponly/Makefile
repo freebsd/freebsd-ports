@@ -15,21 +15,25 @@
 #
 # Core funcionality:
 #
-# WITH_SCPONLY_WILDCARDS
+# WITHOUT_SCPONLY_WILDCARDS
 # default: undefined
-# define if you want to enable wildcard processing.
+# define if you want to disable wildcard processing.
 #
-# WITH_SCPONLY_SCP
+# WITHOUT_SCPONLY_SCP
 # default: undefined
-# define if you want to enable vanilla scp compatibility.
+# define if you want to disable vanilla scp compatibility.
 #
-# WITH_SCPONLY_GFTP
+# WITHOUT_SCPONLY_GFTP
 # default: undefined
-# define if you want to enable gftp compatibility.
+# define if you want to disable gftp compatibility.
 #
-# WITH_SCPONLY_WINSCP
+# WITHOUT_SCPONLY_WINSCP
 # default: undefined
-# define if you want to enable WinSCP compatibility.
+# define if you want to disable WinSCP compatibility.
+#
+# WITH_SCPONLY_CHROOT
+# default: undefined
+# define if you want to use chroot functionality (set UID to root).
 #
 # WITH_SCPONLY_RSYNC
 # default: undefined
@@ -46,6 +50,7 @@
 
 PORTNAME=	scponly
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.sublimation.org/scponly/
 EXTRACT_SUFX=	.tgz
@@ -56,47 +61,53 @@ COMMENT=	A tiny shell that only permits scp and sftp
 MAN8=		scponly.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-chrooted-binary
+PLIST_SUB+=	SCPONLY_CHROOT="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SCPONLY_WILDCARDS)
-CONFIGURE_ARGS+=--enable-wildcards
-.else
+.if defined(WITHOUT_SCPONLY_WILDCARDS)
 CONFIGURE_ARGS+=--disable-wildcards
 .endif
 
-.if defined(WITH_SCPONLY_SCP)
-CONFIGURE_ARGS+=--enable-scp-compat
-.else
+.if defined(WITHOUT_SCPONLY_SCP)
 CONFIGURE_ARGS+=--disable-scp-compat
 .endif
 
-.if defined(WITH_SCPONLY_GFTP)
-CONFIGURE_ARGS+=--enable-gftp-compat
-.else
+.if defined(WITHOUT_SCPONLY_GFTP)
 CONFIGURE_ARGS+=--disable-gftp-compat
 .endif
 
-.if defined(WITH_SCPONLY_WINSCP)
-CONFIGURE_ARGS+=--enable-winscp-compat
-.else
+.if defined(WITHOUT_SCPONLY_WINSCP)
 CONFIGURE_ARGS+=--disable-winscp-compat
+.endif
+
+.if defined(WITH_SCPONLY_CHROOT)
+PLIST_SUB=	SCPONLY_CHROOT=""
+CONFIGURE_ARGS+=--enable-chrooted-binary
 .endif
 
 .if defined(WITH_SCPONLY_RSYNC)
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 RUN_DEPENDS=	${BUILD_DEPENDS}
 CONFIGURE_ARGS+=--enable-rsync-compat
-.else
-CONFIGURE_ARGS+=--disable-rsync-compat
 .endif
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can enable chroot functionality by defining WITH_SCPONLY_CHROOT."
+	@${ECHO_MSG} ""
+
 post-install:
+.if defined(WITH_SCPONLY_CHROOT)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Run following script to setup chroot cage;"
+	@${ECHO_MSG} "${WRKSRC}/setup_chroot.sh"
+	@${ECHO_MSG} ""
+.endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/scponly
+	@${MKDIR} ${DOCSDIR}
 .for i in README INSTALL TODO
-	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/scponly
+	@${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
 
