@@ -1,0 +1,36 @@
+bin/gtm
+bin/gtm_applet
+etc/CORBA/servers/gtm.gnorba
+etc/CORBA/servers/gtm_applet.gnorba
+etc/sound/events/gtm.soundlist
+share/gnome/applets/Network/gtm_applet.desktop
+share/gnome/apps/Internet/gtm.desktop
+share/gnome/help/gtm/C/authors.html
+share/gnome/help/gtm/C/bugs.html
+share/gnome/help/gtm/C/docbook.css
+share/gnome/help/gtm/C/index.html
+share/gnome/help/gtm/C/license.html
+share/gnome/help/gtm/C/prefs.html
+share/gnome/help/gtm/C/topic.dat
+share/gnome/help/gtm/C/usage.html
+share/gnome/idl/Gtm.idl
+share/gnome/pixmaps/gtm.png
+share/gnome/sounds/gtm/add.wav
+share/gnome/sounds/gtm/complete.wav
+share/gnome/sounds/gtm/start.wav
+share/locale/da/LC_MESSAGES/gtm.mo
+share/locale/de/LC_MESSAGES/gtm.mo
+share/locale/es/LC_MESSAGES/gtm.mo
+share/locale/fr/LC_MESSAGES/gtm.mo
+share/locale/it/LC_MESSAGES/gtm.mo
+share/locale/ko/LC_MESSAGES/gtm.mo
+share/locale/no/LC_MESSAGES/gtm.mo
+share/locale/pt/LC_MESSAGES/gtm.mo
+share/locale/pt_BR/LC_MESSAGES/gtm.mo
+share/locale/ru/LC_MESSAGES/gtm.mo
+share/locale/tr/LC_MESSAGES/gtm.mo
+share/locale/uk/LC_MESSAGES/gtm.mo
+@dirrm share/gnome/sounds/gtm
+@dirrm share/gnome/help/gtm/C/images
+@dirrm share/gnome/help/gtm/C
+@dirrm share/gnome/help/gtm
