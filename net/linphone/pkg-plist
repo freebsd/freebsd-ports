@@ -1,4 +1,4 @@
-bin/linphone
+%%GNOME%%bin/linphone
 bin/linphonec
 bin/sipomatic
 include/linphone/config.h
@@ -51,39 +51,39 @@ lib/libosipalloc.so.0
 lib/libosipua.a
 lib/libosipua.so
 lib/libosipua.so.2
-libdata/bonobo/servers/GNOME_LinphoneApplet.server
+%%GNOME%%libdata/bonobo/servers/GNOME_LinphoneApplet.server
 libdata/pkgconfig/linphone.pc
-libexec/linphone_applet
-share/doc/mediastreamer/book1.html
-share/doc/mediastreamer/coreapi.html
-share/doc/mediastreamer/index.sgml
-share/doc/mediastreamer/mediastreamer-filters.html
-share/doc/mediastreamer/mediastreamer-msringplayer.html
-share/doc/mediastreamer/mediastreamer-mssync.html
-share/doc/mediastreamer/mediastreamer-running-processing-chains.html
-share/doc/mediastreamer/msfilterimplementations.html
-share/doc/mediastreamer/userapi.html
-share/doc/ortp/book1.html
-share/doc/ortp/index.sgml
-share/doc/ortp/ortp-library-management-functions.html
-share/doc/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
-share/doc/ortp/ortp-rtp-payloads-and-profiles.html
-share/doc/ortp/ortp-rtpsession-api.html
-share/doc/ortp/ortp-stack-management-functions.html
-share/doc/ortp/ortp-telephone-events-(rfc2833)-.html
-share/doc/ortp/ortpapi.html
-share/doc/osipua/book1.html
-share/doc/osipua/index.sgml
-share/doc/osipua/osipcallleg.html
-share/doc/osipua/osipua--registrationctxt-api-.html
-share/doc/osipua/osipua-osipcallleg-private-api.html
-share/doc/osipua/osipua-osipcallleg-public-api.html
-share/doc/osipua/osipua-osipua-private-api.html
-share/doc/osipua/osipua-osipua-public-api.html
-share/doc/osipua/osipua.html
-share/doc/osipua/registrationctxt.html
+%%GNOME%%libexec/linphone_applet
+%%HTMLDOCSDIR%%/mediastreamer/book1.html
+%%HTMLDOCSDIR%%/mediastreamer/coreapi.html
+%%HTMLDOCSDIR%%/mediastreamer/index.sgml
+%%HTMLDOCSDIR%%/mediastreamer/mediastreamer-filters.html
+%%HTMLDOCSDIR%%/mediastreamer/mediastreamer-msringplayer.html
+%%HTMLDOCSDIR%%/mediastreamer/mediastreamer-mssync.html
+%%HTMLDOCSDIR%%/mediastreamer/mediastreamer-running-processing-chains.html
+%%HTMLDOCSDIR%%/mediastreamer/msfilterimplementations.html
+%%HTMLDOCSDIR%%/mediastreamer/userapi.html
+%%HTMLDOCSDIR%%/ortp/book1.html
+%%HTMLDOCSDIR%%/ortp/index.sgml
+%%HTMLDOCSDIR%%/ortp/ortp-library-management-functions.html
+%%HTMLDOCSDIR%%/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
+%%HTMLDOCSDIR%%/ortp/ortp-rtp-payloads-and-profiles.html
+%%HTMLDOCSDIR%%/ortp/ortp-rtpsession-api.html
+%%HTMLDOCSDIR%%/ortp/ortp-stack-management-functions.html
+%%HTMLDOCSDIR%%/ortp/ortp-telephone-events-(rfc2833)-.html
+%%HTMLDOCSDIR%%/ortp/ortpapi.html
+%%HTMLDOCSDIR%%/osipua/book1.html
+%%HTMLDOCSDIR%%/osipua/index.sgml
+%%HTMLDOCSDIR%%/osipua/osipcallleg.html
+%%HTMLDOCSDIR%%/osipua/osipua--registrationctxt-api-.html
+%%HTMLDOCSDIR%%/osipua/osipua-osipcallleg-private-api.html
+%%HTMLDOCSDIR%%/osipua/osipua-osipcallleg-public-api.html
+%%HTMLDOCSDIR%%/osipua/osipua-osipua-private-api.html
+%%HTMLDOCSDIR%%/osipua/osipua-osipua-public-api.html
+%%HTMLDOCSDIR%%/osipua/osipua.html
+%%HTMLDOCSDIR%%/osipua/registrationctxt.html
 share/gnome/apps/Internet/linphone.desktop
-share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
+%%GNOME%%share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
 share/gnome/help/linphone/C/docbook.css
 share/gnome/help/linphone/C/index.html
 share/gnome/help/linphone/C/params.html
@@ -132,38 +132,38 @@ share/gnome/help/linphone/ja/x166.html
 share/gnome/help/linphone/ja/x182.html
 share/gnome/help/linphone/ja/x25.html
 share/gnome/help/linphone/ja/x35.html
-share/gnome/linphonec/linphonec
-share/gnome/pixmaps/linphone/linphone.png
-share/gnome/pixmaps/linphone/linphone2.png
-share/gnome/pixmaps/linphone/linphone2.xpm
-share/gnome/sounds/linphone/hello16000.wav
-share/gnome/sounds/linphone/hello8000.wav
-share/gnome/sounds/linphone/ringback.wav
-share/gnome/sounds/linphone/rings/bigben.wav
-share/gnome/sounds/linphone/rings/oldphone.wav
-share/gnome/sounds/linphone/rings/orig.wav
-share/gnome/sounds/linphone/rings/rock.wav
-share/gnome/sounds/linphone/rings/sweet.wav
-share/gnome/sounds/linphone/rings/synth.wav
-share/gnome/sounds/linphone/rings/tapping.wav
-share/gnome/sounds/linphone/rings/toy.wav
+share/%%GNOME_PATH%%linphonec/linphonec
+share/%%GNOME_PATH%%pixmaps/linphone/linphone.png
+share/%%GNOME_PATH%%pixmaps/linphone/linphone2.png
+share/%%GNOME_PATH%%pixmaps/linphone/linphone2.xpm
+share/%%GNOME_PATH%%sounds/linphone/hello16000.wav
+share/%%GNOME_PATH%%sounds/linphone/hello8000.wav
+share/%%GNOME_PATH%%sounds/linphone/ringback.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/bigben.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/oldphone.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/orig.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/rock.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/sweet.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/synth.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/tapping.wav
+share/%%GNOME_PATH%%sounds/linphone/rings/toy.wav
 share/locale/de/LC_MESSAGES/linphone.mo
 share/locale/es/LC_MESSAGES/linphone.mo
 share/locale/fr/LC_MESSAGES/linphone.mo
 share/locale/it/LC_MESSAGES/linphone.mo
 share/locale/ja/LC_MESSAGES/linphone.mo
 share/locale/pl/LC_MESSAGES/linphone.mo
-@dirrm share/gnome/sounds/linphone/rings
-@dirrm share/gnome/sounds/linphone
-@dirrm share/gnome/pixmaps/linphone
-@dirrm share/gnome/linphonec
+@dirrm share/%%GNOME_PATH%%sounds/linphone/rings
+@dirrm share/%%GNOME_PATH%%sounds/linphone
+@dirrm share/%%GNOME_PATH%%pixmaps/linphone
+@dirrm share/%%GNOME_PATH%%linphonec
 @dirrm share/gnome/help/linphone/ja
 @dirrm share/gnome/help/linphone/it
 @dirrm share/gnome/help/linphone/fr
 @dirrm share/gnome/help/linphone/C
 @dirrm share/gnome/help/linphone
-@dirrm share/doc/osipua
-@dirrm share/doc/ortp
-@dirrm share/doc/mediastreamer
+@dirrm %%HTMLDOCSDIR%%/osipua
+@dirrm %%HTMLDOCSDIR%%/ortp
+@dirrm %%HTMLDOCSDIR%%/mediastreamer
 @dirrm include/osipua
 @dirrm include/ortp
