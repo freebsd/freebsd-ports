@@ -62,6 +62,7 @@
     SUBDIR += dante
     SUBDIR += datapipe
     SUBDIR += ddc
+    SUBDIR += ddclient
     SUBDIR += ddup
     SUBDIR += delegate
     SUBDIR += despoof
