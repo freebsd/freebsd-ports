@@ -17,3 +17,20 @@
   
   /* Manual pages for games usually go to section 6. */
   MANSUFFIX = 6
+***************
+*** 91,97 ****
+   * CDEBUGFLAGS should specify optimalization or debug information (or both).
+   * Try not defining anything first.
+   */
+! CDEBUGFLAGS = -g				/* General debug flag */
+  /* CDEBUGFLAGS = -O				/* General optimize flag */
+  /* CDEBUGFLAGS = -Ae +O3 +FPD			/* HP cc optimize flags (no +ESlit) */
+  /* CDEBUGFLAGS = -Ae -g -z +w1			/* HP cc debug flags */
+--- 91,97 ----
+   * CDEBUGFLAGS should specify optimalization or debug information (or both).
+   * Try not defining anything first.
+   */
+! /* CDEBUGFLAGS = -g				/* General debug flag */
+  /* CDEBUGFLAGS = -O				/* General optimize flag */
+  /* CDEBUGFLAGS = -Ae +O3 +FPD			/* HP cc optimize flags (no +ESlit) */
+  /* CDEBUGFLAGS = -Ae -g -z +w1			/* HP cc debug flags */
