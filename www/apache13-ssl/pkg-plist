@@ -3,6 +3,7 @@ bin/checkgid
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
+etc/rc.d/apache.sh
 @unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf-dist; then rm -f %D/etc/apache/access.conf; fi
 etc/apache/access.conf-dist
 @exec [ -f %B/access.conf ] || cp %B/%f %B/access.conf
