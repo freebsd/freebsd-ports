@@ -167,27 +167,27 @@ pre-install:
 post-install:
 	@-${INSTALL_DATA} ${WRKDIR}/*/*.aff ${WRKDIR}/*/*.hash ${DATADIR}
 .if defined(ISPELL_FR)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.FR >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.fr >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_DEALT)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.DEALT >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.dealt >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_DENEU)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.DENEU >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.deneu >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BR)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.BR >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.br >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_SE)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.SE >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.se >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_NO)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.NO >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.no >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BRITISH)
-	@${CAT} ${MASTERDIR}/pkg/PLIST.BRITISH >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.british >> ${TMPPLIST}
 .else
-	@${CAT} ${MASTERDIR}/pkg/PLIST.AM >> ${TMPPLIST}
+	@${CAT} ${MASTERDIR}/pkg/pkg-plist.am >> ${TMPPLIST}
 .endif
 	@${ECHO} "@dirrm share/ispell" >> ${TMPPLIST}
 
