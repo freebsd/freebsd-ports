@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Gopher/Server/ParseRequest.pm
+%%SITE_PERL%%/Gopher/Server/RequestHandler.pm
+%%SITE_PERL%%/Gopher/Server/Response.pm
+%%SITE_PERL%%/Gopher/Server/TypeMapper.pm
+%%SITE_PERL%%/Gopher/Server/RequestHandler/DBI.pm
+%%SITE_PERL%%/Gopher/Server/RequestHandler/File.pm
+@unexec rmdir %D/%%SITE_PERL%%/Gopher 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gopher 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Gopher/Server/RequestHandler
+@dirrm %%SITE_PERL%%/Gopher/Server
+@unexec rmdir %D/%%SITE_PERL%%/Gopher 2>/dev/null || true
