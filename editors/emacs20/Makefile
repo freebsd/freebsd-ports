@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.39 1999/03/08 07:28:23 asami Exp $
+# $Id: Makefile,v 1.40 1999/03/11 21:47:10 scrappy Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -16,10 +16,14 @@ MAINTAINER=	jseger@FreeBSD.org
 Y2K=            http://www.gnu.org/software/year2000.html
 
 USE_AUTOCONF=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
+.if !defined(NO_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop
+USE_XLIB=	yes
+.else
+CONFIGURE_ARGS=	--with-x=no --with-pop
+.endif
 
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		emacs.1 etags.1 ctags.1
