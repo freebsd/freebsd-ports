@@ -29,6 +29,6 @@ do-install:
 	${MV} ${GSLIB_DIR}/CIDFnmap  ${GSLIB_DIR}/CIDFnmap.orig
 	${GREP} -v -e "CIDFnmap.jp" ${GSLIB_DIR}/CIDFnmap.orig > \
 		${GSLIB_DIR}/CIDFnmap
-	${ECHO} '(CIDFnmap.jp) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
+	${ECHO_CMD} '(CIDFnmap.jp) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
 
 .include <bsd.port.mk>

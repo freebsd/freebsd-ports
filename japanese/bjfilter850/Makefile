@@ -29,7 +29,7 @@ FILTER=		${FILESDIR}/filter
 
 do-install:
 	${MKDIR} ${PREFIX}/usr/local/share/printui
-	${ECHO} "LANG=ja_JP.eucJP" > ${PREFIX}/usr/local/share/printui/i18n
+	${ECHO_CMD} "LANG=ja_JP.eucJP" > ${PREFIX}/usr/local/share/printui/i18n
 
 .include <bsd.port.mk>
 

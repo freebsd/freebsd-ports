@@ -34,9 +34,9 @@ do-extract:
 .for sec in ${MANSECS}
 	@if [ -d ${JAMANDIR}/man${sec} ]; then \
 		${CP} -R ${JAMANDIR}/man${sec} ${WRKSRC}/ ; \
-		${ECHO} >>${WRKSRC}/man${sec}/Makefile; \
-		${ECHO} pages-list: >>${WRKSRC}/man${sec}/Makefile; \
-		${ECHO} "	@\$${ECHO} \$${MAN${sec}} \$${MLINKS}" \
+		${ECHO_CMD} >>${WRKSRC}/man${sec}/Makefile; \
+		${ECHO_CMD} pages-list: >>${WRKSRC}/man${sec}/Makefile; \
+		${ECHO_CMD} "	@\$${ECHO_CMD} \$${MAN${sec}} \$${MLINKS}" \
 			>>${WRKSRC}/man${sec}/Makefile; \
 	fi
 .endfor
@@ -47,13 +47,13 @@ post-build:
 	 if [ -d ${WRKSRC}/man$${sec} ]; then \
 		cd ${WRKSRC}/man$${sec}; \
 		list=`${MAKE} pages-list`; \
-		set `${ECHO} $$list " "|${SED} 's/\.\([^.]*\) /.\1 \1 /g'`; \
+		set `${ECHO_CMD} $$list " "|${SED} 's/\.\([^.]*\) /.\1 \1 /g'`; \
 		while : ; do \
 			case $$# in \
 				0) break;; \
-				[1]) ${ECHO} "can not happen"; break;; \
+				[1]) ${ECHO_CMD} "can not happen"; break;; \
 			esac; \
-			${ECHO} share/man/ja/man$$2/$$1.gz; shift 2; \
+			${ECHO_CMD} share/man/ja/man$$2/$$1.gz; shift 2; \
 		done; \
 	 fi; \
 	done|sort|uniq >>${PLIST}

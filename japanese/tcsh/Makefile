@@ -36,7 +36,7 @@ post-install:
 .endif
 	@${ECHO} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/tcsh /etc/shells.bak; ${ECHO} ${PREFIX}/bin/tcsh) >/etc/shells
+	@(${GREP} -v ${PREFIX}/bin/tcsh /etc/shells.bak; ${ECHO_CMD} ${PREFIX}/bin/tcsh) >/etc/shells
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

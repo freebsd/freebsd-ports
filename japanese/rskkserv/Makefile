@@ -55,27 +55,27 @@ post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		( \
-		${ECHO} "#!/bin/sh"; \
-		${ECHO} "case \$$1 in"; \
-		${ECHO} "start)"; \
-		${ECHO} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then"; \
-		${ECHO} "		${ECHO} -n ' rskkserv: '"; \
-		${ECHO} "		${PREFIX}/libexec/rskkserv --verbose"; \
-		${ECHO} "	fi"; \
-		${ECHO} "	;;"; \
-		${ECHO} "stop)"; \
-		${ECHO} "	pidfile=/var/run/rskkserv.pid"; \
-		${ECHO} "	if [ -f \$$pidfile ]; then"; \
-		${ECHO} "	    kill \`cat \$$pidfile\` && echo -n ' rskkserv'"; \
-		${ECHO} "	    ${RM} \$$pidfile"; \
-		${ECHO} "	else"; \
-		${ECHO} "	    ${ECHO} ' rskkserv: not running'"; \
-		${ECHO} "	fi"; \
-		${ECHO} "	;;"; \
-		${ECHO} "*)"; \
-		${ECHO} "	${ECHO} \"usage: \$$0 {start|stop}\" 1>&2"; \
-		${ECHO} "	;;"; \
-		${ECHO} "esac"; \
+		${ECHO_CMD} "#!/bin/sh"; \
+		${ECHO_CMD} "case \$$1 in"; \
+		${ECHO_CMD} "start)"; \
+		${ECHO_CMD} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then"; \
+		${ECHO_CMD} "		${ECHO_CMD} -n ' rskkserv: '"; \
+		${ECHO_CMD} "		${PREFIX}/libexec/rskkserv --verbose"; \
+		${ECHO_CMD} "	fi"; \
+		${ECHO_CMD} "	;;"; \
+		${ECHO_CMD} "stop)"; \
+		${ECHO_CMD} "	pidfile=/var/run/rskkserv.pid"; \
+		${ECHO_CMD} "	if [ -f \$$pidfile ]; then"; \
+		${ECHO_CMD} "	    kill \`cat \$$pidfile\` && echo -n ' rskkserv'"; \
+		${ECHO_CMD} "	    ${RM} \$$pidfile"; \
+		${ECHO_CMD} "	else"; \
+		${ECHO_CMD} "	    ${ECHO_CMD} ' rskkserv: not running'"; \
+		${ECHO_CMD} "	fi"; \
+		${ECHO_CMD} "	;;"; \
+		${ECHO_CMD} "*)"; \
+		${ECHO_CMD} "	${ECHO_CMD} \"usage: \$$0 {start|stop}\" 1>&2"; \
+		${ECHO_CMD} "	;;"; \
+		${ECHO_CMD} "esac"; \
 		) > ${STARTUP_SCRIPT}; \
 		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
 	fi

@@ -17,7 +17,7 @@ RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 NO_BUILD=	yes
 
 do-install:
-	${ECHO} "set go {Yes}" >>${WRKSRC}/install.in
+	${ECHO_CMD} "set go {Yes}" >>${WRKSRC}/install.in
 	(cd ${WRKSRC} && ./installZircon NoGui)
 
 .include <bsd.port.mk>

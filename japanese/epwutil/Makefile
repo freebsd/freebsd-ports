@@ -35,11 +35,11 @@ do-install:
 
 post-install:
 .for file in ${EPWPROGS}
-	${ECHO} man/${MANLANG}/cat1/${file}.1${MANEXT} >> ${TMPPLIST}
+	${ECHO_CMD} man/${MANLANG}/cat1/${file}.1${MANEXT} >> ${TMPPLIST}
 .endfor
 .if !defined(NOPORTDOCS)
-	${ECHO} ${EPWDOCDIR}/${EPWDOCS} >> ${TMPPLIST}
-	${ECHO} "@dirrm ${EPWDOCDIR}" >> ${TMPPLIST}
+	${ECHO_CMD} ${EPWDOCDIR}/${EPWDOCS} >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrm ${EPWDOCDIR}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>

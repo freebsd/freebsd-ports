@@ -52,9 +52,9 @@ do-install:
 .include <bsd.port.post.mk>
 
 plist:
-	@${ECHO} -n >${PLIST}
+	@${ECHO_CMD} -n >${PLIST}
 .for item in 1 3
 .for file in ${CAT${item}}
-	@${ECHO} man/ja/cat${item}/${file}.gz >>${PLIST}
+	@${ECHO_CMD} man/ja/cat${item}/${file}.gz >>${PLIST}
 .endfor
 .endfor
