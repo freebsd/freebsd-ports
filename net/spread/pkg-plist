@@ -1,0 +1,59 @@
+sbin/spread
+bin/flooder
+bin/monitor
+bin/user
+bin/tuser
+include/sp.h
+etc/spread.conf.example
+lib/libsp.a
+lib/libtsp.a
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/Spread.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/Spread.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Spread.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spread 2>/dev/null || true
+lib/perl5/%%PERL_VERSION%%/man/man3/Spread.3.gz
+%%JAVALIB%%%%JAVALIBDIR%%/spread/AdvancedMessageListener.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/BasicMessageListener.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/GroupID.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/MembershipInfo.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/MessageFactory.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/SpreadConnection$Listener.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/SpreadConnection.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/SpreadException.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/SpreadGroup.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/SpreadMessage.class
+%%JAVALIB%%%%JAVALIBDIR%%/spread/SpreadVersion.class
+%%JAVALIB%%@dirrm %%JAVALIBDIR%%/spread
+%%JAVALIB_DOCS%%share/doc/spread/java/readme.txt
+%%JAVALIB_DOCS%%share/doc/spread/java/Flooder.java
+%%JAVALIB_DOCS%%share/doc/spread/java/User.java
+%%JAVALIB_DOCS%%share/doc/spread/java/html/allclasses-frame.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/deprecated-list.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/help-doc.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/index-all.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/index.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/java.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/overview-tree.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/packages.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/serialized-form.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/stylesheet.css
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/AdvancedMessageListener.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/BasicMessageListener.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/GroupID.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/MembershipInfo.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/MessageFactory.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/SpreadConnection.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/SpreadException.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/SpreadGroup.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/SpreadMessage.html
+%%JAVALIB_DOCS%%share/doc/spread/java/html/spread/SpreadVersion.html
+%%JAVALIB_DOCS%%@dirrm share/doc/spread/java/html/spread
+%%JAVALIB_DOCS%%@dirrm share/doc/spread/java/html
+%%JAVALIB_DOCS%%@dirrm share/doc/spread/java
+%%PORTDOCS%%share/doc/spread/perl/README
+%%PORTDOCS%%share/doc/spread/perl/test.pl
+%%PORTDOCS%%share/doc/spread/Readme.txt
+%%PORTDOCS%%@dirrm share/doc/spread/perl
+%%PORTDOCS%%@dirrm share/doc/spread
