@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
