@@ -33,11 +33,11 @@ to get the functions required for ODBC compliance.
 
 To initialize the database, run
 
-  /usr/local/etc/rc.d/postgresql.sh initdb
+  /usr/local/etc/rc.d/010.pgsql.sh initdb
 
 You can then start PostgreSQL by running:
 
-  /usr/local/etc/rc.d/postgresql.sh start
+  /usr/local/etc/rc.d/010.pgsql.sh start
 
 For postmaster settings, see ~pgsql/data/postgresql.conf
 
