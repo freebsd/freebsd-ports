@@ -27,7 +27,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(makedepend --\)|\1 \@CPPFLAGS\@|' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@|' ${WRKSRC}/src/Makefile.in
 
 do-install:
