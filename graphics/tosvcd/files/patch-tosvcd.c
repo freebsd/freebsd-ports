@@ -1,6 +1,6 @@
---- tosvcd.c.orig	Fri Sep 13 10:08:52 2002
-+++ tosvcd.c	Mon Nov 18 16:56:27 2002
-@@ -24,14 +24,12 @@
+--- tosvcd.c.orig	Mon Dec  9 18:24:57 2002
++++ tosvcd.c	Sat Dec 14 07:21:57 2002
+@@ -20,14 +20,12 @@
  #include <fcntl.h>
  #include <errno.h>
  #include <string.h>
@@ -15,13 +15,4 @@
 +#include <sys/wait.h>
  #include <glob.h>
  
- 
-@@ -1322,7 +1320,7 @@
-       //  catch all signals
-       //---------------------------------------------------
- #if 1
--      for (int i = 0; i < _NSIG; ++i) {
-+      for (int i = 0; i < NSIG; ++i) {
-             if (i != SIGABRT)
-                   signal(i, catchSignal);
-             }
+ #include "mm_accel.h"

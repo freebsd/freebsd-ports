@@ -1,11 +1,39 @@
---- makefile.orig	Fri Oct 25 16:04:05 2002
-+++ makefile	Fri Oct 25 16:04:25 2002
-@@ -21,7 +21,7 @@
+--- makefile.orig	Wed Dec  4 22:40:42 2002
++++ makefile	Sat Dec 14 07:27:00 2002
+@@ -1,15 +1,15 @@
+ # use intel compiler 0.6.x
+ INTEL = no
+ 
+-CFLAGS = -DVERSION="\"0.9\""
++CFLAGS += -DVERSION="\"0.9\""
+ 
+ ifeq ($(INTEL),yes)
+ #CC = icc -I/usr/lib/gcc-lib/i686-pc-linux-gnu/2.95.3/include -Kc++ -O -tpp6 -xiMK
+ CC = icc -Kc++ -O -tpp6 -xiMK
+ #CC = icc
+ else
+-CC = g++
+-CFLAGS += -g -Wall -O3 -fno-exceptions -fno-rtti
++CC ?= g++
++CFLAGS += -fno-exceptions -fno-rtti ${PTHREAD_CFLAGS}
+ endif
+ 
+ SRC  = tosvcd decode header idct idct_mmx motion_comp
+@@ -20,15 +20,13 @@
+ all:  tosvcd
  
  tosvcd: $(OBJ)
- 	$(CC) -o tosvcd $(OBJ) -lpthread
+-	$(CC) -o tosvcd $(OBJ) -lpthread
 -	su -c "cp tosvcd /usr/bin"
-+#	su -c "cp tosvcd /usr/bin"
++	$(CC) -o tosvcd $(OBJ) ${PTHREAD_LIBS}
  
  t:
- 	./tosvcd -o reeperbahn /video0/Auf_der_Reeperbahn_nachts_um_halb_eins/2002-03-09.15:21.50.50.rec
+ 	./tosvcd -o mafia /home/ws/videos/Mafia/2002-10-21.00:33.50.50.rec
+ 	
+ install::
+-	su -c "mv /usr/bin/tosvcd /usr/bin/tosvcd.old"
+-	su -c "cp tosvcd /usr/bin"
++	${BSD_INSTALL_PROGRAM} tosvcd ${PREFIX}/bin
+ 
+ clean:
+ 	rm *.o
