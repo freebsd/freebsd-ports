@@ -5021,7 +5021,6 @@ moria		ports/games/moria
 morpheus	ports/graphics/morpheus
 mosaic		ports/www/Mosaic
 moscow_ml	ports/lang/moscow_ml
-mosfet-liquid	ports/x11-wm/mosfet-liquid
 most		ports/misc/most
 motor		ports/devel/motor
 mount.app	ports/sysutils/mount.app
