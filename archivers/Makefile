@@ -21,6 +21,7 @@
     SUBDIR += nulib
     SUBDIR += p5-Compress-Zlib
     SUBDIR += pkzip
+    SUBDIR += ppunpack
     SUBDIR += rar
     SUBDIR += unace
     SUBDIR += unarj
