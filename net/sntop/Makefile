@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sntop
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://sntop.sourceforge.net/pub/sntop/
 
