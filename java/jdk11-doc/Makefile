@@ -3,7 +3,7 @@
 # Date created:		Mon Mar  8 10:10:42 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.7 1999/08/02 22:45:41 cpiazza Exp $
+# $Id: Makefile,v 1.8 1999/08/22 18:58:40 mharo Exp $
 #
 
 DISTNAME=	jdk118-doc
@@ -35,11 +35,6 @@ do-fetch:
 	@echo ''
 	@${FALSE}
 .endif
-
-pre-install:
-	@if [ !`id -u` ]; then \
-	${CHOWN} -R root:wheel ${WRKDIR}/*; \
-	fi
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${VERSION}
