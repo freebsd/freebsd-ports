@@ -55,7 +55,7 @@ BROKEN=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BROKEN=			FreeBSD 5.x already ships with its own version of pam_krb5
+IGNORE=			FreeBSD 5.x already ships with its own version of pam_krb5
 .endif
 MANDIR=			${MANPREFIX}/man
 PREFIX=			${DESTDIR}/usr
