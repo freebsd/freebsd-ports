@@ -1,0 +1,32 @@
+# ex:ts=8
+# Ports collection makefile for:	lbpp
+# Date created:			Jun 4, 2002
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	lbpp
+PORTVERSION=	0.0.6b
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@FreeBSD.org
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOME=	yes
+
+post-patch:
+	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
+		${PERL} -pi -e "s/malloc.h/stdlib.h/g"
+	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} \
+		${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS =,CFLAGS+=,g ; \
+				s,-Wall -g,,g"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lbpp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/liblb/libLB.a ${PREFIX}/lib
+
+.include <bsd.port.mk>
