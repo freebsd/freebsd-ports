@@ -714,6 +714,7 @@
     SUBDIR += p5-UNIVERSAL-exports
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
+    SUBDIR += p5-enum
     SUBDIR += p65
     SUBDIR += parrot
     SUBDIR += patch
