@@ -1,5 +1,5 @@
---- Doc/zsh.texi.orig	Sun Aug  1 05:13:14 1999
-+++ Doc/zsh.texi	Tue Aug  3 12:01:18 1999
+--- Doc/zsh.texi.orig	Sun Aug  1 21:13:14 1999
++++ Doc/zsh.texi	Sat Feb  5 01:23:02 2000
 @@ -7,6 +7,10 @@
  @end iftex
  @setfilename zsh.info
@@ -11,3 +11,101 @@
  @c %**end of header
  
  @ifinfo
+@@ -972,14 +976,14 @@
+ string by using the `@t{\'}' escape.
+ 
+ @noindent
+-All characters enclosed between a pair of single quotes (@t{@value{dsq}}) that
++All characters enclosed between a pair of single quotes (@t{'}@t{'}) that
+ is not preceded by a `@t{$}' are quoted.  A single quote cannot appear
+ within single quotes unless the option @t{RC_QUOTES} is set, in which case
+ a pair of single quotes are turned into a single quote.  For example,
+ 
+ @noindent
+ @example
+-print @value{dsq}@value{dsq}
++print @t{''''}
+ @end example
+ 
+ @noindent
+@@ -2340,7 +2344,7 @@
+ @t{histchars} parameter which is `@t{!}'
+ by default and may occur anywhere on the command line; history
+ expansions do not nest.  The `@t{!}' can be escaped with `@t{\}'
+-or can be enclosed between a pair of single quotes (@t{@value{dsq}}) to suppress
++or can be enclosed between a pair of single quotes (@t{'}@t{'}) to suppress
+ its special meaning. Double quotes will @emph{not} work for this.
+ 
+ @noindent
+@@ -5545,7 +5549,7 @@
+ @example
+ unsetopt localtraps
+ trap - INT
+-fn() @{ setopt localtraps; trap @value{dsq} INT; sleep 3; @}
++fn() @{ setopt localtraps; trap '' INT; sleep 3; @}
+ @end example
+ 
+ @noindent
+@@ -5767,7 +5771,7 @@
+ @cindex rc, quoting style
+ @cindex quoting style, rc
+ @item @t{RC_QUOTES}
+-Allow the character sequence `@t{@value{dsq}}' to signify a single quote
++Allow the character sequence `@t{'}@t{'}' to signify a single quote
+ within singly quoted strings.
+ 
+ @pindex RCS
+@@ -8456,7 +8460,7 @@
+ @item @t{quote-line} (ESC-') (unbound) (unbound)
+ Quote the current line; that is, put a `@t{'}' character at the
+ beginning and the end, and convert all `@t{'}' characters
+-to `@t{'\@value{dsq}}'.
++to `@t{'\}@t{'}@t{'}'.
+ 
+ @tindex quote-region
+ @item @t{quote-region} (ESC-") (unbound) (unbound)
+@@ -9226,7 +9230,7 @@
+ 
+ @noindent
+ @example
+-compctl -D -f + -H 0 @value{dsq}
++compctl -D -f + -H 0 ''
+ @end example
+ 
+ @noindent
+@@ -9314,7 +9318,7 @@
+ 
+ @noindent
+ @example
+-compctl -x 'r[-exec,;]' -l @value{dsq} -- find
++compctl -x 'r[-exec,;]' -l '' -- find
+ @end example
+ 
+ @noindent
+@@ -10636,7 +10640,7 @@
+ 
+ @noindent
+ @example
+-complete-history () @{ compgen -H 0 @value{dsq} @}
++complete-history () @{ compgen -H 0 '' @}
+ @end example
+ 
+ @noindent
+@@ -11117,7 +11121,7 @@
+ paranoid behaviour, intended to avoid common security problems involving
+ a root-run @t{rm} being tricked into removing files other than the ones
+ intended.  It will refuse to follow symbolic links, so that (for example)
+-``@t{rm /tmp/foo/passwd}@value{dsq} can't accidentally remove @t{/etc/passwd}
++``@t{rm /tmp/foo/passwd}'' can't accidentally remove @t{/etc/passwd}
+ if @t{/tmp/foo} happens to be a link to @t{/etc}.  It will also check
+ where it is after leaving directories, so that a recursive removal of
+ a deep directory tree can't end up recursively removing @t{/usr} as
+@@ -11340,7 +11344,7 @@
+ @item @t{link}
+ If the file is a link and the @t{-L} option is in
+ effect, this contains the name of the file linked to, otherwise
+-it is empty.  Note that if this element is selected (``@t{stat +link}@value{dsq})
++it is empty.  Note that if this element is selected (``@t{stat +link}'')
+ then the @t{-L} option is automatically used.
+ 
+ @end table
