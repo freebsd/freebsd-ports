@@ -1,18 +1,16 @@
---- src/config/wdm-config.in.orig	Wed Aug 19 19:20:59 1998
-+++ src/config/wdm-config.in	Thu Sep  3 18:54:01 1998
-@@ -21,12 +21,11 @@
- DisplayManager*session:		#configdir#/Xsession
- DisplayManager*authComplain:	false
- DisplayManager*wdmLogin:	#bindir#/wdmLogin
+--- src/config/wdm-config.in.orig	Sun Aug 30 17:15:53 1998
++++ src/config/wdm-config.in	Fri Sep 11 09:22:53 1998
+@@ -25,11 +25,12 @@
+ ! display screen background--if not set or set to none, then the
+ !                            background is not set by wdm.
+ ! DisplayManager*wdmBg:		none
 -DisplayManager*wdmBg:		solid:RoyalBlue
-+DisplayManager*wdmBg:		pixmap:#configdir#/pixmaps/daemon1-HQ-1280x960.jpg
++! DisplayManager*wdmBg:		solid:RoyalBlue
  ! DisplayManager*wdmBg:		dgradient:RoyalBlue,FireBrick,Black
--! DisplayManager*wdmLogo: 	#configdir#/pixmaps/Eagle.xpm
--DisplayManager*wdmWm:		wmaker:afterstep
-+DisplayManager*wdmLogo: 	#configdir#/pixmaps/Earth200x130.xpm
-+DisplayManager*wdmWm:		wmaker:afterstep:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
- DisplayManager*wdmReboot:	#SHUTDOWN# -t3 -r now
- DisplayManager*wdmHalt:		#SHUTDOWN# -t3 -h now
- DisplayManager*wdmVerify:	true
- DisplayManager*wdmRoot:		false
--
+ ! DisplayManager*wdmBg:		hgradient:RoyalBlue,FireBrick,Black
+ ! DisplayManager*wdmBg:		vgradient:RoyalBlue,FireBrick,Black
+ ! DisplayManager*wdmBg:		pixmap:#configdir#/pixmaps/Stars.jpg
++DisplayManager*wdmBg:		pixmap:#configdir#/pixmaps/daemon1-HQ-1280x960.jpg
+ !
+ ! optional pixmap for logo
+ #pixmapcomment#DisplayManager*wdmLogo: 	#configdir#/pixmaps/#pixmapfile#
