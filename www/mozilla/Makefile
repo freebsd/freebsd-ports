@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -123,8 +124,9 @@ post-build:
 
 pre-install:
 	${ECHO_CMD} bin/mozilla > ${PLIST}
-	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
-	${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/mozilla/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
@@ -137,11 +139,14 @@ do-install:
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
-	${TEST} ! -d ${PREFIX}/lib/browser_plugins && \
-	${MKDIR} ${PREFIX}/lib/browser_plugins
-	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
-	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
+	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then
+	    ${MKDIR} ${PREFIX}/lib/browser_plugins
+	fi
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+
+	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
 		${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so
+	fi
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
