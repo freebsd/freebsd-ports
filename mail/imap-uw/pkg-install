@@ -5,7 +5,7 @@ case $2 in
     POST-INSTALL)
 	;;
     PRE-INSTALL)
-	if dialog --yesno "This port is not safe to use on a system which does not\nprovide shell access to users who can retrieve mail via IMAP.\nimapd contains buffer overflows which a user can exploit\nafter they have logged into imap to get access to their\naccount on the machine. If your imap users have shell access\nanyway, this is not a significant vulnerability.\n\nDo you wish to proceed with the build?" 13 65 < ${TTY} >${TTY} 2>&1; then
+	if dialog --yesno "This port is not safe to use on a system which does not\nprovide shell access to users who can retrieve mail via IMAP.\nimapd contains buffer overflows which a user can exploit\nafter they have logged into imap to get access to their\naccount on the machine. If your imap users have shell access\nanyway, this is not a significant vulnerability.\n\nThere is also a vulnerability wherein local users can prevent\narbitrary POP2/3 mailboxes from being opened, and force IMAP\nmailboxes to only open read-only.\n\nDo you wish to proceed with the build?" 16 65 < ${TTY} >${TTY} 2>&1; then
 	    exit 0
 	else
 	    exit 1
