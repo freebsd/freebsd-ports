@@ -2298,7 +2298,6 @@ galaxis		ports/games/galaxis
 galculator	ports/math/galculator
 gale		ports/net/gale
 galeon		ports/www/galeon
-galeon2		ports/www/galeon2
 gallery		ports/www/gallery
 gambas		ports/lang/gambas
 gambit		ports/math/gambit
@@ -5649,7 +5648,6 @@ mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
-mozilla-gtk1	ports/www/mozilla-gtk1
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
