@@ -5742,6 +5742,7 @@ p5-Tcl		ports/lang/p5-Tcl
 p5-Tcl-Tk	ports/x11-toolkits/p5-Tcl-Tk
 p5-TeX-Hyphen	ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco	ports/net/p5-Telnet-Cisco
+p5-Template-Plugin-Comma	ports/www/p5-Template-Plugin-Comma
 p5-Template-Toolkit	ports/www/p5-Template-Toolkit
 p5-Term-ANSIColor	ports/devel/p5-Term-ANSIColor
 p5-Term-ANSIScreen	ports/devel/p5-Term-ANSIScreen
