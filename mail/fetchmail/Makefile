@@ -10,15 +10,12 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	5.9.6
-PORTREVISION=	1
+PORTVERSION=	5.9.11
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
 
 MAINTAINER=	ve@sci.fi
-
-FORBIDDEN=	Buffer overflow.  http://tuxedo.org/~esr/fetchmail/NEWS
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
@@ -78,8 +75,11 @@ PLIST_SUB+=	NTLMDOCS="%%PORTDOCS%%@comment "
 
 pre-patch:
 	@${CP} -f  /usr/include/md5.h ${WRKSRC}
-	@${PERL} -pi.bak -e 's|^#!/.*/python|#!${PREFIX}/bin/python|;' ${WRKSRC}/fetchmailconf
-	@${SED} -e "s|@PREFIX@|${PREFIX}|" ${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
+	@${SED} -e "s,^#!/.*/python,#!${PREFIX}/bin/python,g" \
+		${WRKSRC}/fetchmailconf > ${WRKDIR}/fetchmailconf.temp
+	@${MV} -f ${WRKDIR}/fetchmailconf.temp ${WRKSRC}/fetchmailconf
+	@${SED} -e "s,@PREFIX@,${PREFIX},g" \
+		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
 
 post-install:
 .if !defined(NOPORTDOCS)
