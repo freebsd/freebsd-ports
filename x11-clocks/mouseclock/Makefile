@@ -3,12 +3,13 @@
 # Date created:		26 August 1997
 # Whom:			FURUSAWA, Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/09 08:31:06 tg Exp $
 #
 
 DISTNAME=	mouseclock-1.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.csce.kyushu-u.ac.jp/pub/Linux/sunsite/X11/clocks/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/clocks
 
 MAINTAINER=	furusawa@com.cs.osakafu-u.ac.jp
 
