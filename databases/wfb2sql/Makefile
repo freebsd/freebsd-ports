@@ -36,4 +36,7 @@ do-install:
 	@${ECHO} "@dirrm share/doc/${PORTNAME}/" >> ${TMPPLIST}
 .endif
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
