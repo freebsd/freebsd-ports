@@ -8,6 +8,7 @@ include/ctpp/functions/urlescape.hpp
 include/ctpp/functions/value_in_set.hpp
 include/ctpp/util/d2str.hpp
 lib/libctpp.so
+lib/libctpp.a
 @dirrm include/ctpp/util
 @dirrm include/ctpp/functions
 @dirrm include/ctpp/ctpp
