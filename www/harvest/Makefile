@@ -17,6 +17,13 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/src/configure ${WRKSRC}/src/broker/broker.h \
+		${WRKSRC}/src/gatherer/essence/main.c \
+		${WRKSRC}/src/gatherer/include/essence.h \
+		${WRKSRC}/components/gatherer/standard/dvi2tty/dvi2tty.h
+
 pre-install:
 	${MKDIR} ${PREFIX}/harvest
 
