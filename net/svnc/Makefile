@@ -15,13 +15,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BUILD_DEPENDS=	${X11BASE}/include/X11/keysym.h:${PORTSDIR}/x11/XFree86
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 DOCFILES=	README
 DOCDIR=		share/doc/${PORTNAME}/
 
 PLIST=		${WRKDIR}/pkg-plist
-USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/svncviewer
 
 do-patch:
