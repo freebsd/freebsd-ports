@@ -3,7 +3,7 @@
 # Date created:         31 Oct 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.3 1998/12/10 17:24:33 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/12/15 18:04:06 vanilla Exp $
 #
 
 DISTNAME=	superlu_1.1
@@ -24,6 +24,7 @@ ALL_TARGET=	superlulib
 
 post-install:
 	$(INSTALL_DATA) ${WRKSRC}/libsuperlu.* ${PREFIX}/lib
+	$(INSTALL_DATA) ${WRKSRC}/SRC/supermatrix.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/SuperLU
 	${INSTALL_DATA} ${WRKSRC}/INSTALL/*.ps ${PREFIX}/share/doc/SuperLU
