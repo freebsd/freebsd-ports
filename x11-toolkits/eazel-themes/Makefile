@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eazel-themes
-PORTVERSION=	0.0.10207
-PORTREVISION=	1
+PORTVERSION=	0.0.10731
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
@@ -39,7 +38,5 @@ post-install:
 		${TAR} --unlink -xf - -C ${PREFIX}/share/themes
 	cd ${WRKSRC}/../../sawfish &&  ${TAR} -chf - Eazel Ice | \
 		${TAR} --unlink -xf - -C ${PREFIX}/share/sawfish/themes
-#	${LN} -sf ${PREFIX}/share/gnome/apps/Settings/Desktop/eazel-engine-properties.desktop \
-#		${PREFIX}/share/gnome/control-center/Desktop/
 
 .include <bsd.port.mk>
