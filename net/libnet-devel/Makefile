@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnet
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,6 @@ COMMENT=	A C library for creating IP packets (development version)
 
 CONFLICTS=	libnet-1.*
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 

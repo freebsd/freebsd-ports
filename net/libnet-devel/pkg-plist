@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/libnet-config
 include/libnet.h
 include/libnet/libnet-asn1.h
@@ -7,7 +6,6 @@ include/libnet/libnet-headers.h
 include/libnet/libnet-macros.h
 include/libnet/libnet-structures.h
 include/libnet/libnet-types.h
-@dirrm include/libnet
 lib/libnet.a
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
@@ -21,15 +19,21 @@ lib/libnet.a
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/acconfig_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/bpf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/config_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/files.html
+%%PORTDOCS%%%%DOCSDIR%%/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/functions_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/getopt_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/globals_defs.html
 %%PORTDOCS%%%%DOCSDIR%%/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/gnuc_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/graph_legend.dot
+%%PORTDOCS%%%%DOCSDIR%%/graph_legend.html
 %%PORTDOCS%%%%DOCSDIR%%/ifaddrlist_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/in__systm_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -37,10 +41,16 @@ lib/libnet.a
 %%PORTDOCS%%%%DOCSDIR%%/libnet-functions_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/libnet-functions_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/libnet-headers_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/libnet-headers_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/libnet-macros_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/libnet-macros_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/libnet-structures_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/libnet-types_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/libnet_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/libnet_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/structlibnet__802__1q__hdr.html
+%%PORTDOCS%%%%DOCSDIR%%/structlibnet__802__1x__hdr.html
+%%EXAMPLESDIR%%/arp-new.c
 %%EXAMPLESDIR%%/arp.c
 %%EXAMPLESDIR%%/bgp4_hdr.c
 %%EXAMPLESDIR%%/bgp4_notification.c
@@ -61,7 +71,8 @@ lib/libnet.a
 %%EXAMPLESDIR%%/icmp_timestamp.c
 %%EXAMPLESDIR%%/icmp_unreach.c
 %%EXAMPLESDIR%%/ieee.c
-%%EXAMPLESDIR%%/ip.c
+%%EXAMPLESDIR%%/ip_link.c
+%%EXAMPLESDIR%%/ip_raw.c
 %%EXAMPLESDIR%%/isl.c
 %%EXAMPLESDIR%%/mpls.c
 %%EXAMPLESDIR%%/ntp.c
@@ -70,15 +81,19 @@ lib/libnet.a
 %%EXAMPLESDIR%%/ping_of_death.c
 %%EXAMPLESDIR%%/rpc_tcp.c
 %%EXAMPLESDIR%%/rpc_udp.c
+%%EXAMPLESDIR%%/sebek.c
 %%EXAMPLESDIR%%/smurf.c
 %%EXAMPLESDIR%%/stp.c
 %%EXAMPLESDIR%%/synflood.c
 %%EXAMPLESDIR%%/synflood6.c
+%%EXAMPLESDIR%%/synflood6_frag.c
 %%EXAMPLESDIR%%/tcp1.c
 %%EXAMPLESDIR%%/tcp2.c
+%%EXAMPLESDIR%%/tftp.c
 %%EXAMPLESDIR%%/tring_tcp1.c
 %%EXAMPLESDIR%%/tring_tcp2.c
 %%EXAMPLESDIR%%/udp1.c
 %%EXAMPLESDIR%%/udp2.c
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/libnet
