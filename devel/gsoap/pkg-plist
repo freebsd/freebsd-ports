@@ -1,0 +1,7 @@
+bin/soapcpp2
+bin/wsdl2h
+include/stdsoap2.h
+lib/libgsoap++.a
+lib/libgsoap.a
+lib/libgsoapck++.a
+lib/libgsoapck.a
