@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysvipc
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://deisui.bug.org/~ueno/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
