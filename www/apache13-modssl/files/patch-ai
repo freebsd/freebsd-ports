@@ -1,0 +1,65 @@
+--- Makefile.tmpl.orig	Thu Oct 19 11:30:46 2000
++++ Makefile.tmpl	Thu Oct 19 11:43:48 2000
+@@ -125,2 +125,3 @@
+ proxycachedir   = @proxycachedir@
++doc_prefix	= $(prefix)/share/doc/apache
+ 
+@@ -327,5 +328,5 @@
+ 	$(MKDIR) $(root)$(sysconfdir)/ssl.prm
+-	$(MKDIR) $(root)$(htdocsdir)
++	$(MKDIR) $(root)$(doc_prefix)
+ 	$(MKDIR) $(root)$(iconsdir)
+-	$(MKDIR) $(root)$(cgidir)
++	$(MKDIR) $(root)$(cgidir).default
+ 	$(MKDIR) $(root)$(includedir)
+@@ -528,14 +529,18 @@
+ 	@echo "===> [data: Installing initial data files]"
+-	-@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
+-	else \
++#	-@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
++#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
++#	else \
+ 		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)/"; \
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - *) |\
+-		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
+-		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
+-	fi
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
+-	else \
++		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
++		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
++#	fi
++	if [ ! -d $(root)$(htdocsdir) ]; then \
++		$(LN) -sf $(root)$(doc_prefix) $(root)$(htdocsdir); \
++	fi
++	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
++#	-@if [ -f $(root)$(cgidir)/printenv ]; then \
++#		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
++#	else \
+ 		for script in printenv test-cgi; do \
+@@ -544,5 +549,8 @@
+ 			> $(TOP)/$(SRC)/.apaci.install.tmp; \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)/$${script}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)/$${script}; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
+ 		done; \
++#	fi
++	if [ ! -d $(root)$(cgidir) ]; then \
++		$(LN) -sf $(root)$(cgidir).default $(root)$(cgidir); \
+ 	fi
+@@ -594,6 +602,6 @@
+ 			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
+-			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}access_log;" \
+-			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}error_log;" \
+-			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}referer_log;" \
+-			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}agent_log;" \
++			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}httpd-access.log;" \
++			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}httpd-error.log;" \
++			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}httpd-referer.log;" \
++			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}httpd-agent.log;" \
+ 			-e 's;conf/magic;$(sysconfdir)/magic;' \
