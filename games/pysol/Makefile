@@ -1,12 +1,12 @@
 # New ports collection makefile for:    PySol
-# Version required:     2.13
+# Version required:     2.14
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1999/04/21 16:39:38 mharo Exp $
+# $Id: Makefile,v 1.13 1999/05/19 07:02:57 tg Exp $
 #
 
-DISTNAME=       pysol-2.13
+DISTNAME=       pysol-2.14
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CARDSETS}${EXTRACT_SUFX}
