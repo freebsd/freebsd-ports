@@ -1,1 +1,7 @@
-Spreadsheet::ParseExcel - Get information from Excel file.
+Spreadsheet::ParseExcel makes you to get information from Excel95,
+Excel97, Excel2000 file.
+
+WWW: http://search.cpan.org/search?dist=Spreadsheet-ParseExcel
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

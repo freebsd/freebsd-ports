@@ -11,3 +11,39 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet/ParseExcel/.pack
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Spreadsheet 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet/ParseExcel
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Spreadsheet 2>/dev/null || true
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/AuthorK95.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/FmtTest.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Rich.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test1904.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test1904_95.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test95.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test95J.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test97.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/Test97J.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Excel/oem.xls
+%%PORTDOCS%%%%EXAMPLESDIR%%/Ilya.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/chkFmt.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/chkInfo.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpEx.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpExH.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpExHJ.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpExJ.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpExR.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/dmpExU.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/iftest.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/iftestj.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_fmt
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_info
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_oem
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_rich
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_sample
+%%PORTDOCS%%%%EXAMPLESDIR%%/res_samplej
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampleOEM.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample_j.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/smpFile.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/xls2csv.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Excel
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
