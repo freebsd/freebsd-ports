@@ -1,0 +1,20 @@
+--- class/Makefile~	Sun Sep  7 20:33:50 2003
++++ class/Makefile	Thu Jun  3 17:34:01 2004
+@@ -8,14 +8,14 @@
+ 	@for d in *; \
+ 	do	if test -d $$d; \
+ 		then	if test -e $$d/Makefile; \
+-			then	make -C $$d; \
++			then	$(MAKE) -C $$d; \
+ 			fi \
+ 		fi \
+ 	done
+ endif
+ ifeq ($(SHELLTYPE), COMMAND.COM)
+-	make -C readconfig
+-	make -C getopt
++	$(MAKE) -C readconfig
++	$(MAKE) -C getopt
+ endif
+ 
+ 

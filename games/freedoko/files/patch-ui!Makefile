@@ -1,0 +1,25 @@
+--- ui/Makefile~	Mon Mar  8 12:13:18 2004
++++ ui/Makefile	Thu Jun  3 17:18:20 2004
+@@ -14,18 +14,18 @@
+ directories : always
+ ifeq ($(SHELLTYPE), sh)
+ 	@for d in $(DIRECTORIES); do \
+-	  make -C $$d || exit; \
++	  $(MAKE) -C $$d || exit; \
+ 	done
+ endif
+ ifeq ($(SHELLTYPE), COMMAND.COM)
+ ifeq ($(USE_UI_TEXT), true)
+-	make -C text
++	$(MAKE) -C text
+ endif
+ ifeq ($(USE_UI_GTK), true)
+-	make -C gtk
++	$(MAKE) -C gtk
+ endif
+ ifeq ($(USE_UI_GTKMM), true)
+-	make -C gtkmm
++	$(MAKE) -C gtkmm
+ endif
+ endif
+ 

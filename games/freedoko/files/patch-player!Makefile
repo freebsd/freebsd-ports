@@ -1,0 +1,20 @@
+--- player/Makefile~	Mon Mar  8 12:13:13 2004
++++ player/Makefile	Wed Jun  2 19:54:21 2004
+@@ -11,13 +11,13 @@
+ directories : always
+ ifeq ($(SHELLTYPE), sh)
+ 	@for d in $(DIRECTORIES); do \
+-	  make -C $$d || exit; \
++	  $(MAKE) -C $$d || exit; \
+ 	done
+ endif
+ ifeq ($(SHELLTYPE), COMMAND.COM)
+-	make -C human
+-	make -C ai
+-	make -C ai.dummy
++	$(MAKE) -C human
++	$(MAKE) -C ai
++	$(MAKE) -C ai.dummy
+ endif
+ 
+ 

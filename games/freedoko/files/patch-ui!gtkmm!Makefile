@@ -1,0 +1,16 @@
+--- ui/gtkmm/Makefile~	Mon Mar  8 12:13:20 2004
++++ ui/gtkmm/Makefile	Thu Jun  3 17:30:05 2004
+@@ -18,11 +18,11 @@
+ directories : always
+ ifeq ($(SHELLTYPE), sh)
+ 	@for d in $(DIRECTORIES); do \
+-	  make -C $$d || exit; \
++	  $(MAKE) -C $$d || exit; \
+ 	done
+ endif
+ ifeq ($(SHELLTYPE), COMMAND.COM)
+-	make -C widgets
++	$(MAKE) -C widgets
+ endif
+ 
+ include Makefile.dependencies
