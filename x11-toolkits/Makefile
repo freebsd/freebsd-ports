@@ -126,6 +126,7 @@
     SUBDIR += pmw
     SUBDIR += py-anygui
     SUBDIR += py-gnome
+    SUBDIR += py-gnome2
     SUBDIR += py-gtk
     SUBDIR += py-gtk2
     SUBDIR += py-gtkscintilla
