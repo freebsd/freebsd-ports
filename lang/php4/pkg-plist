@@ -62,6 +62,21 @@ include/php/ext/mbstring/mbstring.h
 include/php/ext/mbstring/php_mbregex.h
 include/php/ext/mbstring/php_unicode.h
 include/php/ext/mbstring/unicode_data.h
+include/php/ext/mbstring/libmbfl/config.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfilter.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfilter_8bit.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfilter_pass.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfilter_wchar.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_allocators.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_consts.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_convert.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_defs.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_encoding.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_filter_output.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_ident.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_language.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_memory_device.h
+include/php/ext/mbstring/libmbfl/mbfl/mbfl_string.h
 include/php/ext/pgsql/php_pgsql.h
 include/php/ext/session/mod_files.h
 include/php/ext/session/mod_mm.h
@@ -215,6 +230,8 @@ lib/php/build/shtool
 %%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Frontend/CLI.php
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
+@dirrm include/php/ext/mbstring/libmbfl/mbfl
+@dirrm include/php/ext/mbstring/libmbfl
 @dirrm include/php/ext/mbstring
 @dirrm include/php/ext/pgsql
 @dirrm include/php/ext/session

@@ -21,7 +21,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -48,7 +48,7 @@ DISTNAME=	php-${PORTVERSION:S/.r/RC/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER?=	sysadmin@alexdupre.com
-COMMENT=	PHP Scripting Language (Apache Module and CLI)
+COMMENT?=	PHP Scripting Language (Apache Module and CLI)
 .if defined(WITHOUT_APACHE)
 .if defined(WITHOUT_CLI)
 COMMENT=	PHP Common Gateway Interface
@@ -176,6 +176,12 @@ SCRIPTS_ENV+=	SEL_OPTIONS="${SEL_OPTIONS}" \
 
 .if exists(${WRKDIR}/Makefile.inc)
 .include "${WRKDIR}/Makefile.inc"
+.endif
+
+.if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
+WITH_PCRE=	yes
+WITH_XML=	yes
+WITH_XMLRPC=	yes
 .endif
 
 .if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
