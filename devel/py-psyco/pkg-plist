@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/psyco/__init__.py
+%%PYTHON_SITELIBDIR%%/psyco/__init__.pyc
+%%PYTHON_SITELIBDIR%%/psyco/__init__.pyo
+%%PYTHON_SITELIBDIR%%/psyco/_psyco.so
+%%PYTHON_SITELIBDIR%%/psyco/classes.py
+%%PYTHON_SITELIBDIR%%/psyco/classes.pyc
+%%PYTHON_SITELIBDIR%%/psyco/classes.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/psyco/
