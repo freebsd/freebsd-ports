@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cdf
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://bmp-plugins.berlios.de/misc/cdf/
+MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A colorized df
