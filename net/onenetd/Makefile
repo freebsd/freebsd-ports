@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	onenetd
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	net
 MASTER_SITES=	http://azz.us-lot.org/files/
 
