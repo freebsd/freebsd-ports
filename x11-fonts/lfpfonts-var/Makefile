@@ -26,9 +26,9 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-var
-	${INSTALL_DATA} ${WRKSRC}/lfp-var/*.pcf.gz ${PREFIX}/lib/X11/fonts/lfpfonts-var
-	${INSTALL_DATA} ${WRKSRC}/lfp-var/fonts.dir ${PREFIX}/lib/X11/fonts/lfpfonts-var
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/lfpfonts-var
+	@${INSTALL_DATA} ${WRKSRC}/lfp-var/*.pcf.gz ${PREFIX}/lib/X11/fonts/lfpfonts-var
+	@${INSTALL_DATA} ${WRKSRC}/lfp-var/fonts.dir ${PREFIX}/lib/X11/fonts/lfpfonts-var
 
 post-install:
 	@${CAT} ${DESCR}

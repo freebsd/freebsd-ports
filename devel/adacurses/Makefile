@@ -28,11 +28,11 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 CONFIGURE_ENV=	ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib"
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/adacurses
-	${CP} ${WRKSRC}/Ada95/src/*.ads ${PREFIX}/lib/adacurses
-	${CP} ${WRKSRC}/Ada95/src/*.ali ${PREFIX}/lib/adacurses
-	${CP} ${WRKSRC}/Ada95/src/*.adb ${PREFIX}/lib/adacurses
-	${CP} ${WRKSRC}/Ada95/src/*.a ${PREFIX}/lib/adacurses
-	${INSTALL_SCRIPT} ${FILESDIR}/adacurses-config ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/adacurses
+	@${CP} ${WRKSRC}/Ada95/src/*.ads ${PREFIX}/lib/adacurses
+	@${CP} ${WRKSRC}/Ada95/src/*.ali ${PREFIX}/lib/adacurses
+	@${CP} ${WRKSRC}/Ada95/src/*.adb ${PREFIX}/lib/adacurses
+	@${CP} ${WRKSRC}/Ada95/src/*.a ${PREFIX}/lib/adacurses
+	@${INSTALL_SCRIPT} ${FILESDIR}/adacurses-config ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

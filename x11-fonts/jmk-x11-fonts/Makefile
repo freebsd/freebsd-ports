@@ -22,9 +22,9 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/X11/fonts/jmk
-	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/lib/X11/fonts/jmk
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/jmk
+	@${MKDIR} ${PREFIX}/lib/X11/fonts/jmk
+	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/lib/X11/fonts/jmk
+	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/jmk
 
 post-install:
 	@${CAT} ${DESCR}

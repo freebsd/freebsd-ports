@@ -27,10 +27,10 @@ post-extract:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} \
+	@${INSTALL_PROGRAM} \
 		${WRKSRC}/star/OBJ/${MACHINE_ARCH}-freebsd-${CC}/star \
 		${PREFIX}/bin
-	cd ${PREFIX}/bin ; ${LN} -f star ustar
-	${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1
+	@cd ${PREFIX}/bin ; ${LN} -f star ustar
+	@${INSTALL_MAN} ${WRKSRC}/star/star.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
