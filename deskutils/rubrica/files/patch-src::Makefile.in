@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Thu Feb  5 03:10:14 2004
-+++ src/Makefile.in	Thu Feb  5 17:23:59 2004
-@@ -126,7 +126,7 @@
+--- src/Makefile.in.orig	Mon May  3 23:51:50 2004
++++ src/Makefile.in	Sun Nov 14 02:27:02 2004
+@@ -165,8 +165,6 @@
  	-DFILE_FORMAT=@FILE_FORMAT@
  
  
--CFLAGS = -DHAVE_CONFIG_H -Wall -O -g 
-+CFLAGS = @CFLAGS@
- 
+-AM_CFLAGS = -DHAVE_CONFIG_H -Wall -O -g
+-
  bin_PROGRAMS = rubrica 
  
+ rubrica_SOURCES = \
