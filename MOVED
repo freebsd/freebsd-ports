@@ -336,7 +336,7 @@ www/sqmgrlog|www/sarg|2003-05-15|Renamed into sarg
 devel/adabroker||2003-05-19|no longer maintained, does not compile with latest compiler
 chinese/rxvt||2003-05-20|no longer needed
 chinese/rxvt-big5||2003-05-20|no longer needed
-chinese/rxvt-gb||2003-05-20|no longer needed
+chinese/rxvt-gb||2003-05-20|no longer needeD
 misc/p5-DataCash||2003-05-20|No longer available
 net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
 x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
@@ -422,3 +422,4 @@ chinese/acroread-chsfont|chinese/acroread5-chsfont|2003-07-24|security vulnerabi
 chinese/acroread-chtfont|chinese/acroread5-chtfont|2003-07-24|security vulnerability
 x11-wm/xfwm4|x11-wm/xfce4-wm|2003-07-27|rename it to be consistent with other xfce4 ports
 misc/shc||2003-07-30|broken for nearly a year
+mail/icqmail||2003-07-30|port no longer works, and is no longer developed
