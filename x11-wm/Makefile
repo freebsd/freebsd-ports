@@ -22,6 +22,7 @@
     SUBDIR += ctwm
     SUBDIR += e16utils
     SUBDIR += enlightenment
+    SUBDIR += epiwm
     SUBDIR += epplets
     SUBDIR += evilwm
     SUBDIR += fbdesk
