@@ -18,6 +18,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 USE_IMAKE=	yes
 XMKMF=		xmkmf
+MAN1=		vnterm.1
 CFLAGS+=	-I../../include
 
 post-patch:
