@@ -1,36 +1,41 @@
-# New ports collection makefile for:	diclookup-mule
+# New ports collection makefile for:	diclookup-emacs20
 # Date created:		31 Jan 1998
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	diclookup-mule
-PORTVERSION=	2.3.3
+PORTNAME=	diclookup
+PORTVERSION=	2.3.4b8
 CATEGORIES=	japanese elisp
-MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/
+MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/beta/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+DISTNAME=	diclookup-mule-${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	diclookup-mule-${PORTVERSION}-wave-patch.gz
+MAINTAINER=	mita@FreeBSD.org
 
-MAINTAINER=	mita@jp.FreeBSD.org
+RUN_DEPENDS=	${X11BASE}/share/doc/intlfonts-1.2/README:${PORTSDIR}/x11-fonts/intlfonts
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11-fonts/etlfonts
-BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-freewnn
+WRKSRC=		${WRKDIR}/diclookup-mule-${PORTVERSION}
+EMACS_PORT_NAME?=	emacs20
+MAKE_ARGS+=	LISPDIR="${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/diclookup"
+DOC_DIR=	${PREFIX}/share/doc/diclookup-emacs20
 
+pre-install:
+	${MKDIR} ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/diclookup
 post-install:
-	${MKDIR} ${PREFIX}/lib/dserver/doc
+	${MKDIR} ${DOC_DIR}
 	@${SED} s!PREFIX_DIR!${PREFIX}!g ${FILESDIR}/setup-diclookup.sh \
-				> ${PREFIX}/lib/dserver/setup-diclookup.sh
+				> ${DOC_DIR}/setup-diclookup.sh
 	@${SED} s!PREFIX_DIR!${PREFIX}!g ${FILESDIR}/deinstall-diclookup.sh \
-				> ${PREFIX}/lib/dserver/deinstall-diclookup.sh
+				> ${DOC_DIR}/deinstall-diclookup.sh
 	${INSTALL_DATA} ${FILESDIR}/README.diclookup-setup.txt \
-				${PREFIX}/lib/dserver/doc
+				${DOC_DIR}/
 	${INSTALL_DATA} ${WRKSRC}/README \
-				${PREFIX}/lib/dserver/doc/README.diclookup-mule
+				${DOC_DIR}/README.diclookup-mule
 	${INSTALL_DATA} ${WRKSRC}/README.sirup \
-				${PREFIX}/lib/dserver/doc/
+				${DOC_DIR}/
 	${INSTALL_DATA} ${WRKSRC}/lib/README \
-			${PREFIX}/lib/dserver/doc/README.diclookup-mule.lib
+			${DOC_DIR}/README.diclookup-mule.lib
 
 .include <bsd.port.mk>

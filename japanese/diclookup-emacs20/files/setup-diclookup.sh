@@ -1,16 +1,19 @@
 #!/bin/sh
+EMACS=emacs
+EMACS_VER=20.7
+
 /usr/bin/dialog --title "ja-diclookup setup" --clear \
 	--yesno "\n\
 You have to install appropreate startup code for diclookup-mule. \n\
 This setup script automatically it to: \n\
-PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el. \n\n\
+/usr/local/share/${EMACS}/${EMACS_VER}/site-lisp/site-start.el. \n\n\
 Are you sure?" -1 -1
 RETVAL=$?
 # RETVAL=0 for yes, 1 for no, 255 for ESC.
 
 if [ "X${RETVAL}" = "X0" ] ; then # answer is `Yes'. hack diclookup-mule.
 
-# Hack PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el
+# Hack /usr/local/share/${EMACS}/${EMACS_VER}/site-lisp/site-start.el
 rm -f /tmp/hack-site-start.el
 echo "(defun hack-site-start ()" >> /tmp/hack-site-start.el
 echo "  (interactive)" >> /tmp/hack-site-start.el
@@ -46,16 +49,17 @@ echo "      (insert \"	'(\\\"Online Dictionary\\\" . online-dictionary) 'calenda
 echo "      (insert \"; diclookup-mule\n\")" >> /tmp/hack-site-start.el
 echo "      (write-file fname))))" >> /tmp/hack-site-start.el
 
-mule -batch -q -l /tmp/hack-site-start.el -f hack-site-start \
-		PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el ;
+${EMACS}-${EMACS_VER} -batch -q -l /tmp/hack-site-start.el -f hack-site-start \
+		/usr/local/share/${EMACS}/${EMACS_VER}/site-lisp/site-start.el ;
 rm -f /tmp/hack-site-start.el
 
 /usr/bin/dialog --title "ja-diclookup setup" --clear \
 	--msgbox "\n\
-original file is saved in PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el.bak" -1 -1
+original file is saved in /usr/local/share/${EMACS}/${EMACS_VER}/site-lisp/site-start.el.bak" -1 -1
 
 else
 /usr/bin/dialog --title "ja-diclookup setup" --clear \
 	--msgbox "\n\
-For setup, documents under PREFIX_DIR/lib/dserver will be helpful." -1 -1
+For setup, documents under /usr/local/share/doc/diclookup-emacs20 
+will be helpful." -1 -1
 fi

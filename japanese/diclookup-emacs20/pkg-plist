@@ -1,21 +1,21 @@
-lib/dserver/doc/README.diclookup-setup.txt
-lib/dserver/doc/README.diclookup-mule
-lib/dserver/doc/README.sirup
-lib/dserver/doc/README.diclookup-mule.lib
-lib/dserver/setup-diclookup.sh
-lib/dserver/deinstall-diclookup.sh
-share/mule/19.34/site-lisp/od-eiwa.elc
-share/mule/19.34/site-lisp/od-oxford.elc
-share/mule/19.34/site-lisp/od-italian.elc
-share/mule/19.34/site-lisp/od-crown.elc
-share/mule/19.34/site-lisp/od-kojien.elc
-share/mule/19.34/site-lisp/od-chujiten64-epw.elc
-share/mule/19.34/site-lisp/od-chujiten64.elc
-share/mule/19.34/site-lisp/od-chujiten.elc
-share/mule/19.34/site-lisp/od-readers.elc
-share/mule/19.34/site-lisp/diclookup-mule.elc
-share/mule/19.34/site-lisp/sirup-doc.elc
-share/mule/19.34/site-lisp/sirup.elc
-share/mule/19.34/site-lisp/ndtp.elc
-@dirrm lib/dserver/doc
-@dirrm lib/dserver
+share/doc/diclookup-emacs20/README.diclookup-setup.txt
+share/doc/diclookup-emacs20/README.diclookup-mule
+share/doc/diclookup-emacs20/README.sirup
+share/doc/diclookup-emacs20/README.diclookup-mule.lib
+share/doc/diclookup-emacs20/setup-diclookup.sh
+share/doc/diclookup-emacs20/deinstall-diclookup.sh
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-eiwa.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-oxford.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-italian.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-crown.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-kojien.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-chujiten64-epw.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-chujiten64.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-chujiten.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/od-readers.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/diclookup-mule.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/sirup-doc.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/sirup.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup/ndtp.elc
+@dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/diclookup
+@dirrm share/doc/diclookup-emacs20
