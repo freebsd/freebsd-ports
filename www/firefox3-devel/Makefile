@@ -7,6 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 #MASTER_SITES=	${MASTER_SITE_MOZILLA}
 #MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
@@ -39,8 +40,10 @@ ALL_TARGET=	default
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20 libidl
 PKGNAMESUFFIX=	-gtk2
+PLIST=		pkg-plist.gtk2
 .else
 USE_GNOME=	gtk12 orbit
+PLIST=		pkg-plist.gtk1
 .endif
 
 NO_MTREE=		yes
