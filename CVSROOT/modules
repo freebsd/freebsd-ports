@@ -2233,7 +2233,7 @@ gstreamer-editor	ports/multimedia/gstreamer-editor
 gstreamer-player	ports/multimedia/gstreamer-player
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
 gsubedit	ports/multimedia/gsubedit
-gswitchit_applet ports/x11/gswitchit_applet
+gswitchit ports/x11/gswitchit
 gtar		ports/archivers/gtar
 gtetrinet	ports/games/gtetrinet
 gtgt		ports/devel/gtgt
