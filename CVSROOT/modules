@@ -1345,6 +1345,7 @@ dset		src/sbin/dset
 dsniff		ports/security/dsniff
 dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
+dtcp		ports/net/dtcp
 dtd-catalogs	ports/textproc/dtd-catalogs
 dtd2relax	ports/textproc/dtd2relax
 dtdinst		ports/textproc/dtdinst
