@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	qt
+PORTNAME=	qt
 PORTVERSION=	3.2.3
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
@@ -16,8 +16,8 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	kde@FreeBSD.org
-COMMENT?=	A C++ X GUI toolkit
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	A C++ X GUI toolkit
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
@@ -49,11 +49,11 @@ MAKE_ENV?=	QTDIR=${WRKSRC} \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-tools
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
-	 --exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
-        --exclude '${DISTNAME}/examples' --exclude '${DISTNAME}/tutorial' \
+	--exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
+	--exclude '${DISTNAME}/examples' --exclude '${DISTNAME}/tutorial' \
 	--exclude '${DISTNAME}/extensions/nsplugin/src/[^q]*' \
-        --exclude '${DISTNAME}/include/jri*' \
-        --exclude '${DISTNAME}/include/np*'
+	--exclude '${DISTNAME}/include/jri*' \
+	--exclude '${DISTNAME}/include/np*'
 
 .include <bsd.port.pre.mk>
 
@@ -68,9 +68,9 @@ PLATFORM=${QTBASE}/share/qt/mkspecs/freebsd-g++
 .endfor
 
 .if defined(PLATFORM)
-CONFIGURE_ARGS+= -platform ${PLATFORM}
+CONFIGURE_ARGS+=-platform ${PLATFORM}
 .else
-CONFIGURE_ARGS+= -platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ARGS+=-platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 .endif
 
 .if !defined(WITHOUT_XFT)
