@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.3g
 #PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
 #		DSS-4_1_3.src.tar.gz.
-DISTNAME=	DSS-${PORTVERSION:S/./_/g}.src
+DISTNAME=	DSS-${PORTVERSION:S/./_/g:S/g//}.src
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VER}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+
+WRKSRC=		${WRKDIR}/DSS-${PORTVERSION:S/./_/g}.src
 
 RESTRICTED=	"See http://www.opensource.apple.com/apsl/"
 NO_CDROM=	${RESTRICTED}
