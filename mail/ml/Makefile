@@ -8,8 +8,7 @@
 PORTNAME=	ml
 PORTVERSION=	3.4
 CATEGORIES=	mail
-MASTER_SITES=	http://ftp.rge.com/pub/mail/ml/ \
-		http://people.netscape.com/max/ml/
+MASTER_SITES=	http://ftp.rge.com/pub/mail/ml/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 IMAP client
