@@ -8,8 +8,8 @@
 PORTNAME=	qterm
 PORTVERSION=	0.2.0
 CATEGORIES=	chinese
-MASTER_SITES=	http://qterm.gnuchina.org/qterm-${PORTVERSION}/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/qterm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	QTerm is a BBS client in Unix
