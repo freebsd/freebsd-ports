@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		oaf.0:${PORTSDIR}/devel/oaf \
 		db3.2:${PORTSDIR}/databases/db3
 
