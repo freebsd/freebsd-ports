@@ -94,7 +94,6 @@
     SUBDIR += jesred
     SUBDIR += jetty
     SUBDIR += junkbuster
-    SUBDIR += junkbuster-zlib
     SUBDIR += kannel
     SUBDIR += kdreamsite
     SUBDIR += knowledgekit

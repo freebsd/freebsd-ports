@@ -1,9 +1,0 @@
-sbin/junkbuster-zlib
-etc/junkbuster-zlib/aclfile.sample
-etc/junkbuster-zlib/blockfile.sample
-etc/junkbuster-zlib/cookiefile.sample
-etc/junkbuster-zlib/configfile.sample
-etc/junkbuster-zlib/forwardfile.sample
-etc/junkbuster-zlib/trustfile.sample
-etc/rc.d/junkbuster-zlib.sh
-@dirrm etc/junkbuster-zlib

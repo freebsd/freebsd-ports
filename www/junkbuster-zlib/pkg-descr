@@ -1,7 +1,0 @@
-Junkbuster-zlib is a modified version of the Internet Junkbuster Proxy v2.0.2
-which can automatically compress text/html and text/plain documents for clients
-which support Accept-Encoding: gzip (e.g. Netscape 4.7, Internet Explorer 5,
-Lynx 2.8.3) to save downstream modem/network bandwidth. It uses the zlib
-compression library to perform on-the-fly compression of HTML documents.
-
-WWW: http://f2.org/products/ijb-zlib/
