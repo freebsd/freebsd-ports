@@ -1,0 +1,20 @@
+--- po/Makefile.in.in.orig	Tue Aug  7 01:13:27 2001
++++ po/Makefile.in.in	Sun Aug 12 12:07:12 2001
+@@ -20,7 +20,7 @@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ datadir = @datadir@
+-localedir = $(datadir)/locale
++localedir = $(prefix)/share/locale
+ gettextsrcdir = $(datadir)/gettext/po
+ subdir = po
+ 
+@@ -104,7 +104,7 @@
+ 	@catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+ 	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+ 	  if test -r $$cat; then \
