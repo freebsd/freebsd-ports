@@ -56,11 +56,7 @@ BASEPACKAGES=	adduser apt-utils apt base-config base-files base-passwd \
 		psmisc sed shellutils slang1 sysvinit tar tasksel tcpd \
 		telnet textutils util-linux util-linux-locales whiptail
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
+BROKEN=		"Does not build"
 
 post-extract:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-7_all.deb \
@@ -111,4 +107,4 @@ do-install:
 
 	${RM} -rf ${PREFIX}/tmp/* ${PREFIX}/etc/timezone.*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
