@@ -7,6 +7,7 @@
 
 PORTNAME=	pan2
 PORTVERSION=	0.14.2.91
+PORTREVISION=	1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/
@@ -23,6 +24,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget libxml2 gtk20
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
@@ -36,5 +38,9 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .else
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|apps/Internet|applications|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 bin/pan
-share/gnome/apps/Internet/pan.desktop
+share/gnome/applications/pan.desktop
 share/gnome/pixmaps/pan.png
 share/locale/am/LC_MESSAGES/pan.mo
 share/locale/az/LC_MESSAGES/pan.mo
