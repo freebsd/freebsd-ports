@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/
 
