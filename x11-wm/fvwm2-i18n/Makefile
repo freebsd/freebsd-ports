@@ -15,6 +15,7 @@ PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/I18N_MB/
 PATCHFILES=	fvwm-${PORTVERSION}-I18N_MB-${FVWM_PATCHVER}.patch
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=Internationalized fvwm version 2, a window manager for X
 
 .if !defined(WITHOUT_XPM)
 USE_XPM=	yes

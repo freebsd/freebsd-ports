@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=An improved WHOIS client capable of selecting server to query
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

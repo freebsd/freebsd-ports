@@ -12,6 +12,7 @@ MASTER_SITES=	# none
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=VMware tools for FreeBSD guest OS (for VMware 3.x)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd

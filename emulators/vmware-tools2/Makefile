@@ -16,6 +16,7 @@ MASTER_SITES=	http://vmware-svca.www.conxion.com/software/ \
 DISTNAME=	tools-for-freebsd-${BUILD_VER}
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=VMware tools for FreeBSD guest OS (for VMware 2.x)
 
 WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 

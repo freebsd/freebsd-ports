@@ -13,6 +13,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=The "meta-port" for the SKK Japanese-input software
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORT_SKK_JISYO} \
 		${LOCALBASE}/bin/skkdic-count:${PORT_SKK_TOOLS} \

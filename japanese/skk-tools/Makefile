@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	text/elisp/skk/tools
 DISTNAME=	skktools-${PORTVERSION}
 
 MAINTAINER=	matusita@FreeBSD.org
+COMMENT=Jisyo-tools for the SKK Japanese-input software
 
 USE_BZIP2=	yes
 
