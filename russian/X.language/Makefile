@@ -3,10 +3,10 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1996/03/10 16:52:20 ache Exp $
+# $Id: Makefile,v 1.7 1996/03/20 10:38:59 asami Exp $
 #
 
-DISTNAME=       xrus_bin
+DISTNAME=       xrus-1.0-bin
 PKGNAME=        ru-X11-3.1.2
 CATEGORIES+=    russian x11
 MASTER_SITES=   ftp://ftp.kiae.su/misc/fonts/cyrillic/xwindows/
