@@ -1,14 +1,15 @@
 # New ports collection makefile for:	agm
-# Version required:			1.3.1
+# Version required:			1.4
 # Date created:				4 July 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/15 02:08:06 obrien Exp $
+# $Id: Makefile,v 1.2 1998/03/28 14:18:34 steve Exp $
 #
 
-DISTNAME=		agm-1.3.1
+DISTNAME=		agm-1.4
 CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITES=		${MASTER_SITE_SUNSITE} \
+			http://users.gtn.net/fraserm/
 MASTER_SITE_SUBDIR=	games/amusements
 
 MAINTAINER=		andy@icc.surw.chel.su
