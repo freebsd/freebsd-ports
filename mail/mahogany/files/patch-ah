@@ -1,0 +1,19 @@
+--- src/Makefile.orig	Sat Sep 30 12:10:50 2000
++++ src/Makefile	Sun Nov 12 09:09:41 2000
+@@ -65,14 +65,8 @@
+ 	$(RM) core libM.so M M.static
+ 
+ install:
+-	$(INSTALL_PROGRAM) -s -m 755 M $(DATADIR)/$(CANONICAL_HOST)/bin
+-	if test -f libM.so; \
+-	then $(INSTALL_PROGRAM) libM.so $(DATADIR)/$(CANONICAL_HOST)/lib; \
+-	fi
+-	$(RM) -f $(BINDIR)/M $(DATADIR)/bin/M
+-	ln -f -s ../share/Mahogany/$(CANONICAL_HOST)/bin/M $(BINDIR)/M
+-	$(RM) $(BINDIR)/mahogany
+-	ln -f -s ../share/Mahogany/$(CANONICAL_HOST)/bin/M $(BINDIR)/mahogany
++	$(INSTALL_PROGRAM) -s -m 755 M $(BINDIR)/M
++	ln -f -s M $(BINDIR)/mahogany
+ ifeq ($(USE_MODULES),dynamic)
+ 	set -e; for i in $(MOD_DIRS); do $(MAKE) -C $$i install-modules; done
+ endif

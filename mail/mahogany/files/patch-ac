@@ -1,0 +1,118 @@
+--- src/wx/vcard/vcc.y.orig	Thu Aug 24 16:27:50 2000
++++ src/wx/vcard/vcc.y	Sat Nov 11 03:23:44 2000
+@@ -107,7 +107,7 @@
+ #endif
+ 
+ #include <string.h>
+-#ifndef __MWERKS__
++#if !defined(__MWERKS__) && !defined(__FreeBSD__)
+ #include <malloc.h>
+ #endif
+ #include <stdio.h>
+@@ -161,7 +161,6 @@
+ /****  Private Forward Declarations  ****/
+ static int pushVObject(const char *prop);
+ static VObject* popVObject();
+-static char* lexDataFromBase64();
+ static void lexPopMode(int top);
+ static int lexWithinMode(enum LexMode mode);
+ static void lexPushMode(enum LexMode mode);
+@@ -371,7 +370,7 @@
+ 	;
+ 
+ %%
+-/*/////////////////////////////////////////////////////////////////////////*/
++/*-------------------------------------------------------------------------*/
+ static int pushVObject(const char *prop)
+     {
+     VObject *newObj;
+@@ -391,7 +390,7 @@
+     }
+ 
+ 
+-/*/////////////////////////////////////////////////////////////////////////*/
++/*-------------------------------------------------------------------------*/
+ /* This pops the recently built vCard off the stack and returns it. */
+ static VObject* popVObject()
+     {
+@@ -432,7 +431,8 @@
+ 
+ static void enterAttr(const char *s1, const char *s2)
+     {
+-    const char *p1, *p2;
++    const char *p1;
++    const char *p2 = NULL;
+     p1 = lookupProp_(s1);
+     if (s2) {
+ 	VObject *a;
+@@ -726,7 +726,6 @@
+     }
+ 
+ static char* lexGet1Value() {
+-    int size = 0;
+     int c;
+     lexSkipWhite();
+     c = lexLookahead();
+@@ -758,7 +757,6 @@
+ #endif
+ 
+ static char* lexGetStrUntil(char *termset) {
+-    int size = 0;
+     int c = lexLookahead();
+     lexClearToken();
+     while (c != EOF && !strchr(termset,c)) {
+@@ -814,7 +812,7 @@
+     }
+ 
+ 
+-/*/////////////////////////////////////////////////////////////////////////*/
++/*-------------------------------------------------------------------------*/
+ /* This parses and converts the base64 format for binary encoding into
+  * a decoded buffer (allocated with new).  See RFC 1521.
+  */
+@@ -943,7 +941,6 @@
+ static char* lexGetQuotedPrintable()
+     {
+     char cur;
+-    unsigned long len = 0;
+ 
+     lexClearToken();
+     do {
+@@ -999,8 +996,6 @@
+     } /* LexQuotedPrintable */
+ 
+ int yylex() {
+-    int token = 0;
+-
+     int lexmode = LEXMODE();
+     if (lexmode == L_VALUES) {
+ 	int c = lexGetc();
+@@ -1130,7 +1125,7 @@
+     return vObjList;
+     }
+ 
+-/*/////////////////////////////////////////////////////////////////////////*/
++/*-------------------------------------------------------------------------*/
+ DLLEXPORT(VObject*) Parse_MIME(const char *input, unsigned long len)
+     {
+     initLex(input, len, 0);
+@@ -1185,7 +1180,7 @@
+ 
+ #endif
+ 
+-/*/////////////////////////////////////////////////////////////////////////*/
++/*-------------------------------------------------------------------------*/
+ static void YYDebug(const char *s)
+ {
+ /*	Parse_Debug(s); */
+--- src/wx/vcard/vobject.c.orig	Sat Nov 11 03:25:07 2000
++++ src/wx/vcard/vobject.c	Sat Nov 11 03:25:31 2000
+@@ -42,7 +42,7 @@
+  * vobject, and convert a vobject into its textual representation.
+  */
+ 
+-#ifndef	 MWERKS
++#if !defined(MWERKS) && !defined(__FreeBSD__)
+ #include <malloc.h>
+ #endif
+ 

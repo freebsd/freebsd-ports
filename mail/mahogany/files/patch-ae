@@ -1,0 +1,44 @@
+--- src/classes/MModule.cpp.orig	Mon Nov  6 14:58:02 2000
++++ src/classes/MModule.cpp	Thu Nov 16 00:07:29 2000
+@@ -683,22 +683,24 @@
+ 
+ static wxArrayString BuildListOfModulesDirs()
+ {
+-   // look under extra M_CANONICAL_HOST directory under Unix, but not for other
+-   // platforms (doesn't make much sense under Windows)
+-
+    wxString path1, path2;
+    wxArrayString dirs;
+ 
+-   path1 << mApplication->GetGlobalDir()
++#if defined(OS_UNIX) && defined( __FreeBSD__)
++   path1 << M_PREFIX << DIR_SEPARATOR << "libdata"
++         << DIR_SEPARATOR << "Mahogany"
++#else
++   path1 << mApplication->GetLocalDir()
+ #ifdef OS_UNIX
+          << DIR_SEPARATOR << M_CANONICAL_HOST
+-#endif // Unix
++#endif
++#endif
+          << DIR_SEPARATOR << "modules" << DIR_SEPARATOR;
+ 
+    path2 << mApplication->GetLocalDir()
+ #ifdef OS_UNIX
+          << DIR_SEPARATOR << M_CANONICAL_HOST
+-#endif // Unix
++#endif
+          << DIR_SEPARATOR << "modules" << DIR_SEPARATOR;
+ 
+    dirs.Add(path1);
+--- src/classes/Profile.cpp.orig	Sun Nov 12 09:12:38 2000
++++ src/classes/Profile.cpp	Sun Nov 12 09:12:12 2000
+@@ -765,7 +765,7 @@
+    //    3. default installation dir
+    String globalFileName, globalFile;
+    globalFileName << '/' << M_APPLICATIONNAME << ".conf";
+-   globalFile = String(M_PREFIX) + globalFileName;
++   globalFile = String(M_PREFIX) + "/etc" + globalFileName;
+    if ( !wxFileExists(globalFile) )
+    {
+       const char *dir = getenv("MAHOGANY_DIR");

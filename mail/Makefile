@@ -46,6 +46,7 @@
     SUBDIR += lbdb
     SUBDIR += listar
     SUBDIR += listmanager
+    SUBDIR += mahogany
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildrop

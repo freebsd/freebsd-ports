@@ -1,0 +1,196 @@
+--- extra/src/c-client/dummy.c.orig	Sat Nov 11 02:55:17 2000
++++ extra/src/c-client/dummy.c	Sat Nov 11 02:55:27 2000
+@@ -252,7 +252,7 @@
+ 		      long level)
+ {
+   DIR *dp;
+-  struct direct *d;
++  struct dirent *d;
+   struct stat sbuf;
+   char tmp[MAILTMPLEN];
+ 				/* punt if bogus name */
+--- extra/src/c-client/mh.c.orig	Sat Nov 11 02:57:05 2000
++++ extra/src/c-client/mh.c	Sat Nov 11 02:57:15 2000
+@@ -285,7 +285,7 @@
+ void mh_list_work (MAILSTREAM *stream,char *dir,char *pat,long level)
+ {
+   DIR *dp;
+-  struct direct *d;
++  struct dirent *d;
+   struct stat sbuf;
+   char *cp,*np,curdir[MAILTMPLEN],name[MAILTMPLEN];
+ 				/* build MH name to search */
+@@ -386,7 +386,7 @@
+ long mh_delete (MAILSTREAM *stream,char *mailbox)
+ {
+   DIR *dirp;
+-  struct direct *d;
++  struct dirent *d;
+   int i;
+   char tmp[MAILTMPLEN];
+   if (!(mailbox[0] == '#' && (mailbox[1] == 'm' || mailbox[1] == 'M') &&
+@@ -651,7 +651,7 @@
+   }
+   stream->silent = T;		/* don't pass up mm_exists() events yet */
+   if (sbuf.st_ctime != LOCAL->scantime) {
+-    struct direct **names = NIL;
++    struct dirent **names = NIL;
+     long nfiles = scandir (LOCAL->dir,&names,mh_select,mh_numsort);
+     if (nfiles < 0) nfiles = 0;	/* in case error */
+     old = stream->uid_last;
+@@ -871,7 +871,7 @@
+ long mh_append (MAILSTREAM *stream,char *mailbox,char *flags,char *date,
+ 		STRING *message)
+ {
+-  struct direct **names;
++  struct dirent **names;
+   int fd;
+   char c,*s,tmp[MAILTMPLEN];
+   MESSAGECACHE elt;
+@@ -961,7 +961,7 @@
+  * Returns: T to use file name, NIL to skip it
+  */
+ 
+-int mh_select (struct direct *name)
++int mh_select (struct dirent *name)
+ {
+   char c;
+   char *s = name->d_name;
+@@ -978,8 +978,8 @@
+ 
+ int mh_numsort (const void *d1,const void *d2)
+ {
+-  return atoi ((*(struct direct **) d1)->d_name) -
+-    atoi ((*(struct direct **) d2)->d_name);
++  return atoi ((*(struct dirent **) d1)->d_name) -
++    atoi ((*(struct dirent **) d2)->d_name);
+ }
+ 
+ 
+--- extra/src/c-client/mh.h.orig	Sat Nov 11 02:56:50 2000
++++ extra/src/c-client/mh.h	Sat Nov 11 02:57:01 2000
+@@ -83,7 +83,7 @@
+ long mh_append (MAILSTREAM *stream,char *mailbox,char *flags,char *date,
+ 		STRING *message);
+ 
+-int mh_select (struct direct *name);
++int mh_select (struct dirent *name);
+ int mh_numsort (const void *d1,const void *d2);
+ char *mh_file (char *dst,char *name);
+ long mh_canonicalize (char *pattern,char *ref,char *pat);
+--- extra/src/c-client/mx.c.orig	Sat Nov 11 02:54:19 2000
++++ extra/src/c-client/mx.c	Sat Nov 11 02:54:43 2000
+@@ -197,7 +197,7 @@
+ void mx_list_work (MAILSTREAM *stream,char *dir,char *pat,long level)
+ {
+   DIR *dp;
+-  struct direct *d;
++  struct dirent *d;
+   struct stat sbuf;
+   char *cp,*np,curdir[MAILTMPLEN],name[MAILTMPLEN];
+ 				/* make mailbox and directory names */
+@@ -294,7 +294,7 @@
+ long mx_delete (MAILSTREAM *stream,char *mailbox)
+ {
+   DIR *dirp;
+-  struct direct *d;
++  struct dirent *d;
+   char *s;
+   char tmp[MAILTMPLEN];
+   if (!mx_isvalid (mailbox,tmp))
+@@ -585,7 +585,7 @@
+   if (stat (LOCAL->dir,&sbuf)) return NIL;
+   stream->silent = T;		/* don't pass up mm_exists() events yet */
+   if (sbuf.st_ctime != LOCAL->scantime) {
+-    struct direct **names = NIL;
++    struct dirent **names = NIL;
+     long nfiles = scandir (LOCAL->dir,&names,mx_select,mx_numsort);
+     if (nfiles < 0) nfiles = 0;	/* in case error */
+     old = stream->uid_last;
+@@ -902,7 +902,7 @@
+  * Returns: T to use file name, NIL to skip it
+  */
+ 
+-int mx_select (struct direct *name)
++int mx_select (struct dirent *name)
+ {
+   char c;
+   char *s = name->d_name;
+@@ -919,8 +919,8 @@
+ 
+ int mx_numsort (const void *d1,const void *d2)
+ {
+-  return atoi ((*(struct direct **) d1)->d_name) -
+-    atoi ((*(struct direct **) d2)->d_name);
++  return atoi ((*(struct dirent **) d1)->d_name) -
++    atoi ((*(struct dirent **) d2)->d_name);
+ }
+ 
+ 
+--- extra/src/c-client/mx.h.orig	Sat Nov 11 02:53:27 2000
++++ extra/src/c-client/mx.h	Sat Nov 11 02:53:34 2000
+@@ -86,7 +86,7 @@
+ long mx_append (MAILSTREAM *stream,char *mailbox,char *flags,char *date,
+ 		STRING *message);
+ 
+-int mx_select (struct direct *name);
++int mx_select (struct dirent *name);
+ int mx_numsort (const void *d1,const void *d2);
+ char *mx_file (char *dst,char *name);
+ long mx_lockindex (MAILSTREAM *stream);
+--- extra/src/c-client/news.c.orig	Sat Nov 11 02:56:14 2000
++++ extra/src/c-client/news.c	Sat Nov 11 02:56:32 2000
+@@ -352,7 +352,7 @@
+ {
+   long i,nmsgs;
+   char *s,tmp[MAILTMPLEN];
+-  struct direct **names;
++  struct dirent **names;
+   				/* return prototype for OP_PROTOTYPE call */
+   if (!stream) return &newsproto;
+   if (stream->local) fatal ("news recycle stream");
+@@ -401,7 +401,7 @@
+  * Returns: T to use file name, NIL to skip it
+  */
+ 
+-int news_select (struct direct *name)
++int news_select (struct dirent *name)
+ {
+   char c;
+   char *s = name->d_name;
+@@ -418,8 +418,8 @@
+ 
+ int news_numsort (const void *d1,const void *d2)
+ {
+-  return atoi ((*(struct direct **) d1)->d_name) -
+-    atoi ((*(struct direct **) d2)->d_name);
++  return atoi ((*(struct dirent **) d1)->d_name) -
++    atoi ((*(struct dirent **) d2)->d_name);
+ }
+ 
+ 
+--- extra/src/c-client/news.h.orig	Sat Nov 11 02:55:57 2000
++++ extra/src/c-client/news.h	Sat Nov 11 02:56:10 2000
+@@ -65,7 +65,7 @@
+ long news_rename (MAILSTREAM *stream,char *old,char *newname);
+ long news_status (MAILSTREAM *stream,char *mbx,long flags);
+ MAILSTREAM *news_open (MAILSTREAM *stream);
+-int news_select (struct direct *name);
++int news_select (struct dirent *name);
+ int news_numsort (const void *d1,const void *d2);
+ void news_close (MAILSTREAM *stream,long options);
+ void news_fast (MAILSTREAM *stream,char *sequence,long flags);
+--- extra/src/c-client/os_bsi.h.orig	Sat Nov 11 02:51:06 2000
++++ extra/src/c-client/os_bsi.h	Sat Nov 11 03:00:17 2000
+@@ -37,10 +37,9 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/types.h>
+-#include <sys/dir.h>
++#include <dirent.h>
+ #include <fcntl.h>
+ #include <syslog.h>
+-#include <sys/file.h>
+ 
+ 
+ #include "env_unix.h"

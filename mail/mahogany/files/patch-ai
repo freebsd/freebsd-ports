@@ -1,0 +1,31 @@
+--- locale/Makefile.orig	Sat Sep 30 12:10:48 2000
++++ locale/Makefile	Sun Nov 12 07:47:53 2000
+@@ -9,6 +9,8 @@
+ 
+ include ../makeopts
+ 
++LOCALE_DIR=$(DESTDIR)/share/locale
++
+ vpath %.po .src
+ 
+ %.mo: %.po
+@@ -30,14 +32,14 @@
+ 	@for i in $(FILES_PO); do echo $$i:; msgfmt -v $$i ; done
+ 
+ install: all
+-	$(INSTALL) -d $(DATADIR)/locale
++	$(INSTALL) -d $(LOCALE_DIR)
+ 	set -e; for i in $(FILES_MO); \
+-	do $(INSTALL) -d $(DATADIR)/locale/`basename $$i .mo`/LC_MESSAGES; \
+-	$(INSTALL_DATA) $$i $(DATADIR)/locale/`basename $$i .mo`/LC_MESSAGES/M.mo; \
++	do $(INSTALL) -d $(LOCALE_DIR)/`basename $$i .mo`/LC_MESSAGES; \
++	$(INSTALL_DATA) $$i $(LOCALE_DIR)/`basename $$i .mo`/LC_MESSAGES/M.mo; \
+ 	done
+ 	set -e; for i in wxstd/*.mo; \
+-	do $(INSTALL) -d $(DATADIR)/locale/`basename $$i .mo`/LC_MESSAGES; \
+-	$(INSTALL_DATA) $$i $(DATADIR)/locale/`basename $$i .mo`/LC_MESSAGES/wxstd.mo; \
++	do $(INSTALL) -d $(LOCALE_DIR)/`basename $$i .mo`/LC_MESSAGES; \
++	$(INSTALL_DATA) $$i $(LOCALE_DIR)/`basename $$i .mo`/LC_MESSAGES/wxstd.mo; \
+ 	done
+ 
+ msgcat:
