@@ -7,6 +7,7 @@
 
 PORTNAME=	libsidplay2
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	audio emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sidplay2
@@ -19,9 +20,13 @@ LIB_DEPENDS=	resid.2:${PORTSDIR}/audio/resid
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-resid-includes=${LOCALBASE}/include \
+		--with-resid-library=${LOCALBASE}/lib
+INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${CHMOD} +rw ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
