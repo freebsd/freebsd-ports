@@ -1,0 +1,41 @@
+--- Makefile.orig	Thu Jan  3 21:16:01 2002
++++ Makefile	Mon Sep 29 01:00:21 2003
+@@ -1,13 +1,19 @@
+ # Standard installation:
+-INCLUDES=	
+-LIBS=		-lsectok -lcrypto
++#INCLUDES=	
++#LIBS=		-lsectok -lcrypto
++
++# FreeBSD
++#PREFIX?=	${PREFIX}
++#LOCALBASE?=	${LOCALBASE}
++INCLUDES=	-I$(LOCALBASE)/include
++LIBS=		-L$(LOCALBASE)/lib -lsectok -lcrypto
+ 
+ # For building locally (libsectok not installed)
+ #INCLUDES=	-I../libsectok
+ #LIBS=		../libsectok/libsectok.a -lcrypto
+ 
+ # If crypto is included with openssl you might need this
+-#INCLUDES=	-I/usr/include/openssl
++INCLUDES+=	-I${OPENSSLINC}
+ 
+ # You shouldn't have to change anything below this line
+ 
+@@ -17,7 +23,6 @@
+ CC=		gcc
+ CFLAGS=		-g -Wall
+ INSTALL=	install
+-PREFIX=		/usr/local
+ RELEASE=	sectok-`date "+%Y%m%d"`
+ 
+ all :	$(TARGETS)
+@@ -30,6 +35,7 @@
+ 
+ install :
+ 	$(INSTALL) $(TARGETS) $(PREFIX)/bin
++	$(INSTALL) sectok.1 $(PREFIX)/man/man1
+ 
+ release :
+ 	rm -rf $(RELEASE)
