@@ -148,6 +148,7 @@
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += jxm
+    SUBDIR += kmp
     SUBDIR += ksmp3play
     SUBDIR += ladspa
     SUBDIR += lame
