@@ -15,7 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible Bayesian Modeling and Markov Chain Sampling
 
+RESTRICTED=	'Free for educational use and research'
 NO_CDROM=	'Free for educational use and research'
+NO_PACKAGE=	'Free for educational use and research'
 
 USE_REINPLACE=  yes
 
