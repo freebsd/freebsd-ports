@@ -108,8 +108,13 @@
  tar:
  	echo "Produce table`date '+%m%d'`.tar..."
 --- Makefile.orig	Tue Feb 27 22:35:44 1996
-+++ Makefile	Sun Dec 10 10:43:11 2000
-@@ -18,6 +18,7 @@
++++ Makefile	Mon Jan  8 09:59:11 2001
+@@ -14,10 +14,11 @@
+ 	lib/py-tbl.o lib/uzpj-tbl.o lib/uzpj-util.o \
+ 	hz2gb.o gb2hz.o SINO.o jp-util2.o
+ 
+-all: makeall libcn2jp.a
++all: makeall libcn2jp.a libcn2jp.so
  
  
  makeall:
@@ -117,11 +122,17 @@
  	cd lib; make; cd ..
  	cd big2jis; make; cd ..
  	cd jis2big; make; cd ..
-@@ -30,7 +31,6 @@
+@@ -28,9 +29,11 @@
+ 
+ libcn2jp.a:  $(OBJS)
  	rm -f libcn2jp.a
- 	ar r libcn2jp.a $(OBJS)
+-	ar r libcn2jp.a $(OBJS)
++	ar cru libcn2jp.a $(OBJS)
  	ranlib libcn2jp.a
 -	cp libcn2jp.a ../../../lib/libcn2jp.a
++
++libcn2jp.so: $(OBJS)
++	ld -o libcn2jp.so $(OBJS) -shared -soname libcn2jp.so
  
  gb2hz.o: lib/gb2hz.c
  	$(CC) -c lib/gb2hz.c
