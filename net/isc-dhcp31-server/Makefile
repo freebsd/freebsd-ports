@@ -71,7 +71,7 @@ SWEDEN_MASTER_SITES=	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
 			ftp://ftp.chl.chalmers.se/pub/unix/network/isc/%SUBDIR%/
 UK_MASTER_SITES=	ftp://unix.hensa.ac.uk/mirrors/ftp.isc.org/isc/%SUBDIR%/
 US_MASTER_SITES=	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
-			ftp://ftp.nominum.com/pub/isc/SUBDIR%/
+			ftp://ftp.nominum.com/pub/isc/%SUBDIR%/
 NETHERLANDS_MASTER_SITES=	ftp://ftp.ripe.net/mirrors/sites/ftp.isc.org/isc/%SUBDIR%/ \
 			ftp://ftp.nl.uu.net/pub/mirrors/ftp.isc.org/%SUBDIR%/
 
