@@ -1,0 +1,10 @@
+--- suplib/src/FileAttr.m3.orig	1999/02/01 22:44:53	1.25
++++ suplib/src/FileAttr.m3	2000/01/20 06:10:34	1.26
+@@ -102,6 +102,7 @@
+     ELSE
+       fa.mask := fa.mask + AttrTypes{AttrType.FileType};  (* Always valid. *)
+     END;
++    fa.mask := fa.mask * Supported[fa.fileType];
+     IF AttrType.ModTime IN fa.mask THEN
+       fa.stat.st_mtime := ScanInt(t, pos, ModTimeRadix, "modTime");
+     END;
