@@ -8,7 +8,7 @@
 PORTNAME=	netsaint-plugins
 PORTVERSION=	1.2.8.4
 CATEGORIES=	net
-MASTER_SITES=	http://netsaintplug.sourceforge.net/src/
+MASTER_SITES=	http://download.sourceforge.net/netsaintplug/
 DISTNAME=	${PORTNAME}-1.2.8-4
 
 MAINTAINER=	ports@FreeBSD.org
