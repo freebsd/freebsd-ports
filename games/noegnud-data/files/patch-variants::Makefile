@@ -1,0 +1,29 @@
+--- Makefile.orig	Tue Sep  2 17:11:03 2003
++++ Makefile	Tue Jun 29 17:23:45 2004
+@@ -1,7 +1,6 @@
+ NOEGNUDVERSION=noegnud-0.8.0
+ # you __MUST__ change this if you change the prefix for any variants' install !!!!!!!!!!!!!
+ # although ..... " make -e foo " also works :O ;)
+-PREFIX = /usr/local
+ GAMEUID = games
+ GAMEGRP = bin
+ CHOWN = chown
+@@ -66,12 +65,12 @@
+ 	@echo "no data creation scripts exists yet, it er, just, um, works (we hope ;)"
+ 
+ install_data: data
+-	-mkdir -p $(PREFIX)/lib/$(NOEGNUDVERSION)/
+-	cp -r ../data $(PREFIX)/lib/$(NOEGNUDVERSION)/.
+-	$(CHOWN) $(GAMEUID) $(PREFIX)/lib/$(NOEGNUDVERSION)/data
+-	$(CHGRP) $(GAMEGRP) $(PREFIX)/lib/$(NOEGNUDVERSION)/data
+-	$(CHOWN) -R $(GAMEUID) $(PREFIX)/lib/$(NOEGNUDVERSION)/data/*
+-	$(CHGRP) -R $(GAMEGRP) $(PREFIX)/lib/$(NOEGNUDVERSION)/data/*
++	-mkdir -p ${DATADIR}
++	cp -r ../data ${DATADIR}/.
++	$(CHOWN) $(GAMEUID) ${DATADIR}/data
++	$(CHGRP) $(GAMEGRP) ${DATADIR}/data
++	$(CHOWN) -R $(GAMEUID) ${DATADIR}/data/*
++	$(CHGRP) -R $(GAMEGRP) ${DATADIR}/data/*
+ 
+ # spawn Makefiles
+ 

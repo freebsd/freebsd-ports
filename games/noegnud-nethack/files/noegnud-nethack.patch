@@ -1,0 +1,143 @@
+diff -urN variants/nethack-3.4.3.orig/include/config.h variants/nethack-3.4.3/include/config.h
+--- variants/nethack-3.4.3.orig/include/config.h	Mon Nov 15 03:40:55 2004
++++ variants/nethack-3.4.3/include/config.h	Mon Nov 15 03:41:12 2004
+@@ -180,7 +180,7 @@
+ /* #define COMPRESS "/usr/bin/compress"	*/	/* Lempel-Ziv compression */
+ /* #define COMPRESS_EXTENSION ".Z" */		/* compress's extension */
+ /* An example of one alternative you might want to use: */
+-#define COMPRESS "/bin/gzip"  			/* FSF gzip compression */
++#define COMPRESS "/usr/bin/gzip"  			/* FSF gzip compression */
+ #define COMPRESS_EXTENSION ".gz"  		/* normal gzip extension */
+ #endif
+ 
+diff -urN variants/nethack-3.4.3.orig/include/unixconf.h variants/nethack-3.4.3/include/unixconf.h
+--- variants/nethack-3.4.3.orig/include/unixconf.h	Mon Nov 15 03:40:55 2004
++++ variants/nethack-3.4.3/include/unixconf.h	Mon Nov 15 03:41:12 2004
+@@ -19,13 +19,13 @@
+  */
+ 
+ /* define exactly one of the following four choices */
+-/* #define BSD 1 */	/* define for 4.n/Free/Open/Net BSD  */
++#define BSD 1 	/* define for 4.n/Free/Open/Net BSD  */
+ 			/* also for relatives like SunOS 4.x, DG/UX, and */
+ 			/* older versions of Linux */
+ /* #define ULTRIX */	/* define for Ultrix v3.0 or higher (but not lower) */
+ 			/* Use BSD for < v3.0 */
+ 			/* "ULTRIX" not to be confused with "ultrix" */
+-#define SYSV		/* define for System V, Solaris 2.x, newer versions */
++/* #define SYSV	*/	/* define for System V, Solaris 2.x, newer versions */
+ 			/* of Linux */
+ /* #define HPUX */	/* Hewlett-Packard's Unix, version 6.5 or higher */
+ 			/* use SYSV for < v6.5 */
+@@ -37,7 +37,7 @@
+ #define NETWORK		/* if running on a networked system */
+ 			/* e.g. Suns sharing a playground through NFS */
+ /* #define SUNOS4 */	/* SunOS 4.x */
+-#define LINUX 		/* Another Unix clone */
++/* #define LINUX */		/* Another Unix clone */
+ /* #define CYGWIN32 */	/* Unix on Win32 -- use with case sensitive defines */
+ /* #define GENIX */	/* Yet Another Unix Clone */
+ /* #define HISX */	/* Bull Unix for XPS Machines */
+diff -urN variants/nethack-3.4.3.orig/sys/unix/Makefile.src variants/nethack-3.4.3/sys/unix/Makefile.src
+--- variants/nethack-3.4.3.orig/sys/unix/Makefile.src	Mon Nov 15 03:40:53 2004
++++ variants/nethack-3.4.3/sys/unix/Makefile.src	Mon Nov 15 03:43:33 2004
+@@ -31,7 +31,7 @@
+ # For Systos users compiling on the ST, you'll either need a bourne shell
+ # clone or you'll need to do make depend, etc. by hand. In either case,
+ # the line below probably needs changing
+-SHELL=/bin/sh
++# SHELL=/bin/sh
+ # for Atari
+ # SHELL=E:/GEMINI2/MUPFEL.TTP
+ 
+@@ -61,7 +61,7 @@
+ #	if you get setcgtty() warnings during execution, you are feeding gcc
+ #		a non-ANSI <sys/ioctl.h> -- either run fixincludes on it or use
+ #		-traditional in CFLAGS
+-CC = gcc
++# CC = gcc
+ #
+ #	For Bull DPX/2 systems at B.O.S. 2.0 or higher use the following:
+ #
+@@ -125,14 +125,14 @@
+ # flags for Linux
+ #   compile normally
+ 
+-COMMON_CFLAGS = -DNETHACK_3_4_3 -fomit-frame-pointer -I../include `sdl-config --cflags`
++COMMON_CFLAGS = -DNETHACK_3_4_3 -fomit-frame-pointer -I../include -I/usr/include/gnu `${SDL_CONFIG} --cflags` -I/usr/X11R6/include
+ 
+ STD_CFLAGS = -O2 -ffast-math $(COMMON_CFLAGS)
+ DBG_CFLAGS = -g -Wall -DNOEGNUDDEBUG $(COMMON_CFLAGS)
+ 
+-CFLAGS = $(STD_CFLAGS)
++CFLAGS += $(STD_CFLAGS)
+ 
+-LFLAGS = -L/usr/X11R6/lib
++LFLAGS = -L/usr/X11R6/lib -lgnuregex
+ 
+ #   OR compile backwards compatible a.out format
+ # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include
+@@ -165,8 +165,8 @@
+ # The Qt and Be window systems are written in C++, while the rest of
+ # NetHack is standard C.  If using Qt, uncomment the LINK line here to get
+ # the C++ libraries linked in.
+-CXXFLAGS = $(CFLAGS) -I. -I$(QTDIR)/include
+-CXX=g++
++CXXFLAGS += $(CFLAGS) -I. -I$(QTDIR)/include
++# CXX=g++
+ #LINK=g++
+ #	For cross-compiling, eg. with gcc on Linux (see also CC further up):
+ #CXX=arm-linux-g++
+@@ -222,7 +222,10 @@
+ 
+ # Files for Entro-P's OpenGL 3D interface :: noeGNUd
+ 
+-WINNOEGNUDLIB = `sdl-config --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
++WINNOEGNUDLIB = `${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer -lGL -lGLU
++
++.c.o:
++	${CC} ${CFLAGS} -c $< -o $@
+ 
+ NOEGNUD = ../win/noegnud/noegnud
+ 
+diff -urN variants/nethack-3.4.3.orig/sys/unix/Makefile.top variants/nethack-3.4.3/sys/unix/Makefile.top
+--- variants/nethack-3.4.3.orig/sys/unix/Makefile.top	Mon Nov 15 03:40:53 2004
++++ variants/nethack-3.4.3/sys/unix/Makefile.top	Mon Nov 15 03:41:12 2004
+@@ -14,7 +14,6 @@
+ # MAKE = make
+ 
+ # make NetHack
+-PREFIX	 	= /usr/local
+ GAMEUI   	= noegnud-0.8.0
+ GAMEVARIANT	= nethack-3.4.3
+ GAMESHORT	= noegnud-$(GAMEVARIANT)
+@@ -38,7 +37,7 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR		= $(PREFIX)/lib/$(GAMEUI)/$(GAMEVARIANT)
++GAMEDIR		= $(PREFIX)/share/$(GAMEUI)/$(GAMEVARIANT)
+ VARDIR  = $(GAMEDIR)
+ SHELLDIR	= $(PREFIX)/bin
+
+diff -urN variants/nethack-3.4.3.orig/sys/unix/Makefile.utl variants/nethack-3.4.3/sys/unix/Makefile.utl 
+--- variants/nethack-3.4.3.orig/sys/unix/Makefile.utl	Mon Nov 15 03:51:19 2004
++++ variants/nethack-3.4.3/sys/unix/Makefile.utl	Mon Nov 15 03:51:54 2004
+@@ -15,7 +15,7 @@
+ 
+ # if you are using gcc as your compiler,
+ #	uncomment the CC definition below if it's not in your environment
+-CC = gcc
++# CC = gcc
+ #
+ #	For Bull DPX/2 systems at B.O.S. 2.0 or higher use the following:
+ #
+@@ -89,7 +89,7 @@
+ # flags for debugging:
+ # CFLAGS = -g -I../include
+ 
+-CFLAGS = -O -I../include
++CFLAGS += -O -I../include
+ LFLAGS =
+ 
+ LIBS =

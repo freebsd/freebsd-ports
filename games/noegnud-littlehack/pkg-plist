@@ -1,0 +1,14 @@
+bin/noegnud-0.8.0-littlehack-0.0.1
+bin/noegnud-littlehack-0.0.1
+share/noegnud-0.8.0/littlehack-0.0.1/license
+share/noegnud-0.8.0/littlehack-0.0.1/logfile
+share/noegnud-0.8.0/littlehack-0.0.1/nhdat
+share/noegnud-0.8.0/littlehack-0.0.1/noegnud-0.8.0-littlehack-0.0.1
+share/noegnud-0.8.0/littlehack-0.0.1/perm
+share/noegnud-0.8.0/littlehack-0.0.1/record
+share/noegnud-0.8.0/littlehack-0.0.1/recover
+@exec chown games:bin %D/share/noegnud-0.8.0/littlehack-0.0.1
+@exec chmod 775 %D/share/noegnud-0.8.0/littlehack-0.0.1
+@unexec rmdir %D/share/noegnud-0.8.0/littlehack-0.0.1/save 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/littlehack-0.0.1 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0 2>/dev/null || true

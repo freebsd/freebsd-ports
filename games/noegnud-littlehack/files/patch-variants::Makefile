@@ -1,0 +1,60 @@
+--- variants/Makefile.orig	Mon Aug 23 12:13:51 2004
++++ variants/Makefile	Sun Nov 21 00:49:21 2004
+@@ -1,7 +1,6 @@
+ NOEGNUDVERSION=noegnud-0.8.0
+ # you __MUST__ change this if you change the prefix for any variants' install !!!!!!!!!!!!!
+ # although ..... " make -e foo " also works :O ;)
+-PREFIX = /usr/local
+ GAMEUID = games
+ GAMEGRP = bin
+ CHOWN = chown
+@@ -62,31 +61,31 @@
+ install: install_all
+ 
+ install_nh342: nh342
+-	make -e -C $(NOEGNUDVERSION)-nethack-3.4.2 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-nethack-3.4.2 install
+ 
+ install_nh343: nh343
+-	make -e -C $(NOEGNUDVERSION)-nethack-3.4.3 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-nethack-3.4.3 install
+ 
+ install_se006e4f8: se006e4f8
+-	make -e -C $(NOEGNUDVERSION)-slashem-0.0.6E4F8 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-slashem-0.0.6E4F8 install
+ 
+ install_se007e2: se007e2
+-	make -e -C $(NOEGNUDVERSION)-slashem-0.0.7E2 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-slashem-0.0.7E2 install
+ 
+ install_se007e5: se007e5
+-	make -e -C $(NOEGNUDVERSION)-slashem-0.0.7E5 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-slashem-0.0.7E5 install
+ 
+ install_se007e6: se007e6
+-	make -e -C $(NOEGNUDVERSION)-slashem-0.0.7E6 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-slashem-0.0.7E6 install
+ 
+ install_se007e6f2: se007e6f2
+-	make -e -C $(NOEGNUDVERSION)-slashem-0.0.7E6F2 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-slashem-0.0.7E6F2 install
+ 
+ install_lh001: lh001
+-	make -e -C $(NOEGNUDVERSION)-littlehack-0.0.1 install
++	make -EPREFIX -C $(NOEGNUDVERSION)-littlehack-0.0.1 install
+ 
+ install_nh342-dt: nh342-dt
+-	make -e -C $(NOEGNUDVERSION)-nethack-3.4.2-deet install
++	make -EPREFIX -C $(NOEGNUDVERSION)-nethack-3.4.2-deet install
+ 
+ # data
+ 
+@@ -204,7 +203,7 @@
+ 	patch -p0 <diffs/$(NOEGNUDVERSION)-slashem-0.0.7E6F2.diff
+ 
+ $(NOEGNUDVERSION)-littlehack-0.0.1: littlehack-0.0.1
+-	ln -s littlehack-0.0.1 $(NOEGNUDVERSION)-nethack-3.4.2-littlehack-0.0.1
++	ln -s littlehack-0.0.1 $(NOEGNUDVERSION)-littlehack-0.0.1
+ 	cd $(NOEGNUDVERSION)-littlehack-0.0.1 && patch -p1  <../diffs/$(NOEGNUDVERSION)-nethack-3.4.2-littlehack-0.0.1.diff
+ 
+ $(NOEGNUDVERSION)-nethack-3.4.2-deet: nethack-3.4.2-deet

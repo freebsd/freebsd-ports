@@ -1,0 +1,1566 @@
+share/noegnud-0.8.0/data/char/DeeT.png
+share/noegnud-0.8.0/data/char/anethack.png
+share/noegnud-0.8.0/data/char/deco.png
+share/noegnud-0.8.0/data/char/nethack.png
+share/noegnud-0.8.0/data/char/pc8.png
+share/noegnud-0.8.0/data/credits.txt
+share/noegnud-0.8.0/data/gui/back.png
+share/noegnud-0.8.0/data/gui/credits.png
+share/noegnud-0.8.0/data/gui/splashscreen.png
+share/noegnud-0.8.0/data/images/dungeon.png
+share/noegnud-0.8.0/data/images/tilenotfound.png
+share/noegnud-0.8.0/data/lang/README
+share/noegnud-0.8.0/data/lang/afrikaans.lang
+share/noegnud-0.8.0/data/lang/afrikaans_gangsta.lang
+share/noegnud-0.8.0/data/lang/deutsch.lang
+share/noegnud-0.8.0/data/lang/suomi.lang
+share/noegnud-0.8.0/data/minimap-fonts/DeeT_minimap.png
+share/noegnud-0.8.0/data/minimap-fonts/default.png
+share/noegnud-0.8.0/data/news
+share/noegnud-0.8.0/data/textcolouring/default.colour
+share/noegnud-0.8.0/data/textcolouring/default_light.colour
+share/noegnud-0.8.0/data/tilesets/nethack.inf
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.air.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.altar.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.cloud.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.corridor.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.dark part of a room.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.door.doorway.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.door.horizontal closed door.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.door.horizontal open door.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.door.vertical closed door.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.door.vertical open door.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.camera flash.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.dig beam.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.horizontal beam.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.left slant beam.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.magic shield 1.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.magic shield 2.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.magic shield 3.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.magic shield 4.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.right slant beam.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.thrown boomerang.open left.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.thrown boomerang.open right.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.effect.vertical beam.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.floor of a room.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.fountain.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.grave.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.ice.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.iron bars.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.ladder down.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.ladder up.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.lit corridor.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.lowered drawbridge.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.lowered drawbridge.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.molten lava.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.opulent throne.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.pool.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.raised drawbridge.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.raised drawbridge.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.sink.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.staircase down.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.staircase up.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.swallow.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.toilet.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.anti-magic field.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.arrow trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.bear trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.dart trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.falling rock trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.fire trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.hole.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.land mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.level teleporter.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.magic portal.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.magic trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.pit.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.polymorph trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.rolling boulder trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.rust trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.sleeping gas trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.spiked pit.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.squeaky board.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.statue trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.teleportation trap.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.trap door.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.trap.web.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.tree.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom left corner.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom left corner.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom left corner.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom left corner.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom left corner.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom right corner.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom right corner.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom right corner.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom right corner.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.bottom right corner.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.crosswall.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.crosswall.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.crosswall.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.crosswall.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.crosswall.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.horizontal.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.horizontal.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.horizontal.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.horizontal.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee down.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee down.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee down.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee down.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee down.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee left.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee left.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee left.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee left.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee left.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee right.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee right.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee right.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee right.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee right.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee up.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee up.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee up.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee up.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.tee up.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top left corner.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top left corner.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top left corner.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top left corner.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top left corner.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top right corner.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top right corner.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top right corner.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top right corner.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.top right corner.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.vertical.gehennom.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.vertical.knox.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.vertical.mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.wall.vertical.sokoban.png
+share/noegnud-0.8.0/data/tilesets/nethack/cmap.water.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.acid.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.dark.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.death.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.fiery.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.frosty.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.lighting.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.magical.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.muddy.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.noxious.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.bottom center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.bottom left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.bottom right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.middle center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.middle left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.middle right.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.top center.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.top left.png
+share/noegnud-0.8.0/data/tilesets/nethack/explosion.wet.top right.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.aleax.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.angel.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.archon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.astral deva.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.couatl.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.ki-rin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.monadic deva.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.movanic deva.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.planetar.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.angelic being.solar.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.assassin bug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.black wasp.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.fire ant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.giant ant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.giant beetle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.giant flea.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.giant louse.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.giant tick.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.giant wasp.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.killer bee.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.killer beetle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.migo drone.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.migo queen.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.migo warrior.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.queen bee.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.snow ant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.soldier ant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.spitting beetle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.tsetse fly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ant or other insect.yellow jacket.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.athol.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.bat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.byakhee.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.giant bat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.harpy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.hellbat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.mobat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.mongbat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.nightgaunt.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.raven.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.rhumbat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.bat or bird.vampire bat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.acid blob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.burbling blob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.gelatinous cube.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.jiggling blob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.lava blob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.quivering blob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.blob.static blob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.caterwaul.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.displacer beast.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.hellcat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.housecat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.jaguar.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.kamadan.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.kitten.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.large cat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.lynx.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.panther.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.sabre-toothed cat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.tiger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.werepanther.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cat or other feline.weretiger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.centaur.forest centaur.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.centaur.mountain centaur.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.centaur.plains centaur.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cockatrice.chickatrice.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cockatrice.chicken.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cockatrice.cockatoo.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cockatrice.cockatrice.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cockatrice.parrot.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.cockatrice.pyrolisk.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.cerberus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.coyote.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.death dog.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.dingo puppy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.dingo.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.dog.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.fox.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.hell hound pup.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.hell hound.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.jackal.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.large dingo.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.large dog.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.little dog.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.mist wolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.pit bull.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.rabid wolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.shadow wolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.warg.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.werejackal.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.werewolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.winter wolf cub.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.winter wolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.wolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dog or other canine.wolverine.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby black dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby blue dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby deep dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby gray dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby green dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby orange dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby red dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby shimmering dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby silver dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby white dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.baby yellow dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.black dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.blue dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.chromatic dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.deep dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.gray dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.green dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.hydra.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.ixoth.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.orange dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.red dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.shimmering dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.silver dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.smaug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.white dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.wyvern.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.dragon.yellow dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.elemental.air elemental.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.elemental.earth elemental.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.elemental.fire elemental.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.elemental.stalker.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.elemental.water elemental.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.beholder.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.blinking eye.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.bloodshot eye.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.flaming sphere.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.floating eye.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.freezing sphere.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.gas spore.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.glowing eye.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.eye or sphere.shocking sphere.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.black mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.brown mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.disgusting mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.green mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.lichen.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.red mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.shrieker.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.violet fungus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.fungus or mold.yellow mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ghost.ghost.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ghost.shade.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ghost.shadow.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.cyclops.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.ettin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.father dagon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.fire giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.frost giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.hill giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.lord surtur.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.minotaur.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.mother hydra.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.stone giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.storm giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.the largest giant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.giant humanoid.titan.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.deep gnome.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnoll chieftain.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnoll shaman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnoll warrior.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnoll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnome king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnome lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnome thief.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnome warrior.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnome.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.gnomish wizard.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gnome.ruggo the gnome king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.clay golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.crystal golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.diamond golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.flesh golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.frankensteins monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.glass golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.gold golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.iron golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.leather golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.paper golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.plastic golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.rope golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.ruby golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.sapphire golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.steel golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.stone golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.straw golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.wax golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.golem.wood golem.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gremlin.gargoyle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gremlin.gremlin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gremlin.statue gargoyle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.gremlin.winged gargoyle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.abbot.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.acolyte.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.aligned priest.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.apprentice.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.arch priest.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.archeologist.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.ashikaga takauji.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.attendant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.barbarian.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.black marketeer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.captain.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.caveman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.cavewoman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.charon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.chief yeoman warder.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.chieftain.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.colonel blood.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.count dracula.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.croesus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.dark lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.dark one.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.doppelganger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.drow.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.earendil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.earth mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.elf-lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.elf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.elvenking.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.elwing.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.embalmer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.exterminator.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.flame mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.froster.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.gibberling.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.grand master.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.green-elf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.grey-elf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.grimlock.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.guard.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.guide.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.gypsy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.healer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.high flame mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.high ice mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.high lycanthrope.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.high priest.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.high-elf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.hippocrates.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.human.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.hunter.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.ice mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.igniter.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.intern.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.king arthur.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.knight.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.lareth.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.lieutenant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.lord carnarvon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.lord sato.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.master assassin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.master kaen.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.master of thieves.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.master shifter.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.medusa.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.monk.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.mugger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.neanderthal.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.necromancer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.neferet the green.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.ninja.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.norn.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.nurse.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.oracle.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.orion.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.page.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.pelias.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.priest.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.priestess.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.prisoner.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.ranger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.rogue.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.ronin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.roshi.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.samurai.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.sergeant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.shaman karnov.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.shifter.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.shopkeeper.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.sir lorimar.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.soldier.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.student.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.thoth amon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.thug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.tourist.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.transmuter.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.twoflower.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.undead slayer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.valkyrie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.van helsing.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.warrior.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.watch captain.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.watchman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.water mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.werejackal.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.werepanther.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.wererat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.weresnake.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.werespider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.weretiger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.werewolf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.wizard of balance.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.wizard of yendor.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.wizard.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.woodland-elf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.yeoman warder.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.human or elf.yeoman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.bilbo baggins.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.bugbear.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.deep one.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.deeper one.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.deepest one.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.duergar.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.dwarf king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.dwarf lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.dwarf thief.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.dwarf warrior.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.dwarf.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.farmer maggot.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.fiend.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.gollum.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.hobbit.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.master mind flayer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.mind flayer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.proudfoot.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.humanoid.thorin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.blood imp.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.dretch.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.homunculus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.imp.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.lemure.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.manes.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.nupperibo.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.quasit.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.rutterkin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.imp or minor demon.tengu.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.invisible monster.invisible monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jabberwock.jabberwock.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jabberwock.vorpal jabberwock.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.blue jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.clear jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.ochre jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.orange jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.rancid jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.spotted jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.jelly.yellow jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.keystone kop.keystone kop.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.keystone kop.kop kaptain.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.keystone kop.kop lieutenant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.keystone kop.kop sergeant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.kobold lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.kobold shaman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.kobold warrior.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.kobold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.kroo the kobold king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.large kobold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.rock kobold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.kobold.swamp kobold.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.leprechaun.leprechaun wizard.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.leprechaun.leprechaun.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lich.arch-lich.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lich.demilich.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lich.lich.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lich.master lich.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lich.vecna.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.light.black light.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.light.yellow light.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.baby crocodile.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.basilisk.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.chameleon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.crocodile.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.gecko.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.gila monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.iguana.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.komodo dragon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.lizard.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.newt.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.rhaumbusun.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.lizard.salamander.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.long worm tail.long worm tail.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.asmodeus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.baalzebub.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.babau.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.balrog.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.bar-lgura.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.barbed devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.bearded devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.bone devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.chasme.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.cthulhu.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.dao.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.death.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.demogorgon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.dispater.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.djinni.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.efreeti.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.erinys.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.famine.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.geryon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.hezrou.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.horned devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.ice devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.incubus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.juiblex.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.mail daemon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.marid.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.marilith.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.maugneshaagar.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.minion of huhetotl.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.nabassu.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.nalfeshnee.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.nalzok.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.orcus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.pestilence.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.pit fiend.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.sandestin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.spined devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.succubus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.vrock.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.water demon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.major demon.yeenoghu.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mimic.giant mimic.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mimic.large mimic.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mimic.small mimic.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.dwarf mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.elf mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.ettin mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.giant mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.gnome mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.human mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.kobold mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.orc mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.mummy.troll mummy.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.black naga hatchling.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.black naga.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.golden naga hatchling.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.golden naga.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.guardian naga hatchling.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.guardian naga.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.red naga hatchling.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.naga.red naga.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.aphrodite.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.brownie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.mountain nymph.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.pixie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.quickling.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.water nymph.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.nymph.wood nymph.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ogre.ogre king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ogre.ogre lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ogre.ogre mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ogre.ogre.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.ogre.shadow ogre.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.demon orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.goblin king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.goblin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.great orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.grund the orc king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.hill orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.hobgoblin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.mordor orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.orc shaman.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.orc-captain.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.snow orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.uruk-hai.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.orc.war orc.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.piece of food.bad egg.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.piece of food.killer food ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.piece of food.killer tripe ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.piercer.glass piercer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.piercer.iron piercer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.piercer.rock piercer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pile of coins.huge pile of killer coins.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pile of coins.large pile of killer coins.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pile of coins.pile of killer coins.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.black pudding.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.brown pudding.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.giant shoggoth.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.gray ooze.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.green slime.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.moldy pudding.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.pudding or ooze.shoggoth.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.baluchitherium.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.bull.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.catoblepas.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.cow.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.giant badger.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.goat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.juggernaut.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.jumbo the elephant.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.lamb.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.leocrotta.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.mangler.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.mastodon.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.mumak.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.rothe.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.scramper.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.sheep.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.squealer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.titanothere.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quadruped.wumpus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quantum mechanic or other scientist.doctor frankenstein.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quantum mechanic or other scientist.genetic engineer.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.quantum mechanic or other scientist.quantum mechanic.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.black rat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.giant rat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.hellrat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.pack rat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.rabbit.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.rabid rabbit.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.rabid rat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.rock mole.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.sewer rat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.the rat king.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.wererat.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rodent.woodchuck.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rust monster or disenchanter.disenchanter.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rust monster or disenchanter.displacer beast.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.rust monster or disenchanter.rust monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.electric eel.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.giant crab.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.giant eel.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.jellyfish.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.kraken.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.piranha.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.sea monster.shark.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.asphynx.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.cobra.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.garter snake.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.king cobra.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.pit viper.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.python.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.snake.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.water moccasin.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.snake.weresnake.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.barking spider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.carrion crawler.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.cave spider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.centipede.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.giant scorpion.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.giant spider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.girtab.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.lolth.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.nickelpede.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.phase spider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.recluse spider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.scorpion.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.scorpius.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.shelob.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.spider.werespider.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.trapper or lurker above.lurker above.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.trapper or lurker above.trapper.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.black troll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.ice troll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.olog-hai.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.rock troll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.troll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.two-headed troll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.troll.water troll.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.umber hulk.umber hulk.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.umber hulk.water hulk.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.black unicorn.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.gray unicorn.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.horse.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.nightmare.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.pegasus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.pony.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.warhorse.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.unicorn or horse.white unicorn.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vampire.fire vampire.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vampire.star vampire.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vampire.vampire lord.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vampire.vampire mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vampire.vampire.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vampire.vlad the impaler.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vortex.dust vortex.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vortex.energy vortex.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vortex.fire vortex.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vortex.fog cloud.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vortex.ice vortex.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.vortex.steam vortex.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.acid worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.baby long worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.baby purple worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.bloodworm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.dung worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.larva.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.long worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.maggot.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.purple worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.rot worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.worm.tunnel worm.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.wraith.barrow wight.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.wraith.nazgul.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.wraith.wight.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.wraith.wraith.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.xan or other mythical.fantastic insect.arc bug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.xan or other mythical.fantastic insect.grid bug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.xan or other mythical.fantastic insect.lightning bug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.xan or other mythical.fantastic insect.spark bug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.xan or other mythical.fantastic insect.xan.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.xorn.xorn.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.ape.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.carnivorous ape.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.monkey.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.owlbear.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.sasquatch.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.yeti.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.yeti ape or other large beast.zruty.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.dwarf zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.elf zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.ettin zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.ghast.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.ghoul mage.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.ghoul queen.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.ghoul.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.giant zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.gnome zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.gug.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.human zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.kobold zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.orc zombie.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zombie.skeleton.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.echidna.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.kangaroo.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.koala.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.platypus.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.tasmanian devil.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.wallaby.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.wallaroo.png
+share/noegnud-0.8.0/data/tilesets/nethack/monster.zouthern animal.wombat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.amulet of yendor.cheap plastic imitation of the amulet of yendor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.amulet of yendor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.circular.amulet of esp.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.concave.amulet of unchanging.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.convex.amulet of flying.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.hexagonal.amulet of reflection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.lunate.amulet versus stone.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.octagonal.amulet of magical breathing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.oval.amulet of strangulation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.pyramidal.amulet versus poison.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.spherical.amulet of life saving.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.square.amulet of change.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.triangular.amulet of restful sleep.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.amulets.warped.amulet of drain resistance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.apron.alchemy smock.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.banded mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.black dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.black dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.black gloves.gauntlets of swimming.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.blue and green shield.elven shield.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.blue dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.blue dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.blue robe.robe of protection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.bronze plate mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.buckled boots.kicking boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.chain mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.coarse mantelet.orcish cloak.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.combat boots.speed boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.conical hat.cornuthaum.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.conical hat.dunce cap.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.crested helmet.helm of opposite alignment.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.crude chain mail.orcish chain mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.crude ring mail.orcish ring mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.crystal plate mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.dark elven mithril-coat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.deep dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.deep dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.dented pot.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.dirty rag.cloak of poisonousness.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.dirty rag.poisonous cloak.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.dwarvish mithril-coat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.elven mithril-coat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.etched helmet.helm of brilliance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.faded pall.elven cloak.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.fedora.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.fencing gloves.gauntlets of dexterity.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.gray dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.gray dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.green dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.green dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.green robe.robe of weakness.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.hard hat.dwarvish iron helm.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.hard shoes.iron shoes.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.hawaiian shirt.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.hiking boots.jumping boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.hooded cloak.dwarvish cloak.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.iron skull cap.orcish helm.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.jackboots.high boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.jungle boots.water walking boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.large round shield.dwarvish roundshield.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.large shield.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.leather armor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.leather cloak.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.leather hat.elven leather helm.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.leather jacket.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.mud boots.elven boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.mummy wrapping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.old gloves.leather gloves.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.opera cloak.cloak of invisibility.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.orange dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.orange dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.orange robe.robe of power.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.ornamental cope.cloak of magic resistance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.padded gloves.gauntlets of fumbling.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.piece of cloth.cloak of displacement.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.plate mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.plumed helmet.helmet.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.polished silver shield.shield of reflection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.red dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.red dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.red robe.robe.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.red-eyed shield.orcish shield.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.riding boots.fumble boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.riding gloves.gauntlets of power.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.ring mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.robe.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.shimmering dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.shimmering dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.silver dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.silver dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.slippery cloak.oilskin cloak.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.small shield.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.snow boots.levitation boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.splint mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.steel boots.kicking boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.studded leather armor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.t-shirt.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.tattered cape.cloak of protection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.visored helmet.helm of telepathy.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.walking shoes.low boots.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.white coat.lab coat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.white dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.white dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.white-handed shield.uruk-hai shield.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.yellow dragon scale mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.armor.yellow dragon scales.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.chains.iron chain.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.coins.gold piece.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.apple.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.asian pear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.banana.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.c-ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.candy bar.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.carrot.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.cheese.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.clove of garlic.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.corpse.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.cram ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.cream pie.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.egg.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.eucalyptus leaf.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.eyeball.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.food ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.fortune cookie.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.holy wafer.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.huge chunk of meat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.k-ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.kelp frond.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.lembas wafer.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.lump of royal jelly.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.meat ring.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.meat stick.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.meatball.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.melon.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.mushroom.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.orange.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.pancake.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.pear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.pill.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.sandwich.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.severed hand.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.slime mold.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.sprig of wolfsbane.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.tin.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.tortilla.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.food.tripe ration.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.illegal objects.strange object.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.iron balls.heavy iron ball.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.large stones.boulder.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.large stones.statue.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.black.full healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.blood-red.blood.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.blood-red.vampire blood.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.brilliant blue.invisibility.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.brown.booze.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.bubbly.monster detection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.clear.water.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.cloudy.gain energy.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.cyan.levitation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.dark.fruit juice.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.dark.speed.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.effervescent.sleeping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.emerald.paralysis.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.fizzy.sickness.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.golden.polymorph.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.icy.invulnerability.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.luminescent.clairvoyance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.magenta.see invisible.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.milky.gain level.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.muddy.esp.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.murky.oil.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.orange.confusion.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.pink.restore ability.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.puce.extra healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.purple-red.healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.ruby.gain ability.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.sky blue.hallucination.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.smoky.object detection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.sparkling.amnesia.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.swirly.enlightenment.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.white.acid.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.potions.yellow.blindness.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.agate.levitation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.black onyx.protection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.brass.cold resistance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.bronze.sustain ability.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.clay.increase accuracy.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.copper.shock resistance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.coral.increase damage.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.diamond.warning.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.emerald.polymorph control.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.engagement.see invisible.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.glass.gain wisdom.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.gold.teleport control.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.granite.gain strength.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.iron.fire resistance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.ivory.polymorph.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.jade.stealth.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.moonstone.regeneration.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.obsidian.gain dexterity.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.opal.gain constitution.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.pearl.poison resistance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.plain.gain intelligence.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.ridged.mood.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.ruby.conflict.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.sapphire.aggravate monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.shiny.protection from shape changers.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.silver.teleportation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.steel.slow digestion.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.tiger eye.searching.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.topaz.hunger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.twisted.free action.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.wedding.sleeping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.wire.invisibility.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rings.wooden.adornment.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.black.black opal.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.black.jet.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.black.obsidian.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.black.worthless piece of black glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.blue.sapphire.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.blue.worthless piece of blue glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.gray.flint.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.gray.healthstone.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.gray.loadstone.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.gray.luckstone.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.gray.touchstone.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.gray.whetstone.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.green.aquamarine.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.green.emerald.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.green.jade.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.green.turquoise.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.green.worthless piece of green glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.orange.agate.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.orange.jacinth.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.orange.worthless piece of orange glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.red.garnet.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.red.jasper.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.red.ruby.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.red.worthless piece of red glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.rock.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.violet.amethyst.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.violet.fluorite.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.violet.worthless piece of violet glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.white.diamond.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.white.dilithium crystal.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.white.opal.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.white.worthless piece of white glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.yellow.chrysoberyl.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.yellow.citrine.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.yellow.worthless piece of yellow glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.yellowish brown.amber.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.yellowish brown.topaz.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.rocks.yellowish brown.worthless piece of yellowish brown glass.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.andova begarin.fire.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.daiyen fooels.enchant weapon.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.duam xnaht.amnesia.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.elam ebow.magic mapping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.elbib yloh.genocide.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.foobie bletch.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.garven deh.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.hackem muche.charging.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.juyed awk yacc.destroy armor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.kernod wel.identify.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.kirje.earth.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.lep gex ven zea.create monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.nr 9.confuse monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.pratyavayah.remove curse.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.prirutsenie.taming.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.read me.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.stamped.mail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.temov.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.tharr.gold detection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.unlabeled.blank paper.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.ve forbryderne.punishment.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.velox neb.stinking cloud.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.venzar borgavve.teleportation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.verr yed horre.light.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.xixaxa xoxaxa xuxaxa.scare monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.yum yum.food detection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.scrolls.zelgo mer.enchant armor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.big.resist poison.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.black.summon undead.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.bronze.identify.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.canvas.flame sphere.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.cloth.light.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.colorful.acid stream.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.copper.turn undead.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.cyan.detect food.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dark blue.clairvoyance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dark brown.invisibility.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dark green.wizard lock.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dark.command undead.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.deep.endure cold.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dog eared.cone of cold.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dull.enchant weapon.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dull.protection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.dusty.magic mapping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.faded.enlighten.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.fuzzy.resist sleep.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.glittering.create familiar.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.gold.teleport away.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.gray.detect treasure.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.hardcover.freeze sphere.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.indigo.cure sickness.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.leather.detect monsters.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.left-handed.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.light blue.cause fear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.light brown.restore ability.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.light green.slow monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.long.insulate.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.magenta.charm monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.mottled.sleep.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.ochre.passwall.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.orange.confuse monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.papyrus.book of the dead.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.parchment.dig.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.pink.knock.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.plaid.extra healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.plain.blank paper.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.psychedelic.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.purple.haste self.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.ragged.fireball.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.rainbow.lightning.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.red.force bolt.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.shining.cancellation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.silver.polymorph.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.spiral-bound.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.spotted.endure heat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.stained.finger of death.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.stapled.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.stylish.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.tan.levitation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.tartan.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.tattered.poison blast.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.thick.stone to flesh.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.thin.enchant armor.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.thin.jumping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.torn.jumping.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.turquoise.create monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.vellum.magic missile.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.velvet.drain life.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.violet.detect unseen.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.white.healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.wide.protection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.wrinkled.remove curse.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.spell books.yellow.cure blindness.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bag.bag of holding.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bag.bag of tricks.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bag.oilskin sack.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bag.sack.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bandage.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.beartrap.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bell.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.blindfold.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.brass lantern.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.bugle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.can of grease.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.candelabrum.candelabrum of invocation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.candle.magic candle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.candle.tallow candle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.candle.wax candle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.chest.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.credit card.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.double lightsaber.red double lightsaber.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.drum.drum of earthquake.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.drum.leather drum.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.expensive camera.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.figurine.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.fishing pole.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.flute.magic flute.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.flute.wooden flute.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.glass orb.crystal ball.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.harp.magic harp.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.harp.wooden harp.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.horn.fire horn.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.horn.frost horn.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.horn.horn of plenty.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.horn.tooled horn.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.ice box.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.iron hook.grappling hook.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.key.skeleton key.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lamp.magic lamp.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lamp.oil lamp.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.land mine.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.large box.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.leash.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.leather bag.medical kit.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lenses.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lightsaber.blue lightsaber.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lightsaber.green lightsaber.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lightsaber.red lightsaber.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.lock pick.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.looking glass.mirror.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.magic marker.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.phial.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.pick-axe.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.saddle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.silver bell.bell of opening.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.spoon.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.stethoscope.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.tin opener.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.tinning kit.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.torch.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.towel.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.unicorn horn.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.whistle.magic whistle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.tools.whistle.tin whistle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.venoms.splash of venom.acid venom.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.venoms.splash of venom.blinding venom.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.aluminum.locking.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.balsa.secret door detection.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.bamboo.healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.black.create horde.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.brass.speed monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.bronze.extra healing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.ceramic.draining.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.copper.undead turning.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.crystal.enlightenment.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.curved.lightning.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.ebony.striking.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.forked.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.glass.light.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.hexagonal.fire.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.iridium.teleportation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.iron.digging.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.jeweled.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.long.death.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.maple.create monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.marble.make invisible.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.oak.nothing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.octagonal.fireball.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.pine.wishing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.platinum.cancellation.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.runed.sleep.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.rusty.fear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.short.cold.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.silver.polymorph.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.spiked.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.steel.magic missile.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.tin.slow monster.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.uranium.probing.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.wands.zinc.opening.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.angled poleaxe.halberd.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.arrow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.assault rifle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.athame.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.auto shotgun.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.axe.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.bamboo arrow.ya.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.baseball bat.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.beaked polearm.bec de corbin.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.black runed arrow.dark elven arrow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.black runed bow.dark elven bow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.black runed dagger.dark elven dagger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.black runed short sword.dark elven short sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.boomerang.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.bow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.broad pick.dwarvish mattock.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.broad short sword.dwarvish short sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.broadsword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.bullet.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.bullwhip.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.club.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crossbow bolt.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crossbow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crude arrow.orcish arrow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crude bow.orcish bow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crude dagger.orcish dagger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crude short sword.orcish short sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crude spear.orcish spear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.crysknife.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.curved sword.scimitar.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.dagger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.dart.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.double-headed axe.battle-axe.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.flail.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.fly swatter.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.forked polearm.spetum.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.frag grenade.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.gas grenade.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.great dagger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.grenade launcher.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.heavy hammer.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.heavy machine gun.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.hilted polearm.ranseur.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.hooked polearm.bill-guisarme.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.knife.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.lance.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.long bow.yumi.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.long poleaxe.bardiche.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.long samurai sword.tsurugi.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.long sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.mace.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.morning star.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.pistol.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.pole cleaver.voulge.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.pole sickle.fauchard.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.pronged polearm.lucern hammer.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.pruning hook.guisarme.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.rapier.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.red stick.stick of dynamite.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.rifle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.rocket launcher.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.rocket.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.rubber hose.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed arrow.elven arrow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed bow.elven bow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed broadsword.elven broadsword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed broadsword.runesword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed dagger.elven dagger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed short sword.elven short sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.runed spear.elven spear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.samurai sword.katana.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.scalpel.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.short sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.shotgun shell.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.shotgun.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver arrow.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver bullet.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver dagger.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver long sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver mace.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver saber.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver short sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.silver spear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.single-edged polearm.glaive.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.sling.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.sniper rifle.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.spear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.staff.quarterstaff.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.stiletto.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.stout spear.dwarvish spear.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.submachine gun.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.thonged club.aklys.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.throwing spear.javelin.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.throwing star.shuriken.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.trident.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.two-handed sword.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.vulgar polearm.partisan.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.war hammer.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.wooden stake.png
+share/noegnud-0.8.0/data/tilesets/nethack/object.weapons.worm tooth.png
+share/noegnud-0.8.0/data/tilesets/nethack/warning.0.png
+share/noegnud-0.8.0/data/tilesets/nethack/warning.1.png
+share/noegnud-0.8.0/data/tilesets/nethack/warning.2.png
+share/noegnud-0.8.0/data/tilesets/nethack/warning.3.png
+share/noegnud-0.8.0/data/tilesets/nethack/warning.4.png
+share/noegnud-0.8.0/data/tilesets/nethack/warning.5.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.acid.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.acid.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.acid.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.acid.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.cold.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.cold.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.cold.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.cold.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.death.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.death.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.death.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.death.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.fire.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.fire.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.fire.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.fire.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.lightning.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.lightning.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.lightning.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.lightning.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.magic missile.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.magic missile.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.magic missile.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.magic missile.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.poison gas.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.poison gas.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.poison gas.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.poison gas.vertical.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.sleep.horizontal.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.sleep.left slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.sleep.right slant.png
+share/noegnud-0.8.0/data/tilesets/nethack/zap.sleep.vertical.png
+share/noegnud-0.8.0/data/tomb/font_engrave_8x16.png
+share/noegnud-0.8.0/data/tomb/theme_traditional.inf
+share/noegnud-0.8.0/data/tomb/tomb_traditional.png
+share/noegnud-0.8.0/data/variant-reference/nethack-3.4.1.txt
+share/noegnud-0.8.0/data/variant-reference/noegnud-0.8.0.txt
+share/noegnud-0.8.0/data/variant-reference/slashem-0.0.6E4F8.txt
+share/noegnud-0.8.0/data/variant-reference/slashem-0.0.7E0.txt
+share/noegnud-0.8.0/data/variant-reference/slashem-0.0.7E1.txt
+share/noegnud-0.8.0/data/widgetthemes/default_button.theme
+share/noegnud-0.8.0/data/widgetthemes/default_buttonover.theme
+share/noegnud-0.8.0/data/widgetthemes/default_item.theme
+share/noegnud-0.8.0/data/widgetthemes/default_item_highlight.theme
+share/noegnud-0.8.0/data/widgetthemes/default_item_selected.theme
+share/noegnud-0.8.0/data/widgetthemes/default_minimap.theme
+share/noegnud-0.8.0/data/widgetthemes/default_scrollbar.theme
+share/noegnud-0.8.0/data/widgetthemes/default_scrollbararea.theme
+share/noegnud-0.8.0/data/widgetthemes/default_title.theme
+share/noegnud-0.8.0/data/widgetthemes/default_title_active.theme
+share/noegnud-0.8.0/data/widgetthemes/default_window.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/b.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/bl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/br.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/l.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/r.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/t.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/tl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/button/tr.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/b.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/bl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/br.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/l.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/r.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/t.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/tl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover/tr.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/b.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/bl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/br.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/l.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/r.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/t.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/tl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/default/tr.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/b.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/bl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/br.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/l.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/r.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/t.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/tl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/minimap/tr.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbar/border.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbar/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbararea/l.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbararea/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/shades/dark.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/shades/light.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/shades/null.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/shades/semidark.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/shades/semilight.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/b.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/bl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/br.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/l.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/m.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/r.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/t.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/tl.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/title/tr.png
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_button.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_buttonover.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_item.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_item_highlight.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_item_selected.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_minimap.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_scrollbar.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_scrollbararea.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_title.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_title_active.theme
+share/noegnud-0.8.0/data/widgetthemes/wooden/wooden_window.theme
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/title 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/shades 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbararea 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/scrollbar 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/minimap 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/default 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/buttonover 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden/button 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes/wooden 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/widgetthemes 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/variant-reference 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/tomb 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/tilesets/nethack 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/tilesets 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/textcolouring 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/minimap-fonts 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/lang 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/images 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/gui 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data/char 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0/data 2>/dev/null || true
+@unexec rmdir %D/share/noegnud-0.8.0 2>/dev/null || true

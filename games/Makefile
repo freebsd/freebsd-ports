@@ -330,6 +330,12 @@
     SUBDIR += nil
     SUBDIR += ninix-aya
     SUBDIR += njam
+    SUBDIR += noegnud-addons
+    SUBDIR += noegnud-data
+    SUBDIR += noegnud-littlehack
+    SUBDIR += noegnud-nethack
+    SUBDIR += noegnud-nethack-deet
+    SUBDIR += noegnud-slashem
     SUBDIR += nonsense
     SUBDIR += nwndata
     SUBDIR += nwnusers
