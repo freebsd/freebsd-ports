@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Nov 19 16:27:15 1999
-+++ Makefile	Fri Nov 19 16:30:36 1999
+--- Makefile.orig	Tue Feb  1 17:39:53 2000
++++ Makefile	Tue Feb  1 17:44:42 2000
 @@ -1,9 +1,9 @@
 -prefix=
 -BIN=/usr/X11R6/bin
@@ -11,34 +11,29 @@
 +LIBDIR = -L${X11BASE}/lib
 +INCLUDES = -I${X11BASE}/include
  LIBS   = -lXpm -lXext -lX11
--FLAGS = -O2
- OBJS =	wmbiff.o \
+-CFLAGS = -O2 -Wall
+ OBJS =	wmbiff.o Pop3Client.o \
  	../wmgeneral/wmgeneral.o \
  	../wmgeneral/misc.o \
-@@ -11,11 +11,10 @@
+@@ -11,11 +11,11 @@
  
  
  .c.o:
--	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
-+	${CC} ${CFLAGS} ${INCLUDES} $< -o $*.o
+-	cc -I/usr/X11R6/share/include $(CFLAGS) -c -Wall $< -o $*.o
++	${CC} ${INCLUDES} ${CFLAGS} $< -o $*.o
  
  wmbiff: $(OBJS)
--	cc $(FLAGS) -o wmbiff $^ $(LIBDIR) $(LIBS)
--	strip -s wmbiff
+-	cc $(CFLAGS) -o wmbiff $^ $(LIBDIR) $(LIBS)
+-	strip wmbiff
 +	${CC} -o wmbiff $^ ${LIBDIR} ${LIBS}
++	@/usr/bin/strip wmbiff
  
  all:: wmbiff
  
-@@ -26,11 +25,4 @@
- 	rm -f wmbiff *~
+@@ -26,5 +26,4 @@
+ 	rm -f wmbiff *~ tags
  
  install:: wmbiff
 -	cp -f wmbiff $(prefix)$(BIN)/
 -	chmod 755 $(prefix)$(BIN)/wmbiff
--	strip -s $(prefix)$(BIN)/wmbiff
--#	chown root:root $(prefix)$(BIN)/wminet
--#	cp wminetrc $(HOME)/.wminetrc
--#	chmod 600 $(HOME)/.wminetrc
--#	cp wmbiffrc $(prefix)$(CONF)/wmbiffrc
--#	chmod 644 $(prefix)$(CONF)/wmbiffrc
 +	@/usr/bin/install -c -o 0 -g 0 -s -m 755 wmbiff ${X11BASE}/bin/wmbiff
