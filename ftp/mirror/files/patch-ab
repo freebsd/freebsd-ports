@@ -1,0 +1,87 @@
+*** mirror.defaults.orig	Mon May 15 17:15:11 1995
+--- mirror.defaults	Mon May 15 17:25:11 1995
+***************
+*** 11,30 ****
+  	# The LOCAL hostname - if not the same as `hostname`
+  	# (I advertise the name src.doc.ic.ac.uk but the machine is
+  	#  really puffin.doc.ic.ac.uk.)
+! 	hostname=src.doc.ic.ac.uk
+  	# Keep all local_dirs relative to here
+! 	local_dir=/public/
+! 	remote_password=ukuug-soft@doc.ic.ac.uk
+  	mail_to=
+  	# Don't mirror file modes.  Set all dirs/files to these
+  	dir_mode=0755
+  	file_mode=0444
+! 	# By defaults files are owned by root.zero
+! 	user=0
+! 	group=0
+! #	# Keep a log file in each updated directory
+! #	update_log=.mirror
+! 	update_log=
+  	# Don't overwrite my mirror log with the remote one.
+  	# Don't pull back any of their mirror temporary files.
+  	# Don't touch anything whose name begins with a space!
+--- 11,30 ----
+  	# The LOCAL hostname - if not the same as `hostname`
+  	# (I advertise the name src.doc.ic.ac.uk but the machine is
+  	#  really puffin.doc.ic.ac.uk.)
+! 	# hostname=src.doc.ic.ac.uk
+  	# Keep all local_dirs relative to here
+! 	local_dir=/home/ftp/pub
+! 	# remote_password=mirror@$hostname
+  	mail_to=
+  	# Don't mirror file modes.  Set all dirs/files to these
+  	dir_mode=0755
+  	file_mode=0444
+! 	# By defaults files are owned by root.wheel
+! 	# user=0
+! 	# group=0
+! 	# Keep a log file in each updated directory
+! 	update_log=.mirror
+! 	# update_log=
+  	# Don't overwrite my mirror log with the remote one.
+  	# Don't pull back any of their mirror temporary files.
+  	# Don't touch anything whose name begins with a space!
+***************
+*** 32,38 ****
+  	exclude_patt=(^|/)(\.mirror$|core$|\.cap|\.in\..*\.$|MIRROR.LOG|#.*#|\.FSP|\.cache|\.zipped|\.notar|\.message|lost+found/|\ )
+  	# Try to compress everything
+  	compress_patt=.
+! 	compress_prog=compress
+  	# Don't compress information files, files that don't benifit from
+  	# being compressed, files that tell ftpd, gopher, wais... to do things,
+  	# the sources for compression programs...
+--- 32,38 ----
+  	exclude_patt=(^|/)(\.mirror$|core$|\.cap|\.in\..*\.$|MIRROR.LOG|#.*#|\.FSP|\.cache|\.zipped|\.notar|\.message|lost+found/|\ )
+  	# Try to compress everything
+  	compress_patt=.
+! 	compress_prog=gzip
+  	# Don't compress information files, files that don't benifit from
+  	# being compressed, files that tell ftpd, gopher, wais... to do things,
+  	# the sources for compression programs...
+***************
+*** 45,55 ****
+  	# shk is multimedia? used on apple2s.
+  	compress_excl+|-z(\d+)?$|\.tgz|_tgz|\.tar\.Z|\.tar\.gz|\.taz$|\.arc$|\.zip$|\.lzh$|\.zoo$|\.exe$|\.lha$|\.zom$|\.gif$|\.jpeg$|\.jpg$|\.mpeg$|\.au$|\.shk$|read.*me|index|info|faq|gzip|compress|(^|/)\.\.?$
+  	# Don't delete own mirror log, .notar or .cache files (incl in subdirs)
+! #	delete_excl=(^|/)\.(mirror|notar|cache)$
+  	# Ignore any local readme and .mirror files
+! 	local_ignore=README.doc.ic|(^|/)\.(mirror|notar)$
+  	# Automatically delete local copies of files that the
+  	# remote site has zapped
+  	do_deletes=true
+! 	max_delete_files=50%
+! 	max_delete_dirs=50%
+--- 45,55 ----
+  	# shk is multimedia? used on apple2s.
+  	compress_excl+|-z(\d+)?$|\.tgz|_tgz|\.tar\.Z|\.tar\.gz|\.taz$|\.arc$|\.zip$|\.lzh$|\.zoo$|\.exe$|\.lha$|\.zom$|\.gif$|\.jpeg$|\.jpg$|\.mpeg$|\.au$|\.shk$|read.*me|index|info|faq|gzip|compress|(^|/)\.\.?$
+  	# Don't delete own mirror log, .notar or .cache files (incl in subdirs)
+! 	delete_excl=(^|/)\.(mirror|notar|cache)$
+  	# Ignore any local readme and .mirror files
+! 	local_ignore=README.local|(^|/)\.(mirror|notar)$
+  	# Automatically delete local copies of files that the
+  	# remote site has zapped
+  	do_deletes=true
+! 	max_delete_files=10%
+! 	max_delete_dirs=10%

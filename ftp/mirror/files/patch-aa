@@ -1,0 +1,37 @@
+*** makefile.orig	Tue Jan 18 22:58:21 1994
+--- makefile	Mon May 15 17:50:25 1995
+***************
+*** 6,12 ****
+  	support/cyber-patches support/lstest.pl new-patches-by
+  
+  all:
+! 	echo try make mirror.tar
+  
+  mirror.tar: $(FILES)
+  	rev=`./mirror -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
+--- 6,12 ----
+  	support/cyber-patches support/lstest.pl new-patches-by
+  
+  all:
+! #	echo try make mirror.tar
+  
+  mirror.tar: $(FILES)
+  	rev=`./mirror -v | perl -ane 'print "$$F[2]\n";'`; echo $rev; \
+***************
+*** 20,22 ****
+--- 20,34 ----
+  	checkin $(FILES)
+  
+  #  install, clean ...
++ install:
++ 	install -c ftp.pl ${PREFIX}/lib/mirror/
++ 	install -c lsparse.pl ${PREFIX}/lib/mirror/
++ 	install -c dateconv.pl ${PREFIX}/lib/mirror/
++ 	install -c mirror.defaults ${PREFIX}/lib/mirror/mirror.defaults.sample
++ 	install -c mirror.pl ${PREFIX}/bin/mirror
++ 	install -c mirror.man ${PREFIX}/man/man1/mirror.1
++ 	gzip -9nf ${PREFIX}/man/man1/mirror.1
++ 	install -c mm ${PREFIX}/bin/mirrormaster
++ 	install -c mm.man ${PREFIX}/man/man1/mirrormaster.1
++ 	gzip -9nf ${PREFIX}/man/man1/mirrormaster.1
++ 	install -c do_unlinks ${PREFIX}/lib/mirror/do_unlinks
