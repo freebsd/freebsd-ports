@@ -45,7 +45,7 @@ pre-install:
 post-install:
 	(cd ${WRKSRC}/gnats;   ${MAKE} install-info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} install-info)
-	install-info ${PREFIX}/info/gnats.info   ${PREFIX}/info
-	install-info ${PREFIX}/info/send-pr.info ${PREFIX}/info
+	install-info ${PREFIX}/info/gnats.info   ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/send-pr.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
