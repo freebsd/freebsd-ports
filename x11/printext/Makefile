@@ -8,7 +8,7 @@
 PORTNAME=	PrintExt
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xorg/release/
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 DISTNAME=	X11R6.7.0-src1
 
 MAINTAINER=	x11@FreeBSD.org
