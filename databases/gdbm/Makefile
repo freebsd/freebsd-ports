@@ -17,7 +17,8 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-.if defined(WITH_COMPAT) && ${WITH_COMPAT:L} != no
+
+.if defined(WITH_COMPAT)
 INSTALL_TARGET=	install install-compat
 PLIST_SUB=	GDBM_COMPAT=""
 .else
