@@ -24,7 +24,7 @@
 @@ -302,6 +308,7 @@
  }
  
- my ($quarantine_event,$quarantine_event_tmp)=0;
+ my ($quarantine_event,$quarantine_event_tmp,$quarantine_DOS)=0;
 +my $spam_event=0;
  
  my $file_id = &uniq_id();
