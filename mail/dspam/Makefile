@@ -6,12 +6,18 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	A server-side bayesian spam filter
+
+OPTIONS=	MYSQL "Use MySQL and not db4 as database" off \
+		MAILDROP "Use Maildrop as local delivery agent" off \
+		PROCMAIL "Use Procmail as local delivery agent" off \
+		QMAIL "Play nice with Qmail mail server" off \
+		ENABLE_SPAM_DELIVERY "Deliver messages marked as spam" off
 
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
@@ -55,7 +61,11 @@ CONFIGURE_ARGS+=	--with-local-delivery-agent='${LOCALBASE}/bin/procmail $u'
 CONFIGURE_ARGS+=	--with-dspam-mode=4511
 .endif
 
-.if defined(ENABLE_SPAM_DELIVERY)
+.if defined(WITH_SIGNATURE_LIFE)
+CONFIGURE_ARGS+=	--with-signature-life=${WITH_SIGNATURE_LIFE}
+.endif
+
+.if defined(WITH_ENABLE_SPAM_DELIVERY)
 CONFIGURE_ARGS+=	--enable-spam-delivery
 .endif
 
