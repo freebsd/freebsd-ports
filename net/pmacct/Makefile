@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -26,12 +26,14 @@ GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:
-		@${REINPLACE_CMD} -e \
-		's,<mysql/mysql.h>,<mysql.h>,' \
-			${WRKSRC}/mysql_plugin.h
+	@${REINPLACE_CMD} -e \
+	's,<mysql/mysql.h>,<mysql.h>,' \
+		${WRKSRC}/mysql_plugin.h
+	@${REINPLACE_CMD} -e \
+	's|-O2|${CFLAGS}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
