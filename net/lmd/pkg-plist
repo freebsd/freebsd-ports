@@ -1,4 +1,5 @@
 sbin/lmd
+etc/rc.d/lmd.sh
 etc/lmd.conf.sample
 lib/ldd_http_module.so
 %%PORTDOCS%%share/doc/lmd/README
