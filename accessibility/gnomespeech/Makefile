@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomespeech
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-speech/0.3
@@ -19,7 +19,7 @@ COMMENT=	GNOME text-to-speech API
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libbonobo
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
