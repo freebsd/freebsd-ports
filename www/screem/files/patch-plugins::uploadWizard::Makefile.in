@@ -1,0 +1,20 @@
+--- plugins/uploadWizard/Makefile.in.old	Sat Jan 31 01:09:09 2004
++++ plugins/uploadWizard/Makefile.in	Sat Jan 31 01:14:46 2004
+@@ -179,7 +179,7 @@
+ 
+ 
+ uploadWizard_la_LDFLAGS = -avoid-version -module
+-uploadWizard_la_LIBADD = $(NEONOBJS) 
++uploadWizard_la_LIBADD = 
+ 
+ config_h = $(top_builddir)/config.h
+ obj_ext = o
+@@ -191,7 +191,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-uploadWizard_la_DEPENDENCIES =  $(neon_dir)/*.lo
++uploadWizard_la_DEPENDENCIES =  
+ @HAVE_FNMATCH_FALSE@uploadWizard_la_OBJECTS =  netrc.lo rpmatch.lo \
+ @HAVE_FNMATCH_FALSE@fnmatch.lo common.lo davdriver.lo fileset.lo ftp.lo \
+ @HAVE_FNMATCH_FALSE@ftpdriver.lo rcfile.lo rshdriver.lo sitefiles.lo \
