@@ -18,6 +18,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/data
+DATADIR=	${PREFIX}/share/FlightGear
 
 post-extract:
 	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -print -delete
