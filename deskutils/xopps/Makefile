@@ -9,22 +9,22 @@
 DISTNAME=	xopps.1.13
 PKGNAME=	xopps-1.13
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://devvax.jpl.nasa.gov/pub/xopps/
+MASTER_SITES=	ftp://ftp.weird.com/pub/mirror/ \
+		ftp://devvax.jpl.nasa.gov/pub/xopps/
 
 MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 USE_X_PREFIX=	yes
 REQUIRES_MOTIF=	yes
-MACH=		FreeBSD
-MAKE_ENV=	'MACH=$(MACH)'
+MAKE_ENV=	'MACH=${OPSYS}'
 
 MAN1=	xopps.1
 
-pre-patch:
-	$(CP) $(WRKSRC)/Defines.spr $(WRKSRC)/Defines.$(MACH)
+post-extract:
+	@${CP} ${WRKSRC}/Defines.spr ${WRKSRC}/Defines.${OPSYS}
 
-pre-install:
-	$(MKDIR) $(PREFIX)/lib/help
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/*.c
 
 .include <bsd.port.mk>

@@ -1,14 +1,14 @@
---- help.c.orig	Mon Jan 25 00:15:18 1999
-+++ help.c	Mon Jan 25 00:16:49 1999
+--- help.c.orig	Sat Jan 18 13:22:29 1997
++++ help.c	Sat Jan  8 01:25:47 2000
 @@ -173,9 +173,9 @@
   * default help path, add cwd when in debug mode
   */
  #ifdef DEBUG
 -#define DEFAULT_HELPPATH ".:/usr/lib/help:/usr/local/lib/help"
-+#define DEFAULT_HELPPATH ".:/usr/X11R6/lib/help:/usr/local/lib/help"
++#define DEFAULT_HELPPATH ".:%%PREFIX%%/lib/X11/xopps"
  #else
 -#define DEFAULT_HELPPATH "/usr/lib/help:/usr/local/lib/help"
-+#define DEFAULT_HELPPATH "/usr/X11R6/lib/help:/usr/local/lib/help"
++#define DEFAULT_HELPPATH "%%PREFIX%%/lib/X11/xopps"
  #endif
  
  /***********************************************************************

@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Jan 17 20:22:35 1997
-+++ Makefile	Fri Apr 23 18:28:41 1999
-@@ -142,13 +142,13 @@
+--- Makefile.orig	Sat Jan 18 13:22:35 1997
++++ Makefile	Sat Jan  8 00:42:51 2000
+@@ -142,19 +142,19 @@
  # Installation locations (edit to suit your system)
  #
  
@@ -14,12 +14,41 @@
  MAN1DIR = $(ROOTDIR)/man/man1
 -HELPDIR = $(ROOTDIR)/setup/$(SUBSYS)/help
 -BITDIR = $(ROOTDIR)/setup/bitmaps
-+HELPDIR = $(ROOTDIR)/lib/help
++HELPDIR = $(ROOTDIR)/lib/X11/xopps
 +BITDIR = $(ROOTDIR)/include/X11/bitmaps
  
  #
  # You generally should not edit below this line
-@@ -176,13 +176,16 @@
+ #
+ 
+-OPTIMIZEFLAG = -O
++#OPTIMIZEFLAG = -O
+ SFOCDIR = /SFOC/$(SFOCVER)
+ TPSDIR = /TPS/$(SFOCVER)
+ BLDDIR = .
+@@ -163,27 +163,30 @@
+ LOCAL_INCL = ../../lib_incl_local
+ GLOBAL_INCL = ../../lib_incl_global
+ SYSDEFS = $(MACHDEFS) -D$(MACH) -DRELEASE='"$(RELEASE)"' $(DEFINES)
+-SFOCINCLPATH =	-I. \
+-		-I$(INCLROOT)/lib_incl_local \
+-		-I$(INCLROOT)/lib_incl_global \
+-		-I$(SFOCDIR)/include \
+-		-I$(SFOCDIR)/include/cda \
+-		-I$(SFOCDIR)/include/dts \
+-		-I$(SFOCDIR)/include/smc \
+-		-I$(SFOCDIR)/include/wse \
+-		-I$(TPSDIR)/include
++#SFOCINCLPATH =  -I. \
++#		-I$(INCLROOT)/lib_incl_local \
++#		-I$(INCLROOT)/lib_incl_global \
++#		-I$(SFOCDIR)/include \
++#		-I$(SFOCDIR)/include/cda \
++#		-I$(SFOCDIR)/include/dts \
++#		-I$(SFOCDIR)/include/smc \
++#		-I$(SFOCDIR)/include/wse \
++#		-I$(TPSDIR)/include
+ FULLINCLPATH = $(INCLPATH) $(SFOCINCLPATH) $(MACHINCLPATH)
  
  RM = rm -f
  
@@ -31,10 +60,32 @@
  LDFLAGS = $(OPTIMIZEFLAG) $(MACHDEFS)
  LOCAL_LIB = $(LIBROOT)/lib_incl_local/$(MACH)
 -LIBS = -lXm -lXt -lX11
+-SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
 +LIBS = -lXm -lXext -lXt -lX11 ${MOTIFLIB}
 +.if $(PORTOBJFORMAT) == "elf"
 +LIBS+= -Wl,-rpath,$(X11BASE)/lib
 +.endif
- SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
++#SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
  FULLLIBPATH = $(LIBPATH) $(SFOCLIBPATH) $(MACHLIBPATH)
  
+ LINT = lint
+@@ -237,12 +240,13 @@
+ 	$(HELP) $(DRAWINGS)
+ 
+ install:
+-	install -c -m 755 $(PROJ) $(BINDIR)
+-	install -c -m 644 $(RSRC) $(RSCDIR)
+-	install -c -m 644 $(MAN1) $(MAN1DIR)
+-	install -c -m 644 $(HELP) $(HELPDIR)
+-	install -c -m 755 $(PERLEXE) $(BINDIR)
+-	install -c -m 444 $(BITMAPS) $(BITDIR)
++	if test ! -f $(HELPDIR); then mkdir -p $(HELPDIR); fi
++	${BSD_INSTALL_PROGRAM} $(PROJ) $(BINDIR)
++	${BSD_INSTALL_DATA} $(RSRC) $(RSCDIR)
++	${BSD_INSTALL_DATA} $(MAN1) $(MAN1DIR)
++	${BSD_INSTALL_DATA} $(HELP) $(HELPDIR)
++	${BSD_INSTALL_SCRIPT} $(PERLEXE) $(BINDIR)
++	${BSD_INSTALL_DATA} $(BITMAPS) $(BITDIR)
+ 
+ $(BLDDIR)/activity.o: beware.h
+ $(BLDDIR)/activity.o: dialog.h
