@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
 
 MAINTAINER=	oli@isnic.is
-COMMENT=	An authoritative only non-recursive high performance name server
+COMMENT=	An authoritative only non-recursive name server
 
 USE_RC_SUBR=	yes
 
