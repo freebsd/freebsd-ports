@@ -6014,6 +6014,7 @@ p5-Class-Container	ports/devel/p5-Class-Container
 p5-Class-Contract	ports/devel/p5-Class-Contract
 p5-Class-DBI	ports/databases/p5-Class-DBI
 p5-Class-DBI-AbstractSearch	ports/databases/p5-Class-DBI-AbstractSearch
+p5-Class-DBI-AsForm	ports/databases/p5-Class-DBI-AsForm
 p5-Class-DBI-BaseDSN	ports/databases/p5-Class-DBI-BaseDSN
 p5-Class-DBI-FromCGI	ports/databases/p5-Class-DBI-FromCGI
 p5-Class-DBI-Loader	ports/databases/p5-Class-DBI-Loader
