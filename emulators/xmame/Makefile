@@ -229,6 +229,10 @@ NETWORK=\#
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${ARCH} != "i386" && ${OSVERSION} >= 502102
 BROKEN=		"Does not compile on 5.x !i386"
 .endif
