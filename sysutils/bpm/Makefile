@@ -19,4 +19,6 @@ RUN_DEPENDS=	portupgrade:${PORTSDIR}/sysutils/portupgrade
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
+MAKE_ENV+=	OSTYPE="${OPSYS}"
+
 .include <bsd.port.mk>
