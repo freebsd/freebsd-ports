@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
 MAINTAINER=	bradh@uunet.co.za
 
-MAN1=		gifsicle.1
+MAN1=		gifdiff.1 gifsicle.1 gifview.1
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes

@@ -1,3 +1,5 @@
+bin/gifdiff
 bin/gifsicle
+bin/gifview
 share/doc/gifsicle/README
 @dirrm share/doc/gifsicle
