@@ -1,0 +1,11 @@
+This is a Linux/i386 binary port of GLib, version 2.X.
+
+from the home page:
+
+	GLib is the low-level core library that forms the basis of
+	GTK+ and GNOME.  It provides data structure handling for C,
+	portability wrappers, and interfaces for such runtime
+	functionality as an event loop, threads, dynamic loading,
+	and an object system.
+
+WWW:  http://gtk.org
