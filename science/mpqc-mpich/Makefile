@@ -14,7 +14,7 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 BUILD_DEPENDS=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
 # MPICH implimentation is not thread safe
-CONFIGURE_ARGS=	--with-libdirs="-L${PREFIX}/lib -L${PREFIX}/mpich/lib" 
+CONFIGURE_ARGS=	--with-libdirs="-L${PREFIX}/lib -L${PREFIX}/mpich/lib" \
 		--with-blas="-lf77blas -latlas" \
 		--with-lapack="-lalapack -lcblas" \
 		--with-coptflags="${CFLAGS}" \
