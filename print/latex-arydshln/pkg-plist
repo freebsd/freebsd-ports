@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/arydshln.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/arydshln.dtx
+%%CLASSDIR%%/arydshln.ins
+%%CLASSDIR%%/arydshln.sty
+%%CLASSDIR%%/arydshln-man.tex
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
