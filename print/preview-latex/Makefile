@@ -7,22 +7,19 @@
 
 PORTNAME=	preview-latex
 PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	LaTeX previewer on Emacs
 
-USE_GHOSTSCRIPT=	yes
-
-BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex
+BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
+		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
-		mktexlsr:${PORTSDIR}/print/teTeX
-
-BROKEN=		Configure fails
+		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base
 
 EMACS_PORT_NAME?=	emacs21
 
@@ -31,10 +28,17 @@ INFO=		preview-latex
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/preview \
-		--with-texmf=${PREFIX}/share/texmf
-CONFIGURE_ARGS+=	--disable-8bit-test
+		--with-texmf-dir=${PREFIX}/${TEXMFLOCAL} \
+		--disable-8bit-test
+USE_GHOSTSCRIPT=	yes
+PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
 
+INFO=	preview-latex
 DOCS=	ChangeLog INSTALL PROBLEMS README latex/README-preview RELEASE TODO
+
+TEXMFLOCAL=	share/texmf-local
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+EMACS_PORT_NAME?=	emacs21
 
 pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
@@ -45,7 +49,7 @@ pre-everything::
 .endif
 
 post-install:
-	mktexlsr
+	${MKTEXLSR}
 	${INSTALL_DATA} ${WRKSRC}/preview-latex.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/preview/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

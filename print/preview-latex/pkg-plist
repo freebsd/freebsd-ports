@@ -1,17 +1,18 @@
-share/texmf-var/tex/latex/preview/prauctex.cfg
-share/texmf-var/tex/latex/preview/prauctex.def
-share/texmf-var/tex/latex/preview/prcounters.def
-share/texmf-var/tex/latex/preview/preview.sty
-share/texmf-var/tex/latex/preview/prfootnotes.def
-share/texmf-var/tex/latex/preview/prlyx.def
-share/texmf-var/tex/latex/preview/prshowbox.def
-share/texmf-var/tex/latex/preview/prshowlabels.def
-share/texmf-var/tex/latex/preview/prtightpage.def
-share/texmf-var/tex/latex/preview/prtracingall.def
-@dirrm share/texmf-var/tex/latex/preview
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr
-share/texmf-var/doc/latex/styles/preview.dvi
+@comment $FreeBSD$
+%%TEXMFLOCAL%%/tex/latex/preview/prauctex.cfg
+%%TEXMFLOCAL%%/tex/latex/preview/prauctex.def
+%%TEXMFLOCAL%%/tex/latex/preview/prcounters.def
+%%TEXMFLOCAL%%/tex/latex/preview/preview.sty
+%%TEXMFLOCAL%%/tex/latex/preview/prfootnotes.def
+%%TEXMFLOCAL%%/tex/latex/preview/prlyx.def
+%%TEXMFLOCAL%%/tex/latex/preview/prshowbox.def
+%%TEXMFLOCAL%%/tex/latex/preview/prshowlabels.def
+%%TEXMFLOCAL%%/tex/latex/preview/prtightpage.def
+%%TEXMFLOCAL%%/tex/latex/preview/prtracingall.def
+@dirrm %%TEXMFLOCAL%%/tex/latex/preview
+%%TEXMFLOCAL%%/doc/latex/styles/preview.dvi
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.el
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview-latex.el
@@ -25,11 +26,11 @@ share/texmf-var/doc/latex/styles/preview.dvi
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xbm
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xpm
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/preview
-%%PORTDOCS%%share/doc/preview-latex/ChangeLog
-%%PORTDOCS%%share/doc/preview-latex/INSTALL
-%%PORTDOCS%%share/doc/preview-latex/PROBLEMS
-%%PORTDOCS%%share/doc/preview-latex/README
-%%PORTDOCS%%share/doc/preview-latex/README-preview
-%%PORTDOCS%%share/doc/preview-latex/RELEASE
-%%PORTDOCS%%share/doc/preview-latex/TODO
-%%PORTDOCS%%@dirrm share/doc/preview-latex
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-preview
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
