@@ -20,16 +20,11 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \
 		evolution:${PORTSDIR}/mail/evolution \
+		AbiWord-2.0:${PORTSDIR}/editors/AbiWord2 \
 		mergeant:${PORTSDIR}/databases/mergeant
 
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	AbiWord-2.0:${PORTSDIR}/editors/AbiWord2
-.endif
-
 do-install:	# empty
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
