@@ -3,13 +3,15 @@
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.10 1995/12/02 12:27:27 asami Exp $
+# $Id: Makefile,v 1.11 1996/11/18 09:54:39 asami Exp $
 #
 
 DISTNAME=	xarchie-2.0.10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
+
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 

@@ -3,7 +3,7 @@
 # Date created:         20 Jun 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.2 1996/07/05 06:26:52 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:35:30 asami Exp $
 #
 
 DISTNAME=       ncftp-1.9.5
@@ -16,7 +16,7 @@ MAINTAINER=	jkh@FreeBSD.ORG
 MAN1=		ncftp.1
 
 do-install:
-	cd ${WRKSRC}; $(INSTALL) -c $(STRIP) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) ncftp $(PREFIX)/bin
-	cd ${WRKSRC}; $(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 ncftp.1 $(PREFIX)/man/man1
+	cd ${WRKSRC}; ${INSTALL_PROGRAM} ncftp ${PREFIX}/bin
+	cd ${WRKSRC}; ${INSTALL_MAN} ncftp.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         24 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.6 1995/11/27 04:05:24 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 11:35:44 asami Exp $
 #
 
 DISTNAME=       pmf-1.13.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/
 WRKSRC=		${WRKDIR}/pmfdir/src
 
 pre-install:
-	@mkdir -p /usr/local/lib/pmf
+	@${MKDIR} /usr/local/lib/pmf
 	@find ${WRKSRC}/../system_dir -name '*.orig' -exec rm {} \;
 	@-mv ${WRKSRC}/../doc/pmf.doc ${WRKSRC}/../system_dir
 	@tar -C ${WRKSRC}/../system_dir -cf - . \

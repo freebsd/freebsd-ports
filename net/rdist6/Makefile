@@ -3,7 +3,7 @@
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.9 1996/11/13 12:41:24 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/18 11:35:54 asami Exp $
 #
 
 DISTNAME=	rdist-6.1.3
@@ -22,7 +22,7 @@ MAN1=		${RDIST_NAME}.1
 MAN8=		rdistd.8
 
 post-install:
-	strip ${PREFIX}/bin/${RDIST_NAME}
-	strip ${PREFIX}/bin/rdistd
+	@strip ${PREFIX}/bin/${RDIST_NAME}
+	@strip ${PREFIX}/bin/rdistd
 
 .include <bsd.port.mk>
