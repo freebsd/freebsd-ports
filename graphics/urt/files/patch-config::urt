@@ -1,5 +1,5 @@
---- config/urt.orig	Thu Jul 16 04:47:15 1992
-+++ config/urt	Fri Dec 27 23:19:11 2002
+--- config/urt.orig	Wed Jul 15 19:47:15 1992
++++ config/urt	Wed Jan 12 17:22:42 2005
 @@ -1,3 +1,7 @@
 +# Configuration for HP 9000/300 series running BSD4.3
 +
@@ -45,7 +45,7 @@
  
  # You can put any system dependent flags here.
 -ExtraCFLAGS = 
-+ExtraCFLAGS = -fno-strength-reduce
++ExtraCFLAGS =
  
  # System specific or configuration parameters.  Define according to your
  # environment and desires.
@@ -65,20 +65,22 @@
 -##define USE_L_FLAG	Use -Llibdir -lrle instead of libdir/liblre.a.
 -##define USE_PROTOTYPES	Declare library functions with ANSI-C prototypes.
 -##define USE_RANDOM	Your libc has the BSD random() function.
+-##define USE_STDARG	Use 'stdarg' instead of 'varargs' (ANSI).
+-##define USE_STDLIB_H	You have "stdlib.h".
+-##define USE_UNISTD_H	You have "unistd.h".
 +#define SYS_V_SETPGRP	Your system has the SysV setpgrp() call.
 +#define USE_L_FLAG	Use -Llibdir -lrle instead of libdir/liblre.a.
 +#define USE_PROTOTYPES	Declare library functions with ANSI-C prototypes.
 +#define USE_RANDOM	Your libc has the BSD random() function.
- ##define USE_STDARG	Use 'stdarg' instead of 'varargs' (ANSI).
--##define USE_STDLIB_H	You have "stdlib.h".
--##define USE_UNISTD_H	You have "unistd.h".
++#define USE_STDARG	Use 'stdarg' instead of 'varargs' (ANSI).
 +#define USE_STDLIB_H	You have "stdlib.h".
 +#define USE_UNISTD_H	You have "unistd.h".
  ##define USE_STRING_H	You have "string.h", not "strings.h"
 -##define VOID_STAR	Your C compiler understands the 'void *' declaration.
-+#define VOID_STAR	Your C compiler understands the 'void *' declaration.
- ##define USE_XLIBINT_H	You have the include file <X11/Xlibint.h>.
+-##define USE_XLIBINT_H	You have the include file <X11/Xlibint.h>.
 -##define X_SHARED_MEMORY	You have the XShm extension.
++#define VOID_STAR	Your C compiler understands the 'void *' declaration.
++#define USE_XLIBINT_H	You have the include file <X11/Xlibint.h>.
 +#define X_SHARED_MEMORY	You have the XShm extension.
  
  # DEST is where all programs will be put.  Can be overridden for specific
@@ -125,7 +127,7 @@
  
  #ifdef FB
 -LIBFB = /usr/brl/lib/libfb.a
-+LIBFB = $(X11BASE)/lib/brl/libfb.a
++LIBFB = $(LOCALBASE)/lib/libfb.a
  #endif
  
  #ifdef GRINNELL
