@@ -1,0 +1,56 @@
+# New ports collection makefile for:	milter-greylist-devel
+# Date created:				11 Dec 2004
+# Whom:					Cyril Guibourg
+#
+# $FreeBSD$
+#
+
+PORTNAME=	milter-greylist
+PORTVERSION=	1.7.5
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
+PKGNAMESUFFIX=	-devel
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	aragorn+ports@teaser.fr
+COMMENT=	Easy-to-use greylist milter for sendmail (development)
+
+MAN5=		greylist.conf.5
+MAN8=		milter-greylist.8
+
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--with-user=smmsp
+
+ALL_TARGET=	milter-greylist
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+CONFLICTS=	milter-greylist-[1-9]*.*
+
+post-extract:
+	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/milter-greylist.sh > ${WRKSRC}/milter-greylist.sh
+
+do-install:
+	@${MKDIR} ${PREFIX}/etc/mail
+	@${INSTALL_PROGRAM} ${WRKSRC}/milter-greylist ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/greylist.conf.5 ${PREFIX}/man/man5
+	@${INSTALL_MAN} ${WRKSRC}/milter-greylist.8 ${PREFIX}/man/man8
+	@${INSTALL_DATA} ${WRKSRC}/greylist.conf \
+			${PREFIX}/etc/mail/greylist.conf.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/milter-greylist.sh ${PREFIX}/etc/rc.d/
+
+post-install:
+	@${MKDIR} /var/milter-greylist
+	@${CHOWN} smmsp /var/milter-greylist
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/greylist.conf ${EXAMPLESDIR}
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

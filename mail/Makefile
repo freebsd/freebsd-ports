@@ -196,6 +196,7 @@
     SUBDIR += mew3-emacs20
     SUBDIR += mew3-xemacs21-mule
     SUBDIR += milter-greylist
+    SUBDIR += milter-greylist-devel
     SUBDIR += milter-regex
     SUBDIR += milter-skem
     SUBDIR += milter-spamc
