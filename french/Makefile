@@ -5,6 +5,7 @@
     SUBDIR += aspell
     SUBDIR += aster
     SUBDIR += daCode
+    SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += facturier
     SUBDIR += geonext

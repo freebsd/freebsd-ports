@@ -1348,7 +1348,6 @@ diablo-jre13	ports/java/diablo-jre13
 diacanvas	ports/graphics/diacanvas
 diacanvas2	ports/graphics/diacanvas2
 dice		ports/lang/dice
-dico		ports/textproc/dico
 dictd		ports/net/dictd
 dictd-database	ports/net/dictd-database
 dictfmt		ports/textproc/dictfmt
@@ -1954,6 +1953,7 @@ fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell       ports/french/aspell
 fr-aster	ports/french/aster
 fr-daCode	ports/french/daCode
+fr-dico		ports/french/dico
 fr-eficas	ports/french/eficas
 fr-facturier	ports/french/facturier
 fr-geonext	ports/french/geonext
