@@ -129,6 +129,11 @@ doc/mico/examples/poa/account-2/account
 doc/mico/examples/poa/account-2/account.idl
 doc/mico/examples/poa/account-2/client.cc
 doc/mico/examples/poa/account-2/server.cc
+doc/mico/examples/poa/account-3/Makefile
+doc/mico/examples/poa/account-3/account
+doc/mico/examples/poa/account-3/account.idl
+doc/mico/examples/poa/account-3/client.cc
+doc/mico/examples/poa/account-3/server.cc
 doc/mico/examples/poa/hello-1/Makefile
 doc/mico/examples/poa/hello-1/client.cc
 doc/mico/examples/poa/hello-1/hello
@@ -264,6 +269,7 @@ doc/mico/examples/stream-bench/stream_server.cc
 doc/mico/examples/stream-sound/Makefile
 doc/mico/examples/stream-sound/client.cc
 doc/mico/examples/stream-sound/server.cc
+doc/mico/examples/stream-sound/sound.h
 doc/mico/examples/x11/Makefile
 doc/mico/examples/x11/client.cc
 doc/mico/examples/x11/hello.idl
@@ -397,14 +403,23 @@ include/ministl/set.h
 include/ministl/string
 include/ministl/vector
 include/ministl/vector.h
-lib/libmico2.2.1.a
-lib/libmicoaux2.2.1.a
-lib/libmicocoss2.2.1.a
-lib/libmicogtk2.2.1.a
-lib/libmicoqt2.2.1.a
-lib/libmicox2.2.1.a
+lib/libmico2.2.3.a
+lib/libmicoaux2.2.3.a
+lib/libmicoaux2.2.3.so.1.0
+lib/libmicocoss2.2.3.a
+lib/libmicoqt2.2.3.a
+lib/libmicoqt2.2.3.so.1.0
+lib/libmicox2.2.3.a
+lib/libmicox2.2.3.so.1.0
 lib/mico-setup.csh
 lib/mico-setup.sh
+man/man1/idl.1.gz
+man/man1/imr.1.gz
+man/man1/nsadmin.1.gz
+man/man5/micorc.5.gz
+man/man8/ird.8.gz
+man/man8/micod.8.gz
+man/man8/nsd.8.gz
 @dirrm include/ministl
 @dirrm include/mico
 @dirrm doc/mico/examples/x11
@@ -427,6 +442,7 @@ lib/mico-setup.sh
 @dirrm doc/mico/examples/poa/inherit
 @dirrm doc/mico/examples/poa/hello-2
 @dirrm doc/mico/examples/poa/hello-1
+@dirrm doc/mico/examples/poa/account-3
 @dirrm doc/mico/examples/poa/account-2
 @dirrm doc/mico/examples/poa/account-1
 @dirrm doc/mico/examples/poa
