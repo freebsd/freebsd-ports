@@ -3,12 +3,12 @@
 # Date created:				5 September 1996
 # Whom:	      Bill Fenner <fenner@FreeBSD.ORG>
 #
-#   $Id: Makefile,v 1.9 1998/08/07 23:56:36 asami Exp $
+#   $Id: Makefile,v 1.10 1998/08/27 18:42:42 fenner Exp $
 #
 
 DISTNAME=	nte-1.5a29
 CATEGORIES=	mbone tk80
-MASTER_SITES=	ftp://cs.ucl.ac.uk/mice/nte/1.5a29/
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.5a29/
 
 MAINTAINER=	fenner@FreeBSD.org
 
