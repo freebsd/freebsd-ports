@@ -1,0 +1,8 @@
+/************************************************************************
+Remember: 
+          rename %%PREFIX%%/etc/bitlbee/bitlbee.conf.orig 
+              to %%PREFIX%%/etc/bitlbee/bitlbee.conf ,
+          rename %%PREFIX%%/etc/bitlbee/motd.txt.orig 
+              to %%PREFIX%%/etc/bitlbee/motd.txt
+          and modify them.
+*************************************************************************/
