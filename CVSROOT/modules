@@ -5117,9 +5117,9 @@ openldap21-server	ports/net/openldap21-server
 openldap22-server	ports/net/openldap22-server
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
-openoffice	ports/editors/openoffice
+openoffice-1.0	ports/editors/openoffice-1.0
+openoffice-1.1	ports/editors/openoffice-1.1
 openoffice-ar	ports/editors/openoffice-ar
-openoffice-devel	ports/editors/openoffice-devel
 openoffice-dk	ports/editors/openoffice-dk
 openoffice-es	ports/editors/openoffice-es
 openoffice-gr	ports/editors/openoffice-gr
