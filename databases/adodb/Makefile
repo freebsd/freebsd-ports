@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	adodb
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	Database library for PHP
 
 USE_PHP=	yes

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Apache-Compress
 # Date created:				Sep 09 2003
-# Whom:	      				Martin Matuska <martin@tradex.sk>
+# Whom:	      				Martin Matuska <martin@matuska.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache/KWILLIAMS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	Auto-compress web files with Gzip
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libarchive
 # Date created:		11 Jun 2004
-# Whom:			Martin Matuska <martin@tradex.sk>
+# Whom:			Martin Matuska <martin@matuska.org>
 #
 # $FreeBSD$
 
@@ -10,7 +10,7 @@ PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 
-MAINTAINER=	martin@tradex.sk
+MAINTAINER=	martin@matuska.org
 COMMENT=	New tar archiver from FreeBSD 5.3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarchive.a:${PORTSDIR}/archivers/libarchive
