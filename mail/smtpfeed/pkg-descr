@@ -15,3 +15,5 @@ a delivery is not influenced by preceding delivery: DNS query and
 SMTP delivery par destination should be processed in parallel.
 Smtpfeed is the SMTP delivery agent for sendmail implemented with this
 idea.
+
+WWW: http://www.kyoto.wide.ad.jp/smtpfeed/
