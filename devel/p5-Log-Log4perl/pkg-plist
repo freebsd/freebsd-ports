@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Log/Log4perl.pm
 %%SITE_PERL%%/Log/Log4perl/Appender.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/Buffer.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/DBI.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/File.pm
 %%SITE_PERL%%/Log/Log4perl/Appender/Limit.pm
