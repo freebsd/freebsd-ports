@@ -17,7 +17,8 @@ COMMENT=	Audio player for the Gnome 2 desktop environment
 LIB_DEPENDS=	musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
 		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		FLAC.5:${PORTSDIR}/audio/flac \
-		mad.1:${PORTSDIR}/audio/mad
+		mad.1:${PORTSDIR}/audio/mad \
+		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
