@@ -254,6 +254,7 @@
     SUBDIR += ruby-pcap
     SUBDIR += ruby-snmp
     SUBDIR += ruby-uri
+    SUBDIR += ruby-xmlrpc
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-devel

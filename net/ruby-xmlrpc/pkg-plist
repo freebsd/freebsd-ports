@@ -1,0 +1,28 @@
+%%RUBY_SITELIBDIR%%/xmlrpc/GServer.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/base64.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/client.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/create.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/datetime.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/httpserver.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/parser.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/server.rb
+@dirrm %%RUBY_SITELIBDIR%%/xmlrpc
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/call.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/xml.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/validator/validator1.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/validator
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ToDo
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/base64.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/client.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/datetime.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/howto.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/howto.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/index.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/rubyStyle.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/server.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlrpc
