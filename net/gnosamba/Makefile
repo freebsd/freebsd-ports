@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.open-systems.com/gtksamba/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gnomeui.2:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

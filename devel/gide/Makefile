@@ -14,7 +14,7 @@ MASTER_SITES=	http://gide.gdev.net/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui.2:${PORTSDIR}/x11/gnomelibs \
+LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs \
 		guile.4:${PORTSDIR}/lang/guile
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
