@@ -30,6 +30,65 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
+    <topic>racoon remote denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040407b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When racoon receives an IKE message with an incorrectly
+	  constructed Generic Payload Header, it may behave erratically,
+	  going into a tight loop and dropping connections.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0392</cvename>
+      <url>http://orange.kame.net/dev/query-pr.cgi?pr=555</url>
+    </references>
+    <dates>
+      <discovery>2003-12-03</discovery>
+      <entry>2004-04-07</entry>
+      <modified>2004-04-13</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="322d4ff6-85c3-11d8-a41f-0020ed76ef5a">
+    <topic>Midnight Commander buffer overflow during symlink resolution</topic>
+    <affects>
+      <package>
+	<name>mc</name>
+	<range><lt>4.6.0_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Midnight Commander uses a fixed sized stack buffer while
+	  resolving symbolic links within file archives (tar or cpio).
+	  If an attacker can cause a user to process a specially
+	  crafted file archive with Midnight Commander,
+	  the attacker may be able to obtain the privileges of the
+	  target user.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-1023</cvename>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</url>
+      <!--
+      <mlist msgid="E1A0LbX-000NPk-00.alienhard-mail-ru@f9.mail.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</mlist>
+      -->
+      <bid>8658</bid>
+    </references>
+    <dates>
+      <discovery>2003-09-19</discovery>
+      <entry>2004-04-03</entry>
+      <modified>2004-04-13</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="7229d900-88af-11d8-90d1-0020ed76ef5a">
     <topic>mksnap_ffs clears file system options</topic>
     <affects>
@@ -178,32 +237,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-  <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
-    <topic>racoon remote denial of service vulnerability</topic>
-    <affects>
-      <package>
-	<name>racoon</name>
-	<range><lt>20040407b</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>When racoon receives an IKE message with an incorrectly
-	  constructed Generic Payload Header, it may behave erratically,
-	  going into a tight loop and dropping connections.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0392</cvename>
-      <url>http://orange.kame.net/dev/query-pr.cgi?pr=555</url>
-    </references>
-    <dates>
-      <discovery>2003-12-03</discovery>
-      <entry>2004-04-07</entry>
-      <modified>2004-04-13</modified>
-    </dates>
-  </vuln>
-
   <vuln vid="d8769838-8814-11d8-90d1-0020ed76ef5a">
     <topic>racoon fails to verify signature during Phase 1</topic>
     <affects>
@@ -310,39 +343,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <discovery>2004-03-04</discovery>
       <entry>2004-03-28</entry>
       <modified>2004-04-05</modified>
-    </dates>
-  </vuln>
-
-  <vuln vid="322d4ff6-85c3-11d8-a41f-0020ed76ef5a">
-    <topic>Midnight Commander buffer overflow during symlink resolution</topic>
-    <affects>
-      <package>
-	<name>mc</name>
-	<range><lt>4.6.0_9</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Midnight Commander uses a fixed sized stack buffer while
-	  resolving symbolic links within file archives (tar or cpio).
-	  If an attacker can cause a user to process a specially
-	  crafted file archive with Midnight Commander,
-	  the attacker may be able to obtain the privileges of the
-	  target user.</p>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2003-1023</cvename>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</url>
-      <!--
-      <mlist msgid="E1A0LbX-000NPk-00.alienhard-mail-ru@f9.mail.ru">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=106399528518704</mlist>
-      -->
-      <bid>8658</bid>
-    </references>
-    <dates>
-      <discovery>2003-09-19</discovery>
-      <entry>2004-04-03</entry>
-      <modified>2004-04-13</modified>
     </dates>
   </vuln>
 
