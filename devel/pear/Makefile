@@ -11,7 +11,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/tarballs/
 
-MAINTAINER=	thierry@thomas.as
+MAINTAINER=	thierry@pompo.net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
