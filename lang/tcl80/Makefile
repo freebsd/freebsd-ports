@@ -3,24 +3,24 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1998/11/14 09:43:19 asami Exp $
+# $Id: Makefile,v 1.10 1998/12/13 08:49:05 asami Exp $
 #
 
-DISTNAME=	tcl8.0p2
-PKGNAME=	tcl-8.0.2
+DISTNAME=	tcl8.0.4
+PKGNAME=	tcl-8.0.4
 CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 MAINTAINER=	jkh@freebsd.org
 
-WRKSRC=		${WRKDIR}/tcl8.0/unix
+WRKSRC=		${WRKDIR}/tcl8.0.4/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 PKGINSTALL=	${PKGDIR}/INSTALL.tclsh
 
 SHLIB_MAJOR=	1
-SHLIB_MINOR=	2
+SHLIB_MINOR=	4
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
 

@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Tue Nov 25 10:31:41 1997
-+++ Makefile.in	Thu Sep 17 17:29:28 1998
++++ Makefile.in		Mon Nov 30 16:28:20 1998
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -37,8 +37,8 @@
  
 +libtcl80.a: ${OBJS}
 +	rm -f libtcl80.a
-+	ar cr libtcl80.a ${OBJS}	
-+	$(RANLIB) libtcl80.a
++	ar cr libtcl80.a ${OBJS}
++	ranlib libtcl80.a
 +
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
