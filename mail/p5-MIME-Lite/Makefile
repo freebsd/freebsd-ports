@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MIME-Lite
-PORTVERSION=	2.117
+PORTVERSION=	3.01
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
@@ -17,7 +17,6 @@ COMMENT=	A simple interface for creating (not parsing!) MIME messages
 
 PERL_CONFIGURE=	YES
 
-MAN3=		MIME::Lite.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		MIME::Lite.3 MIME::changes.3
 
 .include <bsd.port.mk>
