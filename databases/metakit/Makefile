@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metakit
-PORTVERSION=	2.4.9
+PORTVERSION=	2.4.9.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
