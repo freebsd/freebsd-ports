@@ -71,6 +71,7 @@
     SUBDIR += mysql41-client
     SUBDIR += mysql41-server
     SUBDIR += mysql_last_value
+    SUBDIR += mysqlcc
     SUBDIR += mysqlman
     SUBDIR += mysqltcl
     SUBDIR += mytop
