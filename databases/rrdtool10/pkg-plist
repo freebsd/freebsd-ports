@@ -19,6 +19,15 @@ share/examples/rrdtool/trytime/trytime.c
 share/examples/rrdtool/trytime/README
 share/examples/rrdtool/rrdproc/rrdproc.c
 share/examples/rrdtool/rrdproc/README
+share/examples/rrdtool/rrdlastds/README
+share/examples/rrdtool/rrdlastds/rrdlastds.pl
+share/examples/rrdtool/add_ds/add_ds.pl
+share/examples/rrdtool/add_ds/batch.pl
+share/examples/rrdtool/add_ds/README
+share/examples/rrdtool/killspike/killspike.pl
+share/examples/rrdtool/killspike/README
+share/examples/rrdtool/rrdfetchnames/rrdfetchnames.pl
+share/examples/rrdtool/rrdfetchnames/README
 share/examples/rrdtool/README
 share/doc/rrdtool/rrdtool.pod
 share/doc/rrdtool/rrdlast.pod
@@ -80,6 +89,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 @dirrm share/examples/rrdtool/trytime
 @dirrm share/examples/rrdtool/rrdproc
 @dirrm share/examples/rrdtool/rrd-file-icon
+@dirrm share/examples/rrdtool/add_ds
+@dirrm share/examples/rrdtool/killspike
+@dirrm share/examples/rrdtool/rrdfetchnames
+@dirrm share/examples/rrdtool/rrdlastds
 @dirrm share/examples/rrdtool
 @dirrm share/doc/rrdtool/html
 @dirrm share/doc/rrdtool
