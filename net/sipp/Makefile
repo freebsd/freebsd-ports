@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	sipp
-
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	jesper@jdn.dk
@@ -20,6 +19,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha - patch for call.cpp needed"
+.endif
+
 pre-install:
 	@${CP} ${FILESDIR}/${MAN1} ${WRKSRC}/
 
@@ -27,4 +32,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sipp.1 ${PREFIX}/man/man1/sipp.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
