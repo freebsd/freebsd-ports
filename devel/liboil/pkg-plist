@@ -3,7 +3,10 @@ include/liboil-%%VERSION%%/liboil/liboilcpu.h
 include/liboil-%%VERSION%%/liboil/liboildebug.h
 include/liboil-%%VERSION%%/liboil/liboilfuncs.h
 include/liboil-%%VERSION%%/liboil/liboilfunction.h
+include/liboil-%%VERSION%%/liboil/liboilgcc.h
+include/liboil-%%VERSION%%/liboil/liboilparameter.h
 include/liboil-%%VERSION%%/liboil/liboilprototype.h
+include/liboil-%%VERSION%%/liboil/liboilrandom.h
 include/liboil-%%VERSION%%/liboil/liboiltypes.h
 lib/liboil-%%VERSION%%.a
 lib/liboil-%%VERSION%%.so
@@ -12,5 +15,28 @@ lib/liboiltmp1.a
 lib/liboiltmp1.so
 lib/liboiltmp1.so.0
 libdata/pkgconfig/liboil-%%VERSION%%.pc
+share/gtk-doc/html/liboil/ch01.html
+share/gtk-doc/html/liboil/ch02.html
+share/gtk-doc/html/liboil/home.png
+share/gtk-doc/html/liboil/index.html
+share/gtk-doc/html/liboil/index.sgml
+share/gtk-doc/html/liboil/left.png
+share/gtk-doc/html/liboil/liboil-OilFunction.html
+share/gtk-doc/html/liboil/liboil-liboil.html
+share/gtk-doc/html/liboil/liboil-liboilcpu.html
+share/gtk-doc/html/liboil/liboil-liboildebug.html
+share/gtk-doc/html/liboil/liboil-liboilfuncs-doc.html
+share/gtk-doc/html/liboil/liboil-liboilparameter.html
+share/gtk-doc/html/liboil/liboil-liboilprofile.html
+share/gtk-doc/html/liboil/liboil-liboilprototype.html
+share/gtk-doc/html/liboil/liboil-liboilrandom.html
+share/gtk-doc/html/liboil/liboil-liboiltest.html
+share/gtk-doc/html/liboil/liboil.devhelp
+share/gtk-doc/html/liboil/right.png
+share/gtk-doc/html/liboil/style.css
+share/gtk-doc/html/liboil/up.png
+@dirrm share/gtk-doc/html/liboil
+@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
 @dirrm include/liboil-%%VERSION%%/liboil
 @dirrm include/liboil-%%VERSION%%
