@@ -499,10 +499,10 @@ do-build:
 
 pre-install:
 	@${CP} ${FILESDIR}/oo_setup.resp \
-	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/
+		${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
-	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
-	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
+			-e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' \
+			${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
 	@${MKDIR} -p ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
@@ -529,13 +529,19 @@ install-user:
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/openoffice
-	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKDIR}/openoffice
-	@${SED} -i orig -e 's#%%LANG%%#${USE_LANG}#g' ${WRKDIR}/openoffice
-	@${SED} -i orig -e 's#%%BUILD_NR%%#${BUILD_NR}#g' ${WRKDIR}/openoffice
-	@${SED} -i orig -e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' ${WRKDIR}/openoffice
-	@${SED} -i orig -e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' ${WRKDIR}/openoffice
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice-${RELEASE_NR}
+	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
+	@${CP} ${FILESDIR}/freebsd-local.sh ${WRKDIR}/
+	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
+			-e 's#%%LANG%%#${USE_LANG}#g' \
+			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
+			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			-e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' \
+			${WRKDIR}/openoffice \
+			${WRKDIR}/freebsd-local.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice \
+		${PREFIX}/bin/openoffice-${RELEASE_NR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/freebsd-local.sh \
+		${PREFIX}/${INSTALLATION_BASEDIR}/freebsd-local.sh
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
