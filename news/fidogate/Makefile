@@ -7,6 +7,7 @@
 
 PORTNAME=	fidogate
 PORTVERSION=	4.4.9
+PORTREVISION=	1
 CATEGORIES=	news mail
 MASTER_SITES=	ftp://ftp.fidogate.org/pub/fidogate/ \
 		ftp://ftp.fu-berlin.de/unix/news/fidogate/ \
@@ -31,11 +32,38 @@ DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
+FIXME=		src/common/aliases.c src/common/binkley.c \
+		src/common/config.c src/common/crc32.c \
+		src/common/file.c src/common/flo.c \
+		src/common/fopen.c src/common/hosts.c \
+		src/common/lock.c src/common/log.c \
+		src/common/mail.c src/common/message.c \
+		src/common/outpkt.c src/common/packet.c \
+		src/common/routing.c src/common/sequencer.c \
+		src/common/tick.c src/charset/charset.c \
+		src/areafix/ftnaf.c src/areafix/areafix.c \
+		src/areafix/ftnafmail.c src/areafix/ftnafpkt.c \
+		src/areafix/ftnafutil.c src/ffx/ffx.c \
+		src/ffx/ffxqt.c src/gate/ftn2rfc.c \
+		src/gate/ftnin.c src/gate/rfc2ftn.c \
+		src/gate/ftnmail.c src/tick/ftnhatch.c \
+		src/tick/ftntick.c src/toss/ftn2ftn.c \
+		src/toss/ftnexpire.c src/toss/ftnpack.c \
+		src/toss/ftnroute.c src/toss/ftntoss.c \
+		src/toss/history.c src/util/ftnlog.c \
+		src/util/ftnflo.c
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 .endif
+
+post-patch:
+.for i in ${FIXME}
+	${PERL5} -pi -e "s=([	 ])log[(]=\\1log_fg(=" ${WRKSRC}/${i}
+	@grep "log_fg" ${WRKSRC}/${i}
+.endfor
 
 pre-configure:
 	@${PERL5} -pi -e "s=.{PREFIX}=${PREFIX}=g" ${WRKSRC}/config.make
