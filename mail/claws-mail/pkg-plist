@@ -18,10 +18,12 @@ etc/sylprint.rc.example
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-1.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-2.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq-4.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/en/sylpheed-faq.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-1.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-2.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-3.html
+%%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq-4.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/es/sylpheed-faq.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/fr/sylpheed-faq-1.html
 %%PORTDOCS%%share/doc/sylpheed-claws/faq/fr/sylpheed-faq-2.html
@@ -65,6 +67,7 @@ etc/sylprint.rc.example
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-19.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-2.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-20.html
+%%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-21.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-3.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-4.html
 %%PORTDOCS%%share/doc/sylpheed-claws/manual/en/sylpheed-5.html
@@ -148,13 +151,19 @@ share/locale/nl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pl/LC_MESSAGES/sylpheed-claws.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ru/LC_MESSAGES/sylpheed-claws.mo
+share/locale/sr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
 share/pixmaps/sylpheed-claws.png
+share/sylpheed-claws/OOo2sylpheed.pl
+share/sylpheed-claws/calypso_convert.pl
 share/sylpheed-claws/eud2gc.py
 share/sylpheed-claws/filter_conv.pl
 share/sylpheed-claws/gif2xface.pl
+share/sylpheed-claws/gpg-sign-syl
+share/sylpheed-claws/kmail2sylpheed.pl
 share/sylpheed-claws/ldif-to-xml.py
 share/sylpheed-claws/newscache_clean.pl
+share/sylpheed-claws/outlook2sylpheed.pl
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/close.xpm
@@ -511,6 +520,8 @@ share/sylpheed-claws/newscache_clean.pl
 %%THEMES%%share/sylpheed-claws/themes/tml02b/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02b/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02b/vcard.xpm
+share/sylpheed-claws/update-po
+share/sylpheed-claws/uudec
 %%THEMES%%@dirrm share/sylpheed-claws/themes/tml02b
 %%THEMES%%@dirrm share/sylpheed-claws/themes/stw
 %%THEMES%%@dirrm share/sylpheed-claws/themes/black

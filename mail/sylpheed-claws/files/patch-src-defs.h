@@ -1,6 +1,6 @@
---- src/defs.h.orig	Tue Mar 19 08:44:45 2002
-+++ src/defs.h	Tue Apr 30 14:53:47 2002
-@@ -69,8 +69,8 @@
+--- src/defs.h.orig	Wed Aug 28 11:43:59 2002
++++ src/defs.h	Sun Sep  1 03:01:59 2002
+@@ -70,8 +70,8 @@
  #define MARK_VERSION		2
  
  #define DEFAULT_SIGNATURE	".signature"
@@ -11,7 +11,7 @@
  /* #define DEFAULT_INC_PATH	"/usr/bin/imget" */
  /* #define DEFAULT_INC_PROGRAM	"imget" */
  #define DEFAULT_SENDMAIL_CMD	"/usr/sbin/sendmail -t"
-@@ -78,7 +78,7 @@
+@@ -79,7 +79,7 @@
  #ifdef _PATH_MAILDIR
  #  define DEFAULT_SPOOL_PATH	_PATH_MAILDIR
  #else
