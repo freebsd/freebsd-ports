@@ -7209,6 +7209,7 @@ p5-SDL		ports/devel/p5-SDL
 p5-SETI-Stats	ports/astro/p5-SETI-Stats
 p5-SHA		ports/security/p5-SHA
 p5-SNMP		ports/net-mgmt/p5-SNMP
+p5-SNMP-Info	ports/net-mgmt/p5-SNMP-Info
 p5-SNMP-MIB-Compiler	ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-SNMP-Util	ports/net-mgmt/p5-SNMP-Util
 p5-SNMP_Session	ports/net-mgmt/p5-SNMP_Session
