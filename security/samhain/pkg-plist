@@ -9,8 +9,8 @@
 %%SAMHAIN%%etc/samhainrc.sample
 %%SAMHAIN%%@unexec rmdir /var/lib/samhain 2>/dev/null || true
 %%SETPWD%%sbin/samhain_setpwd
-%%PORTDOCS%%share/doc/samhain/MANUAL-1_7.ps
-%%PORTDOCS%%share/doc/samhain/MANUAL-1_7.html.tar
-%%PORTDOCS%%share/doc/samhain/HOWTO-client+server.html
-%%PORTDOCS%%share/doc/samhain/HOWTO-samhain+GnuPG.html
-%%PORTDOCS%%@dirrm share/doc/samhain
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL-1_8.ps
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL-1_8.html.tar
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO-client+server.html
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO-samhain+GnuPG.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
