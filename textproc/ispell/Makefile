@@ -4,7 +4,7 @@ MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
 
 # French
-#EXTRA_DICT=	   francais-IREQ-1.2.tar.gz
+#EXTRA_DICT=	   francais-IREQ-1.3.tar.gz
 #MASTER_SITES+=    ftp://ftp.ireq-robot.hydro.qc.ca/pub/ispell/
 
 DISTFILES+=	   ${EXTRA_DICT}
