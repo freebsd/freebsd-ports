@@ -13,20 +13,11 @@ PKGNAMEPREFIX=	jabber-
 MAINTAINER=	martijn@pacno.net
 COMMENT=	Jabber MSN-Transport module
 
-BROKEN=		"Does not build"
-
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
 USE_GMAKE=	yes
-USE_AUTOHEADER=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS+=	--include-deps --add-missing --foreign
-USE_AUTOMAKE_VER=	14
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jabberd=${PREFIX}/include/jabber
-
-pre-configure:
-	@cd ${WRKSRC} ; \
-	aclocal14 && autoheader
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/msntrans.so ${PREFIX}/lib/jabber/
