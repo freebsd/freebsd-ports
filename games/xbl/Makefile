@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xbl
-PORTVERSION=	1.0j
-PORTREVISION=	1
+PORTVERSION=	1.0k
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
