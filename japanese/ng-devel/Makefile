@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	ng
-PORTVERSION=	1.4
-CATEGORIES=     japanese editors
-MASTER_SITES=   http://ha3.seikyou.ne.jp/home/amura/archives/ng/
+PORTVERSION=	1.4.2.1
+CATEGORIES=	japanese editors
+MASTER_SITES=	http://ha3.seikyou.ne.jp/home/amura/archives/ng/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=     ginga@athena.club.ne.jp
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}-${PORTVERSION:R}-line.patch
 
-WRKSRC=         ${WRKDIR}/ng
+MAINTAINER=	ginga@athena.club.ne.jp
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-ltermcap"
 ALL_TARGET=	ng
 
+PORTDOCS=	CHANGES.doc CHANGES.new Ng.FAQ Ng.doc Ng.ref Ng.tut \
+		README.Ng README.SKG
+
 post-patch:
-	@(cd ${WRKSRC}; ${LN} -s sys/bsd/Makefile . )
+	@(cd ${WRKSRC}; ${LN} -sf sys/bsd/Makefile . )
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin/
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ng ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ja/ng
-	${INSTALL_DATA} ${WRKSRC}/docs/Ng.FAQ ${PREFIX}/share/doc/ja/ng/Ng.FAQ.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/Ng.doc ${PREFIX}/share/doc/ja/ng/Ng.doc.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/Ng.ref ${PREFIX}/share/doc/ja/ng/Ng.ref.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/Ng.tut ${PREFIX}/share/doc/ja/ng/Ng.tut.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/README.Ng ${PREFIX}/share/doc/ja/ng/README.Ng.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/README.SKG ${PREFIX}/share/doc/ja/ng/README.SKG.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/CHANGES.new ${PREFIX}/share/doc/ja/ng/CHANGES.new.euc-jp
-	${INSTALL_DATA} ${WRKSRC}/docs/CHANGES.doc ${PREFIX}/share/doc/ja/ng/CHANGES.doc.euc-jp
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${PREFIX}/share/doc/ja/ng/${file}.euc-jp
+.endfor
 .endif
 
 .include <bsd.port.mk>
