@@ -1,6 +1,7 @@
 bin/dbiproxy
 bin/dbish
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/DBI.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/ADO.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/ExampleP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/NullP.pm
@@ -12,6 +13,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Shell.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Win32/DBIODBC.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DBI.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DBI.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DBIXS.h
