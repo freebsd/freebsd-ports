@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.17 1999/03/09 20:35:46 ejc Exp $
+# $Id: Makefile,v 1.18 1999/04/20 03:36:02 jseger Exp $
 #
 
 DISTNAME=	OB-3.1.2
@@ -25,8 +25,7 @@ LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsdelf${OSREL}/egcs-2.91.62/libs
 LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/egcs-2.91.62/libstdc++.a
 .endif
 
-BUILD_DEPENDS=  eg++:${PORTSDIR}/lang/egcs \
-		eg++:${PORTSDIR}/lang/egcs \
+BUILD_DEPENDS=  eg++:${PORTSDIR}/lang/egcs
 CONFIGURE_ENV=	CXX=eg++ CXXFLAGS="-O -pipe"
 .endif
 
