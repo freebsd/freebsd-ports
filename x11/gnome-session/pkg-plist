@@ -18,6 +18,7 @@ share/locale/az/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/be/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bs/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/bn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-session-2.0.mo
@@ -43,6 +44,7 @@ share/locale/ko/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/ml/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-session-2.0.mo
@@ -55,9 +57,9 @@ share/locale/ro/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ru/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sk/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sl/LC_MESSAGES/gnome-session-2.0.mo
-share/locale/sp/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-session-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-session-2.0.mo

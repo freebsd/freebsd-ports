@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-panel/2.2
@@ -14,7 +14,7 @@ DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Panel component for the GNOME 2.0 Desktop
+COMMENT=	Panel component for the GNOME 2 Desktop
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -27,7 +27,7 @@ USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
 		--with-kde-docdir=${LOCALBASE}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gnome-panel.1 gnome-panel-preferences.1
 
