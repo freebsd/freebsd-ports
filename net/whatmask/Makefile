@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	whatmask
 # Date created:			May 20, 2001
 # Whom:				ijliao
@@ -9,7 +8,7 @@
 PORTNAME=	whatmask
 PORTVERSION=	1.2
 CATEGORIES=	net
-MASTER_SITES=	http://moog.laffeycomputer.com:8080/
+MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily convert between three common subnet mask notations
