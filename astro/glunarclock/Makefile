@@ -17,7 +17,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gdk-pixbuf libpanel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -26,11 +27,8 @@ MAN1=		glunarclock.1
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
 
-pre-patch:
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>
