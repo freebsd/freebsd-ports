@@ -8,8 +8,8 @@
 #
 # $FreeBSD$
 
-APACHE= 	1.3.6
-APACHE-SSL=	1.35
+APACHE= 	1.3.9
+APACHE-SSL=	1.37
 
 DISTNAME=       apache_${APACHE}
 PKGNAME=        apache+ssl-${APACHE}+${APACHE-SSL}
@@ -28,10 +28,7 @@ MASTER_SITES=   ftp://www.apache.org/dist/ \
 		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
 		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
 		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
-		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
-		http://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
-		http://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		http://www.asap.cs.nott.ac.uk/SSL/
+		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/
 
 Y2K=		http://www.apache-ssl.org/#Y2K
 
@@ -39,6 +36,8 @@ DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
 MAINTAINER=     adam@algroup.co.uk
+
+BUILD_DEPENDS=  openssl:${PORTSDIR}/security/openssl
 
 BUILD_DEPENDS=	${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
 		${PREFIX}/lib/libssl.a:${PORTSDIR}/security/openssl
@@ -72,6 +71,9 @@ CFLAGS+= -O6 -fomit-frame-pointer
 .endif
 
 CONFIGURE_ENV= OPTIM='${OPTIM}'
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+MAKE_ENV+=EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
+.endif
 
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
@@ -95,9 +97,6 @@ pre-configure:
 	@${ECHO} correctly.
 	@${ECHO} 
 	@${ECHO} 
-.endif
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-CONFIGURE_ENV=LDFLAGS="${LDFLAGS} -L/usr/local/lib -lRSAglue -lrsaref"
 .endif
 
 certificate:
