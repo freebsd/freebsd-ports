@@ -1,35 +1,51 @@
---- configure.orig	Sun Dec  6 21:47:31 1998
-+++ configure	Fri Aug 27 10:11:48 1999
-@@ -1097,21 +1097,19 @@
- #
- # Generate the library names using the Tcl macros.
- #
--SHLIB_SUFFIX=${TCL_SHLIB_SUFFIX}
-+TCL_STLIB_NAME=libtcl80.a
-+TK_STLIB_NAME=libtk80.a
+--- configure.orig	Sun Feb  6 18:54:02 2000
++++ configure	Thu Jul 13 14:29:54 2000
+@@ -2009,8 +2009,11 @@
+ 	    ;;
+ 	FreeBSD-*)
+ 	    # FreeBSD 3.* and greater have ELF.
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
++	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
++	    TCL_LIB_VERSIONS_OK=nodots
+-	    SHLIB_CFLAGS="-fpic"
++	    SHLIB_CFLAGS="-fPIC -DPIC"
+	    SHLIB_LD="ld -Bshareable -x"
+ 	    SHLIB_LD_LIBS=""
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
+@@ -2496,15 +2499,13 @@
  
--VERSION=$TCL_VERSION
--eval "TCL_STLIB_NAME=libtcl${TCL_UNSHARED_LIB_SUFFIX}"
-+TCLX_STLIB_NAME=libtclx804.a
-+TKX_STLIB_NAME=libtkx804.a
+ DBGX=${TCLX_DBGX}
+ VERSION=$TCLX_VERSION
+-eval "TCLX_STLIB_NAME=libtclx${UNSHARED_LIB_SUFFIX}"
+-eval "TCLX_SHLIB_NAME=libtclx${SHARED_LIB_SUFFIX}"
+-eval "TCLX_SHLIB_NAME=${TCLX_SHLIB_NAME}"
++TCLX_STLIB_NAME=libtclx82.a
++TCLX_SHLIB_NAME=libtclx82.so.1
  
--VERSION=$TK_VERSION
--eval "TK_STLIB_NAME=libtk${TCL_UNSHARED_LIB_SUFFIX}"
--
--VERSION=$TCLX_VERSION$TCL_DBGX
--eval "TCLX_STLIB_NAME=libtclx${TCL_UNSHARED_LIB_SUFFIX}"
--eval "TCLX_SHLIB_NAME=libtclx${TCL_SHARED_LIB_SUFFIX}"
--
--VERSION=$TKX_VERSION$TCL_DBGX
--eval "TKX_STLIB_NAME=libtkx${TCL_UNSHARED_LIB_SUFFIX}"
--eval "TKX_SHLIB_NAME=libtkx${TCL_SHARED_LIB_SUFFIX}"
-+if [ "$PORTOBJFORMAT" = "elf" ]; then
-+    TCLX_SHLIB_NAME=libtclx804.so.1
-+    TKX_SHLIB_NAME=libtkx804.so.1
-+else
-+    TCLX_SHLIB_NAME=libtclx804.so.1.4
-+    TKX_SHLIB_NAME=libtkx804.so.1.4
-+fi
+ DBGX=${TKX_DBGX}
+ VERSION=$TKX_VERSION
+-eval "TKX_STLIB_NAME=libtkx${UNSHARED_LIB_SUFFIX}"
+-eval "TKX_SHLIB_NAME=libtkx${SHARED_LIB_SUFFIX}"
+-eval "TKX_SHLIB_NAME=${TKX_SHLIB_NAME}"
++TKX_STLIB_NAME=libtkx82.a
++TKX_SHLIB_NAME=libtkx82.so.1
  
  #
  # Determine suffix to use for the object files for the shared library.
+@@ -4831,6 +4832,7 @@
+ s%@TCLX_FULL_VERSION@%$TCLX_FULL_VERSION%g
+ s%@TKX_VERSION@%$TKX_VERSION%g
+ s%@TKX_FULL_VERSION@%$TKX_FULL_VERSION%g
++s%@TCL_PREFIX@%$TCL_PREFIX%g
+ s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
+ s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
+ s%@TCL_LIB_FILE@%$TCL_LIB_FILE%g
+@@ -4851,6 +4853,7 @@
+ s%@TCL_STUB_LIB_SPEC@%$TCL_STUB_LIB_SPEC%g
+ s%@TCL_LIB_DIR@%$TCL_LIB_DIR%g
+ s%@TCL_LIBRARY_DIR@%$TCL_LIBRARY_DIR%g
++s%@TK_PREFIX@%$TK_PREFIX%g
+ s%@TK_BIN_DIR@%$TK_BIN_DIR%g
+ s%@TK_SRC_DIR@%$TK_SRC_DIR%g
+ s%@TK_LIB_FILE@%$TK_LIB_FILE%g

@@ -1,29 +1,38 @@
---- ../tk/unix/Makefile.in.orig	Sun Dec  6 21:47:30 1998
-+++ ../tk/unix/Makefile.in	Fri Aug 27 10:37:45 1999
-@@ -85,7 +85,7 @@
- # If a link fails, purge the executable, as some systems leave invalid
- # executables around.
+--- ../tk/unix/Makefile.in.orig	Sun Feb  6 18:54:01 2000
++++ ../tk/unix/Makefile.in	Thu Jul 13 15:35:36 2000
+@@ -81,7 +81,7 @@
  #
--all: wishx RUNTIME tktest
-+all: wishx RUNTIME
+ all: binaries libraries doc
  
- static: wishx.static tktest.static
+-binaries: wishx tktest
++binaries: wishx
+ 
+ libraries: RUNTIME
  
 @@ -112,6 +112,7 @@
  	${TCL_SHLIB_LD} -o ${TKX_SHLIB_NAME} ${SOBJS} \
- 	    ${TK_BUILD_LIB_SPEC} ${TCLX_BUILD_LIB_SPEC} \
- 	    ${TCL_BUILD_LIB_SPEC} ${TCL_SHLIB_LD_LIBS}
+ 	    ${TK_BUILD_STUB_LIB_SPEC} ${TCLX_BUILD_LIB_SPEC} \
+ 	    ${TCL_BUILD_STUB_LIB_SPEC} ${TCL_SHLIB_LD_LIBS}
 +	ln -sf ${TKX_SHLIB_NAME} `echo ${TKX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`
  
  hello:	hello.c
  	${CC} ${LD_SWITCHES} -o $@ hello.c ${STATIC_LIBS}
-@@ -223,9 +224,11 @@
+@@ -199,7 +200,7 @@
+ buildhelp:
+ 	rm -rf ${HELP_DIR} help help.tmp
+ 	mkdir ${HELP_DIR}
+-	${BLDMANHELP} ${TK_SRC_DIR}/doc ${TCLX_TOOLS_SRC_DIR}/tkmanpages \
++	${BLDMANHELP} ${TCLX_TOOLS_SRC_DIR}/tkmanpages \
+ 	    ${HELP_DIR} Tk.brf
+ 
+ #------------------------------------------------------------------------------
+@@ -227,9 +228,11 @@
  	    ${INSTCOPY} ${TKX_STLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TKX_INST_LIB}/${TKX_STLIB_NAME}; \
  	fi
 -	${INSTCOPY} tkxConfig.sh ${INSTALL_ROOT}${TKX_INST_LIB}
 +	${INSTCOPY} tkxConfig.sh ${INSTALL_ROOT}${TKX_INST_RUNTIME}
- 	if test "@BUILD_SHARED@" = "YES"; then \
+ 	if test "@SHARED_BUILD@" = "1"; then \
  	    ${INSTCOPY} ${TKX_SHLIB_NAME} ${INSTALL_ROOT}${TKX_INST_LIB} ;\
 +	    (cd ${INSTALL_ROOT}${TKX_INST_LIB} && \
 +		ln -sf ${TKX_SHLIB_NAME} `echo ${TKX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`) ;\

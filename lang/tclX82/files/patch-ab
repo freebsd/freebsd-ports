@@ -1,15 +1,15 @@
---- ../tcl/unix/Makefile.in.orig	Sun Dec  6 21:47:24 1998
-+++ ../tcl/unix/Makefile.in	Fri Aug 27 10:34:27 1999
-@@ -124,7 +124,7 @@
- # If a link fails, purge the executable, as some systems leave invalid
- # executables around.
+--- ../tcl/unix/Makefile.in.orig	Sun Feb  6 18:53:59 2000
++++ ../tcl/unix/Makefile.in	Thu Jul 13 15:35:23 2000
+@@ -131,7 +131,7 @@
  #
--all: tcl checkup RUNTIME tclXtest
-+all: tcl checkup RUNTIME
+ all: binaries libraries doc
  
- static:	tcl.static tclXtest.static
+-binaries: tcl checkup RUNTIME tclXtest
++binaries: tcl checkup RUNTIME
  
-@@ -152,6 +152,7 @@
+ libraries: tcl.tndx tcl.tlib tclx.tcl buildidx.tcl
+ 
+@@ -163,6 +163,7 @@
  	TCL_LIBRARY=${TCL_UNIX_DIR}/../library; export TCL_LIBRARY; \
  	LD_LIBRARY_PATH=${TCL_UNIX_DIR}:${LD_LIBRARY_PATH}; export LD_LIBRARY_PATH; \
  	${TCL_SHLIB_LD} -o ${TCLX_SHLIB_NAME} ${SOBJS} ${TCL_SHLIB_LD_LIBS}
@@ -17,22 +17,31 @@
  
  hello:	hello.c
  	${CC} ${LD_SWITCHES} -o $@ hello.c ${STATIC_LIBS}
-@@ -173,7 +174,7 @@
+@@ -184,7 +185,7 @@
  # unless we don't have them.
  #
  RUNTIME: tcl.tlib tcl.tndx tclx.tcl buildidx.tcl autoload.tcl help.tmp \
 -         dltest.tmp checkup
-+	 checkup
++         checkup
  
  tcl.tlib: ${TLIB_SRCS} autoload.tcl
  	-rm -f tcl.tlib tcl.tndx
-@@ -318,9 +319,11 @@
+@@ -306,7 +307,7 @@
+ buildhelp: tcl tcl.tndx
+ 	rm -rf ${HELP_DIR} help help.tmp
+ 	mkdir ${HELP_DIR}
+-	${BLDMANHELP} ${TCL_SRC_DIR}/doc ${TCLX_TOOLS_SRC_DIR}/tclmanpages \
++	${BLDMANHELP} ${TCLX_TOOLS_SRC_DIR}/tclmanpages \
+ 	    ${HELP_DIR} Tcl.brf
+ 	${RUNTCL} -c "buildhelp ${HELP_DIR} TclX.brf ${TCLX_DOC_DIR}/TclX.n"
+ 
+@@ -338,9 +339,11 @@
  	    ${INSTCOPY} ${TCLX_STLIB_NAME} ${INSTALL_ROOT}${TCLX_INST_LIB}; \
  	    ${RANLIB} ${INSTALL_ROOT}${TCLX_INST_LIB}/${TCLX_STLIB_NAME}; \
  	fi
 -	${INSTCOPY} tclxConfig.sh ${INSTALL_ROOT}${TCLX_INST_LIB}
 +	${INSTCOPY} tclxConfig.sh ${INSTALL_ROOT}${TCLX_INST_RUNTIME}
- 	if test "@BUILD_SHARED@" = "YES"; then \
+ 	if test "@SHARED_BUILD@" = "1"; then \
  	    ${INSTCOPY} ${TCLX_SHLIB_NAME} ${INSTALL_ROOT}${TCLX_INST_LIB} ;\
 +	    (cd ${INSTALL_ROOT}${TCLX_INST_LIB} && \
 +		ln -sf ${TCLX_SHLIB_NAME} `echo ${TCLX_SHLIB_NAME} | sed 's/\.so.*$$/.so/'`) ;\

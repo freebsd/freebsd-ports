@@ -3,11 +3,11 @@ bin/tclhelp
 bin/wishx
 include/tclExtend.h
 lib/libtclx%%TCLX_SHORT_VER%%.a
-lib/libtclx%%TCLX_SHORT_VER%%.so.1
 lib/libtclx%%TCLX_SHORT_VER%%.so
+lib/libtclx%%TCLX_SHORT_VER%%.so.1
 lib/libtkx%%TCLX_SHORT_VER%%.a
-lib/libtkx%%TCLX_SHORT_VER%%.so.1
 lib/libtkx%%TCLX_SHORT_VER%%.so
+lib/libtkx%%TCLX_SHORT_VER%%.so.1
 lib/tclX%%TCLX_LONG_VER%%/autoload.tcl
 lib/tclX%%TCLX_LONG_VER%%/buildidx.tcl
 lib/tclX%%TCLX_LONG_VER%%/help/Tcl.brf
@@ -18,6 +18,7 @@ lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/case
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/catch
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/commandloop
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/continue
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/dde
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/error
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/eval
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/control/exit
@@ -80,6 +81,8 @@ lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/read
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/read_file
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/readdir
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/recursive_glob
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/registry
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/resource
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/seek
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/select
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/sync
@@ -88,9 +91,11 @@ lib/tclX%%TCLX_LONG_VER%%/help/tcl/files/write_file
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan/scancontext
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan/scanfile
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan/scanmatch
-lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation/catclose
-lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation/catgets
-lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation/catopen
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intl/catclose
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intl/catgets
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intl/catopen
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intl/encoding
+lib/tclX%%TCLX_LONG_VER%%/help/tcl/intl/msgcat
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro/keyedlists
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro/syntax
 lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro/tclsh
@@ -216,6 +221,7 @@ lib/tkX%%TCLX_LONG_VER%%/help/tk/control/focus
 lib/tkX%%TCLX_LONG_VER%%/help/tk/control/font
 lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grab
 lib/tkX%%TCLX_LONG_VER%%/help/tk/control/grid
+lib/tkX%%TCLX_LONG_VER%%/help/tk/control/loadTk
 lib/tkX%%TCLX_LONG_VER%%/help/tk/control/lower
 lib/tkX%%TCLX_LONG_VER%%/help/tk/control/option
 lib/tkX%%TCLX_LONG_VER%%/help/tk/control/pack
@@ -268,7 +274,7 @@ lib/tkX%%TCLX_LONG_VER%%/tkxConfig.sh
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/events
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/files
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/filescan
-@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/internation
+@dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/intl
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/intro
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/keyedlists
 @dirrm lib/tclX%%TCLX_LONG_VER%%/help/tcl/libraries
