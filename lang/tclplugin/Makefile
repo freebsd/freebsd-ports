@@ -3,7 +3,7 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.11 1998/02/18 06:45:54 asami Exp $
+# $Id: Makefile,v 1.12 1998/07/03 23:06:51 steve Exp $
 #
 
 DISTNAME=	tclplug20-src
@@ -12,6 +12,8 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/plugin/
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 BUILD_DEPENDS=	netscape:${PORTSDIR}/www/netscape4-communicator
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape4-communicator
