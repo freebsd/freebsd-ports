@@ -3,14 +3,14 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.14 1996/12/01 01:23:15 obrien Exp $
+# $Id: Makefile,v 1.15 1996/12/03 03:27:44 asami Exp $
 #
 
-DISTNAME=	scotty-2.1.3
+DISTNAME=	scotty-2.1.5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 
-MAINTAINER=	gena@netvision.net.il
+MAINTAINER=	phk@freebsd.org
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
