@@ -1,16 +1,16 @@
 # New ports collection makefile for:    kaffe
-# Version required:     0.5p4
-# Date created:         18 September 1996
-# Whom:                 Mark Huizer <xaa@stack.urc.tue.nl>
+# Version required:     0.6.1
+# Date created:         25 December 1996
+# Whom:                 Mark Huizer <xaa@stack.nl>
 #
-# $Id: Makefile,v 1.11 1996/11/18 11:41:12 asami Exp $
+# $Id$
 #
 
-DISTNAME=	kaffe-0.5.5
-PKGNAME=	kaffe-0.5.5
+DISTNAME=	kaffe-0.6.1
+PKGNAME=	kaffe-0.6.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.sarc.city.ac.uk/pub/kaffe/ \
-		ftp://alterego.stack.urc.tue.nl/pub/kaffe/
+		ftp://alterego.stack.nl/pub/kaffe/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	xaa@stack.nl
