@@ -1,16 +1,12 @@
 bin/pfaedit
 bin/sfddiff
 bin/acorn2sfd
-include/uninameslist.h
 lib/libgdraw.la
 lib/libgdraw.so
 lib/libgdraw.so.1
 lib/libgunicode.la
 lib/libgunicode.so
 lib/libgunicode.so.2
-lib/libuninameslist.la
-lib/libuninameslist.so
-lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/AA-Comparison.html
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV-bm.png
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV.png
