@@ -1,4 +1,5 @@
 etc/gbConf.sh
+include/gb/gb-constants.h
 include/gb/gb-eval.h
 include/gb/gb-expr.h
 include/gb/gb-lex.h
@@ -10,6 +11,7 @@ include/gb/gb-statement.h
 include/gb/gb-value.h
 include/gb/gb.h
 include/gb/libgb.h
+include/gbrun/gbrun-collection.h
 include/gbrun/gbrun-eval.h
 include/gbrun/gbrun-file.h
 include/gbrun/gbrun-global.h
