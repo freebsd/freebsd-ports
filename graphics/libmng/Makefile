@@ -26,9 +26,8 @@ MAN3=		libmng.3
 MAN5=		mng.5 jng.5
 
 post-patch:
-.if exists(${PREFIX}/include/lcms.h)
-	${PERL} -pi -e 's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
-.endif
+	test ! -e ${PREFIX}/include/lcms.h || ${PERL} -pi -e \
+		's%lcms/lcms.h%lcms.h%' ${WRKSRC}/libmng_types.h
 
 post-install:
 	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 \
