@@ -40,7 +40,7 @@ do-build:
 
 do-install:
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && find * | ${CPIO} ${BINOWN}:${BINGRP} \
+	@ cd ${WRKSRC} && ${FIND} * | ${CPIO} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 post-install:

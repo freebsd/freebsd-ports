@@ -26,7 +26,7 @@ MAN3=		XML::Directory.3 XML::Directory::Apache.3 \
 
 
 pre-patch:
-		@find ${WRKSRC} -name "*.pm" | xargs ${PERL} -pi -e \
+		@${FIND} ${WRKSRC} -name "*.pm" | ${XARGS} ${PERL} -pi -e \
 		'$$package=$$1 if /^package\s+([^\s;]*);/; s!^require 5.005_62;!!; s!^use warnings;!!; s!^our\s+(\$$|@)(VERSION|ISA|EXPORT|EXPORT_OK)\s+=!$$1$${package}::$$2=!;'
 
 .include <bsd.port.pre.mk>

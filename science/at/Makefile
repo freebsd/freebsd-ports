@@ -23,7 +23,8 @@ do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/at
-	${INSTALL_PROGRAM} `find ${WRKSRC} -name \*.out -print` ${PREFIX}/libexec/at
+	${INSTALL_PROGRAM} `${FIND} ${WRKSRC} -name \*.out -print` \
+		${PREFIX}/libexec/at
 	${MKDIR} ${PREFIX}/share/examples/at
 	${CP} -rp ${WRKSRC}/tests/* ${PREFIX}/share/examples/at
 	${INSTALL_SCRIPT} ${WRKSRC}/at_init ${PREFIX}/share/examples/at

@@ -40,7 +40,7 @@ pre-install:
 	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 	${ECHO_CMD} etc/wb0.config >> ${PLIST}
-	for i in `find ${PREFIX}/share/wb0 -type f`; \
+	for i in `${FIND} ${PREFIX}/share/wb0 -type f`; \
 		do ${ECHO_CMD} share/wb0/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
 	${ECHO_CMD} @dirrm share/wb0 >> ${PLIST}

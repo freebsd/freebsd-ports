@@ -50,12 +50,12 @@ do-install:
 .endfor
 .for product in TAL ZTUtils
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPYTHONDIR}/${product}
-	@ cd ${WRKDIR}/${product} && find * \
+	@ cd ${WRKDIR}/${product} && ${FIND} * \
 	  | ${CPIO} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPYTHONDIR}/${product}/
 .endfor
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && find * \( -name examples -a -prune \) -o -print \
+	@ cd ${WRKSRC} && ${FIND} * \( -name examples -a -prune \) -o -print \
 	  | ${CPIO} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 	@ ${MKDIR} ${ZOPEBASEDIR}/import

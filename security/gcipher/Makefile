@@ -42,7 +42,7 @@ do-install:
 	(cd ${WRKSRC}/src; \
 	 ${INSTALL_SCRIPT} gcipher ${PREFIX}/bin/gcipher; \
 	 ${INSTALL_DATA} gcipher.desktop ${PREFIX}/share/gnome/applications; \
-	 for i in `find . -name '*.py' \
+	 for i in `${FIND} . -name '*.py' \
 		       -o -name '*.pyc' \
 		       -o -name '*.glade' \
 		       -o -name '*.gladep'`; do \
@@ -50,7 +50,7 @@ do-install:
 	 done)
 
 	(cd ${WRKSRC}/plugins; \
-	 for i in `find . -name '*.py' \
+	 for i in `${FIND} . -name '*.py' \
 		       -o -name '*.glade' \
 		       -o -name '*.gladep'`; do \
 		${INSTALL_DATA} "$$i" "${GCIPHER_PREFIX}/plugins/$$i"; \

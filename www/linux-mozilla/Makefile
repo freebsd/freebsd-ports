@@ -146,11 +146,11 @@ pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
 	${ECHO_CMD} "@unexec ${FIND} ${PREFIX}/lib/linux-mozilla/plugins -type l \
 		-exec ${RM} {} \;" >> ${PLIST}
-	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
+	cd ${WRKSRC}/bin; for i in `${FIND} * \! -type d | sort`; do \
 		${ECHO_CMD} lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \
-	for i in `find -d * -type d`; do \
+	for i in `${FIND} -d * -type d`; do \
 		${ECHO_CMD} @dirrm lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
 	${ECHO_CMD} lib/linux-mozilla/linkfarm >> ${PLIST}

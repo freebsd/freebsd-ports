@@ -21,8 +21,8 @@ USE_REINPLACE=	yes
 
 .if ${OSVERSION} >= 500014
 pre-patch:
-	@find ${WRKSRC} -name 'proc????.c' | xargs ${REINPLACE_CMD} -E -e \
-		's/kp_.?proc\.._/ki_/ ; s/pcred\.p_//'
+	@${FIND} ${WRKSRC} -name 'proc????.c' | ${XARGS} ${REINPLACE_CMD} -E \
+		-e 's/kp_.?proc\.._/ki_/ ; s/pcred\.p_//'
 .endif
 
 GNU_CONFIGURE=	yes

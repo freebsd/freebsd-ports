@@ -22,7 +22,7 @@ RESOURCE=	${PREFIX}/share/ghostscript/Resource
 do-install:
 	@${MKDIR} ${RESOURCE}/CIDFont
 	@${MKDIR} ${RESOURCE}/Font
-	@cd ${WRKSRC} && find . \! -name '.*' \
+	@cd ${WRKSRC} && ${FIND} . \! -name '.*' \
 		| cpio --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${RESOURCE}
 
 .include <bsd.port.mk>

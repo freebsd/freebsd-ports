@@ -23,7 +23,7 @@ USE_GMAKE=YES
 MAN1=xdvi.1 gsftopk.1
 
 pre-build:
-	(cd ${WRKSRC} ; find . -name '*.orig' -exec ${RM} -f {} \;)
+	(cd ${WRKSRC} ; ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
 
 do-install:
 	(cd ${WRKSRC}/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})

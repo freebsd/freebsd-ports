@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 .endif
 
 pre-patch:
-	${FIND} ${WRKSRC} -name '*.h' | xargs ${REINPLACE_CMD} \
+	${FIND} ${WRKSRC} -name '*.h' | ${XARGS} ${REINPLACE_CMD} \
 		's|IO->close()|if(IO) IO->close()|g'
 
 post-install:

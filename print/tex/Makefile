@@ -37,7 +37,7 @@ INFO=		kpathsea web2c
 MAKE_FLAGS=	fmts= all_mems=
 
 pre-configure:
-	cd ${WRKDIR} && find . -name \*.gz | xargs gunzip -f
+	cd ${WRKDIR} && ${FIND} . -name \*.gz | ${XARGS} gunzip -f
 
 post-configure:
 	@cd ${WRKSRC}/web2c; \

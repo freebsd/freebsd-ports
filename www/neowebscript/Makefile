@@ -31,11 +31,11 @@ EXTRACT_AFTER_ARGS:=| ${TAR} -xf - ${SUBDIRS:%=${PORTNAME}-${PORTVERSION}/%}
 post-patch:
 	# Replacing writeGIF with writePNG
 	${PERL} -pi -e 's/writeGIF/writePNG/g' \
-		`find ${WRKSRC}/.. -type f | xargs fgrep -l --mmap writeGIF`
+		`${FIND} ${WRKSRC}/.. -type f|${XARGS} fgrep -l --mmap writeGIF`
 
 pre-install:
 	# Removing *.orig files and empty directories:
-	find ${WRKSRC}/../neowebscript ${WRKSRC}/../htdocs \
+	${FIND} ${WRKSRC}/../neowebscript ${WRKSRC}/../htdocs \
 		\( -type f -name \*.orig -o -type d -empty \) -delete
 
 CONFSCRIPT=	${LOCALBASE}/etc/apache/neowebscript.conf
