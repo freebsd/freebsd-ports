@@ -1,0 +1,19 @@
+*** src/network.c.orig	Sun Apr 14 21:17:43 1996
+--- src/network.c	Sun Apr 14 21:18:18 1996
+***************
+*** 165,171 ****
+  		addr.sin_family = AF_INET;
+  		addr.sin_port   = config.net_port;
+  		memcpy(&addr.sin_addr, hent->h_addr, sizeof(hent->h_length));
+! 		if (connect(fd, &addr, sizeof(addr)) < 0) {
+  			sprintf(msg+strlen(msg),
+  				"User file %s on host %s: cannot connect\n",
+  				user[u].name, uhost);
+--- 165,171 ----
+  		addr.sin_family = AF_INET;
+  		addr.sin_port   = config.net_port;
+  		memcpy(&addr.sin_addr, hent->h_addr, sizeof(hent->h_length));
+! 		if (connect(fd, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+  			sprintf(msg+strlen(msg),
+  				"User file %s on host %s: cannot connect\n",
+  				user[u].name, uhost);
