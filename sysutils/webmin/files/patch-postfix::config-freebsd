@@ -1,6 +1,9 @@
---- postfix/config-freebsd.orig	Sat Mar 16 07:07:19 2002
-+++ postfix/config-freebsd	Sat Mar 16 07:07:56 2002
-@@ -1,6 +1,6 @@
+
+$FreeBSD$
+
+--- postfix/config-freebsd.orig
++++ postfix/config-freebsd
+@@ -1,15 +1,15 @@
 -postfix_control_command=/usr/local/sbin/postfix
 -postfix_config_command=/usr/local/sbin/postconf
 -postfix_config_file=/usr/local/etc/postfix/main.cf
@@ -11,4 +14,15 @@
 +postfix_aliases_table_command=%%PREFIX%%/sbin/postalias
  postfix_newaliases_command=/usr/bin/newaliases
 -postfix_lookup_table_command=/usr/local/sbin/postmap
+-postfix_queue_command=/usr/local/sbin/postqueue
 +postfix_lookup_table_command=%%PREFIX%%/sbin/postmap
++postfix_queue_command=%%PREFIX%%/sbin/postqueue
+ max_records=200
+ perpage=20
+ mailq_dir=/var/spool/postfix
+ mailq_cmd=/usr/bin/mailq
+-postcat_cmd=/usr/local/sbin/postcat
++postcat_cmd=%%PREFIX%%/sbin/postcat
+ sort_mode=0
+ fwd_mode=0
+ mailq_sort=0

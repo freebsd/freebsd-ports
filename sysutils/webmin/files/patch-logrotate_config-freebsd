@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- logrotate/config-freebsd.orig
++++ logrotate/config-freebsd
+@@ -1,4 +1,4 @@
+ sort_mode=0
+-logrotate_conf=/usr/local/etc/logrotate.conf
+-sample_conf=/usr/local/etc/logrotate.conf.sample
+-logrotate=/usr/local/sbin/logrotate
++logrotate_conf=%%PREFIX%%/etc/logrotate.conf
++sample_conf=%%PREFIX%%/etc/logrotate.conf.sample
++logrotate=%%PREFIX%%/sbin/logrotate

@@ -1,0 +1,9 @@
+
+$FreeBSD$
+
+--- procmail/config-freebsd.orig
++++ procmail/config-freebsd
+@@ -1,2 +1,2 @@
+-procmailrc=/usr/local/etc/procmailrc
++procmailrc=%%PREFIX%%/etc/procmailrc
+ includes=0

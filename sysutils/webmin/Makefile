@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.160
+PORTVERSION=	1.170
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,13 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES= bind8-1.160-4.wbm.gz \
-		cluster-webmin-1.160-1.wbm.gz \
-		cron-1.160-1.wbm.gz \
-		file-1.160-2.wbm.gz \
-		postgresql-1.160-1.wbm.gz \
-		usermin-1.160-2.wbm.gz
-
+WEBMIN_MODULES=
 WEBMIN_THEMES=
 
 post-extract:
@@ -43,21 +37,18 @@ post-extract:
 	fi
 
 post-patch:
-	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.1
-	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.2
-	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.3
-	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
-		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.4
-.for file in	config-freebsd apache/config-freebsd bind8/config-freebsd-2.1 \
-		bind8/config-freebsd-2.2 dhcpd/config-freebsd majordomo/config \
-		mysql/config-freebsd postfix/config-freebsd \
-		postgresql/config-freebsd proftpd/config-freebsd \
-		samba/config-freebsd squid/config-freebsd stunnel/config \
-		wuftpd/config-freebsd xinetd/config-freebsd \
-		usermin/config
+.for file in	config-freebsd apache/config-freebsd \
+		bind8/config-freebsd-2.1-2.2 \
+		dhcpd/config-freebsd frox/config-freebsd \
+		heartbeat/config-freebsd logrotate/config-freebsd \
+		majordomo/config mysql/config-freebsd \
+		postfix/config-freebsd postgresql/config-freebsd \
+		procmail/config-freebsd proftpd/config-freebsd \
+		samba/config-freebsd sentry/config-freebsd-4.10 \
+		sentry/config-freebsd-4.9 sentry/config-freebsd-5.0-\* \
+		spam/config-freebsd squid/config-freebsd \
+		stunnel/config usermin/config webalizer/config-freebsd \
+		wuftpd/config-freebsd xinetd/config-freebsd
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh

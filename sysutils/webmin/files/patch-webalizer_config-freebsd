@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- webalizer/config-freebsd.orig
++++ webalizer/config-freebsd
+@@ -1,5 +1,5 @@
+-webalizer=/usr/local/bin/webalizer
+-webalizer_conf=/usr/local/etc/webalizer.conf
+-alt_conf=/usr/local/etc/webalizer.conf-dist
++webalizer=%%PREFIX%%/bin/webalizer
++webalizer_conf=%%PREFIX%%/etc/webalizer.conf
++alt_conf=%%PREFIX%%/etc/webalizer.conf-dist
+ auto=apache,squid
+ su_shell=0
