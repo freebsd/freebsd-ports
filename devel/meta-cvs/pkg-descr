@@ -1,0 +1,18 @@
+This is a port of Meta-CVS, a version control system built around CVS.
+Although it retains most of the features of CVS, including all of the
+networking support, it is more capable than CVS, and easier to use.
+
+Its main features are:
+ * Directory structure versioning.
+ * Support for a promotion model.
+ * User-friendly file type handling.
+ * Sane corner cases.
+ * Simple branching and merging.
+ * Support for symbolic links and metadata.
+ * Tracking of third party code containing moves and renames.
+ * Ease of deployment.
+
+WWW: http://users.footprints.net/~kaz/mcvs.html
+
+- Johannes Groedem
+johs@copyleft.no
