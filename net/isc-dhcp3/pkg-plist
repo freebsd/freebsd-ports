@@ -31,12 +31,12 @@ sbin/dhclient
 sbin/dhclient-script
 sbin/dhcpd
 sbin/dhcrelay
-%%PORTDOCS%%share/doc/isc-dhcp3/ANONCVS
-%%PORTDOCS%%share/doc/isc-dhcp3/CHANGES
-%%PORTDOCS%%share/doc/isc-dhcp3/COPYRIGHT
-%%PORTDOCS%%share/doc/isc-dhcp3/README
-%%PORTDOCS%%share/doc/isc-dhcp3/RELNOTES
-%%PORTDOCS%%@dirrm share/doc/isc-dhcp3
+%%PORTDOCS%%%%DOCSDIR%%/ANONCVS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELNOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/omapip
 @dirrm include/isc-dhcp
 @exec [ -f /var/db/dhclient.leases ] || touch /var/db/dhclient.leases
