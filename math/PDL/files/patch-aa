@@ -1,25 +1,16 @@
---- perldl.conf.orig	Sat Apr 22 01:34:00 2000
-+++ perldl.conf	Mon Jun 26 01:36:12 2000
-@@ -27,7 +27,7 @@
- #			define => '',
- #                     },
+--- perldl.conf.orig	Wed Sep 25 00:54:05 2002
++++ perldl.conf	Wed Sep 25 00:56:00 2002
+@@ -22,7 +22,7 @@
+ # 0 -> don't use
+ # true -> force use
  
 -	WITH_POSIX_THREADS => undef,  	
-+	WITH_POSIX_THREADS => 0,
++	WITH_POSIX_THREADS => 0,  	
  
- # Try to build Graphics/TriD
- 	WITH_3D => undef,
-@@ -35,14 +35,14 @@
- #  You can use e.g. '-lMesaGL -lMesaGLU' with the correct -L directory
- #  to use Mesa.
- 	OPENGL_LIBS => 
--             '-L/usr/X11R6/lib -L/usr/lib/mesa -lMesaGL -lMesaGLU -lGL -lGLU -lXext -lX11',
-+             '-L/usr/X11R6/lib -lMesaGL -lMesaGLU -lGL -lGLU -lXext -lX11',
- 	OPENGL_DEFINE => '',
-- 	OPENGL_INC => '-I/usr/X11R6/include',
-+ 	OPENGL_INC => '-I/usr/X11R6/include -I/usr/X11R6/include/GL',
- 
- 
+ 	MALLOCDBG => undef,
+ # {
+@@ -75,7 +75,7 @@
+ 	OPENGL_DEFINE => undef,
  # Whether or not to build the Karma interface module
  
 -        WITH_KARMA => undef,    # Leave it up to PDL to decide
@@ -27,12 +18,3 @@
          WHERE_KARMA => undef,   # you may explicitly specify directory location
  	
  # Whether or not to build the PDL::Slatec module
-@@ -61,7 +61,7 @@
- # Location to search for the GSL libs
- 	GSL_LIBS => [ '/lib','/usr/lib','/usr/local/lib'],
- # Location to find GSL includes:
-- 	GSL_INC => '-I/usr/local/include ',
-+ 	GSL_INC => '-I/usr/local/include/gsl -I/usr/local/include ',
- 
- 
- # Whether or not to build the PDL::FFTW module
