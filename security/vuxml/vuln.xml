@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fc07c9ca-22ce-11d9-814e-0001020eed82">
+    <topic>phpmyadmin -- remote command execution
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<name>phpmyadmin</name>
+	<range><lt>2.6.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the phpMyAdmin 2.6.0p2 release notes:</p>
+	<blockquote cite="http://sourceforge.net/project/shownotes.php?release_id=274709">
+	  <p>If PHP is not running in safe mode, a problem in the
+	    MIME-based transformation system (with an "external"
+	    transformation) allows to execute any command with the
+	    privileges of the web server's user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11391</bid>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=274709</url>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1044864&amp;group_id=23067&amp;atid=377408</url>
+    </references>
+    <dates>
+      <discovery>2004-10-11</discovery>
+      <entry>2004-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61480a9a-22b2-11d9-814e-0001020eed82">
     <topic>cabextract -- insecure directory handling</topic>
     <affects>
