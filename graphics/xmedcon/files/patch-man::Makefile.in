@@ -1,29 +1,23 @@
---- man/Makefile.in.orig	Mon Dec  9 12:56:39 2002
-+++ man/Makefile.in	Mon Dec  9 12:52:38 2002
-@@ -180,6 +180,7 @@
+--- man/Makefile.in.orig	Wed Jan 15 22:36:59 2003
++++ man/Makefile.in	Fri Jan 17 22:01:00 2003
+@@ -188,18 +188,9 @@
  
  AUTOMAKE_OPTIONS = gnu
  
-+.if(DO_XSUPPORT)
- man_MANS = \
-  medcon.1 \
-  xmedcon.1 \
-@@ -191,6 +192,18 @@
-  m-gif.4 \
-  m-intf.4 \
-  m-inw.4
-+.else
-+man_MANS = \
-+ medcon.1 \
-+ xmedcon-config.1 \
-+ medcon.3 \
-+ m-acr.4 \
-+ m-anlz.4 \
-+ m-ecat.4 \
-+ m-gif.4 \
-+ m-intf.4 \
-+ m-inw.4
-+.endif
+-man_MANS = \
+- medcon.1 \
+- xmedcon.1 \
+- xmedcon-config.1 \
+- medcon.3 \
+- m-acr.4 \
+- m-anlz.4 \
+- m-ecat.4 \
+- m-gif.4 \
+- m-intf.4 \
+- m-inw.4
++@DO_XSUPPORT_TRUE@man_MANS = medcon.1 xmedcon.1 xmedcon-config.1 medcon.3 m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
+ 
++@DO_XSUPPORT_FALSE@man_MANS = medcon.1 xmedcon-config.1 medcon.3 m-acr.4 m-anlz.4 m-ecat.4 m-gif.4 m-intf.4 m-inw.4
  
  EXTRA_DIST = $(man_MANS)
  subdir = man
