@@ -18,6 +18,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
+IS_INTERACTIVE=	yes
 
 RESTRICTED=	"Not sure if we can redistribute this."
 
@@ -45,16 +46,25 @@ MOUNT=		/sbin/mount
 UMOUNT=		/sbin/umount
 
 pre-fetch:
+.if !exists("${DISTDIR}/${DISTFILES}")
 	@${ECHO} "========================================================================"
 	@${ECHO} ""
-	@${ECHO} "To install this port, please do one of these:"
+	@${ECHO} "To install this port, please:"
 	@${ECHO} ""
-	@${ECHO} "  1. Select the menu item \"Devices -> floppy0 -> Edit\" on VMware,"
+	@${ECHO} "     Select the menu item \"Devices -> floppy0 -> Edit\" on VMware,"
 	@${ECHO} "     and choose the file \"linux.flp\"."
 	@${ECHO} ""
-	@${ECHO} "  2. Manually put the file \"linux.flp\" in ${DISTDIR}."
-	@${ECHO} ""
 	@${ECHO} "========================================================================"
+	@${ECHO} ""
+	@${ECHO} -n "Are ready to install this ports? [Y/n]: "
+	@(read line;			\
+	  case "$${line}" in		\
+		[Nn]*)			\
+			${FALSE} ;;	\
+		*)			\
+			${TRUE} ;;	\
+	  esac)
+.endif
 
 do-fetch:
 .if exists("${DISTDIR}/${DISTFILES}")
