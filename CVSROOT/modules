@@ -4236,6 +4236,7 @@ jags		ports/net/jags
 jai		ports/java/jai
 jai-imageio	ports/java/jai-imageio
 jailadmin	ports/sysutils/jailadmin
+jailctl		ports/sysutils/jailctl
 jailer		ports/sysutils/jailer
 jailuser	ports/sysutils/jailuser
 jailutils	ports/sysutils/jailutils
