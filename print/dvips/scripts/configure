@@ -1,23 +1,19 @@
 #!/bin/sh
 
 
-if [ $# != 3 ]; then exit 1; fi
-
-SRCDIR=$3
-
 # paper size, default is no nor A4
 A4=n
 #default font cache directory: must be world writable
 CACHE=/tmp
 
 
-if [ ! -f $SRCDIR/MakeTeXPK.orig ]; then
-  mv $SRCDIR/MakeTeXPK $SRCDIR/MakeTeXPK.orig || exit 1
+if [ ! -f ${WRKSRC}/MakeTeXPK.orig ]; then
+  mv ${WRKSRC}/MakeTeXPK ${WRKSRC}/MakeTeXPK.orig || exit 1
 fi
 #find the resolutions
-RES=`awk '{if(/test $BDPI/) printf "%s ",$5}' < $SRCDIR/MakeTeXPK.orig`
+RES=`awk '{if(/test $BDPI/) printf "%s ",$5}' < ${WRKSRC}/MakeTeXPK.orig`
 # and the corresponding modes
-MODES=`awk -F= '{if(/MODE=[a-zA-Z]/) print $2}' < $SRCDIR/MakeTeXPK.orig`
+MODES=`awk -F= '{if(/MODE=[a-zA-Z]/) print $2}' < ${WRKSRC}/MakeTeXPK.orig`
 set $MODES
 echo "I need to set the mode of our printing/output device for the resolutions"
 echo "$RES dpi. (the mode must be in your modes.mf file)"
@@ -35,13 +31,13 @@ read answ; if [ "$answ" != "" ]; then CACHE=$answ; fi
   
 sed -e s:/usr/lib/tex:/usr/local/lib/texmf: \
     -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
-     $SUBST <$SRCDIR/MakeTeXPK.orig >$SRCDIR/MakeTeXPK
+     $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
 #configure config.ps
-if [ ! -f $SRCDIR/config.ps.orig ]; then
-  mv $SRCDIR/config.ps $SRCDIR/config.ps.orig || exit 1
+if [ ! -f ${WRKSRC}/config.ps.orig ]; then
+  mv ${WRKSRC}/config.ps ${WRKSRC}/config.ps.orig || exit 1
 fi
-RES=`awk '{if (/^D /) print $2}' <$SRCDIR/config.ps.orig`
+RES=`awk '{if (/^D /) print $2}' <${WRKSRC}/config.ps.orig`
 echo -n "what is the resolution of your printer (in dpi) [$RES]: ";
 read res; if [ "$res" = "" ]; then res=$RES; fi
 echo -n "do you want to use A4 paper? [$A4]: "
@@ -49,20 +45,20 @@ read answ; if [ "$answ" = "" ]; then answ=$A4; fi
 
 if [ $answ = y ]; then
   sed  -e 's/\(^\*\)\(.*A4\)/\2/' -e  's/^@ letterSize/*@ letterSize/' \
-	-e "s/^D $RES/D $res/" <$SRCDIR/config.ps.orig > $SRCDIR/config.ps
+	-e "s/^D $RES/D $res/" <${WRKSRC}/config.ps.orig > ${WRKSRC}/config.ps
 else
-  sed -e "s/^D $RES/D $res/" <$SRCDIR/config.ps.orig > $SRCDIR/config.ps
+  sed -e "s/^D $RES/D $res/" <${WRKSRC}/config.ps.orig > ${WRKSRC}/config.ps
 fi
 
 #makefile
-echo "TEXDIR=/usr/local/lib/texmf" >> $SRCDIR/Makefile || exit 1;
-echo "LOCALDIR=$CACHE" >> $SRCDIR/Makefile
-echo "TEXMACRODIR=\$(TEXDIR)/tex" >> $SRCDIR/Makefile
-echo "FIGPATH = .:..:\$(TEXDIR)/tex" >> $SRCDIR/Makefile
-echo "MANDIR=/usr/local/man/man1" >> $SRCDIR/Makefile
-echo "DEFS= -DTPIC -DDEBUG -DDEFRES=$res"  >> $SRCDIR/Makefile
-echo "OPT = -O2 -funsigned-char"  >> $SRCDIR/Makefile
-echo "BINDIR=/usr/local/bin"  >> $SRCDIR/Makefile
-echo "FLIBS=-lm" >> $SRCDIR/Makefile
+echo "TEXDIR=/usr/local/lib/texmf" >> ${WRKSRC}/Makefile || exit 1;
+echo "LOCALDIR=$CACHE" >> ${WRKSRC}/Makefile
+echo "TEXMACRODIR=\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
+echo "FIGPATH = .:..:\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
+echo "MANDIR=/usr/local/man/man1" >> ${WRKSRC}/Makefile
+echo "DEFS= -DTPIC -DDEBUG -DDEFRES=$res"  >> ${WRKSRC}/Makefile
+echo "OPT = -O2 -funsigned-char"  >> ${WRKSRC}/Makefile
+echo "BINDIR=/usr/local/bin"  >> ${WRKSRC}/Makefile
+echo "FLIBS=-lm" >> ${WRKSRC}/Makefile
 
 exit 0;

@@ -1,22 +1,11 @@
 #!/bin/sh
 #
-if [ $# -ne 3 ]; then
-	echo "This script should only be run by the Makefile."
-	exit 1
-fi
 
-# First arg is top level ports directory, second is current directory,
-# third is the directory containing the dist.
-#
-PDIR=$1
-CDIR=$2
-WDIR=$3
-
-touch ${WDIR}/src/config/freebsd.cf
-find ${WDIR} -name Makefile -print | xargs rm
+touch ${WRKSRC}/src/config/freebsd.cf
+find ${WRKSRC} -name Makefile -print | xargs rm
 xpath=`/usr/bin/which imake 2>/dev/null`
 if [ -n $xpath ]; then
 	xpath=`echo $xpath | sed 's;/bin/imake$;;'`
-	sed "s;/usr/X386;$xpath;" ${WDIR}/makefile >${WDIR}/makefile.foo
-	mv ${WDIR}/makefile.foo ${WDIR}/makefile
+	sed "s;/usr/X386;$xpath;" ${WRKSRC}/makefile >${WRKSRC}/makefile.foo
+	mv ${WRKSRC}/makefile.foo ${WRKSRC}/makefile
 fi

@@ -1,22 +1,17 @@
 #!/bin/sh
 
-if [ $# != 3 ]; then exit 1; fi
-
-SRCDIR=$3
-
 # paper size, default is no nor A4
 A4=n
 #default font cache directory: must be world writable
 CACHE=/tmp
 
-
-if [ ! -f $SRCDIR/MakeTeXPK.orig ]; then
-  mv $SRCDIR/MakeTeXPK $SRCDIR/MakeTeXPK.orig || exit 1
+if [ ! -f ${WRKSRC}/MakeTeXPK.orig ]; then
+  mv ${WRKSRC}/MakeTeXPK ${WRKSRC}/MakeTeXPK.orig || exit 1
 fi
 #find the resolutions
-RES=`awk '{if(/test $BDPI/) printf "%s ",$5}' < $SRCDIR/MakeTeXPK.orig`
+RES=`awk '{if(/test $BDPI/) printf "%s ",$5}' < ${WRKSRC}/MakeTeXPK.orig`
 # and the corresponding modes
-MODES=`awk -F= '{if(/MODE=[a-zA-Z]/) print $2}' < $SRCDIR/MakeTeXPK.orig`
+MODES=`awk -F= '{if(/MODE=[a-zA-Z]/) print $2}' < ${WRKSRC}/MakeTeXPK.orig`
 set $MODES
 echo "I need to set the mode of our printing/output device for the resolutions"
 echo "$RES dpi. (the mode must be in your modes.mf file)"
@@ -34,13 +29,13 @@ read answ; if [ "$answ" != "" ]; then CACHE=$answ; fi
   
 sed -e s:/usr/lib/tex:/usr/local/lib/texmf: \
     -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
-     $SUBST <$SRCDIR/MakeTeXPK.orig >$SRCDIR/MakeTeXPK
+     $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
 
 # Imakefile
-chmod +w  $SRCDIR/Imakefile 
-echo "OSDEFS=" >> $SRCDIR/Imakefile || exit 1;
-echo "OPTIONDEFS=-DUSE_PK -DGREY -DPS_GS -DMAKEPK -DBUTTONS" >> $SRCDIR/Imakefile
-echo "DEFAULT_FONT_PATH=/usr/local/lib/texmf/fonts/pk:$CACHE/pk"  >> $SRCDIR/Imakefile
-echo "DEFAULT_VF_PATH=/usr/local/lib/texmf/fonts/vf" >> $SRCDIR/Imakefile
+chmod +w  ${WRKSRC}/Imakefile 
+echo "OSDEFS=" >> ${WRKSRC}/Imakefile || exit 1;
+echo "OPTIONDEFS=-DUSE_PK -DGREY -DPS_GS -DMAKEPK -DBUTTONS" >> ${WRKSRC}/Imakefile
+echo "DEFAULT_FONT_PATH=/usr/local/lib/texmf/fonts/pk:$CACHE/pk"  >> ${WRKSRC}/Imakefile
+echo "DEFAULT_VF_PATH=/usr/local/lib/texmf/fonts/vf" >> ${WRKSRC}/Imakefile
 exit 0;
