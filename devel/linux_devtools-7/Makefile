@@ -7,7 +7,12 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		7.1
+.include <bsd.port.pre.mk>
+.if (${MACHINE_ARCH} == "alpha")
 PORTREVISION=		2
+.else
+PORTREVISION=		3
+.endif
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -41,8 +46,6 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
-.include <bsd.port.pre.mk>
-
 .if (${MACHINE_ARCH} == "alpha")
 PATCH_SITES=	\
 	ftp://ftp2.compaq.com/pub/linux/RedHat/7.2-alpha/updates/rpms/alpha/ \
@@ -52,8 +55,8 @@ PATCH_SITES=	\
 .if (${MACHINE_ARCH} == "i386")
 RPM_GDB=		gdb-5.0rh-5.i386.rpm
 RPM_MAKE=		make-3.79.1-5.i386.rpm
-UPDATES=		XFree86-devel-4.1.0-49.i386.rpm \
-			glibc-devel-2.2.4-32.i386.rpm \
+UPDATES=		XFree86-devel-4.1.0-50.i386.rpm \
+			glibc-devel-2.2.4-33.i386.rpm \
 			cpp-2.96-112.7.1.i386.rpm \
 			gcc-2.96-112.7.1.i386.rpm \
 			gcc-c++-2.96-112.7.1.i386.rpm \
