@@ -1,10 +1,10 @@
---- src/Makefile.common.orig	Sat Mar 27 14:22:01 2004
-+++ src/Makefile.common	Wed Mar 31 23:44:05 2004
+--- src/Makefile.common.orig	Mon May 17 13:37:27 2004
++++ src/Makefile.common	Thu May 20 20:27:59 2004
 @@ -18,12 +18,12 @@
- AR              = ar
+ AR              = ar cru
  RANLIB          = ranlib
  
--DDEBUG          = -DDEBUG
+-DDEBUG          = -DDEBUG -g
 +DDEBUG          = $(DEBUG_FLAGS)
  INCDIR          = ../include
 -CXXOPTS         = $(OS_CXXOPTS) $(DDEBUG) -I$(INCDIR) -Wall -O2

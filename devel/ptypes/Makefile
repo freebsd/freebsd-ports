@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ptypes
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,7 @@ OPTIONS=	DEBUG "Build debug version" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
-DEBUG_FLAGS=	-DDEBUG
+DEBUG_FLAGS=	-DDEBUG -g
 .endif
 .if defined(WITH_OPTIMIZED)
 PTHREAD_CFLAGS+=-O2
