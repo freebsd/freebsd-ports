@@ -677,15 +677,21 @@ EOF
 
 	# check the items that has to be there.
 	$tmp = "\n" . $tmp;
-	foreach $i ('DISTNAME', 'CATEGORIES') {
-		print "OK: checking $i.\n" if ($verbose);
-		if ($tmp !~ /\n$i=/) {
-			&perror("FATAL: $i has to be there.");
-		}
-		if ($tmp =~ /\n$i(\?=)/) {
-			&perror("FATAL: $i has to be set by \"=\", ".
-				"not by \"$1\".");
-		}
+	print "OK: checking DISTNAME.\n" if ($verbose);
+	if ($tmp !~ /\nDISTNAME=/) {
+		&perror("FATAL: DISTNAME has to be there.");
+	}
+	if ($tmp =~ /\nDISTNAME(\?=)/) {
+		&perror("FATAL: DISTNAME has be set by \"=\", ".
+			"not by \"$1\".");
+	}
+	print "OK: checking CATEGORIES.\n" if ($verbose);
+	if ($tmp !~ /\nCATEGORIES(?=)/) {
+		&perror("FATAL: CATEGORIES has to be there.");
+	}
+	if ($tmp =~ /\nCATEGORIES([^?+]=)/) {
+		&perror("WARN: CATEGORIES should be set by \"=\", \"?=\", or \"+=\", ".
+			"not by \"$1\".");
 	}
 
 	# check x11 in CATEGORIES
@@ -890,8 +896,8 @@ EOF
 
 	&checkearlier($tmp, @varnames);
 	$tmp = "\n" . $tmp;
-	if ($tmp =~ /\nMAINTAINER=[^\n]+/) {
-		$tmp =~ s/\nMAINTAINER=[^\n]+//;
+	if ($tmp =~ /\nMAINTAINER\??=[^\n]+/) {
+		$tmp =~ s/\nMAINTAINER\??=[^\n]+//;
 	} else {
 		&perror("FATAL: no MAINTAINER listed in $file.");
 	}
