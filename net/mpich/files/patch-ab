@@ -1,0 +1,19 @@
+--- util/mpiinstall.in.orig	Mon Nov 29 20:48:06 1999
++++ util/mpiinstall.in	Sat Dec 25 07:57:38 1999
+@@ -886,12 +886,12 @@
+     MkDir $mandir
+     CopyFile $top_srcdir/man/mandesc $mandir
+     # No files in man5 (was ADI routines)
+-    for dir in man1 man3 man4 ; do
+-       MkDir $mandir/$dir
+-        for file in $top_srcdir/man/$dir/* ; do 
++    for manxdir in man1 man3 man4 ; do
++       MkDir $mandir/$manxdir
++        for file in $top_srcdir/man/$manxdir/* ; do 
+ 	    # man5 in particular might be empty; be careful
+             if [ -f "$file" -a -s "$file" ] ; then 
+-  	        CopyFile $file $mandir/$dir
++  	        CopyFile $file $mandir/$manxdir
+ 	    fi
+         done
+     done

@@ -8,24 +8,25 @@ mpich/MPI-2-C++/examples/pi.cc
 mpich/MPI-2-C++/examples/ring.cc
 mpich/MPI-2-C++/examples/topology.cc
 mpich/MPI-2-C++/examples/user_bcast.cc
-mpich/bin/config.status
 mpich/bin/execer
 mpich/bin/mpereconfig
+mpich/bin/mpereconfig.dat
 mpich/bin/mpiCC
 mpich/bin/mpicc
 mpich/bin/mpif77
 mpich/bin/mpif90
 mpich/bin/mpiman
 mpich/bin/mpireconfig
+mpich/bin/mpireconfig.dat
 mpich/bin/mpirun
 mpich/bin/mpirun.args
 mpich/bin/mpirun.ch_p4
+mpich/bin/mpirun.ch_p4.args
+mpich/bin/mpirun.p4shmem
 mpich/bin/mpirun.pg
 mpich/bin/serv_p4
-mpich/bin/server
 mpich/bin/tarch
 mpich/bin/tdevice
-mpich/bin/tstmachines
 mpich/bin/upshot
 mpich/build/bitmaps/2x2
 mpich/build/bitmaps/black
@@ -46,102 +47,21 @@ mpich/build/bitmaps/vlines2
 mpich/build/bitmaps/vlines3
 mpich/build/bitmaps/vlines4
 mpich/build/bitmaps/white
-mpich/build/freebsd/ch_p4/bin/chkserv
-mpich/build/freebsd/ch_p4/bin/chp4_servs
-mpich/build/freebsd/ch_p4/bin/config.status
-mpich/build/freebsd/ch_p4/bin/mpiCC
-mpich/build/freebsd/ch_p4/bin/mpicc
-mpich/build/freebsd/ch_p4/bin/mpif77
-mpich/build/freebsd/ch_p4/bin/mpif90
-mpich/build/freebsd/ch_p4/bin/mpiman
-mpich/build/freebsd/ch_p4/bin/mpireconfig
-mpich/build/freebsd/ch_p4/bin/mpirun
-mpich/build/freebsd/ch_p4/bin/mpirun.args
-mpich/build/freebsd/ch_p4/bin/mpirun.ch_p4
-mpich/build/freebsd/ch_p4/bin/mpirun.pg
-mpich/build/freebsd/ch_p4/bin/mpiuninstall
-mpich/build/freebsd/ch_p4/bin/serv_p4
-mpich/build/freebsd/ch_p4/bin/server
-mpich/build/freebsd/ch_p4/bin/tarch
-mpich/build/freebsd/ch_p4/bin/tstmachines
-mpich/build/freebsd/ch_p4/data/Makefile.sample
-mpich/build/freebsd/ch_p4/include/c++/comm.h
-mpich/build/freebsd/ch_p4/include/c++/comm_inln.h
-mpich/build/freebsd/ch_p4/include/c++/constants.h
-mpich/build/freebsd/ch_p4/include/c++/datatype.h
-mpich/build/freebsd/ch_p4/include/c++/datatype_inln.h
-mpich/build/freebsd/ch_p4/include/c++/errhandler.h
-mpich/build/freebsd/ch_p4/include/c++/errhandler_inln.h
-mpich/build/freebsd/ch_p4/include/c++/exception.h
-mpich/build/freebsd/ch_p4/include/c++/functions.h
-mpich/build/freebsd/ch_p4/include/c++/functions_inln.h
-mpich/build/freebsd/ch_p4/include/c++/group.h
-mpich/build/freebsd/ch_p4/include/c++/group_inln.h
-mpich/build/freebsd/ch_p4/include/c++/header.h
-mpich/build/freebsd/ch_p4/include/c++/intercomm.h
-mpich/build/freebsd/ch_p4/include/c++/intercomm_inln.h
-mpich/build/freebsd/ch_p4/include/c++/intracomm.h
-mpich/build/freebsd/ch_p4/include/c++/intracomm_inln.h
-mpich/build/freebsd/ch_p4/include/c++/list.h
-mpich/build/freebsd/ch_p4/include/c++/map.h
-mpich/build/freebsd/ch_p4/include/c++/mpi++.h
-mpich/build/freebsd/ch_p4/include/c++/mpi2c++_config.h
-mpich/build/freebsd/ch_p4/include/c++/op.h
-mpich/build/freebsd/ch_p4/include/c++/op_inln.h
-mpich/build/freebsd/ch_p4/include/c++/pcomm.h
-mpich/build/freebsd/ch_p4/include/c++/pdatatype.h
-mpich/build/freebsd/ch_p4/include/c++/perrhandler.h
-mpich/build/freebsd/ch_p4/include/c++/pexception.h
-mpich/build/freebsd/ch_p4/include/c++/pgroup.h
-mpich/build/freebsd/ch_p4/include/c++/pgroup_inln.h
-mpich/build/freebsd/ch_p4/include/c++/pintercomm.h
-mpich/build/freebsd/ch_p4/include/c++/pintracomm.h
-mpich/build/freebsd/ch_p4/include/c++/pmpi++.h
-mpich/build/freebsd/ch_p4/include/c++/pop.h
-mpich/build/freebsd/ch_p4/include/c++/pop_inln.h
-mpich/build/freebsd/ch_p4/include/c++/prequest.h
-mpich/build/freebsd/ch_p4/include/c++/prequest_inln.h
-mpich/build/freebsd/ch_p4/include/c++/pstatus.h
-mpich/build/freebsd/ch_p4/include/c++/pstatus_inln.h
-mpich/build/freebsd/ch_p4/include/c++/ptopology.h
-mpich/build/freebsd/ch_p4/include/c++/request.h
-mpich/build/freebsd/ch_p4/include/c++/request_inln.h
-mpich/build/freebsd/ch_p4/include/c++/status.h
-mpich/build/freebsd/ch_p4/include/c++/status_inln.h
-mpich/build/freebsd/ch_p4/include/c++/topology.h
-mpich/build/freebsd/ch_p4/include/c++/topology_inln.h
-mpich/build/freebsd/ch_p4/include/mpichconf.h
-mpich/build/freebsd/ch_p4/include/mpidefs.h
-mpich/build/freebsd/ch_p4/include/mpif.h
-mpich/build/freebsd/ch_p4/include/mpio.h
-mpich/build/freebsd/ch_p4/include/mpiof.h
-mpich/build/freebsd/ch_p4/lib/libampi.a
-mpich/build/freebsd/ch_p4/lib/libfmpich.a
-mpich/build/freebsd/ch_p4/lib/liblmpi.a
-mpich/build/freebsd/ch_p4/lib/libmpe.a
-mpich/build/freebsd/ch_p4/lib/libmpe_nompi.a
-mpich/build/freebsd/ch_p4/lib/libmpich++.a
-mpich/build/freebsd/ch_p4/lib/libmpich.a
-mpich/build/freebsd/ch_p4/lib/libpmpich.a
-mpich/build/freebsd/ch_p4/lib/libtmpi.a
-mpich/build/freebsd/ch_p4/lib/mpe_prof.o
-mpich/build/freebsd/ch_p4/lib/mpe_proff.o
-mpich/build/freebsd/mpich.En_US.cat
-mpich/build/freebsd/mpich.cat
+mpich/doc/guide.ps.gz
+mpich/doc/install.ps.gz
 mpich/examples/Makefile
 mpich/examples/Makefile.in
 mpich/examples/README
 mpich/examples/cpi.c
 mpich/examples/cpilog.c
-mpich/examples/fibon.f
-mpich/examples/fibon.f90
+mpich/examples/cpip.c
 mpich/examples/hello++.cc
-mpich/examples/mpif.h
 mpich/examples/mpirun
 mpich/examples/pi3.f
+mpich/examples/pi3f90.f90
+mpich/examples/pi3p.f
 mpich/examples/simpleio.c
 mpich/include/basex11.h
-mpich/include/binding.h
 mpich/include/mpe.h
 mpich/include/mpe_graphics.h
 mpich/include/mpe_log.h
@@ -150,46 +70,103 @@ mpich/include/mpeexten.h
 mpich/include/mpetools.h
 mpich/include/mpi.h
 mpich/include/mpi_errno.h
-mpich/include/patchlevel.h
+mpich/include/mpichconf.h
+mpich/include/mpidefs.h
+mpich/include/mpif.h
+mpich/include/mpio.h
+mpich/include/mpiof.h
 mpich/include/protofix.h
+mpich/include/c++/comm.h
+mpich/include/c++/comm_inln.h
+mpich/include/c++/constants.h
+mpich/include/c++/datatype.h
+mpich/include/c++/datatype_inln.h
+mpich/include/c++/errhandler.h
+mpich/include/c++/errhandler_inln.h
+mpich/include/c++/exception.h
+mpich/include/c++/functions.h
+mpich/include/c++/functions_inln.h
+mpich/include/c++/group.h
+mpich/include/c++/group_inln.h
+mpich/include/c++/header.h
+mpich/include/c++/intercomm.h
+mpich/include/c++/intercomm_inln.h
+mpich/include/c++/intracomm.h
+mpich/include/c++/intracomm_inln.h
+mpich/include/c++/list.h
+mpich/include/c++/map.h
+mpich/include/c++/mpi++.h
+mpich/include/c++/mpi2c++_config.h
+mpich/include/c++/op.h
+mpich/include/c++/op_inln.h
+mpich/include/c++/pcomm.h
+mpich/include/c++/pdatatype.h
+mpich/include/c++/perrhandler.h
+mpich/include/c++/pexception.h
+mpich/include/c++/pgroup.h
+mpich/include/c++/pgroup_inln.h
+mpich/include/c++/pintercomm.h
+mpich/include/c++/pintracomm.h
+mpich/include/c++/pmpi++.h
+mpich/include/c++/pop.h
+mpich/include/c++/pop_inln.h
+mpich/include/c++/prequest.h
+mpich/include/c++/prequest_inln.h
+mpich/include/c++/pstatus.h
+mpich/include/c++/pstatus_inln.h
+mpich/include/c++/ptopology.h
+mpich/include/c++/request.h
+mpich/include/c++/request_inln.h
+mpich/include/c++/status.h
+mpich/include/c++/status_inln.h
+mpich/include/c++/topology.h
+mpich/include/c++/topology_inln.h
+mpich/lib/libampi.a
+mpich/lib/libfmpich.a
+mpich/lib/liblmpi.a
+mpich/lib/libmpe.a
+mpich/lib/libmpe_nompi.a
+mpich/lib/libmpich++.a
+mpich/lib/libmpich.a
+mpich/lib/libmpichf.a
+mpich/lib/libmpichfarg.a
+mpich/lib/libpmpich.a
+mpich/lib/libslog.a
+mpich/lib/libtmpi.a
+mpich/lib/mpe_prof.o
+mpich/lib/mpe_proff.o
 mpich/man/mandesc
-mpich/mpe_examples/C/Makefile
-mpich/mpe_examples/C/Makefile.in
-mpich/mpe_examples/C/cpi.c
-mpich/mpe_examples/C/cpilog.c
-mpich/mpe_examples/C/mpirun
-mpich/mpe_examples/Fortran/Makefile
-mpich/mpe_examples/Fortran/Makefile.in
-mpich/mpe_examples/Fortran/fpi.f
-mpich/mpe_examples/Fortran/mpirun
-mpich/mpiuninstall
-mpich/util/chkserv
-mpich/util/chp4_servs
-mpich/util/machines/machines.freebsd
-mpich/util/machines/machines.sample
+mpich/mpe_examples/Makefile
+mpich/mpe_examples/Makefile.in
+mpich/mpe_examples/cpi.c
+mpich/mpe_examples/cpilog.c
+mpich/mpe_examples/fpi.f
+mpich/mpe_examples/fpi.o
+mpich/mpe_examples/mpirun
+mpich/sbin/chkserv
+mpich/sbin/chp4_servs
+mpich/sbin/cleanipcs
+mpich/sbin/mpiuninstall
+mpich/sbin/tstmachines
+mpich/share/Makefile.sample
+mpich/share/machines.freebsd
+mpich/share/machines.sample
 @dirrm mpich/MPI-2-C++/examples
 @dirrm mpich/MPI-2-C++
 @dirrm mpich/bin
 @dirrm mpich/build/bitmaps
-@dirrm mpich/build/freebsd/ch_p4/data
-@dirrm mpich/build/freebsd/ch_p4/include/c++
-@dirrm mpich/build/freebsd/ch_p4/include
-@dirrm mpich/build/freebsd/ch_p4/bin
-@dirrm mpich/build/freebsd/ch_p4/lib/shared
-@dirrm mpich/build/freebsd/ch_p4/lib
-@dirrm mpich/build/freebsd/ch_p4
-@dirrm mpich/build/freebsd
 @dirrm mpich/build
 @dirrm mpich/doc
 @dirrm mpich/examples
+@dirrm mpich/include/c++
 @dirrm mpich/include
+@dirrm mpich/lib/shared
+@dirrm mpich/lib
 @dirrm mpich/man/man1
 @dirrm mpich/man/man3
 @dirrm mpich/man/man4
 @dirrm mpich/man
-@dirrm mpich/mpe_examples/C
-@dirrm mpich/mpe_examples/Fortran
 @dirrm mpich/mpe_examples
-@dirrm mpich/util/machines
-@dirrm mpich/util
+@dirrm mpich/sbin
+@dirrm mpich/share
 @dirrm mpich
