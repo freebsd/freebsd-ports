@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	helium
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.cs.uu.nl/helium/distr/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -18,19 +17,14 @@ COMMENT=	Functional programming compiler for a subset of Haskell
 .if defined(WITH_HINT)
 USE_JAVA=	1.4+
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-src.tar.gz \
-		Hint.jar
+		Hint-${PORTVERSION}.jar
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}-src.tar.gz
 PLIST_SUB=	HINT=""
 .else
 PLIST_SUB=	HINT="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500035
-BROKEN=	does not compile
-.endif
-
-BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_SIZE=	yes
@@ -63,4 +57,4 @@ do-install:
 	@${ECHO_CMD}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
