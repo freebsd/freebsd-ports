@@ -8,4 +8,5 @@ bin/ssh-keygen
 bin/ssh-keyscan
 bin/sftp
 sbin/sshd
+share/Ssh.bin
 libexec/sftp-server
