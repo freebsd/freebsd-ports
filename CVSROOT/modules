@@ -8210,7 +8210,6 @@ xearth		ports/astro/xearth
 xed		ports/editors/xed
 xeji		ports/games/xeji
 xemacs		ports/editors/xemacs
-xemacs-basic-mule-packages	ports/editors/xemacs-basic-mule-packages
 xemacs-comm-packages	ports/editors/xemacs-comm-packages
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
