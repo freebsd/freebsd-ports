@@ -23,8 +23,14 @@ USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_QT_VER=	3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Fails to patch"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's,(if[\ \t]+test[\ \t]+.+)[\ \t]+==,\1 =,' \
 		${WRKDIR}/${PKGNAME}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
