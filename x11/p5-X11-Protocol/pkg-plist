@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/X11/Auth.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Keysyms.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/FileHandle.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/INETFH.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/INETSocket.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/Socket.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/UNIXFH.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection/UNIXSocket.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext/BIG_REQUESTS.pm
+lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext/SHAPE.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11/Protocol/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/X11/Protocol
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Ext
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol/Connection
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/X11/Protocol

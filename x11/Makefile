@@ -55,6 +55,7 @@
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
+    SUBDIR += p5-X11-Protocol
     SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += props

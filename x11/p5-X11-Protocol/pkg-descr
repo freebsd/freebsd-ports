@@ -1,0 +1,9 @@
+X11::Protocol is a perl module that provides an interface that is
+roughly equivalent to Xlib.  Its low-level approach is intentional
+as the author is working on a higher-level interface that will be
+more object-oriented and easier to use, so as to allow this low
+level access to eventually be replaced by an XS interface to Xlib.
+
+Author: Stephen McCamant
+
+--will
