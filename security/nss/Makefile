@@ -18,6 +18,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
+USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

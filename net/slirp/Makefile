@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=slirp
 
 MAINTAINER=	ports@FreeBSD.Org
 
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
-
 # serious LP64 issues
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		slirp.1

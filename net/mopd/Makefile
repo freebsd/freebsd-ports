@@ -20,10 +20,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
-
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 #	MANDIR is concetenated to DESTDIR which all forms the man install dir...
+
+USE_PERL5_BUILD=	yes
+
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man NOMANCOMPRESS=true
 MAN1=		mopprobe.1 moptrace.1 mopchk.1 mopa.out.1
 MAN8=		mopd.8
