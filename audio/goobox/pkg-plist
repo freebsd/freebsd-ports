@@ -1,0 +1,11 @@
+bin/goobox
+etc/gconf/schemas/goobox.schemas
+libdata/bonobo/servers/GNOME_Goobox.server
+share/gnome/application-registry/goobox.applications
+share/gnome/applications/goobox.desktop
+share/gnome/goobox/glade/goo_cover_chooser.glade
+share/gnome/goobox/glade/goobox.glade
+share/gnome/pixmaps/goobox.png
+share/locale/ar/LC_MESSAGES/goobox.mo
+@dirrm share/gnome/goobox/glade
+@dirrm share/gnome/goobox

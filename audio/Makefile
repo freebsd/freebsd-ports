@@ -134,6 +134,7 @@
     SUBDIR += gnupod
     SUBDIR += gogo
     SUBDIR += gogo-petit
+    SUBDIR += goobox
     SUBDIR += gqmpeg
     SUBDIR += gqradio
     SUBDIR += gramofile
