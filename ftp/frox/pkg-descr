@@ -1,0 +1,16 @@
+This is frox, a transparent ftp proxy by James Hollingshead.
+
+Current features include:
+
+  o rfc959 compliant (I think) transparent proxying of ftp
+    connections.
+  o active --> passive mode conversion for data connections.
+  o Optional caching support either locally or through an external
+    HTTP cache.
+  o Optional virus scanning
+  o Optional non-transparent proxy support by logging in with
+    user@host:port.
+  o Options to bind to a specific interface, chroot, and drop
+    priveleges for security.
+
+WWW: http://www.hollo.org/frox/

@@ -1,0 +1,51 @@
+--- src/frox.conf.orig	Wed Jun 12 08:01:44 2002
++++ src/frox.conf	Wed Jun 12 08:12:27 2002
+@@ -18,6 +18,7 @@
+ # commented out to listen on all local IPs.
+ #
+ # Listen firewall.localnet
++# Change it with your ip!
+ Listen 192.168.2.1
+ 
+ # Port to listen on. Must be supplied.
+@@ -26,7 +27,8 @@
+ 
+ # If specified then bind to this device
+ #
+-BindToDevice eth0
++# DON'T USE: It's not supported for FreeBSD
++#BindToDevice eth0
+ 
+ # Whether to run from inetd. You should still define Port above, but
+ # it isn't used for much.
+@@ -39,7 +41,7 @@
+ # comment this out and copy resolver libraries into the chroot jail instead.
+ # See FAQ section 3.2 for details.
+ #
+-ResolvLoadHack wontresolve.doesntexist.abc
++#ResolvLoadHack wontresolve.doesntexist.abc
+ 
+ # Another ftp proxy to forward on to. Frox will contact this ftp
+ # proxy, and send it a login name of the form "user@host:port" where
+@@ -54,8 +56,8 @@
+ # you really want to run as root (not a good idea) you must say so
+ # specifically, and have compiled with --enable-run-as-root.
+ #
+-# User nobody
+-# Group nogroup
++User nobody
++Group nogroup
+ 
+ # This is frox's working directory - it must be specified. Temporary
+ # files and sockets will be created here. If you are using local
+@@ -64,8 +66,8 @@
+ # also chroot to this dir on startup. To avoid this you must specifically 
+ # set DontChroot to Yes.
+ #
+-# WorkingDir /usr/local/lib/frox
+-# DontChroot Yes
++WorkingDir /tmp
++DontChroot Yes
+ 
+ # Logging level. 0=No logging. 5=Critical errors only. 10= All errors. 
+ # 15=Errors, other important stuf. 20= Errors, connections, cache
