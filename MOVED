@@ -1287,3 +1287,4 @@ games/hlserver-trainhunters||2004-10-23|current version no longer available
 games/utserver-asu||2004-10-23|checksum failure
 graphics/giram||2004-10-23|build failure
 graphics/ruby-gdchart||2004-10-23|build failure
+hebrew/pine||2004-10-23|contained serious vulnerabilities

@@ -3483,7 +3483,6 @@ iw-he2		ports/hebrew/he2
 iw-hspell	ports/hebrew/hspell
 iw-kde3-i18n	ports/hebrew/kde3-i18n
 iw-koffice-i18n	ports/hebrew/koffice-i18n
-iw-pine		ports/hebrew/pine
 iwidgets	ports/x11-toolkits/iwidgets
 ixj		ports/comms/ixj
 ixlib		ports/devel/ixlib
