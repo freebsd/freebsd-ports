@@ -21,6 +21,8 @@ COMMENT=	Erlang modules for code manipulation
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
+CONFLICTS=	syntax_tools-1.3*
+
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 SYNTAX_TOOLS=	${PREFIX}/lib/erlang/lib/syntax_tools-${PORTVERSION}
