@@ -11,6 +11,7 @@ CATEGORIES=	emulators linux
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 USE_BZIP2=	y
 .include <bsd.port.pre.mk>
+BROKEN=		incorrect packing list
 PORTARCH=${MACHINE_ARCH:S/64//}
 .if (${PORTARCH} == "alpha")
 MASTER_SITE_SUBDIR=	experimental/alpha/stages
