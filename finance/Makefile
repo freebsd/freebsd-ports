@@ -4,6 +4,7 @@
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
+    SUBDIR += kexchange
     SUBDIR += khacc
     SUBDIR += libofx
     SUBDIR += myphpmoney
