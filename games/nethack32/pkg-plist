@@ -121,9 +121,9 @@ bin/%%HACKNAME%%
 @mode 664
 %%DATADIR%%/perm
 @mode
-@unexec [ -s %D/%%HACKDIR%%/logfile ] || rm -f %D/%%HACKDIR%%/logfile
-@exec touch %D/%%HACKDIR%%/logfile && chmod 664 %D/%%HACKDIR%%/logfile
-@unexec [ -s %D/%%HACKDIR%%/record ] || rm -f %D/%%HACKDIR%%/record
-@exec touch %D/%%HACKDIR%%/record && chmod 664 %D/%%HACKDIR%%/record
+@unexec [ -s %D/%%DATADIR%%/logfile ] || rm -f %D/%%DATADIR%%/logfile
+@exec touch %D/%%DATADIR%%/logfile && chmod 664 %D/%%DATADIR%%/logfile
+@unexec [ -s %D/%%DATADIR%%/record ] || rm -f %D/%%DATADIR%%/record
+@exec touch %D/%%DATADIR%%/record && chmod 664 %D/%%DATADIR%%/record
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
