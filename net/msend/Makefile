@@ -8,7 +8,8 @@
 PORTNAME=	msend
 PORTVERSION=	3.0
 CATEGORIES=	net
-MASTER_SITES=	http://homepages.tig.com.au/~mrudat/software/msend/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markp
 
 MAINTAINER=	markp@FreeBSD.org
 
