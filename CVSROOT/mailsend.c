@@ -72,7 +72,6 @@ makerfc822date(time_t now)
   static char buf[1024];
   time_t tzo;
 
-#ifdef BSD
   tm = localtime(&now);
 
   tzo = tm->tm_gmtoff;
@@ -91,27 +90,6 @@ makerfc822date(time_t now)
 	  tzo,
 	  tm->tm_zone
 	  );
-#else
-  tzset();
-  tm = localtime(&now);
-
-  tzo = - (tm->tm_isdst <= 0 ? timezone : altzone);
-
-  tzo = tzo / 60;		/* minutes */
-  tzo = (tzo % 60) + (tzo / 60 * 100);
-
-  snprintf(buf, sizeof(buf), "%s, %d %s %d %02d:%02d:%02d +%04d (%s)", 
-	  wday[tm->tm_wday],
-	  tm->tm_mday,
-	  mon[tm->tm_mon],
-	  tm->tm_year + 1900,
-	  tm->tm_hour,
-	  tm->tm_min,
-	  tm->tm_sec,
-	  tzo,
-	  tm->tm_isdst <= 0 ? tzname[0] : tzname[1]
-	  );
-#endif
   return buf;
 }
 
@@ -128,6 +106,7 @@ main(int ac, char **av)
   char buf[1024];
   char Frombuf[256];	/* Long enough */
   char frombuf[256];	/* Long enough */
+  char gecos[256];	/* Long enough */
   char *s;
 
   char *subj  = NULL;
@@ -243,11 +222,17 @@ main(int ac, char **av)
   }
   if (pw && hostname == buf) {
     if (pw->pw_gecos) {
-      if ((s = strchr(pw->pw_gecos, ',')))
+      strncpy(gecos, pw->pw_gecos, sizeof(gecos) - 1);
+      gecos[sizeof(gecos) - 1] = '\0';
+      if ((s = strchr(gecos, ',')))
 	*s = '\0';
-      if ((s = strchr(pw->pw_gecos, ';')))
+      if ((s = strchr(gecos, ';')))
 	*s = '\0';
-      snprintf(Frombuf, sizeof(Frombuf), "%s <%s@%s>", pw->pw_gecos, pw->pw_name, hostname);
+#ifdef EVIL
+      if (strcmp(gecos, "Alfred Perlstein") == 0)
+	strcpy(gecos, "Albert Perlstein");
+#endif
+      snprintf(Frombuf, sizeof(Frombuf), "%s <%s@%s>", gecos, pw->pw_name, hostname);
     } else {
       snprintf(Frombuf, sizeof(Frombuf), "%s@%s", pw->pw_name, hostname);	/* From@hostname */
     }
