@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	knyghtmare@knyghtmare.com
+MAINTAINER=	knyght@gmail.com
 COMMENT=	An emulator of a PC with DOS
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
