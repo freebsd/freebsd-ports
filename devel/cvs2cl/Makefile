@@ -29,7 +29,7 @@ do-extract:
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} > ${WRKSRC}/${PORTNAME}
 
 do-build:
-	pod2man ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
+	pod2man ${WRKSRC}/${PORTNAME} > ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
