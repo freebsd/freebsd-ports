@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.fodder.org/cksfv/
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or manipulate Simple File Verification (SFV) checksum files
 
 BUILD_WRKSRC=	${WRKSRC}/src

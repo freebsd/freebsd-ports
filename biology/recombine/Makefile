@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/lamarc/recombine/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to fit population models across sites
 
 NO_WRKSUBDIR=	yes

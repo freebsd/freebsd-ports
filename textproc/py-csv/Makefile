@@ -11,7 +11,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	http://object-craft.com.au/projects/csv/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module to parse or write comma-separated value (CSV) files
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/csv.so

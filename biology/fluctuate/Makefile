@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/lamarc/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to fit population models
 
 NO_WRKSUBDIR=	yes

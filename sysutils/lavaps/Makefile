@@ -10,7 +10,7 @@ PORTVERSION=	1.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/LAVAPS/
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lava lamp of currently running processes
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83

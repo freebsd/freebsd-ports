@@ -12,7 +12,7 @@ CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/${VERSIONSTRING}/
 DISTNAME=	${PORTNAME}-${VERSIONSTRING}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Profile hidden Markov models for biological sequence analysis
 
 GNU_CONFIGURE=	yes

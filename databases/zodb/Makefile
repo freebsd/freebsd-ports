@@ -12,7 +12,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	http://www.zope.org/Products/StandaloneZODB/1.0%20final/
 DISTNAME=	StandaloneZODB-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Zope Object Database, a persistent object database for Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3

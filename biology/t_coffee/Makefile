@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://igs-server.cnrs-mrs.fr/~cnotred/Packages/
 DISTNAME=	T-COFFEE_distribution
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiple DNA or protein sequence alignment package
 
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw

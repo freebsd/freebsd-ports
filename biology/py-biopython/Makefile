@@ -11,7 +11,7 @@ CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Python modules for bioinformatics
 
 CONFLICTS=	py*-martel-*

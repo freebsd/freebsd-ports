@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.fnorb.org/download/
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2.0 ORB written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
