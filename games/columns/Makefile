@@ -8,7 +8,8 @@
 PORTNAME=	columns
 PORTVERSION=	1.2b
 CATEGORIES=	games
-MASTER_SITES=	http://www.rzuser.uni-heidelberg.de/~dheck/columns/
+# mastersite disappeared in December 2000
+MASTER_SITES=	# http://www.rzuser.uni-heidelberg.de/~dheck/columns/
 DISTNAME=	Columns-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
