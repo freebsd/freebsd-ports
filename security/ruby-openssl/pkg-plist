@@ -10,6 +10,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/cacert.pem
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/config.cnf
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/key_hash.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_cipher.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_config.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_digest.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_rsa.rb
