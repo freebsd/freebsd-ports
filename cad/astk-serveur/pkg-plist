@@ -1,0 +1,131 @@
+%%CLIENT%%ASTK/ASTK_CLIENT/GPL.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/bin/asjob
+%%CLIENT%%ASTK/ASTK_CLIENT/bin/astk
+%%CLIENT%%ASTK/ASTK_CLIENT/bin/bsf
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/asjob.info
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/asjob.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/asjob_main.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/init_asjob.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASJOB/listej.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_UL.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_agla.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_config.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_ihm.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_inv.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_mots.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_msg.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_outils.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_print.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_profil.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_rex.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/DOC/sdd_sel.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_110.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_111.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG/item_190.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_110.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_111.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR/item_190.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/RELNOTES
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/TODO
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/aide.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astk.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astk2run_aster.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/ASTKRC_INFO.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/config_serveurs
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/outils
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/astkrc/prefs
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/fichier.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/i_serv.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_agla.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_commun.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_etude.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_execution.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_liste.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_main.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_outils.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_rex.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_satellite.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/ihm_status.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/init.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/init_agla.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/init_env.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/lance_calcul.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/options.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/tools.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/ASTK/unites_logiques.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/lib/BSF/bsf.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/appli.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/config.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/file_funct.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_browseB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_browseS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_comp1.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_compB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_compS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_configB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_deleteB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_deleteS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_dirS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_edit.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_editS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_fileB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_fileS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_helpB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_helpS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_newB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_newS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openRB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openRS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_openS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_printB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_printS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_refreshB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_refreshS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_save.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_upB.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/icons/vaio_upS.gif
+%%CLIENT%%ASTK/ASTK_CLIENT/share/ihm_tools.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/init_share.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/lire_mcles.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/locales.txt
+%%CLIENT%%ASTK/ASTK_CLIENT/share/messages.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/outils.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/preferences.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/print.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/remote_tools.tcl
+%%CLIENT%%ASTK/ASTK_CLIENT/share/tkselecteur.tcl
+%%SERV%%ASTK/ASTK_SERV/GPL.txt
+%%SERV%%ASTK/ASTK_SERV/bin/as_actu
+%%SERV%%ASTK/ASTK_SERV/bin/as_del
+%%SERV%%ASTK/ASTK_SERV/bin/as_edit
+%%SERV%%ASTK/ASTK_SERV/bin/as_exec
+%%SERV%%ASTK/ASTK_SERV/bin/as_info
+%%SERV%%ASTK/ASTK_SERV/bin/as_serv
+%%SERV%%ASTK/ASTK_SERV/bin/as_tail
+%%SERV%%ASTK/ASTK_SERV/bin/tool_stanley
+%%SERV%%ASTK/ASTK_SERV/conf/config
+%%SERV%%ASTK/ASTK_SERV/conf/config.%%vaster%%
+%%SERV%%ASTK/ASTK_SERV/conf/config.NEW7
+%%SERV%%ASTK/ASTK_SERV/lib/astk2run_aster.tcl
+%%SERV%%ASTK/ASTK_SERV/lib/stanley_post.comm
+%%SERV%%ASTK/ASTK_SERV/lib/sub_script
+%%SERV%%ASTK/ASTK_SERV/lib/sum_tps.awk
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/bin
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASJOB
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/DOC
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/HELP/ENG
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/HELP/FR
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/HELP
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK/astkrc
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/ASTK
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib/BSF
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/lib
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/share/icons
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT/share
+%%CLIENT%%@dirrm ASTK/ASTK_CLIENT
+%%SERV%%@dirrm ASTK/ASTK_SERV/bin
+%%SERV%%@dirrm ASTK/ASTK_SERV/conf
+%%SERV%%@dirrm ASTK/ASTK_SERV/lib
+%%SERV%%@dirrm ASTK/ASTK_SERV
+@unexec rmdir %D/ASTK 2>/dev/null || true

@@ -1,0 +1,8 @@
+Interface graphique de Code_Aster, en Tcl/Tk.
+
+Tcl/Tk interface to run Code_Aster (prepare and start calculations using
+run_aster).
+
+See the port french/aster.
+
+WWW: http://www.code-aster.org/

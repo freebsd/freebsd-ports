@@ -1,0 +1,28 @@
+--- conf/config.orig	Fri Jun 20 13:07:15 2003
++++ conf/config	Wed Jul 16 12:11:03 2003
+@@ -60,6 +60,7 @@
+ # for each version a config.VVV file must be created.
+ # DO NOT EDIT FOLLOWING LINE !
+ #vers : VVV
++vers : %%vaster%%
+ 
+ #################################################################
+ # batch commands
+@@ -93,6 +94,9 @@
+ # LINUX :
+ #P_LINUXps_cpu : /bin/ps -e --width=512 -ocputime -ocommand
+ #P_LINUXps_pid : /bin/ps -e --width=512 -opid -ocommand
++# FREEBSD :
++#%%v_ifdef%%ps_cpu : /bin/ps -e -ocpu,command
++#%%v_ifdef%%ps_pid : /bin/ps -e -opid,command
+ # TRU64 :
+ #TRU64ps_cpu : /bin/ps -e -ocputime -ocommand
+ #TRU64ps_pid : /bin/ps -e -opid -ocommand
+@@ -115,6 +119,7 @@
+ #
+ # GDB :
+ #P_LINUXcmd_dbg : gdb --dbx --command=@D @E @C
++#%%v_ifdef%%cmd_dbg : gdb --dbx --command=@D @E @C
+ # DBX -c + filename :
+ #TRU64cmd_dbg : dbx -c @D @E @C
+ #IRIXcmd_dbg : dbx -c @D @E @C

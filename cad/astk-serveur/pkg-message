@@ -1,0 +1,13 @@
+Des fichiers de configuration standards ont été préparés :
+%%inst_dir%%/ASTK_SERV/conf/config
+%%inst_dir%%/ASTK_SERV/conf/config.%%ASTER_VER%%
+Veuillez les vérifier, et n'oubliez pas d'installer la partie cliente sur vos
+stations.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Standard configuration files have been initialized:
+%%inst_dir%%/ASTK_SERV/conf/config
+%%inst_dir%%/ASTK_SERV/conf/config.%%ASTER_VER%%
+Please check them, and do not forget to install the client side on your
+stations.
