@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libcapsinetwork
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	devel net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://unixcode.org/downloads/libcapsinetwork/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Network library aimed at easy development of C++ server daemons

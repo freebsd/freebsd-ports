@@ -3,7 +3,7 @@ at easy development of server daemons. Implementing the library is
 as easy as adding a few lines to your code and writing one function
 that handles input events.
 
-WWW: http://sourceforge.net/projects/libcapsinetwork/
+WWW: http://unixcode.org/libcapsinetwork/
 
 - Pete
 petef@FreeBSD.org
