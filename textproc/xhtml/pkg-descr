@@ -1,0 +1,11 @@
+This specification defines XHTML 1.0, a reformulation of HTML 4 as an
+XML 1.0 application, and three DTDs corresponding to the ones defined
+by HTML 4.
+
+The semantics of the elements and their attributes are defined in the
+W3C Recommendation for HTML 4.
+
+These semantics provide the foundation for future extensibility of XHTML.
+
+Compatibility with existing HTML user agents is possible by following
+a small set of guidelines.
