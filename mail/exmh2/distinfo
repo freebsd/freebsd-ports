@@ -1,1 +1,4 @@
-MD5 (exmh-2.0.1/exmh-2.0.tar.Z) = e0149feead029e126ba25aef2646a26a
+MD5 (exmh-2.0.1/exmh-2.0.1.tar.Z) = e0149feead029e126ba25aef2646a26a
+MD5 (exmh-2.0.1/folderNew.patch) = 86cc61aa9033dc3a1a12c53f108e5a1a
+MD5 (exmh-2.0.1/seditpost.patch) = a3181a3878bb5705762b4f4954ea6c51
+MD5 (exmh-2.0.1/extrasInit.patch) = a9c9924e0b45da4beca954a86bf45e3d
