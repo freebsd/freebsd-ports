@@ -11,23 +11,11 @@ bin/vym
 %%DATADIR%%/styles/vym2html.xsl
 %%DATADIR%%/styles/vym2txt.xsl
 %%DATADIR%%/styles/vym2xhtml.xsl
-%%PORTDOCS%%%%DOCSDIR%%/tex/branches-flags.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/branches.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/color-buttons.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/default-flags.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/example1.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/find-window.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/flag-url.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/flag-vymlink.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/formatfixedfont.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/move-buttons.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/vym.tex
-%%PORTDOCS%%%%DOCSDIR%%/tex/windows.png
-%%PORTDOCS%%%%DOCSDIR%%/tex/zoom-buttons.png
+%%PORTDOCS%%%%DOCSDIR%%/vym.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/liveform.vym
+%%PORTDOCS%%%%EXAMPLESDIR%%/math.vym
 %%PORTDOCS%%%%EXAMPLESDIR%%/time-management.vym
 %%PORTDOCS%%%%EXAMPLESDIR%%/todo.vym
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tex
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/scripts

@@ -1,15 +1,19 @@
---- floatimageobj.cpp.orig	Sun Sep 26 22:45:56 2004
-+++ floatimageobj.cpp	Sun Oct 17 17:12:27 2004
-@@ -2,6 +2,12 @@
+--- floatimageobj.cpp.orig	Tue Oct 19 18:31:12 2004
++++ floatimageobj.cpp	Sat Jan 15 12:25:08 2005
+@@ -1,6 +1,6 @@
++#include <math.h>
+ #include "floatimageobj.h"
  #include "branchobj.h"
- #include <math.h>
+-#include <math.h>
  
-+#if !defined(HAVE_LRINTF)
-+static inline long int lrint(double x)
-+{
-+    return (long)(rint(x));
-+}
-+#endif
  
  /////////////////////////////////////////////////////////////////
- // FloatImageObj
+@@ -67,7 +67,7 @@
+ 
+ int FloatImageObj::z ()
+ {
+-	return lrint (icon->z());
++	return (long)rint (icon->z());
+ }
+ 
+ bool FloatImageObj::load (const QString &fn)
