@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rus-ispell
-PORTVERSION=    0.99e1
+PORTVERSION=    0.99e2
 CATEGORIES=	russian textproc
 MASTER_SITES=   ftp://mch5.chem.msu.su/pub/russian/ispell/
 
