@@ -7,11 +7,11 @@
 #
 
 DISTNAME=       dnetc
-PKGNAME=	dnetc-2.8004.457
+PKGNAME=	dnetc-2.8007.458b
 CATEGORIES=	misc
-MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8006/ \
-		http://http.distributed.net/pub/dcti/v2.8006/
-DISTFILES=	dnetc457-freebsd-x86-elf.tar.gz
+MASTER_SITES=   ftp://ftp.distributed.net/pub/dcti/v2.8007/ \
+		http://http.distributed.net/pub/dcti/v2.8007/
+DISTFILES=	dnetc458b-freebsd-x86-elf.tar.gz
 
 .include <bsd.port.pre.mk>
 
