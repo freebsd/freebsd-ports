@@ -1,0 +1,11 @@
+--- uip/rcvtty.c.orig	Tue Jan  7 18:04:11 1997
++++ uip/rcvtty.c	Tue Jan  7 18:13:50 1997
+@@ -158,7 +158,7 @@
+ 
+     user = getusr ();
+ #ifndef	TTYD
+-    if ((uf = fopen ("/etc/utmp", "r")) == NULL)
++    if ((uf = fopen (_PATH_UTMP, "r")) == NULL)
+ 	exit (RCV_MBX);
+     while (fread ((char *) &ut, sizeof ut, 1, uf) == 1)
+ 	if (ut.ut_name[0] != 0
