@@ -46,6 +46,7 @@
     SUBDIR += cheetah
     SUBDIR += chimera
     SUBDIR += chimera2
+    SUBDIR += chtml
     SUBDIR += comclear
     SUBDIR += comline
     SUBDIR += crawl
