@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			Pedro Giffuni
 #
-# $Id$
+# $Id: Makefile,v 1.11 1998/12/26 06:29:19 flathill Exp $
 #
 
 DISTNAME=	felt-3.02
@@ -18,10 +18,11 @@ LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
 WRKSRC=		${WRKDIR}/FElt-3.02
 GNU_CONFIGURE=	yes
+USE_X_PREFIX=	yes
+
 MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
 MAN4=		corduroy.4 felt.4
-#DOCS= 		ftp://cs.ucsd.edu/pub/felt/felt-3.02.ps.gz
 
 post-patch:
 	${RM} -f ${WRKSRC}/lib/Geompack/*.c

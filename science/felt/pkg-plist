@@ -4,6 +4,7 @@ bin/felt
 bin/patchwork
 bin/velvet
 bin/yardstick
+lib/X11/app-defaults/Velvet.ad
 share/doc/FElt/FAQ.html
 @dirrm share/doc/FElt
 share/examples/FElt/frame3.flt
@@ -100,4 +101,3 @@ share/felt/german.trn
 share/felt/german_new.trn
 share/felt/spanish.trn
 @dirrm share/felt
-lib/X11/app-defaults/Velvet.ad
