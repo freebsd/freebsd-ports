@@ -7,12 +7,12 @@
 
 PORTNAME=	fileroller
 PORTVERSION=	2.1.0
-CATEGORIES=	archivers
+CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	file-roller-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
