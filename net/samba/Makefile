@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--with-syslog
 .endif
 
 .if defined(WITH_SSL)
-CONFIGURE_ARGS+=	--with-ssl --ssl-inc=/usr/include/openssl --ssl-lib=/usr/lib
+CONFIGURE_ARGS+=	--with-ssl --with-ssl-inc=/usr/include/openssl --with-ssl-lib=/usr/lib
 .endif
 
 .if defined(WITH_LDAP)
@@ -86,8 +86,10 @@ MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
 		testprns.1 wbinfo.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		nmbd.8 smbd.8 smbmnt.8 smbmount.8 \
+MAN8=		nmbd.8 pdbedit.8 smbd.8 smbmnt.8 smbmount.8 \
 		smbpasswd.8 smbspool.8 smbumount.8 swat.8 winbindd.8
+
+SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/samba
@@ -111,19 +113,27 @@ post-install:
 		${CHOWN} root:wheel ${SAMBA_PRIVATE} ;			\
 	fi
 	${CHMOD} 700 ${SAMBA_PRIVATE}
+	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd.default ] ; then		\
+		${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.default ; \
+		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd.default ;	\
+	fi
 	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd ] ; then			\
-		${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd ; \
-		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd ;			\
+		${CP} -p ${SAMBA_PRIVATE}/smbpasswd.default ${SAMBA_PRIVATE}/smbpasswd ; \
+		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd ;		\
 	fi
 	${CHMOD} 500 ${SAMBA_PRIVATE}
 	${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
 	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
-.if defined(PACKAGE_BUILDING)
-	${ECHO_CMD} "private/smbpasswd" >> ${TMPPLIST}
-	${ECHO_CMD} "@dirrm private" >> ${TMPPLIST}
-.else
-	${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/smbpasswd manually.\"" >> ${TMPPLIST}
-.endif
+	${ECHO_CMD} "@exec ${TEST} -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${MKDIR} -m 500 ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${TEST} -e ${SAMBA_PRIVATE}/smbpasswd || ${CP} -p ${SAMBA_PRIVATE}/smbpasswd.default ${SAMBA_PRIVATE}/smbpasswd" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@exec ${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd*" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec /usr/bin/cmp -s ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/smbpasswd.default && ${RM} -f ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/secrets.tdb || ${TRUE}" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RM} -f ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_PRIVATE} || (${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore,\" && ${ECHO_CMD} \"         please remove ${SAMBA_PRIVATE} and its contents manually.\")" | ${SED_PLIST} >> ${TMPPLIST}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
