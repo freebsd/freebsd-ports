@@ -544,6 +544,7 @@
     SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += plb
+    SUBDIR += pload
     SUBDIR += plugdaemon
     SUBDIR += pmf
     SUBDIR += poink

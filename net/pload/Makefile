@@ -1,0 +1,23 @@
+# New ports collection makefile for:	pload
+# Date created:				22 Septemper 2004
+# Whom:					J.R. Oldroyd <fbsd@opal.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pload
+PORTVERSION=	0.9.5
+CATEGORIES=	net sysutils
+MASTER_SITES=	http://www.engr.utk.edu/~mdsmith/pload/
+
+MAINTAINER=	fbsd@opal.com
+COMMENT=	An X11 program to display network traffic graphs
+
+USE_IMAKE=	yes
+HAS_CONFIGURE=	yes
+
+MAN1=		pload.1
+MANCOMPRESSED=	yes
+PLIST_FILES=	bin/pload
+
+.include <bsd.port.mk>
