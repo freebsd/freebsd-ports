@@ -1,0 +1,22 @@
+diff -cb ../../../libhelp-1.8.1/libhtmlw/Imakefile libhtmlw/Imakefile
+*** ../../../libhelp-1.8.1/libhtmlw/Imakefile	Sat May 27 13:06:58 1995
+--- libhtmlw/Imakefile	Mon Oct 20 21:18:03 1997
+***************
+*** 35,44 ****
+         HTMLlists.o HTMLparse.o HTMLwidgets.o
+
+  NormalLibraryTarget(htmlw,$(OBJS))
+! DependTarget()
+!
+!
+!
+!
+!
+
+--- 35,40 ----
+         HTMLlists.o HTMLparse.o HTMLwidgets.o
+
+  NormalLibraryTarget(htmlw,$(OBJS))
+! InstallLibrary(htmlw,$(USRLIBDIR))
+
++ DependTarget()

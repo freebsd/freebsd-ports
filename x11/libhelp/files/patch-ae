@@ -1,0 +1,16 @@
+diff -cb ../../../libhelp-1.8.1/libhlpclient/Imakefile libhlpclient/Imakefile
+*** ../../../libhelp-1.8.1/libhlpclient/Imakefile	Sat Jun 17 13:52:05 1995
+--- libhlpclient/Imakefile	Mon Oct 20 21:18:41 1997
+***************
+*** 87,91 ****
+     SYSTEM_LIBS = $(SYSLIBS) $(ADDLIBS)
+
+  NormalLibraryTarget($(LIBHELP),$(OBJS))
+  NormalProgramTarget(chelp,$(TESTOBJ),$(HLIB),$(HELPLIBS),$(SYSTEM_LIBS))
+-
+--- 87,91 ----
+     SYSTEM_LIBS = $(SYSLIBS) $(ADDLIBS)
+
+  NormalLibraryTarget($(LIBHELP),$(OBJS))
++ InstallLibrary($(LIBHELP),$(USRLIBDIR))
+  NormalProgramTarget(chelp,$(TESTOBJ),$(HLIB),$(HELPLIBS),$(SYSTEM_LIBS))

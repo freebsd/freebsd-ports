@@ -1,0 +1,41 @@
+diff -cb ../../../libhelp-1.8.1/libhtmlw/HTML.h libhtmlw/HTML.h
+*** ../../../libhelp-1.8.1/libhtmlw/HTML.h	Mon Dec 26 12:15:58 1994
+--- libhtmlw/HTML.h	Mon Oct 20 19:00:12 1997
+***************
+*** 56,68 ****
+  #define HTML_H
+
+  #ifdef MOTIF
+! #include <Xm/Xm.h>
+! #if (XmVERSION == 1)&&(XmREVISION >= 2)
+! #define MOTIF1_2
+! #endif
+  #else
+! #include <X11/Intrinsic.h>
+! #include <X11/Constraint.h>
+  #endif /* MOTIF */
+  #include <X11/StringDefs.h>
+
+--- 56,70 ----
+  #define HTML_H
+
+  #ifdef MOTIF
+! # include <Xm/Xm.h>
+! # if (XmVERSION == 1)&&(XmREVISION >= 2)
+! #  define MOTIF1_2
+! # elif (XmVERSION == 2)
+! #  define MOTIF2
+! # endif
+  #else
+! # include <X11/Intrinsic.h>
+! # include <X11/Constraint.h>
+  #endif /* MOTIF */
+  #include <X11/StringDefs.h>
+
+***************
+*** 483,486 ****
+
+
+  #endif /* HTML_H */
+-
+--- 485,487 ----

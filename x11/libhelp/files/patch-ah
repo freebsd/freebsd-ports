@@ -1,0 +1,13 @@
+diff -cb ../../../libhelp-1.8.1/libButtFace/Imakefile libButtFace/Imakefile
+*** ../../../libhelp-1.8.1/libButtFace/Imakefile	Sat May 27 13:07:41 1995
+--- libButtFace/Imakefile	Mon Oct 20 21:17:29 1997
+***************
+*** 77,80 ****
+--- 77,82 ----
+  XCOMM --------------------------------------------------------------------
+
+  NormalLibraryTarget($(LIBHELP),$(OBJS))
++ InstallLibrary($(LIBHELP),$(USRLIBDIR))
++
+  DependTarget()
+

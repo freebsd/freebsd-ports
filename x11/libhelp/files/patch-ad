@@ -1,0 +1,31 @@
+diff -cb ../../../libhelp-1.8.1/libhtmlw/HTML-PSformat.c libhtmlw/HTML-PSformat.c
+*** ../../../libhelp-1.8.1/libhtmlw/HTML-PSformat.c	Mon Dec 26 12:15:57 1994
+--- libhtmlw/HTML-PSformat.c	Mon Oct 20 19:00:12 1997
+***************
+*** 47,53 ****
+  #include <stdio.h>
+  #include <ctype.h>
+  #include <math.h>
+! #include <malloc.h>
+  #include "HTMLP.h"
+
+  /* Fix thanks to robm. */
+--- 47,57 ----
+  #include <stdio.h>
+  #include <ctype.h>
+  #include <math.h>
+! #ifdef __FreeBSD__
+! # include <stdlib.h>
+! #else
+! # include <malloc.h>
+! #endif
+  #include "HTMLP.h"
+
+  /* Fix thanks to robm. */
+***************
+*** 1507,1510 ****
+
+  	return( PS_string);
+  }
+-
+--- 1511,1513 ----

@@ -1,0 +1,20 @@
+diff -cb ../../../libhelp-1.8.1/libhtmlw/HTML.c libhtmlw/HTML.c
+*** ../../../libhelp-1.8.1/libhtmlw/HTML.c	Mon Dec 26 12:15:57 1994
+--- libhtmlw/HTML.c	Mon Oct 20 19:00:12 1997
+***************
+*** 57,62 ****
+--- 57,63 ----
+  #ifdef MOTIF
+  #include <Xm/DrawingA.h>
+  #include <Xm/ScrollBar.h>
++ #include <Xm/ManagerP.h>
+  #else
+  #include "DrawingArea.h"
+  #include <X11/Xaw/Scrollbar.h>
+***************
+*** 6109,6112 ****
+  		return(-1);
+  	}
+  }
+-
+--- 6112,6114 ----

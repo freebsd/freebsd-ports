@@ -1,0 +1,15 @@
+diff -cb ../../../libhelp-1.8.1/libhelp/Imakefile libhelp/Imakefile
+*** ../../../libhelp-1.8.1/libhelp/Imakefile	Wed Jun 28 14:59:58 1995
+--- libhelp/Imakefile	Mon Oct 20 21:25:05 1997
+***************
+*** 99,104 ****
+--- 99,107 ----
+  XCOMM libhelp.a
+
+  NormalLibraryTarget($(LIBHELP),$(OBJS))
++ InstallLibrary($(LIBHELP),$(USRLIBDIR))
++
++ InstallNonExecFile(help.h,$(INCDIR))
+
+  XCOMM thelp (only for testing, not distributed)
+

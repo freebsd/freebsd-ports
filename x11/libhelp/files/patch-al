@@ -1,0 +1,24 @@
+diff -cb ../../../libhelp-1.8.1/libhtmlw/HTMLP.h libhtmlw/HTMLP.h
+*** ../../../libhelp-1.8.1/libhtmlw/HTMLP.h	Mon Dec 26 12:15:58 1994
+--- libhtmlw/HTMLP.h	Mon Oct 20 19:00:12 1997
+***************
+*** 59,67 ****
+
+  #ifdef MOTIF
+  #include <Xm/XmP.h>
+! # ifdef MOTIF1_2
+  #  include <Xm/ManagerP.h>
+! # endif /* MOTIF1_2 */
+  #else
+  #include <X11/IntrinsicP.h>
+  #include <X11/ConstrainP.h>
+--- 59,67 ----
+
+  #ifdef MOTIF
+  #include <Xm/XmP.h>
+! # if defined(MOTIF1_2) || defined(MOTIF2)
+  #  include <Xm/ManagerP.h>
+! # endif /* MOTIF1_2 || MOTIF2*/
+  #else
+  #include <X11/IntrinsicP.h>
+  #include <X11/ConstrainP.h>
