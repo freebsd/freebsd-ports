@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	jadetex
 MAINTAINER=		nik
 
 BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
-LIB_DEPENDS=		png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${PREFIX}/share/texmf/web2c

@@ -35,7 +35,7 @@ EXTRACT_ONLY=	${GS_SOURCES}
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/gs${PORTVERSION}
 ALL_TARGET=	all pcl3opts escputil
