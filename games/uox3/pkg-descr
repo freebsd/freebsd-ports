@@ -1,0 +1,24 @@
+UOX3 is the "Ultima Offline eXperiment", a GPL'd server for Origin
+Systems' Ultima Online fantasy role playing (FRPG) game.
+
+This program is a full-featured Ultima Online server.  It implements
+everything you would need to run a fully functional UO game (monsters,
+spawn sites, vendors, guards zones, etc.).
+
+This game includes a "world file" that has most towns fully developed
+(i.e. all vendors installed), plus many fully-active spawn sites
+scattered throughout the land.
+
+With this server, you can play by yourself, or with up to 32 plauers
+over your local area network (or over the Internet!).  This server
+package is being used by many player-run games available on the Internet.
+
+You will need to own the Ultima Online product to be able to use this
+server.  Some files from your game directory will need to be copied to
+the server directory before it will function.
+
+For more info on UOX3, please visit:
+	http://uox.stratics.com/
+
+For more info on Ultima Online, please visit:
+	http://www.owo.com/
