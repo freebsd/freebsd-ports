@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1998/07/01 15:40:47 ghelmer Exp $
+# $Id: Makefile,v 1.11 1998/12/06 14:13:23 vanilla Exp $
 #
 
     SUBDIR += acs
@@ -10,8 +10,8 @@
     SUBDIR += magic
     SUBDIR += mars
     SUBDIR += pcb
-    SUBDIR += spice
     SUBDIR += sis
+    SUBDIR += spice
     SUBDIR += xcircuit
 
 .include <bsd.port.subdir.mk>

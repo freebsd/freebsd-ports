@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.38 1998/06/11 12:30:30 dburr Exp $
+# $Id: Makefile,v 1.39 1998/08/09 00:35:46 steve Exp $
 #
 
     SUBDIR += atp
@@ -6,9 +6,9 @@
     SUBDIR += cnews
     SUBDIR += diablo
     SUBDIR += dnews
+    SUBDIR += ifmail
     SUBDIR += inn
     SUBDIR += knews
-    SUBDIR += ifmail
     SUBDIR += leafnode
     SUBDIR += newsfetch
     SUBDIR += nn

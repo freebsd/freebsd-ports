@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.170 1998/11/24 09:15:53 flathill Exp $
+# $Id: Makefile,v 1.171 1998/12/05 17:12:40 flathill Exp $
 #
 
     SUBDIR += 3dc
@@ -16,21 +16,21 @@
     SUBDIR += block
     SUBDIR += blue
     SUBDIR += bogged
-    SUBDIR += bugsx
     SUBDIR += bs
+    SUBDIR += bugsx
     SUBDIR += cgoban
     SUBDIR += connect4
     SUBDIR += cosmo
     SUBDIR += crafty
-    SUBDIR += crafty-open-small
-    SUBDIR += crafty-open-medium
     SUBDIR += crafty-open-large
+    SUBDIR += crafty-open-medium
+    SUBDIR += crafty-open-small
     SUBDIR += crossfire
     SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += empire
-    SUBDIR += flying
     SUBDIR += fkiss
+    SUBDIR += flying
     SUBDIR += freeciv
     SUBDIR += frotz
     SUBDIR += galaxis
@@ -131,8 +131,8 @@
     SUBDIR += xmulti
     SUBDIR += xneko
     SUBDIR += xnibbles
-    SUBDIR += xoids
     SUBDIR += xoct
+    SUBDIR += xoids
     SUBDIR += xonix
     SUBDIR += xothello
     SUBDIR += xpacman

@@ -1,11 +1,11 @@
-# $Id: Makefile,v 1.13 1997/01/03 00:40:55 max Exp $
+# $Id: Makefile,v 1.14 1998/06/25 22:26:26 asami Exp $
 #
 
     SUBDIR += bash1
     SUBDIR += bash2
     SUBDIR += es
-    SUBDIR += scsh
     SUBDIR += pdksh
+    SUBDIR += scsh
     SUBDIR += tcsh
     SUBDIR += zsh
 

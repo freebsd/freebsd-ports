@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.175 1998/11/24 04:47:10 itojun Exp $
+# $Id: Makefile,v 1.176 1998/12/02 20:08:56 billf Exp $
 #
 
     SUBDIR += acron
@@ -72,8 +72,8 @@
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xpns
-    SUBDIR += xtar
     SUBDIR += xquote
+    SUBDIR += xtar
     SUBDIR += ytree
 
 .include <bsd.port.subdir.mk>
