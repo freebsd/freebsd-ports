@@ -1,0 +1,10 @@
+
+========================================================================
+Place ${PREFIX}/lib/timidity/timidity.el on load-path of your Emacs(en).
+
+Ex. /usr/local/lib/xemacs/site-lisp
+    /usr/local/share/mule/site-lisp
+
+And then, type "M-x timidity" on Emacs. Enjoy!
+========================================================================
+
