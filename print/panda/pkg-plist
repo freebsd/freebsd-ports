@@ -2,6 +2,8 @@ include/panda/constants.h
 include/panda/functions.h
 include/panda/legacy.h
 include/panda/objects.h
+include/panda/panda_tdb.h
+include/panda/panda_spinlock.h
 lib/libpanda.a
 lib/libpanda.so
 lib/libpanda.so.0
