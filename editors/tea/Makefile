@@ -11,7 +11,7 @@ CATEGORIES=		editors
 MASTER_SITES=		http://tea.linux.kiev.ua/
 DISTNAME=		${PORTNAME}
 
-MAINTAINER=		jylefort@brutele.be
+MAINTAINER=		danfe@FreeBSD.org
 COMMENT=		A simple and powerful GTK+ text editor
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
