@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1996/11/16 01:55:06 jdp Exp $
+# $Id: Makefile,v 1.36 1996/11/26 08:24:08 asami Exp $
 #
 
     SUBDIR += SWIG
@@ -15,6 +15,7 @@
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
     SUBDIR += libslang
+    SUBDIR += linux_devel
     SUBDIR += m4
     SUBDIR += mkmf
     SUBDIR += mprof
