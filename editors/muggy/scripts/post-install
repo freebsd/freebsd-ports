@@ -1,0 +1,30 @@
+#!/bin/sh
+
+installdir=${PREFIX}/JDE/Muggy; export installdir
+
+case ${LANGUAGE} in
+    Japanese)
+	for f in Muggy.app; do
+	    ${PERL} -pi -e '
+		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
+		' ${installdir}/bin/${f}
+	done
+    ;;
+    *)
+    ;;
+esac
+for f in Muggy Muggy.app; do
+    case ${f} in
+	Muggy.app|PrefMuggy.app)
+	    target=${installdir}/bin/${f}
+	;;
+	Muggy)
+	    target=${installdir}/defaults/${f}
+	;;
+    esac
+    ${PERL} -pi -e '
+        s@^([ \t]*set[ \t]+Jlib[ \t]+)"[^"]*"$@$1"$ENV{installdir}/"@;
+        ' ${target}
+done
+
+${LN} -sf ${installdir}/bin/Muggy.app ${PREFIX}/bin
