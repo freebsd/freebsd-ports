@@ -6,12 +6,9 @@ To complete the installation of this port, please follow these steps:
    the default config file (%%RT_PATH%%/etc/RT_Config.pm).
 2. Configure the email and web gateways.  Please refer to
    'SETTING UP THE MAIL GATEWAY' in %%RT_PATH%%/README
-3. For Apache2/mod_perl2 you'll probably need to add the
-   following line above the webmux.pl line in httpd.conf:
-     PerlRequire %%RT_PATH%%/bin/ap2mp2-fix.pl
-4. Restart Apache.
-5. Do remember to *CHANGE* the root's password for the web interface.
+3. Restart Apache.
+4. Do remember to *CHANGE* the root's password for the web interface.
    The default is "password" (without the quotes.)
-6. Configure RT per the instructions at http://www.fsck.com/rtfm/.
+5. Configure RT per the instructions at http://www.fsck.com/rtfm/.
 
 =====================================================================
