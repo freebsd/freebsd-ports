@@ -5,23 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ispell
-PORTVERSION=	0.0.2b
+PORTNAME=	ispell-uk
+PORTVERSION=	0.5
 CATEGORIES=     textproc ukrainian
-MASTER_SITES=   http://virtual-estates.net/port-stuff/ \
-		http://www.brama.com/compute/unix/ \
-		ftp://cad.ntu-kpi.kiev.ua/soft/lingvist/UkrIspell/
-PKGNAMEPREFIX=	ua-
-DISTNAME=	ua-ispell.${PORTVERSION}
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ispell-uk
 
 MAINTAINER=     mi@aldan.algebra.com
 
 BUILD_DEPENDS=  buildhash:${PORTSDIR}/textproc/ispell
 
-ALL_TARGET=	all,koi
+USE_BZIP2=	YES
+ALL_TARGET=	koi
+USE_GMAKE=	YES
+
+# Still need gmake for other reasons :-\
+#post-patch:
+#	${PERL} -pi -e 's,\$$\(MAKE\) -C (\w+),cd \1 && make,g' \
+#		${WRKSRC}/Makefile.in
+
+do-configure:
+	cd ${WRKSRC} && ${SH} ./makeconfig.sh \
+		-ispell=${PREFIX}/share/ispell -default=koi
 
 do-install:
-	cd ${WRKSRC} && \
-	${INSTALL_DATA} ukrainian.hash ukrainian.aff ${PREFIX}/share/ispell
+	${INSTALL_DATA} ${WRKSRC}/ukrainian-koi.hash \
+		${PREFIX}/share/ispell/ukrainian.hash
+	${INSTALL_DATA} ${WRKSRC}/Affix/ukrainian-koi.aff \
+		${PREFIX}/share/ispell/ukrainian.aff
+	${INSTALL_DATA} ${WRKSRC}/Dictionary/ukrainian-koi.dict \
+		${PREFIX}/share/ispell/ukrainian.dict
+	${INSTALL_SCRIPT} ${FILESDIR}/ispell-uk ${PREFIX}/bin
 
 .include <bsd.port.mk>
