@@ -1,7 +1,6 @@
 include/tvision/app.h
 include/tvision/buffers.h
 include/tvision/colorsel.h
-include/tvision/config.h
 include/tvision/dialogs.h
 include/tvision/drawbuf.h
 include/tvision/editors.h
@@ -19,12 +18,19 @@ include/tvision/tkeys.h
 include/tvision/tobjstrm.h
 include/tvision/ttypes.h
 include/tvision/tv.h
+include/tvision/tvconfig.h
 include/tvision/tvobjs.h
 include/tvision/util.h
 include/tvision/validate.h
 include/tvision/views.h
+@unexec install-info --delete %D/info/tvision.info %D/info/dir
+info/tvision.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/tvision.info %D/info/dir
 lib/libtvision.a
-lib/libtvision.so.0.4
+lib/libtvision.la
+lib/libtvision.so
+lib/libtvision.so.0.6
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 @dirrm include/tvision
