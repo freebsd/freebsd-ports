@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.12.1
+PORTVERSION=	2.14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -34,15 +34,13 @@ MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}as.1 \
 		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1
 
 post-install:
-.for F in addr2line c++filt gasp objcopy objdump readelf size strings
+.for F in addr2line c++filt objcopy objdump readelf size strings
 	${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F  \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
-	cd ${PREFIX}/lib ; ${MV} libbfd.a libiberty.a libopcodes.a \
+	cd ${PREFIX}/lib ; ${MV} libiberty.a \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
 	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
-	cd ${PREFIX}/include ; ${MV} ansidecl.h bfd.h bfdlink.h symcat.h \
-		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
 	${RM} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/*
 	${RMDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 
