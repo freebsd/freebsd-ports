@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build"
-
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_AUTOCONF_VER=213
