@@ -1,0 +1,13 @@
+Xwrits reminds you to take wrist breaks, which will hopefully help you
+prevent repetitive stress injury. It pops up an X window when you
+should rest; you click on that window, then take a break.
+
+Xwrits's graphics are brightly colored pictures of a wrist and the
+attached hand. The wrist clenches and stretches ``as if in pain'' when
+you should rest, slumps relaxed during the break, and points forward
+valiantly when the break is over. It is trapped behind bars while the
+keyboard is locked. Other gestures are included.
+
+WWW: http://www.pdos.lcs.mit.edu/~eddietwo/xwrits/
+
+- Matt Braithwaite <mab@red-bean.com>
