@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qDecode
+PORTNAME=	qDecoder
 PORTVERSION= 	5.0.8
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hongik.com/pub/qDecoder/
