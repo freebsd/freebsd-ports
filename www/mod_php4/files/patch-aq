@@ -1,35 +1,6 @@
---- configure.orig	Tue Aug 29 20:37:36 2000
-+++ configure	Sat Sep  2 10:02:53 2000
-@@ -23088,12 +23088,7 @@
- 
-   LIBS=$old_LIBS
-   LDFLAGS="$old_LDFLAGS"
--  if test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
--	cat >> confdefs.h <<\EOF
--#define HAVE_LIBMCRYPT22 1
--EOF
--
--  elif test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
-+  if test "$ac_cv_lib_mcrypt_mcrypt_module_open" = "yes"; then
-     
-  case "ltdl" in
-  c|c_r|pthread*) ;;
-@@ -23106,8 +23101,13 @@
-   ;;
-   esac
- 
--	cat >> confdefs.h <<\EOF
-+    cat >> confdefs.h <<\EOF
- #define HAVE_LIBMCRYPT24 1
-+EOF
-+
-+  elif test "$ac_cv_lib_mcrypt_init_mcrypt" = "yes"; then
-+    cat >> confdefs.h <<\EOF
-+#define HAVE_LIBMCRYPT22 1
- EOF
- 
-   else
-@@ -37824,18 +37824,6 @@
+--- configure.orig	Mon Apr 30 15:47:59 2001
++++ configure	Fri May  4 00:14:24 2001
+@@ -45273,18 +45273,6 @@
    fi
  
  	
@@ -48,10 +19,11 @@
   case "ct" in
   c|c_r|pthread*) ;;
   *)
-@@ -37848,30 +37836,7 @@
+@@ -45296,31 +45284,7 @@
+   ;;
    esac
  
- 	
+-	
 - case "comn" in
 - c|c_r|pthread*) ;;
 - *)
@@ -80,7 +52,7 @@
      old_LDFLAGS=$LDFLAGS
      LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
      echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
-@@ -37923,18 +37888,6 @@
+@@ -45372,17 +45336,6 @@
   
  else
    echo "$ac_t""no" 1>&6
@@ -95,7 +67,6 @@
 -
 -  ;;
 -  esac
-- 
+  
  fi
  
-     echo $ac_n "checking for insck__getVdate in -linsck""... $ac_c" 1>&6
