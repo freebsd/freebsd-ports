@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	mail ruby
-MASTER_SITES=	http://www.lickey.com/%SUBDIR%/
-MASTER_SITE_SUBDIR=	ruby${PORTNAME}
+MASTER_SITES=	http://www.lickey.com/rubymail/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
