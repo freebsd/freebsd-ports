@@ -46,10 +46,10 @@ OPTIONS=	LDAP "Enable LDAP support" on
 
 .include <bsd.port.pre.mk>
 
-#.if defined(WITH_GPG)
-#LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
-#CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
-#.endif
+.if defined(WITH_GPG)
+LIB_DEPENDS+=		gpgme.14:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}/bin/gpgme-config
+.endif
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=		yes
