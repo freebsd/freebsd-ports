@@ -1,5 +1,11 @@
 bin/kdepyuic
 %%PYTHON_SITELIBDIR%%/dcop.so
+%%PYTHON_SITELIBDIR%%/dcopexport.py
+%%PYTHON_SITELIBDIR%%/dcopexport.pyc
+%%PYTHON_SITELIBDIR%%/dcopexport.pyo
+%%PYTHON_SITELIBDIR%%/dcopext.py
+%%PYTHON_SITELIBDIR%%/dcopext.pyc
+%%PYTHON_SITELIBDIR%%/dcopext.pyo
 %%PYTHON_SITELIBDIR%%/kdecore.so
 %%PYTHON_SITELIBDIR%%/kdefx.so
 %%PYTHON_SITELIBDIR%%/kdeprint.so
@@ -11,7 +17,10 @@ bin/kdepyuic
 %%PYTHON_SITELIBDIR%%/kmdi.so
 %%PYTHON_SITELIBDIR%%/kparts.so
 %%PYTHON_SITELIBDIR%%/kspell.so
+%%PYTHON_SITELIBDIR%%/kutils.so
 %%PYTHON_SITELIBDIR%%/pykdeconfig.py
+%%PYTHON_SITELIBDIR%%/pykdeconfig.pyc
+%%PYTHON_SITELIBDIR%%/pykdeconfig.pyo
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/aboutkde.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/astron.png
@@ -125,6 +134,7 @@ share/sip/kdecore/kkeynative.sip
 share/sip/kdecore/kkeyserver_x11.sip
 share/sip/kdecore/klibloader.sip
 share/sip/kdecore/klocale.sip
+share/sip/kdecore/klockfile.sip
 share/sip/kdecore/kmacroexpander.sip
 share/sip/kdecore/kmanagerselection.sip
 share/sip/kdecore/kmdcodec.sip
@@ -156,7 +166,7 @@ share/sip/kdecore/kstddirs.sip
 share/sip/kdecore/kstringhandler.sip
 share/sip/kdecore/ktempdir.sip
 share/sip/kdecore/ktempfile.sip
-share/sip/kdecore/kuniqueapp.sip
+share/sip/kdecore/kuniqueapplication.sip
 share/sip/kdecore/kurl.sip
 share/sip/kdecore/kurldrag.sip
 share/sip/kdecore/kuser.sip
@@ -203,6 +213,7 @@ share/sip/kdeui/kaccelmenu.sip
 share/sip/kdeui/kaction.sip
 share/sip/kdeui/kactionclasses.sip
 share/sip/kdeui/kactioncollection.sip
+share/sip/kdeui/kactionselector.sip
 share/sip/kdeui/kactionshortcutlist.sip
 share/sip/kdeui/kactivelabel.sip
 share/sip/kdeui/kalphapainter.sip
@@ -252,12 +263,14 @@ share/sip/kdeui/kinputdialog.sip
 share/sip/kdeui/kjanuswidget.sip
 share/sip/kdeui/kkeybutton.sip
 share/sip/kdeui/kkeydialog.sip
+share/sip/kdeui/klanguagebutton.sip
 share/sip/kdeui/kled.sip
 share/sip/kdeui/klineedit.sip
 share/sip/kdeui/klineeditdlg.sip
 share/sip/kdeui/klistbox.sip
 share/sip/kdeui/klistview.sip
 share/sip/kdeui/klistviewlineedit.sip
+share/sip/kdeui/klistviewsearchline.sip
 share/sip/kdeui/kmainwindow.sip
 share/sip/kdeui/kmainwindowiface.sip
 share/sip/kdeui/kmenubar.sip
@@ -404,10 +417,14 @@ share/sip/kio/kimageio.sip
 share/sip/kio/kiomod.sip
 share/sip/kio/kmimemagic.sip
 share/sip/kio/kmimetype.sip
+share/sip/kio/kmimetypechooser.sip
+share/sip/kio/knfsshare.sip
 share/sip/kio/kpac.sip
 share/sip/kio/kprotocolinfo.sip
 share/sip/kio/kprotocolmanager.sip
+share/sip/kio/kremoteencoding.sip
 share/sip/kio/krun.sip
+share/sip/kio/ksambashare.sip
 share/sip/kio/kscan.sip
 share/sip/kio/kservice.sip
 share/sip/kio/kservicegroup.sip
@@ -415,6 +432,7 @@ share/sip/kio/kservicetype.sip
 share/sip/kio/kshellcompletion.sip
 share/sip/kio/kshred.sip
 share/sip/kio/ksycoca.sip
+share/sip/kio/ksycocadict.sip
 share/sip/kio/ksycocaentry.sip
 share/sip/kio/ksycocafactory.sip
 share/sip/kio/ksycocatype.sip
@@ -472,6 +490,18 @@ share/sip/kspell/kspell.sip
 share/sip/kspell/kspelldlg.sip
 share/sip/kspell/kspellmod.sip
 share/sip/kspell/ksyntaxhighlighter.sip
+share/sip/kutils/kcmoduleinfo.sip
+share/sip/kutils/kcmoduleloader.sip
+share/sip/kutils/kcmoduleproxy.sip
+share/sip/kutils/kcmultidialog.sip
+share/sip/kutils/kfind.sip
+share/sip/kutils/kfinddialog.sip
+share/sip/kutils/kmultitabbar.sip
+share/sip/kutils/kplugininfo.sip
+share/sip/kutils/kpluginselector.sip
+share/sip/kutils/kreplace.sip
+share/sip/kutils/kreplacedialog.sip
+share/sip/kutils/kutilsmod.sip
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/uimodules
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm share/sip/dcop
@@ -486,3 +516,4 @@ share/sip/kspell/ksyntaxhighlighter.sip
 @dirrm share/sip/kmdi
 @dirrm share/sip/kparts
 @dirrm share/sip/kspell
+@dirrm share/sip/kutils
