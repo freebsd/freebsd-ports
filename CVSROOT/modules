@@ -7943,6 +7943,7 @@ ssh-gui		ports/security/ssh-gui
 ssh-multiadd	ports/security/ssh-multiadd
 ssh-picobsd	ports/picobsd/ssh-picobsd
 ssh2		ports/security/ssh2
+ssh_askpass_gtk2	ports/security/ssh_askpass_gtk2
 sshbuddy	ports/misc/sshbuddy
 ssldump		ports/net/ssldump
 sslproxy	ports/security/sslproxy
