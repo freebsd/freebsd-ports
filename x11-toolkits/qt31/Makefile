@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -92,6 +92,8 @@ post-patch:
 	@${REINPLACE_CMD} -e  's,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e  's,/usr/X11R6,${X11BASE},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e 's,release,release thread,' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 
 post-build:
