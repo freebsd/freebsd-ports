@@ -4,11 +4,20 @@ analysis.  EMBOSS is produced by the European Molecular Biology Network
 (EMBnet - http://www.embnet.org/).
 
 All EMBOSS tools are all built around the same set of core libraries - AJAX
-and NUCLEUS - and therefore share a unified user interface and a uniform
-sequence addressing methodology.
+and NUCLEUS - and therefore share a unified user interface, have similar
+"look and feel", and implement a uniform sequence addressing methodology.
 
 The various components of EMBOSS are distributed under the GPL, except the
 core libraries which are under the LGPL.
+
+EMBASSY packages are third party applications which have been integrated with
+the EMBOSS suite, but which are not included in the base EMBOSS distribution
+for licensing or other reasons.  This port includes the three currently
+available EMBASSY applications - MSE, PHYLIP and TOPO.  During an interactive
+install the user will be asked to choose which of these will be installed
+(default: all).  Note that the EMBASSY version of PHYLIP should not clash
+with the standalone Phylip application due to the fact that its binaries have
+been renamed.
 
 WWW: http://www.uk.embnet.org/Software/EMBOSS/
 
