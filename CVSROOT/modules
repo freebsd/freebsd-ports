@@ -2112,6 +2112,7 @@ gtksee		ports/graphics/gtksee
 gtksql		ports/databases/gtksql
 gtkstep		ports/x11-toolkits/gtkstep
 gtkstep-pastel	ports/x11-toolkits/gtkstep-pastel
+gtktalog	ports/misc/gtktalog
 gtktetcolor	ports/games/gtktetcolor
 gtkyahoo	ports/net/gtkyahoo
 gtl		ports/misc/gtl
