@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~marcus/:local
