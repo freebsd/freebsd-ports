@@ -1,0 +1,8 @@
+xmmspipe is a plugin for XMMS that enables it to be controlled by
+sending strings to a named pipe (FIFO). When enabled, XMMS can be
+commanded by sending strings to $HOME/.xmms/inpipe.
+
+WWW: http://rooster.stanford.edu/~ben/xmmspipe/
+
+- David
+dyeske@yahoo.com
