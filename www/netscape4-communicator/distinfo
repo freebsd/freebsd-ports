@@ -9,3 +9,5 @@ MD5 (communicator-v47-export.x86-unknown-linuxglibc2.0.tar.gz) = b4c1de5f30ceb15
 MD5 (communicator-v47-us.x86-unknown-freebsd.tar.gz) = fae5e2d150dfe9c05c5d8b577e99a8c3
 MD5 (navigator-v47-export.x86-unknown-freebsd.tar.gz) = c84b2779c25cfb10ebace307e56dc569
 MD5 (Fortify-1.4.5-unix-x86.tar.gz) = 15ef1bc8757860706c38e0f886bb0b93
+MD5 (communicator-v47-export.alpha-dec-osf4.0.tar.gz) = 649fcbb91589553599bc707caff35a9e
+MD5 (navigator-v47-export.alpha-dec-osf4.0.tar.gz) = 91244e06363f0fc8a277c2ebe6ed7b67
