@@ -3,13 +3,13 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.17 1996/11/13 09:16:34 asami Exp $
+# $Id: Makefile,v 1.18 1996/12/07 13:03:36 asami Exp $
 #
 
 DISTNAME=	itcl2.1
 PKGNAME=	itcl-2.1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/devel/
 
 MAINTAINER=	chuckr@freebsd.org
 
