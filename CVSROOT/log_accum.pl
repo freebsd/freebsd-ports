@@ -45,8 +45,8 @@ my $DEBUG = 0;
 my $MAILCMD = "/usr/local/bin/mailsend -H";
 
 
-# Email addresses of recipients of commit mail.
-my $MAILADDRS = 'cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
+# Email addresses of recipients of commit mail. (might be overridden below)
+my $MAILADDRS = "nobody";
 
 
 # Extra banner to add to top of commit messages.
@@ -67,6 +67,7 @@ my $FILE_PREFIX = "#cvs.files";
 # Remember to comment out if using for other purposes.
 #-------------------------------------------------------
 if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
+    $MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
     if ($1 =~ /freefall/i) {
 	$meister = 'peter@FreeBSD.org';
     } else {
