@@ -1,0 +1,12 @@
+--- dirDlgData.cpp.orig	Tue Jan 25 01:36:16 2000
++++ dirDlgData.cpp	Tue Jan 25 01:36:43 2000
+@@ -6,6 +6,9 @@
+ #include <qframe.h>
+ #include <qlabel.h>
+ 
++#define QColor(i)	(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ dirDlgData::dirDlgData
+ (
+ 	QWidget* parent,

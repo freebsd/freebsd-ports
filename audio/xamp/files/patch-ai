@@ -1,0 +1,12 @@
+--- QtAMPData.cpp.orig	Tue Jan 25 01.35.30 2000
++++ QtAMPData.cpp	Tue Jan 25 01:35:55 2000
+@@ -19,6 +19,9 @@
+ #include <qkeycode.h>
+ #include <qtooltip.h>
+ 
++#define QColor(i)	(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ QtAMPData::QtAMPData
+ (
+ 	QWidget* parent,

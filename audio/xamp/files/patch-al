@@ -1,0 +1,12 @@
+--- plDlgData.cpp.orig	Mon Feb  2 14:16:06 1998
++++ plDlgData.cpp	Tue Jan 25 01:34:41 2000
+@@ -18,6 +18,9 @@
+ #include <qlabel.h>
+ #include <qkeycode.h>
+ 
++#define QColor(i)	(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ plDlgData::plDlgData
+ (
+ 	QWidget* parent,
