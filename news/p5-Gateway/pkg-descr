@@ -1,0 +1,19 @@
+Essentially, robomoderators, moderation support programs, and mail to
+news gateways are all the same thing.  They take an incoming message,
+from either an MTA or from a user filtering program like procmail, or
+perhaps even directly from a user's MUA, perform a variety of rewrites
+required to turn an RFC 822 message into an RFC 1036 message, possibly
+perform a variety of checks and additional rewrites suited to the
+particular application, and then hand the message off to a news
+server.  News to mail gateways just do exactly the same thing in
+reverse.
+
+This is an attempt to generalize out the framework, so that people
+don't have to keep writing the same code to read e-mail messages, post
+messages, send e-mail messages, and do the common rewrites, and
+instead can concentrate on the *interesting* parts, namely the checks
+and rewrites they need for their specific application.  News::Gateway
+is *not* a robomoderator or gateway in and of itself.  Rather, it's a
+toolkit for *building* robomoderators and gateways that attempts to
+take care of all of the nitpicking details for you and drastically
+decrease the amount of code you have to write.

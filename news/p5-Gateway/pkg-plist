@@ -1,0 +1,24 @@
+lib/perl5/man/man3/News::Gateway.3.gz
+lib/perl5/site_perl/News/Gateway.pm
+lib/perl5/site_perl/News/Gateway.pod
+lib/perl5/site_perl/auto/News/Gateway/anykeyword.al
+lib/perl5/site_perl/auto/News/Gateway/bodyheaders.al
+lib/perl5/site_perl/auto/News/Gateway/cleanbody.al
+lib/perl5/site_perl/auto/News/Gateway/config.al
+lib/perl5/site_perl/auto/News/Gateway/crosspost.al
+lib/perl5/site_perl/auto/News/Gateway/hash.al
+lib/perl5/site_perl/auto/News/Gateway/headers.al
+lib/perl5/site_perl/auto/News/Gateway/keywords.al
+lib/perl5/site_perl/auto/News/Gateway/mail.al
+lib/perl5/site_perl/auto/News/Gateway/mailpath.al
+lib/perl5/site_perl/auto/News/Gateway/mailtonews.al
+lib/perl5/site_perl/auto/News/Gateway/moosesign.al
+lib/perl5/site_perl/auto/News/Gateway/mungeids.al
+lib/perl5/site_perl/auto/News/Gateway/newsgroups.al
+lib/perl5/site_perl/auto/News/Gateway/newstomail.al
+lib/perl5/site_perl/auto/News/Gateway/nobinaries.al
+lib/perl5/site_perl/auto/News/Gateway/post.al
+lib/perl5/site_perl/auto/News/Gateway/previoushop.al
+lib/perl5/site_perl/auto/News/Gateway/whitelist.al
+lib/perl5/site_perl/i386-freebsd/auto/News/Gateway/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/News/Gateway
