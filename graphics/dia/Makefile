@@ -11,7 +11,7 @@ CATEGORIES+=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/dia
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
