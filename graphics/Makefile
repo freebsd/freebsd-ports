@@ -218,6 +218,7 @@
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
+    SUBDIR += xzgv
     SUBDIR += zimg
 
 .include <bsd.port.subdir.mk>

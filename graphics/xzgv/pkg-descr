@@ -1,0 +1,12 @@
+This is an image file viewer with thumbnail-based file selector. it uses GTK+
+and Imlib libraries and support most image file formats. The thumbnail file is
+compatible with xv and Gimp.
+
+In contrast to other image file viewers for X, xzgv uses only one window and
+can fit a large image to the size of the window without changing the aspect
+ratio.
+
+WWW:  http://xzgv.browser.org/
+
+Norio Suzuki
+nosuzuki@e-mail.ne.jp
