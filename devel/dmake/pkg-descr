@@ -1,0 +1,8 @@
+dmake Version 4.0
+=================
+FULL RELEASE OF DMAKE, REPLACES VERSIONS 3.8, and 3.9 (never posted)
+
+Nature: This distribution advances dmake to Version 4.0, patch level 0.
+------- The release is an attempt at addressing obscure faults in dmake
+	and at providing some much needed new functionality.  See below
+	for details of enhancements and bug fixes.
