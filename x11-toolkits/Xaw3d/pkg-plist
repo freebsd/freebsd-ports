@@ -1,7 +1,7 @@
 lib/libXaw3d.a
 lib/libXaw3d.so
 lib/libXaw3d.so.6.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/X11/Xaw3d/AllWidgets.h
 include/X11/Xaw3d/AsciiSink.h
@@ -79,3 +79,5 @@ include/X11/Xaw3d/ViewportP.h
 include/X11/Xaw3d/XawImP.h
 include/X11/Xaw3d/XawInit.h
 share/doc/Xaw3d/README.XAW3D
+@dirrm include/X11/Xaw3d
+@dirrm share/doc/Xaw3d
