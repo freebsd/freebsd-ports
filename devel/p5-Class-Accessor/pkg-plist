@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Accessor/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Class/Accessor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Accessor/Fast.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Accessor
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Accessor
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
