@@ -1,9 +1,14 @@
-include/c2lib_version.h
-include/hash.h
-include/matvec.h
-include/pool.h
-include/pstring.h
-include/vector.h
+include/c2lib/hash.h
+include/c2lib/matvec.h
+include/c2lib/pool.h
+include/c2lib/pre.h
+include/c2lib/pstring.h
+include/c2lib/tree.h
+include/c2lib/vector.h
 lib/libc2.a
 lib/libc2.so
 lib/libc2.so.1
+lib/libc2.so.1.3.0
+share/rws/symtabs/libc2.syms
+@unexec /bin/rmdir %D/share/rws/symtabs 2>/dev/null || true
+@unexec /bin/rmdir %D/share/rws 2>/dev/null || true

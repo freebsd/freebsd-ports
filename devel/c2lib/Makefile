@@ -1,31 +1,37 @@
-# ex:ts=8
+# ex:ts=8	-*-mode: makefile-*-
+#
 # New ports collection makefile for:	c2lib
-# Date created:			Feb 16, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
+# Date created:		2002-12-22
+# Whom:			Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	c2lib
-PORTVERSION=	1.2.15
+PORTVERSION=	1.3.0
+PORTREVISION=	0
+PORTEPOCH=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.annexia.org/freeware/c2lib/
+MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
 MAINTAINER=	alane@FreeBSD.org
 
-USE_LIBTOOL=	yes
+BUILD_REQUIRES+=cdoc:${.CURDIR}/../../devel/cdoc
+BUILD_REQUIRES+=make+:${.CURDIR}/../../devel/makeplus
+
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-	REALCURDIR="${.CURDIR}" \
-	DISTNAME="${DISTNAME}"
-
-post-install:
-	${RM} ${PREFIX}/lib/libc2.la
-
+PREFIX?=	${LOCALBASE}
+MAKE_ENV+=	CC="${CC}"
 .include <bsd.port.pre.mk>
 
-MAN3!=		${CAT} ${FILESDIR}/man3
+do-build:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} make+ 
 
+do-install:
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV}\
+		make+ install prefix=${PREFIX} manprefix=${PREFIX}
+
+.include "${.CURDIR}/manpages.mk"
 .include <bsd.port.post.mk>
+
+#EOF

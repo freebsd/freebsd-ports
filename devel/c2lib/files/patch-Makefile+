@@ -1,0 +1,18 @@
+--- Makefile+~	Sun Dec  8 12:45:43 2002
++++ Makefile+	Fri Dec 27 01:34:48 2002
+@@ -103,13 +103,13 @@
+ 
+ install:
+ 	install -d $(DESTDIR)$(libdir)
+-	install -d $(DESTDIR)$(includedir)
++	install -d $(DESTDIR)$(pkgincludedir)
+ 	install -d $(DESTDIR)$(man3dir)
+ 	install -d $(DESTDIR)$(datadir)/rws/symtabs/
+ 
+ 	$(MP_INSTALL_STATIC_LIB) libc2.a
+ 	$(MP_INSTALL_DYNAMIC_LIB) libc2.so
+-	install -m 0644 $(HEADERS) $(DESTDIR)$(includedir)
++	install -m 0644 $(HEADERS) $(DESTDIR)$(pkgincludedir)
+ 	install -m 0644 *.3        $(DESTDIR)$(man3dir)
+ 	install -m 0644 *.syms     $(DESTDIR)$(datadir)/rws/symtabs/
+ 
