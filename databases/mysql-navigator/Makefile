@@ -11,7 +11,7 @@ CATEGORIES=	databases gnome
 MASTER_SITES=	http://sql.kldp.org/source/
 DISTNAME=	mysql_navigator_ver_${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
