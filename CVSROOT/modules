@@ -2694,6 +2694,7 @@ gtkgraph	ports/graphics/gtkgraph
 gtkhtml		ports/www/gtkhtml
 gtkhtml3	ports/www/gtkhtml3
 gtkhx		ports/net/gtkhx
+gtkjournal	ports/deskutils/gtkjournal
 gtklp		ports/print/gtklp
 gtkmathview	ports/x11-toolkits/gtkmathview
 gtkpod		ports/audio/gtkpod
