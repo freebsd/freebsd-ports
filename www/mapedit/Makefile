@@ -3,7 +3,7 @@
 # Date created:         Sun Mar 17 17:59:48 MET 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/17 22:45:47 asami Exp $
+# $Id: Makefile,v 1.2 1996/09/19 03:01:17 andreas Exp $
 #
 
 DISTNAME=       mapedit1.5
@@ -12,7 +12,7 @@ CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	Andreas Klemm <andreas@klemm.gtn.com>
+MAINTAINER=	andreas@klemm.gtn.com
 
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
