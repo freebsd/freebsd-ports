@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.mavetju.org/download/
 MAINTAINER=	edwin@mavetju.org
 
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 
 MAN7=		pkg_tree.7
 
