@@ -19,6 +19,8 @@ COMMENT=	Analyze high frequency, linear electrical networks
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
