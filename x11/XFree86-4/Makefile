@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.44 1998/08/05 19:28:17 jmz Exp $
+# $Id: Makefile,v 1.45 1998/09/21 00:03:21 steve Exp $
 #
 
 DISTNAME=	xc
@@ -60,6 +60,20 @@ pre-fetch:
 pre-install:
 	${MKDIR} /usr/X11R6
 post-install:
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+	    for lib in PEX5 SM X11 XIE Xi Xmu Xt oldX; do \
+		${LN} -sf lib$${lib}.so.6.0 ${PREFIX}/lib/lib$${lib}.so; \
+	    done; \
+	    for lib in X11 Xaw Xtst; do \
+		${LN} -sf lib$${lib}.so.6.1 ${PREFIX}/lib/lib$${lib}.so; \
+	    done; \
+	    for lib in Xp; do \
+		${LN} -sf lib$${lib}.so.6.2 ${PREFIX}/lib/lib$${lib}.so; \
+	    done; \
+	    for lib in ICE Xext; do \
+		${LN} -sf lib$${lib}.so.6.3 ${PREFIX}/lib/lib$${lib}.so; \
+	    done; \
+	fi
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
