@@ -130,7 +130,6 @@
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Errno
-    SUBDIR += p5-Expect
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-Slurp
