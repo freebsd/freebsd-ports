@@ -11,6 +11,8 @@ COMMENT=	Message interface to Emacs Window for mule
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew
 
+BROKEN=		"Incorrect pkg-plist (removes directories not installed by this port)"
+
 # set emacs port
 EMACS_PORT_NAME=mule
 
