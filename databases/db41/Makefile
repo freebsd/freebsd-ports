@@ -7,7 +7,7 @@
 
 PORTNAME=	db41
 PORTVERSION=	4.1.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 PKGNAMESUFFIX?=
@@ -36,8 +36,14 @@ INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	install install_docs
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CONFIGURE_ARGS+=	--with-mutex=x86/gcc-assembly
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
