@@ -22,14 +22,22 @@ NO_BUILD=	yes
 GST_DIR=	lib/gstreamer-${PORTVERSION}
 PLIST_FILES=	${GST_DIR}/.gstreamer-plugins-core.keep
 
+WANT_GSTREAMER=	yes
+
+.include <bsd.port.pre.mk>
+
 # Audio plugins
-USE_GSTREAMER+= mad vorbis
+USE_GSTREAMER+=	mad vorbis
 
 # Graphics plugins
 USE_GSTREAMER+=	libpng
 
 # Multimedia plugins
-USE_GSTREAMER+=	ffmpeg xvid
+USE_GSTREAMER+=	ffmpeg
+
+.if ${OSVERSION} > 500035 || defined(WITH_XVID)
+USE_GSTREAMER+=	xvid
+.endif
 
 .if !defined(WITHOUT_DVD)
 # Audio plugins
@@ -43,6 +51,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " Disable DVD plugins by defining WITHOUT_DVD"
 	@${ECHO_MSG} ""
+.if ${OSVERSION} < 500035 && !defined(WITH_XVID)
+	@${ECHO_MSG} " Enable XVID plugins by defining WITH_XVID"
+	@${ECHO_MSG} ""
+.endif
 
 do-install:
 	if [ ! -d ${PREFIX}/${GST_DIR} ]; then \
@@ -50,4 +62,4 @@ do-install:
 	fi
 	${TOUCH} -f ${PREFIX}/${GST_DIR}/.gstreamer-plugins-core.keep
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
