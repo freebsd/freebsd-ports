@@ -16,6 +16,7 @@
     SUBDIR += arts
     SUBDIR += ascd
     SUBDIR += asmix
+    SUBDIR += asmixer
     SUBDIR += aube
     SUBDIR += audacity
     SUBDIR += aumix
