@@ -21,7 +21,6 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13 \
 		atk.10:${PORTSDIR}/devel/atk \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \
@@ -29,7 +28,6 @@ LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		intl.1:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 NO_LATEST_LINK=	"Unstable, development version."

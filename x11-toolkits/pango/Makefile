@@ -16,12 +16,10 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
-		freetype-config:${PORTSDIR}/print/freetype2	# XXX
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13 \
 		freetype.8:${PORTSDIR}/print/freetype2 \
 		intl.1:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
