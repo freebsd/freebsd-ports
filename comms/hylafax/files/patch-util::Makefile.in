@@ -1,0 +1,13 @@
+--- util/Makefile.in.orig	Mon Aug 16 14:58:22 2004
++++ util/Makefile.in	Fri Jan 14 23:17:11 2005
+@@ -161,8 +161,8 @@
+ 
+ installClient: default
+ 	${PUTCLIENT} -F ${LIBEXEC} -m 755 -O textfmt
+-	${PUTCLIENT} -F ${LIBDATA} -m 444 -O pagesizes
+-	${PUTCLIENT} -F ${LIBDATA} -m 444 -src ${SRCDIR}/typerules -O typerules
++	${PUTCLIENT} -F ${LIBDATA} -m 444 -src ${SRCDIR}/pagesizes -O pagesizes-dist
++	${PUTCLIENT} -F ${LIBDATA} -m 444 -src ${SRCDIR}/typerules -O typerules-dist
+ 
+ install: installClient
+ 	${PUTSBIN} -m 755 -O faxmsg faxadduser faxconfig faxdeluser faxmodem \

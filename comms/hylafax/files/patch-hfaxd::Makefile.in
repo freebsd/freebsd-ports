@@ -1,0 +1,8 @@
+--- hfaxd/Makefile.in.orig	Thu Nov 20 16:20:39 2003
++++ hfaxd/Makefile.in	Fri Jan 14 22:59:19 2005
+@@ -99,4 +99,4 @@
+ 	${INSTALL} -F ${LIBEXEC} -u root -m 755 \
+ 	    -idb ${PRODUCT}.sw.server -O hfaxd
+ 	${INSTALL} -F ${LIBDATA} -m 644 -idb ${PRODUCT}.sw.server \
+-	    -idb "config(noupdate)" -src ${SRCDIR}/hfaxd.conf -O hfaxd.conf
++	    -idb "config(noupdate)" -src ${SRCDIR}/hfaxd.conf -O hfaxd.conf-dist
