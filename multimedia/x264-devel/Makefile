@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20041029
-PORTREVISION=	1
+PORTVERSION=	0.0.20050125
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.videolan.org/pub/videolan/contrib/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/contrib/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|$|ahze/|}
+#		http://download.videolan.org/pub/videolan/contrib/ \
+#		http://ftp.snt.utwente.nl/pub/software/videolan/contrib/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	Multimedia library for encoding H.264/AVC video streams
+COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
 
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-
-ONLY_FOR_ARCHS=	i386
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
@@ -53,8 +51,8 @@ CFLAGS+=-DHAVE_MMXEXT
 CFLAGS+=-DHAVE_SSE2
 .endif
 
-.if defined(WITH_DEBUG)
-CFLAGS+=	-g -DDEBUG
+.if !defined(WITH_DEBUG)
+MAKE_ENV+=	NDEBUG="1"
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -62,7 +60,7 @@ CFLAGS+=	-O2 -funroll-loops
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CFLAGS} ${CPPFLAGS}|; \
+	@${REINPLACE_CMD} -e 's|%%CFLAGS%%|${CPPFLAGS} ${CFLAGS}|; \
 		s|%%SHLIB_VER%%|${SHLIB_VER}|; \
 		s|-lm|${LDFLAGS} -lm|' ${WRKSRC}/${MAKEFILE}
 
