@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.20 1995/08/21 09:42:31 asami Exp $
+# $Id: LEGAL,v 1.21 1995/08/26 09:30:17 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -28,7 +28,7 @@ mmv/*			ports/utils/mmv		Restrictive/unclear copyright
 xv-3.10a.tar.gz		ports/graphics/xv	Restrictive copyright
 irc-2.8.21.tar.gz	ports/net/irc		Restrictive copyright
 						in irc2.8.21/ircd/res.c
-e93-1.0.2rX.tar.gz	ports/editors/e93	Restrictive copyright?
+e93-1.2r5X.tar.gz	ports/editors/e93	Restrictive copyright?
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 joe2.8.tar.Z		ports/editors/joe	Restrictive copyright
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
