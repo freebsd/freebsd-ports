@@ -1,0 +1,17 @@
+This module a simple file-based database.  This database simply contains
+IP blocks as keys, and countries as values.  The data contains all
+public IP addresses and should be more
+complete and accurate than reverse DNS lookups.
+
+This module can be used to automatically select the geographically closest
+mirror, or to analyze your web server logs to determine the countries of
+your visiters.
+
+To install, see the INSTALL file.
+
+Copyright (c) 2002, MaxMind.com
+
+All rights reserved.  This package is free software; you can redistribute it
+and/or modify it under the same terms as Perl itself.
+
+WWW: http://maxmind.com/geoip/api/perl.shtml
