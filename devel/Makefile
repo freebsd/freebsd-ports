@@ -14,6 +14,7 @@
     SUBDIR += automake
     SUBDIR += avltree
     SUBDIR += bcc
+    SUBDIR += binutils-m68k
     SUBDIR += bison
     SUBDIR += boehm-gc
     SUBDIR += bonobo
@@ -62,6 +63,7 @@
     SUBDIR += ftnchek
     SUBDIR += gaa
     SUBDIR += gcc-6811
+    SUBDIR += gcc-m68k
     SUBDIR += gettext
     SUBDIR += gide
     SUBDIR += gindent
