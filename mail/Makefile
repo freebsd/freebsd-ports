@@ -260,6 +260,7 @@
     SUBDIR += pathalias
     SUBDIR += pear-Mail
     SUBDIR += pear-Mail_Mime
+    SUBDIR += pear-Net_Cyrus
     SUBDIR += pear-Net_IMAP
     SUBDIR += pear-mailparse
     SUBDIR += perdition
