@@ -1,13 +1,10 @@
 bin/pgsql2shp
 bin/shp2pgsql
-lib/libpostgis.so
-lib/libpostgis.so.0
-%%DATADIR%%/README.postgis
-%%DATADIR%%/UPDATE
-%%DATADIR%%/postgis.sql.default
+lib/liblwgeom.so
+lib/liblwgeom.so.1
+%%DATADIR%%/README.upgrade
 %%DATADIR%%/updatedb.default
-%%DATADIR%%/postgis_undef.sql
-%%DATADIR%%/spatial_ref_sys.sql
+%%DATADIR%%/lwpostgis.sql.default
 %%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 @unexec rmdir %D/lib 2>/dev/null || true
