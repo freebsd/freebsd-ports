@@ -75,7 +75,6 @@ include/gtk/gtkvscrollbar.h
 include/gtk/gtkvseparator.h
 include/gtk/gtkwidget.h
 include/gtk/gtkwindow.h
-lib/libgck.so.0.0
 lib/libgdk.a
 lib/libgdk.la
 lib/libgdk.so
