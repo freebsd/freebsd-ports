@@ -1,5 +1,5 @@
 *** linux_a.c.orig	Mon May 20 17:09:46 1996
---- linux_a.c	Tue Jun 16 19:59:01 1998
+--- linux_a.c	Tue Jun 16 21:40:17 1998
 ***************
 *** 71,82 ****
      then 8-bit unsigned if it fails. If you have a sound device that
@@ -110,13 +110,13 @@
     if (dpm.encoding & PE_16BIT) tmp++;
     tmp |= (dpm.extra_param[0]<<16);
 ***************
-*** 189,215 ****
+*** 189,216 ****
     return warnings;
   }
   
   static void output_data(int32 *buf, int32 count)
   {
-!   if (!(dpm.encoding & PE_MONO)) count*=2; /* Stereo samples */
+    if (!(dpm.encoding & PE_MONO)) count*=2; /* Stereo samples */
     
 !   if (dpm.encoding & PE_16BIT)
 !     {
@@ -138,7 +138,8 @@
       }
   }
   
---- 235,264 ----
+  static void close_output(void)
+--- 235,269 ----
     return warnings;
   }
   
@@ -147,25 +148,30 @@
 +    doesn't. */
   static void output_data(int32 *buf, int32 count)
   {
-!   char *p;
-!   int res, l;
++   char *p;
++   int res, l;
++   
+    if (!(dpm.encoding & PE_MONO)) count*=2; /* Stereo samples */
     
-!   if (!(dpm.encoding & PE_MONO))
-!     count *= 2;		/* Stereo samples */
-!   
 !   if (dpm.encoding & PE_16BIT) {
         /* Convert data to signed 16-bit PCM */
         s32tos16(buf, count);
-!     res = count*2;
+!       res = count*2;
 !   } else {
         /* Convert to 8-bit unsigned and write out. */
         s32tou8(buf, count);
-!     res = count ;
+!       res = count;
 !   }
-!   for (p = (char *) buf ; res > 0 ; res -= l ) {
+!   for (p = (char *) buf; res > 0; res -= l) {
+! again:
 !     l = write(dpm.fd, p, res);
-!     if (l < 0) return ;
-!     p += l ;
+!     if (l < 0) {
+! 	if (errno == EINTR)
+! 		goto again;
+! 	return;
       }
++     p += l;
++   }
   }
   
+  static void close_output(void)
