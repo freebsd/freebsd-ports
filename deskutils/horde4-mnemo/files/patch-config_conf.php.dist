@@ -1,0 +1,21 @@
+--- config/conf.php.dist.orig	Mon Apr 22 20:39:23 2002
++++ config/conf.php.dist	Sun May 19 11:10:29 2002
+@@ -42,12 +42,12 @@
+ // Below is an example configuration for an sql driver, in this case
+ // MySQL.
+ $conf['storage']['params'] = array();
+-// $conf['storage']['params']['phptype'] = 'mysql';
+-// $conf['storage']['params']['hostspec'] = 'localhost';
+-// $conf['storage']['params']['username'] = 'horde';
+-// $conf['storage']['params']['password'] = '*****';
+-// $conf['storage']['params']['database'] = 'horde';
+-// $conf['storage']['params']['table'] = 'mnemo_memos';
++$conf['storage']['params']['phptype'] = 'mysql';
++$conf['storage']['params']['hostspec'] = 'localhost';
++$conf['storage']['params']['username'] = 'hordemgr';
++$conf['storage']['params']['password'] = 'hordemgr';
++$conf['storage']['params']['database'] = 'horde';
++$conf['storage']['params']['table'] = 'mnemo_memos';
+ 
+ 
+ /**
