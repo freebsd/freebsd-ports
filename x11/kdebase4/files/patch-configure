@@ -1,0 +1,122 @@
+--- configure.orig	Sat Aug 23 22:55:38 2003
++++ configure		Sat Aug 23 22:57:16 2003
+@@ -33894,8 +33894,67 @@
+       echo "$as_me:$LINENO: result: not found" >&5
+ echo "${ECHO_T}not found" >&6
+ 
+-  { echo "$as_me:$LINENO: WARNING: Could not find libfontconfig anywhere, check http://www.fontconfig.org/" >&5
+-echo "$as_me: WARNING: Could not find libfontconfig anywhere, check http://www.fontconfig.org/" >&2;}
++
++   echo "$as_me:$LINENO: checking for pkg-config" >&5
++echo $ECHO_N "checking for pkg-config... $ECHO_C" >&6
++   if test -n "$PKGCONFIG"; then
++        kde_cv_path="$PKGCONFIG";
++   else
++        kde_cache=`echo pkg-config | sed 'y%./+-%__p_%'`
++
++        if eval "test \"\${kde_cv_path_$kde_cache+set}\" = set"; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++
++        kde_cv_path="NONE"
++	dirs="${prefix}/bin ${exec_prefix}/bin /usr/bin /usr/local/bin /opt/local/bin"
++	kde_save_IFS=$IFS
++	IFS=':'
++	for dir in $PATH; do
++	  dirs="$dirs $dir"
++        done
++	IFS=$kde_save_IFS
++
++        for dir in $dirs; do
++	  if test -x "$dir/pkg-config"; then
++	    if test -n ""
++	    then
++              evalstr="$dir/pkg-config  2>&1 "
++	      if eval $evalstr; then
++                kde_cv_path="$dir/pkg-config"
++                break
++	      fi
++            else
++		kde_cv_path="$dir/pkg-config"
++                break
++	    fi
++          fi
++        done
++
++        eval "kde_cv_path_$kde_cache=$kde_cv_path"
++
++
++fi
++
++
++      eval "kde_cv_path=\"`echo '$kde_cv_path_'$kde_cache`\""
++
++   fi
++
++   if test -z "$kde_cv_path" || test "$kde_cv_path" = NONE; then
++      echo "$as_me:$LINENO: result: not found" >&5
++echo "${ECHO_T}not found" >&6
++
++            { echo "$as_me:$LINENO: WARNING: Could not find neither pkg-config nor fontconfig-config, check http://www.fontconfig.org/ " >&5
++echo "$as_me: WARNING: Could not find neither pkg-config nor fontconfig-config, check http://www.fontconfig.org/ " >&2;}
++
++   else
++      echo "$as_me:$LINENO: result: $kde_cv_path" >&5
++echo "${ECHO_T}$kde_cv_path" >&6
++      PKGCONFIG=$kde_cv_path
++
++   fi
++
+ 
+    else
+       echo "$as_me:$LINENO: result: $kde_cv_path" >&5
+@@ -33905,6 +33964,30 @@
+    fi
+ 
+ 
++if test -n "$PKGCONFIG"; then
++  vers=`$PKGCONFIG fontconfig --modversion 2>/dev/null | sed -e 's/libfontconfig //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
++  if test -n "$vers" && test "$vers" -ge 1000000
++  then
++     LIBFONTCONFIG_LIBS="`$PKGCONFIG fontconfig --libs`"
++     LIBFONTCONFIG_RPATH=
++     for args in $LIBFONTCONFIG_LIBS; do
++          case $args in
++            -L*)
++               LIBFONTCONFIG_RPATH="$LIBFONTCONFIG_RPATH $args"
++               ;;
++          esac
++     done
++     LIBFONTCONFIG_RPATH=`echo $LIBFONTCONFIG_RPATH | sed -e "s/-L/-R/g"`
++     LIBFONTCONFIG_CFLAGS="`$PKGCONFIG fontconfig --cflags`"
++
++
++cat >>confdefs.h <<_ACEOF
++#define HAVE_FONTCONFIG 1
++_ACEOF
++
++  fi
++fi
++
+ if test -n "$FONTCONFIG_CONFIG"; then
+   vers=`$FONTCONFIG_CONFIG --version 2>/dev/null | sed -e 's/libfontconfig //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+   if test -n "$vers" && test "$vers" -ge 1000000
+@@ -37753,7 +37836,7 @@
+ do
+   for j in ldap.h;
+   do
+-    echo "configure: 37756: $i/$j" >&5
++    echo "configure: 37839: $i/$j" >&5
+     if test -r "$i/$j"; then
+       echo "taking that" >&5
+       ldap_incdir=$i
+@@ -37775,7 +37858,7 @@
+ do
+   for j in libldap.$ext;
+   do
+-    echo "configure: 37778: $i/$j" >&5
++    echo "configure: 37861: $i/$j" >&5
+     if test -r "$i/$j"; then
+       echo "taking that" >&5
+       ldap_libdir=$i
+ 

@@ -277,6 +277,8 @@ lib/kde3/kio_imap4.la
 lib/kde3/kio_imap4.so
 lib/kde3/kio_info.la
 lib/kde3/kio_info.so
+lib/kde3/kio_ldap.la
+lib/kde3/kio_ldap.so
 lib/kde3/kio_mac.la
 lib/kde3/kio_mac.so
 lib/kde3/kio_man.la
@@ -2764,6 +2766,7 @@ share/services/imagethumbnail.desktop
 share/services/imap4.protocol
 share/services/imaps.protocol
 share/services/info.protocol
+share/services/ldap.protocol
 share/services/kaccess.desktop
 share/services/kded/favicons.desktop
 share/services/kded/mountwatcher.desktop
