@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	understand_java
-PORTVERSION=	1.4.204
+PORTVERSION=	1.4.206
 CATEGORIES=	devel java linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/${PORTNAME}/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest pastbuilds
