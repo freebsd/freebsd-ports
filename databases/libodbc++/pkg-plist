@@ -1,0 +1,19 @@
+bin/isql++
+include/odbc++/callablestatement.h
+include/odbc++/config.h
+include/odbc++/connection.h
+include/odbc++/databasemetadata.h
+include/odbc++/drivermanager.h
+include/odbc++/errorhandler.h
+include/odbc++/preparedstatement.h
+include/odbc++/resultset.h
+include/odbc++/resultsetmetadata.h
+include/odbc++/setup.h
+include/odbc++/statement.h
+include/odbc++/threads.h
+include/odbc++/types.h
+lib/libodbc++.a
+lib/libodbc++.so
+lib/libodbc++.so.4
+libdata/pkgconfig/libodbc++.pc
+@dirrm include/odbc++
