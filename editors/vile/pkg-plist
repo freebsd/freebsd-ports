@@ -4,10 +4,14 @@ bin/vile-crypt
 bin/vile-manfilt
 bin/vile-pas-filt
 share/doc/vile/config.doc
+share/doc/vile/hilite.doc
 share/doc/vile/macros.doc
 share/doc/vile/menus.doc
 share/doc/vile/modes.doc
+share/doc/vile/oleauto.doc
 share/doc/vile/perl.doc
+share/doc/vile/visvile.doc
+share/doc/vile/w32modes.doc
 share/vile/vile.hlp
 share/vile/macros/digraphs.rc
 share/vile/macros/manpage.rc
