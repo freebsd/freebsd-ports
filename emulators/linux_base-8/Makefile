@@ -91,6 +91,7 @@ BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
 LATEST_LINK:=		${LATEST_LINK:C/linux/linux32/}
 ARCH=			i386
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
+RPMFLAGS+=		--noscripts
 .else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 .endif
