@@ -7,6 +7,7 @@
 
 PORTNAME=	freeze
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/unixfreeware/archive/ \
 		ftp://ftp.warwick.ac.uk/pub/compression/
