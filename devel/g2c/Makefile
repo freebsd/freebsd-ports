@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mbonobo} != "" && ${HAVE_GNOME:Mgnomedb} != ""
-USE_GNOME=	gnomeprefix bonobo gnomedb
+USE_GNOME+=	gnomeprefix bonobo gnomedb
 PKGNAMESUFFIX=	-gnome
 .endif
 
