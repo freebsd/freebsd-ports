@@ -1,4 +1,4 @@
-bin/pdfimage
+bin/pdfimages
 bin/pdfinfo
 bin/pdftopbm
 bin/pdftops
