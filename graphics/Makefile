@@ -207,7 +207,6 @@
     SUBDIR += splitmpg
     SUBDIR += stamp
     SUBDIR += svgalib
-    SUBDIR += tgd
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += threeDS
