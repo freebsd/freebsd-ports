@@ -11,7 +11,7 @@
 DISTNAME=       premail-0.46
 CATEGORIES=     security mail
 MASTER_SITES=   ftp://ftp.jpunix.com/pub/remailer-tools/ \
-		ftp://ftp.kiarchive.ru/unix/crypto/
+		ftp://ftp.kiarchive.ru/pub/unix/crypto/
 
 MAINTAINER=	ache@FreeBSD.org
 
