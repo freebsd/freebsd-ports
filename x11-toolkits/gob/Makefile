@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gob
-PORTVERSION= 	0.93.0
+PORTVERSION= 	0.93.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.5z.com/pub/gob/
 
