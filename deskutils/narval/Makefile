@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/xmlrpclib.py:${PORTSDIR}/net/py-xmlrpclib \
 		${PYTHON_SITELIBDIR}/logilab/xmltools/XmlTree.py:${PORTSDIR}/textproc/py-xmltools
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 DOCFILES=	ANNOUNCE.en ANNOUNCE.fr CHANGELOG CONTRIBUTORS README.WIN32 README.UNIX faq.en.xml ../README ../license.txt
@@ -36,7 +37,7 @@ XMLDIR=		_xmlplus
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-patch:
-	@${PERL} -pi -e "s,/usr/share,${PREFIX}/share,g" ${WRKSRC}/conf/narval.conf
+	@${REINPLACE_CMD} -e "s,/usr/share,${PREFIX}/share,g" ${WRKSRC}/conf/narval.conf
 
 post-install:
 .if !defined(NOPORTDOCS)

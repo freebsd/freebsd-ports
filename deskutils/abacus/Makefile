@@ -20,6 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
@@ -32,7 +33,7 @@ post-extract:
 	@(cd ${WRKSRC}; ${RM} canvas; ${LN} -sf canvas-tcl8.2.2 canvas)
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/abacus
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/abacus
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/abacus ${PREFIX}/bin
