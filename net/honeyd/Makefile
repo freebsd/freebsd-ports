@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.7
+PORTVERSION=	0.7a
 CATEGORIES=	net
-MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
+MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
+		http://niels.xtdnet.nl/honeyd/
 
 MAINTAINER=	yb@sainte-barbe.org
 COMMENT=	Simulate virtual network hosts (honeypots)
