@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/11/11 05:49:57 obrien Exp $
+#   $Id: Makefile,v 1.4 1996/11/17 09:06:24 obrien Exp $
 #
 
 DISTNAME=	Convert-UU-0.01
@@ -18,15 +18,10 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 MAN1=		puuencode.1 puudecode.1
+MAN3=		Convert::UU.3
+MAN3PREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	@ for file in Convert::UU; do \
-		gzip -9nf ${PREFIX}/lib/perl5/man/man3/$$file.3; \
-	done
-.endif
 
 .include <bsd.port.mk>
