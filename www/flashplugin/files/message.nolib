@@ -1,6 +1,6 @@
 ===
-You couldn't build this port for lack of aout csu library files.
-You could prepare them as:
+You can't build this port without a.out csu library.
+Please install them as follows:
 
 1. extract /usr/src/lib (distribution files: src/slib.??)
 2. cd /usr/src/lib/csu/i386

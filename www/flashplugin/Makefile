@@ -18,6 +18,12 @@ PATCHFILES=	flash-0.4.3-fbsd-19990512.patch
 
 MAINTAINER=	knu@idaemons.org
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
+BROKEN=		"This port will only build a broken binary under FreeBSD 4.0 or later. Try pkg_add'ing 3-STABLE's package with compat30 installed."
+.endif
+
 USE_XLIB=	yes
 MAKE_ENV=	OBJFORMAT=aout LIBRARY_PATH=${PREFIX}/lib/aout
 PORTOBJFORMAT=	aout
@@ -36,4 +42,4 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/netscape/plugins
 	cd ${WRKSRC} && ${SETENV} OBJFORMAT=aout ${INSTALL_PROGRAM} libswf.so ${PREFIX}/lib/netscape/plugins
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
