@@ -7,10 +7,11 @@
 
 PORTNAME=		regexxer
 PORTVERSION=		0.4
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-			${MASTER_SITE_SOURCEFORGE:S/$/:pcre/}
+			${MASTER_SITE_SOURCEFORGE:S/$/:pcre/} \
+			ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/:pcre
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			${PCRE_NAME}/:pcre
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -28,7 +29,7 @@ USE_GNOME=		gnomehack gnomeprefix gnometarget
 CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"
 
 PCRE_NAME=		pcre
-PCRE_VERSION=		4.3
+PCRE_VERSION=		4.4
 PCRE_WRKDIR=		${WRKDIR}/${PCRE_NAME}-${PCRE_VERSION}
 
 pre-configure:
@@ -36,7 +37,7 @@ pre-configure:
 		$(ECHO_CMD) "Configuring PCRE... " && \
 		${SETENV} CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
+		INSTALL="/usr/bin/install" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
