@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Goggles
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.fifthplanet.net/files/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.9:${PORTSDIR}/multimedia/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.10:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	FOX-1.1.22:${PORTSDIR}/x11-toolkits/fox-devel
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
@@ -22,7 +22,10 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-dvdcontrol=${LOCALBASE}
+CONFIGURE_ARGS=	--with-dvdcontrol=${LOCALBASE} \
+		--with-fox=${LOCALBASE} \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 pre-everything::
@@ -46,5 +49,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|\"/dev/dvd\"|\"${DEFAULT_DVD_DEVICE}\"|' \
 		${WRKSRC}/src/dvdwindow.cpp
+# hack to enable correct CPPFLAGS
+	@${REINPLACE_CMD} -E -e \
+		's|@CPPFLAGS@|${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}|' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
