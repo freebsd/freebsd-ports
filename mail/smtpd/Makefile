@@ -16,7 +16,7 @@ PATCHFILES=	patch-smtpd-2.0-RBL.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		Does not work with Sendmail-8.12
+RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail-old
 
 #  Directory where smtpd will chroot to, and put the received mail
 #  If you change it here, change also patches/patch-aa
@@ -27,11 +27,15 @@ post-patch:
 	@${SED} s+!!SPOOLBASE!!+${SPOOLBASE}+g < ${WRKSRC}/Makefile.tmp \
 	                                    > ${WRKSRC}/Makefile
 
+pre-install:
+	@${ECHO_CMD} "Does not work with Sendmail-8.12, checking Version:"
+	${LOCALBASE}/sbin/sendmail -d -t </dev/null | grep Version.8.11
+
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/smtpd
 	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/smtpd
 
-	@${ECHO} "Creating spool directories..."
+	@${ECHO_CMD} "Creating spool directories..."
 	@${MKDIR} ${SPOOLBASE}
 	@${CHOWN} root:uucp ${SPOOLBASE}
 	@${CHMOD} 0710 ${SPOOLBASE}
@@ -48,7 +52,7 @@ post-install:
 	@${CP} -p /etc/localtime ${SPOOLBASE}/etc
 .endif
 
-	@${ECHO} "Copying examples..."
+	@${ECHO_CMD} "Copying examples..."
 	@${INSTALL} ${COPY} -g uucp -o root -m 0640		\
 		${WRKSRC}/antirelay_check_rules_example	\
 		${SPOOLBASE}/etc/antirelay_check_rules.example
@@ -59,14 +63,14 @@ post-install:
 		${WRKSRC}/smtpd_check_rules.example	\
 		${SPOOLBASE}/etc
 
-	@${ECHO} "Creating startup file..."
+	@${ECHO_CMD} "Creating startup file..."
 	@${SED} s+!!PREFIX!!+${PREFIX}+		\
 		< ${FILESDIR}/smtpd.sh		\
 		> ${PREFIX}/etc/rc.d/smtpd.sh
 	@${CHMOD} 0700 ${PREFIX}/etc/rc.d/smtpd.sh
 	@${CHOWN} 0:0 ${PREFIX}/etc/rc.d/smtpd.sh
 
-	@${ECHO} "Done!"
+	@${ECHO_CMD} "Done!"
 
 	@${CAT} ${PKGMESSAGE}
 
