@@ -8,8 +8,8 @@ diff -u server/Makefile.orig server/Makefile
  
 -GLIB12_INCLUDE = `glib-config --cflags gthread`
 -GLIB12_LIB = `glib-config --libs gthread`
-+GLIB12_INCLUDE = `glib12-config --cflags gthread`
-+GLIB12_LIB = `glib12-config --libs gthread`
++GLIB12_INCLUDE = `$(GLIB_CONFIG) --cflags gthread`
++GLIB12_LIB = `$(GLIB_CONFIG) --libs gthread`
  
 -FLAGS = -O2 -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE)
 +FLAGS = -I.. $(PKG_INCLUDE) $(GTOP_INCLUDE) -I$(LOCALBASE)/include
