@@ -16,12 +16,12 @@ MAINTAINER=	patrick_dkt@yahoo.com.hk
 COMMENT=	A simple tool for doing everyday things with PDF documents
 
 # needs gcj
-BUILD_DEPENDS=	gcj34:${PORTSDIR}/lang/gcc34
+BUILD_DEPENDS=	gcj33:${PORTSDIR}/lang/gcc33
 
 # gcj don't exist on
 NOT_FOR_ARCHS=	ia64 sparc64
 
-USE_GCC=	3.4
+USE_GCC=	3.3
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_REINPLACE=	yes
@@ -29,14 +29,14 @@ USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 MAKEFILE=	Makefile.Generic
-MAKE_ENV=	CXX=g++34 GCJ=gcj34 GCJH=gcjh34
+MAKE_ENV=	CXX=g++33 GCJ=gcj33 GCJH=gcjh33
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/pdftk
 
 post-extract:
 	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g" ${WRKSRC}/Makefile.Generic
-	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=34|g" ${WRKSRC}/Makefile.Generic
+	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=33|g" ${WRKSRC}/Makefile.Generic
 	@${REINPLACE_CMD} -e "s|CXXFLAGS= -lgcj|CXXFLAGS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz|g" ${WRKSRC}/Makefile.Generic
 
 do-install:
