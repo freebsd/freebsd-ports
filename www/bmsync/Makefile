@@ -8,7 +8,7 @@
 PORTNAME=	bmsync
 PORTVERSION=	0.2.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.cs.cmu.edu/~dpelleg/sw/
+MASTER_SITES=	http://www-2.cs.cmu.edu/~dpelleg/sw/
 
 MAINTAINER=	dpelleg+bmsync@cs.cmu.edu
 
