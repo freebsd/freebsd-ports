@@ -12,7 +12,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_applet//}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An applet that displays stock quotes in the Gnome panel
 
 USE_GNOME=	yes

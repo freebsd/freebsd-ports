@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.demonseed.net/~jp/code/threeDS/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python module and viewer for loading and displaying models in 3DS format
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	scintilla
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured SCIntilla based Text Editor for GTK/GNOME
 
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla

@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	math
 MASTER_SITES=	http://www.gae.ucm.es/~gonzalez/qscanplot/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to extract data from scanned plots, graphs and figures
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake

@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gswitchit
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A little set of XML files useful for dealing with XKB rules
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \

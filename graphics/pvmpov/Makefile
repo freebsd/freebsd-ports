@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.luga.de/~flierl/pvmpov/
 DISTNAME=	${PORTNAME}-3.1e2
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed rendering package for Persistence of Vision Ray Tracer
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/povray31:configure \

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUStep-compliant NeXTStep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \

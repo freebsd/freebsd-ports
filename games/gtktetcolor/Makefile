@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://canopus.iacp.dvo.ru/pub/Games/gtktetcolor/ \
 		http://www.dvgu.ru/ifit/~panov/gtktetcolor/ \
 		http://metalab.unc.edu/pub/Linux/games/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for GNOME that resembles well-known tetris and columns
 
 USE_BZIP2=	yes

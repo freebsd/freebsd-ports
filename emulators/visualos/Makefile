@@ -11,7 +11,7 @@ CATEGORIES=	emulators gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	visualos
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual simulator of an operating system to help understand how OSes work
 
 USE_X_PREFIX=	yes

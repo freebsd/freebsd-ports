@@ -12,7 +12,7 @@ CATEGORIES=	misc gnome
 # a reference for the person who wants to upgrade this port - edwin 20021227
 MASTER_SITES=	http://elysium-project.sourceforge.net/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of utility functions used by several Elysium projects
 
 USE_GNOME=	glib12

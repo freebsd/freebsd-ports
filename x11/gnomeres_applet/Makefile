@@ -10,7 +10,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.sci.fi/~syrjala/gnomeres/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME applet for changing display modes
 
 USE_X_PREFIX=	yes

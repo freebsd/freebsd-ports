@@ -10,7 +10,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UNIX manual page editor and viewer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

@@ -12,7 +12,7 @@ PORTEPOCH=	${MAKE} -V PORTEPOCH -f ${MAINDIR}/${MKFILE}
 CATEGORIES=	www
 DISTFILES=
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The embeddable component of mozilla communicator web-surfboard
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:build \

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.digger.org/
 DISTNAME=	${PORTNAME}-${DIGREL}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD graphics console (VGL) version of the famous Digger game
 
 .if defined(WITH_SOUND)

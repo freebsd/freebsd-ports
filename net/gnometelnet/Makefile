@@ -11,7 +11,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice frontend to the telnet, ssh, and rlogin clients for GNOME
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://dark.x.dtu.dk/~mbn/clanlib/download/
 DISTNAME=	ClanLib-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \

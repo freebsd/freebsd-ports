@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.suite3220.com/pub/Moonshine/1.1/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A customizable IDE that supports a wide variety of languages
 
 USE_QT_VER=	2

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bomberman-like multiplayer game
 
 LIB_DEPENDS=	clanCore.0:${PORTSDIR}/devel/clanlib

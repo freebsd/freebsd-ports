@@ -12,7 +12,7 @@ CATEGORIES=	mail python gnome
 MASTER_SITES=	http://www.toad.net/~sbender/pmail/ \
 		http://www.harmony-ds.com/download/pmail/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME/python email client
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome

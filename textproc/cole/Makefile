@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://arturo.directmail.org/filters/archive/
 MASTER_SITE_SUBDIR=	sobomax
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free C OLE library
 
 USE_LIBTOOL=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.80.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://lfh.hkcampus.net/~lfh-lck/programs/finder/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small program that creates a finder bar on your Gnome system
 
 USE_X_PREFIX=	yes

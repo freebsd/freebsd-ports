@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://simon.morlat.free.fr/download/${PORTVERSION}/source/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	osip.9:${PORTSDIR}/net/libosip \

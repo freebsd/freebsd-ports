@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An another tetris clone but a good one with bunch of cool features
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

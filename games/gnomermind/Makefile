@@ -11,7 +11,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle game for Gnome, loosely based on the classic MasterMind game
 
 USE_BZIP2=	yes

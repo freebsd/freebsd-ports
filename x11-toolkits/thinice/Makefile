@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR= thinice
 DISTNAME=	thinice-1.2.x
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clean-looking GTK Theme Engine
 
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-theme-${PORTVERSION}

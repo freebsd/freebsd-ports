@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/cli3/1.0/wxp/e
 DISTNAME=	sscli_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the ECMA CLI and the ECMA C\# language
 
 WRKSRC=		${WRKDIR}/sscli

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	sobomax
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper library for GTK+ which provides simplified GUI API
 
 EXTRACT_BEFORE_ARGS=	# it's intentionally left blank

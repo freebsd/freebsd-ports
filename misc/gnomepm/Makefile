@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small GNOME app that collects stock information from Yahoo!(c) Finance
 
 USE_X_PREFIX=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
 DISTNAME=	robocode-setup-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
 
 USE_JAVA=	1.3+

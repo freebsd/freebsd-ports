@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #ftp://misterproper.sourceforge.net/pub/misterproper/releases/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME application designed to manage cyclic tasks
 
 USE_X_PREFIX=	yes

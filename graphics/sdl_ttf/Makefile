@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to use TrueType fonts to render text in SDL applications
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2

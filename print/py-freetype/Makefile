@@ -11,7 +11,7 @@ CATEGORIES=	print python
 MASTER_SITES=	http://starship.python.net/crew/kernr/source/
 DISTNAME=	PyFT-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python wrapping of the FreeType 1.2 fonts rendering engine
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR= gtksteppastel
 DISTNAME=	gtksteppastel-1.2.x
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theme engine based on GtkStep to make GTK+ look nicier
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

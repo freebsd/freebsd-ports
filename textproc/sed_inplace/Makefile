@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modified version of the sed(1) which can do in-place editing of files
 
 NO_WRKSUBDIR=	yes

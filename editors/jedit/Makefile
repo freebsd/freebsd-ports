@@ -15,7 +15,7 @@ DISTNAME=	${_DISTNAME:S/0install$/install/}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful programmer's text editor written in Java
 
 USE_JAVA=	1.3+
