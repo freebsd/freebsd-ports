@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.2.1
+PORTVERSION=	1.2.5
 CATEGORIES=	devel linux
-MASTER_SITES=	http://www.libsdl.org/release/
+MASTER_SITES=	http://www.libsdl.org/release/ \
+		ftp://ftp.icm.edu.pl/vol/rzm9/linux-pld/pool/s/SDL/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}.${MACHINE_ARCH}
+DISTNAME=	${PORTNAME:U}-${PORTVERSION:S/.1$/-1/}-1.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
