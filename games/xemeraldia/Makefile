@@ -19,7 +19,10 @@ extract: fetch ${EXTRACT_COOKIE}
 ${EXTRACT_COOKIE}:
 	@${MAKE} ${.MAKEFLAGS} checksum pre-extract
 	@echo "===>  Extracting for ${DISTNAME}"
-	@(cd ${DISTDIR}; zcat ${DISTFILES} | uudecode)
+	@(cd ${DISTDIR}; \
+	  if [ ! -f ${DISTNAME}.tar.gz ]; then \
+	    zcat ${DISTFILES} | uudecode; \
+	  fi)
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}
 	@(cd ${WRKDIR}; tar -xzf \
