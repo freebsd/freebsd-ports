@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsnapshot
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsnapshot.org/downloads/
 
