@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xhtml
-PORTVERSION=	1.0
-PORTRIVISION=	1
+PORTVERSION=	1.0.20000126
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.w3.org/TR/xhtml1/
-DISTNAME=	xhtml1
+#MASTER_SITES=	http://www.w3.org/TR/xhtml1/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
+DISTNAME=	xhtml1-20000126
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 USE_ZIP=	YES
 NO_MTREE=	YES
 NO_BUILD=	YES
-#WRKSRC=		${WRKDIR}/
+WRKSRC=		${WRKDIR}/xhtml1
 
 INSTDIR=	${PREFIX}/share/xml
 DTDDIR=		${INSTDIR}/dtd/xhtml
