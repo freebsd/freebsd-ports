@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sentinel
-PORTVERSION=	1.6.4b
+PORTVERSION=	1.6.5b
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
@@ -26,7 +26,7 @@ do-build:
 	cd ${WRKSRC} && \
 		${CC} ${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
 		-o ${PORTNAME} ${PORTNAME}.c -L${LOCALBASE}/lib \
-		-lmilter -lpcre ${PTHREAD_LIBS} 
+		-lmilter -lpcre -lpcreposix ${PTHREAD_LIBS} 
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
