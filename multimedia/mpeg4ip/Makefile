@@ -91,6 +91,10 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/include/systems.h)
+CONFLICTS=	faad*
+.endif
+
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC -DPIC
 .endif
