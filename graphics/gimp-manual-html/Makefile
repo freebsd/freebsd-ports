@@ -8,7 +8,8 @@
 PORTNAME=	GimpUserManual
 PORTVERSION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://manual.gimp.org/pub/manual/
+MASTER_SITES=	http://kefk.net/Open_Source/FS/GIMP/Download/GUM/ \
+		http://ftp.nluug.nl/ftp/graphics/gimp/manual/
 PKGNAMESUFFIX=	-${DOCFORMAT}
 
 MAINTAINER=	ports@FreeBSD.org
