@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pisg
-PORTVERSION=	0.54
+PORTVERSION=	0.56
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,9 +48,9 @@ post-install:
 .if !defined(BATCH)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "###############################################################################"
-	@${ECHO_MSG} "# Please create a pisg config file in ${PREFIX}/etc/pisg                     #"
-	@${ECHO_MSG} "# A sample configuration file is installed as pisg.cfg.sample                 #"
-	@${ECHO_MSG} "# Remember to move gfx (${DATADIR}/gfx/) to HTML file destination. #"
+	@${ECHO_MSG} " Please create a pisg config file in ${PREFIX}/etc/pisg"
+	@${ECHO_MSG} " A sample configuration file is installed as pisg.cfg.sample"
+	@${ECHO_MSG} " Remember to move gfx (${DATADIR}/gfx/) to HTML file destination."
 	@${ECHO_MSG} "###############################################################################"
 	@${ECHO_MSG}
 .endif
