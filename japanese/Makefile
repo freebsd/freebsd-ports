@@ -197,6 +197,7 @@
     SUBDIR += mh
     SUBDIR += mhonarc
     SUBDIR += micq
+    SUBDIR += migemo
     SUBDIR += migemo-emacs20
     SUBDIR += migemo-xemacs21-mule
     SUBDIR += mimekit

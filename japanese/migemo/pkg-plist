@@ -1,16 +1,21 @@
-%%EMACS_LIBDIR%%/site-lisp/migemo.el
-%%EMACS_LIBDIR%%/site-lisp/migemo.elc
-%%RUBY_SITELIBDIR%%/migemo.rb
-%%RUBY_SITELIBDIR%%/migemo-cache.rb
-%%RUBY_SITELIBDIR%%/migemo-convert.rb
-%%RUBY_SITELIBDIR%%/migemo-dict.rb
-%%RUBY_SITELIBDIR%%/migemo-index.rb
-share/doc/migemo/migemo.ja.html
-@dirrm share/doc/migemo
-share/migemo/migemo-dict
-share/migemo/migemo-dict.idx
-share/migemo/migemo-dict.cache
-share/migemo/migemo-dict.cache.idx
-share/migemo/user-dict.sample
-share/migemo/regex-dict.sample
-@dirrm share/migemo
+%%MIGEMO%%bin/migemo
+%%MIGEMO%%bin/migemo-grep
+%%MIGEMO%%bin/migemo-server
+%%MIGEMO%%bin/migemo-client
+%%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo.rb
+%%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-cache.rb
+%%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-convert.rb
+%%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-dict.rb
+%%MIGEMO%%%%RUBY_SITELIBDIR%%/migemo-index.rb
+%%ELISP%%%%EMACS_LIBDIR%%/site-lisp/migemo.el
+%%ELISP%%%%EMACS_LIBDIR%%/site-lisp/migemo.elc
+%%MIGEMO%%share/doc/migemo/migemo.ja.html
+%%MIGEMO%%@dirrm share/doc/migemo
+%%MIGEMO%%share/migemo/migemo-dict
+%%MIGEMO%%share/migemo/migemo-dict.idx
+%%MIGEMO%%share/migemo/migemo-dict.cache
+%%MIGEMO%%share/migemo/migemo-dict.cache.idx
+%%MIGEMO%%share/migemo/migemo.ja.rd
+%%MIGEMO%%share/migemo/user-dict.sample
+%%MIGEMO%%share/migemo/regex-dict.sample
+%%MIGEMO%%@dirrm share/migemo
