@@ -15,7 +15,7 @@ chora<1.2.2|http://article.gmane.org/gmane.comp.horde.chora/610/|chora: hole in 
 squirrelmail<1.4.3a|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519 http://www.rs-labs.com/adv/RS-Labs-Advisory-2004-1.txt|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
 ja-squirrelmail<1.4.3a,1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519 http://www.rs-labs.com/adv/RS-Labs-Advisory-2004-1.txt|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
 moinmoin<1.2.2|http://www.osvdb.org/6704|MoinMoin administrative group name privilege escalation vulnerability|da9e6438-bfc0-11d8-b00e-000347a4fa7d
-phpnuke<=7.3|http://www.waraxe.us/?modname=sa&id=032|Multiple security flaws in PhpNuke 6.x - 7.3|33ab4a47-bfc1-11d8-b00e-000347a4fa7d
+phpnuke<=7.3|http://www.waraxe.us/?modname=sa&id=032 http://secunia.com/advisories/11920|Multiple security flaws in PhpNuke 6.x - 7.3|33ab4a47-bfc1-11d8-b00e-000347a4fa7d
 webmin<1.150|http://www.webmin.com/changes-1.150.html http://www.osvdb.org/6729 http://www.osvdb.org/6730|Multiple vulnerabilities in Webmin|ab61715f-c027-11d8-b00e-000347a4fa7d
 racoon<20040617a|http://lists.netsys.com/pipermail/full-disclosure/2004-June/022617.html http://www.securityfocus.com/archive/1/366023 http://securitytracker.com/alerts/2004/Jun/1010495.html http://orange.kame.net/dev/cvsweb.cgi/kame/kame/kame/racoon/crypto_openssl.c#rev1.86|Racoon may validate invalid certificates|a96c1d37-c033-11d8-b00e-000347a4fa7d
 ircd-hybrid<=7.0_1|http://lists.netsys.com/pipermail/full-disclosure/2004-June/022820.html http://www.securityfocus.com/archive/1/366486|ircd-hybrid-7 low-bandwidth DoS|23aafa20-c28a-11d8-864c-02e0185c0b53
@@ -32,3 +32,4 @@ isc-dhcp3<3.0.1.r11|http://www.cert.org/advisories/CA-2003-01.html http://www.kb
 isc-dhcp3<3.0.1.r11_1|http://www.kb.cert.org/vuls/id/149953 http://www.securityfocus.com/bid/6628 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0039|ISC "dhcrelay" fails to limit hop count when malicious bootp packet is received|02957734-c50b-11d8-8898-000d6111a684
 isc-dhcp3-{relay,server}>=3.0.1.r12<3.0.1.r14|http://www.us-cert.gov/cas/techalerts/TA04-174A.html http://www.kb.cert.org/vuls/id/317350 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0460|ISC DHCP remote exploitable stack buffer overflow vulnerability|7a9d5dfe-c507-11d8-8898-000d6111a684
 icecast2<2.0.1,1|http://secunia.com/advisories/11578 http://www.osvdb.org/6075|Icecast remote DoS vulnerability|8de7cf18-c5ca-11d8-8898-000d6111a684
+rssh<2.2.1|http://secunia.com/advisories/11926 http://www.securityfocus.com/archive/1/366691|rssh file existence information disclosure weakness|a4815970-c5cc-11d8-8898-000d6111a684
