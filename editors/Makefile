@@ -99,6 +99,7 @@
     SUBDIR += nvi-devel
     SUBDIR += nvi-m17n
     SUBDIR += nvi-perl
+    SUBDIR += nxml-emacs21
     SUBDIR += offix-editor
     SUBDIR += ooodict-all
     SUBDIR += ooodict-bg_BG

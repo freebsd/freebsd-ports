@@ -1,0 +1,15 @@
+
+To get started, do
+
+  M-x load-file <RET> rng-auto.el <RET>
+
+This defines the necessary autoloads.  Now, visit a file containing
+an XML document, and do
+
+  M-x nxml-mode
+
+Now do
+
+  C-h m
+
+for information on how to use nxml-mode.
