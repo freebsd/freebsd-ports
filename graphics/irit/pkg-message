@@ -1,0 +1,19 @@
+*******************************************************************************
+In order to use IRIT you should set the following environment variables:
+
+IRIT_PATH=%%DATADIR%%
+IRIT_DISPLAY="${DRV} -s-"
+
+where DRV is one of the following:
+	x11drvs -	X11 display driver
+and if IRIT has been built with Motif support:
+	xmtdrvs -	X11/Motif display driver
+	xogldrvs -	OpenGL/Motif display driver		
+
+and optionally:
+
+IRIT_BIN_IPC=1
+IRIT_SERVER_HOST=`hostname`
+
+For more information consult IRIT documentation
+*******************************************************************************
