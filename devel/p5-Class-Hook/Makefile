@@ -14,10 +14,10 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		brian@quynh-and-brian.org
-COMMENT=	Add hooks on methods from other classes
+COMMENT=		Add hooks on methods from other classes
 
 BUILD_DEPENDS=		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-			${SITE_PERL}/Test/Simple.pm::${PORTSDIR}/devel/p5-Test-Simple
+			${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=		yes
 
