@@ -7,13 +7,14 @@
 
 PORTNAME=	totem
 PORTVERSION=	0.99.22
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/...$//}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	hendrik@scholz.net
-COMMENT=	A Xine-based video player for the Gnome 2 Desktop
+MAINTAINER?=	hendrik@scholz.net
+COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
 
 LIB_DEPENDS=	nautilus-burn.0:${PORTSDIR}/sysutils/nautilus-cd-burner
 
@@ -27,8 +28,7 @@ INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
 
-OPTIONS=	GSTREAMER_OVERRIDE "Use GStreamer instead of xine" off \
-		DVDNAV "Enable DVD support" on
+OPTIONS=	DVDNAV "Enable DVD support" on
 
 MAN1=	totem.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
