@@ -1,0 +1,5 @@
+Qtfw is a Qt gui frontend for ipfw utility in FreeBSD. It helps
+configuring firewall in FreeBSD with a nice and comprehensive user
+interface.
+
+WWW: http://sourceforge.net/projects/qtfw/

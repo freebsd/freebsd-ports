@@ -1,0 +1,39 @@
+--- Makefile.orig	Fri Aug 24 12:17:26 2001
++++ Makefile	Sat Aug 25 10:49:38 2001
+@@ -7,18 +7,18 @@
+ aboutdlg.cpp moc_aboutdlg.cpp
+ OBJS=$(SOURCES:.cpp=.o)
+ 
+-CFLAGS=-g -Wall -I/usr/X11R6/include/qt2
+-LDFLAGS=-L/usr/X11R6/lib -lqt2
++CFLAGS=-g -Wall -I${X11BASE}/include/qt2
++LDFLAGS=-L${X11BASE}/lib -lqt2
+ 
+-INSTALL_PREFIX=/usr/X11R6
++INSTALL_PREFIX=${PREFIX}
+ HTMLS:=`echo docs/*.html`
+ EXAMPLES:=`echo examples/*.html`
+ 
+ $(TARGET):$(OBJS)
+-	g++ $(LDFLAGS) -o $(TARGET) $(OBJS)
++	${CXX} $(LDFLAGS) -o $(TARGET) $(OBJS)
+ 
+ .cpp.o:
+-	g++ $(CFLAGS) -c $<
++	${CXX} $(CFLAGS) -c $<
+ 
+ moc_mainformbase.cpp : mainformbase.H
+ 	moc2 mainformbase.H > moc_mainformbase.cpp
+@@ -57,11 +57,7 @@
+ 	rm -f moc_*
+ 
+ install: $(TARGET)
+-	install -c $(TARGET) $(INSTALL_PREFIX)/bin/
+-	install -d $(INSTALL_PREFIX)/share/$(TARGET)/docs/
+-	install -d $(INSTALL_PREFIX)/share/$(TARGET)/examples/
+-	cp -R docs/ $(INSTALL_PREFIX)/share/$(TARGET)/docs/
+-	cp -R examples/ $(INSTALL_PREFIX)/share/$(TARGET)/examples/
++	${BSD_INSTALL_PROGRAM} $(TARGET) $(INSTALL_PREFIX)/bin
+ 	
+ uninstall:
+ 	rm -f $(INSTALL_PREFIX)/bin/$(TARGET)

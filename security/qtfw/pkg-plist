@@ -1,0 +1,4 @@
+bin/qtfw
+%%PORTDOCS%%share/examples/qtfw/base.rules
+%%PORTDOCS%%share/examples/qtfw/client.rules
+%%PORTDOCS%%@dirrm share/examples/qtfw
