@@ -503,9 +503,7 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.sra.co.jp/pub/os/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.itjit.ne.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.nihon-u.ac.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.spin.ad.jp/.02/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://zoffy.asahi-net.or.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://melanoma.cs.rmit.edu.au/pub/NetBSD/packages/distfiles/%SUBDIR%/
 
 MASTER_SITE_NETSCAPE+= \
