@@ -1,4 +1,5 @@
-frontpage/version%%FP_VER%%/LICENSE.TXT
+@unexec %D/etc/rc.d/0010.frontpage.sh forcestop 2>/dev/null || true
+etc/rc.d/0010.frontpage.sh
 frontpage/version%%FP_VER%%/admin/1033/addacct.htm
 frontpage/version%%FP_VER%%/admin/1033/addrole.htm
 frontpage/version%%FP_VER%%/admin/1033/adduser.htm
@@ -21,6 +22,8 @@ frontpage/version%%FP_VER%%/admin/1033/newsbweb.htm
 frontpage/version%%FP_VER%%/admin/1033/newsrvr.htm
 frontpage/version%%FP_VER%%/admin/1033/opengl.htm
 frontpage/version%%FP_VER%%/admin/1033/openweb.htm
+frontpage/version%%FP_VER%%/admin/1033/passwa.htm
+frontpage/version%%FP_VER%%/admin/1033/passwb.htm
 frontpage/version%%FP_VER%%/admin/1033/passwd.htm
 frontpage/version%%FP_VER%%/admin/1033/password.htm
 frontpage/version%%FP_VER%%/admin/1033/perms.htm
@@ -38,33 +41,38 @@ frontpage/version%%FP_VER%%/admin/1033/webadmin.css
 frontpage/version%%FP_VER%%/admin/1033/webadmin.htm
 frontpage/version%%FP_VER%%/admin/1033/weblist.htm
 frontpage/version%%FP_VER%%/apache-fp/_vti_bin/fpexe
-frontpage/version%%FP_VER%%/apache-fp/fp-patch-apache_1.3.19
+frontpage/version%%FP_VER%%/apache-fp/mod_frontpage.c
 frontpage/version%%FP_VER%%/apache-fp/fpexe.c
 @unexec if [ -f %B/suidkey ] ; then rm -f %B/suidkey* ; fi
+frontpage/version%%FP_VER%%/apache2/mod_fpcgid.c
+frontpage/version%%FP_VER%%/apache2/mod_fpcgid.h
+frontpage/version%%FP_VER%%/apache2/mod_frontpage.c
+frontpage/version%%FP_VER%%/apache2/mod_frontpage.h
+frontpage/version%%FP_VER%%/apache2/mod_suexec.h
 frontpage/version%%FP_VER%%/bin/_vti_inf.htm
 frontpage/version%%FP_VER%%/bin/owsadm.exe
 frontpage/version%%FP_VER%%/bin/postinfo.htm
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/blank.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/bluedot.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/discuss.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/delete.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/gears_an.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/health.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/navlink.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/newuser.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/offlogo.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/rect.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/settings.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/sortdown.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/sortup.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/subwebs.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/usage.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/users.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/warn_lg.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/webdisc.gif
+frontpage/version%%FP_VER%%/exes/_vti_bin/images/web.gif
 frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/admin.exe
 frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/fpadmcgi.exe
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/blank.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/bluedot.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/delete.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/discuss.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/gears_an.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/health.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/navlink.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/newuser.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/offlogo.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/rect.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/settings.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/sortdown.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/sortup.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/subwebs.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/usage.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/users.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/warn_lg.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/web.gif
-frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images/webdisc.gif
 frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_aut/author.exe
 frontpage/version%%FP_VER%%/exes/_vti_bin/fpcount.exe
 frontpage/version%%FP_VER%%/exes/_vti_bin/shtml.exe
@@ -239,26 +247,26 @@ frontpage/version%%FP_VER%%/nls/cp_932.nls
 frontpage/version%%FP_VER%%/nls/cp_936.nls
 frontpage/version%%FP_VER%%/nls/cp_949.nls
 frontpage/version%%FP_VER%%/nls/cp_950.nls
-frontpage/version%%FP_VER%%/readme.htm
 frontpage/version%%FP_VER%%/set_default_perms.sh
 @unexec if [ -f %B/upgrade_results.txt ] ; then rm -f %B/upgrade_results.txt ; fi
 @unexec if [ -f %B/fp_chown.sh ] ; then rm -f %B/fp_chown.sh ; fi
-share/doc/apache/manual/frontpage/index.html
 @dirrm frontpage/version%%FP_VER%%/nls
 @dirrm frontpage/version%%FP_VER%%/help/1033
 @dirrm frontpage/version%%FP_VER%%/help
 @dirrm frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_aut
-@dirrm frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm/images
 @dirrm frontpage/version%%FP_VER%%/exes/_vti_bin/_vti_adm
+@dirrm frontpage/version%%FP_VER%%/exes/_vti_bin/images
 @dirrm frontpage/version%%FP_VER%%/exes/_vti_bin
 @dirrm frontpage/version%%FP_VER%%/exes
 @dirrm frontpage/version%%FP_VER%%/bin
 @dirrm frontpage/version%%FP_VER%%/apache-fp/_vti_bin
 @dirrm frontpage/version%%FP_VER%%/apache-fp
+@dirrm frontpage/version%%FP_VER%%/apache2
 @dirrm frontpage/version%%FP_VER%%/admin/1033
 @dirrm frontpage/version%%FP_VER%%/admin
 @unexec rmdir %D/frontpage/version%%FP_VER%% 2> /dev/null || true
 @unexec rmdir %D/frontpage 2> /dev/null || true
-@dirrm share/doc/apache/manual/frontpage
-@unexec rmdir %D/share/doc/apache/manual 2> /dev/null || true
-@unexec rmdir %D/share/doc/apache 2> /dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/readme.htm
+%%PORTDOCS%%%%DOCSDIR%%/readme_apache_dso.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

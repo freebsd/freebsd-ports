@@ -5,7 +5,7 @@
          SunOS*5.*i386*)     machine="solarisx86" ;;
          BSD/OS*)            machine="bsdi" ;;
 -        FreeBSD*)           machine="freebsd"
-+        FreeBSD*)           machine="bsdi"
++        FreeBSD*)           machine="solaris"
                              DEFAULTAPXS="PREFIX/sbin/apxs"
                              ;;
          *)              echo "ERROR:  Unsupported platform!  Uname is $system."

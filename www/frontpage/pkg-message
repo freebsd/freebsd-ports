@@ -2,12 +2,11 @@ For this port to be usefull you need to install an Apache-Frontpage
 enabled web server.  Only the following ports/packages qualifies:
 
 Ports:
-    www/apache13-fp     >=1.3.20_1
-	or
-    www/mod_frontpage	>=1.5.2		(DSO module, not from Microsoft)
+    www/mod_frontpage		(Apache 1.3 DSO module, not from Microsoft)
+    www/mod_frontpage-rtr	(Apache 1.3 DSO module from Ready-to-Run)
+    www/mod_frontpage2-rtr	(Apache 2.x DSO module from Ready-to-Run)
 
 Packages:
-    apache_fp           >=1.3.20_1
-	or
-    mod_frontpage	>=1.5.2		(DSO module, not from Microsoft)
-
+    mod_frontpage		(Apache 1.3 DSO module, not from Microsoft)
+    mod_frontpage13		(Apache 1.3 DSO module from Ready-to-Run)
+    mod_frontpage2		(Apache 2.x DSO module from Ready-to-Run)
