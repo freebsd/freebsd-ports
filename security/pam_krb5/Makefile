@@ -47,7 +47,7 @@ KRB5BASE=${LOCALBASE}
 KRB5_IMPL=mit
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
 .else
-.error "No version of Kerberos is installed."
+BROKEN=			"No version of Kerberos is installed."
 .endif
 
 .include <bsd.port.mk>
