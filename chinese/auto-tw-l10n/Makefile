@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/auto-tw-l10n/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
