@@ -626,6 +626,7 @@ cassowary	ports/misc/cassowary
 cat		src/bin/cat
 catdoc		ports/textproc/catdoc
 catman		src/gnu/usr.bin/man/catman
+cave		ports/misc/cave
 cbb		ports/deskutils/cbb
 cbrowser	ports/devel/cbrowser
 cc		src/gnu/usr.bin/cc
