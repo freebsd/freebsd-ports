@@ -1,0 +1,5 @@
+PekSysTray is a system tray "notification area" dockapp similar to the GNOME
+notification area applet.  But it's designed for any window manager that
+supports docking.
+
+WWW: http://sourceforge.net/projects/peksystray/
