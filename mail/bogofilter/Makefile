@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	matthias.andree@web.de
+COMMENT=	"Fast, teachable, learning spam detector"
 
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
-# This port needs PERL5 at run time, but not for the build.
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db4" \
