@@ -13,15 +13,14 @@ MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		perl:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		BUILD_OPT=1
 ALL_TARGET=	nss_build_all
