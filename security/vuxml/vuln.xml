@@ -30,6 +30,209 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="73ea0706-9c57-11d8-9366-0020ed76ef5a">
+    <topic>rsync path traversal issue</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When running rsync in daemon mode, no checks were made
+	  to prevent clients from writing outside of a module's
+	`path' setting.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0426</cvename>
+      <url>http://rsync.samba.org/#security_apr04</url>
+    </references>
+    <dates>
+      <discovery>2004-04-26</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e50b04e8-9c55-11d8-9366-0020ed76ef5a">
+    <topic>xine-lib arbitrary file overwrite</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><gt>0.9</gt><lt>1.0.r3_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the xinehq advisory:</p>
+	<blockquote
+	  cite="http://www.xinehq.de/index.php/security/XSA-2004-1">
+          <p>By opening a malicious MRL in any xine-lib based media
+            player, an attacker can write arbitrary content to an
+            arbitrary file, only restricted by the permissions of the
+            user running the application.</p>
+	</blockquote>
+	<p>The flaw is a result of a feature that allows MRLs (media
+	  resource locator URIs) to specify arbitrary configuration
+	  options.</p>
+      </body>
+    </description>
+    <references>
+      <bid>10193</bid>
+      <url>http://www.xinehq.de/index.php/security/XSA-2004-1</url>
+    </references>
+    <dates>
+      <discovery>2004-04-20</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a2ffb627-9c53-11d8-9366-0020ed76ef5a">
+    <topic>lha buffer overflows and path traversal issues</topic>
+    <affects>
+      <package>
+	<name>lha</name>
+	<range><le>1.14i_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar discovered several vulnerabilities in
+	  LHa for UNIX's path name handling code.  Specially constructed
+	  archive files may cause LHa to overwrite files or
+	  execute arbitrary code with the privileges of the user
+	  invoking LHa.  This could be particularly harmful for
+	  automated systems that might handle archives such as
+	  virus scanning processes.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0234</cvename>
+      <cvename>CAN-2004-0235</cvename>
+    </references>
+    <dates>
+      <discovery>2004-04-29</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3a408f6f-9c52-11d8-9366-0020ed76ef5a">
+    <topic>libpng denial-of-service</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Steve Grubb reports a buffer read overrun in
+	  libpng's png_format_buffer function.  A specially
+	  constructed PNG image processed by an application using
+	  libpng may trigger the buffer read overrun and possibly
+	  result in an application crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0421</cvename>
+      <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=120508</url>
+    </references>
+    <dates>
+      <discovery>2004-04-29</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0c6f3fde-9c51-11d8-9366-0020ed76ef5a">
+    <topic>Midnight Commander buffer overflows, format string bugs, and
+      insecure temporary file handling</topic>
+    <affects>
+      <package>
+	<name>mc</name>
+	<range><le>4.6.0_10</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jakub Jelinek reports several security related bugs in
+	  Midnight Commander, including:</p>
+	<ul>
+	  <li>Multiple buffer overflows (CAN-2004-0226)</li>
+	  <li>Insecure temporary file handling (CAN-2004-0231)</li>
+	  <li>Format string bug (CAN-2004-0232)</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0226</cvename>
+      <cvename>CAN-2004-0231</cvename>
+      <cvename>CAN-2004-0232</cvename>
+    </references>
+    <dates>
+      <discovery>2004-04-29</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cb6c6c29-9c4f-11d8-9366-0020ed76ef5a">
+    <topic>proftpd IP address access control list breakage</topic>
+    <affects>
+      <package>
+	<name>proftpd</name>
+	<range><ge>1.2.9</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jindrich Makovicka reports a regression in proftpd's
+          handling of IP address access control lists (IP ACLs).  Due
+          to this regression, some IP ACLs are treated as ``allow
+          all''.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.proftpd.org/show_bug.cgi?id=2267</url>
+    </references>
+    <dates>
+      <discovery>2004-11-04</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fb521119-9bc4-11d8-9366-0020ed76ef5a">
+    <topic>pound remotely exploitable vulnerability</topic>
+    <affects>
+      <package>
+	<name>pound</name>
+	<range><lt>1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An unknown remotely exploitable vulnerability was disclosed.
+	  Robert Segall writes:</p>
+	<blockquote
+	  cite="http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000">
+          <p>a security vulnerability was brought to my attention
+            (many thanks to Akira Higuchi).  Everyone running any
+            previous version should upgrade to 1.6 immediately - the
+            vulnerability may allow a remote exploit. No exploits are
+            currently known and none have been observed in the wild
+            till now. The danger is minimised if you run Pound in a
+            root jail and/or you run Pound as non-root user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000</url>
+    </references>
+    <dates>
+      <discovery>2003-12-01</discovery>
+      <entry>2004-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8338a20f-9573-11d8-9366-0020ed76ef5a">
     <topic>xchat remotely exploitable buffer overflow (Socks5)</topic>
     <affects>
