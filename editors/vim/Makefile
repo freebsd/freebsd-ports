@@ -47,7 +47,7 @@ PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
-DATADIR=	${PREFIX}/share/vim/${DISTNAME:S/-//:S/.//}
+DATADIR=	${PREFIX}/share/vim/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1
 .if !defined(LITE)
@@ -154,11 +154,11 @@ post-install:
 		|| (cd ${PREFIX}/bin ; ${LN} -sf vim gvimdiff)
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${DATADIR}/keymap
 	cd ${PREFIX} ;\
-	    ${FIND} share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
+	    ${FIND} ${DATADIR:S/^${PREFIX}\///} -type f -o -type l	\
 	    	| sort \
 	    	>${WRKDIR}/PLIST.share-vim
 	cd ${PREFIX} ;\
-	    ${FIND} share/vim/${DISTNAME:S/-//:S/.//}/ -type d \
+	    ${FIND} ${DATADIR:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' \
 		>>${WRKDIR}/PLIST.share-vim
 	${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
