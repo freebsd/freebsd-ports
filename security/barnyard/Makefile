@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--enable-mysql
 
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=		yes
-CONFIGURE_ARGS+=	--enable-postgresql
+CONFIGURE_ARGS+=	--enable-postgres
 .endif
 
 post-patch:
