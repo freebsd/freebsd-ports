@@ -16,4 +16,6 @@ PATCHFILES=	patch.${PORTVERSION}.1  patch.${PORTVERSION}.2
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4.2
 
+MASTERDIR?=	${.CURDIR}
+
 .include <${MASTERDIR}/Makefile.db>
