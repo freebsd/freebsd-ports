@@ -16,6 +16,8 @@ DISTNAME=	TerrainSDK-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Terrain Project Software Development Kit
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 RUN_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 LIB_DEPENDS=    netcdf.1:${PORTSDIR}/math/netcdf \
