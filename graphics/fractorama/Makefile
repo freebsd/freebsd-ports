@@ -7,31 +7,32 @@
 #
 
 PORTNAME=	fractorama
-PORTVERSION=	1.5.8
+PORTVERSION=	1.6.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://fractorama.com/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BISON=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 MAKE_ENV=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" MOC=${MOC}
 ALL_TARGET=	release
+USE_REINPLACE=	yes
 
 post-patch:
-	@find ${WRKSRC} -name Makefile | xargs \
-		${PERL} -pi -e "s,OPTIMIZE := -O2,OPTIMIZE := ${CFLAGS},g"
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e "s,OPTIMIZE := -O2,OPTIMIZE := ${CFLAGS},g"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../fractorama.exe ${PREFIX}/bin/fractorama
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/fractorama
-	${CP} -R ${WRKSRC}/../examples/* ${PREFIX}/share/examples/fractorama
-	${MKDIR} ${PREFIX}/share/doc/fractorama
-	${CP} -R ${WRKSRC}/../doc/* ${PREFIX}/share/doc/fractorama
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/../examples/* ${EXAMPLESDIR}
+	${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/../doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
