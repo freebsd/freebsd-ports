@@ -282,6 +282,7 @@
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mldonkey
+    SUBDIR += mldonkey-gui
     SUBDIR += mmucl
     SUBDIR += mopd
     SUBDIR += mpd
