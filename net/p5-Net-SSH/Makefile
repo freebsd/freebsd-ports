@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to access and use ssh protocol
 
+MANUAL_PACKAGE_BUILD=yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::SSH.3
