@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rawdog
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	news python
 MASTER_SITES=	http://offog.org/files/
 
@@ -24,13 +24,13 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-	@echo "    ---------------------------------------------"
-	@echo "    Sample config and stylesheet installed in:"
-	@echo "        ${EXAMPLESDIR}"
+	@${ECHO_MSG} "    ---------------------------------------------"
+	@${ECHO_MSG} "    Sample config and stylesheet installed in:"
+	@${ECHO_MSG} "        ${EXAMPLESDIR}"
 .if !defined(NOPORTDOCS)
-	@echo "    Please read the README:"
-	@echo "        ${DOCSDIR}/README"
+	@${ECHO_MSG} "    Please read the README:"
+	@${ECHO_MSG} "        ${DOCSDIR}/README"
 .endif
-	@echo "    ---------------------------------------------"
+	@${ECHO_MSG} "    ---------------------------------------------"
 
 .include <bsd.port.mk>
