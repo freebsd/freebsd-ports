@@ -1,6 +1,12 @@
---- h2l.l.orig	Sun Jan 20 14:47:49 2002
-+++ h2l.l	Sun Jan 20 14:47:56 2002
-@@ -2,7 +2,7 @@
+
+$FreeBSD$
+
+--- h2l.l.orig	Wed Oct 10 14:24:26 2001
++++ h2l.l	Fri Feb 21 03:10:30 2003
+@@ -1,8 +1,10 @@
+ %{
++using namespace std;
++
  #include "CLexData.h"
  #define YYSTYPE	CLexDataPtr
  
