@@ -1,6 +1,6 @@
---- cd-drive.c.orig	Wed Sep 22 09:20:04 2004
-+++ cd-drive.c	Mon Oct  4 02:20:47 2004
-@@ -270,9 +270,21 @@
+--- cd-drive.c.orig	Thu Feb 10 14:39:59 2005
++++ cd-drive.c	Tue Feb 15 03:34:40 2005
+@@ -261,9 +261,21 @@
  {
  	int fd;
  	int mmc_profile;
@@ -19,10 +19,10 @@
 +	fd = cam->fd;
 +#else
 +
- 	fd = open (device, O_RDWR|O_EXCL|O_NONBLOCK);
- 	if (fd < 0) {
+ 	if ((fd = open (device, O_RDWR | O_EXCL | O_NONBLOCK)) < 0
+ 	    && (fd = open (device, O_RDONLY | O_EXCL | O_NONBLOCK)) < 0) {
  		if (errno == EBUSY) {
-@@ -280,6 +292,7 @@
+@@ -271,6 +283,7 @@
  		}
  		return CD_MEDIA_TYPE_ERROR;
  	}
@@ -30,7 +30,7 @@
  
  	mmc_profile = get_mmc_profile (fd);
  
-@@ -307,7 +320,11 @@
+@@ -298,7 +311,11 @@
  		}
  	}
  
@@ -42,7 +42,7 @@
  
  	switch (mmc_profile) {
  	case -1:
-@@ -442,10 +459,21 @@
+@@ -433,10 +450,21 @@
  	int secs;
  	int mmc_profile;
  	gint64 size;
@@ -62,9 +62,9 @@
 +	fd = cam->fd;
 +#else
  
- 	fd = open (device, O_RDWR|O_EXCL|O_NONBLOCK);
- 	if (fd < 0) {
-@@ -454,6 +482,7 @@
+ 	if ((fd = open (device, O_RDWR | O_EXCL | O_NONBLOCK)) < 0
+ 	    && (fd = open (device, O_RDONLY | O_EXCL | O_NONBLOCK)) < 0) {
+@@ -445,6 +473,7 @@
  		}
  		return CD_MEDIA_SIZE_UNKNOWN;
  	}
@@ -72,7 +72,7 @@
  
  	mmc_profile = get_mmc_profile (fd);
  
-@@ -476,7 +505,11 @@
+@@ -467,7 +496,11 @@
  		size = CD_MEDIA_SIZE_NA;
  	}
  
@@ -84,7 +84,7 @@
  
  	return size;
  }
-@@ -595,9 +628,81 @@
+@@ -586,9 +619,81 @@
  #endif /* USE_HAL */
  
  #if defined(__linux__) || defined(__FreeBSD__)
@@ -166,10 +166,12 @@
  #endif /* __linux__ || __FreeBSD__ */
  
  #if defined (__linux__)
-@@ -800,49 +905,7 @@
+@@ -791,50 +896,6 @@
+ 		}
+ 	}
  	return NULL;
- }
- 
+-}
+-
 -#if !defined(__linux)
 -static int
 -get_device_max_read_speed (char *device)
@@ -177,11 +179,11 @@
 -	int fd;
 -	int max_speed;
 -	int read_speed, write_speed;
- 
+-
 -	max_speed = -1;
 -
--	fd = open (device, O_RDWR|O_EXCL|O_NONBLOCK);
--	if (fd < 0) {
+-	if ((fd = open (device, O_RDWR | O_EXCL | O_NONBLOCK)) < 0
+-	    && (fd = open (device, O_RDONLY | O_EXCL | O_NONBLOCK)) < 0) {
 -		return -1;
 -	}
 -
@@ -202,8 +204,8 @@
 -
 -	max_speed = -1;
 -
--	fd = open (device, O_RDWR|O_EXCL|O_NONBLOCK);
--	if (fd < 0) {
+-	if ((fd = open (device, O_RDWR | O_EXCL | O_NONBLOCK)) < 0
+-	    && (fd = open (device, O_RDONLY | O_EXCL | O_NONBLOCK)) < 0) {
 -		return -1;
 -	}
 -
@@ -212,7 +214,6 @@
 -	max_speed = (int)floor  (write_speed) / CD_ROM_SPEED;
 -
 -	return max_speed;
--}
+ }
  
  static char *
- get_scsi_cd_name (int bus, int id, int lun, const char *dev,
