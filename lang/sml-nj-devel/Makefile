@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.50
+PORTVERSION=	110.51
 CATEGORIES=	lang
 MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
 DISTFILES=	config.tgz runtime.tgz
@@ -120,10 +120,20 @@ RECOMPILEDIR=	src/system
 RECOMPILEDIR=
 .endif
 
-MLRUNTIMEPATCHES!=	cd ${FILESDIR} && ${LS} do-patch-src::runtime::*
+# calm portlint complaining about /dev/null
+AUXSLASH=	/
+AUXDEV=		${AUXSLASH}dev
+AUXDEVNULL!=	if [ -w ${AUXDEV}/null ]; then ${ECHO_CMD} -n ${AUXDEV}/null; \
+		else ${ECHO_CMD} -n '${WRKDIR}/.devnull'; fi
+
+MLRUNTIMEPATCHES!=	cd ${FILESDIR} && \
+			( ${LS} do-patch-src::runtime::* 2> ${AUXDEVNULL} || \
+			  ${TRUE} )
 .if defined(WITH_EVERYTHING)
 MLSOURCEUNPACKTARGETS=	cm compiler mlrisc smlnj-lib system
-MLSOURCEPATCHES!=	cd ${FILESDIR} && ${LS} do-patch-src::*
+MLSOURCEPATCHES!=	cd ${FILESDIR} && \
+			( ${LS} do-patch-src::* 2> ${AUXDEVNULL} || \
+			  ${TRUE} )
 .else
 MLSOURCEUNPACKTARGETS=
 MLSOURCEPATCHES=
@@ -181,7 +191,8 @@ pre-install:
 	${SED} -E -e 's%^(.*[^/])$$%${MLROOTRELATIVE}/src/\1%' \
 		-e 's%^(.*)/$$%@dirrm\ ${MLROOTRELATIVE}/src/\1%' \
 		> ${MLRUNTIMEPLIST}
-	-@cd ${FILESDIR} && ${LS} do-patch-src::runtime::* | \
+	-@cd ${FILESDIR} && \
+	( ${LS} do-patch-src::runtime::* 2> ${AUXDEVNULL} ) | \
 	${SED} -e 's%::%/%g' | \
 	${SED} -E -e 's%^do-patch-(.*)%${MLROOTRELATIVE}/\1.orig%' \
 	>> ${MLRUNTIMEPLIST}
