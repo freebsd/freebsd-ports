@@ -158,9 +158,6 @@ share/doc/LessTif/doc/core.html
 share/doc/LessTif/doc/current.html
 share/doc/LessTif/doc/download.html
 share/doc/LessTif/doc/get.html
-share/doc/LessTif/doc/html/mwm.html
-share/doc/LessTif/doc/html/mwmrc.html
-share/doc/LessTif/doc/html/xmbind.html
 share/doc/LessTif/doc/images/hungry.gif
 share/doc/LessTif/doc/images/lesstif-realsmall.gif
 share/doc/LessTif/doc/images/lesstif-small.gif
@@ -186,6 +183,5 @@ share/doc/LessTif/doc/working.html
 @dirrm share/doc/LessTif/doc/man/man1
 @dirrm share/doc/LessTif/doc/man
 @dirrm share/doc/LessTif/doc/images
-@dirrm share/doc/LessTif/doc/html
 @dirrm share/doc/LessTif/doc
 @dirrm share/doc/LessTif
