@@ -16,7 +16,6 @@
     SUBDIR += gpasman
     SUBDIR += gtkportscan
     SUBDIR += identify
-    SUBDIR += iplog
     SUBDIR += john
     SUBDIR += keynote
     SUBDIR += keyprint
