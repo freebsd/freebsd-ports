@@ -21,10 +21,13 @@ USE_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 
 MAN1=		${PORTNAME}.1
 
-pre-build:
+post-patch:
+	@${REINPLACE_CMD} -e 's/^LIBS =/LIBS = ${PTHREAD_LIBS}/'\
+		${WRKSRC}/src/Makefile
 	@${FIND} ${WRKSRC}/src -name \*.o -delete
 
 do-install:
