@@ -1,6 +1,3 @@
-include/gtkglext-1.0/gdk/GL/glext.h
-include/gtkglext-1.0/gdk/GL/glxext.h
-include/gtkglext-1.0/gdk/GL/wglext.h
 include/gtkglext-1.0/gdk/gdkgl.h
 include/gtkglext-1.0/gdk/gdkglconfig.h
 include/gtkglext-1.0/gdk/gdkglcontext.h
@@ -18,6 +15,12 @@ include/gtkglext-1.0/gdk/gdkgltokens.h
 include/gtkglext-1.0/gdk/gdkgltypes.h
 include/gtkglext-1.0/gdk/gdkglversion.h
 include/gtkglext-1.0/gdk/gdkglwindow.h
+include/gtkglext-1.0/gdk/glext/glext-extra.h
+include/gtkglext-1.0/gdk/glext/glext.h
+include/gtkglext-1.0/gdk/glext/glxext-extra.h
+include/gtkglext-1.0/gdk/glext/glxext.h
+include/gtkglext-1.0/gdk/glext/wglext-extra.h
+include/gtkglext-1.0/gdk/glext/wglext.h
 include/gtkglext-1.0/gdk/x11/gdkglglxext.h
 include/gtkglext-1.0/gdk/x11/gdkglx.h
 include/gtkglext-1.0/gtk/gtkgl.h
@@ -28,16 +31,16 @@ include/gtkglext-1.0/gtk/gtkglversion.h
 include/gtkglext-1.0/gtk/gtkglwidget.h
 @dirrm include/gtkglext-1.0/gtk
 @dirrm include/gtkglext-1.0/gdk/x11
-@dirrm include/gtkglext-1.0/gdk/GL
+@dirrm include/gtkglext-1.0/gdk/glext
 @dirrm include/gtkglext-1.0/gdk
 @dirrm include/gtkglext-1.0
 lib/gtkglext-1.0/include/gdkglext-config.h
 lib/libgdkglext-x11-1.0.a
 lib/libgdkglext-x11-1.0.so
-lib/libgdkglext-x11-1.0.so.0
+lib/libgdkglext-x11-1.0.so.2
 lib/libgtkglext-x11-1.0.a
 lib/libgtkglext-x11-1.0.so
-lib/libgtkglext-x11-1.0.so.0
+lib/libgtkglext-x11-1.0.so.2
 @dirrm lib/gtkglext-1.0/include
 @dirrm lib/gtkglext-1.0
 libdata/pkgconfig/gdkglext-1.0.pc
