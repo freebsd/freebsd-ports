@@ -3,7 +3,7 @@
 # Date created:		12 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/03/04 07:28:33 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/22 07:58:44 asami Exp $
 #
 
 DISTNAME=	vftool-1.2
@@ -17,8 +17,6 @@ BUILD_DEPENDS=	${JFMDIR}/goth10.tfm:${PORTSDIR}/japanese/ptex-${JACODE} \
 		${AFMDIR}/GothicBBB-Medium-H:${PORTSDIR}/japanese/japaneseAFM \
 		${GOTTFMDIR}/dgjgreek10.tfm:${PORTSDIR}/japanese/jtex209-${JTEX} \
 		${PKDIR}/dmjsy10.${RESOLUTION}pk:${PORTSDIR}/japanese/pkfonts
-
-BROKEN=		build
 
 ALL_TARGET=	n2a a2n a2bk p2pn tjsy tjsypk rot
 SCRIPTS_ENV=	SED=${SED} \
