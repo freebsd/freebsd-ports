@@ -1,0 +1,10 @@
+--- configure	Fri Feb 25 18:31:01 2000
++++ configure.new	Fri Feb 25 19:33:01 2000
+@@ -7337,6 +7337,7 @@
+ s%@oldincludedir@%$oldincludedir%g
+ s%@infodir@%$infodir%g
+ s%@mandir@%$mandir%g
++s%@proplist_dir@%$proplist_dir%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
+ s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
