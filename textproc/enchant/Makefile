@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTVERSION=	1.1.5
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abiword
@@ -17,9 +16,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Dictionary/spellchecking framework
 
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget glib20 lthack
+USE_GNOME=	gnomehack gnomeprefix gnometarget glib20
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -57,5 +57,9 @@ pre-everything::
 	@${ECHO_CMD} '===> Define WITH_HSPELL to enable hspell (Hebrew) support'
 .endif
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
+		${WRKSRC}/install-sh
 
 .include <bsd.port.post.mk>
