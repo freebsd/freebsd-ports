@@ -79,6 +79,7 @@
     SUBDIR += nl-ispell
     SUBDIR += no-ispell
     SUBDIR += openjade
+    SUBDIR += opensched
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Sort-ArbBiLex

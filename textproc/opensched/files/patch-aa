@@ -1,0 +1,79 @@
+*** Makefile.orig	Tue Nov 16 04:02:39 1999
+--- Makefile	Wed Jan 31 14:51:57 2001
+***************
+*** 13,26 ****
+  
+  build: opensched manpage
+  
+! all: opensched printman test sample
+  
+  BINDIR=/usr/local/bin
+  MANDIR=/usr/local/man/man1
+  
+  install: opensched manpage
+! 	install -o root -g root -m 755 opensched $(BINDIR)
+! 	install -o root -g root -m 755 doc/opensched.1 $(MANDIR)
+  
+  browseman: manpage
+  	groff -t -man -Tlatin1 doc/opensched.1 | less
+--- 13,26 ----
+  
+  build: opensched manpage
+  
+! all: opensched printman test
+  
+  BINDIR=/usr/local/bin
+  MANDIR=/usr/local/man/man1
+  
+  install: opensched manpage
+! 	install -o root -g 0 -m 755 src/opensched $(BINDIR)
+! 	install -o root -g 0 -m 755 doc/opensched.1 $(MANDIR)
+  
+  browseman: manpage
+  	groff -t -man -Tlatin1 doc/opensched.1 | less
+***************
+*** 33,42 ****
+  
+  opensched: dummy
+  	# opensched:
+! 	(cd src; make opensched)
+  
+  gcc-dos: dummy
+! 	pushd src; make gcc-dos; popd
+  
+  backup: veryclean
+  	/bin/rm -rf opensched-`cat VERSION`
+--- 33,42 ----
+  
+  opensched: dummy
+  	# opensched:
+! 	(cd src; ${MAKE} opensched)
+  
+  gcc-dos: dummy
+! 	pushd src; ${MAKE} gcc-dos; popd
+  
+  backup: veryclean
+  	/bin/rm -rf opensched-`cat VERSION`
+***************
+*** 66,75 ****
+  	/bin/chmod 755 `find . -type d -or -name '*.sh' -or -name opensched`
+  
+  test: opensched dummy
+! 	(cd test; make test)
+  
+  sample: opensched dummy
+! 	(cd sample; make sample)
+  
+  dummy:
+  
+--- 66,75 ----
+  	/bin/chmod 755 `find . -type d -or -name '*.sh' -or -name opensched`
+  
+  test: opensched dummy
+! 	(cd test; ${MAKE} test)
+  
+  sample: opensched dummy
+! 	(cd sample; ${MAKE} sample)
+  
+  dummy:
+  

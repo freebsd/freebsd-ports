@@ -1,0 +1,41 @@
+*** test/test.tex.org	Wed Jan 31 14:26:20 2001
+--- test/test.tex	Wed Jan 31 14:34:28 2001
+***************
+*** 1,4 ****
+! \documentstyle[rotate,times,12pt,epsf,supertabular]{article}
+  \textwidth=7.0in
+  \textheight=8.0in 
+  \oddsidemargin=-0.25in
+--- 1,9 ----
+! \documentclass[dvips,12pt]{article}
+! \usepackage{epsfig}
+! \usepackage{supertabular}
+! \usepackage{rotate}
+! \usepackage{float}
+! 
+  \textwidth=7.0in
+  \textheight=8.0in 
+  \oddsidemargin=-0.25in
+***************
+*** 36,44 ****
+  
+  \section{GANTT Charts}
+  
+! \centerline{
+!   \rotate[l]{\epsfxsize=0.95\textheight \epsfbox{test_gantt_1.eps}}
+!   }
+  
+  \end{document}
+  
+--- 41,51 ----
+  
+  \section{GANTT Charts}
+  
+! \begin{figure}[H]
+! \begin{center}
+!   \epsfig{figure=./test_gantt_1.eps,width=8in,angle=270}
+! \end{center}
+! \end{figure}
+  
+  \end{document}
+  
