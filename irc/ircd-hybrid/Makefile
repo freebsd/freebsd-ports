@@ -6,13 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=	ircd-hybrid-5.3p6
+DISTNAME=	ircd-hybrid-5.3p7
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/hybrid/
 
 MAINTAINER=	desmo@bandwidth.org
 
 GNU_CONFIGURE=	yes
+IS_INTERACTIVE=	yes
 
 MAN8=		ircd.8
 
