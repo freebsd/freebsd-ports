@@ -7,8 +7,8 @@
 
 PORTNAME=	astk
 PORTVERSION=	1.0.14
-PORTREVISION?=	0
-CATEGORIES=	cad tk83
+PORTREVISION?=	1
+CATEGORIES=	cad tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/code_aster/
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
@@ -61,7 +61,7 @@ PKGMESSAGE=	${PKGDIR}/pkg-message.client
 
 SLAVEDIRS=	french/astk-client
 
-TK_VER?=	8.3
+TK_VER?=	8.4
 TCL_VER?=	${TK_VER}
 
 TKTAB_VER?=	2.8
