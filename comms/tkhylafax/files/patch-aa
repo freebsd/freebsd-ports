@@ -1,0 +1,46 @@
+--- Makefile.orig	Sun Dec 29 19:26:39 1996
++++ Makefile	Sun Jun  8 13:06:59 1997
+@@ -14,10 +14,10 @@
+ TCLMAN_DEST = /usr/local/man/man1
+ 
+ # The full path to tclsh
+-TCLSH = /usr/local/bin/tclsh
++TCLSH = tclsh7.6
+ 
+ # The full path to wish.
+-WISH = /usr/local/bin/wish
++WISH = wish4.2
+ ### DON'T EDIT ANYTHING BELOW THIS LINE ###
+ 
+ TCLLIB_FILES =  \
+@@ -40,7 +40,9 @@
+ TCLPRG_FILE = tkhylafax
+ TCLMAN_FILE = tkhylafax
+ 
+-all: lib install.man tkhylafax
++all:
++
++install: lib install.man tkhylafax.inst
+ 	echo 'auto_mkindex $(TCLLIB_DEST) *.tcl *.t' | $(TCLSH);
+ 
+ $(TCLLIB_DEST):
+@@ -59,16 +61,15 @@
+ 	if [ ! -d $(TCLPRG_DEST) ]; then mkdir -p $(TCLPRG_DEST); fi
+ 	chmod 775 $(TCLPRG_DEST)
+ 
+-tkhylafax: $(TCLPRG_DEST)
++tkhylafax.inst: $(TCLPRG_DEST)
+ 	@echo "Patching tkhylafax..." 
+ 	mv tkhylafax tkhylafax.unpatched
+ 	sed -e 's|XXX_TKHYLAFAX_XXX|$(TCLLIB_DEST)|g' \
+ 	    tkhylafax.unpatched > tkhylafax
+ 	@echo "Done" 
+ 	@echo "Installing tkhylafax command..." 
+-	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/$@
+-	chmod 775 $(TCLPRG_DEST)/$@
+-	mv tkhylafax.unpatched tkhylafax
++	cp $(TCLPRG_FILE) $(TCLPRG_DEST)/tkhylafax
++	chmod 775 $(TCLPRG_DEST)/tkhylafax
+ 	@echo "Done" 
+ 
+ install.man:

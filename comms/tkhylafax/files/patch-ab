@@ -1,0 +1,19 @@
+--- tkhylafax.orig	Tue Dec 31 02:49:43 1996
++++ tkhylafax	Sun Jun  8 12:34:58 1997
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ #\
+-exec wish "$0" ${1+"$@"}
++exec wish4.2 "$0" ${1+"$@"}
+ 
+ #
+ # 
+@@ -291,7 +291,7 @@
+ 
+ proc previewCover { args } {
+ 
+-    set faxcmd "[mkCover] | ghostview -"
++    set faxcmd "[mkCover] | gv -"
+ 
+     # Exec it
+     if {[catch {eval exec $faxcmd &} err]} {
