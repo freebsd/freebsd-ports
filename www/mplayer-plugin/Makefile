@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -19,7 +20,14 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/Source/mplayerplug-in.c
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/browser_plugins
