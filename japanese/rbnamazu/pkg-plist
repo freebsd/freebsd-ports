@@ -1,3 +1,4 @@
+bin/namazu.rb
 bin/rbnamazu
 lib/ruby/site_ruby/%%RUBY_VER%%/nmzdoc.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/nmzqr.rb
