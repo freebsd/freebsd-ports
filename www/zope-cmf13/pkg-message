@@ -1,0 +1,9 @@
+Zope-CMF
+
+	To complete the installation of the Zope Content Management
+	Framework (CMF):
+
+	- Restart Zope.  This may be done from the Zope Control Panel.
+
+	- Verify that the three CMF products loaded properly by examining
+	  them in Control_Panel/Products.
