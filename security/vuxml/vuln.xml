@@ -53,6 +53,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	    when the full pathname of the script being executed is
 	    very long. <em>(CAN-2005-0156)</em>.</li>
 	</ul>
+	<p><strong>Note:</strong> By default, no set-user-ID perl
+	  binary is installed.  An administrator must enable it
+	  manually at build time with the <code>ENABLE_SUIDPERL</code>
+	  port flag.</p>
       </body>
     </description>
     <references>
