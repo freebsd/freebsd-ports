@@ -1,5 +1,5 @@
-*** Makefile.org	Fri Sep 17 21:54:21 1999
---- Makefile	Fri Sep 17 21:56:57 1999
+*** Makefile.org	Fri Dec 22 14:08:08 2000
+--- Makefile	Fri Dec 22 14:10:01 2000
 ***************
 *** 14,20 ****
   #
@@ -41,7 +41,7 @@
   #
 ! LIBDIR = -L$(top_builddir)
 ! INCDIR = -I$(top_builddir)
-  CFLAGS = -Wall $(INCDIR) $(DEFINES)
+  CFLAGS = -Wall -g $(INCDIR) $(DEFINES)
   SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
   	syncal_reconcile.o syncal_gmt.o
 --- 65,72 ----
@@ -50,7 +50,7 @@
   #
 ! LIBDIR = -L$(top_builddir)/lib
 ! INCDIR = -I$(top_builddir)/include
-  CFLAGS = -Wall $(INCDIR) $(DEFINES)
+  CFLAGS = -Wall -g $(INCDIR) $(DEFINES)
   SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
   	syncal_reconcile.o syncal_gmt.o
 ***************

@@ -1,19 +1,19 @@
-*** user.tcl~	Fri Sep 17 22:03:52 1999
---- user.tcl	Fri Sep 17 22:05:58 1999
+*** user.tcl.orig	Mon Jul 17 07:33:27 2000
+--- user.tcl	Fri Dec 22 14:13:30 2000
 ***************
-*** 24,30 ****
-      "Okay" "Cancel"]
+*** 26,32 ****
       
       if { $result} {
-!         exec syncal >/dev/null
+  	ical_save
+!         exec syncal -v $HOME/.syncal.log
           io_read [ical_leader]
       }
       cal option AmPm $dm_AmPm
---- 24,30 ----
-      "Okay" "Cancel"]
+--- 26,32 ----
   
       if { $result} {
-!         exec @@PREFIX@@/bin/syncal >/dev/null
+  	ical_save
+!         exec @@PREFIX@@/bin/syncal -v $HOME/.syncal.log
           io_read [ical_leader]
       }
       cal option AmPm $dm_AmPm
