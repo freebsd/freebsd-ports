@@ -1,0 +1,4 @@
+# Package-index file for Pgtcl-package. Enables you to load PostgreSQL
+# interface functions right into you TCL-interpreter as simply as
+#	package require Pgtcl
+package ifneeded Pgtcl 1.3 "load %%PREFIX%%/lib/libpgtcl.so"
