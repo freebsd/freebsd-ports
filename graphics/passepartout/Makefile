@@ -7,7 +7,7 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
@@ -27,7 +27,7 @@ USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CFALGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
-MAN=	xml2ps.1 passepartout.1x
+MAN1=	xml2ps.1 passepartout.1x
 
 .include <bsd.port.pre.mk>
 
