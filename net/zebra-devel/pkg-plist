@@ -1,0 +1,7 @@
+sbin/bgpd
+sbin/ripd
+sbin/zebra
+etc/bgpd.conf.sample
+etc/ripd.conf.sample
+etc/zebra.conf.sample
+info/zebra.info
