@@ -3035,6 +3035,7 @@ httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
 hu-hu-phone	ports/hungarian/hu-phone
 hu-hu-zipcodes	ports/hungarian/hu-zipcodes
+hu-hunspell	ports/hungarian/hunspell
 hu-ispell	ports/hungarian/ispell
 hu-jdictionary-eng-hun	ports/hungarian/jdictionary-eng-hun
 hu-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
