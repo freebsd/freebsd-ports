@@ -14,7 +14,9 @@ MASTER_SITES=	http://www.outguess.org/ \
 		http://www.internet2.edu/~shalunov/mirror/ \
 		http://cimarron.river.com/mirrors/www.outguess.org/ \
 		http://munitions.vipul.net/software/steganography/ \
-		http://the25200-1.gw.connect.com.au/security/steganography/
+		http://the25200-1.gw.connect.com.au/security/steganography/ \
+		${MASTER_SITE_PACKETSTORM}
+MASTER_SITE_SUBDIR=	crypt/stego
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Steganographic tool
