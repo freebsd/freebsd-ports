@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.99 1998/11/19 17:01:31 vanilla Exp $
+# $Id: Makefile,v 1.100 1998/11/20 04:14:13 asami Exp $
 #
 
     SUBDIR += 4va
@@ -71,7 +71,6 @@
     SUBDIR += pstoedit
     SUBDIR += py-imaging
     SUBDIR += qcread
-    SUBDIR += qgl
     SUBDIR += qvplay
     SUBDIR += rayshade
     SUBDIR += sane
