@@ -4757,6 +4757,7 @@ lifelines	ports/misc/lifelines
 liferea		ports/net/liferea
 lightning	ports/devel/lightning
 lighttpd	ports/www/lighttpd
+lila-xfwm4	ports/x11-themes/lila-xfwm4
 lile		ports/misc/lile
 lilypond	ports/print/lilypond
 lilypond-devel	ports/print/lilypond-devel
