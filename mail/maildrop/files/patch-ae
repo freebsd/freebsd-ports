@@ -1,0 +1,10 @@
+--- main.C.orig	Mon May 10 18:34:07 1999
++++ main.C	Sat Jan 29 17:41:39 2000
+@@ -36,6 +36,7 @@
+ 
+ 
+ extern void setprocgroup();
++extern "C" int sprintf(char *str, const char *format, ...);
+ 
+ static Message m1, m2;
+ extern char **environ;
