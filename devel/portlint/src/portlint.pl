@@ -78,14 +78,15 @@ my $re_lang_pref = '(' . join('|', @lang_pref) . ')-';
 my ($prog) = ($0 =~ /([^\/]+)$/);
 sub usage {
 	print STDERR <<EOF;
-usage: $prog [-abctvN] [-B#] [port_directory]
+usage: $prog [-abchvtN] [-M ENV] [-B#] [port_directory]
 	-a	additional check for scripts/* and pkg-*
 	-b	warn \$(VARIABLE)
 	-c	committer mode
+	-h	show summary of command line options
 	-v	verbose mode
 	-t	nit pick about use of spaces
-	-M	set make variables (ex. PORTSDIR=/usr/ports.work)
 	-N	writing a new port
+	-M ENV	set make variables to ENV (ex. PORTSDIR=/usr/ports.work)
 	-B#	allow # contiguous blank lines (default: $contblank line)
 EOF
 		exit 0;
