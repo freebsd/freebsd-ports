@@ -8,7 +8,7 @@
 PORTNAME=	apache+ipv6
 PORTVERSION= 	1.3.12
 CATEGORIES=	www ipv6
-MASTER_SITES=   http://www.apache.org/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
 		ftp://apache.compuex.com/pub/apache/dist/ \
@@ -37,33 +37,33 @@ Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
-HAS_CONFIGURE=  yes
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.v6
-CONFIGURE_ARGS= \
-		 --prefix=${PREFIX} \
-		 --server-gid=nogroup \
-		 --with-perl=${PERL} \
-		 --with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
-		 --suexec-docroot=${PREFIX}/www/data \
-		 --without-confadjust \
-		 --enable-shared=remain \
-		 --enable-module=most \
-		 --enable-module=auth_db \
-		 --disable-module=auth_dbm
+CONFIGURE_ARGS=	\
+		--prefix=${PREFIX} \
+		--server-gid=nogroup \
+		--with-perl=${PERL} \
+		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		--suexec-docroot=${PREFIX}/www/data \
+		--without-confadjust \
+		--enable-shared=remain \
+		--enable-module=most \
+		--enable-module=auth_db \
+		--disable-module=auth_dbm
 
-OPTIM=-DHARD_SERVER_LIMIT=512 \
--DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
--DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
+OPTIM=		-DHARD_SERVER_LIMIT=512 \
+		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+= -DBUFFERED_LOGS
-CFLAGS+= -O6 -fomit-frame-pointer
+OPTIM+=		-DBUFFERED_LOGS
+CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV= OPTIM='${OPTIM}'
+CONFIGURE_ENV=	OPTIM='${OPTIM}'
 
-MAN1= dbmmanage.1 htdigest.1 htpasswd.1
-MAN8= ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 .include <bsd.port.pre.mk>
 
