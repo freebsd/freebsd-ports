@@ -6,6 +6,7 @@
 
 PORTNAME=	mod_log_sql
 PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.grubbybaby.com/mod_log_sql/
 
@@ -45,6 +46,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/make_combined_log.pl ${LOCALBASE}/share/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}/HTML
+	@${INSTALL_DATA} ${FILESDIR}/FreeBSD-readme.txt ${LOCALBASE}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/Documentation/documentation.ps ${LOCALBASE}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/Documentation/documentation.txt ${LOCALBASE}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/Documentation/README ${LOCALBASE}/share/doc/${PORTNAME}/
