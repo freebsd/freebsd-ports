@@ -307,6 +307,7 @@
     SUBDIR += xmms-a52dec
     SUBDIR += xmms-audiofile
     SUBDIR += xmms-bonk
+    SUBDIR += xmms-cdread
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
     SUBDIR += xmms-faad
