@@ -1,21 +1,25 @@
 
 $FreeBSD$
 
---- conf.php.orig	Mon Nov 10 10:54:16 2003
-+++ conf.php	Thu Feb 12 18:40:24 2004
-@@ -5,7 +5,7 @@
+--- conf.php.orig
++++ conf.php
+@@ -3,11 +3,7 @@
  #
- $majorversion = 2;
- $minorversion = 5;
--$microversion = 4;
-+$microversion = 5;
+ # Gmetad-webfrontend version. Used to check for updates.
+ #
+-$majorversion = 2;
+-$minorversion = 5;
+-$microversion = 7;
+-
+-$ganglia_version = "$majorversion.$minorversion.$microversion";
++include_once "./version.php";
+ 
  #
  # The name of the directory in "./templates" which contains the
- # templates that you want to use. Templates are like a skin for the
-@@ -22,12 +22,12 @@
- #$gmetad_root = "/usr/local/gmetad";
+@@ -22,12 +18,12 @@
+ #
  
- # The high-performance gmetad.
+ # Where gmetad stores the rrd archives.
 -$gmetad_root = "/var/lib/ganglia";
 +$gmetad_root = "/var/db/ganglia";
  $rrds = "$gmetad_root/rrds";
@@ -23,7 +27,7 @@ $FreeBSD$
  # Leave this alone if rrdtool is installed in $gmetad_root,
  # otherwise, change it if it is installed elsewhere (like /usr/bin)
 -define("RRDTOOL", "/usr/bin/rrdtool");
-+define("RRDTOOL", "%%PREFIX%%/bin/rrdtool");
++define("RRDTOOL", "%%LOCALBASE%%/bin/rrdtool");
  
  #
  # If you want to grab data from a different ganglia source specify it here.
