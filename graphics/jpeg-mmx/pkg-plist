@@ -1,5 +1,7 @@
 bin/cjpeg
 bin/djpeg
+bin/exifautotran
+bin/jpegexiforient
 bin/jpegtran
 bin/rdjpgcom
 bin/wrjpgcom
