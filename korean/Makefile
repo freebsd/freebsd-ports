@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 1997/05/09 10:44:31 max Exp $
+# $Id: Makefile,v 1.14 1997/06/04 09:12:03 asami Exp $
 #
 
     SUBDIR += Wnn
@@ -7,6 +7,7 @@
     SUBDIR += fvwm95
     SUBDIR += h2ps
     SUBDIR += han
+    SUBDIR += hanmutt
     SUBDIR += hanterm
     SUBDIR += hanterm-autofont
     SUBDIR += hanterm-xf86
