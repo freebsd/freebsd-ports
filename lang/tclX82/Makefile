@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.2 1996/03/18 02:04:26 asami Exp $
+# $Id: Makefile,v 1.3 1996/04/28 04:59:18 pst Exp $
 #
 
 DISTNAME=	tclX7.5.0
@@ -39,6 +39,20 @@ pre-configure:
 	Config.mk.orig2 >Config.mk
 
 post-install:
+	install -c -m 444 $(WRKSRC)/../doc/CmdWrite.3 $(PREFIX)/man/man3
+	install -c -m 444 $(WRKSRC)/../doc/Handles.3 $(PREFIX)/man/man3
+	install -c -m 444 $(WRKSRC)/../doc/Keylist.3 $(PREFIX)/man/man3
+	install -c -m 444 $(WRKSRC)/../doc/TclXInit.3 $(PREFIX)/man/man3
+	install -c -m 444 $(WRKSRC)/../doc/Memory.n $(PREFIX)/man/mann
+	install -c -m 444 $(WRKSRC)/../doc/TclX.n $(PREFIX)/man/mann
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf $(PREFIX)/man/man3/CmdWrite.3
+	gzip -9nf $(PREFIX)/man/man3/Handles.3
+	gzip -9nf $(PREFIX)/man/man3/Keylist.3
+	gzip -9nf $(PREFIX)/man/man3/TclXInit.3
+	gzip -9nf $(PREFIX)/man/mann/Memory.n
+	gzip -9nf $(PREFIX)/man/mann/TclX.n
+.endif
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

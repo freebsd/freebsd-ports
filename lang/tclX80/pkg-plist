@@ -274,3 +274,9 @@ lib/tclxConfig.sh
 lib/libtkx.a
 lib/libtkx.so.41.0
 @exec /sbin/ldconfig -m %D/lib
+man/man3/CmdWrite.3.gz
+man/man3/Handles.3.gz
+man/man3/Keylist.3.gz
+man/man3/TclXInit.3.gz
+man/mann/Memory.n.gz
+man/mann/TclX.n.gz
