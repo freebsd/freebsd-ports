@@ -24,8 +24,12 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 GDMDIR?=	${PREFIX}/etc/gdm
 
-pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+pre-fetch:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
