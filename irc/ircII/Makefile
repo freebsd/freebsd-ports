@@ -19,7 +19,7 @@ CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
 
 USE_BZIP2=	yes
 
-MAN1=		ircII.1 ircbug.1
+MAN1=		irc.1 ircII.1 ircbug.1
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
