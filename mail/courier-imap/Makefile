@@ -64,7 +64,8 @@ CONFIGURE_ARGS=	--without-authshadow \
 		--libexecdir=${LIBEXECDIR} \
 		--enable-workarounds-for-imap-client-bugs \
 		--enable-unicode \
-		--disable-root-check
+		--disable-root-check \
+		--with-locking-method=fcntl
 
 .if !defined(WITH_VPOPMAIL)
 CONFIGURE_ARGS+= --without-authvchkpw
@@ -157,9 +158,12 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-		'/^	imapd.cnf pop3d.cnf/s/(imapd.cnf|pop3d.cnf)//g' \
+	@${REINPLACE_CMD} -e 's/^	imapd.cnf pop3d.cnf //' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
+		${WRKSRC}/liblock/configure
+	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
+		${WRKSRC}/authlib/configure
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authtest ${PREFIX}/bin/
