@@ -1,0 +1,15 @@
+p4d2p is a Perl script which performs in-place editing on the output of
+a previous 'p4 describe' command, to generate output suitable for patch(1).
+
+p4genpatch is a Perl script which wraps 'p4 describe' to generate such
+patches directly from the depot, when provided with a Perforce changelist
+number.
+
+Both utilities were written for development on Perl itself by Andreas Konig
+and Gurusamy Sarathy, and were modified for use with multiple Perforce
+depots by Simon Cozens.
+
+WWW:	http://simon-cozens.org/programmer/secret-software.html
+
+Bruce
+bms@FreeBSD.org
