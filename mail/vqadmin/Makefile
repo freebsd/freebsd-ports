@@ -6,19 +6,34 @@
 #
 
 PORTNAME=	vqadmin
-PORTVERSION=	2.2
+PORTVERSION=	2.3.5
 CATEGORIES=	mail
-MASTER_SITES= 	http://www.inter7.com/vqadmin/
+MASTER_SITES= 	http://www.inter7.com/devel/ \
+		http://www.inter7.com/vqadmin/
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A cgi-based Virtual Qmail Domains Administrator
 
-BUILD_DEPENDS= \
-        ${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
-RUN_DEPENDS= \
-        ${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+LIB_DEPENDS=	getline.1:${PORTSDIR}/devel/libgetline
+BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--enable-cgibindir=${PREFIX}/www/cgi-bin.default/
+USE_REINPLACE=	YES
 
-.include <bsd.port.mk>
+CGIBINDIR?=	${PREFIX}/www/cgi-bin.default
+WEBDATADIR?=	${PREFIX}/www/data.default
+
+CONFIGURE_ARGS=	--enable-cgibindir=${CGIBINDIR} \
+		--enable-htmldir=${WEBDATADIR}
+
+.include <bsd.port.pre.mk>
+
+PLIST_SUB+=	CGIBINDIR=${CGIBINDIR} WEBDATADIR=${WEBDATADIR}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKSRC}/Makefile.in
+
+.include <bsd.port.post.mk>
+
