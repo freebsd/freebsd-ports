@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		${MASTER_SITE_GNU:S/$/:gcc/}
 MASTER_SITE_SUBDIR=	newlib \
-			${PORTNAME}/${GCCNAME}/:gcc
+			gcc/${GCCNAME}/:gcc
 DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${G77NAME}.tar.gz:gcc
 PATCHFILES=	${G77NAME}-rtems-20030507a.diff \
