@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.32a
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -25,10 +24,6 @@ USE_MESA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${X11BASE}"
 INSTALL_TARGET=	site-install
-
-post-patch:
-	${RUBY} -i -pe 'sub %r| -I/usr/X11R6/include|, ""' \
-		 -e 'sub %r| -L/usr/X11R6/lib|, ""' ${WRKSRC}/${RUBY_EXTCONF}
 
 post-install:
 .if !defined(NOPORTDOCS)
