@@ -7,7 +7,7 @@
 
 PORTNAME=	slrn
 PORTVERSION=	0.9.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/usenet/readers/unix/slrn/ \
@@ -15,8 +15,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/news/slrn/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/slrn/ \
 		ftp://ftp.plig.org/pub/slrn/
-		
 MASTER_SITE_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	http://slrn.sourceforge.net/patches/
+PATCHFILES=	slrn-0.9.8.0-ranges2.diff
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	SLang-based newsreader
@@ -24,15 +27,23 @@ COMMENT=	SLang-based newsreader
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_SIZE=	yes
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6 --disable-inews --with-slrnpull \
-		--with-libiconv-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-ipv6 --disable-inews --with-slrnpull \
+			--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	YES
@@ -44,7 +55,7 @@ ALL_TARGET=	all
 MAN1=		slrn.1 slrnpull.1
 
 .if defined(NOPORTDOCS)
-MAKE_ENV+=      NOPORTDOCS=yes
+MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 post-patch:
