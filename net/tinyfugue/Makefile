@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tf
-PORTVERSION=	5.0b3
+PORTVERSION=	5.0b4
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.tcp.com/pub/mud/Clients/tinyfugue/ \
 		ftp://tf.tcp.com/pub/tinyfugue/
