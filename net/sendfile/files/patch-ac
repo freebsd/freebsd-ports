@@ -1,0 +1,11 @@
+--- src/io.h.orig	Mon Mar  5 23:38:04 2001
++++ src/io.h	Mon Mar  5 23:38:04 2001
+@@ -15,6 +15,8 @@
+  * This file is covered by the GNU General Public License
+  */
+ 
++#include <sys/types.h>
++
+ 
+ /* read n bytes from network socket */
+ int readn(int, char *, int);

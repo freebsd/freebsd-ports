@@ -1,6 +1,6 @@
---- develop/install.orig	Sat Jul 11 14:02:38 1998
-+++ develop/install	Sun Aug 16 17:41:15 1998
-@@ -80,7 +80,6 @@
+--- develop/install.orig	Mon Mar  5 23:27:57 2001
++++ develop/install	Mon Mar  5 23:34:38 2001
+@@ -82,7 +82,6 @@
    make_man fetchfile 7 $manmisc
    make_man sendfiled 8 $manadmin
    cp doc/wlock.1 doc/utf7encode.1 $MANDIR/man1
@@ -8,10 +8,11 @@
  }
  
  SYSTEM=$1
-@@ -164,13 +163,6 @@
+@@ -165,14 +164,6 @@
+ To deinstall the sendfile-daemon, simply type: 	rm -f $SERVERDIR/sendfiled
  
  EOD
- echo 'If you are satisfied with these defaults, then type "ok" now:'
+-echo 'If you are satisfied with these defaults, then type "ok" now:'
 -read answer
 -if [ "$answer" != ok ]; then
 -  echo
@@ -22,7 +23,31 @@
  
  umask 022
  
-@@ -261,7 +253,6 @@
+@@ -250,6 +241,23 @@
+   fi
+ fi
+ 
++if [ -z "$BATCH" ] ; then
++echo ''
++echo 'I would now configure and start your sendfiled.'
++echo 'If you do not like this, enter "no" here'
++read answer
++fi
++if [ "$answer" = no ]; then
++  echo
++  echo "Things left to do if you want to start sendfiled:"
++  echo 
++  echo " - Maybe add 'saft	487/tcp' to /etc/services (prior to FreeBSD-4)"
++  echo " - Add sendfiled to /etc/inetd.conf and killall -HUP inetd"
++  echo " - Add 'test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile'"
++  echo "   to /etc/profile and /etc/csh.login"
++  echo
++else
++
+ if [ "$SYSTEM" = NEXT ]; then
+   SERVICE="`nidump services . | awk '/[ \t]487\/tcp/'`"
+ else
+@@ -266,7 +274,6 @@
      echo "saft	487/tcp		# simple asynchronous file transfer" | niload services .
    else
      echo "configuring $SERVICES"
@@ -30,7 +55,7 @@
      echo "saft	487/tcp		# simple asynchronous file transfer" >>$SERVICES
    fi
  fi
-@@ -274,8 +265,6 @@
+@@ -279,8 +286,6 @@
    fi
    RESTART=true
    echo "configuring $INETDCONF"
@@ -39,7 +64,16 @@
    echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
  fi
  
-@@ -339,15 +328,11 @@
+@@ -308,6 +313,8 @@
+   fi
+ fi
+ 				
++fi
++				
+ if [ ! -d "$SPOOL/OUTGOING" ]; then
+   echo "creating $SPOOL"
+   mkdir_recursive $SPOOL/OUTGOING
+@@ -344,15 +351,12 @@
  EOD
  fi
  
@@ -55,8 +89,8 @@
  if [ "$RESTART" = true ]; then
 -  echo
 -  echo "please restart now your inetd ( or simply reboot :-) )"
--  echo
 +  kill -HUP `cat /var/run/inetd.pid`
-+  [ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
+   echo
  fi
++[ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
 +echo done.

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sendfile
-PORTVERSION=	2.1
+PORTVERSION=	2.1a
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.belwue.de/pub/unix/sendfile/current/
-DISTFILES=	sendfile-20000102.tar.gz
+DISTFILES=	sendfile-20010216.tar.gz
 
 MAINTAINER=	sec@42.org
 
