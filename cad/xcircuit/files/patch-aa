@@ -1,5 +1,5 @@
-*** Imakefile.orig	Tue Aug  8 05:53:00 2000
---- Imakefile	Thu Aug 17 04:55:48 2000
+*** Imakefile.orig	Mon Oct  2 23:04:39 2000
+--- Imakefile	Fri Oct 13 04:56:42 2000
 ***************
 *** 28,46 ****
   #CCOPTIONS = -O2
@@ -14,7 +14,7 @@
   #------------------------------------------------------------------------
   #
 ! PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.1b1/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.1b5/psfiles
 ! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.1
 ! XCIRCUIT_BIN_DIR = $(PREFIX)/bin
 ! XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
@@ -34,7 +34,7 @@
   #------------------------------------------------------------------------
   #
 ! #PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.1b1/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.1b5/psfiles
 ! XCIRCUIT_LIB_DIR = $(LIBDIR)/xcircuit
 ! XCIRCUIT_BIN_DIR = $(BINDIR)
 ! XCIRCUIT_MAN_DIR = $(MANDIR)
