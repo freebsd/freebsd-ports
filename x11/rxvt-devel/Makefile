@@ -79,7 +79,7 @@ pre-fetch:
 	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes		add support for greek keyboard"
 	@${ECHO_MSG} "WITH_MENUBAR=yes		add support for rxvt menu bar system"
-	@${ECHO_MSG} "WITH_WITH_MOUSEWHEEL=yes	add support for scrolling via mouse wheel"
+	@${ECHO_MSG} "WITH_MOUSEWHEEL=yes	add support for scrolling via mouse wheel"
 	@${ECHO_MSG} "				or buttons 4 & 5"
 	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes		add support for a NeXT-like scrollbar"
 	@${ECHO_MSG} "WITH_RXVT_SCROLLBAR=yes		add support for the original rxvt scrollbar"
