@@ -1,5 +1,5 @@
 --- Imakefile.orig	Mon Aug 21 08:47:46 2000
-+++ Imakefile	Sat Feb 10 05:32:41 2001
++++ Imakefile	Sun Sep  8 19:26:19 2002
 @@ -1,6 +1,6 @@
  XCOMM $Xorg: Imakefile,v 1.3 2000/08/17 19:55:07 cpqbld Exp $
  XCOMM
@@ -22,7 +22,7 @@
     MISC_DEFINES = /* -DALLOWLOGFILEEXEC */ 
      XKB_DEFINES = XkbClientDefines
          DEFINES = $(XKB_DEFINES)
-+    CDEBUGFLAGS = -I$(VNINCDIR) -O #-g
++    CDEBUGFLAGS = -I$(VNINCDIR) #-O #-g
 +         LDLIBS = $(VNLIBS)
            SRCS1 = button.c charproc.c cursor.c data.c input.c \
  		  main.c menu.c misc.c screen.c scrollbar.c tabs.c \
