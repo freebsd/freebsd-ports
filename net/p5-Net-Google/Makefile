@@ -18,16 +18,13 @@ COMMENT=	Simple OOP-ish interface to the Google SOAP API
 BUILD_DEPENDS=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build
-.endif
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Google.3 Net::Google::Cache.3 Net::Google::Response.3 \
 		Net::Google::Search.3 Net::Google::Service.3 \
 		Net::Google::Spelling.3 Net::Google::tool.3
 
-.include <bsd.port.post.mk>
+post-patch:
+	@${PERL} -pi -e 's/CPAN/ExtUtils/' ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.mk>
