@@ -3,14 +3,14 @@
 
  You can define which input method you use with following variables.
 
-	USE_WNN6	to use Wnn6
-	USE_FREEWNN	to use FreeWnn
-	USE_CANNA	to use Canna
-	USE_SJ3		to use sj3
+	WITH_WNN6	to use Wnn6
+	WITH_FREEWNN	to use FreeWnn
+	WITH_CANNA	to use Canna
+	WITH_SJ3	to use sj3
 
- In default, USE_WNN6 and USE_CANNA are set.
+ In default, WITH_WNN6 and WITH_CANNA are set.
 
  If you want to use Emcws with Canna and FreeWnn, run
 
-	make install USE_FREEWNN=yes USE_CANNA=yes
+	make install WITH_FREEWNN=yes WITH_CANNA=yes
 ****************************************************************************
