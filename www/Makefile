@@ -64,6 +64,7 @@
     SUBDIR += junkbuster
     SUBDIR += kdreamsite
     SUBDIR += kwebsearch
+    SUBDIR += kwebwatch
     SUBDIR += libghttp
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
@@ -141,6 +142,7 @@
     SUBDIR += squid22
     SUBDIR += squid23
     SUBDIR += squidclients
+    SUBDIR += squidguard
     SUBDIR += squidtimes
     SUBDIR += squirm
     SUBDIR += swish-e
