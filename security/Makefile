@@ -252,6 +252,7 @@
 #   SUBDIR += tripwire12
     SUBDIR += uvscan-dat
     SUBDIR += vlock
+    SUBDIR += vlog
     SUBDIR += vpnd
     SUBDIR += vscan
     SUBDIR += whisker
