@@ -1,0 +1,34 @@
+bin/sdlroids
+share/sdlroids/bmp/blank.bmp
+share/sdlroids/bmp/bomb.bmp
+share/sdlroids/bmp/icon.bmp
+share/sdlroids/bmp/level.bmp
+share/sdlroids/bmp/life.bmp
+share/sdlroids/bmp/num0.bmp
+share/sdlroids/bmp/num1.bmp
+share/sdlroids/bmp/num2.bmp
+share/sdlroids/bmp/num3.bmp
+share/sdlroids/bmp/num4.bmp
+share/sdlroids/bmp/num5.bmp
+share/sdlroids/bmp/num6.bmp
+share/sdlroids/bmp/num7.bmp
+share/sdlroids/bmp/num8.bmp
+share/sdlroids/bmp/num9.bmp
+share/sdlroids/bmp/plus.bmp
+share/sdlroids/bmp/score.bmp
+share/sdlroids/bmp/shield.bmp
+share/sdlroids/sounds/bonusgot.wav
+share/sdlroids/sounds/bshot.wav
+share/sdlroids/sounds/bwound.wav
+share/sdlroids/sounds/explode.wav
+share/sdlroids/sounds/explode2.wav
+share/sdlroids/sounds/newbad.wav
+share/sdlroids/sounds/newbonus.wav
+share/sdlroids/sounds/phit.wav
+share/sdlroids/sounds/pshot.wav
+share/sdlroids/sounds/swarmsplit.wav
+share/sdlroids/sounds/thrust.wav
+share/sdlroids/sounds/title.wav
+@dirrm share/sdlroids/sounds
+@dirrm share/sdlroids/bmp
+@dirrm share/sdlroids

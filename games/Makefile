@@ -194,6 +194,7 @@
     SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rubix
+    SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += sex
