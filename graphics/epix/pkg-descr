@@ -1,0 +1,9 @@
+ePiX is a LATEX pre-processor that creates mathematically accurate plots and
+line figures using easy-to-learn syntax. The user interface is superficially
+that of LATEX itself: You prepare a short input file and ``run ePiX'' on this
+file, which produces a text file that is included into a LATEX document.
+Because the output is plain text, the output can be edited manually if
+necessary. However, for most visual tweaking it is easier and safer to change
+the source and re-run ePiX.
+
+WWW: http://mathcs.holycross.edu/~ahwang/current/ePiX.html
