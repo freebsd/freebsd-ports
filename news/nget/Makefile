@@ -15,6 +15,12 @@ DISTNAME=	nget-${PORTVERSION}+uulib
 MAINTAINER=	george@crackpipe.net
 COMMENT=	Auto-resuming command line nntp file grabber
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Fails to link"
+.endif
+
 MAN1=		nget.1 ngetlite.1
 MANCOMPRESSED=	no
 GNU_CONFIGURE=	yes
@@ -33,4 +39,4 @@ post-install:
 	strip ${PREFIX}/bin/nget
 	strip ${PREFIX}/bin/ngetlite
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
