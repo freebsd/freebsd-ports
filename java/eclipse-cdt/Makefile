@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/eclipse/plugins/org.eclipse.swt.${ECLIPSE_WS}_3.0.0/ws
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
-USE_JAVA=	ywa
+USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
 ECLIPSE_ARCH=x86
