@@ -1,0 +1,11 @@
+--- script/convert_smbpasswd.orig	Thu Nov  5 11:50:17 1998
++++ script/convert_smbpasswd	Wed Feb 10 00:02:01 1999
+@@ -7,7 +7,7 @@
+ # with trying to work out how to get the seconds since 1970
+ # in awk or the shell. JRA.
+ #
+-nawk 'BEGIN {FS=":"} 
++awk 'BEGIN {FS=":"} 
+ {
+ 	if( $0 ~ "^#" ) {
+ 		print $0

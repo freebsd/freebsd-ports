@@ -1,0 +1,18 @@
+If you want to use samba ports,
+
+1. Copy /usr/local/etc/smb.conf.default to /usr/local/etc/smb.conf, and edit
+   it.
+2. Copy /usr/local/etc/rc.d/samba.sh.sample to /usr/local/etc/rc.d/samba.sh
+3. Type /usr/local/etc/rc.d/samba.sh or reboot.
+
+See document files in /usr/local/share/doc/samba and example config files in
+/usr/local/share/examples/samba for details.
+
+Samba Japanese Edition is based on Samba 2.0.9, implemented the experimental
+internationalized SWAT and fixed several problems arond functions for
+Japanese support. See smb.conf.sample for details. If you want to use
+NT4+SP3 or Win95+updates clients, set "encrypt passwords" parameter to
+yes and use smbpasswd [username] to use /usr/local/private/smbpasswd
+for authentication.
+
+FreeBSD SAMBA-ja ports maintainer: NAKAJI Hiroyuki <nakaji@jp.freebsd.org>

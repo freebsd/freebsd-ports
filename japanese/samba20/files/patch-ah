@@ -1,0 +1,12 @@
+--- lib/util_sock.c.orig	Wed Sep 22 10:52:50 1999
++++ lib/util_sock.c	Wed Sep 22 11:30:18 1999
+@@ -28,6 +28,9 @@
+ extern int  sslFd;
+ #endif  /* WITH_SSL */
+ 
++#undef MSG_WAITALL
++#define MSG_WAITALL 0
++
+ extern int DEBUGLEVEL;
+ 
+ BOOL passive = False;
