@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hns
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	http://www.h14m.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
@@ -19,12 +19,16 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/hns
-	${CP} -pR ${WRKSRC}/ ${PREFIX}/share/hns
+	@if [ -d ${PREFIX}/share/${PORTNAME} ]; then ${RM} -rf ${PREFIX}/share/${PORTNAME}; fi
+	${MKDIR} ${PREFIX}/share/${PORTNAME}
+	${CP} -pR ${WRKSRC}/ ${PREFIX}/share/${PORTNAME}
+	${CHOWN} -R 0:0 ${PREFIX}/share/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/hns-setup ${PREFIX}/bin/hns-setup
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/todayhns/todayhns ${PREFIX}/bin/todayhns
 
 post-install:
+	@cd ${WRKSRC} && find . -type f -o -type l | sed 's,^\.,share/${PORTNAME},' | sort >> ${TMPPLIST}
+	@cd ${WRKSRC} && find . -type d | sed 's,^\.,@dirrm share/${PORTNAME},' | sort -r >> ${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
