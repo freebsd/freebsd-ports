@@ -1,14 +1,6 @@
---- configure.in.orig	Mon Jan 18 05:32:45 1999
-+++ configure.in	Thu Jan 21 02:08:02 1999
-@@ -239,7 +239,6 @@
- AC_CHECK_HEADERS(limits.h, AC_DEFINE(HAVE_LIMITS_H))
- AC_CHECK_HEADERS(pwd.h, AC_DEFINE(HAVE_PWD_H))
- AC_CHECK_HEADERS(sys/param.h, AC_DEFINE(HAVE_SYS_PARAM_H))
--AC_CHECK_HEADERS(sys/poll.h, AC_DEFINE(HAVE_SYS_POLL_H))
- AC_CHECK_HEADERS(sys/select.h, AC_DEFINE(HAVE_SYS_SELECT_H))
- AC_CHECK_HEADERS(sys/time.h, AC_DEFINE(HAVE_SYS_TIME_H))
- AC_CHECK_HEADERS(sys/times.h, AC_DEFINE(HAVE_SYS_TIMES_H))
-@@ -247,7 +246,7 @@
+--- configure.in.orig	Sun Jan 17 23:32:45 1999
++++ configure.in	Tue Jan 19 11:43:21 1999
+@@ -247,7 +247,7 @@
  AC_CHECK_HEADERS(values.h, AC_DEFINE(HAVE_VALUES_H))
  
  # Check for some functions
@@ -17,43 +9,7 @@
  
  # Check for sys_errlist
  AC_MSG_CHECKING(for sys_errlist)
-@@ -526,7 +525,7 @@
- dnl *** g_thread checks ***
- dnl ***********************
- 
--AC_ARG_WITH(threads, [  --with-threads=[none/posix/solaris/nspr] specify a thread implementation to use],
-+AC_ARG_WITH(threads, [  --with-threads=[none/posix/solaris/nspr/uthread] specify a thread implementation to use],
- 	if test "x$with_threads" = x; then
- 		want_threads=yes
- 	else
-@@ -592,6 +591,11 @@
- 		AC_CHECK_LIB(nspr21, PRP_NewNakedCondVar, have_threads=nspr)
- 	fi
- fi
-+if test "x$want_threads" = xyes || test "x$want_threads" = xuthread; then
-+        if test "x$have_threads" = xnone; then
-+	        AC_CHECK_LIB(c_r, pthread_attr_init, have_threads=uthread)
-+        fi
-+fi
- 
- AC_MSG_CHECKING(for thread implementation)
- 
-@@ -652,6 +656,14 @@
- 			     G_THREAD_LIBS="-lnspr21")
- 		g_threads_impl="NSPR"
- 		;;
-+	uthread)
-+		AC_CHECK_LIB(c_r, pthread_attr_init,
-+			     G_THREAD_LIBS="-pthread")
-+		mutex_has_default=yes
-+		mutex_default_type='pthread_mutex_t'
-+		mutex_default_init='PTHREAD_MUTEX_INITIALIZER'
-+		mutex_header_file='pthread.h'
-+		;;
-         none)
- 		g_threads_impl="NONE"
-                 ;;
-@@ -682,11 +694,17 @@
+@@ -682,11 +682,14 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -62,21 +18,18 @@
 -
 -		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
 -		# -mthreads flag.
-+	*-freebsd*)
-+		case $have_threads in
-+		    posix)
-+		    	   G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
-+			   ;;
-+		    uthread)
-+		    	   G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
-+			   have_threads=posix
-+			   have_poll=no
-+			   ;;
-+		esac
++	*-*-freebsd2.2* | *-*-freebsd3*)
++		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
++			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
++			G_THREAD_LIBS=""
++			have_poll=no
++		else
++			G_THREAD_CFLAGS="-D_THREAD_SAFE"
++		fi
  		;;
      esac
  
-@@ -735,6 +753,9 @@
+@@ -735,6 +738,9 @@
  dnl ****************************************
  dnl *** GLib POLL* compatibility defines ***
  dnl ****************************************

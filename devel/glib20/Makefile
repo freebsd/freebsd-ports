@@ -3,7 +3,7 @@
 # Date Created:			28 July 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1999/01/20 18:30:57 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/01/20 21:59:41 vanilla Exp $
 #
 
 DISTNAME=	glib-1.1.13
@@ -18,13 +18,6 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib11d
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 300000
-CONFIGURE_ARGS+=	--with-threads=none
-.else
-CONFIGURE_ARGS+=	--with-threads=uthread
-.endif
 
 MAN1=		glib-config.1
 
@@ -34,4 +27,4 @@ post-install:
 	 fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,4 +20,5 @@ lib/libgthread11d.so
 lib/libgthread11d.so.2.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/glib.m4
 @dirrm include/glib11d
