@@ -1,0 +1,20 @@
+bin/blogtk
+%%PYTHON_SITELIBDIR%%/blogtk/BloGTK.py
+%%PYTHON_SITELIBDIR%%/blogtk/config.py
+%%PYTHON_SITELIBDIR%%/blogtk/customtags.py
+%%PYTHON_SITELIBDIR%%/blogtk/post.py
+%%PYTHON_SITELIBDIR%%/blogtk/preview.py
+%%PYTHON_SITELIBDIR%%/blogtk/proxy.py
+%%PYTHON_SITELIBDIR%%/blogtk/spellcheck.py
+%%DATADIR%%/b-32.png
+%%DATADIR%%/blogtk-icon.png
+%%DATADIR%%/blogtk-logo.png
+%%DATADIR%%/blogtk.glade
+%%DATADIR%%/blogtk.gladep
+%%DATADIR%%/stock_insert-image.png
+%%DATADIR%%/stock_insert-table.png
+%%DATADIR%%/stock_link.png
+%%DATADIR%%/stock_para.png
+%%DATADIR%%/stock_text_indent.png
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/blogtk
