@@ -7,9 +7,11 @@
 
 PORTNAME=	xface.el
 PORTVERSION=	1.3.6.15
+PORTREVISION=	1
 CATEGORIES=	graphics elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/ \
 		ftp://ftp.opaopa.org/pub/mirror/elisp/jpl/elisp/
+PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	x-face-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz \
 		x-face-e21.el.gz
