@@ -148,6 +148,7 @@ share/xvile/vile/java.keywords
 share/xvile/vile/js.keywords
 share/xvile/vile/latex.keywords
 share/xvile/vile/lex.keywords
+share/xvile/vile/lisp.keywords
 share/xvile/vile/m4.keywords
 share/xvile/vile/mail.keywords
 share/xvile/vile/make.keywords

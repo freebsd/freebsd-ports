@@ -56,6 +56,7 @@ share/vile/imake.keywords
 share/vile/java.keywords
 share/vile/latex.keywords
 share/vile/lex.keywords
+share/vile/lisp.keywords
 share/vile/m4.keywords
 share/vile/mail.keywords
 share/vile/make.keywords
