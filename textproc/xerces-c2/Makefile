@@ -7,6 +7,7 @@
 
 PORTNAME=	xerces-c2
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML}
 MASTER_SITE_SUBDIR=	xerces-c/source
@@ -16,8 +17,11 @@ MAINTAINER=	bzeeb+freebsdports@zabbadoz.net
 COMMENT=	Validating XML parser from the Apache XML Project
 
 .if !defined(TRANSCODER)
-LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=		yes
 TRANSCODER=		"IconvFBSD"
+ICONVROOT?=		${LOCALBASE}
+CONFIGURE_ENV+=		ICONVROOT=${ICONVROOT}
+MAKE_ENV+=		ICONVROOT=${ICONVROOT}
 PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .else
@@ -25,8 +29,8 @@ PLIST_SUB+=		TRANSICU="@comment "
 PKGNAMESUFFIX+=		-icu2
 LIB_DEPENDS+=		icuuc.28:${PORTSDIR}/devel/icu2
 ICUROOT?=		${LOCALBASE}
-CONFIGURE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
-MAKE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
+MAKE_ENV+=		ICUROOT=${ICUROOT}
 PLIST_SUB+=		TRANSICONV="@comment "
 PLIST_SUB+=		TRANSICU=""
 .elif (${TRANSCODER} == "native")
@@ -34,8 +38,11 @@ PKGNAMESUFFIX+=		-native
 PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .else
-LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=		yes
 TRANSCODER=		"IconvFBSD"
+ICONVROOT?=		${LOCALBASE}
+CONFIGURE_ENV+=		ICONVROOT=${ICONVROOT}
+MAKE_ENV+=		ICONVROOT=${ICONVROOT}
 PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .endif
@@ -50,10 +57,11 @@ CONFIGURE_WRKSRC=	${XERCESWRKSRC}
 BUILD_WRKSRC=		${XERCESWRKSRC}
 INSTALL_WRKSRC=		${XERCESWRKSRC}
 
+USE_REINPLACE=		yes
 USE_GMAKE=		yes
 MAKE_ENV+=		XERCESCROOT=${WRKSRC}
 
-GNU_CONFIGURE=		yes
+HAS_CONFIGURE=		yes
 CONFIGURE_ENV+=		XERCESCROOT=${WRKSRC} TRANSCODER=${TRANSCODER}
 CONFIGURE_SCRIPT=	runConfigure
 CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -n socket -P ${PREFIX}
@@ -127,10 +135,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${CP} ${WRKSRC}/src/xercesc/Makefile.incl \
-		${WRKSRC}/src/xercesc/Makefile.incl.Dist
-	@${SED} -e 's#CP = -cp -p#CP = -cp#' \
-		${WRKSRC}/src/xercesc/Makefile.incl.Dist > \
+	@${REINPLACE_CMD} -e 's#CP = -cp -p#CP = -cp#'	\
 		${WRKSRC}/src/xercesc/Makefile.incl
 
 pre-configure:
