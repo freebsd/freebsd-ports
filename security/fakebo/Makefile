@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://the.ausmac.net/wd2a/security/port-loggers/ \
 		ftp://ftp.cps.unizar.es/pub/unix/security/ \
 		ftp://ftp.linux.hr/pub/fakebo/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fake BackOrifice client emulator
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/newvox/src/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voxel-style landscape rendering fly-by
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
