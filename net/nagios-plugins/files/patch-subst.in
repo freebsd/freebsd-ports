@@ -1,0 +1,11 @@
+--- plugins-scripts/subst.in.orig	Fri Sep  1 05:47:35 2000
++++ plugins-scripts/subst.in	Sun Jun 23 14:24:00 2002
+@@ -33,7 +33,7 @@
+ # Trusted path mechanism (deprecated)
+ 
+ /^[ \t]*\$ENV[ \t]*\{[ \t'"]*PATH[ \t"']*\}[ \t]*=/ {
+-	sub(/\=[ \t]*['"][^"']+["']/,"='@trusted_path@' # autoconf-derived");
++	sub(/\=[ \t]*['"][^"']+["'];/,"='@trusted_path@'; # autoconf-derived");
+ }
+ 
+ /^[\t ]*(export[\t ]*)?PATH[\t ]*=['"]+.+["']$/ {
