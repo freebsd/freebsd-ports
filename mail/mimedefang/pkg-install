@@ -15,7 +15,7 @@ POST-INSTALL)
 	if [ ! -d ${SPOOLDIR} ]; then
 		mkdir -p ${SPOOLDIR}
 		chown ${MAILUSER}:${MAILUSER} ${SPOOLDIR}
-		chmod 700 ${SPOOLDIR}
+		chmod 710 ${SPOOLDIR}
 	fi
 	if [ ! -d ${QUARANTINEDIR} ]; then
 		mkdir -p ${QUARANTINEDIR}
