@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	wasteland
-PORTVERSION=	0.2b
-PORTREVISION=	1
-MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/wasteland/ \
-		ftp://ftp.gigabell.net/pub/exp/hl/mod/wastelandhl/ \
+PORTVERSION=	0.2b.1
+MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/wastelandhl/ \
 		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/wastelandhl/ \
-		http://194.195.228.180/exp/hl/mod/wastelandhl/ \
-		http://ftp2.extreme-players.de/exp/hl/mod/wastelandhl/
-DISTNAME=	whlbeta2_linux
+		http://www.planethalflife.com/thewastes/files/:update
+DISTFILES=      whlbeta2_linux.tar.gz whl_b2_update.tar.gz:update
 
 MAINTAINER=	lioux@FreeBSD.org
 
