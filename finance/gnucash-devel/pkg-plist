@@ -2,24 +2,30 @@ bin/gnucash
 bin/gnucash.bin
 bin/xacc
 bin/xacc.bin
-share/xacc/Docs/contract.gif
-share/xacc/Docs/expand.gif
-share/xacc/Docs/foliowin.gif
-share/xacc/Docs/newaccwin.gif
-share/xacc/Docs/pix.xpm
-share/xacc/Docs/projects.html
-share/xacc/Docs/recnwin.gif
-share/xacc/Docs/regwin.gif
-share/xacc/Docs/xacc-about.html
-share/xacc/Docs/xacc-accwin.html
-share/xacc/Docs/xacc-adjbwin.html
-share/xacc/Docs/xacc-double.html
-share/xacc/Docs/xacc-expense.html
-share/xacc/Docs/xacc-gpl.html
-share/xacc/Docs/xacc-main.html
-share/xacc/Docs/xacc-mainwin.html
-share/xacc/Docs/xacc-quicken.html
-share/xacc/Docs/xacc-recnwin.html
-share/xacc/Docs/xacc-regwin.html
-@dirrm share/xacc/Docs
-@dirrm share/xacc
+share/doc/xacc/contract.gif
+share/doc/xacc/expand.gif
+share/doc/xacc/foliowin.gif
+share/doc/xacc/newaccwin.gif
+share/doc/xacc/pix.xpm
+share/doc/xacc/projects.html
+share/doc/xacc/recnwin.gif
+share/doc/xacc/regwin.gif
+share/doc/xacc/xacc-about.html
+share/doc/xacc/xacc-accwin.html
+share/doc/xacc/xacc-adjbwin.html
+share/doc/xacc/xacc-double.html
+share/doc/xacc/xacc-expense.html
+share/doc/xacc/xacc-gpl.html
+share/doc/xacc/xacc-main.html
+share/doc/xacc/xacc-mainwin.html
+share/doc/xacc/xacc-quicken.html
+share/doc/xacc/xacc-recnwin.html
+share/doc/xacc/xacc-regwin.html
+share/doc/xacc/logos/bullogogross.gif
+share/doc/xacc/logos/debian.jpg
+share/doc/xacc/logos/ibm.gif
+share/doc/xacc/logos/linux.gif
+share/doc/xacc/logos/sgi.gif
+share/doc/xacc/logos/skunkware.gif
+@dirrm share/doc/xacc/logos
+@dirrm share/doc/xacc
