@@ -7,7 +7,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.4.2
-PORTREVISION?=	4
+PORTREVISION?=	6
 PKGNAMESUFFIX=	${WXGTK_FLAVOR}
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -76,9 +76,8 @@ LIB_DEPENDS+=	wx_gtk2u-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-unicode
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
 .if ${OSVERSION} < 500000
 IGNORE=		Systems prior to FreeBSD 5.0 currently out of support
-.else
-CONFIGURE_ARGS+=--enable-unicode
 .endif
+CONFIGURE_ARGS+=--enable-unicode
 .endif # *-unicode*
 
 .if ${WXGTK_FLAVOR:Mgtk2*} != ""
