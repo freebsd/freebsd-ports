@@ -79,7 +79,8 @@ include/cln/univpoly_real.h
 include/cln/version.h
 lib/libcln.a
 lib/libcln.so
-lib/libcln.so.2
+lib/libcln.so.3
+libdata/pkgconfig/cln.pc
 share/aclocal/cln.m4
 %%PORTDOCS%%%%DOCSDIR%%/dvi/cln.dvi
 %%PORTDOCS%%%%DOCSDIR%%/html/cln.html
