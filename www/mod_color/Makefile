@@ -13,7 +13,7 @@ MASTER_SITES=	# http://www.dimensional.com/~bgiles/mod_color/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.l
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that provides syntax coloring for various languages
 
 USE_APACHE=	yes

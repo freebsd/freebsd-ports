@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-acct
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that records traffic statistics into a database
 
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}

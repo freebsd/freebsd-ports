@@ -14,7 +14,7 @@ MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 # Original location is here: http://puggy.symonds.net/~srp/stuff/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to authenticate on a remote web server
 
 USE_APACHE=	YES

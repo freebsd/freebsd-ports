@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/mod_dav/
 DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides DAV capabilities
 
 # This port will work with the following version of Apache and anything newer.

@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \

@@ -17,7 +17,7 @@ PATCH_SITES=	${MASTER_SITE_PHP}
 PATCH_SITE_SUBDIR=	distributions
 PATCHFILES=	mime.c.diff-3.0.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT?=	PHP3 module for Apache
 
 .if !defined(STANDALONE)

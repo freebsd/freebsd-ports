@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.synthemesc.com/downloads/mod_vdbh/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows mass virtual hosting using a MySQL backend with Apache 2.0.x
 
 WANT_APACHE=	2

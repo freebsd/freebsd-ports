@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A modified version of mod_log_config for apache2
 
 WANT_APACHE=	2

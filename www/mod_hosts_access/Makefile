@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.klomp.org/mod_hosts_access/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
 USE_APACHE=	yes

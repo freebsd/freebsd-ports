@@ -12,7 +12,7 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to allow MP3 streaming
 
 USE_APACHE=	yes

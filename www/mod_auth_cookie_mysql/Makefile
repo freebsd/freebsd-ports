@@ -12,7 +12,7 @@ MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 # Original Location: http://www.qwk.net/opensource/mod_auth_cookie_mysql/mod_auth_cookie_mysql.tar.gz
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against a MySQL database via a secure cookie
 
 USE_MYSQL=	YES

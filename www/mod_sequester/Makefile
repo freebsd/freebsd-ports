@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://MeepZor.Com/packages/mod_sequester/
 DISTNAME=	${PORTNAME}-1.7.0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that controls access to the website using secure info
 
 USE_APACHE=	yes

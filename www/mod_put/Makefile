@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://hpwww.ec-lyon.fr/~vincent/apache/
 DISTFILES=	mod_put.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides PUT and DELETE methods
 
 USE_APACHE=	yes

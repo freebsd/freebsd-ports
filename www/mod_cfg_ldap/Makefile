@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_//g}
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to keep your virtual host configuration in a LDAP directory
 
 USE_APACHE=	YES

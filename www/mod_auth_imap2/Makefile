@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.zhen.org/software/mod_auth_imap/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
 
 WANT_APACHE=	2

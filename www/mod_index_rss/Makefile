@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to provides RSS output for directories
 
 USE_APACHE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.synthemesc.com/downloads/mod_mya/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows basic authentication data to be stored in a MySQL database
 
 USE_APACHE=	YES

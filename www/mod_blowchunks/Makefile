@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for rejecting and logging chunked requests
 
 USE_APACHE=	yes

@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.pvv.org/~oyving/code/mod_mylo/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module to make Apache log to MySQL
 
 USE_APACHE=	yes

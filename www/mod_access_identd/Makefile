@@ -10,7 +10,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://MeepZor.Com/packages/mod_access_identd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to supply access control based on ident reply
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

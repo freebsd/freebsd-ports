@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
 
 WANT_APACHE=	2
