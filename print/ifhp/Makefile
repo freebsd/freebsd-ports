@@ -26,10 +26,10 @@ CONFIGURE_ARGS= \
 	--with-ldopts="-L${LOCALBASE}/lib" \
 	--with-ccopts="-I${LOCALBASE}/include"
 .if defined(PREFIX)
-	CONFIGURE_ARGS+=	--prefix="${PREFIX}"
+CONFIGURE_ARGS+=	--prefix="${PREFIX}"
 .endif
 .if defined(SYSCONFDIR)
-	CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}"
+CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}"
 .endif
 
 MAN8=	ifhp.8 textps.8
