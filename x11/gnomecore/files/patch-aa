@@ -1,28 +1,21 @@
---- configure.orig	Thu Sep 24 08:04:55 1998
-+++ configure	Thu Oct 15 04:06:29 1998
-@@ -942,12 +942,12 @@
- 
- 
- 	if test "$no_gnome_config" = "yes"; then
--          echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:947: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	  if test -f $gnome_prefix/gnomeConf.sh; then
-+          echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:947: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	  if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	    echo "$ac_t""found" 1>&6
--	    echo "loading gnome configuration from $gnome_prefix/gnomeConf.sh"
--	    . $gnome_prefix/gnomeConf.sh
-+	    echo "loading gnome configuration from $prefix/share/gnome/gnomeConf.sh"
-+	    . $prefix/share/gnome/gnomeConf.sh
- 	    
- 	  else
- 	    echo "$ac_t""not found" 1>&6
-@@ -5110,6 +5110,7 @@
- case "$host" in
- *linux*) CDROM_HOST=linux;;
- *solaris*) CDROM_HOST=solaris;;
-+*freebsd*) CDROM_HOST=freebsd;;
- esac
- 
- 
+--- configure.orig	Thu Dec 31 00:59:18 1998
++++ configure	Fri Jan  1 11:32:51 1999
+@@ -1098,13 +1098,13 @@
+ 	    fi
+ 	
+ 	    if test "$no_gnome_config" = "yes"; then
+-              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
+-echo "configure:1103: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-	      if test -f $gnome_prefix/gnomeConf.sh; then
++              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
++echo "configure:1103: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++	      if test -f $prefix/share/gnome/gnomeConf.sh; then
+ 	        echo "$ac_t""found" 1>&6
+ 	        echo "loading gnome configuration from" \
+-		     "$gnome_prefix/gnomeConf.sh"
+-	        . $gnome_prefix/gnomeConf.sh
++		     "$prefix/share/gnome/gnomeConf.sh"
++	        . $prefix/share/gnome/gnomeConf.sh
+ 	        
+ 	      else
+ 	        echo "$ac_t""not found" 1>&6
