@@ -40,11 +40,11 @@ share/services/ed2k.protocol
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en/kmldonkey 2>/dev/null || true
+@dirrm share/doc/HTML/en/kmldonkey
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@unexec rmdir %D/share/apps/mlapplet/icons 2>/dev/null || true
-@unexec rmdir %D/share/apps/mlapplet 2>/dev/null || true
+@dirrm share/apps/mlapplet/icons
+@dirrm share/apps/mlapplet
 @unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
 @unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
 @unexec rmdir %D/share/apps/kicker/applets 2>/dev/null || true
