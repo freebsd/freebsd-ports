@@ -42,6 +42,7 @@
     SUBDIR += offix-trash
     SUBDIR += phpgroupware
     SUBDIR += plan
+    SUBDIR += preferences.app
     SUBDIR += rox-memo
     SUBDIR += sliderule
     SUBDIR += teapot
