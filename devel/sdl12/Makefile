@@ -7,14 +7,14 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Cross-platform multi-media development API (developm. vers.)
+COMMENT=	Cross-platform multi-media development API
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
@@ -27,19 +27,20 @@ CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm"		\
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"		\
 		LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-video-aalib \
-		--target=
+CONFIGURE_ARGS=	--enable-video-aalib
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+USE_XLIB=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
 
 OPTIONS=	NAS	"Include support for the Network Audio System" Off \
-		X11	"Include support for X11" On \
-		GL	"Include support for OpenGL" Off
+		GL	"Include support for OpenGL" On
 
 .include <bsd.port.pre.mk>
 
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=--enable-video-vgl
 DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 .else
 CONFIGURE_ARGS+=--disable-video-vgl
-PKGMESSAGE=	/I/hate/ports/Mk/bsd.port.mk
+PKGMESSAGE=	none
 DISPLAY_MSG=	${DO_NADA}
 .endif
 
@@ -58,10 +59,7 @@ LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=--disable-nas
 .endif
 
-.if defined(WITH_X11)
-USE_XLIB=	yes
-.endif
-.if !defined(WITH_GL)
+.if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
 .else
 USE_GL=		yes
