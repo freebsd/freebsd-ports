@@ -310,9 +310,9 @@ System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/INSTALL
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/NEWS
 %%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%/README
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.html
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.igsdoc
-%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/dependencies
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.html
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/ReleaseNotes.igsdoc
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/Developer/Gui/ReleaseNotes/dependencies
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/DefaultsSummary.html
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/GuiUser.igsdoc
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser/KeyboardSetup.html
@@ -987,7 +987,7 @@ System/Tools/set_show_service
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes/%%VERSION%%
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/ReleaseNotes
 %%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/Reference
-%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/Manual
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/Manual
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/GuiUser/GuiUser
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/GuiUser
 %%GNUSTEP_DEVEL%%%%PORTDOCS%%@dirrm System/Library/Documentation/Developer/Gui/General
@@ -1007,4 +1007,4 @@ System/Tools/set_show_service
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources
 @dirrm System/Library/Bundles/TextConverters/RTFConverter.bundle
 @dirrm System/Library/Bundles/TextConverters
-%%PORTDOCS%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/Manual
+%%GNUSTEP_DEVEL%%%%PORTDOCS%%@exec mkdir -p %D/System/Library/Documentation/Developer/Gui/Manual
