@@ -1,0 +1,28 @@
+--- src/egrep.y.old	Sun Aug 15 21:07:51 2004
++++ src/egrep.y	Sun Aug 15 21:09:26 2004
+@@ -603,25 +603,6 @@
+ 	return(0);
+ }
+ 
+-/* FIXME HBB: should export this to a separate file and use
+- * AC_REPLACE_FUNCS() */
+-#if BSD
+-/*LINTLIBRARY*/
+-/*
+- * Set an array of n chars starting at sp to the character c.
+- * Return sp.
+- */
+-char *
+-memset(char *sp, char c, int n)
+-{
+-	char *sp0 = sp;
+-
+-	while (--n >= 0)
+-		*sp++ = c;
+-	return (sp0);
+-}
+-#endif
+-
+ void
+ egrepcaseless(int i)
+ {
