@@ -24,6 +24,7 @@ CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=82
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
+NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
 
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
