@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION=	1.5.9
+PORTVERSION=	2.1.0
 PORTREVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		gqview.1
 
-CONFLICTS=	gqview-[0-9]*
+CONFLICTS=	gqview-1.4* gqview-2.0*
 LATEST_LINK=	gqview-devel
 
 .if defined(WITHOUT_NLS)
