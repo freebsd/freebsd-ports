@@ -3,12 +3,12 @@
 # Date created:		9 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.9 1996/08/10 02:10:11 chuckr Exp $
+# $Id: Makefile,v 1.10 1996/08/11 02:42:59 chuckr Exp $
 #
 
 DISTNAME=	transfig.3.1.2
 PKGNAME=	transfig-3.1.2
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/transfig/ \
 	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/transfig/
 

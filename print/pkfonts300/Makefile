@@ -3,12 +3,12 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/10/15 23:31:45 max Exp $
+# $Id: Makefile,v 1.4 1996/11/09 11:29:43 asami Exp $
 #
 
 DISTNAME=	pkfonts
 PKGNAME=	pkfonts${RESOLUTION}-1.0
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/TeX/fonts/ \
 		ftp://ftp.wg.omron.co.jp/pub/tex/
 DISTFILES=	pk${RESOLUTION}.tar.gz
@@ -44,9 +44,9 @@ pre-fetch:
 .endif
 
 do-install:
-	mkdir -p ${PREFIX}/lib/fonts
+	${MKDIR} ${PREFIX}/lib/fonts
 	tar -C ${PREFIX}/lib/fonts -xzf ${DISTDIR}/${DISTFILES}
-	@cp ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
+	@${CP} ${PKGDIR}/${RESOLUTION}.list ${PKGDIR}/PLIST 
 
 pre-clean:
 	@rm -f ${PKGDIR}/PLIST  # created by do-install above

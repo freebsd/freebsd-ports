@@ -3,12 +3,12 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1996/03/19 00:20:44 jmz Exp $
+# $Id: Makefile,v 1.22 1996/07/06 08:24:14 gpalmer Exp $
 #
 
 DISTNAME=	web2c-6.1
 PKGNAME=	tex-3.1415
-CATEGORIES+=	print
+CATEGORIES=	print
 DISTFILES=	web2c-6.1.tar.gz web-6.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
 
@@ -57,13 +57,13 @@ do-install:
 	@(cd ${WRKSRC}/web2c; make install-exec INSTALL_PROGRAM="/usr/bin/install -c -s")
 	@(cd ${WRKSRC}/web2c; make install-manpages)
 	@(cd ${WRKSRC}/web2c; make install-data bases="${BASES}" fmts="${FORMATS}")
-	@mkdir -p ${PREFIX}/lib/texmf/fonts/tfm
-	@(cd ${WRKDIR}/cm/tfm; install -c -m 644 *.tfm ${PREFIX}/lib/texmf/fonts/tfm)
-	@mkdir -p ${PREFIX}/lib/texmf/mf
-	@(cd ${WRKDIR}/mf; install -c -m 644 *.mf ${PREFIX}/lib/texmf/mf)
-	@mkdir -p ${PREFIX}/lib/texmf/tex
-	@(cd ${WRKDIR}/lib; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
-	@(cd ${WRKDIR}/plain/base; install -c -m 644 *.tex ${PREFIX}/lib/texmf/tex)
+	@${MKDIR} ${PREFIX}/lib/texmf/fonts/tfm
+	@(cd ${WRKDIR}/cm/tfm; ${INSTALL_DATA} *.tfm ${PREFIX}/lib/texmf/fonts/tfm)
+	@${MKDIR} ${PREFIX}/lib/texmf/mf
+	@(cd ${WRKDIR}/mf; ${INSTALL_DATA} *.mf ${PREFIX}/lib/texmf/mf)
+	@${MKDIR} ${PREFIX}/lib/texmf/tex
+	@(cd ${WRKDIR}/lib; ${INSTALL_DATA} *.tex ${PREFIX}/lib/texmf/tex)
+	@(cd ${WRKDIR}/plain/base; ${INSTALL_DATA} *.tex ${PREFIX}/lib/texmf/tex)
 	@(rm -f ${PREFIX}/bin/latex)
 
 .include "Makefile.inc"

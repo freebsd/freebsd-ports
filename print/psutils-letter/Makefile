@@ -3,17 +3,22 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.10 1996/07/31 01:06:39 jmz Exp $
+# $Id: Makefile,v 1.11 1996/08/02 00:13:21 jmz Exp $
 #
 
 DISTNAME=	psutils
 PKGNAME=	psutils-${PAPERSIZE}-1.16
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	ftp://colonsay.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	jmz@FreeBSD.org
 
 MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
+MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
+		getafm.1 fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1 \
+		fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 \
+		extractres.1 includeres.1 fixscribeps.1 psmerge.1
+
 
 ##package::	letter  a4
 
@@ -54,14 +59,6 @@ pre-fetch:
 	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
 	@/usr/bin/false
-.endif
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	@for f in psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
-	 getafm.1 fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1 fixpspps.1 \
-	 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 extractres.1 includeres.1 \
-	 fixscribeps.1 psmerge.1 ; do gzip -nf ${PREFIX}/man/man1/$$f; done
 .endif
 
 .include <bsd.port.mk>

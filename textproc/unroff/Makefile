@@ -3,11 +3,11 @@
 # Date created:		18 Feb 1996
 # Whom:			Thomas Gellekum <thomas@ghpc8.ihf.rwth-aachen.de>
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/10 06:38:58 tg Exp $
+# $Id: Makefile,v 1.2 1996/04/23 19:46:35 torstenb Exp $
 #
 
 DISTNAME=	unroff-1.0
-CATEGORIES+=	print
+CATEGORIES=	print
 MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/unroff/dist/
 
 MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
