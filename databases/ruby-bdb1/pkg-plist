@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/recno.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/record.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/wordtest
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb1/zeroc.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb1/tmp
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb1
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb1/Changes
