@@ -1,0 +1,154 @@
+diff -rc ../../Ftptool4.6.orig/batch.c ./batch.c
+*** ../../Ftptool4.6.orig/batch.c	Tue Mar 19 21:11:25 1996
+--- ./batch.c	Tue Mar 19 21:17:42 1996
+***************
+*** 383,389 ****
+--- 383,391 ----
+  {
+  	FILE	*fp;
+  	int	isdir;
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  	int		nitems, row;
+  	struct batchlist *tmp;
+  
+***************
+*** 420,426 ****
+--- 422,430 ----
+  	mode_t		mode;
+  	int	ch;
+  	FILE	*fp;
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  
+  	if ((fp = fopen(filename, "r")) == NULL) {
+  		footer_message("%s:%s", filename, sys_errlist[errno]);
+diff -rc ../../Ftptool4.6.orig/change_dir.c ./change_dir.c
+*** ../../Ftptool4.6.orig/change_dir.c	Tue Mar 19 21:11:22 1996
+--- ./change_dir.c	Tue Mar 19 21:17:42 1996
+***************
+*** 82,88 ****
+--- 82,90 ----
+  #endif
+  {
+  	static char	cld[MAXPATHLEN + 2];
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  	struct dirlist *head = NULL;
+  	int		wasinactive;
+  	int		rval = 0;
+***************
+*** 482,488 ****
+--- 484,492 ----
+  {
+  	struct dirlist *head = NULL;
+  	struct dirlist *tmp;
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  	int	rval = 0;
+  
+  	if (chdir(dir) == -1) {
+***************
+*** 524,530 ****
+--- 528,536 ----
+  #endif
+  {
+  	int	answer;
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  #ifdef XVIEW3
+  	Xv_notice notice;
+  #endif
+diff -rc ../../Ftptool4.6.orig/dofuncs.c ./dofuncs.c
+*** ../../Ftptool4.6.orig/dofuncs.c	Tue Mar 19 21:11:23 1996
+--- ./dofuncs.c	Tue Mar 19 21:17:41 1996
+***************
+*** 581,587 ****
+--- 581,589 ----
+  	char	*name = NULL;
+  	struct extension_info *ext_info;
+  	struct stat buf;
++ #ifndef __FreeBSD__
+  	extern char	*sys_errlist[];
++ #endif
+  
+  	xfer_buttons_inactive();
+  	abort_transfer = 0;
+diff -rc ../../Ftptool4.6.orig/ftp_var.h ./ftp_var.h
+*** ../../Ftptool4.6.orig/ftp_var.h	Tue Mar 19 21:11:25 1996
+--- ./ftp_var.h	Tue Mar 19 21:17:40 1996
+***************
+*** 35,41 ****
+--- 35,43 ----
+   */
+  
+  #define	strerror(e) sys_errlist[e]
++ #ifndef __FreeBSD__
+  extern char *sys_errlist[];
++ #endif
+  
+  #ifdef USE_PROTOTYPES
+  
+diff -rc ../../Ftptool4.6.orig/ftptool.h ./ftptool.h
+*** ../../Ftptool4.6.orig/ftptool.h	Tue Mar 19 21:11:22 1996
+--- ./ftptool.h	Tue Mar 19 21:17:40 1996
+***************
+*** 49,64 ****
+--- 49,70 ----
+  #ifdef AIXV3
+  #include <sys/statfs.h>
+  #else
++ #ifdef __FreeBSD__
++ #include <sys/mount.h>
++ #else
+  #include <sys/vfs.h>
+  #endif
+  #endif
+  #endif
++ #endif
+  
+  #include <arpa/ftp.h>
+  #include <arpa/telnet.h>
+  #include <arpa/inet.h>
+  #include <netdb.h>
++ #ifndef __FreeBSD__
+  #include <malloc.h>
++ #endif
+  #include <dirent.h>
+  #include <xview/xview.h>
+  #include <xview/panel.h>
+diff -rc ../../Ftptool4.6.orig/tar_view.c ./tar_view.c
+*** ../../Ftptool4.6.orig/tar_view.c	Tue Mar 19 21:11:24 1996
+--- ./tar_view.c	Tue Mar 19 21:17:41 1996
+***************
+*** 173,179 ****
+--- 173,181 ----
+  #endif
+  {
+  	char	*dir;
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  	int		rval;
+  
+  	xv_set(base_window.frame,
+diff -rc ../../Ftptool4.6.orig/view_file.c ./view_file.c
+*** ../../Ftptool4.6.orig/view_file.c	Tue Mar 19 21:11:23 1996
+--- ./view_file.c	Tue Mar 19 21:17:41 1996
+***************
+*** 582,588 ****
+--- 582,590 ----
+  	char	*filename = NULL;
+  	struct extension_info *tmp;
+  	FILE	*fp;
++ #ifndef __FreeBSD__
+  	extern char *sys_errlist[];
++ #endif
+  	char	*typename;
+  
+  	/* create will also truncate, which we want to do here */
