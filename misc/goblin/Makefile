@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	goblin
-PORTVERSION=	2.4a3
+PORTVERSION=	2.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -22,6 +22,8 @@ USE_REINPLACE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 \
 		-I${X11BASE}/include
 LIBS=		-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+PLIST_SUB+=	PORTVER=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g ; \
