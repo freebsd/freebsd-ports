@@ -1,61 +1,62 @@
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Channel.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Channel/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Channel/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Channel/Syslog.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver/Datum.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver/Default.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver/Fork.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver/Silent.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver/Syslog.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/File_Pool.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/File/Native.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Formatting.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Prefixer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Priorities.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Stamping.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag_List.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag/Callback.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag/Caller.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag/Priority.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag/String.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/DATUM_is_here.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/Priorities/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/Priorities/level_from_prio.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/Priorities/prio_from_level.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/Priorities/priority_level.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/bug.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/inited.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/log_default.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logcarp.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logconfig.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logconfess.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logcroak.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logdbg.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logdie.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logerr.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logsay.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logtags.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logtrc.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logwarn.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logxcarp.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logxcroak.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/logwrite.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/prio_tag.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Agent/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Agent
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent/Priorities
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Log/Agent
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Log 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Channel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Driver
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/File
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Tag
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Agent
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log 2>/dev/null || true
+%%SITE_PERL%%/Log/Agent.pm
+%%SITE_PERL%%/Log/Agent/Channel.pm
+%%SITE_PERL%%/Log/Agent/Channel/File.pm
+%%SITE_PERL%%/Log/Agent/Channel/Handle.pm
+%%SITE_PERL%%/Log/Agent/Channel/Syslog.pm
+%%SITE_PERL%%/Log/Agent/Driver.pm
+%%SITE_PERL%%/Log/Agent/Driver/Datum.pm
+%%SITE_PERL%%/Log/Agent/Driver/Default.pm
+%%SITE_PERL%%/Log/Agent/Driver/File.pm
+%%SITE_PERL%%/Log/Agent/Driver/Fork.pm
+%%SITE_PERL%%/Log/Agent/Driver/Mail.pm
+%%SITE_PERL%%/Log/Agent/Driver/Silent.pm
+%%SITE_PERL%%/Log/Agent/Driver/Syslog.pm
+%%SITE_PERL%%/Log/Agent/File/Native.pm
+%%SITE_PERL%%/Log/Agent/File_Pool.pm
+%%SITE_PERL%%/Log/Agent/Formatting.pm
+%%SITE_PERL%%/Log/Agent/Message.pm
+%%SITE_PERL%%/Log/Agent/Prefixer.pm
+%%SITE_PERL%%/Log/Agent/Priorities.pm
+%%SITE_PERL%%/Log/Agent/Stamping.pm
+%%SITE_PERL%%/Log/Agent/Tag.pm
+%%SITE_PERL%%/Log/Agent/Tag/Callback.pm
+%%SITE_PERL%%/Log/Agent/Tag/Caller.pm
+%%SITE_PERL%%/Log/Agent/Tag/Priority.pm
+%%SITE_PERL%%/Log/Agent/Tag/String.pm
+%%SITE_PERL%%/Log/Agent/Tag_List.pm
+%%SITE_PERL%%/auto/Log/Agent/DATUM_is_here.al
+%%SITE_PERL%%/auto/Log/Agent/Priorities/autosplit.ix
+%%SITE_PERL%%/auto/Log/Agent/Priorities/level_from_prio.al
+%%SITE_PERL%%/auto/Log/Agent/Priorities/prio_from_level.al
+%%SITE_PERL%%/auto/Log/Agent/Priorities/priority_level.al
+%%SITE_PERL%%/auto/Log/Agent/autosplit.ix
+%%SITE_PERL%%/auto/Log/Agent/bug.al
+%%SITE_PERL%%/auto/Log/Agent/inited.al
+%%SITE_PERL%%/auto/Log/Agent/log_default.al
+%%SITE_PERL%%/auto/Log/Agent/logcarp.al
+%%SITE_PERL%%/auto/Log/Agent/logconfess.al
+%%SITE_PERL%%/auto/Log/Agent/logconfig.al
+%%SITE_PERL%%/auto/Log/Agent/logcroak.al
+%%SITE_PERL%%/auto/Log/Agent/logdbg.al
+%%SITE_PERL%%/auto/Log/Agent/logdie.al
+%%SITE_PERL%%/auto/Log/Agent/logerr.al
+%%SITE_PERL%%/auto/Log/Agent/logsay.al
+%%SITE_PERL%%/auto/Log/Agent/logtags.al
+%%SITE_PERL%%/auto/Log/Agent/logtrc.al
+%%SITE_PERL%%/auto/Log/Agent/logwarn.al
+%%SITE_PERL%%/auto/Log/Agent/logwrite.al
+%%SITE_PERL%%/auto/Log/Agent/logxcarp.al
+%%SITE_PERL%%/auto/Log/Agent/logxcroak.al
+%%SITE_PERL%%/auto/Log/Agent/prio_tag.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/.packlist
+@dirrm %%SITE_PERL%%/auto/Log/Agent/Priorities
+@dirrm %%SITE_PERL%%/Log/Agent/Tag
+@dirrm %%SITE_PERL%%/Log/Agent/File
+@dirrm %%SITE_PERL%%/Log/Agent/Driver
+@dirrm %%SITE_PERL%%/Log/Agent/Channel
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Log/Agent 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Log 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log/Agent 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log 2>/dev/null || true
