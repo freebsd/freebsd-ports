@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
 
 MAINTAINER=	knu@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
