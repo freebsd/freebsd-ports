@@ -6,34 +6,32 @@
 #
 
 PORTNAME=	epic4
-PORTVERSION=	1.0.1
-# Make these variables overridable for slave ports
-PORTREVISION?=	3
-CATEGORIES?=	irc ipv6
-MASTER_SITES=	http://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
-		ftp://ftp.icm.edu.pl/vol/rzm0/irc/EPIC/%SUBDIR%/ \
-		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
-		ftp://ftp.nl.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
-MASTER_SITE_SUBDIR=	EPIC4-PRODUCTION
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTFILE_HELP}
-DIST_SUBDIR=	epic4
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PORTVERSION=	1.1.16
+CATEGORIES=	irc ipv6
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-ALPHA/ \
+		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/EPIC4-ALPHA/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTFILE_HELP}
 
-PATCH_SITES=	http://www.t17.ds.pwr.wroc.pl/~misiek/ipv6/
-PATCHFILES=	${DISTNAME}-ipv6-20010418.patch.gz
-PATCH_DIST_STRIP=	-p1
+MAINTAINER=	anders@andersa.net
+COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-MAINTAINER?=	anders@andersa.net
-COMMENT?=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
-USE_BZIP2=	yes
-USE_AUTOCONF=	yes
-
-DISTFILE_HELP=	${PORTNAME}pre2-help.tar.gz
+USE_REINPLACE=	yes
+USE_PERL5=	yes
+USE_OPENSSL=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		epic.1
+DISTFILE_HELP=	${PORTNAME}-help-20031106.tar.gz
+
+post-patch:
+	${REINPLACE_CMD} -e 's|8.3|8.4|g' ${WRKSRC}/configure
+	${FIND} . -type d -name CVS | ${XARGS} ${RM} -rf
+	${RM} ${WRKDIR}/help/Makefile
 
 post-install:
-	cd ${PREFIX}/share/epic && ${TAR} zxf ${_DISTDIR}/${DISTFILE_HELP}
+	${CP} -R ${WRKDIR}/help/* ${PREFIX}/share/epic/help
 
 .include <bsd.port.mk>
