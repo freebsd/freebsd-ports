@@ -11725,6 +11725,7 @@ zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
 zh-fcitx	ports/chinese/fcitx
 zh-firebird	ports/chinese/firebird
+zh-fireflyttf	ports/chinese/fireflyttf
 zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
