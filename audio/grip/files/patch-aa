@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 19 00:37:44 2000
-+++ Makefile	Tue Jul 11 03:58:32 2000
+--- Makefile.orig	Thu Oct 19 04:12:53 2000
++++ Makefile	Fri Oct 20 20:33:10 2000
 @@ -4,24 +4,24 @@
  OS=$(shell uname -s)
  
@@ -21,13 +21,12 @@
  
  # Compiler flags
 -CFLAGS=	-Wall `gtk-config --cflags` -DAUXDIR=\"$(AUXDIR)\" \
--	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT
-+CFLAGS+=	`$(GTK_CONFIG) --cflags` -DAUXDIR=\"$(AUXDIR)\" \
-+	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT -D_THREAD_SAFE
++CFLAGS+=	`$(GTK_CONFIG) --cflags gthread` -DAUXDIR=\"$(AUXDIR)\" \
+ 	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT
  
  # Link libraries
--LIBS=	`gtk-config --libs`
-+LIBS=	`$(GTK_CONFIG) --libs`
+-LIBS=	`gtk-config --libs gthread`
++LIBS=	`$(GTK_CONFIG) --libs gthread`
  ifeq ($(OS), Linux)
  LIBS+=	-lpthread
  endif
