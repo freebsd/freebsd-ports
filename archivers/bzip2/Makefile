@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/bzip2/v100/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
-
 INSTALLS_SHLIB=	yes
 
 MAN1=		bzip2.1
