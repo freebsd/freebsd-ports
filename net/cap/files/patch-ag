@@ -1,0 +1,10 @@
+--- support/ethertalk/aarpd.c.orig	Mon Dec 30 01:29:16 1996
++++ support/ethertalk/aarpd.c	Mon Dec 30 01:29:59 1996
+@@ -19,6 +19,7 @@
+ #if !defined(ultrix) && !defined(__osf__) && !defined(__386BSD__) && !defined(__FreeBSD__) && !defined(__bsdi__) && !defined(NeXT)
+ #include <sys/sockio.h>
+ #endif  /* ultrix && __osf__ && __386BSD__ && __FreeBSD__ */
++#include <sys/time.h>
+ #include <net/if.h>
+ #endif PHASE2
+ #include <netinet/in.h>
