@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musepack
-PORTVERSION=	1.15u
+PORTVERSION=	1.15v
 CATEGORIES=	audio
 MASTER_SITES=	http://www.saunalahti.fi/grimmel/musepack.net-files/source/
 DISTNAME=	mpcsv7-src-${PORTVERSION}
