@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ncbi.toolkit
+PORTNAME=	ncbi-toolkit
 PORTVERSION=	2000.10.31
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
