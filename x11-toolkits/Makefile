@@ -75,6 +75,7 @@
     SUBDIR += libzvt
     SUBDIR += linux-gtk
     SUBDIR += linux-openmotif
+    SUBDIR += mesgui
     SUBDIR += mowitz
     SUBDIR += neXtaw
     SUBDIR += notif2

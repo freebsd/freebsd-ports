@@ -1,0 +1,4 @@
+include/mesgui.h
+lib/libmesgui.a
+lib/libmesgui.so
+lib/libmesgui.so.1
