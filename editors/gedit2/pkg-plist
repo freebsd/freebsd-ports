@@ -1,6 +1,38 @@
 bin/gedit
 etc/gconf/gconf.xml.defaults/apps/gedit-2/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/colors/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/font/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/line_numbers/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/save/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/tabs/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/undo/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/wrap_mode/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/fonts/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/page/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/recents/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/toolbar/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/colors/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/font/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/line_numbers/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/save/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/tabs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/undo/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/wrap_mode/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/fonts/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/page/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/recents/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/toolbar/%gconf.xml
 etc/gconf/schemas/gedit.schemas
 lib/gedit-2/plugins/libasciitable.so
 lib/gedit-2/plugins/libcvschangelog.so
@@ -10,6 +42,7 @@ lib/gedit-2/plugins/libsample.so
 lib/gedit-2/plugins/libshell_output.so
 lib/gedit-2/plugins/libtaglist.so
 lib/gedit-2/plugins/libtime.so
+libdata/bonobo/servers/GNOME_Gedit.server
 share/gnome/applications/gedit.desktop
 share/gnome/gedit-2/glade/asciitable.glade2
 share/gnome/gedit-2/glade/diff.glade2
@@ -29,6 +62,8 @@ share/gnome/help/gedit/C/figures/gedit_window.png
 share/gnome/help/gedit/C/gedit.xml
 share/gnome/help/gedit/C/legal.xml
 share/gnome/help/gedit/C/topic.dat
+share/gnome/idl/GNOME_Gedit.idl
+share/gnome/mime-info/gedit.keys
 share/gnome/omf/gedit/gedit-C.omf
 share/gnome/pixmaps/gedit-icon.png
 share/gnome/pixmaps/gedit-logo.png
@@ -84,5 +119,37 @@ share/locale/zh_TW/LC_MESSAGES/gedit-2.0.mo
 @dirrm share/gnome/gedit-2
 @dirrm lib/gedit-2/plugins
 @dirrm lib/gedit-2
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/toolbar
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/statusbar
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/recents
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/page
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/fonts
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/wrap_mode
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/undo
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/tabs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/save
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/line_numbers
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/font
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/colors
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/toolbar
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/statusbar
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/recents
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/page
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/fonts
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/wrap_mode
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/undo
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/tabs
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/save
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/line_numbers
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/font
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/colors
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2
