@@ -8,17 +8,20 @@
 PORTNAME=	prc-tools-gcc
 PORTVERSION=	2.0
 CATEGORIES=	palm
-MASTER_SITES=	http://www.palm.com/devzone/tools/gcc/dist/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	http://www.palmos.com/dev/tech/tools/gcc/dist/ \
+		${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	gcc/releases/gcc-2.95.2 gdb/releases
 DISTNAME=	prc-tools-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		gdb/gdb-4.18.tar.gz gcc/gcc-2.95.2.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz \
+		gdb-4.18.tar.bz2 gcc-2.95.2.tar.bz2
+EXTRACT_ONLY=	gdb-4.18.tar.bz2 gcc-2.95.2.tar.bz2
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-as:${PORTSDIR}/palm/prc-tools-binutils \
 		${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
 
+USE_BZIP2=	YES
 USE_BISON=	YES
 USE_GMAKE=	YES
 PREFIX=		${LOCALBASE}/pilot
@@ -35,7 +38,10 @@ MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1
 
 .include <bsd.port.pre.mk>
 
-CFLAGS:=	${CFLAGS:S/-m486//g}
+CFLAGS!=	${ECHO} "${CFLAGS}" | ${SED} -e 's/-m[0-9a-z]*//g'
+
+post-extract:
+	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/empty
