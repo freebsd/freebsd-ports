@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_mysql
-PORTVERSION=	0.4
+PORTVERSION=	0.4.7
 CATEGORIES=	security databases
 MASTER_SITES=	http://download.sourceforge.net/pam-mysql/ \
 		http://www.freenix.no/~anders/
