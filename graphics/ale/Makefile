@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	ale
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://auricle.dyndns.org/ALE/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anti-Lamenessing Engine
 
-USE_GCC=	3.3
+USE_GCC=	3.4
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
@@ -44,7 +44,7 @@ MAKE_ARGS+=	IMAGEMAGICK=1
 post-patch:
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/d2.h
 .if ${OSVERSION} < 502114
-.for file in d2/image_rw.h d2/ppm.h
+.for file in d2/image_rw.h d2/ppm.h d3/scene.cc
 	@${REINPLACE_CMD} -e 's|round|rint|g' ${WRKSRC}/${file}
 .endfor
 .endif
