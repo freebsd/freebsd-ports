@@ -7,7 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
@@ -21,6 +21,8 @@ COMMENT=	Small, compilable scripting language providing easy access to C code
 LATEST_LINK=	lua4
 MAN1=		luac.1
 WRKSRC=		${WRKDIR}/lua
+ALL_TARGET=	all so
+INSTALLS_SHLIB=	YES
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/lua
@@ -36,7 +38,11 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/include/lualib.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/include/lauxlib.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblua.a ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblua.so.4.0 ${PREFIX}/lib/liblua.so.4
+	@ ${LN} -s ${PREFIX}/lib/liblua.so.4 ${PREFIX}/lib/liblua.so
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblualib.a ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/lib/liblualib.so.4.0 ${PREFIX}/lib/liblualib.so.4
+	@ ${LN} -s ${PREFIX}/lib/liblualib.so.4 ${PREFIX}/lib/liblualib.so
 
 post-install:
 	@strip ${PREFIX}/bin/lua
