@@ -8,8 +8,8 @@
 PORTNAME=	stars
 PORTVERSION=	1.0
 CATEGORIES=	astro
-MASTER_SITES=	ftp://ftp.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/ \
-		http://public.www.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/
+MASTER_SITES=	ftp://ftp.planetmirror.com/pub/hpfreeware/X11/Demos/stars-1.0/ \
+		http://public.www.planetmirror.com/pub/hpfreeware/X11/Demos/stars-1.0/
 DISTNAME=	stars-1.0-ss-11.00
 
 MAINTAINER=	ports@FreeBSD.org
