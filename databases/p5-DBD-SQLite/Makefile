@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Provides access to SQLite2 databases through the DBI
+COMMENT=	Provides access to SQLite3 databases through the DBI
 
 PERL_CONFIGURE=	yes
 
