@@ -1,20 +1,21 @@
 bin/grisbi
-%%DOCSDIR%%/help/C/contents_motif.gif
-%%DOCSDIR%%/help/C/grisbi-manuel.html
-%%DOCSDIR%%/help/C/next_motif.gif
-%%DOCSDIR%%/help/C/previous_motif.gif
-%%DOCSDIR%%/help/C/quickstart.html
-%%DOCSDIR%%/help/C/translation.html
-%%DOCSDIR%%/help/C/topic.dat
-%%DOCSDIR%%/help/fr/contents_motif.gif
-%%DOCSDIR%%/help/fr/grisbi-manuel.html
-%%DOCSDIR%%/help/fr/next_motif.gif
-%%DOCSDIR%%/help/fr/previous_motif.gif
-%%DOCSDIR%%/help/fr/quickstart.html
-%%DOCSDIR%%/help/fr/topic.dat
-%%DOCSDIR%%/help/fr/translation.html
-share/locale/fr/LC_MESSAGES/grisbi.mo
-share/locale/it/LC_MESSAGES/grisbi.mo
+%%PORTDOCS%%%%DOCSDIR%%/help/C/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/C/grisbi-manuel.html
+%%PORTDOCS%%%%DOCSDIR%%/help/C/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/C/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/C/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/help/C/translation.html
+%%PORTDOCS%%%%DOCSDIR%%/help/C/topic.dat
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/grisbi-manuel.html
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/previous_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/topic.dat
+%%PORTDOCS%%%%DOCSDIR%%/help/fr/translation.html
+%%NLS%%share/locale/de/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/grisbi.mo
+%%NLS%%share/locale/it/LC_MESSAGES/grisbi.mo
 %%DATADIR%%/pixmaps/addresses.png
 %%DATADIR%%/pixmaps/banks.png
 %%DATADIR%%/pixmaps/currencies.png
@@ -32,14 +33,16 @@ share/locale/it/LC_MESSAGES/grisbi.mo
 %%DATADIR%%/pixmaps/reconciliation.png
 %%DATADIR%%/pixmaps/transaction-list.png
 %%DATADIR%%/pixmaps/warnings.png
-@dirrm %%DOCSDIR%%/help/C
-@dirrm %%DOCSDIR%%/help/fr
-@dirrm %%DOCSDIR%%/help
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/C
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/fr
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/de 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/it 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
