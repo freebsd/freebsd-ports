@@ -10,4 +10,5 @@ share/doc/webalizer/webalizer.LSM
 @dirrm share/doc/webalizer
 share/examples/webalizer/msfree.gif
 share/examples/webalizer/sample.conf
+share/examples/webalizer/webalizer.gif
 @dirrm share/examples/webalizer
