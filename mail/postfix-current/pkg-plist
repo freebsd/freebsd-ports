@@ -22,8 +22,6 @@ etc/postfix/dist-header_checks
 etc/postfix/dist-relocated
 etc/postfix/dist-transport
 etc/postfix/dist-virtual
-%%SUB_IPV6%%etc/postfix/dist-ipv6.cf
-%%SUB_TLS%%etc/postfix/dist-tls.cf
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -93,6 +91,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/FILTER_README.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
+%%PORTDOCS%%%%SUB_IPV6%%%%DOCSDIR%%/IPV6_README
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README
 %%PORTDOCS%%%%DOCSDIR%%/LDAP_README.html
 %%PORTDOCS%%%%DOCSDIR%%/LINUX_README
