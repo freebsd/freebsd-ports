@@ -4599,6 +4599,7 @@ p5-X11-Protocol	ports/x11/p5-X11-Protocol
 p5-XML-DOM	ports/textproc/p5-XML-DOM
 p5-XML-DT	ports/textproc/p5-XML-DT
 p5-XML-Dumper	ports/textproc/p5-XML-Dumper
+p5-XML-Encoding	ports/textproc/p5-XML-Encoding
 p5-XML-LibXML	ports/textproc/p5-XML-LibXML
 p5-XML-LibXSLT	ports/textproc/p5-XML-LibXSLT
 p5-XML-Node	ports/textproc/p5-XML-Node
