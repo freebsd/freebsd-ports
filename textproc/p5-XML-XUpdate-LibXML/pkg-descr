@@ -1,0 +1,5 @@
+Simple implementation of XUpdate format (http://www.xmldb.org/xupdate/).
+The implementation is based on XML::LibXML DOM API.
+
+WWW: http://www.xmldb.org/xupdate/
+WWW: http://search.cpan.org/search?dist=XML-XUpdate-LibXML
