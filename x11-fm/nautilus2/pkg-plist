@@ -49,12 +49,16 @@ include/libnautilus/nautilus-undo.h
 include/libnautilus/nautilus-view-component.h
 include/libnautilus/nautilus-view-standard-main.h
 include/libnautilus/nautilus-view.h
+lib/libnautilus-adapter.a
 lib/libnautilus-adapter.so
 lib/libnautilus-adapter.so.0
+lib/libnautilus-private.a
 lib/libnautilus-private.so
 lib/libnautilus-private.so.0
+lib/libnautilus-tree-view.a
 lib/libnautilus-tree-view.so
 lib/libnautilus-tree-view.so.0
+lib/libnautilus.a
 lib/libnautilus.so
 lib/libnautilus.so.0
 lib/vfs/modules/libvfs-help.so
