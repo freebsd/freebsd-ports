@@ -1,0 +1,20 @@
+--- misc.h.orig	Wed Jun 10 06:07:47 1998
++++ misc.h	Fri Mar 17 01:34:25 2000
+@@ -23,7 +23,7 @@
+ long random(void);
+ #endif
+ 
+-#if !defined(linux) & !defined(__EMX__) & !defined(__FreeBSD__)
++#if !defined(linux) & !defined(__EMX__) & !defined(__FreeBSD__) & !defined(__OpenBSD__)
+ #if defined(BSD4_4) || defined(HPArchitecture) || defined(SGIArchitecture) || defined(_AIX) || defined(_SCO_DS)
+ void srandom(unsigned int);
+ #else
+@@ -102,7 +102,7 @@
+ void GetDefaultWH(int *w, int *h);
+ char *GetDefaultRC(void);
+ void SetIconImage(Widget w);
+-void main(int argc, char *argv[]);
++int main(int argc, char *argv[]);
+ 
+ /* misc.c */
+ Widget GetToplevel(Widget w);

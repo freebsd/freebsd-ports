@@ -1,13 +1,19 @@
---- Local.config.orig	Mon Nov 23 23:09:51 1998
-+++ Local.config	Mon Nov 23 23:10:04 1998
-@@ -142,8 +142,8 @@
+--- Local.config.orig	Sun Jun 28 03:43:56 1998
++++ Local.config	Fri Mar 17 00:32:44 2000
+@@ -142,9 +142,11 @@
  
  #if defined(FreeBSDArchitecture)
  ARCH_DEFINES = -DHAVE_PARAM_H
 -TIFF_INCLUDE = -I/usr/local/include/tiff34
 -TIFF_LIB     = -L/usr/local/lib -ltiff34
-+TIFF_INCLUDE = -I/usr/local/include
-+TIFF_LIB     = -L/usr/local/lib -ltiff
- JPEG_INCLUDE = -I/usr/local/include
- JPEG_LIB     = -L/usr/local/lib -ljpeg
- XPM_INCLUDE = -I/usr/X11R6/include/X11
+-JPEG_INCLUDE = -I/usr/local/include
+-JPEG_LIB     = -L/usr/local/lib -ljpeg
+-XPM_INCLUDE = -I/usr/X11R6/include/X11
++TIFF_INCLUDE = -I${LOCALBASE}/include
++TIFF_LIB     = -L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -ltiff
++JPEG_INCLUDE = -I${LOCALBASE}/include
++JPEG_LIB     = -L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -ljpeg
++PNG_INCLUDE  = -I${LOCALBASE}/include
++PNG_LIB      = -L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -lpng -lz
++XPM_INCLUDE = -I$(INCDIR)/X11
+ #endif

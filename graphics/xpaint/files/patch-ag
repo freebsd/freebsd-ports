@@ -1,0 +1,18 @@
+--- rw/rwTable.c.orig	Wed Jun 10 06:09:32 1998
++++ rw/rwTable.c	Fri Mar 17 01:20:54 2000
+@@ -231,6 +231,7 @@
+ char *
+ RWGetMsg()
+ {
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
+ #if defined(BSD4_4)
+     __const extern char *__const sys_errlist[];
+ #else
+@@ -239,6 +240,7 @@
+ #endif
+ #endif
+     extern int errno;
++#endif
+ 
+     if (RWtableMsg[0] == '\0') {
+ 	if (errno == 0)

@@ -1,0 +1,47 @@
+--- readRC.c.orig	Tue Jun 25 17:50:39 1996
++++ readRC.c	Fri Mar 17 01:27:49 2000
+@@ -30,11 +30,13 @@
+ #include <unistd.h>
+ #endif
+ 
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
+ #ifdef __STDC__
+ extern char *mktemp(char *);
+ #else
+ extern char *mktemp();
+ #endif /* __STDC__ */
++#endif
+ 
+ #define RC_FILENAME	".XPaintrc"
+ 
+@@ -64,6 +66,9 @@
+ static FILE *
+ openTemp(char **np)
+ {
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++    int	fd;
++#endif
+     char *n;
+     char xx[256];
+ 
+@@ -72,11 +77,20 @@
+ 
+     strcpy(xx, n);
+     strcat(xx, "/XPaintXXXXXXX");
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++    if ((fd = mkstemp(xx) < 0))
++	return (FILE *) NULL;
++    tempName[++tempIndex] = XtNewString(n);
++    if (np != NULL)
++	*np = tempName[tempIndex];
++    return fdopen(fd, "w");
++#else
+     n = mktemp(xx);
+     tempName[++tempIndex] = XtNewString(n);
+     if (np != NULL)
+ 	*np = tempName[tempIndex];
+     return fopen(tempName[tempIndex], "w");
++#endif
+ }
+ 
+ static void 
