@@ -6,75 +6,108 @@
 #
 
 PORTNAME=	groff
-PORTVERSION=	0.99.1.1
+PORTVERSION=	0.100
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
-DISTNAME=	${PORTNAME}-1.11.1
+DISTNAME=	${PORTNAME}-1.15
 
-PATCH_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://www.tg.rim.or.jp/~inagaki/
-PATCHFILES=	j${PORTNAME}-${PORTVERSION:R}.diff.gz \
-		j${PORTNAME}-${PORTVERSION:R}-${PORTVERSION}.diff.gz
+PATCH_SITES=	http://w3.mtci.ne.jp/~refactor/GNU/
+PATCHFILES=	${DISTNAME}-jgroff-${PORTVERSION}-pl1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@be.to
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g --enable-nippon
 CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}"
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_MAN="${INSTALL_MAN}"
+PLIST_SUB=	PORTDOCDIR="${PORTDOCDIR}"
 
-DESCS=		${WRKSRC}/devnippon/DESC.proto ${WRKSRC}/devps/DESC.in
+TMACBASE=	/usr/share/tmac
+TMACDIR=	share/groff/tmac
+MDOCDIR=	${TMACDIR}/mdoc
+LOCALEDIR=	${MDOCDIR}/locale
+INFODIR=	${PREFIX}/info
+PORTDOCDIR=	share/doc/jgroff
 
-MAN1=		groff.1 gtroff.1 gtbl.1 gpic.1 geqn.1 grops.1 grotty.1 \
-		grodvi.1 tfmtodit.1 grolj4.1 hpftodit.1 grefer.1 glookbib.1 \
-		gindxbib.1 lkbib.1 gsoelim.1 addftinfo.1 pfbtops.1 psbb.1 \
-		afmtodit.1 grog.1 gnroff.1
+DESCFILES=	devascii/DESC.proto devdvi-ascii/DESC.in \
+		devdvi/DESC.in devhtml/DESC devlatin1/DESC.proto \
+		devlj4/DESC.in devnippon/DESC.proto devps/DESC.in
+
+MAN1SRC=	eqn.1 indxbib.1 lookbib.1 nroff.1 pic.1 \
+		refer.1 soelim.1 tbl.1 troff.1
+
+MAN1=		${MAN1SRC:S/^/g/g} addftinfo.1 afmtodit.1 grodvi.1 \
+		groff.1 grog.1 grohtml.1 grolj4.1 grops.1 grotty.1 \
+		hpftodit.1 lkbib.1 pfbtops.1 psbb.1 tfmtodit.1
 MAN5=		groff_font.5 groff_out.5
-MAN7=		me.7 msafer.7 groff_char.7 groff_mm.7 groff_mmse.7 groff_ms.7
-MANCOMPRESSED= yes
+MAN7=		groff_char.7 groff_man.7 groff_mdoc.7 groff_mdoc.samples.7 \
+		groff_me.7 groff_mm.7 groff_mmse.7 groff_ms.7 groff_msafer.7 \
 
-post-extract:
-	@${RM} ${WRKSRC}/config.cache
-	@${RM} ${WRKSRC}/config.log
+TMACFILES=	tmac.an tmac.andoc tmac.groff_an tmac.orig_me tmac.vgrind \
+		eqnrc troffrc
+MDOCFILES=	doc-common doc-syms
+LOCALEFILES=	locale-list eucJP
+
+DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp \
+		doc/meintro.me doc/meref.me doc/pic.ms
+
+.if exists(${TMACBASE}/locale/hyphen.us-ru)
+WITH_TMAC_LOCALE=	yes
+.else
+# There is no valid locale subdirectory.
+WITHOUT_TMAC_LOCALE=	yes
+PERL_ARGS= -e 's,^\@dirrm *share/groff/tmac/locale\n$$,,;'
+.if exists(${TMACBASE}/hyphen.us-ru)
+# hyphen.us-ru is in TMACBASE.
+PERL_ARGS+= -e 's,locale/(hyphen.us-ru)$$,$$1,;'
+.else
+# There is no hyphen.us-ru.
+PERL_ARGS+= -e 's,^.*hyphen.us-ru\n$$,,;'
+.endif
+.endif
 
 #for not writing "/usr/local" explicitly in the patch
 post-patch:
-	@for f in ${DESCS}; do \
-	  ${MV} -f $${f} $${f}.tmp; \
-	  ${SED} -e '$$d' $${f}.tmp > $${f}; \
-	  case $${f} in \
-	    */devnippon/*) \
-		${ECHO} "postpro ${PREFIX}/bin/grotty" >> $${f}; \
-		;; \
-	    */devps/*) \
-		${ECHO} "postpro ${PREFIX}/bin/grops" >> $${f}; \
-		;; \
-	  esac; \
-	done
+	cd ${WRKSRC} \
+	&& ${PERL} -pi -e 's:^(postpro +):$$1${PREFIX}/bin/:g;' ${DESCFILES}
 
 .include <bsd.port.pre.mk>
 
+post-build:
+	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
+
 post-install:
-	@${CP} -p /usr/share/tmac/tmac.an ${PREFIX}/share/groff/tmac
-	@${CP} -p /usr/share/tmac/tmac.andoc ${PREFIX}/share/groff/tmac
-	@${CP} -p /usr/share/tmac/tmac.groff_an ${PREFIX}/share/groff/tmac
-	@${CP} -p /usr/share/tmac/tmac.orig_me ${PREFIX}/share/groff/tmac
-	@${CP} -p /usr/share/tmac/tmac.vgrind ${PREFIX}/share/groff/tmac
-	@${CP} -p /usr/share/tmac/eqnrc ${PREFIX}/share/groff/tmac
-.if ${OSVERSION} >= 400000
-	@${CP} -p /usr/share/tmac/locale/hyphen.us-ru ${PREFIX}/share/groff/tmac
-.else
-	@${CP} -p /usr/share/tmac/hyphen.us-ru ${PREFIX}/share/groff/tmac
+	@${MAKE} install-info
+.if !defined(NOPORTDOCS)
+	@${MAKE} install-documents
 .endif
-	@${CP} -p /usr/share/tmac/troffrc ${PREFIX}/share/groff/tmac
-	@${CP} -p /usr/share/tmac/mdoc/doc-common ${PREFIX}/share/groff/tmac/mdoc
-	@${CP} -p /usr/share/tmac/mdoc/doc-syms ${PREFIX}/share/groff/tmac/mdoc
-	@${PATCH} -d ${PREFIX}/share/groff/tmac < ${FILESDIR}/rc.diff
+	${CP} -p ${TMACFILES:S|^|${TMACBASE}/|g} ${PREFIX}/${TMACDIR}
+	${CP} -p ${MDOCFILES:S|^|${TMACBASE}/mdoc/|g} ${PREFIX}/${MDOCDIR}
+	${MKDIR} ${PREFIX}/${LOCALEDIR}
+	${INSTALL_DATA} ${LOCALEFILES:S|^|${FILESDIR}/|g} ${PREFIX}/${LOCALEDIR}
+.if defined(WITH_TMAC_LOCALE) && !defined(WITHOUT_TMAC_LOCALE)
+	${CP} -pr ${TMACBASE}/locale ${PREFIX}/${TMACDIR}
+.elif exists(${TMACBASE}/hyphen.us-ru)
+	${CP} -p ${TMACBASE}/hyphen.us-ru ${PREFIX}/${TMACDIR}
+.endif
+.if defined(PERL_ARGS) && !empty(PERL_ARGS)
+	${PERL} -pi ${PERL_ARGS} ${TMPPLIST}
+.endif
+	${PATCH} -d ${PREFIX}/${TMACDIR} < ${FILESDIR}/rc.diff
+
+install-documents:
+	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCUMENTS} ${PREFIX}/${PORTDOCDIR}
+
+install-info:
+	${INSTALL_DATA} ${WRKSRC}/doc/groff ${INFODIR}
+	install-info ${INFODIR}/groff ${INFODIR}/dir
 
 .include <bsd.port.post.mk>
