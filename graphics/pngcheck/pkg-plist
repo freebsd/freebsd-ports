@@ -1,4 +1,0 @@
-bin/pngcheck
-%%PORTDOCS%%share/doc/pngcheck/CHANGELOG
-%%PORTDOCS%%share/doc/pngcheck/README
-%%PORTDOCS%%@dirrm share/doc/pngcheck
