@@ -5,39 +5,36 @@ include/dbi/dbi.h
 lib/libdbi.a
 lib/libdbi.so
 lib/libdbi.so.0
-%%MYSQL%%lib/dbd/libmysql.so
-%%PGSQL%%lib/dbd/libpgsql.so
-%%PORTDOCS%%share/doc/libdbi/driver-guide.pdf
-%%PORTDOCS%%share/doc/libdbi/driver-guide/contact.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/copying-fdl.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/description.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/driverfuncs-dbquery.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/driverfuncs-infrastructure.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/driverfuncs.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/gnugpl.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/helperfuncs.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/index.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/intro.html
-%%PORTDOCS%%share/doc/libdbi/driver-guide/terminology.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide.pdf
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/contact.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/copying-fdl.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/description.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/gnugpl.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/index.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/intro.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/quickstart-code.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/quickstart-debriefing.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/quickstart.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-conn.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-core.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-database.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-driver.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference-field.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/reference.html
-%%PORTDOCS%%share/doc/libdbi/programmers-guide/terminology.html
-%%PORTDOCS%%@dirrm share/doc/libdbi/programmers-guide
-%%PORTDOCS%%@dirrm share/doc/libdbi/driver-guide
-%%PORTDOCS%%@dirrm share/doc/libdbi
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/contact.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/copying-fdl.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/description.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/driverfuncs-dbquery.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/driverfuncs-infrastructure.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/driverfuncs.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/gnugpl.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/helperfuncs.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/driver-guide/terminology.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/contact.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/copying-fdl.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/description.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/gnugpl.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/index.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/quickstart-code.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/quickstart-debriefing.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-conn.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-core.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-database.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-driver.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-field.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/terminology.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/programmers-guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/driver-guide
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/dbi
-@unexec rmdir %D/lib/dbd 2>/dev/null || true
