@@ -268,6 +268,7 @@
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-IO
+    SUBDIR += p5-IO-String
     SUBDIR += p5-IO-Stty
     SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-stringy
