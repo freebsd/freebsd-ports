@@ -109,11 +109,14 @@ sub check_version {
 	$path = $directory . "/" . $filename;
 	open(EX, "<$exclude") || die("cannot open $exclude: $!");
 	while (<EX>) {
-	    local($ind, $line);
+	    local($line);
 
 	    chop;
 	    $line = $_;
 
+	    if ($line =~ /^#/) {
+		next;
+	    }
 	    if ($path =~ /$line/) {
 		close(EX);
 		return(0);
