@@ -1,4 +1,5 @@
 # New ports collection makefile for:    PNG images library
+# ftp://ftp.libpng.org/pub/png/libpng.html
 # Date created:         5 Dec 1995
 # Whom:                 ache
 #
@@ -6,10 +7,15 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.0.5
+PORTVERSION=    1.0.6
 CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.uu.net/graphics/png/src/
+MASTER_SITES=   ftp://ftp.libpng.org/pub/png/src/
 DISTNAME=       lib${PKGNAME}
+
+PATCH_SITES=    ftp://ftp.libpng.org/pub/png/src/
+PATCHFILES=     libpng-1.0.6-patch-a.txt.gz \
+		libpng-1.0.6-patch-b.txt.gz \
+		libpng-1.0.6-patch-c.txt.gz
 
 MAINTAINER=     ache@FreeBSD.org
 
