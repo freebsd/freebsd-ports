@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.5 1998/09/17 00:50:51 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/19 05:46:07 steve Exp $
 #
 
 DISTNAME=	dgs-0.5.0
@@ -22,8 +22,5 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
 MAN1=		gs.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
