@@ -16,9 +16,13 @@ MAINTAINER=	ache@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.nix
-MAKE_FLAGS=	CC=cc -f
 ALL_TARGET=	ha
 USE_GMAKE=	yes
+
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/c/hsc.c ${WRKSRC}/c/cpy.c \
+		${WRKSRC}/c/asc.c
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ha ${PREFIX}/bin

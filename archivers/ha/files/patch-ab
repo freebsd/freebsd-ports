@@ -1,0 +1,15 @@
+--- makefile.nix.orig	Wed Jan 11 23:26:26 1995
++++ makefile.nix	Sat Mar 30 18:39:08 2002
+@@ -21,10 +21,9 @@
+ 
+ MCH = nix
+ 
+-CC = gcc
++CC ?= gcc
+ CPP = $(CC) -E
+-CFLAGS = -Wall -O2 -c -I../$(MCH) -I../include
+-LDFLAGS = -O2
++CFLAGS += -Wall  -c -I../$(MCH) -I../include
+ 
+ MDEFINES = "CC=$(CC)" "CPP=$(CPP)" "CFLAGS=$(CFLAGS)" "DEFS=$(DEFS)"
+ SUBDIRS = c $(MCH) include
