@@ -28,7 +28,7 @@ PLIST_SUB=	VERSION="`gauche-config -V`" \
 		TARGET="${MACHINE_ARCH}-portbld-freebsd${OSREL}"
 
 .if defined(WITH_GTKGLEXT)
-LIB_DEPENDS+=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS+=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 CONFIGURE_ARGS=	--enable-gtkgl
 PLIST_SUB+=	GTKGLEXT=""
 .else

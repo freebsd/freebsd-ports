@@ -16,7 +16,7 @@ DISTNAME=	pygtkglext-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for GtkGLExt
 
-LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 RUN_DEPENDS=	${BUILD_DEPENDS}
