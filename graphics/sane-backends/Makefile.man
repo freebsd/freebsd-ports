@@ -1,7 +1,6 @@
 MAN1+=	gamma4scanimage.1
 MAN1+=	sane-config.1
 MAN1+=	sane-find-scanner.1
-MAN1+=	saned.1
 MAN1+=	scanimage.1
 MAN5+=	sane-abaton.5
 MAN5+=	sane-agfafocus.5
@@ -66,3 +65,4 @@ MAN5+=	sane-umax_pp.5
 MAN5+=	sane-usb.5
 MAN5+=	sane-v4l.5
 MAN7+=	sane.7
+MAN8+=	saned.8
