@@ -40,6 +40,12 @@ PLIST_SUB+=	OPENEXR:=""
 PLIST_SUB+=	OPENEXR:="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile completely"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| -Wall||' \
@@ -49,4 +55,4 @@ post-patch:
 		's|-LINUX.+$$||' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
