@@ -285,6 +285,7 @@
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-date2
     SUBDIR += ruby-filelock
+    SUBDIR += ruby-gemfinder
     SUBDIR += ruby-intl
     SUBDIR += ruby-locale
     SUBDIR += ruby-optparse
