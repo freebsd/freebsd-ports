@@ -1,0 +1,248 @@
+--- star/star.c.orig	Thu May  6 17:09:19 1999
++++ star/star.c	Thu May  6 17:14:00 1999
+@@ -403,44 +403,46 @@
+ usage(ret)
+ 	int	ret;
+ {
+-	error("Usage:\tstar cmd [options] file1 ... filen\n");
+-	error("Cmd:\n");
+-	error("\t-c/-u/-r\tcreate/update/replace named files to tape\n");
+-	error("\t-x/-t/-n\textract/list/trace named files from tape\n");
+-	error("\t-diff\t\tdiff archive against file system (see -xhelp)\n");
+-	error("Options:\n");
+-	error("\t-help,-h\tprint this help\n");
+-	error("\t-xhelp\t\tprint extended help\n");
+-	error("\tblocks=#,b=#\tset blocking factor to #x512 Bytes (default 20)\n"); 
+-	error("\tfile=nm,f=nm\tuse 'nm' as tape instead of stdin/stdout\n");
+-	error("\t-T\t\tuse $TAPE as tape instead of stdin/stdout\n");
++	FILE *fp = ret ? stderr : stdout;
++
++	fprintf(fp, "Usage:\tstar cmd [options] file1 ... filen\n");
++	fprintf(fp, "Cmd:\n");
++	fprintf(fp, "\t-c/-u/-r\tcreate/update/replace named files to tape\n");
++	fprintf(fp, "\t-x/-t/-n\textract/list/trace named files from tape\n");
++	fprintf(fp, "\t-diff\t\tdiff archive against file system (see -xhelp)\n");
++	fprintf(fp, "Options:\n");
++	fprintf(fp, "\t-help,-h\tprint this help\n");
++	fprintf(fp, "\t-xhelp\t\tprint extended help\n");
++	fprintf(fp, "\tblocks=#,b=#\tset blocking factor to #x512 Bytes (default 20)\n"); 
++	fprintf(fp, "\tfile=nm,f=nm\tuse 'nm' as tape instead of stdin/stdout\n");
++	fprintf(fp, "\t-T\t\tuse $TAPE as tape instead of stdin/stdout\n");
+ #ifdef	FIFO
+-	error("\t-fifo/-no_fifo\tuse/don't use a fifo to optimize data flow from/to tape\n");
++	fprintf(fp, "\t-fifo/-no_fifo\tuse/don't use a fifo to optimize data flow from/to tape\n");
+ #if defined(USE_MMAP) && defined(USE_SHM)
+-	error("\t-shm\t\tuse SysV shared memory for fifo\n");
++	fprintf(fp, "\t-shm\t\tuse SysV shared memory for fifo\n");
+ #endif
+ #endif
+-	error("\t-v\t\tbe verbose\n");
+-	error("\t-tpath\t\tuse with -t to list path names only\n");
+-	error("\tH=header\tgenerate 'header' type archive (see H=help)\n");
+-	error("\tC=dir\t\tperform a chdir to 'dir' before storing next file\n");
+-	error("\t-z\t\tpipe input/output through gzip, does not work on tapes\n");
+-	error("\t-B\t\tperform multiple reads (needed on pipes)\n");
+-	error("\t-i\t\tignore checksum errors\n");
+-	error("\t-d\t\tdo not store/create directories\n");
+-	error("\t-m\t\tdo not restore access and modification time\n");
+-	error("\t-nochown\tdo not restore owner and group\n");
+-	error("\t-a,-atime\treset access time after storing file\n");
+-	error("\t-p\t\trestore filemodes of directories\n");
+-	error("\t-l\t\tdo not print a message if not all links are dumped\n");
+-	error("\t-L\t\tfollow symbolic links as if they were files\n");
+-	error("\t-D\t\tdo not descend directories\n");
+-	error("\t-M\t\tdo not descend mounting points\n");
+-	error("\t-I\t\tdo interactive creation/extraction/renaming\n");
+-	error("\t-O\t\tbe compatible to old tar (except for checksum bug)\n");
+-	error("\t-P\t\tlast record may be partial (useful on cartridge tapes)\n");
+-	error("\t-S\t\tdo not store/create special files\n");
+-	error("\t-U\t\trestore files unconditionally\n");
++	fprintf(fp, "\t-v\t\tbe verbose\n");
++	fprintf(fp, "\t-tpath\t\tuse with -t to list path names only\n");
++	fprintf(fp, "\tH=header\tgenerate 'header' type archive (see H=help)\n");
++	fprintf(fp, "\tC=dir\t\tperform a chdir to 'dir' before storing next file\n");
++	fprintf(fp, "\t-z\t\tpipe input/output through gzip, does not work on tapes\n");
++	fprintf(fp, "\t-B\t\tperform multiple reads (needed on pipes)\n");
++	fprintf(fp, "\t-i\t\tignore checksum errors\n");
++	fprintf(fp, "\t-d\t\tdo not store/create directories\n");
++	fprintf(fp, "\t-m\t\tdo not restore access and modification time\n");
++	fprintf(fp, "\t-nochown\tdo not restore owner and group\n");
++	fprintf(fp, "\t-a,-atime\treset access time after storing file\n");
++	fprintf(fp, "\t-p\t\trestore filemodes of directories\n");
++	fprintf(fp, "\t-l\t\tdo not print a message if not all links are dumped\n");
++	fprintf(fp, "\t-L\t\tfollow symbolic links as if they were files\n");
++	fprintf(fp, "\t-D\t\tdo not descend directories\n");
++	fprintf(fp, "\t-M\t\tdo not descend mounting points\n");
++	fprintf(fp, "\t-I\t\tdo interactive creation/extraction/renaming\n");
++	fprintf(fp, "\t-O\t\tbe compatible to old tar (except for checksum bug)\n");
++	fprintf(fp, "\t-P\t\tlast record may be partial (useful on cartridge tapes)\n");
++	fprintf(fp, "\t-S\t\tdo not store/create special files\n");
++	fprintf(fp, "\t-U\t\trestore files unconditionally\n");
+ 	exit(ret);
+ 	/* NOTREACHED */
+ }
+@@ -449,52 +451,54 @@
+ xusage(ret)
+ 	int	ret;
+ {
+-	error("Usage:\tstar cmd [options] file1 ... filen\n");
+-	error("Extended options:\n");
+-	error("\tdiffopts=optlst\tcomma separated list of diffopts (see diffopts=help)\n");
+-	error("\t-not,-V\t\tuse those files which do not match pattern\n");
+-	error("\tVOLHDR=name\tuse name to generate a volume header\n");
+-	error("\t-xdir\t\textract dir even if the current is never\n");
+-	error("\t-keep_old_files,-k\tkeep existing files\n");
+-	error("\t-/\t\tdon't strip leading '/'s from file names\n");
+-	error("\tlist=name\tread filenames from named file\n");
+-	error("\t-dodesc\t\tdo descend directories found in a list= file\n");
+-	error("\tpattern=p,pat=p\tset matching pattern\n");
+-	error("\tmaxsize=#\tdo not store file if it is bigger than # kBytes\n");
+-	error("\tnewer=name\tstore only files which are newer than 'name'\n");
+-	error("\t-ctime\t\tuse ctime for newer= option\n");
+-	error("\tbs=#\t\tset (output) block size to #\n");
++	FILE *fp = ret ? stderr : stdout;
++
++	fprintf(fp, "Usage:\tstar cmd [options] file1 ... filen\n");
++	fprintf(fp, "Extended options:\n");
++	fprintf(fp, "\tdiffopts=optlst\tcomma separated list of diffopts (see diffopts=help)\n");
++	fprintf(fp, "\t-not,-V\t\tuse those files which do not match pattern\n");
++	fprintf(fp, "\tVOLHDR=name\tuse name to generate a volume header\n");
++	fprintf(fp, "\t-xdir\t\textract dir even if the current is never\n");
++	fprintf(fp, "\t-keep_old_files,-k\tkeep existing files\n");
++	fprintf(fp, "\t-/\t\tdon't strip leading '/'s from file names\n");
++	fprintf(fp, "\tlist=name\tread filenames from named file\n");
++	fprintf(fp, "\t-dodesc\t\tdo descend directories found in a list= file\n");
++	fprintf(fp, "\tpattern=p,pat=p\tset matching pattern\n");
++	fprintf(fp, "\tmaxsize=#\tdo not store file if it is bigger than # kBytes\n");
++	fprintf(fp, "\tnewer=name\tstore only files which are newer than 'name'\n");
++	fprintf(fp, "\t-ctime\t\tuse ctime for newer= option\n");
++	fprintf(fp, "\tbs=#\t\tset (output) block size to #\n");
+ #ifdef	FIFO
+-	error("\tfs=#\t\tset fifo size to #\n");
++	fprintf(fp, "\tfs=#\t\tset fifo size to #\n");
+ #endif
+-	error("\ttsize=#\t\tset tape volume size to # 512 byte blocks\n");
+-	error("\t-qic24\t\tset tape volume size to %d kBytes\n",
++	fprintf(fp, "\ttsize=#\t\tset tape volume size to # 512 byte blocks\n");
++	fprintf(fp, "\t-qic24\t\tset tape volume size to %d kBytes\n",
+ 						TSIZE(QIC_24_TSIZE)/1024);
+-	error("\t-qic120\t\tset tape volume size to %d kBytes\n",
++	fprintf(fp, "\t-qic120\t\tset tape volume size to %d kBytes\n",
+ 						TSIZE(QIC_120_TSIZE)/1024);
+-	error("\t-qic150\t\tset tape volume size to %d kBytes\n",
++	fprintf(fp, "\t-qic150\t\tset tape volume size to %d kBytes\n",
+ 						TSIZE(QIC_150_TSIZE)/1024);
+-	error("\t-qic250\t\tset tape volume size to %d kBytes\n",
++	fprintf(fp, "\t-qic250\t\tset tape volume size to %d kBytes\n",
+ 						TSIZE(QIC_250_TSIZE)/1024);
+-	error("\t-nowarn\t\tdo not print warning messages\n");
+-	error("\t-time\t\tprint timing info\n");
+-	error("\t-no_statistics\tdo not print statistics\n");
++	fprintf(fp, "\t-nowarn\t\tdo not print warning messages\n");
++	fprintf(fp, "\t-time\t\tprint timing info\n");
++	fprintf(fp, "\t-no_statistics\tdo not print statistics\n");
+ #ifdef	FIFO
+-	error("\t-fifostats\tprint fifo statistics\n");
++	fprintf(fp, "\t-fifostats\tprint fifo statistics\n");
+ #endif
+-	error("\t-numeric\tdon't use user/group name from tape\n");
+-	error("\t-newest\t\tfind newest file on tape\n");
+-	error("\t-newest_file\tfind newest regular file on tape\n");
+-	error("\t-signed_checksum\tuse signed chars to calculate checksum\n");
+-	error("\t-sparse\t\thandle file with holes effectively on store/create\n");
+-	error("\t-force_hole\ttry to extract all files with holes\n");
+-	error("\t-to_stdout\textract files to stdout\n");
+-	error("\t-wready\t\twait for tape drive to become ready\n");
+-	error("\t-force_remove\tforce to remove non writable files on extraction\n");
+-	error("\t-ask_remove\task to remove non writable files on extraction\n");
+-	error("\t-remove_first\tremove files before extraction\n");
+-	error("\t-remove_recursive\tremove files recursive\n");
+-	error("\t-nullout\tsimulate creating an achive to compute the size\n");
++	fprintf(fp, "\t-numeric\tdon't use user/group name from tape\n");
++	fprintf(fp, "\t-newest\t\tfind newest file on tape\n");
++	fprintf(fp, "\t-newest_file\tfind newest regular file on tape\n");
++	fprintf(fp, "\t-signed_checksum\tuse signed chars to calculate checksum\n");
++	fprintf(fp, "\t-sparse\t\thandle file with holes effectively on store/create\n");
++	fprintf(fp, "\t-force_hole\ttry to extract all files with holes\n");
++	fprintf(fp, "\t-to_stdout\textract files to stdout\n");
++	fprintf(fp, "\t-wready\t\twait for tape drive to become ready\n");
++	fprintf(fp, "\t-force_remove\tforce to remove non writable files on extraction\n");
++	fprintf(fp, "\t-ask_remove\task to remove non writable files on extraction\n");
++	fprintf(fp, "\t-remove_first\tremove files before extraction\n");
++	fprintf(fp, "\t-remove_recursive\tremove files recursive\n");
++	fprintf(fp, "\t-nullout\tsimulate creating an achive to compute the size\n");
+ 	exit(ret);
+ 	/* NOTREACHED */
+ }
+@@ -503,27 +507,29 @@
+ dusage(ret)
+ 	int	ret;
+ {
+-	error("Diff options:\n");
+-	error("\tnot\t\tif this option is present, exclude listed options\n");
+-	error("\tperm\t\tcompare file permissions\n");
+-	error("\tmode\t\tcompare file permissions\n");
+-	error("\ttype\t\tcompare file type\n");
+-	error("\tnlink\t\tcompare linkcount (not supported)\n");
+-	error("\tuid\t\tcompare owner of file\n");
+-	error("\tgid\t\tcompare group of file\n");
+-	error("\tuname\t\tcompare name of owner of file\n");
+-	error("\tgname\t\tcompare name of group of file\n");
+-	error("\tid\t\tcompare owner, group, ownername and groupname of file\n");
+-	error("\tsize\t\tcompare file size\n");
+-	error("\tdata\t\tcompare content of file\n");
+-	error("\tcont\t\tcompare content of file\n");
+-	error("\trdev\t\tcompare rdev of device node\n");
+-	error("\thardlink\tcompare target of hardlink\n");
+-	error("\tsymlink\t\tcompare target of symlink\n");
+-	error("\tatime\t\tcompare access time of file (only star)\n");
+-	error("\tmtime\t\tcompare modification time of file\n");
+-	error("\tctime\t\tcompare creation time of file (only star)\n");
+-	error("\ttimes\t\tcompare all times of file\n");
++	FILE *fp = ret ? stderr : stdout;
++
++	fprintf(fp, "Diff options:\n");
++	fprintf(fp, "\tnot\t\tif this option is present, exclude listed options\n");
++	fprintf(fp, "\tperm\t\tcompare file permissions\n");
++	fprintf(fp, "\tmode\t\tcompare file permissions\n");
++	fprintf(fp, "\ttype\t\tcompare file type\n");
++	fprintf(fp, "\tnlink\t\tcompare linkcount (not supported)\n");
++	fprintf(fp, "\tuid\t\tcompare owner of file\n");
++	fprintf(fp, "\tgid\t\tcompare group of file\n");
++	fprintf(fp, "\tuname\t\tcompare name of owner of file\n");
++	fprintf(fp, "\tgname\t\tcompare name of group of file\n");
++	fprintf(fp, "\tid\t\tcompare owner, group, ownername and groupname of file\n");
++	fprintf(fp, "\tsize\t\tcompare file size\n");
++	fprintf(fp, "\tdata\t\tcompare content of file\n");
++	fprintf(fp, "\tcont\t\tcompare content of file\n");
++	fprintf(fp, "\trdev\t\tcompare rdev of device node\n");
++	fprintf(fp, "\thardlink\tcompare target of hardlink\n");
++	fprintf(fp, "\tsymlink\t\tcompare target of symlink\n");
++	fprintf(fp, "\tatime\t\tcompare access time of file (only star)\n");
++	fprintf(fp, "\tmtime\t\tcompare modification time of file\n");
++	fprintf(fp, "\tctime\t\tcompare creation time of file (only star)\n");
++	fprintf(fp, "\ttimes\t\tcompare all times of file\n");
+ 	exit(ret);
+ 	/* NOTREACHED */
+ }
+@@ -532,12 +538,14 @@
+ husage(ret)
+ 	int	ret;
+ {
+-	error("Header types:\n");
+-	error("\ttar\t\told tar format\n");
+-	error("\tstar\t\tstar format\n");
+-	error("\tgnutar\t\tgnu tar format\n");
+-	error("\tustar\t\tstandard tar (ieee 1003.1) format\n");
+-	error("\txstar\t\textended standard tar format\n");
++	FILE *fp = ret ? stderr : stdout;
++
++	fprintf(fp, "Header types:\n");
++	fprintf(fp, "\ttar\t\told tar format\n");
++	fprintf(fp, "\tstar\t\tstar format\n");
++	fprintf(fp, "\tgnutar\t\tgnu tar format\n");
++	fprintf(fp, "\tustar\t\tstandard tar (ieee 1003.1) format\n");
++	fprintf(fp, "\txstar\t\textended standard tar format\n");
+ 	exit(ret);
+ 	/* NOTREACHED */
+ }
