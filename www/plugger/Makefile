@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 PORTREVISION=	1
 CATEGORIES=	www audio graphics
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
-		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
+		${MASTER_SITE_NETSCAPE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
 MAINTAINER=	coop9211@uidaho.edu
@@ -35,6 +35,7 @@ USE_REINPLACE=	yes
 MAN7=		plugger.7
 MANCOMPRESSED=	no
 ALL_TARGET=	freebsd-elf
+MASTER_SITE_SUBDIR=	sdk/plugin/unix
 
 .include <bsd.port.pre.mk>
 
