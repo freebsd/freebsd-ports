@@ -1,4 +1,4 @@
-bin/libquicktime_config
+%%GTK%%bin/libquicktime_config
 bin/lqt-config
 bin/lqt_transcode
 bin/lqtplay
