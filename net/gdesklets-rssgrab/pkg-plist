@@ -4,8 +4,10 @@ share/gnome/gdesklets/Displays/rssgrab/gfx/bg.png
 share/gnome/gdesklets/Displays/rssgrab/gfx/frame.png
 share/gnome/gdesklets/Displays/rssgrab/gfx/logo.png
 share/gnome/gdesklets/Displays/rssgrab/gfx/preview.png
-share/gnome/gdesklets/Displays/rssgrab/rssgrab-lite.display
 share/gnome/gdesklets/Displays/rssgrab/rssgrab.display
+share/gnome/gdesklets/Displays/rssgrab/rssgrab-lite.display
+share/gnome/gdesklets/Displays/rssgrab/rssgrab-lite-dc.display
+share/gnome/gdesklets/Displays/rssgrab/rssgrab-psi.display
 share/gnome/gdesklets/Sensors/rssgrab/README
 share/gnome/gdesklets/Sensors/rssgrab/__init__.py
 share/gnome/gdesklets/Sensors/rssgrab/__init__.pyc
