@@ -1,6 +1,21 @@
 --- src/display/vga.c.orig	Wed Apr  9 21:34:02 1997
-+++ src/display/vga.c	Sun Jul 16 12:52:41 2000
-@@ -379,7 +379,7 @@
++++ src/display/vga.c	Tue Feb 20 23:39:29 2001
+@@ -42,7 +42,13 @@
+ #elif defined(__FreeBSD__)
+ #include      <vm/vm_param.h>
+ #include      <sys/ioctl.h>
+-#include      <machine/console.h>
++#include      <osreldate.h>
++#if __FreeBSD_version >= 410000
++#  include    <sys/consio.h>
++#  include    <sys/kbio.h>
++#else
++#  include    <machine/console.h>
++#endif
+ vm_size_t page_size;
+ #endif
+ #undef free
+@@ -379,7 +385,7 @@
  /*    if (!code) return;*/
      VgaSetColor(fc);
      if (bc & 0x8) *(vcls - dInfo.glineByte) = 0;
@@ -9,7 +24,7 @@
  	if (*code) {
  	    VgaOutByte(*code);
  	    *gram = *gram;
-@@ -617,7 +617,11 @@
+@@ -617,7 +623,11 @@
         Perror("ioctl CONSOLE_IO_ENABLE/KDSETMODE");
         return FAILURE;
       }
