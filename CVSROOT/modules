@@ -2054,6 +2054,7 @@ growfs		src/sbin/growfs
 grpn		ports/math/grpn
 gru		ports/games/gru
 grub		ports/sysutils/grub
+grubinvaders	ports/games/grubinvaders
 gruftistats	ports/irc/gruftistats
 grun		ports/misc/grun
 gschem		ports/cad/gschem
