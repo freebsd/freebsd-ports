@@ -1,0 +1,10 @@
+KSEG is a Linux program for exploring Euclidean geometry. You create a 
+construction, such as a triangle with a circumcenter, and then, as you
+drag verteces of the triangle, you can see the circumcenter moving in
+real time. KSEG was inspired by the Geometer's Sketchpad, but I have
+plans to go beyond the functionality that it provides. 
+
+WWW: http://www.mit.edu/~ibaran/kseg.html
+
+- Kuang-che Wu
+  kcwu@ck.tp.edu.tw

@@ -1,0 +1,32 @@
+bin/kseg
+share/doc/kseg/README
+share/doc/kseg/examples/20cell.seg
+share/doc/kseg/examples/circumcircle.sec
+share/doc/kseg/examples/circumcircle.seg
+share/doc/kseg/examples/conic5pt.sec
+share/doc/kseg/examples/cube.seg
+share/doc/kseg/examples/invert.sec
+share/doc/kseg/examples/invert3.sec
+share/doc/kseg/examples/isogonal.sec
+share/doc/kseg/examples/julia.sec
+share/doc/kseg/examples/julia.seg
+share/doc/kseg/examples/kiepert.sec
+share/doc/kseg/examples/kiepert2.sec
+share/doc/kseg/examples/kiepert3.sec
+share/doc/kseg/examples/koch.sec
+share/doc/kseg/examples/large.seg
+share/doc/kseg/examples/largelocus.seg
+share/doc/kseg/examples/locus.seg
+share/doc/kseg/examples/prettylocus.seg
+share/doc/kseg/examples/prettylocusgenerator.sec
+share/doc/kseg/examples/sierp.sec
+share/doc/kseg/examples/sierp2.sec
+share/doc/kseg/examples/tractix.sec
+share/doc/kseg/examples/tractix.seg
+share/doc/kseg/kseg_de.qm
+share/doc/kseg/kseg_en.qm
+share/doc/kseg/kseg_fr.qm
+share/doc/kseg/kseg_pt.qm
+share/doc/kseg/kseg_xx.qm
+@dirrm share/doc/kseg/examples
+@dirrm share/doc/kseg
