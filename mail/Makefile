@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.89 1999/04/17 04:55:52 taoka Exp $
+# $Id: Makefile,v 1.90 1999/05/03 02:59:36 steve Exp $
 #
 
     SUBDIR += adcomplain
     SUBDIR += asmail
     SUBDIR += balsa
+    SUBDIR += bbmail
     SUBDIR += bulk_mailer
     SUBDIR += cmail
     SUBDIR += coolmail
