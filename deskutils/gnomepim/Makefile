@@ -24,6 +24,8 @@ PLIST_SUB=	GNOME_PILOT=""
 PLIST_SUB=	GNOME_PILOT="@comment "
 .endif
 
+BUILD_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
+
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
