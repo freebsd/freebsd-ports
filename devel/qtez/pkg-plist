@@ -4,56 +4,52 @@ share/doc/qtez/KDE.README
 share/doc/qtez/README
 share/doc/qtez/TODO
 share/doc/qtez/index.htm
-share/doc/qtez/qtez.jpg
 share/doc/qtez/dnload/index.htm
+share/doc/qtez/faq/compcret.htm
+share/doc/qtez/faq/index.htm
 share/doc/qtez/features/index.htm
 share/doc/qtez/help/index.htm
-share/doc/qtez/help/qtez.gif
 share/doc/qtez/help/attribs/atdlgcap.gif
-share/doc/qtez/help/attribs/attribs.gif
 share/doc/qtez/help/attribs/index.htm
-share/doc/qtez/help/compons/compon.gif
 share/doc/qtez/help/compons/index.htm
 share/doc/qtez/help/compons/savesrc.gif
 share/doc/qtez/help/compons/toolbar.gif
-share/doc/qtez/help/demos/demos.gif
-share/doc/qtez/help/demos/index.htm
-share/doc/qtez/help/demos/chap1/index.htm
-share/doc/qtez/help/demos/chap1/tut1cap.gif
-share/doc/qtez/help/demos/chap2/index.htm
-share/doc/qtez/help/demos/chap2/tut2cap.gif
-share/doc/qtez/help/demos/chap3/index.htm
-share/doc/qtez/help/demos/chap3/tut3cap.gif
-share/doc/qtez/help/demos/chap4/index.htm
-share/doc/qtez/help/demos/chap4/tut4cap.gif
-share/doc/qtez/help/demos/chap5/index.htm
-share/doc/qtez/help/demos/chap5/tut5cap.gif
-share/doc/qtez/help/glbedit/glbedit.gif
 share/doc/qtez/help/glbedit/gldlgcap.gif
 share/doc/qtez/help/glbedit/index.htm
 share/doc/qtez/help/menubar/cfdlgcap.gif
 share/doc/qtez/help/menubar/index.htm
-share/doc/qtez/help/menubar/menubar.gif
 share/doc/qtez/help/menubar/mndlgcap.gif
 share/doc/qtez/help/mnuedit/index.htm
 share/doc/qtez/help/mnuedit/mndlgcap.gif
-share/doc/qtez/help/mnuedit/mnuedit.gif
 share/doc/qtez/help/projects/index.htm
-share/doc/qtez/help/projects/projects.gif
+share/doc/qtez/help/projects/sample.txt
 share/doc/qtez/help/projview/index.htm
-share/doc/qtez/help/projview/projview.gif
 share/doc/qtez/help/projview/pvdlgcap.gif
-share/doc/qtez/help/projects/sample.qtz
 share/doc/qtez/help/sigslo/index.htm
 share/doc/qtez/help/sigslo/sgdlgcap.gif
-share/doc/qtez/help/sigslo/sigslo.gif
 share/doc/qtez/help/sigslo/ssdlgcap.gif
 share/doc/qtez/help/srcedit/fndlgcap.gif
 share/doc/qtez/help/srcedit/index.htm
 share/doc/qtez/help/srcedit/scdlgcap.gif
-share/doc/qtez/help/srcedit/srcedit.gif
 share/doc/qtez/listserv/index.htm
-share/doc/qtez/tech/index.htm
+share/doc/qtez/pics/background.gif
+share/doc/qtez/pics/e.gif
+share/doc/qtez/pics/q.gif
+share/doc/qtez/pics/qtez.gif
+share/doc/qtez/pics/separator.gif
+share/doc/qtez/pics/t.gif
+share/doc/qtez/pics/z.gif
+share/doc/qtez/tutorial/index.htm
+share/doc/qtez/tutorial/chap1/index.htm
+share/doc/qtez/tutorial/chap1/tut1cap.gif
+share/doc/qtez/tutorial/chap2/index.htm
+share/doc/qtez/tutorial/chap2/tut2cap.gif
+share/doc/qtez/tutorial/chap3/index.htm
+share/doc/qtez/tutorial/chap3/tut3cap.gif
+share/doc/qtez/tutorial/chap4/index.htm
+share/doc/qtez/tutorial/chap4/tut4cap.gif
+share/doc/qtez/tutorial/chap5/index.htm
+share/doc/qtez/tutorial/chap5/tut5cap.gif
 share/examples/qtez/a.qtz
 share/examples/qtez/krash.qtz
 share/examples/qtez/arnt/arnt.qtz
@@ -111,11 +107,11 @@ share/examples/qtez/tutorial/frame6.bmp
 share/examples/qtez/tutorial/frame7.bmp
 share/examples/qtez/tutorial/frame8.bmp
 share/examples/qtez/xalarm.qtz
-share/qtez/progress.qtl
-share/qtez/tableview.qtl
 @dirrm share/doc/qtez/dnload
+@dirrm share/doc/qtez/faq
 @dirrm share/doc/qtez/features
 @dirrm share/doc/qtez/help/attribs
+@dirrm share/doc/qtez/help/bk
 @dirrm share/doc/qtez/help/compons
 @dirrm share/doc/qtez/help/demos/chap1
 @dirrm share/doc/qtez/help/demos/chap2
@@ -132,7 +128,14 @@ share/qtez/tableview.qtl
 @dirrm share/doc/qtez/help/srcedit
 @dirrm share/doc/qtez/help
 @dirrm share/doc/qtez/listserv
+@dirrm share/doc/qtez/pics
 @dirrm share/doc/qtez/tech
+@dirrm share/doc/qtez/tutorial/chap1
+@dirrm share/doc/qtez/tutorial/chap2
+@dirrm share/doc/qtez/tutorial/chap3
+@dirrm share/doc/qtez/tutorial/chap4
+@dirrm share/doc/qtez/tutorial/chap5
+@dirrm share/doc/qtez/tutorial
 @dirrm share/doc/qtez
 @dirrm share/examples/qtez/arnt
 @dirrm share/examples/qtez/bnacho
@@ -155,4 +158,3 @@ share/qtez/tableview.qtl
 @dirrm share/examples/qtez/troll.tut
 @dirrm share/examples/qtez/tutorial
 @dirrm share/examples/qtez
-@dirrm share/qtez
