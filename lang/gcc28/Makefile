@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.10 1998/06/10 20:16:08 asami Exp $
+# $Id: Makefile,v 1.11 1998/06/30 21:10:21 jdp Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -13,10 +13,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-GNUOSREL!=	uname -r | sed -e 's/[-(].*//'
-
 PLIST=          ${WRKDIR}/PLIST.fixedup
-GNUHOST=	i386-unknown-freebsd${GNUOSREL}
+GNUHOST=	i386-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -24,7 +22,7 @@ ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1
 
 pre-fetch:
-	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OSNAME} ${GNUOSREL}"
+	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}"
 
 post-patch:
 	@(cd ${WRKSRC}/config/i386/ ; \

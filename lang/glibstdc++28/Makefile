@@ -4,7 +4,7 @@
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.2 1998/03/11 12:25:31 obrien Exp $
+# $Id: Makefile,v 1.3 1998/04/20 10:36:05 obrien Exp $
 #
 
 DISTNAME=	libstdc++-2.8.1.1
@@ -21,14 +21,13 @@ RUN_DEPENDS=	gcc28:${PORTSDIR}/lang/gcc28 \
 
 CC=		gcc28
 CXX=		g++28
-GNUOSREL!=	uname -r | sed -e 's/[-(].*//'
-GCC28DIR=	lib/gcc-lib/i386-unknown-freebsd${GNUOSREL}/2.8.1
+GCC28DIR=	lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST=          ${WRKDIR}/PLIST.fixedup
 
 pre-install:
-	${SED} -e 's:%%GNUOSREL%%:${GNUOSREL}:' \
+	${SED} -e 's:%%GNUOSREL%%:${OSREL}:' \
 		-e 's:%%GCC28SUBDIR%%:${GCC28DIR}:' \
 		${PKGDIR}/PLIST > ${PLIST}
 
