@@ -8,8 +8,8 @@
 PORTNAME=		xchat
 PORTVERSION=		1.5.0
 CATEGORIES=		irc
-MASTER_SITES=		http://xchat.org/files/source/1.4/ \
-			http://xchat.linuxpower.org/files/source/1.4/
+MASTER_SITES=		http://xchat.org/files/source/1.5/ \
+			http://xchat.linuxpower.org/files/source/1.5/
 
 MAINTAINER=		jim@FreeBSD.org
 
