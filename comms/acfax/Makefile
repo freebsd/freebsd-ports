@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.funet.fi/pub/ham/unix/Linux/misc/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 
-MAINTAINER=	igla@batterybackups.net
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
