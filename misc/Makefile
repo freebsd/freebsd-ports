@@ -92,6 +92,7 @@
     SUBDIR += freedialog
     SUBDIR += ftdi-eeprom
     SUBDIR += ftree
+    SUBDIR += gaim-guifications
     SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += getopt
