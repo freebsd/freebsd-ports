@@ -1,0 +1,21 @@
+--- standalone/main.cc.orig	Sun Aug  6 21:58:28 2000
++++ standalone/main.cc	Sun Aug  6 21:59:58 2000
+@@ -31,7 +31,7 @@
+ #endif
+ 
+ #ifdef __FreeBSD__
+-#include <floatingpoint.h>
++#include <ieeefp.h>
+ #endif
+ 
+ #include <kapp.h>
+@@ -141,7 +141,9 @@
+   int retval = app->exec ();
+ 
+ #ifdef __FreeBSD__
++#ifndef __alpha__
+   fpresetsticky (FP_X_DZ|FP_X_INV);
++#endif
+   fpsetmask (FP_X_DZ|FP_X_INV);
+ #endif
+ 

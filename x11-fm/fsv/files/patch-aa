@@ -1,5 +1,5 @@
---- src/fsv.c.orig	Sun Feb 13 02:03:57 2000
-+++ src/fsv.c	Sun Feb 13 02:06:19 2000
+--- src/fsv.c.orig	Wed Jan 26 20:49:55 2000
++++ src/fsv.c	Sun Aug  6 19:14:34 2000
 @@ -26,6 +26,9 @@
  #include "common.h"
  #include "fsv.h"
@@ -21,12 +21,14 @@
  	/* Initialize global variables */
  	globals.fstree = NULL;
  	globals.history = NULL;
-@@ -311,6 +318,10 @@
+@@ -311,6 +318,12 @@
  
  	gtk_main( );
  
 +#ifdef __FreeBSD__
++#ifndef __alpha__
 +	fpresetsticky(FP_X_DZ|FP_X_INV);
++#endif
 +	fpsetmask(FP_X_DZ|FP_X_INV);
 +#endif
  	return 0;
