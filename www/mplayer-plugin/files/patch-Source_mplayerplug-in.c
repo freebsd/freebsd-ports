@@ -1,5 +1,5 @@
---- Source/mplayerplug-in.c.orig	Fri Oct  3 10:54:52 2003
-+++ Source/mplayerplug-in.c	Sun Oct  5 02:45:25 2003
+--- Source/mplayerplug-in.c.orig	Fri Oct  3 07:54:52 2003
++++ Source/mplayerplug-in.c	Sun Oct  5 00:02:12 2003
 @@ -28,7 +28,7 @@
   */
  
@@ -35,13 +35,14 @@
  
      if (instance == NULL)
  	return NPERR_INVALID_INSTANCE_ERROR;
-@@ -281,6 +282,9 @@
+@@ -281,6 +282,10 @@
      instance->pdata = NPN_MemAlloc(sizeof(PluginInstance));
      This = (PluginInstance *) instance->pdata;
      InitPrivateData(instance);
 +    pthread_mutexattr_init(&attr);
 +    pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
 +    pthread_mutex_init(&playlist_mutex, &attr);
++    pthread_mutexattr_destroy(&attr);
  
      DESTROYED = 0;
  
