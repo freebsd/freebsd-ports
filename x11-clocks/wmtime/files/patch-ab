@@ -1,0 +1,9 @@
+--- Imakefile.orig	Wed Nov  1 09:26:11 2000
++++ Imakefile	Wed Nov  1 09:26:51 2000
+@@ -13,5 +13,5 @@
+                 misc.o \
+                 list.o
+ 
+-ComplexProgramTarget(wmtime)
++ComplexProgramTargetNoMan(wmtime)
+ 
