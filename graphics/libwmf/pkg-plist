@@ -3,7 +3,6 @@ bin/libwmf-fontmap
 bin/wmf2eps
 bin/wmf2fig
 bin/wmf2gd
-bin/wmf2magick
 bin/wmf2svg
 %%X11%%bin/wmf2x
 include/libwmf/api.h
@@ -26,8 +25,6 @@ include/libwmf/gd/gdfontt.h
 include/libwmf/gd.h
 include/libwmf/ipa.h
 include/libwmf/macro.h
-include/libwmf/magick.h
-include/libwmf/plot.h
 include/libwmf/svg.h
 include/libwmf/types.h
 include/libwmf/x.h
@@ -126,6 +123,7 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/defs_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/doxygen.css
 %%PORTDOCS%%share/doc/libwmf/html/doxygen.gif
+%%PORTDOCS%%share/doc/libwmf/html/doxygen.png
 %%PORTDOCS%%share/doc/libwmf/html/eps_2bmp_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/eps_2device_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/eps_2draw_8h.html
@@ -185,6 +183,8 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/stream_8c.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfAPI.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfAPI__Options.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfAttributeStore.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfAttributes.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfBMP.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfBMP__Draw__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfBMP__Read__t.html
@@ -222,8 +222,10 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfROP__Draw__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfStream.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfUserData__t.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfWriteFileInfo.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfXML__FontData.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmfXML__FontInfo.html
+%%PORTDOCS%%share/doc/libwmf/html/struct__wmfXML__InputData.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmf__eps__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmf__fig__t.html
 %%PORTDOCS%%share/doc/libwmf/html/struct__wmf__fig__t_1_1__wmf__fig__image.html
@@ -255,6 +257,8 @@ lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/html/xgd_2device_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/xgd_2draw_8h.html
 %%PORTDOCS%%share/doc/libwmf/html/xgd_8c.html
+%%PORTDOCS%%share/doc/libwmf/html/xml_8c.html
+%%PORTDOCS%%share/doc/libwmf/html/xml_8h.html
 %%PORTDOCS%%share/doc/libwmf/index.html
 %%PORTDOCS%%share/doc/libwmf/smlogo2.gif
 %%PORTDOCS%%share/doc/libwmf/tutapi.html
