@@ -7,16 +7,9 @@ if [ "$2" != "POST-DEINSTALL" ]; then
 fi
 
 USER=drweb
-ex=0
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if pw userdel ${USER}; then
-		echo "Delete user/group \"${USER}\"."
-	else
-		echo "Deleting user/group \"${USER}\" failed..."
-		ex=1
-	fi
+	echo "To delete DrWeb user permanently, use 'pw userdel ${USER}'"
 fi
 
-[ "$ex" = "1" ] && exit 1
 exit 0
