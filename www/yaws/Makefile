@@ -20,7 +20,6 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 MAN1=		yaws.1
 MAN5=		yaws.conf.5 yaws_api.5

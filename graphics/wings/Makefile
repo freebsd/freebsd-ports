@@ -26,7 +26,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 post-patch:
 	@${CP} ${FILESDIR}/wings.sh ${WRKSRC}/wings.sh
