@@ -102,6 +102,7 @@
     SUBDIR += vxtools
     SUBDIR += wine
     SUBDIR += x48
+    SUBDIR += xbraitenberg
     SUBDIR += xgs
     SUBDIR += xmame
     SUBDIR += xmess
