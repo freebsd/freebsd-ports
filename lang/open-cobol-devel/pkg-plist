@@ -1,5 +1,6 @@
 bin/cob-config
 bin/cobc
+bin/cobcrun
 include/libcob.h
 include/libcob/byteswap.h
 include/libcob/call.h
