@@ -1,0 +1,11 @@
+--- kvidtune/xf86vidmode.h.orig	Fri Jan 21 19:55:26 2000
++++ kvidtune/xf86vidmode.h	Fri Jan 21 19:56:37 2000
+@@ -154,7 +154,7 @@
+     int                  EventBase, ErrorBase;
+ 
+ private:
+-    void  SetErrorText(char *txt);
++    void  SetErrorText(const char *txt);
+     static int X11ErrorHandler(Display *dis,XErrorEvent *err);
+ 
+ public:

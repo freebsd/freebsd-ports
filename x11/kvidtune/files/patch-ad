@@ -1,0 +1,11 @@
+--- kvidtune/xf86vidmode.cpp.orig	Fri Jan 21 19:55:21 2000
++++ kvidtune/xf86vidmode.cpp	Fri Jan 21 19:56:11 2000
+@@ -327,7 +327,7 @@
+     free(ErrorText);
+ }
+ 
+-void XF86VidMode::SetErrorText(char *txt)
++void XF86VidMode::SetErrorText(const char *txt)
+ {
+   if (ErrorText) 
+     free(ErrorText);
