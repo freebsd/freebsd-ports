@@ -20,7 +20,7 @@ RUN_DEPENDS=	${X11BASE}/lib/gnome-vfs-2.0/modules/libsmb.so:${PORTSDIR}/devel/gn
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
 		${X11BASE}/lib/libquicklounge-applet.so:${PORTSDIR}/misc/quick-lounge-applet \
 		gswitchit-plugins-capplet:${PORTSDIR}/x11/gswitchit \
-		dasher:${PORTSDIR}/editors/dasher \
+		dasher:${PORTSDIR}/accessibility/dasher \
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${X11BASE}/lib/gedit-2/plugins/libasciitable.so:${PORTSDIR}/editors/gedit-plugins \
 		gdesklets:${PORTSDIR}/deskutils/gdesklets \
