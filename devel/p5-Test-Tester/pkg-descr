@@ -1,0 +1,4 @@
+This modules helps to test modules built using Test::Builder,
+that means test the testing modules.
+
+WWW: http://search.cpan.org/dist/Test-Tester/

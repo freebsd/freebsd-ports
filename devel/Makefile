@@ -991,6 +991,7 @@
     SUBDIR += p5-Test-Pod
     SUBDIR += p5-Test-Reporter
     SUBDIR += p5-Test-Simple
+    SUBDIR += p5-Test-Tester
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Tie-Array-Sorted
     SUBDIR += p5-Tie-Cache
