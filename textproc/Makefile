@@ -370,6 +370,7 @@
     SUBDIR += tth
     SUBDIR += txt2html
     SUBDIR += txt2man
+    SUBDIR += txt2tags
     SUBDIR += ua-ispell
     SUBDIR += unroff
     SUBDIR += unrtf
