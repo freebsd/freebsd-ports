@@ -1,20 +1,30 @@
---- configure.orig	Thu Mar 21 16:58:58 2002
-+++ configure	Thu Mar 21 17:00:54 2002
-@@ -2517,7 +2517,7 @@
- ac_given_srcdir=$srcdir
- ac_given_INSTALL="$INSTALL"
+--- help/Makefile.in.orig	Sat Feb  2 09:01:13 2002
++++ help/Makefile.in	Tue Jan  6 02:08:07 2004
+@@ -8,8 +8,8 @@
  
--trap 'rm -fr `echo "Makefile adns/Makefile src/Makefile tools/Makefile include/setup.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-+trap 'rm -fr `echo "Makefile adns/Makefile src/Makefile tools/Makefile include/setup.h include/config.h tools/install_ircd" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
- EOF
- cat >> $CONFIG_STATUS <<EOF
+ prefix=		@prefix@
+ exec_prefix=	@execprefix@
+-uhelpdir=	${prefix}/help/users
+-ohelpdir=	${prefix}/help/opers
++uhelpdir=	@uhelpdir@
++ohelpdir=	@ohelpdir@
  
-@@ -2615,7 +2615,7 @@
- 
- cat >> $CONFIG_STATUS <<EOF
- 
--CONFIG_FILES=\${CONFIG_FILES-"Makefile adns/Makefile src/Makefile tools/Makefile"}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile adns/Makefile src/Makefile tools/Makefile include/config.h tools/install_ircd"}
- EOF
- cat >> $CONFIG_STATUS <<\EOF
- for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+ SYMLINKS=	topic accept cjoin cmode admin names links away whowas \
+ 		version kick who invite quit join list nick oper part \
+@@ -63,12 +63,10 @@
+ install:
+ 	@echo installing help files...
+ 	-@if test ! -d $(prefix)/help; then \
+-		echo "mkdir $(prefix)/help"; \
+-		mkdir $(prefix)/help; \
+-		echo "mkdir $(prefix)/help/users"; \
+-		mkdir $(prefix)/help/users; \
+-		echo "mkdir $(prefix)/help/opers"; \
+-		mkdir $(prefix)/help/opers; \
++		echo "mkdir $(uhelpdir)"; \
++		mkdir -p $(uhelpdir); \
++		echo "mkdir $(ohelpdir)"; \
++		mkdir -p $(ohelpdir); \
+ 	fi
+ 	@for help in opers/*; do \
+ 	if [ -f $$help ]; then \

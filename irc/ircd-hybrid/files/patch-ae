@@ -1,11 +1,23 @@
---- Makefile.in.orig	Thu Mar 21 16:47:44 2002
-+++ Makefile.in	Thu Mar 21 16:47:57 2002
-@@ -22,7 +22,7 @@
- RM=@RM@
+--- src/Makefile.in.ori	Wed Jan  7 02:57:37 2004
++++ src/Makefile.in	Wed Jan  7 03:02:12 2004
+@@ -23,6 +23,7 @@
+ libexecdir	= @libexecdir@
+ sysconfdir	= @sysconfdir@
+ localstatedir	= @localstatedir@
++logsdir		= @logsdir@
  
- # Default CFLAGS
--CFLAGS = -g -O2 -DNDEBUG
-+CFLAGS += -DNDEBUG
+ DOLLAR = $$
  
- # Default make flags - you may want to uncomment this on a multicpu machine
- #MFLAGS = -j 4
+@@ -140,9 +141,9 @@
+ 		echo "mkdir $(sysconfdir)"; \
+ 		mkdir $(sysconfdir); \
+ 	fi
+-	-@if test ! -d $(localstatedir)/logs; then \
+-		echo "mkdir $(localstatedir)/logs"; \
+-		mkdir $(localstatedir)/logs; \
++	-@if test ! -d $(logsdir); then \
++		echo "mkdir $(logsdir)"; \
++		mkdir $(logsdir); \
+ 	fi
+ 
+ install: install-mkdirs build
