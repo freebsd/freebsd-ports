@@ -1,9 +1,9 @@
-# ports collection makefile for:	MySQL
+# ports collection makefile for:	MySQL-client
 # Version required:			v3.22.23b
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.53 1999/06/05 22:28:27 mharo Exp $
+# $Id: Makefile,v 1.54 1999/06/08 10:11:02 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.23b
@@ -14,8 +14,9 @@ MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/My
 		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dan@trinsec.com
 
+BROKEN=		'Awaiting update after a repository copy'
 Y2K=            http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
 
 MAN1=		mysql.1
