@@ -244,6 +244,7 @@
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linux-enemyterritory
+    SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
     SUBDIR += linux-q3ademo
     SUBDIR += linux-steam
