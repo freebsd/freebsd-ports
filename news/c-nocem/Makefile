@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	c-nocem
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	news security
 MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -13,16 +13,17 @@ MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NoCeM for C News and INN
 
-BUILD_DEPENDS=	${WRKDIRPREFIX}${CNEWSSRC}/conf/substitutions:${PORTSDIR}/news/cnews:configure
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews \
+BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${PORTSDIR}/${CNEWSSRC}:configure
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWSSRC} \
 		gpg:${PORTSDIR}/security/gnupg
 
 WRKSRC=		${WRKDIR}/c-nocem
-CNEWSSRC?=	${.CURDIR}/../cnews/work
+CNEWSSRC?=	news/cnews
+CNEWSWRK?=	${WRKDIRPREFIX}${PORTSDIR}/${CNEWSSRC}/work
 NEWSBIN?=	${PREFIX}/libexec/cnews
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-cnews=${WRKDIRPREFIX}${CNEWSSRC}
+CONFIGURE_ARGS+=	--with-cnews=${CNEWSWRK}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 
 .include <bsd.port.pre.mk>
@@ -30,5 +31,9 @@ PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 .if ${OSVERSION} > 500000
 USE_PERL5=	yes
 .endif
+
+pre-fetch:
+	(cd ${.CURDIR}/../cnews && \
+		${SETENV} ${MAKE_ENV} ${MAKE} fetch)
 
 .include <bsd.port.post.mk>
