@@ -9,4 +9,6 @@ MASTERDIR=      ${.CURDIR}/../ruby_static
 
 RUBY_VER=	1.7
 
+HAVE_FNMATCH=	yes
+
 .include "${MASTERDIR}/Makefile"
