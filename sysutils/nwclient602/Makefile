@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup client to NetWorker servers
 
 .include <bsd.port.pre.mk>
