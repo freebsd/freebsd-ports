@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby-usersguide
-PORTVERSION=	20010216
+PORTVERSION=	20020323
 CATEGORIES=	lang ruby
 MASTER_SITES=	http://www.ruby-lang.org/~slagell/ruby/
 DISTNAME=	${PORTNAME:S/usersguide/uguide/}-${PORTVERSION}
