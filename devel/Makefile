@@ -338,6 +338,7 @@
     SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += jrtplib
+    SUBDIR += jude_take
     SUBDIR += kaptain
     SUBDIR += kdbg
     SUBDIR += kdesdk3
