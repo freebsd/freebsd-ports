@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	NetAddr-IP
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	NetAddr
@@ -24,7 +24,7 @@ post-patch:
 		-e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
 		-e '$$_="" if /require 5/;' \
 		-e '$$_="" if /use warnings/;' \
-		${WRKSRC}/IP.pm
+		${WRKSRC}/IP.pm ${WRKSRC}/t/v4-badnm.t
 
 post-build:
 	@${PERL} -M5.6.0 -e '' >/dev/null 2>&1 || \
