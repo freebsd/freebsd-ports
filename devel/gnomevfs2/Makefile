@@ -1,48 +1,45 @@
-# New ports collection makefile for:	gnomevfs
+# New ports collection makefile for:	gnomevfs2
 # Date created:				28th June 2000
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnomevfs
-PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTNAME=	gnomevfs2
+PORTVERSION=	1.9.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-alpha2
 DISTNAME=	gnome-vfs-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel \
-		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
-LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
-.if !exists(/usr/bin/bzip2)
-LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
-.endif
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
+		${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata \
+		pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	gconf-2.3:${PORTSDIR}/devel/gconf2 \
+		bonobo-2.0:${PORTSDIR}/devel/libbonobo
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata \
+		pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMELIBS=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
 		XGETTEXT=${LOCALBASE}/bin/xgettext-new \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
-
-MAN5=		gnome-vfs-mime.5
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@find ${WRKSRC} -name 'xml-i18n-*' | xargs ${PERL} -pi -e \
-		's|/usr/local/bin/perl|${PERL}|g'
+		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
+                 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g'
 
 .include <bsd.port.mk>

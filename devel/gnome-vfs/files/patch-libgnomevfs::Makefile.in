@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- libgnomevfs/Makefile.in	2001/09/17 14:32:27	1.1
-+++ libgnomevfs/Makefile.in	2001/09/17 14:33:02
-@@ -202,7 +202,7 @@
+--- libgnomevfs/Makefile.in	2002/02/16 13:12:02	1.1
++++ libgnomevfs/Makefile.in	2002/02/16 13:13:00
+@@ -190,7 +190,7 @@
  
  
  # Platform specific includes
--libgnomevfsplatofrmincludedir = $(libdir)/gnome-vfs-1.0/include
-+libgnomevfsplatofrmincludedir = $(includedir)/gnome-vfs-1.0/libgnomevfs
- libgnomevfsplatofrminclude_HEADERS =  	gnome-vfs-file-size.h
+-libgnomevfsplatformincludedir = $(libdir)/gnome-vfs-2.0/include
++libgnomevfsplatformincludedir = $(includedir)/gnome-vfs-2.0/libgnomevfs
+ libgnomevfsplatforminclude_HEADERS =  	gnome-vfs-file-size.h
  
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
