@@ -1,0 +1,16 @@
+dbskkd-cdb is a dictionary server for the SKK Japanese input method
+system.  dbskkd-cdb is based on the code of skkserv (the original SKK
+server) 3.9.3, using the cdb constant database package of
+D. J. Bernstein (DJB) for faster dictionary access.
+
+dbskkd-cdb is compatible with skkserv on the protocol behavior.  It is
+called from "super-server" programs such as inetd or tcpserver, and the
+I/O operation is solely with the stdio interface, so the code is compact
+and the access to the server can be easily restricted.
+
+You should invoke dbskkd-cdb via inetd. Add
+
+skkserv stream tcp nowait nobody ${PREFIX}/libexec/dbskkd-cdb dbskkd-cdb
+
+to your /etc/inetd.conf (usually, ${PREFIX} will be replaced to `/usr/local'),
+and send SIGHUP to your inetd.

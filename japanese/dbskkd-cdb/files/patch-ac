@@ -1,0 +1,43 @@
+--- Release-Notes.English.dist	Wed Jun 16 15:20:45 1999
++++ Release-Notes.English	Thu Jun 17 14:08:39 1999
+@@ -91,13 +91,13 @@
+    Make a copy of libcdb.a to the current directory, because you need this
+    to compile dbskkd-cdb.
+ 
+-3. Run makeskkcdb.sh and make SKK-JISYO.L.cdb.
++3. Run makeskkcdb.sh and make %%JISYONAME%%.cdb.
+    This script invokes skktocdbm.sh and
+-   redirect /usr/local/share/skk/SKK-JISYO.L as the stdin of skktocdbm.sh.
+-   The SKK-JISYO.L.cdb is created under the current directory as default.
++   redirect %%PREFIX%%/share/skk/%%JISYONAME%% as the stdin of skktocdbm.sh.
++   The %%JISYONAME%%.cdb is created under the current directory as default.
+    Change the default pathnames if you need to do so.
+ 
+-4. Install the SKK-JISYO.L.cdb.  The author recommend installing it to
++4. Install the %%JISYONAME%%.cdb.  The author recommend installing it to
+    the same directory where the SKK directory resides.  The consistency
+    of this cdb-style directory can be verified by cdbtest or cdbstats
+    utilities of the cdb package.
+@@ -108,11 +108,11 @@
+ ---------------------------------------
+ 
+ 1. Set the pathname of SERVER_DIR in dbskkd-cdb.c to the directory
+-   where the server resides.  The default value is /usr/local/etc/dbskkd.
++   where the server resides.  The default value is %%PREFIX%%/libexec.
+ 
+ 2. Set the pathname of JISHO_FILE in dbskkd-cdb.c to the directory
+    where the cdb-style dictionary resides.
+-   The defaule value is /usr/local/share/skk/SKK-JISYO.L.cdb.
++   The defaule value is %%PREFIX%%/share/dbskkd-cdb/%%JISYONAME%%.cdb.
+ 
+ 3. Setting the compile-time flag LOG_PEERINFO lets the dbskkd-cdb log the
+    source address of the client connected to the server.  This flag is
+@@ -135,7 +135,7 @@
+ 2. Add the following line (or something similar) to /etc/inetd.conf:
+    (This example is for a FreeBSD 2.2.8-RELEASE system using tcp_wrapper)
+ 
+-skkserv stream  tcp     nowait  nobody  /usr/local/libexec/tcpd       /usr/local/etc/dbskkd/dbskkd
++skkserv stream  tcp     nowait  nobody  %%PREFIX%%/libexec/tcpd       %%PREFIX%%/libexec/dbskkd-cdb
+ 
+    *NEVER* run dbskkd-cdb with the root privilege.  Use nobody or
+    a dedicated uid for running dbskkd-cdb.

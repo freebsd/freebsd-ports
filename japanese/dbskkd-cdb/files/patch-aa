@@ -1,0 +1,21 @@
+--- Makefile.dist	Wed Jun 16 15:26:04 1999
++++ Makefile	Fri Jun 18 14:17:15 1999
+@@ -2,7 +2,8 @@
+ # $Id: Makefile,v 1.6 1998/12/12 11:24:36 kenji Exp $
+ 
+ # please define SERVERDIR
+-SERVERDIR = /usr/local/libexec
++SERVERDIR = ${PREFIX}/libexec
++JISHOFILE = ${PREFIX}/share/dbskkd-cdb/${SKKJISYO}.cdb
+ # for FreeBSD-2.x and BSD/OS (without shlib)
+ CC = gcc -O -g
+ COMPAT =
+@@ -17,7 +18,7 @@
+ 	$(CC) $(LDFLAGS) -o dbskkd-cdb dbskkd-cdb.o $(LDFLAGS)
+ 
+ dbskkd-cdb.o: dbskkd-cdb.c
+-	$(CC) $(COMPAT) $(PRIVATE) -DSERVER_DIR=\"$(SERVERDIR)\" -c dbskkd-cdb.c
++	$(CC) $(COMPAT) $(PRIVATE) -DJISHO_FILE=\"$(JISHOFILE)\" -DSERVER_DIR=\"$(SERVERDIR)\" -c dbskkd-cdb.c
+ 
+ install: dbskkd-cdb 
+ 	cp dbskkd-cdb $(SERVERDIR); chmod 755 $(SERVERDIR)/dbskkd-cdb
