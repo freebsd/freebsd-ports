@@ -1,7 +1,7 @@
---- src/core/k3bprocess.h.orig	Fri Aug 29 17:32:44 2003
-+++ src/core/k3bprocess.h	Fri Nov  7 12:35:44 2003
-@@ -126,5 +126,22 @@
-   bool m_suppressEmptyLines;
+--- src/core/k3bprocess.h.orig	Tue Jan 27 09:19:13 2004
++++ src/core/k3bprocess.h	Fri Feb 13 21:03:38 2004
+@@ -194,4 +194,21 @@
+   KProcess* m_process;
  };
  
 +/** This is a KProcess fake class. It uses system() to call the process
@@ -21,5 +21,4 @@
 + MyKProcess &operator<<(const QCString & arg);
 + bool start(RunMode  runmode = NotifyOnExit, Communication comm = NoCommunication);
 +};
- 
  #endif

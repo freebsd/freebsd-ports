@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTVERSION=	0.11.6
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,13 +18,15 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad \
-		ogg:$(PORTSDIR)/audio/libogg
+		vorbis:${PORTSDIR}/audio/libvorbis \
+		FLAC:${PORTSDIR}/audio/flac
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-k3bsetup=no
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
