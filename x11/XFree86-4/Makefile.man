@@ -515,6 +515,7 @@ MAN4=	apm.4 \
 	tseng.4 \
 	vesa.4 \
 	vga.4 \
+	vmware.4 \
 	void.4 \
 	wacom.4
 MAN5=	XF86Config.5
