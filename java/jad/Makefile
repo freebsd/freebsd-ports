@@ -9,13 +9,12 @@ PORTNAME=	jad
 PORTVERSION=	1.5.8c
 CATEGORIES=	java
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Bridge/8617/jad/freebsd/ \
-		http://metaverse.euronet.nl/~ernst/ \
+		http://www.metaverse.nl/~ernst/ \
 		http://www.pensioenconsult.com/ \
-		http://www.schraven.nl/ \
-		http://www.jollem.com/~ernst/
+		http://www.schraven.nl/
 DISTNAME=	jadfb158
 
-MAINTAINER=	ernst@jollem.com
+MAINTAINER=	znerd@FreeBSD.org
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
