@@ -187,7 +187,7 @@ lib/sylpheed-claws/plugins/trayicon.so
 @dirrm include/sylpheed-claws/common
 @dirrm include/sylpheed-claws/gtk
 %%GPGME%%@dirrm include/sylpheed-claws/plugins/pgpmime
-@dirrm include/sylpheed-claws/plugins
+@unexec rmdir %D/include/sylpheed-claws/plugins 2>/dev/null >/dev/null || true
 @dirrm include/sylpheed-claws
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin.so
 %%CLAM_PLUG%%lib/sylpheed-claws/plugins/clamav_plugin_gtk.so
