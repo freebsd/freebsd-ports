@@ -7,6 +7,7 @@
 
 PORTNAME=	scite
 PORTVERSION=	1.58
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -34,6 +35,8 @@ PKGNAMESUFFIX=	-gtk2
 USE_GNOME+=	gtk12
 MAKE_ARGS=	GTK1=yes
 .endif
+
+MAN1=		scite.1
 
 pre-everything::
 	@${ECHO_MSG} ""
