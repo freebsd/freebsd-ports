@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-ListDetector
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -25,11 +25,13 @@ PERL_CONFIGURE=	yes
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Mail::ListDetector.3 \
 	Mail::ListDetector::Detector::Base.3 \
+	Mail::ListDetector::Detector::Ecartis.3 \
 	Mail::ListDetector::Detector::Ezmlm.3 \
 	Mail::ListDetector::Detector::Listar.3 \
 	Mail::ListDetector::Detector::Mailman.3 \
 	Mail::ListDetector::Detector::Majordomo.3 \
 	Mail::ListDetector::Detector::RFC2369.3 \
+	Mail::ListDetector::Detector::RFC2919.3 \
 	Mail::ListDetector::Detector::Smartlist.3 \
 	Mail::ListDetector::Detector::Yahoogroups.3 \
 	Mail::ListDetector::List.3
