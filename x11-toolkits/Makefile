@@ -74,6 +74,7 @@
     SUBDIR += p5-Tk-ColourChooser
     SUBDIR += p5-Tk-Date
     SUBDIR += p5-Tk-Enscript
+    SUBDIR += p5-Tk-FileDialog
     SUBDIR += p5-Tk-GBARR
     SUBDIR += p5-Tk-Getopt
     SUBDIR += p5-Tk-HistEntry
