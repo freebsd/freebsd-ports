@@ -36,6 +36,8 @@ USE_PERL5=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+#mozilla 1.0 seems to have security vulnerability
+WITHOUT_MOZILLA=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	1.4+
