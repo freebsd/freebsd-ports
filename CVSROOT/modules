@@ -8627,6 +8627,7 @@ pipemeter	ports/sysutils/pipemeter
 pipenightdreams	ports/games/pipenightdreams
 pips-sc60s	ports/print/pips-sc60s
 pips-sc65_66s	ports/print/pips-sc65_66s
+pips-sc80s	ports/print/pips-sc80s
 pips-sc84_83s	ports/print/pips-sc84_83s
 pips-sc85_86s	ports/print/pips-sc85_86s
 pips-sp2100_2200	ports/print/pips-sp2100_2200
