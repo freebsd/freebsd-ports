@@ -1,14 +1,14 @@
 PATH=${PATH}:%%PREFIX%%/pgsql/bin
 PGLIB=%%PREFIX%%/pgsql/lib
 
-# note: PGDATA overwrites the -D startup option
+# note: PGDATA can be overridden by the -D startup option
 PGDATA=%%PREFIX%%/pgsql/data
 
 export PATH MANPATH PGLIB PGDATA
 
 #You might want to set some locale stuff here
 #PGDATESTYLE=ISO
-#LC_ALL=sv_SE.ISO_88591-1
+#LC_ALL=sv_SE.ISO_8859-1
 #export PGDATESTYLE LC_ALL
 
 # if you want to make regression tests use this TZ

@@ -4,15 +4,13 @@
 
 PATH=/bin:/usr/sbin
 
-if [ -z "${DB_DIR}" ]; then
-	DB_DIR=${PKG_PREFIX}/pgsql/data
-fi
+DB_DIR=${PKG_PREFIX}/pgsql
 
 case $2 in
-POST-INSTALL)
+PRE-INSTALL)
 	USER=pgsql
 	GROUP=${USER}
-	UID=89
+	UID=70
 	GID=${UID}
 
 	if pw group show "${GROUP}" 2>/dev/null; then
@@ -39,6 +37,6 @@ POST-INSTALL)
 		fi
 	fi
 
-	chown -R ${USER}.${GROUP} ${DB_DIR}
 	;;
+
 esac
