@@ -20,6 +20,7 @@ lib/libmp3lame.so.0
 %%PORTDOCS%%share/doc/lame/html/lame.css
 %%PORTDOCS%%share/doc/lame/html/modes.html
 %%PORTDOCS%%share/doc/lame/html/node6.html
+%%PORTDOCS%%share/doc/lame/html/presets.html
 %%PORTDOCS%%share/doc/lame/html/switchs.html
 %%PORTDOCS%%@dirrm share/doc/lame/html
 %%PORTDOCS%%@dirrm share/doc/lame
