@@ -1,28 +1,20 @@
 # New ports collection makefile for:   sawmill
-# Version required:    0.20.1
+# Version required:    0.22
 # Date created:        13 September 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sawmill-0.20.1
+DISTNAME=	sawmill-0.22
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/ \
-		http://www.gnome.gr.jp/~yatt/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sawmill-0.20.1-ja.po
-
-.if defined(USE_I18N)
-PATCH_SITES=	http://www.gnome.gr.jp/~yatt/
-PATCHFILES=	sawmill-0.20.1-kondara.patch
-PATCH_DIST_STRIP=	-p1
-.endif
 
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
-		rep.6:${PORTSDIR}/lang/librep
+		rep.7:${PORTSDIR}/lang/librep
 .if !defined(NOGNOME)
 LIB_DEPENDS+=	capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
 .endif
@@ -34,11 +26,9 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL}
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
-#GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share --with-readline
 .if !defined(NOGNOME)
@@ -53,9 +43,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include\
 .if defined(NOGNOME)
 PLIST=		${PKGDIR}/PLIST.nognome
 .endif
-
-post-extract:
-	@${CP} ${DISTDIR}/sawmill-0.20.1-ja.po ${WRKSRC}/po/ja.po
 
 post-install:
 	if [ ! -f ${PREFIX}/info/dir ]; then \
