@@ -1,6 +1,5 @@
-diff -rc prodosemu-v0.1/main.c prodosemu/main.c
-*** main.c	Tue Jan  9 15:00:03 1996
---- main.c	Tue Feb 18 09:43:54 1997
+*** main.c.orig	Tue Jan  9 13:00:03 1996
+--- main.c	Sun Jan  9 06:47:30 2000
 ***************
 *** 9,16 ****
   
@@ -20,7 +19,7 @@ diff -rc prodosemu-v0.1/main.c prodosemu/main.c
 ! 
 ! /* Where is the default rom file?? */
 ! #ifndef ROMFILE
-! #define ROMFILE "/usr/local/lib/apple2/prodos-2e.rom"
+! #define ROMFILE "%%PREFIX%%/libdata/apple2/prodos-2e.rom"
 ! #endif
   
   extern char prodosroot[];
