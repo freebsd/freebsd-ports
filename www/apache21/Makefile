@@ -74,6 +74,17 @@ PLIST_SUB+=	SUEXEC=""
 PLIST_SUB+=	SUEXEC="@comment "
 .endif
 
+.if defined(WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+CONFIGURE_ARGS+= --with-ldap \
+		--enable-ldap --enable-auth-ldap \
+		--with-ldap-lib="${LOCALBASE}/lib" \
+		--with-ldap-include="${LOCALBASE}/include"
+PLIST_SUB+=	LDAP=""
+.else
+PLIST_SUB+=	LDAP="@comment "
+.endif
+
 .if ${WITH_MPM} != "prefork"
 PKGNAMESUFFIX=	-${WITH_MPM}
 WITH_THREADS=	yes
