@@ -512,6 +512,7 @@
     SUBDIR += py-rdflib
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
+    SUBDIR += py-syck
     SUBDIR += py-wordnet
     SUBDIR += py-xml
     SUBDIR += py-xmltools
