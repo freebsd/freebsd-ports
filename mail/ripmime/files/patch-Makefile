@@ -1,11 +1,11 @@
---- Makefile.orig	Mon Apr  5 09:00:49 2004
-+++ Makefile	Mon Apr  5 20:53:46 2004
+--- Makefile.orig	Mon Jun 28 09:31:17 2004
++++ Makefile	Fri Jul 16 08:45:03 2004
 @@ -5,7 +5,7 @@
- # PERFORMANCE RELATED FLAG SETS
- #CFLAGS=-Wall -O3 -march=i686
- #CFLAGS= -Wall -O3 -march=k6
--CFLAGS= -Wall -g $(CPU_OPTS)
-+#CFLAGS= -Wall -g $(CPU_OPTS)
- #CFLAGS= -Wall -O3 -march=i686
+ # if there isn't already a default CFLAGS set,
+ #	use our recommended settings.
+ #CFLAGS ?= -Wall -g -O2 -Werror $(CPU_OPTS)
+-CFLAGS=-Wall -g -O2 -Werror
++#CFLAGS=-Wall -g -O2 -Werror
  
  # OLE decoding is still considered to be 'beta' mode - so it 
+ #	disabled in the stable release of ripMIME for now
