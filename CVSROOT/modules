@@ -6727,7 +6727,6 @@ webredirect	ports/www/webredirect
 webresolve	ports/www/webresolve
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
-wedit		ports/devel/wedit
 wemi-emacs	ports/editors/wemi-emacs
 wemi-emacs-current	ports/editors/wemi-emacs-current
 wemi-emacs20	ports/editors/wemi-emacs20
