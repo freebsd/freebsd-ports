@@ -1,0 +1,10 @@
+xstroke is a full-screen gesture recognition program written for the X
+Window System. It captures gestures that are performed with a pointer
+device, (such as a mouse, a stylus, or a pen/tablet), recognizes the
+gestures and performs actions based on the gestures.
+
+xstroke is most commonly configured to "type" characters in response to
+gestures, but it can also emulate mouse button "clicks", launch programs,
+and other fun things.
+
+WWW: http://www.east.isi.edu/projects/DSN/xstroke/

@@ -1,0 +1,8 @@
+--- etc/Imakefile.orig	Tue May 14 16:16:09 2002
++++ etc/Imakefile	Tue May 14 16:16:18 2002
+@@ -1,4 +1,4 @@
+-CONFDIR=/etc/xstroke
++CONFDIR=%%PREFIX%%/etc/xstroke
+ 
+ all::
+ 
