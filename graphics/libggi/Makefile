@@ -69,4 +69,8 @@ MLINKS=		ggiDBGetBuffer.3ggi ggiDBGetNumBuffers.3ggi \
 		ggiSetOrigin.3ggi ggiGetOrigin.3ggi \
 		ggiSetPalette.3ggi ggiGetPalette.3ggi
 
+post-install:
+	@${CP} ${WRKSRC}/libggi.conf ${PREFIX}/etc/ggi/libggi.conf.dist
+	@${CP} ${WRKSRC}/extensions/misc/libggimisc.conf ${PREFIX}/etc/ggi/libggimisc.conf.dist
+
 .include <bsd.port.mk>
