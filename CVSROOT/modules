@@ -1970,6 +1970,8 @@ ffsrecov	ports/sysutils/ffsrecov
 fftpack		ports/math/fftpack
 fftw		ports/math/fftw
 fftw3		ports/math/fftw3
+fftw3-float	ports/math/fftw3-float
+fftw3-long	ports/math/fftw3-long
 fget		ports/ftp/fget
 fgkicker	ports/games/fgkicker
 fhist		ports/devel/fhist
