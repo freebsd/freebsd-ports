@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.12
+PORTVERSION=	2.1.13
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -49,6 +49,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--mandir=${MANPREFIX}/man \
 		--enable-static \
 		--enable-login \
+		--enable-ntlm \
 		--with-saslauthd \
 		--enable-auth-sasldb \
 		--with-rc4=openssl
@@ -104,10 +105,10 @@ CYRUS_GROUP?=	cyrus
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
-	draft-ietf-cat-sasl-gssapi-05.txt draft-melnikov-rfc2831bis-02.txt \
+	draft-ietf-cat-sasl-gssapi-05.txt draft-ietf-sasl-anon-00.txt \
+	draft-ietf-sasl-plain-00.txt draft-ietf-sasl-rfc2831bis-00.txt \
 	draft-myers-saslrev-02.txt draft-nerenberg-sasl-crammd5-03.txt \
-	draft-newman-sasl-c-api-00.txt draft-sasl-login.txt \
-	draft-zeilenga-sasl-anon-01.txt draft-zeilenga-sasl-plain-01.txt \
+	draft-newman-sasl-c-api-01.txt draft-sasl-login.txt \
 	rfc1321.txt rfc1939.txt rfc2104.txt rfc2195.txt rfc2222.txt \
 	rfc2243.txt rfc2245.txt rfc2289.txt rfc2444.txt rfc2595.txt \
 	rfc2831.txt rfc2945.txt rfc3174.txt server-plugin-flow.fig \
