@@ -64,9 +64,6 @@ PLIST_SUB+=	IMAPUTILS='@comment '
 
 pre-extract:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${SH} ${PKGINSTALL} foo PRE-INSTALL || ${FALSE}
-.endif
 
 pre-build:
 .if defined(WITH_SSL)
