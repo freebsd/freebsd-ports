@@ -10,5 +10,6 @@ lib/libc2lib.so
 lib/libc2lib.so.1
 lib/libc2lib.so.1.4.1
 share/rws/symtabs/libc2lib.syms
+@dirrm share/rws/symtabs
+@dirrm share/rws
 @dirrm include/c2lib
-@unexec /bin/rmdir %D/share/rws/symtabs 2>/dev/null || true
