@@ -74,7 +74,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -144,6 +144,33 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
 		etc/squid/msntauth.conf.default etc/squid/squid.conf.default \
 		sbin/RunAccel sbin/RunCache sbin/squidclient sbin/squid
+
+icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
+		anthony-box2.gif anthony-c.gif anthony-compressed.gif \
+		anthony-dir.gif anthony-dirup.gif anthony-dvi.gif \
+		anthony-f.gif anthony-image.gif anthony-image2.gif \
+		anthony-layout.gif anthony-link.gif anthony-movie.gif \
+		anthony-pdf.gif anthony-portal.gif anthony-ps.gif \
+		anthony-quill.gif anthony-script.gif anthony-sound.gif \
+		anthony-tar.gif anthony-tex.gif anthony-text.gif \
+		anthony-unknown.gif anthony-xbm.gif anthony-xpm.gif
+
+error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
+		ERR_CACHE_MGR_ACCESS_DENIED ERR_CANNOT_FORWARD \
+		ERR_CONNECT_FAIL ERR_DNS_FAIL ERR_FORWARDING_DENIED \
+		ERR_FTP_DISABLED ERR_FTP_FAILURE ERR_FTP_FORBIDDEN \
+		ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
+		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED \
+		ERR_FTP_UNAVAILABLE ERR_INVALID_REQ ERR_INVALID_URL \
+		ERR_LIFETIME_EXP ERR_NO_RELAY ERR_ONLY_IF_CACHED_MISS \
+		ERR_READ_ERROR ERR_READ_TIMEOUT ERR_SHUTTING_DOWN \
+		ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
+		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
+
+libexec=	cachemgr.cgi digest_pw_auth diskd dnsserver ip_user_check \
+		squid_ldap_auth squid_ldap_group msnt_auth ncsa_auth ntlm_auth \
+		pam_auth pinger smb_auth smb_auth.sh squid_unix_group \
+		unlinkd wb_auth wb_group wb_ntlmauth wbinfo_group.pl yp_auth
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--datadir=${PREFIX}/etc/squid \
@@ -323,17 +350,24 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # Create package list:
-	@cd ${PREFIX} && ${FIND} libexec/squid -type f -o -type l | ${SORT} \
+	@for f in ${libexec}; do \
+	    ${TEST} -f ${PREFIX}/libexec/squid/$${f} && \
+	    ${ECHO_CMD} "libexec/squid/$${f}" >>${TMPPLIST} || ${TRUE} ; \
+	done
+	@${ECHO_CMD} "@unexec rmdir %D/libexec/squid 2>/dev/null || true" \
 	    >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm libexec/squid" >>${TMPPLIST}
-	@cd ${PREFIX} && ${FIND} etc/squid/icons -type f -o -type l | ${SORT} \
+	@for f in ${icon_files}; do \
+	    ${ECHO_CMD} "etc/squid/icons/$${f}" >>${TMPPLIST}; \
+	done
+	@${ECHO_CMD} "@unexec rmdir %D/etc/squid/icons 2>/dev/null || true" \
 	    >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm etc/squid/icons" >>${TMPPLIST}
-.for d in ${SQUID_LANGUAGES}
-	@cd ${PREFIX} && ${FIND} etc/squid/errors/${d} -type f | ${SORT} \
-	    >>${TMPPLIST}
-	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${TMPPLIST}
-.endfor
+	@for d in ${SQUID_LANGUAGES}; do \
+	    for f in ${error_files}; do \
+		${ECHO_CMD} "etc/squid/errors/$${d}/$${f}" >>${TMPPLIST} ; \
+	    done; \
+	    ${ECHO_CMD} "@unexec rmdir %D/etc/squid/errors/$${d} 2>/dev/null || true" \
+		>>${TMPPLIST}; \
+	done
 	@${ECHO_CMD} "@unexec rmdir %D/etc/squid/errors 2>/dev/null || true" \
 	    >>${TMPPLIST}
 
