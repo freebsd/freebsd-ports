@@ -1,9 +1,9 @@
 # ports collection makefile for:	hylafax
 # Version required:	v4.0pl2
 # Date created:		19 Apr 1997
-# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
+# Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.19 1998/11/25 05:06:22 jseger Exp $
+# $Id: Makefile,v 1.20 1998/11/25 09:01:16 asami Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 		ftp://ftp.sisis.de/pub/hylafax/source/
 EXTRACT_SUFX=	-tar.gz
 
-MAINTAINER=	itojun@itojun.org
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
