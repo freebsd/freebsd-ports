@@ -31,10 +31,10 @@
 %%WEMIDOCDIR%%/TODO
 %%WEMIDOCDIR%%/VERSION
 @dirrm %%WEMIDOCDIR%%
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @unexec install-info --delete %D/info/mime-ui-en.info %D/info/dir
-info/mime-ui-en.info
-@exec install-info %D/info/mime-ui-en.info %D/info/dir
 @unexec install-info --delete %D/info/mime-ui-ja.info %D/info/dir
+info/mime-ui-en.info
 info/mime-ui-ja.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/mime-ui-en.info %D/info/dir
 @exec install-info %D/info/mime-ui-ja.info %D/info/dir
