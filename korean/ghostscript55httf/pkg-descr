@@ -1,20 +1,30 @@
-GNU Ghostscript is the name of a set of software that provides:
+This is Aladdin Ghostscript, the non-GPL version that comes with a licence
+different from the GPL. Read the file PUBLIC in the work/gsX.Y directory or
+in ${PREFIX}/share/ghostscript/X.Y/doc/PUBLIC after installation for details !
 
-        - An interpreter for the PostScript (TM) language, and
+Ghostscript is the well-known PostScript interpreter which is available for
+all common and most esoteric platforms and supports many different printers
+and some displays.
 
-        - A set of C procedures (the Ghostscript library) that implement
-the graphics capabilities that appear as primitive operations in the
-PostScript language.
+Official ghostscript homepage, see:
+	http://www.cs.wisc.edu/~ghost/index.html
 
-GNU Ghostscript comes with NO WARRANTY and NO SUPPORT.  
+This FreeBSD port includes two useful add-on packages:
+	o Support for HP DeskJet 670, 690, 850, 855, 870, 890, 1100 and 1600,
+	  see announcement on
+		 http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
+	o Support for pdfencrypt, see description on
+	  	http://www.ozemail.com.au/~geoffk/pdfencrypt/
+		
+Thomas Merz has written a Ghostscript manual in PDF format:
+	http://www.cs.wisc.edu/~ghost/merz.html
 
-Also included with this package is the PCL3 driver written by Martin
-Lottermoser with defaults for a Deskjet 560C.
+The manual is also available in German language, see:
+	http://www.muc.de/~tm/free/free.html
 
-This version can handle Korean(and Japanese) Truetype fonts
-using FreeType library. It also has some bugfix for correctly working 
-CID-Keyed fonts.
-
+For Korean truetype patch, see
+	http://www.kr.FreeBSD.org/~cjh/freetime/printing/freetype-gs/
+	
 --
-Ports by CHOI Junho <cjh@FreeBSD.org>
-WWW: http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/
+CHOI Junho <cjh@FreeBSD.org>
+WWW: http://www.kr.FreeBSD.org/~cjh/freetime/printing/freetype-gs/

@@ -1,0 +1,190 @@
+#! /bin/sh
+
+# driverselection
+/usr/bin/dialog --title "Ghostscript 5 driver configuration" --clear \
+	--checklist "\n\
+This new ghostscript driver configuration dialog allows you to choose \n\
+only those gs drivers, you really need. Don't think too economical, since \n\
+other programs in the ports collection might need some of the default gs \n\
+file format drivers. The gs5 default drivers are preselected. \n\
+Have fun with this new configuration style !     -andreas \n\n\
+  Please choose options by pressing SPACE to TOGGLE an option ON/OFF ?" -1 -1 9\
+  "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
+  "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
+  "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
+  "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
+  "hl7x0"    "Brother HL 720 and HL 730" OFF \
+  "bj10e"    "Canon BubbleJet BJ10e" ON \
+  "bj200"    "Canon BubbleJet BJ200 and BJC-240(b&w)" ON \
+  "bjc600"   "Canon Color BJC-240/600/4000/70 + Apple StyleWriter 2x00" ON \
+  "bjc800"   "Canon Color BubbleJet BJC-240/800" ON \
+  "lbp8"     "Canon LBP-8II laser printer" OFF \
+  "lips3"    "Canon LIPS III laser printer in English/CaPSL mode" OFF \
+  "m8510"    "C.Itoh M8510 printer" OFF \
+  "uniprint" "Configurable Color ESC/P,ESC/P2,HP-RTL/PCL mono/color driver" ON \
+  "la50"     "DEC LA50 printer" OFF \
+  "la70"     "DEC LA70 printer" OFF \
+  "la75"     "DEC LA75 printer" OFF \
+  "la75plus" "DEC LA75plus printer" OFF \
+  "lj250"    "DEC LJ250 Companion color printer" OFF \
+  "declj250" "DEC LJ250 driver (alternate)" OFF \
+  "ln03"     "DEC LN03 printer" OFF \
+  "ap3250"   "Epson AP3250" OFF \
+  "epson"    "Epson-compatible dot matrix, 9/24-pin" OFF \
+  "eps9mid"  "Epson-compatible 9-pin, medium resol" OFF \
+  "eps9high" "Epson-compatible 9-pin, high resol" OFF \
+  "lp8000"   "Epson LP-8000 line printer" OFF \
+  "lq850"    "Epson LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" OFF \
+  "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" OFF \
+  "st800"    "Epson Stylus 800 printer" OFF \
+  "stcolor"  "Epson Stylus Color" OFF \
+  "lp2563"   "HP 2563B line printer" OFF \
+  "dnj650c"  "HP DesignJet 650C" OFF \
+  "deskjet"  "HP DeskJet and DeskJet Plus" ON \
+  "djet500"  "HP DeskJet 500" ON \
+  "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" ON \
+  "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
+  "cdjcolor" "HP DeskJet 500C/540C, 24 bit/pixel color + FS dithering" ON \
+  "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
+  "cdj500"   "HP DeskJet 500C (same as cdjcolor)" OFF \
+  "cdj550"   "HP DeskJet 550C/560C" ON \
+  "cdj670"   "HP DeskJet 670/690" OFF \
+  "cdj850"   "HP DeskJet 850/855/870/1100" OFF \
+  "cdj890"   "HP DeskJet 890" OFF \
+  "cdj1600"  "HP DeskJet 1600" OFF \
+  "laserjet" "HP LaserJet" ON \
+  "ljetplus" "HP LaserJet Plus" ON \
+  "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
+  "ljet3"    "HP LaserJet III* with Delta Row compression" ON \
+  "ljet3d"   "HP LaserJet IIID with duplex capability" OFF \
+  "ljet4"    "HP LaserJet 4 (defaults to 600 dpi)" ON \
+  "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" OFF \
+  "cljet5"   "HP LaserJet 5/5M Color " OFF \
+  "lj5mono"  "HP LaserJet 5 and 6 family (PCL5 / PCL XL), bitmap" OFF \
+  "lj5gray"  "HP LaserJet 5 and 6 family, gray-scale bitmap" OFF \
+  "pj"       "HP PaintJet XL driver " ON \
+  "pjetxl"   "HP PaintJet XL driver (alternate)" OFF \
+  "pjxl"     "HP PaintJet XL color printer" ON \
+  "paintjet" "HP PaintJet color printer (alternate)" OFF \
+  "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
+  "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
+  "pxlcolor" "HP PCL XL color printers (none available yet)" ON \
+  "ibmpro"   "IBM 9-pin Proprinter" OFF \
+  "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
+  "imagen"   "Imagen ImPress printers" OFF \
+  "cp50"     "Mitsubishi CP50 color" OFF \
+  "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
+  "oce9050"  "OCE 9050 printer" OFF \
+  "oki182"   "Okidata MicroLine 182" OFF \
+  "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
+  "r4081"    "Ricoh 4081 laser printer" OFF \
+  "sj48"     "StarJet 48 inkjet printer" OFF \
+  "xes"      "Xerox XES printers (2700, 3700, 4045, etc.)" OFF \
+  "bmpmono"  "BMP Monochrome" OFF \
+  "bmp16"    "BMP 4-bit EGA/VGA" OFF \
+  "bmp256"   "BMP 8-bit 256-color" OFF \
+  "bmp16m"   "BMP 24-bit" OFF \
+  "ccr"      "CalComp Raster format" OFF \
+  "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT ONLY" OFF \
+  "cgm8"     "CGM 8-bit 256-color -- DITTO" OFF \
+  "cgm24"    "CGM 24-bit color -- DITTO" OFF \
+  "cif"      "CIF file format for VLSI" OFF \
+  "sxlcrt"   "CRT sixels, e.g. for VT240-like terminals" OFF \
+  "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" OFF \
+  "dfaxlow"  "DigiFAX low (normal) resol" OFF \
+  "faxg3"    "Group 3 fax, with EOLs but no header or EOD" ON \
+  "faxg32d"  "Group 3 2-D fax, with EOLs but no header or EOD" ON \
+  "faxg4"    "Group 4 fax, with EOLs but no header or EOD" ON \
+  "miff24"   "ImageMagick MIFF, 24-bit direct color, RLE compressed" OFF \
+  "inferno"  "Inferno bitmaps" OFF \
+  "jpeg"     "JPEG format, RGB output" ON \
+  "jpeggray" "JPEG format, gray output" ON \
+  "mgrmono"  "MGR devices 1-bit monochrome" OFF \
+  "mgrgray2" "MGR devices 2-bit gray scale" OFF \
+  "mgrgray4" "MGR devices 4-bit gray scale" OFF \
+  "mgrgray8" "MGR devices 8-bit gray scale" OFF \
+  "mgr4"     "MGR devices 4-bit (VGA) color" OFF \
+  "mgr8"     "MGR devices 8-bit color" OFF \
+  "pcxmono"  "PCX file format, monochrome 1-bit b/w" ON \
+  "pcxgray"  "PCX file format, 8-bit gray scale" ON \
+  "pcx16"    "PCX file format, 4-bit planar EGA/VGA color" ON \
+  "pcx256"   "PCX file format, 8-bit chunky color" ON \
+  "pcx24b"   "PCX file format, 24-bit color 3x8-bit planes" ON \
+  "pcxcmyk"  "PCX file format, 4-bit chunky CMYK color" ON \
+  "pdfwrite" "PDF output (like Adobe Acrobat Distiller)" ON \
+  "bit"      "Plain bits, monochrome" ON \
+  "bitrgb"   "Plain bits, RGB" ON \
+  "bitcmyk"  "Plain bits, CMYK" ON \
+  "plan9bm"  "Plan 9 bitmap format" OFF \
+  "pbm"      "Portable Bitmap,  plain format" ON \
+  "pbmraw"   "Portable Bitmap,  raw format" ON \
+  "pgm"      "Portable Graymap, plain format" ON \
+  "pgmraw"   "Portable Graymap, raw format" ON \
+  "pgnm"     "Portable Graymap, plain format, optim. to PBM" ON \
+  "pgnmraw"  "Portable Graymap, raw format, optim. to PBM" ON \
+  "pnm"      "Portable Pixmap,  plain format RGB, optim. to PGM/PBM" ON \
+  "pnmraw"   "Portable Pixmap,  raw format RGB, optim. to PGM/PBM" ON \
+  "ppm"      "Portable Pixmap,  plain format RGB" ON \
+  "ppmraw"   "Portable Pixmap,  raw format RGB" ON \
+  "pkm"      "Portable inKmap (plain format) (4-bit CMYK => RGB)" ON \
+  "pkmraw"   "Portable inKmap (raw format) (4-bit CMYK => RGB)" ON \
+  "pngmono"  "PNG Monochrome Portable Network Graphics" ON \
+  "pnggray"  "PNG 8-bit gray Portable Network Graphics" ON \
+  "png16"    "PNG 4-bit color Portable Network Graphics" ON \
+  "png256"   "PNG 8-bit color Portable Network Graphics" ON \
+  "png16m"   "PNG 24-bit color Portable Network Graphics" ON \
+  "psmono"   "PostScript, Level 1, monochrome image" ON \
+  "psgray"   "PostScript (Level 1) 8-bit gray image" ON \
+  "psrgb"    "PostScript (Level 2) 24-bit color image" ON \
+  "pswrite"  "PostScript output (like PostScript Distillery)" ON \
+  "epswrite" "EPS output (like PostScript Distillery)" ON \
+  "sgirgb"   "SGI RGB pixmap format" OFF \
+  "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
+  "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
+  "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
+  "tek4696"  "Tektronix 4695/4696 inkjet plotter" OFF \
+  "tiffcrle" "TIFF CCITT RLE 1 dim = Group 3 fax with no EOLs" ON \
+  "tiffg3"   "TIFF Group 3 fax with EOLs" ON \
+  "tiffg32d" "TIFF Group 3 2-D fax" ON \
+  "tiffg4"   "TIFF Group 4 fax" ON \
+  "tiff12nc" "TIFF 12-bit RGB, no compression" ON \
+  "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format)" ON \
+  "tifflzw"  "TIFF LZW,      tag = 5,     mono" ON \
+  "tiffpack" "TIFF PackBits, tag = 32773, mono" ON \
+  "x11"      "X Windows version 11, release >=4" ON \
+  "x11alpha" "X Windows masquer. as device with alpha capability" ON \
+  "x11cmyk"  "X Windows masquer. as 1-bit-per-plane CMYK device" ON \
+  "x11cmyk2" "X Windows as a 2-bit-per-plane CMYK device" OFF \
+  "x11cmyk4" "X Windows as a 4-bit-per-plane CMYK device" OFF \
+  "x11cmyk8" "X Windows as an 8-bit-per-plane CMYK device" OFF \
+  "x11gray2" "X Windows as a 2-bit gray-scale device" ON \
+  "x11gray4" "X Windows as a 4-bit gray-scale device" ON \
+  "x11mono"  "X Windows masquer. as black-and-white device" ON \
+2> /tmp/checklist.tmp.$$
+
+retval=$?
+
+choice=`cat /tmp/checklist.tmp.$$`
+rm -f /tmp/checklist.tmp.$$
+
+case $retval in
+	0)	if [ -z "$choice" ]; then
+			echo "Nothing selected"
+			exit 1;
+		fi
+		;;
+	1)	echo "Cancel pressed."
+		exit 1
+		;;
+esac
+
+# bring it into the right format with '.dev' appended to each driver name
+echo "DEVICE_DEVS=$choice" \
+	| sed -e "s/\"//g" \
+	| sed -e "s/ /.dev /g" \
+	| sed -e "s/$/.dev/g" \
+	> ${WRKSRC}/unix-gcc.mak.new
+
+# create one new Makefile, where DEVICE_DEVS contains all wanted devices
+cat ${WRKSRC}/unix-gcc.mak >> ${WRKSRC}/unix-gcc.mak.new
+mv ${WRKSRC}/unix-gcc.mak.new ${WRKSRC}/unix-gcc.mak
