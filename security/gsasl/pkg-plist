@@ -4,7 +4,7 @@ include/gsasl-mech.h
 include/gsasl.h
 lib/libgsasl.a
 lib/libgsasl.so
-lib/libgsasl.so.7
+lib/libgsasl.so.8
 libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/gsasl.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/abstraction.png

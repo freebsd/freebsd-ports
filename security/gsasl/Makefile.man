@@ -62,6 +62,7 @@ MAN3+=	gsasl_property_set_raw.3
 MAN3+=	gsasl_random.3
 MAN3+=	gsasl_randomize.3
 MAN3+=	gsasl_register.3
+MAN3+=	gsasl_saslprep.3
 MAN3+=	gsasl_server_application_data_get.3
 MAN3+=	gsasl_server_application_data_set.3
 MAN3+=	gsasl_server_callback_anonymous_get.3
