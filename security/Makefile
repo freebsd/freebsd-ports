@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1999/03/12 16:58:26 jfitz Exp $
+# $Id: Makefile,v 1.46 1999/03/16 11:20:27 kris Exp $
 #
 
     SUBDIR += SSLeay
@@ -13,6 +13,7 @@
     SUBDIR += fakebo
     SUBDIR += fwtk
     SUBDIR += gnupg
+    SUBDIR += gtkportscan
     SUBDIR += john
     SUBDIR += krb5
     SUBDIR += l0pht-watch
