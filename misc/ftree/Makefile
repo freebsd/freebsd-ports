@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftree
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	misc linux
 MASTER_SITES=	http://www.vjet.demon.co.uk/ftree/ \
 		http://www.unknown.nu/ports/
@@ -16,7 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	user@unknown.nu
 COMMENT=	An X11 genealogy program
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
+USE_LINUX=	yes
+USE_X_PREFIX=	yes
+USE_XLIB=	no
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	Non-commercial use only
@@ -30,15 +32,15 @@ STRIP=		# empty: do not strip linux binary!
 do-patch:
 do-configure:
 do-build:
-	brandelf -t Linux ${WRKSRC}/X11R6/bin/ftree
+	${BRANDELF} -t Linux ${WRKSRC}/bin/ftree
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/X11R6/bin/ftree ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/X11R6/man/man1/ftree.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ftree ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/share/man/man1/ftree.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/examples
-	${INSTALL_DATA} ${WRKSRC}/doc/ftree-${PORTVERSION}/Copyright ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ftree-${PORTVERSION}/ReleaseNotes-${PORTVERSION}.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ftree-${PORTVERSION}/examples/royal.ged ${DOCSDIR}/examples
+	${INSTALL_DATA} ${WRKSRC}/share/doc/ftree-${PORTVERSION}/Copyright ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/share/doc/ftree-${PORTVERSION}/ReleaseNotes-${PORTVERSION}.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/share/doc/ftree-${PORTVERSION}/examples/royal.ged ${DOCSDIR}/examples
 .endif
 
 pre-install:

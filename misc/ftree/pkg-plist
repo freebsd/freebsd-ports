@@ -1,6 +1,6 @@
 bin/ftree
 share/doc/ftree/Copyright
-share/doc/ftree/ReleaseNotes-1.7.txt
+share/doc/ftree/ReleaseNotes-1.9.txt
 share/doc/ftree/examples/royal.ged
 @dirrm share/doc/ftree/examples
 @dirrm share/doc/ftree
