@@ -31,6 +31,8 @@ SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
 		-e 's,%%LOCALBASE%%,${LOCALBASE},g'
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
@@ -88,4 +90,4 @@ post-install:
 .endif
 	@${SED} ${SED_SCRIPT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
