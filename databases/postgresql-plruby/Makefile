@@ -19,6 +19,9 @@ COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 LIB_DEPENDS=	pq.3:${PGSQL_PORTDIR}
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
+BROKEN=		"Does not compile"
+DEPRECATED=	"Will be removed after April 15"
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
