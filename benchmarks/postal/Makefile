@@ -14,12 +14,13 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
 MAN8=	postal.8 postal-list.8 rabid.8
 
 post-patch:
-	@${PERL} -pi -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
