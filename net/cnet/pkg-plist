@@ -10,7 +10,6 @@ share/cnet/mac.gif
 share/cnet/next.gif
 share/cnet/os2.gif
 share/cnet/palm.gif
-share/cnet/palm.xpm
 share/cnet/paused.gif
 share/cnet/repair.gif
 share/cnet/router.gif
@@ -19,6 +18,7 @@ share/cnet/sun.gif
 share/cnet/windows.gif
 share/cnet/zap.gif
 %%PORTDOCS%%share/doc/cnet/application.html
+%%PORTDOCS%%share/doc/cnet/drawframes.html
 %%PORTDOCS%%share/doc/cnet/enumerated.html
 %%PORTDOCS%%share/doc/cnet/eventdriven.html
 %%PORTDOCS%%share/doc/cnet/eventfuncs.html
@@ -26,6 +26,7 @@ share/cnet/zap.gif
 %%PORTDOCS%%share/doc/cnet/functions.html
 %%PORTDOCS%%share/doc/cnet/images/UWAsmall.gif
 %%PORTDOCS%%share/doc/cnet/images/australia.gif
+%%PORTDOCS%%share/doc/cnet/images/drawframes.gif
 %%PORTDOCS%%share/doc/cnet/images/mainlink.gif
 %%PORTDOCS%%share/doc/cnet/images/mainstdio.gif
 %%PORTDOCS%%share/doc/cnet/images/mainwindow.gif
