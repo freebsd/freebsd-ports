@@ -52,6 +52,7 @@
     SUBDIR += gdome2
     SUBDIR += glimpse
     SUBDIR += gmat
+    SUBDIR += gnomespell
     SUBDIR += gpp
     SUBDIR += grap
     SUBDIR += gsed

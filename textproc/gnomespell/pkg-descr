@@ -1,0 +1,6 @@
+Gnome Spell is GNOME/Bonobo component for spell checking. In current version
+it contains GNOME::Spell::Dictionary object, which provides spell checking
+dictionary. It's based on pspell package, which is required to build
+gnome-spell.
+
+WWW: http://www.gnome.org/
