@@ -1,8 +1,8 @@
-MD5 (postgresql/postgresql-base-7.2.5.tar.gz) = 332d0d5ba7d41614635b62466dbca026
-SIZE(postgresql/postgresql-base-7.2.5.tar.gz) = 4251690
-MD5 (postgresql/postgresql-opt-7.2.5.tar.gz) = 2fceaf41384e4d03b90ce2af59b0e247
-SIZE (postgresql/postgresql-opt-7.2.5.tar.gz) = 1789129
-MD5 (postgresql/postgresql-docs-7.2.5.tar.gz) = 14f479be516e37ee7263557311f18da4
-SIZE (postgresql/postgresql-docs-7.2.5.tar.gz) = 2206675
-MD5 (postgresql/postgresql-test-7.2.5.tar.gz) = b5365037381491cf1c87e5e7731f54bc
-SIZE (postgresql/postgresql-test-7.2.5.tar.gz) = 1023131
+MD5 (postgresql/postgresql-base-7.2.6.tar.gz) = 22aaf6be19e35b8d80d4adc5e1d9a6d1
+SIZE (postgresql/postgresql-base-7.2.6.tar.gz) = 4251932
+MD5 (postgresql/postgresql-opt-7.2.6.tar.gz) = 9deba62c3ad6ef291183bc5fd4a98bfd
+SIZE (postgresql/postgresql-opt-7.2.6.tar.gz) = 1789077
+MD5 (postgresql/postgresql-docs-7.2.6.tar.gz) = fc754809eaeda2ecba7f8600eadcc452
+SIZE (postgresql/postgresql-docs-7.2.6.tar.gz) = 2207872
+MD5 (postgresql/postgresql-test-7.2.6.tar.gz) = 8755abd71c1455f1b3ccda0f184013de
+SIZE (postgresql/postgresql-test-7.2.6.tar.gz) = 1023071
