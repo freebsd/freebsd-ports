@@ -39,6 +39,7 @@
     SUBDIR += cups
     SUBDIR += cups-base
     SUBDIR += cups-lpr
+    SUBDIR += cups-pstoraster
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
