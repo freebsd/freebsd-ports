@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.18 1998/01/07 13:34:07 erich Exp $
+# $Id: Makefile,v 1.19 1998/01/28 15:39:56 erich Exp $
 #
 
 MAJOR=	0
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}.tar.gz
 DISTFILES+=	gimp-data-min-${MM_VERSION}b.tar.gz \
             gimp-data-extras-${MM_VERSION}a.tar.gz
 
-CATEGORIES=     graphics
+CATEGORIES=     graphics tk80
 MASTER_SITES=   ftp://ftp.gimp.org/pub/gimp/0.99/${VERSION}/ \
                 ftp://ftp.cs.umn.edu/pub/gimp/gimp/0.99/${VERSION}/ \
 

@@ -3,12 +3,12 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id: Makefile,v 1.2 1997/10/30 00:42:27 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/30 15:04:15 tg Exp $
 #
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
-CATEGORIES=	audio
+CATEGORIES=	audio tk80
 MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
 EXTRACT_SUFX=	.tgz
 

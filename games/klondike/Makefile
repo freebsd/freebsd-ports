@@ -3,11 +3,11 @@
 # Date created:         26-Apr-97
 # Whom:                 johnh@isi.edu
 #
-# $Id: Makefile,v 1.3 1997/05/09 09:31:08 tg Exp $
+# $Id: Makefile,v 1.4 1997/05/09 23:42:43 asami Exp $
 #
 
 DISTNAME=       klondike-1.8
-CATEGORIES=     games
+CATEGORIES=     games tk41
 MASTER_SITES=   http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=     johnh@isi.edu

@@ -3,12 +3,12 @@
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/04 08:37:50 tg Exp $
+# $Id: Makefile,v 1.2 1998/02/05 09:02:54 tg Exp $
 #
 
 DISTNAME=       graphviz_1_21
 PKGNAME=	graphviz-1.21
-CATEGORIES=	graphics
+CATEGORIES=	graphics tk42
 MASTER_SITES=	# http://www.research.att.com/sw/tools/graphviz/
 EXTRACT_SUFX=	.src.unix.tgz
 

@@ -3,11 +3,11 @@
 # Date created:         26-Apr-97
 # Whom:                 johnh@isi.edu
 #
-# $Id: Makefile,v 1.2 1997/05/09 09:31:07 tg Exp $
+# $Id: Makefile,v 1.3 1997/05/09 23:38:42 asami Exp $
 #
 
 DISTNAME=       dontspace-1.2
-CATEGORIES=     games
+CATEGORIES=     games tk41
 MASTER_SITES=   http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=     johnh@isi.edu

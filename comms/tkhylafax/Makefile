@@ -3,12 +3,12 @@
 # Date created:		Sun Jun  8 11:51:21 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.3 1997/10/04 14:53:09 andreas Exp $
+# $Id: Makefile,v 1.4 1997/10/09 21:04:47 andreas Exp $
 #
 
 DISTNAME=	tkhylafax-3.0b2
 PKGNAME=	tkhylafax-3.0
-CATEGORIES=	comms
+CATEGORIES=	comms tk42
 MASTER_SITES=	http://www.NeoSoft.com/tcl/ftparchive/sorted/comm/tkhylafax-3.0b2/
 
 MAINTAINER=	andreas@FreeBSD.ORG
