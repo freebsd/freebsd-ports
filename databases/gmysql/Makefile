@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gmysql
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	databases
-MASTER_SITES=	http://www.loth.demon.co.uk/gmysql/ \
+MASTER_SITES=	http://www.loth.demon.co.uk/people/steved/projects/gmysql/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	dirk@FreeBSD.org
