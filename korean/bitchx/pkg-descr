@@ -1,13 +1,20 @@
-ko-bitchx-75p1
---------------
+BitchX is an IRC (Internet Relay Chat) client by Colten Edwards aka
+panasync@efnet, it is based on it's predecessors ircII and EPIC.
+BitchX was originally started as a script by Trench and HappyCrappy
+for the popular UNIX IRC client ircII. Around Christmas of 1994 the
+script was patched directly into the client by panasync.
 
-BitchX is an enhanced ircII client.  It includes many built-in features
-normally found only in scripts. Including, full ANSI color, userlists,
-flood protection, and built CDCC (XDCC) file offering.
+Korean patch history 
 
-Korean patch ; 
-  1. cocoja [ 2 Byte language support (IO) , Default server changed ]
-  2. hollywar [ Almost global message and type of date&time changed to hangul ]
+  - Leo Kim (cocoja@florida.sarang.net) ;
+
+  2 Byte Input patch.
+
+  - JunSeon Oh (hollywar@mail.holywar.net) ;
+
+  Global & Help message changed to hangul. 
+  Format of date&time changed to hangul format.
+  Output minor patch .
 
 --
-Oh Junseon <hollywar@mail.holywar.net>
+JunSeon Oh <hollywar@mail.holywar.net>
