@@ -1,5 +1,4 @@
 bin/scsh
-man/man1/scsh.1.gz
 lib/scsh/big/array.scm
 lib/scsh/big/big-util.scm
 lib/scsh/big/bigbit.scm
