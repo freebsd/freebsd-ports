@@ -7,6 +7,7 @@
 
 PORTNAME=	gtklp
 PORTVERSION=	0.9u
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gtk interface to cups
-
-BROKEN=		Size mismatch
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 
