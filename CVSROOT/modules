@@ -3964,6 +3964,7 @@ kpsk		ports/comms/kpsk
 krb4		ports/security/krb4
 krb5		ports/security/krb5
 krdesktop	ports/net/krdesktop
+krefty		ports/deskutils/krefty
 krename		ports/sysutils/krename
 kripp		ports/security/kripp
 kronolith	ports/deskutils/kronolith
