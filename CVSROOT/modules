@@ -7005,7 +7005,7 @@ p5-Net-Amazon	ports/net/p5-Net-Amazon
 p5-Net-BGP	ports/net/p5-Net-BGP
 p5-Net-CIDR	ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite	ports/net/p5-Net-CIDR-Lite
-p5-Net-DAAP-Client-Auth	ports/audio/p5-Net-DAAP-Client-Auth
+p5-Net-DAAP-Client	ports/audio/p5-Net-DAAP-Client
 p5-Net-DAAP-DMAP	ports/audio/p5-Net-DAAP-DMAP
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/dns/p5-Net-DNS
@@ -7552,7 +7552,6 @@ p5-base		ports/devel/p5-base
 p5-bioperl	ports/biology/p5-bioperl
 p5-chart	ports/graphics/p5-chart
 p5-dTemplate	ports/textproc/p5-dTemplate
-p5-dapple	ports/audio/p5-dapple
 p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
