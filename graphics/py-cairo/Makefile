@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTVERSION=	0.4.0
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,7 +45,7 @@ PLIST_SUB+=	SVG="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Enable SVG support by defining WITH_SVG"
-	@${ECHO_MSG} "Enabler PyGtk support by defining WITH_PYGTK"
+	@${ECHO_MSG} "Enable PyGtk support by defining WITH_PYGTK"
 	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
