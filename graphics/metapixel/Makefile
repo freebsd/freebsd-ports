@@ -16,9 +16,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/getopt.h
+	@${REINPLACE_CMD} -e 's,values.h,limits.h,'  ${WRKSRC}/libzoom/simple.h
+	@${REINPLACE_CMD} -e 's,MINSHORT,SHRT_MAX,; \
+ 			    s,MAXSHORT,SHRT_MAX,' ${WRKSRC}/libzoom/zoom.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/metapixel ${PREFIX}/bin

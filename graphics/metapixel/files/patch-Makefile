@@ -1,10 +1,8 @@
---- Makefile.orig	Fri May 24 03:03:30 2002
-+++ Makefile	Fri May 24 03:04:54 2002
-@@ -1,15 +1,17 @@
+--- Makefile.orig	Fri Jan 21 23:32:17 2000
++++ Makefile	Tue Sep 24 03:40:26 2002
+@@ -1,18 +1,18 @@
 -PREFIX = /usr/local
 -INSTALL = install
-+#PREFIX = /usr/local
-+#INSTALL = install
  
  BINDIR = $(PREFIX)/bin
  
@@ -12,14 +10,18 @@
  
  #PROFILE = -pg
 +CFLAGS+= -I/usr/local/include
-+LDFLAGS+= -L/usr/local/lib
++LDFLAGS+= -L/usr/local/lib -lgnugetopt
  
 -LDOPTS = -L/usr/X11R6/lib $(PROFILE)
 -CCOPTS = -I/usr/X11R6/include -I/usr/X11R6/include/X11 -Wall -O9 $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
 -CC = gcc
 +LDOPTS = ${LDFLAGS} -L/usr/X11R6/lib $(PROFILE)
-+CCOPTS = ${CFLAGS} -I/usr/X11R6/include -I/usr/X11R6/include/X11 -Wall -O9 $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
++CCOPTS = ${CFLAGS} -I/usr/X11R6/include -I/usr/X11R6/include/X11 -Wall $(PROFILE) -DMETAPIXEL_VERSION=\"$(VERSION)\"
 +#CC = gcc
  #LIBFFM = -lffm
  
- OBJS = metapixel.o vector.o rwpng.o rwjpeg.o readimage.o writeimage.o getopt.o getopt1.o
+-OBJS = metapixel.o vector.o rwpng.o rwjpeg.o readimage.o writeimage.o getopt.o getopt1.o
++OBJS = metapixel.o vector.o rwpng.o rwjpeg.o readimage.o writeimage.o
+ 
+ all : metapixel
+ 
