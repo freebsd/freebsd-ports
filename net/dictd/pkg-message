@@ -1,7 +1,5 @@
 ==================================================================
 
-dictd database can be found at ftp://ftp.dict.org/pub/dict
-
-example config can be found at %%PREFIX%%/share/dictd
+Dict client could be found within ports/textproc/dict.
 
 ==================================================================
