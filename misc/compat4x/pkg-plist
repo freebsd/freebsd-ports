@@ -1,0 +1,6 @@
+%%CURRENT_ONLY:%%lib/compat/libc.so.4
+%%CURRENT_ONLY:%%@unexec if [ -e %B/libc_r.so.4.compat3x ]; then ln -sf %B/libc_r.so.4.compat3x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
+%%CURRENT_ONLY:%%lib/compat/libc_r.so.4.compat4x
+%%CURRENT_ONLY:%%@exec ln -sf %B/%f %B/libc_r.so.4
+lib/compat/libcrypto.so.1
+lib/compat/libssl.so.1

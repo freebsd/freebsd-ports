@@ -1,0 +1,24 @@
+lib/compat/libalias.so.3
+lib/compat/libc.so.3
+lib/compat/libc_r.so.3
+@unexec if [ -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/libc_r.so.4.compat4x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
+lib/compat/libc_r.so.4.compat3x
+@exec if [ ! -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/%f %B/libc_r.so.4; fi
+lib/compat/libcurses.so.2
+lib/compat/libdialog.so.3
+lib/compat/libedit.so.2
+lib/compat/libf2c.so.2
+lib/compat/libfetch.so.1
+lib/compat/libftpio.so.4
+lib/compat/libg++.so.4
+lib/compat/libhistory.so.3
+lib/compat/libmytinfo.so.2
+lib/compat/libncurses.so.3
+lib/compat/libreadline.so.3
+lib/compat/libss.so.2
+lib/compat/libstdc++.so.2
+lib/compat/libtermcap.so.2
+lib/compat/libutil.so.2
+lib/compat/libvgl.so.1
+lib/compat/libwrap.so.2
+lib/compat/libxpg4.so.2
