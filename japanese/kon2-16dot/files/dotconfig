@@ -4,7 +4,7 @@ TOPDIR	= %%PREFIX%%
 BINDIR	= $(TOPDIR)/bin
 LIBDIR	= $(TOPDIR)/etc
 MANDIR	= $(TOPDIR)/man/ja/man1
-FONTDIR	= $(TOPDIR)/lib/fonts
+FONTDIR	= $(TOPDIR)/share/fonts/bdf
 CONFIG_NAME = kon.cfg
 CFLAGS  += -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\"
 

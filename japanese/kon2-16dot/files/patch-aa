@@ -34,3 +34,37 @@
      ioctl(0, VT_SETMODE, &vtm);
      vInfo.graph_mode();
      if (useHardScroll)
+@@ -830,21 +830,31 @@
+ 
+ static int	ConfigBeep(const char *confstr)
+ {
+-    beepCount = atoi(confstr) * 10000;
+ #if defined(linux)
++    beepCount = atoi(confstr) * 10000;
+     if (beepCount > 0)
+ 	ioperm(COUNTER_ADDR, 1, TRUE);
+ #endif
++#if defined(__FreeBSD__)
++    beepCount = atoi(confstr) * 10;
++#endif
+     return SUCCESS;
+ }
+ 
++#define BELL_PITCH	800
++
+ void	Beep(void)
+ {
+-    if (!con.active || beepCount <= 0) return;
+ #if defined(linux)
++    if (!con.active || beepCount <= 0) return;
+     PortOutb(PortInb(COUNTER_ADDR)|3, COUNTER_ADDR);
+     usleep(beepCount);
+     PortOutb(PortInb(COUNTER_ADDR)&0xFC, COUNTER_ADDR);
++#endif
++#if defined(__FreeBSD__)
++    if(beepCount <= 0) return;
++    ioctl(fileno(stdout), KDMKTONE, (BELL_PITCH & 0xffff) | 
++          ((beepCount & 0xffff) << 16)); 
+ #endif
+ }
+ 

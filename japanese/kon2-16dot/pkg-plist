@@ -1,7 +1,11 @@
 bin/fld
 bin/kon
 etc/kon.cfg
-lib/fonts/7x14rk.bdf.gz
-lib/fonts/k14.bdf.gz
+share/fonts/bdf/7x14rk.bdf.gz
+share/fonts/bdf/k14.bdf.gz
+share/fonts/bdf/8x16rk.bdf.gz
+share/fonts/bdf/jiskan16.bdf.gz
 share/doc/kon2/README
 share/doc/kon2/README.FreeBSD
+@dirrm share/doc/kon2
+@dirrm share/fonts/bdf
