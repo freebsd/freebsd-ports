@@ -767,7 +767,7 @@ MASTER_SITE_SOURCEFORGE_JP+= \
 
 MASTER_SITE_SOURCEWARE+= \
 	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
-	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
+	ftp://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/%SUBDIR%/ \
 	ftp://ftp1.sinica.edu.tw/pub3/GNU/CYGNUS/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
