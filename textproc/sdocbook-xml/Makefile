@@ -10,7 +10,6 @@ PORTVERSION= 	4.1.2.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/4.1.2.5/
 DISTNAME=	simple${PORTVERSION:S/.//g}
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	des@FreeBSD.org
 
@@ -18,16 +17,25 @@ RUN_DEPENDS=    ${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 PLIST_SUB=	MKCATALOG=${MKCATALOG} CATALOG=${CATALOG}
 
 SDOCBOOKDIR=	${PREFIX}/share/xml/sdocbook
 MKCATALOG=      ${LOCALBASE}/sbin/mkcatalog
 CATALOG=        ${PREFIX}/share/xml/catalog
 
+FILES=		sdbcent.mod sdbhier.mod sdbpool.mod sdocbook-custom.dtd \
+		sdocbook.css sdocbook.dtd sdocbookref-custom.dtd \
+		sdocbookref.dtd sinclist.mod
+
+do-extract:
+	${MKDIR} ${WRKDIR}; \
+	(cd ${WRKDIR} && unzip -oq ${DISTDIR}/${DISTFILES})
+
 do-install:
 	${MKDIR} ${SDOCBOOKDIR}
-	(cd ${SDOCBOOKDIR} && unzip -oq ${DISTDIR}/${DISTFILES})
+.for i in ${FILES}
+	$(INSTALL_DATA) $(WRKDIR)/${i} $(SDOCBOOKDIR)
+.endfor
 	${INSTALL_DATA} ${FILESDIR}/catalog ${SDOCBOOKDIR}
 
 post-install:
