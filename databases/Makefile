@@ -322,6 +322,7 @@
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
+    SUBDIR += ruby-sqlite3
     SUBDIR += ruby-sqlrelay
     SUBDIR += slony1
     SUBDIR += sqlite2
