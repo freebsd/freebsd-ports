@@ -1,5 +1,5 @@
---- lib/error.c	Wed Nov 15 12:19:40 1989
-+++ lib/error.c	Wed Jun 10 23:17:18 1998
+--- lib/error.c.orig	Wed Nov 15 04:19:40 1989
++++ lib/error.c	Wed Sep  4 19:20:59 2002
 @@ -19,6 +19,7 @@
  
  #include <stdio.h>
@@ -8,11 +8,13 @@
  
  #ifdef lint
  
-@@ -32,7 +33,6 @@
+@@ -31,9 +32,6 @@
+ #else lint
  
  extern char *ProgName;
- extern int errno;
+-extern int errno;
 -extern char *sys_errlist[];
- extern int sys_nerr;
+-extern int sys_nerr;
  
  error(va_alist)
+ 	va_dcl
