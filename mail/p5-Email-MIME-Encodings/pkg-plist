@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Email/MIME/Encodings.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Encodings/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Encodings
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email/MIME/Encodings 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email/MIME 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
