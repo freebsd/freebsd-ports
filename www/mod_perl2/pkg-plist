@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/mp2bug
 bin/mp2doc
 include/apache2/modules/perl/mod_perl.h
@@ -116,6 +117,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/XSLoader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/porting.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Bundle/Apache2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ModPerl/BuildMM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ModPerl/BuildOptions.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ModPerl/Code.pm
@@ -225,7 +227,6 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/mod_perl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Bundle/Apache2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl/.packlist
 libexec/apache2/mod_perl.so
@@ -278,6 +279,7 @@ libexec/apache2/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/ModPerl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
