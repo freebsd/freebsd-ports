@@ -8,8 +8,7 @@
 
 DISTNAME=	xferstats-2.14
 CATEGORIES=	net
-MASTER_SITES=	http://xferstats.off.net/download/xferstats-2.00/ \
-		ftp://xferstats.off.net/pub/xferstats/xferstats-2.00/ \
+MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/	\
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 
 MAINTAINER=	dima@Chg.RU
