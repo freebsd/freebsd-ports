@@ -1611,6 +1611,7 @@ endeavour	ports/x11-fm/endeavour
 enfle		ports/graphics/enfle
 engradient	ports/x11-toolkits/engradient
 enigmail	ports/mail/enigmail
+enigmail-thunderbird	ports/mail/enigmail-thunderbird
 enjoympeg	ports/multimedia/enjoympeg
 enlightenment	ports/x11-wm/enlightenment
 enscript-a4	ports/print/enscript-a4
