@@ -10,7 +10,6 @@ PORTVERSION=	2.1
 CATEGORIES=	java
 MASTER_SITES=	http://artho.com/jlint/ \
 		http://jollem.com/~ernst/
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ernst@jollem.com
 
