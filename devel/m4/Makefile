@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	m4
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=yes
-CONFIGURE_ARGS= --program-prefix=g
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=g
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/gm4
