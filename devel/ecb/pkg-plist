@@ -1,0 +1,21 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-eshell.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-eshell.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-help.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-layout.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-mode-line.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-navigate.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb-util.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/ecb.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/tree-buffer.el
+%%EMACS_VERSION_SITE_LISPDIR%%/ecb/tree-buffer.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/ecb
+%%PORTDOCS%%share/doc/ecb/HISTORY
+%%PORTDOCS%%share/doc/ecb/README
+%%PORTDOCS%%share/doc/ecb/RELEASE_NOTES
+%%PORTDOCS%%@dirrm share/doc/ecb
