@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	naddy
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Batch SMTP support for sendmail, incoming and outgoing
 
+CONFLICTS=	smail-3.*
+
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
