@@ -6,33 +6,68 @@
 #
 
 PORTNAME=	prc-tools
-PORTVERSION=	2.0
+PORTVERSION=	2.2
 CATEGORIES=	palm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	prc-tools
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} ${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR= prc-tools binutils/releases gcc/releases/gcc-2.95.3 gdb/old-releases
+DISTNAME=	prc-tools-${PORTVERSION}
+DISTFILES=	${DISTNAME}.tar.gz \
+		binutils-2.12.1.tar.bz2 gdb-5.0.tar.bz2 gcc-2.95.3.tar.bz2
+EXTRACT_ONLY=	binutils-2.12.1.tar.bz2 gdb-5.0.tar.bz2 gcc-2.95.3.tar.bz2
 
 MAINTAINER=	linimon@lonesome.com
-COMMENT=	PRC-tools for Palm OS (main part)
+COMMENT=		Collection of tools supporting C and C++ programming for Palm OS
 
-BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-gcc:${PORTSDIR}/palm/prc-tools-gcc \
-		${LOCALBASE}/palmdev/sdk-3.5/include/Core/System/NetMgr.h:${PORTSDIR}/palm/palmos-sdk
+BUILD_DEPENDS=	${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
 
-RESTRICTED=	Required port is restricted.
+USE_BZIP2=	YES
 USE_BISON=	YES
 USE_GMAKE=	YES
 PREFIX=		${LOCALBASE}/pilot
 WRKSRC=		${WRKDIR}/build
-ALL_TARGET=	all-target
-INSTALL_TARGET=	install-target
 HAS_CONFIGURE=	YES
-CONFIGURE_SCRIPT=	../prc-tools-2.0/configure
+CONFIGURE_SCRIPT=	../prc-tools-${PORTVERSION}/configure
 CONFIGURE_ARGS=	--target=m68k-palmos --enable-languages=c,c++ \
 		--sharedstatedir=${LOCALBASE}/palmdev --prefix=${PREFIX} \
-		--with-build-sdk=3.5
+		--with-headers=${WRKSRC}/empty  --disable-nls
 CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/bin
 MAKE_ENV=	PATH=${PATH}:${PREFIX}/bin
+MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1 \
+		m68k-palmos-addr2line.1 m68k-palmos-ar.1 \
+		m68k-palmos-as.1 m68k-palmos-c++filt.1 \
+		m68k-palmos-ld.1 m68k-palmos-nlmconv.1 \
+		m68k-palmos-nm.1 m68k-palmos-objcopy.1 \
+		m68k-palmos-objdump.1 m68k-palmos-ranlib.1 \
+		m68k-palmos-size.1 m68k-palmos-strings.1 \
+		m68k-palmos-strip.1 m68k-palmos-dlltool.1 \
+		m68k-palmos-readelf.1 m68k-palmos-windres.1 \
+		m68k-palmos-gdb.1
+
+.include <bsd.port.pre.mk>
+
+CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
+
+post-extract:
+	@(cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS})
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/empty
 
-.include <bsd.port.mk>
+post-patch:
+	(cd ${WRKDIR} && \
+	 ${CAT}	prc-tools-${PORTVERSION}/binutils-2.12.1.palmos.diff \
+		prc-tools-${PORTVERSION}/gdb-5.0.palmos.diff \
+		prc-tools-${PORTVERSION}/gcc-2.95.3.palmos.diff | ${PATCH} -p0)
+
+pre-configure:
+	(cd ${WRKDIR}/prc-tools-${PORTVERSION} && \
+	 ${LN} -sf ../binutils-2.12.1 binutils; \
+	 ${LN} -sf ../gdb-5.0 gdb; \
+	 ${LN} -sf ../gcc-2.95.3 gcc)
+
+post-install:
+	${RM} ${PREFIX}/bin/m68k-palmos-c++filt
+	${RM} ${PREFIX}/lib/libiberty.a
+	${RM} -f ${PREFIX}/m68k-palmos/sys-include/COPIED
+
+.include <bsd.port.post.mk>
