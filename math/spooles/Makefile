@@ -7,7 +7,7 @@
 
 PORTNAME=	spooles
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.netlib.org/linalg/spooles/
 .ifdef WITH_MPI
@@ -36,16 +36,13 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	global
 
-.if defined(WITH_THREADS)
-PLIST_SUB+=	MT=""
-CFLAGS+=	${PTHREAD_CFLAGS}
-.else
-PLIST_SUB+=	MT="@comment "
-.endif
 .if defined(WITH_MPI)
 PLIST_SUB+=	MPI=""
+PLIST_SUB+=	MT="@comment "
 CONFLICTS=	spooles-2*
 .else
+CFLAGS+=	${PTHREAD_CFLAGS}
+PLIST_SUB+=	MT=""
 PLIST_SUB+=	MPI="@comment "
 CONFLICTS=	spooles-mpich-2*
 .endif
@@ -53,46 +50,33 @@ CONFLICTS=	spooles-mpich-2*
 .SILENT:
 
 pre-everything::
-.if !defined(WITH_THREADS)
-	${ECHO_MSG} "make WITH_THREADS=yes for threaded version"
-.endif
 .if !defined(WITH_MPI)
 	${ECHO_MSG} "make WITH_MPI=yes for mpich version"
 .endif
 
-.if defined (WITH_THREADS) && (WITH_MPI)
-BROKEN=	mpich is *NOT* threadsafe at the moment
-.endif
-
 post-patch:
-.if defined(WITH_THREADS)
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/Make.inc
-.else
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%++g;' ${WRKSRC}/Make.inc
-	@${REINPLACE_CMD} -e 's+THREAD_TYPE TT_POSIX+THREAD_TYPE TT_NONE+;' ${WRKSRC}/Lock/Lock.h
-.endif
 .if defined(WITH_MPI)
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/Make.inc
+.else
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/Make.inc
 .endif
 
 post-build:
-.if defined(WITH_THREADS)
-	@(cd ${WRKSRC}/MT/src; ${GMAKE} -f makeGlobalLib)
-.endif
 .if defined(WITH_MPI)
 	@(cd ${WRKSRC}/MPI/src; ${GMAKE} -f makeGlobalLib)
+.else
+	@(cd ${WRKSRC}/MT/src; ${GMAKE} -f makeGlobalLib)
 .endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/spooles
 	${INSTALL} ${WRKSRC}/spooles.a ${PREFIX}/lib/libspooles.a
-.if defined(WITH_THREADS)
-	${MKDIR} ${PREFIX}/include/spooles/MT
-	${INSTALL_DATA} ${WRKSRC}/MT/*.h ${PREFIX}/include/spooles/MT
-.endif
 .if defined(WITH_MPI)
 	${MKDIR} ${PREFIX}/include/spooles/MPI
 	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${PREFIX}/include/spooles/MPI
+.else
+	${MKDIR} ${PREFIX}/include/spooles/MT
+	${INSTALL_DATA} ${WRKSRC}/MPI/*.h ${PREFIX}/include/spooles/MT
 .endif
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/spooles/
 .for i in A2 BPG Chv ChvList ChvManager Coords DenseMtx DSTree Drand \
