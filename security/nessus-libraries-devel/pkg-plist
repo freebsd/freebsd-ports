@@ -9,15 +9,15 @@ include/nessus/net/bpf.h
 lib/libhosts_gatherer.a
 lib/libhosts_gatherer.la
 lib/libhosts_gatherer.so
-lib/libhosts_gatherer.so.3
+lib/libhosts_gatherer.so.4
 lib/libnessus.a
 lib/libnessus.la
 lib/libnessus.so
-lib/libnessus.so.3
+lib/libnessus.so.4
 lib/libpcap-nessus.a
 lib/libpcap-nessus.la
 lib/libpcap-nessus.so
-lib/libpcap-nessus.so.3
+lib/libpcap-nessus.so.4
 sbin/uninstall-nessus
 @dirrm include/nessus/net
 @dirrm include/nessus
