@@ -20,6 +20,7 @@ share/apsfilter/driver/bjc7000
 share/apsfilter/driver/bjc800
 share/apsfilter/driver/bmp
 share/apsfilter/driver/cdeskjet
+share/apsfilter/driver/cdj670
 share/apsfilter/driver/cdj970
 share/apsfilter/driver/cdjcolor
 share/apsfilter/driver/cdjmono
@@ -141,6 +142,7 @@ share/apsfilter/driver/omni/Canon_BJ_230
 share/apsfilter/driver/omni/Canon_BJ_30
 share/apsfilter/driver/omni/Canon_BJ_F600
 share/apsfilter/driver/omni/Canon_BJ_F6000
+share/apsfilter/driver/omni/Canon_S450
 share/apsfilter/driver/omni/Epson_24_pin_136_Col
 share/apsfilter/driver/omni/Epson_AP_3250
 share/apsfilter/driver/omni/Epson_AP_3260
