@@ -1,11 +1,11 @@
---- tools/Makefile.in.orig	Tue Jun 22 18:51:15 2004
-+++ tools/Makefile.in	Tue Jun 22 18:51:24 2004
-@@ -243,7 +243,7 @@
+--- tools/Makefile.in.orig	Sun Aug 15 18:48:10 2004
++++ tools/Makefile.in	Sun Aug 15 18:48:16 2004
+@@ -240,7 +240,7 @@
  
  hydrogenPlayer_SOURCES = hydrogenPlayer.cpp
- hydrogenPlayer_LDADD = ../lib/libhydrogen.a
+ hydrogenPlayer_LDADD = ../lib/libhydrogen.a ../lib/xml/libtinyxml.a ../lib/drivers/libdrivers.a ../lib/fx/libfx.a ../lib/smf/libsmf.a
 -hydrogenPlayer_LDFLAGS = -ldl $(all_libraries)
 +hydrogenPlayer_LDFLAGS = $(all_libraries)
- subdir = tools
- mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
+ 
+ hydrogen2midi_SOURCES = hydrogen2midi.cpp
+ hydrogen2midi_LDADD = ../lib/libhydrogen.a ../lib/xml/libtinyxml.a ../lib/drivers/libdrivers.a ../lib/fx/libfx.a ../lib/smf/libsmf.a

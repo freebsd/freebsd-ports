@@ -6,15 +6,17 @@
 #
 
 PORTNAME=		hydrogen
-PORTVERSION=		0.8.2
+PORTVERSION=		0.9.0.b1
 CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=		${PORTNAME}-0.9.0beta1
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		An advanced drum machine
 
-LIB_DEPENDS=		audiofile:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS=		sndfile:${PORTSDIR}/audio/libsndfile \
+			FLAC:${PORTSDIR}/audio/flac
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
@@ -26,7 +28,6 @@ CPPFLAGS=		-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib -L${X11BASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=		--program-prefix="" --disable-alsa-seq
-ALL_TARGET=		clean all
 
 MAN1=			hydrogen.1
 
@@ -59,9 +60,7 @@ post-patch:
 		-e 's|-pthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' \
-		${WRKSRC}/lib/LadspaFX.cpp \
+		${WRKSRC}/lib/fx/LadspaFX.cpp \
 		${WRKSRC}/lib/PreferencesMng.cpp
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
-		${WRKSRC}/data/demo_songs/*.h2song
 
 .include <bsd.port.post.mk>
