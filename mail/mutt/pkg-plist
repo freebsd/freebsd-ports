@@ -165,6 +165,7 @@ share/mutt/charmaps/T.101-G2
 share/mutt/charmaps/T.61-7BIT
 share/mutt/charmaps/T.61-8BIT
 share/mutt/charmaps/VIDEOTEX-SUPPL
+share/mutt/charmaps/WINDOWS-1251
 share/locale/cs/LC_MESSAGES/mutt.mo
 share/locale/da/LC_MESSAGES/mutt.mo
 share/locale/de/LC_MESSAGES/mutt.mo
