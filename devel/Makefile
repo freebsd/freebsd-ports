@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.115 1998/07/04 22:35:00 nectar Exp $
+# $Id: Makefile,v 1.116 1998/07/06 17:29:18 nectar Exp $
 #
 
     SUBDIR += ElectricFence
@@ -35,6 +35,7 @@
     SUBDIR += gmake
     SUBDIR += id-utils
     SUBDIR += ilu
+    SUBDIR += jam
     SUBDIR += lclint
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
