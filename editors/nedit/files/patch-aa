@@ -45,7 +45,7 @@
 + 
 + # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
 + CFLAGS=-O -I${PREFIX}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD
-+ LIBS= -L${PREFIX}/lib -lm ${PREFIX}/lib/libXm.a -lXpm -lXext -lXt -lSM -lICE -lX11
++ LIBS= ${MOTIFLIB} -L${PREFIX}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
 + 
 + include Makefile.common
 *** util/Makefile.common.orig	Sun Apr  7 17:33:24 1996
@@ -77,7 +77,7 @@
 + 
 + # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
 + CFLAGS=-O -I${PREFIX}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD
-+ LIBS= -L${PREFIX}/lib -lm ${PREFIX}/lib/libXm.a -lXpm -lXext -lXt -lSM -lICE -lX11
++ LIBS= ${MOTIFLIB} -L${PREFIX}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
 + 
 + include Makefile.common
 *** source/Makefile.common.orig	Sun Apr  7 17:51:54 1996
