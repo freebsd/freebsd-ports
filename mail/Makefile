@@ -13,6 +13,7 @@
     SUBDIR += antivirus-milter
     SUBDIR += anubis
     SUBDIR += archivemail
+    SUBDIR += archmbox
     SUBDIR += arrow
     SUBDIR += asmail
     SUBDIR += autorespond
