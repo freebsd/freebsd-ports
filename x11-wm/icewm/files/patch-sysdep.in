@@ -1,11 +1,13 @@
---- sysdep.in.orig	Sat Mar 17 06:17:36 2001
-+++ sysdep.in	Mon Mar 26 20:56:29 2001
-@@ -2,7 +2,7 @@
- LD = @CXX_LINK@
- 
+--- sysdep.in.orig	Tue Oct  9 23:54:02 2001
++++ sysdep.in	Sat Mar 23 15:48:48 2002
+@@ -4,8 +4,8 @@
  SYS_CFLAGS = \
--	@DEBUG@ @CXXFLAGS@ @DEFS@ \
-+	@DEBUG@ @CXXFLAGS@ @CPPFLAGS@ @DEFS@ \
+ 	@DEBUG@ @CXXFLAGS@ @DEFS@ \
  	@CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ @GNOME_CFLAGS@
- SYS_INCDIRS =
- SYS_LIBDIRS =
+-SYS_INCDIRS =
+-SYS_LIBDIRS =
++SYS_INCDIRS = @CPPFLAGS@
++SYS_LIBDIRS = @LDFLAGS@
+ SYS_LIBS = @LIBS@
+ 
+ CORE_LIBS = @CORE_LIBS@
