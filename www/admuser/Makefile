@@ -9,7 +9,7 @@ PORTNAME=	admuser
 PORTVERSION=	2.3
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://web.onda.com.br/orso/
+MASTER_SITES=	http://sarg.sourceforge.net/
 
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Handle your Squid or Web users and passwords using your browser
