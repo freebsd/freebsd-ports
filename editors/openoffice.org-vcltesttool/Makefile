@@ -1,62 +1,87 @@
-# ex:ts=8
 # New ports collection makefile for: OpenOffice
-# Date created:		22 August 2000
+# Date created:		28 Februar 2002
 # Whom:                 Martin Blapp
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	6.0.a638
+PORTVERSION=	6.0.641
 CATEGORIES=	editors
-MASTER_SITES=	http://a2024.g.akamai.net/7/2024/2064/OpenOffice638/anoncvs.openoffice.org/download/OpenOffice638/ \
-		http://a2000.g.akamai.net/7/2000/2064/OpenOffice638/anoncvs.openoffice.org/download/OpenOffice638/
-DISTNAME=	oo_638_src
-#DISTFILES=	oo_638_src${EXTRACT_SUFX} solenv638_linuxintel${EXTRACT_SUFX}
+MASTER_SITES=	http://sf1.mirror.openoffice.org/641b/ \
+		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
+		ftp://ftp.netbsd.org/pub/NetBSD/misc/mrauch/ 
+DISTFILES=	oo_641_src.tar.bz2 gpc231.tar.Z oo_moz_641.tar.gz
+EXTRACT_ONLY=	oo_641_src.tar.bz2
+EXTRACT_REST=	gpc231.tar.Z oo_moz_641.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
+BROKEN=		'Work in progress -- does not build yet till the end'
+
+USE_BZIP2= yes
+EXTRACT_BEFORE_ARGS_R= -dc
+EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
+EXTRACT_CMD_R= ${GZIP_CMD}
+
+GCC_VERSION!=	${CC} --version
 
 BUILD_DEPENDS=	stlport:${PORTSDIR}/devel/stlport
+BUILD_DEPENDS+= bison:${PORTSDIR}/devel/bison
+BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
+BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS+=	pth:${PORTSDIR}/devel/pth
 
-BROKEN=		'work in progress -- does not work yet'
+GNU_CONFIGURE=	yes
+WRKSRC=	${WRKDIR}/oo_641_src/config_office
 
-BZIP2=		yes
-CONFIGURE_WRKSRC=	${WRKSRC}/config_office
+CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
+			--with-jdk-home=${PREFIX}/jdk1.3.1
 
 .include <bsd.port.pre.mk>
 
-do-install:
+pre-fetch:
+.if ${GCC_VERSION}!="2.95.2" && ${GCC_VERSION}!="2.95.3"
+	@ ${ECHO}
+	@ ${ECHO} Openoffice requires gcc 2.95.2 or better
+	@ ${ECHO}
+	@ ${FALSE}
+.endif
+.if ${OSVERSION} < 500031
+	@${ECHO}
+	@${ECHO} OS-VERSION ${OSVERSION}
+	@${ECHO}
+	@${ECHO} Openoffice depends on OS-Fixes which are
+	@${ECHO} not yet available.
+	@${FALSE}
+.endif
+
+pre-extract:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
 	@ ${ECHO} Can\'t open display:
 	@ ${ECHO} Please check your DISPLAY variable.
 	@ ${ECHO}
 	@ ${FALSE}
-.else
-.if exists(${LINUXBASE}/${PREFIX})
-	@${LN} -fs ${LINUXBASE}/${PREFIX}/office52 ${PREFIX}/office52
-.endif
-	@${CAT} ${PKGMESSAGE}
-	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} ${LINUXBASE}/bin/sh -c '${WRKSRC}/setup /net'
-	@if [ -f ${PREFIX}/office52/program/setup ]; then \
-		${ECHO} ; \
-		${ECHO} Ignore the error-message. OpenOffice has been installed ; \
-		${ECHO} successfully on your system. ; \
-		${ECHO} ; \
-	else \
-		${ECHO} ; \
-		${ECHO} An error occured during OpenOffice install. Please send a mail with debug-output and ; \
-		${ECHO} some information about your FreeBSD-environment to mb@imp.ch. Thanks. ; \
-		${ECHO} ; \
-		${FALSE} ; \
-	fi
 .endif
 
-post-install:
-	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
-	@${PATCH} -s ${PREFIX}/office52/program/soffice ${FILESDIR}/soffice.patch
+post-extract:
+	@for file in ${EXTRACT_REST}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD_R} \
+			${EXTRACT_BEFORE_ARGS_R} \
+			${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS_R}) ; \
+		then \
+			exit 1; \
+		fi \
+	done
+	${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
+	${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
 
-install-user:
-	${PREFIX}/office52/program/setup
+do-build:
+	@cd ${WRKDIR}/oo_641_src && ./bootstrap
+	@cd ${WRKDIR}/oo_641_src && /bin/tcsh -c 'source FreeBSDEnv.Set && dmake'
+
+do-install:
+	@cd ${WRKDIR}/oo_641_src && ./setup -r:oo_setup.resp
 
 .include <bsd.port.post.mk>

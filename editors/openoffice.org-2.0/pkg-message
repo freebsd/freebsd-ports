@@ -1,14 +1,15 @@
-StarOffice 5.2 Personal Install How-To
+OpenOffice Build 641 Personal Install How-To
 
-Written by:      Darren Wiebe <dkwiebe@hagenhomes.com>
-		 and Martin Blapp <mb@imp.ch>
+Written by:	Matthias Rauch <mrauch@netbsd.org>
+		Martin Blapp <mbr@freebsd.org>
 
-You will very shortly have finished  a network install of StarOffice 5.2.
-Once that is done exit X11 and run it again as the user that you usually use.
-Then run "make install-user" and do a standard workstation install.
-Change the install path to $HOME/office52. Then add $HOME/office52/ to your path.
+OpenOffice has now been installed in ${PREFIX}/OpenOffice.org641.
 
-It will now be ready to use.
+Once that is done exit X11 and run it again as the user
+that you usually use. Then run "make install-user" and do
+a standard workstation Thereafter, OpenOffice can be started using the
+${PREFIX}/bin/soffice command.
 
-Good Luck
-
+Please note that this software should be considered alpha quality
+at the moment, i.e. take extra care when using it in production
+environments.
