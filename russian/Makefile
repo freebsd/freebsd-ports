@@ -15,6 +15,7 @@
     SUBDIR += koi2koi
     SUBDIR += koi8r-ps
     SUBDIR += ksocrat
+    SUBDIR += linux-mozillafirebird
     SUBDIR += messarge
     SUBDIR += mtc
     SUBDIR += muttprint
