@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	liteamp
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://download.kldp.net/liteamp/
 
