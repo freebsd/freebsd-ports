@@ -1,12 +1,112 @@
-Xalan-C CVS: xml-xalan/c/src/xalanc/PlatformSupport/XalanArrayAllocator.hpp?r1=1.6&r2=1.7
---- src/xalanc/PlatformSupport/XalanArrayAllocator.hpp.orig	Mon Dec 13 21:34:54 2004
-+++ src/xalanc/PlatformSupport/XalanArrayAllocator.hpp	Mon Dec 13 21:35:22 2004
-@@ -170,7 +170,7 @@
- 		ListEntryType&	theNewEntry = m_list.back();
+--- ./src/xalanc/ICUBridge/ICUFormatNumberFunctor.hpp.orig	Sat Mar  5 17:46:13 2005
++++ ./src/xalanc/ICUBridge/ICUFormatNumberFunctor.hpp	Sat Mar  5 17:46:23 2005
+@@ -120,6 +120,8 @@ struct DecimalFormatCacheStruct
+ private:
  
- 		// Resize the vector to the appropriate size...
--		theNewEntry.second.resize(theBlockSize, VectorType::value_type(0));
-+		theNewEntry.second.resize(theBlockSize, value_type(0));
+     DecimalFormatCacheStruct();
++
++public:
+     DecimalFormatCacheStruct(const DecimalFormatCacheStruct& other);
+     
+ };
+--- ./src/xalanc/TestXSLT/process.cpp.orig	Sat Dec 25 10:53:35 2004
++++ ./src/xalanc/TestXSLT/process.cpp	Sat Dec 25 12:05:48 2004
+@@ -628,7 +628,7 @@
+ 	}
+ 	else if(FormatterListener::OUTPUT_METHOD_TEXT == outputType)
+ 	{
+-		formatter = new FormatterToText( theManager, resultWriter, mimeEncoding);
++		formatter = new FormatterToText( resultWriter, mimeEncoding, true, true, theManager);
+ 	}
+ 	else if(FormatterListener::OUTPUT_METHOD_HTML == outputType)
+ 	{
+@@ -656,14 +656,15 @@
  
- 		// Set the number of free spaces accordingly...
- 		theNewEntry.first = theBlockSize - theCount;
+ 		FormatterToHTML* const	fToHTML =
+ 				new FormatterToHTML(
+-                        theManager,
+ 						resultWriter,
+ 						mimeEncoding,
+ 						mediatype,
+ 						doctypeSystem,
+ 						doctypePublic,
+ 						outputIndent,
+-						indentAmount);
++						indentAmount,
++						true, false,
++						theManager);
+ 
+ 		fToHTML->setPrefixResolver(&prefixResolver);
+ 
+--- ./src/xalanc/XMLSupport/FormatterToText.hpp.orig	Sat Dec 25 10:50:53 2004
++++ ./src/xalanc/XMLSupport/FormatterToText.hpp	Sat Dec 25 10:50:57 2004
+@@ -221,7 +221,9 @@
+ private:
+ 
+ 	// These are not implemented.
++#if 0
+ 	FormatterToText(const FormatterToText&);
++#endif
+ 
+ 	FormatterToText&
+ 	operator=(const FormatterToText&);
+--- ./src/xalanc/XPath/ElementPrefixResolverProxy.hpp.orig	Sat Dec 25 09:51:20 2004
++++ ./src/xalanc/XPath/ElementPrefixResolverProxy.hpp	Sat Dec 25 09:51:28 2004
+@@ -86,7 +86,9 @@
+ 
+ private:
+     //notimplemented
++#if 0
+     ElementPrefixResolverProxy(const ElementPrefixResolverProxy&);
++#endif
+ 
+ 	const XalanElement* const		m_namespaceContext;
+ 
+--- ./src/xalanc/XPath/NameSpace.hpp.orig	Sat Dec 25 10:17:01 2004
++++ ./src/xalanc/XPath/NameSpace.hpp	Sat Dec 25 10:17:15 2004
+@@ -191,7 +191,9 @@
+ 	}	
+ 
+ private:
++#if 0
+ 	NameSpace(const NameSpace&);
++#endif
+ 
+ 	XalanDOMString	m_prefix;
+ 
+--- ./src/xalanc/XPath/XalanQNameByValue.hpp.orig	Sat Dec 25 10:30:57 2004
++++ ./src/xalanc/XPath/XalanQNameByValue.hpp	Sat Dec 25 10:31:09 2004
+@@ -290,7 +290,9 @@
+ 
+ private:
+     // not implemented
++#if 0
+     XalanQNameByValue(const XalanQNameByValue&	theSource);
++#endif
+ 	void
+ 	initialize(
+ 			const XalanDOMChar*			qname,
+--- ./src/xalanc/XSLT/FunctionSystemProperty.hpp.orig	Sat Dec 25 10:29:12 2004
++++ ./src/xalanc/XSLT/FunctionSystemProperty.hpp	Sat Dec 25 10:30:13 2004
+@@ -73,7 +73,9 @@
+ 
+ private:
+ 
++#if 0
+ 	FunctionSystemProperty(const FunctionSystemProperty&);
++#endif
+ 
+ 	// Not implemented...
+ 	FunctionSystemProperty&
+--- ./src/xalanc/XSLT/TopLevelArg.hpp.orig	Sat Dec 25 10:26:41 2004
++++ ./src/xalanc/XSLT/TopLevelArg.hpp	Sat Dec 25 10:27:01 2004
+@@ -147,7 +147,9 @@
+ 
+ private:
+     // not implemented
++#if 0
+     TopLevelArg(const TopLevelArg&	theSource);
++#endif
+ 
+ 	XalanQNameByValue	m_qname;
+ 

@@ -7,12 +7,15 @@ include/xalanc/DOMSupport/DOMSupportInit.hpp
 include/xalanc/DOMSupport/TreeWalker.hpp
 include/xalanc/DOMSupport/XalanDocumentPrefixResolver.hpp
 include/xalanc/DOMSupport/XalanNamespacesStack.hpp
-%%ICUDEP%%include/xalanc/ICUBridge/FunctionICUFormatNumber.hpp
+include/xalanc/Harness/XalanFileUtility.hpp
+include/xalanc/Harness/XalanHarnessDefinitions.hpp
+include/xalanc/Harness/XalanXMLFileReporter.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridge.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCleanup.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCollationCompareFunctor.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeCollationCompareFunctorImpl.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUBridgeDefinitions.hpp
+%%ICUDEP%%include/xalanc/ICUBridge/ICUFormatNumberFunctor.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatFactory.hpp
 %%ICUDEP%%include/xalanc/ICUBridge/ICUXalanNumberFormatProxy.hpp
 include/xalanc/Include/AIXDefinitions.hpp
@@ -27,12 +30,22 @@ include/xalanc/Include/STLHelper.hpp
 include/xalanc/Include/SolarisDefinitions.hpp
 include/xalanc/Include/TRU64Definitions.hpp
 include/xalanc/Include/VCPPDefinitions.hpp
-include/xalanc/Include/XalanArrayKeyMap.hpp
 include/xalanc/Include/XalanAutoPtr.hpp
+include/xalanc/Include/XalanDeque.hpp
+include/xalanc/Include/XalanList.hpp
+include/xalanc/Include/XalanMap.hpp
+include/xalanc/Include/XalanSet.hpp
+include/xalanc/Include/XalanMemMgrAutoPtr.hpp
+include/xalanc/Include/XalanMemMgrHelper.hpp
+include/xalanc/Include/XalanMemMngArrayAllocate.hpp
+include/xalanc/Include/XalanMemoryManagement.hpp
 include/xalanc/Include/XalanObjectCache.hpp
+include/xalanc/Include/XalanObjectStackCache.hpp
+include/xalanc/Include/XalanVector.hpp
 include/xalanc/Include/XalanVersion.hpp
 include/xalanc/PlatformSupport/ArenaAllocator.hpp
 include/xalanc/PlatformSupport/ArenaBlock.hpp
+include/xalanc/PlatformSupport/ArenaBlockBase.hpp
 include/xalanc/PlatformSupport/AttributeListImpl.hpp
 include/xalanc/PlatformSupport/AttributeVectorEntry.hpp
 include/xalanc/PlatformSupport/AttributeVectorEntryExtended.hpp
@@ -66,6 +79,7 @@ include/xalanc/PlatformSupport/XalanDOMStringAllocator.hpp
 include/xalanc/PlatformSupport/XalanDOMStringCache.hpp
 include/xalanc/PlatformSupport/XalanDOMStringHashTable.hpp
 include/xalanc/PlatformSupport/XalanDOMStringPool.hpp
+include/xalanc/PlatformSupport/XalanDOMStringReusableAllocator.hpp
 include/xalanc/PlatformSupport/XalanDecimalFormatSymbols.hpp
 include/xalanc/PlatformSupport/XalanEncodingPropertyCache.hpp
 include/xalanc/PlatformSupport/XalanFStreamOutputStream.hpp
@@ -295,6 +309,8 @@ include/xalanc/XSLT/XalanElemTextAllocator.hpp
 include/xalanc/XSLT/XalanElemTextLiteralAllocator.hpp
 include/xalanc/XSLT/XalanElemValueOfAllocator.hpp
 include/xalanc/XSLT/XalanElemVariableAllocator.hpp
+include/xalanc/XSLT/XalanMatchPatternData.hpp
+include/xalanc/XSLT/XalanMatchPatternDataAllocator.hpp
 include/xalanc/XSLT/XalanNumberingResourceBundle.hpp
 include/xalanc/XSLT/XalanSourceTreeDocumentAllocator.hpp
 include/xalanc/XSLT/XalanSourceTreeDocumentFragmentAllocator.hpp
@@ -442,9 +458,11 @@ include/xalanc/XercesParserLiaison/XercesTextWrapper.hpp
 include/xalanc/XercesParserLiaison/XercesTextWrapperAllocator.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperHelper.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperNavigator.hpp
+include/xalanc/XercesParserLiaison/XercesWrapperNavigatorAllocator.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperToXalanNodeMap.hpp
 include/xalanc/XercesParserLiaison/XercesWrapperTypes.hpp
 @dirrm include/xalanc/DOMSupport
+@dirrm include/xalanc/Harness
 %%ICUDEP%%@dirrm include/xalanc/ICUBridge
 @dirrm include/xalanc/Include
 @dirrm include/xalanc/PlatformSupport
@@ -501,53 +519,54 @@ lib/%%XALANC_LIB%%
 @comment
 @comment SAMPLE SRC
 @comment
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/XalanTransformerCallback.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/foo.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/foo.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransformerCallback/XalanTransformerCallback.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/XalanTransformerCallback
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/XalanTransform.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/foo.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/foo.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/XalanTransform/XalanTransform.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/XalanTransform
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/foo.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/TestDriver.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/XPathWrapper.hpp
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/XPathWrapper/foo.xml
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/XPathWrapper
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/UseStylesheetParam.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/foo.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/UseStylesheetParam/UseStylesheetParam.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/UseStylesheetParam
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/TransformToXercesDOM.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/birds.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/TransformToXercesDOM/TransformToXercesDOM.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/TransformToXercesDOM
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/TraceListen.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/birds.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/birds.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/TraceListen/TraceListen.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/TraceListen
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/ThreadSafe.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/birds.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/birds.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/ThreadSafe/ThreadSafe.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ThreadSafe
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/StreamTransform/StreamTransform.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/StreamTransform
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/SimpleXPathCAPI.c
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/foo.xml
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathCAPI/SimpleXPathCAPI.c
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleXPathCAPI
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/SimpleXPathAPI.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/foo.xml
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleXPathAPI/SimpleXPathAPI.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleXPathAPI
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/SimpleTransform.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/foo.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/foo.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/SimpleTransform.cpp
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SimpleTransform/XalanMemoryManagerImpl.hpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SimpleTransform
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/SerializeNodeSet.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/foo.xml
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/SerializeNodeSet/SerializeNodeSet.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/SerializeNodeSet
-%%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/ParsedSourceWrappers.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/foo.xml
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/foo.xsl
+%%NO_SAMPLES%%%%EXAMPLESDIR%%/ParsedSourceWrappers/ParsedSourceWrappers.cpp
 %%NO_SAMPLES%%@dirrm %%EXAMPLESDIR%%/ParsedSourceWrappers
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/ExternalFunction.cpp
 %%NO_SAMPLES%%%%EXAMPLESDIR%%/ExternalFunction/foo.xml
