@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/Astro/SIMBAD/Query.pm
+lib/perl5/site_perl/%%PERL_VER%%/Astro/SIMBAD/Result.pm
+lib/perl5/site_perl/%%PERL_VER%%/Astro/SIMBAD/Result/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Astro/SIMBAD/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Astro/SIMBAD/Result
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Astro/SIMBAD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Astro/SIMBAD
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Astro 2>/dev/null || true
