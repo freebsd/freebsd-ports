@@ -229,6 +229,7 @@
     SUBDIR += xzip
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
+    SUBDIR += znibbles
     SUBDIR += ztrack
 
 .include <bsd.port.subdir.mk>
