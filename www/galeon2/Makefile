@@ -52,10 +52,10 @@ MAN1=		galeon.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} > 500000
 # Galeon does not build correctly in -CURRENT if -Werror is passed
 # to the compiler.
-CONFIGURE_ARGS+=	--enable-werror
+CONFIGURE_ARGS+=	--disable-werror
 .endif
 
 post-extract:

@@ -1,6 +1,6 @@
---- configure	Thu Nov  7 02:51:25 2002
-+++ configure2	Thu Nov  7 02:51:32 2002
-@@ -7140,6 +7140,7 @@
+--- configure.orig	Tue Jan 21 15:44:16 2003
++++ configure	Tue Jan 21 15:45:28 2003
+@@ -14219,6 +14219,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,16 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -18588,7 +18589,11 @@
+ # Check whether --enable-werror or --disable-werror was given.
+ if test "${enable_werror+set}" = set; then
+   enableval="$enable_werror"
+-  disable_werror=no
++  if test "x$enable_werror" != "xno"; then                                
++    disable_werror=no
++  else
++    disable_werror=yes
++  fi
+ else
+   disable_werror=yes
+ fi;
