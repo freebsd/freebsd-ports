@@ -1,0 +1,1 @@
+Defines an abstract type of buffer that can move data without copying
