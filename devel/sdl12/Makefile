@@ -18,8 +18,6 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_XLIB=	yes
-USE_ESOUND=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
@@ -40,6 +38,12 @@ PKGMESSAGE=	/I/hate/ports/Mk/bsd.port.mk
 DISPLAY_MSG=	${DO_NADA}
 .endif
 
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+.endif
+.if !defined(WITHOUT_ESOUND)
+USE_ESOUND=	yes
+.endif
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
 .else
