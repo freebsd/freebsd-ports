@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dact
-PORTVERSION=	0.8.34
+PORTVERSION=	0.8.35
 PORTREVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rkeene.org/files/oss/dact/
@@ -28,5 +28,12 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		dact.1
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Docs/dact.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
