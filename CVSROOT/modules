@@ -7400,6 +7400,7 @@ xin		ports/sysutils/xin
 xine		ports/graphics/xine
 xine_d4d_plugin	ports/graphics/xine_d4d_plugin
 xine_d5d_plugin	ports/graphics/xine_d5d_plugin
+xine_dvdnav_plugin	ports/graphics/xine_dvdnav_plugin
 xine_mms_plugin	ports/graphics/xine_mms_plugin
 xinetd		ports/security/xinetd
 xinfocom	ports/games/xinfocom
