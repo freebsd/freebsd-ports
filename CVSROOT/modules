@@ -8434,6 +8434,7 @@ ude		ports/x11-wm/ude
 udesc_dump	ports/sysutils/udesc_dump
 udmsearch	ports/www/udmsearch
 udptunnel	ports/net/udptunnel
+uebimiau	ports/mail/uebimiau
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
 ufmcontrol-i18n	ports/audio/ufmcontrol-i18n
