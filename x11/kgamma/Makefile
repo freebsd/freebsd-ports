@@ -13,6 +13,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
 
 MAINTAINER=		arved@FreeBSD.org
 
+LIB_DEPENDS= 		intl.4:${PORTSDIR}/devel/gettext
+
 USE_BZIP2=		yes
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
