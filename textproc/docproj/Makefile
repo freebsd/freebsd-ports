@@ -59,6 +59,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Di
 
 NO_BUILD=		yes
 USE_GHOSTSCRIPT=	yes
+USE_PERL5_RUN=		yes
 PLIST_FILES=		#empty
 
 WITHOUT_X11=	yes
