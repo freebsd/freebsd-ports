@@ -1,49 +1,36 @@
 bin/gedit
-libexec/go/plugins/browse-plugin
-libexec/go/plugins/convert-plugin
-libexec/go/plugins/cvsdiff-plugin
-libexec/go/plugins/diff-plugin
-libexec/go/plugins/email-plugin
-libexec/go/plugins/encrypt-plugin
-libexec/go/plugins/hello-plugin
-libexec/go/plugins/httpview-plugin
-libexec/go/plugins/man-plugin
-libexec/go/plugins/openother-plugin
-libexec/go/plugins/prm-plugin
-libexec/go/plugins/reverse-plugin
-libexec/go/plugins/spell-plugin
-libexec/go/plugins/testselect-plugin
-libexec/go/plugins/time-plugin
-libexec/go/plugins/wordcount-plugin
-share/doc/gedit/AUTHORS
-share/doc/gedit/COPYING
-share/doc/gedit/ChangeLog
-share/doc/gedit/FAQ
-share/doc/gedit/INSTALL
-share/doc/gedit/KNOWNBUGS
-share/doc/gedit/README
-share/doc/gedit/README.plugins
-share/doc/gedit/THANKS
-share/doc/gedit/TODO
-share/gnome/geditrc
+lib/gedit/plugins/libdiff.so
+lib/gedit/plugins/libemail.so
+lib/gedit/plugins/libtime.so
 share/gnome/apps/Applications/gedit.desktop
+share/gnome/gedit/glade/about.glade
+share/gnome/gedit/glade/email.glade
+share/gnome/gedit/glade/find-line.glade
+share/gnome/gedit/glade/prefs.glade
+share/gnome/gedit/glade/replace.glade
+share/gnome/gedit/glade/search.glade
 share/gnome/help/gedit/C/index.html
 share/gnome/help/gedit/C/topic.dat
 share/gnome/help/gedit/no/index.html
 share/gnome/help/gedit/no/topic.dat
+share/gnome/help/gedit/uk/index.html
+share/gnome/help/gedit/uk/topic.dat
 share/gnome/mime-info/gedit.keys
-share/gnome/pixmaps/gnome-gedit.png
 share/gnome/pixmaps/gedit-logo.png
+share/gnome/pixmaps/gnome-gedit.png
 share/locale/cs/LC_MESSAGES/gedit.mo
 share/locale/da/LC_MESSAGES/gedit.mo
 share/locale/de/LC_MESSAGES/gedit.mo
+share/locale/el/LC_MESSAGES/gedit.mo
 share/locale/es/LC_MESSAGES/gedit.mo
 share/locale/fr/LC_MESSAGES/gedit.mo
 share/locale/ga/LC_MESSAGES/gedit.mo
 share/locale/gl/LC_MESSAGES/gedit.mo
+share/locale/hu/LC_MESSAGES/gedit.mo
 share/locale/it/LC_MESSAGES/gedit.mo
 share/locale/ja/LC_MESSAGES/gedit.mo
 share/locale/ko/LC_MESSAGES/gedit.mo
+share/locale/lt/LC_MESSAGES/gedit.mo
 share/locale/nl/LC_MESSAGES/gedit.mo
 share/locale/no/LC_MESSAGES/gedit.mo
 share/locale/pl/LC_MESSAGES/gedit.mo
@@ -51,11 +38,16 @@ share/locale/pt/LC_MESSAGES/gedit.mo
 share/locale/pt_BR/LC_MESSAGES/gedit.mo
 share/locale/ru/LC_MESSAGES/gedit.mo
 share/locale/sv/LC_MESSAGES/gedit.mo
+share/locale/tr/LC_MESSAGES/gedit.mo
 share/locale/uk/LC_MESSAGES/gedit.mo
 share/locale/wa/LC_MESSAGES/gedit.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gedit.mo
-@dirrm include/gedit
-@dirrm share/doc/gedit
-@dirrm share/gnome/help/gedit/C
+@dirrm share/gnome/help/gedit/uk
 @dirrm share/gnome/help/gedit/no
+@dirrm share/gnome/help/gedit/C
 @dirrm share/gnome/help/gedit
+@dirrm share/gnome/gedit/glade
+@dirrm share/gnome/gedit
+@dirrm lib/gedit/plugins
+@dirrm lib/gedit
