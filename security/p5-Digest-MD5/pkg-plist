@@ -1,3 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD5/MD5.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD2/MD2.so
@@ -17,3 +18,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SHA.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/MD2
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/SHA1
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest
