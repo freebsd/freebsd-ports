@@ -1,0 +1,342 @@
+Base: http://home.woolridge.ca/mutt/patches/patch-1.5.1.dw.pgp-hook.3
+--- PATCHES	24 Jan 2002 12:10:47 -0000	3.0
++++ PATCHES	31 Aug 2002 22:01:56 -0000
+@@ -0,0 +1 @@
++patch-1.5.1.dw.pgp-hook.3
+--- hook.c	5 Feb 2002 21:30:31 -0000	3.3
++++ hook.c	31 Aug 2002 22:01:56 -0000
+@@ -118,7 +118,11 @@ int mutt_parse_hook (BUFFER *buf, BUFFER
+ 	ptr->rx.not == not &&
+ 	!mutt_strcmp (pattern.data, ptr->rx.pattern))
+     {
++#ifdef M_CRYPTHOOK
++      if (data & (M_FOLDERHOOK | M_SENDHOOK | M_MESSAGEHOOK | M_ACCOUNTHOOK | M_CRYPTHOOK))
++#else
+       if (data & (M_FOLDERHOOK | M_SENDHOOK | M_MESSAGEHOOK | M_ACCOUNTHOOK))
++#endif /* M_CRYPTHOOK */
+       {
+ 	/* these hooks allow multiple commands with the same
+ 	 * pattern, so if we've already seen this pattern/command pair, just
+@@ -445,9 +449,25 @@ char *mutt_iconv_hook (const char *chs)
+ }
+ 
+ #if defined(HAVE_PGP) || defined(HAVE_SMIME)
+-char *mutt_crypt_hook (ADDRESS *adr)
++LIST *mutt_crypt_hook (ADDRESS *adr)
+ {
+-  return _mutt_string_hook (adr->mailbox, M_CRYPTHOOK);
++  HOOK *hook;
++  LIST *key_list = NULL;
++
++  if (!adr && !adr->mailbox)
++    return (NULL);
++
++  for (hook = Hooks; hook; hook = hook->next)
++  {
++    if (!hook->command)
++      continue;
++    if (!(hook->type & M_CRYPTHOOK))
++      continue;
++
++    if ((regexec (hook->rx.rx, adr->mailbox, 0, NULL, 0) == 0) ^ hook->rx.not)
++      key_list = mutt_add_list (key_list, hook->command);
++  }
++  return (key_list);
+ }
+ #endif /* HAVE_PGP */
+ 
+--- init.h	25 Apr 2002 13:26:26 -0000	3.15
++++ init.h	31 Aug 2002 22:01:57 -0000
+@@ -1180,6 +1180,16 @@ struct option_t MuttVars[] = {
+ 
+ #if defined(HAVE_PGP) || defined(HAVE_SMIME)
+ # ifdef HAVE_PGP
++  { "pgp_autoselectkey",	DT_SYN,  R_NONE, UL "crypt_autoselectkey", 0 },
++# endif
++  { "crypt_autoselectkey",	DT_BOOL, R_NONE, OPTCRYPTAUTOSELECT, 0 },
++  /*
++  ** .pp
++  ** If set, then a list of keys is not presented for selection when only
++  ** one matching key is available.  This may be useful in conjunction with
++  ** the \fIcrypt-hook\fP command (with ``$$crypt_confirmhook'' set).
++  */
++# ifdef HAVE_PGP
+   { "pgp_autosign", 	DT_SYN,  R_NONE, UL "crypt_autosign", 0 },
+ # endif  
+   { "crypt_autosign",	DT_BOOL, R_NONE, OPTCRYPTAUTOSIGN, 0 },
+@@ -1205,6 +1215,17 @@ struct option_t MuttVars[] = {
+   ** requested as well.  IF ``$$smime_is_default'' is set, then
+   ** OpenSSL is used instead to create S/MIME messages and settings can
+   ** be overridden by use of the \fIsmime-menu\fP.
++  */
++# ifdef HAVE_PGP
++  { "pgp_confirmhook",		DT_SYN, R_NONE, UL "crypt_confirmhook", 1 },
++# endif
++  { "crypt_confirmhook",	DT_BOOL, R_NONE, OPTCRYPTCONFIRMHOOK, 1 },
++  /*
++  ** .pp
++  ** If set, then you will be prompted for confirmation of keys when using
++  ** the \fIcrypt-hook\fP command.  If unset, no such confirmation prompt will
++  ** be presented.  This is generally considered unsafe, especially where
++  ** typos are concerned.
+   */
+ #ifdef HAVE_PGP
+   { "pgp_ignore_subkeys", DT_BOOL, R_NONE, OPTPGPIGNORESUB, 1},
+--- mutt.h	20 Apr 2002 08:11:13 -0000	3.8
++++ mutt.h	31 Aug 2002 22:01:58 -0000
+@@ -422,6 +422,7 @@ enum
+   /* PGP options */
+   
+ #if defined(HAVE_PGP) || defined(HAVE_SMIME)
++  OPTCRYPTAUTOSELECT,
+   OPTCRYPTAUTOSIGN,
+   OPTCRYPTAUTOENCRYPT,
+   OPTCRYPTREPLYENCRYPT,
+@@ -433,6 +434,7 @@ enum
+   OPTASKCERTLABEL,
+   OPTSDEFAULTDECRYPTKEY,
+ #endif
++  OPTCRYPTCONFIRMHOOK,
+ #ifdef HAVE_PGP
+   OPTPGPIGNORESUB,
+   OPTPGPLONGIDS,
+--- pgp.c	4 Apr 2002 06:50:12 -0000	3.13
++++ pgp.c	31 Aug 2002 22:01:58 -0000
+@@ -1037,6 +1037,8 @@ char *pgp_findKeys (ADDRESS *to, ADDRESS
+   char *keyID, *keylist = NULL, *t;
+   size_t keylist_size = 0;
+   size_t keylist_used = 0;
++  LIST *hook_list = NULL;
++  LIST *hook = NULL;
+   ADDRESS *tmp = NULL, *addr = NULL;
+   ADDRESS **last = &tmp;
+   ADDRESS *p, *q;
+@@ -1070,62 +1072,88 @@ char *pgp_findKeys (ADDRESS *to, ADDRESS
+     char buf[LONG_STRING];
+ 
+     q = p;
+-    k_info = NULL;
+ 
+-    if ((keyID = mutt_crypt_hook (p)) != NULL)
++    /*
++     * grab the list of matching hooks (matching on recipient address)
++     * process each entry singly so that auto key selection still works
++     */
++    hook_list = mutt_crypt_hook (p);
++    hook = hook_list;
++    while (1)
+     {
+       int r;
+-      snprintf (buf, sizeof (buf), _("Use keyID = \"%s\" for %s?"), keyID, p->mailbox);
+-      if ((r = mutt_yesorno (buf, M_YES)) == M_YES)
++
++      k_info = NULL;
++
++      if (hook)
+       {
+-	/* check for e-mail address */
+-	if ((t = strchr (keyID, '@')) && 
+-	    (addr = rfc822_parse_adrlist (NULL, keyID)))
++	keyID = (char *)hook->data;
++	snprintf (buf, sizeof (buf), _("Use keyID = \"%s\" for %s?"), keyID, p->mailbox);
++	if (!option(OPTCRYPTCONFIRMHOOK) || (r = mutt_yesorno (buf, M_YES)) == M_YES)
+ 	{
+-	  if (fqdn) rfc822_qualify (addr, fqdn);
+-	  q = addr;
++	  /* check for e-mail address */
++	  if ((t = strchr (keyID, '@')) && 
++	      (addr = rfc822_parse_adrlist (NULL, keyID)))
++	  {
++	    if (fqdn) rfc822_qualify (addr, fqdn);
++	    q = addr;
++	  }
++	  else
++	    k_info = pgp_getkeybystr (keyID, KEYFLAG_CANENCRYPT, PGP_PUBRING);
++	}
++	else if (r == -1)
++	{
++	  /*
++	   * yes, this implies that if one key fails they all do
++	   */
++	  safe_free ((void **) &keylist);
++	  rfc822_free_address (&tmp);
++	  rfc822_free_address (&addr);
++	  mutt_free_list (&hook_list);
++	  return NULL;
+ 	}
+-	else
+-	  k_info = pgp_getkeybystr (keyID, KEYFLAG_CANENCRYPT, PGP_PUBRING);
+       }
+-      else if (r == -1)
++
++      if (k_info == NULL)
++	pgp_invoke_getkeys (q);
++
++      if (k_info == NULL && (k_info = pgp_getkeybyaddr (q, KEYFLAG_CANENCRYPT, PGP_PUBRING)) == NULL)
+       {
+-	safe_free ((void **) &keylist);
+-	rfc822_free_address (&tmp);
+-	rfc822_free_address (&addr);
+-	return NULL;
++	snprintf (buf, sizeof (buf), _("Enter keyID for %s: "), q->mailbox);
++
++	if ((key = pgp_ask_for_key (buf, q->mailbox,
++				    KEYFLAG_CANENCRYPT, PGP_PUBRING)) == NULL)
++	{
++	  safe_free ((void **)&keylist);
++	  rfc822_free_address (&tmp);
++	  rfc822_free_address (&addr);
++	  mutt_free_list (&hook_list);
++	  return NULL;
++	}
+       }
+-    }
++      else
++	key = k_info;
+ 
+-    if (k_info == NULL)
+-      pgp_invoke_getkeys (q);
++      keyID = pgp_keyid (key);
++      
++      keylist_size += mutt_strlen (keyID) + 4;
++      safe_realloc ((void **)&keylist, keylist_size);
++      sprintf (keylist + keylist_used, "%s0x%s", keylist_used ? " " : "",	/* __SPRINTF_CHECKED__ */
++	       keyID);
++      keylist_used = mutt_strlen (keylist);
+ 
+-    if (k_info == NULL && (k_info = pgp_getkeybyaddr (q, KEYFLAG_CANENCRYPT, PGP_PUBRING)) == NULL)
+-    {
+-      snprintf (buf, sizeof (buf), _("Enter keyID for %s: "), q->mailbox);
++      pgp_free_key (&key);
++      rfc822_free_address (&addr);
+ 
+-      if ((key = pgp_ask_for_key (buf, q->mailbox,
+-				  KEYFLAG_CANENCRYPT, PGP_PUBRING)) == NULL)
+-      {
+-	safe_free ((void **)&keylist);
+-	rfc822_free_address (&tmp);
+-	rfc822_free_address (&addr);
+-	return NULL;
+-      }
+-    }
+-    else
+-      key = k_info;
++      if (!hook_list)
++	break;
+ 
+-    keyID = pgp_keyid (key);
+-    
+-    keylist_size += mutt_strlen (keyID) + 4;
+-    safe_realloc ((void **)&keylist, keylist_size);
+-    sprintf (keylist + keylist_used, "%s0x%s", keylist_used ? " " : "",	/* __SPRINTF_CHECKED__ */
+-	     keyID);
+-    keylist_used = mutt_strlen (keylist);
++      hook = hook->next;
++      if (!hook)
++	break;
+ 
+-    pgp_free_key (&key);
+-    rfc822_free_address (&addr);
++    }
++    mutt_free_list (&hook_list);
+ 
+   }
+   rfc822_free_address (&tmp);
+--- pgpkey.c	24 Jan 2002 12:10:51 -0000	3.0
++++ pgpkey.c	31 Aug 2002 22:01:58 -0000
+@@ -435,6 +435,11 @@ static int pgp_id_matches_addr (ADDRESS 
+   return rv;
+ }
+ 
++
++#define pgp_trusted_id(uid) (!option(OPTPGPCHECKTRUST) \
++			     || (pgp_id_is_valid((uid)) \
++				 && pgp_id_is_strong((uid))))
++
+ static pgp_key_t *pgp_select_key (pgp_key_t *keys,
+ 				  ADDRESS * p, const char *s)
+ {
+@@ -450,6 +455,7 @@ static pgp_key_t *pgp_select_key (pgp_ke
+   pgp_uid_t *a;
+   int (*f) (const void *, const void *);
+ 
++  int keymatch = 0;		/* count matching keys */
+   int unusable = 0;
+ 
+   keymax = 0;
+@@ -479,6 +485,7 @@ static pgp_key_t *pgp_select_key (pgp_ke
+       
+       KeyTable[i++] = a;
+     }
++    keymatch++;
+   }
+ 
+   if (!i && unusable)
+@@ -487,6 +494,21 @@ static pgp_key_t *pgp_select_key (pgp_ke
+     mutt_sleep (1);
+     return NULL;
+   }
++  else if (keymatch == 1 && option(OPTCRYPTAUTOSELECT))
++  {
++    /*
++     * Only one matching key...see if there's an id with enough trust to auto-select
++     */
++    kp = KeyTable[0]->parent;
++    for (a = kp->address; a; a = a->next)
++    {
++      if (pgp_trusted_id(a))
++      {
++	safe_free ((void **) &KeyTable);
++	return (kp);
++      }
++    }
++  }
+ 
+   switch (PgpSortKeys & SORT_MASK)
+   {
+@@ -597,9 +619,7 @@ static pgp_key_t *pgp_select_key (pgp_ke
+ 	  break;
+ 	}
+       
+-      if (option (OPTPGPCHECKTRUST) &&
+-	  (!pgp_id_is_valid (KeyTable[menu->current])
+-	   || !pgp_id_is_strong (KeyTable[menu->current])))
++      if (!pgp_trusted_id(KeyTable[menu->current]))
+       {
+ 	char *s = "";
+ 	char buff[LONG_STRING];
+--- protos.h	29 Apr 2002 17:12:00 -0000	3.7
++++ protos.h	31 Aug 2002 22:01:59 -0000
+@@ -130,7 +130,7 @@ char *mutt_get_body_charset (char *, siz
+ char *mutt_get_name (ADDRESS *);
+ char *mutt_get_parameter (const char *, PARAMETER *);
+ #if defined(HAVE_PGP) || defined(HAVE_SMIME)
+-char *mutt_crypt_hook (ADDRESS *);
++LIST *mutt_crypt_hook (ADDRESS *);
+ #endif /* HAVE_PGP */
+ char *mutt_make_date (char *, size_t);
+ 
+--- doc/manual.sgml.head	25 Apr 2002 13:28:23 -0000	3.3
++++ doc/manual.sgml.head	31 Aug 2002 22:02:00 -0000
+@@ -1388,7 +1388,9 @@ recipient's public key can't be deduced 
+ or because, for some reasons, you need to override the key Mutt would
+ normally use.  The pgp-hook command provides a method by which you can
+ specify the ID of the public key to be used when encrypting messages to
+-a certain recipient.
++a certain recipient.  You may use multiple pgp-hook's with the same
++pattern; multiple matching pgp-hook's result in the use of multiple
++keyids for recipient.
+ 
+ <sect1>Adding key sequences to the keyboard buffer<label id="push">
+ <p>
+--- doc/muttrc.man.head.orig2	Mon Sep  2 17:36:11 2002
++++ doc/muttrc.man.head	Mon Sep  2 17:37:22 2002
+@@ -272,5 +272,7 @@
+ The pgp-hook command provides a method by which you can
+ specify the ID of the public key to be used when encrypting messages
+-to a certain recipient.
++to a certain recipient.  You may use multiple \fBpgp-hook\fPs with the
++same \fIpattern\fP; multiple matching \fBpgp-hook\fPs result in the use
++of multiple \fIkey-id\fPs for recipient.
+ .PP
+ .nf
