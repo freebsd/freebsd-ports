@@ -7,6 +7,7 @@ pb=/var/portbuild
 arch=$1
 
 . ${pb}/${arch}/portbuild.conf
+. ${pb}/${arch}/portbuild.$(hostname)
 
 num=$(echo $(ls -1d ${scratchdir}/*/chroot/*/used 2>/dev/null| wc -l))
 echo -n "$num "
