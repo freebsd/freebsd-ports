@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2003/-2003/}.1-static-qt.i386-en
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
+BROKEN=		"Unfetchable"
+
 CONFLICTS=	opera-*
 RESTRICTED=	"not redistributable; commercial software"
 
