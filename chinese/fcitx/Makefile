@@ -8,15 +8,14 @@
 PORTNAME=	fcitx
 PORTVERSION=	3.0.3
 CATEGORIES=	chinese x11
-MASTER_SITES=	http://www.fcitx.org/download/
+MASTER_SITES=	http://www.fcitx.org/download/ \
+		http://bsdchat.com/dist/dryice/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-
-BROKEN=		Unfetchable
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
