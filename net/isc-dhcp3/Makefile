@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	isc-dhcp3
-PORTVERSION=	3.0.b1.17
+PORTVERSION=	3.0.b2.5
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
-DISTNAME=	dhcp-3.0b1pl17
+DISTNAME=	dhcp-3.0b2pl5
 
 MAINTAINER=	obrien@FreeBSD.org
 
