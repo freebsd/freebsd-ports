@@ -1,0 +1,11 @@
+--- logrotate.h.orig	Tue Dec 28 15:55:44 1999
++++ logrotate.h	Tue Dec 28 15:55:56 1999
+@@ -12,7 +12,7 @@
+ #define LOG_FLAG_MISSINGOK	(1 << 5)
+ #define LOG_FLAG_MAILFIRST	(1 << 6)
+ 
+-#define DEFAULT_MAIL_COMMAND "/bin/mail -s"
++#define DEFAULT_MAIL_COMMAND "/usr/bin/mail -s"
+ #define COMPRESS_COMMAND "gzip -9"
+ #define COMPRESS_EXT ".gz"
+ #define UNCOMPRESS_PIPE "gunzip"

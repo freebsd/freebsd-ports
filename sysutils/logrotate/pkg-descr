@@ -1,0 +1,5 @@
+Daemon to rotate, compress, remove and mail system log files.
+
+I try to make it work just like /usr/sbin/newsyslog.
+With logrotate, you can mail syslog and execute command
+before or after logrotate.

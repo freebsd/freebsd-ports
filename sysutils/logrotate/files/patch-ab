@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed Dec 30 03:29:13 1998
++++ Makefile	Tue Dec 28 15:35:52 1999
+@@ -2,11 +2,13 @@
+ CVSTAG = r$(subst .,-,$(VERSION))
+ CFLAGS = -Wall -D_GNU_SOURCE -DVERSION=\"$(VERSION)\" $(RPM_OPT_FLAGS)
+ PROG = logrotate
+-BINDIR = /usr/sbin
+-MANDIR = /usr/man
++BINDIR = sbin
++MANDIR = man
+ MAN = logrotate.8
+ LOADLIBES = -lpopt
+ 
++LOADLIBES += -L/usr/local/lib
++CFLAGS += -I/usr/local/include
+ #--------------------------------------------------------------------------
+ 
+ OBJS = logrotate.o log.o config.o basenames.o
+@@ -40,8 +42,8 @@
+ 	[ -d $(PREFIX)/$(MANDIR) ] || mkdir -p $(PREFIX)/$(MANDIR)
+ 	[ -d $(PREFIX)/$(MANDIR)/man8 ] || mkdir -p $(PREFIX)/$(MANDIR)/man8
+ 
+-	install -s -m 755 $(PROG) $(PREFIX)/$(BINDIR)
+-	install -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN)
++	install -c -s -m 755 $(PROG) $(PREFIX)/$(BINDIR)
++	install -c -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN)
+ 
+ co:
+ 	co RCS/*,v
