@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.37
-PORTREVISION=	1
+PORTVERSION=	0.38
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,7 +28,7 @@ CONFIGURE_ARGS=	--with-popt \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -L${LOCALBASE}"
 
-MAN1=		inkscape.1
+MAN1=		inkscape.1 inkview.1
 
 .include <bsd.port.pre.mk>
 
@@ -39,7 +38,6 @@ post-patch:
 		${WRKSRC}/src/libarikkei/arikkei-token.cpp
 	@${REINPLACE_CMD} -e 's|round|rint|g' \
 		${WRKSRC}/src/livarot/Shape.h \
-		${WRKSRC}/src/modules/gnome.cpp \
 		${WRKSRC}/src/object-edit.cpp \
 		${WRKSRC}/src/spiral-context.cpp \
 		${WRKSRC}/src/star-context.cpp
