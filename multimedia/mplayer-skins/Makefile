@@ -176,11 +176,11 @@ WITH_SKIN_${f}=	yes
 #
 .for f in ${ALLSKINS}
 .ifdef(WITH_SKIN_${f})
-PLIST_SUB+=	${f}=""
+PLIST_SUB+=	${f}="" WITHOUT_SKIN_${f}="@comment "
 HAVE_SKIN=	true
 DISTFILES+=	${${f}_FILE}
 .else
-PLIST_SUB+=	${f}="@comment "
+PLIST_SUB+=	${f}="@comment " WITHOUT_SKIN_${f}=""
 .endif
 .endfor
 
