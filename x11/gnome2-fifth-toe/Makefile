@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2-fifth-toe
-PORTVERSION=	2.2.0
-PORTREVISION=	7
+PORTVERSION=	2.2.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -37,6 +36,7 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		seahorse:${PORTSDIR}/security/seahorse \
 		totem:${PORTSDIR}/multimedia/totem \
 		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
+		dia:${PORTSDIR}/graphics/dia \
 		mrproject:${PORTSDIR}/deskutils/mrproject \
 		${X11BASE}/libexec/stickynotes_applet:${PORTSDIR}/misc/stickynotes_applet \
 		tsclient:${PORTSDIR}/net/tsclient \
