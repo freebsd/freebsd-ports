@@ -126,6 +126,6 @@ do-install:
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-devel
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
 	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
-		${PREFIX}/lib/mozilla/plugins/libjavaplugin_oji.so
+		${PREFIX}/lib/mozilla-devel/plugins/libjavaplugin_oji.so
 
 .include <bsd.port.post.mk>
