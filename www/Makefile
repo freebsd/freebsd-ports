@@ -80,6 +80,7 @@
     SUBDIR += netscape47-navigator.us
     SUBDIR += npc
     SUBDIR += p5-Apache
+    SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-Radius
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
