@@ -7,6 +7,7 @@
 
 PORTNAME=	vi
 PORTVERSION=	040605
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ex-vi/
@@ -22,7 +23,7 @@ MLINKS=	ex.1 edit.1  vi.1 vedit.1  vi.1 view.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=			Requires FreeBSD-5.0 or newer
+EXTRA_PATCHES+=	${FILESDIR}/stable-Makefile.patch
 .endif
 
 .include <bsd.port.post.mk>

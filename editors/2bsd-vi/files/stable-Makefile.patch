@@ -1,0 +1,15 @@
+--- /tmp/Makefile	Mon Jul 12 16:26:36 2004
++++ Makefile	Mon Jul 12 16:26:48 2004
+@@ -144,9 +144,9 @@
+ # advanced multibyte character support etc. which might not be present
+ # on your system.
+ #
+-REINC	= -I./libuxre -DUXRE
+-RELIB	= -L./libuxre -luxre
+-RETGT	= uxre
++#REINC	= -I./libuxre -DUXRE
++#RELIB	= -L./libuxre -luxre
++#RETGT	= uxre
+ 
+ #
+ # These settings should be correct for any modern Unix.
