@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rrdtool_lgpl
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	net python
 MASTER_SITES=	http://savannah.nongnu.org/download/py-rrdtool/py-rrdtool.pkg/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
