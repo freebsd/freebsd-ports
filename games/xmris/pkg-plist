@@ -1,9 +1,9 @@
 bin/xmris
 bin/xmsit
 bin/xmred
-@exec mkdir -p %D/lib/xmris
-@exec chmod  775 %D/lib/xmris
-@unexec rm -rf %D/lib/xmris
+@exec mkdir -p %D/lib/X11/xmris
+@exec chmod  775 %D/lib/X11/xmris
+@unexec rm -rf %D/lib/X11/xmris
 lib/X11/app-defaults/Xmris
 lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn
