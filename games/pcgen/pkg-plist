@@ -1,4 +1,3 @@
-bin/pcgen.sh
 %%DATADIR%%/system/unitSet.lst
 %%DATADIR%%/system/tips.lst
 %%DATADIR%%/system/specials/specials.lst
@@ -12,6 +11,11 @@ bin/pcgen.sh
 %%DATADIR%%/system/outputFilters/htm.lst
 %%DATADIR%%/system/outputFilters/fo.lst
 %%DATADIR%%/system/opengaminglicense.10a.txt
+%%DATADIR%%/system/gameModes/Spycraft/statsandchecks.lst
+%%DATADIR%%/system/gameModes/Spycraft/rules.lst
+%%DATADIR%%/system/gameModes/Spycraft/miscinfo.lst
+%%DATADIR%%/system/gameModes/Spycraft/load.lst
+%%DATADIR%%/system/gameModes/Spycraft/level.lst
 %%DATADIR%%/system/gameModes/Modern/statsandchecks.lst
 %%DATADIR%%/system/gameModes/Modern/rules.lst
 %%DATADIR%%/system/gameModes/Modern/miscinfo.lst
@@ -108,6 +112,7 @@ bin/pcgen.sh
 %%DATADIR%%/outputsheets/d20/modern/pdf/csheet_modern_std.xslt
 %%DATADIR%%/outputsheets/d20/modern/htmlxml/psheet_dnd_std.htm
 %%DATADIR%%/outputsheets/d20/modern/htmlxml/eqsheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/modern/htmlxml/csheet_spycraft_std.htm
 %%DATADIR%%/outputsheets/d20/modern/htmlxml/csheet_modern_std.htm
 %%DATADIR%%/outputsheets/d20/horror/text/placeholder.txt
 %%DATADIR%%/outputsheets/d20/horror/htmlxml/psheet_dnd_std.htm
@@ -462,6 +467,31 @@ bin/pcgen.sh
 %%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadclasses.lst
 %%DATADIR%%/data/permissioned/alderacentgroup/undead/undead.pcc
 %%DATADIR%%/data/permissioned/alderacentgroup/undead/OGL.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_weaponprofs.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_vehicles.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_vehicle_mods.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_templates.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_skills_languages.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_skills.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_languages.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_tactical.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_protective.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_other.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_melee_weapons.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_hurled_weapons.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_firearms.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_exotic_weapons.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gear_ammunition.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gadgets.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_gadget_mods.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_feats_hidden.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_feats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_departments.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_classes.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft_biosettings.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/spycraft.pcc
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/Read Me.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft/OGL.txt
 %%DATADIR%%/data/permissioned/alderacentgroup/evil/evilspells.lst
 %%DATADIR%%/data/permissioned/alderacentgroup/evil/evilskills.lst
 %%DATADIR%%/data/permissioned/alderacentgroup/evil/evilraces.lst
@@ -575,6 +605,7 @@ bin/pcgen.sh
 %%DATADIR%%/data/d20ogl/srd35/rsrd_companionmods.lst
 %%DATADIR%%/data/d20ogl/srd35/rsrd_classes_prestige.lst
 %%DATADIR%%/data/d20ogl/srd35/rsrd_classes_npc.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_classes_monsters_specific.lst
 %%DATADIR%%/data/d20ogl/srd35/rsrd_classes_monsters.lst
 %%DATADIR%%/data/d20ogl/srd35/rsrd_classes_base.lst
 %%DATADIR%%/data/d20ogl/srd35/rsrd.pcc
@@ -746,6 +777,33 @@ bin/pcgen.sh
 %%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_classes_prestige.lst
 %%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous_classes.lst
 %%DATADIR%%/data/d20ogl/greenronin/bookrighteous/bookrighteous.pcc
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_spells.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_feats.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equipmods.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip_weap_melee_specific.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip_weap_ammo_specific.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip_rodsstaffswands.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip_rings.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip_potions.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_equip.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion_classes.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/schoolillusion.pcc
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion/OGL.txt
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_spells.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_feats.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip_weap_ranged_specific.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip_weap_ammo_specific.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip_rodsstaffswands.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip_rings.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip_armorshields_specific.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_equip.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation_classes.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/schoolevocation.pcc
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation/OGL.txt
 %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesweapprofs.lst
 %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracestemplates.lst
 %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesspells.lst
@@ -876,9 +934,135 @@ bin/pcgen.sh
 %%DATADIR%%/data/d20ogl/avalanchepress/blackflags/blackflagclasses.lst
 %%DATADIR%%/data/d20ogl/avalanchepress/blackflags/OGL.txt
 %%DATADIR%%/data/customsources/readme-customsources.txt
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignweapprofs.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignweapmasterwork.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereigntemplates.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignspells.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignskills.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignraces.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignphbequip.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignphbclasses.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignmagicfeats.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignmageclasses.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignlanguages.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignfeatshidden.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignfeats.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignequipweapranged.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignequipweapmelee.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignequipweapammo.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignequipcoins.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignequiparmorshields.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignequip.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignclasses.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignbiosettings.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereignarmormasterwork.lst
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/sovereign.pcc
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/altpcc/sovereignstonecampaignoptional.pcc
+%%DATADIR%%/data/alpha/sovereignpress/sovereignstone/OGL.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/wayhucksterspells.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/wayhucksterfeats.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/wayhucksterequipwondrousitems.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/wayhucksterequipweapranged.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/wayhucksterclasses.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/wayhuckster.pcc
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/WayoftheHucksterMagicItemPrices.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthehuckster/OGL.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunweapprofs.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunfeats.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunequipwondrousitems.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunequipweapranged.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunequipweapammo.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunequipmods.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunequip.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygunclasses.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/waygun.pcc
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/WayoftheGunMagicItemPrices.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/thewayofthegun/OGL.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwzombieanimals.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwweapprofs.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwtemplates.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwskills.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesz.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesw.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesv.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesu.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracest.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracess.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesr.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesp.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwraceso.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesn.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesm.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesl.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesk.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesj.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesh.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesg.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesf.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracese.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesd.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesc.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesb.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwracesa.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwequipweapmelee.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwequiparmorshields.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwclasses.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotwwbiosettings.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/hotww.pcc
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/horrorsotheweirdwest/OGL.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebweapprofs.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebspells.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebmonweapprofs.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebmontemplates.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebmonraces.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebmonclasses.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandswebequipweapmelee.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/deadlandsweb.pcc
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsweb/OGL.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsweapprofs.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandstemplates.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsspells.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsskills.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsraces.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsmonweapprofs.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsmontemplates.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsmonraces.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsmonfeats.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsmonclasses.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandslanguages.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsfeats.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequipwondrousitems.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequipweapranged.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequipweapmelee.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequipweapammo.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequipmods.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequipcoins.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequiparmorshields.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsequip.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlandsclasses.lst
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/deadlands.pcc
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/OGL.txt
+%%DATADIR%%/data/alpha/pinnacleentertainment/deadlands/deadlandsd20/DLMagicItemPrices.txt
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/todo.txt
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderweapprofs.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderskills.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderraces.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderlanguages.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderfeats.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderequipweapranged.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderequipweapmelee.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderequipweapammo.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderequipcoins.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderequip.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderclassfeats.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinderclasses.lst
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/sidewinder.pcc
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/PERMISSION
+%%DATADIR%%/data/alpha/citizengames/sidewinder/sidewinder/OGL.txt
 %%DATADIR%%/characters/CodeMonkey.pcg
 @dirrm %%DATADIR%%/system/specials
 @dirrm %%DATADIR%%/system/outputFilters
+@dirrm %%DATADIR%%/system/gameModes/Spycraft
 @dirrm %%DATADIR%%/system/gameModes/Modern
 @dirrm %%DATADIR%%/system/gameModes/3e
 @dirrm %%DATADIR%%/system/gameModes/35e
@@ -925,6 +1109,7 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/outputsheets/d20/fantasy
 @dirrm %%DATADIR%%/outputsheets/d20
 @dirrm %%DATADIR%%/outputsheets
+@dirrm %%DATADIR%%/lib/javancss
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules
 @dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens
@@ -977,6 +1162,8 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/data/permissioned/atlasgames
 @dirrm %%DATADIR%%/data/permissioned/alderacentgroup/war
 @dirrm %%DATADIR%%/data/permissioned/alderacentgroup/undead
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/spycraft/spycraft
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/spycraft
 @dirrm %%DATADIR%%/data/permissioned/alderacentgroup/evil
 @dirrm %%DATADIR%%/data/permissioned/alderacentgroup/dungeons
 @dirrm %%DATADIR%%/data/permissioned/alderacentgroup/dragons
@@ -998,6 +1185,8 @@ bin/pcgen.sh
 @dirrm %%DATADIR%%/data/d20ogl/malhavocpress
 @dirrm %%DATADIR%%/data/d20ogl/greenronin/bookrighteous
 @dirrm %%DATADIR%%/data/d20ogl/greenronin
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofillusion
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/schoolofevocation
 @dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces
 @dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs
 @dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook
