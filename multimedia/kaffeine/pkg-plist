@@ -1,6 +1,4 @@
 bin/kaffeine
-lib/kaffeineplugin/kaffeineplugin.la
-lib/kaffeineplugin/kaffeineplugin.so
 lib/libkaffeinepart.la
 lib/libkaffeinepart.so
 share/applnk/Multimedia/kaffeine.desktop
@@ -55,6 +53,7 @@ share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
 share/mimelnk/application/x-mplayer2.desktop
 share/services/kaffeine_part.desktop
-@dirrm lib/kaffeineplugin/
 @dirrm share/apps/kaffeine
 @dirrm share/doc/HTML/en/kaffeine
+@dirrm share/apps/konqueror/servicemenus
+@dirrm share/apps/konqueror
