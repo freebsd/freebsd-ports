@@ -7,14 +7,13 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	6.0.1
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
-
-FORBIDDEN=	http://vuxml.freebsd.org/fc7e6a42-6012-11d9-a9e7-0001020eed82.html
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
@@ -41,6 +40,11 @@ PLIST_SUB=	PERL="@comment "
 PORTDOCS=	*
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+CONFIGURE_ARGS+=--enable-64bit
+.endif
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=5|\1=7|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's^\$$(top_builddir)/libtool^${LIBTOOL}^' ${WRKSRC}/config/mkcommon.inc.in
@@ -53,4 +57,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/pdflib/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
