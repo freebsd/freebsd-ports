@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2001-03-20
+SNAPDATE=	2001-04-30
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -70,7 +70,7 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1
+MAN1=		gcpp.1 gg++.1 gg77.1 ggcc.1 ggcov.1
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
@@ -110,6 +110,7 @@ post-install:
 	${MV} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/gg++
 	${MV} -f ${PREFIX}/bin/g77 ${PREFIX}/bin/gg77
 	${MV} -f ${PREFIX}/bin/g++filt ${PREFIX}/bin/gg++filt
+	${MV} -f ${PREFIX}/bin/gcov ${PREFIX}/bin/ggcov
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	${RM} -f ${PREFIX}/bin/${GNU_HOST}-c++
 	${RM} -f ${PREFIX}/bin/cpp
@@ -122,6 +123,7 @@ post-install:
 	${MV} -f ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/gg++.1
 	${MV} -f ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/gg77.1
 	${MV} -f ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/gcpp.1
+	${MV} -f ${PREFIX}/man/man1/gcov.1 ${PREFIX}/man/man1/ggcov.1
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
