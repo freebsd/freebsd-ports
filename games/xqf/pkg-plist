@@ -1,6 +1,13 @@
+@comment $FreeBSD$
 bin/xqf
+%%PORTDOCS%%share/doc/xqf/xqfdocs.html
 share/locale/ca/LC_MESSAGES/xqf.mo
+share/locale/da/LC_MESSAGES/xqf.mo
 share/locale/de/LC_MESSAGES/xqf.mo
 share/locale/es/LC_MESSAGES/xqf.mo
-%%PORTDOCS%%share/doc/xqf/xqfdocs.html
+share/locale/fr/LC_MESSAGES/xqf.mo
+share/xqf/qstat.cfg
+share/xqf/pixmaps/xqflogo.png
+@dirrm share/xqf/pixmaps
+@dirrm share/xqf
 %%PORTDOCS%%@dirrm share/doc/xqf
