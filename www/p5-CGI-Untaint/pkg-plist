@@ -1,0 +1,10 @@
+%%SITE_PERL%%/CGI/Untaint.pm
+%%SITE_PERL%%/CGI/Untaint/hex.pm
+%%SITE_PERL%%/CGI/Untaint/integer.pm
+%%SITE_PERL%%/CGI/Untaint/object.pm
+%%SITE_PERL%%/CGI/Untaint/printable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/CGI/Untaint
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
