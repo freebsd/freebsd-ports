@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	erich@tacni.net
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gtkmm-1.2:${PORTSDIR}/x11-toolkits/gtk-- \
+		gtkmm-1.2.1:${PORTSDIR}/x11-toolkits/gtk-- \
 		gnomemm-1.1.2:${PORTSDIR}/x11-toolkits/gnome-- \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		gnet.0:${PORTSDIR}/net/gnet \
