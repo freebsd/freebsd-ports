@@ -27,6 +27,12 @@ PLIST_FILES=	bin/dc-qt
 QTDIR?=	${X11BASE}
 QMAKE?=	${X11BASE}/bin/qmake
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|"hublist|"dc_hublist|' \
 		${WRKSRC}/dc_hub.cc
@@ -47,4 +53,4 @@ post-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/dc-qt ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
