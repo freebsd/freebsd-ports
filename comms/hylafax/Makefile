@@ -63,6 +63,6 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax.sh.sample ]; then	\
 		${CP} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d;	\
 	fi
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -19,6 +19,6 @@ HAS_CONFIGURE=	yes
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/snooper
 	${INSTALL_DATA} ${WRKSRC}/../README ${PREFIX}/share/doc/snooper
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

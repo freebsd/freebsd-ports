@@ -77,6 +77,6 @@ post-install:
 	Release-1.1.0 Release-1.1.2 Release-1.1.3
 	@${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/cdrdao/
 .endfor
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

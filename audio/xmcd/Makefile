@@ -30,7 +30,7 @@ post-patch:
 		> ${WRKSRC}/xmcd_d/XMcd.ad
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${PREFIX}/lib/X11/app-defaults/XMcd
 
 .include <bsd.port.mk>

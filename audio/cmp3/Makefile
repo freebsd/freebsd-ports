@@ -29,9 +29,7 @@ do-install:
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${SED} 's,PREFIX,${PREFIX},' ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
-	@${CAT} ${WRKSRC}/MESSAGE
-.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

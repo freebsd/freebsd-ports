@@ -28,6 +28,6 @@ post-install:
 	fi
 	${INSTALL_SCRIPT} ${WRKSRC}/xhippo.config \
 		${PREFIX}/etc/xhippo.config.default
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

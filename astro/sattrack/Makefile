@@ -16,6 +16,6 @@ USE_XLIB=	   yes
 WRKSRC=            ${WRKDIR}/SatTrack-3.1.6/src
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

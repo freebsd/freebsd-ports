@@ -13,10 +13,11 @@ MASTER_SITES=		http://www.nocrew.org/software/juke/archive/
 MAINTAINER=		oyvindmo@initio.no
 
 GNU_CONFIGURE=		yes
+PKGMESSAGE=		${WRKSRC}/MESSAGE
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/juke.conf ${PREFIX}/etc/juke.conf.sample
 	@${SED} 's,PREFIX,${PREFIX},' ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
-	@${CAT} ${WRKSRC}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
