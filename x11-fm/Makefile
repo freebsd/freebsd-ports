@@ -15,7 +15,6 @@
     SUBDIR += gnome-commander
     SUBDIR += krusader
     SUBDIR += mtoolsfm
-    SUBDIR += nautilus
     SUBDIR += nautilus2
     SUBDIR += offix-files
     SUBDIR += rox-filer

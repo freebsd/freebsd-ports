@@ -329,7 +329,6 @@
     SUBDIR += libglademm
     SUBDIR += libgnugetopt
     SUBDIR += libgsf
-    SUBDIR += libgtop
     SUBDIR += libgtop2
     SUBDIR += libhash
     SUBDIR += libhoard

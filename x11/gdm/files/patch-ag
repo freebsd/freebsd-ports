@@ -1,7 +1,0 @@
---- config/Default.orig	Fri Mar 30 19:27:22 2001
-+++ config/Default	Tue May  8 11:30:59 2001
-@@ -3,3 +3,3 @@
- #Color is now handled by gdmgreeter itself
--#/usr/bin/X11/xsetroot -solid "#007777"
-+#/usr/X11R6/bin/xsetroot -solid "#007777"
- 
