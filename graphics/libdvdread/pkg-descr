@@ -1,14 +1,3 @@
-DVD player that supports DVD menus
-
-Features :
-   - Supports DVD menus and navigation.
-   - Reads from mounted, unmounted DVDs and hard drive.
-   - Reads encrypted and unencrypted DVDs using libcss.
-   - A new MPEG2 decoder with both MMX and SUN Solaris mediaLib acceleration.
-   - Normal X11 and XFree86 Xvideo display support with subpicture overlay.
-   - Audio and subpicture selection.
-   - Handles advanced subpicture commands such as fade/scroll and wipe.
-   - Detects and uses correct aspect for movie and menus.
-   - Possible to play AC3 via S/PDIF with an external command.
+This is needed by ogle, which is a DVD player that supports DVD menus
 
 WWW: http://www.dtek.chalmers.se/groups/dvd/
