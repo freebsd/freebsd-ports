@@ -6,7 +6,7 @@ Data (data,PCL,...), English, TeX DVI, FIG, GIF, Group 3 Fax, HTML, JPEG,
 Mail/News, PBM/PNM/PPM, PC Bitmap Data, PDF, Postscript(tm), raw, script
 (shell,..), Text, sunraster, tiff, roff (nroff, groff, troff).
 
-Example: lpr ascii.Z test.gif picture.tiff TeX.dvi.gz webpage.html docu.pdf
+Example: lpr -C high:present:glossy ascii.gz test.gif picture.tiff docu.pdf
 
 Prerequisites: Filter programs, installed automatically by FreeBSD ports
 collection, Postscript Printer or Printer supported by ghostscript, Berkeley
@@ -20,4 +20,6 @@ License Information: GNU GPL and so called "Postcard License". You have to
 write me a postcard if you use apsfilter. Request my snail mail address
 by writing mail to	mailto:request-snailmail@klemm.gtn.com
 
-WWW:	http://people.FreeBSD.org/~andreas/apsfilter/index.html
+report comments and bugfixes to apsfilter-stable@apsfilter.org
+
+WWW:	http://www.apsfilter.org/
