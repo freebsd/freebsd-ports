@@ -22,7 +22,13 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_FILES=	bin/qtfw
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/qtfw ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

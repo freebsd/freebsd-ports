@@ -26,6 +26,12 @@ CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
 MAN5=		boom.cfg.5
 MAN6=		prboom.6 prboom-game-server.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/prboom
@@ -35,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/boom.txt ${PREFIX}/share/doc/prboom
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

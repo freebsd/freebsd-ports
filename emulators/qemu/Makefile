@@ -29,7 +29,13 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}\ -I${PREFIX}/include
 MAN1=		qemu.1 qemu-mkcow.1
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
