@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
@@ -42,10 +42,13 @@ RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
 #USE_AUTOCONF=	yes	# does not work with 2.13; requires 2.53 or later
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LIBS="${PTHREAD_LIBS}"
 
 .if defined(DEBUG)
 CFLAGS+=	-g
@@ -58,16 +61,8 @@ MAN1=		${RUBY_NAME}.1
 LATEST_LINK=	ruby-devel
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 502102 && ${ARCH} != "sparc64"                              
-RUBY_ENABLE_PTHREAD?=	public demand
-.endif
-
-.if defined(RUBY_ENABLE_PTHREAD) && ${RUBY_ENABLE_PTHREAD} != "no"
-CONFIGURE_ARGS+=	--enable-pthread
-
-# There seems to be a bug in either gcc or libpthread that gets
-# (mini)ruby to malfunction..
-CFLAGS:=	${CFLAGS:N-march=*}
+.if ${OSVERSION} < 502102
+EXTRA_PATCHES=	${PATCHDIR}/extrapatch-eval.c
 .endif
 
 .if ${ARCH} == "ia64"
@@ -134,6 +129,11 @@ post-extract:
 	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 
 post-patch:
+.if ${OSVERSION} < 502102 || ${ARCH} == "sparc64" || ${ARCH} == "alpha"
+	${REINPLACE_CMD} -e 's|-lc"|"|g' ${WRKSRC}/configure
+.endif
+	${REINPLACE_CMD} -e 's|-l$$pthread_lib|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 .for d in Win32API
 	${RM} -rf ${BUILD_WRKSRC}/ext/${d}

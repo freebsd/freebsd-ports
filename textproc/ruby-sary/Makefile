@@ -32,15 +32,10 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 502102
-BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
-.endif
-
 post-install: doc-install
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)

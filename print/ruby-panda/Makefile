@@ -34,11 +34,6 @@ DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja	\
 		doc/ref_ja.html	doc/ref_ja.rd
 EXAMPLES_EN=	circles.rb	main.rb		morecircles.rb	template.rb
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 502102
-BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
@@ -55,4 +50,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
