@@ -1,0 +1,17 @@
+ProZilla is a download accelerator for Linux which gives you 
+a 200% to 300% improvement in your file downloading speeds.
+
+Its features:
+
+    * Supports FTP & HTTP including redirection 
+    * Resume Supported 
+    * Complete acceleration: The file will be downloaded as fast as 
+      possible as your bandwidth allows if not otherwise specified 
+    * Unlike certain other download accelerators available for Linux, 
+      this really works.
+    * The number of connections that prozilla uses can be specified 
+    * FTPsearch support now permits fetching Mirror locations and 
+      pinging them and selecting the fastest server is automatically 
+      done 
+
+WWW: http://prozilla.genesys.ro/
