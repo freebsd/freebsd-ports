@@ -1,25 +1,21 @@
 # New ports collection makefile for: geg
-# Version required:    0.01
+# Version required:    0.12
 # Date created:        8 Aug 1998
 # Whom:                rom
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/10 00:44:15 steve Exp $
 #
 
-DISTNAME=       geg-0.01.src
-PKGNAME=	geg-0.01
-CATEGORIES=     math
-MASTER_SITES=   ${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR= Incoming
+DISTNAME=	geg-0.12
+CATEGORIES=	math
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Park/2030/
 
 MAINTAINER=	rom_glsa@ein-hashofet.co.il
 
-LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/geg-0.01
 
 .include <bsd.port.mk>
