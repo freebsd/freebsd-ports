@@ -54,8 +54,6 @@ share/gmail/0.7.0/glade/compose.glade
 share/gmail/0.7.0/glade/vfolder_properties.glade
 share/gmail/0.7.0/glade/preferences.glade
 share/gmail/0.7.0/glade/search.glade
-@dirrm etc/sound/events
-@dirrm etc/sound
 @dirrm share/gnome/help/gmail/C/gmail/gmail-images
 @dirrm share/gnome/help/gmail/C/gmail/stylesheet-images
 @dirrm share/gnome/help/gmail/C/gmail
@@ -63,10 +61,6 @@ share/gmail/0.7.0/glade/search.glade
 @dirrm share/gnome/help/gmail/C/faq
 @dirrm share/gnome/help/gmail/C
 @dirrm share/gnome/help/gmail
-@dirrm share/gnome/help
-@dirrm share/gnome/apps/Internet
-@dirrm share/gnome/apps
-@dirrm share/gnome
 @dirrm share/pixmaps
 @dirrm share/gmail/0.7.0/glade
 @dirrm share/gmail/0.7.0
