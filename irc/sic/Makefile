@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sic
-PORTVERSION=	0.18a
+PORTVERSION=	0.22a
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/irc/sic/
 EXTRACT_SUFX=	.tgz
