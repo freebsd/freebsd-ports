@@ -1,5 +1,5 @@
 --- Makefile.tmpl.orig	Sun Oct  7 02:01:09 2001
-+++ Makefile.tmpl	Sun Oct 21 23:17:01 2001
++++ Makefile.tmpl	Sun Dec  2 11:19:23 2001
 @@ -270,10 +270,12 @@
  	$(MKDIR) $(root)$(mandir)/man1
  	$(MKDIR) $(root)$(mandir)/man8
@@ -15,7 +15,7 @@
  	$(MKDIR) $(root)$(includedir)
  	$(MKDIR) $(root)$(includedir)/xml
  	$(MKDIR) $(root)$(runtimedir)
-@@ -457,33 +459,40 @@
+@@ -457,33 +459,39 @@
  #   icons and distributed CGI scripts.
  install-data:
  	@echo "===> [data: Installing initial data files]"
@@ -44,7 +44,6 @@
  		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
  		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
 +#        fi
-+	$(LN) -sf $(root)$(manualdir) $(root)$(htdocsdir).default/manual
 +	if [ ! -d $(root)$(htdocsdir)/ ]; then \
 +		$(LN) -sf $(root)$(htdocsdir).default $(root)$(htdocsdir); \
  	fi
@@ -71,7 +70,7 @@
  	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
  	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
  	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
-@@ -522,14 +531,14 @@
+@@ -522,14 +530,14 @@
  			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
  			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
  			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
