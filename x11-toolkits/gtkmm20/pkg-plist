@@ -910,7 +910,6 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__Pointer-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__Pointer.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__Pointer__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__inherit__graph.png
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1unconst.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ustring-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ustring.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ustring__Iterator-members.html
@@ -1457,7 +1456,6 @@ share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1ConnectionNode.html
 share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1ConnectionNode__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1Object.html
 share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1Object__inherit__graph.png
-share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1manage.html
 share/doc/gtkmm-2.0/docs/reference/html/class_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/class__GtkBoxChild.html
 share/doc/gtkmm-2.0/docs/reference/html/class__GtkBoxChild__inherit__graph.png
@@ -1513,6 +1511,12 @@ share/doc/gtkmm-2.0/docs/reference/html/fontselection_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/fontset_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/frame_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/functions.html
+share/doc/gtkmm-2.0/docs/reference/html/functions_enum.html
+share/doc/gtkmm-2.0/docs/reference/html/functions_eval.html
+share/doc/gtkmm-2.0/docs/reference/html/functions_func.html
+share/doc/gtkmm-2.0/docs/reference/html/functions_rela.html
+share/doc/gtkmm-2.0/docs/reference/html/functions_type.html
+share/doc/gtkmm-2.0/docs/reference/html/functions_vars.html
 share/doc/gtkmm-2.0/docs/reference/html/gc_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/gdk_2gdkmm_2color_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/gdk_2gdkmm_2image_8h.html
@@ -1523,6 +1527,8 @@ share/doc/gtkmm-2.0/docs/reference/html/glib_2glibmm_2main_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/glib_2glibmm_2object_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/glib_2glibmm_2value_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/globals.html
+share/doc/gtkmm-2.0/docs/reference/html/globals_defs.html
+share/doc/gtkmm-2.0/docs/reference/html/globals_type.html
 share/doc/gtkmm-2.0/docs/reference/html/glyph_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/glyphstring_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/graph_legend.dot
@@ -1594,7 +1600,6 @@ share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__115.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__116.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__117.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__118.png
-share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__119.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__12.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__13.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__14.png
@@ -1736,6 +1741,11 @@ share/doc/gtkmm-2.0/docs/reference/html/namespaceGtk_1_1Toolbar__Helpers.html
 share/doc/gtkmm-2.0/docs/reference/html/namespaceGtk_1_1TreeViewColumn__CellRendererGeneration.html
 share/doc/gtkmm-2.0/docs/reference/html/namespacePango.html
 share/doc/gtkmm-2.0/docs/reference/html/namespacemembers.html
+share/doc/gtkmm-2.0/docs/reference/html/namespacemembers_enum.html
+share/doc/gtkmm-2.0/docs/reference/html/namespacemembers_eval.html
+share/doc/gtkmm-2.0/docs/reference/html/namespacemembers_func.html
+share/doc/gtkmm-2.0/docs/reference/html/namespacemembers_type.html
+share/doc/gtkmm-2.0/docs/reference/html/namespacemembers_vars.html
 share/doc/gtkmm-2.0/docs/reference/html/namespaces.html
 share/doc/gtkmm-2.0/docs/reference/html/noopobject_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/notebook_8h.html
