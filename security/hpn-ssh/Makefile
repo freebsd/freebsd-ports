@@ -75,7 +75,7 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PKGNAMESUFFIX=	-gssapi
-CONFILCTS+=	openssh-portable-*
+CONFLICTS+=	openssh-portable-*
 BUILD_DEPENDS+=		autoreconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=	${FILESDIR}/gss-serv.c.patch
 .endif
 .else
-CONFILCTS+=	openssh-gssapi-*
+CONFLICTS+=	openssh-gssapi-*
 .endif
 
 post-configure:
