@@ -359,6 +359,7 @@
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += threeDS
+    SUBDIR += tif22pnm
     SUBDIR += tiff
     SUBDIR += tiff2png
     SUBDIR += tifmerge
