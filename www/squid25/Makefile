@@ -28,7 +28,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -75,7 +75,8 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-partial_reload.patch \
 		squid-2.5.STABLE4-ldap_tls.patch \
 		squid-2.5.STABLE4-ldap_group_bufsize.patch \
-		squid-2.5.STABLE4-http_workarounds.patch
+		squid-2.5.STABLE4-http_workarounds.patch \
+		squid-2.5.STABLE4-empty_proxy_auth.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -122,7 +123,7 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-basic-auth-helpers="${basic_auth}" \
 			--enable-digest-auth-helpers="password" \
 			--enable-external-acl-helpers="${external_acl}" \
-			--enable-ntlm-auth-helpers="winbind"
+			--enable-ntlm-auth-helpers="SMB winbind"
 
 # Languages:
 #
@@ -239,21 +240,18 @@ post-install:
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # Generate parts of pkg-plist on the fly:
-	@cd ${PREFIX} && ${FIND} libexec/squid -type f -o -type l \
+	@cd ${PREFIX} && ${FIND} libexec/squid -type f -o -type l | sort \
 	    >${WRKDIR}/plist.dynamic
 	@${ECHO_CMD} "@dirrm libexec/squid" >>${WRKDIR}/plist.dynamic
 # Only register what we should have installed, there may be local additions
 # present:
 .for d in ${SQUID_LANGUAGES}
-	@cd ${PREFIX} && ${FIND} etc/squid/errors/${d} -type f \
+	@cd ${PREFIX} && ${FIND} etc/squid/errors/${d} -type f | sort \
 	    >>${WRKDIR}/plist.dynamic
 	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${WRKDIR}/plist.dynamic
 .endfor
-	@${ECHO_CMD} "r ${TMPPLIST}" >${WRKDIR}/ex.script
-	@${ECHO_CMD} "/Start of dynamically generated plist" >>${WRKDIR}/ex.script
-	@${ECHO_CMD} "r ${WRKDIR}/plist.dynamic" >>${WRKDIR}/ex.script
-	@${ECHO_CMD} "x!" >>${WRKDIR}/ex.script
-	@${CP} -p ${TMPPLIST} ${TMPPLIST}.orig
-	@cd ${WRKDIR} && ex <ex.script >/dev/null
+	@${REINPLACE_CMD} -e \
+	    '/@comment Start of dynamically generated plist/r${WRKDIR}/plist.dynamic' \
+	    ${TMPPLIST}
 
 .include <bsd.port.mk>
