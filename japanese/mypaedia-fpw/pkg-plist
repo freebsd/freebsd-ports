@@ -1,0 +1,17 @@
+share/dict/mypaedia-fpw/mypaedia/data/honmon
+share/dict/mypaedia-fpw/mypaedia/gaiji/gai16f
+share/dict/mypaedia-fpw/mypaedia/gaiji/gai16h
+share/dict/mypaedia-fpw/catalogs
+share/doc/mypaedia-fpw/AUTHORS
+share/doc/mypaedia-fpw/COPYING
+share/doc/mypaedia-fpw/ChangeLog
+share/doc/mypaedia-fpw/GAIJI.TXT
+share/doc/mypaedia-fpw/NEWS
+share/doc/mypaedia-fpw/README.PKG
+share/doc/mypaedia-fpw/README.TXT
+share/doc/mypaedia-fpw/TOBEDONE
+@dirrm share/dict/mypaedia-fpw/mypaedia/data
+@dirrm share/dict/mypaedia-fpw/mypaedia/gaiji
+@dirrm share/dict/mypaedia-fpw/mypaedia
+@dirrm share/dict/mypaedia-fpw
+@dirrm share/doc/mypaedia-fpw
