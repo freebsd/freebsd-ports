@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.10
-PORTREVISION=	1
+PORTVERSION=	0.90.0.102
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
-		http://www.mplayerhq.hu/MPlayer/releases/ \
+MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
 		http://ftp.lug.udel.edu/MPlayer/releases/ \
-		ftp://ftp.mplayerhq.hu/MPlayer/releases/ \
+		http://www4.mplayerhq.hu/MPlayer/releases/ \
+		ftp://ftp1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
-		ftp://ftp.lug.udel.edu/MPlayer/releases/
-DISTNAME=	MPlayer-0.90pre10
+		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
+		http://www.rrr.de/~riggs/mplayer/
+DISTNAME=	MPlayer-0.90rc2
 
 MAINTAINER=	riggs@rrr.de
 
@@ -31,8 +31,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS} \
 		TMPDIR="${WRKSRC}"
-CONFIGURE_ARGS= --with-extralibdir=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
+		--with-x11libdir=${X11BASE}/lib \
+		--with-x11incdir=${X11BASE}/include \
+		--enable-png \
+		--disable-tv-v4l \
 		--disable-vidix
 
 USE_GNOMENG=	yes
@@ -41,8 +45,8 @@ MAN1=		mplayer.1
 MLINKS=		mplayer.1 mencoder.1
 MANCOMPRESSED=	no
 
-CONFFILES=	codecs.conf example.conf input.conf
-DOCFILES=       bugreports.html cd-dvd.html codecs-in.html \
+CONFFILES=	codecs.conf example.conf input.conf menu.conf
+DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
 		codecs.html documentation.html faq.html skin-en.html \
 		encoding.html formats.html sound.html \
 		users_against_developers.html \
@@ -50,8 +54,24 @@ DOCFILES=       bugreports.html cd-dvd.html codecs-in.html \
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/lib/libartsc.so.0)
+WITH_ARTS=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libdv.so.2)
+WITH_LIBDV=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libdvdcss.so.2)
 WITH_DVD=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libdvdnav.so.1)
+WITH_LIBDVDNAV=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libmad.so.1)
+WITH_MAD=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
@@ -82,8 +102,12 @@ WITH_REALPLAYER=	yes
 WITH_LIVEMEDIA=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libxvidcore.so)
+WITH_XVID=	yes
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if ${HAVE_GNOME:Mgtk12}!=""
@@ -99,12 +123,57 @@ PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=	--enable-gui
 .endif
 
+.if defined(WITH_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+
+CONFIGURE_ARGS+=	--enable-arts
+.else
+CONFIGURE_ARGS+=	--disable-arts
+.endif
+
 .if defined(WITH_DVD)
 .if !defined(WITH_LIBDVDREAD)
 LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss
 .else
 LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 .endif
+.if defined(WITH_LIBDVDNAV)
+LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/graphics/libdvdnav
+
+CONFIGURE_ARGS+=	--enable-dvdnav
+.else
+CONFIGURE_ARGS+=	--disable-dvdnav
+.endif
+
+CONFIGURE_ARGS+=	--enable-css \
+			--with-csslibdir=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-css
+.endif
+
+.if defined(WITH_LIBDV)
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/multimedia/libdv
+
+CONFIGURE_ARGS+=	--enable-libdv
+.else
+CONFIGURE_ARGS+=	--disable-libdv
+.endif
+
+.if defined(WITH_LIBFAME)
+LIB_DEPENDS+=	fame-0.9.0:${PORTSDIR}/graphics/libfame
+
+CONFIGURE_ARGS+=	--enable-libfame
+.else
+CONFIGURE_ARGS+=	--disable-libfame
+.endif
+
+.if defined(WITH_MAD)
+LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
+
+CONFIGURE_ARGS+=	--enable-mad \
+			--with-madlibdir=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-mad
 .endif
 
 .if defined(WITH_SVGALIB)
@@ -131,6 +200,12 @@ CONFIGURE_ARGS+=	--enable-live \
 			--with-livelibdir=${LOCALBASE}/live
 RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+.endif
+
+.if defined(WITH_XVID)
+CONFIGURE_ARGS+=	--enable-xvid \
+			--with-xvidcore=${LOCALBASE}/lib/libxvidcore.so
+LIB_DEPENDS+=		xvidcore.0:${PORTSDIR}/graphics/xvid
 .endif
 
 .if defined(WITH_FREETYPE)
@@ -181,8 +256,12 @@ RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
 
-CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
+#CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
+CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
+.else
+CONFIGURE_ARGS+=	--disable-win32 \
+			-disable-qtx-codecs
 .endif
 .endif # ARCH == i386
 
@@ -200,10 +279,22 @@ pre-everything::
 .endif
 .if !defined(WITH_DVD)
 	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
+.if !defined(WITH_LIBDVDNAV)
+	@${ECHO_MSG} "You can enable libdvdnav support by defining WITH_LIBDVDNAV."
+.endif
 .endif
 .if defined(WITH_DVD) && !defined(WITH_LIBDVDREAD)
 	@${ECHO_MSG} "You can replace mplayer internal DVD routines with libdvdread"
 	@${ECHO_MSG} "support by defining WITH_LIBDVDREAD."
+.endif
+.if !defined(WITH_LIBDV)
+	@${ECHO_MSG} "You can enable libdv support by defining WITH_LIBDV."
+.endif
+.if !defined(WITH_LIBFAME)
+	@${ECHO_MSG} "You can enable libfame support by defining WITH_LIBFAME."
+.endif
+.if !defined(WITH_MAD)
+	@${ECHO_MSG} "You can enable mad support by defining WITH_MAD."
 .endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
@@ -219,6 +310,9 @@ pre-everything::
 .endif
 .if !defined(WITH_LIVEMEDIA)
 	@${ECHO_MSG} "You can enable liveMedia support by defining WITH_LIVEMEDIA."
+.endif
+.if !defined(WITH_XVID)
+	@${ECHO_MSG} "You can enable XviD support by defining WITH_XVID."
 .endif
 .if !defined(WITH_FREETYPE)
 	@${ECHO_MSG} "You can enable truetype font support by defining WITH_FREETYPE."

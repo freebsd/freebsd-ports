@@ -1,28 +1,21 @@
---- Makefile.orig	Wed Oct 23 19:20:59 2002
-+++ Makefile	Fri Nov  1 12:31:48 2002
-@@ -24,7 +24,7 @@
- endif
- 
- # a BSD compatible 'install' program
--INSTALL = install
-+INSTALL = @${BSD_INSTALL_PROGRAM}
- 
- SRCS_COMMON = cpudetect.c codec-cfg.c cfgparser.c my_profile.c spudec.c playtree.c playtreeparser.c asxparser.c vobsub.c subreader.c sub_cc.c find_sub.c
- SRCS_MENCODER = mencoder.c mp_msg-mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/osd.c libvo/sub.c libvo/font_load.c libvo/font_load_ft.c xvid_vbr.c
-@@ -201,49 +201,11 @@
- ifeq ($(VIDIX),yes)
- 	$(DO_MAKE)
+--- Makefile.orig	Thu Dec  5 07:29:26 2002
++++ Makefile	Tue Dec 17 09:53:32 2002
+@@ -241,49 +241,11 @@
+ ifeq ($(SHARED_PP),yes)
+ 	$(MAKE) install -C postproc 
  endif
 -	if test ! -d $(BINDIR) ; then mkdir -p $(BINDIR) ; fi
- 	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG) $(BINDIR)/$(PRG)
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG) $(BINDIR)/$(PRG)
 -ifeq ($(GUI),yes)
 -	-ln -sf $(PRG) $(BINDIR)/gmplayer
 -endif
 -	if test ! -d $(MANDIR)/man1 ; then mkdir -p $(MANDIR)/man1; fi
 -	$(INSTALL) -c -m 644 DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
++	@${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)/$(PRG)
 +	@${BSD_INSTALL_MAN} DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
  ifeq ($(MENCODER),yes)
- 	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
++	@${BSD_INSTALL_PROGRAM} $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
  	-ln -sf mplayer.1 $(MANDIR)/man1/mencoder.1
 -endif
 -	@if test ! -d $(DATADIR) ; then mkdir -p $(DATADIR) ; fi

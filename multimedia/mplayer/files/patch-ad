@@ -1,6 +1,15 @@
---- configure.orig	Thu Oct 24 20:12:40 2002
-+++ configure	Fri Nov  1 12:46:36 2002
-@@ -495,19 +495,10 @@
+--- configure.orig	Sat Dec  7 07:54:02 2002
++++ configure	Mon Dec 16 21:02:31 2002
+@@ -276,7 +276,7 @@
+ 
+ 
+ # 1st pass checking for vital options
+-_install=install
++_install=@${BSD_INSTALL_PROGRAM}
+ _ranlib=ranlib
+ _cc=gcc
+ test "$CC" && _cc="$CC"
+@@ -512,19 +512,10 @@
  
  # Try to find the available options for the current CPU
  if x86 || ppc; then
@@ -20,18 +29,18 @@
  
    pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
    pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
-@@ -1302,8 +1293,8 @@
+@@ -1353,8 +1344,8 @@
      ;;
  
    *)
 -    echo "Unknown parameter: $ac_option"
--    exit
+-    exit 1
 +    echo -n "Unknown parameter: $ac_option"
 +    echo " (ignoring)"
      ;;
  
    esac
-@@ -1313,7 +1304,7 @@
+@@ -1364,7 +1355,7 @@
  test -z "$_bindir" && _bindir="$_prefix/bin"
  test -z "$_datadir" && _datadir="$_prefix/share/mplayer"
  test -z "$_mandir" && _mandir="$_prefix/man"
@@ -40,7 +49,7 @@
  test -z "$_libdir" && _libdir="$_prefix/lib"
  test -z "$_mlibdir" && _mlibdir="$MLIBHOME"
  
-@@ -1702,13 +1693,7 @@
+@@ -1784,13 +1775,7 @@
  
  
  echocheck "memalign()"
@@ -54,7 +63,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -1785,31 +1770,7 @@
+@@ -1879,31 +1864,7 @@
  
  
  echocheck "pthread"
@@ -87,7 +96,7 @@
  echores "yes (using $_ld_pthread)"
  
  
-@@ -4277,7 +4238,7 @@
+@@ -4483,7 +4444,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es

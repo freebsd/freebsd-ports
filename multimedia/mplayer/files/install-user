@@ -1,10 +1,10 @@
 #This perl script links the codec config file
 #and the fonts dir to the user's home dir.
-#Last touched: 2002-05-04 riggs
+#Last touched: 2002-12-16 riggs
 
-if (-e "$ENV{HOME}/.mplayer/")
+if (-e "$ENV{HOME}/.mplayer/font")
 {
-	print "Sorry, you should execute this target without having a .mplayer directory in your homedir.\n";
+	print "Sorry, font link is already existing.\n";
 	exit 1;
 }
 
@@ -15,6 +15,12 @@ print "$prefix[3]";
 $prefix=$pkg[3];
 $prefix=~ s/(.+mplayer).*/$1/;
 chop $prefix;
+
+if ($1 eq "")
+{
+	print "You have no mplayer-fonts installed.\n";
+	exit 1;
+}
 
 print "You may choose any of the available language sets:\n\n";
 print "ISO-8859-1 Font : 1\n";
@@ -34,8 +40,8 @@ if ($lang eq "1" || $lang eq "2")
 	if ($size ne "14" && $size ne "18" && $size ne "24" && $size ne "28") {$size=14;}
 }
 
+unless (-e "$ENV{HOME}/.mplayer") {system "mkdir $ENV{HOME}/.mplayer";}
 
-system "mkdir $ENV{HOME}/.mplayer";
 if ($lang eq "c")
 {
 	system "ln -sv $prefix/fonts/cyrillic/ $ENV{HOME}/.mplayer/font";
@@ -49,7 +55,3 @@ elsif ($lang eq "2")
 	system "ln -sv $prefix/fonts/iso-8859-2/arial-$size/ $ENV{HOME}/.mplayer/font";
 }
 else {system "ln -sv $prefix/fonts/iso-8859-1/arial-$size/ $ENV{HOME}/.mplayer/font"};
-
-system "ln -sv $prefix/codecs.conf $ENV{HOME}/.mplayer/codecs.conf";
-system "cp -pv $prefix/example.conf $ENV{HOME}/.mplayer/example.conf";
-system "cp -pv $prefix/input.conf $ENV{HOME}/.mplayer/input.conf";
