@@ -3,8 +3,9 @@ bin/ipastat
 etc/ipa.conf.default
 @unexec if [ -f %D/etc/rc.d/ipa.sh ]; then cmp -s %D/etc/rc.d/ipa.sh.sample %D/etc/rc.d/ipa.sh && rm -f %D/etc/rc.d/ipa.sh || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/rc.d/ipa.sh`` to remove startup files left." | fmt ; fi
 etc/rc.d/ipa.sh.sample
-share/examples/ipa/README
-share/examples/ipa/example-1
-share/examples/ipa/example-2
-@dirrm share/examples/ipa
-@unexec rmdir %D/man/ru_SU.KOI8-R/man8 %D/man/ru_SU.KOI8-R/man5 %D/man/ru_SU.KOI8-R && rm %D/man/ru_RU.KOI8-R || true
+%%PORTDOCS%%share/examples/ipa/README
+%%PORTDOCS%%share/examples/ipa/example-1
+%%PORTDOCS%%share/examples/ipa/example-2
+%%PORTDOCS%%@dirrm share/examples/ipa
+@unexec rmdir %D/man/ru_SU.KOI8-R/man8 %D/man/ru_SU.KOI8-R/man5 %D/man/ru_SU.KOI8-R 2>/dev/null || true
+@unexec if [ -L %D/man/ru_RU.KOI8-R ]; then rm %D/man/ru_RU.KOI8-R 2>/dev/null || true; else rmdir %D/man/ru_RU.KOI8-R/man8 %D/man/ru_RU.KOI8-R/man5 %D/man/ru_RU.KOI8-R && rm %D/man/ru_RU.KOI8-R 2>/dev/null || true ; fi
