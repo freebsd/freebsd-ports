@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Nov 23 15:29:48 2004
++++ Makefile.in	Wed Nov 24 10:14:53 2004
+@@ -598,7 +598,7 @@
+ 	  for pixmap in $(srcdir)/support_files/*; do \
+ 	    if test -f $$pixmap; then \
+ 		if test -x $$pixmap; then \
+-		      $(INSTALL_PROGRAM) $$pixmap $(DESTDIR)$(pkgdatadir)/support_files; \
++		      echo "here be dragons"; \
+ 		else \
+ 		      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(pkgdatadir)/support_files; \
+ 		fi \
