@@ -543,8 +543,8 @@ b2bua		ports/net/b2bua
 babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
-bacula		ports/sysutils/bacula
 bacula-client	ports/sysutils/bacula-client
+bacula-server	ports/sysutils/bacula-server
 baduki		ports/games/baduki
 badwm		ports/x11-wm/badwm
 baghira		ports/x11-themes/baghira
