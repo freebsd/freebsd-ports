@@ -1,37 +1,37 @@
---- Makefile.in.orig	Wed Jul  2 02:30:46 2003
-+++ Makefile.in	Sun Jul 20 14:09:49 2003
-@@ -132,7 +132,7 @@
- EXTRA_DIST = 00README.NOW.OR.SUFFER README README.cygwin automake.fix COPYING.GPL sysconftool
- 
+--- Makefile.in.orig	Tue Jul 20 01:54:19 2004
++++ Makefile.in	Tue Jul 20 19:31:37 2004
+@@ -218,7 +218,7 @@
+ 	COPYING.GPL NEWS.html $(TEMPLFILES)\
+ sysconftool
  sysconf_DATA = imapd.dist imapd-ssl.dist pop3d.dist pop3d-ssl.dist \
 -	imapd.cnf pop3d.cnf quotawarnmsg.example
 +	quotawarnmsg.example
  
  libexec_SCRIPTS = imapd.rc imapd-ssl.rc pop3d.rc pop3d-ssl.rc
- 
-@@ -351,8 +351,8 @@
+ HTML2TXT = `which lynx 2>/dev/null && echo "lynx -dump -nolist" && exit; echo "links -dump"`
+@@ -433,8 +433,8 @@
  	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
  	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
  	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
--	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst"; \
--	  $(INSTALL_DATA) $$file $(DESTDIR)$(man1dir)/$$inst; \
-+	  echo " %%INSTALL_MAN%% $$file $(DESTDIR)$(man1dir)/$$inst"; \
-+	  %%INSTALL_MAN%% $$file $(DESTDIR)$(man1dir)/$$inst; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
++	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
++	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
  	done
  uninstall-man1:
  	@$(NORMAL_UNINSTALL)
-@@ -394,8 +394,8 @@
+@@ -478,8 +478,8 @@
  	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
  	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
  	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
--	  echo " $(INSTALL_DATA) $$file $(DESTDIR)$(man8dir)/$$inst"; \
--	  $(INSTALL_DATA) $$file $(DESTDIR)$(man8dir)/$$inst; \
-+	  echo " %%INSTALL_MAN%% $$file $(DESTDIR)$(man8dir)/$$inst"; \
-+	  %%INSTALL_MAN%% $$file $(DESTDIR)$(man8dir)/$$inst; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man8dir)/$$inst"; \
++	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man8dir)/$$inst'"; \
++	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man8dir)/$$inst"; \
  	done
  uninstall-man8:
  	@$(NORMAL_UNINSTALL)
-@@ -873,6 +873,7 @@
+@@ -1055,6 +1055,7 @@
  
  install-data-local: install-man
  	for f in `cat authlib/modulelist ; . authlib/authdaemonrc ; echo $$authmodulelist ` ; do \
