@@ -409,6 +409,7 @@ share/eagle/lbr/cypress.lbr
 share/eagle/lbr/dc-dc-converter.lbr
 share/eagle/lbr/dil.lbr
 share/eagle/lbr/diode.lbr
+share/eagle/lbr/discrete.lbr
 share/eagle/lbr/display-hp.lbr
 share/eagle/lbr/display-lcd.lbr
 share/eagle/lbr/ecl.lbr
@@ -642,7 +643,6 @@ share/eagle/ulp/rotate-mask.bmp
 share/eagle/ulp/rotate-start-angle.bmp
 share/eagle/ulp/rotate-step-angle.bmp
 share/eagle/ulp/rotate.ulp
-share/eagle/ulp/rotation$.scr
 share/eagle/ulp/silk.ulp
 share/eagle/ulp/smash-all-sch.ulp
 share/eagle/ulp/smd-coordinate.ulp
