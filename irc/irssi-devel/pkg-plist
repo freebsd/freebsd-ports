@@ -1,6 +1,10 @@
 bin/irssi
 etc/irssi.conf
 etc/irssi.conf.sample
+%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.a
+%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.la
+%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.so
+%%WITH_PROXY%%/lib/irssi/modules/libirc_proxy.so.0
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/Irc.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/TextUI.pm
