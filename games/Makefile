@@ -124,6 +124,7 @@
     SUBDIR += quakeserver
     SUBDIR += rocksndiamonds
     SUBDIR += rollemup
+    SUBDIR += rt2-demo
     SUBDIR += rubix
     SUBDIR += seabattle
     SUBDIR += seahaven
