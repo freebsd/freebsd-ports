@@ -1,13 +1,13 @@
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
-share/doc/fetchmail/README
 share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ
-share/doc/fetchmail/NOTES
 share/doc/fetchmail/FEATURES
-share/doc/fetchmail/fetchmail-FAQ.html
+share/doc/fetchmail/NOTES
+share/doc/fetchmail/README
 share/doc/fetchmail/design-notes.html
+share/doc/fetchmail/fetchmail-FAQ.html
 share/doc/fetchmail/fetchmail-features.html
 share/doc/fetchmail/sample.rcfile
 @dirrm share/doc/fetchmail
