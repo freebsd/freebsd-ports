@@ -1,0 +1,35 @@
+# New ports collection makefile for:	renamedlgplugins
+# Date created:				11 Febrary 2004
+# Whom:					Michael Nottebrock <lofi@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	${RENAMEDLGPLUG_PORTNAME}
+PORTVERSION=	${RENAMEDLGPLUG_PORTVERSION}
+PORTREVISION=	${RENAMEDLGPLUG_PORTREVISION}
+CATEGORIES=	misc kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
+DIST_SUBDIR=	KDE
+
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	"Plugins for Konqueror's rename dialog"
+
+IGNORE=		This port is part of KDE 3.2.1 and is not yet ready
+
+KDE_SPLIT=	renamedlgplugins
+KDE_DOC_SPLIT=	# none
+USE_KDELIBS_VER=3
+
+USE_BZIP2=	yes
+PREFIX=		${KDE_PREFIX}
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include "${.CURDIR}/../../misc/kdeaddons3/Makefile.split"
+.include <bsd.port.mk>

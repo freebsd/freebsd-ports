@@ -325,6 +325,7 @@
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += reed
+    SUBDIR += renamedlgplugins
     SUBDIR += rfc
     SUBDIR += ringtonetools
     SUBDIR += rname
