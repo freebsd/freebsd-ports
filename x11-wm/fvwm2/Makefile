@@ -1,41 +1,27 @@
-# New ports collection makefile for:	Internationalized fvwm2
-# Version required:	2.0.46
+# New ports collection makefile for:	Fvwm2
+# Version required:	2.2
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
-# $Id: Makefile,v 1.14 1998/09/15 11:13:35 asami Exp $
+# $Id: Makefile,v 1.15 1998/09/17 00:32:57 asami Exp $
 #
 
-DISTNAME=	fvwm-2.0.46
+DISTNAME=	fvwm-2.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/2.0.x/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/kits/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/X/fvwm/sources/2.0.x/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/X/fvwm/fvwm-users-jp/kits/ \
-		ftp://ftp.hpc.uh.edu/pub/fvwm/version-2/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm-users-jp-kits.97Oct04.tar.gz
+MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 
-MAINTAINER=	matusita@jp.freebsd.org
+MAINTAINER=	jcwells@u.washington.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-USE_IMAKE=	yes
-MAN1= 		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
-		FvwmButtons.1 FvwmCascade.1 FvwmCpp.1 FvwmForm.1 \
-		FvwmIconBox.1 FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 \
-		FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 FvwmTile.1 \
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+MAN1=		FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
+		FvwmButtons.1 FvwmCpp.1 FvwmEvent.1 FvwmForm.1 FvwmIconBox.1 \
+		FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1 FvwmRearrange.1 \
+		FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 \
 		FvwmWinList.1 fvwm2.1 xpmroot.1
-MANCOMPRESSED=	yes
-
-# filenames.
-PATCH_FIXIT=	kits/patch/fix-2.0.46
-PATCH_I18N=	kits/patch/PATCH.I18N
-USE_PATCHFILES=	${PATCH_FIXIT} ${PATCH_I18N}
-
-pre-patch:
-	@for i in ${USE_PATCHFILES}; do \
-		${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/$$i; \
-	 done;
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
