@@ -19,13 +19,13 @@
   # anything below this line is just for me!
   
   install: all
-! 	install -m 0755 alevt		$(X11BASE)/bin
-! 	install -m 0755 alevt-date	$(X11BASE)/bin
-! 	install -m 0755 alevt-cap	$(X11BASE)/bin
-! 	install -m 0644 alevt.1x	$(X11BASE)/man/man1
-! 	install -m 0644 alevt-date.1	$(X11BASE)/man/man1
-! 	install -m 0644 alevt-cap.1	$(X11BASE)/man/man1
-! 	install -m 0644 contrib/mini-alevt.xpm $(X11BASE)/include/X11/pixmaps
+! 	install -m 0755 alevt		$(PREFIX)/bin
+! 	install -m 0755 alevt-date	$(PREFIX)/bin
+! 	install -m 0755 alevt-cap	$(PREFIX)/bin
+! 	install -m 0644 alevt.1x	$(PREFIX)/man/man1
+! 	install -m 0644 alevt-date.1	$(PREFIX)/man/man1
+! 	install -m 0644 alevt-cap.1	$(PREFIX)/man/man1
+! 	install -m 0644 contrib/mini-alevt.xpm $(PREFIX)/include/X11/pixmaps
   	sync
   
   depend:
