@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.52 1998/06/06 19:09:23 ache Exp $
+# $Id: Makefile,v 1.53 1998/06/07 02:39:22 asami Exp $
 #
 
 DISTNAME=       apache_1.3.0
@@ -22,13 +22,14 @@ CONFIGURE_ARGS= \
 		 --datadir=${PREFIX}/www \
 		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
+		 --disable-rule=STATUS \
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \
 		 --disable-module=auth_dbm
 
 CONFIGURE_ENV= \
-OPTIM='-DDOCUMENT_LOCATION=\\"'${PREFIX}'/www/data/\\" \
+OPTIM='-DBUFFERED_LOGS -DDOCUMENT_LOCATION=\\"'${PREFIX}'/www/data/\\" \
 -DDEFAULT_PATH=\\"/bin:/usr/bin:'${PREFIX}'/bin\\"'
 
 MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
