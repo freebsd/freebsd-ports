@@ -1,13 +1,13 @@
 # New ports collection makefile for:	portmanager
 # Date created: 	April 23, 2004
-# Whom: 		Michael C. Shultz <ringworm@inbox.lv>
+# Whom: 		Michael C. Shultz <reso3w83@verizon.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.2.4
-PORTREVISION=	2
+PORTVERSION=	0.2.5
+PORTREVISION=	0
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -28,6 +28,7 @@ BUILD_DEPENDS=	autoheader259:${PORTSDIR}/devel/autoconf259	\
 
 MAN1=			portmanager.1
 MAN3=			libMG.3 		\
+			MGdbAdd.3		\
 			MGdbCreate.3		\
 			MGdbDelete.3		\
 			MGdbGetRecordQty.3	\
@@ -40,11 +41,11 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 # Need INSTALL_TARGET to install /usr/local/etc/portmanager/pm-020.conf.SAMPLE
-INSTALL_TARGET=		install info
+INSTALL_TARGET=         install info
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ;	\
-	s|0.2.5|${PORTVERSION}_${PORTREVISION}|g ;	\
+	s|%%VERSION%%|${PORTVERSION}_${PORTREVISION}|g ;	\
 	s|%%PORTSDIR%%|${PORTSDIR}|g ;	\
 	s|%%PKG_DBDIR%%|${PKG_DBDIR}|g' ${WRKSRC}/libPMGR/src/libPMGR.h
 
@@ -52,8 +53,9 @@ post-patch:
 # is to use post-configure <sigh>
 post-configure:
 .if defined(WITH_DEBUG)
-	@${REINPLACE_CMD} -e 's|# BDECFLAGS=|BDECFLAGS=|g' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's|# CFLAGS=|CFLAGS=|g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's|# BDECFLAGS=|BDECFLAGS=|g ;	\
+	s|# CFLAGS=|CFLAGS=|g ; 				\
+	s|# AC_SUBST(CFLAGS)|AC_SUBST(CFLAGS)|g' ${WRKSRC}/configure.ac
 	cd ${WRKSRC};sh rePackage.sh;sh configure
 .endif
 
