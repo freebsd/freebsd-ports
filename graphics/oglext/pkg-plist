@@ -1,0 +1,9 @@
+include/oglext/OglExt.h
+include/oglext/glext.h
+lib/libOglExt.a
+lib/libOglExt.so
+lib/libOglExt.so.1
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/extensionlist.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/oglext
