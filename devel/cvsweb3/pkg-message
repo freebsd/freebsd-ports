@@ -1,0 +1,12 @@
+************************************************************
+  Now you can browse your CVS repository via web if you set
+up your web server correctly.  The URL to get to the cvsweb
+will be like `http://localhost/cgi-bin/cvsweb.cgi'.
+
+  To configure its appearance and/or change the repository
+entry to browse, try editing the configuration section of
+cvsweb.cgi as you like.
+
+  For further information, please look into the directory
+`/usr/local/share/doc/cvsweb/'.
+************************************************************

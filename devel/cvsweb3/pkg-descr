@@ -1,17 +1,7 @@
-cvsweb is a WWW CGI script that allows remote access to a CVS tree.  It
-allows browsing of the full tree; no access controls are implemented.
-It can display the revision history of a file, as well as diffs between
-revisions and downloading the whole file.
+The cvsweb.cgi is a WWW CGI script that allows remote users to browse
+a CVS repository tree via web.  It can display the revision history of
+a file, as well as diffs between revisions and downloading the whole
+file.
 
-The configuration should be easy; edit the variable definitions at the
-top, above the line that says "End configuration section".  Then install
-it in your web server's cgi-bin directory and you should be all set.
-
-Several people have approached me about modifying cvsweb for their own
-needs.  I would ask that if you make a useful modification, that you send
-it back to me for inclusion in the next release.
-
-AUTHOR: Bill Fenner <fenner@freebsd.org>
-WWW: http://people.FreeBSD.org/~fenner/cvsweb/
-
-- from README
+AUTHOR:	Bill Fenner <fenner@FreeBSD.org>
+WWW:	http://people.FreeBSD.org/~fenner/cvsweb/
