@@ -4,7 +4,6 @@ lib/liblthread.so
 lib/liblthread.so.2
 lib/liblgcc_r.a
 lib/liblgcc_r_p.a
-lib/liblgcc_r_pic.a
 include/pthread/linuxthreads/pthread.h
 include/pthread/linuxthreads/semaphore.h
 include/pthread/linuxthreads/pt-machine.h
