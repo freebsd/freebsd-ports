@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	QuakeForge
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:qf/} \
 		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw
@@ -31,7 +30,7 @@ WADFILE=	quakesw-1.0.6.tar.gz
 PROGFILE=	qwsv-2.30-glibc-i386-unknown-linux2.0.tar.gz
 SKINFILES=	skinbase.zip qw_skins.zip
 
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
@@ -44,12 +43,10 @@ WANT_SDL=	yes
 BROKEN=		"Does not compile on sparc64"
 .endif
 
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--with-global-cfg=${PREFIX}/etc/quakeforge.conf \
 		--with-sharepath=${PREFIX}/share/quakeforge \
 		--disable-optimize
-
-CONFIGURE_TARGET=
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
@@ -79,78 +76,78 @@ WITH_VORBIS=	yes
 
 .if defined(WITHOUT_SERVERS)
 CONFIGURE_ARGS+=--without-servers
-PLIST_SUB+=	SERVER:="@comment "
+PLIST_SUB+=	SERVER="@comment "
 .else
-PLIST_SUB+=	SERVER:=""
+PLIST_SUB+=	SERVER=""
 .endif
 
 .if defined(WITHOUT_TOOLS)
 CONFIGURE_ARGS+=--without-tools
-PLIST_SUB+=	TOOL:="@comment "
+PLIST_SUB+=	TOOL="@comment "
 .else
-PLIST_SUB+=	TOOL:=""
-MAN1=	pak.1 qfcc.1 qflight.1 qfvis.1
+PLIST_SUB+=	TOOL=""
+MAN1=	pak.1 qfcc.1 qflight.1 qfvis.1 wad.1
 .endif
 
 .if defined(WITHOUT_CLIENTS)
 CONFIGURE_ARGS+=--without-clients
-PLIST_SUB+=	CLIENT:="@comment "
+PLIST_SUB+=	CLIENT="@comment "
 WITHOUT_XMMS=	yes
 WITHOUT_SVGALIB=	yes
 WITHOUT_SDL=	yes
 WITHOUT_VORBIS=	yes
 .else
-PLIST_SUB+=	CLIENT:=""
+PLIST_SUB+=	CLIENT=""
 .endif
 
 .if !defined(WITHOUT_SVGALIB) && defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--with-svga=${LOCALBASE}
-PLIST_SUB+=	SVGA:=""
+PLIST_SUB+=	SVGA=""
 .else
 CONFIGURE_ARGS+=--without-svga
-PLIST_SUB+=	SVGA:="@comment "
+PLIST_SUB+=	SVGA="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS) && defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-ogg=${LOCALBASE} --with-vorbis=${LOCALBASE}
-PLIST_SUB+=	VORBIS:=""
+PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=--disable-vorbis --without-ogg --without-ogg-libraries \
 		--without-ogg-includes	--disable-oggtest
-PLIST_SUB+=	VORBIS:="@comment "
+PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if !defined(WITHOUT_XMMS) && defined(WITH_XMMS)
 LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-xmms-prefix=${X11BASE}
-PLIST_SUB+=	XMMS:=""
+PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--disable-xmms
-PLIST_SUB+=	XMMS:="@comment "
+PLIST_SUB+=	XMMS="@comment "
 .endif
 
 .if !defined(WITHOUT_SDL) && defined(WITH_SDL)
 USE_SDL=	sdl
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
-PLIST_SUB+=	SDL:=""
+PLIST_SUB+=	SDL=""
 .else
 CONFIGURE_ARGS+=--disable-sdl --disable-sdltest
-PLIST_SUB+=	SDL:="@comment "
+PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if !defined(NO_WAD)
-PLIST_SUB+=	WAD:=""
+PLIST_SUB+=	WAD=""
 .else
-PLIST_SUB+=	WAD:="@comment "
+PLIST_SUB+=	WAD="@comment "
 .endif
 
 .if !defined(NO_SKINS)
-PLIST_SUB+=	SKIN:=""
+PLIST_SUB+=	SKIN=""
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .else
-PLIST_SUB+=	SKIN:="@comment "
+PLIST_SUB+=	SKIN="@comment "
 .endif
 
 pre-everything::
@@ -199,9 +196,9 @@ do-install:
 .endif
 .if !defined(NO_SKINS)
 .for file in ${SKINFILES}
-	unzip -n ${DISTDIR}/${file} -d ${PREFIX}/share/quakeforge/qw/skins
+	${UNZIP_CMD} -n ${DISTDIR}/${file} -d ${PREFIX}/share/quakeforge/qw/skins
 .endfor
-	@cd ${PREFIX}/share/quakeforge/qw/skins && ./fixskins.sh *
+	@cd ${PREFIX}/share/quakeforge/qw/skins && LANG=C ./fixskins.sh *
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/config ${DOCSDIR}/data/docs ${DOCSDIR}/ideas
