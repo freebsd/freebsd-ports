@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-lib
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/
 
@@ -14,18 +14,17 @@ MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	A library for the multilingual text handling
 
 LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi \
-		otf.0:${PORTSDIR}/print/libotf
+		otf.0:${PORTSDIR}/print/libotf \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft \
+		gd.4:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS=	${LOCALBASE}/share/m17n/mdb.dir:${PORTSDIR}/devel/m17n-db
 RUN_DEPENDS=	${LOCALBASE}/share/m17n/mdb.dir:${PORTSDIR}/devel/m17n-db
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 USE_GNOME=	libxml2
-USE_INC_LIBTOOL_VER=	15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GMAKE=	yes
-MAKE_ARGS=	libm17n_la_LDFLAGS=
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
 OPTIONS=	ANTHY	"With Anthy support" off \
@@ -47,7 +46,6 @@ CONFIGURE_ENV+=	HAVE_ISPELL=no
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/include/libxml2|${LOCALBASE}/include/libxml2|' \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/*/Makefile.in
 
 .include <bsd.port.post.mk>
