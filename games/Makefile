@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.151 1998/07/04 19:27:23 steve Exp $
+# $Id: Makefile,v 1.152 1998/07/04 19:33:26 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -81,6 +81,7 @@
     SUBDIR += xcubes
     SUBDIR += xdeblock
     SUBDIR += xdemineur
+    SUBDIR += xdigger
     SUBDIR += xdino
     SUBDIR += xemeraldia
     SUBDIR += xevil
