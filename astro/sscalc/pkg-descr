@@ -1,0 +1,9 @@
+This is sscalc, a sunrise/sunset time calculator, ported to C.
+You can find the sunrise and sunset times for anywhere in the world
+as long as you know the latitude and longitude of the location.
+
+The program is a port of the Javascript program located at
+http://www.srrb.noaa.gov/highlights/sunrise/gen.html
+
+The page was written by Aaron Horiuchi, Chris Lehman and Chris
+Cornwall.
