@@ -9,25 +9,3 @@
  	"The options above can also be changed at run time by pressing the 'o' key.\n\n",
  	PACKAGE,
  	VERSION,
---- docs/nload.1.in.orig	Wed Aug 20 13:38:09 2003
-+++ docs/nload.1.in	Wed Aug 20 13:38:31 2003
-@@ -85,7 +85,7 @@
- The default is M.
- .TP
- .B devices
--Network devices to use. The default device is "eth0".
-+Network devices to use. The default device is "fxp0".
- .TP
- .B \-h, \-\-help
- Show a short summary of these command line options.
-@@ -112,10 +112,6 @@
- .TP
- .B '+', '-'
- Scroll the option window.
--
--.SH FILES
--.I /proc/net/dev
--is read by nload to get the network traffic data.
- 
- .SH VERSION
- This is version @VERSION@ of nload.
