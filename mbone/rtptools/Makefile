@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rtptools
-PORTVERSION=	1.14
+PORTVERSION=	1.17
 CATEGORIES=	mbone
-MASTER_SITES=	http://www.cs.columbia.edu/~hgs/rtptools/src/
+MASTER_SITES=	http://www.cs.columbia.edu/IRT/software/rtptools/src/
 
 MAINTAINER=	fenner@FreeBSD.org
 
