@@ -1,5 +1,5 @@
---- Makefile.PL.orig   Wed Nov 27 16:29:57 2002
-+++ Makefile.PL        Tue Mar 11 01:17:10 2003
+--- Makefile.PL.orig	Wed Nov 27 08:29:57 2002
++++ Makefile.PL	Thu Apr  3 01:35:53 2003
 @@ -6,46 +6,23 @@
  
  
@@ -28,8 +28,8 @@
 -  @LIBPATH = qw(-Lpubbin);
 -  @LIBS    = qw(-llibgd.olb -llibpng.olb -llibz.olb);
 -}
-+my @INC     = qw(-I$ENV{LOCALBASE}/include -I$ENV{LOCALBASE}/include/freetype2 -I$ENV{X11BASE}/include -I$ENV{X11BASE}/include/X11);
-+my @LIBPATH = qw(-L$ENV{LOCALBASE}/lib -L$ENV{X11BASE}/lib);
++my @INC     = qw(-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include -I${X11BASE}/include/X11);
++my @LIBPATH = qw(-L${LOCALBASE}/lib -L${X11BASE}/lib);
 +my @LIBS    = qw(-lfreetype -ljpeg -lgd -lpng -lz);
  
  # path to libgd
@@ -75,5 +75,3 @@
  $DEFINES    .= ' -DFCGI'      if $FCGI;
  
  WriteMakefile(
-
-
