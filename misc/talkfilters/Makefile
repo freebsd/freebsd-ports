@@ -40,6 +40,12 @@ MLINKS=	talkfilters.1 austro.1 \
 	talkfilters.1 warez.1
 INFO=	talkfilters
 
+pre-everything::
+	@${ECHO_MSG} "Please note that some of the filters contain language that may"
+	@${ECHO_MSG} "be objectionable to some. They are provided uncensored, in their"
+	@${ECHO_MSG} "original form. By downloading this software, you agree to accept"
+	@${ECHO_MSG} "these terms.
+
 post-patch:
 	@${RM} -f ${WRKSRC}/*.info*
 
