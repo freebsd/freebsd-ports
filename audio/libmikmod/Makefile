@@ -15,13 +15,21 @@ MASTER_SITE_SUBDIR=	apps/sound/libs
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-USE_ESOUND=	yes
-USE_GMAKE=	yes
+WANT_ESOUND=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
 
 MAN1=	libmikmod-config.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_ESOUND)
+USE_ESOUND=     yes
+CONFIGURE_ARGS+= --enable-esd
+.else
+CONFIGURE_ARGS+= --disable-esd
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/docs/mikmod.info-*
@@ -32,4 +40,4 @@ post-patch:
 		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
 		 s|-lc_r|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
