@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
-USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
 APACHE_PORT?=	www/apache13
