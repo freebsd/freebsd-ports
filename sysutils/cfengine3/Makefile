@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gordont@gnf.org
 
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
 .if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
@@ -32,8 +33,5 @@ post-install:
 .if defined(NOPORTDOCS)
 	@${RM} -rf ${PREFIX}/share/doc/${PORTNAME}
 .endif
-.for binary in cfd cfengine cfrun cfkey
-	@strip ${PREFIX}/sbin/${binary}
-.endfor
 
 .include <bsd.port.mk>
