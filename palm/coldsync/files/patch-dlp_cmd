@@ -1,0 +1,51 @@
+
+--- include/pconn/dlp_cmd.h.orig	Sat Oct  6 20:04:35 2001
++++ include/pconn/dlp_cmd.h	Sun Jul 18 00:24:28 2004
+@@ -199,6 +199,9 @@
+ #define DLPCMD_MODUIFLAG_VIEWERID	0x08	/* Viewer ID */
+ 
+ /** ReadSysInfo **/
++#define DLPARG_ReadSysInfo_Ver		DLPARG_BASE
++#define DLPARGLEN_ReadSysInfo_Ver	4
++
+ #define DLPRET_ReadSysInfo_Info		DLPRET_BASE
+ #define DLPRETLEN_ReadSysInfo_Info	14
+ 
+--- libpconn/dlp_cmd.c.orig	Thu Oct 18 03:35:03 2001
++++ libpconn/dlp_cmd.c	Sun Jul 18 00:24:28 2004
+@@ -343,7 +343,10 @@
+ 	int err;
+ 	struct dlp_req_header header;		/* Request header */
+ 	struct dlp_resp_header resp_header;	/* Response header */
++	struct dlp_arg argv[1];			/* Request argument list */
+ 	const struct dlp_arg *ret_argv;	/* Response argument list */
++	static ubyte outbuf[DLPARGLEN_ReadSysInfo_Ver]; 
++						/* Buffer holding outgoing arg */
+ 	const ubyte *rptr;	/* Pointer into buffers (for reading) */
+ 
+ 	DLPC_TRACE(1)
+@@ -351,10 +354,21 @@
+ 
+ 	/* Fill in the header values */
+ 	header.id = (ubyte) DLPCMD_ReadSysInfo;
+-	header.argc = 0;
++	header.argc = 1;
++
++	/* Fill in the argument */
++	
++	outbuf[0] = 0x00; /* We are telling our peer we support */
++	outbuf[1] = 0x01; /* DLP 1.3. Old PDAs will discard the argument. */
++	outbuf[2] = 0x00; 
++	outbuf[3] = 0x03;
++	
++	argv[0].id	= DLPARG_ReadSysInfo_Ver;
++	argv[0].size	= DLPARGLEN_ReadSysInfo_Ver;
++	argv[0].data	= outbuf;
+ 
+ 	/* Send the DLP request */
+-	err = dlp_send_req(pconn, &header, NULL);
++	err = dlp_send_req(pconn, &header, argv);
+ 	if (err < 0)
+ 		return err;
+ 
+

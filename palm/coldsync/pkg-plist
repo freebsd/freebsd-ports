@@ -1,10 +1,5 @@
 bin/coldsync
 etc/sample.coldsync.rc
-@unexec install-info --delete %D/info/conduits.info %D/info/dir
-info/conduits.info
-info/conduits.info-1
-info/conduits.info-2
-@exec install-info %D/info/conduits.info %D/info/dir
 lib/libpconn.a
 lib/libpconn.so
 lib/libpconn.so.0
