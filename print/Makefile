@@ -88,6 +88,8 @@
     SUBDIR += hyperlatex
     SUBDIR += ifhp
     SUBDIR += jadetex
+    SUBDIR += kcdlabel
+    SUBDIR += kover
     SUBDIR += latex
     SUBDIR += latex2rtf
     SUBDIR += latex2slides

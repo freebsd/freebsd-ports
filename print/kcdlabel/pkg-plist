@@ -1,0 +1,40 @@
+bin/kcdlabel
+share/applnk/Multimedia/kcdlabel.desktop
+share/doc/HTML/en/kcdlabel/en.new
+share/doc/HTML/en/kcdlabel/index-1.html
+share/doc/HTML/en/kcdlabel/index-2.html
+share/doc/HTML/en/kcdlabel/index-3.html
+share/doc/HTML/en/kcdlabel/index-4.html
+share/doc/HTML/en/kcdlabel/index-5.html
+share/doc/HTML/en/kcdlabel/index.html
+share/doc/HTML/en/kcdlabel/index.sgml
+share/icons/medium/locolor/apps/kcdlabel.xpm
+share/icons/small/locolor/apps/mini-kcdlabel.xpm
+share/locale/cs/LC_MESSAGES/kcdlabel.mo
+share/locale/de/LC_MESSAGES/kcdlabel.mo
+share/locale/fr/LC_MESSAGES/kcdlabel.mo
+share/locale/hu/LC_MESSAGES/kcdlabel.mo
+share/locale/it/LC_MESSAGES/kcdlabel.mo
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/small/locolor/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/small/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/small 2>/dev/null || true
+@unexec rmdir %D/share/icons/medium/locolor/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/medium/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/medium 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kcdlabel
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Multimedia 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
