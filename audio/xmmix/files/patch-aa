@@ -9,3 +9,14 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <errno.h>
+--- ./Imakefile.org	Sun Jul 14 10:48:56 1996
++++ ./Imakefile	Mon Aug 19 04:09:48 1996
+@@ -43,7 +43,7 @@
+  * #include "Motif.tmpl"
+  * #include "Motif.rules"
+  */
+-LOCAL_LIBRARIES= XmClientLibs
++LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
+ 
+ 
+ /*
