@@ -127,9 +127,11 @@ lib/tk%%TK_VER%%/msgs/el.msg
 lib/tk%%TK_VER%%/msgs/en.msg
 lib/tk%%TK_VER%%/msgs/en_gb.msg
 lib/tk%%TK_VER%%/msgs/es.msg
+lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
 lib/tk%%TK_VER%%/msgs/it.msg
 lib/tk%%TK_VER%%/msgs/nl.msg
+lib/tk%%TK_VER%%/msgs/pl.msg
 lib/tk%%TK_VER%%/msgs/ru.msg
 lib/tk%%TK_VER%%/listbox.tcl
 lib/tk%%TK_VER%%/menu.tcl
