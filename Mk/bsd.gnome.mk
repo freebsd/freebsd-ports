@@ -363,7 +363,7 @@ gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 #   .endfor
 # .endif
 #
-# Although it apears a little more convoluted in the tests.
+# Although it appears a little more convoluted in the tests.
 
 # Ports can make use of this like so:
 #
@@ -379,7 +379,7 @@ gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 # .endif
 
 # If the user has not defined GNOME_DESKTOP_VERSION, let's try to prevent
-# them from shooting themself in the foot.  We will try to make an 
+# users from shooting themselves in the foot.  We will try to make an 
 # intelligent choice on the user's behalf.
 .if exists(${gnomepanel_DETECT})
 GNOME_DESKTOP_VERSION?=	2
@@ -447,7 +447,7 @@ USE_GNOME=	glib12
 USE_GNOME=	gnomeprefix gnomehack libcapplet
 .endif
 
-# Hack USE_GNOME to the modular nfrastructure for port mataintainers that
+# Hack USE_GNOME to the modular infrastructure for port maintainers that
 # didn't do so themselves.  This will allow us to get rid of the old
 # GNOME porting infrastructure more quickly.
 .if defined(USE_GNOME)
