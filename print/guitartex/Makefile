@@ -17,11 +17,12 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
 		latex:${PORTSDIR}/print/latex
 
+USE_REINPLACE=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,\"(.*\.gif)\",\"${DATADIR}/\1\",g" ${WRKSRC}/guitartex
+	@${REINPLACE_CMD} -e "s,\"\(.*\.gif\)\",\"${DATADIR}/\1\",g" ${WRKSRC}/guitartex
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/guitartex ${PREFIX}/bin
