@@ -3,7 +3,7 @@
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.2 1997/11/15 10:58:56 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/17 16:27:40 obrien Exp $
 #
 
 DISTNAME=	asrpages
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.winternet.com/users/eric/
 DISTFILES=	asr.pages.tar
 
 MAINTAINER=	axl@iafrica.com
-
-BROKEN=		"by rev 1.227.2.46 of bsd.port.mk"
 
 EXTRACT_ARGS=	-xf
 NO_WRKSUBDIR=	yes
