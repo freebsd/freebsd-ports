@@ -11,7 +11,7 @@ MASTER_SITES=	http://livejournal.com/files/code/cache/ \
 		ftp://ftp.livejournal.com/code/cache/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@rgv.net
 
 PERL_CONFIGURE=	yes
 
