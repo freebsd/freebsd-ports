@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	netsaint-plugins
-PORTVERSION=	1.2.9.2
+PORTVERSION=	1.2.9.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/netsaintplug/
-DISTNAME=	${PORTNAME}-1.2.9-2
+DISTNAME=	${PORTNAME}-1.2.9-3
 
 MAINTAINER=	blaz@amis.net
 
@@ -22,10 +22,6 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
-
-# make absolutely sure we have the user/group added!
-BUILD_DEPENDS=	netsaint:${PORTSDIR}/net/netsaint
-RUN_DEPENDS=	netsaint:${PORTSDIR}/net/netsaint
 
 .if defined(WANT_QSTAT)
 BUILD_DEPENDS+=	qstat:${PORTSDIR}/games/qstat
@@ -67,5 +63,8 @@ CONFIGURE_ARGS+=--with-mysqllibdir=${LOCALBASE}/lib/mysql
 .else
 PLIST_SUB+=	WANT_MYSQL="@comment "
 .endif
+
+pre-install:
+	${PERL} ${SCRIPTDIR}/createuser
 
 .include <bsd.port.mk>

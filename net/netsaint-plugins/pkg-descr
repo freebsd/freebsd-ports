@@ -11,6 +11,6 @@ running checks on various services that you specify. The
 actual service checks are performed by external "plugins"
 which return service information to NetSaint. Several CGI
 programs are included with NetSaint in order to allow you
-to view the current service status, history, etc. via a web browser. 
+to view the current service status, history, etc. via a web browser.
 
 WWW: http://www.netsaint.org/

@@ -1,0 +1,49 @@
+#!/usr/bin/perl
+#
+
+eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
+& eval 'exec /usr/bin/perl -S $0 $argv:q'
+if 0;
+
+if( $> ) {
+	print "\nYou must be root to run this step!\n\n";
+	exit 1;
+} 
+
+if( getpwnam( "netsaint" ) ) {
+	( $null, $null, $nsUID ) = getpwnam( "netsaint" );
+} else {
+	$nsUID = 70;
+	while( getpwuid( $nsUID ) ) {
+		$nsUID++;
+	}
+}
+
+if( getgrnam( "netsaint" ) ) {
+	( $null, $null, $nsGID ) = getgrnam( "netsaint" );
+} else {
+	$nsGID = 70;
+	while( getgrgid( $nsGID ) ) {
+		$nsGID++;
+	}
+	&append_file( "/etc/group", "netsaint:*:$nsGID:" );
+}
+
+print "netsaint user using uid $nsUID and gid $nsGID\n";
+
+system( "/usr/bin/chpass -a \"netsaint:*:$nsUID:$nsGID\:\:0:0:Netsaint pseudo-user:/var/netsaint:/sbin/nologin\"" );
+
+sub append_file {
+	local($file,@list) = @_;
+	local($LOCK_EX) = 2;
+	local($LOCK_NB) = 4;
+	local($LOCK_UN) = 8;
+
+	open(F, ">> $file") || die "$file: $!\n";
+	while( ! flock( F, $LOCK_EX | $LOCK_NB ) ) {
+		exit 1;
+	}
+	print F join( "\n", @list) . "\n";
+	close F;
+	flock( F, $LOCK_UN );
+}
