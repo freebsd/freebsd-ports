@@ -40,6 +40,7 @@ lib/xine/plugins/1.0.0/post/xineplug_post_planar.so
 lib/xine/plugins/1.0.0/post/xineplug_post_switch.so
 lib/xine/plugins/1.0.0/post/xineplug_post_tvtime.so
 lib/xine/plugins/1.0.0/post/xineplug_post_visualizations.so
+@exec mkdir -p %D/lib/xine/plugins/1.0.0/vidix
 %%WITH_VIDIX%%lib/xine/plugins/1.0.0/vidix/cyberblade_vid.so
 %%WITH_VIDIX%%lib/xine/plugins/1.0.0/vidix/mach64_vid.so
 %%WITH_VIDIX%%lib/xine/plugins/1.0.0/vidix/mga_crtc2_vid.so
@@ -66,7 +67,7 @@ lib/xine/plugins/1.0.0/xineplug_decode_lpcm.so
 lib/xine/plugins/1.0.0/xineplug_decode_mad.so
 lib/xine/plugins/1.0.0/xineplug_decode_mpeg2.so
 lib/xine/plugins/1.0.0/xineplug_decode_nsf.so
-lib/xine/plugins/1.0.0/xineplug_decode_qt.so
+%%WITH_VIDIX%%lib/xine/plugins/1.0.0/xineplug_decode_qt.so
 lib/xine/plugins/1.0.0/xineplug_decode_real.so
 lib/xine/plugins/1.0.0/xineplug_decode_real_audio.so
 lib/xine/plugins/1.0.0/xineplug_decode_rgb.so
@@ -79,7 +80,7 @@ lib/xine/plugins/1.0.0/xineplug_decode_sputext.so
 %%WITH_LIBTHEORA%%lib/xine/plugins/1.0.0/xineplug_decode_theora.so
 %%WITH_LIBCACA%%lib/xine/plugins/1.0.0/xineplug_vo_out_caca.so
 lib/xine/plugins/1.0.0/xineplug_decode_vorbis.so
-lib/xine/plugins/1.0.0/xineplug_decode_w32dll.so
+%%WITH_VIDIX%%lib/xine/plugins/1.0.0/xineplug_decode_w32dll.so
 lib/xine/plugins/1.0.0/xineplug_decode_yuv.so
 lib/xine/plugins/1.0.0/xineplug_dmx_asf.so
 lib/xine/plugins/1.0.0/xineplug_dmx_audio.so
@@ -203,21 +204,8 @@ share/xine/libxine1/fonts/serif-64.xinefont.gz
 @dirrm %%DOCSDIR%%/hackersguide
 @dirrm %%DOCSDIR%%/faq
 @dirrm %%DOCSDIR%%
-@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl_PL 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sk 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/xine/libxine1/fonts
 @dirrm share/xine/libxine1
 @dirrm share/xine
