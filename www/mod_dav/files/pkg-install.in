@@ -6,15 +6,15 @@ TOUCH=/usr/bin/touch
 
 case $2 in
 POST-INSTALL)
-	${PKG_PREFIX}/sbin/apxs -e -a -n dav libdav.so
+	%%APXS%% -e -a -n dav libdav.so
 	for i in DAVLock.dir DAVLock.pag ; do
 	  ${TOUCH} /var/db/$i
-	  ${CHOWN} ${WWWOWN}:${WWWGRP} /var/db/$i
+	  ${CHOWN} %%WWWOWN%%:%%WWWGRP%% /var/db/$i
 	  ${CHMOD} 640 /var/db/$i
 	done
 	;;
 POST-DEINSTALL)
-	${PKG_PREFIX}/sbin/apxs -e -A -n dav libdav.so
+	%%APXS%% -e -A -n dav libdav.so
 	for i in DAVLock.dir DAVLock.pag ; do
 	  rm -f /var/db/$i
 	done
