@@ -8059,6 +8059,7 @@ pear-Spreadsheet_Excel_Writer ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-Text_Password	ports/security/pear-Text_Password
 pear-VFS	ports/devel/pear-VFS
 pear-Validate	ports/devel/pear-Validate
+pear-Var_Dump	ports/devel/pear-Var_Dump
 pear-XML_Parser	ports/devel/pear-XML_Parser
 pear-XML_RPC	ports/devel/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
