@@ -20,10 +20,10 @@ MAINTAINER=	trevor@jpj.net
 
 RESTRICTED=	no-commercial-use
 
-RUN_DEPENDS=	festival:../festival \
-		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:../festlex-poslex \
-		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:../festlex-ogi \
-		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:../festogi-spanish
+RUN_DEPENDS=	festival:${.CURDIR}/../festival \
+		${LOCALBASE}/share/festival/lib/dicts/wsj.wp39.poslexR:${.CURDIR}/../festlex-poslex \
+		${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${.CURDIR}/../festlex-ogi \
+		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${.CURDIR}/../festogi-spanish
 
 WRKSRC=		${WRKDIR}/festival
 

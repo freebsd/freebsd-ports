@@ -17,7 +17,7 @@ DIST_SUBDIR=	festival
 
 MAINTAINER=	trevor@jpj.net
 
-RUN_DEPENDS=	festival:../festival
+RUN_DEPENDS=	festival:${.CURDIR}/../festival
 
 RESTRICTED=	no-commercial-use
 
