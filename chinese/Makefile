@@ -52,6 +52,7 @@
     SUBDIR += tin
     SUBDIR += tintin++
     SUBDIR += tocps
+    SUBDIR += ttfm
     SUBDIR += ve
     SUBDIR += xa+cv
     SUBDIR += xcin
