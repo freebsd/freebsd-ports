@@ -1,4 +1,4 @@
-# New ports collection makefile for:	aster
+<# New ports collection makefile for:	aster
 # Date created:		Thu Jun 26 2003
 # Whom:			thierry@pompo.net
 #
@@ -7,7 +7,8 @@
 
 PORTNAME=	aster
 PORTVERSION=	7.1
-CATEGORIES=	french cad python tk83
+PORTREVISION=	1
+CATEGORIES=	french cad python tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/code_aster/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION}
 EXTRACT_SUFX=	.tar
@@ -37,12 +38,14 @@ COMMENT=	Analyse des structures et thermo-mécanique
 #
 #-----------------------------------------------------------------------
 
-PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER} \
+PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}		\
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
-BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/graphics/hdf5 \
-		${opt_med}:${PORTSDIR}/french/med \
+BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/graphics/hdf5				\
+		${opt_med}:${PORTSDIR}/french/med				\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot \
+LIB_DEPENDS=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
+		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/cad/metis-edf
 
 EXTRACT_CMD=	${TAR}
@@ -62,9 +65,9 @@ PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_BLAS)
-LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.1:${PORTSDIR}/math/blas
 .else
-LIB_DEPENDS=	f77blas.1:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	f77blas.1:${PORTSDIR}/math/atlas
 .endif
 .if !defined(WITHOUT_ASTK)
 RUN_DEPENDS+=	${LOCALBASE}/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
@@ -110,7 +113,7 @@ F77?=		f77
 .endif
 FFLAGS?=	-O2
 
-TK_VER?=	8.3
+TK_VER?=	8.4
 SHORT_TK_VER=	${TK_VER:S/.//}
 TKCONFIG=	${LOCALBASE}/lib/tk${TK_VER}/tkConfig.sh
 
