@@ -1,0 +1,59 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Dec  4 17:49:22 2001
++++ Makefile	Mon Feb 10 16:55:40 2003
+@@ -2,14 +2,14 @@
+ 
+ 
+ #For FreeBSD
+-#CC=gcc
+-#BINARY=uhexen
+-#SDL_INCLUDES=-I/usr/local/include/SDL
+-#SDL_LIBS=-L/usr/local/lib
++CC?=gcc
++BINARY=uhexen
++SDL_INCLUDES=$(shell $(SDL_CONFIG) --cflags)
++SDL_LIBS=$(shell $(SDL_CONFIG) --libs)
+ #EXTRA_INCLUDES=
+ #EXTRA_LIBS=-L/usr/local/kde/lib -L/usr/local/qt/lib
+ #EXTRA_INCLUDES=
+-#EXTRA_CFLAGS=-DUSE_SDL -DFBSD_CONSOLE -pthread
++EXTRA_CFLAGS=-DUSE_SDL -DFBSD_CONSOLE
+ 
+ #For Linux
+ #CC=gcc
+@@ -22,14 +22,14 @@
+ #EXTRA_CFLAGS=-DUSE_SDL
+ 
+ #For OpenBSD
+-CC=gcc
+-BINARY=uhexen
+-SDL_INCLUDES=-I/usr/local/include/SDL
+-SDL_LIBS=-L/usr/local/lib
+-EXTRA_INCLUDES=
+-EXTRA_LIBS=-L/usr/local/kde/lib -L/usr/local/qt/lib -L/usr/X11R6/lib
+-EXTRA_INCLUDES=
+-EXTRA_CFLAGS=-DUSE_SDL -pthread
++#CC=gcc
++#BINARY=uhexen
++#SDL_INCLUDES=-I/usr/local/include/SDL
++#SDL_LIBS=-L/usr/local/lib
++#EXTRA_INCLUDES=
++#EXTRA_LIBS=-L/usr/local/kde/lib -L/usr/local/qt/lib -L/usr/X11R6/lib
++#EXTRA_INCLUDES=
++#EXTRA_CFLAGS=-DUSE_SDL -pthread
+ 
+ # For Windows (cross-compiler)
+ #CC=/usr/local/cross-tools/i386-mingw32msvc/bin/gcc
+@@ -41,8 +41,8 @@
+ #EXTRA_CFLAGS=-mwindows -DUSE_SDL -DMUSTDIE -Dmain=SDL_main -DHAVE_OPENGL
+ 
+ 
+-CFLAGS=-Iinclude -O3  -fomit-frame-pointer -Wall -DNORMALUNIX $(SDL_INCLUDES) $(EXTRA_INCLUDES) $(EXTRA_CFLAGS)
+-LIBS=-lm -lSDL -lSDL_mixer
++CFLAGS+=-DPREFIX=\"${PREFIX}\" -Iinclude -fomit-frame-pointer -Wall -DNORMALUNIX $(SDL_INCLUDES) $(EXTRA_INCLUDES) $(EXTRA_CFLAGS)
++LIBS=-lSDL_mixer
+ LDFLAGS=$(SDL_LIBS) $(LIBS) $(EXTRA_LIBS)
+ 
+ # subdirectory for objects
