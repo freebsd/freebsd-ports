@@ -84,7 +84,11 @@ MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
 .endif
 .else
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
+.if defined(WITH_DEBUG) && ${WITH_DEBUG} == 2
+MOZILLADIST=	oo_moz_1.0_i386_FreeBSD-4-gcc3.1-debug-ports.tar.gz
+.else
 MOZILLADIST=	oo_moz_1.0_i386_FreeBSD-4-gcc3.1-ports.tar.gz
+.endif
 .else
 MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
 .endif
