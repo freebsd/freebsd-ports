@@ -927,7 +927,6 @@ share/texmf/tex/latex/tcidvi.def
 share/texmf/tex/latex/test0.tex
 share/texmf/tex/latex/test1.tex
 share/texmf/tex/latex/testpage.tex
-share/texmf/tex/latex/texsys.cfg
 share/texmf/tex/latex/textcomp.sty
 share/texmf/tex/latex/textures.def
 share/texmf/tex/latex/thb.sty
@@ -990,4 +989,4 @@ share/texmf/web2c/latex.fmt
 @dirrm share/texmf/tex/latex
 @unexec rmdir %D/share/texmf/makeindx 2>/dev/null || true
 @unexec rmdir %D/share/texmf/documentation 2>/dev/null || true
-@unexec rmdir %D/share/texmf/fonts/vf
+@unexec rmdir %D/share/texmf/fonts/vf 2>/dev/null || true
