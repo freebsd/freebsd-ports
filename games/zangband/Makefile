@@ -84,7 +84,7 @@ do-install:
 
 post-build:
 	@${RM} -f ${PLIST}
-.for i in PLIST.a ${JA_PLIST} PLIST.b
+.for i in pkg-plist.a ${JA_PLIST} pkg-plist.b
 	@${CAT} ${PKGDIR}/${i} >> ${PLIST}
 .endfor
 
