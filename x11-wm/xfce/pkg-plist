@@ -641,6 +641,8 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
+@exec ln -s %D/share/xfce/help/html/images %D/share/xfce/help/images
+@unexec rm %D/share/xfce/help/images
 @dirrm etc/xfce
 @dirrm share/xfce/backdrops
 @dirrm share/xfce/cursors
