@@ -11,5 +11,5 @@ include/psiconv/parse.h
 include/psiconv/parse_routines.h
 lib/libpsiconv.a
 lib/libpsiconv.so
-lib/libpsiconv.so.7
+lib/libpsiconv.so.8
 @dirrm include/psiconv
