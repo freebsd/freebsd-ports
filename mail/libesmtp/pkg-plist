@@ -1,0 +1,12 @@
+include/libesmtp.h
+lib/libesmtp.so.2
+lib/libesmtp.so
+lib/libesmtp.a
+%%PORTDOCS%%share/doc/libesmtp/INSTALL
+%%PORTDOCS%%share/doc/libesmtp/Notes
+%%PORTDOCS%%share/doc/libesmtp/README
+%%PORTDOCS%%share/examples/libesmtp/Makefile
+%%PORTDOCS%%share/examples/libesmtp/mail-file.c
+%%PORTDOCS%%share/examples/libesmtp/test-mail
+%%PORTDOCS%%@dirrm share/examples/libesmtp
+%%PORTDOCS%%@dirrm share/doc/libesmtp
