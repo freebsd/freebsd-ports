@@ -16,13 +16,13 @@ COMMENT=	Simple iTunes-like music player
 
 LIB_DEPENDS=	opendaap.0:${PORTSDIR}/devel/libopendaap
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BZIP2=	yes
 USE_INC_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2 gnometarget gnomehack gnomeprefix
 USE_GSTREAMER=	mad
+
+MAN1=		tunesbrowser.1
 
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 
