@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gbiff
-PORTVERSION=	2.4a
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,15 +14,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_GNOME=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|`gtk-config --cflags`|`\$$GTK_CONFIG --cflags`|g ; \
+		 s|`gtk-config --libs`|`\$$GTK_CONFIG --libs`|g ; \
+		 s|<iconv.h>|<giconv.h>|g ; \
+		 s|-liconv|-lgiconv|g ; \
+		 s|DATADIRNAME}"|DATADIRNAME}/gnome"|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
