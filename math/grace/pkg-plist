@@ -89,9 +89,13 @@ lib/X11/grace/examples/xycolor.agr
 lib/X11/grace/examples/xysize.agr
 lib/X11/grace/examples/xyz.agr
 lib/X11/grace/fonts/FontDataBase
+lib/X11/grace/fonts/enc/CP1251.enc
 lib/X11/grace/fonts/enc/IsoLatin1.enc
 lib/X11/grace/fonts/enc/IsoLatin2.enc
+lib/X11/grace/fonts/enc/IsoLatin7.enc
 lib/X11/grace/fonts/enc/IsoLatin9.enc
+lib/X11/grace/fonts/enc/KOI8-R.enc
+lib/X11/grace/fonts/enc/KOI8-U.enc
 lib/X11/grace/fonts/enc/MacRoman.enc
 lib/X11/grace/fonts/enc/PDFDoc.enc
 lib/X11/grace/fonts/enc/PSLatin1.enc
