@@ -8,14 +8,14 @@
 PORTNAME=	ruby-usersguide
 PORTVERSION=	${VERSION}
 CATEGORIES+=	lang ruby
-MASTER_SITES?=	http://www.math.sci.hokudai.ac.jp/~gotoken/ruby/
-DISTNAME=	${SHORTNAME}-${PORTVERSION}
+MASTER_SITES?=	http://www.cs.iastate.edu/~slagell/ruby/
+DISTNAME?=	${SHORTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
 SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
-VERSION?=	981227
+VERSION?=	20000904
 
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" LANGSUFFIX="${LANGSUFFIX}"
 
@@ -25,8 +25,12 @@ NO_BUILD=	yes
 
 DOCDIR=		${PREFIX}/share/doc/ruby/${PORTNAME}${LANGSUFFIX}
 
+post-extract:
+	if [ -f ${WRKSRC}/ansi.com ]; then ${RM} ${WRKSRC}/ansi.com; fi
+
 do-install:
 	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.html ${WRKSRC}/uguide* ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/* ${DOCDIR}
+	${LN} -fs uguide00.html ${DOCDIR}/index.html
 
 .include <bsd.port.mk>

@@ -1,4 +1,10 @@
+share/doc/ruby/ruby-usersguide/README.txt
+share/doc/ruby/ruby-usersguide/a2l.gif
+share/doc/ruby/ruby-usersguide/a2r.gif
+share/doc/ruby/ruby-usersguide/a2u.gif
+share/doc/ruby/ruby-usersguide/eval.rb
 share/doc/ruby/ruby-usersguide/index.html
+share/doc/ruby/ruby-usersguide/install.html
 share/doc/ruby/ruby-usersguide/uguide.css
 share/doc/ruby/ruby-usersguide/uguide00.html
 share/doc/ruby/ruby-usersguide/uguide01.html
@@ -26,5 +32,6 @@ share/doc/ruby/ruby-usersguide/uguide22.html
 share/doc/ruby/ruby-usersguide/uguide23.html
 share/doc/ruby/ruby-usersguide/uguide24.html
 share/doc/ruby/ruby-usersguide/uguide25.html
+share/doc/ruby/ruby-usersguide/uguide26.html
 @dirrm share/doc/ruby/ruby-usersguide
 @unexec rmdir %D/share/doc/ruby 2>/dev/null || true
