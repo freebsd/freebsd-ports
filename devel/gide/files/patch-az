@@ -1,0 +1,13 @@
+--- src/gI_help.c.orig	Sun Apr  2 02:47:20 2000
++++ src/gI_help.c	Sun Apr  2 02:52:39 2000
+@@ -370,8 +370,8 @@
+ 
+ 		/* FIXME: We should let the user select which font they want */
+ 
+-		normal = gdk_font_load ("-misc-fixed-medium-r-normal-*-*-120-*-*-c-*-iso8859-1");
+-		bold = gdk_font_load ("-misc-fixed-bold-r-normal-*-*-120-*-*-c-*-iso8859-1");
++		normal = gdk_fontset_load ("-misc-fixed-medium-r-normal-*-*-120-*-*-c-*-iso8859-1,*");
++		bold = gdk_fontset_load ("-misc-fixed-bold-r-normal-*-*-120-*-*-c-*-iso8859-1,*");
+ 
+ 		hbox_man_ctrls = gtk_hbox_new( FALSE, 4 );
+ 		gtk_container_add( GTK_CONTAINER( vbox_main ), hbox_man_ctrls );

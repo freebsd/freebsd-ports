@@ -1,0 +1,20 @@
+--- extra/gide.scm.orig	Tue Dec  7 03:32:32 1999
++++ extra/gide.scm	Sun Apr  2 02:53:52 2000
+@@ -23,7 +23,7 @@
+ (define tmpdir "/tmp")
+ 
+ ;; Editor
+-(define fontname "-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1")
++(define fontname "-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1,*")
+ (define disable_font #f)
+ (define wordwrap #t)
+ (define autosave #f)
+@@ -40,7 +40,7 @@
+ (define toolbar-custom #f)
+ (define toolbar-custom-list
+ 	'())
+-(define bash "/bin/bash")
++(define bash "/bin/sh")
+ (define xterm "xterm")
+ 
+ ;; Projects

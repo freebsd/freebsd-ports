@@ -1,5 +1,14 @@
 --- src/gide.c.orig	Sun Feb 27 00:59:52 2000
-+++ src/gide.c	Mon Feb 28 00:50:43 2000
++++ src/gide.c	Sun Apr  2 02:51:26 2000
+@@ -223,7 +223,7 @@
+ 
+ 	cfg->fontname = (gchar *) realloc( cfg->fontname, 100 );
+ 
+-	strcpy( cfg->fontname, "-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1" );
++	strcpy( cfg->fontname, "-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1,*" );
+ /*	cfg->font = NULL;*/
+ 	cfg->disable_font_stuff = FALSE;
+ 	cfg->bgcol = NULL;
 @@ -260,16 +260,16 @@
  
  	cfg->tab_width = 4;
@@ -20,3 +29,21 @@
  
  	cfg->xterm = (gchar *) realloc( cfg->xterm, 10 );
  	strcpy( cfg->xterm, "xterm" );
+@@ -298,7 +298,7 @@
+ 	}
+ 	cfg->style = gtk_style_new();
+ 	gdk_font_unref( cfg->style->font );
+-	cfg->style->font = gdk_font_load( cfg->fontname );
++	cfg->style->font = gdk_fontset_load( cfg->fontname );
+ /*	if( !cfg->style->font )
+ 	{
+ 		strcpy( cfg->fontname, "default font???" );
+@@ -419,7 +419,7 @@
+ 		}
+ 		cfg->style = gtk_style_new();
+ 		gdk_font_unref( cfg->style->font );
+-		if( (new_font = gdk_font_load( cfg->fontname )) )
++		if( (new_font = gdk_fontset_load( cfg->fontname )) )
+ 		{
+ 			cfg->style->font = new_font;
+ 		}
