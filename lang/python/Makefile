@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${MASTER_SITE_PYTHON}
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -74,6 +74,11 @@ PLIST_SUB+=	X86_ONLY="@comment "
 .if ${ARCH} == amd64
 CFLAGS+=	-fPIC
 .endif
+.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64
+PLIST_SUB+=	32BIT_ONLY="@comment "
+.else
+PLIST_SUB+=	32BIT_ONLY=""
+.endif
 
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
@@ -114,10 +119,6 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
-.if ${ARCH} == amd64 || ${ARCH} == sparc64
-	${REINPLACE_CMD} -e \
-		's,^#\(dl .*\),\1,' ${WRKSRC}/Modules/Setup.dist
-.endif
 
 pre-install:
 .for platform in ${PLATFORMS}
