@@ -1,0 +1,77 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene/.packlist
+%%SITE_PERL%%/Plucene.pm
+%%SITE_PERL%%/Plucene/Bitvector.pm
+%%SITE_PERL%%/Plucene/Document.pm
+%%SITE_PERL%%/Plucene/Utils.pm
+%%SITE_PERL%%/Plucene/QueryParser.pm
+%%SITE_PERL%%/Plucene/TestCase.pm
+%%SITE_PERL%%/Plucene/Analysis/CharTokenizer.pm
+%%SITE_PERL%%/Plucene/Analysis/WhitespaceAnalyzer.pm
+%%SITE_PERL%%/Plucene/Analysis/LowerCaseTokenizer.pm
+%%SITE_PERL%%/Plucene/Analysis/Tokenizer.pm
+%%SITE_PERL%%/Plucene/Analysis/StopAnalyzer.pm
+%%SITE_PERL%%/Plucene/Analysis/TokenFilter.pm
+%%SITE_PERL%%/Plucene/Analysis/Token.pm
+%%SITE_PERL%%/Plucene/Analysis/LetterTokenizer.pm
+%%SITE_PERL%%/Plucene/Analysis/PorterStemFilter.pm
+%%SITE_PERL%%/Plucene/Analysis/StopFilter.pm
+%%SITE_PERL%%/Plucene/Analysis/SimpleAnalyzer.pm
+%%SITE_PERL%%/Plucene/Analysis/LowerCaseFilter.pm
+%%SITE_PERL%%/Plucene/Analysis/Analyzer.pm
+%%SITE_PERL%%/Plucene/Analysis/WhitespaceTokenizer.pm
+%%SITE_PERL%%/Plucene/Analysis/Standard/StandardAnalyzer.pm
+%%SITE_PERL%%/Plucene/Analysis/Standard/StandardTokenizer.pm
+%%SITE_PERL%%/Plucene/Search/Similarity.pm
+%%SITE_PERL%%/Plucene/Search/PrefixQuery.pm
+%%SITE_PERL%%/Plucene/Search/BooleanQuery.pm
+%%SITE_PERL%%/Plucene/Search/BooleanScorer.pm
+%%SITE_PERL%%/Plucene/Search/PhraseScorer.pm
+%%SITE_PERL%%/Plucene/Search/BooleanClause.pm
+%%SITE_PERL%%/Plucene/Search/Filter.pm
+%%SITE_PERL%%/Plucene/Search/Query.pm
+%%SITE_PERL%%/Plucene/Search/HitCollector.pm
+%%SITE_PERL%%/Plucene/Search/Scorer.pm
+%%SITE_PERL%%/Plucene/Search/PhrasePositions.pm
+%%SITE_PERL%%/Plucene/Search/Hits.pm
+%%SITE_PERL%%/Plucene/Search/TopDocs.pm
+%%SITE_PERL%%/Plucene/Search/TermQuery.pm
+%%SITE_PERL%%/Plucene/Search/TermScorer.pm
+%%SITE_PERL%%/Plucene/Search/PhraseQuery.pm
+%%SITE_PERL%%/Plucene/Search/DateFilter.pm
+%%SITE_PERL%%/Plucene/Search/IndexSearcher.pm
+%%SITE_PERL%%/Plucene/Search/Searcher.pm
+%%SITE_PERL%%/Plucene/Search/PhraseScorer/Exact.pm
+%%SITE_PERL%%/Plucene/Search/PhraseScorer/Sloppy.pm
+%%SITE_PERL%%/Plucene/Index/FieldsReader.pm
+%%SITE_PERL%%/Plucene/Index/FieldInfos.pm
+%%SITE_PERL%%/Plucene/Index/SegmentReader.pm
+%%SITE_PERL%%/Plucene/Index/DocumentWriter.pm
+%%SITE_PERL%%/Plucene/Index/SegmentTermEnum.pm
+%%SITE_PERL%%/Plucene/Index/SegmentTermDocs.pm
+%%SITE_PERL%%/Plucene/Index/FieldsWriter.pm
+%%SITE_PERL%%/Plucene/Index/SegmentInfo.pm
+%%SITE_PERL%%/Plucene/Index/Reader.pm
+%%SITE_PERL%%/Plucene/Index/TermInfosWriter.pm
+%%SITE_PERL%%/Plucene/Index/FieldInfo.pm
+%%SITE_PERL%%/Plucene/Index/SegmentInfos.pm
+%%SITE_PERL%%/Plucene/Index/SegmentMergeInfo.pm
+%%SITE_PERL%%/Plucene/Index/SegmentsReader.pm
+%%SITE_PERL%%/Plucene/Index/Writer.pm
+%%SITE_PERL%%/Plucene/Index/SegmentMerger.pm
+%%SITE_PERL%%/Plucene/Index/TermInfosReader.pm
+%%SITE_PERL%%/Plucene/Index/Term.pm
+%%SITE_PERL%%/Plucene/Index/TermInfo.pm
+%%SITE_PERL%%/Plucene/Index/SegmentTermPositions.pm
+%%SITE_PERL%%/Plucene/Document/Field.pm
+%%SITE_PERL%%/Plucene/Document/DateSerializer.pm
+%%SITE_PERL%%/Plucene/Store/OutputStream.pm
+%%SITE_PERL%%/Plucene/Store/InputStream.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Plucene/Analysis/Standard
+@unexec rmdir %D/%%SITE_PERL%%/Plucene/Analysis 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Plucene/Search/PhraseScorer 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Plucene/Search 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Plucene/Index 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Plucene/Document 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Plucene/Store 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Plucene 2>/dev/null || true

@@ -274,6 +274,7 @@
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-PerlPoint-Converters
     SUBDIR += p5-PerlPoint-Package
+    SUBDIR += p5-Plucene
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-POM
