@@ -3,7 +3,7 @@
 apache>=2.*<2.0.49_1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
 apache+mod_ssl*<1.3.31+2.8.18|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
 ru-apache+mod_ssl<1.3.31+30.20+2.8.18|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
-gallery<1.4.3.2|http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=123|Gallery allows a hacker to log in to a Gallery as an administrator and perform any actions on the albums.|253ea131-bd12-11d8-b071-00e08110b673
+gallery<1.4.3.2|http://secunia.com/advisories/11752 http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=123|Gallery user authentication bypass vulnerability|253ea131-bd12-11d8-b071-00e08110b673
 apache<1.3.31_1|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
 apache+mod_ssl*<1.3.31+2.8.18_4|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
 ru-apache+mod_ssl<=1.3.31+30.20+2.8.18|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
@@ -28,3 +28,6 @@ super<3.23.0|http://www.secunia.com/advisories/11899 http://www.debian.org/secur
 mailman<2.1.5|http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0412 http://www.osvdb.org/6422|mailman allows 3rd parties to retrieve member passwords|2a405a43-c396-11d8-8898-000d6111a684
 roundup<0.7.3|http://www.osvdb.org/6691 http://xforce.iss.net/xforce/xfdb/16350 http://securityfocus.com/bid/10495 http://mail.python.org/pipermail/python-announce-list/2004-May/003126.html|Roundup remote file disclosure vulnerability|40800696-c3b0-11d8-864c-02e0185c0b53
 sqwebmail<4.0.5|http://www.securityfocus.com/archive/1/366595|Sqwebmail XSS vulnerability|c3e56efa-c42f-11d8-864c-02e0185c0b53
+isc-dhcp3<3.0.1.r11|http://www.cert.org/advisories/CA-2003-01.html http://www.kb.cert.org/vuls/id/284857 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0026|ISC DHCPD minires library contains multiple buffer overflows|f71745cd-c509-11d8-8898-000d6111a684
+isc-dhcp3<3.0.1.r11_1|http://www.kb.cert.org/vuls/id/149953 http://www.securityfocus.com/bid/6628 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0039|ISC "dhcrelay" fails to limit hop count when malicious bootp packet is received|02957734-c50b-11d8-8898-000d6111a684
+isc-dhcp3-{client,devel,relay,server}>=3.0.1.r12<3.0.1.r14|http://www.us-cert.gov/cas/techalerts/TA04-174A.html http://www.kb.cert.org/vuls/id/317350 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0460|ISC DHCP remote exploitable stack buffer overflow vulnerability|7a9d5dfe-c507-11d8-8898-000d6111a684
