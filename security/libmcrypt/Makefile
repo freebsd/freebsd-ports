@@ -9,6 +9,7 @@
 DISTNAME=	libmcrypt-2.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
 
 MAINTAINER=	nsayer@freebsd.org
 
