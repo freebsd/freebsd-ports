@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure	2002/03/06 09:49:05	1.1
++++ configure	2002/03/06 09:49:52
+@@ -1238,7 +1238,7 @@
+ echo "$as_me: error: perl not found" >&2;}
+    { (exit 1); exit 1; }; }
+ fi
+-if test -z "`$PERL -v | fgrep 'v5.' 2> /dev/null`" -a -z "`$PERL -v | fgrep 'version 5.' 2> /dev/null`"; then
++if test -z "`$PERL -v | fgrep '5.' 2> /dev/null`" -a -z "`$PERL -v | fgrep 'version 5.' 2> /dev/null`"; then
+    { { echo "$as_me:1242: error: perl 5.x required for intltool" >&5
+ echo "$as_me: error: perl 5.x required for intltool" >&2;}
+    { (exit 1); exit 1; }; }
