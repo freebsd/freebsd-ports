@@ -17,7 +17,7 @@ GNU_CONFIGURE= 	yes
 
 MAN1=		ezbounce.1
 
-.if !defined(WANT_MDIDENTD)
+.if !defined(WITH_MDIDENTD)
 ALL_TARGET=	ezbounce_src
 PLIST_SUB+=	MDIDENTD="@comment "
 .else
@@ -31,8 +31,9 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/ezb.conf.default ${PREFIX}/etc
+	${INSTALL_MAN}	${WRKSRC}/misc/ezbounce.1 ${PREFIX}/man/man1
 
-.if defined(WANT_MDIDENTD)
+.if defined(WITH_MDIDENTD)
 	${INSTALL_PROGRAM} ${WRKSRC}/mdidentd/mdidentd ${PREFIX}/sbin
 .endif
 
@@ -45,9 +46,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ezbounce
 	${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/doc/ezbounce
 	${INSTALL_DATA} ${WRKSRC}/worklog ${PREFIX}/share/doc/ezbounce
-	${INSTALL_MAN}	${WRKSRC}/misc/ezbounce.1 ${PREFIX}/man/man1
 
-.if defined(WANT_MDIDENTD)
+.if defined(WITH_MDIDENTD)
 	${INSTALL_DATA} ${WRKSRC}/mdidentd/README \
 		${PREFIX}/share/doc/ezbounce/mdidentd.README
 .endif
