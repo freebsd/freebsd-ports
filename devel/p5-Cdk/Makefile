@@ -21,4 +21,10 @@ LIB_DEPENDS=	cdk.4:${PORTSDIR}/devel/cdk
 WRKSRC=		${WRKDIR}/Cdk
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not compile with perl >= 5.8"
+.endif
+
+.include <bsd.port.post.mk>
