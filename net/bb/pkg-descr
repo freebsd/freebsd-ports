@@ -1,0 +1,22 @@
+--- Big Brother ---
+	a Web-based Unix Network Monitoring and Notification System
+	by Sean MacGuire <sean@iti.qc.ca>
+
+Home Page:	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
+A Life Example:	http://www.menet.umn.edu/~clolson/bb/bb.html (40 machines)
+
+d e s i g n	- Web-based status display
+		- Notification via Pager
+		- Modular Client-server design
+		- Configurable warning and panic levels
+		- Multi-platform
+		- Easily integrated with other packages
+		- Includes all Source Code
+		- And it's Free
+
+m o n i t o r s	- connectivity via ping or telnet
+		- http servers up and running
+		- disk space usage
+		- cpu usage
+		- essential processes are still running
+		- system-generated messages and warnings
