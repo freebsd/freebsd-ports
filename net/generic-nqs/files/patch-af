@@ -1,0 +1,130 @@
+--- Source-Tree/lpserver/all-systems/lpserver.c.orig	Mon Mar 20 00:18:51 2000
++++ Source-Tree/lpserver/all-systems/lpserver.c	Mon Apr 10 20:37:29 2000
+@@ -29,13 +29,14 @@
+ 
+ #if	GPORT_HAS_termios_h
+ #include <termios.h>
+-#endif
++#else	/* for BSD platforms */
+ #if	GPORT_HAS_sgtty_h
+ #include <sgtty.h>
+ #if	GPORT_HAS_termio_h
+ #include <termio.h>                     /* for SUN */
+ #endif
+ #endif
++#endif
+ 
+ #include <sys/wait.h>
+ #include <unistd.h>
+@@ -75,7 +76,8 @@
+ static struct termios save;		/* Original printer characteristics */
+ #else
+ #if	GPORT_HAS_BSD_IOCTL
+-static struct sgttyb save;		/* Original printer characteristics */
++static struct termios save;		/* Original printer characteristics */
++/*static struct sgttyb save;*/		/* Original printer characteristics */
+ #else
+ BAD SYSTEM TYPE
+ #endif
+@@ -1201,7 +1203,8 @@
+ 	struct termios tbuf;		/* Used for printer ioctl() */
+ #else
+ #if	GPORT_HAS_sgtty_h && (GPORT_HAS_BSD_IOCTL)
+-	struct sgttyb tbuf;		/* Used for printer ioctl() */
++	struct termios tbuf;		/* Used for printer ioctl() */
++/*	struct sgttyb tbuf;	*/	/* Used for printer ioctl() */
+ 	int bsdmask;
+ #else
+ BAD SYSTEM TYPE
+@@ -1447,10 +1450,10 @@
+ 	 */
+ #if	GPORT_HAS_POSIX_IOCTL
+ 	if (translate)
+-		ioctl (fileno (stdout), TCGETA, &save);
++		ioctl (fileno (stdout), TCGETS, &save);
+ #else
+ #if	GPORT_HAS_BSD_IOCTL
+-	ioctl (fileno (stdout), TIOCGETP , &save);
++	ioctl (fileno (stdout), TIOCGETA , &save);
+ #else
+ BAD SYSTEM TYPE
+ #endif
+@@ -1566,13 +1569,13 @@
+ 	 *  Set new device state.
+ 	 */
+ 	tbuf = save;
+-#if	GPORT_HAS_POSIX_IOCTL
++#if	GPORT_HAS_POSIX_IOCTL || (GPORT_HAS_BSD_IOCTL)
+ 	tbuf.c_iflag = IGNPAR | ISTRIP | BRKINT | IXON;
+-	tbuf.c_oflag = OPOST | ONLCR | TAB3 | FF1;
++	tbuf.c_oflag = OPOST | ONLCR | OXTABS | ONOEOT;
+ 	tbuf.c_cflag = baud | bits | CREAD | PARENB;
+ 	tbuf.c_lflag = ISIG;
+ if (translate)
+-	ioctl (fileno (stdout), TCSETA, &tbuf);
++	ioctl (fileno (stdout), TIOCSETA, &tbuf);
+ #else
+ #if	GPORT_HAS_BSD_IOCTL
+ 	/*
+@@ -1772,34 +1775,40 @@
+ 	 */
+ #if	GPORT_HAS_POSIX_IOCTL
+ if (translate)
+-	ioctl (fileno (stdout), TCSETAW, &save);
++	ioctl (fileno (stdout), TCSETSW, &save);
+ #else
+ #if	GPORT_HAS_BSD_IOCTL
+-	ioctl (fileno (stdout), TIOCSETP , &save);
++	ioctl (fileno (stdout), TIOCSETA , &save);
+ #else
+ BAD SYSTEM TYPE
+ #endif
+ #endif
+        errno=0;
+-       if (model_interface && forked)
++       if (model_interface && forked) {
+                while((ret=wait (&status)) == -1 &&
+                        (errno == EINTR || errno == ENOTTY));
++	}
+  
+ 	/*
+ 	 *  Format message with number of pages printed and exit.
+ 	 */
+-       if (status != 0)
+-               if ((status & 0xFF) == 0)
++       if (status != 0) {
++               if ((status & 0xFF) == 0) {
+                        sprintf(message, "Interface: _exit value was: %1d.",
+                                (status >> 8) & 0xFF);
+-               else if ((status & 0xFF00) == 0)
++		}
++               else if ((status & 0xFF00) == 0) {
+                        sprintf(message,
+                                "Interface: Aborting signal was %1d.",
+                                status & 0x7F);
+-       else if (no_preprocess)
++		}
++	}
++       else if (no_preprocess) {
+                sprintf (message, "1 job completed.");
+-       else
++	}
++       else {
+ 	sprintf (message, "%1d pages printed.", pages);
++	}
+   serexit (RCM_EXITED, message);
+   return 0;
+ }
+@@ -2035,10 +2044,10 @@
+ 	 */
+ #if	GPORT_HAS_POSIX_IOCTL
+ if (translate)
+-	ioctl (fileno (stdout), TCSETAW, &save);
++	ioctl (fileno (stdout), TCSETSW, &save);
+ #else
+ #if	GPORT_HAS_BSD_IOCTL
+-	ioctl (fileno (stdout), TIOCSETP , &save);
++	ioctl (fileno (stdout), TIOCSETA , &save);
+ #else
+ BAD SYSTEM TYPE
+ #endif
