@@ -23,6 +23,7 @@ lib/gaim/notify.so
 lib/gaim/spellchk.so
 lib/gaim/ssl-gnutls.so
 lib/gaim/ssl-nss.so
+%%OPENSSL:%%lib/gaim/ssl-openssl.so
 lib/gaim/ssl.so
 lib/gaim/statenotify.so
 %%TCL:%%lib/gaim/tcl.so
