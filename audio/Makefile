@@ -5,6 +5,7 @@
     SUBDIR += ac3dec
     SUBDIR += afsp
     SUBDIR += agbrowser
+    SUBDIR += agsatellite
     SUBDIR += amp
     SUBDIR += ascd
     SUBDIR += aumix
