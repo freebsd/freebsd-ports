@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	ebert@informatik.unibw-muenchen.de
+COMMENT=	An interactive tool for manipulation of relations
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
