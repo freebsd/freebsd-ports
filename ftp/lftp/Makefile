@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/network/file-transfer
 
-MAINTAINER=	LoRd_CJ@dalusers.com
+MAINTAINER=	calle.madestrand@norrgarden.se
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
