@@ -5721,7 +5721,6 @@ ruby-snmp	ports/net/ruby-snmp
 ruby-soap	ports/net/ruby-soap
 ruby-sqlrelay	ports/databases/ruby-sqlrelay
 ruby-strscan	ports/devel/ruby-strscan
-ruby-syslog	ports/sysutils/ruby-syslog
 ruby-sysvipc	ports/devel/ruby-sysvipc
 ruby-tcltklib	ports/lang/ruby-tcltklib
 ruby-tcpsocketpipe	ports/net/ruby-tcpsocketpipe
