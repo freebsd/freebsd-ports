@@ -1,0 +1,20 @@
+--- ethereal.h.orig	Thu Sep 17 19:14:28 1998
++++ ethereal.h	Thu Sep 17 19:15:15 1998
+@@ -27,6 +27,7 @@
+ #define __ETHEREAL_H__
+ 
+ #include "config.h"
++#include <machine/endian.h>
+ 
+ #define RC_FILE ".etherealrc"
+ #define MONO_MEDIUM_FONT "-*-lucidatypewriter-medium-r-normal-*-*-120-*-*-*-*-iso8859-1"
+--- packet.c.orig	Thu Sep 17 19:15:34 1998
++++ packet.c	Thu Sep 17 19:15:48 1998
+@@ -32,6 +32,7 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <ctype.h>
++#include <sys/types.h>
+ 
+ #ifdef HAVE_NETINET_IN_H
+ # include <netinet/in.h>

@@ -1,0 +1,7 @@
+a network analyzer that lets you capture and interactively browse the
+contents of Ethernet frames. Packet data can be read from a file, or
+live from a local network interface. 
+
+http://ethereal.zing.org
+
+Bill Fumerola <billf@chc-chimes.com>
