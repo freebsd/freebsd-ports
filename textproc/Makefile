@@ -158,6 +158,7 @@
     SUBDIR += py-trex
     SUBDIR += py-xml
     SUBDIR += rand
+    SUBDIR += replaceit
     SUBDIR += rman
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb

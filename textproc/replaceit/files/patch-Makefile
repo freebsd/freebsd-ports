@@ -1,0 +1,18 @@
+--- Makefile.orig	Fri Aug 17 20:18:18 2001
++++ Makefile	Fri Aug 17 20:20:35 2001
+@@ -1,12 +1,11 @@
+-PRF=-O2 -Wall
+-CC=cc
++CFLAGS+=	-Wall
++all: replaceit
+ 
+ replaceit: replaceit.c
+-	$(CC) $(PRF) replaceit.c -o replaceit
++	$(CC) $(CFLAGS) $< -o $@
+ 
+ clean:
+ 	rm replaceit
+ 
+-all: install
+ install: replaceit
+ 	cp replaceit /usr/local/bin
