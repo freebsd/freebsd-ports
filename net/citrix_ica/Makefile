@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.8 1999/02/10 23:21:36 msmith Exp $
+# $Id: Makefile,v 1.9 1999/02/11 19:32:19 msmith Exp $
 #
 
 DISTNAME=       linux
@@ -30,7 +30,7 @@ BINDIR=		${PREFIX}/bin
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the file manually after reading and agreeing to the license at: http://download.citrix.com/download.asp?client=LINUX   Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build.'
+IGNORE='The distribution file for this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the file manually after reading and agreeing to the license at: http://download.citrix.com/download.asp?client=LINUX   Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}/${DIST_SUBDIR} and then restart this build.'
 .endif
 
 do-install:
