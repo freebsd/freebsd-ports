@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		"Incorrect pkg-plist"
+
 ALL_TARGET=	kvirc
 INSTALLS_SHLIB=	yes
 MAN1=		kvirc.1
