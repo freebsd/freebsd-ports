@@ -9684,6 +9684,7 @@ wxgtk2		ports/x11-toolkits/wxgtk2
 wxgtk2-contrib	ports/x11-toolkits/wxgtk2-contrib
 wxgtk2-unicode	ports/x11-toolkits/wxgtk2-unicode
 wxgtk2-unicode-contrib	ports/x11-toolkits/wxgtk2-unicode-contrib
+wxmozilla	ports/x11-toolkits/wxmozilla
 wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 wzdftpd		ports/ftp/wzdftpd
