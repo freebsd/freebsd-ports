@@ -839,6 +839,7 @@
     SUBDIR += p5-Resources
     SUBDIR += p5-SDL
     SUBDIR += p5-SPOPS
+    SUBDIR += p5-SVN-Mirror
     SUBDIR += p5-Search-Binary
     SUBDIR += p5-Server-FastPL
     SUBDIR += p5-Set-Crontab

@@ -1,0 +1,2 @@
+This module mirrors remote Subversion repositories accessible via
+the SVN::Ra interface to a local Subversion repository.
