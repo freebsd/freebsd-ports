@@ -32,7 +32,4 @@ pre-everything:
 	@${ECHO_MSG} "'make -DWITH_X11' instead"
 .endif
 
-post-extract:
-	@${RM} -f ${WRKSRC}/*.o
-
 .include <bsd.port.mk>
