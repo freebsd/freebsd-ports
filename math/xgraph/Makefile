@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	sanpei@FreeBSD.org
 
 USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		xgraph.1
 
 post-install:
