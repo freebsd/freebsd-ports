@@ -11,7 +11,7 @@ CATEGORIES+=	print
 MASTER_SITES=	http://people.ssh.com/mtr/genscript/
 DISTNAME=	enscript-${PORTVERSION}
 
-MAINTAINER=	kline@thought.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	ASCII-to-PostScript filter
 
 # Work around configure issue

@@ -12,7 +12,7 @@ MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/xenscript/
 DISTNAME=	enscript_fonts-0.75
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kline@thought.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More than 120 free- and share-ware fonts to extend enscript-1.5
 
 # user should choose their own version
