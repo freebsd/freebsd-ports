@@ -27,7 +27,6 @@ CONFIGURE_ARGS+=	--with-lib-path=${LOCALBASE}/lib
 LDFLAGS+=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-FIXME=		src/nettle/x86/aes.asm
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PLIST_SUB+=	KRB=""
 .else
@@ -47,10 +46,7 @@ post-install:
 .for SBIN in lshd
 	strip ${PREFIX}/sbin/${SBIN}
 .endfor
-.if !defined(NOPORTDOCS)
-	install-info --section="Miscellaneous" \
-		--entry="* LSH: (lsh).			lsh secure remote shell documentation." \
-		${PREFIX}/info/lsh.info ${PREFIX}/info/dir
-.endif
+	install-info ${PREFIX}/info/lsh.info ${PREFIX}/info/dir
+	install-info ${PREFIX}/info/nettle.info ${PREFIX}/info/dir
 
 .include <bsd.port.post.mk>
