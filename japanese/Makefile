@@ -237,6 +237,7 @@
     SUBDIR += w3
     SUBDIR += weblint97
     SUBDIR += wine
+    SUBDIR += word
     SUBDIR += x0212fonts
     SUBDIR += xemacs
     SUBDIR += xemacs-canna
