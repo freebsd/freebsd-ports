@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql-relay
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	databases net
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -14,11 +14,26 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Multiplex multiple PostgreSQL databases to one relay
 
 MAN8=		postgresql-relay.8
-PLIST_FILES=	bin/postgresql-relay etc/postgresql-relay.conf-sample
+PLIST_FILES=	bin/postgresql-relay \
+		etc/postgresql-relay.conf-sample \
+		etc/rc.d/postgresql-relay.sh
+
+USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
+
+post-extract:
+	${CP} ${FILESDIR}/postgresql-relay.sh ${WRKDIR}
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		${WRKDIR}/postgresql-relay.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/postgresql-relay ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/postgresql-relay.conf ${PREFIX}/etc/postgresql-relay.conf-sample
+	${INSTALL_DATA} ${WRKSRC}/postgresql-relay.conf-sample ${PREFIX}/etc/postgresql-relay.conf-sample
 	${INSTALL_MAN} ${WRKSRC}/postgresql-relay.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKDIR}/postgresql-relay.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
