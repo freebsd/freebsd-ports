@@ -30,4 +30,8 @@ USE_GMAKE=	yes
 USE_NEWGCC=	yes
 CONFIGURE_ARGS+= --with-plib=${X11BASE}
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/common/gr_memory.h
+
 .include <bsd.port.mk>

@@ -54,6 +54,9 @@ pre-patch:
 	   for i in ${ADDPATCHES} ; do \
 		${PATCH} -s < $${i}; \
 	   done )
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/Lib/XGL/xglUtils.c \
+		${WRKSRC}/Lib/zlib/zutil.h
 
 post-configure:
 	@find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
