@@ -7,7 +7,7 @@ The port disables verifying the checksum of the distfiles due to their
 frequency of change. If you wish to verify the files yourself you may use
 the PGP signature files that have been installed in:
 
-${PREFIX}/f-prot/
+%%PREFIX%%/f-prot/
 
 The F-RISK public PGP key is located at:
 
