@@ -4,32 +4,36 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.44 1999/02/09 18:24:50 obrien Exp $
+# $Id: Makefile,v 1.45 1999/02/09 22:17:21 obrien Exp $
 #
 
-DISTNAME=	egcs-1.1.1
+DISTNAME=	egcs-1.1.2-pre2
+PKGNAME=	egcs-1.1.2b2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.1/ \
-		ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/releases/egcs-1.1.1/ \
-		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.1/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.1/ \
-		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.1/
+MASTER_SITES=	ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/snapshots/egcs-1.1.2-prerelease/ \
+		ftp://egcs.cygnus.com/pub/egcs/snapshots/egcs-1.1.2-prerelease/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/egcs-1.1.2-prerelease/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/egcs-1.1.2-prerelease/ \
+		ftp://go.cygnus.com/pub/ftp.cygnus.com/egcs/releases/egcs-1.1.2/ \
+		ftp://ftp.funet.fi/mirrors/ftp.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
+		ftp://egcs.cygnus.com/pub/egcs/releases/egcs-1.1.2/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.1.2/ \
+		ftp://cambridge.cygnus.com/pub/egcs/releases/egcs-1.1.2/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	egcs-2.91.60
+EGCS_REV=	egcs-2.91.62
 LIBSTDCPP_REV=	2.9.0
 
 .if ${PORTOBJFORMAT} == "elf"
 PLIST=		${WRKDIR}/PLIST
 GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
 .else
-#GNUHOST=	${ARCH}-unknown-freebsdaout${OSREL}
-GNUHOST=	${ARCH}-unknown-freebsdaout
+GNUHOST=	${ARCH}-unknown-freebsdaout${OSREL}
 .endif
 
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
