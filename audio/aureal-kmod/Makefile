@@ -33,7 +33,7 @@ VERSION_SOUND_C!=	${AWK} '/.*\$$FreeBSD/ { print $$4; exit; }' \
 VERSION_SOUND_C=
 .endif
 
-VERSION_SOUND_C:=	${VERSION_SOUND_C:S/.//g}
+VERSION_SOUND_C:=	${VERSION_SOUND_C:S/1.17.2.//}
 
 .if ${OSVERSION} < 410000
 BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
@@ -47,7 +47,7 @@ PORTREVISION=	2
 # FreeBSD 4.2
 PORTVERSION=    1.3
 
-.if ${VERSION_SOUND_C} < 11724
+.if ${VERSION_SOUND_C} < 4
 # FreeBSD 4.2 before kobj MFC
 PORTREVISION=	1
 
