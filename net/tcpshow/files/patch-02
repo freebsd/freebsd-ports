@@ -1,5 +1,5 @@
---- tcpshow.c.orig	Sun Jul 19 09:00:00 1998
-+++ tcpshow.c	Fri Feb 22 00:13:57 2002
+--- tcpshow.c.orig	Sun Mar 23 23:32:50 2003
++++ tcpshow.c	Sun Mar 23 23:32:50 2003
 @@ -189,6 +189,7 @@
  /****==========------------------------------------------------==========****/
  #endif
@@ -8,7 +8,15 @@
  
  #include <sys/types.h>                 // mr971021 Next four includes
  #include <sys/socket.h>
-@@ -362,18 +363,20 @@
+@@ -204,6 +205,7 @@
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <locale.h>
+ 
+ 
+ /* Some general defines.                                                    */
+@@ -362,18 +364,20 @@
  #if !defined(NOETHERNAMES)
  // mr980118 ether_ntohost() and related functions aren't prototyped in the
  // standard include directory.
@@ -31,7 +39,7 @@
  static char *dfltCookArgs[] = {
     COOKER, "-enx", "-s10240", "-r-", (char *)NULL
  };
-@@ -512,7 +515,9 @@
+@@ -512,7 +516,9 @@
        return "";
     }
  
@@ -42,7 +50,7 @@
     *prevTime = currTime;
  
     // Convert the delta time to daytime representation.
-@@ -790,25 +795,39 @@
+@@ -790,25 +796,39 @@
     static boolean beenHereAlready = FALSE;
     static char pktBuf[MAXPKT+1];
  
@@ -95,7 +103,7 @@
  
  }
  
-@@ -1125,7 +1144,9 @@
+@@ -1125,7 +1145,9 @@
  static char *icmpType (uint1 type) {
  
     char *descr;
@@ -105,7 +113,7 @@
  
     switch (type) {
      case ECHO_REPLY:  descr = "echo-reply";              break;
-@@ -1143,7 +1164,7 @@
+@@ -1143,7 +1165,7 @@
      case INFO_REPLY:  descr = "information-reply";       break;
      case MASK_REQ:    descr = "address-mask-request";    break;
      case MASK_REPLY:  descr = "address-mask-reply";      break;
@@ -114,7 +122,23 @@
     }
  
     return descr;
-@@ -1248,7 +1269,7 @@
+@@ -1241,6 +1263,15 @@
+ 
+ }
+ 
++void checklocale(void) {
++
++  char *lc;
++  
++  if ((lc = getenv("LC_CTYPE")) != NULL) setlocale(LC_CTYPE,lc);
++  else if ((lc = getenv("LC_ALL")) != NULL) setlocale(LC_ALL,lc);
++  
++  return;
++}
+ 
+ /****==========------------------------------------------------==========****/
+ /*                                                                          */
+@@ -1248,7 +1279,7 @@
  /*                                                                          */
  /****==========------------------------------------------------==========****/
  
@@ -123,7 +147,14 @@
  
     /* Command line options.                                                 */
     while (--argc > 0 && **++argv == '-')
-@@ -1286,10 +1307,16 @@
+@@ -1281,15 +1312,23 @@
+       }
+       else error("Unknown command line flag");
+ 
++   checklocale();
++   
+    if (!cookedFlag)
+       forkTcpdump(argc, argv);
     elif (argc != 0)
        fprintf(stderr, "input is cooked -- ignoring tcpdump expressions\n");
  
@@ -142,7 +173,7 @@
  
  }
  
-@@ -1336,7 +1363,7 @@
+@@ -1336,7 +1375,7 @@
  	 name = number;
        }
     /* The crappy manpage doesn't say the port must be in net byte order.    */
@@ -151,7 +182,7 @@
        name = service->s_name;
     elif (!wantNumber)
        name = unknown;
-@@ -1580,13 +1607,14 @@
+@@ -1580,13 +1619,14 @@
     if (ppFlag) {
        (void)sscanf(p, "%s", time);
        etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
@@ -167,7 +198,7 @@
        return getPkt();
     }
  
-@@ -1598,7 +1626,7 @@
+@@ -1598,7 +1638,7 @@
     (void)strcpy(eTo, etherAddr(eTo, 0));
     (void)strcpy(eToName, etherName(eTo, TRUE));
  
@@ -176,7 +207,7 @@
        if (terseFlag) {
           printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
           printf(
-@@ -1614,6 +1642,7 @@
+@@ -1614,6 +1654,7 @@
           if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
           printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
        }
@@ -184,7 +215,7 @@
  
     return getPkt();
  
-@@ -1778,7 +1807,7 @@
+@@ -1778,7 +1819,7 @@
  static void showPkt (reg char *p) {
  
     char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
@@ -193,7 +224,7 @@
  
     prSep();
     printf("Packet %d\n", ++nPktsShown);
-@@ -1807,6 +1836,31 @@
+@@ -1807,6 +1848,31 @@
  	 p = showIcmp(p);
  	 p = showData(p);
  	 break;
@@ -225,7 +256,7 @@
         default:
  	 printf("\t%s\n", warnMsg);
  	 nextPkt();                    /* Doesn't return                    */
-@@ -1826,7 +1880,7 @@
+@@ -1826,7 +1892,7 @@
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -234,7 +265,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +2050,10 @@
+@@ -1996,10 +2062,10 @@
  
     if (terseFlag) {
        printf(
@@ -248,7 +279,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2070,9 @@
+@@ -2016,9 +2082,9 @@
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
