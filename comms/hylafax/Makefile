@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none \
 		--with-DIR_HTML="${DOCSDIR}"
+
+SUB_FILES=	pkg-message hylafax.sh.sample
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
 .if defined(PAGESIZE)
@@ -95,16 +97,10 @@ post-patch:
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
 	${CHMOD} 4555 ${SUID_EXES}
-	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax-faxq.sh.sample ]; then \
-		${SED} 's^/usr/local^${PREFIX}^g' \
-			< ${FILESDIR}/hylafax-faxq.sh.sample \
-			> ${PREFIX}/etc/rc.d/hylafax-faxq.sh.sample; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax-hfaxd.sh.sample ]; then \
-		${SED} 's^/usr/local^${PREFIX}^g' \
-			< ${FILESDIR}/hylafax-hfaxd.sh.sample \
-			> ${PREFIX}/etc/rc.d/hylafax-hfaxd.sh.sample; \
-	fi
-	@${SED} 's^/usr/local^${PREFIX}^g' < ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d
+	if [ ! -f ${PREFIX}/lib/fax/hfaxd.conf ]; then ${CP} -p ${PREFIX}/lib/fax/hfaxd.conf-dist ${PREFIX}/lib/fax/hfaxd.conf; fi
+	if [ ! -f ${PREFIX}/lib/fax/pagesizes ]; then ${CP} -p ${PREFIX}/lib/fax/pagesizes-dist ${PREFIX}/lib/fax/pagesizes; fi
+	if [ ! -f ${PREFIX}/lib/fax/typerules ]; then ${CP} -p ${PREFIX}/lib/fax/typerules-dist ${PREFIX}/lib/fax/typerules; fi
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

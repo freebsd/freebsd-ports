@@ -5,14 +5,19 @@ bin/faxrm
 bin/faxstat
 bin/sendfax
 bin/sendpage
-etc/rc.d/hylafax-faxq.sh.sample
-etc/rc.d/hylafax-hfaxd.sh.sample
+etc/rc.d/hylafax.sh.sample
 lib/fax/faxcover.ps
 lib/fax/faxcover_example_sgi.ps
 lib/fax/faxmail.ps
-lib/fax/hfaxd.conf
-lib/fax/pagesizes
-lib/fax/typerules
+@unexec if cmp -s %D/lib/fax/hfaxd.conf %D/lib/fax/hfaxd.conf-dist; then rm -f %D/lib/fax/hfaxd.conf; fi
+lib/fax/hfaxd.conf-dist
+@exec [ -f %B/hfaxd.conf ] || cp %B/%f %B/hfaxd.conf
+@unexec if cmp -s %D/lib/fax/pagesizes %D/lib/fax/pagesizes-dist; then rm -f %D/lib/fax/pagesizes; fi
+lib/fax/pagesizes-dist
+@exec [ -f %B/pagesizes ] || cp %B/%f %B/pagesizes
+@unexec if cmp -s %D/lib/fax/typerules %D/lib/fax/typerules-dist; then rm -f %D/lib/fax/typerules; fi
+lib/fax/typerules-dist
+@exec [ -f %B/typerules ] || cp %B/%f %B/typerules
 @dirrm lib/fax
 sbin/choptest
 sbin/cqtest
@@ -176,7 +181,7 @@ hylafax/COPYRIGHT
 @exec mkfifo %D/hylafax/FIFO
 @exec chown uucp:dialer %D/hylafax/FIFO
 @exec chmod 0600 %D/hylafax/FIFO
-@unexec rm %D/hylafax/FIFO*
+@unexec rm %D/hylafax/FIFO
 @exec mkdir %D/hylafax/archive
 @exec chown uucp:dialer %D/hylafax/archive
 @exec chmod 0700 %D/hylafax/archive
@@ -185,9 +190,9 @@ hylafax/bin/faxrcvd
 hylafax/bin/mkcover
 hylafax/bin/notify
 hylafax/bin/notify-4.1
+hylafax/bin/pcl2fax
 @unexec if [ -f %D/hylafax/bin/pdf2fax ]; then rm %D/hylafax/bin/pdf2fax; fi
 hylafax/bin/pdf2fax.gs
-hylafax/bin/pcl2fax
 hylafax/bin/pollrcvd
 @unexec if [ -f %D/hylafax/bin/ps2fax ]; then rm %D/hylafax/bin/ps2fax; fi
 hylafax/bin/ps2fax.dps
@@ -267,7 +272,6 @@ hylafax/config/zyxel-2864
 @exec mkdir %D/hylafax/dev
 @exec chown uucp:dialer %D/hylafax/dev
 @exec chmod 0755 %D/hylafax/dev
-@unexec if [ -f %D/hylafax/dev/null ]; then rm %D/hylafax/dev/null; fi
 @exec mkdir %D/hylafax/docq
 @exec chown uucp:dialer %D/hylafax/docq
 @exec chmod 0700 %D/hylafax/docq
@@ -279,9 +283,7 @@ hylafax/etc/dialrules
 hylafax/etc/dialrules.europe
 hylafax/etc/dialrules.sf-ba
 hylafax/etc/dpsprinter.ps
-hylafax/etc/hosts.hfaxd
 hylafax/etc/lutRS18.pcf
-hylafax/etc/xferfaxlog
 @exec mkdir %D/hylafax/info
 @exec chown uucp:dialer %D/hylafax/info
 @exec chmod 755 %D/hylafax/info
@@ -303,19 +305,14 @@ hylafax/etc/xferfaxlog
 @exec mkdir %D/hylafax/tmp
 @exec chown uucp:dialer %D/hylafax/tmp
 @exec chmod 700 %D/hylafax/tmp
-@dirrm hylafax/archive
 @dirrm hylafax/bin
 @dirrm hylafax/client
 @dirrm hylafax/config
-@dirrm hylafax/dev
 @dirrm hylafax/docq
-@dirrm hylafax/doneq
-@dirrm hylafax/etc
-@dirrm hylafax/info
-@dirrm hylafax/log
 @dirrm hylafax/pollq
 @dirrm hylafax/recvq
 @dirrm hylafax/sendq
 @dirrm hylafax/status
 @dirrm hylafax/tmp
-@dirrm hylafax
+@unexec rmdir %D/hylafax 2>/dev/null || echo "If you are permanently removing this port, you should do a ''rm -rf /var/spool/hylafax'' to remove any binary, configuration and log files left." | fmt
+@unexec echo "-----------------"
