@@ -4607,6 +4607,7 @@ libchipcard-kde	ports/devel/libchipcard-kde
 libchk		ports/sysutils/libchk
 libcii		ports/devel/libcii
 libcomprex	ports/archivers/libcomprex
+libconfuse	ports/devel/libconfuse
 libconnect	ports/net/libconnect
 libcoro		ports/devel/libcoro
 libcroco	ports/textproc/libcroco
