@@ -3,13 +3,13 @@
 cd $WRKSRC/config/cf/ || exit 1;
 cat >> xf86site.def << EOF
 #define XF86SvgaDrivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
-				ncr77c22 compaq oak mx al2101 cl6420 \
-				video7 generic
+				ncr77c22 compaq oak mx al2101 ali cl64xx \
+				video7 chips generic
 
-#define XF86Vga16Drivers	et4000 ncr77c22 ati tvga8900 oak cl6420 generic
+#define XF86Vga16Drivers	et4000 ncr77c22 ati tvga8900 oak cl64xx generic
 
 #define XF86Vga2Drivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
-				ncr77c22 compaq oak cl6420 generic
+				ncr77c22 compaq oak cl64xx generic
  
 #define XF86MonoDrivers		hgc1280 sigma apollo hercules
 
@@ -20,10 +20,10 @@ EOF
 version=`uname -r`
 set `echo $version|sed -e 's/\./ /g' -e 's/-/ /g'`
 mv FreeBSD.cf FreeBSD.cf.old
-sed -e "s/1.1.5/$version/"                       \
-    -e "s/OSMajorVersion *1/OSMajorVersion $1/"  \
-    -e "s/OSMinorVersion *1/OSMinorVersion $2/"  \
-    -e "s/OSTeenyVersion *5/OSTeenyVersion $3/"  \
+sed -e "s/12.0/$version/"                       \
+    -e "s/OSMajorVersion *2/OSMajorVersion $1/"  \
+    -e "s/OSMinorVersion *0/OSMinorVersion $2/"  \
+    -e "s/OSTeenyVersion *0/OSTeenyVersion $3/"  \
     <FreeBSD.cf.old >FreeBSD.cf
 #you may change ExtraLibraries too!
 exit 0
