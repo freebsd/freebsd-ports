@@ -7,6 +7,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/Process/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/ProcessTable.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/ProcessTable.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable/Process
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/ProcessTable
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Proc/ProcessTable
