@@ -18,6 +18,7 @@ WRKSRC=         ${WRKDIR}/glimpse-4.1
 USE_GMAKE=	yes
 NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=  CFLAGS="${CFLAGS} -DISO_CHAR_SET=1"
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
 pre-configure:
