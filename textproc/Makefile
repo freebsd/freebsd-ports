@@ -465,6 +465,7 @@
     SUBDIR += sgrep2
     SUBDIR += silvercity
     SUBDIR += sk-aspell
+    SUBDIR += skribe
     SUBDIR += smartdoc
     SUBDIR += smartdoc-devel
     SUBDIR += source-highlight
