@@ -1,0 +1,19 @@
+--- fsck_ext2fs/main.c.orig	Thu Apr 27 02:26:06 2000
++++ fsck_ext2fs/main.c	Sat Jul 15 11:05:32 2000
+@@ -56,6 +56,7 @@
+ #include <sys/param.h>
+ #include <sys/time.h>
+ #include <sys/mount.h>
++#include <ufs/ufs/ufsmount.h>
+ #include <ufs/ext2fs/ext2fs_dinode.h>
+ #include <ufs/ext2fs/ext2fs.h>
+ #include <fstab.h>
+@@ -69,6 +70,8 @@
+ #include "fsck.h"
+ #include "extern.h"
+ #include "fsutil.h"
++
++#define MOUNT_EXT2FS "/sbin/mount_ext2fs"
+ 
+ int	returntosingle;
+ 

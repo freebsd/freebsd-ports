@@ -35,6 +35,7 @@
     SUBDIR += flexbackup
     SUBDIR += fontedit
     SUBDIR += fortunelock
+    SUBDIR += fsck_ext2fs
     SUBDIR += gcombust
     SUBDIR += gkrellm
     SUBDIR += glload
