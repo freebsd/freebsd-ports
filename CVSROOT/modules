@@ -1282,6 +1282,7 @@ dillo		ports/www/dillo
 dim		ports/sysutils/dim
 dircproxy	ports/irc/dircproxy
 dirdiff		ports/sysutils/dirdiff
+directfb	ports/devel/directfb
 dirname		src/usr.bin/dirname
 dirtree		ports/misc/dirtree
 dis		ports/lang/dis
