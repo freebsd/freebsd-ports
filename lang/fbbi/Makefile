@@ -6,27 +6,19 @@
 #
 
 PORTNAME=	fbbi
-PORTVERSION=	0.98
+PORTVERSION=	2003.0326
 CATEGORIES=	lang
-MASTER_SITES=	http://www.catseye.mb.ca/esoteric/befunge/98/fbbi/
-DISTNAME=	fbbiv098
-EXTRACT_SUFX=	.zip
+MASTER_SITES=	http://www.catseye.mb.ca/projects/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	An interpreter for the Befunge-98 language
 
-USE_ZIP=	yes
 USE_GMAKE=	yes
-MAKEFILE=	makefile
-USE_REINPLACE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
-pre-build:
-	@${CP} ${WRKDIR}/fbbi.c ${WRKSRC}
-	${REINPLACE_CMD} -e 's,#include <values.h>,,' ${WRKSRC}/bf98spc.h
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/fbbi ${LOCALBASE}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/../bin/fbbi ${PREFIX}/bin
 
 .include <bsd.port.mk>
