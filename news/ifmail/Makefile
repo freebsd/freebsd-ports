@@ -7,6 +7,7 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.average.org/ifmail/
