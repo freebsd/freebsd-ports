@@ -8,6 +8,7 @@
 
 PORTNAME=	newmat
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.robertnz.com/ftp/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
