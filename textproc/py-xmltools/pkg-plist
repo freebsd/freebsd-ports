@@ -1,10 +1,14 @@
 lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlEditor.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlEditor.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlEditor.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlTree.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlTree.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlTree.pyo
 lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__init__.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/logilab
