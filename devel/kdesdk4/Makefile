@@ -33,13 +33,4 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
-.include <bsd.port.pre.mk>
-
-.include "${FILESDIR}/manpages.mk"
-
-.if ${PERL_LEVEL} < 500600
-BROKEN= "You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
-	it's outdated. Install lang/perl5 and issue 'use.perl port'"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
