@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	editors kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=stable/apps/KDE3.x/office
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	A LaTeX source editor for KDE
@@ -21,9 +20,6 @@ USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-
-post-extract:
-	@${TOUCH} ${WRKSRC}/config.h.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
