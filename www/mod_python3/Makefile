@@ -19,6 +19,7 @@ WITH_APACHE2=	yes
 USE_APACHE=	yes
 USE_PYTHON=	yes
 
+LATEST_LINK=	mod_python3
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
