@@ -30,10 +30,9 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libwnn6.so.1.0 ${PREFIX}/lib/libwnn6.so
 .endif
-	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn.a
 	${LN} -sf libwnn6_fromsrc.a ${PREFIX}/lib/libwnn6.a
-	@${MKDIR} ${PREFIX}/include/wnn
-	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn
+	@${MKDIR} ${PREFIX}/include/wnn6/wnn
+	@${INSTALL_DATA} ${WRKSRC}/Wnn/include/*.h ${PREFIX}/include/wnn6/wnn
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
 
