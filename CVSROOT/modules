@@ -5034,6 +5034,7 @@ openal		ports/audio/openal
 openam		ports/net/openam
 openbabel	ports/science/openbabel
 openbox		ports/x11-wm/openbox
+opencdk		ports/security/opencdk
 opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
