@@ -3722,6 +3722,7 @@ jakarta-commons-beanutils	ports/java/jakarta-commons-beanutils
 jakarta-commons-cli	ports/java/jakarta-commons-cli
 jakarta-commons-collections	ports/java/jakarta-commons-collections
 jakarta-commons-dbcp	ports/java/jakarta-commons-dbcp
+jakarta-commons-discovery	ports/java/jakarta-commons-discovery
 jakarta-commons-lang	ports/java/jakarta-commons-lang
 jakarta-commons-logging	ports/java/jakarta-commons-logging
 jakarta-commons-pool	ports/java/jakarta-commons-pool
