@@ -7,6 +7,7 @@
 
 PORTNAME=	plplot
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -57,11 +58,11 @@ CONFIGURE_ENV+=	ITKINCDIR="${LOCALBASE}/include/itk3.2" \
 		TCLINCDIR="${LOCALBASE}/include/tcl8.3" \
 		TCLPRIVATEINCDIR="${LOCALBASE}/include/tcl8.3/generic" \
 		TCLLIBDIR="${LOCALBASE}/lib"
+MAN1+=		plrender.1 plserver.1 pltcl.1
 PLIST_SUB+=	TCLTK=""
 .else
 CONFIGURE_ARGS+=	--disable-itcl --disable-tcl --disable-tk
 PLIST_SUB+=	TCLTK="@comment "
-MAN1+=	plrender.1 plserver.1 pltcl.1
 .endif
 
 post-patch:
