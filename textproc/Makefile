@@ -102,6 +102,7 @@
     SUBDIR += ltxml
     SUBDIR += makepatch
     SUBDIR += man2html
+    SUBDIR += manued.el
     SUBDIR += mgdiff
     SUBDIR += mguesser
     SUBDIR += minidom
