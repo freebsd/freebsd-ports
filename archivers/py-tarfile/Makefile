@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -28,11 +28,5 @@ PLIST_SUB+=	UNDERPY22=""
 PLIST_SUB+=	UNDERPY22="@comment "
 .endif
 .endif
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.post.mk>
