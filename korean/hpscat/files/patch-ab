@@ -1,0 +1,12 @@
+*** user.c.old	Fri Apr  4 13:40:38 1997
+--- user.c	Fri Apr  4 13:40:42 1997
+***************
+*** 37,43 ****
+      char buf[BUFSIZ];
+      char *home;
+      FILE *fp;
+-     extern char *getenv PROT((char *));
+      home = getenv("HOME");
+      if(strlen(home)==0)
+          return;
+--- 37,42 ----

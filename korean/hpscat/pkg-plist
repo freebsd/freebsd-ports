@@ -1,0 +1,11 @@
+bin/hpscat
+bin/hpscat.sh
+share/fonts/ked-hpscat/Header
+share/fonts/ked-hpscat/Munjo
+share/fonts/ked-hpscat/MunjoBold
+share/fonts/ked-hpscat/PCMunjo
+share/fonts/ked-hpscat/Gotic
+share/fonts/ked-hpscat/README
+share/fonts/ked-hpscat/README.jshin
+share/fonts/ked-hpscat/README.jshin.ks
+@dirrm share/fonts/ked-hpscat
