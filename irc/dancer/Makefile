@@ -27,7 +27,8 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=		Does not compile
+LDFLAGS+=	-lm
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .include <bsd.port.post.mk>
