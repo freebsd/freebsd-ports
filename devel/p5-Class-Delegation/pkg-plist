@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Delegation/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Class/Delegation.pm
+%%PORTDOCS%%share/examples/Class-Delegation/demo_adapt_interface.pl
+%%PORTDOCS%%share/examples/Class-Delegation/demo_change_semantics.pl
+%%PORTDOCS%%share/examples/Class-Delegation/demo_facade.pl
+%%PORTDOCS%%share/examples/Class-Delegation/demo_handle.pl
+%%PORTDOCS%%share/examples/Class-Delegation/demo_inheritance.pl
+%%PORTDOCS%%share/examples/Class-Delegation/demo_pseudo.pl
+%%PORTDOCS%%@dirrm share/examples/Class-Delegation
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Delegation
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
