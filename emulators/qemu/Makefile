@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.6.0s.20041020
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.fuqn.ca/distfiles/ \
 		http://dad-answers.com/qemu/
