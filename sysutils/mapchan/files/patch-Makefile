@@ -1,0 +1,11 @@
+--- Makefile.orig Sat Dec 23 09:47:25 2000
++++ Makefile Thu Aug  7 00:43:27 2003
+@@ -11,7 +11,7 @@
+ # (2) If your system has not basename() function - uncomment next string
+ #DEFS+=-DNOBASENAME
+
+-BINDIR=/bin
++BINDIR=$(PREFIX)/bin
+ LDFLAGS=-lutil
+ #--------------------------------------------------------------
+ CFLAGS += $(DEFS)

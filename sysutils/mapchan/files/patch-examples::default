@@ -1,0 +1,8 @@
+--- examples/default.sample.orig Sat Dec 23 09:47:26 2000
++++ examples/default.sample Sun Aug 31 13:51:08 2003
+@@ -1,4 +1,4 @@
+-tty5  altkoi.map
++ttyv5  altkoi.map
+ ttyS1  koiualt.map
+ ttyS16 koiumain.map
+ ttyS17  sm7238.map

@@ -1,0 +1,10 @@
+bin/mapchan
+etc/mapchan/altkoi.map
+etc/mapchan/default.sample
+etc/mapchan/dos2koi.map
+etc/mapchan/k180.map
+etc/mapchan/koiualt.map
+etc/mapchan/koiumain.map
+etc/mapchan/sm7238.map
+etc/mapchan/win2koi.map
+@unexec rmdir %D/etc/mapchan 2>/dev/null || true

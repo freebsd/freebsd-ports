@@ -1,0 +1,12 @@
+mapchan - A program which allows you to transform the input and output
+of a terminal (including a serial port terminal).  It is useful when:
+
+  * You need to work with various encodings on various virtual
+    terminals
+  * You have an assortment of terminals, not one of which supports
+    your favorite encoding.
+
+This software is an incomplete implementation of the functionality of
+the utility "mapchan" of SCO Unix.
+
+WWW: http://www.iceb.vinnitsa.com/
