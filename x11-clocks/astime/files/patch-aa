@@ -1,5 +1,5 @@
 --- Makefile.orig	Fri Nov 13 00:39:24 1998
-+++ Makefile	Sun Nov 22 22:31:45 1998
++++ Makefile	Mon Nov 23 11:33:46 1998
 @@ -1,7 +1,7 @@
  #-----------------------------------------------------
  # The locations where this program should be installed
@@ -10,13 +10,7 @@
  
  # The location and names of the X11 libraries
  LDIR = -L/usr/X11R6/lib
-@@ -39,20 +39,20 @@
- 
- install: 
- 	@echo Installing astime in $(INSTALL_X_DIR) ...
--	-@strip astime
-+	-@/usr/libexec/${PORTOBJFORMAT}/strip astime
- 	-@if [ -e $(INSTALL_X_DIR)/astime ] ; then rm $(INSTALL_X_DIR)/astime; fi
+@@ -44,15 +44,15 @@
  	@cp astime $(INSTALL_X_DIR)/astime
  	@chmod 755 $(INSTALL_X_DIR)/astime
  	@echo Installing the man page in $(MAN_DIR) ...
