@@ -3,7 +3,7 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.2 1998/02/20 06:39:07 obrien Exp $
+# $Id: Makefile,v 1.3 1998/06/14 15:56:40 steve Exp $
 #
 
 DISTNAME=	proftpd-1.0.3pl1
@@ -18,7 +18,6 @@ MAN8=	proftpd.8 ftpshut.8
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 
 #
 # - "configure --prefix=..." doesn't seem to work :(
