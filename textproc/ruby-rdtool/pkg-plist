@@ -1,11 +1,13 @@
 bin/rd2
 bin/rdswap
+bin/rmi2html
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/dot.rd2rc
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/filter.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2html-lib.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2html-opt.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2man-lib.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2rdo-lib.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/rd/rd2rmi-lib.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdblockparser.tab.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdfmt.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/rd/rdinlineparser.tab.rb
