@@ -1,5 +1,5 @@
 --- confarc.orig	Mon Jul 27 21:30:54 1998
-+++ confarc	Wed Nov  4 06:03:42 1998
++++ confarc	Wed Nov  4 07:35:46 1998
 @@ -75,6 +75,8 @@
          elsif (/^-l/)           { $nu_list  = &get_option("-list");    }
  	elsif (/^-T/)		{ $nu_title = &get_option("-Title"); }
@@ -90,3 +90,15 @@
  	print "ERROR: Unable to create cronfile $mycronfile\n";
  	exit 6;
  }
+@@ -617,8 +652,10 @@
+ 	if ($ttype == 2) {  # Subdirectory-based index
+ 		print "\n\nNow you will need to enter the full path to the directory(s)\n";
+ 		print "to be indexed.  It must be accessible from the web.\n";
++		print "Alternatively you can enter the URL(s) of the directories you would\n";
++		print "like to index.\n";
+ 	
+-		$entry = &prompt("Directory Path: ", $indexdir);
++		$entry = &prompt("Directory Path or URL: ", $indexdir);
+ 
+ 	} else {	  # Traversal-based index
+ 
