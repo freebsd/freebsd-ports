@@ -16,7 +16,9 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 
 PERL_CONFIGURE=	yes
 
