@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.128 1999/05/20 01:30:51 asami Exp $
+# $Id: Makefile,v 1.129 1999/05/23 21:16:11 peter Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -25,6 +25,7 @@
     SUBDIR += chimera2
     SUBDIR += comline
     SUBDIR += evg
+    SUBDIR += fcgi
     SUBDIR += fxhtml
     SUBDIR += gn
     SUBDIR += grail
@@ -83,7 +84,9 @@
     SUBDIR += squid22
     SUBDIR += squidclients
     SUBDIR += squidtimes
+    SUBDIR += squirm
     SUBDIR += swish-e
+    SUBDIR += thttpd
     SUBDIR += tidy
     SUBDIR += transproxy
     SUBDIR += vrweb
