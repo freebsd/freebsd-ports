@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- Makefile.am.orig	Sat Oct 26 23:59:48 2002
++++ Makefile.am	Sun Oct 27 00:02:18 2002
+@@ -1,9 +1,9 @@
+-xmmsinputdir = $(prefix)/xmms/Input
++xmmsinputdir = $(prefix)/lib/xmms/Input
+ 
+ xmmsinput_LTLIBRARIES = libmid.la
+ 
+ CFLAGS = @CFLAGS@ -DTIMID_VERSION=\"0.2i\"
+ 
+ libmid_la_SOURCES = common.c controls.c dumb_c.c filter.c instrum.c mid.c mix.c output.c playmidi.c readmidi.c resample.c tables.c timidity.c xmms_a.c
+-
++libmid_la_LDFLAGS = -module -export-dynamic -avoid-version
+ 
