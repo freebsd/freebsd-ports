@@ -7,9 +7,9 @@
 #
 
 DISTNAME=	cku196
-PKGNAME=        kermit-7.0.196-beta
+PKGNAME=        kermit-7.0.196
 CATEGORIES=	comms
-MASTER_SITES=	ftp://kermit.columbia.edu/kermit/test/tar/
+MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
 
 MAINTAINER=	joerg@FreeBSD.org
 
