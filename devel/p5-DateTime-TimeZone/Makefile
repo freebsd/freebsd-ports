@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Time zone object base class and factory
 
 RUN_DEPENDS=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \

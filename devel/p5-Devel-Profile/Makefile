@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Tell me why my perl program runs so slowly
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Roman day numbering for DateTime objects
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/P/PI/PINYAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Explanation of a Regular Expression
 
 BUILD_DEPENDS=	${SITE_PERL}/YAPE/Regex.pm:${PORTSDIR}/textproc/p5-YAPE-Regex

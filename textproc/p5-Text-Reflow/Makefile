@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl module for reflowing text files
 
 PERL_CONFIGURE=	yes

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	GD
 PKGNAMEPREFIX=	p5-
 DISTNAME=	GDGraph-${PORTVERSION}
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Graph plotting module for perl5
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \

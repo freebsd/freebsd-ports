@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	m@absolight.net
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	An optimized template builder base class with lookup capability
 
 RUN_DEPENDS=	${SITE_PERL}/Class/ObjectTemplate.pm:${PORTSDIR}/devel/p5-Class-ObjectTemplate
