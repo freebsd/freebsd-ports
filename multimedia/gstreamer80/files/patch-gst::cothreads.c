@@ -11,12 +11,3 @@
  #ifndef MAP_ANONYMOUS
  #ifdef MAP_ANON
  /* older glibc's have MAP_ANON instead of MAP_ANONYMOUS */
-@@ -52,7 +56,7 @@
- #endif
- #endif
- 
--#define STACK_SIZE 0x200000
-+#define STACK_SIZE 0x100000
- 
- #define COTHREAD_MAGIC_NUMBER 0xabcdef
- 

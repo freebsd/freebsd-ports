@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gstreamer/
@@ -51,9 +52,15 @@ GST_VERSION=${PORTVERSION:C/..$//}
 # library minor number
 SHLIB_VERSION=	5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600012
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gst::cothreads.c
+.endif
+
 post-install:
 # register plugins
 	-@${PREFIX}/bin/gst-register-${GST_VERSION} \
 		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
