@@ -1,0 +1,3 @@
+%%PEARDIR%%/File/Find.php
+%%PKGREGDIR%%/package.xml
+@dirrm %%PKGREGDIR%%
