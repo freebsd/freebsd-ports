@@ -1,0 +1,6 @@
+This set of programs controls access to relaying for users that
+authenticate using either POP3 using the qmail-popup/qmail-pop3d
+or pop3front servers, or IMAP using Courier IMAP.
+
+Author:	Bruce Guenther <bruceg@em.ca>
+WWW:	http://untroubled.org/relay-ctrl/

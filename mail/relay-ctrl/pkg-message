@@ -1,0 +1,4 @@
+You may need to edit root's crontab:
+
+#minute	hour	mday	month	wday	who	command
+*	*	*	*	*	root	%%LOCALBASE%%/bin/envdir %%PREFIX%%/etc/relay-ctrl %%PREFIX%%/bin/relay-ctrl-age

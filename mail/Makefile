@@ -309,6 +309,7 @@
     SUBDIR += rbl-milter
     SUBDIR += rblcheck
     SUBDIR += regm
+    SUBDIR += relay-ctrl
     SUBDIR += relaydb
     SUBDIR += rftp
     SUBDIR += ricochet
