@@ -19,6 +19,9 @@ WRKSRC=		${WRKDIR}/pimp3
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
+post-patch:
+	@${PERL} -pi -ne "s!/usr/bin/python!${LOCALBASE}/bin/python!;" ${WRKSRC}/pimp3.py
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pyc ${PREFIX}/bin/
