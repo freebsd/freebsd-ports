@@ -1,0 +1,93 @@
+*** imap/ANSI/c-client/Makefile.orig	Wed May 29 22:33:17 1996
+--- imap/ANSI/c-client/Makefile	Fri Jun 14 00:10:52 1996
+***************
+*** 33,40 ****
+--- 33,42 ----
+  
+  ARCHIVE=c-client.a
++ SHLIB=libc-client.so.1.3
+  ARRC=ar rc
+  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
+  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
+  	osdep.o sm_unix.o newsrc.o
++ SOFILES=	${BINARIES:.o=.so}
+  CC=cc
+  CFLAGS=$(EXTRACFLAGS)
+***************
+*** 49,52 ****
+--- 51,57 ----
+  SHELL=/bin/sh
+  
++ # Need this for the shared library rule to work correctly
++ .SUFFIXES: .o .so
++ 
+  missing:
+  	@echo "You must specify what type of system"
+***************
+*** 120,123 ****
+--- 125,135 ----
+  		RSHPATH=/usr/bin/rsh CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)"
+  
++ bsf:	# FreeBSD
++ 	$(MAKE) mtest OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
++ 		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
++ 		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
++ 		RSHPATH=/usr/bin/rsh CFLAGS="-O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
++ 		LDFLAGS="-lcrypt"
++ 
+  cvx:	# Convex
+  	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
+***************
+*** 395,401 ****
+  
+  clean:
+! 	$(RM) *.o linkage.[ch] mtest $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
+  
+! mtest: $(ARCHIVE) mtest.o
+  	$(CC) $(CFLAGS) -o mtest mtest.o $(ARCHIVE) $(LDFLAGS)
+  
+--- 407,413 ----
+  
+  clean:
+! 	$(RM) *.o *.so linkage.[ch] mtest $(SHLIB) $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
+  
+! mtest: $(ARCHIVE) $(SHLIB) mtest.o
+  	$(CC) $(CFLAGS) -o mtest mtest.o $(ARCHIVE) $(LDFLAGS)
+  
+***************
+*** 405,408 ****
+--- 417,427 ----
+  	$(RANLIB) $(ARCHIVE)
+  
++ $(SHLIB):	$(SOFILES)
++ 	ld -Bshareable -o $(SHLIB) $(SOFILES)
++ 	strip $(SHLIB)
++ 
++ .c.so:	osdep.h
++ 	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
++ 
+  # Dependencies
+  
+***************
+*** 445,448 ****
+--- 464,483 ----
+  	$(EXTRAOSDEFS) -c os_$(OS).c
+  	$(MV) os_$(OS).o osdep.o
++ 
++ osdep.so: mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
++ 	osdep.h env_unix.h tcp_unix.h \
++ 	os_$(OS).c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
++ 	log_std.c log_sv4.c log_ssn.c log_ult.c \
++ 	gr_wait.c gr_wait4.c gr_waitp.c \
++ 	flock.c ingroups.c opendir.c scandir.c \
++ 	memmove.c memmove2.c memset.c \
++ 	write.c writev.c writevs.c \
++ 	tz_bsd.c tz_nul.c tz_sv4.c \
++ 	strerror.c strpbrk.c strstr.c strtok.c strtol.c strtoul.c
++ 	$(CC) -fpic -DPIC $(CFLAGS) -DSTDPROTO=$(STDPROTO) -DMAILSPOOL=\"$(MAILSPOOL)\" \
++ 	-DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
++ 	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
++ 	$(EXTRAOSDEFS) -c os_$(OS).c -o os_$(OS).so
++ 	$(MV) os_$(OS).so osdep.so
+  
+  osdep.h: os_$(OS).h linkage
