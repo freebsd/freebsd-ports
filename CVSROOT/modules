@@ -4453,6 +4453,7 @@ muuz		ports/misc/muuz
 mv		src/bin/mv
 mwavem		ports/comms/mwavem
 mxv		ports/audio/mxv
+mydns		ports/net/mydns
 myodbc		ports/databases/myodbc
 mysql++		ports/databases/mysql++
 mysql-gui	ports/databases/mysql-gui
