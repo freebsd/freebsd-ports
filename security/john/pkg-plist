@@ -17,3 +17,5 @@ share/doc/john/NEWS
 share/doc/john/OPTIONS
 share/doc/john/README
 share/doc/john/RULES
+@dirrm share/doc/john
+@dirrm share/john
