@@ -18,5 +18,8 @@ mmcache.shm_ttl="0"
 mmcache.shm_prune_period="0"
 mmcache.shm_only="0"
 mmcache.compress="1"
+mmcache.keys="shm_and_disk"
+mmcache.sessions="shm_and_disk"
+mmcache.content="shm_and_disk"
 
 *****************************************************************************
