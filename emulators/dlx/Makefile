@@ -14,36 +14,32 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Assembler for Hennessy and Patterson's DLX architecture
+COMMENT=	"Assembler for Hennessy and Patterson's DLX architecture"
 
-.include <bsd.port.pre.mk>
+ONLY_FOR_ARCHS=	i386
+USE_GCC=	2.95
+MAKE_ENV=	prefix=${PREFIX} INSTALLDIR=${PREFIX}/bin
 
-.if ${ARCH} != i386
-BROKEN=		will not build on ${ARCH}
-.endif
-
-.if ${OSVERSION} > 500000
-BROKEN=		does not build on -current
-.endif
-
+PORTDOCS=	dlxsim.tex manual.tex report.tex report2.tex
 MAN1=		dlxcc.1
 
 do-configure:
-	cd ${WRKSRC}/gcc ; ./config.gcc dlx
+	cd ${WRKSRC}/gcc && ./config.gcc dlx
 
 do-build:
-	cd ${WRKSRC}/dlxsim ; make install
-	cd ${WRKSRC}/gcc ; make prefix=${PREFIX} INSTALLDIR=${PREFIX}/bin
+	cd ${WRKSRC}/dlxsim && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+	cd ${WRKSRC}/gcc && ${SETENV} ${MAKE_ENV} ${MAKE}
 
 do-install:
-	@cd ${WRKSRC}/gcc ; make prefix=${PREFIX} INSTALLDIR=${PREFIX}/bin install
-	@${STRIP_CMD} ${PREFIX}/bin/dlxcc ${PREFIX}/bin/dlx-gcc-cc1 \
-		${PREFIX}/bin/dlx-gcc-cpp
+	cd ${WRKSRC}/gcc && ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+	cd ${PREFIX}/bin && ${STRIP_CMD} dlxcc dlx-gcc-cc1 dlx-gcc-cpp
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dlxsim ${PREFIX}/bin
-	@cd ${WRKSRC}/man ; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dlxsim/doc/* ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/dlxsim/doc/${f} ${DOCSDIR}
+.endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -3,8 +3,3 @@ bin/dlxsim
 bin/dlxcc
 bin/dlx-gcc-cc1
 bin/dlx-gcc-cpp
-%%PORTDOCS%%share/doc/dlx/dlxsim.tex
-%%PORTDOCS%%share/doc/dlx/manual.tex
-%%PORTDOCS%%share/doc/dlx/report.tex
-%%PORTDOCS%%share/doc/dlx/report2.tex
-%%PORTDOCS%%@dirrm share/doc/dlx
