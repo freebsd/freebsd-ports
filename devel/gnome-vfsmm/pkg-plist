@@ -2,14 +2,26 @@ include/gnome-vfsmm-2.0/libgnomevfsmm.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/application-registry.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/directory-handle.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/enums.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/exception.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/file-info.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/handle.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/init.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/mime-action.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/mime-application.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/mime-handlers.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/mime-monitor.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/monitor-handle.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/private/enums_p.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/private/file-info_p.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/private/mime-action_p.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/private/mime-application_p.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/private/mime-monitor_p.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/private/transfer-progress_p.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/private/uri_p.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/private.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/transfer-progress.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/transfer.h
+include/gnome-vfsmm-2.0/libgnomevfsmm/types.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/uri.h
 include/gnome-vfsmm-2.0/libgnomevfsmm/wrap_init.h
 lib/gnome-vfsmm-2.0/include/libgnomevfsmmconfig.h
@@ -17,11 +29,12 @@ lib/gnome-vfsmm-2.0/proc/m4/convert.m4
 lib/gnome-vfsmm-2.0/proc/m4/convert_gnome_vfsmm.m4
 lib/libgnomevfsmm-1.3.a
 lib/libgnomevfsmm-1.3.so
-lib/libgnomevfsmm-1.3.so.2
+lib/libgnomevfsmm-1.3.so.3
 libdata/pkgconfig/gnome-vfsmm-2.0.pc
 @dirrm lib/gnome-vfsmm-2.0/include
 @dirrm lib/gnome-vfsmm-2.0/proc/m4
 @dirrm lib/gnome-vfsmm-2.0/proc
+@dirrm lib/gnome-vfsmm-2.0
 @dirrm include/gnome-vfsmm-2.0/libgnomevfsmm/private
 @dirrm include/gnome-vfsmm-2.0/libgnomevfsmm
 @dirrm include/gnome-vfsmm-2.0
