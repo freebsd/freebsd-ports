@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twisted.sourceforge.net/ \
 		http://twistedmatrix.com/downloads/
@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
-MAN1=		coil.1 im.1 manhole.1 mktap.1 t-im.1 tapconvert.1 twistd.1
+MAN1=		im.1 manhole.1 mktap.1 t-im.1 tapconvert.1 twistd.1
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
