@@ -1,6 +1,6 @@
---- configure.orig	Mon Nov 25 21:02:50 2002
-+++ configure	Fri Nov 29 20:30:44 2002
-@@ -3731,7 +3731,7 @@
+--- configure.orig	Sat Jun  7 01:23:06 2003
++++ configure	Sat Jun  7 01:23:17 2003
+@@ -4014,7 +4014,7 @@
  
  
  cat >>confdefs.h <<_ACEOF
@@ -9,12 +9,3 @@
  _ACEOF
  
  
-@@ -6630,7 +6630,7 @@
- s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
- s,@PKG_CONFIG@,$PKG_CONFIG,;t t
- s,@PROCMAN_CFLAGS@,$PROCMAN_CFLAGS,;t t
--s,@PROCMAN_LIBS@,$PROCMAN_LIBS,;t t
-+s,@PROCMAN_LIBS@, $PROCMAN_LIBS,;t t
- s,@GCONF_SCHEMA_CONFIG_SOURCE@,$GCONF_SCHEMA_CONFIG_SOURCE,;t t
- s,@GCONF_SCHEMA_FILE_DIR@,$GCONF_SCHEMA_FILE_DIR,;t t
- s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
