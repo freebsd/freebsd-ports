@@ -1,0 +1,113 @@
+bin/gphoto2-config
+bin/gphoto2-port-config
+include/gphoto2/gphoto2-abilities-list.h
+include/gphoto2/gphoto2-camera.h
+include/gphoto2/gphoto2-context.h
+include/gphoto2/gphoto2-file.h
+include/gphoto2/gphoto2-filesys.h
+include/gphoto2/gphoto2-library.h
+include/gphoto2/gphoto2-list.h
+include/gphoto2/gphoto2-port-info-list.h
+include/gphoto2/gphoto2-port-log.h
+include/gphoto2/gphoto2-port-portability.h
+include/gphoto2/gphoto2-port-result.h
+include/gphoto2/gphoto2-port-version.h
+include/gphoto2/gphoto2-port.h
+include/gphoto2/gphoto2-result.h
+include/gphoto2/gphoto2-setting.h
+include/gphoto2/gphoto2-version.h
+include/gphoto2/gphoto2-widget.h
+include/gphoto2/gphoto2.h
+lib/gphoto2/2.1.1/libgphoto2_barbie.so
+lib/gphoto2/2.1.1/libgphoto2_canon.so
+lib/gphoto2/2.1.1/libgphoto2_casio_qv.so
+lib/gphoto2/2.1.1/libgphoto2_digita.so
+lib/gphoto2/2.1.1/libgphoto2_dimagev.so
+lib/gphoto2/2.1.1/libgphoto2_dimera3500.so
+lib/gphoto2/2.1.1/libgphoto2_directory.so
+lib/gphoto2/2.1.1/libgphoto2_fuji.so
+lib/gphoto2/2.1.1/libgphoto2_gsmart.so
+lib/gphoto2/2.1.1/libgphoto2_jamcam.so
+lib/gphoto2/2.1.1/libgphoto2_jd11.so
+lib/gphoto2/2.1.1/libgphoto2_kodak_dc120.so
+lib/gphoto2/2.1.1/libgphoto2_kodak_dc210.so
+lib/gphoto2/2.1.1/libgphoto2_kodak_dc240.so
+lib/gphoto2/2.1.1/libgphoto2_kodak_dc3200.so
+lib/gphoto2/2.1.1/libgphoto2_konica.so
+lib/gphoto2/2.1.1/libgphoto2_largan.so
+lib/gphoto2/2.1.1/libgphoto2_mustek.so
+lib/gphoto2/2.1.1/libgphoto2_panasonic_coolshot.so
+lib/gphoto2/2.1.1/libgphoto2_panasonic_dc1000.so
+lib/gphoto2/2.1.1/libgphoto2_panasonic_dc1580.so
+lib/gphoto2/2.1.1/libgphoto2_panasonic_l859.so
+lib/gphoto2/2.1.1/libgphoto2_pccam600.so
+lib/gphoto2/2.1.1/libgphoto2_polaroid_pdc320.so
+lib/gphoto2/2.1.1/libgphoto2_polaroid_pdc640.so
+lib/gphoto2/2.1.1/libgphoto2_polaroid_pdc700.so
+lib/gphoto2/2.1.1/libgphoto2_ptp.so
+lib/gphoto2/2.1.1/libgphoto2_ricoh.so
+lib/gphoto2/2.1.1/libgphoto2_samsung.so
+lib/gphoto2/2.1.1/libgphoto2_sierra.so
+lib/gphoto2/2.1.1/libgphoto2_sipix.so
+lib/gphoto2/2.1.1/libgphoto2_sipixblink.so
+lib/gphoto2/2.1.1/libgphoto2_sony_dscf1.so
+lib/gphoto2/2.1.1/libgphoto2_sony_dscf55.so
+lib/gphoto2/2.1.1/libgphoto2_soundvision.so
+lib/gphoto2/2.1.1/libgphoto2_spca504_flash.so
+lib/gphoto2/2.1.1/libgphoto2_stv0680.so
+lib/gphoto2/2.1.1/libgphoto2_sx330z.so
+lib/gphoto2_port/0.5.1/libgphoto2_port_serial.so
+lib/gphoto2_port/0.5.1/libgphoto2_port_usb.so
+libdata/pkgconfig/libgphoto2.pc
+lib/libgphoto2.a
+lib/libgphoto2.so
+lib/libgphoto2.so.2
+lib/libgphoto2_port.a
+lib/libgphoto2_port.so
+lib/libgphoto2_port.so.5
+%%PORTDOCS%%share/doc/libgphoto2/AUTHORS
+%%PORTDOCS%%share/doc/libgphoto2/NEWS
+%%PORTDOCS%%share/doc/libgphoto2/README
+%%PORTDOCS%%share/doc/libgphoto2_port/AUTHORS
+%%PORTDOCS%%share/doc/libgphoto2_port/NEWS
+%%PORTDOCS%%share/doc/libgphoto2_port/README
+share/libgphoto2/2.1.1/konica/english
+share/libgphoto2/2.1.1/konica/french
+share/libgphoto2/2.1.1/konica/german
+share/libgphoto2/2.1.1/konica/japanese
+share/libgphoto2/2.1.1/konica/korean
+share/libgphoto2/2.1.1/konica/spanish
+share/locale/da/LC_MESSAGES/libgphoto2-2.mo
+share/locale/da/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/de/LC_MESSAGES/libgphoto2-2.mo
+share/locale/de/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/es/LC_MESSAGES/libgphoto2-2.mo
+share/locale/es/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/fr/LC_MESSAGES/libgphoto2-2.mo
+share/locale/fr/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/it/LC_MESSAGES/libgphoto2-2.mo
+share/locale/it/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/ja/LC_MESSAGES/libgphoto2-2.mo
+share/locale/ja/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/no/LC_MESSAGES/libgphoto2-2.mo
+share/locale/no/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/ru/LC_MESSAGES/libgphoto2-2.mo
+share/locale/ru/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/sl/LC_MESSAGES/libgphoto2-2.mo
+share/locale/sl/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/sv/LC_MESSAGES/libgphoto2-2.mo
+share/locale/sv/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/uk/LC_MESSAGES/libgphoto2-2.mo
+share/locale/uk/LC_MESSAGES/libgphoto2_port-0.mo
+share/locale/zh_CN/LC_MESSAGES/libgphoto2-2.mo
+share/locale/zh_CN/LC_MESSAGES/libgphoto2_port-0.mo
+@dirrm share/libgphoto2/2.1.1/konica
+@dirrm share/libgphoto2/2.1.1
+@dirrm share/libgphoto2
+%%PORTDOCS%%@dirrm share/doc/libgphoto2_port
+%%PORTDOCS%%@dirrm share/doc/libgphoto2
+@dirrm lib/gphoto2_port/0.5.1
+@dirrm lib/gphoto2_port
+@dirrm lib/gphoto2/2.1.1
+@dirrm lib/gphoto2
+@dirrm include/gphoto2
