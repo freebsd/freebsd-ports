@@ -29,12 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 
 MAN1=	centericq.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 post-patch:
 .for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
 	@(cd ${WRKSRC} ; \
@@ -48,4 +42,4 @@ post-install:
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
