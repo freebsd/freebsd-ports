@@ -45,6 +45,7 @@
     SUBDIR += boclient
     SUBDIR += bounce
     SUBDIR += bsdproxy
+    SUBDIR += btqueue
     SUBDIR += cacti
     SUBDIR += callgen
     SUBDIR += cap
