@@ -17,5 +17,6 @@ GNU_CONFIGURE= yes
 USE_GMAKE=     yes
 INSTALLS_SHLIB= yes
 NO_FILTER_SHLIBS= yes
+CONFIGURE_TARGET= --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
