@@ -1,5 +1,5 @@
 bin/camediaplay
-share/doc/camediaplay/README.english
-share/doc/camediaplay/README.japanese
-share/doc/camediaplay/PROTOCOL
-@dirrm share/doc/camediaplay
+%%PORTDOCS%%share/doc/camediaplay/PROTOCOL
+%%PORTDOCS%%share/doc/camediaplay/README.english
+%%PORTDOCS%%share/doc/camediaplay/README.japanese
+%%PORTDOCS%%@dirrm share/doc/camediaplay
