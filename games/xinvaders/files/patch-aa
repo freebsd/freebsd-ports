@@ -1,0 +1,26 @@
+--- Makefile.am.orig	Sat Sep 16 16:31:29 2000
++++ Makefile.am	Sat Feb  3 11:18:31 2001
+@@ -3,8 +3,7 @@
+ SUBDIRS=intl po
+ EXTRA_DIST=debian Vaders xinvaders.6 icon.xpm xinvaders.lsm
+ 
+-execgamesdir=$(prefix)/games
+-execgames_PROGRAMS = xinvaders
++bin_PROGRAMS = xinvaders
+ 
+ xinvaders_SOURCES = base.c main.c score.c shot.c spacers.c vaders.c \
+ widget.c me.h patchlevel.h vaders.h base1.bit base2.bit explode1.bit \
+@@ -14,13 +13,3 @@
+ vader3b1.bit vader3b2.bit vexplod1.bit vexplod2.bit
+ 
+ man_MANS = xinvaders.6
+-
+-install-data-local:
+-	mkdir -p $(shell dirname $(DESTDIR)$(SCOREFILE) )
+-	echo 0 > $(DESTDIR)$(SCOREFILE)
+-	chgrp games $(DESTDIR)$(SCOREFILE)
+-	chmod 0660 $(DESTDIR)$(SCOREFILE)
+-
+-install-exec-local:
+-	chgrp games $(DESTDIR)$(execgamesdir)/xinvaders
+-	chmod g+s $(DESTDIR)$(execgamesdir)/xinvaders
