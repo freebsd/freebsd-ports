@@ -7,6 +7,7 @@
 
 PORTNAME=	libungif
 PORTVERSION=	4.1.0b1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/ \
 		ftp://ftp.ayamura.org/pub/graphics/
