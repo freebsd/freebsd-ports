@@ -1,0 +1,27 @@
+*** src/hiragana-convtable.txt.orig	Tue Sep  2 18:27:38 2003
+--- src/hiragana-convtable.txt	Tue Sep  2 18:27:45 2003
+***************
+*** 195,205 ****
+  be	べ
+  bo	ぼ
+  
+! va	う゛ぁ
+! vi	う゛ぃ
+! vu	う゛
+! ve	う゛ぇ
+! vo	う゛ぉ
+  
+  pa	ぱ
+  pi	ぴ
+--- 195,205 ----
+  be	べ
+  bo	ぼ
+  
+! va	ヴぁ
+! vi	ヴぃ
+! vu	ヴ
+! ve	ヴぇ
+! vo	ヴぉ
+  
+  pa	ぱ
+  pi	ぴ

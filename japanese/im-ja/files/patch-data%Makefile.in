@@ -1,0 +1,19 @@
+*** data/Makefile.in.orig	Tue Sep  2 16:42:24 2003
+--- data/Makefile.in	Tue Sep  2 16:43:15 2003
+***************
+*** 117,123 ****
+  VERSION = @VERSION@
+  WNN_INCLUDES = @WNN_INCLUDES@
+  
+! sysconfdir = /etc
+  schemasdir = $(sysconfdir)/gconf/schemas
+  schemas_in_files = im-ja.schemas.in
+  schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
+--- 117,123 ----
+  VERSION = @VERSION@
+  WNN_INCLUDES = @WNN_INCLUDES@
+  
+! sysconfdir = @sysconfdir@
+  schemasdir = $(sysconfdir)/gconf/schemas
+  schemas_in_files = im-ja.schemas.in
+  schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
