@@ -21,6 +21,7 @@ RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 MAKE_ENV=	QTDIR="${QTDIR}"
+PLIST_FILES=	bin/dc-qt
 
 QTDIR?=	${X11BASE}
 QMAKE?=	${X11BASE}/bin/qmake

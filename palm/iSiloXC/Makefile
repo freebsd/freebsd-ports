@@ -22,6 +22,7 @@ ONLY_FOR_ARCHS=	i386
 MAN1=		iSiloXC.1
 MAN5=		ixl.5
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/iSiloXC
 
 post-extract:
 	@${CP} ${FILESDIR}/iSiloXC.1 ${FILESDIR}/ixl.5 ${WRKDIR}

@@ -16,6 +16,7 @@ COMMENT=	A "server" to print out a smiley with it's explanation
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		"smiley.1"
+PLIST_FILES=	bin/smiley
 
 post-patch:
 	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.input

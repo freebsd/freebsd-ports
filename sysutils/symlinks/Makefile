@@ -15,5 +15,6 @@ MAINTAINER=		andreas_and_joe@tao.org.uk
 COMMENT=	Symbolic link maintenance utility
 
 MAN8=			symlinks.8
+PLIST_FILES=		bin/symlinks
 
 .include <bsd.port.mk>

@@ -18,5 +18,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 GNU_CONFIGURE=	yes
 
 MAN1=		nd.1
+PLIST_FILES=	bin/nd
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ NO_WRKSUBDIR=	yes
 EXTRACT_AFTER_ARGS=	> ${PORTNAME}
 
 NOMAN=		# defined
+PLIST_FILES=	bin/wmoldmenu2new
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin

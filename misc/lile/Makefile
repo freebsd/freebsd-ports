@@ -17,6 +17,7 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	An Input Line Editor that wraps itself around programs
 
 MAN1=		ile.1
+PLIST_FILES=	bin/ile
 
 do-configure:
 	@(cd ${WRKSRC}; ${MV} Makefile Makefile.old; \

@@ -18,5 +18,6 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 GNU_CONFIGURE=	yes
 
 MAN1=		ginsu.1
+PLIST_FILES=	bin/ginsu
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	A client/server program for testing network performance
 
 ALL_TARGET=	nttcp
 MAN1=		nttcp.1
+PLIST_FILES=	bin/nttcp
 USE_GMAKE=	yes
 MAKE_ENV+=	OPT="${CFLAGS}"
 

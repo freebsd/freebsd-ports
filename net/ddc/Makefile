@@ -14,5 +14,6 @@ MAINTAINER=    edwin@mavetju.org
 COMMENT=	Control your DHCP daemon a la apachectl
 
 MAN8=		ddc.8
+PLIST_FILES=	bin/ddc
 
 .include <bsd.port.mk>

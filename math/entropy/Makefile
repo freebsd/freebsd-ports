@@ -15,5 +15,6 @@ COMMENT=	Calculate data entropy to benchmark compression algorithms
 
 MAN1=		entropy.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/entropy
 
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ COMMENT=	Configurator for Granch SBNI12-xx adapters
 NO_WRKSUBDIR=	yes
 NO_PACKAGE=	"Depends on kernel"
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	bin/sbniconfig
 
 post-extract:
 	@${GZCAT} ${DISTDIR}/${DISTFILES} > ${WRKDIR}/sbniconfig.c

@@ -22,5 +22,6 @@ USE_GMAKE=	yes
 
 MAN1=		netmask.1
 INFO=		netmask
+PLIST_FILES=	bin/netmask
 
 .include <bsd.port.mk>

@@ -17,6 +17,8 @@ COMMENT=	A programmer's GUI reference for Tcl/Tk and major packages
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+PLIST_FILES=	bin/TkRef
+
 NO_BUILD=	yes
 
 USE_REINPLACE=	yes

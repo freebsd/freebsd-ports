@@ -14,6 +14,7 @@ MAINTAINER=	growspd@brokep.com
 COMMENT=	Quick utility to check files growth rate
 
 MAN1=		growspd.1
+PLIST_FILES=	bin/growspd
 
 USE_REINPLACE=	yes
 

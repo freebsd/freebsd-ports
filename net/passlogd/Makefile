@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.morphine.com/src/
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Intercept and dump syslog remote log packets
 
+PLIST_FILES=	sbin/passlogd
 USE_REINPLACE=	yes
 
 post-patch:

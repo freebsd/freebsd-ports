@@ -17,5 +17,6 @@ COMMENT=	X File System Monitor
 
 USE_IMAKE=	yes
 MAN1=		xfsm.1
+PLIST_FILES=	bin/xfsm
 
 .include <bsd.port.mk>

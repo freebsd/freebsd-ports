@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.freebsdhackers.net/destroy/
 MAINTAINER=	shane@freebsdhackers.net
 COMMENT=	A program to destroy files on the hard disk and unlink them
 
+PLIST_FILES=	bin/destroy
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

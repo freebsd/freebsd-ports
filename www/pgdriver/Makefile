@@ -23,5 +23,6 @@ POSTGRESQL_PORT?=	databases/postgresql7
 
 MAKEFILE=	makefile
 MAKE_ENV+=	PREFIX=${PREFIX}
+PLIST_FILES=	aolserver/bin/postgres.so
 
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ USE_REINPLACE=	yes
 
 MAN1=		ftp.proxy.1
 MANCOMPRESSED=	no
+PLIST_FILES=	sbin/ftp.proxy
 
 pre-patch:
 	@${RM} -Rf ${WRKSRC}/*.o ${WRKSRC}/src/ftp.proxy

@@ -16,6 +16,7 @@ COMMENT=	Packet examination / sniffer utility
 
 MAN1=		ipex.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/ipex
 
 GNU_CONFIGURE=	yes
 

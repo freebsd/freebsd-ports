@@ -25,6 +25,7 @@ CCONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-gengameng-prefix="${X11BASE}"
 
 MAN6=		burgerspace.6
+PLIST_FILES=	bin/burgerspace
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burgerspace ${PREFIX}/bin

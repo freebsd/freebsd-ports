@@ -15,4 +15,6 @@ USE_BZIP2=	yes
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	Turn cvs diff output into patch input.
 
+PLIST_FILES=	bin/cvsdiff2patch
+
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	groups/thc
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Bruce Force Attack Utility working on multiple network services
 
+PLIST_FILES=	bin/hydra
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

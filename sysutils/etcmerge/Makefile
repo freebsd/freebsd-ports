@@ -24,6 +24,7 @@ NO_MAN=		yes
 SRC=		${.CURDIR}/src
 
 MAN8=		${PORTNAME}.8
+PLIST_FILES=	sbin/etcmerge
 
 do-fetch:
 	@${DO_NADA}

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bofh@stabilis.ru
 COMMENT=	Driver for the Microchip Picstart Plus development programmer
 
+PLIST_FILES=	bin/picp
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:

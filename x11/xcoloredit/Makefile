@@ -18,5 +18,6 @@ COMMENT=	Find colour values by graphical colour mixing
 USE_IMAKE=	yes
 MAN1=		xcoloredit.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xcoloredit
 
 .include <bsd.port.mk>

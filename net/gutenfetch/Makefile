@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		gutenfetch.1
+PLIST_FILES=	bin/gutenfetch
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gutenfetch

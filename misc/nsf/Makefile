@@ -17,6 +17,7 @@ COMMENT=	NAKAMURA's Shell Form input
 WRKSRC=		${WRKDIR}
 MAN1=		nsf.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/nsf
 ALL_TARGET=
 
 post-install:

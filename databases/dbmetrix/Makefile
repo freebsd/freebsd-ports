@@ -19,6 +19,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
+PLIST_FILES=	bin/dbmetrix
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

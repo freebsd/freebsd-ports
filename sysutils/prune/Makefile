@@ -16,5 +16,6 @@ COMMENT=	Prune a file set according to a given age distribution
 
 MAN1=		prune.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/prune
 
 .include <bsd.port.mk>

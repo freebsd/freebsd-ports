@@ -24,6 +24,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/unace2
 STRIP=
 
 .if exists(/usr/bin/brandelf)

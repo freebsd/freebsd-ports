@@ -28,5 +28,6 @@ pre-patch:
 GNU_CONFIGURE=	yes
 
 MAN1=		whowatch.1
+PLIST_FILES=	bin/whowatch
 
 .include <bsd.port.post.mk>

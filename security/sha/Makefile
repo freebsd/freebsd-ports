@@ -19,5 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		sha.1
+PLIST_FILES=	bin/sha
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ COMMENT=	Command-line player/decoder for musepack audio
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 
 MAKEFILE=	Makefile.bsd
+PLIST_FILES=	bin/mppdec
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 

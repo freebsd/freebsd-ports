@@ -21,6 +21,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	lib/xmms/Effect/libquix3dn.so
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libquix3dn.so ${PREFIX}/lib/xmms/Effect/

@@ -19,6 +19,7 @@ COMMENT=	De facto standard library for creating CGI in perl
 USE_PERL5=	YES
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
+PLIST_FILES=	%%SITE_PERL%%/cgi-lib.pl
 EXTRACT_AFTER_ARGS=	> cgi-lib.pl
 
 INSTALL_BASE=	lib/perl5/site_perl/${PERL_VER}

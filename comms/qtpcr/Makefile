@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/qtpcr-${PORTVERSION}/src
 USE_X_PREFIX=	yes
 ALL_TARGET=
 INSTALL_TARGET=
+PLIST_FILES=	bin/qtpcr
 
 .if defined(WITH_QT23)
 USE_QT_VER=	2

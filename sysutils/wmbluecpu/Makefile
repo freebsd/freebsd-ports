@@ -19,6 +19,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN1=		wmbluecpu.1
+PLIST_FILES=	bin/wmbluecpu
 
 post-patch:
 	@${CP} ${FILESDIR}/cpu_freebsd.* ${WRKSRC}

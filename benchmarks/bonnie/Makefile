@@ -20,6 +20,7 @@ NO_WRKSUBDIR=	yes
 MAKE_ARGS+=	-e CFLAGS="${CFLAGS}"
 ALL_TARGET=	bsd
 MAN1=		bonnie.1
+PLIST_FILES=	bin/bonnie
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie

@@ -16,6 +16,7 @@ COMMENT=	Allows remote sites to change their newsgroup subscriptions
 WRKSRC=		${WRKDIR}/gup
 
 MAN1=		gup.1
+PLIST_FILES=	libexec/gup
 
 do-configure:
 	@${CP} ${FILESDIR}/freebsd ${WRKSRC}/config

@@ -27,5 +27,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/p4delta.1 ${PREFIX}/man/man1/
 
 MAN1=		p4delta.1
+PLIST_FILES=	bin/p4delta
 
 .include <bsd.port.mk>

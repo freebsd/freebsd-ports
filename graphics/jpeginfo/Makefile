@@ -20,5 +20,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=           jpeginfo.1
+PLIST_FILES=	bin/jpeginfo
 
 .include <bsd.port.mk>

@@ -23,5 +23,6 @@ MAKE_ARGS=	PREFIX="${PREFIX}"
 
 MAN1=		libchk.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	sbin/libchk
 
 .include <bsd.port.mk>

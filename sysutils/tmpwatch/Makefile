@@ -22,6 +22,7 @@ USE_REINPLACE=	yes
 
 CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
 MAN8=		tmpwatch.8
+PLIST_FILES=	sbin/tmpwatch
 
 do-extract:
 	${MKDIR} ${WRKDIR}

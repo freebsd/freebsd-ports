@@ -17,6 +17,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Dig
 		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/whatpix
 USE_PERL5_RUN=	yes
 
 do-install:

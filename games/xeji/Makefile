@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	hym@cocoa.freemail.ne.jp
 COMMENT=	An old man watching your mouse cursor
 
+PLIST_FILES=	bin/xeji
 USE_IMAKE=	yes
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes

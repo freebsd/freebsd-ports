@@ -24,5 +24,6 @@ COMMENT=	Babies hide under your windows
 USE_IMAKE=	yes
 
 MAN1=		xbaby.1
+PLIST_FILES=	bin/xbaby
 
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ ALL_TARGET=
 
 MAN1=		du2ps.1
 MANLANG=	"" ja
+PLIST_FILES=	bin/du2ps
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/du2ps ${PREFIX}/bin/du2ps

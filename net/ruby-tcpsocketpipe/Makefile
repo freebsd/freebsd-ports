@@ -22,6 +22,7 @@ USE_RUBY=	yes
 USE_RUBY_FEATURES=	devel-logger
 
 NO_BUILD=	yes
+PLIST_FILES=	%%RUBY_SITELIBDIR%%/socketproxy.rb
 
 do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/socketproxy.rb ${RUBY_SITELIBDIR}/

@@ -19,5 +19,6 @@ WRKSRC=		${WRKDIR}/newmail
 
 MAN1=		newmail.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/newmail
 
 .include <bsd.port.mk>

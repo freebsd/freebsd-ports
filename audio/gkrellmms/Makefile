@@ -20,6 +20,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	libexec/gkrellm/plugins/gkrellmms.so
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 

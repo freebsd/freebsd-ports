@@ -17,6 +17,7 @@ COMMENT=	A python wrapper for ao, an audio device abstraction library
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/aomodule.so
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 

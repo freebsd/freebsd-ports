@@ -20,6 +20,7 @@ EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd
 EXTRACT_AFTER_ARGS= > tkcron.tcl
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/tkcron
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}

@@ -20,6 +20,7 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/ripit.pl
 USE_PERL5=	yes
 
 post-patch:

@@ -19,5 +19,6 @@ WRKSRC=		${WRKDIR}/wait_on
 
 MAN1=		wait_on.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/wait_on
 
 .include <bsd.port.mk>

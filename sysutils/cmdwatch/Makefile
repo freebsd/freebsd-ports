@@ -15,5 +15,6 @@ MAINTAINER=	bjohnson@wedgie.org
 COMMENT=	Watches the output from a command at specified intervals
 
 MAN1=		cmdwatch.1
+PLIST_FILES=	bin/cmdwatch
 
 .include <bsd.port.mk>

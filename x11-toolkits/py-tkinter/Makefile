@@ -20,6 +20,7 @@ COMMENT=	Python bindings to the Tk widget set
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 DIST_SUBDIR=	python
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/_tkinter.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules

@@ -27,6 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 
 MAN1=		ysm.1
+PLIST_FILES=	bin/ysm
 
 post-patch:
 	@${REINPLACE_CMD} -e \

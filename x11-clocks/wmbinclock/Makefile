@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.inxsoft.net/wmbinclock/
 MAINTAINER=	logix@foobar.franken.de
 COMMENT=	A binary clock in a windowmaker applet
 
+PLIST_FILES=	bin/wmBinClock
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes

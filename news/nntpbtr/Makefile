@@ -15,6 +15,7 @@ MAINTAINER=	dk@farm.org
 COMMENT=	NNTP bulk transfer
 
 MAN1=		nntpbtr.1
+PLIST_FILES=	sbin/nntpbtr
 
 # "patch" complains otherwise
 post-extract:

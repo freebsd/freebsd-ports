@@ -21,5 +21,6 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
 MAN1=		ifstat.1
+PLIST_FILES=	bin/ifstat
 
 .include <bsd.port.mk>

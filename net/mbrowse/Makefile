@@ -21,6 +21,7 @@ LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
 .endif
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/mbrowse
 USE_GNOME=	gtk12
 CONFIGURE_ARGS+=	--with-snmp-prefix=${LOCALBASE}
 

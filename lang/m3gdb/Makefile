@@ -19,6 +19,7 @@ COMMENT=	The GNU debugger with support for Modula-3
 MAN1=		m3gdb.1
 MANCOMPRESSED=	yes
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	bin/m3gdb
 
 .include <bsd.port.pre.mk>
 

@@ -18,6 +18,7 @@ COMMENT=	Creates thumbnails of JPEG images
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 MAN1=		jpgtn.1
+PLIST_FILES=	bin/jpgtn
 USE_REINPLACE=	yes
 
 pre-everything::

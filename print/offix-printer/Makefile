@@ -23,5 +23,6 @@ USE_GMAKE=	YES
 USE_X_PREFIX=	YES
 USE_XPM=	YES
 MAN1=		printer.1
+PLIST_FILES=	bin/printer
 
 .include <bsd.port.mk>

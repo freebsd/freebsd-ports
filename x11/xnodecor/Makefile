@@ -15,6 +15,7 @@ MAINTAINER=	katsura@cc.osaka-kyoiku.ac.jp
 COMMENT=	Utility to set override_redirect in XWindowAttributes to True
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/xnodecor
 USE_X_PREFIX=	yes
 
 do-extract:

@@ -19,6 +19,7 @@ NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
 MAN8=		xmotd.8
+PLIST_FILES=	bin/xmotd
 
 .if defined(USE_HTML)
 MAKE_ARGS+=	-DHAVE_HTML

@@ -19,6 +19,7 @@ USE_GNOME=	gdkpixbuf gtk12
 USE_REINPLACE=	yes
 
 MAN1=		pho.1
+PLIST_FILES=	bin/pho
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g; \

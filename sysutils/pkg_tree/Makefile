@@ -18,6 +18,7 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 
 MAN7=		pkg_tree.7
+PLIST_FILES=	bin/pkg_tree
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|__PREFIX__|${PREFIX}|g ; \

@@ -15,6 +15,7 @@ DISTNAME=	bo121unix
 MAINTAINER=	darius@dons.net.au
 COMMENT=	Client program for the Back Orifice Windows program
 
+PLIST_FILES=	bin/bounix
 WRKSRC=		${WRKDIR}/bo
 GNU_CONFIGURE=	yes
 

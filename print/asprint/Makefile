@@ -15,6 +15,7 @@ DISTNAME=	asprint
 MAINTAINER=	brett@peloton.runet.edu
 COMMENT=	A simple browser to allow a user to print
 
+PLIST_FILES=	bin/asprint
 USE_X_PREFIX=	yes
 ALL_TARGET=	asprint
 MAKEFILE=	makefile

@@ -18,6 +18,7 @@ LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
 MAN1=		hptsqfix.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/hptsqfix
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"

@@ -18,7 +18,8 @@ COMMENT=	Automatically generating simple manual pages from program output
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-MAN1=	help2man.1
-INFO=	help2man
+MAN1=		help2man.1
+INFO=		help2man
+PLIST_FILES=	bin/help2man
 
 .include <bsd.port.mk>

@@ -17,5 +17,6 @@ COMMENT=	Home Automation Software for the X10 FireCracker kit
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	br
+PLIST_FILES=	bin/br
 
 .include <bsd.port.mk>

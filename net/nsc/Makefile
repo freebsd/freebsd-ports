@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/nsc
 
 do-install:
 	${PERL} -i -pe 's|%%PREFIX%%|${PREFIX}|g; s|%%PERL%%|${PERL}|g' ${WRKSRC}/nsc.pl

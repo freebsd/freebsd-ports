@@ -17,6 +17,7 @@ RUN_DEPENDS=		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 ALL_TARGET=		xpilotmon
 MAN6=			xpilotmon.6
+PLIST_FILES=		bin/xpilotmon
 
 USE_REINPLACE=		yes
 

@@ -24,6 +24,7 @@ SRC=		gh.c
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}/${SRC}
+PLIST_FILES=	bin/gh
 
 do-build:
 		${CC} ${CFLAGS} -o ${WRKSRC}/${TGT} ${WRKSRC}/${SRC}

@@ -20,5 +20,6 @@ CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
 		--enable-ttcp --enable-tos --enable-priority
 
 MAN1=		echoping.1
+PLIST_FILES=	bin/echoping
 
 .include <bsd.port.mk>

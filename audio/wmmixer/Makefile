@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rneswold@enteract.com
 COMMENT=	An audio mixer for the WindowMaker dock
 
+PLIST_FILES=		bin/wmmixer
 WRKSRC=			${WRKDIR}/wmmixer
 USE_IMAKE=		yes
 USE_XPM=		yes

@@ -21,5 +21,6 @@ USE_XPM=	yes
 GNU_CONFIGURE=	yes
 MAN8=		wmlmmon.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/wmlmmon
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Visualization/libnebulus.so
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GNOME=	gtk12

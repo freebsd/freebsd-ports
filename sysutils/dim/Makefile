@@ -19,6 +19,7 @@ USE_PERL5_RUN=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+PLIST_FILES=	bin/dim
 
 post-patch:
 	${REINPLACE_CMD} -E "s|^#!.+|#!${PERL}|" ${WRKSRC}/dim.pl

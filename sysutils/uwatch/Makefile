@@ -16,5 +16,6 @@ COMMENT=	Monitor user logins and logouts
 
 MAN1=		uwatch.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/uwatch
 
 .include <bsd.port.mk>

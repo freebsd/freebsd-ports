@@ -17,6 +17,7 @@ COMMENT=	RFC1413 auth/identd daemon with fixed fake reply
 
 MAN8=		widentd.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	sbin/widentd
 
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 

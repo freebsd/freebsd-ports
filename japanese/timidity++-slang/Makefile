@@ -12,6 +12,7 @@ COMMENT=	Slang interface for TiMidity++ with Japanese support
 
 INTERFACE=	slang
 JAPANESE=	yes
+PLIST_FILES=	lib/timidity/interface_s.so
 
 MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
 

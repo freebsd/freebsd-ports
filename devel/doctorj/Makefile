@@ -18,5 +18,6 @@ COMMENT=	A tool for analyzing Java code and documentation
 GNU_CONFIGURE=	yes
 
 MAN1=		doctorj.1
+PLIST_FILES=	bin/doctorj
 
 .include <bsd.port.mk>

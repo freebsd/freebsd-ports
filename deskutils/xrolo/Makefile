@@ -26,5 +26,6 @@ WRKSRC=		${WRKDIR}/xrolo
 
 USE_IMAKE=	yes
 MAN1=		xrolo.1
+PLIST_FILES=	bin/xrolo
 
 .include <bsd.port.mk>

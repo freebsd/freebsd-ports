@@ -23,6 +23,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	EXTRA_LIBRARIES="-L${LOCALBASE}/lib"
 
 MAN1=		ascpu.1
+PLIST_FILES=	bin/ascpu
 
 do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/ascpu.man ${PREFIX}/man/man1/ascpu.1

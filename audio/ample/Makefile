@@ -19,5 +19,6 @@ GNU_CONFIGURE=	yes
 
 MAN1=		ample.1
 MAN5=		ample.conf.5 ample.html.5
+PLIST_FILES=	bin/ample
 
 .include <bsd.port.mk>

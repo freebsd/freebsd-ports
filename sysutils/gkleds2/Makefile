@@ -23,5 +23,6 @@ USE_GMAKE=	yes
 
 MAKE_ENV+=	PLUGIN_DIR=${PREFIX}/libexec/gkrellm2/plugins \
 		INSTALL_PROG="${INSTALL_PROGRAM}"
+PLIST_FILES=	libexec/gkrellm2/plugins/gkleds.so
 
 .include <bsd.port.mk>

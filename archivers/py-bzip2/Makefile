@@ -16,6 +16,7 @@ DISTNAME=	python-bz2-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python Interface for bz2 Compression Library
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/bz2.so
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

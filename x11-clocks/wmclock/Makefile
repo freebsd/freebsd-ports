@@ -16,6 +16,7 @@ COMMENT=	A dockable clock applet for Windowmaker
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		wmclock.1
+PLIST_FILES=	bin/wmclock
 
 HAS_CONFIGURE=	yes
 

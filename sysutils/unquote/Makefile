@@ -16,6 +16,7 @@ COMMENT=	"Execute a command with safely quoted arguments"
 
 MAN1=		unquote.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/unquote
 
 .if		!defined(NO_RELEASE)
 MAKE_ENV+=	RELEASE=yes

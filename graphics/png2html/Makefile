@@ -17,6 +17,8 @@ COMMENT=	Takes a PNG image and transforms it into HTML
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		gd.4:${PORTSDIR}/graphics/gd
 
+PLIST_FILES=	bin/png2html
+
 do-configure:
 		@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
 		@${SED} -e 's|CHANGE_ME|${PREFIX}|' \

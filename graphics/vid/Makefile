@@ -22,6 +22,7 @@ BROKEN=		requires FreeBSD 4.0 or later
 
 LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm
 
+PLIST_FILES=	bin/vid
 # The port does not understand 'make all' or 'make install'
 # so change the 'all_target' to be empty and use our own do-install handler.
 
@@ -31,4 +32,3 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vid ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
-

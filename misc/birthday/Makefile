@@ -15,5 +15,6 @@ COMMENT=	A program that outputs reminders for upcoming events (e.g. birthdays)
 
 MAN1=          birthday.1
 MANCOMPRESSED= no
+PLIST_FILES=	bin/birthday
 
 .include <bsd.port.mk>

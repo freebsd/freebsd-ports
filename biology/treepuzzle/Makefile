@@ -16,5 +16,6 @@ COMMENT=	Maximum likelihood phylogeny reconstruction using quartets
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PLIST_FILES=	bin/puzzle
 
 .include <bsd.port.mk>

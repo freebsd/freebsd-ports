@@ -18,6 +18,7 @@ COMMENT=	Download Microsoft Media streams
 
 GNU_CONFIGURE=	yes
 MAN1=		mmsclient.1
+PLIST_FILES=	bin/mmsclient
 
 post-install:
 	@${INSTALL_MAN} ${FILESDIR}/mmsclient.1 ${MANPREFIX}/man/man1

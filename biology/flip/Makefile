@@ -16,6 +16,7 @@ COMMENT=	Flip is  used to find/translate orfs
 USE_REINPLACE=	yes
 
 MAN1=		flip.1
+PLIST_FILES=	bin/flip
 
 # make it respect CFLAGS
 

@@ -20,6 +20,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=		rtpmon.1
+PLIST_FILES=	bin/rtpmon
 
 .include <bsd.port.pre.mk>
 

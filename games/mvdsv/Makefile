@@ -16,6 +16,7 @@ MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	Enhanced QuakeWorld server with multi-view demos capability
 
 MAKEFILE=	${FILESDIR}/Makefile
+PLIST_FILES=	bin/mvdsv
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 pre-everything::

@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 
 INFO=		gnugo
 MAN6=		gnugo.6
+PLIST_FILES=	bin/gnugo
 
 post-extract:
 	${RM} -f ${WRKSRC}/doc/gnugo.info*

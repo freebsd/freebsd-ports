@@ -16,6 +16,7 @@ COMMENT=	A general purpose front end for command line editing
 
 MAN1=		fep.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/fep
 
 NO_WRKSUBDIR=	yes
 

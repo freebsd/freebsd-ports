@@ -16,6 +16,7 @@ MAINTAINER=	anttik@iki.fi
 COMMENT=	CD-player with text-based user interface
 
 MAN1=		cdplay.1
+PLIST_FILES=	bin/cdplay
 
 pre-patch:
 	@${GUNZIP_CMD} ${WRKSRC}/cdplay.1.gz

@@ -21,5 +21,6 @@ USE_XPM=	yes
 ALL_TARGET=	clean all
 
 MAN1=		wmCalClock.1
+PLIST_FILES=	bin/wmCalClock
 
 .include <bsd.port.mk>

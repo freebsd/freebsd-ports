@@ -28,6 +28,8 @@ MANCOMPSUFFIX=	.gz
 MANCOMPSUFFIX=
 .endif
 
+PLIST_FILES=	bin/qident
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/getopt[.]h/unistd.h/g' ${WRKSRC}/*
 

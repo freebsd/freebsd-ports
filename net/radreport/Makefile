@@ -18,6 +18,7 @@ COMMENT=	Perl script for processing radius logs
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/radreport
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

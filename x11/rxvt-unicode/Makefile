@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
 		--with-xpm --enable-xpm-background --enable-transparency
 USE_BZIP2=	yes
 MAN1=		rxvt.1
+PLIST_FILES=	bin/rxvt
 
 # enable big5 support
 .if defined(WITH_BIG5)

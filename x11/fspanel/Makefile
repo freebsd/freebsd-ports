@@ -18,6 +18,7 @@ LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
+PLIST_FILES=	bin/fspanel
 ALL_TARGET=	fspanel
 
 do-install:

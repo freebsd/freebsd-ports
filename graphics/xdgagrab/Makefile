@@ -14,6 +14,7 @@ MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	Capture an X server screen with a mouse pointer
 
 ALL_TARGET=	xdgagrab
+PLIST_FILES=	bin/xdgagrab
 USE_X_PREFIX=	yes
 
 do-install:

@@ -14,6 +14,8 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Finfo displays potentially useful information about a file
 
+PLIST_FILES=	bin/finfo
+
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
 

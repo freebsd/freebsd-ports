@@ -19,6 +19,7 @@ RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
 
 USE_KDELIBS_VER=3
 NO_WRKSUBDIR=   yes
+PLIST_FILES=	bin/krdesktop
 
 MAKE_ENV=       QTDIR=${QT_PREFIX} \
 		KDEDIR=${LOCALBASE} \

@@ -14,6 +14,7 @@ MAINTAINER=	mranner@inode.at
 COMMENT=	Scan_ffs recovers lost disklabel
 
 MAN8=		scan_ffs.8
+PLIST_FILES=	sbin/scan_ffs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scan_ffs ${PREFIX}/sbin/.

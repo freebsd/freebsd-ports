@@ -17,6 +17,7 @@ COMMENT=	Jabber Conferencing module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 
+PLIST_FILES=	lib/jabber/conference.so
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS+=	--with-jabberd=${PREFIX}/include/jabber

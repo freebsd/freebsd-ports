@@ -18,6 +18,7 @@ ALL_TARGET=	pathalias
 
 MAN8=		pathalias.8
 BIN8=		pathalias
+PLIST_FILES=	bin/pathalias
 
 do-install:
 .for i in ${BIN8}

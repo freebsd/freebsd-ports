@@ -19,5 +19,6 @@ USE_IMAKE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	MAKE=${GMAKE}
 MAN1=		x2x.1
+PLIST_FILES=	bin/x2x
 
 .include <bsd.port.mk>

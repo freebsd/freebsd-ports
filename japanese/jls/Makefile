@@ -18,5 +18,6 @@ COMMENT=	Japanized ls
 
 MAN1=		jls.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/jls
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	The Palm ROM Discombobulator
 
+PLIST_FILES=	bin/romeo
 USE_GMAKE=	yes
 
 do-install:

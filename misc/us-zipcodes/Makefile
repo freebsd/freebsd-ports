@@ -20,6 +20,7 @@ EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/zipcodes
 NO_BUILD=	yes
+PLIST_FILES=	share/misc/us.zipcodes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/zipcodes ${PREFIX}/share/misc/us.zipcodes

@@ -17,5 +17,6 @@ COMMENT=	An audio player that decodes MPEG Layer I,II,III and WAV files
 
 GNU_CONFIGURE=		yes
 MAN1=			splay.1
+PLIST_FILES=		bin/splay
 
 .include <bsd.port.mk>

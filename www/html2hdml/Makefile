@@ -15,5 +15,6 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An i-mode HTML to EZweb HDML converter
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/html2hdml
 
 .include <bsd.port.mk>

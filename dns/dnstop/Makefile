@@ -15,6 +15,7 @@ COMMENT=	Captures and analyzes DNS traffic (or analyzes libpcap dump)
 NO_WRKSUBDIR=	true
 
 MAN8=		dnstop.8
+PLIST_FILES=	bin/dnstop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnstop ${PREFIX}/bin

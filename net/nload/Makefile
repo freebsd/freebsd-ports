@@ -18,5 +18,6 @@ HAS_CONFIGURE=	yes
 
 MAN1=		nload.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/nload
 
 .include <bsd.port.mk>

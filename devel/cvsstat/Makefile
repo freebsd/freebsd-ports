@@ -19,6 +19,7 @@ COMMENT=	Transforms the output of 'cvs status' to a sorted ASCII table
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/cvsstat
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

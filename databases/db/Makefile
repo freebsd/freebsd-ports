@@ -16,6 +16,7 @@ COMMENT=	Manipulate db(3)'s btree(3) and hash(3) databases - NetBSD port
 
 MAN1=		db.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/db
 
 MAKE_ENV=	BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX}
 

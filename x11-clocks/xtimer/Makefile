@@ -16,5 +16,6 @@ COMMENT=	A simple digital timer for X11
 
 USE_IMAKE=	yes
 MAN1=		xtimer.1
+PLIST_FILES=	bin/xtimer
 
 .include <bsd.port.mk>

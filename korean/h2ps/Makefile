@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Formats an ascii file for printing on a postscript printer with Korean char
 
+PLIST_FILES=	bin/h2ps
+
 pre-build:
 	@(cd ${WRKSRC}; make clean)
 

@@ -19,6 +19,7 @@ LIB_DEPENDS=    pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 USE_GMAKE=	yes
 
 NOMAN=
+PLIST_FILES=	sbin/ifdtest
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ifdtest ${PREFIX}/sbin

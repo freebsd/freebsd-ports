@@ -17,6 +17,7 @@ COMMENT=	Network Kanji code conversion Filter
 
 MAN1=		nkf.1
 MANLANG=	"" ja
+PLIST_FILES=	bin/nkf
 ALL_TARGET=	nkf
 
 .include <bsd.port.mk>

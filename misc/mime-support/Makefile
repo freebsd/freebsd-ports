@@ -17,6 +17,7 @@ COMMENT=	MIME Media Types list
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
+PLIST_FILES=	etc/mime.types
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/mime.types ${PREFIX}/etc

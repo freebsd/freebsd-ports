@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Very popular card game with variable skill levels
 
+PLIST_FILES=	bin/euchre
 USE_AUTOMAKE=	yes
 USE_GNOME=	gtk12
 

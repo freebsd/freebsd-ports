@@ -19,6 +19,7 @@ COMMENT=	Files executor from OffiX
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 
 GNU_CONFIGURE=	YES
+PLIST_FILES=	bin/execute
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
 USE_XPM=	YES

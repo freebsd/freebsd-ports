@@ -27,6 +27,8 @@ MAN1=		webbench.1
 PORTDOCS=	copyright changelog
 .endif
 
+PLIST_FILES=	bin/webbench
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/webbench ${PREFIX}/bin
 .if !defined(NO_INSTALL_MANPAGES)

@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 WANT_GNOME=	yes
 WANT_IPV6=	yes
 
-MAN8=	mtr.8
+MAN8=		mtr.8
+PLIST_FILES=	sbin/mtr
 
 .include <bsd.port.pre.mk>
 

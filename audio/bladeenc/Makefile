@@ -16,5 +16,6 @@ MAINTAINER=	dirk@FreeBSD.org
 COMMENT=	MP3 encoder
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/bladeenc
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	A simple wav file player
 MAN1=			waveplay.1
 MANLANG=		"" ja
 ONLY_FOR_ARCHS=		i386
+PLIST_FILES=		bin/waveplay
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/waveplay ${PREFIX}/bin/waveplay

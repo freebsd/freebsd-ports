@@ -21,5 +21,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 
 MAN1=		astime.1
+PLIST_FILES=	bin/astime
 
 .include <bsd.port.mk>

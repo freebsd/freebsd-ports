@@ -18,6 +18,7 @@ COMMENT=	A tool for installing files according to a packing list
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/pinstall
 USE_PERL5=	yes
 
 SRC=		${.CURDIR}/src

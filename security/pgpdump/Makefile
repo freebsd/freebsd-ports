@@ -17,6 +17,7 @@ COMMENT=	PGP packet visualizer
 GNU_CONFIGURE=	yes
 
 MAN1=		pgpdump.1
+PLIST_FILES=	bin/pgpdump
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin

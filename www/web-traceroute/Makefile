@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	WWW Traceroute CGI script written in C
 
+PLIST_FILES=	www/cgi-bin/trace
 USE_APACHE=	yes
 
 #pre-configure:

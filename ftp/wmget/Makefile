@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	${CONFIGURE_ENV}
 
 MAN1=		wmget.1
+PLIST_FILES=	bin/wmget
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmget ${PREFIX}/bin

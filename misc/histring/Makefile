@@ -14,5 +14,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"A tool to highlight strings using the ANSI terminal escape sequences"
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/histring
 
 .include <bsd.port.mk>

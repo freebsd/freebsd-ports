@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
 
-MAN1=	mmake.1
+MAN1=		mmake.1
+PLIST_FILES=	bin/mmake
 
 .include <bsd.port.mk>

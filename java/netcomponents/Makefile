@@ -14,6 +14,7 @@ DISTNAME=	NetComponents-${PORTVERSION}
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library with common network protocol implementations
 
+PLIST_FILES=	share/java/classes/NetComponents.jar
 USE_JAVA=	1.1+
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/NetComponents-1.3.8a

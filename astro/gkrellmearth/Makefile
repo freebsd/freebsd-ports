@@ -25,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+PLIST_FILES=	libexec/gkrellm/plugins/earth_anim.so
 ALL_TARGET=	${PORTNAME}_anim.so
 
 .include <bsd.port.mk>

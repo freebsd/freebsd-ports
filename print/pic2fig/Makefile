@@ -17,6 +17,7 @@ COMMENT=	Pic format to fig format converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		pic2fig.1
+PLIST_FILES=	bin/pic2fig
 
 do-install:
 	${INSTALL_PROGRAM} -m 755 ${WRKSRC}/pic2fig ${PREFIX}/bin

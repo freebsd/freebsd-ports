@@ -16,6 +16,7 @@ COMMENT=	Text to Unix Conversion
 MAN1=		tuc.1
 
 NO_CDROM=	Author does not allow CD-ROM distribution
+PLIST_FILES=	bin/tuc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tuc ${PREFIX}/bin

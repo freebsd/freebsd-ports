@@ -28,6 +28,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Cubic Circle's POP3 daemon (fully RFC1939 compliant)
 
-MAN8=   cucipop.8 #makevpopdb.8
+MAN8=		cucipop.8 #makevpopdb.8
+PLIST_FILES=	libexec/cucipop
 
 .include <bsd.port.post.mk>

@@ -17,6 +17,7 @@ COMMENT=	Tries to recover lost partition tables and file systems
 
 USE_GMAKE=	yes
 MAN8=		gpart.8
+PLIST_FILES=	sbin/gpart
 
 .if defined(WANT_STATIC)
 MAKE_ARGS+= LDFLAGS=-static

@@ -18,5 +18,6 @@ ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
 MAN8=		lmmon.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/lmmon
 
 .include <bsd.port.mk>

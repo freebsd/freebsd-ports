@@ -20,6 +20,7 @@ COMMENT=	Convert a MySQL dump to a PostgreSQL dump
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
 PATCH_WRKSRC=	${WRKDIR}
+PLIST_FILES=	bin/mysql2pgsql
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -18,6 +18,7 @@ COMMENT=	Version of 'traceroute' that shows the AS network number of each hop
 RELEASEDATE=	991603
 NO_WRKSUBDIR=	yes
 MAN8=		traceroute.8
+PLIST_FILES=	sbin/traceroute
 
 do-install:
 	${INSTALL} -c -m 4755 -o root -g bin ${WRKSRC}/traceroute ${PREFIX}/sbin

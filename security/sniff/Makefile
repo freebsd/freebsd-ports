@@ -15,6 +15,7 @@ MAINTAINER=		veraldi@cs.unibo.it
 COMMENT=	Program to sniff logins and passwords
 
 MAN1=			sniff.1
+PLIST_FILES=		sbin/sniff
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure
 

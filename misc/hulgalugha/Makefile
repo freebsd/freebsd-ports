@@ -14,4 +14,6 @@ USE_BZIP2=	yes
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	A very jerky text filter.
 
+PLIST_FILES=	bin/hulgalugha
+
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ MAINTAINER=	hosokawa@jp.FreeBSD.org
 COMMENT=	Binary-to-text file-encoder
 
 MAKEFILE=	makefile
+PLIST_FILES=	bin/ish
 ALL_TARGET=	ish
 
 .include <bsd.port.mk>

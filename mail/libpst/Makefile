@@ -16,4 +16,6 @@ EXTRACT_SUFX=  .tgz
 MAINTAINER=    natey@natey.com
 COMMENT=	A tool for converting Outlook .pst files to Unix mbox format
 
+PLIST_FILES=	bin/readpst
+
 .include <bsd.port.mk>

@@ -24,7 +24,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	tuxpuck
 
 MANCOMPRESSED=	yes
-MAN6=	tuxpuck.6
+MAN6=		tuxpuck.6
+PLIST_FILES=	bin/tuxpuck
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tuxpuck ${PREFIX}/bin

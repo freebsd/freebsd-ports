@@ -19,6 +19,7 @@ COMMENT=	A XMMS plugin inspired by "Blur Scope"
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Visualization/libblursk.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes

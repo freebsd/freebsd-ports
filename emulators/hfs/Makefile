@@ -18,6 +18,7 @@ COMMENT=	Read Macintosh HFS floppy disks, hard drives and CDROMs
 
 USE_GMAKE=	yes
 MAN1=		hfs.1
+PLIST_FILES=	bin/hfs
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
 COMMENT=	Perl script to make BDF font bold
 
+PLIST_FILES=	bin/mkbold
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mkbold

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	llwang@infor.org
 COMMENT=	An interpreter for the Befunge-98 language
 
+PLIST_FILES=	bin/fbbi
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

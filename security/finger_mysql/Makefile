@@ -21,6 +21,7 @@ COMMENT=	Threaded MySQL scanner
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client/
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/finger_mysql
 
 post-extract:
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/

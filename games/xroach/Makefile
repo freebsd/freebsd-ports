@@ -16,6 +16,7 @@ COMMENT=	Cockroaches hide under your windows
 
 MAN6=		xroach.6
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/xroach
 
 USE_X_PREFIX=	yes
 IGNOREFILES=	${DISTFILES}

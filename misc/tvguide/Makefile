@@ -17,6 +17,7 @@ COMMENT=	Perl script to pretty-print TV Guide listings from www.tvguide.com
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 NO_BUILD=	YES
+PLIST_FILES=	bin/tvguide
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tvguide ${PREFIX}/bin

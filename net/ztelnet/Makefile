@@ -26,6 +26,7 @@ RESTRICTED=	"zmodem code has restrictive copyright"
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
 MAN1=		ztelnet.1
+PLIST_FILES=	bin/ztelnet
 
 .include <bsd.port.pre.mk>
 

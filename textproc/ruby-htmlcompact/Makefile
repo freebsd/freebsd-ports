@@ -18,6 +18,7 @@ COMMENT=	A Ruby library to compact an HTML document by reducing whitespaces
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
 
+PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlcompact.rb
 USE_BZIP2=	yes
 USE_RUBY=	yes
 

@@ -19,6 +19,7 @@ NO_WRKSUBDIR=	yes
 ALL_TARGET=
 MAN1=		qkc.1
 MANLANG=	ja
+PLIST_FILES=	bin/qkc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qkc ${PREFIX}/bin

@@ -16,6 +16,7 @@ MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A falling ball puzzle game for X
 
 ALL_TARGET=	xrot
+PLIST_FILES=	bin/xrot
 WRKSRC=		${WRKDIR}/xrot
 USE_IMAKE=	yes
 USE_XPM=	yes

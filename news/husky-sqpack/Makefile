@@ -20,6 +20,7 @@ USE_REINPLACE=	yes
 
 MAN1=		sqpack.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/sqpack
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^/etc/fido/config^${PREFIX}/etc/fido/config^' \

@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/wmclockmon
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g' \

@@ -12,6 +12,7 @@ MASTER_SITES=  http://www.spies.com/~kmi/
 
 MAINTAINER=    M.Indlekofer@gmx.de
 COMMENT=       Ftp-like access to Fairlight OS9/MDR-DOS devices and image files
+PLIST_FILES=	bin/cmios9
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin	
 

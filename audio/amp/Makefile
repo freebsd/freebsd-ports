@@ -20,6 +20,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=		amp.1
+PLIST_FILES=	bin/amp
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/amp ${PREFIX}/bin

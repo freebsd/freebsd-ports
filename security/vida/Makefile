@@ -30,4 +30,6 @@ do-install:
 
 MAN1=		vida.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/vida
+
 .include <bsd.port.mk>

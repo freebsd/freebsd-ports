@@ -22,6 +22,7 @@ USE_REINPLACE=	yes
 MAKE_FLAGS=
 MAKEFILE=
 MAN1=		xapply.1
+PLIST_FILES=	bin/xapply
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS=,CFLAGS+=,' -e 's,^DEBUG,#DEBUG,'\

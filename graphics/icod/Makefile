@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Utility to convert Windows icon files to xpm format
 
+PLIST_FILES=	bin/icod
 WRKSRC=		${WRKDIR}/icod
 ALL_TARGET=	icod
 

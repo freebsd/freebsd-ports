@@ -24,6 +24,7 @@ USE_LIBTOOL=	yes
 
 MAN1=		nefu.1
 MAN4=		nefu.conf.4
+PLIST_FILES=	bin/nefu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

@@ -18,6 +18,7 @@ COMMENT=	Converts PNG files to Windows icon resource files
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 MAN1=		png2ico.1
+PLIST_FILES=	bin/png2ico
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes

@@ -20,6 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 # Mostly because of the dependency of mod_dav.
 APACHE_VERSION=	1.3.6
 
+PLIST_FILES=	libexec/apache/mod_encoding.so
 USE_APACHE=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

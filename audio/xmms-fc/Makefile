@@ -18,6 +18,7 @@ COMMENT=	A XMMS future composer input plugin
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/libfc.so
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12

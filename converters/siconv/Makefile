@@ -17,6 +17,8 @@ COMMENT=	Convert data from one character set to another
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+PLIST_FILES=	bin/siconv
+
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -o ${WRKSRC}/siconv ${WRKSRC}/siconv.c -liconv
 

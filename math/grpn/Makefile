@@ -20,6 +20,7 @@ USE_GNOME=	gtk12
 ALL_TARGET=
 
 MAN1=		grpn.1
+PLIST_FILES=	bin/grpn
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin

@@ -14,6 +14,7 @@ MAINTAINER=	adam@redprince.net
 COMMENT=	A tool which displays one or more files as a single line of text
 
 MAN1=		felis.1
+PLIST_FILES=	bin/felis
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/felis ${PREFIX}/bin

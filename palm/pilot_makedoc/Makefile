@@ -18,6 +18,7 @@ MAINTAINER=	simond@irrelevant.org
 COMMENT=	Converts text into the Doc format used by PalmPilots
 
 NO_WRKSUBDIR=	YES
+PLIST_FILES=	bin/pilot_makedoc
 ALL_TARGET=	pilot_makedoc
 
 do-extract:

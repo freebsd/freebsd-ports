@@ -15,6 +15,7 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Display and manipulate XKB keyboard controls from the commandline
 
 DIST_SUBDIR=	xkbctrl
+PLIST_FILES=	bin/xkbctrl
 USE_IMAKE=	yes
 NO_WRKSUBDIR=	yes
 

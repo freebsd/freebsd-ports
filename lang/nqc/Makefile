@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 CC=		${CXX}
 
 MAN1=		nqc.1
+PLIST_FILES=	bin/nqc
 
 pre-configure:
 	${CP} ${FILESDIR}/RCX_USBTowerPipe_fbsd.cpp ${WRKSRC}/rcxlib/

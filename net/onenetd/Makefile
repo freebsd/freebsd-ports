@@ -15,5 +15,6 @@ COMMENT=	A single-server inetd
 
 GNU_CONFIGURE=	yes
 MAN1=		onenetd.1
+PLIST_FILES=	bin/onenetd
 
 .include <bsd.port.mk>

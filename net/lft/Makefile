@@ -17,6 +17,7 @@ COMMENT=	Layer 4 Traceroute program
 
 GNU_CONFIGURE=	yes
 MAN8=		lft.8
+PLIST_FILES=	sbin/lft
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lft ${PREFIX}/sbin

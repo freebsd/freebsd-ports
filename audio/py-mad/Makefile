@@ -17,6 +17,7 @@ COMMENT=	Python module that provides the MPEG Audio Decoder interface
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
 
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/madmodule.so
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -19,7 +19,8 @@ NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
-MAN1=	javel.1
+MAN1=		javel.1
+PLIST_FILES=	bin/javel
 
 .include <bsd.port.pre.mk>
 

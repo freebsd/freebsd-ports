@@ -19,6 +19,7 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	speex.2:${PORTSDIR}/audio/speex
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/libspeex.so
 WRKSRC=		${WRKDIR}/speex-xmms
 
 USE_X_PREFIX=	yes

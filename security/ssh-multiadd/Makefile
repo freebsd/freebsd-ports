@@ -17,6 +17,7 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 MAN1=		ssh-multiadd.1
+PLIST_FILES=	bin/ssh-multiadd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's!/usr/bin/python2!${PYTHON_CMD}!' \

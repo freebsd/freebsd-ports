@@ -14,6 +14,7 @@ DISTNAME=	funnelweb_v320_source
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A powerful literate-programming macro pre-processor
 
+PLIST_FILES=	bin/fw
 WRKSRC=		fw_src/source
 
 do-build:

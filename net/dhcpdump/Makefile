@@ -14,6 +14,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Decode and diagnose sniffed DHCP packets
 
 MAN1=		dhcpdump.1
+PLIST_FILES=	bin/dhcpdump
 
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes

@@ -17,5 +17,6 @@ COMMENT=	Unix Benchmark Utility for CPU(s) and memory
 HAS_CONFIGURE=	yes
 
 MAN8=		ubench.8
+PLIST_FILES=	bin/ubench
 
 .include <bsd.port.mk>

@@ -21,6 +21,7 @@ USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 
 MAN1=		rlytest.1
+PLIST_FILES=	bin/rlytest
 
 pre-patch:
 	@${SED} '1s:^#!/usr/local/bin/perl:#!${PERL}:' < ${_DISTDIR}${DISTFILES} > ${WRKSRC}/rlytest

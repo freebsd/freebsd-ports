@@ -25,7 +25,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
-MAN1=	driftnet.1
+MAN1=		driftnet.1
+PLIST_FILES=	bin/driftnet
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/driftnet ${PREFIX}/bin/

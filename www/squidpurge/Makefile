@@ -20,6 +20,7 @@ COMMENT=	Powerful object purging utility for the Squid web proxy cache
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
+PLIST_FILES=	sbin/purge
 USE_GMAKE=	yes
 
 do-install:

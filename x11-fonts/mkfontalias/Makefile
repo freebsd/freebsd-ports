@@ -15,6 +15,7 @@ EXTRACT_SUFX=
 MAINTAINER=	stijn@win.tue.nl
 COMMENT=	Python script to make fonts.alias files for X
 
+PLIST_FILES=	bin/mkfontalias
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 

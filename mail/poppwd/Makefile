@@ -19,5 +19,6 @@ WRKSRC=		${WRKDIR}/poppwd
 
 MAN8=		poppwd.8
 MANCOMPRESSED=	maybe
+PLIST_FILES=	libexec/poppwd
 
 .include <bsd.port.mk>

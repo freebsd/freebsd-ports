@@ -21,6 +21,7 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 EXTRACT_CMD=		${CAT}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	| lha x -
+PLIST_FILES=		bin/Eval
 
 WRKSRC=		${WRKDIR}/Eval/source
 

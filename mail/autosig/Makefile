@@ -14,6 +14,7 @@ MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A random .signature generator with header file included
 
 MAKEFILE=	makefile
+PLIST_FILES=	bin/autosig
 ALL_TARGET=	${PORTNAME}
 USE_REINPLACE=	yes
 

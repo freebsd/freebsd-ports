@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ui.1
+PLIST_FILES=	bin/ui
 
 pre-build:
 	${MV} ${WRKSRC}/doc/ui.man ${WRKSRC}/doc/ui.1

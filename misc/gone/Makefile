@@ -14,6 +14,7 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A terminal locking utility with many improvements over lock(1)
 
 MAN1=		gone.1
+PLIST_FILES=	bin/gone
 GNU_CONFIGURE=	yes
 
 #

@@ -16,6 +16,7 @@ COMMENT=	Script that automates the ripping, encoding, and naming of CD's
 WRKSRC=		${WRKDIR}/ripenc
 
 NO_BUILD=	Shell Script
+PLIST_FILES=	bin/ripenc
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ripenc ${PREFIX}/bin

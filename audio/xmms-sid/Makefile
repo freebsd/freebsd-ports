@@ -18,6 +18,7 @@ LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Input/libsid.so
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

@@ -22,5 +22,6 @@ post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/aterm
 
 MAN1=           aterm.1
+PLIST_FILES=	bin/aterm
 
 .include <bsd.port.mk>

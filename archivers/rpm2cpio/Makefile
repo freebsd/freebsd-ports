@@ -19,6 +19,7 @@ NO_WRKSUBDIR=	yes
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/rpm2cpio.pl
 
 do-fetch:
 	@${DO_NADA}

@@ -16,6 +16,7 @@ COMMENT=	A text puzzle game with the aim of clearing the game field
 
 ALL_TARGET=	greed
 MAN6=		greed.6
+PLIST_FILES=	bin/greed
 
 do-install:
 	${INSTALL_PROGRAM} -m 2555 -o root -g games ${WRKSRC}/greed ${PREFIX}/bin

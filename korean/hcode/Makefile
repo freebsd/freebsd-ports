@@ -17,6 +17,8 @@ DISTNAME=	hcode2.1-mailpatch3
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Hangul code conversion utility
 
+PLIST_FILES=	bin/hcode
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hcode ${PREFIX}/bin
 

@@ -15,6 +15,7 @@ DISTNAME=	mysqlnavigator-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	MySQL database server administration package for KDE
 
+PLIST_FILES=	bin/mysqlnavigator
 USE_MYSQL=	yes
 
 USE_KDELIBS_VER=3

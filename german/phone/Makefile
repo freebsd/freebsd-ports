@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	German phone code / Deutsche Telefonvorwahl (AVON)
 
+PLIST_FILES=	share/misc/de.phone
 NO_WRKSUBDIR=	YES
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None

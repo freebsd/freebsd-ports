@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.lapo.it/rclean/
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Command-line rc.conf ordering and cleaning tool
 
+PLIST_FILES=	bin/rclean
 USE_BZIP2=	yes
 
 do-build:

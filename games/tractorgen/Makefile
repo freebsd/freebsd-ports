@@ -18,6 +18,7 @@ COMMENT=	Generates ASCII tractors
 USE_LIBTOOL=	yes
 
 MAN6=		tractorgen.6
+PLIST_FILES=	bin/tractorgen
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/tractorgen.6 ${PREFIX}/man/man6/tractorgen.6

@@ -14,6 +14,7 @@ COMMENT=	A X True Type Font Server
 
 RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
 
+PLIST_FILES=	bin/xfs.xtt
 SERVER=		xfs
 
 MASTERDIR=	${.CURDIR}/../XttXF86srv-common

@@ -21,5 +21,6 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		wmupmon.1
+PLIST_FILES=	bin/wmupmon
 
 .include <bsd.port.mk>

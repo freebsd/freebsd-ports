@@ -14,6 +14,7 @@ MAINTAINER=	jsellens@generalconcepts.com
 COMMENT=	An alternative to ls(1)
 
 MAN1=		lc.1
+PLIST_FILES=	bin/lc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/lc ${PREFIX}/bin

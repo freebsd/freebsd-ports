@@ -18,6 +18,7 @@ NO_CDROM=	"Can only be distributed for free"
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xteddy.1
+PLIST_FILES=	bin/xteddy
 
 post-install:
 		${STRIP_CMD} ${PREFIX}/bin/xteddy

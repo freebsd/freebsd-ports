@@ -17,6 +17,7 @@ COMMENT=	Program for managing passwords on smartcards
 
 LIB_DEPENDS=	towitoko.2:${PORTSDIR}/devel/towitoko
 
+PLIST_FILES=	bin/poc
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes

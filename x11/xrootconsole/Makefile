@@ -22,6 +22,7 @@ CFLAGS+=	-I${X11BASE}/include
 USE_GMAKE=	yes
 
 MAN1=		xrootconsole.1
+PLIST_FILES=	bin/xrootconsole
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|g" \

@@ -16,6 +16,7 @@ COMMENT=	Checkout and build ports and all depending ports
 USE_PERL5=	yes
 MAN1=		portcheckout.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/portcheckout
 
 post-patch:
 	perl -pi -e 's^\#\!/usr/local/bin/perl^#!${PERL5}^' ${WRKSRC}/portcheckout.pl

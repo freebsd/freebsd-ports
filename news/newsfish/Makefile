@@ -19,5 +19,6 @@ USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 
 MAN1=		newsfish.1
+PLIST_FILES=	bin/newsfish
 
 .include <bsd.port.mk>

@@ -35,6 +35,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=--with-included-gettext=no
 INFO=		dirmngr
+PLIST_FILES=	bin/dirmngr
 
 .include <bsd.port.pre.mk>
 

@@ -23,6 +23,7 @@ USE_REINPLACE=	yes
 
 MAN1=		scr2png.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/scr2png
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile

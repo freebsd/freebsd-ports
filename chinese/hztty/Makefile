@@ -18,6 +18,7 @@ COMMENT=	A translator between GuoBiao / Big5 and HZ
 
 ALL_TARGET=	bsd
 MAN1=		hztty.1
+PLIST_FILES=	bin/hztty
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hztty ${PREFIX}/bin

@@ -13,6 +13,7 @@ MASTER_SITES=	http://home.att.net/~apathos/code/
 MAINTAINER=	nugget@slacker.com
 COMMENT=	WindowMaker Netscape launcher to display urls from X selection
 
+PLIST_FILES=	bin/wmnetselect
 USE_IMAKE=	yes
 USE_XPM=	yes
 

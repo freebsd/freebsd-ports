@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		gnuplot:${PORTSDIR}/math/gnuplot
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/cvsplot
 
 post-patch:
 	@${PERL} -pi -e "s,^#!/usr/bin/perl -w,#!/usr/bin/env perl -w,g" ${WRKSRC}/cvsplot.pl

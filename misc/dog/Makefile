@@ -17,6 +17,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	dog
 
 MAN1=		dog.1
+PLIST_FILES=	bin/dog
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dog ${PREFIX}/bin/

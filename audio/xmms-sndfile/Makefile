@@ -20,6 +20,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
+PLIST_FILES=	lib/xmms/Input/libxmms_sndfile.so
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes

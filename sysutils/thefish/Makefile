@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 .endif
 
 MAN1=		thefish.1
+PLIST_FILES=	bin/thefish
 
 pre-everything::
 .if !defined(WITHOUT_X11) && !defined(NO_GUI)

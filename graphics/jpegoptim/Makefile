@@ -19,5 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-libjpeg=${LOCALBASE}
 
 MAN1=		jpegoptim.1
+PLIST_FILES=	bin/jpegoptim
 
 .include <bsd.port.mk>

@@ -15,6 +15,7 @@ COMMENT=	The X11R4 version of xmessage updated for X11R5 and renamed
 
 MAN1=		xmsg.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/xmsg
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>

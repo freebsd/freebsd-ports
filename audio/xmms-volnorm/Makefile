@@ -17,6 +17,7 @@ COMMENT=	Volume Normalizer plugin for XMMS
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+PLIST_FILES=	lib/xmms/Effect/libnormvol.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

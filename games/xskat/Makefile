@@ -15,5 +15,6 @@ COMMENT=	Play the card game Skat
 
 USE_IMAKE=	yes
 MAN1=		xskat.1 xskat-de.1
+PLIST_FILES=	bin/xskat
 
 .include <bsd.port.mk>

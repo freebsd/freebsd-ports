@@ -15,6 +15,7 @@ MAINTAINER=    carl@servicefactory.se
 COMMENT=       A command-line tool to access parts of the Toshiba hardware interface
 
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	bin/toshctl
 
 WRKSRC=        ${WRKDIR}/toshctl
 

@@ -20,7 +20,8 @@ COMMENT=	GEOM stop daemon
 IGNORE=         Needs GEOM(4)
 .endif
 
-MAN8=	gstopd.8
+MAN8=		gstopd.8
+PLIST_FILES=	sbin/gstopd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gstopd ${LOCALBASE}/sbin

@@ -23,6 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NOCLEANDEPENDS=	yes
 
+PLIST_FILES=	bin/opengk
 USE_GMAKE=	yes
 ALL_TARGET=	optnoshared
 MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \

@@ -16,6 +16,7 @@ COMMENT=	Perl script that converts CUE files into TOC files for cdrdao
 RUN_DEPENDS=	${SITE_PERL}/Audio/Wav.pm:${PORTSDIR}/audio/p5-Audio-Wav
 
 NO_BUILD=	yes
+PLIST_FILES=	bin/cue2toc
 USE_REINPLACE=	yes
 
 pre-patch:

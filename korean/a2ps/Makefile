@@ -16,6 +16,7 @@ EXTRACT_ONLY=
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Simple a2ps wrapper for Korean text printing
 
+PLIST_FILES=	bin/a2ps-h
 # depends on a2ps-a4. a2ps has several variation, so if I should
 # choose one, a2ps-a4 is good because A4-sized paper is default in Korea.
 RUN_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-a4

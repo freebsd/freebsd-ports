@@ -14,6 +14,7 @@ MAINTAINER=	arnej@pvv.org
 COMMENT=	Start a process detached from a terminal
 
 MAN1=		detach.1
+PLIST_FILES=	bin/detach
 
 do-install:
 	${INSTALL_PROGRAM} -m 0755 ${WRKSRC}/detach ${PREFIX}/bin

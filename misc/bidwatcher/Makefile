@@ -20,6 +20,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		mph@FreeBSD.org
 COMMENT=		Bid monitor for eBay
 
+PLIST_FILES=		bin/bidwatcher
 USE_GNOME=		gtk12
 GNU_CONFIGURE=		YES
 

@@ -18,6 +18,7 @@ COMMENT=	GKrellM plugin reading data from helium thermometer at Strahov, Prague
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+PLIST_FILES=	libexec/gkrellm2/plugins/helium.so
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 

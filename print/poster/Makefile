@@ -18,6 +18,7 @@ ALL_TARGET=	poster
 NO_WRKSUBDIR=	yes
 
 MAN1=		poster.1
+PLIST_FILES=	bin/poster
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	vanilla
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Gl base load monitor
 
+PLIST_FILES=	bin/glload
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 MAKEFILE=	Makefile.FreeBSD

@@ -15,5 +15,6 @@ COMMENT=	An emphatic message generator
 
 GNU_CONFIGURE=	yes
 MAN1=		fist.1
+PLIST_FILES=	bin/fist
 
 .include <bsd.port.mk>

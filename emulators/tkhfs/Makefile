@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A Tcl/Tk front end to the hfs program
 
+PLIST_FILES=	bin/tkhfs
 RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

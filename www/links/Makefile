@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=	--enable-graphics --with-x
 .endif
 
 MAN1=		links.1
+PLIST_FILES=	bin/links
 
 pre-everything::
 		@${ECHO_MSG} "Define WITHOUT_X11 to disable graphics support."

@@ -16,5 +16,6 @@ COMMENT=	Manipulate X cut buffers from the commandline
 
 USE_IMAKE=	YES
 MAN1=		xcut.1
+PLIST_FILES=	bin/xcut
 
 .include <bsd.port.mk>

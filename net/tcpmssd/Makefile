@@ -16,5 +16,6 @@ COMMENT=	A divert(4) daemon to correct requested receive segment size for TCP tr
 
 MAN8=		tcpmssd.8
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/tcpmssd
 
 .include <bsd.port.mk>

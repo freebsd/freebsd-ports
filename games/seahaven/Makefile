@@ -19,5 +19,6 @@ COMMENT=	The classic, lightweight version of Seahaven Towers
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 MAN6?=		seahaven.6
+PLIST_FILES=	bin/seahaven
 
 .include <bsd.port.mk>

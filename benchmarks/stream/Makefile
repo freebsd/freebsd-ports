@@ -15,6 +15,7 @@ MAINTAINER=	sf@slappy.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
 MAKEFILE=	${FILESDIR}/Makefile
+PLIST_FILES=	bin/stream
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

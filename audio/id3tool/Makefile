@@ -15,5 +15,6 @@ COMMENT=	A utility for manipulating mp3 ID3 Tags
 
 GNU_CONFIGURE=	yes
 MAN1=		id3tool.1
+PLIST_FILES=	bin/id3tool
 
 .include <bsd.port.mk>

@@ -16,5 +16,6 @@ COMMENT=	Zero overhead remote process plumbing
 
 MAN1=		socketpipe.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/socketpipe
 
 .include <bsd.port.mk>

@@ -18,5 +18,6 @@ WRKSRC=		${WRKDIR}/http_get
 
 MAN1=		http_get.1
 MANCOMPRESSED=	no
+PLIST_FILES=	bin/http_get
 
 .include <bsd.port.mk>

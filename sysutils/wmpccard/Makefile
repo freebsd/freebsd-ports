@@ -17,6 +17,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		wmpccard.1.gz
 NOMANCOMPRESS=	yes
+PLIST_FILES=	bin/wmpccard
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmpccard ${PREFIX}/bin

@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	vess@slavof.net
 COMMENT=	The bulgarian cyrillic keyboard layout manager for X11
 
+PLIST_FILES=	bin/xcyrBGR
 USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 

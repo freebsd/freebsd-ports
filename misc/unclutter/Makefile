@@ -18,5 +18,6 @@ COMMENT=	Remove idle cursor image from screen
 WRKSRC=		$(WRKDIR)/unclutter
 USE_IMAKE=	yes
 MAN1=		unclutter.1
+PLIST_FILES=	bin/unclutter
 
 .include <bsd.port.mk>

@@ -19,6 +19,7 @@ RUN_DEPENDS=	nc:${PORTSDIR}/net/netcat
 USE_OPENSSL=	YES
 MAN1=		sst.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	sbin/sst
 
 MAKEFILE=	${FILESDIR}/Makefile
 

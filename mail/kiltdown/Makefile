@@ -17,6 +17,7 @@ COMMENT=	Kiltdown is an UI independant Email Client for UNIX
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
+PLIST_FILES=	bin/kiltdown
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes

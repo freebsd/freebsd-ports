@@ -25,6 +25,7 @@ EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 MANLANG=	ja
 MAN1=		uudx.1
+PLIST_FILES=	bin/uudx
 
 pre-patch:
 	@${ECHO_MSG} "===>  Installing custom Makefile for ${DISTNAME}"

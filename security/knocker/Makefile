@@ -17,5 +17,6 @@ COMMENT=	A simple and easy to use TCP only port scanner (Console version)
 GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/knocker
 
 .include <bsd.port.mk>

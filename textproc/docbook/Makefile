@@ -26,6 +26,7 @@ RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
+PLIST_FILES=	share/sgml/docbook/catalog
 
 do-install:
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/share/sgml/docbook/catalog

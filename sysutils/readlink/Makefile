@@ -26,6 +26,8 @@ MANCOMPSUFFIX=	.gz
 MANCOMPSUFFIX=
 .endif
 
+PLIST_FILES=	bin/readlink
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/readlink ${PREFIX}/bin/readlink
 .for __s in ${MANSECTS}

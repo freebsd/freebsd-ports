@@ -18,6 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	${FILESDIR}/Makefile
 
 NO_MAN=
+PLIST_FILES=	bin/vb2c
 
 .include <bsd.port.pre.mk>
 

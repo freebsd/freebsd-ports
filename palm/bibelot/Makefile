@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Formats and converts text documents into compressed PalmDoc .pdb files
 
+PLIST_FILES=	bin/bibelot
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

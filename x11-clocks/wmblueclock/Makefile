@@ -19,6 +19,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/wmblueclock
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

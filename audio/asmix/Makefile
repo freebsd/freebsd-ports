@@ -16,6 +16,7 @@ MAINTAINER=	mtm@identd.net
 COMMENT=	Volume control dock-app for the AfterStep Window Manager
 
 MAN1=		${PORTNAME}.1x
+PLIST_FILES=	bin/asmix
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

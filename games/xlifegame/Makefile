@@ -15,5 +15,6 @@ COMMENT=	A life game for X
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+PLIST_FILES=	bin/xlifegame
 
 .include <bsd.port.mk>

@@ -17,6 +17,7 @@ COMMENT=	Libnet tool to flush arp cache entries from devices (eg. routers)
 BUILD_DEPENDS=	libnet-config:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG=	libnet-config
+PLIST_FILES=	bin/arprelease
 
 do-build:
 	(cd ${WRKSRC} && \

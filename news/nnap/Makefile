@@ -17,6 +17,7 @@ MAINTAINER=	lasse@freebsdcluster.org
 COMMENT=	Nnap is a lightweight NNTP authentication proxy
 
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	sbin/nnap
 
 do-extract:
 	@${MKDIR} ${WRKDIR}

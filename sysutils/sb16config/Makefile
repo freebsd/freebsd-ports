@@ -18,6 +18,7 @@ COMMENT=	Configuration utility for Granch SBNI16-SHDSL PCI modems
 NO_WRKSUBDIR=	yes
 MAN8=		sb16config.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/sb16config
 
 post-extract:
 .for _i in ${DISTFILES}

@@ -18,6 +18,7 @@ COMMENT=	Extract, view & test ACE archives
 
 USE_GMAKE=	yes
 ALL_TARGET=	clean unace
+PLIST_FILES=	bin/unace
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin

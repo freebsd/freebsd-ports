@@ -16,6 +16,7 @@ COMMENT=	Spouts silly mad-lib-style porn-like text
 
 MAN6=		sex.6
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/sex
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

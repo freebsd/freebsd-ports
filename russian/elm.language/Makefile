@@ -15,6 +15,7 @@ COMMENT=	Tune Elm with MIME for KOI8-R defaults
 
 RUN_DEPENDS+=	elm:${PORTSDIR}/mail/elm+ME
 
+PLIST_FILES=	lib/elm.rc
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 

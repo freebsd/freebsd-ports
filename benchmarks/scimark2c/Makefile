@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	thierry@pompo.net
 COMMENT=	An ANSI C version of the SciMark2 benchmark
 
+PLIST_FILES=	bin/scimark2
 WRKSRC=		${WRKDIR}
 USE_REINPLACE=	yes
 USE_ZIP=	yes

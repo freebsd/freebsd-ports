@@ -25,5 +25,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 
 MAN1=		translate.1
+PLIST_FILES=	bin/translate
 
 .include <bsd.port.mk>

@@ -18,6 +18,7 @@ GNU_CONFIGURE=	YES
 USE_GNOME=	glib12
 
 INFO=		${PORTNAME}
+PLIST_FILES=	bin/robotfindskitten
 
 post-extract:
 	${RM}	${WRKSRC}/doc/robotfindskitten.info

@@ -13,5 +13,6 @@ MASTER_SITES=	http://www.cs.helsinki.fi/u/salerma/cd-console/ \
 
 MAINTAINER=	jdunn@aquezada.com
 COMMENT=	A curses-based console CD player
+PLIST_FILES=	bin/cd-console
 
 .include <bsd.port.mk>

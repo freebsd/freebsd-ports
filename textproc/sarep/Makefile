@@ -22,6 +22,7 @@ EXTRACT_AFTER_ARGS=	| ${TR} -d '\r' > ${WRKSRC}/sarep
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+PLIST_FILES=	bin/sarep
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sarep ${PREFIX}/bin

@@ -19,6 +19,7 @@ COMMENT=	Sync to Mobile Application Link (MAL) compliant servers
 
 LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
+PLIST_FILES=	bin/malsync
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/malsync

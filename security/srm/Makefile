@@ -17,5 +17,6 @@ COMMENT=	Secure rm, a utility which destroys file contents before unlinking
 USE_LIBTOOL=	YES
 
 MAN1=		srm.1
+PLIST_FILES=	bin/srm
 
 .include <bsd.port.mk>

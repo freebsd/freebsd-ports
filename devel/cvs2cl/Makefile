@@ -21,6 +21,7 @@ USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/cvs2cl
 
 do-extract:
 	${MKDIR} ${WRKDIR}

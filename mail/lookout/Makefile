@@ -16,7 +16,8 @@ COMMENT=	Convert Outlook97 addressbook export files to KDE KAB/GNOME gnomecard
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-MAN1=	lookout.1
+MAN1=		lookout.1
+PLIST_FILES=	bin/lookout
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lookout ${PREFIX}/bin

@@ -15,4 +15,6 @@ USE_BZIP2=	yes
 MAINTAINER=	alfred@FreeBSD.org
 COMMENT=	A program that helps you fix a build interactively.
 
+PLIST_FILES=	bin/replay
+
 .include <bsd.port.mk>

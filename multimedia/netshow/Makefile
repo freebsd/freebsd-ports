@@ -18,6 +18,7 @@ COMMENT=	Microsoft NetShow video stream player
 RESTRICTED=	"Commercial software"
 
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	bin/netshow
 
 USE_LINUX=	yes
 NO_BUILD=	yes

@@ -16,6 +16,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"DNS \"ping\""
 
 MAN8=		nsping.8
+PLIST_FILES=	sbin/nsping
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/nsping ${PREFIX}/sbin

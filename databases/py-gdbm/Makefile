@@ -18,6 +18,7 @@ COMMENT=	Python bindings to the GNU dbm library
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/gdbm.so
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

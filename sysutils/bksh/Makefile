@@ -13,4 +13,6 @@ MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Backup-only shell
 
+PLIST_FILES=	bin/bksh
+
 .include <bsd.port.mk>

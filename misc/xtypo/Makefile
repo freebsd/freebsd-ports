@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.hipecs.hokudai.ac.jp/pub/unix/ftp.intec.co.jp/
 MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 COMMENT=	X-based keyboard trainer
 
+PLIST_FILES=	bin/xtypo
 USE_IMAKE=	yes
 ALL_TARGET=	xtypo
 

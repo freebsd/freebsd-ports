@@ -22,6 +22,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-libnet-prefix=${LOCALBASE} --with-libpcap-prefix=/usr
 GNU_CONFIGURE=	yes
 MAN8=		sing.8
+PLIST_FILES=	sbin/sing
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/libpcap-* ;\

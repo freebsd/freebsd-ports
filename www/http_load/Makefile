@@ -19,6 +19,7 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 MAN1=		http_load.1
 MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/http_load
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes

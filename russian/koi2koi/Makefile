@@ -21,5 +21,6 @@ MAKE_ENV=	PKGDIR="${PKGDIR}"
 
 MAN1=		koi2koi.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/koi2koi
 
 .include <bsd.port.mk>

@@ -15,5 +15,6 @@ COMMENT=	Remove old files from temporary directories
 
 MAN8=		stmpclean.8
 MANCOMPRESSED=	no
+PLIST_FILES=	sbin/stmpclean
 
 .include <bsd.port.mk>

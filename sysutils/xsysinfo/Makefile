@@ -16,6 +16,7 @@ COMMENT=	A system information display tool
 USE_IMAKE=	yes
 MANCOMPRESSED=	yes
 MAN1=		xsysinfo.1
+PLIST_FILES=	bin/xsysinfo
 
 pre-configure:
 	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \

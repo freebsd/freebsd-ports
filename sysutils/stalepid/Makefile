@@ -26,5 +26,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN1=		stalepid.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/stalepid
 
 .include <bsd.port.post.mk>

@@ -21,5 +21,6 @@ USE_GETOPT_LONG=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		fsp.1
+PLIST_FILES=	bin/fsp
 
 .include <bsd.port.mk>

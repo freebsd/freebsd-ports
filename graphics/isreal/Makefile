@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	An image classification utility
 
+PLIST_FILES=	bin/isreal
 USE_XLIB=	yes
 USE_GNOME=	imlib
 

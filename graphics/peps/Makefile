@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased PGM bitmaps
 
+PLIST_FILES=	bin/peps
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm

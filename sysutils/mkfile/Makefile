@@ -16,5 +16,6 @@ COMMENT=	Create files suitable for use as swap files
 
 MAN8=		mkfile.8
 MANCOMPRESSED=	yes
+PLIST_FILES=	sbin/mkfile
 
 .include <bsd.port.mk>

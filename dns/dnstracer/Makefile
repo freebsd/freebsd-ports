@@ -19,5 +19,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
 MAN8=		dnstracer.8
+PLIST_FILES=	bin/dnstracer
 
 .include <bsd.port.mk>

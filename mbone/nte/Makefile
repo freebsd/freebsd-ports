@@ -18,6 +18,7 @@ LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=		${WRKDIR}/nte
 
+PLIST_FILES=	bin/nte
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 

@@ -19,6 +19,7 @@ USE_XLIB=	yes
 PATCH_STRIP=	-p1
 
 MAN1=		coolmail.1
+PLIST_FILES=	bin/coolmail
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/coolmail ${PREFIX}/bin/coolmail

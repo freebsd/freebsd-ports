@@ -17,6 +17,7 @@ ALL_TARGET=	deal
 USE_REINPLACE=	yes
 
 MAN1=		deal.1
+PLIST_FILES=	bin/deal
 
 pre-build:
 	${REINPLACE_CMD} -e "s@-g@${CFLAGS}@g" ${WRKSRC}/Makefile

@@ -16,5 +16,6 @@ COMMENT=	Print inode contents
 
 MAN1=		stat.1
 MANCOMPRESSED=	yes
+PLIST_FILES=	bin/stat
 
 .include <bsd.port.mk>

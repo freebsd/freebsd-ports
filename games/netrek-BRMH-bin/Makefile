@@ -18,6 +18,7 @@ COMMENT=	A 16-player network space battle/conquest game with a Star Trek theme
 USE_X_PREFIX=		YES
 NO_BUILD=		YES
 NO_WRKSUBDIR=		YES
+PLIST_FILES=	bin/netrek
 
 do-extract:
 	${MKDIR} ${WRKDIR}

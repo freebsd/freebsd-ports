@@ -17,6 +17,7 @@ COMMENT=	Rpl is a Unix text replacement utility
 GNU_CONFIGURE=	yes
 
 MAN1=		rpl.1
+PLIST_FILES=	bin/rpl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/rpl ${PREFIX}/bin

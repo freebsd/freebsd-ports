@@ -17,6 +17,7 @@ COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
 CONFLICTS=	njs-*
 
+PLIST_FILES=	bin/js
 USE_GMAKE=	YES
 
 post-extract:

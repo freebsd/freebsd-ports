@@ -16,6 +16,7 @@ COMMENT=	Online synchronizer for Maildir-format mailboxes
 USE_PERL5=	yes
 
 MAN1=		maildirsync.1
+PLIST_FILES=	bin/maildirsync
 
 .include <bsd.port.pre.mk>
 

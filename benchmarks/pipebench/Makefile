@@ -24,5 +24,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pipebench ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pipebench.1 ${PREFIX}/man/man1
 
-MAN1=	pipebench.1
+MAN1=		pipebench.1
+PLIST_FILES=	bin/pipebench
+
 .include <bsd.port.mk>

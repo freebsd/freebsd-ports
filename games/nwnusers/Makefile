@@ -14,6 +14,8 @@ DISTNAME=	nwnusers-v1.4
 MAINTAINER=	ah@linux-hq.de
 COMMENT=	A tool for monitoring Neverwinter Nights Server with mrtg
 
+PLIST_FILES=	bin/nwnusers
+
 do-build:
 	cd ${WRKDIR}/${DISTNAME} &&\
 	${CC} ${CFLAGS} -Wall -Werror -DVERSION=\"${PORTVERSION}\" -o nwnusers nwnusers.c

@@ -17,6 +17,7 @@ COMMENT=	An X protocol multiplexor
 USE_X_PREFIX=	yes
 
 MAN1=		xmx.1
+PLIST_FILES=	bin/xmx
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/xmx

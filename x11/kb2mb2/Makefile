@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 MAINTAINER=	sada@FreeBSD.org
 COMMENT=	Redirect any key to second mouse button
 
+PLIST_FILES=	bin/kb2mb2
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>

@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/mcal/mcal:${PORTSDIR}/deskutils/mcal
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_FILES=	bin/gmcal
 USE_GNOME=	gtk12
 
 post-extract:

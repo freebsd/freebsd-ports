@@ -19,6 +19,7 @@ USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
 MAN1=		msmtp.1
+PLIST_FILES=	bin/msmtp
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|g ; \

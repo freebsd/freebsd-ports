@@ -24,6 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		geg.1
+PLIST_FILES=	bin/geg
 
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${X11BASE}/share/aclocal

@@ -13,6 +13,7 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 MAINTAINER=	bms@spc.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
 
+PLIST_FILES=	bin/wmxss
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/Src

@@ -23,6 +23,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 GNU_CONFIGURE=	yes
+PLIST_FILES=	lib/xmms/Visualization/libjess.so
 USE_GNOME=	glib12
 USE_X_PREFIX=	yes
 

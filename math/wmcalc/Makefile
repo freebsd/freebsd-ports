@@ -16,6 +16,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Simple dockable calculator
 
 ALL_TARGET=	clean wmcalc
+PLIST_FILES=	bin/wmcalc
 USE_X_PREFIX=   yes
 USE_XPM=	yes
 

@@ -20,5 +20,6 @@ LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WX_CONFIG="${X11BASE}/bin/wxgtk2-2.4-config"
+PLIST_FILES=	bin/tv
 
 .include <bsd.port.mk>

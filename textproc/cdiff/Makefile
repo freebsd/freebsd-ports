@@ -23,6 +23,7 @@ USE_PERL5=	yes
 SRC=		${.CURDIR}/src
 
 MAN1=		cdiff.1
+PLIST_FILES=	bin/cdiff
 
 do-fetch:
 	@${DO_NADA}

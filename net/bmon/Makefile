@@ -18,6 +18,7 @@ GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
 MAN1=		bmon.1
+PLIST_FILES=	sbin/bmon
 
 do-install:
 	${INSTALL} ${STRIP} ${COPY} ${_BINOWNGRP} -m 4755 ${WRKSRC}/bmon ${PREFIX}/sbin

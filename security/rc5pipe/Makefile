@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	so14k@so14k.com
 COMMENT=	RC5 en-/decryption via UNIX pipes
 
+PLIST_FILES=	bin/rc5pipe
 WRKSRC=		${WRKDIR}/rc5pipe
 
 do-install:

@@ -36,6 +36,7 @@ BRANDELF?=	brandelf
 
 BINARY_NAME=	linux_gui_unstable
 BINARY_NAME_INSTALL=	linux-edonkey-gui-gtk
+PLIST_FILES=	bin/linux-edonkey-gui-gtk
 SNAPSHOT_DATE=	2002-02-22
 
 do-install:

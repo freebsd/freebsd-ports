@@ -18,6 +18,7 @@ COMMENT=	Access a MySQL database through Python
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
+PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/MySQLmodule.so
 USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
