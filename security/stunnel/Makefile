@@ -10,9 +10,8 @@ PORTVERSION=	4.04
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
-		ftp://stunnel.mirt.net/stunnel/ \
-		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
-		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
+		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
+		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"SSL encryption wrapper for standard network daemons"
