@@ -26,7 +26,6 @@ lib/gnumeric/%%VERSION%%/plugins/numtheory/numtheory.so
 lib/gnumeric/%%VERSION%%/plugins/numtheory/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/oleo/oleo.so
 lib/gnumeric/%%VERSION%%/plugins/oleo/plugin.xml
-lib/gnumeric/%%VERSION%%/plugins/plan_perfect/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/psiconv/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/psiconv/psiconv.so
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
@@ -134,6 +133,7 @@ share/gnome/gnumeric/%%VERSION%%/templates/invoice.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/loan.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/mileage.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/purchase_order.gnumeric
+share/gnome/help/gnumeric/C/LEGALNOTICE.html
 share/gnome/help/gnumeric/C/alignmentandothertabs.html
 share/gnome/help/gnumeric/C/analysis-tools.html
 share/gnome/help/gnumeric/C/analysis-tools.sgml
@@ -159,6 +159,7 @@ share/gnome/help/gnumeric/C/cutandpaste.html
 share/gnome/help/gnumeric/C/data-entry.html
 share/gnome/help/gnumeric/C/data-menu.html
 share/gnome/help/gnumeric/C/descriptive-statistics-tool.html
+share/gnome/help/gnumeric/C/docbook.css
 share/gnome/help/gnumeric/C/edit-menu.html
 share/gnome/help/gnumeric/C/editing-selections.html
 share/gnome/help/gnumeric/C/editing.html
@@ -503,6 +504,11 @@ share/gnome/help/gnumeric/C/gnumeric-bin2dec.html
 share/gnome/help/gnumeric/C/gnumeric-bin2hex.html
 share/gnome/help/gnumeric/C/gnumeric-bin2oct.html
 share/gnome/help/gnumeric/C/gnumeric-binomdist.html
+share/gnome/help/gnumeric/C/gnumeric-bitand.html
+share/gnome/help/gnumeric/C/gnumeric-bitlshift.html
+share/gnome/help/gnumeric/C/gnumeric-bitor.html
+share/gnome/help/gnumeric/C/gnumeric-bitrshift.html
+share/gnome/help/gnumeric/C/gnumeric-bitxor.html
 share/gnome/help/gnumeric/C/gnumeric-ceil.html
 share/gnome/help/gnumeric/C/gnumeric-ceiling.html
 share/gnome/help/gnumeric/C/gnumeric-cell.html
@@ -653,8 +659,10 @@ share/gnome/help/gnumeric/C/gnumeric-isnumber.html
 share/gnome/help/gnumeric/C/gnumeric-isodd.html
 share/gnome/help/gnumeric/C/gnumeric-isoweeknum.html
 share/gnome/help/gnumeric/C/gnumeric-ispmt.html
+share/gnome/help/gnumeric/C/gnumeric-isprime.html
 share/gnome/help/gnumeric/C/gnumeric-isref.html
 share/gnome/help/gnumeric/C/gnumeric-istext.html
+share/gnome/help/gnumeric/C/gnumeric-ithprime.html
 share/gnome/help/gnumeric/C/gnumeric-kurt.html
 share/gnome/help/gnumeric/C/gnumeric-kurtp.html
 share/gnome/help/gnumeric/C/gnumeric-large.html
@@ -702,6 +710,11 @@ share/gnome/help/gnumeric/C/gnumeric-not.html
 share/gnome/help/gnumeric/C/gnumeric-now.html
 share/gnome/help/gnumeric/C/gnumeric-nper.html
 share/gnome/help/gnumeric/C/gnumeric-npv.html
+share/gnome/help/gnumeric/C/gnumeric-ntxd.html
+share/gnome/help/gnumeric/C/gnumeric-ntxmu.html
+share/gnome/help/gnumeric/C/gnumeric-ntxphi.html
+share/gnome/help/gnumeric/C/gnumeric-ntxpi.html
+share/gnome/help/gnumeric/C/gnumeric-ntxsigma.html
 share/gnome/help/gnumeric/C/gnumeric-oct2bin.html
 share/gnome/help/gnumeric/C/gnumeric-oct2dec.html
 share/gnome/help/gnumeric/C/gnumeric-oct2hex.html
@@ -711,6 +724,16 @@ share/gnome/help/gnumeric/C/gnumeric-oddfyield.html
 share/gnome/help/gnumeric/C/gnumeric-oddlprice.html
 share/gnome/help/gnumeric/C/gnumeric-oddlyield.html
 share/gnome/help/gnumeric/C/gnumeric-offset.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_call.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_call_delta.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_call_rho.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_call_theta.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_gamma.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_put.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_put_delta.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_put_rho.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_put_theta.html
+share/gnome/help/gnumeric/C/gnumeric-optxbs_vega.html
 share/gnome/help/gnumeric/C/gnumeric-or.html
 share/gnome/help/gnumeric/C/gnumeric-pearson.html
 share/gnome/help/gnumeric/C/gnumeric-percentile.html
@@ -855,6 +878,18 @@ share/gnome/help/gnumeric/C/selections.sgml
 share/gnome/help/gnumeric/C/solver.html
 share/gnome/help/gnumeric/C/solver.sgml
 share/gnome/help/gnumeric/C/std-toolbar.html
+share/gnome/help/gnumeric/C/stylesheet-images/caution.gif
+share/gnome/help/gnumeric/C/stylesheet-images/home.gif
+share/gnome/help/gnumeric/C/stylesheet-images/important.gif
+share/gnome/help/gnumeric/C/stylesheet-images/next.gif
+share/gnome/help/gnumeric/C/stylesheet-images/note.gif
+share/gnome/help/gnumeric/C/stylesheet-images/prev.gif
+share/gnome/help/gnumeric/C/stylesheet-images/tip.gif
+share/gnome/help/gnumeric/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnumeric/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnumeric/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnumeric/C/stylesheet-images/up.gif
+share/gnome/help/gnumeric/C/stylesheet-images/warning.gif
 share/gnome/help/gnumeric/C/t-test.html
 share/gnome/help/gnumeric/C/toolbars.html
 share/gnome/help/gnumeric/C/tools-menu.html
@@ -984,7 +1019,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/python
 @dirrm lib/gnumeric/%%VERSION%%/plugins/py-func
 @dirrm lib/gnumeric/%%VERSION%%/plugins/psiconv
-@dirrm lib/gnumeric/%%VERSION%%/plugins/plan_perfect
 @dirrm lib/gnumeric/%%VERSION%%/plugins/oleo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/numtheory
 @dirrm lib/gnumeric/%%VERSION%%/plugins/mps
