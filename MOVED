@@ -1042,3 +1042,6 @@ net/openldap12||2004-04-19|removed ancient port
 net/py-ldap1||2004-04-19|removed port depending on OpenLDAP 1.2
 www/web500gw||2004-04-19|removed port depending on OpenLDAP 1.2
 games/neverputt|games/neverball|2004-04-19|merged into neverball
+emulators/linux-ePSXe||2004-04-19|removed port with broken dependencies
+net/papaya||2004-04-19|removed broken port
+www/scoop||2004-04-19|removed port with broken dependencies
