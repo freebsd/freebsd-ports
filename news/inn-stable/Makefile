@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	inn/snapshots
 DISTNAME=	inn-STABLE-${SNAPSHOT}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
 USE_GMAKE=	yes
