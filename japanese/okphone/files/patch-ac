@@ -1,0 +1,29 @@
+--- ./master/Makefile.org	Wed Feb  7 18:45:36 1996
++++ ./master/Makefile	Wed Feb  7 18:45:36 1996
+@@ -29,7 +29,7 @@
+ #CFLAGS = -O -DSERVICES -DDPATH=\"$(CONVD)\" -DFORK
+ #CFLAGS = -O -DINETD -DDPATH=\"$(CONVD)\"
+ #CFLAGS = -O -DINETD -DDPATH=\"$(CONVD)\" -DSERVICES
+-CFLAGS  = $(OFLAG) $(INETD) -DFORK -DSERVICES -DDPATH=\"/usr/local/etc/convd\"
++CFLAGS  += $(OFLAGS) $(INETD) -DFORK -DSERVICES -DDPATH=\"${PREFIX}/libexec/convd\"
+ 
+ LPR     = lpr -Psony
+ CC	= cc
+@@ -44,7 +44,7 @@
+ 			reinvite.o strsave.o utmp.o
+ 
+ DEST	= phoned
+-RDEST	= /usr/local/etc/in.phoned
++RDEST	= ${PREFIX}/libexec/phoned
+ #RDEST	= /etc/phoned
+ 
+ 
+@@ -61,7 +61,7 @@
+ 
+ install:	${DEST}
+ 	/bin/rm -f ${RDEST}
+-	cp ${DEST} ${RDEST}
++	install -cs -m 755 -o bin -g bin ${DEST} ${RDEST}
+ 
+ clean:
+ 	/bin/rm -f ${DEST} core *.o

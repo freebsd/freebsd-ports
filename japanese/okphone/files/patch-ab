@@ -1,0 +1,28 @@
+--- ./client/Makefile.org	Wed Feb  7 18:45:34 1996
++++ ./client/Makefile	Wed Feb  7 18:45:36 1996
+@@ -20,14 +20,14 @@
+ CC     = cc
+ #CFLAGS = -O -DSERVICES -DLOCAL_ECHO
+ #CFLAGS = -g -DSERVICES -DLOCAL_ECHO
+-CFLAGS = -Isw -O -DSERVICES -DLOCAL_ECHO
++CFLAGS += -Isw -O -DSERVICES -DLOCAL_ECHO
+ #LIBS   = -lcurses -ltermlib #-lresolv
+ LIBS   = sw/libsw.a -ltermlib -ll
+ 
+ LPR    = lpr -Psony
+ #RDEST  = /usr/ucb/phone
+ #RDEST  = /usr/local/phone
+-RDEST  = /usr/local/bin/phone
++RDEST  = ${PREFIX}/bin/phone
+ 
+ HDRS = defs.h
+ 
+@@ -69,7 +69,7 @@
+ 
+ install: ${DEST}
+ 	/bin/rm -f ${RDEST}
+-	cp ${DEST} ${RDEST}
++	install -cs -m 755 -o bin -g bin ${DEST} ${RDEST}
+ 
+ print:	${HDRS} ${SRCS}
+ 	pr -f ${HDRS} ${SRCS} | expand -4 | ${LPR}
