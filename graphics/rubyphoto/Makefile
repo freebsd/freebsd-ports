@@ -7,13 +7,14 @@
 
 PORTNAME=	rubyphoto
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	graphics ruby www
 MASTER_SITES=	http://plig.net/~ture/rubyphoto/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for creating web image galleries
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		${RUBY_SITELIBDIR}/image_size.rb:${PORTSDIR}/graphics/ruby-image_size \
 		${RUBY_SITELIBDIR}/xml/parser.rb:${PORTSDIR}/textproc/ruby-xmlparser

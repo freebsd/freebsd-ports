@@ -7,7 +7,7 @@
 
 PORTNAME=	flood
 PORTVERSION=	0.20031002
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-20031002
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Profile-driven HTTP load tester
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		apr-0.9:${PORTSDIR}/devel/apr
 

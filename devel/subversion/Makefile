@@ -6,6 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -13,7 +14,7 @@ MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
 LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.5:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 

@@ -20,7 +20,7 @@ COMMENT?=	Version 2 of the extremely popular Apache http server
 
 FORBIDDEN=	Please use www/apache2
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 LATEST_LINK=	apache2
 

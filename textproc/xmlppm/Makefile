@@ -8,7 +8,7 @@
 
 PORTNAME=	xmlppm
 PORTVERSION=	0.97
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.cs.cornell.edu/People/jcheney/xmlppm/
@@ -19,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML-Conscious PPM Compression
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.5:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

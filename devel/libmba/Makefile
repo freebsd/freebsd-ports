@@ -8,14 +8,14 @@
 
 PORTNAME=	libmba
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ioplex.com/~miallen/libmba/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C modules potentially useful to any project
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

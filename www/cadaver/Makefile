@@ -7,13 +7,14 @@
 
 PORTNAME=	cadaver
 PORTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		neon.24:${PORTSDIR}/www/neon
 
 USE_GETOPT_LONG=	yes

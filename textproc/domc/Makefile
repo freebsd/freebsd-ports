@@ -8,13 +8,14 @@
 
 PORTNAME=	domc
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ioplex.com/~miallen/domc/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A light weight implementation of the DOM in ANSI C
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		mba:${PORTSDIR}/devel/libmba
 
 SHLIB_MAJOR=	0

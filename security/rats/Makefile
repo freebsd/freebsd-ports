@@ -7,6 +7,7 @@
 
 PORTNAME=	rats
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://www.securesoftware.com/rats/
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	UNIX/security
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code auditing tool
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \

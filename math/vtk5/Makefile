@@ -15,7 +15,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	4.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
@@ -47,7 +47,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
 
 BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
 
-LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff

@@ -7,6 +7,7 @@
 
 PORTNAME=	apache+ipv6
 PORTVERSION=    1.3.29
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=   ${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
@@ -30,7 +31,7 @@ DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 EXPAT_CONF+=    --disable-rule=EXPAT
 .else
 .if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
-LIB_DEPENDS+=   expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=   expat.5:${PORTSDIR}/textproc/expat2
 .endif
 EXPAT_CONF+=    --enable-rule=EXPAT
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gettext package
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

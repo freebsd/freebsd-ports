@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.48
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
@@ -21,7 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2 of the extremely popular Apache http server
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 LATEST_LINK=	apache2
 

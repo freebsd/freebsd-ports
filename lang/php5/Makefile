@@ -21,7 +21,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.0.a5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -517,7 +517,7 @@ CONFIGURE_ARGS+=--enable-xml
 .endif
 
 .if defined(WITH_XMLRPC)
-LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 CONFIGURE_ARGS+=--with-xmlrpc --with-expat-dir=${LOCALBASE}
 .endif
 

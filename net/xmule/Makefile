@@ -7,6 +7,7 @@
 
 PORTNAME=	xmule
 PORTVERSION=	1.7.4c
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmule
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	xmule
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	1.3.27
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://www.freebsd.org/gifs/:powerlogo \
@@ -34,7 +35,7 @@ APACHE=		${DISTNAME}${EXTRACT_SUFX}
 RUN_DEPENDS=	${LOCALBASE}/frontpage/version5.0/bin/owsadm.exe:${PORTSDIR}/www/frontpage
 
 .ifndef WITHOUT_LIBEXPAT
-LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 .endif
 
 .include <bsd.port.pre.mk>

@@ -13,13 +13,14 @@
 
 PORTNAME=	lire
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Logfile analyse toolkit for multiple applications
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		\
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \

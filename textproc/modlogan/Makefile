@@ -7,7 +7,7 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,7 +19,7 @@ COMMENT=	A modular log file analysis program
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gd.4:${PORTSDIR}/graphics/gd \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		expat.4:${PORTSDIR}/textproc/expat2
+		expat.5:${PORTSDIR}/textproc/expat2
 
 USE_GETTEXT=	yes
 .if defined(WITH_MYSQL)

@@ -7,6 +7,7 @@
 
 PORTNAME=	quixml
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://rubyforge.org/download.php/89/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Fast XML API for Ruby written in C
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
