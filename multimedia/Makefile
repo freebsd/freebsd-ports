@@ -55,6 +55,7 @@
     SUBDIR += linux-divxplayer
     SUBDIR += linux-realplayer
     SUBDIR += linux-xmovie
+    SUBDIR += lsdvd
     SUBDIR += mjpegtools
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
