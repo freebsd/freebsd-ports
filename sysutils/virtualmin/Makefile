@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	virtualmin
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.51
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/download/modules/
 DISTNAME=	virtual-server-${PORTVERSION}
