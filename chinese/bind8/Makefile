@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORES=	chinese
+CATEGORES=	chinese net
 
 MASTERDIR=	${.CURDIR}/../../net/bind8
 
