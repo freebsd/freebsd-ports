@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	030716
+PORTVERSION=	030801
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -55,9 +55,15 @@ post-patch:
 	@${CP} ${WRKSRC}/build/gmake/Makefile ${WRKSRC}
 .else
 	@${CP} -R -f ${WRKSRC}/build/gnuauto/* ${WRKSRC}
+.endif
+
+configure-message:
+# Ugly hack to insert libtoolize + aclocal after build-depends and before patch-libtool
+.if defined(WITH_SHLIB)
 	(cd ${WRKSRC}	\
 	&& ${LIBTOOLIZE} --force --copy	\
 	&& ${ACLOCAL})
+	@${ECHO_MSG} "===>  Configuring for ${PKGNAME}"
 .endif
 
 pre-install:
