@@ -7,7 +7,7 @@
 
 PORTNAME=	ipcheck
 PORTVERSION=	0.85
-CATEGORIES=	net python
+CATEGORIES=	net
 MASTER_SITES=	http://ipcheck.sourceforge.net/
 DISTNAME=	ipcheck.py
 EXTRACT_SUFX=
