@@ -25,7 +25,6 @@ DISTFILES=	116518-06.tar:patch
 DISTFILES+=     soa-7-ga-bin-linux-de.bin
 .endif
 
-USE_ZIP=	YES
 EXTRACT_ONLY=	116518-06.tar
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -42,7 +41,7 @@ WRKSRC=		${WRKDIR}/${SOVERSION}
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
-SUNSOLVE=	${WRKDIR}/112887-04
+SUNSOLVE=	${WRKDIR}/116518-06
 ADABAS_DIST=	soa-7-ga-bin-linux-de.bin
 PATCH_DIST=	so-7-pp4-bin-linux.bin
 
