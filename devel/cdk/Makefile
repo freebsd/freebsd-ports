@@ -25,7 +25,11 @@ GNU_CONFIGURE=	yes
 TERMINFO=	${LOCALBASE}/share/misc/terminfo
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ncurses
 LIBS+=		-L${LOCALBASE}/lib -lncurses
-CONFIGURE_ENV+=	 CPPFLAGS="${CPPFLAGS}" LIBS="${LIBS}" TERMINFO="${TERMINFO}"
+LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/lib
+CONFIGURE_ENV+=	TERMINFO="${TERMINFO}"\
+		CPPFLAGS="${CPPFLAGS}"\
+		LIBS="${LIBS}"\
+		LDFLAGS="${LDFLAGS}"
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif # exists(${LOCALBASE}/include/ncurses/ncurses.h)
 
