@@ -18,6 +18,8 @@ COMMENT=	A Ruby extension library for GSL (GNU Scientific Library)
 
 LIB_DEPENDS=	gsl.5:${.CURDIR}/../gsl
 
+BROKEN=		Does not compile
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
