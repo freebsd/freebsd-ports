@@ -3474,6 +3474,7 @@ make_s_table	src/eBones/make_s_table
 makedepend	ports/devel/makedepend
 makeindex	ports/print/makeindex
 makekey		src/libexec/makekey
+makepatch	ports/textproc/makepatch
 makeself	ports/archivers/makeself
 makewhatis	src/gnu/usr.bin/man/makewhatis
 malbolge	ports/lang/malbolge
