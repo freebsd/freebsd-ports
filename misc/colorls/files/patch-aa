@@ -258,8 +258,7 @@
  .include <bsd.prog.mk>
 --- ./colorls.1.org	Wed Mar  8 02:14:10 1995
 +++ ./colorls.1	Wed Mar  8 02:17:10 1995
-@@ -36,16 +36,24 @@
- .\"	$Id: ls.1,v 1.5.2.4 1997/09/19 06:18:11 charnier Exp $
+@@ -37,15 +37,23 @@
  .\"
  .Dd April 18, 1994
 -.Dt LS 1
