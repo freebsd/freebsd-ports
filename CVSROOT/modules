@@ -8891,7 +8891,6 @@ postgresql-pltcl	ports/databases/postgresql-pltcl
 postgresql-relay	ports/databases/postgresql-relay
 postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
-postgresql72	ports/databases/postgresql72
 postgresql73	ports/databases/postgresql73
 postgresql73-client	ports/databases/postgresql73-client
 postgresql73-server	ports/databases/postgresql73-server
