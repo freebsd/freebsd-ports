@@ -3,7 +3,7 @@
 # Date created:		1 July 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.6 1996/09/24 18:02:01 markm Exp $
+# $Id: Makefile,v 1.7 1996/11/17 07:57:44 obrien Exp $
 #
 
 DISTNAME=		SSLeay-0.6.4
@@ -16,5 +16,12 @@ RESTRICTED=		"Cryptography"
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	util/FreeBSD.sh
 MAKEFILE=		Makefile.FreeBSD
+
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/SSLeay
+	@${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/SSLeay
+.endif
 
 .include <bsd.port.mk>
