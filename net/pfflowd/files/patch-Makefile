@@ -5,7 +5,7 @@
  LDFLAGS=-g
  
 -CFLAGS=-g -O $(WARNFLAGS)
-+CFLAGS=-g -O $(WARNFLAGS) -I /usr/local/include/pf
++CFLAGS=-g -O -I /usr/local/include/pf
  
  # Uncomment this if you are using pfflowd on OpenBSD <=3.4
 -#CFLAGS+=-DOLD_PFSYNC
