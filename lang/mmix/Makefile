@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MMIX is a RISC computer designed by Donald E. Knuth
+COMMENT=	A RISC computer designed by Donald E. Knuth
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
