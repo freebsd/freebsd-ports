@@ -107,7 +107,6 @@ editors/ooodict-pt_BR|portuguese/ooodict-pt_BR|2002-12-06|new category
 editors/ooodict-pt_PT|portuguese/ooodict-pt_PT|2002-12-06|new category
 editors/openoffice-pt|portuguese/openoffice|2002-12-06|new category
 editors/staroffice52-pt|portuguese/staroffice52|2002-12-06|new category
-editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.4.12
 www/frontpage-pt_BR|portuguese/frontpage-pt_BR|2002-12-06|new category
 audio/kdemultimedia3|multimedia/kdemultimedia3|2002-12-08|new category
 japanese/gn-mnews||2002-12-08|security vulnerability
@@ -314,5 +313,6 @@ x11-servers/Xatm||2003-05-05|port was broken with no sign of a fix
 audio/gdcd||2003-05-05|port was broken with no sign of a fix
 devel/SN|devel/sourcenav|2003-05-07|renamed by upstream
 www/orion-devel|www/orion|2003-05-08|stable version caught up with development version
+editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.4.12
 x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-011|maintenance discontinued
 www/nautilus-gtkhtml||2003-05-11|maintenance discontinued
