@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gopchop
-PORTVERSION=	0.9.0
-PORTREVISION=	0
+PORTVERSION=	0.9.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://outflux.net/unix/software/GOPchop/download/
@@ -18,21 +17,18 @@ DISTNAME=	GOPchop-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG2 GOP-accurate editor
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
-SDLCONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-USE_GNOME=	gtk12
+USE_SDL=	yes
 USE_GETOPT_LONG=	yes
+USE_GNOME=	gnometarget gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		SDLCONFIG="${SDLCONFIG}"
+		SDLCONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS=	--disable-mlib
 
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT 
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
