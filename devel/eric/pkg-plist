@@ -1,6 +1,7 @@
 bin/eric3-unittest
 bin/eric3-helpviewer
 bin/eric3
+%%PYTHON_SITELIBDIR%%/sitecustomize.pyc
 %%PYTHON_SITELIBDIR%%/sitecustomize.py
 %%PYTHON_SITELIBDIR%%/eric3/sitecustomize.pyc
 %%PYTHON_SITELIBDIR%%/eric3/sitecustomize.py
