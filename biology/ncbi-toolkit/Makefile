@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ncbi-toolkit
-PORTVERSION=	2001.04.03
-PORTREVISION=	1
+PORTVERSION=	2001.12.20
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -21,11 +20,6 @@ USE_MOTIF=	yes
 #
 
 DUMMYMAKE=	Makefile
-
-#
-#	out of it for the post-install when we put in system startup file.
-#
-
 PLATFORMDIR=	${WRKSRC}/platform
 BUILDSCRIPT=	${WRKSRC}/make/makedis.csh
 
@@ -33,11 +27,9 @@ DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 CPIO=		cpio --quiet -pdum -R
 
 #
-# Thus ends the definitions
+# Thus ends the definitions.
 #
-
-#
-# We need a dummy top level Makefile as NCBI has scripts that need to
+# Now we need a dummy top level Makefile as NCBI has scripts that need to
 # run from point above ncbi hierachy.
 #
 
@@ -47,10 +39,15 @@ pre-configure:
 	@${PERL} -pi.orig -e 's#NetBSD#FreeBSD#;'  -e 's#netbsd#freebsd#' ${BUILDSCRIPT}
 
 post-install:
+	@${MKDIR} ${DATADIR}
+	@for file in ${WRKSRC}/data/*; do \
+		${INSTALL_DATA} $$file ${DATADIR}; \
+	done
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCDIR}
-	@ cd ${WRKSRC}/doc && find * | \
+	@${MKDIR} ${DOCDIR}
+	@cd ${WRKSRC}/doc && find * | \
 	  ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCDIR}
 .endif
+	@${SED} -e "s#%%PREFIX%%#${PREFIX}#" ${PKGMESSAGE}
 
 .include <bsd.port.mk>

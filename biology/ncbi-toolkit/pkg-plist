@@ -44,6 +44,7 @@ bin/Nentrez
 bin/Psequin
 bin/asn2fast
 bin/asn2ff
+bin/asn2xml
 bin/asndhuff
 bin/asntool
 bin/bl2seq
@@ -116,11 +117,10 @@ include/ncbi/connect/ncbi_core.h
 include/ncbi/connect/ncbi_file_connector.h
 include/ncbi/connect/ncbi_heapmgr.h
 include/ncbi/connect/ncbi_http_connector.h
-include/ncbi/connect/ncbi_lbsm.h
-include/ncbi/connect/ncbi_lbsm_ipc.h
 include/ncbi/connect/ncbi_priv.h
 include/ncbi/connect/ncbi_sendmail.h
 include/ncbi/connect/ncbi_server_info.h
+include/ncbi/connect/ncbi_server_infop.h
 include/ncbi/connect/ncbi_service.h
 include/ncbi/connect/ncbi_service_connector.h
 include/ncbi/connect/ncbi_servicep.h
@@ -128,6 +128,7 @@ include/ncbi/connect/ncbi_servicep_dispd.h
 include/ncbi/connect/ncbi_servicep_lbsmd.h
 include/ncbi/connect/ncbi_socket.h
 include/ncbi/connect/ncbi_socket_connector.h
+include/ncbi/connect/ncbi_types.h
 include/ncbi/connect/ncbi_util.h
 include/ncbi/PubStructAsn.h
 include/ncbi/a2ferr.h
@@ -141,7 +142,10 @@ include/ncbi/actutils.h
 include/ncbi/algorend.h
 include/ncbi/alignloc.h
 include/ncbi/alignmgr.h
+include/ncbi/alignmgr2.h
 include/ncbi/alignval.h
+include/ncbi/aliparse.h
+include/ncbi/aliread.h
 include/ncbi/all.h
 include/ncbi/allpub.h
 include/ncbi/apparam.h
@@ -151,6 +155,9 @@ include/ncbi/asn2ff6.h
 include/ncbi/asn2ffg.h
 include/ncbi/asn2ffp.h
 include/ncbi/asn2gnbk.h
+include/ncbi/asn2gnbp.h
+include/ncbi/asn2graphic.h
+include/ncbi/asn2graphicp.h
 include/ncbi/asnacces.h
 include/ncbi/blast.h
 include/ncbi/asnalign.h
@@ -202,6 +209,7 @@ include/ncbi/cdnewlib.h
 include/ncbi/cdrgn.h
 include/ncbi/cdrom.h
 include/ncbi/cdromlib.h
+include/ncbi/cn3d.h
 include/ncbi/cn3dentr.h
 include/ncbi/cn3dmain.h
 include/ncbi/cn3dmesh.h
@@ -237,6 +245,7 @@ include/ncbi/echo_asn.h
 include/ncbi/edutil.h
 include/ncbi/ent2api.h
 include/ncbi/entrez.h
+include/ncbi/entrez2.h
 include/ncbi/errdefn.h
 include/ncbi/explore.h
 include/ncbi/fastadl.h
@@ -265,6 +274,9 @@ include/ncbi/id1map.h
 include/ncbi/image.h
 include/ncbi/imagelst.h
 include/ncbi/import.h
+include/ncbi/ingenext.h
+include/ncbi/ingengraph.h
+include/ncbi/ingenwin.h
 include/ncbi/jsavlt.h
 include/ncbi/jzcoll.h
 include/ncbi/jzmisc.h
@@ -275,6 +287,7 @@ include/ncbi/list.h
 include/ncbi/lnfac.h
 include/ncbi/lookup.h
 include/ncbi/lsqfetch.h
+include/ncbi/mapcn3d.h
 include/ncbi/mapgene.h
 include/ncbi/mapmime.h
 include/ncbi/mapmla.h
@@ -285,7 +298,6 @@ include/ncbi/maputil.h
 include/ncbi/matrix.h
 include/ncbi/mbalign.h
 include/ncbi/mblast.h
-include/ncbi/mbutils.h
 include/ncbi/mconsist.h
 include/ncbi/mdrcherr.h
 include/ncbi/medarch.h
@@ -303,6 +315,7 @@ include/ncbi/mmdbapi3.h
 include/ncbi/mmdbapi4.h
 include/ncbi/mmdbdata.h
 include/ncbi/mmdblocl.h
+include/ncbi/motif.h
 include/ncbi/ncbi.h
 include/ncbi/ncbibs.h
 include/ncbi/ncbibuf.h
@@ -361,6 +374,7 @@ include/ncbi/objbibli.h
 include/ncbi/objblock.h
 include/ncbi/objblst3.h
 include/ncbi/objcdd.h
+include/ncbi/objcn3d.h
 include/ncbi/objcode.h
 include/ncbi/objent2.h
 include/ncbi/objentr.h
@@ -450,6 +464,7 @@ include/ncbi/shim3d.h
 include/ncbi/simple.h
 include/ncbi/simutil.h
 include/ncbi/spell.h
+include/ncbi/spidey.h
 include/ncbi/splutil.h
 include/ncbi/sqnutils.h
 include/ncbi/strimprt.h
@@ -537,9 +552,55 @@ include/ncbi/wrpsb.h
 include/ncbi/wrpsbtool.h
 include/ncbi/wwwblast.h
 include/ncbi/xmlblast.h
+share/ncbi-toolkit/BLOSUM45
+share/ncbi-toolkit/BLOSUM62
+share/ncbi-toolkit/BLOSUM80
+share/ncbi-toolkit/ContactPotential
+share/ncbi-toolkit/KSat.flt
+share/ncbi-toolkit/KSchoth.flt
+share/ncbi-toolkit/KSesigc.mat
+share/ncbi-toolkit/KSesigl.mat
+share/ncbi-toolkit/KSgc.flt
+share/ncbi-toolkit/KShopp.flt
+share/ncbi-toolkit/KSkyte.flt
+share/ncbi-toolkit/KSmtidk.mat
+share/ncbi-toolkit/KSmtk.mat
+share/ncbi-toolkit/KSnsigc.mat
+share/ncbi-toolkit/KSnsigl.mat
+share/ncbi-toolkit/KSpcc.mat
+share/ncbi-toolkit/KSpsigc.mat
+share/ncbi-toolkit/KSpsigl.mat
+share/ncbi-toolkit/KSpur.flt
+share/ncbi-toolkit/KSpyr.flt
+share/ncbi-toolkit/PAM30
+share/ncbi-toolkit/PAM70
+share/ncbi-toolkit/asn2ff.prt
+share/ncbi-toolkit/blast.prt
+share/ncbi-toolkit/bstdt.prt
+share/ncbi-toolkit/bstdt.val
+share/ncbi-toolkit/featdef.prt
+share/ncbi-toolkit/featdef.val
+share/ncbi-toolkit/gc.prt
+share/ncbi-toolkit/gc.val
+share/ncbi-toolkit/humrep.fsa
+share/ncbi-toolkit/lineages.txt
+share/ncbi-toolkit/makerpt.prt
+share/ncbi-toolkit/ncbiendo.dat
+share/ncbi-toolkit/ncbipnam.dat
+share/ncbi-toolkit/ncbipros.dat
+share/ncbi-toolkit/ncbiren.dat
+share/ncbi-toolkit/ncbirnam.dat
+share/ncbi-toolkit/objprt.prt
+share/ncbi-toolkit/pubkey.enc
+share/ncbi-toolkit/seqcode.prt
+share/ncbi-toolkit/seqcode.val
+share/ncbi-toolkit/sequin.hlp
+share/ncbi-toolkit/sgmlbb.ent
+share/ncbi-toolkit/taxlist.txt
 @dirrm include/ncbi/connect
 @dirrm include/ncbi
 @dirrm lib/ncbi
+@dirrm share/ncbi-toolkit
 %%PORTDOCS%%@dirrm share/doc/ncbi-toolkit/images
 %%PORTDOCS%%@dirrm share/doc/ncbi-toolkit/fa2htgs
 %%PORTDOCS%%@dirrm share/doc/ncbi-toolkit
