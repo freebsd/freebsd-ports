@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.soi.city.ac.uk/~ross/Hope/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Hope is lazy interpriter for HOPE applicative language
 
 .if defined(WITH_DOCS)

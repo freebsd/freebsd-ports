@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 PKGNAMEPREFIX=	mipsel-linux-
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gcc-2.97 for mipsel-linux cross-development with SNOW ABI
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \

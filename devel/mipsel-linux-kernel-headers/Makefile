@@ -13,7 +13,7 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 PKGNAMEPREFIX=	mipsel-linux-
 DISTNAME=	kernel-headers-2.4.0-test9_1
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Kernel headers for linux 2.4.0-pre9 for development for mipsel-linux
 
 USE_BZIP2=	yes

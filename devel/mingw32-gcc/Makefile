@@ -23,7 +23,7 @@ PATCH_SITE_SUBDIR=	mingw
 PATCHFILES=	${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/}.src.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF gcc-3.2 for Windows cross-development
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \

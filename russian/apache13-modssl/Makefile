@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl \
 		patches_${VERSION_APACHE}rusPL${VERSION_RA}.tar.gz:rapatches
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The Russian Apache webserver with SSL/TLS functionality
 
 LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm

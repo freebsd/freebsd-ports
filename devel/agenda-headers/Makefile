@@ -10,7 +10,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 
-MAINTAINER=	lev@serebryakov.spb.ru
+MAINTAINER=	lev@FreeBSD.org
 COMMENT=	All headers which are needed to develop for Agenda VR3 PDA
 
 RUN_DEPENDS=	${LOCALBASE}/${TARGET_PLATFORM}/include/linux/errno.h:${PORTSDIR}/devel/${TARGET_PLATFORM}-kernel-headers
