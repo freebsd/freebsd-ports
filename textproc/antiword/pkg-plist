@@ -5,6 +5,7 @@ share/antiword/8859-10.txt
 share/antiword/8859-13.txt
 share/antiword/8859-14.txt
 share/antiword/8859-15.txt
+share/antiword/8859-16.txt
 share/antiword/8859-2.txt
 share/antiword/8859-3.txt
 share/antiword/8859-4.txt
@@ -13,28 +14,29 @@ share/antiword/8859-6.txt
 share/antiword/8859-7.txt
 share/antiword/8859-8.txt
 share/antiword/8859-9.txt
-share/antiword/Default
-share/antiword/Example
 share/antiword/MacRoman.txt
 share/antiword/UTF-8.txt
-share/antiword/Unicode
 share/antiword/cp1250.txt
 share/antiword/cp1251.txt
 share/antiword/cp1252.txt
+share/antiword/cp437.txt
+share/antiword/cp850.txt
+share/antiword/cp852.txt
 share/antiword/fontnames
-share/antiword/fontnames.russian
 share/antiword/koi8-r.txt
+share/antiword/koi8-u.txt
 share/antiword/roman.txt
 %%PORTDOCS%%share/doc/antiword/COPYING
 %%PORTDOCS%%share/doc/antiword/ChangeLog
 %%PORTDOCS%%share/doc/antiword/Exmh
 %%PORTDOCS%%share/doc/antiword/FAQ
 %%PORTDOCS%%share/doc/antiword/History
-%%PORTDOCS%%share/doc/antiword/Netscape
 %%PORTDOCS%%share/doc/antiword/Mutt
+%%PORTDOCS%%share/doc/antiword/Netscape
 %%PORTDOCS%%share/doc/antiword/QandA
 %%PORTDOCS%%share/doc/antiword/ReadMe
 %%PORTDOCS%%share/doc/antiword/antiword.1
 %%PORTDOCS%%share/doc/antiword/antiword.man
+%%PORTDOCS%%share/doc/antiword/testdoc.doc
 %%PORTDOCS%%@dirrm share/doc/antiword
 @dirrm share/antiword
