@@ -1,49 +1,27 @@
-*** kpathsea/Makefile.in.orig	Mon Jan  9 02:18:20 1995
---- kpathsea/Makefile.in	Fri Sep  6 15:11:38 1996
-***************
-*** 121,140 ****
-  
-  install-exec: kpsewhich MakeTeXPK
-  	$(SHELL) $(top_srcdir)/../mkdirchain $(bindir) $(scriptdir)
-! 	if grep 'original MakeTeXPK --' $(scriptdir)/MakeTeXPK >/dev/null 2>&1\
-! 	   || test ! -r $(scriptdir)/MakeTeXPK; then \
-! 	  $(INSTALL_PROGRAM) MakeTeXPK $(scriptdir)/MakeTeXPK; \
-  	else true; fi
-  	$(INSTALL_PROGRAM) kpsewhich $(bindir)/kpsewhich
-  uninstall-exec:
-  	rm -f $(bindir)/kpsewhich
-  
-  install-data: texmf.cnf kpathsea.info
-  	$(SHELL) $(top_srcdir)/../mkdirchain $(texmf) $(infodir) $(web2cdir)
-! 	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1 \
-! 	   || test ! -r $(web2cdir)/texmf.cnf; then \
-! 	  $(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
-! 	else true; fi
-  	$(INSTALL_DATA) $(srcdir)/kpathsea.info $(infodir)/kpathsea.info
-  uninstall-data:
-  	rm -f $(infodir)/kpathsea.info*
---- 121,144 ----
-  
-  install-exec: kpsewhich MakeTeXPK
-  	$(SHELL) $(top_srcdir)/../mkdirchain $(bindir) $(scriptdir)
-! 	if grep 'original MakeTeXPK --' $(scriptdir)/MakeTeXPK >/dev/null 2>&1;\
-! 	  then true; \
-! 	  elif test -r $(scriptdir)/MakeTeXPK; then \
-! 	    mv -f $(scriptdir)/MakeTeXPK $(scriptdir)/MakeTeXPK.OLD; \
-  	else true; fi
-+ 	$(INSTALL_PROGRAM) MakeTeXPK $(scriptdir)/MakeTeXPK; \
-  	$(INSTALL_PROGRAM) kpsewhich $(bindir)/kpsewhich
-  uninstall-exec:
-  	rm -f $(bindir)/kpsewhich
-  
-  install-data: texmf.cnf kpathsea.info
-  	$(SHELL) $(top_srcdir)/../mkdirchain $(texmf) $(infodir) $(web2cdir)
-! 	if grep 'original texmf.cnf --' $(web2cdir)/texmf.cnf >/dev/null 2>&1;\
-! 	  then true; \
-! 	  elif test -r $(web2cdir)/texmf.conf; then \
-! 	    mv -f $(web2cdir)/texmf.conf $(web2cdir)/texmf.conf.OLD; \
-! 	  else true; fi
-! 	$(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf; \
-  	$(INSTALL_DATA) $(srcdir)/kpathsea.info $(infodir)/kpathsea.info
-  uninstall-data:
-  	rm -f $(infodir)/kpathsea.info*
+--- kpathsea/texmf.cnf.in.orig	Sun Feb  9 01:26:26 1997
++++ kpathsea/texmf.cnf.in	Sat Oct  4 23:54:10 1997
+@@ -100,6 +100,15 @@
+ TEXINPUTS.amstex = .:$dbtex/amstex//:$plain_inputs
+ TEXINPUTS.ftex = .:$dbtex/formate//:$plain_inputs
+ TEXINPUTS.texinfo = .:$dbtex/texinfo//:$plain_inputs
++% ptex, platex, platex209 macros paths.
++platex209_inputs = .:$dbtex/{platex209,latex209,platex,latex,generic}//
++platex2e_inputs = .:$dbtex/{platex,latex,platex209,latex209,generic}//
++ptex_inputs = .:$dbtex/{ptex,plain}//:$dbtex//
++TEXINPUTS.platex209 = $platex209_inputs
++TEXINPUTS.platex2e = $platex2e_inputs
++TEXINPUTS.platex = $platex2e_inputs
++TEXINPUTS.ptex = $ptex_inputs
++TEXINPUTS.iniptex = $ptex_inputs
+ 
+ % INITEX. May as well make this separate so it can search on disk;
+ % initex is seldom run, and might be used directly after files have been
+@@ -155,6 +164,8 @@
+ 
+ % BibTeX bibliographies and style files.
+ BIBINPUTS = .:$TEXMF/bibtex/bib//
++BIBINPUTS.jbibtex = .:$TEXMF/jbibtex/bib//:$TEXMF/bibtex/bib//
++BSTINPUTS.jbibtex = .:$TEXMF/jbibtex/bst//:$TEXMF/bibtex/bst//
+ BSTINPUTS = .:$TEXMF/bibtex/bst//
+ 
+ % MFT style files.

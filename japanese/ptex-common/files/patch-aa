@@ -1,18 +1,50 @@
---- web2c/web/Makefile.in.org	Thu Nov  9 22:06:40 1995
-*** web2c/web/Makefile.in	Thu Nov  9 22:07:02 1995
-***************
-*** 59,65 ****
-  
-  # To make tangleboot.p, we must assume a working tangle.
-  tangleboot.p: tangle.web tangle.ch
-! 	tangle tangle.web tangle.ch
-  	mv tangle.p tangleboot.p
-
-  
---- 59,65 ----
-  
-  # To make tangleboot.p, we must assume a working tangle.
-  tangleboot.p: tangle.web tangle.ch
-! 	./tangle tangle.web tangle.ch
-  	mv tangle.p tangleboot.p  
-  
+--- web2c/Makefile.in.orig	Sat Feb  8 03:39:35 1997
++++ web2c/Makefile.in	Sun Sep 28 16:10:19 1997
+@@ -5,7 +5,7 @@
+ # install-fmts/install-bases/install-mems will install. plain.* is
+ # created automatically (as a link).  See the Formats node in
+ # doc/web2c.texi for details on the fmts.
+-fmts = latex.fmt # amstex.fmt eplain.fmt texinfo.fmt
++#fmts = latex.fmt # amstex.fmt eplain.fmt texinfo.fmt
+ bases = # I do not recommend building cmmf.base.
+ mems =  # mfplain.mem is probably not generally useful.
+ 
+@@ -91,15 +91,17 @@
+ # Prevent Make from deleting the intermediate forms.
+ .PRECIOUS: %.p %.c
+ 
+-programs = bibtex dvicopy dvitomp dvitype gftodvi gftopk gftype mf \
+-mft mpost patgen pktogf pktype pltotf pooltype tangle tex tftopl vftovp \
++programs1 = bibtex dvicopy dvitomp dvitype gftodvi gftopk gftype mf \
++mft mpost patgen pktogf pktype  pooltype tangle tex  vftovp \
+ vptovf weave
++programs2 = pltotf tftopl
++programs = $(programs1) $(programs2)
+ 
+ mpware = mpware/dmp mpware/makempx mpware/mpto mpware/newer
+ mpware_sources = mpware/dmp.c mpware/makempx.in mpware/mpto.c mpware/newer.c
+ 
+ #  
+-default all: programs formats doc/web2c.info
++default all: programs doc/web2c.info
+ programs: $(programs) $(mpware)
+ 
+ # Rules to link each program. I wish we could use a suffix rule for
+@@ -326,7 +328,7 @@
+ 	./tex -ini \&./tex eplain \\dump </dev/null
+ 
+ # 
+-install: install-exec install-data
++install: formats install-exec install-data
+ install-exec:: install-links
+ install-data:: install-formats
+ 
+@@ -335,7 +337,7 @@
+ 	$(SHELL) $(top_srcdir)/../mkdirchain $(bindir) $(texpooldir) \
+ 	  $(mfpooldir) $(mppooldir)
+ 	cd mpware && $(MAKE) $(install_makeargs) install-exec
+-	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
++	for p in $(programs1); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
+ 
+ # The links to {mf,mp,tex} for each format and for {ini,vir}{mf,mp,tex}.
+ install-links: install-programs

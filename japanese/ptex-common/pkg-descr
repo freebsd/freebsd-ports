@@ -1,5 +1,9 @@
-This is pTeX, a TeX system supports Japanese written by ASCII.
+This is pTeX, TeX system with Japanese support.
 
-This system is based on TeX 3.1415.
+This system is based on TeX 3.14159.
 
-This package can be compiled to use either JIS, SJIS or Japanese-EUC.
+pTeX supports JIS, EUC and Shift-JIS.  This package installs only the
+character code independent files of pTeX, so you need to install
+either ptex-jis, ptex-euc or ptex-sjis besides this one.
+
+- Max
