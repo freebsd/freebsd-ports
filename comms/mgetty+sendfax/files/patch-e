@@ -1,0 +1,12 @@
+--- logfile.c.orig	Wed Feb  5 21:21:46 2003
++++ logfile.c	Wed Feb  5 21:22:20 2003
+@@ -56,8 +56,8 @@
+ /* Most systems have these variables but do not declare them. On many
+    of those systems that _do_ declare them, it won't hurt */
+ 
+-extern int sys_nerr;
+ #if !defined(__NetBSD__) && !defined( __FreeBSD__ ) && !defined(__OpenBSD__) && !defined(__GLIBC__) && !defined(__MACH__)
++extern int sys_nerr;
+ extern char *sys_errlist[];
+ #endif
+ 
