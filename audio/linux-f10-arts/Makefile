@@ -20,6 +20,7 @@ MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Audio system for the KDE integrated X11 desktop
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
+RUN_DEPENDS=		${LINUXBASE}/var/lib/rpm/packages.rpm:${PORTSDIR}/emulators/linux-base-8
 
 PREFIX?=		${LINUXBASE}
 NO_MTREE=		yes
