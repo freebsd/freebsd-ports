@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nd
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.gohome.org/teranisi/
+MASTER_SITES=	http://www.gohome.org/nd/
 
 MAINTAINER=	stolz+nd@i2.informatik.rwth-aachen.de
 COMMENT=	A simple command line interface for WebDAV (RFC2518) server
