@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	tcptrace
-PORTVERSION=	5.2.1
+PORTVERSION=	6.0.0b2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
-DISTNAME=	tcptrace.5.2.1
+DISTNAME=	tcptrace.${PORTVERSION}
 
 MAINTAINER=	fenner@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/tcptrace_5.2.1
 ALL_TARGET=	tcptrace
 
 MAN1=		tcptrace.1
