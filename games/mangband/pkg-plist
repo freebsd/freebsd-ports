@@ -12,12 +12,6 @@ bin/mangconsole
 @exec install -d -o games -g games -m 750 %D/lib/mangband/save
 @exec install -d -o games -g games -m 755 %D/lib/mangband/user
 @exec install -d -o games -g games -m 750 %D/lib/mangband/xtra
-lib/mangband/data/a_info.raw
-lib/mangband/data/e_info.raw
-lib/mangband/data/f_info.raw
-lib/mangband/data/k_info.raw
-lib/mangband/data/r_info.raw
-lib/mangband/data/v_info.raw
 lib/mangband/edit/a_info.txt
 lib/mangband/edit/e_info.txt
 lib/mangband/edit/f_info.txt
