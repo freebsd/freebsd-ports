@@ -8,7 +8,8 @@
 PORTNAME=	kdissert
 PORTVERSION=	0.3.7
 CATEGORIES=	deskutils kde
-MASTER_SITES=	http://www.freehackers.org/~tnagy/kdissert/ \
+MASTER_SITES=	ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/ \
+		http://www.freehackers.org/~tnagy/kdissert/ \
 		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
