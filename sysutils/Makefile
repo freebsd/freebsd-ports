@@ -149,6 +149,7 @@
     SUBDIR += setquota
     SUBDIR += skill
     SUBDIR += slay
+    SUBDIR += slmon
     SUBDIR += socket
     SUBDIR += star
     SUBDIR += stat
