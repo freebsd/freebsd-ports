@@ -19,6 +19,8 @@ COMMENT=	Python modules to access to SQL Relay
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 
+BROKEN=		Does not build after python 2.4 update
+
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
 

@@ -23,6 +23,8 @@ DEPRECATED=	"already included in Zope versions 2.5 and above"
 USE_PYTHON=	yes
 DIST_SUBDIR=	zope
 
+BROKEN=		Does not build after python 2.4 update
+
 ZTUVERSION=	1.1.3
 
 # You can change this in the environment if you like.
