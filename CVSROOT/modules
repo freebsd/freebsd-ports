@@ -5094,7 +5094,6 @@ linux-mozilla	ports/www/linux-mozilla
 linux-mozilla-devel	ports/www/linux-mozilla-devel
 linux-mozillafirebird	ports/www/linux-mozillafirebird
 linux-mozillafirebird-el	ports/www/linux-mozillafirebird-el
-linux-mupen64	ports/emulators/linux-mupen64
 linux-nvu	ports/www/linux-nvu
 linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
