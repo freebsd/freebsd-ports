@@ -14,7 +14,7 @@ MAINTAINER=	greid@ukug.uk.freebsd.org
 
 MAKEFILE=	makefile
 
-MAN1=		osh.1
+MAN1=		goto.1 if.1 osh.1
 
 post-install:
 	@${ECHO} "updating /etc/shells"
