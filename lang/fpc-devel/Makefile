@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 PLIST_SUB+=	FPC_VERSION=${PORTVERSION}
 PLIST_SUB+=     PORTVERSION="${PORTVERSION}"
 
-MAN1=		delp.1 fpc.1 fpcmake.1 h2pas.1 plex.1 ppc386.1 ppdep.1 \
+MAN1=		delp.1 fpc.1 fpcmake.1 fpdoc.1 h2pas.1 plex.1 ppc386.1 ppdep.1 \
 		ppudump.1 ppufiles.1 ppumove.1 ptop.1 pyacc.1 rstconv.1
 MAN5=		fpc.cfg.5 fpcmake.5 ptop.cfg.5
 
