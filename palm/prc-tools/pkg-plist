@@ -192,6 +192,8 @@ bin/m68k-palmos-trapfilt
 info/dir
 info/bfd.info
 info/bfd.info-1
+info/bfd.info-2
+info/cppinternals.info
 info/prc-tools.info
 info/binutils.info
 info/standards.info
@@ -249,12 +251,12 @@ share/prc-tools/include/string.h
 @dirrm arm-palmos/lib/ldscripts
 @dirrm arm-palmos/lib
 @dirrm arm-palmos
+@dirrm m68k-palmos/bin
+@dirrm m68k-palmos/include/sys
+@dirrm m68k-palmos/include
 @dirrm m68k-palmos/lib/mown-gp
 @dirrm m68k-palmos/lib/ldscripts
 @dirrm m68k-palmos/lib
-@dirrm m68k-palmos/include/sys
-@dirrm m68k-palmos/include
-@dirrm m68k-palmos/bin
 @dirrm m68k-palmos
 @dirrm lib/gcc-lib/arm-palmos/3.3.1/include
 @dirrm lib/gcc-lib/arm-palmos/3.3.1/install-tools/include
