@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/downloads/
 EXTRACT_SUFX=.tgz
 
-MAINTAINER=	yoshiaki@kt.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio sample editing and processing suite
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
