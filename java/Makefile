@@ -20,6 +20,7 @@
     SUBDIR += jakarta-commons-cli
     SUBDIR += jakarta-commons-collections
     SUBDIR += jakarta-commons-lang
+    SUBDIR += jakarta-commons-logging
     SUBDIR += jakarta-log4j
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
