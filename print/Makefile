@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.41 1997/03/24 19:37:52 obrien Exp $
+# $Id: Makefile,v 1.42 1997/03/25 11:03:18 obrien Exp $
 #
 
     SUBDIR += a2ps
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
+    SUBDIR += bibcard
     SUBDIR += c2ps
     SUBDIR += detex
     SUBDIR += dvi2tty
