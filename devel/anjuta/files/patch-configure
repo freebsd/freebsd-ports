@@ -1,5 +1,5 @@
---- configure.orig	Sun Aug 12 11:02:48 2001
-+++ configure	Sun Aug 12 11:10:02 2001
+--- configure.orig	Fri Aug 24 12:34:57 2001
++++ configure	Fri Aug 24 12:35:13 2001
 @@ -8,6 +8,7 @@
  # gives unlimited permission to copy, distribute and modify it.
  
@@ -8,7 +8,7 @@
  ac_help=
  ac_default_prefix=/usr/local
  # Any additions from configure.in:
-@@ -4631,12 +4632,10 @@
+@@ -4812,12 +4813,10 @@
  intl/Makefile
  po/Makefile.in
  macros/Makefile
@@ -21,7 +21,7 @@
  manuals/C/Makefile
  manuals/C/anjuta-manual/Makefile
  manuals/C/anjuta-faqs/Makefile
-@@ -4729,6 +4728,7 @@
+@@ -4906,6 +4905,7 @@
  s%@GNOME_CAPPLET_LIBS@%$GNOME_CAPPLET_LIBS%g
  s%@cflags_set@%$cflags_set%g
  s%@GTK_CONFIG@%$GTK_CONFIG%g
@@ -29,7 +29,7 @@
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
  s%@XPM_LIBS@%$XPM_LIBS%g
-@@ -4820,12 +4820,10 @@
+@@ -4997,12 +4997,10 @@
  intl/Makefile
  po/Makefile.in
  macros/Makefile

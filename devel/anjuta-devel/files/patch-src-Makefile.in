@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Sun Aug 12 11:11:42 2001
-+++ src/Makefile.in	Sun Aug 12 11:15:59 2001
+--- src/Makefile.in.orig	Fri Aug 24 12:05:50 2001
++++ src/Makefile.in	Fri Aug 24 12:09:03 2001
 @@ -128,7 +128,7 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
 -INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	 -I$(srcdir)/../scintilla/include 	 -I$(srcdir)/../widgets 	 -I$(srcdir)/../ccview 	 -I$(srcdir)/../pixmaps 	 -I.. -I. 	 -DHAVE_CONFIG_H 	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wtraditional -Wpointer-arith -Wmissing-prototypes 	 -O1 	 -g
-+INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) -I$(prefix)/include/scintilla	 -I$(srcdir)/../widgets 	 -I$(srcdir)/../ccview 	 -I$(srcdir)/../pixmaps 	 -I.. -I. 	 -DHAVE_CONFIG_H 	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wtraditional -Wpointer-arith -Wmissing-prototypes 	 -O1 	 -g
++INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	 -I$(prefix)/include/scintilla 	 -I$(srcdir)/../widgets 	 -I$(srcdir)/../ccview 	 -I$(srcdir)/../pixmaps 	 -I.. -I. 	 -DHAVE_CONFIG_H 	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wtraditional -Wpointer-arith -Wmissing-prototypes
  
  
  bin_PROGRAMS = anjuta
@@ -43,10 +43,10 @@
 -	../scintilla/include/ScintillaWidget.h \
 -	../scintilla/include/SciLexer.h lexer.h properties.h aneditor.h
 +aneditor.o: aneditor.cxx ../config.h lexer.h properties.h aneditor.h
- anjuta.o: anjuta.c ../config.h text_editor.h global.h text_editor_menu.h \
- 	preferences.h properties.h aneditor.h anjuta.h toolbar.h \
- 	messagebox.h compiler_options.h src_paths.h find_replace.h \
-@@ -313,9 +303,7 @@
+ anjuta_cbs.o: anjuta_cbs.c ../config.h text_editor.h global.h \
+ 	text_editor_menu.h preferences.h properties.h aneditor.h \
+ 	anjuta.h toolbar.h messagebox.h compiler_options.h src_paths.h \
+@@ -333,9 +323,7 @@
  	anjuta_dirs.h executer.h configurer.h utilities.h \
  	main_menubar.h help.h fileselection.h resources.h launcher.h \
  	debugger.h watch.h registers.h stack_trace.h signals.h \
@@ -54,9 +54,9 @@
 -	../scintilla/include/Scintilla.h \
 -	../scintilla/include/ScintillaWidget.h
 +	sharedlib.h attach_process.h controls.h anjuta_info.h
- anjuta_cbs.o: anjuta_cbs.c ../config.h text_editor.h global.h \
- 	text_editor_menu.h preferences.h properties.h aneditor.h \
- 	anjuta.h toolbar.h messagebox.h compiler_options.h src_paths.h \
+ appwizard_cbs.o: appwizard_cbs.c ../config.h anjuta.h toolbar.h \
+ 	text_editor.h global.h text_editor_menu.h preferences.h \
+ 	properties.h aneditor.h messagebox.h compiler_options.h \
 @@ -501,8 +489,7 @@
  	find_text.h find_in_files.h messages.h project_dbase.h \
  	tags_manager.h project_config.h commands.h anjuta_dirs.h \
@@ -78,39 +78,27 @@
  find_text.o: find_text.c ../config.h anjuta.h toolbar.h text_editor.h \
  	global.h text_editor_menu.h preferences.h properties.h \
  	aneditor.h messagebox.h compiler_options.h src_paths.h \
-@@ -629,8 +614,7 @@
+@@ -622,8 +607,7 @@
  	compile.h launcher.h appwizard.h debugger.h watch.h registers.h \
  	stack_trace.h signals.h sharedlib.h attach_process.h \
  	breakpoints_cbs.h goto_line.h resources.h controls.h \
 -	signals_cbs.h watch_cbs.h ../scintilla/include/Scintilla.h \
 -	../scintilla/include/ScintillaWidget.h
 +	signals_cbs.h watch_cbs.h
- messagebox.o: messagebox.c ../config.h text_editor.h global.h \
- 	text_editor_menu.h preferences.h properties.h aneditor.h \
- 	mainmenu_callbacks.h messagebox.h resources.h
+ main.o: main.c ../config.h splash.h anjuta.h toolbar.h text_editor.h \
+ 	global.h text_editor_menu.h preferences.h properties.h \
+ 	aneditor.h messagebox.h compiler_options.h src_paths.h \
 @@ -685,8 +669,7 @@
- 	project_config.h commands.h breakpoints.h anjuta_dirs.h \
- 	executer.h configurer.h utilities.h main_menubar.h help.h \
- 	resources.h fileselection.h
+ 	../pixmaps/file_cpp.xpm ../pixmaps/file_h.xpm \
+ 	../pixmaps/file_pix.xpm ../pixmaps/file_icon.xpm \
+ 	../pixmaps/file_html.xpm ../pixmaps/file_i18n.xpm
 -properties.o: properties.cxx ../scintilla/include/PropSet.h \
 -	../scintilla/include/SString.h properties.h
-+properties.o: properties.cxx properties.h
- registers.o: registers.c ../config.h resources.h debugger.h global.h \
- 	breakpoints.h properties.h text_editor.h text_editor_menu.h \
- 	preferences.h aneditor.h watch.h registers.h stack_trace.h \
-@@ -791,10 +774,7 @@
- 	messages.h project_dbase.h tags_manager.h project_config.h \
- 	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
- 	utilities.h main_menubar.h help.h text_editor_gui.h \
--	text_editor_cbs.h syntax.h launcher.h \
--	../scintilla/include/Scintilla.h \
--	../scintilla/include/SciLexer.h \
--	../scintilla/include/ScintillaWidget.h lexer.h controls.h
-+	text_editor_cbs.h syntax.h launcher.h lexer.h controls.h
- text_editor_cbs.o: text_editor_cbs.c ../config.h anjuta.h toolbar.h \
- 	text_editor.h global.h text_editor_menu.h preferences.h \
- 	properties.h aneditor.h messagebox.h compiler_options.h \
-@@ -802,8 +782,7 @@
++properties.o: properties.cxx
+ registers_cbs.o: registers_cbs.c ../config.h registers.h properties.h \
+ 	registers_cbs.h debugger.h global.h breakpoints.h text_editor.h \
+ 	text_editor_menu.h preferences.h aneditor.h watch.h \
+@@ -791,8 +774,7 @@
  	messages.h project_dbase.h tags_manager.h project_config.h \
  	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
  	utilities.h main_menubar.h help.h controls.h text_editor_cbs.h \
@@ -120,7 +108,7 @@
  text_editor_gui.o: text_editor_gui.c ../config.h anjuta.h toolbar.h \
  	text_editor.h global.h text_editor_menu.h preferences.h \
  	properties.h aneditor.h messagebox.h compiler_options.h \
-@@ -811,9 +790,7 @@
+@@ -800,9 +782,7 @@
  	messages.h project_dbase.h tags_manager.h project_config.h \
  	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
  	utilities.h main_menubar.h help.h text_editor_cbs.h \
@@ -131,3 +119,15 @@
  text_editor_menu.o: text_editor_menu.c ../config.h resources.h \
  	text_editor_menu.h anjuta.h toolbar.h text_editor.h global.h \
  	preferences.h properties.h aneditor.h messagebox.h \
+@@ -820,10 +800,7 @@
+ 	messages.h project_dbase.h tags_manager.h project_config.h \
+ 	commands.h breakpoints.h anjuta_dirs.h executer.h configurer.h \
+ 	utilities.h main_menubar.h help.h text_editor_gui.h \
+-	text_editor_cbs.h syntax.h launcher.h \
+-	../scintilla/include/Scintilla.h \
+-	../scintilla/include/SciLexer.h \
+-	../scintilla/include/ScintillaWidget.h lexer.h controls.h
++	text_editor_cbs.h syntax.h launcher.h lexer.h controls.h
+ toolbar_callbacks.o: toolbar_callbacks.c ../config.h anjuta.h toolbar.h \
+ 	text_editor.h global.h text_editor_menu.h preferences.h \
+ 	properties.h aneditor.h messagebox.h compiler_options.h \
