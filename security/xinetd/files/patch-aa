@@ -1,0 +1,19 @@
+*** xinetd/defs.h.orig	Thu Mar 20 11:29:27 1997
+--- xinetd/defs.h	Thu Mar 20 11:29:46 1997
+***************
+*** 100,106 ****
+  /*
+   * Used for listen(2)
+   */
+! #define LISTEN_BACKLOG					7
+  
+  /*
+   * When explicit values are given for enum's, that is because the structures 
+--- 100,106 ----
+  /*
+   * Used for listen(2)
+   */
+! #define LISTEN_BACKLOG					64
+  
+  /*
+   * When explicit values are given for enum's, that is because the structures 
