@@ -12,8 +12,8 @@ MASTER_SITES=	http://www.dynaplex.net/opensource/software/
 
 MAINTAINER=	netman@dynaplex.net
 
-BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
-RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
+BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
+RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
