@@ -1,0 +1,245 @@
+bin/evolution
+bin/evolution-addressbook
+bin/evolution-calendar
+bin/evolution-mail
+bin/killev
+bin/test-mail
+bin/wombat
+include/camel/camel-address.h
+include/camel/camel-data-wrapper.h
+include/camel/camel-exception-list.def
+include/camel/camel-exception.h
+include/camel/camel-folder-search.h
+include/camel/camel-folder-summary.h
+include/camel/camel-folder.h
+include/camel/camel-internet-address.h
+include/camel/camel-mbox-folder.h
+include/camel/camel-mbox-store.h
+include/camel/camel-mbox-summary.h
+include/camel/camel-medium.h
+include/camel/camel-mime-filter-basic.h
+include/camel/camel-mime-filter-charset.h
+include/camel/camel-mime-filter-from.h
+include/camel/camel-mime-filter-index.h
+include/camel/camel-mime-filter-save.h
+include/camel/camel-mime-filter-smtp.h
+include/camel/camel-mime-filter.h
+include/camel/camel-mime-message.h
+include/camel/camel-mime-parser.h
+include/camel/camel-mime-part-utils.h
+include/camel/camel-mime-part.h
+include/camel/camel-mime-utils.h
+include/camel/camel-movemail.h
+include/camel/camel-multipart.h
+include/camel/camel-object.h
+include/camel/camel-pop3-folder.h
+include/camel/camel-pop3-store.h
+include/camel/camel-provider.h
+include/camel/camel-seekable-stream.h
+include/camel/camel-seekable-substream.h
+include/camel/camel-sendmail-transport.h
+include/camel/camel-service.h
+include/camel/camel-session.h
+include/camel/camel-smtp-transport.h
+include/camel/camel-store.h
+include/camel/camel-stream-buffer.h
+include/camel/camel-stream-filter.h
+include/camel/camel-stream-fs.h
+include/camel/camel-stream-mem.h
+include/camel/camel-stream.h
+include/camel/camel-transport.h
+include/camel/camel-types.h
+include/camel/camel-url.h
+include/camel/camel-vee-folder.h
+include/camel/camel-vee-store.h
+include/camel/camel.h
+include/camel/gmime-content-field.h
+include/camel/gstring-util.h
+include/camel/hash-table-utils.h
+include/camel/md5-utils.h
+include/camel/string-utils.h
+include/composer/e-msg-composer-address-dialog.h
+include/composer/e-msg-composer-address-entry.h
+include/composer/e-msg-composer-attachment-bar.h
+include/composer/e-msg-composer-attachment.h
+include/composer/e-msg-composer-hdrs.h
+include/composer/e-msg-composer.h
+include/ename/e-name-western-tables.h
+include/ename/e-name-western.h
+include/evolution/cal-client/cal-client.h
+include/evolution/cal-util/cal-recur.h
+include/evolution/cal-util/cal-util.h
+include/evolution/cal-util/calobj.h
+include/evolution/cal-util/timeutil.h
+include/evolution/ebook/e-book-listener.h
+include/evolution/ebook/e-book-types.h
+include/evolution/ebook/e-book-view-listener.h
+include/evolution/ebook/e-book-view.h
+include/evolution/ebook/e-book.h
+include/evolution/ebook/e-card-cursor.h
+include/evolution/ebook/e-card-iterator.h
+include/evolution/ebook/e-card-list-iterator.h
+include/evolution/ebook/e-card-list.h
+include/evolution/ebook/e-card-pairs.h
+include/evolution/ebook/e-card-simple.h
+include/evolution/ebook/e-card-types.h
+include/evolution/ebook/e-card.h
+include/ical.h
+include/icalcalendar.h
+include/icalcluster.h
+include/icalcomponent.h
+include/icalenums.h
+include/icalerror.h
+include/icalmemory.h
+include/icalparameter.h
+include/icalparser.h
+include/icalproperty.h
+include/icalrestriction.h
+include/icalstore.h
+include/icaltypes.h
+include/icalvalue.h
+include/icalvcal.h
+include/icalversion.h
+include/pvl.h
+lib/evolution/camel-providers/%%VERSION%%/libcamelmbox.so
+lib/evolution/camel-providers/%%VERSION%%/libcamelmbox.urls
+lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.so
+lib/evolution/camel-providers/%%VERSION%%/libcamelpop3.urls
+lib/evolution/camel-providers/%%VERSION%%/libcamelsendmail.so
+lib/evolution/camel-providers/%%VERSION%%/libcamelsendmail.urls
+lib/evolution/camel-providers/%%VERSION%%/libcamelsmtp.so
+lib/evolution/camel-providers/%%VERSION%%/libcamelsmtp.urls
+lib/evolution/camel-providers/%%VERSION%%/libcamelvee.so
+lib/evolution/camel-providers/%%VERSION%%/libcamelvee.urls
+lib/libcal-client.a
+lib/libcal-client.so
+lib/libcal-client.so.0
+lib/libcal-util.a
+lib/libcal-util.so
+lib/libcal-util.so.0
+lib/libcamel.a
+lib/libcamel.so
+lib/libcamel.so.0
+lib/libebook.a
+lib/libebook.so
+lib/libebook.so.0
+lib/libename.a
+lib/libename.so
+lib/libename.so.0
+lib/libical.a
+lib/libical.so
+lib/libical.so.0
+lib/libicalss.a
+lib/libicalss.so
+lib/libicalss.so.0
+share/evolution/default_user/shortcuts.xml
+share/evolution/filtertypes.xml
+share/evolution/vfoldertypes.xml
+share/gnome/evolution/default_user/local/Calendar/folder-metadata.xml
+share/gnome/evolution/default_user/local/Contacts/folder-metadata.xml
+share/gnome/evolution/default_user/local/Directories/folder-metadata.xml
+share/gnome/evolution/default_user/local/Directories/subfolders/Bigfoot/folder-metadata.xml
+share/gnome/evolution/default_user/local/Directories/subfolders/Bigfoot/uri
+share/gnome/evolution/default_user/local/Directories/subfolders/Netcenter/folder-metadata.xml
+share/gnome/evolution/default_user/local/Directories/subfolders/Netcenter/uri
+share/gnome/evolution/default_user/local/Drafts/folder-metadata.xml
+share/gnome/evolution/default_user/local/Inbox/folder-metadata.xml
+share/gnome/evolution/default_user/local/Inbox/mbox
+share/gnome/evolution/default_user/local/Outbox/folder-metadata.xml
+share/gnome/evolution/default_user/local/Trash/folder-metadata.xml
+share/gnome/evolution/ecps/medbook.ecps
+share/gnome/evolution/ecps/phonelist.ecps
+share/gnome/evolution/ecps/smallbook.ecps
+share/gnome/evolution/glade/alarm-notify.glade
+share/gnome/evolution/glade/alphabet.glade
+share/gnome/evolution/glade/categories.glade
+share/gnome/evolution/glade/contact-editor.glade
+share/gnome/evolution/glade/e-contact-print.glade
+share/gnome/evolution/glade/e-contact-print.glade.h
+share/gnome/evolution/glade/e-msg-composer-address-dialog.glade
+share/gnome/evolution/glade/e-msg-composer-address-dialog.glade.h
+share/gnome/evolution/glade/e-msg-composer-attachment.glade
+share/gnome/evolution/glade/e-msg-composer-attachment.glade.h
+share/gnome/evolution/glade/e-table-config.glade
+share/gnome/evolution/glade/e-table-group.glade
+share/gnome/evolution/glade/event-editor-dialog.glade
+share/gnome/evolution/glade/fullname.glade
+share/gnome/evolution/glade/ldap-server-dialog.glade
+share/gnome/evolution/glade/ldap-server-dialog.glade.h
+share/gnome/help/evolution/C/fig/calendar.png
+share/gnome/help/evolution/C/fig/config-camel.png
+share/gnome/help/evolution/C/fig/contact.png
+share/gnome/help/evolution/C/fig/filter-new-fig.png
+share/gnome/help/evolution/C/fig/mail-druid-pic.png
+share/gnome/help/evolution/C/fig/mainwindow-pic.png
+share/gnome/help/evolution/C/fig/vfolder-createrule-fig.png
+share/gnome/idl/addressbook.idl
+share/gnome/idl/evolution-calendar.idl
+share/gnome/images/evolution/briefcase.png
+share/gnome/images/evolution/cellphone.png
+share/gnome/images/evolution/envelope.png
+share/gnome/images/evolution/evolution-calendar-mini.png
+share/gnome/images/evolution/evolution-calendar.png
+share/gnome/images/evolution/evolution-contacts-mini.png
+share/gnome/images/evolution/evolution-contacts.png
+share/gnome/images/evolution/evolution-inbox-mini.png
+share/gnome/images/evolution/evolution-inbox.png
+share/gnome/images/evolution/evolution-notes-mini.png
+share/gnome/images/evolution/evolution-notes.png
+share/gnome/images/evolution/evolution-tasks-mini.png
+share/gnome/images/evolution/evolution-tasks.png
+share/gnome/images/evolution/evolution-today.png
+share/gnome/images/evolution/globe.png
+share/gnome/images/evolution/house.png
+share/gnome/images/evolution/malehead.png
+share/gnome/oaf/addressbook.oafinfo
+share/gnome/oaf/calendar-control.oafinfo
+share/gnome/oaf/evolution-calendar.oafinfo
+share/gnome/oaf/evolution-mail.oafinfo
+share/gnome/oaf/wombat.oafinfo
+share/locale/da/LC_MESSAGES/evolution.mo
+share/locale/el/LC_MESSAGES/evolution.mo
+share/locale/es/LC_MESSAGES/evolution.mo
+share/locale/fr/LC_MESSAGES/evolution.mo
+share/locale/gl/LC_MESSAGES/evolution.mo
+share/locale/hu/LC_MESSAGES/evolution.mo
+share/locale/ja/LC_MESSAGES/evolution.mo
+share/locale/ko/LC_MESSAGES/evolution.mo
+share/locale/nl/LC_MESSAGES/evolution.mo
+share/locale/no/LC_MESSAGES/evolution.mo
+share/locale/pt/LC_MESSAGES/evolution.mo
+share/locale/ru/LC_MESSAGES/evolution.mo
+share/locale/sv/LC_MESSAGES/evolution.mo
+share/locale/tr/LC_MESSAGES/evolution.mo
+share/locale/uk/LC_MESSAGES/evolution.mo
+@dirrm share/gnome/images/evolution
+@dirrm share/gnome/images
+@dirrm share/gnome/help/evolution/C/fig
+@dirrm share/gnome/help/evolution/C
+@dirrm share/gnome/help/evolution
+@dirrm share/gnome/evolution/glade
+@dirrm share/gnome/evolution/ecps
+@dirrm share/gnome/evolution/default_user/local/Trash
+@dirrm share/gnome/evolution/default_user/local/Outbox
+@dirrm share/gnome/evolution/default_user/local/Inbox
+@dirrm share/gnome/evolution/default_user/local/Drafts
+@dirrm share/gnome/evolution/default_user/local/Directories/subfolders/Netcenter
+@dirrm share/gnome/evolution/default_user/local/Directories/subfolders/Bigfoot
+@dirrm share/gnome/evolution/default_user/local/Directories/subfolders
+@dirrm share/gnome/evolution/default_user/local/Directories
+@dirrm share/gnome/evolution/default_user/local/Contacts
+@dirrm share/gnome/evolution/default_user/local/Calendar
+@dirrm share/gnome/evolution/default_user/local
+@dirrm share/gnome/evolution/default_user
+@dirrm share/gnome/evolution
+@dirrm share/evolution/default_user
+@dirrm share/evolution
+@dirrm lib/evolution/camel-providers/%%VERSION%%
+@dirrm lib/evolution/camel-providers
+@dirrm lib/evolution
+@dirrm include/evolution/ebook
+@dirrm include/evolution/cal-util
+@dirrm include/evolution/cal-client
+@dirrm include/ename
+@dirrm include/composer
+@dirrm include/camel

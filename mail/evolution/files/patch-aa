@@ -1,0 +1,48 @@
+--- configure.orig	Fri Jun  2 15:13:10 2000
++++ configure	Wed Jun 28 17:39:26 2000
+@@ -4079,7 +4079,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -5621,8 +5621,8 @@
+ fi
+ 
+ if $have_pthread; then 
+- 	THREADS_LIBS="$PTHREAD_LIB `glib-config --libs gthread`"
+-	THREADS_CFLAGS="`glib-config --cflags gthread`"
++ 	THREADS_LIBS="$PTHREAD_LIB `$GLIB_CONFIG --libs gthread`"
++	THREADS_CFLAGS="`$GLIB_CONFIG --cflags gthread`"
+ else
+ 	THREADS_LIBS=""
+ 	THREADS_CFLAGS=""
+@@ -5697,8 +5697,8 @@
+     { echo "configure: error: Did not find gdkpixbuf installed" 1>&2; exit 1; }
+ fi
+ 
+-GLIB_CFLAGS="`glib-config --cflags`"
+-GLIB_LIBS="`glib-config --libs`"
++GLIB_CFLAGS="`$GLIB_CONFIG --cflags`"
++GLIB_LIBS="`$GLIB_CONFIG --libs`"
+ 
+ 
+ 
+@@ -6771,10 +6771,10 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
++#  case "$ac_given_INSTALL" in
++#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
