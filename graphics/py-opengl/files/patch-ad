@@ -20,9 +20,9 @@ $FreeBSD$
 +		pass
 +	def getvar(self, varname):
 +		if varname == 'tk_version' or varname == 'tcl_version':
-+			return '8.3'
++			return '8.4'
 +		if varname == 'tcl_library':
-+			return '%%LOCALBASE%%/lib/tcl8.3'
++			return '%%LOCALBASE%%/lib/tcl8.4'
 +		if varname == 'tk_library':
-+			return '%%LOCALBASE%%/lib/tk8.3'
++			return '%%LOCALBASE%%/lib/tk8.4'
 +		return ''

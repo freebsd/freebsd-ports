@@ -627,8 +627,8 @@
 %%PYTHON_SITELIBDIR%%/OpenGL/Tk/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenGL/Tk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenGL/Tk/__init__.pyo
-%%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/Togl.so
-%%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3/pkgIndex.tcl
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.4/Togl.so
+%%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.4/pkgIndex.tcl
 %%PYTHON_SITELIBDIR%%/OpenGL/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenGL/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenGL/__init__.pyo
@@ -675,7 +675,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/OpenGL/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/OpenGL/doc/html
 @dirrm %%PYTHON_SITELIBDIR%%/OpenGL/doc
-@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.3
+@dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Tk/freebsd%%OSMAJOR%%-tk8.4
 @dirrm %%PYTHON_SITELIBDIR%%/OpenGL/Tk
 @dirrm %%PYTHON_SITELIBDIR%%/OpenGL/GLX/_3DFX
 @dirrm %%PYTHON_SITELIBDIR%%/OpenGL/GLX/SGIS

@@ -36,12 +36,13 @@ PLIST_SUB+=	OSMAJOR=${OSMAJOR} \
 pre-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc[.]h|stdlib.h|g'
+	@${CP} ${WRKSRC}/src/Togl-1.5/tkInt8.3.h ${WRKSRC}/src/Togl-1.5/tkInt8.4.h
 
 do-configure:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/config/freebsd.cfg ${WRKSRC}/Tkinter.py
 
 post-install:
-	${LOCALBASE}/bin/tclsh8.3 ${WRKSRC}/register.tcl
+	${LOCALBASE}/bin/tclsh8.4 ${WRKSRC}/register.tcl
 
 .include <bsd.port.mk>
