@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	umbrello
-PORTVERSION=	1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= uml
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	UML Modeller
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
