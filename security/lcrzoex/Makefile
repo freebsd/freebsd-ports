@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
 MAN1=		lcrzoex.1
 PLIST_FILES=	bin/lcrzoex
 
-post-patch:
+pre-configure:
 	cd ${WRKSRC} && ${SH} ${WRKSRC}/genemake
 
 post-install:
