@@ -17,7 +17,7 @@ COMMENT=	"Geektoys" for the GNOME 2 power user
 
 RUN_DEPENDS=	${X11BASE}/lib/epiphany/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
-		${X11BASE}/lib/libquicklounge-applet.so:${PORTSDIR}/misc/quick-lounge-applet \
+		${X11BASE}/libexec/quick-lounge-applet:${PORTSDIR}/misc/quick-lounge-applet \
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
 		splashsetter:${PORTSDIR}/deskutils/splashsetter \
