@@ -12,7 +12,6 @@ etc/rc.d/020.jboss3.sh
 %%T%%/bin/twiddle.jar
 %%T%%/bin/twiddle.sh
 %%T%%/client/auth.conf
-%%T%%/client/cacerts
 %%T%%/client/concurrent.jar
 %%T%%/client/getopt.jar
 %%T%%/client/gnu-regexp.jar
@@ -27,6 +26,7 @@ etc/rc.d/020.jboss3.sh
 %%T%%/client/jboss-system-client.jar
 %%T%%/client/jboss-transaction-client.jar
 %%T%%/client/jbossall-client.jar
+%%T%%/client/jbosscx-client.jar
 %%T%%/client/jbossha-client.jar
 %%T%%/client/jbossjmx-ant.jar
 %%T%%/client/jbossmq-client.jar
@@ -41,7 +41,9 @@ etc/rc.d/020.jboss3.sh
 %%T%%/client/jnp-client.jar
 %%T%%/client/jsse.jar
 %%T%%/client/log4j.jar
+%%T%%/client/xdoclet-module-jboss-net.jar
 %%T%%/lib/commons-httpclient.jar
+%%T%%/lib/commons-logging.jar
 %%T%%/lib/concurrent.jar
 %%T%%/lib/getopt.jar
 %%T%%/lib/gnu-regexp.jar
@@ -67,9 +69,10 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/all/conf/standardjaws.xml
 %%T%%/server/all/conf/standardjboss.xml
 %%T%%/server/all/conf/standardjbosscmp-jdbc.xml
+%%T%%/server/all/conf/web.xml
 %%T%%/server/all/deploy/cache-invalidation-service.xml
 %%T%%/server/all/deploy/cluster-service.xml
-%%T%%/server/all/deploy/farm-service.xml
+%%T%%/server/all/deploy/deploy.last/farm-service.xml
 %%T%%/server/all/deploy/hsqldb-ds.xml
 %%T%%/server/all/deploy/http-invoker.sar/META-INF/MANIFEST.MF
 %%T%%/server/all/deploy/http-invoker.sar/META-INF/jboss-service.xml
@@ -125,16 +128,31 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/all/deploy/jbossha-httpsession.sar/org/jboss/ha/httpsession/server/ClusteredHTTPSessionService$CleanupDaemon.class
 %%T%%/server/all/deploy/jbossha-httpsession.sar/org/jboss/ha/httpsession/server/ClusteredHTTPSessionService.class
 %%T%%/server/all/deploy/jbossha-httpsession.sar/org/jboss/ha/httpsession/server/ClusteredHTTPSessionServiceMBean.class
-%%T%%/server/all/deploy/jbossweb-ejb.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/META-INF/MANIFEST.MF
-%%T%%/server/all/deploy/jbossweb-jetty.sar/META-INF/jboss-service.xml
-%%T%%/server/all/deploy/jbossweb-jetty.sar/jasper-compiler.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/jasper-runtime.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/org.jboss.jetty.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/org.mortbay.j2ee.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/org.mortbay.jetty.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/org.mortbay.jmx.jar
-%%T%%/server/all/deploy/jbossweb-jetty.sar/webdefault.xml
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/META-INF/jboss-service.xml
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/META-INF/servletinfo-xmbean.xml
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/ant.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/bootstrap.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/catalina.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/commons-beanutils.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/commons-collections.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/commons-digester.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/commons-logging.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/jakarta-regexp-1.2.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/jasper-compiler.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/jasper-runtime.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/naming-common.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/naming-resources.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/servlets-common.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/servlets-default.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/servlets-invoker.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/servlets-webdav.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/tomcat-coyote.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/tomcat-http11.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/tomcat-jk2.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/tomcat-util.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/tomcat41-service.jar
+%%T%%/server/all/deploy/jbossweb-tomcat41.sar/web.xml
+%%T%%/server/all/deploy/jms/hsqldb-jdbc2-service.xml
 %%T%%/server/all/deploy/jms/jbossmq-destinations-service.xml
 %%T%%/server/all/deploy/jms/jbossmq-httpil.sar/META-INF/MANIFEST.MF
 %%T%%/server/all/deploy/jms/jbossmq-httpil.sar/META-INF/jboss-service.xml
@@ -147,10 +165,17 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/all/deploy/jms/jbossmq-service.xml
 %%T%%/server/all/deploy/jms/jms-ds.xml
 %%T%%/server/all/deploy/jms/jms-ra.rar
+%%T%%/server/all/deploy/jms/jvm-il-service.xml
+%%T%%/server/all/deploy/jms/oil-service.xml
+%%T%%/server/all/deploy/jms/oil2-service.xml
+%%T%%/server/all/deploy/jms/rmi-il-service.xml
+%%T%%/server/all/deploy/jms/uil2-service.xml
 %%T%%/server/all/deploy/jmx-console.war/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/AddressPort.class
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/AttrResultInfo.class
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/OpResultInfo.class
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/Server.class
+%%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html/ClusteredConsoleServlet.class
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html/HtmlAdaptorServlet.class
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/DomainData.class
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/MBeanData.class
@@ -159,38 +184,44 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/jboss-web.xml
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/lib/jboss-jmx.jar
 %%T%%/server/all/deploy/jmx-console.war/WEB-INF/web.xml
+%%T%%/server/all/deploy/jmx-console.war/cluster/bootstrap.html
+%%T%%/server/all/deploy/jmx-console.war/cluster/clusterView.jsp
+%%T%%/server/all/deploy/jmx-console.war/cluster/index.html
 %%T%%/server/all/deploy/jmx-console.war/displayMBeans.jsp
 %%T%%/server/all/deploy/jmx-console.war/displayOpResult.jsp
-%%T%%/server/all/deploy/jmx-console.war/images/head_blue.gif
+%%T%%/server/all/deploy/jmx-console.war/images/logo.gif
 %%T%%/server/all/deploy/jmx-console.war/index.jsp
 %%T%%/server/all/deploy/jmx-console.war/inspectMBean.jsp
 %%T%%/server/all/deploy/jmx-console.war/style_master.css
-%%T%%/server/all/deploy/jmx-ejb-connector-server.sar
 %%T%%/server/all/deploy/jmx-invoker-adaptor-server.sar/META-INF/MANIFEST.MF
 %%T%%/server/all/deploy/jmx-invoker-adaptor-server.sar/META-INF/jboss-service.xml
-%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/META-INF/MANIFEST.MF
-%%T%%/server/all/deploy/jmx-rmi-adaptor.sar/META-INF/jboss-service.xml
 %%T%%/server/all/deploy/mail-service.xml
 %%T%%/server/all/deploy/management/console-mgr.sar
-%%T%%/server/all/deploy/management/ejb-management.jar
 %%T%%/server/all/deploy/management/web-console.war
 %%T%%/server/all/deploy/properties-service.xml
 %%T%%/server/all/deploy/schedule-manager-service.xml
 %%T%%/server/all/deploy/scheduler-service.xml
+%%T%%/server/all/deploy/snmp-adaptor.sar/META-INF/MANIFEST.MF
+%%T%%/server/all/deploy/snmp-adaptor.sar/META-INF/jboss-service.xml
+%%T%%/server/all/deploy/snmp-adaptor.sar/castor.jar
+%%T%%/server/all/deploy/snmp-adaptor.sar/managers.xml
+%%T%%/server/all/deploy/snmp-adaptor.sar/mbeans.xml
+%%T%%/server/all/deploy/snmp-adaptor.sar/notifications.xml
 %%T%%/server/all/deploy/sqlexception-service.xml
 %%T%%/server/all/deploy/transaction-service.xml
 %%T%%/server/all/deploy/user-service.xml
 %%T%%/server/all/deploy/uuid-key-generator.sar
+%%T%%/server/all/farm/cluster-examples-service.xml
 %%T%%/server/all/lib/activation.jar
-%%T%%/server/all/lib/ant.jar
 %%T%%/server/all/lib/autonumber-plugin.jar
 %%T%%/server/all/lib/bcel.jar
-%%T%%/server/all/lib/bsh-core-1.2b7.jar
+%%T%%/server/all/lib/bindingservice-plugin.jar
+%%T%%/server/all/lib/bsh-core-1.3.0.jar
 %%T%%/server/all/lib/bsh-deployer.jar
+%%T%%/server/all/lib/commons-logging.jar
 %%T%%/server/all/lib/hsqldb-plugin.jar
 %%T%%/server/all/lib/hsqldb.jar
 %%T%%/server/all/lib/jacorb.jar
-%%T%%/server/all/lib/javagroups-2.0.jar
 %%T%%/server/all/lib/javax.servlet.jar
 %%T%%/server/all/lib/jboss-common-jdbc-wrapper.jar
 %%T%%/server/all/lib/jboss-iiop.jar
@@ -205,6 +236,7 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/all/lib/jbossmqha.jar
 %%T%%/server/all/lib/jbosssx.jar
 %%T%%/server/all/lib/jcert.jar
+%%T%%/server/all/lib/jgroups.jar
 %%T%%/server/all/lib/jmx-adaptor-plugin.jar
 %%T%%/server/all/lib/jnet.jar
 %%T%%/server/all/lib/jnpserver.jar
@@ -218,8 +250,8 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/all/lib/properties-plugin.jar
 %%T%%/server/all/lib/scheduler-plugin-example.jar
 %%T%%/server/all/lib/scheduler-plugin.jar
+%%T%%/server/all/lib/snmp-adaptor.jar
 %%T%%/server/all/lib/snmp-support.jar
-%%T%%/server/all/lib/tyrex.jar
 %%T%%/server/all/lib/xalan.jar
 %%T%%/server/default/conf/jboss-minimal.xml
 %%T%%/server/default/conf/jboss-service.xml
@@ -246,15 +278,31 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/default/deploy/jboss-jca.sar
 %%T%%/server/default/deploy/jboss-local-jdbc.rar
 %%T%%/server/default/deploy/jboss-xa-jdbc.rar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/META-INF/MANIFEST.MF
-%%T%%/server/default/deploy/jbossweb-jetty.sar/META-INF/jboss-service.xml
-%%T%%/server/default/deploy/jbossweb-jetty.sar/jasper-compiler.jar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/jasper-runtime.jar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/org.jboss.jetty.jar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/org.mortbay.j2ee.jar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/org.mortbay.jetty.jar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/org.mortbay.jmx.jar
-%%T%%/server/default/deploy/jbossweb-jetty.sar/webdefault.xml
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/META-INF/jboss-service.xml
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/META-INF/servletinfo-xmbean.xml
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/ant.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/bootstrap.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/catalina.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/commons-beanutils.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/commons-collections.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/commons-digester.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/commons-logging.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/jakarta-regexp-1.2.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/jasper-compiler.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/jasper-runtime.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/naming-common.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/naming-resources.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/servlets-common.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/servlets-default.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/servlets-invoker.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/servlets-webdav.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/tomcat-coyote.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/tomcat-http11.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/tomcat-jk2.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/tomcat-util.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/tomcat41-service.jar
+%%T%%/server/default/deploy/jbossweb-tomcat41.sar/web.xml
+%%T%%/server/default/deploy/jms/hsqldb-jdbc2-service.xml
 %%T%%/server/default/deploy/jms/jbossmq-destinations-service.xml
 %%T%%/server/default/deploy/jms/jbossmq-httpil.sar/META-INF/MANIFEST.MF
 %%T%%/server/default/deploy/jms/jbossmq-httpil.sar/META-INF/jboss-service.xml
@@ -267,10 +315,17 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/default/deploy/jms/jbossmq-service.xml
 %%T%%/server/default/deploy/jms/jms-ds.xml
 %%T%%/server/default/deploy/jms/jms-ra.rar
+%%T%%/server/default/deploy/jms/jvm-il-service.xml
+%%T%%/server/default/deploy/jms/oil-service.xml
+%%T%%/server/default/deploy/jms/oil2-service.xml
+%%T%%/server/default/deploy/jms/rmi-il-service.xml
+%%T%%/server/default/deploy/jms/uil2-service.xml
 %%T%%/server/default/deploy/jmx-console.war/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/AddressPort.class
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/AttrResultInfo.class
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/OpResultInfo.class
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/control/Server.class
+%%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html/ClusteredConsoleServlet.class
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html/HtmlAdaptorServlet.class
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/DomainData.class
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model/MBeanData.class
@@ -279,33 +334,38 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/jboss-web.xml
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/lib/jboss-jmx.jar
 %%T%%/server/default/deploy/jmx-console.war/WEB-INF/web.xml
+%%T%%/server/default/deploy/jmx-console.war/cluster/bootstrap.html
+%%T%%/server/default/deploy/jmx-console.war/cluster/clusterView.jsp
+%%T%%/server/default/deploy/jmx-console.war/cluster/index.html
 %%T%%/server/default/deploy/jmx-console.war/displayMBeans.jsp
 %%T%%/server/default/deploy/jmx-console.war/displayOpResult.jsp
-%%T%%/server/default/deploy/jmx-console.war/images/head_blue.gif
+%%T%%/server/default/deploy/jmx-console.war/images/logo.gif
 %%T%%/server/default/deploy/jmx-console.war/index.jsp
 %%T%%/server/default/deploy/jmx-console.war/inspectMBean.jsp
 %%T%%/server/default/deploy/jmx-console.war/style_master.css
-%%T%%/server/default/deploy/jmx-ejb-connector-server.sar
 %%T%%/server/default/deploy/jmx-invoker-adaptor-server.sar/META-INF/MANIFEST.MF
 %%T%%/server/default/deploy/jmx-invoker-adaptor-server.sar/META-INF/jboss-service.xml
-%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/META-INF/MANIFEST.MF
-%%T%%/server/default/deploy/jmx-rmi-adaptor.sar/META-INF/jboss-service.xml
 %%T%%/server/default/deploy/mail-service.xml
 %%T%%/server/default/deploy/management/console-mgr.sar
-%%T%%/server/default/deploy/management/ejb-management.jar
 %%T%%/server/default/deploy/management/web-console.war
 %%T%%/server/default/deploy/properties-service.xml
 %%T%%/server/default/deploy/schedule-manager-service.xml
 %%T%%/server/default/deploy/scheduler-service.xml
+%%T%%/server/default/deploy/snmp-adaptor.sar/META-INF/MANIFEST.MF
+%%T%%/server/default/deploy/snmp-adaptor.sar/META-INF/jboss-service.xml
+%%T%%/server/default/deploy/snmp-adaptor.sar/castor.jar
+%%T%%/server/default/deploy/snmp-adaptor.sar/managers.xml
+%%T%%/server/default/deploy/snmp-adaptor.sar/mbeans.xml
+%%T%%/server/default/deploy/snmp-adaptor.sar/notifications.xml
 %%T%%/server/default/deploy/sqlexception-service.xml
 %%T%%/server/default/deploy/transaction-service.xml
 %%T%%/server/default/deploy/user-service.xml
 %%T%%/server/default/deploy/uuid-key-generator.sar
 %%T%%/server/default/lib/activation.jar
-%%T%%/server/default/lib/ant.jar
 %%T%%/server/default/lib/autonumber-plugin.jar
 %%T%%/server/default/lib/bcel.jar
-%%T%%/server/default/lib/bsh-core-1.2b7.jar
+%%T%%/server/default/lib/bindingservice-plugin.jar
+%%T%%/server/default/lib/bsh-core-1.3.0.jar
 %%T%%/server/default/lib/bsh-deployer.jar
 %%T%%/server/default/lib/hsqldb-plugin.jar
 %%T%%/server/default/lib/hsqldb.jar
@@ -334,8 +394,8 @@ etc/rc.d/020.jboss3.sh
 %%T%%/server/default/lib/properties-plugin.jar
 %%T%%/server/default/lib/scheduler-plugin-example.jar
 %%T%%/server/default/lib/scheduler-plugin.jar
+%%T%%/server/default/lib/snmp-adaptor.jar
 %%T%%/server/default/lib/snmp-support.jar
-%%T%%/server/default/lib/tyrex.jar
 %%T%%/server/default/lib/xalan.jar
 %%T%%/server/minimal/conf/jboss-service.xml
 %%T%%/server/minimal/conf/jndi.properties
@@ -351,6 +411,102 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/connector_1_0.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/ejb-jar.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/ejb-jar_2_0.dtd
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00014.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00015.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00016.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00017.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00021.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00022.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/application_1_3_dtd/index.html
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00014.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00015.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00016.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00017.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00021.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00022.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00033.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00034.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00035.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00036.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00037.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00038.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00039.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00040.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00041.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00042.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00043.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00044.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00045.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00046.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00047.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00048.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00049.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00050.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00051.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00052.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00053.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00054.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00055.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00056.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00057.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/comp00058.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/dgmDtAny.gif
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/dgmDtBoolean.gif
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/dgmDtDate.gif
@@ -366,6 +522,171 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/dgmTypeComplex.gif
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/dgmTypeEmpty.gif
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/dgmTypeMixed.gif
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00014.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00015.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00016.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00017.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00021.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00022.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00033.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00034.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00035.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00036.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00037.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00038.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00039.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00040.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00041.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00042.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00043.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00044.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00045.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00046.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00047.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00048.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00049.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00050.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00051.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00052.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00053.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00054.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00055.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00056.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00057.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00058.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00059.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00060.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00061.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00062.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00063.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00064.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00065.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00066.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00067.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00068.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00069.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00070.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00071.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00072.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00073.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00074.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00075.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00076.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00077.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00078.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00079.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00080.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00081.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00082.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00083.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00084.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00085.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00086.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00087.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00088.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00089.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00090.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00091.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00092.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00093.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00094.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00095.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00096.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00097.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00098.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00099.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00100.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00101.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00102.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00103.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00104.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00105.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00106.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00107.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00108.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00109.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00110.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00111.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00112.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00113.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00114.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00115.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00116.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00117.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00118.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00119.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00120.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00121.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00122.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00123.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00124.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00125.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00126.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00127.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00128.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00129.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00130.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00131.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00132.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00133.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00134.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00135.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00136.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00137.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00138.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00139.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00140.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00141.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00142.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00143.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00144.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00145.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00146.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00147.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00148.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00149.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00150.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00151.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00152.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00153.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00154.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00155.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00156.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00157.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00158.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00159.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00160.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00161.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/comp00162.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/esdDML.xsl
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/esdSOX.xsl
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/esdXDR.xsl
@@ -405,6 +726,20 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00021.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00022.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00033.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00034.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00035.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00036.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/comp00037.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/dtdml.dml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/id-map.xml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd/index.html
@@ -433,10 +768,29 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00023.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00024.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/comp00029.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/dtdml.dml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/id-map.xml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd/pspbrwse.jbf
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00001.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00002.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00003.svg
@@ -455,9 +809,107 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00016.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00017.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/comp00021.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/dtdml.dml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/id-map.xml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd/index.html
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00014.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00015.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00016.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00017.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00021.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00022.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00033.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00034.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00035.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00036.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00037.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00038.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00039.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00040.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00041.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00042.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00043.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00044.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00045.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00046.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00047.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00048.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00049.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00050.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00051.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00052.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00053.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00054.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00055.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00056.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00057.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00058.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00059.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00060.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00061.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00062.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00063.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00064.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00065.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00066.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00067.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00068.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00069.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00070.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00071.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00072.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00073.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00074.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00075.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00076.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00077.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00078.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00079.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00080.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00081.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00082.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00083.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00084.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00085.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00086.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00087.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00088.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00089.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00090.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00091.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/comp00092.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00001.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00002.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00003.svg
@@ -569,6 +1021,11 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00109.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00110.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00111.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00112.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00113.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00114.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00115.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/comp00116.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/dtdml.dml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/id-map.xml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd/index.html
@@ -717,6 +1174,16 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00100.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00101.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00102.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00103.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00104.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00105.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00106.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00107.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00108.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00109.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00110.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00111.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/comp00112.svg
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/dtdml.dml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/id-map.xml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd/index.html
@@ -735,15 +1202,298 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/security_config_dtd/dtdml.dml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/security_config_dtd/id-map.xml
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/security_config_dtd/index.html
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/services-binding_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/sourceutils.js
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00014.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00015.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00016.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00017.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00021.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00022.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00033.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00034.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00035.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00036.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00037.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00038.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00039.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00040.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00041.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00042.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00043.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00044.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00045.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00046.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00047.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00048.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00049.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00050.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00051.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00052.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00053.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00054.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00055.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00056.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00057.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00058.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00059.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00060.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00061.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00062.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00063.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00064.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00065.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00066.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00067.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00068.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00069.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00070.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00071.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00072.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00073.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00074.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00075.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00076.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00077.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00078.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00079.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00080.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00081.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00082.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00083.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00084.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00085.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00086.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00087.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00088.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00089.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00090.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00091.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00092.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00093.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00094.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00095.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00096.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00097.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00098.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00099.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00100.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00101.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00102.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00103.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00104.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00105.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/comp00106.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/svgcheck.js
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/svgcheck.vbs
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00001.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00002.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00003.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00004.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00005.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00006.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00007.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00008.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00009.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00010.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00011.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00012.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00013.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00014.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00015.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00016.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00017.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00018.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00019.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00020.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00021.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00022.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00023.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00024.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00025.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00026.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00027.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00028.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00029.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00030.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00031.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00032.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00033.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00034.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00035.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00036.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00037.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00038.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00039.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00040.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00041.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00042.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00043.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00044.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00045.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00046.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00047.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00048.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00049.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00050.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00051.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00052.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00053.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00054.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00055.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00056.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00057.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00058.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00059.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00060.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00061.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00062.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00063.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00064.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00065.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00066.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00067.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00068.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00069.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00070.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00071.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00072.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00073.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00074.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00075.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00076.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00077.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00078.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00079.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00080.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00081.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00082.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00083.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00084.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00085.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00086.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00087.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00088.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00089.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00090.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00091.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00092.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00093.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00094.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00095.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00096.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00097.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00098.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00099.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00100.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00101.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00102.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00103.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00104.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00105.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00106.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00107.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00108.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00109.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00110.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00111.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00112.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00113.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00114.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00115.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00116.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00117.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00118.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00119.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00120.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00121.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00122.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00123.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00124.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00125.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00126.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00127.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00128.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00129.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00130.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00131.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00132.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00133.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00134.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00135.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00136.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00137.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00138.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00139.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00140.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00141.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00142.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00143.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00144.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00145.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00146.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00147.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00148.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00149.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00150.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00151.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00152.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00153.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/comp00154.svg
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/dtdml.dml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/id-map.xml
+%%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd/index.html
 %%PORTDOCS%%share/doc/%%T%%/dtd/html-svg/xsd_common.xsl
 %%PORTDOCS%%share/doc/%%T%%/dtd/jaws.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jaws_2_4.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jaws_3_0.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jboss-app_3_0.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jboss-app_3_2.dtd
+%%PORTDOCS%%share/doc/%%T%%/dtd/jboss-ds_1_0.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jboss-service_3_2.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jboss-web.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/jboss-web_3_0.dtd
@@ -758,9 +1508,13 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/dtd/security_config.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/web-app_2_2.dtd
 %%PORTDOCS%%share/doc/%%T%%/dtd/web-app_2_3.dtd
+%%PORTDOCS%%share/doc/%%T%%/examples/binding-manager/sample-bindings.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/asapxcess-jb3.2-ds.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jca/cicsr9s-service.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/db2-ds.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jca/db2-xa-ds.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/facets-ds.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jca/fastobjects-jboss32-ds.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/firebird-ds.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/generic-ds.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/hsqldb-ds.xml
@@ -780,7 +1534,18 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/sapr3-ds.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/solid-ds.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/jca/sybase-ds.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/file-pm-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/https-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/mssql-jdbc2-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/mysql-jdbc2-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/oracle-jdbc2-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/postgres-jdbc2-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jms/uil-service.xml
+%%PORTDOCS%%share/doc/%%T%%/examples/jmx/ejb-management.jar
+%%PORTDOCS%%share/doc/%%T%%/examples/jmx/jmx-rmi-adaptor.sar/META-INF/MANIFEST.MF
+%%PORTDOCS%%share/doc/%%T%%/examples/jmx/jmx-rmi-adaptor.sar/META-INF/jboss-service.xml
 %%PORTDOCS%%share/doc/%%T%%/examples/netboot/netboot.war
+%%PORTDOCS%%share/doc/%%T%%/examples/varia/jboss-bindings.xml
 %%PORTDOCS%%share/doc/%%T%%/tests/allclasses-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/index.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/bank/test/BankEJB20StressTestCase.html
@@ -794,6 +1559,8 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/bmp/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/bmp/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/classloader/test/CircularityUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/classloader/test/ClasspathExtensionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/classloader/test/ScopedTransactionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/classloader/test/ScopingUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/classloader/test/UnifiedLoaderUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/classloader/test/package-frame.html
@@ -807,15 +1574,30 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrstress/CMRStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrstress/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrstress/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrtransaction/test/CMRTransactionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrtransaction/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrtransaction/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/commerce/CompleteUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/commerce/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/commerce/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/dbschema/relationship/RelationshipSchemaUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/dbschema/relationship/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/dbschema/relationship/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/ejbselect/EJBSelectUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/ejbselect/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/ejbselect/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/enum/test/EnumUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/enum/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/enum/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/fkmapping/test/FKMappingUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/fkmapping/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/fkmapping/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/fkstackoverflow/test/FKStackOverflowUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/fkstackoverflow/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/fkstackoverflow/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/idxandusersql/test/IdxAndUsersqlUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/idxandusersql/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/idxandusersql/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/keygen/test/KeyGenerationUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/keygen/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/keygen/test/package-summary.html
@@ -825,6 +1607,12 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/optimisticlock/test/OptimisticLockUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/optimisticlock/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/optimisticlock/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/passivation/test/EntityPassivationUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/passivation/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/passivation/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/perf/test/PerfUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/perf/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/perf/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/readonly/ReadonlyUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/readonly/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/readonly/package-summary.html
@@ -836,7 +1624,9 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/simple/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cmp2/simple/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/BmpUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/CmpUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/CtsCmp2UnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/IndependentJarsUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/MDBUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/StatefulSessionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/cts/test/StatelessSessionStressTestCase.html
@@ -861,10 +1651,21 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/entityexc/test/EntityExcUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/entityexc/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/entityexc/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/excepiiop/test/ExceptionTimingStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/excepiiop/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/excepiiop/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/exception/EntityExceptionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/exception/ExceptionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/exception/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/exception/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/jmx/test/HAServiceMBeanSupportUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/jmx/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/jmx/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/singleton/test/HASingletonControllerUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/singleton/test/HASingletonSupportUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/singleton/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/ha/singleton/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/hello/test/HelloCachedUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/hello/test/HelloClusteredHttpStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/hello/test/HelloHttpStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/hello/test/HelloTimingStressTestCase.html
@@ -879,23 +1680,42 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/idgen/test/IdGenUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/idgen/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/idgen/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/iiop/test/ParameterPassingStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/iiop/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/iiop/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/invokers/test/MultiInvokersUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/invokers/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/invokers/test/package-summary.html
-%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/InvocationLayerStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/JBossMQPerfStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/OIL2InvocationLayerStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/OILInvocationLayerStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/RMIInvocationLayerStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/SendReplyPerfStressTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/UIL2InvocationLayerStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/perf/package-summary.html
-%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/ConnectionUnitTestCase.html
-%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/JBossMQUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/DestinationFullUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/HTTPConnectionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/HTTPJBossMQUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/JBossSessionRecoverUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/LargeMessageUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/MessageBodyUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/OIL2ConnectionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/OIL2JBossMQUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/OILConnectionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/OILJBossMQUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/RMIConnectionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/RMIJBossMQUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/RollBackUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/ScheduledDeliveryUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/SecurityUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/SelectorParserUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/SelectorSyntaxUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/UIL2ConnectionUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/UIL2JBossMQUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/UILConnectionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/UnackedUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/XAResourceUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmq/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jbossmx/compliance/modelmbean/ModelMBeanTestCase.html
@@ -953,9 +1773,11 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/CachedConnectionSessionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/ConnectionFactorySerializationUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/DeploymentUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/JDBCDriverRedeployUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/JDBCStatementTestsConnectionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/LocalWrapperCleanupUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/ReentrantUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/UnsharedConnectionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/UserTxUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/XAExceptionUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jca/test/XATxConnectionManagerUnitTestCase.html
@@ -967,16 +1789,19 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmsra/test/RaTopicUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmsra/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmsra/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/AttributesUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/CPManifestUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/DeployConnectionManagerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/DeployServiceUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/DeployXMBeanUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/EarDeploymentUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/HAInvokerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/JMXInvokerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/JarInSarJSR77UnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/MBeanDependsOnConnectionManagerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/MBeanDependsOnEJBUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/MissingClassUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/SecureJMXInvokerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/ServiceRsrcsUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/UndeployBrokenPackageUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/jmx/test/UnpackedDeploymentUnitTestCase.html
@@ -999,7 +1824,9 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/ENCUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/EjbLinkUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/ExternalContextUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/ImplUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/InternalNamingClassReplacementUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/NamingStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/SecurityUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/SimpleUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/naming/test/package-frame.html
@@ -1027,6 +1854,7 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/PermissionNameUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/SRPLoginModuleUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/SRPUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/SecurityMgrStressTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/SecurityProxyUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/XMLLoginModulesUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/security/test/package-frame.html
@@ -1037,14 +1865,43 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/testbeancluster/test/BeanUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/testbeancluster/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/testbeancluster/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/tm/test/TransactionManagerUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/tm/test/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/tm/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/util/test/PropertyEditorsUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/util/test/PropertyPatternUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/util/test/ProtocolHandlerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/util/test/SchedulerUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/util/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/util/test/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/web/test/WebIntegrationUnitTestCase.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/web/test/package-frame.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/web/test/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/addr/AddrUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/addr/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/addr/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/arrays/ArraysUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/arrays/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/arrays/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/axis/AxisUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/axis/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/axis/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/external/ExternalUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/external/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/external/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/hello/HelloUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/hello/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/hello/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/jmx/JmxUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/jmx/WSRJMXAccessUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/jmx/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/jmx/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/store/StoreUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/store/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/store/package-summary.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/uddi/registration/UDDI4JRegistryProxyUnitTestCase.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/uddi/registration/package-frame.html
+%%PORTDOCS%%share/doc/%%T%%/tests/org/jboss/test/webservice/uddi/registration/package-summary.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/objectweb/jtests/jms/conform/connection/ConnectionTest.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/objectweb/jtests/jms/conform/connection/TopicConnectionTest.html
 %%PORTDOCS%%share/doc/%%T%%/tests/org/objectweb/jtests/jms/conform/connection/package-frame.html
@@ -1092,10 +1949,22 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/objectweb/jtests/jms
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/objectweb/jtests
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/objectweb
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/uddi/registration
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/uddi
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/store
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/jmx
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/hello
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/external
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/axis
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/arrays
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice/addr
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/webservice
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/web/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/web
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/util/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/util
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/tm/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/tm
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/testbeancluster/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/testbeancluster
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/testbean/test
@@ -1149,6 +2018,8 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/jbossmq
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/invokers/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/invokers
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/iiop/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/iiop
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/idgen/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/idgen
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/hellojrmpiiop/test
@@ -1157,7 +2028,14 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/helloiiop
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/hello/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/hello
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/ha/singleton/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/ha/singleton
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/ha/jmx/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/ha/jmx
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/ha
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/exception
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/excepiiop/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/excepiiop
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/entityexc/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/entityexc
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/entity/test
@@ -1173,15 +2051,29 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/simple
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/relationship
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/readonly
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/perf/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/perf
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/passivation/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/passivation
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/optimisticlock/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/optimisticlock
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/lob
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/keygen/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/keygen
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/idxandusersql/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/idxandusersql
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/fkstackoverflow/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/fkstackoverflow
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/fkmapping/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/fkmapping
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/enum/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/enum
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/ejbselect
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/dbschema/relationship
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/dbschema
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/commerce
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrtransaction/test
+%%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrtransaction
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/cmrstress
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/cmr/test
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss/test/cmp2/cmr
@@ -1200,17 +2092,31 @@ etc/rc.d/020.jboss3.sh
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org/jboss
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests/org
 %%PORTDOCS%%@dirrm share/doc/%%T%%/tests
+%%PORTDOCS%%@dirrm share/doc/%%T%%/examples/varia
 %%PORTDOCS%%@dirrm share/doc/%%T%%/examples/netboot
+%%PORTDOCS%%@dirrm share/doc/%%T%%/examples/jmx/jmx-rmi-adaptor.sar/META-INF
+%%PORTDOCS%%@dirrm share/doc/%%T%%/examples/jmx/jmx-rmi-adaptor.sar
+%%PORTDOCS%%@dirrm share/doc/%%T%%/examples/jmx
+%%PORTDOCS%%@dirrm share/doc/%%T%%/examples/jms
 %%PORTDOCS%%@dirrm share/doc/%%T%%/examples/jca
+%%PORTDOCS%%@dirrm share/doc/%%T%%/examples/binding-manager
 %%PORTDOCS%%@dirrm share/doc/%%T%%/examples
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/web-app_2_3_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/struts-config_1_1_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/services-binding_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/security_config_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jbosscmp-jdbc_3_2_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss_xmbean_1_0_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss_3_2_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss_3_0_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss-web_3_2_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss-web_3_0_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss-service_3_2_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss-ds_1_0_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/jboss-app_3_2_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/ejb-jar_2_0_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/connector_1_0_dtd
+%%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg/application_1_3_dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd/html-svg
 %%PORTDOCS%%@dirrm share/doc/%%T%%/dtd
 %%PORTDOCS%%@dirrm share/doc/%%T%%
@@ -1219,12 +2125,13 @@ etc/rc.d/020.jboss3.sh
 @dirrm %%T%%/server/minimal/conf
 @dirrm %%T%%/server/minimal
 @dirrm %%T%%/server/default/lib
+@dirrm %%T%%/server/default/deploy/snmp-adaptor.sar/META-INF
+@dirrm %%T%%/server/default/deploy/snmp-adaptor.sar
 @dirrm %%T%%/server/default/deploy/management
-@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar/META-INF
-@dirrm %%T%%/server/default/deploy/jmx-rmi-adaptor.sar
 @dirrm %%T%%/server/default/deploy/jmx-invoker-adaptor-server.sar/META-INF
 @dirrm %%T%%/server/default/deploy/jmx-invoker-adaptor-server.sar
 @dirrm %%T%%/server/default/deploy/jmx-console.war/images
+@dirrm %%T%%/server/default/deploy/jmx-console.war/cluster
 @dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/lib
 @dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model
 @dirrm %%T%%/server/default/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html
@@ -1250,8 +2157,8 @@ etc/rc.d/020.jboss3.sh
 @dirrm %%T%%/server/default/deploy/jms/jbossmq-httpil.sar/META-INF
 @dirrm %%T%%/server/default/deploy/jms/jbossmq-httpil.sar
 @dirrm %%T%%/server/default/deploy/jms
-@dirrm %%T%%/server/default/deploy/jbossweb-jetty.sar/META-INF
-@dirrm %%T%%/server/default/deploy/jbossweb-jetty.sar
+@dirrm %%T%%/server/default/deploy/jbossweb-tomcat41.sar/META-INF
+@dirrm %%T%%/server/default/deploy/jbossweb-tomcat41.sar
 @dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http/servlet
 @dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation/http
 @dirrm %%T%%/server/default/deploy/http-invoker.sar/invoker.war/WEB-INF/classes/org/jboss/invocation
@@ -1268,12 +2175,13 @@ etc/rc.d/020.jboss3.sh
 @dirrm %%T%%/server/default
 @dirrm %%T%%/server/all/lib
 @dirrm %%T%%/server/all/farm
+@dirrm %%T%%/server/all/deploy/snmp-adaptor.sar/META-INF
+@dirrm %%T%%/server/all/deploy/snmp-adaptor.sar
 @dirrm %%T%%/server/all/deploy/management
-@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar/META-INF
-@dirrm %%T%%/server/all/deploy/jmx-rmi-adaptor.sar
 @dirrm %%T%%/server/all/deploy/jmx-invoker-adaptor-server.sar/META-INF
 @dirrm %%T%%/server/all/deploy/jmx-invoker-adaptor-server.sar
 @dirrm %%T%%/server/all/deploy/jmx-console.war/images
+@dirrm %%T%%/server/all/deploy/jmx-console.war/cluster
 @dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/lib
 @dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/model
 @dirrm %%T%%/server/all/deploy/jmx-console.war/WEB-INF/classes/org/jboss/jmx/adaptor/html
@@ -1299,8 +2207,8 @@ etc/rc.d/020.jboss3.sh
 @dirrm %%T%%/server/all/deploy/jms/jbossmq-httpil.sar/META-INF
 @dirrm %%T%%/server/all/deploy/jms/jbossmq-httpil.sar
 @dirrm %%T%%/server/all/deploy/jms
-@dirrm %%T%%/server/all/deploy/jbossweb-jetty.sar/META-INF
-@dirrm %%T%%/server/all/deploy/jbossweb-jetty.sar
+@dirrm %%T%%/server/all/deploy/jbossweb-tomcat41.sar/META-INF
+@dirrm %%T%%/server/all/deploy/jbossweb-tomcat41.sar
 @dirrm %%T%%/server/all/deploy/jbossha-httpsession.sar/org/jboss/ha/httpsession/server
 @dirrm %%T%%/server/all/deploy/jbossha-httpsession.sar/org/jboss/ha/httpsession/beanimpl/interfaces
 @dirrm %%T%%/server/all/deploy/jbossha-httpsession.sar/org/jboss/ha/httpsession/beanimpl
@@ -1337,6 +2245,7 @@ etc/rc.d/020.jboss3.sh
 @dirrm %%T%%/server/all/deploy/http-invoker.sar/invoker.war
 @dirrm %%T%%/server/all/deploy/http-invoker.sar/META-INF
 @dirrm %%T%%/server/all/deploy/http-invoker.sar
+@dirrm %%T%%/server/all/deploy/deploy.last
 @dirrm %%T%%/server/all/deploy
 @dirrm %%T%%/server/all/conf
 @dirrm %%T%%/server/all
@@ -1346,5 +2255,4 @@ etc/rc.d/020.jboss3.sh
 @dirrm %%T%%/docs
 @dirrm %%T%%/client
 @dirrm %%T%%/bin
-@dirrm %%T%%/application-deployments
 @dirrm %%T%%

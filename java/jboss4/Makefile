@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION= 	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	java
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	jonc@chen.org.nz
 COMMENT=	JBoss 3, an open-source J2EE application server
 
 USE_JAVA=	1.3+
@@ -109,11 +108,11 @@ do-install:
 		(cd ${APP_HOME} && ${XARGS} -0 ${MKDIR}))
 	(cd ${WRKSRC} && ${FIND} . \( -type d -name docs -prune \) -or -type f |\
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${APP_HOME})
-	${MKDIR} ${APP_HOME}/application-deployments
 	${INSTALL} -o ${USER} -g ${GROUP} -m 06754\
 		${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
 	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
 	${MKDIR} ${LOG_DIR}
+	${FIND} ${APP_HOME} -type d -print | ${XARGS} ${CHOWN} ${USER}:${GROUP}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDOUT_LOG}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDERR_LOG}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
