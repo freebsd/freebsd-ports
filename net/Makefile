@@ -9,7 +9,6 @@
     SUBDIR += adns
     SUBDIR += aggregate
     SUBDIR += aim
-    SUBDIR += aim-transport
     SUBDIR += airport
     SUBDIR += amcl
     SUBDIR += archie
@@ -48,7 +47,6 @@
     SUBDIR += coda_doc
     SUBDIR += coda_intro
     SUBDIR += coda_server
-    SUBDIR += conference
     SUBDIR += confregdecode
     SUBDIR += corkscrew
     SUBDIR += crescendo
@@ -150,7 +148,6 @@
     SUBDIR += isc-dhcp3
     SUBDIR += isic
     SUBDIR += jabber
-    SUBDIR += jud
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork2
@@ -191,7 +188,6 @@
     SUBDIR += mrt
     SUBDIR += mrtg
     SUBDIR += msend
-    SUBDIR += msn-transport
     SUBDIR += mtr
     SUBDIR += mudix
     SUBDIR += naim
