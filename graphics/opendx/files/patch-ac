@@ -1,0 +1,11 @@
+--- src/exec/dpexec/loader.c.orig	Wed May 26 01:51:54 1999
++++ src/exec/dpexec/loader.c	Thu May 27 10:13:59 1999
+@@ -852,7 +852,7 @@
+     return ERROR;
+ }
+ 
+-Error DXUnloadObjFile(char *fname)
++Error DXUnloadObjFile(char *fname, char *envvar)
+ {
+     /* the unload routine needs the entry point address, which we
+      * wouldn't need to save unless this is an important function.

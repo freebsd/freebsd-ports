@@ -1,0 +1,19 @@
+--- include/dx/arch.h.orig	Wed May 26 01:14:59 1999
++++ include/dx/arch.h	Thu May 27 09:49:29 1999
+@@ -785,6 +785,16 @@
+ 
+ #endif   /* alphax */
+ 
++/* 
++ * FreeBSD (and probably NetBSD and OpenBSD)
++ */
++#ifdef __FreeBSD__
++
++#undef F_CHAR_READY
++#define F_CHAR_READY(fp) ((fp)->_r > 0 || (fp)->_ub._base)
++
++#endif      /* __FreeBSD__ */
++
+ 
+ 
+ /* if standard IEEE floating point, these are the constants.  the
