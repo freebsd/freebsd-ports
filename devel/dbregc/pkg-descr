@@ -1,0 +1,3 @@
+DBREGC accepts breakpoint specifications on the command line and
+prints out the corresponding IA32 hardware debug register values in a
+format usful for kernel debugging with ddb.
