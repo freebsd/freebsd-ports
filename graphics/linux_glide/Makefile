@@ -9,7 +9,9 @@
 PORTNAME=	glide
 PORTVERSION=	2.4
 CATEGORIES=	graphics linux
-MASTER_SITES=	ftp://ftp.3dfx.com/pub/glide/
+MASTER_SITES=	http://www2.cons.org/freebsd-distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cracauer
 PKGNAMEPREFIX=	linux_
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_2_4
 
