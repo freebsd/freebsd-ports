@@ -6,28 +6,24 @@
 #
 
 PORTNAME=	caml
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 	ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/caml-light/ \
 	ftp://arcadia.informatik.uni-muenchen.de/pub/comp/programming/languages/functional/caml-light/ \
 	ftp://sunsite.icm.edu.pl/pub/programming/caml/ \
 	http://wwwfun.kurims.kyoto-u.ac.jp/soft/caml-light/
-DISTNAME=	cl74unix
+DISTNAME=	cl75unix
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A strongly typed functional language belonging to the ML family
 
 USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/cl74
+WRKSRC=		${WRKDIR}/cl75
 ALL_TARGET=	configure world bootstrap
 MAN1=	camlc.1 camllex.1 camllibr.1 camllight.1 camlmktop.1 camlrun.1 camlyacc.1 mletags.1 camllorder.1 camlsearch.1
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 do-build:
 	cd ${WRKSRC}/src; ${MAKE} ${ALL_TARGET} PREFIX=${PREFIX} \

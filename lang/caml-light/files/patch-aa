@@ -1,11 +1,11 @@
---- src/Makefile.orig	Thu Apr 24 20:21:03 1997
-+++ src/Makefile	Tue Jul 28 08:30:13 1998
-@@ -24,19 +24,19 @@
+--- src/Makefile.orig	Wed Mar  3 18:55:57 1999
++++ src/Makefile	Sat Mar  6 19:51:31 2004
+@@ -26,19 +26,19 @@
  # not all Unix C preprocessors define it.
  # If your cpp is too fussy, make tools/clprepro and use this:
  # CPP=../../src/tools/clprepro -Dunix
--CPP=/lib/cpp -P -Dunix
-+CPP=/usr/bin/cpp -P -Dunix
+-CPP=/lib/cpp -P -traditional -Dunix
++CPP=/usr/bin/cpp -P -traditional -Dunix
  
  # The directory where public executables will be installed
 -BINDIR=/usr/local/bin
@@ -24,7 +24,7 @@
  
  # Some "make"s need this to ensure that they call the Bourne shell,
  # not the C shell. Seems harmless on most other "make"s.
-@@ -118,8 +118,8 @@
+@@ -120,8 +120,8 @@
  
  # Install the Caml Light system
  install:

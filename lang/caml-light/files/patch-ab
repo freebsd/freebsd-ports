@@ -1,5 +1,5 @@
---- contrib/Makefile--	Mon Dec  1 23:47:01 1997
-+++ contrib/Makefile	Mon Jul 27 12:27:01 1998
+--- contrib/Makefile.orig	Sat Nov 11 15:57:42 2000
++++ contrib/Makefile	Sat Mar  6 06:42:32 2004
 @@ -5,7 +5,7 @@
  # Remember that "libunix" is required for
  # "debugger", "libgraph", "camltk", "camltk4", and "search_isos".
@@ -18,7 +18,7 @@
  
  # Test to see whether ranlib exists on the machine
  RANLIBTEST=test -f /usr/bin/ranlib -o -f /bin/ranlib
-@@ -31,26 +31,26 @@
+@@ -31,27 +31,27 @@
  RANLIB=ranlib
  
  # The directory where public executables will be installed
@@ -41,21 +41,17 @@
  # Needed for the "libgraph" and "camltk" packages.
 -X11_INCLUDES=/usr/X11R6/include
 +X11_INCLUDES=${X11BASE}/include
+ #X11_INCLUDES=/usr/include/X11
  
  # The path to the directory containing the X11 libraries.
  # (usually /usr/lib; for SunOS with OpenLook, /usr/openwin/lib)
  # Needed for the "libgraph" and "camltk" packages.
 -X11_LIB=/usr/X11R6/lib
 +X11_LIB=${X11BASE}/lib
+ #X11_LIB=/usr/lib/X11
  
  # Name of the target architecture.
- # Used only for the libnum library (arbitrary-precision arithmetic), to
-@@ -62,15 +62,15 @@
- # See the file libnum/README for more explanations.
- # If you don't know, leave BIGNUM_ARCH=C, which selects a portable
- # C implementation of these routines.
--BIGNUM_ARCH=C
-+BIGNUM_ARCH=pentium
+@@ -68,19 +68,19 @@
  
  # Name of the directory where LaTeX style files should be installed.
  # Needed only for the "caml-tex" and "caml-latex2e" packages.
@@ -69,3 +65,33 @@
  
  # Name of the directories where the tcl.h and tk.h includes can be found.
  # Needed only for the "camltk" package.
+ 
+ # /usr/local configuration
+ # True64 configuration
+-TCLINCLDIR=/usr/local/lib/tcl8.0/include
+-TKINCLDIR=/usr/local/lib/tk8.0/include
++TCLINCLDIR=${LOCALBASE}/lib/tcl8.4/include
++TKINCLDIR=${LOCALBASE}/lib/tk8.4/include
+ # RedHat Linux configuration
+ #TCLINCLDIR=/usr/include
+ #TKINCLDIR=/usr/include
+@@ -89,8 +89,8 @@
+ # Needed only for the "camltk" package.
+ # /usr/local configuration
+ # True64 Unix configuration
+-TKLIBDIR=/usr/local/lib/tk8.0/lib
+-TCLLIBDIR=/usr/local/lib/tcl8.0/lib
++TKLIBDIR=${LOCALBASE}/lib/tk8.4/lib
++TCLLIBDIR=${LOCALBASE}/lib/tcl8.4/lib
+ 
+ # RedHat Linux configuration
+ #TKLIBDIR=/usr/lib
+@@ -100,7 +100,7 @@
+ # a custom Tcl/Tk with various extensions (such as Xpm)
+ #TKLIBS=-ltk -ltcl -lX11
+ # True64 Unix configuration
+-TKLIBS=-ltk8.0 -ltcl8.0 -lX11 -lm
++TKLIBS=-ltk8.4 -ltcl8.4 -lX11 -lm
+ # RedHat Linux configuration
+ #TKLIBS=-ltk8.0 -ltcl8.0 -lX11 -ldl -lm
+ 
