@@ -1,0 +1,13 @@
+CD creation process should be fun and easy, don't you agree?!
+
+However, most graphical CD-creation/copying tools available for
+both Linux and Unix today, do just the opposite.
+
+CD Bake Oven was designed with one goal in mind: combine the power
+and stability of great command line utilities with contemporary
+easy to use user interface. CDBO enables you to create data or music
+CDs in the most intuitive matter, allowing you to control every
+aspect of the process. It is built on top of very well known
+'cdrecord', 'mkisofs', 'cdda2wav' and 'cdparanoia' encapsulating
+most of the options those utilities provide. This makes creating
+professional quality media as easy as making a few mouse clicks.
