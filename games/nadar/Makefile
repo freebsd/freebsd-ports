@@ -12,11 +12,10 @@ MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft/
 
 MAINTAINER=	sakai@seki.ee.kagu.sut.ac.jp
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 ALL_TARGET=	all
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 MAN1=		nadars.1 nadar.1
 MANCOMPRESSED=	yes

@@ -14,9 +14,8 @@ MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/ \
 
 MAINTAINER=	aa8vb@ipass.net
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	glclock
 

@@ -15,9 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		xed.1
 
 .include <bsd.port.mk>

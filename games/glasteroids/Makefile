@@ -13,13 +13,12 @@ DISTNAME=	Glasteriods
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 MAKEFILE=	Makefile.FreeBSD
 
 WRKSRC=		${WRKDIR}/Glasteroids
 
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 
 pre-build:
 	@ ${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}

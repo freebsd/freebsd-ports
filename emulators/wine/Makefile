@@ -15,9 +15,6 @@ DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
 MAINTAINER=	pfeifer@dbai.tuwien.ac.at
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		GL.14:${PORTSDIR}/graphics/Mesa3
-
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-opengl
@@ -28,6 +25,8 @@ MAN1=		wine.1
 MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
+USE_XPM=	yes
+USE_MESA=	yes
 
 .if !defined(NDEBUG)
 STRIP=

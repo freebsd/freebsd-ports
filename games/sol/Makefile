@@ -12,14 +12,14 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		shhopt.1:${PORTSDIR}/devel/libshhopt \
+LIB_DEPENDS=	shhopt.1:${PORTSDIR}/devel/libshhopt \
 		shhmsg.1:${PORTSDIR}/devel/libshhmsg \
 		xalloc.1:${PORTSDIR}/devel/libxalloc \
 		shhcards.1:${PORTSDIR}/games/libshhcards
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 MAN6=		sol.6
 

@@ -13,10 +13,9 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
+USE_FREETYPE=	yes
 
 do-build:
 	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${LOCALBASE}/include/freetype \

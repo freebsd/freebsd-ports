@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER?=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \
-		png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
+USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-vflib
 

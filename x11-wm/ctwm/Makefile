@@ -13,13 +13,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ctwm-images${EXTRACT_SUFX}
 
 MAINTAINER=	torstenb@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=  gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=    gm4:${PORTSDIR}/devel/m4
 
 MAKE_ENV=	LOCALBASE=${LOCALBASE}
 
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		ctwm.1
 
 post-extract:

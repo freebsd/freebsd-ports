@@ -14,11 +14,11 @@ DISTNAME=	ASFiles-${PORTVERSION}
 
 MAINTAINER=	lukin@okbmei.msk.su
 
-LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 MAN1=	files.1
 MAN3=	regexp.3
 

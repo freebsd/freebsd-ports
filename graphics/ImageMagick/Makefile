@@ -24,8 +24,7 @@ LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		ttf.4:${PORTSDIR}/print/freetype
+		tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
@@ -33,6 +32,7 @@ BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 
 USE_PERL5=	yes
 USE_XLIB=	yes
+USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

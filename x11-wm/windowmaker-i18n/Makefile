@@ -14,8 +14,7 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	mac@jp.freebsd.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		ungif.5:${PORTSDIR}/graphics/libungif \
+LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -27,6 +26,7 @@ RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

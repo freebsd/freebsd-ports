@@ -16,8 +16,7 @@ DISTNAME=	cyrx-${PORTVERSION}
 
 MAINTAINER=     ozz@FreeBSD.org.ru
 
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
-
+USE_XPM=	yes
 NO_INSTALL_MANPAGES= yes
 
 .include <bsd.port.pre.mk>

@@ -16,10 +16,9 @@ MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.1/X11/acontrib/gleyes/ \
 
 MAINTAINER=	malte.lance@gmx.net
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 MAN1=		gleyes.1
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/gleyes ${PREFIX}/bin

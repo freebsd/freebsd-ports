@@ -14,11 +14,11 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	patseal@hyperhost.net
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
 IGNOREFILES=	harmonics.world.gz
 
+USE_XPM=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=	xtide.1 tide.1

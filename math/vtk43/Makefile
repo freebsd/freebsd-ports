@@ -13,9 +13,9 @@ DISTNAME=	vtk312Unix
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3	\
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+USE_MESA=	yes
 WRKSRC=		${WRKDIR}/vtk31
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

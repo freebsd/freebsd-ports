@@ -12,9 +12,8 @@ MASTER_SITES=	ftp://ftp.proximity.com.au/pub/xenon/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 MAN1=		xe.1
 

@@ -14,12 +14,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.0.2:${PORTSDIR}/devel/sdl \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=  	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
 DATAVERSION=	0.8.6
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 

@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	gpalmer@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/tvtwm
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		tvtwm.1
 
 .include <bsd.port.mk>

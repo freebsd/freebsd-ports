@@ -13,10 +13,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/pclock ${PREFIX}/bin

@@ -15,7 +15,6 @@ DISTNAME=	wmG-${PORTVERSION}
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		esd.2:${PORTSDIR}/audio/esound \
 		gnome.4:${PORTSDIR}/x11/gnomelibs
 
@@ -23,6 +22,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure

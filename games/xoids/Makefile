@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=		yes
+USE_XPM=		yes
 MAN6=			xoids.6
 MANCOMPRESSED=		no
 

@@ -14,11 +14,11 @@ MASTER_SITE_SUBDIR=	mph
 MAINTAINER=	mph@freebsd.org
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		esd.2:${PORTSDIR}/audio/esound
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
+USE_XPM=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes

@@ -13,10 +13,10 @@ DISTNAME=	dx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
-		netcdf.1:${PORTSDIR}/math/netcdf
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 
 USE_XLIB=	yes
+USE_MESA=	yes
 REQUIRES_MOTIF=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes

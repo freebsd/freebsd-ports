@@ -13,12 +13,11 @@ DISTNAME=	wmfire-0.0.3.9pre4
 
 MAINTAINER=	jedgar@fxp.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x
-CONFIGURE_ENV+=	CFLAGS="-I${PREFIX}/include ${CFLAGS}" \
+CONFIGURE_ENV=	CFLAGS="-I${PREFIX}/include ${CFLAGS}" \
 		LIBS="-L${PREFIX}/lib"
 
 .include <bsd.port.mk>

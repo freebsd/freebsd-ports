@@ -15,8 +15,7 @@ DISTNAME=	gnome-find-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		glade.4:${PORTSDIR}/devel/libglade \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
@@ -28,6 +27,7 @@ CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
 		LDFLAGS="-lgnuregex -L${LOCALBASE}/lib"
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		gnome-find.1

@@ -14,8 +14,7 @@ DISTNAME=	ja-Wine-${PORTVERSION:S/.//g}
 DISTFILES=	Wine-${PORTVERSION:S/.//g}.tar.gz \
 		Wine${PORTVERSION:S/.//g}-ja.tar.gz
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes

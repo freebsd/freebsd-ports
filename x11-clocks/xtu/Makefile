@@ -12,9 +12,8 @@ MASTER_SITES=	http://www.rostock.zgdv.de/~runge/xtu/
 
 MAINTAINER=	runge@rostock.zgdv.de
 
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 #post-install:
 #		strip ${PREFIX}/bin/xtu

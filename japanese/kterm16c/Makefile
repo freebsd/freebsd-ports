@@ -20,7 +20,6 @@ MASTER_SITE_SUBDIR=	applications
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	kterm
@@ -31,6 +30,7 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
 PATCH_DIST_STRIP= -p1
 
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 

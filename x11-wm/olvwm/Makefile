@@ -21,11 +21,11 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	green@FreeBSD.org
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		olvwm.1 olvwmrc.1
 
 .include <bsd.port.mk>

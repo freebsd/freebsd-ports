@@ -13,11 +13,10 @@ MASTER_SITE_SUBDIR=	apps/asapm
 
 MAINTAINER=	handy@physics.montana.edu
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 

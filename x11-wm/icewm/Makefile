@@ -18,12 +18,12 @@ MAINTAINER=	nakai@FreeBSD.org
 .if defined(GNOME)
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
-LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ARGS+=	--enable-i18n
+USE_XPM=	yes
+CONFIGURE_ARGS=	--enable-i18n
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar

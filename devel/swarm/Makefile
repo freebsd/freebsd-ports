@@ -14,10 +14,10 @@ MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
 LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi \
 		png.4:${PORTSDIR}/graphics/png \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		BLT24.2:${PORTSDIR}/x11-toolkits/blt
 
 USE_GMAKE=	yes
+USE_XPM=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \

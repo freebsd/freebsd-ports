@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	apps/asbutton
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 ALL_TARGET=	asbutton
 
 do-install:

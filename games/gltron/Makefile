@@ -13,7 +13,6 @@ MASTER_SITES=	http://gltron.sourceforge.net/download/
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		glut.3:${PORTSDIR}/graphics/Mesa3 \
 		png.4:${PORTSDIR}/graphics/png
 
 .if defined(NO_SOUND)
@@ -23,6 +22,7 @@ SOUND="-DSOUND"
 .endif
 
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ENV+=	OPT="${CFLAGS}" SOUND="${SOUND}"

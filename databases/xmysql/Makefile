@@ -13,10 +13,10 @@ MASTER_SITES=	http://web.wt.net/~dblhack/ \
 
 MAINTAINER=	dirk@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		xforms.0:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 .include <bsd.port.mk>

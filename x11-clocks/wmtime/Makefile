@@ -12,10 +12,9 @@ MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
 MAINTAINER=	rneswold@enteract.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES= 1
 
 post-extract:

@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	games/solitaires
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 MAN6=		xpat2.6
 
 post-install:

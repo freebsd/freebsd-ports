@@ -17,9 +17,9 @@ MAINTAINER=	treif@mayn.de
 
 RUN_DEPENDS=	mpeg:${PORTSDIR}/graphics/mpeg
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_XPM=	yes
 NO_WRKSUBDIR=	yes
 
 do-install:

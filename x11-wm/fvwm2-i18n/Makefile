@@ -17,7 +17,7 @@ PATCHFILES=	fvwm-${PORTVERSION}-I18N_MB-${FVWM_PATCHVER}.patch
 MAINTAINER=	matusita@jp.freebsd.org
 
 .if !defined(WITHOUT_XPM)
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+USE_XPM=	yes
 .endif
 
 GNU_CONFIGURE=	yes

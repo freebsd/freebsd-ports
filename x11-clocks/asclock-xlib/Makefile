@@ -12,11 +12,10 @@ MASTER_SITES=	http://www.asclock.org/tar/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 HAS_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/asclock-xlib
 USE_X_PREFIX=	YES
+USE_XPM=	YES
 
 post-patch:
 	@(cd ${WRKSRC}; \

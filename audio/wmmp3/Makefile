@@ -12,10 +12,10 @@ MASTER_SITES= 	http://www.dotfiles.com/software/wmmp3/
 MAINTAINER=	jim@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 post-install:
 	@${ECHO} "===>   Installing sample.wmmp3 in ${PREFIX}/share/examples/wmmp3"

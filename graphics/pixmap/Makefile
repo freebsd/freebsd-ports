@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jmz@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/pixmap
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		pixmap.1
 
 .include <bsd.port.mk>

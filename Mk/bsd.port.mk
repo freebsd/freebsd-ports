@@ -754,7 +754,29 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
 
-PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.6|Motif-2\.1\.10)'
+# defaults to 3.3.6; will be changed to 4.0 when it is ready
+XFREE86_VERSION?=	3
+
+.if ${XFREE86_VERSION} == 3
+.if defined(USE_XPM)
+LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
+.endif
+.if defined(USE_DGS)
+LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
+.endif
+.if defined(USE_MESA)
+LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
+.endif
+.if defined(USE_FREETYPE)
+LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
+.endif
+XAWVER=					7
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6|Motif-2\.1\.10)'
+.else
+XAWVER=					6
+PKG_IGNORE_DEPENDS?=	'Motif-2\.1\.10'
+.endif
+PLIST_SUB+=				XAWVER=${XAWVER}
 
 .if defined(USE_BISON)
 .if ${OSVERSION} >= 400014
@@ -797,10 +819,16 @@ RUN_DEPENDS+=	perl${PERL_VERSION}:${PORTSDIR}/lang/perl5
 .endif
 .endif
 
-# Don't try to build XFree86 even if ALWAYS_BUILD_DEPENDS is defined --
+.if defined(USE_XLIB)
+.if ${XFREE86_VERSION} == 3
+# Don't try to build XFree86-3 even if ALWAYS_BUILD_DEPENDS is defined --
 # it's just too big....
-.if defined(USE_XLIB) && !defined(ALWAYS_BUILD_DEPENDS)
+.if !defined(ALWAYS_BUILD_DEPENDS)
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
+.endif
+.else
+LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
+.endif
 .endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
@@ -905,7 +933,12 @@ EXTRACT_CMD?=			${GZIP_CMD}
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE) && !defined(NO_MTREE)
 .if defined(USE_X_PREFIX)
+.if ${XFREE86_VERSION} == 3
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+#MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.endif
 .else
 MTREE_FILE=	/etc/mtree/BSD.local.dist
 .endif
@@ -1135,7 +1168,7 @@ maintainer:
 VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	cad chinese comms converters databases deskutils devel \
 	editors elisp emulators ftp games german gnome graphics \
-	ipv6 irc japanese java kde korean lang linux \
+	hebrew ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc net news \
 	offix palm perl5 plan9 print python russian \
 	security shells sysutils \

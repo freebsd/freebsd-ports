@@ -15,7 +15,6 @@ DISTFILES=	X336src-1.tgz xtt-${VERSION}.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
 RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 
 VERSION=	1.3
@@ -33,6 +32,7 @@ DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 USE_X_PREFIX=	YES
+USE_FREETYPE=	YES
 EXTRACT_ONLY=	X336src-1.tgz xtt-${VERSION}.tgz
 BINOWN=		root
 BINGRP=		wheel

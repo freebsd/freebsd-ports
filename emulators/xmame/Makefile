@@ -15,8 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     dburr@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
+USE_XPM=	YES
 USE_GMAKE=	YES
 MAKEFILE=	makefile.unix
 

@@ -18,10 +18,9 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}+lx.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 pre-configure:
 	@${MV} ${WRKDIR}/jnames.c ${WRKDIR}/jnames.c.in

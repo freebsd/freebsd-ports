@@ -13,10 +13,9 @@ DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
+USE_MESA=	yes
 WRKSRC=		${WRKDIR}/battalionSource
 
 MAN6=		battalion.6

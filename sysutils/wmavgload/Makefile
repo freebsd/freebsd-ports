@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	contrib/srcs/utils
 
 MAINTAINER=	kushn@mail.kar.net
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

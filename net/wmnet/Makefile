@@ -12,8 +12,7 @@ MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
 MAINTAINER=	rneswold@enteract.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
+USE_XPM=	yes
 MAN1=		wmnet.1
 
 .include <bsd.port.mk>

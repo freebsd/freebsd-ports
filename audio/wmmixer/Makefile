@@ -14,11 +14,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rneswold@enteract.com
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=			${WRKDIR}/wmmixer
 FETCH_BEFORE_ARGS=	-t
 USE_IMAKE=		yes
+USE_XPM=		yes
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

@@ -20,10 +20,10 @@ LIB_DEPENDS=	glib-1.3.1:${PORTSDIR}/devel/glib13 \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -15,7 +15,8 @@ DISTNAME=	mew-${PORTVERSION}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-RESTRICTED=	"USA ITAR export restrictions (has PGP hooks)"
+### crypto
+#RESTRICTED=	"USA ITAR export restrictions (has PGP hooks)"
 
 RUN_DEPENDS=	imali:${PORTSDIR}/mail/im
 

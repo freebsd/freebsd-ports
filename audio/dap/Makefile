@@ -13,10 +13,10 @@ EXTRACT_SUFX=.tgz
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main/DAP ${PREFIX}/bin/

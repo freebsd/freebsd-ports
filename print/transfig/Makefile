@@ -15,11 +15,11 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	chuckr@freebsd.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		fig2dev.1 fig2ps2tex.1 pic2tpic.1 transfig.1
 
 post-patch:

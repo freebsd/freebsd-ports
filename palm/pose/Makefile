@@ -13,9 +13,9 @@ DISTNAME=	emulator_src_30a6
 
 MAINTAINER=	dirk@FreeBSD.org
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		GL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+USE_MESA=	yes
 WRKSRC=		${WRKDIR}/Emulator_Src_${PORTVERSION}/BuildUnix
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

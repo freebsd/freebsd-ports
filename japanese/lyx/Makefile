@@ -22,9 +22,9 @@ MAINTAINER=	flathill@FreeBSD.ORG
 #.if defined(WITH_ISPELL)
 #RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 #.endif
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
+USE_XPM=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LYX_LIBS="-lxpg4"

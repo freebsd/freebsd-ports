@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}-5sec6
 
 MAINTAINER=	sec@42.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	YES
+USE_XPM=	yes
+GNU_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmx ${PREFIX}/bin

@@ -14,9 +14,8 @@ DISTNAME=	${PORTNAME}-0.6-1
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 MAN1=		asmodem.1
 

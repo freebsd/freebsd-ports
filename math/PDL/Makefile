@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PGPLOT.
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
+USE_MESA=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV=	PERL=${PERL}
 

@@ -15,13 +15,13 @@ MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22 \
 		kdeui.4:${PORTSDIR}/x11/kdelibs2 \
-		Xpm.4:${PORTSDIR}/graphics/xpm \
 		intl.1:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SOMAJOR=	4
 SOMINOR=	0
 MOC?=		${X11BASE}/bin/moc2
+USE_XPM=	yes
 USE_BZIP2=	yes
 USE_NEWGCC=	yes
 INSTALLS_SHLIB=	yes

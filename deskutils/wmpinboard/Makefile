@@ -12,12 +12,11 @@ MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 WRKSRC=		${WRKDIR}/wmpinboard.app
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
+USE_XPM=	yes
 
 MAN1=		wmpinboard.1
 MANCOMPRESSED=	no

@@ -12,9 +12,8 @@ MASTER_SITES=	http://mattfischer.com/wmstock/src/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 WRKSRC=		${WRKDIR}/wmstock/src
 USE_GMAKE=	yes

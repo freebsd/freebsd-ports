@@ -14,13 +14,13 @@ DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.ru
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X_EXTRA_LIBS="-lxpg4"
 CONFIGURE_ARGS=	--with-png-includes="${LOCALBASE}/include" \

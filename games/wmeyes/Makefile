@@ -12,9 +12,8 @@ MASTER_SITES=	ftp://thrush.omix.com/pub/misc/
 
 MAINTAINER=	zenin@archive.rhps.org
 
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		wmeyes.1
 
 .include <bsd.port.mk>

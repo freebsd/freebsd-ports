@@ -14,9 +14,8 @@ DISTNAME=	abs-src-0.6a
 
 MAINTAINER=	gmarco@giovannelli.it
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_XLIB=	yes
+USE_XPM=	yes
 WRKSRC=         ${WRKDIR}/abs-src-0.6a/src
 
 do-install:

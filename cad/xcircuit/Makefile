@@ -12,11 +12,11 @@ MASTER_SITES=	http://bach.ece.jhu.edu/~tim/programs/xcircuit/archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
+USE_XPM=	yes
 XMKMF=		xmkmf
 
 MAN1=		xcircuit.1

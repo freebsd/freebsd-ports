@@ -15,9 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
-
 USE_IMAKE=	yes
+USE_MESA=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libtk.a ${PREFIX}/lib/libgltk.a

@@ -14,11 +14,10 @@ MASTER_SITE_SUBDIR=	jim
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtz
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 post-install:
 	@${ECHO} "===>   Installing wmtzrc in ${PREFIX}/share/examples/wmtz"

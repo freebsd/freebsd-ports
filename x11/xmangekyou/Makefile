@@ -12,11 +12,10 @@ MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
 
 MAINTAINER=	sakai@miya.ee.kagu.sut.ac.jp
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 ALL_TARGET=	xmangekyou
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 MAN1=		xmangekyou.1
 MANCOMPRESSED=	yes

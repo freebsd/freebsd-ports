@@ -13,14 +13,14 @@ DISTNAME=	WMMail.app-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		PropList.2:${PORTSDIR}/devel/libPropList
+LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-PL-libs="-L${LOCALBASE}/lib" \
+CONFIGURE_ARGS=	--with-PL-libs="-L${LOCALBASE}/lib" \
 		--with-PL-incs="-I${LOCALBASE}/include"
 WRKSRC=	${WRKDIR}/WMMail.app-0.63a
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 post-install:
 	@${ECHO} "		"

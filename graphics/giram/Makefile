@@ -13,12 +13,12 @@ DISTNAME=	Giram-${PORTVERSION}
 
 MAINTAINER=	bfoz@glue.umd.edu
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		GL:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
 
 GTK_CONFIG?=    ${X11BASE}/bin/gtk12-config
 
+USE_MESA=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \

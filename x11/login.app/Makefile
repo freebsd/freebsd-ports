@@ -14,10 +14,10 @@ DISTNAME=	Login.app-2.0.0-Alpha-4
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker \
-		PropList.2:${PORTSDIR}/devel/libPropList \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		PropList.2:${PORTSDIR}/devel/libPropList
 
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 
 ALL_TARGET=	Login
 

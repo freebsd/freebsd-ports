@@ -19,10 +19,9 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
-LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
+USE_MESA=	yes
 ALL_TARGET=	default
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 OSMAJOR!=	/usr/bin/uname -r | sed -e 's/\..*//'

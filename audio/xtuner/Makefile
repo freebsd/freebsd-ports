@@ -13,10 +13,10 @@ DISTNAME=	Xtuner-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	YES
+USE_XPM=	YES
 NO_INSTALL_MANPAGES=	YES
 
 .include <bsd.port.mk>

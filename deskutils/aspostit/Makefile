@@ -13,12 +13,10 @@ MASTER_SITE_SUBDIR=	apps/aspostit
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm/ \
-		jpeg.9:${PORTSDIR}/graphics/jpeg/
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg/
 
 USE_X_PREFIX=   yes
-USE_XLIB=	yes
-
+USE_XPM=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes

@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	window_managers/gwm
 
 MAINTAINER=	markm@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		gwm.1
 
 .include <bsd.port.mk>

@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.clearskyinstitute.com/xephem/xephem/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
+USE_XPM=	yes
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
 MANCOMPRESSED=	no

@@ -13,9 +13,8 @@ MASTER_SITES=	ftp://ftp.nuie.nagoya-u.ac.jp/pub/nagoya-u/ \
 
 MAINTAINER=	max@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 PREFIX?=         ${LOCALBASE}
 MTREE_FILE?=	/etc/mtree/BSD.local.dist
 

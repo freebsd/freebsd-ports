@@ -15,9 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 USE_IMAKE=	yes
+USE_XPM=	yes
 MAN1=		asclock.1
 
 pre-configure:

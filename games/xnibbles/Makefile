@@ -13,11 +13,10 @@ DISTNAME=	xnibbles-1.0BETA3
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
 ALL_TARGET=	linux
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xnibbles
 
 MAN6=		xnibbles.6
