@@ -39,11 +39,13 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Compiler.3 \
 		HTML::Mason::Compiler::ToObject.3 \
 		HTML::Mason::Component.3 \
+		HTML::Mason::Component::FileBased.3 \
 		HTML::Mason::Component::Subcomponent.3 \
 		HTML::Mason::ComponentSource.3 \
 		HTML::Mason::Devel.3 \
 		HTML::Mason::Escapes.3 \
 		HTML::Mason::Exceptions.3 \
+		HTML::Mason::FakeApache.3 \
 		HTML::Mason::Interp.3 \
 		HTML::Mason::Lexer.3 \
 		HTML::Mason::MethodMaker.3 \
