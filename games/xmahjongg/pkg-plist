@@ -1,6 +1,9 @@
 bin/xmahjongg
 man/man6/xmahjongg.6.gz
-lib/X11/xmahjongg
+lib/X11/xmahjongg/bridge
+lib/X11/xmahjongg/default
+lib/X11/xmahjongg/wedges
 @dirrm lib/X11/xmahjongg
 lib/X11/fonts/misc/xmahjongg.bdf 
 @exec /usr/X11R6/bin/mkfontdir %B
+@unexec /usr/X11R6/bin/mkfontdir %B
