@@ -117,7 +117,7 @@ lib/modules/drivers/riva128.o
 %%I386%%lib/modules/drivers/tseng_drv.o
 %%I386%%lib/modules/drivers/vesa_drv.o
 %%SPARC64_NA%%lib/modules/drivers/vga_drv.o
-lib/modules/drivers/via_drv.o
+%%I386%%lib/modules/drivers/via_drv.o
 %%I386%%lib/modules/drivers/vmware_drv.o
 lib/modules/extensions/libGLcore.a
 lib/modules/extensions/libdbe.a
