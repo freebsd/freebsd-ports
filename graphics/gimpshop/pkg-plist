@@ -323,7 +323,6 @@ libexec/gimp/2.2/plug-ins/snoise
 libexec/gimp/2.2/plug-ins/sobel
 libexec/gimp/2.2/plug-ins/softglow
 libexec/gimp/2.2/plug-ins/sparkle
-%%PYTHON:%%libexec/gimp/2.2/plug-ins/sphere.py
 libexec/gimp/2.2/plug-ins/spheredesigner
 libexec/gimp/2.2/plug-ins/spread
 libexec/gimp/2.2/plug-ins/struc
