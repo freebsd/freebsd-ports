@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.10 1998/04/25 07:29:43 se Exp $
+# $Id: Makefile,v 1.11 1998/05/04 20:22:57 jseger Exp $
 #
 
 DISTNAME=	kdelibs-beta4-1
@@ -17,7 +17,7 @@ MAINTAINER=	se@freebsd.org
 
 BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2 \
 		moc:${PORTSDIR}/x11/qt
-LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
+LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
 
