@@ -1,0 +1,107 @@
+*** authwn/authwn.c.old	Fri May 24 16:32:44 1996
+--- authwn/authwn.c	Thu Aug 29 02:09:41 1996
+***************
+*** 27,32 ****
+--- 27,35 ----
+  
+  #ifdef DBM_AUTH
+  #include <dbm.h>
++ #elif defined(DB_AUTH)
++ #include <fcntl.h>
++ #include <db.h>
+  #endif
+  
+  #include "../config.h"
+***************
+*** 123,128 ****
+--- 126,135 ----
+  #ifdef DBM_AUTH
+  	datum		content,
+  			key;
++ #elif defined(DB_AUTH)
++ 	DBT		content,
++ 			key;
++ 	DB		*db;
+  #endif
+  
+  
+***************
+*** 168,173 ****
+--- 175,193 ----
+  			codedpw[content.dsize] = '\0';
+  		}
+  		dbmclose( pwpath);
++ #elif defined(DB_AUTH)
++ 		key.data = user;
++ 		key.size = strlen(user);
++ 
++ 		db = dbopen(pwpath, O_RDONLY, 0, DB_HASH, NULL);
++ 		if (db == NULL) {
++ 			exit(AUTHERR_NUM5);
++ 		}
++ 		if ((db->get)(db , &key, &content, 0) == 0) {
++ 			strncpy(codedpw, content.data, content.size);
++ 			codedpw[content.size] = '\0';
++ 		}
++ 		(db->close)(db);
+  #else
+  		exit( AUTHERR_NUM8);
+  #endif
+*** authwn/Makefile.old	Thu Jul 13 07:17:29 1995
+--- authwn/Makefile	Wed Aug 28 19:46:22 1996
+***************
+*** 4,20 ****
+  #You will likely have to change DBMLIB to whatever library contains
+  # the DBM functions dbminit(), fetch() and dbmclose() on your system.
+  #DBMLIB = -ldbm
+! #DBMFLAG =  -DDBM_AUTH
+  
+! 
+! CFLAGS = -I../wn/ -O $(DBMFLAG)
+  
+  OBJS = authwn.o
+  
+  all:	authwn
+  
+  authwn: $(OBJS)
+! 	$(CC) $(CFLAGS) -o authwn $(OBJS) $(LIBS) $(DBMLIB)
+  
+  install:	authwn
+  	@echo "Installing authwn in $(BINDIR)"
+--- 4,20 ----
+  #You will likely have to change DBMLIB to whatever library contains
+  # the DBM functions dbminit(), fetch() and dbmclose() on your system.
+  #DBMLIB = -ldbm
+! DBMFLAG =  -DDB_AUTH
+  
+! DCFLAGS= -I../wn/ -O
+! CFLAGS = $(DCFLAGS) $(DBMFLAG)
+  
+  OBJS = authwn.o
+  
+  all:	authwn
+  
+  authwn: $(OBJS)
+! 	$(CC) $(DCFLAGS) -o authwn $(OBJS) $(LIBS) $(DBMLIB)
+  
+  install:	authwn
+  	@echo "Installing authwn in $(BINDIR)"
+*** Makefile.old	Wed Aug 28 19:29:10 1996
+--- Makefile	Wed Aug 28 19:48:33 1996
+***************
+*** 64,70 ****
+  
+  authwn/authwn: config.h
+  	@echo "Making authwn"
+! 	(cd authwn; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		BINDIR="$(BINDIR)" )
+  
+  inst-wn:
+--- 64,70 ----
+  
+  authwn/authwn: config.h
+  	@echo "Making authwn"
+! 	(cd authwn; $(MAKE) CC="$(CC)" DCFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		BINDIR="$(BINDIR)" )
+  
+  inst-wn:
