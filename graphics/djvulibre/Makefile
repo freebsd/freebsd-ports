@@ -12,14 +12,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
 MAINTAINER=	coop9211@uidaho.edu
-
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 .ifndef WITHOUT_X11
-USE_X_PREFIX= yes
-USE_QT_VER=   3
+USE_X_PREFIX=	yes
+USE_QT_VER=	3
 .else
 PKGNAMESUFFIX=	-nox11
 .endif
