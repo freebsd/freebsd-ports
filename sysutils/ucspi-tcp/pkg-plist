@@ -1,0 +1,14 @@
+bin/tcpclient
+bin/tcpserver
+bin/tcprules
+bin/addcr
+bin/delcr
+bin/who@
+bin/date@
+bin/finger@
+bin/tcpcat
+bin/mconnect
+man/man1/tcpclient.1.gz
+man/man1/tcpserver.1.gz
+man/man1/tcprules.1.gz
+man/man5/tcp-environ.5.gz
