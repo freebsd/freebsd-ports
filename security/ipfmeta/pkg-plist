@@ -1,0 +1,4 @@
+bin/ipfmeta
+share/ipfmeta/ipf.metarules
+share/ipfmeta/ipf.objs
+@dirrm share/ipfmeta
