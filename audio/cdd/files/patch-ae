@@ -1,0 +1,47 @@
+--- README.orig	Wed Dec 23 11:02:06 1998
++++ README	Wed Dec 23 11:09:35 1998
+@@ -4,9 +4,8 @@
+     flavors.  CDD will do its best to copy CD audio data, CD-ROM data in both
+     raw and "cooked" forms to a directory of the users choice.
+ 
+-    CDD has a very large limitation at present in that it will only work on
+-    SCSI CD-ROM devices manufactured by Plextor.  If you run it on something
+-    else and it works, let me know.
++    CDD runs on a number of SCSI CD-ROM and, on FreeBSD, on ATAPI devices as
++    well.
+ 
+ Why did you write it?
+ 
+@@ -36,17 +35,21 @@
+     drive
+ 
+     
+-    (*) Jitter correction is a method whereby extra effort is taken to ensure
+-        that the data retrieved off of the CD is clean.  This is absolutely
+-        necessarily on older/cheaper mechs, however on the latest Plextor's
+-        you may get away without it.  However, should the disc have any
+-        defects, or surface problems you could end up with a corrupted audio
+-        file.  I.e. I never use this feature!  Its only there for those who are
+-        impatient, because it can speed up the process by 2-5x depending on
+-	the hardware you have.  If during normal audio grabs the overlap
+-        distance is ALWAYS 0 (except for the last frame) this may actually work
+-        for you.  If this is NOT the case, do not use this feature, IT WILL NOT
+-        WORK!
++    (*) Jitter correction is a method whereby extra effort is taken
++	to ensure that the data retrieved off of the CD is clean.
++	It slows down reads considerably, however it is absolutely
++	necessarily on older/cheaper mechs which are unable to seek
++	precisely on audio tracks.  Some modern drives (both SCSI
++	and ATAPI) support "streaming" reads from audio tracks, in
++	which case you may get away without it.  However, should
++	the disc have any defects, or surface problems you could
++	end up with a corrupted audio file.  I.e. I never use this
++	feature!  Its only there for those who are impatient,
++	because it can speed up the process by 2-5x depending on
++	the hardware you have.  If during normal audio grabs the
++	overlap distance is ALWAYS 0 (except for the last frame)
++	this may actually work for you.  If this is NOT the case,
++	do not use this feature, IT WILL NOT WORK!
+ 
+ Examples:
+ 

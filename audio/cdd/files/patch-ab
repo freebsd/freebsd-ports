@@ -1,0 +1,59 @@
+--- cdd.c.orig	Wed May 21 22:48:51 1997
++++ cdd.c	Thu Dec 31 12:10:02 1998
+@@ -60,6 +60,25 @@
+ #include "cdd_cddb.h"
+ #endif
+ 
++/* XXX some scsi->cam compatibility stuff... */
++int scsi_open(char *buf, int mode)
++{
++	return -1 ;
++}
++
++#define DS(x, y) \
++int x() \
++{ fprintf(stderr, "--- %s not implemented\n", y); exit(-1); }
++
++DS(scsireq_new, "scsireq_new")
++DS(scsireq_build, "scsireq_build")
++DS(scsireq_enter, "scsireq_enter")
++DS(scsireq_reset, "scsireq_reset")
++DS(scsireq_decode, "scsireq_decode")
++DS(scsireq_buff_decode, "scsireq_buff_decode")
++DS(scsireq_encode, "scsireq_encode")
++DS(scsi_debug, "scsi_debug")
++
+ OPTS G_opts;
+ 
+ int F_cdctlfd;
+@@ -73,7 +92,7 @@
+ int defaultdev=TRUE;
+ 
+ strcpy(G_opts.workdir, "/tmp");
+-strcpy(G_opts.cddev,   "cd0");
++strcpy(G_opts.cddev,   "wcd0"); /* XXX atapi */
+ G_opts.onlyaudio = FALSE;
+ G_opts.onlydata = FALSE;
+ G_opts.track = -1;
+@@ -200,8 +219,10 @@
+ 
+ if(F_cdctlfd < 0)
+     {
+-    fprintf(stderr,"Unable to open %s [%d]\n", buffer, errno);
+-    exit(0);
++    fprintf(stderr,"Unable to open %s [%d], try atapi\n", buffer, errno);
++    F_cdctlfd = F_cdfd ;
++    use_atapi();
++    goto atapi;
+     }
+ 
+ /* We're about to start sending SCSI commands directly to the device, lets be a
+@@ -225,7 +246,7 @@
+     close(F_cdfd);
+     exit(0);
+     }
+-
++atapi:
+ if(getcdtoc(F_cdctlfd, &cdtoc) != SUCCESS)
+     {
+     fprintf(stderr,"Unable to read TOC\n");
