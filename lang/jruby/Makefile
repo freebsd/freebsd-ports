@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5.0
 CATEGORIES=	lang ruby java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ JAVA?=		${LOCALBASE}/bin/javavm
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-src-${PORTVERSION:S/./_/g}${EXTRACT_SUFX}
 
-FILES=		README README.test test.rb samples
+FILES=		README samples
 .endif
 
 post-extract:
