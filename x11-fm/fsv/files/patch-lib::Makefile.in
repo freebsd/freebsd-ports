@@ -1,0 +1,24 @@
+--- lib/Makefile.in.orig	Sun Jan 16 09:44:24 2000
++++ lib/Makefile.in	Sat Mar 13 21:08:23 2004
+@@ -99,10 +99,10 @@
+ 
+ INCLUDES = @GTK_CFLAGS@
+ 
+-noinst_HEADERS =  	gnome-i18nP.h 	gnome-color-picker.h 	gnome-dateedit.h 	getopt.h 	nvstore.h
++noinst_HEADERS =  	gnome-i18nP.h 	gnome-color-picker.h 	gnome-dateedit.h 	nvstore.h
+ 
+ libgnomeui_a_SOURCES = gnome-color-picker.c gnome-dateedit.c
+-libmisc_a_SOURCES = getopt.c getopt1.c nvstore.c
++libmisc_a_SOURCES = nvstore.c
+ libmisc_a_LIBADD = @LIBOBJS@
+ 
+ EXTRA_DIST = README.gnome
+@@ -119,7 +119,7 @@
+ libgnomeui_a_LIBADD = 
+ libgnomeui_a_OBJECTS =  gnome-color-picker.o gnome-dateedit.o
+ libmisc_a_DEPENDENCIES =  @LIBOBJS@
+-libmisc_a_OBJECTS =  getopt.o getopt1.o nvstore.o
++libmisc_a_OBJECTS =  nvstore.o
+ AR = ar
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
