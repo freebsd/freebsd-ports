@@ -35,7 +35,7 @@ BROKEN=         "Fails to link"
 .endif
 
 post-patch:
-	find ${WRKSRC} -name "Makefile" | xargs ${REINPLACE_CMD} \
+	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} \
 		's|/usr/local/qlwm|${PREFIX}/${LIBDIR}|g ; \
 		 s|^CXX|#CXX|g ; \
 		 s|^INCPATH|#INCPATH|g ; \
