@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -73,7 +73,7 @@ MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 post-extract:
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/apache.sh \
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
 		> ${WRKSRC}/apache.sh
 
 pre-install:
