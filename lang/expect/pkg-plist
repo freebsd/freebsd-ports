@@ -4,7 +4,7 @@ bin/cryptdir
 bin/decryptdir
 bin/dislocate
 bin/expect
-bin/expectk
+%%XFILES%%bin/expectk
 bin/ftp-rfc
 bin/kibitz
 bin/lpunlock
