@@ -1,0 +1,7 @@
+Xisola game follow this simple rule:
+Each move consists of two actions: first move your piece to an
+adjascent empty field (horizontal, vertical or diagonal, like
+the king in Chess), then take away any of the empty fields
+Since the number of fields decreases with every move there will
+be a point when one player will not have any empty fields left
+to move to and he loses.
