@@ -1,0 +1,41 @@
+--- backends/service.pl.in.orig	Fri Aug 20 05:31:12 2004
++++ backends/service.pl.in	Mon Aug 23 12:51:28 2004
+@@ -215,7 +215,8 @@
+ 
+      "gentoo"         => "gentoo",
+ 
+-     "freebsd-5"      => "freebsd-5"
++     "freebsd-5"      => "freebsd-5",
++     "freebsd-6"      => "freebsd-5"
+     );
+ 
+   %runlevels=
+@@ -235,6 +236,7 @@
+                       "nonetwork" => _("Networkless runlevel")
+                      },
+      "freebsd-5"  => {"rc" => "dude, FreeBSD has no runlevels" },
++     "freebsd-6"  => {"rc" => "dude, FreeBSD has no runlevels" },
+      "slackware-9.1.0" => {"4" => _("Graphical mode") }
+     );
+ 
+@@ -1095,6 +1097,10 @@
+   {
+     return "rcng";
+   }
++  elsif ($gst_dist =~ /freebsd-6/)
++  {
++    return "rcng";
++  }
+   elsif ($gst_dist =~ /gentoo/)
+   {
+     return "gentoo";
+@@ -1591,7 +1597,8 @@
+ 
+        "gentoo"       => \&gst_service_gentoo_get_status,
+ 
+-       "freebsd-5"    => \&gst_service_rcng_get_status
++       "freebsd-5"    => \&gst_service_rcng_get_status,
++       "freebsd-6"    => \&gst_service_rcng_get_status
+       );
+   my $proc;
+ 

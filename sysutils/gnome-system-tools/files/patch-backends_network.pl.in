@@ -1,0 +1,64 @@
+--- backends/network.pl.in.orig	Fri Aug 20 05:25:46 2004
++++ backends/network.pl.in	Mon Aug 23 12:50:25 2004
+@@ -285,7 +285,8 @@
+        "slackware-9.1.0" => "redhat-6.2",
+        "slackware-10.0.0" => "redhat-6.2",
+        "gentoo"       => "debian-2.2",
+-       "freebsd-5"    => "debian-2.2"
++       "freebsd-5"    => "debian-2.2",
++       "freebsd-6"    => "debian-2.2"
+        );
+ 
+   return $cmd_map{$dist_map{$gst_dist}};
+@@ -1450,6 +1451,7 @@
+     "slackware-10.0.0" => \&gst_network_deb22_get_file,
+     "gentoo"       => \&gst_network_deb22_get_file,
+     "freebsd-5"    => \&gst_network_deb22_get_file,
++    "freebsd-6"    => \&gst_network_deb22_get_file,
+ 	  );
+ 
+   $proc = $dist_map{$gst_dist};
+@@ -3426,6 +3428,7 @@
+     "slackware-10.0.0" => "",
+     "gentoo"       => "",
+     "freebsd-5"    => "",
++    "freebsd-6"    => "",
+ 	  );
+ 
+   $dev = $dist_map {$gst_dist};
+@@ -3548,7 +3551,8 @@
+     "slackware-9.1.0" => "slackware-9.1.0",
+     "slackware-10.0.0" => "slackware-9.1.0",
+     "gentoo"       => "gentoo",
+-    "freebsd-5"    => "freebsd-5"
++    "freebsd-5"    => "freebsd-5",
++    "freebsd-6"    => "freebsd-5"
+ 	  );
+ 
+   my %dist_tables =
+@@ -3960,6 +3964,7 @@
+     "slackware-10.0.0" => "slackware-9.1.0",
+     "gentoo"       => "gentoo",
+     "freebsd-5"    => "freebsd-5",
++    "freebsd-6"    => "freebsd-5",
+ 	  );
+   
+   my %dist_tables =
+@@ -4691,6 +4696,7 @@
+     "slackware-10.0.0" => "slackware-9.1.0",
+     "gentoo"       => "gentoo",
+     "freebsd-5"    => "freebsd-5",
++    "freebsd-6"    => "freebsd-5",
+ 	  );
+ 
+   my %dist_tables =
+@@ -5088,7 +5094,8 @@
+     "slackware-9.1.0" => "slackware-9.1.0",
+     "slackware-10.0.0" => "slackware-9.1.0",
+     "gentoo"       => "gentoo",
+-    "freebsd-5"    => "freebsd-5"
++    "freebsd-5"    => "freebsd-5",
++    "freebsd-6"    => "freebsd-5"
+ 	  );
+ 
+   my %dist_tables =
