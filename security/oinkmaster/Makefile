@@ -29,6 +29,7 @@ IGNORE=		needs at least perl 5.6.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' \
+		-e 's,"tPf","tf",' \
 		${WRKSRC}/oinkmaster.pl
 
 do-install:
