@@ -1,39 +1,144 @@
---- ltmdm.sh.orig	Wed Mar 13 12:36:38 2002
-+++ ltmdm.sh	Wed Mar 13 12:36:38 2002
-@@ -1,36 +0,0 @@
--#!/bin/sh
--
--PREFIX=/usr/local
--LTMDM_DEV_MAJOR=228
--HAVEDEVFS=`mount | awk '{print $4}' | grep devfs | wc -l`
--HAVEDEVFS=`echo $HAVEDEVFS`
-- 
--case "$1" in
--  restart)
--    $0 stop
--    sleep 2
--    $0 start
--    ;;
--  stop)
--    if [ $HAVEDEVFS -eq 0 ]; then
--      rm -f /dev/cual0 /dev/cuail0 /dev/cuall0 /dev/ttyl0 /dev/ttyil0 /dev/ttyll0
--    fi
--    kldstat -n ltmdm 2>/dev/null >/dev/null && kldunload ltmdm
--    ;;
--  start)
--    if [ $HAVEDEVFS -eq 0 ]; then
--      rm -f /dev/cual0 /dev/cuail0 /dev/cuall0 /dev/ttyl0 /dev/ttyil0 /dev/ttyll0
--      umask 7
--      mknod /dev/cual0  c $LTMDM_DEV_MAJOR 128 uucp:dialer
--      mknod /dev/cuail0  c $LTMDM_DEV_MAJOR 160 uucp:dialer
--      mknod /dev/cuall0  c $LTMDM_DEV_MAJOR 192 uucp:dialer
--      umask 77
--      mknod /dev/ttyl0  c $LTMDM_DEV_MAJOR 0 root:wheel
--      mknod /dev/ttyil0  c $LTMDM_DEV_MAJOR 32 root:wheel
--      mknod /dev/ttyll0  c $LTMDM_DEV_MAJOR 64 root:wheel
--    fi
--
--    kldstat -n ltmdm 2>/dev/null >/dev/null || kldload $PREFIX/share/ltmdm/ltmdm.ko
--    echo -n ' ltmdm'
--    ;;
--esac
+--- sys/dev/ltmdm/ltmdmsio.c.orig	Wed Jun 16 11:48:33 2004
++++ sys/dev/ltmdm/ltmdmsio.c	Wed Jun 16 12:04:19 2004
+@@ -1478,7 +1478,11 @@
+ 
+     s = splfunc();
+     if (tp) {
++#if __FreeBSD_version > 502112
++        (*linesw[tp->t_line]->l_close)(tp, FNONBLOCK);
++#else
+         (*linesw[tp->t_line].l_close)(tp, FNONBLOCK);
++#endif
+         disc_optim(tp, &tp->t_termios, com);
+         comstop(tp, FREAD | FWRITE);
+         comhardclose(com);
+@@ -1655,7 +1659,11 @@
+          * the true carrier.
+          */
+         if (com->prev_modem_status & MSR_DCD || mynor & CALLOUT_MASK)
++#if __FreeBSD_version > 502112
++            (*linesw[tp->t_line]->l_modem)(tp, 1);
++#else
+             (*linesw[tp->t_line].l_modem)(tp, 1);
++#endif
+     }
+     /*
+      * Wait for DCD if necessary.
+@@ -1671,7 +1679,11 @@
+             goto out;
+         goto open_top;
+     }
++#if __FreeBSD_version > 502112
++    error = (*linesw[tp->t_line]->l_open)(dev, tp);
++#else
+     error = (*linesw[tp->t_line].l_open)(dev, tp);
++#endif
+     disc_optim(tp, &tp->t_termios, com);
+     if (tp->t_state & TS_ISOPEN && mynor & CALLOUT_MASK)
+         com->active_out = TRUE;
+@@ -1699,7 +1711,11 @@
+         return (ENODEV);
+     tp = com->tp;
+     s = splfunc();
++#if __FreeBSD_version > 502112
++    (*linesw[tp->t_line]->l_close)(tp, flag);
++#else
+     (*linesw[tp->t_line].l_close)(tp, flag);
++#endif
+     disc_optim(tp, &tp->t_termios, com);
+     comstop(tp, FREAD | FWRITE);
+     comhardclose(com);
+@@ -1782,7 +1798,11 @@
+     com = com_addr(MINOR_TO_UNIT(mynor));
+     if (com == NULL || com->gone)
+         return (ENODEV);
++#if __FreeBSD_version > 502112
++    return ((*linesw[com->tp->t_line]->l_read)(com->tp, uio, flag));
++#else
+     return ((*linesw[com->tp->t_line].l_read)(com->tp, uio, flag));
++#endif
+ }
+ 
+ static int
+@@ -1801,7 +1821,11 @@
+     if (com == NULL || com->gone)
+         return (ENODEV);
+ 
++#if __FreeBSD_version > 502112
++    return ((*linesw[com->tp->t_line]->l_write)(com->tp, uio, flag));
++#else
+     return ((*linesw[com->tp->t_line].l_write)(com->tp, uio, flag));
++#endif
+ }
+ 
+ static void
+@@ -1907,7 +1931,11 @@
+                 if (line_status & LSR_PE)
+                     recv_data |= TTY_PE;
+             }
++#if __FreeBSD_version > 502112
++            (*linesw[tp->t_line]->l_rint)(recv_data, tp);
++#else
+             (*linesw[tp->t_line].l_rint)(recv_data, tp);
++#endif
+             lt_disable_intr();
+         } while (buf < com->iptr);
+     }
+@@ -2192,7 +2220,11 @@
+         if (lt->c_ospeed != 0)
+             dt->c_ospeed = tp->t_ospeed;
+     }
++#if __FreeBSD_version > 502112
++    error = (*linesw[tp->t_line]->l_ioctl)(tp, cmd, data, flag, p);
++#else
+     error = (*linesw[tp->t_line].l_ioctl)(tp, cmd, data, flag, p);
++#endif
+     if (error != ENOIOCTL)
+         return (error);
+     s = splfunc();
+@@ -2317,8 +2349,13 @@
+             com->state &= ~CS_CHECKMSR;
+             lt_enable_intr();
+             if (delta_modem_status & MSR_DCD)
++#if __FreeBSD_version > 502112
++                (*linesw[tp->t_line]->l_modem)
++                    (tp, com->prev_modem_status & MSR_DCD);
++#else
+                 (*linesw[tp->t_line].l_modem)
+                     (tp, com->prev_modem_status & MSR_DCD);
++#endif
+         }
+         if (com->state & CS_ODONE) {
+             lt_disable_intr();
+@@ -2330,7 +2367,11 @@
+                 sio_busycheck_handle = timeout(siobusycheck, com, hz / 100);
+                 com->extra_state |= CSE_BUSYCHECK;
+             }
++#if __FreeBSD_version > 502112
++            (*linesw[tp->t_line]->l_start)(tp);
++#else
+             (*linesw[tp->t_line].l_start)(tp);
++#endif
+         }
+         if (com_events == 0)
+             break;
+@@ -2829,11 +2870,19 @@
+         && (!(t->c_iflag & PARMRK)
+         || (t->c_iflag & (IGNPAR | IGNBRK)) == (IGNPAR | IGNBRK))
+         && !(t->c_lflag & (ECHO | ICANON | IEXTEN | ISIG | PENDIN))
++#if __FreeBSD_version > 502112
++        && linesw[tp->t_line]->l_rint == ttyinput)
++#else
+         && linesw[tp->t_line].l_rint == ttyinput)
++#endif
+         tp->t_state |= TS_CAN_BYPASS_L_RINT;
+     else
+         tp->t_state &= ~TS_CAN_BYPASS_L_RINT;
++#if __FreeBSD_version > 502112
++    com->hotchar = linesw[tp->t_line]->l_hotchar;
++#else
+     com->hotchar = linesw[tp->t_line].l_hotchar;
++#endif
+ }
+ 
+ #ifdef KLD_MODULE
