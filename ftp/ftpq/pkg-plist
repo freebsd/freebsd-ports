@@ -1,1 +1,3 @@
 bin/ftpq
+@exec mkdir -p /var/spool/ftpq
+@unexec rmdir /var/spool/ftpq 2>/dev/null || true
