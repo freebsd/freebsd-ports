@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.25 1998/04/22 08:28:07 asami Exp $
+# $Id: Makefile,v 1.26 1998/09/25 10:07:42 asami Exp $
 #
 
 DISTNAME=	postgresql-6.3.2
@@ -19,6 +19,8 @@ MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 WITH_TCL=	--with-tcl
 .endif
+
+BROKEN_ELF=	yes
 
 NO_PACKAGE=	"Requires pgsql uid"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
