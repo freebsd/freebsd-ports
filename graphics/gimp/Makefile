@@ -9,9 +9,11 @@ PORTNAME=	gimp
 PORTVERSION=	1.2.1
 PORTREVISION=	2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/v1.2/v${PORTVERSION}/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/v1.2/v${PORTVERSION}/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/gimp/v1.2/v${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
+		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
+MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
