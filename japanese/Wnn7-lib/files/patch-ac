@@ -1,0 +1,24 @@
+diff -ur src.orig/contrib/im/Xsi/config/X11.tmpl src/contrib/im/Xsi/config/X11.tmpl
+--- src.orig/contrib/im/Xsi/config/X11.tmpl	Wed Oct 28 13:36:37 1998
++++ config/X11.tmpl	Fri Oct 30 03:25:47 1998
+@@ -417,7 +417,8 @@
+ 
+ #define	WnnSpecialObjectRule(obj, depends, direct, define)	@@\
+ obj : depends							@@\
+-	$(CC) -c $(CFLAGS) define direct/`basename $@ .o`.c	@@\
++	(cd unshared ; $(CC) -c $(CFLAGS) define direct/`basename $@ .o`.c)	@@\
++	$(CC) -c $(CFLAGS) define $(SHLIBDEF) $(SHAREDCODEDEF) $(PICFLAGS) direct/`basename $@ .o`.c	@@\
+ 
+ #ifdef	MakeDir
+ #undef MakeDir
+@@ -520,7 +521,9 @@
+ #endif
+ 
+ #ifndef WnnLibDir
+-#define WnnLibDir	$(USRLIBDIR)
++#undef UsrLibDirPath
++#define UsrLibDirPath	/usr/local/lib
++#define WnnLibDir	/usr/local/lib
+ #endif
+ 
+        WNNOWNER = WnnOwner
