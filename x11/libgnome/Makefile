@@ -3,11 +3,11 @@
 # Date created:				17 June 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.32 1999/02/18 17:53:23 vanilla Exp $
+# $Id: Makefile,v 1.33 1999/03/09 01:09:05 nectar Exp $
 #
 
-DISTNAME=	gnome-libs-1.0.1
-PKGNAME=	gnomelibs-1.0.1
+DISTNAME=	gnome-libs-1.0.3
+PKGNAME=	gnomelibs-1.0.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-1.0/sources

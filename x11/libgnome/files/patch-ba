@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Feb 16 01:08:51 1999
++++ Makefile.in	Fri Feb 19 00:21:10 1999
+@@ -160,7 +160,7 @@
+ # just distribute it, since we can 
+ @FALSE_TRUE@libvfs = libvfs
+ 
+-SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) devel-docs gnome-data $(libvfs)
++SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) gnome-data $(libvfs)
+ 
+ 
+ include_HEADERS = gnome.h
+@@ -168,7 +168,7 @@
+ EXTRA_DIST = HACKING gnomeConf.sh.in gnome-bug.in gnome-config.in 		gnome-libs.spec.in
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gnomeConf.sh
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
