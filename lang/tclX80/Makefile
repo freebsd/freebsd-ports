@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tclX
-# Version required:	7.5
+# Version required:	7.5.2
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1996/06/17 10:00:38 asami Exp $
+# $Id: Makefile,v 1.6 1996/06/30 19:29:51 andreas Exp $
 #
 
-DISTNAME=	tclX7.5.0
-PKGNAME=	tclX-7.5
+DISTNAME=	tclX7.5.2
+PKGNAME=	tclX-7.5.2
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 
@@ -18,8 +18,8 @@ TK_DIR=		${PORTSDIR}/x11/tk41
 TK_SRC=		${TK_DIR}/work/tk4.1
 
 DEPENDS=	${TCL_DIR} ${TK_DIR}
-LIB_DEPENDS=	tcl7\\.5\\.1:${TCL_DIR} \
-		tk4\\.1\\.1:${TK_DIR}
+LIB_DEPENDS=	tcl75\\.1:${TCL_DIR} \
+		tk41\\.1:${TK_DIR}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
@@ -29,11 +29,11 @@ pre-configure:
 	cd ${WRKSRC} ; \
 	mv Config.mk Config.mk.orig2 && \
 	sed -e 's;TCL_SRC=$${srcbasedir};TCL_SRC=${TCL_SRC};' \
-	    -e 's;TCL_CONFIG=$${srcbasedir};TCL_CONFIG=${TCL_SRC};' \
+	    -e 's;TCL_BUILD=$${bldbasedir};TCL_BUILD=${TCL_SRC};' \
 	    -e 's;TCL_LIB=$${bldbasedir};TCL_LIB=${TCL_SRC};' \
 	    -e 's;TCL_SHLIB_DIR=$${bldbasedir};TCL_SHLIB_DIR=${TCL_SRC};' \
 	    -e 's;TK_SRC=$${srcbasedir};TK_SRC=${TK_SRC};' \
-	    -e 's;TK_CONFIG=$${srcbasedir};TK_CONFIG=${TK_SRC};' \
+	    -e 's;TK_BUILD=$${bldbasedir};TK_BUILD=${TK_SRC};' \
 	    -e 's;TK_LIB=$${bldbasedir};TK_LIB=${TK_SRC};' \
 	    -e 's;TK_SHLIB_DIR=$${bldbasedir};TK_SHLIB_DIR=${TK_SRC};' \
 	Config.mk.orig2 >Config.mk
