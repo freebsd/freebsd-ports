@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May  6 20:49:53 2003
-+++ Makefile.in	Tue May  6 20:50:18 2003
-@@ -117,7 +117,7 @@
+--- Makefile.in.orig	Thu Jul 24 22:49:46 2003
++++ Makefile.in	Thu Jul 24 22:49:56 2003
+@@ -116,7 +116,7 @@
  XML_CFLAGS = @XML_CFLAGS@
  XML_LIBS = @XML_LIBS@
  
