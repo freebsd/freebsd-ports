@@ -6,37 +6,24 @@
 #
 
 PORTNAME=	xcoral
-PORTVERSION=	3.2
+PORTVERSION=	3.40
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	editors
+MASTER_SITES=	http://xcoral.free.fr/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
-
-LIBFILES=	DEPEND README cmd.sc color.sc comments.sc compare-win.sc \
-		complete-word.sc describe.sc edir.sc edt.sc example.sc \
-		french.sc hack-filename.sc hanoi.sc head.sc html.sc \
-		java.sc keydef-ext.sc latex-macros.sc latex.sc \
-		man.dtex misc-commands.sc mode-ext.sc mode.sc mouse.sc \
-		rcs.sc save.sc sun-keydef.sc title.sc top-ten.sc \
-		utilities.sc version.sc window-utilities.sc xcoralrc.lf
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/xcoral/
-
-.for i in ${LIBFILES}
-	${INSTALL_DATA} ${WRKSRC}/SmacLib/${i} ${PREFIX}/lib/xcoral/
-.endfor
-
-	${INSTALL_PROGRAM} ${WRKSRC}/xcoral ${PREFIX}/bin/
-
+	${INSTALL_PROGRAM} ${WRKSRC}/xcoral ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/SmacLib/* ${DATADIR}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/xcoral/HTML/icons
-	${CP} -r ${WRKSRC}/Doc/ ${PREFIX}/share/doc/xcoral/
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

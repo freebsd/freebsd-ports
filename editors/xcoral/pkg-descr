@@ -11,8 +11,10 @@ From the docs:
   use and customize the editor. Commands are accessible from menus or key
   bindings. Xcoral is a direct Xlib client and runs on color/bw X Display. 
 
-The example .xcoralrc is in ${PREFIX}/lib/X11/xcoral/xcoralrc.fl; cp it
+The example .xcoralrc is in ${PREFIX}/share/xcoral/xcoralrc.fl; cp it
 to ~/.xcoralrc, and fire up xcoral.
+
+WWW: http://xcoral.free.fr/
 
 eric.
 erich@rrnet.com
