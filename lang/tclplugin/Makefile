@@ -3,7 +3,7 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/09 11:42:49 andreas Exp $
+# $Id: Makefile,v 1.2 1997/11/10 09:53:02 asami Exp $
 #
 
 DISTNAME=	tclplugin2.0.3-beta
@@ -17,7 +17,7 @@ BUILD_DEPENDS=  /nonexistent:${PORTSDIR}/lang/tcl80:build \
 		/nonexistent:${PORTSDIR}/x11/tk80:build
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape4
 
-IS_INTERACTIVE=	yes
+NO_PACKAGE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${PORTSDIR}/lang/tcl80/work/tcl8.0/unix \
