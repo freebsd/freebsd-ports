@@ -49,8 +49,7 @@ pre-everything::
 .endif
 
 post-patch:
-	${TOUCH} -t 200401252012 ${WRKSRC}/Makefile.am.in
-	${TOUCH} -t 200401252014 ${WRKSRC}/Makefile.am
+	${TOUCH} -t 200401230000 ${WRKSRC}/Makefile.am.in
 
 pre-configure:
 	${REINPLACE_CMD} -e 's@extractrc@@g' ${WRKSRC}/Makefile.in
