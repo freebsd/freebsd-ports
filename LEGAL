@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.90 1997/11/10 23:40:54 jraynard Exp $
+# $Id: LEGAL,v 1.91 1997/11/29 09:24:08 vanilla Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -84,6 +84,7 @@ radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
+rman-3.*		ports/textproc/rman	Don't sell for profit
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 Scilab-*		ports/math/Scilab	Don't sell for profit.
@@ -99,6 +100,7 @@ taipei16.bdf.gz		ports/chinese/big5con	font is transformed from
 						copyright
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
+tkman-2.*		ports/misc/tkman	Don't sell for profit.
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
