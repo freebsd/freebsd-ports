@@ -1,0 +1,79 @@
+--- Makefile.orig	Mon Mar 27 18:56:24 2000
++++ Makefile	Tue Apr  4 21:00:47 2000
+@@ -66,7 +66,7 @@
+ DEBUG_JGNAT =
+ # Set this variable if you want to be able to debug the JGNAT toolchain
+ 
+-JDK11_LIB =
++JDK11_LIB =	:/usr/local/jdk1.1.8/lib/classes.zip
+ # Needed only if you are using Sun's JDK 1.1.*. Leave this blank for JDK 1.2.*.
+ # Path separator followed by the zip file containing the JDK 1.1 lib
+ # installed on the machine on which you are doing the build.  For instance, on
+@@ -82,7 +82,7 @@
+ VERSION = 1.0p
+ # The current version number of JGNAT
+ 
+-HOST = ${shell gcc -dumpmachine}
++HOST = ${shell adagcc -dumpmachine}
+ # Name of the host computer on which the JGNAT executables were built
+ 
+ TGZ = tgz
+@@ -236,6 +236,7 @@
+ CD    = cd
+ CP    = cp -p -f
+ ECHO  = echo
++FIND  = find
+ MKDIR = mkdir -p
+ MV    = mv -f
+ PWD   = pwd
+@@ -277,7 +278,7 @@
+    TOOL_FLAGS = -O2 -gnatgp -gnata
+    LIB_FLAGS  = -O  -gnatgp -gnata
+    STRIP      = -s
+-   JAR        = jar c0f
++   JAR        = /usr/local/jdk1.1.8/bin/jar c0f
+ else
+    C_FLAGS    = -O
+    TOOL_FLAGS = -g -O -gnatgpa
+@@ -325,13 +326,13 @@
+                           $(EXTRA_LINK_FLAGS)
+ # Linker flags used to build the $(GNATMAKE_CUR_LIB) executables
+ 
+-GCC = gcc -c $(C_FLAGS)
++GCC = adagcc -c $(C_FLAGS)
+ # C compiler to build the C objects
+ 
+ JGNAT = $(BIN)/jgnat $(LIB_FLAGS)
+ # JGNAT compiler to build the Ada part of the JGNAT library
+ 
+-JAVAC = javac -deprecation -classpath $(LIB)$(JDK11_LIB)
++JAVAC = /usr/local/jdk1.1.8/bin/javac -deprecation -classpath $(LIB)$(JDK11_LIB)
+ # The Java compiler to build the Java part of the JGNAT library
+ 
+ ###########################################
+@@ -410,12 +411,12 @@
+ 
+ clean_bin : check_vars
+ 	$(CD) $(BIN); $(RM) $(HOST_TOOLS_EXE)
+-	$(RM) $(OBJ)/*
+-	$(RM) $(OBJS)/*
++	$(RM) -r $(OBJ) && $(MKDIR) $(OBJ)
++	$(RM) -r $(OBJS) && $(MKDIR) $(OBJS)
+ 
+ clean_lib : check_vars
+-	$(RM) $(ADALIB)/*
+-	$(RM) $(ADAINCLUDE)/*
++	$(RM) -r $(ADALIB) && $(MKDIR) $(ADALIB)
++	$(RM) -r $(ADAINCLUDE) && $(MKDIR) $(ADAINCLUDE)
+ 	$(RM) $(LIB)/*.jar
+ 
+ ########
+@@ -1316,7 +1317,7 @@
+ else
+ 	$(CD) $(LIB); $(JAR) $(JGNAT_JAR) jgnat/adalib/*.class
+ endif
+-	$(RM) $(ADALIB)/*.class
++	$(FIND) $(ADALIB) -name '*.class' -exec rm {} \;
+ 
+ ###########################################
+ # JGNAT Installation: create_install_dirs #

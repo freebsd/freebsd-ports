@@ -1,0 +1,38 @@
+--- GNAT_libc.java.orig	Tue Apr  4 20:52:26 2000
++++ GNAT_libc.java	Tue Apr  4 22:23:54 2000
+@@ -67,9 +67,10 @@
+ import java.lang.reflect.Constructor;
+ import java.lang.reflect.InvocationTargetException;
+ 
+-import java.security.AccessControlException;
++// import java.security.AccessControlException;
+ 
+ import java.util.Date;
++import java.util.Calendar;
+ import java.util.GregorianCalendar;
+ 
+ import jgnat.adalib.constraint_error;
+@@ -798,17 +799,13 @@
+    
+    //  char *tmpnam (char s[L_tmpnam])
+ 
+-   static public void tmpnam (Object s) 
+-   {
+-      byte buf [] = (byte []) s;
++    static public void tmpnam (Object s) 
++    {
++       byte buf [] = (byte []) s;
+       
+-      try {
+-	 copy (File.createTempFile ("JGNAT-", null).getCanonicalPath (), buf);
+-      }
+-      catch (IOException e) {
+-	 buf [0] = 0;
+-      }
+-   }
++       copy ("JGNAT-" + (new GregorianCalendar()).get(Calendar.MILLISECOND),
++	     buf);
++    }
+    
+    //  int ungetc (int c, FILE *stream)
+ 
