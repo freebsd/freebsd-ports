@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nget
 DISTNAME=	nget-${PORTVERSION}+uulib
 
-MAINTAINER=	george@crackpipe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto-resuming command line nntp file grabber
 
 MAN1=		nget.1 ngetlite.1
