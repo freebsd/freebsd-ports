@@ -261,30 +261,40 @@ JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
 #-----------------------------------------------------------------------------
 # Stage 5: Define all settings for the port to use
 
-# At this stage JAVA_HOME is definitely given a value. JAVA_PORT may or may
-# not be defined.
+# At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 
 # Define the location of the Java compiler. If USE_JIKES is set to YES, then
 # use Jikes. If USE_JIKES is set to NO, then don't use it. If it is set to a
 # different value, then fail with an error message. Otherwise USE_JIKES is not
 # set, in which case it is checked if Jikes is already installed. If it is,
 # then it will be used, otherwise it will not be used.
+
+# Only define JAVAC if NEED_JAVAC is defined
 .		undef JAVAC
-.		if defined(USE_JIKES)
-.			if (${USE_JIKES} == "YES") || (${USE_JIKES} == "yes")
+
+# The default value for NEED_JAVAC is temporarily (!) YES
+# This will change as soon as the affecting ports have NEED_JAVAC=YES
+.		if !defined(NEED_JAVAC)
+NEED_JAVAC=	YES
+.		endif
+
+.		if (${JAVAC} == "YES") || (${NEED_JAVAC} == "yes")
+.			if defined(USE_JIKES)
+.				if (${USE_JIKES} == "YES") || (${USE_JIKES} == "yes")
 JAVAC=		${_JIKES_PATH}
 WITH_JIKES=	YES
-.			elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
+.				elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
 .BEGIN:
 	@${ECHO} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
-.			endif
-.		elif exists(${_JIKES_PATH})
+.				endif
+.			elif exists(${_JIKES_PATH})
 JAVAC=		${_JIKES_PATH}
 WITH_JIKES=	YES
-.		endif
-.		if !defined(JAVAC)
+.			endif
+.			if !defined(JAVAC)
 JAVAC=	${JAVA_HOME}/bin/javac
+.			endif
 .		endif
 
 # Define the location of some more executables.
