@@ -1,7 +1,8 @@
 # Ports collection makefile for:  sar
+# http://tarp.linuxos.org/software/
 # Version required:               0.2
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/18 17:49:15 ache Exp $
+# $Id: Makefile,v 1.2 1999/02/18 17:51:40 ache Exp $
 #
 
 DISTNAME=       sar
