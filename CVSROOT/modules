@@ -4082,6 +4082,7 @@ mingw-gcc	ports/devel/mingw-gcc
 mingw-opengl-headers	ports/devel/mingw-opengl-headers
 mingw32-bin-msvcrt	ports/devel/mingw32-bin-msvcrt
 mingw32-binutils	ports/devel/mingw32-binutils
+mingw32-gcc	ports/devel/mingw32-gcc
 mini_httpd	ports/www/mini_httpd
 minicom		ports/comms/minicom
 minidom		ports/textproc/minidom
