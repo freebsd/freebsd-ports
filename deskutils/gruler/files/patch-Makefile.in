@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Tue Nov 16 00:54:04 2004
++++ Makefile.in	Tue Nov 16 01:14:24 2004
+@@ -157,24 +157,12 @@
+ 
+ SUBDIRS = intl po macros include src
+ 
+-grulerdocdir = ${prefix}/doc/gRuler
+-grulerdoc_DATA = \
+-	README\
+-	COPYING\
+-	AUTHORS\
+-	ChangeLog\
+-	INSTALL\
+-	NEWS\
+-	TODO\
+-	ABOUT-NLS
+-
+-
+ EXTRA_DIST = $(grulerdoc_DATA)
+ 
+ gnomemenudir = $(prefix)/@NO_PREFIX_PACKAGE_MENU_DIR@/Utilities
+ gnomemenu_DATA = gRuler.desktop
+ 
+-gruler_glade_filedir = $(prefix)/@NO_PREFIX_PACKAGE_DATA_DIR@/@PACKAGE@/glade
++gruler_glade_filedir = $(prefix)/@NO_PREFIX_PACKAGE_DATA_DIR@/glade
+ gruler_glade_file_DATA = gRuler.glade
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

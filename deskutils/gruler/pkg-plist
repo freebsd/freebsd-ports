@@ -1,0 +1,11 @@
+bin/gruler
+include/gRuler/draw.h
+include/gRuler/gui.h
+include/gRuler/gui_callbacks.h
+include/gRuler/main.h
+include/gRuler/prefs.h
+share/gRuler/glade/gRuler.glade
+share/gnome/apps/Utilities/gRuler.desktop
+@dirrm share/gRuler/glade
+@dirrm share/gRuler
+@dirrm include/gRuler

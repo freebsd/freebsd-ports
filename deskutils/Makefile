@@ -49,6 +49,7 @@
     SUBDIR += gnomeutils2
     SUBDIR += gnotime
     SUBDIR += goats
+    SUBDIR += gruler
     SUBDIR += gtimer
     SUBDIR += gtkjournal
     SUBDIR += gtodo

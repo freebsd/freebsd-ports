@@ -1,0 +1,11 @@
+--- configure.orig	Tue Nov 16 00:57:01 2004
++++ configure	Tue Nov 16 00:57:52 2004
+@@ -12430,7 +12430,7 @@
+   packageprefix=${prefix}
+ fi
+ 
+-packagedatadir=share
++packagedatadir=share/${PACKAGE}
+ packagedocdir=doc/${PACKAGE}
+ 
+ packagepixmapsdir=share/pixmaps/${PACKAGE}
