@@ -1,6 +1,6 @@
---- Makefile.common.orig	Tue Sep  4 08:29:05 2001
-+++ Makefile.common	Wed Sep  5 00:00:00 2001
-@@ -174,9 +174,12 @@
+--- Makefile.common.orig	Sat Jan  5 09:10:54 2002
++++ Makefile.common	Sun Jan  6 00:00:00 2002
+@@ -175,9 +175,12 @@
  
  $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
@@ -14,7 +14,7 @@
  
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # The libxxx.so link is needed to link the executables.
-@@ -186,13 +189,10 @@
+@@ -187,13 +190,10 @@
  # The $(SONAME) link is only needed to test the programs without
  # installing the libraries (in that case, you also need to direct the 
  # dynamic linker to the source directories, e.g. set LD_LIBRARY_PATH).
@@ -32,7 +32,7 @@
  endif
  
  ifeq ($(NETPBMLIBTYPE),dll)
-@@ -281,7 +281,7 @@
+@@ -282,7 +282,7 @@
  install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
@@ -41,7 +41,7 @@
              $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
  	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
-@@ -291,7 +291,7 @@
+@@ -292,7 +292,7 @@
  ifneq ($(NOMERGEBINARIES)x,x)
  	for x in $(NOMERGEBINARIES); \
          do \
@@ -50,7 +50,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  endif
-@@ -302,7 +302,7 @@
+@@ -303,7 +303,7 @@
  # Make and Install know that pbmmake.exe counts as pbmmake.
  	for x in $(BINARIES); \
  	do \
@@ -59,7 +59,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  
-@@ -311,7 +311,7 @@
+@@ -312,7 +312,7 @@
  ifneq ($(SCRIPTS)x,x)
  	for x in $(SCRIPTS); \
  	do \
@@ -68,7 +68,7 @@
                 $(INSTALLSCRIPTS); \
  	done
  endif
-@@ -348,7 +348,7 @@
+@@ -349,7 +349,7 @@
  # directory when you compile your programs.
  	for x in $(INTERFACE_HEADERS); \
  	do \
@@ -77,29 +77,37 @@
                 $(INSTALLHDRS); \
  	done
  
-@@ -356,19 +356,19 @@
+@@ -357,7 +357,7 @@
  #
  .PHONY: install.staticlib
  install.staticlib: lib$(LIBROOT).$(STATICLIBSUFFIX) 
 -	$(INSTALL) -c -m $(INSTALL_PERM_LIBS) $< $(INSTALLSTATICLIBS)/$<
 +	${BSD_INSTALL_DATA} $< $(INSTALLSTATICLIBS)/$<
  
- # Install a shared library
- #
+ # Install a shared library stub -- the ".so" file used at link time to
+ # prepare a program for dynamically linking a library at run time 
+@@ -367,7 +367,7 @@
+ install.sharedlibstub: 
+ 	cd $(INSTALLSTATICLIBS) ; \
+           rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX); \
+-          $(SYMLINK) $(INSTALLLIBS)/lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ) \
++          $(SYMLINK) $(SONAME) \
+             lib$(LIBROOT).$(NETPBMLIBSUFFIX)
+ else
+ # I have no idea what link-time stuff is required for other library types.
+@@ -381,12 +381,9 @@
  .PHONY: install.lib.common
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # install a Unix-style shared library
 -install.lib.common: lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).$(MIN) 
 -	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ).*
 -	$(INSTALL) -c -m $(INSTALL_PERM_LIBD) $< $(INSTALLLIBS)
-+install.lib.common: $(SONAME)
-+	cd $(INSTALLLIBS) ; rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).*
-+	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
- 	cd $(INSTALLLIBS) ; \
+-	cd $(INSTALLLIBS) ; \
 -          rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ); \
 -          $(SYMLINK) $< lib$(LIBROOT).$(NETPBMLIBSUFFIX).$(MAJ)
-+          rm -f lib$(LIBROOT).$(NETPBMLIBSUFFIX); \
-+          $(SYMLINK) $< lib$(LIBROOT).$(NETPBMLIBSUFFIX)
++install.lib.common: $(SONAME)
++	cd $(INSTALLLIBS) ; rm -f $(SONAME)
++	${BSD_INSTALL_DATA} $< $(INSTALLLIBS)
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library

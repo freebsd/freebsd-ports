@@ -104,6 +104,7 @@ bin/pngtopnm
 bin/pnmalias
 bin/pnmarith
 bin/pnmcat
+bin/pnmcolormap
 bin/pnmcomp
 bin/pnmconvol
 bin/pnmcrop
@@ -125,6 +126,7 @@ bin/pnmpad
 bin/pnmpaste
 bin/pnmpsnr
 bin/pnmquant
+bin/pnmremap
 bin/pnmrotate
 bin/pnmscale
 bin/pnmscalefixed
@@ -152,6 +154,7 @@ bin/ppmbrighten
 bin/ppmchange
 bin/ppmcie
 bin/ppmcolormask
+bin/ppmcolors
 bin/ppmdim
 bin/ppmdist
 bin/ppmdither
@@ -230,6 +233,7 @@ bin/ybmtopbm
 bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
+include/pam.h
 include/pbm.h
 include/pgm.h
 include/pm.h
