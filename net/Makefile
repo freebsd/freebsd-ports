@@ -709,6 +709,7 @@
     SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += trafshow
+    SUBDIR += trafshow4
     SUBDIR += tramp
     SUBDIR += tramp-emacs20
     SUBDIR += trickle
