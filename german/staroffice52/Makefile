@@ -21,7 +21,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	mb@imp.ch
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+DEPENDS=	${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Sie muessen StarOffice manuell via WWW-Interface herunterladen.'
@@ -46,11 +47,13 @@ pre-fetch:
 	@${FALSE}
 .endif
 .if defined(WITH_CDROM)
+.if !exists(${CD_MOUNTPT}/linux/office52/setup)
 	@${ECHO}
 	@${ECHO} Bitte mounten Sie die Sun StarOffice 5.2 CDROM
 	@${ECHO} nach /cdrom and starten Sie make erneut.
 	@${ECHO}
 	@${FALSE}
+.endif
 .endif
 
 .if defined(WITH_CDROM)
@@ -101,13 +104,13 @@ do-install:
 		${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.2 wurde erfolgreich ; \
 		${ECHO} auf Ihrem System installiert. ; \
 		${ECHO} ; \
-	.else \
+	else \
 		${ECHO} ; \
 		${ECHO} Während Ihrer StarOffice5.2 Installation ist ein Fehler aufgetreten. ; \
 		${ECHO} Bitte schicken Sie ein Mail mit dem Fehlerbeschrieb an mb@imp.ch. Danke ; \
 		${ECHO} ; \
 		${FALSE} ; \
-	.endif
+	endif
 .endif
 
 post-install:
