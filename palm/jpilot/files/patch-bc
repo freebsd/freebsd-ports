@@ -1,5 +1,5 @@
---- SyncTime/Makefile.in.orig	Fri Nov  5 08:35:11 1999
-+++ SyncTime/Makefile.in	Fri Dec 24 11:01:26 1999
+--- SyncTime/Makefile.in.orig	Sat Feb 12 20:35:13 2000
++++ SyncTime/Makefile.in	Sat Mar  4 16:11:28 2000
 @@ -27,7 +27,7 @@
  	echo; echo "WARNING - SyncTime is currently broken for PalmOS 3.3"; echo
  
