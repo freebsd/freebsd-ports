@@ -17,9 +17,11 @@ DISTFILES=	w3c-libwww-4.0D.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not build (duplicate strcasestr)"
-
 WRKSRC=		${WRKDIR}/WWW
+
+post-patch:
+	@${PERL} -pi -e 's,strcasestr,strcasestr_,' \
+		${WRKSRC}/Library/Implementation/HTString.*
 
 do-build:
 	cd ${WRKSRC}; ./BUILD comline
