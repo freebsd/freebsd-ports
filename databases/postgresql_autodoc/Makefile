@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	1.10.b1
+PORTVERSION=	1.10.b2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.rbt.ca/autodoc/
-DISTFILES=	${PORTNAME}-1.10b1.tar.gz
+DISTFILES=	${PORTNAME}-1.10b2.tar.gz
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -19,10 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Te
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
-USE_AUTOCONF_VER=	253
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-NO_BUILD=	yes
 CONFIGURE_ARGS+=	--datadir=${DATADIR}
 
 WRKSRC=		${WRKDIR}/postgresql_autodoc
