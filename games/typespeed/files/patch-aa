@@ -1,6 +1,16 @@
---- Makefile.orig	Wed Nov 10 15:32:40 1999
-+++ Makefile	Mon Sep 29 04:32:41 2003
-@@ -11,9 +11,9 @@
+--- Makefile.orig	Wed Nov 10 12:32:40 1999
++++ Makefile	Sat Oct  4 03:15:28 2003
+@@ -3,17 +3,17 @@
+ #
+ 
+ CC = gcc 
+-CFLAGS = -O -D_GNU_SOURCE -Wall
+-LFLAGS = -lncurses
++CFLAGS += -O -D_GNU_SOURCE -Wall -I${LOCALBASE}/include
++LFLAGS += -lncurses 
+ 
+ PROG = typespeed
+ SRCS = file.c  menu.c  misc.c  network.c
  OBJS = file.o  menu.o  misc.o  network.o
  
  local_dir = $(HOME)
@@ -13,15 +23,20 @@
  
  all: clean $(PROG)
  
-@@ -23,7 +23,6 @@
+@@ -23,12 +23,10 @@
  
  
  $(PROG): $(OBJS)
 -	
- 	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) $(PROG).c $(LFLAGS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(PROG) $(PROG).c $(LFLAGS)
  
  
-@@ -40,11 +39,9 @@
+ install: typespeed
+-
+ 	@echo Installing. You need to be root, or have access to install dirs
+ 	@echo ..and we know that everyone can delete the highscores, but
+ 	@echo we did not want to put setuid or setgid to typespeed yet,
+@@ -40,11 +38,9 @@
  	if test ! -d $(wordfiles)/typespeed; then mkdir $(wordfiles)/typespeed; fi
  	./typespeed --makescores
  	cp words.* $(wordfiles)/typespeed

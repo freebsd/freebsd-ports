@@ -17,6 +17,9 @@ COMMENT=	Test your typing speed, and get your fingers\' CPS
 MAN1=		typespeed.1
 
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
+
+MAKE_ENV=	LFLAGS="${LDFLAGS}"
 
 post-patch:
 	${REINPLACE_CMD} -e 's#_PREFIX_HERE#${PREFIX}#g' \
