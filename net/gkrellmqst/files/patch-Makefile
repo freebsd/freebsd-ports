@@ -1,34 +1,42 @@
---- Makefile.orig	Wed Jun 13 15:44:09 2001
-+++ Makefile	Tue Jul  3 01:40:53 2001
-@@ -1,17 +1,16 @@
--GTK_INCLUDE = `gtk-config --cflags`
--GTK_LIB = `gtk-config --libs`
-+GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
-+GTK_LIB = `$(GTK_CONFIG) --libs`
+--- Makefile.orig	Thu Jul  5 14:33:45 2001
++++ Makefile	Thu Aug  9 15:36:12 2001
+@@ -1,14 +1,10 @@
+-GTK_CONFIG ?= gtk-config
+-IMLIB_CONFIG ?= imlib-config
+-
+ GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
+ GTK_LIB = `$(GTK_CONFIG) --libs`
  
--IMLIB_INCLUDE = `imlib-config --cflags-gdk`
--IMLIB_LIB = `imlib-config --libs-gdk`
--THREAD_LIB = -lpthread
--INSTALLDIR = $(HOME)/.gkrellm/plugins
-+IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
-+IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`
-+INSTALLDIR = $(PREFIX)/libexec/gkrellm/plugins
+ IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
+ IMLIB_LIB = `$(IMLIB_CONFIG) --libs-gdk`
+-PTHREAD_LIBS ?= -lpthread
  
- 
--FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
--LIBS = $(GTK_LIB) $(IMLIB_LIB) $(THREAD_LIB)
-+FLAGS = -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) ${PTHREAD_CFLAGS}
-+LIBS = $(GTK_LIB) $(IMLIB_LIB) ${PTHREAD_LIBS}
+-FLAGS = -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(PTHREAD_CLFAGS)
++FLAGS = -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(PTHREAD_CFLAGS)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB) $(PTHREAD_LIBS) 
  LFLAGS = -shared
  
--CC = gcc $(CFLAGS) $(FLAGS)
-+CC += $(CFLAGS) $(FLAGS)
+@@ -16,11 +12,10 @@
+ INSTALLFLAGS = -c -s -m 644
+ PLUGINDIR ?= usr/share/gkrellm/plugins
+ DESTDIR ?= $(PREFIX)
+-INSTALLDIR = $(DESTDIR)/$(PLUGINDIR)
++INSTALLDIR = $(PREFIX)/libexec/gkrellm/plugins
  
- OBJS = qst.o
+ VERSION=0.3
  
-@@ -26,4 +25,4 @@
- # %.o: %.c
+-CC ?= gcc
+ CFLAGS += $(FLAGS) -DVERSION=\"$(VERSION)\"
+ 
+ TARBALL=gkrellm_qst-$(VERSION).tar
+@@ -41,9 +36,7 @@
+ 	$(INSTALL) qst.so $(HOME)/.gkrellm/plugins
  
  install: qst.so
--	install -c -s -m 644 qst.so $(INSTALLDIR)
-+	$(BSD_INSTALL_DATA) qst.so $(INSTALLDIR)
+-	@[ "`whoami`" != "root" ] && echo "Not root. Try make install_home" && exit 1
+-	$(INSTALL) -d $(INSTALLDIR)
+-	$(INSTALL) qst.so $(INSTALLDIR)
++	@$(BSD_INSTALL_DATA) qst.so $(INSTALLDIR)
+ 
+ tarball:
+ 	(cd ..; tar cf $(TARBALL) gkrellm_qst ; gzip $(TARBALL) )
