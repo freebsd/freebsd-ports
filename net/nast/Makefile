@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nast
-PORTVERSION=	0.1.7d
+PORTVERSION=	0.1.7e
 CATEGORIES=	net
 MASTER_SITES=	http://nast.berlios.de/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 
 MAN8=		nast.8
+DOC_FILES=	README
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -36,11 +37,18 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8/
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+.for doc in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
+.endif
 
 post-install:
 	${CHMOD} 0755 ${PREFIX}/bin/${PORTNAME}
