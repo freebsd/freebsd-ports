@@ -1,14 +1,21 @@
+@comment $FreeBSD$
 bin/dspam
+bin/dspam_2mysql
 bin/dspam_dump
 bin/dspam_clean
+bin/dspam_corpus
 bin/dspam_crc
 bin/dspam_genaliases
 bin/dspam_merge
+bin/dspam_ngstats
+bin/dspam_purge
+bin/dspam_purge.libdb4
 bin/dspam_stats
-bin/dspam_corpus
+bin/libdb4_purge
 lib/libdspam.so
-lib/libdspam.so.3
+lib/libdspam.so.4
 lib/libdspam.a
+@comment lib/libdspam.la
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/CHANGE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

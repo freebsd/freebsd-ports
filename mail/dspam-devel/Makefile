@@ -6,22 +6,39 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dspam/sources/
 
-MAINTAINER=	dom@wirespeed.org.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server-side bayesian spam filter
 
-LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-userdir=${PREFIX}/etc/dspam \
-		--with-db4-includes=${LOCALBASE}/include/db41
+CONFIGURE_ARGS=	--with-userdir=${PREFIX}/etc/dspam
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
+		--with-mysql-includes=${LOCALBASE}/include/mysql \
+		--with-mysql-libraries=${LOCALBASE}/lib/mysql
+.else
+LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=	--with-db4-includes=${LOCALBASE}/include/db41
+.endif
+
+.if defined(WITH_MAILDROP)
+RUN_DEPENDS=	maildrop:${PORTSDIR}/mail/maildrop
+CONFIGURE_ARGS+=	--with-local-delivery-agent='${LOCALBASE}/bin/maildrop $u'
+.endif
+
+.if defined(WITH_PROCMAIL)
+RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
+CONFIGURE_ARGS+=	--with-local-delivery-agent='${LOCALBASE}/bin/procmail $u'
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBTOOLFLAGS%%|${LIBTOOLFLAGS}|g ; \
