@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id$
+# $Id: commitcheck,v 1.4 1996/02/07 14:35:35 peter Exp $
 
 case "`hostname`" in
 freefall*)
@@ -10,6 +10,13 @@ freefall*)
 	echo "Please commit on freefall...."
 	exit 1
 esac
+
+VERS=`/usr/bin/cvs -v | awk '$1 == "Concurrent" { print $5 }' | tr -d .`
+if [ "x${VERS}" = "x" -o ${VERS} -lt 180 ]; then
+	echo "The wrong version of CVS is installed!"
+	exit 1
+fi
+
 
 if $CVSROOT/CVSROOT/cvs_acls.pl ${1+"$@"}; then
    if $CVSROOT/CVSROOT/commit_prep.pl ${1+"$@"}; then
