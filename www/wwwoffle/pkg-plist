@@ -31,6 +31,7 @@ share/doc/wwwoffle/de/LSM
 share/doc/wwwoffle/de/NEWS
 share/doc/wwwoffle/de/README.1st
 share/doc/wwwoffle/de/README.CONF.html
+share/doc/wwwoffle/de/README.CONF
 share/doc/wwwoffle/de/README.html
 share/doc/wwwoffle/es/CONVERT
 share/doc/wwwoffle/es/INSTALL
@@ -70,6 +71,7 @@ outgoing/Uh-W1UuCia4-wLoZYEnRrXw
 outgoing/Ux3oAN7UMcBN5bQi-qYGkoA
 html/README
 html/de/Welcome.html
+html/de/README.CONF.html
 html/de/local/index.html
 html/de/messages/AddCacheInfo.html
 html/de/messages/AliasRedirect.html
