@@ -26,7 +26,6 @@ RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
 RUBY_WITH_PTHREAD=	yes
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
@@ -34,13 +33,15 @@ CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
 		--with-x11-dir="${X11BASE}"
 INSTALL_TARGET=	site-install
 
-RD_DOCS_EN=	rubysdl_doc.en.rd
-RD_DOCS_JA=	rubysdl_doc.rd
+RUBY_RD_FILES=	rubysdl_doc.en.rd \
+		rubysdl_doc.rd
 
 DOCS_EN=	NEWS.en README.en rubysdl_const_list.txt \
-		${RD_DOCS_EN} ${RD_DOCS_EN:S/.rd$/.html/}
+		${RUBY_RD_FILES:M*.en.rd} \
+		${RUBY_RD_HTML_FILES:M*.en.html}
 DOCS_JA=	NEWS.ja README.ja \
-		${RD_DOCS_JA} ${RD_DOCS_JA:S/.rd$/.html/}
+		${RUBY_RD_FILES:N*.en.rd} \
+		${RUBY_RD_HTML_FILES:N*.en.html}
 
 post-extract:
 	dir=`${RUBY_OPENGL_WRKSRC_CMD}`; \
@@ -52,14 +53,11 @@ post-patch:
 	${RUBY} -i -pe '/require \x27mkmf\x27/ and $$_ += "dir_config(\x27x11\x27)\n"' \
 		${WRKSRC}/${RUBY_EXTCONF}
 
-post-build:
-.if !defined(NOPORTDOCS)
-.for f in ${RD_DOCS_EN} ${RD_DOCS_JA}
-	@cd ${WRKSRC}; ${RUBY_RD2} ${f} > ${f:S/.rd$/.html/}
-.endfor
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
@@ -71,5 +69,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

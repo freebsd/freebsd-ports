@@ -22,30 +22,28 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	site-install
 
+RUBY_RD_FILES=	pdflib-api.rd pdflib-api-jp.rd
+
 DOCS_EN=	ChangeLog	README \
-		${RD_DOCS_EN}	${RD_DOCS_EN:S/.rd/.html/}
+		${RUBY_RD_FILES:N*-jp.rd} \
+		${RUBY_RD_HTML_FILES:N*-jp.html}
 DOCS_JA=	ChangeLog.jp	README.jp \
-		${RD_DOCS_JA}	${RD_DOCS_JA:S/.rd/.html/}
-RD_DOCS_EN=	pdflib-api.rd
-RD_DOCS_JA=	pdflib-api-jp.rd
+		${RUBY_RD_FILES:M*-jp.rd} \
+		${RUBY_RD_HTML_FILES:M*-jp.html}
+
 EXAMPLES_EN=	hello.rb	pdfclock.rb	pdfgraph.rb \
 		pdfimage.rb	text2pdf.rb
 EXAMPLES_JA=	jtext2pdf.rb
 
-post-build:
-.if !defined(NOPORTDOCS)
-.for f in ${RD_DOCS_EN} ${RD_DOCS_JA}
-	cd ${WRKSRC}; \
-	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
-.endfor
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
 .for f in ${EXAMPLES_EN}
@@ -62,5 +60,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

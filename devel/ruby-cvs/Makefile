@@ -19,23 +19,29 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/flex.so:${PORTSDIR}/devel/ruby-flex_rb
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 
+NO_BUILD=	yes
+
+RUBY_RD_FILES=	cvs.rb diff.rb tempdir.rb
 RUBY_SHEBANG_FILES=	${WRKSRC}/viztree ${WRKSRC}/reviz/reviz
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
-DOCS=	README TODO cvs.html diff.html tempdir.html
+DOCS=		README TODO ${RUBY_RD_HTML_FILES}
 
-do-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} lib/cvs.rb > cvs.html
-	cd ${WRKSRC}; ${RUBY_RD2} lib/diff.rb > diff.html
-	cd ${WRKSRC}; ${RUBY_RD2} lib/tempdir.rb > tempdir.html
-.endif
+post-extract:
+.for f in ${RUBY_RD_FILES}
+	cd ${WRKSRC}; ${LN} -sf lib/${f}
+.endfor
 
 do-install:
 	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/reviz
 	${INSTALL_DATA} ${WRKSRC}/viztree ${RUBY_MODEXAMPLESDIR}/
@@ -45,5 +51,3 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
-
-.include <bsd.port.mk>

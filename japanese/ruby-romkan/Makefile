@@ -15,26 +15,31 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
+
+NO_BUILD=	yes
 
 EXAMPLES_JA=	test.rb test.sh
-DOCS_EN=	ChangeLog romkan.en.html romkan.en.rd
-DOCS_JA=	romkan.ja.html romkan.ja.rd
+
+RUBY_RD_FILES=	romkan.en.rd romkan.ja.rd
+
+DOCS_EN=	ChangeLog \
+		${RUBY_RD_FILES:M*.en.rd} \
+		${RUBY_RD_HTML_FILES:M*.en.html}
+DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
+		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
-do-build:
-.if !defined(NOPORTDOCS)
-.for f in romkan.en.rd romkan.ja.rd
-	@cd ${WRKSRC}; \
-	${RUBY_RD2} ${f} > ${f:R}.html
-.endfor
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/romkan.rb ${RUBY_SITELIBDIR}/
+
+post-install: doc-install
+
+.include <bsd.port.post.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
 .for f in ${EXAMPLES_JA}
@@ -48,5 +53,3 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.post.mk>

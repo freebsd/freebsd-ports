@@ -16,21 +16,24 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 
-DOCS_EN=	ChangeLog bsearch.en.html bsearch.en.rd
-DOCS_JA=	bsearch.ja.html bsearch.ja.rd
+NO_BUILD=	yes
 
-do-build:
-.if !defined(NOPORTDOCS)
-.for f in bsearch.en.rd bsearch.ja.rd
-	@cd ${WRKSRC}; \
-	${RUBY_RD2} ${f} > ${f:R}.html
-.endfor
-.endif
+RUBY_RD_FILES=	bsearch.en.rd bsearch.ja.rd
+DOCS_EN=	ChangeLog \
+		${RUBY_RD_FILES:M*.en.rd} \
+		${RUBY_RD_HTML_FILES:M*.en.html}
+DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
+		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bsearch.rb ${RUBY_SITELIBDIR}/
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
@@ -40,5 +43,3 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

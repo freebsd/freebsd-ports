@@ -17,23 +17,22 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
+
+RUBY_RD_FILES=	sysvipc.rd
 
 INSTALL_TARGET=	site-install
 
-DOCS=		sysvipc.html	sysvipc.rd
+DOCS=		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES}
 
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} sysvipc.rd > sysvipc.html
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
-
-.include <bsd.port.mk>

@@ -17,31 +17,31 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DOCS=		readme.en.html
-DOCS_JA=	readme.ja.rd readme.ja.html
+NO_BUILD=	yes
 
-do-build:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}; \
-	${RUBY_RD2} image_size.rb > readme.en.html
-	@cd ${WRKSRC}; \
-	${RUBY_RD2} readme.ja.rd > readme.ja.html
-.endif
+RUBY_RD_FILES=	image_size.rb readme.ja.rd
+
+DOCS_EN=	${RUBY_RD_HTML_FILES:N*.ja.html}
+DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
+		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/image_size.rb ${RUBY_SITELIBDIR}/
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS}
+.for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

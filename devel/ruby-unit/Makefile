@@ -16,10 +16,12 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
+
+NO_BUILD=	yes
 
 RUBY_MODNAME=	runit
 
+RUBY_RD_FILES=	# defined
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/c2t.rb	\
 			${WRKSRC}/bin/runtest.rb
 
@@ -27,19 +29,21 @@ BINS=		c2t		runtest
 DOCS=		ChangeLog	README		ToDo
 DOCS_JA=	README.ja
 
-do-build:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} makehtml.rb
-.endif
-
 do-install:
-	@cd ${WRKSRC}; \
-	${SETENV} ${MAKE_ENV} ${RUBY} install.rb
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${RUBY} install.rb
 .for f in ${BINS}
 	${LN} -sf ${f}.rb ${PREFIX}/bin/${f}
 .endfor
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
+.if !defined(RUBY_NO_RD_HTML)
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${RUBY} makehtml.rb
+.endif
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
@@ -52,5 +56,3 @@ do-install:
 	${CP} -R ${WRKSRC}/doc_en/ ${RUBY_MODDOCDIR}/
 	${CP} -R ${WRKSRC}/doc_ja/ ${RUBY_MODDOCDIR}/ja/
 .endif
-
-.include <bsd.port.mk>

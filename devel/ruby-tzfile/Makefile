@@ -16,20 +16,26 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
+
+NO_BUILD=	yes
+
+RUBY_RD_FILES=	tzfile.rb
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-do-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} tzfile.rb > tzfile.html
-.endif
+DOCS=		${RUBY_RD_HTML_FILES}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/tzfile.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/tzfile.html ${RUBY_MODDOCDIR}/
-.endif
+
+post-install: doc-install
 
 .include <bsd.port.mk>
+
+doc-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODDOCDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.endif

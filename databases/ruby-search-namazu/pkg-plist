@@ -1,8 +1,8 @@
 %%RUBY_SITEARCHLIBDIR%%/search/namazu.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/search
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/search-namazu.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/search-namazu.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/search-namazu.ja.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/search-namazu.en.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/search-namazu.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/search-namazu.en.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -4,9 +4,9 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/romkan.en.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/romkan.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/romkan.en.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/romkan.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/romkan.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/romkan.ja.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

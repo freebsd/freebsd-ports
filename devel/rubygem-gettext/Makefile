@@ -19,24 +19,24 @@ MAINTAINER=	knu@FreeBSD.org
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
+RUBY_RD_FILES=	# defined
 RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
 
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/docs; ${RUBY} makehtml.rb
-	cd ${WRKSRC}/samples; ${RUBY} makemo.rb
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
+.if !defined(RUBY_NO_RD_HTML)
+	cd ${WRKSRC}/docs; ${RUBY} makehtml.rb
+.endif
+	cd ${WRKSRC}/samples; ${RUBY} makemo.rb
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${CP} -R ${WRKSRC}/docs/* ${RUBY_MODDOCDIR}/
 .endif
-
-.include <bsd.port.mk>

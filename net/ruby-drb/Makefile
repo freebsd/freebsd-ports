@@ -18,42 +18,30 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/acl.rb:${PORTSDIR}/security/ruby-acl
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
+
+NO_BUILD=	yes
+
+RUBY_RD_FILES=	doc/*.rd doc/ja/*.rd.ja
 
 post-extract:
 	${MKDIR} ${WRKSRC}/acl/doc ${WRKSRC}/acl/lib ${WRKSRC}/acl/runit
 	cd ${WRKSRC}; for f in */acl*; do ${MV} $$f ${WRKSRC}/acl/$$f; done
 	${MKDIR} ${WRKSRC}/sample/ja
 	${MV} ${WRKSRC}/sample/*.ja ${WRKSRC}/sample/ja/
-
-post-patch:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc; for f in drb-ref.rd*; do \
-		${MV} $$f $$f.orig; \
-		( ${ECHO_CMD} '=begin'; ${CAT} $$f.orig; ${ECHO_CMD} '=end' ) > $$f; \
-		${RM} $$f.orig; \
-	done
-.endif
-
-do-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc; for f in *.rd; do \
-		${RUBY_RD2} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd$$/.html/'`; \
-	done
-	cd ${WRKSRC}/doc; for f in *.rd.ja; do \
-		${RUBY_RD2} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd.ja$$/.ja.html/'`; \
-	done
 	${MKDIR} ${WRKSRC}/doc/ja
-	cd ${WRKSRC}/doc; ${MV} *.rd.ja *.ja.html ja/
-.endif
+	${MV} ${WRKSRC}/doc/*.ja ${WRKSRC}/doc/ja/
 
 do-install:
 	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${MKDIR} ${RUBY_MODDOCDIR}
 	${CP} -R ${WRKSRC}/doc/* ${RUBY_MODDOCDIR}/
 .endif
-
-.include <bsd.port.mk>

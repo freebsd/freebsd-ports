@@ -15,29 +15,27 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 
-do-build:
-.if !defined(NOPORTDOCS)
-.for f in acl.rd acl.rd.ja
-	@cd ${WRKSRC}/doc; \
-	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
-.endfor
-.endif
+NO_BUILD=	yess
+
+RUBY_RD_FILES=	doc/acl.rd doc/ja/acl.rd.ja
+
+post-extract:
+	${MKDIR} ${WRKSRC}/doc/ja
+	${MV} ${WRKSRC}/README ${WRKSRC}/doc/
+	${MV} ${WRKSRC}/README.ja ${WRKSRC}/doc/*.ja ${WRKSRC}/doc/ja/
 
 do-install:
-	@cd ${WRKSRC}; \
-	${RUBY} install.rb
+	@cd ${WRKSRC}; ${RUBY} install.rb
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/acltest.rb ${RUBY_MODEXAMPLESDIR}
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in README doc/acl.rd doc/acl.html
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
-.endfor
-.for f in README.ja doc/acl.rd.ja doc/acl.html.ja
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja
-.endfor
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${CP} -R ${WRKSRC}/doc/* ${RUBY_MODDOCDIR}/
 .endif
-
-.include <bsd.port.mk>

@@ -25,11 +25,11 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysdl_const_list.txt
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysdl_doc.en.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/rubysdl_doc.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rubysdl_doc.en.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/NEWS.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rubysdl_doc.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/rubysdl_doc.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rubysdl_doc.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

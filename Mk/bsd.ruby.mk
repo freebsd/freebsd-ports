@@ -17,6 +17,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_VER		- (See below)
 # RUBY_DEFAULT_VER	- Set to (e.g.) "1.7" if you want to refer to "ruby17" just as "ruby".
 # RUBY_ARCH		- (See below)
+# RUBY_NO_RD_HTML	- Define if you don't want HTML files generated from RD files.
 #
 # [variables that each port can define]
 #
@@ -267,7 +268,7 @@ USE_RUBY=		yes
 post-patch:	ruby-shebang-patch
 
 ruby-shebang-patch:
-	@for f in ${RUBY_SHEBANG_FILES}; do \
+	@cd ${WRKSRC}; for f in ${RUBY_SHEBANG_FILES}; do \
 	${ECHO_MSG} "===>  Fixing the #! line of $$f"; \
 	${RUBY} ${RUBY_FLAGS} -i -p \
 			-e 'if $$. == 1; ' \
@@ -350,7 +351,7 @@ do-install:	ruby-setup-install
 
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
-	cd ${INSTALL_WRKSRC}; \
+	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install
 .endif
 
@@ -392,26 +393,39 @@ RUN_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 
 # documents
 
-.if ${ARCH} == alpha && ${RUBY_VER} <= 1.6 && defined(USE_RUBY_RDTOOL)
-NOPORTDOCS=	yes
+.if defined(NOPORTDOCS)
+RUBY_NO_RD_HTML=	yes
 .endif
 
-.if defined(RUBY_RD_FILES) && !empty(RUBY_RD_FILES)
+.if ${ARCH} == alpha && ${RUBY_VER} <= 1.6
+RUBY_NO_RD_HTML=	yes
+.endif
+
+.if defined(RUBY_RD_FILES) && !defined(RUBY_NO_RD_HTML)
 USE_RUBY_RDTOOL=	yes
 
-RUBY_RD_HTML_FILES=	${RUBY_RD_FILES:S/.rd//:S/$/.html/}
+RUBY_RD_HTML_FILES=	${RUBY_RD_FILES:S/.rb$//:S/.rd././:S/.rd$//:S/$/.html/}
 
-do-build:	ruby-rd-build
+PLIST_SUB+=		RUBY_RD_HTML_FILES=""
+
+pre-install:	ruby-rd-build
 
 ruby-rd-build:
-.if !defined(NOPORTDOCS)
+.if !empty(RUBY_RD_FILES)
 	@${ECHO_MSG} "===>  Generating HTML documents from RD documents"
-	@for rd in ${RUBY_RD_FILES}; do \
-		html="$$(echo $$rd | sed 's/\.rd//').html"; \
+	@cd ${WRKSRC}; for rd in ${RUBY_RD_FILES}; do \
+		html=$$(echo $$rd | ${SED} 's/\.rb$$//;s/\.rd\././;s/\.rd$$//').html; \
 		${ECHO_MSG} "${RUBY_RD2} $$rd > $$html"; \
 		${RUBY_RD2} $$rd > $$html; \
 	done
+.else
+	@${DO_NADA}
 .endif
+
+.else
+RUBY_RD_HTML_FILES=	# empty
+
+PLIST_SUB+=		RUBY_RD_HTML_FILES="@comment "
 .endif
 
 .if !defined(NOPORTDOCS) && defined(USE_RUBY_RDTOOL)

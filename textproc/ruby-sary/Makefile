@@ -19,24 +19,25 @@ LIB_DEPENDS=	sary.8:${PORTSDIR}/textproc/sary
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
 
 RUBY_WITH_PTHREAD=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog *.en.*
-DOCS_JA=	*.ja.*
+RUBY_RD_FILES=	*.en.rd *.ja.rd
 
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; for f in *.rd; do \
-		${RUBY_RD2} $$f > $${f%.rd}.html; \
-	done
-.endif
+DOCS_EN=	ChangeLog \
+		${RUBY_RD_FILES:M*.en.rd} \
+		${RUBY_RD_HTML_FILES:M*.en.html}
+DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
+		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-post-install:
+post-install: doc-install
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
@@ -46,5 +47,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

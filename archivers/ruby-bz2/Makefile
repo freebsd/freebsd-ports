@@ -17,25 +17,30 @@ MAINTAINER=	knu@FreeBSD.org
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
-USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes		README.en	bz2.html	bz2.rd	\
+RUBY_RD_FILES=	bz2.rd
+
+DOCS=		Changes \
+		README.en \
+		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES} \
 		docs/doc
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} bz2.rd > bz2.html
-	cd ${WRKSRC}/docs; ${RUBY} b.rb bz2; rdoc bz2.rb
+	cd ${WRKSRC}/docs; ${RUBY} b.rb bz2; ${RUBY_RDOC} bz2.rb
 .endif
 
-post-install:
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
-
-.include <bsd.port.mk>
