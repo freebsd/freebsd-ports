@@ -1,0 +1,20 @@
+--- configure.orig	Tue Dec 18 07:20:13 2001
++++ configure	Wed Feb 27 14:04:17 2002
+@@ -56,9 +56,9 @@
+ echo
+ 
+ cd `dirname $0`
+-VTCL_HOME=`pwd`
++VTCL_HOME=/usr/local/lib/vtcl
+ 
+-cat > $VTCL_HOME/vtcl << EOF
++cat > vtcl << EOF
+ #!/bin/sh
+ 
+ PATH_TO_WISH=$WISH
+@@ -70,4 +70,4 @@
+ exec \${PATH_TO_WISH} \${VTCL_HOME}/vtcl.tcl \$*
+ EOF
+ 
+-chmod +x $VTCL_HOME/vtcl
++chmod +x vtcl
