@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.301 1999/01/11 13:04:18 asami Exp $
+#	$Id: bsd.port.mk,v 1.302 1999/01/20 01:55:05 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -458,7 +458,7 @@ DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 EXTRACT_SUFX?=	.tar.gz
 PACKAGES?=		${PORTSDIR}/packages
-TEMPLATES?=		${PORTSDIR}/templates
+TEMPLATES?=		${PORTSDIR}/Templates
 
 .if exists(${MASTERDIR}/patches.${ARCH}-${OPSYS})
 PATCHDIR?=		${MASTERDIR}/patches.${ARCH}-${OPSYS}
@@ -854,23 +854,22 @@ PATCH_SITES:=	${PATCH_SITES:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
 MASTER_SITE_BACKUP?=	\
 	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 
-# If the user has this set, go to the FreeBSD repository for everything.
-.if defined(MASTER_SITE_FREEBSD)
-MASTER_SITE_OVERRIDE=  ${MASTER_SITE_BACKUP}
-.endif
-
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
 	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/LOCAL_PORTS/
 
-# I guess we're in the master distribution business! :)  As we gain mirror
-# sites for distfiles, add them to this list.
-.if !defined(MASTER_SITE_OVERRIDE)
+# If the user has MASTER_SITE_FREEBSD set, go to the FreeBSD repository
+# for everything, but don't search it twice by appending it to the end.
+.if !defined(MASTER_SITE_FREEBSD)
 MASTER_SITES+=	${MASTER_SITE_BACKUP}
 PATCH_SITES+=	${MASTER_SITE_BACKUP}
-.else
+.if defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES:=	${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
 PATCH_SITES:=	${MASTER_SITE_OVERRIDE} ${PATCH_SITES}
+.endif
+.else
+MASTER_SITES:=	${MASTER_SITE_BACKUP} ${MASTER_SITES}
+PATCH_SITES:=	${MASTER_SITE_BACKUP} ${MASTER_SITES}
 .endif
 
 # Search CDROM first if mounted, symlink instead of copy if

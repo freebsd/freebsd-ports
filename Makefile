@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.44 1999/01/13 04:08:05 jkh Exp $
+# $Id: Makefile,v 1.45 1999/01/22 10:32:32 asami Exp $
 #
 
 SUBDIR += archivers
@@ -54,7 +54,7 @@ index:
 ${.CURDIR}/INDEX:
 	@echo -n "Generating INDEX - please wait.."
 	@make describe ECHO_MSG="echo > /dev/null" | \
-		perl ${.CURDIR}/templates/make_index > ${.CURDIR}/INDEX
+		perl ${.CURDIR}/Tools/make_index > ${.CURDIR}/INDEX
 	@echo " Done."
 
 print-index:	${.CURDIR}/INDEX
