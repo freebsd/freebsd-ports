@@ -6,7 +6,7 @@
 # $Id: Makefile,v 1.4 1996/09/10 05:28:25 jdp Exp $
 #
 
-DISTNAME=	cvsup-13.3
+DISTNAME=	cvsup-13.4
 CATEGORIES+=	net
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/CVSup/
 
