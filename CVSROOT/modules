@@ -4052,6 +4052,7 @@ latex-mathabx	ports/print/latex-mathabx
 latex-mk	ports/misc/latex-mk
 latex-pgf	ports/print/latex-pgf
 latex-subfig	ports/print/latex-subfig
+latex-subfloat	ports/print/latex-subfloat
 latex-timing	ports/print/latex-timing
 latex-xcolor	ports/print/latex-xcolor
 latex2html	ports/textproc/latex2html
