@@ -476,7 +476,6 @@
     SUBDIR += urban
     SUBDIR += urban-sounds
     SUBDIR += utserver
-    SUBDIR += utserver-asu
     SUBDIR += utserver-to
     SUBDIR += vamos
     SUBDIR += vavoom
