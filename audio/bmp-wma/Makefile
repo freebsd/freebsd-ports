@@ -28,8 +28,8 @@ USE_X_PREFIX=	yes
 CONFIGURE_ARGS+=	--enable-x86
 .endif
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (tries to link static library against shared)"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on amd64 or ia64 (tries to link static library against shared)"
 .endif
 
 .include <bsd.port.post.mk>
