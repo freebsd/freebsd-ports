@@ -46,30 +46,3 @@
   
   
   # This is for NeXT. Note that versions of NeXT less than 3.2 
-***************
-*** 449,455 ****
-  	chmod u=rw,go=r $(MANDIR)/man7/samba.7
-  	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
-  	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
-! 	
-  source:
-  	tar cfv sources.tar COPYING README THANKS \
-                              Makefile announce bugs change-log \
---- 449,465 ----
-  	chmod u=rw,go=r $(MANDIR)/man7/samba.7
-  	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
-  	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
-! 	@echo "Comrpessing manpages"
-! 	@gzip -9f $(MANDIR)/man1/smbstatus.1
-! 	@gzip -9f $(MANDIR)/man1/smbclient.1
-! 	@gzip -9f $(MANDIR)/man1/smbrun.1
-! 	@gzip -9f $(MANDIR)/man1/testparm.1
-! 	@gzip -9f $(MANDIR)/man1/testprns.1
-! 	@gzip -9f $(MANDIR)/man5/smb.conf.5
-! 	@gzip -9f $(MANDIR)/man7/samba.7
-! 	@gzip -9f $(MANDIR)/man8/smbd.8
-! 	@gzip -9f $(MANDIR)/man8/nmbd.8
-! 
-  source:
-  	tar cfv sources.tar COPYING README THANKS \
-                              Makefile announce bugs change-log \
