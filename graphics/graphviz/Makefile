@@ -6,33 +6,28 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.5.1
-CATEGORIES=	graphics tk82
-MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
-DISTNAME=	gviz15
-EXTRACT_SUFX=	.tgz
+PORTVERSION=	1.6
+CATEGORIES=	graphics tk83
+MASTER_SITES=	http://www.graphviz.org/pub/graphviz/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png \
+		tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
+		ttf.4:${PORTSDIR}/print/freetype \
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
-FETCH_ARGS=	-b
-WRKSRC=		${WRKDIR}/gv1.5
-MAKEFILE=	makefile
-MAN1=		dot.1 dotty.1 lefty.1 neato.1
-MANN=		tcldot.n
+USE_AUTOCONF=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -DHAVE_TERMIOS" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		TCLCONFIG=${LOCALBASE}/lib/tcl8.3/tclConfig.sh \
+		TKCONFIG=${LOCALBASE}/lib/tk8.3/tkConfig.sh
+USE_GMAKE=	yes
 
-DOCDIR=		${PREFIX}/share/doc/graphviz
-
-post-extract:
-	@${CP} ${FILESDIR}/freebsd.generic ${WRKSRC}/makearch
-
-post-install:
-	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.htm* ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.ps ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCDIR}
-	@${GZIP_CMD} ${DOCDIR}/*.ps
+MAN1=	dot.1 dotty.1 lefty.1 neato.1
+MAN3=	agraph.3 cdt.3 graph.3 pathplan.3
+MANN=	gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+--- doc/Makefile.am.orig	Thu May  4 02:31:24 2000
++++ doc/Makefile.am	Tue Oct 17 19:10:01 2000
+@@ -4,6 +4,6 @@
+ 
+ DOCS = dotguide.ps dotty.ps gd.html lefty.ps neatoguide.ps tcldot.html
+ 
+-docdir = $(prefix)/doc
++docdir = $(datadir)/doc/graphviz
+ doc_DATA = $(DOCS)
+ EXTRA_DIST = $(DOCS)
