@@ -177,6 +177,7 @@
     SUBDIR += ruby-gnuplot
     SUBDIR += ruby-math3d
     SUBDIR += ruby-narray
+    SUBDIR += ruby-narray_miss
     SUBDIR += ruby-netcdf
     SUBDIR += sc
     SUBDIR += scalapack
