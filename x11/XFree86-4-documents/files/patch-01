@@ -1,0 +1,14 @@
+--- Imakefile~	Mon Dec 21 07:51:33 1998
++++ Imakefile	Wed May 10 15:28:41 2000
+@@ -12,7 +12,11 @@
+ SPECSDIR = specs
+ #endif
+ 
++#if defined(FreeBSDBuildXdoc) || FreeBSDBuildXdoc
++SUBDIRS = $(MISCDIR) $(SPECSDIR)
++#else
+ SUBDIRS = man $(MISCDIR) $(SPECSDIR)
++#endif
+ 
+ all::
+ 

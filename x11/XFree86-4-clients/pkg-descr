@@ -1,4 +1,6 @@
-XFree86 is a added-value pack for X11R6 that supports several versions
-of Intel-based Unix and Unix-like operating systems.  
+This package contains XFree86-4.0 Client Environments.
+xterm, ico, twm, oclock and other client programs are
+included this package. Also library files and resource
+files are included.
 
 WWW: http://www.xfree86.org/

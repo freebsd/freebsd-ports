@@ -1,0 +1,4 @@
+bin/xfs
+@cwd /etc
+X11/fs/config
+@unexec rmdir /etc/X11/fs

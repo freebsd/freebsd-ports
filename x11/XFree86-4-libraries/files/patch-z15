@@ -1,0 +1,12 @@
+--- programs/proxymngr/Imakefile~	Thu Feb 10 03:02:19 2000
++++ programs/proxymngr/Imakefile	Sun May  7 23:02:04 2000
+@@ -27,7 +27,9 @@
+ CppFileTarget(pmconfig,pmconfig.cpp,$(SITE_CONFIG),NullParameter)
+ 
+ BuildIncludes($(HEADERS),X11/PM,../..)
++#if !defined(LibHeaders) || LibHeaders
+ InstallMultipleFlags($(HEADERS),$(INCDIR)/X11/PM,$(INSTINCFLAGS))
++#endif
+ 
+ ComplexProgramTarget_1(proxymngr,$(LOCAL_LIBRARIES),NullParameter)
+ SpecialCObjectRule(main,$(_NOOP_),'-DCONFIG_FILE="'$(PROXYMANAGERDIR)'/pmconfig"')

@@ -1,0 +1,22 @@
+--- programs/Xserver/hw/xfree86/etc/Imakefile.orig	Sat Feb 26 14:38:50 2000
++++ programs/Xserver/hw/xfree86/etc/Imakefile	Thu Jun  1 15:21:43 2000
+@@ -49,6 +49,10 @@
+ #else
+    TERMFILES = sun.termcap sun.terminfo xterm.termcap xterm.terminfo
+ #endif
++#else
++#if defined(FreeBSDBuildXxserv) && FreeBSDBuildXxserv
++   TERMFILES = sun.termcap sun.terminfo xterm.termcap xterm.terminfo
++#endif
+ #endif
+ 
+ XINST = Xinstall.sh
+@@ -126,7 +130,7 @@
+ InstallNamedProg(svr4_rem_pch,svr4_patch_rem,$(LIBDIR)/etc)
+ #endif
+ 
+-#if !BuildServersOnly
++#if !BuildServersOnly || (defined(FreeBSDBuildXxserv) && FreeBSDBuildXxserv)
+ LinkFile(xterm.termcap,$(PROGRAMSRC)/xterm/termcap)
+ LinkFile(xterm.terminfo,$(PROGRAMSRC)/xterm/terminfo)
+ #endif

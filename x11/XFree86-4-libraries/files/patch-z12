@@ -1,0 +1,24 @@
+--- lib/font/X-TrueType/Imakefile.orig	Sun Feb 13 16:50:36 2000
++++ lib/font/X-TrueType/Imakefile	Tue May 23 15:59:44 2000
+@@ -5,8 +5,10 @@
+ #define PassCDebugFlags CDEBUGFLAGS="$(CDEBUGFLAGS)"
+ 
+ #if DoLoadableServer
++#if !defined(FreeBSDBuildXlib) || !FreeBSDBuildXlib
+ MODULE_SUBDIRS = module
+ #endif
++#endif
+ 
+ INCLUDES = -I. -I$(FONTINCSRC) -I../include -I../fontcache \
+            -I$(XTOP)/include -I$(SERVERSRC)/include \
+@@ -22,8 +24,10 @@
+ CCONVHEADERS = \
+   xttcap.h xttcconv.h xttcconvP.h xttcommon.h xttversion.h cconvversion.h
+ #if XTrueTypeInstallCConvHeaders
++#if !defined(LibHeaders) || (defined(LibHeaders) && LibHeaders)
+ CCONVINSTDIR = XTrueTypeCConvIncDir
+ InstallMultipleFlags($(CCONVHEADERS),$(CCONVINSTDIR),$(INSTINCFLAGS))
++#endif
+ #endif
+ 
+ #if XTTInLibXFont

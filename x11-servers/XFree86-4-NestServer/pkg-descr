@@ -1,0 +1,8 @@
+This package contains Xnest, a nested X server.
+Xnest  is a client and a server.  Xnest is a client of the
+real server which manages windows and graphics requests on
+its  behalf.  Xnest is a server to its own clients.  Xnest
+manages windows and graphics requests on their behalf.  To
+these clients Xnest appears to be a conventional server.
+
+WWW: http://www.xfree86.org/

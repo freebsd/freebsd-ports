@@ -1,0 +1,11 @@
+--- programs/Xserver/hw/xfree86/common/Imakefile.orig	Wed Apr 19 09:49:39 2000
++++ programs/Xserver/hw/xfree86/common/Imakefile	Wed Apr 19 09:50:25 2000
+@@ -151,6 +151,8 @@
+ 	        -I$(XF86SRC)/scanpci -I$(XF86OSSRC)/vbe -I$(XF86SRC)/int10 \
+ 		-I$(XF86SRC)/ddc
+ 
++HEADERS = xf86Module.h
++
+      OSNAME = OSName
+    OSVENDOR = OSVendor
+   OSNAMEDEF = -DOSNAME='"$(OSNAME)"' -DOSVENDOR='"$(OSVENDOR)"'

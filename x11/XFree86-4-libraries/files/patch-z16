@@ -1,0 +1,10 @@
+--- lib/Xaw/Imakefile~	Mon Jun 28 02:27:45 1999
++++ lib/Xaw/Imakefile	Tue May  9 14:19:57 2000
+@@ -196,5 +196,7 @@
+ #endif
+ 
+ MANSUFFIX = $(LIBMANSUFFIX)
++#if !defined(FreeBSDBuildXbin) || !FreeBSDBuildXbin
+ InstallManPage(Xaw,$(LIBMANDIR))
++#endif
+ DependTarget()

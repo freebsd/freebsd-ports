@@ -1,0 +1,11 @@
+--- programs/Xserver/hw/xfree86/os-support/Imakefile.orig	Wed Apr 19 09:46:44 2000
++++ programs/Xserver/hw/xfree86/os-support/Imakefile	Wed Apr 19 09:48:15 2000
+@@ -107,6 +107,8 @@
+ SRCS = $(OS_SUBDIR)/?*.c $(BUS_SUBDIR)/?*.c misc/?*.c vbe/?*.c $(DRM_SRC)
+ OBJS = $(OS_SUBDIR)/?*.o $(BUS_SUBDIR)/?*.o misc/?*.o vbe/?*.o $(DRM_OBJ)
+ 
++HEADERS = xf86_ansic.h
++
+ DONES = $(OS_SUBDIR)/DONE $(BUS_SUBDIR)/DONE misc/DONE vbe/DONE
+ 
+ #if HasParallelMake

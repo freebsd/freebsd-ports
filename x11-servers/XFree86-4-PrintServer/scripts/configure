@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# This scripts work as following:
+# (1) cp current xf86site.def (it may be created by imake-4 ports) 
+#       to ${WRKDIR}/xc/config/cf.
+#     this means this ports use imake-4's config defaultly.
+# (2) Generate temporal config for compiling.
+#     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
+#     used for compiling this ports localy. so these configs will be generated
+#     this scripts. these configs will be stored to `host.def' file.
+#     but this host.def will never install. use local only.
+
+ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
+DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
+ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
+LOCALDEF=$WRKDIR/.config
+HOSTDEF=$WRKDIR/xc/config/cf/host.def
+
+configure () {
+    # Use original host.def as initial config file
+    rm -f $LOCALDEF
+    grep -v '#define.*ProjectRoot' $ORIGHOSTDEF >> $LOCALDEF
+    echo "#define ProjectRoot $PREFIX" >> $LOCALDEF
+
+    if [ X$InstallFSConfig = "X" ]; then
+	InstallFSConfig=YES
+    fi
+
+    # disable some configs: there are not used this ports
+    for i in BuildFonts \
+	Build75DpiFonts \
+	Build100DpiFonts \
+	BuildSpeedoFonts \
+	BuildType1Fonts \
+	BuildCIDFonts \
+	BuildCyrillicFonts \
+	BuildLatin2Fonts \
+	XF86Server \
+	BuildFontServer \
+	XnestServer \
+	XVirtualFramebufferServer \
+	LibHeaders \
+	ForceNormalLib \
+	XTrueTypeInstallCConvHeaders
+    do \
+	echo "#define $i NO" >> $LOCALDEF
+    done
+    echo "#define BuildServer YES" >> $LOCALDEF
+    echo "#define XprtServer YES" >> $LOCALDEF
+    echo "#define BuildServersOnly YES" >> $LOCALDEF
+
+    # Check Wraphelp.c
+    WH=$WRKDIR/xc/lib/Xdmcp/Wraphelp.c
+    cpwh=NO
+    if [ -f $WH ] ; then
+	cpwh=SOURCE
+    elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
+	cpwh=$DISTDIR/xc/Wraphelp.c
+    else
+	echo "==> Warnning: Wraphelp.c not found, DES support NOT enabled."
+    fi
+    if [ X$cpwh != XNO -a X$cpwh != XSOURCE ]; then
+	tr -d '\r' < $cpwh > $WH
+    fi
+
+    # Copy ORIGDEF to DESTDEF
+    rm -f $DESTDEF
+    if [ $cpwh = NO ] ; then
+	grep -v '#define.*HasXdmAuth' $ORIGDEF >> $DESTDEF
+	echo "#define HasXdmAuth NO" >> $DESTDEF
+    else
+	cp -f $ORIGDEF $DESTDEF
+    fi
+
+    # copy generated config to host.def
+    cp -f $LOCALDEF $HOSTDEF
+}
+
+configure
+exit 0
