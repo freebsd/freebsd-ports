@@ -74,9 +74,6 @@ giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-1.[234]*	ports/graphics/graphviz	Needs license before fetching
-hanIM-*			ports/korean/hanIM	Legal status is not clear
-						But FreeBSD is permitted to 
-						redistriute from author
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
 inn2-*			ports/news/inn2		Copyright file in package
@@ -161,9 +158,6 @@ vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
-xfntmizi-*.noarch	ports/korean/mizifont	Not a free software, but
-						redistributable on FreeBSD
-						mirrors
 xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xhime*.tgz		ports/games/xhime	Contains commercial character
 						data
