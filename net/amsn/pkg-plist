@@ -2,11 +2,9 @@ bin/amsn
 lib/msn/FAQ
 lib/msn/HELP
 lib/msn/README
-lib/msn/amsn
-lib/msn/jwakeup
-lib/msn/langlist
 lib/msn/abook.tcl
 lib/msn/alarm.tcl
+lib/msn/amsn
 lib/msn/anigif.tcl
 lib/msn/automsg.tcl
 lib/msn/balloon.tcl
@@ -22,21 +20,6 @@ lib/msn/dock.tcl
 lib/msn/groups.tcl
 lib/msn/gui.tcl
 lib/msn/hotmail.tcl
-lib/msn/lang.tcl
-lib/msn/loging.tcl
-lib/msn/migmd5.tcl
-lib/msn/notebook.tcl
-lib/msn/plugins.tcl
-lib/msn/progressbar.tcl
-lib/msn/protocol.tcl
-lib/msn/proxy.tcl
-lib/msn/remote.tcl
-lib/msn/rnotebook.tcl
-lib/msn/skins.tcl
-lib/msn/smileys.tcl
-lib/msn/socks.tcl
-lib/msn/sxml.tcl
-lib/msn/trayicon.tcl
 lib/msn/hotmlog.htm
 lib/msn/icons/128x128/aMSN_128.png
 lib/msn/icons/32x32/aMSN_32.png
@@ -50,8 +33,11 @@ lib/msn/icons/64x64/aMSN_64.png
 lib/msn/icons/64x64/amsn.png
 lib/msn/icons/96x96/aMSN_96.png
 lib/msn/icons/logolinmsn.gif
+lib/msn/jwakeup
+lib/msn/lang.tcl
 lib/msn/lang/addkey.tcl
 lib/msn/lang/convert.tcl
+lib/msn/lang/dups.sh
 lib/msn/lang/errors.py
 lib/msn/lang/genlangfiles.c
 lib/msn/lang/genpage.c
@@ -84,7 +70,6 @@ lib/msn/lang/langit
 lib/msn/lang/langja
 lib/msn/lang/langko
 lib/msn/lang/langmk
-lib/msn/lang/langmk2
 lib/msn/lang/langmn
 lib/msn/lang/langnl
 lib/msn/lang/langno
@@ -104,6 +89,95 @@ lib/msn/lang/langzh-cn
 lib/msn/lang/langzh-tw
 lib/msn/lang/missing.py
 lib/msn/lang/sortlang
+lib/msn/langlist
+lib/msn/loging.tcl
+lib/msn/migmd5.tcl
+lib/msn/notebook.tcl
+lib/msn/plugins.tcl
+lib/msn/progressbar.tcl
+lib/msn/protocol.tcl
+lib/msn/proxy.tcl
+lib/msn/remote.tcl
+lib/msn/rnotebook.tcl
+lib/msn/skins.tcl
+lib/msn/skins/aMac/README
+lib/msn/skins/aMac/desc.txt
+lib/msn/skins/aMac/pixmaps/amsn.xbm
+lib/msn/skins/aMac/pixmaps/amsnicon.gif
+lib/msn/skins/aMac/pixmaps/amsnmask.xbm
+lib/msn/skins/aMac/pixmaps/away.gif
+lib/msn/skins/aMac/pixmaps/back.gif
+lib/msn/skins/aMac/pixmaps/baway.gif
+lib/msn/skins/aMac/pixmaps/bbusy.gif
+lib/msn/skins/aMac/pixmaps/blocked.gif
+lib/msn/skins/aMac/pixmaps/blockedme.gif
+lib/msn/skins/aMac/pixmaps/boffline.gif
+lib/msn/skins/aMac/pixmaps/bonline.gif
+lib/msn/skins/aMac/pixmaps/busy.gif
+lib/msn/skins/aMac/pixmaps/butblock.gif
+lib/msn/skins/aMac/pixmaps/butfont.gif
+lib/msn/skins/aMac/pixmaps/butsmile.gif
+lib/msn/skins/aMac/pixmaps/colorbar.gif
+lib/msn/skins/aMac/pixmaps/contract.gif
+lib/msn/skins/aMac/pixmaps/daway.xpm
+lib/msn/skins/aMac/pixmaps/expand.gif
+lib/msn/skins/aMac/pixmaps/fticon.gif
+lib/msn/skins/aMac/pixmaps/ftreject.gif
+lib/msn/skins/aMac/pixmaps/globe.gif
+lib/msn/skins/aMac/pixmaps/loganim.gif
+lib/msn/skins/aMac/pixmaps/logolinmsn.gif
+lib/msn/skins/aMac/pixmaps/messenger.png
+lib/msn/skins/aMac/pixmaps/miniinfo.gif
+lib/msn/skins/aMac/pixmaps/minijoins.gif
+lib/msn/skins/aMac/pixmaps/minileaves.gif
+lib/msn/skins/aMac/pixmaps/miniwarn.gif
+lib/msn/skins/aMac/pixmaps/msnbot.gif
+lib/msn/skins/aMac/pixmaps/notifclose.gif
+lib/msn/skins/aMac/pixmaps/notifico.gif
+lib/msn/skins/aMac/pixmaps/notifyoffline.gif
+lib/msn/skins/aMac/pixmaps/notifyonline.gif
+lib/msn/skins/aMac/pixmaps/notifystate.gif
+lib/msn/skins/aMac/pixmaps/offline.gif
+lib/msn/skins/aMac/pixmaps/online.gif
+lib/msn/skins/aMac/pixmaps/read.gif
+lib/msn/skins/aMac/pixmaps/send.gif
+lib/msn/skins/aMac/pixmaps/typing.gif
+lib/msn/skins/aMac/pixmaps/unread.gif
+lib/msn/skins/aMac/settings.xml
+lib/msn/skins/aMac/smileys/angel_smile.gif
+lib/msn/skins/aMac/smileys/angry_smile.gif
+lib/msn/skins/aMac/smileys/apple.gif
+lib/msn/skins/aMac/smileys/baring_teeth_smile.gif
+lib/msn/skins/aMac/smileys/cigarette.gif
+lib/msn/skins/aMac/smileys/computer.gif
+lib/msn/skins/aMac/smileys/confused_smile.gif
+lib/msn/skins/aMac/smileys/cry_smile.gif
+lib/msn/skins/aMac/smileys/devil_smile.gif
+lib/msn/skins/aMac/smileys/dont_know_smile.gif
+lib/msn/skins/aMac/smileys/dont_tell_smile.gif
+lib/msn/skins/aMac/smileys/messenger.gif
+lib/msn/skins/aMac/smileys/money.gif
+lib/msn/skins/aMac/smileys/nerd_smile.gif
+lib/msn/skins/aMac/smileys/omg_smile.gif
+lib/msn/skins/aMac/smileys/party_smile.gif
+lib/msn/skins/aMac/smileys/red_smile.gif
+lib/msn/skins/aMac/smileys/regular_smile.gif
+lib/msn/skins/aMac/smileys/roll_smile.gif
+lib/msn/skins/aMac/smileys/sad_smile.gif
+lib/msn/skins/aMac/smileys/sarcastic_smile.gif
+lib/msn/skins/aMac/smileys/secret_smile.gif
+lib/msn/skins/aMac/smileys/shades_smile.gif
+lib/msn/skins/aMac/smileys/sick_smile.gif
+lib/msn/skins/aMac/smileys/sleepy_smile.gif
+lib/msn/skins/aMac/smileys/star.gif
+lib/msn/skins/aMac/smileys/teeth_smile.gif
+lib/msn/skins/aMac/smileys/thinking_smile.gif
+lib/msn/skins/aMac/smileys/tongue_smile.gif
+lib/msn/skins/aMac/smileys/what_smile.gif
+lib/msn/skins/aMac/smileys/wink_smile.gif
+lib/msn/skins/aMac/smileys/wu.gif
+lib/msn/skins/aMac/smileys/xD_smile.gif
+lib/msn/skins/default/desc.txt
 lib/msn/skins/default/pixmaps/alarm.gif
 lib/msn/skins/default/pixmaps/amsn.xbm
 lib/msn/skins/default/pixmaps/amsnicon.gif
@@ -126,7 +200,6 @@ lib/msn/skins/default/pixmaps/colorbar.gif
 lib/msn/skins/default/pixmaps/contract.gif
 lib/msn/skins/default/pixmaps/daway.xpm
 lib/msn/skins/default/pixmaps/dbrb.xpm
-lib/msn/skins/default/pixmaps/null
 lib/msn/skins/default/pixmaps/dbusy.xpm
 lib/msn/skins/default/pixmaps/dhidden.xpm
 lib/msn/skins/default/pixmaps/dinactive.xpm
@@ -149,9 +222,10 @@ lib/msn/skins/default/pixmaps/miniwarn.gif
 lib/msn/skins/default/pixmaps/msnbot.gif
 lib/msn/skins/default/pixmaps/notifclose.gif
 lib/msn/skins/default/pixmaps/notifico.gif
-lib/msn/skins/default/pixmaps/notifystate.gif
 lib/msn/skins/default/pixmaps/notifyoffline.gif
 lib/msn/skins/default/pixmaps/notifyonline.gif
+lib/msn/skins/default/pixmaps/notifystate.gif
+lib/msn/skins/default/pixmaps/null
 lib/msn/skins/default/pixmaps/offline.gif
 lib/msn/skins/default/pixmaps/online.gif
 lib/msn/skins/default/pixmaps/prefalerts.gif
@@ -192,10 +266,9 @@ lib/msn/skins/default/smileys/clock.gif
 lib/msn/skins/default/smileys/coffee.gif
 lib/msn/skins/default/smileys/computer.gif
 lib/msn/skins/default/smileys/confused_smile.gif
-lib/msn/skins/default/smileys/dog.gif
-lib/msn/skins/default/smileys/guy.gif
 lib/msn/skins/default/smileys/cry_smile.gif
 lib/msn/skins/default/smileys/devil_smile.gif
+lib/msn/skins/default/smileys/dog.gif
 lib/msn/skins/default/smileys/dont_know_smile.gif
 lib/msn/skins/default/smileys/dont_tell_smile.gif
 lib/msn/skins/default/smileys/envelope.gif
@@ -203,6 +276,7 @@ lib/msn/skins/default/smileys/film.gif
 lib/msn/skins/default/smileys/fingerscrossed.gif
 lib/msn/skins/default/smileys/girl.gif
 lib/msn/skins/default/smileys/girl_hug.gif
+lib/msn/skins/default/smileys/guy.gif
 lib/msn/skins/default/smileys/guy_hug.gif
 lib/msn/skins/default/smileys/handcuffs.gif
 lib/msn/skins/default/smileys/heart.gif
@@ -267,6 +341,10 @@ lib/msn/skins/default/sounds/offline.wav
 lib/msn/skins/default/sounds/online.wav
 lib/msn/skins/default/sounds/type.wav
 lib/msn/skins/default/sounds/woof.wav
+lib/msn/smileys.tcl
+lib/msn/socks.tcl
+lib/msn/sxml.tcl
+lib/msn/trayicon.tcl
 %%PORTDOCS%%share/doc/amsn/README
 %%PORTDOCS%%share/doc/amsn/TODO
 @dirrm lib/msn/icons/128x128
@@ -276,6 +354,9 @@ lib/msn/skins/default/sounds/woof.wav
 @dirrm lib/msn/icons/96x96
 @dirrm lib/msn/icons
 @dirrm lib/msn/lang
+@dirrm lib/msn/skins/aMac/pixmaps
+@dirrm lib/msn/skins/aMac/smileys
+@dirrm lib/msn/skins/aMac
 @dirrm lib/msn/skins/default/pixmaps
 @dirrm lib/msn/skins/default/smileys
 @dirrm lib/msn/skins/default/sounds
