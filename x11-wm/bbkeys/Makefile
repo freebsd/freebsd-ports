@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	bbkeys
-PORTVERSION=	0.3.6
+PORTVERSION=	0.8.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://movingparts.thelinuxcommunity.org/bbkeys/
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	stijn@win.tue.nl
 
-RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
+RUN_DEPENDS=	bbconf:${PORTSDIR}/x11-wm/bbconf \
+		blackbox:${PORTSDIR}/x11-wm/blackbox
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	2
 
-do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-	@(cd ${WRKSRC}/bbkeysconf-1.3; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+MAN1=		bbkeys.1
+MAN5=		bbkeysrc.5 bbkeys.bb.5
 
-do-install:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-	@(cd ${WRKSRC}/bbkeysconf-1.3 && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+pre-patch:
+.if !defined(NOPORTDOCS)
+	@${PERL} -pi -e 's@doc/bbkeys@share/doc/bbkeys@g' ${WRKSRC}/Makefile.in
+.else
+	@${PERL} -ni -e '/^(docdir|doc_DATA)/ && next; print' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
