@@ -57,7 +57,7 @@ OPENLDAP_LIB?=	libldap.so.2
 BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
 .else
-USE_OPENLDAP_VER?=	22
+USE_OPENLDAP=	yes
 .endif
 .endif
 .if defined(SENDMAIL_WITH_SASL)
@@ -130,6 +130,9 @@ do-configure:
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH)
 	${ECHO_CMD} \
 	 'define(`confNO_HELPFILE_INSTALL'\'',`True'\'')' \
+		>> ${WCONF}/site.config.m4
+	${ECHO_CMD} \
+	 'define(`confNO_STATISTICS_INSTALL'\'', `True'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
 
