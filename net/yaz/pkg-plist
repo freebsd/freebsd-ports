@@ -30,6 +30,7 @@ include/yaz/sortspec.h
 include/yaz/statserv.h
 include/yaz/tcpip.h
 include/yaz/tpath.h
+include/yaz/unix.h
 include/yaz/wrbuf.h
 include/yaz/xmalloc.h
 include/yaz/yaz-ccl.h
