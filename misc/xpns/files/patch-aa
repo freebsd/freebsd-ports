@@ -1,6 +1,6 @@
 --- makefile.orig	Wed Jul 14 06:05:14 1993
-+++ makefile	Tue Apr  8 11:49:27 1997
-@@ -7,19 +7,19 @@
++++ makefile	Sun Oct  4 14:19:13 1998
+@@ -7,19 +7,21 @@
  #I 	= -I/usr/include
  
  #------------------------------------------
@@ -9,12 +9,15 @@
  #------------------------------------------
 -O	= -O
 -I 	= -I/usr/local/X11R5/include
-+O	= -O2 -m486
-+I 	= -I/usr/X11R6/include
- 
+-
 -L 	= -L/usr/local/X11R5/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
-+L 	= -L/usr/X11R6/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
++O	= -O2 -m486
++I 	= -I$(X11BASE)/include
  
++L 	= -L$(X11BASE)/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
++.if $(PORTOBJFORMAT) == "elf"
++L	+=-Wl,-rpath,$(X11BASE)/lib
++.endif
  
  #------------------------------------------
  #  COMPILER UND LINKER
