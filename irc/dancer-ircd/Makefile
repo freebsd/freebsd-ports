@@ -28,9 +28,7 @@ post-patch:
 	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' ${WRKSRC}/include/config.h
 
 pre-install:
-.if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 
 post-install:
 	${INSTALL} -d -m 700 -o ircd -g ircd \
