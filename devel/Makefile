@@ -635,6 +635,7 @@
     SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-AlzaboWrapper
     SUBDIR += p5-Class-ArrayObjects
+    SUBDIR += p5-Class-AutoClass
     SUBDIR += p5-Class-Autouse
     SUBDIR += p5-Class-Base
     SUBDIR += p5-Class-BlackHole
