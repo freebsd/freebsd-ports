@@ -42,6 +42,9 @@ include/ginac/version.h
 @dirrm include/ginac
 @unexec install-info --delete %D/info/ginac.info %D/info/dir
 info/ginac.info
+info/ginac.info-1
+info/ginac.info-2
+info/ginac.info-3
 @exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
 lib/libginac.so
