@@ -10,8 +10,8 @@
 PORTNAME=	xjman
 PORTVERSION?=	0.6
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://xjman.dsl.gr.jp/
+MASTER_SITES?=	${MASTER_SITE_PORTS_JP} \
+		http://xjman.dsl.gr.jp/dist/
 
 MAINTAINER?=	sada@FreeBSD.org
 
