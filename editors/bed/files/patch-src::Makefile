@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- src/Makefile.orig	Wed Jan 28 23:50:02 2004
++++ src/Makefile	Wed Jan 28 23:51:41 2004
+@@ -27,8 +27,8 @@
+ 
+ #-DENDOFLINEBUG
+ 
+-CFLAGS:=$(OPTS) $(CFLAGS) 
+-LDFLAGS:=$(OPTS) $(LDFLAGS)
++CFLAGS:=$(CFLAGS) 
++LDFLAGS:=$(LDFLAGS)
+ CPPFLAGS=$(CFLAGS)
+ # *** NORMALLY NOTHING HAS TO BE CHANGED BELOW THIS LINE
+ OBJ := repeat.o rbtree.o memory.o editor.o   getfile.o glob.o expandfilename.o readcolors.o  getfree.o getlabel.o  screenpart.o  marks.o digitstring.o   parts.o main.o  strtoint.o  keyproc.o marken.o procview.o menus.o inout.o move.o window.o edit.o file.o select.o undo.o screen.o search.o onlykey.o  editup.o  cursesinit.o input.o contain.o withcontain.o filter.o  ascii.o  multidigit.o macros.o editmacros.o typelist.o $(OBJ) keyinput.o  hassub.o savedatatype.o menufuncs.o support.o desturbe.o gethelp.o disk.o
