@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.1
-PORTREVISION?=	1
+PORTVERSION=	0.8.4
+PORTREVISION?=	0
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
@@ -18,7 +18,7 @@ USE_PERL5=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
-CONFIGURE_ARGS+=	--without-socks --with-bot --with-textui \
+CONFIGURE_ARGS+=	--without-socks --without-bot --with-textui \
 		--with-perl-lib=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.pre.mk>
