@@ -1,15 +1,10 @@
---- ltmain.sh.orig	Fri Apr 11 02:52:51 2003
-+++ ltmain.sh	Fri Apr 11 02:53:05 2003
-@@ -4318,10 +4318,12 @@
- 	fi
+--- ltmain.sh.orig	Mon Mar 10 05:53:57 2003
++++ ltmain.sh	Wed May 21 14:17:14 2003
+@@ -973,6 +973,7 @@
+ 	;;
  
- 	# Install the pseudo-library for information purposes.
-+	if /usr/bin/false ; then
- 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
- 	instname="$dir/$name"i
- 	$show "$install_prog $instname $destdir/$name"
- 	$run eval "$install_prog $instname $destdir/$name" || exit $?
-+	fi
- 
- 	# Maybe install the static library, too.
- 	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
+       -avoid-version)
++	build_old_libs=no
+ 	avoid_version=yes
+ 	continue
+ 	;;
