@@ -16,7 +16,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	iconv.1:${PORTSDIR}/converters/iconv
 
-FILESDIR=	${.CURDIR}/files
+MD5_FILE=	${.CURDIR}/distinfo
 
 CONFIGURE_ARGS=	--enable-japanese-conv # --enable-ipv6
 MAKE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
