@@ -1,0 +1,10 @@
+The diff algorithm computes the differences between two arrays of elements,
+like the unix program "diff". diff.rb is a Ruby conversion of the Perl's
+Algorithm::Diff. It can diff Arrays by each element or Strings by each
+character, or your own class if you implement the interface. The algorithm
+is complete, stable (TestUnit test available), but the interface may change
+before a 1.0 release.
+
+				-- excerpt from RAA (Ruby Application Archive)
+
+WWW: http://www.rubynet.org/mirrors/diff/
