@@ -1,4 +1,8 @@
 bin/gnomeicu
+etc/CORBA/servers/GnomeICU.gnorba
+etc/sound/events/GnomeICU.soundlist
+share/gnome/applets/Network/GnomeICU.desktop
+share/gnome/pixmaps/gnome-gnomeicu.xpm
 share/gnome/pixmaps/gnomeicu-auth.xpm
 share/gnome/pixmaps/gnomeicu-away.xpm
 share/gnome/pixmaps/gnomeicu-blank.xpm
@@ -16,6 +20,4 @@ share/gnome/pixmaps/gnomeicu-occ.xpm
 share/gnome/pixmaps/gnomeicu-offline.xpm
 share/gnome/pixmaps/gnomeicu-online.xpm
 share/gnome/pixmaps/gnomeicu-url.xpm
-share/gnome/pixmaps/gnome-gnomeicu.xpm
-share/gnome/applets/Network/GnomeICU.desktop
-etc/CORBA/servers/GnomeICU.gnorba
+share/gnome/sounds/gnomeicu/message.wav
