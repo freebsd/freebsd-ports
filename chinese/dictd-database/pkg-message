@@ -8,5 +8,7 @@ database netterm   { data "/usr/local/lib/dict/netterm.dict.dz"
                      index "/usr/local/lib/dict/netterm.index" }
 database pydict    { data "/usr/local/lib/dict/pydict.dict.dz"
                      index "/usr/local/lib/dict/pydict.index" }
+database pydict    { data "/usr/local/lib/dict/cedict.dict.dz"
+                     index "/usr/local/lib/dict/cedict.index" }
 
 *****************************************************************************

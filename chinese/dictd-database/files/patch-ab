@@ -1,10 +1,13 @@
---- dictfmt.c.orig	Sun Apr  2 00:43:40 2000
-+++ dictfmt.c	Sun Oct 14 09:58:49 2001
-@@ -30,6 +30,7 @@
+--- dictfmt.c.orig	Wed Nov 28 22:57:00 2001
++++ dictfmt.c	Wed Nov 28 22:57:26 2001
+@@ -30,9 +30,9 @@
  #include <string.h>
  #include <time.h>
  #include <ctype.h>
 +#include <unistd.h>
  
  #if HAVE_GETOPT_H
- #include <getopt.h>
+-#include <getopt.h>
+ #endif
+ 
+ #define FMT_MAXPOS 65
