@@ -1,0 +1,17 @@
+--- programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/Imakefile.orig	Tue Mar 19 17:35:44 2002
++++ programs/Xserver/hw/xfree86/os-support/bsd/drm/kernel/Imakefile	Tue Mar 19 17:35:50 2002
+@@ -11,10 +11,11 @@
+ 
+ install::
+ 	$(MAKE) -f Makefile.bsd install
++	
++clean::
++	$(MAKE) -f Makefile.bsd clean
++
+ #else
+ all::
+ 	@echo 'Use "make -f Makefile.bsd" to manually build the modules'
+ #endif
+-
+-clean::
+-	$(MAKE) -f Makefile.bsd clean
