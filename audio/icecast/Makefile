@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/files/
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming mp3 audio server
 
 HAS_CONFIGURE=	yes
