@@ -7,9 +7,11 @@
 
 MASTERDIR?=	${.CURDIR}/../../lang/gcc32
 
+PKGNAMESUFFIX=		-objc
 WANT_SHAREDLIBS=	yes
 WANT_THREADS_SUPPORT=	yes
-PKGNAMESUFFIX=		-objc
+INSTALLS_SHLIB=		yes
+LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
