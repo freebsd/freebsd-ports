@@ -8587,6 +8587,7 @@ pftpd		ports/ftp/pftpd
 pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
 pgbash		ports/databases/pgbash
+pgcalc		ports/math/pgcalc
 pgcluster	ports/databases/pgcluster
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
