@@ -3553,6 +3553,7 @@ l0pht-watch	ports/security/l0pht-watch
 l0phtcrack	ports/security/l0phtcrack
 l5		ports/security/l5
 lablgl		ports/graphics/lablgl
+lablgtk		ports/x11-toolkits/lablgtk
 labrea		ports/security/labrea
 lacheck		ports/textproc/lacheck
 ladder		ports/games/ladder
