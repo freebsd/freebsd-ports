@@ -313,6 +313,7 @@
     SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += tracker
+    SUBDIR += traymp
     SUBDIR += trm
     SUBDIR += trommler
     SUBDIR += ufmcontrol-i18n
