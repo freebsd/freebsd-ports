@@ -3410,6 +3410,7 @@ liby		src/lib/liby
 libz		src/lib/libz
 licq		ports/net/licq
 licq-console	ports/net/licq-console
+licq-devel	ports/net/licq-devel
 licq-qt-gui	ports/net/licq-qt-gui
 liece		ports/irc/liece
 liece-dcc	ports/irc/liece-dcc
