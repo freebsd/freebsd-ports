@@ -1,0 +1,7 @@
+This is a port of mp3_check. mp3_check verifies the integrity
+of mp3 audio files and prints useful statistics. This is handy
+for people who maintain libraries of mp3 files and need a way
+to verify their quality.
+
+- Zach
+zach@pabst.bendnet.com

@@ -1,0 +1,10 @@
+--- mp3_check.c.orig	Wed May 24 15:48:08 2000
++++ mp3_check.c	Wed May 24 15:57:41 2000
+@@ -60,6 +60,7 @@
+ 
+ #include <errno.h>
+ #include <stdio.h>
++#include <getopt.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include "mp3_check.h"
