@@ -339,6 +339,7 @@
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += s10sh
+    SUBDIR += sam2p
     SUBDIR += sane-backends
     SUBDIR += sane-frontends
     SUBDIR += sced
