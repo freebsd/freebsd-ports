@@ -1,0 +1,129 @@
+*** mailto.c.orig	Wed Feb  9 23:30:26 1994
+--- metamail/mailto.c	Mon Nov 20 01:21:37 1995
+***************
+*** 570,575 ****
+--- 570,576 ----
+          if (isupper(*sdum)) *sdum = tolower(*sdum);
+      }
+      if (strcmp(CharacterSet, "us-ascii")
++ 	 && strcmp(CharacterSet, "koi8-r")
+           && strncmp(CharacterSet, "iso-8859-", 9)) {
+          fprintf(stderr, "mailto:  Unsupported character set: %s\n", CharacterSet);
+          exit(-1);
+***************
+*** 1130,1135 ****
+--- 1131,1137 ----
+          if (part->isrich) {
+              if (strcmp(CharacterSet, "us-ascii")
+                   && (strncmp(CharacterSet, "iso-8859-", 9) 
++ 		     && strcmp(CharacterSet, "koi8-r")
+                        || part->encoding_type_needed != ENC_NONE)) {
+                  fprintf(fp, "Content-type: text/richtext; charset=\"%s\"\n", CharacterSet);
+              } else {
+***************
+*** 1140,1145 ****
+--- 1142,1148 ----
+              WriteCtypeNicely(fp, part->content_type);
+              if (strcmp(CharacterSet, "us-ascii")
+                   && (strncmp(CharacterSet, "iso-8859-", 9) 
++ 		     && strcmp(CharacterSet, "koi8-r")
+                        || part->encoding_type_needed != ENC_NONE)) {
+                  fprintf(fp, "; charset=\"%s\"\n", CharacterSet);
+              } else fputs("\n", fp);
+***************
+*** 1745,1750 ****
+--- 1748,1754 ----
+      }
+      printf("\n\nEnter your choice as a number from 0 to %d: ", i);
+      fflush(stdout);
++     *LineBuf = '\0';
+      fgets(LineBuf, sizeof(LineBuf), stdin);
+      ans = atoi(LineBuf);
+      if (ans == 0 || ans == 1) {
+***************
+*** 1791,1797 ****
+                  int ct;
+                  printf("\nEnter the MIME Content-type value for the data from file %s\n    (type '?' for a list of locally-valid content-types): ", sdum);
+                  fflush(stdout);
+!                 gets(LineBuf);
+                  if (index(LineBuf, '/')) {
+                      char lc[100], *s, AnsBuf[100];
+                      strcpy(lc, LineBuf);
+--- 1795,1801 ----
+                  int ct;
+                  printf("\nEnter the MIME Content-type value for the data from file %s\n    (type '?' for a list of locally-valid content-types): ", sdum);
+                  fflush(stdout);
+! 		fgets(LineBuf, sizeof(LineBuf), stdin);
+                  if (index(LineBuf, '/')) {
+                      char lc[100], *s, AnsBuf[100];
+                      strcpy(lc, LineBuf);
+***************
+*** 1809,1815 ****
+                      }
+                      if (mc) break;
+                      printf("The MIME content-type '%s' is not listed in your local mailcap files,\nand may not be a valid MIME type.  Do you want to use it anyway [no] ? ", LineBuf);
+!                     s = gets(AnsBuf);
+                      while (s && *s && isspace((unsigned char) *s)) ++s;
+                      if (s && (*s == 'y' || *s == 'Y')) break;
+                      continue;
+--- 1813,1819 ----
+                      }
+                      if (mc) break;
+                      printf("The MIME content-type '%s' is not listed in your local mailcap files,\nand may not be a valid MIME type.  Do you want to use it anyway [no] ? ", LineBuf);
+! 		    s = fgets(AnsBuf, sizeof(AnsBuf), stdin);
+                      while (s && *s && isspace((unsigned char) *s)) ++s;
+                      if (s && (*s == 'y' || *s == 'Y')) break;
+                      continue;
+*** metamail.c.bak	Thu Feb 17 04:57:19 1994
+--- metamail/metamail.c	Mon Nov 20 01:21:37 1995
+***************
+*** 83,89 ****
+  #define MAX_FILE_NAME_SIZE 256
+  #define WRITE_BINARY	"w"
+  #else /* AMIGA */
+! extern char **environ, *gets();
+  #define CATCOMMAND  "cat"
+  #define CATTEMPLATE "cat %s"
+  #define METAMAIL    "metamail"
+--- 83,89 ----
+  #define MAX_FILE_NAME_SIZE 256
+  #define WRITE_BINARY	"w"
+  #else /* AMIGA */
+! extern char **environ;
+  #define CATCOMMAND  "cat"
+  #define CATTEMPLATE "cat %s"
+  #define METAMAIL    "metamail"
+***************
+*** 579,585 ****
+                                  int overwriteans = -1;
+                                  do {
+                                      printf("File %s exists.  Do you want to overwrite it (y/n) ?\n", Fname);
+!                                     s = gets(AnsBuf);
+                                      if (!s) {
+                                          overwriteans = 0;
+                                      } else {
+--- 579,585 ----
+                                  int overwriteans = -1;
+                                  do {
+                                      printf("File %s exists.  Do you want to overwrite it (y/n) ?\n", Fname);
+! 				    s = fgets(AnsBuf, sizeof(AnsBuf), stdin);
+                                      if (!s) {
+                                          overwriteans = 0;
+                                      } else {
+***************
+*** 1823,1829 ****
+          } else {
+              printf("This message contains '%s'-format data.\nDo you want to view it using the '%s' command (y/n) [y] ? ", ctype, ShortCommand(progname));
+          }
+!         s = gets(AnsBuf);
+          if (!s) return(0); /* EOF */
+  	while (s && *s && isspace((unsigned char) *s)) ++s;
+  	if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') return(1);
+--- 1823,1829 ----
+          } else {
+              printf("This message contains '%s'-format data.\nDo you want to view it using the '%s' command (y/n) [y] ? ", ctype, ShortCommand(progname));
+          }
+! 	s = fgets(AnsBuf, sizeof(AnsBuf), stdin);
+          if (!s) return(0); /* EOF */
+  	while (s && *s && isspace((unsigned char) *s)) ++s;
+  	if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') return(1);
