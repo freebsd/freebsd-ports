@@ -2407,9 +2407,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>samba</name>
-	<name>ja-samba</name>
 	<range><lt>2.2.12</lt></range>
 	<range><ge>3.a</ge><le>3.0.2a_1,1</le></range>
+      </package>
+      <package>
+	<name>ja-samba</name>
+	<range><lt>2.2.11.j1.0_1</lt></range>
       </package>
     </affects>
     <description>
