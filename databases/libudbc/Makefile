@@ -21,6 +21,7 @@ NO_BUILD=	yes
 INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		"Distfile has disappeared"
 RESTRICTED=	'Downloading and redistribution terms are unclear'
 
 do-install:
