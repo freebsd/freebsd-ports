@@ -7,6 +7,7 @@ bin/dftest
 bin/tethereal
 %%TEXT2PCAP%%
 lib/ethereal/plugins/%%PORTVERSION%%/acn.so
+lib/ethereal/plugins/%%PORTVERSION%%/agentx.so
 lib/ethereal/plugins/%%PORTVERSION%%/artnet.so
 lib/ethereal/plugins/%%PORTVERSION%%/asn1.so
 lib/ethereal/plugins/%%PORTVERSION%%/ciscosm.so
@@ -26,7 +27,9 @@ lib/ethereal/plugins/%%PORTVERSION%%/rdm.so
 lib/ethereal/plugins/%%PORTVERSION%%/rlm.so
 lib/ethereal/plugins/%%PORTVERSION%%/rtnet.so
 lib/ethereal/plugins/%%PORTVERSION%%/rudp.so
+lib/ethereal/plugins/%%PORTVERSION%%/stats_tree.so
 lib/ethereal/plugins/%%PORTVERSION%%/v5ua.so
+lib/ethereal/plugins/%%PORTVERSION%%/xml.so
 lib/libethereal.a
 lib/libethereal.so
 lib/libethereal.so.0
