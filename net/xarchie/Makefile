@@ -3,15 +3,13 @@
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1995/10/04 01:55:58 asami Exp $
+# $Id: Makefile,v 1.9 1995/11/27 04:05:52 asami Exp $
 #
 
 DISTNAME=	xarchie-2.0.10
 CATEGORIES+=	net
 MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/ \
 		ftp://ftp.funet.fi/pub/X11/contrib/applications/
-
-RUN_DEPENDS=	archie:${PORTSDIR}/net/archie
 
 USE_IMAKE=	yes
 
