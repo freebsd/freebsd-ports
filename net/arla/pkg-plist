@@ -103,4 +103,4 @@ sbin/xfs_makedev
 @dirrm include/afs
 @dirrm include/rx
 @dirrm include/ss
-@dirrm cache
+@unexec rmdir cache 2>/dev/null || true
