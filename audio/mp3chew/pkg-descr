@@ -6,7 +6,5 @@ mp3 filenames. It is a console-based application written in C++.
    * Creates Song Lists (.m3u's)
    * Plus a whole bunch more
 
-WWW: http://owl.yi.org/mp3chew/
-
 - George Reid
 greid@ukug.uk.freebsd.org
