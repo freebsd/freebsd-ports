@@ -1,5 +1,6 @@
 bin/gtv
 bin/plaympeg
+bin/smpeg-config
 include/smpeg/MPEG.h
 include/smpeg/MPEGaction.h
 include/smpeg/MPEGaudio.h
