@@ -12,7 +12,8 @@ MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdict ${PREFIX}/bin
