@@ -7,6 +7,37 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050110:
+  AFFECTS: users of irc/iip
+  AUTHOR: lioux@FreeBSD.org
+
+  iip has been updated to the new network servers. Therefore, both
+  old configuration files and node reference keys no longer apply.
+
+  Therefore, you need to update the configuration files for each
+  user running the iip isproxy daemon:
+
+  1) Backup configuration files
+
+  cp ~/.iip/isproxy.ini ~/.iip/isproxy.ini.backup
+  cp ~/.iip/node.ref ~/.iip/node.ref.backup
+
+  2) Remove configuration files
+
+  rm ~/.iip/isproxy.ini
+  rm ~/.iip/node.ref
+
+  3) Create new configuration. Fill information as requested. This
+  creates the updated isproxy.ini file
+
+  isproxy -C
+
+  4) Start iip isproxy. This will initialize your updated node.ref
+  file. This file will be automatically updated when you connect
+  to the iip network
+
+  isproxy
+
+20050110:
   AFFECTS: users of sysutils/nautilus-cd-burner
   AUTHOR: gnome@FreeBSD.org
 
